@@ -1,5 +1,6 @@
 ---
 title: XML 架构定义工具和 XML 序列化
+description: XML 架构定义工具为 XSD 架构生成 C# 或 Visual Basic 类文件，并从库或可执行文件生成 XML 架构。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Xsd.exe
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - XML Schema Definition tool
 - serialization, XML Schema Definition tool
 ms.assetid: 3c03f855-f931-47ff-bbc6-50c0367a16e4
-ms.openlocfilehash: b51b9a0112893d9a7838155f4af051e7079c8cdd
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 258e66643dae64aec7280419911f5ac9193a2ada
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588393"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380106"
 ---
 # <a name="the-xml-schema-definition-tool-and-xml-serialization"></a>XML 架构定义工具和 XML 序列化
 

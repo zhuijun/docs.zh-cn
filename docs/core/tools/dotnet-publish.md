@@ -2,16 +2,16 @@
 title: dotnet publish 命令
 description: dotnet publish 命令可将 .NET Core 项目或解决方案发布到目录。
 ms.date: 02/24/2020
-ms.openlocfilehash: 78ed8098be1b6887fc6a2a647fd169e2bf7f7fd1
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 697746291a8b34a856433049fe7264ad0ea4af7a
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102796"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761897"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
- 本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
+本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
 
 ## <a name="name"></a>“属性”
 
@@ -36,9 +36,9 @@ dotnet publish -h|--help
 
 `dotnet publish` 编译应用程序、读取 project 文件中指定的所有依赖项并将生成的文件集发布到目录。 输出包括以下资产：
 
-- 扩展名为 dll  的程序集中的中间语言 (IL) 代码。
-- 包含项目所有依赖项的 .deps.json 文件  。
-- .runtimeconfig.json 文件，其中指定了应用程序所需的共享运行时，以及运行时的其他配置选项（例如垃圾回收类型）  。
+- 扩展名为 dll 的程序集中的中间语言 (IL) 代码。
+- 包含项目所有依赖项的 .deps.json 文件。
+- .runtimeconfig.json 文件，其中指定了应用程序所需的共享运行时，以及运行时的其他配置选项（例如垃圾回收类型）。
 - 应用程序的依赖项，将这些依赖项从 NuGet 缓存复制到输出文件夹。
 
 `dotnet publish` 命令的输出可供部署至托管系统（例如服务器、电脑、Mac、笔记本电脑）以便执行。 若要准备用于部署的应用程序，这是唯一正式受支持的方法。 根据项目指定的部署的类型，托管系统不一定已在其上安装 .NET Core 共享运行时。 有关详细信息，请参阅[使用 .NET Core CLI 发布 .NET Core 应用](../deploying/deploy-with-cli.md)。
@@ -51,7 +51,7 @@ dotnet publish -h|--help
 
 `dotnet publish` 命令调用 MSBuild，后者会调用 `Publish` 目标。 任何传递给 `dotnet publish` 的参数都将传递给 MSBuild。 `-c` 和 `-o` 参数分别映射到 MSBuild 的 `Configuration` 和 `OutputPath` 属性。
 
-`dotnet publish` 命令接受 MSBuild 选项，如用来设置属性的 `-p` 和用来定义记录器的 `-l`。 例如，可以使用以下格式设置 MSBuild 属性：`-p:<NAME>=<VALUE>`。 还可以通过引用 .pubxml  文件来设置与发布相关的属性，例如：
+`dotnet publish` 命令接受 MSBuild 选项，如用来设置属性的 `-p` 和用来定义记录器的 `-l`。 例如，可以使用以下格式设置 MSBuild 属性：`-p:<NAME>=<VALUE>`。 还可以通过引用 .pubxml 文件来设置与发布相关的属性，例如：
 
 ```dotnetcli
 dotnet publish -p:PublishProfile=Properties\PublishProfiles\FolderProfile.pubxml
@@ -71,7 +71,7 @@ dotnet publish -p:PublishProfile=Properties\PublishProfiles\FolderProfile.pubxml
   
   * `PROJECT` 是 [C#](csproj.md)、F# 或 Visual Basic 项目文件的路径和文件名，或包含 C#、F# 或 Visual Basic 项目文件的目录的路径。 如果未指定目录，则默认为当前目录。
 
-  * `SOLUTION` 是解决方案文件（扩展名为 .sln）的路径和文件名，或包含解决方案文件的目录的路径  。 如果未指定目录，则默认为当前目录。 自 .NET Core 3.0 SDK 起可用。
+  * `SOLUTION` 是解决方案文件（扩展名为 .sln）的路径和文件名，或包含解决方案文件的目录的路径。 如果未指定目录，则默认为当前目录。 自 .NET Core 3.0 SDK 起可用。
 
 ## <a name="options"></a>选项
 
@@ -85,7 +85,7 @@ dotnet publish -p:PublishProfile=Properties\PublishProfiles\FolderProfile.pubxml
 
 - **`--force`**
 
-  强制解析所有依赖项，即使上次还原已成功，也不例外。 指定此标记等同于删除 project.assets.json 文件  。
+  强制解析所有依赖项，即使上次还原已成功，也不例外。 指定此标记等同于删除 project.assets.json 文件。
 
 - **`-h|--help`**
 
@@ -119,9 +119,9 @@ dotnet publish -p:PublishProfile=Properties\PublishProfiles\FolderProfile.pubxml
 
   指定输出目录的路径。
   
-  如果未指定，则默认为依赖于运行时的可执行文件和跨平台二进制文件的路径 [project_file_folder]./bin/[configuration]/[framework]/publish/  。 默认为独立的可执行文件路径 [project_file_folder]/bin/[configuration]/[framework]/[runtime]/publish/  。
+  如果未指定，则默认为依赖于运行时的可执行文件和跨平台二进制文件的路径 [project_file_folder]./bin/[configuration]/[framework]/publish/。 默认为独立的可执行文件路径 [project_file_folder]/bin/[configuration]/[framework]/[runtime]/publish/。
 
-  在 Web 项目中，如果输出文件夹位于项目文件夹，则连续的 `dotnet publish` 命令将产生嵌套的输出文件夹。 例如，如果项目文件夹是“myproject”，发布输出文件夹是“myproject/publish”，并且运行 `dotnet publish` 两次，则第二次运行会将“.config”和“.json”等内容文件放入“myproject/publish/publish”      。 若要避免嵌套发布文件夹，请指定不在项目文件夹正下方的发布文件夹，或从项目中排除发布文件夹。 若要排除名为“publishoutput”的发布文件夹，请将以下元素添加到“.csproj”文件中的 `PropertyGroup` 元素中   ：
+  在 Web 项目中，如果输出文件夹位于项目文件夹，则连续的 `dotnet publish` 命令将产生嵌套的输出文件夹。 例如，如果项目文件夹是“myproject”，发布输出文件夹是“myproject/publish”，并且运行 `dotnet publish` 两次，则第二次运行会将“.config”和“.json”等内容文件放入“myproject/publish/publish”    。 若要避免嵌套发布文件夹，请指定一个不在项目文件夹正下方的发布文件夹，或从项目中排除发布文件夹。 若要排除名为“publishoutput”的发布文件夹，请将以下元素添加到“.csproj”文件中的 `PropertyGroup` 元素中 ：
 
   ```xml
   <DefaultItemExcludes>$(DefaultItemExcludes);publishoutput**</DefaultItemExcludes>

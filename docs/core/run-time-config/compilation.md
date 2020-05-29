@@ -3,12 +3,12 @@ title: 编译配置设置
 description: 了解用于为 .NET Core 应用配置 JIT 编译器工作原理的运行时设置。
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: 4db20ee6d36fe3d3d66f473644b70c02d4e02cb3
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: cfcf9b5fc8d11a4ae35ab9b152f32133cd6930bf
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506839"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762001"
 ---
 # <a name="run-time-configuration-options-for-compilation"></a>用于编译的运行时配置选项
 
@@ -24,12 +24,12 @@ ms.locfileid: "82506839"
 | | 设置名 | 值 |
 | - | - | - |
 | **runtimeconfig.json** | `System.Runtime.TieredCompilation` | `true` - 启用<br/>`false` - 禁用 |
-| MSBuild 属性  | `TieredCompilation` | `true` - 启用<br/>`false` - 禁用 |
+| MSBuild 属性 | `TieredCompilation` | `true` - 启用<br/>`false` - 禁用 |
 | **环境变量** | `COMPlus_TieredCompilation` | `1` - 启用<br/>`0` - 禁用 |
 
 ### <a name="examples"></a>示例
 
-runtimeconfig.json 文件： 
+runtimeconfig.json 文件：
 
 ```json
 {
@@ -55,7 +55,7 @@ runtimeconfig.json 文件：
 
 ## <a name="quick-jit"></a>快速 JIT
 
-- 配置 JIT 编译器是否使用快速 JIT。  对于不包含循环且不可使用预编译代码的方法，快速 JIT 可以更快完成编译，但不会进行优化。
+- 配置 JIT 编译器是否使用快速 JIT。 对于不包含循环且不可使用预编译代码的方法，快速 JIT 可以更快完成编译，但不会进行优化。
 - 启用快速 JIT 会缩短启动时间，但可能会生成性能下降的代码。 例如，代码可能会使用更多堆栈空间、分配更多内存并以更慢的速度运行。
 - 如果禁用了快速 JIT 但启用了[分层编译](#tiered-compilation)，则只有预编译的代码参与分层编译。 如果未使用 [ReadyToRun](#readytorun) 预编译方法，则 JIT 行为与禁用[分层编译](#tiered-compilation)时相同。
 - 在 NET Core 3.0 及更高版本中，默认启用快速 JIT。
@@ -64,12 +64,12 @@ runtimeconfig.json 文件：
 | | 设置名 | 值 |
 | - | - | - |
 | **runtimeconfig.json** | `System.Runtime.TieredCompilation.QuickJit` | `true` - 启用<br/>`false` - 禁用 |
-| MSBuild 属性  | `TieredCompilationQuickJit` | `true` - 启用<br/>`false` - 禁用 |
+| MSBuild 属性 | `TieredCompilationQuickJit` | `true` - 启用<br/>`false` - 禁用 |
 | **环境变量** | `COMPlus_TC_QuickJit` | `1` - 启用<br/>`0` - 禁用 |
 
 ### <a name="examples"></a>示例
 
-runtimeconfig.json 文件： 
+runtimeconfig.json 文件：
 
 ```json
 {
@@ -98,17 +98,17 @@ runtimeconfig.json 文件：
 - 配置 JIT 编译器是否对包含循环的方法使用快速 JIT。
 - 启用适用于循环的快速 JIT 可以提高启动性能。 不过，在优化程度较低的代码中，长时间运行的循环可能会停滞较长时间。
 - 如果禁用[快速 JIT](#quick-jit)，则此设置不起作用。
-- 默认：禁用 (`false`)。
+- 如果省略此设置，则不会对包含循环的方法使用“快速 JIT”。 它等效于将值设置为 `false`。
 
 | | 设置名 | 值 |
 | - | - | - |
 | **runtimeconfig.json** | `System.Runtime.TieredCompilation.QuickJitForLoops` | `false` - 禁用<br/>`true` - 启用 |
-| MSBuild 属性  | `TieredCompilationQuickJitForLoops` | `false` - 禁用<br/>`true` - 启用 |
+| MSBuild 属性 | `TieredCompilationQuickJitForLoops` | `false` - 禁用<br/>`true` - 启用 |
 | **环境变量** | `COMPlus_TC_QuickJitForLoops` | `0` - 禁用<br/>`1` - 启用 |
 
 ### <a name="examples"></a>示例
 
-runtimeconfig.json 文件： 
+runtimeconfig.json 文件：
 
 ```json
 {
@@ -136,7 +136,7 @@ runtimeconfig.json 文件：
 
 - 配置 .NET Core 运行时是否要为具有可用 ReadyToRun 数据的映像使用预编译代码。 如果禁用此选项，会强制运行时对框架代码进行 JIT 编译。
 - 有关详细信息，请参阅 [ReadyToRun](../whats-new/dotnet-core-3-0.md#readytorun-images)。
-- 默认：启用 (`1`)。
+- 如果省略此设置，则 .NET 将使用 ReadyToRun 数据（如果可用）。 它等效于将值设置为 `1`。
 
 | | 设置名 | 值 |
 | - | - | - |

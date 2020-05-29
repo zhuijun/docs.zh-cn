@@ -2,16 +2,16 @@
 title: dotnet tool install 命令
 description: dotnet tool install 命令在计算机上安装指定的 .NET Core 工具。
 ms.date: 02/14/2020
-ms.openlocfilehash: 723d25caa6009288dbb55d55f173b04d7b983450
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 067f90124833da537370a36934ff212aba7577f3
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463364"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702812"
 ---
 # <a name="dotnet-tool-install"></a>dotnet tool install
 
- 本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
+本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
 
 ## <a name="name"></a>“属性”
 
@@ -55,7 +55,7 @@ dotnet tool install -h|--help
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
 
-本地工具将添加到当前目录下的 .config 目录中的 tool-manifest.json 文件中   。 如果清单文件尚不存在，请通过运行以下命令来创建它：
+本地工具将添加到当前目录下 .config 目录中的 dotnet-tools.json 文件中。 如果清单文件尚不存在，请通过运行以下命令来创建它：
 
 ```dotnetcli
 dotnet new tool-manifest
@@ -77,7 +77,7 @@ dotnet new tool-manifest
 
 - **`configfile <FILE>`**
 
-  要使用的 NuGet 配置 (nuget.config) 文件  。
+  要使用的 NuGet 配置 (nuget.config) 文件。
 
 - **`framework <FRAMEWORK>`**
 

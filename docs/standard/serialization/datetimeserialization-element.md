@@ -1,17 +1,18 @@
 ---
 title: <dateTimeSerialization> 元素
+description: 本文介绍 <dateTimeSerialization> 元素，该元素可确定 DateTime 对象的序列化模式。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - dateTimeSerialization element
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-ms.openlocfilehash: 180a4942dd4b701b56fe4788d5f8cd8607faaedd
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 652a88e25f59cd905e47ef71351e47e67f375286
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459261"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83375828"
 ---
 # <a name="datetimeserialization-element"></a>\<dateTimeSerialization> 元素
 确定 <xref:System.DateTime> 对象的序列化模式。  
@@ -34,7 +35,7 @@ ms.locfileid: "73459261"
   
 |特性|描述|  
 |----------------|-----------------|  
-|`mode`|可选。 指定序列化模式。 设置为 <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> 值之一。 默认值为 RoundTrip  。|  
+|`mode`|可选。 指定序列化模式。 设置为 <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode> 值之一。 默认值为 RoundTrip。|  
   
 ### <a name="child-elements"></a>子元素  
  无。  
@@ -46,9 +47,9 @@ ms.locfileid: "73459261"
 |system.xml.serialization|用于控制 XML 序列化的顶级元素。|  
   
 ## <a name="remarks"></a>备注  
- 在 .NET Framework 1.0、1.1、2.0 以及更高版本中，将此属性设置为 Local 时，<xref:System.DateTime> 对象始终设置为本地时间格式  。 即，序列化的数据中总是包含本地时区信息。 将此属性设置为 Local 可确保与较早版本的 .NET Framework 兼容  。  
+ 在 .NET Framework 1.0、1.1、2.0 以及更高版本中，将此属性设置为 Local 时，<xref:System.DateTime> 对象始终设置为本地时间格式。 即，序列化的数据中总是包含本地时区信息。 将此属性设置为 Local 可确保与较早版本的 .NET Framework 兼容。  
   
- 在 .NET Framework 2.0 及更高版本中，将此属性设置为 Roundtrip 时，系统会检查 <xref:System.DateTime> 对象以确定这些对象位于本地时区、UTC 时区还是未指定的时区中  。 随后会序列化 <xref:System.DateTime> 对象并保留该信息。 这是默认行为，建议为所有不与 Framework 的较早版本通信的新应用程序使用此行为。  
+ 在 .NET Framework 2.0 及更高版本中，将此属性设置为 Roundtrip 时，系统会检查 <xref:System.DateTime> 对象以确定这些对象位于本地时区、UTC 时区还是未指定的时区中。 随后会序列化 <xref:System.DateTime> 对象并保留该信息。 这是默认行为，建议为所有不与 Framework 的较早版本通信的新应用程序使用此行为。  
   
 ## <a name="see-also"></a>请参阅
 

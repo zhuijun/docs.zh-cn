@@ -1,5 +1,6 @@
 ---
 title: 程序集版本控制
+description: 了解 .NET 程序集的版本控制。 使用 CLR 的程序集的所有版本控制都在程序集级别上进行。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - informational versions
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - resolving assembly binding requests
 - versioning, assemblies
 ms.assetid: 775ad4fb-914f-453c-98ef-ce1089b6f903
-ms.openlocfilehash: bbb3dae2ce66c93d05a2a1c0f7e426901fa7b2e0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fdffbcc0bbafed62228cba35e8f85fbec7f7fbab
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73140176"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380075"
 ---
 # <a name="assembly-versioning"></a>程序集版本控制
 
@@ -71,7 +72,7 @@ ms.locfileid: "73140176"
   
 信息性版本用自定义特性 <xref:System.Reflection.AssemblyInformationalVersionAttribute?displayProperty=nameWithType> 表示。 有关信息性版本属性的更多信息，请参阅[设置程序集属性](set-attributes.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [运行时如何定位程序集](../../framework/deployment/how-the-runtime-locates-assemblies.md)
 - [配置应用](../../framework/configure-apps/index.md)

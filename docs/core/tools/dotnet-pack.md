@@ -2,12 +2,12 @@
 title: dotnet pack 命令
 description: dotnet pack 命令可为 .NET Core 项目创建 NuGet 包。
 ms.date: 04/28/2020
-ms.openlocfilehash: 26a8581f55a8dc9e61aa52e62ed94c73eefd3e03
-ms.sourcegitcommit: d7666f6e49c57a769612602ea7857b927294ce47
+ms.openlocfilehash: 00cda2c52a12a7a3aef5f61291120f522536131d
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82595749"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442223"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
@@ -32,7 +32,7 @@ dotnet pack -h|--help
 
 ## <a name="description"></a>描述
 
-`dotnet pack` 命令生成项目并创建 NuGet 包。 该命令的结果是一个 NuGet 包，也就是一个 .nupkg 文件  。
+`dotnet pack` 命令生成项目并创建 NuGet 包。 该命令的结果是一个 NuGet 包，也就是一个 .nupkg 文件。
 
 如果要生成包含调试符号的包，可以使用以下两个选项：
 
@@ -48,7 +48,7 @@ dotnet pack -h|--help
 
 可向 `dotnet pack` 命令提供 MSBuild 属性，用于打包进程。 有关详细信息，请参阅 [NuGet 元数据属性](csproj.md#nuget-metadata-properties)和 [MSBuild 命令行引用](/visualstudio/msbuild/msbuild-command-line-reference)。 [示例](#examples)部分介绍了如何在不同的情况下使用 MSBuild -p 开关。
 
-默认情况下，Web 项目不可打包。 若要覆盖默认行为，请将以下属性添加到 .csproj  文件中：
+默认情况下，Web 项目不可打包。 若要覆盖默认行为，请将以下属性添加到 .csproj 文件中：
 
 ```xml
 <PropertyGroup>
@@ -64,7 +64,7 @@ dotnet pack -h|--help
 
 `PROJECT | SOLUTION`
 
-  要打包的项目或解决方案。 它可能是 [csproj](csproj.md) 文件、解决方案文件或目录的路径。 如果未指定，此命令会搜索当前目录，以获取项目文件或解决方案文件。
+  要打包的项目或解决方案。 它可能是 [csproj 文件](csproj.md)、vbproj 文件、fsproj 文件、解决方案文件或目录的路径。 如果未指定，此命令会搜索当前目录，以获取项目文件或解决方案文件。
 
 ## <a name="options"></a>选项
 
@@ -74,7 +74,7 @@ dotnet pack -h|--help
 
 - **`--force`**
 
-  强制解析所有依赖项，即使上次还原已成功，也不例外。 指定此标记等同于删除 project.assets.json 文件  。
+  强制解析所有依赖项，即使上次还原已成功，也不例外。 指定此标记等同于删除 project.assets.json 文件。
 
 - **`-h|--help`**
 
@@ -178,7 +178,7 @@ dotnet pack -h|--help
   dotnet pack --runtime win10-x64
   ```
 
-- 使用 .nuspec 文件打包项目  ：
+- 使用 .nuspec 文件打包项目：
 
   ```dotnetcli
   dotnet pack ~/projects/app1/project.csproj -p:NuspecFile=~/projects/app1/project.nuspec -p:NuspecBasePath=~/projects/app1/nuget

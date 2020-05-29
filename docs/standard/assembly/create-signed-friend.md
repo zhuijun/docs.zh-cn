@@ -1,16 +1,17 @@
 ---
 title: 如何：创建已签名的友元程序集
+description: 本文演示如何将友元程序集和具有强名称的程序集一起使用。 其中包含有关 .NET 安全性的信息。
 ms.date: 08/19/2019
 ms.assetid: bab62063-61e6-453f-905f-77673df9534e
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 9912fa70014a8828e994cf528644aaa7cb351fea
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b6176afed44e32911a37a0d753cea2bae7d8554e
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159489"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378546"
 ---
 # <a name="how-to-create-signed-friend-assemblies"></a>如何：创建已签名的友元程序集
 本示例演示如何将友元程序集和具有强名称的程序集一起使用。 这两种程序集必须都使用强名称。 尽管本示例中的两种程序集使用相同的密钥，但可以对这两种程序集使用不同的密钥。  
@@ -21,19 +22,19 @@ ms.locfileid: "78159489"
   
 2. 使用强名称工具，通过以下命令序列生成 keyfile 并显示其公钥。 有关详细信息，请参阅 [Sn.exe（强名称工具）](../../framework/tools/sn-exe-strong-name-tool.md)。  
   
-    1. 生成此示例的强名称密钥，并将其存储在 FriendAssemblies.snk 文件中  ：  
+    1. 生成此示例的强名称密钥，并将其存储在 FriendAssemblies.snk 文件中：  
   
          `sn -k FriendAssemblies.snk`  
   
-    2. 从 FriendAssemblies.snk 文件中提取公钥，将其放入 FriendAssemblies.publickey 中   ：  
+    2. 从 FriendAssemblies.snk 文件中提取公钥，将其放入 FriendAssemblies.publickey 中 ：  
   
          `sn -p FriendAssemblies.snk FriendAssemblies.publickey`  
   
-    3. 显示存储在 FriendAssemblies.publickey 文件中的公钥  ：  
+    3. 显示存储在 FriendAssemblies.publickey 文件中的公钥：  
   
          `sn -tp FriendAssemblies.publickey`  
   
-3. 创建名为 friend_signed_A 的 C# 或 Visual Basic 文件，其中包含以下代码  。 该代码使用 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性将 friend_signed_B 声明为友元程序集  。  
+3. 创建名为 friend_signed_A 的 C# 或 Visual Basic 文件，其中包含以下代码。 该代码使用 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性将 friend_signed_B 声明为友元程序集。  
 
    强名称工具在每次运行时生成新的公钥。 因此，必须将以下代码中的公钥替换为刚生成的公钥，如以下示例所示。  
 
@@ -69,7 +70,7 @@ ms.locfileid: "78159489"
    End Class  
    ```  
 
-4. 使用以下命令编译 friend_signed_A 并为其签名  。  
+4. 使用以下命令编译 friend_signed_A 并为其签名。  
 
    ```csharp
    csc /target:library /keyfile:FriendAssemblies.snk friend_signed_A.cs  
@@ -79,7 +80,7 @@ ms.locfileid: "78159489"
    Vbc -target:library -keyfile:FriendAssemblies.snk friend_signed_A.vb  
    ```  
 
-5. 创建名为 friend_signed_B 的 C# 或 Visual Basic 文件，其中包含以下代码  。 由于 friend_signed_A 将 friend_signed_B 指定为友元程序集，因此 friend_signed_B 中的代码可以访问 friend_signed_A 中的 `internal` (C#) 或 `Friend` (Visual Basic) 类型和成员     。 文件包含以下代码。  
+5. 创建名为 friend_signed_B 的 C# 或 Visual Basic 文件，其中包含以下代码。 由于 friend_signed_A 将 friend_signed_B 指定为友元程序集，因此 friend_signed_B 中的代码可以访问 friend_signed_A 中的 `internal` (C#) 或 `Friend` (Visual Basic) 类型和成员   。 文件包含以下代码。  
 
    ```csharp  
    // friend_signed_B.cs  
@@ -107,7 +108,7 @@ ms.locfileid: "78159489"
    End Module  
    ```  
 
-6. 使用以下命令编译 friend_signed_B 并为其签名  。  
+6. 使用以下命令编译 friend_signed_B 并为其签名。  
 
    ```csharp
    csc /keyfile:FriendAssemblies.snk /r:friend_signed_A.dll /out:friend_signed_B.exe friend_signed_B.cs  
@@ -117,11 +118,11 @@ ms.locfileid: "78159489"
    vbc -keyfile:FriendAssemblies.snk -r:friend_signed_A.dll friend_signed_B.vb  
    ```  
 
-   编译器生成的程序集的名称必须与传递给 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性的友元程序集的名称匹配。 必须使用 `-out` 编译器选项显式指定输出程序集（.exe 或 .dll）的名称   。 有关详细信息，请参阅 [-out（C# 编译器选项）](../../csharp/language-reference/compiler-options/out-compiler-option.md)或 [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md)。  
+   编译器生成的程序集的名称必须与传递给 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性的友元程序集的名称匹配。 必须使用 `-out` 编译器选项显式指定输出程序集（.exe 或 .dll）的名称 。 有关详细信息，请参阅 [-out（C# 编译器选项）](../../csharp/language-reference/compiler-options/out-compiler-option.md)或 [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md)。  
 
-7. 运行 friend_signed_B.exe 文件  。  
+7. 运行 friend_signed_B.exe 文件。  
 
-   程序将输出字符串“Class1.Test”  。  
+   程序将输出字符串“Class1.Test”。  
   
 ## <a name="net-security"></a>.NET 安全性  
  <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性和 <xref:System.Security.Permissions.StrongNameIdentityPermission> 类之间具有相似之处。 主要区别是，<xref:System.Security.Permissions.StrongNameIdentityPermission> 可以要求安全权限来运行一段特定代码，而 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性控制 `internal` (C#) 和 `Friend` (Visual Basic) 类型和成员的可见性。  

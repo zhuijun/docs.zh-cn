@@ -3,25 +3,25 @@ title: 教程：编写第一个分析器和代码修补程序
 description: 本教程提供了有关使用 .NET 编译器 SDK (Roslyn API) 生成分析器和代码修补程序的分步说明。
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: d6c3ddff288bf114e1c257ae77ebf3a419913990
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 23ebf4befc75e08592890d85f2dda51251f59cd6
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895441"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396285"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>教程：编写第一个分析器和代码修补程序
 
-.NET Compiler Platform SDK 提供创建面向 C# 或 Visual Basic 代码的自定义警告所需的工具。 分析器  包含识别规则冲突的代码。 代码修补程序  包含修复冲突的代码。 实现的规则可以是从代码结构到编码样式再到命名约定之类的任何内容。 .NET Compiler Platform 在开发人员编写代码时提供运行分析的框架，以及用于修复代码的所有 Visual Studio UI 功能：显示编辑器中的波形曲线、填充 Visual Studio 错误列表、创建“灯泡”建议，并显示建议修补程序的丰富预览。
+.NET Compiler Platform SDK 提供创建面向 C# 或 Visual Basic 代码的自定义警告所需的工具。 分析器包含识别规则冲突的代码。 代码修补程序包含修复冲突的代码。 实现的规则可以是从代码结构到编码样式再到命名约定之类的任何内容。 .NET Compiler Platform 在开发人员编写代码时提供运行分析的框架，以及用于修复代码的所有 Visual Studio UI 功能：显示编辑器中的波形曲线、填充 Visual Studio 错误列表、创建“灯泡”建议，并显示建议修补程序的丰富预览。
 
-在本教程中，将探讨使用 Roslyn API 创建分析器  以及随附的代码修补程序  。 分析器是一种执行源代码分析并向用户报告问题的方法。 （可选）分析器还可以提供表示对用户源代码进行修改的代码修补程序。 本教程将创建一个分析器，用于查找可以使用 `const` 修饰符声明的但未执行此操作的局部变量声明。 随附的代码修补程序修改这些声明来添加 `const` 修饰符。
+在本教程中，将探讨使用 Roslyn API 创建分析器以及随附的代码修补程序。 分析器是一种执行源代码分析并向用户报告问题的方法。 （可选）分析器还可以提供表示对用户源代码进行修改的代码修补程序。 本教程将创建一个分析器，用于查找可以使用 `const` 修饰符声明的但未执行此操作的局部变量声明。 随附的代码修补程序修改这些声明来添加 `const` 修饰符。
 
 ## <a name="prerequisites"></a>先决条件
 
 - [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
 - [Visual Studio 2019](https://www.visualstudio.com/downloads)
 
-必须通过 Visual Studio 安装程序安装 .NET 编译器平台 SDK  ：
+必须通过 Visual Studio 安装程序安装 .NET 编译器平台 SDK：
 
 [!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
@@ -49,13 +49,13 @@ const int x = 0;
 Console.WriteLine(x);
 ```
 
-涉及到确定变量是否可以保持不变的分析，需要进行句法分析、初始值设定项的常量分析和数据流分析，以确保永远不会写入该变量。 .NET Compiler Platform 提供了 API，以便更轻松地执行此分析。 第一步是创建一个新的 C#“随附代码修补程序的分析器”  项目。
+涉及到确定变量是否可以保持不变的分析，需要进行句法分析、初始值设定项的常量分析和数据流分析，以确保永远不会写入该变量。 .NET Compiler Platform 提供了 API，以便更轻松地执行此分析。 第一步是创建一个新的 C#“随附代码修补程序的分析器”项目。
 
-- 在 Visual Studio 中，选择“文件”>“新建”>“项目...”  ，显示“新建项目”对话框。
-- 在“Visual C#”>“扩展性”  下，选择“随附代码修补程序的分析器 (.NET Standard)”  。
-- 给项目“MakeConst”  命名，然后单击“确定”。
+- 在 Visual Studio 中，选择“文件”>“新建”>“项目...”，显示“新建项目”对话框。
+- 在“Visual C#”>“扩展性”下，选择“随附代码修补程序的分析器 (.NET Standard)”。
+- 给项目“MakeConst”命名，然后单击“确定”。
 
-使用代码修复模板的分析器将创建三个项目：一个包含分析器和代码修补程序，第二个是单元测试项目，第三个是 VSIX 项目。 默认启动项目是 VSIX 项目。 按 F5  启动 VSIX 项目。 这将启动已加载新分析器的第二个 Visual Studio 实例。
+使用代码修复模板的分析器将创建三个项目：一个包含分析器和代码修补程序，第二个是单元测试项目，第三个是 VSIX 项目。 默认启动项目是 VSIX 项目。 按 F5 启动 VSIX 项目。 这将启动已加载新分析器的第二个 Visual Studio 实例。
 
 > [!TIP]
 > 在运行分析器时，请启动 Visual Studio 的第二个副本。 此第二个副本使用不同的注册表配置单元来存储设置。 这样便可以将 Visual Studio 两个副本中的可视化设置区分开来。 可以选择 Visual Studio 实验性运行的不同主题。 此外，不要在设置中漫游，也不要使用 Visual Studio 的实验性运行登录到 Visual Studio 帐户。 这样可以使设置保持不同。
@@ -75,7 +75,7 @@ Console.WriteLine(x);
 
 ## <a name="create-analyzer-registrations"></a>创建分析器注册
 
-该模板将在 MakeConstAnalyzer.cs  文件中创建初始 `DiagnosticAnalyzer` 类。 此初始分析器显示每个分析器的两个重要属性。
+该模板将在 MakeConstAnalyzer.cs 文件中创建初始 `DiagnosticAnalyzer` 类。 此初始分析器显示每个分析器的两个重要属性。
 
 - 每个诊断分析器必须提供 `[DiagnosticAnalyzer]` 属性，用于描述其操作所用的语言。
 - 每个诊断分析器必须派生自 <xref:Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer> 类。
@@ -85,19 +85,19 @@ Console.WriteLine(x);
 1. 注册操作。 此操作表示应触发分析器以检查存在冲突的代码的代码更改。 当 Visual Studio 检测到匹配注册操作的代码编辑时，它调用分析器的注册方法。
 1. 创建诊断。 当分析器检测到冲突，它会创建一个诊断对象，Visual Studio 使用该对象来通知用户有关冲突的信息。
 
-在重写的 <xref:Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer.Initialize(Microsoft.CodeAnalysis.Diagnostics.AnalysisContext)?displayProperty=nameWithType> 方法中注册操作。 在本教程中，你将访问“语法节点”  寻找局部声明，并查看哪些具有常量值。 如果声明可以是常量，分析器将创建并报告诊断。
+在重写的 <xref:Microsoft.CodeAnalysis.Diagnostics.DiagnosticAnalyzer.Initialize(Microsoft.CodeAnalysis.Diagnostics.AnalysisContext)?displayProperty=nameWithType> 方法中注册操作。 在本教程中，你将访问“语法节点”寻找局部声明，并查看哪些具有常量值。 如果声明可以是常量，分析器将创建并报告诊断。
 
-第一步是更新注册常量和 `Initialize` 方法，以便这些常量指示“Make Const”分析器。 大多数字符串常量在字符串资源文件中定义。 应遵循此做法，以便更轻松地实现本地化。 打开“MakeConst”  分析器项目的“Resources.resx”  。 将显示资源编辑器。 更新字符串资源，如下所示：
+第一步是更新注册常量和 `Initialize` 方法，以便这些常量指示“Make Const”分析器。 大多数字符串常量在字符串资源文件中定义。 应遵循此做法，以便更轻松地实现本地化。 打开“MakeConst”分析器项目的“Resources.resx”。 将显示资源编辑器。 更新字符串资源，如下所示：
 
 - 将 `AnalyzerTitle` 更改为“变量可以保持不变”。
 - 将 `AnalyzerMessageFormat` 更改为“可以保持不变”。
 - 将 `AnalyzerDescription` 更改为“保持不变”。
 
-此外，将“访问修饰符”  下拉列表更改为 `public`。 这样可以更轻松地在单元测试中使用这些常量。 完成后，资源编辑器应如下图所示：
+此外，将“访问修饰符”下拉列表更改为 `public`。 这样可以更轻松地在单元测试中使用这些常量。 完成后，资源编辑器应如下图所示：
 
 ![更新字符串资源](media/how-to-write-csharp-analyzer-code-fix/update-string-resources.png)
 
-剩余的更改在分析器文件中。 在 Visual Studio 中打开“MakeConstAnalyzer.cs”  。 将注册操作从作用于符号的操作更改为作用于语法的操作。 在 `MakeConstAnalyzerAnalyzer.Initialize` 方法中，找到在符号上注册操作的行：
+剩余的更改在分析器文件中。 在 Visual Studio 中打开“MakeConstAnalyzer.cs”。 将注册操作从作用于符号的操作更改为作用于语法的操作。 在 `MakeConstAnalyzerAnalyzer.Initialize` 方法中，找到在符号上注册操作的行：
 
 ```csharp
 context.RegisterSymbolAction(AnalyzeSymbol, SymbolKind.NamedType);
@@ -115,7 +115,7 @@ private void AnalyzeNode(SyntaxNodeAnalysisContext context)
 }
 ```
 
-将 `Category` 更改为 MakeConstAnalyzer.cs  中的“Usage”，如以下代码所示：
+将 `Category` 更改为 MakeConstAnalyzer.cs 中的“Usage”，如以下代码所示：
 
 ```csharp
 private const string Category = "Usage";
@@ -130,7 +130,7 @@ int x = 0;
 Console.WriteLine(x);
 ```
 
-第一步是查找局部声明。 将以下代码添加到 MakeConstAnalyzer.cs  中的 `AnalyzeNode`：
+第一步是查找局部声明。 将以下代码添加到 MakeConstAnalyzer.cs 中的 `AnalyzeNode`：
 
 ```csharp
 var localDeclaration = (LocalDeclarationStatementSyntax)context.Node;
@@ -170,7 +170,7 @@ if (dataFlowAnalysis.WrittenOutside.Contains(variableSymbol))
 context.ReportDiagnostic(Diagnostic.Create(Rule, context.Node.GetLocation()));
 ```
 
-可以通过按 F5  运行分析器来检查进度。 可以加载前面创建的控制台应用程序，然后添加以下测试代码：
+可以通过按 F5 运行分析器来检查进度。 可以加载前面创建的控制台应用程序，然后添加以下测试代码：
 
 ```csharp
 int x = 0;
@@ -190,7 +190,7 @@ Console.WriteLine(x);
 
 用户从编辑器的灯泡 UI 中选择它，Visual Studio 更改代码。
 
-打开由模板添加的“MakeConstCodeFixProvider.cs”  文件。  此代码修补程序已绑定到由诊断分析器生成的诊断 ID，但它尚没有实施正确的代码转换。 首先应删除一些模板代码。 将标题字符串更改为“保持不变”：
+打开由模板添加的“MakeConstCodeFixProvider.cs”文件。  此代码修补程序已绑定到由诊断分析器生成的诊断 ID，但它尚没有实施正确的代码转换。 首先应删除一些模板代码。 将标题字符串更改为“保持不变”：
 
 [!code-csharp[Update the CodeFix title](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#CodeFixTitle "Update the CodeFix title")]
 
@@ -235,7 +235,7 @@ var newLocal = trimmedLocal
 
 [!code-csharp[Format the new declaration](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#FormatLocal  "Format the new declaration")]
 
-此代码需要新命名空间。 将下面的 `using` 语句添加到文件顶部：
+此代码需要新命名空间。 将下面的 `using` 指令添加到文件的顶部：
 
 ```csharp
 using Microsoft.CodeAnalysis.Formatting;
@@ -261,7 +261,7 @@ using Microsoft.CodeAnalysis.Formatting;
 
 分析器和代码修补程序在简单的单个声明情况下工作，可以对其进行 const 处理。 在许多可能的声明语句中，该实现会出错。 可以通过使用模板编写的单元测试库来处理这种情况。 它要比反复打开 Visual Studio 的第二个副本快得多。
 
-打开单元测试项目中的“MakeConstUnitTests.cs”  文件。 该模板会创建两个测试，这些测试遵循分析器和代码修补程序单元测试的两种常见模式。 `TestMethod1` 显示测试模式，确保分析器在不应报告诊断的情况下不会执行此操作。 `TestMethod2` 演示用于报告诊断和运行代码修补程序的模式。
+打开单元测试项目中的“MakeConstUnitTests.cs”文件。 该模板会创建两个测试，这些测试遵循分析器和代码修补程序单元测试的两种常见模式。 `TestMethod1` 显示测试模式，确保分析器在不应报告诊断的情况下不会执行此操作。 `TestMethod2` 演示用于报告诊断和运行代码修补程序的模式。
 
 适用于分析器几乎每个测试的代码遵循这两种模式之一。 对于第一步，可以将这些测试作为数据驱动测试重新进行。 然后，可以轻松通过添加新字符串常量来表示不同的测试输入创建新的测试。
 
@@ -310,7 +310,7 @@ public void WhenDiagnosticIsRaisedFixUpdatesCode(
 
 [!code-csharp[string constants for fix test](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#FirstFixTest "string constants for fix test")]
 
-运行这两个测试，以确保其通过。 在 Visual Studio 中，通过选择“测试”   > “Windows”   > “测试资源管理器”  来打开“测试资源管理器”  。  按下“全部运行”  链接。
+运行这两个测试，以确保其通过。 在 Visual Studio 中，通过选择“测试” > “Windows” > “测试资源管理器”来打开“测试资源管理器”。  按下“全部运行”链接。
 
 ## <a name="create-tests-for-valid-declarations"></a>为有效声明创建测试
 
@@ -445,7 +445,7 @@ foreach (var variable in localDeclaration.Declaration.Variables)
 
 幸运的是，所有上述 bug 可以使用你刚刚了解的相同技术解决。
 
-若要修复第一个 bug，请先打开“DiagnosticAnalyzer.cs”  并找到 foreach 循环，将检查其中每个局部声明的初始值设定项以确保向其分配常量值。 在第一个 foreach 循环之前  ，立即调用 `context.SemanticModel.GetTypeInfo()` 来检索有关局部声明的声明类型的详细信息：
+若要修复第一个 bug，请先打开“DiagnosticAnalyzer.cs”并找到 foreach 循环，将检查其中每个局部声明的初始值设定项以确保向其分配常量值。 在第一个 foreach 循环之前，立即调用 `context.SemanticModel.GetTypeInfo()` 来检索有关局部声明的声明类型的详细信息：
 
 ```csharp
 var variableTypeName = localDeclaration.Declaration.Type;
@@ -485,7 +485,7 @@ else if (variableType.IsReferenceType && constantValue.Value != null)
 }
 ```
 
-必须在代码修复提供程序中编写更多代码中以将 var 关键字替换为正确类型名称。 返回到 CodeFixProvider.cs  。 要添加的代码将执行以下步骤：
+必须在代码修复提供程序中编写更多代码中以将 var 关键字替换为正确类型名称。 返回到 CodeFixProvider.cs。 要添加的代码将执行以下步骤：
 
 - 检查声明是否为 `var` 声明，如果它是：
 - 创建新类型的推断类型。
@@ -497,7 +497,7 @@ else if (variableType.IsReferenceType && constantValue.Value != null)
 
 [!code-csharp[Replace Var designations](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#ReplaceVar "Replace a var designation with the explicit type")]
 
-需要添加一个 `using` 语句才能使用 <xref:Microsoft.CodeAnalysis.Simplification.Simplifier> 类型：
+需要添加一个 `using` 指令才能使用 <xref:Microsoft.CodeAnalysis.Simplification.Simplifier> 类型：
 
 ```csharp
 using Microsoft.CodeAnalysis.Simplification;

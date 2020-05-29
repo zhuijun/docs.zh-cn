@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET Framework], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-ms.openlocfilehash: 932a5abfaf2a6cc972e84cbc3d6b930cdd716f71
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 8e4530063f14211688e5ef2d2ec4ed7e4834cdf1
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728175"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212962"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>集合内的比较和排序
 

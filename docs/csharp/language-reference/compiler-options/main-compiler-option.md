@@ -8,12 +8,12 @@ helpviewer_keywords:
 - main compiler option [C#]
 - /main compiler option [C#]
 ms.assetid: 975cf4d5-36ac-4530-826c-4aad0c7f2049
-ms.openlocfilehash: 6c842abc1423e7ee0d98b71392e02410c6cf9172
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7d3cfce474023907eda0bc40b692e4bbb65ffb96
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69602733"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83802835"
 ---
 # <a name="-main-c-compiler-options"></a>-main（C# 编译器选项）
 如果多个类包含 **Main** 方法，此选项将指定包含程序入口点的类。  
@@ -24,7 +24,7 @@ ms.locfileid: "69602733"
 -main:class  
 ```  
   
-## <a name="arguments"></a>参数  
+## <a name="arguments"></a>自变量  
  `class`  
  此类型包含 **Main** 方法。  
  提供的类名必须是完全限定类名；它必须包括完整命名空间（包含类），后跟类名。 例如，当 `Main` 方法位于 `MyApplication.Core` 命名空间中的 `Program` 类中时，编译器选项必须为 `-main:MyApplication.Core.Program`。
@@ -36,14 +36,25 @@ ms.locfileid: "69602733"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>在 Visual Studio 开发环境中设置此编译器选项  
   
-1. 打开项目的“属性”  页。  
+1. 打开项目的“属性”页。  
   
-2. 单击“应用程序”  属性页。  
+2. 单击“应用程序”属性页。  
   
-3. 修改“启动对象”  属性。  
+3. 修改“启动对象”属性。  
   
      若要以编程方式设置此编译器选项，请参阅 <xref:VSLangProj80.ProjectProperties3.StartupObject%2A>。  
   
+### <a name="to-set-this-compiler-option-by-manually-editing-the-csproj-file"></a>通过手动编辑 .csproj 文件来设置此编译器选项
+  
+可以通过编辑 .csproj 文件并在 `PropertyGroup` 部分添加元素 `StartupObject` 来设置此选项。 例如：
+
+```
+  <PropertyGroup>
+    ...
+    <StartupObject>MyApplication.Core.Program</StartupObject>
+  </PropertyGroup>
+```
+
 ## <a name="example"></a>示例  
  编译 `t2.cs` 和 `t3.cs`，指出 **Main** 方法可在 `Test2` 中找到：  
   
@@ -51,7 +62,7 @@ ms.locfileid: "69602733"
 csc t2.cs t3.cs -main:Test2  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编译器选项](./index.md)
 - [管理项目和解决方案属性](/visualstudio/ide/managing-project-and-solution-properties)

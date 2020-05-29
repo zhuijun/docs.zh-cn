@@ -3,12 +3,12 @@ title: 从 .NET Framework 到 .NET Core 的中断性变更
 titleSuffix: ''
 description: 列出了从 .NET Framework 到 .NET Core 的中断性变更。
 ms.date: 05/05/2020
-ms.openlocfilehash: bb18e38fecc0805dfafe6a16c853ae04fd2a2913
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: f830d4571f21752900b35a7462bf0881673d6d2e
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82859940"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420443"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>从 .NET Framework 迁移到 .NET Core 的中断性变更
 
@@ -23,6 +23,7 @@ ms.locfileid: "82859940"
 - [FileSystemInfo.Attributes 引发的 UnauthorizedAccessException](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes)
 - [不支持处理损坏的进程状态异常](#handling-corrupted-state-exceptions-is-not-supported)
 - [UriBuilder 属性不再预置前导字符](#uribuilder-properties-no-longer-prepend-leading-characters)
+- [Process.StartInfo 对未启动的进程引发 InvalidOperationException](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start)
 
 ### <a name="net-core-21"></a>.NET Core 2.1
 
@@ -44,6 +45,10 @@ ms.locfileid: "82859940"
 
 ***
 
+[!INCLUDE [startinfo-throws-exception](../../../includes/core-changes/corefx/1.0/startinfo-throws-exception.md)]
+
+***
+
 ## <a name="cryptography"></a>密码
 
 - [已考虑 SignedCms.ComputeSignature 的布尔参数](#boolean-parameter-of-signedcmscomputesignature-is-respected)
@@ -51,6 +56,16 @@ ms.locfileid: "82859940"
 ### <a name="net-core-21"></a>.NET Core 2.1
 
 [!INCLUDE [Boolean parameter of SignedCms.ComputeSignature is respected](~/includes/core-changes/cryptography/2.1/compute-signature-silent-parameter.md)]
+
+***
+
+## <a name="msbuild"></a>MSBuild
+
+- [资源清单文件名更改](#resource-manifest-file-name-change)
+
+### <a name="net-core-30"></a>.NET Core 3.0
+
+[!INCLUDE[Resource file names](~/includes/core-changes/msbuild/3.0/resource-manifest-name.md)]
 
 ***
 

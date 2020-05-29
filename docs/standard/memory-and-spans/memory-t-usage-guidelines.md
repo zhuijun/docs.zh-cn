@@ -1,15 +1,16 @@
 ---
 title: 内存<T>和跨度<T>使用准则
+description: 本文介绍内存<T> 和跨度<T>，它们是 .NET Core 中可在管道中使用的结构化数据的缓冲区。
 ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
-ms.openlocfilehash: b89969f212da6ac90d0fb0d1bf388626e136b92e
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: b9405d746c141308c7d984dac9da0d65d1048d1e
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158588"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380017"
 ---
 # <a name="memoryt-and-spant-usage-guidelines"></a>内存\<T> 和跨度\<T> 使用准则
 
@@ -21,7 +22,7 @@ ms.locfileid: "82158588"
 
 由于可以在各个 API 之间传送缓冲区，以及由于缓冲区有时可以从多个线程进行访问，因此请务必考虑生存期管理。 下面介绍三个核心概念：
 
-- **所有权**。 缓冲区实例的所有者负责生存期管理，包括在不再使用缓冲区时将其销毁。 所有缓冲区都拥有一个所有者。 通常，所有者是创建缓冲区或从工厂接收缓冲区的组件。 所有权也可以转让；  组件 A 可以将缓冲区的控制权转让给组件 B  ，此时  组件 A 就无法再使用该缓冲区，  组件 B 将负责在不再使用缓冲区时将其销毁。
+- **所有权**。 缓冲区实例的所有者负责生存期管理，包括在不再使用缓冲区时将其销毁。 所有缓冲区都拥有一个所有者。 通常，所有者是创建缓冲区或从工厂接收缓冲区的组件。 所有权也可以转让；组件 A 可以将缓冲区的控制权转让给组件 B，此时组件 A 就无法再使用该缓冲区，组件 B 将负责在不再使用缓冲区时将其销毁。
 
 - **使用**。 允许缓冲区实例的使用者通过从中读取并可能写入其中来使用缓冲区实例。 缓冲区一次可以拥有一个使用者，除非提供了某些外部同步机制。 缓冲区的当前使用者不一定是缓冲区的所有者。
 

@@ -3,19 +3,19 @@ title: 调试分析配置设置
 description: 了解为 .NET Core 应用配置调试和分析的运行时设置。
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: c57cfa7233f48def890ded3c9d589b7f268147df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5efd0f776da4b7ce6ff7f3bdfda24feec6e00f79
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74998857"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761988"
 ---
 # <a name="run-time-configuration-options-for-debugging-and-profiling"></a>用于调试和分析的运行时配置选项
 
 ## <a name="enable-diagnostics"></a>启用诊断
 
 - 配置是启用还是禁用调试器、探查器和 EventPipe 诊断。
-- 默认：启用 (`1`)。
+- 如果省略此设置，则会启用诊断。 它等效于将值设置为 `1`。
 
 | | 设置名 | 值 |
 | - | - | - |
@@ -25,7 +25,7 @@ ms.locfileid: "74998857"
 ## <a name="enable-profiling"></a>启用分析
 
 - 配置是否为当前正在运行的进程启用分析。
-- 默认：禁用 (`0`)。
+- 如果省略此设置，则会禁用分析。 它等效于将值设置为 `0`。
 
 | | 设置名 | 值 |
 | - | - | - |
@@ -39,7 +39,7 @@ ms.locfileid: "74998857"
 | | 设置名 | 值 |
 | - | - | - |
 | **runtimeconfig.json** | 不可用 | 不可用 |
-| **环境变量** | `CORECLR_PROFILER` | string-guid  |
+| **环境变量** | `CORECLR_PROFILER` | string-guid |
 
 ## <a name="profiler-location"></a>探查器位置
 
@@ -49,14 +49,14 @@ ms.locfileid: "74998857"
 
 | | 设置名 | 值 |
 | - | - | - |
-| **环境变量** | `CORECLR_PROFILER_PATH` | string-path  |
-| **环境变量** | `CORECLR_PROFILER_PATH_32` | string-path  |
-| **环境变量** | `CORECLR_PROFILER_PATH_64` | string-path  |
+| **环境变量** | `CORECLR_PROFILER_PATH` | string-path |
+| **环境变量** | `CORECLR_PROFILER_PATH_32` | string-path |
+| **环境变量** | `CORECLR_PROFILER_PATH_64` | string-path |
 
 ## <a name="write-perf-map"></a>写入 Perf 映射
 
-- 允许或禁止在 Linux 系统上写入 /tmp/perf-$pid.map  。
-- 默认：禁用 (`0`)。
+- 允许或禁止在 Linux 系统上写入 /tmp/perf-$pid.map。
+- 如果省略此设置，则会禁止写入 Perf 映射。 它等效于将值设置为 `0`。
 
 | | 设置名 | 值 |
 | - | - | - |
@@ -65,10 +65,13 @@ ms.locfileid: "74998857"
 
 ## <a name="perf-log-markers"></a>性能日志标记
 
-- 将 `COMPlus_PerfMapEnabled` 设置为 `1` 时，允许或禁止以性能日志中的标记接受和忽略指定信号。
-- 默认：禁用 (`0`)。
+- 允许或禁止在性能日志中将指定信号作为标记予以接受和忽略。
+- 如果省略此设置，则不会忽略指定的信号。 它等效于将值设置为 `0`。
 
 | | 设置名 | 值 |
 | - | - | - |
 | **runtimeconfig.json** | 不可用 | 不可用 |
 | **环境变量** | `COMPlus_PerfMapIgnoreSignal` | `0` - 禁用<br/>`1` - 启用 |
+
+> [!NOTE]
+> 如果省略 [COMPlus_PerfMapEnabled](#write-perf-map) 或设置为 `0`（即禁用），则将忽略此设置。

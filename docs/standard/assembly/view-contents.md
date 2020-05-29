@@ -1,5 +1,6 @@
 ---
 title: 如何：查看程序集内容
+description: 可以使用 IL 反汇编程序来查看程序集的属性，以及对其他模块和程序集的引用。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assembly manifest, viewing information
@@ -14,28 +15,28 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 179b240bb06a319ff71009e14323d5c8f2740e5c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aed490459252466c6da06e5422b83b1bc20fb885
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79187386"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380071"
 ---
 # <a name="how-to-view-assembly-contents"></a>如何：查看程序集内容
 
 可使用 [Ildasm.exe（IL 反汇编程序）](../../framework/tools/ildasm-exe-il-disassembler.md)查看文件中的 Microsoft 中间语言 (MSIL) 信息。 如果要检查的文件是程序集，此信息可包括程序集的属性以及对其他模块和程序集的引用。 此信息有助于确定文件是程序集还是程序集的一部分，以及文件是否具有对其他模块或程序集的引用。
 
-若要使用 Ildasm.exe 来显示程序集的内容，请在命令提示符下键入“ildasm \<assembly name>”   。 例如，以下命令反汇编 Hello.exe 程序集  。
+若要使用 Ildasm.exe 来显示程序集的内容，请在命令提示符下键入“ildasm \<assembly name>”。 例如，以下命令反汇编 Hello.exe 程序集。
 
 ```cmd
 ildasm Hello.exe
 ```
 
-若要查看程序集清单信息，请在“MSIL 反汇编程序”窗口中双击“清单”图标  。
+若要查看程序集清单信息，请在“MSIL 反汇编程序”窗口中双击“清单”图标。
 
 ## <a name="example"></a>示例
 
-下例以基本的“Hello World”程序开始。 编译该程序后，使用 Ildasm.exe 反汇编 Hello.exe 程序集，并查看程序集清单   。
+下例以基本的“Hello World”程序开始。 编译该程序后，使用 Ildasm.exe 反汇编 Hello.exe 程序集，并查看程序集清单 。
 
 ```cpp
 using namespace System;
@@ -75,7 +76,7 @@ Class MainApp
 End Class
 ```
 
-在 Hello.exe 程序集上运行 ildasm.exe 命令，然后在“MSIL 反汇编程序”窗口中双击“清单”图标生成以下输出    ：
+在 Hello.exe 程序集上运行 ildasm.exe 命令，然后在“MSIL 反汇编程序”窗口中双击“清单”图标生成以下输出 ：
 
 ```output
 // Metadata version: v4.0.30319
@@ -102,19 +103,19 @@ End Class
 // Image base: 0x00600000
 ```
 
-下表描述了本例所使用 Hello.exe 程序集的程序集清单中的各项指令  ：
+下表描述了本例所使用 Hello.exe 程序集的程序集清单中的各项指令：
 
 |指令|描述|
 |---------------|-----------------|
-|.assembly extern \<assembly name> |指定包含当前模块所引用项目的另一程序集（在此示例中为 `mscorlib`）。|
-|.publickeytoken \<token> |指定引用程序集的实际密钥的标记。|
-|.ver \<version number> |指定引用程序集的版本号。|
-|.assembly \<assembly name> |指定程序集名称。|
-|.hash algorithm \<int32 value> |指定使用的哈希算法。|
-|.ver \<version number> |指定程序集的版本号。|
-|.module \<file name> |指定组成程序集的模块名称。 在此示例中，程序集只包含一个文件。|
-|.subsystem \<value> |指定程序要求的应用程序环境。 在此示例中，值 3 表示该可执行文件从控制台运行。|
-|.corflags |当前是元数据中的一个保留字段。|
+|.assembly extern \<assembly name>|指定包含当前模块所引用项目的另一程序集（在此示例中为 `mscorlib`）。|
+|.publickeytoken \<token>|指定引用程序集的实际密钥的标记。|
+|.ver \<version number>|指定引用程序集的版本号。|
+|.assembly \<assembly name>|指定程序集名称。|
+|.hash algorithm \<int32 value>|指定使用的哈希算法。|
+|.ver \<version number>|指定程序集的版本号。|
+|.module \<file name>|指定组成程序集的模块名称。 在此示例中，程序集只包含一个文件。|
+|.subsystem \<value>|指定程序要求的应用程序环境。 在此示例中，值 3 表示该可执行文件从控制台运行。|
+|.corflags|当前是元数据中的一个保留字段。|
 
 根据程序集的内容，程序集清单可包含许多不同的指令。 有关程序集清单中指令的详尽列表，请参阅 Ecma 文档，特别是“第 II 部分：Metadata Definition and Semantics”（第 2 部分：元数据定义和语义）和“Partition III:CIL 指令集”：
 

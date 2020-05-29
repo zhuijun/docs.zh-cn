@@ -1,13 +1,14 @@
 ---
 title: 如何：加载和卸载程序集
+description: CLR 会自动加载程序引用的 .NET 程序集。 你还可以将特定程序集动态加载到当前应用程序域。
 ms.date: 08/19/2019
 ms.assetid: 6a4f490f-3576-471f-9533-003737cad4a3
-ms.openlocfilehash: a520ffd41c3465737be7494d374cbcf64e3f1b85
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e6f1ede055dd3f68bced4eba527b2fc65f7d5715
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78155771"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378683"
 ---
 # <a name="how-to-load-and-unload-assemblies"></a>如何：加载和卸载程序集
 公共语言运行时会自动加载程序所引用的程序集，但也可以将特定的程序集动态加载到当前的应用程序域。 有关详细信息，请参阅[如何：将程序集加载到应用程序域中](../../framework/app-domains/how-to-load-assemblies-into-an-application-domain.md)。

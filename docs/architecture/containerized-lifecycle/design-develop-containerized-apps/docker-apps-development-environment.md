@@ -1,13 +1,13 @@
 ---
 title: Docker 应用的开发环境
 description: 了解支持 Docker 开发生命周期的最重要的开发工具选项。
-ms.date: 02/15/2019
-ms.openlocfilehash: 35236e75f47e830d0970ca9cfd074d9a69e6f85c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 04/16/2020
+ms.openlocfilehash: b1df16db88fa85f794407c989f5428030c4cddf7
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "71214304"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394890"
 ---
 # <a name="development-environment-for-docker-apps"></a>Docker 应用的开发环境
 
@@ -26,7 +26,7 @@ ms.locfileid: "71214304"
 
 ### <a name="visual-studio-with-docker-tools-windows-development-machine"></a>附带 Docker 工具的 Visual Studio（Windows 开发计算机）
 
-建议使用启用内置 Docker 工具的 Visual Studio 2017（或更高版本）。 使用 Visual Studio，可以直接在所选的 Docker 环境中开发、运行和验证应用程序。 按 F5，即可直接在 Docker 主机中调试应用程序（单个容器或多个容器）；也可以按 Ctrl+F5，无需重新生成容器，即可编辑并刷新应用。 对于创建用于 Linux 或 Windows 的 Docker 容器的 Windows 开发人员，这是最简单且功能最强大的选择。
+建议使用启用了内置 Docker 工具的 Visual Studio 2019。 使用 Visual Studio，可以直接在所选的 Docker 环境中开发、运行和验证应用程序。 按 F5，即可直接在 Docker 主机中调试应用程序（单个容器或多个容器）；也可以按 Ctrl+F5，无需重新生成容器，即可编辑并刷新应用。 对于创建用于 Linux 或 Windows 的 Docker 容器的 Windows 开发人员，这是最简单且功能最强大的选择。
 
 ### <a name="visual-studio-for-mac-mac-development-machine"></a>Visual Studio for Mac（Mac 开发计算机）
 

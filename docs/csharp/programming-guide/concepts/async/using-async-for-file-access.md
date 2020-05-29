@@ -2,12 +2,12 @@
 title: 使用异步进行文件访问 (C#)
 ms.date: 07/20/2015
 ms.assetid: bb018fea-5313-4c80-ab3f-7c24b2145bd9
-ms.openlocfilehash: e6b0370049d9b9315de6a72d0e84c080aac12481
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8e0a62c2263ed3fd11eb4accb54978ef439ac010
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69595543"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396960"
 ---
 # <a name="using-async-for-file-access-c"></a>使用异步进行文件访问 (C#)
 可使用异步功能访问文件。 通过使用异步功能，你可以调用异步方法而无需使用回调，也不需要跨多个方法或 lambda 表达式来拆分代码。 若要使同步代码异步，只需调用异步方法而非同步方法，并向代码中添加几个关键字。  
@@ -25,9 +25,9 @@ ms.locfileid: "69595543"
 - 异步任务可以轻松地并行运行。  
   
 ## <a name="running-the-examples"></a>运行示例  
- 若要运行本主题中的示例，可创建“WPF 应用程序”  或“Windows 窗体应用程序”  ，然后添加一个“按钮”  。 在按钮的 `Click` 事件中，添加对每个示例的第一个方法的调用。  
+ 若要运行本主题中的示例，可创建“WPF 应用程序”或“Windows 窗体应用程序”，然后添加一个“按钮”。 在按钮的 `Click` 事件中，添加对每个示例的第一个方法的调用。  
   
- 在下面的示例中，包括以下 `using` 语句。  
+ 在下面的示例中，包括以下 `using` 指令。  
   
 ```csharp  
 using System;  
@@ -174,7 +174,7 @@ public async Task ProcessWriteMultAsync()
   
  当使用 <xref:System.IO.Stream.WriteAsync%2A> 和 <xref:System.IO.Stream.ReadAsync%2A> 方法时，可以指定可用于取消操作中间流的 <xref:System.Threading.CancellationToken>。 有关详细信息，请参阅[微调异步应用程序 (C#)](./fine-tuning-your-async-application.md) 和 [Cancellation in Managed Threads](../../../../standard/threading/cancellation-in-managed-threads.md)（托管线程中的取消）。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用 Async 和 Await 的异步编程 (C#)](./index.md)
 - [异步返回类型 (C#)](./async-return-types.md)

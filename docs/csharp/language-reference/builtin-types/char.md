@@ -1,18 +1,18 @@
 ---
 title: char 类型 - C# 引用
-ms.date: 11/22/2019
+ms.date: 05/11/2020
 f1_keywords:
 - char
 - char_CSharpKeyword
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: a07cae6e607bb6cda965240c669c655207632298
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: f771626e9777deab30e798559d847615d6124e6d
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739056"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205779"
 ---
 # <a name="char-c-reference"></a>char（C# 参考）
 
@@ -23,6 +23,8 @@ ms.locfileid: "81739056"
 |`char`|U+0000 到 U+FFFF|16 位|<xref:System.Char?displayProperty=nameWithType>|
 
 `char` 类型的默认值为 `\0`，即 U+0000。
+
+`char` 类型支持[比较](../operators/comparison-operators.md)、[相等](../operators/equality-operators.md)、[增量](../operators/arithmetic-operators.md#increment-operator-)和[减量](../operators/arithmetic-operators.md#decrement-operator---)运算符。 此外，对于 `char` 操作数，[算数](../operators/arithmetic-operators.md)和[逻辑位](../operators/bitwise-and-shift-operators.md)运算符对相应的字符代码执行操作，并得出 `int` 类型的结果。
 
 [字符串](reference-types.md#the-string-type)类型将文本表示为 `char` 值的序列。
 

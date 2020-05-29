@@ -1,20 +1,21 @@
 ---
 title: XML Schema Definition Tool (Xsd.exe)
+description: XML 序列化程序生成器为特定程序集中的类型创建 XML 序列化程序集，从而提高 XmlSerializer 的启动性能。
 ms.date: 03/30/2017
 ms.assetid: a6e6e65c-347f-4494-9457-653bf29baac2
-ms.openlocfilehash: 6ec99e77db4215184547ea2bbbe0d1ff8ad3c286
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 9b2be0b0b267973bd25ffd021dec18a7b9bcadec
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389775"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380051"
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>XML Schema Definition Tool (Xsd.exe)
 
 XML 架构定义 (Xsd.exe) 工具从 XDR、XML 和 XSD 文件或者从运行时程序集中的类生成 XML 架构或公共语言运行时类。
 
 XML 架构定义工具 (Xsd.exe) 通常可在以下路径中找到：\
-C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\{版本}\\bin\\NETFX {版本} Tools\\ 
+C:\\Program Files (x86)\\Microsoft SDKs\\Windows\\{版本}\\bin\\NETFX {版本} Tools\\
 
 ## <a name="syntax"></a>语法
 
@@ -37,45 +38,45 @@ xsd {file.dll | file.exe} [-outputdir:directory] [/type:typename [...]][/paramet
 
 |参数|描述|
 |--------------|-----------------|
-|file.extension |指定要转换的输入文件。 必须将扩展名指定为下列之一：.xdr、.xml、.xsd、.dll 或 .exe。<br /><br /> 如果指定一个 XDR 架构文件（.xdr 扩展名），则 Xsd.exe 将 XDR 架构转换为 XSD 架构。 输出文件与 XDR 架构同名，但扩展名为 .xsd。<br /><br /> 如果指定一个 XML 文件（.xml 扩展名），则 Xsd.exe 从文件中的数据推导出架构并产生一个 XSD 架构。 输出文件与 XML 文件同名，但扩展名为 .xsd。<br /><br /> 如果指定一个 XML 架构文件（.xsd 扩展名），则 Xsd.exe 将为对应于 XML 架构的运行时对象生成源代码。<br /><br /> 如果指定一个运行时程序集文件（.exe 或 .dll 扩展名），则 Xsd.exe 为该程序集中的一个或多个类型生成架构。 可以使用 `/type` 选项来指定为其生成架构的类型。 输出架构被命名为 schema0.xsd、schema1.xsd，依此类推。 仅当给定类型使用 `XMLRoot` 自定义特性指定命名空间时，Xsd.exe 才生成多个架构。|
+|file.extension|指定要转换的输入文件。 必须将扩展名指定为下列之一：.xdr、.xml、.xsd、.dll 或 .exe。<br /><br /> 如果指定一个 XDR 架构文件（.xdr 扩展名），则 Xsd.exe 将 XDR 架构转换为 XSD 架构。 输出文件与 XDR 架构同名，但扩展名为 .xsd。<br /><br /> 如果指定一个 XML 文件（.xml 扩展名），则 Xsd.exe 从文件中的数据推导出架构并产生一个 XSD 架构。 输出文件与 XML 文件同名，但扩展名为 .xsd。<br /><br /> 如果指定一个 XML 架构文件（.xsd 扩展名），则 Xsd.exe 将为对应于 XML 架构的运行时对象生成源代码。<br /><br /> 如果指定一个运行时程序集文件（.exe 或 .dll 扩展名），则 Xsd.exe 为该程序集中的一个或多个类型生成架构。 可以使用 `/type` 选项来指定为其生成架构的类型。 输出架构被命名为 schema0.xsd、schema1.xsd，依此类推。 仅当给定类型使用 `XMLRoot` 自定义特性指定命名空间时，Xsd.exe 才生成多个架构。|
 
 ## <a name="general-options"></a>常规选项
 
 |选项|描述|
 |------------|-----------------|
-|/h\[elp\] |显示该工具的命令语法和选项。|
-|/o\[utputdir\]:directory  |指定输出文件的目录。 此参数只能出现一次。 默认为当前目录。|
+|/h\[elp\]|显示该工具的命令语法和选项。|
+|/o\[utputdir\]:directory|指定输出文件的目录。 此参数只能出现一次。 默认为当前目录。|
 |**/?**|显示该工具的命令语法和选项。|
-|/p\[arameters\]:file.xml  |从指定的 .xml 文件读取各种操作模式的选项。 缩写形式为 `/p:`。 有关详细信息，请参阅[备注](#remarks)部分。|
+|/p\[arameters\]:file.xml|从指定的 .xml 文件读取各种操作模式的选项。 缩写形式为 `/p:`。 有关详细信息，请参阅[备注](#remarks)部分。|
 
 ## <a name="xsd-file-options"></a>XSD 文件选项
  必须为 xsd 文件仅指定下列选项中的一个。
 
 |选项|描述|
 |------------|-----------------|
-|/c\[lasses\] |生成与指定架构相对应的类。 若要将 XML 数据读入对象中，请使用 <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A?displayProperty=nameWithType> 方法。|
-|/d\[ataset\] |生成一个从 <xref:System.Data.DataSet> 派生的类，该类与指定的架构相对应。 若要将 XML 数据读入派生类中，请使用 <xref:System.Data.DataSet.ReadXml%2A?displayProperty=nameWithType> 方法。|
+|/c\[lasses\]|生成与指定架构相对应的类。 若要将 XML 数据读入对象中，请使用 <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A?displayProperty=nameWithType> 方法。|
+|/d\[ataset\]|生成一个从 <xref:System.Data.DataSet> 派生的类，该类与指定的架构相对应。 若要将 XML 数据读入派生类中，请使用 <xref:System.Data.DataSet.ReadXml%2A?displayProperty=nameWithType> 方法。|
 
  还可以为 .xsd 文件指定下列任何选项。
 
 |选项|描述|
 |------------|-----------------|
-|/e\[lement\]:element  |指定架构中要为其生成代码的元素。 默认情况下，键入所有元素。 可以多次指定该参数。|
+|/e\[lement\]:element|指定架构中要为其生成代码的元素。 默认情况下，键入所有元素。 可以多次指定该参数。|
 |**/enableDataBinding**|在所有生成的类型上实现 <xref:System.ComponentModel.INotifyPropertyChanged> 接口以启用数据绑定。 缩写形式为 `/edb`。|
 |**/enableLinqDataSet**|（缩写形式：`/eld`。）指定可使用 LINQ to DataSet 查询的生成的数据集。 此选项在同时指定 /dataset 选项的情况下使用。 有关详细信息，请参阅 [LINQ to DataSet 概述](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)和[查询类型化数据集](../../../docs/framework/data/adonet/querying-typed-datasets.md)。 有关使用 LINQ 的常规信息，请参阅[语言集成查询 (LINQ) - C#](../../csharp/programming-guide/concepts/linq/index.md) 或[语言集成查询 (LINQ) - Visual Basic](../../visual-basic/programming-guide/concepts/linq/index.md)。|
-|/f\[ields\] |生成字段，而不是生成属性。 默认情况下生成属性。|
-|/l\[anguage\]:language  |指定要使用的编程语言。 从 `CS`（默认情况下为 C#）、`VB` (Visual Basic)、`JS` (JScript) 或 `VJS` (Visual J#) 中进行选择。 也可指定实现 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> 的类的完全限定名|
-|/n\[amespace\]:namespace  |为生成的类型指定运行时命名空间。 默认命名空间为 `Schemas`。|
+|/f\[ields\]|生成字段，而不是生成属性。 默认情况下生成属性。|
+|/l\[anguage\]:language|指定要使用的编程语言。 从 `CS`（默认情况下为 C#）、`VB` (Visual Basic)、`JS` (JScript) 或 `VJS` (Visual J#) 中进行选择。 也可指定实现 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> 的类的完全限定名|
+|/n\[amespace\]:namespace|为生成的类型指定运行时命名空间。 默认命名空间为 `Schemas`。|
 |**/nologo**|取消显示版权标志。|
 |**/order**|在所有粒子成员上生成显式顺序标识符。|
-|/o\[ut\]:directoryName  |指定用来放置文件的输出目录。 默认为当前目录。|
-|/u\[ri\]:uri  |为架构中要为其生成代码的元素指定 URI。 该 URI（如果存在）应用于使用 `/element` 选项指定的所有元素。|
+|/o\[ut\]:directoryName|指定用来放置文件的输出目录。 默认为当前目录。|
+|/u\[ri\]:uri|为架构中要为其生成代码的元素指定 URI。 该 URI（如果存在）应用于使用 `/element` 选项指定的所有元素。|
 
 ## <a name="dll-and-exe-file-options"></a>DLL 和 EXE 文件选项
 
 |选项|描述|
 |------------|-----------------|
-|/t\[ype\]:typename  |指定要为其创建架构的类型的名称。 可以指定多个类型参数。 如果 typename 不指定一个命名空间，则 Xsd.exe 将程序集中的所有类型与指定类型相匹配  。 如果 typename 指定一个命名空间，则仅匹配那个类型  。 如果 typename 以星号字符 (\*) 结尾，则此工具匹配所有以 \* 前的字符串开头的类型  。 如果省略 `/type` 选项，则 Xsd.exe 为程序集中的所有类型生成架构。|
+|/t\[ype\]:typename|指定要为其创建架构的类型的名称。 可以指定多个类型参数。 如果 typename 不指定一个命名空间，则 Xsd.exe 将程序集中的所有类型与指定类型相匹配。 如果 typename 指定一个命名空间，则仅匹配那个类型。 如果 typename 以星号字符 (\*) 结尾，则此工具匹配所有以 \* 前的字符串开头的类型。 如果省略 `/type` 选项，则 Xsd.exe 为程序集中的所有类型生成架构。|
 
 ## <a name="remarks"></a>备注
 
@@ -104,7 +105,7 @@ xsd {file.dll | file.exe} [-outputdir:directory] [/type:typename [...]][/paramet
 </xsd>
 ```
 
-如果前面的 XML 包含在名为 GenerateSchemas.xml 的文件中，则通过在命令提示处键入下面的内容并按 Enter 来使用 `/parameters` 开关  ：
+如果前面的 XML 包含在名为 GenerateSchemas.xml 的文件中，则通过在命令提示处键入下面的内容并按 Enter 来使用 `/parameters` 开关：
 
 ```console
  xsd /p:GenerateSchemas.xml

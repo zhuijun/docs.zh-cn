@@ -1,5 +1,6 @@
 ---
 title: 二进制序列化
+description: 本文介绍了 .NET Core 支持的二进制序列化和类型。 请注意二进制序列化和替代项的危险。
 ms.date: 01/02/2018
 helpviewer_keywords:
 - binary serialization
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - serialization, cross-framework
 ms.assetid: 2b1ea3be-1152-4032-b2b3-07794054c405
 author: ViktorHofer
-ms.openlocfilehash: 9df9b73a1a1347b952d76b76c9058578f5e9f401
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4ed76437b743da842d6ba07d29fe7985f824abf0
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401267"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83421275"
 ---
 # <a name="binary-serialization"></a>二进制序列化
 

@@ -1,5 +1,6 @@
 ---
 title: 用来控制编码的 SOAP 序列化的属性
+description: 本文列出了为符合 SOAP 规范而需要使用的 System.Xml.Serialization 命名空间中的一组特殊属性。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - SOAP, XML serialization
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - attributes [.NET Framework], XML serialization
 - serialization, attributes
 ms.assetid: 93ee258c-9c0f-4a08-897c-c10db7a00f91
-ms.openlocfilehash: 2961d9abc6c32e78b5a61e8f2bbea5cfcf6677bd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9e99856c3ac70b122c0def23e36bbc3059c5891c
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61794935"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378463"
 ---
 # <a name="attributes-that-control-encoded-soap-serialization"></a>用来控制编码的 SOAP 序列化的属性
 

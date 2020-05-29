@@ -1,5 +1,6 @@
 ---
 title: 如何：指定 XML 流的替代元素名称
+description: 了解如何使用替代元素名称创建 XML 流，例如，对于需要大体相同信息（略有差异）的 XML Web service。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - classes, overriding
 - overriding classes
 ms.assetid: 5cc1c0b0-f94b-4525-9a41-88a582cd6668
-ms.openlocfilehash: 2dc1110b858f639624e05382a67ddccf3ea1b047
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: d9851226b602226e00648d8742bf0a49c902c33b
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588468"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83377396"
 ---
 # <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a>如何：指定 XML 流的替代元素名称
   

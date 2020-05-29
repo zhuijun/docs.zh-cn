@@ -4,12 +4,12 @@ ms.date: 03/10/2017
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
-ms.openlocfilehash: 55847aceb9fdf032ba533b82ee59be53761fa2c2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bffbc026e8f7937db91d42b7a06a5b7bba3bc2f8
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712944"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396156"
 ---
 # <a name="using-static-directive-c-reference"></a>using 静态指令（C# 参考）
 
@@ -19,7 +19,7 @@ ms.locfileid: "75712944"
 using static <fully-qualified-type-name>;
 ```
 
-其中，fully-qualified-type-name 是无需指定类型名称即可访问其静态成员和嵌套类型的类型名称  。 如果不提供完全限定的类型名称（完整的命名空间名称以及类型名称），则 C# 将生成编译器错误 [CS0246](../compiler-messages/cs0246.md)：“无法找到类型或命名空间名称‘type/namespace’（是否缺少 using 指令或程序集引用？）”。
+其中，fully-qualified-type-name 是无需指定类型名称即可访问其静态成员和嵌套类型的类型名称。 如果你不提供完全限定的类型名称（完整的命名空间名称以及类型名称），C# 便会生成编译器错误 [CS0246](../compiler-messages/cs0246.md)：“找不到类型名称或命名空间名称 ’type/namespace’ (是否缺少 using 指令或程序集引用?)”。
 
 `using static` 指令适用于任何具有静态成员（或嵌套类型）的类型，即使该类型还具有实例成员。 但是，只能通过类型实例来调用实例成员。
 
@@ -47,9 +47,9 @@ using static <fully-qualified-type-name>;
 
 [!code-csharp[using-static#3](~/samples/snippets/csharp/language-reference/keywords/using/using-static3.cs)]
 
-在此示例中，`using static` 指令也已经应用于 <xref:System.Double> 类型。 这使得在未指定类型名称情况下调用 <xref:System.Double.TryParse(System.String,System.Double@)> 方法成为可能。 但是，如此创建的代码可读性较差，因为这样有必要检查 `using static` 语句，以确定所调用的数值类型的 `TryParse` 方法。
+在此示例中，`using static` 指令也已经应用于 <xref:System.Double> 类型。 这使得在未指定类型名称情况下调用 <xref:System.Double.TryParse(System.String,System.Double@)> 方法成为可能。 但是，如此创建的代码可读性较差，因为这样有必要检查 `using static` 指令，以确定所调用的数值类型的 `TryParse` 方法。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [using 指令](using-directive.md)
 - [C# 参考](../index.md)

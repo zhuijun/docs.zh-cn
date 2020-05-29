@@ -1,7 +1,7 @@
 ---
 title: 比较运算符 - C# 参考
 description: 了解可用于检查数值顺序的 C# 比较运算符。
-ms.date: 04/25/2019
+ms.date: 05/11/2020
 author: pkulikov
 f1_keywords:
 - <_CSharpKeyword
@@ -19,12 +19,12 @@ helpviewer_keywords:
 - <= operator [C#]
 - greater than or equal to operator [C#]
 - '>= operator [C#]'
-ms.openlocfilehash: 68502205193a1fc8ab7410053e13274560ffffb0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: eda039d950e4be13d9c041c8bb95b6ea773b83f6
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398051"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83207229"
 ---
 # <a name="comparison-operators-c-reference"></a>比较运算符（C# 参考）
 
@@ -32,6 +32,8 @@ ms.locfileid: "79398051"
 
 > [!NOTE]
 > 对于 `==`、`<`、`>`、`<=` 和 `>=` 运算符，如果所有操作数都不是数字（<xref:System.Double.NaN?displayProperty=nameWithType> 或 <xref:System.Single.NaN?displayProperty=nameWithType>），则运算结果为 `false`。 这意味着 `NaN` 值不大于、小于或等于任何其他 `double`（或 `float`）值，包括 `NaN`。 有关更多信息和示例，请参阅 <xref:System.Double.NaN?displayProperty=nameWithType> 或 <xref:System.Single.NaN?displayProperty=nameWithType> 参考文章。
+
+[char](../builtin-types/char.md) 类型也支持比较运算符。 在使用 `char` 操作数时，将比较对应的字符代码。
 
 枚举类型也支持比较运算符。 对于相同[枚举](../builtin-types/enum.md)类型的操作数，基础整数类型的相应值会进行比较。
 
@@ -69,9 +71,9 @@ ms.locfileid: "79398051"
 
 ## <a name="c-language-specification"></a>C# 语言规范
 
-有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/expressions.md#relational-and-type-testing-operators)中的[关系和类型测试运算符](~/_csharplang/spec/introduction.md)部分。
+有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的[关系和类型测试运算符](~/_csharplang/spec/expressions.md#relational-and-type-testing-operators)部分。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 运算符](index.md)

@@ -1,18 +1,19 @@
 ---
 title: .NET Core 项目 SDK 概述
+titleSuffix: ''
 description: 了解 .NET Core 项目 SDK。
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: d0ac01dca31dffea482745126e00c34b1da20774
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 88ec1bf2c4917c69b80b997d090219097694d2bc
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389673"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83206051"
 ---
 # <a name="net-core-project-sdks"></a>.NET Core 项目 SDK
 
-.NET Core 项目与软件开发工具包 (SDK) 关联。 每个项目 SDK 都是一组 MSBuild [目标](/visualstudio/msbuild/msbuild-targets)和相关的[任务](/visualstudio/msbuild/msbuild-tasks)，它们负责编译、打包和发布代码  。 引用项目 SDK 的项目有时称为“SDK 样式的项目”  。
+.NET Core 项目与软件开发工具包 (SDK) 关联。 每个项目 SDK 都是一组 MSBuild [目标](/visualstudio/msbuild/msbuild-targets)和相关的[任务](/visualstudio/msbuild/msbuild-tasks)，它们负责编译、打包和发布代码。 引用项目 SDK 的项目有时称为“SDK 样式的项目”。
 
 ## <a name="available-sdks"></a>可用的 SDK
 
@@ -32,7 +33,7 @@ ms.locfileid: "81389673"
 
 ## <a name="project-files"></a>项目文件
 
-.NET Core 项目基于 [MSBuild](/visualstudio/msbuild/msbuild) 格式。 具有扩展名（如用于 C# 项目的 .csproj 和用于 F# 项目的 .fsproj）的项目文件都是 XML 格式的   。 MSBuild 项目文件的根元素是 [Project](/visualstudio/msbuild/project-element-msbuild) 元素。 `Project` 元素有一个可选的 `Sdk` 属性，该属性指定要使用的 SDK（和版本）。 若要使用 .NET Core 工具构建你的代码，请将 `Sdk` 属性设置为[可用 SDK](#available-sdks) 表中的其中一个 ID。
+.NET Core 项目基于 [MSBuild](/visualstudio/msbuild/msbuild) 格式。 具有扩展名（如用于 C# 项目的 .csproj 和用于 F# 项目的 .fsproj）的项目文件都是 XML 格式的 。 MSBuild 项目文件的根元素是 [Project](/visualstudio/msbuild/project-element-msbuild) 元素。 `Project` 元素有一个可选的 `Sdk` 属性，该属性指定要使用的 SDK（和版本）。 若要使用 .NET Core 工具构建你的代码，请将 `Sdk` 属性设置为[可用 SDK](#available-sdks) 表中的其中一个 ID。
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -40,7 +41,7 @@ ms.locfileid: "81389673"
 </Project>
 ```
 
-若要指定来自 NuGet 的 SDK，请在名称末尾包含版本，或者在 global.json 文件中指定名称和版本  。
+若要指定来自 NuGet 的 SDK，请在名称末尾包含版本，或者在 global.json 文件中指定名称和版本。
 
 ```xml
 <Project Sdk="MSBuild.Sdk.Extras/2.0.54">
@@ -70,7 +71,7 @@ ms.locfileid: "81389673"
 ```
 
 > [!TIP]
-> 在 Windows 计算机上，Sdk.props 和 Sdk.targets 文件位于 %ProgramFiles%\dotnet\sdk\\[version]\Sdks\Microsoft.NET.Sdk\Sdk 文件夹中    。
+> 在 Windows 计算机上，Sdk.props 和 Sdk.targets 文件位于 %ProgramFiles%\dotnet\sdk\\[version]\Sdks\Microsoft.NET.Sdk\Sdk 文件夹中  。
 
 ### <a name="preprocess-the-project-file"></a>预处理项目文件
 
@@ -82,7 +83,7 @@ ms.locfileid: "81389673"
 
 ### <a name="default-compilation-includes"></a>默认编译包括
 
-SDK 中定义了编译项和嵌入的资源的默认包含和排除。 与非 SDK .NET 框架项目不同，你无需在项目文件中指定这些项，因为默认设置涵盖了最常见的用例。 这可使较小的项目文件更易于理解和进行手动编辑（如果需要）。
+编译项、嵌入资源和 `None` 项默认包含和排除的内容在 SDK 中定义。 与非 SDK .NET 框架项目不同，你无需在项目文件中指定这些项，因为默认设置涵盖了最常见的用例。 这使得项目文件更小、更易于理解和手动编辑（如需要）。
 
 下表显示在 .NET Core SDK 中包含和排除的元素和 [glob](https://en.wikipedia.org/wiki/Glob_(programming))：
 
@@ -95,39 +96,43 @@ SDK 中定义了编译项和嵌入的资源的默认包含和排除。 与非 SD
 > [!NOTE]
 > 默认情况下，由 `$(BaseOutputPath)` 和 `$(BaseIntermediateOutputPath)` MSBuild 属性表示的 `./bin` 和 `./obj` 文件夹不包含在 glob 中。 排除由属性 `$(DefaultItemExcludes)` 表示。
 
-如果在项目文件中显式定义这些项，可能会出现以下错误：
+#### <a name="build-errors"></a>生成错误
 
-包含重复的编译项。默认情况下，.NET SDK 包括项目目录中的编译项。可从项目文件中删除这些项，或如果想要在项目文件中显式包括它们，则将“EnableDefaultCompileItems”属性设为“false”  。
+如果在项目文件中显式定义这些项中的任何项，可能会出现类似于以下内容的“NETSDK1022”生成错误：
 
-若要解决此错误，请删除与上一个表中列出的隐式项匹配的显式 `Compile` 项，或将 `EnableDefaultCompileItems` 属性设置为 `false`，以禁用隐式包含：
+  > 包含重复的“编译”项。 默认情况下，.NET SDK 包括项目目录中的“编译”项。 可从项目文件中删除这些项，或如果想要在项目文件中显式包括它们，则将“EnableDefaultCompileItems”属性设为“false”。
 
-```xml
-<PropertyGroup>
-  <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
-</PropertyGroup>
-```
+  > 包含重复的“EmbeddedResource”项。 默认情况下，.NET SDK 包括项目目录中的“EmbeddedResource”项。 可从项目文件中删除这些项，或如果想要在项目文件中显式包括它们，则将“EnableDefaultEmbeddedResourceItems”属性设为“false”。
 
-如果要指定（例如，指定某些文件通过应用发布），仍可以使用相应的已知 MSBuild 机制来实现（例如 `Content` 元素）。
+若要解决此错误，请执行以下操作之一：
 
-`EnableDefaultCompileItems` 仅禁用 `Compile` glob，但不会影响其他 glob（如隐式 `None` glob），这也适用于 \*.cs 项。 因此，Visual Studio 中的解决方案资源管理器将 \*.cs 项显示为项目的一部分，并作为 `None` 项包含。 若要禁用隐式 `None` glob，请将 `EnableDefaultNoneItems` 设置为 `false`：
+- 删除与上表中列出的隐式项匹配的显式 `Compile`、`EmbeddedResource` 或 `None` 项。
 
-```xml
-<PropertyGroup>
-  <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
-</PropertyGroup>
-```
+- 若要禁用所有隐式文件包含，请将 `EnableDefaultItems` 属性设置为 `false`：
 
-若要禁用所有隐式 glob，请将 `EnableDefaultItems` 属性设置为 `false` ：
+  ```xml
+  <PropertyGroup>
+    <EnableDefaultItems>false</EnableDefaultItems>
+  </PropertyGroup>
+  ```
 
-```xml
-<PropertyGroup>
-  <EnableDefaultItems>false</EnableDefaultItems>
-</PropertyGroup>
-```
+  若要指定某些文件通过应用发布，仍可以使用相应的已知 MSBuild 机制来实现（例如 `Content` 元素）。
+
+- 将 `EnableDefaultCompileItems`、`EnableDefaultEmbeddedResourceItems` 或 `EnableDefaultNoneItems` 属性设置为 `false`，以选择性地仅禁用 `Compile`、`EmbeddedResource` 或 `None` glob：
+
+  ```xml
+  <PropertyGroup>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+    <EnableDefaultNoneItems>false</EnableDefaultNoneItems>
+  </PropertyGroup>
+  ```
+
+  如果仅禁用 `Compile` glob，则 Visual Studio 中的解决方案资源管理器仍将 \*.cs 项显示为项目的一部分，并作为 `None` 项包含在内。 若要禁用隐式 `None` glob，请将 `EnableDefaultNoneItems` 也设置为 `false`。
 
 ## <a name="customize-the-build"></a>自定义生成
 
-可以通过多种方式[自定义生成](/visualstudio/msbuild/customize-your-build)。 建议通过将属性作为参数传递给 [msbuild](/visualstudio/msbuild/msbuild-command-line-reference) 或 [dotnet](../tools/index.md) 命令来重写该属性。 还可以将属性添加到项目文件或 Directory.Build.props 文件中  。 有关 .NET Core 项目的有用属性列表，请参见 [.NET Core SDK 项目的 MSBuild 属性](msbuild-props.md)。
+可以通过多种方式[自定义生成](/visualstudio/msbuild/customize-your-build)。 建议通过将属性作为参数传递给 [msbuild](/visualstudio/msbuild/msbuild-command-line-reference) 或 [dotnet](../tools/index.md) 命令来重写该属性。 还可以将属性添加到项目文件或 Directory.Build.props 文件中。 有关 .NET Core 项目的有用属性列表，请参见 [.NET Core SDK 项目的 MSBuild 参考](msbuild-props.md)。
 
 ### <a name="custom-targets"></a>自定义目标
 
@@ -137,9 +142,9 @@ SDK 中定义了编译项和嵌入的资源的默认包含和排除。 与非 SD
 - 访问生成过程的工件，如生成的文件。
 - 检查调用生成的配置。
 
-通过在项目的生成文件夹中以 `<package_id>.targets` 或 `<package_id>.props`（例如 `Contoso.Utility.UsefulStuff.targets`）的形式放置文件，可以添加自定义生成目标或属性  。
+通过在项目的生成文件夹中以 `<package_id>.targets` 或 `<package_id>.props`（例如 `Contoso.Utility.UsefulStuff.targets`）的形式放置文件，可以添加自定义生成目标或属性。
 
-以下 XML 是 .csproj 文件中的一个片段，该文件指示 [`dotnet pack`](../tools/dotnet-pack.md) 命令打包的内容  。 `<ItemGroup Label="dotnet pack instructions">` 元素将目标文件放入包内的生成文件夹中  。 `<Target Name="CollectRuntimeOutputs" BeforeTargets="_GetPackageFiles">` 元素将程序集和 .json 文件放入生成文件夹   。
+以下 XML 是 .csproj 文件中的一个片段，该文件指示 [`dotnet pack`](../tools/dotnet-pack.md) 命令打包的内容。 `<ItemGroup Label="dotnet pack instructions">` 元素将目标文件放入包内的生成文件夹中。 `<Target Name="CollectRuntimeOutputs" BeforeTargets="_GetPackageFiles">` 元素将程序集和 .json 文件放入生成文件夹 。
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">

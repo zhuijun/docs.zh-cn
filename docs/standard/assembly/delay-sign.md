@@ -1,5 +1,6 @@
 ---
 title: 延迟为程序集签名
+description: 本文介绍延迟或部分签名，这会在 PE 文件中为强名称签名保留空间，但会推迟实际签名。
 ms.date: 08/19/2019
 helpviewer_keywords:
 - deferring assembly signing
@@ -12,12 +13,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 113df1ad3fc3ac1e27ebfef572494c1f15a3dbb5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7b5c8c8463fdc573782fa457bf5671c72a7e25f7
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73733173"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378507"
 ---
 # <a name="delay-sign-an-assembly"></a>延迟为程序集签名
 
@@ -27,13 +28,13 @@ ms.locfileid: "73733173"
 
 延迟为程序集签名：
 
-1. 从将执行最终签名的组织处获取密钥对的公钥部分。 此密钥通常是 .snk 文件形式，可以通过使用 Windows SDK 提供的[强名称工具 (Sn.exe)](../../framework/tools/sn-exe-strong-name-tool.md) 创建  。
+1. 从将执行最终签名的组织处获取密钥对的公钥部分。 此密钥通常是 .snk 文件形式，可以通过使用 Windows SDK 提供的[强名称工具 (Sn.exe)](../../framework/tools/sn-exe-strong-name-tool.md) 创建。
 
 2. 使用 <xref:System.Reflection> 中的两个自定义属性对程序集的源代码进行注释：
 
    - <xref:System.Reflection.AssemblyKeyFileAttribute>，将包含公钥的文件名作为参数传递给其构造函数。
 
-   - <xref:System.Reflection.AssemblyDelaySignAttribute>，通过将 true 作为参数传递给其构造函数来指示正在采用延迟签名  。
+   - <xref:System.Reflection.AssemblyDelaySignAttribute>，通过将 true 作为参数传递给其构造函数来指示正在采用延迟签名。
 
    例如：
 
@@ -54,31 +55,31 @@ ms.locfileid: "73733173"
 
 3. 编译器将公钥插入程序集清单，并在 PE 文件中保留用于完整的强名称签名的空间。 生成程序集后，必须存储真正的公钥，这样引用此程序集的其他程序集才能获取该密钥，并将其存储在自己的程序集引用中。
 
-4. 程序集没有有效的强名称签名，因此必须关闭对此签名的验证。 可配合使用强名称工具和 –Vr 选项来实现此操作  。
+4. 程序集没有有效的强名称签名，因此必须关闭对此签名的验证。 可配合使用强名称工具和 –Vr 选项来实现此操作。
 
-     以下示例取消了对名为 myAssembly.dll 的程序集的验证  。
+     以下示例取消了对名为 myAssembly.dll 的程序集的验证。
 
    ```console
    sn –Vr myAssembly.dll
    ```
 
-   若要在无法运行强名称工具的平台上（如高级 RISC 计算机 (ARM) 微处理器）关闭验证，请使用 –Vk 选项创建注册表文件  。 将该注册表文件导入到要关闭验证的计算机上的注册表中。 下面的示例为 `myAssembly.dll` 创建了一个注册表文件。
+   若要在无法运行强名称工具的平台上（如高级 RISC 计算机 (ARM) 微处理器）关闭验证，请使用 –Vk 选项创建注册表文件。 将该注册表文件导入到要关闭验证的计算机上的注册表中。 下面的示例为 `myAssembly.dll` 创建了一个注册表文件。
 
    ```console
    sn –Vk myRegFile.reg myAssembly.dll
    ```
 
-   通过 –Vr 或 –Vk 选项，可以选择包括 .snk 文件以测试密钥签名    。
+   通过 –Vr 或 –Vk 选项，可以选择包括 .snk 文件以测试密钥签名 。
 
    > [!WARNING]
    > 不要依赖于通过强名称实现安全性。 它们仅提供唯一的标识。
 
    > [!NOTE]
-   > 如果在 64 位电脑上使用 Visual Studio 进行开发时使用延迟签名，并且编译“任何 CPU”的程序集，可能需要两次应用 -Vr 选项   。 （在 Visual Studio 中，“任何 CPU”是平台目标生成属性的一个值；从命令行中编译时，它是默认值   。）若要在命令行或文件资源管理器中运行应用程序，请使用 64 位版本的 [Sn.exe（强签名工具）](../../framework/tools/sn-exe-strong-name-tool.md)对程序集应用 -Vr 选项  。 若要在设计时将程序集加载到 Visual Studio（例如，如果程序集包含应用程序中其他程序集使用的组件），请使用 32 位版本的强名称工具。 这是因为从命令行中运行程序集时，实时 (JIT) 编译器会将程序集编译为 64 位本机代码，而将程序集加载到设计时环境时，会将其编译为 32 位本机代码。
+   > 如果在 64 位电脑上使用 Visual Studio 进行开发时使用延迟签名，并且编译“任何 CPU”的程序集，可能需要两次应用 -Vr 选项 。 （在 Visual Studio 中，“任何 CPU”是平台目标生成属性的一个值；从命令行中编译时，它是默认值 。）若要在命令行或文件资源管理器中运行应用程序，请使用 64 位版本的 [Sn.exe（强签名工具）](../../framework/tools/sn-exe-strong-name-tool.md)对程序集应用 -Vr 选项。 若要在设计时将程序集加载到 Visual Studio（例如，如果程序集包含应用程序中其他程序集使用的组件），请使用 32 位版本的强名称工具。 这是因为从命令行中运行程序集时，实时 (JIT) 编译器会将程序集编译为 64 位本机代码，而将程序集加载到设计时环境时，会将其编译为 32 位本机代码。
 
-5. 之后（通常在传送前）再通过强名称工具使用 –R 选项，将程序集提交到组织的签名机构以执行实际的强名称签名  。
+5. 之后（通常在传送前）再通过强名称工具使用 –R 选项，将程序集提交到组织的签名机构以执行实际的强名称签名。
 
-   下面的示例使用 sgKey.snk 密钥对为程序集 myAssembly.dll 签署了强名称   。
+   下面的示例使用 sgKey.snk 密钥对为程序集 myAssembly.dll 签署了强名称 。
 
    ```console
    sn -R myAssembly.dll sgKey.snk

@@ -1,13 +1,14 @@
 ---
 title: XML 序列化程序生成器工具 (Sgen.exe)
+description: XML 序列化程序生成器为程序集中的类型创建 XML 序列化程序集，从而提高 XmlSerializer 的启动性能。
 ms.date: 03/30/2017
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
-ms.openlocfilehash: bc1a0abaeef9a9244aa83941e590063c7ef167d1
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 65e368cfd9294497608b061f15a4fe4755ed745c
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588361"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380039"
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>XML 序列化程序生成器工具 (Sgen.exe)
 
@@ -28,10 +29,10 @@ sgen [options]
   
 |选项|描述|  
 |------------|-----------------|  
-|**/a\[ssembly\]:** _filename_|为由 filename 指定的程序集或可执行文件中包含的所有类型生成序列化代码  。 只能提供一个文件名。 如果该参数重复，将使用最后一个文件名。|  
+|**/a\[ssembly\]:** _filename_|为由 filename 指定的程序集或可执行文件中包含的所有类型生成序列化代码。 只能提供一个文件名。 如果该参数重复，将使用最后一个文件名。|  
 |**/c\[ompiler\]:** _options_|指定要传递给 C# 编译器的选项。 支持所有传递到编译器的 csc.exe 选项。 这可用于指定应该对程序集进行签名，以及用于指定密钥文件。|  
 |**/d\[ebug\]**|生成一个可用于调试器的映像。|  
-|**/f\[orce\]**|强制覆盖同名的现有程序集。 默认值为 false  。|  
+|**/f\[orce\]**|强制覆盖同名的现有程序集。 默认值为 false。|  
 |**/help 或 /?**|显示该工具的命令语法和选项。|  
 |**/k\[eep\]**|取消在生成的源文件和其他临时文件编译到序列化程序集内之后对它们的删除操作。 这可用于确定工具是否正在为某个特定类型生成序列化代码。|  
 |**/n\[ologo\]**|取消显示 Microsoft 启动版权标志。|  

@@ -1,20 +1,17 @@
 ---
-title: 如何使用 C# 对 JSON 进行序列化和反序列化 - .NET
-ms.date: 01/10/2020
+title: ''
+description: 本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。
+ms.date: ''
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
-helpviewer_keywords:
-- JSON serialization
-- serializing objects
-- serialization
-- objects, serializing
-ms.openlocfilehash: 6324fe28b23e4df74bcf3fd1dbb7e0c14d5e3d1b
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+helpviewer_keywords: []
+ms.openlocfilehash: f1a5da448b08f9b4f1cf3fa6cba67fb376b00a6f
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135797"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702276"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>如何在 .NET 中对 JSON 进行序列化和反序列化（封送和拆收）
 
@@ -26,7 +23,7 @@ ms.locfileid: "82135797"
 
 代码示例引用下面的类及其变体：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWF)]
 
 ## <a name="namespaces"></a>命名空间
 
@@ -45,25 +42,25 @@ using System.Text.Json.Serialization;
 
 下面的示例将 JSON 创建为字符串：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToString.cs?name=SnippetSerialize)]
 
 下面的示例使用同步代码创建 JSON 文件：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFile.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToFile.cs?name=SnippetSerialize)]
 
 下面的示例使用异步代码创建 JSON 文件：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFileAsync.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToFileAsync.cs?name=SnippetSerialize)]
 
 前面的示例对要序列化的类型使用类型推理。 `Serialize()` 的重载采用泛型类型参数：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetSerializeWithGenericParameter)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToString.cs?name=SnippetSerializeWithGenericParameter)]
 
 ### <a name="serialization-example"></a>序列化示例
 
 下面是包含集合和嵌套类的示例类：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPOCOs)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPOCOs)]
 
 序列化以上类型的实例的 JSON 输出类似于下面的示例。 默认情况下，JSON 输出会缩小：
 
@@ -104,7 +101,7 @@ using System.Text.Json.Serialization;
 
 若要序列化为 UTF-8，请调用 <xref:System.Text.Json.JsonSerializer.SerializeToUtf8Bytes%2A?displayProperty=nameWithType> 方法：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToUtf8.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToUtf8.cs?name=SnippetSerialize)]
 
 还有一个采用 <xref:System.Text.Json.Utf8JsonWriter> 的 <xref:System.Text.Json.JsonSerializer.Serialize%2A> 重载可用。
 
@@ -138,23 +135,23 @@ using System.Text.Json.Serialization;
 
 下面的示例从字符串读取 JSON，并创建前面为[序列化示例](#serialization-example)显示的 `WeatherForecast` 类的实例：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToString.cs?name=SnippetDeserialize)]
 
 若要使用同步代码从文件进行反序列化，请将文件读入字符串中，如下面的示例中所示：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFile.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToFile.cs?name=SnippetDeserialize)]
 
 若要使用异步代码从文件进行反序列化，请调用 <xref:System.Text.Json.JsonSerializer.DeserializeAsync%2A> 方法：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToFileAsync.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToFileAsync.cs?name=SnippetDeserialize)]
 
 ### <a name="deserialize-from-utf-8"></a>从 UTF-8 进行反序列化
 
 若要从 UTF-8 进行反序列化，请调用采用 `Utf8JsonReader` 或 `ReadOnlySpan<byte>` 的 <xref:System.Text.Json.JsonSerializer.Deserialize%2A?displayProperty=nameWithType> 重载，如下面的示例中所示。 这些示例假设 JSON 处于名为 jsonUtf8Bytes 的字节数组中。
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToUtf8.cs?name=SnippetDeserialize1)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToUtf8.cs?name=SnippetDeserialize1)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToUtf8.cs?name=SnippetDeserialize2)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToUtf8.cs?name=SnippetDeserialize2)]
 
 ## <a name="deserialization-behavior"></a>反序列化行为
 
@@ -173,11 +170,11 @@ using System.Text.Json.Serialization;
 
 若要对 JSON 输出进行优质打印，请将 <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> 设置为 `true`：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripToString.cs?name=SnippetSerializePrettyPrint)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripToString.cs?name=SnippetSerializePrettyPrint)]
 
 下面是一个要进行序列化的示例类型，以及进行了优质打印的 JSON 输出：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWF)]
 
 ```json
 {
@@ -205,7 +202,7 @@ using System.Text.Json.Serialization;
 
 下面是要进行序列化的示例类型和生成的 JSON：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
 
 ```json
 {
@@ -225,11 +222,11 @@ using System.Text.Json.Serialization;
 
 若要对所有 JSON 属性名称使用 camel 大小写，请将 <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> 设置为 `JsonNamingPolicy.CamelCase`，如下面的示例中所示：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundTripCamelCasePropertyNames.cs?name=Serialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundTripCamelCasePropertyNames.cs?name=Serialize)]
 
 下面是要进行序列化的示例类和 JSON 输出：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
 
 ```json
 {
@@ -249,15 +246,15 @@ camel 大小写属性命名策略：
 
 若要使用自定义 JSON 属性命名策略，请创建派生自 <xref:System.Text.Json.JsonNamingPolicy> 的类，并替代 <xref:System.Text.Json.JsonNamingPolicy.ConvertName%2A> 方法，如下面的示例中所示：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/UpperCaseNamingPolicy.cs)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/UpperCaseNamingPolicy.cs)]
 
 然后，将 <xref:System.Text.Json.JsonSerializerOptions.PropertyNamingPolicy?displayProperty=nameWithType> 属性设置为命名策略类的实例：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripPropertyNamingPolicy.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripPropertyNamingPolicy.cs?name=SnippetSerialize)]
 
 下面是要进行序列化的示例类和 JSON 输出：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPropertyNameAttribute)]
 
 ```json
 {
@@ -277,7 +274,7 @@ JSON 属性命名策略：
 
 如果要序列化的对象的属性为 `Dictionary<string,TValue>` 类型，则 `string` 键可转换为 camel 大小写。 为此，请将 <xref:System.Text.Json.JsonSerializerOptions.DictionaryKeyPolicy> 设置为 `JsonNamingPolicy.CamelCase`，如下面的示例中所示：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCamelCaseDictionaryKeys.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCamelCaseDictionaryKeys.cs?name=SnippetSerialize)]
 
 使用名为 `TemperatureRanges` 且具有键值对 `"ColdMinTemp", 20` 和 `"HotMinTemp", 40` 的字典序列化对象会产生类似于以下示例的 JSON 输出：
 
@@ -301,7 +298,7 @@ JSON 属性命名策略：
 
 例如，假设需要序列化以下具有枚举的类：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithEnum)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithEnum)]
 
 如果 Summary 为 `Hot`，则默认情况下序列化的 JSON 具有数值 3：
 
@@ -315,7 +312,7 @@ JSON 属性命名策略：
 
 下面的示例代码序列化枚举名称(而不是数值)，并将名称转换为 camel 大小写：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripEnumAsString.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripEnumAsString.cs?name=SnippetSerialize)]
 
 生成的 JSON 类似于以下示例：
 
@@ -329,7 +326,7 @@ JSON 属性命名策略：
 
 还可以反序列化枚举字符串名称，如以下示例中所示：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripEnumAsString.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/RoundtripEnumAsString.cs?name=SnippetDeserialize)]
 
 ## <a name="exclude-properties-from-serialization"></a>从序列化中排除属性
 
@@ -345,7 +342,7 @@ JSON 属性命名策略：
 
 下面是要进行序列化的示例类型和 JSON 输出：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithIgnoreAttribute)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithIgnoreAttribute)]
 
 ```json
 {
@@ -358,11 +355,11 @@ JSON 属性命名策略：
 
 如果属性包含公共 getter 而不是公共 setter，则属性为只读。 若要排除所有只读属性，请将 <xref:System.Text.Json.JsonSerializerOptions.IgnoreReadOnlyProperties?displayProperty=nameWithType> 设置为 `true`，如以下示例中所示：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeExcludeReadOnlyProperties.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeExcludeReadOnlyProperties.cs?name=SnippetSerialize)]
 
 下面是要进行序列化的示例类型和 JSON 输出：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithROProperty)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithROProperty)]
 
 ```json
 {
@@ -378,15 +375,51 @@ JSON 属性命名策略：
 
 若要排除所有 null 值属性，请将 <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues> 属性设置为 `true`，如以下示例中所示：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeExcludeNullValueProperties.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeExcludeNullValueProperties.cs?name=SnippetSerialize)]
 
 下面是要进行序列化的示例对象和 JSON 输出：
 
 |Property |“值”  |
-|---------|---------|
-| 日期    | 8/1/2019 12:00:00 AM -07:00|
-| TemperatureCelsius| 25 |
-| 总结| null|
+|---
+title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
+ms.date: no-loc:
+- 'System.Text.Json'
+- 'Newtonsoft.Json' helpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-
+title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
+ms.date: no-loc:
+- 'System.Text.Json'
+- 'Newtonsoft.Json' helpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-----|--- title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
+ms.date: no-loc:
+- 'System.Text.Json'
+- 'Newtonsoft.Json' helpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-
+title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
+ms.date: no-loc:
+- 'System.Text.Json'
+- 'Newtonsoft.Json' helpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-----| | 日期    | 2019/8/1 午夜 12:00:00 -07:00| | TemperatureCelsius| 25 | | 摘要| null|
 
 ```json
 {
@@ -413,9 +446,9 @@ JSON 属性命名策略：
 
 若要序列化一种或多种语言的字符集而不进行转义，请在创建 <xref:System.Text.Encodings.Web.JavaScriptEncoder?displayProperty=fullName> 的实例时指定 [Unicode 范围](xref:System.Text.Unicode.UnicodeRanges)，如以下示例中所示：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetLanguageSets)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetLanguageSets)]
 
 此代码不转义西里尔文或希腊语字符。 如果 `Summary` 属性设置为西里尔文 жарко，则 `WeatherForecast` 对象会进行序列化，如以下示例中所示：
 
@@ -433,9 +466,9 @@ JSON 属性命名策略：
 
 一种替代方法是指定要允许的单个字符，而不进行转义。 下面的示例仅序列化 жарко 的前两个字符：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetSelectedCharacters)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetSelectedCharacters)]
 
 下面是前面代码生成的 JSON 的示例：
 
@@ -451,15 +484,15 @@ JSON 属性命名策略：
 
 若要最大程度地减少转义，可以使用 <xref:System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping?displayProperty=nameWithType>，如以下示例中所示：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetUsings)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializeCustomEncoding.cs?name=SnippetUnsafeRelaxed)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializeCustomEncoding.cs?name=SnippetUnsafeRelaxed)]
 
 > [!CAUTION]
 > 与默认编码器相比，`UnsafeRelaxedJsonEscaping` 编码器在允许字符通过而不进行转义方面更加宽松：
 >
 > * 它不转义 HTML 敏感字符，如 `<`、`>`、`&` 和 `'`。
-> * 它不提供任何针对 XSS 或信息泄露攻击（如客户端和服务器在字符集  方面不一致所可能导致的攻击）的额外深度防御保护。
+> * 它不提供任何针对 XSS 或信息泄露攻击（如客户端和服务器在字符集方面不一致所可能导致的攻击）的额外深度防御保护。
 >
 > 仅当知道客户端将生成的有效负载解释为 UTF-8 编码的 JSON 时，才使用不安全编码器。 例如，如果服务器在发送响应标头 `Content-Type: application/json; charset=utf-8`，则可以使用它。 永远不允许将原始 `UnsafeRelaxedJsonEscaping` 输出发出到 HTML 页面或 `<script>` 元素。
 
@@ -469,13 +502,13 @@ JSON 属性命名策略：
 
 例如，假设有一个 `WeatherForecast` 类和一个派生类 `WeatherForecastDerived`：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWF)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFDerived)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFDerived)]
 
 并且假设 `Serialize` 方法的类型参数在编译时为 `WeatherForecast`：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeDefault)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializePolymorphic.cs?name=SnippetSerializeDefault)]
 
 在这种情况下，即使 `weatherForecast` 对象实际上是 `WeatherForecastDerived` 对象，也不会序列化 `WindSpeed` 属性。 仅序列化基类属性：
 
@@ -493,11 +526,11 @@ JSON 属性命名策略：
 
 * 调用 <xref:System.Text.Json.JsonSerializer.Serialize%2A> 的重载，以便在运行时指定类型：
 
-  [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeGetType)]
+  [!code-csharp[](snippets/system-text-json-how-to/csharp/SerializePolymorphic.cs?name=SnippetSerializeGetType)]
 
 * 将要序列化的对象声明为 `object`。
 
-  [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeObject)]
+  [!code-csharp[](snippets/system-text-json-how-to/csharp/SerializePolymorphic.cs?name=SnippetSerializeObject)]
 
 在前面的示例方案中，这两种方法都会使 `WindSpeed` 属性包含在 JSON 输出中：
 
@@ -515,18 +548,18 @@ JSON 属性命名策略：
 
 如果将较低级别的对象定义为类型 `object`，则可以对它们进行多态序列化。 例如，假设 `WeatherForecast` 类具有一个名为 `PreviousForecast` 的属性，该属性可以定义为类型 `WeatherForecast` 或 `object`：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPrevious)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPrevious)]
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPreviousAsObject)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithPreviousAsObject)]
 
 如果 `PreviousForecast` 属性包含 `WeatherForecastDerived` 的实例：
 
-* 序列化 `WeatherForecastWithPrevious` 的 JSON 输出不包含  `WindSpeed`。
-* 序列化 `WeatherForecastWithPreviousAsObject` 的 JSON 输出包含  `WindSpeed`。
+* 序列化 `WeatherForecastWithPrevious` 的 JSON 输出不包含 `WindSpeed`。
+* 序列化 `WeatherForecastWithPreviousAsObject` 的 JSON 输出包含 `WindSpeed`。
 
 若要序列化 `WeatherForecastWithPreviousAsObject`，无需调用 `Serialize<object>` 或 `GetType`，因为根对象不是可能属于派生类型的对象。 下面的代码示例不调用 `Serialize<object>` 或 `GetType`：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeSecondLevel)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializePolymorphic.cs?name=SnippetSerializeSecondLevel)]
 
 前面的代码会正确地序列化 `WeatherForecastWithPreviousAsObject`：
 
@@ -546,11 +579,11 @@ JSON 属性命名策略：
 
 将属性定义为 `object` 的相同方法适用于接口。 假设具有以下接口和实现，并且要使用包含实现实例的属性序列化类：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/IForecast.cs)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/IForecast.cs)]
 
 序列化 `Forecasts` 的实例时，只有 `Tuesday` 显示 `WindSpeed` 属性，因为 `Tuesday` 定义为 `object`：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeInterface)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/SerializePolymorphic.cs?name=SnippetSerializeInterface)]
 
 下面的示例显示前面代码生成的 JSON：
 
@@ -570,14 +603,14 @@ JSON 属性命名策略：
 }
 ```
 
-有关多态序列化  的详细信息，以及有关反序列化  的信息，请参阅[如何从 Newtonsoft.Json 迁移到 System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization)。
+有关多态序列化的详细信息，以及有关反序列化的信息，请参阅[如何从 Newtonsoft.Json 迁移到 System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization)。
 
 ## <a name="allow-comments-and-trailing-commas"></a>允许注释和尾随逗号
 
 默认情况下，JSON 中不允许使用注释和尾随逗号。 若要在 JSON 中允许注释，请将 <xref:System.Text.Json.JsonSerializerOptions.ReadCommentHandling?displayProperty=nameWithType> 属性设置为 `JsonCommentHandling.Skip`。
 若要允许尾随逗号，请将 <xref:System.Text.Json.JsonSerializerOptions.AllowTrailingCommas?displayProperty=nameWithType> 属性设置为 `true`。 下面的示例演示如何允许这两者：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DeserializeCommasComments.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/DeserializeCommasComments.cs?name=SnippetDeserialize)]
 
 下面是包含注释和尾随逗号的示例 JSON：
 
@@ -593,7 +626,7 @@ JSON 属性命名策略：
 
 默认情况下，反序列化会查找 JSON 与目标对象属性之间区分大小写的属性名称匹配。 若要更改该行为，请将 <xref:System.Text.Json.JsonSerializerOptions.PropertyNameCaseInsensitive?displayProperty=nameWithType> 设置为 `true`：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DeserializeCaseInsensitive.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/DeserializeCaseInsensitive.cs?name=SnippetDeserialize)]
 
 下面是具有 camel 大小写属性名称的示例 JSON。 它可以反序列化为具有帕斯卡拼写法属性名称的以下类型。
 
@@ -605,13 +638,13 @@ JSON 属性命名策略：
 }
 ```
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWF)]
 
 ## <a name="handle-overflow-json"></a>处理溢出 JSON
 
 反序列化时，可能会在 JSON 中收到不是由目标类型的属性表示的数据。 例如，假设目标类型如下：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWF)]
 
 要反序列化的 JSON 如下：
 
@@ -634,18 +667,70 @@ JSON 属性命名策略：
 
 如果将显示的 JSON 反序列化为显示的类型，则 `DatesAvailable` 和 `SummaryWords` 属性无处可去，会丢失。 若要捕获额外数据（如这些属性），请将 [JsonExtensionData](xref:System.Text.Json.Serialization.JsonExtensionDataAttribute) 特性应用于类型 `Dictionary<string,object>` 或 `Dictionary<string,JsonElement>` 的属性：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithExtensionData)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithExtensionData)]
 
 将前面显示的 JSON 反序列化为此示例类型时，额外数据会成为 `ExtensionData` 属性的键值对：
 
 |Property |“值”  |说明  |
-|---------|---------|---------|
-| 日期    | 8/1/2019 12:00:00 AM -07:00||
-| TemperatureCelsius| 0 | 区分大小写的不匹配（JSON 中的 `temperatureCelsius`），因此未设置属性。 |
-| 总结 | 热 ||
-| ExtensionData | temperatureCelsius：25 |因为大小写不匹配，所以此 JSON 属性是额外属性，会成为字典中的键值对。|
-|| DatesAvailable：<br>  8/1/2019 12:00:00 AM -07:00<br>8/2/2019 12:00:00 AM -07:00 |JSON 中的额外属性会成为键值对，将数组作为值对象。|
-| |SummaryWords：<br>酷<br>Windy<br>Humid |JSON 中的额外属性会成为键值对，将数组作为值对象。|
+|---
+title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
+ms.date: no-loc:
+- 'System.Text.Json'
+- 'Newtonsoft.Json' helpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-
+title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
+ms.date: no-loc:
+- 'System.Text.Json'
+- 'Newtonsoft.Json' helpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-----|--- title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
+ms.date: no-loc:
+- 'System.Text.Json'
+- 'Newtonsoft.Json' helpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-
+title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
+ms.date: no-loc:
+- 'System.Text.Json'
+- 'Newtonsoft.Json' helpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-----|--- title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
+ms.date: no-loc:
+- 'System.Text.Json'
+- 'Newtonsoft.Json' helpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-
+title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
+ms.date: no-loc:
+- 'System.Text.Json'
+- 'Newtonsoft.Json' helpviewer_keywords:
+- 
+- 
+- 
+- 
+
+-----| | 日期    | 2019/8/1 午夜 12:00:00 -07:00|| | TemperatureCelsius| 0 | 大小写不匹配（JSON 中的 `temperatureCelsius`），因此未设置属性。 | | 摘要 | 热 || | ExtensionData | temperatureCelsius:25 |因为大小写不匹配，所以此 JSON 属性是额外属性，会成为字典中的键值对。| || DatesAvailable:<br>  8/1/2019 12:00:00 AM -07:00<br>2019/8/2 午夜 12:00:00 -07:00 |JSON 中的额外属性会成为键值对，将数组作为值对象。| | |SummaryWords:<br>酷<br>Windy<br>Humid |JSON 中的额外属性会成为键值对，将数组作为值对象。|
 
 序列化目标对象时，扩展数据键值对会成为 JSON 属性，就如同它们处于传入 JSON 中一样：
 
@@ -675,7 +760,7 @@ JSON 属性命名策略：
 
 例如，假设以下代码表示目标对象：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithDefault)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithDefault)]
 
 假设反序列化以下 JSON：
 
@@ -691,7 +776,7 @@ JSON 属性命名策略：
 
 若要更改此行为，请将 <xref:System.Text.Json.JsonSerializerOptions.IgnoreNullValues?displayProperty=nameWithType> 设置为 `true`，如下面的示例中所示：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DeserializeIgnoreNull.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/DeserializeIgnoreNull.cs?name=SnippetDeserialize)]
 
 利用此选项时，`WeatherForecastWithDefault` 对象的 `Summary` 属性在反序列化之后是默认值“No summary”。
 
@@ -711,7 +796,7 @@ JSON 中的 Null 值仅在有效时才会被忽略。 不可为 null 的值类�
 
 下面的示例演示如何使用 <xref:System.Text.Json.JsonDocument> 类来随机访问 JSON 字符串中的数据：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/JsonDocumentDataAccess.cs?name=SnippetAverageGrades1)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/JsonDocumentDataAccess.cs?name=SnippetAverageGrades1)]
 
 前面的代码：
 
@@ -720,17 +805,17 @@ JSON 中的 Null 值仅在有效时才会被忽略。 不可为 null 的值类�
 * 为没有成绩的学生分配默认成绩 70。
 * 通过在每次迭代时使 `count` 变量递增来对学生进行计数。 一种替代方法是调用 <xref:System.Text.Json.JsonElement.GetArrayLength%2A>，如以下示例中所示：
 
-  [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/JsonDocumentDataAccess.cs?name=SnippetAverageGrades2)]
+  [!code-csharp[](snippets/system-text-json-how-to/csharp/JsonDocumentDataAccess.cs?name=SnippetAverageGrades2)]
 
 下面是此代码处理的 JSON 示例：
 
-[!code-json[](~/samples/snippets/core/system-text-json/csharp/GradesPrettyPrint.json)]
+[!code-json[](snippets/system-text-json-how-to/csharp/GradesPrettyPrint.json)]
 
 ## <a name="use-jsondocument-to-write-json"></a>使用 JsonDocument 写入 JSON
 
 下面的示例演示如何通过 <xref:System.Text.Json.JsonDocument> 写入 JSON：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/JsonDocumentWriteJson.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/JsonDocumentWriteJson.cs?name=SnippetSerialize)]
 
 前面的代码：
 
@@ -740,23 +825,23 @@ JSON 中的 Null 值仅在有效时才会被忽略。 不可为 null 的值类�
 
 下面是要由示例代码处理的 JSON 输入的示例：
 
-[!code-json[](~/samples/snippets/core/system-text-json/csharp/Grades.json)]
+[!code-json[](snippets/system-text-json-how-to/csharp/Grades.json)]
 
 结果是以下进行了优质打印的 JSON 输出：
 
-[!code-json[](~/samples/snippets/core/system-text-json/csharp/GradesPrettyPrint.json)]
+[!code-json[](snippets/system-text-json-how-to/csharp/GradesPrettyPrint.json)]
 
 ## <a name="use-utf8jsonwriter"></a>使用 Utf8JsonWriter
 
 下面的示例演示如何使用 <xref:System.Text.Json.Utf8JsonWriter> 类：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/Utf8WriterToStream.cs?name=SnippetSerialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/Utf8WriterToStream.cs?name=SnippetSerialize)]
 
 ## <a name="use-utf8jsonreader"></a>使用 Utf8JsonReader
 
 下面的示例演示如何使用 <xref:System.Text.Json.Utf8JsonReader> 类：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/Utf8ReaderFromBytes.cs?name=SnippetDeserialize)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/Utf8ReaderFromBytes.cs?name=SnippetDeserialize)]
 
 前面的代码假设 `jsonUtf8` 变量是包含有效 JSON（编码为 UTF-8）的字节数组。
 
@@ -764,7 +849,7 @@ JSON 中的 Null 值仅在有效时才会被忽略。 不可为 null 的值类�
 
 下面的示例演示如何同步读取文件并搜索值：
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/Utf8ReaderFromFile.cs)]
+[!code-csharp[](snippets/system-text-json-how-to/csharp/Utf8ReaderFromFile.cs)]
 
 前面的代码：
 
@@ -780,7 +865,25 @@ JSON 中的 Null 值仅在有效时才会被忽略。 不可为 null 的值类�
 
 下面是前面的代码可以读取的 JSON 示例。 生成的摘要消息为“2 out of 4 have names that end with 'University'”：
 
-[!code-json[](~/samples/snippets/core/system-text-json/csharp/Universities.json)]
+[!code-json[](snippets/system-text-json-how-to/csharp/Universities.json)]
+
+### <a name="read-from-a-stream-using-utf8jsonreader"></a>使用 Utf8JsonReader 从流中读取
+
+当读取大型文件（例如，1 GB 或更大的文件）时，你可能希望避免一次性将整个文件加载到内存中。 此时，可以使用 <xref:System.IO.FileStream>。
+
+使用 `Utf8JsonReader` 从流中读取时，适用以下规则：
+
+* 包含部分 JSON 有效负载的缓冲区必须至少与其中的最大 JSON 令牌一样大，以便读取器可以推进进度。
+* 缓冲区的大小必须至少与 JSON 中的最大空格序列一样大。
+* 读取器不会跟踪已读取的数据，直到它完全读取 JSON 有效负载中的下一个 <xref:System.Text.Json.Utf8JsonReader.TokenType%2A>。 因此，当缓冲区中有剩余字节时，必须再次将它们传递给读取器。 你可以使用 <xref:System.Text.Json.Utf8JsonReader.BytesConsumed%2A> 来确定剩余的字节数。
+
+下面的代码演示了如何从流中读取。 本示例显示了 <xref:System.IO.MemoryStream>。 类似的代码将使用 <xref:System.IO.FileStream>，当 `FileStream` 在开头包含 UTF-8 BOM 时除外。 在这种情况下，需要先从缓冲区中去除这三个字节，然后再将剩余字节传递到 `Utf8JsonReader`。 否则，读取器将引发异常，因为 BOM 不被视为 JSON 的有效部分。
+
+示例代码从 4KB 缓冲区开始，每当发现大小不足以容纳完整的 JSON 令牌（必须容纳完整的令牌，读取器才能推动处理 JSON 有效负载）时，就会使缓冲区大小成倍增加。 仅当设置的初始缓冲区非常小（例如 10 个字节）时，代码片段中提供的 JSON 示例才会触发缓冲区大小增加。 如果将初始缓冲区大小设置为 10，则 `Console.WriteLine` 语句会说明缓冲区大小增加的原因和影响。 在初始缓冲区大小为 4KB 时，每个 `Console.WriteLine` 都会显示整个示例 JSON，并且不必增加缓冲区大小。
+
+[!code-csharp[](snippets/system-text-json-how-to/csharp/Utf8ReaderPartialRead.cs)]
+
+前面的示例未对缓冲区大小的增长设置任何限制。 如果令牌大小太大，则代码可能会失败，并出现 <xref:System.OutOfMemoryException> 异常。 如果 JSON 包含大小约为 1 GB 或更大的令牌，则会发生这种情况，因为将 1 GB 大小加倍会导致令牌太大，无法放入 `int32` 缓冲区。
 
 ## <a name="additional-resources"></a>其他资源
 

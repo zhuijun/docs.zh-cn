@@ -1,17 +1,18 @@
 ---
 title: <schemaImporterExtensions> 元素
+description: <schemaImporterExtensions> 元素包含将 XSD 类型映射到 .NET Framework 类型时 XmlSchemaImporter 所用的类型。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - XML serialization, configuration
 - schemaImporterExtensions element
 - <schemaImporterExtensions> element
 ms.assetid: 465ef2a0-f909-4ac1-9a56-0ead5c849698
-ms.openlocfilehash: 5ed80ac370e34d6b62bb2b601cb7bd978228a302
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 5b9820ccdf2c75bed9beda72358c4c4d82ff9ff7
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159814"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379792"
 ---
 # <a name="schemaimporterextensions-element"></a>\<schemaImporterExtensions> 元素
 包含将 XSD 类型映射到 .NET Framework 类型时 <xref:System.Xml.Serialization.XmlSchemaImporter> 所用的类型。 有关配置文件的详细信息，请参阅[配置文件架构](../../../docs/framework/configure-apps/file-schema/index.md)。  

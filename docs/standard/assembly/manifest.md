@@ -1,5 +1,6 @@
 ---
 title: 程序集清单
+description: .NET 程序集清单指定其版本要求、安全标识和程序集的范围以及要解析引用的信息。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assembly manifest
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - culture, assembly manifest
 - assemblies [.NET Framework], metadata
 ms.assetid: 8e40fab9-549d-4731-aec2-ffa47a382de0
-ms.openlocfilehash: f1913f8c41ba4a7b54f7abcdfb97400503da8ac5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4f4d09f559ac66e1f3bc38af0781f7e01e7461d5
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73107155"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380173"
 ---
 # <a name="assembly-manifest"></a>程序集清单
-每一程序集，无论是静态的还是动态的，均包含描述该程序集中各元素彼此如何关联的数据集合。 程序集清单就包含这些程序集元数据。 程序集清单包含指定该程序集的版本要求和安全标识所需的所有元数据，以及定义该程序集的范围和解析对资源和类的引用所需的全部元数据。 程序集清单可以存储在具有 Microsoft 中间语言 (MSIL) 代码的 PE 文件（.exe 或 .dll）中，也可存储在只包含程序集清单信息的独立 PE 文件中   。  
+每一程序集，无论是静态的还是动态的，均包含描述该程序集中各元素彼此如何关联的数据集合。 程序集清单就包含这些程序集元数据。 程序集清单包含指定该程序集的版本要求和安全标识所需的所有元数据，以及定义该程序集的范围和解析对资源和类的引用所需的全部元数据。 程序集清单可以存储在具有 Microsoft 中间语言 (MSIL) 代码的 PE 文件（.exe 或 .dll）中，也可存储在只包含程序集清单信息的独立 PE 文件中 。  
   
  以下插图显示了清单的不同存储方法。  
   
@@ -39,7 +40,7 @@ ms.locfileid: "73107155"
 ## <a name="assembly-manifest-contents"></a>程序集清单内容  
  下表显示了在程序集清单中包含的信息。 前四项：程序集名称、版本号、区域性和强名称信息共同构成了程序集的标识。  
   
-|信息|说明|  
+|信息|描述|  
 |-----------------|-----------------|  
 |程序集名称|指定程序集名称的文本字符串。|  
 |版本号|主版本号和次版本号，以及修订号和生成号。 公共语言运行时使用这些编号来强制实施版本策略。|  
@@ -51,7 +52,7 @@ ms.locfileid: "73107155"
   
  通过在代码中使用程序集特性，您可以添加或更改程序集清单中的一些信息。 您可以更改版本信息和信息性特性，包括商标、版权、产品、公司和信息性版本。 有关程序集特性的完整列表，请参阅[设置程序集属性](set-attributes.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [程序集内容](contents.md)
 - [程序集版本控制](versioning.md)

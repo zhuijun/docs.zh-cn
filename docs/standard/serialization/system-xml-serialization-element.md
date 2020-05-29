@@ -1,17 +1,18 @@
 ---
 title: <system.xml.serialization> 元素
+description: 本文介绍 <system.xml.serialization> 元素，该元素是用于控制 XML 序列化的顶级元素。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - system.xml.serialization element
 - XML serialization, configuration
 - <system.xml.serialization> element
 ms.assetid: 3ce45919-388a-418c-8968-6df0372c73ec
-ms.openlocfilehash: 02027a238bc9a2f82963ea841584d2bb3c6446c6
-ms.sourcegitcommit: 52e588dc2ee74d484cd07ac60076be25cbf777ab
+ms.openlocfilehash: 1e66220004d561f937d03c506e6f30db4ccc635b
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/27/2019
-ms.locfileid: "67410549"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83380116"
 ---
 # <a name="systemxmlserialization-element"></a>\<system.xml.serialization> 元素
 

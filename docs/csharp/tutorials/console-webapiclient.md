@@ -3,12 +3,12 @@ title: 使用 .NET Core 创建 REST 客户端
 description: 此教程将介绍 .NET Core 和 C# 语言的许多功能。
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 0105db519f7accec6bf8bfbafdc6a67a444b1074
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 4a3a76d1ec9893c2c3e0353e305a19e59c586fe5
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249163"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420378"
 ---
 # <a name="rest-client"></a>REST 客户端
 
@@ -77,9 +77,7 @@ using System.Threading.Tasks;
 
 如果此时生成项目，将会看到系统针对此方法生成的警告，因为其中不含任何 `await` 运算符，将以同步方式运行。 暂且忽略此警告；将在填充方法时添加 `await` 运算符。
 
-接下来，将 `namespace` 语句中定义的命名空间从默认名称 `ConsoleApp` 重命名为 `WebAPIClient`。 我们稍后将在此命名空间中定义 `repo` 类。
-
-接下来，将 `Main` 方法更新为调用此方法。 `ProcessRepositories` 方法会返回一个任务，不应在此任务完成前退出程序。 因此，必须更改 `Main` 的签名。 添加 `async` 修饰符，并将返回类型更改为 `Task`。 然后，在方法的主体中，添加对 `ProcessRepositories` 的调用。 向该方法调用添加 `await` 关键字：
+接下来，更新 `Main` 方法以调用 `ProcessRepositories` 方法。 `ProcessRepositories` 方法会返回一个任务，不应在此任务完成前退出程序。 因此，必须更改 `Main` 的签名。 添加 `async` 修饰符，并将返回类型更改为 `Task`。 然后，在方法的主体中，添加对 `ProcessRepositories` 的调用。 向该方法调用添加 `await` 关键字：
 
 ```csharp
 static async Task Main(string[] args)
@@ -90,7 +88,7 @@ static async Task Main(string[] args)
 
 现在，生成了一个不执行任何操作但具备异步功能的程序。 现在进行改进。
 
-首先需要一个能从 Web 检索数据的对象；可使用 <xref:System.Net.Http.HttpClient> 执行此操作。 此对象负责处理请求和响应。 在 Program.cs 文件内的 `Program` 类中初始化该类型的一个实例。 
+首先需要一个能从 Web 检索数据的对象；可使用 <xref:System.Net.Http.HttpClient> 执行此操作。 此对象负责处理请求和响应。 在 Program.cs 文件内的 `Program` 类中初始化该类型的一个实例。
 
 ```csharp
 namespace WebAPIClient
@@ -173,10 +171,11 @@ var repositories = await JsonSerializer.DeserializeAsync<List<Repository>>(await
 你使用的是新命名空间，因此，还需要将其添加到文件顶部：
 
 ```csharp
+using System.Collections.Generic;
 using System.Text.Json;
 ```
 
-请注意，现使用 <xref:System.Net.Http.HttpClient.GetStreamAsync(System.String)>，而不是 <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)>。 序列化程序使用流（而不是字符串）作为其源。 让我们来看看前面第二行代码段中所使用的多项 C# 语言功能。 <xref:System.Text.Json.JsonSerializer.DeserializeAsync%60%601(System.IO.Stream,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)?displayProperty=nameWithType> 的第一个自变量是 `await` 表达式。 （其他两个参数为可选，并在代码段中省略。）Await 表达式可以出现在代码中的几乎任何位置，尽管到目前为止，你只在赋值语句中看到过它们。 `Deserialize` 方法为泛型  ，这意味着必须为应从 JSON 文本创建的对象的类型提供类型参数。 在此示例中，你要反序列化到 `List<Repository>`，这是另一个泛型对象，即 <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>。 `List<>` 类存储对象的集合。 类型参数声明存储在 `List<>` 中的对象的类型。 JSON 文本表示存储库对象的集合，因此类型参数为 `Repository`。
+请注意，现使用 <xref:System.Net.Http.HttpClient.GetStreamAsync(System.String)>，而不是 <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)>。 序列化程序使用流（而不是字符串）作为其源。 让我们来看看前面第二行代码段中所使用的多项 C# 语言功能。 <xref:System.Text.Json.JsonSerializer.DeserializeAsync%60%601(System.IO.Stream,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)?displayProperty=nameWithType> 的第一个自变量是 `await` 表达式。 （其他两个参数为可选，并在代码段中省略。）Await 表达式可以出现在代码中的几乎任何位置，尽管到目前为止，你只在赋值语句中看到过它们。 `Deserialize` 方法为泛型，这意味着必须为应从 JSON 文本创建的对象的类型提供类型参数。 在此示例中，你要反序列化到 `List<Repository>`，这是另一个泛型对象，即 <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>。 `List<>` 类存储对象的集合。 类型参数声明存储在 `List<>` 中的对象的类型。 JSON 文本表示存储库对象的集合，因此类型参数为 `Repository`。
 
 即将完成此部分的操作。 至此，你已将 JSON 数据转换成 C# 对象，让我们来显示每个存储库的名称。 将以下代码行：
 
@@ -297,7 +296,7 @@ public DateTime LastPushUtc { get; set; }
 public DateTime LastPush => LastPushUtc.ToLocalTime();
 ```
 
-让我们来看一下刚定义的新构造。 `LastPush` 属性使用 `get` 访问器的 expression-bodied member  进行定义。 不存在 `set` 访问器。 省略 `set` 访问器就是在 C# 中定义只读  属性的方式。 （是的，可以在 C# 中创建*只写*属性，但属性值受限。）
+让我们来看一下刚定义的新构造。 `LastPush` 属性使用 `get` 访问器的 expression-bodied member 进行定义。 不存在 `set` 访问器。 省略 `set` 访问器就是在 C# 中定义只读属性的方式。 （是的，可以在 C# 中创建*只写*属性，但属性值受限。）
 
 最后，在控制台中再添加一个输出语句，然后就可以再次生成并运行此应用程序：
 

@@ -1,5 +1,6 @@
 ---
 title: XML 序列化示例
+description: 这些代码示例显示了高级方案，包括如何使用 XML 序列化生成符合 XML 架构文档的 XML 流。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: eec46337-9696-435b-a375-dc5effae6992
-ms.openlocfilehash: 17ad1b4b5eae38a4f1dc90e154841b1315dea1b2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 73f21c7f7d0670022d757e6c4c00280bb79709b8
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349765"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379179"
 ---
 # <a name="examples-of-xml-serialization"></a>XML 序列化示例
 
@@ -203,7 +204,7 @@ public class Item
 
 ## <a name="serializing-a-class-that-implements-the-icollection-interface"></a>序列化实现 ICollection 接口的类
 
-您可以通过实现 <xref:System.Collections.ICollection> 接口创建自己的集合类，并使用 <xref:System.Xml.Serialization.XmlSerializer> 序列化这些类的实例。 请注意，当类实现 <xref:System.Collections.ICollection> 接口时，只序列化该类包含的集合， 而不会序列化添加至该类的任何公共属性或字段。 该类必须包含 Add 方法和 Item 属性（C# 索引器）才能被序列化   。
+您可以通过实现 <xref:System.Collections.ICollection> 接口创建自己的集合类，并使用 <xref:System.Xml.Serialization.XmlSerializer> 序列化这些类的实例。 请注意，当类实现 <xref:System.Collections.ICollection> 接口时，只序列化该类包含的集合， 而不会序列化添加至该类的任何公共属性或字段。 该类必须包含 Add 方法和 Item 属性（C# 索引器）才能被序列化 。
 
 ```vb
 Imports System.Collections

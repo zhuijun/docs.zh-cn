@@ -1,13 +1,13 @@
 ---
 title: dotnet-install 脚本
 description: 了解用于安装 .NET Core SDK 和共享运行时的 dotnet-install 脚本。
-ms.date: 01/23/2020
-ms.openlocfilehash: 591413a17db577560bd0324995066c8ea7a35895
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.date: 04/30/2020
+ms.openlocfilehash: 9f5cef9cfcca1d8b344021efe803c063a7393f8e
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463680"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83802721"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet-install 脚本引用
 
@@ -63,6 +63,8 @@ dotnet-install.sh --help
 
 可以使用 `-Version|--version` 参数安装特定版本。 必须将版本指定为由 3 部分构成的版本（例如 `2.1.0`）。 如果未提供，则使用 `latest` 版本。
 
+安装脚本不会更新 Windows 上的注册表。 它们只是下载压缩的二进制文件并将其复制到文件夹。 如果要更新注册表项值，请使用 .NET Core 安装程序。
+
 ## <a name="options"></a>选项
 
 - **`-Architecture|--architecture <ARCHITECTURE>`**
@@ -98,11 +100,11 @@ dotnet-install.sh --help
 
 - **`-InstallDir|--install-dir <DIRECTORY>`**
 
-  指定安装路径。 如果不存在，则会创建该目录。 默认值为 *%LocalAppData%\Microsoft\dotnet*。 会将二进制文件直接放入目录中。
+  指定安装路径。 如果不存在，则会创建该目录。 默认值为“%LocalAppData%\Microsoft\dotnet”（在 Windows 上）和“/usr/share/dotnet”（在 Linux/macOS 上）。 会将二进制文件直接放入目录中。
 
 - **`-JSonFile|--jsonfile <JSONFILE>`**
 
-  指定将用于确定 SDK 版本的 [global.json](global-json.md) 文件的路径。 global.json  文件必须具有 `sdk:version` 的值。
+  指定将用于确定 SDK 版本的 [global.json](global-json.md) 文件的路径。 global.json 文件必须具有 `sdk:version` 的值。
 
 - **`-NoCdn|--no-cdn`**
 
@@ -141,7 +143,7 @@ dotnet-install.sh --help
 
 - **`-SkipNonVersionedFiles|--skip-non-versioned-files`**
 
-  跳过安装未添加版本的文件，例如 dotnet.exe  （如果它们已经存在）。
+  跳过安装未添加版本的文件，例如 dotnet.exe（如果它们已经存在）。
 
 - **`-UncachedFeed|--uncached-feed`**
 

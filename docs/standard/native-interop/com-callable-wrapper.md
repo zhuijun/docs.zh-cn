@@ -1,5 +1,6 @@
 ---
 title: COM 可调用包装
+description: COM 客户端调用 .NET 对象时，CLR 将创建托管对象和该对象的 COM 可调用包装器。 COM 客户端会调用该对象的包装器。
 ms.date: 10/23/2018
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: d04be3b5-27b9-4f5b-8469-a44149fabf78
-ms.openlocfilehash: 6f2f4055a95dbcea8d7872b5c5fa3ccede8c2c8c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c42ea0b5ba4cb01304ceae4ba2d2fc91b629a9b3
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401171"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83420521"
 ---
 # <a name="com-callable-wrapper"></a>COM 可调用包装
 
@@ -41,29 +42,29 @@ COM 可调用包装器对在 .NET 运行时内运行的其他类不可见。 它
 
 CCW 公开所有公共的 COM 可见接口和数据类型，并以与 COM 对基于接口的交互的强制一致的方式向 COM 客户端返回值。 对于 COM 客户端而言，调用 .NET 对象上的方法与调用 COM 对象上的方法相同。
 
-若要创建这一无缝的方法，CCW 生成传统 COM 接口，如 IUnknown  和 IDispatch  。 如下图所示，CCW 保持对其包装的 .NET 对象的单一引用。 COM 客户端和 .NET 对象都通过代理和 CCW 的存根构造进行相互交互。
+若要创建这一无缝的方法，CCW 生成传统 COM 接口，如 IUnknown 和 IDispatch。 如下图所示，CCW 保持对其包装的 .NET 对象的单一引用。 COM 客户端和 .NET 对象都通过代理和 CCW 的存根构造进行相互交互。
 
 ![展示 CCW 如何生成 COM 接口的图。](./media/com-callable-wrapper/com-callable-wrapper-interfaces.gif)
 
-除公开由托管环境中的类显式实现的接口外，.NET 运行时代表对象提供对下表中列出的 COM 接口的实现。 .NET 类可以通过提供其自身对这些接口的实现而替代默认行为。 但是，运行时始终提供 IUnknown  和 IDispatch  接口的实现。
+除公开由托管环境中的类显式实现的接口外，.NET 运行时代表对象提供对下表中列出的 COM 接口的实现。 .NET 类可以通过提供其自身对这些接口的实现而替代默认行为。 但是，运行时始终提供 IUnknown 和 IDispatch 接口的实现。
 
 |接口|描述|
 |---------------|-----------------|
 |**IDispatch**|为晚期绑定到类型提供一个机制。|
-|**IErrorInfo**|提供以下内容的文字描述：错误、错误源、帮助文件，帮助上下文以及定义错误的接口的 GUID（.NET 类始终为 GUID_NULL）  。|
-|**IProvideClassInfo**|启用 COM 客户端，以获取对由托管类实现的 ITypeInfo  接口的访问。 对于未从 COM 导入的类型，在 .NET Core 上返回 `COR_E_NOTSUPPORTED`。 |
-|**ISupportErrorInfo**|启用 COM 客户端，以确定托管对象是否支持 IErrorInfo  接口。 如果支持，则启用客户端，以获取指向最新异常对象的指针。 所有托管类型都支持 IErrorInfo  接口。|
+|**IErrorInfo**|提供以下内容的文字描述：错误、错误源、帮助文件，帮助上下文以及定义错误的接口的 GUID（.NET 类始终为 GUID_NULL）。|
+|**IProvideClassInfo**|启用 COM 客户端，以获取对由托管类实现的 ITypeInfo 接口的访问。 对于未从 COM 导入的类型，在 .NET Core 上返回 `COR_E_NOTSUPPORTED`。 |
+|**ISupportErrorInfo**|启用 COM 客户端，以确定托管对象是否支持 IErrorInfo 接口。 如果支持，则启用客户端，以获取指向最新异常对象的指针。 所有托管类型都支持 IErrorInfo 接口。|
 |**ITypeInfo**（仅限 .NET Framework）|为类提供与 Tlbexp.exe 生成的类型信息完全相同的类型信息。|
-|**IUnknown**|提供 IUnknown  接口的标准实现，COM 客户端使用该接口管理 CCW 的生存期并提供类型强制转换。|
+|**IUnknown**|提供 IUnknown 接口的标准实现，COM 客户端使用该接口管理 CCW 的生存期并提供类型强制转换。|
 
  托管类还可以提供下表中介绍的 COM 接口。
 
 |接口|描述|
 |---------------|-----------------|
-|(\_classname  ) 类接口|该接口由运行时公开但未显式定义，它公开托管对象上显式公开的所有公共接口、方法、属性和字段。|
+|(\_classname) 类接口|该接口由运行时公开但未显式定义，它公开托管对象上显式公开的所有公共接口、方法、属性和字段。|
 |**IConnectionPoint** 和 **IConnectionPointContainer**|以基于委托的事件（用于注册事件订阅服务器的接口）为源的对象的接口。|
-|**IDispatchEx**（仅限 .NET Framework）|如果类实现 IExpando  ，则为由运行时提供的接口。 IDispatchEx 接口是 IDispatch 接口的扩展，与 IDispatch 不同，它可枚举、添加、删除和以区分大小的方式调用成员    。|
-|**IEnumVARIANT**|集合类型类的接口，如果类实现 IEnumerable  ，则该接口将枚举集合中的对象。|
+|**IDispatchEx**（仅限 .NET Framework）|如果类实现 IExpando，则为由运行时提供的接口。 IDispatchEx 接口是 IDispatch 接口的扩展，与 IDispatch 不同，它可枚举、添加、删除和以区分大小的方式调用成员  。|
+|**IEnumVARIANT**|集合类型类的接口，如果类实现 IEnumerable，则该接口将枚举集合中的对象。|
 
 ## <a name="introducing-the-class-interface"></a>类接口简介
 
@@ -148,7 +149,7 @@ public class LoanApp : IExplicit
 }
 ```
 
-ClassInterfaceType.None  值防止类元数据导出到类型库时生成类接口。 在前面的示例中，COM 客户端只能通过 `IExplicit` 接口访问 `LoanApp` 类。
+ClassInterfaceType.None 值防止类元数据导出到类型库时生成类接口。 在前面的示例中，COM 客户端只能通过 `IExplicit` 接口访问 `LoanApp` 类。
 
 ### <a name="avoid-caching-dispatch-identifiers-dispids"></a>避免缓存调度标识符 (DispId)
 
@@ -156,7 +157,7 @@ ClassInterfaceType.None  值防止类元数据导出到类型库时生成类接�
 
 对于类接口，基于接口中成员的位置生成 DispId。 如果更改了成员顺序并将类导出到类型库中，则将改变类接口中生成的 DispId。
 
-若要避免在使用类接口时中断后期绑定 COM 客户端，请应用具有 ClassInterfaceAttribute  值的 ClassInterfaceType.AutoDispatch  。 此值实现仅支持调度的类接口，但将省略类型库中的接口说明。 没有接口说明，客户端就无法在编译时缓存 DispId。 尽管这是类接口的默认接口类型，但你可以显式地应用属性值。
+若要避免在使用类接口时中断后期绑定 COM 客户端，请应用具有 ClassInterfaceAttribute 值的 ClassInterfaceType.AutoDispatch。 此值实现仅支持调度的类接口，但将省略类型库中的接口说明。 没有接口说明，客户端就无法在编译时缓存 DispId。 尽管这是类接口的默认接口类型，但你可以显式地应用属性值。
 
 ```vb
 <ClassInterface(ClassInterfaceType.AutoDispatch)> Public Class LoanApp
@@ -174,19 +175,19 @@ public class LoanApp
 }
 ```
 
-若要在运行时获取接口成员的 DispId，COM 客户端可以调用 IDispatch.GetIdsOfNames  。 若要调用接口上的方法，请将返回的 DispId 作为参数传递给 IDispatch.Invoke  。
+若要在运行时获取接口成员的 DispId，COM 客户端可以调用 IDispatch.GetIdsOfNames。 若要调用接口上的方法，请将返回的 DispId 作为参数传递给 IDispatch.Invoke。
 
 ### <a name="restrict-using-the-dual-interface-option-for-the-class-interface"></a>限制使用类接口的双重接口选项。
 
 双重接口通过 COM 客户端启用对接口成员的早期绑定和后期绑定。 在设计时和测试期间，将类接口设置为双重可能会非常有用。 对于永远不会被修改的托管类（及其基类），此选项也是可接受的。 在所有其它情况下，请避免将类接口设置为双重。
 
-自动生成的双重接口可能适合少数情况；但是，更多情况下，它将造成与版本相关的复杂性。 例如，使用派生类的类接口的 COM 客户端可以通过对基类的更改轻松中断。 当第三方提供基类时，类接口的布局将不受你的控制。 进一步来说，与仅支持调度的接口不同，双重接口 (ClassInterfaceType.AutoDual)  提供对导出的类型库中的类接口的说明。 此类说明会促使后期绑定的客户端在编译时缓存 DispId。
+自动生成的双重接口可能适合少数情况；但是，更多情况下，它将造成与版本相关的复杂性。 例如，使用派生类的类接口的 COM 客户端可以通过对基类的更改轻松中断。 当第三方提供基类时，类接口的布局将不受你的控制。 进一步来说，与仅支持调度的接口不同，双重接口 (ClassInterfaceType.AutoDual)提供对导出的类型库中的类接口的说明。 此类说明会促使后期绑定的客户端在编译时缓存 DispId。
 
 ### <a name="ensure-that-all-com-event-notifications-are-late-bound"></a>确保所有 COM 事件通知都是后期绑定的。
 
 默认情况下，COM 类型信息直接嵌入到托管程序集中，这会消除对主互操作程序集 (PIA) 的需要。 但是，嵌入式类型信息的一个限制是它不支持通过早期绑定的 vtable 调用传递 COM 事件通知，而仅支持后期绑定的 `IDispatch::Invoke` 调用。
 
-如果应用程序需要对 COM 事件接口方法进行早期绑定调用，则可以将 Visual Studio 中的”嵌入互操作类型”  属性设置为 `true`，或在项目文件中包含以下元素：
+如果应用程序需要对 COM 事件接口方法进行早期绑定调用，则可以将 Visual Studio 中的”嵌入互操作类型”属性设置为 `true`，或在项目文件中包含以下元素：
 
 ```xml
 <EmbedInteropTypes>True</EmbedInteropTypes>

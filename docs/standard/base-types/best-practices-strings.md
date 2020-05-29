@@ -18,12 +18,12 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-ms.openlocfilehash: e633b6c1d03a3d1cd70e277395da10f70f315f16
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 0fb7ec8d9de8fae7a0443984511e538d38d93c7a
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523977"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83441001"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>有关使用 .NET 中字符串的最佳做法
 
@@ -317,18 +317,20 @@ InvariantCulture: a + ̊ = å
 
 - 当使用 <xref:System.String.Format%2A?displayProperty=nameWithType> 和 `ToString` 方法时，调用具有 `provider` 参数（如 <xref:System.String.Format%28System.IFormatProvider%2CSystem.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> 或 <xref:System.DateTime.ToString%28System.IFormatProvider%29?displayProperty=nameWithType>）的重载，并将 <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType> 属性（表示所需区域性的 <xref:System.Globalization.CultureInfo> 实例）或 <xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType> 属性传递给它。
 
-- 对于字符串串联，不允许编译器执行任何隐式转换。 可通过调用具有 `provider` 参数的 `ToString` 重载来执行显式转换。 例如，在将 <xref:System.Double> 值转换为以下 C# 代码中的字符串时，编译器隐式使用当前区域性：
+- 对于字符串串联，不允许编译器执行任何隐式转换。 可通过调用具有 `provider` 参数的 `ToString` 重载来执行显式转换。 例如，在将 <xref:System.Double> 值转换为以下代码中的字符串时，编译器隐式使用当前区域性：
 
-  [!code-csharp[Implicit String Conversion](~/samples/snippets/standard/base-types/string-practices/cs/tostring.cs#1)]
+  [!code-csharp[Implicit String Conversion](./snippets/best-practices-strings/csharp/tostring/Program.cs#1)]
+  [!code-vb[Implicit String Conversion](./snippets/best-practices-strings/vb/tostring/Program.vb#1)]
 
-  可以通过调用 <xref:System.Double.ToString(System.IFormatProvider)?displayProperty=nameWithType> 方法显式指定在转换中使用格式约定的区域性，如下面的 C# 代码所示：
+  可以通过调用 <xref:System.Double.ToString(System.IFormatProvider)?displayProperty=nameWithType> 方法显式指定在转换中使用格式约定的区域性，如下面的代码所示：
 
-  [!code-csharp[Explicit String Conversion](~/samples/snippets/standard/base-types/string-practices/cs/tostring.cs#2)]
+  [!code-csharp[Explicit String Conversion](./snippets/best-practices-strings/csharp/tostring/Program.cs#2)]
+  [!code-vb[Implicit String Conversion](./snippets/best-practices-strings/vb/tostring/Program.vb#2)]
 
 - 对于字符串内插，不是将内插字符串分配给 <xref:System.String> 实例，而是将其分配给 <xref:System.FormattableString>。 然后，可以调用其 <xref:System.FormattableString.ToString?displayProperty=nameWithType> 方法生成反映当前区域性约定的结果字符串，也可以调用 <xref:System.FormattableString.ToString(System.IFormatProvider)?displayProperty=nameWithType> 方法生成反映指定区域性约定的结果字符串。 还可以将可格式化字符串传递给静态 <xref:System.FormattableString.Invariant%2A?displayProperty=nameWithType> 方法，以生成反映固定区域性约定的结果字符串。 下面的示例阐释了这种方法。 （该示例的输出反映了当前的 zh-CN 区域性。）
 
-  [!code-csharp[String interpolation](~/samples/snippets/standard/base-types/string-practices/cs/formattable.cs)]
-  [!code-vb[String interpolation](~/samples/snippets/standard/base-types/string-practices/vb/formattable.vb)]
+  [!code-csharp[String interpolation](./snippets/best-practices-strings/csharp/formattable/Program.cs)]
+  [!code-vb[String interpolation](./snippets/best-practices-strings/vb/formattable/Program.vb)]
 
 您可以保留非字符串数据作为二进制数据或作为格式化数据。 如果您选择将其保存为格式化数据，您应调用包括 `provider` 参数的格式设置方法重载，并向其传递 <xref:System.Globalization.CultureInfo.InvariantCulture%2A?displayProperty=nameWithType> 属性。 固定区域性为独立于区域性和计算机的格式化数据提供一致的格式。 相反，使用区域性而非固定区域性进行格式化的持久性数据具有许多限制：
 

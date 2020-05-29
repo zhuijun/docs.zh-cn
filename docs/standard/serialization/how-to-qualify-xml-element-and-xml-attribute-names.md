@@ -1,5 +1,6 @@
 ---
 title: 如何限定 XML 元素和 XML 属性名
+description: 本文说明如何在 XML 文档中限定 XML 元素和 XML 属性的名称。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - qualifying XML elements
 - XML namespaces, qualifying elements and names in
 ms.assetid: 44719f90-7e15-42e8-a9e2-282287e2b5bf
-ms.openlocfilehash: db0795dd83cc96aba49dd435c875e98a9a6c18cb
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 6c29e03d9ce28e5b0abc68a5d7e8d82f4485ac93
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159866"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378417"
 ---
 # <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>如何限定 XML 元素和 XML 属性名
 

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 911d4460-dd91-4958-85b2-2ca3299f9ec6
-ms.openlocfilehash: 6a0cc110c2b8bcd97b9f5c16a344db5a63046353
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d5b2fe4325000023acc98580a2a6d014f56fecbd
+ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709798"
+ms.lasthandoff: 05/15/2020
+ms.locfileid: "83419104"
 ---
 # <a name="xmlschemavalidator-push-based-validation"></a>XmlSchemaValidator 基于推送的验证
 
@@ -456,7 +456,7 @@ static void SchemaValidationEventHandler(object sender, ValidationEventArgs e)
 |------------|-----------------|
 |&#124;|可以调用（竖线之前或竖线之后的）方法或状态。|
 |?|问号之前的方法或状态是可选的，但是如果调用，只能调用一次。|
-|*|\* 符号之前的方法或状态是可选的，可以调用多次。|
+|\*|\* 符号之前的方法或状态是可选的，可以调用多次。|
 
 ## <a name="validation-context"></a>验证上下文
 

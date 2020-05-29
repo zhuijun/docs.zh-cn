@@ -1,5 +1,6 @@
 ---
 title: 用来控制 XML 序列化的属性
+description: 本文包含可应用于类和类成员的属性，它们用于控制 XmlSerializer 序列化或反序列化该类的实例的方式。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - classes, serializing
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - serialization, attributes
 - XML Schema, serializing
 ms.assetid: 414b820f-a696-4206-b576-2711d85490c7
-ms.openlocfilehash: 0d1aee4650ea29083348af482e445011289e9581
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3a269e1f3e8fd6e982db3c241c113f471134f9d3
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61794961"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378448"
 ---
 # <a name="attributes-that-control-xml-serialization"></a>用来控制 XML 序列化的属性
 通过将下表中的特性应用于类和类成员，可以控制 <xref:System.Xml.Serialization.XmlSerializer> 序列化或反序列化该类的实例的方式。 若要了解这些属性如何控制 XML 序列化，请参阅[使用属性控制 XML 序列化](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)。  
@@ -39,7 +40,7 @@ ms.locfileid: "61794961"
 |<xref:System.Xml.Serialization.XmlTextAttribute>|公共属性和公共字段。|属性或字段应该作为 XML 文本进行序列化。|  
 |<xref:System.Xml.Serialization.XmlTypeAttribute>|公共类声明。|XML 类型的名称和命名空间。|  
   
- 除了这些特性（全部位于 <xref:System.Xml.Serialization> 命名空间中）之外，还可以将 <xref:System.ComponentModel.DefaultValueAttribute> 特性应用于字段。 如果没有指定值，使用 DefaultValueAttribute 可设置将自动分配给成员的值  。  
+ 除了这些特性（全部位于 <xref:System.Xml.Serialization> 命名空间中）之外，还可以将 <xref:System.ComponentModel.DefaultValueAttribute> 特性应用于字段。 如果没有指定值，使用 DefaultValueAttribute 可设置将自动分配给成员的值。  
   
  若要控制编码的 SOAP XML 序列化，请参阅[控制编码的 SOAP 序列化的特性](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)。  
   

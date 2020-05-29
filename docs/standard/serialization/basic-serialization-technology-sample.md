@@ -1,13 +1,14 @@
 ---
 title: 基本序列化技术示例
+description: 本示例说明公共语言运行时 (CLR) 将内存中的对象图序列化成流的能力。 此示例可以使用 SoapFormatter 或 BinaryFormatter。
 ms.date: 03/30/2017
 ms.assetid: 9d824e16-08d1-4a36-bc7f-2388c1f75f34
-ms.openlocfilehash: e5dcc9ec7cf6f996c97262b14020552286c530da
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: fcbf790c3b3d48a0aeb27fd1ef6f75dcd7609ae0
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353150"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378433"
 ---
 # <a name="basic-serialization-technology-sample"></a>基本序列化技术示例
 
@@ -21,7 +22,7 @@ ms.locfileid: "71353150"
 
 1. 使用命令提示定位到 Technologies\Serialization\Runtime Serialization\Basic 目录下语言特定的子目录之一。
 
-2. 在命令行中键入 msbuild SerializationCS.sln、msbuild SerializationJSL.sln 或 msbuild SerializationVB.sln，具体取决于所选的编程语言    。
+2. 在命令行中键入 msbuild SerializationCS.sln、msbuild SerializationJSL.sln 或 msbuild SerializationVB.sln，具体取决于所选的编程语言  。
 
 ### <a name="to-build-the-sample-using-visual-studio"></a>使用 Visual Studio 生成示例
 
@@ -29,7 +30,7 @@ ms.locfileid: "71353150"
 
 2. 根据所选的编程语言，双击 SerializationCS.sln、SerializationJSL.sln 或 SerializationVB.sln 文件的图标，在 Visual Studio 中打开该文件。
 
-3. 在“生成”菜单中选择“生成解决方案”   。
+3. 在“生成”菜单中选择“生成解决方案” 。
 
  示例应用程序将在默认的 \bin 或 \bin\Debug 子目录中生成。
 
@@ -37,14 +38,14 @@ ms.locfileid: "71353150"
 
 1. 定位到包含生成的可执行文件的目录。
 
-2. 在命令行中键入 Serialization.exe 以及所需的参数值  。
+2. 在命令行中键入 Serialization.exe 以及所需的参数值。
 
   > [!NOTE]
   > 此示例生成控制台应用程序。 必须使用命令提示来启动该程序，才能查看相应的输出。
 
 ## <a name="remarks"></a>备注
 
-示例应用程序接受指示您要执行何种测试的命令行参数。 若要使用 SOAP 格式化程序将 10 节点列表序列化成名为 Test.xml 的文件，请使用参数 sx Test.xml 10   。
+示例应用程序接受指示您要执行何种测试的命令行参数。 若要使用 SOAP 格式化程序将 10 节点列表序列化成名为 Test.xml 的文件，请使用参数 sx Test.xml 10 。
 
 例如：
 
@@ -52,7 +53,7 @@ ms.locfileid: "71353150"
 Serialize.exe -sx Test.xml 10
 ```
 
-若要从先前的示例中反序列化 Test.xml文件，请使用参数 dx Test.xml   。
+若要从先前的示例中反序列化 Test.xml文件，请使用参数 dx Test.xml 。
 
 例如：
 

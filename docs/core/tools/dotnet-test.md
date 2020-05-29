@@ -2,16 +2,16 @@
 title: dotnet test 命令
 description: dotnet test 命令可用于在给定项目中执行单元测试。
 ms.date: 04/29/2020
-ms.openlocfilehash: ef71e48daa7c4a6f33961d05a2f3def122087b0e
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: 22b27007d26c98cff40733ef8d449ce334f87848
+ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975428"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83802682"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
- 本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
+本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
 
 ## <a name="name"></a>“属性”
 
@@ -58,7 +58,7 @@ dotnet test -h|--help
   - 指向测试项目的路径。
   - 解决方案的路径。
   - 包含项目或解决方案的目录的路径。
-  - 测试项目 .dll  文件的路径。
+  - 测试项目 .dll 文件的路径。
 
   如果未指定，则会在当前目录中搜索项目或解决方案。
 
@@ -66,7 +66,7 @@ dotnet test -h|--help
 
 - **`-a|--test-adapter-path <PATH_TO_ADAPTER>`**
 
-  要在其中搜索其他测试适配器的目录的路径。 只检查后缀为 `.TestAdapter.dll` 的 .dll  文件。 如果未指定，则会搜索测试 .dll  的目录。
+  要在其中搜索其他测试适配器的目录的路径。 只检查后缀为 `.TestAdapter.dll` 的 .dll 文件。 如果未指定，则会搜索测试 .dll 的目录。
 
 - **`--blame`**
 
@@ -86,7 +86,7 @@ dotnet test -h|--help
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  强制将 `dotnet` 或 .NET Framework 测试主机用于测试二进制文件。 此选项只确定要使用哪种类型的主机。 要使用的实际框架版本由测试项目的 runtimeconfig.json  决定。 如果未指定，则 [TargetFramework 程序集特性](/dotnet/api/system.runtime.versioning.targetframeworkattribute)用于确定主机的类型。 如果已从 .dll  中去除此特性，则使用的是 .NET Framework 主机。
+  强制将 `dotnet` 或 .NET Framework 测试主机用于测试二进制文件。 此选项只确定要使用哪种类型的主机。 要使用的实际框架版本由测试项目的 runtimeconfig.json 决定。 如果未指定，则 [TargetFramework 程序集特性](/dotnet/api/system.runtime.versioning.targetframeworkattribute)用于确定主机的类型。 如果已从 .dll 中去除此特性，则使用的是 .NET Framework 主机。
 
 - **`--filter <EXPRESSION>`**
 
@@ -130,7 +130,7 @@ dotnet test -h|--help
 
 - **`-s|--settings <SETTINGS_FILE>`**
 
-  `.runsettings` 文件用于运行测试。 请注意，`TargetPlatform` 元素 (x86|x64) 对 `dotnet test` 不起作用。 若要运行面向 x86 的测试，请安装 .NET Core 的 x86 版本。 路径上 dotnet.exe 的位数是用于运行测试的内容  。 有关更多信息，请参见以下资源：
+  `.runsettings` 文件用于运行测试。 请注意，`TargetPlatform` 元素 (x86|x64) 对 `dotnet test` 不起作用。 若要运行面向 x86 的测试，请安装 .NET Core 的 x86 版本。 路径上 dotnet.exe 的位数是用于运行测试的内容。 有关更多信息，请参见以下资源：
 
   - [使用 `.runsettings` 文件配置单元测试。](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
   - [配置测试运行](https://github.com/Microsoft/vstest-docs/blob/master/docs/configure.md)

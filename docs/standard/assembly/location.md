@@ -1,16 +1,17 @@
 ---
 title: 程序集位置
+description: .NET 程序集的位置决定了 CLR 查找它的方式，以及它是否可以与其他程序集共享。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 9f1f41a7-2954-49d3-a2c0-62b6ef4d40ab
-ms.openlocfilehash: 0b84aba749625f0f86027cd9d09a5e9a2229a3f2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7ab3804b14b586e1430d654f4da32a310bcb6cc9
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73733124"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379896"
 ---
 # <a name="assembly-location"></a>程序集位置
 程序集的位置决定公共语言运行时是否可以在引用该程序集时找到它，也可以决定是否可与其他程序集共享该程序集。 可以在以下位置部署程序集：
@@ -27,7 +28,7 @@ ms.locfileid: "73733124"
 
      部署在 HTTP 服务器上的程序集必须具有强名称，请在应用程序配置文件的基本代码节中指向此程序集。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [创建程序集](create.md)
 - [全局程序集缓存](../../framework/app-domains/gac.md)

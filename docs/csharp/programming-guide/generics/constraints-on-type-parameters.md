@@ -6,12 +6,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 0035f7d8aa862b4bd1b09a6f122a89786a6e295b
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 376befe4c969ac653e234479c8946d7fd4242999
+ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738255"
+ms.lasthandoff: 05/16/2020
+ms.locfileid: "83442210"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>类型参数的约束（C# 编程指南）
 
@@ -25,10 +25,10 @@ ms.locfileid: "81738255"
 |`where T : notnull`|类型参数必须是不可为 null 的类型。 参数可以是 C# 8.0 或更高版本中的不可为 null 的引用类型，也可以是不可为 null 的值类型。 |
 |`where T : unmanaged`|类型参数必须是不可为 null 的[非托管类型](../../language-reference/builtin-types/unmanaged-types.md)。 `unmanaged` 约束表示 `struct` 约束，且不能与 `struct` 约束或 `new()` 约束结合使用。|
 |`where T : new()`|类型参数必须具有公共无参数构造函数。 与其他约束一起使用时，`new()` 约束必须最后指定。 `new()` 约束不能与 `struct` 和 `unmanaged` 约束结合使用。|
-|`where T :` \<基类名> |类型参数必须是指定的基类或派生自指定的基类。 在 C# 8.0 及更高版本中的可为 null 上下文中，`T` 必须是从指定基类派生的不可为 null 的引用类型。 |
-|`where T :` \<基类名>? |类型参数必须是指定的基类或派生自指定的基类。 在 C# 8.0 及更高版本中的可为 null 上下文中，`T` 可以是从指定基类派生的可为 null 或不可为 null 的类型。 |
-|`where T :` \<接口名称> |类型参数必须是指定的接口或实现指定的接口。 可指定多个接口约束。 约束接口也可以是泛型。 在 C# 8.0 及更高版本中的可为 null 上下文中，`T` 必须是实现指定接口的不可为 null 的类型。|
-|`where T :` \<接口名称>? |类型参数必须是指定的接口或实现指定的接口。 可指定多个接口约束。 约束接口也可以是泛型。 在 C# 8.0 中的可为 null 上下文中，`T` 可以是可为 null 的引用类型、不可为 null 的引用类型或值类型。 `T` 不能是可为 null 的值类型。|
+|`where T :` \<基类名>|类型参数必须是指定的基类或派生自指定的基类。 在 C# 8.0 及更高版本中的可为 null 上下文中，`T` 必须是从指定基类派生的不可为 null 的引用类型。 |
+|`where T :` \<基类名>?|类型参数必须是指定的基类或派生自指定的基类。 在 C# 8.0 及更高版本中的可为 null 上下文中，`T` 可以是从指定基类派生的可为 null 或不可为 null 的类型。 |
+|`where T :` \<接口名称>|类型参数必须是指定的接口或实现指定的接口。 可指定多个接口约束。 约束接口也可以是泛型。 在 C# 8.0 及更高版本中的可为 null 上下文中，`T` 必须是实现指定接口的不可为 null 的类型。|
+|`where T :` \<接口名称>?|类型参数必须是指定的接口或实现指定的接口。 可指定多个接口约束。 约束接口也可以是泛型。 在 C# 8.0 中的可为 null 上下文中，`T` 可以是可为 null 的引用类型、不可为 null 的引用类型或值类型。 `T` 不能是可为 null 的值类型。|
 |`where T : U`|为 `T` 提供的类型参数必须是为 `U` 提供的参数或派生自为 `U` 提供的参数。 在可为 null 的上下文中，如果 `U` 是不可为 null 的引用类型，`T` 必须是不可为 null 的引用类型。 如果 `U` 是可为 null 的引用类型，则 `T` 可以是可为 null 的引用类型，也可以是不可为 null 的引用类型。 |
 
 ## <a name="why-use-constraints"></a>使用约束的原因
@@ -113,7 +113,7 @@ ms.locfileid: "81738255"
 
 [!code-csharp[using the enum constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#18)]
 
-所用方法利用反射，这会对性能产生影响。 可调用此方法来生成可缓存和重用的集合，而不是重复需要反射才能实施的调用。
+`Enum.GetValues` 和 `Enum.GetName` 使用反射，这会对性能产生影响。 可调用 `EnumNamedValues` 来生成可缓存和重用的集合，而不是重复执行需要反射才能实施的调用。
 
 如以下示例所示，可使用它来创建枚举并生成其值和名称的字典：
 

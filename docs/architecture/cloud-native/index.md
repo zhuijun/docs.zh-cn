@@ -3,12 +3,12 @@ title: 为 Azure 构建云本机 .NET 应用程序
 description: 构建利用 Azure 的容器、微服务和无服务器功能的云本机应用程序的指南。
 author: ardalis
 ms.date: 05/13/2020
-ms.openlocfilehash: 196671468e56147f714078d1671f44af21bcf327
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: b315f097b1584bd93f694c10f36ee7524d7e020a
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83840879"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144378"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>为 Azure 构建云本机 .NET 应用程序
 
@@ -34,7 +34,7 @@ Redmond, Washington 98052-6399
 
 本书中提及的一些示例仅用于说明，纯属虚构。 不存在任何实际关联或联系，请勿妄加推断。
 
-Microsoft 和 [https://www.microsoft.com](https://www.microsoft.com) 上“商标”网页列出的商标是 Microsoft 集团公司的商标。
+Microsoft 和 <https://www.microsoft.com> 上“商标”网页列出的商标是 Microsoft 集团公司的商标。
 
 Mac 和 macOS 是 Apple Inc. 的商标
 
@@ -44,7 +44,7 @@ Docker 的鲸鱼徽标是 Docker Inc. 的注册商标经许可方可使用。
 
 作者：
 
-> Rob Vettor，Microsoft 首席云系统架构师/IP 架构师 ([thinkingincloudnative.com](http://thinkingincloudnative.com/about/))
+> Rob Vettor，Microsoft 首席云系统架构师/IP 架构师 ([thinkingincloudnative.com](https://thinkingincloudnative.com/about/))
 >
 > Steve "ardalis" Smith，[Ardalis.com](https://ardalis.com) 软件设计师及培训师
 

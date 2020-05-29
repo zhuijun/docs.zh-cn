@@ -17,14 +17,15 @@ helpviewer_keywords:
 - sending data, UDP
 - application protocols, UDP
 ms.assetid: d5c3477a-e798-454c-a890-738ba14c5707
-ms.openlocfilehash: 477095ada6e44f66cbc60cd80375da9a87f38e39
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5ff40e8759b1732d4ad228b1414f96f9c37e5ac5
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180606"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209768"
 ---
-# <a name="using-udp-services"></a>使用 UDP 服务
+# <a name="use-udp-services"></a>使用 UDP 服务
+
 <xref:System.Net.Sockets.UdpClient> 类使用 UDP与网络服务通信。 <xref:System.Net.Sockets.UdpClient> 类的属性和方法概要说明了使用 UDP 创建 <xref:System.Net.Sockets.Socket> 以请求和接收数据的详情。
 
 用户数据报协议 (UDP) 是一种简单协议，非常适合用于将数据传递到远程主机。 但由于 UDP 协议是一种无连接协议，因此发送到远程终结点的 UDP 数据报不一定可到达，也无法保证其能以发送的相同顺序到达。 使用 UDP 的应用程序必须准备好处理丢失的、重复的和乱序的数据报。
@@ -158,7 +159,7 @@ class Program
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Net.Sockets.UdpClient>
 - <xref:System.Net.IPAddress>

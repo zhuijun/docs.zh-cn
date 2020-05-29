@@ -4,12 +4,12 @@ description: 了解如何使用 .NET 可移植性分析器工具，评估代码�
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: 8d019bef5fddac9f7c3d93e416cea061905c82ff
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 94dd6de8839b03bbdc33ae1ed03599853241d40b
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728447"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209361"
 ---
 # <a name="the-net-portability-analyzer"></a>.NET 可移植性分析器
 
@@ -19,7 +19,7 @@ ms.locfileid: "82728447"
 
 ## <a name="common-targets"></a>常用对象
 
-- [.NET Core](../../core/index.yml)：采用模块化设计，可并行工作，面向跨平台方案。 可并行工作意味着无需破坏其他应用即可采用新的 .NET Core 版本。 如果目标是将应用移植到支持跨平台的 .NET Core，则建议使用此对象。
+- [.NET Core](../../core/index.yml)：采用模块化设计，支持并行安装，面向跨平台方案。 可并行安装意味着无需破坏其他应用即可采用新的 .NET Core 版本。 如果目标是将应用移植到 .NET Core 以支持多个平台，则建议使用此对象。
 - .[NET Standard](../../standard/net-standard.md)：包括所有 .NET 实现上提供的 .NET Standard API。 如果目标是使自己的库能够在所有 .NET 支持的平台上运行，则建议使用此对象。
 - [ASP.NET Core](/aspnet/core)：在 .NET Core 基础上构建的现代 Web 框架。 如果目标是将 Web 应用移植到 .NET Core 以支持多个平台，则建议使用此对象。
 - .NET Core + [平台扩展](../../core/porting/windows-compat-pack.md)：除 Windows 兼容包之外，还包括 .NET Core API，后者提供了许多可用的 .NET Framework 技术。 这是推荐的对象，用于将 Windows 上的应用从 .NET Framework 移植到 .NET Core。
@@ -27,14 +27,14 @@ ms.locfileid: "82728447"
 
 ## <a name="how-to-use-the-net-portability-analyzer"></a>如何使用 .NET 可移植性分析器
 
-若要开始在 Visual Studio 中使用 .NET 可移植性分析器，必须先从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer) 下载扩展并进行安装。 它适用于 Visual Studio 2017 及更高版本。 可以通过 Visual Studio 中的“分析” > “可移植性分析器设置”对其进行配置，并选择目标平台，即选择 .NET 平台/版本，用于评估与当前程序集构建的平台/版本相比的可移植性差距   。
+若要开始在 Visual Studio 中使用 .NET 可移植性分析器，必须先从 [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=ConnieYau.NETPortabilityAnalyzer) 下载扩展并进行安装。 它适用于 Visual Studio 2017 及更高版本。 可以通过 Visual Studio 中的“分析” > “可移植性分析器设置”对其进行配置，并选择目标平台，即选择 .NET 平台/版本，用于评估与当前程序集构建的平台/版本相比的可移植性差距 。
 
 ![可移植性分析器的屏幕截图。](./media/portability-analyzer/portability-screenshot.png)
 
 还可以使用 ApiPort 控制台应用程序，可从 [ApiPort 存储库](https://aka.ms/apiportdownload)进行下载。 可以使用 `listTargets` 命令选项以显示可用的目标列表，然后通过指定 `-t` 或 `--target` 命令选项来选择目标平台。
 
 ### <a name="analyze-portability"></a>分析可移植性
-若要在 Visual Studio 中分析整个项目，请在“解决方案资源管理器”中右键单击该项目，然后选择“分析程序集可移植性”   。 也可以转到“分析”菜单，选择“分析程序集可移植性”。   在该位置选择项目的可执行文件或 DLL。
+若要在 Visual Studio 中分析整个项目，请在“解决方案资源管理器”中右键单击该项目，然后选择“分析程序集可移植性” 。 也可以转到“分析”菜单，选择“分析程序集可移植性”。  在该位置选择项目的可执行文件或 DLL。
 
 ![解决方案资源管理器中的可移植性分析器的屏幕截图。](./media/portability-analyzer/portability-solution-explorer.png)
 
@@ -49,7 +49,7 @@ ms.locfileid: "82728447"
 ### <a name="view-and-interpret-portability-result"></a>查看和解释可移植性结果
 
 报表中仅显示目标平台不支持的 API。
-在 Visual Studio 中运行分析后，你将看到弹出的 .NET 可移植性报表文件链接。 如果使用的是 [ApiPort 控制台应用](https://aka.ms/apiportdownload)，.NET 可移植性报表将以指定的格式保存为文件。 默认位于当前目录中的 Excel 文件 (.xlsx) 中  。
+在 Visual Studio 中运行分析后，你将看到弹出的 .NET 可移植性报表文件链接。 如果使用的是 [ApiPort 控制台应用](https://aka.ms/apiportdownload)，.NET 可移植性报表将以指定的格式保存为文件。 默认位于当前目录中的 Excel 文件 (.xlsx) 中。
 
 #### <a name="portability-summary"></a>可移植性摘要
 
@@ -61,7 +61,7 @@ ms.locfileid: "82728447"
 
 ![可移植性详细信息的屏幕截图。](./media/portability-analyzer/api-catalog-portablility-details.png)
 
-报表的“详细信息”  部分列出了任意选定目标平台缺少的 API  。
+报表的“详细信息”部分列出了任意选定目标平台缺少的 API。
 
 - 目标类型：该类型具有目标平台缺少的 API
 - 目标成员：目标平台缺少的方法

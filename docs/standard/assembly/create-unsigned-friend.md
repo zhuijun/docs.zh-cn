@@ -1,16 +1,17 @@
 ---
 title: 如何：创建未签名的友元程序集
+description: 本文演示如何将友元程序集和未签名的程序集一起使用。 其中包含有关 .NET 安全性的信息。
 ms.date: 08/19/2019
 ms.assetid: 78cbc4f0-b021-4141-a4ff-eb4edbd814ca
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: f8fec064507553b8208083578165965de2303a33
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8d3e13669c36048759fedeb3df1bfb59fd476317
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74352439"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378974"
 ---
 # <a name="how-to-create-unsigned-friend-assemblies"></a>如何：创建未签名的友元程序集
 
@@ -20,7 +21,7 @@ ms.locfileid: "74352439"
 
 1. 打开命令提示。
 
-2. 创建名为 friend_unsigned_A 的 C# 或 Visual Basic 文件，其中包含以下代码  。 该代码使用 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性将 friend_unsigned_B 声明为友元程序集  。
+2. 创建名为 friend_unsigned_A 的 C# 或 Visual Basic 文件，其中包含以下代码。 该代码使用 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性将 friend_unsigned_B 声明为友元程序集。
 
    ```csharp
    // friend_unsigned_A.cs
@@ -73,7 +74,7 @@ ms.locfileid: "74352439"
    End Class
    ```
 
-3. 使用以下命令编译 friend_unsigned_A 并为其签名  ：
+3. 使用以下命令编译 friend_unsigned_A 并为其签名：
 
    ```csharp
    csc /target:library friend_unsigned_A.cs
@@ -83,7 +84,7 @@ ms.locfileid: "74352439"
    vbc -target:library friend_unsigned_A.vb
    ```
 
-4. 创建名为 friend_unsigned_B 的 C# 或 Visual Basic 文件，其中包含以下代码  。 由于 friend_unsigned_A 将 friend_unsigned_B 指定为友元程序集，因此 friend_unsigned_B 中的代码可以访问 `internal` (C#) 或 friend_unsigned_A 中的 `Friend` (Visual Basic) 类型和成员     。
+4. 创建名为 friend_unsigned_B 的 C# 或 Visual Basic 文件，其中包含以下代码。 由于 friend_unsigned_A 将 friend_unsigned_B 指定为友元程序集，因此 friend_unsigned_B 中的代码可以访问 `internal` (C#) 或 friend_unsigned_A 中的 `Friend` (Visual Basic) 类型和成员   。
 
    ```csharp
    // friend_unsigned_B.cs
@@ -125,7 +126,7 @@ ms.locfileid: "74352439"
    End Module
    ```
 
-5. 使用以下命令编译 friend_unsigned_B  。
+5. 使用以下命令编译 friend_unsigned_B。
 
    ```csharp
    csc /r:friend_unsigned_A.dll /out:friend_unsigned_B.exe friend_unsigned_B.cs
@@ -135,11 +136,11 @@ ms.locfileid: "74352439"
    vbc -r:friend_unsigned_A.dll friend_unsigned_B.vb
    ```
 
-   编译器生成的程序集的名称必须与传递给 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性的友元程序集的名称匹配。 必须使用 `-out` 编译器选项显式指定输出程序集（.exe 或 .dll）的名称   。 有关详细信息，请参阅 [-out（C# 编译器选项）](../../csharp/language-reference/compiler-options/out-compiler-option.md)或 [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md)。
+   编译器生成的程序集的名称必须与传递给 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性的友元程序集的名称匹配。 必须使用 `-out` 编译器选项显式指定输出程序集（.exe 或 .dll）的名称 。 有关详细信息，请参阅 [-out（C# 编译器选项）](../../csharp/language-reference/compiler-options/out-compiler-option.md)或 [-out (Visual Basic)](../../visual-basic/reference/command-line-compiler/out.md)。
 
-6. 运行 friend_unsigned_B.exe 文件  。
+6. 运行 friend_unsigned_B.exe 文件。
 
-   该程序输出两个字符串：“Class1.Test”和“Class2.Test”   。
+   该程序输出两个字符串：“Class1.Test”和“Class2.Test” 。
 
 ## <a name="net-security"></a>.NET 安全性
 

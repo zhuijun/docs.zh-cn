@@ -2,12 +2,12 @@
 title: 源链接和 .NET 库
 description: 有关使用源链接改进 .NET 库调试的最佳做法建议。
 ms.date: 01/15/2019
-ms.openlocfilehash: 3d768ae6e79efa23a8402ea37bc34cd58cd52c8c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0261019087bce8e9d088a90c5e36bdd0b22f556b
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76744548"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212420"
 ---
 # <a name="source-link"></a>源链接
 
@@ -37,6 +37,10 @@ ms.locfileid: "76744548"
 ✔️ 请考虑发布符号文件 (`*.pdb`)。
 
 > 为获得最佳调试体验，库应发布符号文件并使用源链接。 有关符号文件和符号包的详细信息，请参阅[符号包](./nuget.md#symbol-packages)。
+
+✔️ 考虑启用确定性版本。
+
+> 确定性版本可用于验证生成的二进制文件是否是从指定的源生成的，并提供可跟踪性。 有关确定性版本的详细信息和启用它们的说明，请参阅[确定性版本](https://github.com/clairernovotny/DeterministicBuilds)。
 
 >[!div class="step-by-step"]
 >[上一页](dependencies.md)

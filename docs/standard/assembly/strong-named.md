@@ -1,16 +1,17 @@
 ---
 title: 具有强名称的程序集
+description: 了解 .NET 程序集的强名称，这些强名称可为程序集创建唯一的标识，并且可以防止程序集冲突。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-named assemblies, about strong-named assemblies
 - assemblies [.NET Framework], strong-named
 ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
-ms.openlocfilehash: 12b8df3195b2708e4556d4f8065227054db9eb14
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a2db0efcb57226a757796c311309ce8f749a398b
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75711566"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378600"
 ---
 # <a name="strong-named-assemblies"></a>具有强名称的程序集
 

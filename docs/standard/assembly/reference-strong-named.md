@@ -1,5 +1,6 @@
 ---
 title: 如何：引用具有强名称的程序集
+description: 本文介绍如何在编译时或运行时引用具有强名称的 .NET 程序集中的类型或资源。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - strong-named assemblies, compile-time references
@@ -11,12 +12,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: adda4ed2ab5c59e3518b8e724044529a79840ad0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e42c1b461da16d7000605b9b9321138bbfebd307
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78156473"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379867"
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>如何：引用具有强名称的程序集
 引用强名称程序集中的类型或资源的过程通常是透明的。 可在编译时（早期绑定）或在运行时进行引用。  
@@ -30,11 +31,11 @@ ms.locfileid: "78156473"
 
 在命令提示符下，键入以下命令：  
 
-\<compiler command> /reference:\<assembly name>     
+\<compiler command> /reference:\<assembly name>  
 
-在此命令中，compiler command 是所用语言的编译器命令，assembly name 是引用的强名称程序集的名称   。 还可使用其他编译器选项，如用于创建库程序集的 /t:library 选项  。  
+在此命令中，compiler command 是所用语言的编译器命令，assembly name 是引用的强名称程序集的名称 。 还可使用其他编译器选项，如用于创建库程序集的 /t:library 选项。  
 
-以下示例创建名为 myAssembly.dll 的程序集，该程序集从名为 myAssembly.cs 的代码模块中引用名为 myLibAssembly.dll 的强名称程序集    。  
+以下示例创建名为 myAssembly.dll 的程序集，该程序集从名为 myAssembly.cs 的代码模块中引用名为 myLibAssembly.dll 的强名称程序集  。  
 
 ```cmd
 csc /t:library myAssembly.cs /reference:myLibAssembly.dll  

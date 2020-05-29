@@ -3,12 +3,12 @@ title: 使用 ML.NET CLI 自动进行模型训练
 description: 了解如何使用 ML.NET CLI 工具通过命令行自动训练最佳模型。
 ms.date: 12/17/2019
 ms.custom: how-to, mlnet-tooling
-ms.openlocfilehash: 3344ed15266503d4d5c7cd9db0a0596f58a904fa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2e8bade898adfc3fc4af92c880b62c646343eb2f
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79185887"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83212407"
 ---
 # <a name="automate-model-training-with-the-mlnet-cli"></a>使用 ML.NET CLI 自动进行模型训练
 
@@ -46,7 +46,7 @@ mlnet auto-train --task binary-classification --dataset "customer-feedback.tsv" 
 
 ![图像](media/automate-training-with-cli/cli-model-generation.gif)
 
-可以在 *Windows PowerShell*、*macOS/Linux bash 或 *Windows CMD* 上以相同的方式运行它。 但是，表格自动填写（参数建议）不适用于 *Windows CMD*。
+可以在 Windows PowerShell、macOS/Linux bash 或 Windows CMD 上以相同的方式运行它。   但是，表格自动填写（参数建议）不适用于 *Windows CMD*。
 
 ## <a name="output-assets-generated"></a>生成的输出资产
 

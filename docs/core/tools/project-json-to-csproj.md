@@ -3,12 +3,12 @@ title: 比较 project.json 和 csproj
 description: 查看 project.json 和 csproj 元素之间的映射。
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: abe515007b47b415ac33e3350a29edced1784d68
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a997b48f645ed58d15610a68aee7c67411f9763f
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77451100"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83205834"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>project.json 和 csproj 属性之间的映射
 
@@ -38,7 +38,7 @@ ms.locfileid: "77451100"
 }
 ```
 
-不再支持。 在 csproj 中，这取决于项目文件名（通常与目录名称匹配）。 例如，`MyProjectName.csproj` 。
+不再支持。 在 csproj 中，这取决于项目文件名（通常与目录名称匹配）。 例如 `MyProjectName.csproj`。
 
 默认情况下，项目文件名还指定 `<AssemblyName>` 和 `<PackageId>` 属性的值。
 
@@ -52,7 +52,7 @@ ms.locfileid: "77451100"
 如果 `buildOptions\outputName` 属性是在 project.json 中定义的，`<AssemblyName>` 将具有不同于 `<PackageId>` 的其他值。
 有关详细信息，请参阅[其他常用生成选项](#other-common-build-options)。
 
-### <a name="version"></a>版本
+### <a name="version"></a>version
 
 ```json
 {
@@ -179,7 +179,7 @@ And it's really great!</Description>
 </PropertyGroup>
 ```
 
-请注意，迁移项目中的 `<RuntimeFrameworkVersion>` 值由已安装的 SDK 版本确定。
+迁移项目中的 `<RuntimeFrameworkVersion>` 值由已安装的 SDK 版本确定。
 
 ### <a name="top-level-dependencies"></a>顶级依赖项
 
@@ -485,8 +485,7 @@ csproj 中没有等效项。
 </PropertyGroup>
 ```
 
-MSBuild 中没有 `owners` 元素的等效项。
-对于 `summary`，可使用 MSBuild `<Description>` 属性 - 即使 `summary` 的值未自动迁移到该属性，因为该属性已映射到 [`description`](#other-common-root-level-options) 元素。
+MSBuild 中没有 `owners` 元素的等效项。 对于 `summary`，可以使用 MSBuild `<Description>` 属性。 `summary` 的值未自动迁移到该属性，因为该属性已映射到 [`description`](#other-common-root-level-options) 元素。
 
 ## <a name="scripts"></a>脚本
 
@@ -528,7 +527,7 @@ MSBuild 中没有 `owners` 元素的等效项。
 }
 ```
 
-此组中除“System.GC.Server”属性以外的所有设置与迁移过程中提升为根对象的选项一并被置于项目文件夹中名为 *runtimeconfig.template.json* 的文件中：
+此组中除“`System.GC.Server`”属性以外的所有设置与迁移过程中被提升为根对象的选项一并被置于项目文件夹下名为 runtimeconfig.template.json 的文件中：
 
 ```json
 {
@@ -541,7 +540,7 @@ MSBuild 中没有 `owners` 元素的等效项。
 }
 ```
 
-已将“System.GC.Server”属性迁移到 csproj 文件：
+`System.GC.Server` 属性已迁移到 csproj 文件：
 
 ```xml
 <PropertyGroup>
@@ -569,7 +568,7 @@ MSBuild 中没有 `owners` 元素的等效项。
 }
 ```
 
-在 csproj 中不支持。 而必须在 *.nuspec* 文件中创建要包含的内容文件。
+在 csproj 中不支持。 改为在 .nuspec 文件中创建包含内容文件。
 有关详细信息，请参阅[包含内容文件](/nuget/schema/nuspec#including-content-files)。
 
 ## <a name="files"></a>文件
@@ -621,8 +620,7 @@ MSBuild 中没有 `owners` 元素的等效项。
 ```
 
 > [!NOTE]
-> 许多默认 [glob 模式](https://en.wikipedia.org/wiki/Glob_(programming))由 .NET Core SDK 自动添加。
-> 有关更多信息，请参见[默认编译项值](https://aka.ms/sdkimplicititems)。
+> 许多默认 [glob 模式](https://en.wikipedia.org/wiki/Glob_(programming))由 .NET Core SDK 自动添加。 有关详细信息，请参阅[默认编译包括](../project-sdk/overview.md#default-compilation-includes)。
 
 所有 MSBuild `ItemGroup` 元素都支持`Include`、`Exclude` 和 `Remove`。
 
@@ -673,6 +671,6 @@ MSBuild 中没有 `owners` 元素的等效项。
 </ItemGroup>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [CLI 中更改的简要概述](../tools/cli-msbuild-architecture.md)
+- [CLI 中更改的简要概述](cli-msbuild-architecture.md)

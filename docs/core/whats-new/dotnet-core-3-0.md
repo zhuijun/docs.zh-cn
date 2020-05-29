@@ -6,18 +6,18 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: be5c26c81480dc2854b849dd7f2b1c46ee3e526a
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 422cb7b20e2644ab44f9573f101fb6b53ab1dd2f
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989163"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378827"
 ---
 # <a name="whats-new-in-net-core-30"></a>.NET Core 3.0 的新增功能
 
 本文介绍了 .NET Core 3.0 中的新增功能。 最大的增强功能之一是对 Windows 桌面应用程序的支持（仅限 Windows）。 通过使用 .NET Core 3.0 SDK Windows 桌面组件，可移植 Windows 窗体和 Windows Presentation Foundation (WPF) 应用程序。 明确地说，只有在 Windows 上才支持和包含 Windows 桌面组件。 有关详细信息，请参阅本文后面的 [Windows 桌面](#windows-desktop)部分。
 
-.NET Core 3.0 添加了对 C#8.0 的支持。 强烈建议使用 [Visual Studio 2019 版本 16.3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) 或更高版本、[Visual Studio for Mac 8.3](/visualstudio/mac/install-preview) 或更高版本，或具有最新 C# 扩展的 [Visual Studio Code](https://code.visualstudio.com/)  。
+.NET Core 3.0 添加了对 C#8.0 的支持。 强烈建议使用 [Visual Studio 2019 版本 16.3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) 或更高版本、[Visual Studio for Mac 8.3](/visualstudio/mac/install-preview) 或更高版本，或具有最新 C# 扩展的 [Visual Studio Code](https://code.visualstudio.com/)。
 
 立即在 Windows、macOS 或 Linux 上[下载并开始使用 .NET Core 3.0](https://aka.ms/netcore3download)。
 
@@ -36,7 +36,7 @@ C# 8.0 也是该发布的一部分，包含[可为空引用类型](../../csharp/
 
 ## <a name="net-standard-21"></a>.NET Standard 2.1
 
-.NET Core 3.0 已实现 .NET Standard 2.1  。 但是，默认的 `dotnet new classlib` 模板还是会生成一个面向 .NET Standard 2.0 的项目  。 若要面向 **.NET Standard 2.1**，请编辑项目文件并将 `TargetFramework` 属性更改为 `netstandard2.1`：
+.NET Core 3.0 已实现 .NET Standard 2.1。 但是，默认的 `dotnet new classlib` 模板还是会生成一个面向 .NET Standard 2.0 的项目。 若要面向 **.NET Standard 2.1**，请编辑项目文件并将 `TargetFramework` 属性更改为 `netstandard2.1`：
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -48,7 +48,7 @@ C# 8.0 也是该发布的一部分，包含[可为空引用类型](../../csharp/
 </Project>
 ```
 
-如果使用 Visual Studio，则需要 [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)，这是因为 Visual Studio 2017 不支持 .NET Standard 2.1 或 .NET Core 3.0   。
+如果使用 Visual Studio，则需要 [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)，这是因为 Visual Studio 2017 不支持 .NET Standard 2.1 或 .NET Core 3.0 。
 
 ## <a name="compiledeploy"></a>编译/部署
 
@@ -56,14 +56,14 @@ C# 8.0 也是该发布的一部分，包含[可为空引用类型](../../csharp/
 
 .NET Core 现在默认生成[依赖于运行时的可执行文件](../deploying/index.md#publish-runtime-dependent)。 对于使用全局安装的 .NET Core 版本的应用程序而言，这是一种新行为。 以前，仅[独立部署](../deploying/index.md#publish-self-contained)会生成可执行文件。
 
-在 `dotnet build` 或 `dotnet publish` 期间，将创建一个与你使用的 SDK 的环境和平台相匹配的可执行文件（即 appHost）  。 和其他本机可执行文件一样，可以使用这些可执行文件执行相同操作，例如：
+在 `dotnet build` 或 `dotnet publish` 期间，将创建一个与你使用的 SDK 的环境和平台相匹配的可执行文件（即 appHost）。 和其他本机可执行文件一样，可以使用这些可执行文件执行相同操作，例如：
 
 - 可以双击可执行文件。
 - 可以直接从命令提示符启用应用程序，如 Windows 上的 `myapp.exe`，以及 Linux 和 macOS 上的 `./myapp`。
 
 ### <a name="macos-apphost-and-notarization"></a>macOS appHost 和公证
 
-仅 macOS 
+仅 macOS
 
 从已公证的适用于 macOS 的 .NET Core SDK 3.0 开始，默认已禁用用于生成默认可执行文件（即 appHost）的设置。 有关详细信息，请参阅 [macOS Catalina 公证以及对 .NET Core 下载和项目的影响](../install/macos-notarization-issues.md)。
 
@@ -148,7 +148,7 @@ dotnet publish -r <rid> -c Release
 
 - 如果方法具有预先编译的代码 ([ReadyToRun](#readytorun-images))，将使用预生成的代码。
 - 否则，将实时编译该方法。 一般来说，这些方法是泛型而不是值类型。
-  -  快速 JIT 可以更快地生成较低质量（优化程度较低）的代码。 在 .NET Core 3.0 中，默认为不包含循环的方法启用了快速 JIT，并且启动过程中首选快速 JIT。
+  - 快速 JIT 可以更快地生成较低质量（优化程度较低）的代码。 在 .NET Core 3.0 中，默认为不包含循环的方法启用了快速 JIT，并且启动过程中首选快速 JIT。
   - 完全优化的 JIT 可生成更高质量（优化程度更高）的代码，但速度更慢。 对于不使用快速 JIT 的方法（例如，如果该方法具有 <xref:System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization?displayProperty=nameWithType> 特性），则使用完全优化的 JIT。
 
 对于频繁调用的方法，实时编译器最终会在后台创建完全优化的代码。 然后，优化后的代码将替换该方法的预编译代码。
@@ -217,7 +217,7 @@ ReadyToRun 编译器当前不支持跨目标。 必须在给定的目标上编�
 - 环境变量：`DOTNET_ROLL_FORWARD`
 - 命令行参数：`--roll-forward`
 
-必须指定以下值之一。 如果省略该设置，则默认值为“Minor”  。
+必须指定以下值之一。 如果省略该设置，则默认值为“Minor”。
 
 - **LatestPatch**\
 前滚到最高补丁版本。 这会禁用次要版本前滚。
@@ -232,7 +232,9 @@ ReadyToRun 编译器当前不支持跨目标。 必须在给定的目标上编�
 - **Disable**\
 不前滚。 仅绑定到指定的版本。 建议不要将此策略用于一般用途，因为它会禁用前滚到最新补丁的功能。 该值仅建议用于测试。
 
-除“Disable”设置外，所有设置都将使用可用的最高补丁版本  。
+除“Disable”设置外，所有设置都将使用可用的最高补丁版本。
+
+默认情况下，如果请求的版本（`.runtimeconfig.json` 中为应用程序指定的版本）为发布版本，则前滚时只考虑发布版本。 将忽略所有预发布版本。 如果没有匹配的发布版本，则会考虑使用预发布版本。 可以通过设置 `DOTNET_ROLL_FORWARD_TO_PRERELEASE=1` 来更改此行为，在这种情况下，将始终考虑所有版本。
 
 ### <a name="build-copies-dependencies"></a>生成会复制依赖项
 
@@ -257,7 +259,7 @@ ReadyToRun 编译器当前不支持跨目标。 必须在给定的目标上编�
 
 ### <a name="new-globaljson-options"></a>新 global.json 选项
 
-global.json  文件包含新选项，当你尝试定义所使用的 .NET Core SDK 版本时，这些选项可提供更大的灵活性。 新选项包括：
+global.json 文件包含新选项，当你尝试定义所使用的 .NET Core SDK 版本时，这些选项可提供更大的灵活性。 新选项包括：
 
 - `allowPrerelease`：指示在选择要使用的 SDK 版本时，SDK 解析程序是否应考虑预发布版本。
 - `rollForward`：指示选择 SDK 版本时要使用的前滚策略，可作为特定 SDK 版本缺失时的回退，或者作为使用更高版本的指令。
@@ -278,7 +280,7 @@ global.json  文件包含新选项，当你尝试定义所使用的 .NET Core SD
 
 ### <a name="net-core-sdk-windows-installer"></a>.NET Core SDK Windows Installer
 
-用于 Windows 的 MSI 安装程序已从 .NET Core 3.0 开始更改。 SDK 安装程序现在将对 SDK 功能区段版本进行就地升级。 功能区段在版本号的*补丁*部分中的*百数*组中定义。 例如，**3.0.101** 和 **3.0.201** 是两个不同功能区段中的版本，而 **3.0.101** 和 **3.0.199** 则属于同一个功能区段。     并且，当安装 .NET Core SDK **3.0.101** 时，将从计算机中删除 .NET Core SDK **3.0.100** （如果存在）。   当 .NET Core SDK **3.0.200** 安装在同一台计算机上时，不会删除 .NET Core SDK **3.0.101** 。  
+用于 Windows 的 MSI 安装程序已从 .NET Core 3.0 开始更改。 SDK 安装程序现在将对 SDK 功能区段版本进行就地升级。 功能区段在版本号的*补丁*部分中的*百数*组中定义。 例如，**3.0.101** 和 **3.0.201** 是两个不同功能区段中的版本，而 **3.0.101** 和 **3.0.199** 则属于同一个功能区段。    并且，当安装 .NET Core SDK **3.0.101** 时，将从计算机中删除 .NET Core SDK **3.0.100** （如果存在）。  当 .NET Core SDK **3.0.200** 安装在同一台计算机上时，不会删除 .NET Core SDK **3.0.101** 。 
 
 有关版本控制的详细信息，请参阅 [.NET Core 的版本控制方式概述](../versions/index.md)。
 
@@ -295,7 +297,7 @@ dotnet new wpf
 dotnet new winforms
 ```
 
-Visual Studio 2019 添加了适用于 .NET Core 3.0 Windows 窗体和 WPF 的“新建项目”  模板。
+Visual Studio 2019 添加了适用于 .NET Core 3.0 Windows 窗体和 WPF 的“新建项目”模板。
 
 有关如何移植现有 .NET Framework 应用程序的详细信息，请参阅[移植 WPF 项目](../../desktop-wpf/migration/convert-project-from-net-framework.md)和[移植 Windows 窗体项目](../porting/winforms.md)。
 
@@ -385,7 +387,7 @@ GPIO 包包括用于 *GPIO*、*SPI*、*I2C* 和 *PWM* 设备的 API。 IoT 绑�
 .NET Core 3.0 在 Linux 系统上使用 **OpenSSL 1.1.1**、**OpenSSL 1.1.0** 或 **OpenSSL 1.0.2**（如果可用）。 当 **OpenSSL 1.1.1** 可用时，<xref:System.Net.Security.SslStream?displayProperty=nameWithType> 和 <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> 类型都将使用 **TLS 1.3**（假定客户端和服务器都支持 **TLS 1.3**）。
 
 > [!IMPORTANT]
-> Windows 和 macOS 尚不支持 TLS 1.3  。 当支持可用时，.NET Core 3.0 将在这些操作系统上支持 TLS 1.3  。
+> Windows 和 macOS 尚不支持 TLS 1.3。 当支持可用时，.NET Core 3.0 将在这些操作系统上支持 TLS 1.3。
 
 下面的 C# 8.0 示例演示在 Ubuntu 18.10 上 .NET Core 3.0 如何连接到 <https://www.cloudflare.com>：
 
@@ -502,7 +504,7 @@ async IAsyncEnumerable<int> GetBigResultsAsync()
 
 ### <a name="net-platform-dependent-intrinsics"></a>.NET 平台相关内部函数
 
-已添加 API，允许访问某些性能导向的 CPU 指令，例如 SIMD 或位操作指令集   。 这些指令有助于在某些情况下实现显著的性能改进，例如高效地并行处理数据。
+已添加 API，允许访问某些性能导向的 CPU 指令，例如 SIMD 或位操作指令集 。 这些指令有助于在某些情况下实现显著的性能改进，例如高效地并行处理数据。
 
 在适当的情况下，.NET 库已开始使用这些指令来改进性能。
 

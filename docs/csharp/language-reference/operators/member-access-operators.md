@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 37a6cb7cd32a9d60607aec51b1994e4717c5349a
-ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
+ms.openlocfilehash: 59e01b17d78032714803629d503a92ba86a20fdc
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624860"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394644"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>成员访问运算符和表达式（C# 参考）
 
@@ -58,7 +58,7 @@ ms.locfileid: "82624860"
 
   [!code-csharp[nested namespaces](snippets/MemberAccessOperators.cs#NestedNamespace)]
 
-- 使用 `.` 构成限定名称  以访问命名空间中的类型，如下面的代码所示：
+- 使用 `.` 构成限定名称以访问命名空间中的类型，如下面的代码所示：
 
   [!code-csharp[qualified name](snippets/MemberAccessOperators.cs#QualifiedName)]
 
@@ -159,7 +159,7 @@ if (handler != null)
 }
 ```
 
-这是一种线程安全方法，可确保只调用非 null `handler`。 由于委托实例是不可变的，因此，任何线程都不能更改 `handler` 本地变量所引用的值。 具体而言，如果另一个线程执行的代码从 `PropertyChanged` 事件中取消订阅，并且 `PropertyChanged` 在调用 `handler` 之前变为 `null`，则 `handler` 引用的值不受影响。 `?.` 运算符对其左操作数的计算不超过一次，从而确保在验证为非 null 后，不能将其更改为 `null`。
+这是一种线程安全方法，可确保只调用非 null `handler`。 由于委托实例是不可变的，因此，任何线程都不能更改 `handler` 本地变量所引用的对象。 具体而言，如果另一个线程执行的代码从 `PropertyChanged` 事件中取消订阅，并且 `PropertyChanged` 在调用 `handler` 之前变为 `null`，则 `handler` 引用的对象不受影响。 `?.` 运算符对其左操作数的计算不超过一次，从而确保在验证为非 null 后，不能将其更改为 `null`。
 
 ## <a name="invocation-expression-"></a>调用表达式 ()
 
@@ -189,7 +189,7 @@ if (handler != null)
 
 ## <a name="range-operator-"></a>范围运算符 .
 
-`..` 运算符在 C# 8.0 和更高版本中提供，指定索引范围的开头和末尾作为其操作数。 左侧操作数是范围的包含性  开头。 右侧操作数是范围的包含性  末尾。 任一操作数都可以是序列开头或末尾的索引，如以下示例所示：
+`..` 运算符在 C# 8.0 和更高版本中提供，指定索引范围的开头和末尾作为其操作数。 左侧操作数是范围的包含性开头。 右侧操作数是范围的包含性末尾。 任一操作数都可以是序列开头或末尾的索引，如以下示例所示：
 
 [!code-csharp[range examples](snippets/MemberAccessOperators.cs#Ranges)]
 

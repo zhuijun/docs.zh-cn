@@ -5,12 +5,12 @@ author: richlander
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: a67484c3-fe92-44d8-8fa3-36fa2071d880
-ms.openlocfilehash: b7934e5def202760ab05d363ee5fcda5d012ca72
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2fd0237556f877af64708674f00e9efddf95869
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77124580"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83209638"
 ---
 # <a name="net-class-libraries"></a>.NET 类库
 
@@ -20,7 +20,7 @@ ms.locfileid: "77124580"
 
 * **平台特定**的类库可访问给定平台（例如，.NET Framework、Xamarin、iOS）中的所有 API，但只有面向该平台的应用和库可使用该类库。
 * **可移植**类库可访问 API 的子集，并且可供面向多个平台的应用和库使用。
-* .NET Standard  类库将平台专用库概念和可移植库概念合并到一个模型中，以同时获取两方面的优势。
+* .NET Standard 类库将平台专用库概念和可移植库概念合并到一个模型中，以同时获取两方面的优势。
 
 ## <a name="platform-specific-class-libraries"></a>平台特定的类库
 
@@ -32,17 +32,17 @@ ms.locfileid: "77124580"
 
 ## <a name="portable-class-libraries"></a>可移植类库
 
-可移植库支持多个 .NET 实现。 该库仍可在已知执行环境上接收依赖项，不过该环境是一种合成环境，由一组具体 .NET 实现的交集生成。 这意味着，公开的 API 和平台假设是平台特定的库可用的子集。
+可移植库支持多个 .NET 实现。 该库仍可在已知执行环境上接收依赖项，不过该环境是一种合成环境，由一组具体 .NET 实现的交集生成。 公开的 API 和平台假设是平台特定的库可用的子集。
 
-创建可移植库时，需选择平台配置。 这些是需要支持的各个平台（例如，.NET Framework 4.5+、Windows Phone 8.0+）。 要支持的平台越多，可生成的 API 和平台假设就越少，公分母越小。 这一特性可能最初会令人感到疑惑，因为人们常认为“越多越好”，但却发现更多的支持平台总导致可用 API 更少。
+创建可移植库时，需选择平台配置。 平台配置是需要支持的平台集（例如，.NET Framework 4.5+、Windows Phone 8.0+）。 要支持的平台越多，可生成的 API 和平台假设就越少，公分母越小。 这一特性可能最初会令人感到疑惑，因为人们常认为“越多越好”，但却发现更多的支持平台带来的可用 API 更少。
 
-许多库开发人员已经从由一个源开发多个平台特定的库（使用条件编译指令）转向开发可移植库。 有[多种方法](https://blog.stephencleary.com/2012/11/portable-class-library-enlightenment.html)可在可移植库中访问平台特定的功能，其中[诱饵替换](https://log.paulbetts.org/the-bait-and-switch-pcl-trick/)是目前最广为接受的方法。
+许多库开发人员已经从由一个源开发多个平台特定的库（使用条件编译指令）转向开发可移植库。 有[多种方法](https://blog.stephencleary.com/2012/11/portable-class-library-enlightenment.html)可在可移植库中访问平台特定的功能，其中“诱饵替换”是目前最广为接受的方法。
 
 ## <a name="net-standard-class-libraries"></a>.NET Standard 类库
 
 .NET Standard 库是平台特定的库和可移植库概念的替代。 .NET Core 库可从基础平台公开所有功能（无合成平台或平台交集），就此而言，它是平台特定的库。 该库可在所有支持平台上运行，就此而言，它是可移植库。
 
-.NET Standard 公开一组库协定  。 .NET 实现必须完全支持每个协定，否则就全都不支持。 因此，每个实现都支持一组 .NET Standard 协定。 得出的必然结果是，.NET Standard 类库在支持其协定依赖项的平台上受到支持。
+.NET Standard 公开一组库协定。 .NET 实现必须完全支持每个协定，否则就全都不支持。 因此，每个实现都支持一组 .NET Standard 协定。 得出的必然结果是，.NET Standard 类库在支持其协定依赖项的平台上受到支持。
 
 .NET Standard 不公开整个 .NET Framework 的功能（也不将此作为目标），但相比可移植类库，其公开的 API 更多。 随着时间推移，将添加更多的 API。
 
@@ -57,8 +57,8 @@ ms.locfileid: "77124580"
 * Windows Phone
 * Windows Phone Silverlight
 
-有关详细信息，请参阅 [.NET Standard](net-standard.md) 主题。
+有关详细信息，请参阅 [.NET Standard](net-standard.md)。
 
 ## <a name="mono-class-libraries"></a>Mono 类库
 
-Mono 支持多种类库，包括上述三种类型的库。 Mono 常被视为（正确地）Microsoft .NET Framework 的跨平台实现。 部分原因是，平台特定的 .NET Framework 库可在 Mono 运行时上运行，而无需修改或重新编译。 创建可移植库之前，此特性就已存在，因此在 .NET Framework 和 Mono 之间启用二进制可移植性是显而易见的选择（虽然它只能单向运行）。
+Mono 支持多种类库，包括上述三种类型的库。 Mono 常被（正确地）视为 .NET Framework 的跨平台实现。 部分原因是，平台特定的 .NET Framework 库可在 Mono 运行时上运行，而无需修改或重新编译。 创建可移植库之前，此特性就已存在，因此在 .NET Framework 和 Mono 之间启用二进制可移植性是显而易见的选择（虽然它只能单向运行）。

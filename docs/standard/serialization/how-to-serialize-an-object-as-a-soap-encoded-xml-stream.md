@@ -1,5 +1,6 @@
 ---
 title: 如何：将对象序列化为 SOAP 编码的 XML 流
+description: 了解如何将对象序列化为 SOAP 编码的 XML 流。 XmlSerializer 类可用于序列化类和生成编码的 SOAP 消息。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - XML serialization, SOAP
 - serialization, SOAP
 ms.assetid: af406e0a-fa3a-46dd-a7ba-c80731eba3a0
-ms.openlocfilehash: bfbdda0861a6f2867a2e7003dd7054129fd343b8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 09f1431d05248ef3ac3fdcf24bca35ff5cc2e22b
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62018011"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378397"
 ---
 # <a name="how-to-serialize-an-object-as-a-soap-encoded-xml-stream"></a>如何：将对象序列化为 SOAP 编码的 XML 流
   

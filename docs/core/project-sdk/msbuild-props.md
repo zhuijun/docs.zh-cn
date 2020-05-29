@@ -1,18 +1,18 @@
 ---
 title: Microsoft.NET.Sdk 的 MSBuild 属性
-description: .NET Core SDK 可以理解的 MSBuild 属性的引用。
+description: .NET Core SDK 可以理解的 MSBuild 属性和项的引用。
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: 800ff59310d8437d7f770bf20a5bdf37714f8515
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: cda56b3e23592a341d9fe672fc1f1530adcdab49
+ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795568"
+ms.lasthandoff: 05/12/2020
+ms.locfileid: "83206112"
 ---
-# <a name="msbuild-properties-for-net-core-sdk-projects"></a>.NET Core SDK 项目的 MSBuild 属性
+# <a name="msbuild-reference-for-net-core-sdk-projects"></a>.NET Core SDK 项目的 MSBuild 引用
 
-本页介绍用于配置 .NET Core 项目的 MSBuild 属性。 可以将每个属性的元数据  指定为属性的子元素。
+此页是对可用于配置 .NET Core 项目的 MSBuild 属性和项的引用。
 
 > [!NOTE]
 > 此页面正在运行中，未列出 .NET Core SDK 的所有有用的 MSBuild 属性。 有关通用 MSBuild 属性的列表，请参阅[通用 MSBuild 属性](/visualstudio/msbuild/common-msbuild-project-properties)。
@@ -78,7 +78,7 @@ ms.locfileid: "82795568"
 </PropertyGroup>
 ```
 
-## <a name="publish-properties"></a>发布属性
+## <a name="publish-properties-and-items"></a>发布属性和项
 
 - [RuntimeIdentifier](#runtimeidentifier)
 - [RuntimeIdentifiers](#runtimeidentifiers)
@@ -110,7 +110,7 @@ ms.locfileid: "82795568"
 
 ### <a name="trimmerrootassembly"></a>TrimmerRootAssembly
 
-`TrimmerRootAssembly` 项允许通过[修整](../deploying/trim-self-contained.md)排除程序集  。 修整是从打包的应用程序中删除运行时未使用部分的过程。 在某些情况下，修整可能会错误地删除所需的引用。
+`TrimmerRootAssembly` 项允许通过[修整](../deploying/trim-self-contained.md)排除程序集。 修整是从打包的应用程序中删除运行时未使用部分的过程。 在某些情况下，修整可能会错误地删除所需的引用。
 
 以下 XML 通过修整排除 `System.Security` 程序集。
 
@@ -136,7 +136,23 @@ ms.locfileid: "82795568"
 
 ## <a name="compile-properties"></a>编译属性
 
+- [EmbeddedResourceUseDependentUponConvention](#embeddedresourceusedependentuponconvention)
 - [LangVersion](#langversion)
+
+### <a name="embeddedresourceusedependentuponconvention"></a>EmbeddedResourceUseDependentUponConvention
+
+`EmbeddedResourceUseDependentUponConvention` 属性定义了是否从与资源文件并置的源文件中的类型信息生成资源清单文件名。 例如，如果 Form1.resx 与 Form1.cs 位于同一文件夹中，并且 `EmbeddedResourceUseDependentUponConvention` 设置为 `true`，则生成的 .resources 文件将采用 Form1.cs 中定义的第一个类型的名称作为其文件名。 例如，如果 Form1.cs 中定义的第一个类型为 `MyNamespace.Form1`，则生成的文件名为 MyNamespace.Form1.resources。
+
+> [!NOTE]
+> 如果为 `EmbeddedResource` 项指定 `LogicalName`、`ManifestResourceName` 或 `DependentUpon` 元数据，则为该资源文件生成的清单文件名将改为基于该元数据。
+
+默认情况下，在新的 .NET Core 项目中，此属性设置为 `true`。 如果设置为 `false`，并且没有为项目文件中的 `EmbeddedResource` 项指定 `LogicalName`、`ManifestResourceName` 或 `DependentUpon` 元数据，则资源清单文件名将基于项目的根命名空间和 .resx 文件的相对文件路径。 有关详细信息，请参阅[资源清单文件的命名](../resources/manifest-file-names.md)。
+
+```xml
+<PropertyGroup>
+  <EmbeddedResourceUseDependentUponConvention>true</EmbeddedResourceUseDependentUponConvention>
+</PropertyGroup>
+```
 
 ### <a name="langversion"></a>LangVersion
 
@@ -176,7 +192,7 @@ ms.locfileid: "82795568"
 
 ### <a name="invariantglobalization"></a>InvariantGlobalization
 
-`InvariantGlobalization` 属性配置应用是否在全球化固定模式下运行，这意味着它无权访问特定于区域性的数据  。 将值设置为 `true` 以在全球化固定模式下运行。 有关详细信息，请参阅[固定模式](../run-time-config/globalization.md#invariant-mode)。
+`InvariantGlobalization` 属性配置应用是否在全球化固定模式下运行，这意味着它无权访问特定于区域性的数据。 将值设置为 `true` 以在全球化固定模式下运行。 有关详细信息，请参阅[固定模式](../run-time-config/globalization.md#invariant-mode)。
 
 ```xml
 <PropertyGroup>
@@ -254,7 +270,7 @@ ms.locfileid: "82795568"
 </PropertyGroup>
 ```
 
-## <a name="reference-properties"></a>引用属性
+## <a name="reference-properties-and-items"></a>引用属性和项
 
 - [AssetTargetFallback](#assettargetfallback)
 - [PackageReference](#packagereference)
@@ -276,7 +292,7 @@ ms.locfileid: "82795568"
 
 ### <a name="packagereference"></a>PackageReference
 
-`PackageReference` 定义对 NuGet 包的引用。 例如，你可能想要引用单个包而不是[元包](../packages.md#metapackages)。
+`PackageReference` 项定义了对 NuGet 包的引用。 例如，你可能想要引用单个包而不是[元包](../packages.md#metapackages)。
 
 `Include` 属性指定包 ID。 `Version` 特性指定版本或版本范围。 若要了解如何指定最低版本、最高版本、范围或完全匹配，请参阅[版本范围](/nuget/concepts/package-versioning#version-ranges)。 还可以将下面的元数据添加到项目引用中：`IncludeAssets`、`ExcludeAssets` 和 `PrivateAssets`。
 
@@ -308,7 +324,7 @@ ms.locfileid: "82795568"
 
 `Reference` 项定义对程序集文件的引用。
 
-`Include` 特性指定文件名，`HintPath` 子元素指定程序集路径。
+`Include` 特性用于指定文件名，`HintPath` 元数据用于指定程序集路径。
 
 ```xml
 <ItemGroup>

@@ -3,12 +3,12 @@ title: 使用集合 - C# 教程简介
 description: 在本教程中通过探索列表集合了解 C#。
 ms.date: 10/13/2017
 ms.custom: mvc
-ms.openlocfilehash: 554a4601157a7d4b873c22a46ee72b6601fc36d7
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: c99f5582702120db238de1206de42d964837cdbd
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635654"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83396896"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>了解如何使用泛型列表类型管理数据集合
 
@@ -18,9 +18,9 @@ ms.locfileid: "80635654"
 
 ## <a name="a-basic-list-example"></a>基本列表示例
 
-创建名为 list-tutorial  的目录。 将新建的目录设为当前目录，并运行 `dotnet new console`。
+创建名为 list-tutorial 的目录。 将新建的目录设为当前目录，并运行 `dotnet new console`。
 
-在常用编辑器中，打开 Program.cs  ，并将现有代码替换为以下代码：
+在常用编辑器中，打开 Program.cs，并将现有代码替换为以下代码：
 
 ```csharp
 using System;
@@ -42,9 +42,9 @@ namespace list_tutorial
 }
 ```
 
-将 `<name>` 替换为自己的名称。 保存 Program.cs  。 在控制台窗口中键入 `dotnet run`，试运行看看。
+将 `<name>` 替换为自己的名称。 保存 Program.cs。 在控制台窗口中键入 `dotnet run`，试运行看看。
 
-刚刚创建了一个字符串列表，并向其中添加了三个名称，再输出了全部大写的名称。 循环读取整个列表需要用到在前面的教程中学到的概念。
+你已创建了一个字符串列表，在该列表中添加了三个名称，并打印了所有大写的名称。 循环读取整个列表需要用到在前面的教程中学到的概念。
 
 用于显示名称的代码使用[字符串内插](../../language-reference/tokens/interpolated.md)功能。  如果 `string` 前面有 `$`符号，可以在字符串声明中嵌入 C# 代码。 实际字符串使用自己生成的值替换该 C# 代码。 在此示例中，`{name.ToUpper()}` 被替换为各个转换为大写字母的名称，因为调用了 <xref:System.String.ToUpper%2A> 方法。
 
@@ -69,7 +69,7 @@ foreach (var name in names)
 
 又向列表的末尾添加了两个名称。 同时，也删除了一个名称。 保存此文件，并键入 `dotnet run`，试运行看看。
 
-借助 <xref:System.Collections.Generic.List%601>，还可以按索引  引用各项。 索引位于列表名称后面的 `[` 和 `]` 令牌之间。 C# 对第一个索引使用 0。 将以下代码添加到刚才添加的代码的正下方，并试运行看看：
+借助 <xref:System.Collections.Generic.List%601>，还可以按索引引用各项。 索引位于列表名称后面的 `[` 和 `]` 令牌之间。 C# 对第一个索引使用 0。 将以下代码添加到刚才添加的代码的正下方，并试运行看看：
 
 ```csharp
 Console.WriteLine($"My name is {names[0]}");
@@ -86,7 +86,7 @@ Console.WriteLine($"The list has {names.Count} people in it");
 
 ## <a name="search-and-sort-lists"></a>搜索列表并进行排序
 
-我们的示例使用的列表较小，但大家的应用程序创建的列表通常可能会包含更多元素，有时可能会包含数以千计的元素。 若要在更大的集合中查找元素，需要在列表中搜索不同的项。 <xref:System.Collections.Generic.List%601.IndexOf%2A> 方法可搜索项，并返回此项的索引。 将以下代码添加到 `Main` 方法的底部：
+我们的示例使用的列表较小，但大家的应用程序创建的列表通常可能会包含更多元素，有时可能会包含数以千计的元素。 若要在更大的集合中查找元素，需要在列表中搜索不同的项。 <xref:System.Collections.Generic.List%601.IndexOf%2A> 方法可搜索项，并返回此项的索引。 如果项不在列表中，`IndexOf` 将返回 `-1`。 将以下代码添加到 `Main` 方法的底部：
 
 ```csharp
 var index = names.IndexOf("Felipe");
@@ -111,7 +111,7 @@ else
 }
 ```
 
-还可以对列表中的项进行排序。 <xref:System.Collections.Generic.List%601.Sort%2A> 方法按正常顺序（按字母顺序，如果是字符串的话）对列表中的所有项进行排序。 将以下代码添加到 `Main` 方法的底部：
+还可以对列表中的项进行排序。 <xref:System.Collections.Generic.List%601.Sort%2A> 方法按正常顺序（如果是字符串则按字母顺序）对列表中的所有项进行排序。 将以下代码添加到 `Main` 方法的底部：
 
 ```csharp
 names.Sort();
@@ -201,7 +201,7 @@ namespace list_tutorial
 var fibonacciNumbers = new List<int> {1, 1};
 ```
 
-这会创建一个整数列表，并将头两个整数设置为值 1。 这些是斐波那契数列  （一系列数字）的头两个值。 斐波那契数列中的每个数字都是前两个数字之和。 添加以下代码：
+这会创建一个整数列表，并将头两个整数设置为值 1。 这些是斐波那契数列（一系列数字）的头两个值。 斐波那契数列中的每个数字都是前两个数字之和。 添加以下代码：
 
 ```csharp
 var previous = fibonacciNumbers[fibonacciNumbers.Count - 1];

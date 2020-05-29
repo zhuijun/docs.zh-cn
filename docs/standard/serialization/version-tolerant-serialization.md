@@ -1,5 +1,6 @@
 ---
 title: 版本容错序列化
+description: .NET Framework 2.0 引入了版本容错序列化，这组功能使修改可序列化类型更加容易。
 ms.date: 08/08/2017
 dev_langs:
 - csharp
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - BinaryFormatter class, samples
 - serialization, attributes
 ms.assetid: bea0ffe3-2708-4a16-ac7d-e586ed6b8e8d
-ms.openlocfilehash: 9886e2f20ef7954b01ea1f46a9eabdb9ea2cc12d
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: afc822e1f8873bac069f6634fdf1d4665d392e69
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348436"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83762586"
 ---
 # <a name="version-tolerant-serialization"></a>版本容错序列化
 
@@ -27,7 +28,7 @@ ms.locfileid: "75348436"
 - 要求应用程序的较旧版本反序列化旧类型的新版本时，会引发异常。
 - 应用程序的较新版本反序列化缺少数据的类型的较旧版本时，会引发异常。
 
-版本容错序列化 (VTS) 是 .NET Framework 2.0 中引入的一组功能，它使得修改可序列化类型随着时间推移而变得更加容易。 VTS 功能尤其是为应用了 <xref:System.SerializableAttribute> 特性的类（包括泛型类型）而启用的。 VTS 允许向这些类添加新字段，而不破坏与该类型其他版本的兼容性。 有关可用的示例应用程序，请参阅[版本容错序列化技术示例](version-tolerant-serialization-technology-sample.md)。
+版本容错序列化 (VTS) 是 .NET Framework 2.0 中引入的一组功能，它使得修改可序列化类型随着时间推移而变得更加容易。 VTS 功能尤其是为应用了 <xref:System.SerializableAttribute> 特性的类（包括泛型类型）而启用的。 VTS 允许向这些类添加新字段，而不破坏与该类型其他版本的兼容性。 有关可用的示例应用程序，请参阅[版本容错序列化技术示例](basic-serialization-technology-sample.md)。
 
 当使用 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 时，将启用 VTS 功能。 此外，当使用 <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> 时，也会启用除外来数据容错以外的其他所有功能。 有关将这些类用于序列化的详细信息，请参见[二进制序列化](binary-serialization.md)。
 
@@ -149,7 +150,7 @@ Private Sub SetCountryRegionDefault(sc As StreamingContext)
 End Sub
 ```
 
-这些方法旨在用于版本管理。 在反序列化期间，如果可选字段缺少数据，则可能无法正确初始化该字段。 若要更正这一情况，可以创建分配正确值的方法，然后将 OnDeserializingAttribute 或 OnDeserializedAttribute 特性应用于该方法。  
+这些方法旨在用于版本管理。 在反序列化期间，如果可选字段缺少数据，则可能无法正确初始化该字段。 若要更正这一情况，可以创建分配正确值的方法，然后将 OnDeserializingAttribute 或 OnDeserializedAttribute 特性应用于该方法。 
 
 下面的示例演示类型上下文中的方法。 如果应用程序的较旧版本将 `Address` 类的实例发送至该应用程序的较新版本，将会丢失 `CountryField` 字段数据。 但是反序列化之后，会将字段设置为默认值“Japan”。
 
@@ -187,7 +188,7 @@ End Class
 
 ## <a name="the-versionadded-property"></a>VersionAdded 属性
 
-OptionalFieldAttribute 具有 VersionAdded 属性。   在 .NET Framework 2.0 版中，未使用这一属性。 然而，为确保类型与将来的序列化引擎兼容，需要正确设置此属性，这一点非常重要。
+OptionalFieldAttribute 具有 VersionAdded 属性。  在 .NET Framework 2.0 版中，未使用这一属性。 然而，为确保类型与将来的序列化引擎兼容，需要正确设置此属性，这一点非常重要。
 
 该属性指示向给定字段添加了类型的哪个版本。 每次修改类型时，版本应该正好增加一（从 2 开始），如下例所示：
 
@@ -271,13 +272,13 @@ End Class
 - 切勿移除已序列化的字段。
 - 如果未在以前版本中将 <xref:System.NonSerializedAttribute> 特性应用于某个字段，则切勿将该特性应用于该字段。
 - 切勿更改已序列化字段的名称或类型。
-- 添加新的已序列化字段时，请应用 OptionalFieldAttribute 特性。 
-- 从字段（在以前版本中不可序列化）中移除 NonSerializedAttribute 特性时，请应用 OptionalFieldAttribute 特性。  
-- 对于所有可选字段，除非可接受 0 或 null 作为默认值，否则请使用序列化回调设置有意义的默认值。 
+- 添加新的已序列化字段时，请应用 OptionalFieldAttribute 特性。
+- 从字段（在以前版本中不可序列化）中移除 NonSerializedAttribute 特性时，请应用 OptionalFieldAttribute 特性。 
+- 对于所有可选字段，除非可接受 0 或 null 作为默认值，否则请使用序列化回调设置有意义的默认值。
 
 要确保类型与将来的序列化引擎兼容，请遵循以下准则：
 
-- 始终正确设置 OptionalFieldAttribute 特性上的 VersionAdded 属性。  
+- 始终正确设置 OptionalFieldAttribute 特性上的 VersionAdded 属性。 
 - 避免版本管理分支。
 
 ## <a name="see-also"></a>请参阅

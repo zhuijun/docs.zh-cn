@@ -2,16 +2,16 @@
 title: 使用 DDD 和 CQRS 模式降低微服务中的业务复杂性
 description: 容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解如何应用 DDD 和 CQRS 模式来处理复杂的业务场景
 ms.date: 10/08/2018
-ms.openlocfilehash: 88b105b68307c8587f877bb9ddf370e143d8539b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 852073548a66fbe568fc5c2531342db944d5a8b0
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73739831"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144638"
 ---
 # <a name="tackle-business-complexity-in-a-microservice-with-ddd-and-cqrs-patterns"></a>使用 DDD 和 CQRS 模式降低微服务中的业务复杂性
 
-为每个微服务或反映对业务域理解的绑定上下文设计域模型。 
+为每个微服务或反映对业务域理解的绑定上下文设计域模型。
 
 本节重点介绍在需要降低子系统复杂性时实现的更高级的微服务，或按不断变化的业务规则派生自域专家知识的微服务。 本节中使用的体系结构模式基于域驱动的设计 (DDD) 以及命令和查询责任分离 (CQRS) 方法，如图 7-1 中所示。
 
@@ -19,7 +19,7 @@ ms.locfileid: "73739831"
 外部体系结构（微服务模式、API 网关、弹性通信、发布/订阅等）和内部体系结构（数据驱动/CRUD、DDD 模式、依赖关系注入、多个库等）之间的区别。
 :::image-end:::
 
-图 7-1  。 外部微服务体系结构与每个微服务的内部体系结构模式
+图 7-1。 外部微服务体系结构与每个微服务的内部体系结构模式
 
 但是，大部分用于数据驱动微服务的技术（例如如何实现 ASP.NET Core Web API 服务或如何公开具有 Swashbuckle 或 NSwag 的 Swagger 元数据）同样适用于使用 DDD 模式在内部实现的更高级的微服务。 本节是前几节内容的扩展，因为之前所述的大部分做法也适用于此处或任何类型的微服务。
 
@@ -64,7 +64,7 @@ DDD 是一个大主题，具有一套丰富的学习资源。 开始时可以阅
   <https://www.amazon.com/Domain-Driven-Design-Quickly-Abel-Avram/dp/1411609255/>
 
 - **Scott Millett，Nick Tune - 域驱动设计的模式、原则和实践** \
-  <http://www.wrox.com/WileyCDA/WroxTitle/Patterns-Principles-and-Practices-of-Domain-Driven-Design.productCd-1118714709.html>
+  <https://www.wiley.com/Patterns%2C+Principles%2C+and+Practices+of+Domain+Driven+Design-p-9781118714706>
 
 ##### <a name="ddd-training"></a>DDD 培训
 

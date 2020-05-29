@@ -3,12 +3,12 @@ title: 什么是模型生成器，它的工作原理是怎样的？
 description: 如何使用 ML.NET 模型生成器自动训练机器学习模型
 ms.date: 03/25/2020
 ms.custom: overview, mlnet-tooling
-ms.openlocfilehash: 9cf66455109908ebd9fc10e62cf4f067609b57d9
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 4afdbfd1682a30647b09d05d51a5c73c214fe2bd
+ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80344764"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83616924"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>什么是模型生成器，它的工作原理是怎样的？
 
@@ -90,8 +90,8 @@ ML.NET 模型生成器是一个直观的图形化 Visual Studio 扩展，用于�
 
 数据集是一个表格，其中，行中含训练示例，列中含特性。 每一行都具有：
 
-- 一个标签，即要预测的特性 
-- 特征（为预测标签而用作输入的特性）  。
+- 一个标签，即要预测的特性
+- 特征（为预测标签而用作输入的特性）。
 
 在房价预测方案中，特性可能是：
 
@@ -114,7 +114,7 @@ ML.NET 模型生成器是一个直观的图形化 Visual Studio 扩展，用于�
 ||预测信用卡欺诈交易|[信用卡数据](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|类（存在欺诈性为 1，否则为 0）|金额，V1-V28（匿名处理后的特征）|
 ||预测 GitHub 存储库中的问题类型|[GitHub 问题数据](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|区域|标题、描述|
 |值预测|预测出租车费用价格|[出租车费数据](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|车费|行程时间、距离|
-|图像分类|预测问题类别|[花卉图像](http://download.tensorflow.org/example_images/flower_photos.tgz)|花卉类型：雏菊、蒲公英、玫瑰、向日葵、郁金香|图像数据本身|
+|图像分类|预测花卉的类别 |[花卉图像](http://download.tensorflow.org/example_images/flower_photos.tgz)|花卉类型：雏菊、蒲公英、玫瑰、向日葵、郁金香|图像数据本身|
 |建议|预测他人喜欢的电影|[电影评分](http://files.grouplens.org/datasets/movielens/ml-latest-small.zip)|用户、电影|评级|
 
 ## <a name="train"></a>训练

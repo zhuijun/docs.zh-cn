@@ -3,19 +3,19 @@ title: 线程配置设置
 description: 了解为 .NET Core 应用配置线程的运行时设置。
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: 68b8e93ca6ec3f708a7a627307655ada1955500a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1c7c16993a07ef95223481791153b75ab2f61533
+ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789856"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83761923"
 ---
 # <a name="run-time-configuration-options-for-threading"></a>用于线程的运行时配置选项
 
 ## <a name="cpu-groups"></a>CPU 组
 
 - 配置是否在各 CPU 组之间自动分布线程。
-- 默认：禁用 (`0`)。
+- 如果省略此设置，则不会跨 CPU 组分布线程。 它等效于将值设置为 `0`。
 
 | | 设置名 | 值 |
 | - | - | - |
@@ -30,12 +30,12 @@ ms.locfileid: "76789856"
 | | 设置名 | 值 |
 | - | - | - |
 | **runtimeconfig.json** | `System.Threading.ThreadPool.MinThreads` | 一个表示最小线程数的整数 |
-| MSBuild 属性  | `ThreadPoolMinThreads` | 一个表示最小线程数的整数 |
+| MSBuild 属性 | `ThreadPoolMinThreads` | 一个表示最小线程数的整数 |
 | **环境变量** | 不可用 | 不可用 |
 
 ### <a name="examples"></a>示例
 
-runtimeconfig.json 文件： 
+runtimeconfig.json 文件：
 
 ```json
 {
@@ -67,12 +67,12 @@ runtimeconfig.json 文件：
 | | 设置名 | 值 |
 | - | - | - |
 | **runtimeconfig.json** | `System.Threading.ThreadPool.MaxThreads` | 一个表示最大线程数的整数 |
-| MSBuild 属性  | `ThreadPoolMaxThreads` | 一个表示最大线程数的整数 |
+| MSBuild 属性 | `ThreadPoolMaxThreads` | 一个表示最大线程数的整数 |
 | **环境变量** | 不可用 | 不可用 |
 
 ### <a name="examples"></a>示例
 
-runtimeconfig.json 文件： 
+runtimeconfig.json 文件：
 
 ```json
 {

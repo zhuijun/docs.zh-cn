@@ -2,16 +2,16 @@
 title: dotnet 命令
 description: 了解 dotnet 命令（.NET Core CLI 的通用驱动程序）及其用法。
 ms.date: 02/13/2020
-ms.openlocfilehash: 6a08297499d955db44e342dc82fed25b7b9b8171
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 88e92b3ff5e8f68b980015a817434dd2d67df93a
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739068"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83378843"
 ---
 # <a name="dotnet-command"></a>dotnet 命令
 
- 本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
+本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
 
 ## <a name="name"></a>“属性”
 
@@ -110,7 +110,7 @@ dotnet exec [--additionalprobingpath] [--additional-deps <PATH>]
 
 ### <a name="runtime-options"></a>运行时选项
 
-`dotnet` 运行应用程序时，可以使用以下选项。 例如 `dotnet myapp.dll --fx-version 3.1.1`。
+`dotnet` 运行应用程序时，可以使用以下选项。 例如 `dotnet myapp.dll --roll-forward Major`。
 
 - **`--additionalprobingpath <PATH>`**
 
@@ -118,27 +118,17 @@ dotnet exec [--additionalprobingpath] [--additional-deps <PATH>]
 
 - **`--additional-deps <PATH>`**
 
-  附加 .deps.json 文件的路径  。 deps.json 文件包含依赖项、编译依赖项和用于解决程序集冲突的版本信息列表  。 有关详细信息，请参阅 GitHub 上的[运行时配置文件](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)。
+  附加 .deps.json 文件的路径。 deps.json 文件包含依赖项、编译依赖项和用于解决程序集冲突的版本信息列表。 有关详细信息，请参阅 GitHub 上的[运行时配置文件](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)。
 
-- **`--fx-version <VERSION>`**
+- **`--depsfile <PATH_TO_DEPSFILE>`**
 
-  用于运行应用程序的 .NET Core 运行时版本。
+  deps.json 文件的路径。 .deps.json 文件是一个配置文件，其中包含有关运行应用程序所需的依赖项的信息。 此文件由 .NET Core SDK 生成。
 
 - **`--runtimeconfig`**
 
-  runtimeconfig.template.json 文件的路径  。 runtimeconfig.template.json 文件是包含运行时设置的配置文件  。 有关详细信息，请参阅 [.NET Core 运行时配置设置](../run-time-config/index.md#runtimeconfigjson)。
+  runtimeconfig.template.json 文件的路径。 runtimeconfig.template.json 文件是包含运行时设置的配置文件。 有关详细信息，请参阅 [.NET Core 运行时配置设置](../run-time-config/index.md#runtimeconfigjson)。
 
-- `--roll-forward-on-no-candidate-fx <N>` 在 .NET Core 2.x SDK 中可用   。
-
-  所需的共享框架不可用时，请定义行为。 `N` 可以是：
-
-  - `0` - 禁用次要版本前滚。
-  - `1` - 前滚次要版本，但不前滚主版本。 这是默认行为。
-  - `2` - 前滚次要和主版本。
-
-   有关详细信息，请参阅[前滚](../whats-new/dotnet-core-2-1.md#roll-forward)。
-
-- `--roll-forward <SETTING>` 自 .NET Core SDK 3.0 起可用   。
+- `--roll-forward <SETTING>` 自 .NET Core SDK 3.0 起可用 。
 
   控制将前滚操作应用于应用的方式。 `SETTING` 可以为下列值之一。 如果未指定，则 `Minor` 为默认类型。
 
@@ -149,9 +139,27 @@ dotnet exec [--additionalprobingpath] [--additional-deps <PATH>]
   - `LatestMajor` - 即使存在所请求的主要版本，仍前滚到最高主要版本和最高次要版本。 适用于组件托管方案。
   - `Disable` - 不前滚。 仅绑定到指定的版本。 建议不要将此策略用于一般用途，因为它会禁用前滚到最新补丁的功能。 该值仅建议用于测试。
 
-除 `Disable` 外，所有设置都将使用可用的最高补丁版本。
+  除 `Disable` 外，所有设置都将使用可用的最高补丁版本。
 
-前滚行为还可以在项目文件属性、运行时配置文件属性和环境变量中进行配置。 有关详细信息，请参阅[主版本运行时前滚](../whats-new/dotnet-core-3-0.md#major-version-runtime-roll-forward)。
+  前滚行为还可以在项目文件属性、运行时配置文件属性和环境变量中进行配置。 有关详细信息，请参阅[主版本运行时前滚](../whats-new/dotnet-core-3-0.md#major-version-runtime-roll-forward)。
+
+- `--roll-forward-on-no-candidate-fx <N>` 在 .NET Core 2.x SDK 中可用 。
+
+  所需的共享框架不可用时，请定义行为。 `N` 可以是：
+
+  - `0` - 禁用次要版本前滚。
+  - `1` - 前滚次要版本，但不前滚主版本。 这是默认行为。
+  - `2` - 前滚次要和主版本。
+
+  有关详细信息，请参阅[前滚](../whats-new/dotnet-core-2-1.md#roll-forward)。
+
+  从 .NET Core 3.0 开始，此选项被 `--roll-forward` 取代，应改为使用此取代项。
+
+- **`--fx-version <VERSION>`**
+
+  用于运行应用程序的 .NET Core 运行时版本。
+
+  此选项将重写应用程序 `.runtimeconfig.json` 文件中第一个框架引用的版本。 这意味着，仅当只有一个框架引用时，它才会按预期方式工作。 如果应用程序具有多个框架引用，则使用此选项可能会导致错误。
 
 ## <a name="dotnet-commands"></a>dotnet 命令
 
@@ -274,13 +282,21 @@ dotnet myapp.dll
 
   指定是否从全局位置解析 .NET Core 运行时、共享框架或 SDK。 如果未设置，则默认为 1（逻辑 `true`）。 设置为 0（逻辑 `false`），不从全局位置解析，并且具有独立的 .NET Core 安装。 有关多级别查找的详细信息，请参阅 [Multi-level SharedFX Lookup](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md)（多级别 SharedFX 查找）。
 
-- `DOTNET_ROLL_FORWARD` 自 .NET Core 3.x SDK 起可用  。
+- `DOTNET_ROLL_FORWARD` 自 .NET Core 3.x 起可用。
 
   确定前滚行为。 有关详细信息，请参阅本文章前面介绍的 `--roll-forward` 选项。
 
-- `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX` 在 .NET Core 2.x SDK 中可用  。
+- `DOTNET_ROLL_FORWARD_TO_PRERELEASE` 自 .NET Core 3.x 起可用。
+
+  如果设置为 `1`（已启用），则允许从发布版本前滚到预发行版本。 默认情况下（`0` - 禁用），请求 .NET Core 运行时的发行版时，前滚仅考虑已安装的发行版本。
+
+  有关详细信息，请参阅[前滚](../whats-new/dotnet-core-3-0.md#major-version-runtime-roll-forward)。
+
+- `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX` 在 .NET Core 2.x 中可用。
 
   如果设置为 `0`，则禁用次要版本前滚。 有关详细信息，请参阅[前滚](../whats-new/dotnet-core-2-1.md#roll-forward)。
+
+  此设置在 .NET Core 3.0 中被 `DOTNET_ROLL_FORWARD` 取代。 应改为使用新设置。
 
 - `DOTNET_CLI_UI_LANGUAGE`
 
@@ -306,9 +322,25 @@ dotnet myapp.dll
 
   要从中加载和执行启动挂钩的程序集列表。
 
+- `DOTNET_BUNDLE_EXTRACT_BASE_DIR` 自 .NET Core 3.x 起可用。
+
+  指定在执行单文件应用程序之前将其提取到的目录。
+
+  有关详细信息，请参阅[单文件可执行文件](../whats-new/dotnet-core-3-0.md#single-file-executables)。
+
 - `COREHOST_TRACE`, `COREHOST_TRACEFILE`, `COREHOST_TRACE_VERBOSITY`
 
   控制来自托管组件（例如 `dotnet.exe`、`hostfxr` 和 `hostpolicy`）的诊断跟踪。
+
+  * `COREHOST_TRACE=[0/1]` -默认值为 `0` - 禁用跟踪。 如果设置为 `1`，则启用诊断跟踪。
+  * `COREHOST_TRACEFILE=<file path>` - 仅当通过 `COREHOST_TRACE=1` 启用跟踪时才会生效。 设置后，跟踪信息将写入指定的文件，否则会将跟踪信息写入 `stderr`。 自 .NET Core 3.x 起可用。
+  * `COREHOST_TRACE_VERBOSITY=[1/2/3/4]` - 默认值为 `4`。 此设置仅在通过 `COREHOST_TRACE=1` 启用跟踪时使用。 自 .NET Core 3.x 起可用。
+    * `4` - 写入所有跟踪信息
+    * `3` - 仅写入信息性、警告和错误消息
+    * `2` - 仅写入警告和错误消息
+    * `1` - 仅写入错误消息
+
+  获取有关应用程序启动的详细跟踪信息的典型方法是设置 `COREHOST_TRACE=1` 和 `COREHOST_TRACEFILE=host_trace.txt`，然后运行该应用程序。 将在当前目录中创建一个新文件 `host_trace.txt`，其中包含详细信息。
 
 ## <a name="see-also"></a>请参阅
 

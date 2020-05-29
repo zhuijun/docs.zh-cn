@@ -4,16 +4,16 @@ description: 了解 C# 索引器以及它们如何实现索引属性，这些属
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: 8e583b8a7cedab61ea6fdd56587608907610b6b4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e9b1cb18157982f068f1c1e4546e637f2bd707cb
+ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79145679"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83394698"
 ---
 # <a name="indexers"></a>索引器
 
-*索引器*类似于属性。 很多时候，创建索引器与创建[属性](properties.md)所使用的编程语言特性是一样的。 索引器使  属性可以被索引：使用一个或多个参数引用的属性。 这些参数为某些值集合提供索引。
+*索引器*类似于属性。 很多时候，创建索引器与创建[属性](properties.md)所使用的编程语言特性是一样的。 索引器使属性可以被索引：使用一个或多个参数引用的属性。 这些参数为某些值集合提供索引。
 
 ## <a name="indexer-syntax"></a>索引器语法
 
@@ -37,16 +37,16 @@ public int this[string key]
 从最初的示例中，可以看到属性语法和索引器语法之间的关系。 此类比在索引器的大部分语法规则中进行。 索引器可以使用任何有效的访问修饰符（public、protected internal、protected、internal、private 或 private protected）。 它们可能是密封、虚拟或抽象的。 与属性一样，可以在索引器中为 get 和 set 访问器指定不同的访问修饰符。
 你还可以指定只读索引器（忽略 set 访问器）或只写索引器（忽略 get 访问器）。
 
-属性的各种用法同样适用于索引器。 此规则的唯一例外是“自动实现属性”  。 编译器无法始终为索引器生成正确的存储。
+属性的各种用法同样适用于索引器。 此规则的唯一例外是“自动实现属性”。 编译器无法始终为索引器生成正确的存储。
 
 用于引用项的集合中的某个项的参数可区分索引器和属性。 只要每个索引器的参数列表是唯一的，就可以对一个类型定义多个索引器。 让我们来探讨可能在类定义中使用一个或多个索引器的不同场景。
 
 ## <a name="scenarios"></a>方案
 
-如果类型的 API 对集合进行建模，并且为集合定义了参数，则需要在此类型中定义索引器。  索引器可能直接映射到属于 .NET Core 框架一部分的集合类型，也可能不。 除了对集合进行建模，类型还有其他职责。
+如果类型的 API 对集合进行建模，并且为集合定义了参数，则需要在此类型中定义索引器。 索引器可能直接映射到属于 .NET Core 框架一部分的集合类型，也可能不。 除了对集合进行建模，类型还有其他职责。
 通过索引器可提供与类型的抽象化匹配的 API，而无需公开如何存储或计算此抽象化的值的内部细节。
 
-让我们演练一些使用索引器的常见场景。  可以访问[索引器的示例文件夹](https://github.com/dotnet/samples/tree/master/csharp/indexers)。 有关下载说明，请参阅[示例和教程](../samples-and-tutorials/index.md#viewing-and-downloading-samples)。
+让我们演练一些使用索引器的常见场景。 可以访问[索引器的示例文件夹](https://github.com/dotnet/samples/tree/master/csharp/indexers)。 有关下载说明，请参阅[示例和教程](../samples-and-tutorials/index.md#viewing-and-downloading-samples)。
 
 ### <a name="arrays-and-vectors"></a>数组和矢量
 
@@ -313,14 +313,14 @@ public class HistoricalWeatherData
 
 此示例创建的索引器将天气数据映射到两个不同的参数：城市（由 `string` 表示）和日期（由 `DateTime` 表示）。 内部存储使用两个 `Dictionary` 类来表示此二维字典。 公共 API 不再表示基础存储。 相反地，凭借索引器的语言特性可以创建表示抽象化的一个公共接口，即使基础存储必须使用不同的核心集合类型也是如此。
 
-一些开发人员可能不熟悉此代码的两部分。 以下两个 `using` 语句：
+一些开发人员可能不熟悉此代码的两部分。 这两个 `using` 指令：
 
 ```csharp
 using DateMeasurements = System.Collections.Generic.Dictionary<System.DateTime, IndexersSamples.Common.Measurements>;
 using CityDataMeasurements = System.Collections.Generic.Dictionary<string, System.Collections.Generic.Dictionary<System.DateTime, IndexersSamples.Common.Measurements>>;
 ```
 
-为构造泛型类型创建别名  。 通过这些语句，稍后代码可以使用更具描述性的 `DateMeasurements` 和 `CityDateMeasurements` 名称，而不是 `Dictionary<DateTime, Measurements>` 和 `Dictionary<string, Dictionary<DateTime, Measurements> >` 的泛型构造。
+为构造泛型类型创建别名。 通过这些语句，稍后代码可以使用更具描述性的 `DateMeasurements` 和 `CityDateMeasurements` 名称，而不是 `Dictionary<DateTime, Measurements>` 和 `Dictionary<string, Dictionary<DateTime, Measurements> >` 的泛型构造。
 此构造要求在 `=` 符号右侧使用完全限定的类型名称。
 
 另一项技术是对任何用于集合的索引的 `DateTime` 对象剥离时间部分。 .NET 不包含仅日期类型。
