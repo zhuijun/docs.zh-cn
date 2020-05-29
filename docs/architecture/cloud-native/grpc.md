@@ -3,12 +3,12 @@ title: gRPC
 description: 了解 gRPC，它在云本机应用程序中的作用，以及它与 HTTP RESTful 通信有何不同。
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: f34b267d7f5c6b4e593841c80df44d1ccbde95ae
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 35a8325dd82e946d88b09b223287e2871be88ffa
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614040"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201324"
 ---
 # <a name="grpc"></a>gRPC
 
@@ -83,7 +83,7 @@ SDK 包括用于终结点路由、内置 IoC 和日志记录的工具。 开源 
 
 在撰写本文时，gRPC 主要用于后端服务。 大多数新式浏览器不能提供支持前端 gRPC 客户端所需的 HTTP/2 控制级别。 这就是，这是一项[早期的计划](https://devblogs.microsoft.com/aspnet/grpc-web-experiment/)，可让你从使用 JavaScript 或 Blazor WebAssembly 技术生成的基于浏览器的应用 gRPC 通信。 [GRPC for .net](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md)允许 ASP.NET Core gRPC 应用在浏览器应用中支持 gRPC 功能：
 
-- 强类型代码生成的客户端
+- 强类型的代码生成客户端
 - Compact Protobuf 消息
 - 服务器流式处理
 

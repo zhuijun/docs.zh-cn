@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - basicHttpBinding Element
 ms.assetid: 85cf1a4f-26c2-48c7-bda6-6c960d5d3fb3
-ms.openlocfilehash: f1be0997fc7b2b884c7ec90ea6a02ea0af96ab4c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ab8dca7f7065d7c174e38ad3a88ea15e39351bed
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74431032"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202046"
 ---
-# <a name="basichttpbinding"></a>\<basicHttpBinding >
+# \<basicHttpBinding>
 表示 Windows Communication Foundation (WCF)服务可用来配置和公开终结点的绑定，这些终结点将能够与基于 ASMX 的 Web 服务和客户端以及其他符合 WS-I Basic Profile 1.1 的服务进行通信。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)>\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<basicHttpBinding >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<basicHttpBinding>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -55,47 +55,47 @@ ms.locfileid: "74431032"
 </basicHttpBinding>
 ```  
   
-## <a name="attributes-and-elements"></a>属性和元素  
+## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>Attributes  
+### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|特性|说明|  
 |---------------|-----------------|  
 |`allowCookies`|一个布尔值，指示客户端是否接受 Cookie 并在今后的请求中传播这些 Cookie。 默认值为 `false`。<br /><br /> 在与使用 Cookie 的 ASMX Web 服务进行交互时，可以使用此属性。 通过这种方式，可以确保从服务器返回的 Cookie 自动复制到客户端今后对该服务的所有请求。|  
-|`bypassProxyOnLocal`|一个布尔值，指示是否对本地地址不使用代理服务器。 默认值为 `false`。<br /><br /> 如果 Internet 资源具有本地地址，则该资源是本地资源。 本地地址是指在同一台计算机上，本地 LAN 或 intranet 上的地址，在语法上，通过在 Uri "http://webserver/" 和 "http://localhost/" 中缺少句点（.）来进行标识。<br /><br /> 通过设置此属性，可以确定在访问本地资源时，采用 BasicHttpBinding 配置的终结点是否使用代理服务器。 如果此属性为 `true`，则对本地 Internet 资源的请求不使用代理服务器。 当此属性设置为 `true` 时，如果希望客户端在与同一台计算机上的服务通话时使用代理，请使用主机名称（而非 localhost）。<br /><br /> 当此属性为 `false` 时，所有 Internet 请求都通过代理服务器发出。|  
+|`bypassProxyOnLocal`|一个布尔值，指示是否对本地地址不使用代理服务器。 默认值为 `false`。<br /><br /> 如果 Internet 资源具有本地地址，则该资源是本地资源。 本地地址是指在同一台计算机上，本地 LAN 或 intranet 上的地址，在语法上，通过缺乏句点（.）来标识 `http://webserver/` `http://localhost/` 。<br /><br /> 通过设置此属性，可以确定在访问本地资源时，采用 BasicHttpBinding 配置的终结点是否使用代理服务器。 如果此属性为 `true`，则对本地 Internet 资源的请求不使用代理服务器。 当此属性设置为 `true` 时，如果希望客户端在与同一台计算机上的服务通话时使用代理，请使用主机名称（而非 localhost）。<br /><br /> 当此属性为 `false` 时，所有 Internet 请求都通过代理服务器发出。|  
 |`closeTimeout`|一个 <xref:System.TimeSpan> 值，指定为完成关闭操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:01:00。|  
 |`hostNameComparisonMode`|指定用于分析 URI 的 HTTP 主机名比较模式。 此属性的类型为 <xref:System.ServiceModel.HostNameComparisonMode>，指示在对 URI 进行匹配时，是否使用主机名来访问服务。 默认值为 <xref:System.ServiceModel.HostNameComparisonMode.StrongWildcard>，表示忽略匹配项中的主机名。|  
 |`maxBufferPoolSize`|一个整数值，指定为从通道接收消息的消息缓冲区管理器分配并供其使用的最大内存量。 默认值为 524288 (0x80000) 字节。<br /><br /> 通过使用缓冲池，缓冲区管理器可将使用缓冲区的开销降到最低。 当消息离开通道时，服务需要使用缓冲区来处理这些消息。 如果缓冲池中的内存不够用来处理消息负载，则缓冲区管理器必须从 CLR 堆分配更多内存，而这会增加垃圾回收的系统开销。 从 CLR 垃圾堆进行大量分配表明缓冲池太小，可以通过提高此属性指定的限制来实现更大的内存分配，从而提高性能。|  
 |`maxBufferSize`|一个整数值，指定为采用此绑定配置的终结点处理消息时存储消息的缓冲区的最大大小（字节）。 默认值为 65,536 字节。|  
 |`maxReceivedMessageSize`|一个正整数，定义在采用此绑定配置的通道上可以接收的消息的最大消息大小（字节），包括消息头。 如果消息对于接收方而言太大，则发送方将收到 SOAP 错误。 接收方将删除该消息，并在跟踪日志中创建事件项。 默认值为 65,536 字节。|  
-|`messageEncoding`|定义用于对 SOAP 消息进行编码的编码器。 包括以下有效值：<br /><br /> -Text：使用文本消息编码器。<br />-Mtom：使用消息传输组织机制1.0 （MTOM）编码器。<br /><br /> 默认值为 Text。 此属性的类型为 <xref:System.ServiceModel.WSMessageEncoding>。|  
+|`messageEncoding`|定义用于对 SOAP 消息进行编码的编码器。 有效值包括以下值：<br /><br /> -Text：使用文本消息编码器。<br />-Mtom：使用消息传输组织机制1.0 （MTOM）编码器。<br /><br /> 默认值为 Text。 此属性的类型为 <xref:System.ServiceModel.WSMessageEncoding>。|  
 |`name`|一个包含绑定的配置名称的字符串。 此值在同一类型的绑定中应是唯一的。 从 .NET Framework 4 开始，绑定和行为不需要具有名称。 有关默认配置和无值绑定和行为的详细信息，请参阅[WCF 服务的](../../../wcf/samples/simplified-configuration-for-wcf-services.md)[简化配置](../../../wcf/simplified-configuration.md)和简化配置。|  
 |`openTimeout`|一个 <xref:System.TimeSpan> 值，指定为完成打开操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:01:00。|  
 |`proxyAddress`|一个包含 HTTP 代理地址的 URI。 如果 `useSystemWebProxy` 设置为 `true`，则此设置必须为 `null`。 默认值为 `null`。|  
 |`receiveTimeout`|一个 <xref:System.TimeSpan> 值，指定为完成接收操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:10:00。|  
 |`sendTimeout`|一个 <xref:System.TimeSpan> 值，指定为完成发送操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:01:00。|  
-|`textEncoding`|设置要用来在绑定上发出消息的字符集编码。 包括以下有效值：<br /><br /> -BigEndianUnicode： Unicode BigEndian 编码。<br />-Unicode：16位编码。<br />-UTF8：8位编码<br /><br /> 默认值为 UTF8。 此属性的类型为 <xref:System.Text.Encoding>。|  
+|`textEncoding`|设置要用来在绑定上发出消息的字符集编码。 有效值包括以下值：<br /><br /> -BigEndianUnicode： Unicode BigEndian 编码。<br />-Unicode：16位编码。<br />-UTF8：8位编码<br /><br /> 默认编码为 UTF8。 此属性的类型为 <xref:System.Text.Encoding>。|  
 |`transferMode`|一个有效的 <xref:System.ServiceModel.TransferMode> 值，指定为请求或响应对消息进行缓冲处理还是流式处理。|  
 |`useDefaultWebProxy`|一个布尔值，指定是否应在可用时使用系统的自动配置 HTTP 代理。 默认值为 `true`。|  
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
-|[\<安全 >](security-of-basichttpbinding.md)|定义绑定的安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>。|  
-|[\<readerQuotas >](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
+|[\<security>](security-of-basichttpbinding.md)|定义绑定的安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.BasicHttpSecurityElement>。|  
+|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
-|[\<绑定 >](bindings.md)|此元素包含标准绑定和自定义绑定的集合。|  
+|[\<bindings>](bindings.md)|此元素包含标准绑定和自定义绑定的集合。|  
   
 ## <a name="remarks"></a>备注  
  BasicHttpBinding 使用 HTTP 作为传输协议来发送 SOAP 1.1 消息。 服务可以使用此绑定来公开符合 WS-I BP 1.1 标准的终结点，例如 ASMX 客户端使用的终结点。 同样，客户端可以使用 BasicHttpBinding 与公开符合 WS-I BP 1.1 标准的终结点的服务（如 ASMX Web 服务或采用 BasicHttpBinding 配置的服务）进行通信。  
   
- 默认情况下，安全设置处于关闭状态，但可以将[\<security >](security-of-basichttpbinding.md)子元素的模式属性设置为除 `None`之外的值。 默认情况下，它使用“Text”消息编码和 UTF-8 文本编码。  
+ 默认情况下，安全设置处于关闭状态，但可以将子元素的模式属性设置 [\<security>](security-of-basichttpbinding.md) 为以外的值 `None` 。 默认情况下，它使用“Text”消息编码和 UTF-8 文本编码。  
   
 ## <a name="example"></a>示例  
  下面的示例演示如何使用 <xref:System.ServiceModel.BasicHttpBinding> 提供 HTTP 通信以及与第一代和第二代 Web 服务的最大互操作性。 绑定是在客户端和服务的配置文件中指定的。 绑定类型是使用 `binding` 元素的 `<endpoint>` 属性指定的。 如果要配置基本绑定并更改它的某些设置，则必须定义一个绑定配置。 终结点必须使用 `bindingConfiguration` 元素的 `<endpoint>` 属性按名称引用绑定配置，如以下服务配置代码所示。  
@@ -171,7 +171,7 @@ ms.locfileid: "74431032"
   
  有关默认配置和无值绑定和行为的详细信息，请参阅[WCF 服务的](../../../wcf/samples/simplified-configuration-for-wcf-services.md)[简化配置](../../../wcf/simplified-configuration.md)和简化配置。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Channels.Binding>
 - <xref:System.ServiceModel.Channels.BindingElement>
@@ -180,4 +180,4 @@ ms.locfileid: "74431032"
 - [绑定](../../../wcf/bindings.md)
 - [配置系统提供的绑定](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [使用绑定配置服务和客户端](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<绑定 >](bindings.md)
+- [\<binding>](bindings.md)

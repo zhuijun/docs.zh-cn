@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9f71b6ae-737c-4382-8d89-0a7b1c7e182b
-ms.openlocfilehash: ee64e53f49e15059c91982f2e64879b9f4c76d78
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 2746c608fb47b94446c5d7e10748ba185d555e7f
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834676"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202332"
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>如何：保护元数据终结点
 
@@ -31,7 +31,7 @@ ms.locfileid: "71834676"
 
 3. 将 <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> 类的 <xref:System.ServiceModel.Description.ServiceMetadataBehavior> 属性设置为 `true`。
 
-4. 将 <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> 属性设置为适当的 URL。 请注意，如果指定绝对地址，则 URL 必须以方案“https://”开始。 如果指定相对地址，则必须为服务主机提供一个 HTTPS 基址。 如果不设置此属性，则默认地址为 ""，或者直接为服务的 HTTPS 基址。
+4. 将 <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> 属性设置为适当的 URL。 请注意，如果指定了绝对地址，则 URL 必须以方案开头 `https://` 。 如果指定相对地址，则必须为服务主机提供一个 HTTPS 基址。 如果不设置此属性，则默认地址为 ""，或者直接为服务的 HTTPS 基址。
 
 5. 将该实例添加到 <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> 类的 <xref:System.ServiceModel.Description.ServiceDescription> 属性返回的行为集合中，如下面的代码所示：
 
@@ -40,21 +40,21 @@ ms.locfileid: "71834676"
 
 ### <a name="to-create-a-secure-https-get-metadata-endpoint-in-configuration"></a>在配置中创建安全的 HTTPS GET 元数据终结点
 
-1. 将[\<行为 >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)元素添加到服务的配置文件的[\<system.servicemodel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)元素。
+1. 将一个 [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) 元素添加到 [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) 服务的配置文件的元素中。
 
-2. 将[\<serviceBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md)元素添加到[\<行为 >](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)元素。
+2. 向 [\<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) 元素添加元素 [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) 。
 
-3. 将[\<行为 >](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)元素添加到 `<serviceBehaviors>` 元素。
+3. 向 [\<behavior>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) 元素添加元素 `<serviceBehaviors>` 。
 
 4. 将 `name` 元素的 `<behavior>` 属性设置为适当的值。 需要 `name` 属性。 下面的示例使用 `mySvcBehavior` 值。
 
-5. 将[\<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md)添加到 `<behavior>` 元素。
+5. 将添加 [\<serviceMetadata>](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) 到 `<behavior>` 元素。
 
 6. 将 `httpsGetEnabled` 元素的 `<serviceMetadata>` 属性设置为 `true`。
 
-7. 将 `httpsGetUrl` 元素的 `<serviceMetadata>` 属性设置为适当的值。 请注意，如果指定绝对地址，则 URL 必须以方案“https://”开始。 如果指定相对地址，则必须为服务主机提供一个 HTTPS 基址。 如果不设置此属性，则默认地址为 ""，或者直接为服务的 HTTPS 基址。
+7. 将 `httpsGetUrl` 元素的 `<serviceMetadata>` 属性设置为适当的值。 请注意，如果指定了绝对地址，则 URL 必须以方案开头 `https://` 。 如果指定相对地址，则必须为服务主机提供一个 HTTPS 基址。 如果不设置此属性，则默认地址为 ""，或者直接为服务的 HTTPS 基址。
 
-8. 若要将行为与服务一起使用，请将[\<service >](../../../../docs/framework/configure-apps/file-schema/wcf/service.md)元素的 `behaviorConfiguration` 特性设置为行为元素的 name 特性的值。 下面的配置代码演示了一个完整的示例。
+8. 若要将行为与服务一起使用，请将 `behaviorConfiguration` 元素的属性设置 [\<service>](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) 为行为元素的 name 特性的值。 下面的配置代码演示了一个完整的示例。
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -95,12 +95,12 @@ ms.locfileid: "71834676"
 
 - <xref:System.ServiceModel.Description?displayProperty=nameWithType>
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>
 - [如何：使用 SSL 证书配置端口](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
 - [使用证书](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [元数据的安全性注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
-- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [元数据的安全注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
+- [保护服务和客户端的安全](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

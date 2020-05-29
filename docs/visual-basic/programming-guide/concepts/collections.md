@@ -2,12 +2,12 @@
 title: 集合
 ms.date: 07/20/2015
 ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
-ms.openlocfilehash: 232b9ec7b5975092e73daf0a7384fa816f55f72f
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: d27761ba7a955d1dc8843ad168a82a9c9c27a6f6
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81646342"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202449"
 ---
 # <a name="collections-visual-basic"></a>集合 (Visual Basic)
 
@@ -22,7 +22,7 @@ ms.locfileid: "81646342"
 如果集合中只包含一种数据类型的元素，则可以使用 <xref:System.Collections.Generic?displayProperty=nameWithType> 命名空间中的一个类。 泛型集合强制类型安全，因此无法向其添加任何其他数据类型。 当你从泛型集合检索元素时，你无需确定其数据类型或对其进行转换。
 
 > [!NOTE]
-> 对于本主题中的示例，请包括[Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)和`System.Collections.Generic``System.Linq`命名空间的导入语句。
+> 对于本主题中的示例，包括[Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)用于 `System.Collections.Generic` 和命名空间的 Imports 语句 `System.Linq` 。
 
 <a name="BKMK_SimpleCollection"></a>
 
@@ -30,7 +30,7 @@ ms.locfileid: "81646342"
 
 本部分中的示例使用泛型 <xref:System.Collections.Generic.List%601> 类，通过此类可使用对象的强类型列表。
 
-下面的示例创建字符串列表，然后使用[for Each...下一个](../../../visual-basic/language-reference/statements/for-each-next-statement.md)语句。
+下面的示例创建一个字符串列表，然后使用[For Each .。。下一](../../../visual-basic/language-reference/statements/for-each-next-statement.md)语句。
 
 ```vb
 ' Create a list of strings.
@@ -63,7 +63,7 @@ Next
 'Output: chinook coho pink sockeye
 ```
 
-您可以使用[For...下](../../../visual-basic/language-reference/statements/for-next-statement.md)一个语句，`For Each`而不是通过集合迭代的语句。 通过按索引位置访问集合元素实现此目的。 元素的索引开始于 0，结束于元素计数减 1。
+你可以使用[For .。。Next](../../../visual-basic/language-reference/statements/for-next-statement.md)语句，而不是 `For Each` 语句来循环访问集合。 通过按索引位置访问集合元素实现此目的。 元素的索引开始于 0，结束于元素计数减 1。
 
 以下示例通过使用 `For…Next` 而不是 `For Each` 循环访问集合中的元素。
 
@@ -95,7 +95,7 @@ Next
 'Output: chinook pink sockeye
 ```
 
-以下示例从一个泛型列表中删除元素。 而不是一个`For Each`语句，一个[for...使用](../../../visual-basic/language-reference/statements/for-next-statement.md)按降序进行舍出的下一个语句。 这是因为 <xref:System.Collections.Generic.List%601.RemoveAt%2A> 方法将导致已移除的元素后的元素的索引值减小。
+以下示例从一个泛型列表中删除元素。 而不是 `For Each` 语句， [For .。。使用下一个](../../../visual-basic/language-reference/statements/for-next-statement.md)循环访问顺序的语句。 这是因为 <xref:System.Collections.Generic.List%601.RemoveAt%2A> 方法将导致已移除的元素后的元素的索引值减小。
 
 ```vb
 Dim numbers As New List(Of Integer) From
@@ -296,7 +296,7 @@ Private Function BuildDictionary2() As Dictionary(Of String, Element)
 End Function
 ```
 
-以下示例使用 <xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> 方法和 `Dictionary` 的 <xref:System.Collections.Generic.Dictionary%602.Item%2A> 属性按键快速查找某个项。 该`Item`属性使您能够使用 Visual Basic 中`elements``elements(symbol)`的代码访问集合中的项。
+以下示例使用 <xref:System.Collections.Generic.Dictionary%602.ContainsKey%2A> 方法和 `Dictionary` 的 <xref:System.Collections.Generic.Dictionary%602.Item%2A> 属性按键快速查找某个项。 `Item`属性使你能够 `elements` 使用 Visual Basic 中的代码访问集合中的项 `elements(symbol)` 。
 
 ```vb
 Private Sub FindInDictionary(ByVal symbol As String)
@@ -330,7 +330,7 @@ End Sub
 
 ## <a name="using-linq-to-access-a-collection"></a>使用 LINQ 访问集合
 
-可以使用 LINQ（语言集成查询）来访问集合。 LINQ 查询提供筛选、排序和分组功能。 有关详细信息，请参阅[在可视化基础 中使用 LINQ 入门](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)。
+可以使用 LINQ（语言集成查询）来访问集合。 LINQ 查询提供筛选、排序和分组功能。 有关详细信息，请参阅[Visual Basic 中的入门 LINQ](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)。
 
 以下示例运行一个对泛型 `List` 的 LINQ 查询。 LINQ 查询返回一个包含结果的不同集合。
 
@@ -458,7 +458,7 @@ End Class
 
 ## <a name="defining-a-custom-collection"></a>定义自定义集合
 
-可以通过实现 <xref:System.Collections.Generic.IEnumerable%601> 或 <xref:System.Collections.IEnumerable> 接口来定义集合。 有关详细信息，请参阅[枚举集合](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100))。
+可以通过实现 <xref:System.Collections.Generic.IEnumerable%601> 或 <xref:System.Collections.IEnumerable> 接口来定义集合。 有关其他信息，请参阅[枚举集合](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100))。
 
 尽管可以定义自定义集合，但通常最好使用包含在 .NET Framework 中的集合，这在本主题前面的[集合类型](#kinds-of-collections)中进行了介绍。
 
@@ -538,13 +538,13 @@ End Class
 
 ## <a name="iterators"></a>迭代器
 
-迭代器** 用于对集合执行自定义迭代。 迭代器可以是一种方法，或是一个 `get` 访问器。 迭代器使用[Yield](../../../visual-basic/language-reference/statements/yield-statement.md)语句一次返回集合的每个元素一个。
+迭代器** 用于对集合执行自定义迭代。 迭代器可以是一种方法，或是一个 `get` 访问器。 迭代器使用[Yield](../../../visual-basic/language-reference/statements/yield-statement.md)语句每次返回集合中的每个元素。
 
-您可以使用"为每个" 调用迭代器[...下一个](../../../visual-basic/language-reference/statements/for-each-next-statement.md)语句。 `For Each` 循环的每次迭代都会调用迭代器。 迭代器中到达 `Yield` 语句时，会返回一个表达式，并保留当前在代码中的位置。 下次调用迭代器时，将从该位置重新开始执行。
+您可以通过[对每个 .。。下一](../../../visual-basic/language-reference/statements/for-each-next-statement.md)语句。 `For Each` 循环的每次迭代都会调用迭代器。 迭代器中到达 `Yield` 语句时，会返回一个表达式，并保留当前在代码中的位置。 下次调用迭代器时，将从该位置重新开始执行。
 
-有关详细信息，请参阅[迭代器（可视基本）。](../../../visual-basic/programming-guide/concepts/iterators.md)
+有关详细信息，请参阅[迭代器（Visual Basic）](../../../visual-basic/programming-guide/concepts/iterators.md)。
 
-下面的示例使用迭代器方法。 迭代器方法具有一个`Yield`语句，该语句位于[For...下一个](../../../visual-basic/language-reference/statements/for-next-statement.md)循环。 在 `ListEvenNumbers` 方法中，`For Each` 语句体的每次迭代都会创建对迭代器方法的调用，并将继续到下一个 `Yield` 语句。
+下面的示例使用迭代器方法。 迭代器方法的 `Yield` 语句位于[For .。。下一个](../../../visual-basic/language-reference/statements/for-next-statement.md)循环。 在 `ListEvenNumbers` 方法中，`For Each` 语句体的每次迭代都会创建对迭代器方法的调用，并将继续到下一个 `Yield` 语句。
 
 ```vb
 Public Sub ListEvenNumbers()
@@ -568,11 +568,11 @@ As IEnumerable(Of Integer)
 End Function
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [集合初始化器](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
-- [编程概念 (Visual Basic)](../../../visual-basic/programming-guide/concepts/index.md)
-- [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md)
+- [集合初始值设定项](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
+- [编程概念（Visual Basic）](../../../visual-basic/programming-guide/concepts/index.md)
+- [Option Strict 语句](../../../visual-basic/language-reference/statements/option-strict-statement.md)
 - [LINQ to Objects (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
 - [并行 LINQ (PLINQ)](../../../standard/parallel-programming/introduction-to-plinq.md)
 - [集合和数据结构](../../../standard/collections/index.md)

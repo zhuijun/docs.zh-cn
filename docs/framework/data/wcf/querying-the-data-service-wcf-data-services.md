@@ -9,22 +9,22 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-ms.openlocfilehash: 99fe377e8fff193c4f8bb566946b95c61c1b3693
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 8ae4b4b9938f72f4f4fc011e180cd69440ec3dd9
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568883"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201759"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>查询数据服务（WCF 数据服务）
 
-WCF 数据服务客户端库允许使用熟悉的 .NET Framework 编程模式（包括使用语言集成查询（LINQ））对数据服务执行查询。 客户端库将在客户端上定义为 <xref:System.Data.Services.Client.DataServiceQuery%601> 类实例的查询转换为 HTTP GET 请求消息。 库接收响应消息，并将其转换为客户端数据服务类的实例。 <xref:System.Data.Services.Client.DataServiceContext> 所属的 <xref:System.Data.Services.Client.DataServiceQuery%601> 跟踪这些类。
+WCF 数据服务客户端库允许使用熟悉的 .NET Framework 编程模式（包括使用语言集成查询（LINQ））对数据服务执行查询。 客户端库将在客户端上定义为 <xref:System.Data.Services.Client.DataServiceQuery%601> 类实例的查询转换为 HTTP GET 请求消息。 该库接收响应消息并将该消息转换为客户端数据服务类的实例。 <xref:System.Data.Services.Client.DataServiceContext> 所属的 <xref:System.Data.Services.Client.DataServiceQuery%601> 跟踪这些类。
 
 ## <a name="data-service-queries"></a>数据服务查询
 
 <xref:System.Data.Services.Client.DataServiceQuery%601> 泛型类表示一个查询，该查询返回一个包含零个或零个以上实体类型实例的集合。 数据服务查询始终属于现有数据服务上下文。 此上下文含有撰写和执行查询所必需的服务 URI 和元数据信息。
 
-使用**添加服务引用**对话框将数据服务添加到基于 .NET Framework 的客户端应用程序时，将创建一个从 <xref:System.Data.Services.Client.DataServiceContext> 类继承的实体容器类。 此类包括返回类型化 <xref:System.Data.Services.Client.DataServiceQuery%601> 实例的属性。 数据服务公开的每个实体集对应一个属性。 使用这些属性可以更容易地创建类型化 <xref:System.Data.Services.Client.DataServiceQuery%601> 的实例。
+使用**添加服务引用**对话框将数据服务添加到基于 .NET Framework 的客户端应用程序时，将创建一个从类继承的实体容器类 <xref:System.Data.Services.Client.DataServiceContext> 。 此类包括返回类型化 <xref:System.Data.Services.Client.DataServiceQuery%601> 实例的属性。 数据服务公开的每个实体集对应一个属性。 使用这些属性可以更容易地创建类型化 <xref:System.Data.Services.Client.DataServiceQuery%601> 的实例。
 
 在以下情况下会执行查询：
 
@@ -45,11 +45,11 @@ WCF 数据服务客户端库允许使用熟悉的 .NET Framework 编程模式（
 
 有关详细信息，请参阅[如何：执行数据服务查询](how-to-execute-data-service-queries-wcf-data-services.md)。
 
-WCF 数据服务客户端支持对后期绑定对象的查询，例如在中C#使用*动态*类型。 但是，出于性能原因，应始终编写针对数据服务的强类型查询。 客户端不支持 <xref:System.Tuple> 类型和动态对象。
+WCF 数据服务客户端支持对后期绑定对象的查询，例如在 c # 中使用*动态*类型时。 但是，出于性能方面的考虑，应始终针对数据服务编写强类型查询。 客户端不支持 <xref:System.Tuple> 类型和动态对象。
 
 ## <a name="linq-queries"></a>LINQ 查询
 
-由于 <xref:System.Data.Services.Client.DataServiceQuery%601> 类实现 LINQ 定义的 <xref:System.Linq.IQueryable%601> 接口，WCF 数据服务客户端库可以将针对实体集数据的 LINQ 查询转换为一个 URI，该 URI 表示针对数据服务资源计算的查询表达式。 下面的示例是一个等效于之前 <xref:System.Data.Services.Client.DataServiceQuery%601> 的 LINQ 查询，它返回运费成本超过 30 美元的 `Orders` 并按运费成本对结果进行排序：
+由于 <xref:System.Data.Services.Client.DataServiceQuery%601> 类实现 <xref:System.Linq.IQueryable%601> linq 定义的接口，因此 WCF 数据服务的客户端库可以将针对实体集数据的 LINQ 查询转换为一个 URI，该 URI 表示针对数据服务资源计算的查询表达式。 下面的示例是一个等效于之前 <xref:System.Data.Services.Client.DataServiceQuery%601> 的 LINQ 查询，它返回运费成本超过 30 美元的 `Orders` 并按运费成本对结果进行排序：
 
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionslinqspecific)]
 [!code-vb[Astoria Northwind Client#AddQueryOptionsLinqSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionslinqspecific)]
@@ -151,6 +151,6 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 
 - [如何：投影查询结果](how-to-project-query-results-wcf-data-services.md)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [WCF Data Services 客户端库](wcf-data-services-client-library.md)
+- [WCF 数据服务客户端库](wcf-data-services-client-library.md)

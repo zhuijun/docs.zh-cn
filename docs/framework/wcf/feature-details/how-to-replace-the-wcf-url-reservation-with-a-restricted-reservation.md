@@ -2,12 +2,12 @@
 title: 如何：用受限预留替换 WCF URL 预留
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-ms.openlocfilehash: fc50a0e31a0c323b695ada6565743fa19c1d4c2a
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 780a2c7fe240ed624ff106e8157661f8b76b32bd
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76212192"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202363"
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>如何：用受限预留替换 WCF URL 预留
 
@@ -15,7 +15,7 @@ URL 预留使你能够限制谁可以接收来自某个 URL 或某一组 URL 的
   
  作为默认操作系统配置的一部分，Windows Communication Foundation （WCF）为端口80创建一个全局可访问的保留项，以使所有用户都能运行使用双 HTTP 绑定进行双工通信的应用程序。 由于此预留的 ACL 适用于所有用户，因此管理员不能显式允许或禁止侦听某个 URL 或某一组 URL 的权限。 本主题介绍如何删除此预留，以及如何重新创建具有受限 ACL 的预留。  
   
-在 Windows Vista 或 Windows Server 2008 上，你可以通过输入 `netsh http show urlacl`从提升的命令提示符中查看所有 HTTP URL 保留项。 下面的示例演示 WCF URL 保留内容应类似于：
+在 Windows Vista 或 Windows Server 2008 上，你可以通过输入，从提升的命令提示符查看所有 HTTP URL 保留项 `netsh http show urlacl` 。 下面的示例演示 WCF URL 保留内容应类似于：
 
 ```
 Reserved URL : http://+:80/Temporary_Listen_Addresses/  
@@ -31,9 +31,9 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
   
 1. 单击 "**开始**"，指向 "**所有程序**"，单击 "**附件**"，右键单击 "**命令提示符**"，然后在出现的上下文菜单中单击 "**以管理员身份运行**"。 在可能会要求权限继续的用户帐户控制（UAC）窗口上单击 "**继续**"。  
   
-2. 在命令提示符窗口中键入**netsh http delete urlacl url =http://+:80/Temporary_Listen_Addresses/** 。  
+2. 在 `netsh http delete urlacl url=http://+:80/Temporary_Listen_Addresses/` 命令提示符窗口中键入。  
   
-3. 如果成功删除了预留，将显示以下消息。 **已成功删除 URL 保留项**  
+3. 如果成功删除了预留，将显示以下消息。 **已成功删除 URL 预留**  
   
 ## <a name="creating-a-new-security-group-and-new-restricted-url-reservation"></a>创建新的安全组和新的受限 URL 预留  
  若要用受限保留项替换 WCF URL 保留项，您必须首先创建一个新的安全组。 可以通过两种方法执行此操作：从命令提示符或从计算机管理控制台。 您只需要执行一次。  
@@ -42,7 +42,7 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
   
 1. 单击 "**开始**"，指向 "**所有程序**"，单击 "**附件**"，右键单击 "**命令提示符**"，然后在出现的上下文菜单中单击 "**以管理员身份运行**"。 在可能会要求权限继续的用户帐户控制（UAC）窗口上单击 "**继续**"。  
   
-2. 在命令提示符下键入**net localgroup "\<安全组名称 >"/comment： "\<安全组描述 >"/add** 。 将 **\<安全组名称 >** 替换为要创建的安全组的名称，并使用安全组的适当说明替换 **\<安全组 > 描述**。  
+2. 在 `net localgroup "<security group name>" /comment:"<security group description>" /add` 命令提示符下键入。 将替换为 **\<security group name>** 要创建的安全组的名称，并 **\<security group description>** 使用安全组的适当说明进行替换。  
   
 3. 如果成功创建了安全组，将显示以下消息。 **命令已成功完成。**  
   
@@ -56,6 +56,6 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
   
 1. 单击 "**开始**"，指向 "**所有程序**"，单击 "**附件**"，右键单击 "**命令提示符**"，然后在出现的上下文菜单中单击 "**以管理员身份运行**"。 在可能会要求权限继续的用户帐户控制（UAC）窗口上单击 "**继续**"。  
   
-2. 在命令提示符处键入**netsh http add urlacl url =http://+:80/Temporary_Listen_Addresses/ user = "\< 计算机名称 >\\\> 安全组名称**。 将 **\<计算机名称 >** 替换为必须在其中创建组的计算机名称，并 **\<安全组名称 >** 前面创建的安全组的名称。  
+2. 在 `netsh http add urlacl url=http://+:80/Temporary_Listen_Addresses/ user="<machine name>\<security group name>` 命令提示符下键入。 将替换 **\<machine name>** 为必须在其中创建组的计算机名称，并将替换为 **\<security group name>** 前面创建的安全组的名称。  
   
 3. 如果成功创建了预留，将显示以下消息。 **已成功添加 URL 保留**项。

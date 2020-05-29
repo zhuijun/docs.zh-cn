@@ -2,22 +2,22 @@
 title: <serviceMetadata>
 ms.date: 03/30/2017
 ms.assetid: 2b4c3b4c-31d4-4908-a9b7-5bb411c221f2
-ms.openlocfilehash: 04d160535126cf2383cd9d0fa98d99cd76445735
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.openlocfilehash: c421273d1d08db047a51f1f1e4f9d6c908f12986
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70399606"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201786"
 ---
-# <a name="servicemetadata"></a>\<serviceMetadata>
+# \<serviceMetadata>
 指定服务元数据的发布和相关信息。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<行为 >** ](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<行为 >** ](behavior-of-servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<serviceMetadata >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceBehaviors>**](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<serviceMetadata>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -39,21 +39,21 @@ ms.locfileid: "70399606"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|特性|说明|  
 |---------------|-----------------|  
-|externalMetadataLocation|一个包含 WSDL 文件的位置的 URI，该文件将返回到用户以响应 WSDL 和 MEX 请求而非自动生成的 WSDL。 当未设置此属性时，将返回默认的 WSDL。 默认值为一个空字符串。|  
+|externalMetadataLocation|一个包含 WSDL 文件的位置的 URI，该文件将返回到用户以响应 WSDL 和 MEX 请求而非自动生成的 WSDL。 当未设置此属性时，将返回默认的 WSDL。 默认值为空字符串。|  
 |httpGetBinding|一个字符串，指定将用于通过 HTTP GET 进行元数据检索的绑定类型。 此设置是可选的。 如果未指定此设置，则将使用默认绑定。<br /><br /> 仅支持具有支持 <xref:System.ServiceModel.Channels.IReplyChannel> 的内部绑定元素的绑定。 此外，绑定的 <xref:System.ServiceModel.Channels.MessageVersion> 属性必须为 <xref:System.ServiceModel.Channels.MessageVersion.None%2A>。|  
 |httpGetBindingConfiguration|一个字符串，用于设置在 `httpGetBinding` 特性中指定的绑定的名称，此名称引用此绑定的其他配置信息。 必须在 `<bindings>` 节中定义相同的名称。|  
-|httpGetEnabled|一个布尔值，指定是否发布服务元数据以便使用 HTTP/Get 请求进行检索。 默认值为 `false`。<br /><br /> 如果未指定 httpGetUrl 属性，则发布元数据的地址为服务地址加上“?wsdl”。 例如，如果服务地址为 "http://localhost:8080/CalculatorService"，则 HTTP/Get 元数据地址为 "http://localhost:8080/CalculatorService?wsdl"。<br /><br /> 如果此属性为`false`，或服务的地址不基于 HTTP 或 HTTPS，则忽略 "？ wsdl"。|  
+|httpGetEnabled|一个布尔值，指定是否发布服务元数据以便使用 HTTP/Get 请求进行检索。 默认值为 `false`。<br /><br /> 如果未指定 httpGetUrl 属性，则发布元数据的地址为服务地址加上“?wsdl”。 例如，如果服务地址为，则 `http://localhost:8080/CalculatorService` HTTP/Get 元数据地址为 `http://localhost:8080/CalculatorService?wsdl` 。<br /><br /> 如果此属性为 `false` ，或服务的地址不基于 HTTP 或 HTTPS，则忽略 "？ wsdl"。|  
 |httpGetUrl|一个 URI，指定发布元数据的地址以便使用 HTTP/Get 请求进行检索。 如果指定了相对 Uri，则它将被视为相对于服务的基址。|  
 |httpsGetBinding|一个字符串，指定将用于通过 HTTPS GET 进行元数据检索的绑定类型。 此设置是可选的。 如果未指定此设置，则将使用默认绑定。<br /><br /> 仅支持具有支持 <xref:System.ServiceModel.Channels.IReplyChannel> 的内部绑定元素的绑定。 此外，绑定的 <xref:System.ServiceModel.Channels.MessageVersion> 属性必须为 <xref:System.ServiceModel.Channels.MessageVersion.None%2A>。|  
 |httpsGetBindingConfiguration|一个字符串，用于设置在 `httpsGetBinding` 特性中指定的绑定的名称，此名称引用此绑定的其他配置信息。 必须在 `<bindings>` 节中定义相同的名称。|  
-|httpsGetEnabled|一个布尔值，指定是否发布服务元数据以便使用 HTTPS/Get 请求进行检索。 默认值为 `false`。<br /><br /> 如果未指定 httpsGetUrl 属性，则发布元数据的地址为服务地址加上“?wsdl”。 例如，如果服务地址为 "https://localhost:8080/CalculatorService"，则 HTTP/Get 元数据地址为 "https://localhost:8080/CalculatorService?wsdl"。<br /><br /> 如果此属性为`false`，或服务的地址不基于 HTTP 或 HTTPS，则忽略 "？ wsdl"。|  
+|httpsGetEnabled|一个布尔值，指定是否发布服务元数据以便使用 HTTPS/Get 请求进行检索。 默认值为 `false`。<br /><br /> 如果未指定 httpsGetUrl 属性，则发布元数据的地址为服务地址加上“?wsdl”。 例如，如果服务地址为 " https://localhost:8080/CalculatorService "，则 HTTP/Get 元数据地址为 " https://localhost:8080/CalculatorService?wsdl "。<br /><br /> 如果此属性为 `false` ，或服务的地址不基于 HTTP 或 HTTPS，则忽略 "？ wsdl"。|  
 |httpsGetUrl|一个 URI，指定发布元数据的地址以便使用 HTTPS/Get 请求进行检索。|  
 |policyVersion|一个字符串，指定所使用的 WS-Policy 规范的版本。 此属性的类型为 <xref:System.ServiceModel.Description.PolicyVersion>。|  
   
 ### <a name="child-elements"></a>子元素  
- 无  
+ None  
   
 ### <a name="parent-elements"></a>父元素  
   
@@ -68,7 +68,7 @@ ms.locfileid: "70399606"
   
  利用可选的 `httpGetBinding` 和 `httpsGetBinding`属性，你可以配置用于通过 HTTP GET（或 HTTPS GET）检索元数据的绑定。 如果未指定这两个属性，则根据情况使用相应的默认绑定（采用 HTTP 时为 `HttpTransportBindingElement`，采用 HTTPS 时为 `HttpsTransportBindingElement`）进行元数据检索。 请注意：不能将这些属性用于内置 WCF 绑定。 仅支持具有支持 <xref:System.ServiceModel.Channels.IReplyChannel> 的内部绑定元素的绑定。 此外，绑定的 <xref:System.ServiceModel.Channels.MessageVersion> 属性必须为 <xref:System.ServiceModel.Channels.MessageVersion.None%2A>。  
   
- 为了降低服务被恶意使用者滥用的可能性，可以使用 SSL over HTTP (HTTPS) 机制来确保传输的安全。 为此，必须首先将一个适合的 X.509 证书绑定到承载该服务的计算机上的特定端口。 （有关详细信息，请参阅使用[证书](../../../wcf/feature-details/working-with-certificates.md)。）然后，将此元素添加到服务配置，并将 `httpsGetEnabled` 属性设置为 `true`。 最后，将 `httpsGetUrl` 属性设置为服务元数据终结点的 URL，如下面的示例所示。  
+ 为了降低服务被恶意使用者滥用的可能性，可以使用 SSL over HTTP (HTTPS) 机制来确保传输的安全。 为此，必须首先将一个适合的 X.509 证书绑定到承载该服务的计算机上的特定端口。 （有关详细信息，请参阅使用[证书](../../../wcf/feature-details/working-with-certificates.md)。）其次，将此元素添加到服务配置，并将 `httpsGetEnabled` 特性设置为 `true` 。 最后，将 `httpsGetUrl` 属性设置为服务元数据终结点的 URL，如下面的示例所示。  
   
 ```xml  
 <behaviors>
@@ -82,7 +82,7 @@ ms.locfileid: "70399606"
 ```  
   
 ## <a name="example"></a>示例  
- 下面的示例使用\<serviceMetadata > 元素将服务配置为公开元数据。 它还配置终结点以便将 `IMetadataExchange` 协定作为 WS-MetadataExchange (MEX) 协议的实现公开。 此示例使用的是 `mexHttpBinding`，这是一种便于使用的标准绑定，与安全模式设置为 `wsHttpBinding` 的 `None` 等效。 在终结点中使用相对地址 "mex"，该地址在针对服务基址进行解析时将导致终结点地址`http://localhost/servicemodelsamples/service.svc/mex`。  
+ 下面的示例使用元素将服务配置为公开元数据 \<serviceMetadata> 。 它还配置终结点以便将 `IMetadataExchange` 协定作为 WS-MetadataExchange (MEX) 协议的实现公开。 此示例使用的是 `mexHttpBinding`，这是一种便于使用的标准绑定，与安全模式设置为 `wsHttpBinding` 的 `None` 等效。 在终结点中使用相对地址 "mex"，该地址在针对服务基址进行解析时将导致终结点地址 `http://localhost/servicemodelsamples/service.svc/mex` 。  
   
 ```xml  
 <configuration>

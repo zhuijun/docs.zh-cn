@@ -2,12 +2,12 @@
 title: 可靠消息传送协议版本 1.0
 ms.date: 03/30/2017
 ms.assetid: a5509a5c-de24-4bc2-9a48-19138055dcce
-ms.openlocfilehash: ef45df0f1cae1f20cf34d07d154baee2cad34b29
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 8d192afcffca52136d6d71de49770c5a5ad13895
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84143440"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202306"
 ---
 # <a name="reliable-messaging-protocol-version-10"></a>可靠消息传送协议版本 1.0
 
@@ -28,7 +28,7 @@ WS-可靠消息2月2005协议在 WCF 中由实现 <xref:System.ServiceModel.Chan
 |wsrm|`http://schemas.xmlsoap.org/ws/2005/02/rm`|
 |netrm|`http://schemas.microsoft.com/ws/2006/05/rm`|
 |s|`http://www.w3.org/2003/05/soap-envelope`|
-|wsa|`http://schemas.xmlsoap.org/ws/2005/08/addressing|
+|wsa|`http://schemas.xmlsoap.org/ws/2005/08/addressing`|
 |wsse|`http://docs.oasis-open.org/wss/2004/01/oasis-200401-wssecurity-secext-1.0.xsd`|
 
 ## <a name="messaging"></a>消息传递

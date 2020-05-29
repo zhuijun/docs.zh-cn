@@ -2,12 +2,12 @@
 title: 服务终结点和队列寻址
 ms.date: 03/30/2017
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-ms.openlocfilehash: ec932e83a2b37330f54be545a45358a5ab055423
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 8b323993a698dac219e0f2be43e9b508a19065dd
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744628"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202415"
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>服务终结点和队列寻址
 本主题讨论客户端如何对从队列中读取的服务进行寻址以及服务终结点如何映射到队列。 作为提醒，下图显示了经典 Windows Communication Foundation （WCF）排队的应用程序部署。  
@@ -30,15 +30,15 @@ ms.locfileid: "76744628"
   
  WCF 中的队列寻址基于以下模式：  
   
- net.tcp：//\<*主机名*>/[private/] \<*队列名称*>  
+ net.tcp：// \<*host-name*> /[private/]\<*queue-name*>  
   
  其中：  
   
-- \<*主机名称*> 是托管目标队列的计算机的名称。  
+- \<*host-name*>承载目标队列的计算机的名称。  
   
 - [private] 可选。 它在对作为专用队列的目标队列寻址时使用。 若要对公共队列寻址，不能指定 private。 请注意，与 MSMQ 路径不同，WCF URI 窗体中没有 "$"。  
   
-- \<*队列名称*> 为队列的名称。 队列名还可以引用子队列。 因此，\<*队列名称*> = \<*队列名称*> [;*子队列名称*]。  
+- \<*queue-name*>队列的名称。 队列名还可以引用子队列。 因此， \<*queue-name*>  =  \<*name-of-queue*> [;*子队列名称*]。  
   
  示例 1：若要对计算机 abc atadatum.com 上承载的专用队列 PurchaseOrders 寻址，URI 将为 net.msmq://abc.adatum.com/private/PurchaseOrders。  
   
@@ -63,7 +63,7 @@ ms.locfileid: "76744628"
  指定 `QueueTransferProtocol` 属性只具有发送的功能。 这是客户端发出的有关要使用哪种队列传输协议的指示。  
   
 ### <a name="using-active-directory"></a>使用 Active Directory  
- MSMQ 带有 Active Directory 集成支持。 安装带有 Active Directory 集成的 MSMQ 时，计算机必须属于 Windows 域。 Active Directory 用于为发现发布队列;此类队列称为*公共队列*。 对队列进行寻址时，可以使用 Active Directory 对队列进行解析。 这与使用域名系统 (DNS) 解析网络名称的 IP 地址的方式相似。 `UseActiveDirectory` 中的 `NetMsmqBinding` 属性是一个布尔值，该值指示排队通道是否必须使用 Active Directory 来解析队列 URI。 默认情况下，此属性设置为 `false`。 如果 `UseActiveDirectory` 属性设置为 `true`，则排队通道使用 Active Directory 将 net.msmq:// URI 转换为格式名。  
+ MSMQ 带有 Active Directory 集成支持。 安装带有 Active Directory 集成的 MSMQ 时，计算机必须属于 Windows 域。 Active Directory 用于为发现发布队列;此类队列称为*公共队列*。 对队列进行寻址时，可以使用 Active Directory 对队列进行解析。 这与使用域名系统 (DNS) 解析网络名称的 IP 地址的方式相似。 `UseActiveDirectory` 中的 `NetMsmqBinding` 属性是一个布尔值，该值指示排队通道是否必须使用 Active Directory 来解析队列 URI。 默认设置为 `false`。 如果 `UseActiveDirectory` 属性设置为 `true`，则排队通道使用 Active Directory 将 net.msmq:// URI 转换为格式名。  
   
  `UseActiveDirectory` 属性仅对发送消息的客户端有意义，因为它用于在发送消息时解析队列的地址。  
   
@@ -72,9 +72,9 @@ ms.locfileid: "76744628"
   
 |基于 WCF URI 的队列地址|使用 Active Directory 属性|队列传输协议属性|得到的 MSMQ 格式名|  
 |----------------------------------|-----------------------------------|--------------------------------------|---------------------------------|  
-|Net.tcp：//\<计算机名 >/private/abc|False（默认值）|Native（默认值）|DIRECT=OS:计算机名\private$\abc|  
-|Net.tcp：//\<计算机名 >/private/abc|False|SRMP|DIRECT =http://machine/msmq/private$/abc|  
-|Net.tcp：//\<计算机名 >/private/abc|True|本机|PUBLIC=some-guid（队列的 GUID）|  
+|`Net.msmq://<machine-name>/private/abc`|False（默认值）|Native（默认值）|`DIRECT=OS:machine-name\private$\abc`|  
+|`Net.msmq://<machine-name>/private/abc`|False|SRMP|`DIRECT=http://machine/msmq/private$/abc`|  
+|`Net.msmq://<machine-name>/private/abc`|True|本机|`PUBLIC=some-guid`（队列的 GUID）|  
   
 ### <a name="reading-messages-from-the-dead-letter-queue-or-the-poison-message-queue"></a>从死信队列或病毒消息队列读取消息  
  若要从作为目标队列子队列的病毒消息队列中读取消息，请打开具有子队列地址的 `ServiceHost`。  
@@ -87,23 +87,23 @@ ms.locfileid: "76744628"
   
  在使用自定义死信队列时，请注意，死信队列必须驻留在本地计算机上。 因此，死信队列的 URI 被限制为以下形式：  
   
- net.tcp：//localhost/[private/] \<*自定义死信队列名称*>。  
+ net.tcp：//localhost/[private/] \<*custom-dead-letter-queue-name*> 。  
   
  WCF 服务验证接收到的所有消息是否已发送到它正在侦听的特定队列。 如果消息的目标队列与它所在的队列不匹配，服务不会处理该消息。 这存在一个问题：侦听死信队列的服务必须寻址，因为死信队列中的任何消息都需要传递到别处。 若要从死信队列或病毒队列中读取消息，必须使用带有 `ServiceBehavior` 参数的 <xref:System.ServiceModel.AddressFilterMode.Any>。 有关示例，请参阅[死信队列](../../../../docs/framework/wcf/samples/dead-letter-queues.md)。  
   
 ## <a name="msmqintegrationbinding-and-service-addressing"></a>MsmqIntegrationBinding 和服务寻址  
  `MsmqIntegrationBinding` 用于与传统 MSMQ 应用程序进行通信。 为了便于与现有 MSMQ 应用程序进行互操作，WCF 仅支持格式名寻址。 因此，使用此绑定发送的消息必须符合 URI 方案。  
   
- msmq.formatname：\<*msmq 格式-名称*>>  
+ msmq.formatname：\<*MSMQ-format-name*>>  
   
  MSMQ 格式名称采用 MSMQ 在[关于消息队列](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms706032(v=vs.85))中指定的形式。  
   
  请注意，当使用 `MsmqIntegrationBinding` 从队列接收消息时，只能使用直接格式名以及公共和专用格式名（需要 Active Directory 集成）。 但是，建议您使用直接格式名。 例如，在 Windows Vista 上，使用任何其他格式名会导致错误，因为系统会尝试打开一个子队列，而该子队列只能用直接格式名称打开。  
   
- 在使用 `MsmqIntegrationBinding` 对 SRMP 进行寻址时，不需要在直接格式名中添加 /msmq/ 来帮助 Internet 信息服务 (IIS) 进行调度。 例如：使用 SRMP 协议对队列 abc 进行寻址时，应使用 DIRECT =http://adatum.com/private$/abc.，而不是直接 =http://adatum.com/msmq/private$/abc  
+ 在使用 `MsmqIntegrationBinding` 对 SRMP 进行寻址时，不需要在直接格式名中添加 /msmq/ 来帮助 Internet 信息服务 (IIS) 进行调度。 例如：使用 SRMP 协议（而不是）对队列 abc 进行寻址时， `DIRECT=http://adatum.com/msmq/private$/abc` 应使用 `DIRECT=http://adatum.com/private$/abc` 。  
   
  请注意，对于 `MsmqIntegrationBinding`，不能使用 net.msmq:// 寻址。 由于 `MsmqIntegrationBinding` 支持自由格式的 MSMQ 格式名寻址，因此你可以使用 WCF 服务，该服务使用此绑定来使用 MSMQ 中的多路广播和通讯组列表功能。 一个例外是在使用 `CustomDeadLetterQueue` 时指定 `MsmqIntegrationBinding`。 它必须采用 net.msmq:// 形式，这与使用 `NetMsmqBinding` 进行指定的方式相似。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [承载排队应用程序的 Web](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)

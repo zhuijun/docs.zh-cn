@@ -2,12 +2,12 @@
 title: 使用 DataContractJsonSerializer 的独立 JSON 序列化
 ms.date: 03/30/2017
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-ms.openlocfilehash: 259d5da544262b5cae08e1be9e8ea6e077d5b947
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 6bd075405a3bca0cc64dda90225526096b6fa8e3
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144924"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202395"
 ---
 # <a name="stand-alone-json-serialization-using-datacontractjsonserializer"></a>使用 DataContractJsonSerializer 的独立 JSON 序列化
 
@@ -26,18 +26,18 @@ JSON（JavaScript 对象表示法）是专门为浏览器中的网页上运行�
 
 下表显示 .NET 类型和 JSON/JavaScript 类型在通过序列化和反序列化过程进行映射时的对应关系。
 
-|.NET 类型|JSON/JavaScript|注意|
+|.NET 类型|JSON/JavaScript|说明|
 |----------------|----------------------|-----------|
 |所有数值类型，例如 <xref:System.Int32>、<xref:System.Decimal> 或 <xref:System.Double>|数字|不支持 `Double.NaN`、`Double.PositiveInfinity` 和 `Double.NegativeInfinity` 等特殊值，它们会导致无效的 JSON。|
 |<xref:System.Enum>|数字|请参见本主题中后面的“枚举和 JSON”。|
 |<xref:System.Boolean>|布尔|--|
-|<xref:System.String>, <xref:System.Char>|字符串|--|
-|<xref:System.TimeSpan>, <xref:System.Guid>, <xref:System.Uri>|字符串|JSON 中的这些类型的格式与 XML 中的格式相同（实质上为时间跨度，格式为 ISO 8601，格式为 "12345678-1234567890AB"，格式为 " http://www.example.com "）。 有关精确信息，请参阅[数据协定架构参考](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)。|
-|<xref:System.Xml.XmlQualifiedName>|字符串|格式为“名称:命名空间”（第一个冒号之前的所有内容都是名称）。 可以缺少名称或命名空间。 如果没有命名空间，则也可以省略冒号。|
+|<xref:System.String>, <xref:System.Char>|String|--|
+|<xref:System.TimeSpan>, <xref:System.Guid>, <xref:System.Uri>|String|JSON 中的这些类型的格式与 XML 中的格式相同（实质上为时间跨度，格式为 ISO 8601，格式为 "12345678-1234567890AB"，格式为 " http://www.example.com "）。 有关精确信息，请参阅[数据协定架构参考](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)。|
+|<xref:System.Xml.XmlQualifiedName>|String|格式为“名称:命名空间”（第一个冒号之前的所有内容都是名称）。 可以缺少名称或命名空间。 如果没有命名空间，则也可以省略冒号。|
 |<xref:System.Array> 类型的 <xref:System.Byte>|数字数组|每个数字都表示一个字节的值。|
 |<xref:System.DateTime>|DateTime 或 String|请参见本主题中后面的“日期/时间和 JSON”。|
 |<xref:System.DateTimeOffset>|复杂类型|请参见本主题中后面的“日期/时间和 JSON”。|
-|XML 和 ADO.NET 类型（<xref:System.Xml.XmlElement>、<br /><br /> <xref:System.Xml.Linq.XElement>. <xref:System.Xml.XmlNode>、<br /><br /> <xref:System.Runtime.Serialization.ISerializable>,<br /><br /> <xref:System.Data.DataSet>).|字符串|请参见本主题的“XML 类型和 JSON”一节。|
+|XML 和 ADO.NET 类型（<xref:System.Xml.XmlElement>、<br /><br /> <xref:System.Xml.Linq.XElement>. <xref:System.Xml.XmlNode>、<br /><br /> <xref:System.Runtime.Serialization.ISerializable>,<br /><br /> <xref:System.Data.DataSet>).|String|请参见本主题的“XML 类型和 JSON”一节。|
 |<xref:System.DBNull>|空复杂类型|--|
 |集合、字典和数组|Array|请参见本主题的“集合、字典和数组”一节。|
 |复杂类型（应用了 <xref:System.Runtime.Serialization.DataContractAttribute> 或 <xref:System.SerializableAttribute>）|复杂类型|数据成员变为 JavaScript 复杂类型的成员。|
@@ -189,7 +189,7 @@ ASP.NET AJAX 客户端 JavaScript 代码会自动将此类字符串转换为 Jav
 
 #### <a name="preserving-type-information"></a>保留类型信息
 
-正如前文所述，JSON 中支持多态性，但有一些限制。 JavaScript 是一种弱类型语言，类型标识通常并不会产生问题。 但是，当使用 JSON 在强类型系统 (.NET) 与弱类型系统 (JavaScript) 之间进行通信时，保留类型标识将十分有用。 例如，数据协定名称为“Square”和“Circle”的类型派生自数据协定名称为“Shape”的类型。 如果将“Circle”从 .NET 发送至 JavaScript，随后又将其返回给某个需要“Shape”的 .NET 方法，则 .NET 端就需要它以知道该对象最初为“Circle”，否则任何特定于派生类型的信息（例如，“Circle”上的“radius”数据成员）都可能丢失。
+正如前文所述，JSON 中支持多态性，但有一些限制。 JavaScript 是一种弱类型语言，类型标识通常并不会产生问题。 但是，当使用 JSON 在强类型系统（.NET）与弱类型系统（JavaScript）之间进行通信时，保留类型标识将十分有用。 例如，数据协定名称为“Square”和“Circle”的类型派生自数据协定名称为“Shape”的类型。 如果将“Circle”从 .NET 发送至 JavaScript，随后又将其返回给某个需要“Shape”的 .NET 方法，则 .NET 端就需要它以知道该对象最初为“Circle”，否则任何特定于派生类型的信息（例如，“Circle”上的“radius”数据成员）都可能丢失。
 
 若要保留类型标识，可以在将复杂类型序列化为 JSON 时添加“类型提示”。这样，反序列化程序在识别该提示后，便可以执行相应的操作。 "类型提示" 是键名称为 "type" 的 JSON 键/值对 \_ \_ （后跟单词 "type" 的两个下划线）。 该值是一个 JSON 字符串，其形式为“数据协定名称:数据协定命名空间”（第一个冒号前的所有内容都是名称）。 在前面的示例中，“Circle”可以按以下方式进行序列化。
 
@@ -229,7 +229,7 @@ ASP.NET AJAX 客户端 JavaScript 代码会自动将此类字符串转换为 Jav
 
 类型提示可能会显著增大消息的大小（缓解此问题的一种方式是尽量使用较短的数据协定命名空间）。 因此，在确定是否发出类型提示时，应循序下列规则：
 
-- 使用 ASP.NET AJAX 时，始终都应尽可能多地发出类型提示，即使不存在基分配/派生分配（例如，将 Circle 分配给 Circle）也不例外。 （这是完全实现从弱类型的 JSON 环境调入强类型的 .NET 环境，又不造成大量信息丢失所必需的。）
+- 使用 ASP.NET AJAX 时，始终都应尽可能多地发出类型提示，即使不存在基分配/派生分配（例如，将 Circle 分配给 Circle）也不例外。 （需要完全启用从弱类型化 JSON 环境调用到强类型化的 .NET 环境中的过程，而不会造成意外的信息丢失。）
 
 - 如果在未与 ASP.NET 集成的情况下使用 AJAX 服务，则只有当存在基分配/派生分配时才应发出类型提示，即在将 Circle 分配给 Shape 或 <xref:System.Object> 而不是分配给 Circle 时发出。 这不仅满足了正确实现 JavaScript 客户端所需的信息，而且在最大程度上减少了这些信息，从而提高了性能。但是，如果客户端的设计有误，则无法防止类型信息丢失。 如果要避免处理此客户端问题，请同时避免服务器上的基分配/派生分配。
 
@@ -293,6 +293,6 @@ ASP.NET AJAX 客户端 JavaScript 代码会自动将此类字符串转换为 Jav
 
 序列化程序 XML 编码的键名不是有效的 XML 名称。 例如，名称为 "123" 的数据成员将具有编码名称（如 " \_ x0031 \_ \_ x0032 \_ \_ x0033 \_ "），因为 "123" 是无效的 XML 元素名称（以数字开头）。 在 XML 名称中，如果某些国际字符集无效，也会出现类似的情况。 有关 XML 对 JSON 处理的影响的说明，请参阅[json 和 XML 之间的映射](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [对 JSON 和其他数据传输格式的支持](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: 2917a8d9b42d831566855271a2f2110637db586f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b968c599cf061fbd03b7ba8fb19470f6ace11a55
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174467"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202175"
 ---
 # <a name="table-valued-parameters"></a>表值参数
 表值参数提供了一将多行数据从客户端应用程序封送到 SQL Server 的种简单方法，而无需进行多次往返或特殊的服务器端逻辑来处理数据。 可使用表值参数来封装客户端应用程序中的数据行，并以单个参数化命令将数据发送到服务器。 传入数据行存储在随后可使用 Transact-SQL 进行操作的表变量中。  
@@ -39,7 +39,7 @@ ms.locfileid: "79174467"
 - 使用 `bcp` 实用工具或 <xref:System.Data.SqlClient.SqlBulkCopy> 对象将多行数据加载到表中。 尽管这种技术非常高效，但它不支持服务器端处理，除非将数据加载到临时表或表变量中。  
   
 ## <a name="creating-table-valued-parameter-types"></a>创建表值参数类型  
- 表值参数以通过使用 Transact-SQL CREATE TYPE 语句定义的强类型表结构为基础。 必须先在 SQL Server 中创建一个表类型并定义结构，才能在客户端应用程序中使用表值参数。 有关创建表类型的详细信息，请参阅[用户定义的表类型](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/bb522526(v=sql.100))。  
+ 表值参数基于使用 Transact-sql CREATE TYPE 语句定义的强类型表结构。 必须先在 SQL Server 中创建一个表类型并定义结构，才能在客户端应用程序中使用表值参数。 有关创建表类型的详细信息，请参阅[用户定义的表类型](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/bb522526(v=sql.100))。  
   
  以下语句创建一个名为 CategoryTableType 的表类型，其中包含 CategoryID 列和 CategoryName 列：  
   
@@ -272,10 +272,10 @@ tvpParam.SqlDbType = SqlDbType.Structured
 insertCommand.ExecuteNonQuery()  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [配置参数和参数数据类型](../configuring-parameters-and-parameter-data-types.md)
 - [命令和参数](../commands-and-parameters.md)
 - [DataAdapter 参数](../dataadapter-parameters.md)
-- [ADO.NET中的 SQL 服务器数据操作](sql-server-data-operations.md)
+- [ADO.NET 中的 SQL Server 数据操作](sql-server-data-operations.md)
 - [ADO.NET 概述](../ado-net-overview.md)

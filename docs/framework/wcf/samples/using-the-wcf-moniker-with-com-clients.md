@@ -2,15 +2,15 @@
 title: 对 COM 客户端使用 WCF 标记
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-ms.openlocfilehash: d4d812c59a504f365eb3ad63ddd45ba5a66296e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c1d5e0c7d7460e207fedba601e991f25281ddb6e
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183237"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202088"
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>对 COM 客户端使用 WCF 标记
-此示例演示如何使用 Windows 通信基础 （WCF） 服务名字对象将 Web 服务集成到基于 COM 的开发环境，例如 Microsoft Office 应用程序可视化基础 （Office VBA） 或可视化基本 6.0。 本示例由 Windows 脚本宿主客户端 (.vbs)、客户端支持库 (.dll) 和 Internet 信息服务 (IIS) 承载的服务库 (.dll) 组成。 该服务是一个计算器服务，COM 客户端将对服务调用数学运算（加、减、乘和除）。 客户端活动显示在消息框窗口中。  
+此示例演示如何使用 Windows Communication Foundation （WCF）服务名字对象将 Web 服务集成到基于 COM 的开发环境中，例如 Microsoft Office Visual Basic for Applications （Office VBA）或 Visual Basic 6.0。 本示例由 Windows 脚本宿主客户端 (.vbs)、客户端支持库 (.dll) 和 Internet 信息服务 (IIS) 承载的服务库 (.dll) 组成。 该服务是一个计算器服务，COM 客户端将对服务调用数学运算（加、减、乘和除）。 客户端活动显示在消息框窗口中。  
   
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。  
@@ -20,7 +20,7 @@ ms.locfileid: "79183237"
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Interop\COM`  
   
@@ -50,7 +50,7 @@ public interface ICalculator
 - 元数据交换协定 - 该协定可在运行时从元数据交换 (MEX) 终结点进行检索。  
   
 ## <a name="typed-contract"></a>类型化协定  
- 若要对类型化协定用法使用标记，必须向 COM 注册服务协定的经适当属性化的类型。 首先，必须使用[服务模型元数据实用程序工具 （Svcutil.exe）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)生成客户端。 在客户端目录中通过命令提示符运行以下命令可以生成该类型化代理。  
+ 若要对类型化协定用法使用标记，必须向 COM 注册服务协定的经适当属性化的类型。 首先，必须使用 " [svcutil.exe" 元数据实用工具（）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)生成客户端。 在客户端目录中通过命令提示符运行以下命令可以生成该类型化代理。  
   
 ```console  
 svcutil.exe /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost/servicemodelsamples/service.svc /out:generatedClient.cs  
@@ -91,7 +91,7 @@ contractType={9213C6D2-5A6F-3D26-839B-3BA9B82228D3}")
   
 - 客户端应该用来与该终结点连接的绑定。 虽然可以在客户端配置文件中定义自定义绑定，但本例中使用了系统定义的 wsHttpBinding。 自定义绑定在与 Cscript.exe 处于同一目录的 Cscript.exe.config 文件中进行定义，以便可以与 Windows 脚本主机一起使用。  
   
-- 在终结点受支持的协定的类型。 此类型是在上面生成并注册的类型。 由于 Visual Basic 脚本不提供强类型 COM 环境，因此必须指定协定的标识符。 此 GUID 是 CalcProxy.tlb 中的 `interfaceID`，可以通过使用 COM 工具（如 OLE/COM 对象查看器 (OleView.exe)）来查看。 对于强类型环境（如 Office VBA 或 Visual Basic 6.0），可以添加对类型库的显式引用，然后声明代理对象的类型，以此取代协定参数。 这样还可在客户端应用程序开发过程中提供 IntelliSense 支持。  
+- 在终结点受支持的协定的类型。 此类型是在上面生成并注册的类型。 由于 Visual Basic 脚本不提供强类型 COM 环境，因此必须指定协定的标识符。 此 GUID 是 CalcProxy.tlb 中的 `interfaceID`，可以通过使用 COM 工具（如 OLE/COM 对象查看器 (OleView.exe)）来查看。 对于强类型化环境（如 Office VBA 或 Visual Basic 6.0），添加对类型库的显式引用，然后声明代理对象的类型可用于替代协定参数。 这样还可在客户端应用程序开发过程中提供 IntelliSense 支持。  
   
  在用服务标记构造代理实例之后，客户端应用程序可以对此代理调用方法，这将生成调用相应服务操作的服务标记基础结构。  
   
@@ -100,7 +100,7 @@ contractType={9213C6D2-5A6F-3D26-839B-3BA9B82228D3}")
 WScript.Echo "Typed service moniker: 100 + 15.99 = " & typedServiceMoniker.Add(100, 15.99)  
 ```  
   
- 运行示例时，操作响应将显示在 Windows 脚本宿主消息框窗口中。 这演示了使用键入的名号进行 COM 调用 COM 客户端与 WCF 服务通信。 虽然在客户端应用程序中使用了 COM，但与服务的通信仅由 Web 服务调用组成。  
+ 运行示例时，操作响应将显示在 Windows 脚本宿主消息框窗口中。 这说明了使用类型化名字对象发出 COM 调用以便与 WCF 服务进行通信的 COM 客户端。 虽然在客户端应用程序中使用了 COM，但与服务的通信仅由 Web 服务调用组成。  
   
 ## <a name="wsdl-contract"></a>WSDL 协定  
  使用具有 WSDL 协定的标记不需要注册任何客户端库，但必须通过带外机制（如使用浏览器访问服务的 WSDL 终结点）来检索服务的 WSDL 协定。 标记之后可以在执行时访问该协定。  
@@ -136,7 +136,7 @@ Set wsdlServiceMoniker = GetObject(wsdlMonikerString)
 - 协定的名称和命名空间。 由于 WSDL 可能包含多个协定，因此需要此标识。  
   
     > [!NOTE]
-    > 默认情况下，WCF 服务会为使用的每个命名空间生成单独的 WSDL 文件。 这些文件通过使用 WSDL 导入构造连接。 由于标记需要单个 WSDL 定义，因此服务必须使用单个命名空间（如本示例中的演示），或者必须手动合并单独的文件。  
+    > 默认情况下，WCF 服务为使用的每个命名空间生成单独的 WSDL 文件。 这些文件通过使用 WSDL 导入构造连接。 由于标记需要单个 WSDL 定义，因此服务必须使用单个命名空间（如本示例中的演示），或者必须手动合并单独的文件。  
   
  在用服务标记构造代理实例之后，客户端应用程序可以对此代理调用方法，这将生成调用相应服务操作的服务标记基础结构。  
   
@@ -145,7 +145,7 @@ Set wsdlServiceMoniker = GetObject(wsdlMonikerString)
 WScript.Echo "WSDL service moniker: 145 - 76.54 = " & wsdlServiceMoniker.Subtract(145, 76.54)  
 ```  
   
- 运行示例时，操作响应将显示在 Windows 脚本宿主消息框窗口中。 这演示了 COM 客户端使用具有 WSDL 协定的绰号进行 COM 调用，以便与 WCF 服务进行通信。  
+ 运行示例时，操作响应将显示在 Windows 脚本宿主消息框窗口中。 这说明了使用带有 WSDL 协定的名字对象进行 COM 调用以便与 WCF 服务进行通信的 COM 客户端。  
   
 ## <a name="metadata-exchange-contract"></a>元数据交换协定  
  和 WSDL 协定一样，使用具有 MEX 协定的标记不需要注册任何客户端。 服务的协定通过内部使用元数据交换在执行时进行检索。  
@@ -180,32 +180,32 @@ Set mexServiceMoniker = GetObject(mexMonikerString)
 WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9, 81.25)  
 ```  
   
- 运行示例时，操作响应将显示在 Windows 脚本宿主消息框窗口中。 这演示了 COM 客户端使用具有 MEX 协定的绰号进行 COM 调用，以便与 WCF 服务进行通信。  
+ 运行示例时，操作响应将显示在 Windows 脚本宿主消息框窗口中。 这表明，COM 客户端使用名字对象和 MEX 协定进行 COM 调用，以便与 WCF 服务进行通信。  
   
 #### <a name="to-set-up-and-build-the-sample"></a>设置和生成示例  
   
-1. 确保已为 Windows[通信基础示例执行一次性设置过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。  
   
 2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。  
   
-3. 从 Visual Studio 的开发人员命令提示符中，在特定于语言的文件夹下打开 \client_bin 文件夹。  
+3. 在 Visual Studio 开发人员命令提示中，打开语言特定文件夹下的 \client\bin 文件夹。  
   
     > [!NOTE]
-    > 如果使用 Windows Vista、Windows Server 2008、Windows 7 或 Windows Server 2008 R2，请确保使用管理员权限运行命令提示符。  
+    > 如果使用的是 Windows Vista、Windows Server 2008、Windows 7 或 Windows Server 2008 R2，请确保使用管理员权限运行命令提示符。  
   
-4. 键入`tlbexp.exe client.dll /out:CalcProxy.tlb`以将 dll 导出到 tlb 文件。 预期会出现“Type library exporter warning”（类型库导出程序警告），但由于不需要泛型类型，因此这不是问题。  
+4. 键入以 `tlbexp.exe client.dll /out:CalcProxy.tlb` 将 dll 导出到 tlb 文件中。 预期会出现“Type library exporter warning”（类型库导出程序警告），但由于不需要泛型类型，因此这不是问题。  
   
-5. 键入`regasm.exe /tlb:CalcProxy.tlb client.dll`以将类型注册到 COM。 预期会出现“Type library exporter warning”（类型库导出程序警告），但由于不需要泛型类型，因此这不是问题。  
+5. 键入 `regasm.exe /tlb:CalcProxy.tlb client.dll` 以向 COM 注册类型。 预期会出现“Type library exporter warning”（类型库导出程序警告），但由于不需要泛型类型，因此这不是问题。  
   
-6. 键入`gacutil.exe /i client.dll`以将程序集添加到全局程序集缓存。  
+6. 键入以 `gacutil.exe /i client.dll` 将程序集添加到全局程序集缓存中。  
   
 #### <a name="to-run-the-sample-on-the-same-computer"></a>在同一计算机上运行示例  
   
-1. 通过键入以下地址，测试是否可以使用浏览器访问服务： `http://localhost/servicemodelsamples/service.svc`. 在响应中应显示确认页。  
+1. 通过键入以下地址来测试是否可以使用浏览器访问服务： `http://localhost/servicemodelsamples/service.svc` 。 在响应中应显示确认页。  
   
 2. 运行 \client（在语言特定文件夹内）中的 ComCalcClient.vbs。 客户端活动将显示在消息框窗口中。  
   
-3. 如果客户端和服务无法通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+3. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 #### <a name="to-run-the-sample-across-computers"></a>跨计算机运行示例  
   
@@ -221,13 +221,13 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
   
 6. 将 \client\bin\ 文件夹（在语言特定文件夹内）中的 Client.dll 库复制到客户端计算机上的一个目录中。  
   
-7. 在命令提示符下，定位到客户端计算机上的目标目录。 如果使用 Windows Vista 或 Windows 服务器 2008，请确保以管理员身份运行命令提示。  
+7. 在命令提示符下，定位到客户端计算机上的目标目录。 如果使用的是 Windows Vista 或 Windows Server 2008，请确保以管理员身份运行命令提示符。  
   
-8. 键入`tlbexp.exe client.dll /out:CalcProxy.tlb`以将 dll 导出到 tlb 文件。 预期会出现“Type library exporter warning”（类型库导出程序警告），但由于不需要泛型类型，因此这不是问题。  
+8. 键入以 `tlbexp.exe client.dll /out:CalcProxy.tlb` 将 dll 导出到 tlb 文件中。 预期会出现“Type library exporter warning”（类型库导出程序警告），但由于不需要泛型类型，因此这不是问题。  
   
-9. 键入`regasm.exe /tlb:CalcProxy.tlb client.dll`以将类型注册到 COM。 确保路径已设置为运行命令之前包含`regasm.exe`的文件夹。  
+9. 键入 `regasm.exe /tlb:CalcProxy.tlb client.dll` 以向 COM 注册类型。 在运行命令之前，请确保已将路径设置为包含的文件夹 `regasm.exe` 。  
   
-10. 键入`gacutil.exe /i client.dll`以将程序集添加到全局程序集缓存。 确保路径已设置为运行命令之前包含`gacutil.exe`的文件夹。  
+10. 键入以 `gacutil.exe /i client.dll` 将程序集添加到全局程序集缓存中。 在运行命令之前，请确保已将路径设置为包含的文件夹 `gacutil.exe` 。  
   
 11. 测试是否可使用浏览器从客户端计算机访问服务。  
   
