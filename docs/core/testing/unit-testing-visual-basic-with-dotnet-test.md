@@ -3,102 +3,145 @@ title: 使用 dotnet test 和 xUnit 对 .NET Core 中的 Visual Basic 进行单�
 description: 通过使用 dotnet test 和 xUnit 分步生成 Visual Basic 示例解决方案的交互体验，了解 .NET Core 中的单元测试概念。
 author: billwagner
 ms.author: wiwagn
-ms.date: 09/01/2017
-ms.openlocfilehash: 9a99d9031711a3e958132416d0235df76f4a9092
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 05/18/2020
+ms.openlocfilehash: ed1291a980f9a39284525877bab8d0a93389fbd0
+ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240943"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83702956"
 ---
-# <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-xunit"></a><span data-ttu-id="90614-103">使用 dotnet test 和 xUnit 进行 Visual Basic .NET Core 库单元测试</span><span class="sxs-lookup"><span data-stu-id="90614-103">Unit testing Visual Basic .NET Core libraries using dotnet test and xUnit</span></span>
+# <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-xunit"></a><span data-ttu-id="71aae-103">使用 dotnet test 和 xUnit 进行 Visual Basic .NET Core 库单元测试</span><span class="sxs-lookup"><span data-stu-id="71aae-103">Unit testing Visual Basic .NET Core libraries using dotnet test and xUnit</span></span>
 
-<span data-ttu-id="90614-104">本教程介绍分步构建示例解决方案的交互式体验，以了解单元测试概念。</span><span class="sxs-lookup"><span data-stu-id="90614-104">This tutorial takes you through an interactive experience building a sample solution step-by-step to learn unit testing concepts.</span></span> <span data-ttu-id="90614-105">如果希望使用预构建解决方案学习本教程，请在开始前[查看或下载示例代码](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-dotnet-test)。</span><span class="sxs-lookup"><span data-stu-id="90614-105">If you prefer to follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-dotnet-test) before you begin.</span></span> <span data-ttu-id="90614-106">有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)。</span><span class="sxs-lookup"><span data-stu-id="90614-106">For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span></span>
+<span data-ttu-id="71aae-104">本教程演示如何生成包含单元测试项目和库项目的解决方案。</span><span class="sxs-lookup"><span data-stu-id="71aae-104">This tutorial shows how to build a solution containing a unit test project and library project.</span></span> <span data-ttu-id="71aae-105">若要使用预构建解决方案学习本教程，请[查看或下载示例代码](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/)。</span><span class="sxs-lookup"><span data-stu-id="71aae-105">To follow the tutorial using a pre-built solution, [view or download the sample code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/).</span></span> <span data-ttu-id="71aae-106">有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)。</span><span class="sxs-lookup"><span data-stu-id="71aae-106">For download instructions, see [Samples and Tutorials](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).</span></span>
 
-[!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
+## <a name="create-the-solution"></a><span data-ttu-id="71aae-107">创建解决方案</span><span class="sxs-lookup"><span data-stu-id="71aae-107">Create the solution</span></span>
 
-## <a name="creating-the-source-project"></a><span data-ttu-id="90614-107">创建源项目</span><span class="sxs-lookup"><span data-stu-id="90614-107">Creating the source project</span></span>
-
-<span data-ttu-id="90614-108">打开 shell 窗口。</span><span class="sxs-lookup"><span data-stu-id="90614-108">Open a shell window.</span></span> <span data-ttu-id="90614-109">创建一个名为 unit-testing-vb-using-dotnet-test  的目录，以保留该解决方案。</span><span class="sxs-lookup"><span data-stu-id="90614-109">Create a directory called *unit-testing-vb-using-dotnet-test* to hold the solution.</span></span>
-<span data-ttu-id="90614-110">在此新目录中，运行 [`dotnet new sln`](../tools/dotnet-new.md) 创建新的解决方案。</span><span class="sxs-lookup"><span data-stu-id="90614-110">Inside this new directory, run [`dotnet new sln`](../tools/dotnet-new.md) to create a new solution.</span></span> <span data-ttu-id="90614-111">此做法便于管理类库和单元测试项目。</span><span class="sxs-lookup"><span data-stu-id="90614-111">This practice makes it easier to manage both the class library and the unit test project.</span></span>
-<span data-ttu-id="90614-112">在解决方案目录中，创建 PrimeService  目录。</span><span class="sxs-lookup"><span data-stu-id="90614-112">Inside the solution directory, create a *PrimeService* directory.</span></span> <span data-ttu-id="90614-113">目前目录和文件结构如下所示：</span><span class="sxs-lookup"><span data-stu-id="90614-113">You have the following directory and file structure thus far:</span></span>
+<span data-ttu-id="71aae-108">在本部分中，将创建包含源和测试项目的解决方案。</span><span class="sxs-lookup"><span data-stu-id="71aae-108">In this section, a solution is created that contains the source and test projects.</span></span> <span data-ttu-id="71aae-109">已完成的解决方案具有以下目录结构：</span><span class="sxs-lookup"><span data-stu-id="71aae-109">The completed solution has the following directory structure:</span></span>
 
 ```
 /unit-testing-using-dotnet-test
     unit-testing-using-dotnet-test.sln
     /PrimeService
-```
-
-<span data-ttu-id="90614-114">将 *PrimeService* 作为当前目录，然后运行 [`dotnet new classlib -lang VB`](../tools/dotnet-new.md) 以创建源项目。</span><span class="sxs-lookup"><span data-stu-id="90614-114">Make *PrimeService* the current directory and run [`dotnet new classlib -lang VB`](../tools/dotnet-new.md) to create the source project.</span></span> <span data-ttu-id="90614-115">将 Class1.VB  重命名为 PrimeService.VB  。</span><span class="sxs-lookup"><span data-stu-id="90614-115">Rename *Class1.VB* to *PrimeService.VB*.</span></span> <span data-ttu-id="90614-116">创建 `PrimeService` 类的失败实现：</span><span class="sxs-lookup"><span data-stu-id="90614-116">You create a failing implementation of the `PrimeService` class:</span></span>
-
-```vb
-Namespace Prime.Services
-    Public Class PrimeService
-        Public Function IsPrime(candidate As Integer) As Boolean
-            Throw New NotImplementedException("Please create a test first")
-        End Function
-    End Class
-End Namespace
-```
-
-<span data-ttu-id="90614-117">将目录更改回 unit-testing-vb-using-dotnet-test  目录。</span><span class="sxs-lookup"><span data-stu-id="90614-117">Change the directory back to the *unit-testing-vb-using-dotnet-test* directory.</span></span> <span data-ttu-id="90614-118">运行 [`dotnet sln add .\PrimeService\PrimeService.vbproj`](../tools/dotnet-sln.md) 向解决方案添加类库项目。</span><span class="sxs-lookup"><span data-stu-id="90614-118">Run [`dotnet sln add .\PrimeService\PrimeService.vbproj`](../tools/dotnet-sln.md) to add the class library project to the solution.</span></span>
-
-## <a name="creating-the-test-project"></a><span data-ttu-id="90614-119">创建测试项目</span><span class="sxs-lookup"><span data-stu-id="90614-119">Creating the test project</span></span>
-
-<span data-ttu-id="90614-120">接下来，创建 PrimeService.Tests  目录。</span><span class="sxs-lookup"><span data-stu-id="90614-120">Next, create the *PrimeService.Tests* directory.</span></span> <span data-ttu-id="90614-121">下图显示了它的目录结构：</span><span class="sxs-lookup"><span data-stu-id="90614-121">The following outline shows the directory structure:</span></span>
-
-```
-/unit-testing-vb-using-dotnet-test
-    unit-testing-vb-using-dotnet-test.sln
-    /PrimeService
-        Source Files
+        PrimeService.vb
         PrimeService.vbproj
     /PrimeService.Tests
-```
-
-<span data-ttu-id="90614-122">将 *PrimeService.Tests* 目录作为当前目录，并使用 [`dotnet new xunit -lang VB`](../tools/dotnet-new.md) 创建一个新项目。</span><span class="sxs-lookup"><span data-stu-id="90614-122">Make the *PrimeService.Tests* directory the current directory and create a new project using [`dotnet new xunit -lang VB`](../tools/dotnet-new.md).</span></span> <span data-ttu-id="90614-123">此命令会创建将 xUnit 用作测试库的测试项目。</span><span class="sxs-lookup"><span data-stu-id="90614-123">This command creates a test project that uses xUnit as the test library.</span></span> <span data-ttu-id="90614-124">生成的模板在 PrimeServiceTests.vbproj  中配置了测试运行程序：</span><span class="sxs-lookup"><span data-stu-id="90614-124">The generated template configures the test runner in the *PrimeServiceTests.vbproj*:</span></span>
-
-```xml
-<ItemGroup>
-  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0-preview-20170628-02" />
-  <PackageReference Include="xunit" Version="2.2.0" />
-  <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
-</ItemGroup>
-```
-
-<span data-ttu-id="90614-125">测试项目需要其他包创建和运行单元测试。</span><span class="sxs-lookup"><span data-stu-id="90614-125">The test project requires other packages to create and run unit tests.</span></span> <span data-ttu-id="90614-126">`dotnet new` 在以前的步骤中已添加 xUnit 和 xUnit 运行程序。</span><span class="sxs-lookup"><span data-stu-id="90614-126">`dotnet new` in the previous step added xUnit and the xUnit runner.</span></span> <span data-ttu-id="90614-127">现在，将 `PrimeService` 类库作为另一个依赖项添加到项目中。</span><span class="sxs-lookup"><span data-stu-id="90614-127">Now, add the `PrimeService` class library as another dependency to the project.</span></span> <span data-ttu-id="90614-128">使用 [`dotnet add reference`](../tools/dotnet-add-reference.md) 命令：</span><span class="sxs-lookup"><span data-stu-id="90614-128">Use the [`dotnet add reference`](../tools/dotnet-add-reference.md) command:</span></span>
-
-```dotnetcli
-dotnet add reference ../PrimeService/PrimeService.vbproj
-```
-
-<span data-ttu-id="90614-129">可以在 GitHub 上的[示例存储库](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService.Tests/PrimeService.Tests.vbproj)中看到整个文件。</span><span class="sxs-lookup"><span data-stu-id="90614-129">You can see the entire file in the [samples repository](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService.Tests/PrimeService.Tests.vbproj) on GitHub.</span></span>
-
-<span data-ttu-id="90614-130">最终的文件夹布局将如下所示：</span><span class="sxs-lookup"><span data-stu-id="90614-130">You have the following final folder layout:</span></span>
-
-```
-/unit-testing-using-dotnet-test
-    unit-testing-using-dotnet-test.sln
-    /PrimeService
-        Source Files
-        PrimeService.vbproj
-    /PrimeService.Tests
-        Test Source Files
+        PrimeService_IsPrimeShould.vb
         PrimeServiceTests.vbproj
 ```
 
-<span data-ttu-id="90614-131">在 unit-testing-vb-using-dotnet-test 目录中执行 [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.vbproj`](../tools/dotnet-sln.md)。</span><span class="sxs-lookup"><span data-stu-id="90614-131">Execute [`dotnet sln add .\PrimeService.Tests\PrimeService.Tests.vbproj`](../tools/dotnet-sln.md) in the *unit-testing-vb-using-dotnet-test* directory.</span></span>
+<span data-ttu-id="71aae-110">以下说明提供了创建测试解决方案的步骤。</span><span class="sxs-lookup"><span data-stu-id="71aae-110">The following instructions provide the steps to create the test solution.</span></span> <span data-ttu-id="71aae-111">有关通过一个步骤创建测试解决方案的说明，请参阅[用于创建测试解决方案的命令](#create-test-cmd)。</span><span class="sxs-lookup"><span data-stu-id="71aae-111">See [Commands to create test solution](#create-test-cmd) for instructions to create the test solution in one step.</span></span>
 
-## <a name="creating-the-first-test"></a><span data-ttu-id="90614-132">创建第一个测试</span><span class="sxs-lookup"><span data-stu-id="90614-132">Creating the first test</span></span>
+* <span data-ttu-id="71aae-112">打开 shell 窗口。</span><span class="sxs-lookup"><span data-stu-id="71aae-112">Open a shell window.</span></span>
+* <span data-ttu-id="71aae-113">运行下面的命令：</span><span class="sxs-lookup"><span data-stu-id="71aae-113">Run the following command:</span></span>
 
-<span data-ttu-id="90614-133">编写一个失败测试，使其通过，然后重复此过程。</span><span class="sxs-lookup"><span data-stu-id="90614-133">You write one failing test, make it pass, then repeat the process.</span></span> <span data-ttu-id="90614-134">从 PrimeService.Tests 目录删除 UnitTest1.vb，并创建一个名为 PrimeService_IsPrimeShould.VB 的新 Visual Basic 文件。</span><span class="sxs-lookup"><span data-stu-id="90614-134">Remove *UnitTest1.vb* from the *PrimeService.Tests* directory and create a new Visual Basic file named *PrimeService_IsPrimeShould.VB*.</span></span> <span data-ttu-id="90614-135">添加以下代码：</span><span class="sxs-lookup"><span data-stu-id="90614-135">Add the following code:</span></span>
+  ```dotnetcli
+  dotnet new sln -o unit-testing-using-dotnet-test
+  ```
+
+  <span data-ttu-id="71aae-114">[`dotnet new sln`](../tools/dotnet-new.md) 命令用于在 unit-testing-using-dotnet-test 目录中创建新的解决方案。</span><span class="sxs-lookup"><span data-stu-id="71aae-114">The [`dotnet new sln`](../tools/dotnet-new.md) command creates a new solution in the *unit-testing-using-dotnet-test* directory.</span></span>
+* <span data-ttu-id="71aae-115">将目录更改为 unit-testing-using-dotnet-test 文件夹。</span><span class="sxs-lookup"><span data-stu-id="71aae-115">Change directory to the *unit-testing-using-dotnet-test* folder.</span></span>
+* <span data-ttu-id="71aae-116">运行下面的命令：</span><span class="sxs-lookup"><span data-stu-id="71aae-116">Run the following command:</span></span>
+
+  ```dotnetcli
+  dotnet new classlib -o PrimeService --lang VB
+  ```
+
+   <span data-ttu-id="71aae-117">[`dotnet new classlib`](../tools/dotnet-new.md) 命令用于在 PrimeService 文件夹中创建新的类库项目。</span><span class="sxs-lookup"><span data-stu-id="71aae-117">The [`dotnet new classlib`](../tools/dotnet-new.md) command creates a new class library project  in the *PrimeService* folder.</span></span> <span data-ttu-id="71aae-118">新的类库将包含要测试的代码。</span><span class="sxs-lookup"><span data-stu-id="71aae-118">The new class library will contain the code to be tested.</span></span>
+* <span data-ttu-id="71aae-119">将 Class1.vb 重命名为 PrimeService.vb。</span><span class="sxs-lookup"><span data-stu-id="71aae-119">Rename *Class1.vb* to *PrimeService.vb*.</span></span>
+* <span data-ttu-id="71aae-120">将 PrimeService.vb 中的代码替换为以下代码：</span><span class="sxs-lookup"><span data-stu-id="71aae-120">Replace the code in *PrimeService.vb* with the following code:</span></span>
+  
+  ```vb
+  Imports System
+  
+  Namespace Prime.Services
+      Public Class PrimeService
+          Public Function IsPrime(candidate As Integer) As Boolean
+              Throw New NotImplementedException("Not implemented.")
+          End Function
+      End Class
+  End Namespace
+  ```
+
+* <span data-ttu-id="71aae-121">前面的代码：</span><span class="sxs-lookup"><span data-stu-id="71aae-121">The preceding code:</span></span>
+  * <span data-ttu-id="71aae-122">引发 <xref:System.NotImplementedException>，其中包含一条消息，指示未实现。</span><span class="sxs-lookup"><span data-stu-id="71aae-122">Throws a <xref:System.NotImplementedException> with a message indicating it's not implemented.</span></span>
+  * <span data-ttu-id="71aae-123">稍后在教程中更新。</span><span class="sxs-lookup"><span data-stu-id="71aae-123">Is updated later in the tutorial.</span></span>
+
+<!-- preceding code shows an english bias. Message makes no sense outside english -->
+
+* <span data-ttu-id="71aae-124">在 unit-testing-using-dotnet-test 目录下运行以下命令，向解决方案添加类库项目：</span><span class="sxs-lookup"><span data-stu-id="71aae-124">In the *unit-testing-using-dotnet-test* directory, run the following command to add the class library project to the solution:</span></span>
+
+  ```dotnetcli
+  dotnet sln add ./PrimeService/PrimeService.vbproj
+  ```
+
+* <span data-ttu-id="71aae-125">运行以下命令创建 PrimeService.Tests 项目：</span><span class="sxs-lookup"><span data-stu-id="71aae-125">Create the *PrimeService.Tests* project by running the following command:</span></span>
+
+  ```dotnetcli
+  dotnet new xunit -o PrimeService.Tests
+  ```
+
+* <span data-ttu-id="71aae-126">上面的命令：</span><span class="sxs-lookup"><span data-stu-id="71aae-126">The preceding command:</span></span>
+  * <span data-ttu-id="71aae-127">在 PrimeService.Tests 目录中创建 PrimeService.Tests 项目 。</span><span class="sxs-lookup"><span data-stu-id="71aae-127">Creates the *PrimeService.Tests* project in the *PrimeService.Tests* directory.</span></span> <span data-ttu-id="71aae-128">测试项目将 [xUnit](https://xunit.net/) 用作测试库。</span><span class="sxs-lookup"><span data-stu-id="71aae-128">The test project uses [xUnit](https://xunit.net/) as the test library.</span></span>
+  * <span data-ttu-id="71aae-129">通过将以下 `<PackageReference />` 元素添加到项目文件来配置测试运行程序：</span><span class="sxs-lookup"><span data-stu-id="71aae-129">Configures the test runner by adding the following `<PackageReference />`elements to the project file:</span></span>
+    * <span data-ttu-id="71aae-130">“Microsoft.NET.Test.Sdk”</span><span class="sxs-lookup"><span data-stu-id="71aae-130">"Microsoft.NET.Test.Sdk"</span></span>
+    * <span data-ttu-id="71aae-131">“xunit”</span><span class="sxs-lookup"><span data-stu-id="71aae-131">"xunit"</span></span>
+    * <span data-ttu-id="71aae-132">“xunit.runner.visualstudio”</span><span class="sxs-lookup"><span data-stu-id="71aae-132">"xunit.runner.visualstudio"</span></span>
+
+* <span data-ttu-id="71aae-133">运行以下命令将测试项目添加到解决方案文件：</span><span class="sxs-lookup"><span data-stu-id="71aae-133">Add the test project to the solution file by running the following command:</span></span>
+
+  ```dotnetcli
+  dotnet sln add ./PrimeService.Tests/PrimeService.Tests.vbproj
+  ```
+
+* <span data-ttu-id="71aae-134">将 `PrimeService` 类库作为一个依赖项添加到 PrimeService.Tests 项目中：</span><span class="sxs-lookup"><span data-stu-id="71aae-134">Add the `PrimeService` class library as a dependency to the *PrimeService.Tests* project:</span></span>
+
+  ```dotnetcli
+  dotnet add ./PrimeService.Tests/PrimeService.Tests.vbproj reference ./PrimeService/PrimeService.vbproj  
+  ```
+
+<a name="create-test-cmd"></a>
+
+### <a name="commands-to-create-the-solution"></a><span data-ttu-id="71aae-135">用于创建解决方案的命令</span><span class="sxs-lookup"><span data-stu-id="71aae-135">Commands to create the solution</span></span>
+
+<span data-ttu-id="71aae-136">本部分汇总了上一部分中的所有命令。</span><span class="sxs-lookup"><span data-stu-id="71aae-136">This section summarizes all the commands in the previous section.</span></span> <span data-ttu-id="71aae-137">如果已完成上一部分中的步骤，请跳过本部分。</span><span class="sxs-lookup"><span data-stu-id="71aae-137">Skip this section if you've completed the steps in the previous section.</span></span>
+
+<span data-ttu-id="71aae-138">以下命令用于在 Windows 计算机上创建测试解决方案。</span><span class="sxs-lookup"><span data-stu-id="71aae-138">The following commands create the test solution on a windows machine.</span></span> <span data-ttu-id="71aae-139">对于 macOS 和 Unix，请将 `ren` 命令更新为 OS 版本的 `ren` 以重命名文件：</span><span class="sxs-lookup"><span data-stu-id="71aae-139">For macOS and Unix, update the `ren` command to the OS version of `ren` to rename a file:</span></span>
+
+```dotnetcli
+dotnet new sln -o unit-testing-using-dotnet-test
+cd unit-testing-using-dotnet-test
+dotnet new classlib -o PrimeService
+ren .\PrimeService\Class1.vb PrimeService.vb
+dotnet sln add ./PrimeService/PrimeService.vbproj
+dotnet new xunit -o PrimeService.Tests
+dotnet add ./PrimeService.Tests/PrimeService.Tests.vbproj reference ./PrimeService/PrimeService.vbproj
+dotnet sln add ./PrimeService.Tests/PrimeService.Tests.vbproj
+```
+
+<span data-ttu-id="71aae-140">请按照上一部分中的“将 PrimeService.vb 中的代码替换为以下代码”的说明进行操作。</span><span class="sxs-lookup"><span data-stu-id="71aae-140">Follow the instructions for "Replace the code in *PrimeService.vb* with the following code" in the previous section.</span></span>
+
+## <a name="create-a-test"></a><span data-ttu-id="71aae-141">创建测试</span><span class="sxs-lookup"><span data-stu-id="71aae-141">Create a test</span></span>
+
+<span data-ttu-id="71aae-142">测试驱动开发 (TDD) 中的一种常用方法是在实现目标代码之前编写测试。</span><span class="sxs-lookup"><span data-stu-id="71aae-142">A popular approach in test driven development (TDD) is to write a test before implementing the target code.</span></span> <span data-ttu-id="71aae-143">本教程使用 TDD 方法。</span><span class="sxs-lookup"><span data-stu-id="71aae-143">This tutorial uses the TDD approach.</span></span> <span data-ttu-id="71aae-144">`IsPrime` 方法可调用，但未实现。</span><span class="sxs-lookup"><span data-stu-id="71aae-144">The `IsPrime` method is callable, but not implemented.</span></span> <span data-ttu-id="71aae-145">对 `IsPrime` 的测试调用失败。</span><span class="sxs-lookup"><span data-stu-id="71aae-145">A test call to `IsPrime` fails.</span></span> <span data-ttu-id="71aae-146">对于 TDD，会编写已知失败的测试。</span><span class="sxs-lookup"><span data-stu-id="71aae-146">With TDD, a test is written that is known to fail.</span></span> <span data-ttu-id="71aae-147">更新目标代码使测试通过。</span><span class="sxs-lookup"><span data-stu-id="71aae-147">The target code is updated to make the test pass.</span></span> <span data-ttu-id="71aae-148">你可以重复使用此方法，编写失败的测试，然后更新目标代码使测试通过。</span><span class="sxs-lookup"><span data-stu-id="71aae-148">You keep repeating this approach, writing a failing test and then updating the target code to pass.</span></span>
+
+<span data-ttu-id="71aae-149">更新 PrimeService.Tests 项目：</span><span class="sxs-lookup"><span data-stu-id="71aae-149">Update the *PrimeService.Tests* project:</span></span>
+
+* <span data-ttu-id="71aae-150">删除 PrimeService.Tests/UnitTest1.vb。</span><span class="sxs-lookup"><span data-stu-id="71aae-150">Delete *PrimeService.Tests/UnitTest1.vb*.</span></span>
+* <span data-ttu-id="71aae-151">创建 PrimeService.Tests/PrimeService_IsPrimeShould.vb 文件。</span><span class="sxs-lookup"><span data-stu-id="71aae-151">Create a *PrimeService.Tests/PrimeService_IsPrimeShould.vb*  file.</span></span>
+* <span data-ttu-id="71aae-152">将 PrimeService_IsPrimeShould.vb 中的代码替换为以下代码：</span><span class="sxs-lookup"><span data-stu-id="71aae-152">Replace the code in *PrimeService_IsPrimeShould.vb* with the following code:</span></span>
 
 ```vb
 Imports Xunit
 
 Namespace PrimeService.Tests
     Public Class PrimeService_IsPrimeShould
-        Private _primeService As Prime.Services.PrimeService = New Prime.Services.PrimeService()
+        Private ReadOnly _primeService As Prime.Services.PrimeService
+
+        Public Sub New()
+            _primeService = New Prime.Services.PrimeService()
+        End Sub
+
 
         <Fact>
         Sub IsPrime_InputIs1_ReturnFalse()
@@ -111,35 +154,80 @@ Namespace PrimeService.Tests
 End Namespace
 ```
 
-<span data-ttu-id="90614-136">`<Fact>` 属性表示由测试运行程序运行的测试方法。</span><span class="sxs-lookup"><span data-stu-id="90614-136">The `<Fact>` attribute denotes a test method that is run by the test runner.</span></span> <span data-ttu-id="90614-137">在 unit-testing-using-dotnet-test  中，执行 [`dotnet test`](../tools/dotnet-test.md) 以构建测试和类库，然后运行测试。</span><span class="sxs-lookup"><span data-stu-id="90614-137">From the *unit-testing-using-dotnet-test*, execute [`dotnet test`](../tools/dotnet-test.md) to build the tests and the class library and then run the tests.</span></span> <span data-ttu-id="90614-138">xUnit 测试运行程序包含要运行测试的程序入口点。</span><span class="sxs-lookup"><span data-stu-id="90614-138">The xUnit test runner contains the program entry point to run your tests.</span></span> <span data-ttu-id="90614-139">`dotnet test` 使用已创建的单元测试项目启动测试运行程序。</span><span class="sxs-lookup"><span data-stu-id="90614-139">`dotnet test` starts the test runner using the unit test project you've created.</span></span>
+<span data-ttu-id="71aae-153">`[Fact]` 属性声明由测试运行程序运行的测试方法。</span><span class="sxs-lookup"><span data-stu-id="71aae-153">The `[Fact]` attribute declares a test method that's run by the test runner.</span></span> <span data-ttu-id="71aae-154">从 PrimeService.Tests 文件夹运行 `dotnet test`。</span><span class="sxs-lookup"><span data-stu-id="71aae-154">From the *PrimeService.Tests* folder, run `dotnet test`.</span></span> <span data-ttu-id="71aae-155">[dotnet test](../tools/dotnet-test.md) 命令生成两个项目并运行测试。</span><span class="sxs-lookup"><span data-stu-id="71aae-155">The [dotnet test](../tools/dotnet-test.md) command builds both projects and runs the tests.</span></span> <span data-ttu-id="71aae-156">xUnit 测试运行程序包含要运行测试的程序入口点。</span><span class="sxs-lookup"><span data-stu-id="71aae-156">The xUnit test runner contains the program entry point to run the tests.</span></span> <span data-ttu-id="71aae-157">`dotnet test` 使用单元测试项目启动测试运行程序。</span><span class="sxs-lookup"><span data-stu-id="71aae-157">`dotnet test` starts the test runner using the unit test project.</span></span>
 
-<span data-ttu-id="90614-140">测试失败。</span><span class="sxs-lookup"><span data-stu-id="90614-140">Your test fails.</span></span> <span data-ttu-id="90614-141">尚未创建实现。</span><span class="sxs-lookup"><span data-stu-id="90614-141">You haven't created the implementation yet.</span></span> <span data-ttu-id="90614-142">在起作用的 `PrimeService` 类中编写最简单的代码，使此测试通过：</span><span class="sxs-lookup"><span data-stu-id="90614-142">Make this test pass by writing the simplest code in the `PrimeService` class that works:</span></span>
+<span data-ttu-id="71aae-158">测试失败，因为尚未实现 `IsPrime`。</span><span class="sxs-lookup"><span data-stu-id="71aae-158">The test fails because `IsPrime` hasn't been implemented.</span></span> <span data-ttu-id="71aae-159">使用 TDD 方法，只需编写足够的代码即可使此测试通过。</span><span class="sxs-lookup"><span data-stu-id="71aae-159">Using the TDD approach, write only enough code so this test passes.</span></span> <span data-ttu-id="71aae-160">使用以下代码更新 `IsPrime`：</span><span class="sxs-lookup"><span data-stu-id="71aae-160">Update `IsPrime` with the following code:</span></span>
 
 ```vb
 Public Function IsPrime(candidate As Integer) As Boolean
     If candidate = 1 Then
         Return False
     End If
-    Throw New NotImplementedException("Please create a test first.")
+    Throw New NotImplementedException("Not implemented.")
 End Function
 ```
 
-<span data-ttu-id="90614-143">在 unit-testing-vb-using-dotnet-test  目录中，再次运行 `dotnet test`。</span><span class="sxs-lookup"><span data-stu-id="90614-143">In the *unit-testing-vb-using-dotnet-test* directory, run `dotnet test` again.</span></span> <span data-ttu-id="90614-144">`dotnet test` 命令构建 `PrimeService` 项目，然后构建 `PrimeService.Tests` 项目。</span><span class="sxs-lookup"><span data-stu-id="90614-144">The `dotnet test` command runs a build for the `PrimeService` project and then for the `PrimeService.Tests` project.</span></span> <span data-ttu-id="90614-145">构建这两个项目后，该命令将运行此单项测试。</span><span class="sxs-lookup"><span data-stu-id="90614-145">After building both projects, it runs this single test.</span></span> <span data-ttu-id="90614-146">测试通过。</span><span class="sxs-lookup"><span data-stu-id="90614-146">It passes.</span></span>
+<span data-ttu-id="71aae-161">运行 `dotnet test`。</span><span class="sxs-lookup"><span data-stu-id="71aae-161">Run `dotnet test`.</span></span> <span data-ttu-id="71aae-162">测试通过。</span><span class="sxs-lookup"><span data-stu-id="71aae-162">The test passes.</span></span>
 
-## <a name="adding-more-features"></a><span data-ttu-id="90614-147">添加更多功能</span><span class="sxs-lookup"><span data-stu-id="90614-147">Adding more features</span></span>
+### <a name="add-more-tests"></a><span data-ttu-id="71aae-163">添加更多测试</span><span class="sxs-lookup"><span data-stu-id="71aae-163">Add more tests</span></span>
 
-<span data-ttu-id="90614-148">你已经通过了一个测试，现在可以编写更多测试。</span><span class="sxs-lookup"><span data-stu-id="90614-148">Now that you've made one test pass, it's time to write more.</span></span> <span data-ttu-id="90614-149">质数有其他几种简单情况：0，-1。</span><span class="sxs-lookup"><span data-stu-id="90614-149">There are a few other simple cases for prime numbers: 0, -1.</span></span> <span data-ttu-id="90614-150">可以将这些情况添加为具有 `<Fact>` 属性的新测试，但这很快就会变得枯燥乏味。</span><span class="sxs-lookup"><span data-stu-id="90614-150">You could add those cases as new tests with the `<Fact>` attribute, but that quickly becomes tedious.</span></span> <span data-ttu-id="90614-151">还有其他 xUnit 属性，可使你编写类似测试套件。</span><span class="sxs-lookup"><span data-stu-id="90614-151">There are other xUnit attributes that enable you to write a suite of similar tests.</span></span>  <span data-ttu-id="90614-152">`<Theory>` 属性表示执行相同代码，但具有不同输入参数一系列测试。</span><span class="sxs-lookup"><span data-stu-id="90614-152">A `<Theory>` attribute represents a suite of tests that execute the same code but have different input arguments.</span></span> <span data-ttu-id="90614-153">可以使用 `<InlineData>` 属性来指定这些输入的值。</span><span class="sxs-lookup"><span data-stu-id="90614-153">You can use the `<InlineData>` attribute to specify values for those inputs.</span></span>
-
-<span data-ttu-id="90614-154">可以不使用这两个属性创建新测试，而用来创建单个索引。</span><span class="sxs-lookup"><span data-stu-id="90614-154">Instead of creating new tests, apply these two attributes to create a single theory.</span></span> <span data-ttu-id="90614-155">此索引是测试多个小于 2（即最小的质数）的值的方法：</span><span class="sxs-lookup"><span data-stu-id="90614-155">The theory is a method that tests several values less than two, which is the lowest prime number:</span></span>
-
-[!code-vb[Sample_TestCode](../../../samples/snippets/core/testing/unit-testing-vb-dotnet-test/vb/PrimeService.Tests/PrimeService_IsPrimeShould.vb?name=Sample_TestCode)]
-
-<span data-ttu-id="90614-156">运行 `dotnet test`，两项测试均失败。</span><span class="sxs-lookup"><span data-stu-id="90614-156">Run `dotnet test`, and two of these tests fail.</span></span> <span data-ttu-id="90614-157">若要使所有测试通过，可以更改方法开头的 `if` 子句：</span><span class="sxs-lookup"><span data-stu-id="90614-157">To make all of the tests pass, change the `if` clause at the beginning of the method:</span></span>
+<span data-ttu-id="71aae-164">为 0 和 -1 添加素数测试。</span><span class="sxs-lookup"><span data-stu-id="71aae-164">Add prime number tests for 0 and -1.</span></span> <span data-ttu-id="71aae-165">你可以复制上述测试并将以下代码更改为使用 0 和 -1：</span><span class="sxs-lookup"><span data-stu-id="71aae-165">You could copy the preceding test and change the following code to use 0 and -1:</span></span>
 
 ```vb
-if candidate < 2
+Dim result As Boolean = _primeService.IsPrime(1)
+
+Assert.False(result, "1 should not be prime")
 ```
 
-<span data-ttu-id="90614-158">通过在主库中添加更多测试、理论和代码继续循环访问。</span><span class="sxs-lookup"><span data-stu-id="90614-158">Continue to iterate by adding more tests, more theories, and more code in the main library.</span></span> <span data-ttu-id="90614-159">你将拥有[已完成的测试版本](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.vb)和[库的完整实现](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService/PrimeService.vb)。</span><span class="sxs-lookup"><span data-stu-id="90614-159">You have the [finished version of the tests](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.vb) and the [complete implementation of the library](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService/PrimeService.vb).</span></span>
+<span data-ttu-id="71aae-166">仅当参数更改代码重复和测试膨胀中的结果时复制测试代码。</span><span class="sxs-lookup"><span data-stu-id="71aae-166">Copying test code when only a parameter changes results in code duplication and test bloat.</span></span> <span data-ttu-id="71aae-167">以下 xUnit 属性允许编写类似测试套件：</span><span class="sxs-lookup"><span data-stu-id="71aae-167">The following xUnit attributes enable writing a suite of similar tests:</span></span>
 
-<span data-ttu-id="90614-160">你已生成一个小型库和该库的一组单元测试。</span><span class="sxs-lookup"><span data-stu-id="90614-160">You've built a small library and a set of unit tests for that library.</span></span> <span data-ttu-id="90614-161">你已将解决方案结构化，使添加新包和新测试成为了正常工作流的一部分。</span><span class="sxs-lookup"><span data-stu-id="90614-161">You've structured the solution so that adding new packages and tests is part of the normal workflow.</span></span> <span data-ttu-id="90614-162">你已将多数的时间和精力集中在解决应用程序的目标上。</span><span class="sxs-lookup"><span data-stu-id="90614-162">You've concentrated most of your time and effort on solving the goals of the application.</span></span>
+- <span data-ttu-id="71aae-168">`[Theory]` 表示执行相同代码，但具有不同输入参数的测试套件。</span><span class="sxs-lookup"><span data-stu-id="71aae-168">`[Theory]` represents a suite of tests that execute the same code but have different input arguments.</span></span>
+- <span data-ttu-id="71aae-169">`[InlineData]` 属性指定这些输入的值。</span><span class="sxs-lookup"><span data-stu-id="71aae-169">`[InlineData]` attribute specifies values for those inputs.</span></span>
+
+<span data-ttu-id="71aae-170">可以不使用上述 xUnit 属性创建新测试，而是用来创建单个索引。</span><span class="sxs-lookup"><span data-stu-id="71aae-170">Rather than creating new tests, apply the preceding xUnit attributes to create a single theory.</span></span> <span data-ttu-id="71aae-171">替换以下代码：</span><span class="sxs-lookup"><span data-stu-id="71aae-171">Replace the following code:</span></span>
+
+```vb
+<Fact>
+Sub IsPrime_InputIs1_ReturnFalse()
+    Dim result As Boolean = _primeService.IsPrime(1)
+
+    Assert.False(result, "1 should not be prime")
+End Sub
+```
+
+<span data-ttu-id="71aae-172">替换为以下代码：</span><span class="sxs-lookup"><span data-stu-id="71aae-172">with the following code:</span></span>
+
+```vb
+<Theory>
+<InlineData(-1)>
+<InlineData(0)>
+<InlineData(1)>
+Sub IsPrime_ValuesLessThan2_ReturnFalse(ByVal value As Integer)
+    Dim result As Boolean = _primeService.IsPrime(value)
+
+    Assert.False(result, $"{value} should not be prime")
+End Sub
+```
+
+<span data-ttu-id="71aae-173">在前面的代码中，`[Theory]` 和 `[InlineData]` 允许测试多个小于 2 的值。</span><span class="sxs-lookup"><span data-stu-id="71aae-173">In the preceding code, `[Theory]` and `[InlineData]` enable testing several values less than two.</span></span> <span data-ttu-id="71aae-174">2 是最小的素数。</span><span class="sxs-lookup"><span data-stu-id="71aae-174">Two is the smallest prime number.</span></span>
+
+<span data-ttu-id="71aae-175">运行 `dotnet test`，其中两个测试失败。</span><span class="sxs-lookup"><span data-stu-id="71aae-175">Run `dotnet test`, two of the tests fail.</span></span> <span data-ttu-id="71aae-176">若要使所有测试通过，请使用以下代码更新 `IsPrime` 方法：</span><span class="sxs-lookup"><span data-stu-id="71aae-176">To make all of the tests pass, update the `IsPrime` method with the following code:</span></span>
+
+```vb
+Public Function IsPrime(candidate As Integer) As Boolean
+    If candidate < 2 Then
+        Return False
+    End If
+    Throw New NotImplementedException("Not fully implemented.")
+End Function
+```
+
+<span data-ttu-id="71aae-177">遵循 TDD 方法，添加更多失败的测试，然后更新目标代码。</span><span class="sxs-lookup"><span data-stu-id="71aae-177">Following the TDD approach, add more failing tests, then update the target code.</span></span> <span data-ttu-id="71aae-178">请参阅[已完成的测试版本](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.vb)和[库的完整实现](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-dotnet-test/PrimeService/PrimeService.vb)。</span><span class="sxs-lookup"><span data-stu-id="71aae-178">See the [finished version of the tests](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.vb) and the [complete implementation of the library](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-dotnet-test/PrimeService/PrimeService.vb).</span></span>
+
+<span data-ttu-id="71aae-179">已完成的 `IsPrime` 方法不是用于测试素性的有效算法。</span><span class="sxs-lookup"><span data-stu-id="71aae-179">The completed `IsPrime` method is not an efficient algorithm for testing primality.</span></span>
+
+### <a name="additional-resources"></a><span data-ttu-id="71aae-180">其他资源</span><span class="sxs-lookup"><span data-stu-id="71aae-180">Additional resources</span></span>
+
+- [<span data-ttu-id="71aae-181">xUnit.net 官方网站</span><span class="sxs-lookup"><span data-stu-id="71aae-181">xUnit.net official site</span></span>](https://xunit.net/)
+- [<span data-ttu-id="71aae-182">ASP.NET Core 中的测试控制器逻辑</span><span class="sxs-lookup"><span data-stu-id="71aae-182">Testing controller logic in ASP.NET Core</span></span>](/aspnet/core/mvc/controllers/testing)
+- [`dotnet add reference`](../tools/dotnet-add-reference.md)

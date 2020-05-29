@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 03f12cbdd8f9c088a5f279efcadef64c2848fa13
-  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+  ms.openlocfilehash: ed4c30146f07c5f2ec17f13ff852d83d6469a9b0
+  ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/06/2020
-  ms.locfileid: "82860954"
+  ms.lasthandoff: 05/14/2020
+  ms.locfileid: "83396839"
 items:
 - durationInMinutes: 1
   content: >
@@ -105,7 +105,7 @@ items:
 - title: 搜索列表并进行排序
   durationInMinutes: 5
   content: >
-    我们的示例使用的列表较小，但大家的应用程序创建的列表通常可能会包含更多元素，有时可能会包含数以千计的元素。 若要在更大的集合中查找元素，需要在列表中搜索不同的项。 <xref:System.Collections.Generic.List%601.IndexOf%2A> 方法可搜索项，并返回此项的索引。 试试此方法，看看它是如何工作的。  在当前已编写的代码下方添加以下代码：
+    我们的示例使用的列表较小，但大家的应用程序创建的列表通常可能会包含更多元素，有时可能会包含数以千计的元素。 若要在更大的集合中查找元素，需要在列表中搜索不同的项。 <xref:System.Collections.Generic.List%601.IndexOf%2A> 方法可搜索项，并返回此项的索引。 如果项不在列表中，`IndexOf` 将返回 `-1`。 试试此方法，看看它是如何工作的。  在当前已编写的代码下方添加以下代码：
 
 
     ```csharp
@@ -123,7 +123,7 @@ items:
     可能无法确定列表是否包含某项，因此，应始终检查 <xref:System.Collections.Generic.List%601.IndexOf%2A> 返回的索引。 如果索引为 -1，表明找不到相应项。
 
 
-    还可以对列表中的项进行排序。 <xref:System.Collections.Generic.List%601.Sort%2A> 方法按正常顺序（按字母顺序，如果是字符串的话）对列表中的所有项进行排序。 添加以下代码，再试运行看看：
+    还可以对列表中的项进行排序。 <xref:System.Collections.Generic.List%601.Sort%2A> 方法按正常顺序（如果是字符串则按字母顺序）对列表中的所有项进行排序。 添加以下代码，再试运行看看：
 
 
     ```csharp

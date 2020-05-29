@@ -1,5 +1,6 @@
 ---
 title: 如何使用 XmlSerializer 反序列化对象
+description: 了解如何反序列化对象。 传输格式决定着是创建流还是文件对象。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,22 +9,22 @@ helpviewer_keywords:
 - deserializing objects
 - objects, deserializing steps
 ms.assetid: 287129c8-035a-4fea-b7b3-4790057ca076
-ms.openlocfilehash: c24ba466a208fe5abdbf565169c41c4ee3f47482
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: e08ae0d77539219223650fd3bcbd1bcee4df2739
+ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559893"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83379114"
 ---
-# <a name="how-to-deserialize-an-object-using-xmlserializer"></a><span data-ttu-id="1e733-102">如何使用 XmlSerializer 反序列化对象</span><span class="sxs-lookup"><span data-stu-id="1e733-102">How to deserialize an object using XmlSerializer</span></span>
+# <a name="how-to-deserialize-an-object-using-xmlserializer"></a><span data-ttu-id="be2f0-104">如何使用 XmlSerializer 反序列化对象</span><span class="sxs-lookup"><span data-stu-id="be2f0-104">How to deserialize an object using XmlSerializer</span></span>
 
-<span data-ttu-id="1e733-103">当您反序列化对象时，传输格式确定您将创建流还是文件对象。</span><span class="sxs-lookup"><span data-stu-id="1e733-103">When you deserialize an object, the transport format determines whether you will create a stream or file object.</span></span> <span data-ttu-id="1e733-104">确定了传输格式之后，就可以根据需要调用 <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> 或 <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> 方法。</span><span class="sxs-lookup"><span data-stu-id="1e733-104">After the transport format is determined, you can call the <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> or <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> methods, as required.</span></span>
+<span data-ttu-id="be2f0-105">当您反序列化对象时，传输格式确定您将创建流还是文件对象。</span><span class="sxs-lookup"><span data-stu-id="be2f0-105">When you deserialize an object, the transport format determines whether you will create a stream or file object.</span></span> <span data-ttu-id="be2f0-106">确定了传输格式之后，就可以根据需要调用 <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> 或 <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> 方法。</span><span class="sxs-lookup"><span data-stu-id="be2f0-106">After the transport format is determined, you can call the <xref:System.Xml.Serialization.XmlSerializer.Serialize%2A> or <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> methods, as required.</span></span>
 
-## <a name="to-deserialize-an-object"></a><span data-ttu-id="1e733-105">反序列化对象</span><span class="sxs-lookup"><span data-stu-id="1e733-105">To deserialize an object</span></span>
+## <a name="to-deserialize-an-object"></a><span data-ttu-id="be2f0-107">反序列化对象</span><span class="sxs-lookup"><span data-stu-id="be2f0-107">To deserialize an object</span></span>
 
-1. <span data-ttu-id="1e733-106">使用要反序列化的对象的类型构造 <xref:System.Xml.Serialization.XmlSerializer>。</span><span class="sxs-lookup"><span data-stu-id="1e733-106">Construct a <xref:System.Xml.Serialization.XmlSerializer> using the type of the object to deserialize.</span></span>
+1. <span data-ttu-id="be2f0-108">使用要反序列化的对象的类型构造 <xref:System.Xml.Serialization.XmlSerializer>。</span><span class="sxs-lookup"><span data-stu-id="be2f0-108">Construct a <xref:System.Xml.Serialization.XmlSerializer> using the type of the object to deserialize.</span></span>
 
-1. <span data-ttu-id="1e733-107">调用 <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> 方法以生成该对象的副本。</span><span class="sxs-lookup"><span data-stu-id="1e733-107">Call the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method to produce a replica of the object.</span></span> <span data-ttu-id="1e733-108">在反序列化时，必须将返回的对象强制转换为原始对象的类型，如以下示例所示，该示例从文件反序列化该对象（尽管也可以从流反序列化该对象）。</span><span class="sxs-lookup"><span data-stu-id="1e733-108">When deserializing, you must cast the returned object to the type of the original, as shown in the following example, which deserializes the object from a file (although it could also be deserialized from a stream).</span></span>
+1. <span data-ttu-id="be2f0-109">调用 <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> 方法以生成该对象的副本。</span><span class="sxs-lookup"><span data-stu-id="be2f0-109">Call the <xref:System.Xml.Serialization.XmlSerializer.Deserialize%2A> method to produce a replica of the object.</span></span> <span data-ttu-id="be2f0-110">在反序列化时，必须将返回的对象强制转换为原始对象的类型，如以下示例所示，该示例从文件反序列化该对象（尽管也可以从流反序列化该对象）。</span><span class="sxs-lookup"><span data-stu-id="be2f0-110">When deserializing, you must cast the returned object to the type of the original, as shown in the following example, which deserializes the object from a file (although it could also be deserialized from a stream).</span></span>
 
     ```vb
     ' Construct an instance of the XmlSerializer with the type
@@ -46,7 +47,7 @@ ms.locfileid: "75559893"
     var myObject = (MySerializableClass) mySerializer.Deserialize(myFileStream)
     ```
 
-## <a name="see-also"></a><span data-ttu-id="1e733-109">请参阅</span><span class="sxs-lookup"><span data-stu-id="1e733-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="be2f0-111">请参阅</span><span class="sxs-lookup"><span data-stu-id="be2f0-111">See also</span></span>
 
-- [<span data-ttu-id="1e733-110">XML 序列化简介</span><span class="sxs-lookup"><span data-stu-id="1e733-110">Introducing XML Serialization</span></span>](introducing-xml-serialization.md)
-- [<span data-ttu-id="1e733-111">如何：序列化对象</span><span class="sxs-lookup"><span data-stu-id="1e733-111">How to: Serialize an Object</span></span>](how-to-serialize-an-object.md)
+- [<span data-ttu-id="be2f0-112">XML 序列化简介</span><span class="sxs-lookup"><span data-stu-id="be2f0-112">Introducing XML Serialization</span></span>](introducing-xml-serialization.md)
+- [<span data-ttu-id="be2f0-113">如何：序列化对象</span><span class="sxs-lookup"><span data-stu-id="be2f0-113">How to: Serialize an Object</span></span>](how-to-serialize-an-object.md)

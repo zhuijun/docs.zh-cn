@@ -10,10 +10,20 @@ groups:
     title: Linux
   - id: os-macos
     title: macOS
+- id: unit-testing-framework-set-one
+  title: 单元测试框架
+  prompt: 选择单元测试框架
+  pivots:
+  - id: mstest
+    title: MSTest
+  - id: xunit
+    title: xUnit
+  - id: nunit
+    title: NUnit
 metadata:
-  ms.openlocfilehash: 8eb32a658ba7e0ef70c0b72214d726de789a49d7
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: 91fc1110fbbec2e8435b701014630159ab3077d7
+  ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/14/2020
-  ms.locfileid: "76867407"
+  ms.lasthandoff: 05/20/2020
+  ms.locfileid: "83703627"

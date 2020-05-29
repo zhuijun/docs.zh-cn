@@ -11,12 +11,12 @@ metadata:
   interactive: csharp
   nextTutorialHref: list-collection.yml
   nextTutorialTitle: 列表集合
-  ms.openlocfilehash: a7c855e362e606f82a8b576fbb8db1d632b0f0eb
-  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+  ms.openlocfilehash: e7679c511cf67eed55687c5815bcf7faf4e1e624
+  ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/06/2020
-  ms.locfileid: "82860985"
+  ms.lasthandoff: 05/14/2020
+  ms.locfileid: "83396848"
 items:
 - durationInMinutes: 1
   content: >
@@ -61,13 +61,13 @@ items:
     > 这样做有助于了解 C# 代码结构。
 
 
-    第一个示例展示了 `if` 和布尔类型的用途。 布尔变量可以包含下列两个值之一：`true` 或 `false`。 C# 为布尔变量定义了特殊类型 `bool`。 `if` 语句检查 `bool` 的值。 如果值为 `true`，执行 `if` 后面的语句。 否则，跳过上述语句。
+    第一个示例展示了 `if` 和布尔类型的用途。 布尔变量可以包含下列两个值之一：`true` 或 `false`。 C# 为布尔变量定义了特殊类型 `bool`。 `if` 语句检查 `bool` 的值。 如果值为 `true`，执行 `if` 后面的语句。 否则，跳过这些语句。
 
 
     这种检查条件并根据条件执行语句的过程非常强大。 接下来，将进一步探索。
 - title: 让 if 和 else 完美配合
   durationInMinutes: 10
-  content: "\n若要执行 true 和 false 分支中的不同代码，请创建在条件为 false 时执行的 `else` 分支。 试运行以下代码：\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n    Console.WriteLine(\"The answer is greater than 10\");\nelse\n    Console.WriteLine(\"The answer is not greater than 10\");\n```\n\n只有当条件的测试结果为 `false` 时，才执行 `else` 关键字后面的语句。 将 `if`、`else` 与布尔条件相结合，可以实现所需的一切目标。\n\n> [!IMPORTANT]\n> `if` 和 `else` 语句下的缩进是为了方便读者阅读。\n> C# 语言忽略缩进或空格。\n> `if` 或 `else` 关键字后面的语句根据条件决定是否执行。 本教程中的所有示例都遵循了常见做法，根据语句的控制流缩进代码行。\n\n由于缩进会被忽略，因此需要使用 `{` 和 `}`，指明要在根据条件决定是否执行的代码块中添加多个语句。 C# 程序员通常会对所有 `if` 和 `else` 子句使用这些大括号。 以下示例与刚刚创建的示例相同。 试运行看看。\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n}\n```\n\n> [!TIP]\n> 在本教程的其余部分中，代码示例全都遵循公认做法，添加了大括号。\n\n可以测试更复杂的条件：\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) && (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"And the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"Or the first number is not equal to the second\");\n}\n```\n\n`==` 符号执行相等测试。 使用 `==` 将相等测试与赋值测试区分开来，如在 `a = 5` 中所见。\n\n`&&` 表示“且”。 也就是说，两个条件必须都为 true，才能执行 true 分支中的语句。  这些示例还表明，可以在每个条件分支中添加多个语句，前提是将它们用 `{` 和 `}` 括住。\n\n还可以使用 `||` 表示“或”：\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) || (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"Or the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"And the first number is not equal to the second\");\n}\n```\n\n修改 `a`、`b` 和 `c` 的值，并在 `&&` 和 `||` 之间切换浏览。 你将进一步了解 `&&` 和 `||` 运算符的工作原理。\n"
+  content: "\n若要执行 true 和 false 分支中的不同代码，请创建在条件为 false 时执行的 `else` 分支。 试运行以下代码：\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n    Console.WriteLine(\"The answer is greater than 10\");\nelse\n    Console.WriteLine(\"The answer is not greater than 10\");\n```\n\n只有当条件的测试结果为 `false` 时，才执行 `else` 关键字后面的语句。 将 `if`、`else` 与布尔条件相结合，可以实现所需的一切目标。\n\n> [!IMPORTANT]\n> `if` 和 `else` 语句下的缩进是为了方便读者阅读。\n> C# 语言忽略缩进或空格。\n> `if` 或 `else` 关键字后面的语句根据条件决定是否执行。 本教程中的所有示例都遵循了常见做法，根据语句的控制流缩进代码行。\n\n由于缩进会被忽略，因此需要使用 `{` 和 `}` 指明何时要在根据条件决定是否执行的代码块中添加多个语句。 C# 程序员通常会对所有 `if` 和 `else` 子句使用这些大括号。 以下示例与创建的示例相同。 试运行看看。\n\n```csharp\nint a = 5;\nint b = 3;\nif (a + b > 10)\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n}\n```\n\n> [!TIP]\n> 在本教程的其余部分中，代码示例全都遵循公认做法，添加了大括号。\n\n可以测试更复杂的条件：\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) && (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"And the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"Or the first number is not equal to the second\");\n}\n```\n\n`==` 符号执行相等测试。 使用 `==` 将相等测试与赋值测试区分开来，如在 `a = 5` 中所见。\n\n`&&` 表示“且”。 也就是说，两个条件必须都为 true，才能执行 true 分支中的语句。  这些示例还表明，可以在每个条件分支中添加多个语句，前提是将它们用 `{` 和 `}` 括住。\n\n还可以使用 `||` 表示“或”：\n\n```csharp\nint a = 5;\nint b = 3;\nint c = 4;\nif ((a + b + c > 10) || (a == b))\n{\n    Console.WriteLine(\"The answer is greater than 10\");\n    Console.WriteLine(\"Or the first number is equal to the second\");\n}\nelse\n{\n    Console.WriteLine(\"The answer is not greater than 10\");\n    Console.WriteLine(\"And the first number is not equal to the second\");\n}\n```\n\n修改 `a`、`b` 和 `c` 的值，并在 `&&` 和 `||` 之间切换浏览。 你将进一步了解 `&&` 和 `||` 运算符的工作原理。\n"
 - title: 使用循环重复执行运算
   durationInMinutes: 6
   content: >
@@ -158,9 +158,12 @@ items:
 
 
     完成后，继续利用所学知识，试着自己编写一些代码。
+
+
+    本教程中未介绍的另一个循环语句：`foreach` 语句。 `foreach` 语句为项序列中的每一项重复其语句。 它最常用于集合，因此将在下一教程中介绍。
 - title: 已创建嵌套循环
   durationInMinutes: 10
-  content: "`while`、`do` 或 `for` 循环可以嵌套在另一个循环内，以使用外部循环中每一项与内部循环中每一项的组合来创建矩阵。 我们来生成一组字母数字对以表示行和列。\n\n一个 `for` 循环可以生成行：\n\n```csharp\nfor (int row = 1; row < 11; row++)\n{\n  Console.WriteLine($\"The row is {row}\");\n}\n```\n\n另一个循环可以生成列：\n\n```csharp\nfor (char column = 'a'; column < 'k'; column++)\n{\n  Console.WriteLine($\"The column is {column}\");\n}\n```\n\n可以将一个循环嵌套在另一个循环中以形成各个对：\n  \n```csharp\nfor (int row = 1; row < 11; row++)\n{\n  for (char column = 'a'; column < 'k'; column++)\n  {\n    Console.WriteLine($\"The cell is ({row}, {column})\");\n  }\n}\n```\n\n可以看到，对于内部循环的每次完整运行，外部循环会递增一次。 反转行和列嵌套，自行查看变化。\n"
+  content: "`while`、`do` 或 `for` 循环可以嵌套在另一个循环内，以使用外部循环中的各项与内部循环中的各项组合来创建矩阵。 我们来生成一组字母数字对以表示行和列。\n\n一个 `for` 循环可以生成行：\n\n```csharp\nfor (int row = 1; row < 11; row++)\n{\n  Console.WriteLine($\"The row is {row}\");\n}\n```\n\n另一个循环可以生成列：\n\n```csharp\nfor (char column = 'a'; column < 'k'; column++)\n{\n  Console.WriteLine($\"The column is {column}\");\n}\n```\n\n可以将一个循环嵌套在另一个循环中以形成各个对：\n  \n```csharp\nfor (int row = 1; row < 11; row++)\n{\n  for (char column = 'a'; column < 'k'; column++)\n  {\n    Console.WriteLine($\"The cell is ({row}, {column})\");\n  }\n}\n```\n\n可以看到，对于内部循环的每次完整运行，外部循环会递增一次。 反转行和列嵌套，自行查看变化。\n"
 - title: 结合使用分支和循环
   durationInMinutes: 12
   content: >
@@ -202,7 +205,7 @@ items:
     已完成“分支和循环”交互式教程。 可以选择下方的“列表集合”链接开始下一个交互式教程，也可以访问 [.NET 站点](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)下载 .NET Core SDK，在计算机上创建项目，并继续编码。 请通过“后续步骤”部分返回到这些教程。
 
 
-    若要详细了解这些概念，请参阅下列主题：
+    若要详细了解这些概念，请参阅下列文章：
 
 
     - [If 和 else 语句](../../language-reference/keywords/if-else.md)
