@@ -3,17 +3,18 @@ title: C# 简介 - 交互式教程
 description: 通过浏览器了解 C#，并开始使用自己的开发环境
 ms.date: 08/22/2019
 ms.custom: mvc
-ms.openlocfilehash: c9fc8dadac373445a5bb132b25ab25676c5230c7
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 965fa9dba559b967d3d1ce8d661cd08235c59f70
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007697"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202438"
 ---
 # <a name="introduction-to-c"></a>C\# 简介
 
 欢迎学习 C# 教程简介。 这些课程先介绍你可在浏览器中运行的交互式代码。 在开始这些互动课程之前，可在[C# 101 视频系列](https://aka.ms/dotnet3-csharp)中了解 C# 的基础知识。
 
+<!--markdownlint-disable MD034 -->
 > [!VIDEO https://channel9.msdn.com/Series/CSharp-101/What-is-C/player]
 
 开始的几个课程通过小篇幅的代码片段介绍了 C# 概念。 读者将了解 C# 语法的基础知识，以及如何使用字符串、数字和布尔值等数据类型。 这些全都是交互式课程，读者可以在几分钟内编写并运行代码。 无需事先了解编程或 C# 语言，即可学习头几个课程。
