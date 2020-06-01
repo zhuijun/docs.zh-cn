@@ -2,12 +2,12 @@
 title: 通用指南
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 通用指南
 ms.date: 09/11/2018
-ms.openlocfilehash: 2fa66d7593b764a8df4d9acc20f93d3f8fb26174
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e3bb4b8cf3e371c31d783fe4cfafeac282fb72b8
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73089654"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144560"
 ---
 # <a name="general-guidance"></a>通用指南
 
@@ -38,10 +38,10 @@ ms.locfileid: "73089654"
 ### <a name="additional-resources"></a>其他资源
 
 - 电子书：**Modernize existing .NET Framework applications with Azure and Windows Containers**（使用 Azure 和 Windows 容器更新现有 .NET Framework 应用程序）  
-    https://aka.ms/liftandshiftwithcontainersebook
+    <https://aka.ms/liftandshiftwithcontainersebook>
 
 - **示例应用：Modernization of legacy ASP.NET web apps by using Windows Containers**（使用 Windows 容器更新旧的 ASP.NET Web 应用）  
-    https://aka.ms/eshopmodernizing
+    <https://aka.ms/eshopmodernizing>
 
 >[!div class="step-by-step"]
 >[上一页](index.md)
