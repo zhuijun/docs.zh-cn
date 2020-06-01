@@ -2,12 +2,12 @@
 title: 生成适用于云的可复原服务。 在云中处理暂时性故障
 description: 通过 Azure 云和 Windows 容器现代化现有 .NET 应用程序 | 生成适用于云的可复原服务。 在云中处理暂时性故障
 ms.date: 04/30/2018
-ms.openlocfilehash: e516dc675ceb8def25c6d676bced0ea7f253b2d5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 899084ac00d9be0df47ef88c026f4e8c19722bb6
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74711249"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144247"
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>生成适用于云的可复原服务：在云中处理暂时性故障
 
@@ -55,7 +55,7 @@ ms.locfileid: "74711249"
 
 - **用于复原 HTTP 通信的 Polly 库**
 
-    https://github.com/App-vNext/Polly
+    <https://github.com/App-vNext/Polly>
 
 >[!div class="step-by-step"]
 >[上一页](when-to-deploy-windows-containers-to-azure-container-service-kubernetes.md)

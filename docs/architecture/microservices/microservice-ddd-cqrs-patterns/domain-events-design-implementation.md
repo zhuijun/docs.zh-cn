@@ -2,12 +2,12 @@
 title: 域事件。 设计和实现
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 深入了解域事件（在聚合之间建立通信的一个关键概念）。
 ms.date: 10/08/2018
-ms.openlocfilehash: e03abba66945a6434f6a81eaa9f50d53998f346c
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 630bd0a0b060431e565df98faa77f452e2045fa2
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988711"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144300"
 ---
 # <a name="domain-events-design-and-implementation"></a>域事件：设计和实现
 
@@ -365,13 +365,13 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
   <https://www.tonytruong.net/domain-events-pattern-example/>
 
 - **Udi Dahan.How to create fully encapsulated Domain Models** （如何创建完全封装的域模型） \
-  <http://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
+  <https://udidahan.com/2008/02/29/how-to-create-fully-encapsulated-domain-models/>
 
 - **Udi Dahan.Domain Events – Take 2** （域事件 – 搞定两个问题） \
-  <http://udidahan.com/2008/08/25/domain-events-take-2/>
+  <https://udidahan.com/2008/08/25/domain-events-take-2/>
 
 - **Udi Dahan.Domain Events – Salvation** （域事件 – 救助） \
-  <http://udidahan.com/2009/06/14/domain-events-salvation/>
+  <https://udidahan.com/2009/06/14/domain-events-salvation/>
 
 - **Jan Kronquist。Don't publish Domain Events, return them!** （不要发布域事件，返回它们！） \
   <https://blog.jayway.com/2013/06/20/dont-publish-domain-events-return-them/>

@@ -2,12 +2,12 @@
 title: 托管调试器 - .NET Core
 description: Visual Studio 和 Visual Studio Code 托管调试器的概述。
 ms.date: 08/05/2019
-ms.openlocfilehash: 065b1b0fc32eb76b398cb3821c8592a1955c9359
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 28cc21980bc78234f7af3b4668e2fa77fbf8ce5b
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715558"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84200859"
 ---
 # <a name="net-core-managed-debuggers"></a>.NET Core 托管调试器
 
@@ -33,5 +33,5 @@ Microsoft 在  Visual Studio 和  Visual Studio Code 中提供托管代码的调
 
  Visual Studio Code 是轻量型跨平台代码编辑器。 它使用与 Visual Studio 相同的 .NET Core 调试器实现，但使用的是简化的用户界面。
 
-- [教程 - 使用 Visual Studio Code 调试 .NET Core 应用程序](../tutorials/with-visual-studio-code.md#debug)
+- [教程 - 使用 Visual Studio Code 调试 .NET Core 应用程序](../tutorials/debugging-with-visual-studio-code.md)
 - [在 Visual Studio Code 中进行调试](https://code.visualstudio.com/docs/editor/debugging)

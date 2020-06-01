@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 12/12/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: a050d7673f7ef00cf11d959d04e709222cb2be8f
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 2915259d7c7031b9e699c7fd0cf65cf723c41680
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607553"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144417"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>教程：通过 ML.NET 图像分类 API 使用迁移学习自动进行肉眼检查
 
@@ -80,21 +80,21 @@ ML.NET 提供了各种执行图像分类的方式。 本教程使用图像分类
 
 在大致了解了迁移学习和图像分类 API 后，现在可以构建应用程序。
 
-1. 创建名为“DeepLearning_ImageClassification_Binary”的 C# .NET Core 控制台应用程序  。
-1. 安装 Microsoft.ML 版本  1.4.0  NuGet 包：
-    1. 在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”  。
+1. 创建名为“DeepLearning_ImageClassification_Binary”的 C# .NET Core 控制台应用程序。
+1. 安装 Microsoft.ML 版本 1.4.0 NuGet 包：
+    1. 在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”。
     1. 选择“nuget.org”作为“包源”。
-    1. 选择“浏览”选项卡  。
-    1. 选中“包括预发行版”复选框  。
-    1. 搜索 Microsoft.ML  。
-    1. 选择“安装”按钮  。
-    1. 选择“预览更改”  对话框上的“确定”  按钮，如果你同意所列包的许可条款，则选择“接受许可”  对话框上的“我接受”  按钮。
-    1. 为 Microsoft.ML.Vision  版本 1.4.0  、SciSharp.TensorFlow.Redist  版本 1.15.0  和 Microsoft.ML.ImageAnalytics  版本 1.4.0  NuGet 包重复上述步骤。
+    1. 选择“浏览”选项卡。
+    1. 选中“包括预发行版”复选框。
+    1. 搜索 Microsoft.ML。
+    1. 选择“安装”按钮。
+    1. 选择“预览更改”对话框上的“确定”按钮，如果你同意所列包的许可条款，则选择“接受许可”对话框上的“我接受”按钮。
+    1. 为 Microsoft.ML.Vision 版本 1.4.0、SciSharp.TensorFlow.Redist 版本 1.15.0 和 Microsoft.ML.ImageAnalytics 版本 1.4.0 NuGet 包重复上述步骤。
 
 ### <a name="prepare-and-understand-the-data"></a>准备和了解数据
 
 > [!NOTE]
-> 本教程的数据集来自由 Maguire, Marc、Dorafshan, Sattar 和 Thomas, Robert J. 共同撰写的“SDNET2018：机器学习应用程序的混凝土裂缝图像数据集”(2018)。 浏览所有数据集。 论文 48。 [https://digitalcommons.usu.edu/all_datasets/48](https://digitalcommons.usu.edu/all_datasets/48 )
+> 本教程的数据集来自由 Maguire, Marc、Dorafshan, Sattar 和 Thomas, Robert J. 共同撰写的“SDNET2018：机器学习应用程序的混凝土裂缝图像数据集”(2018)。 浏览所有数据集。 论文 48。 <https://digitalcommons.usu.edu/all_datasets/48>
 
 SDNET2018 是一个图像数据集，其中包含有裂缝和无裂缝混凝土结构（桥面、墙壁和人行道）的注释。
 
@@ -115,15 +115,15 @@ SDNET2018 是一个图像数据集，其中包含有裂缝和无裂缝混凝土�
 
 1. 下载[数据集](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/assets.zip)并解压缩。
 1. 在项目中创建名为“资产”的目录，用于保存数据集文件。
-1. 将 CD 与 UD 子目录从最近解压缩的目录复制到“资产”目录    。
+1. 将 CD 与 UD 子目录从最近解压缩的目录复制到“资产”目录  。
 
 ### <a name="create-input-and-output-classes"></a>创建输入和输出类
 
-1. 打开 Program.cs 文件，并将文件顶部的现有 `using` 语句替换为以下内容  ：
+1. 打开 Program.cs 文件，并将文件顶部的现有 `using` 语句替换为以下内容：
 
     [!code-csharp [ProgramUsings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L1-L7)]
 
-1. 在 Program.cs 的 `Program` 类下，创建一个名为 `ImageData` 的类  。 此类用于表示最初加载的数据。
+1. 在 Program.cs 的 `Program` 类下，创建一个名为 `ImageData` 的类。 此类用于表示最初加载的数据。
 
     [!code-csharp [ImageDataClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L137-L142)]
 
@@ -163,7 +163,7 @@ SDNET2018 是一个图像数据集，其中包含有裂缝和无裂缝混凝土�
 
 当训练和验证数据不经常更改时，最佳做法是缓存计算的瓶颈值以便进行进一步的运行。
 
-1. 在你的项目中，创建名为“工作区”  的新目录，以存储计算的瓶颈值和模型的 `.pb` 版本。
+1. 在你的项目中，创建名为“工作区”的新目录，以存储计算的瓶颈值和模型的 `.pb` 版本。
 
 ### <a name="define-paths-and-initialize-variables"></a>定义路径并初始化变量
 
@@ -378,7 +378,7 @@ Image: 7001-163.jpg | Actual Value: UD | Predicted Value: UD
 Image: 7001-210.jpg | Actual Value: UD | Predicted Value: UD
 ```
 
-检查 7001-220.jpg 图像时，你可以看到它实际上并无裂缝  。
+检查 7001-220.jpg 图像时，你可以看到它实际上并无裂缝。
 
 ![用于预测的 SDNET2018 数据集图像](./media/image-classification-api-transfer-learning/predictedimage.jpg)
 

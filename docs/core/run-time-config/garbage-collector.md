@@ -3,12 +3,12 @@ title: 垃圾回收器配置设置
 description: 了解用于配置垃圾回收器如何为 .NET Core 应用管理内存的运行时设置。
 ms.date: 01/09/2020
 ms.topic: reference
-ms.openlocfilehash: d7e3d040cd634eeb020beff806c60f834cc02585
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 0ce2f70204463c1525ef7d29de21ddf5384d0238
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761975"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202100"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>用于垃圾回收的运行时配置选项
 
@@ -78,7 +78,7 @@ runtimeconfig.json 文件：
 | - | - | - | - |
 | **runtimeconfig.json** | `System.GC.Concurrent` | `true` - 后台 GC<br/>`false` - 非并发 GC | .NET Core 1.0 |
 | MSBuild 属性 | `ConcurrentGarbageCollection` | `true` - 后台 GC<br/>`false` - 非并发 GC | .NET Core 1.0 |
-| **环境变量** | `COMPlus_gcConcurrent` | `true` - 后台 GC<br/>`false` - 非并发 GC | .NET Core 1.0 |
+| **环境变量** | `COMPlus_gcConcurrent` | `1` - 后台 GC<br/>`0` - 非并发 GC | .NET Core 1.0 |
 | **.NET Framework 的 app.config** | [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) | `true` - 后台 GC<br/>`false` - 非并发 GC |  |
 
 ### <a name="examples"></a>示例

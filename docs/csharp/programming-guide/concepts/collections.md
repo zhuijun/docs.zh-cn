@@ -2,12 +2,12 @@
 title: 集合 (C#)
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: d2996648690fc03b5f1d6a90e0be96155c5a24ed
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 30aa3e34f362f34fc601f90ee61613acd6e4bc68
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645472"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201136"
 ---
 # <a name="collections-c"></a>集合 (C#)
 
@@ -70,7 +70,7 @@ foreach (var salmon in salmons)
 // Output: chinook coho pink sockeye
 ```
 
-如果集合中的内容是事先已知的，则可以使用集合初始值设定项  来初始化集合。 有关详细信息，请参阅[对象和集合初始值设定项](../classes-and-structs/object-and-collection-initializers.md)。
+如果集合中的内容是事先已知的，则可以使用集合初始值设定项来初始化集合。 有关详细信息，请参阅[对象和集合初始值设定项](../classes-and-structs/object-and-collection-initializers.md)。
 
 以下示例与上一示例相同，除了有一个集合初始值设定项用于将元素添加到集合。
 
@@ -563,7 +563,7 @@ public class Color
 
 ## <a name="iterators"></a>迭代器
 
-迭代器  用于对集合执行自定义迭代。 迭代器可以是一种方法，或是一个 `get` 访问器。 迭代器使用 [yield return](../../language-reference/keywords/yield.md) 语句返回集合的每一个元素，每次返回一个元素。
+迭代器用于对集合执行自定义迭代。 迭代器可以是一种方法，或是一个 `get` 访问器。 迭代器使用 [yield return](../../language-reference/keywords/yield.md) 语句返回集合的每一个元素，每次返回一个元素。
 
 通过使用 [foreach](../../language-reference/keywords/foreach-in.md) 语句调用迭代器。 `foreach` 循环的每次迭代都会调用迭代器。 迭代器中到达 `yield return` 语句时，会返回一个表达式，并保留当前在代码中的位置。 下次调用迭代器时，将从该位置重新开始执行。
 

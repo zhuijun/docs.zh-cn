@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/05/2019
 ms.technology: dotnet-cli
 ms.custom: updateeachrelease
-ms.openlocfilehash: fe69521a6ac88055e3e8c8502a7e19a72667dbef
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7658f2498b87a90b3925d83628f6ea9247a2fc15
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240852"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83840866"
 ---
 # <a name="get-started-with-net-core-using-the-net-core-cli"></a>使用 .NET Core CLI 实现 .NET Core 入门
 
@@ -204,7 +204,21 @@ dotnet bin\Debug\netcoreapp3.1\publish\Hello.dll
 将获得以下输出。
 
 ```console
-Hello World!
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
 ```
 
 如本文开头处所述，会随 `Hello.dll` 一起创建特定于操作系统的可执行文件。 在 Windows 上，这将是 `Hello.exe`；在 Linux 或 macOS 上，这将是 `hello`。 在上面的示例中，用 `Hello.exe` 或 `Hello` 命名该文件。 可以直接运行已发布的可执行文件。
@@ -212,7 +226,21 @@ Hello World!
 ```console
 .\bin\Debug\netcoreapp3.1\publish\Hello.exe
 
-Hello World!
+0
+1
+1
+2
+3
+5
+8
+13
+21
+34
+55
+89
+144
+233
+377
 ```
 
 ## <a name="conclusion"></a>结束语

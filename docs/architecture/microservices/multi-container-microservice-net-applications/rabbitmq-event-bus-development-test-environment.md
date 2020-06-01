@@ -2,12 +2,12 @@
 title: 使用 RabbitMQ 实现用于开发或测试环境的事件总线
 description: 容器化 .NET 应用程序的 .NET 微服务架构 | 使用 RabbitMQ 实现用于开发或测试环境的集成事件的事件总线消息传递。
 ms.date: 10/02/2018
-ms.openlocfilehash: 12e37fabfe915b4d2089d27f7852528a9a037d3c
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 32259c76fe81d324ba3ea9b35f7fddc6a0f9cdbc
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988292"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144287"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>使用 RabbitMQ 实现用于开发或测试环境的事件总线
 
@@ -117,7 +117,7 @@ public class EventBusRabbitMQ : IEventBus, IDisposable
 生产就绪型解决方案，内附对 RabbitMQ 的支持。
 
 - **EasyNetQ** - 为 RabbitMQ 打开源 .NET API 客户端 \
-  <http://easynetq.com/>
+  <https://easynetq.com/>
 
 - **MassTransit** \
   <https://masstransit-project.com/>

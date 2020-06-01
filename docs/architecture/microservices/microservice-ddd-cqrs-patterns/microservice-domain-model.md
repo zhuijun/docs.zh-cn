@@ -2,12 +2,12 @@
 title: 设计微服务域模型
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解设计面向 DDD 的域模型时的关键概念。
 ms.date: 01/30/2020
-ms.openlocfilehash: 64860d75dca645904e973a4b8927a716a1603394
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 234d6e518eac8de5b2f130b91adb32b6a24a7265
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988409"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144586"
 ---
 # <a name="design-a-microservice-domain-model"></a>设计微服务域模型
 
@@ -133,14 +133,14 @@ public class Order : Entity, IAggregateRoot
 
 #### <a name="additional-resources"></a>其他资源
 
-- **Vaughn Vernon。有效的聚合设计 - 第 1 部分：单个聚合建模**（来自 <http://dddcommunity.org/>） \
-  <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf>
+- **Vaughn Vernon。有效的聚合设计 - 第 1 部分：单个聚合建模**（来自 <https://dddcommunity.org/>） \
+  <https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_1.pdf>
 
-- **Vaughn Vernon。有效的聚合设计 - 第 2 部分：让聚合共同工作**（来自 <http://dddcommunity.org/>） \
-  <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf>
+- **Vaughn Vernon。有效的聚合设计 - 第 2 部分：让聚合共同工作**（来自 <https://dddcommunity.org/>） \
+  <https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_2.pdf>
 
-- **Vaughn Vernon。有效的聚合设计 - 第 3 部分：通过发现获取见解**（来自 <http://dddcommunity.org/>） \
-  <http://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_3.pdf>
+- **Vaughn Vernon。有效的聚合设计 - 第 3 部分：通过发现获取见解**（来自 <https://dddcommunity.org/>） \
+  <https://dddcommunity.org/wp-content/uploads/files/pdf_articles/Vernon_2011_3.pdf>
 
 - **Sergey Grybniak。DDD 战术设计模式** \
   <https://www.codeproject.com/Articles/1164363/Domain-Driven-Design-Tactical-Design-Patterns-Part>

@@ -4,12 +4,12 @@ description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序 | 开�
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 3de70af23206b0ae0525541b3d2cb480dc5bb882
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 955d4ec4a0bd0ddf2d022d4154fc6528b2abf3d0
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80987902"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144547"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>开发 ASP.NET Core MVC 应用
 
@@ -422,7 +422,7 @@ public void ConfigureServices(IServiceCollection services)
 > ### <a name="references--security"></a>参考 - 安全
 >
 > - **安全性文档概述**  
->   https://docs.microsoft.com/aspnet/core/security/
+>   <https://docs.microsoft.com/aspnet/core/security/>
 > - **在 ASP.NET Core 应用中强制实施 SSL**  
 >   <https://docs.microsoft.com/aspnet/core/security/enforcing-ssl>
 > - **标识简介**  
@@ -493,7 +493,7 @@ public class Program
 > - **ASP.NET Core SignalR**  
 >   <https://github.com/dotnet/aspnetcore/tree/master/src/SignalR>
 > - **WebSocket 管理器**  
->   https://github.com/radu-matei/websocket-manager
+>   <https://github.com/radu-matei/websocket-manager>
 
 ## <a name="domain-driven-design--should-you-apply-it"></a>领域驱动设计 - 是否该使用？
 

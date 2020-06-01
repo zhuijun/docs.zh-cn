@@ -5,18 +5,18 @@ ms.date: 04/02/2020
 author: natke
 ms.author: nakersha
 ms.custom: how-to
-ms.openlocfilehash: c427439d0950bfea38f1d6d11af84216e0f1965f
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: c744b42b4b95681de7b0cbeaef338cc890708fd8
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021856"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84008425"
 ---
 # <a name="install-extra-mlnet-dependencies"></a>安装额外的 ML.NET 依赖项
 
 在大多数情况下，在所有操作系统上，安装 ML.NET 就像引用适当的 NuGet 包一样简单。
 
-```bash
+```dotnetcli
 dotnet add package Microsoft.ML
 ```
 
