@@ -4,12 +4,12 @@ description: 请按照教程学习了解 .NET Core 以在 Mac、Linux 和 Window
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: 9fb87180bb001a7f54d93c6e95631562103c49e8
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 5a33158bdf02c5ac81379cfcdabb2f79230033e2
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83840918"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202181"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>通过探讨这些教程来学习 .NET Core 和 .NET Core SDK 工具
 
@@ -29,9 +29,10 @@ ms.locfileid: "83840918"
 
 ## <a name="use-visual-studio-code"></a>使用 Visual Studio Code
 
-如果要使用 Visual Studio Code 或其他代码编辑器，请选择这些教程。 全都使用 CLI 来处理 .NET Core 开发任务，因此全都可用于任意代码编辑器。
+如果要使用 Visual Studio Code 或其他代码编辑器，请选择这些教程。 全都使用 CLI 来处理 .NET Core 开发任务，因此全都可用于任意代码编辑器（调试教程除外）。
 
 - [创建控制台应用](with-visual-studio-code.md)
+- [调试应用](debugging-with-visual-studio-code.md)
 - [创建和发布控制台应用](cli-create-console-app.md)
 - [创建 F# 控制台应用](../../fsharp/get-started/get-started-vscode.md)
 - [创建库并对其进行单元测试 - macOS](using-on-macos.md)

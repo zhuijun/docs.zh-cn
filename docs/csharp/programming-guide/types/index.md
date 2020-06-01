@@ -11,12 +11,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: ca499f9762f52126720159fb7c22660b1001895c
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: fa0aa09b591f9b91a82113343a3655b2240ef490
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802931"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201216"
 ---
 # <a name="types-c-programming-guide"></a>类型（C# 编程指南）
 
@@ -165,7 +165,7 @@ stringList.Add("String example");
 stringList.Add(4);
 ```
 
-使用类型参数，可以重用同一个类来保留任何类型的元素，而无需将每个元素转换成[对象](../../language-reference/builtin-types/reference-types.md)。 泛型集合类称为*强类型集合*，因为编译器知道集合元素的具体类型，并能在编译时抛出错误，例如当尝试向上面示例中的 `stringList` 对象添加整数时。 有关详细信息，请参阅[泛型](../generics/index.md)。
+通过使用类型参数，可重新使用相同类以保存任意类型的元素，且无需将每个元素转换为[对象](../../language-reference/builtin-types/reference-types.md)。 泛型集合类称为强类型集合，因为编译器知道集合元素的具体类型，并能在编译时抛出错误，例如当尝试向上面示例中的 `stringList` 对象添加整数时。 有关详细信息，请参阅[泛型](../generics/index.md)。
 
 ## <a name="implicit-types-anonymous-types-and-nullable-value-types"></a>隐式类型、匿名类型和可以为 null 的值类型
 
