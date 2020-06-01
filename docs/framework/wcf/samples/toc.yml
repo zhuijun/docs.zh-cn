@@ -454,7 +454,7 @@
         - name: 联合扩展性示例
           href: syndication-extensibility-samples.md
           items:
-            - name: 强类型扩展
+            - name: 强类型的枚举
               href: strongly-typed-extensions-sample.md
             - name: 源格式化程序 (JSON)
               href: feed-formatter-json.md
