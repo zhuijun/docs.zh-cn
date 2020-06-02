@@ -1,5 +1,5 @@
 ---
-title: 如何：用 X.509 证书对 XML 元素进行解密
+title: 如何：使用 X.509 证书解密 XML 元素
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,19 +13,19 @@ helpviewer_keywords:
 - X.509 certificates
 - certificates, X.509 certificates
 ms.assetid: bd015722-d88d-408d-8ca8-e4e475c441ed
-ms.openlocfilehash: 46fbefbf7a427ec0d60a34ecc2166f8499d08575
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 32a6d95b96bb20571c14c16cc70b944fa3e4032b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708883"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277383"
 ---
-# <a name="how-to-decrypt-xml-elements-with-x509-certificates"></a>如何：用 X.509 证书对 XML 元素进行解密
-可以使用 <xref:System.Security.Cryptography.Xml> 命名空间中的类对 XML 文档内的元素进行加密和解密。  XML 加密是交换或存储加密的 XML 数据的一种标准方式，使用后就无需担心数据被轻易读取。  有关 XML 加密标准的详细信息，请参阅万维网联合会 (W3C) 规范 XML 加密位于 <https://www.w3.org/TR/xmldsig-core/>。  
+# <a name="how-to-decrypt-xml-elements-with-x509-certificates"></a>如何：使用 X.509 证书解密 XML 元素
+可以使用 <xref:System.Security.Cryptography.Xml> 命名空间中的类对 XML 文档内的元素进行加密和解密。  XML 加密是交换或存储加密的 XML 数据的一种标准方式，使用后就无需担心数据被轻易读取。  有关 XML 加密标准的详细信息，请参阅位于的 XML 加密的万维网联合会（W3C）规范 <https://www.w3.org/TR/xmldsig-core/> 。  
   
- 此示例对使用中所述的方法进行加密的 XML 元素进行解密： how [to：使用 X.509 证书对 XML 元素进行加密](../../../docs/standard/security/how-to-encrypt-xml-elements-with-x-509-certificates.md)。  它将查找 <`EncryptedData`> 元素，对元素进行解密，然后将元素替换为原始纯文本 XML 元素。  
+ 此示例对使用中所述的方法进行加密的 XML 元素进行解密： how [to：使用 X.509 证书对 XML 元素进行加密](how-to-encrypt-xml-elements-with-x-509-certificates.md)。  它将查找 <`EncryptedData`> 元素，对元素进行解密，然后将元素替换为原始纯文本 XML 元素。  
   
- 此过程中的代码示例将使用当前用户帐户的本地证书存储中的 X.509 证书来解密 XML 元素。  该示例使用 <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> 方法自动检索 x.509 证书，并对存储在 < 中的会话密钥进行解密`EncryptedKey``EncryptedData`> 元素的 > 元素。  然后，<xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> 方法将自动使用会话密钥对 XML 元素进行解密。  
+ 此过程中的代码示例将使用当前用户帐户的本地证书存储中的 X.509 证书来解密 XML 元素。  该示例使用 <xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> 方法自动检索 x.509 证书，并对存储在 `EncryptedKey` <> 元素的 <> 元素中的会话密钥进行解密 `EncryptedData` 。  然后，<xref:System.Security.Cryptography.Xml.EncryptedXml.DecryptDocument%2A> 方法将自动使用会话密钥对 XML 元素进行解密。  
   
  此示例适用于以下情况：多个应用程序需要共享加密数据，或应用程序需要保存它各次运行之间的加密数据。  
   
@@ -78,4 +78,4 @@ ms.locfileid: "75708883"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Security.Cryptography.Xml>
-- [如何：使用 X.509 证书加密 XML 元素](../../../docs/standard/security/how-to-encrypt-xml-elements-with-x-509-certificates.md)
+- [如何：使用 X.509 证书加密 XML 元素](how-to-encrypt-xml-elements-with-x-509-certificates.md)
