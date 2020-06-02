@@ -1,16 +1,17 @@
 ---
 title: 启用多个活动结果集
+description: 了解如何在连接字符串中启用/禁用 MARS，这与 SQL Server 一起使用，以便可以在 ADO.NET 中的单个连接上运行多个批处理。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 576079e4-debe-4ab5-9204-fcbe2ca7a5e2
-ms.openlocfilehash: 72125be835298218e5445fe1915d6a17f5008bb2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 43bdfebce291c3c1d6c90104c5fef440b295934b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79148720"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286476"
 ---
 # <a name="enabling-multiple-active-result-sets"></a>启用多个活动结果集
 多重活动结果集 (MARS) 是一项用于 SQL Server 的功能，可用来对单个连接执行多个批处理。 如果对 SQL Server 启用了 MARS，使用的每个命令对象都将向该连接添加一个会话。  
@@ -64,7 +65,7 @@ string connectionString = "Data Source=MSSQL1;" +
 ### <a name="mars-session-cache"></a>MARS 会话缓存  
  在启用 MARS 的情况下打开连接时，将创建逻辑会话，这会增加额外的开销。 为了将系统开销降至最低并提高性能，SqlClient 将 MARS 会话缓存在连接内****。 缓存最多包含 10 个 MARS 会话。 该值不是用户可调节的。 如果达到会话限制，则会创建一个新会话，而不会生成错误。 其中包含的缓存和会话是按连接进行的；它们不会在连接之间共享。 发布会话时，会将其返回到池中，除非已达到池的上限。 如果缓存池已满，则会话将关闭。 MARS 会话不会过期。 仅在处置连接对象时，才清理这些会话。 MARS 会话缓存未预加载。 已加载它，因为应用程序需要更多会话。  
   
-### <a name="thread-safety"></a>线程安全  
+### <a name="thread-safety"></a>线程安全性  
  MARS 操作不是线程安全的。  
   
 ### <a name="connection-pooling"></a>连接池  

@@ -1,27 +1,28 @@
 ---
-title: SQL 服务器连接池
+title: SQL Server 连接池
+description: 了解 ADO.NET 如何通过使用 SQL Server 连接池来最大程度地降低打开连接的成本，从而减少新连接的开销。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 7e51d44e-7c4e-4040-9332-f0190fe36f07
-ms.openlocfilehash: 149511bd4e84baabf11eca014257127b587830df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1a95aab9e09d69a3d26b3404d4cb2b70371a3fe8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79148993"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286554"
 ---
 # <a name="sql-server-connection-pooling-adonet"></a>SQL Server 连接池 (ADO.NET)
 连接到数据库服务器通常由几个需要很长时间的步骤组成。 必须建立物理通道（例如套接字或命名管道），必须与服务器进行初次握手，必须分析连接字符串信息，必须由服务器对连接进行身份验证，必须运行检查以便在当前事务中登记，等等。  
   
- 实际上，大多数应用程序仅使用一个或几个不同的连接配置。 这意味着在执行应用程序期间，许多相同的连接将反复地打开和关闭。 为了将打开连接的成本降至最低，ADO.NET使用称为*连接池的*优化技术。  
+ 实际上，大多数应用程序仅使用一个或几个不同的连接配置。 这意味着在执行应用程序期间，许多相同的连接将反复地打开和关闭。 为了最大程度地降低打开连接的成本，ADO.NET 使用一种称为*连接池*的优化技术。  
   
- 连接池使新连接必须打开的次数得以减少。 *池程序*维护物理连接的所有权。 通过为每个给定的连接配置保留一组活动连接来管理连接。 每当用户在连接上调用 `Open` 时，池进程就会查找池中可用的连接。 如果某个池连接可用，会将该连接返回给调用者，而不是打开新连接。 应用程序在该连接上调用 `Close` 时，池进程会将连接返回到活动连接池集中，而不是关闭连接。 连接返回到池中之后，即可在下一个 `Open` 调用中重复使用。  
+ 连接池使新连接必须打开的次数得以减少。 *池池*维护物理连接的所有权。 通过为每个给定的连接配置保留一组活动连接来管理连接。 每当用户在连接上调用 `Open` 时，池进程就会查找池中可用的连接。 如果某个池连接可用，会将该连接返回给调用者，而不是打开新连接。 应用程序在该连接上调用 `Close` 时，池进程会将连接返回到活动连接池集中，而不是关闭连接。 连接返回到池中之后，即可在下一个 `Open` 调用中重复使用。  
   
- 只有配置相同的连接可以建立池连接。 ADO.NET同时保留多个池，每个配置保留一个池。 在使用集成的安全性时，连接按照连接字符串以及 Windows 标识分到多个池中。 还根据连接是否已在事务中登记来建立池连接。 在使用 <xref:System.Data.SqlClient.SqlConnection.ChangePassword%2A> 时，<xref:System.Data.SqlClient.SqlCredential> 实例影响连接池。 <xref:System.Data.SqlClient.SqlCredential> 的不同实例将使用不同的连接池，即使用户 ID 和密码相，也是如此。  
+ 只有配置相同的连接可以建立池连接。 ADO.NET 会同时保留多个池，每种配置各有一个。 在使用集成的安全性时，连接按照连接字符串以及 Windows 标识分到多个池中。 还根据连接是否已在事务中登记来建立池连接。 在使用 <xref:System.Data.SqlClient.SqlConnection.ChangePassword%2A> 时，<xref:System.Data.SqlClient.SqlCredential> 实例影响连接池。 <xref:System.Data.SqlClient.SqlCredential> 的不同实例将使用不同的连接池，即使用户 ID 和密码相，也是如此。  
   
- 池连接可以显著提高应用程序的性能和可缩放性。 默认情况下，连接池在ADO.NET启用。 除非显式禁用，否则，在应用程序中打开和关闭连接时，池进程会对连接进行优化。 还可以提供几个连接字符串修饰符来控制连接池的行为。 有关更多信息，请参见本主题后面的“使用连接字符串关键字控制连接池”。  
+ 池连接可以显著提高应用程序的性能和可缩放性。 默认情况下，在 ADO.NET 中启用连接池。 除非显式禁用，否则，在应用程序中打开和关闭连接时，池进程会对连接进行优化。 还可以提供几个连接字符串修饰符来控制连接池的行为。 有关更多信息，请参见本主题后面的“使用连接字符串关键字控制连接池”。  
   
 > [!NOTE]
 > 启用连接池后，如果发生超时错误或其他登录错误，则将引发异常，并且在接下来的五秒内进行的后续连接尝试将失败，此段时间称为“阻塞期”。 如果应用程序尝试在阻塞期内进行连接，则将再次引发第一个异常。 阻塞期结束后的后续失败将导致新的阻塞期，该阻塞期的持续时间是上一个阻塞期的两倍，最长为一分钟。  
@@ -67,12 +68,12 @@ using (SqlConnection connection = new SqlConnection(
  连接池进程通过在连接释放回池中时重新分配连接，来满足这些连接请求。 如果已达到最大池大小且不存在可用的连接，则该请求将会排队。 然后，池进程尝试重新建立任何连接，直至到达超时时间（默认值为 15 秒）。 如果池进程在连接超时之前无法满足请求，将引发异常。  
   
 > [!CAUTION]
-> 我们强烈建议您在使用完连接时一定要关闭连接，以便连接可以返回池。 可以使用`Connection`对象的`Close`或`Dispose`方法执行此操作，或者通过在 C# 中的`using`语句或 Visual Basic 中的`Using`语句中打开语句中的所有连接来执行此操作。 不是显式关闭的连接可能不会添加或返回到池中。 有关详细信息，请参阅[使用语句](../../../csharp/language-reference/keywords/using-statement.md)或[如何：为](../../../visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md)可视化基本处理系统资源。  
+> 我们强烈建议您在使用完连接时一定要关闭连接，以便连接可以返回池。 您可以使用 `Close` 对象的或方法或 `Dispose` `Connection` 通过在 c # 中的语句内打开所有连接 `using` 或 `Using` Visual Basic 中的语句来执行此操作。 不是显式关闭的连接可能不会添加或返回到池中。 有关详细信息，请参阅[Using 语句](../../../csharp/language-reference/keywords/using-statement.md)或[如何：处置 Visual Basic 的系统资源](../../../visual-basic/programming-guide/language-features/control-flow/how-to-dispose-of-a-system-resource.md)。  
   
 > [!NOTE]
 > 不要在类的 `Close` 方法中对 `Dispose`、`Connection` 或任何其他托管对象调用 `DataReader` 或 `Finalize`。 在终结器中，仅释放类直接拥有的非托管资源。 如果类不拥有任何非托管资源，则不要在类定义中包含 `Finalize` 方法。 有关详细信息，请参阅[垃圾回收](../../../standard/garbage-collection/index.md)。  
   
-有关与打开和关闭连接关联的事件的详细信息，请参阅 SQL Server 文档中[的审核登录事件类](/sql/relational-databases/event-classes/audit-login-event-class)和[审核注销事件类](/sql/relational-databases/event-classes/audit-logout-event-class)。  
+有关与打开和关闭连接相关联的事件的详细信息，请参阅 SQL Server 文档中的[Audit Login 事件类](/sql/relational-databases/event-classes/audit-login-event-class)和[audit 注销事件类](/sql/relational-databases/event-classes/audit-logout-event-class)。  
   
 ## <a name="removing-connections"></a>移除连接  
  如果空闲时间达到大约 4-8 分钟，或池进程检测到与服务器的连接已断开，连接池进程会将该连接从池中移除。 注意，只有在尝试与服务器进行通信之后才能检测到断开的连接。 如果发现某连接不再连接到服务器，则会将其标记为无效。 无效连接只有在关闭或重新建立后，才会从连接池中移除。  
@@ -80,7 +81,7 @@ using (SqlConnection connection = new SqlConnection(
  如果存在一个与已消失的服务器的连接，即使连接池进程尚未检测到断开的连接，也可以从池中取出此连接并将连接标记为无效。 这种情况是因为检查连接是否仍有效的系统开销将造成与服务器的另一次往返，从而抵消了池进程的优势。 发生此情况时，初次尝试使用该连接将检测连接是否曾断开，并引发异常。  
   
 ## <a name="clearing-the-pool"></a>清除池  
- ADO.NET 2.0 引入了两种清除池的新方法：<xref:System.Data.SqlClient.SqlConnection.ClearAllPools%2A>和<xref:System.Data.SqlClient.SqlConnection.ClearPool%2A>。 `ClearAllPools` 清除指定提供程序的连接池，`ClearPool` 清除与特定连接关联的连接池。 如果在调用时连接正在使用，将对它们进行相应的标记。 连接关闭时，将被丢弃，而不是返回池中。  
+ ADO.NET 2.0 引入了两种新的方法来清除池： <xref:System.Data.SqlClient.SqlConnection.ClearAllPools%2A> 和 <xref:System.Data.SqlClient.SqlConnection.ClearPool%2A> 。 `ClearAllPools` 清除指定提供程序的连接池，`ClearPool` 清除与特定连接关联的连接池。 如果在调用时连接正在使用，将对它们进行相应的标记。 连接关闭时，将被丢弃，而不是返回池中。  
   
 ## <a name="transaction-support"></a>事务支持  
  连接是根据事务上下文来从池中取出并进行分配的。 除非在连接字符串中指定了 `Enlist=false`，否则连接池将确保连接在 <xref:System.Transactions.Transaction.Current%2A> 上下文中登记。 如果连接使用登记的 `System.Transactions` 事务关闭并返回到池中，连接将保留在池中，以便使用相同 `System.Transactions` 事务对该连接池的下一次请求将返回相同的连接（如果可用）。 如果发出这样的请求，而没有可用的池连接，则会从池的非事务性部分取出一个连接并登记。 如果在池的每个区域都没有可用的连接，则会创建一个新的连接并登记。  
@@ -124,10 +125,10 @@ using (SqlConnection connection = new SqlConnection(
 ```  
   
 ## <a name="application-roles-and-connection-pooling"></a>应用程序角色和连接池  
- 通过调用 `sp_setapprole` 系统存储过程激活了 SQL Server 应用程序角色之后，该连接的安全上下文无法重置。 但是，如果启用了池，连接将返回池，在重复使用池连接时会出错。 有关详细信息，请参阅知识库文章["OLE DB 资源池中的 SQL 应用程序角色错误](https://support.microsoft.com/default.aspx?scid=KB;EN-US;Q229564)"。  
+ 通过调用 `sp_setapprole` 系统存储过程激活了 SQL Server 应用程序角色之后，该连接的安全上下文无法重置。 但是，如果启用了池，连接将返回池，在重复使用池连接时会出错。 有关详细信息，请参阅知识库文章 "[OLE DB 资源池的 SQL 应用程序角色错误](https://support.microsoft.com/default.aspx?scid=KB;EN-US;Q229564)"。  
   
 ### <a name="application-role-alternatives"></a>应用程序角色替代项  
- 建议您利用可以使用的安全机制，而不使用应用程序角色。 有关详细信息，请参阅在[SQL Server 中创建应用程序角色](./sql/creating-application-roles-in-sql-server.md)。  
+ 建议您利用可以使用的安全机制，而不使用应用程序角色。 有关详细信息，请参阅[在 SQL Server 中创建应用程序角色](./sql/creating-application-roles-in-sql-server.md)。  
   
 ## <a name="see-also"></a>另请参阅
 

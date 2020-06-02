@@ -1,6 +1,6 @@
 ---
 title: 安全性和用户输入
-description: 您的代码可能会将用户输入的数据作为参数传递给其他代码，这可能会影响安全性。 您可以执行范围检查以拒绝有问题的输入。
+description: 你的代码可能会将用户输入的数据作为参数传递给其他代码，这可能会影响安全性。 可以执行范围检查以拒绝出现问题的输入。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - secure coding, user input
 - code security, user input
 ms.assetid: 9141076a-96c9-4b01-93de-366bb1d858bc
-ms.openlocfilehash: fa9f8d4708e928c51e446d8369c9b4556fc6fb77
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 995af30385790a88718193e7abad1db7bc4b56c3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186111"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84275940"
 ---
 # <a name="security-and-user-input"></a>安全性和用户输入
 
@@ -24,7 +24,7 @@ ms.locfileid: "79186111"
 
 涉及用户数据的重要注意事项包括以下几个方面：
 
-- 服务器响应中的任何用户数据在客户端上的服务器站点的上下文中运行。 如果您的 Web 服务器获取用户数据并将其插入到返回的 Web 页中，例如，它可能包含一个**\<脚本>** 标记，并且像从服务器一样运行。
+- 服务器响应中的任何用户数据在客户端上的服务器站点的上下文中运行。 例如，如果 Web 服务器接收用户数据并将其插入到返回的网页中，则可能会包含一个 **\<script>** 标记，并在服务器上运行。
 
 - 请记住，客户端可以请求任何 URL。
 
@@ -60,4 +60,4 @@ ms.locfileid: "79186111"
 
 ## <a name="see-also"></a>另请参阅
 
-- [代码安全维护指南](../../../docs/standard/security/secure-coding-guidelines.md)
+- [代码安全维护指南](secure-coding-guidelines.md)

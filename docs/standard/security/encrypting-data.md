@@ -11,18 +11,18 @@ helpviewer_keywords:
 - cryptography [.NET Framework], asymmetric
 - asymmetric encryption
 ms.assetid: 7ecce51f-db5f-4bd4-9321-cceb6fcb2a77
-ms.openlocfilehash: 669b9c77ca0102ed94d8743cf37b18c0d0c528dc
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 3230836b93ea191e5de27717a918038f2f8dead6
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159398"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288350"
 ---
 # <a name="encrypting-data"></a>加密数据
 对称加密和非对称加密是使用不同的进程执行的。 对称加密是对流执行的，因此适用于加密大量数据。 非对称加密是对少数字节执行的，因此仅适用于加密少量数据。  
   
 ## <a name="symmetric-encryption"></a>对称加密  
- 托管对称加密类与名为 <xref:System.Security.Cryptography.CryptoStream> 的特殊流类一起使用，后者用于加密读入流中的数据。 使用托管流类、实现 **接口（从实现加密算法的类创建）的类以及用于描述对** CryptoStream <xref:System.Security.Cryptography.ICryptoTransform> 授予的访问权限的类型的 <xref:System.Security.Cryptography.CryptoStreamMode> 枚举，来初始化 **CryptoStream**类。 可以使用派生自 **类的任何类来初始化** CryptoStream <xref:System.IO.Stream> 类，其中包括 <xref:System.IO.FileStream>、 <xref:System.IO.MemoryStream>和 <xref:System.Net.Sockets.NetworkStream>。 使用这些类，可以对多个流对象执行对称加密。  
+ 托管对称加密类与名为 <xref:System.Security.Cryptography.CryptoStream> 的特殊流类一起使用，后者用于加密读入流中的数据。 使用托管流类、实现 **接口（从实现加密算法的类创建）的类以及用于描述对** CryptoStream <xref:System.Security.Cryptography.ICryptoTransform> 授予的访问权限的类型的 <xref:System.Security.Cryptography.CryptoStreamMode> 枚举，来初始化 **CryptoStream**类。 可以**CryptoStream**使用从类派生的任何类 <xref:System.IO.Stream> （包括 <xref:System.IO.FileStream> 、和）初始化 CryptoStream 类 <xref:System.IO.MemoryStream> <xref:System.Net.Sockets.NetworkStream> 。 使用这些类，可以对多个流对象执行对称加密。  
   
  下面的示例演示如何创建 <xref:System.Security.Cryptography.RijndaelManaged> 类的新实例（该类可实现 Rijndael 加密算法），并用它对 **CryptoStream** 类进行加密。 在此示例中，使用名为 **的流对象初始化** CryptoStream `myStream` ，该流对象可以是任何类型的托管流。 向 **RijndaelManaged** 类中的 **CreateEncryptor** 方法传递用于加密的密钥和 IV。 在此例中，使用了由 `rmCrypto` 生成的默认密钥和 IV。 最后传递 **CryptoStreamMode.Write** ，指定对流的写入权限。  
   
@@ -262,6 +262,6 @@ class Class1
   
 ## <a name="see-also"></a>另请参阅
 
-- [生成加密和解密密钥](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
-- [解密数据](../../../docs/standard/security/decrypting-data.md)
-- [加密服务](../../../docs/standard/security/cryptographic-services.md)
+- [生成加密和解密的密钥](generating-keys-for-encryption-and-decryption.md)
+- [解密数据](decrypting-data.md)
+- [加密服务](cryptographic-services.md)

@@ -1,19 +1,19 @@
 ---
-title: .NET framework 加密模型
+title: .NET Framework 加密模型
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - cryptography [.NET Framework], model
 - encryption [.NET Framework], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-ms.openlocfilehash: f878f73497b83aaf31f2ba3b23cca1f685867b3e
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: c2d28abacd34736764b69be750a850a0f2e8db85
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77095263"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288376"
 ---
-# <a name="net-framework-cryptography-model"></a>.NET framework 加密模型
+# <a name="net-framework-cryptography-model"></a>.NET Framework 加密模型
 
 .NET Framework 提供了许多标准加密算法的实现。 这些算法易于使用且具有最安全的可能默认属性。 此外，对象继承、流设计和配置的 .NET Framework 加密模型完全可扩展。
 
@@ -49,7 +49,7 @@ ms.locfileid: "77095263"
 
 ## <a name="cryptographic-configuration"></a>加密配置
 
-使用加密配置可将算法的特定实现解析为算法名称，从而允许 .NET Framework 加密类扩展性。 可以添加自己算法的硬件或软件实现，并将该实现映射到所选择的算法名称。 如果配置文件中未指定算法，则使用默认设置。 有关加密配置的详细信息，请参阅[配置加密类](../../../docs/framework/configure-apps/configure-cryptography-classes.md)。
+使用加密配置可将算法的特定实现解析为算法名称，从而允许 .NET Framework 加密类扩展性。 可以添加自己算法的硬件或软件实现，并将该实现映射到所选择的算法名称。 如果配置文件中未指定算法，则使用默认设置。 有关加密配置的详细信息，请参阅[配置加密类](../../framework/configure-apps/configure-cryptography-classes.md)。
 
 ## <a name="choosing-an-algorithm"></a>选择算法
 
@@ -75,5 +75,5 @@ ms.locfileid: "77095263"
 
 ## <a name="see-also"></a>另请参阅
 
-- [加密服务](../../../docs/standard/security/cryptographic-services.md)
+- [加密服务](cryptographic-services.md)
 - [使用 C 中的 Bruce Schneier 应用加密协议、算法和源代码](https://www.schneier.com/books/applied_cryptography/)

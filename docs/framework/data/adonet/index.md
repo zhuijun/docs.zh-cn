@@ -1,14 +1,15 @@
 ---
 title: ADO.NET
+description: 了解 ADO.NET 是公开数据访问服务的类，这些类用于创建分布式数据共享应用程序的 .NET Framework 程序员。
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
-ms.openlocfilehash: cca3075a73a7bb45fd6154f760adfcda9064345c
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 4f9b2ca42a2c25c1463b7d1ca38b4b8920b2dafd
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094392"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286723"
 ---
 # <a name="adonet"></a>ADO.NET
 
@@ -37,7 +38,7 @@ ADO.NET 是一组向 .NET Framework 程序员公开数据访问服务的类。 A
  提供有关 LINQ to DataSet 的信息，包括编程示例。  
   
  [在 ADO.NET 中检索和修改数据](retrieving-and-modifying-data.md)  
- 描述如何连接到数据源以及如何使用 `Commands`、`DataReaders`和 `DataAdapters`检索和修改数据。  
+ 描述如何连接到数据源以及如何使用、和检索和修改数据 `Commands` `DataReaders` `DataAdapters` 。  
   
  [SQL Server 和 ADO.NET](./sql/index.md)  
  描述如何使用 SQL Server 特定的功能。  
@@ -47,12 +48,12 @@ ADO.NET 是一组向 .NET Framework 程序员公开数据访问服务的类。 A
   
 ## <a name="related-sections"></a>相关章节  
  [语言集成查询 (LINQ) - C#](../../../csharp/programming-guide/concepts/linq/index.md)  
- 提供使用C#的 LINQ 主题和示例的链接。  
+ 提供指向使用 c # 的 LINQ 主题和示例的链接。  
   
  [语言集成查询 (LINQ) - Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md)  
  提供使用 Visual Basic 的 LINQ 主题和示例的链接。  
   
- [WCF Data Services 4.5](../wcf/index.md)  
+ [WCF 数据服务 4.5](../wcf/index.md)  
  介绍如何使用 WCF 数据服务在实现 Open Data Protocol （OData）的 Web 或 intranet 上部署数据服务。  
   
  [.NET Framework 开发指南](../../development-guide.md)  

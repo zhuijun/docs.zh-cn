@@ -1,20 +1,21 @@
 ---
 title: 如何：从数据库中删除行
+description: 了解如何通过从与表相关的集合中删除 LINQ to SQL 对象来删除数据库中的行。 LINQ to SQL 将删除操作转换为 SQL DELETE 命令。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 2144c99b-8055-4080-a5c6-1ea14335e2a3
-ms.openlocfilehash: 421735567c527ac9a70cc5eefdbd7570599faac7
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d08621e834961e1db9312cac36bd2e69133142b5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782000"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286386"
 ---
 # <a name="how-to-delete-rows-from-the-database"></a>如何：从数据库中删除行
 
-您可以通过删除与表相关的集合中的[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]相应对象来删除数据库中的行。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]将所做的更改转换为`DELETE`相应的 SQL 命令。
+您可以通过删除与表相关的集合中的相应对象来删除数据库中的行 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 。 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]将所做的更改转换为相应的 SQL `DELETE` 命令。
 
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 不支持且无法识别级联删除操作。 如果要在对行有约束的表中删除行，则必须完成以下任务之一：
 
@@ -53,8 +54,8 @@ ms.locfileid: "70782000"
 [!code-csharp[DLinqCascadeWorkaround#1](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqCascadeWorkaround/cs/Program.cs#1)]
 [!code-vb[DLinqCascadeWorkaround#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqCascadeWorkaround/vb/Module1.vb#1)]
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [如何：管理更改冲突](how-to-manage-change-conflicts.md)
-- [如何：分配存储过程以便执行更新、插入和删除操作（O/R 设计器）](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)
+- [如何：分配存储流程来执行更新、插入和删除操作（O/R 设计器）](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)
 - [进行和提交数据更改](making-and-submitting-data-changes.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - namespaces [.NET Framework], names
 - names [.NET Framework], type names
 ms.assetid: a49058d2-0276-43a7-9502-04adddf857b2
-ms.openlocfilehash: 0ad98af240cf8d1041d6a8b64ab71a56e763f76f
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: e435e0281165b4a9f12bbccbeb10401b57375dcb
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419052"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290196"
 ---
 # <a name="names-of-namespaces"></a>命名空间的名称
 与其他命名准则一样，命名命名空间的目标是为程序员创建足够的清晰度，使其能够立即了解命名空间的内容。 以下模板指定命名空间的一般规则：
@@ -84,5 +84,5 @@ ms.locfileid: "83419052"
 
 ## <a name="see-also"></a>另请参阅
 
-- [框架设计准则](../../../docs/standard/design-guidelines/index.md)
-- [命名准则](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [框架设计准则](index.md)
+- [命名准则](naming-guidelines.md)

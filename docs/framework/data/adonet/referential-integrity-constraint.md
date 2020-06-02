@@ -1,13 +1,14 @@
 ---
 title: 引用完整性约束
+description: 了解实体数据模型中的引用完整性约束，该约束确保实体类型之间始终存在有效的关联。
 ms.date: 03/30/2017
 ms.assetid: 3d3ba44b-4302-40d8-a7a9-62932e0395e5
-ms.openlocfilehash: ad35df7bcca62ffdbc3842b0817b22c5482a3d4d
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 65c811b2a12a64870107ff771d5acc64e86f2c1f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738373"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286619"
 ---
 # <a name="referential-integrity-constraint"></a>引用完整性约束
 实体数据模型（EDM）中的*引用完整性约束*类似于关系数据库中的引用完整性约束。 与数据库表中的列（或列）可以引用另一个表的主键相同，[实体类型](entity-type.md)的一个或多个[属性](property.md)可以引用另一个实体类型的[实体键](entity-key.md)。 引用的实体类型称为约束的*主体端*。 引用主体端的实体类型称为约束的*依赖端*。  
@@ -33,7 +34,7 @@ ms.locfileid: "73738373"
   
  [!code-xml[EDM_Example_Model#RefConstraint](../../../../samples/snippets/xml/VS_Snippets_Data/edm_example_model/xml/books4.edmx#refconstraint)]  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [实体数据模型关键概念](entity-data-model-key-concepts.md)
 - [实体数据模型](entity-data-model.md)

@@ -1,16 +1,17 @@
 ---
 title: DataSets
+description: 了解数据集，它是一种内存驻留数据表示形式，它提供一致的关系编程模型，而不考虑 ADO.NET 中的数据源。
 ms.date: 03/30/2017
 ms.assetid: 82b641bb-6001-4512-bf1a-2830acdd92ab
-ms.openlocfilehash: 86c14f516ff82e4d9acf7cc3078e04590971a8a1
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 2fc5963937f7bf15dc192c6dc0a980d544a23194
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980296"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287124"
 ---
 # <a name="adonet-datasets"></a>ADO.NET 数据集
-<xref:System.Data.DataSet> 对象是支持通过 ADO.NET 断开连接的分布式数据方案的核心。 数据**集**是数据的内存驻留表示形式，可提供一致的关系编程模型，而不考虑数据源。 它可以用于多种不同的数据源，用于 XML 数据，或用于管理应用程序本地的数据。 **数据集**表示一组完整的数据，包括相关表、约束和表之间的关系。 下图显示了**数据集**对象模型。  
+<xref:System.Data.DataSet>对象是支持通过 ADO.NET 断开连接的分布式数据方案的核心。 数据**集**是数据的内存驻留表示形式，可提供一致的关系编程模型，而不考虑数据源。 它可以用于多种不同的数据源，用于 XML 数据，或用于管理应用程序本地的数据。 **数据集**表示一组完整的数据，包括相关表、约束和表之间的关系。 下图显示了**数据集**对象模型。  
   
  ![ADO.Net 图](./media/ado-1-bpuedev11.png "ado_1_bpuedev11")  
 DataSet 对象模型  
@@ -20,17 +21,17 @@ DataSet 对象模型
  **数据集**还可以将其内容保存并重新加载为 xml，并将其架构作为 xml 架构定义语言（XSD）架构。 有关详细信息，请参阅[在数据集中使用 XML](./dataset-datatable-dataview/using-xml-in-a-dataset.md)。  
   
 ## <a name="the-datatablecollection"></a>DataTableCollection  
- ADO.NET**数据集**包含由 <xref:System.Data.DataTable> 对象表示的零个或多个表的集合。 <xref:System.Data.DataTableCollection> 包含**数据集中**的所有**DataTable**对象。  
+ ADO.NET**数据集**包含由对象表示的零个或多个表的集合 <xref:System.Data.DataTable> 。 <xref:System.Data.DataTableCollection>包含**数据集中**的所有**DataTable**对象。  
   
- **DataTable**在 <xref:System.Data> 命名空间中定义，表示内存驻留数据的单个表。 其中包含由 <xref:System.Data.DataColumnCollection> 表示的列集合以及由 <xref:System.Data.ConstraintCollection> 表示的约束集合，这两个集合共同定义表的架构。 **DataTable**还包含由 <xref:System.Data.DataRowCollection>表示的行的集合，其中包含表中的数据。 除了其当前状态之前，<xref:System.Data.DataRow> 还会保留其当前版本和初始版本，以标识对行中存储的值的更改。  
+ **DataTable**在命名空间中定义 <xref:System.Data> ，表示内存驻留数据的单个表。 其中包含由 <xref:System.Data.DataColumnCollection> 表示的列集合以及由 <xref:System.Data.ConstraintCollection> 表示的约束集合，这两个集合共同定义表的架构。 **DataTable**还包含由表示的行的集合 <xref:System.Data.DataRowCollection> ，其中包含表中的数据。 除了其当前状态之前，<xref:System.Data.DataRow> 还会保留其当前版本和初始版本，以标识对行中存储的值的更改。  
   
 ## <a name="the-dataview-class"></a>DataView 类  
  您可以利用 <xref:System.Data.DataView> 创建存储在 <xref:System.Data.DataTable>（一种通常在数据绑定应用程序中使用的功能）中的数据的不同视图。 通过使用 <xref:System.Data.DataView>，您可以使用不同的排序顺序公开表中的数据，并且可以按行状态或基于筛选器表达式来筛选数据。 有关详细信息，请参阅[dataview](./dataset-datatable-dataview/dataviews.md)。  
   
 ## <a name="the-datarelationcollection"></a>DataRelationCollection  
- **数据集**在其 <xref:System.Data.DataRelationCollection> 对象中包含关系。 关系由 <xref:System.Data.DataRelation> 对象表示，它将一个**datatable**中的行与另一个**datatable**中的行相关联。 关系类似于可能存在于关系数据库中的主键列和外键列之间的联接路径。 **DataRelation**标识**数据集**的两个表中的匹配列。  
+ **数据集**在其对象中包含关系 <xref:System.Data.DataRelationCollection> 。 由对象表示的关系将 <xref:System.Data.DataRelation> 一个**datatable**中的行与另一个**datatable**中的行相关联。 关系类似于可能存在于关系数据库中的主键列和外键列之间的联接路径。 **DataRelation**标识**数据集**的两个表中的匹配列。  
   
- 关系允许在**数据集中**从一个表导航到另一个表。 **DataRelation**的基本元素为关系的名称、相关表的名称以及每个表中的相关列。 关系可以通过一个表的多个列来生成，方法是将一组 <xref:System.Data.DataColumn> 对象指定为键列。 向 <xref:System.Data.DataRelationCollection>添加关系时，可以根据需要添加**UniqueKeyConstraint**和**ForeignKeyConstraint** ，以在对相关列值进行更改时强制实施完整性约束。  
+ 关系允许在**数据集中**从一个表导航到另一个表。 **DataRelation**的基本元素为关系的名称、相关表的名称以及每个表中的相关列。 关系可以通过一个表的多个列来生成，方法是将一组 <xref:System.Data.DataColumn> 对象指定为键列。 向添加关系时 <xref:System.Data.DataRelationCollection> ，可以根据需要添加**UniqueKeyConstraint**和**ForeignKeyConstraint** ，以在对相关列值进行更改时强制实施完整性约束。  
   
  有关详细信息，请参阅[添加 datarelation](./dataset-datatable-dataview/adding-datarelations.md)。  
   

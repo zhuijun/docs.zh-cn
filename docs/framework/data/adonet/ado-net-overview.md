@@ -1,13 +1,14 @@
 ---
 title: 概述
+description: 阅读 .NET Framework 的 ADO.NET 概述，并阅读有关详细说明和示例的资源。
 ms.date: 03/30/2017
 ms.assetid: ee3bc1d8-11db-4be4-89eb-c708cf04117d
-ms.openlocfilehash: d5dc9cf7081c6876118914a0b95853a5a7ca5e57
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 2ff3b7ad197bfe1e1c12e382f3a59bd470c57a75
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980335"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287150"
 ---
 # <a name="adonet-overview"></a>ADO.NET 概述
 ADO.NET 提供对诸如 SQL Server 和 XML 这样的数据源以及通过 OLE DB 和 ODBC 公开的数据源的一致访问。 共享数据的使用方应用程序可以使用 ADO.NET 连接到这些数据源，并可以检索、处理和更新其中包含的数据。  
