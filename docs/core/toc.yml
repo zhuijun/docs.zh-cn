@@ -112,9 +112,9 @@
         - name: 调试应用
           href: tutorials/debugging-with-visual-studio-code.md
           displayName: 'tutorials, visual studio code, vs code'
-        - name: 创建和发布控制台应用
-          href: tutorials/cli-create-console-app.md
-          displayName: 'tutorials, cli'
+        - name: 发布应用
+          href: tutorials/publishing-with-visual-studio-code.md
+          displayName: 'tutorials, visual studio, vs'
         - name: 创建库并对其进行单元测试 - macOS
           href: tutorials/using-on-macos.md
           displayName: 'tutorials, visual studio code, vs code, cli'

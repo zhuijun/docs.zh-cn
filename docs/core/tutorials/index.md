@@ -4,12 +4,12 @@ description: 请按照教程学习了解 .NET Core 以在 Mac、Linux 和 Window
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: 5a33158bdf02c5ac81379cfcdabb2f79230033e2
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 31f63a2bbafc7f1c8dacea0fa8d3a40f36f69e55
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202181"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241469"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>通过探讨这些教程来学习 .NET Core 和 .NET Core SDK 工具
 
@@ -18,7 +18,6 @@ ms.locfileid: "84202181"
 ## <a name="use-visual-studio"></a>使用 Visual Studio
 
 - [创建控制台应用](with-visual-studio.md)
-- [创建 F# 控制台应用](../../fsharp/get-started/get-started-visual-studio.md)
 - [调试应用](debugging-with-visual-studio.md)
 - [发布应用](publishing-with-visual-studio.md)
 - [创建类库](library-with-visual-studio.md)
@@ -27,17 +26,20 @@ ms.locfileid: "84202181"
 - [安装并使用包](/nuget/quickstart/install-and-use-a-package-in-visual-studio)
 - [创建和发布包](/nuget/quickstart/create-and-publish-a-package-using-visual-studio)
 
+- [创建 F# 控制台应用](../../fsharp/get-started/get-started-visual-studio.md)
+
 ## <a name="use-visual-studio-code"></a>使用 Visual Studio Code
 
 如果要使用 Visual Studio Code 或其他代码编辑器，请选择这些教程。 全都使用 CLI 来处理 .NET Core 开发任务，因此全都可用于任意代码编辑器（调试教程除外）。
 
 - [创建控制台应用](with-visual-studio-code.md)
 - [调试应用](debugging-with-visual-studio-code.md)
-- [创建和发布控制台应用](cli-create-console-app.md)
-- [创建 F# 控制台应用](../../fsharp/get-started/get-started-vscode.md)
+- [发布应用](publishing-with-visual-studio-code.md)
 - [创建库并对其进行单元测试 - macOS](using-on-macos.md)
 - [安装并使用包](/nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli)
 - [创建和发布包](/nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli)
+
+- [创建 F# 控制台应用](../../fsharp/get-started/get-started-vscode.md)
 
 ## <a name="use-visual-studio-for-mac"></a>使用 Visual Studio for Mac
 
