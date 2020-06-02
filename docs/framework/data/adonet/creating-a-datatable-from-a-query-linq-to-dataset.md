@@ -1,23 +1,24 @@
 ---
 title: 从查询创建数据表 (LINQ to DataSet)
+description: 了解如何使用 CopyToDataTable 方法获取查询的结果，并将数据复制到 DataTable，然后可以将这些数据用于数据绑定。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 1b97afeb-03f8-41e2-8eb3-58aff65f7d18
-ms.openlocfilehash: 46e977088cd6eca7842565ae6b258f70ca5920a9
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: 0a7c8f005b90484ef2f9c7e48218bda40533696a
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80111811"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287007"
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>从查询创建数据表 (LINQ to DataSet)
 数据绑定是 <xref:System.Data.DataTable> 对象的一种常用形式。 <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 方法接收查询结果并将数据复制到 <xref:System.Data.DataTable> 中，后者随后会使用该数据进行数据绑定。 在执行数据操作后，新的 <xref:System.Data.DataTable> 将合并回源 <xref:System.Data.DataTable>。  
   
  <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 方法使用下面的过程来通过查询创建 <xref:System.Data.DataTable>：  
   
-1. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 方法克隆源表中的 <xref:System.Data.DataTable>（实现 <xref:System.Data.DataTable> 接口的 <xref:System.Linq.IQueryable%601> 对象）。 源<xref:System.Collections.IEnumerable>通常源自 LINQ 到 DataSet 表达式或方法查询。  
+1. <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 方法克隆源表中的 <xref:System.Data.DataTable>（实现 <xref:System.Data.DataTable> 接口的 <xref:System.Linq.IQueryable%601> 对象）。 <xref:System.Collections.IEnumerable>源通常源自 LINQ to DataSet 表达式或方法查询。  
   
 2. 克隆的 <xref:System.Data.DataTable> 的架构从源表中枚举的第一个 <xref:System.Data.DataRow> 对象的列生成，克隆表的名称是源表的名称后面追加单词“query”。  
   
@@ -25,7 +26,7 @@ ms.locfileid: "80111811"
   
 4. 复制完可查询的输入表中的所有 <xref:System.Data.DataTable> 对象后，将返回克隆的 <xref:System.Data.DataRow>。 如果源序列不包含任何 <xref:System.Data.DataRow> 对象，则该方法将返回一个空 <xref:System.Data.DataTable>。  
   
-调用<xref:System.Data.DataTableExtensions.CopyToDataTable%2A>方法会导致执行绑定到源表的查询。  
+调用 <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 方法会导致绑定到源表的查询执行。  
   
  当 <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 方法在源表的行中遇到空引用或可以为 null 的值类型时，它将用 <xref:System.DBNull.Value> 替换该值。 这样可以在返回的 <xref:System.Data.DataTable> 中正确处理 Null 值。  
   
@@ -36,8 +37,8 @@ ms.locfileid: "80111811"
  [!code-csharp[DP LINQ to DataSet Examples#CopyToDataTable1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#copytodatatable1)]
  [!code-vb[DP LINQ to DataSet Examples#CopyToDataTable1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#copytodatatable1)]  
   
-## <a name="creating-a-custom-copytodatatablet-method"></a>创建自定义复制到数据表\<T>方法  
- 仅在 <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 源上（其中泛型参数 <xref:System.Collections.Generic.IEnumerable%601> 类型为 `T`）执行现有 <xref:System.Data.DataRow> 方法。 虽然这十分有用，但是它并不允许从标量类型的序列、返回匿名类型的查询或执行表联接的查询来创建表。 有关如何实现从一系列标量或匿名`CopyToDataTable`类型加载表的两个自定义方法的示例，请参阅[如何实现 copytoDataTable\<T>通用类型 T 不是 DataRow](implement-copytodatatable-where-type-not-a-datarow.md)的。  
+## <a name="creating-a-custom-copytodatatablet-method"></a>创建自定义 CopyToDataTable \<T> 方法  
+ 仅在 <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 源上（其中泛型参数 <xref:System.Collections.Generic.IEnumerable%601> 类型为 `T`）执行现有 <xref:System.Data.DataRow> 方法。 虽然这十分有用，但是它并不允许从标量类型的序列、返回匿名类型的查询或执行表联接的查询来创建表。 有关如何实现两个自定义方法（ `CopyToDataTable` 这些方法从标量或匿名类型的序列加载表）的示例，请参阅[如何：实现 CopyToDataTable \<T> ，其中泛型类型 T](implement-copytodatatable-where-type-not-a-datarow.md)不是 DataRow。  
   
  本节的示例使用以下自定义类型：  
   

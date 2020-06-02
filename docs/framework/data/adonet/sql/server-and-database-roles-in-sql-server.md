@@ -1,13 +1,14 @@
 ---
 title: SQL Server 中的服务器和数据库角色
+description: 了解固定服务器和固定数据库角色，这些角色具有分配给它们的固定权限集。 SQL Server 使用基于角色的安全性。
 ms.date: 03/30/2017
 ms.assetid: 5482dfdb-e498-4614-8652-b174829eed13
-ms.openlocfilehash: f3e31aa67bfbaa541d8d1eb5b8b61dfd28182c72
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9c3725b0404a5b3c754a53fa56f4a22497afee70
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791781"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286231"
 ---
 # <a name="server-and-database-roles-in-sql-server"></a>SQL Server 中的服务器和数据库角色
 所有版本的 SQL Server 均使用基于角色的安全，它允许您为角色、用户组而不是各个用户分配权限。 固定服务器和固定数据库角色具有分配给它们的一组固定的权限。  
@@ -25,10 +26,10 @@ ms.locfileid: "70791781"
   
  有关 SQL Server 预定义角色的更多信息，请参阅以下资源。  
   
-|资源|描述|  
+|资源|说明|  
 |--------------|-----------------|  
-|[服务器级别角色](/sql/relational-databases/security/authentication-access/server-level-roles)|描述固定服务器角色以及与 SQL Server 相关联的权限。|  
-|[数据库级角色](/sql/relational-databases/security/authentication-access/database-level-roles)|描述固定数据库角色及与其关联的权限|  
+|[服务器级角色](/sql/relational-databases/security/authentication-access/server-level-roles)|描述固定服务器角色以及与 SQL Server 相关联的权限。|  
+|[数据库级别的角色](/sql/relational-databases/security/authentication-access/database-level-roles)|描述固定数据库角色及与其关联的权限|  
   
 ## <a name="database-roles-and-users"></a>数据库角色和用户  
  要使用数据库对象，必须将登录映射到数据库用户帐户。 这样就可以将数据库用户添加到数据库角色，从而继承与这些角色关联的任何权限集。 可以授予所有权限。  
@@ -56,15 +57,15 @@ ms.locfileid: "70791781"
   
  有关 SQL Server 登录名、用户和角色的更多信息，请参阅以下资源。  
   
-|资源|描述|  
+|资源|说明|  
 |--------------|-----------------|  
-|[具有数据库引擎权限的入门](/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions)|包含指向描述主体、角色、凭据、安全对象和权限的主题的链接。|  
-|[措施](/sql/relational-databases/security/authentication-access/principals-database-engine)|描述主体并包含指向描述服务器和数据库角色的主题的链接。|  
+|[数据库引擎权限入门](/sql/relational-databases/security/authentication-access/getting-started-with-database-engine-permissions)|包含指向描述主体、角色、凭据、安全对象和权限的主题的链接。|  
+|[主体](/sql/relational-databases/security/authentication-access/principals-database-engine)|描述主体并包含指向描述服务器和数据库角色的主题的链接。|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [保证 ADO.NET 应用程序的安全](../securing-ado-net-applications.md)
-- [SQL Server 中的应用程序安全性方案](application-security-scenarios-in-sql-server.md)
+- [SQL Server 中的应用程序安全方案](application-security-scenarios-in-sql-server.md)
 - [SQL Server 中的身份验证](authentication-in-sql-server.md)
 - [SQL Server 中的所有权和用户架构分离](ownership-and-user-schema-separation-in-sql-server.md)
 - [SQL Server 中的授权和权限](authorization-and-permissions-in-sql-server.md)

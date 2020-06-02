@@ -1,13 +1,14 @@
 ---
 title: 连接数据源
+deescription: Learn about Connection objects, used to connect to data sources in ADO.NET. The Connection object you choose depends on the type of data source.
 ms.date: 03/30/2017
 ms.assetid: 9abc3f92-1be3-4e1a-b360-762dc689650e
-ms.openlocfilehash: 206a4f741b6bf711b51da794e23f779c2bea6fa0
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: a14fe179cf2fc8714a54e52252c53bd71346cad3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094444"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287072"
 ---
 # <a name="connecting-to-a-data-source-in-adonet"></a>连接到 ADO.NET 中的数据源
 
@@ -27,6 +28,6 @@ ms.locfileid: "77094444"
 - [连接字符串](connection-strings.md)
 - [连接池](connection-pooling.md)
 - [命令和参数](commands-and-parameters.md)
-- [DataAdapters 和 DataReaders](dataadapters-and-datareaders.md)
+- [DataAdapter 和 DataReader](dataadapters-and-datareaders.md)
 - [事务和并发性](transactions-and-concurrency.md)
 - [ADO.NET 概述](ado-net-overview.md)

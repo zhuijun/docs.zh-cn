@@ -1,13 +1,14 @@
 ---
 title: SQL Server 安全性概述
+description: 了解 SQL Server 安全体系结构，以了解哪些特性和功能应对已知的威胁，并预测将来的威胁。
 ms.date: 03/30/2017
 ms.assetid: ae66dd75-5c16-4cc0-9e12-774dd26d3fb9
-ms.openlocfilehash: adc1ce661d49c468de09552ea36a2cd58d6343f1
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c423a408e607c51c048ad08b91122a1fe06e31b2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780937"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286270"
 ---
 # <a name="overview-of-sql-server-security"></a>SQL Server 安全性概述
 具有重叠安全层的全面防御策略是抵御安全威胁的最佳方式。 SQL Server 提供的安全体系结构旨在允许数据库管理员和开发人员创建安全的数据库应用程序并抵御威胁。 通过引入新功能，SQL Server 的每个版本都在先前的 SQL Server 版本基础上得到改善。 但是，安全性并不是现成的。 每个应用程序都具有其独特的安全要求。 开发人员需要了解哪些功能组合最适合抵御已知的威胁，并需要预见未来可能出现的威胁。  
@@ -16,13 +17,13 @@ ms.locfileid: "70780937"
   
 - 身份验证是指通过提交服务器评估的凭据以登录到主体请求访问的 SQL Server 的过程。 身份验证可以确定接受身份验证的用户或进程的标识。  
   
-- 授权是指确定主体可以访问哪些可保护资源以及允许对这些资源执行哪些操作的过程。  
+- 授权是确定主体可以访问哪些安全对象资源以及哪些操作允许用于这些资源的过程。  
   
  本节中的主题介绍 SQL Server 安全基础知识，并提供到相关版本 SQL Server 联机丛书中完整文档的链接。  
   
 ## <a name="in-this-section"></a>本节内容  
  [SQL Server 中的身份验证](authentication-in-sql-server.md)  
- 说明 SQL Server 中的登录名和身份验证并提供到其他资源的链接。  
+ 介绍了 SQL Server 登录和身份验证，并收录了其他资源的链接。  
   
  [SQL Server 中的服务器和数据库角色](server-and-database-roles-in-sql-server.md)  
  说明固定服务器和数据库角色、自定义数据库角色和内置帐户，并提供到其他资源的链接。  
@@ -39,9 +40,9 @@ ms.locfileid: "70780937"
  [SQL Server 中的 CLR 集成安全性](clr-integration-security-in-sql-server.md)  
  提供到 CLR 集成安全资源的链接。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [保证 ADO.NET 应用程序的安全](../securing-ado-net-applications.md)
 - [SQL Server 安全性](sql-server-security.md)
-- [SQL Server 中的应用程序安全性方案](application-security-scenarios-in-sql-server.md)
+- [SQL Server 中的应用程序安全方案](application-security-scenarios-in-sql-server.md)
 - [ADO.NET 概述](../ado-net-overview.md)

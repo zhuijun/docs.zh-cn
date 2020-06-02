@@ -1,13 +1,14 @@
 ---
 title: 在 SQL Server 中使用存储过程管理权限
+description: 了解如何通过使用存储过程或用户定义函数实现访问权限来限制对数据和数据库对象的访问。
 ms.date: 03/30/2017
 ms.assetid: 08fa34e8-2ffa-470d-ba62-e511a5f8558e
-ms.openlocfilehash: 85383c46dd029db825d24d2f67d2dbda00f3bc95
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 890c1c6dd7003f3abd684d6c827b6a77a3a019c1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452378"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286283"
 ---
 # <a name="managing-permissions-with-stored-procedures-in-sql-server"></a>在 SQL Server 中使用存储过程管理权限
 为数据库创建多道防线的一个方法是使用存储过程或用户定义的函数实现所有数据访问。 撤消或拒绝对基础对象（如表）的所有权限，并授予对存储过程的 EXECUTE 权限。 这会为数据和数据库对象有效创建安全外围防线。  
@@ -49,8 +50,8 @@ ms.locfileid: "77452378"
   
 - 除非绝对必要，否则应避免使用动态 SQL。 使用 Transact-SQL QUOTENAME() 函数可分隔字符串值，并对输入字符串中的任何分隔符进行转义。  
   
-## <a name="external-resources"></a>外部資源  
- 有关更多信息，请参见以下资源。  
+## <a name="external-resources"></a>外部资源  
+ 有关详细信息，请参阅以下资源。  
   
 |资源|说明|  
 |--------------|-----------------|  
@@ -60,9 +61,9 @@ ms.locfileid: "77452378"
 
 - [保证 ADO.NET 应用程序的安全](../securing-ado-net-applications.md)
 - [SQL Server 安全性概述](overview-of-sql-server-security.md)
-- [SQL Server 中的应用程序安全性方案](application-security-scenarios-in-sql-server.md)
-- [在 SQL Server 中编写安全的动态 SQL](writing-secure-dynamic-sql-in-sql-server.md)
-- [在 SQL Server 中对存储过程签名](signing-stored-procedures-in-sql-server.md)
+- [SQL Server 中的应用程序安全方案](application-security-scenarios-in-sql-server.md)
+- [在 SQL Server 中编写安全动态 SQL](writing-secure-dynamic-sql-in-sql-server.md)
+- [SQL Server 中的签名存储过程](signing-stored-procedures-in-sql-server.md)
 - [在 SQL Server 中使用模拟自定义权限](customizing-permissions-with-impersonation-in-sql-server.md)
 - [使用存储过程修改数据](../modifying-data-with-stored-procedures.md)
 - [ADO.NET 概述](../ado-net-overview.md)

@@ -1,22 +1,23 @@
 ---
 title: SQL Server 中的快照隔离
+description: 阅读 SQL Server 中快照隔离和行版本控制的概述，了解如何管理隔离级别的并发。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 43ae5dd3-50f5-43a8-8d01-e37a61664176
-ms.openlocfilehash: 8313ffc8eef70c1e5efc24b09a160edb7cec1595
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7fa769448dd922925a5eccf4c85bd1840155df68
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174259"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286239"
 ---
 # <a name="snapshot-isolation-in-sql-server"></a>SQL Server 中的快照隔离
 快照隔离增强了 OLTP 应用程序的并发性。  
   
 ## <a name="understanding-snapshot-isolation-and-row-versioning"></a>了解快照隔离和行版本控制  
- 启用快照隔离后，必须维护每个事务的更新行版本。  在 SQL Server 2019 之前，这些版本存储在**tempdb**中。 SQL Server 2019 引入了一项新功能，加速数据库恢复 （ADR），它需要自己的一组行版本。  因此，从 SQL Server 2019 起，如果未启用 ADR，则行版本将一如既往保存在**tempdb**中。  如果启用了 ADR，则所有行版本（都与快照隔离和 ADR 相关）都保存在 ADR 的持久版本存储 （PVS） 中，该版本位于用户指定的文件组中的用户数据库中。 唯一的事务序列号标识每个事务，并为每个行版本记录这些唯一的编号。 事务处理的最新行版本在事务序列号之前有一个序列号。 事务将忽略在事务开始后创建的新行版本。  
+ 启用快照隔离后，必须维护每个事务的更新行版本。  在 SQL Server 2019 之前，这些版本存储在**tempdb**中。 SQL Server 2019 引入了一项新功能，即加速数据库恢复（ADR），该功能需要自己的行版本集。  因此，在 SQL Server 2019 的情况下，如果未启用 ADR，则行版本将始终保留在**tempdb**中。  如果启用了 ADR，则与快照隔离和 ADR 相关的所有行版本都将保留在 ADR 的持久性版本存储区（PVS）中，该存储区位于用户指定的文件组的用户数据库中。 唯一的事务序列号标识每个事务，并为每个行版本记录这些唯一的编号。 事务处理的最新行版本在事务序列号之前有一个序列号。 事务将忽略在事务开始后创建的新行版本。  
   
  术语“快照”反映的事实是，事务中的所有查询都能看到数据库的相同版本或快照，这取决于事务开始时数据库的状态。 不会在快照事务中的基础数据行或数据页上获取锁，这样可以执行其他事务，而不会被以前未完成的事务所阻止。 修改数据的事务不会阻止读取数据的事务，并且读取数据的事务不会阻止写入数据的事务，因为在 SQL Server 中，它们通常会在默认的 READ COMMITTED 隔离级别下执行这些操作。 这种不会产生阻止的行为也大大降低了复杂事务出现死锁的可能性。  
   
@@ -97,7 +98,7 @@ SqlTransaction sqlTran =
   
 - 打开第二个连接，并使用 SNAPSHOT 隔离级别开始第二个事务，读取 TestSnapshot 表中的数据****。 由于启用了快照隔离，因此此事务可以读取 sqlTransaction1 开始之前已存在的数据。  
   
-- 打开第三个连接，并使用 READ COMMITTED 隔离级别启动一个事务，尝试读取表中的数据。 在这种情况下，代码无法读取数据，因为它无法读取第一个事务中放在表上的锁并超时。如果使用 REPEATABLE 读取和 SERIALIZABLE 隔离级别，则也会出现相同的结果，因为这些隔离级别也无法读取第一个事务中放置的锁。  
+- 打开第三个连接，并使用 READ COMMITTED 隔离级别启动一个事务，尝试读取表中的数据。 在这种情况下，代码无法读取数据，因为它不能读取在第一个事务的表中放置的锁和超时。如果使用了可重复读取和可序列化隔离级别，则会出现相同的结果，因为这些隔离级别也不能读取在第一个事务中放置的锁之后。  
   
 - 打开第四个连接，并使用 READ UNCOMMITTED 隔离级别启动一个事务，该隔离级别对 sqlTransaction1 中未提交的值执行脏读。 如果未提交第一个事务，则此值可能在数据库中实际上不存在。  
   

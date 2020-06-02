@@ -13,12 +13,12 @@ helpviewer_keywords:
 - time zones [.NET Framework], type options
 - DateTime structure
 ms.assetid: 07f17aad-3571-4014-9ef3-b695a86f3800
-ms.openlocfilehash: 5425d94daf8ab023bef4a1a68f06d5c276499825
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5091d7104f400ae186d1a0ca94df9d2722f95b20
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132582"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286140"
 ---
 # <a name="choosing-between-datetime-datetimeoffset-timespan-and-timezoneinfo"></a>在 DateTime、DateTimeOffset、TimeSpan 和 TimeZoneInfo 之间进行选择
 
@@ -38,14 +38,14 @@ ms.locfileid: "73132582"
 
 - 执行日期和时间算法，可能致使唯一、明确标识单个时间点。
 
-.NET 包含 <xref:System.DateTime>、<xref:System.DateTimeOffset>、<xref:System.TimeSpan>和 <xref:System.TimeZoneInfo> 类型，所有这些类型都可用于生成处理日期和时间的应用程序。
+.Net 包括 <xref:System.DateTime> 、 <xref:System.DateTimeOffset> 、 <xref:System.TimeSpan> 和 <xref:System.TimeZoneInfo> 类型，所有这些类型都可用于生成处理日期和时间的应用程序。
 
 > [!NOTE]
-> 本主题不讨论 <xref:System.TimeZone>，因为其功能几乎完全融入 <xref:System.TimeZoneInfo> 类中。 请尽可能使用 <xref:System.TimeZoneInfo> 类，而不是 <xref:System.TimeZone> 类。
+> 本主题不讨论， <xref:System.TimeZone> 因为其功能几乎完全融入在 <xref:System.TimeZoneInfo> 类中。 请尽可能使用类， <xref:System.TimeZoneInfo> 而不使用 <xref:System.TimeZone> 类。
 
 ## <a name="the-datetime-structure"></a>DateTime 结构
 
-<xref:System.DateTime> 值定义特定日期和时间。 它包含 <xref:System.DateTime.Kind%2A> 属性，该属性提供有关日期和时间所属时区的有限信息。 由 <xref:System.DateTimeKind> 属性返回的 <xref:System.DateTime.Kind%2A> 值指示 <xref:System.DateTime> 值是表示本地时间 (<xref:System.DateTimeKind.Local?displayProperty=nameWithType>)、协调世界时 (UTC) (<xref:System.DateTimeKind.Utc?displayProperty=nameWithType>) 还是未指定的时间 (<xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>)。
+<xref:System.DateTime> 值定义特定日期和时间。 它包括一个 <xref:System.DateTime.Kind%2A> 属性，该属性提供有关日期和时间所属时区的有限信息。 由 <xref:System.DateTimeKind> 属性返回的 <xref:System.DateTime.Kind%2A> 值指示 <xref:System.DateTime> 值是表示本地时间 (<xref:System.DateTimeKind.Local?displayProperty=nameWithType>)、协调世界时 (UTC) (<xref:System.DateTimeKind.Utc?displayProperty=nameWithType>) 还是未指定的时间 (<xref:System.DateTimeKind.Unspecified?displayProperty=nameWithType>)。
 
 <xref:System.DateTime> 结构适用于执行以下操作的应用程序：
 
@@ -96,9 +96,9 @@ ms.locfileid: "73132582"
 
 - 反映两个日期和时间值之间的时间间隔。 例如，两个 <xref:System.DateTime> 值相减将返回 <xref:System.TimeSpan> 值。
 
-- 测量运行时间。 例如，<xref:System.Diagnostics.Stopwatch.Elapsed%2A?displayProperty=nameWithType> 属性返回一个 <xref:System.TimeSpan> 值，该值反映自调用开始测量运行时间的其中一种 <xref:System.Diagnostics.Stopwatch> 方法以来所经过的时间间隔。
+- 测量运行时间。 例如， <xref:System.Diagnostics.Stopwatch.Elapsed%2A?displayProperty=nameWithType> 属性返回一个 <xref:System.TimeSpan> 值，该值反映自调用 <xref:System.Diagnostics.Stopwatch> 开始测量运行时间的其中一个方法以来经过的时间间隔。
 
-如果值反映不引用特定日期的时间，还可以使用 <xref:System.TimeSpan> 值作为 <xref:System.DateTime> 值的替代值。 此用法与 <xref:System.DateTime.TimeOfDay%2A?displayProperty=nameWithType> 和 <xref:System.DateTimeOffset.TimeOfDay%2A?displayProperty=nameWithType> 属性相似，后者返回一个 <xref:System.TimeSpan> 值，该值表示不引用日期的时间。 例如， <xref:System.TimeSpan> 结构可用于反映商店每天的开张或打烊时间，还可用来表示任何常规事件发生的时间。
+值 <xref:System.TimeSpan> 还可用于替换值（ <xref:System.DateTime> 当该值反映不引用特定日期的时间）。 此用法与 <xref:System.DateTime.TimeOfDay%2A?displayProperty=nameWithType> 和 <xref:System.DateTimeOffset.TimeOfDay%2A?displayProperty=nameWithType> 属性类似，后者返回一个 <xref:System.TimeSpan> 值，该值表示不引用日期的时间。 例如， <xref:System.TimeSpan> 结构可用于反映商店每天的开张或打烊时间，还可用来表示任何常规事件发生的时间。
 
 以下示例定义了 `StoreInfo` 结构，其中包含表示商店开张或打烊时间的 <xref:System.TimeSpan> 对象，以及表示商店所在时区的 <xref:System.TimeZoneInfo> 对象。 此结构还包含两个方法（`IsOpenNow` 和 `IsOpenAt`），用于指示假定用户处于本地时区时其所指定的时间商店是否开张。
 
@@ -118,6 +118,6 @@ ms.locfileid: "73132582"
 
 仅当日期和时间对象实例化时其值所属的时区已知，才可使用 .NET 中的时区支持。 这通情况并非如此，尤其是在 Web 或网络应用程序中。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [日期、时间和时区](../../../docs/standard/datetime/index.md)
+- [日期、时间和时区](index.md)

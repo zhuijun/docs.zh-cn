@@ -1,13 +1,14 @@
 ---
 title: SQL Server 中的授权和权限
+description: 了解如何显式授予权限，使用户可以在 SQL Server 中通过 ADO.NET 访问你创建的数据库对象。
 ms.date: 03/30/2017
 ms.assetid: d340405c-91f4-4837-a3cc-a238ee89888a
-ms.openlocfilehash: c9b041a078494cd29d6cab5297728d233dafa236
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: eb01e29b36da5e1793b9176301a968a42115d19c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782596"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286528"
 ---
 # <a name="authorization-and-permissions-in-sql-server"></a>SQL Server 中的授权和权限
 在创建数据库对象时，必须显式授予权限以使用户可以访问它们。 每个可保护对象都具有可使用权限语句授予主体的权限。  
@@ -31,7 +32,7 @@ ms.locfileid: "70782596"
 ## <a name="permission-statements"></a>权限语句  
  下表说明了三个 Transact-SQL 权限语句。  
   
-|权限语句|描述|  
+|权限语句|说明|  
 |--------------------------|-----------------|  
 |GRANT|授予权限。|  
 |REVOKE|撤消权限。 这是新对象的默认状态。 从用户或角色撤消的权限仍可以从主体分配到的其他组或角色继承。|  
@@ -52,16 +53,16 @@ ms.locfileid: "70782596"
 > 所有权链接不适用于动态 SQL 语句的情况。 若要调用执行 SQL 语句的过程，必须向调用方授予对基础表的权限，这会使您的应用程序容易受到 SQL 注入攻击。 SQL Server 提供了新的机制（如模拟和使用证书对模块进行签名），这些机制无需授予基础表的权限。 它们还可与 CLR 存储过程一起使用。  
   
 ## <a name="external-resources"></a>外部资源  
- 有关更多信息，请参见以下资源。  
+ 有关详细信息，请参阅以下资源。  
   
-|资源|描述|  
+|资源|说明|  
 |--------------|-----------------|  
 |[权限](/sql/relational-databases/security/permissions-database-engine)|包含说明权限层次结构、目录视图以及固定服务器角色权限和数据库角色权限的主题。|
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [保证 ADO.NET 应用程序的安全](../securing-ado-net-applications.md)
-- [SQL Server 中的应用程序安全性方案](application-security-scenarios-in-sql-server.md)
+- [SQL Server 中的应用程序安全方案](application-security-scenarios-in-sql-server.md)
 - [SQL Server 中的身份验证](authentication-in-sql-server.md)
 - [SQL Server 中的服务器和数据库角色](server-and-database-roles-in-sql-server.md)
 - [SQL Server 中的所有权和用户架构分离](ownership-and-user-schema-separation-in-sql-server.md)

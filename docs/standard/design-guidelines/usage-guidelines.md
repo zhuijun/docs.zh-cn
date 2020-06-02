@@ -5,21 +5,21 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - class library design guidelines [.NET Framework], usage guidelines
 ms.assetid: 42215ffa-a099-4a26-b14e-fb2bdb6f95b7
-ms.openlocfilehash: 57f6600f60e99c72b72c9f82856dc9eb631a9d4b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 03eaba3e52cb25619f65637efb4f414c22770440
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708992"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291339"
 ---
 # <a name="usage-guidelines"></a>使用准则
 
-本部分包含在可公开访问的 API 中使用常见类型的指南。 其中涉及如何直接使用内置框架类型（例如，序列化属性）和重载常用运算符。
+本部分包含有关在可公开访问的 Api 中使用常见类型的准则。 它处理内置框架类型（如序列化属性）和重载常见运算符的直接使用。
   
-<xref:System.IDisposable?displayProperty=nameWithType> 接口不在此部分进行介绍，但在 [Dispose 模式](../garbage-collection/implementing-dispose.md) 部分进行了讨论。
+<xref:System.IDisposable?displayProperty=nameWithType>此部分未介绍接口，但会在 " [Dispose 模式](../garbage-collection/implementing-dispose.md)" 部分中讨论。
 
 > [!NOTE]
-> 有关其他常见内置 .NET Framework 类型的指南和其他信息，请参阅以下内容的参考主题：<xref:System.DateTime?displayProperty=nameWithType>、<xref:System.DateTimeOffset?displayProperty=nameWithType>、<xref:System.ICloneable?displayProperty=nameWithType>、<xref:System.IComparable%601?displayProperty=nameWithType>、<xref:System.IEquatable%601?displayProperty=nameWithType>、<xref:System.Nullable%601?displayProperty=nameWithType>、<xref:System.Object?displayProperty=nameWithType>、<xref:System.Uri?displayProperty=nameWithType>。
+> 有关其他通用内置 .NET Framework 类型的指南和其他信息，请参阅以下主题： <xref:System.DateTime?displayProperty=nameWithType> 、 <xref:System.DateTimeOffset?displayProperty=nameWithType> 、 <xref:System.ICloneable?displayProperty=nameWithType> 、 <xref:System.IComparable%601?displayProperty=nameWithType> 、 <xref:System.IEquatable%601?displayProperty=nameWithType> 、 <xref:System.Nullable%601?displayProperty=nameWithType> <xref:System.Object?displayProperty=nameWithType> <xref:System.Uri?displayProperty=nameWithType> 、和。
 
 ## <a name="in-this-section"></a>本节内容
 
@@ -27,13 +27,13 @@ ms.locfileid: "75708992"
 [特性](attributes.md)  
 [集合](guidelines-for-collections.md)  
 [序列化](serialization.md)  
-[System.Xml 使用情况](system-xml-usage.md)  
+[System.web 使用](system-xml-usage.md)  
 [相等运算符](equality-operators.md)  
 
 *部分©2005，2009 Microsoft Corporation。保留所有权利。*
 
-*在 Pearson Education, Inc. 授权下，由 Addison-Wesley Professional 作为 Microsoft Windows 开发系列的一部分再版自 [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)（Framework 设计准则：可重用 .NET 库的约定、惯例和模式第 2 版），由 Krzysztof Cwalina 和 Brad Abrams 发布于 2008 年 10 月 22 日。
+*皮尔逊教育，Inc. 的经许可重印权限[：从框架设计指导原则：用于可重复使用的 .Net 库的约定、惯例和模式、第2版](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)By Krzysztof Cwalina 和 Brad Abrams，发布十月22，2008，作为 Microsoft Windows 开发系列的一部分。*
   
 ## <a name="see-also"></a>另请参阅
 
-- [框架设计指南](../../../docs/standard/design-guidelines/index.md)
+- [框架设计准则](index.md)

@@ -1,16 +1,17 @@
 ---
 title: 连接字符串和配置文件
+description: 了解如何在应用程序配置文件中存储 ADO.NET 应用程序的连接字符串，作为安全和维护的最佳方案。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: 8862aa34c2d2677f5bc3e737c01cc61036c243e1
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 572c5be1bd639e8d4b38935f5be49782f0b0316e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345063"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287033"
 ---
 # <a name="connection-strings-and-configuration-files"></a>连接字符串和配置文件
 
@@ -65,7 +66,7 @@ ms.locfileid: "80345063"
  .NET Framework 2.0 在 <xref:System.Configuration> 命名空间中引入了新类，以简化在运行时从配置文件检索连接字符串的操作。 您可以以编程方式按名称或提供程序名称检索连接字符串。  
   
 > [!NOTE]
-> machine.config 文件还包含 connectionStrings 节，此节包含 Visual Studio 使用的连接字符串********。 当从 Windows 应用程序中**的 app.config**文件按提供程序名称检索连接字符串时，首先加载**计算机中的**连接字符串，然后从**app.config**中加载条目。**在连接字符串**元素后立即添加**清除**，从内存中的数据结构中删除所有继承的引用，以便仅考虑本地**app.config**文件中定义的连接字符串。  
+> machine.config 文件还包含 connectionStrings 节，此节包含 Visual Studio 使用的连接字符串********。 在从 Windows 应用程序中的**app.config**文件中检索按提供程序名称的连接字符串时，将先加载**machine.config**中的连接字符串，然后加载**app.config**中的条目。如果在**connectionStrings**元素后立即添加**clear** ，则会从内存中的数据结构中删除所有继承的引用，以便只考虑本地**app.config**文件中定义的连接字符串。  
   
 ### <a name="working-with-the-configuration-classes"></a>使用配置类  
  从 .NET Framework 2.0 开始，当使用本地计算机上的配置文件时，将使用 <xref:System.Configuration.ConfigurationManager>，从而替换已不推荐使用的 <xref:System.Configuration.ConfigurationSettings>。 <xref:System.Web.Configuration.WebConfigurationManager> 与 ASP.NET 配置文件一起使用。 该管理器可以使用 Web 服务器上的配置文件，并允许以编程方式访问配置文件节（如 system.web）****。  
@@ -75,14 +76,14 @@ ms.locfileid: "80345063"
   
  您可以使用 <xref:System.Configuration.ConnectionStringSettingsCollection> 从应用程序配置文件中检索连接字符串。 它包含 <xref:System.Configuration.ConnectionStringSettings> 对象的集合，每个对象表示 connectionStrings 节中的一项****。 它的属性 (Property) 映射为连接字符串属性 (Attribute)，从而允许您通过指定名称或提供程序名称来检索连接字符串。  
   
-|properties|描述|  
+|properties|说明|  
 |--------------|-----------------|  
 |<xref:System.Configuration.ConnectionStringSettings.Name%2A>|连接字符串的名称。 映射到 name 属性****。|  
 |<xref:System.Configuration.ConnectionStringSettings.ProviderName%2A>|完全限定提供程序名。 映射到 providerName 属性****。|  
 |<xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A>|连接字符串。 映射到 connectionString 属性****。|  
   
 ### <a name="example-listing-all-connection-strings"></a>示例：列出所有连接字符串  
- 此示例<xref:System.Configuration.ConnectionStringSettingsCollection>遍达 和 在控制台窗口中显示<xref:System.Configuration.ConnectionStringSettings.Name%2A?displayProperty=nameWithType> <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A?displayProperty=nameWithType>，<xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A?displayProperty=nameWithType>和 属性。  
+ 此示例将循环访问， <xref:System.Configuration.ConnectionStringSettingsCollection> 并 <xref:System.Configuration.ConnectionStringSettings.Name%2A?displayProperty=nameWithType> <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A?displayProperty=nameWithType> <xref:System.Configuration.ConnectionStringSettings.ConnectionString%2A?displayProperty=nameWithType> 在控制台窗口中显示、和属性。  
   
 > [!NOTE]
 > System.Configuration.dll 并不包含在所有项目类型中，您可能需要对其设置引用才能使用配置类。 特定应用程序配置文件的名称和位置因应用程序类型和宿主进程的不同而有所不同。  
@@ -143,7 +144,7 @@ ms.locfileid: "80345063"
  这两种提供程序都可以对数据进行强加密。 但是，如果计划在多台服务器（如网络场）上使用相同的加密配置文件，则只有通过 <xref:System.Configuration.RsaProtectedConfigurationProvider> 才能导出用于加密数据的加密密钥，并将其导入其他服务器。 有关详细信息，请参阅[导入和导出受保护配置的 RSA 密钥容器](https://docs.microsoft.com/previous-versions/aspnet/yxw286t2(v=vs.100))。  
   
 ### <a name="using-the-configuration-classes"></a>使用配置类  
- <xref:System.Configuration> 命名空间提供以编程方式使用配置设置的类。 <xref:System.Configuration.ConfigurationManager> 类可提供对计算机、应用程序和用户配置文件的访问。 如果要创建ASP.NET应用程序，则可以使用<xref:System.Web.Configuration.WebConfigurationManager>类，它提供了相同的功能，同时还允许您访问ASP.NET应用程序（如**system.web>\<** 中找到的设置）所特有的设置。  
+ <xref:System.Configuration> 命名空间提供以编程方式使用配置设置的类。 <xref:System.Configuration.ConfigurationManager> 类可提供对计算机、应用程序和用户配置文件的访问。 如果创建的是 ASP.NET 应用程序，则可以使用 <xref:System.Web.Configuration.WebConfigurationManager> 类，该类提供相同的功能，同时还允许访问 ASP.NET 应用程序特有的设置，如中所述的设置 **\<system.web>** 。  
   
 > [!NOTE]
 > <xref:System.Security.Cryptography> 命名空间包含提供用于加密和解密数据的其他选项的类。 如果需要采用在使用受保护配置时不可用的加密服务，请使用这些类。 一些类是非托管 Microsoft CryptoAPI 的包装类，而其他类则是纯托管实现。 有关更多信息，请参阅[加密服务](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/93bskf9z(v=vs.90))。  
@@ -168,13 +169,13 @@ ms.locfileid: "80345063"
  [!code-csharp[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/VB/source.vb#1)]  
   
- 有关保护ASP.NET应用程序的详细信息，请参阅[保护ASP.NET网站](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100))。  
+ 有关保护 ASP.NET 应用程序安全的详细信息，请参阅[保护 ASP.NET 网站的安全](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100))。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [连接字符串生成器](connection-string-builders.md)
 - [保护连接信息](protecting-connection-information.md)
 - [使用配置类](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms228063(v=vs.90))
-- [配置应用](../../configure-apps/index.md)
+- [配置应用程序](../../configure-apps/index.md)
 - [ASP.NET 网站管理](https://docs.microsoft.com/previous-versions/aspnet/6hy1xzbw(v=vs.100))
 - [ADO.NET 概述](ado-net-overview.md)

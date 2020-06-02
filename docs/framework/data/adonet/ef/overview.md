@@ -1,19 +1,20 @@
 ---
 title: 实体框架概述
+description: ADO.NET 中的实体框架支持开发面向数据的应用程序，这些应用程序在比传统应用程序更高的抽象级别上工作。
 ms.date: 09/17/2018
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
-ms.openlocfilehash: ff0c85da89c44834620831c041df3ccdcaf8282f
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 1f1ab5d44c2d6c7e1f54a761dbc706d537664ef6
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452521"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286800"
 ---
 # <a name="entity-framework-overview"></a>实体框架概述
 
 实体框架是 ADO.NET 中的一组技术，支持开发面向数据的软件应用程序。 面向数据的应用程序的架构师和开发人员曾为实现两个迥然不同的目标费尽心机： 他们必须为要解决的业务问题的实体、关系和逻辑构建模型，还必须处理用于存储和检索数据的数据引擎。 数据可能跨多个各有不同协议的存储系统；甚至使用单个存储系统的应用程序也必须在存储系统的需求与编写高效且容易维护的应用程序代码之间取得平衡。
 
-实体框架使开发人员能够以特定于域的对象和属性（如客户和客户地址）的形式处理数据，而无需考虑这些数据所用的基础数据库表和列。存放. 借助 Entity Framework，开发人员在处理数据时能够以更高的抽象级别工作，并且能够以相比传统应用程序更少的代码创建和维护面向数据的应用程序。 由于实体框架是 .NET Framework 的组件，因此实体框架应用程序可以在安装了版本 3.5 SP1 的 .NET Framework 的任何计算机上运行。
+实体框架使开发人员能够以特定于域的对象和属性（如客户和客户地址）的形式处理数据，而不必考虑存储此数据的基础数据库表和列。 借助实体框架，开发人员在处理数据时能够以更高的抽象级别工作，并且能够以相比传统应用程序更少的代码创建和维护面向数据的应用程序。 由于实体框架是 .NET Framework 的组件，因此实体框架应用程序可以在安装了版本 3.5 SP1 的 .NET Framework 的任何计算机上运行。
 
 ## <a name="give-life-to-models"></a>为模型指定生存期
  构建应用程序或服务时常用的一种长期存在的设计方法是将应用程序或服务分为三部分：域模型、逻辑模型和物理模型。 域模型定义要建模的系统中的实体和关系。 关系数据库的逻辑模型通过外键约束将实体和关系规范化到表中。 物理模型通过指定分区和索引等存储详细信息实现特定数据引擎的功能。
@@ -47,19 +48,19 @@ ms.locfileid: "77452521"
 
 - LINQ to Entities。 提供语言集成查询 (LINQ) 支持，用于查询在概念模型中定义的实体类型。 有关详细信息，请参阅[LINQ to Entities](./language-reference/linq-to-entities.md)。
 
-- [!INCLUDE[esql](../../../../../includes/esql-md.md)]。 一种独立于存储的 SQL 方言，可直接处理概念模型中的实体并支持实体数据模型的概念。 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 同时用于对象查询和使用 EntityClient 提供程序执行的查询。 有关详细信息，请参阅[实体 SQL 概述](./language-reference/entity-sql-overview.md)。
+- [!INCLUDE[esql](../../../../../includes/esql-md.md)]. 一种独立于存储的 SQL 方言，可直接处理概念模型中的实体并支持实体数据模型的概念。 [!INCLUDE[esql](../../../../../includes/esql-md.md)]同时用于对象查询和使用 EntityClient 提供程序执行的查询。 有关详细信息，请参阅[实体 SQL 概述](./language-reference/entity-sql-overview.md)。
 
-实体框架包括 EntityClient 数据提供程序。 此提供程序管理连接，将实体查询转换为特定于数据源的查询，并返回实体框架用于将实体数据具体化为对象的数据读取器。 当不需要对象具体化时，通过使应用程序执行 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 查询并使用返回的只读数据读取器，还可以像标准 ADO.NET 数据提供程序一样使用 EntityClient 提供程序。 有关详细信息，请参阅[实体框架的 EntityClient Provider](entityclient-provider-for-the-entity-framework.md)。
+实体框架包括 EntityClient 数据提供程序。 此提供程序管理连接，将实体查询转换为特定于数据源的查询，并返回实体框架用于将实体数据具体化为对象的数据读取器。 当不需要对象具体化时，通过使应用程序执行 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 查询并使用返回的只读数据读取器，还可以像标准 ADO.NET 数据提供程序一样使用 EntityClient 提供程序。 有关详细信息，请参阅 [用于 Entity Framework 的 EntityClient 提供程序](entityclient-provider-for-the-entity-framework.md)。
 
 下图演示用于访问数据的 Entity Framework 体系结构：
 
-![实体框架体系结构图](./media/wd-efarchdiagram.gif "wd_EFArchDiagram")
+![实体框架的体系结构关系图](./media/wd-efarchdiagram.gif "wd_EFArchDiagram")
 
 实体数据模型工具可以生成派生自 `System.Data.Objects.ObjectContext` 或 `System.Data.Entity.DbContext` 的类，该类表示概念模型中的实体容器。 此对象上下文提供跟踪更改以及管理标识、并发和关系的功能。 此类还公开将插入、更新和删除操作写入数据源的 `SaveChanges` 方法。 与查询类似，这些更改是由系统自动生成的命令或由开发人员指定的存储过程执行的。
 
 ## <a name="data-providers"></a>数据提供程序
 
-`EntityClient` 提供程序通过在概念实体和关系方面访问数据来扩展 ADO.NET 提供程序模型。 它执行使用 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 的查询。 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 提供使 `EntityClient` 能与数据库进行通信的基础查询语言。 有关详细信息，请参阅[实体框架的 EntityClient Provider](entityclient-provider-for-the-entity-framework.md)。
+`EntityClient`提供程序通过在概念性实体和关系方面访问数据来扩展 ADO.NET 提供程序模型。 它执行使用 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 的查询。 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 提供使 `EntityClient` 能与数据库进行通信的基础查询语言。 有关详细信息，请参阅 [用于 Entity Framework 的 EntityClient 提供程序](entityclient-provider-for-the-entity-framework.md)。
 
 实体框架包括支持规范命令树的更新的 SqlClient 数据提供程序。 有关详细信息，请参阅[SqlClient for the 实体框架](sqlclient-for-the-entity-framework.md)。
 
@@ -67,7 +68,7 @@ ms.locfileid: "77452521"
 
 与实体框架运行时一起，Visual Studio 包含映射和建模工具。 有关详细信息，请参阅[建模和映射](modeling-and-mapping.md)。
 
-## <a name="learn-more"></a>了解更多信息
+## <a name="learn-more"></a>了解更多
 
 若要了解有关实体框架的详细信息，请参阅：
 

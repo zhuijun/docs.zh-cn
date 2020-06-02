@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Portable Class Library [.NET Framework], and MVVM
 - MVVM, and Portable Class Library
 ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
-ms.openlocfilehash: f5312177b9f437d9b5474d38fca80db6fc45245b
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: ff34b295ba443088115d470d8ade0c986ac1d856
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77123670"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288844"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>将可移植类库与模型-视图-视图模型配合使用
-您可以使用 .NET Framework[可移植类库](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)来实现模型-视图-视图模型（MVVM）模式并跨多个平台共享程序集。
+您可以使用 .NET Framework[可移植类库](cross-platform-development-with-the-portable-class-library.md)来实现模型-视图-视图模型（MVVM）模式并跨多个平台共享程序集。
 
 [!INCLUDE[standard](../../../includes/pcl-to-standard.md)]
 
@@ -50,14 +50,14 @@ ms.locfileid: "77123670"
 
 - <xref:System.Windows.Input.ICommand?displayProperty=nameWithType> 类
 
-- <xref:System.ComponentModel.DataAnnotations?displayProperty=nameWithType> 命名空间中的所有类
+- 命名空间中的所有类 <xref:System.ComponentModel.DataAnnotations?displayProperty=nameWithType>
 
 ## <a name="implementing-mvvm"></a>实现 MVVM
  若要实现 MVVM，通常会在可移植类库项目中同时创建模型和视图模型，因为可移植类库项目无法引用不可移植的项目。 模型和视图模型可以位于同一个项目中，也可以位于单独的项目中。 如果使用单独的项目，请从视图模型项目向模型项目添加引用。
 
  编译模型和视图模型项目后，在包含该视图的应用程序中引用这些程序集。 如果视图仅与视图模型交互，则只需引用包含该视图模型的程序集。
 
-### <a name="model"></a>模型
+### <a name="model"></a>型号
  下面的示例演示可在可移植类库项目中驻留的简化模型类。
 
  [!code-csharp[PortableClassLibraryMVVM#1](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/customer.cs#1)]
@@ -74,7 +74,7 @@ ms.locfileid: "77123670"
  [!code-csharp[PortableClassLibraryMVVM#3](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/viewmodelbase.cs#3)]
  [!code-vb[PortableClassLibraryMVVM#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/viewmodelbase.vb#3)]
 
- <xref:System.Windows.Input.ICommand> 接口的实现经常与 MVVM 模式一起使用。 下面的示例演示 <xref:System.Windows.Input.ICommand> 接口的实现。
+ 接口的实现 <xref:System.Windows.Input.ICommand> 经常与 MVVM 模式一起使用。 下面的示例演示 <xref:System.Windows.Input.ICommand> 接口的实现。
 
  [!code-csharp[PortableClassLibraryMVVM#4](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/relaycommand.cs#4)]
  [!code-vb[PortableClassLibraryMVVM#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/relaycommand.vb#4)]
@@ -84,11 +84,11 @@ ms.locfileid: "77123670"
  [!code-csharp[PortableClassLibraryMVVM#5](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainpageviewmodel.cs#5)]
  [!code-vb[PortableClassLibraryMVVM#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerviewmodel.vb#5)]  
   
-### <a name="view"></a>视图  
+### <a name="view"></a>查看  
  通过 .NET Framework 4.5 应用、Windows 8.x 应用商店应用、基于 Silverlight 的应用或 Windows Phone 7.5 应用，你可以引用包含模型和视图模型项目的程序集。  然后创建与视图模型交互的视图。 下面的示例演示了一个简化的 Windows Presentation Foundation （WPF）应用，该应用从视图模型检索和更新数据。 可以在 Silverlight、Windows Phone 或 Windows 8.x 应用商店应用中创建类似视图。  
   
  [!code-xaml[PortableClassLibraryMVVM#6](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainwindow.xaml#6)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [可移植类库](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md)
+- [可移植类库](cross-platform-development-with-the-portable-class-library.md)

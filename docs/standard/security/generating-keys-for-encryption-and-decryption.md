@@ -14,12 +14,12 @@ helpviewer_keywords:
 - asymmetric keys [.NET Framework]
 - cryptography [.NET Framework], keys
 ms.assetid: c197dfc9-a453-4226-898d-37a16638056e
-ms.openlocfilehash: 88d8dac83c3d5bf267ed90ffb313cd9e24b42dea
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 992ac30310d138e04b8408497c5e49166a356ab4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706183"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291534"
 ---
 # <a name="generating-keys-for-encryption-and-decryption"></a>生成加密和解密的密钥
 创建和管理密钥是加密过程的一个重要部分。 对称算法要求创建密钥和初始化向量 (IV)。 密钥必须对不应解密数据的任何人保密。 IV 并不是一定要保密，但应定期更改。 非对称算法要求创建公钥和私钥。 公钥可以公开给任何人，而私钥必须只有将解密用公钥加密的数据的参与方知道。 本节介绍如何生成和管理对称和非对称算法的密钥。  
@@ -27,7 +27,7 @@ ms.locfileid: "75706183"
 ## <a name="symmetric-keys"></a>对称密钥  
  .NET Framework 所提供的对称加密类需要一个密钥和新的初始化向量 (IV) 来加密和解密数据。 每当使用无参数构造函数创建一个托管对称加密类的新实例时，都会自动创建新的密钥和 IV。 获许解密你的数据的任何人都必须具有相同的密钥和 IV 并使用相同的算法。 通常情况下，应为每个会话创建一个新的密钥和 IV，且不应为了在稍后会话中使用而存储该密钥和 IV。  
   
- 为了将对称密钥和 IV 传送给远程方，通常使用不对称加密来加密对称密钥。 通过不安全的网络发送密钥而不对其进行加密会很不安全，这是因为截获密钥和 IV 的任何人都能够解密您的数据。 有关使用加密交换数据的详细信息，请参阅 [创建加密方案](../../../docs/standard/security/creating-a-cryptographic-scheme.md)。  
+ 为了将对称密钥和 IV 传送给远程方，通常使用不对称加密来加密对称密钥。 通过不安全的网络发送密钥而不对其进行加密会很不安全，这是因为截获密钥和 IV 的任何人都能够解密您的数据。 有关使用加密交换数据的详细信息，请参阅 [创建加密方案](creating-a-cryptographic-scheme.md)。  
   
  下列示例演示如何创建 <xref:System.Security.Cryptography.TripleDESCryptoServiceProvider> 类的新实例，该类会实现 TripleDES 算法。  
   
@@ -68,7 +68,7 @@ tdes.GenerateKey();
   
  这两种方法接受一个布尔值，该值指示是只返回公钥信息还是同时返回公钥和私钥信息。 通过使用 **方法，** RSACryptoServiceProvider **类可以初始化为** RSAParameters <xref:System.Security.Cryptography.RSACryptoServiceProvider.ImportParameters%2A> 结构的值。  
   
- 非对称私钥永远不应以原义或纯文本形式存储在本地计算机上。 如果需要存储私钥，则应使用密钥容器。 有关如何在密钥容器中存储私钥的详细信息，请参阅 [How to: Store Asymmetric Keys in a Key Container](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md)。  
+ 非对称私钥永远不应以原义或纯文本形式存储在本地计算机上。 如果需要存储私钥，则应使用密钥容器。 有关如何在密钥容器中存储私钥的详细信息，请参阅 [How to: Store Asymmetric Keys in a Key Container](how-to-store-asymmetric-keys-in-a-key-container.md)。  
   
  下列代码示例通过创建公钥/私钥对来创建 **RSACryptoServiceProvider** 类的新实例，并将公钥信息保存到 **RSAParameters** 结构。  
   
@@ -88,7 +88,7 @@ RSAParameters rsaKeyInfo = rsa.ExportParameters(false);
   
 ## <a name="see-also"></a>另请参阅
 
-- [加密数据](../../../docs/standard/security/encrypting-data.md)
-- [解密数据](../../../docs/standard/security/decrypting-data.md)
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
-- [How to: Store Asymmetric Keys in a Key Container](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md)
+- [加密数据](encrypting-data.md)
+- [解密数据](decrypting-data.md)
+- [加密服务](cryptographic-services.md)
+- [如何：将非对称密钥存储在密钥容器中](how-to-store-asymmetric-keys-in-a-key-container.md)

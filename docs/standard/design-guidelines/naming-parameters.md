@@ -6,15 +6,15 @@ helpviewer_keywords:
 - parameters, names
 - names [.NET Framework], parameters
 ms.assetid: ca3c956e-725a-441b-b4e3-eab5d472f41c
-ms.openlocfilehash: ebe2e2db4b109057bf576d4e18cfe511c657707e
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0d5c5cd144fbae88439ee981fbdb6e30ff487005
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743826"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290157"
 ---
 # <a name="naming-parameters"></a>命名参数
-除了提升可读性这一明显目的外，遵循参数名称准则的一个重要原因是文档和设计器（可视化设计工具在提供 Intellisense 和类浏览功能时）中会显示参数。
+除了可读性的明显原因外，请务必遵循有关参数名称的准则，因为当可视化设计工具提供 Intellisense 和类浏览功能时，参数将显示在文档和设计器中。
 
  ✔️在参数名称中使用 camelCasing。
 
@@ -23,19 +23,19 @@ ms.locfileid: "76743826"
  ✔️考虑使用基于参数含义而不是参数类型的名称。
 
 ### <a name="naming-operator-overload-parameters"></a>命名运算符重载参数
- ✔️如果参数没有任何意义，请将 `left` 和 `right` 用于二元运算符重载参数名称。
+ `left` `right` 如果参数没有任何意义，✔️确实要使用和进行二元运算符重载参数名称。
 
- 如果参数没有任何意义，✔️确实将 `value` 用于一元运算符重载参数名称。
+ 对于参数，✔️确实使用 `value` 一元运算符重载参数名称。
 
  ✔️考虑运算符重载参数有意义的名称，如果这样做会增加重要值。
 
- ❌ 不要对运算符重载参数名称使用缩写或数字索引。
+ ❌不要对运算符重载参数名称使用缩写或数值索引。
 
  *部分©2005，2009 Microsoft Corporation。保留所有权利。*
 
- *在 Pearson Education, Inc. 授权下，由 Addison-Wesley Professional 作为 Microsoft Windows 开发系列的一部分再版自 [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)（Framework 设计准则：可重用 .NET 库的约定、惯例和模式第 2 版），由 Krzysztof Cwalina 和 Brad Abrams 发布于 2008 年 10 月 22 日。
+ *皮尔逊教育，Inc. 的经许可重印权限[：从框架设计指导原则：用于可重复使用的 .Net 库的约定、惯例和模式、第2版](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)By Krzysztof Cwalina 和 Brad Abrams，发布十月22，2008，作为 Microsoft Windows 开发系列的一部分。*
 
 ## <a name="see-also"></a>另请参阅
 
-- [框架设计指南](../../../docs/standard/design-guidelines/index.md)
-- [命名规则](../../../docs/standard/design-guidelines/naming-guidelines.md)
+- [框架设计准则](index.md)
+- [命名准则](naming-guidelines.md)

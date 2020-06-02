@@ -1,18 +1,19 @@
 ---
 title: 数据集、数据表和数据视图
+description: 了解使用 ADO.NET 数据集（提供一致的关系编程模型的数据的内存驻留表示形式）的几种方法。
 ms.date: 03/30/2017
 ms.assetid: 6d4c4b69-8919-4224-8a65-6cca1c61b48f
-ms.openlocfilehash: 1744f6c6d8ea3c28a8dab30c0d201ae1dacc7ee3
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f6562452261cbc1f7ee36fb264b858646a42e4f5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786192"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286891"
 ---
 # <a name="datasets-datatables-and-dataviews"></a>数据集、数据表和数据视图
 ADO.NET <xref:System.Data.DataSet> 是数据的一种内存驻留表示形式，无论它包含的数据来自什么数据源，都会提供一致的关系编程模型。 <xref:System.Data.DataSet> 表示整个数据集，其中包含对数据进行包含、排序和约束的表以及表间的关系。  
   
- 使用 <xref:System.Data.DataSet> 的方法有若干种，这些方法可以单独应用，也可以结合应用。 你可以：  
+ 使用 <xref:System.Data.DataSet> 的方法有若干种，这些方法可以单独应用，也可以结合应用。 方法：  
   
 - 以编程方式在 <xref:System.Data.DataTable> 中创建 <xref:System.Data.DataRelation>、<xref:System.Data.Constraint> 和 <xref:System.Data.DataSet>，并使用数据填充表。  
   
@@ -29,10 +30,10 @@ ADO.NET <xref:System.Data.DataSet> 是数据的一种内存驻留表示形式，
  [将数据表添加到数据集中](adding-a-datatable-to-a-dataset.md)  
  描述如何创建表和列并将其添加到 <xref:System.Data.DataSet> 中。  
   
- [添加数据关系](adding-datarelations.md)  
+ [添加 DataRelation](adding-datarelations.md)  
  描述如何创建 <xref:System.Data.DataSet> 中表之间的关系。  
   
- [导航数据关系](navigating-datarelations.md)  
+ [导航 DataRelation](navigating-datarelations.md)  
  描述如何使用 <xref:System.Data.DataSet> 中表之间的关系来返回具有父子关系的子行或父行。  
   
  [合并数据集内容](merging-dataset-contents.md)  
@@ -47,19 +48,19 @@ ADO.NET <xref:System.Data.DataSet> 是数据的一种内存驻留表示形式，
  [类型化数据集](typed-datasets.md)  
  描述类型化 <xref:System.Data.DataSet> 的定义并说明如何创建和使用。  
   
- [数据表](datatables.md)  
+ [DataTables](datatables.md)  
  描述如何创建 <xref:System.Data.DataTable>、定义架构和处理数据。  
   
  [DataTableReader](datatablereaders.md)  
  描述如何创建和使用 <xref:System.Data.DataTableReader>。  
   
- [数据视图](dataviews.md)  
+ [DataView](dataviews.md)  
  描述如何创建和使用 `DataViews` 以及如何使用 <xref:System.Data.DataView> 事件。  
   
  [在数据集中使用 XML](using-xml-in-a-dataset.md)  
  描述 <xref:System.Data.DataSet> 如何作为数据源与 XML 进行交互（包括以 XML 数据的形式加载和保持 <xref:System.Data.DataSet> 的内容）。  
   
- [通过 XML Web service 使用数据集](consuming-a-dataset-from-an-xml-web-service.md)  
+ [通过 XML Web 服务使用数据集](consuming-a-dataset-from-an-xml-web-service.md)  
  描述如何创建使用 <xref:System.Data.DataSet> 来传输数据的 XML Web services。  
   
 ## <a name="related-sections"></a>相关章节  
@@ -78,7 +79,7 @@ ADO.NET <xref:System.Data.DataSet> 是数据的一种内存驻留表示形式，
  [将现有约束添加到数据集](../adding-existing-constraints-to-a-dataset.md)  
  描述如何使用数据源中的主键信息填充**数据集**。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [ADO.NET](../index.md)
 - [ADO.NET 概述](../ado-net-overview.md)

@@ -1,17 +1,18 @@
 ---
 title: Oracle 和 ADO.NET
+description: 了解用于 Oracle 的 .NET Framework 数据提供程序的功能和行为，该提供程序可使用 Oracle 调用接口访问 Oracle 数据库。
 titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8ee8e389-53cf-45cf-80bd-1df63ef34f2e
-ms.openlocfilehash: 5683f2b4ba57021ff6dda3a51baca016f886b605
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: 8757352a7444fad802ea88ba58e0fe643c86cbb8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980075"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286684"
 ---
 # <a name="oracle-and-adonet"></a>Oracle 和 ADO.NET
 > [!NOTE]
@@ -41,13 +42,13 @@ csc /r:System.Data.OracleClient.dll
  [系统要求](system-requirements-for-the-dotnet-data-provider-for-oracle.md)  
  描述使用适用于 Oracle 的 .NET Framework 数据提供程序的要求，并介绍使用它时要注意的一些问题。  
   
- [Oracle BFILEs](oracle-bfiles.md)  
+ [Oracle BFILE](oracle-bfiles.md)  
  描述用于使用 Oracle BFILE 数据类型的 <xref:System.Data.OracleClient.OracleBFile> 类。  
   
- [Oracle LOBs](oracle-lobs.md)  
+ [Oracle LOB](oracle-lobs.md)  
  描述用于使用 Oracle LOB 数据类型的 <xref:System.Data.OracleClient.OracleLob> 类。  
   
- [Oracle REF CURSORs](oracle-ref-cursors.md)  
+ [Oracle REF CURSOR](oracle-ref-cursors.md)  
  描述对 Oracle REF CURSOR 数据类型的支持。  
   
  [OracleTypes](oracletypes.md)  

@@ -2,12 +2,12 @@
 title: 利用容器和协调器
 description: 利用 Azure 中的 Docker 容器和 Kubernetes 协调器
 ms.date: 05/13/2020
-ms.openlocfilehash: 5d0b7f41caecb3422a4416514de2fdd54e94539a
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b2fedac205d7a5bd8b8f8cf665ae370b9bf26654
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613878"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282579"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>利用容器和协调器
 
@@ -53,30 +53,11 @@ Docker 是最常用的容器管理平台。 它可与 Linux 或 Windows 上的�
 
 容器是不可变的。 定义容器后，可以完全相同的方式重新创建和运行。 这种不可变性适用于基于组件的设计。 如果应用程序的某些部分的演化不同于其他部分，那么当你只是部署最常发生变化的部件时，为什么会重新部署整个应用？ 应用的不同功能和交叉切削问题可以分解为单独的单位。 图3-2 显示了单一应用程序如何通过委托某些功能来利用容器和微服务。 应用程序本身中的其余功能也已容器化。
 
-容器是不可变的。 定义容器后，可以完全相同的方式重新创建和运行。 这种不可变性适用于基于组件的设计。 如果应用程序的某些部分的演化不同于其他部分，那么当你只是部署最常发生变化的部件时，为什么会重新部署整个应用？ 应用的不同功能和交叉切削问题可以分解为单独的单位。 图3-2 显示了单一应用程序如何通过委托某些功能来利用容器和微服务。 应用程序本身中的其余功能也已容器化。
-
 ![分解单一应用程序以在后端使用微服务。](./media/cloud-native-design.png)
 
 **图 3-2**。 分解应用以接纳微服务。
 
 每个云本机服务都在单独的容器中生成和部署。 每个都可以根据需要进行更新。 可以在节点上托管单个服务，每个服务都有相应的资源。 每个服务的运行环境是不可变的，在开发、测试和生产环境之间共享，并且易于版本化。 应用程序的不同区域之间的耦合与服务间的调用或消息（而不是单体架构中的编译时依赖关系）显式发生。 你还可以选择最能充分利用给定功能的技术，无需更改应用程序的其余部分。
-
-容器化服务需要自动管理。 手动管理一大组独立部署的容器是不可行的。 例如，请考虑以下任务：
-
-- 如何在多台计算机的群集中预配容器实例？
-- 部署完成后，容器的发现和通信方式如何呢？
-- 容器如何按需进行缩放？
-- 如何监视每个容器的运行状况？
-- 如何针对硬件和软件故障保护容器？
-- 如何将实时应用程序的容器升级到零停机时间？
-
-容器协调器解决这些问题和其他问题。
-
-在云中，Kubernetes 已成为事实容器 orchestrator。 它是由云本机计算基础（CNCF）管理的开源平台。 Kubernetes 自动化了计算机群集上容器化工作负荷的部署、缩放和操作问题。 但是，安装和管理 Kubernetes 非常复杂。
-
-更好的方法是使用 Kubernetes 作为云供应商提供的托管服务。 Azure 云的功能是一个完全托管的 Kubernetes 平台，该平台名为[Azure Kubernetes Service （AKS）](https://azure.microsoft.com/services/kubernetes-service/)。 AKS 抽象了管理 Kubernetes 的复杂性和操作开销。 使用 Kubernetes 作为云服务;Microsoft 负责管理和支持它。 AKS 还与其他 Azure 服务和开发工具紧密集成。
-
-AKS 是一种基于群集的技术。 联合虚拟机或节点的池部署到 Azure 云。 它们共同构成了一个高度可用的环境或群集。 群集将作为无缝的单一实体出现到你的云本机应用程序。 在这种情况下，AKS 会按照均匀分布负载的预定义策略，在这些节点上部署容器化服务。
 
 容器化服务需要自动管理。 手动管理一大组独立部署的容器是不可行的。 例如，请考虑以下任务：
 
@@ -240,8 +221,6 @@ ENTRYPOINT ["dotnet", "eShopWeb.dll"]
 ![Visual Studio 添加 Docker 支持](./media/visual-studio-add-docker-support.png)
 
 **图 3-8**。 向 Visual Studio 添加 Docker 支持
-
-还可以添加容器业务流程支持，如图3-8 所示。 默认情况下，orchestrator 将使用 Kubernetes 和 Helm。 选择 orchestrator 后，会将一个 `azds.yaml` 文件添加到项目根，并 `charts` 添加一个文件夹，其中包含用于配置应用程序并将其部署到 Kubernetes 的 Helm 图表。 图3-9 显示新项目中生成的文件。
 
 还可以添加容器业务流程支持，如图3-8 所示。 默认情况下，orchestrator 将使用 Kubernetes 和 Helm。 选择 orchestrator 后，会将一个 `azds.yaml` 文件添加到项目根，并 `charts` 添加一个文件夹，其中包含用于配置应用程序并将其部署到 Kubernetes 的 Helm 图表。 图3-9 显示新项目中生成的文件。
 

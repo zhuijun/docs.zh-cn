@@ -17,21 +17,21 @@ helpviewer_keywords:
 - Rijndael
 - encryption [.NET Framework], asymmetric keys
 ms.assetid: a164ba4f-e596-4bbe-a9ca-f214fe89ed48
-ms.openlocfilehash: 2ebf3f86ac550c0179b2e26879a7df128fd529e9
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 475446f6206676e93ea72d16e01bcf1067c24e86
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706092"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277370"
 ---
 # <a name="how-to-encrypt-xml-elements-with-asymmetric-keys"></a>如何：用非对称密钥对 XML 元素进行加密
-可以使用 <xref:System.Security.Cryptography.Xml> 命名空间中的类加密 XML 文档内的元素。  XML 加密是交换或存储加密的 XML 数据的一种标准方式，使用后就无需担心数据被轻易读取。  有关 XML 加密标准的详细信息，请参阅万维网联合会 (W3C) 规范 XML 加密位于 <https://www.w3.org/TR/xmldsig-core/>。  
+可以使用 <xref:System.Security.Cryptography.Xml> 命名空间中的类加密 XML 文档内的元素。  XML 加密是交换或存储加密的 XML 数据的一种标准方式，使用后就无需担心数据被轻易读取。  有关 XML 加密标准的详细信息，请参阅位于的 XML 加密的万维网联合会（W3C）规范 <https://www.w3.org/TR/xmldsig-core/> 。  
   
  可以使用 XML 加密将任何 XML 元素或文档替换为包含加密 XML 数据的 <`EncryptedData`> 元素。  <`EncryptedData`> 元素还可以包含子元素，这些子元素包含有关加密期间使用的密钥和进程的信息。  XML 加密允许文档包含多个加密元素，并允许对一个元素进行多次加密。  此过程中的代码示例演示如何创建一个 <`EncryptedData`> 元素以及其他一些子元素，这些子元素可在稍后解密过程中使用。  
   
- 此示例使用两个密钥对 XML 元素进行加密。  它生成 RSA 公钥/私钥对，并将密钥对保存到安全的密钥容器中。  然后，此示例使用高级加密标准 (AES) 算法（也称为 Rijndael 算法）创建单独的会话密钥。  使用 AES 会话密钥对 XML 文档进行加密，再使用 RSA 公钥对 AES 会话密钥进行加密。  最后，此示例将加密的 AES 会话密钥和加密的 XML 数据保存到 XML 文档中的新 <`EncryptedData`> 元素中。  
+ 此示例使用两个密钥对 XML 元素进行加密。  它生成 RSA 公钥/私钥对，并将密钥对保存到安全的密钥容器中。  然后，此示例使用高级加密标准 (AES) 算法（也称为 Rijndael 算法）创建单独的会话密钥。  使用 AES 会话密钥对 XML 文档进行加密，再使用 RSA 公钥对 AES 会话密钥进行加密。  最后，该示例会将加密的 AES 会话密钥和加密的 XML 数据保存到新的 <> 元素中的 XML 文档 `EncryptedData` 。  
   
- 若要解密 XML 元素，可检索密钥容器中的 RSA 私钥，用其来解密会话密钥，然后使用会话密钥来解密文档。  有关如何解密使用此过程加密的 XML 元素的详细信息，请参阅[如何：使用非对称密钥对 Xml 元素进行解密](../../../docs/standard/security/how-to-decrypt-xml-elements-with-asymmetric-keys.md)。  
+ 若要解密 XML 元素，可检索密钥容器中的 RSA 私钥，用其来解密会话密钥，然后使用会话密钥来解密文档。  有关如何解密使用此过程加密的 XML 元素的详细信息，请参阅[如何：使用非对称密钥对 Xml 元素进行解密](how-to-decrypt-xml-elements-with-asymmetric-keys.md)。  
   
  此示例适用于以下情况：多个应用程序需要共享加密数据，或应用程序需要保存它各次运行之间的加密数据。  
   
@@ -67,7 +67,7 @@ ms.locfileid: "75706092"
      [!code-csharp[HowToEncryptXMLElementAsymmetric#7](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#7)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#7)]  
   
-7. 构造一个 <xref:System.Security.Cryptography.Xml.EncryptedData> 对象并对其填充加密 XML 元素的 URL 标识符。  此 URL 标识符可使解密方知道 XML 包含一个加密元素。  可使用 <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncElementUrl> 字段来指定 URL 标识符。  纯文本 XML 元素将替换为此 <xref:System.Security.Cryptography.Xml.EncryptedData> 对象封装的 <`EncryptedData`> 元素。  
+7. 构造一个 <xref:System.Security.Cryptography.Xml.EncryptedData> 对象并对其填充加密 XML 元素的 URL 标识符。  此 URL 标识符可使解密方知道 XML 包含一个加密元素。  可使用 <xref:System.Security.Cryptography.Xml.EncryptedXml.XmlEncElementUrl> 字段来指定 URL 标识符。  纯文本 XML 元素将被 `EncryptedData` 此对象封装的 <> 元素替换 <xref:System.Security.Cryptography.Xml.EncryptedData> 。  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#8](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#8)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#8)]  
@@ -134,13 +134,13 @@ ms.locfileid: "75706092"
 - 包括以下命名空间：<xref:System.Xml>、<xref:System.Security.Cryptography> 和 <xref:System.Security.Cryptography.Xml>。  
   
 ## <a name="net-framework-security"></a>.NET Framework 安全性  
- 永远不要以纯文本形式存储对称加密密钥，也不要以纯文本形式在计算机之间传输对称密钥。  此外，绝不存储或传输纯文本形式的非对称密钥的私钥。  有关对称和非对称加密密钥的详细信息，请参阅[生成加密和解密密钥](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)。  
+ 永远不要以纯文本形式存储对称加密密钥，也不要以纯文本形式在计算机之间传输对称密钥。  此外，绝不存储或传输纯文本形式的非对称密钥的私钥。  有关对称和非对称加密密钥的详细信息，请参阅[生成加密和解密密钥](generating-keys-for-encryption-and-decryption.md)。  
   
- 绝不将密钥直接嵌入源代码。  使用[Ildasm （IL 拆装器）](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)或在文本编辑器（例如记事本）中打开程序集，可以轻松地从程序集中读取嵌入的密钥。  
+ 绝不将密钥直接嵌入源代码。  使用[Ildasm （IL 拆装器）](../../framework/tools/ildasm-exe-il-disassembler.md)或在文本编辑器（例如记事本）中打开程序集，可以轻松地从程序集中读取嵌入的密钥。  
   
  当你使用加密密钥执行操作后，通过将每个字节设置为零或通过调用托管加密类的 <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> 方法来将它从内存中清除。  加密密钥有时可从内存由调试器读取，或从硬盘读取（如果内存位置分页到磁盘）。  
   
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Security.Cryptography.Xml>
-- [如何：使用非对称密钥解密 XML 元素](../../../docs/standard/security/how-to-decrypt-xml-elements-with-asymmetric-keys.md)
+- [如何：用非对称密钥对 XML 元素进行解密](how-to-decrypt-xml-elements-with-asymmetric-keys.md)

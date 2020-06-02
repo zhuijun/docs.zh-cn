@@ -1,16 +1,17 @@
 ---
 title: 使用 DataAdapter 更新数据源
+description: 了解 DataAdapter 的 Update 方法如何将数据集中的更改解析回 ADO.NET 应用程序中的数据源。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1bd9a8c-0e29-40e3-bda8-d89176b72fb1
-ms.openlocfilehash: 4a6e22352a309f9d624c6922abc531cb31a5baf1
-ms.sourcegitcommit: 878ca7550b653114c3968ef8906da2b3e60e3c7a
+ms.openlocfilehash: e2348a3a89aa1c28856bfc21aaa25f2c8327aac7
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2019
-ms.locfileid: "71736690"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286179"
 ---
 # <a name="updating-data-sources-with-dataadapters"></a>使用 DataAdapter 更新数据源
 
@@ -34,7 +35,7 @@ ms.locfileid: "71736690"
 
 下表说明 `UpdateRowSource` 枚举的不同值，并说明它们如何影响与 `DataAdapter` 一起使用的命令的行为。
 
-|UpdatedRowSource 枚举|描述|
+|UpdatedRowSource 枚举|说明|
 |----------------------------------|-----------------|
 |<xref:System.Data.UpdateRowSource.Both>|输出参数和返回的结果集的第一行都可以映射到 `DataSet` 中已更改的行。|
 |<xref:System.Data.UpdateRowSource.FirstReturnedRecord>|只有返回的结果集的第一行中的数据才可以映射到 `DataSet` 中已更改的行。|
@@ -46,14 +47,14 @@ ms.locfileid: "71736690"
 > [!NOTE]
 > 如果 `SelectCommand` 返回 OUTER JOIN 的结果，则 `DataAdapter` 不会为生成的 `PrimaryKey` 设置 `DataTable` 值。 您必须自己定义 `PrimaryKey` 以确保正确解析重复行。 有关详细信息，请参阅[定义主键](./dataset-datatable-dataview/defining-primary-keys.md)。
 
-若要处理在`Update`调用方法时可能发生的异常，可以`RowUpdated`使用事件在发生行更新错误时对其做出响应（请参阅[处理 DataAdapter 事件](handling-dataadapter-events.md)），也可以将`DataAdapter.ContinueUpdateOnError`设置`true`为在`Update`完成更新时调用并响应特定行的`RowError`属性中存储的错误信息（请参阅[行错误信息](./dataset-datatable-dataview/row-error-information.md)）。
+若要处理在调用方法时可能发生的异常 `Update` `RowUpdated` （请参阅[处理 DataAdapter 事件](handling-dataadapter-events.md)），或者可以在 `DataAdapter.ContinueUpdateOnError` 调用之前将设置为，并在 `true` `Update` `RowError` 更新完成后响应特定行的属性中存储的错误信息（请参阅[行错误信息](./dataset-datatable-dataview/row-error-information.md)），以处理在调用方法时可能发生的异常。
 
 > [!NOTE]
-> `AcceptChanges` `Original` `DataRow`对、或调用将导致`DataRow`用的值覆盖的所有值。`Current` `DataTable` `DataSet` `DataRow` 如果修改了唯一标识该行的字段值，则在调用 `AcceptChanges` 后，`Original` 值将不再匹配数据源中的值。 在调用 `AcceptChanges` 的 Update 方法期间会对每一行自动调用 `DataAdapter`。 在调用 Update 方法期间，通过先将 `AcceptChangesDuringUpdate` 的 `DataAdapter` 属性设置为 false，或为 `RowUpdated` 事件创建一个事件处理程序并将 <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> 设置为 <xref:System.Data.UpdateStatus.SkipCurrentRow>，可以保留原始值。 有关详细信息，请参阅[合并数据集内容](./dataset-datatable-dataview/merging-dataset-contents.md)和[处理 DataAdapter 事件](handling-dataadapter-events.md)。
+> 对 `AcceptChanges` `DataSet` 、或调用 `DataTable` `DataRow` 将导致 `Original` 用的值覆盖的所有值 `DataRow` `Current` `DataRow` 。 如果修改了唯一标识该行的字段值，则在调用 `AcceptChanges` 后，`Original` 值将不再匹配数据源中的值。 在调用 `AcceptChanges` 的 Update 方法期间会对每一行自动调用 `DataAdapter`。 在调用 Update 方法期间，通过先将 `AcceptChangesDuringUpdate` 的 `DataAdapter` 属性设置为 false，或为 `RowUpdated` 事件创建一个事件处理程序并将 <xref:System.Data.Common.RowUpdatedEventArgs.Status%2A> 设置为 <xref:System.Data.UpdateStatus.SkipCurrentRow>，可以保留原始值。 有关详细信息，请参阅[合并数据集内容](./dataset-datatable-dataview/merging-dataset-contents.md)和[处理 DataAdapter 事件](handling-dataadapter-events.md)。
 
 ## <a name="example"></a>示例
 
-下面的示例演示如何通过显式设置`UpdateCommand` `DataAdapter`的和调用其`Update`方法来对修改的行执行更新。 请注意，在 UPDATE 语句的 WHERE 子句中指定的参数设置为使用 `Original` 的 `SourceColumn` 值。 这一点很重要，因为 `Current` 值可能已被修改，可能会不匹配数据源中的值。 `Original` 值是用于从数据源填充 `DataTable` 的值。
+下面的示例演示如何通过显式设置 `UpdateCommand` 的 `DataAdapter` 和调用其方法来对修改的行执行更新 `Update` 。 请注意，在 UPDATE 语句的 WHERE 子句中指定的参数设置为使用 `Original` 的 `SourceColumn` 值。 这一点很重要，因为 `Current` 值可能已被修改，可能会不匹配数据源中的值。 `Original` 值是用于从数据源填充 `DataTable` 的值。
 
 [!code-csharp[DataWorks SqlClient.DataAdapterUpdate#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks SqlClient.DataAdapterUpdate/CS/source.cs#1)]
 [!code-vb[DataWorks SqlClient.DataAdapterUpdate#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SqlClient.DataAdapterUpdate/VB/source.vb#1)]
@@ -180,7 +181,7 @@ ALTER TABLE [dbo].[Course] CHECK CONSTRAINT [FK_Course_Department]
 GO
 ```
 
-C#可以在[开发人员代码示例](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=How%20to%20use%20DataAdapter%20to%20retrieve%20and%20update%20data&f%5B1%5D)中找到带有此代码示例的 Visual Basic 项目。
+带有此代码示例的 c # 和 Visual Basic 项目可在[开发人员代码示例](https://code.msdn.microsoft.com/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=How%20to%20use%20DataAdapter%20to%20retrieve%20and%20update%20data&f%5B1%5D)中找到。
 
 ```csharp
 using System;
@@ -376,11 +377,11 @@ class Program {
 }
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [DataAdapters 和 DataReaders](dataadapters-and-datareaders.md)
+- [DataAdapter 和 DataReader](dataadapters-and-datareaders.md)
 - [行状态和行版本](./dataset-datatable-dataview/row-states-and-row-versions.md)
-- [AcceptChanges 和 RejectChanges](./dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)
+- [AcceptChange 和 RejectChange](./dataset-datatable-dataview/acceptchanges-and-rejectchanges.md)
 - [合并数据集内容](./dataset-datatable-dataview/merging-dataset-contents.md)
 - [检索标识或自动编号值](retrieving-identity-or-autonumber-values.md)
 - [ADO.NET 概述](ado-net-overview.md)

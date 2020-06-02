@@ -1,23 +1,24 @@
 ---
 title: 在 LINQ to DataSet 中查询
+description: 了解如何通过获取数据源、创建查询和运行查询，在 LINQ to DataSet 中撰写查询。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: c1a78fa8-9f0c-40bc-a372-5575a48708fe
-ms.openlocfilehash: 092dbb5227e5f9e0ae2a62656a300d2367bcf16b
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 829e7dce4801508a8311f7bcbfeccbc36184cffc
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634789"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286632"
 ---
 # <a name="queries-in-linq-to-dataset"></a>在 LINQ to DataSet 中查询
 查询是一种从数据源检索数据的表达式。 查询通常用专用查询语言表示，如用于关系数据库的 SQL 和用于 XML 的 XQuery。 因此，开发人员对于他们查询的每种类型的数据源或数据格式，都不得不学习一种新的查询语言。 语言集成查询 (LINQ) 为跨各种数据源和格式处理数据提供了一种更简单的、一致的模型。 在 LINQ 查询中，您始终可以使用编程对象。  
   
  LINQ 查询操作包含三个操作：获得一个或多个数据源、创建查询并执行查询。  
   
- 可通过 LINQ 查询实现 <xref:System.Collections.Generic.IEnumerable%601> 泛型接口的数据源。 对 <xref:System.Data.DataTable> 调用 <xref:System.Data.DataTableExtensions.AsEnumerable%2A> 将返回一个对象，该对象实现泛型 <xref:System.Collections.Generic.IEnumerable%601> 接口，该接口用作 LINQ to DataSet 查询的数据源。  
+ 实现泛型接口的数据源 <xref:System.Collections.Generic.IEnumerable%601> 可通过 LINQ 进行查询。 <xref:System.Data.DataTableExtensions.AsEnumerable%2A>对调用将 <xref:System.Data.DataTable> 返回一个对象，该对象实现泛型 <xref:System.Collections.Generic.IEnumerable%601> 接口，该接口用作 LINQ to DataSet 查询的数据源。  
   
  在查询中，您可以确切指定要从数据源检索哪些信息。 查询也可以指定返回信息之前信息的排序、分组和表现方式。 在 LINQ 中，查询存储在变量中。 如果查询旨在返回一系列值，则查询变量本身也必须为可枚举类型。 此查询变量不执行任何操作，也不返回任何数据；它只存储查询信息。 创建查询后必须执行该查询以检索任何数据。  
   
@@ -52,7 +53,7 @@ ms.locfileid: "75634789"
  [!code-csharp[DP LINQ to DataSet Examples#Composing](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#composing)]
  [!code-vb[DP LINQ to DataSet Examples#Composing](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#composing)]  
   
- 执行查询后，不能再编写其他查询，并且所有后续查询都将使用内存中 LINQ 运算符。 当你在 `foreach` 或 `For Each` 语句中循环访问查询变量或通过调用导致立即执行的某个 LINQ 转换运算符时，将会执行查询。 这些运算符包括：<xref:System.Linq.Enumerable.ToList%2A>、<xref:System.Linq.Enumerable.ToArray%2A>、<xref:System.Linq.Enumerable.ToLookup%2A> 和 <xref:System.Linq.Enumerable.ToDictionary%2A>。  
+ 执行查询后，不能再编写其他查询，并且所有后续查询都将使用内存中 LINQ 运算符。 当你在或语句中循环访问查询变量 `foreach` `For Each` ，或通过调用导致立即执行的 LINQ 转换运算符之一时，将会执行查询。 这些运算符包括：<xref:System.Linq.Enumerable.ToList%2A>、<xref:System.Linq.Enumerable.ToArray%2A>、<xref:System.Linq.Enumerable.ToLookup%2A> 和 <xref:System.Linq.Enumerable.ToDictionary%2A>。  
   
  在下面的示例中，第一个查询返回按定价排序的所有产品。 <xref:System.Linq.Enumerable.ToArray%2A> 方法用于强制立即执行查询：  
   

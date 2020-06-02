@@ -1,16 +1,17 @@
 ---
 title: 如何：使用表值用户定义的函数
+description: 使用这些示例了解如何创建表值函数，该函数将返回单个行集。 像使用表一样使用此类表值函数。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5a4ae2b4-3290-4aa1-bc95-fc70c51b54cf
-ms.openlocfilehash: c4b5290e4f1aa69c7f55951d526ccb303a5a95ec
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 44866367393e321d7dd2db965e2fad8a2e6b63e9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003184"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286321"
 ---
 # <a name="how-to-use-table-valued-user-defined-functions"></a>如何：使用表值用户定义的函数
 表值函数返回单个行集（与存储过程不同，存储过程可返回多个结果形状）。 由于表值函数的返回类型为 `Table`，因此在 SQL 中可以使用表的任何地方均可以使用表值函数。 此外，您还可以完全像处理表那样来处理表值函数。  
@@ -47,6 +48,6 @@ AS p1 INNER JOIN Products AS p2 ON p1.ProductID = p2.ProductID
  [!code-csharp[DLinqUDFS#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqUDFS/cs/Program.cs#2)]
  [!code-vb[DLinqUDFS#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqUDFS/vb/Module1.vb#2)]  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [用户定义的函数](user-defined-functions.md)
+- [用户定义函数](user-defined-functions.md)

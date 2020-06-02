@@ -1,13 +1,14 @@
 ---
 title: LINQ to Entities
+description: '了解如何创建和运行 LINQ to Entities 查询，这些查询允许使用 Visual Basic 或 Visual c # 针对实体框架概念模型编写查询。'
 ms.date: 03/30/2017
 ms.assetid: 641f9b68-9046-47a1-abb0-1c8eaeda0e2d
-ms.openlocfilehash: bc568cb9dff170062651c908471a36cd17eac980
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 389a81872f4652c69e2b845359cf4e5a275aed5c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854366"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286839"
 ---
 # <a name="linq-to-entities"></a>LINQ to Entities
 LINQ to Entities 提供语言集成查询 (LINQ) 支持，它允许开发人员使用 Visual Basic 或 Visual C# 根据实体框架概念模型编写查询。 针对实体框架的查询由针对对象上下文执行的命令目录树查询表示。 LINQ to Entities 将语言集成查询 (LINQ) 查询转换为命令目录树查询，针对实体框架执行这些查询，并返回可同时由实体框架和 LINQ 使用的对象。 以下是创建和执行 LINQ to Entities 查询的过程：  
@@ -35,7 +36,7 @@ LINQ to Entities 提供语言集成查询 (LINQ) 支持，它允许开发人员�
 ## <a name="query-conversion"></a>查询转换  
  若要针对实体框架执行 LINQ to Entities 查询，必须将 LINQ 查询转换为可针对实体框架执行的命令目录树表示形式。  
   
- LINQ to Entities 查询由 LINQ 标准查询运算符（如<xref:System.Linq.Queryable.Select%2A>、 <xref:System.Linq.Queryable.Where%2A>和<xref:System.Linq.Queryable.GroupBy%2A>）和表达式（x > 10，Contact，等等）组成。 LINQ 运算符并非由类定义，而是由类中的方法定义。 在 LINQ 中，表达式可包含 <xref:System.Linq.Expressions> 命名空间内的类型所允许的任何内容，并且，通过扩展，可包含可在 lambda 函数中表示的任何内容。 这是实体框架允许的表达式的超集，这些表达式在定义上限于数据库所允许的操作，并且受到 <xref:System.Data.Objects.ObjectQuery%601> 支持。  
+ LINQ to Entities 查询由 LINQ 标准查询运算符（如 <xref:System.Linq.Queryable.Select%2A> 、 <xref:System.Linq.Queryable.Where%2A> 和 <xref:System.Linq.Queryable.GroupBy%2A> ）和表达式（x > 10，Contact，等等）组成。 LINQ 运算符并非由类定义，而是由类中的方法定义。 在 LINQ 中，表达式可包含 <xref:System.Linq.Expressions> 命名空间内的类型所允许的任何内容，并且，通过扩展，可包含可在 lambda 函数中表示的任何内容。 这是实体框架允许的表达式的超集，这些表达式在定义上限于数据库所允许的操作，并且受到 <xref:System.Data.Objects.ObjectQuery%601> 支持。  
   
  在实体框架中，运算符和表达式同时由单一类型层次结构表示，这些运算符和表达式随后会放入命令目录树中。 实体框架使用命令目录树来执行此查询。 如果 LINQ 查询无法表示为命令目录树，则当转换查询时，将引发异常。 LINQ to Entities 查询的转换涉及两个子转换：标准查询运算符的转换和表达式转换。  
   
@@ -82,13 +83,13 @@ LINQ to Entities 提供语言集成查询 (LINQ) 支持，它允许开发人员�
   
  [LINQ to Entities 查询中的标准查询运算符](standard-query-operators-in-linq-to-entities-queries.md)  
   
- [CLR 方法至 Canonical 函数映射](clr-method-to-canonical-function-mapping.md)  
+ [CLR 方法至规范函数映射](clr-method-to-canonical-function-mapping.md)  
   
  [支持和不支持的 LINQ 方法 (LINQ to Entities)](supported-and-unsupported-linq-methods-linq-to-entities.md)  
   
  [LINQ to Entities 中的已知问题和注意事项](known-issues-and-considerations-in-linq-to-entities.md)  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [LINQ to Entities 中的已知问题和注意事项](known-issues-and-considerations-in-linq-to-entities.md)
 - [语言集成查询 (LINQ) - C#](../../../../../csharp/programming-guide/concepts/linq/index.md)

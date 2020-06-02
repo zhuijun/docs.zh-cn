@@ -10,12 +10,12 @@ helpviewer_keywords:
 - members [.NET Framework], type
 - class library design guidelines [.NET Framework], nested types
 ms.assetid: 12feb7f0-b793-4d96-b090-42d6473bab8c
-ms.openlocfilehash: dd13116b13ac8e2d7a3af6ef014eb4f393909515
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a3b090b39e1e907826551ed152d4eece4885ce41
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743697"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290131"
 ---
 # <a name="nested-types"></a>嵌套类型
 嵌套类型是在另一种类型的作用域内定义的类型，称为封闭类型。 嵌套类型可以访问其封闭类型的所有成员。 例如，它可以访问在封闭类型中定义的私有字段，还可以访问在封闭类型的所有祖先中定义的受保护字段。
@@ -26,25 +26,25 @@ ms.locfileid: "76743697"
 
  如果嵌套类型与其外部类型之间的关系是需要成员可访问性语义，✔️确实使用嵌套类型。
 
- ❌ 不要使用公共嵌套类型作为逻辑分组构造;为此使用命名空间。
+ ❌不要使用公共嵌套类型作为逻辑分组构造;为此使用命名空间。
 
- ❌ 避免公开公开的嵌套类型。 唯一的例外是，只需在很少的情况下（如子类化或其他高级自定义方案）声明嵌套类型的变量。
+ ❌避免公开公开的嵌套类型。 唯一的例外是，只需在很少的情况下（如子类化或其他高级自定义方案）声明嵌套类型的变量。
 
- 如果类型可能在包含类型的外部引用，则 ❌ 不要使用嵌套类型。
+ ❌如果类型可能在包含类型的外部引用，请不要使用嵌套类型。
 
  例如，传递给在类上定义的方法的枚举不应定义为类中的嵌套类型。
 
- 如果需要通过客户端代码对嵌套类型进行实例化，则不能使用嵌套类型 ❌。  如果某个类型具有公共构造函数，则它可能不会嵌套。
+ ❌如果嵌套类型需要通过客户端代码进行实例化，请不要使用嵌套类型。  如果某个类型具有公共构造函数，则它可能不会嵌套。
 
  如果可实例化类型，则似乎指示类型在框架中具有一个位置（你可以创建它、使用它，并在不使用外部类型的情况下销毁它），因此不应进行嵌套。 不应将内部类型广泛地在外部类型的外部重用，无需任何与外部类型的关系。
 
- ❌ 不要将嵌套类型定义为接口的成员。 许多语言不支持这种构造。
+ ❌不要将嵌套类型定义为接口的成员。 许多语言不支持这种构造。
 
  *部分©2005，2009 Microsoft Corporation。保留所有权利。*
 
- *在 Pearson Education, Inc. 授权下，由 Addison-Wesley Professional 作为 Microsoft Windows 开发系列的一部分再版自 [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)（Framework 设计准则：可重用 .NET 库的约定、惯例和模式第 2 版），由 Krzysztof Cwalina 和 Brad Abrams 发布于 2008 年 10 月 22 日。
+ *皮尔逊教育，Inc. 的经许可重印权限[：从框架设计指导原则：用于可重复使用的 .Net 库的约定、惯例和模式、第2版](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)By Krzysztof Cwalina 和 Brad Abrams，发布十月22，2008，作为 Microsoft Windows 开发系列的一部分。*
 
 ## <a name="see-also"></a>另请参阅
 
-- [类型设计准则](../../../docs/standard/design-guidelines/type.md)
-- [框架设计指南](../../../docs/standard/design-guidelines/index.md)
+- [类型设计准则](type.md)
+- [框架设计准则](index.md)
