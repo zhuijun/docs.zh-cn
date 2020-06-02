@@ -1,5 +1,5 @@
 ---
-title: 如何：创建不带调整规则的时区
+title: 如何：创建不含调整规则的时区
 ms.date: 04/10/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,64 +10,64 @@ helpviewer_keywords:
 - time zones [.NET Framework], creating
 - adjustment rule [.NET Framework]
 ms.assetid: a6af8647-7893-4f29-95a9-d94c65a6e8dd
-ms.openlocfilehash: 344d8307318d5a2e50eddb39ef488cd8c5f2fdac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1d8aae1284e9ee9871c6f201c6a00e0b547f95fa
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129101"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84278033"
 ---
-# <a name="how-to-create-time-zones-without-adjustment-rules"></a><span data-ttu-id="5b361-102">如何：创建不带调整规则的时区</span><span class="sxs-lookup"><span data-stu-id="5b361-102">How to: Create time zones without adjustment rules</span></span>
+# <a name="how-to-create-time-zones-without-adjustment-rules"></a><span data-ttu-id="3324c-102">如何：创建不含调整规则的时区</span><span class="sxs-lookup"><span data-stu-id="3324c-102">How to: Create time zones without adjustment rules</span></span>
 
-<span data-ttu-id="5b361-103">由于以下几个原因，应用程序所需的确切时区信息在特定系统上可能不存在：</span><span class="sxs-lookup"><span data-stu-id="5b361-103">The precise time zone information that is required by an application may not be present on a particular system for several reasons:</span></span>
+<span data-ttu-id="3324c-103">由于以下几个原因，应用程序所需的确切时区信息在特定系统上可能不存在：</span><span class="sxs-lookup"><span data-stu-id="3324c-103">The precise time zone information that is required by an application may not be present on a particular system for several reasons:</span></span>
 
-- <span data-ttu-id="5b361-104">本地系统的注册表中从未定义过该时区。</span><span class="sxs-lookup"><span data-stu-id="5b361-104">The time zone has never been defined in the local system's registry.</span></span>
+- <span data-ttu-id="3324c-104">本地系统的注册表中从未定义过该时区。</span><span class="sxs-lookup"><span data-stu-id="3324c-104">The time zone has never been defined in the local system's registry.</span></span>
 
-- <span data-ttu-id="5b361-105">已修改或删除注册表中有关时区的数据。</span><span class="sxs-lookup"><span data-stu-id="5b361-105">Data about the time zone has been modified or removed from the registry.</span></span>
+- <span data-ttu-id="3324c-105">已修改或删除注册表中有关时区的数据。</span><span class="sxs-lookup"><span data-stu-id="3324c-105">Data about the time zone has been modified or removed from the registry.</span></span>
 
-- <span data-ttu-id="5b361-106">存在时区，但没有特定历史时间段的准确信息。</span><span class="sxs-lookup"><span data-stu-id="5b361-106">The time zone exists but does not have accurate information about time zone adjustments for a particular historic period.</span></span>
+- <span data-ttu-id="3324c-106">存在时区，但没有特定历史时间段的准确信息。</span><span class="sxs-lookup"><span data-stu-id="3324c-106">The time zone exists but does not have accurate information about time zone adjustments for a particular historic period.</span></span>
 
-<span data-ttu-id="5b361-107">在这些情况下，可以调用 <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> 方法来定义应用程序所需的时区。</span><span class="sxs-lookup"><span data-stu-id="5b361-107">In these cases, you can call the <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> method to define the time zone required by your application.</span></span> <span data-ttu-id="5b361-108">您可以使用此方法的重载来创建具有或不带调整规则的时区。</span><span class="sxs-lookup"><span data-stu-id="5b361-108">You can use the overloads of this method to create a time zone with or without adjustment rules.</span></span> <span data-ttu-id="5b361-109">如果时区支持夏令时，则可以用固定或浮动调整规则定义调整。</span><span class="sxs-lookup"><span data-stu-id="5b361-109">If the time zone supports daylight saving time, you can define adjustments with either fixed or floating adjustment rules.</span></span> <span data-ttu-id="5b361-110">（有关这些术语的定义，请参阅时区[概述](../../../docs/standard/datetime/time-zone-overview.md)中的 "时区术语" 部分。）</span><span class="sxs-lookup"><span data-stu-id="5b361-110">(For definitions of these terms, see the "Time Zone Terminology" section in [Time zone overview](../../../docs/standard/datetime/time-zone-overview.md).)</span></span>
+<span data-ttu-id="3324c-107">在这些情况下，可以调用 <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> 方法来定义应用程序所需的时区。</span><span class="sxs-lookup"><span data-stu-id="3324c-107">In these cases, you can call the <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> method to define the time zone required by your application.</span></span> <span data-ttu-id="3324c-108">您可以使用此方法的重载来创建具有或不带调整规则的时区。</span><span class="sxs-lookup"><span data-stu-id="3324c-108">You can use the overloads of this method to create a time zone with or without adjustment rules.</span></span> <span data-ttu-id="3324c-109">如果时区支持夏令时，则可以用固定或浮动调整规则定义调整。</span><span class="sxs-lookup"><span data-stu-id="3324c-109">If the time zone supports daylight saving time, you can define adjustments with either fixed or floating adjustment rules.</span></span> <span data-ttu-id="3324c-110">（有关这些术语的定义，请参阅时区[概述](time-zone-overview.md)中的 "时区术语" 部分。）</span><span class="sxs-lookup"><span data-stu-id="3324c-110">(For definitions of these terms, see the "Time Zone Terminology" section in [Time zone overview](time-zone-overview.md).)</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="5b361-111">通过调用 <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> 方法创建的自定义时区不会添加到注册表中。</span><span class="sxs-lookup"><span data-stu-id="5b361-111">Custom time zones created by calling the <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> method are not added to the registry.</span></span> <span data-ttu-id="5b361-112">相反，它们只能通过 <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> 方法调用返回的对象引用进行访问。</span><span class="sxs-lookup"><span data-stu-id="5b361-112">Instead, they can be accessed only through the object reference returned by the <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> method call.</span></span>
+> <span data-ttu-id="3324c-111">通过调用方法创建的自定义时区 <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> 未添加到注册表中。</span><span class="sxs-lookup"><span data-stu-id="3324c-111">Custom time zones created by calling the <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> method are not added to the registry.</span></span> <span data-ttu-id="3324c-112">相反，只能通过方法调用返回的对象引用来访问这些对象 <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> 。</span><span class="sxs-lookup"><span data-stu-id="3324c-112">Instead, they can be accessed only through the object reference returned by the <xref:System.TimeZoneInfo.CreateCustomTimeZone%2A> method call.</span></span>
 
-<span data-ttu-id="5b361-113">本主题说明如何创建不带调整规则的时区。</span><span class="sxs-lookup"><span data-stu-id="5b361-113">This topic shows how to create a time zone without adjustment rules.</span></span> <span data-ttu-id="5b361-114">若要创建支持夏令时调整规则的时区，请参阅[如何：创建带有调整规则的时区](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)。</span><span class="sxs-lookup"><span data-stu-id="5b361-114">To create a time zone that supports daylight saving time adjustment rules, see [How to: Create time zones with adjustment rules](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md).</span></span>
+<span data-ttu-id="3324c-113">本主题说明如何创建不带调整规则的时区。</span><span class="sxs-lookup"><span data-stu-id="3324c-113">This topic shows how to create a time zone without adjustment rules.</span></span> <span data-ttu-id="3324c-114">若要创建支持夏令时调整规则的时区，请参阅[如何：创建带有调整规则的时区](create-time-zones-with-adjustment-rules.md)。</span><span class="sxs-lookup"><span data-stu-id="3324c-114">To create a time zone that supports daylight saving time adjustment rules, see [How to: Create time zones with adjustment rules](create-time-zones-with-adjustment-rules.md).</span></span>
 
-### <a name="to-create-a-time-zone-without-adjustment-rules"></a><span data-ttu-id="5b361-115">创建不含调整规则的时区</span><span class="sxs-lookup"><span data-stu-id="5b361-115">To create a time zone without adjustment rules</span></span>
+### <a name="to-create-a-time-zone-without-adjustment-rules"></a><span data-ttu-id="3324c-115">创建不含调整规则的时区</span><span class="sxs-lookup"><span data-stu-id="3324c-115">To create a time zone without adjustment rules</span></span>
 
-1. <span data-ttu-id="5b361-116">定义时区的显示名称。</span><span class="sxs-lookup"><span data-stu-id="5b361-116">Define the time zone's display name.</span></span>
+1. <span data-ttu-id="3324c-116">定义时区的显示名称。</span><span class="sxs-lookup"><span data-stu-id="3324c-116">Define the time zone's display name.</span></span>
 
-   <span data-ttu-id="5b361-117">显示名称采用相当标准的格式，在此格式中，时区与协调世界时（UTC）的偏移量括在括号中，后面跟有标识时区的字符串、时区中的一个或多个城市，或者一个或多个 cou时区中的 ntries 或区域。</span><span class="sxs-lookup"><span data-stu-id="5b361-117">The display name follows a fairly standard format in which the time zone's offset from Coordinated Universal Time (UTC) is enclosed in parentheses and is followed by a string that identifies the time zone, one or more of the cities in the time zone, or one or more of the countries or regions in the time zone.</span></span>
+   <span data-ttu-id="3324c-117">显示名称采用相当标准的格式，在此格式中，时区与协调世界时（UTC）的偏移量括在括号中，后面跟有标识时区的字符串、时区中的一个或多个城市，或者时区中的一个或多个国家或地区。</span><span class="sxs-lookup"><span data-stu-id="3324c-117">The display name follows a fairly standard format in which the time zone's offset from Coordinated Universal Time (UTC) is enclosed in parentheses and is followed by a string that identifies the time zone, one or more of the cities in the time zone, or one or more of the countries or regions in the time zone.</span></span>
 
-2. <span data-ttu-id="5b361-118">定义时区标准时间的名称。</span><span class="sxs-lookup"><span data-stu-id="5b361-118">Define the name of the time zone's standard time.</span></span> <span data-ttu-id="5b361-119">通常，此字符串还用作时区的标识符。</span><span class="sxs-lookup"><span data-stu-id="5b361-119">Typically, this string is also used as the time zone's identifier.</span></span>
+2. <span data-ttu-id="3324c-118">定义时区标准时间的名称。</span><span class="sxs-lookup"><span data-stu-id="3324c-118">Define the name of the time zone's standard time.</span></span> <span data-ttu-id="3324c-119">通常，此字符串还用作时区的标识符。</span><span class="sxs-lookup"><span data-stu-id="3324c-119">Typically, this string is also used as the time zone's identifier.</span></span>
 
-3. <span data-ttu-id="5b361-120">如果要使用不同于时区的标准名称的标识符，请定义时区标识符。</span><span class="sxs-lookup"><span data-stu-id="5b361-120">If you want to use a different identifier than the time zone's standard name, define the time zone identifier.</span></span>
+3. <span data-ttu-id="3324c-120">如果要使用不同于时区的标准名称的标识符，请定义时区标识符。</span><span class="sxs-lookup"><span data-stu-id="3324c-120">If you want to use a different identifier than the time zone's standard name, define the time zone identifier.</span></span>
 
-4. <span data-ttu-id="5b361-121">实例化定义时区与 UTC 的偏移量的 <xref:System.TimeSpan> 对象。</span><span class="sxs-lookup"><span data-stu-id="5b361-121">Instantiate a <xref:System.TimeSpan> object that defines the time zone's offset from UTC.</span></span> <span data-ttu-id="5b361-122">时间时区晚于 UTC 的时区具有正偏移量。</span><span class="sxs-lookup"><span data-stu-id="5b361-122">Time zones with times that are later than UTC have a positive offset.</span></span> <span data-ttu-id="5b361-123">其时间早于 UTC 的时区具有负偏移量。</span><span class="sxs-lookup"><span data-stu-id="5b361-123">Time zones with times that are earlier than UTC have a negative offset.</span></span>
+4. <span data-ttu-id="3324c-121">实例化 <xref:System.TimeSpan> 定义时区与 UTC 的偏移量的对象。</span><span class="sxs-lookup"><span data-stu-id="3324c-121">Instantiate a <xref:System.TimeSpan> object that defines the time zone's offset from UTC.</span></span> <span data-ttu-id="3324c-122">时间时区晚于 UTC 的时区具有正偏移量。</span><span class="sxs-lookup"><span data-stu-id="3324c-122">Time zones with times that are later than UTC have a positive offset.</span></span> <span data-ttu-id="3324c-123">其时间早于 UTC 的时区具有负偏移量。</span><span class="sxs-lookup"><span data-stu-id="3324c-123">Time zones with times that are earlier than UTC have a negative offset.</span></span>
 
-5. <span data-ttu-id="5b361-124">调用 <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType> 方法来实例化新时区。</span><span class="sxs-lookup"><span data-stu-id="5b361-124">Call the <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType> method to instantiate the new time zone.</span></span>
+5. <span data-ttu-id="3324c-124">调用 <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType> 方法以实例化新时区。</span><span class="sxs-lookup"><span data-stu-id="3324c-124">Call the <xref:System.TimeZoneInfo.CreateCustomTimeZone%28System.String%2CSystem.TimeSpan%2CSystem.String%2CSystem.String%29?displayProperty=nameWithType> method to instantiate the new time zone.</span></span>
 
-## <a name="example"></a><span data-ttu-id="5b361-125">示例</span><span class="sxs-lookup"><span data-stu-id="5b361-125">Example</span></span>
+## <a name="example"></a><span data-ttu-id="3324c-125">示例</span><span class="sxs-lookup"><span data-stu-id="3324c-125">Example</span></span>
 
-<span data-ttu-id="5b361-126">下面的示例定义了莫森，南极洲的自定义时区，该时区没有调整规则。</span><span class="sxs-lookup"><span data-stu-id="5b361-126">The following example defines a custom time zone for Mawson, Antarctica, which has no adjustment rules.</span></span>
+<span data-ttu-id="3324c-126">下面的示例定义了莫森，南极洲的自定义时区，该时区没有调整规则。</span><span class="sxs-lookup"><span data-stu-id="3324c-126">The following example defines a custom time zone for Mawson, Antarctica, which has no adjustment rules.</span></span>
 
 [!code-csharp[System.TimeZone2.CreateTimeZone#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#1)]
 [!code-vb[System.TimeZone2.CreateTimeZone#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#1)]
 
-<span data-ttu-id="5b361-127">分配给 <xref:System.TimeZoneInfo.DisplayName%2A> 属性的字符串遵循标准格式，其中，时区与 UTC 的偏移量后跟时区的友好说明。</span><span class="sxs-lookup"><span data-stu-id="5b361-127">The string assigned to the <xref:System.TimeZoneInfo.DisplayName%2A> property follows a standard format in which the time zone's offset from UTC is followed by a friendly description of the time zone.</span></span>
+<span data-ttu-id="3324c-127">分配给属性的字符串 <xref:System.TimeZoneInfo.DisplayName%2A> 遵循标准格式，其中，时区与 UTC 的偏移量后跟时区的友好说明。</span><span class="sxs-lookup"><span data-stu-id="3324c-127">The string assigned to the <xref:System.TimeZoneInfo.DisplayName%2A> property follows a standard format in which the time zone's offset from UTC is followed by a friendly description of the time zone.</span></span>
 
-## <a name="compiling-the-code"></a><span data-ttu-id="5b361-128">编译代码</span><span class="sxs-lookup"><span data-stu-id="5b361-128">Compiling the code</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="3324c-128">编译代码</span><span class="sxs-lookup"><span data-stu-id="3324c-128">Compiling the code</span></span>
 
-<span data-ttu-id="5b361-129">此示例需要：</span><span class="sxs-lookup"><span data-stu-id="5b361-129">This example requires:</span></span>
+<span data-ttu-id="3324c-129">此示例需要：</span><span class="sxs-lookup"><span data-stu-id="3324c-129">This example requires:</span></span>
 
-- <span data-ttu-id="5b361-130">导入以下命名空间：</span><span class="sxs-lookup"><span data-stu-id="5b361-130">That the following namespaces be imported:</span></span>
+- <span data-ttu-id="3324c-130">导入以下命名空间：</span><span class="sxs-lookup"><span data-stu-id="3324c-130">That the following namespaces be imported:</span></span>
 
   [!code-csharp[System.TimeZone2.CreateTimeZone#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/cs/System.TimeZone2.CreateTimeZone.cs#6)]
   [!code-vb[System.TimeZone2.CreateTimeZone#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.CreateTimeZone/vb/System.TimeZone2.CreateTimeZone.vb#6)]
 
-## <a name="see-also"></a><span data-ttu-id="5b361-131">请参阅</span><span class="sxs-lookup"><span data-stu-id="5b361-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3324c-131">另请参阅</span><span class="sxs-lookup"><span data-stu-id="3324c-131">See also</span></span>
 
-- [<span data-ttu-id="5b361-132">日期、时间和时区</span><span class="sxs-lookup"><span data-stu-id="5b361-132">Dates, times, and time zones</span></span>](../../../docs/standard/datetime/index.md)
-- [<span data-ttu-id="5b361-133">时区概述</span><span class="sxs-lookup"><span data-stu-id="5b361-133">Time zone overview</span></span>](../../../docs/standard/datetime/time-zone-overview.md)
-- [<span data-ttu-id="5b361-134">如何：创建含调整规则的时区</span><span class="sxs-lookup"><span data-stu-id="5b361-134">How to: Create time zones with adjustment rules</span></span>](../../../docs/standard/datetime/create-time-zones-with-adjustment-rules.md)
+- [<span data-ttu-id="3324c-132">日期、时间和时区</span><span class="sxs-lookup"><span data-stu-id="3324c-132">Dates, times, and time zones</span></span>](index.md)
+- [<span data-ttu-id="3324c-133">时区概述</span><span class="sxs-lookup"><span data-stu-id="3324c-133">Time zone overview</span></span>](time-zone-overview.md)
+- [<span data-ttu-id="3324c-134">如何：创建含调整规则的时区</span><span class="sxs-lookup"><span data-stu-id="3324c-134">How to: Create time zones with adjustment rules</span></span>](create-time-zones-with-adjustment-rules.md)
