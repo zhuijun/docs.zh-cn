@@ -1,16 +1,17 @@
 ---
 title: 获取 DbProviderFactory
+description: 了解如何从 DbProviderFactories 类获取 DbProviderFactory，以使用 .NET Framework 中的特定数据源。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: a16e4a4d-6a5b-45db-8635-19570e4572ae
-ms.openlocfilehash: 0e2efd593019199ff641610b8602825cc60d4661
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b790c87cc3ec293c18bf730567f92b490c7c6594
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149461"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286710"
 ---
 # <a name="obtaining-a-dbproviderfactory"></a>获取 DbProviderFactory
 获取 <xref:System.Data.Common.DbProviderFactory> 的过程涉及将有关数据提供程序的信息传递给 <xref:System.Data.Common.DbProviderFactories> 类。 <xref:System.Data.Common.DbProviderFactories.GetFactory%2A> 方法将基于此信息创建一个强类型提供程序工厂。 例如，若要创建 <xref:System.Data.SqlClient.SqlClientFactory>，可以向 `GetFactory` 传递一个将提供程序名称指定为“System.Data.SqlClient”的字符串。 `GetFactory` 的其他重载采用 <xref:System.Data.DataRow>。 创建该提供程序工厂后，可以使用其方法创建其他对象。 `SqlClientFactory` 的部分方法包括 <xref:System.Data.SqlClient.SqlClientFactory.CreateConnection%2A>、<xref:System.Data.SqlClient.SqlClientFactory.CreateCommand%2A> 和 <xref:System.Data.SqlClient.SqlClientFactory.CreateDataAdapter%2A>。  
@@ -19,7 +20,7 @@ ms.locfileid: "79149461"
 > .NET Framework <xref:System.Data.OracleClient.OracleClientFactory>、<xref:System.Data.Odbc.OdbcFactory> 和 <xref:System.Data.OleDb.OleDbFactory> 类也提供类似功能。  
   
 ## <a name="registering-dbproviderfactories"></a>注册 DbProviderFactory  
- 支持基于工厂的类的每个 .NET Framework 数据提供程序都会在**计算机**的**DbProviderFactory**部分注册配置信息。 下面的配置文件片断演示 <xref:System.Data.SqlClient> 的语法和格式。  
+ 支持基于工厂的类的每个 .NET Framework 数据提供程序在本地计算机上的**machine.config**文件的**DbProviderFactories**节中注册配置信息。 下面的配置文件片断演示 <xref:System.Data.SqlClient> 的语法和格式。  
   
 ```xml  
 <system.data>  
@@ -34,10 +35,10 @@ ms.locfileid: "79149461"
 </system.data>  
 ```  
   
- **不变属性**标识基础数据提供程序。 在创建新工厂时也使用这种由三部分组成的命名语法，并用于标识应用程序配置文件中的提供程序，以便在运行时能够检索提供程序名称及其关联的连接字符串。  
+ **固定**属性标识基础数据提供程序。 在创建新工厂时也使用这种由三部分组成的命名语法，并用于标识应用程序配置文件中的提供程序，以便在运行时能够检索提供程序名称及其关联的连接字符串。  
   
 ## <a name="retrieving-provider-information"></a>检索提供程序信息  
- 使用 <xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A> 方法可以检索有关安装在本地计算机上的所有数据提供程序的信息。 它返回一<xref:System.Data.DataTable>个命名的**DbProvider工厂**，其中包含下表中描述的列。  
+ 使用 <xref:System.Data.Common.DbProviderFactories.GetFactoryClasses%2A> 方法可以检索有关安装在本地计算机上的所有数据提供程序的信息。 它返回一个 <xref:System.Data.DataTable> 名为**DbProviderFactories**的，其中包含下表中所述的列。  
   
 |列序号|列名称|示例输出|说明|  
 |--------------------|-----------------|--------------------|-----------------|  
@@ -55,9 +56,9 @@ ms.locfileid: "79149461"
  [!code-vb[DataWorks DbProviderFactories#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks DbProviderFactories/VB/source.vb#1)]  
   
 ## <a name="using-application-configuration-files-to-store-factory-information"></a>使用应用程序配置文件存储工厂信息  
- 用于使用工厂的设计模式需要在应用程序配置文件中存储提供程序和连接字符串信息，例如 Windows 应用程序的**app.config**和 ASP.NET应用程序的**Web.config。**  
+ 用于工厂的设计模式需要在应用程序配置文件中存储提供程序和连接字符串信息，如 Windows 应用程序的**app.config**和用于 ASP.NET 应用程序的**web.config。**  
   
- 下面的配置文件片段演示如何保存两个命名连接字符串：用于连接到 SQL Server 中 Northwind 数据库的“NorthwindSQL”和用于连接到 Access/Jet 中 Northwind 数据库的“NorthwindAccess”。 **不变量**名称用于**提供程序Name**属性。  
+ 下面的配置文件片段演示如何保存两个命名连接字符串：用于连接到 SQL Server 中 Northwind 数据库的“NorthwindSQL”和用于连接到 Access/Jet 中 Northwind 数据库的“NorthwindAccess”。 **固定**名称用于**providerName**特性。  
   
 ```xml  
 <configuration>  
@@ -79,7 +80,7 @@ ms.locfileid: "79149461"
 ```  
   
 ### <a name="retrieving-a-connection-string-by-provider-name"></a>按提供程序名称检索连接字符串  
- 若要创建提供程序工厂，必须提供连接字符串和提供程序名称。 此示例演示如何通过以不变格式 *"System.Data.提供程序名称*"传递提供程序名称来从应用程序配置文件中检索连接字符串。 代码循环访问 <xref:System.Configuration.ConnectionStringSettingsCollection>。 成功时代码返回 <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A>；否则返回 `null`（在 Visual Basic 中为 `Nothing`）。 如果提供程序有多项，则返回找到的第一项。 有关详细信息和从配置文件检索连接字符串的示例，请参阅[连接字符串和配置文件](connection-strings-and-configuration-files.md)。  
+ 若要创建提供程序工厂，必须提供连接字符串和提供程序名称。 此示例演示如何通过以固定*格式 "system.string" 传递*提供程序名称来从应用程序配置文件中检索连接字符串。 代码循环访问 <xref:System.Configuration.ConnectionStringSettingsCollection>。 成功时代码返回 <xref:System.Configuration.ConnectionStringSettings.ProviderName%2A>；否则返回 `null`（在 Visual Basic 中为 `Nothing`）。 如果提供程序有多项，则返回找到的第一项。 有关从配置文件中检索连接字符串的详细信息和示例，请参阅[连接字符串和配置文件](connection-strings-and-configuration-files.md)。  
   
 > [!NOTE]
 > 若要此代码正确运行，需要引用 `System.Configuration.dll`。  
@@ -88,7 +89,7 @@ ms.locfileid: "79149461"
  [!code-vb[DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider/VB/source.vb#1)]  
   
 ## <a name="creating-the-dbproviderfactory-and-dbconnection"></a>创建 DbProviderFactory 和 DbConnection  
- 此示例演示如何通过格式为<xref:System.Data.Common.DbProviderFactory>*"System.Data.提供程序名称*"和连接字符串传递提供程序名称来创建 和<xref:System.Data.Common.DbConnection>对象。 成功时返回 `DbConnection` 对象；出错时返回 `null`（在 Visual Basic 中为 `Nothing`）。  
+ 此示例演示如何 <xref:System.Data.Common.DbProviderFactory> 通过以 "system.string <xref:System.Data.Common.DbConnection> " 格式和连接字符串的形式传递提供程序名称*System.Data.ProviderName*来创建和对象。 成功时返回 `DbConnection` 对象；出错时返回 `null`（在 Visual Basic 中为 `Nothing`）。  
   
  代码通过调用 `DbProviderFactory` 获取 <xref:System.Data.Common.DbProviderFactories.GetFactory%2A>。 然后，<xref:System.Data.Common.DbProviderFactory.CreateConnection%2A> 方法创建 <xref:System.Data.Common.DbConnection> 对象并将 <xref:System.Data.Common.DbConnection.ConnectionString%2A> 属性设置为连接字符串。  
   

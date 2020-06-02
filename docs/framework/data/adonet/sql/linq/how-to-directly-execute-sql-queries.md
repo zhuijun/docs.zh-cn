@@ -1,16 +1,17 @@
 ---
 title: 如何：直接执行 SQL 查询
+description: 了解如何使用 ExecuteQuery 运行查询，并在 LINQ to SQL 查询不足的情况下将结果直接转换为对象。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: e491b9bf-741a-4296-9f51-76c25ddf6a82
-ms.openlocfilehash: a4971bc05b22c38790c5fd1493e70cccf5eaae16
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 59bd404e41f6be1181d6a625c31ee23358db0df3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70793781"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286360"
 ---
 # <a name="how-to-directly-execute-sql-queries"></a>如何：直接执行 SQL 查询
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 将您编写的查询转换成参数化 SQL 查询（以文本形式），然后将它们发送至 SQL 服务器进行处理。  
@@ -33,9 +34,9 @@ ms.locfileid: "70793781"
  [!code-csharp[DLinqQuerying#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQuerying/cs/Program.cs#5)]
  [!code-vb[DLinqQuerying#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQuerying/vb/Module1.vb#5)]  
   
- 在查询文本中使用 `Console.WriteLine()` 和 `String.Format()` 所用的大括号表示法来表示参数。 事实上， `String.Format()`实际上是在您提供的查询字符串上调用，用生成的参数名@p0（例如， @p1 ...， @p（n））替换大的大括号内参数。  
+ 在查询文本中使用 `Console.WriteLine()` 和 `String.Format()` 所用的大括号表示法来表示参数。 事实上， `String.Format()` 实际上是在您提供的查询字符串上调用，用生成的参数名（例如 @p0 ， @p1 ...， @p （n））替换大的大括号内参数。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [背景信息](background-information.md)
 - [查询数据库](querying-the-database.md)

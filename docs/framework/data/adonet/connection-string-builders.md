@@ -1,19 +1,20 @@
 ---
 title: 连接字符串生成器
+description: 了解用于 ADO.NET 中不同提供程序的连接字符串生成器类，它们都继承自 DbConnectionStringBuilder。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8434b608-c4d3-43d3-8ae3-6d8c6b726759
-ms.openlocfilehash: 8cadeac0bcbf301f7d973e93435885de82052603
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e493140b4cf5a939e8ae8f42b617fb739ed09dec
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151658"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287059"
 ---
 # <a name="connection-string-builders"></a>连接字符串生成器
-在ADO.NET的早期版本中，未对连接字符串的编译时间检查与串联字符串值进行，因此在运行时生成了不正确的关键字<xref:System.ArgumentException>。 每个 .NET Framework 数据提供程序都支持连接字符串关键字的不同语法，这使得手动构造有效连接字符串变得困难。 为了解决此问题，ADO.NET 2.0 为每个 .NET Framework 数据提供程序引入了新的连接字符串生成器。 每个数据提供程序包括一个从 <xref:System.Data.Common.DbConnectionStringBuilder> 继承的强类型连接字符串生成器类。 下表列出了 .NET Framework 数据提供程序及其关联的连接字符串生成器类。  
+在早期版本的 ADO.NET 中，不会发生带有串联字符串值的连接字符串的编译时检查，因此在运行时，不正确的关键字生成了 <xref:System.ArgumentException> 。 每个 .NET Framework 数据访问接口支持不同的连接字符串关键字语法，这使得在手动操作时很难构建有效的连接字符串。 为了解决此问题，ADO.NET 2.0 为每个 .NET Framework 数据提供程序引入了新的连接字符串生成器。 每个数据提供程序包括一个从 <xref:System.Data.Common.DbConnectionStringBuilder> 继承的强类型连接字符串生成器类。 下表列出了 .NET Framework 数据提供程序及其关联的连接字符串生成器类。  
   
 |提供程序|ConnectionStringBuilder 类|  
 |--------------|-----------------------------------|  

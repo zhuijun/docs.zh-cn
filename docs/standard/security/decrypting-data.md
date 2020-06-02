@@ -11,12 +11,12 @@ helpviewer_keywords:
 - asymmetric decryption
 - decryption
 ms.assetid: 9b266b6c-a9b2-4d20-afd8-b3a0d8fd48a0
-ms.openlocfilehash: 37194380d9f08d328f836bcb8648772348958768
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 844561c0d207106a183243f5f2b3e0cea3e70422
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706235"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288363"
 ---
 # <a name="decrypting-data"></a>解密数据
 
@@ -174,9 +174,9 @@ class Class1
 
 通常，一方（A 方）同时生成公钥和私钥，并将其存储在内存或加密密钥容器中。 然后 A 方将公钥发送到另一方（B 方）。 使用公钥时，参与方 B 会对数据进行加密，然后将数据发送回 A 方。接收到数据后，A 方使用对应的私钥将其解密。 A 方只有使用与 B 方用于加密数据的公钥相对应的私钥，解密才能成功。
 
-有关如何将非对称密钥存储在安全加密密钥容器中以及随后如何获取非对称密钥的信息，请参阅 [How to: Store Asymmetric Keys in a Key Container](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md)。
+有关如何将非对称密钥存储在安全加密密钥容器中以及随后如何获取非对称密钥的信息，请参阅 [How to: Store Asymmetric Keys in a Key Container](how-to-store-asymmetric-keys-in-a-key-container.md)。
 
-下面的示例阐释如何对表示一个对称密钥和 IV 的两个字节数组进行解密。 有关如何以可方便地发送到第三方的格式从 <xref:System.Security.Cryptography.RSACryptoServiceProvider> 对象提取非对称公钥的信息，请参阅 [Encrypting Data](../../../docs/standard/security/encrypting-data.md)的托管流的值。
+下面的示例阐释如何对表示一个对称密钥和 IV 的两个字节数组进行解密。 有关如何以可方便地发送到第三方的格式从 <xref:System.Security.Cryptography.RSACryptoServiceProvider> 对象提取非对称公钥的信息，请参阅 [Encrypting Data](encrypting-data.md)的托管流的值。
 
 ```vb
 'Create a new instance of the RSACryptoServiceProvider class.
@@ -204,6 +204,6 @@ symmetricIV = rsa.Decrypt(encryptedSymmetricIV , false);
 
 ## <a name="see-also"></a>另请参阅
 
-- [生成加密和解密密钥](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
-- [加密数据](../../../docs/standard/security/encrypting-data.md)
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [生成加密和解密的密钥](generating-keys-for-encryption-and-decryption.md)
+- [加密数据](encrypting-data.md)
+- [加密服务](cryptographic-services.md)

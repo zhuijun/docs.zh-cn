@@ -1,13 +1,14 @@
 ---
 title: 支持和不支持的 LINQ 方法 (LINQ to Entities)
+description: 本文总结了 LINQ to Entities 查询支持和不支持的标准查询运算符。
 ms.date: 03/30/2017
 ms.assetid: 7f3ffa5f-f819-4730-bcdb-09b23de3b6d0
-ms.openlocfilehash: 54805e8d3f0d5081c2d7d8fdbdcfbdcb63f9bcb6
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 0d01cc6ccecef0f10aed48fa7475ad1a16ad4ea1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248998"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286774"
 ---
 # <a name="supported-and-unsupported-linq-methods-linq-to-entities"></a>支持和不支持的 LINQ 方法 (LINQ to Entities)
 本部分提供有关 LINQ to Entities 查询支持或不支持的语言集成查询（LINQ）标准查询运算符的信息。 许多 LINQ 标准查询运算符都有可接受整数自变量的重载版本。 该整数参数对应于正在操作的序列中从零开始的索引，<xref:System.Collections.Generic.IEqualityComparer%601> 或 <xref:System.Collections.Generic.IComparer%601>。 除非专门指定，否则这些 LINQ 标准查询运算符的重载版本并不受支持，尝试使用它们将引发异常。  
@@ -27,7 +28,7 @@ ms.locfileid: "70248998"
 |<xref:System.Linq.Queryable.Where%2A>|不支持|`Function Where(Of TSource) ( _ source As IQueryable(Of TSource), _ predicate As Expression(Of Func(Of TSource, Integer, Boolean)) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> Where<TSource>( this IQueryable<TSource> source, Expression<Func\<TSource, int, bool>> predicate )`|  
   
 ## <a name="join-methods"></a>联接方法  
- LINQ to Entities 中支持 LINQ 联接方法，但`IEqualityComparer`由于比较器不能转换为数据源，因此它们除外。 有关详细信息，请参阅[LINQ to Entities 查询中的标准查询运算符](standard-query-operators-in-linq-to-entities-queries.md)。 下表列出了支持的和不支持的联接方法。  
+ LINQ to Entities 中支持 LINQ 联接方法，但 `IEqualityComparer` 由于比较器不能转换为数据源，因此它们除外。 有关详细信息，请参阅[LINQ to Entities 查询中的标准查询运算符](standard-query-operators-in-linq-to-entities-queries.md)。 下表列出了支持的和不支持的联接方法。  
   
 |方法|支持|Visual Basic 函数签名|C# 方法签名|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -37,7 +38,7 @@ ms.locfileid: "70248998"
 |<xref:System.Linq.Queryable.Join%2A>|不支持|`Function Join(Of TOuter, TInner, TKey, TResult) ( _ outer As IQueryable(Of TOuter), _ inner As IEnumerable(Of TInner), _ outerKeySelector As Expression(Of Func(Of TOuter, TKey)), _ innerKeySelector As Expression(Of Func(Of TInner, TKey)), _ resultSelector As Expression(Of Func(Of TOuter, TInner, TResult)), _ comparer As IEqualityComparer(Of TKey) _ ) As IQueryable(Of TResult)`|`IQueryable<TResult> Join\<TOuter, TInner, TKey, TResult>( this IQueryable<TOuter> outer, IEnumerable<TInner> inner, Expression<Func\<TOuter, TKey>> outerKeySelector, Expression<Func\<TInner, TKey>> innerKeySelector, Expression<Func\<TOuter, TInner, TResult>> resultSelector, IEqualityComparer<TKey> comparer )`|  
   
 ## <a name="set-methods"></a>设置方法  
- 大多数 LINQ set 方法在 LINQ to Entities 查询中受支持，但它们除外<xref:System.Collections.Generic.EqualityComparer%601>。 有关详细信息，请参阅[LINQ to Entities 查询中的标准查询运算符](standard-query-operators-in-linq-to-entities-queries.md)。 下表列出了支持的和不支持的集方法。  
+ 大多数 LINQ set 方法在 LINQ to Entities 查询中受支持，但它们除外 <xref:System.Collections.Generic.EqualityComparer%601> 。 有关详细信息，请参阅[LINQ to Entities 查询中的标准查询运算符](standard-query-operators-in-linq-to-entities-queries.md)。 下表列出了支持的和不支持的集方法。  
   
 |方法|支持|Visual Basic 函数签名|C# 方法签名|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -59,7 +60,7 @@ ms.locfileid: "70248998"
 |<xref:System.Linq.Queryable.Union%2A>|不支持|`Function Union(Of TSource) ( _ source1 As IQueryable(Of TSource), _ source2 As IEnumerable(Of TSource), _ comparer As IEqualityComparer(Of TSource) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> Union<TSource>( this IQueryable<TSource> source1, IEnumerable<TSource> source2, IEqualityComparer<TSource> comparer )`|  
   
 ## <a name="ordering-methods"></a>排序方法  
- 大多数 LINQ 排序方法在 LINQ to Entities 中受支持，但它们除外<xref:System.Collections.Generic.IComparer%601>，因为比较器不能转换为数据源。 有关详细信息，请参阅[LINQ to Entities 查询中的标准查询运算符](standard-query-operators-in-linq-to-entities-queries.md)。 下表列出了支持的和不支持的排序方法。  
+ 大多数 LINQ 排序方法在 LINQ to Entities 中受支持，但它们除外 <xref:System.Collections.Generic.IComparer%601> ，因为比较器不能转换为数据源。 有关详细信息，请参阅[LINQ to Entities 查询中的标准查询运算符](standard-query-operators-in-linq-to-entities-queries.md)。 下表列出了支持的和不支持的排序方法。  
   
 |方法|支持|Visual Basic 函数签名|C# 方法签名|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -74,7 +75,7 @@ ms.locfileid: "70248998"
 |<xref:System.Linq.Queryable.Reverse%2A>|不支持|`Function Reverse(Of TSource) ( _ source As IQueryable(Of TSource) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> Reverse<TSource>( this IQueryable<TSource> source )`|  
   
 ## <a name="grouping-methods"></a>分组方法  
- 大多数 LINQ 分组方法在 LINQ to Entities 中受支持，但它们除外<xref:System.Collections.Generic.IEqualityComparer%601>，因为比较器不能转换为数据源。 有关详细信息，请参阅[LINQ to Entities 查询中的标准查询运算符](standard-query-operators-in-linq-to-entities-queries.md)。 下表列出了支持的和不支持的分组方法。  
+ 大多数 LINQ 分组方法在 LINQ to Entities 中受支持，但它们除外 <xref:System.Collections.Generic.IEqualityComparer%601> ，因为比较器不能转换为数据源。 有关详细信息，请参阅[LINQ to Entities 查询中的标准查询运算符](standard-query-operators-in-linq-to-entities-queries.md)。 下表列出了支持的和不支持的分组方法。  
   
 |方法|支持|Visual Basic 函数签名|C# 方法签名|  
 |------------|-------------|-------------------------------------|--------------------------|  
@@ -178,6 +179,6 @@ ms.locfileid: "70248998"
 |<xref:System.Linq.Queryable.TakeWhile%2A>|不支持|`Function TakeWhile(Of TSource) ( _ source As IQueryable(Of TSource), _ predicate As Expression(Of Func(Of TSource, Boolean)) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> TakeWhile<TSource>( this IQueryable<TSource> source, Expression<Func\<TSource, bool>> predicate )`|  
 |<xref:System.Linq.Queryable.TakeWhile%2A>|不支持|`Function TakeWhile(Of TSource) ( _ source As IQueryable(Of TSource), _ predicate As Expression(Of Func(Of TSource, Integer, Boolean)) _ ) As IQueryable(Of TSource)`|`IQueryable<TSource> TakeWhile<TSource>( this IQueryable<TSource> source, Expression<Func\<TSource, int, bool>> predicate )`|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [LINQ to Entities 查询中的标准查询运算符](standard-query-operators-in-linq-to-entities-queries.md)

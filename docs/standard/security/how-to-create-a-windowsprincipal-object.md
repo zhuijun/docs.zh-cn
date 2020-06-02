@@ -11,12 +11,12 @@ helpviewer_keywords:
 - security [.NET Framework], principals
 - principal objects, creating
 ms.assetid: 56eb10ca-e61d-4ed2-af7a-555fc4c25a25
-ms.openlocfilehash: 30af18b7d7b86621586c7da66eda1b37356d5565
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 6064c98c4e1e5153f4e0de4849de196228972a89
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159775"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284424"
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>如何：创建 WindowsPrincipal 对象
 有两种方法来创建 <xref:System.Security.Principal.WindowsPrincipal> 对象，具体取决于代码必须重复执行基于角色的验证还是必须只能执行一次。  
@@ -25,7 +25,7 @@ ms.locfileid: "78159775"
   
 ### <a name="to-create-a-windowsprincipal-object-for-repeated-validation"></a>若要创建 WindowsPrincipal 对象用于重复验证  
   
-1. 在由静态 <xref:System.AppDomain.SetPrincipalPolicy%2A> 属性所返回的 <xref:System.AppDomain> 对象上调用 <xref:System.AppDomain.CurrentDomain%2A?displayProperty=nameWithType>方法，向此方法传递 <xref:System.Security.Principal.PrincipalPolicy>枚举值，该值指示新策略应该是什么。 受支持的值为 <xref:System.Security.Principal.PrincipalPolicy.NoPrincipal>、<xref:System.Security.Principal.PrincipalPolicy.UnauthenticatedPrincipal> 和 <xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>。 下面的代码演示了此方法调用。  
+1. 在由静态 <xref:System.AppDomain.CurrentDomain%2A?displayProperty=nameWithType> 属性所返回的 <xref:System.AppDomain> 对象上调用 <xref:System.AppDomain.SetPrincipalPolicy%2A>方法，向此方法传递 <xref:System.Security.Principal.PrincipalPolicy>枚举值，该值指示新策略应该是什么。 支持的值为 <xref:System.Security.Principal.PrincipalPolicy.NoPrincipal>、<xref:System.Security.Principal.PrincipalPolicy.UnauthenticatedPrincipal> 和 <xref:System.Security.Principal.PrincipalPolicy.WindowsPrincipal>。 下面的代码演示了此方法调用。  
   
     ```csharp  
     AppDomain.CurrentDomain.SetPrincipalPolicy(  
@@ -53,7 +53,7 @@ ms.locfileid: "78159775"
   
 ### <a name="to-create-a-windowsprincipal-object-for-a-single-validation"></a>若要创建 WindowsPrincipal 对象用于单个验证  
   
-1. 通过调用静态 <xref:System.Security.Principal.WindowsIdentity> 方法初始化新的 <xref:System.Security.Principal.WindowsIdentity.GetCurrent%2A?displayProperty=nameWithType> 对象，该方法查询当前的 Windows 帐户并将有关该帐户的信息放置到新创建的标识对象中。 下面的代码创建一个新的 <xref:System.Security.Principal.WindowsIdentity> 对象并将其初始化为当前经过身份验证的用户。  
+1. 通过调用静态 <xref:System.Security.Principal.WindowsIdentity.GetCurrent%2A?displayProperty=nameWithType> 方法初始化新的 <xref:System.Security.Principal.WindowsIdentity> 对象，该方法查询当前的 Windows 帐户并将有关该帐户的信息放置到新创建的标识对象中。 下面的代码创建一个新的 <xref:System.Security.Principal.WindowsIdentity> 对象并将其初始化为当前经过身份验证的用户。  
   
     ```csharp  
     WindowsIdentity myIdentity = WindowsIdentity.GetCurrent();  
@@ -77,4 +77,4 @@ ms.locfileid: "78159775"
   
 ## <a name="see-also"></a>另请参阅
 
-- [主体和标识对象](../../../docs/standard/security/principal-and-identity-objects.md)
+- [主体和标识对象](principal-and-identity-objects.md)

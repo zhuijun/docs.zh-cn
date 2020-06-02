@@ -1,21 +1,22 @@
 ---
 title: 向数据表添加列
+description: DataTable 包含由表的 Columns 属性引用的 DataColumn 对象。 使用此示例代码将列添加到 ADO.NET 中的表。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: e85c4a0e-4f3f-458c-b58b-0ddbc06bf974
-ms.openlocfilehash: 6e0dcd819dc354e1fd23b244692dff5091142004
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9d6d21696acd7a6b63cfd6d2ea7e906ec2acd7c9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784853"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286942"
 ---
 # <a name="adding-columns-to-a-datatable"></a>向数据表添加列
-包含由表的**Columns**属性引用的对象的<xref:System.Data.DataColumn>集合。 <xref:System.Data.DataTable> 这个列的集合与任何约束一起定义表的架构（即结构）。  
+<xref:System.Data.DataTable>包含 <xref:System.Data.DataColumn> 由表的**Columns**属性引用的对象的集合。 这个列的集合与任何约束一起定义表的架构（即结构）。  
   
- 您可以使用**DataColumn**构造函数在表中创建**DataColumn**对象，或调用表的**Columns**属性的<xref:System.Data.DataColumnCollection> **Add**方法（即）。 **Add**方法接受可选的**ColumnName**、 **DataType**和**Expression**参数，并创建新的**DataColumn**作为集合的成员。 它还接受现有**DataColumn**对象并将其添加到集合中，并返回对添加的**datacolumn**的引用（如果请求）。 因为**DataTable**对象不特定于任何数据源，所以在指定**DataColumn**的数据类型时，将使用 .NET Framework 类型。  
+ 您可以使用**DataColumn**构造函数在表中创建**DataColumn**对象，或调用表的**Columns**属性的**Add**方法（即） <xref:System.Data.DataColumnCollection> 。 **Add**方法接受可选的**ColumnName**、 **DataType**和**Expression**参数，并创建新的**DataColumn**作为集合的成员。 它还接受现有**DataColumn**对象并将其添加到集合中，并返回对添加的**datacolumn**的引用（如果请求）。 因为**DataTable**对象不特定于任何数据源，所以在指定**DataColumn**的数据类型时，将使用 .NET Framework 类型。  
   
  下面的示例将四列添加到**DataTable**。  
   
@@ -51,11 +52,11 @@ workTable.Columns.Add("Purchases", typeof(Double));
   
  如果将 <xref:System.Xml.Linq.XElement> 用作 <xref:System.Data.DataColumn.DataType%2A> 中的 <xref:System.Data.DataColumn> 的 <xref:System.Data.DataTable>，则在读入数据时，XML 序列化将不起作用。 例如，如果通过使用 <xref:System.Xml.XmlDocument> 方法来写出 `DataTable.WriteXml`，则在序列化为 XML 时，<xref:System.Xml.Linq.XElement> 中会出现一个额外的父节点。 若要解决此问题，请使用 <xref:System.Data.SqlTypes.SqlXml> 类型来代替 <xref:System.Xml.Linq.XElement>。 `ReadXml` 和 `WriteXml` 对 <xref:System.Data.SqlTypes.SqlXml> 均能正确使用。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Data.DataColumn>
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataTable>
 - [数据表架构定义](datatable-schema-definition.md)
-- [数据表](datatables.md)
+- [DataTables](datatables.md)
 - [ADO.NET 概述](../ado-net-overview.md)

@@ -1,13 +1,14 @@
 ---
 title: DataAdapter 和 DataReader
+description: 了解用于从数据库中检索数据的 ADO.NET DataReader 以及用于从数据源检索数据并填充数据集的 DataAdapter。
 ms.date: 03/30/2017
 ms.assetid: cc952ca2-ec19-46ab-9189-15174b52cb74
-ms.openlocfilehash: 20c6d514e70d2e4db451e0fff02e72688bf7d0ba
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 17463d65266baa53521bed9603c8abd96923277b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786648"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286968"
 ---
 # <a name="dataadapters-and-datareaders"></a>DataAdapter 和 DataReader
 您可以使用 ADO.NET **DataReader**从数据库中检索只读、只进数据流。 结果将在执行查询时返回，并存储在客户端的网络缓冲区中，直到您使用**DataReader**的**Read**方法请求它们。 使用**DataReader**可以通过在数据可用时立即检索数据来提高应用程序的性能，并在默认情况下，每次仅在内存中存储一行，从而减少系统开销。  
@@ -44,7 +45,7 @@ ms.locfileid: "70786648"
  [使用 DataAdapter 执行批处理操作](performing-batch-operations-using-dataadapters.md)  
  说明在从 `DataSet` 应用更新时，如何通过减少与 SQL Server 之间的往返次数来提高应用程序的性能。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [连接到数据源](connecting-to-a-data-source.md)
 - [命令和参数](commands-and-parameters.md)

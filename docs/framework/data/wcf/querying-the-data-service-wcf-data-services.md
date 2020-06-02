@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 823e9444-27aa-4f1f-be8e-0486d67f54c0
-ms.openlocfilehash: 8ae4b4b9938f72f4f4fc011e180cd69440ec3dd9
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 13334f6425c47e45d729d606d99602a99f35d8e6
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201759"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286153"
 ---
 # <a name="querying-the-data-service-wcf-data-services"></a>查询数据服务（WCF 数据服务）
 
@@ -67,7 +67,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 
 ## <a name="adding-query-options"></a>添加查询选项
 
-数据服务查询支持 WCF 数据 Servicess 提供的所有查询选项。 调用 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> 方法可向 <xref:System.Data.Services.Client.DataServiceQuery%601> 实例追加查询选项。 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> 返回一个新的 <xref:System.Data.Services.Client.DataServiceQuery%601> 实例，该实例等效于原始查询，但带有新的查询选项集。 下面的查询在执行时会返回按 `Orders` 值进行筛选并按 `Freight` 降序排序的 `OrderID`：
+数据服务查询支持 WCF 数据服务提供的所有查询选项。 调用 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> 方法可向 <xref:System.Data.Services.Client.DataServiceQuery%601> 实例追加查询选项。 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> 返回一个新的 <xref:System.Data.Services.Client.DataServiceQuery%601> 实例，该实例等效于原始查询，但带有新的查询选项集。 下面的查询在执行时会返回按 `Orders` 值进行筛选并按 `Freight` 降序排序的 `OrderID`：
 
 [!code-csharp[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#addqueryoptionsspecific)]
 [!code-vb[Astoria Northwind Client#AddQueryOptionsSpecific](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#addqueryoptionsspecific)]
@@ -151,6 +151,6 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 
 - [如何：投影查询结果](how-to-project-query-results-wcf-data-services.md)
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [WCF 数据服务客户端库](wcf-data-services-client-library.md)

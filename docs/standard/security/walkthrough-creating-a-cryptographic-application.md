@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cryptography [NET Framework], cryptographic application example
 - cryptography [NET Framework], application example
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
-ms.openlocfilehash: 6e2d9b8bebdfd2ea5d5507cc73d444fa8bf785fb
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 246028566c59e5c8a77b26a21729d3f143d38d07
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705829"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289702"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>演练：创建加密应用程序
 本演练演示如何对内容进行加密和解密。 下面的代码示例是特为 Windows 窗体应用程序设计的。 此应用程序不演示实际方案，例如使用智能卡。 而演示加密和解密的基础知识。  
@@ -31,7 +31,7 @@ ms.locfileid: "75705829"
   
  下表总结了本主题中的加密任务。  
   
-|任务|描述|  
+|任务|说明|  
 |----------|-----------------|  
 |创建 Windows 窗体应用程序|列出运行该应用程序所需的控件。|  
 |声明全局对象|声明字符串路径变量 <xref:System.Security.Cryptography.CspParameters> 和 <xref:System.Security.Cryptography.RSACryptoServiceProvider> 具有 <xref:System.Windows.Forms.Form> 类的全局上下文。|  
@@ -44,14 +44,14 @@ ms.locfileid: "75705829"
 |测试应用程序|列出用于测试此应用程序的步骤。|  
   
 ## <a name="prerequisites"></a>先决条件  
- 你需要以下组件来完成本演练：  
+ 您需要满足以下条件才能完成本演练：  
   
 - 对 <xref:System.IO> 和 <xref:System.Security.Cryptography> 命名空间的引用。  
   
 ## <a name="creating-a-windows-forms-application"></a>创建 Windows 窗体应用程序  
  本演练中的大多数代码示例均设计为按钮控件的事件处理程序。 下表列出了示例应用程序所需的控件及其匹配代码示例所需的名称。  
   
-|控件|Name|文本属性（根据需要）|  
+|控件|名称|文本属性（根据需要）|  
 |-------------|----------|---------------------------------|  
 |<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|加密文件|  
 |<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|解密文件|  
@@ -80,7 +80,7 @@ ms.locfileid: "75705829"
  [!code-vb[CryptoWalkThru#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/CryptoWalkThru/vb/Form1.vb#2)]  
   
 ## <a name="encrypting-a-file"></a>加密文件  
- 此任务涉及两种方法： "`Encrypt File`" 按钮的事件处理程序方法（"`buttonEncryptFile_Click`"）和 `EncryptFile` 方法。 第一种方法显示一个用于选择文件的对话框，并将文件名传递给第二种方法，后者将执行加密。  
+ 此任务涉及两种方法： `Encrypt File` 按钮（ `buttonEncryptFile_Click` ）和方法的事件处理程序方法 `EncryptFile` 。 第一种方法显示一个用于选择文件的对话框，并将文件名传递给第二种方法，后者将执行加密。  
   
  加密的内容、密钥和 IV 全都保存到一个 <xref:System.IO.FileStream> 中，这被称为加密包。  
   
@@ -180,9 +180,9 @@ ms.locfileid: "75705829"
   
 #### <a name="to-create-keys-encrypt-and-decrypt"></a>创建密钥、加密和解密  
   
-1. 单击 `Create Keys` 按钮。 标签显示密钥名称，并显示它是完整密钥对。  
+1. 单击“`Create Keys`”按钮。 标签显示密钥名称，并显示它是完整密钥对。  
   
-2. 单击 `Export Public Key` 按钮。 请注意，导出公钥参数并不会更改当前密钥。  
+2. 单击“`Export Public Key`”按钮。 请注意，导出公钥参数并不会更改当前密钥。  
   
 3. 单击 `Encrypt File` 按钮并选择文件。  
   
@@ -194,7 +194,7 @@ ms.locfileid: "75705829"
   
 #### <a name="to-encrypt-using-the-public-key"></a>使用公钥进行加密  
   
-1. 单击 `Import Public Key` 按钮。 标签显示密钥名称，并显示它仅是公共的。  
+1. 单击“`Import Public Key`”按钮。 标签显示密钥名称，并显示它仅是公共的。  
   
 2. 单击 `Encrypt File` 按钮并选择文件。  
   
@@ -204,10 +204,10 @@ ms.locfileid: "75705829"
   
 #### <a name="to-decrypt-using-the-private-key"></a>使用私钥进行解密  
   
-1. 单击 `Get Private Key` 按钮。 标签显示密钥名称，并显示它是否是完整密钥对。  
+1. 单击“`Get Private Key`”按钮。 标签显示密钥名称，并显示它是否是完整密钥对。  
   
 2. 单击 `Decrypt File` 按钮，然后选择刚刚加密的文件。 这将会成功，因为你具有用于解密的完整密钥对。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [加密服务](cryptographic-services.md)
