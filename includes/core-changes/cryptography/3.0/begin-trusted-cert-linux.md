@@ -26,7 +26,7 @@ Linux 和其他类似 Unix 的系统（但不是 macOS）上的根证书可以�
 
 许多 Linux 分发版（或发行版）将根证书写入两个位置：每个文件一个证书目录和一个文件串联。 在某些发行版上，每个文件一个证书目录使用 `BEGIN TRUSTED CERTIFICATE` 语法，而一个文件串联则使用标准 `BEGIN CERTIFICATE` 语法。 请确保将任何自定义根证书作为 `BEGIN CERTIFICATE` 添加到这些位置中的至少一个位置，并且你的应用程序可以读取这两个位置。
 
-典型的目录是 /etc/ssl/certs/ */* ，典型的串联文件是 /etc/ssl/cert.pem  。 使用命令 `openssl version -d` 来确定特定于平台的根目录，这可能不同于 /etc/ssl/  。 例如，在 Ubuntu 18.04 上，目录是 /usr/lib/ssl/certs/  ，文件是 /usr/lib/ssl/cert.pem  。 不过，/usr/lib/ssl/certs/  是 /etc/ssl/certs/  的符号链接，并且 /usr/lib/ssl/cert.pem  不存在。
+典型的目录是 /etc/ssl/certs/ */* ，典型的串联文件是 /etc/ssl/cert.pem。 使用命令 `openssl version -d` 来确定特定于平台的根目录，这可能不同于 /etc/ssl/。 例如，在 Ubuntu 18.04 上，目录是 /usr/lib/ssl/certs/，文件是 /usr/lib/ssl/cert.pem。 不过，/usr/lib/ssl/certs/ 是 /etc/ssl/certs/ 的符号链接，并且 /usr/lib/ssl/cert.pem 不存在。
 
 ```bash
 $ openssl version -d

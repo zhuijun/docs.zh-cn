@@ -12,7 +12,7 @@ ms.locfileid: "83721306"
 
 #### <a name="change-description"></a>更改描述
 
-自 .NET Core 3.0 起，Linux 上 `LegalKeySizes`<xref:System.Security.Cryptography.RSA.Create%2A?displayProperty=nameWithType> 和 <xref:System.Security.Cryptography.RSAOpenSsl.%23ctor%2A> 中 RSA 实例上的 <xref:System.Security.Cryptography.RSACryptoServiceProvider.%23ctor%2A> 属性报告的最低合法密钥大小已从 384 增加到 512。
+自 .NET Core 3.0 起，Linux 上 <xref:System.Security.Cryptography.RSA.Create%2A?displayProperty=nameWithType><xref:System.Security.Cryptography.RSAOpenSsl.%23ctor%2A> 和 <xref:System.Security.Cryptography.RSACryptoServiceProvider.%23ctor%2A> 中 RSA 实例上的 `LegalKeySizes` 属性报告的最低合法密钥大小已从 384 增加到 512。
 
 因此，在 .NET Core 2.2 及更早版本中，方法调用（如 `RSA.Create(384)`）会成功。 在 .NET Core 3.0 及更高版本中，方法调用 `RSA.Create(384)` 会引发异常，指示大小太小。
 

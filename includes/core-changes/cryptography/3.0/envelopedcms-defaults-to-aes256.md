@@ -30,7 +30,7 @@ return cms.Encode();
 
 #### <a name="recommended-action"></a>建议操作
 
-如果该更改有负面影响，则可以通过在包含 <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> 类型参数的 <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier> 构造函数中显式指定加密算法标识符来还原 TripleDES 加密，例如：
+如果该更改有负面影响，则可以通过在包含 <xref:System.Security.Cryptography.Pkcs.AlgorithmIdentifier> 类型参数的 <xref:System.Security.Cryptography.Pkcs.EnvelopedCms> 构造函数中显式指定加密算法标识符来还原 TripleDES 加密，例如：
 
 ```csharp
 Oid tripleDesOid = new Oid("1.2.840.113549.3.7", null);
