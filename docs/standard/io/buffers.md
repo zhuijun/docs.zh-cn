@@ -29,11 +29,11 @@ ms.locfileid: "81739619"
 
 前面的方法：
 
-- 使用 `IBufferWriter<byte>` 从 `GetSpan(5)` 请求至少 5 个字节的缓冲区。
+- 使用 `GetSpan(5)` 从 `IBufferWriter<byte>` 请求至少 5 个字节的缓冲区。
 - 将 ASCII 字符串“Hello”的字节写入返回的 `Span<byte>`。
 - 调用 <xref:System.Buffers.IBufferWriter%601> 以指示写入缓冲区的字节数。
 
-此写入方法使用 `Memory<T>` 提供的 /`Span<T>``IBufferWriter<T>` 缓冲区。 或者，可以使用 <xref:System.Buffers.BuffersExtensions.Write%2A> 扩展方法将现有缓冲区复制到 `IBufferWriter<T>`。 `Write` 根据需要调用 `GetSpan`/`Advance`，因此在写入后无需调用 `Advance`：
+此写入方法使用 `IBufferWriter<T>` 提供的 `Memory<T>`/`Span<T>` 缓冲区。 或者，可以使用 <xref:System.Buffers.BuffersExtensions.Write%2A> 扩展方法将现有缓冲区复制到 `IBufferWriter<T>`。 `Write` 根据需要调用 `GetSpan`/`Advance`，因此在写入后无需调用 `Advance`：
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet2)]
 
@@ -104,7 +104,7 @@ SequencePosition? FindIndexOf(in ReadOnlySequence<byte> buffer, byte data) => bu
 - 逐段分析数据，同时跟踪已分析的段内的 `SequencePosition` 和索引。 这样可以避免不必要的分配，但可能效率会很低，尤其是对于小型缓冲区。
 - 将 `ReadOnlySequence<T>` 复制到连续数组，并将其视为单个缓冲区：
   - 如果 `ReadOnlySequence<T>` 的大小较小，则可以使用 [stackalloc](../../csharp/language-reference/operators/stackalloc.md) 运算符将数据复制到堆栈分配的缓冲区。
-  - 使用 `ReadOnlySequence<T>` 将 <xref:System.Buffers.ArrayPool%601.Shared%2A?displayProperty=nameWithType> 复制到共用的数组。
+  - 使用 <xref:System.Buffers.ArrayPool%601.Shared%2A?displayProperty=nameWithType> 将 `ReadOnlySequence<T>` 复制到共用的数组。
   - 使用 [`ReadOnlySequence<T>.ToArray()`](xref:System.Buffers.BuffersExtensions.ToArray%2A)。 不建议在热路径中使用这种方法，因为它会在堆上分配新的 `T[]`。
 
 以下示例演示了处理 `ReadOnlySequence<byte>` 的一些常见情况：
@@ -121,7 +121,7 @@ SequencePosition? FindIndexOf(in ReadOnlySequence<byte> buffer, byte data) => bu
 
 如下示例中：
 
-- 查找 `\r\n` 中的第一个换行符 (`ReadOnlySequence<byte>`)，并通过 out 'line' 参数返回该符号。
+- 查找 `ReadOnlySequence<byte>` 中的第一个换行符 (`\r\n`)，并通过 out 'line' 参数返回该符号。
 - 剪裁该行，从输入缓冲区中排除 `\r\n`。
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet6)]
@@ -134,7 +134,7 @@ SequencePosition? FindIndexOf(in ReadOnlySequence<byte> buffer, byte data) => bu
 
 前面的代码将创建一个包含空段的 `ReadOnlySequence<byte>`，并显示这些空段对各种 API 的影响：
 
-- 包含指向空段的 `ReadOnlySequence<T>.Slice` 的 `SequencePosition` 会保留该段。
+- 包含指向空段的 `SequencePosition` 的 `ReadOnlySequence<T>.Slice` 会保留该段。
 - 包含 int 的 `ReadOnlySequence<T>.Slice` 会跳过空段。
 - 枚举 `ReadOnlySequence<T>` 会枚举空段。
 
@@ -143,12 +143,12 @@ SequencePosition? FindIndexOf(in ReadOnlySequence<byte> buffer, byte data) => bu
 处理 `ReadOnlySequence<T>`/`SequencePosition` 与常规 `ReadOnlySpan<T>`/`ReadOnlyMemory<T>`/`T[]`/`int` 时，有几个异常的结果：
 
 - `SequencePosition` 是特定 `ReadOnlySequence<T>` 的位置标记，而不是绝对位置。 由于它是相对于特定 `ReadOnlySequence<T>` 的，因此如果在其起源的 `ReadOnlySequence<T>` 之外使用，则没有意义。
-- 不能对没有 `SequencePosition` 的 `ReadOnlySequence<T>` 执行算术运算。 这意味着，执行 `position++` 等基本操作将以 `ReadOnlySequence<T>.GetPosition(position, 1)` 的形式写入。
-- `GetPosition(long)` 不  支持负索引。 这意味着，如果没有遍历所有段，就无法获取倒数第二个字符。
+- 不能对没有 `ReadOnlySequence<T>` 的 `SequencePosition` 执行算术运算。 这意味着，执行 `position++` 等基本操作将以 `ReadOnlySequence<T>.GetPosition(position, 1)` 的形式写入。
+- `GetPosition(long)` 不支持负索引。 这意味着，如果没有遍历所有段，就无法获取倒数第二个字符。
 - 无法比较两个 `SequencePosition`，这使得难以：
   - 了解一个位置是否大于或小于另一个位置。
   - 编写一些分析算法。
-- `ReadOnlySequence<T>` 大于对象引用，并且应尽可能通过 [in](../../csharp/language-reference/keywords/in-parameter-modifier.md) 或 [ref](../../csharp/language-reference/keywords/ref.md) 进行传递。 通过 `ReadOnlySequence<T>` 或 `in` 传递 `ref` 可减少[结构](../../csharp/language-reference/builtin-types/struct.md)的复制。
+- `ReadOnlySequence<T>` 大于对象引用，并且应尽可能通过 [in](../../csharp/language-reference/keywords/in-parameter-modifier.md) 或 [ref](../../csharp/language-reference/keywords/ref.md) 进行传递。 通过 `in` 或 `ref` 传递 `ReadOnlySequence<T>` 可减少[结构](../../csharp/language-reference/builtin-types/struct.md)的复制。
 - 空段：
   - 在 `ReadOnlySequence<T>` 中有效。
   - 可能会在使用 `ReadOnlySequence<T>.TryGet` 方法进行循环访问时出现。
@@ -174,7 +174,7 @@ SequencePosition? FindIndexOf(in ReadOnlySequence<byte> buffer, byte data) => bu
 
 ### <a name="use-position"></a>使用位置
 
-以下代码是使用 `FindIndexOf` 实现 `SequenceReader<T>` 的示例：
+以下代码是使用 `SequenceReader<T>` 实现 `FindIndexOf` 的示例：
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet9)]
 

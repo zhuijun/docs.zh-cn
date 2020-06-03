@@ -1,12 +1,12 @@
 ---
 title: 序列化 (C#)
 ms.date: 01/02/2020
-ms.openlocfilehash: d914298a370b09307e84c88959542b4823cf37ce
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b2532ccf281fdfaa951d56675066f1e239f9f480
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79167590"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241976"
 ---
 # <a name="serialization-c"></a>序列化 (C#)
 
@@ -65,7 +65,7 @@ XML 序列化将对象的公共字段和属性或方法的参数和返回值序�
 
 可以使用两种方法对二进制和 XML 进行序列化：基本和自定义。
 
-基本序列化使用 .NET Framework 自动序列化对象。 唯一的要求是类应用 <xref:System.SerializableAttribute> 特性。 <xref:System.NonSerializedAttribute> 可用于防止特定字段被序列化。
+基本序列化使用 .NET 自动序列化对象。 唯一的要求是类应用 <xref:System.SerializableAttribute> 特性。 <xref:System.NonSerializedAttribute> 可用于防止特定字段被序列化。
 
 使用基本序列化时，对象的版本控制可能会产生问题。 对于重要的版本控制问题，可以使用自定义序列化。 基本序列化是最简单的序列化执行方式，但无法提供太多的进程控制。
 
@@ -82,7 +82,7 @@ XML 序列化将对象的公共字段和属性或方法的参数和返回值序�
 [如何在 .NET 中对 JSON 数据进行序列化和反序列化](../../../../standard/serialization/system-text-json-how-to.md)。
 演示如何使用 <xref:System.Text.Json.JsonSerializer> 类在 JSON 之间读取和写入对象数据。
 
-[演练：在 Visual Studio 中暂留对象 (C#)](walkthrough-persisting-an-object-in-visual-studio.md)  
+[演练：在 Visual Basic 中保持对象 (C#)](walkthrough-persisting-an-object-in-visual-studio.md)  
 展示了如何使用序列化在实例之间暂留对象数据，以便可以存储值并在下次实例化对象时检索值。
 
 [如何从 XML 文件读取对象数据 (C#)](how-to-read-object-data-from-an-xml-file.md)  

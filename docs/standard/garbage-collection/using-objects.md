@@ -10,12 +10,12 @@ helpviewer_keywords:
 - try/finally block
 - garbage collection, encapsulating resources
 ms.assetid: 81b2cdb5-c91a-4a31-9c83-eadc52da5cf0
-ms.openlocfilehash: d0d55a9253fee1ffcfd5c10714a1118883f6c4ce
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 87eefe2bd347ba1564b2f06d49bbee3b85efdb97
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396971"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287592"
 ---
 # <a name="using-objects-that-implement-idisposable"></a>使用实现 IDisposable 的对象
 
@@ -63,6 +63,6 @@ C# 中的 [`using` 语句](../../csharp/language-reference/keywords/using-statem
 
 ## <a name="see-also"></a>请参阅
 
-- [清理未托管资源](../../../docs/standard/garbage-collection/unmanaged.md)
+- [清理未托管资源](unmanaged.md)
 - [using 语句（C# 参考）](../../csharp/language-reference/keywords/using-statement.md)
 - [Using 语句 (Visual Basic)](../../visual-basic/language-reference/statements/using-statement.md)

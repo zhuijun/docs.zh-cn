@@ -16,12 +16,12 @@ helpviewer_keywords:
 - security [.NET Framework], assemblies
 - integrity with assemblies
 ms.assetid: 1b5439c1-f3d5-4529-bd69-01814703d067
-ms.openlocfilehash: 7f897241b121cf1bd52d02ee5f487aeafafc3cb0
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: d0b822f725444248d1037c21ffea9afe1cebb7e2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378661"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290014"
 ---
 # <a name="assembly-security-considerations"></a>程序集安全注意事项
 在生成程序集时，可指定该程序集运行所需的一组权限。 是否将特定的权限授予程序集是基于证据的。  
@@ -39,7 +39,7 @@ ms.locfileid: "83378661"
 - 不要使用权限请求来获取您的代码可能需要的权限，但一定要准备处理在未授予权限时发生的安全异常。  
   
   > [!NOTE]
-  > 安全性是一个较为复杂的领域，您将要作出很多选择。 有关详细信息，请参阅[安全性的基础概念](../../standard/security/key-security-concepts.md)。  
+  > 安全性是一个较为复杂的领域，您将要作出很多选择。 有关详细信息，请参阅[安全性的基础概念](../security/key-security-concepts.md)。  
   
  在加载时，程序集的证据用作安全策略的输入。 安全策略是由企业和计算机的管理员以及用户策略设置建立的，它在执行时确定向所有托管代码授予的权限组。 可以为该程序集（如果该程序集具有签名工具生成的签名）的发行者建立安全策略，或者为该程序集的下载网站和区域（就 Internet Explorer 而言）建立安全策略，也可以为该程序集的强名称建立该策略。 例如，一台计算机的管理员可以建立这样一种安全策略：它允许从某一网站下载由指定软件公司签发用以访问计算机上的数据库的所有代码，但不授予对该计算机磁盘的写访问权。  
   

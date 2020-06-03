@@ -23,45 +23,45 @@ ms.locfileid: "81243201"
 
 ### <a name="on-the-web"></a>在 Web 上
 
-|代码|说明|
+|URL|描述|
 |----------|----------------|
 |[Visual Basic .NET Language Design](https://github.com/dotnet/vblang)（Visual Basic .NET 语言设计）|GitHub 上用于 Visual Basic .NET 语言设计的官方存储库。|
 |[Microsoft Visual Basic 团队博客](https://devblogs.microsoft.com/vbteam/)|提供对 Visual Basic Team Blog 的访问。|
 
 ### <a name="code-samples"></a>代码示例
 
-|代码|说明|
+|URL|描述|
 |----------|----------------|
 |[Visual Basic 文档示例](https://github.com/dotnet/docs/tree/master/samples/snippets/visualbasic)|包含整个 Visual Basic 和 .NET 文档中使用的示例。|
 
 ### <a name="forums"></a>论坛
 
-|代码|说明|
+|URL|描述|
 |----------|----------------|
 |[Visual Basic 论坛](https://social.msdn.microsoft.com/Forums/vstudio/home?forum=vbgeneral)|讨论常规 Visual Basic 问题。|
 
 ### <a name="videos-and-webcasts"></a>视频与网络广播
 
-|代码|说明|
+|URL|描述|
 |----------|----------------|
 |[Channel9](https://channel9.msdn.com/)|提供了通过视频、Wikis 和论坛进行连续交流的社区。|
 
 ### <a name="support"></a>支持
 
-|代码|说明|
+|URL|描述|
 |----------|----------------|
 |[Microsoft 支持](https://support.microsoft.com)|提供对知识库 (KB) 文章、下载和更新、支持 Webcast 以及其他服务的访问。|
-|[Visual Studio 问题](https://developercommunity.visualstudio.com)|可供你报告 Bug 或向 Microsoft 提供有关 .NET 和 Visual Studio 的建议。 也可在 Visual Studio 中通过选择“帮助” **“发送反馈”** “报告问题”来报告错误 >    >   。|
+|[Visual Studio 问题](https://developercommunity.visualstudio.com)|可供你报告 Bug 或向 Microsoft 提供有关 .NET 和 Visual Studio 的建议。 也可在 Visual Studio 中通过选择“帮助” > “发送反馈” > “报告问题”来报告错误  。|
 
 ## <a name="third-party-resources"></a>第三方资源
 
-|代码|说明|
+|URL|描述|
 |----------|----------------|
 |[VBForums](http://www.vbforums.com/)|提供讨论 Visual Basic、.NET 等内容的论坛。|
 |[vbCity](http://vbcity.com/)|供人们学习和询问有关 Visual Basic 和 .NET 问题的社区网站。|
 |[堆栈溢出](https://stackoverflow.com/questions/tagged/vb.net)|Stack Overflow 是面向开发人员的问答网站。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Visual Basic 入门](../../visual-basic/getting-started/index.md)
 - [与我们交流](/visualstudio/ide/feedback-options)

@@ -73,13 +73,13 @@ foreach (string element in elements)
 
 调用 `MyIteratorMethod` 并不执行该方法的主体。 相反，该调用会将 `IEnumerable<string>` 返回到 `elements` 变量中。
 
-在 `foreach` 循环迭代时，将为 <xref:System.Collections.IEnumerator.MoveNext%2A> 调用 `elements` 方法。 此调用将执行 `MyIteratorMethod` 的主体，直至到达下一个 `yield return` 语句。 `yield return` 语句返回的表达式不仅决定了循环体使用的 `element` 变量值，还决定了 <xref:System.Collections.Generic.IEnumerator%601.Current%2A> 的 `elements` 属性（它是 `IEnumerable<string>`）。
+在 `foreach` 循环迭代时，将为 <xref:System.Collections.IEnumerator.MoveNext%2A> 调用 `elements` 方法。 此调用将执行 `MyIteratorMethod` 的主体，直至到达下一个 `yield return` 语句。 `yield return` 语句返回的表达式不仅决定了循环体使用的 `element` 变量值，还决定了 `elements` 的 <xref:System.Collections.Generic.IEnumerator%601.Current%2A> 属性（它是 `IEnumerable<string>`）。
 
 在 `foreach` 循环的每个后续迭代中，迭代器主体的执行将从它暂停的位置继续，直至到达 `yield return` 语句后才会停止。 在到达迭代器方法的结尾或 `foreach` 语句时，`yield break` 循环便已完成。
 
 ## <a name="example"></a>示例
 
-下面的示例包含一个位于 `yield return` 循环内的 `for` 语句。 `foreach` 方法中的 `Main` 语句体的每次迭代都会创建对 `Power` 迭代器函数的调用。 对迭代器函数的每个调用将继续到 `yield return` 语句的下一次执行（在 `for` 循环的下一次迭代期间发生）。
+下面的示例包含一个位于 `yield return` 循环内的 `for` 语句。 `Main` 方法中的 `foreach` 语句体的每次迭代都会创建对 `Power` 迭代器函数的调用。 对迭代器函数的每个调用将继续到 `yield return` 语句的下一次执行（在 `for` 循环的下一次迭代期间发生）。
 
 迭代器方法的返回类型是 <xref:System.Collections.IEnumerable>（一种迭代器接口类型）。 当调用迭代器方法时，它将返回一个包含数字幂的可枚举对象。
 
@@ -95,7 +95,7 @@ foreach (string element in elements)
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)

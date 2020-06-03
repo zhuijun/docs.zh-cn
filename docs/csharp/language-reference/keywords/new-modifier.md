@@ -17,15 +17,15 @@ ms.locfileid: "82795165"
 
 `new` 关键字还可用于[创建类型的实例](../operators/new-operator.md)或用作[泛型类型约束](./new-constraint.md)。
 
-若要隐藏继承的成员，请使用相同名称在派生类中声明该成员，并使用 `new` 修饰符对其进行修饰。 例如:
+若要隐藏继承的成员，请使用相同名称在派生类中声明该成员，并使用 `new` 修饰符对其进行修饰。 例如：
 
 [!code-csharp[csrefKeywordsOperator#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsOperator/CS/csrefKeywordsOperators.cs#8)]
 
-在此示例中，使用 `BaseC.Invoke` 隐藏了 `DerivedC.Invoke`。 字段 `x` 不受影响，因为未使用类似名称将其隐藏。
+在此示例中，使用 `DerivedC.Invoke` 隐藏了 `BaseC.Invoke`。 字段 `x` 不受影响，因为未使用类似名称将其隐藏。
 
 通过继承隐藏名称采用下列形式之一：
 
-- 通常，在类或结构中引入的常数、字段、属性或类型会隐藏与其共享名称的所有基类成员。 有三种特殊情况。 例如，如果将名称为 `N` 的新字段声明为不可调用的类型，并且基类型将 `N` 声明为一种方法，则新字段在调用语法中不会隐藏基声明。 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/expressions.md#member-lookup)中的[成员查找](~/_csharplang/spec/introduction.md)部分。
+- 通常，在类或结构中引入的常数、字段、属性或类型会隐藏与其共享名称的所有基类成员。 有三种特殊情况。 例如，如果将名称为 `N` 的新字段声明为不可调用的类型，并且基类型将 `N` 声明为一种方法，则新字段在调用语法中不会隐藏基声明。 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的[成员查找](~/_csharplang/spec/expressions.md#member-lookup)部分。
 
 - 类或结构中引入的方法会隐藏基类中共享该名称的属性、字段和类型。 它还会隐藏具有相同签名的所有基类方法。
 
@@ -55,9 +55,9 @@ The keyword new is required on 'MyDerivedC.x' because it hides inherited member 
 
 ## <a name="c-language-specification"></a>C# 语言规范
 
-有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/classes.md#the-new-modifier)中的 [new 修饰符](~/_csharplang/spec/introduction.md)部分。
+有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的 [new 修饰符](~/_csharplang/spec/classes.md#the-new-modifier)部分。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)

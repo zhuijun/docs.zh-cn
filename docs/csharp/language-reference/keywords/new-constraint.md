@@ -29,9 +29,9 @@ ms.locfileid: "82795334"
 
 ## <a name="c-language-specification"></a>C# 语言规范
 
-有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/classes.md#type-parameter-constraints)中的[类型参数约束](~/_csharplang/spec/introduction.md)部分。
+有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的[类型参数约束](~/_csharplang/spec/classes.md#type-parameter-constraints)部分。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)

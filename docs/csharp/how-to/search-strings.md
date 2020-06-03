@@ -27,7 +27,7 @@ ms.locfileid: "81121494"
 
 [!code-csharp-interactive[search strings using methods](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#1)]
 
-前面的示例演示了使用这些方法的重点。 默认情况下搜索是区分大小写的  。 使用 <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> 枚举值指定区分大小写的搜索。
+前面的示例演示了使用这些方法的重点。 默认情况下搜索是区分大小写的。 使用 <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> 枚举值指定区分大小写的搜索。
 
 ## <a name="where-does-the-sought-text-occur-in-a-string"></a>寻找的文本出现在字符串的什么位置？
 
@@ -74,7 +74,7 @@ ms.locfileid: "81121494"
 
 可通过查看 [GitHub 存储库](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings)中的代码来尝试这些示例。 也可以下载这些示例的 [zip 文件](../../../samples/snippets/csharp/how-to/strings.zip)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../programming-guide/index.md)
 - [字符串](../programming-guide/strings/index.md)

@@ -8,15 +8,15 @@ helpviewer_keywords:
 - Mutex class, about Mutex class
 - threading [.NET Framework], cross-process synchronization
 ms.assetid: 9dd06e25-12c0-4a9e-855a-452dc83803e2
-ms.openlocfilehash: 3f020db49bcdcbf6ce3d573348a93b06e87db199
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: f9267bdd19a14995851f2689651c001815812912
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242720"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291170"
 ---
 # <a name="mutexes"></a>Mutexes
-<xref:System.Threading.Mutex> 对象可用于提供对资源的独占访问权限。 虽然 <xref:System.Threading.Mutex> 类使用的系统资源比 <xref:System.Threading.Monitor> 类更多，但它可以跨应用域边界进行封送，可用于多个等待操作以及同步不同进程中的线程。 有关托管同步机制的比较，请参阅[同步基元概述](../../../docs/standard/threading/overview-of-synchronization-primitives.md)。  
+<xref:System.Threading.Mutex> 对象可用于提供对资源的独占访问权限。 虽然 <xref:System.Threading.Mutex> 类使用的系统资源比 <xref:System.Threading.Monitor> 类更多，但它可以跨应用域边界进行封送，可用于多个等待操作以及同步不同进程中的线程。 有关托管同步机制的比较，请参阅[同步基元概述](overview-of-synchronization-primitives.md)。  
   
  有关代码示例，请参阅 <xref:System.Threading.Mutex.%23ctor%2A> 构造函数的参考文档。  
   
@@ -25,7 +25,7 @@ ms.locfileid: "81242720"
   
  线程通过调用 <xref:System.Threading.Mutex.ReleaseMutex%2A> 方法来释放 mutex。 Mutex 具有线程关联；即 mutex 只能由拥有它的线程释放。 如果线程释放的 mutex 不是它拥有的，就会在线程中抛出 <xref:System.ApplicationException>。  
   
- 由于 <xref:System.Threading.Mutex> 类派生自 <xref:System.Threading.WaitHandle>，因此还可以调用 <xref:System.Threading.WaitHandle.WaitAll%2A> 的静态 <xref:System.Threading.WaitHandle.WaitAny%2A> 或 <xref:System.Threading.WaitHandle> 方法，以请求获取 <xref:System.Threading.Mutex> 的所有权以及其他等待句柄。  
+ 由于 <xref:System.Threading.Mutex> 类派生自 <xref:System.Threading.WaitHandle>，因此还可以调用 <xref:System.Threading.WaitHandle> 的静态 <xref:System.Threading.WaitHandle.WaitAll%2A> 或 <xref:System.Threading.WaitHandle.WaitAny%2A> 方法，以请求获取 <xref:System.Threading.Mutex> 的所有权以及其他等待句柄。  
   
  如果线程拥有 <xref:System.Threading.Mutex>，此线程可以在重复的等待-请求调用中指定相同的 <xref:System.Threading.Mutex>，而不会阻止执行；不过，它必须释放 <xref:System.Threading.Mutex>，次数与释放所有权一样多。  
   
@@ -45,9 +45,9 @@ ms.locfileid: "81242720"
 ### <a name="access-control-security-for-system-mutexes"></a>系统 mutex 的访问控制安全性  
  .NET Framework 2.0 版提供查询和设置命名系统对象的 Windows 访问控制安全性的能力。 建议从创建起立刻开始保护系统 mutex，因为系统对象是全局对象，因此可能被不是你自己的代码锁定。  
   
- 若要了解 mutex 访问控制安全性，请参阅 <xref:System.Security.AccessControl.MutexSecurity> 和 <xref:System.Security.AccessControl.MutexAccessRule> 类、<xref:System.Security.AccessControl.MutexRights> 枚举、<xref:System.Threading.Mutex.GetAccessControl%2A> 类的 <xref:System.Threading.Mutex.SetAccessControl%2A>、<xref:System.Threading.Mutex.OpenExisting%2A> 和 <xref:System.Threading.Mutex> 方法，以及 <xref:System.Threading.Mutex.%23ctor%28System.Boolean%2CSystem.String%2CSystem.Boolean%40%2CSystem.Security.AccessControl.MutexSecurity%29> 构造函数。  
+ 若要了解 mutex 访问控制安全性，请参阅 <xref:System.Security.AccessControl.MutexSecurity> 和 <xref:System.Security.AccessControl.MutexAccessRule> 类、<xref:System.Security.AccessControl.MutexRights> 枚举、<xref:System.Threading.Mutex> 类的 <xref:System.Threading.Mutex.GetAccessControl%2A>、<xref:System.Threading.Mutex.SetAccessControl%2A> 和 <xref:System.Threading.Mutex.OpenExisting%2A> 方法，以及 <xref:System.Threading.Mutex.%23ctor%28System.Boolean%2CSystem.String%2CSystem.Boolean%40%2CSystem.Security.AccessControl.MutexSecurity%29> 构造函数。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Threading.Mutex?displayProperty=nameWithType>
 - <xref:System.Threading.Mutex.%23ctor%2A>

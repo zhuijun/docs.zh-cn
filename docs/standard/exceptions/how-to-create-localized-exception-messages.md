@@ -138,18 +138,18 @@ Throw New StudentNotFoundException("The student cannot be found.", "John")
 
 创建本地化异常消息：
 
-1. 创建一个名为“Resources”  的新文件夹来保存资源文件。
-1. 向其中添加新的资源文件。 若要在 Visual Studio 中执行此操作，请在“解决方案资源管理器”  中右键单击该文件夹，然后选择“添加”   > “新项”   > “资源文件”  。 将该文件命名为“ExceptionMessages.resx”  。 这是默认的资源文件。
+1. 创建一个名为“Resources”的新文件夹来保存资源文件。
+1. 向其中添加新的资源文件。 若要在 Visual Studio 中执行此操作，请在“解决方案资源管理器”中右键单击该文件夹，然后选择“添加” > “新项” > “资源文件”。 将该文件命名为“ExceptionMessages.resx”。 这是默认的资源文件。
 1. 为异常消息添加名称/值对，如下图所示：
 
    ![将资源添加到默认区域性](media/add-resources-to-default-culture.jpg)
 
-1. 为法语添加新的资源文件。 将其命名为“ExceptionMessages.fr-FR.resx”  。
+1. 为法语添加新的资源文件。 将其命名为“ExceptionMessages.fr-FR.resx”。
 1. 再次为异常消息添加名称/值对，但使用法语值：
 
    ![将资源添加到 fr-FR 区域性](media/add-resources-to-fr-culture.jpg)
 
-1. 生成项目后，生成的输出文件夹应包含 fr-FR  文件夹，其中具有 .dll  文件，它是附属程序集。
+1. 生成项目后，生成的输出文件夹应包含 fr-FR 文件夹，其中具有 .dll 文件，它是附属程序集。
 1. 使用如下所示代码抛出异常：
 
     ```csharp
@@ -163,9 +163,9 @@ Throw New StudentNotFoundException("The student cannot be found.", "John")
     ```
 
     > [!NOTE]
-    > 如果项目名称为 `TestProject`，并且资源文件 ExceptionMessages.resx  位于项目的 Resources  文件夹中，则资源文件的完全限定名称为 `TestProject.Resources.ExceptionMessages`。
+    > 如果项目名称为 `TestProject`，并且资源文件 ExceptionMessages.resx 位于项目的 Resources 文件夹中，则资源文件的完全限定名称为 `TestProject.Resources.ExceptionMessages`。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何创建用户定义的异常](how-to-create-user-defined-exceptions.md)
 - [创建桌面应用程序的附属程序集](../../framework/resources/creating-satellite-assemblies-for-desktop-apps.md)

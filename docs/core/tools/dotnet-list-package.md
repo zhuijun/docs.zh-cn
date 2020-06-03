@@ -11,9 +11,9 @@ ms.locfileid: "81463661"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
- 本文适用于： ✔️ .NET Core 2.2 SDK 及更高版本
+本文适用于： ✔️ .NET Core 2.2 SDK 及更高版本
 
-## <a name="name"></a>名称
+## <a name="name"></a>“属性”
 
 `dotnet list package` - 列出项目或解决方案的包引用。
 
@@ -28,9 +28,9 @@ dotnet list [<PROJECT>|<SOLUTION>] package [--config <SOURCE>]
 dotnet list package -h|--help
 ```
 
-## <a name="description"></a>说明
+## <a name="description"></a>描述
 
-使用 `dotnet list package` 命令，可以方便地列出特定项目或解决方案的所有 NuGet 包引用。 首先，需要生成项目，以提供必需资产以供此命令处理。 下面的示例展示了 `dotnet list package`SentimentAnalysis[ 项目的 ](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) 命令输出：
+使用 `dotnet list package` 命令，可以方便地列出特定项目或解决方案的所有 NuGet 包引用。 首先，需要生成项目，以提供必需资产以供此命令处理。 下面的示例展示了 [SentimentAnalysis](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) 项目的 `dotnet list package` 命令输出：
 
 ```output
 Project 'SentimentAnalysis' has the following package references
@@ -42,7 +42,7 @@ Project 'SentimentAnalysis' has the following package references
 (A) : Auto-referenced package.
 ```
 
-“已请求”  列是指项目文件中指定的包版本，可以是一个范围。 “已解析”  列列出了项目当前使用的版本，始终都是一个值。 紧靠名称旁边显示 `(A)` 的包表示从项目设置（[ 类型、](csproj.md#implicit-package-references) 或 `Sdk` 属性等）推断出的`<TargetFramework>`隐式包引用`<TargetFrameworks>`。
+“已请求”列是指项目文件中指定的包版本，可以是一个范围。 “已解析”列列出了项目当前使用的版本，始终都是一个值。 紧靠名称旁边显示 `(A)` 的包表示从项目设置（`Sdk` 类型、`<TargetFramework>` 或 `<TargetFrameworks>` 属性等）推断出的[隐式包引用](csproj.md#implicit-package-references)。
 
 使用 `--outdated` 选项，可以确定项目中正在使用的包是否有更高版本。 默认情况下，`--outdated` 列出最新稳定包，除非已解析版本也是预发行版本。 若要在列出更高版本时包含预发行版本，还请指定 `--include-prerelease` 选项。 下面的示例展示了上一个示例中相同项目的 `dotnet list package --outdated --include-prerelease` 命令输出：
 
@@ -57,7 +57,7 @@ Project `SentimentAnalysis` has the following updates to its packages
    > Microsoft.ML         1.4.0       1.4.0      1.5.0-preview
 ```
 
-如果需要确定项目是否有可传递依赖关系，请使用 `--include-transitive` 选项。 如果在项目中添加包，它转而又依赖另一个包，就会出现可传递依赖关系。 下面的示例展示了 `dotnet list package --include-transitive`HelloPlugin[ 项目的 ](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin/HelloPlugin) 命令运行输出，其中显示顶级包及其依赖的包：
+如果需要确定项目是否有可传递依赖关系，请使用 `--include-transitive` 选项。 如果在项目中添加包，它转而又依赖另一个包，就会出现可传递依赖关系。 下面的示例展示了 [HelloPlugin](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin/HelloPlugin) 项目的 `dotnet list package --include-transitive` 命令运行输出，其中显示顶级包及其依赖的包：
 
 ```output
 Project 'HelloPlugin' has the following package references
@@ -66,7 +66,7 @@ Project 'HelloPlugin' has the following package references
    > PluginBase            1.0.0
 ```
 
-## <a name="arguments"></a>参数
+## <a name="arguments"></a>自变量
 
 `PROJECT | SOLUTION`
 

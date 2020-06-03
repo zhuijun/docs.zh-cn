@@ -34,7 +34,7 @@ ms.locfileid: "80523916"
   
 3. 调用 <xref:System.Array.Exists%2A?displayProperty=nameWithType> 方法，以确定日历对象是否为 <xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType> 属性返回的数组成员。 这表明日历可用作 <xref:System.Globalization.CultureInfo> 对象的默认日历。 如果它不是数组的成员，请按照“用任何日历显示日期”部分中的说明执行。  
   
-4. 将日历对象分配到 <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A> 属性返回的 <xref:System.Globalization.DateTimeFormatInfo> 对象的 <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> 属性。  
+4. 将日历对象分配到 <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> 属性返回的 <xref:System.Globalization.DateTimeFormatInfo> 对象的 <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A> 属性。  
   
     > [!NOTE]
     > <xref:System.Globalization.CultureInfo> 类还包含 <xref:System.Globalization.CultureInfo.Calendar%2A> 属性。 不过，它是只读常量，并不会为了反映分配到 <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType> 属性的新默认日历而发生变化。  
@@ -69,16 +69,16 @@ ms.locfileid: "80523916"
  [!code-csharp[Formatting.HowTo.Calendar#2](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.Calendar/cs/Calendar1.cs#2)]
  [!code-vb[Formatting.HowTo.Calendar#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.Calendar/vb/Calendar1.vb#2)]  
   
- 每个 <xref:System.Globalization.CultureInfo> 对象都可以支持一个或多个日历（用 <xref:System.Globalization.CultureInfo.OptionalCalendars%2A> 属性表示）。 日历之一被指定为区域性的默认日历，通过只读属性 <xref:System.Globalization.CultureInfo.Calendar%2A?displayProperty=nameWithType> 进行返回。 可以将另一个可选日历指定为默认日历，只需将表示日历的 <xref:System.Globalization.Calendar> 对象分配给 <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType> 属性返回的 <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> 属性即可。 不过，某些日历（如 <xref:System.Globalization.PersianCalendar> 类表示的波斯历）不是任何区域性的可选日历。  
+ 每个 <xref:System.Globalization.CultureInfo> 对象都可以支持一个或多个日历（用 <xref:System.Globalization.CultureInfo.OptionalCalendars%2A> 属性表示）。 日历之一被指定为区域性的默认日历，通过只读属性 <xref:System.Globalization.CultureInfo.Calendar%2A?displayProperty=nameWithType> 进行返回。 可以将另一个可选日历指定为默认日历，只需将表示日历的 <xref:System.Globalization.Calendar> 对象分配给 <xref:System.Globalization.CultureInfo.DateTimeFormat%2A?displayProperty=nameWithType> 属性返回的 <xref:System.Globalization.DateTimeFormatInfo.Calendar%2A?displayProperty=nameWithType> 属性即可。 不过，某些日历（如 <xref:System.Globalization.PersianCalendar> 类表示的波斯历）不是任何区域性的可选日历。  
   
  该示例定义了一个可重用的日历实用工具类 `CalendarUtility`，用于处理有关使用特定日历生成日期的字符串表示形式的许多详细信息。 `CalendarUtility` 类包含以下成员：  
   
 - 参数化构造函数，其中一个参数是要用来表示日期的 <xref:System.Globalization.Calendar> 对象。 这会分配给类的私有字段。  
   
-- `CalendarExists`：返回布尔值的专用方法，用于指明以参数形式传递到方法的 `CalendarUtility` 对象是否支持 <xref:System.Globalization.CultureInfo> 对象表示的日历。 此方法包装对 <xref:System.Array.Exists%2A?displayProperty=nameWithType> 方法的调用，并向其传递 <xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType> 数组。  
+- `CalendarExists`：返回布尔值的专用方法，用于指明以参数形式传递到方法的 <xref:System.Globalization.CultureInfo> 对象是否支持 `CalendarUtility` 对象表示的日历。 此方法包装对 <xref:System.Array.Exists%2A?displayProperty=nameWithType> 方法的调用，并向其传递 <xref:System.Globalization.CultureInfo.OptionalCalendars%2A?displayProperty=nameWithType> 数组。  
   
-- `HasSameName`：专用方法，分配给以参数形式传递到 <xref:System.Predicate%601> 方法的 <xref:System.Array.Exists%2A?displayProperty=nameWithType> 委托。 数组的每个成员都会传递给该方法，直到该方法返回 `true`。 该方法确定可选日历的名称是否与 `CalendarUtility` 对象表示的日历相同。  
+- `HasSameName`：专用方法，分配给以参数形式传递到 <xref:System.Array.Exists%2A?displayProperty=nameWithType> 方法的 <xref:System.Predicate%601> 委托。 数组的每个成员都会传递给该方法，直到该方法返回 `true`。 该方法确定可选日历的名称是否与 `CalendarUtility` 对象表示的日历相同。  
   
-- `DisplayDate`：重载的公共方法，向它传递下面两个参数：要以 <xref:System.DateTime> 对象表示的日历表示的 <xref:System.DateTimeOffset> 或 `CalendarUtility` 值，以及要使用其格式设置规则的区域性。 它在返回日期的字符串表示形式时的行为取决于要使用其格式设置规则的区域性是否支持目标日历。  
+- `DisplayDate`：重载的公共方法，向它传递下面两个参数：要以 `CalendarUtility` 对象表示的日历表示的 <xref:System.DateTime> 或 <xref:System.DateTimeOffset> 值，以及要使用其格式设置规则的区域性。 它在返回日期的字符串表示形式时的行为取决于要使用其格式设置规则的区域性是否支持目标日历。  
   
  无论在此示例中使用哪种日历创建 <xref:System.DateTime> 或 <xref:System.DateTimeOffset> 值，相应值通常都表示为公历日期。 这是因为 <xref:System.DateTime> 和 <xref:System.DateTimeOffset> 类型不暂留任何日历信息。 它们在内部表示自 0001 年 1 月 1 日午夜以来所经历的时钟周期数。 该数字的解释取决于日历。 对于大多数区域性，默认日历是公历。

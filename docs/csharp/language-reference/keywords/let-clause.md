@@ -25,11 +25,11 @@ ms.locfileid: "82795360"
 
 1. 创建一个可以查询其自身的可枚举类型。
 
-2. 使查询仅调用一次范围变量 `ToLower` 上的 `word`。 如果不使用 `let`，则不得不调用 `ToLower` 子句中的每个谓词的 `where`。
+2. 使查询仅调用一次范围变量 `word` 上的 `ToLower`。 如果不使用 `let`，则不得不调用 `where` 子句中的每个谓词的 `ToLower`。
 
 [!code-csharp[cscsrefQueryKeywords#28](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Let.cs#28)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [查询关键字 (LINQ)](query-keywords.md)

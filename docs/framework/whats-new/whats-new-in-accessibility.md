@@ -20,7 +20,7 @@ ms.locfileid: "80249716"
 
 ## <a name="accessibility-switches"></a>辅助功能开关
 
-如果应用面向 .NET Framework 4.7 或更低版本，但是在 .NET Framework 4.7.1 或更高版本上运行，可以将应用配置为选择使用辅助功能。 如果应用面向 .NET Framework 4.7.1 或更高版本，还可以将应用配置为使用旧版功能（且不使用辅助功能）。 包括辅助功能的每个 .NET Framework 版本都有一个特定于版本的辅助开关，请将它添加到应用程序配置文件 [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 部分中的 [`<runtime>`](../configure-apps/file-schema/runtime/index.md) 元素。 以下是受支持的开关：
+如果应用面向 .NET Framework 4.7 或更低版本，但是在 .NET Framework 4.7.1 或更高版本上运行，可以将应用配置为选择使用辅助功能。 如果应用面向 .NET Framework 4.7.1 或更高版本，还可以将应用配置为使用旧版功能（且不使用辅助功能）。 包括辅助功能的每个 .NET Framework 版本都有一个特定于版本的辅助开关，请将它添加到应用程序配置文件 [`<runtime>`](../configure-apps/file-schema/runtime/index.md) 部分中的 [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 元素。 以下是受支持的开关：
 
 |Version|开关|
 |---|---|
@@ -30,7 +30,7 @@ ms.locfileid: "80249716"
 
 ### <a name="taking-advantage-of-accessibility-enhancements"></a>利用辅助功能改进
 
-对于面向 .NET Framework 4.7.1 或更高版本的应用程序，新的辅助功能默认情况下处于启用状态。 此外，对于面向 .NET Framework 早期版本，但在 .NET Framework 4.7.1 或更高版本上运行的应用程序，可通过将开关添加到应用程序配置文件 [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 部分中的 [`<runtime>`](../configure-apps/file-schema/runtime/index.md) 元素并将其值设为 `false` 来选择弃用旧辅助功能行为（因而利用辅助功能改进）。 以下代码演示如何选择使用 .NET Framework 4.7.1 中引入的辅助功能改进：
+对于面向 .NET Framework 4.7.1 或更高版本的应用程序，新的辅助功能默认情况下处于启用状态。 此外，对于面向 .NET Framework 早期版本，但在 .NET Framework 4.7.1 或更高版本上运行的应用程序，可通过将开关添加到应用程序配置文件 [`<runtime>`](../configure-apps/file-schema/runtime/index.md) 部分中的 [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 元素并将其值设为 `false` 来选择弃用旧辅助功能行为（因而利用辅助功能改进）。 以下代码演示如何选择使用 .NET Framework 4.7.1 中引入的辅助功能改进：
 
 ```xml
 <runtime>
@@ -59,7 +59,7 @@ ms.locfileid: "80249716"
 
 ### <a name="restoring-legacy-behavior"></a>还原旧行为
 
-对于面向 .NET Framework 4.7.1 或更高版本的应用程序，可通过将开关添加到应用程序配置文件 [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 部分中的 [`<runtime>`](../configure-apps/file-schema/runtime/index.md) 元素并将其值设为 `true` 来禁用辅助功能。 例如，以下配置选择弃用 .NET Framework 4.7.2 中引入的辅助功能：
+对于面向 .NET Framework 4.7.1 或更高版本的应用程序，可通过将开关添加到应用程序配置文件 [`<runtime>`](../configure-apps/file-schema/runtime/index.md) 部分中的 [`<AppContextSwitchOverrides>`](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 元素并将其值设为 `true` 来禁用辅助功能。 例如，以下配置选择弃用 .NET Framework 4.7.2 中引入的辅助功能：
 
 ```xml
 <runtime>
@@ -88,7 +88,7 @@ ms.locfileid: "80249716"
 
 UIA LiveRegions 允许应用程序开发人员将用户工作位置之外的某个控件中的文本更改通知给屏幕阅读器。 例如，对于显示连接状态的 <xref:System.Windows.Forms.StatusStrip> 控件，这很有用。 如果连接断开且状态发生更改，开发人员可能会希望将此情况通知给屏幕阅读器。
 
-从 .NET Framework 4.8 开始，Windows 窗体同时为 <xref:System.Windows.Forms.Label> 和 <xref:System.Windows.Forms.StatusStrip> 控件实现 UIA LiveRegions。 例如，以下代码在名为 <xref:System.Windows.Forms.Label> 的 `label1` 控件中使用 LiveRegion：
+从 .NET Framework 4.8 开始，Windows 窗体同时为 <xref:System.Windows.Forms.Label> 和 <xref:System.Windows.Forms.StatusStrip> 控件实现 UIA LiveRegions。 例如，以下代码在名为 `label1` 的 <xref:System.Windows.Forms.Label> 控件中使用 LiveRegion：
 
 ```csharp
 public Form1()
@@ -195,7 +195,7 @@ if (raiseMethod != null) {
 
 UIAutomation 的 `ControllerFor` 属性返回一系列由支持该属性的自动化元素操纵的自动化元素。 此属性通常用于自动建议辅助功能。 应在自动化元素会影响应用程序 UI 或桌面的一个或多个段时使用 `ControllerFor`。 否则，很难将控制操作的影响与 UI 元素关联。 此功能增加了控件为 `ControllerFor` 属性提供值的功能。
 
-.NET framework 4.8 添加了新的虚拟方法 <xref:System.Windows.Automation.Peers.AutomationPeer.GetControlledPeersCore?displayProperty=nameWithType?displayProperty=nameWithType>。 要为 `ControllerFor` 属性提供值，只需替代此方法并为此 `List<AutomationPeer>` 操作的控件返回 <xref:System.Windows.Automation.Peers.AutomationPeer>：
+.NET framework 4.8 添加了新的虚拟方法 <xref:System.Windows.Automation.Peers.AutomationPeer.GetControlledPeersCore?displayProperty=nameWithType?displayProperty=nameWithType>。 要为 `ControllerFor` 属性提供值，只需替代此方法并为此 <xref:System.Windows.Automation.Peers.AutomationPeer> 操作的控件返回 `List<AutomationPeer>`：
 
 ```csharp
 public class AutoSuggestTextBox: TextBox
@@ -245,7 +245,7 @@ internal class AutoSuggestTextBoxAutomationPeer : TextBoxAutomationPeer
 启用后，一旦控件接收到键盘焦点，包含工具提示的所有控件都会显示工具提示。 随时间推移或当键盘焦点发生变化时，可关闭工具提示。 用户还可以通过使用新的键盘快捷键 Ctrl+Shift+F10 手动关闭工具提示。 关闭工具提示后，可以使用相同的键盘快捷键再次显示。
 
 > [!NOTE]
-> [ 控件上的](xref:System.Windows.Controls.Ribbon.RibbonToolTip)功能区工具提示<xref:System.Windows.Controls.Ribbon.Ribbon>不在键盘聚焦时显示；它们仅通过键盘快捷键显示。
+> <xref:System.Windows.Controls.Ribbon.Ribbon> 控件上的[功能区工具提示](xref:System.Windows.Controls.Ribbon.RibbonToolTip)不在键盘聚焦时显示；它们仅通过键盘快捷键显示。
 
 **添加了对 SizeOfSet 和 PositionInSet UIAutomation 属性的支持**
 
@@ -337,19 +337,19 @@ Windows 10 引入了两个新的 UIAutomation 属性（`SizeOfSet` 和 `Position
 
 - <xref:System.Windows.Forms.ToolStripDropDownButton> 控件的下拉箭头。
 
-- <xref:System.Windows.Forms.Button> 设为 <xref:System.Windows.Forms.RadioButton> 或 <xref:System.Windows.Forms.CheckBox> 的 <xref:System.Windows.Forms.ButtonBase.FlatStyle>、<xref:System.Windows.Forms.FlatStyle.Flat?displayProperty=nameWithType> 和 <xref:System.Windows.Forms.FlatStyle.Popup?displayProperty=nameWithType> 控件。 以前，所选文本和背景颜色对比度低，难以阅读。
+- <xref:System.Windows.Forms.ButtonBase.FlatStyle> 设为 <xref:System.Windows.Forms.FlatStyle.Flat?displayProperty=nameWithType> 或 <xref:System.Windows.Forms.FlatStyle.Popup?displayProperty=nameWithType> 的 <xref:System.Windows.Forms.Button>、<xref:System.Windows.Forms.RadioButton> 和 <xref:System.Windows.Forms.CheckBox> 控件。 以前，所选文本和背景颜色对比度低，难以阅读。
 
-- <xref:System.Windows.Forms.GroupBox> 属性设为 <xref:System.Windows.Forms.Control.Enabled> 的 `false` 中所包含的控件。
+- <xref:System.Windows.Forms.Control.Enabled> 属性设为 `false` 的 <xref:System.Windows.Forms.GroupBox> 中所包含的控件。
 
 - 在高对比度模式下，<xref:System.Windows.Forms.ToolStripButton>、<xref:System.Windows.Forms.ToolStripComboBox> 和 <xref:System.Windows.Forms.ToolStripDropDownButton> 控件的亮度对比度提高。
 
-- <xref:System.Windows.Forms.DataGridViewLinkCell.LinkColor> 的 <xref:System.Windows.Forms.DataGridViewLinkCell> 属性。
+- <xref:System.Windows.Forms.DataGridViewLinkCell> 的 <xref:System.Windows.Forms.DataGridViewLinkCell.LinkColor> 属性。
 
 **讲述人改进**
 
 自 .NET Framework 4.7.2 起，讲述人支持在以下几个方面改进：
 
-- 它在公布 <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys?displayProperty=nameWithType> 的文本时会公布 <xref:System.Windows.Forms.ToolStripMenuItem> 属性的值。
+- 它在公布 <xref:System.Windows.Forms.ToolStripMenuItem> 的文本时会公布 <xref:System.Windows.Forms.ToolStripMenuItem.ShortcutKeys?displayProperty=nameWithType> 属性的值。
 
 - 当 <xref:System.Windows.Forms.ToolStripMenuItem> 的 <xref:System.Windows.Forms.Control.Enabled> 属性设置为 `false` 时，它会有所指示。
 
@@ -365,17 +365,17 @@ Windows 10 引入了两个新的 UIAutomation 属性（`SizeOfSet` 和 `Position
 
 - 若 <xref:System.Windows.Forms.DataGridView.SelectionMode?displayProperty=nameWithType> 设置为 <xref:System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect?displayProperty=nameWithType>，当用户按 Tab 键遍历当前行中的单元格时，列标题将更改颜色来指示当前列。
 
-- <xref:System.Windows.Forms.AccessibleObject.Parent?displayProperty=nameWithType> 的 <xref:System.Windows.Forms.DataGridViewLinkCell.DataGridViewLinkCellAccessibleObject?displayProperty=nameWithType> 属性返回正确的父控件。
+- <xref:System.Windows.Forms.DataGridViewLinkCell.DataGridViewLinkCellAccessibleObject?displayProperty=nameWithType> 的 <xref:System.Windows.Forms.AccessibleObject.Parent?displayProperty=nameWithType> 属性返回正确的父控件。
 
 **改进了视觉提示**
 
-- 具有空 <xref:System.Windows.Forms.RadioButton> 属性的 <xref:System.Windows.Forms.CheckBox> 和 <xref:System.Windows.Forms.ButtonBase.Text> 控件在接收到焦点时会显示焦点指示器。
+- 具有空 <xref:System.Windows.Forms.ButtonBase.Text> 属性的 <xref:System.Windows.Forms.RadioButton> 和 <xref:System.Windows.Forms.CheckBox> 控件在接收到焦点时会显示焦点指示器。
 
 **改进了属性网格支持**
 
-- 现在，仅在 PropertyGrid 元素启用时，<xref:System.Windows.Forms.PropertyGrid> 控件子元素才会为 `true` 属性返回 <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty>。
+- 现在，仅在 PropertyGrid 元素启用时，<xref:System.Windows.Forms.PropertyGrid> 控件子元素才会为 <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> 属性返回 `true`。
 
-- 仅在用户可更改 PropertyGrid 元素时，<xref:System.Windows.Forms.PropertyGrid> 控件子元素才会为 `false` 属性返回 <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty>。
+- 仅在用户可更改 PropertyGrid 元素时，<xref:System.Windows.Forms.PropertyGrid> 控件子元素才会为 <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> 属性返回 `false`。
 
 **改进了的键盘导航**
 
@@ -433,24 +433,24 @@ Windows 10 引入了两个新的 UIAutomation 属性（`SizeOfSet` 和 `Position
 
 为了支持活动区域，向 WPF 添加了以下 API：
 
-- <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveSettingProperty?displayProperty=nameWithType> 和 <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveRegionChangedEvent?displayProperty=nameWithType> 字段，用于标识 LiveSetting  属性和 LiveRegionChanged  事件。 可通过使用 XAML 来进行设置。
+- <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveSettingProperty?displayProperty=nameWithType> 和 <xref:System.Windows.Automation.AutomationElementIdentifiers.LiveRegionChangedEvent?displayProperty=nameWithType> 字段，用于标识 LiveSetting 属性和 LiveRegionChanged 事件。 可通过使用 XAML 来进行设置。
 
-- AutomationProperties.LiveSetting  附加属性，用于向屏幕阅读器通知 UI 更改对用户的重要性。
+- AutomationProperties.LiveSetting 附加属性，用于向屏幕阅读器通知 UI 更改对用户的重要性。
 
-- <xref:System.Windows.Automation.AutomationProperties.LiveSettingProperty?displayProperty=nameWithType> 属性，用于标识 AutomationProperties.LiveSetting  附加属性。
+- <xref:System.Windows.Automation.AutomationProperties.LiveSettingProperty?displayProperty=nameWithType> 属性，用于标识 AutomationProperties.LiveSetting 附加属性。
 
-- <xref:System.Windows.Automation.Peers.AutomationPeer.GetLiveSettingCore%2A?displayProperty=nameWithType> 方法，可替代该方法以提供 LiveSetting  值。
+- <xref:System.Windows.Automation.Peers.AutomationPeer.GetLiveSettingCore%2A?displayProperty=nameWithType> 方法，可替代该方法以提供 LiveSetting 值。
 
-- <xref:System.Windows.Automation.AutomationProperties.GetLiveSetting%2A?displayProperty=nameWithType> 和 <xref:System.Windows.Automation.AutomationProperties.SetLiveSetting%2A?displayProperty=nameWithType> 方法，用于获取和设置 LiveSetting  值。
+- <xref:System.Windows.Automation.AutomationProperties.GetLiveSetting%2A?displayProperty=nameWithType> 和 <xref:System.Windows.Automation.AutomationProperties.SetLiveSetting%2A?displayProperty=nameWithType> 方法，用于获取和设置 LiveSetting 值。
 
-- <xref:System.Windows.Automation.AutomationLiveSetting?displayProperty=nameWithType> 枚举，用于定义以下可能的 LiveSetting  值：
+- <xref:System.Windows.Automation.AutomationLiveSetting?displayProperty=nameWithType> 枚举，用于定义以下可能的 LiveSetting 值：
 
   - <xref:System.Windows.Automation.AutomationLiveSetting.Off?displayProperty=nameWithType>。 如果活动区域的内容已更改，则该元素不会发送通知。
   - <xref:System.Windows.Automation.AutomationLiveSetting.Polite?displayProperty=nameWithType>。 如果活动区域的内容已更改，则该元素将发送非中断通知。
 
   - <xref:System.Windows.Automation.AutomationLiveSetting.Assertive?displayProperty=nameWithType>。 如果活动区域的内容已更改，则该元素将发送中断通知。
 
-可通过对相关元素设置 AutomationProperties.LiveSetting  属性来创建 LiveRegion，如以下示例所示：
+可通过对相关元素设置 AutomationProperties.LiveSetting 属性来创建 LiveRegion，如以下示例所示：
 
 ```xaml
 <TextBlock Name="myTextBlock" AutomationProperties.LiveSetting="Assertive">announcement</TextBlock>
@@ -476,7 +476,7 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 - <xref:System.Windows.Controls.Expander> 控件
 
-  <xref:System.Windows.Controls.Expander> 控件的焦点视觉对象现在可见。 <xref:System.Windows.Controls.ComboBox>、<xref:System.Windows.Controls.ListBox> 和 <xref:System.Windows.Controls.RadioButton> 控件的键盘视觉对象也可见。 例如:
+  <xref:System.Windows.Controls.Expander> 控件的焦点视觉对象现在可见。 <xref:System.Windows.Controls.ComboBox>、<xref:System.Windows.Controls.ListBox> 和 <xref:System.Windows.Controls.RadioButton> 控件的键盘视觉对象也可见。 例如：
 
   在此之前:
 
@@ -488,7 +488,7 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 - <xref:System.Windows.Controls.CheckBox> 和 <xref:System.Windows.Controls.RadioButton> 控件
 
-  在高对比度主题下选中时，<xref:System.Windows.Controls.CheckBox> 和 <xref:System.Windows.Controls.RadioButton> 控件中的文本更易于查看。 例如:
+  在高对比度主题下选中时，<xref:System.Windows.Controls.CheckBox> 和 <xref:System.Windows.Controls.RadioButton> 控件中的文本更易于查看。 例如：
 
   在此之前:
 
@@ -500,7 +500,7 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 - <xref:System.Windows.Controls.ComboBox> 控件
 
-  从 .NET Framework 4.7.1 开始，已禁用的 <xref:System.Windows.Controls.ComboBox> 控件的边框与禁用的文本颜色相同。 例如:
+  从 .NET Framework 4.7.1 开始，已禁用的 <xref:System.Windows.Controls.ComboBox> 控件的边框与禁用的文本颜色相同。 例如：
 
   在此之前:
 
@@ -520,7 +520,7 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
   ![带有黑色文本的蓝色按钮屏幕截图，文本显示“Focus Me”。](./media/whats-new-in-accessibility/button-theme-colors-after.png)
 
-  最后，在 .NET Framework 4.7 及更低版本中，将 <xref:System.Windows.Controls.ComboBox> 控件的样式设置为 `Toolbar.ComboBoxStyleKey` 会导致下拉箭头不可见。 此问题已在 .NET Framework 4.7.1 及更高版本中解决。 例如:
+  最后，在 .NET Framework 4.7 及更低版本中，将 <xref:System.Windows.Controls.ComboBox> 控件的样式设置为 `Toolbar.ComboBoxStyleKey` 会导致下拉箭头不可见。 此问题已在 .NET Framework 4.7.1 及更高版本中解决。 例如：
 
   在此之前:
 
@@ -532,7 +532,7 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 - <xref:System.Windows.Controls.DataGrid> 控件
 
-  从 .NET Framework 4.7.1 开始，<xref:System.Windows.Controls.DataGrid> 控件中的排序指示符箭头现在使用正确的主题颜色。 例如:
+  从 .NET Framework 4.7.1 开始，<xref:System.Windows.Controls.DataGrid> 控件中的排序指示符箭头现在使用正确的主题颜色。 例如：
 
   在此之前:
 
@@ -577,7 +577,7 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 - 所选 <xref:System.Windows.Forms.Button> 控件中的文本与选中颜色形成鲜明对比。
 
-- 禁用的文本更易于阅读。 例如:
+- 禁用的文本更易于阅读。 例如：
 
   在此之前:
 
@@ -628,11 +628,11 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 自 .NET Framework 4.7.1 和 Visual Studio 2017 版本 15.3 起，ASP.NET 改进了 ASP.NET Web 控件与 Visual Studio 中的辅助功能技术配合使用的方式。 包括以下更改：
 
-- 在以下控件中实现缺失 UI 的辅助功能模式：例如“详细信息视图”向导中的“添加字段”对话框或“ListView”向导的“配置 ListView”对话框     。
+- 在以下控件中实现缺失 UI 的辅助功能模式：例如“详细信息视图”向导中的“添加字段”对话框或“ListView”向导的“配置 ListView”对话框   。
 
-- 改善在高对比度模式下（如“数据页导航字段编辑器”）的显示  。
+- 改善在高对比度模式下（如“数据页导航字段编辑器”）的显示。
 
-- 改善以下控件的键盘导航体验：例如 DataPager 控件的“编辑页导航字段”向导中的“字段”对话框、“配置 ObjectContext”对话框或“配置数据源”向导的“配置数据选择”对话框      。
+- 改善以下控件的键盘导航体验：例如 DataPager 控件的“编辑页导航字段”向导中的“字段”对话框、“配置 ObjectContext”对话框或“配置数据源”向导的“配置数据选择”对话框    。
 
 <a name="tools471"></a>
 
@@ -660,9 +660,9 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
   - 警告图标可以通过键盘访问。
 
-  - “属性”窗口的“更多属性”按钮可以通过键盘访问   。
+  - “属性”窗口的“更多属性”按钮可以通过键盘访问 。
 
-  - 键盘用户可以访问工作流设计器“参数”和“变量”窗格的标题项   。
+  - 键盘用户可以访问工作流设计器“参数”和“变量”窗格的标题项 。
 
 - 提升了聚焦项的可见性，例如当：
 
@@ -707,6 +707,6 @@ peer.RaiseAutomationEvent(AutomationEvents.LiveRegionChanged)
 
 - 选择高对比度主题的用户将看到工作流设计器及其控件可见性的许多改进，例如元素间更好的对比度和焦点元素更明显的选择框。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [.NET Framework 的新增功能](index.md)

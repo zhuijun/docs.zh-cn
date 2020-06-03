@@ -20,7 +20,7 @@ ms.locfileid: "82796062"
 > [!IMPORTANT]
 > 此示例将数据存储为二进制格式的文件。 不应将这些格式用于敏感数据，如密码或信用卡信息。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 - 若要生成并运行，请安装 [.NET Core SDK](https://dotnet.microsoft.com/download)。
 
@@ -99,7 +99,7 @@ New customer value: Henry Clay
 
 此时可再次生成并运行应用程序。 首次运行时，请注意起始利率为 7.5，然后更改为 7.1. 关闭该应用程序，然后重新运行。 现在，应用程序打印已读取所保存文件的消息，即使在代码更改它之前，利率也是 7.1。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [序列化 (C#)](index.md)
 - [C# 编程指南](../../index.md)
