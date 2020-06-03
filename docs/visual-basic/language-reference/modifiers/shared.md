@@ -11,12 +11,12 @@ helpviewer_keywords:
 - shared [elements VB]
 - elements [Visual Basic], shared
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
-ms.openlocfilehash: bc63de4bda1e8e605e25fbe293686c187dd4d005
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 000cc13bc6e80914e9a21b6ee60e91127809ee08
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290988"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307080"
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
 
@@ -89,11 +89,11 @@ ms.locfileid: "84290988"
 - [Dim 语句](../statements/dim-statement.md)
 - [Event 语句](../statements/event-statement.md)
 - [Function 语句](../statements/function-statement.md)
-- [Operator Statement](../operator-statement.md)
-- [Property Statement](../property-statement.md)
-- [Sub 语句](../sub-statement.md)
+- [Operator Statement](../statements/operator-statement.md)
+- [Property Statement](../statements/property-statement.md)
+- [Sub 语句](../statements/sub-statement.md)
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Shadows](shadows.md)
 - [静态](static.md)

@@ -4,12 +4,12 @@ description: 了解如何将现有的 ASP.NET Web 窗体应用迁移到 Blazor�
 author: twsouthwick
 ms.author: tasou
 ms.date: 09/19/2019
-ms.openlocfilehash: b614572bd04d9ec694b0feb95173373591d5e117
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: c70e4a4f57ddac97db4d58d9f876f7edc6aa6ce9
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144404"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306976"
 ---
 # <a name="migrate-from-aspnet-web-forms-to-blazor"></a>从 ASP.NET Web 窗体迁移到 Blazor
 
@@ -285,7 +285,7 @@ EShop 项目可实现基本的静态文件访问。 有很多自定义可用于�
 
 Web 窗体应用中的页面是扩展名为 *.aspx*的文件。 Web 窗体页通常可以映射到 Blazor 中的组件。 Blazor 组件是在扩展名为*razor*的文件中创作的。 对于 eShop 项目，五个页面会转换为 Razor 页面。
 
-例如，详细信息视图由 Web 窗体项目中的三个文件组成： *details*、 *Details.aspx.cs*和*Details.aspx.designer.cs*。 转换为 Blazor 时，代码隐藏和标记将合并为*详细信息。* Razor 编译（相当于*designer.cs*文件中的内容）存储在*obj*目录中，默认情况下，在**解决方案资源管理器**中可查看。 Web 窗体页由以下标记组成：
+例如，详细信息视图包含 Web 窗体项目中的三个文件： "*详细信息*"、" *Details.aspx.cs*" 和 " *Details.aspx.designer.cs*"。 转换为 Blazor 时，代码隐藏和标记将合并为*详细信息。* Razor 编译（相当于*designer.cs*文件中的内容）存储在*obj*目录中，默认情况下，在**解决方案资源管理器**中可查看。 Web 窗体页由以下标记组成：
 
 ```aspx-csharp
 <%@ Page Title="Details" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Details.aspx.cs" Inherits="eShopLegacyWebForms.Catalog.Details" %>
