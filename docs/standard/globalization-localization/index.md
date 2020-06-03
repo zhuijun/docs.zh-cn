@@ -11,12 +11,12 @@ helpviewer_keywords:
 - application development [.NET], globalization
 - multilingual application development
 ms.assetid: 9a59696b-d89b-45bd-946d-c75da4732d02
-ms.openlocfilehash: c5c601d18d92d9b57781bc8a09f26f0bc3a9216a
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 10d07a02a7ff744a87b920fd97df24b076c22cc3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842005"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288285"
 ---
 # <a name="globalizing-and-localizing-net-applications"></a>对 .NET 应用程序进行全球化和本地化
 
@@ -84,10 +84,10 @@ ms.locfileid: "83842005"
 
    包含表示 ASCII、ANSI、Unicode 以及其他字符编码的类。
 
-- [Resgen.exe（资源文件生成器）](../../../docs/framework/tools/resgen-exe-resource-file-generator.md)
+- [Resgen.exe（资源文件生成器）](../../framework/tools/resgen-exe-resource-file-generator.md)
 
    描述如何使用 Resgen.exe 将 .txt 文件和基于 XML 的资源格式 (.resx) 文件转换为公共语言运行时二进制 .resources 文件。
 
-- [Winres.exe（Windows 窗体资源编辑器）](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md)
+- [Winres.exe（Windows 窗体资源编辑器）](../../framework/tools/winres-exe-windows-forms-resource-editor.md)
 
    描述如何使用 Winres.exe 本地化 Windows 窗体。

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET Framework]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-ms.openlocfilehash: 1bc632a7cfdb96967c7fc508e22ca93c1ed9318f
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 0b87121a4a2003d3f85cf58f6d93f156fc121e54
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728500"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287947"
 ---
 # <a name="collections-and-data-structures"></a>集合和数据结构
 
@@ -32,7 +32,7 @@ ms.locfileid: "82728500"
 
 - **可枚举集合**
 
-    .NET Framework 集合实现 <xref:System.Collections.IEnumerable?displayProperty=nameWithType> 或 <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>，以启用要循环访问的集合。 可将枚举器看作集合中可指向任何元素的可移动指针。 [foreach, in](../../csharp/language-reference/keywords/foreach-in.md) 语句和  [For Each...Next 语句](../../visual-basic/language-reference/statements/for-each-next-statement.md)使用 <xref:System.Collections.IEnumerable.GetEnumerator%2A> 方法公开的枚举器并隐藏操作枚举器的复杂性。 此外，任何实现 <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> 的集合均被认为是可查询类型，并可使用 LINQ 对其进行查询  。 LINQ 查询提供数据访问的一个通用模式。 它们通常比标准 `foreach` 循环更简洁、更具可读性，并提供筛选、排序和分组功能。 LINQ 查询还可提高性能。 有关详细信息，请参阅 [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md)、[LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)、[并行 LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)、[LINQ 查询 (C#) 简介](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)和[基本查询操作 (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)。
+    .NET Framework 集合实现 <xref:System.Collections.IEnumerable?displayProperty=nameWithType> 或 <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType>，以启用要循环访问的集合。 可将枚举器看作集合中可指向任何元素的可移动指针。 [foreach, in](../../csharp/language-reference/keywords/foreach-in.md) 语句和  [For Each...Next 语句](../../visual-basic/language-reference/statements/for-each-next-statement.md)使用 <xref:System.Collections.IEnumerable.GetEnumerator%2A> 方法公开的枚举器并隐藏操作枚举器的复杂性。 此外，任何实现 <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> 的集合均被认为是可查询类型，并可使用 LINQ 对其进行查询。 LINQ 查询提供数据访问的一个通用模式。 它们通常比标准 `foreach` 循环更简洁、更具可读性，并提供筛选、排序和分组功能。 LINQ 查询还可提高性能。 有关详细信息，请参阅 [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md)、[LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)、[并行 LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md)、[LINQ 查询 (C#) 简介](../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)和[基本查询操作 (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)。
 
 - **可将集合内容复制到数组**
 
@@ -50,11 +50,11 @@ ms.locfileid: "82728500"
 
 - **下限一致**
 
-    集合的下限是其第一个元素的索引。 <xref:System.Collections> 命名空间中的所有索引集合的下限均为零，这表示它们从 0 开始建立索引。 <xref:System.Array> 默认下限为零，但使用 <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> 创建 Array 类的实例时可定义其他下限  。
+    集合的下限是其第一个元素的索引。 <xref:System.Collections> 命名空间中的所有索引集合的下限均为零，这表示它们从 0 开始建立索引。 <xref:System.Array> 默认下限为零，但使用 <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> 创建 Array 类的实例时可定义其他下限。
 
 - **同步以从多个线程进行访问**（仅 <xref:System.Collections> 类）。
 
-    <xref:System.Collections> 命名空间中的非泛型集合类型通过同步提供一些线程安全性；通常通过 <xref:System.Collections.ICollection.SyncRoot%2A> 和 <xref:System.Collections.ICollection.IsSynchronized%2A> 成员公开。 这些集合不是默认为线程安全的。 如需对集合进行可扩展、高效的多线程访问，请使用 <xref:System.Collections.Concurrent> 命名空间中的一个类或考虑使用不可变集合。 有关详细信息，请参阅[线程安全集合](../../../docs/standard/collections/thread-safe/index.md)。
+    <xref:System.Collections> 命名空间中的非泛型集合类型通过同步提供一些线程安全性；通常通过 <xref:System.Collections.ICollection.SyncRoot%2A> 和 <xref:System.Collections.ICollection.IsSynchronized%2A> 成员公开。 这些集合不是默认为线程安全的。 如需对集合进行可扩展、高效的多线程访问，请使用 <xref:System.Collections.Concurrent> 命名空间中的一个类或考虑使用不可变集合。 有关详细信息，请参阅[线程安全集合](thread-safe/index.md)。
 
 <a name="BKMK_Choosingacollection"></a>
 ## <a name="choose-a-collection"></a>选择集合
@@ -98,13 +98,13 @@ ms.locfileid: "82728500"
 
 |Title|描述|
 |-----------|-----------------|
-|[选择集合类](../../../docs/standard/collections/selecting-a-collection-class.md)|描述不同的集合并帮助你为你的方案选择一个集合。|
-|[常用的集合类型](../../../docs/standard/collections/commonly-used-collection-types.md)|描述诸如 <xref:System.Array?displayProperty=nameWithType>、<xref:System.Collections.Generic.List%601?displayProperty=nameWithType> 和 <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> 等常用泛型和非泛型集合类型。|
-|[何时使用泛型集合](../../../docs/standard/collections/when-to-use-generic-collections.md)|讨论泛型集合类型的使用。|
-|[集合内的比较和排序](../../../docs/standard/collections/comparisons-and-sorts-within-collections.md)|讨论在集合中使用等同性比较和排序比较。|
-|[已排序的集合类型](../../../docs/standard/collections/sorted-collection-types.md)|描述已排序集合的性能和特征|
-|[哈希表和字典集合类型](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|描述泛型和非泛型基于哈希的字典类型的功能。|
-|[线程安全集合](../../../docs/standard/collections/thread-safe/index.md)|介绍支持从多个线程进行安全有效的并发访问的集合类型，例如 <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> 和 <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>。|
+|[选择集合类](selecting-a-collection-class.md)|描述不同的集合并帮助你为你的方案选择一个集合。|
+|[常用的集合类型](commonly-used-collection-types.md)|描述诸如 <xref:System.Array?displayProperty=nameWithType>、<xref:System.Collections.Generic.List%601?displayProperty=nameWithType> 和 <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType> 等常用泛型和非泛型集合类型。|
+|[何时使用泛型集合](when-to-use-generic-collections.md)|讨论泛型集合类型的使用。|
+|[集合内的比较和排序](comparisons-and-sorts-within-collections.md)|讨论在集合中使用等同性比较和排序比较。|
+|[已排序的集合类型](sorted-collection-types.md)|描述已排序集合的性能和特征|
+|[哈希表和字典集合类型](hashtable-and-dictionary-collection-types.md)|描述泛型和非泛型基于哈希的字典类型的功能。|
+|[线程安全集合](thread-safe/index.md)|介绍支持从多个线程进行安全有效的并发访问的集合类型，例如 <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> 和 <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType>。|
 |System.Collections.Immutable|介绍不可变集合并提供各集合类型的链接。|
 
 <a name="BKMK_Reference"></a>

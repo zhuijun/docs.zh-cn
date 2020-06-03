@@ -5,22 +5,22 @@ helpviewer_keywords:
 - C# language, generics
 - generics [C#]
 ms.assetid: 75ea8509-a4ea-4e7a-a2b3-cf72482e9282
-ms.openlocfilehash: c7252180c9c98a8ca99c8cc6b3faaf8b1b8f0749
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a3ed3aa412c7d9c9d6b705dba80b527057c647fa
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79167485"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241664"
 ---
 # <a name="generics-c-programming-guide"></a>泛型（C# 编程指南）
 
-泛型将类型参数的概念引入 .NET Framework，这样就可以设计具有以下特征的类和方法：在客户端代码声明并初始化这些类或方法之前，这些类或方法会延迟指定一个或多个类型。 例如，通过使用泛型类型参数 `T`，可以编写其他客户端代码能够使用的单个类，而不会产生运行时转换或装箱操作的成本或风险，如下所示：
+泛型将类型参数的概念引入 .NET，这样就可设计具有以下特征的类和方法：在客户端代码声明并初始化这些类或方法之前，这些类或方法会延迟指定一个或多个类型。 例如，通过使用泛型类型参数 `T`，可以编写其他客户端代码能够使用的单个类，而不会产生运行时转换或装箱操作的成本或风险，如下所示：
 
 [!code-csharp[csProgGuideGenerics#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#1)]
 
 泛型类和泛型方法兼具可重用性、类型安全性和效率，这是非泛型类和非泛型方法无法实现的。 泛型通常与集合以及作用于集合的方法一起使用。 <xref:System.Collections.Generic> 命名空间包含几个基于泛型的集合类。 非泛型集合（如 <xref:System.Collections.ArrayList>）不建议使用，并且保留用于兼容性目的。 有关详细信息，请参阅 [.NET 中的泛型](../../../standard/generics/index.md)。
 
-当然，也可以创建自定义泛型类型和泛型方法，以提供自己的通用解决方案，设计类型安全的高效模式。 以下代码示例演示了出于演示目的的简单泛型链接列表类。 （大多数情况下，应使用 .NET Framework 类库提供的 <xref:System.Collections.Generic.List%601> 类，而不是自行创建类。）在通常使用具体类型来指示列表中所存储项的类型的情况下，可使用类型参数 `T`。 其使用方法如下：
+当然，也可以创建自定义泛型类型和泛型方法，以提供自己的通用解决方案，设计类型安全的高效模式。 以下代码示例演示了出于演示目的的简单泛型链接列表类。 （大多数情况下，应使用 .NET 提供的 <xref:System.Collections.Generic.List%601> 类，而不是自行创建类。）在通常使用具体类型来指示列表中所存储项的类型的情况下，可使用类型参数 `T`。 其使用方法如下：
 
 - 在 `AddHead` 方法中作为方法参数的类型。
 - 在 `Node` 嵌套类中作为 `Data` 属性的返回类型。
@@ -38,7 +38,7 @@ ms.locfileid: "79167485"
 
 - 使用泛型类型可以最大限度地重用代码、保护类型安全性以及提高性能。
 - 泛型最常见的用途是创建集合类。
-- .NET Framework 类库在 <xref:System.Collections.Generic> 命名空间中包含几个新的泛型集合类。 应尽可能使用这些类来代替某些类，如 <xref:System.Collections> 命名空间中的 <xref:System.Collections.ArrayList>。
+- .NET 类库在 <xref:System.Collections.Generic> 命名空间中包含几个新的泛型集合类。 应尽可能使用这些类来代替某些类，如 <xref:System.Collections> 命名空间中的 <xref:System.Collections.ArrayList>。
 - 可以创建自己的泛型接口、泛型类、泛型方法、泛型事件和泛型委托。
 - 可以对泛型类进行约束以访问特定数据类型的方法。
 - 在泛型数据类型中所用类型的信息可在运行时通过使用反射来获取。

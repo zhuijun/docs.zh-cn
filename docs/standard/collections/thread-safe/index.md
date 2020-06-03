@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, overview
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
-ms.openlocfilehash: 790543118b18b0422f41c3249512b62aae0cfb03
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7af59cf0fdbe8d5c7d7d586b4b86992ae1dc7601
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75938110"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290365"
 ---
 # <a name="thread-safe-collections"></a>线程安全集合
 .NET Framework 4 引入了 <xref:System.Collections.Concurrent?displayProperty=nameWithType> 命名空间，其中包含多个线程安全且可缩放的集合类。 多个线程可以安全高效地从这些集合添加或删除项，而无需在用户代码中进行其他同步。 编写新代码时，只要将多个线程同时写入到集合时，就使用并发集合类。 如果仅从共享集合进行读取，则可使用 <xref:System.Collections.Generic?displayProperty=nameWithType> 命名空间中的类。 建议不要使用 1.0 集合类，除非需要定位 .NET Framework 1.1 或更低版本运行时。  
@@ -23,7 +23,7 @@ ms.locfileid: "75938110"
  建议使用 .NET Framework 4 中的并发集合类，因为它们不仅能够提供 .NET Framework 2.0 集合类的类型安全性，而且能够比 .NET Framework 1.0 集合更高效完整地提供线程安全性。  
   
 ## <a name="fine-grained-locking-and-lock-free-mechanisms"></a>细粒度锁定和无锁机制  
- 某些并发集合类型使用轻量同步机制，如 <xref:System.Threading.SpinLock>、<xref:System.Threading.SpinWait>、<xref:System.Threading.SemaphoreSlim> 和 <xref:System.Threading.CountdownEvent>，这些机制是 .NET Framework 4 中的新增功能。 这些同步类型通常在将线程真正置于等待状态之前，会在短时间内使用*忙旋转*。 预计等待时间非常短时，旋转比等待所消耗的计算资源少得多，因为后者涉及资源消耗量大的内核转换。 对于使用旋转的集合类，这种效率意味着多个线程能够以非常快的速率添加和删除项。 有关旋转与锁定的详细信息，请参阅 [SpinLock](../../../../docs/standard/threading/spinlock.md) 和 [SpinWait](../../../../docs/standard/threading/spinwait.md)。  
+ 某些并发集合类型使用轻量同步机制，如 <xref:System.Threading.SpinLock>、<xref:System.Threading.SpinWait>、<xref:System.Threading.SemaphoreSlim> 和 <xref:System.Threading.CountdownEvent>，这些机制是 .NET Framework 4 中的新增功能。 这些同步类型通常在将线程真正置于等待状态之前，会在短时间内使用*忙旋转*。 预计等待时间非常短时，旋转比等待所消耗的计算资源少得多，因为后者涉及资源消耗量大的内核转换。 对于使用旋转的集合类，这种效率意味着多个线程能够以非常快的速率添加和删除项。 有关旋转与锁定的详细信息，请参阅 [SpinLock](../../threading/spinlock.md) 和 [SpinWait](../../threading/spinwait.md)。  
   
  <xref:System.Collections.Concurrent.ConcurrentQueue%601> 和 <xref:System.Collections.Concurrent.ConcurrentStack%601> 类完全不使用锁定。 相反，它们依赖于 <xref:System.Threading.Interlocked> 操作来实现线程安全性。  
   
@@ -32,9 +32,9 @@ ms.locfileid: "75938110"
   
  下表列出了 <xref:System.Collections.Concurrent?displayProperty=nameWithType> 命名空间中的集合类型。  
   
-|类型|说明|  
+|类型|描述|  
 |----------|-----------------|  
-|<xref:System.Collections.Concurrent.BlockingCollection%601>|为实现 <xref:System.Collections.Concurrent.IProducerConsumerCollection%601> 的所有类型提供限制和阻止功能。 有关详细信息，请参阅 [BlockingCollection 概述](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md)。|  
+|<xref:System.Collections.Concurrent.BlockingCollection%601>|为实现 <xref:System.Collections.Concurrent.IProducerConsumerCollection%601> 的所有类型提供限制和阻止功能。 有关详细信息，请参阅 [BlockingCollection 概述](blockingcollection-overview.md)。|  
 |<xref:System.Collections.Concurrent.ConcurrentDictionary%602>|键值对字典的线程安全实现。|  
 |<xref:System.Collections.Concurrent.ConcurrentQueue%601>|FIFO（先进先出）队列的线程安全实现。|  
 |<xref:System.Collections.Concurrent.ConcurrentStack%601>|LIFO（后进先出）堆栈的线程安全实现。|  
@@ -43,15 +43,15 @@ ms.locfileid: "75938110"
   
 ## <a name="related-topics"></a>相关主题  
   
-|标题|说明|  
+|Title|描述|  
 |-----------|-----------------|  
-|[BlockingCollection 概述](../../../../docs/standard/collections/thread-safe/blockingcollection-overview.md)|描述 <xref:System.Collections.Concurrent.BlockingCollection%601> 类型提供的功能。|  
-|[如何：在 ConcurrentDictionary 中添加和移除项](../../../../docs/standard/collections/thread-safe/how-to-add-and-remove-items.md)|描述如何从 <xref:System.Collections.Concurrent.ConcurrentDictionary%602> 添加和删除元素|  
-|[如何：在 BlockingCollection 中逐个添加和取出项](../../../../docs/standard/collections/thread-safe/how-to-add-and-take-items.md)|描述如何在不使用只读枚举器的情况下，从阻止的集合添加和检索项。|  
-|[如何：向集合添加限制和阻塞功能](../../../../docs/standard/collections/thread-safe/how-to-add-bounding-and-blocking.md)|描述如何将任一集合类用作 <xref:System.Collections.Concurrent.IProducerConsumerCollection%601> 集合的基础存储机制。|  
-|[如何：使用 ForEach 移除 BlockingCollection 中的项](../../../../docs/standard/collections/thread-safe/how-to-use-foreach-to-remove.md)|介绍了如何使用 `foreach`（在 Visual Basic 中是 `For Each`）在锁定集合中删除所有项。|  
-|[如何：在管道中使用阻塞集合的数组](../../../../docs/standard/collections/thread-safe/how-to-use-arrays-of-blockingcollections.md)|描述如何同时使用多个阻塞集合来实现一个管道。|  
-|[如何：使用 ConcurrentBag 创建目标池](../../../../docs/standard/collections/thread-safe/how-to-create-an-object-pool.md)|演示如何使用并发包在可重用对象（而不是继续创建新对象）的情况下改进性能。|  
+|[BlockingCollection 概述](blockingcollection-overview.md)|描述 <xref:System.Collections.Concurrent.BlockingCollection%601> 类型提供的功能。|  
+|[如何：在 ConcurrentDictionary 中添加和移除项](how-to-add-and-remove-items.md)|描述如何从 <xref:System.Collections.Concurrent.ConcurrentDictionary%602> 添加和删除元素|  
+|[如何：在 BlockingCollection 中逐个添加和取出项](how-to-add-and-take-items.md)|描述如何在不使用只读枚举器的情况下，从阻止的集合添加和检索项。|  
+|[如何：向集合添加限制和阻塞功能](how-to-add-bounding-and-blocking.md)|描述如何将任一集合类用作 <xref:System.Collections.Concurrent.IProducerConsumerCollection%601> 集合的基础存储机制。|  
+|[如何：使用 ForEach 移除 BlockingCollection 中的项](how-to-use-foreach-to-remove.md)|介绍了如何使用 `foreach`（在 Visual Basic 中是 `For Each`）在锁定集合中删除所有项。|  
+|[如何：在管道中使用阻塞集合的数组](how-to-use-arrays-of-blockingcollections.md)|描述如何同时使用多个阻塞集合来实现一个管道。|  
+|[如何：使用 ConcurrentBag 创建目标池](how-to-create-an-object-pool.md)|演示如何使用并发包在可重用对象（而不是继续创建新对象）的情况下改进性能。|  
   
-## <a name="reference"></a>引用  
+## <a name="reference"></a>参考  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>

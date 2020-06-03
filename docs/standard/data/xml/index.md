@@ -3,12 +3,12 @@ title: XML 文档和数据
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
-ms.openlocfilehash: e0c3f3e99b06b65caf79d87a7831369f6fb33b08
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a752d634141a56df1caa61eb5d375dd2a402832f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75710786"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287683"
 ---
 # <a name="xml-documents-and-data"></a>XML 文档和数据
 
@@ -54,33 +54,33 @@ ms.locfileid: "75710786"
 
   为了在需要进行 XSLT 处理时都获得更佳性能，您可以使用 <xref:System.Xml.XPath.XPathDocument> 类，这是一个用于 XPath 查询的经过优化的只读存储，旨在高效地与 <xref:System.Xml.Xsl.XslCompiledTransform> 类结合使用。
 
-- **与 ADO.NET 集成。** XML 类和 [ADO.NET](../../../../docs/framework/data/adonet/index.md) 紧密集成，将关系数据和 XML 组合在一起。 <xref:System.Data.DataSet> 类是从数据库中检索到的数据在内存中的缓存。 <xref:System.Data.DataSet> 类能够使用 <xref:System.Xml.XmlReader> 和 <xref:System.Xml.XmlWriter> 类读取和写入 XML，以 XML 架构 (XSD) 形式保持其内部关系架构结构，并可以推断 XML 文档的架构结构。
+- **与 ADO.NET 集成。** XML 类和 [ADO.NET](../../../framework/data/adonet/index.md) 紧密集成，将关系数据和 XML 组合在一起。 <xref:System.Data.DataSet> 类是从数据库中检索到的数据在内存中的缓存。 <xref:System.Data.DataSet> 类能够使用 <xref:System.Xml.XmlReader> 和 <xref:System.Xml.XmlWriter> 类读取和写入 XML，以 XML 架构 (XSD) 形式保持其内部关系架构结构，并可以推断 XML 文档的架构结构。
 
 ## <a name="in-this-section"></a>本节内容
 
-[XML 处理选项](../../../../docs/standard/data/xml/xml-processing-options.md) 讨论用于处理 XML 数据的选项。
+[XML 处理选项](xml-processing-options.md) 讨论用于处理 XML 数据的选项。
 
-[处理内存中 XML 数据](../../../../docs/standard/data/xml/processing-xml-data-in-memory.md) 讨论用于处理内存中 XML 数据的三种模型：[LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) 和 [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)、<xref:System.Xml.XmlDocument> 类（基于 W3C 文档对象模型）以及 <xref:System.Xml.XPath.XPathDocument> 类（基于 XPath 数据模型）。
+[处理内存中 XML 数据](processing-xml-data-in-memory.md) 讨论用于处理内存中 XML 数据的三种模型：[LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) 和 [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)、<xref:System.Xml.XmlDocument> 类（基于 W3C 文档对象模型）以及 <xref:System.Xml.XPath.XPathDocument> 类（基于 XPath 数据模型）。
 
-[XSLT 转换](../../../../docs/standard/data/xml/xslt-transformations.md)\
+[XSLT 转换](xslt-transformations.md)\
 描述如何使用 XSLT 处理器。
 
-[XML 架构对象模型 (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)\
+[XML 架构对象模型 (SOM)](xml-schema-object-model-som.md)\
 描述用于通过提供 <xref:System.Xml.Schema.XmlSchema> 类加载和编辑架构来生成和处理 XML 架构 (XSD) 的类。
 
-[关系数据和 ADO.NET 的 XML 集成](../../../../docs/standard/data/xml/xml-integration-with-relational-data-and-adonet.md)\
+[关系数据和 ADO.NET 的 XML 集成](xml-integration-with-relational-data-and-adonet.md)\
 描述 .NET Framework 如何通过 <xref:System.Data.DataSet> 对象和 <xref:System.Xml.XmlDataDocument> 对象启用对数据的关系和分层表示形式的实时同步访问。
 
-[管理 XML 文档中的命名空间](../../../../docs/standard/data/xml/managing-namespaces-in-an-xml-document.md)\
+[管理 XML 文档中的命名空间](managing-namespaces-in-an-xml-document.md)\
 描述 <xref:System.Xml.XmlNamespaceManager> 类如何用于存储和维护命名空间信息。
 
-[System.Xml 类中的类型支持](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md)\
+[System.Xml 类中的类型支持](type-support-in-the-system-xml-classes.md)\
 描述如何将 XML 数据类型映射到 CLR 类型，如何转换 XML 类型，并描述 <xref:System.Xml> 类中的其它类型支持功能。
 
 ## <a name="related-sections"></a>相关章节
 
-[ADO.NET](../../../../docs/framework/data/adonet/index.md)\
+[ADO.NET](../../../framework/data/adonet/index.md)\
 提供如何使用 ADO.NET 访问数据的信息。
 
-[安全性](../../../../docs/standard/security/index.md)\
+[安全性](../../security/index.md)\
 提供对 .NET Framework 安全系统的概述。

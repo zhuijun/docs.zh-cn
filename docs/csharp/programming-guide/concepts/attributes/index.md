@@ -1,12 +1,12 @@
 ---
 title: 特性 (C#)
 ms.date: 04/26/2018
-ms.openlocfilehash: 0379bb76cf18ff836bd14aafb9cb97c30aee8ec7
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 358285a39f72ad3ddf1b265e20b443308375d074
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645486"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241573"
 ---
 # <a name="attributes-c"></a>特性 (C#)
 
@@ -41,7 +41,7 @@ ms.locfileid: "81645486"
 [!code-csharp[Using the conditional attribute](~/samples/snippets/csharp/attributes/AttributesOverview.cs#5)]
 
 > [!NOTE]
-> 按照约定，所有特性名称均以“Attribute”一词结尾，以便与 .NET 库中的其他项区分开来。 不过，在代码中使用特性时，无需指定特性后缀。 例如，`[DllImport]` 等同于 `[DllImportAttribute]`，但 `DllImportAttribute` 是此特性在 .NET Framework 类库中的实际名称。
+> 按照约定，所有特性名称均以“Attribute”一词结尾，以便与 .NET 库中的其他项区分开来。 不过，在代码中使用特性时，无需指定特性后缀。 例如，`[DllImport]` 等同于 `[DllImportAttribute]`，但 `DllImportAttribute` 是此特性在 .NET 类库中的实际名称。
 
 ### <a name="attribute-parameters"></a>特性参数
 
@@ -57,7 +57,7 @@ ms.locfileid: "81645486"
 
 ### <a name="attribute-targets"></a>特性目标
 
-特性目标是指应用特性的实体  。 例如，特性可应用于类、特定方法或整个程序集。 默认情况下，特性应用于紧跟在它后面的元素。 不过，还可以进行显式标识。例如，可以标识为将特性应用于方法，还是应用于其参数或返回值。
+特性目标是指应用特性的实体。 例如，特性可应用于类、特定方法或整个程序集。 默认情况下，特性应用于紧跟在它后面的元素。 不过，还可以进行显式标识。例如，可以标识为将特性应用于方法，还是应用于其参数或返回值。
 
 若要显式标识特性目标，请使用以下语法：
 

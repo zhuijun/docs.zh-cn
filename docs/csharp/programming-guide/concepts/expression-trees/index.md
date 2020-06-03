@@ -2,19 +2,19 @@
 title: 表达式树 (C#)
 ms.date: 07/20/2015
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-ms.openlocfilehash: f425ab38bf7bb54814fe777b7cb02180d022a8af
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c260e649e7bd285a6bd07b5a1cd7fc1a7f75b82a
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79169631"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241547"
 ---
 # <a name="expression-trees-c"></a>表达式树 (C#)
 表达式树以树形数据结构表示代码，其中每一个节点都是一种表达式，比如方法调用和 `x < y` 这样的二元运算等。  
   
  你可以对表达式树中的代码进行编辑和运算。 这样能够动态修改可执行代码、在不同数据库中执行 LINQ 查询以及创建动态查询。 有关 LINQ 中表达式树的详细信息，请参阅[如何使用表达式树生成动态查询 (C#)](./how-to-use-expression-trees-to-build-dynamic-queries.md)。
   
- 表达式树还能用于动态语言运行时 (DLR) 以提供动态语言和 .NET Framework 之间的互操作性，同时保证编译器编写员能够发射表达式树而非 Microsoft 中间语言 (MSIL)。 有关 DLR 的详细信息，请参阅[动态语言运行时概述](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)。  
+ 表达式树还能用于动态语言运行时 (DLR) 以提供动态语言和 .NET 之间的互操作性，同时保证编译器编写员能够发射表达式树而非 Microsoft 中间语言 (MSIL)。 有关 DLR 的详细信息，请参阅[动态语言运行时概述](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)。  
   
  你可以基于匿名 lambda 表达式通过 C# 或者 Visual Basic 编译器创建表达式树，或者通过 <xref:System.Linq.Expressions> 名称空间手动创建。  
   
@@ -147,7 +147,7 @@ Console.WriteLine(expr.Compile()(4));
   
  有关详细信息，请参阅[如何执行表达式树 (C#)](./how-to-execute-expression-trees.md)。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Linq.Expressions>
 - [如何执行表达式树 (C#)](./how-to-execute-expression-trees.md)

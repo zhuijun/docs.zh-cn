@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: de40369a661c347a2125075e820420af4eb71cac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: df69d895dee51f1bad1fb6164fcb18996ee3eef4
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75337256"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241651"
 ---
 # <a name="c-programming-guide"></a>C# 编程指南
 
-此部分详细介绍了 C# 语言主要功能，以及通过 .NET Framework 可以在 C# 中使用的功能。  
+此部分详细介绍了 C# 语言主要功能，以及可通过 .NET 在 C# 中使用的功能。  
   
  阅读此部分的大部分内容的前提是，你已对 C# 和一般编程概念有一定的了解。 如果完全没有接触过编程或 C#，建议参阅 [C# 教程简介](../tutorials/intro-to-csharp/index.md)或 [.NET 浏览器内教程](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1)，此教程不需要具备任何编程知识。  
   
@@ -26,7 +26,7 @@ ms.locfileid: "75337256"
   
 ## <a name="program-sections"></a>程序部分
 
-[C# 程序内部探究](./inside-a-program/index.md)  
+[在 C# 程序内部](./inside-a-program/index.md)  
   
 [Main() 和命令行参数](./main-and-command-args/index.md)  
 

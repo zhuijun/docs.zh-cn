@@ -12,12 +12,12 @@ helpviewer_keywords:
 - runtime, attributes
 - extending metadata
 ms.assetid: 30386922-1e00-4602-9ebf-526b271a8b87
-ms.openlocfilehash: b3a106eb58de4865e260a43c8466019e738510f5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d27dc3d77a8f72123f23d9f5a893d144bacee662
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73130905"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276265"
 ---
 # <a name="extending-metadata-using-attributes"></a>利用特性扩展元数据
 公共语言运行时使你能够添加类似于关键字的描述性声明（称为特性），以便批注编程元素（如类型、字段、方法和属性）。 编译运行时的代码时，它将被转换为 Microsoft 中间语言 (MSIL)，并和编译器生成的元数据一起放置在可移植可执行 (PE) 文件内。 特性使你能够将额外的描述性信息放到可使用运行时反射服务提取的元数据中。 当你声明派生自 <xref:System.Attribute?displayProperty=nameWithType> 的特殊类的实例时，编译器会创建特性。  
@@ -26,13 +26,13 @@ ms.locfileid: "73130905"
   
 ## <a name="related-topics"></a>相关主题  
   
-|标题|说明|  
+|Title|描述|  
 |-----------|-----------------|  
-|[应用特性](../../../docs/standard/attributes/applying-attributes.md)|描述如何将特性应用于代码的元素。|  
-|[编写自定义特性](../../../docs/standard/attributes/writing-custom-attributes.md)|描述如何设计自定义特性类。|  
-|[检索存储在特性中的信息](../../../docs/standard/attributes/retrieving-information-stored-in-attributes.md)|描述如何检索加载到执行上下文中的代码的自定义特性。|  
-|[元数据和自描述组件](../../../docs/standard/metadata-and-self-describing-components.md)|提供元数据的概述，并说明它是如何在 .NET Framework 可移植可执行 (PE) 文件中实现的。|  
-|[如何：将程序集加载到仅反射上下文中](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)|说明如何检索仅反射上下文中的自定义特性信息。|  
+|[应用特性](applying-attributes.md)|描述如何将特性应用于代码的元素。|  
+|[编写自定义特性](writing-custom-attributes.md)|描述如何设计自定义特性类。|  
+|[检索存储在特性中的信息](retrieving-information-stored-in-attributes.md)|描述如何检索加载到执行上下文中的代码的自定义特性。|  
+|[元数据和自描述组件](../metadata-and-self-describing-components.md)|提供元数据的概述，并说明它是如何在 .NET Framework 可移植可执行 (PE) 文件中实现的。|  
+|[如何：将程序集加载到仅反射上下文中](../../framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)|说明如何检索仅反射上下文中的自定义特性信息。|  
   
-## <a name="reference"></a>引用  
+## <a name="reference"></a>参考  
  <xref:System.Attribute?displayProperty=nameWithType>

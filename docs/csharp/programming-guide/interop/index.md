@@ -7,17 +7,18 @@ helpviewer_keywords:
 - platform invoke, accessing APIs with C#
 - C# language, interoperability
 ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
-ms.openlocfilehash: 3a70d2ae077552bab536e96367cab0fda1661310
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e53465066cf27a5f46c66ac73ee242370be23395
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75712047"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84242002"
 ---
 # <a name="interoperability-c-programming-guide"></a>互操作性（C# 编程指南）
+
 借助互操作性，可以保留和利用对非托管代码的现有投资工作。 在公共语言运行时 (CLR) 控制下运行的代码称为*托管代码*，不在 CLR 控制下运行的代码称为*非托管代码*。 例如，COM、COM+、C++ 组件、ActiveX 组件和 Microsoft Windows API 都是非托管代码。  
   
- 使用 .NET Framework，可以通过平台调用服务、<xref:System.Runtime.InteropServices> 命名空间、C++ 互操作性和 COM 互操作性（COM 互操作），实现与非托管代码的互操作性。  
+借助 .NET，可通过平台调用服务、<xref:System.Runtime.InteropServices> 命名空间、C++ 互操作性和 COM 互操作性（COM 互操作）实现与非托管代码的互操作性。  
   
 ## <a name="in-this-section"></a>本节内容  
  [互操作性概述](./interoperability-overview.md)  
@@ -42,7 +43,7 @@ ms.locfileid: "75712047"
 
 有关详细信息，请参阅 [C# 语言规范](/dotnet/csharp/language-reference/language-specification/introduction)中的[基本概念](~/_csharplang/spec/unsafe-code.md)。 该语言规范是 C# 语法和用法的权威资料。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType>
 - [C# 编程指南](../index.md)
