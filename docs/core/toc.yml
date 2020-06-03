@@ -115,9 +115,12 @@
         - name: 发布应用
           href: tutorials/publishing-with-visual-studio-code.md
           displayName: 'tutorials, visual studio, vs'
-        - name: 创建库并对其进行单元测试 - macOS
-          href: tutorials/using-on-macos.md
-          displayName: 'tutorials, visual studio code, vs code, cli'
+        - name: 创建库
+          href: tutorials/library-with-visual-studio-code.md
+          displayName: 'tutorials, visual studio, vs'
+        - name: 对库进行单元测试
+          href: tutorials/testing-library-with-visual-studio-code.md
+          displayName: 'tutorials, visual studio, vs'
         - name: 安装并使用包
           href: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
           displayName: 'tutorials, cli'
