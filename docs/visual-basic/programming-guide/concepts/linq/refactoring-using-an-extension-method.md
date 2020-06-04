@@ -2,15 +2,15 @@
 title: 使用扩展方法重构
 ms.date: 07/20/2015
 ms.assetid: d87ae99a-cfa9-4a31-a5e4-9d6437be6810
-ms.openlocfilehash: c66fb90f9949ee3e47105498b211c857d5d63804
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 5bb3ed44c0c3f7616468f820428fe1a384ab6d45
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348022"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413424"
 ---
 # <a name="refactoring-using-an-extension-method-visual-basic"></a>使用扩展方法重构（Visual Basic）
-此示例基于上一个示例，通过使用作为扩展方法实现的纯函数来重构字符串的串联来[检索段落的文本（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/retrieving-the-text-of-the-paragraphs.md)。  
+此示例基于上一个示例，通过使用作为扩展方法实现的纯函数来重构字符串的串联来[检索段落的文本（Visual Basic）](retrieving-the-text-of-the-paragraphs.md)。  
   
  前面的示例使用 <xref:System.Linq.Enumerable.Aggregate%2A> 标准查询运算符将多个字符串串联为一个字符串。 不过，编写一个扩展方法来执行此操作会更方便，因为这样实现的查询会更小、更简单。  
   
@@ -19,7 +19,7 @@ ms.locfileid: "75348022"
   
  本示例包含 `StringConcatenate` 方法的多个重载。  
   
- 您可以在[创建源 Office OPEN XML 文档（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)中找到用于创建此示例的源文档的说明。  
+ 您可以在[创建源 Office OPEN XML 文档（Visual Basic）](creating-the-source-office-open-xml-document.md)中找到用于创建此示例的源文档的说明。  
   
  本示例使用 WindowsBase 程序集中的类。 它使用 <xref:System.IO.Packaging?displayProperty=nameWithType> 命名空间中的类型。  
   
@@ -241,9 +241,9 @@ StyleName:Code >Hello World<
 ## <a name="next-steps"></a>后续步骤  
  下一示例演示如何使用纯函数以其他方式重构此代码：  
   
-- [使用纯函数重构 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+- [使用纯函数重构 (Visual Basic)](refactoring-using-a-pure-function.md)  
   
 ## <a name="see-also"></a>另请参阅
 
-- [教程：在 WordprocessingML 文档中操作内容（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [重构为纯函数（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [教程：在 WordprocessingML 文档中操作内容（Visual Basic）](tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [重构为纯函数（Visual Basic）](refactoring-into-pure-functions.md)

@@ -1,23 +1,23 @@
 ---
-title: 注册表项<keyname>无法创建
+title: 无法创建注册表项“<keyname>”
 ms.date: 07/20/2015
 f1_keywords:
 - vbrInteraction_ResKeyNotCreated1
 ms.assetid: 465ccd53-dfdc-47ec-8b3f-9a65ba739314
-ms.openlocfilehash: 7d96521f13feda8d1740ee558eca125ee6a715a0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a392c5ba1d6fd9ac5fe8e1702d72a37349529339
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592344"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84358110"
 ---
-# <a name="registry-key-keyname-could-not-be-created"></a>注册表项\<键名 > 无法创建
+# <a name="registry-key-keyname-could-not-be-created"></a>无法创建注册表项“\<keyname>”
 无法创建指定的注册表项，可能是因为没有足够的安全权限。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
 - 确保你有足够的安全权限，可以访问该注册表项。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [注册表摘要](../../visual-basic/language-reference/keywords/registry-summary.md)
+- [注册表摘要](../language-reference/keywords/registry-summary.md)

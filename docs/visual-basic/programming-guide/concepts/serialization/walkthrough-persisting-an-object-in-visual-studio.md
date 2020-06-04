@@ -2,18 +2,18 @@
 title: 在 Visual Basic 中保持对象
 ms.date: 07/20/2015
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
-ms.openlocfilehash: fbd342c929e8519571c0f6bb76d4091efcfe4476
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e4eaf87c99ea1577d7f3ca40e628c00cc2700511
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350399"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413124"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>演练：在 Visual Studio 中暂留对象 (Visual Basic)
 虽然可在设计时将对象的属性设置为默认值，但销毁对象时，运行时输入的任何值都将丢失。 可使用序列化在实例之间保持对象的数据，以便可存储值并在下次实例化对象时检索这些值。  
   
 > [!NOTE]
-> 在 Visual Basic 中，要存储简单数据（如名称或编号），可以使用 `My.Settings` 对象。 有关详细信息，请参阅 [My.Settings 对象](../../../../visual-basic/language-reference/objects/my-settings-object.md)。  
+> 在 Visual Basic 中，要存储简单数据（如名称或编号），可以使用 `My.Settings` 对象。 有关详细信息，请参阅 [My.Settings 对象](../../../language-reference/objects/my-settings-object.md)。  
   
  本演练将创建一个简单的 `Loan` 对象，并将其值保留在文件中。 当重新创建该对象时，将检索文件中的数据。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "74350399"
   
 1. 新建“类库”项目，并将其命名为“LoanClass”。 有关详细信息，请参阅[创建解决方案和项目](https://docs.microsoft.com/visualstudio/ide/creating-solutions-and-projects)。  
   
-2. 在“解决方案资源管理器”中，打开 Class1 文件的快捷菜单，选择“重命名”。 将文件重命名为 `Loan`，然后按 Enter。 重命名文件也会将类重命名为 `Loan`。  
+2. 在“解决方案资源管理器”**** 中，打开 Class1 文件的快捷菜单，选择“重命名”****。 将文件重命名为 `Loan`，然后按 Enter。 重命名文件也会将类重命名为 `Loan`。  
   
 3. 将以下公共成员添加到该类中：  
   
@@ -77,19 +77,19 @@ ms.locfileid: "74350399"
   
 ### <a name="to-create-a-test-application"></a>创建测试应用程序  
   
-1. 若要将 Windows 窗体应用程序项目添加到解决方案，请在“文件”菜单上依次选择“添加”、“新建项目”。  
+1. 若要将 Windows 窗体应用程序项目添加到解决方案，请在“文件”**** 菜单上依次选择“添加”****、“新建项目”****。  
   
-2. 在“添加新项目”对话框中，选择“Windows 窗体应用程序”，然后输入 `LoanApp` 作为项目名称，然后单击“确定”关闭对话框。  
+2. 在“添加新项目”**** 对话框中，选择“Windows 窗体应用程序”****，然后输入 `LoanApp` 作为项目名称，然后单击“确定”**** 关闭对话框。  
   
-3. 在“解决方案资源管理器”中，选择 LoanApp 项目。  
+3. 在“解决方案资源管理器”**** 中，选择 LoanApp 项目。  
   
-4. 在“项目”菜单上，选择“设为启动项目”。  
+4. 在“项目”**** 菜单上，选择“设为启动项目”****。  
   
-5. 在“项目” 菜单上，选择“添加引用”。  
+5. 在“项目”**** 菜单上，选择“添加引用” ****。  
   
-6. 在“添加引用”对话框中，选择“项目”选项卡，然后选择 LoanClass 项目。  
+6. 在“添加引用”**** 对话框中，选择“项目”**** 选项卡，然后选择 LoanClass 项目。  
   
-7. 单击 **“确定”** 关闭对话框。  
+7. 单击“确定”  关闭对话框。  
   
 8. 在设计器中，向窗体添加四个 <xref:System.Windows.Forms.TextBox> 控件。  
   
@@ -217,5 +217,5 @@ ms.locfileid: "74350399"
   
 ## <a name="see-also"></a>另请参阅
 
-- [序列化 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)
-- [Visual Basic 编程指南](../../../../visual-basic/programming-guide/index.md)
+- 序列化 (Visual Basic)[](index.md)
+- [Visual Basic 编程指南](../../index.md)

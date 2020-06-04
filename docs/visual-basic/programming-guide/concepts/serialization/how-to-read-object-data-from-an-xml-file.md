@@ -1,15 +1,15 @@
 ---
-title: 如何：从 XML 文件中读取对象数据
+title: 如何：从 XML 文件读取对象数据
 ms.date: 07/20/2015
 ms.assetid: 1e1423bf-74a4-4dde-a3bb-ae1bfc0a68ed
-ms.openlocfilehash: efd5fb72487c92bcccf1fc797106f93c0d2a39fc
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 7097ec146987aea7855da40dd30f9cd3c17d8ce4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345991"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413162"
 ---
-# <a name="how-to-read-object-data-from-an-xml-file-visual-basic"></a>如何：从 XML 文件读取对象数据（Visual Basic）
+# <a name="how-to-read-object-data-from-an-xml-file-visual-basic"></a>如何：读取 XML 文件中的对象数据 (Visual Basic)
 本示例使用 <xref:System.Xml.Serialization.XmlSerializer> 类读取之前写入 XML 文件的对象数据。  
   
 ## <a name="example"></a>示例  
@@ -30,13 +30,13 @@ End Sub
 ```  
   
 ## <a name="compile-the-code"></a>编译代码  
- 将文件名称“c:\temp\SerializationOverview.xml”替换为包含序列化数据的文件的名称。 有关序列化数据的详细信息，请参阅[如何：将对象数据写入 XML 文件（Visual Basic）](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)。  
+ 将文件名称“c:\temp\SerializationOverview.xml”替换为包含序列化数据的文件的名称。 有关序列化数据的详细信息，请参阅[如何：将对象数据写入 XML 文件（Visual Basic）](how-to-write-object-data-to-an-xml-file.md)。  
   
  类必须有一个公共的无参数构造函数。  
   
  只有公共属性和字段才会进行反序列化。  
   
-## <a name="robust-programming"></a>可靠的编程  
+## <a name="robust-programming"></a>可靠编程  
  以下情况可能会导致异常：  
   
 - 进行序列化的类没有公共的无参数构造函数。  
@@ -51,6 +51,6 @@ End Sub
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.IO.StreamWriter>
-- [如何：将对象数据写入 XML 文件 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)
-- [序列化 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)
-- [Visual Basic 编程指南](../../../../visual-basic/programming-guide/index.md)
+- [如何：将对象数据写入 XML 文件 (Visual Basic)](how-to-write-object-data-to-an-xml-file.md)
+- 序列化 (Visual Basic)[](index.md)
+- [Visual Basic 编程指南](../../index.md)

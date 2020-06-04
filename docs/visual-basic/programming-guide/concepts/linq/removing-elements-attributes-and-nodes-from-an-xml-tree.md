@@ -2,19 +2,19 @@
 title: 从 XML 树中移除元素、特性和节点
 ms.date: 07/20/2015
 ms.assetid: 5cf21919-4360-4b49-b29d-58ea3164ac72
-ms.openlocfilehash: 4cce1eff469c1f737e18b88cce30155547d9f11b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f8be7fe521fb3c2662b105e34fd96fea1d1ac6e7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348956"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413397"
 ---
 # <a name="removing-elements-attributes-and-nodes-from-an-xml-tree-visual-basic"></a>从 XML 树中移除元素、特性和节点（Visual Basic）
 可以修改 XML 树，移除元素、属性和其他类型的节点。  
   
  从 XML 文档中移除单个元素或单个属性的操作非常简单。 但是，若要移除多个元素或属性的集合，则应首先将一个集合具体化为一个列表，然后从该列表中删除相应元素或属性。 最好的方法是使用 <xref:System.Xml.Linq.Extensions.Remove%2A> 扩展方法，该方法可以实现此操作。  
   
- 这么做的主要原因在于，从 XML 树检索的大多数集合都是用延迟执行生成的。 如果不首先将集合具体化为列表，或者不使用扩展方法，则可能会遇到某类 Bug。 有关详细信息，请参阅[混合声明性代码/命令性代码 bug （LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/mixed-declarative-code-imperative-code-bugs-linq-to-xml.md)。  
+ 这么做的主要原因在于，从 XML 树检索的大多数集合都是用延迟执行生成的。 如果不首先将集合具体化为列表，或者不使用扩展方法，则可能会遇到某类 Bug。 有关详细信息，请参阅[混合声明性代码/命令性代码 bug （LINQ to XML）（Visual Basic）](mixed-declarative-code-imperative-code-bugs-linq-to-xml.md)。  
   
  下列方法可以从 XML 树中移除节点和属性。  
   
@@ -34,7 +34,7 @@ ms.locfileid: "74348956"
 ### <a name="description"></a>说明  
  此示例演示三种移除元素的方法。 第一种，移除单个元素。 第二种，检索元素的集合，使用 <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> 运算符将它们具体化，然后移除集合。 最后一种，检索元素的集合，使用 <xref:System.Xml.Linq.Extensions.Remove%2A> 扩展方法移除元素。  
   
- 有关 <xref:System.Linq.Enumerable.ToList%2A> 运算符的详细信息，请参阅[转换数据类型（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/converting-data-types.md)。  
+ 有关运算符的详细信息 <xref:System.Linq.Enumerable.ToList%2A> ，请参阅[转换数据类型（Visual Basic）](converting-data-types.md)。  
   
 ### <a name="code"></a>代码  
   
@@ -63,7 +63,7 @@ root.<Child3>.Elements().Remove()
 Console.WriteLine(root)  
 ```  
   
-### <a name="comments"></a>Comments  
+### <a name="comments"></a>注释  
  此代码生成以下输出：  
   
 ```xml  
@@ -81,4 +81,4 @@ Console.WriteLine(root)
   
 ## <a name="see-also"></a>另请参阅
 
-- [修改 XML 树（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [修改 XML 树（LINQ to XML）（Visual Basic）](modifying-xml-trees-linq-to-xml.md)

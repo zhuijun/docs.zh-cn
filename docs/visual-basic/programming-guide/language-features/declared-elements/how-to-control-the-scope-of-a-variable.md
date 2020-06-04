@@ -12,29 +12,29 @@ helpviewer_keywords:
 - declared elements [Visual Basic], visibility
 - visibility [Visual Basic], variables
 ms.assetid: 44b7f62a-cb5c-4d50-bce9-60ae68f87072
-ms.openlocfilehash: 0ee6ce183310aa836ecdbbc0bc819e0e83d1872d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 8b21f22edea84448e3f2969c3e4b07c08a17a338
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345381"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84357343"
 ---
 # <a name="how-to-control-the-scope-of-a-variable-visual-basic"></a>如何：控制变量的范围 (Visual Basic)
 通常，变量在声明它的整个区域内处于*范围*内，或者在引用中可见。 在某些情况下，变量的*访问级别*会影响其作用域。  
   
- 有关详细信息，请参阅 [Scope in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)。  
+ 有关详细信息，请参阅 [Scope in Visual Basic](scope.md)。  
   
 ## <a name="scope-at-block-or-procedure-level"></a>块或过程级别的作用域  
   
 #### <a name="to-make-a-variable-visible-only-within-a-block"></a>使变量仅在块中可见  
   
-- 将变量的[Dim 语句](../../../../visual-basic/language-reference/statements/dim-statement.md)置于该块的起始和终止声明语句之间，例如，在 `For` 循环的 `For` 和 `Next` 语句之间。  
+- 将变量的[Dim 语句](../../../language-reference/statements/dim-statement.md)置于该块的起始和终止声明语句之间，例如，在 `For` 循环的和语句之间 `Next` `For` 。  
   
      只能从块内引用该变量。  
   
 #### <a name="to-make-a-variable-visible-only-within-a-procedure"></a>使变量仅在过程中可见  
   
-- 将变量的 `Dim` 语句放置在过程中，但在任何块（如 `With`...`End With` 块）的外部。  
+- 将变量的语句放置在 `Dim` 过程中，但在任何块（例如 `With` ... 块）的外部 `End With` 。  
   
      您只能从过程内引用变量，包括过程中包含的任何块。  
   
@@ -43,17 +43,17 @@ ms.locfileid: "74345381"
   
 #### <a name="to-make-a-variable-visible-throughout-a-module-class-or-structure"></a>使变量在整个模块、类或结构中可见  
   
-1. 将变量的 `Dim` 语句放入模块、类或结构中，但在任何过程之外。  
+1. 将变量的语句放入 `Dim` 模块、类或结构中，但放在任何过程之外。  
   
-2. 在 `Dim` 语句中包含[Private](../../../../visual-basic/language-reference/modifiers/private.md)关键字。  
+2. 在语句中包含[Private](../../../language-reference/modifiers/private.md)关键字 `Dim` 。  
   
 3. 可以从模块、类或结构中的任何位置引用该变量，而不能从外部引用。  
   
 #### <a name="to-make-a-variable-visible-throughout-a-namespace"></a>使变量在整个命名空间中可见  
   
-1. 将变量的 `Dim` 语句放入模块、类或结构中，但在任何过程之外。  
+1. 将变量的语句放入 `Dim` 模块、类或结构中，但放在任何过程之外。  
   
-2. 在 `Dim` 语句中包含[Friend](../../../../visual-basic/language-reference/modifiers/friend.md)或[Public](../../../../visual-basic/language-reference/modifiers/public.md)关键字。  
+2. 在语句中包含[Friend](../../../language-reference/modifiers/friend.md)或[Public](../../../language-reference/modifiers/public.md)关键字 `Dim` 。  
   
 3. 可以从包含模块、类或结构的命名空间中的任何位置引用该变量。  
   
@@ -72,7 +72,7 @@ Module demonstrateScope
 End Module  
 ```  
   
- 在前面的示例中，模块 `demonstrateScope` 中定义的所有过程都可以引用 `strMsg`的 `String` 变量。 调用 `usePrivateVariable` 过程时，它将在对话框中显示字符串变量 `strMsg` 的内容。  
+ 在前面的示例中，模块中定义的所有过程 `demonstrateScope` 都可以引用 `String` 变量 `strMsg` 。 调用此 `usePrivateVariable` 过程时，它将在对话框中显示字符串变量的内容 `strMsg` 。  
   
  对于前面的示例的以下更改，字符串变量 `strMsg` 可以在其声明的命名空间中的任何位置通过代码引用。  
   
@@ -80,7 +80,7 @@ End Module
 Public strMsg As String  
 ```  
   
-## <a name="robust-programming"></a>可靠的编程  
+## <a name="robust-programming"></a>可靠编程  
  变量的作用域越窄，使用同一名称的另一个变量无意引用它就越少机会。 你还可以最大程度地减少引用匹配的问题。  
   
 ## <a name="net-framework-security"></a>.NET Framework 安全性  
@@ -88,9 +88,9 @@ Public strMsg As String
   
 ## <a name="see-also"></a>另请参阅
 
-- [范围 Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
-- [生存期（Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/lifetime.md)
-- [Visual Basic 中的访问级别](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
-- [变量](../../../../visual-basic/programming-guide/language-features/variables/index.md)
-- [变量声明](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
-- [Dim 语句](../../../../visual-basic/language-reference/statements/dim-statement.md)
+- [Visual Basic 中的范围](scope.md)
+- [Visual Basic 中的生存期](lifetime.md)
+- [Visual Basic 中的访问级别](access-levels.md)
+- [变量](../variables/index.md)
+- [变量声明](../variables/variable-declaration.md)
+- [Dim 语句](../../../language-reference/statements/dim-statement.md)

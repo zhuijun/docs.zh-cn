@@ -2,12 +2,12 @@
 title: 如何：从 XmlReader 创建树
 ms.date: 07/20/2015
 ms.assetid: 6de683d8-177d-402b-b0de-d0539f1ce5d8
-ms.openlocfilehash: 7d8d7f5b6389bef520e11fd2b7cc3e1c7e862e73
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 25c15ff08563b12b26041a536dfbca1c9cce260a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353090"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414603"
 ---
 # <a name="how-to-create-a-tree-from-an-xmlreader-visual-basic"></a>如何：从 XmlReader 创建树（Visual Basic）
 
@@ -15,7 +15,7 @@ ms.locfileid: "74353090"
 
 ## <a name="example"></a>示例
 
-本示例使用以下 XML 文档：[示例 XML 文件：图书 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-books-linq-to-xml.md)。
+本示例使用以下 XML 文档：[示例 XML 文件：图书 (LINQ to XML)](sample-xml-file-books-linq-to-xml.md)。
 
 下面的代码创建一个 `T:System.Xml.XmlReader` 对象，然后读取节点，直到找到第一个元素节点。 然后加载 <xref:System.Xml.Linq.XElement> 对象。
 
@@ -56,4 +56,4 @@ Console.WriteLine(e)
 
 ## <a name="see-also"></a>另请参阅
 
-- [分析 XML （Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [分析 XML （Visual Basic）](parsing-xml.md)

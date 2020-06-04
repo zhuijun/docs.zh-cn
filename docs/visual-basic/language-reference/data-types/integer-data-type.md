@@ -21,14 +21,14 @@ helpviewer_keywords:
 - I literal type character [Visual Basic]
 - Integer data type
 ms.assetid: a8f233b4-4be3-455c-861b-05af2fbb6c60
-ms.openlocfilehash: c5b1041b8ef0ca9898a846fea03888537bb4abbf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aa7b64162308d6af2763b29034c5a7276c973876
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401345"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84415604"
 ---
-# <a name="integer-data-type-visual-basic"></a>整数数据类型（可视基本）
+# <a name="integer-data-type-visual-basic"></a>Integer 数据类型（Visual Basic）
 
 保存 32 位（4 字节）带符号整数，值的范围为 -2,147,483,648 到 2,147,483,647。  
   
@@ -38,22 +38,22 @@ ms.locfileid: "79401345"
   
  `Integer` 的默认值为 0。  
 
-## <a name="literal-assignments"></a>文本分配
+## <a name="literal-assignments"></a>文本赋值
 
-您可以通过为其分配十进制文本、`Integer`十六进制文本、八进制文本或（从 Visual Basic 2017 开头）二进制文本来声明和初始化变量。 如果整数文本在 `Integer` 范围之外（即，如果它小于 <xref:System.Int32.MinValue?displayProperty=nameWithType> 或大于 <xref:System.Int32.MaxValue?displayProperty=nameWithType>），会发生编译错误。
+可以 `Integer` 通过将变量指定为十进制文本、十六进制文本、八进制文本或（从 Visual Basic 2017）作为二进制文本来声明和初始化变量。 如果整数文本在 `Integer` 范围之外（即，如果它小于 <xref:System.Int32.MinValue?displayProperty=nameWithType> 或大于 <xref:System.Int32.MaxValue?displayProperty=nameWithType>），会发生编译错误。
 
 在以下示例中，表示为十进制、十六进制和二进制文本且等于 90,946 的整数被分配给 `Integer` 值。
 
 [!code-vb[integer](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Int)]  
 
 > [!NOTE]
-> `&h`您可以使用前缀或`&H`表示十六进制文本、前缀`&b`或`&B`表示二进制文本和前缀`&o`或`&O`表示八进制文本。 十进制文本没有前缀。
+> 使用前缀 `&h` 或 `&H` 表示十六进制文本，使用前缀 `&b` 或表示 `&B` 二进制文本，使用前缀 `&o` 或 `&O` 表示八进制文本。 十进制文本没有前缀。
 
-从 Visual Basic 2017 开始，您还可以使用下划线`_`字符 ，作为数字分隔符来增强可读性，如下例所示。
+从 Visual Basic 2017 开始，还可以使用下划线字符 `_` 作为数字分隔符来增强可读性，如下面的示例所示。
 
 [!code-vb[integer](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#IntS)]  
 
-从 Visual Basic 15.5 开始，您还可以使用下划线`_`字符 （ ） 作为前缀和十六进制、二进制或八进制数字之间的前导分隔符。 例如：
+从 Visual Basic 15.5 开始，还可以使用下划线字符（ `_` ）作为前缀和十六进制、二进制或八进制数字之间的前导分隔符。 例如：
 
 ```vb
 Dim number As Integer = &H_C305_F860
@@ -61,7 +61,7 @@ Dim number As Integer = &H_C305_F860
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-数字文本还可以包括`I`表示`Integer`数据类型[的类型字符](../../programming-guide/language-features/data-types/type-characters.md)，如下例所示。
+数字文本还可包含 `I` 用于表示数据类型的[类型字符](../../programming-guide/language-features/data-types/type-characters.md) `Integer` ，如下面的示例所示。
 
 ```vb
 Dim number = &H_035826I
@@ -69,9 +69,9 @@ Dim number = &H_035826I
 
 ## <a name="programming-tips"></a>编程提示
 
-- **互操作注意事项。** 如果要与未为 .NET 框架编写的组件（如自动化或 COM 对象）接口，请记住，`Integer`在其他环境中具有不同的数据宽度（16 位）。 如果将一个 16 位自变量传递给此类组件，请在新的 Visual Basic 代码中将其声明为 `Short` 而不是 `Integer`。  
+- **互操作注意事项。** 如果与不是为 .NET Framework 编写的组件（如自动化或 COM 对象）交互，请记住， `Integer` 在其他环境中具有不同的数据宽度（16位）。 如果将一个 16 位自变量传递给此类组件，请在新的 Visual Basic 代码中将其声明为 `Short` 而不是 `Integer`。  
   
-- **扩大。** `Integer` 数据类型加宽到 `Long`、`Decimal`、`Single` 或 `Double`。 这意味着，你可以将 `Integer` 转换为这些类型中的任意类型，而不会遇到 <xref:System.OverflowException?displayProperty=nameWithType> 错误。  
+- **扩大.** `Integer` 数据类型加宽到 `Long`、`Decimal`、`Single` 或 `Double`。 这意味着，你可以将 `Integer` 转换为这些类型中的任意类型，而不会遇到 <xref:System.OverflowException?displayProperty=nameWithType> 错误。  
   
 - **键入字符。** 将文本类型字符 `I` 追加到文本会将其强制转换为 `Integer` 数据类型。 将标识符类型字符 `%` 追加到任何标识符会将其强制转换为 `Integer`。  
   
@@ -98,9 +98,9 @@ k = 5.5
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Int32?displayProperty=nameWithType>
-- [数据类型](../../../visual-basic/language-reference/data-types/index.md)
-- [Long 数据类型](../../../visual-basic/language-reference/data-types/long-data-type.md)
-- [Short 数据类型](../../../visual-basic/language-reference/data-types/short-data-type.md)
-- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [转换摘要](../../../visual-basic/language-reference/keywords/conversion-summary.md)
-- [有效使用数据类型](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
+- [数据类型](index.md)
+- [Long 数据类型](long-data-type.md)
+- [Short 数据类型](short-data-type.md)
+- [Type Conversion Functions](../functions/type-conversion-functions.md)
+- [转换摘要](../keywords/conversion-summary.md)
+- [有效使用数据类型](../../programming-guide/language-features/data-types/efficient-use-of-data-types.md)

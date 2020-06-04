@@ -11,12 +11,12 @@ helpviewer_keywords:
 - declared elements [Visual Basic], about declared elements
 - variables [Visual Basic], hiding inherited
 ms.assetid: 765728d9-7351-4a30-999d-b5f34f024412
-ms.openlocfilehash: c20c36b26c90c82da4e8836799f499498ccc40e4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f49bba0497f9f4f2774b01284c815bba9aaed119
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345355"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84357265"
 ---
 # <a name="how-to-hide-an-inherited-variable-visual-basic"></a>如何：隐藏继承的变量 (Visual Basic)
 
@@ -50,7 +50,7 @@ ms.locfileid: "74345355"
     End Class  
     ```  
   
-     前面的示例声明了基类中 `shadowString` 的变量，并在派生类中隐藏了该变量。 派生类中的过程 `ShowStrings` 在名称 `shadowString` 不限定时显示字符串的隐藏版本。 然后，在用 `MyBase` 关键字限定 `shadowString` 时，它会显示隐藏的版本。  
+     前面的示例声明 `shadowString` 基类中的变量，并将其隐藏在派生类中。 `ShowStrings`派生类中的过程在名称不合格时显示字符串的隐藏版本 `shadowString` 。 当用关键字限定时，它会显示隐藏的版本 `shadowString` `MyBase` 。  
   
 ## <a name="robust-programming"></a>可靠编程
 
@@ -58,11 +58,11 @@ ms.locfileid: "74345355"
 
 ## <a name="see-also"></a>另请参阅
 
-- [对已声明元素的引用](references-to-declared-elements.md)
-- [Visual Basic 中的阴影](shadowing.md)
+- [References to Declared Elements](references-to-declared-elements.md)
+- [Visual Basic 中的隐藏](shadowing.md)
 - [隐藏和重写之间的差异](differences-between-shadowing-and-overriding.md)
-- [如何：隐藏与你的变量同名的变量](how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
+- [如何：隐藏与变量同名的变量](how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
 - [如何：访问被派生类隐藏的变量](how-to-access-a-variable-hidden-by-a-derived-class.md)
-- [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)
+- [替代](../../../language-reference/modifiers/overrides.md)
 - [Me、My、MyBase 和 MyClass](../../program-structure/me-my-mybase-and-myclass.md)
-- [继承的基础知识](../objects-and-classes/inheritance-basics.md)
+- [继承基础知识](../objects-and-classes/inheritance-basics.md)

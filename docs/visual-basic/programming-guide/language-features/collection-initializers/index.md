@@ -6,20 +6,20 @@ f1_keywords:
 helpviewer_keywords:
 - collection initializers [Visual Basic]
 ms.assetid: a9290329-77b0-4fdf-ae75-8fc17287f469
-ms.openlocfilehash: fbdd116298c530ae54677631eff7dac2f22c0fe2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1d2d5adc7266faaa1636e568d6433429761eeaab
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346785"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414539"
 ---
 # <a name="collection-initializers-visual-basic"></a>集合初始值设定项 (Visual Basic)
 
-集合初始值设定项提供了用于创建集合并在其中填充一组初始值的缩短语法。 若要通过一组已知值（例如，菜单选项或类别列表、一组初始数字值、字符串（如日期或月份名称）或地理位置（如用于验证的州或省/自治区/直辖市列表）静态列表）创建集合，将会发现集合初始值设定项非常有用。
+集合初始值设定项** 提供了用于创建集合并在其中填充一组初始值的缩短语法。 若要通过一组已知值（例如，菜单选项或类别列表、一组初始数字值、字符串（如日期或月份名称）或地理位置（如用于验证的州或省/自治区/直辖市列表）静态列表）创建集合，将会发现集合初始值设定项非常有用。
 
-有关集合的详细信息，请参阅[集合](../../../../visual-basic/programming-guide/concepts/collections.md)。
+有关集合的详细信息，请参阅[集合](../../concepts/collections.md)。
 
-在 `From` 关键字后面使用大括号 (`{}`) 来标识集合初始值设定项。 这类似于[数组](../../../../visual-basic/programming-guide/language-features/arrays/index.md)中所述的数组文本语法。 下面的示例展示了使用集合初始值设定项创建集合的各种方法。
+在 `From` 关键字后面使用大括号 (`{}`) 来标识集合初始值设定项。 这类似于[数组](../arrays/index.md)中所述的数组文本语法。 下面的示例展示了使用集合初始值设定项创建集合的各种方法。
 
 [!code-vb[VbVbalrCollectionInitializers#1](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#1)]
 
@@ -28,7 +28,7 @@ ms.locfileid: "74346785"
 
 ## <a name="syntax"></a>语法
 
-集合初始值设定项先是包含 `{}` 关键字，后跟用大括号 (`From`) 括住的逗号分隔值列表，如以下代码所示。
+集合初始值设定项先是包含 `From` 关键字，后跟用大括号 (`{}`) 括住的逗号分隔值列表，如以下代码所示。
 
 [!code-vb[VbVbalrCollectionInitializers#2](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#2)]
 
@@ -57,13 +57,13 @@ ms.locfileid: "74346785"
 
 [!code-vb[VbVbalrCollectionInitializers#10](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#10)]
 
-如果集合内的 `Add` 方法包含与 `Customer` 对象的构造函数相匹配的参数，可以在集合初始值设定项内嵌套 `Add` 方法的参数值，如下一部分所述。 如果集合没有此类 `Add` 方法，可以创建一个作为扩展方法。 有关如何创建 `Add` 方法作为集合扩展方法的示例，请参阅[如何：创建集合初始值设定项使用的 Add 扩展方法](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)。 有关如何创建可用于集合初始值设定项的自定义集合的示例，请参阅[如何：创建集合初始值设定项使用的集合](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)。
+如果集合内的 `Add` 方法包含与 `Customer` 对象的构造函数相匹配的参数，可以在集合初始值设定项内嵌套 `Add` 方法的参数值，如下一部分所述。 如果集合没有此类 `Add` 方法，可以创建一个作为扩展方法。 有关如何创建 `Add` 方法作为集合扩展方法的示例，请参阅[如何：创建集合初始值设定项使用的 Add 扩展方法](how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)。 有关如何创建可用于集合初始值设定项的自定义集合的示例，请参阅[如何：创建集合初始值设定项使用的集合](how-to-create-a-collection-used-by-a-collection-initializer.md)。
 
 ## <a name="nesting-collection-initializers"></a>嵌套集合初始值设定项
 
 可以在集合初始值设定项中嵌套值，从而标识要创建的集合的 `Add` 方法重载。 传递给 `Add` 方法的值必须用逗号隔开，并用大括号 (`{}`) 括住，就像在数组文本或集合初始值设定项中一样。
 
-使用嵌套值创建集合时，嵌套值的每个元素都会作为参数传递到与元素类型匹配的 `Add` 方法中。 例如，下面的代码示例创建 <xref:System.Collections.Generic.Dictionary%602>，其中键类型为 `Integer`，值类型为 `String`。 每个嵌套值列表与 <xref:System.Collections.Generic.Dictionary%602.Add%2A> 的 `Dictionary` 方法匹配。
+使用嵌套值创建集合时，嵌套值的每个元素都会作为参数传递到与元素类型匹配的 `Add` 方法中。 例如，下面的代码示例创建 <xref:System.Collections.Generic.Dictionary%602>，其中键类型为 `Integer`，值类型为 `String`。 每个嵌套值列表与 `Dictionary` 的 <xref:System.Collections.Generic.Dictionary%602.Add%2A> 方法匹配。
 
 [!code-vb[VbVbalrCollectionInitializers#5](../../../../../samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCollectionInitializers/VB/Module1.vb#5)]
 
@@ -75,20 +75,20 @@ ms.locfileid: "74346785"
 
 ## <a name="related-topics"></a>相关主题
 
-|职务|说明|
+|Title|说明|
 |---|---|
-|[如何：创建集合初始值设定项所使用的 Add 扩展方法](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|展示了如何创建 `Add` 扩展方法，以便在集合中填充集合初始值设定项中的值。|
-|[如何：创建集合初始值设定项所使用的集合](../../../../visual-basic/programming-guide/language-features/collection-initializers/how-to-create-a-collection-used-by-a-collection-initializer.md)|展示了如何在实现 `Add` 的集合类中添加 `IEnumerable` 方法，从而启用集合初始值设定项。|
+|[如何：创建供集合初始化程序使用的 Add 扩展方法](how-to-create-an-add-extension-method-used-by-a-collection-initializer.md)|展示了如何创建 `Add` 扩展方法，以便在集合中填充集合初始值设定项中的值。|
+|[如何：创建供集合初始化程序使用的集合](how-to-create-a-collection-used-by-a-collection-initializer.md)|展示了如何在实现 `IEnumerable` 的集合类中添加 `Add` 方法，从而启用集合初始值设定项。|
 
 ## <a name="see-also"></a>另请参阅
 
-- [集合](../../../../visual-basic/programming-guide/concepts/collections.md)
-- [数组](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [对象初始值设定项：命名类型和匿名类型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
-- [New 运算符](../../../../visual-basic/language-reference/operators/new-operator.md)
-- [自动实现的属性](../../../../visual-basic/programming-guide/language-features/procedures/auto-implemented-properties.md)
-- [如何：在 Visual Basic 中初始化数组变量](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)
-- [局部类型推理](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [匿名类型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
-- [Visual Basic 中的 LINQ 简介](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [如何：创建项列表](../../../../visual-basic/programming-guide/concepts/linq/how-to-create-a-list-of-items.md)
+- [集合](../../concepts/collections.md)
+- [数组](../arrays/index.md)
+- [对象初始值设定项：命名和匿名类型](../objects-and-classes/object-initializers-named-and-anonymous-types.md)
+- [New 运算符](../../../language-reference/operators/new-operator.md)
+- [自动实现的属性](../procedures/auto-implemented-properties.md)
+- [如何：在 Visual Basic 中初始化数组变量](../arrays/how-to-initialize-an-array-variable.md)
+- [局部类型推理](../variables/local-type-inference.md)
+- [匿名类型](../objects-and-classes/anonymous-types.md)
+- [Visual Basic 中的 LINQ 简介](../linq/introduction-to-linq.md)
+- [如何：创建项列表](../../concepts/linq/how-to-create-a-list-of-items.md)

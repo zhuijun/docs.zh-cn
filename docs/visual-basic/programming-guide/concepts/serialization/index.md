@@ -2,12 +2,12 @@
 title: 序列化
 ms.date: 07/20/2015
 ms.assetid: 67379a76-5465-4af8-a781-0b0b25a62d9a
-ms.openlocfilehash: 9ce97e541cb204b92663464e36d9e8f221ccc3f2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: db14147a23940fa2403613036750be1bca566e8e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351920"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413137"
 ---
 # <a name="serialization-visual-basic"></a>序列化 (Visual Basic)
 序列化是指将对象转换成字节流，从而存储对象或将对象传输到内存、数据库或文件的过程。 它的主要用途是保存对象的状态，以便能够在需要时重新创建对象。 反向过程称为“反序列化”。  
@@ -25,7 +25,7 @@ ms.locfileid: "74351920"
 ### <a name="making-an-object-serializable"></a>让对象可序列化  
  若要序列化对象，需要具有要序列化的对象、包含已序列化对象的一个流，以及一个 <xref:System.Runtime.Serialization.Formatter>。 <xref:System.Runtime.Serialization> 包含序列化和反序列化对象所必需的类。  
   
- 将 <xref:System.SerializableAttribute> 特性应用于某个类型，以指示此类型的实例可以被序列化。 如果尝试对没有 <xref:System.Runtime.Serialization.SerializationException> 特性的类型进行序列化，则会引发 <xref:System.SerializableAttribute> 异常。  
+ 将 <xref:System.SerializableAttribute> 特性应用于某个类型，以指示此类型的实例可以被序列化。 如果尝试对没有 <xref:System.SerializableAttribute> 特性的类型进行序列化，则会引发 <xref:System.Runtime.Serialization.SerializationException> 异常。  
   
  如果想让类中的某个字段不可序列化，请应用 <xref:System.NonSerializedAttribute> 特性。 如果可序列化的类型中的一个字段包含指针、句柄或特定环境专用的其他一些数据结构，且不能在其他环境中有意义地重构，不妨让其不可序列化。  
   
@@ -58,12 +58,12 @@ ms.locfileid: "74351920"
 ## <a name="designer-serialization"></a>设计器序列化  
  设计器序列化是一种特殊形式的序列化，涉及通常与开发工具相关联的对象暂留。 设计器序列化是指将对象图转换成源文件以供日后用于恢复对象图的过程。 源文件可以包含代码、标记或 SQL 表信息。  
   
-## <a name="BKMK_RelatedTopics"></a>相关主题和示例  
- [演练：在 Visual Studio 中暂留对象 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/walkthrough-persisting-an-object-in-visual-studio.md)  
+## <a name="related-topics-and-examples"></a><a name="BKMK_RelatedTopics"></a>相关主题和示例  
+ [演练：在 Visual Studio 中暂留对象 (Visual Basic)](walkthrough-persisting-an-object-in-visual-studio.md)  
  展示了如何使用序列化在实例之间暂留对象数据，以便可以存储值并在下次实例化对象时检索值。  
   
- [如何：读取 XML 文件中的对象数据 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)  
+ [如何：读取 XML 文件中的对象数据 (Visual Basic)](how-to-read-object-data-from-an-xml-file.md)  
  介绍如何使用 <xref:System.Xml.Serialization.XmlSerializer> 类读取之前写入 XML 文件的对象数据。  
   
- [如何：将对象数据写入 XML 文件 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md)  
+ [如何：将对象数据写入 XML 文件 (Visual Basic)](how-to-write-object-data-to-an-xml-file.md)  
  介绍如何使用 <xref:System.Xml.Serialization.XmlSerializer> 类从某个类将对象写入 XML 文件。

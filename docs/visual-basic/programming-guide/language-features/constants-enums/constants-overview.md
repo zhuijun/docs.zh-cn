@@ -4,20 +4,20 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - constants [Visual Basic]
 ms.assetid: 29016fe8-78b3-4dc8-90b8-1cfec2fa8ac9
-ms.openlocfilehash: 9ccddfe44757c76992d641094e21ec8c2110ef83
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f45cb12c6ef0f90b9c90190f30ce8600fec80947
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74338341"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414513"
 ---
 # <a name="constants-overview-visual-basic"></a>常量概述 (Visual Basic)
 常量是有意义的名称，用来代替不会更改的数字或字符串。 顾名思义，常数存储值在应用程序的整个执行过程中保持不变。 您可以通过使用常量极大地提高代码的可读性并使其更易于维护。 在包含重新出现的值的代码中使用它们，或依赖于某些难以记住或没有明显含义的数字的值。  
   
 ## <a name="how-to-create-and-use-constants"></a>如何创建和使用常量  
- Visual Basic 包含许多预定义的常量，主要用于打印和显示。 你还可以使用 `Const` 语句创建自己的常量，使用与创建变量名称相同的准则。 如果 `On``Option Strict`，则必须显式声明常量类型。  
+ Visual Basic 包含许多预定义的常量，主要用于打印和显示。 还可以使用语句创建自己的常量 `Const` ，使用与创建变量名称相同的准则。 如果 `Option Strict` 为 `On` ，则必须显式声明常量类型。  
   
- 常量的作用域，它是在不限定其名称的情况下可引用它的所有代码的集合，与在同一位置声明的变量的作用域相同。 若要创建一个存在于特定过程范围内的常量，请在该过程中将其声明为。 若要创建可在整个应用程序中使用的常量，请在类的声明部分中使用 `Public` 关键字进行声明。  
+ 常量的作用域，它是在不限定其名称的情况下可引用它的所有代码的集合，与在同一位置声明的变量的作用域相同。 若要创建一个存在于特定过程范围内的常量，请在该过程中将其声明为。 若要创建可在整个应用程序中使用的常数，请 `Public` 在类的声明部分使用关键字进行声明。  
   
 > [!NOTE]
 > 尽管常量有点类似于变量，但您不能对其进行修改，也不能为变量赋值。  
@@ -29,22 +29,22 @@ ms.locfileid: "74338341"
   
 ## <a name="in-this-section"></a>本节内容  
   
-|Definition|术语|  
+|定义|术语|  
 |---|---|  
-|[如何：声明常量](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-a-constant.md)|说明如何使用 `Const` 语句来声明常量并设置其值;通过声明常量，可为该值指定有意义的名称。|  
-|[用户定义的常量](../../../../visual-basic/programming-guide/language-features/constants-enums/user-defined-constants.md)|介绍如何创建自己的常量，包括有关范围的信息以及如何避免循环引用。|  
-|[常量和文本数据类型](../../../../visual-basic/programming-guide/language-features/constants-enums/constant-and-literal-data-types.md)|提供有关 Visual Basic 编译器如何在 `Option Explicit` 关闭时初始化常量的信息。|  
-|[如何：将相关的常量值组合在一起](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-group-related-constant-values-together.md)|演示如何对相关的常量值进行分组。|  
+|[如何：声明常量](how-to-declare-a-constant.md)|说明如何使用 `Const` 语句声明常量并设置其值; 通过声明常量，可为该值指定有意义的名称。|  
+|[用户定义常数](user-defined-constants.md)|介绍如何创建自己的常量，包括有关范围的信息以及如何避免循环引用。|  
+|[常数和文本数据类型](constant-and-literal-data-types.md)|提供有关 Visual Basic 编译器如何在关闭时初始化常量的信息 `Option Explicit` 。|  
+|[如何：将相关的常量值组合在一起](how-to-group-related-constant-values-together.md)|演示如何对相关的常量值进行分组。|  
   
 ## <a name="reference"></a>参考  
   
-|Definition|术语|  
+|定义|术语|  
 |---|---|  
-|[常量和枚举](../../../../visual-basic/language-reference/constants-and-enumerations.md)|列出由 Visual Basic 预定义的常量。|  
-|[Const 语句](../../../../visual-basic/language-reference/statements/const-statement.md)|描述 `Const` 语句及其用法。|  
-|[Option Strict 语句](../../../../visual-basic/language-reference/statements/option-strict-statement.md)|描述 `Option Strict` 语句及其用法。|  
+|[常量和枚举](../../../language-reference/constants-and-enumerations.md)|列出由 Visual Basic 预定义的常量。|  
+|[Const 语句](../../../language-reference/statements/const-statement.md)|描述 `Const` 语句及其用法。|  
+|[Option Strict 语句](../../../language-reference/statements/option-strict-statement.md)|描述 `Option Strict` 语句及其用法。|  
   
 ## <a name="see-also"></a>另请参阅
 
-- [枚举概述](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)
-- [如何：在 Visual Basic 中初始化数组变量](../../../../visual-basic/programming-guide/language-features/arrays/how-to-initialize-an-array-variable.md)
+- [枚举概述](enumerations-overview.md)
+- [如何：在 Visual Basic 中初始化数组变量](../arrays/how-to-initialize-an-array-variable.md)

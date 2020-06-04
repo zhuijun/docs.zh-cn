@@ -6,29 +6,29 @@ helpviewer_keywords:
 - Visual Basic, programming in
 - Visual Basic, language reference
 ms.assetid: 640e5796-2796-433c-af37-4d2a2334895b
-ms.openlocfilehash: 41b5e5cb99e5137dd25a953adba7ec931f84483d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3280953ad04b9673d4eb23d139f8f1dc8606a66c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345436"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413112"
 ---
 # <a name="visual-basic-programming-guide"></a>Visual Basic 编程指南
 与任何现代编程语言一样，Visual Basic 支持许多通用编程构造和语言元素。 本指南介绍了 Visual Basic 编程的所有主要元素。  
   
 ## <a name="in-this-section"></a>本节内容  
- [程序结构和代码约定](../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
+ [程序结构和代码约定](program-structure/program-structure-and-code-conventions.md)  
  包含有关 Visual Basic 的基本结构和代码约定的文档，如命名约定、代码中的注释和 Visual Basic 中的限制。  
   
- [Visual Basic 语言功能](../../visual-basic/programming-guide/language-features/index.md)  
+ [Visual Basic 语言功能](language-features/index.md)  
  收录了主题链接，有助于你了解 Visual Basic 的重要功能（包括 LINQ 和 XML 文本）。  
   
- [COM 互操作](../../visual-basic/programming-guide/com-interop/index.md)  
+ [COM 互操作](com-interop/index.md)  
  阐明了与使用 Visual Basic 创建和使用组件对象模型 (COM) 对象相关联的互操作性问题。  
   
 ## <a name="related-sections"></a>相关章节  
- [Visual Basic 语言参考](../../visual-basic/language-reference/index.md)  
+ [Visual Basic 语言参考](../language-reference/index.md)  
  提供有关 Visual Basic 编程的各个方面的参考信息。  
   
- [Visual Basic 命令行编译器](../../visual-basic/reference/command-line-compiler/index.md)  
+ [Visual Basic 命令行编译器](../reference/command-line-compiler/index.md)  
  提供有关使用 Visual Basic 命令行编译器、编译器选项和关键字升级工具的信息。
