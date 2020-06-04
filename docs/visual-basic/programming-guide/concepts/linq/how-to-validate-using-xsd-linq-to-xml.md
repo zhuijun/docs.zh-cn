@@ -2,18 +2,18 @@
 title: 如何：使用 XSD 进行验证 (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: a0fe88d4-4e77-49e7-90de-8953feeccc21
-ms.openlocfilehash: 07a5df7af5512bb3db2dfd48a71e1ef07bbc7446
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: fd9931530bde2c47dcc8c7b7363a0d5ffae85b8a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332390"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84383087"
 ---
-# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a><span data-ttu-id="8af90-102">如何：使用 XSD 进行验证（LINQ to XML）（Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="8af90-102">How to: Validate Using XSD (LINQ to XML) (Visual Basic)</span></span>
-<span data-ttu-id="8af90-103"><xref:System.Xml.Schema> 命名空间包含扩展方法，这些扩展方法可以简化针对 XML 架构定义语言 (XSD) 文件验证 XML 树的过程。</span><span class="sxs-lookup"><span data-stu-id="8af90-103">The <xref:System.Xml.Schema> namespace contains extension methods that make it easy to validate an XML tree against an XML Schema Definition Language (XSD) file.</span></span> <span data-ttu-id="8af90-104">有关更多信息，请参见 <xref:System.Xml.Schema.Extensions.Validate%2A> 方法文档。</span><span class="sxs-lookup"><span data-stu-id="8af90-104">For more information, see the <xref:System.Xml.Schema.Extensions.Validate%2A> method documentation.</span></span>  
+# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a><span data-ttu-id="03f6c-102">如何：使用 XSD 进行验证（LINQ to XML）（Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="03f6c-102">How to: Validate Using XSD (LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="03f6c-103"><xref:System.Xml.Schema> 命名空间包含扩展方法，这些扩展方法可以简化针对 XML 架构定义语言 (XSD) 文件验证 XML 树的过程。</span><span class="sxs-lookup"><span data-stu-id="03f6c-103">The <xref:System.Xml.Schema> namespace contains extension methods that make it easy to validate an XML tree against an XML Schema Definition Language (XSD) file.</span></span> <span data-ttu-id="03f6c-104">有关更多信息，请参见 <xref:System.Xml.Schema.Extensions.Validate%2A> 方法文档。</span><span class="sxs-lookup"><span data-stu-id="03f6c-104">For more information, see the <xref:System.Xml.Schema.Extensions.Validate%2A> method documentation.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="8af90-105">示例</span><span class="sxs-lookup"><span data-stu-id="8af90-105">Example</span></span>  
- <span data-ttu-id="8af90-106">下面的示例创建一个 <xref:System.Xml.Schema.XmlSchemaSet>，然后针对架构集验证两个 <xref:System.Xml.Linq.XDocument> 对象。</span><span class="sxs-lookup"><span data-stu-id="8af90-106">The following example creates an <xref:System.Xml.Schema.XmlSchemaSet>, then validates two <xref:System.Xml.Linq.XDocument> objects against the schema set.</span></span> <span data-ttu-id="8af90-107">其中一个文档为有效文档，而另一个则不是。</span><span class="sxs-lookup"><span data-stu-id="8af90-107">One of the documents is valid, the other is not.</span></span>  
+## <a name="example"></a><span data-ttu-id="03f6c-105">示例</span><span class="sxs-lookup"><span data-stu-id="03f6c-105">Example</span></span>  
+ <span data-ttu-id="03f6c-106">下面的示例创建一个 <xref:System.Xml.Schema.XmlSchemaSet>，然后针对架构集验证两个 <xref:System.Xml.Linq.XDocument> 对象。</span><span class="sxs-lookup"><span data-stu-id="03f6c-106">The following example creates an <xref:System.Xml.Schema.XmlSchemaSet>, then validates two <xref:System.Xml.Linq.XDocument> objects against the schema set.</span></span> <span data-ttu-id="03f6c-107">其中一个文档为有效文档，而另一个则不是。</span><span class="sxs-lookup"><span data-stu-id="03f6c-107">One of the documents is valid, the other is not.</span></span>  
   
 ```vb  
 Dim errors As Boolean = False  
@@ -65,7 +65,7 @@ Sub Main()
 End Sub  
 ```  
   
- <span data-ttu-id="8af90-108">该示例产生下面的输出：</span><span class="sxs-lookup"><span data-stu-id="8af90-108">This example produces the following output:</span></span>  
+ <span data-ttu-id="03f6c-108">该示例产生下面的输出：</span><span class="sxs-lookup"><span data-stu-id="03f6c-108">This example produces the following output:</span></span>  
   
 ```console  
 Validating doc1  
@@ -76,12 +76,12 @@ The element 'Root' has invalid child element 'Child3'. List of possible elements
 doc2 did not validate  
 ```  
   
-## <a name="example"></a><span data-ttu-id="8af90-109">示例</span><span class="sxs-lookup"><span data-stu-id="8af90-109">Example</span></span>  
- <span data-ttu-id="8af90-110">下面的示例按照[示例 XSD 文件：客户和订单](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)中的架构验证[示例 XML 文件：客户和订单 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md) 中的 XML 文档是否有效。</span><span class="sxs-lookup"><span data-stu-id="8af90-110">The following example validates that the XML document from [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) is valid per the schema from [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span></span> <span data-ttu-id="8af90-111">然后修改源 XML 文档。</span><span class="sxs-lookup"><span data-stu-id="8af90-111">It then modifies the source XML document.</span></span> <span data-ttu-id="8af90-112">它更改第一个客户的 `CustomerID` 属性。</span><span class="sxs-lookup"><span data-stu-id="8af90-112">It changes the `CustomerID` attribute on the first customer.</span></span> <span data-ttu-id="8af90-113">更改后，订单将指向不存在的客户，因此该 XML 文档不再有效。</span><span class="sxs-lookup"><span data-stu-id="8af90-113">After the change, orders will then refer to a customer that does not exist, so the XML document will no longer validate.</span></span>  
+## <a name="example"></a><span data-ttu-id="03f6c-109">示例</span><span class="sxs-lookup"><span data-stu-id="03f6c-109">Example</span></span>  
+ <span data-ttu-id="03f6c-110">下面的示例按照[示例 XSD 文件：客户和订单](sample-xsd-file-customers-and-orders.md)中的架构验证[示例 XML 文件：客户和订单 (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md) 中的 XML 文档是否有效。</span><span class="sxs-lookup"><span data-stu-id="03f6c-110">The following example validates that the XML document from [Sample XML File: Customers and Orders (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md) is valid per the schema from [Sample XSD File: Customers and Orders](sample-xsd-file-customers-and-orders.md).</span></span> <span data-ttu-id="03f6c-111">然后修改源 XML 文档。</span><span class="sxs-lookup"><span data-stu-id="03f6c-111">It then modifies the source XML document.</span></span> <span data-ttu-id="03f6c-112">它更改第一个客户的 `CustomerID` 属性。</span><span class="sxs-lookup"><span data-stu-id="03f6c-112">It changes the `CustomerID` attribute on the first customer.</span></span> <span data-ttu-id="03f6c-113">更改后，订单将指向不存在的客户，因此该 XML 文档不再有效。</span><span class="sxs-lookup"><span data-stu-id="03f6c-113">After the change, orders will then refer to a customer that does not exist, so the XML document will no longer validate.</span></span>  
   
- <span data-ttu-id="8af90-114">本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)。</span><span class="sxs-lookup"><span data-stu-id="8af90-114">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="03f6c-114">本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md)。</span><span class="sxs-lookup"><span data-stu-id="03f6c-114">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md).</span></span>  
   
- <span data-ttu-id="8af90-115">本示例使用下面的 XSD 架构：[示例 XSD 文件：客户和订单](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)。</span><span class="sxs-lookup"><span data-stu-id="8af90-115">This example uses the following XSD schema: [Sample XSD File: Customers and Orders](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md).</span></span>  
+ <span data-ttu-id="03f6c-115">本示例使用下面的 XSD 架构：[示例 XSD 文件：客户和订单](sample-xsd-file-customers-and-orders.md)。</span><span class="sxs-lookup"><span data-stu-id="03f6c-115">This example uses the following XSD schema: [Sample XSD File: Customers and Orders](sample-xsd-file-customers-and-orders.md).</span></span>  
   
 ```vb  
 Dim errors As Boolean = False  
@@ -111,7 +111,7 @@ Sub Main()
 End Sub  
 ```  
   
- <span data-ttu-id="8af90-116">该示例产生下面的输出：</span><span class="sxs-lookup"><span data-stu-id="8af90-116">This example produces the following output:</span></span>  
+ <span data-ttu-id="03f6c-116">该示例产生下面的输出：</span><span class="sxs-lookup"><span data-stu-id="03f6c-116">This example produces the following output:</span></span>  
   
 ```console  
 Attempting to validate  
@@ -122,7 +122,7 @@ The key sequence 'AAAAA' in Keyref fails to refer to some key.
 custOrdDoc did not validate  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="8af90-117">另请参阅</span><span class="sxs-lookup"><span data-stu-id="8af90-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="03f6c-117">另请参阅</span><span class="sxs-lookup"><span data-stu-id="03f6c-117">See also</span></span>
 
 - <xref:System.Xml.Schema.Extensions.Validate%2A>
-- [<span data-ttu-id="8af90-118">创建 XML 树（Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="8af90-118">Creating XML Trees (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [<span data-ttu-id="03f6c-118">创建 XML 树（Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="03f6c-118">Creating XML Trees (Visual Basic)</span></span>](creating-xml-trees.md)
