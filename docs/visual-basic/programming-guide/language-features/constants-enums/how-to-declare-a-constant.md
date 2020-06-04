@@ -23,68 +23,68 @@ helpviewer_keywords:
 - module-level constants and variables
 - Object data type [Visual Basic], declaring constants
 ms.assetid: f901b4fa-481f-4621-822e-427060577ad1
-ms.openlocfilehash: 5054d4a4fc02d8bd22efceb01770fc54167d8cb3
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ffaa98f6af3d4b276f5c0b1153841acdea0809d7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347469"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414474"
 ---
-# <a name="how-to-declare-a-constant-visual-basic"></a><span data-ttu-id="7fc37-102">如何：声明常量 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="7fc37-102">How to: Declare A Constant (Visual Basic)</span></span>
-<span data-ttu-id="7fc37-103">使用 `Const` 语句声明一个常数并设置其值。</span><span class="sxs-lookup"><span data-stu-id="7fc37-103">You use the `Const` statement to declare a constant and set its value.</span></span> <span data-ttu-id="7fc37-104">通过声明常量，可为一个值指定一个有意义的名称。</span><span class="sxs-lookup"><span data-stu-id="7fc37-104">By declaring a constant, you assign a meaningful name to a value.</span></span> <span data-ttu-id="7fc37-105">声明常量后，不能对其进行修改或赋予新值。</span><span class="sxs-lookup"><span data-stu-id="7fc37-105">Once a constant is declared, it cannot be modified or assigned a new value.</span></span>  
+# <a name="how-to-declare-a-constant-visual-basic"></a><span data-ttu-id="a2716-102">如何：声明常量 (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a2716-102">How to: Declare A Constant (Visual Basic)</span></span>
+<span data-ttu-id="a2716-103">使用 `Const` 语句声明一个常数并设置其值。</span><span class="sxs-lookup"><span data-stu-id="a2716-103">You use the `Const` statement to declare a constant and set its value.</span></span> <span data-ttu-id="a2716-104">通过声明常量，可为一个值指定一个有意义的名称。</span><span class="sxs-lookup"><span data-stu-id="a2716-104">By declaring a constant, you assign a meaningful name to a value.</span></span> <span data-ttu-id="a2716-105">声明常量后，不能对其进行修改或赋予新值。</span><span class="sxs-lookup"><span data-stu-id="a2716-105">Once a constant is declared, it cannot be modified or assigned a new value.</span></span>  
   
- <span data-ttu-id="7fc37-106">您可以在过程中或模块、类或结构的声明部分中声明常数。</span><span class="sxs-lookup"><span data-stu-id="7fc37-106">You declare a constant within a procedure or in the declarations section of a module, class, or structure.</span></span> <span data-ttu-id="7fc37-107">默认情况下，类或结构级别常量是 `Private` 的，但也可以声明为适当级别的代码访问的 `Public`、`Friend`、`Protected`或 `Protected Friend`。</span><span class="sxs-lookup"><span data-stu-id="7fc37-107">Class or structure-level constants are `Private` by default, but may also be declared as `Public`, `Friend`, `Protected`, or `Protected Friend` for the appropriate level of code access.</span></span>  
+ <span data-ttu-id="a2716-106">您可以在过程中或模块、类或结构的声明部分中声明常数。</span><span class="sxs-lookup"><span data-stu-id="a2716-106">You declare a constant within a procedure or in the declarations section of a module, class, or structure.</span></span> <span data-ttu-id="a2716-107">默认情况下，类或结构级别常量为， `Private` 但也可以将声明为 `Public` 、 `Friend` 、 `Protected` 或 `Protected Friend` 以用于适当级别的代码访问。</span><span class="sxs-lookup"><span data-stu-id="a2716-107">Class or structure-level constants are `Private` by default, but may also be declared as `Public`, `Friend`, `Protected`, or `Protected Friend` for the appropriate level of code access.</span></span>  
   
- <span data-ttu-id="7fc37-108">常数必须具有有效的符号名称（这些规则与用于创建变量名称的规则相同）以及由数值或字符串常量和运算符组成的表达式（但不包含函数调用）。</span><span class="sxs-lookup"><span data-stu-id="7fc37-108">The constant must have a valid symbolic name (the rules are the same as those for creating variable names) and an expression composed of numeric or string constants and operators (but no function calls).</span></span>  
+ <span data-ttu-id="a2716-108">常数必须具有有效的符号名称（这些规则与用于创建变量名称的规则相同）以及由数值或字符串常量和运算符组成的表达式（但不包含函数调用）。</span><span class="sxs-lookup"><span data-stu-id="a2716-108">The constant must have a valid symbolic name (the rules are the same as those for creating variable names) and an expression composed of numeric or string constants and operators (but no function calls).</span></span>  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-### <a name="to-declare-a-constant"></a><span data-ttu-id="7fc37-109">声明常量</span><span class="sxs-lookup"><span data-stu-id="7fc37-109">To declare a constant</span></span>  
+### <a name="to-declare-a-constant"></a><span data-ttu-id="a2716-109">声明常量</span><span class="sxs-lookup"><span data-stu-id="a2716-109">To declare a constant</span></span>  
   
-- <span data-ttu-id="7fc37-110">编写包含访问说明符、`Const` 关键字和表达式的声明，如下面的示例所示：</span><span class="sxs-lookup"><span data-stu-id="7fc37-110">Write a declaration that includes an access specifier, the `Const` keyword, and an expression, as in the following examples:</span></span>  
+- <span data-ttu-id="a2716-110">编写包含访问说明符、 `Const` 关键字和表达式的声明，如下面的示例所示：</span><span class="sxs-lookup"><span data-stu-id="a2716-110">Write a declaration that includes an access specifier, the `Const` keyword, and an expression, as in the following examples:</span></span>  
   
      [!code-vb[VbEnumsTask#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#8)]  
   
-     <span data-ttu-id="7fc37-111">当[选项推断](../../../../visual-basic/language-reference/statements/option-infer-statement.md)为 `Off` 并且[option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) `On`时，必须通过指定数据类型（`Boolean`、`Byte`、`Char`、`DateTime`、`Decimal`、`Double`、`Integer`、`Long`、`Short`、`Single`或 `String`）显式声明常量。</span><span class="sxs-lookup"><span data-stu-id="7fc37-111">When [Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md) is `Off` and [Option Strict](../../../../visual-basic/language-reference/statements/option-strict-statement.md) is `On`, you must declare a constant explicitly by specifying a data type (`Boolean`, `Byte`, `Char`, `DateTime`, `Decimal`, `Double`, `Integer`, `Long`, `Short`, `Single`, or `String`).</span></span>  
+     <span data-ttu-id="a2716-111">如果[选项推断](../../../language-reference/statements/option-infer-statement.md)为 `Off` ，且[option Strict](../../../language-reference/statements/option-strict-statement.md)为 `On` ，则必须通过指定数据类型（、、、、、、、、、 `Boolean` `Byte` `Char` `DateTime` `Decimal` `Double` `Integer` `Long` `Short` `Single` 或 `String` ）显式声明常量。</span><span class="sxs-lookup"><span data-stu-id="a2716-111">When [Option Infer](../../../language-reference/statements/option-infer-statement.md) is `Off` and [Option Strict](../../../language-reference/statements/option-strict-statement.md) is `On`, you must declare a constant explicitly by specifying a data type (`Boolean`, `Byte`, `Char`, `DateTime`, `Decimal`, `Double`, `Integer`, `Long`, `Short`, `Single`, or `String`).</span></span>  
   
-     <span data-ttu-id="7fc37-112">如果 `Option Infer` `On` 或 `Option Strict` `Off`，则可以声明常量，而无需使用 `As` 子句指定数据类型。</span><span class="sxs-lookup"><span data-stu-id="7fc37-112">When `Option Infer` is `On` or `Option Strict` is `Off`, you can declare a constant without specifying a data type with an `As` clause.</span></span> <span data-ttu-id="7fc37-113">编译器将确定表达式的类型的常量类型。</span><span class="sxs-lookup"><span data-stu-id="7fc37-113">The compiler determines the type of the constant from the type of the expression.</span></span> <span data-ttu-id="7fc37-114">有关详细信息，请参阅[常量和文本数据类型](constant-and-literal-data-types.md)。</span><span class="sxs-lookup"><span data-stu-id="7fc37-114">For more information, see [Constant and Literal Data Types](constant-and-literal-data-types.md).</span></span>  
+     <span data-ttu-id="a2716-112">当 `Option Infer` 为 `On` 或 `Option Strict` 时 `Off` ，可以声明常量，而无需使用子句指定数据类型 `As` 。</span><span class="sxs-lookup"><span data-stu-id="a2716-112">When `Option Infer` is `On` or `Option Strict` is `Off`, you can declare a constant without specifying a data type with an `As` clause.</span></span> <span data-ttu-id="a2716-113">编译器将确定表达式的类型的常量类型。</span><span class="sxs-lookup"><span data-stu-id="a2716-113">The compiler determines the type of the constant from the type of the expression.</span></span> <span data-ttu-id="a2716-114">有关详细信息，请参阅[常量和文本数据类型](constant-and-literal-data-types.md)。</span><span class="sxs-lookup"><span data-stu-id="a2716-114">For more information, see [Constant and Literal Data Types](constant-and-literal-data-types.md).</span></span>  
   
-### <a name="to-declare-a-constant-that-has-an-explicitly-stated-data-type"></a><span data-ttu-id="7fc37-115">声明具有显式声明的数据类型的常数</span><span class="sxs-lookup"><span data-stu-id="7fc37-115">To declare a constant that has an explicitly stated data type</span></span>  
+### <a name="to-declare-a-constant-that-has-an-explicitly-stated-data-type"></a><span data-ttu-id="a2716-115">声明具有显式声明的数据类型的常数</span><span class="sxs-lookup"><span data-stu-id="a2716-115">To declare a constant that has an explicitly stated data type</span></span>  
   
-- <span data-ttu-id="7fc37-116">编写包含 `As` 关键字和显式数据类型的声明，如以下示例中所示：</span><span class="sxs-lookup"><span data-stu-id="7fc37-116">Write a declaration that includes the `As` keyword and an explicit data type, as in the following examples:</span></span>  
+- <span data-ttu-id="a2716-116">编写包含 `As` 关键字和显式数据类型的声明，如以下示例中所示：</span><span class="sxs-lookup"><span data-stu-id="a2716-116">Write a declaration that includes the `As` keyword and an explicit data type, as in the following examples:</span></span>  
   
      [!code-vb[VbEnumsTask#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#9)]  
   
-     <span data-ttu-id="7fc37-117">可以在单个行上声明多个常数，不过，如果每行只声明一个常数，代码的可读性就会更高。</span><span class="sxs-lookup"><span data-stu-id="7fc37-117">You can declare multiple constants on a single line, although your code is more readable if you declare only a single constant per line.</span></span> <span data-ttu-id="7fc37-118">如果在一行上声明多个常量，它们必须具有相同的访问级别（`Public`、`Private`、`Friend`、`Protected`或 `Protected Friend`）。</span><span class="sxs-lookup"><span data-stu-id="7fc37-118">If you declare multiple constants on a single line, they must all have the same access level (`Public`, `Private`, `Friend`, `Protected`, or `Protected Friend`).</span></span>  
+     <span data-ttu-id="a2716-117">可以在单个行上声明多个常数，不过，如果每行只声明一个常数，代码的可读性就会更高。</span><span class="sxs-lookup"><span data-stu-id="a2716-117">You can declare multiple constants on a single line, although your code is more readable if you declare only a single constant per line.</span></span> <span data-ttu-id="a2716-118">如果在单个行上声明多个常量，它们必须具有相同的访问级别（ `Public` 、 `Private` 、、 `Friend` `Protected` 或 `Protected Friend` ）。</span><span class="sxs-lookup"><span data-stu-id="a2716-118">If you declare multiple constants on a single line, they must all have the same access level (`Public`, `Private`, `Friend`, `Protected`, or `Protected Friend`).</span></span>  
   
-### <a name="to-declare-multiple-constants-on-a-single-line"></a><span data-ttu-id="7fc37-119">在单个行上声明多个常量</span><span class="sxs-lookup"><span data-stu-id="7fc37-119">To declare multiple constants on a single line</span></span>  
+### <a name="to-declare-multiple-constants-on-a-single-line"></a><span data-ttu-id="a2716-119">在单个行上声明多个常量</span><span class="sxs-lookup"><span data-stu-id="a2716-119">To declare multiple constants on a single line</span></span>  
   
-- <span data-ttu-id="7fc37-120">使用逗号和空格分隔声明，如下面的示例所示：</span><span class="sxs-lookup"><span data-stu-id="7fc37-120">Separate the declarations with a comma and a space, as in the following example:</span></span>  
+- <span data-ttu-id="a2716-120">使用逗号和空格分隔声明，如下面的示例所示：</span><span class="sxs-lookup"><span data-stu-id="a2716-120">Separate the declarations with a comma and a space, as in the following example:</span></span>  
   
     ```vb  
     Public Const Four As Integer = 4, Five As Integer = 5, Six As Integer = 44  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="7fc37-121">另请参阅</span><span class="sxs-lookup"><span data-stu-id="7fc37-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a2716-121">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a2716-121">See also</span></span>
 
-- [<span data-ttu-id="7fc37-122">Const 语句</span><span class="sxs-lookup"><span data-stu-id="7fc37-122">Const Statement</span></span>](../../../../visual-basic/language-reference/statements/const-statement.md)
-- [<span data-ttu-id="7fc37-123">常量和文本数据类型</span><span class="sxs-lookup"><span data-stu-id="7fc37-123">Constant and Literal Data Types</span></span>](constant-and-literal-data-types.md)
-- [<span data-ttu-id="7fc37-124">常量概述</span><span class="sxs-lookup"><span data-stu-id="7fc37-124">Constants Overview</span></span>](constants-overview.md)
-- [<span data-ttu-id="7fc37-125">如何：声明常量</span><span class="sxs-lookup"><span data-stu-id="7fc37-125">How to: Declare A Constant</span></span>](how-to-declare-a-constant.md)
-- [<span data-ttu-id="7fc37-126">用户定义的常量</span><span class="sxs-lookup"><span data-stu-id="7fc37-126">User-Defined Constants</span></span>](user-defined-constants.md)
-- [<span data-ttu-id="7fc37-127">常量和文本数据类型</span><span class="sxs-lookup"><span data-stu-id="7fc37-127">Constant and Literal Data Types</span></span>](constant-and-literal-data-types.md)
-- [<span data-ttu-id="7fc37-128">如何：将相关的常量值组合在一起</span><span class="sxs-lookup"><span data-stu-id="7fc37-128">How to: Group Related Constant Values Together</span></span>](how-to-group-related-constant-values-together.md)
-- [<span data-ttu-id="7fc37-129">枚举概述</span><span class="sxs-lookup"><span data-stu-id="7fc37-129">Enumerations Overview</span></span>](enumerations-overview.md)
-- [<span data-ttu-id="7fc37-130">如何：声明枚举</span><span class="sxs-lookup"><span data-stu-id="7fc37-130">How to: Declare Enumerations</span></span>](how-to-declare-enumerations.md)
-- [<span data-ttu-id="7fc37-131">如何：引用枚举成员</span><span class="sxs-lookup"><span data-stu-id="7fc37-131">How to: Refer to an Enumeration Member</span></span>](how-to-refer-to-an-enumeration-member.md)
-- [<span data-ttu-id="7fc37-132">枚举和名称限定</span><span class="sxs-lookup"><span data-stu-id="7fc37-132">Enumerations and Name Qualification</span></span>](enumerations-and-name-qualification.md)
-- [<span data-ttu-id="7fc37-133">如何：循环访问枚举</span><span class="sxs-lookup"><span data-stu-id="7fc37-133">How to: Iterate Through An Enumeration</span></span>](how-to-iterate-through-an-enumeration.md)
-- [<span data-ttu-id="7fc37-134">如何：确定与枚举值关联的字符串</span><span class="sxs-lookup"><span data-stu-id="7fc37-134">How to: Determine the String Associated with an Enumeration Value</span></span>](how-to-determine-the-string-associated-with-an-enumeration-value.md)
-- [<span data-ttu-id="7fc37-135">何时使用枚举</span><span class="sxs-lookup"><span data-stu-id="7fc37-135">When to Use an Enumeration</span></span>](when-to-use-an-enumeration.md)
+- [<span data-ttu-id="a2716-122">Const 语句</span><span class="sxs-lookup"><span data-stu-id="a2716-122">Const Statement</span></span>](../../../language-reference/statements/const-statement.md)
+- [<span data-ttu-id="a2716-123">常数和文本数据类型</span><span class="sxs-lookup"><span data-stu-id="a2716-123">Constant and Literal Data Types</span></span>](constant-and-literal-data-types.md)
+- [<span data-ttu-id="a2716-124">常量概述</span><span class="sxs-lookup"><span data-stu-id="a2716-124">Constants Overview</span></span>](constants-overview.md)
+- [<span data-ttu-id="a2716-125">如何：声明常量</span><span class="sxs-lookup"><span data-stu-id="a2716-125">How to: Declare A Constant</span></span>](how-to-declare-a-constant.md)
+- [<span data-ttu-id="a2716-126">用户定义常数</span><span class="sxs-lookup"><span data-stu-id="a2716-126">User-Defined Constants</span></span>](user-defined-constants.md)
+- [<span data-ttu-id="a2716-127">常数和文本数据类型</span><span class="sxs-lookup"><span data-stu-id="a2716-127">Constant and Literal Data Types</span></span>](constant-and-literal-data-types.md)
+- [<span data-ttu-id="a2716-128">如何：将相关的常量值组合在一起</span><span class="sxs-lookup"><span data-stu-id="a2716-128">How to: Group Related Constant Values Together</span></span>](how-to-group-related-constant-values-together.md)
+- [<span data-ttu-id="a2716-129">枚举概述</span><span class="sxs-lookup"><span data-stu-id="a2716-129">Enumerations Overview</span></span>](enumerations-overview.md)
+- [<span data-ttu-id="a2716-130">如何：声明枚举</span><span class="sxs-lookup"><span data-stu-id="a2716-130">How to: Declare Enumerations</span></span>](how-to-declare-enumerations.md)
+- [<span data-ttu-id="a2716-131">如何：引用枚举成员</span><span class="sxs-lookup"><span data-stu-id="a2716-131">How to: Refer to an Enumeration Member</span></span>](how-to-refer-to-an-enumeration-member.md)
+- [<span data-ttu-id="a2716-132">枚举和名称限定</span><span class="sxs-lookup"><span data-stu-id="a2716-132">Enumerations and Name Qualification</span></span>](enumerations-and-name-qualification.md)
+- [<span data-ttu-id="a2716-133">如何：循环访问枚举</span><span class="sxs-lookup"><span data-stu-id="a2716-133">How to: Iterate Through An Enumeration</span></span>](how-to-iterate-through-an-enumeration.md)
+- [<span data-ttu-id="a2716-134">如何：确定与枚举值关联的字符串</span><span class="sxs-lookup"><span data-stu-id="a2716-134">How to: Determine the String Associated with an Enumeration Value</span></span>](how-to-determine-the-string-associated-with-an-enumeration-value.md)
+- [<span data-ttu-id="a2716-135">何时使用枚举</span><span class="sxs-lookup"><span data-stu-id="a2716-135">When to Use an Enumeration</span></span>](when-to-use-an-enumeration.md)
 
-- [<span data-ttu-id="7fc37-136">枚举概述</span><span class="sxs-lookup"><span data-stu-id="7fc37-136">Enumerations Overview</span></span>](enumerations-overview.md)
-- [<span data-ttu-id="7fc37-137">常量概述</span><span class="sxs-lookup"><span data-stu-id="7fc37-137">Constants Overview</span></span>](constants-overview.md)
-- [<span data-ttu-id="7fc37-138">如何：声明枚举</span><span class="sxs-lookup"><span data-stu-id="7fc37-138">How to: Declare an Enumeration</span></span>](how-to-declare-enumerations.md)
-- [<span data-ttu-id="7fc37-139">枚举和名称限定</span><span class="sxs-lookup"><span data-stu-id="7fc37-139">Enumerations and Name Qualification</span></span>](enumerations-and-name-qualification.md)
-- [<span data-ttu-id="7fc37-140">Option Strict 语句</span><span class="sxs-lookup"><span data-stu-id="7fc37-140">Option Strict Statement</span></span>](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [<span data-ttu-id="7fc37-141">常量和枚举</span><span class="sxs-lookup"><span data-stu-id="7fc37-141">Constants and Enumerations</span></span>](../../../../visual-basic/language-reference/constants-and-enumerations.md)
+- [<span data-ttu-id="a2716-136">枚举概述</span><span class="sxs-lookup"><span data-stu-id="a2716-136">Enumerations Overview</span></span>](enumerations-overview.md)
+- [<span data-ttu-id="a2716-137">常量概述</span><span class="sxs-lookup"><span data-stu-id="a2716-137">Constants Overview</span></span>](constants-overview.md)
+- [<span data-ttu-id="a2716-138">如何：声明枚举</span><span class="sxs-lookup"><span data-stu-id="a2716-138">How to: Declare an Enumeration</span></span>](how-to-declare-enumerations.md)
+- [<span data-ttu-id="a2716-139">枚举和名称限定</span><span class="sxs-lookup"><span data-stu-id="a2716-139">Enumerations and Name Qualification</span></span>](enumerations-and-name-qualification.md)
+- [<span data-ttu-id="a2716-140">Option Strict 语句</span><span class="sxs-lookup"><span data-stu-id="a2716-140">Option Strict Statement</span></span>](../../../language-reference/statements/option-strict-statement.md)
+- [<span data-ttu-id="a2716-141">常量和枚举</span><span class="sxs-lookup"><span data-stu-id="a2716-141">Constants and Enumerations</span></span>](../../../language-reference/constants-and-enumerations.md)
