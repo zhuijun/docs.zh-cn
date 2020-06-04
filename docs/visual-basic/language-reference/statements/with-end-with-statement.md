@@ -15,12 +15,12 @@ helpviewer_keywords:
 - With block
 - End keyword [Visual Basic], With...End With statements
 ms.assetid: 340d5fbb-4f43-48ec-a024-80843c137817
-ms.openlocfilehash: eb8790d0d8f82232a4b10e4e0e30165745c065c0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 50f3bd0c6e96254274b429794901e2e4ac719ad0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352739"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401376"
 ---
 # <a name="withend-with-statement-visual-basic"></a>With...End With 语句 (Visual Basic)
 
@@ -34,9 +34,9 @@ With objectExpression
 End With
 ```
 
-## <a name="parts"></a>部件
+## <a name="parts"></a>组成部分
 
-|术语|Definition|
+|术语|定义|
 |---|---|
 |`objectExpression`|必需。 计算结果为对象的表达式。 表达式可能是任意复杂的，并且只能计算一次。 表达式可以计算为任何数据类型，包括基本类型。|
 |`statements`|可选。 `With` 和 `End With` 之间的一个或多个语句，这些语句可能引用通过计算 `objectExpression` 生成的对象的成员。|
@@ -64,10 +64,10 @@ End With
 
 你不能从 `With` 语句块的外部分支到此语句块。
 
-除非此语句块包含循环，否则这些语句只运行一次。 你可嵌套不同类型的控制结构。 有关详细信息，请参阅[嵌套控制结构](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)。
+除非此语句块包含循环，否则这些语句只运行一次。 你可嵌套不同类型的控制结构。 有关详细信息，请参阅[嵌套控制结构](../../programming-guide/language-features/control-flow/nested-control-structures.md)。
 
 > [!NOTE]
-> 你还可在对象初始值设定项中使用 `With` 关键字。 有关详细信息和示例，请参阅[对象初始值设定项：命名类型和匿名](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)类型和[匿名类型](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)。
+> 你还可在对象初始值设定项中使用 `With` 关键字。 有关详细信息和示例，请参阅[对象初始值设定项：命名类型和匿名](../../programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)类型和[匿名类型](../../programming-guide/language-features/objects-and-classes/anonymous-types.md)。
 >
 > 如果你使用 `With` 块只是为了初始化已实例化的对象的属性或字段，请考虑改用对象初始值设定项。
 
@@ -86,6 +86,6 @@ End With
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Collections.Generic.List%601>
-- [嵌套的控件结构](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)
-- [对象初始值设定项：命名类型和匿名类型](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
-- [匿名类型](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
+- [嵌套的控件结构](../../programming-guide/language-features/control-flow/nested-control-structures.md)
+- [对象初始值设定项：命名和匿名类型](../../programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
+- [匿名类型](../../programming-guide/language-features/objects-and-classes/anonymous-types.md)

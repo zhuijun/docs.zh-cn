@@ -14,12 +14,12 @@ helpviewer_keywords:
 - math operators [Visual Basic]
 - order of precedence
 ms.assetid: cbbdb282-f572-458e-a520-008a675f8063
-ms.openlocfilehash: 318fcc3f35276ba0b2061ba9677c5fde29429f6f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: eef6314f5fc1f5a7fffa7997559f697130f6f755
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348278"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401441"
 ---
 # <a name="operator-precedence-in-visual-basic"></a>Visual Basic 中的运算符优先级
 当表达式中发生多个操作时，将按预先确定的顺序（称为*运算符优先级*）来计算和解析各个部分。
@@ -42,43 +42,43 @@ ms.locfileid: "74348278"
  Await
 
 ### <a name="arithmetic-and-concatenation-operators"></a>算术和串联运算符
- 幂运算（`^`）
+ 幂（ `^` ）
 
- 一元恒等运算（`+`，`–`）
+ 一元恒等运算（ `+` ， `–` ）
 
- 乘法和浮点除法（`*`，`/`）
+ 乘法和浮点除法（ `*` ， `/` ）
 
- 整数除法（`\`）
+ 整数除法（ `\` ）
 
- 模块化算法（`Mod`）
+ 模块化算法（ `Mod` ）
 
- 加法和减法（`+`，`–`）
+ 加法和减法（ `+` ， `–` ）
 
- 字符串串联（`&`）
+ 字符串串联（ `&` ）
 
- 算术移位（`<<`，`>>`）
+ 算术移位（ `<<` ， `>>` ）
 
 ### <a name="comparison-operators"></a>比较运算符
- 所有比较运算符（`=`、`<>`、`<`、`<=`、`>`、`>=`、`Is`、`IsNot`、`Like`、`TypeOf`...`Is`）
+ 所有比较运算符（，，，，，，，，， `=` `<>` `<` `<=` `>` `>=` `Is` `IsNot` `Like` `TypeOf` ... `Is` ）
 
 ### <a name="logical-and-bitwise-operators"></a>逻辑运算符和位运算符
- 求反（`Not`）
+ 求反（ `Not` ）
 
- 结合（`And`、`AndAlso`）
+ 结合（ `And` 、 `AndAlso` ）
 
- 包含析取（`Or`，`OrElse`）
+ 包含析取（ `Or` ， `OrElse` ）
 
- 排他性析取（`Xor`）
+ 排他性析取（ `Xor` ）
 
 ### <a name="comments"></a>注释
- `=` 运算符只是相等比较运算符，而不是赋值运算符。
+ `=`运算符只是相等比较运算符，而不是赋值运算符。
 
- 字符串串联运算符（`&`）不是算术运算符，但其优先级与算术运算符组合在一起。
+ 字符串串联运算符（ `&` ）不是算术运算符，但其优先级与算术运算符组合在一起。
 
- `Is` 和 `IsNot` 运算符是对象引用比较运算符。 它们不会比较两个对象的值;它们仅检查以确定两个对象变量是否引用同一对象实例。
+ `Is`和 `IsNot` 运算符是对象引用比较运算符。 它们不会比较两个对象的值;它们仅检查以确定两个对象变量是否引用同一对象实例。
 
 ## <a name="associativity"></a>结合性
- 当相同优先级的运算符同时出现在表达式中时（例如，乘法和除法），编译器将按从左至右的顺序计算每个运算。 下面的示例阐释了这一点。
+ 当相同优先级的运算符同时出现在表达式中时（例如，乘法和除法），编译器将按从左至右的顺序计算每个运算。 下面的示例对此进行了演示。
 
 ```vb
 Dim n1 As Integer = 96 / 8 / 4
@@ -86,12 +86,12 @@ Dim n2 As Integer = (96 / 8) / 4
 Dim n3 As Integer = 96 / (8 / 4)
 ```
 
- 第一个表达式计算相除后的 96/8 （结果为12），然后是除法 12/4，这会产生三个结果。 由于编译器会从左到右计算 `n1` 的运算，因此当为 `n2`显式指示该顺序时，计算是相同的。 `n1` 和 `n2` 均为三个结果。 相反，`n3` 的结果为48，因为括号强制编译器首先计算 8/4。
+ 第一个表达式计算相除后的 96/8 （结果为12），然后是除法 12/4，这会产生三个结果。 由于编译器 `n1` 会按从左至右的顺序计算运算，因此当显式指示该顺序时，计算是相同的 `n2` 。 `n1`和都 `n2` 具有三个结果。 相反， `n3` 结果为48，因为括号强制编译器首先计算 8/4。
 
  由于此行为，在 Visual Basic 中，运算符被称为*左结合*。
 
 ## <a name="overriding-precedence-and-associativity"></a>重写优先级和关联性
- 您可以使用括号来强制在其他部分中计算表达式。 这可以覆盖优先级顺序和左侧相关性。 Visual Basic 始终执行括在括号内的操作。 但在括号中，它将保持普通的优先级和关联性，除非在括号内使用括号。 下面的示例阐释了这一点。
+ 您可以使用括号来强制在其他部分中计算表达式。 这可以覆盖优先级顺序和左侧相关性。 Visual Basic 始终执行括在括号内的操作。 但在括号中，它将保持普通的优先级和关联性，除非在括号内使用括号。 下面的示例对此进行了演示。
 
 ```vb
 Dim a, b, c, d, e, f, g As Double
@@ -113,11 +113,11 @@ g = (a - (b + c)) / (d * e)
 
 ## <a name="see-also"></a>另请参阅
 
-- [= 运算符](../../../visual-basic/language-reference/operators/assignment-operator.md)
-- [Is 运算符](../../../visual-basic/language-reference/operators/is-operator.md)
-- [IsNot 运算符](../../../visual-basic/language-reference/operators/isnot-operator.md)
-- [Like 运算符](../../../visual-basic/language-reference/operators/like-operator.md)
-- [TypeOf 运算符](../../../visual-basic/language-reference/operators/typeof-operator.md)
-- [Await 运算符](../../../visual-basic/language-reference/operators/await-operator.md)
-- [按功能列出的运算符](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [运算符和表达式](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+- [= 运算符](assignment-operator.md)
+- [Is 运算符](is-operator.md)
+- [IsNot 运算符](isnot-operator.md)
+- [Like 运算符](like-operator.md)
+- [TypeOf 运算符](typeof-operator.md)
+- [Await 运算符](await-operator.md)
+- [按功能列出的运算符](operators-listed-by-functionality.md)
+- [运算符和表达式](../../programming-guide/language-features/operators-and-expressions/index.md)

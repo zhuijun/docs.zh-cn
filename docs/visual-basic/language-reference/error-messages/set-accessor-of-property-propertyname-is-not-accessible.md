@@ -7,33 +7,33 @@ f1_keywords:
 helpviewer_keywords:
 - BC31102
 ms.assetid: 6f7b31b7-3656-4ae1-8851-90f5f4c6950a
-ms.openlocfilehash: cf0158692c1154a8a903c893ba287e51c1e34ac8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 077533a5b1fe241b61ded9516ad8f450d7dbbf5e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593276"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400339"
 ---
-# <a name="set-accessor-of-property-propertyname-is-not-accessible"></a>Set 访问器属性的\<属性名称 > 不可访问
-语句试图存储属性的值不包含属性的访问权限时`Set`过程。  
+# <a name="set-accessor-of-property-propertyname-is-not-accessible"></a>属性“\<propertyname>”的“Set”访问器不可访问
+当某个语句无权访问该属性的过程时，它将尝试存储该属性的值 `Set` 。  
   
- 如果[Set 语句](../../../visual-basic/language-reference/statements/set-statement.md)标记具有限制性更强的访问权限级别比其[Property 语句](../../../visual-basic/language-reference/statements/property-statement.md)，尝试设置属性值在以下情况下可能会失败：  
+ 如果[Set 语句](../statements/set-statement.md)是使用比[属性语句](../statements/property-statement.md)更严格的访问级别进行标记，则在以下情况下，尝试设置该属性值可能会失败：  
   
-- `Set`标记语句[专用](../../../visual-basic/language-reference/modifiers/private.md)且调用代码外部的类或结构在其中定义该属性。  
+- `Set`语句标记为[Private](../modifiers/private.md) ，并且调用代码位于定义该属性的类或结构之外。  
   
-- `Set`标记语句[受保护](../../../visual-basic/language-reference/modifiers/protected.md)，调用代码不在类或结构定义属性，也不在派生类中。  
+- `Set`语句被标记为[受保护](../modifiers/protected.md)，调用代码不在定义该属性的类或结构中，也不在派生类中。  
   
-- `Set`标记语句[友元](../../../visual-basic/language-reference/modifiers/friend.md)并且调用代码不是在其中定义该属性在同一程序集中。  
+- `Set`语句被标记为[Friend](../modifiers/friend.md) ，调用代码不在定义该属性的程序集中。  
   
- **错误 ID:** BC31102  
+ **错误 ID：** BC31102  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 如果将属性定义的源代码管理后，请考虑声明`Set`与属性本身相同的访问级别的过程。  
+- 如果你可以控制定义属性的源代码，请考虑 `Set` 使用与属性本身相同的访问级别声明过程。  
   
-- 如果您不能将属性定义的源代码控制，或者您必须限制`Set`过程访问级别的多个属性本身，在尝试将移动到具有更好地访问的代码区域设置的属性值的语句属性。  
+- 如果你不能控制定义属性的源代码，或者必须限制 `Set` 过程访问级别，而不是属性本身，请尝试将设置属性值的语句移到对属性具有更好访问权限的代码区域。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [属性过程](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
-- [如何：声明具有混合的访问级别的属性](../../../visual-basic/programming-guide/language-features/procedures/how-to-declare-a-property-with-mixed-access-levels.md)
+- [Property 过程](../../programming-guide/language-features/procedures/property-procedures.md)
+- [如何：声明具有混合访问级别的属性](../../programming-guide/language-features/procedures/how-to-declare-a-property-with-mixed-access-levels.md)

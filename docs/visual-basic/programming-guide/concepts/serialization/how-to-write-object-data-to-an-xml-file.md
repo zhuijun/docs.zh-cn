@@ -2,14 +2,14 @@
 title: 如何：将对象数据写入 XML 文件
 ms.date: 07/20/2015
 ms.assetid: f7966480-5ed2-43ac-9894-33427436de2a
-ms.openlocfilehash: 989920709428f0e9cb4ddb8aeacfc71a2df220d2
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 9608a48cb8b3fac1c71affa7a0a17e9789f94b18
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345980"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413149"
 ---
-# <a name="how-to-write-object-data-to-an-xml-file-visual-basic"></a>如何：将对象数据写入 XML 文件（Visual Basic）
+# <a name="how-to-write-object-data-to-an-xml-file-visual-basic"></a>如何：将对象数据写入 XML 文件 (Visual Basic)
 本示例使用 <xref:System.Xml.Serialization.XmlSerializer> 类从某个类将对象写入 XML 文件。  
   
 ## <a name="example"></a>示例  
@@ -40,7 +40,7 @@ End Module
 ## <a name="compile-the-code"></a>编译代码  
  类必须有一个公共的无参数构造函数。  
   
-## <a name="robust-programming"></a>可靠的编程  
+## <a name="robust-programming"></a>可靠编程  
  以下情况可能会导致异常：  
   
 - 进行序列化的类没有公共的无参数构造函数。  
@@ -57,5 +57,5 @@ End Module
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.IO.StreamWriter>
-- [如何：读取 XML 文件中的对象数据 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-read-object-data-from-an-xml-file.md)
-- [序列化 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/index.md)
+- [如何：读取 XML 文件中的对象数据 (Visual Basic)](how-to-read-object-data-from-an-xml-file.md)
+- 序列化 (Visual Basic)[](index.md)
