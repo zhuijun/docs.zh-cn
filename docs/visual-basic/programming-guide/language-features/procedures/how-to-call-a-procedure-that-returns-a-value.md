@@ -7,19 +7,19 @@ helpviewer_keywords:
 - procedures [Visual Basic], calling
 - procedures [Visual Basic], returning a value
 ms.assetid: a445127b-0f5f-465a-98fb-3e514b93d115
-ms.openlocfilehash: 7f5d46babf31ea3c6babb29c0f1c08a23e51d598
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a110cf9f3b42c7244d8d5bf7b49d5e6dac8c2e21
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74340732"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84388759"
 ---
 # <a name="how-to-call-a-procedure-that-returns-a-value-visual-basic"></a>如何：调用返回值的过程 (Visual Basic)
-`Function` 过程将值返回到调用代码。 通过在赋值语句或表达式的右侧包含其名称和参数来调用它。  
+`Function`过程将值返回到调用代码。 通过在赋值语句或表达式的右侧包含其名称和参数来调用它。  
   
 ### <a name="to-call-a-function-procedure-within-an-expression"></a>在表达式中调用函数过程  
   
-1. 按照使用变量的相同方式使用 `Function` 过程名称。 可以在表达式中使用变量或常量的任何位置使用 `Function` 过程调用。  
+1. 按照 `Function` 使用变量的相同方式使用过程名称。 可以 `Function` 在表达式中使用变量或常量的任何位置使用过程调用。  
   
 2. 在过程名称后面加上括号，以将参数列表括起来。 如果没有参数，则可以选择省略括号。 不过，使用括号可使代码更易于阅读。  
   
@@ -31,24 +31,24 @@ ms.locfileid: "74340732"
   
 ### <a name="to-call-a-function-procedure-in-an-assignment-statement"></a>在赋值语句中调用函数过程  
   
-1. 在赋值语句中使用等号（`=`）后，使用 `Function` 过程名称。  
+1. 使用 `Function` 赋值语句中等号（）后面的过程名称 `=` 。  
   
 2. 在过程名称后面加上括号，以将参数列表括起来。 如果没有参数，则可以选择省略括号。 不过，使用括号可使代码更易于阅读。  
   
-3. 将参数置于括号中的参数列表内，用逗号分隔。 请确保以 `Function` 过程定义相应参数的相同顺序提供参数，除非你按名称传递它们。  
+3. 将参数置于括号中的参数列表内，用逗号分隔。 请确保按 `Function` 过程定义相应参数的顺序提供参数，除非你按名称传递它们。  
   
 4. 从过程返回的值存储在赋值语句左侧的变量或属性中。  
   
 ## <a name="example"></a>示例  
- 下面的示例调用 Visual Basic <xref:Microsoft.VisualBasic.Interaction.Environ%2A> 来检索操作系统环境变量的值。 第一行在表达式中调用 `Environ`，第二行在赋值语句中调用它。 `Environ` 采用变量名称作为其唯一参数。 它将变量的值返回给调用代码。  
+ 下面的示例调用 Visual Basic <xref:Microsoft.VisualBasic.Interaction.Environ%2A> 以检索操作系统环境变量的值。 第一行在 `Environ` 表达式内调用，第二行在赋值语句中调用它。 `Environ`采用变量名称作为其唯一参数。 它将变量的值返回给调用代码。  
   
  [!code-vb[VbVbcnProcedures#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#7)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - [Function 过程](./function-procedures.md)
-- [过程参数和自变量](./procedure-parameters-and-arguments.md)
-- [Function 语句](../../../../visual-basic/language-reference/statements/function-statement.md)
+- [过程形参和实参](./procedure-parameters-and-arguments.md)
+- [Function 语句](../../../language-reference/statements/function-statement.md)
 - [如何：创建返回值的过程](./how-to-create-a-procedure-that-returns-a-value.md)
 - [如何：从过程返回值](./how-to-return-a-value-from-a-procedure.md)
 - [如何：调用不返回值的过程](./how-to-call-a-procedure-that-does-not-return-a-value.md)

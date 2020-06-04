@@ -10,31 +10,31 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: 825f9d56-4cde-43fd-993a-b9171717e2eb
-ms.openlocfilehash: 4d31980e4b968cff274091ba4f307dffddab1100
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9ae6818b1e03ccd00ed554e98690e02ffa45de99
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350868"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387837"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a>如何：重载带有可选参数的过程 (Visual Basic)
-如果过程有一个或多个[可选](../../../../visual-basic/language-reference/modifiers/optional.md)参数，则不能定义与它的任何隐式重载匹配的重载版本。 有关详细信息，请参阅[重载过程的注意事项](./considerations-in-overloading-procedures.md)中的 "可选参数的隐式重载"。  
+如果过程有一个或多个[可选](../../../language-reference/modifiers/optional.md)参数，则不能定义与它的任何隐式重载匹配的重载版本。 有关详细信息，请参阅[重载过程的注意事项](./considerations-in-overloading-procedures.md)中的 "可选参数的隐式重载"。  
   
 ## <a name="one-optional-parameter"></a>一个可选参数  
   
 #### <a name="to-overload-a-procedure-that-takes-one-optional-parameter"></a>重载采用一个可选参数的过程  
   
-1. 编写一个 `Sub` 或 `Function` 声明语句，其中包含参数列表中的可选参数。 请勿在此重载版本中使用 `Optional` 关键字。  
+1. 编写一个 `Sub` 或 `Function` 声明语句，其中包含参数列表中的可选参数。 不要 `Optional` 在此重载版本中使用关键字。  
   
-2. 在 `Sub` 或 `Function` 关键字之前加上[Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)关键字。  
+2. 在或关键字之前加上 `Sub` `Function` [Overloads](../../../language-reference/modifiers/overloads.md)关键字。  
   
 3. 编写调用代码提供可选参数时应执行的过程代码。  
   
-4. 根据需要终止带有 `End Sub` 或 `End Function` 语句的过程。  
+4. `End Sub`适当地终止带有或语句的过程 `End Function` 。  
   
 5. 编写与第一个声明相同的第二个声明语句，只不过它不在参数列表中包含可选参数。  
   
-6. 编写调用代码未提供可选参数时应执行的过程代码。 根据需要终止带有 `End Sub` 或 `End Function` 语句的过程。  
+6. 编写调用代码未提供可选参数时应执行的过程代码。 `End Sub`适当地终止带有或语句的过程 `End Function` 。  
   
      下面的示例演示了一个使用可选参数定义的过程，这是一组等效的两个重载过程，最后是无效和有效重载版本的示例。  
   
@@ -53,18 +53,18 @@ ms.locfileid: "74350868"
   
 1. 确定所提供的可选参数的哪些组合对于过程逻辑是可接受的。 如果一个可选参数依赖于另一个参数，则可能会产生不可接受的组合。 例如，如果一个参数接受某人的名字，另一个参数接受该用户的年龄，则提供年龄但省略名称的参数的组合是不可接受的。  
   
-2. 对于所提供的可选参数的每个可接受组合，编写一个定义相应参数列表的 `Sub` 或 `Function` 声明语句。 不要使用 `Optional` 关键字。  
+2. 对于提供的可选参数的每个可接受组合，编写一个 `Sub` `Function` 定义相应参数列表的或声明语句。 不要使用 `Optional` 关键字。  
   
-3. 在每个声明中，在 `Sub` 或 `Function` 关键字之前加上[Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)关键字。  
+3. 在每个声明中，在或关键字之前加上 `Sub` `Function` [Overloads](../../../language-reference/modifiers/overloads.md)关键字。  
   
 4. 在每个声明之后，编写调用代码提供对应于该声明的参数列表的参数列表时应执行的过程代码。  
   
-5. 根据需要，用 `End Sub` 或 `End Function` 语句终止每个过程。  
+5. 根据需要，用或语句终止每个过程 `End Sub` `End Function` 。  
   
 ## <a name="see-also"></a>另请参阅
 
 - [过程](./index.md)
-- [过程参数和自变量](./procedure-parameters-and-arguments.md)
+- [过程形参和实参](./procedure-parameters-and-arguments.md)
 - [可选参数](./optional-parameters.md)
 - [参数数组](./parameter-arrays.md)
 - [过程重载](./procedure-overloading.md)
