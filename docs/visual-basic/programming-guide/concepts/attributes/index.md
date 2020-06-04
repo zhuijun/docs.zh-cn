@@ -2,30 +2,30 @@
 title: 属性概述
 ms.date: 07/20/2015
 ms.assetid: 1449f69b-c063-41de-8d89-f0bbdcf96ac6
-ms.openlocfilehash: 97a2a13102718b6ee8829fca678b2b49df21e5d1
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a0a080d44796289cc3562803c84ec915dcedd314
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349485"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400702"
 ---
 # <a name="attributes-overview-visual-basic"></a>特性概述 (Visual Basic)
 
-使用特性，可以有效地将元数据或声明性信息与代码（程序集、类型、方法、属性等）相关联。 将特性与程序实体相关联后，可以在运行时使用*反射*这项技术查询特性。 有关详细信息，请参阅[反射 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)。
+使用特性，可以有效地将元数据或声明性信息与代码（程序集、类型、方法、属性等）相关联。 将特性与程序实体相关联后，可以在运行时使用*反射*这项技术查询特性。 有关详细信息，请参阅[反射 (Visual Basic)](../reflection.md)。
 
 特性具有以下属性：
 
-- 特性向程序添加元数据。 *元数据*是程序中定义的类型的相关信息。 所有 .NET 程序集都包含一组指定的元数据，用于描述程序集中定义的类型和类型成员。 可以添加自定义特性来指定所需的其他任何信息。 有关详细信息，请参阅[创建自定义特性 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)。
+- 特性向程序添加元数据。 *元数据*是程序中定义的类型的相关信息。 所有 .NET 程序集都包含一组指定的元数据，用于描述程序集中定义的类型和类型成员。 可以添加自定义特性来指定所需的其他任何信息。 有关详细信息，请参阅[创建自定义特性 (Visual Basic)](creating-custom-attributes.md)。
 
 - 可以将一个或多个特性应用于整个程序集、模块或较小的程序元素（如类和属性）。
 
 - 特性可以像方法和属性一样接受自变量。
 
-- 程序可使用反射来检查自己的元数据或其他程序中的元数据。 有关详细信息，请参阅[使用反射访问特性 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)。
+- 程序可使用反射来检查自己的元数据或其他程序中的元数据。 有关详细信息，请参阅[使用反射访问特性 (Visual Basic)](accessing-attributes-by-using-reflection.md)。
 
 ## <a name="using-attributes"></a>使用属性
 
-可以将特性附加到大多数的声明中，尽管特定特性可能会限制可有效附加到的声明的类型。 在 Visual Basic 中，特性是用尖括号 (\< >) 括起来的。 特性的后面必须紧接着应用它的元素，且两者必须位于同一代码行。
+可以将特性附加到大多数的声明中，尽管特定特性可能会限制可有效附加到的声明的类型。 在 Visual Basic 中，特性括在尖括号（）中 \< > 。 特性的后面必须紧接着应用它的元素，且两者必须位于同一代码行。
 
 在此示例中，<xref:System.SerializableAttribute> 特性用于将具体特征应用于类：
 
@@ -95,12 +95,12 @@ End Sub
 
 下表列出了可能的 `target` 值。
 
-|目标值|适用于|
+|目标值|适用对象|
 |------------------|----------------|
 |`assembly`|整个程序集|
 |`module`|当前的程序集模块（不同于 Visual Basic 模块）|
 
- 下面的示例展示了如何将特性应用于程序集和模块。 有关详细信息，请参阅[常见特性 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md)。
+ 下面的示例展示了如何将特性应用于程序集和模块。 有关详细信息，请参阅[常见特性 (Visual Basic)](common-attributes.md)。
 
 ```vb
 Imports System.Reflection
@@ -138,18 +138,18 @@ Module: CLSCompliant(True)>
 
 有关详细信息，请参见:
 
-- [创建自定义特性 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+- [创建自定义特性 (Visual Basic)](creating-custom-attributes.md)
 
-- [使用反射访问特性 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+- [使用反射访问特性 (Visual Basic)](accessing-attributes-by-using-reflection.md)
 
-- [如何：使用特性创建 C/C++ 联合 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/how-to-create-a-c-cpp-union-by-using-attributes.md)
+- [如何：使用特性创建 C/C++ 联合 (Visual Basic)](how-to-create-a-c-cpp-union-by-using-attributes.md)
 
-- [常见特性 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/common-attributes.md)
+- [常见特性 (Visual Basic)](common-attributes.md)
 
-- [调用方信息 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md)
+- [调用方信息 (Visual Basic)](../caller-information.md)
 
 ## <a name="see-also"></a>另请参阅
 
-- [Visual Basic 编程指南](../../../../visual-basic/programming-guide/index.md)
-- [反射 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
+- [Visual Basic 编程指南](../../index.md)
+- [反射 (Visual Basic)](../reflection.md)
 - [特性](../../../../standard/attributes/index.md)

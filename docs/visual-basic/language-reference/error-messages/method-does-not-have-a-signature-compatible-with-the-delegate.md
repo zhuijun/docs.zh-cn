@@ -7,21 +7,21 @@ f1_keywords:
 helpviewer_keywords:
 - BC36563
 ms.assetid: 3ca8b873-e98d-419b-95f2-d75bd2a9eb6c
-ms.openlocfilehash: 925a17bef5147a5679a076af1801bdd305dd5bad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8e5e94bbde016ec7342a9933905977dac85fb035
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61921025"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397241"
 ---
 # <a name="method-does-not-have-a-signature-compatible-with-the-delegate"></a>方法没有与委托兼容的签名
-该方法的签名与想要使用的委托不兼容。 `Delegate` 语句定义参数类型和委托类的返回类型。 任何具有兼容的类型的参数相匹配并且返回类型可用于创建此委托类型的实例的过程。  
+方法的签名与你尝试使用的委托的签名不兼容。 `Delegate` 语句定义参数类型和委托类的返回类型。 任何具有匹配的兼容类型参数和返回类型的过程都可以用于创建此委托类型的实例。  
   
- **错误 ID**:BC36563  
+ **错误 ID**： BC36563  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [AddressOf 运算符](../../../visual-basic/language-reference/operators/addressof-operator.md)
-- [Delegate 语句](../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [重载决策](../../../visual-basic/programming-guide/language-features/procedures/overload-resolution.md)
-- [Visual Basic 中的泛型类型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [AddressOf 运算符](../operators/addressof-operator.md)
+- [Delegate 语句](../statements/delegate-statement.md)
+- [重载决策](../../programming-guide/language-features/procedures/overload-resolution.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)

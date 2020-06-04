@@ -9,15 +9,15 @@ helpviewer_keywords:
 - XML comment literal [Visual Basic]
 - XML literals [Visual Basic], comment
 ms.assetid: 634c1cee-5e01-48d0-88d7-2dd55e4a9e52
-ms.openlocfilehash: 8d9db66aabe344bd5c8f9a92ac8618b7bc1abb43
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 93c1346e54106b93f3932a494dea85d082ec994d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349390"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400210"
 ---
 # <a name="xml-comment-literal-visual-basic"></a>XML 注释文本 (Visual Basic)
-表示 <xref:System.Xml.Linq.XComment> 对象的文本。  
+表示对象的文本 <xref:System.Xml.Linq.XComment> 。  
   
 ## <a name="syntax"></a>语法  
   
@@ -25,9 +25,9 @@ ms.locfileid: "74349390"
 <!-- content -->  
 ```  
   
-## <a name="parts"></a>部件  
+## <a name="parts"></a>组成部分  
   
-|术语|Definition|  
+|术语|定义|  
 |---|---|  
 |`<!--`|必需。 表示 XML 注释的开头。|  
 |`content`|必需。 要在 XML 注释中显示的文本。 不能包含一系列两个连字符（--），也不能以与结束标记相邻的连字符结尾。|  
@@ -48,7 +48,7 @@ ms.locfileid: "74349390"
 > [!NOTE]
 > XML 文本可以跨多行，而无需使用行继续符。 此功能使你能够从 XML 文档复制内容并将其直接粘贴到 Visual Basic 程序。  
   
- Visual Basic 编译器将 XML 注释文本转换为对 <xref:System.Xml.Linq.XComment.%23ctor%2A> 构造函数的调用。  
+ Visual Basic 编译器将 XML 注释文本转换为对构造函数的调用 <xref:System.Xml.Linq.XComment.%23ctor%2A> 。  
   
 ## <a name="example"></a>示例  
  下面的示例创建一个包含文本 "This is a comment" 的 XML 注释。  
@@ -58,6 +58,6 @@ ms.locfileid: "74349390"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Xml.Linq.XComment>
-- [XML 元素文本](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
-- [XML 文本](../../../visual-basic/language-reference/xml-literals/index.md)
-- [在 Visual Basic 中创建 XML](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [XML 元素文本](xml-element-literal.md)
+- [XML 文本](index.md)
+- [在 Visual Basic 中创建 XML](../../programming-guide/language-features/xml/creating-xml.md)

@@ -2,12 +2,12 @@
 title: 如何：按任意词或字段对文本数据进行排序或筛选 (LINQ)
 ms.date: 07/20/2015
 ms.assetid: 9df137fe-335b-46e0-aecf-ea8a9eddd4e3
-ms.openlocfilehash: f0eeda77a721d482ec7a2b8562c0a71f34c5a3ae
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 798f30d39b4f805001c8c28b9ad6212061550775
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348047"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397721"
 ---
 # <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-visual-basic"></a>如何：按任意词或字段对文本数据进行排序或筛选 (LINQ) (Visual Basic)
 
@@ -15,7 +15,7 @@ ms.locfileid: "75348047"
 
 ### <a name="to-create-a-file-that-contains-data"></a>创建包含数据的文件
 
-复制主题[如何：联接不同文件（LINQ）中的内容（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)中的评分 .csv 数据，并将其保存到解决方案文件夹中。
+复制主题[如何：联接不同文件（LINQ）中的内容（Visual Basic）](how-to-join-content-from-dissimilar-files-linq.md)中的评分 .csv 数据，并将其保存到解决方案文件夹中。
 
 ## <a name="example"></a>示例
 
@@ -74,8 +74,8 @@ End Class
 
 ## <a name="compile-the-code"></a>编译代码
 
-使用 System. Linq 命名空间的 `Imports` 语句创建 Visual Basic 的控制台应用程序项目。
+使用 `Imports` System. Linq 命名空间的语句创建 Visual Basic 控制台应用程序项目。
 
 ## <a name="see-also"></a>另请参阅
 
-- [LINQ 和字符串（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ 和字符串 (Visual Basic)](linq-and-strings.md)

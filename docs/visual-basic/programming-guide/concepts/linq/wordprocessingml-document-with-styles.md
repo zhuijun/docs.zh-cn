@@ -1,13 +1,13 @@
 ---
-title: 具有 Styles2 的 WordprocessingML 文档
+title: 带有 Styles2 的 WordprocessingML 文档
 ms.date: 07/20/2015
 ms.assetid: a9136e4d-c368-4661-8049-7d45c679a236
-ms.openlocfilehash: 977de8e4272ca7cea004127adcf1b15726dcc211
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: caf80014077bf57dc1ffb8eaeac6390cf4258015
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61907941"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403545"
 ---
 # <a name="wordprocessingml-document-with-styles"></a>具有样式的 WordprocessingML 文档
 较为复杂的 WordprocessingML 文档具有使用样式格式的段落。  
@@ -17,7 +17,7 @@ ms.locfileid: "61907941"
  访问包时，重要的是通过部分之间的关系来访问包，而不是使用任意路径来访问包。 此问题超出了在 WordprocessingML 文档教程中使用内容的范围，但是本教程包含的示例程序演示了正确的方法。  
   
 ## <a name="a-document-that-uses-styles"></a>使用样式的文档  
- 中提供的 WordML 示例[形状 WordprocessingML 文档的 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/shape-of-wordprocessingml-documents.md)主题是一个非常简单。 以下文档更复杂：它具有使用样式格式的段落。 若要查看构成 Office Open XML 文档的 XML 是运行的最简单方法[示例的输出 Office Open XML 文档部件 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/example-that-outputs-office-open-xml-document-parts.md)。  
+ [WordprocessingML Documents （Visual Basic）](shape-of-wordprocessingml-documents.md)主题中提供的 WordML 示例是非常简单的文档。 下面的文档则更为复杂：它具有使用样式格式的段落。 若要查看构成 Office Open XML 文档的 XML，最简单的方法是运行[输出 Office OPEN Xml 文档部件的示例（Visual Basic）](example-that-outputs-office-open-xml-document-parts.md)。  
   
  在下面的文档中，第一段具有 `Heading1` 样式。 很多段落具有默认样式。 还有一些段落具有 `Code` 样式。 由于这种相对复杂性，这个文档更值得使用 LINQ to XML 来解析。  
   
@@ -137,6 +137,6 @@ ms.locfileid: "61907941"
 </w:document>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [详细信息的 Office Open XML WordprocessingML 文档 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+- [Office Open XML WordprocessingML 文档的详细信息（Visual Basic）](details-of-office-open-xml-wordprocessingml-documents.md)

@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - BC30043
 ms.assetid: 7973aa82-a681-440c-9bca-242627d7ba86
-ms.openlocfilehash: 8ec1e704815ee10cb98d8cc20fb5982ee4b92832
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 537689405ea30bdd7c075320eba58a8723a93cdb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662015"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397397"
 ---
-# <a name="keyword-is-valid-only-within-an-instance-method"></a>\<关键字 > 只在实例方法中有效
-`Me`， `MyClass`，和`MyBase`关键字是指特定类实例。 不能使用它们在共享内`Function`或`Sub`过程。  
+# <a name="keyword-is-valid-only-within-an-instance-method"></a>“\<keyword>”只在实例方法中有效
+`Me`、 `MyClass` 和 `MyBase` 关键字引用特定的类实例。 不能在共享或过程中使用它们 `Function` `Sub` 。  
   
- **错误 ID:** BC30043  
+ **错误 ID：** BC30043  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 从过程中删除关键字或删除`Shared`过程声明中的关键字。  
+- 从过程中删除关键字，或 `Shared` 从过程声明中删除关键字。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [对象变量赋值](../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)
-- [Me、My、MyBase 和 MyClass](../../../visual-basic/programming-guide/program-structure/me-my-mybase-and-myclass.md)
-- [继承的基础知识](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+- [对象变量赋值](../../programming-guide/language-features/variables/object-variable-assignment.md)
+- [Me、My、MyBase 和 MyClass](../../programming-guide/program-structure/me-my-mybase-and-myclass.md)
+- [继承基础知识](../../programming-guide/language-features/objects-and-classes/inheritance-basics.md)

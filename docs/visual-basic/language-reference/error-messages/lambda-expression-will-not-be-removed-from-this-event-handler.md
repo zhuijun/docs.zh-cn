@@ -7,18 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - BC42326
 ms.assetid: 63214dc6-0112-4245-8ebf-7c9e8f5a5782
-ms.openlocfilehash: 52107589c6bbebbd34ecbb090845f4031612c276
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 07ace3f1b9c5e512227dc1f718ef768b631c8303
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72578925"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397371"
 ---
 # <a name="lambda-expression-will-not-be-removed-from-this-event-handler"></a>将不会从此事件处理程序中移除 Lambda 表达式
 
 Lambda 表达式将不会从此事件处理程序中移除。 将 lambda 表达式分配给一个变量，并使用该变量添加和移除该事件。
 
-当 lambda 表达式与事件处理程序一起使用时，可能看不到预期的行为。 编译器会为每个 lambda 表达式定义生成新的方法，即使它们相同也是如此。 因此，以下代码将显示 `False`。
+当 lambda 表达式与事件处理程序一起使用时，可能看不到预期的行为。 编译器会为每个 lambda 表达式定义生成新的方法，即使它们相同也是如此。 因此，会显示以下代码 `False` 。
 
 ```vb
 Module Module1
@@ -34,7 +34,7 @@ Module Module1
 End Module
 ```
 
-当 lambda 表达式与事件处理程序一起使用时，这可能会导致意外的结果。 在下面的示例中，`RemoveHandler` 语句不会删除 `AddHandler` 添加的 lambda 表达式。
+当 lambda 表达式与事件处理程序一起使用时，这可能会导致意外的结果。 在下面的示例中，语句不删除由添加的 lambda 表达式 `AddHandler` `RemoveHandler` 。
 
 ```vb
 Module Module1
@@ -61,7 +61,7 @@ End Module
 
 ## <a name="to-correct-this-error"></a>更正此错误
 
-若要避免此警告并删除 lambda 表达式，请将 lambda 表达式分配给一个变量，并在 `AddHandler` 和 `RemoveHandler` 语句中使用该变量，如下面的示例中所示。
+若要避免此警告并删除 lambda 表达式，请将 lambda 表达式分配给一个变量，并在和语句中使用该变量 `AddHandler` `RemoveHandler` ，如下面的示例中所示。
 
 ```vb
 Module Module1
@@ -85,8 +85,8 @@ Module Module1
 End Module
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Lambda 表达式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
-- [宽松委托转换](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
-- [事件](../../../visual-basic/programming-guide/language-features/events/index.md)
+- [Lambda 表达式](../../programming-guide/language-features/procedures/lambda-expressions.md)
+- [宽松委托转换](../../programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+- [事件](../../programming-guide/language-features/events/index.md)

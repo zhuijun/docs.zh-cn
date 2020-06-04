@@ -21,12 +21,12 @@ helpviewer_keywords:
 - Visual Basic code, line continuation in
 - statements [Visual Basic], line breaks in
 ms.assetid: dea01dad-a8ac-484a-bb3a-8c45a1b1eccc
-ms.openlocfilehash: f1a24c001cd20acc7663fb4cbe60e7e35a9c8fc3
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c78cbeaa5c2df2d4f2e3cce2b5b3fb8048ff3388
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347428"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403247"
 ---
 # <a name="how-to-break-and-combine-statements-in-code-visual-basic"></a>如何：在代码中拆分和合并语句 (Visual Basic)
 
@@ -34,10 +34,10 @@ ms.locfileid: "74347428"
 
 ## <a name="to-break-a-single-statement-into-multiple-lines"></a>将单个语句分解为多行
 
-在您希望行中断的位置使用行继续符，该字符是一个下划线（`_`）。 下划线前面必须紧跟一个空格，后面紧跟行终止符（回车符）或（从版本16.0 开始）注释后跟回车符。
+在您希望行中断的位置使用以下划线（）开头的行继续符 `_` 。 下划线前面必须紧跟一个空格，后面紧跟行终止符（回车符）或（从版本16.0 开始）注释后跟回车符。
 
   > [!NOTE]
-  > 在某些情况下，如果省略行继续符，则 Visual Basic 编译器将在下一行代码中隐式地继续执行该语句。 有关可以省略行继续符的语法元素的列表，请参阅[语句](../../../visual-basic/programming-guide/language-features/statements.md)中的 "隐式行继续符"。
+  > 在某些情况下，如果省略行继续符，则 Visual Basic 编译器将在下一行代码中隐式地继续执行该语句。 有关可以省略行继续符的语法元素的列表，请参阅[语句](../language-features/statements.md)中的 "隐式行继续符"。
 
   在下面的示例中，语句分为四行，其中的行继续符用于终止除最后一行以外的所有行。
 
@@ -49,17 +49,17 @@ ms.locfileid: "74347428"
 
   存在一些限制，以使你可以使用行继续符;例如，不能在参数名中间使用。 您可以使用行继续符来破坏参数列表，但参数的各个名称必须保持不变。
 
-  不能使用行继续符继续注释。 编译器不会检查注释中的字符是否有特殊意义。 对于多行注释，请在每行上重复注释符号（`'`）。
+  不能使用行继续符继续注释。 编译器不会检查注释中的字符是否有特殊意义。 对于多行注释，请 `'` 在每行上重复注释符号（）。
 
  尽管建议方法将每个语句置于单独的行上，但 Visual Basic 也允许在同一行上放置多个语句。
 
 ## <a name="to-place-multiple-statements-on-the-same-line"></a>在同一行上放置多个语句
 
-用冒号（`:`）分隔语句，如以下示例中所示：
+用冒号（）分隔语句 `:` ，如以下示例中所示：
 
   [!code-vb[VbVbcnConventions#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#10)]
 
 ## <a name="see-also"></a>另请参阅
 
-- [程序结构和代码约定](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
-- [语句](../../../visual-basic/programming-guide/language-features/statements.md)
+- [程序结构和代码约定](program-structure-and-code-conventions.md)
+- [语句](../language-features/statements.md)

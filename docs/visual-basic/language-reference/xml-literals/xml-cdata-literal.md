@@ -8,15 +8,15 @@ helpviewer_keywords:
 - XML CDATA literal [Visual Basic]
 - XML literals [Visual Basic], CDATA
 ms.assetid: 9eafb6a4-dd9d-4866-85e8-0654c65abc44
-ms.openlocfilehash: 72e899e7bd30f2edf0e88207bb3b75bdf36fa11c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b9cc830d27625f192d8f5e059bd3783d05d8ba3b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349434"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400223"
 ---
 # <a name="xml-cdata-literal-visual-basic"></a>XML CDATA 文本 (Visual Basic)
-表示 <xref:System.Xml.Linq.XCData> 对象的文本。  
+表示对象的文本 <xref:System.Xml.Linq.XCData> 。  
   
 ## <a name="syntax"></a>语法  
   
@@ -24,7 +24,7 @@ ms.locfileid: "74349434"
 <![CDATA[content]]>  
 ```  
   
-## <a name="parts"></a>部件  
+## <a name="parts"></a>组成部分  
  `<![CDATA[`  
  必需。 表示 XML CDATA 部分的开头。  
   
@@ -52,13 +52,13 @@ ms.locfileid: "74349434"
  Visual Basic 编译器会将 XML CDATA 文本转换为对 <xref:System.Xml.Linq.XCData.%23ctor%2A> 构造函数的调用。  
   
 ## <a name="example"></a>示例  
- 下面的示例创建一个 CDATA 节，其中包含文本 "可以包含文本 \<XML > 标记"。  
+ 下面的示例创建一个 CDATA 节，其中包含文本 "可以包含文本 \<XML> 标记"。  
   
  [!code-vb[VbXMLSamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples11.vb#23)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Xml.Linq.XCData>
-- [XML 元素文本](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
-- [XML 文本](../../../visual-basic/language-reference/xml-literals/index.md)
-- [在 Visual Basic 中创建 XML](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [XML 元素文本](xml-element-literal.md)
+- [XML 文本](index.md)
+- [在 Visual Basic 中创建 XML](../../programming-guide/language-features/xml/creating-xml.md)

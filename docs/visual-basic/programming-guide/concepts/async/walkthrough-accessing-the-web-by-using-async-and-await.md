@@ -2,18 +2,18 @@
 title: 演练：使用 Async 和 Await 访问 Web
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: 7f649f1f16da545c4587f0ed76b8f1a443ee8744
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 41ededd4d4335b78b8d7a33e8fe387c7d632cbee
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715853"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400740"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>演练：使用 Async 和 Await 访问 Web (Visual Basic)
 
 使用 async/await 功能可以更轻松直观地编写异步程序。 你可以编写类似于同步代码的异步代码，并让编译器处理异步代码通常需要的疑难回调函数和延续。
 
-有关异步功能的详细信息，请参阅[采用 async 和 Await 的异步编程（Visual Basic）](../../../../visual-basic/programming-guide/concepts/async/index.md)。
+有关异步功能的详细信息，请参阅[采用 async 和 Await 的异步编程（Visual Basic）](index.md)。
 
 本演练从对网站列表中的字节数进行求和的同步 Windows Presentation Foundation (WPF) 应用程序入手， 然后使用新功能将该应用程序转换为异步解决方案。
 
@@ -24,20 +24,20 @@ ms.locfileid: "74715853"
 > [!div class="checklist"]
 >
 > - [创建 WPF 应用程序](#create-a-wpf-application)
-> - [设计简单的 WPF Mainwindow.xaml](#design-a-simple-wpf-mainwindow)
+> - [设计简单的 WPF MainWindow](#design-a-simple-wpf-mainwindow)
 > - [添加引用](#add-a-reference)
 > - [添加必要的 Imports 语句](#add-necessary-imports-statements)
 > - [创建同步应用程序](#create-a-synchronous-application)
 > - [测试同步解决方案](#test-the-synchronous-solution)
-> - [将 Geturlcontents 转换转换为异步方法](#convert-geturlcontents-to-an-asynchronous-method)
-> - [将 Sumpagesizes 转换转换为异步方法](#convert-sumpagesizes-to-an-asynchronous-method)
+> - [将 GetURLContents 转换为异步方法](#convert-geturlcontents-to-an-asynchronous-method)
+> - [将 SumPageSizes 转换为异步方法](#convert-sumpagesizes-to-an-asynchronous-method)
 > - [将 startButton_Click 转换为异步方法](#convert-startbutton_click-to-an-asynchronous-method)
 > - [测试异步解决方案](#test-the-asynchronous-solution)
 > - [将 GetURLContentsAsync 方法替换为 .NET Framework 方法](#replace-the-geturlcontentsasync-method-with-a-net-framework-method)
 
 有关完整的异步示例，请参阅 "[示例](#example)" 部分。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备条件
 
 计算机上必须安装 Visual Studio 2012 或更高版本。 有关详细信息，请参阅 Visual Studio[下载](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)页。
 
@@ -45,65 +45,65 @@ ms.locfileid: "74715853"
 
 1. 启动 Visual Studio。
 
-2. 在菜单栏上，依次选择 **“文件”** 、 **“新建”** 、 **“项目”** 。
+2. 在菜单栏上，依次选择“文件”  、“新建”  、“项目”  。
 
     **“新建项目”** 对话框随即打开。
 
 3. 在 "**已安装的模板**" 窗格中选择 "Visual Basic"，然后从项目类型列表中选择 " **WPF 应用程序**"。
 
-4. 在“名称”文本框中，输入 `AsyncExampleWPF`，然后选择“确定”按钮。
+4. 在“名称”**** 文本框中，输入 `AsyncExampleWPF`，然后选择“确定”**** 按钮。
 
-    新项目将出现在“解决方案资源管理器”中。
+    新项目将出现在“解决方案资源管理器”  中。
 
 ## <a name="design-a-simple-wpf-mainwindow"></a>设计简单的 WPF MainWindow
 
 1. 在 Visual Studio 代码编辑器中，选择 **“MainWindow.xaml”** 选项卡。
 
-2. 如果“工具箱”窗口不可见，则打开“视图”菜单，然后选择“工具箱”。
+2. 如果“工具箱”**** 窗口不可见，则打开“视图”**** 菜单，然后选择“工具箱”****。
 
-3. 向“MainWindow”窗口添加一个“Button”控件和一个“TextBox”控件。
+3. 向“MainWindow”**** 窗口添加一个“Button”**** 控件和一个“TextBox”**** 控件。
 
-4. 突出显示“TextBox”控件，在“属性”窗口中，设置下列值：
+4. 突出显示“TextBox”**** 控件，在“属性”**** 窗口中，设置下列值：
 
-    - 将“名称”属性设置为 `resultsTextBox`。
+    - 将“名称”**** 属性设置为 `resultsTextBox`。
 
-    - 将“高度”属性设置为 250。
+    - 将“高度”**** 属性设置为 250。
 
-    - 将“宽度”属性设置为 500。
+    - 将“宽度”**** 属性设置为 500。
 
-    - 在“文本”选项卡中，指定等宽字体，例如 Lucida Console 或 Global Monospace。
+    - 在“文本”**** 选项卡中，指定等宽字体，例如 Lucida Console 或 Global Monospace。
 
-5. 突出显示“Button”控件，在“属性”窗口中，设置下列值：
+5. 突出显示“Button”**** 控件，在“属性”**** 窗口中，设置下列值：
 
-    - 将“名称”属性设置为 `startButton`。
+    - 将“名称”**** 属性设置为 `startButton`。
 
-    - 将“内容”属性的值从“Button”更改为“Start”。
+    - 将“内容”**** 属性的值从“Button”**** 更改为“Start”****。
 
-6. 确定文本框和按钮的位置，以便它们都在“MainWindow”窗口中显示。
+6. 确定文本框和按钮的位置，以便它们都在“MainWindow”**** 窗口中显示。
 
     有关 WPF XAML 设计器的详细信息，请参阅[使用 XAML 设计器创建 UI](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio)。
 
 ## <a name="add-a-reference"></a>添加引用
 
-1. 在“解决方案资源管理器”中，突出显示项目的名称。
+1. 在“解决方案资源管理器”**** 中，突出显示项目的名称。
 
-2. 在菜单栏上，依次选择“项目”、“添加引用”。
+2. 在菜单栏上，依次选择“项目”****、“添加引用”****。
 
-    此时将显示“引用管理器”对话框。
+    此时将显示“引用管理器”**** 对话框。
 
 3. 在对话框顶部，验证项目是否以 .NET Framework 4.5 或更高版本为目标。
 
-4. 在“程序集”区域，选择“Framework”（如果尚未选择它）。
+4. 在“程序集”**** 区域，选择“Framework”****（如果尚未选择它）。
 
-5. 在名称列表中，选中“System.Net.Http”复选框。
+5. 在名称列表中，选中“System.Net.Http”**** 复选框。
 
-6. 选择“确定”按钮关闭对话框。
+6. 选择“确定”**** 按钮关闭对话框。
 
 ## <a name="add-necessary-imports-statements"></a>添加必要的 Imports 语句
 
 1. 在**解决方案资源管理器**中，打开 mainwindow.xaml 的快捷菜单，然后选择 "**查看代码**"。
 
-2. 将以下 `Imports` 语句添加到代码文件的顶部（如果它们尚不存在）。
+2. 将以下语句添加到 `Imports` 代码文件的顶部（如果它们尚不存在）。
 
     ```vb
     Imports System.Net.Http
@@ -113,9 +113,9 @@ ms.locfileid: "74715853"
 
 ## <a name="create-a-synchronous-application"></a>创建同步应用程序
 
-1. 在设计窗口 Mainwindow.xaml 中，双击 "**开始**" 按钮以在 mainwindow.xaml 中创建 `startButton_Click` 事件处理程序。
+1. 在设计窗口 Mainwindow.xaml 中，双击 "**开始**" 按钮以 `startButton_Click` 在 mainwindow.xaml 中创建事件处理程序。
 
-2. 在 Mainwindow.xaml 中，将以下代码复制到 `startButton_Click`的正文中：
+2. 在 Mainwindow.xaml 中，将以下代码复制到的正文中 `startButton_Click` ：
 
     ```vb
     resultsTextBox.Clear()
@@ -135,7 +135,7 @@ ms.locfileid: "74715853"
 
     - `DisplayResults`，显示每个 URL 的字节数组中的字节数。
 
-    复制以下四个方法，然后将它们粘贴到 Mainwindow.xaml 中的 `startButton_Click` 事件处理程序下：
+    复制以下四个方法，然后将它们粘贴到 `startButton_Click` mainwindow.xaml 中的事件处理程序下：
 
     ```vb
     Private Sub SumPageSizes()
@@ -213,7 +213,7 @@ ms.locfileid: "74715853"
 
 ## <a name="test-the-synchronous-solution"></a>测试同步解决方案
 
-1. 按 F5 键以运行程序，然后选择 **“启动”** 按钮。
+1. 按 F5 键运行程序，然后选择“启动”**** 按钮。
 
     此时应显示类似于以下列表的输出：
 
@@ -234,11 +234,11 @@ ms.locfileid: "74715853"
     Control returned to startButton_Click.
     ```
 
-    请注意，显示计数需要几秒钟时间。 与此同时，在等待请求的资源下载时，UI 线程处于被阻止状态。 因此，选择“启动”按钮后，将无法移动、最大化、最小化显示窗口，甚至也无法关闭显示窗口。 在字节计数开始显示之前，这些操作都会失败。 如果网站没有响应，将不会指示哪个网站失败。 甚至停止等待和关闭程序也会很困难。
+    请注意，显示计数需要几秒钟时间。 与此同时，在等待请求的资源下载时，UI 线程处于被阻止状态。 因此，选择“启动”**** 按钮后，将无法移动、最大化、最小化显示窗口，甚至也无法关闭显示窗口。 在字节计数开始显示之前，这些操作都会失败。 如果网站没有响应，将不会指示哪个网站失败。 甚至停止等待和关闭程序也会很困难。
 
 ## <a name="convert-geturlcontents-to-an-asynchronous-method"></a>将 GetURLContents 转换为异步方法
 
-1. 若要将同步解决方案转换为异步解决方案，最好开始使用 `GetURLContents` 因为对 <xref:System.Net.HttpWebRequest.GetResponse%2A?displayProperty=nameWithType> 方法和 <xref:System.IO.Stream.CopyTo%2A?displayProperty=nameWithType> 方法的调用是应用程序访问 web 的位置。 .NET Framework 提供两种方法的异步版本，这让转换变得轻松。
+1. 若要将同步解决方案转换为异步解决方案，最好开始使用， `GetURLContents` 因为调用 <xref:System.Net.HttpWebRequest.GetResponse%2A?displayProperty=nameWithType> 方法和 <xref:System.IO.Stream.CopyTo%2A?displayProperty=nameWithType> 方法是应用程序访问 web 的位置。 .NET Framework 提供两种方法的异步版本，这让转换变得轻松。
 
     有关 `GetURLContents` 中使用的方法的详细信息，请参阅 <xref:System.Net.WebRequest>。
 
@@ -251,9 +251,9 @@ ms.locfileid: "74715853"
     Using response As WebResponse = webReq.GetResponseAsync()
     ```
 
-2. `GetResponseAsync` 返回 <xref:System.Threading.Tasks.Task%601>。 在这种情况下，任务返回变量`TResult` 具有类型 <xref:System.Net.WebResponse>。 该任务是在请求的任务已下载且任务已完成运行后，生成实际 `WebResponse` 对象的承诺。
+2. `GetResponseAsync` 返回 <xref:System.Threading.Tasks.Task%601>。 在这种情况下，*任务返回变量* `TResult` 具有类型 <xref:System.Net.WebResponse> 。 该任务是在请求的任务已下载且任务已完成运行后，生成实际 `WebResponse` 对象的承诺。
 
-    若要从任务中检索 `WebResponse` 值，请将[Await](../../../../visual-basic/language-reference/operators/await-operator.md)运算符应用于对 `GetResponseAsync`的调用，如以下代码所示。
+    若要 `WebResponse` 从任务检索值，请将[Await](../../../language-reference/operators/await-operator.md)运算符应用到对的调用 `GetResponseAsync` ，如以下代码所示。
 
     ```vb
     Using response As WebResponse = Await webReq.GetResponseAsync()
@@ -268,11 +268,11 @@ ms.locfileid: "74715853"
     Using response As WebResponse = Await responseTask
     ```
 
-    对 `webReq.GetResponseAsync` 的调用返回 `Task(Of WebResponse)` 或 `Task<WebResponse>`。 然后，将 `Await` 运算符应用到任务以检索 `WebResponse` 值。
+    对 `webReq.GetResponseAsync` 的调用返回 `Task(Of WebResponse)` 或 `Task<WebResponse>`。 然后，将 `Await` 运算符应用于任务以检索 `WebResponse` 值。
 
-    如果你的异步方法需要完成不依赖于任务的完成的工作，则在调用异步方法之后及应用 await 运算符之前的这段时间，该方法可以在这两个语句之间继续完成该工作。 有关示例，请参阅[如何：使用 Async 和 Await 并行发出多个 Web 请求（Visual Basic）](../../../../visual-basic/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)和[如何：使用 System.threading.tasks.task.whenall 扩展 Async 演练（Visual Basic）](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)。
+    如果你的异步方法需要完成不依赖于任务的完成的工作，则在调用异步方法之后及应用 await 运算符之前的这段时间，该方法可以在这两个语句之间继续完成该工作。 有关示例，请参阅[如何：使用 Async 和 Await 并行发出多个 Web 请求（Visual Basic）](how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)和[如何：使用 System.threading.tasks.task.whenall 扩展 Async 演练（Visual Basic）](how-to-extend-the-async-walkthrough-by-using-task-whenall.md)。
 
-3. 因为在上一步中添加了 `Await` 运算符，所以会发生编译器错误。 运算符只能在使用[Async](../../../../visual-basic/language-reference/modifiers/async.md)修饰符标记的方法中使用。 当你重复转换步骤以使用对 `CopyToAsync` 的调用替换对 `CopyTo` 的调用时，请忽略该错误。
+3. 因为在上一步中添加了 `Await` 运算符，所以会发生编译器错误。 运算符只能在使用[Async](../../../language-reference/modifiers/async.md)修饰符标记的方法中使用。 当你重复转换步骤以使用对 `CopyToAsync` 的调用替换对 `CopyTo` 的调用时，请忽略该错误。
 
     - 更改被调用到 <xref:System.IO.Stream.CopyToAsync%2A> 的方法的名称。
 
@@ -293,15 +293,15 @@ ms.locfileid: "74715853"
         Await copyTask
         ```
 
-4. `GetURLContents` 中仍需要完成的操作是调整方法签名。 只能在使用[Async](../../../../visual-basic/language-reference/modifiers/async.md)修饰符标记的方法中使用 `Await` 运算符。 添加修饰符以将方法标记为*异步方法*，如下列代码所示。
+4. `GetURLContents` 中仍需要完成的操作是调整方法签名。 `Await`只能在使用[Async](../../../language-reference/modifiers/async.md)修饰符标记的方法中使用运算符。 添加修饰符以将方法标记为*异步方法*，如下列代码所示。
 
     ```vb
     Private Async Function GetURLContents(url As String) As Byte()
     ```
 
-5. 异步方法的返回类型只能 <xref:System.Threading.Tasks.Task>，<xref:System.Threading.Tasks.Task%601>。 在 Visual Basic 中，方法必须为返回 `Task` 或 `Task(Of T)` 的 `Function`，或方法必须为 `Sub`。 通常，仅在异步事件处理程序中使用 `Sub` 方法，其中 `Sub` 是必需的。 在其他情况下，如果完成的方法具有返回 T 类型的值的[Return](../../../../visual-basic/language-reference/statements/return-statement.md)语句，则使用 `Task(T)`; 如果完成的方法不返回有意义的值，则使用 `Task`。
+5. 异步方法的返回类型只能为 <xref:System.Threading.Tasks.Task> 、 <xref:System.Threading.Tasks.Task%601> 。 在 Visual Basic 中，方法必须为返回 `Task` 或 `Task(Of T)` 的 `Function`，或方法必须为 `Sub`。 通常， `Sub` 方法仅在异步事件处理程序中使用，其中 `Sub` 需要。 在其他情况下， `Task(T)` 如果完成的方法具有返回 T 类型的值的[Return](../../../language-reference/statements/return-statement.md)语句，则使用; `Task` 如果完成的方法不返回有意义的值，则使用。
 
-    有关详细信息，请参阅[异步返回类型（Visual Basic）](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)。
+    有关详细信息，请参阅[异步返回类型（Visual Basic）](async-return-types.md)。
 
     方法 `GetURLContents` 具有 return 语句，且该语句返回字节数组。 因此，异步版本的返回类型为 Task(T)，其中 T 为字节数组。 在方法签名中进行下列更改：
 
@@ -346,7 +346,7 @@ ms.locfileid: "74715853"
 
     - 将“Async”添加到方法名称。
 
-    - 此时没有任务返回变量 T，这是因为 `SumPageSizesAsync` 不返回 T 的值。（该方法没有 `Return` 的语句。）但是，该方法必须返回要可等待的 `Task`。 因此，请将方法类型从 `Sub` 更改为 `Function`。 函数的返回类型为 `Task`。
+    - 此时没有任务返回变量 T，因为 `SumPageSizesAsync` 不返回 T 的值。（该方法没有 `Return` 语句。）但是，该方法必须返回 `Task` 才能进行可等待。 因此，将方法类型从更改 `Sub` 为 `Function` 。 函数的返回类型为 `Task`。
 
     下列代码显示这些更改。
 
@@ -375,7 +375,7 @@ ms.locfileid: "74715853"
     Await sumTask
     ```
 
-3. 要防止意外重新进入操作，请在 `startButton_Click` 顶部添加下列语句，以禁用“启动”按钮。
+3. 要防止意外重新进入操作，请在 `startButton_Click` 顶部添加下列语句，以禁用“启动”**** 按钮。
 
     ```vb
     ' Disable the button until the operation is complete.
@@ -389,7 +389,7 @@ ms.locfileid: "74715853"
     startButton.IsEnabled = True
     ```
 
-    有关重新进入的详细信息，请参阅[处理异步应用中的重新进入（Visual Basic）](../../../../visual-basic/programming-guide/concepts/async/handling-reentrancy-in-async-apps.md)。
+    有关重新进入的详细信息，请参阅[处理异步应用中的重新进入（Visual Basic）](handling-reentrancy-in-async-apps.md)。
 
 4. 最后，将 `Async` 修饰符添加到声明，以便事件处理程序可以等待 `SumPagSizesAsync`。
 
@@ -397,25 +397,25 @@ ms.locfileid: "74715853"
     Async Sub startButton_Click(sender As Object, e As RoutedEventArgs) Handles startButton.Click
     ```
 
-    通常情况下，事件处理程序的名称不会更改。 返回类型没有更改为 `Task`，因为事件处理程序必须是 Visual Basic 中 `Sub` 过程。
+    通常情况下，事件处理程序的名称不会更改。 返回类型没有更改为， `Task` 因为事件处理程序必须是 `Sub` Visual Basic 中的过程。
 
     项目从同步处理到异步处理的转换完成。
 
 ## <a name="test-the-asynchronous-solution"></a>测试异步解决方案
 
-1. 按 F5 键以运行程序，然后选择 **“启动”** 按钮。
+1. 按 F5 键运行程序，然后选择“启动”**** 按钮。
 
 2. 此时应显示类似于同步解决方案的输出的输出。 但是，请注意下列差异。
 
-    - 处理完成后，所有结果不会同时出现。 例如，两个程序都在 `startButton_Click` 中包含一行可以清除文本框的代码。 目的在于，在一组结果显示后，第二次选择“启动”按钮时，可以清除运行之间的文本框。 在同步版本中，下载完成且 UI 线程可以自由完成其他工作时，文本框在计数第二次显示之前即被清除。 在异步版本中，选择“启动”按钮后立即清除文本框。
+    - 处理完成后，所有结果不会同时出现。 例如，两个程序都在 `startButton_Click` 中包含一行可以清除文本框的代码。 目的在于，在一组结果显示后，第二次选择“启动”**** 按钮时，可以清除运行之间的文本框。 在同步版本中，下载完成且 UI 线程可以自由完成其他工作时，文本框在计数第二次显示之前即被清除。 在异步版本中，选择“启动”**** 按钮后立即清除文本框。
 
-    - 最重要的是，UI 线程在下载过程中未被阻止。 在 Web 资源下载、计数和显示期间，可以移动窗口或调整窗口大小。 如果其中一个网站速度缓慢或没有响应，则可以通过选择“关闭”按钮取消操作（右上角红色字段中的 x）。
+    - 最重要的是，UI 线程在下载过程中未被阻止。 在 Web 资源下载、计数和显示期间，可以移动窗口或调整窗口大小。 如果其中一个网站速度缓慢或没有响应，则可以通过选择“关闭”**** 按钮取消操作（右上角红色字段中的 x）。
 
 ## <a name="replace-the-geturlcontentsasync-method-with-a-net-framework-method"></a>将 GetURLContentsAsync 方法替换为 .NET Framework 方法
 
-1. .NET Framework 提供了许多可以使用的异步方法。 其中一种是 <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29?displayProperty=nameWithType> 方法，只执行本演练所需的操作。 你可以使用它来替代你在早前过程中创建的 `GetURLContentsAsync` 方法。
+1. .NET Framework 提供了许多可以使用的异步方法。 其中一种 <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29?displayProperty=nameWithType> 方法是方法，它可以执行本演练所需的操作。 你可以使用它来替代你在早前过程中创建的 `GetURLContentsAsync` 方法。
 
-    第一步是在 `SumPageSizesAsync` 方法中创建 <xref:System.Net.Http.HttpClient> 对象。 在方法的开头添加下列声明。
+    第一步是 <xref:System.Net.Http.HttpClient> 在方法中创建对象 `SumPageSizesAsync` 。 在方法的开头添加下列声明。
 
     ```vb
     ' Declare an HttpClient object and increase the buffer size. The
@@ -432,13 +432,13 @@ ms.locfileid: "74715853"
 
 3. 删除或注释禁用你编写的 `GetURLContentsAsync` 方法。
 
-4. 按 F5 键以运行程序，然后选择 **“启动”** 按钮。
+4. 按 F5 键运行程序，然后选择“启动”**** 按钮。
 
     此版本的项目的行为应与“测试异步解决方案”过程描述的行为匹配，且你的工作量应该更少。
 
 ## <a name="example"></a>示例
 
-下面是使用异步 `GetURLContentsAsync` 方法转换的异步解决方案的完整示例。 请注意，它与原始同步解决方案十分类似。
+下面是使用异步方法转换后的异步解决方案的完整示例 `GetURLContentsAsync` 。 请注意，它与原始同步解决方案十分类似。
 
 ```vb
 ' Add the following Imports statements, and add a reference for System.Net.Http.
@@ -660,9 +660,9 @@ End Class
 
 ## <a name="see-also"></a>另请参阅
 
-- [异步示例：访问 Web 演练（C# 和 Visual Basic）](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
+- [Async Sample: Accessing the Web Walkthrough (C# and Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)（异步示例：访问 Web 演练（C# 和 Visual Basic））
 - [Await 运算符](../../../language-reference/operators/await-operator.md)
-- [Async](../../../language-reference/modifiers/async.md)
+- [异步](../../../language-reference/modifiers/async.md)
 - [使用 Async 和 Await 的异步编程 (Visual Basic)](index.md)
 - [异步返回类型 (Visual Basic)](async-return-types.md)
 - [基于任务的异步编程 (TAP)](https://www.microsoft.com/download/details.aspx?id=19957)

@@ -2,18 +2,18 @@
 title: 如何：对元素进行排序
 ms.date: 07/20/2015
 ms.assetid: c2c09279-6c8a-482e-8e71-b1453a815052
-ms.openlocfilehash: 84d791a73c27b9acf1eaa5a5e4a31d6798a6c76d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1204fb4dc190d68956d01ffce225ce40e11538a4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74341541"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397747"
 ---
 # <a name="how-to-sort-elements-visual-basic"></a>如何：对元素进行排序（Visual Basic）
 本示例演示如何编写对查询结果进行排序的查询。  
   
 ## <a name="example"></a>示例  
- 本示例使用下面的 XML 文档：[示例 XML 文件：数值数据 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-linq-to-xml.md)。  
+ 本示例使用下面的 XML 文档：[示例 XML 文件：数值数据 (LINQ to XML)](sample-xml-file-numerical-data-linq-to-xml.md)。  
   
 ```vb  
 Dim root As XElement = XElement.Load("Data.xml")  
@@ -42,7 +42,7 @@ Next
 ## <a name="example"></a>示例  
  下面的示例演示如何对命名空间中的 XML 进行同样的查询。 有关详细信息，请参阅[命名空间概述（LINQ to XML）（Visual Basic）](namespaces-overview-linq-to-xml.md)。  
   
- 本示例使用下面的 XML 文档：[示例 XML 文件：命名空间中的数值数据](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-numerical-data-in-a-namespace.md)。  
+ 本示例使用下面的 XML 文档：[示例 XML 文件：命名空间中的数值数据](sample-xml-file-numerical-data-in-a-namespace.md)。  
   
 ```vb  
 Imports <xmlns='http://www.adatum.com'>  
@@ -76,5 +76,5 @@ End Module
   
 ## <a name="see-also"></a>另请参阅
 
-- [对数据进行排序](../../../../visual-basic/programming-guide/concepts/linq/sorting-data.md)
-- [基本查询（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [对数据进行排序](sorting-data.md)
+- [基本查询（LINQ to XML）（Visual Basic）](basic-queries-linq-to-xml.md)
