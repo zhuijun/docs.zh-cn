@@ -7,12 +7,12 @@ helpviewer_keywords:
 - stored procedures [LINQ to SQL]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 6436d384-d1e0-40aa-8afd-451007477260
-ms.openlocfilehash: f91ccda1842887b3785ce304fd41bdd020a55479
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b451642a16f36c4f7fd19c853fdfd2282f5bede5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345028"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84405025"
 ---
 # <a name="how-to-call-a-stored-procedure-by-using-linq-visual-basic"></a>如何：使用 LINQ 调用存储过程 (Visual Basic)
 使用语言集成查询（LINQ），可以轻松地访问数据库信息，其中包括数据库对象（如存储过程）。  
@@ -25,23 +25,23 @@ ms.locfileid: "74345028"
   
 ### <a name="to-create-a-connection-to-a-database"></a>创建与数据库的连接  
   
-1. 在 Visual Studio 中，通过单击 "**视图**"**菜单上的** **服务器资源管理器**/数据库资源管理器来打开**服务器资源管理器**/**数据库资源管理器**。  
+1. 在 Visual Studio 中， **Server Explorer** / **Database Explorer**单击**Server Explorer** / "**视图**" 菜单上的 "服务器资源管理器"**数据库资源管理器**打开服务器资源管理器数据库资源管理器。  
   
-2. 右键单击**服务器资源管理器**/**数据库资源管理器**中的 "**数据连接**"，然后单击 "**添加连接**"。  
+2. 右键单击**服务器资源管理器**数据库资源管理器中的 "**数据连接**" / **Database Explorer** ，然后单击 "**添加连接**"。  
   
 3. 指定与 Northwind 示例数据库的有效连接。  
   
 ### <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a>添加包含 LINQ to SQL 文件的项目  
   
-1. 在 Visual Studio 中的“文件”菜单上，指向“新建”，然后单击“项目”。 选择 Visual Basic **Windows 窗体应用程序**作为项目类型。  
+1. 在 Visual Studio 的 "**文件**" 菜单上，指向 "**新建**"，然后单击 "**项目**"。 选择 Visual Basic **Windows 窗体应用程序**作为项目类型。  
   
-2. 在 **“项目”** 菜单上，单击 **“添加新项”** 。 选择 " **LINQ to SQL 类**" 项模板。  
+2. 在 **“项目”** 菜单上，单击 **“添加新项”**。 选择 " **LINQ to SQL 类**" 项模板。  
   
-3. 为 `northwind.dbml` 文件命名。 单击 **“添加”** 。 为 northwind 文件打开对象关系设计器（O/R 设计器）。  
+3. 命名文件 `northwind.dbml`。 单击“添加”。 为 northwind 文件打开对象关系设计器（O/R 设计器）。  
   
 ### <a name="to-add-stored-procedures-to-the-or-designer"></a>将存储过程添加到 O/R 设计器  
   
-1. 在**服务器资源管理器**/**数据库资源管理器**中，展开与 Northwind 数据库的连接。 展开 "**存储过程**" 文件夹。  
+1. 在**服务器资源管理器** / **数据库资源管理器**中，展开与 Northwind 数据库的连接。 展开 **“存储过程”** 文件夹。  
   
      如果关闭了 O/R 设计器，则可以通过双击先前添加的 northwind 文件来重新打开它。  
   
@@ -53,15 +53,15 @@ ms.locfileid: "74345028"
   
 ### <a name="to-add-code-to-display-the-results-of-the-stored-procedures"></a>添加代码以显示存储过程的结果  
   
-1. 从 "**工具箱**" 中，将 "<xref:System.Windows.Forms.DataGridView>" 控件拖动到项目的默认 Windows 窗体 "Form1"。  
+1. 从 "**工具箱**" 中，将 <xref:System.Windows.Forms.DataGridView> 控件拖动到项目的默认 Windows 窗体 "Form1"。  
   
 2. 双击 "Form1"，将代码添加到其 `Load` 事件。  
   
-3. 将存储过程添加到 O/R 设计器后，设计器将为您的项目添加 <xref:System.Data.Linq.DataContext> 对象。 此对象包含访问这些过程所需的代码。 项目的 <xref:System.Data.Linq.DataContext> 对象根据 .dbml 文件的名称进行命名。 对于此项目，<xref:System.Data.Linq.DataContext> 对象名为 `northwindDataContext`。  
+3. 将存储过程添加到 O/R 设计器后，设计器将 <xref:System.Data.Linq.DataContext> 为您的项目添加一个对象。 此对象包含访问这些过程所需的代码。 <xref:System.Data.Linq.DataContext>项目的对象根据 .dbml 文件的名称进行命名。 对于此项目，该 <xref:System.Data.Linq.DataContext> 对象的名称为 `northwindDataContext` 。  
   
-     您可以在代码中创建 <xref:System.Data.Linq.DataContext> 的实例，并调用由 O/R 设计器指定的存储过程方法。 若要绑定到 <xref:System.Windows.Forms.DataGridView> 对象，可能需要通过对存储过程的结果调用 <xref:System.Linq.Enumerable.ToList%2A> 方法来强制立即执行查询。  
+     您可以在代码中创建的一个实例 <xref:System.Data.Linq.DataContext> ，并调用由 O/R 设计器指定的存储过程方法。 若要绑定到 <xref:System.Windows.Forms.DataGridView> 对象，可能需要通过对存储过程的结果调用方法来强制立即执行查询 <xref:System.Linq.Enumerable.ToList%2A> 。  
   
-     将以下代码添加到 `Load` 事件，以便调用公开为数据上下文的方法的存储过程之一。  
+     向事件中添加以下代码 `Load` ，以调用作为数据上下文的方法公开的任何存储过程。  
   
      [!code-vb[VbLINQtoSQLHowTos#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQtoSQLHowTos/VB/Form3.vb#1)]  
     [!code-vb[VbLINQtoSQLHowTos#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQtoSQLHowTos/VB/Form3.vb#2)]  
@@ -70,8 +70,8 @@ ms.locfileid: "74345028"
   
 ## <a name="see-also"></a>另请参阅
 
-- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [查询](../../../../visual-basic/language-reference/queries/index.md)
+- [LINQ](index.md)
+- [查询](../../../language-reference/queries/index.md)
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
 - [DataContext 方法（O/R 设计器）](/visualstudio/data-tools/datacontext-methods-o-r-designer)
-- [如何：分配存储过程以便执行更新、插入和删除操作（O/R 设计器）](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)
+- [如何：分配存储流程来执行更新、插入和删除操作（O/R 设计器）](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)

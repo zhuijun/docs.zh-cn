@@ -2,14 +2,14 @@
 title: 如何：检索元素的值 (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 76b9b2a5-b3ba-49da-ba74-82100e1bd21c
-ms.openlocfilehash: b1a61091dc59b403c5d967609e8870492c24347f
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: b8ff44416f0fbb590119af7e11714e449185d977
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80248929"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397786"
 ---
-# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-visual-basic"></a>如何：检索元素的值（LINQ 到 XML）（可视基本）
+# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-visual-basic"></a>如何：检索元素的值（LINQ to XML）（Visual Basic）
 本主题演示如何获取元素的值。 有两种主要方法可以完成此操作。 一种方法是将 <xref:System.Xml.Linq.XElement> 或 <xref:System.Xml.Linq.XAttribute> 强制转换为所需的类型。 然后，显式转换运算符将元素或属性的内容转换为指定的类型，并将其分配给变量。 此外，还可以使用 <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> 属性或 <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType> 属性。  
   
  对于 Visual Basic，最好的方法是使用 <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> 属性。  
@@ -23,7 +23,7 @@ Console.WriteLine(e)
 Console.WriteLine("Value of e:" & e.Value)  
 ```  
   
- 此示例生成以下输出：  
+ 该示例产生下面的输出：  
   
 ```xml  
 <StringElement>abcde</StringElement>  
@@ -39,7 +39,7 @@ Console.WriteLine(e)
 Console.WriteLine("Value of e:" & CInt(e))  
 ```  
   
- 此示例生成以下输出：  
+ 该示例产生下面的输出：  
   
 ```xml  
 <Age>44</Age>  
@@ -59,7 +59,7 @@ Console.WriteLine(e)
 Console.WriteLine("Value of e:" & e.Value)  
 ```  
   
- 此示例生成以下输出：  
+ 该示例产生下面的输出：  
   
 ```xml  
 <StringElement>abcde</StringElement>  
@@ -67,7 +67,7 @@ Value of e:abcde
 ```  
   
 ## <a name="example"></a>示例  
- 有时，尽管不能确定某个元素是否存在，还是会尝试检索该元素的值。 在这种情况下，当您将强制转换的元素分配给可 null 类型（或`string`.NET Framework 中的一种空值类型）时，如果该元素不存在，则分配的变量只是设置为`Nothing`。 下面的代码演示当元素可能存在也可能不存在时，使用强制转换比使用 <xref:System.Xml.Linq.XElement.Value%2A> 属性更加简单。  
+ 有时，尽管不能确定某个元素是否存在，还是会尝试检索该元素的值。 在这种情况下，当你将强制转换元素分配给可以为 null 的类型（ `string` 或 .NET Framework 中可为 null 的值类型之一）时，如果该元素不存在，则分配的变量只会设置为 `Nothing` 。 下面的代码演示当元素可能存在也可能不存在时，使用强制转换比使用 <xref:System.Xml.Linq.XElement.Value%2A> 属性更加简单。  
   
 ```vb  
 Dim root As XElement = <Root>  
@@ -151,4 +151,4 @@ v4:element does not exist
   
 ## <a name="see-also"></a>请参阅
 
-- [LINQ to XML 轴 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [LINQ to XML 轴 (Visual Basic)](linq-to-xml-axes.md)

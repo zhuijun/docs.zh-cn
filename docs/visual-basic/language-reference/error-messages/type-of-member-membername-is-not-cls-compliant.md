@@ -7,39 +7,39 @@ f1_keywords:
 helpviewer_keywords:
 - BC40025
 ms.assetid: adbd34bb-43d2-4266-90e7-cd1afaf49b4e
-ms.openlocfilehash: f6f66617774dccff4450cce42904126acf5c3769
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 030cb31b8f1ba0e8eaa82eeb8e37153411a53404
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65590683"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400300"
 ---
-# <a name="type-of-member-membername-is-not-cls-compliant"></a>成员类型\<成员名称 > 不符合 cls 的
-为此成员不是指定的数据类型的一部分[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md)(CLS)。 这不是在组件中，一个错误，因为.NET Framework 和 Visual Basic 支持此数据类型。 但是，在严格符合 cls 的代码中编写的另一个组件可能不支持此数据类型。 此类组件可能不能成功与您的组件进行交互。  
+# <a name="type-of-member-membername-is-not-cls-compliant"></a>成员“\<membername>”的类型不符合 CLS
+为此成员指定的数据类型不是[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md)（CLS）的一部分。 这不是你的组件中的错误，因为 .NET Framework 和 Visual Basic 支持此数据类型。 但是，以严格符合 CLS 的代码编写的另一个组件可能不支持此数据类型。 此类组件可能无法与组件成功交互。  
   
- 以下 Visual Basic 数据类型不符合 CLS 規格：  
+ 以下 Visual Basic 数据类型不符合 CLS：  
   
-- [SByte 数据类型](../../../visual-basic/language-reference/data-types/sbyte-data-type.md)  
+- [SByte 数据类型](../data-types/sbyte-data-type.md)  
   
-- [UInteger 数据类型](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)  
+- [UInteger 数据类型](../data-types/uinteger-data-type.md)  
   
-- [ULong 数据类型](../../../visual-basic/language-reference/data-types/ulong-data-type.md)  
+- [ULong 数据类型](../data-types/ulong-data-type.md)  
   
-- [UShort 数据类型](../../../visual-basic/language-reference/data-types/ushort-data-type.md)  
+- [UShort 数据类型](../data-types/ushort-data-type.md)  
   
  默认情况下，此消息是一个警告。 有关隐藏警告或将警告视为错误的详细信息，请参见 [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)。  
   
- **错误 ID:** BC40025  
+ **错误 ID：** BC40025  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 如果你的组件接口只能与其他.NET Framework 组件，或未通过接口与任何其他组件，您不需要更改任何内容。  
+- 如果你的组件只与其他 .NET Framework 组件交互，或者不与任何其他组件进行交互，则无需更改任何内容。  
   
-- 如果你与不是为.NET Framework 编写的组件交互，您可能能够通过反射或从文档中，确定是否支持此数据类型。 如果是这样，您不需要更改任何内容。  
+- 如果与不是为 .NET Framework 编写的组件进行交互，则可以通过反射或文档来确定它是否支持此数据类型。 如果是这样，则无需更改任何内容。  
   
-- 如果你与不支持此数据类型的组件交互，您必须将其替换的最接近的符合 cls 的类型。 例如，如果不需要 2147483647 以上的数值范围，可以使用 `UInteger` 取代 `Integer` 。 如果确实需要更大范围，可以用 `UInteger` 代替 `Long`。  
+- 如果与不支持此数据类型的组件进行交互，则必须将其替换为最接近的符合 CLS 的类型。 例如，如果不需要 2147483647 以上的数值范围，可以使用 `UInteger` 取代 `Integer` 。 如果确实需要更大范围，可以用 `UInteger` 代替 `Long`。  
   
-- 如果要与自动化或 COM 对象交互，请注意，某些类型在.NET Framework 中具有不同的数据宽度。 例如，`uint` 在其他环境中通常为 16 位。 如果您将 16 位自变量传递给此类组件，将其作为声明`UShort`而不是`UInteger`中托管的 Visual Basic 代码。  
+- 如果要与自动化或 COM 对象进行交互，请记住，某些类型的数据宽度与 .NET Framework 中的不同。 例如，`uint` 在其他环境中通常为 16 位。 如果要将16位参数传递给此类组件，请 `UShort` `UInteger` 在托管的 Visual Basic 代码中将其声明为而不是。  
   
 ## <a name="see-also"></a>请参阅
 

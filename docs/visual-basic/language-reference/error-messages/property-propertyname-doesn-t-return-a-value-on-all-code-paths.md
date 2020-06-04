@@ -7,40 +7,40 @@ f1_keywords:
 helpviewer_keywords:
 - BC42107
 ms.assetid: 06800966-9c3b-4844-9f13-83ac95607d32
-ms.openlocfilehash: a5cb28a024274e58da1755b437d6ba4ca6712610
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 21a1c4dbab6e26cd1cb848e270bbda9a544c2a67
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64661718"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400417"
 ---
-# <a name="property-propertyname-doesnt-return-a-value-on-all-code-paths"></a>属性 '\<属性名称 > 没有在所有代码路径上返回一个值
-属性 '\<属性名称 > 没有在所有代码路径上返回一个值。 使用该结果时，可能会在运行时发生 null 引用异常。  
+# <a name="property-propertyname-doesnt-return-a-value-on-all-code-paths"></a>属性“\<propertyname>”并非在所有代码路径上都返回值
+属性 " \<propertyname> " 不会在所有代码路径上都返回值。 使用该结果时，可能会在运行时发生 null 引用异常。  
   
- 属性`Get`过程包含至少一个可能不会返回一个值的代码路径。  
+ 属性 `Get` 过程至少有一个可能的路径，其代码中不返回值。  
   
- 可以从属性中返回值`Get`处于以下任一过程：  
+ 可以通过 `Get` 以下任一方式从属性过程返回值：  
   
-- 将值分配给属性名称，然后执行`Exit Property`语句。  
+- 将值分配给属性名称，然后执行 `Exit Property` 语句。  
   
-- 将值分配给属性名称，然后执行`End Get`语句。  
+- 将值分配给属性名称，然后执行 `End Get` 语句。  
   
-- 包括中的值[Return 语句](../../../visual-basic/language-reference/statements/return-statement.md)。  
+- 在[Return 语句](../statements/return-statement.md)中包含值。  
   
- 控制权将传递给`Exit Property`或`End Get`并且没有分配任何值的属性名称，`Get`返回属性的数据类型的默认值。 详细信息，请参阅"行为"中[Function 语句](../../../visual-basic/language-reference/statements/function-statement.md)。  
+ 如果控件传递给 `Exit Property` 或 `End Get` ，并且没有为属性名称分配任何值，则该 `Get` 过程将返回属性数据类型的默认值。 有关详细信息，请参阅[Function 语句](../statements/function-statement.md)中的 "行为"。  
   
  默认情况下，此消息是一个警告。 有关隐藏警告或将警告视为错误的详细信息，请参见 [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)。  
   
- **错误 ID:** BC42107  
+ **错误 ID：** BC42107  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 检查控制流逻辑，并确保分配导致返回每个语句前的值。  
+- 检查控制流逻辑，并确保在导致返回的每个语句之前赋值。  
   
-     它是更轻松地保证每个返回从过程返回一个值，如果始终使用`Return`语句。 如果之前的最后一个语句执行此操作，`End Get`应为`Return`语句。  
+     如果始终使用语句，则更容易保证每次从过程返回一个值 `Return` 。 如果执行此操作，则之前的最后一个语句 `End Get` 应为 `Return` 语句。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [属性过程](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
-- [Property 语句](../../../visual-basic/language-reference/statements/property-statement.md)
-- [Get 语句](../../../visual-basic/language-reference/statements/get-statement.md)
+- [Property 过程](../../programming-guide/language-features/procedures/property-procedures.md)
+- [Property Statement](../statements/property-statement.md)
+- [Get 语句](../statements/get-statement.md)

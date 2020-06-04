@@ -6,12 +6,12 @@ helpviewer_keywords:
 - anonymous types [Visual Basic], inferring property names and types
 - inferring property types [Visual Basic]
 ms.assetid: 7c748b22-913f-4d9d-b747-6b7bf296a0bc
-ms.openlocfilehash: 89a39e8e9cd66b1d774da70be47c7c6824cccef2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9ebbbe9d2e6d36f5ab2bc7f7c916d18c9240a06d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350025"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404883"
 ---
 # <a name="how-to-infer-property-names-and-types-in-anonymous-type-declarations-visual-basic"></a>如何：推断匿名类型声明中的属性名和类型 (Visual Basic)
 
@@ -128,7 +128,7 @@ ms.locfileid: "74350025"
 
 ## <a name="see-also"></a>另请参阅
 
-- [对象初始值设定项：命名类型和匿名类型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)
-- [局部类型推理](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [匿名类型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)
-- [Key](../../../../visual-basic/language-reference/modifiers/key.md)
+- [对象初始值设定项：命名和匿名类型](object-initializers-named-and-anonymous-types.md)
+- [局部类型推理](../variables/local-type-inference.md)
+- [匿名类型](anonymous-types.md)
+- [密钥](../../../language-reference/modifiers/key.md)

@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30001
 ms.assetid: 43c1b509-15f9-4e91-bcad-90bcb5f6f191
-ms.openlocfilehash: 3110241d2c10c3018b2144dbc8234a9b6633e0c4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 5e83fda1a7e58cceb86bbd3e700a25b70be96587
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593247"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400326"
 ---
 # <a name="statement-is-not-valid-in-a-namespace"></a>语句在命名空间中无效
-语句不能出现在命名空间的级别。 允许在命名空间级别的唯一声明是模块、 接口、 类、 委托、 枚举和结构声明。  
+语句不能出现在命名空间级别。 命名空间级别唯一允许的声明为 module、interface、class、delegate、枚举和结构声明。  
   
- **错误 ID:** BC30001  
+ **错误 ID：** BC30001  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 将语句移动到模块、 类、 接口、 结构、 枚举或委托定义内的位置。  
+- 将语句移动到模块、类、接口、结构、枚举或委托定义中的某个位置。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [在 Visual Basic 中的作用域](../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
-- [在 Visual Basic 中的命名空间](../../../visual-basic/programming-guide/program-structure/namespaces.md)
+- [Visual Basic 中的范围](../../programming-guide/language-features/declared-elements/scope.md)
+- [Visual Basic 中的命名空间](../../programming-guide/program-structure/namespaces.md)

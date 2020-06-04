@@ -2,14 +2,14 @@
 title: 使用反射访问特性
 ms.date: 07/20/2015
 ms.assetid: c56e41da-5433-464f-a7bf-2a722e78bc9f
-ms.openlocfilehash: 94352f07cf1f7e4a35f023503f138596ae5ac227
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c0da5c4ae00eb2bc80b10f63f4bfd39763445e55
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353559"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400753"
 ---
-# <a name="accessing-attributes-by-using-reflection-visual-basic"></a>使用反射访问特性（Visual Basic）
+# <a name="accessing-attributes-by-using-reflection-visual-basic"></a>使用反射访问特性 (Visual Basic)
 
 你可以定义自定义特性并将其放入源代码中这一事实，在没有检索该信息并对其进行操作的方法的情况下将没有任何价值。 通过使用反射，可以检索通过自定义特性定义的信息。 主要方法是 `GetCustomAttributes`，它返回对象数组，这些对象在运行时等效于源代码特性。 此方法有多个重载版本。 有关详细信息，请参阅 <xref:System.Attribute>。
 
@@ -29,7 +29,7 @@ Dim anonymousAuthorObject As Author = New Author("P. Ackerman")
 anonymousAuthorObject.version = 1.1
 ```
 
-但是，在为特性查询 `SampleClass` 之前，代码将不会执行。 对 `GetCustomAttributes` 调用 `SampleClass` 会导致按上述方式构造并初始化一个 `Author` 对象。 如果该类具有其他特性，则将以类似方式构造其他特性对象。 然后 `GetCustomAttributes` 会以数组形式返回 `Author` 对象和任何其他特性对象。 之后你便可以循环访问此数组，根据每个数组元素的类型确定所应用的特性，并从特性对象中提取信息。
+但是，在为特性查询 `SampleClass` 之前，代码将不会执行。 对 `SampleClass` 调用 `GetCustomAttributes` 会导致按上述方式构造并初始化一个 `Author` 对象。 如果该类具有其他特性，则将以类似方式构造其他特性对象。 然后 `GetCustomAttributes` 会以数组形式返回 `Author` 对象和任何其他特性对象。 之后你便可以循环访问此数组，根据每个数组元素的类型确定所应用的特性，并从特性对象中提取信息。
 
 ## <a name="example"></a>示例
 
@@ -105,8 +105,8 @@ End Class
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Visual Basic 编程指南](../../../../visual-basic/programming-guide/index.md)
+- [Visual Basic 编程指南](../../index.md)
 - [检索存储在特性中的信息](../../../../standard/attributes/retrieving-information-stored-in-attributes.md)
-- [反射 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [属性 (Visual Basic)](../../../../visual-basic/language-reference/attributes.md)
-- [创建自定义特性 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
+- [反射 (Visual Basic)](../reflection.md)
+- [特性 (Visual Basic)](../../../language-reference/attributes.md)
+- [创建自定义特性 (Visual Basic)](creating-custom-attributes.md)

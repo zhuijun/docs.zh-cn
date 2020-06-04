@@ -1,5 +1,5 @@
 ---
-title: 如何：将字符串转换为字节数组
+title: 如何：将字符串转换为字符数组
 ms.date: 07/20/2015
 helpviewer_keywords:
 - character arrays [Visual Basic], converting strings
@@ -8,18 +8,18 @@ helpviewer_keywords:
 - strings [Visual Basic], converting to arrays
 - string conversion [Visual Basic], arrays
 ms.assetid: 1b54b686-ab29-413b-adce-6bd5422376eb
-ms.openlocfilehash: d2f7128f97e576d37216d3aa9736921f13f77004
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: eca8cd7be8da1f6149dadf1e9edeab5e5225ab9f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352449"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360665"
 ---
 # <a name="how-to-convert-a-string-to-an-array-of-characters-in-visual-basic"></a>如何：在 Visual Basic 中将字符串转换为字符数组
-有时，对字符串中的字符和这些字符在字符串中的位置（例如在分析字符串时）使用数据是非常有用的。 此示例演示如何通过调用字符串的 <xref:System.String.ToCharArray%2A> 方法来获取字符串中的字符数组。  
+有时，对字符串中的字符和这些字符在字符串中的位置（例如在分析字符串时）使用数据是非常有用的。 此示例演示如何通过调用字符串的方法来获取字符串中的字符数组 <xref:System.String.ToCharArray%2A> 。  
   
 ## <a name="example"></a>示例  
- 此示例演示如何将字符串拆分为 `Char` 数组，以及如何将字符串拆分为其 Unicode 文本字符的 `String` 数组。 此区别的原因是 Unicode 文本字符可以由两个或多个 `Char` 字符组成（如代理项对或组合字符序列）。 有关详细信息，请参阅 <xref:System.Globalization.TextElementEnumerator> 和[Unicode 标准](https://www.unicode.org/standard/standard.html)。  
+ 此示例演示如何将字符串拆分为 `Char` 数组，以及如何将字符串拆分为 `String` 其 Unicode 文本字符的数组。 此区别的原因是 Unicode 文本字符可以由两个或更多字符组成 `Char` （如代理项对或组合字符序列）。 有关详细信息，请参阅 <xref:System.Globalization.TextElementEnumerator> 和[Unicode 标准](https://www.unicode.org/standard/standard.html)。  
   
  [!code-vb[VbVbalrStrings#75](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class4.vb#75)]  
   
@@ -32,6 +32,6 @@ ms.locfileid: "74352449"
 
 - <xref:System.String.Chars%2A>
 - <xref:System.Globalization.StringInfo?displayProperty=nameWithType>
-- [如何：访问字符串中的字符](../../../../visual-basic/programming-guide/language-features/strings/how-to-access-characters-in-strings.md)
-- [在 Visual Basic 中将字符串转换为其他数据类型](../../../../visual-basic/programming-guide/language-features/strings/converting-between-strings-and-other-data-types.md)
-- [字符串](../../../../visual-basic/programming-guide/language-features/strings/index.md)
+- [如何：访问字符串中的字符](how-to-access-characters-in-strings.md)
+- [Visual Basic 中字符串和其他数据类型间的转换](converting-between-strings-and-other-data-types.md)
+- [字符串](index.md)

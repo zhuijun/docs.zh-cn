@@ -6,12 +6,12 @@ helpviewer_keywords:
 - COM interop [Visual Basic]
 - shared components
 ms.assetid: f5a72143-c268-4dff-a019-974ad940e17d
-ms.openlocfilehash: c3567464616d3b0b3f91ff57e8a169aca046c866
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 377958a21886fe0257633ea19417f9a19bd51ff3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452287"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396864"
 ---
 # <a name="com-interoperability-in-net-framework-applications-visual-basic"></a>.NET Framework 应用程序中的 COM 互操作性 (Visual Basic)
 
@@ -25,7 +25,7 @@ ms.locfileid: "77452287"
 
 | | |
 |---------|---------|
-| [COM 互操作](../../../visual-basic/programming-guide/com-interop/index.md) | 提供与 Visual Basic 中的 COM 互操作性相关的主题的链接，这些主题包括 COM 对象、ActiveX 控件、Win32 Dll、托管对象以及 COM 对象的继承。 |
+| [COM 互操作](index.md) | 提供与 Visual Basic 中的 COM 互操作性相关的主题的链接，这些主题包括 COM 对象、ActiveX 控件、Win32 Dll、托管对象以及 COM 对象的继承。 |
 | [与非托管代码交互操作](../../../framework/interop/index.md) | 简要介绍了托管和非托管代码之间的一些交互问题，并提供了进一步研究的链接。 |
 | [COM 包装](../../../standard/native-interop/com-wrappers.md) | 讨论允许托管代码调用 COM 方法的运行时可调用包装器，以及允许 COM 客户端调用 .NET 对象方法的 COM 可调用包装器。 |
 | [高级 COM 互操作性](../../../framework/interop/index.md) | 提供一些链接，这些链接指向涵盖与包装、异常、继承、线程处理、事件、转换和封送处理相关的 COM 互操作性。 |
