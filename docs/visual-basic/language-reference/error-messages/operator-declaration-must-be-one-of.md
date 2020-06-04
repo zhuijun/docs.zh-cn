@@ -1,5 +1,5 @@
 ---
-title: '运算符声明必须是其中一个: +、-，*，-、-、 ^， &amp;，Like、 Mod、 和，Or、 Xor、 Not、 <<>>、、 = <>、 <、 < =、 >、 > =、 CType、 IsTrue、 IsFalse'
+title: 运算符声明必须是以下其中之一： +,-, *,-,-, ^、 &amp; 、Like、Mod、And、Or、Xor、Not、 <<、 >>、=、 <>、<、<=、>、>=、CType、IsTrue、IsFalse
 ms.date: 07/20/2015
 f1_keywords:
 - bc33000
@@ -7,36 +7,36 @@ f1_keywords:
 helpviewer_keywords:
 - BC33000
 ms.assetid: 15c5d8eb-3a8c-4141-8f41-33151afabf97
-ms.openlocfilehash: 4283547109ec312cc4fe07a054bbb8db3bff660f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3fb2cf392611e5ca83818e3bf173513be031085d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946596"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409323"
 ---
-# <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a><span data-ttu-id="71921-102">运算符声明必须是其中一个: +、-，\*，\,/、 ^， &amp;，Like、 Mod、 和，Or、 Xor、 Not、 \< \<，>>...</span><span class="sxs-lookup"><span data-stu-id="71921-102">Operator declaration must be one of:  +,-,\*,\,/,^, &amp;, Like, Mod, And, Or, Xor, Not, \<\<, >>...</span></span>
-<span data-ttu-id="71921-103">您可以声明只是进行重载的运算符。</span><span class="sxs-lookup"><span data-stu-id="71921-103">You can declare only an operator that is eligible for overloading.</span></span> <span data-ttu-id="71921-104">下表列出了可以声明的运算符。</span><span class="sxs-lookup"><span data-stu-id="71921-104">The following table lists the operators you can declare.</span></span>  
+# <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a><span data-ttu-id="450e8-102">运算符声明必须是以下之一： +,-, \*、 \, /、^、 &amp; 、Like、Mod、And、Or、Xor、Not、 \<\<, >> .。。</span><span class="sxs-lookup"><span data-stu-id="450e8-102">Operator declaration must be one of:  +,-,\*,\,/,^, &amp;, Like, Mod, And, Or, Xor, Not, \<\<, >>...</span></span>
+<span data-ttu-id="450e8-103">您只能声明一个适合重载的运算符。</span><span class="sxs-lookup"><span data-stu-id="450e8-103">You can declare only an operator that is eligible for overloading.</span></span> <span data-ttu-id="450e8-104">下表列出了可以声明的运算符。</span><span class="sxs-lookup"><span data-stu-id="450e8-104">The following table lists the operators you can declare.</span></span>  
   
-|<span data-ttu-id="71921-105">类型</span><span class="sxs-lookup"><span data-stu-id="71921-105">Type</span></span>|<span data-ttu-id="71921-106">运算符</span><span class="sxs-lookup"><span data-stu-id="71921-106">Operators</span></span>|  
+|<span data-ttu-id="450e8-105">类型</span><span class="sxs-lookup"><span data-stu-id="450e8-105">Type</span></span>|<span data-ttu-id="450e8-106">运算符</span><span class="sxs-lookup"><span data-stu-id="450e8-106">Operators</span></span>|  
 |----------|---------------|  
-|<span data-ttu-id="71921-107">一元</span><span class="sxs-lookup"><span data-stu-id="71921-107">Unary</span></span>|<span data-ttu-id="71921-108">`+`, `-`, `IsFalse`, `IsTrue`, `Not`</span><span class="sxs-lookup"><span data-stu-id="71921-108">`+`, `-`, `IsFalse`, `IsTrue`, `Not`</span></span>|  
-|<span data-ttu-id="71921-109">二进制</span><span class="sxs-lookup"><span data-stu-id="71921-109">Binary</span></span>|<span data-ttu-id="71921-110">`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`</span><span class="sxs-lookup"><span data-stu-id="71921-110">`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`</span></span>|  
-|<span data-ttu-id="71921-111">转换（一元）</span><span class="sxs-lookup"><span data-stu-id="71921-111">Conversion (unary)</span></span>|`CType`|  
+|<span data-ttu-id="450e8-107">一元</span><span class="sxs-lookup"><span data-stu-id="450e8-107">Unary</span></span>|<span data-ttu-id="450e8-108">`+`, `-`, `IsFalse`, `IsTrue`, `Not`</span><span class="sxs-lookup"><span data-stu-id="450e8-108">`+`, `-`, `IsFalse`, `IsTrue`, `Not`</span></span>|  
+|<span data-ttu-id="450e8-109">二进制</span><span class="sxs-lookup"><span data-stu-id="450e8-109">Binary</span></span>|<span data-ttu-id="450e8-110">`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`</span><span class="sxs-lookup"><span data-stu-id="450e8-110">`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`</span></span>|  
+|<span data-ttu-id="450e8-111">转换（一元）</span><span class="sxs-lookup"><span data-stu-id="450e8-111">Conversion (unary)</span></span>|`CType`|  
   
- <span data-ttu-id="71921-112">请注意， `=` ，二元列表中的运算符是比较运算符，而不是赋值运算符。</span><span class="sxs-lookup"><span data-stu-id="71921-112">Note that the `=` operator in the binary list is the comparison operator, not the assignment operator.</span></span>  
+ <span data-ttu-id="450e8-112">请注意， `=` 二元列表中的运算符是比较运算符，而不是赋值运算符。</span><span class="sxs-lookup"><span data-stu-id="450e8-112">Note that the `=` operator in the binary list is the comparison operator, not the assignment operator.</span></span>  
   
- <span data-ttu-id="71921-113">**错误 ID:** BC33000</span><span class="sxs-lookup"><span data-stu-id="71921-113">**Error ID:** BC33000</span></span>  
+ <span data-ttu-id="450e8-113">**错误 ID：** BC33000</span><span class="sxs-lookup"><span data-stu-id="450e8-113">**Error ID:** BC33000</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="71921-114">更正此错误</span><span class="sxs-lookup"><span data-stu-id="71921-114">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="450e8-114">更正此错误</span><span class="sxs-lookup"><span data-stu-id="450e8-114">To correct this error</span></span>  
   
-1. <span data-ttu-id="71921-115">从一组可重载运算符中选择一个运算符。</span><span class="sxs-lookup"><span data-stu-id="71921-115">Select an operator from the set of overloadable operators.</span></span>  
+1. <span data-ttu-id="450e8-115">从一组可重载运算符中选择一个运算符。</span><span class="sxs-lookup"><span data-stu-id="450e8-115">Select an operator from the set of overloadable operators.</span></span>  
   
-2. <span data-ttu-id="71921-116">如果你需要重载无法直接重载的运算符这一功能，请创建用于获取适当参数并返回适当值的 `Function` 过程。</span><span class="sxs-lookup"><span data-stu-id="71921-116">If you need the functionality of overloading an operator that you cannot overload directly, create a `Function` procedure that takes the appropriate parameters and returns the appropriate value.</span></span>  
+2. <span data-ttu-id="450e8-116">如果你需要重载无法直接重载的运算符这一功能，请创建用于获取适当参数并返回适当值的 `Function` 过程。</span><span class="sxs-lookup"><span data-stu-id="450e8-116">If you need the functionality of overloading an operator that you cannot overload directly, create a `Function` procedure that takes the appropriate parameters and returns the appropriate value.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="71921-117">请参阅</span><span class="sxs-lookup"><span data-stu-id="71921-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="450e8-117">另请参阅</span><span class="sxs-lookup"><span data-stu-id="450e8-117">See also</span></span>
 
-- [<span data-ttu-id="71921-118">Operator Statement</span><span class="sxs-lookup"><span data-stu-id="71921-118">Operator Statement</span></span>](../../../visual-basic/language-reference/statements/operator-statement.md)
-- [<span data-ttu-id="71921-119">运算符过程</span><span class="sxs-lookup"><span data-stu-id="71921-119">Operator Procedures</span></span>](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
-- [<span data-ttu-id="71921-120">如何：定义运算符</span><span class="sxs-lookup"><span data-stu-id="71921-120">How to: Define an Operator</span></span>](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
-- [<span data-ttu-id="71921-121">如何：定义转换运算符</span><span class="sxs-lookup"><span data-stu-id="71921-121">How to: Define a Conversion Operator</span></span>](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
-- [<span data-ttu-id="71921-122">Function 语句</span><span class="sxs-lookup"><span data-stu-id="71921-122">Function Statement</span></span>](../../../visual-basic/language-reference/statements/function-statement.md)
+- [<span data-ttu-id="450e8-118">Operator Statement</span><span class="sxs-lookup"><span data-stu-id="450e8-118">Operator Statement</span></span>](../statements/operator-statement.md)
+- [<span data-ttu-id="450e8-119">运算符过程</span><span class="sxs-lookup"><span data-stu-id="450e8-119">Operator Procedures</span></span>](../../programming-guide/language-features/procedures/operator-procedures.md)
+- [<span data-ttu-id="450e8-120">如何：定义运算符</span><span class="sxs-lookup"><span data-stu-id="450e8-120">How to: Define an Operator</span></span>](../../programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [<span data-ttu-id="450e8-121">如何：定义转换运算符</span><span class="sxs-lookup"><span data-stu-id="450e8-121">How to: Define a Conversion Operator</span></span>](../../programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [<span data-ttu-id="450e8-122">Function 语句</span><span class="sxs-lookup"><span data-stu-id="450e8-122">Function Statement</span></span>](../statements/function-statement.md)
