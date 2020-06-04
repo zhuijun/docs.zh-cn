@@ -2,14 +2,14 @@
 title: 如何：修改表达式树
 ms.date: 07/20/2015
 ms.assetid: d1309fff-28bd-4d8e-a2cf-75725999e8f2
-ms.openlocfilehash: 12ccad6df7d6c7d91ebc290163db362eae173209
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1f052120a2e7e12f5a985adce3ae193afec0e9af
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353749"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410987"
 ---
-# <a name="how-to-modify-expression-trees-visual-basic"></a>如何：修改表达式树（Visual Basic）
+# <a name="how-to-modify-expression-trees-visual-basic"></a>如何：修改表达式树 (Visual Basic)
 
 本主题演示如何修改表达式树。 表达式树是不可变的，这意味着不能直接对它们进行修改。 若要更改表达式树，必须创建现有表达式树的副本，创建此副本后，进行必要的更改。 可以使用 <xref:System.Linq.Expressions.ExpressionVisitor> 类遍历现有表达式树，以及复制它访问的每个节点。
 
@@ -17,7 +17,7 @@ ms.locfileid: "74353749"
 
 1. 创建新的**控制台应用程序**项目。
 
-2. 将 `Imports` 语句添加到 `System.Linq.Expressions` 命名空间的文件。
+2. 向 `Imports` 命名空间的文件添加语句 `System.Linq.Expressions` 。
 
 3. 向项目中添加 `AndAlsoModifier` 类。
 
@@ -47,9 +47,9 @@ ms.locfileid: "74353749"
 
     此类继承 <xref:System.Linq.Expressions.ExpressionVisitor> 类，并且专用于修改表示条件 `AND` 运算的表达式。 它将运算从条件 `AND` 更改为条件 `OR`。 若要执行此操作，此类替代基类型的 <xref:System.Linq.Expressions.ExpressionVisitor.VisitBinary%2A> 方法，因为条件 `AND` 表达式表示为二进制表达式。 在 `VisitBinary` 方法中，如果传递给它的表达式表示条件 `AND` 操作，那么代码将构造一个新的表达式，此表达式包含条件 `OR` 运算符，而不是条件 `AND` 运算符。 如果传递给 `VisitBinary` 的表达式不表示条件 `AND` 运算，那么此方法遵从基类实现。 基类方法构造类似于所传递的表达式树的节点，但是这些节点将子树替换为访问者以递归方式生成的表达式树。
 
-4. 将 `Imports` 语句添加到 `System.Linq.Expressions` 命名空间的文件。
+4. 向 `Imports` 命名空间的文件添加语句 `System.Linq.Expressions` 。
 
-5. 将代码添加到 Module1 文件中的 `Main` 方法，以创建表达式树，并将其传递给将修改它的方法。
+5. 向 `Main` Module1 文件中的方法添加代码以创建表达式树，并将其传递给将修改它的方法。
 
     ```vb
     Dim expr As Expression(Of Func(Of String, Boolean)) = _
@@ -73,5 +73,5 @@ ms.locfileid: "74353749"
 
 ## <a name="see-also"></a>另请参阅
 
-- [如何：执行表达式树（Visual Basic）](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
-- [表达式树 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
+- [如何：执行表达式树 (Visual Basic)](how-to-execute-expression-trees.md)
+- [表达式树 (Visual Basic)](index.md)

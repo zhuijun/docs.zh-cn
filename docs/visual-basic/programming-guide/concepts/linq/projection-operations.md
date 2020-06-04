@@ -2,12 +2,12 @@
 title: 投影运算
 ms.date: 07/20/2015
 ms.assetid: b8d38e6d-21cf-4619-8dbb-94476f4badc7
-ms.openlocfilehash: d7efb46ccfe3208ae6c58043a64c236171d0c147
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4795bdaba53949b34fe380ea9c51025ce43c40db
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346621"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396332"
 ---
 # <a name="projection-operations-visual-basic"></a>投影操作（Visual Basic）
 
@@ -17,7 +17,7 @@ ms.locfileid: "74346621"
 
 ## <a name="methods"></a>方法
 
-|方法名|说明|Visual Basic 查询表达式语法|更多信息|
+|方法名|说明|Visual Basic 查询表达式语法|详细信息|
 |-----------------|-----------------|------------------------------------------|----------------------|
 |选择|投影基于转换函数的值。|`Select`|<xref:System.Linq.Enumerable.Select%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Select%2A?displayProperty=nameWithType>|
 |SelectMany|投影基于转换函数的值序列，然后将它们展平为一个序列。|使用多个 `From` 子句|<xref:System.Linq.Enumerable.SelectMany%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SelectMany%2A?displayProperty=nameWithType>|
@@ -178,9 +178,9 @@ End Sub
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Linq>
-- [标准查询运算符概述 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Select 子句](../../../../visual-basic/language-reference/queries/select-clause.md)
-- [如何：使用联接合并数据](../../../../visual-basic/programming-guide/language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)
-- [如何：从多个源填充对象集合（LINQ）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)
-- [如何：以特定类型返回 LINQ 查询结果](../../../../visual-basic/programming-guide/language-features/linq/how-to-return-a-linq-query-result-as-a-specific-type.md)
-- [如何：使用组将一个文件拆分成多个文件（LINQ）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [标准查询运算符概述 (Visual Basic)](standard-query-operators-overview.md)
+- [Select 子句](../../../language-reference/queries/select-clause.md)
+- [如何：使用联接合并数据](../../language-features/linq/how-to-combine-data-with-linq-by-using-joins.md)
+- [如何：从多个源填充对象集合（LINQ）（Visual Basic）](how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [如何：以特定类型返回 LINQ 查询结果](../../language-features/linq/how-to-return-a-linq-query-result-as-a-specific-type.md)
+- [如何：使用组将一个文件拆分成多个文件（LINQ）（Visual Basic）](how-to-split-a-file-into-many-files-by-using-groups-linq.md)

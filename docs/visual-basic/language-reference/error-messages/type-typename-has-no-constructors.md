@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30251
 ms.assetid: aff3e1df-abe6-4bc0-9abc-a1e70514c561
-ms.openlocfilehash: 506b69f1db12a51217d10ad261b1f1a44bfb2008
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: de0d825c7eec603f3ad1e43b1e4aaa0cc78fd1db
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198155"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408500"
 ---
-# <a name="type-typename-has-no-constructors"></a>类型 "\<typename >" 没有构造函数
+# <a name="type-typename-has-no-constructors"></a>类型“\<typename>”没有构造函数
 某个类型不支持对 `Sub New()` 的调用。 一个可能的原因是编译器或二进制文件被损坏。  
   
  **错误 ID：** BC30251  
@@ -29,7 +29,7 @@ ms.locfileid: "73198155"
   
 4. 如果仍然出现错误，则收集有关该情况的信息并通知 Microsoft 产品支持服务。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [对象和类](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [对象和类](../../programming-guide/language-features/objects-and-classes/index.md)
 - [与我们交流](/visualstudio/ide/feedback-options)

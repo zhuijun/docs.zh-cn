@@ -4,37 +4,37 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID54
 ms.assetid: 74891e96-884b-4c8d-872d-cd11ae272372
-ms.openlocfilehash: 9a59faf1b6f845858e36efcabdf0758e41ad75dc
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 534ea2d8316dc29cace798c5ad9b7697a290026f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619737"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409864"
 ---
 # <a name="bad-file-mode"></a>错误的文件模式
-在操作文件内容中使用的语句必须是适用于在其中打开该文件的模式。 可能的原因包括：  
+用于操作文件内容的语句必须适合于打开该文件的模式。 可能的原因包括：  
   
-- 一个`FilePutObject`或`FileGetObject`语句指定的顺序文件。  
+- `FilePutObject`或 `FileGetObject` 语句指定顺序文件。  
   
-- 一个`Print`语句指定为访问模式而不打开的文件`Output`或`Append`。  
+- `Print`语句指定了一个打开的文件，该文件用于访问模式，而不是 `Output` 或 `Append` 。  
   
-- `Input`语句指定为访问模式而不打开的文件 `Input`  
+- `Input`语句指定为访问模式打开的文件，而不是`Input`  
   
-- 试图写入只读文件。  
+- 尝试写入只读文件。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 请确保`FilePutObject`并`FileGetObject`仅指文件供`Random`或`Binary`访问。  
+- 请确保 `FilePutObject` 和 `FileGetObject` 仅引用打开的 `Random` 或访问的文件 `Binary` 。  
   
-- 请确保`Print`指定为打开的文件`Output`或`Append`访问模式。 如果不是，使用不同的语句将数据放在文件中，或重新打开相应的模式中的文件。  
+- 请确保 `Print` 为 `Output` 或访问模式指定打开的文件 `Append` 。 否则，请使用不同的语句将数据放置在文件中，或在适当的模式下重新打开文件。  
   
-- 请确保`Input`指定为打开的文件`Input`。 如果没有，请使用不同的语句将数据放在文件或重新打开相应的模式中的文件。  
+- 请确保 `Input` 指定一个打开的文件 `Input` 。 否则，请使用不同的语句将数据放置在文件中，或在适当的模式下重新打开文件。  
   
-- 如果写入只读文件时，将该文件的读/写状态更改或不尝试对其进行写入。  
+- 如果要写入只读文件，请更改该文件的读/写状态，或不要尝试写入该文件。  
   
 - 使用 `My.Computer.FileSystem` 对象中的可用功能。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:Microsoft.VisualBasic.FileSystem>
-- [排除故障：读取和写入文本文件](../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)
+- [疑难解答：读取和写入文本文件](../../developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)

@@ -5,14 +5,14 @@ helpviewer_keywords:
 - example XML tag
 - <example> XML tag
 ms.assetid: 90eeda1c-3fc4-427c-879c-5046d265a97c
-ms.openlocfilehash: 8f36ac1337dd0d1400180fbd3deae2bb24ad9c58
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 42f40581d252956433165789d6674234a295867c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348483"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400133"
 ---
-# <a name="example-visual-basic"></a>\<示例 > （Visual Basic）
+# <a name="example-visual-basic"></a>\<example> (Visual Basic)
 指定成员的示例。  
   
 ## <a name="syntax"></a>语法  
@@ -26,15 +26,15 @@ ms.locfileid: "74348483"
  代码示例的说明。  
   
 ## <a name="remarks"></a>备注  
- `<example>` 标记可以指定如何使用方法或其他库成员的示例。 这通常涉及到使用 [\<code>](../../../visual-basic/language-reference/xmldoc/code.md) 标记。  
+ `<example>`使用标记可以指定如何使用方法或其他库成员的示例。 这通常涉及使用 [\<code>](code.md) 标记。  
   
- 使用 [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) 进行编译以便将文档注释处理到文件中。  
+ 使用 [-doc](../../reference/command-line-compiler/doc.md) 进行编译以便将文档注释处理到文件中。  
   
 ## <a name="example"></a>示例  
- 此示例使用 `<example>` 标记以包含使用 `ID` 字段的示例。  
+ 此示例使用 `<example>` 标记来包含使用字段的示例 `ID` 。  
   
  [!code-vb[VbVbcnXmlDocComments#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#2)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [XML 注释标记](../../../visual-basic/language-reference/xmldoc/index.md)
+- [XML 注释标记](index.md)

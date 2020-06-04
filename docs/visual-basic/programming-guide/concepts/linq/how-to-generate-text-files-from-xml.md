@@ -2,12 +2,12 @@
 title: 如何：从 XML 生成文本文件
 ms.date: 07/20/2015
 ms.assetid: 3b33f191-4abe-4419-b81b-3cb81d9a317f
-ms.openlocfilehash: b30596df1a490d78d1333c688a23ed4ab30bcb82
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9d89d8d5e929574fa26cc5c11346980e8b235ac5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344567"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396566"
 ---
 # <a name="how-to-generate-text-files-from-xml-visual-basic"></a>如何：从 XML 生成文本文件（Visual Basic）
 本示例演示如何从 XML 文件生成逗号分隔值 (CSV) 文件。  
@@ -15,7 +15,7 @@ ms.locfileid: "74344567"
 ## <a name="example"></a>示例  
  Visual Basic 版本使用过程代码将字符串集合聚合为一个字符串。  
   
- 本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)。  
+ 本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md)。  
   
 ```vb  
 Dim custOrd As XElement = XElement.Load("CustomersOrders.xml")  
@@ -53,4 +53,4 @@ LETSS,Let's Stop N Shop,Jaime Yorres,Owner,(415) 555-5938,87 Polk St. Suite 5,Sa
   
 ## <a name="see-also"></a>另请参阅
 
-- [投影和转换（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [投影和转换（LINQ to XML）（Visual Basic）](projections-and-transformations-linq-to-xml.md)
