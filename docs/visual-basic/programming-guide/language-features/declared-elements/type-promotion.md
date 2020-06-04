@@ -10,12 +10,12 @@ helpviewer_keywords:
 - type promotion
 - declared elements [Visual Basic], visibility
 ms.assetid: 035eeb15-e4c5-4288-ab3c-6bd5d22f7051
-ms.openlocfilehash: aa05bd7dc87510aedb0facadf4b7590c8ec57d1f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 1e284b99a36cdf0f62aee2c45fd9f3bf544d1d81
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345272"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410703"
 ---
 # <a name="type-promotion-visual-basic"></a>类型提升 (Visual Basic)
 在模块中声明编程元素时 Visual Basic 会将其范围提升到包含该模块的命名空间。 这称为*类型提升*。  
@@ -24,30 +24,30 @@ ms.locfileid: "74345272"
   
  [!code-vb[VbVbalrDeclaredElements#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#1)]  
   
- 在 `projModule`中，在模块级别声明的编程元素将提升为 `projNamespace`。 在前面的示例中，`basicEnum` 和 `innerClass` 会升级，但 `numberSub` 不是，因为它未在模块级别声明。  
+ 在中 `projModule` ，在模块级别声明的编程元素将升级到 `projNamespace` 。 在前面的示例中， `basicEnum` 和已 `innerClass` 升级，但不是 `numberSub` ，因为它未在模块级别声明。  
   
 ## <a name="effect-of-type-promotion"></a>类型提升的效果  
  类型提升的影响在于，限定字符串不需要包含模块名称。 下面的示例对上述示例中的过程进行了两次调用。  
   
  [!code-vb[VbVbalrDeclaredElements#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#2)]  
   
- 在前面的示例中，第一次调用使用完全限定字符串。 但是，这不是必需的，因为类型提升。 第二次调用还访问模块的成员，但不将 `projModule` 包含在限定字符串中。  
+ 在前面的示例中，第一次调用使用完全限定字符串。 但是，这不是必需的，因为类型提升。 第二次调用还访问模块的成员，而不包括 `projModule` 在限定字符串中。  
   
 ## <a name="defeat-of-type-promotion"></a>类型提升的失效  
  如果命名空间已具有与模块成员同名的成员，则该模块成员的类型提升会失效。 下面的示例演示了枚举的主干定义和同一命名空间中的模块。  
   
  [!code-vb[VbVbalrDeclaredElements#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#3)]  
   
- 在前面的示例中，Visual Basic 无法将类 `abc` 提升为 `thisNameSpace`，因为在命名空间级别已存在同名的枚举。 若要访问 `abcSub`，必须使用 `thisNamespace.thisModule.abc.abcSub`的完全限定字符串。 但是，类 `xyz` 仍会升级，你可以使用较短的限定字符串 `thisNamespace.xyz.xyzSub`访问 `xyzSub`。  
+ 在前面的示例中，Visual Basic 无法将类升级 `abc` 到， `thisNameSpace` 因为在命名空间级别已存在具有相同名称的枚举。 若要访问 `abcSub` ，必须使用完全限定字符串 `thisNamespace.thisModule.abc.abcSub` 。 但是，类 `xyz` 仍会升级，你可以 `xyzSub` 使用较短的限定字符串访问 `thisNamespace.xyz.xyzSub` 。  
   
 ### <a name="defeat-of-type-promotion-for-partial-types"></a>分部类型升级类型的不足  
- 如果模块内的类或结构使用[Partial](../../../../visual-basic/language-reference/modifiers/partial.md)关键字，则对于该类或结构，类型提升将自动失效，无论命名空间是否具有同名的成员。 模块中的其他元素仍适用于类型提升。  
+ 如果模块内的类或结构使用[Partial](../../../language-reference/modifiers/partial.md)关键字，则对于该类或结构，类型提升将自动失效，无论命名空间是否具有同名的成员。 模块中的其他元素仍适用于类型提升。  
   
  **什么.** 部分定义的类型提升的不足会导致意外的结果，甚至编译器错误。 下面的示例显示了一个类的主干分部定义，其中一个类位于模块中。  
   
  [!code-vb[VbVbalrDeclaredElements#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDeclaredElements/VB/Class1.vb#4)]  
   
- 在前面的示例中，开发人员可能希望编译器合并 `sampleClass`的两个分部定义。 但是，编译器不会考虑 `sampleModule`中部分定义的升级。 因此，它会尝试编译两个单独的不同类，两个类都命名 `sampleClass` 但具有不同的限定路径。  
+ 在前面的示例中，开发人员可能希望编译器合并的两个分部定义 `sampleClass` 。 但是，编译器不会考虑升级内部定义 `sampleModule` 。 因此，它会尝试编译两个单独的不同类，两者都命名， `sampleClass` 但具有不同的限定路径。  
   
  仅当其完全限定的路径相同时，编译器才将合并分部定义。  
   
@@ -60,9 +60,9 @@ ms.locfileid: "74345272"
   
 ## <a name="see-also"></a>另请参阅
 
-- [Module 语句](../../../../visual-basic/language-reference/statements/module-statement.md)
-- [Namespace 语句](../../../../visual-basic/language-reference/statements/namespace-statement.md)
-- [Partial](../../../../visual-basic/language-reference/modifiers/partial.md)
-- [范围 Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/scope.md)
-- [如何：控制变量的范围](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-control-the-scope-of-a-variable.md)
-- [对已声明元素的引用](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+- [Module 语句](../../../language-reference/statements/module-statement.md)
+- [Namespace 语句](../../../language-reference/statements/namespace-statement.md)
+- [Partial](../../../language-reference/modifiers/partial.md)
+- [Visual Basic 中的范围](scope.md)
+- [如何：控制变量的范围](how-to-control-the-scope-of-a-variable.md)
+- [References to Declared Elements](references-to-declared-elements.md)

@@ -10,76 +10,76 @@ helpviewer_keywords:
 - Protected Friend keyword combination
 - Friend keyword [Visual Basic], and Protected
 ms.assetid: b664605e-1c79-4728-b996-aa59c50846bc
-ms.openlocfilehash: 98f8ed947c9f4376c5778011a3a91ca8b094f9ec
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4ac8e5942cf6097642ec111992ebfcdb91e8d7c1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351565"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84392166"
 ---
 # <a name="friend-visual-basic"></a>Friend (Visual Basic)
 指定只能从包含其声明的程序集内部访问一个或多个已声明的编程元素。  
   
 ## <a name="remarks"></a>备注  
- 在许多情况下，需要由整个程序集使用的编程元素（如类和结构），而不是由声明它们的组件使用。 但是，可能不希望程序集外部的代码（例如，应用程序是专有的）可以访问这些文件。 如果要以这种方式限制对某个元素的访问，则可以使用 `Friend` 修饰符来声明它。  
+ 在许多情况下，需要由整个程序集使用的编程元素（如类和结构），而不是由声明它们的组件使用。 但是，可能不希望程序集外部的代码（例如，应用程序是专有的）可以访问这些文件。 如果要以这种方式限制对某个元素的访问，则可以使用修饰符来声明它 `Friend` 。  
   
- 编译为同一程序集的其他类、结构和模块中的代码可以访问该程序集中的所有 `Friend` 元素。  
+ 编译为同一程序集的其他类、结构和模块中的代码可以访问 `Friend` 该程序集中的所有元素。  
   
- `Friend` 访问通常是应用程序编程元素的首选级别，`Friend` 是接口、模块、类或结构的默认访问级别。  
+ `Friend`访问通常是应用程序编程元素的首选级别， `Friend` 是接口、模块、类或结构的默认访问级别。  
   
- 只能在模块、接口或命名空间级别使用 `Friend`。 因此，`Friend` 元素的声明上下文必须是源文件、命名空间、接口、模块、类或结构。不能为过程。  
+ `Friend`只能在模块、接口或命名空间级别使用。 因此，元素的声明上下文 `Friend` 必须是源文件、命名空间、接口、模块、类或结构; 它不能是过程。  
 
 > [!NOTE]
 > 你还可以使用[受保护的 Friend](protected-friend.md)访问修饰符，使类成员可从该类、派生类和类定义的同一程序集中访问。 若要从同一程序集中的类和派生类中限制对成员的访问，请使用[私有受保护](private-protected.md)的访问修饰符。
 
- 有关 `Friend` 和其他访问修饰符的比较，请参阅[Visual Basic 中的访问级别](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)。  
+ 有关 `Friend` 和其他访问修饰符的比较，请参阅[Visual Basic 中的访问级别](../../programming-guide/language-features/declared-elements/access-levels.md)。  
   
 > [!NOTE]
-> 可以指定另一个程序集是友元程序集，该程序集允许其访问标记为 `Friend`的所有类型和成员。 有关详细信息，请参阅[友元程序集](../../../standard/assembly/friend.md)。
+> 可以指定另一个程序集是友元程序集，该程序集允许其访问标记为的所有类型和成员 `Friend` 。 有关详细信息，请参阅[友元程序集](../../../standard/assembly/friend.md)。
 
 ## <a name="example"></a>示例  
- 下面的类使用 `Friend` 修饰符来允许同一程序集中的其他编程元素访问某些成员。  
+ 下面的类使用 `Friend` 修饰符允许同一程序集中的其他编程元素访问某些成员。  
   
  [!code-vb[VbVbalrAccessModifiers#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalraccessmodifiers/vb/class1.vb#1)]  
   
 ## <a name="usage"></a>用法  
- 在以下上下文中，可以使用 `Friend` 修饰符：  
+ 可以 `Friend` 在以下上下文中使用修饰符：  
   
- [Class 语句](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Class 语句](../statements/class-statement.md)  
   
- [Const 语句](../../../visual-basic/language-reference/statements/const-statement.md)  
+ [Const 语句](../statements/const-statement.md)  
   
- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare Statement](../statements/declare-statement.md)  
   
- [Delegate 语句](../../../visual-basic/language-reference/statements/delegate-statement.md)  
+ [Delegate 语句](../statements/delegate-statement.md)  
   
- [Dim 语句](../../../visual-basic/language-reference/statements/dim-statement.md)  
+ [Dim 语句](../statements/dim-statement.md)  
   
- [Enum 语句](../../../visual-basic/language-reference/statements/enum-statement.md)  
+ [Enum 语句](../statements/enum-statement.md)  
   
- [Event 语句](../../../visual-basic/language-reference/statements/event-statement.md)  
+ [Event 语句](../statements/event-statement.md)  
   
- [Function 语句](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Function 语句](../statements/function-statement.md)  
   
- [Interface 语句](../../../visual-basic/language-reference/statements/interface-statement.md)  
+ [Interface 语句](../statements/interface-statement.md)  
   
- [Module 语句](../../../visual-basic/language-reference/statements/module-statement.md)  
+ [Module 语句](../statements/module-statement.md)  
   
- [Property 语句](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Property Statement](../statements/property-statement.md)  
   
- [Structure 语句](../../../visual-basic/language-reference/statements/structure-statement.md)  
+ [Structure 语句](../statements/structure-statement.md)  
   
- [Sub 语句](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Sub 语句](../statements/sub-statement.md)  
   
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>
-- [Public](../../../visual-basic/language-reference/modifiers/public.md)
-- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)
-- [Private](../../../visual-basic/language-reference/modifiers/private.md)
-- [Private Protected](./private-protected.md)
+- [公共](public.md)
+- [避免](protected.md)
+- 专用 
+- [私有受保护](./private-protected.md)
 - [Protected Friend](./protected-friend.md)
-- [Visual Basic 中的访问级别](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
-- [过程](../../../visual-basic/programming-guide/language-features/procedures/index.md)
-- [结构](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
-- [对象和类](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Visual Basic 中的访问级别](../../programming-guide/language-features/declared-elements/access-levels.md)
+- [过程](../../programming-guide/language-features/procedures/index.md)
+- [结构](../../programming-guide/language-features/data-types/structures.md)
+- [对象和类](../../programming-guide/language-features/objects-and-classes/index.md)

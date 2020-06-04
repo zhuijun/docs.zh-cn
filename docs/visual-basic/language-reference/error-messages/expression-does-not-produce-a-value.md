@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC30491
 ms.assetid: 8399d7ae-bc0a-49e6-81dc-2e7229708bc9
-ms.openlocfilehash: cd4c684e5d846aa3361145dfcc82cf6050e3786e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 97cf3208e47eb0514296927e86eefc768280f61f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64646838"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409538"
 ---
 # <a name="expression-does-not-produce-a-value"></a>表达式不产生值
-已尝试使用不会生成中生成值的上下文，例如，调用的值的表达式`Sub`的上下文中其中`Function`预期。  
+您尝试使用的表达式不在生成值的上下文中生成值，如 `Sub` 在所需的上下文中调用 `Function` 。  
   
- **错误 ID:** BC30491  
+ **错误 ID：** BC30491  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 将表达式更改为所生成的值。  
+- 将表达式更改为一个生成值的表达式。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [错误类型](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [错误类型](../../programming-guide/language-features/error-types.md)

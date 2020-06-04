@@ -10,12 +10,12 @@ helpviewer_keywords:
 - BC36644
 - BC36647
 ms.assetid: 0e0050f2-2039-4311-b260-f0ebfde84189
-ms.openlocfilehash: 97b03874489473482554078958c7bfd29d87c095
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: b278dcc10a8a4e9e67aacdb16dca2588d2ebd0f1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523990"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409774"
 ---
 # <a name="data-types-of-the-type-parameters-cannot-be-inferred-from-these-arguments"></a>无法根据这些实参推断类型形参的数据类型
 
@@ -58,8 +58,8 @@ End Interface
 
 你或许能够指定类型形参的数据类型，而无需依赖类型推断。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [宽松委托转换](../../../visual-basic/programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
-- [Generic Procedures in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
-- [Visual Basic 中的类型转换](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [宽松委托转换](../../programming-guide/language-features/delegates/relaxed-delegate-conversion.md)
+- [Generic Procedures in Visual Basic](../../programming-guide/language-features/data-types/generic-procedures.md)
+- [Visual Basic 中的类型转换](../../programming-guide/language-features/data-types/type-conversions.md)

@@ -9,16 +9,16 @@ helpviewer_keywords:
 - Microsoft.VisualBasic namespace
 - members [Visual Basic], Visual Basic run-time library
 ms.assetid: f5e82c6e-3500-452b-bdb8-78f0d5477604
-ms.openlocfilehash: a73589c4b0d0faeac321090e6030f1f8392a5342
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f7c7d818e6439f732031e23f297661bb960effb7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349618"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84359485"
 ---
 # <a name="visual-basic-runtime-library-members"></a>Visual Basic 运行库成员
 
-`Microsoft.VisualBasic` 命名空间包含构成 Visual Basic 运行时库的类、模块、常量和枚举。 这些库成员提供您可以在代码中使用的过程、属性和常量值。 每个模块和类表示一种特定的功能类别。  
+`Microsoft.VisualBasic`命名空间包含构成 Visual Basic 运行时库的类、模块、常量和枚举。 这些库成员提供您可以在代码中使用的过程、属性和常量值。 每个模块和类表示一种特定的功能类别。  
   
 ## <a name="microsoftvisualbasiccollection-class"></a>Microsoft. 集合类  
   
@@ -98,7 +98,7 @@ ms.locfileid: "74349618"
 |<xref:Microsoft.VisualBasic.ErrObject.HelpContext%2A>|<xref:Microsoft.VisualBasic.ErrObject.HelpFile%2A>|<xref:Microsoft.VisualBasic.ErrObject.LastDllError%2A>|<xref:Microsoft.VisualBasic.ErrObject.Number%2A>|  
 |<xref:Microsoft.VisualBasic.ErrObject.Raise%2A>|<xref:Microsoft.VisualBasic.ErrObject.Raise%2A>|||  
   
-## <a name="microsoftvisualbasicfilesystem-module"></a>Microsoft.VisualBasic.FileSystem Module  
+## <a name="microsoftvisualbasicfilesystem-module"></a>Microsoft. 文件系统模块  
   
 |||||  
 |---|---|---|---|  
@@ -193,9 +193,9 @@ ms.locfileid: "74349618"
   
 ## <a name="microsoftvisualbasic-constants-and-enumerations"></a>Microsoft。  
 
- `Microsoft.VisualBasic` 命名空间提供常量和枚举作为 Visual Basic 运行时库的一部分。 你可以在代码中使用这些常量值。 每个枚举表示一种特定的功能类别。 有关详细信息，请参阅[常量和枚举](../../visual-basic/language-reference/constants-and-enumerations.md)。  
+ `Microsoft.VisualBasic`命名空间提供常量和枚举作为 Visual Basic 运行时库的一部分。 你可以在代码中使用这些常量值。 每个枚举表示一种特定的功能类别。 有关详细信息，请参阅[常量和枚举](constants-and-enumerations.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [常量和枚举](../../visual-basic/language-reference/constants-and-enumerations.md)
-- [关键字](../../visual-basic/language-reference/keywords/index.md)
+- [常量和枚举](constants-and-enumerations.md)
+- [关键字](keywords/index.md)

@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC30663
 ms.assetid: 3760e7ff-7238-40a1-8676-77d858a64fc0
-ms.openlocfilehash: f2f4dc428a247275f9919c4a8b6e6944a558eef0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 14145f165adf5ccd20298a70ca5596488b488b0c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73968228"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409954"
 ---
-# <a name="attribute-attributename-cannot-be-applied-multiple-times"></a>特性 "\<attributename >" 不能应用多次
+# <a name="attribute-attributename-cannot-be-applied-multiple-times"></a>特性“\<attributename>”不能应用多次
 
-特性只能应用一次。 `AttributeUsage` 特性确定特性是否可以应用多次。  
+特性只能应用一次。 `AttributeUsage`特性确定特性是否可以应用多次。  
   
  **错误 ID：** BC30663  
   
@@ -30,8 +30,8 @@ ms.locfileid: "73968228"
 <AttributeUsage(AllowMultiple := True)>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.AttributeUsageAttribute>
-- [创建自定义特性](../../../visual-basic/programming-guide/concepts/attributes/creating-custom-attributes.md)
-- [AttributeUsage](../../../visual-basic/programming-guide/concepts/attributes/attributeusage.md)
+- [创建自定义特性](../../programming-guide/concepts/attributes/creating-custom-attributes.md)
+- [AttributeUsage](../../programming-guide/concepts/attributes/attributeusage.md)

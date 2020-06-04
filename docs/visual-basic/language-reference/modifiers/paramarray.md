@@ -8,35 +8,35 @@ helpviewer_keywords:
 - ParamArray keyword [Visual Basic]
 - ParamArray keyword [Visual Basic], syntax
 ms.assetid: a5f18789-92bd-488f-9c7e-cf3719963635
-ms.openlocfilehash: fbc87bffebc265e6062512e96fc29a64334b3c65
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e3c24818ea87884a0dd9b42c604e13e16ca6d3d7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351375"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84391815"
 ---
 # <a name="paramarray-visual-basic"></a>ParamArray (Visual Basic)
-指定过程参数采用指定类型的可选元素数组。 `ParamArray` 只能在参数列表的最后一个参数上使用。  
+指定过程参数采用指定类型的可选元素数组。 `ParamArray`只能在参数列表的最后一个参数上使用。  
   
 ## <a name="remarks"></a>备注  
- `ParamArray` 允许将任意数量的参数传递给过程。 始终使用[ByVal](../../../visual-basic/language-reference/modifiers/byval.md)声明 `ParamArray` 参数。  
+ `ParamArray`允许将任意数量的参数传递给过程。 `ParamArray`始终使用[ByVal](byval.md)声明参数。  
   
- 可以通过传递适当的数据类型的数组、以逗号分隔的值列表，或根本不提供任何内容，为 `ParamArray` 参数提供一个或多个参数。 有关详细信息，请参阅[参数数组](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)中的 "调用 ParamArray"。  
+ 可以通过以下方式向参数提供一个或多个参数 `ParamArray` ：传递适当数据类型的数组、以逗号分隔的值列表，或根本不提供任何参数。 有关详细信息，请参阅[参数数组](../../programming-guide/language-features/procedures/parameter-arrays.md)中的 "调用 ParamArray"。  
   
 > [!IMPORTANT]
 > 无论何时处理可能会无限大的阵列，都有 overrunning 应用程序的一些内部容量的风险。 如果接受来自调用代码的参数数组，则应测试其长度，如果应用程序太大，则应采取适当的措施。  
   
  `ParamArray` 修饰符可用于下面的上下文中：  
   
- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare Statement](../statements/declare-statement.md)  
   
- [Function 语句](../../../visual-basic/language-reference/statements/function-statement.md)  
+ [Function 语句](../statements/function-statement.md)  
   
- [Property 语句](../../../visual-basic/language-reference/statements/property-statement.md)  
+ [Property Statement](../statements/property-statement.md)  
   
- [Sub 语句](../../../visual-basic/language-reference/statements/sub-statement.md)  
+ [Sub 语句](../statements/sub-statement.md)  
   
 ## <a name="see-also"></a>另请参阅
 
-- [关键字](../../../visual-basic/language-reference/keywords/index.md)
-- [参数数组](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)
+- [关键字](../keywords/index.md)
+- [参数数组](../../programming-guide/language-features/procedures/parameter-arrays.md)

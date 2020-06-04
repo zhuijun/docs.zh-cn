@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC36629
 ms.assetid: 0a1e2dbc-d9a4-433d-9306-c5540782b81d
-ms.openlocfilehash: 42bde0b1843e52bbc16118bb056ade791591904e
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 52e5391fbcf30a4dada4d64a0e810c900ea85806
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249495"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409382"
 ---
 # <a name="nullable-type-inference-is-not-supported-in-this-context"></a>该上下文中不支持可以为 null 的类型推理
-值类型和结构可以声明为空。  
+值类型和结构可以声明为 null。  
   
 ```vb  
 Dim a? As Integer  
 Dim b As Integer?  
 ```  
   
- 但是，不能将可无效声明与类型推理结合使用。 以下示例导致此错误。  
+ 但是，不能将可为 null 的声明与类型推理结合使用。 下面的示例将导致此错误。  
   
 ```vb  
 ' Not valid.  
@@ -34,9 +34,9 @@ Dim b As Integer?
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 使用`As`子句将变量声明为空值类型。  
+- 使用 `As` 子句将变量声明为可以为 null 的值类型。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [可以为 null 的值类型](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
-- [局部类型推理](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [可以为 null 的值类型](../../programming-guide/language-features/data-types/nullable-value-types.md)
+- [局部类型推理](../../programming-guide/language-features/variables/local-type-inference.md)

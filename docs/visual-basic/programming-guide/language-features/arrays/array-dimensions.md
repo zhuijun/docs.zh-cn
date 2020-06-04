@@ -9,12 +9,12 @@ helpviewer_keywords:
 - rectangular arrays
 - ranking, arrays
 ms.assetid: 385e911b-18c1-4e98-9924-c6d279101dd9
-ms.openlocfilehash: 12e983ae62fa9f9ea762d434ffe5b73873a4a2e8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f971f0c3693177adbcb8869d487e3ad41d49ddc2
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351897"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84413099"
 ---
 # <a name="array-dimensions-in-visual-basic"></a>Array Dimensions in Visual Basic
 
@@ -27,7 +27,7 @@ ms.locfileid: "74351897"
 
 您可以通过为数组的每个维度提供*索引*或*下标*来指定数组的元素。 元素是从索引0到该维度的最高索引的每个维度连续的。
 
-下图显示具有不同秩的数组的概念结构。 图中的每个元素都显示了访问它的索引值。 例如，可以通过指定索引 `(1, 0)`来访问二维数组的第二行的第一个元素。
+下图显示具有不同秩的数组的概念结构。 图中的每个元素都显示了访问它的索引值。 例如，您可以通过指定索引来访问二维数组的第二行的第一个元素 `(1, 0)` 。
 
 ![显示一维数组的关系图。](./media/array-dimensions/one-dimensional-array.gif)
 
@@ -82,18 +82,18 @@ Dim salesAmounts(30) As Double
 Dim salesAmounts(11, 30) As Double
 ```
 
-现在假设你决定让你的数组将保存多个为一年的信息。 如果要跟踪5年的销售额，则可以使用5个层、12行和31列声明一个三维数组，如下例所示。
+现在假设您决定让数组保存超过一年的信息。 如果要跟踪5年的销售额，则可以使用5个层、12行和31列声明一个三维数组，如下例所示。
 
 ```vb
 Dim salesAmounts(4, 11, 30) As Double
 ```
 
-请注意，由于每个索引的最大值均为0，因此 `salesAmounts` 的每个维度声明为小于该维度所需的长度。 另请注意，数组的大小随每个新维度的增加而增加。 上述示例中的三个大小分别为31、372和1860个元素。
+请注意，由于每个索引的最大值均为0，因此，每个维度的 `salesAmounts` 被声明为小于该维度所需的长度。 另请注意，数组的大小随每个新维度的增加而增加。 上述示例中的三个大小分别为31、372和1860个元素。
 
 > [!NOTE]
-> 无需使用 `Dim` 语句或 `New` 子句即可创建数组。 例如，您可以调用 <xref:System.Array.CreateInstance%2A> 方法，或其他组件可以通过此方式传递您的代码。 此类数组可以具有0以外的下限。 您始终可以使用 <xref:System.Array.GetLowerBound%2A> 方法或 `LBound` 函数测试维度的下限。
+> 无需使用 `Dim` 语句或子句即可创建数组 `New` 。 例如，您可以调用 <xref:System.Array.CreateInstance%2A> 方法，或其他组件可以通过此方式传递您的代码。 此类数组可以具有0以外的下限。 您始终可以通过使用方法或函数测试某个维度的下限 <xref:System.Array.GetLowerBound%2A> `LBound` 。
 
 ## <a name="see-also"></a>另请参阅
 
-- [数组](../../../../visual-basic/programming-guide/language-features/arrays/index.md)
-- [数组疑难解答](../../../../visual-basic/programming-guide/language-features/arrays/troubleshooting-arrays.md)
+- [数组](index.md)
+- [数组疑难解答](troubleshooting-arrays.md)
