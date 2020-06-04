@@ -7,22 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - BC30648
 ms.assetid: eefb77a4-efbc-4000-8871-edce7ef7f2df
-ms.openlocfilehash: 6b727d0ee6c87b4c8b3e19af56d35bc6335dcc81
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2eb28c342e485658f1550d95c6e4e0629272ad2c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64593239"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374091"
 ---
 # <a name="string-constants-must-end-with-a-double-quote"></a>字符串常量必须以双引号结束
-字符串常量必须开始和结束加上引号。  
+字符串常量必须以引号开头和结尾。  
   
- **ErrorID:** BC30648  
+ **ErrorID：** BC30648  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 请确保文本字符串结尾引号 （"）。 如果粘贴其他文本编辑器中的值，请确保粘贴的字符是有效的引号，而不是类似，如"智能"或"大"的引号字符 （") 或两个单引号 （'）。  
+- 请确保字符串文本以引号（"）结尾。 如果从其他文本编辑器中粘贴值，请确保粘贴的字符是有效的引号，而不是类似于它的字符之一，例如 "智能" 或 "大" 引号（"or"）或两个单引号（""）。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [字符串](../../../visual-basic/programming-guide/language-features/strings/index.md)
+- [字符串](../../programming-guide/language-features/strings/index.md)

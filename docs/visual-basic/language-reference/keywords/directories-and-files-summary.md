@@ -6,19 +6,19 @@ helpviewer_keywords:
 - directories [Visual Basic], Visual Basic
 - files [Visual Basic], summary
 ms.assetid: 588b75fd-a09b-4381-822d-19868990c170
-ms.openlocfilehash: 6c7e1ef37b8abffee89c207ac1dcfb5cbef25c29
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c4429d58d2f089b86f5c32c1f3ce8353b02880c4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349839"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373872"
 ---
 # <a name="directories-and-files-summary-visual-basic"></a>目录和文件摘要 (Visual Basic)
 Visual Basic 语言关键字和运行时库成员按用途和使用进行组织。  
   
- 使用 `My` 功能可使文件 i/o 操作的工作效率更高，而不是使用这些成员。 有关详细信息，请参阅 <xref:Microsoft.VisualBasic.FileIO.FileSystem>。  
+ `My`与使用这些成员相比，使用此功能可为文件 i/o 操作提供更高的工作效率和性能。 有关详细信息，请参阅 <xref:Microsoft.VisualBasic.FileIO.FileSystem>。  
   
-|**操作**|**语言元素**|  
+|**操作**|**Language 元素**|  
 |----------------|--------------------------|  
 |更改目录或文件夹。|<xref:Microsoft.VisualBasic.FileSystem.ChDir%2A>|  
 |更改驱动器。|<xref:Microsoft.VisualBasic.FileSystem.ChDrive%2A>|  
@@ -35,9 +35,9 @@ Visual Basic 语言关键字和运行时库成员按用途和使用进行组织�
   
 ## <a name="see-also"></a>另请参阅
 
-- [关键字](../../../visual-basic/language-reference/keywords/index.md)
-- [Visual Basic 运行库成员](../../../visual-basic/language-reference/runtime-library-members.md)
-- [从文件读取](../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [写入文件](../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
-- [创建、删除和移动文件和目录](../../../visual-basic/developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
-- [使用 TextFieldParser 对象分析文本文件](../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
+- [关键字](index.md)
+- [Visual Basic 运行库成员](../runtime-library-members.md)
+- [从文件读取](../../developing-apps/programming/drives-directories-files/reading-from-files.md)
+- [写入文件](../../developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [创建、删除和移动文件和目录](../../developing-apps/programming/drives-directories-files/creating-deleting-and-moving-files-and-directories.md)
+- [使用 TextFieldParser 对象分析文本文件](../../developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)

@@ -2,20 +2,20 @@
 title: LINQ to ADO.NET（门户网站页）
 ms.date: 07/20/2015
 ms.assetid: bbbd7c76-2981-4b91-b8d2-437547181f52
-ms.openlocfilehash: d5d7ba8230ae9737d4938c1c8c55f7cd4330b117
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 8c90783b56d6393ce3ac71945ed8ebffc8005ee1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636492"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84369175"
 ---
 # <a name="linq-to-adonet-portal-page"></a>LINQ to ADO.NET（门户网站页）
-LINQ to ADO.NET 使你能够使用语言集成查询（LINQ）编程模型在 ADO.NET 中查询任何可枚举对象。  
+通过 LINQ to ADO.NET，可使用语言集成查询 (LINQ) 编程模型在 ADO.NET 中跨任何可枚举对象进行查询。  
   
 > [!NOTE]
-> LINQ to ADO.NET 文档位于 .NET Framework SDK 的 ADO.NET 部分： [LINQ and ADO.NET](../../../../framework/data/adonet/linq-and-ado-net.md)。
+> LINQ to ADO.NET 文档位于 .NET Framework SDK 的 ADO.NET 部分：[LINQ 和 ADO.NET](../../../../framework/data/adonet/linq-and-ado-net.md)。
   
- 有三个独立的 ADO.NET 语言集成查询（LINQ）技术： LINQ to DataSet、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]和 LINQ to Entities。 LINQ to DataSet 提供针对 <xref:System.Data.DataSet> 的形式多样的优化查询，[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] 可用于直接查询 SQL Server 数据库架构，而 LINQ to Entities 可实现实体数据模型的查询。  
+ 有三个独立的 ADO.NET 语言集成查询 (LINQ) 技术：LINQ to DataSet、[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] 和 LINQ to Entities。 LINQ to DataSet 提供针对 <xref:System.Data.DataSet> 的形式多样的优化查询，[!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] 可用于直接查询 SQL Server 数据库架构，而 LINQ to Entities 可实现实体数据模型的查询。  
   
 ## <a name="linq-to-dataset"></a>LINQ to DataSet  
  <xref:System.Data.DataSet> 是 ADO.NET 中使用最广泛的某个组件，也是断开编程模型（构建 ADO.NET 的基础）连接的重要元素。 <xref:System.Data.DataSet> 虽然具有突出的优点，但其查询功能也存在限制。  
@@ -32,9 +32,9 @@ LINQ to ADO.NET 使你能够使用语言集成查询（LINQ）编程模型在 AD
  有关详细信息，请参阅 [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)。  
   
 ## <a name="linq-to-entities"></a>LINQ to Entities  
- 通过实体数据模型，在 .NET 环境中将关系数据作为对象公开。 这使得对象层成为 LINQ 支持的理想目标，从而使开发人员能够根据构建业务逻辑所用的语言来构建数据库查询。 此功能称为 LINQ to Entities。 有关详细信息，请参阅 [LINQ to Entities](../../../../framework/data/adonet/ef/language-reference/linq-to-entities.md)。  
+ 通过实体数据模型，在 .NET 环境中将关系数据作为对象公开。 这使得对象层成为实现 LINQ 支持的理想目标，开发人员可以采用生成业务逻辑所用的语言来构建数据库查询。 此功能称为 LINQ to Entities。 有关详细信息，请参阅 [LINQ to Entities](../../../../framework/data/adonet/ef/language-reference/linq-to-entities.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ 和 ADO.NET](../../../../framework/data/adonet/linq-and-ado-net.md)
-- [语言集成查询 (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/index.md)
+- [语言集成查询 (LINQ) (Visual Basic)](index.md)

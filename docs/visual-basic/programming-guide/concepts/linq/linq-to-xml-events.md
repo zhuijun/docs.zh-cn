@@ -2,12 +2,12 @@
 title: LINQ to XML 事件
 ms.date: 07/20/2015
 ms.assetid: 34923928-b99c-4004-956e-38f6db25e910
-ms.openlocfilehash: 06191fb94f808d9a3ece8de000dec1c5de769dde
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d00f6f1b2a14ac73c1bcd4a1f74b9714ca304da3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351923"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84368811"
 ---
 # <a name="linq-to-xml-events-visual-basic"></a>LINQ to XML 事件（Visual Basic）
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 事件使你可以在 XML 树发生改变时得到通知。  
@@ -26,7 +26,7 @@ ms.locfileid: "74351923"
   
  修改 XML 树时将引发以下事件：  
   
-|事件|说明|  
+|ㄆン|说明|  
 |-----------|-----------------|  
 |<xref:System.Xml.Linq.XObject.Changing>|在此 <xref:System.Xml.Linq.XObject> 或它的任何子代即将发生更改之前发生。|  
 |<xref:System.Xml.Linq.XObject.Changed>|在 <xref:System.Xml.Linq.XObject> 或它的任何子代已经更改时发生。|  
@@ -92,7 +92,7 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a>Comments  
+### <a name="comments"></a>注释  
  此代码生成以下输出：  
   
 ```console  
@@ -116,4 +116,4 @@ Total:308
   
 ## <a name="see-also"></a>另请参阅
 
-- [高级 LINQ to XML 编程（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [高级 LINQ to XML 编程（Visual Basic）](advanced-linq-to-xml-programming.md)
