@@ -8,12 +8,12 @@ helpviewer_keywords:
 - properties [Visual Basic], property procedures
 - procedure calls [Visual Basic], property procedures
 ms.assetid: 96bc4d74-d9c3-4b7a-954d-58ac8553cd94
-ms.openlocfilehash: 52e6c62ffb81c480ccc1abf06f04eb780218dbf1
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 006961a0f1d4be6b0d52be5bc273dad9733bfe56
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74340557"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84388694"
 ---
 # <a name="how-to-call-a-property-procedure-visual-basic"></a>如何：调用 Property 过程 (Visual Basic)
 通过在属性中存储值或检索其值来调用属性过程。 访问属性的方式与访问变量的方式相同。  
@@ -26,9 +26,9 @@ ms.locfileid: "74340557"
   
      \- 或 -  
   
-     在赋值语句中使用等号（`=`）后，使用属性名称。  
+     在赋值语句中，在等号（）后使用属性名称 `=` 。  
   
-     下面的示例读取 <xref:Microsoft.VisualBasic.DateAndTime.Now%2A> 属性的值，隐式调用其 `Get` 过程。  
+     下面的示例读取属性的值 <xref:Microsoft.VisualBasic.DateAndTime.Now%2A> ，隐式调用其 `Get` 过程。  
   
      [!code-vb[VbVbalrDateProperties#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDateProperties/VB/Module1.vb#4)]  
   
@@ -42,7 +42,7 @@ ms.locfileid: "74340557"
   
 1. 使用赋值语句左侧的属性名称。  
   
-     下面的示例设置 <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A> 属性的值，隐式调用 `Set` 过程。  
+     下面的示例设置属性的值 <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A> ，隐式调用该 `Set` 过程。  
   
      [!code-vb[VbVbcnProcedures#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#11)]  
   
@@ -54,14 +54,14 @@ ms.locfileid: "74340557"
   
 ## <a name="see-also"></a>另请参阅
 
-- [属性过程](./property-procedures.md)
-- [过程参数和自变量](./procedure-parameters-and-arguments.md)
-- [Property 语句](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [Visual Basic 中的属性和变量之间的差异](./differences-between-properties-and-variables.md)
+- [Property 过程](./property-procedures.md)
+- [过程形参和实参](./procedure-parameters-and-arguments.md)
+- [Property Statement](../../../language-reference/statements/property-statement.md)
+- [Visual Basic 中属性和变量的差异](./differences-between-properties-and-variables.md)
 - [如何：创建属性](./how-to-create-a-property.md)
 - [如何：声明具有混合访问级别的属性](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [如何：在 Visual Basic 中声明和调用默认属性](./how-to-declare-and-call-a-default-property.md)
 - [如何：在属性中放置值](./how-to-put-a-value-in-a-property.md)
 - [如何：从属性获取值](./how-to-get-a-value-from-a-property.md)
-- [Get 语句](../../../../visual-basic/language-reference/statements/get-statement.md)
-- [Set 语句](../../../../visual-basic/language-reference/statements/set-statement.md)
+- [Get 语句](../../../language-reference/statements/get-statement.md)
+- [Set 语句](../../../language-reference/statements/set-statement.md)

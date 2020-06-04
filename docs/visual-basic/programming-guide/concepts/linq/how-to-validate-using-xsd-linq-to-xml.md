@@ -2,12 +2,12 @@
 title: 如何：使用 XSD 进行验证 (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: a0fe88d4-4e77-49e7-90de-8953feeccc21
-ms.openlocfilehash: 07a5df7af5512bb3db2dfd48a71e1ef07bbc7446
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: fd9931530bde2c47dcc8c7b7363a0d5ffae85b8a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332390"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84383087"
 ---
 # <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>如何：使用 XSD 进行验证（LINQ to XML）（Visual Basic）
 <xref:System.Xml.Schema> 命名空间包含扩展方法，这些扩展方法可以简化针对 XML 架构定义语言 (XSD) 文件验证 XML 树的过程。 有关更多信息，请参见 <xref:System.Xml.Schema.Extensions.Validate%2A> 方法文档。  
@@ -77,11 +77,11 @@ doc2 did not validate
 ```  
   
 ## <a name="example"></a>示例  
- 下面的示例按照[示例 XSD 文件：客户和订单](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)中的架构验证[示例 XML 文件：客户和订单 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md) 中的 XML 文档是否有效。 然后修改源 XML 文档。 它更改第一个客户的 `CustomerID` 属性。 更改后，订单将指向不存在的客户，因此该 XML 文档不再有效。  
+ 下面的示例按照[示例 XSD 文件：客户和订单](sample-xsd-file-customers-and-orders.md)中的架构验证[示例 XML 文件：客户和订单 (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md) 中的 XML 文档是否有效。 然后修改源 XML 文档。 它更改第一个客户的 `CustomerID` 属性。 更改后，订单将指向不存在的客户，因此该 XML 文档不再有效。  
   
- 本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)。  
+ 本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md)。  
   
- 本示例使用下面的 XSD 架构：[示例 XSD 文件：客户和订单](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md)。  
+ 本示例使用下面的 XSD 架构：[示例 XSD 文件：客户和订单](sample-xsd-file-customers-and-orders.md)。  
   
 ```vb  
 Dim errors As Boolean = False  
@@ -125,4 +125,4 @@ custOrdDoc did not validate
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Xml.Schema.Extensions.Validate%2A>
-- [创建 XML 树（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [创建 XML 树（Visual Basic）](creating-xml-trees.md)
