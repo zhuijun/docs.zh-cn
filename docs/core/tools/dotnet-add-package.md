@@ -2,12 +2,12 @@
 title: dotnet add package 命令
 description: “dotnet add package”命令可便于添加对项目的 NuGet 包引用。
 ms.date: 02/14/2020
-ms.openlocfilehash: 1d57aed59ccd45417c88f9b6a2f9dd768fda9b58
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: bc79fe8adf5f775ddce62f3877a8de945c6a18ab
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102848"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83840892"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
@@ -32,7 +32,7 @@ dotnet add package -h|--help
 
 使用 `dotnet add package` 命令可方便地向项目文件添加包引用。 运行该命令后，还有一个兼容性检查，确保包与项目中的框架兼容。 如果通过了该检查，则将 `<PackageReference>` 元素添加到项目文件并运行 [dotnet 还原](dotnet-restore.md)。
 
-例如，将 `Newtonsoft.Json` 添加到 ToDo.csproj  后的输出如以下示例所示：
+例如，将 `Newtonsoft.Json` 添加到 ToDo.csproj 后的输出如以下示例所示：
 
 ```console
 Writing C:\Users\me\AppData\Local\Temp\tmp95A8.tmp
@@ -91,7 +91,7 @@ info : PackageReference for package 'Newtonsoft.Json' version '12.0.1' added to 
 
 - **`-s|--source <SOURCE>`**
 
-  要在还原操作期间使用的 NuGet 包源。
+  要在还原操作期间使用的 NuGet 包源的 URI。
 
 - **`-v|--version <VERSION>`**
 

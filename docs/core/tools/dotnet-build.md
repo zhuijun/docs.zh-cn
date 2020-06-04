@@ -2,12 +2,12 @@
 title: dotnet build 命令
 description: dotnet build 命令可生成项目及其所有依赖项。
 ms.date: 02/14/2020
-ms.openlocfilehash: 1022df059493c7e045f81d4be93dff2fdab77eb1
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 5375df61dbf8e9b4db8772b0e2767e9bca0bb254
+ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102835"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83840905"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
@@ -23,20 +23,20 @@ ms.locfileid: "82102835"
 dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration <CONFIGURATION>]
     [-f|--framework <FRAMEWORK>] [--force] [--interactive] [--no-dependencies]
     [--no-incremental] [--no-restore] [--nologo] [-o|--output <OUTPUT_DIRECTORY>]
-    [-r|--runtime <RUNTIME_IDENTIFIER>] [-v|--verbosity <LEVEL>]
-    [--version-suffix <VERSION_SUFFIX>]
+    [-r|--runtime <RUNTIME_IDENTIFIER>] [-s|--source <SOURCE>]
+    [-v|--verbosity <LEVEL>] [--version-suffix <VERSION_SUFFIX>]
 
 dotnet build -h|--help
 ```
 
 ## <a name="description"></a>描述
 
-`dotnet build` 命令将项目及其依赖项生成为一组二进制文件。 二进制文件包括扩展名为 .dll 的中间语言 (IL) 文件中的项目代码  。  根据项目类型和设置，可能会包含其他文件，例如：
+`dotnet build` 命令将项目及其依赖项生成为一组二进制文件。 二进制文件包括扩展名为 .dll 的中间语言 (IL) 文件中的项目代码。  根据项目类型和设置，可能会包含其他文件，例如：
 
 - 可用于运行应用程序的可执行文件（如果项目类型是面向 .NET Core 3.0 或更高版本的可执行文件）。
-- 用于调试的扩展名为 .pdb  的符号文件。
-- 列出了应用程序或库的依赖项的 .deps.json  文件。
-- 用于指定应用程序的共享运行时及其版本的 .runtimeconfig.json  文件。
+- 用于调试的扩展名为 .pdb 的符号文件。
+- 列出了应用程序或库的依赖项的 .deps.json 文件。
+- 用于指定应用程序的共享运行时及其版本的 .runtimeconfig.json 文件。
 - 项目通过项目引用或 NuGet 包引用所依赖的其他库。
 
 对于目标版本低于 .NET Core 3.0 的可执行项目，通常不会将 NuGet 中的库依赖项复制到输出文件夹。  而是在运行时从 NuGet 全局包文件夹中对其进行解析。 考虑到这一点，`dotnet build` 的产品还未准备好转移到另一台计算机进行运行。 要创建可部署的应用程序版本，需要发布该应用程序（例如，使用 [dotnet publish](dotnet-publish.md) 命令）。 有关详细信息，请参阅 [.NET Core 应用程序部署](../deploying/index.md)。
@@ -87,7 +87,7 @@ dotnet build -h|--help
 
 - **`--force`**
 
-  强制解析所有依赖项，即使上次还原已成功，也不例外。 指定此标记等同于删除 project.assets.json 文件  。
+  强制解析所有依赖项，即使上次还原已成功，也不例外。 指定此标记等同于删除 project.assets.json 文件。
 
 - **`-h|--help`**
 
@@ -120,6 +120,10 @@ dotnet build -h|--help
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
   指定目标运行时。 有关运行时标识符 (RID) 的列表，请参阅 [RID 目录](../rid-catalog.md)。
+
+- **`-s|--source <SOURCE>`**
+
+  要在还原操作期间使用的 NuGet 包源的 URI。
 
 - **`-v|--verbosity <LEVEL>`**
 

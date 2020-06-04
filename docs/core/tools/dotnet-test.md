@@ -2,12 +2,12 @@
 title: dotnet test 命令
 description: dotnet test 命令可用于在给定项目中执行单元测试。
 ms.date: 04/29/2020
-ms.openlocfilehash: 22b27007d26c98cff40733ef8d449ce334f87848
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: b427954fe0026e6ac96d3bbce2b70b5c44e884e0
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802682"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84005370"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -79,6 +79,10 @@ dotnet test -h|--help
 - **`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`**
 
   为测试运行启用数据收集器。 有关详细信息，请参阅[监视和分析测试运行](https://aka.ms/vstest-collect)。
+  
+  若要在 .NET Core 支持的任何平台上收集代码覆盖率，请安装 [Coverlet](https://github.com/coverlet-coverage/coverlet/blob/master/README.md) 并使用 `--collect:"XPlat Code Coverage"` 选项。
+
+  在 Windows 上，可以使用 `--collect "Code Coverage"` 选项收集代码覆盖率。 此选项将生成“.coverage”文件，该文件可在 Visual Studio 2019 Enterprise 中打开。 有关详细信息，请参阅[使用代码覆盖率](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)和[自定义代码覆盖率分析](/visualstudio/test/customizing-code-coverage-analysis)。
 
 - **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
@@ -171,6 +175,18 @@ dotnet test -h|--help
   dotnet test --logger trx
   ```
 
+- 在当前目录运行项目中的测试，并生成代码覆盖率文件（安装 [Coverlet](https://github.com/tonerdo/coverlet/blob/master/README.md) 后）：
+
+  ```dotnetcli
+  dotnet test --collect:"XPlat Code Coverage"
+  ```
+
+- 在当前目录运行项目中的测试，并生成代码覆盖率文件（仅限 Windows）：
+
+  ```dotnetcli
+  dotnet test --collect "Code Coverage"
+  ```
+
 - 在当前目录中运行项目中的测试，并将详细的测试结果记录到控制台：
 
   ```dotnetcli
@@ -195,6 +211,7 @@ dotnet test -h|--help
 | -------------- | --------------------------------------------------------------------------------------------------------- |
 | MSTest         | <ul><li>FullyQualifiedName</li><li>“属性”</li><li>ClassName</li><li>Priority</li><li>TestCategory</li></ul> |
 | xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Traits</li></ul>                                   |
+| NUnit          | <ul><li>FullyQualifiedName</li><li>“属性”</li><li>TestCategory</li><li>Priority</li></ul>                                   |
 
 `<operator>` 说明了属性和值之间的关系：
 

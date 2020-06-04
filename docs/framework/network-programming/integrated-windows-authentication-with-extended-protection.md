@@ -2,12 +2,12 @@
 title: 带有扩展保护的集成 Windows 身份验证
 ms.date: 03/30/2017
 ms.assetid: 81731998-d5e7-49e4-ad38-c8e6d01689d0
-ms.openlocfilehash: c4afc008f600c9be0040f8d7623f5e20623dfd7d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d69471f4be0f102381dee4fc5037e8f8b0c625c3
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74444243"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144846"
 ---
 # <a name="integrated-windows-authentication-with-extended-protection"></a>带有扩展保护的集成 Windows 身份验证
 进行了可影响以下类处理集成式 Windows 身份验证的方式的改进：<xref:System.Net.HttpWebRequest>、<xref:System.Net.HttpListener>、<xref:System.Net.Mail.SmtpClient>、<xref:System.Net.Security.SslStream>、<xref:System.Net.Security.NegotiateStream> 以及 <xref:System.Net> 和相关命名空间中的相关类。 添加了对扩展保护的支持以增强安全性。  
@@ -118,7 +118,7 @@ ms.locfileid: "74444243"
 ## <a name="extended-protection-for-server-applications"></a>服务器应用程序的扩展保护  
  <xref:System.Net.HttpListener> 自动提供执行 HTTP 身份验证时验证服务绑定的机制。  
   
- 最安全的方案是为 HTTPS:// 前缀启用扩展保护。 在这种情况下，将 <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> 设置为 <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>（其中 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> 设置为 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> 或 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>），并且将 <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> 设置为 <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected>。<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> 的值使 <xref:System.Net.HttpListener> 处于部分强化模式，而 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> 对应完全强化模式。  
+ 最安全的方案是为 `HTTPS://` 前缀启用扩展保护。 在这种情况下，将 <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> 设置为 <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>（其中 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> 设置为 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> 或 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>），并且将 <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> 设置为 <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected>。<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> 的值使 <xref:System.Net.HttpListener> 处于部分强化模式，而 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> 对应完全强化模式。  
   
  在此配置中，当通过外部安全通道向服务器发送请求时，将查询外部通道的通道绑定。 将此通道绑定传递到身份验证 SSPI 调用，这将验证身份验证 Blob 中的通道绑定是否匹配。 有三个可能的结果：  
   
@@ -130,7 +130,7 @@ ms.locfileid: "74444243"
   
  如果应用程序自己进行 SSPI 调用以基于 HTTP 请求主体中来回传递的 Blob 执行身份验证，并且想要支持通道绑定，则它需要使用 <xref:System.Net.HttpListener> 来检索外部安全通道的预期通道绑定，以便将其传递给本机 Win32 [AcceptSecurityContext](/windows/win32/api/sspi/nf-sspi-acceptsecuritycontext) 函数。 若要执行此操作，请使用 <xref:System.Net.HttpListenerRequest.TransportContext%2A> 属性并调用 <xref:System.Net.TransportContext.GetChannelBinding%2A> 方法来检索 CBT。 仅支持终结点绑定。 如果指定除 <xref:System.Security.Authentication.ExtendedProtection.ChannelBindingKind.Endpoint> 外的其他内容，将引发 <xref:System.NotSupportedException>。 如果基础操作系统支持通道绑定，<xref:System.Net.TransportContext.GetChannelBinding%2A> 方法将返回 <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding><xref:System.Runtime.InteropServices.SafeHandle>，包装指向适合传递到 [AcceptSecurityContext](/windows/win32/api/sspi/nf-sspi-acceptsecuritycontext) 函数的通道绑定的指针，因为 SecBuffer 结构的 pvBuffer 成员传入了 `pInput` 参数。 <xref:System.Security.Authentication.ExtendedProtection.ChannelBinding.Size%2A> 属性包含通道绑定的以字节为单位的长度。 如果基础操作系统不支持通道绑定，该函数将返回 `null`。  
   
- 另一种可能的情况是未使用代理时为 HTTP:// 前缀启用扩展保护。 在这种情况下，将 <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> 设置为 <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>（其中 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> 设置为 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> 或 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>），并且将 <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> 设置为 <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected>。<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> 的值使 <xref:System.Net.HttpListener> 处于部分强化模式，而 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> 对应完全强化模式。  
+ 另一种可能的情况是未使用代理时为 `HTTP://` 前缀启用扩展保护。 在这种情况下，将 <xref:System.Net.HttpListener.ExtendedProtectionPolicy%2A?displayProperty=nameWithType> 设置为 <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>（其中 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement> 设置为 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> 或 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always>），并且将 <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario> 设置为 <xref:System.Security.Authentication.ExtendedProtection.ProtectionScenario.TransportSelected>。<xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.WhenSupported> 的值使 <xref:System.Net.HttpListener> 处于部分强化模式，而 <xref:System.Security.Authentication.ExtendedProtection.PolicyEnforcement.Always> 对应完全强化模式。  
   
  基于已向 <xref:System.Net.HttpListener> 注册的前缀创建允许的服务名称的默认列表。 可以通过 <xref:System.Net.HttpListener.DefaultServiceNames%2A> 属性检查此默认列表。 如果此列表不全面，应用程序可以在 <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy> 类的构造函数中指定将使用的自定义服务名称集合，而不使用默认服务名称列表。  
   
@@ -148,7 +148,7 @@ ms.locfileid: "74444243"
   
  这些扩展保护功能也可由服务器应用程序用于其他请求类型的、使用了受信任代理时的身份验证。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Security.Authentication.ExtendedProtection>
 - <xref:System.Security.Authentication.ExtendedProtection.Configuration>

@@ -2,22 +2,22 @@
 title: .NET Core 概述
 description: 了解 .NET Core 的特性和组合，并将其与其他 .NET 实现进行比较。
 ms.date: 03/26/2020
-ms.openlocfilehash: c9a63ddba14cf176be529e9520027c0610cfc087
-ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
+ms.openlocfilehash: e57451968ed8c4d5457acea084d3c6c9f998b8da
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391164"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144521"
 ---
 # <a name="net-core-overview"></a>.NET Core 概述
 
 .NET Core 具有以下特性：
 
-- 跨平台  ：可在 Windows、macOS 和 Linux [操作系统](https://github.com/dotnet/core/blob/master/os-lifecycle-policy.md)上运行。
+- 跨平台：可在 Windows、macOS 和 Linux [操作系统](https://github.com/dotnet/core/blob/master/os-lifecycle-policy.md)上运行。
 - **开放源代码：** .NET Core 框架是[开放源代码](https://github.com/dotnet/core)，使用 MIT 和 Apache 2 许可证。 .NET Core 是一个 [.NET Foundation](https://dotnetfoundation.org/) 项目。
-- 现代：  它实现了异步编程、使用结构的无复制模式和容器的资源调控等现代范例。
-- **性能：** 通过各种功能（如[硬件内部函数](https://devblogs.microsoft.com/dotnet/hardware-intrinsics-in-net-core/)、[分层编译](https://github.com/dotnet/coreclr/blob/master/Documentation/design-docs/tiered-compilation.md)和[跨度\<T>](../standard/memory-and-spans/index.md)）来提供[高性能](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-core-3-0/)。
-- 跨环境一致：  在多个操作系统和体系结构（包括 x64、x86 和 ARM）上以相同的行为运行代码。
+- 现代：它实现了异步编程、使用结构的无复制模式和容器的资源调控等现代范例。
+- **性能：** 通过各种功能（如[硬件内部函数](https://devblogs.microsoft.com/dotnet/hardware-intrinsics-in-net-core/)、[分层编译](https://github.com/dotnet/coreclr/blob/master/Documentation/design-docs/tiered-compilation.md)和 [Span\<T>](../standard/memory-and-spans/index.md)）来提供[高性能](https://devblogs.microsoft.com/dotnet/performance-improvements-in-net-core-3-0/)。
+- 跨环境一致：在多个操作系统和体系结构（包括 x64、x86 和 ARM）上以相同的行为运行代码。
 - **命令行工具：** 包括可用于本地开发和持续集成的易于使用的命令行工具。
 - **部署灵活：** 可以在应用中包含 .NET Core 或并行安装它（用户或系统范围安装）。 可搭配 [Docker 容器](docker/introduction.md)使用。
 
@@ -28,7 +28,7 @@ ms.locfileid: "80391164"
 - [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
 - [Visual Studio Code](https://code.visualstudio.com/download)
 
-编辑器集成部分由 [OmniSharp](https://www.omnisharp.net/) 和 [Ionide](http://ionide.io) 项目的参与者提供。
+编辑器集成部分由 [OmniSharp](https://www.omnisharp.net/) 和 [Ionide](https://ionide.io) 项目的参与者提供。
 
 ## <a name="apis"></a>API
 
@@ -69,6 +69,6 @@ ms.locfileid: "80391164"
 
 Microsoft 的 .NET Core 二进制发行版在 Azure 中的 Microsoft 维护服务器上进行生成和测试，并遵循 Microsoft 的工程和安全实践。
 
-[Red Hat 支持在 Red Hat Enterprise Linux (RHEL) 上使用 .NET Core](http://redhatloves.net/)。 Red Hat 从源中生成 .NET Core，并在 [Red Hat 软件集合](https://developers.redhat.com/products/softwarecollections/overview/)中提供它。 Red Hat 和 Microsoft 开展协作，共同确保 .NET Core 能够在 RHEL 上正常运行。
+[Red Hat 支持在 Red Hat Enterprise Linux (RHEL) 上使用 .NET Core](https://developers.redhat.com/topics/dotnet/)。 Red Hat 从源中生成 .NET Core，并在 [Red Hat 软件集合](https://developers.redhat.com/products/softwarecollections/overview/)中提供它。 Red Hat 和 Microsoft 开展协作，共同确保 .NET Core 能够在 RHEL 上正常运行。
 
 [Tizen 支持在 Tizen 平台上使用 .NET Core](https://developer.tizen.org/development/training/.net-application)。

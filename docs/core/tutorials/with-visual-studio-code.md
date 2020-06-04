@@ -1,142 +1,124 @@
 ---
-title: C# 和 Visual Studio Code 入门
-description: 了解如何使用 Visual Studio Code 创建和调试首个 C# .NET Core 应用。
-author: kendrahavens
-ms.date: 04/23/2020
-ms.openlocfilehash: 3dd7c4602fbb27e29bad977f8d3df34b6061bc23
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+title: 使用 Visual Studio Code 通过 .NET Core 创建控制台应用程序
+description: 了解如何使用 Visual Studio Code 和 .NET Core CLI 创建 .NET Core 控制台应用程序。
+ms.date: 05/22/2020
+ms.openlocfilehash: 673c4a639a2cab26261b7cdafd5d8e20acfafb94
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506869"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201706"
 ---
-# <a name="get-started-with-c-and-visual-studio-code"></a>C# 和 Visual Studio Code 入门
+# <a name="tutorial-create-a-console-application-with-net-core-using-visual-studio-code"></a>教程：使用 Visual Studio Code 通过 .NET Core 创建控制台应用程序
 
-.NET Core 提供了快速运行的模块化平台，用于创建在 Windows、Linux 和 macOS 上运行的应用程序。 带 C# 扩展的 Visual Studio Code 提供功能强大的编辑体验，完全支持 C# IntelliSense（智能代码填充）和调试。
+本教程演示如何使用 Visual Studio Code 和 .NET Core CLI 创建并运行 .NET Core 控制台应用程序。 项目任务（如创建、编译和运行项目）是使用 CLI 完成的，因此，如果你愿意，可以使用其他代码编辑器来学习本教程并在终端中运行命令。
 
 ## <a name="prerequisites"></a>先决条件
 
-1. 安装 [Visual Studio Code](https://code.visualstudio.com/)。
-2. 获取 [.NET Core SDK](https://dotnet.microsoft.com/download)。
-3. 安装 Visual Studio Code 的 [C# 扩展](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)。 若要详细了解如何在 Visual Studio Code 上安装扩展，请访问 [VS Code 扩展市场](https://code.visualstudio.com/docs/editor/extension-gallery)。
+1. 已安装 [C# 扩展](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp) 的 [Visual Studio Code](https://code.visualstudio.com/)。 有关如何在 Visual Studio Code 上安装扩展的信息，请访问 [VS Code 扩展市场](https://code.visualstudio.com/docs/editor/extension-gallery)。
+2. [.NET Core 3.1 SDK 或更高版本](https://dotnet.microsoft.com/download)
 
-## <a name="hello-world"></a>Hello World
+## <a name="create-the-app"></a>创建应用
 
-从 .NET Core 上的一个简单“Hello World”程序入手：
+1. 打开 Visual Studio Code。
 
-1. 打开项目：
+1. 创建项目。
 
-    - 打开 Visual Studio Code。
-    - 从主菜单中选择“文件” > “打开文件夹”   。
-    - 创建一个名为“HelloWorld”的文件夹，然后单击“选择文件夹”   。 默认情况下，文件夹名称将是项目名称和命名空间名称。 稍后将在本教程中添加代码，假定项目命名空间为 `HelloWorld`。
+   1. 在主菜单中选择“文件” > “打开文件夹”/“打开…”，创建“HelloWorld”文件夹，然后单击“选择文件夹”/“打开”   。
 
-1. 初始化 C# 项目：
+      默认情况下，文件夹名称将是项目名称和命名空间名称。 稍后将在本教程中添加代码，假定项目命名空间为 `HelloWorld`。
 
-    - 通过从主菜单中选择“视图” > “终端”，从 Visual Studio Code 中打开终端   。
-    - 在终端窗口中，键入 `dotnet new console`。
+   1. 在主菜单中选择“视图” > “终端”，从 Visual Studio Code 中打开“终端”  。
 
-      此命令在已编写“Hello World”简单程序的文件夹中创建“Program.cs”文件，以及名为“HelloWorld.csproj”的 C# 项目文件   。
+      “终端”在“HelloWorld”文件夹中连同命令提示符一起打开。
 
-      ![dotnet new 命令](media/with-visual-studio-code/dotnet-new-command.png)
+   1. 在“终端”中输入以下命令：
 
-1. 运行“Hello World”程序：
+      ```dotnetcli
+      dotnet new console
+      ```
 
-    - 在终端窗口中，输入 `dotnet run`。
+.NET Core 控制台应用程序模板将定义类 `Program`，其中包含一个需要将 <xref:System.String> 数组用作参数的方法 `Main`。 Program.cs 文件具有以下代码：
 
-      ![dotnet run 命令](media/with-visual-studio-code/dotnet-run-command.png)
+```csharp
+using System;
 
-## <a name="debug"></a>调试
-
-1. 单击打开 *Program.cs*。 在 Visual Studio Code 中首次打开 C# 文件时，会在编辑器中加载 [OmniSharp](https://www.omnisharp.net/)。
-
-    ![打开 Program.cs 文件](media/with-visual-studio-code/open-program-cs.png)
-
-1. Visual Studio Code 会提示添加缺少的资产，以生成和调试应用。 选择 **“是”** 。
-
-    ![提示添加缺少的资产](media/with-visual-studio-code/missing-assets.png)
-
-1. 若要打开调试视图，请单击左侧菜单上的“调试”图标。
-
-    ![在 Visual Studio Code 中打开“调试”选项卡](media/with-visual-studio-code/open-debug-tab.png)
-
-1. 找到窗格最上面的绿色箭头。 请确保已选择旁边下拉列表中的“.NET Core Launch (控制台)”  。
-
-    ![在 Visual Studio Code 中选择“.NET Core”](media/with-visual-studio-code/select-net-core.png)
-
-1. 单击第 9 行旁边的编辑器边距  （编辑器中行号左侧的空间）或者将文本光标移动到编辑器中的第 9 行并按 <kbd>F9</kbd>，为项目添加断点。
-
-    ![设置断点](media/with-visual-studio-code/set-breakpoint-vs-code.png)
-
-1. 请按 <kbd>F5</kbd> 或选择绿色箭头启动调试。 在到达你在上一步中设置的断点时，调试器会停止执行程序。
-    - 调试时，可以在左上角的窗格中查看局部变量，也可以使用调试控制台进行查看。
-
-1. 选择最上面的蓝色箭头以继续调试，或选择最上面的红色方块以停止调试。
-
-    ![在 Visual Studio Code 中运行并调试](media/with-visual-studio-code/run-debug-vs-code.png)
-
-> [!TIP]
-> 若要详细了解如何使用 OmniSharp 在 Visual Studio Code 中进行 .NET Core 调试，以及相关的疑难解答提示，请参阅[有关设置 .NET Core 调试器的说明](https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger.md)。
-
-## <a name="add-a-class"></a>添加类
-
-1. 若要添加一个新类，请右键单击 Program.cs 下方的 VSCode Explorer 并选择“新建文件”   。 此操作会将新文件添加到在 VSCode 中打开的文件夹中。
-1. 将文件命名为 MyClass.cs  。 必须在末尾使用 `.cs` 扩展名保存它，以便将其识别为 csharp 文件。
-1. 添加下面的代码，以创建第一个类。
-
-    ``` csharp
-    using System;
-
-    namespace HelloWorld
+namespace HelloWorld
+{
+    class Program
     {
-        public class MyClass
+        static void Main(string[] args)
         {
-            public string ReturnMessage()
-            {
-                return "Happy coding!";
-            }
+            Console.WriteLine("Hello World!");
         }
     }
-    ```
+}
+```
 
-1. 通过将 Program.cs 中的代码替换为以下代码，从 `Main` 方法调用新类  ：
+`Main` 是应用程序入口点，同时也是在应用程序启动时由运行时自动调用的方法。 *args* 数组中包含在应用程序启动时提供的所有命令行自变量。
 
-    ```csharp
-    using System;
+该模板创建一个简单的应用程序，以调用 <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> 方法来显示“Hello World!” 显示文本字符串“Hello World!”。
 
-    namespace HelloWorld
-    {
-        class Program
-        {
-            static void Main(string[] args)
-            {
-                var c1 = new MyClass();
-                Console.WriteLine($"Hello World! {c1.ReturnMessage()}");
-            }
-        }
-    }
-    ```
+## <a name="run-the-app"></a>运行应用
+
+在“终端”中运行以下命令：
+
+```dotnetcli
+dotnet run
+```
+
+程序显示“Hello World!” 然后结束。
+
+![dotnet run 命令](media/with-visual-studio-code/dotnet-run-command.png)
+
+## <a name="enhance-the-app"></a>增强应用
+
+改进应用程序，使其提示用户输入名字，并将其与日期和时间一同显示。
+
+1. 单击打开 *Program.cs*。
+
+   在 Visual Studio Code 中首次打开 C# 文件时，会在编辑器中加载 [OmniSharp](https://www.omnisharp.net/)。
+
+   ![打开 Program.cs 文件](media/with-visual-studio-code/open-program-cs.png)
+
+1. Visual Studio Code 提示添加缺少的资产时选择“是”，以生成和调试应用。
+
+   ![提示添加缺少的资产](media/with-visual-studio-code/missing-assets.png)
+
+1. 将 Program.cs 中 `Main` 方法的内容（当前只是调用 `Console.WriteLine` 的行）替换为以下代码：
+
+   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="Snippet1":::
+
+   此代码在控制台中显示“What is your name?”， 然后等待用户输入字符串并按 Enter。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量。 最后，它会在控制台窗口中显示这些值。
+
+   `\n` 表示一个换行符。
+
+   字符串前面的美元符号 (`$`) 使你可以将表达式（如变量名称）放入字符串中的大括号内。 表达式值将代替表达式插入到字符串中。 此语法称为[内插字符串](../../csharp/language-reference/tokens/interpolated.md)。
 
 1. 保存更改。
 
-1. 再次运行程序。
+   > [!IMPORTANT]
+   > 在 Visual Studio Code 中，必须显式保存更改。 与 Visual Studio 不同，生成和运行应用时不会自动保存文件更改。
 
-    ```dotnetcli
-    dotnet run
-    ```
+1. 再次运行程序：
 
-    新消息会显示追加的字符串。
+   ```dotnetcli
+   dotnet run
+   ```
 
-    ```console
-    Hello World! Happy coding!
-    ```
+1. 出现提示时，输入名称并按 Enter 键。
 
-## <a name="faq"></a>FAQ
+   :::image type="content" source="media/debugging-with-visual-studio-code/run-modified-program.png" alt-text="包含经过修改的程序输出的“终端”窗口":::
 
-### <a name="im-missing-required-assets-to-build-and-debug-c-in-visual-studio-code-my-debugger-says-no-configuration"></a>缺少在 Visual Studio Code 中生成和调试 C# 所需的资产。 调试器显示“无配置”。
+1. 按任意键退出程序。
 
-Visual Studio Code C# 扩展可生成用于生成和调试的资产。 首次打开 C# 项目时，Visual Studio Code 会提示用户生成这些资产。 如果当时并未生成这些资产，仍可以通过打开命令面板（“视图”>“命令面板”  ）并键入“>.NET：生成用于生成和调试的资产”来运行此命令。 选择此方法可生成所需的 .vscode、launch.json 和 tasks.jsonn 配置文件    。
-
-## <a name="see-also"></a>请参阅
+## <a name="additional-resources"></a>其他资源
 
 - [设置 Visual Studio Code](https://code.visualstudio.com/docs/setup/setup-overview)
-- [在 Visual Studio Code 中进行调试](https://code.visualstudio.com/Docs/editor/debugging)
+
+## <a name="next-steps"></a>后续步骤
+
+在本教程中，你创建了一个 .NET Core 应用程序。 在下一教程中，你将调试该应用。
+
+> [!div class="nextstepaction"]
+> [使用 Visual Studio Code 调试 .NET Core 控制台应用程序](debugging-with-visual-studio-code.md)

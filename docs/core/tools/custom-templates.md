@@ -3,12 +3,12 @@ title: dotnet new 自定义模板
 description: 了解任意类型 .NET 项目或文件的自定义模板。
 author: thraka
 ms.date: 05/20/2020
-ms.openlocfilehash: 19855c99b240b66dfa819e70d4a1bee5c8ed14ed
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 56fcbfbc168143007f0772ce8a12347f7e25e50b
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761910"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84005306"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>dotnet new 自定义模板
 
@@ -96,7 +96,7 @@ mytemplate 文件夹是可安装的模板包。 安装此包后，`shortName` �
 
 ## <a name="packing-a-template-into-a-nuget-package-nupkg-file"></a>将模板打包到 NuGet 包（nupkg 文件）
 
-自定义模板与 [dotnet pack](dotnet-pack.md) 命令和 .csproj 文件一起打包。 或者，[NuGet](https://docs.microsoft.com/nuget/tools/nuget-exe-cli-reference) 可与 [nuget pack](https://docs.microsoft.com/nuget/tools/cli-ref-pack) 命令以及 .nuspec 文件一起使用。 但是，NuGet 在 Windows 上需要 .NET Framework，在 Linux 和 MacOS 上需要 [Mono](https://www.mono-project.com/)。
+自定义模板与 [dotnet pack](dotnet-pack.md) 命令和 .csproj 文件一起打包。 或者，[NuGet](https://docs.microsoft.com/nuget/tools/nuget-exe-cli-reference) 可与 [nuget pack](https://docs.microsoft.com/nuget/tools/cli-ref-pack) 命令以及 .nuspec 文件一起使用。 但是，NuGet 在 Windows 上需要 .NET Framework，在 Linux 和 macOS 上需要 [Mono](https://www.mono-project.com/)。
 
 该 .csproj 文件与传统代码项目 .csproj 文件略有不同。 请注意以下设置：
 

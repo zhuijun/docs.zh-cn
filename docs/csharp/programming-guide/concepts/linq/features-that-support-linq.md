@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], features supporting LINQ
 ms.assetid: 524b0078-ebfd-45a7-b390-f2ceb9d84797
-ms.openlocfilehash: 9fc8adaa49d02f8b69c2db6e94a28b9fab36b3b0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 32ba8f5e60b3ed2efd813a8ae32e5f4009eb790d
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635790"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202407"
 ---
 # <a name="c-features-that-support-linq"></a>支持 LINQ 的 C# 功能
 
@@ -42,7 +42,7 @@ var query = from str in stringArray
 
 声明为 `var` 的变量与显式指定其类型的变量一样都是强类型。 通过使用 `var`，可以创建匿名类型，但它只能用于本地变量。 也可以使用隐式类型声明数组。
 
-有关详细信息，请参阅[隐式类型本地变量](../../classes-and-structs/implicitly-typed-local-variables.md)。
+有关详细信息，请参阅[隐式类型局部变量](../../classes-and-structs/implicitly-typed-local-variables.md)。
 
 ## <a name="object-and-collection-initializers"></a>对象和集合初始值设定项
 
@@ -66,7 +66,7 @@ var newLargeOrderCustomers = from o in IncomingOrders
 var newLargeOrderCustomers = IncomingOrders.Where(x => x.OrderSize > 5).Select(y => new Customer { Name = y.Name, Phone = y.Phone });
 ```
 
-有关详情，请参阅：
+有关详细信息，请参见:
 
 - [对象和集合初始值设定项](../../classes-and-structs/object-and-collection-initializers.md)
 
@@ -92,7 +92,7 @@ select new {name = cust.Name, phone = cust.Phone};
 
 Lambda 表达式是一种内联函数，该函数使用 => 运算符将输入参数与函数体分离，并且可以在编译时转换为委托或表达式树。 在 LINQ 编程中，在对标准查询运算符进行直接方法调用时，会遇到 lambda 表达式。
 
-有关详情，请参阅：
+有关详细信息，请参见:
 
 - [匿名函数](../../statements-expressions-operators/anonymous-functions.md)
 
@@ -100,6 +100,6 @@ Lambda 表达式是一种内联函数，该函数使用 => 运算符将输入参
 
 - [表达式树 (C#)](../expression-trees/index.md)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [语言集成查询 (LINQ) (C#)](./index.md)

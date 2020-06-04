@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: d6775263e6f1afb227aa263b01d60f5181da74f3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c203716d9bb8298c934a999a496793c294949ddb
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77093505"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007749"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>命令行参数（C# 编程指南）
 
@@ -25,6 +25,9 @@ ms.locfileid: "77093505"
 `Main` 方法的参数是一个表示命令行参数的 <xref:System.String> 数组。 通常，通过测试 `Length` 属性来确定参数是否存在，例如：
 
 [!code-csharp[csProgGuideMain#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#4)]
+
+> [!TIP]
+> `args` 数组不能为 null。 因此，无需进行 null 检查即可放心地访问 `Length` 属性。
 
 还可以使用 <xref:System.Convert> 类或 `Parse` 方法将字符串参数转换为数字类型。 例如，以下语句使用 <xref:System.Int64.Parse%2A> 方法将 `string` 转换为 `long` 数字：
 
@@ -52,17 +55,17 @@ long num = Convert.ToInt64(s);
 
 若要在命令提示符下编译并运行该应用程序，请按照下列步骤操作：
 
-1. 将以下代码粘贴到任何文本编辑器，然后将该文件保存为名为“Factorial.cs”  的文本文件。
+1. 将以下代码粘贴到任何文本编辑器，然后将该文件保存为名为“Factorial.cs”的文本文件。
 
      [!code-csharp[csProgGuideMain#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class1.cs#16)]
 
-2. 从“开始”  屏幕或“开始”  菜单中，打开 Visual Studio“开发人员命令提示”  窗口，然后导航到包含刚刚创建的文件的文件夹。
+2. 从“开始”屏幕或“开始”菜单中，打开 Visual Studio“开发人员命令提示”窗口，然后导航到包含刚刚创建的文件的文件夹。
 
 3. 输入以下命令以编译应用程序。
   
      `csc Factorial.cs`  
   
-     如果应用程序不存在编译错误，则会创建一个名为“Factorial.exe”  的可执行文件。
+     如果应用程序不存在编译错误，则会创建一个名为“Factorial.exe”的可执行文件。
   
 4. 输入以下命令以计算 3 的阶乘：
   
@@ -73,7 +76,7 @@ long num = Convert.ToInt64(s);
 > [!NOTE]
 > 在 Visual Studio 中运行应用程序时，可在[“项目设计器”->“调试”页](/visualstudio/ide/reference/debug-page-project-designer)中指定命令行参数。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Environment?displayProperty=nameWithType>
 - [C# 编程指南](../index.md)

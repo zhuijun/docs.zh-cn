@@ -4,12 +4,12 @@ description: 了解所有 C# 程序中的核心类型（数字、字符串和对
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 89b5cebdc887db808db8abb1fa9eda34e2bec9e5
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 468482bd1b4f1a5835df9d66ee483edc33c28f61
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205811"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202211"
 ---
 # <a name="types-variables-and-values"></a>类型、变量和值
 
@@ -48,7 +48,7 @@ C# 是一种强类型语言。 每个变量和常量都有一个类型，每个�
   
 [!code-csharp[Method Signature](../../samples/snippets/csharp/concepts/basic-types/method-signature.cs)]  
   
-在声明变量后，不能使用新类型重新声明该变量，并且不能为其分配与其声明的类型不兼容的值。 例如，不能声明 [int](language-reference/builtin-types/integral-numeric-types.md)再向它分配 `true` 的布尔值。 不过，可以将值转换成其他类型。例如，在将值赋给新变量或作为方法自变量传递时。 编译器会自动执行不会导致数据丢失的*类型转换*。 可能导致数据丢失的转换需要在源代码进行强制转换。 
+在声明变量后，不能使用新类型重新声明该变量，并且不能为其分配与其声明的类型不兼容的值。 例如，不能声明 [int](language-reference/builtin-types/integral-numeric-types.md)再向它分配 `true` 的布尔值。 不过，可以将值转换成其他类型。例如，在将值赋给新变量或作为方法自变量传递时。 编译器会自动执行不会导致数据丢失的*类型转换*。 可能导致数据丢失的转换需要在源代码进行强制转换。
 
 有关详细信息，请参阅[强制转换和类型转换](programming-guide/types/casting-and-type-conversions.md)。
 
@@ -62,19 +62,19 @@ C# 提供了一组标准的内置数值类型来表示整数、浮点值、布�
   
 ## <a name="generic-types"></a>泛型类型
 
-可使用一个或多个类型参数声明、作为客户端代码在创建类型实例时将提供的实际类型（具体类型）的占位符的类型。   这种类型称为泛型类型。  例如，.NET Framework 类型 <xref:System.Collections.Generic.List%601> 具有一个类型参数，它按照惯例被命名为 *T*。创建类型实例时，指定列表将包含的对象类型，例如字符串：  
+可使用一个或多个类型参数声明、作为客户端代码在创建类型实例时将提供的实际类型（具体类型）的占位符的类型。  这种类型称为泛型类型。 例如，.NET Framework 类型 <xref:System.Collections.Generic.List%601> 具有一个类型参数，它按照惯例被命名为 *T*。创建类型实例时，指定列表将包含的对象类型，例如字符串：  
   
 [!code-csharp[Generic types](../../samples/snippets/csharp/concepts/basic-types/generic-type.cs)]
   
-使用类型参数，可以重用同一个类来保留任何类型的元素，而无需将每个元素转换成[对象](language-reference/builtin-types/reference-types.md#the-object-type)。 泛型集合类称为*强类型集合*，因为编译器知道集合元素的具体类型，并能在编译时抛出错误，例如当尝试向上面示例中的 `strings` 对象添加整数时。 有关详细信息，请参阅[泛型](programming-guide/generics/index.md)。
+通过使用类型参数，可重新使用相同类以保存任意类型的元素，且无需将每个元素转换为[对象](language-reference/builtin-types/reference-types.md#the-object-type)。 泛型集合类称为强类型集合，因为编译器知道集合元素的具体类型，并能在编译时抛出错误，例如当尝试向上面示例中的 `strings` 对象添加整数时。 有关详细信息，请参阅[泛型](programming-guide/generics/index.md)。
 
 ## <a name="implicit-types-anonymous-types-and-tuple-types"></a>隐式类型、匿名类型和元组类型
 
 如前所述，你可以使用 [var](language-reference/keywords/var.md) 关键字隐式键入一个局部变量（但不是类成员）。 变量在编译时仍可接收类型，但类型由编译器提供。 有关详细信息，请参阅[隐式类型本地变量](programming-guide/classes-and-structs/implicitly-typed-local-variables.md)。  
   
-在某些情况下，为不打算存储或传递外部方法边界的简单相关值集合创建命名类型是不方便的。 为此，你可以创建匿名类型。  有关详细信息，请参阅[匿名类型](programming-guide/classes-and-structs/anonymous-types.md)。
+在某些情况下，为不打算存储或传递外部方法边界的简单相关值集合创建命名类型是不方便的。 为此，你可以创建匿名类型。 有关详细信息，请参阅[匿名类型](programming-guide/classes-and-structs/anonymous-types.md)。
 
-经常需要从方法返回多个值。 可以创建在单个方法调用中返回多个值的元组类型。  有关详细信息，请参阅[元组](tuples.md)。
+经常需要从方法返回多个值。 可以创建在单个方法调用中返回多个值的元组类型。 有关详细信息，请参阅[元组](tuples.md)。
 
 ## <a name="the-common-type-system"></a>通用类型系统
 
@@ -82,7 +82,7 @@ C# 提供了一组标准的内置数值类型来表示整数、浮点值、布�
   
 - 它支持继承原则。 类型可以派生自其他类型（称为*基类型*）。 派生类型继承（有一些限制）基类型的方法、属性和其他成员。 基类型可以继而从某种其他类型派生，在这种情况下，派生类型继承其继承层次结构中的两种基类型的成员。 所有类型（包括 <xref:System.Int32> (C# keyword: `int`) 等内置数值类型）最终都派生自单个基类型，即 <xref:System.Object> (C# keyword: `object`)。 此统一类型层次结构称为[通用类型系统](../standard/common-type-system.md) (CTS)。 有关 C# 中的继承的详细信息，请参阅[继承](programming-guide/classes-and-structs/inheritance.md)。  
   
-- CTS 中的每种类型被定义为值类型或引用类型。   这包括 .NET 类库中的所有自定义类型以及你自己的用户定义类型。 使用 `struct` 或 `enum` 关键字定义的类型是值类型。 有关值类型的详细信息，请参阅[值类型](language-reference/builtin-types/value-types.md)。 使用 [class](language-reference/keywords/class.md) 关键字定义的类型是引用类型。 有关引用类型的详细信息，请参阅[类](programming-guide/classes-and-structs/classes.md)。 引用类型和值类型具有不同的编译时规则和不同的运行时行为。
+- CTS 中的每种类型被定义为值类型或引用类型。  这包括 .NET 类库中的所有自定义类型以及你自己的用户定义类型。 使用 `struct` 或 `enum` 关键字定义的类型是值类型。 有关值类型的详细信息，请参阅[值类型](language-reference/builtin-types/value-types.md)。 使用 [class](language-reference/keywords/class.md) 关键字定义的类型是引用类型。 有关引用类型的详细信息，请参阅[类](programming-guide/classes-and-structs/classes.md)。 引用类型和值类型具有不同的编译时规则和不同的运行时行为。
 
 ## <a name="see-also"></a>请参阅
 

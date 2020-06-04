@@ -4,12 +4,12 @@ description: 了解如何将 .NET for Apache Spark 应用程序部署到 Databri
 ms.date: 05/12/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 245df14b9174a3b2ff152f90e6c50cc8766a2de9
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 4010f363e8ba606a7294ea32dc34587da6d6c8aa
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83397053"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202241"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>教程：将 .NET for Apache Spark 应用程序部署到 Databricks
 
@@ -87,7 +87,7 @@ Databricks CLI 安装完毕之后，接下来需要设置身份验证详细信�
 
 1. 运行 Databricks CLI 命令 `databricks configure --token`。
 
-2. 运行配置命令后，系统会提示你进入主机。 主机 URL 使用以下格式： https://<\Location>.azuredatabricks.net。 例如，如果在创建 Azure Databricks 服务期间选择了“eastus2”，则主机将为 https://eastus2.azuredatabricks.net 。
+2. 运行配置命令后，系统会提示你进入主机。 你的主机 URL 使用的格式为 `https://<Location>.azuredatabricks.net`。 例如，如果在创建 Azure Databricks 服务期间选择了“eastus2”，则主机将为 `https://eastus2.azuredatabricks.net`。
 
 3. 进入主机之后，系统会提示你输入令牌。 在 Azure 门户中，选择“启动工作区”以启动 Azure Databricks 工作区。
 

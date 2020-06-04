@@ -15,12 +15,12 @@ helpviewer_keywords:
 - binary resources files
 - embedding files in runtime binary executable
 ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
-ms.openlocfilehash: cf79e7c76fd54c6cb6b235251a57aba33c28552b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b9be030689ecf78b3482743e486e32012e9ca5d4
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180334"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201108"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe（资源文件生成器）
 资源文件生成器 (Resgen.exe) 将文本（.txt 或 .restext）文件和基于 XML 的资源格式 (.resx) 文件转换为公共语言运行时二进制 (.resources) 文件，后者可嵌入到运行时二进制可执行文件或附属程序集中。 （请参阅[创建资源文件](../resources/creating-resource-files-for-desktop-apps.md)。）  
@@ -71,7 +71,7 @@ resgen filename.extension [outputDirectory]
   
 |参数或开关|描述|  
 |-------------------------|-----------------|  
-|`/define:` symbol1[, symbol2,...]|从 .NET Framework 4.5 开始，支持基于文本（.txt 或 .restext）的资源文件中的条件编译。 如果 symbol 对应于 `#ifdef` 构造中的输入文本文件中包含的符号，则关联的字符串资源将包含在 .resources 文件中。 如果输入文本文件包含带符号（此符号未由 `#if !` 开关定义）的 `/define` 语句，则关联的字符串资源将包含在资源文件中。<br /><br /> 如果将 `/define` 与非文本文件一起使用，则它将被忽略。 符号是区分大小写的。<br /><br /> 有关此选项的更多信息，请参阅本主题后面的[条件编译资源](#Conditional)。|  
+|`/define:` symbol1[, symbol2,...] |从 .NET Framework 4.5 开始，支持基于文本（.txt 或 .restext）的资源文件中的条件编译。 如果 symbol 对应于 `#ifdef` 构造中的输入文本文件中包含的符号，则关联的字符串资源将包含在 .resources 文件中。 如果输入文本文件包含带符号（此符号未由 `#if !` 开关定义）的 `/define` 语句，则关联的字符串资源将包含在资源文件中。<br /><br /> 如果将 `/define` 与非文本文件一起使用，则它将被忽略。 符号是区分大小写的。<br /><br /> 有关此选项的更多信息，请参阅本主题后面的[条件编译资源](#Conditional)。|  
 |`useSourcePath`|指定输入文件的当前目录将用于解析相对文件路径。|  
 |`/compile`|使你能够在单个批量操作中指定要转换为多个 .resources 文件的多个 .resx 文件或文本文件。 如果不指定此选项，则只能指定一个输入文件自变量。 输出文件将命名为 filename.resources。<br /><br /> 此选项不能与 `/str:` 选项一起使用。<br /><br /> 有关此选项的更多信息，请参阅本主题后面的[编译或转换多个文件](#Multiple)。|  
 |`/r:` `assembly`|从指定的程序集引用元数据。 当转换 .resx 文件并允许 Resgen.exe 序列化或反序列化对象资源时使用此选项。 这类似于 C# 和 Visual Basic 编译器的 `/reference:` 或 `/r:` 选项。|  
@@ -300,7 +300,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
  classname  
  强类型资源类的名称。 这应对应于 .resources 文件的根名称。 例如，如果 Resgen.exe 生成名为 MyCompany.Libraries.Strings.resources 的 .resources 文件，则强类型资源类的名称为 Strings。 如果省略 classname，则生成的类是从 `outputFilename` 的根名称派生的。 如果省略 `outputFilename`，则生成的类是从 `inputFilename` 的根名称派生的。  
   
- classname 不能包含无效字符（如嵌入的空格）。 如果 classname 包含嵌入的空格，或者从 inputFilename 中生成 classname（默认情况），并且 inputFilename 包含嵌入的空格，则 Resgen.exe 会将所有无效字符替换为下划线 (\_)。  
+ classname 不能包含无效字符（如嵌入的空格）。 如果 classname 包含嵌入的空格，或者从 inputFilename 中生成 classname（默认情况），并且 inputFilename 包含嵌入的空格，则 Resgen.exe 会将所有无效字符替换为下划线 (\_)   。  
   
  *filename*  
  类文件的名称。  

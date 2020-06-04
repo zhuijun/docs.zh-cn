@@ -5,14 +5,14 @@ ms.date: 10/01/2018
 helpviewer_keywords:
 - Memory&lt;T&gt; and Span&lt;T&gt; best practices
 - using Memory&lt;T&gt; and Span&lt;T&gt;
-ms.openlocfilehash: b9405d746c141308c7d984dac9da0d65d1048d1e
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: cb9075a12bb8d842cd8e937e74f8869c910fc0ab
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380017"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201944"
 ---
-# <a name="memoryt-and-spant-usage-guidelines"></a>内存\<T> 和跨度\<T> 使用准则
+# <a name="memoryt-and-spant-usage-guidelines"></a>内存\<T>和跨度\<T>使用准则
 
 .NET Core 包括多个表示内存的任意连续区域的类型。 .NET Core 2.0 引入了 <xref:System.Span%601> 和 <xref:System.ReadOnlySpan%601>，它们是可由托管或非托管内存提供支持的轻量级内存缓冲区。 由于这些类型只能存储在堆栈上，因此它们不适用于多种方案，包括异步方法调用。 .NET Core 2.1 添加了其他一些类型，包括 <xref:System.Memory%601>、<xref:System.ReadOnlyMemory%601>、<xref:System.Buffers.IMemoryOwner%601> 和 <xref:System.Buffers.MemoryPool%601>。 与 <xref:System.Span%601> 相同，<xref:System.Memory%601> 及其相关类型可以由托管和非托管内存提供支持。 与 <xref:System.Span%601> 不同，<xref:System.Memory%601> 可以存储在托管堆上。
 
@@ -65,7 +65,7 @@ class Program
 
 `WriteInt32ToBuffer` 方法在方法调用的开始时间和方法返回的时间之间会租用（可以使用）缓冲区。 同样，`DisplayBufferToConsole` 在执行时会租用缓冲区，回退该方法时将解除租用。 （没有用于租用管理的 API；“租用”是概念性内容。）
 
-## <a name="memoryt-and-the-ownerconsumer-model"></a>内存\<T> 和所有者/使用者模型
+## <a name="memoryt-and-the-ownerconsumer-model"></a>Memory\<T> 和所有者/使用者模型
 
 如[所有者、使用者和生存期管理](#owners-consumers-and-lifetime-management)部分中指出，缓冲区始终都有一个所有者。 .NET Core 支持以下两种所有权模型：
 
@@ -89,7 +89,7 @@ class Program
 
 尽管 `WriteInt32ToBuffer` 方法用于将值写入缓冲区，但 `DisplayBufferToConsole` 方法并不如此。 若要反映此情况，可以接受类型为 <xref:System.ReadOnlyMemory%601> 的参数。 有关 <xref:System.ReadOnlyMemory%601> 的详细信息，请参阅[规则 2：如果缓冲区应为只读，则使用 ReadOnlySpan\<T> 或 ReadOnlyMemory\<T>](#rule-2)。
 
-### <a name="ownerless-memoryt-instances"></a>“无所有者”内存\<T> 实例
+### <a name="ownerless-memoryt-instances"></a>“无所有者”Memory\<T> 实例
 
 无需使用 <xref:System.Buffers.IMemoryOwner%601> 即可创建 <xref:System.Memory%601> 实例。 在这种情况下，缓冲区的所有权是隐式的而不是显式的，并且仅支持单所有者模型。 可以通过以下方式达到此目的：
 
@@ -113,9 +113,9 @@ class Program
 
 下面介绍成功使用 <xref:System.Memory%601> 及其相关类型的建议。 除非另有明确说明，否则适用于 <xref:System.Memory%601> 和 <xref:System.Span%601> 的指南也适用于 <xref:System.ReadOnlyMemory%601> 和 <xref:System.ReadOnlySpan%601>。
 
-**规则 1：对于同步 API，如有可能，请使用跨度\<T>（而不是内存\<T>）作为参数。**
+**规则 1：对于同步 API，如有可能，请使用 Span\<T>（而不是 Memory\<T>）作为参数。**
 
-<xref:System.Span%601> 比 <xref:System.Memory%601> 更通用，可以表示更多种类的连续内存缓冲区。 <xref:System.Span%601> 还提供比 <xref:System.Memory%601> 更好的性能。 最后，尽管无法进行跨度\<T> 到内存\<T> 的转换，但可以使用 <xref:System.Memory%601.Span?displayProperty=nameWithType> 属性将 <xref:System.Memory%601> 实例转换为 <xref:System.Span%601>。 因此，如果调用方恰好具有 <xref:System.Memory%601> 实例，则它们不管怎样都可以使用 <xref:System.Span%601> 参数调用你的方法。
+<xref:System.Span%601> 比 <xref:System.Memory%601> 更通用，可以表示更多种类的连续内存缓冲区。 <xref:System.Span%601> 还提供比 <xref:System.Memory%601> 更好的性能。 最后，尽管无法进行 Span\<T> 到 Memory\<T> 的转换，但可以使用 <xref:System.Memory%601.Span?displayProperty=nameWithType> 属性将 <xref:System.Memory%601> 实例转换为 <xref:System.Span%601>。 因此，如果调用方恰好具有 <xref:System.Memory%601> 实例，则它们不管怎样都可以使用 <xref:System.Span%601> 参数调用你的方法。
 
 使用类型为 <xref:System.Span%601>（而不是类型为 <xref:System.Memory%601>）的参数还可以帮助你编写正确的使用方法实现。 你将自动进行编译时检查，以确保不尝试访问方法租用之外的缓冲区（后续部分将对此进行详细介绍）。
 
@@ -139,7 +139,7 @@ void DisplayBufferToConsole(ReadOnlySpan<char> buffer);
 
 `DisplayBufferToConsole` 方法现在几乎适用于每一个能够想到的缓冲区类型：`T[]`，使用 [stackalloc](../../csharp/language-reference/operators/stackalloc.md) 分配的存储等。 甚至可以向其直接传递 <xref:System.String>！
 
-**规则 3：如果方法接受内存\<T> 并返回 `void`，则在方法返回之后不得使用内存\<T> 实例。**
+**规则 3：如果方法接受 Memory\<T> 并返回 `void`，则在方法返回之后不得使用 Memory\<T> 实例。**
 
 这与前面提到的“租用”概念相关。 返回 void 的方法对 <xref:System.Memory%601> 实例的租用将在进入该方法时开始，并在退出该方法时结束。 请考虑以下示例，该示例会基于控制台中的输入在循环中调用 `Log`。
 
@@ -173,7 +173,7 @@ static void Log(ReadOnlyMemory<char> message)
 
    [!code-csharp[defensive-copy](~/samples/snippets/standard/buffers/memory-t/task-returning/task-returning.cs#1)]
 
-**规则 4：如果方法接受内存\<T> 并返回某个任务，则在该任务转换为终止状态之后不得使用内存\<T> 实例。**
+**规则 4：如果方法接受 Memory\<T> 并返回某个任务，则在该任务转换为终止状态之后不得使用 Memory\<T> 实例。**
 
 这只是规则 3 的异步变体。 可以按如下所示编写前面示例中的 `Log` 方法以遵守此规则：
 
@@ -183,7 +183,7 @@ static void Log(ReadOnlyMemory<char> message)
 
 此指南适用于返回 <xref:System.Threading.Tasks.Task>、<xref:System.Threading.Tasks.Task%601>、<xref:System.Threading.Tasks.ValueTask%601> 或任何类似类型的方法。
 
-**规则 5：如果构造函数接受内存\<T> 作为参数，则假定构造对象上的实例方法是内存\<T> 实例的使用者。**
+**规则 5：如果构造函数接受 Memory\<T> 作为参数，则假定构造对象上的实例方法是 Memory\<T> 实例的使用者。**
 
 请看下面的示例：
 
@@ -206,7 +206,7 @@ void PrintAllOddValues(ReadOnlyMemory<int> input)
 
 此处的 `OddValueExtractor` 构造函数接受 `ReadOnlyMemory<int>` 作为构造函数参数，因此构造函数本身是 `ReadOnlyMemory<int>` 实例的使用者，并且返回值上的所有实例方法也是原始 `ReadOnlyMemory<int>` 实例的使用者。 这意味着 `TryReadNextOddValue` 使用 `ReadOnlyMemory<int>` 实例，即使该实例未直接传递到 `TryReadNextOddValue` 方法也是如此。
 
-**规则 6：如果类型具有可设置的内存\<T> 类型的属性（或等效实例方法），则假定该对象上的实例方法是内存\<T> 实例的使用者。**
+**规则 6：如果类型具有可设置的 Memory\<T> 类型的属性（或等效实例方法），则假定该对象上的实例方法是 Memory\<T> 实例的使用者。**
 
 这实际上只是规则 5 的变体。 存在此规则的原因是假定属性 setter 或等效方法捕获并保留其输入，因此同一对象上的实例方法可能会使用已捕获状态。
 
@@ -243,7 +243,7 @@ class Person
 > [!IMPORTANT]
 > 如果构造函数接受 <xref:System.Buffers.IMemoryOwner%601> 作为参数，则其类型应实现 <xref:System.IDisposable>，并且 <xref:System.IDisposable.Dispose%2A> 方法应调用 <xref:System.Buffers.MemoryPool%601.Dispose%2A?displayProperty=nameWithType>。
 
-**规则 9：如果正在包装同步 P/Invoke 方法，则 API 应接受跨度\<T> 作为参数。**
+**规则 9：如果正在包装同步 P/Invoke 方法，则 API 应接受 Span\<T> 作为参数。**
 
 根据规则 1，<xref:System.Span%601> 通常是用于同步 API 的正确类型。 可以通过 [`fixed`](../../csharp/language-reference/keywords/fixed-statement.md) 关键字固定 <xref:System.Span%601> 实例，如下面的示例所示。
 
@@ -283,7 +283,7 @@ public unsafe int ManagedWrapper(Span<byte> data)
 }
 ```
 
-**规则 10：如果正在包装异步 P/Invoke 方法，则 API 应接受内存\<T> 作为参数。**
+**规则 10：如果正在包装异步 P/Invoke 方法，则 API 应接受 Memory\<T> 作为参数。**
 
 由于不能在异步操作中使用 [`fixed`](../../csharp/language-reference/keywords/fixed-statement.md) 关键字，因此使用 <xref:System.Memory%601.Pin%2A?displayProperty=nameWithType> 方法固定 <xref:System.Memory%601> 实例，无论该实例表示的连续内存类型为何。 下面的示例演示了如何使用此 API 执行异步 P/Invoke 调用。
 

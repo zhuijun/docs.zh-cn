@@ -1,17 +1,21 @@
 ---
 title: 从 Newtonsoft.Json 迁移到 System.Text.Json - .NET
-author: ''
-ms.author: ''
+author: tdykstra
+ms.author: tdykstra
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
-ms.date: ''
-helpviewer_keywords: []
+ms.date: 01/10/2020
+helpviewer_keywords:
+- JSON serialization
+- serializing objects
+- serialization
+- objects, serializing
 ms.openlocfilehash: fe370b34d311816a815f3b2d419751ac7871f013
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
+ms.lasthandoff: 05/29/2020
 ms.locfileid: "83703581"
 ---
 # <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>如何从 Newtonsoft.Json 迁移到 System.Text.Json
@@ -39,339 +43,43 @@ ms.locfileid: "83703581"
 * 不受支持，解决方法不可行或无法提供。 如果你依赖于这些 `Newtonsoft.Json` 功能，则无法在不进行重大更改的情况下进行迁移。
 
 | Newtonsoft.Json 功能                               | System.Text.Json 等效 |
-|---
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
-----------------------------|--- title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title:'从 Newtonsoft.Json 迁移到 System.Text.Json - .NET' author: ms.author: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' ms.date: helpviewer_keywords:
-- 
-- 
-- 
-- 
-
----------------| | 默认情况下不区分大小写的反序列化           | ✔️ [PropertyNameCaseInsensitive 全局设置](#case-insensitive-deserialization) | | Camel-case 属性名                             | ✔️ [PropertyNamingPolicy 全局设置](system-text-json-how-to.md#use-camel-case-for-all-json-property-names) | | 最小字符转义                            | ✔️ [严格字符转义，可配置](#minimal-character-escaping) | | `NullValueHandling.Ignore` 全局设置             | ✔️ [IgnoreNullValues 全局选项](system-text-json-how-to.md#exclude-all-null-value-properties) | | 允许注释                                        | ✔️ [ReadCommentHandling 全局设置](#comments) | | 允许尾随逗号                                | ✔️ [AllowTrailingCommas 全局设置](#trailing-commas) | | 自定义转换器注册                         | ✔️ [优先顺序不同](#converter-registration-precedence) | | 无默认最大深度                           | ✔️ [默认最大深度 64，可配置](#maximum-depth) | | 支持多种类型                    | ⚠️ [某些类型需要自定义转换器](#types-without-built-in-support) | | 将字符串反序列化为数字                        | ⚠️ [不支持，解决方法，示例](#quoted-numbers) | | 使用非字符串键反序列化 `Dictionary`          | ⚠️ [不支持，解决方法，示例](#dictionary-with-non-string-key) | | 多态序列化                             | ⚠️ [不支持，解决方法，示例](#polymorphic-serialization) | | 多态序列化                           | ⚠️ [不支持，解决方法，示例](#polymorphic-deserialization) | | 将推断类型反序列化为 `object` 属性      | ⚠️ [不支持，解决方法，示例](#deserialization-of-object-properties) | | 将 JSON `null` 文本反序列化为不可为 null 的值类型 | ⚠️ [不支持，解决方法，示例](#deserialize-null-to-non-nullable-type) | | 反序列化为不可变类和结构          | ⚠️ [不支持，解决方法，示例](#deserialize-to-immutable-classes-and-structs) | | `[JsonConstructor]` 特性                         | ⚠️ [不支持，解决方法，示例](#specify-constructor-to-use) | | `[JsonProperty]` 特性上的 `Required` 设置        | ⚠️ [不支持，解决方法，示例](#required-properties) | | `[JsonProperty]` 特性上的 `NullValueHandling` 设置 | ⚠️ [不支持，解决方法，示例](#conditionally-ignore-a-property)  | | `[JsonProperty]` 特性上的 `DefaultValueHandling` 设置 | ⚠️ [不支持，解决方法，示例](#conditionally-ignore-a-property)  | | `DefaultValueHandling` 全局设置                 | ⚠️ [不支持，解决方法，示例](#conditionally-ignore-a-property) | | 用于排除属性的 `DefaultContractResolver`       | ⚠️ [不支持，解决方法，示例](#conditionally-ignore-a-property) | | `DateTimeZoneHandling`、`DateFormatString` 设置   | ⚠️ [不支持，解决方法，示例](#specify-date-format) | | 回调                                             | ⚠️ [不支持，解决方法，示例](#callbacks) | | 对公共和非公共字段的支持              | ⚠️ [不支持，解决方法](#public-and-non-public-fields) | | 对内部和专用属性 setter 和 getter 的支持 | ⚠️ [不支持，解决方法](#internal-and-private-property-setters-and-getters) | | `JsonConvert.PopulateObject` 方法                   | ⚠️ [不支持，解决方法](#populate-existing-objects) | | `ObjectCreationHandling` 全局设置               | ⚠️ [不支持，解决方法](#reuse-rather-than-replace-properties) | | 添加到无 setter 的集合                    | ⚠️ [不支持，解决方法](#add-to-collections-without-setters) | | `PreserveReferencesHandling` 全局设置           | ❌ [不支持](#preserve-object-references-and-handle-loops) | | `ReferenceLoopHandling` 全局设置                | ❌ [不支持](#preserve-object-references-and-handle-loops) | | 对 `System.Runtime.Serialization` 特性的支持 | ❌ [不支持](#systemruntimeserialization-attributes) | | `MissingMemberHandling` 全局设置                | ❌ [不支持](#missingmemberhandling) | | 允许属性名不加引号                   | ❌ [不支持](#json-strings-property-names-and-string-values) | | 允许在字符串值周围使用单引号              | ❌ [不支持](#json-strings-property-names-and-string-values) | | 允许为字符串属性使用非字符串 JSON 值    | ❌ [不支持](#non-string-values-for-string-properties) |
+|-------------------------------------------------------|-----------------------------|
+| 默认情况下不区分大小写的反序列化           | ✔️ [PropertyNameCaseInsensitive 全局设置](#case-insensitive-deserialization) |
+| Camel 大小写属性名称                             | ✔️ [PropertyNamingPolicy 全局设置](system-text-json-how-to.md#use-camel-case-for-all-json-property-names) |
+| 最小字符转义                            | ✔️ [严格字符转义，可配置](#minimal-character-escaping) |
+| `NullValueHandling.Ignore` 全局设置             | ✔️ [IgnoreNullValues 全局选项](system-text-json-how-to.md#exclude-all-null-value-properties) |
+| 允许注释                                        | ✔️ [ReadCommentHandling 全局设置](#comments) |
+| 允许尾随逗号                                 | ✔️ [AllowTrailingCommas 全局设置](#trailing-commas) |
+| 自定义转换器注册                         | ✔️ [优先级顺序不同](#converter-registration-precedence) |
+| 默认情况下无最大深度                           | ✔️ [默认最大深度为 64，可配置](#maximum-depth) |
+| 支持范围广泛的类型                    | ⚠️ [某些类型需要自定义转换器](#types-without-built-in-support) |
+| 将字符串反序列化为数字                        | ⚠️ [不受支持，解决方法，示例](#quoted-numbers) |
+| 反序列化具有非字符串键的 `Dictionary`          | ⚠️ [不受支持，解决方法，示例](#dictionary-with-non-string-key) |
+| 多态序列化                             | ⚠️ [不受支持，解决方法，示例](#polymorphic-serialization) |
+| 多态反序列化                           | ⚠️ [不受支持，解决方法，示例](#polymorphic-deserialization) |
+| 将推断类型反序列化为 `object` 属性      | ⚠️ [不受支持，解决方法，示例](#deserialization-of-object-properties) |
+| 将 JSON `null` 文本反序列化为不可为 null 的值类型 | ⚠️ [不受支持，解决方法，示例](#deserialize-null-to-non-nullable-type) |
+| 反序列化为不可变类和结构          | ⚠️ [不受支持，解决方法，示例](#deserialize-to-immutable-classes-and-structs) |
+| `[JsonConstructor]` 特性                         | ⚠️ [不受支持，解决方法，示例](#specify-constructor-to-use) |
+| `[JsonProperty]` 特性上的 `Required` 设置        | ⚠️ [不受支持，解决方法，示例](#required-properties) |
+| `[JsonProperty]` 特性上的 `NullValueHandling` 设置 | ⚠️ [不受支持，解决方法，示例](#conditionally-ignore-a-property)  |
+| `[JsonProperty]` 特性上的 `DefaultValueHandling` 设置 | ⚠️ [不受支持，解决方法，示例](#conditionally-ignore-a-property)  |
+| `DefaultValueHandling` 全局设置                 | ⚠️ [不受支持，解决方法，示例](#conditionally-ignore-a-property) |
+| 用于排除属性的 `DefaultContractResolver`       | ⚠️ [不受支持，解决方法，示例](#conditionally-ignore-a-property) |
+| `DateTimeZoneHandling`、`DateFormatString` 设置   | ⚠️ [不受支持，解决方法，示例](#specify-date-format) |
+| 回调                                             | ⚠️ [不受支持，解决方法，示例](#callbacks) |
+| 支持公共和非公共字段              | ⚠️ [不受支持，解决方法](#public-and-non-public-fields) |
+| 支持内部和私有属性 setter 和 getter | ⚠️ [不受支持，解决方法](#internal-and-private-property-setters-and-getters) |
+| `JsonConvert.PopulateObject` 方法                   | ⚠️ [不受支持，解决方法](#populate-existing-objects) |
+| `ObjectCreationHandling` 全局设置               | ⚠️ [不受支持，解决方法](#reuse-rather-than-replace-properties) |
+| 在不带 setter 的情况下添加到集合                    | ⚠️ [不受支持，解决方法](#add-to-collections-without-setters) |
+| `PreserveReferencesHandling` 全局设置           | ❌ [不受支持](#preserve-object-references-and-handle-loops) |
+| `ReferenceLoopHandling` 全局设置                | ❌ [不受支持](#preserve-object-references-and-handle-loops) |
+| 支持 `System.Runtime.Serialization` 特性 | ❌ [不受支持](#systemruntimeserialization-attributes) |
+| `MissingMemberHandling` 全局设置                | ❌ [不受支持](#missingmemberhandling) |
+| 允许不带引号的属性名称                   | ❌ [不受支持](#json-strings-property-names-and-string-values) |
+| 字符串值前后允许单引号              | ❌ [不受支持](#json-strings-property-names-and-string-values) |
+| 对字符串属性允许非字符串 JSON 值    | ❌ [不受支持](#non-string-values-for-string-properties) |
 
 这不是 `Newtonsoft.Json` 功能的详尽列表。 此列表包含在 [GitHub 问题](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json)或 [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) 文章中请求的许多方案。 如果对此处所列且当前没有示例代码的一个方案实现了解决方法，并且如果要共享解决方案，请在本页底部的“反馈”部分选择“此页面”。 这会在本文档的 GitHub 存储库中创建一个问题，并将它也列在此页面上的“反馈”部分中。
 

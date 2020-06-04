@@ -3,12 +3,12 @@ title: 语法转换 (Roslyn API) 入门
 description: 介绍如何遍历、查询及浏览语法树。
 ms.date: 06/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 232fe5fcba35f152dbc3f00b2f2c092b5df0dd35
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 5879dfd6ed0a5f6465829eec496d10cfcfd07362
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794788"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202123"
 ---
 # <a name="get-started-with-syntax-transformation"></a>语法转换入门
 
@@ -20,21 +20,21 @@ ms.locfileid: "82794788"
 
 ## <a name="immutability-and-the-net-compiler-platform"></a>不可变性和 .NET 编译器平台
 
-不可变性  是 .NET 编译器平台的基本原则。 在创建不可变数据结构后，不能对其进行更改。 不可变数据结构可以由多个使用者同时安全地共享和分析。 一个使用者以不可预测的方式影响另一个使用者不存在任何风险。 分析器不需要锁或其他并发度量值。 此规则适用于语法树、编译、符号、语义模型，以及你所遇到的所有其他数据结构。 API 不是修改现有结构，而是基于旧结构的特定差异创建新对象。 将此概念应用到语法树中，以使用转换来创建新树。
+不可变性是 .NET 编译器平台的基本原则。 在创建不可变数据结构后，不能对其进行更改。 不可变数据结构可以由多个使用者同时安全地共享和分析。 一个使用者以不可预测的方式影响另一个使用者不存在任何风险。 分析器不需要锁或其他并发度量值。 此规则适用于语法树、编译、符号、语义模型，以及你所遇到的所有其他数据结构。 API 不是修改现有结构，而是基于旧结构的特定差异创建新对象。 将此概念应用到语法树中，以使用转换来创建新树。
 
 ## <a name="create-and-transform-trees"></a>创建和转换树
 
-选择两个策略之一进行语法转换。 当你在寻找要替换的特定节点时，或者想要在其中插入新代码的特定位置时，最好使用工厂方法  。 当你想要扫描一个你想要替换的代码模式的整个项目时，最好使用重写工具  。
+选择两个策略之一进行语法转换。 当你在寻找要替换的特定节点时，或者想要在其中插入新代码的特定位置时，最好使用工厂方法。 当你想要扫描一个你想要替换的代码模式的整个项目时，最好使用重写工具。
 
 ### <a name="create-nodes-with-factory-methods"></a>使用工厂方法创建节点
 
-第一个语法转换演示工厂方法。 将 `using System.Collections;` 语句替换为 `using System.Collections.Generic;` 语句。 此示例演示如何使用 <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> 工厂方法创建 <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode?displayProperty=nameWithType> 对象。 对于每一类节点  、令牌  或琐事  ，都有创建该类型实例的工厂方法。 可以通过以自下而上的方式按层次结构组合节点来创建语法树。 然后，转换现有程序，用你所创建的新树替换现有节点。
+第一个语法转换演示工厂方法。 将 `using System.Collections;` 语句替换为 `using System.Collections.Generic;` 语句。 此示例演示如何使用 <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> 工厂方法创建 <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxNode?displayProperty=nameWithType> 对象。 对于每一类节点、令牌或琐事，都有创建该类型实例的工厂方法。 可以通过以自下而上的方式按层次结构组合节点来创建语法树。 然后，转换现有程序，用你所创建的新树替换现有节点。
 
-启动 Visual Studio，并新建 C#“独立代码分析工具”  项目。 在 Visual Studio 中，选择“文件”   > “新建”   > “项目”  ，显示新建项目对话框。 在“Visual C#”   > “扩展性”  下，选择“独立代码分析工具”  。 本快速入门教程有两个示例项目，因此将解决方案命名为“SyntaxTransformationQuickStart”  ，并将项目命名为“ConstructionCS”  。 单击 **“确定”** 。
+启动 Visual Studio，并新建 C#“独立代码分析工具”项目。 在 Visual Studio 中，选择“文件” > “新建” > “项目”，显示新建项目对话框。 在“Visual C#” > “扩展性”下，选择“独立代码分析工具”。 本快速入门教程有两个示例项目，因此将解决方案命名为“SyntaxTransformationQuickStart”，并将项目命名为“ConstructionCS”。 单击 **“确定”** 。
 
 此项目使用 <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory?displayProperty=nameWithType> 类方法构造 <xref:Microsoft.CodeAnalysis.CSharp.Syntax.NameSyntax?displayProperty=nameWithType> 来表示 `System.Collections.Generic` 命名空间。
 
-添加以下 using 指令到 `Program.cs` 文件顶部以导入 <xref:Microsoft.CodeAnalysis.CSharp.SyntaxFactory> 类的工厂方法和方法 <xref:System.Console>，以便以后可以使用它们，而不需要对它们进行限定：
+将以下 using 指令添加到 `Program.cs` 顶部。
 
 [!code-csharp[import the SyntaxFactory class](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/ConstructionCS/Program.cs#StaticUsings "import the Syntax Factory class and the System.Console class")]
 
@@ -63,7 +63,7 @@ ms.locfileid: "82794788"
 
 ### <a name="create-a-modified-tree"></a>创建修改后的树
 
-你已构建一个小型语法树，其中包含一个语句。 用于创建新节点的 API 是创建单个语句或其他小代码块的正确选择。 但是，若要生成更大的代码块，应使用替换节点或将节点插入到现有树的方法。 请记住语法树不可变。 语法 API  不提供用于完成构造后修改现有语法树的任何机制。 相反，它提供基于对现有数的更改生成新树的方法。 `With*` 方法在派生自 <xref:Microsoft.CodeAnalysis.SyntaxNode> 的具体类中定义，或者在 <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions> 类中声明的扩展方法中定义。 这些方法通过将更改应用于现有节点的子属性来创建一个新节点。 此外，<xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> 扩展方法可以用来替换子树中的子代节点。 此方法还会更新父结点，以指向新创建的子节点，并在整个树中重复这一过程，该过程称为“重新遍历  树”。
+你已构建一个小型语法树，其中包含一个语句。 用于创建新节点的 API 是创建单个语句或其他小代码块的正确选择。 但是，若要生成更大的代码块，应使用替换节点或将节点插入到现有树的方法。 请记住语法树不可变。 语法 API 不提供用于完成构造后修改现有语法树的任何机制。 相反，它提供基于对现有数的更改生成新树的方法。 `With*` 方法在派生自 <xref:Microsoft.CodeAnalysis.SyntaxNode> 的具体类中定义，或者在 <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions> 类中声明的扩展方法中定义。 这些方法通过将更改应用于现有节点的子属性来创建一个新节点。 此外，<xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> 扩展方法可以用来替换子树中的子代节点。 此方法还会更新父结点，以指向新创建的子节点，并在整个树中重复这一过程，该过程称为“重新遍历树”。
 
 下一步是创建一个表示整个（小型）程序的树，然后修改它。 将以下代码添加到 `Program` 类的开头：
 
@@ -94,9 +94,9 @@ ms.locfileid: "82794788"
 
 `With*` 和 <xref:Microsoft.CodeAnalysis.SyntaxNodeExtensions.ReplaceNode%2A> 方法提供了方便的方法来转换语法树的单独分支。 <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter?displayProperty=nameWithType> 类在语法树上执行多个转换。 <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter?displayProperty=nameWithType> 类是 <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxVisitor%601?displayProperty=nameWithType> 的一个子类。 <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> 将转换应用于特定类型的 <xref:Microsoft.CodeAnalysis.SyntaxNode>。 你可以将转换应用于多个类型的 <xref:Microsoft.CodeAnalysis.SyntaxNode> 对象，只要它们显示在语法树中。 本快速入门教程中的第二个项目创建命令行重构，以便在可以使用类型推理的任何位置删除本地变量声明中的显式类型。
 
-新建 C#“独立代码分析工具”项目  。 在 Visual Studio 中，右键单击 `SyntaxTransformationQuickStart` 解决方案节点。 选择“添加”   > “新项目”  以显示“新项目对话框”  。 在“Visual C#”   > “扩展性”  下，选择“独立代码分析工具”  。 给项目 `TransformationCS` 命名，然后单击“确定”。
+新建 C#“独立代码分析工具”项目。 在 Visual Studio 中，右键单击 `SyntaxTransformationQuickStart` 解决方案节点。 选择“添加” > “新项目”以显示“新项目对话框”。 在“Visual C#” > “扩展性”下，选择“独立代码分析工具”。 给项目 `TransformationCS` 命名，然后单击“确定”。
 
-第一步是创建一个派生自 <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> 的类，以执行转换。 向项目添加一个新类文件。 在 Visual Studio 中，依次选择“项目”   > “添加类...”  。在“添加新项”  对话框中键入 `TypeInferenceRewriter.cs` 作为文件名。
+第一步是创建一个派生自 <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxRewriter> 的类，以执行转换。 向项目添加一个新类文件。 在 Visual Studio 中，依次选择“项目” > “添加类...”。在“添加新项”对话框中键入 `TypeInferenceRewriter.cs` 作为文件名。
 
 使用指令将以下内容添加到 `TypeInferenceRewriter.cs` 文件：
 
@@ -160,7 +160,7 @@ Type variable;
 
 [!code-csharp[DeclareCompilation](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/Program.cs#DeclareTestCompilation "Declare the test compilation")]
 
-暂停一段时间后，应会看到错误波形曲线，报告不存在 `CreateTestCompilation` 方法。 按 Ctrl+句点  打开灯泡，然后按 Enter 以调用“生成方法存根(Stub)”  命令。 此命令将在 `Program` 类中生成 `CreateTestCompilation` 方法的方法存根(Stub)。 稍后你将返回填写此方法：
+暂停一段时间后，应会看到错误波形曲线，报告不存在 `CreateTestCompilation` 方法。 按 Ctrl+句点打开灯泡，然后按 Enter 以调用“生成方法存根(Stub)”命令。 此命令将在 `Program` 类中生成 `CreateTestCompilation` 方法的方法存根(Stub)。 稍后你将返回填写此方法：
 
 ![使用中的 C# 生成方法](./media/syntax-transformation/generate-from-usage.png)
 
@@ -178,6 +178,6 @@ Type variable;
 
 [!code-csharp[CreateTestCompilation](../../../../samples/snippets/csharp/roslyn-sdk/SyntaxTransformationQuickStart/TransformationCS/Program.cs#CreateTestCompilation "Create a test compilation using the code written for this quickstart.")]
 
-运行项目，祈求好运吧。 在 Visual Studio 中，选择“调试”   > “启动调试”  。 应该会收到 Visual Studio 的提醒，指示项目中的文件已更改。 单击“全部同意”  以重载已修改的文件。 检查这些文件以观察效果。 请注意，如果没有所有那些显式和冗余类型的说明符，代码会看起来更加简洁。
+运行项目，祈求好运吧。 在 Visual Studio 中，选择“调试” > “启动调试”。 应该会收到 Visual Studio 的提醒，指示项目中的文件已更改。 单击“全部同意”以重载已修改的文件。 检查这些文件以观察效果。 请注意，如果没有所有那些显式和冗余类型的说明符，代码会看起来更加简洁。
 
-祝贺你！ 你已使用编译器 API  编写你自己的重构，以便在 C# 项目的所有文件中搜索某些语法模式、分析匹配这些模式的源代码语义，并对其进行转换。 现在，你已正式成为重构作者了！
+祝贺你！ 你已使用编译器 API 编写你自己的重构，以便在 C# 项目的所有文件中搜索某些语法模式、分析匹配这些模式的源代码语义，并对其进行转换。 现在，你已正式成为重构作者了！

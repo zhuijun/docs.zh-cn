@@ -3,24 +3,24 @@ title: global.json 概述
 description: 了解如何在运行 .NET Core CLI 命令时使用 global.json 文件设置 .NET Core SDK 版本。
 ms.date: 05/01/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 15d8e6191394b9ba67b1e5eb5e8ae54ebaf61bef
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 5078bc03056c23bccf02e027441de72c69072c7d
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795503"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84202031"
 ---
 # <a name="globaljson-overview"></a>global.json 概述
 
- 本文适用于： ✔️ .NET Core 2.0 SDK 及更高版本
+本文适用于： ✔️ .NET Core 2.0 SDK 及更高版本
 
-通过 global.json 文件，可定义在运行 .NET Core CLI 命令时使用的 .NET Core SDK 版本  。 选择 .NET Core SDK 与指定项目所面向的运行时无关。 .NET Core SDK 版本指示使用哪个版本的 .NET Core CLI。
+通过 global.json 文件，可定义在运行 .NET Core CLI 命令时使用的 .NET Core SDK 版本。 选择 .NET Core SDK 与指定项目所面向的运行时无关。 .NET Core SDK 版本指示使用哪个版本的 .NET Core CLI。
 
-通常会使用最新版 SDK 工具，因此不需要 global.json 文件  。 在某些高级方案中，你可能需要控制 SDK 工具的版本，本文对如何完成此操作进行了介绍。
+通常会使用最新版 SDK 工具，因此不需要 global.json 文件。 在某些高级方案中，你可能需要控制 SDK 工具的版本，本文对如何完成此操作进行了介绍。
 
 有关指定运行时的详细信息，请参阅[目标框架](../../standard/frameworks.md)。
 
-.NET Core SDK 在当前工作目录（不必与项目目录相同）或其某个父目录中查找 global.json 文件  。
+.NET Core SDK 在当前工作目录（不必与项目目录相同）或其某个父目录中查找 global.json 文件。
 
 ## <a name="globaljson-schema"></a>global.json 架构
 
@@ -53,8 +53,8 @@ ms.locfileid: "82795503"
 
 如果未显式设置此值，则默认值将取决于是否从 Visual Studio 运行：
 
-- 如果未使用 Visual Studio，则默认值为 `true` 。
-- 如果使用 Visual Studio，它将使用请求的预发布状态。 也就是说，如果使用 Visual Studio 的预览版本，或者设置了“使用 .NET Core SDK 的预览版”选项（在“工具” > “选项” > “环境” > “预览功能”下方），则默认值为 `true`，否则为 `false`     。
+- 如果未使用 Visual Studio，则默认值为 `true`。
+- 如果使用 Visual Studio，它将使用请求的预发布状态。 也就是说，如果使用 Visual Studio 的预览版本，或者设置了“使用 .NET Core SDK 的预览版”选项（在“工具” > “选项” > “环境” > “预览功能”下方），则默认值为 `true`，否则为 `false`    。
 
 #### <a name="rollforward"></a>rollForward
 
@@ -149,11 +149,11 @@ ms.locfileid: "82795503"
 
 ## <a name="globaljson-and-the-net-core-cli"></a>global.json 和 .NET Core CLI
 
-最好能知道计算机上安装了哪些 SDK 版本，以便在 global.json 文件中设置相应版本  。 有关如何执行此操作的详细信息，请参阅[如何检查是否已安装 .NET Core](../install/how-to-detect-installed-versions.md#check-sdk-versions)。
+最好能知道计算机上安装了哪些 SDK 版本，以便在 global.json 文件中设置相应版本。 有关如何执行此操作的详细信息，请参阅[如何检查是否已安装 .NET Core](../install/how-to-detect-installed-versions.md#check-sdk-versions)。
 
 若要在计算机上安装其他 .NET Core SDK 版本，请访问 [.NET Core 下载](https://dotnet.microsoft.com/download/dotnet-core)页面。
 
-可执行 [dotnet new](dotnet-new.md) 命令在当前目录中创建一个新的 global.json 文件，类似于以下示例  ：
+可执行 [dotnet new](dotnet-new.md) 命令在当前目录中创建一个新的 global.json 文件，类似于以下示例：
 
 ```dotnetcli
 dotnet new globaljson --sdk-version 3.0.100
@@ -168,11 +168,11 @@ dotnet new globaljson --sdk-version 3.0.100
 
 从 .NET Core 3.0 开始，在确定要使用的 SDK 版本时，适用以下规则：
 
-- 如果未找到 global.json 文件，或者 global.json 未指定 SDK 版本和 `allowPrerelease` 值，则使用安装的最高 SDK 版本（相当于将 `rollForward` 设置为 `latestMajor`）   。 是否考虑 SDK 预发布版本取决于 `dotnet` 的调用方式。
-  - 如果未使用 Visual Studio，则考虑预发布版本  。
-  - 如果使用 Visual Studio，它将使用请求的预发布状态。 也就是说，如果使用 Visual Studio 的预览版本，或者设置了“使用 .NET Core SDK 的预览版”选项（在“工具” > “选项” > “环境” > “预览功能”下方），则考虑预发布版本；否则仅考虑发布版本      。
-- 如果找到了未指定 SDK 版本但指定了 `allowPrerelease` 值的 global.json 文件，则使用安装的最高 SDK 版本（相当于将 `rollForward` 设置为 `latestMajor`）  。 最新 SDK 版本是发布版本还是预发布版本取决于 `allowPrerelease` 的值。 `true` 指示考虑预发布版本；`false` 指示仅考虑发布版本。
-- 如果找到 global.json 文件，并且该文件指定了 SDK 版本  ：
+- 如果未找到 global.json 文件，或者 global.json 未指定 SDK 版本和 `allowPrerelease` 值，则使用安装的最高 SDK 版本（相当于将 `rollForward` 设置为 `latestMajor`） 。 是否考虑 SDK 预发布版本取决于 `dotnet` 的调用方式。
+  - 如果未使用 Visual Studio，则考虑预发布版本。
+  - 如果使用 Visual Studio，它将使用请求的预发布状态。 也就是说，如果使用 Visual Studio 的预览版本，或者设置了“使用 .NET Core SDK 的预览版”选项（在“工具” > “选项” > “环境” > “预览功能”下方），则考虑预发布版本；否则仅考虑发布版本    。
+- 如果找到了未指定 SDK 版本但指定了 `allowPrerelease` 值的 global.json 文件，则使用安装的最高 SDK 版本（相当于将 `rollForward` 设置为 `latestMajor`）。 最新 SDK 版本是发布版本还是预发布版本取决于 `allowPrerelease` 的值。 `true` 指示考虑预发布版本；`false` 指示仅考虑发布版本。
+- 如果找到 global.json 文件，并且该文件指定了 SDK 版本：
 
   - 如果未设置 `rollFoward` 值，它将使用 `latestPatch` 作为默认 `rollForward` 策略。 否则，请在 [rollForward](#rollforward) 部分中检查每个值及其行为。
   - 有关是否考虑预发布版本以及未设置 `allowPrerelease` 时的默认行为的信息，请参阅 [allowPrerelease](#allowprerelease) 部分。
@@ -181,21 +181,21 @@ dotnet new globaljson --sdk-version 3.0.100
 
 在 .NET Core 2.x SDK 中，在确定要使用的 SDK 版本时，适用以下规则：
 
-- 如果未找到 global.json 文件或 global.json 未指定 SDK 版本，则使用最新安装的 SDK 版本   。 最新 SDK 版本可能是发布版本或预发布版本 - 以版本号更高的为准。
-- 如果 global.json 指定了 SDK 版本  ：
+- 如果未找到 global.json 文件或 global.json 未指定 SDK 版本，则使用最新安装的 SDK 版本 。 最新 SDK 版本可能是发布版本或预发布版本 - 以版本号更高的为准。
+- 如果 global.json 指定了 SDK 版本：
   - 如果计算机上安装了该指定的 SDK 版本，则使用该版本。
-  - 如果计算机上未安装指定的 SDK 版本，则使用最新安装的该版本的 SDK 修补程序版本  。 安装的最新 SDK 修补程序版本可能是发布版本或预发布版本 - 以版本号更高的为准  。 在 .NET Core 2.1 及更高版本中，在选择 SDK 版本时将忽略低于指定修补程序版本的修补程序版本   。
-  - 如果找不到指定的 SDK 版本和相应的 SDK 修补程序版本，会引发错误  。
+  - 如果计算机上未安装指定的 SDK 版本，则使用最新安装的该版本的 SDK 修补程序版本。 安装的最新 SDK 修补程序版本可能是发布版本或预发布版本 - 以版本号更高的为准。 在 .NET Core 2.1 及更高版本中，在选择 SDK 版本时将忽略低于指定修补程序版本的修补程序版本 。
+  - 如果找不到指定的 SDK 版本和相应的 SDK 修补程序版本，会引发错误。
 
 SDK 版本由以下部分组成：
 
 `[.NET Core major version].[.NET Core minor version].[xyz][-optional preview name]`
 
-.NET Core SDK 的功能版本由 SDK 版本 2.1.100 及更高版本所采用的版本号的最后一部分 (`xyz`) 的第一个数字 (`x`) 表示  。 通常，.NET Core SDK 的发布周期比 .NET Core 快。
+.NET Core SDK 的功能版本由 SDK 版本 2.1.100 及更高版本所采用的版本号的最后一部分 (`xyz`) 的第一个数字 (`x`) 表示。 通常，.NET Core SDK 的发布周期比 .NET Core 快。
 
-修补程序版本由 SDK 版本 2.1.100 及更高版本所采用的版本号的最后一部分 (`xyz`) 的后两位数字 (`yz`) 表示  。 例如，如果将 `2.1.300` 指定为 SDK 版本，则可选的 SDK 版本号最多到 `2.1.399`，但 `2.1.400` 不视为 `2.1.300` 的一个修补程序版本。
+修补程序版本由 SDK 版本 2.1.100 及更高版本所采用的版本号的最后一部分 (`xyz`) 的后两位数字 (`yz`) 表示。 例如，如果将 `2.1.300` 指定为 SDK 版本，则可选的 SDK 版本号最多到 `2.1.399`，但 `2.1.400` 不视为 `2.1.300` 的一个修补程序版本。
 
-版本号架构过渡期间发布了 .NET Core SDK 版本 `2.1.100` 到 `2.1.201`，但未正确使用 `xyz` 表示法。 强烈建议如果在 global.json 文件中指定了这些版本，请确保目标计算机上安装了指定版本  。
+版本号架构过渡期间发布了 .NET Core SDK 版本 `2.1.100` 到 `2.1.201`，但未正确使用 `xyz` 表示法。 强烈建议如果在 global.json 文件中指定了这些版本，请确保目标计算机上安装了指定版本。
 
 ---
 
@@ -205,13 +205,13 @@ SDK 版本由以下部分组成：
 
   > 使用的是 .NET Core SDK 的预览版本， 可通过当前项目中的 global.json 文件定义 SDK 版本。 有关详细信息，请访问 <https://go.microsoft.com/fwlink/?linkid=869452>。
 
-  .NET Core SDK 的各种版本均品质优良稳定，在业内口碑良好。 但是，如果不希望使用预发布版本，请在 [allowPrerelease](#allowprerelease) 部分中查看可用于 .NET Core 3.0 SDK 或更高版本的各种策略。 对于从未安装 .NET Core 3.0 或更高版本运行时或 SDK 的计算机，需要创建一个 global.json 文件，并指定要使用的确切版本  。
+  .NET Core SDK 的各种版本均品质优良稳定，在业内口碑良好。 但是，如果不希望使用预发布版本，请在 [allowPrerelease](#allowprerelease) 部分中查看可用于 .NET Core 3.0 SDK 或更高版本的各种策略。 对于从未安装 .NET Core 3.0 或更高版本运行时或 SDK 的计算机，需要创建一个 global.json 文件，并指定要使用的确切版本。
 
 * 以下警告指示项目面向 EF Core 1.0 或 1.1，后者与 .NET Core 2.1 SDK 及更高版本不兼容：
 
   > 启动项目 '{startupProject}' 面向框架 '.NETCoreApp' 的版本 '{targetFrameworkVersion}'。 此版本的 Entity Framework Core .NET 命令行工具仅支持 2.0 或更高版本。 有关使用旧版工具的信息，请参阅 <https://go.microsoft.com/fwlink/?linkid=871254>。
 
-  从 .NET Core 2.1 SDK（版本 2.1.300）开始，SDK 中包含 `dotnet ef` 命令。 若要编译项目，请在计算机上安装 .NET Core 2.0 SDK（版本 2.1.201）或更早版本，并使用 global.json 文件定义所需 SDK 版本  。 有关 `dotnet ef` 命令的详细信息，请参阅 [EF Core .NET 命令行工具](/ef/core/miscellaneous/cli/dotnet)。
+  从 .NET Core 2.1 SDK（版本 2.1.300）开始，SDK 中包含 `dotnet ef` 命令。 若要编译项目，请在计算机上安装 .NET Core 2.0 SDK（版本 2.1.201）或更早版本，并使用 global.json 文件定义所需 SDK 版本。 有关 `dotnet ef` 命令的详细信息，请参阅 [EF Core .NET 命令行工具](/ef/core/miscellaneous/cli/dotnet)。
 
 ## <a name="see-also"></a>请参阅
 

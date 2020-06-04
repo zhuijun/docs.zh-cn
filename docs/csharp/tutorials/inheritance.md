@@ -4,12 +4,12 @@ description: 了解如何在 C# 库和应用程序中运用继承。
 ms.date: 07/05/2018
 ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: 78833110db0e4f0382e5c0c6de7c6c8be9a16c8d
-ms.sourcegitcommit: a9b8945630426a575ab0a332e568edc807666d1b
+ms.openlocfilehash: 8e24ad3e93dcd11f39ae979a3acda4c4ada13dc5
+ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80391144"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "84007723"
 ---
 # <a name="inheritance-in-c-and-net"></a>C# 和 .NET 中的继承
 
@@ -52,13 +52,13 @@ C# 和 .NET 只支持*单一继承*。 也就是说，类只能继承自一个�
 
   [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/private.cs#1)]
 
-- [protected](../language-reference/keywords/protected.md)成员仅在派生类中可见。
+- [受保护](../language-reference/keywords/protected.md)成员仅在派生类中可见。
 
-- [internal](../language-reference/keywords/internal.md)成员仅在与基类同属一个程序集的派生类中可见， 在与基类属于不同程序集的派生类中不可见。
+- [内部](../language-reference/keywords/internal.md)成员仅在与基类同属一个程序集的派生类中可见， 在与基类属于不同程序集的派生类中不可见。
 
-- [public](../language-reference/keywords/public.md)成员在派生类中可见，并且属于派生类的公共接口。 可以调用继承的公共成员，就像它们是在派生类中定义一样。 在以下示例中，类 `A` 定义 `Method1` 方法，类 `B` 继承自类 `A`。 然后，以下示例调用 `Method1`，就像它是 `B` 中的实例方法一样。
+- [公共](../language-reference/keywords/public.md)成员在派生类中可见，并且属于派生类的公共接口。 可以调用继承的公共成员，就像它们是在派生类中定义一样。 在以下示例中，类 `A` 定义 `Method1` 方法，类 `B` 继承自类 `A`。 然后，以下示例调用 `Method1`，就像它是 `B` 中的实例方法一样。
 
-[!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
+  [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/basics.cs#1)]
 
 派生类还可以通过提供重写实现代码来*重写*继承的成员。 基类成员必须标记有 [virtual](../language-reference/keywords/virtual.md) 关键字，才能重写继承的成员。 默认情况下，基类成员没有 `virtual` 标记，因此无法被重写。 如果尝试重写非虚成员（如以下示例所示），则会生成编译器错误 CS0506：“\<member> 无法重写继承的成员 \<member>，因为继承的成员没有 virtual、abstract 或 override 标记。”
 
@@ -181,7 +181,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 - 类层次结构的扩展空间大小。 是否要开发包含三个或更多类的层次结构，而不是仅包含一个基类和一个或多个派生类？ 例如，`Publication` 可以是 `Periodical` 的基类，而后者又是 `Magazine`、`Journal` 和 `Newspaper` 的基类。
 
-  在示例中，将使用包含 `Publication` 类和一个派生类 `Book` 的小型层次结构。 可以将此示例轻松扩展为创建其他许多派生自 `Publication` 的类，如 `Magazine` 和 `Article`。
+  在示例中，将使用包含 `Publication` 类和一个派生类 `Book` 的小型层次结构。 可以轻松扩展此示例，使其可以创建其他许多派生自 `Publication` 的类，如 `Magazine` 和 `Article`。
 
 - 能否实例化基类。 如果不可以，则应向类应用 [abstract](../language-reference/keywords/abstract.md) 关键字。 否则，可通过调用类构造函数来实例化 `Publication` 类。 如果尝试通过直接调用类构造函数来实例化标记有 `abstract` 关键字的类，则 C# 编译器会生成错误 CS0144：“无法创建抽象类或接口的实例。” 如果尝试使用反射来实例化类，则反射方法会抛出 <xref:System.MemberAccessException>。
 
@@ -191,7 +191,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 - 派生类是否必须继承特定成员的基类实现代码、是否能选择重写基类实现代码或者是否必须提供实现代码。 使用 [abstract](../language-reference/keywords/abstract.md) 关键字来强制派生类提供实现代码。 使用 [virtual](../language-reference/keywords/virtual.md) 关键字来允许派生类重写基类方法。 默认情况下，*不*可重写基类中定义的方法。
 
- `Publication` 类不具备任何 `abstract` 方法，不过类本身是 `abstract`。
+  `Publication` 类不具备任何 `abstract` 方法，不过类本身是 `abstract`。
 
 - 派生类是否表示继承层次结构中的最终类，且本身不能用作其他派生类的基类。 默认情况下，任何类都可以用作基类。 可以应用 [sealed](../language-reference/keywords/sealed.md) 关键字来指明类不能用作其他任何类的基类。 如果尝试从密封类派生，则会生成编译器错误 CS0509：“无法从密封类型 \<typeName> 派生。”
 
@@ -248,7 +248,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 
 - 两个构造函数
 
-  两个 `Book` 构造函数共用三个常见参数。 其中两个参数（*title* 和 *publisher*）对应于 `Publication` 构造函数的相应参数。 第三个参数是 *author*，存储在不可变的 `Author` 属性中。 其中一个构造函数包含存储在 `ISBN` 自动属性中的 isbn  参数。
+  两个 `Book` 构造函数共用三个常见参数。 其中两个参数（*title* 和 *publisher*）对应于 `Publication` 构造函数的相应参数。 第三个参数是 *author*，存储在不可变的 `Author` 属性中。 其中一个构造函数包含存储在 `ISBN` 自动属性中的 isbn 参数。
 
   第一个构造函数使用 [this](../language-reference/keywords/this.md) 关键字来调用另一个构造函数。 构造函数链是常见的构造函数定义模式。 调用参数最多的构造函数时，由参数较少的构造函数提供默认值。
 
@@ -279,7 +279,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 ## <a name="designing-abstract-base-classes-and-their-derived-classes"></a>设计抽象基类及其派生类
 <a name="abstract"></a>
 
-在上面的示例中定义了一个基类，它提供了许多方法的实现代码，以便派生类可以共用代码。 然而，在许多情况下，我们并不希望基类提供实现代码。 相反，基类是声明抽象方法的抽象类，用作定义每个派生类必须实现的成员的模板   。 通常情况下，在抽象基类中，每个派生类型的实现代码都是相应类型的专属代码。 尽管该类提供了出版物通用的功能的实现代码，但由于实例化 `Publication` 对象毫无意义，因此，使用 abstract 关键字来标记该类。
+在上面的示例中定义了一个基类，它提供了许多方法的实现代码，以便派生类可以共用代码。 然而，在许多情况下，我们并不希望基类提供实现代码。 相反，基类是声明抽象方法的抽象类，用作定义每个派生类必须实现的成员的模板 。 通常情况下，在抽象基类中，每个派生类型的实现代码都是相应类型的专属代码。 尽管该类提供了出版物通用的功能的实现代码，但由于实例化 `Publication` 对象毫无意义，因此，使用 abstract 关键字来标记该类。
 
 例如，每个封闭的二维几何形状都包含两个属性：面积（即形状的内部空间）和周长（或沿形状一周的长度）。 然而，这两个属性的计算方式完全取决于具体的形状。 例如，圆和三角形的周长计算公式就有所不同。 `Shape` 类是一个包含 `abstract` 方法的 `abstract` 类。 这表示派生类共享相同的功能，但这些派生类以不同的方式实现该功能。
 

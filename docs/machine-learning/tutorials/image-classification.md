@@ -4,12 +4,12 @@ description: 了解如何将现有 TensorFlow 模型中的知识传输到新的 
 ms.date: 01/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: be21a94f571a1676d2a4bce2196dec34bf008121
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: ae6094d5acd4d26482f3690e174d82bbf1807266
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607566"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144430"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>教程：从预先训练的 TensorFlow 模型生成 ML.NET 图像分类模型
 
@@ -66,9 +66,9 @@ TensorFlow 模型经过训练，可以将图像分为一千个类别。 ML.NET �
 >[!Note]
 > 上面的图像属于维基共享资源，并按如下方式进行属性化：
 >
-> * “220px-Pepperoni_pizza.jpg”公有领域，[https://commons.wikimedia.org/w/index.php?curid=79505](https://commons.wikimedia.org/w/index.php?curid=79505 )
-> * “119px-Nalle_-_a_small_brown_teddy_bear.jpg”作者为 [Jonik](https://commons.wikimedia.org/wiki/User:Jonik) - 独自拍摄，CC BY-SA 2.0，[https://commons.wikimedia.org/w/index.php?curid=48166](https://commons.wikimedia.org/w/index.php?curid=48166 )。
-> * “193px-Broodrooster.jpg”作者为 [M.Minderhoud](https://nl.wikipedia.org/wiki/Gebruiker:Michiel1972) - 自有作品，CC BY-SA 3.0，[https://commons.wikimedia.org/w/index.php?curid=27403](https://commons.wikimedia.org/w/index.php?curid=27403 )
+> * “220px-Pepperoni_pizza.jpg”公有领域，[https://commons.wikimedia.org/w/index.php?curid=79505](<https://commons.wikimedia.org/w/index.php?curid=79505>)
+> * “119px-Nalle_-_a_small_brown_teddy_bear.jpg”作者为 [Jonik](https://commons.wikimedia.org/wiki/User:Jonik) - 独自拍摄，CC BY-SA 2.0，[https://commons.wikimedia.org/w/index.php?curid=48166](<https://commons.wikimedia.org/w/index.php?curid=48166>)。
+> * “193px-Broodrooster.jpg”作者为 [M.Minderhoud](https://nl.wikipedia.org/wiki/Gebruiker:Michiel1972) - 自有作品，CC BY-SA 3.0，[https://commons.wikimedia.org/w/index.php?curid=27403](<https://commons.wikimedia.org/w/index.php?curid=27403>)
 
 `Inception model` 经过训练，可将图像分类为一千个类别，但在本教程中，你只需要在更小的类别集中分类图像。 输入 `transfer learning` 的 `transfer` 部分。 可以将 `Inception model` 的识别和分类图像功能迁移到自定义图像分类器的新受限类别。
 
@@ -110,7 +110,9 @@ toaster2.png    appliance
 <!-- markdownlint-enable MD010 -->
 
 定型图像和测试图像位于下载 zip 文件的资产文件夹中。 这些图像属于维基共享资源。
-> [维基共享资源](https://commons.wikimedia.org/w/index.php?title=Main_Page&oldid=313158208)，免费媒体存储库。  检索时间：2018 年 10 月 17 日 10:48 检索位置： https://commons.wikimedia.org/wiki/Pizza https://commons.wikimedia.org/wiki/Toaster https://commons.wikimedia.org/wiki/Teddy_bear
+> [维基共享资源](https://commons.wikimedia.org/w/index.php?title=Main_Page&oldid=313158208)，免费媒体存储库。 检索时间：2018 年 10 月 17 日 10:48 检索位置：<https://commons.wikimedia.org/wiki/Pizza>
+> <https://commons.wikimedia.org/wiki/Toaster>
+> <https://commons.wikimedia.org/wiki/Teddy_bear>
 
 ## <a name="setup"></a>安装
 
@@ -118,32 +120,32 @@ toaster2.png    appliance
 
 1. 创建名为“TransferLearningTF”的 **.NET Core 控制台应用程序**。
 
-1. 安装“Microsoft.ML NuGet 包”  ：
+1. 安装“Microsoft.ML NuGet 包”：
 
-    * 在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”  。
-    * 选择“nuget.org”作为“包源”，选择“浏览”选项卡，再搜索“Microsoft.ML”  。
-    * 单击“版本”下拉列表，选择列表中的“1.4.0”包，然后选择“安装”按钮    。
-    * 选择“预览更改”对话框中的“确定”按钮   。
-    * 如果同意所列包的许可条款，请选择“接受许可”  对话框中的“我接受”  按钮。
-    * 对“Microsoft.ML.ImageAnalytics v1.4.0”和“SciSharp.TensorFlow.Redist v1.15.0”、和“Microsoft.ML.TensorFlow v1.4.0”重复这些步骤    。
+    * 在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”。
+    * 选择“nuget.org”作为“包源”，选择“浏览”选项卡，再搜索“Microsoft.ML”。
+    * 单击“版本”下拉列表，选择列表中的“1.4.0”包，然后选择“安装”按钮  。
+    * 选择“预览更改”对话框中的“确定”按钮 。
+    * 如果同意所列包的许可条款，请选择“接受许可”对话框中的“我接受”按钮。
+    * 对“Microsoft.ML.ImageAnalytics v1.4.0”和“SciSharp.TensorFlow.Redist v1.15.0”、和“Microsoft.ML.TensorFlow v1.4.0”重复这些步骤  。
 
 ### <a name="download-assets"></a>下载资产
 
 1. 下载并解压缩[项目资产目录 zip 文件](https://github.com/dotnet/samples/blob/master/machine-learning/tutorials/TransferLearningTF/image-classifier-assets.zip)。
 
-1. 将“`assets`”目录复制到“TransferLearningTF”  项目目录中。 此目录及其子目录包含本教程所需的数据和支持文件（Inception 模型除外，将在下一步中下载并添加此模型）。
+1. 将“`assets`”目录复制到“TransferLearningTF”项目目录中。 此目录及其子目录包含本教程所需的数据和支持文件（Inception 模型除外，将在下一步中下载并添加此模型）。
 
 1. 下载并解压缩 [Inception 模型](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip)。
 
-1. 将刚刚解压缩的“`inception5h`”目录的内容复制到 TransferLearningTF  项目的“`assets/inception`”目录中。 此目录包含本教程所需的模型和其他支持文件，如下图所示：
+1. 将刚刚解压缩的“`inception5h`”目录的内容复制到 TransferLearningTF 项目的“`assets/inception`”目录中。 此目录包含本教程所需的模型和其他支持文件，如下图所示：
 
    ![Inception 目录内容](./media/image-classification/inception-files.png)
 
-1. 在“解决方案资源管理器”中，右键单击资产目录和子目录中的每个文件，再选择“属性”  。 在“高级”下，将“复制到输出目录”的值更改为“如果较新则复制”    。
+1. 在“解决方案资源管理器”中，右键单击资产目录和子目录中的每个文件，再选择“属性”。 在“高级”下，将“复制到输出目录”的值更改为“如果较新则复制”  。
 
 ### <a name="create-classes-and-define-paths"></a>创建类和定义路径
 
-1. 将以下附加的 `using` 语句添加到“Program.cs”  文件顶部：
+1. 将以下附加的 `using` 语句添加到“Program.cs”文件顶部：
 
     [!code-csharp[AddUsings](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#AddUsings)]
 

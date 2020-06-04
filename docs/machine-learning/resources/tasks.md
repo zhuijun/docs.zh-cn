@@ -2,12 +2,12 @@
 title: 机器学习任务
 description: 浏览 ML.NET 中支持的不同机器学习任务和关联的任务。
 ms.date: 12/23/2019
-ms.openlocfilehash: 6cd41065e668375537b9816ef7a208a65e0a523b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e6e36bd65dbadb8cb7b8edbf9e2e82071c208378
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79397787"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84144443"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>ML.NET 中的机器学习任务
 
@@ -56,7 +56,7 @@ ms.locfileid: "79397787"
 
 这些训练程序将输出以下列：
 
-| 输出列名称 | 列名称 | 说明|
+| 输出列名称 | 列名称 | 描述|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | 由模型计算得出的原始分数|
 | `PredictedLabel` | <xref:System.Boolean> | 预测的标签，基于分数符号。 负分数映射到 `false`，正分数映射到 `true`。|
@@ -72,7 +72,7 @@ ms.locfileid: "79397787"
 有关详细信息，请参阅 Wikipedia 上的[多类分类](https://en.wikipedia.org/wiki/Multiclass_classification)一文。
 
 >[!NOTE]
->一个与所有升级任何[二元分类学习器](#binary-classification)，以便对多类数据集进行操作。 有关详细信息，请参阅 [Wikipedia] (https://en.wikipedia.org/wiki/Multiclass_classification#One-vs.-rest) 。
+>一个与所有升级任何[二元分类学习器](#binary-classification)，以便对多类数据集进行操作。 有关详细信息，请参阅 [Wikipedia](https://en.wikipedia.org/wiki/Multiclass_classification#One-vs.-rest)。
 
 ### <a name="multiclass-classification-trainers"></a>多类分类训练程序
 
@@ -94,7 +94,7 @@ ms.locfileid: "79397787"
 
 该训练程序输出以下列：
 
-| 输出名称 | 类型 | 说明|
+| 输出名称 | 类型 | 描述|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> 的向量 | 所有类的分数。 值越高意味着落入相关类的概率越高。 如果第 i 个元素具有最大值，则预测的标签索引为 i。 请注意，i 是从零开始的索引。 |
 | `PredictedLabel` | [key](xref:Microsoft.ML.Data.KeyDataViewType) 类型 | 预测标签的索引。 如果其值为 i，则实际标签为键值输入标签类型中的第 i 个类别。 |
@@ -127,7 +127,7 @@ ms.locfileid: "79397787"
 
 此任务的训练程序输出以下列：
 
-| 输出名称 | 类型 | 说明|
+| 输出名称 | 类型 | 描述|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | 模型预测的原始分数 |
 
@@ -151,7 +151,7 @@ ms.locfileid: "79397787"
 
 该训练程序输出以下列：
 
-| 输出名称 | 类型 | 说明|
+| 输出名称 | 类型 | 描述|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> 的向量 | 给定数据点到所有群集的质心的距离 |
 | `PredictedLabel` | [key](xref:Microsoft.ML.Data.KeyDataViewType) 类型 | 模型预测的最接近的群集的索引。 |
@@ -183,7 +183,7 @@ PCA 是机器学习中已建立的一种技术，由于它揭示了数据的内�
 
 该训练程序输出以下列：
 
-| 输出名称 | 类型 | 说明|
+| 输出名称 | 类型 | 描述|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | 由异常情况检测模型计算得出的非负无界分数 |
 | `PredictedLabel` | <xref:System.Boolean> | true/false 值表示输入是否异常 (PredictedLabel=true) 或 (PredictedLabel=false) |
@@ -207,7 +207,7 @@ PCA 是机器学习中已建立的一种技术，由于它揭示了数据的内�
 
 该训练程序输出以下列：
 
-| 输出名称 | 类型 | 说明|
+| 输出名称 | 类型 | 描述|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | 由模型计算以确定预测的无界分数 |
 

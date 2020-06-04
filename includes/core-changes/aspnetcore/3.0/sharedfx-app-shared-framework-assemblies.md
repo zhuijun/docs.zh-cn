@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 64e854b06895ca54a9ab9870b85868788a731c00
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: d598d8d3203e804e5e935c3564b0053f9fc2e9a6
+ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79549610"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84145001"
 ---
 ### <a name="shared-framework-assemblies-removed-from-microsoftaspnetcoreapp"></a>共享框架：从 Microsoft.AspNetCore.App 中删除了程序集
 
@@ -54,7 +54,7 @@ Json.NET 和 Entity Framework Core 可继续使用 ASP.NET Core。 但是，它�
 
 此更改不适用于通过 ASP.NET Core 2.x 中的 `Microsoft.AspNetCore.App` 引用的所有二进制文件。 值得注意的例外包括：
 
-- 继续以 .NET Standard 为目标的 `Microsoft.Extensions` 库将以 NuGet 包的形式提供（请参阅 https://github.com/dotnet/extensions) ）。
+- 继续以 .NET Standard 为目标的 `Microsoft.Extensions` 库将以 NuGet 包的形式提供（请参阅 <https://github.com/dotnet/extensions>）。
 - 不属于 `Microsoft.AspNetCore.App` 的 ASP.NET Core 团队生成的 API。 例如，以下组件以 NuGet 包的形式提供：
   - Entity Framework Core
   - 提供第三方集成的 API
