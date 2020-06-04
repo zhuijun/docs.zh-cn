@@ -1,142 +1,123 @@
 ---
-title: 在 Visual Studio 中使用 .NET Core 创建 Hello World 应用程序
-description: 了解如何使用 Visual Studio 在 C# 或 Visual Basic 中创建第一个 .NET Core 控制台应用程序。
+title: 在 Visual Studio 中使用 .NET Core 创建控制台应用程序
+description: 了解如何使用 Visual Studio 通过 C# 或 Visual Basic 创建 .NET Core 控制台应用程序。
 author: BillWagner
 ms.author: wiwagn
-ms.date: 12/09/2019
+ms.date: 05/20/2020
+dev_langs:
+- csharp
+- vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 738fc49a820c3c5d94fb35c1bf7a8b718ed75cb3
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 9c3456cd8c940e53e8a70c1d3a7c3b09de77c21d
+ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394829"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84201587"
 ---
-# <a name="tutorial-create-your-first-net-core-console-application-in-visual-studio-2019"></a><span data-ttu-id="944d7-103">教程：在 Visual Studio 2019 中创建第一个 .NET Core 控制台应用程序</span><span class="sxs-lookup"><span data-stu-id="944d7-103">Tutorial: Create your first .NET Core console application in Visual Studio 2019</span></span>
+# <a name="tutorial-create-a-net-core-console-application-in-visual-studio-2019"></a><span data-ttu-id="6cdb6-103">教程：在 Visual Studio 2019 中创建 .NET Core 控制台应用程序</span><span class="sxs-lookup"><span data-stu-id="6cdb6-103">Tutorial: Create a .NET Core console application in Visual Studio 2019</span></span>
 
-<span data-ttu-id="944d7-104">本文将逐步介绍如何在 Visual Studio 2019 中创建和运行 Hello World .NET Core 控制台应用程序。</span><span class="sxs-lookup"><span data-stu-id="944d7-104">This article provides a step-by-step introduction to create and run a Hello World .NET Core console application in Visual Studio 2019.</span></span> <span data-ttu-id="944d7-105">通常使用 Hello World 应用程序向初学者介绍新的编程语言。</span><span class="sxs-lookup"><span data-stu-id="944d7-105">A Hello World application is traditionally used to introduce beginners to a new programming language.</span></span> <span data-ttu-id="944d7-106">此程序只在屏幕上显示短语“Hello World!”</span><span class="sxs-lookup"><span data-stu-id="944d7-106">This program simply displays the phrase "Hello World!"</span></span> <span data-ttu-id="944d7-107">。</span><span class="sxs-lookup"><span data-stu-id="944d7-107">on the screen.</span></span>
+<span data-ttu-id="6cdb6-104">本教程演示如何在 Visual Studio 2019 中创建和运行 .NET Core 控制台应用程序。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-104">This tutorial shows how to create and run a .NET Core console application in Visual Studio 2019.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="944d7-108">先决条件</span><span class="sxs-lookup"><span data-stu-id="944d7-108">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="6cdb6-105">先决条件</span><span class="sxs-lookup"><span data-stu-id="6cdb6-105">Prerequisites</span></span>
 
-- <span data-ttu-id="944d7-109">安装了具有“.NET Core 跨平台开发”  工作负载的 [Visual Studio 2019 版本 16.4 或更高版本](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)。</span><span class="sxs-lookup"><span data-stu-id="944d7-109">[Visual Studio 2019 version 16.4 or a later version](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) with the **.NET Core cross-platform development** workload installed.</span></span> <span data-ttu-id="944d7-110">选择此工作负载时，将自动安装 .NET Core 3.1 SDK。</span><span class="sxs-lookup"><span data-stu-id="944d7-110">.NET Core 3.1 SDK is automatically installed when you select this workload.</span></span>
+- <span data-ttu-id="6cdb6-106">安装了具有“.NET Core 跨平台开发”工作负载的 [Visual Studio 2019 版本 16.6 或更高版本](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-106">[Visual Studio 2019 version 16.6 or a later version](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) with the **.NET Core cross-platform development** workload installed.</span></span> <span data-ttu-id="6cdb6-107">选择此工作负载时，将自动安装 .NET Core 3.1 SDK。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-107">The .NET Core 3.1 SDK is automatically installed when you select this workload.</span></span>
 
-<span data-ttu-id="944d7-111">有关详细信息，请参阅[安装 .NET Core SDK](../install/sdk.md?pivots=os-windows) 一文中的[在 Visual Studio 中安装](../install/sdk.md?pivots=os-windows#install-with-visual-studio)部分。</span><span class="sxs-lookup"><span data-stu-id="944d7-111">For more information, see the [Install with Visual Studio](../install/sdk.md?pivots=os-windows#install-with-visual-studio) section on the [Install the .NET Core SDK](../install/sdk.md?pivots=os-windows) article.</span></span>
+  <span data-ttu-id="6cdb6-108">有关详细信息，请参阅[安装 .NET Core SDK](../install/sdk.md?pivots=os-windows) 一文中的[在 Visual Studio 中安装](../install/sdk.md?pivots=os-windows#install-with-visual-studio)部分。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-108">For more information, see the [Install with Visual Studio](../install/sdk.md?pivots=os-windows#install-with-visual-studio) section on the [Install the .NET Core SDK](../install/sdk.md?pivots=os-windows) article.</span></span>
 
-## <a name="create-the-app"></a><span data-ttu-id="944d7-112">创建应用</span><span class="sxs-lookup"><span data-stu-id="944d7-112">Create the app</span></span>
-
-<span data-ttu-id="944d7-113">以下说明创建一个简单的 Hello World 控制台应用程序：</span><span class="sxs-lookup"><span data-stu-id="944d7-113">The following instructions create a simple Hello World console application:</span></span>
+## <a name="create-the-app"></a><span data-ttu-id="6cdb6-109">创建应用</span><span class="sxs-lookup"><span data-stu-id="6cdb6-109">Create the app</span></span>
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="c"></a>[<span data-ttu-id="944d7-114">C#</span><span class="sxs-lookup"><span data-stu-id="944d7-114">C#</span></span>](#tab/csharp)
+1. <span data-ttu-id="6cdb6-110">打开 Visual Studio 2019。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-110">Open Visual Studio 2019.</span></span>
 
-1. <span data-ttu-id="944d7-115">打开 Visual Studio 2019。</span><span class="sxs-lookup"><span data-stu-id="944d7-115">Open Visual Studio 2019.</span></span>
+1. <span data-ttu-id="6cdb6-111">创建一个名为“HelloWorld”的新 .NET Core 控制台应用项目。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-111">Create a new .NET Core console app project named "HelloWorld".</span></span>
 
-1. <span data-ttu-id="944d7-116">创建一个名为“HelloWorld”的新 C# .NET Core 控制台应用项目。</span><span class="sxs-lookup"><span data-stu-id="944d7-116">Create a new C# .NET Core console app project named "HelloWorld".</span></span>
+   1. <span data-ttu-id="6cdb6-112">在“开始”页上，选择“创建新项目”。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-112">On the start page, choose **Create a new project**.</span></span>
 
-   1. <span data-ttu-id="944d7-117">在“开始”窗口上，选择“创建新项目”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-117">On the start window, choose **Create a new project**.</span></span>
+      ![在 Visual Studio“开始”页选择“创建新项目”按钮](./media/with-visual-studio/start-window.png)
 
-      ![在 Visual Studio“启动”窗口选择“创建新项目”按钮](./media/with-visual-studio/start-window.png)
-
-   1. <span data-ttu-id="944d7-119">在“创建新项目”  页面，在搜索框中输入“控制台”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-119">On the **Create a new project** page, enter **console** in the search box.</span></span> <span data-ttu-id="944d7-120">接下来，从“语言”列表中选择“C#”  ，然后从“平台”列表中选择“所有平台”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-120">Next, choose **C#** from the Language list, and then choose **All platforms** from the Platform list.</span></span> <span data-ttu-id="944d7-121">选择“控制台应用 (.NET Core)”  模板，然后选择“下一步”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-121">Choose the **Console App (.NET Core)** template, and then choose **Next**.</span></span>
+   1. <span data-ttu-id="6cdb6-114">在“创建新项目”页面，在搜索框中输入“控制台”。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-114">On the **Create a new project** page, enter **console** in the search box.</span></span> <span data-ttu-id="6cdb6-115">接下来，从“语言”列表中选择“C#”或“Visual Basic”，然后从“平台”列表中选择“所有平台”  。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-115">Next, choose **C#** or **Visual Basic** from the language list, and then choose **All platforms** from the platform list.</span></span> <span data-ttu-id="6cdb6-116">选择“控制台应用 (.NET Core)”模板，然后选择“下一步”。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-116">Choose the **Console App (.NET Core)** template, and then choose **Next**.</span></span>
 
       ![使用所选筛选器创建新项目窗口](./media/with-visual-studio/create-new-project.png)
 
       > [!TIP]
-      > <span data-ttu-id="944d7-123">如果看不到 .NET Core 模板，则可能缺少安装所需的工作负载。</span><span class="sxs-lookup"><span data-stu-id="944d7-123">If you don't see the .NET Core templates, you're probably missing the required workload installed.</span></span> <span data-ttu-id="944d7-124">在“找不到所需内容?”  消息下，选择“安装更多工具和功能”  链接。</span><span class="sxs-lookup"><span data-stu-id="944d7-124">Under the **Not finding what you're looking for?** message, choose the **Install more tools and features** link.</span></span> <span data-ttu-id="944d7-125">Visual Studio 安装程序随即打开。</span><span class="sxs-lookup"><span data-stu-id="944d7-125">The Visual Studio Installer opens.</span></span> <span data-ttu-id="944d7-126">确保安装了“.NET Core 跨平台开发”  工作负载。</span><span class="sxs-lookup"><span data-stu-id="944d7-126">Make sure you have the **.NET Core cross-platform development** workload installed.</span></span>
+      > <span data-ttu-id="6cdb6-118">如果看不到 .NET Core 模板，则可能缺少所需的工作负载。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-118">If you don't see the .NET Core templates, you're probably missing the required workload.</span></span> <span data-ttu-id="6cdb6-119">在“找不到所需内容?”消息下，选择“安装更多工具和功能”链接。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-119">Under the **Not finding what you're looking for?** message, choose the **Install more tools and features** link.</span></span> <span data-ttu-id="6cdb6-120">Visual Studio 安装程序随即打开。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-120">The Visual Studio Installer opens.</span></span> <span data-ttu-id="6cdb6-121">确保安装了“.NET Core 跨平台开发”工作负载。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-121">Make sure you have the **.NET Core cross-platform development** workload installed.</span></span>
 
-   1. <span data-ttu-id="944d7-127">在“配置新项目”  页面，在“项目名称”  框中输入“HelloWorld”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-127">On the **Configure your new project** page,  enter **HelloWorld** in the **Project name** box.</span></span> <span data-ttu-id="944d7-128">然后，选择“创建”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-128">Then, choose **Create**.</span></span>
+   1. <span data-ttu-id="6cdb6-122">在“配置新项目”页面，在“项目名称”框中输入“HelloWorld”。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-122">On the **Configure your new project** page,  enter **HelloWorld** in the **Project name** box.</span></span> <span data-ttu-id="6cdb6-123">然后选择“创建”。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-123">Then choose **Create**.</span></span>
 
       ![为新项目窗口配置“项目名称”、“位置”和“解决方案名称”字段](./media/with-visual-studio/configure-new-project.png)
 
-   <span data-ttu-id="944d7-130">C# .NET Core 控制台应用程序模板会自动定义类 `Program` 和一个需要将 <xref:System.String> 数组用作自变量的方法 `Main`。</span><span class="sxs-lookup"><span data-stu-id="944d7-130">The C# Console Application template for .NET Core automatically defines a class, `Program`, with a single method, `Main`, that takes a <xref:System.String> array as an argument.</span></span> <span data-ttu-id="944d7-131">`Main` 是应用程序入口点，同时也是在应用程序启动时由运行时自动调用的方法。</span><span class="sxs-lookup"><span data-stu-id="944d7-131">`Main` is the application entry point, the method that's called automatically by the runtime when it launches the application.</span></span> <span data-ttu-id="944d7-132">*args* 数组中包含在应用程序启动时提供的所有命令行自变量。</span><span class="sxs-lookup"><span data-stu-id="944d7-132">Any command-line arguments supplied when the application is launched are available in the *args* array.</span></span>
+   <span data-ttu-id="6cdb6-125">.NET Core 控制台应用程序模板将定义类 `Program`，其中包含一个需要将 <xref:System.String> 数组用作参数的方法 `Main`。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-125">The Console Application template for .NET Core defines a class, `Program`, with a single method, `Main`, that takes a <xref:System.String> array as an argument.</span></span> <span data-ttu-id="6cdb6-126">`Main` 是应用程序入口点，同时也是在应用程序启动时由运行时自动调用的方法。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-126">`Main` is the application entry point, the method that's called automatically by the runtime when it launches the application.</span></span> <span data-ttu-id="6cdb6-127">*args* 数组中包含在应用程序启动时提供的所有命令行自变量。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-127">Any command-line arguments supplied when the application is launched are available in the *args* array.</span></span>
 
-   ![Visual Studio 和新建的 HelloWorld 项目](./media/with-visual-studio/visual-studio-main-window.png)
+   <span data-ttu-id="6cdb6-128">如果未显示想要使用的语言，请更改页面顶部的语言选择器。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-128">If the language you want to use is not shown, change the language selector at the top of the page.</span></span>
 
-# <a name="visual-basic"></a>[<span data-ttu-id="944d7-134">Visual Basic</span><span class="sxs-lookup"><span data-stu-id="944d7-134">Visual Basic</span></span>](#tab/vb)
+   ```csharp
+   using System;
 
-1. <span data-ttu-id="944d7-135">打开 Visual Studio 2019。</span><span class="sxs-lookup"><span data-stu-id="944d7-135">Open Visual Studio 2019.</span></span>
+   namespace HelloWorld
+   {
+       class Program
+       {
+           static void Main(string[] args)
+           {
+               Console.WriteLine("Hello World!");
+           }
+       }
+   }
+   ```
 
-1. <span data-ttu-id="944d7-136">创建一个名为“HelloWorld”的新 Visual Basic .NET Core 控制台应用项目。</span><span class="sxs-lookup"><span data-stu-id="944d7-136">Create a new Visual Basic .NET Core console app project named "HelloWorld".</span></span>
+   ```vb
+   Imports System
 
-   1. <span data-ttu-id="944d7-137">在“开始”窗口上，选择“创建新项目”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-137">On the start window, choose **Create a new project**.</span></span>
+   Module Program
+       Sub Main(args As String())
+           Console.WriteLine("Hello World!")
+       End Sub
+   End Module
+   ```
 
-      ![在 Visual Studio“启动”窗口选择“创建新项目”按钮](./media/with-visual-studio/start-window.png)
+   <span data-ttu-id="6cdb6-129">用于创建简单的“Hello World”应用程序的模板。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-129">The template creates a simple "Hello World" application.</span></span> <span data-ttu-id="6cdb6-130">它会调用 <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> 方法来显示“Hello World!”</span><span class="sxs-lookup"><span data-stu-id="6cdb6-130">It calls the <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> method to display "Hello World!"</span></span> <span data-ttu-id="6cdb6-131">显示文本字符串“Hello World!”。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-131">in the console window.</span></span>
 
-   1. <span data-ttu-id="944d7-139">在“创建新项目”  页面，在搜索框中输入“控制台”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-139">On the **Create a new project** page, enter **console** in the search box.</span></span> <span data-ttu-id="944d7-140">接下来，从“语言”列表中选择“Visual Basic”  ，然后从“平台”列表中选择“所有平台”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-140">Next, choose **Visual Basic** from the Language list, and then choose **All platforms** from the Platform list.</span></span> <span data-ttu-id="944d7-141">选择“控制台应用 (.NET Core)”  模板，然后选择“下一步”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-141">Choose the **Console App (.NET Core)** template, and then choose **Next**.</span></span>
+## <a name="run-the-app"></a><span data-ttu-id="6cdb6-132">运行应用</span><span class="sxs-lookup"><span data-stu-id="6cdb6-132">Run the app</span></span>
 
-      ![为“控制台应用(.NET Framework)”选择 Visual Basic 模板](./media/with-visual-studio/vb/create-new-project.png)
-
-      > [!TIP]
-      > <span data-ttu-id="944d7-143">如果看不到 .NET Core 模板，则可能缺少安装所需的工作负载。</span><span class="sxs-lookup"><span data-stu-id="944d7-143">If you don't see the .NET Core templates, you're probably missing the required workload installed.</span></span> <span data-ttu-id="944d7-144">在“找不到所需内容?”  消息下，选择“安装更多工具和功能”  链接。</span><span class="sxs-lookup"><span data-stu-id="944d7-144">Under the **Not finding what you're looking for?** message, choose the **Install more tools and features** link.</span></span> <span data-ttu-id="944d7-145">Visual Studio 安装程序随即打开。</span><span class="sxs-lookup"><span data-stu-id="944d7-145">The Visual Studio Installer opens.</span></span> <span data-ttu-id="944d7-146">确保安装了“.NET Core 跨平台开发”  工作负载。</span><span class="sxs-lookup"><span data-stu-id="944d7-146">Make sure you have the **.NET Core cross-platform development** workload installed.</span></span>
-
-   1. <span data-ttu-id="944d7-147">在“配置新项目”  页面，在“项目名称”  框中输入“HelloWorld”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-147">On the **Configure your new project** page,  enter **HelloWorld** in the **Project name** box.</span></span> <span data-ttu-id="944d7-148">然后，选择“创建”  。</span><span class="sxs-lookup"><span data-stu-id="944d7-148">Then, choose **Create**.</span></span>
-
-   <span data-ttu-id="944d7-149">.NET Core 控制台应用程序模板会自动定义类 `Program` 和一个需要将 <xref:System.String> 数组用作自变量的方法 `Main`。</span><span class="sxs-lookup"><span data-stu-id="944d7-149">The console app template for .NET Core automatically defines a class, `Program`, with a single method, `Main`, that takes a <xref:System.String> array as an argument.</span></span> <span data-ttu-id="944d7-150">`Main` 是应用程序入口点，同时也是在应用程序启动时由运行时自动调用的方法。</span><span class="sxs-lookup"><span data-stu-id="944d7-150">`Main` is the application entry point, the method that's called automatically by the runtime when it launches the application.</span></span> <span data-ttu-id="944d7-151">`args` 参数中包含在应用程序启动时提供的所有命令行自变量。</span><span class="sxs-lookup"><span data-stu-id="944d7-151">Any command-line arguments supplied when the application is launched are available in the `args` parameter.</span></span>
-
-   ![Visual Studio 和新建的 HelloWorld 项目](./media/with-visual-studio/vb/visual-studio-main-window.png)
-
----
-
-   <span data-ttu-id="944d7-153">用于创建简单的“Hello World”应用程序的模板。</span><span class="sxs-lookup"><span data-stu-id="944d7-153">The template creates a simple "Hello World" application.</span></span> <span data-ttu-id="944d7-154">它通过调用 <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> 方法在控制台窗口中</span><span class="sxs-lookup"><span data-stu-id="944d7-154">It calls the <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> method to display the literal string "Hello World!"</span></span> <span data-ttu-id="944d7-155">显示文本字符串“Hello World!”。</span><span class="sxs-lookup"><span data-stu-id="944d7-155">in the console window.</span></span>
-
-## <a name="run-the-app"></a><span data-ttu-id="944d7-156">运行应用</span><span class="sxs-lookup"><span data-stu-id="944d7-156">Run the app</span></span>
-
-1. <span data-ttu-id="944d7-157">若要运行程序，请在工具栏上选择“HelloWorld”  ，或按 F5  。</span><span class="sxs-lookup"><span data-stu-id="944d7-157">To run the program, choose **HelloWorld** on the toolbar, or press **F5**.</span></span>
+1. <span data-ttu-id="6cdb6-133">若要运行程序，请在工具栏上选择“HelloWorld”，或按 F5。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-133">To run the program, choose **HelloWorld** on the toolbar, or press **F5**.</span></span>
 
    ![已选择“HelloWorld 运行”按钮的 Visual Studio 工具栏](./media/with-visual-studio/run-program.png)
 
-   <span data-ttu-id="944d7-159">此时将打开在屏幕上显示文本“Hello World!”</span><span class="sxs-lookup"><span data-stu-id="944d7-159">A console window opens with the text "Hello World!"</span></span> <span data-ttu-id="944d7-160">并附带一些 Visual Studio 调试信息的控制台窗口。</span><span class="sxs-lookup"><span data-stu-id="944d7-160">printed on the screen and some Visual Studio debug information.</span></span>
+   <span data-ttu-id="6cdb6-135">此时将打开在屏幕上显示文本“Hello World!”</span><span class="sxs-lookup"><span data-stu-id="6cdb6-135">A console window opens with the text "Hello World!"</span></span> <span data-ttu-id="6cdb6-136">并附带一些 Visual Studio 调试信息的控制台窗口。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-136">printed on the screen and some Visual Studio debug information.</span></span>
 
    ![控制台窗口，其中显示 Hello World Press any key to continue](./media/with-visual-studio/hello-world-console.png)
 
-1. <span data-ttu-id="944d7-162">按任意键关闭控制台窗口。</span><span class="sxs-lookup"><span data-stu-id="944d7-162">Press any key to close the console window.</span></span>
+1. <span data-ttu-id="6cdb6-138">按任意键关闭控制台窗口。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-138">Press any key to close the console window.</span></span>
 
-## <a name="enhance-the-app"></a><span data-ttu-id="944d7-163">增强应用</span><span class="sxs-lookup"><span data-stu-id="944d7-163">Enhance the app</span></span>
+## <a name="enhance-the-app"></a><span data-ttu-id="6cdb6-139">增强应用</span><span class="sxs-lookup"><span data-stu-id="6cdb6-139">Enhance the app</span></span>
 
-<span data-ttu-id="944d7-164">改进应用程序，提示用户输入名字，并将其与日期和时间一同显示。</span><span class="sxs-lookup"><span data-stu-id="944d7-164">Enhance your application to prompt the user for their name and display it along with the date and time.</span></span> <span data-ttu-id="944d7-165">以下说明再次修改并运行应用：</span><span class="sxs-lookup"><span data-stu-id="944d7-165">The following instructions modify and run the app again:</span></span>
+<span data-ttu-id="6cdb6-140">改进应用程序，使其提示用户输入名字，并将其与日期和时间一同显示。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-140">Enhance the application to prompt the user for their name and display it along with the date and time.</span></span> <span data-ttu-id="6cdb6-141">以下指令可修改应用并再次运行应用：</span><span class="sxs-lookup"><span data-stu-id="6cdb6-141">The following instructions modify the app and run it again:</span></span>
 
-# <a name="c"></a>[<span data-ttu-id="944d7-166">C#</span><span class="sxs-lookup"><span data-stu-id="944d7-166">C#</span></span>](#tab/csharp)
+1. <span data-ttu-id="6cdb6-142">将 `Main` 方法的内容（当前只是调用 `Console.WriteLine` 的行）替换为以下代码：</span><span class="sxs-lookup"><span data-stu-id="6cdb6-142">Replace the contents of the `Main` method, which is currently just the line that calls `Console.WriteLine`, with the following code:</span></span>
 
-1. <span data-ttu-id="944d7-167">将 `Main` 方法的内容（当前只是调用 `Console.WriteLine` 的行）替换为以下代码：</span><span class="sxs-lookup"><span data-stu-id="944d7-167">Replace the contents of the `Main` method, which is currently just the line that calls `Console.WriteLine`, with the following code:</span></span>
+   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="Snippet1":::
 
-   [!code-csharp[GettingStarted#1](~/samples/snippets/csharp/getting_started/with_visual_studio/HelloWorld.cs#1)]
+   :::code language="vb" source="./snippets/with-visual-studio/vb/Program.vb" id="Snippet1":::
 
-   <span data-ttu-id="944d7-168">此代码在控制台中显示“What is your name?”，</span><span class="sxs-lookup"><span data-stu-id="944d7-168">This code displays "What is your name?"</span></span> <span data-ttu-id="944d7-169">然后等待用户输入字符串并按 Enter 键。</span><span class="sxs-lookup"><span data-stu-id="944d7-169">in the console window and waits until the user enters a string followed by the Enter key.</span></span> <span data-ttu-id="944d7-170">它将此字符串存储到名为 `name` 的变量中。</span><span class="sxs-lookup"><span data-stu-id="944d7-170">It stores this string into a variable named `name`.</span></span> <span data-ttu-id="944d7-171">它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量。</span><span class="sxs-lookup"><span data-stu-id="944d7-171">It also retrieves the value of the <xref:System.DateTime.Now?displayProperty=nameWithType> property, which contains the current local time, and assigns it to a variable named `date`.</span></span> <span data-ttu-id="944d7-172">最后，使用[内插字符串](../../csharp/language-reference/tokens/interpolated.md)在控制台窗口中显示这些值。</span><span class="sxs-lookup"><span data-stu-id="944d7-172">Finally, it uses an [interpolated string](../../csharp/language-reference/tokens/interpolated.md) to display these values in the console window.</span></span>
+   <span data-ttu-id="6cdb6-143">此代码在控制台中显示“What is your name?”，</span><span class="sxs-lookup"><span data-stu-id="6cdb6-143">This code displays "What is your name?"</span></span> <span data-ttu-id="6cdb6-144">然后等待用户输入字符串并按 Enter 键。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-144">in the console window and waits until the user enters a string followed by the Enter key.</span></span> <span data-ttu-id="6cdb6-145">它会将此字符串存储到名为 `name` 的变量中。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-145">It stores this string in a variable named `name`.</span></span> <span data-ttu-id="6cdb6-146">它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量（Visual Basic 中为 `currentDate`）。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-146">It also retrieves the value of the <xref:System.DateTime.Now?displayProperty=nameWithType> property, which contains the current local time, and assigns it to a variable named `date` (`currentDate` in Visual Basic).</span></span> <span data-ttu-id="6cdb6-147">最后，它会在控制台窗口中显示这些值。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-147">Finally, it displays these values in the console window.</span></span>
 
-1. <span data-ttu-id="944d7-173">依次选择 **“生成”**  >  **“生成解决方案”** ，编译此程序。</span><span class="sxs-lookup"><span data-stu-id="944d7-173">Compile the program by choosing **Build** > **Build Solution**.</span></span>
+   <span data-ttu-id="6cdb6-148">`\n`（Visual Basic 中为 `vbCrLf`）表示换行符。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-148">The `\n` (`vbCrLf` in Visual Basic) represents a newline character.</span></span>
 
-1. <span data-ttu-id="944d7-174">若要运行程序，请在工具栏上选择“HelloWorld”  ，或按 F5  。</span><span class="sxs-lookup"><span data-stu-id="944d7-174">To run the program, choose **HelloWorld** on the toolbar, or press **F5**.</span></span>
+   <span data-ttu-id="6cdb6-149">字符串前面的美元符号 (`$`) 使你可以将表达式（如变量名称）放入字符串中的大括号内。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-149">The dollar sign (`$`) in front of a string lets you put expressions such as variable names in curly braces in the string.</span></span> <span data-ttu-id="6cdb6-150">表达式值将代替表达式插入到字符串中。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-150">The expression value is inserted into the string in place of the expression.</span></span> <span data-ttu-id="6cdb6-151">此语法称为[内插字符串](../../csharp/language-reference/tokens/interpolated.md)。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-151">This syntax is referred to as [interpolated strings](../../csharp/language-reference/tokens/interpolated.md).</span></span>
 
-1. <span data-ttu-id="944d7-175">出现提示时，输入名称并按 Enter  键。</span><span class="sxs-lookup"><span data-stu-id="944d7-175">Respond to the prompt by entering a name and pressing the **Enter** key.</span></span>
+1. <span data-ttu-id="6cdb6-152">若要运行程序，请在工具栏上选择“HelloWorld”，或按 F5。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-152">To run the program, choose **HelloWorld** on the toolbar, or press **F5**.</span></span>
 
-   ![控制台窗口，含已修改程序的输出](./media/with-visual-studio/hello-world-update.png)
-
-1. <span data-ttu-id="944d7-177">按任意键关闭控制台窗口。</span><span class="sxs-lookup"><span data-stu-id="944d7-177">Press any key to close the console window.</span></span>
-
-# <a name="visual-basic"></a>[<span data-ttu-id="944d7-178">Visual Basic</span><span class="sxs-lookup"><span data-stu-id="944d7-178">Visual Basic</span></span>](#tab/vb)
-
-1. <span data-ttu-id="944d7-179">将 `Main` 方法的内容（当前只是调用 `Console.WriteLine` 的行）替换为以下代码：</span><span class="sxs-lookup"><span data-stu-id="944d7-179">Replace the contents of the `Main` method, which is currently just the line that calls `Console.WriteLine`, with the following code:</span></span>
-
-   [!code-vb[GettingStarted#1](~/samples/snippets/core/tutorials/vb-with-visual-studio/Program.vb#1)]
-
-   <span data-ttu-id="944d7-180">此代码在控制台中显示“What is your name?”，</span><span class="sxs-lookup"><span data-stu-id="944d7-180">This code displays "What is your name?"</span></span> <span data-ttu-id="944d7-181">然后等待用户输入字符串并按 Enter 键。</span><span class="sxs-lookup"><span data-stu-id="944d7-181">in the console window and waits until the user enters a string followed by the Enter key.</span></span> <span data-ttu-id="944d7-182">它将此字符串存储到名为 `name` 的变量中。</span><span class="sxs-lookup"><span data-stu-id="944d7-182">It stores this string into a variable named `name`.</span></span> <span data-ttu-id="944d7-183">它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量。</span><span class="sxs-lookup"><span data-stu-id="944d7-183">It also retrieves the value of the <xref:System.DateTime.Now?displayProperty=nameWithType> property, which contains the current local time, and assigns it to a variable named `date`.</span></span> <span data-ttu-id="944d7-184">最后，使用[内插字符串](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)在控制台窗口中显示这些值。</span><span class="sxs-lookup"><span data-stu-id="944d7-184">Finally, it uses an [interpolated string](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) to display these values in the console window.</span></span>
-
-1. <span data-ttu-id="944d7-185">依次选择 **“生成”**  >  **“生成解决方案”** ，编译此程序。</span><span class="sxs-lookup"><span data-stu-id="944d7-185">Compile the program by choosing **Build** > **Build Solution**.</span></span>
-
-1. <span data-ttu-id="944d7-186">若要运行程序，请在工具栏上选择“HelloWorld”  ，或按 F5  。</span><span class="sxs-lookup"><span data-stu-id="944d7-186">To run the program, choose **HelloWorld** on the toolbar, or press **F5**.</span></span>
-
-1. <span data-ttu-id="944d7-187">出现提示时，输入名称并按 Enter  键。</span><span class="sxs-lookup"><span data-stu-id="944d7-187">Respond to the prompt by entering a name and pressing the **Enter** key.</span></span>
+1. <span data-ttu-id="6cdb6-153">出现提示时，输入名称并按 Enter 键。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-153">Respond to the prompt by entering a name and pressing the **Enter** key.</span></span>
 
    ![控制台窗口，含已修改程序的输出](./media/with-visual-studio/hello-world-update.png)
 
-1. <span data-ttu-id="944d7-189">按任意键关闭控制台窗口。</span><span class="sxs-lookup"><span data-stu-id="944d7-189">Press any key to close the console window.</span></span>
+1. <span data-ttu-id="6cdb6-155">按任意键关闭控制台窗口。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-155">Press any key to close the console window.</span></span>
 
----
+## <a name="next-steps"></a><span data-ttu-id="6cdb6-156">后续步骤</span><span class="sxs-lookup"><span data-stu-id="6cdb6-156">Next steps</span></span>
 
-## <a name="next-steps"></a><span data-ttu-id="944d7-190">后续步骤</span><span class="sxs-lookup"><span data-stu-id="944d7-190">Next steps</span></span>
-
-<span data-ttu-id="944d7-191">在本文中，你已创建并运行第一个 .NET Core 应用程序。</span><span class="sxs-lookup"><span data-stu-id="944d7-191">In this article, you've created and run your first .NET Core application.</span></span> <span data-ttu-id="944d7-192">下一步，调试应用。</span><span class="sxs-lookup"><span data-stu-id="944d7-192">In the next step, you debug your app.</span></span>
+<span data-ttu-id="6cdb6-157">在本教程中，你创建了一个 .NET Core 应用程序。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-157">In this tutorial, you created a .NET Core application.</span></span> <span data-ttu-id="6cdb6-158">在下一教程中，你将调试该应用。</span><span class="sxs-lookup"><span data-stu-id="6cdb6-158">In the next tutorial, you debug the app.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="944d7-193">在 Visual Studio 中调试 .NET Core Hello World 应用程序</span><span class="sxs-lookup"><span data-stu-id="944d7-193">Debug a .NET Core Hello World application in Visual Studio</span></span>](debugging-with-visual-studio.md)
+> [<span data-ttu-id="6cdb6-159">在 Visual Studio 中调试 .NET Core 控制台应用程序</span><span class="sxs-lookup"><span data-stu-id="6cdb6-159">Debug a .NET Core console application in Visual Studio</span></span>](debugging-with-visual-studio.md)
