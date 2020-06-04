@@ -7,33 +7,33 @@ f1_keywords:
 helpviewer_keywords:
 - BC40031
 ms.assetid: e2b885dc-cbf9-49ff-bbbe-531657ea99f7
-ms.openlocfilehash: 2d89d3588b854c9e77445a9980530d8dd53c33c3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 45c9332237dffc7311daeedaf36035d9e9958415
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592013"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397176"
 ---
-# <a name="name-membername-is-not-cls-compliant"></a><span data-ttu-id="c1564-102">名称\<成员名称 > 不符合 cls 的</span><span class="sxs-lookup"><span data-stu-id="c1564-102">Name \<membername> is not CLS-compliant</span></span>
-<span data-ttu-id="c1564-103">程序集标记为`<CLSCompliant(True)>`公开的成员名称以下划线开头的名称，但 (`_`)。</span><span class="sxs-lookup"><span data-stu-id="c1564-103">An assembly is marked as `<CLSCompliant(True)>` but exposes a member with a name that begins with an underscore (`_`).</span></span>  
+# <a name="name-membername-is-not-cls-compliant"></a><span data-ttu-id="f1f6e-102">名称 \<membername> 不符合 CLS</span><span class="sxs-lookup"><span data-stu-id="f1f6e-102">Name \<membername> is not CLS-compliant</span></span>
+<span data-ttu-id="f1f6e-103">程序集标记为， `<CLSCompliant(True)>` 但公开名称以下划线（）开头的成员 `_` 。</span><span class="sxs-lookup"><span data-stu-id="f1f6e-103">An assembly is marked as `<CLSCompliant(True)>` but exposes a member with a name that begins with an underscore (`_`).</span></span>  
   
- <span data-ttu-id="c1564-104">编程元素可以包含一个或多个下划线，但要符合[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md)(CLS)，它必须不以下划线开头。</span><span class="sxs-lookup"><span data-stu-id="c1564-104">A programming element can contain one or more underscores, but to be compliant with the [Language Independence and Language-Independent Components](../../../standard/language-independence-and-language-independent-components.md) (CLS), it must not begin with an underscore.</span></span> <span data-ttu-id="c1564-105">请参阅 [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)。</span><span class="sxs-lookup"><span data-stu-id="c1564-105">See [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).</span></span>  
+ <span data-ttu-id="f1f6e-104">编程元素可以包含一个或多个下划线，但要符合[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md)（CLS），它不能以下划线开头。</span><span class="sxs-lookup"><span data-stu-id="f1f6e-104">A programming element can contain one or more underscores, but to be compliant with the [Language Independence and Language-Independent Components](../../../standard/language-independence-and-language-independent-components.md) (CLS), it must not begin with an underscore.</span></span> <span data-ttu-id="f1f6e-105">请参阅 [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md)。</span><span class="sxs-lookup"><span data-stu-id="f1f6e-105">See [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md).</span></span>  
   
- <span data-ttu-id="c1564-106">当将 <xref:System.CLSCompliantAttribute> 应用到编程元素中时，需要将该特性的 `isCompliant` 参数设置为 `True` 或 `False` 来指示符合或不符合性。</span><span class="sxs-lookup"><span data-stu-id="c1564-106">When you apply the <xref:System.CLSCompliantAttribute> to a programming element, you set the attribute's `isCompliant` parameter to either `True` or `False` to indicate compliance or noncompliance.</span></span> <span data-ttu-id="c1564-107">此参数没有默认值，必须为其提供一个值。</span><span class="sxs-lookup"><span data-stu-id="c1564-107">There is no default for this parameter, and you must supply a value.</span></span>  
+ <span data-ttu-id="f1f6e-106">当将 <xref:System.CLSCompliantAttribute> 应用到编程元素中时，需要将该特性的 `isCompliant` 参数设置为 `True` 或 `False` 来指示符合或不符合性。</span><span class="sxs-lookup"><span data-stu-id="f1f6e-106">When you apply the <xref:System.CLSCompliantAttribute> to a programming element, you set the attribute's `isCompliant` parameter to either `True` or `False` to indicate compliance or noncompliance.</span></span> <span data-ttu-id="f1f6e-107">此参数没有默认值，必须为其提供一个值。</span><span class="sxs-lookup"><span data-stu-id="f1f6e-107">There is no default for this parameter, and you must supply a value.</span></span>  
   
- <span data-ttu-id="c1564-108">如果不将 <xref:System.CLSCompliantAttribute> 应用到元素，则它将被视为不符合规范。</span><span class="sxs-lookup"><span data-stu-id="c1564-108">If you do not apply the <xref:System.CLSCompliantAttribute> to an element, it is considered to be noncompliant.</span></span>  
+ <span data-ttu-id="f1f6e-108">如果不将 <xref:System.CLSCompliantAttribute> 应用到元素，则它将被视为不符合规范。</span><span class="sxs-lookup"><span data-stu-id="f1f6e-108">If you do not apply the <xref:System.CLSCompliantAttribute> to an element, it is considered to be noncompliant.</span></span>  
   
- <span data-ttu-id="c1564-109">默认情况下，此消息是一个警告。</span><span class="sxs-lookup"><span data-stu-id="c1564-109">By default, this message is a warning.</span></span> <span data-ttu-id="c1564-110">有关隐藏警告或将警告视为错误的信息，请参见 [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)。</span><span class="sxs-lookup"><span data-stu-id="c1564-110">For information on hiding warnings or treating warnings as errors, see [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).</span></span>  
+ <span data-ttu-id="f1f6e-109">默认情况下，此消息是一个警告。</span><span class="sxs-lookup"><span data-stu-id="f1f6e-109">By default, this message is a warning.</span></span> <span data-ttu-id="f1f6e-110">有关隐藏警告或将警告视为错误的信息，请参见 [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)。</span><span class="sxs-lookup"><span data-stu-id="f1f6e-110">For information on hiding warnings or treating warnings as errors, see [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic).</span></span>  
   
- <span data-ttu-id="c1564-111">**错误 ID:** BC40031</span><span class="sxs-lookup"><span data-stu-id="c1564-111">**Error ID:** BC40031</span></span>  
+ <span data-ttu-id="f1f6e-111">**错误 ID：** BC40031</span><span class="sxs-lookup"><span data-stu-id="f1f6e-111">**Error ID:** BC40031</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="c1564-112">更正此错误</span><span class="sxs-lookup"><span data-stu-id="c1564-112">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="f1f6e-112">更正此错误</span><span class="sxs-lookup"><span data-stu-id="f1f6e-112">To correct this error</span></span>  
   
-- <span data-ttu-id="c1564-113">如果必须对源代码控制，更改成员名称，以便它不以下划线开头。</span><span class="sxs-lookup"><span data-stu-id="c1564-113">If you have control over the source code, change the member name so that it does not begin with an underscore.</span></span>  
+- <span data-ttu-id="f1f6e-113">如果你可以控制源代码，请更改成员名称，使其不以下划线开头。</span><span class="sxs-lookup"><span data-stu-id="f1f6e-113">If you have control over the source code, change the member name so that it does not begin with an underscore.</span></span>  
   
-- <span data-ttu-id="c1564-114">如果你需要成员名称保持不变，删除<xref:System.CLSCompliantAttribute>从其定义或将其标记为`<CLSCompliant(False)>`。</span><span class="sxs-lookup"><span data-stu-id="c1564-114">If you require that the member name remain unchanged, remove the <xref:System.CLSCompliantAttribute> from its definition or mark it as `<CLSCompliant(False)>`.</span></span> <span data-ttu-id="c1564-115">仍然可以将标记为程序集`<CLSCompliant(True)>`。</span><span class="sxs-lookup"><span data-stu-id="c1564-115">You can still mark the assembly as `<CLSCompliant(True)>`.</span></span>  
+- <span data-ttu-id="f1f6e-114">如果要求成员名称保持不变，请 <xref:System.CLSCompliantAttribute> 从其定义中删除或将其标记为 `<CLSCompliant(False)>` 。</span><span class="sxs-lookup"><span data-stu-id="f1f6e-114">If you require that the member name remain unchanged, remove the <xref:System.CLSCompliantAttribute> from its definition or mark it as `<CLSCompliant(False)>`.</span></span> <span data-ttu-id="f1f6e-115">你仍可以将程序集标记为 `<CLSCompliant(True)>` 。</span><span class="sxs-lookup"><span data-stu-id="f1f6e-115">You can still mark the assembly as `<CLSCompliant(True)>`.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c1564-116">请参阅</span><span class="sxs-lookup"><span data-stu-id="c1564-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f1f6e-116">另请参阅</span><span class="sxs-lookup"><span data-stu-id="f1f6e-116">See also</span></span>
 
-- [<span data-ttu-id="c1564-117">已声明的元素名称</span><span class="sxs-lookup"><span data-stu-id="c1564-117">Declared Element Names</span></span>](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
-- [<span data-ttu-id="c1564-118">Visual Basic 命名约定</span><span class="sxs-lookup"><span data-stu-id="c1564-118">Visual Basic Naming Conventions</span></span>](../../../visual-basic/programming-guide/program-structure/naming-conventions.md)
+- [<span data-ttu-id="f1f6e-117">Declared Element Names</span><span class="sxs-lookup"><span data-stu-id="f1f6e-117">Declared Element Names</span></span>](../../programming-guide/language-features/declared-elements/declared-element-names.md)
+- [<span data-ttu-id="f1f6e-118">Visual Basic 命名约定</span><span class="sxs-lookup"><span data-stu-id="f1f6e-118">Visual Basic Naming Conventions</span></span>](../../programming-guide/program-structure/naming-conventions.md)
