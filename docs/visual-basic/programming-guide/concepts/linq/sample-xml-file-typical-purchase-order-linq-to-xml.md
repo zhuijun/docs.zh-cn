@@ -2,12 +2,12 @@
 title: 示例 XML 文件：典型采购订单 (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 65321b9c-1239-45e4-af40-eb86cedf7abd
-ms.openlocfilehash: a36d5cafaa276bac667b13d0cf3ada00683acb13
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ed209a9a32b909a36e511a06543de75e780ea5b3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61786888"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360704"
 ---
 # <a name="sample-xml-file-typical-purchase-order-linq-to-xml"></a>示例 XML 文件：典型采购订单 (LINQ to XML)
 下面的 XML 文件用在 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 文档的很多示例中。 此文件是典型的采购单。  
@@ -51,6 +51,6 @@ ms.locfileid: "61786888"
 </PurchaseOrder>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [示例 XML 文档 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-documents-linq-to-xml.md)
+- [示例 XML 文档 (LINQ to XML)](sample-xml-documents-linq-to-xml.md)

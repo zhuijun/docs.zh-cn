@@ -1,5 +1,5 @@
 ---
-title: On
+title: 开
 ms.date: 07/20/2015
 f1_keywords:
 - vb.on
@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - On keyword [Visual Basic]
 ms.assetid: 8619c328-1637-4f41-b466-cbe693f4fe73
-ms.openlocfilehash: 7fdbb3d2b8266c87175eb813ef16f260907faa68
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ff396b9bccfbea797766e9ea1c15652279113510
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74331840"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84376064"
 ---
 # <a name="on-visual-basic"></a>On (Visual Basic)
 引入对运行时错误的响应，或打开编译器选项。  
@@ -20,20 +20,20 @@ ms.locfileid: "74331840"
  在 "查询" 中，标识要联接的集合的键。  
   
 ## <a name="remarks"></a>备注  
- `On` 关键字用于以下上下文：  
+ `On`关键字用于以下上下文：  
   
- [Group Join 子句](../../visual-basic/language-reference/queries/group-join-clause.md)  
+ [Group Join 子句](../language-reference/queries/group-join-clause.md)  
   
- [Join 子句](../../visual-basic/language-reference/queries/join-clause.md)  
+ [Join 子句](../language-reference/queries/join-clause.md)  
   
- [On Error 语句](../../visual-basic/language-reference/statements/on-error-statement.md)  
+ [On Error 语句](../language-reference/statements/on-error-statement.md)  
   
- [Option Explicit 语句](../../visual-basic/language-reference/statements/option-explicit-statement.md)  
+ [Option Explicit 语句](../language-reference/statements/option-explicit-statement.md)  
   
- [Option Infer 语句](../../visual-basic/language-reference/statements/option-infer-statement.md)  
+ [Option Infer 语句](../language-reference/statements/option-infer-statement.md)  
   
- [Option Strict 语句](../../visual-basic/language-reference/statements/option-strict-statement.md)  
+ [Option Strict 语句](../language-reference/statements/option-strict-statement.md)  
   
 ## <a name="see-also"></a>另请参阅
 
-- [关键字](../../visual-basic/language-reference/keywords/index.md)
+- [关键字](../language-reference/keywords/index.md)

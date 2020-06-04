@@ -2,12 +2,12 @@
 title: 查找 Word 文档中的文本
 ms.date: 07/20/2015
 ms.assetid: eea9819b-a78a-4552-bf13-8837fc0e7a37
-ms.openlocfilehash: 83941de815968fce471b7366ed7c5114dae0d63c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 546703e3dbead64fd10c04fe52cb1dd98ba53049
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347527"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398085"
 ---
 # <a name="finding-text-in-word-documents-visual-basic"></a>查找 Word 文档中的文本（Visual Basic）
 
@@ -17,7 +17,7 @@ ms.locfileid: "75347527"
 
 本示例处理一个 WordprocessingML 文档，在该文档中查找特定文本片断的所有匹配项。 为演示此操作，我们使用一个查询，查找字符串“Hello”。 本示例以本教程中前面的一些示例为基础构建。 下面代码中的注释标识出了这个新查询。
 
-有关创建此示例的源文档的说明，请参阅[创建源 Office OPEN XML 文档（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)。
+有关创建此示例的源文档的说明，请参阅[创建源 Office OPEN XML 文档（Visual Basic）](creating-the-source-office-open-xml-document.md)。
 
 本示例使用 WindowsBase 程序集中的类。 它使用 <xref:System.IO.Packaging?displayProperty=nameWithType> 命名空间中的类型。
 
@@ -302,16 +302,16 @@ StyleName:Code ><
 
 当然，可以通过多种方式对此示例进行改进。 例如，可以使用正则表达式来搜索文本，可以循环访问某一特定目录下的所有 Word 文件等等。
 
-请注意，此示例的执行效果与将它编写为一个单个查询几乎同样好。 因为每个查询都以迟缓方式实现，每个查询直到循环到该查询时才生成结果。 有关执行和迟缓计算的详细信息，请参阅[LINQ to XML （Visual Basic）中的延迟执行和迟缓计算](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)。
+请注意，此示例的执行效果与将它编写为一个单个查询几乎同样好。 因为每个查询都以迟缓方式实现，每个查询直到循环到该查询时才生成结果。 有关执行和迟缓计算的详细信息，请参阅[LINQ to XML （Visual Basic）中的延迟执行和迟缓计算](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)。
 
 ## <a name="next-steps"></a>后续步骤
 
 下一节提供有关 WordprocessingML 文档的更多信息：
 
-- [Office Open XML WordprocessingML 文档的详细信息（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+- [Office Open XML WordprocessingML 文档的详细信息（Visual Basic）](details-of-office-open-xml-wordprocessingml-documents.md)
 
 ## <a name="see-also"></a>另请参阅
 
-- [教程：在 WordprocessingML 文档中操作内容（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
-- [使用纯函数重构 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)
-- [LINQ to XML （Visual Basic）中的延迟执行和迟缓计算](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [教程：在 WordprocessingML 文档中操作内容（Visual Basic）](tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [使用纯函数重构 (Visual Basic)](refactoring-using-a-pure-function.md)
+- [LINQ to XML （Visual Basic）中的延迟执行和迟缓计算](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)

@@ -1,13 +1,13 @@
 ---
-title: 加载或分析 XML2 时保留空白
+title: 在加载或分析 XML2 时保留空白
 ms.date: 07/20/2015
 ms.assetid: ef6518e0-2c8d-462c-8b92-a16e9dc737ad
-ms.openlocfilehash: 7febbf1ea27d3e73df8b91869befcd0b29a07c6e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 9c60c707730ed0b07e82040a4ce3aab5d83eef1c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64666127"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396436"
 ---
 # <a name="preserving-white-space-while-loading-or-parsing-xml"></a>在加载或分析 XML 时保留空白
 本主题说明如何控制 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 的空白行为。  
@@ -16,7 +16,7 @@ ms.locfileid: "64666127"
   
  另一个常见的情况是读取和修改已经有意缩进的 XML。 您可能不想以任何方式更改这种缩进。 若要在 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 中执行此操作，您要在加载或解析 XML 时保留空白，并在序列化 XML 时禁用格式设置。  
   
- 本主题说明用于填充 XML 树的方法的空白行为。 有关序列化 XML 树时如何控制空白的信息，请参阅[在序列化时保留空白](../../../../visual-basic/programming-guide/concepts/linq/preserving-white-space-while-serializing.md)。  
+ 本主题说明用于填充 XML 树的方法的空白行为。 有关序列化 XML 树时如何控制空白的信息，请参阅[在序列化时保留空白](preserving-white-space-while-serializing.md)。  
   
 ## <a name="behavior-of-methods-that-populate-xml-trees"></a>用于填充 XML 树的方法的行为  
  <xref:System.Xml.Linq.XElement> 和 <xref:System.Xml.Linq.XDocument> 类中的以下方法用于填充 XML 树。 可以从文件、<xref:System.IO.TextReader>、<xref:System.Xml.XmlReader> 或字符串填充 XML 树：  
@@ -37,6 +37,6 @@ ms.locfileid: "64666127"
   
  您可以使用 <xref:System.Xml.XmlWriter> 创建一个 XML 树。 写入到 <xref:System.Xml.XmlWriter> 的节点会在树中进行填充。 但在使用此方法生成 XML 树时，不管节点是否为空白或是否为无意义的空白，都将保留所有节点。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [分析 XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [分析 XML （Visual Basic）](parsing-xml.md)

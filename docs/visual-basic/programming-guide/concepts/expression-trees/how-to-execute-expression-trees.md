@@ -2,14 +2,14 @@
 title: 如何：执行表达式树
 ms.date: 07/20/2015
 ms.assetid: 9dfb5ab3-f48f-417e-975f-f8f6f1cdc18d
-ms.openlocfilehash: 2a2749eaed5279d04b72eb77b066c83de9722fa9
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 7b7b08ea1a7a1310b1d98876be96f1fa28ecba91
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346003"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375325"
 ---
-# <a name="how-to-execute-expression-trees-visual-basic"></a>如何：执行表达式树（Visual Basic）
+# <a name="how-to-execute-expression-trees-visual-basic"></a>如何：执行表达式树 (Visual Basic)
 本主题演示如何执行表达式树。 执行表达式树可能返回一个值，或者它可能只是执行操作，例如调用方法。  
   
  仅可以执行表示 lambda 表达式的表达式树。 表示 Lambda 表达式的表达式树的类型为 <xref:System.Linq.Expressions.LambdaExpression> 或 <xref:System.Linq.Expressions.Expression%601>。 若要执行这些表达式树，请调用 <xref:System.Linq.Expressions.LambdaExpression.Compile%2A> 方法来创建一个可执行的委托，然后调用该委托。  
@@ -48,5 +48,5 @@ MsgBox(result)
   
 ## <a name="see-also"></a>另请参阅
 
-- [表达式树 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
-- [如何：修改表达式树（Visual Basic）](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-modify-expression-trees.md)
+- [表达式树 (Visual Basic)](index.md)
+- [如何：修改表达式树 (Visual Basic)](how-to-modify-expression-trees.md)

@@ -5,25 +5,25 @@ helpviewer_keywords:
 - Toolbox, adding controls
 - ActiveX controls, adding to Toolbox
 ms.assetid: ec675027-866f-4c05-aaf2-92fca5200f9a
-ms.openlocfilehash: c41d30582b8c2d3f7fa63c7b75046ab3e65fa390
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9590088272a630b50d953d1832200bacf3fc13fb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353217"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396812"
 ---
 # <a name="how-to-work-with-activex-controls-visual-basic"></a>如何：使用 ActiveX 控件 (Visual Basic)
 ActiveX 控件是可以插入到网页或其他应用程序中以重用打包功能的 COM 组件或对象，其他人已对其进行了编程。 可以使用为 Visual Basic 6.0 及更早版本开发的 ActiveX 控件将功能添加到 Visual Studio 的**工具箱**中。  
   
 ### <a name="to-add-activex-controls-to-the-toolbox"></a>将 ActiveX 控件添加到工具箱  
   
-1. 单击 "**工具**" 菜单上的 "**选择工具箱项"** 。  
+1. 在 **“工具”** 菜单上，单击 **“选择工具箱项”**。  
   
      此时将显示 "**选择工具箱**" 对话框。  
   
 2. 单击 " **COM 组件**" 选项卡。  
   
-3. 选中想要使用的 ActiveX 控件旁边的复选框，然后单击 **"确定"** 。  
+3. 选中想要使用的 ActiveX 控件旁边的复选框，然后单击 **"确定"**。  
   
      新控件将与其他工具一起显示在**工具箱**中。  
   
@@ -32,8 +32,8 @@ ActiveX 控件是可以插入到网页或其他应用程序中以重用打包功
   
 ## <a name="see-also"></a>另请参阅
 
-- [COM 互操作](../../../visual-basic/programming-guide/com-interop/index.md)
+- [COM 互操作](index.md)
 - [如何：向 Windows 窗体添加 ActiveX 控件](../../../framework/winforms/controls/how-to-add-activex-controls-to-windows-forms.md)
 - [Aximp.exe（Windows 窗体 ActiveX 控件导入程序）](../../../framework/tools/aximp-exe-windows-forms-activex-control-importer.md)
-- [在 Windows 窗体上托管 ActiveX 控件时的注意事项](../../../framework/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form.md)
-- [互操作性疑难解答](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
+- [在 Windows 窗体上承载 ActiveX 控件时的注意事项](../../../framework/winforms/controls/considerations-when-hosting-an-activex-control-on-a-windows-form.md)
+- [互操作性疑难解答](troubleshooting-interoperability.md)

@@ -2,12 +2,12 @@
 title: 如何：链接轴方法调用 (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: e4e22942-39bd-460f-b3c0-9f09e53d3aa9
-ms.openlocfilehash: de6fbec9fa7948c618252415774ff6a2e9289c74
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 51396c9aaffb43badf405600251ed5cb06198dc3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346936"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375130"
 ---
 # <a name="how-to-chain-axis-method-calls-linq-to-xml-visual-basic"></a>如何：链接轴方法调用（LINQ to XML）（Visual Basic）
 一个在代码中常用的模式是调用轴方法，然后调用一个扩展方法轴。  
@@ -17,7 +17,7 @@ ms.locfileid: "74346936"
 ## <a name="example"></a>示例  
  本示例使用 <xref:System.Xml.Linq.XContainer.Elements%2A?displayProperty=nameWithType> 和 <xref:System.Xml.Linq.Extensions.Elements%2A?displayProperty=nameWithType> 在所有 `Name` 元素中查找所有 `Address` 元素中的所有 `PurchaseOrder` 元素。  
   
- 本示例使用以下 XML 文档：[示例 XML 文件：多个采购订单 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md)。  
+ 本示例使用以下 XML 文档：[示例 XML 文件：多个采购订单 (LINQ to XML)](sample-xml-file-multiple-purchase-orders-linq-to-xml.md)。  
   
 ```vb  
 Dim purchaseOrders As XElement = XElement.Load("PurchaseOrders.xml")  
@@ -88,7 +88,7 @@ Next
 ## <a name="example"></a>示例  
  下面的示例演示针对命名空间中的 XML 的相同技术。 有关详细信息，请参阅[命名空间概述（LINQ to XML）（Visual Basic）](namespaces-overview-linq-to-xml.md)。  
   
- 本示例使用以下 XML 文档：[示例 XML 文件：命名空间中的多个采购订单](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-in-a-namespace.md)。  
+ 本示例使用以下 XML 文档：[示例 XML 文件：命名空间中的多个采购订单](sample-xml-file-multiple-purchase-orders-in-a-namespace.md)。  
   
 ```vb  
 Imports <xmlns:aw="http://www.adventure-works.com">  
@@ -119,4 +119,4 @@ End Module
   
 ## <a name="see-also"></a>另请参阅
 
-- [LINQ to XML 轴 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [LINQ to XML 轴 (Visual Basic)](linq-to-xml-axes.md)

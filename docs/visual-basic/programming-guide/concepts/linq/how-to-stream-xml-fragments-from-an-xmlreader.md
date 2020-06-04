@@ -2,12 +2,12 @@
 title: 如何：从 XmlReader 流式处理 XML 片段
 ms.date: 07/20/2015
 ms.assetid: f67ce598-4a12-4dcb-9a07-24deca02a111
-ms.openlocfilehash: 42d3edb390035d20f506388974000aa204312109
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: ff22625767c4e0752ca19d5a315395934b566230
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636791"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397695"
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-visual-basic"></a>如何：从 XmlReader 流式处理 XML 片段（Visual Basic）
 如果必须处理很大的 XML 文件，将整个 XML 树加载到内存可能不可行。 本主题演示如何使用 <xref:System.Xml.XmlReader> 对片段进行流式处理。  
@@ -18,12 +18,12 @@ ms.locfileid: "75636791"
   
  如果想要创建一个部分树，可实例化 <xref:System.Xml.XmlReader>，将读取器定位在要转换为 <xref:System.Xml.Linq.XElement> 树的节点上，然后创建 <xref:System.Xml.Linq.XElement> 对象。  
   
- 主题[如何：流式处理包含访问标头信息的 XML 片段（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)包含有关如何对更复杂的文档进行流式处理的信息和示例。  
+ 主题[如何：流式处理包含访问标头信息的 XML 片段（Visual Basic）](how-to-stream-xml-fragments-with-access-to-header-information.md)包含有关如何对更复杂的文档进行流式处理的信息和示例。  
   
- 主题[如何：执行大型 Xml 文档的流式转换（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md)包含一个使用 LINQ to XML 转换极大的 xml 文档的示例，同时保持较小的内存需求量。  
+ 主题[如何：执行大型 Xml 文档的流式转换（Visual Basic）](how-to-perform-streaming-transform-of-large-xml-documents.md)包含一个使用 LINQ to XML 转换极大的 xml 文档的示例，同时保持较小的内存需求量。  
   
 ## <a name="example"></a>示例  
- 本示例创建一个自定义轴方法。 您可以使用 LINQ 查询对其进行查询。 自定义轴方法 `StreamRootChildDoc` 是一个专门设计的方法，用于读取具有重复 `Child` 元素的文档。  
+ 本示例创建一个自定义轴方法。 可以通过使用 LINQ 查询来查询该方法。 自定义轴方法 `StreamRootChildDoc` 是一个专门设计的方法，用于读取具有重复 `Child` 元素的文档。  
   
 ```vb  
 Module Module1  
@@ -147,5 +147,5 @@ ccc
   
 ## <a name="see-also"></a>另请参阅
 
-- [演练：在 Visual Basic 中实现 IEnumerable （of T）](../../../../visual-basic/programming-guide/language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)
-- [分析 XML （Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [演练：在 Visual Basic 中实现 IEnumerable(Of T)](../../language-features/control-flow/walkthrough-implementing-ienumerable-of-t.md)
+- [分析 XML （Visual Basic）](parsing-xml.md)

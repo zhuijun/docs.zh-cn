@@ -2,22 +2,22 @@
 title: 混合声明性代码-命令性代码的问题 (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: f12b1ab4-bb92-4b92-a648-0525e45b3ce7
-ms.openlocfilehash: 369fae59516df785ac686645d47e74e69a8f1457
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e5526a64805b19ea293d3ef28636738923d03662
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74331649"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84361068"
 ---
 # <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-visual-basic"></a>混合声明性代码/命令性代码 Bug （LINQ to XML）（Visual Basic）
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 包含各种不同的方法，使您能够直接修改 XML 树。 您可以添加元素、删除元素、更改元素的内容、添加属性等等。 [修改 XML 树（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)中介绍了此编程接口。 如果循环访问一个轴，例如 <xref:System.Xml.Linq.XContainer.Elements%2A>，而在循环访问该轴时正在修改 XML 树，那么可能会发生一些异常问题。  
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 包含各种不同的方法，使您能够直接修改 XML 树。 您可以添加元素、删除元素、更改元素的内容、添加属性等等。 [修改 XML 树（LINQ to XML）（Visual Basic）](modifying-xml-trees-linq-to-xml.md)中介绍了此编程接口。 如果循环访问一个轴，例如 <xref:System.Xml.Linq.XContainer.Elements%2A>，而在循环访问该轴时正在修改 XML 树，那么可能会发生一些异常问题。  
   
  此问题有时称为“万圣节问题”。  
   
 ## <a name="definition-of-the-problem"></a>问题的定义  
- 如果你使用 LINQ 编写循环访问集合的代码，那么你是以声明性风格在编写代码。 这种风格更像是描述要实现的内容，而不是描述所需要的实现方式。 如果你编写的代码要执行以下操作：1) 获取第一个元素；2) 测试该元素是否符合某种条件；3) 修改该元素；4) 将该元素放回列表中。那么，此代码就是命令性代码。 你是在告诉计算机希望以何种方式完成任务。  
+ 如果你使用 LINQ 编写循环访问集合的代码，那么你是以声明性风格在编写代码。 这种风格更像是描述要实现的内容  ，而不是描述所需要的实现方式  。 如果你编写的代码要执行以下操作：1) 获取第一个元素；2) 测试该元素是否符合某种条件；3) 修改该元素；4) 将该元素放回列表中。那么，此代码就是命令性代码。 你是在告诉计算机希望以何种方式  完成任务。  
   
- 在同一操作中混合这些代码风格正是导致问题的原因。 请考虑以下事项：  
+ 在同一操作中混合这些代码风格正是导致问题的原因。 请考虑下列各项：  
   
  假设您有一个链接列表，其中有三个项（a、b 和 c）：  
   
@@ -178,4 +178,4 @@ Console.WriteLine(newRoot)
   
 ## <a name="see-also"></a>另请参阅
 
-- [高级 LINQ to XML 编程（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [高级 LINQ to XML 编程（Visual Basic）](advanced-linq-to-xml-programming.md)

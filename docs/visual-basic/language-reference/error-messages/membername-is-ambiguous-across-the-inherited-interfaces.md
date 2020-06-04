@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC30685
 ms.assetid: 756add7a-23d5-4b4f-a48d-8297d6459c73
-ms.openlocfilehash: 06e0d8863c74041f81977b3187fe99a1d05bcd53
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: f242db9e02a1983e731dce280be0e8f8a8b12712
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71700885"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397267"
 ---
-# <a name="membername-is-ambiguous-across-the-inherited-interfaces-interfacename1-and-interfacename2"></a>"\<membername >" 在继承接口 "\<interfacename1 >" 和 "\<interfacename2 >" 之间不明确
+# <a name="membername-is-ambiguous-across-the-inherited-interfaces-interfacename1-and-interfacename2"></a>“\<membername>”在继承接口“\<interfacename1>”和“\<interfacename2>”之间不明确
 接口从多个接口继承具有相同名称的两个或多个成员。  
   
  **错误 ID：** BC30685  
@@ -46,6 +46,6 @@ ms.locfileid: "71700885"
     End Module  
     ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [接口](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+- [接口](../../programming-guide/language-features/interfaces/index.md)

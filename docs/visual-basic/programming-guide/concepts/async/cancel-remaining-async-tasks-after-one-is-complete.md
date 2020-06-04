@@ -2,14 +2,14 @@
 title: 在完成一个异步任务后取消剩余任务
 ms.date: 07/20/2015
 ms.assetid: c928b5a1-622f-4441-8baf-adca1dde197f
-ms.openlocfilehash: e6747f35e665611ac7a48a87f955c8b893ee2b99
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: be716e98263c865adad3c197236467b2f48d7740
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347925"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396670"
 ---
-# <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>在完成一个异步任务后取消剩余任务（Visual Basic）
+# <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>在完成一个异步任务后取消剩余任务 (Visual Basic)
 
 通过结合使用 <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> 方法和 <xref:System.Threading.CancellationToken>，可在一个任务完成时取消所有剩余任务。 `WhenAny` 方法采用任务集合中的一个参数。 该方法启动所有任务，并返回单个任务。 当集合中任意任务完成时，完成单个任务。
 
@@ -26,9 +26,9 @@ ms.locfileid: "74347925"
 
 2. 在菜单栏上，依次选择 **“文件”** 、 **“打开”** 和 **“项目/解决方案”** 。
 
-3. 在“打开项目”对话框中，打开保存已解压的示例代码的文件夹，然后打开 AsyncFineTuningVB 的解决方案 (.sln) 文件。
+3. 在“打开项目”**** 对话框中，打开保存已解压的示例代码的文件夹，然后打开 AsyncFineTuningVB 的解决方案 (.sln) 文件。
 
-4. 在“解决方案资源管理器”中，打开“CancelAfterOneTask”项目的快捷菜单，然后选择“设为启动项目”。
+4. 在“解决方案资源管理器”  中，打开“CancelAfterOneTask”  项目的快捷菜单，然后选择“设为启动项目”  。
 
 5. 选择 F5 键运行该项目。
 
@@ -40,11 +40,11 @@ ms.locfileid: "74347925"
 
 ## <a name="building-the-example"></a>生成示例
 
-本主题中的示例将添加到[取消异步任务或任务列表](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)中开发的项目，以取消任务列表。 该示例使用相同的 UI，但未显示使用“取消”按钮。
+本主题中的示例将添加到[取消异步任务或任务列表](cancel-an-async-task-or-a-list-of-tasks.md)中开发的项目，以取消任务列表。 该示例使用相同的 UI，但未显示使用“取消”  按钮。
 
-若要自行生成示例，请按“下载示例”部分的说明逐步操作，选择“CancelAListOfTasks”作为“启动项目”。 将此主题中的更改添加到该项目。
+若要自行生成示例，请按“下载示例”部分的说明逐步操作，选择“CancelAListOfTasks”  作为“启动项目”  。 将此主题中的更改添加到该项目。
 
-在**CancelAListOfTasks**项目的 mainwindow.xaml 文件中，通过将每个网站的处理步骤从 `AccessTheWebAsync` 中的循环移至以下异步方法来启动转换。
+在**CancelAListOfTasks**项目的 mainwindow.xaml 文件中，通过将每个网站的处理步骤从中的循环移动 `AccessTheWebAsync` 到下面的异步方法来启动转换。
 
 ```vb
 ' ***Bundle the processing steps for a website into one async method.
@@ -66,7 +66,7 @@ End Function
 
 1. 注释禁止或删除循环。
 
-2. 创建一个查询，它在执行时将生成常规任务的集合。 每次调用 `ProcessURLAsync` 均在 <xref:System.Threading.Tasks.Task%601> 为整数时返回 `TResult`。
+2. 创建一个查询，它在执行时将生成常规任务的集合。 每次调用 `ProcessURLAsync` 均在 `TResult` 为整数时返回 <xref:System.Threading.Tasks.Task%601>。
 
     ```vb
     ' ***Create a query that, when executed, returns a collection of tasks.
@@ -239,6 +239,6 @@ End Class
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
-- [微调异步应用程序 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
-- [使用 Async 和 Await 的异步编程 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+- [微调异步应用程序 (Visual Basic)](fine-tuning-your-async-application.md)
+- [使用 Async 和 Await 的异步编程 (Visual Basic)](index.md)
 - [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)（异步示例：微调应用程序）

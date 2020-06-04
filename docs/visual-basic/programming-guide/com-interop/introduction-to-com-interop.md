@@ -5,12 +5,12 @@ helpviewer_keywords:
 - interop assemblies
 - COM interop [Visual Basic], about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
-ms.openlocfilehash: c7909b3b6a2c9f0b397b9621b7e5125c232be313
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6c7caf266514c43e40135b33d848a688546acf1c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353198"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396774"
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>COM 互操作介绍 (Visual Basic)
 组件对象模型（COM）允许对象向其他组件和主机应用程序公开其功能。 虽然 COM 对象多年来一直是 Windows 编程的基础，但为公共语言运行时（CLR）设计的应用程序具有许多优势。  
@@ -53,10 +53,10 @@ ms.locfileid: "74353198"
   
 ## <a name="see-also"></a>另请参阅
 
-- [COM 互操作](../../../visual-basic/programming-guide/com-interop/index.md)
-- [演练：使用 COM 对象实现继承](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
+- [COM 互操作](index.md)
+- [演练：使用 COM 对象实现继承](walkthrough-implementing-inheritance-with-com-objects.md)
 - [与非托管代码交互操作](../../../framework/interop/index.md)
-- [互操作性疑难解答](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
+- [互操作性疑难解答](troubleshooting-interoperability.md)
 - [.NET 中的程序集](../../../standard/assembly/index.md)
 - [Tlbimp.exe（类型库导入程序）](../../../framework/tools/tlbimp-exe-type-library-importer.md)
 - [Tlbexp.exe（类型库导出程序）](../../../framework/tools/tlbexp-exe-type-library-exporter.md)

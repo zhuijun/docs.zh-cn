@@ -2,19 +2,19 @@
 title: 在 Visual Studio 中调试表达式树
 ms.date: 07/20/2015
 ms.assetid: 492cc28f-b7a2-4c47-b582-b3c437b8a5d5
-ms.openlocfilehash: 287f3096a1af8b9fa42d252c5240d7caefa6bac8
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 3811958353d1d55ce74da41c6a45dbe730cc9790
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616888"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375429"
 ---
 # <a name="debugging-expression-trees-in-visual-studio-visual-basic"></a>在 Visual Studio 中调试表达式树（Visual Basic）
 可以在调试应用程序时分析表达式树的结构和内容。 要快速了解表达式树结构，可以使用 `DebugView` 属性，该属性[使用特殊语法](debugview-syntax.md)表示表达式树。 （请注意，`DebugView` 仅在调试模式下可用。）  
 
 ![表达式树的 DebugView 的屏幕截图。](media/debugging-expression-trees-in-visual-studio/debugview-visual-basic.png)
 
-由于 `DebugView` 是一个字符串，因此可以使用[内置文本可视化工具](https://docs.microsoft.com/visualstudio/debugger/view-strings-visualizer#open-a-string-visualizer)在多行中进行查看，方法是从 `DebugView` 标签旁边的放大镜图标中选择“文本可视化工具”  。
+由于 `DebugView` 是一个字符串，因此可以使用[内置文本可视化工具](https://docs.microsoft.com/visualstudio/debugger/view-strings-visualizer#open-a-string-visualizer)在多行中进行查看，方法是从 `DebugView` 标签旁边的放大镜图标中选择“文本可视化工具”。
 
  ![应用于 DebugView 结果的文本可视化工具的屏幕截图。](media/debugging-expression-trees-in-visual-studio/string-visualizer-vb.png)
 
@@ -30,7 +30,7 @@ ms.locfileid: "83616888"
 
 ### <a name="to-open-a-visualizer-for-an-expression-tree"></a>打开表达式树的可视化工具  
   
-1. 单击“数据提示”、“监视”窗口、“自动”窗口或“本地”窗口中表达式树旁边显示的放大镜图标     。  
+1. 单击“数据提示”、“监视”窗口、“自动”窗口或“本地”窗口中表达式树旁边显示的放大镜图标   。  
   
     显示可用的可视化工具列表：
 
@@ -40,7 +40,7 @@ ms.locfileid: "83616888"
 
 ## <a name="see-also"></a>请参阅
 
-- [表达式树 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
+- [表达式树 (Visual Basic)](index.md)
 - [在 Visual Studio 中进行调试](/visualstudio/debugger/debugger-feature-tour)
 - [创建自定义可视化工具](/visualstudio/debugger/create-custom-visualizers-of-data)
 - [`DebugView` 语法](debugview-syntax.md)

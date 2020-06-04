@@ -2,12 +2,12 @@
 title: 如何：从多个源填充对象集合 (LINQ)
 ms.date: 06/22/2018
 ms.assetid: 63062a22-e6a9-42c0-b357-c7c965f58f33
-ms.openlocfilehash: 74a2a0f71e575136f1758f72f9a8db72549a9489
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9c6d8ff5165bf886d8aad87b64305819e65361ab
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346977"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396514"
 ---
 # <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>如何：从多个源填充对象集合（LINQ）（Visual Basic）
 
@@ -18,7 +18,7 @@ ms.locfileid: "74346977"
 
 ## <a name="to-create-the-data-file"></a>创建数据文件
 
-- 按照[如何：联接不同文件的内容（LINQ）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md)中的说明，将名称 .csv 和分数 .csv 文件复制到项目文件夹中。
+- 按照[如何：联接不同文件的内容（LINQ）（Visual Basic）](how-to-join-content-from-dissimilar-files-linq.md)中的说明，将名称 .csv 和分数 .csv 文件复制到项目文件夹中。
 
 ## <a name="example"></a>示例
 
@@ -100,7 +100,7 @@ End Class
 ' The average score of Michael Tucker is 92
 ```
 
-在[Select 子句](../../../../visual-basic/language-reference/queries/select-clause.md)子句中，对象初始值设定项用于通过使用这两个源中的数据实例化每个新的 `Student` 对象。
+在[Select 子句](../../../language-reference/queries/select-clause.md)子句中，对象初始值设定项用于 `Student` 通过使用这两个源中的数据实例化每个新对象。
 
 如果不需要存储查询的结果，那么和命名类型相比，匿名类型使用起来更方便。 如果在执行查询的方法外部传递查询结果，则需要使用命名类型。 下面的示例执行与前面的示例相同的任务，但使用的是匿名类型，而不是命名类型：
 
@@ -130,4 +130,4 @@ Next
 
 ## <a name="see-also"></a>另请参阅
 
-- [LINQ 和字符串（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ 和字符串 (Visual Basic)](linq-and-strings.md)

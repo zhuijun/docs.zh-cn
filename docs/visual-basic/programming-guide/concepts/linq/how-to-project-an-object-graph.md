@@ -2,18 +2,18 @@
 title: 如何：投影对象图
 ms.date: 07/20/2015
 ms.assetid: 9451eb47-6a31-49d7-84df-73368c618422
-ms.openlocfilehash: 71d41b515983e19f90e163f76ca400248d3cc848
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 2900a31a469266d392f1b07b4714a08e253d2abd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636674"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396488"
 ---
 # <a name="how-to-project-an-object-graph-visual-basic"></a>如何：投影对象图（Visual Basic）
 本主题演示如何从 XML 投影或填充对象图。  
   
 ## <a name="example"></a>示例  
- 下面的代码用[示例 XML 文件：典型采购订单 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-linq-to-xml.md) XML 文档中的 `Address`、`PurchaseOrder` 和 `PurchaseOrderItem` 类填充对象图。  
+ 下面的代码用[示例 XML 文件：典型采购订单 (LINQ to XML)](sample-xml-file-typical-purchase-order-linq-to-xml.md) XML 文档中的 `Address`、`PurchaseOrder` 和 `PurchaseOrderItem` 类填充对象图。  
   
 ```vb  
 Class Address  
@@ -296,7 +296,7 @@ Sub Main()
 End Sub  
 ```  
   
- 在此示例中，LINQ 查询的结果作为 `PurchaseOrderItem`<xref:System.Collections.Generic.IEnumerable%601> 返回。 `PurchaseOrder` 类中各项的类型都是 <xref:System.Collections.Generic.IEnumerable%601> 的 `PurchaseOrderItem`。 该代码使用 <xref:System.Linq.Enumerable.ToList%2A> 扩展方法，根据查询结果来创建 <xref:System.Collections.Generic.List%601> 集合。  
+ 在此示例中，LINQ 查询的结果以 `PurchaseOrderItem` 的 <xref:System.Collections.Generic.IEnumerable%601> 形式返回。 `PurchaseOrder` 类中各项的类型都是 <xref:System.Collections.Generic.IEnumerable%601> 的 `PurchaseOrderItem`。 该代码使用 <xref:System.Linq.Enumerable.ToList%2A> 扩展方法，根据查询结果来创建 <xref:System.Collections.Generic.List%601> 集合。  
   
  此示例产生以下输出：  
   
@@ -341,4 +341,4 @@ ShipDate: 5/21/1999
 
 - <xref:System.Linq.Enumerable.Select%2A>
 - <xref:System.Linq.Enumerable.ToList%2A>
-- [投影和转换（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [投影和转换（LINQ to XML）（Visual Basic）](projections-and-transformations-linq-to-xml.md)

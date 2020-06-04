@@ -1,13 +1,13 @@
 ---
-title: 如何：从 Office Open XML 文档中检索段落
+title: 如何：从 Office Open XML 文档检索段落
 ms.date: 07/20/2015
 ms.assetid: 66053f21-9217-473c-a6f3-a0897be07756
-ms.openlocfilehash: 8755dc40fe64d4ff37ed66006f757ec1b32334a1
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 49441da3b9a0bc43c3528a14d03aa44d8173be42
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347059"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397825"
 ---
 # <a name="how-to-retrieve-paragraphs-from-an-office-open-xml-document-visual-basic"></a>如何：从 Office Open XML 文档中检索段落（Visual Basic）
 本主题提供一个示例，该示例打开一个 Office Open XML 文档，然后检索文档中所有段落所构成的集合。  
@@ -19,7 +19,7 @@ ms.locfileid: "75347059"
   
  此示例使用一个名为 `StringConcatenate` 的扩展方法，示例中也提供了该方法。  
   
- 有关此示例的工作原理的详细教程，请参阅[XML 的纯功能转换（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)。  
+ 有关此示例的工作原理的详细教程，请参阅[XML 的纯功能转换（Visual Basic）](pure-functional-transformations-of-xml.md)。  
   
  本示例使用 WindowsBase 程序集中的类。 它使用 <xref:System.IO.Packaging?displayProperty=nameWithType> 命名空间中的类型。  
   
@@ -152,7 +152,7 @@ Module Module1
 End Module  
 ```  
   
- 当与[创建源 Office OPEN Xml 文档（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/creating-the-source-office-open-xml-document.md)中所述的示例 Open xml 文档运行时，此示例将生成以下输出：  
+ 当与[创建源 Office OPEN Xml 文档（Visual Basic）](creating-the-source-office-open-xml-document.md)中所述的示例 Open xml 文档运行时，此示例将生成以下输出：  
   
 ```console  
 StyleName:Heading1 >Parsing WordprocessingML with LINQ to XML<  
@@ -174,4 +174,4 @@ StyleName:Code >Hello World<
   
 ## <a name="see-also"></a>另请参阅
 
-- [高级查询技术（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [高级查询技术（LINQ to XML）（Visual Basic）](advanced-query-techniques-linq-to-xml.md)
