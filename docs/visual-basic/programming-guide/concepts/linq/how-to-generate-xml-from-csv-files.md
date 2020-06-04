@@ -2,18 +2,18 @@
 title: 如何：从 CSV 文件生成 XML
 ms.date: 07/20/2015
 ms.assetid: fe4dbc87-7b0d-40bf-88c3-5d706ee89a4d
-ms.openlocfilehash: 79b609c3a706db4c8b4c082fbeaf143632a75033
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 647cab02c730f18629c669c3526520b2a98a86d8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636817"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396605"
 ---
-# <a name="how-to-generate-xml-from-csv-files-visual-basic"></a><span data-ttu-id="1a7da-102">如何：从 CSV 文件生成 XML （Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="1a7da-102">How to: Generate XML from CSV Files (Visual Basic)</span></span>
-<span data-ttu-id="1a7da-103">此示例演示如何使用语言集成查询（LINQ）和 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 从逗号分隔值（CSV）文件生成 XML 文件。</span><span class="sxs-lookup"><span data-stu-id="1a7da-103">This example shows how to use Language-Integrated Query (LINQ) and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to generate an XML file from a comma-separated value (CSV) file.</span></span>  
+# <a name="how-to-generate-xml-from-csv-files-visual-basic"></a><span data-ttu-id="2959c-102">如何：从 CSV 文件生成 XML （Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="2959c-102">How to: Generate XML from CSV Files (Visual Basic)</span></span>
+<span data-ttu-id="2959c-103">本示例演示如何使用语言集成查询 (LINQ) 和 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 从逗号分隔值 (CSV) 文件生成 XML 文件。</span><span class="sxs-lookup"><span data-stu-id="2959c-103">This example shows how to use Language-Integrated Query (LINQ) and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to generate an XML file from a comma-separated value (CSV) file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="1a7da-104">示例</span><span class="sxs-lookup"><span data-stu-id="1a7da-104">Example</span></span>  
- <span data-ttu-id="1a7da-105">下面的代码对字符串数组执行 LINQ 查询。</span><span class="sxs-lookup"><span data-stu-id="1a7da-105">The following code performs a LINQ query on an array of strings.</span></span>  
+## <a name="example"></a><span data-ttu-id="2959c-104">示例</span><span class="sxs-lookup"><span data-stu-id="2959c-104">Example</span></span>  
+ <span data-ttu-id="2959c-105">下面的代码对字符串数组执行 LINQ 查询。</span><span class="sxs-lookup"><span data-stu-id="2959c-105">The following code performs a LINQ query on an array of strings.</span></span>  
   
 ```vb  
       ' Create the text file.  
@@ -48,7 +48,7 @@ Dim cust As XElement = _
 Console.WriteLine(cust)  
 ```  
   
- <span data-ttu-id="1a7da-106">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="1a7da-106">This code produces the following output:</span></span>  
+ <span data-ttu-id="2959c-106">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="2959c-106">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -107,6 +107,6 @@ Console.WriteLine(cust)
 </Root>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="1a7da-107">另请参阅</span><span class="sxs-lookup"><span data-stu-id="1a7da-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2959c-107">另请参阅</span><span class="sxs-lookup"><span data-stu-id="2959c-107">See also</span></span>
 
-- [<span data-ttu-id="1a7da-108">投影和转换（LINQ to XML）（Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="1a7da-108">Projections and Transformations (LINQ to XML) (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)
+- [<span data-ttu-id="2959c-108">投影和转换（LINQ to XML）（Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="2959c-108">Projections and Transformations (LINQ to XML) (Visual Basic)</span></span>](projections-and-transformations-linq-to-xml.md)
