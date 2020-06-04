@@ -2,20 +2,20 @@
 title: 迭代器
 ms.date: 07/20/2015
 ms.assetid: f26b5c1e-fe9d-4004-b287-da7919d717ae
-ms.openlocfilehash: 2789ac66690ebfd472b9bae5ccf08b1bdfaa0922
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: e638d35aeb86837d91fb14681d300772e3c2375a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628730"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410924"
 ---
-# <a name="iterators-visual-basic"></a>迭代器（Visual Basic）
+# <a name="iterators-visual-basic"></a>迭代器 (Visual Basic)
 
-迭代器可用于逐步迭代集合，例如列表和数组。
+迭代器** 可用于逐步迭代集合，例如列表和数组。
 
-迭代器方法或 `get` 访问器可对集合执行自定义迭代。 Iterator 方法使用[Yield](../../../visual-basic/language-reference/statements/yield-statement.md)语句每次返回一个元素。 到达 `Yield` 语句时，会记住当前在代码中的位置。 下次调用迭代器函数时，将从该位置重新开始执行。
+迭代器方法或 `get` 访问器可对集合执行自定义迭代。 Iterator 方法使用[Yield](../../language-reference/statements/yield-statement.md)语句每次返回一个元素。 到达 `Yield` 语句时，会记住当前在代码中的位置。 下次调用迭代器函数时，将从该位置重新开始执行。
 
-使用 For Each ...，从客户端代码使用迭代器[下一](../../../visual-basic/language-reference/statements/for-each-next-statement.md)条语句，或使用 LINQ 查询。
+使用 For Each ...，从客户端代码使用迭代器[下一](../../language-reference/statements/for-each-next-statement.md)条语句，或使用 LINQ 查询。
 
 在以下示例中，`For Each` 循环的首次迭代导致 `SomeNumbers` 迭代器方法继续执行，直至到达第一个 `Yield` 语句。 此迭代返回的值为 3，并保留当前在迭代器方法中的位置。 在循环的下次迭代中，迭代器方法的执行将从其暂停的位置继续，直至到达 `Yield` 语句后才会停止。 此迭代返回的值为 5，并再次保留当前在迭代器方法中的位置。 到达迭代器方法的结尾时，循环便已完成。
 
@@ -37,15 +37,15 @@ End Function
 
 迭代器方法或 `get` 访问器的返回类型可以是 <xref:System.Collections.IEnumerable>、<xref:System.Collections.Generic.IEnumerable%601>、<xref:System.Collections.IEnumerator> 或 <xref:System.Collections.Generic.IEnumerator%601>。
 
-您可以使用 `Exit Function` 或 `Return` 语句来结束迭代。
+您可以使用 `Exit Function` 或 `Return` 语句结束迭代。
 
-Visual Basic 迭代器函数或 `get` 访问器声明包含[iterator](../../../visual-basic/language-reference/modifiers/iterator.md)修饰符。
+Visual Basic 迭代器函数或 `get` 访问器声明包含[迭代器](../../language-reference/modifiers/iterator.md)修饰符。
 
 迭代器是在 Visual Studio 2012 Visual Basic 中引入的。
 
-**本主题内容**
+**在本主题中**
 
-- [简单迭代器](#BKMK_SimpleIterator)
+- [简单的迭代器](#BKMK_SimpleIterator)
 
 - [创建集合类](#BKMK_CollectionClass)
 
@@ -62,11 +62,11 @@ Visual Basic 迭代器函数或 `get` 访问器声明包含[iterator](../../../v
 - [迭代器的使用](#BKMK_UseOfIterators)
 
 > [!NOTE]
-> 对于本主题中除简单迭代器示例之外的所有示例，包括 `System.Collections` 和 `System.Collections.Generic` 命名空间的[Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)语句。
+> 对于除了简单迭代器示例之外的主题中的所有示例[Imports](../../language-reference/statements/imports-statement-net-namespace-and-type.md) ，都包含用于 `System.Collections` 和 `System.Collections.Generic` 命名空间的 Imports 语句。
 
-## <a name="BKMK_SimpleIterator"></a>简单迭代器
+## <a name="simple-iterator"></a><a name="BKMK_SimpleIterator"></a>简单迭代器
 
-下面的示例包含一个位于 For ... 的单个 `Yield` 语句[下一个](../../../visual-basic/language-reference/statements/for-next-statement.md)循环。 在 `Main` 中，`For Each` 语句体的每次迭代都会创建一个对迭代器函数的调用，并将继续到下一个 `Yield` 语句。
+下面的示例包含一个 `Yield` 位于[For .。。下一个](../../language-reference/statements/for-next-statement.md)循环。 在 `Main` 中，`For Each` 语句体的每次迭代都会创建一个对迭代器函数的调用，并将继续到下一个 `Yield` 语句。
 
 ```vb
 Sub Main()
@@ -90,11 +90,11 @@ As System.Collections.Generic.IEnumerable(Of Integer)
 End Function
 ```
 
-## <a name="BKMK_CollectionClass"></a>创建集合类
+## <a name="creating-a-collection-class"></a><a name="BKMK_CollectionClass"></a>创建集合类
 
 在以下示例中，`DaysOfTheWeek` 类实现 <xref:System.Collections.IEnumerable> 接口，此操作需要 <xref:System.Collections.IEnumerable.GetEnumerator%2A> 方法。 编译器隐式调用 `GetEnumerator` 方法，此方法返回 <xref:System.Collections.IEnumerator>。
 
-`GetEnumerator` 方法通过使用 `Yield` 语句每次返回一个字符串，`Iterator` 修饰符在函数声明中。
+`GetEnumerator`方法通过使用语句每次返回一个字符串 `Yield` ，并且 `Iterator` 修饰符在函数声明中。
 
 ```vb
 Sub Main()
@@ -125,7 +125,7 @@ End Class
 
 下例创建了一个包含动物集合的 `Zoo` 类。
 
-引用类实例 (`For Each`) 的 `theZoo` 语句隐式调用 `GetEnumerator` 方法。 引用 `For Each` 和 `Birds` 属性的 `Mammals` 语句使用 `AnimalsForType` 命名迭代器方法。
+引用类实例 (`theZoo`) 的 `For Each` 语句隐式调用 `GetEnumerator` 方法。 引用 `Birds` 和 `Mammals` 属性的 `For Each` 语句使用 `AnimalsForType` 命名迭代器方法。
 
 ```vb
 Sub Main()
@@ -216,11 +216,11 @@ Public Class Zoo
 End Class
 ```
 
-## <a name="BKMK_TryBlocks"></a>Try 块
+## <a name="try-blocks"></a><a name="BKMK_TryBlocks"></a>Try 块
 
-Visual Basic 允许在 Try ... 的 `Try` 块中使用 `Yield` 语句[Catch .。。Finally 语句](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)。 具有 `Yield` 语句的 `Try` 块可以具有 `Catch` 块，并且可以具有 `Finally` 块。
+Visual Basic 允许 `Yield` 在 `Try` [Try 块 .。。Catch .。。Finally 语句](../../language-reference/statements/try-catch-finally-statement.md)。 `Try`带有语句的块 `Yield` 可以有 `Catch` 块，并且可以有 `Finally` 块。
 
-下面的示例在迭代器函数中包括 `Try`、`Catch`和 `Finally` 块。 迭代器函数中的 `Finally` 块在 `For Each` 迭代完成之前执行。
+下面的示例 `Try` `Catch` `Finally` 在迭代器函数中包含、和块。 迭代 `Finally` 器函数中的块在 `For Each` 迭代完成之前执行。
 
 ```vb
 Sub Main()
@@ -253,11 +253,11 @@ Private Iterator Function Test() As IEnumerable(Of Integer)
 End Function
 ```
 
-`Yield` 语句不能位于 `Catch` 块或 `Finally` 块内。
+`Yield`语句不能位于 `Catch` 块或 `Finally` 块中。
 
-如果 `For Each` 主体（而不是迭代器方法）引发异常，则不会执行迭代器函数中的 `Catch` 块，但会执行迭代器函数中的一个 `Finally` 块。 Iterator 函数内的 `Catch` 块仅捕获 iterator 函数内发生的异常。
+如果 `For Each` 主体（而不是迭代器方法）引发异常，则 `Catch` 不会执行迭代器函数中的块，但 `Finally` 会执行迭代器函数中的块。 `Catch`Iterator 函数内的块仅捕获 iterator 函数内发生的异常。
 
-## <a name="BKMK_AnonymousMethods"></a>匿名方法
+## <a name="anonymous-methods"></a><a name="BKMK_AnonymousMethods"></a>匿名方法
 
 在 Visual Basic 中，匿名函数可以是迭代器函数。 下面的示例对此进行了演示。
 
@@ -306,17 +306,17 @@ As IEnumerable
 End Function
 ```
 
-如果验证在迭代器函数中，则在 `For Each` 主体的第一次迭代开始之前，将无法执行验证。
+如果验证是在迭代器函数中，则在开始第一次迭代的开始之前，将无法执行验证 `For Each` 。
 
-## <a name="BKMK_GenericList"></a>对泛型列表使用迭代器
+## <a name="using-iterators-with-a-generic-list"></a><a name="BKMK_GenericList"></a>对泛型列表使用迭代器
 
 在以下示例中，`Stack(Of T)` 泛型类实现 <xref:System.Collections.Generic.IEnumerable%601> 泛型接口。 `Push` 方法将值分配给类型为 `T` 的数组。 <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> 方法通过使用 `Yield` 语句返回数组值。
 
-除了泛型 <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> 方法，还必须实现非泛型 <xref:System.Collections.IEnumerable.GetEnumerator%2A> 方法。 这是因为从 <xref:System.Collections.Generic.IEnumerable%601> 继承了 <xref:System.Collections.IEnumerable>。 非泛型实现遵从泛型实现的规则。
+除了泛型 <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> 方法，还必须实现非泛型 <xref:System.Collections.IEnumerable.GetEnumerator%2A> 方法。 这是因为从 <xref:System.Collections.IEnumerable> 继承了 <xref:System.Collections.Generic.IEnumerable%601>。 非泛型实现遵从泛型实现的规则。
 
 本示例使用命名迭代器来支持通过各种方法循环访问同一数据集合。 这些命名迭代器为 `TopToBottom` 和 `BottomToTop` 属性，以及 `TopN` 方法。
 
-`BottomToTop` 属性声明包括 `Iterator` 关键字。
+`BottomToTop`属性声明包含 `Iterator` 关键字。
 
 ```vb
 Sub Main()
@@ -419,31 +419,31 @@ Public Class Stack(Of T)
 End Class
 ```
 
-## <a name="BKMK_SyntaxInformation"></a>语法信息
+## <a name="syntax-information"></a><a name="BKMK_SyntaxInformation"></a>语法信息
 
 迭代器可用作一种方法，或一个 `get` 访问器。 不能在事件、实例构造函数、静态构造函数或静态析构函数中使用迭代器。
 
 `Yield` 语句中必须存在从表达式类型到迭代器返回类型的隐式转换。
 
-在 Visual Basic 中，迭代器方法不能有任何 `ByRef` 参数。
+在 Visual Basic 中，迭代器方法不能具有任何 `ByRef` 参数。
 
-在 Visual Basic 中，"Yield" 不是保留字，只在 `Iterator` 方法或 `get` 访问器中使用时具有特殊意义。
+在 Visual Basic 中，"Yield" 不是保留字，仅在 `Iterator` 方法或访问器中使用时具有特殊意义 `get` 。
 
-## <a name="BKMK_Technical"></a>技术实现
+## <a name="technical-implementation"></a><a name="BKMK_Technical"></a>技术实现
 
 即使将迭代器编写成方法，编译器也会将其转换为实际上是状态机的嵌套类。 只要客户端代码中的 `For Each...Next` 循环继续，此类就会跟踪迭代器的位置。
 
 若要查看编译器执行的操作，可使用 Ildasm.exe 工具查看为迭代器方法生成的 Microsoft 中间语言代码。
 
-为[类](../../language-reference/statements/class-statement.md)或[结构](../../language-reference/statements/structure-statement.md)创建迭代器时，不必实现整个 <xref:System.Collections.IEnumerator> 接口。 编译器检测到迭代器时，会自动生成 `Current` 或 `MoveNext` 接口的 `Dispose`、<xref:System.Collections.IEnumerator> 和 <xref:System.Collections.Generic.IEnumerator%601> 方法。
+为[类](../../language-reference/statements/class-statement.md)或[结构](../../language-reference/statements/structure-statement.md)创建迭代器时，不必实现整个 <xref:System.Collections.IEnumerator> 接口。 编译器检测到迭代器时，会自动生成 <xref:System.Collections.IEnumerator> 或 <xref:System.Collections.Generic.IEnumerator%601> 接口的 `Current`、`MoveNext` 和 `Dispose` 方法。
 
-在 `For Each…Next` 循环（或对 `IEnumerator.MoveNext` 的直接调用）的每次后续迭代中，下一个迭代器代码体都会在上一个 `Yield` 语句之后恢复。 然后，它将继续执行下一个 `Yield` 语句，直到达到迭代器主体的末尾，或者遇到 `Exit Function` 或 `Return` 语句为止。
+在 `For Each…Next` 循环（或对 `IEnumerator.MoveNext` 的直接调用）的每次后续迭代中，下一个迭代器代码体都会在上一个 `Yield` 语句之后恢复。 然后，它将继续执行下一 `Yield` 条语句，直到到达迭代器主体的末尾，或者 `Exit Function` `Return` 遇到或语句为止。
 
 迭代器不支持 <xref:System.Collections.IEnumerator.Reset%2A?displayProperty=nameWithType> 方法。 若要从头开始重新迭代，必须获取新的迭代器。
 
-有关其他信息，请参阅[Visual Basic 语言规范](../../../visual-basic/reference/language-specification/index.md)。
+有关其他信息，请参阅[Visual Basic 语言规范](../../reference/language-specification/index.md)。
 
-## <a name="BKMK_UseOfIterators"></a>迭代器的使用
+## <a name="use-of-iterators"></a><a name="BKMK_UseOfIterators"></a>迭代器的使用
 
 需要使用复杂代码填充列表序列时，使用迭代器可保持 `For Each` 循环的简单性。 需执行以下操作时，这可能很有用：
 
@@ -457,6 +457,6 @@ End Class
 
 - <xref:System.Collections.Generic>
 - <xref:System.Collections.Generic.IEnumerable%601>
-- [For Each...Next 语句](../../../visual-basic/language-reference/statements/for-each-next-statement.md)
-- [Yield 语句](../../../visual-basic/language-reference/statements/yield-statement.md)
-- [迭代器](../../../visual-basic/language-reference/modifiers/iterator.md)
+- [For Each...Next 语句](../../language-reference/statements/for-each-next-statement.md)
+- [Yield 语句](../../language-reference/statements/yield-statement.md)
+- [迭代器](../../language-reference/modifiers/iterator.md)

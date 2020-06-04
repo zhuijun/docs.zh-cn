@@ -2,12 +2,12 @@
 title: 静态编译的查询 (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 3f4825c7-c3b0-48da-ba4e-8e97fb2a2f34
-ms.openlocfilehash: e9f56366f1566f831f1e0ea5bd5a06775d698c3d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f020c1ed8627df8c8386a059f0cea372e8df363e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350582"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406763"
 ---
 # <a name="statically-compiled-queries-linq-to-xml-visual-basic"></a>静态编译的查询（LINQ to XML）（Visual Basic）
 
@@ -46,7 +46,7 @@ For Each el In list1
 Next
 ```
 
-<xref:System.Linq.Enumerable.Where%2A> 方法为扩展方法。 有关详细信息，请参阅[扩展方法](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md) 由于 <xref:System.Linq.Enumerable.Where%2A> 是一个扩展方法，因此会将上面的查询视为按以下形式编写的查询进行编译：
+<xref:System.Linq.Enumerable.Where%2A> 方法为扩展方法。 有关详细信息，请参阅[扩展方法](../../../../csharp/programming-guide/classes-and-structs/extension-methods.md)。 由于 <xref:System.Linq.Enumerable.Where%2A> 是一个扩展方法，因此会将上面的查询视为按以下形式编写的查询进行编译：
 
 ```vb
 Dim po = XDocument.Load("PurchaseOrders.xml")
@@ -58,7 +58,7 @@ For Each el In list1
 Next
 ```
 
-此示例将生成与前面两个示例完全相同的结果。 这一结果表明：这些查询已被有效地编译成静态链接的方法调用。 这与迭代器的延迟执行语义一起可提高性能。 有关迭代器的延迟执行语义的详细信息，请参阅[LINQ to XML （Visual Basic）中的延迟执行和迟缓计算](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)。
+此示例将生成与前面两个示例完全相同的结果。 这一结果表明：这些查询已被有效地编译成静态链接的方法调用。 这与迭代器的延迟执行语义一起可提高性能。 有关迭代器的延迟执行语义的详细信息，请参阅[LINQ to XML （Visual Basic）中的延迟执行和迟缓计算](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)。
 
 > [!NOTE]
 > 这些示例代表了编译器可能编写的代码。 这些示例的实际实现可能会略有不同，但对于这些示例来说，执行的性能是相同或类似的。
@@ -94,4 +94,4 @@ reader.Close()
 
 ## <a name="see-also"></a>另请参阅
 
-- [性能（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/performance-linq-to-xml.md)
+- [性能（LINQ to XML）（Visual Basic）](performance-linq-to-xml.md)

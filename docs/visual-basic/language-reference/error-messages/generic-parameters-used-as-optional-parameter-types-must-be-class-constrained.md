@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - BC32124
 ms.assetid: 55aa8b2a-9ce3-4620-a710-2f9b0feb6143
-ms.openlocfilehash: 11cf4f8d9457ebff385a601786dc97334f274324
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 273ea592e73be5d76a4ffef077e691014a108347
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662062"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402922"
 ---
 # <a name="generic-parameters-used-as-optional-parameter-types-must-be-class-constrained"></a>用作可选参数类型的泛型参数必须受类约束
-使用可选参数使用不受约束为引用类型的类型参数声明的过程。  
+使用可选参数声明过程，该参数使用的类型参数不被约束为引用类型。  
   
- 您必须始终提供每个可选参数的默认值。 如果参数为引用类型，可选的值必须为`Nothing`，这是对于任何引用类型的有效值。 但是，如果该参数的值类型，该类型必须是预定义的 Visual basic 的基本数据类型。 这是因为复合值类型，例如，用户定义的结构，有没有有效默认值。  
+ 必须始终为每个可选参数提供默认值。 如果参数为引用类型，则可选值必须为 `Nothing` ，它是任何引用类型的有效值。 但是，如果参数是值类型，则该类型必须是由 Visual Basic 预定义的基本数据类型。 这是因为组合值类型（如用户定义的结构）没有有效的默认值。  
   
- 当您使用的类型参数为可选参数时，必须保证它属于引用类型以避免包含任何有效的默认值的值类型的可能性。 这意味着必须使用约束类型参数`Class`关键字或具有特定类的名称。  
+ 将类型参数用于可选参数时，必须确保它是引用类型，以避免不具有有效默认值的值类型。 这意味着必须使用 `Class` 关键字或特定类的名称来约束类型参数。  
   
- **错误 ID:** BC32124  
+ **错误 ID：** BC32124  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 约束类型参数以接受仅为引用类型，或不使用它为可选参数。  
+- 约束类型参数以仅接受引用类型，或不将其用于可选参数。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Visual Basic 中的泛型类型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [类型列表](../../../visual-basic/language-reference/statements/type-list.md)
-- [Class 语句](../../../visual-basic/language-reference/statements/class-statement.md)
-- [可选参数](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
-- [结构](../../../visual-basic/programming-guide/language-features/data-types/structures.md)
-- [Nothing](../../../visual-basic/language-reference/nothing.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
+- [Type List](../statements/type-list.md)
+- [Class 语句](../statements/class-statement.md)
+- [可选参数](../../programming-guide/language-features/procedures/optional-parameters.md)
+- [结构](../../programming-guide/language-features/data-types/structures.md)
+- [Nothing](../nothing.md)

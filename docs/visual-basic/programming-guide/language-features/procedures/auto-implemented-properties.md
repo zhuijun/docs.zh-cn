@@ -8,15 +8,15 @@ helpviewer_keywords:
 - properties [Visual Basic], auto-implemented
 - auto-implemented properties [Visual Basic]
 ms.assetid: 5c669f0b-cf95-4b4e-ae84-9cc55212ca87
-ms.openlocfilehash: b322bd2215c95298be0a33ace1f3590a63878e24
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d991a385e537c43daeb708e96e712acd92110379
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350385"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403377"
 ---
 # <a name="auto-implemented-properties-visual-basic"></a>自动实现的属性 (Visual Basic)
-使用*自动实现的属性*，可以快速指定类的属性，而无需编写代码来 `Get` 和 `Set` 属性。 为自动实现的属性编写代码时，Visual Basic 编译器会自动创建私有字段以存储属性变量，并且会创建关联的 `Get` 和 `Set` 过程。  
+使用*自动实现的属性*，可以快速指定类的属性，而无需向 `Get` 和属性写入代码 `Set` 。 为自动实现的属性编写代码时，Visual Basic 编译器会自动创建私有字段以存储属性变量，并且会创建关联的 `Get` 和 `Set` 过程。  
   
  使用自动实现的属性，可以在单行中声明一个属性（包括默认值）。 下面的示例演示三个属性声明。  
   
@@ -90,13 +90,13 @@ End Class
 - 为支持字段提供 XML 注释。  
   
 ## <a name="expanding-an-auto-implemented-property"></a>扩展自动实现的属性  
- 如果需要将自动实现的属性转换为包含 `Get` 或 `Set` 过程的展开属性，则 Visual Basic 代码编辑器可以为属性自动生成 `Get` 和 `Set` 过程以及 `End Property` 语句。 如果将光标放在 `Property` 语句后面的空行上，请键入 `G` （对于 `Get`）或 `S` （对于 `Set`），然后按 ENTER。 在 `Get` 语句末尾按 Enter 时，Visual Basic 代码编辑器会为只读和只写属性自动生成 `Set` 或 `Property` 过程。  
+ 如果需要将自动实现的属性转换为包含 `Get` 或 `Set` 过程的展开属性，则 Visual Basic 代码编辑器可以为属性自动生成 `Get` 和 `Set` 过程以及 `End Property` 语句。 如果将光标置于语句后面的空行上 `Property` ，请键入 `G` （对于 `Get` ）或 `S` （对于 `Set` ），然后按 enter。 在 `Property` 语句末尾按 Enter 时，Visual Basic 代码编辑器会为只读和只写属性自动生成 `Get` 或 `Set` 过程。  
   
 ## <a name="see-also"></a>另请参阅
 
 - [如何：在 Visual Basic 中声明和调用默认属性](./how-to-declare-and-call-a-default-property.md)
 - [如何：声明具有混合访问级别的属性](./how-to-declare-a-property-with-mixed-access-levels.md)
-- [Property 语句](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [ReadOnly](../../../../visual-basic/language-reference/modifiers/readonly.md)
-- [WriteOnly](../../../../visual-basic/language-reference/modifiers/writeonly.md)
-- [对象和类](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
+- [Property Statement](../../../language-reference/statements/property-statement.md)
+- [只读](../../../language-reference/modifiers/readonly.md)
+- [WriteOnly](../../../language-reference/modifiers/writeonly.md)
+- [对象和类](../objects-and-classes/index.md)

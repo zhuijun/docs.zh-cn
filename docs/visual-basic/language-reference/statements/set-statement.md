@@ -10,15 +10,15 @@ helpviewer_keywords:
 - write-only properties
 - properties [Visual Basic], write-only
 ms.assetid: 9ecc27b4-df84-420d-9075-db25455fb3cd
-ms.openlocfilehash: 75ad6d87f1785fea13a282d953f117c9c234e203
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 49d4c36805b64d7232a94e818256723a0437b6ef
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349559"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404182"
 ---
 # <a name="set-statement-visual-basic"></a>Set 语句 (Visual Basic)
-声明一个 `Set` 属性过程，该过程用于为属性赋值。  
+声明 `Set` 用于向属性赋值的属性过程。  
   
 ## <a name="syntax"></a>语法  
   
@@ -28,59 +28,59 @@ ms.locfileid: "74349559"
 End Set  
 ```  
   
-## <a name="parts"></a>部件  
+## <a name="parts"></a>组成部分  
  `attributelist`  
- 可选。 请参阅[特性列表](../../../visual-basic/language-reference/statements/attribute-list.md)。  
+ 可选。 请参阅[特性列表](attribute-list.md)。  
   
  `accessmodifier`  
- 在此属性中的最多一个 `Get` 和 `Set` 语句上是可选的。 可以是以下各项之一：  
+ 在 `Get` 此属性中的最多一个和语句上是可选的 `Set` 。 可以是以下其中一个值：  
   
-- [Protected](../../../visual-basic/language-reference/modifiers/protected.md)  
+- [避免](../modifiers/protected.md)  
   
-- [Friend](../../../visual-basic/language-reference/modifiers/friend.md)  
+- [友好](../modifiers/friend.md)  
   
-- [Private](../../../visual-basic/language-reference/modifiers/private.md)  
+- 专用   
   
 - `Protected Friend`  
   
- 请参阅 [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)。  
+ 请参阅[Visual Basic 中的访问级别](../../programming-guide/language-features/declared-elements/access-levels.md)。  
   
  `value`  
  必需。 包含属性新值的参数。  
   
  `datatype`  
- 如果 `Option Strict` `On`，则为必需。 `value` 参数的数据类型。 指定的数据类型必须与声明此 `Set` 语句的属性的数据类型相同。  
+ 如果 `Option Strict` 为，则为必需 `On` 。 参数的数据类型 `value` 。 指定的数据类型必须与声明此语句的属性的数据类型相同 `Set` 。  
   
  `statements`  
- 可选。 调用 `Set` 属性过程时运行的一个或多个语句。  
+ 可选。 调用属性过程时运行的一个或多个语句 `Set` 。  
   
  `End Set`  
- 必需。 终止 `Set` 属性过程的定义。  
+ 必需。 终止属性过程的定义 `Set` 。  
   
 ## <a name="remarks"></a>备注  
- 每个属性都必须具有 `Set` 属性过程，除非该属性被标记为 `ReadOnly`。 `Set` 过程用于设置属性的值。  
+ 除非将属性标记为，否则每个属性都必须具有 `Set` 属性过程 `ReadOnly` 。 此 `Set` 过程用于设置属性的值。  
   
- 当赋值语句提供要存储在属性中的值时，Visual Basic 会自动调用属性的 `Set` 过程。  
+ `Set`当赋值语句提供要存储在属性中的值时，Visual Basic 会自动调用该属性的过程。  
   
- Visual Basic 在属性赋值期间将参数传递给 `Set` 过程。 如果没有为 `Set`提供参数，集成开发环境（IDE）将使用名为 `value`的隐式参数。 参数保留要赋给属性的值。 通常将此值存储在私有本地变量中，并在调用 `Get` 过程时返回此值。  
+ Visual Basic `Set` 在属性分配过程中将参数传递给过程。 如果没有为提供参数 `Set` ，集成开发环境（IDE）将使用名为的隐式参数 `value` 。 参数保留要赋给属性的值。 通常将此值存储在私有本地变量中，并在 `Get` 调用过程时返回。  
   
- 属性声明的主体只能包含属性的 `Get`，并在[Property 语句](../../../visual-basic/language-reference/statements/property-statement.md)和 `End Property` 语句之间包含 `Set` 过程。 它无法存储这些过程以外的任何内容。 特别是，它无法存储属性的当前值。 您必须将此值存储在属性的外部，因为如果将其存储在任一属性过程中，则其他属性过程将无法访问它。 常见的方法是将值存储在与属性在同一级别上声明的[私有](../../../visual-basic/language-reference/modifiers/private.md)变量中。 必须在应用的属性中定义 `Set` 过程。  
+ 属性声明的主体只能在 `Get` `Set` [property 语句](property-statement.md)和语句之间包含属性的和过程 `End Property` 。 它无法存储这些过程以外的任何内容。 特别是，它无法存储属性的当前值。 您必须将此值存储在属性的外部，因为如果将其存储在任一属性过程中，则其他属性过程将无法访问它。 常见的方法是将值存储在与属性在同一级别上声明的[私有](../modifiers/private.md)变量中。 必须在应用的 `Set` 属性中定义一个过程。  
   
- 除非在 `Set` 语句中使用 `accessmodifier`，否则 `Set` 过程默认为其包含属性的访问级别。  
+ 此 `Set` 过程默认为其包含属性的访问级别，除非你 `accessmodifier` 在语句中使用 `Set` 。  
   
 ## <a name="rules"></a>规则  
   
-- **混合访问级别。** 如果要定义读写属性，则可以选择为 `Get` 或 `Set` 过程指定不同的访问级别，但不能同时指定两者。 如果执行此操作，则过程访问级别必须比属性的访问级别更严格。 例如，如果属性已 `Friend`声明，则可以将 `Set` 过程声明 `Private`但不 `Public`。  
+- **混合访问级别。** 如果要定义读写属性，则可以选择为或过程指定不同的访问级别 `Get` `Set` ，但不能同时指定两者。 如果执行此操作，则过程访问级别必须比属性的访问级别更严格。 例如，如果声明了属性 `Friend` ，则可以声明该 `Set` 过程 `Private` ，而不是 `Public` 。  
   
-     如果正在定义 `WriteOnly` 属性，则 `Set` 过程表示整个属性。 不能为 `Set`声明不同的访问级别，因为这会为属性设置两个访问级别。  
+     如果要定义 `WriteOnly` 属性，则该 `Set` 过程表示整个属性。 不能为声明不同的访问级别 `Set` ，因为这会为属性设置两个访问级别。  
   
 ## <a name="behavior"></a>行为  
   
-- **从属性过程返回。** 当 `Set` 过程返回到调用代码时，执行将继续执行提供要存储的值的语句之后。  
+- **从属性过程返回。** 当 `Set` 过程返回到调用代码时，执行将在提供要存储的值的语句之后继续执行。  
   
-     `Set` 属性过程可以使用[Return 语句](../../../visual-basic/language-reference/statements/return-statement.md)或[Exit 语句](../../../visual-basic/language-reference/statements/exit-statement.md)返回。  
+     `Set`属性过程可以使用[Return 语句](return-statement.md)或[Exit 语句](exit-statement.md)返回。  
   
-     `Exit Property` 和 `Return` 语句导致直接从属性过程退出。 任意数量的 `Exit Property` 和 `Return` 语句可以出现在过程中的任何位置，并且可以混合 `Exit Property` 和 `Return` 语句。  
+     `Exit Property`和 `Return` 语句导致直接从属性过程退出。 任意数量的 `Exit Property` 和 `Return` 语句可以出现在过程中的任何位置，并且可以混合使用 `Exit Property` 和 `Return` 语句。  
   
 ## <a name="example"></a>示例  
  下面的示例使用 `Set` 语句设置属性的值。  
@@ -89,7 +89,7 @@ End Set
   
 ## <a name="see-also"></a>另请参阅
 
-- [Get 语句](../../../visual-basic/language-reference/statements/get-statement.md)
-- [Property 语句](../../../visual-basic/language-reference/statements/property-statement.md)
-- [Sub 语句](../../../visual-basic/language-reference/statements/sub-statement.md)
-- [属性过程](../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)
+- [Get 语句](get-statement.md)
+- [Property Statement](property-statement.md)
+- [Sub 语句](sub-statement.md)
+- [Property 过程](../../programming-guide/language-features/procedures/property-procedures.md)

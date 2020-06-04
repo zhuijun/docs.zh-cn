@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Inherits statement [Visual Basic]
 - Inherits statement [Visual Basic], syntax
 ms.assetid: 9e6fe042-9af3-4341-8093-fc3537770cf2
-ms.openlocfilehash: 6e6e9cc9210232059210862f2bda691c57b372d6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5d88a01f90bc91a88229d19aa2368f8c71075b2f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353229"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404494"
 ---
 # <a name="inherits-statement"></a>Inherits Statement
 导致当前类或接口继承其他类或接口集的属性、变量、属性、过程和事件。  
@@ -24,16 +24,16 @@ ms.locfileid: "74353229"
 Inherits basetypenames  
 ```  
   
-## <a name="parts"></a>部件  
+## <a name="parts"></a>组成部分  
   
-|术语|Definition|  
+|术语|定义|  
 |---|---|  
 |`basetypenames`|必需。 此类派生自的类的名称。<br /><br /> \- 或 -<br /><br /> 此接口派生自的接口的名称。 使用逗号分隔多个名称。|  
   
 ## <a name="remarks"></a>备注  
- 如果使用，则 `Inherits` 语句必须是类或接口定义中的第一个非空白非注释行。 它应紧跟 `Class` 或 `Interface` 语句之后。  
+ 如果使用，则 `Inherits` 语句必须是类或接口定义中的第一个非空白非注释行。 它应紧跟 `Class` 或 `Interface` 语句。  
   
- 只能在类或接口中使用 `Inherits`。 这意味着继承的声明上下文不能是源文件、命名空间、结构、模块、过程或块。  
+ `Inherits`只能在类或接口中使用。 这意味着继承的声明上下文不能是源文件、命名空间、结构、模块、过程或块。  
   
 ## <a name="rules"></a>规则  
   
@@ -43,16 +43,16 @@ Inherits basetypenames
   
 - **接口继承。** 如果接口使用 `Inherits` 语句，则可以指定一个或多个基接口。 即使两个接口都定义了具有相同名称的成员，也可以从两个接口继承。 如果这样做，则实现代码必须使用名称限定来指定要实现的成员。  
   
-     接口不能从具有限制性更强的访问级别的其他接口继承。 例如，`Public` 接口无法从 `Friend` 接口继承。  
+     接口不能从具有限制性更强的访问级别的其他接口继承。 例如， `Public` 接口无法从 `Friend` 接口继承。  
   
      接口不能从嵌套在它内的接口继承。  
   
- .NET Framework 中的类继承示例是 <xref:System.ArgumentException> 类，该类继承自 <xref:System.SystemException> 类。 这将提供系统异常所需的所有预定义属性和过程 <xref:System.ArgumentException>，如 <xref:System.Exception.Message%2A> 属性和 <xref:System.Exception.ToString%2A> 方法。  
+ .NET Framework 中的类继承示例是 <xref:System.ArgumentException> 类，该类继承自 <xref:System.SystemException> 类。 这将提供 <xref:System.ArgumentException> 系统异常所需的所有预定义属性和过程，如 <xref:System.Exception.Message%2A> 属性和 <xref:System.Exception.ToString%2A> 方法。  
   
- .NET Framework 中的接口继承示例是从 <xref:System.Collections.IEnumerable> 接口继承的 <xref:System.Collections.ICollection> 接口。 这会导致 <xref:System.Collections.ICollection> 继承遍历集合所需的枚举器的定义。  
+ .NET Framework 中的接口继承示例是 <xref:System.Collections.ICollection> 从接口继承的接口 <xref:System.Collections.IEnumerable> 。 这会导致 <xref:System.Collections.ICollection> 继承遍历集合所需的枚举器的定义。  
   
 ## <a name="example"></a>示例  
- 下面的示例使用 `Inherits` 语句来显示名为 `thisClass` 的类如何继承名为 `anotherClass`的基类的所有成员。  
+ 下面的示例使用 `Inherits` 语句来显示名为的类如何 `thisClass` 继承名为的基类的所有成员 `anotherClass` 。  
   
  [!code-vb[VbVbalrStatements#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#37)]  
   
@@ -61,12 +61,12 @@ Inherits basetypenames
   
  [!code-vb[VbVbalrStatements#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#38)]  
   
- 名为 `thisInterface` 的接口现在包括 <xref:System.IComparable>、<xref:System.IDisposable>和 <xref:System.IFormattable> 接口中的所有定义。继承成员分别提供两个对象的特定于类型的比较、释放已分配的资源，并将对象的值表示为 `String`。 实现 `thisInterface` 的类必须实现每个基接口的每个成员。  
+ 名为的接口 `thisInterface` 现在包括 <xref:System.IComparable> 、和接口中的所有定义， <xref:System.IDisposable> <xref:System.IFormattable> 这些继承成员分别提供两个对象的特定于类型的比较，释放已分配的资源，并将对象的值表示为 `String` 。 实现的类 `thisInterface` 必须实现每个基接口的每个成员。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)
-- [NotInheritable](../../../visual-basic/language-reference/modifiers/notinheritable.md)
-- [对象和类](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)
-- [继承的基础知识](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
-- [接口](../../../visual-basic/programming-guide/language-features/interfaces/index.md)
+- [MustInherit](../modifiers/mustinherit.md)
+- [NotInheritable](../modifiers/notinheritable.md)
+- [对象和类](../../programming-guide/language-features/objects-and-classes/index.md)
+- [继承基础知识](../../programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+- [接口](../../programming-guide/language-features/interfaces/index.md)

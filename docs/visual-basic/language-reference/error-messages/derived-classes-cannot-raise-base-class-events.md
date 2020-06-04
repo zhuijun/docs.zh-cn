@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30029
 ms.assetid: 63afa1c6-2f93-4512-a2f0-372455979771
-ms.openlocfilehash: 030c9c2ffa97572298b23f05c23e3af0df7387b0
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: c59212a28ba27123a7db9163ff7437c159a3d310
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913165"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409694"
 ---
 # <a name="derived-classes-cannot-raise-base-class-events"></a>派生类无法引发基类事件
-只能从声明它的声明空间，可以引发一个事件。 因此，一个类无法引发从任何其他类，甚至从其派生的其中一个事件。  
+事件只能从声明它的声明空间引发。 因此，类无法从任何其他类（甚至是从中派生的类）引发事件。  
   
- **错误 ID:** BC30029  
+ **错误 ID：** BC30029  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 移动`Event`语句或`RaiseEvent`语句，使它们位于同一个类。  
+- 移动 `Event` 语句或 `RaiseEvent` 语句，使其位于同一个类中。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Event 语句](../../../visual-basic/language-reference/statements/event-statement.md)
-- [RaiseEvent 语句](../../../visual-basic/language-reference/statements/raiseevent-statement.md)
+- [Event 语句](../statements/event-statement.md)
+- [RaiseEvent 语句](../statements/raiseevent-statement.md)

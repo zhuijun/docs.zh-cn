@@ -1,24 +1,24 @@
 ---
-title: 公共成员<membername>类型上<typename>找不到
+title: 未找到类型“<typename>”的公共成员“<membername>”
 ms.date: 07/20/2015
 f1_keywords:
 - vbrMissingMember_MemberNotFoundOnType2
 ms.assetid: 6300feb8-78ac-4dd0-9653-1d03e1f5bc20
-ms.openlocfilehash: fdaea9d7f0aee92852430ae3ad676bf13a3d9396
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9c1015c7ab8e53daeb6902066b953de6c5f1fc11
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62023138"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411000"
 ---
-# <a name="public-member-membername-on-type-typename-not-found"></a>公共成员\<成员名称 > 类型\<类型名称 > 找不到
+# <a name="public-member-membername-on-type-typename-not-found"></a>未找到类型“\<typename>”的公共成员“\<membername>”
 找不到你尝试访问的成员。 访问后期绑定对象的非公共成员时，可能出现此错误。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
 1. 如果该成员存在，请确保它被声明为 `Public`。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Public](../../visual-basic/language-reference/modifiers/public.md)
-- [早期绑定和后期绑定](../../visual-basic/programming-guide/language-features/early-late-binding/index.md)
+- [公共](../language-reference/modifiers/public.md)
+- [早期绑定和后期绑定](../programming-guide/language-features/early-late-binding/index.md)

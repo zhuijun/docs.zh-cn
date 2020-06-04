@@ -14,15 +14,15 @@ helpviewer_keywords:
 - logical negation
 - operators [Visual Basic], negation
 ms.assetid: 8f2ea83c-d2ed-480a-a474-3042a1cad9b5
-ms.openlocfilehash: 08b091ccf6c50438b5ad9d6c445510112abe7418
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 56cdeb80a217dbce15921eddd6a43d8d1b049376
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348296"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401454"
 ---
 # <a name="not-operator-visual-basic"></a>Not 运算符 (Visual Basic)
-对 `Boolean` 表达式执行逻辑非运算，或对数值表达式执行位求反运算。  
+对表达式执行逻辑非运算 `Boolean` ，或对数值表达式执行位求反运算。  
   
 ## <a name="syntax"></a>语法  
   
@@ -30,7 +30,7 @@ ms.locfileid: "74348296"
 result = Not expression  
 ```  
   
-## <a name="parts"></a>部件  
+## <a name="parts"></a>组成部分  
  `result`  
  必需。 任何 `Boolean` 或数值表达式。  
   
@@ -38,16 +38,16 @@ result = Not expression
  必需。 任何 `Boolean` 或数值表达式。  
   
 ## <a name="remarks"></a>备注  
- 对于 `Boolean` 表达式，下表说明了如何确定 `result`。  
+ 对于 `Boolean` 表达式，下表说明了如何 `result` 确定。  
   
-|如果 `expression` 为|`result` 的值是|  
+|如果 `expression` 为 |的值 `result` 为|  
 |------------------------|------------------------------|  
 |`True`|`False`|  
 |`False`|`True`|  
   
- 对于数值表达式，`Not` 运算符会反转任何数值表达式的位值，并根据下表设置 `result` 中的相应位。  
+ 对于数值表达式， `Not` 运算符反转任何数值表达式的位值，并根据下表设置中的相应位 `result` 。  
   
-|如果 `expression` 中有位|`result` 中的位是|  
+|如果中的位 `expression` 是|中的位 `result` 是|  
 |-------------------------------|----------------------------|  
 |1|0|  
 |0|1|  
@@ -56,17 +56,17 @@ result = Not expression
 > 由于逻辑 and 位运算符的优先级低于其他算术运算符和关系运算符，因此应将任何按位运算括在括号中，以确保准确执行。  
   
 ## <a name="data-types"></a>数据类型  
- 对于布尔求反，结果的数据类型为 `Boolean`。 对于按位求反，结果数据类型与 `expression`的数据类型相同。 但是，如果 `Decimal`expression，则结果将 `Long`。  
+ 对于布尔求反，结果的数据类型为 `Boolean` 。 对于按位求反，结果数据类型与的数据类型相同 `expression` 。 但是，如果 expression 为 `Decimal` ，则结果为 `Long` 。  
   
 ## <a name="overloading"></a>重载  
- 可以*重载*`Not` 运算符，这意味着当类或结构的操作数具有该类或结构的类型时，它可以重新定义其行为。 如果你的代码在该类或结构上使用此运算符，请确保了解其重新定义的行为。 有关更多信息，请参见 [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)。  
+ `Not`运算符可以*重载*，这意味着当类或结构的操作数具有该类或结构的类型时，该类或结构可以重新定义它的行为。 如果你的代码在该类或结构上使用此运算符，请确保了解其重新定义的行为。 有关详细信息，请参阅 [Operator Procedures](../../programming-guide/language-features/procedures/operator-procedures.md)。  
   
 ## <a name="example"></a>示例  
- 下面的示例使用 `Not` 运算符对 `Boolean` 表达式执行逻辑非运算。 结果是一个 `Boolean` 值，该值表示表达式的值的逆值。  
+ 下面的示例使用 `Not` 运算符对表达式执行逻辑非运算 `Boolean` 。 结果是一个 `Boolean` 值，该值表示表达式的值的逆值。  
   
  [!code-vb[VbVbalrOperators#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#33)]  
   
- 前面的示例分别产生 `False` 和 `True`的结果。  
+ 前面的示例分别生成和的结果 `False` `True` 。  
   
 ## <a name="example"></a>示例  
  下面的示例使用 `Not` 运算符对数值表达式的各个位执行逻辑求反运算。 结果模式中的位设置为操作数模式中相应位的反向，其中包括符号位。  
@@ -77,7 +77,7 @@ result = Not expression
   
 ## <a name="see-also"></a>另请参阅
 
-- [逻辑/按位运算符（Visual Basic）](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
-- [Visual Basic 中的运算符优先级](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [按功能列出的运算符](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Visual Basic 中的逻辑运算符和位运算符](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [逻辑/按位运算符 (Visual Basic)](logical-bitwise-operators.md)
+- [Visual Basic 中的运算符优先级](operator-precedence.md)
+- [按功能列出的运算符](operators-listed-by-functionality.md)
+- [Visual Basic 中的逻辑运算符和位运算符](../../programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

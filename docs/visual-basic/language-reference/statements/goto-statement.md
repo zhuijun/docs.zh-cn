@@ -13,12 +13,12 @@ helpviewer_keywords:
 - conditional statements [Visual Basic], GoTo statement
 - GoTo statement [Visual Basic], syntax
 ms.assetid: 313274c2-8ab3-4b9c-9ba3-0fd6798e4f6d
-ms.openlocfilehash: d5cdcd214c9679e245645505fe11cb5d521ce085
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: eb6f48d04b7d14591003e340464451da7df45cd6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351090"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404610"
 ---
 # <a name="goto-statement"></a>GoTo 语句
 无条件地分支到过程中的指定行。  
@@ -29,30 +29,30 @@ ms.locfileid: "74351090"
 GoTo line  
 ```  
   
-## <a name="part"></a>部件  
+## <a name="part"></a>组成部分  
  `line`  
  必需。 任何行标签。  
   
 ## <a name="remarks"></a>备注  
- `GoTo` 语句只能分支到它所显示的过程中的行。 该行必须有 `GoTo` 可以引用的行标签。 有关详细信息，请参阅[如何：标签语句](../../../visual-basic/programming-guide/program-structure/how-to-label-statements.md)。  
+ `GoTo`语句只能分支到其出现的过程中的行。 该行必须具有可引用的行标签 `GoTo` 。 有关详细信息，请参阅[如何：标签语句](../../programming-guide/program-structure/how-to-label-statements.md)。  
   
 > [!NOTE]
-> `GoTo` 语句可以使代码难以阅读和维护。 请尽可能使用控制结构。 有关详细信息，请参阅[控制流](../../../visual-basic/programming-guide/language-features/control-flow/index.md)。  
+> `GoTo`语句可以使代码难以阅读和维护。 请尽可能使用控制结构。 有关详细信息，请参阅 [Control Flow](../../programming-guide/language-features/control-flow/index.md)。  
   
- 不能使用 `GoTo` 语句从 `For`...`Next`、`For Each`...`Next`、`SyncLock`...`End SyncLock``Try`、`Catch`...`Finally`或 `With`构造添加到内部的标签，从而将其从 ...、...`End With`、`Using`。`End Using`  
+ 不能使用 `GoTo` 语句从 `For` ...、 `Next` `For Each` ... `Next` `SyncLock` `End SyncLock` `Try` `Catch` 、... ... ... ... ... ... .。。... `Finally` 、 `With` ... `End With` 或 `Using` ... `End Using` 构造中的标签。  
   
 ## <a name="branching-and-try-constructions"></a>分支和尝试构造  
- 在 `Try``Catch`...`Finally` 构造中，以下规则适用于使用 `GoTo` 语句进行分支。  
+ 在 `Try` ... `Catch`...`Finally`构造，以下规则适用于使用语句的分支 `GoTo` 。  
   
 |块或区域|从外部分支|从内部分支出|  
 |---------------------|-------------------------------|-------------------------------|  
-|`Try` 块|仅从同一构造<sup>1</sup>的 `Catch` 块|仅限于整个构造之外|  
-|`Catch` 块|不允许|仅对整个构造以外的或同一构造<sup>1</sup>的 `Try` 块|  
-|`Finally` 块|不允许|不允许|  
+|`Try`模块|仅从 `Catch` 同一构造的块<sup>1</sup>|仅限于整个构造之外|  
+|`Catch`模块|不允许|仅对整个构造以外的或 `Try` 相同构造<sup>1</sup>的块|  
+|`Finally`模块|不允许|不允许|  
   
- <sup>1</sup>如果将一个 `Try``Catch`...`Finally` 构造嵌套在另一个中，则 `Catch` 块可以在其自身的嵌套级别（而不是任何其他 `Try` 块）分支到 `Try` 块。 嵌套的 `Try``Catch`...`Finally` 构造必须完全包含在它所嵌套到的构造的 `Try` 或 `Catch` 块中。  
+ <sup>1</sup> （如果 `Try` 有 `Catch` ） .。。...`Finally`构造嵌套在另一个块中， `Catch` 块可以 `Try` 在其自身的嵌套级别（而不是其他块）分支到块 `Try` 。 嵌套 `Try` ... `Catch`...`Finally`构造必须完全包含在 `Try` `Catch` 它所嵌套到的构造内或块中。  
   
- 下图显示了嵌套在另一个 `Try` 构造。 这两个构造的块中的各种分支都指示为有效或无效。  
+ 下图显示了一个 `Try` 嵌套在另一个构造内的构造。 这两个构造的块中的各种分支都指示为有效或无效。  
   
  ![Try 结构分支示意图](./media/goto-statement/try-construction-branching.gif)  
   
@@ -63,11 +63,11 @@ GoTo line
   
 ## <a name="see-also"></a>另请参阅
 
-- [Do...Loop 语句](../../../visual-basic/language-reference/statements/do-loop-statement.md)
-- [For...Next 语句](../../../visual-basic/language-reference/statements/for-next-statement.md)
-- [For Each...Next 语句](../../../visual-basic/language-reference/statements/for-each-next-statement.md)
-- [If...Then...Else 语句](../../../visual-basic/language-reference/statements/if-then-else-statement.md)
-- [Select...Case 语句](../../../visual-basic/language-reference/statements/select-case-statement.md)
-- [Try...Catch...Finally 语句](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
-- [While...End While 语句](../../../visual-basic/language-reference/statements/while-end-while-statement.md)
-- [With...End With 语句](../../../visual-basic/language-reference/statements/with-end-with-statement.md)
+- [Do...Loop 语句](do-loop-statement.md)
+- [For...Next 语句](for-next-statement.md)
+- [For Each...Next 语句](for-each-next-statement.md)
+- [If...Then...Else 语句](if-then-else-statement.md)
+- [Select...Case 语句](select-case-statement.md)
+- [Try...Catch...Finally 语句](try-catch-finally-statement.md)
+- [While...End While 语句](while-end-while-statement.md)
+- [With...End With 语句](with-end-with-statement.md)

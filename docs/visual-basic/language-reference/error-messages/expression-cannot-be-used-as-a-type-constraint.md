@@ -7,14 +7,14 @@ f1_keywords:
 helpviewer_keywords:
 - BC32061
 ms.assetid: b17821b7-fa14-4397-a211-6e2a14079f09
-ms.openlocfilehash: ff51bb27847a92b07ce6275a8ddee4789e865f08
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e2ba411a5f0db21539a9cf99c7645b8c9309caab
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64642806"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409551"
 ---
-# <a name="expression-cannot-be-used-as-a-type-constraint"></a>\<表达式 > 不能用作类型约束
+# <a name="expression-cannot-be-used-as-a-type-constraint"></a>“\<expression>”不能用作类型约束
 约束列表包含的表达式不表示对类型形参的有效约束。  
   
  约束列表对传递给类型形参的类型实参有一定要求。 你可以采用任意组合指定以下要求：  
@@ -33,7 +33,7 @@ ms.locfileid: "64642806"
   
  不能为同一类型参数同时指定 `Structure` 和 `Class` ，并且它们两个都只能指定一次。  
   
- **错误 ID:** BC32061  
+ **错误 ID：** BC32061  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
@@ -41,10 +41,10 @@ ms.locfileid: "64642806"
   
 - 如果表达式不符合前面列出的要求，请从约束列表中将其删除。  
   
-- 如果表达式引用接口或类，请验证编译器是否有权访问该接口或类。 可能需要限定其名称，并可能需要添加一个项目引用。 详细信息，请参阅"项目引用"中[References to Declared Elements](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)。  
+- 如果表达式引用接口或类，请验证编译器是否有权访问该接口或类。 可能需要限定其名称，并可能需要添加一个项目引用。 有关详细信息，请参阅对已[声明元素的引用](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)中的 "项目引用"。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Visual Basic 中的泛型类型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [值类型和引用类型](../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [对已声明元素的引用](../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
+- [Value Types and Reference Types](../../programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [References to Declared Elements](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)

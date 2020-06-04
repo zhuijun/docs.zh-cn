@@ -29,16 +29,16 @@ helpviewer_keywords:
 - ByVal keyword [Visual Basic], Sub statements
 - Visual Basic code, Sub procedures
 ms.assetid: e347d700-d06c-405b-b302-e9b1edb57dfc
-ms.openlocfilehash: da498a5e0a3633eb98882aaed145fcd21ab169fd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e50b79c31c92ac116d6c82bcececba3340894d74
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346444"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404169"
 ---
 # <a name="sub-statement-visual-basic"></a>Sub 语句 (Visual Basic)
 
-声明定义 `Sub` 过程的名称、参数和代码。
+声明定义过程的名称、参数和代码 `Sub` 。
 
 ## <a name="syntax"></a>语法
 
@@ -51,7 +51,7 @@ Sub name [ (Of typeparamlist) ] [ (parameterlist) ] [ Implements implementslist 
 End Sub
 ```
 
-## <a name="parts"></a>部件
+## <a name="parts"></a>组成部分
 
 - `attributelist`
 
@@ -59,39 +59,39 @@ End Sub
 
 - `Partial`
 
-  可选。 指示分部方法的定义。 请参阅[分部方法](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)。
+  可选。 指示分部方法的定义。 请参阅[分部方法](../../programming-guide/language-features/procedures/partial-methods.md)。
 
 - `accessmodifier`
 
-  可选。 可以是以下各项之一：
+  可选。 可以是以下其中一个值：
 
-  - [Public](../modifiers/public.md)
+  - [公共](../modifiers/public.md)
 
-  - [Protected](../modifiers/protected.md)
+  - [避免](../modifiers/protected.md)
 
-  - [Friend](../modifiers/friend.md)
+  - [友好](../modifiers/friend.md)
 
-  - [Private](../modifiers/private.md)
+  - 专用 
 
-  - [Protected Friend](../../language-reference/modifiers/protected-friend.md)
+  - [Protected Friend](../modifiers/protected-friend.md)
 
-  - [Private Protected](../../language-reference/modifiers/private-protected.md)
+  - [私有受保护](../modifiers/private-protected.md)
 
-  请参阅 [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)。
+  请参阅[Visual Basic 中的访问级别](../../programming-guide/language-features/declared-elements/access-levels.md)。
 
 - `proceduremodifiers`
 
-  可选。 可以是以下各项之一：
+  可选。 可以是以下其中一个值：
 
-  - [Overloads](../modifiers/overloads.md)
+  - [重载](../modifiers/overloads.md)
 
-  - [Overrides](../modifiers/overrides.md)
+  - [替代](../modifiers/overrides.md)
 
   - [Overrides](../modifiers/overridable.md)
 
   - [NotOverridable](../modifiers/notoverridable.md)
 
-  - [MyBase](../modifiers/mustoverride.md)
+  - [New](../modifiers/mustoverride.md)
 
   - `MustOverride Overrides`
 
@@ -111,7 +111,7 @@ End Sub
 
 - `name`
 
-  必需。 过程的名称。 请参阅 [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)。 若要为类创建构造函数过程，请将 `Sub` 过程的名称设置为 `New` 关键字。 有关详细信息，请参阅[对象生存期：如何创建和销毁对象](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)。
+  必需。 过程的名称。 请参阅 [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md)。 若要为类创建构造函数过程，请将过程的名称设置 `Sub` 为 `New` 关键字。 有关详细信息，请参阅[对象生存期：如何创建和销毁对象](../../programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)。
 
 - `typeparamlist`
 
@@ -123,7 +123,7 @@ End Sub
 
 - `Implements`
 
-  可选。 指示此过程实现一个或多个 `Sub` 过程，每个过程都在此过程的包含类或结构实现的接口中定义。 请参阅[Implements 语句](implements-statement.md)。
+  可选。 指示此过程实现了一个或多个 `Sub` 过程，每个过程都在此过程的包含类或结构实现的接口中定义。 请参阅[Implements 语句](implements-statement.md)。
 
 - `implementslist`
 
@@ -135,7 +135,7 @@ End Sub
 
   `interface.definedname`
 
-  |部件|说明|
+  |组成部分|说明|
   |---|---|
   |`interface`|必需。 此过程的包含类或结构实现的接口的名称。|
   |`definedname`|必需。 在 `interface` 中用于定义过程的名称。|
@@ -154,7 +154,7 @@ End Sub
 
   `eventvariable.event`
 
-  |部件|说明|
+  |组成部分|说明|
   |---|---|
   |`eventvariable`|必需。 用引发事件的类或结构的数据类型声明的对象变量。|
   |`event`|必需。 此过程处理的事件的名称。|
@@ -169,21 +169,21 @@ End Sub
 
 ## <a name="remarks"></a>备注
 
-所有可执行代码都必须在过程内。 如果不想将值返回到调用代码，请使用 `Sub` 过程。 如果要返回值，请使用 `Function` 过程。
+所有可执行代码都必须在过程内。 `Sub`如果不想将值返回到调用代码，请使用过程。 `Function`如果要返回值，请使用过程。
 
 ## <a name="defining-a-sub-procedure"></a>定义 Sub 过程
 
-只能在模块级别定义 `Sub` 过程。 因此，sub 过程的声明上下文必须是类、结构、模块或接口，不能是源文件、命名空间、过程或块。 有关详细信息，请参阅[声明上下文和默认访问级别](declaration-contexts-and-default-access-levels.md)。
+只能 `Sub` 在模块级别定义过程。 因此，sub 过程的声明上下文必须是类、结构、模块或接口，不能是源文件、命名空间、过程或块。 有关详细信息，请参阅[声明上下文和默认访问级别](declaration-contexts-and-default-access-levels.md)。
 
-`Sub` 过程默认为公共访问。 您可以使用访问修饰符调整其访问级别。
+`Sub`过程默认为公共访问。 您可以使用访问修饰符调整其访问级别。
 
-如果过程使用 `Implements` 关键字，则包含类或结构必须具有紧跟其 `Class` 或 `Structure` 语句的 `Implements` 语句。 `Implements` 语句必须包括 `implementslist`中指定的每个接口。 但是，接口定义 `Sub` （在 `definedname`中）的名称不必与此过程的名称匹配（在 `name`中）。
+如果过程使用 `Implements` 关键字，则包含类或结构必须具有 `Implements` 紧跟在其或语句后面的语句 `Class` `Structure` 。 `Implements`语句必须包括在中指定的每个接口 `implementslist` 。 但是，接口用于定义 `Sub` （在中）的名称不必 `definedname` 与此过程的名称匹配（在中为 `name` ）。
 
 ## <a name="returning-from-a-sub-procedure"></a>从 Sub 过程返回
 
 当 `Sub` 过程返回到调用代码时，执行将继续执行调用它的语句之后的语句。
 
-下面的示例演示如何从 `Sub` 过程返回。
+下面的示例演示如何从过程返回 `Sub` 。
 
 ```vb
 Sub mySub(ByVal q As String)
@@ -191,15 +191,15 @@ Sub mySub(ByVal q As String)
 End Sub
 ```
 
-`Exit Sub` 和 `Return` 语句导致立即退出 `Sub` 过程。 任意数量的 `Exit Sub` 和 `Return` 语句可以出现在过程中的任何位置，并且可以混合 `Exit Sub` 和 `Return` 语句。
+`Exit Sub`和 `Return` 语句导致直接从 `Sub` 过程退出。 任意数量的 `Exit Sub` 和 `Return` 语句可以出现在过程中的任何位置，并且可以混合使用 `Exit Sub` 和 `Return` 语句。
 
 ## <a name="calling-a-sub-procedure"></a>调用 Sub 过程
 
-通过在语句中使用过程名称，然后将该名称跟在括号中的参数列表后面来调用 `Sub` 过程。 仅当未提供任何参数时，才可以省略括号。 但是，如果你始终包含括号，你的代码将更具可读性。
+`Sub`通过在语句中使用过程名称，然后将该名称跟在括号中的参数列表后面来调用过程。 仅当未提供任何参数时，才可以省略括号。 但是，如果你始终包含括号，你的代码将更具可读性。
 
-`Sub` 过程和 `Function` 过程可以具有参数并执行一系列语句。 但 `Function` 过程将返回一个值，而 `Sub` 过程不会。 因此，不能在表达式中使用 `Sub` 过程。
+`Sub`过程和 `Function` 过程可以具有参数并执行一系列语句。 但 `Function` 过程返回值，并且 `Sub` 过程不会。 因此，不能 `Sub` 在表达式中使用过程。
 
-调用 `Sub` 过程时，可以使用 `Call` 关键字，但对于大多数用途，不建议使用该关键字。 有关详细信息，请参阅[Call 语句](call-statement.md)。
+您可以在 `Call` 调用过程时使用关键字 `Sub` ，但对于大多数用途，不建议使用该关键字。 有关详细信息，请参阅[Call 语句](call-statement.md)。
 
 Visual Basic 有时会重新排列算术表达式以提高内部效率。 出于此原因，如果参数列表包含调用其他过程的表达式，则不应假定将按特定顺序调用这些表达式。
 
@@ -207,30 +207,30 @@ Visual Basic 有时会重新排列算术表达式以提高内部效率。 出于
 
 通过使用异步功能，你可以调用异步函数而无需使用显式回调或在多个函数或 lambda 表达式中手动拆分你的代码。
 
-如果使用[Async](../modifiers/async.md)修饰符标记过程，则可以在过程中使用[Await](../../../visual-basic/language-reference/operators/await-operator.md)运算符。 当控件在 `Async` 过程中到达 `Await` 表达式时，控件将返回到调用方，并且在等待的任务完成之前，将挂起过程中的进度。 任务完成后，可以在过程中继续执行。
+如果使用[Async](../modifiers/async.md)修饰符标记过程，则可以在过程中使用[Await](../operators/await-operator.md)运算符。 当控件 `Await` 在过程中到达表达式时 `Async` ，控件将返回到调用方，并且在等待的任务完成之前，会挂起过程中的进度。 任务完成后，可以在过程中继续执行。
 
 > [!NOTE]
-> 当遇到尚未完成的第一个等待对象或到达 `Async` 过程的结束时（以先发生者为准），`Async` 过程返回到调用方。
+> `Async`如果遇到了第一个尚未完成的对象或过程结束时 `Async` （以先发生者为准），则过程返回到调用方。
 
-还可以使用 `Async` 修饰符标记[函数语句](function-statement.md)。 `Async` 函数的返回类型可以是 <xref:System.Threading.Tasks.Task%601> 或 <xref:System.Threading.Tasks.Task>。 本主题后面的示例演示了一个返回类型为 <xref:System.Threading.Tasks.Task%601>的 `Async` 函数。
+还可以使用修饰符标记[函数语句](function-statement.md) `Async` 。 `Async`函数的返回类型可以是 <xref:System.Threading.Tasks.Task%601> 或 <xref:System.Threading.Tasks.Task> 。 本主题后面的示例演示了 `Async` 返回类型为的函数 <xref:System.Threading.Tasks.Task%601> 。
 
-`Async` `Sub` 过程主要用于事件处理程序，其中不能返回值。 无法等待 `Async` 的 `Sub` 过程，并且 `Async` `Sub` 过程的调用方无法捕获 `Sub` 过程引发的异常。
+`Async``Sub`过程主要用于事件处理程序，其中不能返回值。 `Async` `Sub` 无法等待过程，并且过程的调用方 `Async` `Sub` 无法捕获该 `Sub` 过程引发的异常。
 
-`Async` 过程不能声明任何[ByRef](../modifiers/byref.md)参数。
+`Async`过程不能声明任何[ByRef](../modifiers/byref.md)参数。
 
-有关 `Async` 过程的详细信息，请参阅[采用 async 和 Await 的异步编程](../../../visual-basic/programming-guide/concepts/async/index.md)、[异步程序中的控制流](../../../visual-basic/programming-guide/concepts/async/control-flow-in-async-programs.md)和[异步返回类型](../../../visual-basic/programming-guide/concepts/async/async-return-types.md)。
+有关过程的详细信息 `Async` ，请参阅[采用 Async 和 Await 的异步编程](../../programming-guide/concepts/async/index.md)、[异步程序中的控制流](../../programming-guide/concepts/async/control-flow-in-async-programs.md)和[异步返回类型](../../programming-guide/concepts/async/async-return-types.md)。
 
 ## <a name="example"></a>示例
 
-下面的示例使用 `Sub` 语句来定义构成 `Sub` 过程正文的名称、参数和代码。
+下面的示例使用 `Sub` 语句来定义构成过程正文的名称、参数和代码 `Sub` 。
 
 [!code-vb[VbVbalrStatements#58](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#58)]
 
 ## <a name="example"></a>示例
 
-在下面的示例中，`DelayAsync` 是返回类型为 <xref:System.Threading.Tasks.Task%601>的 `Async` `Function`。 `DelayAsync` 具有返回整数的 `Return` 语句。 因此，`DelayAsync` 的函数声明的返回类型必须为 `Task(Of Integer)`。 由于返回类型为 `Task(Of Integer)`，因此 `DoSomethingAsync` 中 `Await` 表达式的计算将生成一个整数，如以下语句所示： `Dim result As Integer = Await delayTask`。
+在下面的示例中， `DelayAsync` 是 `Async` `Function` 具有返回类型的 <xref:System.Threading.Tasks.Task%601> 。 `DelayAsync` 具有返回整数的 `Return` 语句。 因此，的函数声明 `DelayAsync` 必须具有返回类型 `Task(Of Integer)` 。 由于返回类型是 `Task(Of Integer)` ，中表达式的计算会 `Await` `DoSomethingAsync` 生成一个整数，如以下语句所示： `Dim result As Integer = Await delayTask` 。
 
-`startButton_Click` 过程是 `Async Sub` 过程的示例。 由于 `DoSomethingAsync` 是 `Async` 函数，因此对 `DoSomethingAsync` 的调用的任务必须等待，如以下语句所示： `Await DoSomethingAsync()`。 必须使用 `Async` 修饰符定义 `startButton_Click` `Sub` 过程，因为它具有 `Await` 表达式。
+此 `startButton_Click` 过程是过程的示例 `Async Sub` 。 由于 `DoSomethingAsync` 是一个 `Async` 函数，因此对的调用的任务 `DoSomethingAsync` 必须等待，如以下语句所示： `Await DoSomethingAsync()` 。 此 `startButton_Click` `Sub` 过程必须使用修饰符进行定义， `Async` 因为它具有 `Await` 表达式。
 
 [!code-vb[csAsyncMethod#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csasyncmethod/vb/mainwindow.xaml.vb#1)]
 
@@ -241,8 +241,8 @@ Visual Basic 有时会重新排列算术表达式以提高内部效率。 出于
 - [参数列表](parameter-list.md)
 - [Dim 语句](dim-statement.md)
 - [Call 语句](call-statement.md)
-- [Of](of-clause.md)
-- [参数数组](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md)
-- [如何：使用泛型类](../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
-- [过程疑难解答](../../../visual-basic/programming-guide/language-features/procedures/troubleshooting-procedures.md)
-- [分部方法](../../../visual-basic/programming-guide/language-features/procedures/partial-methods.md)
+- [个](of-clause.md)
+- [参数数组](../../programming-guide/language-features/procedures/parameter-arrays.md)
+- [如何：使用泛型类](../../programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
+- [过程疑难解答](../../programming-guide/language-features/procedures/troubleshooting-procedures.md)
+- [分部方法](../../programming-guide/language-features/procedures/partial-methods.md)
