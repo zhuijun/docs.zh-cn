@@ -7,12 +7,12 @@ helpviewer_keywords:
 - trappable errors
 - errors [Visual Basic], trappable
 ms.assetid: f2dda05b-baef-41f5-8bb1-598bd7cf239f
-ms.openlocfilehash: 15d12802c92e7b9ed99c83885bd38e381c8b687d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c2d9974f41efdd321af800e6270586d9b18ba6f7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353714"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402845"
 ---
 # <a name="error-messages-visual-basic"></a>错误消息 (Visual Basic)
 编写、编译或运行 Visual Basic 应用程序时，可能会生成以下类型的错误：  
@@ -23,15 +23,15 @@ ms.locfileid: "74353714"
   
 3. 在 Visual Studio 中运行应用程序或作为独立可执行文件运行时发生的运行时错误。  
   
- 若要了解如何排查特定错误，请参阅[为 Visual Basic 程序员提供的附加资源](../../../visual-basic/getting-started/additional-resources.md)。  
+ 若要了解如何排查特定错误，请参阅[为 Visual Basic 程序员提供的附加资源](../../getting-started/additional-resources.md)。  
   
 ## <a name="run-time-errors"></a>运行时错误  
- 如果 Visual Basic 应用程序尝试执行系统无法执行的操作，则会发生运行时错误，并且 Visual Basic 会引发 `Exception` 对象。 Visual Basic 可以使用 `Throw` 语句，生成任何数据类型（包括 `Exception` 对象）的自定义错误。 应用程序可以通过显示捕获到的异常的错误号和消息来识别错误。 如果未捕获到错误，应用程序会结束。  
+ 如果 Visual Basic 应用程序尝试执行系统无法执行的操作，则会发生运行时错误，并且 Visual Basic 会引发 `Exception` 对象。 Visual Basic 可以通过使用语句，生成任何数据类型（包括对象）的自定义错误 `Exception` `Throw` 。 应用程序可以通过显示捕获到的异常的错误号和消息来识别错误。 如果未捕获到错误，应用程序会结束。  
   
- 代码可用于捕获和检查运行时错误。 如果将生成错误的代码封闭在 `Try` 代码块中，则可以在匹配的 `Catch` 代码块中捕获抛出的任何错误。 若要了解如何在运行时捕获错误并在代码中响应错误，请参阅 [Try...Catch...Finally 语句](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)。  
+ 代码可用于捕获和检查运行时错误。 如果将生成错误的代码封闭在 `Try` 代码块中，则可以在匹配的 `Catch` 代码块中捕获抛出的任何错误。 若要了解如何在运行时捕获错误并在代码中响应错误，请参阅 [Try...Catch...Finally 语句](../statements/try-catch-finally-statement.md)。  
   
 ## <a name="compile-time-errors"></a>编译时错误  
- 如果 Visual Basic 编译器遇到代码问题，则会发生编译时错误。 在代码编辑器中，可以轻松确定哪行代码导致错误发生，因为其下方会显示一条波形线。 指向波形下划线或打开“错误列表”，即可看到错误消息（还可以查看其他消息）。  
+ 如果 Visual Basic 编译器遇到代码问题，则会发生编译时错误。 在代码编辑器中，可以轻松确定哪行代码导致错误发生，因为其下方会显示一条波形线。 指向波形下划线或打开“错误列表”****，即可看到错误消息（还可以查看其他消息）。  
   
  如果标识符有波形下划线，且最右边的字符下面有短下划线，可以为类、构造函数、方法、属性、字段或枚举生成存根。 有关详细信息，请参阅[根据使用情况生成](/visualstudio/ide/visual-csharp-intellisense#generate-from-usage)。
   

@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC30561
 ms.assetid: 761091f7-1018-4299-b481-3966a4a2c126
-ms.openlocfilehash: ed988547e0be3ef934c46d725c41646c3a75e626
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 63e61d412e4d1238b08ccae94f11adb0c3d1b54d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61918341"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401571"
 ---
-# <a name="name1-is-ambiguous-imported-from-the-namespaces-or-types-name2"></a>'\<name1 > 不明确，从命名空间或类型的导入\<name2 >
-你提供的名称不明确，因此与另一个名称冲突。 Visual Basic 编译器不具有任何冲突解决规则;你必须自己区分名称。  
+# <a name="name1-is-ambiguous-imported-from-the-namespaces-or-types-name2"></a>“\<name1>”不明确，从命名空间或类型“\<name2>”导入
+你提供的名称不明确，因此与另一个名称冲突。 Visual Basic 编译器没有任何冲突解决规则;你必须自己区分名称。  
   
- **错误 ID:** BC30561  
+ **错误 ID：** BC30561  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
@@ -25,8 +25,8 @@ ms.locfileid: "61918341"
   
 2. 完全限定名称。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Imports 语句（.NET 命名空间和类型）](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
-- [在 Visual Basic 中的命名空间](../../../visual-basic/programming-guide/program-structure/namespaces.md)
-- [Namespace 语句](../../../visual-basic/language-reference/statements/namespace-statement.md)
+- [Imports 语句（.NET 命名空间和类型）](../statements/imports-statement-net-namespace-and-type.md)
+- [Visual Basic 中的命名空间](../../programming-guide/program-structure/namespaces.md)
+- [Namespace 语句](../statements/namespace-statement.md)

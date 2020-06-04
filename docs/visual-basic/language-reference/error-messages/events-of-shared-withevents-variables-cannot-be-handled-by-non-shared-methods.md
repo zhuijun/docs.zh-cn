@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC30594
 ms.assetid: 5b9fceb4-ab11-41bb-ad3b-6f1a9da8ae7e
-ms.openlocfilehash: d6067c75835ecd14f1dd796c20ae3f29f456e541
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fc163c1069aa6f41766664e0fa5f5a9c34a1f73d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64642946"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409564"
 ---
 # <a name="events-of-shared-withevents-variables-cannot-be-handled-by-non-shared-methods"></a>共享 WithEvents 变量的事件不能由非共享方法处理
-与声明的变量`Shared`修饰符是共享的变量。 共享的变量标识恰好一个存储位置。 与声明的变量`WithEvents`修饰符声明该变量所属的类型处理一组变量引发的事件。 该属性值分配给变量时，创建的`WithEvents`声明卸载任何现有的事件处理程序，并通过新的事件处理程序挂钩`Add`方法。  
+使用修饰符声明的变量 `Shared` 是共享变量。 共享变量精确标识一个存储位置。 使用修饰符声明的变量 `WithEvents` 断言变量所属的类型将处理变量引发的事件集。 将值分配给变量时，由声明创建的属性将 `WithEvents` 卸载任何现有的事件处理程序，并通过方法挂钩新的事件处理程序 `Add` 。  
   
- **错误 ID:** BC30594  
+ **错误 ID：** BC30594  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 声明事件处理程序`Shared`。  
+- 声明事件处理程序 `Shared` 。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Shared](../../../visual-basic/language-reference/modifiers/shared.md)
-- [WithEvents](../../../visual-basic/language-reference/modifiers/withevents.md)
+- [共享](../modifiers/shared.md)
+- [WithEvents](../modifiers/withevents.md)

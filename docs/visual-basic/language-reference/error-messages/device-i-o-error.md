@@ -4,20 +4,20 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID57
 ms.assetid: 17d22252-f374-400b-9ddb-be5367dd7278
-ms.openlocfilehash: 782f03c65873a065567e80f039bc0fd974962743
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 203f905ff4b726dcc6e5c6b543734d5b1d468c64
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651403"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409681"
 ---
 # <a name="device-io-error"></a>设备 I/O 错误
-应用程序正在使用的设备如打印机或磁盘驱动器时，输入或输出错误出现。  
+当您的程序使用的是打印机或磁盘驱动器等设备时出现输入或输出错误。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 请确保该设备正常，然后重试该操作。  
+- 请确保设备正常运行，然后重试该操作。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [错误类型](../../../visual-basic/programming-guide/language-features/error-types.md)
+- [错误类型](../../programming-guide/language-features/error-types.md)

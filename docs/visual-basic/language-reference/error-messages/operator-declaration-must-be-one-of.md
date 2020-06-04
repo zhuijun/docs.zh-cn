@@ -1,5 +1,5 @@
 ---
-title: '运算符声明必须是其中一个: +、-，*，-、-、 ^， &amp;，Like、 Mod、 和，Or、 Xor、 Not、 <<>>、、 = <>、 <、 < =、 >、 > =、 CType、 IsTrue、 IsFalse'
+title: 运算符声明必须是以下其中之一： +,-, *,-,-, ^、 &amp; 、Like、Mod、And、Or、Xor、Not、 <<、 >>、=、 <>、<、<=、>、>=、CType、IsTrue、IsFalse
 ms.date: 07/20/2015
 f1_keywords:
 - bc33000
@@ -7,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC33000
 ms.assetid: 15c5d8eb-3a8c-4141-8f41-33151afabf97
-ms.openlocfilehash: 4283547109ec312cc4fe07a054bbb8db3bff660f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3fb2cf392611e5ca83818e3bf173513be031085d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61946596"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409323"
 ---
-# <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>运算符声明必须是其中一个: +、-，*，\,/、 ^， &amp;，Like、 Mod、 和，Or、 Xor、 Not、 \< \<，>>...
-您可以声明只是进行重载的运算符。 下表列出了可以声明的运算符。  
+# <a name="operator-declaration-must-be-one-of----amp-like-mod-and-or-xor-not--"></a>运算符声明必须是以下之一： +,-, *、 \, /、^、 &amp; 、Like、Mod、And、Or、Xor、Not、 \<\<, >> .。。
+您只能声明一个适合重载的运算符。 下表列出了可以声明的运算符。  
   
 |类型|运算符|  
 |----------|---------------|  
@@ -23,9 +23,9 @@ ms.locfileid: "61946596"
 |二进制|`+`, `-`, `*`, `/`, `\`, `&`, `^`, `>>`, `<<`, `=`, `<>`, `>`, `>=`, `<`, `<=`, `And`, `Like`, `Mod`, `Or`, `Xor`|  
 |转换（一元）|`CType`|  
   
- 请注意， `=` ，二元列表中的运算符是比较运算符，而不是赋值运算符。  
+ 请注意， `=` 二元列表中的运算符是比较运算符，而不是赋值运算符。  
   
- **错误 ID:** BC33000  
+ **错误 ID：** BC33000  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
@@ -33,10 +33,10 @@ ms.locfileid: "61946596"
   
 2. 如果你需要重载无法直接重载的运算符这一功能，请创建用于获取适当参数并返回适当值的 `Function` 过程。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)
-- [运算符过程](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
-- [如何：定义运算符](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-an-operator.md)
-- [如何：定义转换运算符](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
-- [Function 语句](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Operator Statement](../statements/operator-statement.md)
+- [运算符过程](../../programming-guide/language-features/procedures/operator-procedures.md)
+- [如何：定义运算符](../../programming-guide/language-features/procedures/how-to-define-an-operator.md)
+- [如何：定义转换运算符](../../programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Function 语句](../statements/function-statement.md)

@@ -1,13 +1,13 @@
 ---
-title: 如何：对某个词在字符串中出现的次数进行计数 (LINQ)
+title: 如何：对某个词在某一字符串中出现的次数进行计数 (LINQ)
 ms.date: 07/20/2015
 ms.assetid: bc367e46-f7cc-45f9-936f-754e661b7bb9
-ms.openlocfilehash: 07742e7e99291e056e4c91a31b2e588e36a6e177
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: c6894359e5785419ccf8f283f976c0a897288a5d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348187"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84405321"
 ---
 # <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-visual-basic"></a>如何：对某个词在字符串中出现的次数进行计数（LINQ）（Visual Basic）
 
@@ -60,8 +60,8 @@ End Class
 
 ## <a name="compile-the-code"></a>编译代码
 
-使用 System. Linq 命名空间的 `Imports` 语句创建 Visual Basic 的控制台应用程序项目。
+使用 `Imports` System. Linq 命名空间的语句创建 Visual Basic 控制台应用程序项目。
 
 ## <a name="see-also"></a>另请参阅
 
-- [LINQ 和字符串（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ 和字符串 (Visual Basic)](linq-and-strings.md)

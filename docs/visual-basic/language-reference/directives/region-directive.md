@@ -10,12 +10,12 @@ helpviewer_keywords:
 - region directive (#region)
 - '#Region keyword [Visual Basic]'
 ms.assetid: 90a6a104-3cbf-47d0-bdc4-b585d0921b87
-ms.openlocfilehash: 4cf9b103486378d001b588aa285f590980b51bb8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: cd53a6079c1564a8c73a0a1a6273fc166d18d3e6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74343791"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409929"
 ---
 # <a name="region-directive"></a>#Region 指令
 
@@ -28,9 +28,9 @@ ms.locfileid: "74343791"
 #End Region  
 ```  
   
-## <a name="parts"></a>部件  
+## <a name="parts"></a>组成部分  
   
-|术语|Definition|  
+|术语|定义|  
 |---|---|  
 |`identifier_string`|必需。 当区域处于折叠状态时充当区域标题的字符串。 默认情况下，区域处于折叠状态。|  
 |`#End Region`|终止 `#Region` 块。|  
@@ -47,6 +47,6 @@ ms.locfileid: "74343791"
   
 ## <a name="see-also"></a>另请参阅
 
-- [#If...Then...#Else 指令](../../../visual-basic/language-reference/directives/if-then-else-directives.md)
+- [#If...Then...#Else 指令](if-then-else-directives.md)
 - [大纲显示](/visualstudio/ide/outlining)
-- [如何：折叠和隐藏代码节](../../../visual-basic/programming-guide/program-structure/how-to-collapse-and-hide-sections-of-code.md)
+- [如何：折叠和隐藏代码节](../../programming-guide/program-structure/how-to-collapse-and-hide-sections-of-code.md)

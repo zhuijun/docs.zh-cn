@@ -14,12 +14,12 @@ helpviewer_keywords:
 - comments
 - code comments
 ms.assetid: 90136fba-22eb-49f9-ba81-63db629b4a47
-ms.openlocfilehash: 189810393db42c54cb8a0f97b22b3d1514d9a7c4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b50e76b8f832c3a214ca54f97bab8b0b6789ac25
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346174"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403312"
 ---
 # <a name="comments-in-code-visual-basic"></a>代码中的注释 (Visual Basic)
 阅读代码示例时，经常会遇到注释符号 (`'`)。 此符号指示 Visual Basic 编译器忽略它后面的文本或*注释*。 注释是为了方便阅读而为代码添加的简短的解释性说明。  
@@ -40,7 +40,7 @@ ms.locfileid: "74346174"
 |||  
 |---|---|  
 |注释类型|注释说明|  
-|目的|描述过程的用途（而不是其实现方式）|  
+|用途|描述过程的用途（而不是其实现方式）|  
 |假设|列举每个外部变量、控件、打开的文件或过程访问的其他元素|  
 |效果|列举每个受影响的外部变量、控件、文件以及它的作用（仅在作用不明显时列举）|  
 |输入|指定自变量的用途|  
@@ -54,15 +54,15 @@ ms.locfileid: "74346174"
   
 - 注释不能与行继续符同行。  
   
- 您可以通过选择一个或多个代码行并选择**注释**（![Visual](./media/comments-in-code/visual-basic-comment-button.gif)Studio 中的 "Visual Basic 注释" 按钮），并在 "**编辑**" 工具栏上**取消注释**（!["Visual Basic" 中的 "取消注释" 按钮）来添加或删除代码块的注释符号。](./media/comments-in-code/visual-basic-uncomment-button.gif)  
+ 通过选择一行或多行代码并选择**注释**（ ![ visual studio 中的 Visual Basic 注释按钮 ](./media/comments-in-code/visual-basic-comment-button.gif) ）和**取消注释**（Visual studio 中的 ![ "Visual Basic 取消注释" 按钮 ](./media/comments-in-code/visual-basic-uncomment-button.gif) ） **Edit** ，可以添加或移除代码块的注释符号。  
   
 > [!NOTE]
-> 也可以用在文本前加关键字 `REM` 的方式给代码添加注释。 不过，`'` 符号和**注释**/**取消注释**按钮的使用更加简单，并且需要的空间和内存更少。  
+> 也可以用在文本前加关键字 `REM` 的方式给代码添加注释。 但是， `'` 符号和注释的**Comment** / **取消**注释按钮更易于使用，并且需要的空间和内存更少。  
   
 ## <a name="see-also"></a>另请参阅
 
 - [基本直觉-通过 XML 注释记录代码](https://docs.microsoft.com/archive/msdn-magazine/2009/may/documenting-your-code-with-xml-comments)
-- [如何：创建 XML 文档](../../../visual-basic/programming-guide/program-structure/how-to-create-xml-documentation.md)
-- [XML 注释标记](../../../visual-basic/language-reference/xmldoc/index.md)
-- [程序结构和代码约定](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
-- [REM 语句](../../../visual-basic/language-reference/statements/rem-statement.md)
+- [如何：创建 XML 文档](how-to-create-xml-documentation.md)
+- [XML 注释标记](../../language-reference/xmldoc/index.md)
+- [程序结构和代码约定](program-structure-and-code-conventions.md)
+- [REM 语句](../../language-reference/statements/rem-statement.md)

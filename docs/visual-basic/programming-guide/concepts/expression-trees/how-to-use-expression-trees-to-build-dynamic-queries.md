@@ -1,13 +1,13 @@
 ---
-title: 如何：使用表达式树来生成动态查询
+title: 如何：使用表达式树生成动态查询
 ms.date: 07/20/2015
 ms.assetid: 16278787-7532-4b65-98b2-7a412406c4ee
-ms.openlocfilehash: 616aa3eba1e07a92983bb5d2048a9dbae936e77c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 1f686c37b5d04263ac5ae0dd6883aa8a519ed19e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346055"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410974"
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-visual-basic"></a>如何：使用表达式树生成动态查询（Visual Basic）
 
@@ -107,9 +107,9 @@ Next
 
 - 包括 System.Linq.Expressions 命名空间。
 
-- 复制该示例中的代码，并将其粘贴到 `Main` `Sub` 过程中。
+- 复制该示例中的代码并将其粘贴到 `Main` `Sub` 过程中。
 
 ## <a name="see-also"></a>另请参阅
 
-- [表达式树 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/expression-trees/index.md)
-- [如何：执行表达式树（Visual Basic）](../../../../visual-basic/programming-guide/concepts/expression-trees/how-to-execute-expression-trees.md)
+- [表达式树 (Visual Basic)](index.md)
+- [如何：执行表达式树 (Visual Basic)](how-to-execute-expression-trees.md)

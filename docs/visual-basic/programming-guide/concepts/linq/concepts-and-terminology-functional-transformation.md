@@ -2,12 +2,12 @@
 title: 概念和术语（功能转换）
 ms.date: 07/20/2015
 ms.assetid: 24fd244d-ebae-4721-8858-89bb544aea0b
-ms.openlocfilehash: efc1fc5bb738e3d5d9d3fa2a8226c37da69c045c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4a63630d431a0972fb1a61981306a41e6f4926e3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345696"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410859"
 ---
 # <a name="concepts-and-terminology-functional-transformation-visual-basic"></a>概念和术语（功能转换）（Visual Basic）
 本主题介绍纯函数转换的概念和术语。 与更加传统的命令性编程方式相比，用来转换数据的函数转换方法所生成的代码往往编程速度更快、含义更明确、更易于调试和维护。
@@ -16,11 +16,11 @@ ms.locfileid: "74345696"
 
 ## <a name="what-is-pure-functional-transformation"></a>什么是纯函数转换？
 
-在纯函数转换中，称为“纯函数”的一组函数定义如何将一组结构化数据从其原始格式转换为另一种格式。 “纯”表示这些函数是可组合的，这要求这些函数具有以下特点：
+在纯函数转换  中，称为“纯函数”  的一组函数定义如何将一组结构化数据从其原始格式转换为另一种格式。 “纯”表示这些函数是可组合的  ，这要求这些函数具有以下特点：
 
-- 独立，这样函数就可以自由排序和重新排列，而不会与程序的其他部分相互牵连和依赖。 纯转换不了解其环境，对环境也没有任何影响。 也就是说，用在转换中的函数没有负作用。
+- 独立  ，这样函数就可以自由排序和重新排列，而不会与程序的其他部分相互牵连和依赖。 纯转换不了解其环境，对环境也没有任何影响。 也就是说，用在转换中的函数没有负作用  。
 
-- 无状态，因而对相同输入执行相同的函数或特定的一组函数将始终产生相同的输出。 纯转换对于先前对它的使用没有记忆。
+- 无状态  ，因而对相同输入执行相同的函数或特定的一组函数将始终产生相同的输出。 纯转换对于先前对它的使用没有记忆。
 
 > [!IMPORTANT]
 > 在本教程的其余部分，术语“纯函数”用于概括表示编程方法，而不是具体的语言功能。
@@ -31,11 +31,11 @@ ms.locfileid: "74345696"
 
 ### <a name="functional-programming"></a>函数编程
 
-函数编程是一种编程方法，直接支持纯函数转换。
+函数编程  是一种编程方法，直接支持纯函数转换。
 
 学术团体对诸如 ML、Scheme、Haskell 和 F# 等通用函数编程语言一直抱有浓厚的兴趣。 尽管始终可以在 Visual Basic 中编写纯函数转换，但这样做的难度并未成为大多数程序员的诱人选项。 但在 Visual Basic 的更高版本中，诸如 lambda 表达式和类型推理这样的新语言构造使其功能编程更加简单、更高效。
 
-有关函数编程的详细信息，请参阅[函数编程与命令式编程（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)。
+有关函数编程的详细信息，请参阅[函数编程与命令式编程（Visual Basic）](functional-programming-vs-imperative-programming.md)。
 
 #### <a name="domain-specific-fp-languages"></a>特定于域的 FP 语言
 
@@ -48,12 +48,12 @@ ms.locfileid: "74345696"
 高阶（第一类）函数\
 可作为编程对象的一种函数。 例如，高阶函数可以传递到其他函数或从其他函数返回。 在 Visual Basic 中，委托和 lambda 表达式是支持高阶函数的语言功能。 若要编写高阶函数，需要声明一个或多个自变量来接受委托，而在调用该函数时通常使用 lambda 表达式。 许多标准查询运算符都属于高阶函数。
 
-有关详细信息，请参阅[标准查询运算符概述（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)。
+有关详细信息，请参阅[标准查询运算符概述（Visual Basic）](standard-query-operators-overview.md)。
 
 Lambda 表达式\
 实质上是一个匿名的内联函数，可用在任何需要委托类型的地方。 这是对 lambda 表达式的一个简化的定义，但足以满足本教程的需要。
 
-有关 Lambda 表达式的详细信息，请参阅 [Lambda 表达式](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)。
+有关 Lambda 表达式的详细信息，请参阅 [Lambda 表达式](../../language-features/procedures/lambda-expressions.md)。
 
 集合\
 结构化的一组数据，通常具有统一的类型。 若要与 LINQ 兼容，集合必须实现 <xref:System.Collections.IEnumerable> 接口或 <xref:System.Linq.IQueryable> 接口（或它们对应的泛型接口 <xref:System.Collections.Generic.IEnumerator%601> 或 <xref:System.Linq.IQueryable%601> 之一）。
@@ -61,21 +61,21 @@ Lambda 表达式\
 元组（匿名类型）\
 一个数学概念，元组是一个有限的对象序列，每个对象具有特定的类型。 元组也称为有序列表。 匿名类型是此概念的语言实现，支持在声明未命名类类型的同时实例化该类型的对象。
 
-有关详细信息，请参阅[匿名类型](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md)。
+有关详细信息，请参阅[匿名类型](../../language-features/objects-and-classes/anonymous-types.md)。
 
 类型推理（隐式确定类型）\
 在没有显式类型声明的情况下编译器确定变量类型的能力。
 
-有关详细信息，请参阅[局部类型推理](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)。
+有关详细信息，请参阅[局部类型推理](../../language-features/variables/local-type-inference.md)。
 
 延迟执行和迟缓计算\
 延迟表达式的计算，直到实际需要它的求解值。 集合中支持延迟执行。
 
-有关详细信息，请参阅[基本查询操作（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)和[LINQ to XML 中的延迟执行和迟缓计算（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)。
+有关详细信息，请参阅[基本查询操作（Visual Basic）](basic-query-operations.md)和[LINQ to XML 中的延迟执行和迟缓计算（Visual Basic）](deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)。
 
 本节各处的代码示例中将使用这些语言功能。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [纯功能转换简介（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
-- [函数编程与命令式编程（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/functional-programming-vs-imperative-programming.md)
+- [纯功能转换简介（Visual Basic）](introduction-to-pure-functional-transformations.md)
+- [函数编程与命令式编程（Visual Basic）](functional-programming-vs-imperative-programming.md)

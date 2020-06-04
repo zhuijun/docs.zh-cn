@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Group By statement [Visual Basic]
 - Group By clause [Visual Basic]
 ms.assetid: b1b5dcea-6654-473b-a2db-01f7e4c265d7
-ms.openlocfilehash: 87080254ad5d237a593f0c35e7c3fdaef3a8ad59
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5fce4f818e22373de7f1b37b941fd88155f3a33f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350474"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84359885"
 ---
 # <a name="group-by-clause-visual-basic"></a>Group By 子句 (Visual Basic)
 对查询结果的元素进行分组。 也可用于将聚合函数应用于每个组。 分组运算基于一个或多个键。  
@@ -29,7 +29,7 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
   Into aggregateList  
 ```  
   
-## <a name="parts"></a>部件  
+## <a name="parts"></a>组成部分  
   
 - `listField1`, `listField2`  
   
@@ -62,7 +62,7 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
 ## <a name="remarks"></a>备注  
  可以使用 `Group By` 子句来将查询的结果分解为组。 分组基于某个键或包含多个键的组合键。 与匹配的键值相关联的元素包括在同一组中。  
   
- 使用 `aggregateList` 子句的 `Into` 参数和 `Group` 关键字来标识用于引用该组的成员名称。 还可以将聚合函数包括在 `Into` 子句中，以计算分组元素的值。 有关标准聚合函数的列表，请参阅 [Aggregate Clause](../../../visual-basic/language-reference/queries/aggregate-clause.md)。  
+ 使用 `aggregateList` 子句的 `Into` 参数和 `Group` 关键字来标识用于引用该组的成员名称。 还可以将聚合函数包括在 `Into` 子句中，以计算分组元素的值。 有关标准聚合函数的列表，请参阅 [Aggregate Clause](aggregate-clause.md)。  
   
 ## <a name="example"></a>示例  
  下面的代码示例根据客户所在的位置（国家/地区）对客户列表进行分组，并提供每个组中的客户计数。 按国家/地区名称对结果进行排序。 按城市名称对分组结果进行排序。  
@@ -71,10 +71,10 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
   
 ## <a name="see-also"></a>另请参阅
 
-- [Visual Basic 中的 LINQ 简介](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [查询](../../../visual-basic/language-reference/queries/index.md)
-- [Select 子句](../../../visual-basic/language-reference/queries/select-clause.md)
-- [From 子句](../../../visual-basic/language-reference/queries/from-clause.md)
-- [Order By 子句](../../../visual-basic/language-reference/queries/order-by-clause.md)
-- [Aggregate 子句](../../../visual-basic/language-reference/queries/aggregate-clause.md)
-- [Group Join 子句](../../../visual-basic/language-reference/queries/group-join-clause.md)
+- [Visual Basic 中的 LINQ 简介](../../programming-guide/language-features/linq/introduction-to-linq.md)
+- [查询](index.md)
+- [Select 子句](select-clause.md)
+- [From 子句](from-clause.md)
+- [Order By 子句](order-by-clause.md)
+- [Aggregate Clause](aggregate-clause.md)
+- [Group Join 子句](group-join-clause.md)

@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - BC36810
 ms.assetid: 9323b5d2-ba14-4e49-91f1-9ad647162144
-ms.openlocfilehash: 7c05c712bcbb0a61bb3121bb71a7823a1c29afb5
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 919c6873ba63addb776d756a58c44a3fe3f0ec3d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625573"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409618"
 ---
 # <a name="errors-occurred-while-compiling-the-xml-schemas-in-the-project"></a>编译项目中的 XML 架构时发生错误
 编译项目中的 XML 架构时发生错误。 因此，XML IntelliSense 不可用。  
   
- 在项目中包含的 XML 架构定义 (XSD) 架构中没有错误。 添加与现有的 XSD 架构冲突设置项目的 XSD 架构 (.xsd) 文件时，将发生此错误。  
+ 项目中包含的 XML 架构定义（XSD）架构中存在错误。 添加与项目的现有 XSD 架构集冲突的 XSD 架构（.xsd）文件时会发生此错误。  
   
- **错误 ID:** BC36810  
+ **错误 ID：** BC36810  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 双击中的警告**错误列表**窗口。 Visual Basic 将转到源的警告的 XSD 文件中的位置。 更正的 XSD 架构中的错误。  
+- 双击 "**错误列表**" 窗口中的警告。 Visual Basic 将转到 XSD 文件中作为警告源的位置。 更正 XSD 架构中的错误。  
   
-- 请确保所有必需的 XSD 架构 (.xsd) 文件都包括在项目中。 可能需要单击**显示所有文件**上**项目**中的下拉菜单，看看您.xsd 文件**解决方案资源管理器**。 右键单击一个.xsd 文件，然后单击**包括在项目**将该文件包括在项目中。  
+- 确保所有必需的 XSD 架构（.xsd）文件都包含在项目中。 可能需要在 "**项目**" 菜单上单击 "**显示所有文件**" 才能在**解决方案资源管理器**中查看 .xsd 文件。 右键单击 .xsd 文件，然后单击 "**包括在项目中**" 以在项目中包含该文件。  
   
-- 如果使用 XML 到架构向导时，如果从同一源推断架构不止一次可以发生此错误。 在这种情况下，您可以从项目中，删除现有的 XSD 架构文件将添加新的 XML 到架构项模板，然后提供 XML 到架构向导使用所有适用的 XML 源为您的项目。  
+- 如果你使用的是 XML 到架构向导，则如果你从同一源推导多个架构，则可能会发生此错误。 在这种情况下，您可以从项目中删除现有的 XSD 架构文件，添加一个新的 XML 到架构项模板，然后提供项目的所有适用 XML 源的 XML 到架构向导。  
   
-- 如果在 XSD 架构中不标识任何错误，则 XML 编译器可能没有足够的信息来提供详细的错误消息。 你可以获取更详细的错误信息，如果您确保.xsd 文件的 XML 命名空间包含的项目匹配项标识为 Visual Studio 中设置 XML 架构的 XML 命名空间。  
+- 如果 XSD 架构中未发现任何错误，则 XML 编译器可能没有足够的信息来提供详细的错误消息。 如果确保你的项目中包含的 .xsd 文件的 XML 命名空间与在 Visual Studio 中为 XML 架构集标识的 XML 命名空间相匹配，则你可能能够获取更详细的错误信息。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [“错误列表”窗口](/visualstudio/ide/reference/error-list-window)
-- [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [错误列表窗口](/visualstudio/ide/reference/error-list-window)
+- [XML](../../programming-guide/language-features/xml/index.md)

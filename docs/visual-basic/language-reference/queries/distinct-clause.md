@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Distinct statement [Visual Basic]
 - queries [Visual Basic], Distinct
 ms.assetid: 86f42614-0d8f-4ffc-b888-ce8a37a8d36a
-ms.openlocfilehash: 94471898807ef4552564c3e01465f2b2f6211d0c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5aecffbce036500d294d03a925798d51f1269af6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74335380"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401389"
 ---
 # <a name="distinct-clause-visual-basic"></a>Distinct 子句 (Visual Basic)
 限制当前范围变量的值，以消除后面的查询子句中的重复值。  
@@ -25,17 +25,17 @@ Distinct
 ```  
   
 ## <a name="remarks"></a>备注  
- 您可以使用 `Distinct` 子句返回唯一项的列表。 `Distinct` 子句使查询忽略重复的查询结果。 `Distinct` 子句适用于 `Select` 子句指定的所有返回字段的重复值。 如果未指定 `Select` 子句，则 `Distinct` 子句将应用到 `From` 子句中标识的查询的范围变量。 如果范围变量不是不可变类型，则当该类型的所有成员均与现有查询结果匹配时，该查询将忽略查询结果。  
+ 您可以使用 `Distinct` 子句返回唯一项的列表。 `Distinct`子句使查询忽略重复的查询结果。 `Distinct`子句适用于子句指定的所有返回字段的重复值 `Select` 。 如果未 `Select` 指定子句，则将 `Distinct` 子句应用于子句中标识的查询的范围变量 `From` 。 如果范围变量不是不可变类型，则当该类型的所有成员均与现有查询结果匹配时，该查询将忽略查询结果。  
   
 ## <a name="example"></a>示例  
- 下面的查询表达式将联接列表和客户订单列表。 包含 `Distinct` 子句以返回唯一客户名称和订单日期的列表。  
+ 下面的查询表达式将联接列表和客户订单列表。 `Distinct`包含子句是为了返回唯一客户名称和订单日期的列表。  
   
  [!code-vb[VbSimpleQuerySamples#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#20)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [Visual Basic 中的 LINQ 简介](../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
-- [查询](../../../visual-basic/language-reference/queries/index.md)
-- [From 子句](../../../visual-basic/language-reference/queries/from-clause.md)
-- [Select 子句](../../../visual-basic/language-reference/queries/select-clause.md)
-- [Where 子句](../../../visual-basic/language-reference/queries/where-clause.md)
+- [Visual Basic 中的 LINQ 简介](../../programming-guide/language-features/linq/introduction-to-linq.md)
+- [查询](index.md)
+- [From 子句](from-clause.md)
+- [Select 子句](select-clause.md)
+- [Where 子句](where-clause.md)

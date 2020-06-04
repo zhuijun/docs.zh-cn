@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Boolean values [Visual Basic]
 - paths [Visual Basic], validating
 ms.assetid: f673462d-57b7-4120-b13a-6a7592f7ab2c
-ms.openlocfilehash: cc4d275d469860aa19c45ca0fe0401b709b42d82
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3b4695dfbcaf05c73bd53af5be7a49d081eb8e47
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344366"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410575"
 ---
 # <a name="how-to-validate-file-names-and-paths-in-visual-basic"></a>如何：在 Visual Basic 中验证文件名和路径
 此示例返回一个 `Boolean` 值，该值指示字符串是否表示文件名或路径。 验证检查名称是否包含文件系统不允许使用的字符。  
@@ -25,4 +25,4 @@ ms.locfileid: "74344366"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.IO.Path.GetInvalidPathChars%2A>
-- [在 Visual Basic 中验证字符串](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)
+- [验证字符串 (Visual Basic)](validating-strings.md)
