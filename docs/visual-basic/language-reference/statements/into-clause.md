@@ -4,25 +4,25 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - Into keyword [Visual Basic]
 ms.assetid: e1534550-8f4b-4978-b043-fad7b8fd79ac
-ms.openlocfilehash: 038cf9b812d3fbdb54afaca072694bbde4bfb600
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4e3648ee9893ca0f4045e28e68b659c01035dee0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348044"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84404468"
 ---
 # <a name="into-clause-visual-basic"></a>Into 子句 (Visual Basic)
 标识要应用于集合的聚合函数或分组。  
   
 ## <a name="remarks"></a>备注  
- `Each` 关键字用于以下上下文：  
+ `Each`关键字用于以下上下文：  
   
- [Aggregate 子句](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
+ [Aggregate Clause](../queries/aggregate-clause.md)  
   
- [Group By 子句](../../../visual-basic/language-reference/queries/group-by-clause.md)  
+ [Group By 子句](../queries/group-by-clause.md)  
   
- [Group Join 子句](../../../visual-basic/language-reference/queries/group-join-clause.md)  
+ [Group Join 子句](../queries/group-join-clause.md)  
   
 ## <a name="see-also"></a>另请参阅
 
-- [关键字](../../../visual-basic/language-reference/keywords/index.md)
+- [关键字](../keywords/index.md)

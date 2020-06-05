@@ -7,31 +7,31 @@ f1_keywords:
 helpviewer_keywords:
 - BC30910
 ms.assetid: 68fc05c5-5d55-4742-9a3b-ea04312594f4
-ms.openlocfilehash: e21eea20d953e64e91522074c25f037451145bf8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: aa04c558abbcc4259c2821cdcbdc1669b91ffee0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664214"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84402767"
 ---
-# <a name="typename-cannot-inherit-from-type-basetypename-because-it-expands-the-access-of-the-base-type-outside-the-assembly"></a>\<类型名称 > 不能继承自\<类型 >\<基类型名称 > 扩展的基本访问权限，因此\<类型 > 程序集外部的
-类或接口继承自的基类或接口但具有限制性较弱的访问级别。  
+# <a name="typename-cannot-inherit-from-type-basetypename-because-it-expands-the-access-of-the-base-type-outside-the-assembly"></a>“\<typename>”将对基 \<type> 的访问扩展到程序集的外部，因此无法从 \<basetypename>“\<type>”继承
+类或接口继承自基类或接口，但具有限制性较低的访问级别。  
   
- 例如，`Public`接口继承自`Friend`接口，或`Protected`类继承自`Private`类。 这会公开的基类或接口来访问超出了预期的级别。  
+ 例如， `Public` 接口从 `Friend` 接口继承，或 `Protected` 从 `Private` 类继承。 这会公开要访问的基类或接口超出目标级别。  
   
- **错误 ID:** BC30910  
+ **错误 ID：** BC30910  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 更改派生的类或接口的基类或接口至少限制的访问级别。  
+- 更改派生类或接口的访问级别，使其至少与基类或接口的访问级别具有相同的限制。  
   
-     或  
+     \- 或 -  
   
-- 如果需要限制较少的访问级别，请删除`Inherits`语句。 不能从更受限制的基类或接口继承。  
+- 如果需要限制性较低的访问级别，请删除 `Inherits` 语句。 不能从更受限制的基类或接口继承。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Class 语句](../../../visual-basic/language-reference/statements/class-statement.md)
-- [Interface 语句](../../../visual-basic/language-reference/statements/interface-statement.md)
-- [Inherits 语句](../../../visual-basic/language-reference/statements/inherits-statement.md)
-- [在 Visual Basic 中的访问级别](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)
+- [Class 语句](../statements/class-statement.md)
+- [Interface 语句](../statements/interface-statement.md)
+- [Inherits Statement](../statements/inherits-statement.md)
+- [Visual Basic 中的访问级别](../../programming-guide/language-features/declared-elements/access-levels.md)

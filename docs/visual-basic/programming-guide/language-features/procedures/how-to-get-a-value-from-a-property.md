@@ -8,17 +8,17 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic], values
 ms.assetid: 3954423e-6ab7-4a4c-b55c-a8d27be47891
-ms.openlocfilehash: 85512d4311d3e731a2c4e129d6a01f9b3273b333
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2c92cd4a869acbb7c8c52fbf4117112967386498
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74339830"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387889"
 ---
 # <a name="how-to-get-a-value-from-a-property-visual-basic"></a>如何：从属性获取值 (Visual Basic)
 通过在表达式中包含属性名称来检索属性的值。  
   
- 该属性的 `Get` 过程会检索值，但不会按名称显式调用它。 像使用变量一样使用属性。 Visual Basic 对属性的过程进行调用。  
+ 该属性的 `Get` 过程检索值，但不按名称显式调用它。 像使用变量一样使用属性。 Visual Basic 对属性的过程进行调用。  
   
 ### <a name="to-retrieve-a-value-from-a-property"></a>从属性中检索值  
   
@@ -26,9 +26,9 @@ ms.locfileid: "74339830"
   
      \- 或 -  
   
-     在赋值语句中使用等号（`=`）后，使用属性名称。  
+     在赋值语句中，在等号（）后使用属性名称 `=` 。  
   
-     下面的示例读取 Visual Basic `Now` 属性的值，从而隐式调用其 `Get` 过程。  
+     下面的示例读取 Visual Basic 属性的值 `Now` ，隐式调用其 `Get` 过程。  
   
      [!code-vb[VbVbalrDateProperties#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDateProperties/VB/Module1.vb#4)]  
   
@@ -41,10 +41,10 @@ ms.locfileid: "74339830"
 ## <a name="see-also"></a>另请参阅
 
 - [过程](./index.md)
-- [属性过程](./property-procedures.md)
-- [过程参数和自变量](./procedure-parameters-and-arguments.md)
-- [Property 语句](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [Visual Basic 中的属性和变量之间的差异](./differences-between-properties-and-variables.md)
+- [Property 过程](./property-procedures.md)
+- [过程形参和实参](./procedure-parameters-and-arguments.md)
+- [Property Statement](../../../language-reference/statements/property-statement.md)
+- [Visual Basic 中属性和变量的差异](./differences-between-properties-and-variables.md)
 - [如何：创建属性](./how-to-create-a-property.md)
 - [如何：声明具有混合访问级别的属性](./how-to-declare-a-property-with-mixed-access-levels.md)
 - [如何：调用 Property 过程](./how-to-call-a-property-procedure.md)

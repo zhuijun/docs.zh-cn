@@ -1,5 +1,5 @@
 ---
-title: 界面
+title: 接口
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic code, interfaces
@@ -7,15 +7,15 @@ helpviewer_keywords:
 - interfaces
 - interfaces [Visual Basic]
 ms.assetid: 61b06674-12c9-430b-be68-cc67ecee1f5b
-ms.openlocfilehash: 619aa6695db756e56a836fd76693cc8a3976f8e2
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 90f8e5d4eb7bb6b367ee5ffd4a4323097c6bde9c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345052"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84405038"
 ---
 # <a name="interfaces-visual-basic"></a>接口 (Visual Basic)
-接口定义了类可以实现的属性、方法和事件。 接口允许将功能定义为一些紧密相关的属性、方法和事件的小组；这样就减少了兼容性问题，因为可以在不损害现有代码的情况下开发接口的增强型实现。 在任何时候都可以通过开发附加接口和实现来添加新的功能。  
+接口** 定义了类可以实现的属性、方法和事件。 接口允许将功能定义为一些紧密相关的属性、方法和事件的小组；这样就减少了兼容性问题，因为可以在不损害现有代码的情况下开发接口的增强型实现。 在任何时候都可以通过开发附加接口和实现来添加新的功能。  
   
  以下是为何要使用接口继承而不用类继承的一些其他原因：  
   
@@ -33,20 +33,20 @@ ms.locfileid: "74345052"
  在命名空间中，接口语句默认为 `Friend`，但也可以显式声明为 `Public` 或 `Friend`。 在类、模块、接口和结构中定义的接口默认为 `Public`，但也可以显式声明为 `Public`、`Friend`、`Protected` 或 `Private`。  
   
 > [!NOTE]
-> `Shadows` 关键字可应用于所有界面成员。 `Overloads` 关键字可应用于界面定义中声明的 `Sub`、`Function` 和 `Property` 语句。 此外，`Property` 语句可以具有 `Default`、`ReadOnly` 或 `WriteOnly` 修饰符。 不允许使用任何其他修饰符：`Public`、`Private`、`Friend`、`Protected`、`Shared`、`Overrides`、`MustOverride` 或 `Overridable`。 有关详细信息，请参阅[声明上下文和默认访问级别](../../../../visual-basic/language-reference/statements/declaration-contexts-and-default-access-levels.md)。  
+> `Shadows` 关键字可应用于所有界面成员。 `Overloads` 关键字可应用于界面定义中声明的 `Sub`、`Function` 和 `Property` 语句。 此外，`Property` 语句可以具有 `Default`、`ReadOnly` 或 `WriteOnly` 修饰符。 不允许使用任何其他修饰符：`Public`、`Private`、`Friend`、`Protected`、`Shared`、`Overrides`、`MustOverride` 或 `Overridable`。 有关详细信息，请参阅[声明上下文和默认访问级别](../../../language-reference/statements/declaration-contexts-and-default-access-levels.md)。  
   
  例如，下面的代码定义了一个函数、一个属性和一个事件的接口。  
   
  [!code-vb[VbVbalrOOP#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#17)]  
   
 ## <a name="implementing-interfaces"></a>实现接口  
- Visual Basic 保留字 `Implements` 以两种方式使用。 `Implements` 语句表示类或结构实现接口。 `Implements` 关键字表示类成员或结构成员实现特定的接口成员。  
+ `Implements`通过两种方式使用 Visual Basic 保留字。 `Implements` 语句表示类或结构实现接口。 `Implements` 关键字表示类成员或结构成员实现特定的接口成员。  
   
 ### <a name="implements-statement"></a>Implements 语句  
- 如果一个类或结构实现一个或多个接口，则它必须紧随在 `Implements` 或 `Class` 语句之后包括 `Structure` 语句。 `Implements` 语句需要一个由类实现的接口的逗号分隔列表。 类或结构必须使用 `Implements` 关键字来实现所有的接口成员。  
+ 如果一个类或结构实现一个或多个接口，则它必须紧随在 `Class` 或 `Structure` 语句之后包括 `Implements` 语句。 `Implements` 语句需要一个由类实现的接口的逗号分隔列表。 类或结构必须使用 `Implements` 关键字来实现所有的接口成员。  
   
 ### <a name="implements-keyword"></a>Implements 关键字  
- `Implements` 关键字需要一个要实现的接口成员的逗号分隔列表。 通常只指定单个接口成员，但也可以指定多个成员。 接口成员的规范由接口名称（必须在类中的 implements 语句中指定）、句点和要实现的成员函数、属性或事件的名称组成。 实现接口成员的成员的名称可以使用任何合法标识符，但并不局限于 Visual Basic 早期版本中使用的 `InterfaceName_MethodName` 约定。  
+ `Implements` 关键字需要一个要实现的接口成员的逗号分隔列表。 通常只指定单个接口成员，但也可以指定多个成员。 接口成员的规范由接口名称（必须在类中的 implements 语句中指定）、句点和要实现的成员函数、属性或事件的名称组成。 实现接口成员的成员的名称可以使用任何合法标识符，但并不限于 `InterfaceName_MethodName` Visual Basic 早期版本中使用的约定。  
   
  例如，以下代码显示了如何声明一个名为 `Sub1` 的用于实现接口方法的子例程：  
   
@@ -81,7 +81,7 @@ ms.locfileid: "74345052"
   
 ## <a name="related-topics"></a>相关主题  
   
-|职务|说明|  
+|Title|说明|  
 |-----------|-----------------|  
-|[演练：创建和实现接口](../../../../visual-basic/programming-guide/language-features/interfaces/walkthrough-creating-and-implementing-interfaces.md)|提供引导你定义和实现自己的接口的详细过程。|  
+|[演练：创建和实现接口](walkthrough-creating-and-implementing-interfaces.md)|提供引导你定义和实现自己的接口的详细过程。|  
 |[泛型接口中的变体](../../concepts/covariance-contravariance/variance-in-generic-interfaces.md)|讨论泛型接口中的协变和逆变，提供 .NET Framework 中的变体泛型接口列表。|
