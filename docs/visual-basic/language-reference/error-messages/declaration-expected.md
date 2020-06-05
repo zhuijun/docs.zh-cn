@@ -7,29 +7,29 @@ f1_keywords:
 helpviewer_keywords:
 - BC30188
 ms.assetid: da6b1df3-fe6b-4415-88e6-0977e5189e0b
-ms.openlocfilehash: e6f8bf2b4ce9789a1715971b8262bdd162ba8035
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 237622d0dc6c57f66d402f491a6191a5911574e2
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619532"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409733"
 ---
 # <a name="declaration-expected"></a>需要声明
-非声明语句，如分配或循环语句发生在外的任何过程。 只有声明允许外部过程。  
+Nondeclarative 语句，如赋值语句或循环语句，在任何过程外发生。 仅允许在过程外使用声明。  
   
- 或者，编程元素声明不声明关键字如`Dim`或`Const`。  
+ 或者，在没有声明关键字（如或）的情况下声明编程元素 `Dim` `Const` 。  
   
- **错误 ID:** BC30188  
+ **错误 ID：** BC30188  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 将非声明语句移动到过程的正文。  
+- 将 nondeclarative 语句移到过程的主体。  
   
-- 开始使用适当的声明关键字声明。  
+- 使用适当的声明关键字开始声明。  
   
-- 请确保声明关键字没有拼写错误。  
+- 确保声明关键字没有拼写错误。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [过程](../../../visual-basic/programming-guide/language-features/procedures/index.md)
-- [Dim 语句](../../../visual-basic/language-reference/statements/dim-statement.md)
+- [过程](../../programming-guide/language-features/procedures/index.md)
+- [Dim 语句](../statements/dim-statement.md)
