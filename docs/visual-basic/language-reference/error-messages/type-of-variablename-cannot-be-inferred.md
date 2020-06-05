@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC30982
 ms.assetid: 741e85d9-a747-42ad-a1e1-a3f1928aaff5
-ms.openlocfilehash: c3086f79fb71693810bc8f14e8c0f493aa1e6515
-ms.sourcegitcommit: 463f3f050cecc0b6403e67f19a61f870fb8e7b7d
+ms.openlocfilehash: 74b690ce3dee87e481c629a254e629be4b40f8cd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "68512709"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387005"
 ---
-# <a name="type-of-variablename-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>因为循环边界\<和步骤变量未扩大到同一类型, 所以无法推断 "variablename >" 的类型
+# <a name="type-of-variablename-cannot-be-inferred-because-the-loop-bounds-and-the-step-variable-do-not-widen-to-the-same-type"></a>无法推断“\<variablename>”的类型，因为循环边界和步骤变量未扩大到同一类型
 
-你编写了一个`For...Next`循环, 该循环中编译器无法推断循环控制变量的数据类型, 因为满足以下条件:
+你编写了一个 `For...Next` 循环，该循环中编译器无法推断循环控制变量的数据类型，因为满足以下条件：
 
 - 未在 `As` 子句中指定循环控制变量的数据类型。
 
@@ -24,9 +24,9 @@ ms.locfileid: "68512709"
 
 - 数据类型之间不存在标准转换。
 
- 因此, 编译器无法推断循环控制变量的数据类型。
+ 因此，编译器无法推断循环控制变量的数据类型。
 
- 在下面的示例中, 步骤变量是一个字符, 并且循环边界都是整数。 由于字符和整数之间没有标准转换, 因此将报告此错误。
+ 在下面的示例中，步骤变量是一个字符，并且循环边界都是整数。 由于字符和整数之间没有标准转换，因此将报告此错误。
 
 ```vb
 Dim stepVar = "1"c
@@ -39,23 +39,23 @@ Dim n = 20
 ' Next
 ```
 
-**错误 ID:** BC30982
+**错误 ID：** BC30982
 
 ## <a name="to-correct-this-error"></a>更正此错误
 
-- 根据需要更改循环边界和步骤变量的类型, 以使其中至少有一个类型为其他类型。 在前面的示例中, 将的`stepVar`类型更改为。 `Integer`
+- 根据需要更改循环边界和步骤变量的类型，以使其中至少有一个类型为其他类型。 在前面的示例中，将的类型更改 `stepVar` 为 `Integer` 。
 
   ```vb
   Dim stepVar = 1
   ```
 
-  或
+  \- 或 -
 
   ```vb
   Dim stepVar As Integer = 1
   ```
 
-- 使用显式转换函数将循环边界和步骤变量转换为适当的类型。 在前面的示例中, 将`Val` `stepVar`函数应用于。
+- 使用显式转换函数将循环边界和步骤变量转换为适当的类型。 在前面的示例中，将 `Val` 函数应用于 `stepVar` 。
 
   ```vb
   For i = 1 To 10 Step Val(stepVar)
@@ -63,12 +63,12 @@ Dim n = 20
   Next
   ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:Microsoft.VisualBasic.Conversion.Val%2A>
-- [For...Next 语句](../../../visual-basic/language-reference/statements/for-next-statement.md)
-- [隐式转换和显式转换](../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
-- [局部类型推理](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
-- [Option Infer 语句](../../../visual-basic/language-reference/statements/option-infer-statement.md)
-- [类型转换函数](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
-- [扩大转换和收缩转换](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+- [For...Next 语句](../statements/for-next-statement.md)
+- [隐式转换和显式转换](../../programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
+- [局部类型推理](../../programming-guide/language-features/variables/local-type-inference.md)
+- [Option Infer 语句](../statements/option-infer-statement.md)
+- [Type Conversion Functions](../functions/type-conversion-functions.md)
+- [Widening and Narrowing Conversions](../../programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
