@@ -2,12 +2,12 @@
 title: 如何：组合和比较字符串集合 (LINQ)
 ms.date: 07/20/2015
 ms.assetid: 243cfafc-9eaa-4354-a9df-d329f1d39913
-ms.openlocfilehash: 2df5db16e51e8f9de8a8e3506eb1f7b737065a14
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 271ef7805cd2285fa2d8796a31257c0f31bb9a76
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337560"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374857"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a>如何：合并和比较字符串集合（LINQ）（Visual Basic）
 
@@ -165,9 +165,9 @@ End Class
 
 ## <a name="compile-the-code"></a>编译代码
 
-创建 Visual Basic 的控制台应用程序项目。 为 System.web 命名空间添加 `Imports` 语句。
+创建 Visual Basic 的控制台应用程序项目。 为 system.exception `Imports` 命名空间添加语句。
 
 ## <a name="see-also"></a>另请参阅
 
-- [LINQ 和字符串（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ 和文件目录 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ 和字符串 (Visual Basic)](linq-and-strings.md)
+- [LINQ 和文件目录 (Visual Basic)](linq-and-file-directories.md)

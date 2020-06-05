@@ -1,17 +1,17 @@
 ---
-title: 驱动器<drivename>找不到
+title: 找不到驱动器“<drivename>”
 ms.date: 07/20/2015
 f1_keywords:
 - vbrFileSystem_DriveNotFound1
 ms.assetid: 0250e9f2-3470-4fe4-8fda-be4fbf2e2a30
-ms.openlocfilehash: 9084e885ba98211623781b036e9f7407a44368ac
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a426130b284a7c09004933bca264e4d52be1df3c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61970139"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84394591"
 ---
-# <a name="drive-drivename-not-found"></a>驱动器\<drivename > 找不到
+# <a name="drive-drivename-not-found"></a>找不到驱动器“\<drivename>”
 无法找到该驱动器。 已失去网络连接，或是尝试访问的驱动器处于脱机状态或不存在。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
@@ -22,8 +22,8 @@ ms.locfileid: "61970139"
   
 3. 若要通过网络访问驱动器，请确保计算机和驱动器之间存在逻辑连接。  
   
-4. 重新连接网络，然后重试。  
+4. 重新连接到网络，然后重试。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [错误类型](../../visual-basic/programming-guide/language-features/error-types.md)
+- [错误类型](../programming-guide/language-features/error-types.md)

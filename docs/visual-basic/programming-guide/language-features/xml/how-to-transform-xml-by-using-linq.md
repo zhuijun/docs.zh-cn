@@ -5,16 +5,16 @@ helpviewer_keywords:
 - XML [Visual Basic], transforming
 - LINQ to XML [Visual Basic], transforming XML
 ms.assetid: 815687f4-0bc2-4c0b-adc6-d78744aa356f
-ms.openlocfilehash: a531b189074ac7bdd1c02935368c408ff506a6f1
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: dab394ec45567589e002b5d2ac76ec19fb0f76c6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353647"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374876"
 ---
 # <a name="how-to-transform-xml-by-using-linq-visual-basic"></a>如何：使用 LINQ 转换 XML (Visual Basic)
 
-使用[Xml 文本](../../../../visual-basic/language-reference/xml-literals/index.md)可以轻松地从一个源读取 XML，并将其转换为新的 xml 格式。 您可以利用 LINQ 查询来检索要转换的内容，或者将现有文档中的内容更改为新的 XML 格式。
+使用[Xml 文本](../../../language-reference/xml-literals/index.md)可以轻松地从一个源读取 XML，并将其转换为新的 xml 格式。 您可以利用 LINQ 查询来检索要转换的内容，或者将现有文档中的内容更改为新的 XML 格式。
 
 本主题中的示例将 XML 源文档中的内容转换为 HTML，以便在浏览器中查看。
 
@@ -24,7 +24,7 @@ ms.locfileid: "74353647"
 
 1. 在 Visual Studio 中，在 "**控制台应用程序**" 项目模板中创建新的 Visual Basic 项目。
 
-2. 双击在项目中创建的 Module1 文件以修改 Visual Basic 代码。 将以下代码添加到 `Module1` 模块的 `Sub Main`。 此代码将源 XML 文档作为 <xref:System.Xml.Linq.XDocument> 对象创建。
+2. 双击在项目中创建的 Module1 文件以修改 Visual Basic 代码。 将以下代码添加到 `Sub Main` `Module1` 模块的。 此代码将源 XML 文档创建为 <xref:System.Xml.Linq.XDocument> 对象。
 
     ```vb
     Dim catalog =
@@ -58,11 +58,11 @@ ms.locfileid: "74353647"
         </Catalog>
     ```
 
-     [如何：从文件、字符串或流加载 XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)。
+     [如何：从文件、字符串或流加载 XML](how-to-load-xml-from-a-file-string-or-stream.md)。
 
-3. 在代码中创建源 XML 文档后，添加以下代码以检索该对象中的所有 \<书籍 > 元素，并将其转换为 HTML 文档。 使用 LINQ 查询创建 \<Book > 元素的列表，该查询返回包含已转换的 HTML 的 <xref:System.Xml.Linq.XElement> 对象的集合。 您可以使用嵌入式表达式将源文档中的值置于新的 XML 格式。
+3. 在代码中创建源 XML 文档后，添加以下代码以检索该 \<Book> 对象中的所有元素，并将其转换为 HTML 文档。 \<Book>元素列表是通过使用 LINQ 查询创建的，该查询返回包含已转换的 HTML 的对象的集合 <xref:System.Xml.Linq.XElement> 。 您可以使用嵌入式表达式将源文档中的值置于新的 XML 格式。
 
-     通过使用 <xref:System.Xml.Linq.XElement.Save%2A> 方法将生成的 HTML 文档写入文件。
+     通过使用方法将生成的 HTML 文档写入文件 <xref:System.Xml.Linq.XElement.Save%2A> 。
 
     ```vb
     Dim htmlOutput =
@@ -83,11 +83,11 @@ ms.locfileid: "74353647"
     htmlOutput.Save("BookDescription.html")
     ```
 
-4. `Sub Main` `Module1`后，添加一个新方法（`Sub`），以将 \<说明 > 节点转换为指定的 HTML 格式。 此方法由上一步中的代码调用，用于保留 \<说明 > 元素的格式。
+4. 在 `Sub Main` 之后 `Module1` ，添加一个新方法（ `Sub` ）以将 \<Description> 节点转换为指定的 HTML 格式。 此方法由上一步中的代码调用，用于保留元素的格式 \<Description> 。
 
-     此方法用 HTML 替换 \<说明 > 元素的子元素。 `ReplaceWith` 方法用于保留子元素的位置。 HTML 段落（\<p >）元素中包含 > 元素的 \<说明的转换内容。 <xref:System.Xml.Linq.XContainer.Nodes%2A> 属性用于检索 \<Description > 元素的转换内容。 这可确保子元素包含在转换后的内容中。
+     此方法用 HTML 替换元素的子元素 \<Description> 。 `ReplaceWith`方法用于保留子元素的位置。 元素的转换内容 \<Description> 包含在 HTML 段落（ \<p> ）元素中。 <xref:System.Xml.Linq.XContainer.Nodes%2A>属性用于检索元素的转换内容 \<Description> 。 这可确保子元素包含在转换后的内容中。
 
-     在 `Module1``Sub Main` 后面添加以下代码。
+     在的后面添加以下 `Sub Main` 代码 `Module1` 。
 
     ```vb
     Public Function TransformDescription(ByVal desc As XElement) As XElement
@@ -158,9 +158,9 @@ ms.locfileid: "74353647"
 
 ## <a name="see-also"></a>另请参阅
 
-- [XML 文本](../../../../visual-basic/language-reference/xml-literals/index.md)
-- [在 Visual Basic 中操控 XML](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)
-- [XML](../../../../visual-basic/programming-guide/language-features/xml/index.md)
-- [如何：从文件、字符串或流加载 XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)
-- [LINQ](../../../../visual-basic/programming-guide/language-features/linq/index.md)
-- [Visual Basic 中的 LINQ 简介](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [XML 文本](../../../language-reference/xml-literals/index.md)
+- [在 Visual Basic 中操作 XML](manipulating-xml.md)
+- [XML](index.md)
+- [如何：从文件、字符串或流加载 XML](how-to-load-xml-from-a-file-string-or-stream.md)
+- [LINQ](../linq/index.md)
+- [Visual Basic 中的 LINQ 简介](../linq/introduction-to-linq.md)
