@@ -2,12 +2,12 @@
 title: 如何：在 CSV 文本文件中计算列值 (LINQ)
 ms.date: 07/20/2015
 ms.assetid: 88b2b9f3-c82e-41f3-b1b4-26ede5973a02
-ms.openlocfilehash: 230bb26d04a85decc401abaa6c7fd7fc8a6b4806
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 679d53787b1392181696c05e0327ca1b1b910015
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75338504"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84357499"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-visual-basic"></a>如何：在 CSV 文本文件中计算列值（LINQ）（Visual Basic）
 
@@ -145,9 +145,9 @@ End Class
 
 ## <a name="compile-the-code"></a>编译代码
 
-使用 System. Linq 命名空间的 `Imports` 语句创建 Visual Basic 的控制台应用程序项目。
+使用 `Imports` System. Linq 命名空间的语句创建 Visual Basic 控制台应用程序项目。
 
 ## <a name="see-also"></a>另请参阅
 
-- [LINQ 和字符串（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ 和文件目录 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ 和字符串 (Visual Basic)](linq-and-strings.md)
+- [LINQ 和文件目录 (Visual Basic)](linq-and-file-directories.md)
