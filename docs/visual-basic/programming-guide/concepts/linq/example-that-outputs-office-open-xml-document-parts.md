@@ -2,12 +2,12 @@
 title: 输出 Office Open XML 文档部件的示例
 ms.date: 07/20/2015
 ms.assetid: a951925b-c985-48ed-b215-2a68b58f1ae5
-ms.openlocfilehash: 47a4ac649fb370145962247e07e1d8841411cac0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f374967ec633dcb0dd0fab3ac77de669c65a219c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353501"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375182"
 ---
 # <a name="example-that-outputs-office-open-xml-document-parts-visual-basic"></a>输出 Office Open XML 文档部件的示例（Visual Basic）
 本主题演示如何打开 Office Open XML 文档并访问其中的部分。  
@@ -66,4 +66,4 @@ End Using
   
 ## <a name="see-also"></a>另请参阅
 
-- [Office Open XML WordprocessingML 文档的详细信息（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/details-of-office-open-xml-wordprocessingml-documents.md)
+- [Office Open XML WordprocessingML 文档的详细信息（Visual Basic）](details-of-office-open-xml-wordprocessingml-documents.md)

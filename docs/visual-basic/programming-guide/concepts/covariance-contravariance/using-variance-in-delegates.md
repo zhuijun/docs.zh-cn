@@ -1,17 +1,17 @@
 ---
-title: 在委托中使用变体
+title: 使用委托中的变体
 ms.date: 07/20/2015
 ms.assetid: 7b5c20f1-6416-46a3-94b6-f109c31c842c
-ms.openlocfilehash: 9c2aad0e4b9408939600938412fe5c3e73b5bf15
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 842392a1342f7d3689d4d1f2a2adb7470eeda05e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349034"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375779"
 ---
-# <a name="using-variance-in-delegates-visual-basic"></a>在委托中使用变体（Visual Basic）
+# <a name="using-variance-in-delegates-visual-basic"></a>使用委托中的变体 (Visual Basic)
 
-向委托分配方法时，协变和逆变为匹配委托类型和方法签名提供了灵活性。 协变允许方法具有的派生返回类型多于委托中定义的类型。 逆变允许方法具有的派生参数类型少于委托类型中的类型。
+向委托分配方法时，协变  和逆变  为匹配委托类型和方法签名提供了灵活性。 协变允许方法具有的派生返回类型多于委托中定义的类型。 逆变允许方法具有的派生参数类型少于委托类型中的类型。
 
 ## <a name="example-1-covariance"></a>示例 1：协变
 
@@ -50,13 +50,13 @@ End Class
 
 本示例演示如何将委托与具有参数的方法一起使用，这些参数的类型是委托签名参数类型的基类型。 通过逆变可以使用一个事件处理程序而不是多个单独的处理程序。 下面的示例使用两个委托：
 
-- 定义 <xref:System.Windows.Forms.KeyEventHandler>Button.KeyDown[ 事件签名的 ](xref:System.Windows.Forms.Control.KeyDown) 委托。 其签名为：
+- 定义 [Button.KeyDown](xref:System.Windows.Forms.Control.KeyDown) 事件签名的 <xref:System.Windows.Forms.KeyEventHandler> 委托。 其签名为：
 
    ```vb
    Public Delegate Sub KeyEventHandler(sender As Object, e As KeyEventArgs)
    ```
 
-- 定义 <xref:System.Windows.Forms.MouseEventHandler>Button.MouseClick[ 事件签名的 ](xref:System.Windows.Forms.Control.MouseDown) 委托。 其签名为：
+- 定义 [Button.MouseClick](xref:System.Windows.Forms.Control.MouseDown) 事件签名的 <xref:System.Windows.Forms.MouseEventHandler> 委托。 其签名为：
 
    ```vb
    Public Delegate Sub MouseEventHandler(sender As Object, e As MouseEventArgs)
@@ -88,5 +88,5 @@ End Sub
 
 ## <a name="see-also"></a>另请参阅
 
-- [委托中的变体 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md)
-- [对 Func 和 Action 泛型委托使用变体 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/using-variance-for-func-and-action-generic-delegates.md)
+- [委托中的变体 (Visual Basic)](variance-in-delegates.md)
+- [对 Func 和 Action 泛型委托使用变体 (Visual Basic)](using-variance-for-func-and-action-generic-delegates.md)

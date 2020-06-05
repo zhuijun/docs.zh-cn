@@ -2,12 +2,12 @@
 title: 功能转换的适用性
 ms.date: 07/20/2015
 ms.assetid: 3b74e134-e19b-44bc-8d06-e26c48305040
-ms.openlocfilehash: 292201f4964142126d428939807cb20f354a7d2f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: db24871e3763c5acc79cf21b4afb90a93ed8bd53
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345771"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84383697"
 ---
 # <a name="applicability-of-functional-transformation-visual-basic"></a>功能转换的适用性（Visual Basic）
 纯函数转换适用于多种情况。  
@@ -16,7 +16,7 @@ ms.locfileid: "74345771"
   
  此方法适用于乍看可能不是候选项的许多问题。 在独立或与 LINQ 一起使用时，应考虑对以下方面使用函数转换：  
   
-- 基于 XML 的文档。 使用任何 XML 方言的格式良好的数据均可以通过函数转换容易地操作。 有关详细信息，请参阅[XML 的功能转换（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)。  
+- 基于 XML 的文档。 使用任何 XML 方言的格式良好的数据均可以通过函数转换容易地操作。 有关详细信息，请参阅[XML 的功能转换（Visual Basic）](functional-transformation-of-xml.md)。  
   
 - 其他结构化文件格式。 从 Windows.ini 文件到纯文本文档，多数文件都有适于本身进行分析和转换的结构。  
   
@@ -26,7 +26,7 @@ ms.locfileid: "74345771"
   
 - 数学、统计和科学解决方案。 这些字段适用于操作大型数据集，以帮助用户处理可视化、评估或实际解决重要问题。  
   
- 如[重构为纯函数（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)中所述，使用纯函数是函数编程的一个示例。 除了直接好处外，使用纯函数还可对从函数转换角度考虑问题提供宝贵的经验。 这种方法也可能对程序和类设计产生重要影响。 当问题本身适于数据转换解决方案（如上所述）时更是如此。  
+ 如[重构为纯函数（Visual Basic）](refactoring-into-pure-functions.md)中所述，使用纯函数是函数编程的一个示例。 除了直接好处外，使用纯函数还可对从函数转换角度考虑问题提供宝贵的经验。 这种方法也可能对程序和类设计产生重要影响。 当问题本身适于数据转换解决方案（如上所述）时更是如此。  
   
  虽然受函数转换透视影响的设计不在本教程的范围内，但在以进程为中心作为操作者和以对象为中心作为操作者之间，他们更倾向于前者，生成的解决方案倾向于以一系列大规模转换而不是单独的对象状态更改的形式实现。  
   
@@ -34,6 +34,6 @@ ms.locfileid: "74345771"
   
 ## <a name="see-also"></a>另请参阅
 
-- [纯功能转换简介（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
-- [XML 的功能转换 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/functional-transformation-of-xml.md)
-- [重构为纯函数（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [纯功能转换简介（Visual Basic）](introduction-to-pure-functional-transformations.md)
+- [XML 的功能转换 (Visual Basic)](functional-transformation-of-xml.md)
+- [重构为纯函数（Visual Basic）](refactoring-into-pure-functions.md)
