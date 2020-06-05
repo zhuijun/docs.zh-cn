@@ -21,20 +21,20 @@ helpviewer_keywords:
 - current instance [Visual Basic], Me keyword
 - MyBase keyword [Visual Basic], relationship to similar programming elements
 ms.assetid: f8e241ae-b1ed-4886-9aa0-08c632154029
-ms.openlocfilehash: a21dfeb12e8d99f5f8b8afede084846711c299ab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b4470e5c178c0f66dc33956ea0131d4eabc51d46
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401429"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397462"
 ---
 # <a name="me-my-mybase-and-myclass-in-visual-basic"></a>Visual Basic 中的 Me、My、MyBase 和 MyClass
-`Me`、`My``MyBase`和`MyClass`在 Visual Basic 中具有相似的名称，但目的不同。 本主题介绍每个实体，以便区分它们。  
+`Me`Visual Basic 中，、、 `My` `MyBase` 和的 `MyClass` 名称相似，但用途不同。 本主题将介绍其中的每个实体，以便将它们区分开来。  
   
 ## <a name="me"></a>我  
- 关键字`Me`提供了一种引用代码当前正在执行的类或结构的特定实例的方法。 `Me`其活动类似于对象变量或引用当前实例的结构变量。 使用`Me`对于将有关类或结构当前执行实例的信息传递给另一个类、结构或模块中的过程特别有用。  
+ `Me`关键字提供了一种方法，用于引用当前执行代码的类或结构的特定实例。 `Me`的行为类似于引用当前实例的对象变量或结构变量。 使用 `Me` 对于将有关当前正在执行的类或结构实例的信息传递给另一个类、结构或模块中的过程特别有用。  
   
- 例如，假设您在模块中具有以下过程。  
+ 例如，假设你在模块中具有以下过程。  
   
 ```vb  
 Sub ChangeFormColor(FormName As Form)  
@@ -43,21 +43,21 @@ Sub ChangeFormColor(FormName As Form)
 End Sub  
 ```  
   
- 可以使用以下语句调用此过程并将<xref:System.Windows.Forms.Form>类的当前实例作为参数传递。  
+ 可以调用此过程，并 <xref:System.Windows.Forms.Form> 使用以下语句将类的当前实例作为参数传递。  
   
 ```vb  
 ChangeFormColor(Me)  
 ```  
   
 ## <a name="my"></a>My  
- 此功能`My`提供了对许多 .NET Framework 类的轻松直观访问，使 Visual Basic 用户能够与计算机、应用程序、设置、资源等进行交互。  
+ 此 `My` 功能提供对多个 .NET Framework 类的简单直观的访问，使 Visual Basic 用户可以与计算机、应用程序、设置、资源等交互。  
   
 ## <a name="mybase"></a>MyBase  
- 关键字`MyBase`的作用类似于引用类当前实例的基类的对象变量。 `MyBase`通常用于访问派生类中重写或隐藏基类成员。 `MyBase.New`用于从派生类构造函数显式调用基类构造函数。  
+ `MyBase`关键字的行为类似于引用类的当前实例的基类的对象变量。 `MyBase`通常用于访问在派生类中被重写或隐藏的基类成员。 `MyBase.New`用于从派生类构造函数中显式调用基类构造函数。  
   
 ## <a name="myclass"></a>MyClass  
- 关键字`MyClass`的作用类似于一个对象变量，它引用最初实现的类的当前实例。 `MyClass`与 类似`Me`，但上它的所有方法调用都被视为方法为`NotOverridable`。  
+ `MyClass`关键字的行为类似于引用最初实现的类的当前实例的对象变量。 `MyClass`类似于 `Me` ，但其上的所有方法调用都视为方法 `NotOverridable` 。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [继承的基础知识](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
+- [继承基础知识](../language-features/objects-and-classes/inheritance-basics.md)

@@ -1,13 +1,13 @@
 ---
-title: 如何：使用 Descendants 方法查找单个子代
+title: 如何：使用后代方法查找单个后代
 ms.date: 07/20/2015
 ms.assetid: 0c03468c-efc8-4140-98f3-fb67acd9e8e1
-ms.openlocfilehash: 1c1192c85a7244a9a03a2cd55144abcfb02dcbf1
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d3e193efb7cc050acc0e8113a892d24ad7262b16
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353001"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406893"
 ---
 # <a name="how-to-find-a-single-descendant-using-the-descendants-method-visual-basic"></a>如何：使用子代方法查找单个子代（Visual Basic）
 可以使用 <xref:System.Xml.Linq.XContainer.Descendants%2A> 轴方法快速编写代码来查找名称唯一的单个元素。 如果想要查找具有特定名称的特定后代，则此技术特别有用。 虽然可以编写代码以导航到需要的元素，但使用 <xref:System.Xml.Linq.XContainer.Descendants%2A> 轴编写代码通常更快更容易。  
@@ -82,4 +82,4 @@ GC3 Value
   
 ## <a name="see-also"></a>另请参阅
 
-- [基本查询（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)
+- [基本查询（LINQ to XML）（Visual Basic）](basic-queries-linq-to-xml.md)

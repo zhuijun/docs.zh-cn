@@ -2,21 +2,21 @@
 title: 异步程序中的控制流
 ms.date: 07/20/2015
 ms.assetid: b0443af7-c586-4cb0-b476-742ae4098a96
-ms.openlocfilehash: 94b2c2ea89f729e882229d4ecce7faa169c24267
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0c479b9dd2a691b1b353fac54ee3320a895b1c7f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347940"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396657"
 ---
-# <a name="control-flow-in-async-programs-visual-basic"></a>异步程序中的控制流（Visual Basic）
+# <a name="control-flow-in-async-programs-visual-basic"></a>异步程序中的控制流 (Visual Basic)
 
 可以使用 `Async` 和 `Await` 关键字更加轻松地编写和维护异步程序。 但是，如果不了解程序的运行方式，结果可能会让你大吃一惊。 此主题通过一个简单的异步程序跟踪控制流，以显示控制从一种方法移动到另一种方法的情况，以及每次所传输的信息。
 
 > [!NOTE]
 > `Async` 和 `Await` 关键字是在 Visual Studio 2012 中引入的。
 
-通常，可通过[Async](../../../../visual-basic/language-reference/modifiers/async.md)修饰符标记包含异步代码的方法。 在使用 async 修饰符标记的方法中，可以使用[Await （Visual Basic）](../../../../visual-basic/language-reference/operators/await-operator.md)运算符来指定方法的暂停位置，以等待调用的异步进程完成。 有关详细信息，请参阅[采用 Async 和 Await 的异步编程（Visual Basic）](../../../../visual-basic/programming-guide/concepts/async/index.md)。
+通常，可通过[Async](../../../language-reference/modifiers/async.md)修饰符标记包含异步代码的方法。 在使用 async 修饰符标记的方法中，可以使用[Await （Visual Basic）](../../../language-reference/operators/await-operator.md)运算符来指定方法的暂停位置，以等待调用的异步进程完成。 有关详细信息，请参阅[采用 Async 和 Await 的异步编程（Visual Basic）](index.md)。
 
 下面的示例使用异步方法以字符串的形式下载指定网站的内容，并显示该字符串的长度。 此示例包含以下两种方法。
 
@@ -117,21 +117,21 @@ Length of the downloaded string: 33946.
 
 1. 启动 Visual Studio。
 
-2. 在菜单栏上，依次选择 **“文件”** -&gt; **“新建”** -&gt; **“项目”** 。
+2. 在菜单栏上，依次选择“文件”  、“新建”  、“项目”  。
 
     **“新建项目”** 对话框随即打开。
 
 3. 在 "**已安装的模板**" 窗格中选择 " **Visual Basic**"，然后从项目类型列表中选择 " **WPF 应用程序**"。
 
-4. 输入 `AsyncTracer` 作为项目名称，然后选择“确定”按钮。
+4. 输入 `AsyncTracer` 作为项目名称，然后选择“确定”**** 按钮。
 
-    新项目将出现在“解决方案资源管理器”中。
+    新项目将出现在“解决方案资源管理器”  中。
 
 5. 在 Visual Studio 代码编辑器中，选择 **“MainWindow.xaml”** 选项卡。
 
-    如果此选项卡不可见，则在“解决方案资源管理器”中，打开 MainWindow.xaml 的快捷菜单，然后选择“查看代码”。
+    如果此选项卡不可见，则在“解决方案资源管理器”  中，打开 MainWindow.xaml 的快捷菜单，然后选择“查看代码”  。
 
-6. 在 MainWindow.xaml 的“XAML”视图中，将代码替换为以下代码。
+6. 在 MainWindow.xaml 的“XAML”  视图中，将代码替换为以下代码。
 
     ```vb
     <Window
@@ -147,7 +147,7 @@ Length of the downloaded string: 33946.
     </Window>
     ```
 
-    MainWindow.xaml 的“设计”视图中将显示一个简单的窗口，其中包含一个文本框和一个按钮。
+    MainWindow.xaml 的“设计”  视图中将显示一个简单的窗口，其中包含一个文本框和一个按钮。
 
 7. 对 <xref:System.Net.Http> 添加引用。
 
@@ -218,7 +218,7 @@ Length of the downloaded string: 33946.
     End Class
     ```
 
-10. 按 F5 键以运行程序，然后选择 **“启动”** 按钮。
+10. 按 F5 键运行程序，然后选择“启动”**** 按钮。
 
     应显示以下输出：
 
@@ -256,17 +256,17 @@ Length of the downloaded string: 33946.
 
 在 `startButton_Click` 调用 `AccessTheWebAsync` 及 `AccessTheWebAsync` 调用异步 <xref:System.Net.Http.HttpClient> 方法 <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29> 时，前两个显示行会跟踪路径。 下图概述了从方法到方法的调用。
 
-![步骤1和步骤2](../../../../csharp/programming-guide/concepts/async/media/asynctrace-onetwo.png "AsyncTrace-ONETWO")
+![步骤 1 和步骤 2](../../../../csharp/programming-guide/concepts/async/media/asynctrace-onetwo.png "AsyncTrace-ONETWO")
 
-`AccessTheWebAsync` 和 `client.GetStringAsync` 的返回类型都是 <xref:System.Threading.Tasks.Task%601>。 对于 `AccessTheWebAsync`，TResult 是一个整数。 对于 `GetStringAsync`，TResult 是一个字符串。 有关异步方法返回类型的详细信息，请参阅[异步返回类型（Visual Basic）](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)。
+`AccessTheWebAsync` 和 `client.GetStringAsync` 的返回类型都是 <xref:System.Threading.Tasks.Task%601>。 对于 `AccessTheWebAsync`，TResult 是一个整数。 对于 `GetStringAsync`，TResult 是一个字符串。 有关异步方法返回类型的详细信息，请参阅[异步返回类型（Visual Basic）](async-return-types.md)。
 
 在控制切换回调用方时，任务返回异步方法将返回一个任务实例。 在调用的方法中遇到 `Await` 运算符或在调用的方法结束时，控制会从异步方法返回其调用方。 标记为“3”到“6”的显示行将跟踪过程的这一部分。
 
 ### <a name="step-three"></a>步骤 3
 
-在 `AccessTheWebAsync` 中，调用异步方法 <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29> 以下载目标网页的内容。 返回 `client.GetStringAsync` 时，控制将从 `AccessTheWebAsync` 返回到 `client.GetStringAsync`。
+在 `AccessTheWebAsync` 中，调用异步方法 <xref:System.Net.Http.HttpClient.GetStringAsync%28System.String%29> 以下载目标网页的内容。 返回 `client.GetStringAsync` 时，控制将从 `client.GetStringAsync` 返回到 `AccessTheWebAsync`。
 
-`client.GetStringAsync` 方法将返回分配给 `getStringTask` 中的 `AccessTheWebAsync` 变量的字符串任务。 该示例程序中的以下行说明了对 `client.GetStringAsync` 的调用和赋值。
+`client.GetStringAsync` 方法将返回分配给 `AccessTheWebAsync` 中的 `getStringTask` 变量的字符串任务。 该示例程序中的以下行说明了对 `client.GetStringAsync` 的调用和赋值。
 
 ```vb
 Dim getStringTask As Task(Of String) = client.GetStringAsync("https://msdn.microsoft.com")
@@ -280,13 +280,13 @@ THREE: Back in AccessTheWebAsync.
            About to await getStringTask & return a Task<int> to startButton_Click.
 ```
 
- 当 `AccessTheWebAsync` 处于等待状态时，下面的语句将暂停 `getStringTask` 中的进度。
+ 当 `getStringTask` 处于等待状态时，下面的语句将暂停 `AccessTheWebAsync` 中的进度。
 
 ```vb
 Dim urlContents As String = Await getStringTask
 ```
 
-下图显示了从 `client.GetStringAsync` 到向赋值 `getStringTask` 的控制流，以及从创建 `getStringTask` 到 Await 运算符的应用程序。
+下图显示了从 `client.GetStringAsync` 到的赋值 `getStringTask` 以及从创建 `getStringTask` 到 Await 运算符的应用程序的控制流。
 
 ![步骤3](../../../../csharp/programming-guide/concepts/async/media/asynctrace-three.png "AsyncTrace-三")
 
@@ -315,7 +315,7 @@ FOUR:  Back in startButton_Click.
            About to await getLengthTask -- no caller to return to.
 ```
 
-当 `startButton_Click` 处于等待状态时，`getLengthTask` 中的进度将挂起。 下面的赋值语句将挂起 `startButton_Click`，直到完成 `AccessTheWebAsync`。
+当 `getLengthTask` 处于等待状态时，`startButton_Click` 中的进度将挂起。 下面的赋值语句将挂起 `startButton_Click`，直到完成 `AccessTheWebAsync`。
 
 ```vb
 Dim contentLength As Integer = Await getLengthTask
@@ -336,11 +336,11 @@ FIVE:  Back in AccessTheWebAsync.
            Exiting from AccessTheWebAsync.
 ```
 
-return 语句 `urlContents.Length` 的操作数存储于 `AccessTheWebAsync` 返回的任务中。 Await 表达式从 `getLengthTask` 中的 `startButton_Click` 检索该值。
+return 语句 `urlContents.Length` 的操作数存储于 `AccessTheWebAsync` 返回的任务中。 Await 表达式从 `startButton_Click` 中的 `getLengthTask` 检索该值。
 
 下图显示了完成 `client.GetStringAsync`（和 `getStringTask`）后控制的转移。
 
-![步骤5](../../../../csharp/programming-guide/concepts/async/media/asynctrace-five.png "AsyncTrace-五")
+![步骤 5](../../../../csharp/programming-guide/concepts/async/media/asynctrace-five.png "AsyncTrace-五")
 
 `AccessTheWebAsync` 将一直运行直到完成，且控制将返回到 `startButton_Click`，它正在等待完成。
 
@@ -365,11 +365,11 @@ Dim contentLength As Integer = Await getLengthTask
 
 下图显示从 `AccessTheWebAsync` 到 `startButton_Click` 的控制的返回。
 
-![步骤六](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace-六")
+![步骤 6](../../../../csharp/programming-guide/concepts/async/media/asynctrace-six.png "AsyncTrace-六")
 
 ## <a name="see-also"></a>另请参阅
 
-- [使用 Async 和 Await 的异步编程 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [异步返回类型 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
-- [演练：使用 Async 和 Await 访问 Web (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [使用 Async 和 Await 的异步编程 (Visual Basic)](index.md)
+- [异步返回类型 (Visual Basic)](async-return-types.md)
+- [演练：使用 Async 和 Await 访问 Web (Visual Basic)](walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Async Sample: Control Flow in Async Programs (C# and Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)（异步示例：异步程序中的控制流（C# 和 Visual Basic））

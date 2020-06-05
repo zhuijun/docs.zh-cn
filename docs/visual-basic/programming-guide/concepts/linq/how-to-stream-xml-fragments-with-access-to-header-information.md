@@ -2,17 +2,17 @@
 title: 如何：通过对标头信息的访问流式处理 XML 片段
 ms.date: 07/20/2015
 ms.assetid: effd10df-87c4-4d7a-8a9a-1434d829dca5
-ms.openlocfilehash: 325609b9f8cf1feebcb4be1fcfd0122e12100156
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 8d0543ff5a772768292c0e3117f41bea9367d23a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636687"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397682"
 ---
 # <a name="how-to-stream-xml-fragments-with-access-to-header-information-visual-basic"></a>如何：通过对标头信息的访问来流式处理 XML 片段（Visual Basic）
 有时，您必须读取任意大的 XML 文件并在编写您的应用程序时可以预测应用程序的内存需求量。 如果您试图用大 XML 文件填充 XML 树，则内存占用量将与文件大小成正比，也就是说会占用过多内存。 因此，您应改用流处理技术。  
   
- 一种选择是使用 <xref:System.Xml.XmlReader> 来编写应用程序。 不过，您可能希望使用 LINQ 来查询 XML 树。 在这种情况下，您可以编写自己的自定义轴方法。 有关详细信息，请参阅[如何：编写 LINQ to XML 轴方法（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/how-to-write-a-linq-to-xml-axis-method.md)。  
+ 一种选择是使用 <xref:System.Xml.XmlReader> 来编写应用程序。 但你可能需要使用 LINQ 来查询 XML 树。 在这种情况下，您可以编写自己的自定义轴方法。 有关详细信息，请参阅[如何：编写 LINQ to XML 轴方法（Visual Basic）](how-to-write-a-linq-to-xml-axis-method.md)。  
   
  若要编写您自己的轴方法，请编写一个小方法，让该方法使用 <xref:System.Xml.XmlReader> 来读取各个节点，直到达到您感兴趣的节点之一。 该方法然后调用 <xref:System.Xml.Linq.XNode.ReadFrom%2A>，后者将从 <xref:System.Xml.XmlReader> 中读取数据并实例化 XML 片段。 然后，您可以对自定义轴方法编写 LINQ 查询。  
   
@@ -232,4 +232,4 @@ End Class
   
 ## <a name="see-also"></a>另请参阅
 
-- [高级 LINQ to XML 编程（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [高级 LINQ to XML 编程（Visual Basic）](advanced-linq-to-xml-programming.md)

@@ -9,15 +9,15 @@ helpviewer_keywords:
 - XML documents [Visual Basic], creating
 - document literal [Visual Basic]
 ms.assetid: f7bbee56-0911-41de-b907-96f20450137b
-ms.openlocfilehash: db77cccd26c87e271d6db45ce514ab6dabbc53e3
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3a2182d2937827bc8dc45e22307a3668420261a2
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349383"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400197"
 ---
 # <a name="xml-document-literal-visual-basic"></a>XML 文档文本 (Visual Basic)
-表示 <xref:System.Xml.Linq.XDocument> 对象的文本。  
+表示对象的文本 <xref:System.Xml.Linq.XDocument> 。  
   
 ## <a name="syntax"></a>语法  
   
@@ -28,14 +28,14 @@ rootElement
 [ piCommentList ]  
 ```  
   
-## <a name="parts"></a>部件  
+## <a name="parts"></a>组成部分  
   
-|术语|Definition|  
+|术语|定义|  
 |---|---|  
 |`encoding`|可选。 声明文档使用的编码的文本文本。|  
 |`standalone`|可选。 文本。 必须是 "是" 或 "否"。|  
-|`piCommentList`|可选。 XML 处理指令和 XML 注释的列表。 采用以下格式：<br /><br /> `piComment [` `piComment` `... ]`<br /><br /> 每个 `piComment` 可以是以下各项之一：<br /><br /> -   [XML 处理指令文本](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md)。<br />-   [XML 注释文本](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)。|  
-|`rootElement`|必需。 文档的根元素。 格式为以下格式之一：<br /><br /> <ul><li>[XML 元素文本](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)。</li><li>格式 `<%=` `elementExp` `%>`的嵌入式表达式。 `elementExp` 返回下列项之一：<br /><br /> <ul><li>一个 <xref:System.Xml.Linq.XElement> 对象。</li><li>一个集合，其中包含一个 <xref:System.Xml.Linq.XElement> 对象和任意数量的 <xref:System.Xml.Linq.XProcessingInstruction> 和 <xref:System.Xml.Linq.XComment> 对象。</li></ul></li></ul><br /> 有关详细信息，请参阅[XML 中的嵌入式表达式](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)。|  
+|`piCommentList`|可选。 XML 处理指令和 XML 注释的列表。 采用以下格式：<br /><br /> `piComment [` `piComment` `... ]`<br /><br /> 每个 `piComment` 可以是以下各项之一：<br /><br /> -   [XML 处理指令文本](xml-processing-instruction-literal.md)。<br />-   [XML 注释文本](xml-comment-literal.md)。|  
+|`rootElement`|必需。 文档的根元素。 格式为以下格式之一：<br /><br /> <ul><li>[XML 元素文本](xml-element-literal.md)。</li><li>窗体的嵌入式表达式 `<%=` `elementExp` `%>` 。 `elementExp`返回以下内容之一：<br /><br /> <ul><li>一个 <xref:System.Xml.Linq.XElement> 对象。</li><li>一个集合，其中包含一个 <xref:System.Xml.Linq.XElement> 对象和任意数量的 <xref:System.Xml.Linq.XProcessingInstruction> 和 <xref:System.Xml.Linq.XComment> 对象。</li></ul></li></ul><br /> 有关详细信息，请参阅[XML 中的嵌入式表达式](../../programming-guide/language-features/xml/embedded-expressions-in-xml.md)。|  
   
 ## <a name="return-value"></a>返回值  
  一个 <xref:System.Xml.Linq.XDocument> 对象。  
@@ -61,9 +61,9 @@ rootElement
 - <xref:System.Xml.Linq.XProcessingInstruction>
 - <xref:System.Xml.Linq.XComment>
 - <xref:System.Xml.Linq.XDocument>
-- [XML 处理指令文本](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md)
-- [XML 注释文本](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)
-- [XML 元素文本](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
-- [XML 文本](../../../visual-basic/language-reference/xml-literals/index.md)
-- [在 Visual Basic 中创建 XML](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
-- [XML 中的嵌入式表达式](../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md)
+- [XML 处理指令文本](xml-processing-instruction-literal.md)
+- [XML 注释文本](xml-comment-literal.md)
+- [XML 元素文本](xml-element-literal.md)
+- [XML 文本](index.md)
+- [在 Visual Basic 中创建 XML](../../programming-guide/language-features/xml/creating-xml.md)
+- [XML 中的嵌入式表达式](../../programming-guide/language-features/xml/embedded-expressions-in-xml.md)

@@ -2,12 +2,12 @@
 title: 数据分区
 ms.date: 07/20/2015
 ms.assetid: 69c59379-b66e-422c-b324-5b5c07760ef7
-ms.openlocfilehash: 2ab4e27ef6d825b9100fc3c15b7a9554ae49e516
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 34749f9d7b137bade66b6103650871246c3cc532
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353154"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406841"
 ---
 # <a name="partitioning-data-visual-basic"></a>数据分区（Visual Basic）
 LINQ 中的分区是指将输入序列划分为两个部分的操作，无需重新排列元素，然后返回其中一个部分。  
@@ -20,7 +20,7 @@ LINQ 中的分区是指将输入序列划分为两个部分的操作，无需重
   
 ## <a name="operators"></a>运算符  
   
-|运算符名称|说明|Visual Basic 查询表达式语法|更多信息|  
+|运算符名称|说明|Visual Basic 查询表达式语法|详细信息|  
 |-------------------|-----------------|------------------------------------------|----------------------|  
 |Skip|跳过序列中指定位置之前的元素。|`Skip`|<xref:System.Linq.Enumerable.Skip%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Skip%2A?displayProperty=nameWithType>|  
 |SkipWhile|基于谓词函数跳过元素，直到元素不符合条件。|`Skip While`|<xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=nameWithType>|  
@@ -29,31 +29,31 @@ LINQ 中的分区是指将输入序列划分为两个部分的操作，无需重
   
 ## <a name="query-expression-syntax-examples"></a>查询表达式语法示例  
   
-### <a name="skip"></a>Skip  
- 下面的代码示例使用 Visual Basic 中的 `Skip` 子句在返回数组中的剩余字符串之前，跳过字符串数组中的前四个字符串。  
+### <a name="skip"></a>跳过  
+ 下面的代码示例使用 `Skip` Visual Basic 中的子句在返回数组中的剩余字符串之前，跳过字符串数组中的前四个字符串。  
   
  [!code-vb[CsLINQPartitioning#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#1)]  
   
 ### <a name="skipwhile"></a>SkipWhile  
- 下面的代码示例使用 Visual Basic 中的 `Skip While` 子句跳过数组中的字符串，而字符串的第一个字母为 "a"。 返回数组中的剩余字符串。  
+ 下面的代码示例使用 `Skip While` Visual Basic 中的子句跳过数组中的字符串，而字符串的第一个字母为 "a"。 返回数组中的剩余字符串。  
   
  [!code-vb[CsLINQPartitioning#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#2)]  
   
 ### <a name="take"></a>Take  
- 下面的代码示例使用 Visual Basic 中的 `Take` 子句返回字符串数组中的前两个字符串。  
+ 下面的代码示例使用 `Take` Visual Basic 中的子句来返回字符串数组中的前两个字符串。  
   
  [!code-vb[CsLINQPartitioning#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#3)]  
   
 ### <a name="takewhile"></a>TakeWhile  
- 下面的代码示例使用 Visual Basic 中的 `Take While` 子句返回数组中的字符串，而字符串的长度为5个或更少。  
+ 下面的代码示例使用 `Take While` Visual Basic 中的子句来返回数组中的字符串，而字符串的长度为5个或更少。  
   
  [!code-vb[CsLINQPartitioning#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQPartitioning/VB/Partitioning.vb#4)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Linq>
-- [标准查询运算符概述 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Skip 子句](../../../../visual-basic/language-reference/queries/skip-clause.md)
-- [Skip While 子句](../../../../visual-basic/language-reference/queries/skip-while-clause.md)
-- [Take 子句](../../../../visual-basic/language-reference/queries/take-clause.md)
-- [Take While 子句](../../../../visual-basic/language-reference/queries/take-while-clause.md)
+- [标准查询运算符概述 (Visual Basic)](standard-query-operators-overview.md)
+- [Skip 子句](../../../language-reference/queries/skip-clause.md)
+- [Skip While 子句](../../../language-reference/queries/skip-while-clause.md)
+- [Take 子句](../../../language-reference/queries/take-clause.md)
+- [Take While 子句](../../../language-reference/queries/take-while-clause.md)

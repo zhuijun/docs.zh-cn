@@ -12,12 +12,12 @@ helpviewer_keywords:
 - TypeOf operator [Visual Basic]
 - compatible data types [Visual Basic]
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
-ms.openlocfilehash: 22af5b8f8488ca44e388596530decd52e33525dc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0cce36073b53442bce63f966f3bd94bd5d70d2a8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350895"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406319"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf 运算符 (Visual Basic)
 检查表达式的结果的运行时类型是否与指定的类型兼容。
@@ -32,7 +32,7 @@ result = TypeOf objectexpression Is typename
 result = TypeOf objectexpression IsNot typename  
 ```  
   
-## <a name="parts"></a>部件  
+## <a name="parts"></a>组成部分  
  `result`  
  返回。 一个 `Boolean` 值。  
   
@@ -47,13 +47,13 @@ result = TypeOf objectexpression IsNot typename
   
 |`typename` 的类型类别|兼容性条件|  
 |---------------------------------|-----------------------------|  
-|实例|`objectexpression` 类型 `typename` 或从 `typename` 继承|  
-|结构|`objectexpression` 的类型为 `typename`|  
-|接口|`objectexpression` 实现 `typename`，或继承自实现的类 `typename`|  
+|类|`objectexpression` 属于类型 `typename` 或继承自 `typename`|  
+|结构|`objectexpression` 属于类型 `typename`|  
+|接口|`objectexpression` 实现 `typename` 或继承自实现 `typename` 的类|  
   
  如果 `objectexpression` 的运行时类型满足兼容性条件，则 `result` 是 `True`。 否则 `result` 为 `False`。  如果 `objectexpression` 为 null，则 `TypeOf`...`Is` 返回 `False`，...`IsNot` 返回 `True`。  
   
- `TypeOf` 始终与 `Is` 关键字一起使用来构造 `TypeOf`...`Is` 表达式，或使用 `IsNot` 关键字来构造 `TypeOf`...`IsNot` 表达式。  
+ `TypeOf` 始终与 `Is` 关键字一起使用来构造 `TypeOf`...`Is` 表达式，或与 `IsNot` 关键字一起使用来构造 `TypeOf`...`IsNot` 表达式。  
   
 ## <a name="example"></a>示例  
  下面的示例使用 `TypeOf`...`Is` 表达式测试具有不同数据类型的两个对象引用变量的类型兼容性。  
@@ -64,9 +64,9 @@ result = TypeOf objectexpression IsNot typename
   
 ## <a name="see-also"></a>另请参阅
 
-- [Is 运算符](../../../visual-basic/language-reference/operators/is-operator.md)
-- [IsNot 运算符](../../../visual-basic/language-reference/operators/isnot-operator.md)
-- [Visual Basic 中的比较运算符](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Visual Basic 中的运算符优先级](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [按功能列出的运算符](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [运算符和表达式](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
+- [Is 运算符](is-operator.md)
+- [IsNot 运算符](isnot-operator.md)
+- [Comparison Operators in Visual Basic](../../programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Visual Basic 中的运算符优先级](operator-precedence.md)
+- [按功能列出的运算符](operators-listed-by-functionality.md)
+- [运算符和表达式](../../programming-guide/language-features/operators-and-expressions/index.md)

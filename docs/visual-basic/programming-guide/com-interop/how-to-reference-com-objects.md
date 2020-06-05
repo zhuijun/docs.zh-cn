@@ -8,17 +8,17 @@ helpviewer_keywords:
 - COM objects, referencing
 - interop assemblies
 ms.assetid: 9c518fb4-27d9-4112-9e6a-5a7d0210af6f
-ms.openlocfilehash: ea0e1d9b0ae9f151d901c425512508ba7bc05343
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 2e2cbac6fad5e1686b7383c44619b8c6f5326483
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524354"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396799"
 ---
 # <a name="how-to-reference-com-objects-from-visual-basic"></a>如何：从 Visual Basic 中引用 COM 对象
 在 Visual Basic 中，添加对具有类型库的 COM 对象的引用需要为 COM 库创建互操作程序集。 对 COM 对象成员的引用将路由到互操作程序集，然后转发到实际的 COM 对象。 将 COM 对象的响应路由到互操作程序集并转发到 .NET Framework 应用程序。  
   
- 通过在 .NET 程序集中嵌入 COM 对象的类型信息，可以引用 COM 对象，而无需使用互操作程序集。 若要嵌入类型信息，请将对 COM 对象的引用的 `Embed Interop Types` 属性设置为 `True`。 如果要使用命令行编译器进行编译，请使用 `/link` 选项来引用 COM 库。 有关详细信息，请参阅[-link （Visual Basic）](../../../visual-basic/reference/command-line-compiler/link.md)。  
+ 通过在 .NET 程序集中嵌入 COM 对象的类型信息，可以引用 COM 对象，而无需使用互操作程序集。 若要嵌入类型信息，请将对 `Embed Interop Types` COM 对象的引用的属性设置为 `True` 。 如果要使用命令行编译器进行编译，请使用 `/link` 选项来引用 COM 库。 有关详细信息，请参阅[-link （Visual Basic）](../../reference/command-line-compiler/link.md)。  
   
  当你在集成开发环境（IDE）中添加对类型库的引用时，Visual Basic 会自动创建互操作程序集。 在命令行中工作时，可以使用 Tlbimp 实用工具手动创建互操作程序集。  
   
@@ -28,7 +28,7 @@ ms.locfileid: "72524354"
   
 2. 从 COM 对象列表中选择要使用的组件。  
   
-3. 若要简化对互操作程序集的访问，请将 `Imports` 语句添加到要在其中使用 COM 对象的类或模块的顶部。 例如，下面的代码示例为 `Microsoft InkEdit Control 1.0` 库中引用的对象导入命名空间 `INKEDLib`。  
+3. 若要简化对互操作程序集的访问，请将 `Imports` 语句添加到要在其中使用 COM 对象的类或模块的顶部。 例如，下面的代码示例导入 `INKEDLib` 库中引用的对象的命名空间 `Microsoft InkEdit Control 1.0` 。  
   
      [!code-vb[VbVbalrInterop#40](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#40)]  
   
@@ -52,11 +52,11 @@ ms.locfileid: "72524354"
   
      可以使用 Tlbimp 为类型库创建互操作程序集，即使对于未注册的 COM 对象也是如此。 但是，互操作程序集所引用的 COM 对象必须在要使用它们的计算机上正确注册。 你可以使用 Windows 操作系统随附的 Regsvr32 实用程序来注册 COM 对象。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [COM 互操作](../../../visual-basic/programming-guide/com-interop/index.md)
+- [COM 互操作](index.md)
 - [Tlbimp.exe（类型库导入程序）](../../../framework/tools/tlbimp-exe-type-library-importer.md)
 - [Tlbexp.exe（类型库导出程序）](../../../framework/tools/tlbexp-exe-type-library-exporter.md)
-- [演练：使用 COM 对象实现继承](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
-- [互操作性疑难解答](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
-- [Imports 语句（.NET 命名空间和类型）](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
+- [演练：使用 COM 对象实现继承](walkthrough-implementing-inheritance-with-com-objects.md)
+- [互操作性疑难解答](troubleshooting-interoperability.md)
+- [Imports 语句（.NET 命名空间和类型）](../../language-reference/statements/imports-statement-net-namespace-and-type.md)

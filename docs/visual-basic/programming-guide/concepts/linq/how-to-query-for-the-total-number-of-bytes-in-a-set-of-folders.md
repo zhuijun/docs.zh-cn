@@ -2,14 +2,14 @@
 title: 如何：查询一组文件夹中的总字节数 (LINQ)
 ms.date: 07/20/2015
 ms.assetid: bfe85ed2-44dc-4ef1-aac7-241622b80a69
-ms.openlocfilehash: 25e2c2894d9feccf42ee92bdddd17d8558779e6c
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: c6490c8863b5762b0b487c6f3f3b2809e16d6519
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78266971"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397929"
 ---
-# <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-visual-basic"></a>如何：查询一组文件夹 （LINQ） 中的字节总数（可视基本）
+# <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-visual-basic"></a>如何：查询一组文件夹中的总字节数（LINQ）（Visual Basic）
 此示例演示如何检索由指定文件夹及其所有子文件夹中的所有文件使用的字节总数。  
   
 ## <a name="example"></a>示例  
@@ -72,9 +72,9 @@ End Module
  查询调用单独的方法来获取文件长度。 这是为了使用在以下情况下会引发的可能异常：在 `GetFiles` 调用中创建了 <xref:System.IO.FileInfo> 对象之后，在其他线程中删除了文件。 即使已创建 <xref:System.IO.FileInfo> 对象，该异常也可能出现，因为 <xref:System.IO.FileInfo> 对象会在首次访问其 <xref:System.IO.FileInfo.Length%2A> 属性时，尝试使用最近长度刷新该属性。 通过将此操作置于查询外部的 try-catch 块中，代码可遵循在查询中避免可能导致副作用的操作这一规则。 一般情况下，在使用异常时必须格外谨慎，以确保应用程序不会处于未知状态。  
   
 ## <a name="compile-the-code"></a>编译代码  
-创建可视化基本控制台应用程序项目，包含 System.Linq 命名空间的`Imports`语句。
+使用 `Imports` System. Linq 命名空间的语句创建 Visual Basic 控制台应用程序项目。
   
 ## <a name="see-also"></a>另请参阅
 
-- [LINQ to Objects (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
-- [LINQ 和文件目录 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ to Objects (Visual Basic)](linq-to-objects.md)
+- [LINQ 和文件目录 (Visual Basic)](linq-and-file-directories.md)

@@ -2,12 +2,12 @@
 title: 处理异步应用程序中的可重入性
 ms.date: 07/20/2015
 ms.assetid: ef3dc73d-13fb-4c5f-a686-6b84148bbffe
-ms.openlocfilehash: 110298a2ca937dbf39c94cfe9df29afb2e76a91c
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 2d1af14016f82b5de875d3638b132e14c7d2280d
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021493"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84396631"
 ---
 # <a name="handling-reentrancy-in-async-apps-visual-basic"></a>在异步应用程序中处理重入 (Visual Basic)
 
@@ -17,13 +17,13 @@ ms.locfileid: "82021493"
 > 若要运行该示例，计算机上必须安装 Visual Studio 2012 或更高版本和 .NET Framework 4.5 或更高版本。
 
 > [!NOTE]
-> 传输层安全性 (TLS) 版本 1.2 现在是在应用开发中使用的最低版本。 如果应用的目标早于 4.7 的 .NET 框架版本，请参阅以下有关[传输层安全性 （TLS） 最佳实践的文章](../../../../framework/network-programming/tls.md)。
+> 传输层安全性 (TLS) 版本 1.2 现在是在应用开发中使用的最低版本。 如果应用面向低于 4.7 的 .NET Framework 版本，请参阅以下文章，了解 [.NET Framework 传输层安全性 (TLS) 的最佳做法](../../../../framework/network-programming/tls.md)。
 
 ## <a name="recognizing-reentrancy"></a><a name="BKMK_RecognizingReentrancy"></a>识别重新进入
 
-在本主题中的示例中，用户选择“开始”**** 按钮以启动一个异步应用，该应用下载一系列网站并计算下载的总字节数。 该示例的同步版本以相同方式进行响应（无论用户选择该按钮多少次），因为在第一次选择之后，UI 线程会忽略这些事件，直到应用完成运行。 但是，在异步应用中，UI 线程会继续响应，你可能会在它完成之前重新进入异步操作。
+在本主题中的示例中，用户选择“开始”  按钮以启动一个异步应用，该应用下载一系列网站并计算下载的总字节数。 该示例的同步版本以相同方式进行响应（无论用户选择该按钮多少次），因为在第一次选择之后，UI 线程会忽略这些事件，直到应用完成运行。 但是，在异步应用中，UI 线程会继续响应，你可能会在它完成之前重新进入异步操作。
 
-下面的示例显示用户仅选择“开始”**** 按钮一次时的预期输出。 下载网站的列表会出现，其中包含每个站点的大小（以字节为单位）。 总字节数会在结尾处显示。
+下面的示例显示用户仅选择“开始”  按钮一次时的预期输出。 下载网站的列表会出现，其中包含每个站点的大小（以字节为单位）。 总字节数会在结尾处显示。
 
 ```console
 1. msdn.microsoft.com/library/hh191443.aspx                83732
@@ -77,25 +77,25 @@ TOTAL bytes returned:  890591
 
 可以滚动到本主题末尾来评审生成此输出的代码。 可以通过将解决方案下载到本地计算机，然后运行 WebsiteDownload 项目，或是通过使用本主题末尾的代码创建自己的项目，来体验该代码。有关详细信息和说明，请参阅[检查并运行示例应用](#BKMD_SettingUpTheExample)。
 
-## <a name="handling-reentrancy"></a><a name="BKMK_HandlingReentrancy"></a>处理重化
+## <a name="handling-reentrancy"></a><a name="BKMK_HandlingReentrancy"></a>处理重新进入
 
 可以采用各种方式处理重新进入，具体取决于希望应用执行的操作。 本主题展示了以下示例：
 
 - [禁用“开始”按钮](#BKMK_DisableTheStartButton)
 
-  在操作运行期间禁用“开始”**** 按钮，以便用户无法中断它。
+  在操作运行期间禁用“开始”  按钮，以便用户无法中断它。
 
-- [取消并重新启动操作](#BKMK_CancelAndRestart)
+- [取消和重启操作](#BKMK_CancelAndRestart)
 
-  当用户再次选择“开始”**** 按钮时取消仍在运行的任何操作，然后让最近请求的操作继续运行。
+  当用户再次选择“开始”  按钮时取消仍在运行的任何操作，然后让最近请求的操作继续运行。
 
 - [运行多个操作并将输出排入队列](#BKMK_RunMultipleOperations)
 
   允许所有请求的操作异步运行，但是会协调输出的显示，以便每个操作的结果按顺序一起显示。
 
-### <a name="disable-the-start-button"></a><a name="BKMK_DisableTheStartButton"></a>禁用"开始"按钮
+### <a name="disable-the-start-button"></a><a name="BKMK_DisableTheStartButton"></a>禁用“开始”按钮
 
-可以通过在 `StartButton_Click` 事件处理程序顶部禁用“开始”**** 按钮，在操作运行期间阻止该按钮。 随后可以在操作完成时从 `Finally` 块中重新启用中该按钮，以便用户可以再次运行应用。
+可以通过在 `StartButton_Click` 事件处理程序顶部禁用“开始”  按钮，在操作运行期间阻止该按钮。 随后可以在操作完成时从 `Finally` 块中重新启用中该按钮，以便用户可以再次运行应用。
 
 下面的代码演示了这些更改（使用星号标记）。 可以将更改添加到本主题末尾的代码中，或从[异步示例：.NET 桌面应用中的重新进入](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06)下载已完成的应用。 项目名是 DisableStartButton。
 
@@ -124,11 +124,11 @@ End Sub
 
 ### <a name="cancel-and-restart-the-operation"></a><a name="BKMK_CancelAndRestart"></a>取消和重启操作
 
-可以使“开始”**** 按钮保持活动状态而不是禁用该按钮，但是如果用户再次选择该按钮，则取消已在运行的操作，让最近开始的操作继续运行。
+可以使“开始”  按钮保持活动状态而不是禁用该按钮，但是如果用户再次选择该按钮，则取消已在运行的操作，让最近开始的操作继续运行。
 
-有关取消的详细信息，请参阅[微调您的异步应用程序（可视化基本）。](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
+有关取消的详细信息，请参阅[微调异步应用程序（Visual Basic）](fine-tuning-your-async-application.md)。
 
-若要设置此方案，请对[检查并运行示例应用](#BKMD_SettingUpTheExample)中提供的基本代码进行以下更改。 您还可以从 Async 示例下载已完成的应用程序[：在 .NET 桌面应用程序中的重新转换](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06)。 此项目的名称是 CancelAndRestart。
+若要设置此方案，请对[检查并运行示例应用](#BKMD_SettingUpTheExample)中提供的基本代码进行以下更改。 还可以从[异步示例：.NET 桌面应用中的重新进入](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06)下载压缩文件。 此项目的名称是 CancelAndRestart。
 
 1. 声明 <xref:System.Threading.CancellationTokenSource> 变量 `cts`，它处于所有方法的范围内。
 
@@ -139,7 +139,7 @@ End Sub
         Dim cts As CancellationTokenSource
     ```
 
-2. 在 `StartButton_Click` 中，确定操作是否已在进行。 如果 值`cts`为`Nothing`，则没有操作已处于活动状态。 如果值不是`Nothing`，则已运行的操作将被取消。
+2. 在 `StartButton_Click` 中，确定操作是否已在进行。 如果的值 `cts` 为 `Nothing` ，则没有任何操作处于活动状态。 如果值不是 `Nothing` ，则取消已在运行的操作。
 
     ```vb
     ' *** If a download process is already underway, cancel it.
@@ -156,7 +156,7 @@ End Sub
     cts = newCTS
     ```
 
-4. 在`StartButton_Click`的末尾，当前过程已完成，因此将 值`cts`设置为`Nothing`返回 。
+4. 结束时 `StartButton_Click` ，当前进程完成，因此将的值设置 `cts` 为 `Nothing` 。
 
     ```vb
     ' *** When the process completes, signal that another process can proceed.
@@ -248,7 +248,7 @@ Private Async Function AccessTheWebAsync(ct As CancellationToken) As Task
 End Function
 ```
 
-如果在运行此应用时多次选择 **"开始"** 按钮，则应生成类似于以下输出的结果：
+如果在此应用运行期间多次选择 "**开始**" 按钮，则它应生成类似于以下输出的结果：
 
 ```console
 1. msdn.microsoft.com/library/hh191443.aspx                83732
@@ -278,15 +278,15 @@ TOTAL bytes returned:  890591
 
 若要消除部分列表，请对 `StartButton_Click` 中的第一行代码取消注释以在用户每次重新启动操作时清除文本框。
 
-### <a name="run-multiple-operations-and-queue-the-output"></a><a name="BKMK_RunMultipleOperations"></a>运行多个操作并排队输出
+### <a name="run-multiple-operations-and-queue-the-output"></a><a name="BKMK_RunMultipleOperations"></a>运行多个操作并将输出排入队列
 
-此第三个示例最复杂，因为应用会在用户每次选择“开始”**** 按钮时启动另一个异步操作，并且所有操作都会运行到完成。 所有请求的操作以异步方式从列表中下载网站，但是操作的输出会按顺序呈现。 也就是说，实际下载活动是交错进行的（如[识别重新进入](#BKMK_RecognizingReentrancy)中的输出所示），但是每个组的结果列表会分开呈现。
+此第三个示例最复杂，因为应用会在用户每次选择“开始”  按钮时启动另一个异步操作，并且所有操作都会运行到完成。 所有请求的操作以异步方式从列表中下载网站，但是操作的输出会按顺序呈现。 也就是说，实际下载活动是交错进行的（如[识别重新进入](#BKMK_RecognizingReentrancy)中的输出所示），但是每个组的结果列表会分开呈现。
 
 操作会共享一个全局 <xref:System.Threading.Tasks.Task> (`pendingWork`)，它用作显示进程的守卫。
 
 可以通过将更改粘贴到[生成应用](#BKMK_BuildingTheApp)中的代码来运行此示例，也可以按照[下载应用](#BKMK_DownloadingTheApp)中的说明下载示例，然后运行 QueueResults 项目。
 
-下面的输出显示用户仅选择“开始”**** 按钮一次时的结果。 字母标签 A 指示结果来自首次选择“开始”**** 按钮。 编号显示下载目标列表中 URL 的顺序。
+下面的输出显示用户仅选择“开始”  按钮一次时的结果。 字母标签 A 指示结果来自首次选择“开始”  按钮。 编号显示下载目标列表中 URL 的顺序。
 
 ```console
 #Starting group A.
@@ -306,7 +306,7 @@ TOTAL bytes returned:  918876
 #Group A is complete.
 ```
 
-如果用户选择“开始”**** 按钮三次，则应用会生成类似于以下各行的输出。 以井号 (#) 开头的信息行会跟踪应用程序的进度。
+如果用户选择“开始”  按钮三次，则应用会生成类似于以下各行的输出。 以井号 (#) 开头的信息行会跟踪应用程序的进度。
 
 ```console
 #Starting group A.
@@ -382,7 +382,7 @@ Class MainWindow    ' Class MainPage in Windows Store app.
 
 #### <a name="the-click-event-handler"></a>单击事件处理程序
 
-事件处理程序 `StartButton_Click` 会在用户每次选择“开始”**** 按钮时增加组号。 随后处理程序会调用 `AccessTheWebAsync` 以运行下载操作。
+事件处理程序 `StartButton_Click` 会在用户每次选择“开始”  按钮时增加组号。 随后处理程序会调用 `AccessTheWebAsync` 以运行下载操作。
 
 ```vb
 Private Async Sub StartButton_Click(sender As Object, e As RoutedEventArgs)
@@ -472,7 +472,7 @@ Private Async Function FinishOneGroupAsync(urls As List(Of String), contentTasks
 End Function
 ```
 
-可以通过在[构建应用](#BKMK_BuildingTheApp)中将更改粘贴到代码中来运行此示例，也可以按照[下载应用](#BKMK_DownloadingTheApp)中的说明下载示例，然后运行队列结果项目。
+可以通过将更改粘贴到[生成应用](#BKMK_BuildingTheApp)中的代码来运行此示例，也可以按照[下载应用](#BKMK_DownloadingTheApp)中的说明下载示例，然后运行 QueueResults 项目。
 
 #### <a name="points-of-interest"></a>兴趣点
 
@@ -516,7 +516,7 @@ End Function
   TOTAL bytes returned:  915908
   ```
 
-- 任务`pendingWork`仅`Nothing`针对首先启动的`FinishOneGroupAsync`A 组。 组 A 在它到达 `FinishOneGroupAsync` 时尚未尚未完成 await 表达式。 因此，控制权未返回给 `AccessTheWebAsync`，对 `pendingWork` 的第一个分配尚未发生。
+- `pendingWork`任务 `Nothing` 仅在组 A 的开头 `FinishOneGroupAsync` ，后者首先启动。 组 A 在它到达 `FinishOneGroupAsync` 时尚未尚未完成 await 表达式。 因此，控制权未返回给 `AccessTheWebAsync`，对 `pendingWork` 的第一个分配尚未发生。
 
 - 下面两行始终在输出中一起显示。 该代码从不会在于 `StartButton_Click` 中启动组操作与将组的任务分配给 `pendingWork` 之间中断。
 
@@ -527,7 +527,7 @@ End Function
 
   组进入 `StartButton_Click` 之后，操作在操作进入 `FinishOneGroupAsync` 之前不会完成 await 表达式。 因此，没有其他操作可以在代码段期间获得控制权。
 
-## <a name="reviewing-and-running-the-example-app"></a><a name="BKMD_SettingUpTheExample"></a>查看并运行示例应用
+## <a name="reviewing-and-running-the-example-app"></a><a name="BKMD_SettingUpTheExample"></a>检查并运行示例应用
 
 若要更好地了解示例应用，可以下载它，自己生成或查看本主题末尾的代码，而无需实现应用。
 
@@ -540,11 +540,11 @@ End Function
 
 2. 解压缩下载的文件，然后启动 Visual Studio。
 
-3. 在菜单栏上，依次选择 **“文件”**、 **“打开”** 和 **“项目/解决方案”**。
+3. 在菜单栏上，依次选择 **“文件”** 、 **“打开”** 和 **“项目/解决方案”** 。
 
 4. 导航到保存解压缩的示例代码的文件夹，然后打开解决方案 (.sln) 文件。
 
-5. 在“解决方案资源管理器”**** 中，打开要运行的项目的快捷菜单，然后选择“设置为 StartUpProject”****。
+5. 在“解决方案资源管理器”  中，打开要运行的项目的快捷菜单，然后选择“设置为 StartUpProject”  。
 
 6. 选择 CTRL+F5 键以生成并运行项目。
 
@@ -556,23 +556,23 @@ End Function
 
 1. 启动 Visual Studio。
 
-2. 在菜单栏上，依次选择 **“文件”**-&gt;**“新建”**-&gt;**“项目”**。
+2. 在菜单栏上，依次选择“文件”  、“新建”  、“项目”  。
 
-     系统将打开“新建项目”**** 对话框。
+     **“新建项目”** 对话框随即打开。
 
-3. 在 **"已安装模板"** 窗格中，展开**可视化基本**，然后展开**Windows**。
+3. 在 "**已安装的模板**" 窗格中，展开 " **Visual Basic**"，然后展开 " **Windows**"。
 
-4. 在项目类型列表中，选择“WPF 应用程序”****。
+4. 在项目类型列表中，选择“WPF 应用程序”  。
 
-5. 将项目命名为 `WebsiteDownloadWPF`，选择 .NET Framework 版本 4.6 或更高版本，然后单击“确定”按钮****。
+5. 将项目命名为 `WebsiteDownloadWPF`，选择 .NET Framework 版本 4.6 或更高版本，然后单击“确定”按钮  。
 
-     新项目将出现在“解决方案资源管理器”**** 中。
+     新项目将出现在“解决方案资源管理器”  中。
 
 6. 在 Visual Studio 代码编辑器中，选择 **“MainWindow.xaml”** 选项卡。
 
-     如果选项卡不可见，请打开**解决方案资源管理器**中 MainWindow.xaml 的快捷菜单，然后选择 **"查看代码**"。
+     如果此选项卡不可见，则在“解决方案资源管理器”  中，打开 MainWindow.xaml 的快捷菜单，然后选择“查看代码”  。
 
-7. 在 MainWindow.xaml 的“XAML”**** 视图中，将代码替换为以下代码。
+7. 在 MainWindow.xaml 的“XAML”  视图中，将代码替换为以下代码。
 
     ```xaml
     <Window x:Class="MainWindow"
@@ -590,15 +590,15 @@ End Function
     </Window>
     ```
 
-     MainWindow.xaml 的“设计”**** 视图中将显示一个简单的窗口，其中包含一个文本框和一个按钮。
+     MainWindow.xaml 的“设计”  视图中将显示一个简单的窗口，其中包含一个文本框和一个按钮。
 
-8. 在**解决方案资源管理器中**，右键单击**引用**并选择"**添加引用**"。
+8. 在“解决方案资源管理器”中，右键单击“引用”并选择“添加引用”    。
 
      如果尚未选择，请为 <xref:System.Net.Http> 添加引用。
 
-9. 在**解决方案资源管理器中**，打开 MainWindow.xaml.vb 的快捷菜单，然后选择 **"查看代码**"。
+9. 在**解决方案资源管理器**中，打开 mainwindow.xaml 的快捷菜单，然后选择 "**查看代码**"。
 
-10. 在 MainWindow.xaml.vb 中，将代码替换为以下代码。
+10. 在 Mainwindow.xaml 中，将代码替换为以下代码。
 
     ```vb
     ' Add the following Imports statements, and add a reference for System.Net.Http.
@@ -678,11 +678,11 @@ End Function
     End Class
     ```
 
-11. 选择 CTRL+F5 键以运行程序，然后多次选择“开始”**** 按钮。
+11. 选择 CTRL+F5 键以运行程序，然后多次选择“开始”  按钮。
 
 12. 从[禁用“开始”按钮](#BKMK_DisableTheStartButton)、[取消并重启操作](#BKMK_CancelAndRestart)或[运行多个操作并将输出排入队列](#BKMK_RunMultipleOperations)中进行更改以处理重新进入。
 
 ## <a name="see-also"></a>请参阅
 
-- [演练：使用 Async 和 Await 访问 Web (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
-- [使用 Async 和 Await 的异步编程 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
+- [演练：使用 Async 和 Await 访问 Web (Visual Basic)](walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [使用 Async 和 Await 的异步编程 (Visual Basic)](index.md)

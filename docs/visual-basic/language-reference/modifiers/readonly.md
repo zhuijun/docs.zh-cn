@@ -10,12 +10,12 @@ helpviewer_keywords:
 - properties [Visual Basic], read-only
 - read-only variables
 ms.assetid: e868185d-6142-4359-a2fd-a7965cadfce8
-ms.openlocfilehash: 8c7e7e7c1571fd7c595ebfd54fb5767078ef41f8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 405297a25d4b948a6920bd989c7826e8b6f66bb4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351280"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398202"
 ---
 # <a name="readonly-visual-basic"></a>ReadOnly (Visual Basic)
 指定可以读取但不能写入变量或属性。
@@ -24,20 +24,20 @@ ms.locfileid: "74351280"
 
 ## <a name="rules"></a>规则
 
-- **声明上下文。** 只能在模块级别使用 `ReadOnly`。 这意味着 `ReadOnly` 元素的声明上下文必须是类、结构或模块，不能是源文件、命名空间或过程。
+- **声明上下文。** 只能在模块级别使用 `ReadOnly`。 这意味着元素的声明上下文 `ReadOnly` 必须是类、结构或模块，不能是源文件、命名空间或过程。
 
-- **组合修饰符。** 不能在同一声明中同时指定 `ReadOnly` 和 `Static`。
+- **组合修饰符。** 不能 `ReadOnly` `Static` 在同一声明中同时指定和。
 
-- **赋值。** 使用 `ReadOnly` 属性的代码不能设置其值。 但有权访问基础存储的代码可以随时分配或更改值。
+- **赋值。** 使用属性的代码 `ReadOnly` 不能设置其值。 但有权访问基础存储的代码可以随时分配或更改值。
 
-     只能在其声明中或在定义它的类或结构的构造函数中为 `ReadOnly` 变量赋值。
+     只能 `ReadOnly` 在其声明中或在定义它的类或结构的构造函数中为变量赋值。
 
 ## <a name="when-to-use-a-readonly-variable"></a>何时使用 ReadOnly 变量
 
-在某些情况下，不能使用[Const 语句](../../../visual-basic/language-reference/statements/const-statement.md)来声明和分配常量值。 例如，`Const` 语句可能不接受您要分配的数据类型，或者您可能无法在编译时使用常量表达式来计算值。 在编译时，您甚至不知道值。 在这些情况下，可以使用 `ReadOnly` 变量来保存常量值。
+在某些情况下，不能使用[Const 语句](../statements/const-statement.md)来声明和分配常量值。 例如， `Const` 语句可能不接受您要分配的数据类型，或者您可能无法在编译时使用常量表达式来计算值。 在编译时，您甚至不知道值。 在这些情况下，可以使用 `ReadOnly` 变量来保存常量值。
 
 > [!IMPORTANT]
-> 如果该变量的数据类型是引用类型（如数组或类实例），则即使该变量本身是 `ReadOnly`的，也可以更改其成员。 下面的示例阐释了这一点。
+> 如果该变量的数据类型是引用类型（如数组或类实例），则即使该变量本身为，也可以更改其成员 `ReadOnly` 。 下面的示例对此进行了演示。
 
 ```vb
 ReadOnly characterArray() As Char = {"x"c, "y"c, "z"c}
@@ -46,20 +46,20 @@ Sub ChangeArrayElement()
 End Sub
 ```
 
-初始化后，由 `characterArray()` 的数组包含 "x"、"y" 和 "z"。 由于变量 `characterArray` `ReadOnly`，因此在初始化后无法更改其值;也就是说，不能向其分配新数组。 但是，您可以更改一个或多个数组成员的值。 调用过程 `ChangeArrayElement`后，`characterArray()` 指向的数组包含 "x"、"M" 和 "z"。
+初始化后，由指向的数组 `characterArray()` 包含 "x"、"y" 和 "z"。 由于变量 `characterArray` 为 `ReadOnly` ，因此在初始化后无法更改其值; 也就是说，您不能为其分配新数组。 但是，您可以更改一个或多个数组成员的值。 调用过程后 `ChangeArrayElement` ，由指向的数组 `characterArray()` 包含 "x"、"M" 和 "z"。
 
 请注意，这类似于将过程参数声明为[ByVal](byval.md)，这会阻止过程更改调用自变量本身，但允许该过程更改其成员。
 
 ## <a name="example"></a>示例
 
-下面的示例定义了员工雇用日期的 `ReadOnly` 属性。 类将属性值作为 `Private` 变量在内部存储，并且只有类中的代码可以更改该值。 但是，属性是 `Public`的，任何可访问类的代码都可以读取属性。
+下面的示例定义了 `ReadOnly` 雇员雇用日期的属性。 类在内部将属性值存储为 `Private` 变量，并且只有类中的代码可以更改该值。 但是，属性为 `Public` ，并且任何可以访问类的代码都可以读取属性。
 
 [!code-vb[VbVbalrKeywords#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class1.vb#4)]
 
 `ReadOnly` 修饰符可用于下面的上下文中：
 
 - [Dim 语句](../statements/dim-statement.md)
-- [Property 语句](../statements/property-statement.md)
+- [Property Statement](../statements/property-statement.md)
 
 ## <a name="see-also"></a>另请参阅
 

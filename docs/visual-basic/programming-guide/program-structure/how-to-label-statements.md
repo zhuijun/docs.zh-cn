@@ -7,16 +7,16 @@ helpviewer_keywords:
 - ': separator character'
 - Visual Basic code, labeling statements
 ms.assetid: 38f1ff43-2054-42cb-963b-1998e60c6ed4
-ms.openlocfilehash: be116ac8046c43e89e44c2d9127c6131e4dfaa52
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 8f04d592c51b6a0630bfe623fd3574555aef9ff8
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347385"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403208"
 ---
 # <a name="how-to-label-statements-visual-basic"></a>如何：标记语句 (Visual Basic)
 
-语句块由用冒号分隔的代码行组成。 以标识字符串或整数开头的代码行称为 "*标记*"。 语句标签用于标记代码行，以将其标识为与 `On Error Goto`等语句一起使用。
+语句块由用冒号分隔的代码行组成。 以标识字符串或整数开头的代码行称为 "*标记*"。 语句标签用于标记代码行，以将其标识为与等语句一起使用 `On Error Goto` 。
 
 标签可以是有效 Visual Basic 标识符（如标识编程元素的标识符），也可以是整数文本。 标签必须出现在源代码行的开头，并且必须后跟一个冒号，而不考虑它是否后跟同一行中的语句。
 
@@ -31,12 +31,12 @@ ms.locfileid: "74347385"
 
 在源代码行的开头放置一个标识符，后跟一个冒号。
 
-例如，以下代码行将分别标记为 `Jump` 和 `120`：
+例如，以下代码行分别标记有 `Jump` 和 `120` ：
 
 [!code-vb[VbVbalrStatements#708](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#708)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [语句](../../../visual-basic/programming-guide/language-features/statements.md)
-- [已声明的元素名称](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md)
-- [程序结构和代码约定](../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)
+- [语句](../language-features/statements.md)
+- [Declared Element Names](../language-features/declared-elements/declared-element-names.md)
+- [程序结构和代码约定](program-structure-and-code-conventions.md)

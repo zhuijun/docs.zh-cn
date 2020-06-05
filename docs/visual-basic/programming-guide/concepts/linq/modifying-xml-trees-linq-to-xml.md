@@ -2,12 +2,12 @@
 title: 修改 XML 树 (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 4ae511a5-4fc9-4178-9c8e-761357deae3f
-ms.openlocfilehash: c946052beb612c087d26e312875b7f7950ceadf5
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3402188c4e34ef81bad41ed49f9236b4fb7c47ef
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353176"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406880"
 ---
 # <a name="modifying-xml-trees-linq-to-xml-visual-basic"></a>修改 XML 树（LINQ to XML）（Visual Basic）
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 是一个 XML 树在内存中的存储区。 在从源中加载或分析 XML 树之后，[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 允许就地修改该树，然后序列化该树，可以将它保存到文件中或发送到远程服务器。  
@@ -20,13 +20,13 @@ ms.locfileid: "74353176"
   
 |主题|说明|  
 |-----------|-----------------|  
-|[内存中 XML 树修改与功能构造（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/in-memory-xml-tree-modification-vs-functional-construction.md)|在内存中修改 XML 树与使用函数构造的比较。|  
-|[向 XML 树添加元素、属性和节点（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/adding-elements-attributes-and-nodes-to-an-xml-tree.md)|提供有关向 XML 树中添加元素、属性或节点的信息。|  
-|[修改 XML 树中的元素、特性和节点](../../../../visual-basic/programming-guide/concepts/linq/modifying-elements-attributes-and-nodes-in-an-xml-tree.md)|提供有关修改现有元素、属性或节点的信息。|  
-|[从 XML 树中移除元素、特性和节点（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/removing-elements-attributes-and-nodes-from-an-xml-tree.md)|提供有关从 XML 树中移除元素、属性或节点的信息。|  
-|[维护名称/值对（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/maintaining-name-value-pairs.md)|描述如何维护最好保存为名称/值对的应用程序信息，例如配置信息或全局设置。|  
-|[如何：更改整个 XML 树的命名空间（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/how-to-change-the-namespace-for-an-entire-xml-tree.md)|演示如何将 XML 树从一个命名空间移动到另一个命名空间。|  
+|[内存中 XML 树修改与功能构造（LINQ to XML）（Visual Basic）](in-memory-xml-tree-modification-vs-functional-construction.md)|在内存中修改 XML 树与使用函数构造的比较。|  
+|[向 XML 树添加元素、属性和节点（Visual Basic）](adding-elements-attributes-and-nodes-to-an-xml-tree.md)|提供有关向 XML 树中添加元素、属性或节点的信息。|  
+|[修改 XML 树中的元素、特性和节点](modifying-elements-attributes-and-nodes-in-an-xml-tree.md)|提供有关修改现有元素、属性或节点的信息。|  
+|[从 XML 树中移除元素、特性和节点（Visual Basic）](removing-elements-attributes-and-nodes-from-an-xml-tree.md)|提供有关从 XML 树中移除元素、属性或节点的信息。|  
+|[维护名称/值对（Visual Basic）](maintaining-name-value-pairs.md)|描述如何维护最好保存为名称/值对的应用程序信息，例如配置信息或全局设置。|  
+|[如何：更改整个 XML 树的命名空间（Visual Basic）](how-to-change-the-namespace-for-an-entire-xml-tree.md)|演示如何将 XML 树从一个命名空间移动到另一个命名空间。|  
   
 ## <a name="see-also"></a>另请参阅
 
-- [编程指南（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+- [编程指南（LINQ to XML）（Visual Basic）](programming-guide-linq-to-xml.md)

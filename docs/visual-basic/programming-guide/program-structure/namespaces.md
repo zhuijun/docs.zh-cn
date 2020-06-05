@@ -16,34 +16,34 @@ helpviewer_keywords:
 - naming conventions [Visual Basic], naming conflicts
 - namespaces
 ms.assetid: cffac744-ab8c-4f1f-ba50-732c22ab4b88
-ms.openlocfilehash: ec892167f30a7ded739dc188ab4096cb3a5d154c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 087c6f02e1fca9cf2664ca76581c08a9b1a5e447
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401291"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398352"
 ---
 # <a name="namespaces-in-visual-basic"></a>Visual Basic 中的命名空间
 命名空间组织程序集中定义的对象。 程序集可以包含多个命名空间，命名空间又可以包含其他命名空间。 使用大组对象（比如类库）时，命名空间可以避免多义性和简化引用。  
   
- 例如，.NET 框架在<xref:System.Windows.Forms.ListBox><xref:System.Windows.Forms?displayProperty=nameWithType>命名空间中定义类。 以下代码段演示如何使用此类的完全限定名称声明变量：  
+ 例如，.NET Framework 在 <xref:System.Windows.Forms.ListBox> 命名空间中定义类 <xref:System.Windows.Forms?displayProperty=nameWithType> 。 以下代码段演示如何使用此类的完全限定名称声明变量：  
   
  [!code-vb[VbVbalrApplication#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#6)]  
   
 ## <a name="avoiding-name-collisions"></a>避免名称冲突  
- .NET 框架命名空间解决了有时称为*命名空间污染*的问题，其中类库的开发人员因在另一个库中使用类似名称而受到阻碍。 这些冲突及其现有组件有时被称为 *名称冲突*。  
+ .NET Framework 命名空间解决有时被称为*命名空间污染*的问题，在这种情况下，类库的开发人员会受到另一个库中使用类似名称的阻碍。 这些冲突及其现有组件有时被称为 *名称冲突*。  
   
- 例如，如果创建一个名为 `ListBox`的新类，你可以在项目中不加限定地使用它。 但是，如果要在同一项目中使用 .NET <xref:System.Windows.Forms.ListBox> Framework 类，则必须使用完全限定的引用以使引用唯一。 如果引用不唯一，Visual Basic 会生成一个错误，指出名称不明确。 下面的代码示例演示如何声明这些对象：  
+ 例如，如果创建一个名为 `ListBox`的新类，你可以在项目中不加限定地使用它。 但是，如果您想要 <xref:System.Windows.Forms.ListBox> 在同一项目中使用 .NET Framework 类，则必须使用完全限定引用来使引用唯一。 如果引用不唯一，Visual Basic 将产生一个错误，指出名称不明确。 下面的代码示例演示如何声明这些对象：  
   
  [!code-vb[VbVbalrApplication#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#7)]  
   
- 下图显示了两个命名空间层次结构，两者都包含名为 的对象`ListBox`：  
+ 下图显示了两个命名空间层次结构，它们都包含一个名为的对象 `ListBox` ：  
   
  ![显示两个命名空间层次结构的屏幕截图。](./media/namespaces/visual-basic-namespace-hierarchy.gif)  
   
- 默认情况下，使用 Visual Basic 创建的每个可执行文件都包含一个与项目同名的命名空间。 例如，如果在一个名为 `ListBoxProject`的项目中定义对象，则可执行文件 ListBoxProject.exe 包含一个名为 `ListBoxProject`的命名空间。  
+ 默认情况下，使用 Visual Basic 创建的每个可执行文件都包含与项目具有相同名称的命名空间。 例如，如果在一个名为 `ListBoxProject`的项目中定义对象，则可执行文件 ListBoxProject.exe 包含一个名为 `ListBoxProject`的命名空间。  
   
- 多个程序集可以使用相同的命名空间。 可视化基本将它们视为一组名称。 例如，你可以为名为 `SomeNameSpace` 的程序集中名为 `Assemb1`的命名空间定义多个类，并为名为 `Assemb2`的程序集中相同的命名空间定义其他类。  
+ 多个程序集可以使用相同的命名空间。 Visual Basic 将它们视为一组名称。 例如，你可以为名为 `SomeNameSpace` 的程序集中名为 `Assemb1`的命名空间定义多个类，并为名为 `Assemb2`的程序集中相同的命名空间定义其他类。  
   
 ## <a name="fully-qualified-names"></a>完全限定名  
  完全限定名是以在其中定义对象的命名空间的名称为前缀的对象引用。 如果创建对类的引用（通过选择“项目” **** 菜单中的“添加引用” **** ），然后为代码中的对象使用完全限定名，则可以使用在其他项目中定义的对象。 以下代码段演示如何为来自另一个项目命名空间的对象使用完全限定名：  
@@ -60,7 +60,7 @@ ms.locfileid: "79401291"
   
  [!code-vb[VbVbalrApplication#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/Class1.vb#11)]  
   
- 如果尝试在未完全`Class1`限定的情况下使用，Visual Basic 会生成一个错误，指出`Class1`名称不明确。  
+ 如果尝试使用 `Class1` 而不对其完全限定，Visual Basic 会生成一个错误，指出名称 `Class1` 不明确。  
   
 ## <a name="namespace-level-statements"></a>命名空间级别语句  
  在命名空间中，可以定义项，如模块、接口、类、委托、枚举、结构和其他命名空间。 无法在命名空间级别定义属性、过程、变量和事件等项。 这些项必须在模块、结构或类等容器内部进行声明。  
@@ -99,7 +99,7 @@ End Namespace
  可以使用 `Global` 访问其他根级别的命名空间，如 <xref:Microsoft.VisualBasic?displayProperty=nameWithType>和与项目相关联的任何命名空间。  
   
 ## <a name="global-keyword-in-namespace-statements"></a>命名空间语句中的全局关键字  
- 还可以使用 `Global` 中的 [Global](../../../visual-basic/language-reference/statements/namespace-statement.md)。 这将允许你定义项目根命名空间之外的命名空间。  
+ 还可以使用 `Global` 中的 [Global](../../language-reference/statements/namespace-statement.md)。 这将允许你定义项目根命名空间之外的命名空间。  
   
  项目中的所有命名空间均基于项目的根命名空间。  Visual Studio 针对项目中的所有代码，将项目名称指定为默认根命名空间。 例如，如果项目命名为 `ConsoleApplication1`，则其编程元素属于命名空间 `ConsoleApplication1`。 如果声明 `Namespace Magnetosphere`，项目中对 `Magnetosphere` 的引用将访问 `ConsoleApplication1.Magnetosphere`。  
   
@@ -119,7 +119,7 @@ End Namespace
   
  [!code-vb[VbVbalrApplication#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrApplication/VB/module1.vb#21)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Windows.Forms.ListBox>
 - <xref:System.Windows.Forms?displayProperty=nameWithType>

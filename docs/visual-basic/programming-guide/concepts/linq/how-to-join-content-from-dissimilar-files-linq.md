@@ -1,13 +1,13 @@
 ---
-title: 如何：联接不同文件的内容 (LINQ)
+title: 如何：联接不同文件中的内容 (LINQ)
 ms.date: 06/27/2018
 ms.assetid: e7530857-c467-41ea-9730-84e6b1065a4d
-ms.openlocfilehash: a6528f623d084003bb85dc5bae784b8d96c84d02
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 7dac73a16d0d3fbf409f58628bc5c69716dcee14
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344552"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398365"
 ---
 # <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>如何：联接不同文件的内容（LINQ）（Visual Basic）
 
@@ -122,5 +122,5 @@ End Class
 
 ## <a name="see-also"></a>另请参阅
 
-- [LINQ 和字符串（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ 和文件目录 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ 和字符串 (Visual Basic)](linq-and-strings.md)
+- [LINQ 和文件目录 (Visual Basic)](linq-and-file-directories.md)

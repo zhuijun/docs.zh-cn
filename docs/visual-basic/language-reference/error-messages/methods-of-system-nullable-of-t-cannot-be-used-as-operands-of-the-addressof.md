@@ -7,23 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC32126
 ms.assetid: 2325668b-e2ad-40ee-a1ec-30450236c20d
-ms.openlocfilehash: e55e561fa20a3740d352537958681b0a66fc381e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 61c6fe7c33b3292066e653304ded43a863413723
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592044"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397215"
 ---
 # <a name="methods-of-systemnullableof-t-cannot-be-used-as-operands-of-the-addressof-operator"></a>“System.Nullable(Of T)”的方法不能用作“AddressOf”运算符的操作数
-语句使用`AddressOf`运算符的操作数表示的过程与<xref:System.Nullable%601>结构。  
+语句将 `AddressOf` 运算符与表示结构过程的操作数一起使用 <xref:System.Nullable%601> 。  
   
- **错误 ID:** BC32126  
+ **错误 ID：** BC32126  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 中的过程名称替换`AddressOf`与操作数不是的成员一起子句<xref:System.Nullable%601>。  
+- 将子句中的过程名称替换 `AddressOf` 为不是的成员的操作数 <xref:System.Nullable%601> 。  
   
-- 编写的类包装的方法，<xref:System.Nullable%601>想要使用。 在以下示例中，`NullableWrapper`类定义一个名为的新方法`GetValueOrDefault`。 因为这种新方法不属于<xref:System.Nullable%601>，它可以应用于`nullInstance`，可以为 null 的类型，以形成的参数的实例`AddressOf`。  
+- 编写一个类，用于包装要使用的的方法 <xref:System.Nullable%601> 。 在下面的示例中， `NullableWrapper` 类定义了一个名为的新方法 `GetValueOrDefault` 。 由于此新方法不是的成员 <xref:System.Nullable%601> ，因此可将其应用到可以 `nullInstance` 为 null 的类型的实例，以形成的参数 `AddressOf` 。  
   
 ```vb  
 Module Module1  
@@ -61,9 +61,9 @@ Module Module1
 End Module  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Nullable%601>
-- [AddressOf 运算符](../../../visual-basic/language-reference/operators/addressof-operator.md)
-- [可以为 null 的值类型](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md)
-- [Visual Basic 中的泛型类型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [AddressOf 运算符](../operators/addressof-operator.md)
+- [可以为 null 的值类型](../../programming-guide/language-features/data-types/nullable-value-types.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
