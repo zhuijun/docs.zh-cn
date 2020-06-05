@@ -2,12 +2,12 @@
 title: 将元素、特性和节点添加到 XML 树
 ms.date: 07/20/2015
 ms.assetid: e243e694-c987-43aa-8b22-1e33dace582c
-ms.openlocfilehash: 8d3d3a27194bb022434f09778dbf3960bd0b9853
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5b80a19c952388c2591536077f382df2f69fe80f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345815"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84383892"
 ---
 # <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-visual-basic"></a>向 XML 树添加元素、属性和节点（Visual Basic）
 可以向现有的 XML 树中添加内容（包括元素、属性、注释、处理指令、文本和 CDATA）。  
@@ -64,7 +64,7 @@ xmlTree.Add(srcTree.Element("Child9"))
 Console.WriteLine(xmlTree)  
 ```  
   
-### <a name="comments"></a>Comments  
+### <a name="comments"></a>注释  
  此代码生成以下输出：  
   
 ```xml  
@@ -82,4 +82,4 @@ Console.WriteLine(xmlTree)
   
 ## <a name="see-also"></a>另请参阅
 
-- [修改 XML 树（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [修改 XML 树（LINQ to XML）（Visual Basic）](modifying-xml-trees-linq-to-xml.md)

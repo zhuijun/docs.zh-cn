@@ -1,20 +1,20 @@
 ---
-title: 可视化基础2中的XML文本简介
+title: Visual Basic2 中的 XML 文本简介
 ms.date: 07/20/2015
 ms.assetid: 94fc0e03-978e-4c08-ab6c-0dc3c1e64f10
-ms.openlocfilehash: 9f5c54574e51c537d9ea58d307afda10736d0d88
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 8b92d22727c50274d57a5e407a0ca42807de3a94
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78266945"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397579"
 ---
 # <a name="introduction-to-xml-literals-in-visual-basic"></a>Visual Basic 中的 XML 文本简介
-本节提供有关在可视化基本创建 XML 树的信息。  
+本部分提供有关在 Visual Basic 中创建 XML 树的信息。  
   
- 有关使用 LINQ 查询的结果作为 XML 树的内容的信息，请参阅[功能构造（LINQ 到 XML）（可视基本）。](../../../../visual-basic/programming-guide/concepts/linq/functional-construction-linq-to-xml.md)  
+ 有关使用 LINQ 查询结果作为 XML 树的内容的信息，请参阅[功能构造（LINQ to XML）（Visual Basic）](functional-construction-linq-to-xml.md)。  
   
- 有关可视化基础中的 XML 文本的详细信息，请参阅[Visual Basic 中的 LINQ 到 XML 概述](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)。  
+ 有关 Visual Basic 中的 XML 文本的详细信息，请参阅[Visual Basic 中的 LINQ to XML 概述](../../language-features/xml/overview-of-linq-to-xml.md)。  
   
 ## <a name="creating-xml-trees"></a>创建 XML 树  
  下面的示例演示如何创建一个 <xref:System.Xml.Linq.XElement>，在本例中为 `contacts`：  
@@ -43,7 +43,7 @@ Dim n as XElement = <Customer>Adventure Works</Customer>
 Console.WriteLine(n)
 ```  
   
- 此示例生成以下输出：  
+ 该示例产生下面的输出：  
   
 ```xml  
 <Customer>Adventure Works</Customer>  
@@ -57,7 +57,7 @@ Dim n As XElement = <Customer/>
 Console.WriteLine(n)  
 ```  
   
- 此示例生成以下输出：  
+ 该示例产生下面的输出：  
   
 ```xml  
 <Customer />  
@@ -84,7 +84,7 @@ Dim xmlTree2 As XElement = _
 Console.WriteLine(xmlTree2)  
 ```  
   
- 此示例生成以下输出：  
+ 该示例产生下面的输出：  
   
 ```xml  
 <Root>  
@@ -102,7 +102,7 @@ Dim root As XElement = <Root><%= str %></Root>
 Console.WriteLine(root)  
 ```  
   
- 此示例生成以下输出：  
+ 该示例产生下面的输出：  
   
 ```xml  
 <Root>Some content</Root>  
@@ -122,7 +122,7 @@ Dim n As XElement = _
 Console.WriteLine(n)  
 ```  
   
- 此示例生成以下输出：  
+ 该示例产生下面的输出：  
   
 ```xml  
 <Root>  
@@ -149,7 +149,7 @@ Dim n As XElement = _
 Console.WriteLine(n)  
 ```  
   
- 此示例生成以下输出：  
+ 该示例产生下面的输出：  
   
 ```xml  
 <Root att="aValue">  
@@ -188,13 +188,13 @@ Console.WriteLine("Child2 was {0}", _
     "attached", "cloned"))  
 ```  
   
- 此示例生成以下输出：  
+ 该示例产生下面的输出：  
   
 ```console  
 Child1 was cloned  
 Child2 was attached  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [创建 XML 树（可视化基本）](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [创建 XML 树（Visual Basic）](creating-xml-trees.md)

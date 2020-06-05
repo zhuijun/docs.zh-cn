@@ -26,12 +26,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
-ms.openlocfilehash: d80623d9e55358d37aa45f11f1525c80a09b91a6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3b1f47250453c32735d633b98da0bd0ddb1ed5b9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350044"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84393852"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>如何：定义可对不同数据类型提供相同功能的类 (Visual Basic)
 你可以定义这样一个类：你可以通过该类创建可在不同数据类型上提供相同功能的对象。 为此，你可以在定义中指定一个或多个 *类型形参* 。 然后，该类将能够充当使用不同数据类型的对象的模板。 通过这种方式定义的类称为 *泛型类*。  
@@ -44,7 +44,7 @@ ms.locfileid: "74350044"
   
 1. 采用常规方式定义类。  
   
-2. 直接在类名称之后添加 `(Of` *typeparameter*`)` ，以指定一个类型形参。  
+2. `(Of` *typeparameter* `)` 紧靠类名称之后添加 typeparameter，以指定一个类型参数。  
   
 3. 如果有一个以上的类型形参，请在括号内列出这些参数（以逗号分隔）。 不要重复 `Of` 关键字。  
   
@@ -56,13 +56,13 @@ ms.locfileid: "74350044"
   
     - 公开无参数构造函数  
   
-     如果未指定任何约束，则代码只能使用 [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)支持的那些运算和成员。 有关详细信息，请参阅 [Type List](../../../../visual-basic/language-reference/statements/type-list.md)。  
+     如果未指定任何约束，则代码只能使用 [Object Data Type](../../../language-reference/data-types/object-data-type.md)支持的那些运算和成员。 有关详细信息，请参阅 [Type List](../../../language-reference/statements/type-list.md)。  
   
-5. 标识要使用所提供类型声明的每个类成员，然后将其声明为 `As` `typeparameter`。 这适用于内部存储、过程参数和返回值。  
+5. 标识要使用所提供类型声明的每个类成员，然后将其声明为 `As` `typeparameter` 。 这适用于内部存储、过程参数和返回值。  
   
 6. 确保代码只使用它可提供给 `itemType`的任何数据类型所支持的运算和方法。  
   
-     下面的示例定义了一个类，用于管理一个非常简单的列表。 它将列表保存在内部数组 `items`中，并且使用代码可声明列表元素的数据类型。 参数化构造函数允许使用代码设置 `items`的上限，而无参数构造函数将此上限设置为9（总共10项）。  
+     下面的示例定义了一个类，用于管理一个非常简单的列表。 它将列表保存在内部数组 `items`中，并且使用代码可声明列表元素的数据类型。 参数化构造函数允许使用代码设置的上限 `items` ，而无参数构造函数将此设置为9（总共10项）。  
   
      [!code-vb[VbVbalrDataTypes#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#7)]  
   
@@ -76,10 +76,10 @@ ms.locfileid: "74350044"
   
 ## <a name="see-also"></a>另请参阅
 
-- [数据类型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Visual Basic 中的泛型类型](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [数据类型](index.md)
+- [Generic Types in Visual Basic](generic-types.md)
 - [语言独立性和与语言无关的组件](../../../../standard/language-independence-and-language-independent-components.md)
-- [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
-- [类型列表](../../../../visual-basic/language-reference/statements/type-list.md)
-- [如何：使用泛型类](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
-- [Object 数据类型](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [个](../../../language-reference/statements/of-clause.md)
+- [Type List](../../../language-reference/statements/type-list.md)
+- [如何：使用泛型类](how-to-use-a-generic-class.md)
+- [Object Data Type](../../../language-reference/data-types/object-data-type.md)

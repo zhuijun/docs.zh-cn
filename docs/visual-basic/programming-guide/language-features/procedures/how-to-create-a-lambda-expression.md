@@ -5,23 +5,23 @@ helpviewer_keywords:
 - lambda expressions [Visual Basic]
 - expressions [Visual Basic], lambda
 ms.assetid: 3279bd5c-80f7-410a-a7ba-f7085ed36aa5
-ms.openlocfilehash: 1c65841e4c124252cfa41bcd4d0c305a426687ee
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 7affc84fa501ba98bdfa93835f0b0e381580b9bd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75632345"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84388382"
 ---
 # <a name="how-to-create-a-lambda-expression-visual-basic"></a>如何：创建 Lambda 表达式 (Visual Basic)
 *Lambda 表达式*是没有名称的函数或子例程。 如果委托类型有效，可以使用 lambda 表达式。  
   
 ### <a name="to-create-a-single-line-lambda-expression-function"></a>创建单行 lambda 表达式函数  
   
-1. 在可以使用委托类型的任何情况下，键入关键字 `Function`，如以下示例中所示：  
+1. 在可以使用委托类型的任何情况下，键入关键字 `Function` ，如以下示例中所示：  
   
      `Dim add1 =`   `Function`  
   
-2. 在括号中，在 `Function`后，键入函数的参数。 请注意，在 `Function`后，不指定名称。  
+2. 在括号中，直接 `Function` 键入函数的参数。 请注意，不能在之后指定名称 `Function` 。  
   
      `Dim add1 = Function`   `(num As Integer)`  
   
@@ -39,11 +39,11 @@ ms.locfileid: "75632345"
   
 ### <a name="to-create-a-single-line-lambda-expression-subroutine"></a>创建单行 lambda 表达式子例程  
   
-1. 在可以使用委托类型的任何情况下，键入关键字 `Sub`，如下面的示例中所示。  
+1. 在可以使用委托类型的任何情况下，键入关键字 `Sub` ，如下面的示例中所示。  
   
      `Dim add1 =`   `Sub`  
   
-2. 在括号中，在 `Sub`后，键入子例程的参数。 请注意，在 `Sub`后，不指定名称。  
+2. 在括号中，直接 `Sub` 键入子例程的参数。 请注意，不能在之后指定名称 `Sub` 。  
   
      `Dim add1 = Sub`   `(msg As String)`  
   
@@ -57,15 +57,15 @@ ms.locfileid: "75632345"
   
 ### <a name="to-create-a-multiline-lambda-expression-function"></a>创建多行 lambda 表达式函数  
   
-1. 在可以使用委托类型的任何情况下，键入关键字 `Function`，如下面的示例中所示。  
+1. 在可以使用委托类型的任何情况下，键入关键字 `Function` ，如下面的示例中所示。  
   
      `Dim add1 =`   `Function`  
   
-2. 在括号中，在 `Function`后，键入函数的参数。 请注意，在 `Function`后，不指定名称。  
+2. 在括号中，直接 `Function` 键入函数的参数。 请注意，不能在之后指定名称 `Function` 。  
   
      `Dim add1 = Function`   `(index As Integer)`  
   
-3. 按 ENTER 键。 `End Function` 语句会自动添加。  
+3. 按 Enter。 `End Function`语句会自动添加。  
   
 4. 在函数的主体中，添加以下代码以创建表达式并返回值。 不要使用 `As` 子句来指定返回类型。  
   
@@ -77,15 +77,15 @@ ms.locfileid: "75632345"
   
 ### <a name="to-create-a-multiline-lambda-expression-subroutine"></a>创建多行 lambda 表达式子例程  
   
-1. 在可以使用委托类型的任何情况下，键入关键字 `Sub`，如以下示例中所示：  
+1. 在可以使用委托类型的任何情况下，键入关键字 `Sub` ，如以下示例中所示：  
   
      `Dim add1 =`   `Sub`  
   
-2. 在括号中，在 `Sub`后，键入子例程的参数。 请注意，在 `Sub`后，不指定名称。  
+2. 在括号中，直接 `Sub` 键入子例程的参数。 请注意，不能在之后指定名称 `Sub` 。  
   
      `Dim add1 = Sub`  `(msg As String)`  
   
-3. 按 ENTER 键。 `End Sub` 语句会自动添加。  
+3. 按 Enter。 `End Sub`语句会自动添加。  
   
 4. 在函数的主体中，添加以下代码，以便在调用子例程时执行。  
   
@@ -96,7 +96,7 @@ ms.locfileid: "75632345"
      [!code-vb[VbVbalrLambdas#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#22)]  
   
 ## <a name="example"></a>示例  
- Lambda 表达式的一个常见用途是定义一个函数，该函数可作为参数的参数，该参数的类型为 `Delegate`。 在下面的示例中，<xref:System.Diagnostics.Process.GetProcesses%2A> 方法返回在本地计算机上运行的进程的数组。 <xref:System.Linq.Enumerable> 类中的 <xref:System.Linq.Enumerable.Where%2A> 方法要求 `Boolean` 委托作为其参数。 示例中的 lambda 表达式用于此目的。 它将为每个只有一个线程的进程返回 `True`，并在 `filteredList`中选择这些进程。  
+ Lambda 表达式的一个常见用途是定义一个函数，该函数可作为参数（其类型为）作为参数传入 `Delegate` 。 在下面的示例中， <xref:System.Diagnostics.Process.GetProcesses%2A> 方法返回在本地计算机上运行的进程的数组。 <xref:System.Linq.Enumerable.Where%2A>类中的方法 <xref:System.Linq.Enumerable> 要求 `Boolean` 委托作为其参数。 示例中的 lambda 表达式用于此目的。 它 `True` 为每个只有一个线程的进程返回，在中选择这些进程 `filteredList` 。  
   
  [!code-vb[VbVbalrLambdas#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class4.vb#10)]  
   
@@ -108,9 +108,9 @@ ms.locfileid: "75632345"
 
 - <xref:System.Linq.Enumerable>
 - [Lambda 表达式](./lambda-expressions.md)
-- [Function 语句](../../../../visual-basic/language-reference/statements/function-statement.md)
-- [Sub 语句](../../../../visual-basic/language-reference/statements/sub-statement.md)
-- [委托](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
-- [如何：在 Visual Basic 中将过程传递给另一过程](../../../../visual-basic/programming-guide/language-features/delegates/how-to-pass-procedures-to-another-procedure.md)
-- [Delegate 语句](../../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [Visual Basic 中的 LINQ 简介](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)
+- [Function 语句](../../../language-reference/statements/function-statement.md)
+- [Sub 语句](../../../language-reference/statements/sub-statement.md)
+- [委托](../delegates/index.md)
+- [如何：在 Visual Basic 中将过程传递给另一过程](../delegates/how-to-pass-procedures-to-another-procedure.md)
+- [Delegate 语句](../../../language-reference/statements/delegate-statement.md)
+- [Visual Basic 中的 LINQ 简介](../linq/introduction-to-linq.md)

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - variables [Visual Basic], retrieving values
 - variables [Visual Basic], storing data
 ms.assetid: 93744f46-bf78-4fa0-9640-1de01bc38d9a
-ms.openlocfilehash: bc5a7377a5e2e4c7ebe7291fd5f0093c4d6e996d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: fe19a6160623aa9ea867becdf7a15b51319abf45
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346894"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410433"
 ---
 # <a name="how-to-move-data-into-and-out-of-a-variable-visual-basic"></a>如何：将数据移入和移出变量 (Visual Basic)
 
@@ -22,7 +22,7 @@ ms.locfileid: "74346894"
 
 - 使用赋值语句左侧的变量名称。
 
-    下面的示例设置 `alpha`变量的值。
+    下面的示例设置变量的值 `alpha` 。
 
     ```vb
     alpha = (beta * 6.27) / (gamma + 2.1)
@@ -40,9 +40,9 @@ ms.locfileid: "74346894"
 
   \- 或 -
 
-- 在赋值语句中使用等号（`=`）后的变量名称。
+- 在赋值语句中使用等号（）后面的变量名称 `=` 。
 
-  下面的示例读取变量 `startValue` 的值，然后在表达式中使用变量 `counter` 的值。
+  下面的示例读取变量的值 `startValue` ，然后 `counter` 在表达式中使用该变量的值。
 
   ```vb
   counter = startValue
@@ -53,6 +53,6 @@ ms.locfileid: "74346894"
 
 ## <a name="see-also"></a>另请参阅
 
-- [变量](../../../../visual-basic/programming-guide/language-features/variables/index.md)
-- [变量声明](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
-- [对象变量](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
+- [变量](index.md)
+- [变量声明](variable-declaration.md)
+- [对象变量](object-variables.md)

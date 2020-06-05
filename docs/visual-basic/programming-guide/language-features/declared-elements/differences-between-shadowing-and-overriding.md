@@ -5,12 +5,12 @@ helpviewer_keywords:
 - shadowing, vs. overriding
 - overriding, vs. shadowing
 ms.assetid: 2d014a0b-7630-407d-8f4e-24bd87987923
-ms.openlocfilehash: 8d1ebdcd0a23dff69a7acca22268c03e30ec06d9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a6ea83fadf18ef3be778e6de31c0eb4e65e74824
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345419"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84392865"
 ---
 # <a name="differences-between-shadowing-and-overriding-visual-basic"></a>隐藏和重写之间的差异 (Visual Basic)
 在定义继承自基类的类时，有时需要重新定义派生类中的一个或多个基类元素。 隐藏和重写都可用于此目的。  
@@ -22,21 +22,21 @@ ms.locfileid: "74345419"
   
 ||||  
 |---|---|---|  
-|比较点|阴影操作|取代|  
-|目的|针对引入已在派生类中定义的成员的后续基类修改进行保护|通过定义具有相同调用序列的过程或属性的不同实现来实现多态性<sup>1</sup>|  
-|重新定义的元素|任何声明的元素类型|仅过程（`Function`、`Sub`或 `Operator`）或属性|  
+|比较点|阴影操作|替代|  
+|用途|针对引入已在派生类中定义的成员的后续基类修改进行保护|通过定义具有相同调用序列的过程或属性的不同实现来实现多态性<sup>1</sup>|  
+|重新定义的元素|任何声明的元素类型|仅过程（ `Function` 、 `Sub` 或 `Operator` ）或属性|  
 |重定义元素|任何声明的元素类型|仅具有相同调用序列的过程或属性<sup>1</sup>|  
 |重定义元素的访问级别|任何访问级别|无法更改重写元素的访问级别|  
 |重定义元素的可读性和可写性|任何组合|无法更改重写属性的可读性或可写性|  
-|控制重定义|基类元素无法强制或禁止隐藏|基类元素可以指定 `MustOverride`、`NotOverridable`或 `Overridable`|  
-|关键字用法|在派生类中建议 `Shadows`;如果 `Shadows` 和 `Overrides` 均<sup>未指定，</sup>则假定 `Shadows`|基类中需要 `Overridable` 或 `MustOverride`;派生类中需要 `Overrides`|  
+|控制重定义|基类元素无法强制或禁止隐藏|基类元素可以指定 `MustOverride` 、 `NotOverridable` 或`Overridable`|  
+|关键字用法|`Shadows`建议在派生类中使用;`Shadows`如果和均 `Shadows` 未 `Overrides` 指定<sup>2</sup> ，则假定|`Overridable`或 `MustOverride` 在基类中是必需的; `Overrides` 派生类中需要|  
 |从派生类派生的类的重定义元素的继承|由进一步的派生类继承的隐藏元素;隐藏的元素仍隐藏<sup>3</sup>|重写由进一步派生的类继承的元素;重写的元素仍将被重写|  
   
- <sup>1</sup> *调用序列*包含元素类型（`Function`、`Sub`、`Operator`或 `Property`）、名称、参数列表和返回类型。 不能使用属性或其他方法来重写过程。 不能重写另一种类型的过程（`Function`、`Sub`或 `Operator`）。  
+ <sup>1</sup> *调用序列*包含元素类型（ `Function` 、 `Sub` 、 `Operator` 或 `Property` ）、名称、参数列表和返回类型。 不能使用属性或其他方法来重写过程。 不能用另一种类型的过程（ `Function` 、 `Sub` 或）重写 `Operator` 。  
   
- <sup>2</sup>如果未指定 `Shadows` 或 `Overrides`，则编译器会发出警告消息，帮助您确定要使用的重新定义类型。 如果忽略该警告，则使用隐藏机制。  
+ <sup>2</sup>如果未指定 `Shadows` 或 `Overrides` ，则编译器会发出警告消息，帮助您确定要使用哪种重新定义。 如果忽略该警告，则使用隐藏机制。  
   
- <sup>3</sup>如果无法在进一步的派生类中访问隐藏元素，则不会继承隐藏。 例如，如果将隐藏元素声明为 `Private`，派生自派生类的类将继承原始元素，而不是隐藏元素。  
+ <sup>3</sup>如果无法在进一步的派生类中访问隐藏元素，则不会继承隐藏。 例如，如果将隐藏元素声明为 `Private` ，派生自派生类的类将继承原始元素，而不是隐藏元素。  
   
 ## <a name="guidelines"></a>指南  
  在以下情况下，通常使用重写：  
@@ -53,10 +53,10 @@ ms.locfileid: "74345419"
   
 ## <a name="see-also"></a>另请参阅
 
-- [对已声明元素的引用](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
-- [Visual Basic 中的阴影](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
-- [如何：隐藏与你的变量同名的变量](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
-- [如何：隐藏继承的变量](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)
-- [如何：访问被派生类隐藏的变量](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md)
-- [Shadows](../../../../visual-basic/language-reference/modifiers/shadows.md)
-- [Overrides](../../../../visual-basic/language-reference/modifiers/overrides.md)
+- [References to Declared Elements](references-to-declared-elements.md)
+- [Visual Basic 中的隐藏](shadowing.md)
+- [如何：隐藏与变量同名的变量](how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
+- [如何：隐藏继承的变量](how-to-hide-an-inherited-variable.md)
+- [如何：访问被派生类隐藏的变量](how-to-access-a-variable-hidden-by-a-derived-class.md)
+- [Shadows](../../../language-reference/modifiers/shadows.md)
+- [替代](../../../language-reference/modifiers/overrides.md)

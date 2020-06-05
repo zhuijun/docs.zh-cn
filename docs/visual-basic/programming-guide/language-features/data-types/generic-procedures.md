@@ -12,12 +12,12 @@ helpviewer_keywords:
 - generics [Visual Basic], procedures
 - generic procedures [Visual Basic], type inference
 ms.assetid: 95577b28-137f-4d5c-a149-919c828600e5
-ms.openlocfilehash: 16a629e07cf711778b3d8d1863958ec7a6300649
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2efc0410b9d4bb663e1ff19d5a5456d7ff2c99bd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350088"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84394060"
 ---
 # <a name="generic-procedures-in-visual-basic"></a>Generic Procedures in Visual Basic
 *泛型过程*（也称为*泛型方法*）是定义了至少一个类型参数的过程。 这样，每次调用该过程时，调用代码都可以根据其需求来定制数据类型。  
@@ -27,7 +27,7 @@ ms.locfileid: "74350088"
  泛型过程可以在其常规参数列表中使用其类型参数（如果有），并在其过程代码中使用它的返回类型。  
   
 ## <a name="type-inference"></a>类型推断  
- 无需提供任何类型参数即可调用泛型过程。 如果以这种方式对其进行调用，则编译器将尝试确定要传递给该过程的类型参数的相应数据类型。 这称为 "*类型推理*"。 下面的代码演示了一个调用，编译器会在该调用中推断出应将类型 `String` 传递给类型参数 `t`。  
+ 无需提供任何类型参数即可调用泛型过程。 如果以这种方式对其进行调用，则编译器将尝试确定要传递给该过程的类型参数的相应数据类型。 这称为 "*类型推理*"。 下面的代码演示了一个调用，其中编译器会推断它应将类型传递 `String` 到类型参数 `t` 。  
   
  [!code-vb[VbVbalrDataTypes#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#15)]  
   
@@ -56,20 +56,20 @@ End Sub
  [!code-vb[VbVbalrDataTypes#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#14)]  
   
 ### <a name="comments"></a>注释  
- 前面的示例需要能够对 `searchArray`的每个元素进行 `searchValue` 比较。 为了保证此功能，它将 `T` 类型参数约束为实现 <xref:System.IComparable%601> 接口。 代码使用 <xref:System.IComparable%601.CompareTo%2A> 方法，而不是 `=` 运算符，因为无法保证为 `T` 提供的类型自变量支持 `=` 运算符。  
+ 前面的示例需要能够与 `searchValue` 的每个元素进行比较 `searchArray` 。 为了保证这种能力，它约束类型参数 `T` 来实现 <xref:System.IComparable%601> 接口。 此代码使用 <xref:System.IComparable%601.CompareTo%2A> 方法而不是 `=` 运算符，因为无法保证为提供的类型自变量 `T` 支持 `=` 运算符。  
   
- 可以通过以下代码测试 `findElement` 过程。  
+ 可以 `findElement` 通过以下代码测试该过程。  
   
  [!code-vb[VbVbalrDataTypes#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#13)]  
   
- 前面对的调用 `MsgBox` 分别显示 "0"、"1" 和 "-1"。  
+ 上述调用 `MsgBox` 分别显示 "0"、"1" 和 "-1"。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [Visual Basic 中的泛型类型](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [如何：定义可对不同数据类型提供相同功能的类](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)
-- [如何：使用泛型类](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
-- [过程](../../../../visual-basic/programming-guide/language-features/procedures/index.md)
-- [过程参数和自变量](../../../../visual-basic/programming-guide/language-features/procedures/procedure-parameters-and-arguments.md)
-- [类型列表](../../../../visual-basic/language-reference/statements/type-list.md)
-- [参数列表](../../../../visual-basic/language-reference/statements/parameter-list.md)
+- [Generic Types in Visual Basic](generic-types.md)
+- [如何：定义可对不同数据类型提供相同功能的类](how-to-define-a-class-that-can-provide-identical-functionality.md)
+- [如何：使用泛型类](how-to-use-a-generic-class.md)
+- [过程](../procedures/index.md)
+- [过程形参和实参](../procedures/procedure-parameters-and-arguments.md)
+- [Type List](../../../language-reference/statements/type-list.md)
+- [参数列表](../../../language-reference/statements/parameter-list.md)

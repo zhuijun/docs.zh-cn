@@ -9,20 +9,20 @@ helpviewer_keywords:
 - <specifiedPickupDirectory> element
 ms.assetid: 0121f49d-bff2-4bc6-af06-f1628dcd61f1
 ms.openlocfilehash: 4b0cbaf9a7bfe2a9b1610811f4201253d219a6b2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: 0a798a7e9680e2d0a5a81a3eaa203870ea782883
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/03/2020
 ms.locfileid: "79154603"
 ---
-# <a name="specifiedpickupdirectory-element-network-settings"></a>\<指定的拾取目录>元素（网络设置）
-为简单邮件传输协议 （SMTP） 服务器配置本地目录。  
+# <a name="specifiedpickupdirectory-element-network-settings"></a>\<specifiedPickupDirectory> 元素（网络设置）
+配置简单邮件传输协议（SMTP）服务器的本地目录。  
   
-[**\<配置>**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<邮件设置>**](mailsettings-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<斯姆特普>**](smtp-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<指定的取件目录>**  
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<mailSettings>**](mailsettings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<smtp>**](smtp-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<specifiedPickupDirectory>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -35,26 +35,26 @@ ms.locfileid: "79154603"
 ## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a>特性  
   
-|Attribute|说明|  
+|属性|说明|  
 |---------------|-----------------|  
-|`pickupDirectoryLocation`|应用程序保存电子邮件以供 SMTP 服务器以后处理的目录。|  
+|`pickupDirectoryLocation`|应用程序在其中保存电子邮件以供 SMTP 服务器稍后处理的目录。|  
   
 ### <a name="child-elements"></a>子元素  
  无。  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
-|[\<smtp>元素（网络设置）](smtp-element-network-settings.md)|配置简单的邮件传输协议 （SMTP） 邮件发送选项。|  
+|[\<smtp>元素（网络设置）](smtp-element-network-settings.md)|配置简单邮件传输协议（SMTP）邮件发送选项。|  
   
 ## <a name="remarks"></a>备注  
  `specifiedPickupDirectory` 特性设置应用程序保存邮件以供 SMTP 服务器处理的目录。  
   
 ## <a name="example"></a>示例  
- 下面的示例指定 c：\maildrop 作为邮件取件目录。  
+ 下面的示例将 c:\maildrop 指定为邮件分拣目录。  
   
 ```xml  
 <configuration>  

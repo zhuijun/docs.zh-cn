@@ -7,26 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - BC30298
 ms.assetid: 2d77b7f4-0640-4f89-9c65-f101fd2847c0
-ms.openlocfilehash: 8459ee7fec6d761161a721c88ccdc88e513fc95f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6abb6dde624e129b52fefecf8c51e6cde2567ae1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936690"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409798"
 ---
-# <a name="constructor-name-cannot-call-itself"></a>构造函数\<名称 > 不能调用自身
-一个`Sub New`类或结构中的过程调用其自身。  
+# <a name="constructor-name-cannot-call-itself"></a>构造函数“\<name>”不能调用自身
+`Sub New`类或结构中的过程调用自身。  
   
- 结构首次创建或构造函数的用途是初始化类的实例。 类或结构可以具有多个构造函数，前提是它们都具有不同的参数列表。 构造函数可以调用另一个构造函数来执行其功能，此外还是其自身。 它是构造函数来调用本身，这对于没有意义，但实际上这会导致无限递归如果允许。  
+ 构造函数的目的是在第一次创建类或结构时初始化该类或结构的实例。 类或结构可以有多个构造函数，前提是它们都具有不同的参数列表。 除了自身之外，还允许构造函数调用另一个构造函数来执行其功能。 但构造函数调用自身是毫无意义的，事实上，如果允许，它会导致无限递归。  
   
- **错误 ID:** BC30298  
+ **错误 ID：** BC30298  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-1. 检查正在调用的构造函数的参数列表。 它应为不同的构造函数进行调用。  
+1. 检查正在被调用的构造函数的参数列表。 它应不同于发出调用的构造函数的。  
   
-2. 如果您不想要调用的其他构造函数，删除`Sub New`完全调用。  
+2. 如果不打算调用另一个构造函数，请完全删除该 `Sub New` 调用。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [对象生存期：如何创建和销毁对象](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
+- [对象生存期：如何创建和销毁对象](../../programming-guide/language-features/objects-and-classes/object-lifetime-how-objects-are-created-and-destroyed.md)
