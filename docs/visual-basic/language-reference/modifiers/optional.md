@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Optional keyword [Visual Basic], contexts
 - Optional keyword [Visual Basic]
 ms.assetid: 4571ce88-a539-4115-b230-54eb277c6aa7
-ms.openlocfilehash: a16dae35bf4bc84d95501624c4f023f390a8dda8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c46d06dba61158d7362d736731161be306af3f10
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351441"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84392140"
 ---
 # <a name="optional-visual-basic"></a>Optional (Visual Basic)
 
@@ -21,25 +21,25 @@ ms.locfileid: "74351441"
 
 ## <a name="remarks"></a>备注
 
-对于每个可选参数，必须将常数表达式指定为该参数的默认值。 如果表达式的计算结果为[Nothing](../../../visual-basic/language-reference/nothing.md)，则将值数据类型的默认值用作参数的默认值。
+对于每个可选参数，必须将常数表达式指定为该参数的默认值。 如果表达式的计算结果为[Nothing](../nothing.md)，则将值数据类型的默认值用作参数的默认值。
 
 如果参数列表包含一个可选参数，则其后的每个参数都必须是可选的。
 
 `Optional` 修饰符可用于下面的上下文中：
 
-- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Declare Statement](../statements/declare-statement.md)
 
-- [Function 语句](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Function 语句](../statements/function-statement.md)
 
-- [Property 语句](../../../visual-basic/language-reference/statements/property-statement.md)
+- [Property Statement](../statements/property-statement.md)
 
-- [Sub 语句](../../../visual-basic/language-reference/statements/sub-statement.md)
-
-> [!NOTE]
-> 调用带有或不带可选参数的过程时，可以按位置或按名称传递参数。 有关详细信息，请参阅[按位置和按名称传递参数](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)。
+- [Sub 语句](../statements/sub-statement.md)
 
 > [!NOTE]
-> 还可以通过使用重载来定义带有可选参数的过程。 如果有一个可选参数，则可以定义过程的两个重载版本，一个接受参数，另一个不包含参数。 有关更多信息，请参见 [Procedure Overloading](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)。
+> 调用带有或不带可选参数的过程时，可以按位置或按名称传递参数。 有关详细信息，请参阅[按位置和按名称传递参数](../../programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md)。
+
+> [!NOTE]
+> 还可以通过使用重载来定义带有可选参数的过程。 如果有一个可选参数，则可以定义过程的两个重载版本，一个接受参数，另一个不包含参数。 有关更多信息，请参见 [Procedure Overloading](../../programming-guide/language-features/procedures/procedure-overloading.md)。
 
 ## <a name="example"></a>示例
 
@@ -72,6 +72,6 @@ End Function
 
 ## <a name="see-also"></a>另请参阅
 
-- [参数列表](../../../visual-basic/language-reference/statements/parameter-list.md)
-- [可选参数](../../../visual-basic/programming-guide/language-features/procedures/optional-parameters.md)
-- [关键字](../../../visual-basic/language-reference/keywords/index.md)
+- [参数列表](../statements/parameter-list.md)
+- [可选参数](../../programming-guide/language-features/procedures/optional-parameters.md)
+- [关键字](../keywords/index.md)

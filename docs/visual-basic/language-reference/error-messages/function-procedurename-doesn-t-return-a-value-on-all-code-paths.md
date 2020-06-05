@@ -7,40 +7,40 @@ f1_keywords:
 helpviewer_keywords:
 - BC42105
 ms.assetid: b6929bf4-a365-4a70-8dc9-6b0fc09e1468
-ms.openlocfilehash: 5564f95048f6b44a48229c7e5be9331839803439
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: edb2195f4e83c2315aa929936aff8af88ca8556c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662103"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374130"
 ---
-# <a name="function-procedurename-doesnt-return-a-value-on-all-code-paths"></a>函数\<过程名称 > 没有在所有代码路径上返回一个值
-函数\<过程名称 > 没有在所有代码路径上返回一个值。 是否缺少 Return 语句？  
+# <a name="function-procedurename-doesnt-return-a-value-on-all-code-paths"></a>函数“\<procedurename>”并非在所有代码路径上都返回值
+函数 " \<procedurename> " 不会在所有代码路径上都返回值。 是否缺少 "Return" 语句？  
   
- 一个`Function`过程包含至少一个可能不会返回一个值的代码路径。  
+ `Function`过程至少有一个可能的路径，其代码中不返回值。  
   
- 可以返回一个介于`Function`处于以下任一过程：  
+ 可以通过 `Function` 以下任一方式从过程返回值：  
   
-- 包括中的值[Return 语句](../../../visual-basic/language-reference/statements/return-statement.md)。  
+- 在[Return 语句](../statements/return-statement.md)中包含值。  
   
-- 向其分配值`Function`过程名，然后执行`Exit Function`语句。  
+- 将值分配给 `Function` 过程名称，然后执行 `Exit Function` 语句。  
   
-- 向其分配值`Function`过程名，然后执行`End Function`语句。  
+- 将值分配给 `Function` 过程名称，然后执行 `End Function` 语句。  
   
- 控制权将传递给`Exit Function`或`End Function`和没有分配到过程名称的任何值，该过程返回的返回数据类型的默认值。 详细信息，请参阅"行为"中[Function 语句](../../../visual-basic/language-reference/statements/function-statement.md)。  
+ 如果控件传递给 `Exit Function` 或 `End Function` 并且您没有为过程名称赋值，则该过程将返回返回数据类型的默认值。 有关详细信息，请参阅[Function 语句](../statements/function-statement.md)中的 "行为"。  
   
  默认情况下，此消息是一个警告。 有关隐藏警告或将警告视为错误的详细信息，请参见 [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)。  
   
- **错误 ID:** BC42105  
+ **错误 ID：** BC42105  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 检查控制流逻辑，并确保分配导致返回每个语句前的值。  
+- 检查控制流逻辑，并确保在导致返回的每个语句之前赋值。  
   
-     它是更轻松地保证每个返回从过程返回一个值，如果始终使用`Return`语句。 如果之前的最后一个语句执行此操作，`End Function`应为`Return`语句。  
+     如果始终使用语句，则更容易保证每次从过程返回一个值 `Return` 。 如果执行此操作，则之前的最后一个语句 `End Function` 应为 `Return` 语句。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Function 过程](../../../visual-basic/programming-guide/language-features/procedures/function-procedures.md)
-- [Function 语句](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Function 过程](../../programming-guide/language-features/procedures/function-procedures.md)
+- [Function 语句](../statements/function-statement.md)
 - [“项目设计器”->“编译”页 (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)

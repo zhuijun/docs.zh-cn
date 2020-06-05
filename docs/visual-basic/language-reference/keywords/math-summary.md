@@ -7,17 +7,17 @@ helpviewer_keywords:
 - math functions, Visual Basic
 - math functions
 ms.assetid: 6abf2dd7-92d2-488a-8e2b-819be9b30c3f
-ms.openlocfilehash: 21c6d35b4e6aa17bb29be1c1e4b5e88a5fb389d8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ef0e014745ec99afbce16824e65587276bc145e4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348493"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373442"
 ---
 # <a name="math-summary-visual-basic"></a>数学摘要 (Visual Basic)
 Visual Basic 语言关键字和运行时库成员按用途和使用进行组织。  
   
-|操作|Language 元素|  
+|操作|语言元素|  
 |------------|----------------------|  
 |派生三角函数。|<xref:System.Math.Atan%2A>, <xref:System.Math.Cos%2A>, <xref:System.Math.Sin%2A>, <xref:System.Math.Tan%2A>|  
 |一般计算。|<xref:System.Math.Exp%2A>, <xref:System.Math.Log%2A>, <xref:System.Math.Sqrt%2A>|  
@@ -28,6 +28,6 @@ Visual Basic 语言关键字和运行时库成员按用途和使用进行组织�
   
 ## <a name="see-also"></a>另请参阅
 
-- [派生的数学函数](../../../visual-basic/language-reference/keywords/derived-math-functions.md)
-- [关键字](../../../visual-basic/language-reference/keywords/index.md)
-- [Visual Basic 运行库成员](../../../visual-basic/language-reference/runtime-library-members.md)
+- [派生的数学函数](derived-math-functions.md)
+- [关键字](index.md)
+- [Visual Basic 运行库成员](../runtime-library-members.md)
