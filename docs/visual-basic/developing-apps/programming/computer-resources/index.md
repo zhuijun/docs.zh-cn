@@ -6,12 +6,12 @@ helpviewer_keywords:
 - My.Computer object [Visual Basic], tasks
 - computer resources [Visual Basic], accessing
 ms.assetid: 75b81c88-f7c0-46e0-95c8-0c006d2120f9
-ms.openlocfilehash: 27310a50289b9b2c315f52ad471da1f32ef0721a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9595abaa1daa2b4a4436577d58856183dcb4d9ac
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345536"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401779"
 ---
 # <a name="accessing-computer-resources-visual-basic"></a>访问计算机资源 (Visual Basic)
 
@@ -30,26 +30,26 @@ ms.locfileid: "74345536"
 
 ## <a name="in-this-section"></a>本节内容
 
-[播放声音](../../../../visual-basic/developing-apps/programming/computer-resources/playing-sounds.md)  
+[播放声音](playing-sounds.md)  
 列出与 `My.Computer.Audio` 关联的任务，例如在后台播放声音。
 
-[将数据存储到剪贴板以及从剪贴板读取数据](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
+[将数据存储到剪贴板以及从剪贴板读取数据](storing-data-to-and-reading-from-the-clipboard.md)  
 列出与 `My.Computer.Clipboard` 关联的任务，例如从剪贴板读取数据或向剪贴板写入数据。
 
-[获取有关计算机的信息](../../../../visual-basic/developing-apps/programming/computer-resources/getting-information-about-the-computer.md)  
+[获取有关计算机的信息](getting-information-about-the-computer.md)  
 列出与 `My.Computer.Info` 关联的任务，例如确定计算机的全名或 IP 地址。
 
-[访问键盘](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md)  
+[访问键盘](accessing-the-keyboard.md)  
 列出与 `My.Computer.Keyboard` 关联的任务，例如确定 Caps Lock 键是否已启用。
 
-[访问鼠标](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-mouse.md)  
+[访问鼠标](accessing-the-mouse.md)  
 列出与 `My.Computer.Mouse` 关联的任务，例如确定鼠标是否存在。
 
-[执行网络操作](../../../../visual-basic/developing-apps/programming/computer-resources/performing-network-operations.md)  
+[执行网络操作](performing-network-operations.md)  
 列出与 `My.Computer.Network` 关联的任务，例如上传或下载文件。
 
-[访问计算机的端口](../../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-computer-s-ports.md)  
+[访问计算机的端口](accessing-the-computer-s-ports.md)  
 列出与 `My.Computer.Ports` 关联的任务，例如显示可用的串行端口或向串行端口发送字符串。
 
-[读取和写入注册表](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)  
+[读取和写入注册表](reading-from-and-writing-to-the-registry.md)  
 列出与 `My.Computer.Registry` 关联的任务，例如从注册表项读取数据或向注册表项写入数据。

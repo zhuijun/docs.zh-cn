@@ -13,12 +13,12 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-ms.openlocfilehash: 725884d8ab6d6d9009ad1cdd7bc185889cd5e485
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: aa569c0da5b963243596ef440ef37c08b4fae37f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243058"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288233"
 ---
 # <a name="language-independence-and-language-independent-components"></a>语言独立性和与语言无关的组件
 
@@ -170,7 +170,7 @@ ms.locfileid: "81243058"
 
 - 所有用作针对泛型参数的约束的类型必须符合 CLS。
 
-.NET Framework [通用类型系统](../../docs/standard/base-types/common-type-system.md)包括大量直接受公共语言运行时支持且专以程序集元数据编码的内置类型。 在这些内部类型中，下表中所列的类型都符合 CLS。
+.NET Framework [通用类型系统](base-types/common-type-system.md)包括大量直接受公共语言运行时支持且专以程序集元数据编码的内置类型。 在这些内部类型中，下表中所列的类型都符合 CLS。
 
 |符合 CLS 的类型|描述|
 |-------------------------|-----------------|
@@ -381,7 +381,7 @@ ms.locfileid: "81243058"
 [!code-csharp[Conceptual.CLSCompliant#29](../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.clscompliant/cs/nestedgenerics2.cs#29)]
 [!code-vb[Conceptual.CLSCompliant#29](../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.clscompliant/vb/nestedgenerics2.vb#29)]
 
-泛型类型名称采用 name\`n 格式进行编码，其中 name 是类型名称，\` 是字符文本，而 n 是针对类型声明的参数数目，或对于嵌套泛型类型为最近引入的类型参数的数目    。 此泛型类型名称的编码主要对使用反射来访问库中符合 CLS 的泛型类型的开发人员很有用。
+泛型类型名称采用 name\`n 格式进行编码，其中 name 是类型名称，\` 是字符文本，而 n 是针对类型声明的参数数目，或对于嵌套泛型类型为最近引入的类型参数的数目  。 此泛型类型名称的编码主要对使用反射来访问库中符合 CLS 的泛型类型的开发人员很有用。
 
 如果将约束应用于泛型类型，则任何用作约束的类型也必须符合 CLS。 下面的示例定义一个名为 `BaseClass` 的不符合 CLS 的类和一个其类型参数必须派生自 `BaseCollection` 的名为 `BaseClass` 的泛型类。 但由于 `BaseClass` 不符合 CLS，因此编译器会发出警告。
 
@@ -571,7 +571,7 @@ ms.locfileid: "81243058"
 
 ## <a name="cross-language-interoperability"></a>跨语言互操作性
 
-语言独立性可能有许多含义。 [语言独立性和与语言无关的组件](../../docs/standard/language-independence-and-language-independent-components.md)一文讨论了其中一个含义，其涉及将用一种语言编写的类型无缝地用于用另一种语言编写的应用程序。 本文介绍第二个含义，涉及将用多种语言编写的代码组合到一个 .NET Framework 程序集。
+语言独立性可能有许多含义。 [语言独立性和与语言无关的组件](language-independence-and-language-independent-components.md)一文讨论了其中一个含义，其涉及将用一种语言编写的类型无缝地用于用另一种语言编写的应用程序。 本文介绍第二个含义，涉及将用多种语言编写的代码组合到一个 .NET Framework 程序集。
 
 以下示例通过创建一个名为 Utilities.dll 的包含两个类（`NumericLib` 和 `StringLib`）的类库演示了跨语言互操作性。 `NumericLib` 类用 C# 编写类，`StringLib` 类用 Visual Basic 编写。 以下是 StringUtil.vb 的源代码，该源代码在其 `ToTitleCase` 类中包含一个成员`StringLib`。
 

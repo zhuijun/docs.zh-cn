@@ -3,13 +3,13 @@ title: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序
 description: 本指南提供了使用 ASP.NET Core 和 Azure 生成单片式 Web 应用的端到端指导。
 author: ardalis
 ms.author: wiwagn
-ms.date: 12/4/2019
-ms.openlocfilehash: 8eebe9a8e530b244f4596adef1b5e6dd23e305bd
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.date: 5/25/2020
+ms.openlocfilehash: 7be03ea8edb763096b0684a62e71826f1cfcd42f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144534"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284450"
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序
 
@@ -49,7 +49,7 @@ Docker 的鲸鱼徽标是 Docker Inc. 的注册商标经许可方可使用。
 
 编辑：
 
-> Maira Wenzel 
+> Maira Wenzel
 
 ## <a name="action-links"></a>操作链接
 
@@ -87,17 +87,21 @@ Docker 的鲸鱼徽标是 Docker Inc. 的注册商标经许可方可使用。
 
 使用 Azure 中托管的 ASP.NET Core 生成 Web 应用，与传统替代方法相比，这能提供许多竞争优势。 ASP.NET Core 针对新式 web 应用程序开发做法和云托管方案进行了优化。 本指南介绍如何构建 ASP.NET Core 应用程序以充分利用这些功能。
 
+## <a name="version"></a>Version
+
+本指南已经过修订，现涵盖 .NET Core 3.1 版本，还包含与 .NET Core 3.1 同期的同一“批”技术（即 Azure 和其他第三方技术）的诸多其他更新。 这就是书本版本也更新到 3.1 的原因。
+
 ## <a name="purpose"></a>目标
 
-本指南提供了使用 ASP.NET Core 和 Azure 构建单片 Web 应用程序的端到端指导  。 在此上下文中，“单片”是指这一事实，即这些应用程序会作为单个单元部署，而不是作为交互服务和应用程序的集合。
+本指南提供了使用 ASP.NET Core 和 Azure 构建单片 Web 应用程序的端到端指导。 在此上下文中，“单片”是指这一事实，即这些应用程序会作为单个单元部署，而不是作为交互服务和应用程序的集合。
 
 本指南是[“ _.NET 微服务 - 容器化 .NET 应用程序体系结构_”](../microservices/index.md)的补充，该文章更侧重于介绍 Docker、微服务和部署容器以托管企业应用程序。
 
 ### <a name="net-microservices-architecture-for-containerized-net-applications"></a>.NET 微服务。 适用于容器化 .NET 应用程序的体系结构
 
-- 电子书   
+- 电子书  
   <https://aka.ms/MicroservicesEbook>
-- 示例应用程序   
+- 示例应用程序  
   <https://aka.ms/microservicesarchitecture>
 
 ## <a name="who-should-use-this-guide"></a>本指南的目标读者
