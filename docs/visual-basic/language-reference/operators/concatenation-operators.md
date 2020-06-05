@@ -5,23 +5,23 @@ helpviewer_keywords:
 - operators [Visual Basic], concatenation
 - concatenation operators [Visual Basic]
 ms.assetid: d787368b-3713-47ff-bce8-f112720a673a
-ms.openlocfilehash: 797b9bc03ef07e8c0810a1c53e855f39faf782c0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: cd288450b0e23bf49c4db2c04008431fd1b8f1be
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74331498"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84371539"
 ---
 # <a name="concatenation-operators-visual-basic"></a>串联运算符 (Visual Basic)
 下面是 Visual Basic 中定义的串联运算符。  
   
- [& 运算符](../../../visual-basic/language-reference/operators/concatenation-operator.md)  
+ [& 运算符](concatenation-operator.md)  
   
- [+ 运算符](../../../visual-basic/language-reference/operators/addition-operator.md)  
+ [+ 运算符](addition-operator.md)  
   
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Text>
 - <xref:System.Text.StringBuilder>
-- [Visual Basic 中的运算符优先级](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Visual Basic 中的串联运算符](../../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md)
+- [Visual Basic 中的运算符优先级](operator-precedence.md)
+- [串联运算符 (Visual Basic)](../../programming-guide/language-features/operators-and-expressions/concatenation-operators.md)

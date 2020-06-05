@@ -4,26 +4,26 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID53
 ms.assetid: 57addb16-6f9a-444d-8af8-dda52431daca
-ms.openlocfilehash: 90dbac88854e1fb156b387eaa6df564269d84d29
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0583fc465e81a7076624f4f90297ab3e002c6611
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64629052"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363067"
 ---
 # <a name="file-not-found-visual-basic-run-time-error"></a>找不到文件（Visual Basic 运行时错误）
-指定之处找不到该文件。 错误具有以下可能的原因：  
+在指定的位置找不到该文件。 错误具有以下可能的原因：  
   
-- 语句引用不存在的文件。  
+- 语句引用的文件不存在。  
   
-- 尝试调用动态链接库 (DLL) 中的过程，但在库中指定`Lib`子句`Declare`找不到语句。  
+- 尝试在动态链接库（DLL）中调用过程，但找不到在语句的子句中指定的库 `Lib` `Declare` 。  
   
-- 尝试打开的项目或加载不存在的文本文件。  
+- 您尝试打开一个项目或加载一个不存在的文本文件。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-1. 检查文件名和路径规范的拼写正确。  
+1. 检查文件名和路径规范的拼写。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Declare 语句](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Declare Statement](../statements/declare-statement.md)
