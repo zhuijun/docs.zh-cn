@@ -1,13 +1,13 @@
 ---
-title: 如何：检索特性的集合 (LINQ to XML)
+title: 如何：检索属性集合 (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: a07e9645-b45b-403b-b698-f652f904c7d2
-ms.openlocfilehash: ff260660057c3b75f4cc92c37c67fca0a0b7f192
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: be7abac736f9a70ae3f0c9efe2074cfe79821ddb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347575"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397877"
 ---
 # <a name="how-to-retrieve-a-collection-of-attributes-linq-to-xml-visual-basic"></a>如何：检索属性的集合（LINQ to XML）（Visual Basic）
 本主题介绍 <xref:System.Xml.Linq.XElement.Attributes%2A> 方法。 此方法检索元素的属性。  
@@ -36,4 +36,4 @@ ConvertableTo="double"
   
 ## <a name="see-also"></a>另请参阅
 
-- [LINQ to XML 轴 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-axes.md)
+- [LINQ to XML 轴 (Visual Basic)](linq-to-xml-axes.md)

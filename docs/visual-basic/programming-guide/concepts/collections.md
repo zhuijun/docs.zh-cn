@@ -2,18 +2,18 @@
 title: 集合
 ms.date: 07/20/2015
 ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
-ms.openlocfilehash: d27761ba7a955d1dc8843ad168a82a9c9c27a6f6
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: f264a0f9ee15707daf4bece5651b9f5f07ebbc39
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202449"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400650"
 ---
 # <a name="collections-visual-basic"></a>集合 (Visual Basic)
 
 对于许多应用程序，你会想要创建和管理相关对象的组。 有两种方法对对象进行分组：通过创建对象的数组，以及通过创建对象的集合。
 
-数组最适用于创建和使用固定数量的强类型化对象。 有关数组的信息，请参阅[数组](../../../visual-basic/programming-guide/language-features/arrays/index.md)。
+数组最适用于创建和使用固定数量的强类型化对象。 有关数组的信息，请参阅[数组](../language-features/arrays/index.md)。
 
 集合提供更灵活的方式来使用对象组。 与数组不同，你使用的对象组随着应用程序更改的需要动态地放大和缩小。 对于某些集合，你可以为放入集合中的任何对象分配一个密钥，这样你便可以使用该密钥快速检索此对象。
 
@@ -22,7 +22,7 @@ ms.locfileid: "84202449"
 如果集合中只包含一种数据类型的元素，则可以使用 <xref:System.Collections.Generic?displayProperty=nameWithType> 命名空间中的一个类。 泛型集合强制类型安全，因此无法向其添加任何其他数据类型。 当你从泛型集合检索元素时，你无需确定其数据类型或对其进行转换。
 
 > [!NOTE]
-> 对于本主题中的示例，包括[Imports](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)用于 `System.Collections.Generic` 和命名空间的 Imports 语句 `System.Linq` 。
+> 对于本主题中的示例，包括[Imports](../../language-reference/statements/imports-statement-net-namespace-and-type.md)用于 `System.Collections.Generic` 和命名空间的 Imports 语句 `System.Linq` 。
 
 <a name="BKMK_SimpleCollection"></a>
 
@@ -30,7 +30,7 @@ ms.locfileid: "84202449"
 
 本部分中的示例使用泛型 <xref:System.Collections.Generic.List%601> 类，通过此类可使用对象的强类型列表。
 
-下面的示例创建一个字符串列表，然后使用[For Each .。。下一](../../../visual-basic/language-reference/statements/for-each-next-statement.md)语句。
+下面的示例创建一个字符串列表，然后使用[For Each .。。下一](../../language-reference/statements/for-each-next-statement.md)语句。
 
 ```vb
 ' Create a list of strings.
@@ -47,7 +47,7 @@ Next
 'Output: chinook coho pink sockeye
 ```
 
-如果集合中的内容是事先已知的，则可以使用集合初始值设定项** 来初始化集合。 有关详细信息，请参阅[集合初始值设定项](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)。
+如果集合中的内容是事先已知的，则可以使用集合初始值设定项来初始化集合。 有关详细信息，请参阅[集合初始值设定项](../language-features/collection-initializers/index.md)。
 
 以下示例与上一示例相同，除了有一个集合初始值设定项用于将元素添加到集合。
 
@@ -63,7 +63,7 @@ Next
 'Output: chinook coho pink sockeye
 ```
 
-你可以使用[For .。。Next](../../../visual-basic/language-reference/statements/for-next-statement.md)语句，而不是 `For Each` 语句来循环访问集合。 通过按索引位置访问集合元素实现此目的。 元素的索引开始于 0，结束于元素计数减 1。
+你可以使用[For .。。Next](../../language-reference/statements/for-next-statement.md)语句，而不是 `For Each` 语句来循环访问集合。 通过按索引位置访问集合元素实现此目的。 元素的索引开始于 0，结束于元素计数减 1。
 
 以下示例通过使用 `For…Next` 而不是 `For Each` 循环访问集合中的元素。
 
@@ -95,7 +95,7 @@ Next
 'Output: chinook pink sockeye
 ```
 
-以下示例从一个泛型列表中删除元素。 而不是 `For Each` 语句， [For .。。使用下一个](../../../visual-basic/language-reference/statements/for-next-statement.md)循环访问顺序的语句。 这是因为 <xref:System.Collections.Generic.List%601.RemoveAt%2A> 方法将导致已移除的元素后的元素的索引值减小。
+以下示例从一个泛型列表中删除元素。 而不是 `For Each` 语句， [For .。。使用下一个](../../language-reference/statements/for-next-statement.md)循环访问顺序的语句。 这是因为 <xref:System.Collections.Generic.List%601.RemoveAt%2A> 方法将导致已移除的元素后的元素的索引值减小。
 
 ```vb
 Dim numbers As New List(Of Integer) From
@@ -203,7 +203,7 @@ End Class
 
 下表列出了 `System.Collections` 命名空间中的一些常用类：
 
-|类|说明|
+|类|描述|
 |---|---|
 |<xref:System.Collections.ArrayList>|表示对象的数组，这些对象的大小会根据需要动态增加。|
 |<xref:System.Collections.Hashtable>|表示根据键的哈希代码进行组织的键/值对的集合。|
@@ -330,7 +330,7 @@ End Sub
 
 ## <a name="using-linq-to-access-a-collection"></a>使用 LINQ 访问集合
 
-可以使用 LINQ（语言集成查询）来访问集合。 LINQ 查询提供筛选、排序和分组功能。 有关详细信息，请参阅[Visual Basic 中的入门 LINQ](../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)。
+可以使用 LINQ（语言集成查询）来访问集合。 LINQ 查询提供筛选、排序和分组功能。 有关详细信息，请参阅[Visual Basic 中的入门 LINQ](linq/getting-started-with-linq.md)。
 
 以下示例运行一个对泛型 `List` 的 LINQ 查询。 LINQ 查询返回一个包含结果的不同集合。
 
@@ -538,13 +538,13 @@ End Class
 
 ## <a name="iterators"></a>迭代器
 
-迭代器** 用于对集合执行自定义迭代。 迭代器可以是一种方法，或是一个 `get` 访问器。 迭代器使用[Yield](../../../visual-basic/language-reference/statements/yield-statement.md)语句每次返回集合中的每个元素。
+迭代器用于对集合执行自定义迭代。 迭代器可以是一种方法，或是一个 `get` 访问器。 迭代器使用[Yield](../../language-reference/statements/yield-statement.md)语句每次返回集合中的每个元素。
 
-您可以通过[对每个 .。。下一](../../../visual-basic/language-reference/statements/for-each-next-statement.md)语句。 `For Each` 循环的每次迭代都会调用迭代器。 迭代器中到达 `Yield` 语句时，会返回一个表达式，并保留当前在代码中的位置。 下次调用迭代器时，将从该位置重新开始执行。
+您可以通过[对每个 .。。下一](../../language-reference/statements/for-each-next-statement.md)语句。 `For Each` 循环的每次迭代都会调用迭代器。 迭代器中到达 `Yield` 语句时，会返回一个表达式，并保留当前在代码中的位置。 下次调用迭代器时，将从该位置重新开始执行。
 
-有关详细信息，请参阅[迭代器（Visual Basic）](../../../visual-basic/programming-guide/concepts/iterators.md)。
+有关详细信息，请参阅[迭代器（Visual Basic）](iterators.md)。
 
-下面的示例使用迭代器方法。 迭代器方法的 `Yield` 语句位于[For .。。下一个](../../../visual-basic/language-reference/statements/for-next-statement.md)循环。 在 `ListEvenNumbers` 方法中，`For Each` 语句体的每次迭代都会创建对迭代器方法的调用，并将继续到下一个 `Yield` 语句。
+下面的示例使用迭代器方法。 迭代器方法的 `Yield` 语句位于[For .。。下一个](../../language-reference/statements/for-next-statement.md)循环。 在 `ListEvenNumbers` 方法中，`For Each` 语句体的每次迭代都会创建对迭代器方法的调用，并将继续到下一个 `Yield` 语句。
 
 ```vb
 Public Sub ListEvenNumbers()
@@ -570,10 +570,10 @@ End Function
 
 ## <a name="see-also"></a>请参阅
 
-- [集合初始值设定项](../../../visual-basic/programming-guide/language-features/collection-initializers/index.md)
-- [编程概念（Visual Basic）](../../../visual-basic/programming-guide/concepts/index.md)
-- [Option Strict 语句](../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [LINQ to Objects (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
+- [集合初始值设定项](../language-features/collection-initializers/index.md)
+- [编程概念（Visual Basic）](index.md)
+- [Option Strict 语句](../../language-reference/statements/option-strict-statement.md)
+- [LINQ to Objects (Visual Basic)](linq/linq-to-objects.md)
 - [并行 LINQ (PLINQ)](../../../standard/parallel-programming/introduction-to-plinq.md)
 - [集合和数据结构](../../../standard/collections/index.md)
 - [选择集合类](../../../standard/collections/selecting-a-collection-class.md)

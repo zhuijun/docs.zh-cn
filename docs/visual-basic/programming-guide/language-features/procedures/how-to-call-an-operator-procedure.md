@@ -11,17 +11,17 @@ helpviewer_keywords:
 - overloaded operators [Visual Basic], calling
 - operator overloading
 ms.assetid: 0dce42cc-f0b0-4c14-9f62-018b21f33497
-ms.openlocfilehash: a977b17d4b2c797bbe38d289a57f3d9d31fa64fa
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: fa2bc5417b8b917ff48502a5bd0a4daa21fab67e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345969"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84388564"
 ---
 # <a name="how-to-call-an-operator-procedure-visual-basic"></a>如何：调用运算符过程 (Visual Basic)
-在表达式中使用运算符符号调用运算符过程。 在转换运算符的情况下，调用[CType 函数](../../../../visual-basic/language-reference/functions/ctype-function.md)将值从一种数据类型转换为另一种数据类型。  
+在表达式中使用运算符符号调用运算符过程。 在转换运算符的情况下，调用[CType 函数](../../../language-reference/functions/ctype-function.md)将值从一种数据类型转换为另一种数据类型。  
   
- 不要显式调用运算符过程。 你只需在赋值语句或表达式中使用运算符或 `CType` 函数，这与通常使用运算符的方式相同。 Visual Basic 调用运算符过程。  
+ 不要显式调用运算符过程。 只需在 `CType` 赋值语句或表达式中使用运算符（或函数），就像通常使用运算符的方法一样。 Visual Basic 调用运算符过程。  
   
  在类或结构上定义运算符也称为*重载*运算符。  
   
@@ -35,18 +35,18 @@ ms.locfileid: "75345969"
   
 ### <a name="to-call-a-conversion-operator-procedure"></a>调用转换运算符过程  
   
-1. 在表达式中使用 `CType`。  
+1. `CType`在表达式中使用。  
   
 2. 确保操作数的数据类型适用于转换，并按正确的顺序排列。  
   
-3. `CType` 调用转换运算符过程，并返回转换后的值。  
+3. `CType`调用转换运算符过程，并返回转换后的值。  
   
 ## <a name="example"></a>示例  
- 下面的示例创建两个 <xref:System.TimeSpan> 结构，将它们相加，然后将结果存储在第三个 <xref:System.TimeSpan> 结构中。 <xref:System.TimeSpan> 结构定义运算符过程以重载多个标准运算符。  
+ 下面的示例创建两个 <xref:System.TimeSpan> 结构，将它们相加，然后将结果存储在第三个 <xref:System.TimeSpan> 结构中。 <xref:System.TimeSpan>结构定义运算符过程以重载多个标准运算符。  
   
  [!code-vb[VbVbcnProcedures#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#29)]  
   
- 由于 <xref:System.TimeSpan> 会重载标准 `+` 运算符，因此在计算 `combinedSpan`的值时，上面的示例将调用一个运算符过程。  
+ 由于 <xref:System.TimeSpan> 重载标准 `+` 运算符，因此当计算的值时，上面的示例将调用一个运算符过程 `combinedSpan` 。  
   
  有关调用会话运算符过程的示例，请参阅[如何：使用定义运算符的类](./how-to-use-a-class-that-defines-operators.md)。  
   
@@ -58,10 +58,10 @@ ms.locfileid: "75345969"
 - [运算符过程](./operator-procedures.md)
 - [如何：定义运算符](./how-to-define-an-operator.md)
 - [如何：定义转换运算符](./how-to-define-a-conversion-operator.md)
-- [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md)
-- [Widening](../../../../visual-basic/language-reference/modifiers/widening.md)
-- [Narrowing](../../../../visual-basic/language-reference/modifiers/narrowing.md)
-- [Structure 语句](../../../../visual-basic/language-reference/statements/structure-statement.md)
-- [如何：声明结构](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)
-- [隐式转换和显式转换](../../../../visual-basic/programming-guide/language-features/data-types/implicit-and-explicit-conversions.md)
-- [扩大转换和收缩转换](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md)
+- [Operator Statement](../../../language-reference/statements/operator-statement.md)
+- [Widening](../../../language-reference/modifiers/widening.md)
+- [Narrowing](../../../language-reference/modifiers/narrowing.md)
+- [Structure 语句](../../../language-reference/statements/structure-statement.md)
+- [如何：声明结构](../data-types/how-to-declare-a-structure.md)
+- [隐式转换和显式转换](../data-types/implicit-and-explicit-conversions.md)
+- [Widening and Narrowing Conversions](../data-types/widening-and-narrowing-conversions.md)
