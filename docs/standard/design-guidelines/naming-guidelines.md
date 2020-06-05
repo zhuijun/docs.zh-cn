@@ -1,5 +1,6 @@
 ---
 title: 命名准则
+description: 在此概述中，请阅读有关在框架开发中使用的命名约定。 请参阅介绍大小写、常规命名和其他准则的文章。
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - names [.NET Framework]
 - format naming guidelines [.NET Framework]
 ms.assetid: fc076d66-9b5f-42d3-aa65-61d970c794a3
-ms.openlocfilehash: 1b137be60f4c8c1c7cf1fa1f807841d4bc209089
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: fbcf5ef5eb02a5e45b5c981b4247ffe1c9c2631b
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290170"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447142"
 ---
 # <a name="naming-guidelines"></a>命名准则
 在框架开发中采用一致的命名约定集可能是框架可用性的主要贡献。 它允许很多开发人员对广泛分隔的项目使用框架。 除了表单的一致性以外，框架元素的名称也必须易于理解，并且必须传达每个元素的功能。  
