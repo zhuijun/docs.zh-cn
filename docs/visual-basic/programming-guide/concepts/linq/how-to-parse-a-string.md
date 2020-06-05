@@ -1,24 +1,24 @@
 ---
-title: 如何：对字符串进行分析
+title: 如何：分析字符串
 ms.date: 07/20/2015
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
-ms.openlocfilehash: 31bae00eb3ebf0d8e64fc657693e8c0767c4f5d4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0a9076fc516bb8e6bc74732ca252fabfeda43d53
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344489"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398007"
 ---
-# <a name="how-to-parse-a-string-visual-basic"></a><span data-ttu-id="ee021-102">如何：分析字符串（Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="ee021-102">How to: Parse a String (Visual Basic)</span></span>
-<span data-ttu-id="ee021-103">本主题说明如何在中C#创建 XML 树。</span><span class="sxs-lookup"><span data-stu-id="ee021-103">This topic shows how to create an XML tree in C#.</span></span>  
+# <a name="how-to-parse-a-string-visual-basic"></a><span data-ttu-id="1596e-102">如何：分析字符串（Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="1596e-102">How to: Parse a String (Visual Basic)</span></span>
+<span data-ttu-id="1596e-103">本主题演示如何使用 c # 创建 XML 树。</span><span class="sxs-lookup"><span data-stu-id="1596e-103">This topic shows how to create an XML tree in C#.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="ee021-104">示例</span><span class="sxs-lookup"><span data-stu-id="ee021-104">Example</span></span>  
- <span data-ttu-id="ee021-105">您可以使用 `XElement.Parse` 方法解析 Visual Basic 中的字符串。</span><span class="sxs-lookup"><span data-stu-id="ee021-105">You can parse a string in Visual Basic by using the `XElement.Parse` method.</span></span> <span data-ttu-id="ee021-106">但是，使用 XML 文本比使用 XML 文本更高效，如以下代码所示，因为 XML 文本与从字符串分析 XML 相比，其性能会受到影响。</span><span class="sxs-lookup"><span data-stu-id="ee021-106">However, it is more efficient to use XML literals, as shown in following code, because XML literals do not suffer from the same performance penalties as parsing XML from a string.</span></span>  
+## <a name="example"></a><span data-ttu-id="1596e-104">示例</span><span class="sxs-lookup"><span data-stu-id="1596e-104">Example</span></span>  
+ <span data-ttu-id="1596e-105">您可以使用方法分析 Visual Basic 中的字符串 `XElement.Parse` 。</span><span class="sxs-lookup"><span data-stu-id="1596e-105">You can parse a string in Visual Basic by using the `XElement.Parse` method.</span></span> <span data-ttu-id="1596e-106">但是，使用 XML 文本效率会更高（如下面的代码所示），因为使用 XML 文本不会像从字符串分析 XML 那样要牺牲性能。</span><span class="sxs-lookup"><span data-stu-id="1596e-106">However, it is more efficient to use XML literals, as shown in following code, because XML literals do not suffer from the same performance penalties as parsing XML from a string.</span></span>  
   
- <span data-ttu-id="ee021-107">通过使用 XML 文本，只需将 XML 复制并粘贴到 Visual Basic 程序中即可。</span><span class="sxs-lookup"><span data-stu-id="ee021-107">By using XML literals, you can just copy and paste your XML into your Visual Basic program.</span></span>  
+ <span data-ttu-id="1596e-107">通过使用 XML 文本，只需将 XML 复制并粘贴到 Visual Basic 程序中即可。</span><span class="sxs-lookup"><span data-stu-id="1596e-107">By using XML literals, you can just copy and paste your XML into your Visual Basic program.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="ee021-108">分析文本或从文本文件加载 XML 文档比函数构造的效率更低。</span><span class="sxs-lookup"><span data-stu-id="ee021-108">Parsing text or loading an XML document from a text file is less efficient than functional construction.</span></span> <span data-ttu-id="ee021-109">如果要从代码初始化 XML 树，使用函数构造比分析文本所占用的处理器时间更少。</span><span class="sxs-lookup"><span data-stu-id="ee021-109">If you are initializing an XML tree from code, it takes less processor time to use functional construction than to parse text.</span></span>  
+> <span data-ttu-id="1596e-108">分析文本或从文本文件加载 XML 文档比函数构造的效率更低。</span><span class="sxs-lookup"><span data-stu-id="1596e-108">Parsing text or loading an XML document from a text file is less efficient than functional construction.</span></span> <span data-ttu-id="1596e-109">如果要从代码初始化 XML 树，使用函数构造比分析文本所占用的处理器时间更少。</span><span class="sxs-lookup"><span data-stu-id="1596e-109">If you are initializing an XML tree from code, it takes less processor time to use functional construction than to parse text.</span></span>  
   
 ```vb  
 Dim contacts as XElement = _  
@@ -49,6 +49,6 @@ Dim contacts as XElement = _
     </Contacts>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ee021-110">另请参阅</span><span class="sxs-lookup"><span data-stu-id="ee021-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1596e-110">另请参阅</span><span class="sxs-lookup"><span data-stu-id="1596e-110">See also</span></span>
 
-- [<span data-ttu-id="ee021-111">分析 XML （Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="ee021-111">Parsing XML (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [<span data-ttu-id="1596e-111">分析 XML （Visual Basic）</span><span class="sxs-lookup"><span data-stu-id="1596e-111">Parsing XML (Visual Basic)</span></span>](parsing-xml.md)
