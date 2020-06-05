@@ -7,19 +7,19 @@ f1_keywords:
 helpviewer_keywords:
 - BC30955
 ms.assetid: 966b61eb-441e-48b0-bedf-ca95384ecb8b
-ms.openlocfilehash: 027cccc9ad406d5bc2fd686ddeb4c674dc8f3c90
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f6b35efbc445887c537b94dd299b317a28e5f689
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64621199"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406555"
 ---
-# <a name="value-of-type-typename1-cannot-be-converted-to-typename2"></a><span data-ttu-id="b1317-102">类型的值\<typename1 > 无法转换为\<typename2 ></span><span class="sxs-lookup"><span data-stu-id="b1317-102">Value of type '\<typename1>' cannot be converted to '\<typename2>'</span></span>
-<span data-ttu-id="b1317-103">类型的值\<typename1 > 无法转换为\<typename2 >。</span><span class="sxs-lookup"><span data-stu-id="b1317-103">Value of type '\<typename1>' cannot be converted to '\<typename2>'.</span></span> <span data-ttu-id="b1317-104">类型不匹配可能是由于的文件引用的程序集的项目引用混合使用\<程序集名称 >。</span><span class="sxs-lookup"><span data-stu-id="b1317-104">Type mismatch could be due to the mixing of a file reference with a project reference to assembly '\<assemblyname>'.</span></span> <span data-ttu-id="b1317-105">请尝试更换的文件引用\<文件路径 > 项目中\<projectname1 > 项目引用\<项目名称 2> >。</span><span class="sxs-lookup"><span data-stu-id="b1317-105">Try replacing the file reference to '\<filepath>' in project '\<projectname1>' with a project reference to '\<projectname2>'.</span></span>  
+# <a name="value-of-type-typename1-cannot-be-converted-to-typename2"></a><span data-ttu-id="240ab-102">类型“\<typename1>”的值无法转换为“\<typename2>”</span><span class="sxs-lookup"><span data-stu-id="240ab-102">Value of type '\<typename1>' cannot be converted to '\<typename2>'</span></span>
+<span data-ttu-id="240ab-103">类型 "" 的值 \<typename1> 无法转换为 " \<typename2> "。</span><span class="sxs-lookup"><span data-stu-id="240ab-103">Value of type '\<typename1>' cannot be converted to '\<typename2>'.</span></span> <span data-ttu-id="240ab-104">类型不匹配可能是由于将文件引用与程序集 "" 的项目引用混合而造成的 \<assemblyname> 。</span><span class="sxs-lookup"><span data-stu-id="240ab-104">Type mismatch could be due to the mixing of a file reference with a project reference to assembly '\<assemblyname>'.</span></span> <span data-ttu-id="240ab-105">尝试将对项目 "" 中 "" 的文件引用替换为 \<filepath> \<projectname1> 对 "" 的项目引用 \<projectname2> 。</span><span class="sxs-lookup"><span data-stu-id="240ab-105">Try replacing the file reference to '\<filepath>' in project '\<projectname1>' with a project reference to '\<projectname2>'.</span></span>  
   
- <span data-ttu-id="b1317-106">在其中一个项目会的项目引用和文件引用的情况下，编译器无法保证一个类型可转换为另一个。</span><span class="sxs-lookup"><span data-stu-id="b1317-106">In a situation where a project makes both a project reference and a file reference, the compiler cannot guarantee that one type can be converted to another.</span></span>  
+ <span data-ttu-id="240ab-106">在项目同时进行项目引用和文件引用的情况下，编译器无法保证可以将一种类型转换为另一种类型。</span><span class="sxs-lookup"><span data-stu-id="240ab-106">In a situation where a project makes both a project reference and a file reference, the compiler cannot guarantee that one type can be converted to another.</span></span>  
   
- <span data-ttu-id="b1317-107">下面的伪代码说明了可能会生成此错误的情况。</span><span class="sxs-lookup"><span data-stu-id="b1317-107">The following pseudo-code illustrates a situation that can generate this error.</span></span>  
+ <span data-ttu-id="240ab-107">下面的伪代码说明了可能生成此错误的情况。</span><span class="sxs-lookup"><span data-stu-id="240ab-107">The following pseudo-code illustrates a situation that can generate this error.</span></span>  
   
  `' ================ Visual Basic project P1 ================`  
   
@@ -47,19 +47,19 @@ ms.locfileid: "64621199"
   
  `End Class`  
   
- <span data-ttu-id="b1317-108">项目`P1`完成项目间接的项目引用`P2`到项目`P3`，同时还对直接文件引用`P3`。</span><span class="sxs-lookup"><span data-stu-id="b1317-108">Project `P1` makes an indirect project reference through project `P2` to project `P3`, and also a direct file reference to `P3`.</span></span> <span data-ttu-id="b1317-109">声明`commonObject`使用的文件引用`P3`，而在调用`P2.getCommonClass`将使用到的项目引用`P3`。</span><span class="sxs-lookup"><span data-stu-id="b1317-109">The declaration of `commonObject` uses the file reference to `P3`, while the call to `P2.getCommonClass` uses the project reference to `P3`.</span></span>  
+ <span data-ttu-id="240ab-108">项目 `P1` 通过项目进行间接项目引用 `P2` `P3` ，并对进行直接文件引用 `P3` 。</span><span class="sxs-lookup"><span data-stu-id="240ab-108">Project `P1` makes an indirect project reference through project `P2` to project `P3`, and also a direct file reference to `P3`.</span></span> <span data-ttu-id="240ab-109">的声明 `commonObject` 使用对的文件引用 `P3` ，而对的调用 `P2.getCommonClass` 使用对的项目引用 `P3` 。</span><span class="sxs-lookup"><span data-stu-id="240ab-109">The declaration of `commonObject` uses the file reference to `P3`, while the call to `P2.getCommonClass` uses the project reference to `P3`.</span></span>  
   
- <span data-ttu-id="b1317-110">在此情况下的问题是文件引用指定的文件路径和名称的输出文件`P3`(通常为 p3.dll)，而项目引用标识源项目 (`P3`) 按项目名称。</span><span class="sxs-lookup"><span data-stu-id="b1317-110">The problem in this situation is that the file reference specifies a file path and name for the output file of `P3` (typically p3.dll), while the project references identify the source project (`P3`) by project name.</span></span> <span data-ttu-id="b1317-111">因此，编译器无法保证该类型`P3.commonClass`来自通过两个不同的引用相同的源代码。</span><span class="sxs-lookup"><span data-stu-id="b1317-111">Because of this, the compiler cannot guarantee that the type `P3.commonClass` comes from the same source code through the two different references.</span></span>  
+ <span data-ttu-id="240ab-110">出现这种情况的问题是，文件引用指定了（通常为 p3）的输出文件的文件路径和名称 `P3` ，而项目引用则按项目名称标识源项目（ `P3` ）。</span><span class="sxs-lookup"><span data-stu-id="240ab-110">The problem in this situation is that the file reference specifies a file path and name for the output file of `P3` (typically p3.dll), while the project references identify the source project (`P3`) by project name.</span></span> <span data-ttu-id="240ab-111">因此，编译器无法 `P3.commonClass` 通过两个不同的引用来保证该类型来自相同的源代码。</span><span class="sxs-lookup"><span data-stu-id="240ab-111">Because of this, the compiler cannot guarantee that the type `P3.commonClass` comes from the same source code through the two different references.</span></span>  
   
- <span data-ttu-id="b1317-112">这种情况通常发生在项目引用和文件引用混合。</span><span class="sxs-lookup"><span data-stu-id="b1317-112">This situation typically occurs when project references and file references are mixed.</span></span> <span data-ttu-id="b1317-113">在上图中，会出现问题如果`P1`进行直接的项目引用到`P3`而不是文件引用。</span><span class="sxs-lookup"><span data-stu-id="b1317-113">In the preceding illustration, the problem would not occur if `P1` made a direct project reference to `P3` instead of a file reference.</span></span>  
+ <span data-ttu-id="240ab-112">当项目引用和文件引用混合时，通常会发生这种情况。</span><span class="sxs-lookup"><span data-stu-id="240ab-112">This situation typically occurs when project references and file references are mixed.</span></span> <span data-ttu-id="240ab-113">在上图中，如果 `P1` 直接引用项目 `P3` 而不是文件引用，则不会出现此问题。</span><span class="sxs-lookup"><span data-stu-id="240ab-113">In the preceding illustration, the problem would not occur if `P1` made a direct project reference to `P3` instead of a file reference.</span></span>  
   
- <span data-ttu-id="b1317-114">**错误 ID:** BC30955</span><span class="sxs-lookup"><span data-stu-id="b1317-114">**Error ID:** BC30955</span></span>  
+ <span data-ttu-id="240ab-114">**错误 ID：** BC30955</span><span class="sxs-lookup"><span data-stu-id="240ab-114">**Error ID:** BC30955</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="b1317-115">更正此错误</span><span class="sxs-lookup"><span data-stu-id="b1317-115">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="240ab-115">更正此错误</span><span class="sxs-lookup"><span data-stu-id="240ab-115">To correct this error</span></span>  
   
-- <span data-ttu-id="b1317-116">更改的项目引用的文件引用。</span><span class="sxs-lookup"><span data-stu-id="b1317-116">Change the file reference to a project reference.</span></span>  
+- <span data-ttu-id="240ab-116">更改对项目引用的文件引用。</span><span class="sxs-lookup"><span data-stu-id="240ab-116">Change the file reference to a project reference.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b1317-117">请参阅</span><span class="sxs-lookup"><span data-stu-id="b1317-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="240ab-117">另请参阅</span><span class="sxs-lookup"><span data-stu-id="240ab-117">See also</span></span>
 
-- [<span data-ttu-id="b1317-118">在 Visual Basic 中的类型转换</span><span class="sxs-lookup"><span data-stu-id="b1317-118">Type Conversions in Visual Basic</span></span>](../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
-- [<span data-ttu-id="b1317-119">管理项目中的引用</span><span class="sxs-lookup"><span data-stu-id="b1317-119">Managing references in a project</span></span>](/visualstudio/ide/managing-references-in-a-project)
+- [<span data-ttu-id="240ab-118">Visual Basic 中的类型转换</span><span class="sxs-lookup"><span data-stu-id="240ab-118">Type Conversions in Visual Basic</span></span>](../../programming-guide/language-features/data-types/type-conversions.md)
+- [<span data-ttu-id="240ab-119">管理项目中的引用</span><span class="sxs-lookup"><span data-stu-id="240ab-119">Managing references in a project</span></span>](/visualstudio/ide/managing-references-in-a-project)
