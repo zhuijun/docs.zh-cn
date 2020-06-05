@@ -21,12 +21,12 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 242dd2a6-86c4-4ce7-83f2-f2661803f752
-ms.openlocfilehash: 87ca0da5095484615666cda505b4f7678d8160de
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 01f1f7ef5963feeb3fe2b5390244e4e516773bad
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350062"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84393839"
 ---
 # <a name="how-to-use-a-generic-class-visual-basic"></a>如何：使用泛型类 (Visual Basic)
 采用 *类型参数* 的类称为 *泛型类*。 如果使用一个泛型类，则可以通过为每个形参提供 *类型实参* ，从该类生成 *构造类* 。 随后可以声明构造类类型的一个变量，可以创建构造类的实例并将它分配给该变量。  
@@ -37,9 +37,9 @@ ms.locfileid: "74350062"
   
 ### <a name="to-use-a-class-that-takes-a-type-parameter"></a>使用采用类型参数的类  
   
-1. 在源文件的开头，包括[Imports 语句（.Net 命名空间和类型）](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)以导入 <xref:System.Collections.Generic?displayProperty=nameWithType> 命名空间。 这使你可以引用 <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> 类，而不必完全限定它即可将它与其他队列类（如 <xref:System.Collections.Queue?displayProperty=nameWithType>）区分开来。  
+1. 在源文件的开头，包括[Imports 语句（.Net 命名空间和类型）](../../../language-reference/statements/imports-statement-net-namespace-and-type.md)以导入 <xref:System.Collections.Generic?displayProperty=nameWithType> 命名空间。 这使你可以引用 <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> 类，而不必完全限定它即可将它与其他队列类（如 <xref:System.Collections.Queue?displayProperty=nameWithType>）区分开来。  
   
-2. 以正常方式创建对象，但将 `(Of type)` 立即添加到类名称后面。  
+2. 以正常方式创建对象，但是紧接在类名之后添加 `(Of type)` 。  
   
      下面的示例使用相同类 (<xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>) 创建保存不同数据类型的项的两个队列对象。 它将项添加到每个队列末尾，然后从每个队列的前面删除并显示项。  
   
@@ -47,10 +47,10 @@ ms.locfileid: "74350062"
   
 ## <a name="see-also"></a>另请参阅
 
-- [数据类型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [Visual Basic 中的泛型类型](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
+- [数据类型](index.md)
+- [Generic Types in Visual Basic](generic-types.md)
 - [语言独立性和与语言无关的组件](../../../../standard/language-independence-and-language-independent-components.md)
-- [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
-- [Imports 语句（.NET 命名空间和类型）](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)
-- [如何：定义可对不同数据类型提供相同功能的类](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md)
-- [迭代器](../../../../visual-basic/programming-guide/concepts/iterators.md)
+- [个](../../../language-reference/statements/of-clause.md)
+- [Imports 语句（.NET 命名空间和类型）](../../../language-reference/statements/imports-statement-net-namespace-and-type.md)
+- [如何：定义可对不同数据类型提供相同功能的类](how-to-define-a-class-that-can-provide-identical-functionality.md)
+- [迭代器](../../concepts/iterators.md)
