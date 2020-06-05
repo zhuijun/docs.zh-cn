@@ -2,12 +2,12 @@
 title: 如何：使用组将一个文件拆分成多个文件 (LINQ)
 ms.date: 07/20/2015
 ms.assetid: 5e8b2a2b-0b1d-4933-8a2b-03e91dfaf77f
-ms.openlocfilehash: 07d53c9afca88cd3156c7fc8fcfab5ac7ca24f25
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: f6b11ab4b4fe11dbf1cb4cf07654b5ef3f6785ad
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348032"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397708"
 ---
 # <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-visual-basic"></a>如何：使用组将一个文件拆分成多个文件（LINQ）（Visual Basic）
 
@@ -118,9 +118,9 @@ End Class
 
 ## <a name="compile-the-code"></a>编译代码
 
-使用 System. Linq 命名空间的 `Imports` 语句创建 Visual Basic 的控制台应用程序项目。
+使用 `Imports` System. Linq 命名空间的语句创建 Visual Basic 控制台应用程序项目。
 
 ## <a name="see-also"></a>另请参阅
 
-- [LINQ 和字符串（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
-- [LINQ 和文件目录 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)
+- [LINQ 和字符串 (Visual Basic)](linq-and-strings.md)
+- [LINQ 和文件目录 (Visual Basic)](linq-and-file-directories.md)

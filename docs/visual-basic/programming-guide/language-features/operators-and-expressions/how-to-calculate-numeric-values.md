@@ -11,12 +11,12 @@ helpviewer_keywords:
 - Visual Basic code, expressions
 - numeric expressions
 ms.assetid: ba6bf43d-bd96-49b8-b1de-4a7797551372
-ms.openlocfilehash: d213f6b5a4abf8c52d8872ae36e89796183ff27c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 94b02693f308dcfcfa6983f2750a26d9d419f7be
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348967"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403454"
 ---
 # <a name="how-to-calculate-numeric-values-visual-basic"></a>如何：计算数值 (Visual Basic)
 您可以通过使用数值表达式来计算数字值。 *数值表达式*是一种表达式，其中包含表示数值的文本、常量和变量，以及对这些值进行操作的运算符。  
@@ -45,9 +45,9 @@ ms.locfileid: "74348967"
   
      [!code-vb[VbVbalrOperators#82](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#82)]  
   
-     在前面的示例中，相等运算符（`=`）右侧的表达式的值分配给运算符左侧的变量 `j`，因此 `j` 计算结果为276。  
+     在前面的示例中，相等运算符（）右侧的表达式的值 `=` 被分配给 `j` 运算符左侧的变量，因此 `j` 计算结果为276。  
   
-     有关详细信息，请参阅[语句](../../../../visual-basic/language-reference/statements/index.md)。  
+     有关详细信息，请参阅[语句](../../../language-reference/statements/index.md)。  
   
 ## <a name="multiple-operators"></a>多个运算符  
  如果数值表达式包含多个运算符，则计算它们的顺序取决于运算符优先级的规则。 若要覆盖运算符优先级的规则，请将表达式括在括号中，如上面的示例所示：首先计算括起来的表达式。  
@@ -58,15 +58,15 @@ ms.locfileid: "74348967"
   
      [!code-vb[VbVbalrOperators#83](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#83)]  
   
-     在前面的示例中，`j` 的计算首先执行加法运算符（`+`），因为 `(67 + i)` 的两侧重写 normal 优先级，并且分配给 `j` 的值是276（4倍69）。 `k` 的计算按其正常优先级（`+`之前`*`）执行运算符，分配给 `k` 的值为270（268 + 2）。  
+     在前面的示例中，的计算 `j` 首先执行加法运算符（ `+` ），这是因为绕 `(67 + i)` 重写 normal 优先级，赋给的值 `j` 为276（4倍69）。 的计算 `k` 按其正常优先级（之前）执行运算符 `*` `+` ，分配给的值 `k` 为270（268 + 2）。  
   
-     有关详细信息，请参阅[Visual Basic 中的运算符优先级](../../../../visual-basic/language-reference/operators/operator-precedence.md)。  
+     有关详细信息，请参阅[Visual Basic 中的运算符优先级](../../../language-reference/operators/operator-precedence.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [运算符和表达式](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)
-- [值的比较](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/value-comparisons.md)
-- [语句](../../../../visual-basic/language-reference/statements/index.md)
-- [Visual Basic 中的运算符优先级](../../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [算术运算符](../../../../visual-basic/language-reference/operators/arithmetic-operators.md)
-- [运算符的有效组合](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/efficient-combination-of-operators.md)
+- [运算符和表达式](index.md)
+- [值的比较](value-comparisons.md)
+- [语句](../../../language-reference/statements/index.md)
+- [Visual Basic 中的运算符优先级](../../../language-reference/operators/operator-precedence.md)
+- [算术运算符](../../../language-reference/operators/arithmetic-operators.md)
+- [运算符的有效组合](efficient-combination-of-operators.md)

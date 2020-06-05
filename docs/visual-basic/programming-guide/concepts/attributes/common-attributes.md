@@ -2,14 +2,14 @@
 title: 通用属性
 ms.date: 07/20/2015
 ms.assetid: 11fe4894-1bf9-4525-a36b-cddcd3a5d22b
-ms.openlocfilehash: 2889411779a275baa8c91862d4cac2f820d660d0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 57ef8f103d64a51d896f46d2889d78ec99ff3223
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353531"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400714"
 ---
-# <a name="common-attributes-visual-basic"></a>常见特性（Visual Basic）
+# <a name="common-attributes-visual-basic"></a>常见特性 (Visual Basic)
 
 本主题介绍 Visual Basic 程序中最常用的属性。
 
@@ -23,7 +23,7 @@ ms.locfileid: "74353531"
 
 - [Visual Basic 特性](#VB)
 
-## <a name="Global"></a> 全局特性
+## <a name="global-attributes"></a><a name="Global"></a>全局属性
 
 大多数特性应用于特定语言元素，如类或方法；但是，一些特性是全局特性 - 它们应用于整个程序集或模块。 例如，<xref:System.Reflection.AssemblyVersionAttribute> 属性可用于将版本信息嵌入程序集，如下所示：
 
@@ -33,7 +33,7 @@ ms.locfileid: "74353531"
 
 全局特性显示在任何顶级 `Imports` 语句之后、任何类型、模块或命名空间声明之前的源代码中。 全局特性可以出现在多个源文件中，但必须在单个编译过程中编译这些文件。 对于 Visual Basic 项目，全局属性通常放在 AssemblyInfo 文件中（当您在 Visual Studio 中创建项目时，将自动创建文件）。
 
-程序集特性是提供程序集相关信息的值。 这些内容分为以下几类：
+程序集特性是提供程序集相关信息的值。 它们分为以下几类：
 
 - 程序集标识特性
 
@@ -47,7 +47,7 @@ ms.locfileid: "74353531"
 
 下表显示标识特性。
 
-|属性|目的|
+|特性|目的|
 |---------------|-------------|
 |<xref:System.Reflection.AssemblyName>|详细描述程序集的标识。|
 |<xref:System.Reflection.AssemblyVersionAttribute>|指定程序集的版本。|
@@ -58,7 +58,7 @@ ms.locfileid: "74353531"
 
 信息性特性可用于提供程序集的其他公司或产品信息。 下表显示 <xref:System.Reflection?displayProperty=nameWithType> 命名空间中定义的信息性属性。
 
-|属性|目的|
+|特性|目的|
 |---------------|-------------|
 |<xref:System.Reflection.AssemblyProductAttribute>|定义为程序集清单指定产品名称的自定义属性。|
 |<xref:System.Reflection.AssemblyTrademarkAttribute>|定义为程序集清单指定商标的自定义属性。|
@@ -72,14 +72,14 @@ ms.locfileid: "74353531"
 
 程序集清单特性可用于提供程序集清单中的信息。 这些信息包括标题、说明、默认别名和配置。 下表显示 <xref:System.Reflection?displayProperty=nameWithType> 命名空间中定义的程序集清单属性。
 
-|属性|目的|
+|特性|目的|
 |---------------|-------------|
 |<xref:System.Reflection.AssemblyTitleAttribute>|定义为程序集清单指定程序集标题的自定义属性。|
 |<xref:System.Reflection.AssemblyDescriptionAttribute>|定义为程序集清单指定程序集说明的自定义属性。|
 |<xref:System.Reflection.AssemblyConfigurationAttribute>|定义为程序集清单指定程序集配置（如零售或调试）的自定义属性。|
 |<xref:System.Reflection.AssemblyDefaultAliasAttribute>|定义程序集清单的友好默认别名|
 
-## <a name="Obsolete"></a> Obsolete 特性
+## <a name="obsolete-attribute"></a><a name="Obsolete"></a>过时特性
 
 `Obsolete` 特性将程序实体标记为不再推荐使用。 每次使用标记为过时的实体后，将生成警告或错误，具体取决于该特性的配置方式。 例如：
 
@@ -122,7 +122,7 @@ b.NewMethod()
 
 `Obsolete` 特性是一次性特性，可以应用于任何允许特性的实体。 `Obsolete` 是 <xref:System.ObsoleteAttribute> 的别名。
 
-## <a name="Conditional"></a> Conditional 特性
+## <a name="conditional-attribute"></a><a name="Conditional"></a> Conditional 特性
 
 `Conditional` 特性使得方法执行依赖于预处理标识符。 `Conditional` 属性是 <xref:System.Diagnostics.ConditionalAttribute> 的别名，可以应用于方法或特性类。
 
@@ -218,7 +218,7 @@ Class SampleClass
 End Class
 ```
 
-## <a name="CallerInfo"></a>调用方信息特性
+## <a name="caller-info-attributes"></a><a name="CallerInfo"></a>调用方信息特性
 
 通过使用调用方信息特性，可获取有关方法的调用方的信息。 可以获取源代码的文件路径、源代码中的行号和调用方的成员名称。
 
@@ -228,15 +228,15 @@ End Class
 |---|---|---|
 |<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|包含调用方的源文件的完整路径。 这是编译时的路径。|`String`|
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|源文件中调用方法的行号。|`Integer`|
-|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|调用方的方法名称或属性名称。 有关详细信息，请参阅[调用方信息（Visual Basic）](../../../../visual-basic/programming-guide/concepts/caller-information.md)。|`String`|
+|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|调用方的方法名称或属性名称。 有关详细信息，请参阅[调用方信息（Visual Basic）](../caller-information.md)。|`String`|
 
-有关调用方信息属性的详细信息，请参阅[调用方信息（Visual Basic）](../../../../visual-basic/programming-guide/concepts/caller-information.md)。
+有关调用方信息属性的详细信息，请参阅[调用方信息（Visual Basic）](../caller-information.md)。
 
-## <a name="VB"></a>Visual Basic 特性
+## <a name="visual-basic-attributes"></a><a name="VB"></a>Visual Basic 特性
 
 下表列出了特定于 Visual Basic 的特性。
 
-|属性|目的|
+|特性|目的|
 |---------------|-------------|
 |<xref:Microsoft.VisualBasic.ComClassAttribute>|向编译器指示应将类公开为 COM 对象。|
 |<xref:Microsoft.VisualBasic.HideModuleNameAttribute>|允许只使用模块所需的限定来访问模块成员。|
@@ -245,11 +245,11 @@ End Class
 
 ### <a name="comclassattribute"></a>COMClassAttribute
 
-使用 `COMClassAttribute` 可以简化从 Visual Basic 创建 COM 组件的过程。 COM 对象明显不同于 .NET Framework 程序集，如果没有 `COMClassAttribute`，则需要执行一些步骤以从 Visual Basic 生成 COM 对象。 对于标记为 `COMClassAttribute`的类，编译器会自动执行这些步骤中的许多步骤。
+使用 `COMClassAttribute` 可以简化从 Visual Basic 创建 COM 组件的过程。 COM 对象与 .NET Framework 程序集有很大的不同，因此 `COMClassAttribute` ，您需要执行一些步骤才能从 Visual Basic 生成 com 对象。 对于标记为的类 `COMClassAttribute` ，编译器会自动执行这些步骤中的许多步骤。
 
 ### <a name="hidemodulenameattribute"></a>HideModuleNameAttribute
 
-使用 `HideModuleNameAttribute` 允许只使用模块所需的限定来访问模块成员。
+使用 `HideModuleNameAttribute` 可以仅使用模块所需的限定来访问模块成员。
 
 ### <a name="vbfixedstringattribute"></a>VBFixedStringAttribute
 
@@ -267,13 +267,13 @@ End Structure
 
 ### <a name="vbfixedarrayattribute"></a>VBFixedArrayAttribute
 
-使用 `VBFixedArrayAttribute` 声明大小固定的数组。 与 Visual Basic 字符串一样，数组在默认情况下为可变长度。 将数据序列化或写入到文件时，此属性很有用。
+用于 `VBFixedArrayAttribute` 声明大小固定的数组。 与 Visual Basic 字符串一样，数组在默认情况下为可变长度。 将数据序列化或写入到文件时，此属性很有用。
 
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>
-- [Visual Basic 编程指南](../../../../visual-basic/programming-guide/index.md)
+- [Visual Basic 编程指南](../../index.md)
 - [特性](../../../../standard/attributes/index.md)
-- [反射 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md)
-- [使用反射访问特性 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/attributes/accessing-attributes-by-using-reflection.md)
+- [反射 (Visual Basic)](../reflection.md)
+- [使用反射访问特性 (Visual Basic)](accessing-attributes-by-using-reflection.md)

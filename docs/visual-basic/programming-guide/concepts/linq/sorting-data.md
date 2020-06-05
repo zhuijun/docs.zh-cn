@@ -2,12 +2,12 @@
 title: 对数据进行排序
 ms.date: 07/20/2015
 ms.assetid: 6f81065c-0c89-4bf3-a6d8-442273f8810e
-ms.openlocfilehash: f1d4d8afb9b6e176a7ac048ba3270ecafdce24c9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a5ccff745995ed7f41731cf98fb7c49d3247d994
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350589"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406789"
 ---
 # <a name="sorting-data-visual-basic"></a>对数据进行排序（Visual Basic）
 
@@ -21,7 +21,7 @@ ms.locfileid: "74350589"
 
 ## <a name="methods"></a>方法
 
-|方法名|说明|Visual Basic 查询表达式语法|更多信息|
+|方法名|说明|Visual Basic 查询表达式语法|详细信息|
 |-----------------|-----------------|------------------------------------------|----------------------|
 |OrderBy|按升序对值排序。|`Order By`|<xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OrderBy%2A?displayProperty=nameWithType>|
 |OrderByDescending|按降序对值排序。|`Order By … Descending`|<xref:System.Linq.Enumerable.OrderByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OrderByDescending%2A?displayProperty=nameWithType>|
@@ -150,7 +150,7 @@ MsgBox(sb.ToString())
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Linq>
-- [标准查询运算符概述 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
-- [Order By 子句](../../../../visual-basic/language-reference/queries/order-by-clause.md)
-- [如何：对查询结果进行排序](../../../../visual-basic/programming-guide/language-features/linq/how-to-sort-query-results-by-using-linq.md)
-- [如何：按任意词或字段对文本数据进行排序或筛选（LINQ）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [标准查询运算符概述 (Visual Basic)](standard-query-operators-overview.md)
+- [Order By 子句](../../../language-reference/queries/order-by-clause.md)
+- [如何：对查询结果进行排序](../../language-features/linq/how-to-sort-query-results-by-using-linq.md)
+- [如何：按任意词或字段对文本数据进行排序或筛选 (LINQ) (Visual Basic)](how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

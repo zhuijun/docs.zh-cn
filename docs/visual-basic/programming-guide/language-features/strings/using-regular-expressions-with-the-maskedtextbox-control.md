@@ -5,59 +5,59 @@ helpviewer_keywords:
 - strings [Visual Basic], regular expressions
 - strings [Visual Basic], masked edit
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
-ms.openlocfilehash: b997f6f495fca51e888bb995fee0361d29d68048
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: efda70be0ccdbc1f4b59d548e50f743f6c493b19
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79148279"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363705"
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a>在 MaskedTextBox 控件中使用正则表达式 (Visual Basic)
-此示例演示如何转换简单的正则表达式以使用<xref:System.Windows.Forms.MaskedTextBox>控件。  
+此示例演示如何转换简单正则表达式以使用 <xref:System.Windows.Forms.MaskedTextBox> 控件。  
   
-## <a name="description-of-the-masking-language"></a>掩蔽语言的描述  
- 标准<xref:System.Windows.Forms.MaskedTextBox>掩蔽语言基于 Visual Basic 6.0`Masked Edit`中控件所使用的语言，并且对于从该平台迁移的用户应熟悉。  
+## <a name="description-of-the-masking-language"></a>掩码语言说明  
+ 标准 <xref:System.Windows.Forms.MaskedTextBox> 掩码语言基于 `Masked Edit` Visual Basic 6.0 中控件使用的语言，应熟悉从该平台迁移的用户。  
   
- 控件<xref:System.Windows.Forms.MaskedTextBox.Mask%2A>的属性<xref:System.Windows.Forms.MaskedTextBox>指定要使用的输入掩码。 掩码必须是由下表中的一个或多个掩蔽元素组成的字符串。  
+ <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>控件的属性 <xref:System.Windows.Forms.MaskedTextBox> 指定要使用的输入掩码。 掩码必须是由下表中的一个或多个屏蔽元素组成的字符串。  
   
-|遮蔽元素|说明|正则表达式元素|  
+|屏蔽元素|说明|正则表达式元素|  
 |---------------------|-----------------|--------------------------------|  
-|0|0 和 9 之间的任何位数字。 需要输入。|\d|  
-|9|数字或空格。 条目可选。|[d]？|  
-|#|数字或空格。 条目可选。 如果此位置在蒙版中留空，则该位置将呈现为空格。 允许加上 （+） 和减 （-） 标志。|[d]-？|  
-|L|ASCII 字母。 需要输入。|[a-zA-Z]|  
-|?|ASCII 字母。 条目可选。|[a-zA-Z]？|  
-|&|字符。 需要输入。|[p]ll_p_l_p_p_Lo_]|  
-|C|字符。 条目可选。|[p]ll_p_l_p_l_p_Lo_？|  
-|A|字母。 条目可选。|\W|  
-|.|适合区域性的小数位符。|不可用。|  
-|,|文化适当的数千个占位符。|不可用。|  
-|:|适合区域性的时间分隔符。|不可用。|  
-|/|适合区域性的日期分隔符。|不可用。|  
-|$|文化适当的货币符号。|不可用。|  
-|\<|将以下所有字符转换为小写。|不可用。|  
-|>|将随后的所有字符转换为大写。|不可用。|  
-|&#124;|撤消上一个移位或向下移动。|不可用。|  
-|&#92;|转义蒙版字符，将其转换为文本。 ""\\\\是反斜杠的转义序列。|&#92;|  
-|所有其他字符。|文字。 所有非掩码元素都将在 中<xref:System.Windows.Forms.MaskedTextBox>显示为自身。|所有其他字符。|  
+|0|0和9之间的任何一个数字。 需要输入。|\d|  
+|9|数字或空格。 输入可选。|[\d]？|  
+|#|数字或空格。 输入可选。 如果此位置在掩码中保留为空白，则将呈现为空格。 允许使用加号（+）和减号（-）。|[\d +-]？|  
+|L|ASCII 字符。 需要输入。|[a zA-Z]|  
+|?|ASCII 字符。 输入可选。|[a zA-Z]？|  
+|&|字符。 需要输入。|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]|  
+|C|字符。 输入可选。|[\p{Ll}\p{Lu}\p{Lt}\p{Lm}\p{Lo}]?|  
+|A|字符. 输入可选。|\W|  
+|.|区域性适当的小数点占位符。|不可用。|  
+|,|区域性适当的千位占位符。|不可用。|  
+|:|区域性适当的时间分隔符。|不可用。|  
+|/|区域性相应的日期分隔符。|不可用。|  
+|$|区域性相应的货币符号。|不可用。|  
+|\<|将后面的所有字符转换为小写。|不可用。|  
+|>|将后面的所有字符转换为大写。|不可用。|  
+|&#124;|撤消上一个 shift 或向下移动。|不可用。|  
+|&#92;|转义掩码字符，并将其转换为文本。 " \\ \\ " 是反斜杠的转义序列。|&#92;|  
+|所有其他字符。|文字。 所有非掩码元素都将作为自身显示在中 <xref:System.Windows.Forms.MaskedTextBox> 。|所有其他字符。|  
   
- 十进制 （.）、千分之一 （、时间（:)、日期 （/） 和货币 （$） 符号默认显示应用程序区域性定义的这些符号。 可以使用<xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A>属性强制它们显示其他区域性的符号。  
+ 小数点（.）、千位（，）、time （:)、date （/）和 currency （$）符号默认为显示由应用程序的区域性定义的符号。 可以通过使用属性强制它们显示另一区域性的符号 <xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A> 。  
   
-## <a name="regular-expressions-and-masks"></a>正则表达式和蒙版  
- 尽管可以使用正则表达式和蒙版来验证用户输入，但它们并不完全等效。 正则表达式可以表达比蒙版更复杂的模式，但蒙版可以更简洁地以与文化相关的格式表达相同的信息。  
+## <a name="regular-expressions-and-masks"></a>正则表达式和掩码  
+ 尽管可以使用正则表达式和掩码来验证用户输入，但它们并不完全等效。 正则表达式可以表达比掩码更复杂的模式，但是掩码可以更简洁地以与区域性相关的格式表达相同的信息。  
   
- 下表比较了四个正则表达式和每个表达式的等效掩码。  
+ 下表比较了四个正则表达式和每个正则表达式的等效掩码。  
   
-|Regular Expression|Mask|说明|  
+|正则表达式|Mask|备注|  
 |------------------------|----------|-----------|  
-|`\d{2}/\d{2}/\d{4}`|`00/00/0000`|掩`/`码中的字符是逻辑日期分隔符，在用户看来，它将显示为适合应用程序当前区域性的日期分隔符。|  
-|`\d{2}-[A-Z][a-z]{2}-\d{4}`|`00->L<LL-0000`|以美国格式显示三个字母的月缩写的日期（天、月缩写和年份），其中以大写字母后跟两个小写字母显示。|  
-|`(\(\d{3}\)-)?\d{3}-d{4}`|`(999)-000-0000`|美国电话号码，区号可选。 如果用户不希望输入可选字符，他们可以输入空格或将鼠标指针直接放在由前 0 表示的蒙版中的位置。|  
-|`$\d{6}.00`|`$999,999.00`|0 到 999999 范围内的货币值。 货币、千分之和十进制字符将在运行时替换为特定于区域性的等效字符。|  
+|`\d{2}/\d{2}/\d{4}`|`00/00/0000`|`/`掩码中的字符是一个逻辑日期分隔符，并向用户显示与应用程序的当前区域性相对应的日期分隔符。|  
+|`\d{2}-[A-Z][a-z]{2}-\d{4}`|`00->L<LL-0000`|采用美国格式的日期（日、月份缩写和年份），其中显示了三个字母的月份缩写，其中首字母后跟两个小写字母。|  
+|`(\(\d{3}\)-)?\d{3}-d{4}`|`(999)-000-0000`|美国的电话号码，可选择的区域代码。 如果用户不希望输入可选字符，则可以输入空格，或者将鼠标指针直接置于掩码中由前0表示的位置。|  
+|`$\d{6}.00`|`$999,999.00`|介于0到999999之间的货币值。 在运行时，将用其特定于区域性的等效项替换货币、千位和十进制字符。|  
   
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>
 - <xref:System.Windows.Forms.MaskedTextBox>
-- [验证字符串 (Visual Basic)](../../../../visual-basic/programming-guide/language-features/strings/validating-strings.md)
+- [验证字符串 (Visual Basic)](validating-strings.md)
 - [MaskedTextBox 控件](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)

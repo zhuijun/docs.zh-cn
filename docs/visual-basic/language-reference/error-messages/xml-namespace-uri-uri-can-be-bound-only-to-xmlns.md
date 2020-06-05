@@ -1,5 +1,5 @@
 ---
-title: XML 命名空间 URI<uri>可以只可绑定到 xmlns
+title: XML 命名空间 URI“<uri>”可只绑定到“xmlns”
 ms.date: 07/20/2015
 f1_keywords:
 - bc31183
@@ -7,24 +7,24 @@ f1_keywords:
 helpviewer_keywords:
 - BC31183
 ms.assetid: 0ab1dbce-8397-4959-b2cd-f58798b051a0
-ms.openlocfilehash: dd5e67d573176a6b1a011b3191fca9607af85538
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9d791ae699f369ebe69e03fc5019d3ca58554224
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61766618"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406477"
 ---
-# <a name="xml-namespace-uri-httpwwww3orgxml1998namespace-can-be-bound-only-to-xmlns"></a>XML 命名空间 URI `http://www.w3.org/XML/1998/namespace`; 可以只可绑定到 xmlns
-URI `http://www.w3.org/XML/1998/namespace` XML 命名空间声明中使用。 此 URI 是保留的命名空间，不能包含在 XML 命名空间声明。  
+# <a name="xml-namespace-uri-httpwwww3orgxml1998namespace-can-be-bound-only-to-xmlns"></a>XML 命名空间 URI `http://www.w3.org/XML/1998/namespace` ; 只能绑定到 "xmlns"
+URI `http://www.w3.org/XML/1998/namespace` 用于 XML 命名空间声明。 此 URI 是保留命名空间，不能包含在 XML 命名空间声明中。  
   
- **错误 ID:** BC31183  
+ **错误 ID：** BC31183  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-删除 XML 命名空间声明或替换 URI `http://www.w3.org/XML/1998/namespace` 具有有效的命名空间 URI。  
+删除 XML 命名空间声明，或将 URI 替换 `http://www.w3.org/XML/1998/namespace` 为有效的命名空间 URI。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Imports 语句（XML 命名空间）](../../../visual-basic/language-reference/statements/imports-statement-xml-namespace.md)
-- [XML 文本](../../../visual-basic/language-reference/xml-literals/index.md)
-- [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [Imports 语句（XML 命名空间）](../statements/imports-statement-xml-namespace.md)
+- [XML 文本](../xml-literals/index.md)
+- [XML](../../programming-guide/language-features/xml/index.md)

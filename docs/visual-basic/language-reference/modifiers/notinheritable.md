@@ -15,12 +15,12 @@ helpviewer_keywords:
 - sealed classes [Visual Basic]
 - classes [Visual Basic], not inheritable
 ms.assetid: 5c4da7c9-9562-4653-a947-1972e992f9f9
-ms.openlocfilehash: c7e820fe4c6de78171be0510608d7b9da1f97f2f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a5b571591a2ec62915c2a112f9a088a12837c9cf
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351463"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84362341"
 ---
 # <a name="notinheritable-visual-basic"></a>NotInheritable (Visual Basic)
 指定类不能用作基类。  
@@ -28,12 +28,12 @@ ms.locfileid: "74351463"
 ## <a name="remarks"></a>备注  
  **替代条款**。 不能继承的类有时称为*密封*类。  
   
- `NotInheritable` 修饰符可用于以下上下文：  
+ `NotInheritable`可以在此上下文中使用修饰符：  
   
- [Class 语句](../../../visual-basic/language-reference/statements/class-statement.md)  
+ [Class 语句](../statements/class-statement.md)  
   
 ## <a name="see-also"></a>另请参阅
 
-- [Inherits 语句](../../../visual-basic/language-reference/statements/inherits-statement.md)
-- [MustInherit](../../../visual-basic/language-reference/modifiers/mustinherit.md)
-- [关键字](../../../visual-basic/language-reference/keywords/index.md)
+- [Inherits Statement](../statements/inherits-statement.md)
+- [MustInherit](mustinherit.md)
+- [关键字](../keywords/index.md)

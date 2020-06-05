@@ -1,13 +1,13 @@
 ---
-title: 如何：读取和写入嵌入文档
+title: 如何：读取和写入编码的文档
 ms.date: 07/20/2015
 ms.assetid: 159d868f-5ac8-40f2-95ca-07dd925f35c6
-ms.openlocfilehash: 913b08d91b8d4886bc74cbe538df8e27826a6cca
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: f66737429950e04f447dfbd58cf47b6434a22976
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347620"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397903"
 ---
 # <a name="how-to-read-and-write-an-encoded-document-visual-basic"></a>如何：读取和写入编码的文档（Visual Basic）
 
@@ -81,4 +81,4 @@ Encoding of loaded document is:utf-16
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Xml.Linq.XDeclaration.Encoding%2A?displayProperty=nameWithType>
-- [高级 LINQ to XML 编程（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [高级 LINQ to XML 编程（Visual Basic）](advanced-linq-to-xml-programming.md)
