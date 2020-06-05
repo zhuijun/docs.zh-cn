@@ -2,15 +2,15 @@
 title: LINQ to XML 安全性
 ms.date: 07/20/2015
 ms.assetid: d99b4af2-d447-4a3b-991b-6da0231a8637
-ms.openlocfilehash: 01b03dc5792981d41d16cc7b551892bd6fe2bcde
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2be3e2df81af046035832794766f3317e1e96e35
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74331740"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84368525"
 ---
 # <a name="linq-to-xml-security-visual-basic"></a>LINQ to XML 安全性（Visual Basic）
-本主题说明与 LINQ to XML 相关的安全问题。 此外，它还提供一些减少安全隐患的指南。  
+本主题说明与 LINQ to XML 相关的安全问题。 此外，它还提供减轻安全隐患的一些指导。  
   
 ## <a name="linq-to-xml-security-overview"></a>LINQ to XML 安全性概述  
  在旨在提高编程方便性和使服务器端应用程序具有严格安全要求两者之间，LINQ to XML 更倾向于前者。 多数 XML 方案均涉及处理受信任的 XML 文档，而不涉及处理上载到服务器的不受信任的 XML 文档。 LINQ to XML 针对这些方案进行了优化。  
@@ -47,7 +47,7 @@ ms.locfileid: "74331740"
 - 构造动态 XPath 表达式之前需仔细验证这些表达式。  
   
 ## <a name="linq-to-xml-security-issues"></a>LINQ to XML 安全问题  
- 本主题中的安全问题未按特定顺序提出。 所有问题都很重要，都应得到相应解决。  
+ 本主题中介绍的安全问题不区分顺序。 所有问题都很重要，都应得到相应解决。  
   
  成功的特权提升攻击可使恶意程序集能够更好地控制其环境。 成功的特权提升攻击可能导致数据泄露、拒绝服务等。  
   
@@ -56,7 +56,7 @@ ms.locfileid: "74331740"
  拒绝服务攻击会导致 XML 分析器或 LINQ to XML 消耗过多的内存或 CPU 时间。 拒绝服务攻击的严重性可视为比特权提升攻击或数据泄露攻击的严重性低。 但在服务器需要处理来自不受信任的源的 XML 文档的方案中，拒绝服务攻击很重要。  
   
 ### <a name="exceptions-and-error-messages-might-reveal-data"></a>异常和错误消息可能会泄露数据  
- 错误说明中可能会显示数据，如正在转换的数据、文件名或实现详细信息。 不应向不受信任的调用方公开错误消息。 你应捕捉所有错误并使用你自己的自定义错误消息来报告错误。  
+ 错误说明中可能会显示数据，如正在转换的数据、文件名或实现详细信息。 不应向不受信任的调用方公开错误消息。 您应该捕捉所有错误并用自己的自定义错误消息报告错误。  
   
 ### <a name="do-not-call-codeaccesspermissionsassert-in-an-event-handler"></a>不要在事件处理程序中调用 CodeAccessPermissions.Assert  
  程序集可具有较低或较高的权限。 程序集的权限越高，其对计算机及其环境的控制程度也就越高。  
@@ -66,22 +66,22 @@ ms.locfileid: "74331740"
  Microsoft 建议您永远不要在事件处理程序中调用 <xref:System.Security.CodeAccessPermission.Assert%2A?displayProperty=nameWithType>。  
   
 ### <a name="dtds-are-not-secure"></a>DTD 不安全  
- DTD 中的实体在本质上就不安全。 包含 DTD 的恶意 XML 文档可能会使分析器使用所有内存和 CPU 时间，从而导致拒绝服务攻击。 因此，在 LINQ to XML 中，默认情况下关闭 DTD 处理。 不应接受来自不可信源的 DTD。  
+ DTD 中的实体在本质上就不安全。 包含 DTD 的恶意 XML 文档可使分析器使用全部内存和 CPU 时间，从而导致拒绝服务攻击。 因此，在 LINQ to XML 中，默认情况下关闭 DTD 处理。 您不应接受来自不受信任源的 DTD。  
   
- 接受来自不受信任源的 DTD 的一个示例是：允许 Web 用户上载引用 DTD 和 DTD 文件的 XML 文件的 Web 应用程序。 在对文件进行验证以后，恶意 DTD 可能会对你的服务器发起拒绝访问攻击。 接受来自不受信任源的 DTD 的另一个示例是：引用网络共享上也允许匿名 FTP 访问的 DTD。  
+ 接受来自不受信任源的 DTD 的一个示例是：允许 Web 用户上载引用 DTD 和 DTD 文件的 XML 文件的 Web 应用程序。 在验证该文件时，恶意 DTD 会在您的服务器上执行拒绝服务攻击。 接受来自不受信任源的 DTD 的另一个示例是：引用网络共享上也允许匿名 FTP 访问的 DTD。  
   
 ### <a name="avoid-excessive-buffer-allocation"></a>避免分配过多的缓冲区  
  应用程序开发人员应该知道，过大的数据源可能导致资源耗尽和拒绝服务攻击。  
   
  如果恶意用户提交或上载非常大的 XML 文档，则可能导致 LINQ to XML 使用过多的系统资源。 这可能构成拒绝服务攻击。 为防止这种情况的发生，可以设置 <xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> 属性并创建一个读取器，然后限制读取器可以加载的文档大小。 然后使用该读取器创建 XML 树。  
   
- 例如，如果您知道来自不受信任源的 XML 文档的预计最大大小不会超过 50K 字节，则将 <xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> 设置为 100,000。 这不会妨碍你处理 XML 文档，同时它将缓解占用大量内存的已上载文档带来的拒绝服务威胁。  
+ 例如，如果您知道来自不受信任源的 XML 文档的预计最大大小不会超过 50K 字节，则将 <xref:System.Xml.XmlReaderSettings.MaxCharactersInDocument%2A?displayProperty=nameWithType> 设置为 100,000。 这不会妨碍您处理 XML 文档，同时还可在要上载的文档会使用大量内存的情况下缓解拒绝服务威胁。  
   
 ### <a name="avoid-excess-entity-expansion"></a>避免过度扩展实体  
  使用 DTD 时的一种已知拒绝服务攻击是导致过度扩展实体的文档造成的。 为防止这种情况的发生，可以设置 <xref:System.Xml.XmlReaderSettings.MaxCharactersFromEntities%2A?displayProperty=nameWithType> 属性并创建一个读取器，然后限制从实体扩展中生成的字符数。 然后使用该读取器创建 XML 树。  
   
 ### <a name="limit-the-depth-of-the-xml-hierarchy"></a>限制 XML 层次结构的深度  
- 一种可能的拒绝服务攻击是在提交具有过多层次结构深度的文档时发生。 为了防止这种情况的发生，可以将 <xref:System.Xml.XmlReader> 包装在您自己的可计算元素深度的类中。 如果深度超过预设的合理等级，您可以终止处理恶意文档。  
+ 在提交具有过深层次结构的文档时，会发生一种可能的拒绝服务攻击。 为了防止这种情况的发生，可以将 <xref:System.Xml.XmlReader> 包装在您自己的可计算元素深度的类中。 如果深度超过预设的合理等级，您可以终止处理恶意文档。  
   
 ### <a name="protect-against-untrusted-xmlreader-or-xmlwriter-implementations"></a>防止不受信任的 XmlReader 或 XmlWriter 实现  
  管理员应验证任何外部提供的 <xref:System.Xml.XmlReader> 或 <xref:System.Xml.XmlWriter> 实现都要具有强名称且已经在计算机配置中注册。 这可防止加载伪装成读取器或编写器的恶意代码。  
@@ -101,4 +101,4 @@ ms.locfileid: "74331740"
   
 ## <a name="see-also"></a>另请参阅
 
-- [编程指南（LINQ to XML）（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+- [编程指南（LINQ to XML）（Visual Basic）](programming-guide-linq-to-xml.md)
