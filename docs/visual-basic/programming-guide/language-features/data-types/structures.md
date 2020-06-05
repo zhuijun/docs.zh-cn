@@ -1,5 +1,5 @@
 ---
-title: 结构
+title: 結構
 ms.date: 07/20/2015
 helpviewer_keywords:
 - structures [Visual Basic]
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - user-defined data types [Visual Basic], about user-defined data types
 - types [Visual Basic], user-defined
 ms.assetid: 55e86462-5e99-4d33-8018-6d097ca491b2
-ms.openlocfilehash: b5f1f8d6d783c6612fdb2bd2058b61a5a46024cc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a08a5da33fd9507494cac84fd0429b0ff9d9c88e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350777"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84393424"
 ---
 # <a name="structures-visual-basic"></a>结构 (Visual Basic)
 *结构*是 Visual Basic 早期版本支持的用户定义类型（UDT）的泛化。 除了字段外，结构还可以公开属性、方法和事件。 结构可以实现一个或多个接口，并且可以为每个字段声明单独的访问级别。  
@@ -24,21 +24,21 @@ ms.locfileid: "74350777"
  如果希望单个变量保存多个相关的信息片段，则结构非常有用。 例如，你可能想要将雇员姓名、电话分机号码和薪金一起保留在一起。 您可以为此信息使用几个变量，或者可以定义一个结构并将其用于单个员工变量。 当你有许多员工，而此变量的多个实例时，结构的优势就变得很明显。  
   
 ## <a name="in-this-section"></a>本节内容  
- [如何：声明结构](../../../../visual-basic/programming-guide/language-features/data-types/how-to-declare-a-structure.md)  
+ [如何：声明结构](how-to-declare-a-structure.md)  
  演示如何声明结构及其元素。  
   
- [结构变量](../../../../visual-basic/programming-guide/language-features/data-types/structure-variables.md)  
+ [结构变量](structure-variables.md)  
  介绍如何将结构分配给变量并访问其元素。  
   
- [结构和其他编程元素](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-other-programming-elements.md)  
+ [结构和其他编程元素](structures-and-other-programming-elements.md)  
  概述结构如何与数组、对象、过程相互交互。  
   
- [结构和类](../../../../visual-basic/programming-guide/language-features/data-types/structures-and-classes.md)  
+ [结构和类](structures-and-classes.md)  
  描述结构和类之间的相似性和差异。  
   
 ## <a name="related-sections"></a>相关章节  
- [数据类型](../../../../visual-basic/programming-guide/language-features/data-types/index.md)  
+ [数据类型](index.md)  
  介绍 Visual Basic 数据类型，并说明如何使用它们。  
   
- [数据类型](../../../../visual-basic/language-reference/data-types/index.md)  
+ [数据类型](../../../language-reference/data-types/index.md)  
  列出 Visual Basic 提供的基本数据类型。

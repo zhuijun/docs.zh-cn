@@ -1,19 +1,19 @@
 ---
-title: 如何：对字符串进行分析
+title: 如何：分析字符串
 ms.date: 07/20/2015
 ms.assetid: 896e1b4b-f9bd-4975-8bc1-55b6badce1ac
-ms.openlocfilehash: 31bae00eb3ebf0d8e64fc657693e8c0767c4f5d4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0a9076fc516bb8e6bc74732ca252fabfeda43d53
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344489"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398007"
 ---
 # <a name="how-to-parse-a-string-visual-basic"></a>如何：分析字符串（Visual Basic）
-本主题说明如何在中C#创建 XML 树。  
+本主题演示如何使用 c # 创建 XML 树。  
   
 ## <a name="example"></a>示例  
- 您可以使用 `XElement.Parse` 方法解析 Visual Basic 中的字符串。 但是，使用 XML 文本比使用 XML 文本更高效，如以下代码所示，因为 XML 文本与从字符串分析 XML 相比，其性能会受到影响。  
+ 您可以使用方法分析 Visual Basic 中的字符串 `XElement.Parse` 。 但是，使用 XML 文本效率会更高（如下面的代码所示），因为使用 XML 文本不会像从字符串分析 XML 那样要牺牲性能。  
   
  通过使用 XML 文本，只需将 XML 复制并粘贴到 Visual Basic 程序中即可。  
   
@@ -51,4 +51,4 @@ Dim contacts as XElement = _
   
 ## <a name="see-also"></a>另请参阅
 
-- [分析 XML （Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [分析 XML （Visual Basic）](parsing-xml.md)

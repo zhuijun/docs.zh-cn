@@ -2,20 +2,20 @@
 title: 在泛型集合的接口中使用变体
 ms.date: 07/20/2015
 ms.assetid: c867fcea-7462-4995-b9c5-542feec74036
-ms.openlocfilehash: 6ee133dfd61d7d7a88243ca592642ff21e0c2223
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b762ce42215f9b24371313446637e95962677bfb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349013"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84375636"
 ---
-# <a name="using-variance-in-interfaces-for-generic-collections-visual-basic"></a>在泛型集合的接口中使用变体（Visual Basic）
+# <a name="using-variance-in-interfaces-for-generic-collections-visual-basic"></a>在泛型集合的接口中使用变体 (Visual Basic)
 
 协变接口允许其方法返回的派生类型多于接口中指定的派生类型。 逆变接口允许其方法接受派生类型少于接口中指定的类型的参数。
 
 在.NET Framework 4 中，多个现有接口已变为协变和逆变接口。 包括 <xref:System.Collections.Generic.IEnumerable%601> 和 <xref:System.IComparable%601>。 这使你可将对基类型的泛型集合进行操作的那些方法重用于派生类型的集合。
 
-有关 .NET Framework 中的变体接口的列表，请参阅[泛型接口中的变体（Visual Basic）](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)。
+有关 .NET Framework 中的变体接口的列表，请参阅[泛型接口中的变体（Visual Basic）](variance-in-generic-interfaces.md)。
 
 ## <a name="converting-generic-collections"></a>转换泛型集合
 
@@ -114,4 +114,4 @@ End Sub
 
 ## <a name="see-also"></a>另请参阅
 
-- [泛型接口中的变体 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
+- [泛型接口中的变体 (Visual Basic)](variance-in-generic-interfaces.md)
