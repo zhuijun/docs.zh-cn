@@ -21,15 +21,15 @@ helpviewer_keywords:
 - degrees
 - arccosine function
 ms.assetid: 63e449d8-9444-44fb-8db1-6d9cf346e2aa
-ms.openlocfilehash: 73cf56dd72f2baac0474d6f5c4e88228a1fe38cf
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 611f3d8faf2148b8a983467d9ace4fd6c18b30e6
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349854"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373873"
 ---
 # <a name="derived-math-functions-visual-basic"></a>派生的数学函数 (Visual Basic)
-下表显示了可以从 <xref:System.Math?displayProperty=nameWithType> 对象的内部数学函数派生的非内部数学函数。 您可以通过将 `Imports System.Math` 添加到您的文件或项目来访问内部数学函数。  
+下表显示了可以从对象的内部数学函数派生的非内部数学函数 <xref:System.Math?displayProperty=nameWithType> 。 您可以通过将添加 `Imports System.Math` 到您的文件或项目来访问内部数学函数。  
   
 |函数|派生等效项|  
 |--------------|-------------------------|  
@@ -41,12 +41,12 @@ ms.locfileid: "74349854"
 |反正割（Asec （x））|2 * Atan （1）– Atan （Sign （x）/Sqrt （x \* x –1））|  
 |反余割（Acsc （x））|Atan （Sign （x）/Sqrt （x * x –1））|  
 |反余切（Acot （x））|2 * Atan （1）-Atan （x）|  
-|双曲正弦值（Sinh （x））|(Exp(x) – Exp(-x)) / 2|  
-|双曲余弦值（Cosh （x））|(Exp(x) + Exp(-x)) / 2|  
-|双曲正切值（Tanh （x））|(Exp(x) – Exp(-x)) / (Exp(x) + Exp(-x))|  
-|双曲正割（Sech （x））|2 / (Exp(x) + Exp(-x))|  
-|双曲余割（Csch （x））|2 / (Exp(x) – Exp(-x))|  
-|双曲余切（Coth （x））|(Exp(x) + Exp(-x)) / (Exp(x) – Exp(-x))|  
+|双曲正弦值（Sinh （x））|（Exp （x）– Exp （-x））/2|  
+|双曲余弦值（Cosh （x））|（Exp （x） + Exp （-x））/2|  
+|双曲正切值（Tanh （x））|（Exp （x）– Exp （-x））/（Exp （x） + Exp （-x））|  
+|双曲正割（Sech （x））|2/（Exp （x） + Exp （-x））|  
+|双曲余割（Csch （x））|2/（Exp （x）– Exp （-x））|  
+|双曲余切（Coth （x））|（Exp （x） + Exp （-x））/（Exp （x）– Exp （-x））|  
 |反双曲正弦值（Asinh （x））|Log （x + Sqrt （x * x + 1））|  
 |反双曲余弦（Acosh （x））|Log （x + Sqrt （x * x –1））|  
 |反双曲正切值（Atanh （x））|Log （（1 + x）/（1– x））/2|  
@@ -56,4 +56,4 @@ ms.locfileid: "74349854"
   
 ## <a name="see-also"></a>另请参阅
 
-- [数学函数](../../../visual-basic/language-reference/functions/math-functions.md)
+- [数学函数](../functions/math-functions.md)

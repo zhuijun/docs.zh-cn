@@ -8,20 +8,20 @@ helpviewer_keywords:
 - attribute names [XML in Visual Basic]
 - XML literals [Visual Basic], element names
 ms.assetid: cc110118-b6cf-4ff9-a4e4-6233c90c9fbf
-ms.openlocfilehash: 12fbd1f4332391b1acdcf12e101d82627ebbeaff
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 043243eeee7c24d8c63105047fa3e7e0ed58c7b0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74335986"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374663"
 ---
 # <a name="names-of-declared-xml-elements-and-attributes-visual-basic"></a>已声明的 XML 元素和特性的名称 (Visual Basic)
-本主题提供了在 XML 文本中命名 XML 元素和属性的 Visual Basic 准则。  在 XML 文本中，可以指定本地名称或限定名称。 限定名由 XML 命名空间前缀、冒号和本地名称组成。 有关 XML 命名空间前缀的详细信息，请参阅[Xml 元素文本](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)。  
+本主题提供了在 XML 文本中命名 XML 元素和属性的 Visual Basic 准则。  在 XML 文本中，可以指定本地名称或限定名称。 限定名由 XML 命名空间前缀、冒号和本地名称组成。 有关 XML 命名空间前缀的详细信息，请参阅[Xml 元素文本](../../../language-reference/xml-literals/xml-element-literal.md)。  
   
 ## <a name="rules"></a>规则  
  Visual Basic 中的元素或属性的本地名称必须遵循以下规则。  
   
-- 它可以从命名空间开始。 它必须以字母字符或下划线（`_`）开头。  
+- 它可以从命名空间开始。 它必须以字母字符或下划线（ `_` ）开头。  
   
 - 它必须仅包含字母字符、十进制数字、下划线、句点（.）和连字符（-）。  
   
@@ -39,12 +39,12 @@ ms.locfileid: "74335986"
  但是，名称不应太短，因为它不能充分描述元素或代码如何使用它。 这对于代码的可读性非常重要。 如果其他人正在尝试理解它，或者你在写入它后你需要很长的时间，则适当的元素名称可节省时间。  
   
 ## <a name="case-sensitivity-in-names"></a>名称区分大小写  
- XML 元素名称区分大小写。 这意味着，当 Visual Basic 编译器仅对字母大小写不同的两个名称进行比较时，它会将它们解释为不同的名称。 例如，它会将 `ABC` 和 `abc` 解释为单独的元素。  
+ XML 元素名称区分大小写。 这意味着，当 Visual Basic 编译器仅对字母大小写不同的两个名称进行比较时，它会将它们解释为不同的名称。 例如，它将 `ABC` 和 `abc` 引用为单独的元素。  
   
 ## <a name="xml-namespaces"></a>XML 命名空间  
- 创建 XML 元素文本时，可以指定元素名称的 XML 命名空间前缀。 有关详细信息，请参阅[XML 元素文本](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)。  
+ 创建 XML 元素文本时，可以指定元素名称的 XML 命名空间前缀。 有关详细信息，请参阅[XML 元素文本](../../../language-reference/xml-literals/xml-element-literal.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [在 Visual Basic 中创建 XML](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
-- [XML 元素文本](../../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)
+- [在 Visual Basic 中创建 XML](creating-xml.md)
+- [XML 元素文本](../../../language-reference/xml-literals/xml-element-literal.md)
