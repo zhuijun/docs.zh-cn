@@ -7,28 +7,28 @@ f1_keywords:
 helpviewer_keywords:
 - BC30424
 ms.assetid: 2d402c2f-27ad-428b-b699-d45cd62f7196
-ms.openlocfilehash: 88bbab2005b464ee97d647f2b4b9be6ff81e2d82
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9e36b84252c3d8762308e95323b8e284977df8c0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61649837"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84409759"
 ---
-# <a name="constants-must-be-of-an-intrinsic-or-enumerated-type-not-a-class-structure-type-parameter-or-array-type"></a><span data-ttu-id="1879d-102">常量必须是内部类型或者枚举类型，不能是类、结构、类型参数或数组类型</span><span class="sxs-lookup"><span data-stu-id="1879d-102">Constants must be of an intrinsic or enumerated type, not a class, structure, type parameter, or array type</span></span>
-<span data-ttu-id="1879d-103">已尝试声明为类、 结构或数组类型，或由包含泛型类型定义的类型参数的常量。</span><span class="sxs-lookup"><span data-stu-id="1879d-103">You have attempted to declare a constant as a class, structure, or array type, or as a type parameter defined by a containing generic type.</span></span>  
+# <a name="constants-must-be-of-an-intrinsic-or-enumerated-type-not-a-class-structure-type-parameter-or-array-type"></a><span data-ttu-id="13110-102">常量必须是内部类型或者枚举类型，不能是类、结构、类型参数或数组类型</span><span class="sxs-lookup"><span data-stu-id="13110-102">Constants must be of an intrinsic or enumerated type, not a class, structure, type parameter, or array type</span></span>
+<span data-ttu-id="13110-103">您尝试将常量声明为类、结构或数组类型，或者声明为由包含泛型类型定义的类型参数。</span><span class="sxs-lookup"><span data-stu-id="13110-103">You have attempted to declare a constant as a class, structure, or array type, or as a type parameter defined by a containing generic type.</span></span>  
   
- <span data-ttu-id="1879d-104">常量必须是内部类型 (`Boolean`， `Byte`， `Date`， `Decimal`， `Double`， `Integer`， `Long`， `Object`， `SByte`， `Short`， `Single`， `String`， `UInteger`， `ULong`，或`UShort`)，或`Enum`类型基于整型类型之一。</span><span class="sxs-lookup"><span data-stu-id="1879d-104">Constants must be of an intrinsic type (`Boolean`, `Byte`, `Date`, `Decimal`, `Double`, `Integer`, `Long`, `Object`, `SByte`, `Short`, `Single`, `String`, `UInteger`, `ULong`, or `UShort`), or an `Enum` type based on one of the integral types.</span></span>  
+ <span data-ttu-id="13110-104">常量必须是内部类型（、、、、、、、、、、、、、 `Boolean` `Byte` `Date` `Decimal` `Double` `Integer` `Long` `Object` `SByte` `Short` `Single` `String` `UInteger` `ULong` 或 `UShort` ），或 `Enum` 基于其中一个整型类型的类型。</span><span class="sxs-lookup"><span data-stu-id="13110-104">Constants must be of an intrinsic type (`Boolean`, `Byte`, `Date`, `Decimal`, `Double`, `Integer`, `Long`, `Object`, `SByte`, `Short`, `Single`, `String`, `UInteger`, `ULong`, or `UShort`), or an `Enum` type based on one of the integral types.</span></span>  
   
- <span data-ttu-id="1879d-105">**错误 ID:** BC30424</span><span class="sxs-lookup"><span data-stu-id="1879d-105">**Error ID:** BC30424</span></span>  
+ <span data-ttu-id="13110-105">**错误 ID：** BC30424</span><span class="sxs-lookup"><span data-stu-id="13110-105">**Error ID:** BC30424</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="1879d-106">更正此错误</span><span class="sxs-lookup"><span data-stu-id="1879d-106">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="13110-106">更正此错误</span><span class="sxs-lookup"><span data-stu-id="13110-106">To correct this error</span></span>  
   
-1. <span data-ttu-id="1879d-107">声明常量用作内部函数或`Enum`类型。</span><span class="sxs-lookup"><span data-stu-id="1879d-107">Declare the constant as an intrinsic or `Enum` type.</span></span>  
+1. <span data-ttu-id="13110-107">将常量声明为内部类型或 `Enum` 类型。</span><span class="sxs-lookup"><span data-stu-id="13110-107">Declare the constant as an intrinsic or `Enum` type.</span></span>  
   
-2. <span data-ttu-id="1879d-108">一个常数，也可以是特殊值，如`True`， `False`，或`Nothing`。</span><span class="sxs-lookup"><span data-stu-id="1879d-108">A constant can also be a special value such as `True`, `False`, or `Nothing`.</span></span> <span data-ttu-id="1879d-109">编译器会考虑这些预定义的值为相应的内部类型。</span><span class="sxs-lookup"><span data-stu-id="1879d-109">The compiler considers these predefined values to be of the appropriate intrinsic type.</span></span>  
+2. <span data-ttu-id="13110-108">常数也可以是一个特殊值 `True` ，如、 `False` 或 `Nothing` 。</span><span class="sxs-lookup"><span data-stu-id="13110-108">A constant can also be a special value such as `True`, `False`, or `Nothing`.</span></span> <span data-ttu-id="13110-109">编译器将这些预定义的值视为适当的内部类型。</span><span class="sxs-lookup"><span data-stu-id="13110-109">The compiler considers these predefined values to be of the appropriate intrinsic type.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1879d-110">请参阅</span><span class="sxs-lookup"><span data-stu-id="1879d-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="13110-110">另请参阅</span><span class="sxs-lookup"><span data-stu-id="13110-110">See also</span></span>
 
-- [<span data-ttu-id="1879d-111">常量和枚举</span><span class="sxs-lookup"><span data-stu-id="1879d-111">Constants and Enumerations</span></span>](../../../visual-basic/language-reference/constants-and-enumerations.md)
-- [<span data-ttu-id="1879d-112">数据类型</span><span class="sxs-lookup"><span data-stu-id="1879d-112">Data Types</span></span>](../../../visual-basic/programming-guide/language-features/data-types/index.md)
-- [<span data-ttu-id="1879d-113">数据类型</span><span class="sxs-lookup"><span data-stu-id="1879d-113">Data Types</span></span>](../../../visual-basic/language-reference/data-types/index.md)
+- [<span data-ttu-id="13110-111">常量和枚举</span><span class="sxs-lookup"><span data-stu-id="13110-111">Constants and Enumerations</span></span>](../constants-and-enumerations.md)
+- [<span data-ttu-id="13110-112">数据类型</span><span class="sxs-lookup"><span data-stu-id="13110-112">Data Types</span></span>](../../programming-guide/language-features/data-types/index.md)
+- [<span data-ttu-id="13110-113">数据类型</span><span class="sxs-lookup"><span data-stu-id="13110-113">Data Types</span></span>](../data-types/index.md)
