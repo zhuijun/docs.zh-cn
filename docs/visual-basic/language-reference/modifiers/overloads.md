@@ -1,5 +1,5 @@
 ---
-title: Overloads
+title: 重载
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Overloads
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Shadows keyword [Visual Basic]
 - signature, hiding by
 ms.assetid: 0c6820b8-25b2-4664-bc59-5ca93c99c042
-ms.openlocfilehash: 44823b409cfa81dc889aabacf101fac90bf851e0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: bd0931cab520f8580c0d7473a44e350752e287bb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351409"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84392101"
 ---
 # <a name="overloads-visual-basic"></a>Overloads (Visual Basic)
 
@@ -27,9 +27,9 @@ ms.locfileid: "74351409"
 
 ## <a name="rules"></a>规则
 
-- **声明上下文。** 只能在属性或过程声明语句中使用 `Overloads`。
+- **声明上下文。** `Overloads`只能在属性或过程声明语句中使用。
 
-- **组合修饰符。** 不能在同一过程声明中同时指定 `Overloads` 和[阴影](../../../visual-basic/language-reference/modifiers/shadows.md)。
+- **组合修饰符。** 不能 `Overloads` 在同一过程声明中同时指定和[阴影](shadows.md)。
 
 - **必需的差异。** 此声明中的*签名*必须与它重载的每个属性或过程的签名不同。 签名包含属性或过程名以及以下内容：
 
@@ -59,26 +59,26 @@ ms.locfileid: "74351409"
 
   - 属性或过程修饰符关键字（如 `Public` 或 `Shared`）
 
-- **可选修饰符。** 在同一个类中定义多个重载属性或过程时，无需使用 `Overloads` 修饰符。 然而，如果在某个声明中使用 `Overloads`，则必须在所有的声明中使用它。
+- **可选修饰符。** 在 `Overloads` 同一个类中定义多个重载属性或过程时，无需使用修饰符。 然而，如果在某个声明中使用 `Overloads`，则必须在所有的声明中使用它。
 
-- **隐藏和重载。** `Overloads` 还可用于在基类中隐藏现有成员或重载成员集。 以这种方式使用 `Overloads` 时，应使用与基类成员相同的名称和参数列表来声明属性或方法，并且不提供 `Shadows` 关键字。
+- **隐藏和重载。** `Overloads`还可用于在基类中隐藏现有成员或重载成员集。 以这种方式使用 `Overloads` 时，应使用与基类成员相同的名称和参数列表来声明属性或方法，并且不提供 `Shadows` 关键字。
 
 如果使用 `Overrides`，编译器将隐式添加 `Overloads`，以便库 API 更轻松地使用 C#。
 
 `Overloads` 修饰符可用于下面的上下文中：
 
-- [Function 语句](../../../visual-basic/language-reference/statements/function-statement.md)
+- [Function 语句](../statements/function-statement.md)
 
-- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Operator Statement](../statements/operator-statement.md)
 
-- [Property 语句](../../../visual-basic/language-reference/statements/property-statement.md)
+- [Property Statement](../statements/property-statement.md)
 
-- [Sub 语句](../../../visual-basic/language-reference/statements/sub-statement.md)
+- [Sub 语句](../statements/sub-statement.md)
 
 ## <a name="see-also"></a>另请参阅
 
-- [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md)
-- [过程重载](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md)
-- [Visual Basic 中的泛型类型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [运算符过程](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md)
-- [如何：定义转换运算符](../../../visual-basic/programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)
+- [Shadows](shadows.md)
+- [过程重载](../../programming-guide/language-features/procedures/procedure-overloading.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
+- [运算符过程](../../programming-guide/language-features/procedures/operator-procedures.md)
+- [如何：定义转换运算符](../../programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)

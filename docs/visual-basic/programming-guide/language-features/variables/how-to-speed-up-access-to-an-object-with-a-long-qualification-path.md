@@ -8,18 +8,18 @@ helpviewer_keywords:
 - With block
 - object variables [Visual Basic], accessing
 ms.assetid: 3eb7657f-c9fe-4e05-8bc3-4bb14d5ae585
-ms.openlocfilehash: 83670ae6af0904156b08398024658cf504b7663f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: fe93e7bac2a21f1060d1f93765eb35e1ad0c7eb0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346821"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410407"
 ---
 # <a name="how-to-speed-up-access-to-an-object-with-a-long-qualification-path-visual-basic"></a>如何：加速访问具有长限定路径的对象 (Visual Basic)
 
 如果经常访问的对象需要多个方法和属性的限定路径，则可以通过不重复限定路径来加快代码的速度。
 
-可以通过两种方法来避免重复限定路径。 可以将对象分配给一个变量，也可以在 `With`...`End With` 块中使用它。
+可以通过两种方法来避免重复限定路径。 可以将对象分配给一个变量，也可以在 `With` ... 块中使用它。 `End With`
 
 ### <a name="to-speed-up-access-to-a-heavily-qualified-object-by-assigning-it-to-a-variable"></a>通过将严重限定对象赋给变量来加快对该对象的访问速度
 
@@ -45,7 +45,7 @@ ms.locfileid: "74346821"
     With someForm.ActiveForm.ActiveControl
     ```
 
-2. 在 `End With` 语句之前访问 `With` 块内的对象成员。
+2. 在语句前面的块内访问对象的成员 `With` `End With` 。
 
     ```vb
         .Text = "Test"
@@ -56,5 +56,5 @@ ms.locfileid: "74346821"
 
 ## <a name="see-also"></a>另请参阅
 
-- [对象变量](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
-- [With...End With 语句](../../../../visual-basic/language-reference/statements/with-end-with-statement.md)
+- [对象变量](object-variables.md)
+- [With...End With 语句](../../../language-reference/statements/with-end-with-statement.md)

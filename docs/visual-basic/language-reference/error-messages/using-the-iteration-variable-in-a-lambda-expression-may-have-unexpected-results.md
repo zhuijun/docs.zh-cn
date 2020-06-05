@@ -7,17 +7,17 @@ f1_keywords:
 helpviewer_keywords:
 - BC42324
 ms.assetid: b5c2c4bd-3b2a-4a73-aaeb-55728eb03b68
-ms.openlocfilehash: 3335da503b6fb9c33e44266997cc945214a3a365
-ms.sourcegitcommit: e08b319358a8025cc6aa38737854f7bdb87183d6
+ms.openlocfilehash: aa3e1d6281af22b301a4697b265ed3fbf23e3de4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64913089"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84373909"
 ---
 # <a name="using-the-iteration-variable-in-a-lambda-expression-may-have-unexpected-results"></a>在 lambda 表达式中使用迭代变量可能会产生意外的结果
-Lambda 表达式中使用迭代变量可能会产生意外的结果。 相反，创建一个本地变量在循环内的，并将其分配的迭代变量的值。  
+在 lambda 表达式中使用迭代变量可能会产生意外的结果。 改为在循环内创建一个局部变量，并为其分配迭代变量的值。  
   
- 在循环中声明的 lambda 表达式中使用循环迭代变量时，会出现此警告。 例如，下面的示例会导致出现的警告。  
+ 如果在循环中声明的 lambda 表达式中使用循环迭代变量，则会出现此警告。 例如，下面的示例将导致出现警告。  
   
 ```vb  
 For i As Integer = 1 To 10  
@@ -26,7 +26,7 @@ For i As Integer = 1 To 10
 Next  
 ```  
   
- 下面的示例显示了可能会出现意外的结果。  
+ 下面的示例显示了可能出现的意外结果。  
   
 ```vb  
 Module Module1  
@@ -45,7 +45,7 @@ Module Module1
 End Module  
 ```  
   
- `For`循环创建的 lambda 表达式，其中每个循环迭代变量的值将返回一个数组`i`。 当 lambda 表达式的计算`For Each`循环中，你可能希望看到 0、 1、 2、 3 和 4 显示，连续的值`i`中`For`循环。 相反，您看到的最终值`i`显示了五次：  
+ `For`循环创建 lambda 表达式的数组，其中每个表达式都返回循环迭代变量的值 `i` 。 当在循环中计算 lambda 表达式时 `For Each` ，可能会发现在循环中显示0、1、2、3和4的后续值 `i` `For` 。 相反，您将看到显示的五次的最终值 `i` ：  
   
  `5`  
   
@@ -57,13 +57,13 @@ End Module
   
  `5`  
   
- 默认情况下，此消息是一个警告。 若要深入了解如何隐藏警告或将警告视为错误，请参阅 [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)。  
+ 默认情况下，此消息是一个警告。 有关隐藏警告或将警告视为错误的详细信息，请参阅 [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)。  
   
- **错误 ID:** BC42324  
+ **错误 ID：** BC42324  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 将迭代变量的值分配给本地变量，并在 lambda 表达式中使用本地变量。  
+- 将迭代变量的值分配给局部变量，并在 lambda 表达式中使用该局部变量。  
   
 ```vb  
 Module Module1  
@@ -83,6 +83,6 @@ Module Module1
 End Module  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Lambda 表达式](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
+- [Lambda 表达式](../../programming-guide/language-features/procedures/lambda-expressions.md)
