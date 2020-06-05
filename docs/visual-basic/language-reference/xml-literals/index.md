@@ -9,12 +9,12 @@ helpviewer_keywords:
 - XML literals [Visual Basic], reference
 - literals [Visual Basic], XML
 ms.assetid: 16b28c40-8768-423f-bd9c-22ff10de2b54
-ms.openlocfilehash: cf70486c1c33013d84f68c9ea9dbc9463a751ad7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d7826c48629ee919344ec1982d3a698e6df9ef7f
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349403"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400236"
 ---
 # <a name="xml-literals-visual-basic"></a>XML 文本 (Visual Basic)
 本节中的主题介绍 Visual Basic 中 XML 文本的语法。 使用 XML 文本语法，可以将 XML 直接合并到代码中。  
@@ -23,12 +23,12 @@ ms.locfileid: "74349403"
   
 |主题|说明|  
 |-----------|-----------------|  
-|[XML 元素文本](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md)|介绍了表示 <xref:System.Xml.Linq.XElement> 对象的文本语法。|  
-|[XML 文档文本](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)|介绍了表示 <xref:System.Xml.Linq.XDocument> 对象的文本语法。|  
-|[XML CDATA 文本](../../../visual-basic/language-reference/xml-literals/xml-cdata-literal.md)|介绍了表示 <xref:System.Xml.Linq.XCData> 对象的文本语法。|  
-|[XML 注释文本](../../../visual-basic/language-reference/xml-literals/xml-comment-literal.md)|介绍了表示 <xref:System.Xml.Linq.XComment> 对象的文本语法。|  
-|[XML 处理指令文本](../../../visual-basic/language-reference/xml-literals/xml-processing-instruction-literal.md)|介绍了表示 <xref:System.Xml.Linq.XProcessingInstruction> 对象的文本语法。|  
+|[XML 元素文本](xml-element-literal.md)|介绍了表示 <xref:System.Xml.Linq.XElement> 对象的文本语法。|  
+|[XML 文档文本](xml-document-literal.md)|介绍了表示 <xref:System.Xml.Linq.XDocument> 对象的文本语法。|  
+|[XML CDATA 文本](xml-cdata-literal.md)|介绍了表示 <xref:System.Xml.Linq.XCData> 对象的文本语法。|  
+|[XML 注释文本](xml-comment-literal.md)|介绍了表示 <xref:System.Xml.Linq.XComment> 对象的文本语法。|  
+|[XML 处理指令文本](xml-processing-instruction-literal.md)|介绍了表示 <xref:System.Xml.Linq.XProcessingInstruction> 对象的文本语法。|  
   
 ## <a name="see-also"></a>另请参阅
 
-- [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)
+- [XML](../../programming-guide/language-features/xml/index.md)

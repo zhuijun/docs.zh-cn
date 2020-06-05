@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC36550
 ms.assetid: 4387a51f-733c-45d7-abdb-eb64d4f51078
-ms.openlocfilehash: 2ed3a10cdf941bb8d1d7c00379736e04e8cad4d7
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 9b8f49c498699a8f7d1c4b329e82258501aa0c47
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72583184"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363093"
 ---
 # <a name="extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations"></a>“Extension”特性只能应用于“Module”、“Sub”或“Function”声明。
 
-在 Visual Basic 中扩展数据类型的唯一方法是在标准模块内定义扩展方法。 扩展方法可以是 `Sub` 过程或 `Function` 过程。 所有扩展方法都必须标记 <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> 命名空间中的扩展属性 `<Extension()>`。 或者，包含扩展方法的模块可以用相同的方式进行标记。 扩展属性的其他使用无效。
+在 Visual Basic 中扩展数据类型的唯一方法是在标准模块内定义扩展方法。 扩展方法可以是 `Sub` 过程或 `Function` 过程。 必须用 `<Extension()>` 命名空间中的扩展属性标记所有扩展方法 <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> 。 或者，包含扩展方法的模块可以用相同的方式进行标记。 扩展属性的其他使用无效。
 
 **错误 ID：** BC36550
 
@@ -28,7 +28,7 @@ ms.locfileid: "72583184"
 
 ## <a name="example"></a>示例
 
-下面的示例定义 `String` 数据类型的 `Print` 方法。
+下面的示例定义了 `Print` `String` 数据类型的方法。
 
 ```vb
 Imports StringUtility
@@ -44,8 +44,8 @@ Namespace StringUtility
 End Namespace
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [属性概述](../../../visual-basic/programming-guide/concepts/attributes/index.md)
-- [扩展方法](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
-- [Module 语句](../../../visual-basic/language-reference/statements/module-statement.md)
+- [属性概述](../../programming-guide/concepts/attributes/index.md)
+- [扩展方法](../../programming-guide/language-features/procedures/extension-methods.md)
+- [Module 语句](../statements/module-statement.md)

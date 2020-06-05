@@ -2,24 +2,24 @@
 title: 如何：执行大型 XML 文档的流式转换
 ms.date: 07/20/2015
 ms.assetid: 3d954cc9-4b3c-4b47-8132-ff7541cff53b
-ms.openlocfilehash: f5e6063f0a850c03a605d75b0cbdc0bf9e03b325
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: f648371581ed2854c107ebed920068e2abec4239
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78267010"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397981"
 ---
-# <a name="how-to-perform-streaming-transform-of-large-xml-documents-visual-basic"></a>如何：执行大型 XML 文档的流式转换（可视基本）
+# <a name="how-to-perform-streaming-transform-of-large-xml-documents-visual-basic"></a>如何：执行大型 XML 文档的流式转换（Visual Basic）
 有时，你必须转换任意大的 XML 文件并在编写你的应用程序时可以预测应用程序的内存需求量。 如果您试图用大 XML 文件填充 XML 树，则内存占用量将与文件大小成正比，也就是说会占用过多内存。 因此，您应改用流处理技术。  
   
  流处理技术最适合只需处理一次源文档的情况，您可以按文档顺序处理各个元素。 某些标准查询运算符（如 <xref:System.Linq.Enumerable.OrderBy%2A>）可以循环访问其源、收集所有数据、对数据排序，最后生成序列中的第一项。 请注意，如果使用可在生成第一项之前具体化源的查询运算符，则不会使应用程序保持小的内存需求量。  
   
- 即使您使用["如何操作：使用访问标头信息（可视基本）"](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)中所述的技术，如果尝试组合包含转换后的文档的 XML 树，内存使用率将太大。  
+ 即使使用[如何：流处理可访问标头信息的 Xml 片段（Visual Basic）](how-to-stream-xml-fragments-with-access-to-header-information.md)中所述的方法，如果你尝试组合包含转换的文档的 xml 树，则内存使用量将会太大。  
   
  主要方法有两种。 一种方法是使用 <xref:System.Xml.Linq.XStreamingElement> 的延迟处理特性。 另一种方法是创建一个 <xref:System.Xml.XmlWriter> 并使用 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 的功能将元素写入 <xref:System.Xml.XmlWriter>。 本主题演示这两种方法。  
   
 ## <a name="example"></a>示例  
- 以下示例基于["如何：具有访问标头信息（可视基本）的流 XML 片段""](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)中的示例。  
+ 下面的示例基于[如何：流处理可访问标头信息的 XML 片段（Visual Basic）](how-to-stream-xml-fragments-with-access-to-header-information.md)中的示例。  
   
  本示例使用 <xref:System.Xml.Linq.XStreamingElement> 的延迟执行功能对输出进行流式处理。 本示例可在保持很小的内存需求量的同时转换非常大的文档。  
   
@@ -246,7 +246,7 @@ End Class
 ```  
   
 ## <a name="example"></a>示例  
- 以下示例还基于["如何：具有访问标头信息（可视基本）的流 XML 片段""](../../../../visual-basic/programming-guide/concepts/linq/how-to-stream-xml-fragments-with-access-to-header-information.md)中的示例。  
+ 下面的示例还构建了[如何：通过访问标头信息（Visual Basic）来流式处理 XML 片段](how-to-stream-xml-fragments-with-access-to-header-information.md)的示例。  
   
  本示例使用 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 的功能将元素写入 <xref:System.Xml.XmlWriter>。 本示例可在保持很小的内存需求量的同时转换非常大的文档。  
   
@@ -441,4 +441,4 @@ End Class
   
 ## <a name="see-also"></a>另请参阅
 
-- [高级 LINQ 到 XML 编程（可视化基本）](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [高级 LINQ to XML 编程（Visual Basic）](advanced-linq-to-xml-programming.md)

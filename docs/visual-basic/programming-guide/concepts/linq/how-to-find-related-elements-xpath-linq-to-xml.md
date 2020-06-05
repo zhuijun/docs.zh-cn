@@ -2,12 +2,12 @@
 title: 如何：查找相关元素 (XPath-LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 6b0ef058-d704-48a5-98cd-33f00d088af9
-ms.openlocfilehash: e250572e7bd73e769e4ab06b7b7ff9e3b3d38c47
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5819ef216f767367aa16b20f818b2bbc537d54b7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344649"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364651"
 ---
 # <a name="how-to-find-related-elements-xpath-linq-to-xml-visual-basic"></a>如何：查找相关元素（XPath LINQ to XML）（Visual Basic）
 本主题演示如何在由其他元素的值所引用的属性上获取元素选择。  
@@ -21,7 +21,7 @@ ms.locfileid: "74344649"
   
  请注意，在 .NET 中，列表索引是从零开始编制。 在 XPath 谓词中，对节点集合的索引是从 1 开始的。 本示例反映了这种差别。  
   
- 本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md)。  
+ 本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](sample-xml-file-customers-and-orders-linq-to-xml.md)。  
   
 ```vb  
 Dim co As XDocument = XDocument.Load("CustomersOrders.xml")  
@@ -73,6 +73,6 @@ Results are identical
 </Customer>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [XPath 用户的 LINQ to XML （Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [XPath 用户的 LINQ to XML （Visual Basic）](linq-to-xml-for-xpath-users.md)

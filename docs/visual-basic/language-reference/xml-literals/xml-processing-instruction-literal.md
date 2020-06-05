@@ -8,15 +8,15 @@ helpviewer_keywords:
 - XML processing instruction literal [Visual Basic]
 - processing instruction literal [Visual Basic]
 ms.assetid: cef4f7f8-0011-4f64-8602-795077ad4f15
-ms.openlocfilehash: 3602a81feae9287a77d060bb46f10eefee4fc05d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9bd1781e01bc4cbf1ce5da8c454ab2f5a679aead
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347035"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400171"
 ---
 # <a name="xml-processing-instruction-literal-visual-basic"></a>XML 处理指令文本 (Visual Basic)
-表示 <xref:System.Xml.Linq.XProcessingInstruction> 对象的文本。  
+表示对象的文本 <xref:System.Xml.Linq.XProcessingInstruction> 。  
   
 ## <a name="syntax"></a>语法  
   
@@ -24,7 +24,7 @@ ms.locfileid: "74347035"
 <?piName [ = piData ] ?>  
 ```  
   
-## <a name="parts"></a>部件  
+## <a name="parts"></a>组成部分  
  `<?`  
  必需。 表示 XML 处理指令文本的开头。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "74347035"
  必需。 指示处理指令的目标应用程序的名称。 不能以 "xml" 或 "XML" 开头。  
   
  `piData`  
- 可选。 指示 `piName` 的目标应用程序应如何处理 XML 文档的字符串。  
+ 可选。 字符串，指示的目标应用程序 `piName` 应如何处理 XML 文档。  
   
  `?>`  
  必需。 表示处理指令的结束。  
@@ -41,19 +41,19 @@ ms.locfileid: "74347035"
  一个 <xref:System.Xml.Linq.XProcessingInstruction> 对象。  
   
 ## <a name="remarks"></a>备注  
- XML 处理指令文本指示应用程序应如何处理 XML 文档。 当应用程序加载 XML 文档时，应用程序可以检查 XML 处理指令以确定如何处理文档。 应用程序解释 `piName` 和 `piData`的含义。  
+ XML 处理指令文本指示应用程序应如何处理 XML 文档。 当应用程序加载 XML 文档时，应用程序可以检查 XML 处理指令以确定如何处理文档。 应用程序解释和的含义 `piName` `piData` 。  
   
- XML 文档文本使用类似于 XML 处理指令的语法。 有关详细信息，请参阅[XML 文档文本](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)。  
+ XML 文档文本使用类似于 XML 处理指令的语法。 有关详细信息，请参阅[XML 文档文本](xml-document-literal.md)。  
   
 > [!NOTE]
-> `piName` 元素不能以字符串 "xml" 或 "XML" 开头，因为 XML 1.0 规范保留这些标识符。  
+> `piName`元素不能以字符串 "xml" 或 "xml" 开头，因为 xml 1.0 规范保留这些标识符。  
   
  可以将 XML 处理指令文本分配给变量或将其包含在 XML 文档文本中。  
   
 > [!NOTE]
 > XML 文本可以跨多个行，而不需要行继续符。 这使你可以从 XML 文档复制内容并将其直接粘贴到 Visual Basic 程序。  
   
- Visual Basic 编译器将 XML 处理指令文本转换为对 <xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A> 构造函数的调用。  
+ Visual Basic 编译器将 XML 处理指令文本转换为对构造函数的调用 <xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A> 。  
   
 ## <a name="example"></a>示例  
  下面的示例创建一个处理指令，该指令标识 XML 文档的样式表。  
@@ -63,6 +63,6 @@ ms.locfileid: "74347035"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Xml.Linq.XProcessingInstruction>
-- [XML 文档文本](../../../visual-basic/language-reference/xml-literals/xml-document-literal.md)
-- [XML 文本](../../../visual-basic/language-reference/xml-literals/index.md)
-- [在 Visual Basic 中创建 XML](../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)
+- [XML 文档文本](xml-document-literal.md)
+- [XML 文本](index.md)
+- [在 Visual Basic 中创建 XML](../../programming-guide/language-features/xml/creating-xml.md)

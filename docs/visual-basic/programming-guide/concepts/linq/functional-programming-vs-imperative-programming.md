@@ -1,21 +1,21 @@
 ---
-title: 函数编程与强制性编程
+title: 函数编程与命令式编程
 ms.date: 07/20/2015
 ms.assetid: 6a1f3b57-00e6-447d-9906-74c7c4d5d85c
-ms.openlocfilehash: 704beadc29af0de606b8f246360dc6fffca8cfcc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0090761dc07218673e1e0299951530d5a4763ffe
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353433"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364794"
 ---
 # <a name="functional-programming-vs-imperative-programming-visual-basic"></a>函数编程与命令式编程（Visual Basic）
 本主题对函数编程和更传统的命令性（过程性）编程进行比较。  
   
-## <a name="functional-programming-vs-imperative-programming"></a>函数编程与强制性编程  
- 为支持使用纯函数方法解决问题，特此创建了函数编程范例。 函数编程是一种声明性编程形式。 相比之下，大多数主流语言，包括面向对象的编程 (OOP) 语言（如 C#、Visual Basic、C++ 和 Java）主要都是为支持命令性（过程性）编程而设计的。  
+## <a name="functional-programming-vs-imperative-programming"></a>函数编程与命令式编程  
+ 为支持使用纯函数方法解决问题，特此创建了函数编程  范例。 函数编程是一种声明性编程  形式。 相比之下，大多数主流语言，包括面向对象的编程 (OOP) 语言（如 C#、Visual Basic、C++ 和 Java）主要都是为支持命令性  （过程性）编程而设计的。  
   
- 使用命令性方法时，开发人员编写的代码应严格细致地说明计算机为完成目标而必须执行的步骤。 这有时称为算法编程。 相比之下，函数方法涉及将问题编成一组要执行的函数。 您要仔细地定义每个函数的输入值和每个函数的返回值。 下表说明了这两种方法之间的一些总体差别。  
+ 使用命令性方法时，开发人员编写的代码应严格细致地说明计算机为完成目标而必须执行的步骤。 这有时称为算法  编程。 相比之下，函数方法涉及将问题编成一组要执行的函数。 您要仔细地定义每个函数的输入值和每个函数的返回值。 下表说明了这两种方法之间的一些总体差别。  
   
 |特征|命令性方法|函数方法|  
 |--------------------|-------------------------|-------------------------|  
@@ -50,8 +50,8 @@ ms.locfileid: "74353433"
   
  幸运的是，Visual Basic 不需要完全 leap 功能编程，因为它同时支持命令性编程和函数编程方法。 开发人员可以选择哪种方法最适合特定方案。 实际上，程序通常组合使用这两种方法。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [纯功能转换简介（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
+- [纯功能转换简介（Visual Basic）](introduction-to-pure-functional-transformations.md)
 - [XSLT 转换](../../../../standard/data/xml/xslt-transformations.md)
-- [重构为纯函数（Visual Basic）](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [重构为纯函数（Visual Basic）](refactoring-into-pure-functions.md)

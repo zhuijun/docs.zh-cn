@@ -1,5 +1,5 @@
 ---
-title: 可选的参数
+title: 可选参数
 ms.date: 07/20/2015
 helpviewer_keywords:
 - parameters [Visual Basic], optional
@@ -12,15 +12,15 @@ helpviewer_keywords:
 - arguments [Visual Basic], optional
 - optional arguments [Visual Basic], and named arguments
 ms.assetid: 398d2845-1069-4e94-b934-a73b545c8b87
-ms.openlocfilehash: d859f7eaaefa051cfdf703d8589bc8c679a3ee85
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4e07b75c94b4aea681e6e862e161bda80b2833fc
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345967"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84364326"
 ---
 # <a name="optional-parameters-visual-basic"></a>可选参数 (Visual Basic)
-可以指定过程参数是可选的，并且在调用过程时不必为其提供自变量。 *可选参数*由过程定义中的 `Optional` 关键字指示。 适用以下规则：  
+可以指定过程参数是可选的，并且在调用过程时不必为其提供自变量。 *可选参数*由 `Optional` 过程定义中的关键字指示。 适用以下规则：  
   
 - 过程定义中的每个可选参数都必须指定默认值。  
   
@@ -43,14 +43,14 @@ Sub name(ByVal parameter1 As datatype1, Optional ByVal parameter2 As datatype2 =
 Sub name(argument 1, , , argument 4)  
 ```  
   
- 下面的示例对 `MsgBox` 函数进行多次调用。 `MsgBox` 具有一个必需参数和两个可选参数。  
+ 下面的示例对 `MsgBox` 函数进行多次调用。 `MsgBox` 有一个必需参数和两个可选参数。  
   
  对 `MsgBox` 的第一个调用将按照 `MsgBox` 定义参数的顺序提供所有三个参数。 第二个调用仅提供必选自变量。 第三个和第四个调用分别提供第一个和第三个自变量。 第三个调用按位置提供参数，第四个调用按名称提供参数。  
   
  [!code-vb[VbVbcnProcedures#47](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#47)]  
   
 ## <a name="determining-whether-an-optional-argument-is-present"></a>确定可选自变量是否存在  
- 过程在运行时无法检测到给定的自变量是否已被省略，或者调用代码是否已显式提供默认值。 如果需要弄清楚这一点，可以设置一个不可能的值作为默认值。 下面的过程定义可选参数 `office`，并测试其默认值 `QJZ`，以查看是否在调用中省略了该参数：  
+ 过程在运行时无法检测到给定的自变量是否已被省略，或者调用代码是否已显式提供默认值。 如果需要弄清楚这一点，可以设置一个不可能的值作为默认值。 下面的过程定义可选参数 `office` ，并测试其默认值， `QJZ` 以确定是否在调用中省略了该参数：  
   
  [!code-vb[VbVbcnProcedures#46](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#46)]  
   
@@ -62,10 +62,10 @@ Sub name(argument 1, , , argument 4)
 ## <a name="see-also"></a>另请参阅
 
 - [过程](./index.md)
-- [过程参数和自变量](./procedure-parameters-and-arguments.md)
-- [按值和按引用传递自变量](./passing-arguments-by-value-and-by-reference.md)
-- [按位置和按名称传递自变量](./passing-arguments-by-position-and-by-name.md)
+- [过程形参和实参](./procedure-parameters-and-arguments.md)
+- [按值和按引用传递参数](./passing-arguments-by-value-and-by-reference.md)
+- [按位置和按名称传递参数](./passing-arguments-by-position-and-by-name.md)
 - [参数数组](./parameter-arrays.md)
 - [过程重载](./procedure-overloading.md)
-- [Optional](../../../../visual-basic/language-reference/modifiers/optional.md)
-- [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md)
+- [可选](../../../language-reference/modifiers/optional.md)
+- [ParamArray](../../../language-reference/modifiers/paramarray.md)

@@ -7,28 +7,28 @@ f1_keywords:
 helpviewer_keywords:
 - BC36564
 ms.assetid: 21312807-e1cd-4ac1-ae1c-c28a9c25164d
-ms.openlocfilehash: 3e2902da7fe9d8fa2194db681df098f0148cbbaf
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f29e92c8245e33c0418d9a387070b03f645c331e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64584250"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84362743"
 ---
 # <a name="type-arguments-could-not-be-inferred-from-the-delegate"></a>未能从委托中推理类型参数
 赋值语句使用 `AddressOf` 将泛型过程的地址赋给委托，但它不会为泛型过程提供任何类型参数。  
   
  通常，在调用某个泛型类型时，要为该泛型类型定义的每个类型形参提供一个类型实参。 如果未提供任何类型实参，编译器将尝试推断要传递给类型形参的类型。 如果上下文未提供充足的信息供编译器推断类型，则将生成错误。  
   
- **错误 ID:** BC36564  
+ **错误 ID：** BC36564  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
 - 为 `AddressOf` 表达式中的泛型过程指定类型参数。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Visual Basic 中的泛型类型](../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [AddressOf 运算符](../../../visual-basic/language-reference/operators/addressof-operator.md)
-- [Generic Procedures in Visual Basic](../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md)
-- [类型列表](../../../visual-basic/language-reference/statements/type-list.md)
-- [扩展方法](../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md)
+- [Generic Types in Visual Basic](../../programming-guide/language-features/data-types/generic-types.md)
+- [AddressOf 运算符](../operators/addressof-operator.md)
+- [Generic Procedures in Visual Basic](../../programming-guide/language-features/data-types/generic-procedures.md)
+- [Type List](../statements/type-list.md)
+- [扩展方法](../../programming-guide/language-features/procedures/extension-methods.md)
