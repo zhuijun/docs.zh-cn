@@ -3,14 +3,14 @@ title: .NET Native 本机反射 API 参考
 ms.date: 03/30/2017
 ms.assetid: 0429c049-22a3-4ba1-9cc8-f6ee91e31d9c
 ms.openlocfilehash: 01678ea6230a53416f213730ae6bb66e6bc057f8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128222"
 ---
 # <a name="net-native-reflection-api-reference"></a>.NET Native 本机反射 API 参考
-.NET Native 包括三个新的异常类型：[System.Runtime.CompilerServices.MissingInteropDataException](missinginteropdataexception-class-net-native.md)[System.Reflection.MissingMetadataException](missingmetadataexception-class-net-native.md) 和 [System.Reflection.MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)。 请注意有关所有三种异常类型的以下内容：  
+.NET Native 包括三个新的异常类型： MissingInteropDataException、MissingMetadataException 和 MissingRuntimeArtifactException。 [system.runtime.compilerservices.](missinginteropdataexception-class-net-native.md)、 [System.Reflection.MissingMetadataException](missingmetadataexception-class-net-native.md)和[System.Reflection.MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)。 请注意有关所有三种异常类型的以下内容：  
   
  这些类型仅供内部使用。  
  这三种异常类型仅用于 .NET Native 工具链。 当 .NET Native 工具链检测到不允许程序继续执行的缺失数据时，将引发异常。  
@@ -23,12 +23,12 @@ ms.locfileid: "73128222"
 - 方法的 [MissingMetadataException 故障排除程序](https://dotnet.github.io/native/troubleshooter/method.html) 。  
   
 > [!NOTE]
-> 此引用记录了三种对 .NET Native 唯一的异常类型。 有关 .NET Framework 核心反射 API 的参考文档，请参阅 <xref:System.Reflection>、<xref:System.Reflection.Context> 和 <xref:System.Reflection.Emit> 命名空间。 要查看 .NET Framework 核心互操作 API 的应用文档，请参阅 <xref:System.Runtime.InteropServices>。  
+> 此引用记录了三种对 .NET Native 唯一的异常类型。 有关 .NET Framework 核心反射 API 的参考文档，请参阅 <xref:System.Reflection> <xref:System.Reflection.Context> 和 <xref:System.Reflection.Emit> 命名空间。 要查看 .NET Framework 核心互操作 API 的应用文档，请参阅 <xref:System.Runtime.InteropServices>。  
   
 ## <a name="systemreflection-namespace"></a>System.Reflection 命名空间  
  <xref:System.Reflection> 命名空间包含用于 .NET Framework 中的反射的核心类型。 对于 .NET Native，它还包括两个新的异常类型：  
   
-|实例|描述|  
+|类|说明|  
 |-----------|-----------------|  
 |[MissingMetadataException](missingmetadataexception-class-net-native.md)|当反射用于检索不存在的元数据时会引起此异常。|  
 |[MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)|当一个类型或类型成员的元数据可用但其实现已遭到删除时会引发此异常。|  
@@ -38,7 +38,7 @@ ms.locfileid: "73128222"
 ## <a name="systemruntimecompilerservices-namespace"></a>System.Runtime.CompilerServices 命名空间  
  <xref:System.Runtime.CompilerServices> 命名空间包括通过语言编译器为用户设计的类型。 对于 .NET Native，它还包含一个新的异常类型：  
   
-|实例|描述|  
+|类|说明|  
 |-----------|-----------------|  
 |[MissingInteropDataException](missinginteropdataexception-class-net-native.md)|当手动封送方法被调用但一个类型的元数据无法通过动态分析找到或无法在运行时指令文件中找到时，会引发该异常。|  
   

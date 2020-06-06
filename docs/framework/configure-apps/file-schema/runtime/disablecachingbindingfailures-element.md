@@ -11,18 +11,18 @@ helpviewer_keywords:
 - disableCachingBindingFailures element
 ms.assetid: bf598873-83b7-48de-8955-00b0504fbad0
 ms.openlocfilehash: 23633cb282b8e59b4df4bcc2cd38717d805a207e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73117502"
 ---
-# <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures > 元素
+# <a name="disablecachingbindingfailures-element"></a>\<disableCachingBindingFailures> 元素
 指定是否禁止缓存发生的绑定故障，因为探查找不到该程序集。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<runtime >** ](runtime-element.md) \
-&nbsp;&nbsp;&nbsp;&nbsp; **\<disableCachingBindingFailures >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<disableCachingBindingFailures>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -35,13 +35,13 @@ ms.locfileid: "73117502"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|enabled|必需的特性。<br /><br /> 指定是否禁止缓存发生的绑定故障，因为探查找不到该程序集。|  
+|已启用|必需的特性。<br /><br /> 指定是否禁止缓存发生的绑定故障，因为探查找不到该程序集。|  
   
 ## <a name="enabled-attribute"></a>enabled 特性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
 |0|请勿禁止缓存发生的绑定故障，因为探查找不到该程序集。 这是默认绑定行为，从 .NET Framework 版本2.0 开始。|  
 |1|禁止缓存发生的绑定故障，因为探查找不到该程序集。 此设置将恢复为 .NET Framework 版本1.1 的绑定行为。|  
@@ -56,10 +56,10 @@ ms.locfileid: "73117502"
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|  
   
-## <a name="remarks"></a>备注  
- 从 .NET Framework 版本2.0 开始，加载程序集的默认行为是缓存所有绑定和加载失败。 也就是说，如果尝试加载程序集失败，则加载同一程序集的后续请求将立即失败，而不会尝试查找程序集。 此元素将禁用发生的绑定故障的默认行为，因为在探测路径中找不到该程序集。 这些失败 <xref:System.IO.FileNotFoundException>引发。  
+## <a name="remarks"></a>注解  
+ 从 .NET Framework 版本2.0 开始，加载程序集的默认行为是缓存所有绑定和加载失败。 也就是说，如果尝试加载程序集失败，则加载同一程序集的后续请求将立即失败，而不会尝试查找程序集。 此元素将禁用发生的绑定故障的默认行为，因为在探测路径中找不到该程序集。 这些失败会引发 <xref:System.IO.FileNotFoundException> 。  
   
- 某些绑定和加载失败不受此元素影响，并且始终会进行缓存。 出现这些失败是因为程序集已找到，但无法加载。 它们引发 <xref:System.BadImageFormatException> 或 <xref:System.IO.FileLoadException>。 以下列表包括此类故障的一些示例。  
+ 某些绑定和加载失败不受此元素影响，并且始终会进行缓存。 出现这些失败是因为程序集已找到，但无法加载。 它们引发 <xref:System.BadImageFormatException> 或 <xref:System.IO.FileLoadException> 。 以下列表包括此类故障的一些示例。  
   
 - 如果尝试加载文件不是有效的程序集，则即使将错误文件替换为正确的程序集，以后尝试加载程序集也会失败。  
   
@@ -78,7 +78,7 @@ ms.locfileid: "73117502"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [运行时设置架构](index.md)
 - [配置文件架构](../index.md)

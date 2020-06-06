@@ -1,5 +1,5 @@
 ---
-title: NameValueSectionHandler 和 DictionarySectionHandler 的 <remove> 元素
+title: <remove>NameValueSectionHandler 和 DictionarySectionHandler 的元素
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/remove
@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <remove> Element
 ms.assetid: 8d8af7f5-26c9-4db9-bbe4-b2a4e6949568
 ms.openlocfilehash: d1e4f3478f6afd6a20c01c6b57a137020ee88f5f
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77214760"
 ---
-# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<删除 NameValueSectionHandler 和 DictionarySectionHandler 的 > 元素
+# <a name="remove-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<remove>NameValueSectionHandler 和 DictionarySectionHandler 的元素
 
 删除以前定义的设置。
 
-[ **\<configuration>** ](configuration-element.md)\
-&nbsp;&nbsp;[ **\<sectionName >** ](custom-element-2.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<删除 >**
+[**\<configuration>**](configuration-element.md)\
+&nbsp;&nbsp;[**\<sectionName>**](custom-element-2.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
 
 ## <a name="syntax"></a>语法
 
@@ -28,7 +28,7 @@ ms.locfileid: "77214760"
 <add remove="key" />
 ```
 
-## <a name="attribute"></a>Attribute
+## <a name="attribute"></a>属性
 
 |           | 说明 |
 | --------- | ----------- |
@@ -36,9 +36,9 @@ ms.locfileid: "77214760"
 
 ## <a name="parent-element"></a>父元素
 
-| 元素 | 说明 |
+| 元素 | 描述 |
 | ------- | ------------|
-| [ **\<sectionName >** Element](custom-element-2.md) | 定义使用 <xref:System.Configuration.NameValueSectionHandler> 和 <xref:System.Configuration.DictionarySectionHandler> 类的自定义配置节的设置。 |
+| [**\<sectionName>** Element](custom-element-2.md) | 定义使用和类的自定义配置节的设置 <xref:System.Configuration.NameValueSectionHandler> <xref:System.Configuration.DictionarySectionHandler> 。 |
 
 ## <a name="child-elements"></a>子元素
 
@@ -46,13 +46,13 @@ ms.locfileid: "77214760"
 
 ## <a name="remarks"></a>备注
 
-你可以使用 **\<remove >** 元素从你的应用程序中删除在配置文件层次结构中较高级别上定义的设置。
+你可以使用 **\<remove>** 元素从你的应用程序中删除在配置文件层次结构中较高级别上定义的设置。
 
 ## <a name="example"></a>示例
 
-下面的示例演示如何使用应用程序配置文件中的 **\<remove >** 元素删除以前在计算机配置文件中定义的设置。
+下面的示例演示如何使用 **\<remove>** 应用程序配置文件中的元素删除以前在计算机配置文件中定义的设置。
 
-以下计算机配置文件代码声明 **\<mySection >** 部分，并将两个设置（`key1` 和 `key2`）添加到其中：
+以下计算机配置文件代码声明节， **\<mySection>** 并向其中添加两个 `key1` 设置 `key2` ：
 
 ```xml
 <!-- Machine.config file -->
@@ -67,7 +67,7 @@ ms.locfileid: "77214760"
 </configuration>
 ```
 
-以下应用程序配置文件代码将从 **\<mySection >** 中删除 `key2` 设置：
+以下应用程序配置文件代码将删除以下 `key2` 设置 **\<mySection>** ：
 
 ```xml
 <!--Application configuration file -->

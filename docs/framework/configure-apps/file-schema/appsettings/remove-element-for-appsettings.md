@@ -1,5 +1,5 @@
 ---
-title: <remove> 的 <appSettings> 元素
+title: <appSettings> 的 <remove> 元素
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/appSettings/remove
@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <remove> Element
 ms.assetid: 218c4464-e007-4539-803f-7c8b0a909fd8
 ms.openlocfilehash: 83abbdbf0d3e4dfd16c0e8c649200c4ecc7329f7
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77215495"
 ---
-# <a name="remove-element-for-appsettings"></a>\<删除 \<appSettings > 元素 >
+# <a name="remove-element-for-appsettings"></a>\<appSettings> 的 \<remove> 元素
 
 删除自定义应用程序设置。
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<appSettings>** ](appsettings-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<删除 >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<appSettings>**](appsettings-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +30,7 @@ ms.locfileid: "77215495"
 </appSettings>
 ```
 
-### <a name="attribute"></a>Attribute
+### <a name="attribute"></a>属性
 
 |         | 说明 |
 | ------- | ----------- |
@@ -40,7 +40,7 @@ ms.locfileid: "77215495"
 
 |     | 说明 |
 | --- | ----------- |
-| [ **\<appSettings>** ](appsettings-element-for-configuration.md) | 包含自定义应用程序设置，如文件路径、XML Web service URL 或应用程序的任何其他自定义配置信息。 |
+| [**\<appSettings>**](appsettings-element-for-configuration.md) | 包含自定义应用程序设置，如文件路径、XML Web service URL 或应用程序的任何其他自定义配置信息。 |
 
 ## <a name="child-elements"></a>子元素
 
@@ -48,7 +48,7 @@ ms.locfileid: "77215495"
 
 ## <a name="example"></a>示例
 
-下面的示例演示如何删除 `ApplicationName`的自定义配置设置：
+下面的示例演示如何删除的自定义配置设置 `ApplicationName` ：
 
 ```xml
 <appSettings>

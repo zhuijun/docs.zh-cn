@@ -3,22 +3,22 @@ title: <message> 的 <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 9ffd8db6-84a8-4b38-a9fe-2cb1a87a1c97
 ms.openlocfilehash: 3396f74f76d790759f4c32de2907607486701b1a
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73738945"
 ---
-# <a name="message-of-ws2007httpbinding"></a>\<消息 > \<ws2007HttpBinding >
-定义[\<ws2007HttpBinding >](ws2007httpbinding.md)元素的消息级安全性设置。  
+# <a name="message-of-ws2007httpbinding"></a>\<message> 的 \<ws2007HttpBinding>
+定义元素的消息级安全性设置 [\<ws2007HttpBinding>](ws2007httpbinding.md) 。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-\<system &nbsp; &nbsp;[ **>** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ws2007HttpBinding >** ](ws2007httpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<** ](security-of-ws2007httpbinding.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**消息 >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<ws2007HttpBinding>**](ws2007httpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-ws2007httpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<message>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -36,7 +36,7 @@ ms.locfileid: "73738945"
 </ws2007HttpBinding>
 ```  
   
-## <a name="type"></a>键入  
+## <a name="type"></a>类型  
  <xref:System.ServiceModel.NonDualMessageSecurityOverHttp>  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
@@ -44,16 +44,16 @@ ms.locfileid: "73738945"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|`algorithmSuite`|设置消息加密和密钥包装算法。 算法和密钥大小由 <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> 类确定。 这些算法映射到安全策略语言 (WS-SecurityPolicy) 规范中指定的算法。<br /><br /> 默认值为 Basic256。|  
+|`algorithmSuite`|设置消息加密和密钥包装算法。 算法和密钥大小由 <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> 类确定。 这些算法与“安全策略语言”(WS-SecurityPolicy) 规范中指定的算法一致。<br /><br /> 默认值为 Basic256。|  
 |`clientCredentialType`|可选。 指定在使用安全模式 `Message` 或 `TransportWithMessageCredentials` 执行客户端身份验证时要使用的凭据的类型。 请参见下表中的枚举值。 默认值为 Windows。<br /><br /> 此属性的类型为 <xref:System.ServiceModel.MessageCredentialType>。|  
 |`establishSecurityContext`|一个确定安全通道是否建立安全会话的值。 安全会话将在交换应用程序消息之前建立安全上下文令牌 (SCT)。 建立 SCT 时，此安全通道将提供与上层通道之间的 <xref:System.ServiceModel.Channels.ISession> 接口。 有关使用安全会话的详细信息，请参阅[如何：创建安全会话](../../../wcf/feature-details/how-to-create-a-secure-session.md)。<br /><br /> 默认值为 `true`。|  
-|`negotiateServiceCredential`|可选。 一个值，指定是在带外客户端提供服务凭据，还是通过协商过程从服务向客户端获取服务凭据。 这种协商是正常消息交换的前提。<br /><br /> 如果 `clientCredentialType` 属性等于 "无"、"用户名" 或 "证书"，则将此属性设置为 "`false` 表示在客户端带外使用服务证书，并且客户端必须指定服务证书（使用[\<](servicecertificate-of-servicecredentials.md) [\<serviceCredentials >](servicecredentials.md)服务行为中的 serviceCertificate >）。 此模式可与实现 WS-Trust 和 WS-SecureConversation 的 SOAP 堆栈交互操作。<br /><br /> 如果 `ClientCredentialType` 属性设置为 `Windows`，则将此属性设置为 `false` 会指定基于 Kerberos 的身份验证。 这意味着客户端和服务必须是相同 Kerberos 域的一部分。 此模式可与实现 Kerberos 令牌配置文件（如 OASIS WSS TC 中所定义）以及 WS-Trust 和 WS-SecureConversation 的 SOAP 堆栈交互操作。<br /><br /> 当此属性为 `true` 时，将导致 .NET SOAP 协商，从而通过 SOAP 消息进行 <xref:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.Spnego%2A> 交换隧道处理。<br /><br /> 默认值为 `true`。|  
+|`negotiateServiceCredential`|可选。 一个值，指定是在带外客户端提供服务凭据，还是通过协商过程从服务向客户端获取服务凭据。 这种协商是正常消息交换的前提。<br /><br /> 如果 `clientCredentialType` 属性等于 "无"、"用户名" 或 "证书"，则将此特性设置为 `false` 意味着服务证书可用于带外客户端，并且客户端必须 [\<serviceCertificate>](servicecertificate-of-servicecredentials.md) 在服务行为中指定服务证书（使用） [\<serviceCredentials>](servicecredentials.md) 。 此模式可与实现 WS-Trust 和 WS-SecureConversation 的 SOAP 堆栈交互操作。<br /><br /> 如果 `ClientCredentialType` 属性设置为 `Windows`，则将此属性设置为 `false` 会指定基于 Kerberos 的身份验证。 这意味着客户端和服务必须是相同 Kerberos 域的一部分。 此模式可与实现 Kerberos 令牌配置文件（如 OASIS WSS TC 中所定义）以及 WS-Trust 和 WS-SecureConversation 的 SOAP 堆栈交互操作。<br /><br /> 当此属性为 `true` 时，将导致 .NET SOAP 协商，从而通过 SOAP 消息进行 <xref:System.ServiceModel.Security.Tokens.ServiceModelSecurityTokenTypes.Spnego%2A> 交换隧道处理。<br /><br /> 默认为 `true`。|  
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite 属性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
 |Basic128|使用 Aes128 加密，对消息摘要使用 Sha1，对密钥包装使用 Rsa-oaep-mgf1p。|  
 |Basic192|使用 Aes192 加密，对消息摘要使用 Sha1，对密钥包装使用 Rsa-oaep-mgf1p。|  
@@ -74,24 +74,24 @@ ms.locfileid: "73738945"
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType 属性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
 |`None`|允许服务与匿名客户端交互。 对于服务，这表示服务不需要任何客户端凭据。 对于客户端，这表示客户端不提供任何客户端凭据。|  
 |`Certificate`|允许服务要求使用证书对客户端进行身份验证。 如果使用 `message` 安全模式并且将 `negotiateServiceCredential` 属性设置为 `false`，则必须向客户端提供服务证书。|  
 |`IssuedToken`|指定自定义令牌，该令牌通常由安全令牌服务 (STS) 颁发。|  
-|`UserName`|允许服务要求使用 `UserName` 凭据对客户端进行身份验证。 WCF 不支持发送密码摘要，也不支持使用密码派生密钥并使用此类密钥来实现消息安全性。 因此，在使用 `UserName` 凭据时，WCF 会强制使用传输。 这种凭据模式将产生可互操作的交换或不可互操作的协商，具体取决于 `negotiateServiceCredential` 属性。|  
+|`UserName`|允许服务要求使用 `UserName` 凭据对客户端进行身份验证。 WCF 不支持发送密码摘要，也不支持使用密码派生密钥，然后用这些密钥来确保消息的安全性。 因此，在使用凭据时，WCF 会强制使用传输 `UserName` 。 这种凭据模式将产生可互操作的交换或不可互操作的协商，具体取决于 `negotiateServiceCredential` 属性。|  
 |`Windows`|允许 SOAP 交换在已通过身份验证的 `Windows` 凭据上下文中执行。 如果 `negotiateServiceCredential` 属性设置为 `true`，则将执行 SSPI 协商或 Kerberos（一种可互操作的标准）。|  
   
 ### <a name="child-elements"></a>子元素  
- None  
+ 无  
   
 ### <a name="parent-elements"></a>父元素  
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<security >](security-of-ws2007httpbinding.md)|为[\<ws2007HttpBinding >](ws2007httpbinding.md)定义安全设置。|  
+|[\<security>](security-of-ws2007httpbinding.md)|定义的安全设置 [\<ws2007HttpBinding>](ws2007httpbinding.md) 。|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.NonDualMessageSecurityOverHttp>
 - <xref:System.ServiceModel.Configuration.WSHttpSecurityElement.Message%2A>
@@ -101,4 +101,4 @@ ms.locfileid: "73738945"
 - [绑定](../../../wcf/bindings.md)
 - [配置系统提供的绑定](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [使用绑定配置服务和客户端](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding >](bindings.md)
+- [\<binding>](bindings.md)

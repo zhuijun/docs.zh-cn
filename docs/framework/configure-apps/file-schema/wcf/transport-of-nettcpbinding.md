@@ -3,22 +3,22 @@ title: <transport> 的 <netTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 49462e0a-66e1-463f-b3e1-c83a441673c6
 ms.openlocfilehash: 4ef08ad73a03dea21d27217364a7bacb46a3848e
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73735931"
 ---
-# <a name="transport-of-nettcpbinding"></a>\<netTcpBinding> 的 \<transport>
-定义使用[\<netTcpBinding >](nettcpbinding.md)配置的终结点的消息级安全性要求的类型。  
+# <a name="transport-of-nettcpbinding"></a>\<transport> 的 \<netTcpBinding>
+为使用配置的终结点定义消息级安全性要求的类型 [\<netTcpBinding>](nettcpbinding.md) 。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-\<system &nbsp; &nbsp;[ **>** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netTcpBinding >** ](nettcpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<** ](security-of-nettcpbinding.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<传输 >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<netTcpBinding>**](nettcpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-nettcpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<transport>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -45,42 +45,42 @@ ms.locfileid: "73735931"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|clientCredentialType|可选。 指定要在使用传输安全性执行客户端身份验证时使用的凭据类型。<br /><br /> -默认值为 `Windows`。<br />-此属性的类型为 <xref:System.ServiceModel.TcpClientCredentialType>。|  
-|protectionLevel|可选。 定义 TCP 传输级别的安全性。 对消息进行签名可以降低该消息在传输过程中被第三方篡改的风险。 加密可以在传输过程中提供数据级保密。<br /><br /> 默认值为 `EncryptAndSign`。|  
+|clientCredentialType|可选。 指定要在使用传输安全性执行客户端身份验证时使用的凭据类型。<br /><br /> -默认值为 `Windows` 。<br />-此属性的类型为 <xref:System.ServiceModel.TcpClientCredentialType> 。|  
+|protectionLevel|可选。 定义 TCP 传输级别的安全性。 消息签名降低了在消息传输过程中第三方对消息进行篡改的风险。 加密为传输过程提供了数据级保密功能。<br /><br /> 默认值为 `EncryptAndSign`。|  
 |sslProtocols|指定支持哪些 SslProtocols 的 SslProtocols 枚举标志值。 默认值为 Tls&#124;Tls11&#124;Tls12。|  
 |policyEnforcement|此枚举指定应何时强制实施 <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>。<br /><br /> 1. 从不–不强制实施策略（禁用扩展保护）。<br />WhenSupported-仅当客户端支持扩展保护时才强制实施策略。<br />3. always –始终强制实施策略。 不支持扩展保护的客户端将无法进行身份验证。|  
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType 属性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
-|None|客户端为匿名客户端。 这需要服务证书。|  
+|无|客户端为匿名客户端。 这需要服务证书。|  
 |Windows|指定使用 SP 协商（Kerberos 协商）进行客户端 Windows 身份验证。|  
 |证书|使用证书进行对客户端进行身份验证。 这使用 SSL 协商并需要服务证书。|  
   
 ## <a name="protectionlevel-attribute"></a>protectionLevel 属性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
-|None|无保护。|  
+|无|无保护。|  
 |Sign|对消息进行签名。|  
 |EncryptAndSign|-对消息进行加密和签名。|  
   
 ### <a name="child-elements"></a>子元素  
- None  
+ 无  
   
 ### <a name="parent-elements"></a>父元素  
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<security >](security-of-nettcpbinding.md)|指定[\<netTcpBinding >](nettcpbinding.md)的安全功能。|  
+|[\<security>](security-of-nettcpbinding.md)|指定的安全功能 [\<netTcpBinding>](nettcpbinding.md) 。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  使用传输安全性以获得 SOAP 消息的完整性和保密性以及相互身份验证。 如果在绑定上选择此安全模式，则使用安全传输配置信道栈，并且使用传输安全性（如 Windows (Negotiate) 或 SSLL）保护 SOAP 消息安全通过 TCP 传递。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.TcpTransportSecurity>
 - <xref:System.ServiceModel.Configuration.NetTcpSecurityElement.Transport%2A>
@@ -90,4 +90,4 @@ ms.locfileid: "73735931"
 - [绑定](../../../wcf/bindings.md)
 - [配置系统提供的绑定](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [使用绑定配置服务和客户端](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding >](bindings.md)
+- [\<binding>](bindings.md)

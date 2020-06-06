@@ -3,19 +3,19 @@ title: <messageLogging>
 ms.date: 03/30/2017
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
 ms.openlocfilehash: 9291c38af28c18d20e23e34e8316b4a9fe523123
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855119"
 ---
-# <a name="messagelogging"></a>\<messageLogging>
+# \<messageLogging>
 该元素定义 Windows Communication Foundation (WCF) 的消息日志记录功能的设置。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<诊断 >** ](diagnostics.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<messageLogging >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<diagnostics>**](diagnostics.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<messageLogging>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -41,12 +41,12 @@ ms.locfileid: "70855119"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |`logEntireMessage`|一个布尔值，指定是否记录整个消息（消息头和正文）。 默认值为 `false`，这意味着仅记录消息头。 此设置会影响所有消息日志记录级别（服务、传输和格式不正确）。|  
-|`logMalformedMessages`|一个布尔值，指定是否记录格式不正确的消息。 格式不正确的消息将不计入 `maxMessagesToLog`。 默认值为 `false`。|  
-|`logMessagesAtServiceLevel`|一个布尔值，指定是否在服务级别跟踪消息（在与加密和传输有关的转换之前）。 默认值为 `false`。|  
-|`logMessagesAtTransportLevel`|一个布尔值，指定是否在传输级别跟踪消息。 配置文件中指定的所有筛选器都会应用，但仅跟踪与这些筛选器相匹配的消息。 默认值为 `false`。|  
+|`logMalformedMessages`|一个布尔值，指定是否记录格式不正确的消息。 格式不正确的消息将不计入 `maxMessagesToLog`。 默认为 `false`。|  
+|`logMessagesAtServiceLevel`|一个布尔值，指定是否在服务级别跟踪消息（在与加密和传输有关的转换之前）。 默认为 `false`。|  
+|`logMessagesAtTransportLevel`|一个布尔值，指定是否在传输级别跟踪消息。 配置文件中指定的所有筛选器都会应用，但仅跟踪与这些筛选器相匹配的消息。 默认为 `false`。|  
 |`maxMessagesToLog`|一个正整数，指定要记录的最大消息数。 默认值为 1000。|  
 |`maxSizeOfMessageToLog`|一个正整数，指定要记录的最大消息大小（字节）。 大小超出限制的消息将不会被记录。 此设置会影响所有跟踪级别。 默认值为 262144 (0x4000)。|  
   
@@ -62,7 +62,7 @@ ms.locfileid: "70855119"
 |-------------|-----------------|  
 |诊断|定义管理员运行时检查和控制的 WCF 设置。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  将在堆栈中以下三个不同级别记录消息：服务、传输和格式不正确。 可以单独激活每个级别。  
   
  可添加 XPath 筛选器以记录传输和服务级别的特定消息。 如果未定义任何筛选器，则记录所有消息。 筛选器仅应用于消息的标头。 正文会被忽略。 WCF 将忽略消息正文，以便提高性能。 如果要根据正文内容进行筛选，可以创建一个自定义侦听器，并采用具有相应功能的筛选器。  
@@ -122,7 +122,7 @@ ms.locfileid: "70855119"
 </messageLogging>
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>

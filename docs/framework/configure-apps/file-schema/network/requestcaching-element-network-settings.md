@@ -9,18 +9,18 @@ helpviewer_keywords:
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
 ms.openlocfilehash: afee69eb894518b1c88483e34a1d64d452019244
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74802124"
 ---
 # <a name="requestcaching-element-network-settings"></a>\<requestCaching> 元素（网络设置）
 控制网络请求的缓存机制。  
   
-[ **\<configuration>** ](../configuration-element.md)  
-\<&nbsp;[**的 &nbsp;** ](system-net-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<requestCaching >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<requestCaching>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -35,21 +35,21 @@ ms.locfileid: "74802124"
 </requestCaching>
 ```  
   
-## <a name="attributes-and-elements"></a>属性和元素  
+## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|`isPrivateCache`|指定缓存是否在不同用户的信息之间提供隔离。 默认值为 `true`。 应为中间层应用程序 `false` 此值。|  
+|`isPrivateCache`|指定缓存是否在不同用户的信息之间提供隔离。 默认值为 `true`。 此值应该 `false` 适用于中间层应用程序。|  
 |`disableAllCaching`|指定为所有 Web 响应禁用缓存，且不能以编程方式重写。|  
 |`defaultPolicyLevel`|<xref:System.Net.Cache.RequestCacheLevel> 枚举中的值之一。 默认值为 `BypassCache`。|  
 |`unspecifiedMaximumAge`|指定将内容标记为过期的默认时间。|  
   
 ## <a name="policylevel-attribute"></a>policyLevel 特性  
   
-|{2&gt;值&lt;2}|描述|  
+|值|说明|  
 |-----------|-----------------|  
 |`Default`|如果资源是最新的，则返回缓存的资源，内容长度准确，并且存在过期、修改和内容长度属性。|  
 |`BypassCache`|从服务器返回资源。|  
@@ -65,7 +65,7 @@ ms.locfileid: "74802124"
 |元素|描述|  
 |-------------|-----------------|  
 |[defaultHttpCachePolicy](defaulthttpcachepolicy-element-network-settings.md)|可选元素。<br /><br /> 描述 HTTP 缓存是否处于活动状态，并描述默认缓存策略。|  
-|[\<defaultFtpCachePolicy > 元素（网络设置）](defaultftpcachepolicy-element-network-settings.md)|可选元素。<br /><br /> 介绍 FTP 缓存是否处于活动状态，并描述默认缓存策略。|  
+|[\<defaultFtpCachePolicy>元素（网络设置）](defaultftpcachepolicy-element-network-settings.md)|可选元素。<br /><br /> 介绍 FTP 缓存是否处于活动状态，并描述默认缓存策略。|  
   
 ### <a name="parent-elements"></a>父元素  
   

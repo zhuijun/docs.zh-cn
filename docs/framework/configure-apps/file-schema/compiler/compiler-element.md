@@ -11,20 +11,20 @@ helpviewer_keywords:
 - compiler element
 ms.assetid: 7a151659-b803-4c27-b5ce-1c4aa0d5a823
 ms.openlocfilehash: 46676f25597f85596598d6f67c98930971cb0447
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088055"
 ---
-# <a name="compiler-element"></a>\<编译器 > 元素
+# <a name="compiler-element"></a>\<compiler> 元素
 
 指定语言提供程序的编译器配置属性。
 
-[ **\<configuration>** ](../configuration-element.md)\
-\<&nbsp;&nbsp;[ **>** ](system-codedom-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<编译器 >** ](compilers-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<编译器 >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.codedom>**](system-codedom-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<compilers>**](compilers-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<compiler>**
 
 ## <a name="syntax"></a>语法
 
@@ -44,11 +44,11 @@ ms.locfileid: "74088055"
 
 ### <a name="attributes"></a>特性
 
-|特性|描述|
+|属性|说明|
 |---------------|-----------------|
-|`compilerOptions`|可选特性。<br /><br /> 为编译指定其他特定于编译器的参数。 `compilerOptions` 特性的值通常在编译器的编译器选项主题中列出。|
-|`extension`|必需的特性。<br /><br /> 提供语言提供程序的源文件所使用的文件扩展名的分号分隔列表。 例如，".cs"。|
-|`language`|必需的特性。<br /><br /> 提供语言提供程序支持的语言名称的分号分隔列表。 例如，"c #; cs; csharp"。|
+|`compilerOptions`|可选特性。<br /><br /> 为编译指定其他特定于编译器的参数。 特性的值 `compilerOptions` 通常在编译器的编译器选项主题中列出。|
+|`extension`|必需的特性。<br /><br /> 提供语言提供程序的源文件所使用的文件扩展名的分号分隔列表。 例如“.cs”。|
+|`language`|必需的特性。<br /><br /> 提供语言提供程序支持的语言名称的分号分隔列表。 例如“C#;cs;csharp”。|
 |`type`|必需的特性。<br /><br /> 指定语言提供程序的类型名称，包括包含提供程序实现的程序集的名称。 类型名称必须满足[指定完全限定的类型名称](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md)中定义的要求。|
 |`warningLevel`|可选特性。<br /><br /> 指定默认编译器警告等级;确定语言提供程序将编译警告视为错误的级别。|
 
@@ -56,19 +56,19 @@ ms.locfileid: "74088055"
 
 |元素|描述|
 |-------------|-----------------|
-|[\<providerOption > 元素](provideroption-element.md)|指定语言提供程序的编译器版本特性。|
+|[\<providerOption>Element](provideroption-element.md)|指定语言提供程序的编译器版本特性。|
 
 ### <a name="parent-elements"></a>父元素
 
 |元素|描述|
 |-------------|-----------------|
-|[\<configuration> 元素](../configuration-element.md)|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|
-|[\<system.object > 元素](system-codedom-element.md)|指定可用语言提供程序的编译器配置设置。|
-|[\<编译器 > 元素](compilers-element.md)|编译器配置元素的容器;包含零个或多个 `<compiler>` 元素。|
+|[\<configuration>Element](../configuration-element.md)|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|
+|[\<system.codedom>Element](system-codedom-element.md)|指定可用语言提供程序的编译器配置设置。|
+|[\<compilers>Element](compilers-element.md)|编译器配置元素的容器;包含零个或多个 `<compiler>` 元素。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-每个 `<compiler>` 元素指定特定语言提供程序的编译器配置特性。 提供程序为特定语言扩展了 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> 类;`<compiler>` 元素定义了语言提供程序的编译器和代码生成器设置。
+每个 `<compiler>` 元素指定特定语言提供程序的编译器配置特性。 提供程序为 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> 特定语言扩展了类; `<compiler>` 元素定义了语言提供程序的编译器和代码生成器设置。
 
 .NET Framework 在计算机配置文件 (Machine.config) 中定义初始编译器设置。 开发人员和编译器供应商可以添加新 <xref:System.CodeDom.Compiler.CodeDomProvider> 实现的配置设置。 使用 <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> 方法，以编程方式枚举计算机上的语言提供程序和编译器配置设置。
 
@@ -105,6 +105,6 @@ ms.locfileid: "74088055"
 - <xref:System.CodeDom.Compiler.CompilerInfo>
 - <xref:System.CodeDom.Compiler.CodeDomProvider>
 - [配置文件架构](../index.md)
-- [\<编译器 > 元素](compilers-element.md)
+- [\<compilers>Element](compilers-element.md)
 - [指定完全限定的类型名称](../../../reflection-and-codedom/specifying-fully-qualified-type-names.md)
-- [用于编译的编译器的编译器元素（ASP.NET 设置架构）](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a15ebt6c(v=vs.100))
+- [compilation 的 compilers 的 compiler 元素（ASP.NET 设置架构）](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a15ebt6c(v=vs.100))

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - C# and native compilation
 ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
 ms.openlocfilehash: 1f176e81905fe68c6d740a13240fe814659a7a59
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128378"
 ---
 # <a name="compiling-apps-with-net-native"></a>使用 .NET Native 编译引用
@@ -46,9 +46,9 @@ ms.locfileid: "73128378"
 
 - .NET Native 运行时针对静态预编译进行了优化，在大多数情况下，可提供优异的性能。 同时，它保留了开发者认为非常高效的核心反射特性。
 
-- .NET Native 使用与C++编译器相同的后端，它针对静态预编译方案进行了优化。
+- .NET Native 使用的后端与 c + + 编译器相同，后者针对静态预编译方案进行了优化。
 
-.NET Native 可以将性能优势提高C++到托管代码开发人员，因为它使用的工具与此表中所C++示的相同或类似的工具。
+.NET Native 可以将 c + + 的性能优势引入到托管代码开发人员，因为它使用的是与 c + + 中的 c + + 相同或类似的工具，如下表所示。
 
 ||.NET Native|C++|
 |-|----------------------------------------------------------------|-----------|
@@ -69,13 +69,13 @@ ms.locfileid: "73128378"
 
 - [反射和 .NET Native](reflection-and-net-native.md)
 
-  - [依赖反射的 API](apis-that-rely-on-reflection.md)
+  - [利用反射的 API](apis-that-rely-on-reflection.md)
 
   - [反射 API 引用](net-native-reflection-api-reference.md)
 
-  - [运行时指令 (rd.xml) 配置文件参考](runtime-directives-rd-xml-configuration-file-reference.md)
+  - [运行时指令 (rd.xml) 配置文件引用](runtime-directives-rd-xml-configuration-file-reference.md)
 
-- [Serialization and Metadata（序列化和元数据）](serialization-and-metadata.md)
+- [序列化和元数据](serialization-and-metadata.md)
 
 - [将 Windows 应用商店应用迁移到 .NET Native](migrating-your-windows-store-app-to-net-native.md)
 

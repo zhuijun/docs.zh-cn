@@ -3,21 +3,21 @@ title: <security> 的 <wsHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 8658b162-2ddf-4162-a869-aa517a42288a
 ms.openlocfilehash: b66b5228cab9dbc35502a13a2d0fe56ce4c6a18d
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73738579"
 ---
-# <a name="security-of-wshttpbinding"></a>\<wsHttpBinding 的安全 > \<
-表示[\<wsHttpBinding >](wshttpbinding.md)的安全功能。  
+# <a name="security-of-wshttpbinding"></a>\<security> 的 \<wsHttpBinding>
+表示的安全功能 [\<wsHttpBinding>](wshttpbinding.md) 。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-\<system &nbsp; &nbsp;[ **>** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsHttpBinding >** ](wshttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<** >  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<wsHttpBinding>**](wshttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<security>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -41,16 +41,16 @@ ms.locfileid: "73738579"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|mode|可有可无. 指定所应用的安全类型。 默认值为 `Message`。<br />-此属性的类型为 <xref:System.ServiceModel.SecurityMode>。|  
+|模式|可有可无. 指定所应用的安全类型。 默认为 `Message`。<br />-此属性的类型为 <xref:System.ServiceModel.SecurityMode> 。|  
   
 ## <a name="mode-attribute"></a>Mode 属性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
-|None|禁用安全性。|  
-|传输|使用 HTTPS 提供安全性。 此服务需要使用 SSL 证书进行配置。 消息使用 HTTPS 得到了全面保护，客户端使用服务的 SSL 证书对消息进行身份验证。 客户端身份验证通过 [\<传输 >](transport-of-wshttpbinding.md)。|  
+|无|禁用安全性。|  
+|Transport|使用 HTTPS 提供安全性。 此服务需要使用 SSL 证书进行配置。 消息使用 HTTPS 得到了全面保护，客户端使用服务的 SSL 证书对消息进行身份验证。 客户端身份验证通过 的 [\<transport>](transport-of-wshttpbinding.md) 。|  
 |消息|使用 SOAP 消息安全提供安全性。 默认情况下，将对 SOAP 正文进行加密和签名。 此模式提供了各种各样的功能，例如服务凭据在带外客户端是否可用、要使用的算法套件以及通过 Security.Message 属性要应用于消息正文的保护级别。 每个会话将执行一次客户端身份验证，身份验证的结果在会话过程中将被缓存。|  
 |TransportWithMessageCredential|在此模式下，HTTPS 将提供完整性、保密性和服务器身份验证，SOAP 消息安全将提供客户端身份验证。 默认情况下，每个会话将执行一次客户端身份验证，身份验证的结果在会话过程中将被缓存。|  
   
@@ -58,8 +58,8 @@ ms.locfileid: "73738579"
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<传输 >](transport-of-wshttpbinding.md)|定义传输安全设置。 此元素与 <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement> 类型相对应。|  
-|[\<message >](message-of-wshttpbinding.md)|定义消息的安全设置。 此元素与 <xref:System.ServiceModel.Configuration.MessageSecurityOverHttpElement> 类型相对应。|  
+|[\<transport>](transport-of-wshttpbinding.md)|定义传输安全设置。 此元素与 <xref:System.ServiceModel.Configuration.HttpTransportSecurityElement> 类型相对应。|  
+|[\<message>](message-of-wshttpbinding.md)|定义消息的安全设置。 此元素与 <xref:System.ServiceModel.Configuration.MessageSecurityOverHttpElement> 类型相对应。|  
   
 ### <a name="parent-elements"></a>父元素  
   
@@ -67,10 +67,10 @@ ms.locfileid: "73738579"
 |-------------|-----------------|  
 |[\<wsHttpBinding>](wshttpbinding.md)|HTTP 传输应用程序的安全绑定。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  WSHttpBinding 类专用于与实现 WS-* 规范的服务进行互操作。 此绑定的传输安全为 HTTP 上的安全套接字层 (SSL)，即 HTTPS。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.WSHttpSecurity>
 - <xref:System.ServiceModel.WSHttpBinding.Security%2A>
@@ -80,4 +80,4 @@ ms.locfileid: "73738579"
 - [绑定](../../../wcf/bindings.md)
 - [配置系统提供的绑定](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [使用绑定配置服务和客户端](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding >](bindings.md)
+- [\<binding>](bindings.md)

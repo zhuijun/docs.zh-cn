@@ -9,20 +9,20 @@ helpviewer_keywords:
 - oidEntry element
 ms.assetid: 22fb88b0-bf27-489c-9ca0-e65950ac136c
 ms.openlocfilehash: 4564cf59e3b6cfbdcd9dca06cd0f966d524834de
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088551"
 ---
-# <a name="oidentry-element"></a>\<y > 元素
+# <a name="oidentry-element"></a>\<oidEntry> 元素
 将 ASN.1 对象标识符 (OID) 映射到友好名称。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<mscorlib >** ](mscorlib-element-for-cryptography-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<g s >** ](cryptographysettings-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<oidMap >** ](oidmap-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<y >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<mscorlib>**](mscorlib-element-for-cryptography-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<cryptographySettings>**](cryptographysettings-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<oidMap>**](oidmap-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<oidEntry>**
 
 ## <a name="syntax"></a>语法  
   
@@ -35,10 +35,10 @@ ms.locfileid: "74088551"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |**OID**|必需的特性。<br /><br /> 指定与您的类实现的算法相对应的第1个 OID。|  
-|**name**|必需的特性。<br /><br /> 指定[\<y >](nameentry-element.md)标记中**name**属性的值。|  
+|**name**|必需的特性。<br /><br /> 指定标记中**name**属性的值 [\<nameEntry>](nameentry-element.md) 。|  
   
 ### <a name="child-elements"></a>子元素  
  无。  
@@ -52,11 +52,11 @@ ms.locfileid: "74088551"
 |`mscorlib`|包含 `cryptographySettings` 元素。|  
 |`oidMap`|包含与类的 ASN 对象标识符（OID）映射。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  ASN. 1 对象标识符以某些加密格式标识算法。 将对象标识符映射到要标识的算法的友好名称。  
   
 ## <a name="example"></a>示例  
- 下面的示例演示如何使用 **\<y >** 元素将 160 RIPEMD 哈希算法的对象标识符映射到该哈希算法的实现。  
+ 下面的示例演示如何使用元素将 **\<oidEntry>** RIPEMD-160 哈希算法的对象标识符映射到该哈希算法的实现。  
   
 ```xml  
 <configuration>  
@@ -81,7 +81,7 @@ ms.locfileid: "74088551"
 ## <a name="see-also"></a>请参阅
 
 - [配置文件架构](../index.md)
-- [加密设置架构](index.md)
+- [密码设置架构](index.md)
 - [加密服务](../../../../standard/security/cryptographic-services.md)
 - [配置加密类](../../configure-cryptography-classes.md)
 - [将对象标识符映射到加密算法](../../map-object-identifiers-to-cryptography-algorithms.md)

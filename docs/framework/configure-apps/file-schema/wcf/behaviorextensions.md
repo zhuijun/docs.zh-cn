@@ -3,13 +3,13 @@ title: <behaviorExtensions>
 ms.date: 03/30/2017
 ms.assetid: 59f2791a-c78f-40d7-aa80-0d9cd10135d9
 ms.openlocfilehash: 39dc92d65a41d223ebd39aec3dc59871ad1fd101
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77448680"
 ---
-# <a name="behaviorextensions"></a>\<behaviorExtensions >
+# \<behaviorExtensions>
 用户可以使用行为扩展来创建用户定义的行为元素。 这些元素可与标准的 Windows Communication Foundation (WCF) 行为元素一起使用。 `behaviorExtensions` 节定义了元素，使其可用于配置中。 下面是一个典型的行为扩展示例。  
   
 ```xml  
@@ -47,9 +47,9 @@ ms.locfileid: "77448680"
   
  如果已经知道类型的程序集，则加载程序将搜索配置文件的重定向位置、GAC、使用配置信息的当前程序集以及应用程序基目录。 如果程序集未知，则加载程序将搜索当前程序集、mscorlib 以及 `TypeResolve` 事件处理程序返回的位置。 通过使用“类型转发”机制和 AppDomain.TypeResolve 事件之类的挂钩，可以修改此 CLR 搜索顺序。  
   
- 攻击者可以利用 CLR 搜索顺序来执行未授权的代码。 通过使用完全限定的（强）名称，可以唯一标识类型并进一步提高系统的安全性。  
+ 攻击者可以利用 CLR 搜索顺序来执行未授权的代码。 使用完全限定的（强）名称可唯一标识某个类型，进一步提高系统的安全性。  
   
- 有关详细信息，请参阅[运行时如何定位程序集](../../../deployment/how-the-runtime-locates-assemblies.md)和 <xref:System.AppDomain.TypeResolve>。  
+ 有关详细信息，请参阅[运行时如何定位程序集](../../../deployment/how-the-runtime-locates-assemblies.md)和 <xref:System.AppDomain.TypeResolve> 。  
   
 ## <a name="see-also"></a>另请参阅
 

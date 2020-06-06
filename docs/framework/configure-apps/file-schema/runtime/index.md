@@ -7,10 +7,10 @@ helpviewer_keywords:
 - runtime settings schema
 ms.assetid: f04816ab-110d-4e28-9283-845d6d9a4a68
 ms.openlocfilehash: d5af9f3299b48d431b43566c11610d745167b60b
-ms.sourcegitcommit: 0a798a7e9680e2d0a5a81a3eaa203870ea782883
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74431058"
 ---
 # <a name="run-time-settings-schema"></a>运行时设置架构

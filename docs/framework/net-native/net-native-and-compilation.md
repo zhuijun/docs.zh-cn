@@ -3,10 +3,10 @@ title: .NET Native 和编译
 ms.date: 03/30/2017
 ms.assetid: e38ae4f3-3e3d-42c3-a4b8-db1aa9d84f85
 ms.openlocfilehash: cf5c9f05b2f2cb4ca15e4add5b53bc9bdca757a3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128245"
 ---
 # <a name="net-native-and-compilation"></a>.NET Native 和编译
@@ -58,9 +58,9 @@ ms.locfileid: "73128245"
 
 .NET 本机工具链生成的应用程序的写入位置如下：项目目录下 Debug 或 Release 目录中名为 ilc.out 的目录。 它包含以下文件：
 
-- *\<appName>* .exe，指仅将控件传输到 *\<appName>* .dll 中特定 `Main` 导出的存根可执行文件。
+- *\<appName>*.exe，一种存根可执行文件，它只是将控制转移到 `Main` .dll 中的特殊导出 *\<appName>* 。
 
-- *\<appName>* .dll，指包含所有应用程序代码以及所依赖的 .NET Framework 类库和任何第三方库中的代码的 Windows 动态链接库。  还包含支持代码，例如与 Windows 互操作和序列化应用程序中的对象的必要代码。
+- *\<appName>*.dll：包含所有应用程序代码的 Windows 动态链接库，以及来自 .NET Framework 类库和你依赖的任何第三方库的代码。  还包含支持代码，例如与 Windows 互操作和序列化应用程序中的对象的必要代码。
 
 - mrt100_app.dll，指提供运行时服务（如垃圾回收）的重构运行时。
 
@@ -102,9 +102,9 @@ ms.locfileid: "73128245"
 
 - NGEN 映像往往非常脆弱。 例如，如果修补或更改了依赖项，通常需要使用它的程序集也重新执行 NGEN 操作。 对于 .NET Framework 类库中的系统程序集尤其如此。 相反，.NET 本机允许独立提供应用程序。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [元数据和自描述组件](../../standard/metadata-and-self-describing-components.md)
-- [内部 .NET Native （第9频道视频）](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
+- [内部 .NET Native（第 9 频道视频）](https://channel9.msdn.com/Shows/Going+Deep/Inside-NET-Native)
 - [反射和 .NET Native](reflection-and-net-native.md)
 - [.NET Native 一般疑难解答](net-native-general-troubleshooting.md)

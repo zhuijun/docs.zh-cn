@@ -3,13 +3,13 @@ title: <bindings>
 ms.date: 01/22/2018
 ms.assetid: b62cd369-5409-4030-8490-9759a462dd3a
 ms.openlocfilehash: fe8f620668e35183890b8bba1f254a74c962f8d3
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74139659"
 ---
-# <a name="bindings"></a>\<绑定 >
+# \<bindings>
 
 您可以使用 `bindings` 元素来配置 Windows Communication Foundation （WCF）的标准绑定和自定义绑定的集合。 每一项都是一个可由其唯一 `binding` 进行标识的 `name` 元素。 服务通过用 `name` 与绑定进行链接来使用绑定。 从 .NET Framework 4 开始，绑定和行为不需要具有名称。 有关默认配置和无值绑定和行为的详细信息，请参阅[WCF 服务的](../../../wcf/samples/simplified-configuration-for-wcf-services.md)[简化配置](../../../wcf/simplified-configuration.md)和简化配置。
 
@@ -37,15 +37,15 @@ ms.locfileid: "74139659"
 
 4. 编码器  
 
-5. 传输  
+5. Transport  
 
  自定义绑定由其 `name` 特性来标识。 有关自定义绑定的详细信息，请参阅[自定义绑定](../../../wcf/extending/custom-bindings.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Configuration.BindingsSection?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Channels.Binding?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Channels.BindingElement?displayProperty=nameWithType>
 - [绑定](../../../wcf/bindings.md)
 - [自定义绑定](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding >](custombinding.md)
+- [\<customBinding>](custombinding.md)

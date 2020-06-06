@@ -3,21 +3,21 @@ title: <security> 的 <netTcpBinding>
 ms.date: 03/30/2017
 ms.assetid: 286cd191-4fd5-4c4e-a223-9c71cf7fdead
 ms.openlocfilehash: aa01e906ddd2f15007c72bfc2a45122cfb15ba2c
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73736369"
 ---
-# <a name="security-of-nettcpbinding"></a>\<netTcpBinding 的安全 > \<
+# <a name="security-of-nettcpbinding"></a>\<security> 的 \<netTcpBinding>
 定义绑定的安全设置。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-\<system &nbsp; &nbsp;[ **>** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netTcpBinding >** ](nettcpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<** >  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<netTcpBinding>**](nettcpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<security>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -35,16 +35,16 @@ ms.locfileid: "73736369"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|mode|可选。 指定所应用的安全类型。 以下列出了有效值。 默认值为 `Transport`。<br /><br /> 此属性的类型为 <xref:System.ServiceModel.SecurityMode>。|  
+|模式|可选。 指定所应用的安全类型。 以下列出了有效值。 默认值为 `Transport`。<br /><br /> 此属性的类型为 <xref:System.ServiceModel.SecurityMode>。|  
   
 ## <a name="mode-attribute"></a>mode 属性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
-|None|禁用安全性。|  
-|传输|使用 TLS over TCP 或 SPNego 提供传输安全性。 此服务可能需要使用 SSL 证书进行配置。 可以通过此模式来控制保护级别。|  
+|无|禁用安全性。|  
+|Transport|使用 TLS over TCP 或 SPNego 提供传输安全性。 此服务可能需要使用 SSL 证书进行配置。 可以使用此模式控制保护级别。|  
 |消息|使用 SOAP 消息安全提供安全性。 默认情况下，将对 SOAP 正文进行加密和签名。 此模式提供了各种各样的功能，例如服务凭据在带外客户端是否可用、要使用的算法套件以及要应用于消息正文的保护级别。 每个会话将执行一次客户端身份验证，身份验证的结果在会话过程中将被缓存。|  
 |TransportWithMessageCredential|传输安全性与消息安全性结合使用。 使用 TLS over TCP 或 SPNego 提供传输安全性，传输安全性可确保完整性、保密性和服务器身份验证。 SOAP 消息安全性提供客户端身份验证。 默认情况下，每个会话将执行一次客户端身份验证，身份验证的结果在会话过程中将被缓存。|  
   
@@ -52,23 +52,23 @@ ms.locfileid: "73736369"
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<传输 >](transport-of-nettcpbinding.md)|定义传输的安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.TcpTransportSecurityElement>。|  
-|[\<message >](message-element-of-nettcpbinding.md)|定义消息的安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.MessageSecurityOverTcpElement>。|  
+|[\<transport>](transport-of-nettcpbinding.md)|定义传输的安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.TcpTransportSecurityElement>。|  
+|[\<message>](message-element-of-nettcpbinding.md)|定义消息的安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.MessageSecurityOverTcpElement>。|  
   
 ### <a name="parent-elements"></a>父元素  
   
 |元素|描述|  
 |-------------|-----------------|  
-|绑定|[\<netTcpBinding >](nettcpbinding.md)的绑定元素。|  
+|binding|的绑定元素 [\<netTcpBinding>](nettcpbinding.md) 。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  每个标准绑定都提供用于控制传输安全性需求的参数。 这些参数通常包括指定是使用消息级安全性还是使用传输级安全性的安全模式，还包括客户端凭据类型的选项。 基于这些参数提供的可供选择的选项，构建一个具有适当安全性的信道堆栈。  
   
  由 Windows Communication Foundation (WCF) 提供的系统提供的绑定是一组旨在满足一些最常见的方案要求的绑定。 所有这些绑定都允许为某些特定的目标方案指定安全要求。  
   
  此配置元素提供用于 `netTcpBinding` 的安全规范。 这是一种适合于跨计算机通信的安全、可靠且进行了优化的绑定。 默认情况下，它生成运行时通信堆栈，该堆栈支持用于消息传递的 TCP、消息安全性和身份验证的 Windows 安全、可靠的 WS-ReliableMessaging，以及二进制消息编码。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.NetTcpSecurity>
 - <xref:System.ServiceModel.NetTcpBinding.Security%2A>
@@ -78,4 +78,4 @@ ms.locfileid: "73736369"
 - [绑定](../../../wcf/bindings.md)
 - [配置系统提供的绑定](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [使用绑定配置服务和客户端](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding >](bindings.md)
+- [\<binding>](bindings.md)

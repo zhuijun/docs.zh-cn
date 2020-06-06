@@ -3,21 +3,21 @@ title: <security> 的 <netPeerBinding>
 ms.date: 03/30/2017
 ms.assetid: 1ef40d8c-f903-4426-9b08-da81462766d8
 ms.openlocfilehash: 3d1ac85073c44f683fe0c054737c5ec7ed1cbf52
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73738656"
 ---
-# <a name="security-of-netpeerbinding"></a>\<netPeerBinding 的安全 > \<
-定义[\<netPeerTcpBinding >](netpeertcpbinding.md)的安全设置，包括使用的身份验证类型和用于消息传输的安全性。  
+# <a name="security-of-netpeerbinding"></a>\<security> 的 \<netPeerBinding>
+定义的安全设置 [\<netPeerTcpBinding>](netpeertcpbinding.md) ，包括使用的身份验证类型和用于消息传输的安全性。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-\<system &nbsp; &nbsp;[ **>** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<netPeerTcpBinding >** ](netpeertcpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<** >  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<netPeerTcpBinding>**](netpeertcpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<security>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -36,35 +36,35 @@ ms.locfileid: "73738656"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|mode|可选。 指定采用此绑定配置的对等端所使用的安全类型。 默认值为 `Message`。 此属性的类型为 <xref:System.ServiceModel.SecurityMode>。|  
+|模式|可选。 指定采用此绑定配置的对等端所使用的安全类型。 默认值为 `Message`。 此属性的类型为 <xref:System.ServiceModel.SecurityMode>。|  
   
 ## <a name="mode-attribute"></a>mode 属性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
 |消息|SOAP 安全提供身份验证、完整性和保密性。|  
-|None|禁用安全性。|  
-|传输|使用 HTTPS 提供安全性。|  
+|无|禁用安全性。|  
+|Transport|使用 HTTPS 提供安全性。|  
 |TransportWithMessageCredential|HTTPS 提供身份验证和保密性。 SOAP 消息提供丰富的凭据类型。|  
   
 ### <a name="child-elements"></a>子元素  
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<传输 >](transport-of-netpeertcpbinding.md)|定义采用此绑定配置的对等端所发送的安全消息的传输类型。 此元素的类型为 <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>。|  
+|[\<transport>](transport-of-netpeertcpbinding.md)|定义采用此绑定配置的对等端所发送的安全消息的传输类型。 此元素的类型为 <xref:System.ServiceModel.Configuration.PeerTransportSecurityElement>。|  
   
 ### <a name="parent-elements"></a>父元素  
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<binding >](bindings.md)|定义[\<netPeerTcpBinding >](netpeertcpbinding.md)的所有绑定功能。|  
+|[\<binding>](bindings.md)|定义的所有绑定功能 [\<netPeerTcpBinding>](netpeertcpbinding.md) 。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  安全性可以是特定于消息的，也可以是特定于传输的。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Configuration.PeerSecurityElement>
 - <xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>
@@ -75,4 +75,4 @@ ms.locfileid: "73738656"
 - [绑定](../../../wcf/bindings.md)
 - [配置系统提供的绑定](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [使用绑定配置服务和客户端](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding >](bindings.md)
+- [\<binding>](bindings.md)

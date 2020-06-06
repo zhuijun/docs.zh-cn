@@ -3,13 +3,13 @@ title: <Assembly>元素 (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: cfe629eb-1106-4113-86e1-052f402d8d8b
 ms.openlocfilehash: f3cf65b185b1db3289a0dbb785c2b91431951cc2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79181070"
 ---
-# <a name="assembly-element-net-native"></a>\<程序集>元素（.NET 本机）
+# <a name="assembly-element-net-native"></a>\<Assembly>元素 (.NET Native)
 将运行时反射策略应用到指定程序集中的所有类型。  
   
 ## <a name="syntax"></a>语法  
@@ -31,9 +31,9 @@ ms.locfileid: "79181070"
 ## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a>特性  
   
-|Attribute|属性类型|说明|  
+|属性|属性类型|说明|  
 |---------------|--------------------|-----------------|  
 |`Name`|常规|必需的特性。 指定一个程序集的简单名称。|  
 |`Activate`|反射|可选特性。 控制运行时对构造函数的访问，以启用实例激活。|  
@@ -63,21 +63,21 @@ ms.locfileid: "79181070"
   
 |元素|说明|  
 |-------------|-----------------|  
-|[\<命名空间>](namespace-element-net-native.md)|将反射策略应用到一个子命名空间中的所有类型。|  
-|[\<键入>](type-element-net-native.md)|将反射策略应用到一个类型。|  
-|[\<类型即时>](typeinstantiation-element-net-native.md)|将反射策略应用到一个构造泛型类型。|  
+|[\<Namespace>](namespace-element-net-native.md)|将反射策略应用到一个子命名空间中的所有类型。|  
+|[\<Type>](type-element-net-native.md)|将反射策略应用到一个类型。|  
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|将反射策略应用到一个构造泛型类型。|  
   
 ### <a name="parent-elements"></a>父元素  
   
 |元素|说明|  
 |-------------|-----------------|  
-|[\<应用>](application-element-net-native.md)|作为应用程序范围内的类型和元数据可以反应在运行时间的类型成员的容器而服务。 [\<应用程序>](application-element-net-native.md)元素可以具有零、一个或多个`<Assembly>`元素。|  
-|[\<图书馆>](library-element-net-native.md)|定义包含元数据在运行时间可以用于反射的类型和类型成员的程序集。 [\<库>](library-element-net-native.md)元素可以有零或一个`<Assembly>`元素。|  
+|[\<Application>](application-element-net-native.md)|作为应用程序范围内的类型和元数据可以反应在运行时间的类型成员的容器而服务。 [\<Application>](application-element-net-native.md)元素可以包含零个、一个或多个 `<Assembly>` 元素。|  
+|[\<Library>](library-element-net-native.md)|定义包含元数据在运行时间可以用于反射的类型和类型成员的程序集。 [\<Library>](library-element-net-native.md)元素可以有零个或一个 `<Assembly>` 元素。|  
   
-## <a name="remarks"></a>备注  
- `<Assembly>` 元素为一个程序集中的所有类型定义运行时策略。 它与[\<库>](library-element-net-native.md)元素不同，该元素指定库，但依赖于其子元素来定义运行时反射策略。 `<Assembly>` 元素将应用到一个程序集中的所有类型，除非这些类型遭到一个子元素的替代。  
+## <a name="remarks"></a>注解  
+ `<Assembly>` 元素为一个程序集中的所有类型定义运行时策略。 它与元素不同 [\<Library>](library-element-net-native.md) ，后者指定一个库，但依赖其子元素定义运行时反射策略。 `<Assembly>` 元素将应用到一个程序集中的所有类型，除非这些类型遭到一个子元素的替代。  
   
- 以下示例展示了该如何通过分配给 `Name` 特性一个“*Application\*”值，从而将运行时策略应用到应用包内的程序集中的所有类型。 该`<Assembly>`元素必须是[\<应用程序>](application-element-net-native.md)元素的子元素。  
+ 以下示例展示了该如何通过分配给 `Name` 特性一个“*Application\*”值，从而将运行时策略应用到应用包内的程序集中的所有类型。 `<Assembly>`元素必须是元素的子元素 [\<Application>](application-element-net-native.md) 。  
   
 ```xml  
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">

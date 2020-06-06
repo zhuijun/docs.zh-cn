@@ -3,17 +3,17 @@ title: <Application>元素 (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: b4e9b37a-059b-4076-8f56-cb3f9cef0cd9
 ms.openlocfilehash: e26826b3d8674b536ab0897182da58bc02cfd00b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128516"
 ---
-# <a name="application-element-net-native"></a>\<应用程序 > 元素（.NET Native）
+# <a name="application-element-net-native"></a>\<Application>元素 (.NET Native)
 作为应用程序范围内的类型和元数据可以反应在运行时间的类型成员的容器而服务，并将运行时反射策略应用到一个应用的所有程序元素。  
   
  \<Directives> 元素  
-\<Application> 元素 (rd.xml)  
+\<Application>元素（rd）  
   
 ## <a name="syntax"></a>语法  
   
@@ -35,11 +35,11 @@ ms.locfileid: "73128516"
   
 ### <a name="attributes"></a>特性  
   
-|特性|特性类型|描述|  
+|属性|属性类型|说明|  
 |---------------|--------------------|-----------------|  
-|`Activate`|映像|可选特性。 控制运行时对构造函数的访问，以启用实例激活。|  
-|`Browse`|映像|可选特性。 控制对该类型信息的查询或列举该类型，但并不在运行时间启用任何动态访问。|  
-|`Dynamic`|映像|可选特性。 控制运行时对所有类型成员的访问，包括构造函数、方法、字段、属性和事件，以启用动态编程。|  
+|`Activate`|反射|可选特性。 控制运行时对构造函数的访问，以启用实例激活。|  
+|`Browse`|反射|可选特性。 控制对该类型信息的查询或列举该类型，但并不在运行时间启用任何动态访问。|  
+|`Dynamic`|反射|可选特性。 控制运行时对所有类型成员的访问，包括构造函数、方法、字段、属性和事件，以启用动态编程。|  
 |`Serialize`|序列化|可选特性。 控制运行时对构造函数、字段和属性的访问，使类型实例得到序列化和反序列化处理，这是通过库进行的，例如 Newtonsoft JSON 序列化程序。|  
 |`DataContractSerializer`|序列化|可选特性。 控制使用 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> 类的序列化策略。|  
 |`DataContractJsonSerializer`|序列化|可选特性。 控制使用 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=nameWithType> 类的 JSON 序列化策略。|  
@@ -50,18 +50,18 @@ ms.locfileid: "73128516"
   
 ## <a name="all-attributes"></a>所有特性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
-|policy_setting|该策略的设置将应用到该应用中的所有类型。 可能值为 `All`、`Auto`、`Excluded`、`Public`、`PublicAndInternal`、`Required Public`、`Required PublicAndInternal` 以及 `Required All`。 有关详细信息，请参阅[运行时指令策略设置](runtime-directive-policy-settings.md)。|  
+|*策略_设置*|该策略的设置将应用到该应用中的所有类型。 可能值为 `All`、`Auto`、`Excluded`、`Public`、`PublicAndInternal`、`Required Public`、`Required PublicAndInternal` 以及 `Required All`。 有关详细信息，请参阅[运行时指令策略设置](runtime-directive-policy-settings.md)。|  
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<Assembly>](assembly-element-net-native.md)|将策略应用到特定程序集中的所有类型。|  
 |[\<Namespace>](namespace-element-net-native.md)|将策略应用到特定命名空间中的所有类型。|  
 |[\<Type>](type-element-net-native.md)|将策略应用到一个特定类型，例如一个类或结构。|  
-|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|将策略应用到一个构造泛型类型。 例如，一个 [\<TypeInstantiation>](typeinstantiation-element-net-native.md) 元素可用于为一个 `List<String>` 类型定义策略。|  
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|将策略应用到一个构造泛型类型。 例如， [\<TypeInstantiation>](typeinstantiation-element-net-native.md) 元素可以用于定义类型的策略 `List<String>` 。|  
 |[\<Method>](method-element-net-native.md)|将策略应用到一个特定类型上的方法。|  
 |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)|将策略应用到一个构造泛型方法。|  
 |[\<Property>](property-element-net-native.md)|将策略应用到一个特定类型上的属性。|  
@@ -70,22 +70,22 @@ ms.locfileid: "73128516"
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<Directives>](directives-element-net-native.md)|运行时指令文件的根元素。|  
   
-## <a name="remarks"></a>备注  
- [\<Directives>](directives-element-net-native.md) 元素可以包含零个或一个 `<Application>` 元素。 单独一个反射指令文件中出现的多个 `<Application>` 元素不受支持。  
+## <a name="remarks"></a>注解  
+ [\<Directives>](directives-element-net-native.md)元素可以包含零个或一个 `<Application>` 元素。 单独一个反射指令文件中出现的多个 `<Application>` 元素不受支持。  
   
  `<Application>` 元素可通过以下方法之一使用：  
   
-- 作为定义在运行时间需要元数据的程序元素的容器。 在这种情况下，`<Application>` 元素不需要具有任何特性。 在编译时间，编译器工具搜索 .NET Framework 核心库等所有库，以查找由 `<Application>` 元素的子元素识别出的程序元素。 相比而言，编译器工具仅搜素由 [\<Library>](library-element-net-native.md) 元素指定的库，以查找由 [\<Library>](library-element-net-native.md) 的子元素识别出的程序元素。  
+- 作为定义在运行时间需要元数据的程序元素的容器。 在这种情况下，`<Application>` 元素不需要具有任何特性。 在编译时间，编译器工具搜索 .NET Framework 核心库等所有库，以查找由 `<Application>` 元素的子元素识别出的程序元素。 与此相反，编译器工具仅搜索由的 [\<Library>](library-element-net-native.md) 子元素标识的程序元素所指定的库 [\<Library>](library-element-net-native.md) 。  
   
-- 作为为反射、序列化和互操作设置应用程序范围的策略的元素。 `<Application>` 元素的特性定义应用程序范围的策略，它可能会遭到 `<Application>` 或 [\<Library>](library-element-net-native.md) 元素定义的子元素的改写。  
+- 作为为反射、序列化和互操作设置应用程序范围的策略的元素。 元素的特性 `<Application>` 定义应用程序范围的策略，该策略可能由或元素定义的子元素重写 `<Application>` [\<Library>](library-element-net-native.md) 。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [\<库 > 元素](library-element-net-native.md)
-- [\<指令 > 元素](directives-element-net-native.md)
+- [\<Library>Element](library-element-net-native.md)
+- [\<Directives>Element](directives-element-net-native.md)
 - [运行时指令元素](runtime-directive-elements.md)
-- [运行时指令 (rd.xml) 配置文件参考](runtime-directives-rd-xml-configuration-file-reference.md)
+- [运行时指令 (rd.xml) 配置文件引用](runtime-directives-rd-xml-configuration-file-reference.md)

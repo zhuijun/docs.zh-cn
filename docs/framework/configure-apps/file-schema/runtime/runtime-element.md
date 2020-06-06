@@ -10,18 +10,18 @@ helpviewer_keywords:
 - container tags, <runtime> element
 ms.assetid: 1eb2fae3-de4b-45b6-852f-517c39b751bd
 ms.openlocfilehash: 3825ae7c3e35193cb835981600fe1ef83097cd2d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74430455"
 ---
-# <a name="runtime-element"></a>\<运行时 > 元素
+# <a name="runtime-element"></a>\<runtime> 元素
 
 提供公共语言运行时用来配置应用程序的信息。
 
 [\<configuration>](../configuration-element.md)\
-\<运行时 &nbsp;&nbsp;>
+&nbsp;&nbsp;\<runtime>
 
 ## <a name="syntax"></a>语法
 
@@ -30,11 +30,11 @@ ms.locfileid: "74430455"
 </runtime>
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 以下各节介绍子元素和父元素。
 
-### <a name="attributes"></a>Attributes
+### <a name="attributes"></a>特性
 
 无。
 
@@ -61,26 +61,26 @@ ms.locfileid: "74430455"
 |[\<gcAllowVeryLargeObjects>](gcallowverylargeobjects-element.md)|在 64 位平台上，启用总大小大于 2 千兆字节 (GB) 的数组。|
 |[\<gcConcurrent>](gcconcurrent-element.md)|指定公共语言运行时是否并发运行垃圾回收。|
 |[\<GCCpuGroup>](gccpugroup-element.md)|指定垃圾回收是否支持多个 CPU 组。|
-|[\<GCHeapAffinitizeMask >](gcheapaffinitizemask-element.md)|定义垃圾回收堆和单个处理器之间的关联。|
-|[\<GCHeapCount >](gcheapcount-element.md)|指定用于服务器垃圾回收的堆/线程数。|
-|[\<GCLOHThreshold >](gclohthreshold-element.md)|指定导致垃圾回收器将对象放置在大型对象堆上的阈值大小。|
-|[\<GCNoAffinitize >](gcnoaffinitize-element.md)|指定是否对 Cpu 关联服务器垃圾回收线程。|
+|[\<GCHeapAffinitizeMask>](gcheapaffinitizemask-element.md)|定义垃圾回收堆和单个处理器之间的关联。|
+|[\<GCHeapCount>](gcheapcount-element.md)|指定用于服务器垃圾回收的堆/线程数。|
+|[\<GCLOHThreshold>](gclohthreshold-element.md)|指定导致垃圾回收器将对象放置在大型对象堆上的阈值大小。|
+|[\<GCNoAffinitize>](gcnoaffinitize-element.md)|指定是否对 Cpu 关联服务器垃圾回收线程。|
 |[\<gcServer>](gcserver-element.md)|指定公共语言运行时是否运行服务器垃圾回收。|
 |[\<generatePublisherEvidence>](generatepublisherevidence-element.md)|指定运行时是否使用代码访问安全性 (CAS) 发布服务器策略。|
 |[\<legacyCorruptedStateExceptionsPolicy>](legacycorruptedstateexceptionspolicy-element.md)|指定运行时是否允许托管的代码捕获访问冲突和其他损坏状态异常。|
 |[\<legacyImpersonationPolicy>](legacyimpersonationpolicy-element.md)|指定 Windows 标识不流经异步点，而不考虑当前线程上执行上下文的流设置。|
 |[\<loadfromRemoteSources>](loadfromremotesources-element.md)|指定是否将来自远程源的程序集加载为完全信任。|
-|[\<NetFx40_LegacySecurityPolicy >](netfx40-legacysecuritypolicy-element.md)|指定运行时是否使用旧版代码访问安全性 (CAS) 策略。|
-|[\<NetFx40_PInvokeStackResilience >](netfx40-pinvokestackresilience-element.md)|指定运行时是否以减慢托管和非托管代码之间的转换速度为代价，在运行时自动修复不正确的平台调用声明。|
-|[\<NetFx45_CultureAwareComparerGetHashCode_LongStrings >](netfx45-cultureawarecomparergethashcode-longstrings-element.md)|指定运行时是否使用固定的内存量来计算 <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> 方法的哈希代码。|
-|[\<PreferComInsteadOfRemoting >](prefercominsteadofmanagedremoting-element.md)|指定运行时将使用 COM 互操作来代替跨应用程序域边界的远程。|
+|[\<NetFx40_LegacySecurityPolicy>](netfx40-legacysecuritypolicy-element.md)|指定运行时是否使用旧版代码访问安全性 (CAS) 策略。|
+|[\<NetFx40_PInvokeStackResilience>](netfx40-pinvokestackresilience-element.md)|指定运行时是否以减慢托管和非托管代码之间的转换速度为代价，在运行时自动修复不正确的平台调用声明。|
+|[\<NetFx45_CultureAwareComparerGetHashCode_LongStrings>](netfx45-cultureawarecomparergethashcode-longstrings-element.md)|指定运行时是否使用固定的内存量来计算 <xref:System.StringComparer.GetHashCode%2A?displayProperty=nameWithType> 方法的哈希代码。|
+|[\<PreferComInsteadOfRemoting>](prefercominsteadofmanagedremoting-element.md)|指定运行时将使用 COM 互操作来代替跨应用程序域边界的远程。|
 |[\<relativeBindForResources>](relativebindforresources-element.md)|优化附属程序集的探测。|
 |[\<shadowCopyVerifyByTimeStamp>](shadowcopyverifybytimestamp-element.md)|指定卷影复制是否使用 .NET Framework 4 中引入的默认启动行为，或恢复为 .NET Framework 早期版本的启动行为。|
 |[\<supportPortability>](supportportability-element.md)|通过禁用将程序集视为等效于应用程序可移植性用途的默认行为来指定应用程序可以在两种不同的 .NET Framework 实现中引用同一程序集。|
 |[\<system.runtime.caching>](system-runtime-caching-element-cache-settings.md)|提供默认内存中对象缓存的配置信息。|
-|[\<Thread_UseAllCpuGroups >](thread-useallcpugroups-element.md)|指定运行时是否跨所有 CPU 组分发托管的线程。|
+|[\<Thread_UseAllCpuGroups>](thread-useallcpugroups-element.md)|指定运行时是否跨所有 CPU 组分发托管的线程。|
 |[\<ThrowUnobservedTaskExceptions>](throwunobservedtaskexceptions-element.md)|指定未经处理的任务异常是否应终止正在运行的进程。|
-|[\<TimeSpan_LegacyFormatMode >](timespan-legacyformatmode-element.md)|指定运行时是否使用 <xref:System.TimeSpan> 值的旧格式。|
+|[\<TimeSpan_LegacyFormatMode>](timespan-legacyformatmode-element.md)|指定运行时是否使用 <xref:System.TimeSpan> 值的旧格式。|
 |[\<useLegacyJit>](uselegacyjit-element.md)|确定公共语言运行时是否使用实时编译的旧版 64 位 JIT 编译器。|
 |[\<UseRandomizedStringHashAlgorithm>](userandomizedstringhashalgorithm-element.md)|指定运行时是否按应用程序域计算字符串的哈希代码。|
 |[\<UseSmallInternalThreadStacks>](usesmallinternalthreadstacks-element.md)|请求运行时在创建内部使用的某些线程时使用显式堆栈大小，而不是默认堆栈大小。|
@@ -91,11 +91,11 @@ ms.locfileid: "74430455"
 |-------------|-----------------|
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-公共语言运行时使用配置文件的[\<运行时 >](runtime-element.md)部分中的子元素来配置应用程序的执行方式。 例如， [\<r >](gcserver-element.md)元素确定垃圾回收器是使用工作站垃圾回收还是服务器垃圾回收， [\<UseRandomizedStringHashAlgorithm >](userandomizedstringhashalgorithm-element.md)元素确定公共语言运行时是否计算每个应用程序或每个应用程序域的字符串的哈希代码，以及 `AppContextSwitchOverrides` 元素是否允许库用户选择加入或选择退出库提供的已更改功能。
+[\<runtime>](runtime-element.md)公共语言运行时使用配置文件部分中的子元素来配置应用程序的执行方式。 例如， [\<gcServer>](gcserver-element.md) 元素确定垃圾回收器是否使用工作站垃圾回收或服务器垃圾回收， [\<UseRandomizedStringHashAlgorithm>](userandomizedstringhashalgorithm-element.md) 元素确定公共语言运行时是否在每个应用程序或每个应用程序域计算字符串的哈希代码，以及 `AppContextSwitchOverrides` 元素是否允许库用户选择加入或选择退出库提供的已更改功能。
 
-在应用程序启动时，公共语言运行时将自动读取[\<运行时 >](runtime-element.md)部分中的元素。 还可以通过向 <xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType> 属性提供其名称来定义非默认应用程序域的配置文件;加载应用程序域时，会自动读取其设置。 如果需要，您很少需要直接读取应用程序配置文件中[\<运行时 >](runtime-element.md)部分中的设置。
+在 [\<runtime>](runtime-element.md) 应用程序启动时，公共语言运行时将自动读取部分中的元素。 你还可以通过向属性提供其名称来定义非默认应用程序域的配置文件 <xref:System.AppDomainSetup.ConfigurationFile%2A?displayProperty=nameWithType> ; 在加载应用程序域时，将自动读取其设置。 如果需要，您很少需要直接阅读 [\<runtime>](runtime-element.md) 应用程序配置文件的部分中的设置。
 
 ## <a name="see-also"></a>另请参阅
 

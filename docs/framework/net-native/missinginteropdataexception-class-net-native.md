@@ -6,10 +6,10 @@ dev_langs:
 - vb
 ms.assetid: eab4bcf8-9f5f-4731-87d8-842748a6062a
 ms.openlocfilehash: faf14245cd9dd7aa4bf8e89d5a05901279956509
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128272"
 ---
 # <a name="missinginteropdataexception-class-net-native"></a>缺少互操作数据异常类 (.NET Native)
@@ -17,10 +17,10 @@ ms.locfileid: "73128272"
   
  当手动封送方法被调用但一个类型的元数据无法通过动态分析找到或无法在运行时指令文件中找到时，会引发该异常。  
   
- 命名空间：System.Runtime.CompilerServices  
+ 命名空间：**** System.Runtime.CompilerServices  
   
 > [!IMPORTANT]
-> `MissingInteropDataException` 类仅供 .NET Native 工具链内部使用。 它不用于在第三方代码中使用，也不应用它处理应用程序代码中的异常。 相反，你可以通过将条目添加到[运行时指令文件](runtime-directives-rd-xml-configuration-file-reference.md)来消除异常。 有关详细信息，请参阅“备注”部分。  
+> `MissingInteropDataException`类仅供 .NET Native 工具链内部使用。 它不用于在第三方代码中使用，也不应用它处理应用程序代码中的异常。 相反，你可以通过将条目添加到[运行时指令文件](runtime-directives-rd-xml-configuration-file-reference.md)来消除异常。 有关详细信息，请参见“备注”部分。  
   
 ## <a name="syntax"></a>语法  
  [!code-csharp[ProjectN#21](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/missinginteropdataexception_syntax1.cs#21)]
@@ -30,15 +30,15 @@ ms.locfileid: "73128272"
   
 ## <a name="constructors"></a>构造函数  
   
-|构造函数|描述|  
+|构造函数|说明|  
 |-----------------|-----------------|  
 |`public MissingInteropDataException(String resourceId, Type pertinentType)`|通过使用系统提供的消息（该消息描述错误以及缺少数据的类型）的 ID 初始化 `MissingInteropDataException` 类的新实例。 此构造函数仅供 .NET Native 工具链内部使用。|  
   
 ## <a name="properties"></a>属性  
   
-|Property|描述|  
+|属性|说明|  
 |--------------|-----------------|  
-|`public IDictionary Data { get; }`|获取提供有关异常的其他用户定义信息的键/值对集合。 （从 <xref:System.Exception?displayProperty=nameWithType> 继承。）|  
+|`public IDictionary Data { get; }`|获取键/值对的集合，这些键/值对提供有关该异常的其他用户定义信息。 （从 <xref:System.Exception?displayProperty=nameWithType> 继承。）|  
 |`public string HelpLink { get; set; }`|获取或设置指向与此异常关联的帮助文件链接。 （从 <xref:System.Exception?displayProperty=nameWithType> 继承。）|  
 |`public int HResult { get; protected set; }`|获取或设置分配给特定异常的编码数值 `HRESULT`。 （从 <xref:System.Exception?displayProperty=nameWithType> 继承。）|  
 |`public Exception InnerException { get; }`|获取导致当前异常的异常。 （从 <xref:System.Exception?displayProperty=nameWithType> 继承。）|  
@@ -52,7 +52,7 @@ ms.locfileid: "73128272"
   
 |方法|描述|  
 |------------|-----------------|  
-|`public bool Equals(Object obj)`|确定指定的对象是否等于当前对象。  （从 <xref:System.Object> 继承。）|  
+|`public bool Equals(Object obj)`|确定指定对象是否等于当前对象。  （从 <xref:System.Object> 继承。）|  
 |`protected void Finalize()`|在垃圾回收将某一对象回收前允许该对象尝试释放资源并执行其他清理操作。 （从 <xref:System.Object> 继承。）|  
 |`public Exception GetBaseException()`|返回是一个或多个后续异常的根本原因的异常。 （从 <xref:System.Exception?displayProperty=nameWithType> 继承。）|  
 |`public int GetHashCode()`|为 `MissingInteropDataException` 实例返回一个哈希代码。   （从 <xref:System.Object> 继承。）|  
@@ -63,22 +63,22 @@ ms.locfileid: "73128272"
   
 ## <a name="events"></a>事件  
   
-|Event — 事件|描述|  
+|事件|说明|  
 |-----------|-----------------|  
 |`protected event EventHandler<SafeSerializationEventArgs> SerializeObjectState`|当异常被序列化用来创建包含有关该异常的徐列出数据的异常状态对象时会出现该问题。 （从 <xref:System.Exception?displayProperty=nameWithType> 继承。）|  
   
-## <a name="usage-details"></a>使用详情  
+## <a name="usage-details"></a>使用情况详细信息  
  由于类型信息无效而导致无法成功调用 COM 或 Windows 运行时组件时会引发 `MissingInteropDataException` 异常。  
   
- 在运行时可用于应用的元数据由运行时指令（XML 配置）文件 \*。 为防止应用发生此异常，你必须修改该文件，以定义运行时必须存在的元数据。 通常会通过将 `MarshalObject`、`MarshalDelegate` 或 `MarshalStructure` 属性添加到运行时指令文件中的相应程序元素来解决该错误。 有关本文件的格式信息，请参阅[运行时指令 (rd.xml) 配置文件参考](runtime-directives-rd-xml-configuration-file-reference.md)。  
+ 在运行时可用于应用程序的元数据由运行时指令（XML 配置）文件（web.config）定义。 \* 为防止应用发生此异常，你必须修改该文件，以定义运行时必须存在的元数据。 通常会通过将 `MarshalObject`、`MarshalDelegate` 或 `MarshalStructure` 属性添加到运行时指令文件中的相应程序元素来解决该错误。 有关本文件的格式信息，请参阅[运行时指令 (rd.xml) 配置文件参考](runtime-directives-rd-xml-configuration-file-reference.md)。  
   
 > [!IMPORTANT]
 > 由于此异常表示应用程序需要的元数据在运行时间不可用，因此不应在 `try`/`catch` 块中处理此异常。 相反，你应该诊断引起此异常的原因并通过将适当的条目添加到运行时指令文件消除异常。  
   
  `MissingInteropDataException` 类包含单个唯一成员，即 `MissingType` 属性，它表示一种类型，而如果想成功完成方法调用需使用到该类型的元数据。 所有剩余成员均继承自基类 <xref:System.Exception?displayProperty=nameWithType>。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Exception?displayProperty=nameWithType>
 - [MissingMetadataException 类](missingmetadataexception-class-net-native.md)
-- [运行时指令 (rd.xml) 配置文件参考](runtime-directives-rd-xml-configuration-file-reference.md)
+- [运行时指令 (rd.xml) 配置文件引用](runtime-directives-rd-xml-configuration-file-reference.md)

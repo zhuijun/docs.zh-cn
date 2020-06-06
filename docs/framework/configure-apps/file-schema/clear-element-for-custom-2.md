@@ -1,5 +1,5 @@
 ---
-title: NameValueSectionHandler 和 DictionarySectionHandler 的 <clear> 元素
+title: <clear>NameValueSectionHandler 和 DictionarySectionHandler 的元素
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/sectionName/clear
@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <clear> Element
 ms.assetid: ff2294ec-fb82-4b0c-933e-ae185433fc7b
 ms.openlocfilehash: f6d860f35d22002030ffa3d09dd0d8a96116bf5e
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77214741"
 ---
-# <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<清除 NameValueSectionHandler 和 DictionarySectionHandler 的 > 元素
+# <a name="clear-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<clear>NameValueSectionHandler 和 DictionarySectionHandler 的元素
 
 清除节中所有先前定义的设置。
 
-[ **\<configuration>** ](configuration-element.md)\
-&nbsp;&nbsp;[ **\<sectionName >** ](custom-element-2.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<clear >**
+[**\<configuration>**](configuration-element.md)\
+&nbsp;&nbsp;[**\<sectionName>**](custom-element-2.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<clear>**
 
 ## <a name="syntax"></a>语法
 
@@ -28,15 +28,15 @@ ms.locfileid: "77214741"
 <clear />
 ```
 
-## <a name="attributes"></a>属性
+## <a name="attributes"></a>特性
 
 无
 
 ## <a name="parent-element"></a>父元素
 
-|     | 说明 |
+|     | 描述 |
 | --- | ------------|
-| [ **\<sectionName >** Element](custom-element-2.md) | 定义使用 <xref:System.Configuration.NameValueSectionHandler> 和 <xref:System.Configuration.DictionarySectionHandler> 类的自定义配置节的设置。 |
+| [**\<sectionName>** Element](custom-element-2.md) | 定义使用和类的自定义配置节的设置 <xref:System.Configuration.NameValueSectionHandler> <xref:System.Configuration.DictionarySectionHandler> 。 |
 
 ## <a name="child-elements"></a>子元素
 
@@ -44,13 +44,13 @@ ms.locfileid: "77214741"
 
 ## <a name="remarks"></a>备注
 
-你可以使用 **\<clear >** 元素从你的应用程序中删除在配置文件层次结构中较高级别上定义的所有设置。
+你可以使用 **\<clear>** 元素从你的应用程序中删除在配置文件层次结构中较高级别上定义的所有设置。
 
 ## <a name="example"></a>示例
 
-此示例定义了计算机配置文件和应用程序配置文件，并演示了如何使用应用程序配置文件中 **\<clear >** 元素清除之前在计算机配置文件中定义的部分。
+此示例定义了计算机配置文件和应用程序配置文件，并演示了如何使用 **\<clear>** 应用程序配置文件中的元素清除之前在计算机配置文件中定义的部分。
 
-以下计算机配置文件代码声明 **\<mySection >** 部分：
+以下计算机配置文件代码声明了节 **\<mySection>** ：
 
 ```xml
 <!-- Machine.config file -->
@@ -65,7 +65,7 @@ ms.locfileid: "77214741"
 </configuration>
 ```
 
-以下应用程序配置文件代码将从 **\<mySection >** 中删除所有设置。 应用程序无法检索在计算机配置文件的 **\<mySection >** 部分的中声明的任何设置。
+以下应用程序配置文件代码将从中删除所有设置 **\<mySection>** 。 应用程序无法检索在计算机配置文件的部分中的中声明的任何设置 **\<mySection>** 。
 
 ```xml
 <!-- Application configuration file -->

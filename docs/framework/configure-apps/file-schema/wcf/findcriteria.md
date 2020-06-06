@@ -3,22 +3,22 @@ title: <findCriteria>
 ms.date: 03/30/2017
 ms.assetid: 5454cd19-6bf5-4ba8-94d1-f58d10dc1917
 ms.openlocfilehash: 44e068ee205bc5e04382164e7ab00716b2c07dcf
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855164"
 ---
-# <a name="findcriteria"></a>\<findCriteria>
-一个配置元素，提供客户端应用程序用于搜索发现服务的一组条件。 可以将条件分组为搜索条件（指定要查找的服务）和查找终止条件（搜索应持续的时间长度）。  
+# \<findCriteria>
+一个配置元素，提供客户端应用程序用于搜索发现服务的一组条件。 可将这些条件划分为搜索条件（指定要查找的服务）和查找终止条件（搜索应持续的时长）。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<standardEndpoints >** ](standardendpoints.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<dynamicEndpoint >** ](dynamicendpoint.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<standardEndpoint >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<discoveryClientSettings >** ](discoveryclientsettings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<s >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<standardEndpoints>**](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<dynamicEndpoint>**](dynamicendpoint.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<standardEndpoint>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<discoveryClientSettings>**](discoveryclientsettings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<findCriteria>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -52,7 +52,7 @@ ms.locfileid: "70855164"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |duration|一个 Timespan 值，指定等待网络上的服务所发送的答复的最长时间。 默认持续时间为 20 秒。|  
 |maxResults|一个整数，指定等待网络或 Internet 上的服务所发送的最大答复数。 如果在经过 `duration` 特性指定的值之前收到的答复达到了最大数目，则查找操作将结束。|  
@@ -63,7 +63,7 @@ ms.locfileid: "70855164"
 |元素|描述|  
 |-------------|-----------------|  
 |[\<contractTypeNames>](contracttypenames.md)|一个配置元素的集合，这些元素包含工作流服务协定类型的名称。|  
-|\<s > 的\<扩展 >|一个 XML 元素对象集合，这些对象提供扩展。|  
+|\<extensions> 的 \<findCriteria>|一个 XML 元素对象集合，这些对象提供扩展。|  
 |[\<scopes>](scopes.md)|一个对象集合，这些对象包含在查找操作过程中用于查找一个或多个特定服务的绝对 URI。<br /><br /> 如果找到特定服务，则表示已在服务 URI 和范围 URI 之间进行了成功的匹配，此匹配操作有时是借助处理匹配复杂性的范围规则完成的。|  
   
 ### <a name="parent-elements"></a>父元素  
@@ -72,7 +72,7 @@ ms.locfileid: "70855164"
 |-------------|-----------------|  
 |[\<standardEndpoints>](standardendpoints.md)|包含应用程序以客户端形式参与服务发现过程所需的设置。|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Discovery.FindCriteria>
 - <xref:System.ServiceModel.Discovery.Configuration.FindCriteriaElement>

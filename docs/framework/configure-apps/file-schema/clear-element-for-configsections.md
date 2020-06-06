@@ -8,17 +8,17 @@ helpviewer_keywords:
 - <clear> Element
 ms.assetid: 77f1d761-ff45-4001-8f36-3a3e5c41fa63
 ms.openlocfilehash: 66abd7f057bc6d060e50a889a945281d07c97592
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155422"
 ---
-# <a name="clear-element-for-configsections"></a>\<用于\<配置>的透明>元素
+# <a name="clear-element-for-configsections"></a>\<configSections> 的 \<clear> 元素
 
-清除以前定义的所有节和节组。
+清除所有之前定义的部分和节组。
 
-&nbsp;[**\<配置>**](configuration-element.md)&nbsp;&nbsp;**配置>\<清晰的>** [** \<**](configsections-element-for-configuration.md) &nbsp; &nbsp; &nbsp;
+[**\<configuration>**](configuration-element.md) &nbsp;&nbsp;[**\<configSections>**](configsections-element-for-configuration.md) &nbsp;&nbsp;&nbsp;&nbsp;**\<clear>**
 
 ## <a name="syntax"></a>语法
 
@@ -26,7 +26,7 @@ ms.locfileid: "79155422"
 <clear/>
 ```
 
-## <a name="attribute"></a>Attribute
+## <a name="attribute"></a>属性
 
 |           | 说明 |
 | --------- | ----------- |
@@ -36,7 +36,7 @@ ms.locfileid: "79155422"
 
 |     | 说明 |
 | --- | ----------- |
-| [**\<配置部分>** 元素](configsections-element-for-configuration.md) | 包含配置部分和命名空间声明。 |
+| [**\<configSections>** Element](configsections-element-for-configuration.md) | 包含配置节和命名空间声明。 |
 
 ## <a name="child-elements"></a>子元素
 
@@ -44,13 +44,13 @@ ms.locfileid: "79155422"
 
 ## <a name="remarks"></a>备注
 
-**\<清除>** 元素从应用程序中删除当前配置文件前面或配置文件层次结构中较高级别定义的所有节和节组。
+**\<clear>** 元素从你的应用程序中删除之前在当前配置文件中或在配置文件层次结构中的更高级别定义的所有节和节组。
 
 ## <a name="example"></a>示例
 
-本示例定义计算机配置文件和应用程序配置文件，并演示如何在应用程序配置文件中使用**\<清除>** 元素来清除以前在计算机配置文件中定义的部分。
+此示例定义了计算机配置文件和应用程序配置文件，并演示了如何使用 **\<clear>** 应用程序配置文件中的元素清除之前在计算机配置文件中定义的部分。
 
-以下计算机配置文件代码声明两个部分，**\<示例节>****\<和另一个Sample节>**，在应用程序配置文件之前读取：
+以下计算机配置文件代码声明了两个部分，即在 **\<sampleSection>** **\<anotherSampleSection>** 应用程序配置文件之前读取的部分：
 
 ```xml
 <!-- Machine.config file -->
@@ -67,7 +67,7 @@ ms.locfileid: "79155422"
 </configuration>
 ```
 
-以下应用程序配置文件代码清除以前声明的所有部分。 应用程序无法使用或检索在计算机配置文件中声明的任一部分中的设置。 但是，它可以使用**\<另一节>** 设置，因为它在**\<明确>** 元素之后出现。
+以下应用程序配置文件代码将清除以前声明的所有部分。 应用程序不能使用或检索在计算机配置文件中声明的任一部分中的设置。 但是，它可以使用中的设置， **\<anotherSection>** 因为它位于 **\<clear>** 元素之后。
 
 ```xml
 <!-- Application configuration file -->
@@ -85,7 +85,7 @@ ms.locfileid: "79155422"
 
 ## <a name="configuration-file"></a>配置文件
 
-此元素可用于应用程序配置文件、计算机配置文件 *（Machine.config*） 和*Web.config*文件，这些文件不在应用程序目录级别。
+此元素可用于应用程序配置文件、计算机配置文件（*machine.config*）和不在应用程序目录级别的*web.config 文件。*
 
 ## <a name="see-also"></a>另请参阅
 

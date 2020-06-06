@@ -5,10 +5,10 @@ helpviewer_keywords:
 - GCLOHThreshold element
 - <GCLOHThreshold> element
 ms.openlocfilehash: d72dc9d27984f60dfb6296217263ce8b176093c6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74451322"
 ---
 # <a name="gclohthreshold-element"></a>GCLOHThreshold 元素
@@ -16,8 +16,8 @@ ms.locfileid: "74451322"
 指定导致垃圾回收器将对象置于大对象堆（LOH）上的阈值大小（以字节为单位）。
 
 [\<configuration>](../configuration-element.md)\
-&nbsp;&nbsp;[\<运行时 >](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;\<GCLOHThreshold >
+&nbsp;&nbsp;[\<runtime>](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCLOHThreshold>
 
 ## <a name="syntax"></a>语法
 
@@ -26,7 +26,7 @@ ms.locfileid: "74451322"
    enabled="nnnn"/>
 ```
 
-## <a name="attributes"></a>Attributes
+## <a name="attributes"></a>特性
 
 |属性|说明|
 |---------------|-----------------|
@@ -44,12 +44,12 @@ ms.locfileid: "74451322"
 
 ## <a name="parent-elements"></a>父元素
 
-|元素|说明|
+|元素|描述|
 |-------------|-----------------|
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 .NET Framework 4.8 中引入了此设置。
 

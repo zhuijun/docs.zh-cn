@@ -12,10 +12,10 @@ helpviewer_keywords:
 - compiler configuration settings
 ms.assetid: c020b139-8699-4f0d-9ac9-70d0c5b2a8c8
 ms.openlocfilehash: 5b1f9684ad26d4a03769af287fc8b0c0c7c4cc1a
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088687"
 ---
 # <a name="compiler-and-language-provider-settings-schema"></a>编译器和语言提供程序设置架构
@@ -23,15 +23,15 @@ ms.locfileid: "74088687"
   
 .NET Framework 在计算机配置文件 (Machine.config) 中定义初始编译器设置。 开发人员和编译器供应商可以添加新 <xref:System.CodeDom.Compiler.CodeDomProvider> 实现的配置设置。 使用 <xref:System.CodeDom.Compiler.CodeDomProvider.GetAllCompilerInfo%2A?displayProperty=nameWithType> 方法，以编程方式枚举计算机上的语言提供程序和编译器配置设置。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-\<&nbsp;&nbsp;[ **>** ](system-codedom-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<编译器 >** ](compilers-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<编译器 >** ](compiler-element.md)
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.codedom>**](system-codedom-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<compilers>**](compilers-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<compiler>**](compiler-element.md)
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<system.codedom>](system-codedom-element.md)|指定可用语言提供程序的编译器配置设置。|  
-|[\<compilers>](compilers-element.md)|编译器配置元素的容器；包含零个或多个 [\<compiler>](compiler-element.md) 元素。|  
+|[\<compilers>](compilers-element.md)|编译器配置元素的容器;包含零个或多个 [\<compiler>](compiler-element.md) 元素。|  
 |[\<compiler>](compiler-element.md)|指定语言提供程序的编译器配置属性。|  
   
 ## <a name="example"></a>示例  
@@ -58,4 +58,4 @@ ms.locfileid: "74088687"
 - <xref:System.CodeDom.Compiler.CompilerInfo>
 - <xref:System.CodeDom.Compiler.CodeDomProvider>
 - [配置文件架构](../index.md)
-- [\<compiler> Element](compiler-element.md)
+- [\<compiler>Element](compiler-element.md)

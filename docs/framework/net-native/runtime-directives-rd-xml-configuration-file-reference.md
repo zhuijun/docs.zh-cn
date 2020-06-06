@@ -3,10 +3,10 @@ title: 运行时指令 (rd.xml) 配置文件引用
 ms.date: 03/30/2017
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
 ms.openlocfilehash: e74d34693446cca645003a9f93bc1777849e3182
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "76738406"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>运行时指令 (rd.xml) 配置文件引用
@@ -105,7 +105,7 @@ ms.locfileid: "76738406"
 
 [Application](application-element-net-native.md) 元素可以不具任何属性，也可以具备在[“运行时指令和策略”部分](#Directives)中所讨论的策略属性。
 
-[Library](library-element-net-native.md) 元素具有单个属性 `Name`，该属性指定了库名或程序集名（不带文件扩展名）。 例如，以下 [Library](library-element-net-native.md) 元素适用于名为 Extensions.dll 的程序集。
+[Library`Name` 元素具有单个属性 ](library-element-net-native.md)，该属性指定了库名或程序集名（不带文件扩展名）。 例如，以下 [Library](library-element-net-native.md) 元素适用于名为 Extensions.dll 的程序集。
 
 ```xml
 <Directives xmlns="http://schemas.microsoft.com/netfx/2013/01/metadata">
@@ -132,43 +132,43 @@ ms.locfileid: "76738406"
 
 [Application](application-element-net-native.md)、[Assembly](assembly-element-net-native.md)、[AttributeImplies](attributeimplies-element-net-native.md)、[Namespace](namespace-element-net-native.md)、[Subtypes](subtypes-element-net-native.md) 和 [Type](type-element-net-native.md) 元素支持下列策略类型：
 
-- `Activate` 列中的一个值匹配。 控制运行时对构造函数的访问，以启用实例激活。
+- `Activate`. 控制运行时对构造函数的访问，以启用实例激活。
 
-- `Browse` 列中的一个值匹配。 控制对有关程序元素信息的查询，但并不启用任何运行时访问。
+- `Browse`. 控制对有关程序元素信息的查询，但并不启用任何运行时访问。
 
-- `Dynamic` 列中的一个值匹配。 控制运行时对所有类型成员的访问，包括构造函数、方法、字段、属性和事件，以启用动态编程。
+- `Dynamic`. 控制运行时对所有类型成员的访问，包括构造函数、方法、字段、属性和事件，以启用动态编程。
 
-- `Serialize` 列中的一个值匹配。 控制运行时对构造函数、字段和属性的访问，以便通过 Newtonsoft JSON 序列化程序等第三方库实现类型实例的序列化。
+- `Serialize`. 控制运行时对构造函数、字段和属性的访问，以便通过 Newtonsoft JSON 序列化程序等第三方库实现类型实例的序列化。
 
-- `DataContractSerializer` 列中的一个值匹配。 控制使用 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> 类的序列化策略。
+- `DataContractSerializer`. 控制使用 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> 类的序列化策略。
 
-- `DataContractJsonSerializer` 列中的一个值匹配。 控制使用 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> 类的 JSON 序列化策略。
+- `DataContractJsonSerializer`. 控制使用 <xref:System.Runtime.Serialization.DataContractSerializer?displayProperty=nameWithType> 类的 JSON 序列化策略。
 
-- `XmlSerializer` 列中的一个值匹配。 控制使用 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> 类的 XML 序列化策略。
+- `XmlSerializer`. 控制使用 <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType> 类的 XML 序列化策略。
 
-- `MarshalObject` 列中的一个值匹配。 控制将引用类型封送到 WinRT 和 COM 的策略。
+- `MarshalObject`. 控制将引用类型封送到 WinRT 和 COM 的策略。
 
-- `MarshalDelegate` 列中的一个值匹配。 控制将委托类型作为函数指针封送到本机代码的策略。
+- `MarshalDelegate`. 控制将委托类型作为函数指针封送到本机代码的策略。
 
-- `MarshalStructure`。 控制封送结构到本机代码的策略。
+- `MarshalStructure` . 控制封送结构到本机代码的策略。
 
 与这些策略类型有关的设置如下：
 
-- `All` 列中的一个值匹配。 为工具链未删除的所有类型和成员启用策略。
+- `All`. 为工具链未删除的所有类型和成员启用策略。
 
-- `Auto` 列中的一个值匹配。 使用默认行为。 （未指定策略等同于将该策略设置为 `Auto`，除非该策略被替代，例如被父元素替代。）
+- `Auto`. 使用默认行为。 （未指定策略等同于将该策略设置为 `Auto`，除非该策略被替代，例如被父元素替代。）
 
-- `Excluded` 列中的一个值匹配。 禁用程序元素策略。
+- `Excluded`. 禁用程序元素策略。
 
-- `Public` 列中的一个值匹配。 启用公共类型或成员策略，除非工具链确定该成员为多余并因此将其删除。 （在后一种情况下，你必须使用 `Required Public`，以确保该成员已被保留并且具有反射功能。）
+- `Public`. 启用公共类型或成员策略，除非工具链确定该成员为多余并因此将其删除。 （在后一种情况下，你必须使用 `Required Public`，以确保该成员已被保留并且具有反射功能。）
 
-- `PublicAndInternal` 列中的一个值匹配。 如果工具链未将公共和内部类型或成员删除，则为它们启用策略。
+- `PublicAndInternal`. 如果工具链未将公共和内部类型或成员删除，则为它们启用策略。
 
-- `Required Public` 列中的一个值匹配。 不管公共类型和成员是否处于占用状态，工具链均须将它们保留下来，并为它们启用策略。
+- `Required Public`. 不管公共类型和成员是否处于占用状态，工具链均须将它们保留下来，并为它们启用策略。
 
-- `Required PublicAndInternal` 列中的一个值匹配。 不管公共和内部类型和成员是否处于占用状态，工具链均须将它们保留下来，并为它们启用策略。
+- `Required PublicAndInternal`. 不管公共和内部类型和成员是否处于占用状态，工具链均须将它们保留下来，并为它们启用策略。
 
-- `Required All` 列中的一个值匹配。 不管所有类型和成员是否处于占用状态，工具链均须将它们保留下来，并为它们启用策略。
+- `Required All`. 不管所有类型和成员是否处于占用状态，工具链均须将它们保留下来，并为它们启用策略。
 
 例如，以下运行时指令文件为程序集 DataClasses.dll 中的所有类型和成员定义了策略。 借此可以实现对所有公共属性的序列化反射；可实现对所有类型和类型成员进行浏览；可实现对所有类型的激活（由于具有 `Dynamic` 属性）；还可实现对所有公共类型和成员的反射。
 
@@ -445,7 +445,7 @@ ms.locfileid: "76738406"
 
 #### <a name="the-effect-of-xmlserializer-datacontractserializer-and-datacontractjsonserializer-policies"></a>XmlSerializer、DataContractSerializer 和 DataContractJsonSerializer 策略的影响
 
-与用于基于反射的序列化程序的 `Serialize` 策略不同，<xref:System.Xml.Serialization.XmlSerializer>、<xref:System.Runtime.Serialization.DataContractSerializer>和 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 策略用于启用一组在 .NET Native 工具链中已知的序列化程序。 这些序列化程序并非通过反射实施，但却按照与确定可反射类型的设置类似的方式来确定可在运行时实现序列化的类型的设置。
+与用于 `Serialize` 基于反射的序列化程序的策略不同， <xref:System.Xml.Serialization.XmlSerializer> 、 <xref:System.Runtime.Serialization.DataContractSerializer> 和 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 策略用于启用一组对 .NET Native 工具链已知的序列化程序。 这些序列化程序并非通过反射实施，但却按照与确定可反射类型的设置类似的方式来确定可在运行时实现序列化的类型的设置。
 
 将这些策略之一应用于类型，该类型便可借助匹配的序列化程序实现序列化。 同样，任何序列化引擎可静态确定为需要序列化的类型也可实现序列化。
 
