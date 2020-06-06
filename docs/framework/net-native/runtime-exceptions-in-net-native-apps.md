@@ -3,17 +3,17 @@ title: .NET 本机应用中的运行时异常
 ms.date: 03/30/2017
 ms.assetid: 5f050181-8fdd-4a4e-9d16-f84c22a88a97
 ms.openlocfilehash: 12df2ef7bf6e86a60dfa4c130f35969e72ac5211
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79180941"
 ---
 # <a name="runtime-exceptions-in-net-native-apps"></a>.NET 本机应用中的运行时异常
 请务必在通用 Windows 平台应用程序的目标平台上测试它们的发布版本，因为调试和发布配置完全不同。 默认情况下，调试配置使用 .NET Core 运行时来编译应用程序，但发布配置使用 .NET 本机将应用程序编译为本机代码。  
   
 > [!IMPORTANT]
-> 有关处理["缺失元数据异常](missingmetadataexception-class-net-native.md)"、"[缺少 InteropDataexception](missinginteropdataexception-class-net-native.md)"和["缺少运行时异常"等](missingruntimeartifactexception-class-net-native.md)有关您在测试应用发布版本时可能遇到的异常的信息，请参阅"步骤 4：手动解析丢失的元数据：[在入门](getting-started-with-net-native.md)主题中，以及[反射和 .NET 本机](reflection-and-net-native.md)和[运行时指令 （rd.xml） 配置文件引用](runtime-directives-rd-xml-configuration-file-reference.md)中。  
+> 有关处理在测试应用的发布版本时可能会遇到的[MissingMetadataException](missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](missinginteropdataexception-class-net-native.md)和[MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)异常的信息，请参阅[入门](getting-started-with-net-native.md)主题中的 "步骤4：手动解析缺少的元数据：" 和 "[反射和 .NET Native](reflection-and-net-native.md) " 和 "[运行时指令（）配置文件参考](runtime-directives-rd-xml-configuration-file-reference.md)"。  
   
 ## <a name="debug-and-release-builds"></a>调试和发布版本  
  当调试版本针对 .NET Core 运行时执行时，它未编译为本机代码。 这使得你的应用可使用通常由运行时提供的所有服务。  
@@ -26,7 +26,7 @@ ms.locfileid: "79180941"
   
 - 尽可能减小了可执行文件的大小。 .NET 本机减小可执行文件的大小的方法之一是大量清理运行时异常消息， [Runtime exception messages](#Messages) 部分中更详细地讨论了这一主题。  
   
-- 很大程度优化了你的代码。 这意味着只要有可能就会使用该内联。 （内联将代码从外部例程移动到调用例程中。  .NET Native 提供专用运行时并实现主动内联这一事实会影响调试时显示的调用堆栈。  有关详细信息，请参阅 [Runtime call stack](#CallStack) 部分。  
+- 很大程度优化了你的代码。 这意味着只要有可能就会使用该内联。 （内联将代码从外部例程移到调用例程中。）  .NET Native 提供专用运行时并实现主动内联会影响在调试时显示的调用堆栈。  有关详细信息，请参阅 [Runtime call stack](#CallStack) 部分。  
   
 > [!NOTE]
 > 通过选中或取消选中“使用 .NET 本机工具链进行编译” **** 框，可以控制是否使用 .NET 本机工具链编译调试和发布版本。   但是，请注意 Windows 应用商店将始终使用 .NET 本机工具链编译你的应用程序的生产版本。  

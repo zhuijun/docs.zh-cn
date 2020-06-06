@@ -3,19 +3,19 @@ title: <udpBinding>
 ms.date: 03/30/2017
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
 ms.openlocfilehash: 7fa72d233d6489ab6a2c534f69c66a55a22d0f59
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74429828"
 ---
-# <a name="udpbinding"></a>\<udpBinding >
+# \<udpBinding>
 用于配置 <xref:System.ServiceModel.UdpBinding> 绑定的配置元素。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)>\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<udpBinding >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<udpBinding>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -44,10 +44,10 @@ ms.locfileid: "74429828"
 </basicHttpBinding>
 ```  
   
-## <a name="attributes-and-elements"></a>属性和元素  
+## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>Attributes  
+### <a name="attributes"></a>特性  
   
 |属性|说明|  
 |---------------|-----------------|  
@@ -63,26 +63,26 @@ ms.locfileid: "74429828"
 |`openTimeout`|一个 <xref:System.TimeSpan> 值，指定为完成打开操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:01:00。|  
 |`receiveTimeout`|一个 <xref:System.TimeSpan> 值，指定为完成接收操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:10:00。|  
 |`sendTimeout`|一个 <xref:System.TimeSpan> 值，指定为完成发送操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:01:00。|  
-|`textEncoding`|设置要用来在绑定上发出消息的字符集编码。 包括以下有效值：<br /><br /> -BigEndianUnicode： Unicode BigEndian 编码。<br />-Unicode：16位编码。<br />-UTF8：8位编码<br /><br /> 默认值为 UTF8。 此属性的类型为 <xref:System.Text.Encoding>。|  
+|`textEncoding`|设置要用来在绑定上发出消息的字符集编码。 有效值包括以下值：<br /><br /> -BigEndianUnicode： Unicode BigEndian 编码。<br />-Unicode：16位编码。<br />-UTF8：8位编码<br /><br /> 默认编码为 UTF8。 此属性的类型为 <xref:System.Text.Encoding>。|  
 |`timeToLive`|一个时间范围值，指定绑定处于活动状态的时间。|  
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
-|[\<readerQuotas >](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
+|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
-|[\<绑定 >](bindings.md)|此元素包含标准绑定和自定义绑定的集合。|  
+|[\<bindings>](bindings.md)|此元素包含标准绑定和自定义绑定的集合。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  UdpBinding 允许 WCF 服务通过 UDP 传输进行通信。 它允许 "火灾和遗忘" 消息交换，其中客户端向服务发送一条消息，而不希望返回响应。  
   
 ## <a name="example"></a>示例  
- 下面的示例演示如何使用 <`udpBinding`> 元素配置 <xref:System.ServiceModel.UdpBinding>。  
+ 下面的示例演示如何 <xref:System.ServiceModel.UdpBinding> 使用 <`udpBinding`> 元素配置。  
   
 ```xml  
 <udpBinding>
@@ -113,4 +113,4 @@ ms.locfileid: "74429828"
 - [绑定](../../../wcf/bindings.md)
 - [配置系统提供的绑定](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [使用绑定配置服务和客户端](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<绑定 >](bindings.md)
+- [\<binding>](bindings.md)

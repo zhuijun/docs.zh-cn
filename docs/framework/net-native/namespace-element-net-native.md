@@ -3,13 +3,13 @@ title: <Namespace>元素 (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 57c614e5-18a9-4e87-bfd5-d0fe3396a192
 ms.openlocfilehash: 06d88a7b0f95c7c1dbe98818b847c92e08a57a19
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79180953"
 ---
-# <a name="namespace-element-net-native"></a>\<命名空间>元素（.NET 本机）
+# <a name="namespace-element-net-native"></a>\<Namespace>元素 (.NET Native)
 将运行时反射策略应用到一个指定的命名空间中的所有类型。  
   
 ## <a name="syntax"></a>语法  
@@ -31,9 +31,9 @@ ms.locfileid: "79180953"
 ## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a>特性  
   
-|Attribute|属性类型|说明|  
+|属性|属性类型|说明|  
 |---------------|--------------------|-----------------|  
 |`Name`|常规|必需的特性。 指定命名空间的名称。|  
 |`Activate`|反射|可选特性。 控制运行时对构造函数的访问，以启用实例激活。|  
@@ -51,7 +51,7 @@ ms.locfileid: "79180953"
   
 |值|说明|  
 |-----------|-----------------|  
-|*namespace_name*|命名空间名称。 如果\<Namespace>元素是[\<应用程序>、](application-element-net-native.md)[\<库>](library-element-net-native.md)或[\<程序集>](assembly-element-net-native.md)元素的子元素，*则namespace_name*必须是完全限定的命名空间名称。 如果 \<Namespace> 元素是另一个 \<Namespace> 元素的子元素，则 namespace_name** 必须是一个相对的命名空间名称。|  
+|*namespace_name*|命名空间名称。 如果 \<Namespace> 元素是 [\<Application>](application-element-net-native.md) 、或元素的子元素 [\<Library>](library-element-net-native.md) ，则 [\<Assembly>](assembly-element-net-native.md) *namespace_name*必须是完全限定的命名空间名称。 如果该 \<Namespace> 元素是另一个元素的子元素 \<Namespace> ，则*namespace_name*必须是相对的命名空间名称。|  
   
 ## <a name="all-other-attributes"></a>所有其他特性  
   
@@ -64,22 +64,22 @@ ms.locfileid: "79180953"
 |元素|说明|  
 |-------------|-----------------|  
 |`<Namespace>`|将运行时反射策略应用到一个父命名空间中的所有类型。|  
-|[\<键入>](type-element-net-native.md)|将反射策略应用到一个类型。|  
-|[\<类型即时>](typeinstantiation-element-net-native.md)|将反射策略应用到一个构造泛型类型。|  
+|[\<Type>](type-element-net-native.md)|将反射策略应用到一个类型。|  
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|将反射策略应用到一个构造泛型类型。|  
   
 ### <a name="parent-elements"></a>父元素  
   
 |元素|说明|  
 |-------------|-----------------|  
-|[\<应用>](application-element-net-native.md)|作为应用程序范围内的类型和元数据可以反应在运行时间的类型成员的容器而服务。 [\<应用程序>](application-element-net-native.md)元素可以具有零、一个或多个[\<程序集>](assembly-element-net-native.md)元素。|  
-|[\<装配>](assembly-element-net-native.md)|将运行时反射策略应用到指定程序集中的所有类型。|  
-|[\<图书馆>](library-element-net-native.md)|定义包含元数据在运行时间可以用于反射的类型和类型成员的程序集。 [\<库>](library-element-net-native.md)元素可以具有零或一个[\<程序集>](assembly-element-net-native.md)元素。|  
+|[\<Application>](application-element-net-native.md)|作为应用程序范围内的类型和元数据可以反应在运行时间的类型成员的容器而服务。 [\<Application>](application-element-net-native.md)元素可以包含零个、一个或多个 [\<Assembly>](assembly-element-net-native.md) 元素。|  
+|[\<Assembly>](assembly-element-net-native.md)|将运行时反射策略应用到指定程序集中的所有类型。|  
+|[\<Library>](library-element-net-native.md)|定义包含元数据在运行时间可以用于反射的类型和类型成员的程序集。 [\<Library>](library-element-net-native.md)元素可以有零个或一个 [\<Assembly>](assembly-element-net-native.md) 元素。|  
 |`<Namespace>`|将反射策略应用到一个父命名空间中的所有类型。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `Activate`、`Browse`、`Dynamic` 和 `Serialize` 特性都是可选项。 如果这些都不存在，`<Namespace>` 元素仅会充当子元素的容器。 如果它们存在，`<Namespace>` 元素会将运行时反射策略应用到一个指定的命名空间中的所有类型。  
   
- 当它是[\<程序集>](assembly-element-net-native.md)元素的子级时，该`<Namespace>`元素将覆盖[\<大会>](assembly-element-net-native.md)元素定义的运行时反射策略。  
+ 当它是元素的子元素时 [\<Assembly>](assembly-element-net-native.md) ， `<Namespace>` 元素将重写由元素定义的运行时反射策略 [\<Assembly>](assembly-element-net-native.md) 。  
   
 ## <a name="see-also"></a>另请参阅
 

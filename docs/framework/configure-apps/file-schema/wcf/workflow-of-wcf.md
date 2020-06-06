@@ -3,19 +3,19 @@ title: <workflow>WCF 的
 ms.date: 03/30/2017
 ms.assetid: c0443eba-d3b4-4fae-886e-9878daf77691
 ms.openlocfilehash: c6c9e14a4ad3d9713ae2d35d6ade20690e0c3575
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69932792"
 ---
-# <a name="workflow-of-wcf"></a>\<WCF 的工作流 >
+# <a name="workflow-of-wcf"></a>\<workflow>WCF 的
 配置一个跟踪参与者，它侦听直接从运行时发出的跟踪记录，并按照配置跟踪参与者的任何方式处理这些记录。 这包括写入特定输出（例如，文件、控制台、ETW）、处理/聚合记录或可能需要的任何其他组合。  
   
- 有关工作流跟踪和跟踪参与者的详细信息, 请参阅[工作流跟踪和](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)跟踪和[跟踪参与者](../../../windows-workflow-foundation/tracking-participants.md)。  
+ 有关工作流跟踪和跟踪参与者的详细信息，请参阅[工作流跟踪和](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)跟踪和[跟踪参与者](../../../windows-workflow-foundation/tracking-participants.md)。  
   
  \<system.serviceModel>  
-\<跟踪 >  
+\<tracking>  
 \<participants>  
 \<add>  
   
@@ -36,9 +36,9 @@ ms.locfileid: "69932792"
   
 ### <a name="attributes"></a>特性  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
-|NAME|一个字符串，指定跟踪参与者的名称。|  
+|name|一个字符串，指定跟踪参与者的名称。|  
 |profileName|一个字符串，指定跟踪配置文件的名称，该跟踪配置文件定义跟踪参与者已订阅的跟踪记录。|  
 |type|一个字符串，指定跟踪参与者的类型。|  
   
@@ -47,11 +47,11 @@ ms.locfileid: "69932792"
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<participants>](../windows-workflow-foundation/participants.md)|跟踪参与者的列表|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  跟踪参与者用于获取从工作流发出的跟踪数据并将其存储在不同的媒体中。 同样，也可以在跟踪参与者中执行对跟踪记录的任何后续处理。  
   
  多个跟踪参与者可同时使用跟踪事件。 每个跟踪参与者都可与不同的跟踪配置文件关联。  
@@ -88,7 +88,7 @@ ms.locfileid: "69932792"
 </configuration>
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.TrackingSection>
 - <xref:System.ServiceModel.Activities.Description.EtwTrackingBehavior>

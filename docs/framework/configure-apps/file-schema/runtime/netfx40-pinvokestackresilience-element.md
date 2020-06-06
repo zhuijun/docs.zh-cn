@@ -6,19 +6,19 @@ helpviewer_keywords:
 - NetFx40_PInvokeStackResilience element
 ms.assetid: 39fb1588-72a4-4479-af74-0605233b68bd
 ms.openlocfilehash: 86f50aafe0b21d5080288e09ac7118ca1e4c939a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73116163"
 ---
-# <a name="netfx40_pinvokestackresilience-element"></a>\<NetFx40_PInvokeStackResilience > 元素
+# <a name="netfx40_pinvokestackresilience-element"></a>\<NetFx40_PInvokeStackResilience> 元素
 
 指定运行时是否以减慢托管和非托管代码之间的转换速度为代价，在运行时自动修复不正确的平台调用声明。
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<runtime >** ](runtime-element.md) \
-&nbsp;&nbsp;&nbsp;&nbsp; **\<NetFx40_PInvokeStackResilience >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<NetFx40_PInvokeStackResilience>**  
 
 ## <a name="syntax"></a>语法
 
@@ -32,13 +32,13 @@ ms.locfileid: "73116163"
 
 ### <a name="attributes"></a>特性
 
-|特性|描述|
+|属性|说明|
 |---------------|-----------------|
 |`enabled`|必需的特性。<br /><br /> 指定运行时是否检测到不正确的平台调用声明，并在运行时在32位平台上自动修复堆栈。|
 
 ## <a name="enabled-attribute"></a>enabled 特性
 
-|“值”|描述|
+|值|说明|
 |-----------|-----------------|
 |`0`|运行时使用 .NET Framework 4 中引入的更快互操作封送处理体系结构，该体系结构不会检测并修复不正确的平台调用声明。 这是默认设置。|
 |`1`|运行时使用检测并修复不正确的平台调用声明的慢速转换。|
@@ -54,7 +54,7 @@ ms.locfileid: "73116163"
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|
 |`runtime`|包含有关运行时初始化选项的信息。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 此元素使您能够以更快的互操作封送处理为依据不正确的平台调用声明来处理运行时复原。
 
@@ -62,7 +62,7 @@ ms.locfileid: "73116163"
 
 为了便于在开发期间检测到不正确的声明，Visual Studio 调试体验也得到了改进。 当应用程序在附加调试器中运行时， [pInvokeStackImbalance](../../../debug-trace-profile/pinvokestackimbalance-mda.md)托管调试助手（MDA）将通知您不正确的平台调用声明。
 
-若要解决您的应用程序使用无法重新编译的组件以及平台调用声明不正确的情况，可以使用 `NetFx40_PInvokeStackResilience` 元素。 通过将此元素添加到应用程序配置文件中，`enabled="1"` 会将其导入到兼容模式，并具有 .NET Framework 早期版本的行为，降低转换的成本。 已针对早期版本的 .NET Framework 编译的程序集会自动选择进入此兼容模式，并且不需要此元素。
+若要解决您的应用程序使用无法重新编译的组件，并且具有不正确的平台调用声明的情况，可以使用 `NetFx40_PInvokeStackResilience` 元素。 将此元素添加到应用程序配置文件中，并将其 `enabled="1"` "导入" 到兼容模式，并且具有较早版本的 .NET Framework 的行为，代价是慢于转换。 已针对早期版本的 .NET Framework 编译的程序集会自动选择进入此兼容模式，并且不需要此元素。
 
 ## <a name="configuration-file"></a>配置文件
 
@@ -80,7 +80,7 @@ ms.locfileid: "73116163"
 </configuration>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [运行时设置架构](index.md)
 - [配置文件架构](../index.md)

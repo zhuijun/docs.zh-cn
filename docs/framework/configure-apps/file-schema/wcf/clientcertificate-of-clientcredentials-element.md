@@ -1,24 +1,24 @@
 ---
-title: <clientCertificate>of <clientCredentials>元素
+title: <clientCertificate>of <clientCredentials> 元素
 ms.date: 03/30/2017
 ms.assetid: 3b3fa000-3434-4142-a178-11903bdd2c5d
 ms.openlocfilehash: fb95ef3168378227e41e55c6fd5e5b772cb7ad0f
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70400516"
 ---
-# <a name="clientcertificate-of-clientcredentials-element"></a>\<clientCredentials > 元素\<的 clientCertificate >
+# <a name="clientcertificate-of-clientcredentials-element"></a>\<clientCertificate>of \<clientCredentials> 元素
 定义用于针对服务进行客户端身份验证的 X.509 证书。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<行为 >** ](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<行为 >** ](behavior-of-endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clientCredentials >** ](clientcredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<clientCertificate >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<endpointBehaviors>**](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<clientCredentials>**](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<clientCertificate>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -34,12 +34,12 @@ ms.locfileid: "70400516"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|`findValue`|一个字符串，包含要在 X.509 证书存储中搜索的值。 此属性中包含的类型必须满足 `X509FindType` 属性值的要求。 默认值为一个空字符串。|  
-|`storeLocation`|指定客户端用于向服务验证自身身份的 X.509 证书的位置。 包括以下有效值：<br /><br /> -LocalMachine：分配给本地计算机的证书存储区。<br />-CurrentUser：分配给当前用户的证书存储区。<br /><br /> 默认值为 LocalMachine。 此属性的类型为 <xref:System.Security.Cryptography.X509Certificates.StoreLocation>。|  
-|`storeName`|指定要搜索的 X.509 证书存储的名称。 包括以下有效值：<br /><br /> 通讯簿其他用户的证书存储区。<br />AuthRoot第三方证书颁发机构（Ca）的证书存储区。<br />CertificateAuthority中间证书颁发机构（Ca）的证书存储区。<br />禁用吊销的证书的证书存储区。<br />记住个人证书的证书存储区。<br />Root受信任的根证书颁发机构（Ca）的证书存储区。<br />TrustedPeople直接受信任的人和资源的证书存储区。<br />TrustedPublisher直接受信任的发布者的证书存储区。<br /><br /> 默认值为 My。 此属性的类型为 <xref:System.Security.Cryptography.X509Certificates.StoreName>。|  
-|X509FindType|定义要执行的 X.509 搜索的类型。 `findValue` 属性中包含的类型必须满足此属性的要求。 包括以下有效值：<br /><br /> -FindByThumbPrint<br />-   FindBySubjectName<br />-FindBySubjectDistinguishedName<br />- FindByIssuerName<br />- FindByIssuerDistinguishedName<br />-FindBySerialNumber<br />-   FindByTimeValid<br />-   FindByTimeNotYetValid<br />- FindByTemplateName<br />-   FindByApplicationPolicy<br />-   FindByCertificatePolicy<br />- FindByExtension<br />- FindByKeyUsage<br />-   FindBySubjectKeyIdentifier<br /><br /> 默认值为 FindBySubjectDistinguishedName。 此属性的类型为 <xref:System.Security.Cryptography.X509Certificates.X509FindType>。|  
+|`findValue`|一个字符串，包含要在 X.509 证书存储中搜索的值。 此属性中包含的类型必须满足 `X509FindType` 属性值的要求。 默认值为空字符串。|  
+|`storeLocation`|指定客户端用于向服务验证自身身份的 X.509 证书的位置。 有效值包括以下值：<br /><br /> -LocalMachine：分配给本地计算机的证书存储区。<br />-CurrentUser：分配给当前用户的证书存储区。<br /><br /> 默认值为 LocalMachine。 此属性的类型为 <xref:System.Security.Cryptography.X509Certificates.StoreLocation>。|  
+|`storeName`|指定要搜索的 X.509 证书存储的名称。 有效值包括以下值：<br /><br /> -通讯簿：其他用户的证书存储区。<br />-AuthRoot：第三方证书颁发机构（Ca）的证书存储区。<br />-CertificateAuthority：中间证书颁发机构（Ca）的证书存储区。<br />-不允许：吊销的证书的证书存储区。<br />-My：个人证书的证书存储区。<br />-Root：受信任的根证书颁发机构（Ca）的证书存储区。<br />-TrustedPeople：直接受信任的人和资源的证书存储区。<br />-TrustedPublisher：直接受信任的发布者的证书存储区。<br /><br /> 默认值为 My。 此属性的类型为 <xref:System.Security.Cryptography.X509Certificates.StoreName>。|  
+|X509FindType|定义要执行的 X.509 搜索的类型。 `findValue` 属性中包含的类型必须满足此属性的要求。 有效值包括以下值：<br /><br /> -FindByThumbPrint<br />-Findbysubjectname)<br />-FindBySubjectDistinguishedName<br />- FindByIssuerName<br />- FindByIssuerDistinguishedName<br />-FindBySerialNumber<br />- FindByTimeValid<br />- FindByTimeNotYetValid<br />- FindByTemplateName<br />- FindByApplicationPolicy<br />- FindByCertificatePolicy<br />- FindByExtension<br />- FindByKeyUsage<br />- FindBySubjectKeyIdentifier<br /><br /> 默认值为 FindBySubjectDistinguishedName。 此属性的类型为 <xref:System.Security.Cryptography.X509Certificates.X509FindType>。|  
   
 ### <a name="child-elements"></a>子元素  
  无。  
@@ -50,10 +50,10 @@ ms.locfileid: "70400516"
 |-------------|-----------------|  
 |[\<clientCredentials>](clientcredentials.md)|指定用于向服务验证客户端身份的凭据。|  
   
-## <a name="remarks"></a>备注  
- 此配置元素指定用于对具有此元素的客户端进行身份验证的证书。 有关详细信息，请参阅[如何：指定客户端凭据](../../../wcf/how-to-specify-client-credential-values.md)值。  
+## <a name="remarks"></a>注解  
+ 此配置元素指定用于对具有此元素的客户端进行身份验证的证书。 有关详细信息，请参阅[如何：指定客户端凭据值](../../../wcf/how-to-specify-client-credential-values.md)。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement.ClientCertificate%2A>
@@ -63,6 +63,6 @@ ms.locfileid: "70400516"
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>
 - [安全行为](../../../wcf/feature-details/security-behaviors-in-wcf.md)
 - [如何：指定客户端凭据值](../../../wcf/how-to-specify-client-credential-values.md)
-- [保护客户端](../../../wcf/securing-clients.md)
+- [保证客户端的安全](../../../wcf/securing-clients.md)
 - [使用证书](../../../wcf/feature-details/working-with-certificates.md)
 - [保护服务和客户端的安全](../../../wcf/feature-details/securing-services-and-clients.md)

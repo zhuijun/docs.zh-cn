@@ -3,22 +3,22 @@ title: <connectionPoolSettings> 的 <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 2fbc3aa7-fcc9-4193-99a3-85d31d60d3f7
 ms.openlocfilehash: f9b0fff741c32c1a3d6f9461f478e89acc18114e
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70398096"
 ---
-# <a name="connectionpoolsettings-of-tcptransport"></a>\<connectionPoolSettings > \<tcpTransport >
+# <a name="connectionpoolsettings-of-tcptransport"></a>\<connectionPoolSettings> 的 \<tcpTransport>
 指定 TCP 传输的其他连接池设置。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定 >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<tcpTransport >** ](tcptransport.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<connectionPoolSettings >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<tcpTransport>**](tcptransport.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<connectionPoolSettings>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -34,7 +34,7 @@ ms.locfileid: "70398096"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |`groupName`|一个字符串，定义用于传出通道的连接池的名称。 在流处理模式中，不共享连接，这意味着禁用连接池。 默认值为字符串 "default"。 可以修改此值，以便将特定客户端的连接隔离到不同的组中。|  
 |`idleTimeout`|一个值为正的 <xref:System.TimeSpan>，指定连接在断开前可以空闲的最长时间。 默认值为 00:02:00。|  
@@ -50,7 +50,7 @@ ms.locfileid: "70398096"
 |-------------|-----------------|  
 |[\<namedPipeTransport>](namedpipetransport.md)|定义传输，该传输使通道使用命名管道传输消息。|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Configuration.TcpConnectionPoolSettingsElement>
 - <xref:System.ServiceModel.Channels.TcpTransportBindingElement.ConnectionPoolSettings%2A>
@@ -58,7 +58,7 @@ ms.locfileid: "70398096"
 - <xref:System.ServiceModel.Channels.TransportBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - [传输](../../../wcf/feature-details/transports.md)
-- [选择传输](../../../wcf/feature-details/choosing-a-transport.md)
+- [选择传输方式](../../../wcf/feature-details/choosing-a-transport.md)
 - [绑定](../../../wcf/bindings.md)
 - [扩展绑定](../../../wcf/extending/extending-bindings.md)
 - [自定义绑定](../../../wcf/extending/custom-bindings.md)

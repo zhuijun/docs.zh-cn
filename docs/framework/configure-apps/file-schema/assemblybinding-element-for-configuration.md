@@ -8,17 +8,17 @@ helpviewer_keywords:
 - <assemblyBinding> Element
 ms.assetid: 6cc55983-b894-449b-8e26-b258e53939cd
 ms.openlocfilehash: 21cf5e749b0dae310c3326f8abf82c6678fc97e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155474"
 ---
-# <a name="assemblybinding-element-for-configuration"></a>\<用于\<配置>的程序集绑定>元素
+# <a name="assemblybinding-element-for-configuration"></a>\<configuration> 的 \<assemblyBinding> 元素
 
 指定配置级的程序集绑定策略。
 
-&nbsp;[**\<配置>**](configuration-element.md)&nbsp;**程序集绑定>\<**
+[**\<configuration>**](configuration-element.md) &nbsp;&nbsp;**\<assemblyBinding>**
 
 ## <a name="syntax"></a>语法
 
@@ -28,7 +28,7 @@ ms.locfileid: "79155474"
 </assemblyBinding>
 ```
 
-## <a name="attribute"></a>Attribute
+## <a name="attribute"></a>属性
 
 |           | 说明 |
 | --------- | ----------- |
@@ -38,20 +38,20 @@ ms.locfileid: "79155474"
 
 |     | 说明 |
 | --- | ----------- |
-| [**\<配置>**](configuration-element.md) | 公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。 |
+| [**\<configuration>**](configuration-element.md) | 公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。 |
 
 ## <a name="child-element"></a>子元素
 
-|     | 说明 |
+|     | 描述 |
 | --- | ----------- |
-| [**\<链接配置>**](linkedconfiguration-element.md) | 指定要包含的配置文件。 |
+| [**\<linkedConfiguration>**](linkedconfiguration-element.md) | 指定要包含的配置文件。 |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-[**\<链接配置>**](linkedconfiguration-element.md)元素允许应用程序配置文件在已知位置包含程序集配置文件，而不是复制程序集配置设置，从而简化了组件程序集的管理。
+[**\<linkedConfiguration>**](linkedconfiguration-element.md)元素通过允许应用程序配置文件在众所周知的位置包含程序集配置文件，而不是复制程序集配置设置，从而简化了组件程序集的管理。
 
 > [!NOTE]
-> 对于具有 Windows 并行清单的应用程序，不支持**\<链接的配置>** 元素。
+> **\<linkedConfiguration>** 具有 Windows 并行清单的应用程序不支持该元素。
 
 ## <a name="example"></a>示例
 

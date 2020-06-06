@@ -3,20 +3,20 @@ title: <add> 的 <namespaceTable>
 ms.date: 03/30/2017
 ms.assetid: cf7b5b75-63bd-49a6-abac-4bfdab377e36
 ms.openlocfilehash: 3b3b4a1584b37601269368ee0e4e973626ddf9cf
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70850393"
 ---
-# <a name="add-of-namespacetable"></a>\<添加 namespaceTable > \<的 >
+# <a name="add-of-namespacetable"></a>\<add> 的 \<namespaceTable>
 表示一个配置元素，此元素包含随后可在 XPath 筛选器中用于路由的前缀映射的命名空间。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<路由 >** ](routing.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<namespaceTable >** ](namespacetable.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<添加 >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<routing>**](routing.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<namespaceTable>**](namespacetable.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -34,10 +34,10 @@ ms.locfileid: "70850393"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |namespace|一个包含命名空间的字符串。|  
-|prefix|一个包含此命名空间的前缀的字符串。|  
+|前缀|一个包含此命名空间的前缀的字符串。|  
   
 ### <a name="child-elements"></a>子元素  
  无。  
@@ -48,6 +48,6 @@ ms.locfileid: "70850393"
 |-------------|-----------------|  
 |[\<namespaceTable>](namespacetable.md)|表示用于定义一组元素的配置节，这些元素包含随后可在 XPath 筛选器中用于路由的前缀映射的命名空间。|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Routing.Configuration.NamespaceElement?displayProperty=nameWithType>

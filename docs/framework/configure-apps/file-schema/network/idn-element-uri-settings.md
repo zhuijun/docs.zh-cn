@@ -3,19 +3,19 @@ title: <idn> 元素（Uri 设置）
 ms.date: 03/30/2017
 ms.assetid: 16c8e869-1791-4cf5-9244-3d3c738f60ec
 ms.openlocfilehash: 533b2562f6e5c8d6c2bf452e56dff9a8bf8ab376
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "71698163"
 ---
-# <a name="idn-element-uri-settings"></a>\<idn > 元素（Uri 设置）
+# <a name="idn-element-uri-settings"></a>\<idn> 元素（Uri 设置）
 
 指定是否将国际化域名（IDN）分析应用于域名。
   
-[ **\<configuration>** ](../configuration-element.md)  
-[ **\<uri** &nbsp;&nbsp;>](uri-element-uri-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<idn >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<uri>**](uri-element-uri-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<idn>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -25,10 +25,10 @@ ms.locfileid: "71698163"
 />  
 ```  
   
-## <a name="attributes-and-elements"></a>属性和元素  
+## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>Attributes  
+### <a name="attributes"></a>特性  
 
 |**元素**|**描述**|  
 |-----------------|---------------------|  
@@ -42,11 +42,11 @@ ms.locfileid: "71698163"
 
 |**元素**|**描述**|  
 |-----------------|---------------------|  
-|[oma-uri](uri-element-uri-settings.md)|包含指定 .NET Framework 如何处理使用统一资源标识符（Uri）表示的 web 地址的设置。|  
+|[uri](uri-element-uri-settings.md)|包含指定 .NET Framework 如何处理使用统一资源标识符（Uri）表示的 web 地址的设置。|  
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-现有 <xref:System.Uri> 类已在 .NET Framework 3.5 中扩展。 3.0 SP1 和 2.0 SP1，支持国际资源标识符（IRI）和国际化域名（IDN）。 当前用户将看不到 .NET Framework 2.0 行为中的任何更改，除非它们专门启用 IRI 和 IDN 支持。 这确保了 NET Framework 以前版本的应用程序兼容性。
+已 <xref:System.Uri> 在 .NET Framework 3.5 中扩展了现有的类。 3.0 SP1 和 2.0 SP1，支持国际资源标识符（IRI）和国际化域名（IDN）。 当前用户将看不到 .NET Framework 2.0 行为中的任何更改，除非它们专门启用 IRI 和 IDN 支持。 这确保了 NET Framework 以前版本的应用程序兼容性。
 
 若要启用对 IRI 的支持，需要以下两项更改：
 
@@ -62,7 +62,7 @@ ms.locfileid: "71698163"
 
 - 已启用 idn = 全部  
 
-     此值会将任何 Unicode 域名转换为其 Punycode 等效项（IDN 名称）。
+     此值会将所有 Unicode 域名转换为它们的 Punycode 等效项（IDN 名称）。
 
 - 启用 idn = AllExceptIntranet
 
@@ -80,7 +80,7 @@ ms.locfileid: "71698163"
 
 ## <a name="example"></a>示例
 
-下面的示例演示 <xref:System.Uri> 类用于支持 IRI 分析和 IDN 名称的配置：
+下面的示例演示类使用的配置， <xref:System.Uri> 以支持 IRI 分析和 IDN 名称：
 
 ```xml
 <configuration>

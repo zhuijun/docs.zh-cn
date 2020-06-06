@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: d43e676c-0153-485c-ab31-0257a2db7507
 author: BrucePerlerMS
 ms.openlocfilehash: a0db10ceb75a470dbf799d717b2059355dd104bb
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "81646064"
 ---
-# <a name="sessionsecuritytokencache"></a>\<会话安全令牌缓存>
-使用服务或安全令牌处理程序集合注册会话令牌的缓存。  
+# \<sessionSecurityTokenCache>
+使用服务或安全标记处理程序集合为会话令牌注册缓存。  
   
-[**\<配置>**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<系统.身份模型>**](system-identitymodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<身份配置>**](identityconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<缓存>**](caches.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<会话安全令牌缓存>**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<identityConfiguration>**](identityconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<caches>**](caches.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<sessionSecurityTokenCache>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -37,21 +37,21 @@ ms.locfileid: "81646064"
   
 ### <a name="attributes"></a>特性  
   
-|特性|说明|  
+|属性|说明|  
 |---------------|-----------------|  
-|type|派生自<xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>类的类型。|  
+|type|派生自类的类型 <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> 。|  
   
 ### <a name="child-elements"></a>子元素  
  无  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
-|[\<缓存>](caches.md)|注册服务或安全令牌处理程序集合使用的缓存。|  
+|[\<caches>](caches.md)|注册服务使用的缓存或安全标记处理程序集合。|  
   
 ## <a name="example"></a>示例  
- 以下 XML 显示了用于保存会话安全令牌的自定义缓存的配置 。<xref:System.IdentityModel.Tokens.SessionSecurityToken> 配置取自`ClaimsAwareWebFarm`示例。 有关此示例的详细信息，请参阅[WIF 代码示例索引](https://docs.microsoft.com/previous-versions/dotnet/framework/security/wif-code-sample-index)。  
+ 下面的 XML 演示了用于保存会话安全令牌（）的自定义缓存配置 <xref:System.IdentityModel.Tokens.SessionSecurityToken> 。 此配置取自 `ClaimsAwareWebFarm` 示例。 有关此示例的详细信息，请参阅[WIF 代码示例索引](https://docs.microsoft.com/previous-versions/dotnet/framework/security/wif-code-sample-index)。  
   
 ```xml  
 <caches>  

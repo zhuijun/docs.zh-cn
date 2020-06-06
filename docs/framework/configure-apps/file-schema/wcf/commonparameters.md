@@ -3,22 +3,22 @@ title: <commonParameters>
 ms.date: 03/30/2017
 ms.assetid: ffc20832-34d6-4622-8174-81924fd53514
 ms.openlocfilehash: 73d8549f68e8ca77115619431c857c4a2aac3fdf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79153017"
 ---
-# <a name="commonparameters"></a>\<共同参数>
+# \<commonParameters>
 表示在多个服务之间全局使用的参数的集合。 此集合通常将包括可由持久性服务共享的数据库连接字符串。  
   
-[**\<配置>**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<系统.服务模式>**](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<行为>**](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<服务行为>**](servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<行为>**](behavior-of-servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<工作流运行时>**](workflowruntime.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<公共参数>**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceBehaviors>**](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<workflowRuntime>**](workflowruntime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<commonParameters>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -34,22 +34,22 @@ ms.locfileid: "79153017"
 ## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a>特性  
  无。  
   
 ### <a name="child-elements"></a>子元素  
   
 |元素|说明|  
 |-------------|-----------------|  
-|[\<添加>](add-of-commonparameters.md)|将服务使用的公共参数的名称/值对添加到集合。|  
+|[\<add>](add-of-commonparameters.md)|将服务使用的公共参数的名称/值对添加到集合。|  
   
 ### <a name="parent-elements"></a>父元素  
   
 |元素|说明|  
 |-------------|-----------------|  
-|[\<工作流运行时>](workflowruntime.md)|指定<xref:System.Workflow.Runtime.WorkflowRuntime>托管基于工作流的 Windows 通信基础 （WCF） 服务的实例的设置。|  
+|[\<workflowRuntime>](workflowruntime.md)|指定 <xref:System.Workflow.Runtime.WorkflowRuntime> 用于承载基于工作流的 Windows Communication Foundation （WCF）服务的实例的设置。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `<commonParameters>` 元素定义在多个服务之间全局使用的任何参数，例如，使用 `ConnectionString` 时的<xref:System.Workflow.Runtime.Hosting.SharedConnectionWorkflowCommitWorkBatchService>。  
   
 > [!NOTE]
@@ -80,9 +80,9 @@ ConnectionString="Data Source=localhost;Initial Catalog=Partner20WFTP;Integrated
 </workflowRuntime>
 ```  
   
- 请注意，`EnableRetries`参数可以在全局级别设置（如 *"通用参数*"部分所示），也可以设置支持`EnableRetries`的各个服务（如 *"服务*"部分所示）。  
+ 请注意， `EnableRetries` 参数可以在全局级别设置（如*CommonParameters*部分所示），也可以为支持的个别服务设置 `EnableRetries` （如 "*服务*" 一节中所示）。  
   
- 以下示例代码演示如何以编程方式更改公共参数：
+ 下面的示例代码演示如何以编程方式更改公共参数：
   
 ```csharp  
 Configuration config = WebConfigurationManager.OpenWebConfiguration("/Workflow", "Default Web Site", null, "localhost");
@@ -92,7 +92,7 @@ commonParameters["ConnectionString"].Value="another connection string";
 config.Save();  
 ```  
   
- 有关使用配置文件控制 Windows 工作流基础主机应用程序<xref:System.Workflow.Runtime.WorkflowRuntime>对象的行为的详细信息，请参阅[工作流配置文件](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))。  
+ 有关使用配置文件控制 Windows Workflow Foundation 主机应用程序的对象的行为的详细信息 <xref:System.Workflow.Runtime.WorkflowRuntime> ，请参阅[工作流配置文件](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))。  
   
 ## <a name="example"></a>示例  
   
@@ -113,4 +113,4 @@ config.Save();
 - <xref:System.Workflow.Runtime.Hosting.DefaultWorkflowCommitWorkBatchService>
 - <xref:System.Workflow.Runtime.Hosting.SqlWorkflowPersistenceService>
 - [工作流配置文件](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms732240(v=vs.90))
-- [\<添加>](add-of-commonparameters.md)
+- [\<add>](add-of-commonparameters.md)

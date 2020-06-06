@@ -22,10 +22,10 @@ helpviewer_keywords:
 - configuration file reference [.NET Framework]
 ms.assetid: 69003d39-dc8a-460c-a6be-e6d93e690b38
 ms.openlocfilehash: 35ed53fc480e218df595794f80af2458f3ecec38
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73039162"
 ---
 # <a name="configuration-file-schema-for-the-net-framework"></a>.NET Framework 的配置文件架构
@@ -39,13 +39,13 @@ ms.locfileid: "73039162"
 
 ## <a name="in-this-section"></a>本节内容
 
-[ **\<配置 >** 元素](configuration-element.md)\
+[**\<configuration>** Element](configuration-element.md)\
 所有配置文件的顶级元素。
 
-[ **\<assemblyBinding >** 元素](assemblybinding-element-for-configuration.md)\
+[**\<assemblyBinding>** Element](assemblybinding-element-for-configuration.md)\
 指定配置级的程序集绑定策略。
 
-[ **\<linkedConfiguration >** 元素](linkedconfiguration-element.md)\
+[**\<linkedConfiguration>** Element](linkedconfiguration-element.md)\
 指定要包含的配置文件。
 
 [启动设置架构](./startup/index.md)\
@@ -76,7 +76,7 @@ ms.locfileid: "73039162"
 包含自定义应用程序设置，如文件路径、XML Web service URL 或应用程序的任何其他自定义配置信息。
 
 [Web 设置架构](./web/index.md)\
-用于配置 ASP.NET 如何与主机应用程序（如 IIS）一起工作的元素。 在 Aspnet.config 文件中使用。
+用于配置 ASP.NET 如何与主机应用程序（如 IIS）一起工作的元素。 在 Aspnet.config** 文件中使用。
 
 [Windows 窗体配置架构](winforms/index.md)\
 Windows 窗体应用程序配置部分中的所有元素，包括多监视器和高 DPI 支持等自定义。
@@ -101,5 +101,5 @@ Windows Identity Foundation （WIF）配置架构的所有元素。
 [Web 服务设置架构](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100))\
 描述控制 ASP.NET Web 服务以及它们的客户端的行为的元素。
 
-[配置 .NET Framework 应用程序](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kza1yk3a(v=vs.100))\
+[配置 .NET Framework 应用](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kza1yk3a(v=vs.100))\
 描述如何在 .NET Framework 中配置安全性、程序集绑定和远程处理。

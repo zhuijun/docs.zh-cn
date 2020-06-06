@@ -4,20 +4,20 @@ ms.date: 03/30/2017
 ms.assetid: a03b153d-5ec6-4915-9031-6f0c3fd348be
 author: BrucePerlerMS
 ms.openlocfilehash: e1f32e17cf0da5e948d778e8b61aca6053eff4ef
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70252022"
 ---
-# <a name="customcookiehandler"></a>\<customCookieHandler>
-设置自定义 cookie 处理程序类型。 仅当`mode` `<cookieHandler>`元素的属性为 "Custom" 时，此元素才能存在。 自定义类型必须派生<xref:System.IdentityModel.Services.CookieHandler>自类。  
+# \<customCookieHandler>
+设置自定义 cookie 处理程序类型。 仅当 `mode` 元素的属性 `<cookieHandler>` 为 "Custom" 时，此元素才能存在。 自定义类型必须派生自 <xref:System.IdentityModel.Services.CookieHandler> 类。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.identitymodel >** ](system-identitymodel-services.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<federationConfiguration >** ](federationconfiguration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<cookieHandler >** ](cookiehandler.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<customCookieHandler >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.identityModel.services>**](system-identitymodel-services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<federationConfiguration>**](federationconfiguration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<cookieHandler>**](cookiehandler.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<customCookieHandler>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -37,9 +37,9 @@ ms.locfileid: "70252022"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|type|指定从<xref:System.IdentityModel.Services.CookieHandler>类派生的自定义类型。 有关如何指定`type`属性的详细信息，请参阅[自定义类型引用](../windows-workflow-foundation/index.md)。|  
+|type|指定从类派生的自定义类型 <xref:System.IdentityModel.Services.CookieHandler> 。 有关如何指定属性的详细信息 `type` ，请参阅[自定义类型引用](../windows-workflow-foundation/index.md)。|  
   
 ### <a name="child-elements"></a>子元素  
  无  
@@ -48,15 +48,15 @@ ms.locfileid: "70252022"
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<cookieHandler>](cookiehandler.md)|<xref:System.IdentityModel.Services.CookieHandler> 配置用于读取<xref:System.IdentityModel.Services.SessionAuthenticationModule>和写入 cookie 的。|  
+|[\<cookieHandler>](cookiehandler.md)|配置用于 <xref:System.IdentityModel.Services.CookieHandler> <xref:System.IdentityModel.Services.SessionAuthenticationModule> 读取和写入 cookie 的。|  
   
-## <a name="remarks"></a>备注  
- 如果通过将`mode` `<cookieHandler>`元素的属性设置为 "custom" 来指定自定义 cookie 处理程序，则必须通过包含引用 cookie 处理程序类型的`<customCookieHandler>`子元素来指定自定义 cookie 处理程序的类型。 当特性设置为 "分块" `mode`或 "Default" 时，不能指定此元素。 自定义 cookie 处理程序必须派生<xref:System.IdentityModel.Services.CookieHandler>自类。  
+## <a name="remarks"></a>注解  
+ 如果通过将元素的属性设置为 "Custom" 来指定自定义 cookie 处理程序 `mode` `<cookieHandler>` ，则必须通过包含 `<customCookieHandler>` 引用 cookie 处理程序类型的子元素来指定自定义 cookie 处理程序的类型。 当 `mode` 特性设置为 "分块" 或 "Default" 时，不能指定此元素。 自定义 cookie 处理程序必须派生自 <xref:System.IdentityModel.Services.CookieHandler> 类。  
   
- 元素由<xref:System.IdentityModel.Configuration.CustomTypeElement>类表示。 `<customCookieHandler>`  
+ `<customCookieHandler>`元素由 <xref:System.IdentityModel.Configuration.CustomTypeElement> 类表示。  
   
 ## <a name="example"></a>示例  
- 下面的示例将 SAM 配置为使用类型`MyNamespace.MyCustomCookieHandler`的自定义 cookie 处理程序。  
+ 下面的示例将 SAM 配置为使用类型的自定义 cookie 处理程序 `MyNamespace.MyCustomCookieHandler` 。  
   
 ```xml  
 <cookieHandler mode="Custom">  
@@ -64,6 +64,6 @@ ms.locfileid: "70252022"
 </cookieHandler>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.IdentityModel.Services.CookieHandler>

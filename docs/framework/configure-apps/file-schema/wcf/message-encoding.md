@@ -3,14 +3,14 @@ title: 消息编码
 ms.date: 03/30/2017
 ms.assetid: f30ee941-aca9-4c67-82a5-421568496f07
 ms.openlocfilehash: 8e5a71095ba62e0e2e6592c8b7b83b67602ef7e7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69931599"
 ---
 # <a name="message-encoding"></a>消息编码
-编码是将一组 Unicode 字符转换为一个字节序列的过程。 解码是反向过程。 Windows Communication Foundation (WCF) 包含三种类型的 SOAP 消息编码:文本、二进制和消息传输优化机制 (MTOM)。  
+编码是将一组 Unicode 字符转换为一个字节序列的过程。 解码是反向过程。 Windows Communication Foundation (WCF) 包含三种类型的 SOAP 消息编码：文本、二进制和消息传输优化机制 (MTOM)。  
   
  `binaryMessageEncoding` 配置节指定基于二进制的 XML 消息所使用的字符编码和消息版本管理。 二进制消息编码器在网络上以二进制形式对 Windows Communication Foundation (WCF) 消息进行编码。 虽然这种编码有助于非常快速地传输消息，但是丢失了基于 WS-* 标准的互操作性。  
   
@@ -18,7 +18,7 @@ ms.locfileid: "69931599"
   
  `textMessageEncoding` 配置节指定用于在网络上创建基于文本的消息的文本编码器。 此编码器产生的消息适合于基于 WS-* 的互操作性。 Web 服务或 Web 服务客户端通常可以理解文本 XML。 但是，对于 XML 消息编码来说，以文本形式传输较大的二进制数据块是最低效的方法。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - <xref:System.ServiceModel.Channels.MessageEncodingBindingElement>

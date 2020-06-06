@@ -11,21 +11,21 @@ helpviewer_keywords:
 - remove element, bypasslist
 ms.assetid: 61dcfb4a-e3d9-4abf-a2cd-7d685fe2f64b
 ms.openlocfilehash: 97b49a8a520d6a4f72945366874991d2deb18710
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "71697894"
 ---
-# <a name="remove-element-for-bypasslist-network-settings"></a>\<删除 bypasslist 的 > 元素（网络设置）
+# <a name="remove-element-for-bypasslist-network-settings"></a>bypasslist 的 \<remove> 元素（网络设置）
 
 从代理跳过列表中删除 IP 地址或 DNS 名称。
 
-[ **\<configuration>** ](../configuration-element.md)  
-\<&nbsp;[**的 &nbsp;>** ](system-net-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<defaultProxy >** ](defaultproxy-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<bypasslist >** ](bypasslist-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<删除 >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<defaultProxy>**](defaultproxy-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<bypasslist>**](bypasslist-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**  
 
 ## <a name="syntax"></a>语法
 
@@ -35,11 +35,11 @@ ms.locfileid: "71697894"
 />
 ```
 
-## <a name="attributes-and-elements"></a>属性和元素
+## <a name="attributes-and-elements"></a>特性和元素
 
 下列各节描述了特性、子元素和父元素。
 
-### <a name="attributes"></a>Attributes
+### <a name="attributes"></a>特性
 
 |**特性**|**描述**|
 |-------------------|---------------------|
@@ -55,11 +55,11 @@ ms.locfileid: "71697894"
 |-----------------|---------------------|
 |[bypasslist](bypasslist-element-network-settings.md)|提供了一组正则表达式，描述不使用代理的地址。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-`remove` 元素从绕过代理服务器的地址列表中删除描述 IP 地址或 DNS 服务器名称的正则表达式。 地址在配置文件中或配置层次结构中的更高级别定义。
+`remove`元素从绕过代理服务器的地址列表中删除描述 IP 地址或 DNS 服务器名称的正则表达式。 地址在配置文件中或配置层次结构中的更高级别定义。
 
-`address` 属性的值应为描述一组 IP 地址或主机名的正则表达式。
+特性的值 `address` 应为描述一组 IP 地址或主机名的正则表达式。
 
 有关正则表达式的详细信息，请参阅。[.NET Framework 正则表达式](../../../../standard/base-types/regular-expressions.md)。
 

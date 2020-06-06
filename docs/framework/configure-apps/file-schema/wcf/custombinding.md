@@ -3,20 +3,20 @@ title: <customBinding>
 ms.date: 03/30/2017
 ms.assetid: 9da4f960-f64e-4d8a-894d-2b09eba5ce4b
 ms.openlocfilehash: cdaaacf0dfa75209d001f6e8d6ac7175816048aa
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74140792"
 ---
-# <a name="custombinding"></a>\<customBinding >
+# \<customBinding>
 
 提供了对用户消息堆栈的完全控制。
 
-[ **\<configuration>** ](../configuration-element.md)\
-\<system &nbsp; &nbsp;[ **>** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<customBinding >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<customBinding>**  
 
 ## <a name="syntax"></a>语法
 
@@ -179,7 +179,7 @@ ms.locfileid: "74140792"
 
 ### <a name="attributes"></a>特性
 
-|特性|描述|
+|属性|说明|
 |---------------|-----------------|
 |closeTimeout|一个 <xref:System.TimeSpan> 值，指定为完成关闭操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:01:00。|
 |NAME|一个包含绑定的配置名称的字符串。 此值是用户定义的一个字符串，可充当自定义绑定的标识字符串。 从 .NET Framework 4 开始，绑定和行为不需要具有名称。 有关默认配置和无值绑定和行为的详细信息，请参阅[WCF 服务的](../../../wcf/samples/simplified-configuration-for-wcf-services.md)[简化配置](../../../wcf/simplified-configuration.md)和简化配置。|
@@ -191,13 +191,13 @@ ms.locfileid: "74140792"
 
 |元素|描述|
 |-------------|-----------------|
-|[\<compositeDuplex >](compositeduplex.md)|对自定义绑定指定双向消息处理。 它与本身不允许进行双工通信的传输（例如，HTTP）一起使用。 与此相反，TCP 本身允许进行双工通信，并且不要求服务在将消息发送回客户端时使用此绑定元素。<br /><br /> 客户端必须公开一个地址，以便服务进行联系和建立连接。 此客户端地址由 `ClientBaseAddress` 属性提供。<br /><br /> 此元素的类型为 <xref:System.ServiceModel.Configuration.CompositeDuplexElement>。|
-|[\<pnrpPeerResolver >](pnrppeerresolver.md)|指定对等名称解析协议 (PNRP) 对等名称解析程序。 此元素的类型为 <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>。|
-|[\<reliableSession >](reliablesession.md)|指定 WS-ReliableMessaging 的设置。 如果将该元素添加到自定义绑定，则生成的通道可支持一次性传递保证。 此元素的类型为 <xref:System.ServiceModel.Configuration.ReliableSessionElement>。|
-|[\<security >](security-of-custombinding.md)|指定自定义绑定的安全选项。 此元素的类型为 <xref:System.ServiceModel.Configuration.SecurityElement>。|
-|[\<Custombinding> sslstreamsecurity> >](sslstreamsecurity.md)|指定 SSL 流绑定的安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>。|
-|[\<transactionFlow >](transactionflow.md)|指定绑定支持事务流以及 `transactionProtocol` 属性将要使用的协议。 此元素的类型为 <xref:System.ServiceModel.Configuration.TransactionFlowElement>。|
-|[\<Windowsstreamsecurity 正在 >](windowsstreamsecurity.md)|指定自定义绑定的流安全选项。 此元素的类型为 <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>。|
+|[\<compositeDuplex>](compositeduplex.md)|对自定义绑定指定双向消息处理。 它与本身不允许进行双工通信的传输（例如，HTTP）一起使用。 与此相反，TCP 本身允许进行双工通信，并且不要求服务在将消息发送回客户端时使用此绑定元素。<br /><br /> 客户端必须公开一个地址，以便服务进行联系和建立连接。 此客户端地址由 `ClientBaseAddress` 属性提供。<br /><br /> 此元素的类型为 <xref:System.ServiceModel.Configuration.CompositeDuplexElement>。|
+|[\<pnrpPeerResolver>](pnrppeerresolver.md)|指定对等名称解析协议 (PNRP) 对等名称解析程序。 此元素的类型为 <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>。|
+|[\<reliableSession>](reliablesession.md)|指定 WS-ReliableMessaging 的设置。 如果将该元素添加到自定义绑定，则生成的通道可支持一次性传递保证。 此元素的类型为 <xref:System.ServiceModel.Configuration.ReliableSessionElement>。|
+|[\<security>](security-of-custombinding.md)|指定自定义绑定的安全选项。 此元素的类型为 <xref:System.ServiceModel.Configuration.SecurityElement>。|
+|[\<sslStreamSecurity>](sslstreamsecurity.md)|指定 SSL 流绑定的安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.SslStreamSecurityElement>。|
+|[\<transactionFlow>](transactionflow.md)|指定绑定支持事务流以及 `transactionProtocol` 属性将要使用的协议。 此元素的类型为 <xref:System.ServiceModel.Configuration.TransactionFlowElement>。|
+|[\<windowsStreamSecurity>](windowsstreamsecurity.md)|指定自定义绑定的流安全选项。 此元素的类型为 <xref:System.ServiceModel.Configuration.WindowsStreamSecurityElement>。|
 
 ### <a name="parent-elements"></a>父元素
 
@@ -205,7 +205,7 @@ ms.locfileid: "74140792"
 |-------------|-----------------|
 |绑定|包含 Windows Communication Foundation 应用程序的所有绑定。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 自定义绑定提供了对 WCF 消息堆栈的完全控制。 通过添加特定实体的配置元素，可以创建特别定制的绑定。 例如，用户可以合并 `httpsTransport` 节、`reliableSession` 节和 `security` 节以创建一个安全可靠的基于 https 的绑定。
 
@@ -219,7 +219,7 @@ ms.locfileid: "74140792"
 
 3. 安全（可选）
 
-4. 传输
+4. Transport
 
 5. 编码器（可选）
 
@@ -279,27 +279,27 @@ ms.locfileid: "74140792"
 
 下表总结了每层的选项。
 
-|层|选项|必需|
+|层|选项|必选|
 |-----------|-------------|--------------|
-|事务流|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|No|
-|可靠性|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|No|
-|安全|对称、非对称、传输级|No|
-|形状更改|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>|No|
-|传输升级|SSL 流、Windows 流、对等解析程序|No|
+|事务流|<xref:System.ServiceModel.Channels.TransactionFlowBindingElement>|否|
+|可靠性|<xref:System.ServiceModel.Channels.ReliableSessionBindingElement>|否|
+|安全性|对称、非对称、传输级|否|
+|形状更改|<xref:System.ServiceModel.Channels.CompositeDuplexBindingElement>|否|
+|传输升级|SSL 流、Windows 流、对等解析程序|否|
 |编码|文本、二进制、MTOM、自定义|是|
-|传输|TCP、命名管道、HTTP、HTTPS、MSMQ 风格、自定义|是|
+|Transport|TCP、命名管道、HTTP、HTTPS、MSMQ 风格、自定义|是|
 
 此外，可以定义自己的绑定元素，并将它们插在前面定义的任何层之间。
 
 有关如何使用自定义绑定来修改系统提供的绑定的讨论，请参阅[如何：自定义系统提供的绑定](../../../wcf/extending/how-to-customize-a-system-provided-binding.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Channels.Binding>
 - <xref:System.ServiceModel.Channels.BindingElement>
 - <xref:System.ServiceModel.Configuration.BindingsSection>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [\<binding >](bindings.md)
+- [\<binding>](bindings.md)
 - [绑定](../../../wcf/bindings.md)
 - [扩展绑定](../../../wcf/extending/extending-bindings.md)
 - [自定义绑定](../../../wcf/extending/custom-bindings.md)

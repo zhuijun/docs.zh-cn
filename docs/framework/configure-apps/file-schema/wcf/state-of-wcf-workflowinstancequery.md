@@ -3,27 +3,27 @@ title: <state>WCF，<workflowInstanceQuery>
 ms.date: 03/30/2017
 ms.assetid: 40f21055-766c-4be9-86c4-d1d899007098
 ms.openlocfilehash: 80f7532f3c51680a2e34713b526dc43822db61b9
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70854960"
 ---
-# <a name="state-of-wcf-workflowinstancequery"></a>\<WCF \<> 状态 >
+# <a name="state-of-wcf-workflowinstancequery"></a>\<state>WCF，\<workflowInstanceQuery>
 表示创建跟踪记录时已跟踪工作流实例中已订阅状态的集合。  
   
  有关跟踪配置文件查询的详细信息，请参阅[跟踪配置文件](../../../windows-workflow-foundation/tracking-profiles.md)  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<跟踪 >** ](tracking-of-wcf.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<配置文件 >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Trackingprofile&gt >** ](trackingprofile-of-wcf.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<工作流 >** ](workflow-of-wcf.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Workflowinstancequeries&gt; >** ](workflowinstancequeries-of-wcf.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<workflowInstanceQuery >** ](workflowinstancequery-of-wcf.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<状态 >** ](states-of-wcf-workflowinstancequery.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<状态 >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<tracking>**](tracking-of-wcf.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<profiles>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<trackingProfile>**](trackingprofile-of-wcf.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<workflow>**](workflow-of-wcf.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<workflowInstanceQueries>**](workflowinstancequeries-of-wcf.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<workflowInstanceQuery>**](workflowinstancequery-of-wcf.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<states>**](states-of-wcf-workflowinstancequery.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<state>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -51,7 +51,7 @@ ms.locfileid: "70854960"
   
 ### <a name="attributes"></a>特性
 
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |`name`|一个字符串，指定创建跟踪记录时已跟踪工作流实例中的已订阅状态。|  
   
@@ -61,29 +61,29 @@ ms.locfileid: "70854960"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<states>](states-of-wcf-workflowinstancequery.md)|创建跟踪记录时已跟踪工作流实例中已订阅状态的集合。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
 
 返回的记录由此集合中的状态进行筛选。  
   
 下表描述了可能的状态值：
   
-|状态|描述|  
+|州省/自治区/直辖市|说明|  
 |-----------|-----------------|  
 |Aborted|工作流实例已中止。|  
 |已完成|工作流实例已完成。|  
-|Deleted|工作流实例已删除。|  
-|Idle|工作流实例处于空闲状态。|  
+|已删除|工作流实例已删除。|  
+|空闲|工作流实例处于空闲状态。|  
 |Persisted|工作流实例已保留。|  
 |Resumed|工作流实例已恢复。|  
 |已开始|工作流实例已启动。|  
 |UnhandledException|工作流实例遇到了未经处理的异常。|  
 |已卸载|工作流实例已卸载。|  
-|Canceled|工作流实例已取消。|  
-|挂起的|工作流实例处于挂起状态。|  
+|已取消|工作流实例已取消。|  
+|已挂起|工作流实例处于挂起状态。|  
 |Terminated|工作流实例已终止。|  
 |Unsuspended|工作流实例已取消挂起。|  
   
@@ -101,7 +101,7 @@ ms.locfileid: "70854960"
 </workflowInstanceQueries>
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.WorkflowInstanceQueryElement?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.StateElement?displayProperty=nameWithType>

@@ -9,19 +9,19 @@ helpviewer_keywords:
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
 ms.openlocfilehash: 590ea747c2fa9e5e85e5e9d05f6fb80fe60251d3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154785"
 ---
-# <a name="proxy-element-network-settings"></a>\<代理>元素（网络设置）
+# <a name="proxy-element-network-settings"></a>\<proxy> 元素（网络设置）
 定义代理服务器。  
 
-[**\<配置>**](../configuration-element.md)\
+[**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<默认代理>**](defaultproxy-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<代理>**
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<defaultProxy>**](defaultproxy-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<proxy>**
 
 ## <a name="syntax"></a>语法  
   
@@ -38,43 +38,43 @@ ms.locfileid: "79154785"
 ## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a>特性  
   
-|**属性**|**说明**|  
+|**特性**|**描述**|  
 |-------------------|---------------------|  
-|`autoDetect`|指定是否自动检测代理。 默认值是 `unspecified`。|  
-|`bypassonlocal`|指定对于本地资源是否跳过代理。 本地资源包括本地服务器`http://localhost`（、`http://loopback`或`http://127.0.0.1`） 和没有句点`http://webserver`（ 的 URI ） 默认值是 `unspecified`。|  
+|`autoDetect`|指定是否自动检测代理。 默认值为 `unspecified`。|  
+|`bypassonlocal`|指定对于本地资源是否跳过代理。 本地资源包括本地服务器（ `http://localhost` 、 `http://loopback` 或 `http://127.0.0.1` ）和没有句点（）的 URI `http://webserver` 。 默认值为 `unspecified`。|  
 |`proxyaddress`|指定要使用的代理 URI。|  
-|`scriptLocation`|指定配置脚本的位置。 不要将`bypassonlocal`属性与此属性一起使用。 |  
-|`usesystemdefault`|指定是否使用 Internet 资源管理器代理设置。 如果设置为`true`，后续属性将覆盖 Internet 资源管理器代理设置。 默认值是 `unspecified`。|  
+|`scriptLocation`|指定配置脚本的位置。 不要将 `bypassonlocal` 属性与此属性一起使用。 |  
+|`usesystemdefault`|指定是否使用 Internet Explorer 代理设置。 如果设置为 `true` ，则后续特性将重写 Internet Explorer 代理设置。 默认值为 `unspecified`。|  
   
 ### <a name="child-elements"></a>子元素  
  无。  
   
 ### <a name="parent-elements"></a>父元素  
   
-|**元素**|**说明**|  
+|**元素**|**描述**|  
 |-----------------|---------------------|  
 |[defaultProxy](defaultproxy-element-network-settings.md)|配置超文本传输协议 (HTTP) 代理服务器。|  
   
 ## <a name="text-value"></a>文本值  
   
-## <a name="remarks"></a>备注  
- 该`proxy`元素为应用程序定义代理服务器。 如果配置文件中缺少此元素，则 .NET 框架将使用 Internet 资源管理器中的代理设置。  
+## <a name="remarks"></a>注解  
+ `proxy`元素为应用程序定义代理服务器。 如果配置文件中缺少此元素，则 .NET Framework 将使用 Internet Explorer 中的代理设置。  
   
- `proxyaddress`属性的值应为格式良好的统一资源指示器 （URI）。  
+ 特性的值 `proxyaddress` 应为格式正确的统一资源标识符（URI）。  
   
- 该`scriptLocation`属性是指代理配置脚本的自动检测。 在<xref:System.Net.WebProxy>Internet 资源管理器中选择 **"使用自动配置脚本"** 选项时，该类将尝试查找配置脚本（通常称为 Wpad.dat）。 如果`bypassonlocal`设置为任何值，`scriptLocation`则忽略。
+ `scriptLocation`属性指自动检测代理配置脚本。 在 <xref:System.Net.WebProxy> Internet Explorer 中选择 "**使用自动配置脚本**" 选项后，类将尝试查找配置脚本（通常名为 Wpad）。 如果 `bypassonlocal` 设置为任何值， `scriptLocation` 则将被忽略。
   
- 对`usesystemdefault`正在迁移到版本 2.0 的 .NET 框架版本 1.1 应用程序使用该属性。  
+ 将 `usesystemdefault` .NET Framework 版本1.1 应用程序的属性迁移到版本2.0。  
   
- 如果属性指定无效的默认`proxyaddress`代理，则引发异常。 异常的 <xref:System.Exception.InnerException%2A> 属性应具有错误根本原因的详细信息。  
+ 如果 `proxyaddress` 特性指定了无效的默认代理，则会引发异常。 异常的 <xref:System.Exception.InnerException%2A> 属性应具有错误根本原因的详细信息。  
   
 ## <a name="configuration-files"></a>配置文件  
  此元素可在应用程序配置文件或计算机配置文件 (Machine.config) 中使用。  
   
 ## <a name="example"></a>示例  
- 下面的示例使用 Internet Explorer 代理的默认值，指定代理地址，并绕过代理进行本地访问。  
+ 以下示例使用 Internet Explorer 代理中的默认值，指定代理地址，并绕过代理进行本地访问。  
   
 ```xml  
 <configuration>  

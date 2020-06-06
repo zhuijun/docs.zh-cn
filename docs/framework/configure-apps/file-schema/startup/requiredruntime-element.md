@@ -10,19 +10,19 @@ helpviewer_keywords:
 - container tags, <requiredRuntime> element
 ms.assetid: 9fa1639e-beb8-43be-b7a4-12f7b229c34b
 ms.openlocfilehash: fe96673b95f48cb75d36662a680bf56a59363f9f
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "71697486"
 ---
-# <a name="requiredruntime-element"></a>\<q > 元素
+# <a name="requiredruntime-element"></a>\<requiredRuntime> 元素
 
-指定应用程序仅支持 1.0 版本的公共语言运行时。 此元素已弃用，不应再使用。 应改为使用[`supportedRuntime`](supportedruntime-element.md)元素。
+指定应用程序仅支持 1.0 版本的公共语言运行时。 此元素已弃用，不应再使用。 [`supportedRuntime`](supportedruntime-element.md)应改用元素。
 
-[ **\<configuration>** ](../configuration-element.md)  
-[ **\<启动**&nbsp;&nbsp;>](startup-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<q >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<startup>**](startup-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<requiredRuntime>**  
 
 ## <a name="syntax"></a>语法
 
@@ -36,7 +36,7 @@ safemode="true|false"/>
 
 下列各节描述了特性、子元素和父元素。
 
-### <a name="attributes"></a>Attributes
+### <a name="attributes"></a>特性
 
 |属性|说明|
 |---------------|-----------------|
@@ -56,21 +56,21 @@ safemode="true|false"/>
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|说明|
+|元素|描述|
 |-------------|-----------------|
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|
 |`startup`|包含 `<requiredRuntime>` 元素。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
  构建为仅支持1.0 版运行时的应用程序必须使用 `<requiredRuntime>` 元素。 使用版本1.1 或更高版本的运行时生成的应用程序必须使用 `<supportedRuntime>` 元素。
 
 > [!NOTE]
-> 如果使用[CorBindToRuntimeByCfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md)函数来指定配置文件，则必须对所有版本的运行时使用 `<requiredRuntime>` 元素。 当使用[CorBindToRuntimeByCfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md)时，将忽略 `<supportedRuntime>` 元素。
+> 如果使用[CorBindToRuntimeByCfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md)函数指定配置文件，则必须将 `<requiredRuntime>` 元素用于运行时的所有版本。 `<supportedRuntime>`当使用[CorBindToRuntimeByCfg](../../../unmanaged-api/hosting/corbindtoruntimebycfg-function.md)时，将忽略元素。
 
- `version` 属性字符串必须与指定版本的 .NET Framework 的安装文件夹名称匹配。 不解释此字符串。 如果运行时启动代码找不到匹配的文件夹，则不加载运行时;启动代码将显示一条错误消息并退出。
+ `version`特性字符串必须与指定 .NET Framework 版本的安装文件夹名称匹配。 不解释此字符串。 如果运行时启动代码找不到匹配的文件夹，则不加载运行时;启动代码将显示一条错误消息并退出。
 
 > [!NOTE]
-> 在 Microsoft Internet Explorer 中托管的应用程序的启动代码将忽略 `<requiredRuntime>` 元素。
+> 在 Microsoft Internet Explorer 中托管的应用程序的启动代码将忽略该 `<requiredRuntime>` 元素。
 
 ## <a name="example"></a>示例
 
@@ -88,4 +88,4 @@ safemode="true|false"/>
 
 - [启动设置架构](index.md)
 - [配置文件架构](../index.md)
-- [如何：配置应用以支持 .NET Framework 4 或更高版本](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)
+- [如何：将应用配置为支持 .NET Framework 4 或更高版本](../../../migration-guide/how-to-configure-an-app-to-support-net-framework-4-or-4-5.md)

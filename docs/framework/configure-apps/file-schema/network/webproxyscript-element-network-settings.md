@@ -9,19 +9,19 @@ helpviewer_keywords:
 - webProxyScript element
 ms.assetid: a13c26db-6218-4af3-9696-38f24b23bfac
 ms.openlocfilehash: dbad888cd0537f63c09840ac1053f924db9ea9bc
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74089059"
 ---
-# <a name="webproxyscript-element-network-settings"></a>\<w > 元素（网络设置）
+# <a name="webproxyscript-element-network-settings"></a>\<webProxyScript> 元素（网络设置）
 配置用于发现 Web 代理的脚本的特征。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-\<&nbsp;&nbsp;[ **> 的**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;\<[**设置 >** ](settings-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<w >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<settings>**](settings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<webProxyScript>**
 
 ## <a name="syntax"></a>语法  
   
@@ -36,7 +36,7 @@ ms.locfileid: "74089059"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |`downloadTimeout`|指定下载脚本的最长时间，以小时、分钟和秒为单位。 默认值为一分钟。|  
   
@@ -49,11 +49,11 @@ ms.locfileid: "74089059"
 |-------------|-----------------|  
 |[设置](settings-element-network-settings.md)|配置 <xref:System.Net> 命名空间的基本网络选项。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
   
 ## <a name="configuration-files"></a>配置文件  
  此元素可在应用程序配置文件或计算机配置文件 (Machine.config) 中使用。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [网络设置架构](index.md)

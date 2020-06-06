@@ -3,13 +3,13 @@ title: <Event>元素 (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: e53b029c-9d6d-4c0a-9cdc-5cfca8a5ca47
 ms.openlocfilehash: 60da48d5872d7ce61afcffa7977411bc6e1efc7f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79181041"
 ---
-# <a name="event-element-net-native"></a>\<事件>元素（.NET 本机）
+# <a name="event-element-net-native"></a>\<Event>元素 (.NET Native)
 将运行时反射策略应用到一个事件。  
   
 ## <a name="syntax"></a>语法  
@@ -23,9 +23,9 @@ ms.locfileid: "79181041"
 ## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a>特性  
   
-|Attribute|属性类型|说明|  
+|属性|属性类型|说明|  
 |---------------|--------------------|-----------------|  
 |`Name`|常规|必需的特性。 指定事件名称。|  
 |`Browse`|反射|可选特性。 控制对该事件信息的查询或列举该事件，但并不在运行时间启用任何动态访问。|  
@@ -35,7 +35,7 @@ ms.locfileid: "79181041"
   
 |值|说明|  
 |-----------|-----------------|  
-|method_name**|事件名称。 事件的类型由父[\<类型>](type-element-net-native.md)或[\<类型即时>](typeinstantiation-element-net-native.md)元素定义。|  
+|method_name**|事件名称。 事件的类型由父级 [\<Type>](type-element-net-native.md) 或 [\<TypeInstantiation>](typeinstantiation-element-net-native.md) 元素定义。|  
   
 ## <a name="all-other-attributes"></a>所有其他特性  
   
@@ -50,10 +50,10 @@ ms.locfileid: "79181041"
   
 |元素|说明|  
 |-------------|-----------------|  
-|[\<键入>](type-element-net-native.md)|将反射策略应用到一种类型及其所有成员。|  
-|[\<类型即时>](typeinstantiation-element-net-native.md)|将反射策略应用到一种构造泛型类型及其所有成员。|  
+|[\<Type>](type-element-net-native.md)|将反射策略应用到一种类型及其所有成员。|  
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|将反射策略应用到一种构造泛型类型及其所有成员。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  如果一个事件的策略没有得到显式定义，它将继承其父元素的运行时策略。  
   
 ## <a name="see-also"></a>另请参阅

@@ -8,18 +8,18 @@ helpviewer_keywords:
 - Federal Information Processing Standards (FIPS)
 ms.assetid: c35509c4-35cf-43c0-bb47-75e4208aa24e
 ms.openlocfilehash: 0d6dd291a24928487a040c0427f058dee80bf836
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73117377"
 ---
-# <a name="enforcefipspolicy-element"></a>\<enforceFIPSPolicy > 元素
+# <a name="enforcefipspolicy-element"></a>\<enforceFIPSPolicy> 元素
 指定是否强制执行以下计算机配置要求：加密算法必须符合美国联邦信息处理标准 (FIPS)。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<runtime >** ](runtime-element.md) \
-&nbsp;&nbsp;&nbsp;&nbsp; **\<enforceFIPSPolicy >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<enforceFIPSPolicy>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -32,15 +32,15 @@ ms.locfileid: "73117377"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|enabled|必需的特性。<br /><br /> 指定是否允许强制执行计算机配置要求，要求加密算法必须符合 FIPS。|  
+|已启用|必需的特性。<br /><br /> 指定是否允许强制执行计算机配置要求，要求加密算法必须符合 FIPS。|  
   
 ## <a name="enabled-attribute"></a>enabled 特性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
-|`true`|如果你的计算机配置为要求加密算法符合 FIPS 标准，则强制实施此要求。 如果某个类实现了不符合 FIPS 的算法，则在该计算机上运行时，该类的构造函数或 `Create` 方法将引发异常。 这是默认设置。|  
+|`true`|如果你的计算机配置为要求加密算法符合 FIPS 标准，则强制实施此要求。 如果某个类实现了不符合 FIPS 的算法，则该类的构造函数或方法将在 `Create` 该计算机上运行时引发异常。 这是默认设置。|  
 |`false`|无论计算机配置如何，应用程序使用的加密算法都无需符合 FIPS。|  
   
 ### <a name="child-elements"></a>子元素  
@@ -53,8 +53,8 @@ ms.locfileid: "73117377"
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|  
   
-## <a name="remarks"></a>备注  
- 从 .NET Framework 2.0 开始，实现加密算法的类的创建由计算机的配置控制。 如果计算机配置为要求算法符合 FIPS，并且类实现了不符合 FIPS 的算法，则创建该类的实例的任何尝试都将引发异常。 构造函数引发 <xref:System.InvalidOperationException> 异常，`Create` 方法引发一个 <xref:System.Reflection.TargetInvocationException> 异常，其中包含内部 <xref:System.InvalidOperationException> 异常。  
+## <a name="remarks"></a>注解  
+ 从 .NET Framework 2.0 开始，实现加密算法的类的创建由计算机的配置控制。 如果计算机配置为要求算法符合 FIPS，并且类实现了不符合 FIPS 的算法，则创建该类的实例的任何尝试都将引发异常。 构造函数引发 <xref:System.InvalidOperationException> 异常，并且 `Create` 方法引发异常，并出现 <xref:System.Reflection.TargetInvocationException> 内部 <xref:System.InvalidOperationException> 异常。  
   
  如果你的应用程序运行在其配置要求符合 FIPS 的计算机上，并且你的应用程序使用不符合 FIPS 的算法，则可以使用配置文件中的此元素来阻止公共语言运行时（CLR）强制执行 FIPS 相容性。 此元素是在 .NET Framework 2.0 Service Pack 1 中引入的。  
   
@@ -69,7 +69,7 @@ ms.locfileid: "73117377"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [运行时设置架构](index.md)
 - [配置文件架构](../index.md)

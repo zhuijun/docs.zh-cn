@@ -1,24 +1,24 @@
 ---
-title: <ws2007FederationHttpBinding> 的 <message> 元素
+title: <message>的元素<ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 52cd941d-e230-4c82-8b29-333a7d20eca8
 ms.openlocfilehash: dde763687dbc62d6fb342a21a4c614208f28d7e8
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73738998"
 ---
-# <a name="message-element-of-ws2007federationhttpbinding"></a>\<ws2007FederationHttpBinding 的 \<message > 元素 >
-定义[\<ws2007FederationHttpBinding >](ws2007federationhttpbinding.md)元素的消息级安全性设置。  
+# <a name="message-element-of-ws2007federationhttpbinding"></a>\<message>的元素\<ws2007FederationHttpBinding>
+定义元素的消息级安全性设置 [\<ws2007FederationHttpBinding>](ws2007federationhttpbinding.md) 。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-\<system &nbsp; &nbsp;[ **>** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<ws2007FederationHttpBinding >** ](ws2007federationhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<** ](security-element-of-ws2007federationhttpbinding.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**消息 >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<ws2007FederationHttpBinding>**](ws2007federationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-element-of-ws2007federationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<message>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -85,16 +85,16 @@ ms.locfileid: "73738998"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|`algorithmSuite`|可选。 设置消息加密、签名和密钥包装算法。 算法和密钥大小由 <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> 类确定。 这些算法映射到安全策略语言 (WS-SecurityPolicy) 规范中指定的算法。<br /><br /> 有关可能的值，请参见下表。 默认值为 Basic256。|  
-|`issuedKeyType`|指定要颁发的密钥类型。 包括以下有效值：<br /><br /> -SymmetricKey<br />-PublicKey<br />-为 bearerkey 并且<br /><br /> 默认值为 SymmetricKey。 此属性的类型为 <xref:System.IdentityModel.Tokens.SecurityKeyType>。|  
-|`issuedTokenType`|一个 URI，指定要颁发的令牌的类型。 默认值为 `null`。|  
+|`algorithmSuite`|可选。 设置消息加密、签名和密钥包装算法。 算法和密钥大小由 <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> 类确定。 这些算法与“安全策略语言”(WS-SecurityPolicy) 规范中指定的算法一致。<br /><br /> 有关可能的值，请参见下表。 默认值为 Basic256。|  
+|`issuedKeyType`|指定要颁发的密钥类型。 有效值包括以下值：<br /><br /> -SymmetricKey<br />-PublicKey<br />-为 bearerkey 并且<br /><br /> 默认值为 SymmetricKey。 此属性的类型为 <xref:System.IdentityModel.Tokens.SecurityKeyType>。|  
+|`issuedTokenType`|一个 URI，指定要颁发的令牌的类型。 默认为 `null`。|  
 |`negotiateServiceCredential`|一个值，指定是否应在协商过程中交换服务凭据，或者是否可在带外使用服务凭据。 默认值为 `true`，这意味着对服务凭据进行协商。|  
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite 属性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
 |Basic128|使用 Aes128 加密，对消息摘要使用 Sha1，对密钥包装使用 Rsa-oaep-mgf1p。|  
 |Basic192|使用 Aes192 加密，对消息摘要使用 Sha1，对密钥包装使用 Rsa-oaep-mgf1p。|  
@@ -117,18 +117,18 @@ ms.locfileid: "73738998"
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<claimTypeRequirements >](claimtyperequirements-element.md)|指定此绑定的声明类型集合。 每个元素的类型都为 <xref:System.ServiceModel.Configuration.ClaimTypeElement>。|  
-|[\<颁发者 >](issuer.md)|指定颁发安全令牌的终结点。 此元素的类型为 <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>。|  
-|[\<Issuedtokenparameters >](issuermetadata.md)|指定颁发者的终结点地址。|  
-|[\<tokenRequestParameters >](tokenrequestparameters.md)|令牌请求参数的集合。 每个参数都是一个 XML 元素。|  
+|[\<claimTypeRequirements>](claimtyperequirements-element.md)|指定此绑定的声明类型集合。 每个元素的类型都为 <xref:System.ServiceModel.Configuration.ClaimTypeElement>。|  
+|[\<issuer>](issuer.md)|指定颁发安全令牌的终结点。 此元素的类型为 <xref:System.ServiceModel.Configuration.IssuedTokenParametersEndpointAddressElement>。|  
+|[\<issuerMetadata>](issuermetadata.md)|指定颁发者的终结点地址。|  
+|[\<tokenRequestParameters>](tokenrequestparameters.md)|令牌请求参数的集合。 每个参数都是一个 XML 元素。|  
   
 ### <a name="parent-elements"></a>父元素  
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<security >](security-element-of-ws2007federationhttpbinding.md)|定义绑定的安全设置。|  
+|[\<security>](security-element-of-ws2007federationhttpbinding.md)|定义绑定的安全设置。|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement.Message%2A>
@@ -138,4 +138,4 @@ ms.locfileid: "73738998"
 - [绑定](../../../wcf/bindings.md)
 - [配置系统提供的绑定](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [使用绑定配置服务和客户端](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding >](bindings.md)
+- [\<binding>](bindings.md)

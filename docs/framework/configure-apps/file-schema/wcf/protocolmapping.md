@@ -3,18 +3,18 @@ title: <protocolMapping>
 ms.date: 03/30/2017
 ms.assetid: 5076644b-1f33-4f26-9488-87de9fcda04c
 ms.openlocfilehash: be4224ef1a8b17653df8123aaf89e105a496355a
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70400023"
 ---
-# <a name="protocolmapping"></a>\<protocolMapping>
-表示用于定义传输协议方案（例如，http、net.tcp、net.pipe 等）和 WCF 绑定之间的一组默认协议映射的配置节。 在运行时创建默认终结点时，Windows Communication Foundation （WCF）将查看已配置的映射，并决定要将哪个绑定用于特定的地址。  
+# \<protocolMapping>
+表示一个配置节，用于定义传输协议方案（如 http、net.tcp、net.pipe 等）和 WCF 绑定之间的一组默认协议映射。 在运行时创建默认终结点时，Windows Communication Foundation （WCF）将查看已配置的映射，并决定要将哪个绑定用于特定的地址。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<protocolMapping >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<protocolMapping>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -34,13 +34,13 @@ ms.locfileid: "70400023"
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
-|[\<filters>](filters-of-routing.md)|包含传输协议方案（例如，http、net.tcp、net.pipe 等）与 WCF 绑定之间的默认协议映射。|  
+|[\<filters>](filters-of-routing.md)|包含传输协议方案（如 http、net.tcp、net.pipe 等）和 WCF 绑定之间的默认协议映射。|  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<system.serviceModel>](system-servicemodel.md)|所有 WCF 配置元素的根元素。|  
   
@@ -60,7 +60,7 @@ ms.locfileid: "70400023"
 </protocolMapping>
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Configuration.ProtocolMappingSection?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Configuration.ProtocolMappingElement?displayProperty=nameWithType>

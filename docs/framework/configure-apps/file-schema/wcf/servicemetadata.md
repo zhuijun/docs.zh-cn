@@ -3,10 +3,10 @@ title: <serviceMetadata>
 ms.date: 03/30/2017
 ms.assetid: 2b4c3b4c-31d4-4908-a9b7-5bb411c221f2
 ms.openlocfilehash: c421273d1d08db047a51f1f1e4f9d6c908f12986
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84201786"
 ---
 # \<serviceMetadata>
@@ -39,21 +39,21 @@ ms.locfileid: "84201786"
   
 ### <a name="attributes"></a>特性  
   
-|特性|说明|  
+|属性|说明|  
 |---------------|-----------------|  
 |externalMetadataLocation|一个包含 WSDL 文件的位置的 URI，该文件将返回到用户以响应 WSDL 和 MEX 请求而非自动生成的 WSDL。 当未设置此属性时，将返回默认的 WSDL。 默认值为空字符串。|  
 |httpGetBinding|一个字符串，指定将用于通过 HTTP GET 进行元数据检索的绑定类型。 此设置是可选的。 如果未指定此设置，则将使用默认绑定。<br /><br /> 仅支持具有支持 <xref:System.ServiceModel.Channels.IReplyChannel> 的内部绑定元素的绑定。 此外，绑定的 <xref:System.ServiceModel.Channels.MessageVersion> 属性必须为 <xref:System.ServiceModel.Channels.MessageVersion.None%2A>。|  
 |httpGetBindingConfiguration|一个字符串，用于设置在 `httpGetBinding` 特性中指定的绑定的名称，此名称引用此绑定的其他配置信息。 必须在 `<bindings>` 节中定义相同的名称。|  
-|httpGetEnabled|一个布尔值，指定是否发布服务元数据以便使用 HTTP/Get 请求进行检索。 默认值为 `false`。<br /><br /> 如果未指定 httpGetUrl 属性，则发布元数据的地址为服务地址加上“?wsdl”。 例如，如果服务地址为，则 `http://localhost:8080/CalculatorService` HTTP/Get 元数据地址为 `http://localhost:8080/CalculatorService?wsdl` 。<br /><br /> 如果此属性为 `false` ，或服务的地址不基于 HTTP 或 HTTPS，则忽略 "？ wsdl"。|  
+|httpGetEnabled|一个布尔值，指定是否发布服务元数据以便使用 HTTP/Get 请求进行检索。 默认为 `false`。<br /><br /> 如果未指定 httpGetUrl 属性，则发布元数据的地址为服务地址加上“?wsdl”。 例如，如果服务地址为，则 `http://localhost:8080/CalculatorService` HTTP/Get 元数据地址为 `http://localhost:8080/CalculatorService?wsdl` 。<br /><br /> 如果此属性为 `false` ，或服务的地址不基于 HTTP 或 HTTPS，则忽略 "？ wsdl"。|  
 |httpGetUrl|一个 URI，指定发布元数据的地址以便使用 HTTP/Get 请求进行检索。 如果指定了相对 Uri，则它将被视为相对于服务的基址。|  
 |httpsGetBinding|一个字符串，指定将用于通过 HTTPS GET 进行元数据检索的绑定类型。 此设置是可选的。 如果未指定此设置，则将使用默认绑定。<br /><br /> 仅支持具有支持 <xref:System.ServiceModel.Channels.IReplyChannel> 的内部绑定元素的绑定。 此外，绑定的 <xref:System.ServiceModel.Channels.MessageVersion> 属性必须为 <xref:System.ServiceModel.Channels.MessageVersion.None%2A>。|  
 |httpsGetBindingConfiguration|一个字符串，用于设置在 `httpsGetBinding` 特性中指定的绑定的名称，此名称引用此绑定的其他配置信息。 必须在 `<bindings>` 节中定义相同的名称。|  
-|httpsGetEnabled|一个布尔值，指定是否发布服务元数据以便使用 HTTPS/Get 请求进行检索。 默认值为 `false`。<br /><br /> 如果未指定 httpsGetUrl 属性，则发布元数据的地址为服务地址加上“?wsdl”。 例如，如果服务地址为 " https://localhost:8080/CalculatorService "，则 HTTP/Get 元数据地址为 " https://localhost:8080/CalculatorService?wsdl "。<br /><br /> 如果此属性为 `false` ，或服务的地址不基于 HTTP 或 HTTPS，则忽略 "？ wsdl"。|  
+|httpsGetEnabled|一个布尔值，指定是否发布服务元数据以便使用 HTTPS/Get 请求进行检索。 默认为 `false`。<br /><br /> 如果未指定 httpsGetUrl 属性，则发布元数据的地址为服务地址加上“?wsdl”。 例如，如果服务地址为 " https://localhost:8080/CalculatorService "，则 HTTP/Get 元数据地址为 " https://localhost:8080/CalculatorService?wsdl "。<br /><br /> 如果此属性为 `false` ，或服务的地址不基于 HTTP 或 HTTPS，则忽略 "？ wsdl"。|  
 |httpsGetUrl|一个 URI，指定发布元数据的地址以便使用 HTTPS/Get 请求进行检索。|  
 |policyVersion|一个字符串，指定所使用的 WS-Policy 规范的版本。 此属性的类型为 <xref:System.ServiceModel.Description.PolicyVersion>。|  
   
 ### <a name="child-elements"></a>子元素  
- None  
+ 无  
   
 ### <a name="parent-elements"></a>父元素  
   
@@ -61,7 +61,7 @@ ms.locfileid: "84201786"
 |-------------|-----------------|  
 |[\<behavior>](behavior-of-endpointbehaviors.md)|指定行为元素。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  此配置元素允许您控制服务的元数据发布功能。 为了避免无意中泄漏可能敏感的服务元数据，Windows Communication Foundation （WCF）服务的默认配置将禁用元数据发布。 默认情况下此行为是安全的，但也意味着你无法使用元数据导入工具（例如 Svcutil.exe）生成调用服务所需的客户端代码，除非在配置中显式启用服务的元数据发布行为。 使用此配置元素，可以为服务启用此发布行为。  
   
  有关配置此行为的详细示例，请参阅[元数据发布行为](../../../wcf/samples/metadata-publishing-behavior.md)。  
@@ -117,7 +117,7 @@ ms.locfileid: "84201786"
 </configuration>
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Configuration.ServiceMetadataPublishingElement>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>

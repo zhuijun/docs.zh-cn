@@ -3,15 +3,15 @@ title: 将 Windows 应用商店应用迁移到 .NET Native
 ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
 ms.openlocfilehash: 987669fc51eeaf7e3bdef3e91a2f1ce23164a055
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "81389707"
 ---
-# <a name="migrate-your-windows-store-app-to-net-native"></a>将 Windows 应用商店应用迁移到 .NET 本机
+# <a name="migrate-your-windows-store-app-to-net-native"></a>将 Windows 应用商店应用迁移到 .NET Native
 
-.NET 本机提供 Windows 应用商店或开发人员计算机上的应用的静态编译。 这不同于及时生成 (JIT) 编译器或 [本地映像生成器 (Ngen.exe)](../tools/ngen-exe-native-image-generator.md) 在该设备上为 Windows 应用商店应用执行的动态编译。 尽管存在差异，.NET 本机尝试与[Windows 应用商店应用的 .NET](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29)保持兼容性。 在大多数情况下，适用于 .NET 的 Windows 应用商店应用的事项也适用于 .NET 本机应用。  然而，在某些情况下，你可能会遇到行为变更。 本文档讨论 Windows 应用商店应用的标准 .NET 和 .NET 本机在以下区域之间的这些差异：
+.NET Native 提供 Windows 应用商店中或开发人员计算机上的应用的静态编译。 这不同于及时生成 (JIT) 编译器或 [本地映像生成器 (Ngen.exe)](../tools/ngen-exe-native-image-generator.md) 在该设备上为 Windows 应用商店应用执行的动态编译。 尽管存在差异，但 .NET Native 会尝试保持与[.net For Windows 应用商店应用](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29)的兼容性。 大多数情况下，适用于 Windows 应用商店应用的 .NET 上的功能也适用于 .NET Native。  然而，在某些情况下，你可能会遇到行为变更。 本文档讨论了 Windows 应用商店应用的标准 .NET 与以下几个方面的 .NET Native 之间的差异：
 
 - [常规运行时差异](#Runtime)
 
@@ -27,38 +27,38 @@ ms.locfileid: "81389707"
 
 ## <a name="general-runtime-differences"></a>常规运行时差异
 
-- <xref:System.TypeLoadException>当应用在通用语言运行时 （CLR） 上运行时，JIT 编译器引发的异常通常会导致 .NET 本机处理时的编译时错误。
+- <xref:System.TypeLoadException>当应用程序在公共语言运行时（CLR）上运行时，由 JIT 编译器引发的异常通常会导致编译时错误，.NET Native 处理时。
 
-- 请勿从一个应用的 UI 线程调用 <xref:System.GC.WaitForPendingFinalizers%2A?displayProperty=nameWithType> 方法。 这可能导致 .NET 本机上死锁。
+- 请勿从一个应用的 UI 线程调用 <xref:System.GC.WaitForPendingFinalizers%2A?displayProperty=nameWithType> 方法。 这可能会导致 .NET Native 死锁。
 
-- 请勿依赖静态类构造函数调用排序。 在 .NET 本机中，调用顺序不同于标准运行时的顺序。 （即使可以使用标准运行时，你也不应依赖静态类构造函数的执行顺序。）
+- 请勿依赖静态类构造函数调用排序。 在 .NET Native 中，调用顺序不同于标准运行时的顺序。 （即使可以使用标准运行时，你也不应依赖静态类构造函数的执行顺序。）
 
 - 不在任何线程上执行调用（例如， `while(true);`）的无线循环可能会使应用异常终止。 同样，长期或无限等待也可能使应用异常终止。
 
-- 某些通用初始化周期不会在 .NET 本机中引发异常。 例如，以下代码导致标准 CLR 上 <xref:System.TypeLoadException> 发生了一个异常。 在 .NET 本机中，它不。
+- 在 .NET Native 中，某些泛型初始化循环不会引发异常。 例如，以下代码导致标准 CLR 上 <xref:System.TypeLoadException> 发生了一个异常。 在 .NET Native 中，它不会。
 
   [!code-csharp[ProjectN#8](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/compat1.cs#8)]
 
-- 在某些情况下，.NET 本机提供 .NET 框架类库的不同实现。 从一个方法返回的对象总是实施返回类型的成员。 然而，由于它的后备实施是不同的，你可能无法像在其他 .NET Framework 平台上的操作一样将其转换到相同的类型集。 例如，在某些情况下，你可能无法将 <xref:System.Collections.Generic.IEnumerable%601> 或 <xref:System.Reflection.TypeInfo.DeclaredMembers%2A?displayProperty=nameWithType> 等方法返回的 <xref:System.Reflection.TypeInfo.DeclaredProperties%2A?displayProperty=nameWithType> 界面对象转换为 `T[]`。
+- 在某些情况下，.NET Native 提供 .NET Framework 类库的不同实现。 从一个方法返回的对象总是实施返回类型的成员。 然而，由于它的后备实施是不同的，你可能无法像在其他 .NET Framework 平台上的操作一样将其转换到相同的类型集。 例如，在某些情况下，你可能无法将 <xref:System.Collections.Generic.IEnumerable%601> 或 <xref:System.Reflection.TypeInfo.DeclaredMembers%2A?displayProperty=nameWithType> 等方法返回的 <xref:System.Reflection.TypeInfo.DeclaredProperties%2A?displayProperty=nameWithType> 界面对象转换为 `T[]`。
 
-- 默认情况下，在 Windows 应用商店应用的 .NET 上未启用 WinInet 缓存，但它位于 .NET 本机上。 这提高了性能但会影响工作集。 开发者无需执行任何操作。
+- Windows 应用商店应用的 .NET 上的 WinInet 缓存默认情况下未启用，但在 .NET Native 上。 这提高了性能但会影响工作集。 开发者无需执行任何操作。
 
 <a name="Dynamic"></a>
 
 ## <a name="dynamic-programming-differences"></a>动态编程差异
 
-.NET 本机静态链接在代码从 .NET 框架，使代码应用本地的最大性能。 然而，由于二进制大小必须保持较小，这就使得整个 .NET Framework 无法进入。 .NET 本机编译器通过使用删除对未使用代码的引用的依赖项缩减程序来解决此限制。 但是，当无法在编译时静态推断该信息，而是在运行时动态检索时，.NET Native 可能无法维护和生成某些类型信息和代码。
+.NET Native 来自 .NET Framework 的代码中的静态链接，以使代码本地应用程序获得最大性能。 然而，由于二进制大小必须保持较小，这就使得整个 .NET Framework 无法进入。 .NET Native 编译器通过使用删除对未使用代码的引用的依赖项化简器来解决此限制。 但是，当不能在编译时静态推断信息，而是在运行时动态检索，.NET Native 可能无法维护或生成某些类型信息和代码。
 
-.NET 本机确实支持反射和动态编程。 然而，并非所有类型都可以标记为反射，因为这会导致生成的代码太大（尤其因为 .NET Framework 中支持反射到公共 API）。 .NET 本机编译器对哪些类型应支持反射做出明智的选择，并且仅保留元数据并仅为这些类型生成代码。
+.NET Native 启用反射和动态编程。 然而，并非所有类型都可以标记为反射，因为这会导致生成的代码太大（尤其因为 .NET Framework 中支持反射到公共 API）。 .NET Native 编译器可以明智地选择哪些类型应支持反射，并且它将保留元数据并仅为这些类型生成代码。
 
-例如，绑定数据需要一个应用能够将属性名映射到函数。 在 Windows 应用商店应用的 .NET 中，公共语言运行时自动使用反射来向托管类型和公开可用的本机类型提供该能力。 在 .NET 本机中，编译器会自动包含绑定数据的类型的元数据。
+例如，绑定数据需要一个应用能够将属性名映射到函数。 在 Windows 应用商店应用的 .NET 中，公共语言运行时自动使用反射来向托管类型和公开可用的本机类型提供该能力。 在 .NET Native 中，编译器将自动包含要将数据绑定到的类型的元数据。
 
-.NET 本机编译器还可以处理常用的泛型类型，如<xref:System.Collections.Generic.List%601><xref:System.Collections.Generic.Dictionary%602>和 ，它们无需任何提示或指令即可工作。 [动态](../../csharp/language-reference/builtin-types/reference-types.md#the-dynamic-type) 关键字在某些限制内也受到支持。
+.NET Native 编译器还可以处理通常使用的泛型类型（如 <xref:System.Collections.Generic.List%601> 和 <xref:System.Collections.Generic.Dictionary%602> ），而无需任何提示或指令。 [动态](../../csharp/language-reference/builtin-types/reference-types.md#the-dynamic-type) 关键字在某些限制内也受到支持。
 
 > [!NOTE]
-> 将应用移植到 .NET 本机时，应彻底测试所有动态代码路径。
+> 在将应用程序移植到 .NET Native 时，应彻底测试所有动态代码路径。
 
-.NET 本机的默认配置对于大多数开发人员来说已经足够了，但一些开发人员可能希望使用运行时指令 （.rd.xml） 文件来微调其配置。 此外，在某些情况下，.NET 本机编译器无法确定哪些元数据必须可供反射，并依赖于提示，尤其是在以下情况下：
+.NET Native 的默认配置对于大多数开发人员来说已经足够，但某些开发人员可能希望通过使用运行时指令（. .xml）文件来微调其配置。 此外，在某些情况下，.NET Native 编译器无法确定哪些元数据必须可用于反射，并依赖于提示，尤其是在以下情况下：
 
 - <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> 和 <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> 等一些构造无法静态确定。
 
@@ -67,15 +67,15 @@ ms.locfileid: "81389707"
 > [!NOTE]
 > 运行时指令是在运行时指令 (.rd.xml) 文件中定义的。 有关使用此文件的常规信息，请参阅[入门](getting-started-with-net-native.md)。 有关运行时指令的信息，请参阅 [Runtime Directives (rd.xml) Configuration File Reference](runtime-directives-rd-xml-configuration-file-reference.md)。
 
-.NET 本机还包括分析工具，可帮助开发人员确定默认集之外应支持反射的类型。
+.NET Native 还包含分析工具，可帮助开发人员确定默认集外的哪些类型应支持反射。
 
 <a name="Reflection"></a>
 
 ## <a name="other-reflection-related-differences"></a>其他与反射相关的差异
 
-Windows 应用商店应用的 .NET 和 .NET 本机应用在行为上存在许多其他与反射相关的差异。
+对于 Windows 应用商店应用和 .NET Native，.NET 中的行为之间存在许多其他与反射相关的不同之处。
 
-在 .NET 本机中：
+在 .NET Native 中：
 
 - 反射到 .NET Framework 类库中的类型和成员的私有反射不受支持。 然而，你可以反射到自己的私有类型和成员以及第三方库的类型和成员。
 
@@ -85,13 +85,13 @@ Windows 应用商店应用的 .NET 和 .NET 本机应用在行为上存在许多
 
 - <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeProperties%2A?displayProperty=nameWithType> 和 <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeEvents%2A?displayProperty=nameWithType> 在基类中包含隐藏成员，因此可能会在没有显示重写的情况下遭到重写。 这也适用于其他 [RuntimeReflectionExtensions.GetRuntime*](xref:System.Reflection.RuntimeReflectionExtensions) 方法。
 
-- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType>并尝试<xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType>创建某些组合（例如，`byref`对象数组）时，不要失败。
+- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType><xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType>如果尝试创建某些组合（例如，对象的数组），则不会失败 `byref` 。
 
 - 你无法使用反射来调用具有指针参数的成员。
 
 - 你无法使用反射来获取或设置一个指针字段。
 
-- 当参数计数错误且其中一个参数的类型不正确时，.NET Native 将引发 而不是<xref:System.ArgumentException>。 <xref:System.Reflection.TargetParameterCountException>
+- 当参数计数错误并且其中一个参数的类型不正确时，.NET Native 引发 <xref:System.ArgumentException> 而不是 <xref:System.Reflection.TargetParameterCountException> 。
 
 - 异常的二进制序列化通常不受支持。 因此，不可序列化的对象可添加到 <xref:System.Exception.Data%2A?displayProperty=nameWithType> 字典。
 
@@ -115,11 +115,11 @@ Windows 应用商店应用的 .NET 和 .NET 本机应用在行为上存在许多
 
 **值类型**
 
-- 如果你替代了一个值类型的 <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> 和 <xref:System.ValueType.GetHashCode%2A?displayProperty=nameWithType> 方法，请勿调用基类实施。 在 Windows 应用商店应用的 .NET 中，这些方法依赖反射。 在编译时，.NET 本机生成不依赖于运行时反射的实现。 这意味着，如果不重写这两种方法，它们将按预期方式工作，因为 .NET Native 会在编译时生成实现。 然而，替代这些方法并调用基类实施会产生一个异常。
+- 如果你替代了一个值类型的 <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> 和 <xref:System.ValueType.GetHashCode%2A?displayProperty=nameWithType> 方法，请勿调用基类实施。 在 Windows 应用商店应用的 .NET 中，这些方法依赖反射。 在编译时，.NET Native 生成一个不依赖运行时反射的实现。 这意味着，如果不重写这两种方法，则它们将按预期方式工作，因为 .NET Native 会在编译时生成实现。 然而，替代这些方法并调用基类实施会产生一个异常。
 
-- 不支持大于 1 MB 的值类型。
+- 不支持大于 1 mb 的值类型。
 
-- 值类型不能在 .NET 本机中具有无参数构造函数。 （C# 和 Visual Basic 禁止对值类型进行无参数构造函数。 然而，这些可以在 IL 中进行创建。）
+- 在 .NET Native 中，值类型不能有无参数的构造函数。 （C # 和 Visual Basic 在值类型上禁止无参数的构造函数。 然而，这些可以在 IL 中进行创建。）
 
 **数组**
 
@@ -147,7 +147,7 @@ Windows 应用商店应用的 .NET 和 .NET 本机应用在行为上存在许多
 
 <xref:System.Runtime.Serialization.KnownTypeAttribute.%23ctor%28System.String%29> 特性不受支持。 使用 <xref:System.Runtime.Serialization.KnownTypeAttribute.%23ctor%28System.Type%29> 特性。
 
-**资源**
+资源
 
 不支持使用带 <xref:System.Diagnostics.Tracing.EventSource> 类的本地化资源。 <xref:System.Diagnostics.Tracing.EventSourceAttribute.LocalizationResources%2A?displayProperty=nameWithType> 属性无法定义本地化资源。
 
@@ -157,35 +157,35 @@ Windows 应用商店应用的 .NET 和 .NET 本机应用在行为上存在许多
 
 **其他 API**
 
-- 如果属性未应用于类型[，TypeInfo.GUID](xref:System.Type.GUID)<xref:System.PlatformNotSupportedException><xref:System.Runtime.InteropServices.GuidAttribute>属性将引发异常。 GUID 主要用于 COM 支持。
+- [TypeInfo.GUID](xref:System.Type.GUID) <xref:System.PlatformNotSupportedException> 如果 <xref:System.Runtime.InteropServices.GuidAttribute> 特性未应用于该类型，则 TypeInfo 属性将引发异常。 GUID 主要用于 COM 支持。
 
-- 该方法<xref:System.DateTime.Parse%2A?displayProperty=nameWithType>正确解析在 .NET 本机中包含短日期的字符串。 然而，它不会继续兼容 Microsoft 知识库文章 [KB2803771](https://support.microsoft.com/kb/2803771) 和 [KB2803755](https://support.microsoft.com/kb/2803755)中描述的日期和时间解析的变更。
+- 此 <xref:System.DateTime.Parse%2A?displayProperty=nameWithType> 方法会正确分析在 .NET Native 中包含短日期的字符串。 然而，它不会继续兼容 Microsoft 知识库文章 [KB2803771](https://support.microsoft.com/kb/2803771) 和 [KB2803755](https://support.microsoft.com/kb/2803755)中描述的日期和时间解析的变更。
 
-- <xref:System.Numerics.BigInteger.ToString%2A?displayProperty=nameWithType>`("E")`在 .NET 本机中正确舍入。 在某些版本的 CLR 中，结果字符串会缩短，而不是舍入。
+- <xref:System.Numerics.BigInteger.ToString%2A?displayProperty=nameWithType>`("E")`在 .NET Native 中正确舍入。 在某些版本的 CLR 中，结果字符串会缩短，而不是舍入。
 
 <a name="HttpClient"></a>
 
 ### <a name="httpclient-differences"></a>HttpClient 差异
 
-在 .NET 本机<xref:System.Net.Http.HttpClientHandler>中，类在内部使用 WinINet（通过<xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter>类），<xref:System.Net.WebRequest>而不是<xref:System.Net.WebResponse>Windows 应用商店应用的标准 .NET 中使用的 和 类。  WinINet 并不支持 <xref:System.Net.Http.HttpClientHandler> 类支持的所有配置选项。  因此：
+在 .NET Native 中， <xref:System.Net.Http.HttpClientHandler> 类在内部使用 WinINet （通过 <xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter> 类），而不是使用 <xref:System.Net.WebRequest> <xref:System.Net.WebResponse> 标准 .Net for Windows 应用商店应用中使用的和类。  WinINet 并不支持 <xref:System.Net.Http.HttpClientHandler> 类支持的所有配置选项。  因此：
 
-- 返回 .NET 本机<xref:System.Net.Http.HttpClientHandler>`false`版时的某些功能属性，而它们`true`返回 Windows 应用商店应用的标准 .NET 中。
+- 的某些功能属性在 <xref:System.Net.Http.HttpClientHandler> .NET Native 上返回 `false` ，而它们 `true` 在 Windows 应用商店应用的标准 .net 中返回。
 
-- 某些配置属性`get`访问器始终返回 .NET 本机上的固定值，该值与 Windows 应用商店应用 .NET 中的默认可配置值不同。
+- 某些配置属性 `get` 访问器始终在 .NET Native 上返回固定值，而此值不同于 Windows 应用商店应用的 .net 中的默认可配置值。
 
 某些额外的行为差异涵盖在以下子节中。
 
-**代理**
+**Proxy**
 
-类<xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter>不支持基于每个请求配置或重写代理。  这意味着 .NET 本机上的所有请求都使用系统配置的代理服务器，或者不使用代理服务器，具体取决于<xref:System.Net.Http.HttpClientHandler.UseProxy%2A?displayProperty=nameWithType>属性的值。  在 Windows 应用商店应用的 .NET 中，代理服务器由 <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> 属性定义。  在 .NET 本机上<xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType>，将 设置为引发`null`<xref:System.PlatformNotSupportedException>异常以外的值。  该<xref:System.Net.Http.HttpClientHandler.SupportsProxy%2A?displayProperty=nameWithType>属性返回`false`.NET 本机，而它`true`返回在 Windows 应用商店应用的标准 .NET 框架中。
+<xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter>类不支持基于每个请求配置或重写代理。  这意味着，.NET Native 上的所有请求都使用系统配置的代理服务器或没有代理服务器，具体取决于属性的值 <xref:System.Net.Http.HttpClientHandler.UseProxy%2A?displayProperty=nameWithType> 。  在 Windows 应用商店应用的 .NET 中，代理服务器由 <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> 属性定义。  在 .NET Native 上，将设置 <xref:System.Net.Http.HttpClientHandler.Proxy%2A?displayProperty=nameWithType> 为之外的值会 `null` 引发 <xref:System.PlatformNotSupportedException> 异常。  <xref:System.Net.Http.HttpClientHandler.SupportsProxy%2A?displayProperty=nameWithType>属性在 `false` .NET Native 上返回，而在 `true` Windows 应用商店应用的标准 .NET Framework 中返回。
 
 **自动重定向**
 
-该<xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter>类不允许配置最大数量的自动重定向。  Windows 应用商店应用的标准 .NET 中 <xref:System.Net.Http.HttpClientHandler.MaxAutomaticRedirections%2A?displayProperty=nameWithType> 属性的值默认为 50，且可修改。 在 .NET 本机上，此属性的值为 10，尝试修改它将引发异常<xref:System.PlatformNotSupportedException>。  该<xref:System.Net.Http.HttpClientHandler.SupportsRedirectConfiguration%2A?displayProperty=nameWithType>属性返回`false`.NET 本机，而该`true`属性返回 .NET 中，用于 Windows 应用商店应用。
+<xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter>类不允许配置最大数目的自动重定向。  Windows 应用商店应用的标准 .NET 中 <xref:System.Net.Http.HttpClientHandler.MaxAutomaticRedirections%2A?displayProperty=nameWithType> 属性的值默认为 50，且可修改。 在 .NET Native 上，此属性的值为10，尝试对其进行修改会引发 <xref:System.PlatformNotSupportedException> 异常。  <xref:System.Net.Http.HttpClientHandler.SupportsRedirectConfiguration%2A?displayProperty=nameWithType>属性在 `false` .NET Native 上返回，而 `true` 在 Windows 应用商店应用的 .net 中返回。
 
 **自动解压缩**
 
-Windows 应用商店应用的 .NET 支持将 <xref:System.Net.Http.HttpClientHandler.AutomaticDecompression%2A?displayProperty=nameWithType> 属性设置为 <xref:System.Net.DecompressionMethods.Deflate>、 <xref:System.Net.DecompressionMethods.GZip>（ <xref:System.Net.DecompressionMethods.Deflate> 和 <xref:System.Net.DecompressionMethods.GZip>都可以）或 <xref:System.Net.DecompressionMethods.None>。  .NET 本机仅<xref:System.Net.DecompressionMethods.Deflate>支持<xref:System.Net.DecompressionMethods.GZip>与<xref:System.Net.DecompressionMethods.None>或 。  尝试仅将 <xref:System.Net.Http.HttpClientHandler.AutomaticDecompression%2A> 属性设置为 <xref:System.Net.DecompressionMethods.Deflate> 或 <xref:System.Net.DecompressionMethods.GZip> 会自动将其设置为 <xref:System.Net.DecompressionMethods.Deflate> 和 <xref:System.Net.DecompressionMethods.GZip>。
+Windows 应用商店应用的 .NET 支持将 <xref:System.Net.Http.HttpClientHandler.AutomaticDecompression%2A?displayProperty=nameWithType> 属性设置为 <xref:System.Net.DecompressionMethods.Deflate>、 <xref:System.Net.DecompressionMethods.GZip>（ <xref:System.Net.DecompressionMethods.Deflate> 和 <xref:System.Net.DecompressionMethods.GZip>都可以）或 <xref:System.Net.DecompressionMethods.None>。  .NET Native 仅支持和 <xref:System.Net.DecompressionMethods.Deflate> <xref:System.Net.DecompressionMethods.GZip> 、或 <xref:System.Net.DecompressionMethods.None> 。  尝试仅将 <xref:System.Net.Http.HttpClientHandler.AutomaticDecompression%2A> 属性设置为 <xref:System.Net.DecompressionMethods.Deflate> 或 <xref:System.Net.DecompressionMethods.GZip> 会自动将其设置为 <xref:System.Net.DecompressionMethods.Deflate> 和 <xref:System.Net.DecompressionMethods.GZip>。
 
 **Cookie**
 
@@ -193,11 +193,11 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 **凭据**
 
-在 Windows 应用商店应用的 .NET 中， <xref:System.Net.Http.HttpClientHandler.UseDefaultCredentials%2A?displayProperty=nameWithType> 和 <xref:System.Net.Http.HttpClientHandler.Credentials%2A?displayProperty=nameWithType> 属性独立工作。  此外， <xref:System.Net.Http.HttpClientHandler.Credentials%2A> 属性接受实施 <xref:System.Net.ICredentials> 接口的任意对象。  在 .NET 本机中<xref:System.Net.Http.HttpClientHandler.UseDefaultCredentials%2A>，将`true`属性设置为<xref:System.Net.Http.HttpClientHandler.Credentials%2A>使属性变为`null`。  此外， <xref:System.Net.Http.HttpClientHandler.Credentials%2A> 属性只能设置为 `null`、 <xref:System.Net.CredentialCache.DefaultCredentials%2A>或类型 <xref:System.Net.NetworkCredential>的对象。  将其他任意 <xref:System.Net.ICredentials> 对象（其中最常见的是 <xref:System.Net.CredentialCache>）分配至 <xref:System.Net.Http.HttpClientHandler.Credentials%2A> 属性都会导致 <xref:System.PlatformNotSupportedException>。
+在 Windows 应用商店应用的 .NET 中， <xref:System.Net.Http.HttpClientHandler.UseDefaultCredentials%2A?displayProperty=nameWithType> 和 <xref:System.Net.Http.HttpClientHandler.Credentials%2A?displayProperty=nameWithType> 属性独立工作。  此外， <xref:System.Net.Http.HttpClientHandler.Credentials%2A> 属性接受实施 <xref:System.Net.ICredentials> 接口的任意对象。  在 .NET Native 中，将 <xref:System.Net.Http.HttpClientHandler.UseDefaultCredentials%2A> 属性设置为 `true` 会导致 <xref:System.Net.Http.HttpClientHandler.Credentials%2A> 属性变为 `null` 。  此外， <xref:System.Net.Http.HttpClientHandler.Credentials%2A> 属性只能设置为 `null`、 <xref:System.Net.CredentialCache.DefaultCredentials%2A>或类型 <xref:System.Net.NetworkCredential>的对象。  将其他任意 <xref:System.Net.ICredentials> 对象（其中最常见的是 <xref:System.Net.CredentialCache>）分配至 <xref:System.Net.Http.HttpClientHandler.Credentials%2A> 属性都会导致 <xref:System.PlatformNotSupportedException>。
 
 **其他不受支持或不可配置的功能**
 
-在 .NET 本机中：
+在 .NET Native 中：
 
 - <xref:System.Net.Http.HttpClientHandler.ClientCertificateOptions%2A?displayProperty=nameWithType> 属性的值始终为 <xref:System.Net.Http.ClientCertificateOption.Automatic>。  在 Windows 应用商店应用的 .NET 中，默认为 <xref:System.Net.Http.ClientCertificateOption.Manual>。
 
@@ -211,9 +211,9 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 ### <a name="interop-differences"></a>互操作差异性
  **弃用的 API**
 
- 多个带有托管代码的不常使用的互操作性 API 已弃用。 当与 .NET 本机一起使用时，这些<xref:System.NotImplementedException>API<xref:System.PlatformNotSupportedException>可能会引发 或 异常，或导致编译器错误。 在 Windows 应用商店应用的 .NET 中，这些 API 标记为废弃，尽管调用这些 API 会生成编译器警告而非编译器错误。
+ 多个带有托管代码的不常使用的互操作性 API 已弃用。 与 .NET Native 一起使用时，这些 Api 可能会引发 <xref:System.NotImplementedException> 或 <xref:System.PlatformNotSupportedException> 异常，或导致编译器错误。 在 Windows 应用商店应用的 .NET 中，这些 API 标记为废弃，尽管调用这些 API 会生成编译器警告而非编译器错误。
 
- 用于`VARIANT`封送的已弃用 API 包括：
+ 封送处理的不推荐使用的 Api `VARIANT` 包括：
 
 - <xref:System.Runtime.InteropServices.BStrWrapper?displayProperty=nameWithType>
 - <xref:System.Runtime.InteropServices.CurrencyWrapper?displayProperty=nameWithType>
@@ -225,27 +225,27 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 - <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>
 - <xref:System.Runtime.InteropServices.VarEnum?displayProperty=nameWithType>
 
- <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType>支持，但在某些情况下，例如与[IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch)或`byref`变体一起使用时，它会引发异常。
+ <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType>支持，但在某些情况下会引发异常，如与[IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch)或 variant 一起使用时 `byref` 。
 
- 用于[IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch)支持的已弃用 API 包括：
+ 适用于[IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch)支持的不推荐使用的 api 包括：
 
 - <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDual?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType>
 
-用于经典 COM 事件的弃用 API 包括：
+适用于经典 COM 事件的不推荐使用的 Api 包括：
 
 - <xref:System.Runtime.InteropServices.ComEventsHelper?displayProperty=nameWithType>
 - <xref:System.Runtime.InteropServices.ComSourceInterfacesAttribute>
 
-接口中<xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType>未支持的已弃用 API（在 .NET 本机中不受支持）包括：
+接口中弃用的 Api <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> ，在 .NET Native 中不受支持，包括：
 
 - <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType>（所有成员）
 - <xref:System.Runtime.InteropServices.CustomQueryInterfaceMode?displayProperty=nameWithType>（所有成员）
 - <xref:System.Runtime.InteropServices.CustomQueryInterfaceResult?displayProperty=nameWithType>（所有成员）
 - <xref:System.Runtime.InteropServices.Marshal.GetComInterfaceForObject%28System.Object%2CSystem.Type%2CSystem.Runtime.InteropServices.CustomQueryInterfaceMode%29?displayProperty=fullName>
 
-其他不支持的互操作功能包括：
+其他不受支持的互操作功能包括：
 
 - <xref:System.Runtime.InteropServices.ICustomAdapter?displayProperty=nameWithType>（所有成员）
 - <xref:System.Runtime.InteropServices.SafeBuffer?displayProperty=nameWithType>（所有成员）
@@ -255,7 +255,7 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 - <xref:System.Runtime.InteropServices.UnmanagedType.AsAny?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.UnmanagedType.CustomMarshaler?displayProperty=fullName>
 
- 很少使用封送 API：
+ 很少使用的封送 Api：
 
 - <xref:System.Runtime.InteropServices.Marshal.ReadByte%28System.Object%2CSystem.Int32%29?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.Marshal.ReadInt16%28System.Object%2CSystem.Int32%29?displayProperty=fullName>
@@ -270,7 +270,7 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
  **平台调用和 COM 互操作兼容性**
 
- 大多数平台调用和 COM 互通方案在 .NET 本机中仍然受支持。 特别地，Windows Runtime (WinRT) API 的所有互操作和 Windows Runtime 所需的所有封送都受支持。 这包括针对以下内容的封送支持：
+ 大多数平台调用和 COM 互操作方案在 .NET Native 中仍受支持。 特别地，Windows Runtime (WinRT) API 的所有互操作和 Windows Runtime 所需的所有封送都受支持。 这包括针对以下内容的封送支持：
 
 - 阵列（包括 <xref:System.Runtime.InteropServices.UnmanagedType.ByValArray?displayProperty=nameWithType>）
 
@@ -318,13 +318,13 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
   - [IUnknown](/windows/desktop/api/unknwn/nn-unknwn-iunknown)
 
-但是，.NET 本机不支持以下内容：
+但 .NET Native 不支持以下操作：
 
 - 使用经典 COM 事件
 
 - 在托管类型上实施 <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> 接口
 
-- 通过 [属性，在托管类型上实现](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) IDispatch <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> 接口。 但是，不能通过`IDispatch`调用 COM 对象，并且托管对象无法实现`IDispatch`。
+- 通过 [属性，在托管类型上实现](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) IDispatch <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> 接口。 但是，你无法通过调用 COM 对象 `IDispatch` ，而且你的托管对象无法实现 `IDispatch` 。
 
 使用反射来调用平台调用方法不受支持。 你可以巧妙绕过这种限制，具体做法是将方法调用包装在另一种方法中，并使用反射调用包装方法。
 
@@ -332,11 +332,11 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 ### <a name="other-differences-from-net-apis-for-windows-store-apps"></a>与 Windows 应用商店应用 .NET API 的其他差异
 
-本节列出了 .NET 本机中不支持的剩余 API。 最大的一组不支持的 API 是 Windows 通信基础 （WCF） API。
+本部分列出了 .NET Native 不支持的其余 Api。 不受支持的最大 Api 集是 Windows Communication Foundation （WCF） Api。
 
 **DataAnnotations (System.ComponentModel.DataAnnotations)**
 
-.NET 本机<xref:System.ComponentModel.DataAnnotations>中<xref:System.ComponentModel.DataAnnotations.Schema>不支持 和 命名空间中的类型。 这些类型包括 Windows 8 Windows 应用商店应用的 .NET 中存在的以下类型：
+<xref:System.ComponentModel.DataAnnotations> <xref:System.ComponentModel.DataAnnotations.Schema> .NET Native 不支持和命名空间中的类型。 其中包括适用于 Windows 8 的 Windows 应用商店应用的 .NET 中出现的以下类型：
 
 - <xref:System.ComponentModel.DataAnnotations.AssociationAttribute?displayProperty=nameWithType>
 - <xref:System.ComponentModel.DataAnnotations.ConcurrencyCheckAttribute?displayProperty=nameWithType>
@@ -366,7 +366,7 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
  **Visual Basic**
 
-视觉基本版当前不受 .NET 本机版的支持。 <xref:Microsoft.VisualBasic>和<xref:Microsoft.VisualBasic.CompilerServices>命名空间中的以下类型在 .NET 本机中不可用：
+.NET Native 当前不支持 Visual Basic。 和命名空间中的以下类型在 <xref:Microsoft.VisualBasic> <xref:Microsoft.VisualBasic.CompilerServices> .NET Native 中不可用：
 
 - <xref:Microsoft.VisualBasic.CallType?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Constants?displayProperty=nameWithType>
@@ -388,15 +388,15 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 **反射上下文（System.Reflection.Context 命名空间）**
 
-在<xref:System.Reflection.Context.CustomReflectionContext?displayProperty=nameWithType>.NET 本机中不支持该类。
+<xref:System.Reflection.Context.CustomReflectionContext?displayProperty=nameWithType>.NET Native 中不支持类。
 
 **RTC (System.Net.Http.Rtc)**
 
-在`System.Net.Http.RtcRequestFactory`.NET 本机中不支持该类。
+`System.Net.Http.RtcRequestFactory`.NET Native 中不支持类。
 
 **Windows Communication Foundation (WCF) (System.ServiceModel.\*)**
 
-.NET 本机中不支持[System.ServiceModel.* 命名空间](xref:System.ServiceModel)中的类型。 这些类型包括以下类型：
+.NET Native 中不支持[system.servicemodel. * 命名空间](xref:System.ServiceModel)中的类型。 这包括以下类型：
 
 - <xref:System.ServiceModel.ActionNotSupportedException?displayProperty=nameWithType>
 - <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>
@@ -581,7 +581,7 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 与 <xref:System.Runtime.Serialization.DataContractSerializer>、 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>和 <xref:System.Xml.Serialization.XmlSerializer> 类的序列化和反序列化有关的以下差异：
 
-- 在 .NET<xref:System.Runtime.Serialization.DataContractSerializer>本机<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>中，无法序列化或去序列化具有其类型不是根序列化类型的基类成员的派生类。 例如，在以下代码中，尝试序列化或反序列化 `Y` 会导致出现错误：
+- 在 .NET Native 中， <xref:System.Runtime.Serialization.DataContractSerializer> 和 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 无法序列化或反序列化一个派生类，该派生类具有类型不是根序列化类型的基类成员。 例如，在以下代码中，尝试序列化或反序列化 `Y` 会导致出现错误：
 
   [!code-csharp[ProjectN#10](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/compat3.cs#10)]
 
@@ -631,7 +631,7 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 - <xref:System.Xml.Serialization.XmlSerializer> 不兼容 <xref:System.Xml.Serialization.IXmlSerializable> 自定义序列化接口。 如果你的类实施此接口， <xref:System.Xml.Serialization.XmlSerializer> 会考虑普通旧 CLR 对象 (POCO) 类型并仅对其公共属性进行序列化。
 
-- 序列化普通<xref:System.Exception>对象不能很好地使用<xref:System.Runtime.Serialization.DataContractSerializer>和<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>。
+- 序列化纯 <xref:System.Exception> 对象并不适合 <xref:System.Runtime.Serialization.DataContractSerializer> 和 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 。
 
 <a name="VS"></a>
 
@@ -639,13 +639,13 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 **异常和调试**
 
-当您在调试器中运行使用 .NET 本机编译的应用程序时，为以下异常类型启用第一次异常：
+在调试器中运行使用 .NET Native 编译的应用时，会为以下异常类型启用第一次异常：
 
 - <xref:System.MemberAccessException>
 
 - <xref:System.TypeAccessException>
 
-**构建应用**
+**构建应用程序**
 
 使用 Visual Studio 默认使用的 x86 构建工具。 我们不推荐使用 AMD64 MSBuild 工具（位置路径为 C:\Program Files (x86)\MSBuild\12.0\bin\amd64），因为这些工具会导致构建问题。
 
@@ -659,11 +659,11 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 **单元测试库项目**
 
-不支持在 Windows 应用商店应用项目的单位测试库中启用 .NET 本机，并导致项目无法生成。
+不支持在 Windows 应用商店应用项目的单元测试库上启用 .NET Native，并导致项目未能生成。
 
 ## <a name="see-also"></a>另请参阅
 
 - [入门](getting-started-with-net-native.md)
 - [运行时指令 (rd.xml) 配置文件引用](runtime-directives-rd-xml-configuration-file-reference.md)
-- [.NET 用于 Windows 应用商店应用概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29)
+- [适用于 Windows 应用商店应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29)
 - [.NET Framework 对 Windows 应用商店应用程序和 Windows 运行时的支持情况](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)

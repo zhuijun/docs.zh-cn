@@ -3,20 +3,20 @@ title: <claimTypeRequirements> 元素
 ms.date: 03/30/2017
 ms.assetid: a26efe73-4bad-4731-8cad-27f00d54354b
 ms.openlocfilehash: b4d8479dd9a24774afbd0549caf9e261f55fa147
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69926143"
 ---
-# <a name="claimtyperequirements-element"></a>\<claimTypeRequirements > 元素
+# <a name="claimtyperequirements-element"></a>\<claimTypeRequirements> 元素
 指定所需声明类型的集合。  
   
  在联合方案中，服务规定有关传入凭据的要求。 例如，传入凭据必须具有某组声明类型。 此集合中的每个子元素都指定希望出现在联合凭据中的必选和可选的声明类型。  
   
  声明类型需求由在已颁发令牌中请求的声明类型的 URI 和布尔参数组成，其中布尔参数可指示该声明类型在已颁发的令牌中是必选还是可选的。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.ClaimTypeRequirements%2A>
 - <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement.ClaimTypeRequirements%2A>

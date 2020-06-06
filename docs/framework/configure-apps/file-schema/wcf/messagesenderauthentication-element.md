@@ -3,25 +3,25 @@ title: <messageSenderAuthentication> 元素
 ms.date: 03/30/2017
 ms.assetid: 8d979dfc-a6f9-42ec-96d5-7fbc13a48118
 ms.openlocfilehash: bab0e50d7feba3ea55d505be07cfa41427a5cbbc
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70397778"
 ---
-# <a name="messagesenderauthentication-element"></a>\<n > 元素
+# <a name="messagesenderauthentication-element"></a>\<messageSenderAuthentication> 元素
 指定用于对等消息发送方的身份验证选项。  
   
  有关对等编程的详细信息，请参阅对等[网络](../../../wcf/feature-details/peer-to-peer-networking.md)。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<行为 >** ](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<行为 >** ](behavior-of-endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clientCredentials >** ](clientcredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<对等 >** ](peer-of-clientcredentials-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<n >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<endpointBehaviors>**](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<clientCredentials>**](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<peer>**](peer-of-clientcredentials-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<messageSenderAuthentication>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -37,7 +37,7 @@ ms.locfileid: "70397778"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |`customCertificateValidatorType`|一个用于验证自定义类型的类型和程序集。 当 `certificateValidationMode` 设置为 `Custom` 时，必须设置此属性。|  
 |`certificateValidationMode`|指定用来验证凭据的三种模式之一。 如果设置为 `Custom`，则还必须提供 `customCertificateValidator`。|  
@@ -46,27 +46,27 @@ ms.locfileid: "70397778"
   
 ## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType 属性  
   
-|值|描述|  
+|值|说明|  
 |-----------|-----------------|  
-|String|可选。 指定类型名称和程序集以及用于查找类型的其他数据。 至少需要命名空间和类型名称。 可选信息包括：程序集名称、版本号、区域性和公钥标记。|  
+|字符串|可选。 指定类型名称和程序集以及用于查找类型的其他数据。 至少需要命名空间和类型名称。 可选信息包括：程序集名称、版本号、区域性和公钥标记。|  
   
 ## <a name="certificatevalidationmode-attribute"></a>certificateValidationMode 属性  
   
-|值|描述|  
+|值|说明|  
 |-----------|-----------------|  
-|枚举|可选。 下列值之一：`None`、`PeerTrust`、`ChainTrust`、`PeerOrChainTrust` 和 `Custom`。 默认值为 `ChainTrust`。 默认值为 `ChainTrust`。<br /><br /> 有关详细信息，请参阅使用[证书](../../../wcf/feature-details/working-with-certificates.md)。|  
+|枚举|可选。 下列值之一：`None`、`PeerTrust`、`ChainTrust`、`PeerOrChainTrust` 和 `Custom`。 默认为 `ChainTrust`。 默认为 `ChainTrust`。<br /><br /> 有关详细信息，请参阅使用[证书](../../../wcf/feature-details/working-with-certificates.md)。|  
   
 ## <a name="revocationmode-attribute"></a>revocationMode 属性  
   
-|值|描述|  
+|值|说明|  
 |-----------|-----------------|  
-|枚举|下列值之一：`NoCheck`、`Online` 和 `Offline`。 默认值为 `Online`。<br /><br /> 有关详细信息，请参阅使用[证书](../../../wcf/feature-details/working-with-certificates.md)。|  
+|枚举|下列值之一：`NoCheck`、`Online` 和 `Offline`。 默认为 `Online`。<br /><br /> 有关详细信息，请参阅使用[证书](../../../wcf/feature-details/working-with-certificates.md)。|  
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation 属性  
   
-|值|描述|  
+|值|说明|  
 |-----------|-----------------|  
-|枚举|下列值之一：`LocalMachine` 或 `CurrentUser`。 默认值为 `CurrentUser`。 如果客户端应用程序在系统帐户下运行，则证书通常位于 `LocalMachine`。 如果客户端应用程序在用户帐户下运行，则证书通常位于 `CurrentUser`。 默认值为 `CurrentUser`。|  
+|枚举|以下值之一：`LocalMachine` 或 `CurrentUser`。 默认为 `CurrentUser`。 如果客户端应用程序在系统帐户下运行，则证书通常位于 `LocalMachine`。 如果客户端应用程序在用户帐户下运行，则证书通常位于 `CurrentUser`。 默认为 `CurrentUser`。|  
   
 ### <a name="child-elements"></a>子元素  
  无。  
@@ -77,8 +77,8 @@ ms.locfileid: "70397778"
 |-------------|-----------------|  
 |[\<peer>](peer-of-clientcredentials-element.md)|指定一个用于向对等服务证明客户端身份的凭据。|  
   
-## <a name="remarks"></a>备注  
- 如果选择了消息身份验证，则必须配置此元素。 对于输出通道，每条消息都使用[ \<证书 >](certificate-element.md)提供的证书进行签名。 在将任一消息传递到应用程序之前，都会使用由此元素的 `customCertificateValidatorType` 属性指定的验证程序对照消息凭据对其进行检查。 验证程序可以接受或拒绝凭据。  
+## <a name="remarks"></a>注解  
+ 如果选择了消息身份验证，则必须配置此元素。 对于输出通道，每条消息都使用提供的证书进行签名 [\<certificate>](certificate-element.md) 。 在将任一消息传递到应用程序之前，都会使用由此元素的 `customCertificateValidatorType` 属性指定的验证程序对照消息凭据对其进行检查。 验证程序可以接受或拒绝凭据。  
   
 ## <a name="example"></a>示例  
  下面的代码将消息发送方验证模式设置为 `PeerOrChainTrust`。  
@@ -101,7 +101,7 @@ ms.locfileid: "70397778"
 </behaviors>
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>
 - <xref:System.ServiceModel.Security.PeerCredential.MessageSenderAuthentication%2A>

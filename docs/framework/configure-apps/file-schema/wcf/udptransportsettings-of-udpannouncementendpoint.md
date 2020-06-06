@@ -3,20 +3,20 @@ title: <udpTransportSettings> 的 <udpAnnouncementEndpoint>
 ms.date: 03/30/2017
 ms.assetid: a7ddff1a-5eed-4bbc-8580-b95ef8890e1f
 ms.openlocfilehash: b67bdf825948dffe18aabe91b0de236eb929bccc
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70854852"
 ---
-# <a name="udptransportsettings-of-udpannouncementendpoint"></a>\<udpannouncementendpoint > \<udptransportsettings >
-此配置元素显示[ \<udptransportsettings >](udpannouncementendpoint.md)的 UDP 传输设置。  
+# <a name="udptransportsettings-of-udpannouncementendpoint"></a>\<udpTransportSettings> 的 \<udpAnnouncementEndpoint>
+此配置元素公开的 UDP 传输设置 [\<udpAnnouncementEndpoint>](udpannouncementendpoint.md) 。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<standardEndpoints >** ](standardendpoints.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<Udptransportsettings >** ](udpannouncementendpoint.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<updTransportSettings >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<standardEndpoints>**](standardendpoints.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<udpAnnouncementEndpoint>**](udpannouncementendpoint.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<updTransportSettings>**  
 
 ## <a name="syntax"></a>语法  
   
@@ -45,7 +45,7 @@ ms.locfileid: "70854852"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |duplicateMessageHistoryLength|一个整数，指定传输用于标识重复消息的最大消息哈希数。  将在 TransportManager 级别进行重复检测。 将此属性设置为 0 即可禁用重复检测。<br /><br /> 系统管理员或开发人员可以使用此特性关闭重复消息检测算法。 如果您希望实现自己的重复检测算法，可能需要这一功能。<br /><br /> 默认值为 4112。|  
 |maxBufferPoolSize|一个整数，指定传输使用的任何缓冲池的最大大小。|  
@@ -66,6 +66,6 @@ ms.locfileid: "70854852"
 |-------------|-----------------|  
 |[\<udpAnnouncementEndpoint>](udpannouncementendpoint.md)|具有固定公告协定和 UDP 传输绑定的标准终结点。|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Discovery.UdpTransportSettings>
