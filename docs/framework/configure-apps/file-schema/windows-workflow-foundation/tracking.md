@@ -4,22 +4,22 @@ ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: fd9b50ed-98a1-4518-836d-e4e02c670822
 ms.openlocfilehash: 968cfa8e5402458afd6f13545ed999a472adf2e0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79151905"
 ---
-# <a name="tracking"></a><span data-ttu-id="9335e-101">\<跟踪></span><span class="sxs-lookup"><span data-stu-id="9335e-101">\<tracking></span></span>
-<span data-ttu-id="9335e-102">表示一个配置节，用于定义工作流服务的跟踪设置。</span><span class="sxs-lookup"><span data-stu-id="9335e-102">Represents a configuration section for defining tracking settings for a workflow service.</span></span>  
+# \<tracking>
+<span data-ttu-id="e20ec-101">表示一个配置节，用于定义工作流服务的跟踪设置。</span><span class="sxs-lookup"><span data-stu-id="e20ec-101">Represents a configuration section for defining tracking settings for a workflow service.</span></span>  
   
- <span data-ttu-id="9335e-103">有关工作流跟踪及其配置的详细信息，请参阅工作流[的工作流跟踪和跟踪](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)和[配置跟踪](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md)。</span><span class="sxs-lookup"><span data-stu-id="9335e-103">For more information in workflow tracking and its configuration, see [Workflow Tracking and Tracing](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) and [Configuring Tracking for a Workflow](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md).</span></span>  
+ <span data-ttu-id="e20ec-102">有关工作流跟踪及其配置的详细信息，请参阅工作流[跟踪和跟踪](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)和[配置工作流跟踪](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md)。</span><span class="sxs-lookup"><span data-stu-id="e20ec-102">For more information in workflow tracking and its configuration, see [Workflow Tracking and Tracing](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) and [Configuring Tracking for a Workflow](../../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md).</span></span>  
   
-<span data-ttu-id="9335e-104">[**\<配置>**](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="9335e-104">[**\<configuration>**](../configuration-element.md)</span></span>\
-<span data-ttu-id="9335e-105">&nbsp;&nbsp;[**\<系统。服务模式>**](system-servicemodel-of-workflow.md)</span><span class="sxs-lookup"><span data-stu-id="9335e-105">&nbsp;&nbsp;[**\<system.ServiceModel>**](system-servicemodel-of-workflow.md)</span></span>\
-<span data-ttu-id="9335e-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<跟踪>**</span><span class="sxs-lookup"><span data-stu-id="9335e-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<tracking>**</span></span>  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.ServiceModel>**](system-servicemodel-of-workflow.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<tracking>**  
   
-## <a name="syntax"></a><span data-ttu-id="9335e-107">语法</span><span class="sxs-lookup"><span data-stu-id="9335e-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e20ec-103">语法</span><span class="sxs-lookup"><span data-stu-id="e20ec-103">Syntax</span></span>  
   
 ```xml  
 <system.serviceModel>
@@ -77,29 +77,29 @@ ms.locfileid: "79151905"
 </system.serviceModel>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="9335e-108">特性和元素</span><span class="sxs-lookup"><span data-stu-id="9335e-108">Attributes and Elements</span></span>  
- <span data-ttu-id="9335e-109">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="9335e-109">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="e20ec-104">特性和元素</span><span class="sxs-lookup"><span data-stu-id="e20ec-104">Attributes and Elements</span></span>  
+ <span data-ttu-id="e20ec-105">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="e20ec-105">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="9335e-110">属性</span><span class="sxs-lookup"><span data-stu-id="9335e-110">Attributes</span></span>  
- <span data-ttu-id="9335e-111">无。</span><span class="sxs-lookup"><span data-stu-id="9335e-111">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="e20ec-106">特性</span><span class="sxs-lookup"><span data-stu-id="e20ec-106">Attributes</span></span>  
+ <span data-ttu-id="e20ec-107">无。</span><span class="sxs-lookup"><span data-stu-id="e20ec-107">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="9335e-112">子元素</span><span class="sxs-lookup"><span data-stu-id="9335e-112">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="e20ec-108">子元素</span><span class="sxs-lookup"><span data-stu-id="e20ec-108">Child Elements</span></span>  
   
-|<span data-ttu-id="9335e-113">元素</span><span class="sxs-lookup"><span data-stu-id="9335e-113">Element</span></span>|<span data-ttu-id="9335e-114">说明</span><span class="sxs-lookup"><span data-stu-id="9335e-114">Description</span></span>|  
+|<span data-ttu-id="e20ec-109">元素</span><span class="sxs-lookup"><span data-stu-id="e20ec-109">Element</span></span>|<span data-ttu-id="e20ec-110">说明</span><span class="sxs-lookup"><span data-stu-id="e20ec-110">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="9335e-115">\<参与者></span><span class="sxs-lookup"><span data-stu-id="9335e-115">\<participants></span></span>](participants.md)|<span data-ttu-id="9335e-116">一个配置元素集合，这些元素定义了订阅跟踪记录的参与者。</span><span class="sxs-lookup"><span data-stu-id="9335e-116">A collection of configuration elements defining participants that subscribe to tracking records.</span></span> <span data-ttu-id="9335e-117">跟踪参与者包含用于处理跟踪记录中负载的逻辑（例如，它们可以选择向某个文件中写入）。</span><span class="sxs-lookup"><span data-stu-id="9335e-117">The tracking participants contain the logic to process the payload from the tracking records (for example, they could choose to write to a file).</span></span>|  
-|[<span data-ttu-id="9335e-118">\<跟踪配置文件></span><span class="sxs-lookup"><span data-stu-id="9335e-118">\<trackingProfile></span></span>](trackingprofile.md)|<span data-ttu-id="9335e-119">一个跟踪配置文件，用于筛选从工作流实例发出的跟踪记录。</span><span class="sxs-lookup"><span data-stu-id="9335e-119">A tracking profile to filter tracking records emitted from a workflow instance.</span></span>|  
+|[\<participants>](participants.md)|<span data-ttu-id="e20ec-111">一个配置元素集合，这些元素定义了订阅跟踪记录的参与者。</span><span class="sxs-lookup"><span data-stu-id="e20ec-111">A collection of configuration elements defining participants that subscribe to tracking records.</span></span> <span data-ttu-id="e20ec-112">跟踪参与者包含用于处理跟踪记录中负载的逻辑（例如，它们可以选择向某个文件中写入）。</span><span class="sxs-lookup"><span data-stu-id="e20ec-112">The tracking participants contain the logic to process the payload from the tracking records (for example, they could choose to write to a file).</span></span>|  
+|[\<trackingProfile>](trackingprofile.md)|<span data-ttu-id="e20ec-113">一个跟踪配置文件，用于筛选从工作流实例发出的跟踪记录。</span><span class="sxs-lookup"><span data-stu-id="e20ec-113">A tracking profile to filter tracking records emitted from a workflow instance.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="9335e-120">父元素</span><span class="sxs-lookup"><span data-stu-id="9335e-120">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="e20ec-114">父元素</span><span class="sxs-lookup"><span data-stu-id="e20ec-114">Parent Elements</span></span>  
   
-|<span data-ttu-id="9335e-121">元素</span><span class="sxs-lookup"><span data-stu-id="9335e-121">Element</span></span>|<span data-ttu-id="9335e-122">说明</span><span class="sxs-lookup"><span data-stu-id="9335e-122">Description</span></span>|  
+|<span data-ttu-id="e20ec-115">元素</span><span class="sxs-lookup"><span data-stu-id="e20ec-115">Element</span></span>|<span data-ttu-id="e20ec-116">说明</span><span class="sxs-lookup"><span data-stu-id="e20ec-116">Description</span></span>|  
 |-------------|-----------------|  
-|<span data-ttu-id="9335e-123">system.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="9335e-123">system.ServiceModel</span></span>|<span data-ttu-id="9335e-124">所有工作流配置元素的根元素。</span><span class="sxs-lookup"><span data-stu-id="9335e-124">The root element of all workflow configuration elements.</span></span>|  
+|<span data-ttu-id="e20ec-117">system.ServiceModel</span><span class="sxs-lookup"><span data-stu-id="e20ec-117">system.ServiceModel</span></span>|<span data-ttu-id="e20ec-118">所有工作流配置元素的根元素。</span><span class="sxs-lookup"><span data-stu-id="e20ec-118">The root element of all workflow configuration elements.</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="9335e-125">备注</span><span class="sxs-lookup"><span data-stu-id="9335e-125">Remarks</span></span>  
- <span data-ttu-id="9335e-126">利用跟踪可以检查工作流的执行。</span><span class="sxs-lookup"><span data-stu-id="9335e-126">Tracking provides you with the ability to examine the execution of a workflow.</span></span> <span data-ttu-id="9335e-127">工作流跟踪基础结构检测工作流以发出反应执行期间关键事件的记录。</span><span class="sxs-lookup"><span data-stu-id="9335e-127">The workflow tracking infrastructure instruments a workflow to emit records reflecting key events during the execution.</span></span> <span data-ttu-id="9335e-128">例如，工作流实例开始或完成时会发出跟踪记录。</span><span class="sxs-lookup"><span data-stu-id="9335e-128">For example, when a workflow instance starts or completes tracking records are emitted.</span></span> <span data-ttu-id="9335e-129">跟踪还可以提取与工作流变量关联的相关业务数据。</span><span class="sxs-lookup"><span data-stu-id="9335e-129">Tracking can also extract business relevant data associated with the workflow variables.</span></span> <span data-ttu-id="9335e-130">例如，如果工作流表示一个订单处理系统，则可以提取订单 ID 以及跟踪记录。</span><span class="sxs-lookup"><span data-stu-id="9335e-130">For example, if the workflow represents an order processing system the order id can be extracted along with the tracking record.</span></span> <span data-ttu-id="9335e-131">一般来讲，启用 WF 跟踪便于对工作流的执行进行诊断或业务分析。</span><span class="sxs-lookup"><span data-stu-id="9335e-131">In general, enabling WF tracking facilitates diagnostics or business analytics over a workflow execution.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="e20ec-119">注解</span><span class="sxs-lookup"><span data-stu-id="e20ec-119">Remarks</span></span>  
+ <span data-ttu-id="e20ec-120">利用跟踪可以检查工作流的执行。</span><span class="sxs-lookup"><span data-stu-id="e20ec-120">Tracking provides you with the ability to examine the execution of a workflow.</span></span> <span data-ttu-id="e20ec-121">工作流跟踪基础结构检测工作流以发出反应执行期间关键事件的记录。</span><span class="sxs-lookup"><span data-stu-id="e20ec-121">The workflow tracking infrastructure instruments a workflow to emit records reflecting key events during the execution.</span></span> <span data-ttu-id="e20ec-122">例如，工作流实例开始或完成时会发出跟踪记录。</span><span class="sxs-lookup"><span data-stu-id="e20ec-122">For example, when a workflow instance starts or completes tracking records are emitted.</span></span> <span data-ttu-id="e20ec-123">跟踪还可以提取与工作流变量关联的相关业务数据。</span><span class="sxs-lookup"><span data-stu-id="e20ec-123">Tracking can also extract business relevant data associated with the workflow variables.</span></span> <span data-ttu-id="e20ec-124">例如，如果工作流表示一个订单处理系统，则可以提取订单 ID 以及跟踪记录。</span><span class="sxs-lookup"><span data-stu-id="e20ec-124">For example, if the workflow represents an order processing system the order id can be extracted along with the tracking record.</span></span> <span data-ttu-id="e20ec-125">一般来讲，启用 WF 跟踪便于对工作流的执行进行诊断或业务分析。</span><span class="sxs-lookup"><span data-stu-id="e20ec-125">In general, enabling WF tracking facilitates diagnostics or business analytics over a workflow execution.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9335e-132">另请参阅</span><span class="sxs-lookup"><span data-stu-id="9335e-132">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e20ec-126">另请参阅</span><span class="sxs-lookup"><span data-stu-id="e20ec-126">See also</span></span>
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.TrackingSection?displayProperty=nameWithType>
-- [<span data-ttu-id="9335e-133">工作流跟踪</span><span class="sxs-lookup"><span data-stu-id="9335e-133">Workflow Tracking and Tracing</span></span>](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)
+- [<span data-ttu-id="e20ec-127">工作流跟踪</span><span class="sxs-lookup"><span data-stu-id="e20ec-127">Workflow Tracking and Tracing</span></span>](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)

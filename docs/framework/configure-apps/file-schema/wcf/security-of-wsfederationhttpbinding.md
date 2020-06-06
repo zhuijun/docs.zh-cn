@@ -3,23 +3,23 @@ title: <security> 的 <wsFederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: a8e5e854-b8dc-4921-843d-34b6a4a6a8ba
 ms.openlocfilehash: ea029444cee331a235c7a2fc140b4321d7530063
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73736326"
 ---
-# <a name="security-of-wsfederationhttpbinding"></a><span data-ttu-id="38a30-102">\<wsFederationHttpBinding 的安全 > \<</span><span class="sxs-lookup"><span data-stu-id="38a30-102">\<security> of \<wsFederationHttpBinding></span></span>
-<span data-ttu-id="38a30-103">定义[\<wsFederationHttpBinding >](wsfederationhttpbinding.md)的安全设置。</span><span class="sxs-lookup"><span data-stu-id="38a30-103">Defines the security settings of the [\<wsFederationHttpBinding>](wsfederationhttpbinding.md).</span></span>  
+# <a name="security-of-wsfederationhttpbinding"></a><span data-ttu-id="a659e-102">\<security> 的 \<wsFederationHttpBinding></span><span class="sxs-lookup"><span data-stu-id="a659e-102">\<security> of \<wsFederationHttpBinding></span></span>
+<span data-ttu-id="a659e-103">定义的安全设置 [\<wsFederationHttpBinding>](wsfederationhttpbinding.md) 。</span><span class="sxs-lookup"><span data-stu-id="a659e-103">Defines the security settings of the [\<wsFederationHttpBinding>](wsfederationhttpbinding.md).</span></span>  
   
-<span data-ttu-id="38a30-104">[ **\<configuration>** ](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="38a30-104">[**\<configuration>**](../configuration-element.md)</span></span>\
-<span data-ttu-id="38a30-105">\<system &nbsp; &nbsp;[ **>** ](system-servicemodel.md) </span><span class="sxs-lookup"><span data-stu-id="38a30-105">&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)</span></span>\
-<span data-ttu-id="38a30-106">&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)</span><span class="sxs-lookup"><span data-stu-id="38a30-106">&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)</span></span>\
-<span data-ttu-id="38a30-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<wsFederationHttpBinding >** ](wsfederationhttpbinding.md)</span><span class="sxs-lookup"><span data-stu-id="38a30-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<wsFederationHttpBinding>**](wsfederationhttpbinding.md)</span></span>\
-<span data-ttu-id="38a30-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** </span><span class="sxs-lookup"><span data-stu-id="38a30-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**</span></span>\
-<span data-ttu-id="38a30-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<** ></span><span class="sxs-lookup"><span data-stu-id="38a30-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<security>**</span></span>  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<wsFederationHttpBinding>**](wsfederationhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<security>**  
   
-## <a name="syntax"></a><span data-ttu-id="38a30-110">语法</span><span class="sxs-lookup"><span data-stu-id="38a30-110">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="a659e-104">语法</span><span class="sxs-lookup"><span data-stu-id="a659e-104">Syntax</span></span>  
   
 ```xml  
 <wsFederationBinding>
@@ -79,45 +79,45 @@ ms.locfileid: "73736326"
 </wsFederationBinding>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="38a30-111">特性和元素</span><span class="sxs-lookup"><span data-stu-id="38a30-111">Attributes and Elements</span></span>  
- <span data-ttu-id="38a30-112">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="38a30-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="a659e-105">特性和元素</span><span class="sxs-lookup"><span data-stu-id="a659e-105">Attributes and Elements</span></span>  
+ <span data-ttu-id="a659e-106">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="a659e-106">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="38a30-113">特性</span><span class="sxs-lookup"><span data-stu-id="38a30-113">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="a659e-107">特性</span><span class="sxs-lookup"><span data-stu-id="a659e-107">Attributes</span></span>  
   
-|<span data-ttu-id="38a30-114">特性</span><span class="sxs-lookup"><span data-stu-id="38a30-114">Attribute</span></span>|<span data-ttu-id="38a30-115">描述</span><span class="sxs-lookup"><span data-stu-id="38a30-115">Description</span></span>|  
+|<span data-ttu-id="a659e-108">属性</span><span class="sxs-lookup"><span data-stu-id="a659e-108">Attribute</span></span>|<span data-ttu-id="a659e-109">说明</span><span class="sxs-lookup"><span data-stu-id="a659e-109">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="38a30-116">模式</span><span class="sxs-lookup"><span data-stu-id="38a30-116">Mode</span></span>|<span data-ttu-id="38a30-117">可选。</span><span class="sxs-lookup"><span data-stu-id="38a30-117">Optional.</span></span> <span data-ttu-id="38a30-118">指定所应用的安全类型。</span><span class="sxs-lookup"><span data-stu-id="38a30-118">Specifies the type of security that is applied.</span></span> <span data-ttu-id="38a30-119">默认值为 `Message`。</span><span class="sxs-lookup"><span data-stu-id="38a30-119">The default value is `Message`.</span></span> <span data-ttu-id="38a30-120">此属性的类型为 <xref:System.ServiceModel.WSFederationHttpSecurityMode>。</span><span class="sxs-lookup"><span data-stu-id="38a30-120">This attribute is of type <xref:System.ServiceModel.WSFederationHttpSecurityMode>.</span></span>|  
+|<span data-ttu-id="a659e-110">“模式”</span><span class="sxs-lookup"><span data-stu-id="a659e-110">Mode</span></span>|<span data-ttu-id="a659e-111">可选。</span><span class="sxs-lookup"><span data-stu-id="a659e-111">Optional.</span></span> <span data-ttu-id="a659e-112">指定所应用的安全类型。</span><span class="sxs-lookup"><span data-stu-id="a659e-112">Specifies the type of security that is applied.</span></span> <span data-ttu-id="a659e-113">默认值为 `Message`。</span><span class="sxs-lookup"><span data-stu-id="a659e-113">The default value is `Message`.</span></span> <span data-ttu-id="a659e-114">此属性的类型为 <xref:System.ServiceModel.WSFederationHttpSecurityMode>。</span><span class="sxs-lookup"><span data-stu-id="a659e-114">This attribute is of type <xref:System.ServiceModel.WSFederationHttpSecurityMode>.</span></span>|  
   
-## <a name="mode-attribute"></a><span data-ttu-id="38a30-121">Mode 属性</span><span class="sxs-lookup"><span data-stu-id="38a30-121">Mode Attribute</span></span>  
+## <a name="mode-attribute"></a><span data-ttu-id="a659e-115">Mode 属性</span><span class="sxs-lookup"><span data-stu-id="a659e-115">Mode Attribute</span></span>  
   
-|<span data-ttu-id="38a30-122">“值”</span><span class="sxs-lookup"><span data-stu-id="38a30-122">Value</span></span>|<span data-ttu-id="38a30-123">描述</span><span class="sxs-lookup"><span data-stu-id="38a30-123">Description</span></span>|  
+|<span data-ttu-id="a659e-116">值</span><span class="sxs-lookup"><span data-stu-id="a659e-116">Value</span></span>|<span data-ttu-id="a659e-117">说明</span><span class="sxs-lookup"><span data-stu-id="a659e-117">Description</span></span>|  
 |-----------|-----------------|  
-|<span data-ttu-id="38a30-124">None</span><span class="sxs-lookup"><span data-stu-id="38a30-124">None</span></span>|<span data-ttu-id="38a30-125">SOAP 消息在传输过程中并不安全。</span><span class="sxs-lookup"><span data-stu-id="38a30-125">The SOAP message is not secure during transfer.</span></span>|  
-|<span data-ttu-id="38a30-126">消息</span><span class="sxs-lookup"><span data-stu-id="38a30-126">Message</span></span>|<span data-ttu-id="38a30-127">通过使用 SOAP 消息安全，可以提供完整性、保密性、服务器身份验证和客户端身份验证。</span><span class="sxs-lookup"><span data-stu-id="38a30-127">Integrity, confidentiality, server authentication and client authentication are provided using SOAP message security.</span></span> <span data-ttu-id="38a30-128">默认情况下，将对正文进行加密和签名。</span><span class="sxs-lookup"><span data-stu-id="38a30-128">By default, the body is encrypted and signed.</span></span> <span data-ttu-id="38a30-129">此服务需要使用证书进行配置。</span><span class="sxs-lookup"><span data-stu-id="38a30-129">The service needs to be configured with a certificate.</span></span> <span data-ttu-id="38a30-130">客户端根据由安全令牌服务颁发给客户端的令牌进行身份验证</span><span class="sxs-lookup"><span data-stu-id="38a30-130">Client authentication is based on the token issued to the client by a security token service</span></span>|  
-|<span data-ttu-id="38a30-131">TransportWithMessageCredential</span><span class="sxs-lookup"><span data-stu-id="38a30-131">TransportWithMessageCredential</span></span>|<span data-ttu-id="38a30-132">完整性、保密性和服务器身份验证均由 HTTPS 提供。</span><span class="sxs-lookup"><span data-stu-id="38a30-132">Integrity, confidentiality and server authentication are provided by HTTPS.</span></span> <span data-ttu-id="38a30-133">此服务需要使用证书进行配置。</span><span class="sxs-lookup"><span data-stu-id="38a30-133">The service needs to be configured with a certificate.</span></span> <span data-ttu-id="38a30-134">客户端身份验证采用 SOAP 消息安全方式提供，并根据由安全令牌服务颁发给客户端的令牌进行。</span><span class="sxs-lookup"><span data-stu-id="38a30-134">Client authentication is provided by means of SOAP message security and is based on the token issued to the client by a security token service.</span></span>|  
+|<span data-ttu-id="a659e-118">无</span><span class="sxs-lookup"><span data-stu-id="a659e-118">None</span></span>|<span data-ttu-id="a659e-119">SOAP 消息在传输过程中并不安全。</span><span class="sxs-lookup"><span data-stu-id="a659e-119">The SOAP message is not secure during transfer.</span></span>|  
+|<span data-ttu-id="a659e-120">消息</span><span class="sxs-lookup"><span data-stu-id="a659e-120">Message</span></span>|<span data-ttu-id="a659e-121">通过使用 SOAP 消息安全，可以提供完整性、保密性、服务器身份验证和客户端身份验证。</span><span class="sxs-lookup"><span data-stu-id="a659e-121">Integrity, confidentiality, server authentication and client authentication are provided using SOAP message security.</span></span> <span data-ttu-id="a659e-122">默认情况下，将对正文进行加密和签名。</span><span class="sxs-lookup"><span data-stu-id="a659e-122">By default, the body is encrypted and signed.</span></span> <span data-ttu-id="a659e-123">此服务需要使用证书进行配置。</span><span class="sxs-lookup"><span data-stu-id="a659e-123">The service needs to be configured with a certificate.</span></span> <span data-ttu-id="a659e-124">客户端根据由安全令牌服务颁发给客户端的令牌进行身份验证</span><span class="sxs-lookup"><span data-stu-id="a659e-124">Client authentication is based on the token issued to the client by a security token service</span></span>|  
+|<span data-ttu-id="a659e-125">TransportWithMessageCredential</span><span class="sxs-lookup"><span data-stu-id="a659e-125">TransportWithMessageCredential</span></span>|<span data-ttu-id="a659e-126">完整性、保密性和服务器身份验证均由 HTTPS 提供。</span><span class="sxs-lookup"><span data-stu-id="a659e-126">Integrity, confidentiality and server authentication are provided by HTTPS.</span></span> <span data-ttu-id="a659e-127">此服务需要使用证书进行配置。</span><span class="sxs-lookup"><span data-stu-id="a659e-127">The service needs to be configured with a certificate.</span></span> <span data-ttu-id="a659e-128">客户端身份验证采用 SOAP 消息安全方式提供，并根据由安全令牌服务颁发给客户端的令牌进行。</span><span class="sxs-lookup"><span data-stu-id="a659e-128">Client authentication is provided by means of SOAP message security and is based on the token issued to the client by a security token service.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="38a30-135">子元素</span><span class="sxs-lookup"><span data-stu-id="38a30-135">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="a659e-129">子元素</span><span class="sxs-lookup"><span data-stu-id="a659e-129">Child Elements</span></span>  
   
-|<span data-ttu-id="38a30-136">元素</span><span class="sxs-lookup"><span data-stu-id="38a30-136">Element</span></span>|<span data-ttu-id="38a30-137">描述</span><span class="sxs-lookup"><span data-stu-id="38a30-137">Description</span></span>|  
+|<span data-ttu-id="a659e-130">元素</span><span class="sxs-lookup"><span data-stu-id="a659e-130">Element</span></span>|<span data-ttu-id="a659e-131">描述</span><span class="sxs-lookup"><span data-stu-id="a659e-131">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="38a30-138">\<message ></span><span class="sxs-lookup"><span data-stu-id="38a30-138">\<message></span></span>](message-element-of-wsfederationhttpbinding.md)|<span data-ttu-id="38a30-139">定义消息级安全性设置。</span><span class="sxs-lookup"><span data-stu-id="38a30-139">Defines the settings for the message-level security.</span></span> <span data-ttu-id="38a30-140">此元素的类型为 <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>。</span><span class="sxs-lookup"><span data-stu-id="38a30-140">This element is of type <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.</span></span>|  
+|[\<message>](message-element-of-wsfederationhttpbinding.md)|<span data-ttu-id="a659e-132">定义消息级安全性设置。</span><span class="sxs-lookup"><span data-stu-id="a659e-132">Defines the settings for the message-level security.</span></span> <span data-ttu-id="a659e-133">此元素的类型为 <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>。</span><span class="sxs-lookup"><span data-stu-id="a659e-133">This element is of type <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement>.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="38a30-141">父元素</span><span class="sxs-lookup"><span data-stu-id="38a30-141">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="a659e-134">父元素</span><span class="sxs-lookup"><span data-stu-id="a659e-134">Parent Elements</span></span>  
   
-|<span data-ttu-id="38a30-142">元素</span><span class="sxs-lookup"><span data-stu-id="38a30-142">Element</span></span>|<span data-ttu-id="38a30-143">描述</span><span class="sxs-lookup"><span data-stu-id="38a30-143">Description</span></span>|  
+|<span data-ttu-id="a659e-135">元素</span><span class="sxs-lookup"><span data-stu-id="a659e-135">Element</span></span>|<span data-ttu-id="a659e-136">描述</span><span class="sxs-lookup"><span data-stu-id="a659e-136">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="38a30-144">\<binding ></span><span class="sxs-lookup"><span data-stu-id="38a30-144">\<binding></span></span>](bindings.md)|<span data-ttu-id="38a30-145">定义[\<wsDualHttpBinding >](wsdualhttpbinding.md)的所有绑定功能。</span><span class="sxs-lookup"><span data-stu-id="38a30-145">Defines all binding capabilities of the [\<wsDualHttpBinding>](wsdualhttpbinding.md).</span></span>|  
+|[\<binding>](bindings.md)|<span data-ttu-id="a659e-137">定义的所有绑定功能 [\<wsDualHttpBinding>](wsdualhttpbinding.md) 。</span><span class="sxs-lookup"><span data-stu-id="a659e-137">Defines all binding capabilities of the [\<wsDualHttpBinding>](wsdualhttpbinding.md).</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="38a30-146">请参阅</span><span class="sxs-lookup"><span data-stu-id="38a30-146">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a659e-138">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a659e-138">See also</span></span>
 
 - <xref:System.ServiceModel.WSFederationHttpSecurity>
 - <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpBindingElement.Security%2A>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement>
-- [<span data-ttu-id="38a30-147">如何：创建 WSFederationHttpBinding</span><span class="sxs-lookup"><span data-stu-id="38a30-147">How to: Create a WSFederationHttpBinding</span></span>](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
-- [<span data-ttu-id="38a30-148">保护服务和客户端的安全</span><span class="sxs-lookup"><span data-stu-id="38a30-148">Securing Services and Clients</span></span>](../../../wcf/feature-details/securing-services-and-clients.md)
-- [<span data-ttu-id="38a30-149">选择凭据类型</span><span class="sxs-lookup"><span data-stu-id="38a30-149">Selecting a Credential Type</span></span>](../../../wcf/feature-details/selecting-a-credential-type.md)
-- [<span data-ttu-id="38a30-150">绑定</span><span class="sxs-lookup"><span data-stu-id="38a30-150">Bindings</span></span>](../../../wcf/bindings.md)
-- [<span data-ttu-id="38a30-151">配置系统提供的绑定</span><span class="sxs-lookup"><span data-stu-id="38a30-151">Configuring System-Provided Bindings</span></span>](../../../wcf/feature-details/configuring-system-provided-bindings.md)
-- [<span data-ttu-id="38a30-152">使用绑定配置服务和客户端</span><span class="sxs-lookup"><span data-stu-id="38a30-152">Using Bindings to Configure Services and Clients</span></span>](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [<span data-ttu-id="38a30-153">\<binding ></span><span class="sxs-lookup"><span data-stu-id="38a30-153">\<binding></span></span>](bindings.md)
+- [<span data-ttu-id="a659e-139">如何：创建 WSFederationHttpBinding</span><span class="sxs-lookup"><span data-stu-id="a659e-139">How to: Create a WSFederationHttpBinding</span></span>](../../../wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
+- [<span data-ttu-id="a659e-140">保护服务和客户端的安全</span><span class="sxs-lookup"><span data-stu-id="a659e-140">Securing Services and Clients</span></span>](../../../wcf/feature-details/securing-services-and-clients.md)
+- [<span data-ttu-id="a659e-141">选择凭据类型</span><span class="sxs-lookup"><span data-stu-id="a659e-141">Selecting a Credential Type</span></span>](../../../wcf/feature-details/selecting-a-credential-type.md)
+- [<span data-ttu-id="a659e-142">绑定</span><span class="sxs-lookup"><span data-stu-id="a659e-142">Bindings</span></span>](../../../wcf/bindings.md)
+- [<span data-ttu-id="a659e-143">配置系统提供的绑定</span><span class="sxs-lookup"><span data-stu-id="a659e-143">Configuring System-Provided Bindings</span></span>](../../../wcf/feature-details/configuring-system-provided-bindings.md)
+- [<span data-ttu-id="a659e-144">使用绑定配置服务和客户端</span><span class="sxs-lookup"><span data-stu-id="a659e-144">Using Bindings to Configure Services and Clients</span></span>](../../../wcf/using-bindings-to-configure-services-and-clients.md)
+- [\<binding>](bindings.md)

@@ -3,59 +3,59 @@ title: <pnrpPeerResolver>
 ms.date: 03/30/2017
 ms.assetid: c1b34f3b-68e5-4911-a367-de49fb61dbc6
 ms.openlocfilehash: d3e88d7f2dd991091d3d7abdc715e125ddc9ac56
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73738778"
 ---
-# <a name="pnrppeerresolver"></a><span data-ttu-id="3fdee-101">\<pnrpPeerResolver ></span><span class="sxs-lookup"><span data-stu-id="3fdee-101">\<pnrpPeerResolver></span></span>
-<span data-ttu-id="3fdee-102">指定要将 PNRP（对等名称解析协议）解析程序用作解析程序。</span><span class="sxs-lookup"><span data-stu-id="3fdee-102">Specifies that the PNRP (Peer Name Resolution Protocol) resolver is to be used as a resolver.</span></span> <span data-ttu-id="3fdee-103">此元素是可选的，因为 PNRP 是默认解析程序。</span><span class="sxs-lookup"><span data-stu-id="3fdee-103">This element is optional because PNRP is the default resolver.</span></span>  
+# \<pnrpPeerResolver>
+<span data-ttu-id="5179b-101">指定要将 PNRP（对等名称解析协议）解析程序用作解析程序。</span><span class="sxs-lookup"><span data-stu-id="5179b-101">Specifies that the PNRP (Peer Name Resolution Protocol) resolver is to be used as a resolver.</span></span> <span data-ttu-id="5179b-102">此元素是可选的，因为 PNRP 是默认解析程序。</span><span class="sxs-lookup"><span data-stu-id="5179b-102">This element is optional because PNRP is the default resolver.</span></span>  
   
-<span data-ttu-id="3fdee-104">[ **\<configuration>** ](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="3fdee-104">[**\<configuration>**](../configuration-element.md)</span></span>\
-<span data-ttu-id="3fdee-105">\<system &nbsp; &nbsp;[ **>** ](system-servicemodel.md) </span><span class="sxs-lookup"><span data-stu-id="3fdee-105">&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)</span></span>\
-<span data-ttu-id="3fdee-106">&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)</span><span class="sxs-lookup"><span data-stu-id="3fdee-106">&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)</span></span>\
-<span data-ttu-id="3fdee-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)</span><span class="sxs-lookup"><span data-stu-id="3fdee-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)</span></span>\
-<span data-ttu-id="3fdee-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** </span><span class="sxs-lookup"><span data-stu-id="3fdee-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**</span></span>\
-<span data-ttu-id="3fdee-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<pnrpResolver >**</span><span class="sxs-lookup"><span data-stu-id="3fdee-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<pnrpResolver>**</span></span>  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<pnrpResolver>**  
   
-## <a name="syntax"></a><span data-ttu-id="3fdee-110">语法</span><span class="sxs-lookup"><span data-stu-id="3fdee-110">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5179b-103">语法</span><span class="sxs-lookup"><span data-stu-id="5179b-103">Syntax</span></span>  
   
 ```xml  
 <pnrpResolver resolverType="String" />
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="3fdee-111">特性和元素</span><span class="sxs-lookup"><span data-stu-id="3fdee-111">Attributes and Elements</span></span>  
- <span data-ttu-id="3fdee-112">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="3fdee-112">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="5179b-104">特性和元素</span><span class="sxs-lookup"><span data-stu-id="5179b-104">Attributes and Elements</span></span>  
+ <span data-ttu-id="5179b-105">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="5179b-105">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="3fdee-113">特性</span><span class="sxs-lookup"><span data-stu-id="3fdee-113">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="5179b-106">特性</span><span class="sxs-lookup"><span data-stu-id="5179b-106">Attributes</span></span>  
   
-|<span data-ttu-id="3fdee-114">特性</span><span class="sxs-lookup"><span data-stu-id="3fdee-114">Attribute</span></span>|<span data-ttu-id="3fdee-115">描述</span><span class="sxs-lookup"><span data-stu-id="3fdee-115">Description</span></span>|  
+|<span data-ttu-id="5179b-107">属性</span><span class="sxs-lookup"><span data-stu-id="5179b-107">Attribute</span></span>|<span data-ttu-id="5179b-108">说明</span><span class="sxs-lookup"><span data-stu-id="5179b-108">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="3fdee-116">resolverType</span><span class="sxs-lookup"><span data-stu-id="3fdee-116">resolverType</span></span>|<span data-ttu-id="3fdee-117">一个字符串，指定要使用的解析程序。</span><span class="sxs-lookup"><span data-stu-id="3fdee-117">A string that specifies the resolver to be used.</span></span> <span data-ttu-id="3fdee-118">此属性是可选的。</span><span class="sxs-lookup"><span data-stu-id="3fdee-118">This attribute is optional.</span></span> <span data-ttu-id="3fdee-119">如果不设置，或者将其设置为空字符串，则使用 PNRP。</span><span class="sxs-lookup"><span data-stu-id="3fdee-119">If it is not set, or if it is set to an empty string, PNRP is used.</span></span>|  
+|<span data-ttu-id="5179b-109">resolverType</span><span class="sxs-lookup"><span data-stu-id="5179b-109">resolverType</span></span>|<span data-ttu-id="5179b-110">一个字符串，指定要使用的解析程序。</span><span class="sxs-lookup"><span data-stu-id="5179b-110">A string that specifies the resolver to be used.</span></span> <span data-ttu-id="5179b-111">此属性是可选的。</span><span class="sxs-lookup"><span data-stu-id="5179b-111">This attribute is optional.</span></span> <span data-ttu-id="5179b-112">如果不设置，或者将其设置为空字符串，则使用 PNRP。</span><span class="sxs-lookup"><span data-stu-id="5179b-112">If it is not set, or if it is set to an empty string, PNRP is used.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="3fdee-120">子元素</span><span class="sxs-lookup"><span data-stu-id="3fdee-120">Child Elements</span></span>  
- <span data-ttu-id="3fdee-121">None</span><span class="sxs-lookup"><span data-stu-id="3fdee-121">None</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="5179b-113">子元素</span><span class="sxs-lookup"><span data-stu-id="5179b-113">Child Elements</span></span>  
+ <span data-ttu-id="5179b-114">无</span><span class="sxs-lookup"><span data-stu-id="5179b-114">None</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="3fdee-122">父元素</span><span class="sxs-lookup"><span data-stu-id="3fdee-122">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="5179b-115">父元素</span><span class="sxs-lookup"><span data-stu-id="5179b-115">Parent Elements</span></span>  
   
-|<span data-ttu-id="3fdee-123">元素</span><span class="sxs-lookup"><span data-stu-id="3fdee-123">Element</span></span>|<span data-ttu-id="3fdee-124">描述</span><span class="sxs-lookup"><span data-stu-id="3fdee-124">Description</span></span>|  
+|<span data-ttu-id="5179b-116">元素</span><span class="sxs-lookup"><span data-stu-id="5179b-116">Element</span></span>|<span data-ttu-id="5179b-117">描述</span><span class="sxs-lookup"><span data-stu-id="5179b-117">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="3fdee-125">\<binding ></span><span class="sxs-lookup"><span data-stu-id="3fdee-125">\<binding></span></span>](bindings.md)|<span data-ttu-id="3fdee-126">定义自定义绑定的所有绑定功能。</span><span class="sxs-lookup"><span data-stu-id="3fdee-126">Defines all binding capabilities of the custom binding.</span></span>|  
+|[\<binding>](bindings.md)|<span data-ttu-id="5179b-118">定义自定义绑定的所有绑定功能。</span><span class="sxs-lookup"><span data-stu-id="5179b-118">Defines all binding capabilities of the custom binding.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="3fdee-127">示例</span><span class="sxs-lookup"><span data-stu-id="3fdee-127">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="5179b-119">示例</span><span class="sxs-lookup"><span data-stu-id="5179b-119">Example</span></span>  
   
 ```xml  
 <pnrpResolver resolverType="String" />
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3fdee-128">请参阅</span><span class="sxs-lookup"><span data-stu-id="3fdee-128">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5179b-120">另请参阅</span><span class="sxs-lookup"><span data-stu-id="5179b-120">See also</span></span>
 
 - <xref:System.ServiceModel.Configuration.PnrpPeerResolverElement>
 - <xref:System.ServiceModel.Channels.PnrpPeerResolverBindingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>
-- [<span data-ttu-id="3fdee-129">绑定</span><span class="sxs-lookup"><span data-stu-id="3fdee-129">Bindings</span></span>](../../../wcf/bindings.md)
-- [<span data-ttu-id="3fdee-130">扩展绑定</span><span class="sxs-lookup"><span data-stu-id="3fdee-130">Extending Bindings</span></span>](../../../wcf/extending/extending-bindings.md)
-- [<span data-ttu-id="3fdee-131">自定义绑定</span><span class="sxs-lookup"><span data-stu-id="3fdee-131">Custom Bindings</span></span>](../../../wcf/extending/custom-bindings.md)
-- [<span data-ttu-id="3fdee-132">\<customBinding ></span><span class="sxs-lookup"><span data-stu-id="3fdee-132">\<customBinding></span></span>](custombinding.md)
-- [<span data-ttu-id="3fdee-133">对等解析程序</span><span class="sxs-lookup"><span data-stu-id="3fdee-133">Peer Resolvers</span></span>](../../../wcf/feature-details/peer-resolvers.md)
+- [<span data-ttu-id="5179b-121">绑定</span><span class="sxs-lookup"><span data-stu-id="5179b-121">Bindings</span></span>](../../../wcf/bindings.md)
+- [<span data-ttu-id="5179b-122">扩展绑定</span><span class="sxs-lookup"><span data-stu-id="5179b-122">Extending Bindings</span></span>](../../../wcf/extending/extending-bindings.md)
+- [<span data-ttu-id="5179b-123">自定义绑定</span><span class="sxs-lookup"><span data-stu-id="5179b-123">Custom Bindings</span></span>](../../../wcf/extending/custom-bindings.md)
+- [\<customBinding>](custombinding.md)
+- [<span data-ttu-id="5179b-124">对等解析程序</span><span class="sxs-lookup"><span data-stu-id="5179b-124">Peer Resolvers</span></span>](../../../wcf/feature-details/peer-resolvers.md)
