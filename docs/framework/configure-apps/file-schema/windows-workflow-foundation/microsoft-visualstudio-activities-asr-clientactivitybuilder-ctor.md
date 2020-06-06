@@ -10,10 +10,10 @@ api_type:
 - Assembly
 ms.assetid: 6b44b13c-7a23-4df2-8f9f-45e2b1430002
 ms.openlocfilehash: 99f2eb9447bdf43cb57cfe86f35d2c09044ed470
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69947617"
 ---
 # <a name="microsoftvisualstudioactivitiesasrclientactivitybuilderctor"></a>Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder..ctor
@@ -40,6 +40,6 @@ public ClientActivityBuilder(OperationDescription operationDescription, string c
   
  指定操作的服务命名空间。 此参数的值不能为**null**或为空。 如果不满足这些条件，则使用此类的构造函数和其他方法的运行时结果未被定义。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Microsoft.VisualStudio.Activities.Asr.ClientActivityBuilder](microsoft-visualstudio-activities-asr-clientactivitybuilder.md)

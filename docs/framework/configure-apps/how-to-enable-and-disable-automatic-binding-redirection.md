@@ -6,10 +6,10 @@ helpviewer_keywords:
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
 ms.openlocfilehash: 178d5070dd7018bbc0fce474cdd0b31ba3d17f77
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69913036"
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>如何：启用和禁用自动绑定重定向
@@ -24,18 +24,18 @@ ms.locfileid: "69913036"
 
 如果使用的是 Visual Studio 2017 版本15.7 或更高版本，则可以在项目的属性页中轻松禁用自动生成的绑定重定向。
 
-1. 右键单击“解决方案资源管理器”中的项目，再选择“属性”。
+1. 右键单击“解决方案资源管理器”中的项目，再选择“属性”   。
 
 2. 在**应用程序**页上，取消选中 "**自动生成绑定重定向**" 选项。
 
-3. 按**Ctrl**+**S**保存更改。
+3. 按**Ctrl** + **S**保存更改。
 
 ### <a name="disable-manually-in-the-project-file"></a>在项目文件中手动禁用
 
 1. 使用以下方法之一打开项目文件以进行编辑：
 
    - 在 Visual Studio 中，选择**解决方案资源管理器**中的项目，然后从快捷菜单中选择 "**在文件资源管理器中打开文件夹**"。 在文件资源管理器中，找到项目（.csproj 或 .vbproj）文件并在记事本中将其打开。
-   - 在 Visual Studio 的**解决方案资源管理器**中，右键单击项目，然后选择 "**卸载项目**"。 再次右键单击卸载的项目，然后选择 "**编辑 [项目名称 .csproj]** "。
+   - 在 Visual Studio 的**解决方案资源管理器**中，右键单击项目，然后选择 "**卸载项目**"。 再次右键单击卸载的项目，然后选择 "**编辑 [项目名称 .csproj]**"。
 
 2. 在项目文件中，查找以下属性项：
 
@@ -56,9 +56,9 @@ ms.locfileid: "69913036"
 1. 使用以下方法之一打开项目文件以进行编辑：
 
    - 在 Visual Studio 中，选择**解决方案资源管理器**中的项目，然后从快捷菜单中选择 "**在文件资源管理器中打开文件夹**"。 在文件资源管理器中，找到项目（.csproj 或 .vbproj）文件并在记事本中将其打开。
-   - 在 Visual Studio 的**解决方案资源管理器**中，右键单击项目，然后选择 "**卸载项目**"。 再次右键单击卸载的项目，然后选择 "**编辑 [项目名称 .csproj]** "。
+   - 在 Visual Studio 的**解决方案资源管理器**中，右键单击项目，然后选择 "**卸载项目**"。 再次右键单击卸载的项目，然后选择 "**编辑 [项目名称 .csproj]**"。
 
-2. 将以下元素添加到第一个配置属性组（在\<PropertyGroup > 标记下）：
+2. 将以下元素添加到第一个配置属性组（在 \<PropertyGroup> 标记下）：
 
    ```xml
    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -91,7 +91,7 @@ Web 应用的自动绑定重定向实现方式有所不同。 由于必须为 we
 
 1. 在 Visual Studio 中，编译应用，然后检查生成警告。
 
-   ![程序集引用冲突的生成警告](./media/clr-assemblyrefwarning.png "CLR_AssemblyRefWarning")
+   ![关于程序集引用冲突的生成警告](./media/clr-assemblyrefwarning.png "CLR_AssemblyRefWarning")
 
 2. 如果存在程序集绑定冲突，则将显示警告。 双击警告，或选择警告，然后按**enter**。
 
@@ -99,7 +99,7 @@ Web 应用的自动绑定重定向实现方式有所不同。 由于必须为 we
 
    ![绑定重定向权限对话框](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [\<bindingRedirect > 元素](./file-schema/runtime/bindingredirect-element.md)
+- [\<bindingRedirect>Element](./file-schema/runtime/bindingredirect-element.md)
 - [重定向程序集版本](redirect-assembly-versions.md)

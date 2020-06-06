@@ -9,19 +9,19 @@ helpviewer_keywords:
 - <servicePointManager> element
 ms.assetid: 6e5def51-3646-4ef6-a7bd-c69151321bec
 ms.openlocfilehash: b7333016fea2d46285d3c98181c0ca4904c376f8
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74089129"
 ---
-# <a name="servicepointmanager-element-network-settings"></a>\<servicePointManager > 元素（网络设置）
+# <a name="servicepointmanager-element-network-settings"></a>\<servicePointManager> 元素（网络设置）
 配置与网络资源的连接。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-\<&nbsp;&nbsp;[ **> 的**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;\<[**设置 >** ](settings-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<servicePointManager >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<settings>**](settings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<servicePointManager>**
 
 ## <a name="syntax"></a>语法  
   
@@ -48,8 +48,8 @@ ms.locfileid: "74089129"
 |`checkCertificateRevocationList`|指定在使用证书之前系统是否应检查证书是否已吊销。 默认值为 `false`。|  
 |`dnsRefreshTimeout`|指定域名服务（DNS）解析与 DNS 轮循机制选项一起缓存的时间长度（以毫秒为单位）。 默认值是 120,000 毫秒（2 分钟）。|  
 |`enableDnsRoundRobin`|指定具有多个 Internet 协议（IP）地址的主机名的 DNS 解析是返回所有地址，还是只返回第一个地址。 默认值为 `false`。|  
-|`encryptionPolicy`|指定应用于 <xref:System.Net.ServicePointManager> 实例上的 SSL/TLS 会话的加密策略。 可能的值与 <xref:System.Net.Security.EncryptionPolicy> 枚举的值等效。 当加密策略设置为 `NoEncryption`时，需要使用 <xref:System.Security.Authentication.CipherAlgorithmType.Null>。 默认值为 `RequireEncryption`。|  
-|`expect100Continue`|指定 POST 方法是否应该接收来自服务器的 `100-continue` 响应。 默认值为 `true`。|  
+|`encryptionPolicy`|指定应用到实例上的 SSL/TLS 会话的加密策略 <xref:System.Net.ServicePointManager> 。 可能的值等效于枚举的值 <xref:System.Net.Security.EncryptionPolicy> 。 <xref:System.Security.Authentication.CipherAlgorithmType.Null>加密策略设置为时，需要使用 `NoEncryption` 。 默认值为 `RequireEncryption`。|  
+|`expect100Continue`|指定 POST 方法是否应该接收 `100-continue` 来自服务器的响应。 默认值为 `true`。|  
 |`useNagleAlgorithm`|指定由服务点管理器控制的连接是否使用 Nagle 算法。 默认值为 `true`。|  
   
 ### <a name="child-elements"></a>子元素  
@@ -61,12 +61,12 @@ ms.locfileid: "74089129"
 |-----------------|---------------------|  
 |[设置](settings-element-network-settings.md)|配置 <xref:System.Net> 命名空间的基本网络选项。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
   
 ## <a name="configuration-files"></a>配置文件  
  此元素可在应用程序配置文件或计算机配置文件 (Machine.config) 中使用。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Net.ServicePointManager>
 - <xref:System.Net.Security.EncryptionPolicy>

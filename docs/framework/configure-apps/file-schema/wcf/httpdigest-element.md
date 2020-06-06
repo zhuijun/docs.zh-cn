@@ -3,22 +3,22 @@ title: <httpDigest> 元素
 ms.date: 03/30/2017
 ms.assetid: 3da4f276-dfd9-4247-8c07-01d83618727c
 ms.openlocfilehash: 328411a429cd42927a190c6805a1f5e2b3555ea1
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "77448447"
 ---
-# <a name="httpdigest-element"></a>\<httpDigest > 元素
+# <a name="httpdigest-element"></a>\<httpDigest> 元素
 指定一个在向服务证明客户端身份时使用的摘要类型凭据。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<行为**](behaviors.md)>\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<endpointBehaviors >** ](endpointbehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **&nbsp;&nbsp;\<** ](behavior-of-endpointbehaviors.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<clientCredentials >** ](clientcredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<httpDigest >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<endpointBehaviors>**](endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-endpointbehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<clientCredentials>**](clientcredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<httpDigest>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -26,25 +26,25 @@ ms.locfileid: "77448447"
 <httpDigest impersonationLevel="Identification/Impersonation/Delegation/Anonymous/None" />
 ```  
   
-## <a name="attributes-and-elements"></a>属性和元素  
+## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>Attributes  
+### <a name="attributes"></a>特性  
   
 |属性|说明|  
 |---------------|-----------------|  
-|`impersonationLevel`|设置客户端用于与服务器进行通信的模拟首选项。 服务器上不强制使用客户端所选择的模拟模式。 包括以下有效值：<br /><br /> -标识：服务器可以获取客户端的标识和特权，但不能模拟客户端。<br />-模拟：服务器可以在本地系统上模拟客户端的安全上下文。<br />-委派：服务器可以在远程系统上模拟客户端的安全上下文。<br />-Anonymous：服务器无法模拟或标识客户端。<br />-None：不分配模拟级别。<br /><br /> 默认值为 Identification。 此属性的类型为 <xref:System.Security.Principal.TokenImpersonationLevel>。|  
+|`impersonationLevel`|设置客户端用于与服务器进行通信的模拟首选项。 服务器上不强制使用客户端所选择的模拟模式。 有效值包括以下值：<br /><br /> -标识：服务器可以获取客户端的标识和特权，但不能模拟客户端。<br />-模拟：服务器可以在本地系统上模拟客户端的安全上下文。<br />-委派：服务器可以在远程系统上模拟客户端的安全上下文。<br />-Anonymous：服务器无法模拟或标识客户端。<br />-None：不分配模拟级别。<br /><br /> 默认值为 Identification。 此属性的类型为 <xref:System.Security.Principal.TokenImpersonationLevel>。|  
   
 ### <a name="child-elements"></a>子元素  
  无  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
-|[\<clientCredentials >](clientcredentials.md)|指定用于向服务验证客户端身份的凭据。|  
+|[\<clientCredentials>](clientcredentials.md)|指定用于向服务验证客户端身份的凭据。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  摘要是使用算法和一组输入确定的哈希。 身份验证器和被验证方一致同意某种算法并交换用作输入的数据。 客户端可以计算哈希并将其发送给服务。 服务也可以计算哈希并比较值。 如果匹配，则客户端将通过验证。  
   
  必须使用 Windows 上的 Active Directory 和 Internet 信息服务 (IIS) 启用此功能。 有关详细信息，请参阅[IIS 6.0 中的摘要式身份验证](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10))。  
@@ -58,6 +58,6 @@ ms.locfileid: "77448447"
 - <xref:System.ServiceModel.Configuration.HttpDigestClientElement>
 - <xref:System.ServiceModel.Security.HttpDigestClientCredential>
 - [安全行为](../../../wcf/feature-details/security-behaviors-in-wcf.md)
-- [保护客户端](../../../wcf/securing-clients.md)
+- [保证客户端的安全](../../../wcf/securing-clients.md)
 - [使用证书](../../../wcf/feature-details/working-with-certificates.md)
 - [保护服务和客户端的安全](../../../wcf/feature-details/securing-services-and-clients.md)

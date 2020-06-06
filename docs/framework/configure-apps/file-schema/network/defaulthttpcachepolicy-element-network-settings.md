@@ -9,19 +9,19 @@ helpviewer_keywords:
 - <defaultHttpCachePolicy> element
 ms.assetid: 2c1247d0-39b0-4c12-919a-a925ce075c79
 ms.openlocfilehash: c5029a7d1e53c28d0abb232efdc3e0bd2c9658d4
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088423"
 ---
-# <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaultHttpCachePolicy > 元素（网络设置）
+# <a name="defaulthttpcachepolicy-element-network-settings"></a>\<defaultHttpCachePolicy> 元素（网络设置）
 描述 HTTP 缓存是否处于活动状态，并描述默认缓存策略。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-\<&nbsp;&nbsp;[ **> 的**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<requestCaching >** ](requestcaching-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<defaultHttpCachePolicy >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<requestCaching>**](requestcaching-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<defaultHttpCachePolicy>**
 
 ## <a name="syntax"></a>语法  
   
@@ -39,7 +39,7 @@ ms.locfileid: "74088423"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |`maximumAge`|指定将缓存的对象标记为过期之前的最大时间间隔。|  
 |`maximumStale`|指定在将缓存对象标记为过期之前计算的新鲜度时间之后的最长时间。|  
@@ -47,7 +47,7 @@ ms.locfileid: "74088423"
 |`policyLevel`|指定缓存策略是否为自动，或是否绕过缓存。 默认值为 `BypassCache`。|  
   
 ### <a name="child-elements"></a>子元素  
- None  
+ 无  
   
 ### <a name="parent-elements"></a>父元素  
   
@@ -55,10 +55,10 @@ ms.locfileid: "74088423"
 |-------------|-----------------|  
 |[requestCaching](requestcaching-element-network-settings.md)|控制网络请求的缓存机制。|  
   
-## <a name="remarks"></a>备注  
- `policyLevel` 特性的值为 `BypassCache` 或 `Default`。  
+## <a name="remarks"></a>注解  
+ 特性的值 `policyLevel` 为 `BypassCache` 或 `Default` 。  
   
- `maximumAge`、`maximumStale`和 `minimumFresh` 元素的值是格式为*d*的显式时间间隔。*hh*：*mm*：*ss* （天、小时、分钟和秒），或常数 `minValue` 或 `maxValue`（视情况而成）。  
+ `maximumAge`、 `maximumStale` 和元素的值 `minimumFresh` 是格式为*d*的显式时间间隔。*hh*：*mm*：*ss* （天、小时、分钟和秒），或相应的常量 `minValue` 或 `maxValue` 。  
   
 ## <a name="configuration-files"></a>配置文件  
  此元素可在应用程序配置文件或计算机配置文件 (Machine.config) 中使用。  
@@ -80,7 +80,7 @@ ms.locfileid: "74088423"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Net.Cache>
 - <xref:System.Net.WebRequest>

@@ -3,19 +3,19 @@ title: schemeSettings 的 <add> 元素（Uri 设置）
 ms.date: 03/30/2017
 ms.assetid: 594a7b3b-af23-4cfa-b616-0b2dddb1a705
 ms.openlocfilehash: ed40098e8d4c2d1298771e67a618b8d04f59c912
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74087716"
 ---
-# <a name="add-element-for-schemesettings-uri-settings"></a>\<为 schemeSettings 添加 > 元素（Uri 设置）
+# <a name="add-element-for-schemesettings-uri-settings"></a>schemeSettings 的 \<add> 元素（Uri 设置）
 为方案名称添加方案设置。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<uri >** ](uri-element-uri-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<schemeSettings >** ](schemesettings-element-uri-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<添加 >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<uri>**](uri-element-uri-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<schemeSettings>**](schemesettings-element-uri-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**
 
 ## <a name="syntax"></a>语法  
   
@@ -31,27 +31,27 @@ ms.locfileid: "74087716"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|NAME|应用此设置的方案名称。 唯一受支持的值为 name = "http" 和 name = "https"。|  
+|name|应用此设置的方案名称。 唯一受支持的值为 name = "http" 和 name = "https"。|  
   
 ## <a name="attribute-name-attribute"></a>{Attribute name}Attribute  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
 |genericUriParserOptions|此方案的分析器选项。 唯一受支持的值为 genericUriParserOptions = "DontUnescapePathDotsAndSlashes"。|  
   
 ### <a name="child-elements"></a>子元素  
- None  
+ 无  
   
 ### <a name="parent-elements"></a>父元素  
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<schemeSettings> 元素（Uri 设置）](schemesettings-element-uri-settings.md)|指定如何分析特定方案的 <xref:System.Uri>。|  
+|[\<schemeSettings>元素（Uri 设置）](schemesettings-element-uri-settings.md)|指定如何分析特定方案的 <xref:System.Uri>。|  
   
-## <a name="remarks"></a>备注  
- 默认情况下，在执行路径压缩之前，<xref:System.Uri?displayProperty=nameWithType> 类会取消转义百分号编码的路径分隔符。 这是作为一种安全机制实现的，针对以下攻击：  
+## <a name="remarks"></a>注解  
+ 默认情况下，在 <xref:System.Uri?displayProperty=nameWithType> 执行路径压缩之前，类会取消转义编码的路径分隔符。 这是作为一种安全机制实现的，针对以下攻击：  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -59,7 +59,7 @@ ms.locfileid: "74087716"
   
  `c:\Windows\System32\cmd.exe /c dir c:\`  
   
- 出于此原因，<xref:System.Uri?displayProperty=nameWithType> 类首先取消转义路径分隔符，然后应用路径压缩。 将上述恶意 URL 传递到 <xref:System.Uri?displayProperty=nameWithType> 类构造函数的结果将生成以下 URI：  
+ 出于此原因， <xref:System.Uri?displayProperty=nameWithType> 类首先取消转义路径分隔符，然后应用路径压缩。 将上述恶意 URL 传递到 <xref:System.Uri?displayProperty=nameWithType> 类构造函数的结果将生成以下 URI：  
   
  `http://www.microsoft.com/Windows/System32/cmd.exe?/c+dir+c:\`  
   
@@ -69,7 +69,7 @@ ms.locfileid: "74087716"
  此元素可在应用程序配置文件或计算机配置文件 (Machine.config) 中使用。  
   
 ## <a name="example"></a>示例  
- 下面的示例演示 <xref:System.Uri> 类使用的配置，以支持不转义 http 方案的百分号编码的路径分隔符。  
+ 下面的示例演示类使用的配置 <xref:System.Uri> ，以支持不转义 http 方案的百分号编码的路径分隔符。  
   
 ```xml  
 <configuration>  
@@ -81,7 +81,7 @@ ms.locfileid: "74087716"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>
 - <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>

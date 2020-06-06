@@ -9,19 +9,19 @@ helpviewer_keywords:
 - defaultFtpCachePolicy element
 ms.assetid: 0eb0c5cb-dd97-484d-8614-785e88877abb
 ms.openlocfilehash: 9261a430642cb4d5ac4507835bd0fd3561bd8c02
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088432"
 ---
-# <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultFtpCachePolicy > 元素（网络设置）
+# <a name="defaultftpcachepolicy-element-network-settings"></a>\<defaultFtpCachePolicy> 元素（网络设置）
 介绍 FTP 缓存是否处于活动状态，并描述默认缓存策略。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-\<&nbsp;&nbsp;[ **> 的**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<requestCaching >** ](requestcaching-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<defaultFtpCachePolicy >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<requestCaching>**](requestcaching-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<defaultFtpCachePolicy>**
 
 ## <a name="syntax"></a>语法  
   
@@ -36,13 +36,13 @@ ms.locfileid: "74088432"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |`policyLevel`|指定 FTP 缓存策略。 默认值为 `Default`。|  
   
 ## <a name="policylevel-attribute"></a>policyLevel 特性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
 |`Default`|如果资源是最新的，则返回缓存的资源，内容长度准确，并且存在过期、修改和内容长度属性。|  
 |`BypassCache`|从服务器返回资源。|  
@@ -62,10 +62,10 @@ ms.locfileid: "74088432"
 |-------------|-----------------|  
 |[requestCaching](requestcaching-element-network-settings.md)|控制网络请求的缓存机制。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
   
 ## <a name="example"></a>示例  
- 下面的示例演示如何指定 `NoCacheNoStore`的 FTP 缓存策略。  
+ 下面的示例演示如何指定的 FTP 缓存策略 `NoCacheNoStore` 。  
   
 ```xml  
 <configuration>  
@@ -79,7 +79,7 @@ ms.locfileid: "74088432"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Net.Cache>
 - <xref:System.Net.WebRequest>

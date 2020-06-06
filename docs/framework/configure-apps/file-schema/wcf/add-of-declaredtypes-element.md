@@ -1,5 +1,5 @@
 ---
-title: <add>of <declaredTypes>元素
+title: <add>of <declaredTypes> 元素
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts
@@ -8,20 +8,20 @@ helpviewer_keywords:
 - DataContractAttribute
 ms.assetid: c3d37ae4-8f1c-463f-b195-658c5a7e90a1
 ms.openlocfilehash: a001e8743b2c24f68b1b23cbccf3e5ac162c4e71
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70400655"
 ---
-# <a name="add-of-declaredtypes-element"></a>\<添加 declaredTypes > \<元素的 >
+# <a name="add-of-declaredtypes-element"></a>\<add>of \<declaredTypes> 元素
 添加在反序列化过程中由 <xref:System.Runtime.Serialization.DataContractSerializer> 使用的类型。 每个声明类型都包含一些将作为声明类型的字段或属性返回的已知类型。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<system.object >** ](system-runtime-serialization.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<dataContractSerializer >** ](datacontractserializer.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<declaredTypes >** ](declaredtypes.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<添加 >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.runtime.serialization>**](system-runtime-serialization.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<dataContractSerializer>**](datacontractserializer.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<declaredTypes>**](declaredtypes.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -39,7 +39,7 @@ ms.locfileid: "70400655"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |type|必需的字符串属性。<br /><br /> 指定类型名称（包括命名空间）、程序集名称、版本号、区域性和公钥标记。|  
   
@@ -55,10 +55,10 @@ ms.locfileid: "70400655"
 |-------------|-----------------|  
 |[\<declaredTypes>](declaredtypes.md)|包含在 <xref:System.Runtime.Serialization.DataContractSerializer> 进行反序列化过程中需要已知类型的类型。|  
   
-## <a name="remarks"></a>备注  
- 有关已知类型的详细信息，请参阅[数据协定已知类型](../../../wcf/feature-details/data-contract-known-types.md)和<xref:System.Runtime.Serialization.DataContractSerializer>。  
+## <a name="remarks"></a>注解  
+ 有关已知类型的详细信息，请参阅[数据协定已知类型](../../../wcf/feature-details/data-contract-known-types.md)和 <xref:System.Runtime.Serialization.DataContractSerializer> 。  
   
- 有关使用此元素的示例，请参阅[ dataContractSerializer>。\<](datacontractserializer-element.md)  
+ [\<dataContractSerializer>](datacontractserializer-element.md)有关使用此元素的示例，请参见。  
   
 > [!NOTE]
 > 如果将 <xref:System.Object> 类型添加为 `<declaredType>`，则会引发 <xref:System.Configuration.ConfigurationErrorsException>。 这是因为，<xref:System.Object> 类型不能在配置中用作声明的类型。  
@@ -76,9 +76,9 @@ ms.locfileid: "70400655"
 </add>
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - [数据协定已知类型](../../../wcf/feature-details/data-contract-known-types.md)
 - [\<dataContractSerializer>](datacontractserializer-element.md)
-- [\<添加 declaredTypes > \<的 >](add-of-declaredtypes-element.md)
+- [\<add>个\<declaredTypes>](add-of-declaredtypes-element.md)

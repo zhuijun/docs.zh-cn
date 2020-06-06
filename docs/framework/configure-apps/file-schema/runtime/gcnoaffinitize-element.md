@@ -5,10 +5,10 @@ helpviewer_keywords:
 - gcNoAffinitize element
 - <gcNoAffinitize> element
 ms.openlocfilehash: 16d6e5adefe2b632d7251669650058d7df7cea70
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "84004733"
 ---
 # <a name="gcnoaffinitize-element"></a>\<GCNoAffinitize> 元素
@@ -54,7 +54,7 @@ ms.locfileid: "84004733"
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 默认情况下，服务器 GC 线程使用各自的 Cpu 进行关联。 系统的每个可用处理器都有其自己的 GC 堆和线程。 这通常是首选的设置，因为它会优化缓存使用量。 从 .NET Framework 4.6.2 开始，通过将**GCNoAffinitize**元素的 `enabled` 属性设置为 `true` ，可以指定服务器 GC 线程和 cpu 不应紧耦合。
 

@@ -8,19 +8,19 @@ helpviewer_keywords:
 - add element for <switches>
 ms.assetid: 712ac3a7-7abf-4a9e-8db4-acd241c2f369
 ms.openlocfilehash: db2de681227dfdb7420808963219b9f52381f8fe
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088961"
 ---
-# <a name="add-element-for-switches"></a>\<为 \<开关添加 > 元素 >
+# <a name="add-element-for-switches"></a>\<switches> 的 \<add> 元素
 指定对跟踪开关设置的级别。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<的 >** ](system-diagnostics-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<开关**](switches-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<添加 >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<switches>**](switches-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<add>**
 
 ## <a name="syntax"></a>语法  
   
@@ -34,7 +34,7 @@ ms.locfileid: "74088961"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |**name**|必需的特性。<br /><br /> 指定开关的名称。 此属性的值对应于传递给 switch 构造函数的*displayName*参数。|  
 |**value**|必需的特性。<br /><br /> 指定开关的级别。|  
@@ -50,11 +50,11 @@ ms.locfileid: "74088961"
 |`switches`|包含跟踪开关和对该跟踪开关设置的级别。|  
 |`system.diagnostics`|指定用于收集、存储和路由消息的跟踪侦听器以及对跟踪开关设置的级别。|  
   
-## <a name="remarks"></a>备注  
- 可以通过将跟踪开关置于配置文件中来更改其级别。 如果开关是 <xref:System.Diagnostics.BooleanSwitch>，则可以打开和关闭它。 如果开关是 <xref:System.Diagnostics.TraceSwitch>，则可以为其分配不同的级别，以指定应用程序输出的跟踪或调试消息的类型。  
+## <a name="remarks"></a>注解  
+ 可以通过将跟踪开关置于配置文件中来更改其级别。 如果开关是 <xref:System.Diagnostics.BooleanSwitch> ，则可以将其打开或关闭。 如果开关是 <xref:System.Diagnostics.TraceSwitch> ，则可以为其分配不同的级别，以指定应用程序输出的跟踪或调试消息的类型。  
   
 ## <a name="example"></a>示例  
- 下面的示例演示如何使用 **\<add >** 元素将 `General` 跟踪开关设置为 <xref:System.Diagnostics.TraceLevel> 级别，并启用 `Data` 布尔跟踪开关。  
+ 下面的示例演示如何使用 **\<add>** 元素将 `General` 跟踪开关设置为 <xref:System.Diagnostics.TraceLevel> 级别，并启用 `Data` 布尔型跟踪开关。  
   
 ```xml  
 <configuration>  
@@ -67,7 +67,7 @@ ms.locfileid: "74088961"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Diagnostics.Switch>
 - <xref:System.Diagnostics.TraceSwitch>

@@ -9,18 +9,18 @@ helpviewer_keywords:
 - <mailSettings> element
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
 ms.openlocfilehash: 4e8bf23ce39edadf80f019315c690b597b3d7361
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74089236"
 ---
-# <a name="mailsettings-element-network-settings"></a>\<mailSettings > 元素（网络设置）
+# <a name="mailsettings-element-network-settings"></a>\<mailSettings> 元素（网络设置）
 配置邮件发送选项。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-\<&nbsp;&nbsp;[ **> 的**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<mailSettings >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<mailSettings>**
 
 ## <a name="syntax"></a>语法  
   
@@ -38,15 +38,15 @@ ms.locfileid: "74089236"
   
 ### <a name="child-elements"></a>子元素  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|[\<smtp > 元素（网络设置）](smtp-element-network-settings.md)|配置简单邮件传输协议选项。|  
+|[\<smtp>元素（网络设置）](smtp-element-network-settings.md)|配置简单邮件传输协议选项。|  
   
 ### <a name="parent-elements"></a>父元素  
   
 |**元素**|**描述**|  
 |-----------------|---------------------|  
-|[\<system.Net> 元素（网络设置）](system-net-element-network-settings.md)|包含指定 .NET Framework 如何连接到网络的设置。|  
+|[\<system.Net>元素（网络设置）](system-net-element-network-settings.md)|包含指定 .NET Framework 如何连接到网络的设置。|  
   
 ## <a name="example"></a>示例  
  下面的示例指定了使用默认网络凭据发送电子邮件所需的适当 SMTP 参数。  
@@ -67,7 +67,7 @@ ms.locfileid: "74089236"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Net.Mail.SmtpClient>
 - [网络设置架构](index.md)

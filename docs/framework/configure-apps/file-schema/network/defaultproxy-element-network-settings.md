@@ -9,18 +9,18 @@ helpviewer_keywords:
 - <defaultProxy> element
 ms.assetid: 9d663c4b-07b4-4f6f-9b12-efbd3630354f
 ms.openlocfilehash: 0945629c1395917bc1cf825f2ba84d20afa99957
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "71698212"
 ---
-# <a name="defaultproxy-element-network-settings"></a>\<defaultProxy > 元素（网络设置）
+# <a name="defaultproxy-element-network-settings"></a>\<defaultProxy> 元素（网络设置）
 配置超文本传输协议 (HTTP) 代理服务器。  
   
-[ **\<configuration>** ](../configuration-element.md)  
-\<&nbsp;[**的 &nbsp;>** ](system-net-element-network-settings.md)  
-&nbsp;&nbsp;&nbsp;&nbsp; **\<defaultProxy >**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<defaultProxy>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -34,10 +34,10 @@ ms.locfileid: "71698212"
 </defaultProxy>
 ```  
   
-## <a name="attributes-and-elements"></a>属性和元素  
+## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>Attributes  
+### <a name="attributes"></a>特性  
   
 |**元素**|**描述**|  
 |-----------------|---------------------|  
@@ -49,8 +49,8 @@ ms.locfileid: "71698212"
 |**元素**|**描述**|  
 |-----------------|---------------------|  
 |[bypasslist](bypasslist-element-network-settings.md)|提供一组描述不使用代理的地址的正则表达式。|  
-|[name](module-element-network-settings.md)|向应用程序添加新的代理模块。|  
-|[代理](proxy-element-network-settings.md)|定义代理服务器。|  
+|[模块](module-element-network-settings.md)|向应用程序添加新的代理模块。|  
+|[proxy](proxy-element-network-settings.md)|定义代理服务器。|  
   
 ### <a name="parent-elements"></a>父元素  
   
@@ -58,7 +58,7 @@ ms.locfileid: "71698212"
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|包含指定 .NET Framework 如何连接到网络的设置。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  如果 defaultProxy 元素为空，则将沿用 Internet Explorer 中的代理设置。 这种行为在 .NET Framework 1.1 版中有所不同。  
   
  如果[module](module-element-network-settings.md)元素指定非公共类型，该类型不是从 <xref:System.Net.IWebProxy> 类派生，则此对象的无参数构造函数中出现异常，或者在检索系统指定的默认代理时出现异常，则会引发异常。 异常的 <xref:System.Exception.InnerException%2A> 属性应具有错误根本原因的详细信息。  

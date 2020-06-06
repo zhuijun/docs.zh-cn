@@ -8,51 +8,51 @@ helpviewer_keywords:
 - configuration schema [.NET Framework], application settings
 ms.assetid: 5797fcff-6081-4e8c-bebf-63d9c70cf14b
 ms.openlocfilehash: 90d471888950347c041b4824b659ce33fda512d7
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "81242824"
 ---
 # <a name="application-settings-schema"></a>应用程序设置架构
 
-应用程序设置允许 Windows 窗体或ASP.NET应用程序存储和检索应用程序范围和用户范围的设置。 在此上下文中，*设置*是可能特定于应用程序或特定于当前用户的任何信息 - 从数据库连接字符串到用户首选默认窗口大小的任何信息。
+应用程序设置允许 Windows 窗体或 ASP.NET 应用程序存储和检索应用程序范围的设置和用户范围的设置。 在此上下文中，*设置*是指特定于应用程序或特定于当前用户的任何信息，包括从数据库连接字符串到用户首选默认窗口大小的任何信息。
 
-默认情况下，Windows 窗体应用程序中的应用程序设置使用<xref:System.Configuration.LocalFileSettingsProvider>类，该类使用 .NET 配置系统在 XML 配置文件中存储设置。 有关应用程序设置使用的文件的详细信息，请参阅[应用程序设置体系结构](../../winforms/advanced/application-settings-architecture.md)。
+默认情况下，Windows 窗体应用程序中的应用程序设置使用 <xref:System.Configuration.LocalFileSettingsProvider> 类，该类使用 .net 配置系统将设置存储在 XML 配置文件中。 有关应用程序设置使用的文件的详细信息，请参阅[应用程序设置体系结构](../../winforms/advanced/application-settings-architecture.md)。
 
-应用程序设置将以下元素定义为它使用的配置文件的一部分。
+应用程序设置将以下元素定义为它所使用的配置文件的一部分。
 
 | 元素                    | 描述                                                                           |
 | -------------------------- | ------------------------------------------------------------------------------------- |
-| **\<应用程序设置>** | 包含特定于应用程序**\<的所有设置>** 标记。                         |
-| **\<用户设置>**        | 包含特定于当前用户**\<的所有设置>** 标记。                        |
-| **\<设置>**             | 定义设置。 **\<应用程序>或****\<用户设置的子项>。 ** |
-| **\<值>**               | 定义设置的值。 **\<设置>** 的子项。                                   |
+| **\<applicationSettings>** | 包含 **\<setting>** 应用程序特定的所有标记。                         |
+| **\<userSettings>**        | 包含 **\<setting>** 特定于当前用户的所有标记。                        |
+| **\<setting>**             | 定义设置。 或的子级 **\<applicationSettings>** **\<userSettings>** 。 |
+| **\<value>**               | 定义设置的值。 的子项 **\<setting>** 。                                   |
 
-## <a name="applicationsettings-element"></a>\<应用程序设置>元素
+## <a name="applicationsettings-element"></a>\<applicationSettings> 元素
 
-此元素包含特定于客户端计算机上的应用程序实例的所有**\<设置>** 标记。 未定义任何属性。
+此元素包含 **\<setting>** 特定于客户端计算机上的应用程序实例的所有标记。 未定义任何属性。
 
-## <a name="usersettings-element"></a>\<用户设置>元素
+## <a name="usersettings-element"></a>\<userSettings> 元素
 
-此元素包含特定于当前使用该应用程序的用户的所有**\<设置>** 标记。 未定义任何属性。
+此元素包含 **\<setting>** 特定于当前正在使用应用程序的用户的所有标记。 未定义任何属性。
 
-## <a name="setting-element"></a>\<设置>元素
+## <a name="setting-element"></a>\<setting> 元素
 
-此元素定义设置。 它具有以下属性。
+此元素定义一个设置。 它具有以下属性。
 
-| 特性        | 说明 |
+| 属性        | 说明 |
 | ---------------- | ----------- |
-| name          | 必需。 设置的唯一 ID。 通过可视化工作室创建的设置将保存与名称`ProjectName.Properties.Settings`。 |
-| **序列化** | 必需。 用于序列化文本值的格式。 有效值是：<br><br>- `string`. 该值使用 序列化为字符串。 <xref:System.ComponentModel.TypeConverter><br>- `xml`. 该值使用 XML 序列化进行序列化。<br>- `binary`. 该值使用二进制序列化将该值序列化为文本编码二进制。<br />- `custom`. 设置提供程序对此设置有固有的知识，并序列化并取消序列化。 |
+| **name**         | 必需。 设置的唯一 ID。 使用名称保存通过 Visual Studio 创建的设置 `ProjectName.Properties.Settings` 。 |
+| **serializeAs** | 必需。 将值序列化为文本时要使用的格式。 有效值是：<br><br>- `string`. 该值使用来序列化为字符串 <xref:System.ComponentModel.TypeConverter> 。<br>- `xml`. 使用 XML 序列化对值进行序列化。<br>- `binary`. 使用二进制序列化将值作为文本编码的二进制序列化。<br />- `custom`. 设置提供程序具有此设置的固有知识，并对其进行序列化和反序列化。 |
 
-## <a name="value-element"></a>\<值>元素
+## <a name="value-element"></a>\<value> 元素
 
 此元素包含设置的值。
 
 ## <a name="example"></a>示例
 
-下面的示例显示了一个应用程序设置文件，该文件定义了两个应用程序范围设置和两个用户范围设置：
+以下示例显示了一个应用程序设置文件，该文件定义了两个应用程序范围的设置和两个用户范围的设置：
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>

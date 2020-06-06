@@ -5,19 +5,19 @@ helpviewer_keywords:
 - gcHeapCount element
 - <gcHeapCount> element
 ms.openlocfilehash: 3d6cac4185af182758cb82e6bfd9d96ed24869b4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74283074"
 ---
-# <a name="gcheapcount-element"></a>\<GCHeapCount > 元素
+# <a name="gcheapcount-element"></a>\<GCHeapCount> 元素
 
 指定用于服务器垃圾回收的堆/线程数。
 
-\<配置 > \
-&nbsp;&nbsp;\<运行时 > \
-&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapCount >
+\<configuration>\
+&nbsp;&nbsp;\<runtime>\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapCount>
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +30,7 @@ ms.locfileid: "74283074"
 
 下列各节描述了特性、子元素和父元素。
 
-### <a name="attributes"></a>Attributes
+### <a name="attributes"></a>特性
 
 |属性|说明|
 |---------------|-----------------|
@@ -48,12 +48,12 @@ ms.locfileid: "74283074"
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|说明|
+|元素|描述|
 |-------------|-----------------|
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 默认情况下，服务器 GC 线程使用各自的 CPU 进行关联，以便为每个处理器提供一个 GC 堆、一个服务器 GC 线程，以及一个后台服务器垃圾回收线程。 从 .NET Framework 4.6.2 开始，可以使用**GCHeapCount**元素来限制应用程序用于服务器 GC 的堆数。 如果运行多个服务器应用程序实例的系统，限制用于服务器 GC 的堆数将特别有用。
 

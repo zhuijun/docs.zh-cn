@@ -11,19 +11,19 @@ helpviewer_keywords:
 - clear element, webRequestModules
 ms.assetid: 48f38bcb-f30c-4b74-a8f0-1a3caf1aa96f
 ms.openlocfilehash: 5832d120824df75d374fc94cb0aa4e08189cb965
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74088491"
 ---
-# <a name="clear-element-for-webrequestmodules-network-settings"></a>\<清除 webRequestModules 的 > 元素（网络设置）
+# <a name="clear-element-for-webrequestmodules-network-settings"></a>webRequestModules 的 \<clear> 元素（网络设置）
 从应用程序中删除所有已注册的 Web 请求模块。  
 
-[ **\<configuration>** ](../configuration-element.md)\
-\<&nbsp;&nbsp;[ **> 的**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webRequestModules >** ](webrequestmodules-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**clear >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<webRequestModules>**](webrequestmodules-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<clear>**
 
 ## <a name="syntax"></a>语法  
   
@@ -46,8 +46,8 @@ ms.locfileid: "74088491"
 |-----------------|---------------------|  
 |[webRequestModules](webrequestmodules-element-network-settings.md)|指定用于从网络主机请求信息的模块。|  
   
-## <a name="remarks"></a>备注  
- `clear` 元素将删除之前在配置文件中或在配置层次结构中的更高级别定义的所有已注册 Web 请求模块。  
+## <a name="remarks"></a>注解  
+ `clear`元素删除先前在配置文件中或在配置层次结构中的更高级别定义的所有已注册 Web 请求模块。  
   
 ## <a name="configuration-files"></a>配置文件  
  此元素可在应用程序配置文件或计算机配置文件 (Machine.config) 中使用。  
@@ -69,7 +69,7 @@ ms.locfileid: "74088491"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Net.WebRequest>
 - [网络设置架构](index.md)

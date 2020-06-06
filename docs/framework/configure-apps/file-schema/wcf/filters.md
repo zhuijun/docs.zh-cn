@@ -3,13 +3,13 @@ title: <filters>
 ms.date: 03/30/2017
 ms.assetid: 37a87222-ec78-4728-8105-9ca1bd961f0c
 ms.openlocfilehash: e4ce0452cc46a8f29334fa67f51f14b83290b1c8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69918876"
 ---
-# <a name="filters"></a>\<filters>
+# \<filters>
 
 `filters` 元素包含用于控制所记录的消息类型的 XPath 筛选器集合。
 
@@ -35,7 +35,7 @@ ms.locfileid: "69918876"
 </messageLogging>
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>

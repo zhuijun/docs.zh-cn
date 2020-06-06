@@ -9,13 +9,13 @@ helpviewer_keywords:
 - container tags, <configuration> element
 ms.assetid: 2ec1c9dc-2e5c-4ef0-9958-81670ab88449
 ms.openlocfilehash: 0e09ec49024b769c516fd97085904781f64b4486
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69921252"
 ---
-# <a name="configuration-element"></a>\<配置 > 元素
+# <a name="configuration-element"></a>\<configuration> 元素
 
 公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。
 
@@ -39,24 +39,24 @@ ms.locfileid: "69921252"
 
 ## <a name="child-elements"></a>子元素
 
-|     | 描述 |
+|     | 说明 |
 | --- | ----------- |
-| [ **\<assemblyBinding>** ](assemblybinding-element-for-configuration.md) | 指定配置级的程序集绑定策略。|
-| [启动 > 设置架构 **\<** ](./startup/index.md) | 启动设置架构中的所有元素。 |
-| [运行时 > 设置架构 **\<** ](./runtime/index.md) | 运行时设置架构中的所有元素。 |
-| [system.object > 设置架构 **\<** ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100)) | 远程处理设置架构中的所有元素。 |
-| [系统 .net > 设置架构 **\<** ](./network/index.md) | 网络设置架构中的所有元素。 |
-| [g s > 设置架构 **\<** ](./cryptography/index.md) | 加密设置架构中的所有元素。 |
-| [配置 > 节架构 **\<** ](configuration-sections-schema.md) | 配置节设置架构中的所有元素。 |
+| [**\<assemblyBinding>**](assemblybinding-element-for-configuration.md) | 指定配置级的程序集绑定策略。|
+| [**\<startup>** 设置架构](./startup/index.md) | 启动设置架构中的所有元素。 |
+| [**\<runtime>** 设置架构](./runtime/index.md) | 运行时设置架构中的所有元素。 |
+| [**\<system.runtime.remoting>** 设置架构](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/z415cf9a(v=vs.100)) | 远程处理设置架构中的所有元素。 |
+| [**\<system.Net>** 设置架构](./network/index.md) | 网络设置架构中的所有元素。 |
+| [**\<cryptographySettings>** 设置架构](./cryptography/index.md) | 加密设置架构中的所有元素。 |
+| [**\<configuration>** 节架构](configuration-sections-schema.md) | 配置节设置架构中的所有元素。 |
 | [跟踪和调试设置架构](./trace-debug/index.md) | 跟踪和调试设置架构中的所有元素。 |
-| [ASP.NET 配置设置架构](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)) | ASP.NET 配置架构中的所有元素, 包括用于配置 ASP.NET 网站和应用程序的元素。 在 web.config文件中使用。 |
-| [webServices > 设置架构 **\<** ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100)) | Web 服务设置架构中的所有元素。 |
+| [ASP.NET 配置设置架构](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100)) | ASP.NET 配置架构中的所有元素，包括用于配置 ASP.NET 网站和应用程序的元素。 在 web.config 文件中*使用。* |
+| [**\<webServices>** 设置架构](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cctwteet(v=vs.100)) | Web 服务设置架构中的所有元素。 |
 | [Web 设置架构](./web/index.md) | Web 设置架构中的所有元素，包括用于配置 ASP.NET 如何与主机应用程序（如 IIS）一起工作的元素。 用于*aspnet .config*文件中。 |
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-每个配置文件都必须只包含一个 **\<配置 >** 元素。
+每个配置文件必须仅包含一个 **\<configuration>** 元素。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [.NET Framework 的配置文件架构](index.md)

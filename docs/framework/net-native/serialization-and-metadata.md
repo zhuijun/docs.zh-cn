@@ -3,10 +3,10 @@ title: 序列化和元数据
 ms.date: 03/30/2017
 ms.assetid: 619ecf1c-1ca5-4d66-8934-62fe7aad78c6
 ms.openlocfilehash: cc9adf0e6627ef3190e74fea5d4f0f3afd581811
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "81389218"
 ---
 # <a name="serialization-and-metadata"></a>序列化和元数据
@@ -15,7 +15,7 @@ ms.locfileid: "81389218"
   
 - 基于反射的第三方序列化程序。 这些程序要求修改你的运行时指令文件，我们会在后面一部分对其进行讨论。  
   
-- 在 .NET Framework 类库中找到的非反射序列化器。 这些程序可能要求修改运行时指令文件，我们会在 [Microsoft 序列化程序](#Microsoft)部分对其进行讨论。  
+- 在 .NET Framework 类库中找到了不基于反射的序列化程序。 这些程序可能要求修改运行时指令文件，我们会在 [Microsoft 序列化程序](#Microsoft)部分对其进行讨论。  
   
 <a name="ThirdParty"></a>
 ## <a name="third-party-serializers"></a>第三方序列化程序
@@ -28,7 +28,7 @@ ms.locfileid: "81389218"
 <Namespace Name="App.Models" Serialize="Required PublicAndInternal" />  
 ```  
   
- 有关示例中使用的语法的信息，请参阅[\<命名空间>元素](namespace-element-net-native.md)。  
+ 有关此示例中使用的语法的信息，请参阅[ \<Namespace> 元素](namespace-element-net-native.md)。  
   
 <a name="Microsoft"></a>
 ## <a name="microsoft-serializers"></a>Microsoft 序列化程序
@@ -37,15 +37,15 @@ ms.locfileid: "81389218"
   
 ### <a name="typeof-used-in-the-constructor"></a>构造函数中使用的 TypeOf
 
- 如果调用这些序列化类的构造函数，并在方法调用中包括 C#[类型](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator)运算符，**则不必执行任何其他工作**。 例如，在以下对序列化类构造函数的每个调用中，`typeof` 关键字被用作了传递给构造函数的表达式的一部分。  
+ 如果调用了这些序列化类的构造函数并在方法调用中包含了 c # [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator)运算符，**则无需执行任何其他操作**。 例如，在以下对序列化类构造函数的每个调用中，`typeof` 关键字被用作了传递给构造函数的表达式的一部分。  
   
  [!code-csharp[ProjectN#5](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#5)]  
   
- .NET 本机编译器将自动处理此代码。  
+ .NET Native 编译器将自动处理此代码。  
   
 ### <a name="typeof-used-outside-the-constructor"></a>构造函数外部使用的 TypeOf
 
- 如果调用这些序列化类的构造函数，并在提供给构造函数参数的<xref:System.Type>表达式之外使用 C# [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator)运算符，如以下代码中，.NET 本机编译器无法解决类型：  
+ 如果调用了这些序列化类的构造函数并在提供给构造函数的参数的表达式外部使用了 c # [typeof](../../csharp/language-reference/operators/type-testing-and-cast.md#typeof-operator)运算符 <xref:System.Type> （如以下代码所示），则 .NET Native 编译器无法解析该类型：  
   
  [!code-csharp[ProjectN#6](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#6)]  
   
@@ -55,21 +55,21 @@ ms.locfileid: "81389218"
 <Type Name="DataSet" Browse="Required Public" />  
 ```  
   
- 同样，如果调用构造函数（如<xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29>和提供要序列化的其他<xref:System.Type>对象数组）（如以下代码中那样，.NET本机编译器无法解决这些类型）。  
+ 同样，如果调用的构造函数（如 <xref:System.Xml.Serialization.XmlSerializer.%23ctor%28System.Type%2CSystem.Type%5B%5D%29> 和）提供一个 <xref:System.Type> 要序列化的附加对象数组，如下面的代码所示，.NET Native 编译器无法解析这些类型。  
   
  [!code-csharp[ProjectN#7](../../../samples/snippets/csharp/VS_Snippets_CLR/projectn/cs/serialize1.cs#7)]  
   
-将每种类型的条目（如以下内容）添加到运行时指令文件：  
+将每种类型的项添加到运行时指令文件：  
   
 ```xml  
 <Type Name="t" Browse="Required Public" />  
 ```  
   
-有关示例中使用的语法的信息，请参阅[\<类型>元素](type-element-net-native.md)。  
+有关此示例中使用的语法的信息，请参阅[ \<Type> 元素](type-element-net-native.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
 - [运行时指令 (rd.xml) 配置文件引用](runtime-directives-rd-xml-configuration-file-reference.md)
 - [运行时指令元素](runtime-directive-elements.md)
-- [\<类型>元素](type-element-net-native.md)
-- [\<命名空间>元素](namespace-element-net-native.md)
+- [\<Type>Element](type-element-net-native.md)
+- [\<Namespace>Element](namespace-element-net-native.md)

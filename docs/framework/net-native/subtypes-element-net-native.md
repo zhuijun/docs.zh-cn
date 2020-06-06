@@ -3,13 +3,13 @@ title: <Subtypes>元素 (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: fb854070-248b-46cf-9dab-c322e2b4d624
 ms.openlocfilehash: bb719449f3769c5dbbde6d05efdb865c18bb4ab2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79180934"
 ---
-# <a name="subtypes-element-net-native"></a>\<子类型>元素（.NET 本机）
+# <a name="subtypes-element-net-native"></a>\<Subtypes>元素 (.NET Native)
 将运行时策略应用到从包含类型继承的所有类。  
   
 ## <a name="syntax"></a>语法  
@@ -30,9 +30,9 @@ ms.locfileid: "79180934"
 ## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a>特性  
   
-|Attribute|属性类型|说明|  
+|属性|属性类型|说明|  
 |---------------|--------------------|-----------------|  
 |`Activate`|反射|可选特性。 控制运行时对构造函数的访问，以启用实例激活。|  
 |`Browse`|反射|可选特性。 控制对有关程序元素信息的查询，但并不启用任何运行时访问。|  
@@ -58,9 +58,9 @@ ms.locfileid: "79180934"
   
 |元素|说明|  
 |-------------|-----------------|  
-|[\<键入>](type-element-net-native.md)|将反射策略应用到一种类型及其所有成员。|  
+|[\<Type>](type-element-net-native.md)|将反射策略应用到一种类型及其所有成员。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `<Subtypes>` 元素将策略应用到其包含类型的所有子类型。 当你想将不同的策略应用到派生类型及其基类时可使用它。  
   
  反射、序列化和互操作特性都是可选项，但必须存在至少一项。  
@@ -89,7 +89,7 @@ ms.locfileid: "79180934"
   
 ## <a name="see-also"></a>另请参阅
 
-- [\<类型>元素](type-element-net-native.md)
+- [\<Type>Element](type-element-net-native.md)
 - [运行时指令 (rd.xml) 配置文件引用](runtime-directives-rd-xml-configuration-file-reference.md)
 - [运行时指令元素](runtime-directive-elements.md)
 - [运行时指令策略设置](runtime-directive-policy-settings.md)

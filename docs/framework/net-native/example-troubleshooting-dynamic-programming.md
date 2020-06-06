@@ -1,15 +1,15 @@
 ---
-title: 示例：排查动态编程问题
+title: 示例：动态编程疑难解答
 ms.date: 03/30/2017
 ms.assetid: 42ed860a-a022-4682-8b7f-7c9870784671
 ms.openlocfilehash: ff179854066d024a89cb5a84a19d0b9bb054d6e5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73128442"
 ---
-# <a name="example-troubleshooting-dynamic-programming"></a>示例：排查动态编程问题
+# <a name="example-troubleshooting-dynamic-programming"></a>示例：动态编程疑难解答
 > [!NOTE]
 > 该主题是指 .NET Native 开发者预览版这款预发布软件。 可从 [Microsoft Connect 网站](https://go.microsoft.com/fwlink/?LinkId=394611)（需要注册）下载该预览版。  
   
@@ -38,7 +38,7 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
   
 `AppViewModel.Current.LayoutVM.PageMap`  
   
- 在此实例中，`AppViewModel.Current` 上的 `LayoutVM` 属性是 null。  某些元数据的缺失引起微妙的行为差异并导致一个属性（而不是集）未以该应用预设的方式得到初始化。  在 `LayoutVM` 应该得到初始化的代码中设置一个断点可能会缓解这一情况。  然而，请注意 `LayoutVM` 的类型是 `App.Core.ViewModels.Layout.LayoutApplicationVM`。  目前 rd.xml 文件中存在的唯一元数据指令是：  
+ 在此实例中，`AppViewModel.Current` 上的 `LayoutVM` 属性是 null****。  某些元数据的缺失引起微妙的行为差异并导致一个属性（而不是集）未以该应用预设的方式得到初始化。  在 `LayoutVM` 应该得到初始化的代码中设置一个断点可能会缓解这一情况。  然而，请注意 `LayoutVM` 的类型是 `App.Core.ViewModels.Layout.LayoutApplicationVM`。  目前 rd.xml 文件中存在的唯一元数据指令是：  
   
 ```xml  
 <Namespace Name="App.ViewModels" Browse="Required Public" Dynamic="Required Public" />  
@@ -46,9 +46,9 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
   
  引起失败的可能原因是 `App.Core.ViewModels.Layout.LayoutApplicationVM` 是丢失的元数据，原因在于它位于一个不同的命名空间。  
   
- 在这种情况下，添加一个运行时指令让 `App.Core.ViewModels` 解决这一问题。 根本原因在于 API 调用了返回 null 的 <xref:System.Type.GetType%28System.String%29?displayProperty=nameWithType> 方法，且该应用默认忽略这一问题直到发生故障。  
+ 在这种情况下，添加一个运行时指令让 `App.Core.ViewModels` 解决这一问题。 根本原因在于 API 调用了返回 null 的 <xref:System.Type.GetType%28System.String%29?displayProperty=nameWithType> 方法，且该应用默认忽略这一问题直到发生故障****。  
   
- 在动态编程中，在 .NET Native 下使用反射 Api 是一种很好的做法，就是使用在失败时引发异常的 <xref:System.Type.GetType%2A?displayProperty=nameWithType> 重载。  
+ 在动态编程中，在 .NET Native 下使用反射 Api 是一种很好的做法，就是使用 <xref:System.Type.GetType%2A?displayProperty=nameWithType> 在失败时引发异常的重载。  
   
 ## <a name="is-this-an-isolated-case"></a>这是一个孤立情形吗？  
  当使用 `App.Core.ViewModels` 时，可能也会出现其他问题。  你必须决定是否值得确定并修复每个丢失的元数据异常，或节省时间并为类型的一个更大类添加指令。  此处，为 `dynamic` 添加 `App.Core.ViewModels` 元数据可能最好的方法，前提是输出的二进制代码变大不会产生问题。  
@@ -56,7 +56,7 @@ App!$43_System::Threading::SendOrPostCallback.InvokeOpenStaticThunk
 ## <a name="could-the-code-be-rewritten"></a>代码能够重写吗？  
  如果该应用过去使用的是 `typeof(LayoutApplicationVM)` 而不是 `Type.GetType("LayoutApplicationVM")`，工具链可能已经保存了 `browse` 元数据。  然而，它也可能没有创建 `invoke` 元数据，这在实例化该类型时可能会导致 [MissingMetadataException](missingmetadataexception-class-net-native.md) 异常。 要阻止这一异常，你仍然必须为命名空间添加一个运行时指令或指定 `dynamic` 策略的类型。 有关运行时指令的信息，请参阅 [运行时指令 (rd.xml) 配置文件参考](runtime-directives-rd-xml-configuration-file-reference.md)。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [入门](getting-started-with-net-native.md)
 - [示例：处理绑定数据时出现的异常](example-handling-exceptions-when-binding-data.md)

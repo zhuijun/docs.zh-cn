@@ -3,22 +3,22 @@ title: <transport> 的 <webHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: f150fb19-7de1-44af-81f4-86cad881cd05
 ms.openlocfilehash: e8016eb9058f132722587368f1f8c7c03220af4a
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73732787"
 ---
-# <a name="transport-of-webhttpbinding"></a>\<webHttpBinding 的 \<传输 > >
+# <a name="transport-of-webhttpbinding"></a>\<transport> 的 \<webHttpBinding>
 定义配置为接收 HTTP 请求的服务终结点的传输级安全设置。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-\<system &nbsp; &nbsp;[ **>** ](system-servicemodel.md) \
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定**](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<webHttpBinding >** ](webhttpbinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<** ](security-of-webhttpbinding.md) >\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<传输 >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<webHttpBinding>**](webhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-webhttpbinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<transport>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -40,7 +40,7 @@ ms.locfileid: "73732787"
 </webHttpBinding>
 ```  
   
-## <a name="type"></a>键入  
+## <a name="type"></a>类型  
  <xref:System.ServiceModel.HttpTransportSecurity>  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
@@ -48,16 +48,16 @@ ms.locfileid: "73732787"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |`clientCredentialType`|指定用于向服务证明客户端身份的凭据。 此属性的类型为 <xref:System.ServiceModel.HttpClientCredentialType>。|  
 |`proxyCredentialType`|指定用于向域代理证明客户端身份的凭据。 此属性的类型为 <xref:System.ServiceModel.HttpProxyCredentialType>。|  
-|`realm`|一个字符串，指定摘要式或基本身份验证的身份验证领域。 默认值为一个空字符串。<br /><br /> 身份验证领域至少指定执行身份验证的主机的名称。 它还可以指定具有访问权限的用户的集合。 用户可以查询身份验证领域，以确定多个可能的用户名和密码中哪一个可以使用。|  
+|`realm`|一个字符串，指定摘要式或基本身份验证的身份验证领域。 默认值为空字符串。<br /><br /> 身份验证领域至少指定执行身份验证的主机的名称。 它还可以指定具有访问权限的用户的集合。 用户可以查询身份验证领域，以确定多个可能的用户名和密码中哪一个可以使用。|  
 |`policyEnforcement`|此枚举指定应何时强制实施 <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy>。<br /><br /> 1. 从不–不强制实施策略（禁用扩展保护）。<br />WhenSupported-仅当客户端支持扩展保护时才强制实施策略。<br />3. always –始终强制实施策略。 不支持扩展保护的客户端将无法进行身份验证。|  
   
 ## <a name="clientcredentialtype-attribute"></a>clientCredentialType 属性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
 |`None`|禁用安全性。|  
 |`Basic`|使用基本身份验证。|  
@@ -68,7 +68,7 @@ ms.locfileid: "73732787"
   
 ## <a name="proxycredentialtype-attribute"></a>proxyCredentialType 属性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
 |`None`|禁用安全性。|  
 |`Basic`|使用基本身份验证。|  
@@ -83,9 +83,9 @@ ms.locfileid: "73732787"
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<security >](security-of-webhttpbinding.md)|表示[\<wsHttpBinding >](wshttpbinding.md)元素的安全功能。|  
+|[\<security>](security-of-webhttpbinding.md)|表示元素的安全功能 [\<wsHttpBinding>](wshttpbinding.md) 。|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.HttpTransportSecurity>
 - <xref:System.ServiceModel.Configuration.WebHttpSecurityElement.Transport%2A>
@@ -95,5 +95,5 @@ ms.locfileid: "73732787"
 - [绑定](../../../wcf/bindings.md)
 - [配置系统提供的绑定](../../../wcf/feature-details/configuring-system-provided-bindings.md)
 - [使用绑定配置服务和客户端](../../../wcf/using-bindings-to-configure-services-and-clients.md)
-- [\<binding >](bindings.md)
+- [\<binding>](bindings.md)
 - [WCF Web HTTP 编程模型](../../../wcf/feature-details/wcf-web-http-programming-model.md)

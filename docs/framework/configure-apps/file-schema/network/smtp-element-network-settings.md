@@ -9,19 +9,19 @@ helpviewer_keywords:
 - smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
 ms.openlocfilehash: 625c3cb82a8659c742b540724e5cf31be65a705e
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/14/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "74089099"
 ---
-# <a name="smtp-element-network-settings"></a>\<smtp > 元素（网络设置）
+# <a name="smtp-element-network-settings"></a>\<smtp> 元素（网络设置）
 配置发送电子邮件的传递格式、传递方法和发件人地址。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-\<&nbsp;&nbsp;[ **> 的**](system-net-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<mailSettings >** ](mailsettings-element-network-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**smtp** >
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<mailSettings>**](mailsettings-element-network-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<smtp>**
   
 ## <a name="syntax"></a>语法  
   
@@ -40,7 +40,7 @@ ms.locfileid: "74089099"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |`deliveryFormat`|指定传出电子邮件的传递格式。 可接受的值为 SevenBit 和 International。|  
 |`deliveryMethod`|指定电子邮件的传递方法。 可接受的值为 Network、PickupDirectoryFromIis 和 SpecifiedPickupDirectory。|  
@@ -48,7 +48,7 @@ ms.locfileid: "74089099"
   
 ### <a name="child-elements"></a>子元素  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |`specifiedPickupDirectory`|配置简单邮件传输协议（SMTP）服务器的本地目录。|  
 |`network`|配置外部 SMTP 服务器的网络选项。|  
@@ -57,7 +57,7 @@ ms.locfileid: "74089099"
   
 |**元素**|**描述**|  
 |-----------------|---------------------|  
-|[\<mailSettings> 元素（网络设置）](mailsettings-element-network-settings.md)|配置邮件发送选项。|  
+|[\<mailSettings>元素（网络设置）](mailsettings-element-network-settings.md)|配置邮件发送选项。|  
   
 ## <a name="example"></a>示例  
  下面的示例指定了使用默认网络凭据发送电子邮件所需的适当 SMTP 参数。  
@@ -78,7 +78,7 @@ ms.locfileid: "74089099"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>
 - <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>

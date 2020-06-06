@@ -3,22 +3,22 @@ title: <localClientSettings> 元素
 ms.date: 03/30/2017
 ms.assetid: 4680ace5-f4e1-4fcb-b9d8-a4a4af5cd7ae
 ms.openlocfilehash: 3ec0394943c030a8866087c98a912682a2a2112e
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70400325"
 ---
-# <a name="localclientsettings-element"></a>\<localClientSettings > 元素
+# <a name="localclientsettings-element"></a>\<localClientSettings> 元素
 指定此绑定的本地客户端安全设置。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定 >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<安全 >** ](security-of-custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<localClientSettings >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<localClientSettings>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -43,11 +43,11 @@ ms.locfileid: "70400325"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|`cacheCookies`|一个布尔值，指定是否启用 Cookie 缓存。 默认值为 `false`。|  
+|`cacheCookies`|一个布尔值，指定是否启用 Cookie 缓存。 默认为 `false`。|  
 |`cookieRenewalThresholdPercentage`|一个整数，指定可续订的最大 Cookie 百分比。 该值应介于 0 至 100 之间（包括这两个数）。 默认值为 90。|  
-|`detectReplays`|一个布尔值，指定是否自动检测和处理针对通道的重放攻击。 默认值为 `false`。|  
+|`detectReplays`|一个布尔值，指定是否自动检测和处理针对通道的重放攻击。 默认为 `false`。|  
 |`maxClockSkew`|一个 <xref:System.TimeSpan>，指定通信双方的系统时钟之间的最大时间差异。 默认值为“00:05:00”。<br /><br /> 当此值被设置为默认值时，接收方所接受的消息的发送时间时间戳最多可比消息接收时间晚或早 5 分钟。 未通过发送时间测试的消息会被拒绝。 此设置与 `replayWindow` 属性结合使用。|  
 |`maxCookieCachingTime`|一个 <xref:System.TimeSpan>，指定 Cookie 的最长生存期。 默认值为“10675199.02:48:05.4775807”。|  
 |`reconnectTransportOnFailure`|一个布尔值，指定使用 WS-ReliableMessaging 的连接是否将在传输失败后尝试重新连接。 默认值为 `true`，表示将进行无限次重新连接尝试。 非活动超时能够打断此循环；非活动超时在无法重新连接通道时使其引发异常。|  
@@ -67,10 +67,10 @@ ms.locfileid: "70400325"
 |[\<security>](security-of-custombinding.md)|指定自定义绑定的安全选项。|  
 |[\<secureConversationBootstrap>](secureconversationbootstrap.md)|指定用于启动安全对话服务的默认值。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  这些设置不是从服务的安全策略派生而来的，从这个意义上说，它们是本地的。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement>
 - <xref:System.ServiceModel.Configuration.SecurityElementBase.LocalClientSettings%2A>

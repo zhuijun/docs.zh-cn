@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <remove> Element
 ms.assetid: ae4d82e0-e8fe-468c-81ab-46d63c4d66a8
 ms.openlocfilehash: 6991e3f73ac180fc690ec48e1a0d15f40c915733
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154525"
 ---
-# <a name="remove-element-for-configsections"></a>\<删除>元素以\<进行配置>
+# <a name="remove-element-for-configsections"></a>\<configSections> 的 \<remove> 元素
 
 删除预定义的节或节组。
 
-[**\<配置>**](configuration-element.md)\
-&nbsp;&nbsp;[**\<配置部分>**](configsections-element-for-configuration.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;**\<删除>**
+[**\<configuration>**](configuration-element.md)\
+&nbsp;&nbsp;[**\<configSections>**](configsections-element-for-configuration.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<remove>**
 
 ## <a name="syntax"></a>语法
 
@@ -28,7 +28,7 @@ ms.locfileid: "79154525"
 <remove name="section name or section group name" />
 ```
 
-## <a name="attribute"></a>Attribute
+## <a name="attribute"></a>属性
 
 |           | 说明 |
 | --------- | ----------- |
@@ -38,7 +38,7 @@ ms.locfileid: "79154525"
 
 |     | 说明 |
 | --- | ----------- |
-| [**\<配置部分>** 元素](configsections-element-for-configuration.md) | 包含配置部分和命名空间声明。 |
+| [**\<configSections>** Element](configsections-element-for-configuration.md) | 包含配置节和命名空间声明。 |
 
 ## <a name="child-elements"></a>子元素
 
@@ -46,13 +46,13 @@ ms.locfileid: "79154525"
 
 ## <a name="remarks"></a>备注
 
-可以使用**\<删除>** 元素从应用程序中从配置文件层次结构中较高级别定义的节和节组中删除。
+你可以使用 **\<remove>** 元素从你的应用程序中删除在配置文件层次结构中较高级别上定义的部分和节组。
 
 ## <a name="example"></a>示例
 
-下面的示例演示如何使用应用程序配置文件中的**\<删除>** 元素来删除以前在计算机配置文件中定义的部分。
+下面的示例演示如何使用 **\<remove>** 应用程序配置文件中的元素删除之前在计算机配置文件中定义的部分。
 
-以下计算机配置文件代码声明节**\<示例节>**：
+以下计算机配置文件代码声明了节 **\<sampleSection>** ：
 
 ```xml
 <!-- Machine.config file -->
@@ -67,7 +67,7 @@ ms.locfileid: "79154525"
 </configuration>
 ```
 
-以下应用程序配置文件代码将删除**\<示例节>** 部分。 删除后，应用程序无法检索**\<示例节>** 中的设置。
+以下应用程序配置文件代码将删除 **\<sampleSection>** 节。 删除后，应用程序无法检索中的设置 **\<sampleSection>** 。
 
 ```xml
 <!-- Application configuration file -->
@@ -80,7 +80,7 @@ ms.locfileid: "79154525"
 
 ## <a name="configuration-file"></a>配置文件
 
-此元素可用于应用程序配置文件、计算机配置文件 *（Machine.config*） 和*Web.config*文件，这些文件不在应用程序目录级别。
+此元素可用于应用程序配置文件、计算机配置文件（*machine.config*）和不在应用程序目录级别的*web.config 文件。*
 
 ## <a name="see-also"></a>另请参阅
 

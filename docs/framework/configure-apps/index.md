@@ -25,10 +25,10 @@ helpviewer_keywords:
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
 ms.openlocfilehash: b2da9600e6947a1efcb13fc8b1127665cea63071
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70972193"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>使用配置文件配置应用
@@ -40,7 +40,7 @@ ms.locfileid: "70972193"
  本主题描述配置文件的语法，并提供有关三种配置文件的信息：计算机配置文件、应用程序配置文件和安全配置文件。  
   
 ## <a name="configuration-file-format"></a>配置文件格式  
- 配置文件包含元素，它们是用来设置配置信息的逻辑数据结构。 在配置文件内，使用标记来标记元素的开头和结尾。 例如，`<runtime>` 元素包括`<runtime>`子元素`</runtime>`。 空元素将写为 `<runtime/>` 或 `<runtime></runtime>`。  
+ 配置文件包含元素，它们是用来设置配置信息的逻辑数据结构。 在配置文件内，使用标记来标记元素的开头和结尾。 例如， `<runtime>` 元素由 `<runtime>` *子元素*组成 `</runtime>` 。 空元素将写为 `<runtime/>` 或 `<runtime></runtime>`。  
   
  与所有 XML 文件一样，配置文件中的语法区分大小写。  
   
@@ -54,7 +54,7 @@ ms.locfileid: "70972193"
 ## <a name="machine-configuration-files"></a>计算机配置文件  
  计算机配置文件 Machine.config 包含应用于整个计算机的设置。 此文件位于 %*runtime install path*%\Config 目录中。 Machine.config 包含整个计算机范围内的程序集绑定、内置[远程处理信道](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100))和 ASP.NET 的配置设置。  
   
- 配置系统首先查看计算机配置文件，查找 [ **\<appSettings>** 元素](./file-schema/appsettings/index.md)，然后查看开发人员可能定义的其他配置节。 然后查看应用程序配置文件。 为使计算机配置文件可管理，最好将这些设置放在应用程序配置文件中。 但是，将这些设置放在计算机配置文件中可以使系统更易维护。 例如，如果有第三方组件，且客户端和服务器应用程序同时使用该组件，那么将该组件的设置放在一个位置更方便。 在这种情况下，计算机配置文件是存放设置的合适位置，这样就不会将相同的设置放在两个不同的文件中。  
+ 配置系统首先在计算机配置文件中查找[ **\<appSettings>** 元素](./file-schema/appsettings/index.md)和开发人员可能定义的其他配置节。 然后查看应用程序配置文件。 为使计算机配置文件可管理，最好将这些设置放在应用程序配置文件中。 但是，将这些设置放在计算机配置文件中可以使系统更易维护。 例如，如果有第三方组件，且客户端和服务器应用程序同时使用该组件，那么将该组件的设置放在一个位置更方便。 在这种情况下，计算机配置文件是存放设置的合适位置，这样就不会将相同的设置放在两个不同的文件中。  
   
 > [!NOTE]
 > 使用 XCOPY 部署应用程序将不会复制计算机配置文件中的设置。  
@@ -70,7 +70,7 @@ ms.locfileid: "70972193"
   
      这些应用具有两个配置文件：一个开发人员在开发过程中修改的源配置文件，一个随应用一起分发的输出文件。  
   
-     在 Visual Studio 中进行开发时，将应用的源配置文件放置在项目目录中，并将其“复制到输出目录”属性设置为“始终复制”或“如果较新则复制”。 配置文件的名称是带 .config 扩展名的应用名。 例如，名为 myApp.exe 的应用应具有名为 myApp.exe.config 的源配置文件。  
+     在 Visual Studio 中进行开发时，将应用的源配置文件放置在项目目录中，并将其“复制到输出目录”**** 属性设置为“始终复制”**** 或“如果较新则复制”****。 配置文件的名称是带 .config 扩展名的应用名。 例如，名为 myApp.exe 的应用应具有名为 myApp.exe.config 的源配置文件。  
   
      Visual Studio 会自动将源配置文件复制到已编译程序集所在的目录中，以便创建随应用程序一起部署的输出配置文件。 在某些情况下，Visual Studio 可能修改输出配置文件；有关详细信息，请参阅[重定向程序集版本](redirect-assembly-versions.md)文章中的[重定向应用级别的程序集版本](redirect-assembly-versions.md#BKMK_Redirectingassemblyversionsattheapplevel)一节。  
   
@@ -94,11 +94,11 @@ ms.locfileid: "70972193"
   
  安全配置文件位于以下位置：  
   
-- 企业策略配置文件：%runtime-install-path%\Config\Enterprisesec.config  
+- 企业策略配置文件：%runtime-install-path**%\Config\Enterprisesec.config  
   
-- 计算机策略配置文件：%runtime-install-path%\Config\Security.config  
+- 计算机策略配置文件：%runtime-install-path**%\Config\Security.config  
   
-- 用户策略配置文件：%USERPROFILE%\Application data\Microsoft\CLR security config\vxx.xx\Security.config  
+- 用户策略配置文件：%USERPROFILE%\Application data\Microsoft\CLR security config\vxx.xx** \Security.config  
   
 ## <a name="in-this-section"></a>本节内容  
  [如何：使用 DEVPATH 查找程序集](how-to-locate-assemblies-by-using-devpath.md)  
@@ -113,7 +113,7 @@ ms.locfileid: "70972193"
  [配置加密类](configure-cryptography-classes.md)  
  描述如何将算法名称映射到加密类，以及如何将对象标识符映射到加密算法。  
   
- [如何：创建发布者策略](how-to-create-a-publisher-policy.md)  
+ [如何：创建发行者策略](how-to-create-a-publisher-policy.md)  
  描述应当在何时以及如何添加发行者策略文件，以指定程序集重定向和基本代码设置。  
   
  [配置文件架构](./file-schema/index.md)  
