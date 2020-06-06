@@ -9,45 +9,45 @@ helpviewer_keywords:
 - <mscorlib> element
 ms.assetid: d549668f-31f1-4b92-8021-a9135c09ca3c
 ms.openlocfilehash: d1d805f7154c18dba2dcd4eb7228cc200d8da811
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155176"
 ---
-# <a name="mscorlib-element-for-cryptography-settings"></a><span data-ttu-id="825bb-102">\<用于加密设置的 mscorlib>元素</span><span class="sxs-lookup"><span data-stu-id="825bb-102">\<mscorlib> Element for Cryptography Settings</span></span>
-<span data-ttu-id="825bb-103">包含[\<加密设置>元素](cryptographysettings-element.md)。</span><span class="sxs-lookup"><span data-stu-id="825bb-103">Contains the [\<cryptographySettings> element](cryptographysettings-element.md).</span></span>  
+# <a name="mscorlib-element-for-cryptography-settings"></a><span data-ttu-id="25785-102">Cryptography 设置的 \<mscorlib> 元素</span><span class="sxs-lookup"><span data-stu-id="25785-102">\<mscorlib> Element for Cryptography Settings</span></span>
+<span data-ttu-id="25785-103">包含[ \<cryptographySettings> 元素](cryptographysettings-element.md)。</span><span class="sxs-lookup"><span data-stu-id="25785-103">Contains the [\<cryptographySettings> element](cryptographysettings-element.md).</span></span>  
   
-[<span data-ttu-id="825bb-104">**\<配置>**</span><span class="sxs-lookup"><span data-stu-id="825bb-104">**\<configuration>**</span></span>](../configuration-element.md)  
-<span data-ttu-id="825bb-105">&nbsp;&nbsp;**\<姆斯科利布>**</span><span class="sxs-lookup"><span data-stu-id="825bb-105">&nbsp;&nbsp;**\<mscorlib>**</span></span>  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;**\<mscorlib>**  
   
-## <a name="syntax"></a><span data-ttu-id="825bb-106">语法</span><span class="sxs-lookup"><span data-stu-id="825bb-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="25785-104">语法</span><span class="sxs-lookup"><span data-stu-id="25785-104">Syntax</span></span>  
   
 ```xml  
       <mscorlib>
 </mscorlib>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="825bb-107">特性和元素</span><span class="sxs-lookup"><span data-stu-id="825bb-107">Attributes and Elements</span></span>  
- <span data-ttu-id="825bb-108">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="825bb-108">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="25785-105">特性和元素</span><span class="sxs-lookup"><span data-stu-id="25785-105">Attributes and Elements</span></span>  
+ <span data-ttu-id="25785-106">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="25785-106">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="825bb-109">属性</span><span class="sxs-lookup"><span data-stu-id="825bb-109">Attributes</span></span>  
- <span data-ttu-id="825bb-110">无。</span><span class="sxs-lookup"><span data-stu-id="825bb-110">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="25785-107">特性</span><span class="sxs-lookup"><span data-stu-id="25785-107">Attributes</span></span>  
+ <span data-ttu-id="25785-108">无。</span><span class="sxs-lookup"><span data-stu-id="25785-108">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="825bb-111">子元素</span><span class="sxs-lookup"><span data-stu-id="825bb-111">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="25785-109">子元素</span><span class="sxs-lookup"><span data-stu-id="25785-109">Child Elements</span></span>  
   
-|<span data-ttu-id="825bb-112">元素</span><span class="sxs-lookup"><span data-stu-id="825bb-112">Element</span></span>|<span data-ttu-id="825bb-113">说明</span><span class="sxs-lookup"><span data-stu-id="825bb-113">Description</span></span>|  
+|<span data-ttu-id="25785-110">元素</span><span class="sxs-lookup"><span data-stu-id="25785-110">Element</span></span>|<span data-ttu-id="25785-111">说明</span><span class="sxs-lookup"><span data-stu-id="25785-111">Description</span></span>|  
 |-------------|-----------------|  
-|`cryptographySettings`|<span data-ttu-id="825bb-114">包含加密设置。</span><span class="sxs-lookup"><span data-stu-id="825bb-114">Contains cryptography settings.</span></span>|  
+|`cryptographySettings`|<span data-ttu-id="25785-112">包含加密设置。</span><span class="sxs-lookup"><span data-stu-id="25785-112">Contains cryptography settings.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="825bb-115">父元素</span><span class="sxs-lookup"><span data-stu-id="825bb-115">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="25785-113">父元素</span><span class="sxs-lookup"><span data-stu-id="25785-113">Parent Elements</span></span>  
   
-|<span data-ttu-id="825bb-116">元素</span><span class="sxs-lookup"><span data-stu-id="825bb-116">Element</span></span>|<span data-ttu-id="825bb-117">说明</span><span class="sxs-lookup"><span data-stu-id="825bb-117">Description</span></span>|  
+|<span data-ttu-id="25785-114">元素</span><span class="sxs-lookup"><span data-stu-id="25785-114">Element</span></span>|<span data-ttu-id="25785-115">说明</span><span class="sxs-lookup"><span data-stu-id="25785-115">Description</span></span>|  
 |-------------|-----------------|  
-|`configuration`|<span data-ttu-id="825bb-118">公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。</span><span class="sxs-lookup"><span data-stu-id="825bb-118">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
+|`configuration`|<span data-ttu-id="25785-116">公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。</span><span class="sxs-lookup"><span data-stu-id="25785-116">The root element in every configuration file used by the common language runtime and .NET Framework applications.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="825bb-119">示例</span><span class="sxs-lookup"><span data-stu-id="825bb-119">Example</span></span>  
- <span data-ttu-id="825bb-120">下面的示例演示如何使用**\<mscorlib>** 元素来引用加密类并配置运行时。</span><span class="sxs-lookup"><span data-stu-id="825bb-120">The following example shows how to use the **\<mscorlib>** element to reference a cryptography class and to configure the runtime.</span></span> <span data-ttu-id="825bb-121">然后，可以将字符串"RSA"传递给 方法，<xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType>并使用 方法<xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A>返回对象`MyCryptoRSAClass`。</span><span class="sxs-lookup"><span data-stu-id="825bb-121">You can then pass the string "RSA" to the <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> method and use the <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> method to return a `MyCryptoRSAClass` object.</span></span>  
+## <a name="example"></a><span data-ttu-id="25785-117">示例</span><span class="sxs-lookup"><span data-stu-id="25785-117">Example</span></span>  
+ <span data-ttu-id="25785-118">下面的示例演示如何使用 **\<mscorlib>** 元素来引用加密类并配置运行时。</span><span class="sxs-lookup"><span data-stu-id="25785-118">The following example shows how to use the **\<mscorlib>** element to reference a cryptography class and to configure the runtime.</span></span> <span data-ttu-id="25785-119">然后，你可以将字符串 "RSA" 传递给 <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> 方法，并使用 <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> 方法返回 `MyCryptoRSAClass` 对象。</span><span class="sxs-lookup"><span data-stu-id="25785-119">You can then pass the string "RSA" to the <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A?displayProperty=nameWithType> method and use the <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create%2A> method to return a `MyCryptoRSAClass` object.</span></span>  
   
 ```xml  
 <configuration>  
@@ -68,11 +68,11 @@ ms.locfileid: "79155176"
 </configuration>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="825bb-122">另请参阅</span><span class="sxs-lookup"><span data-stu-id="825bb-122">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="25785-120">请参阅</span><span class="sxs-lookup"><span data-stu-id="25785-120">See also</span></span>
 
 - <xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A>
 - <xref:System.Security.Cryptography>
-- [<span data-ttu-id="825bb-123">配置文件架构</span><span class="sxs-lookup"><span data-stu-id="825bb-123">Configuration File Schema</span></span>](../index.md)
-- [<span data-ttu-id="825bb-124">密码设置架构</span><span class="sxs-lookup"><span data-stu-id="825bb-124">Cryptography Settings Schema</span></span>](index.md)
-- [<span data-ttu-id="825bb-125">加密服务</span><span class="sxs-lookup"><span data-stu-id="825bb-125">Cryptographic Services</span></span>](../../../../standard/security/cryptographic-services.md)
-- [<span data-ttu-id="825bb-126">配置加密类</span><span class="sxs-lookup"><span data-stu-id="825bb-126">Configuring Cryptography Classes</span></span>](../../configure-cryptography-classes.md)
+- [<span data-ttu-id="25785-121">配置文件架构</span><span class="sxs-lookup"><span data-stu-id="25785-121">Configuration File Schema</span></span>](../index.md)
+- [<span data-ttu-id="25785-122">密码设置架构</span><span class="sxs-lookup"><span data-stu-id="25785-122">Cryptography Settings Schema</span></span>](index.md)
+- [<span data-ttu-id="25785-123">加密服务</span><span class="sxs-lookup"><span data-stu-id="25785-123">Cryptographic Services</span></span>](../../../../standard/security/cryptographic-services.md)
+- [<span data-ttu-id="25785-124">配置加密类</span><span class="sxs-lookup"><span data-stu-id="25785-124">Configuring Cryptography Classes</span></span>](../../configure-cryptography-classes.md)
