@@ -3,23 +3,23 @@ title: <baseAddresses>
 ms.date: 03/30/2017
 ms.assetid: 78918102-2898-46e0-9ea8-6b8afe65603e
 ms.openlocfilehash: 9b3ed6b39f1743249925d5b6d9a47845c87983bc
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70850205"
 ---
-# <a name="baseaddresses"></a><span data-ttu-id="ce8ab-101">\<baseAddresses></span><span class="sxs-lookup"><span data-stu-id="ce8ab-101">\<baseAddresses></span></span>
-<span data-ttu-id="ce8ab-102">表示一个 `baseAddress` 元素集合，这些元素是自承载环境中服务主机的基址。</span><span class="sxs-lookup"><span data-stu-id="ce8ab-102">Represents a collection of `baseAddress` elements, which are base addresses for a service host in a self-hosted environment.</span></span> <span data-ttu-id="ce8ab-103">如果存在基址，则可以使用相对于基址的地址配置终结点。</span><span class="sxs-lookup"><span data-stu-id="ce8ab-103">If a base address is present, endpoints can be configured with addresses relative to the base address.</span></span>  
+# \<baseAddresses>
+<span data-ttu-id="59f02-101">表示一个 `baseAddress` 元素集合，这些元素是自承载环境中服务主机的基址。</span><span class="sxs-lookup"><span data-stu-id="59f02-101">Represents a collection of `baseAddress` elements, which are base addresses for a service host in a self-hosted environment.</span></span> <span data-ttu-id="59f02-102">如果存在基址，则可以使用相对于基址的地址配置终结点。</span><span class="sxs-lookup"><span data-stu-id="59f02-102">If a base address is present, endpoints can be configured with addresses relative to the base address.</span></span>  
   
-<span data-ttu-id="ce8ab-104">[ **\<configuration>** ](../configuration-element.md)</span><span class="sxs-lookup"><span data-stu-id="ce8ab-104">[**\<configuration>**](../configuration-element.md)</span></span>\
-<span data-ttu-id="ce8ab-105">&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)</span><span class="sxs-lookup"><span data-stu-id="ce8ab-105">&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)</span></span>\
-<span data-ttu-id="ce8ab-106">&nbsp;&nbsp;&nbsp;&nbsp;[ **\<服务 >** ](services.md)</span><span class="sxs-lookup"><span data-stu-id="ce8ab-106">&nbsp;&nbsp;&nbsp;&nbsp;[**\<services>**](services.md)</span></span>\
-<span data-ttu-id="ce8ab-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<服务 >** ](service.md)</span><span class="sxs-lookup"><span data-stu-id="ce8ab-107">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<service>**](service.md)</span></span>\
-<span data-ttu-id="ce8ab-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<主机 >** ](host.md)</span><span class="sxs-lookup"><span data-stu-id="ce8ab-108">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<host>**](host.md)</span></span>\
-<span data-ttu-id="ce8ab-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<baseAddresses >**</span><span class="sxs-lookup"><span data-stu-id="ce8ab-109">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<baseAddresses>**</span></span>  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<services>**](services.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<service>**](service.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<host>**](host.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<baseAddresses>**  
   
-## <a name="syntax"></a><span data-ttu-id="ce8ab-110">语法</span><span class="sxs-lookup"><span data-stu-id="ce8ab-110">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="59f02-103">语法</span><span class="sxs-lookup"><span data-stu-id="59f02-103">Syntax</span></span>  
   
 ```xml  
 <baseAddresses>
@@ -27,30 +27,30 @@ ms.locfileid: "70850205"
 </baseAddresses>
 ```  
   
-## <a name="type"></a><span data-ttu-id="ce8ab-111">类型</span><span class="sxs-lookup"><span data-stu-id="ce8ab-111">Type</span></span>  
+## <a name="type"></a><span data-ttu-id="59f02-104">类型</span><span class="sxs-lookup"><span data-stu-id="59f02-104">Type</span></span>  
  `Type`  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="ce8ab-112">特性和元素</span><span class="sxs-lookup"><span data-stu-id="ce8ab-112">Attributes and Elements</span></span>  
- <span data-ttu-id="ce8ab-113">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="ce8ab-113">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="59f02-105">特性和元素</span><span class="sxs-lookup"><span data-stu-id="59f02-105">Attributes and Elements</span></span>  
+ <span data-ttu-id="59f02-106">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="59f02-106">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="ce8ab-114">特性</span><span class="sxs-lookup"><span data-stu-id="ce8ab-114">Attributes</span></span>  
- <span data-ttu-id="ce8ab-115">无。</span><span class="sxs-lookup"><span data-stu-id="ce8ab-115">None.</span></span>  
+### <a name="attributes"></a><span data-ttu-id="59f02-107">特性</span><span class="sxs-lookup"><span data-stu-id="59f02-107">Attributes</span></span>  
+ <span data-ttu-id="59f02-108">无。</span><span class="sxs-lookup"><span data-stu-id="59f02-108">None.</span></span>  
   
-### <a name="child-elements"></a><span data-ttu-id="ce8ab-116">子元素</span><span class="sxs-lookup"><span data-stu-id="ce8ab-116">Child Elements</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="59f02-109">子元素</span><span class="sxs-lookup"><span data-stu-id="59f02-109">Child Elements</span></span>  
   
-|<span data-ttu-id="ce8ab-117">元素</span><span class="sxs-lookup"><span data-stu-id="ce8ab-117">Element</span></span>|<span data-ttu-id="ce8ab-118">描述</span><span class="sxs-lookup"><span data-stu-id="ce8ab-118">Description</span></span>|  
+|<span data-ttu-id="59f02-110">元素</span><span class="sxs-lookup"><span data-stu-id="59f02-110">Element</span></span>|<span data-ttu-id="59f02-111">说明</span><span class="sxs-lookup"><span data-stu-id="59f02-111">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="ce8ab-119">\<add></span><span class="sxs-lookup"><span data-stu-id="ce8ab-119">\<add></span></span>](add-of-baseaddresses.md)|<span data-ttu-id="ce8ab-120">一个配置元素，指定服务主机所使用的基址。</span><span class="sxs-lookup"><span data-stu-id="ce8ab-120">A configuration element that specifies the base addresses used by the service host.</span></span>|  
+|[\<add>](add-of-baseaddresses.md)|<span data-ttu-id="59f02-112">一个配置元素，指定服务主机所使用的基址。</span><span class="sxs-lookup"><span data-stu-id="59f02-112">A configuration element that specifies the base addresses used by the service host.</span></span>|  
   
-### <a name="parent-elements"></a><span data-ttu-id="ce8ab-121">父元素</span><span class="sxs-lookup"><span data-stu-id="ce8ab-121">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="59f02-113">父元素</span><span class="sxs-lookup"><span data-stu-id="59f02-113">Parent Elements</span></span>  
   
-|<span data-ttu-id="ce8ab-122">元素</span><span class="sxs-lookup"><span data-stu-id="ce8ab-122">Element</span></span>|<span data-ttu-id="ce8ab-123">描述</span><span class="sxs-lookup"><span data-stu-id="ce8ab-123">Description</span></span>|  
+|<span data-ttu-id="59f02-114">元素</span><span class="sxs-lookup"><span data-stu-id="59f02-114">Element</span></span>|<span data-ttu-id="59f02-115">说明</span><span class="sxs-lookup"><span data-stu-id="59f02-115">Description</span></span>|  
 |-------------|-----------------|  
-|[<span data-ttu-id="ce8ab-124">\<host></span><span class="sxs-lookup"><span data-stu-id="ce8ab-124">\<host></span></span>](host.md)|<span data-ttu-id="ce8ab-125">一个指定服务主机设置的配置元素。</span><span class="sxs-lookup"><span data-stu-id="ce8ab-125">A configuration element that specifies settings for a service host.</span></span>|  
+|[\<host>](host.md)|<span data-ttu-id="59f02-116">一个指定服务主机设置的配置元素。</span><span class="sxs-lookup"><span data-stu-id="59f02-116">A configuration element that specifies settings for a service host.</span></span>|  
   
-## <a name="see-also"></a><span data-ttu-id="ce8ab-126">请参阅</span><span class="sxs-lookup"><span data-stu-id="ce8ab-126">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="59f02-117">另请参阅</span><span class="sxs-lookup"><span data-stu-id="59f02-117">See also</span></span>
 
 - <xref:System.ServiceModel.Configuration.HostElement>
 - <xref:System.ServiceModel.ServiceHost>
 - <xref:System.ServiceModel.ServiceHostBase.BaseAddresses%2A>
-- [<span data-ttu-id="ce8ab-127">承载</span><span class="sxs-lookup"><span data-stu-id="ce8ab-127">Hosting</span></span>](../../../wcf/feature-details/hosting.md)
+- [<span data-ttu-id="59f02-118">承载</span><span class="sxs-lookup"><span data-stu-id="59f02-118">Hosting</span></span>](../../../wcf/feature-details/hosting.md)

@@ -6,65 +6,65 @@ helpviewer_keywords:
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
 ms.openlocfilehash: 178d5070dd7018bbc0fce474cdd0b31ba3d17f77
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "69913036"
 ---
-# <a name="how-to-enable-and-disable-automatic-binding-redirection"></a><span data-ttu-id="7767f-102">如何：启用和禁用自动绑定重定向</span><span class="sxs-lookup"><span data-stu-id="7767f-102">How to: Enable and Disable Automatic Binding Redirection</span></span>
+# <a name="how-to-enable-and-disable-automatic-binding-redirection"></a><span data-ttu-id="56556-102">如何：启用和禁用自动绑定重定向</span><span class="sxs-lookup"><span data-stu-id="56556-102">How to: Enable and Disable Automatic Binding Redirection</span></span>
 
-<span data-ttu-id="7767f-103">在 Visual Studio 中编译面向 .NET Framework 4.5.1 和更高版本的应用程序时，绑定重定向可能会自动添加到应用程序配置文件中，以替代程序集统一。</span><span class="sxs-lookup"><span data-stu-id="7767f-103">When you compile apps in Visual Studio that target the .NET Framework 4.5.1 and later versions, binding redirects may be automatically added to the app configuration file to override assembly unification.</span></span> <span data-ttu-id="7767f-104">如果你的应用或其组件引用同一程序集的多个版本，就会添加绑定重定向，即使你在应用的配置文件中手动指定绑定重定向。</span><span class="sxs-lookup"><span data-stu-id="7767f-104">Binding redirects are added if your app or its components reference more than one version of the same assembly, even if you manually specify binding redirects in the configuration file for your app.</span></span> <span data-ttu-id="7767f-105">自动绑定重定向功能会影响面向 .NET Framework 4.5.1 或更高版本的桌面应用和 web 应用，但对于 web 应用而言，此行为稍有不同。</span><span class="sxs-lookup"><span data-stu-id="7767f-105">The automatic binding redirection feature affects desktop apps and web apps that target the .NET Framework 4.5.1 or a later version, although the behavior is slightly different for a web app.</span></span> <span data-ttu-id="7767f-106">如果现有应用面向 .NET Framework 的早期版本，则可以启用自动绑定重定向，如果要手动创作绑定重定向，则可以禁用此功能。</span><span class="sxs-lookup"><span data-stu-id="7767f-106">You can enable automatic binding redirection if you have existing apps that target previous versions of the .NET Framework, or you can disable this feature if you want to manually author binding redirects.</span></span>
+<span data-ttu-id="56556-103">在 Visual Studio 中编译面向 .NET Framework 4.5.1 和更高版本的应用程序时，绑定重定向可能会自动添加到应用程序配置文件中，以替代程序集统一。</span><span class="sxs-lookup"><span data-stu-id="56556-103">When you compile apps in Visual Studio that target the .NET Framework 4.5.1 and later versions, binding redirects may be automatically added to the app configuration file to override assembly unification.</span></span> <span data-ttu-id="56556-104">如果你的应用或其组件引用同一程序集的多个版本，就会添加绑定重定向，即使你在应用的配置文件中手动指定绑定重定向。</span><span class="sxs-lookup"><span data-stu-id="56556-104">Binding redirects are added if your app or its components reference more than one version of the same assembly, even if you manually specify binding redirects in the configuration file for your app.</span></span> <span data-ttu-id="56556-105">自动绑定重定向功能会影响面向 .NET Framework 4.5.1 或更高版本的桌面应用和 web 应用，但对于 web 应用而言，此行为稍有不同。</span><span class="sxs-lookup"><span data-stu-id="56556-105">The automatic binding redirection feature affects desktop apps and web apps that target the .NET Framework 4.5.1 or a later version, although the behavior is slightly different for a web app.</span></span> <span data-ttu-id="56556-106">如果现有应用面向 .NET Framework 的早期版本，则可以启用自动绑定重定向，如果要手动创作绑定重定向，则可以禁用此功能。</span><span class="sxs-lookup"><span data-stu-id="56556-106">You can enable automatic binding redirection if you have existing apps that target previous versions of the .NET Framework, or you can disable this feature if you want to manually author binding redirects.</span></span>
 
-## <a name="disable-automatic-binding-redirects-in-desktop-apps"></a><span data-ttu-id="7767f-107">禁用桌面应用中的自动绑定重定向</span><span class="sxs-lookup"><span data-stu-id="7767f-107">Disable automatic binding redirects in desktop apps</span></span>
+## <a name="disable-automatic-binding-redirects-in-desktop-apps"></a><span data-ttu-id="56556-107">禁用桌面应用中的自动绑定重定向</span><span class="sxs-lookup"><span data-stu-id="56556-107">Disable automatic binding redirects in desktop apps</span></span>
 
-<span data-ttu-id="7767f-108">默认情况下，为面向 .NET Framework 4.5.1 和更高版本的 Windows 桌面应用启用自动绑定重定向。</span><span class="sxs-lookup"><span data-stu-id="7767f-108">Automatic binding redirects are enabled by default for Windows desktop apps that target the .NET Framework 4.5.1 and later versions.</span></span> <span data-ttu-id="7767f-109">在编译应用程序时，绑定重定向将添加到输出配置（**app.config**）文件，并重写可能发生的程序集统一。</span><span class="sxs-lookup"><span data-stu-id="7767f-109">The binding redirects are added to the output configuration (**app.config**) file when the app is compiled and override the assembly unification that might otherwise take place.</span></span> <span data-ttu-id="7767f-110">未修改源**app.config**文件。</span><span class="sxs-lookup"><span data-stu-id="7767f-110">The source **app.config** file is not modified.</span></span> <span data-ttu-id="7767f-111">可以通过修改应用程序的项目文件，或在 Visual Studio 的项目属性中取消选中复选框来禁用此功能。</span><span class="sxs-lookup"><span data-stu-id="7767f-111">You can disable this feature by modifying the project file for the app or by deselecting a checkbox in the project's properties in Visual Studio.</span></span>
+<span data-ttu-id="56556-108">默认情况下，为面向 .NET Framework 4.5.1 和更高版本的 Windows 桌面应用启用自动绑定重定向。</span><span class="sxs-lookup"><span data-stu-id="56556-108">Automatic binding redirects are enabled by default for Windows desktop apps that target the .NET Framework 4.5.1 and later versions.</span></span> <span data-ttu-id="56556-109">在编译应用程序时，绑定重定向将添加到输出配置（**app.config**）文件，并重写可能发生的程序集统一。</span><span class="sxs-lookup"><span data-stu-id="56556-109">The binding redirects are added to the output configuration (**app.config**) file when the app is compiled and override the assembly unification that might otherwise take place.</span></span> <span data-ttu-id="56556-110">未修改源**app.config**文件。</span><span class="sxs-lookup"><span data-stu-id="56556-110">The source **app.config** file is not modified.</span></span> <span data-ttu-id="56556-111">可以通过修改应用程序的项目文件，或在 Visual Studio 的项目属性中取消选中复选框来禁用此功能。</span><span class="sxs-lookup"><span data-stu-id="56556-111">You can disable this feature by modifying the project file for the app or by deselecting a checkbox in the project's properties in Visual Studio.</span></span>
 
-### <a name="disable-through-project-properties"></a><span data-ttu-id="7767f-112">通过项目属性禁用</span><span class="sxs-lookup"><span data-stu-id="7767f-112">Disable through project properties</span></span>
+### <a name="disable-through-project-properties"></a><span data-ttu-id="56556-112">通过项目属性禁用</span><span class="sxs-lookup"><span data-stu-id="56556-112">Disable through project properties</span></span>
 
-<span data-ttu-id="7767f-113">如果使用的是 Visual Studio 2017 版本15.7 或更高版本，则可以在项目的属性页中轻松禁用自动生成的绑定重定向。</span><span class="sxs-lookup"><span data-stu-id="7767f-113">If you have Visual Studio 2017 version 15.7 or later, you can easily disable autogenerated binding redirects in the project's property pages.</span></span>
+<span data-ttu-id="56556-113">如果使用的是 Visual Studio 2017 版本15.7 或更高版本，则可以在项目的属性页中轻松禁用自动生成的绑定重定向。</span><span class="sxs-lookup"><span data-stu-id="56556-113">If you have Visual Studio 2017 version 15.7 or later, you can easily disable autogenerated binding redirects in the project's property pages.</span></span>
 
-1. <span data-ttu-id="7767f-114">右键单击“解决方案资源管理器”中的项目，再选择“属性”。</span><span class="sxs-lookup"><span data-stu-id="7767f-114">Right-click the project in **Solution Explorer** and select **Properties**.</span></span>
+1. <span data-ttu-id="56556-114">右键单击“解决方案资源管理器”中的项目，再选择“属性”   。</span><span class="sxs-lookup"><span data-stu-id="56556-114">Right-click the project in **Solution Explorer** and select **Properties**.</span></span>
 
-2. <span data-ttu-id="7767f-115">在**应用程序**页上，取消选中 "**自动生成绑定重定向**" 选项。</span><span class="sxs-lookup"><span data-stu-id="7767f-115">On the **Application** page, uncheck the **Auto-generate binding redirects** option.</span></span>
+2. <span data-ttu-id="56556-115">在**应用程序**页上，取消选中 "**自动生成绑定重定向**" 选项。</span><span class="sxs-lookup"><span data-stu-id="56556-115">On the **Application** page, uncheck the **Auto-generate binding redirects** option.</span></span>
 
-3. <span data-ttu-id="7767f-116">按**Ctrl**+**S**保存更改。</span><span class="sxs-lookup"><span data-stu-id="7767f-116">Press **Ctrl**+**S** to save the change.</span></span>
+3. <span data-ttu-id="56556-116">按**Ctrl** + **S**保存更改。</span><span class="sxs-lookup"><span data-stu-id="56556-116">Press **Ctrl**+**S** to save the change.</span></span>
 
-### <a name="disable-manually-in-the-project-file"></a><span data-ttu-id="7767f-117">在项目文件中手动禁用</span><span class="sxs-lookup"><span data-stu-id="7767f-117">Disable manually in the project file</span></span>
+### <a name="disable-manually-in-the-project-file"></a><span data-ttu-id="56556-117">在项目文件中手动禁用</span><span class="sxs-lookup"><span data-stu-id="56556-117">Disable manually in the project file</span></span>
 
-1. <span data-ttu-id="7767f-118">使用以下方法之一打开项目文件以进行编辑：</span><span class="sxs-lookup"><span data-stu-id="7767f-118">Open the project file for editing using one of the following methods:</span></span>
+1. <span data-ttu-id="56556-118">使用以下方法之一打开项目文件以进行编辑：</span><span class="sxs-lookup"><span data-stu-id="56556-118">Open the project file for editing using one of the following methods:</span></span>
 
-   - <span data-ttu-id="7767f-119">在 Visual Studio 中，选择**解决方案资源管理器**中的项目，然后从快捷菜单中选择 "**在文件资源管理器中打开文件夹**"。</span><span class="sxs-lookup"><span data-stu-id="7767f-119">In Visual Studio, select the project in **Solution Explorer**, and then choose **Open Folder in File Explorer** from the shortcut menu.</span></span> <span data-ttu-id="7767f-120">在文件资源管理器中，找到项目（.csproj 或 .vbproj）文件并在记事本中将其打开。</span><span class="sxs-lookup"><span data-stu-id="7767f-120">In File Explorer, find the project (.csproj or .vbproj) file and open it in Notepad.</span></span>
-   - <span data-ttu-id="7767f-121">在 Visual Studio 的**解决方案资源管理器**中，右键单击项目，然后选择 "**卸载项目**"。</span><span class="sxs-lookup"><span data-stu-id="7767f-121">In Visual Studio, in **Solution Explorer**, right-click the project and choose **Unload Project**.</span></span> <span data-ttu-id="7767f-122">再次右键单击卸载的项目，然后选择 "**编辑 [项目名称 .csproj]** "。</span><span class="sxs-lookup"><span data-stu-id="7767f-122">Right-click the unloaded project again, and then choose **Edit [projectname.csproj]**.</span></span>
+   - <span data-ttu-id="56556-119">在 Visual Studio 中，选择**解决方案资源管理器**中的项目，然后从快捷菜单中选择 "**在文件资源管理器中打开文件夹**"。</span><span class="sxs-lookup"><span data-stu-id="56556-119">In Visual Studio, select the project in **Solution Explorer**, and then choose **Open Folder in File Explorer** from the shortcut menu.</span></span> <span data-ttu-id="56556-120">在文件资源管理器中，找到项目（.csproj 或 .vbproj）文件并在记事本中将其打开。</span><span class="sxs-lookup"><span data-stu-id="56556-120">In File Explorer, find the project (.csproj or .vbproj) file and open it in Notepad.</span></span>
+   - <span data-ttu-id="56556-121">在 Visual Studio 的**解决方案资源管理器**中，右键单击项目，然后选择 "**卸载项目**"。</span><span class="sxs-lookup"><span data-stu-id="56556-121">In Visual Studio, in **Solution Explorer**, right-click the project and choose **Unload Project**.</span></span> <span data-ttu-id="56556-122">再次右键单击卸载的项目，然后选择 "**编辑 [项目名称 .csproj]**"。</span><span class="sxs-lookup"><span data-stu-id="56556-122">Right-click the unloaded project again, and then choose **Edit [projectname.csproj]**.</span></span>
 
-2. <span data-ttu-id="7767f-123">在项目文件中，查找以下属性项：</span><span class="sxs-lookup"><span data-stu-id="7767f-123">In the project file, find the following property entry:</span></span>
+2. <span data-ttu-id="56556-123">在项目文件中，查找以下属性项：</span><span class="sxs-lookup"><span data-stu-id="56556-123">In the project file, find the following property entry:</span></span>
 
    ```xml
    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
    ```
 
-3. <span data-ttu-id="7767f-124">将 `true` 更改为 `false`：</span><span class="sxs-lookup"><span data-stu-id="7767f-124">Change `true` to `false`:</span></span>
+3. <span data-ttu-id="56556-124">将 `true` 更改为 `false`：</span><span class="sxs-lookup"><span data-stu-id="56556-124">Change `true` to `false`:</span></span>
 
    ```xml
    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
    ```
 
-## <a name="enable-automatic-binding-redirects-manually"></a><span data-ttu-id="7767f-125">手动启用自动绑定重定向</span><span class="sxs-lookup"><span data-stu-id="7767f-125">Enable automatic binding redirects manually</span></span>
+## <a name="enable-automatic-binding-redirects-manually"></a><span data-ttu-id="56556-125">手动启用自动绑定重定向</span><span class="sxs-lookup"><span data-stu-id="56556-125">Enable automatic binding redirects manually</span></span>
 
-<span data-ttu-id="7767f-126">你可以在面向旧版本 .NET Framework 的现有应用中启用自动绑定重定向，或在不会自动提示你添加重定向的情况下启用自动绑定重定向。</span><span class="sxs-lookup"><span data-stu-id="7767f-126">You can enable automatic binding redirects in existing apps that target older versions of the .NET Framework, or in cases where you're not automatically prompted to add a redirect.</span></span> <span data-ttu-id="7767f-127">如果针对的是较新版本的框架，但不会自动提示添加重定向，则可能会获得建议重新映射程序集的生成输出。</span><span class="sxs-lookup"><span data-stu-id="7767f-127">If you're targeting a newer version of the framework but do not get automatically prompted to add a redirect, you'll likely get build output that suggests you remap assemblies.</span></span>
+<span data-ttu-id="56556-126">你可以在面向旧版本 .NET Framework 的现有应用中启用自动绑定重定向，或在不会自动提示你添加重定向的情况下启用自动绑定重定向。</span><span class="sxs-lookup"><span data-stu-id="56556-126">You can enable automatic binding redirects in existing apps that target older versions of the .NET Framework, or in cases where you're not automatically prompted to add a redirect.</span></span> <span data-ttu-id="56556-127">如果针对的是较新版本的框架，但不会自动提示添加重定向，则可能会获得建议重新映射程序集的生成输出。</span><span class="sxs-lookup"><span data-stu-id="56556-127">If you're targeting a newer version of the framework but do not get automatically prompted to add a redirect, you'll likely get build output that suggests you remap assemblies.</span></span>
 
-1. <span data-ttu-id="7767f-128">使用以下方法之一打开项目文件以进行编辑：</span><span class="sxs-lookup"><span data-stu-id="7767f-128">Open the project file for editing using one of the following methods:</span></span>
+1. <span data-ttu-id="56556-128">使用以下方法之一打开项目文件以进行编辑：</span><span class="sxs-lookup"><span data-stu-id="56556-128">Open the project file for editing using one of the following methods:</span></span>
 
-   - <span data-ttu-id="7767f-129">在 Visual Studio 中，选择**解决方案资源管理器**中的项目，然后从快捷菜单中选择 "**在文件资源管理器中打开文件夹**"。</span><span class="sxs-lookup"><span data-stu-id="7767f-129">In Visual Studio, select the project in **Solution Explorer**, and then choose **Open Folder in File Explorer** from the shortcut menu.</span></span> <span data-ttu-id="7767f-130">在文件资源管理器中，找到项目（.csproj 或 .vbproj）文件并在记事本中将其打开。</span><span class="sxs-lookup"><span data-stu-id="7767f-130">In File Explorer, find the project (.csproj or .vbproj) file and open it in Notepad.</span></span>
-   - <span data-ttu-id="7767f-131">在 Visual Studio 的**解决方案资源管理器**中，右键单击项目，然后选择 "**卸载项目**"。</span><span class="sxs-lookup"><span data-stu-id="7767f-131">In Visual Studio, in **Solution Explorer**, right-click the project and choose **Unload Project**.</span></span> <span data-ttu-id="7767f-132">再次右键单击卸载的项目，然后选择 "**编辑 [项目名称 .csproj]** "。</span><span class="sxs-lookup"><span data-stu-id="7767f-132">Right-click the unloaded project again, and then choose **Edit [projectname.csproj]**.</span></span>
+   - <span data-ttu-id="56556-129">在 Visual Studio 中，选择**解决方案资源管理器**中的项目，然后从快捷菜单中选择 "**在文件资源管理器中打开文件夹**"。</span><span class="sxs-lookup"><span data-stu-id="56556-129">In Visual Studio, select the project in **Solution Explorer**, and then choose **Open Folder in File Explorer** from the shortcut menu.</span></span> <span data-ttu-id="56556-130">在文件资源管理器中，找到项目（.csproj 或 .vbproj）文件并在记事本中将其打开。</span><span class="sxs-lookup"><span data-stu-id="56556-130">In File Explorer, find the project (.csproj or .vbproj) file and open it in Notepad.</span></span>
+   - <span data-ttu-id="56556-131">在 Visual Studio 的**解决方案资源管理器**中，右键单击项目，然后选择 "**卸载项目**"。</span><span class="sxs-lookup"><span data-stu-id="56556-131">In Visual Studio, in **Solution Explorer**, right-click the project and choose **Unload Project**.</span></span> <span data-ttu-id="56556-132">再次右键单击卸载的项目，然后选择 "**编辑 [项目名称 .csproj]**"。</span><span class="sxs-lookup"><span data-stu-id="56556-132">Right-click the unloaded project again, and then choose **Edit [projectname.csproj]**.</span></span>
 
-2. <span data-ttu-id="7767f-133">将以下元素添加到第一个配置属性组（在\<PropertyGroup > 标记下）：</span><span class="sxs-lookup"><span data-stu-id="7767f-133">Add the following element to the first configuration property group (under the \<PropertyGroup> tag):</span></span>
+2. <span data-ttu-id="56556-133">将以下元素添加到第一个配置属性组（在 \<PropertyGroup> 标记下）：</span><span class="sxs-lookup"><span data-stu-id="56556-133">Add the following element to the first configuration property group (under the \<PropertyGroup> tag):</span></span>
 
    ```xml
    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
    ```
 
-   <span data-ttu-id="7767f-134">下面显示了一个示例项目文件，其中插入了元素：</span><span class="sxs-lookup"><span data-stu-id="7767f-134">The following shows an example project file with the element inserted:</span></span>
+   <span data-ttu-id="56556-134">下面显示了一个示例项目文件，其中插入了元素：</span><span class="sxs-lookup"><span data-stu-id="56556-134">The following shows an example project file with the element inserted:</span></span>
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -81,25 +81,25 @@ ms.locfileid: "69913036"
    </Project>
    ```
 
-3. <span data-ttu-id="7767f-135">编译你的应用。</span><span class="sxs-lookup"><span data-stu-id="7767f-135">Compile your app.</span></span>
+3. <span data-ttu-id="56556-135">编译你的应用。</span><span class="sxs-lookup"><span data-stu-id="56556-135">Compile your app.</span></span>
 
-## <a name="enable-automatic-binding-redirects-in-web-apps"></a><span data-ttu-id="7767f-136">在 web 应用中启用自动绑定重定向</span><span class="sxs-lookup"><span data-stu-id="7767f-136">Enable automatic binding redirects in web apps</span></span>
+## <a name="enable-automatic-binding-redirects-in-web-apps"></a><span data-ttu-id="56556-136">在 web 应用中启用自动绑定重定向</span><span class="sxs-lookup"><span data-stu-id="56556-136">Enable automatic binding redirects in web apps</span></span>
 
-<span data-ttu-id="7767f-137">Web 应用的自动绑定重定向实现方式有所不同。</span><span class="sxs-lookup"><span data-stu-id="7767f-137">Automatic binding redirects are implemented differently for web apps.</span></span> <span data-ttu-id="7767f-138">由于必须为 web 应用修改源**配置（web.config**）文件，因此绑定重定向不会自动添加到配置文件中。</span><span class="sxs-lookup"><span data-stu-id="7767f-138">Because the source configuration (**web.config**) file must be modified for web apps, binding redirects are not automatically added to the configuration file.</span></span> <span data-ttu-id="7767f-139">但是，Visual Studio 会通知你绑定冲突，你可以添加绑定重定向来解决此冲突。</span><span class="sxs-lookup"><span data-stu-id="7767f-139">However, Visual Studio notifies you of binding conflicts, and you can add binding redirects to resolve the conflicts.</span></span> <span data-ttu-id="7767f-140">由于始终会提示你添加绑定重定向，因此你不需要为 web 应用显式禁用此功能。</span><span class="sxs-lookup"><span data-stu-id="7767f-140">Because you're always prompted to add binding redirects, you don't need to explicitly disable this feature for a web app.</span></span>
+<span data-ttu-id="56556-137">Web 应用的自动绑定重定向实现方式有所不同。</span><span class="sxs-lookup"><span data-stu-id="56556-137">Automatic binding redirects are implemented differently for web apps.</span></span> <span data-ttu-id="56556-138">由于必须为 web 应用修改源**配置（web.config**）文件，因此绑定重定向不会自动添加到配置文件中。</span><span class="sxs-lookup"><span data-stu-id="56556-138">Because the source configuration (**web.config**) file must be modified for web apps, binding redirects are not automatically added to the configuration file.</span></span> <span data-ttu-id="56556-139">但是，Visual Studio 会通知你绑定冲突，你可以添加绑定重定向来解决此冲突。</span><span class="sxs-lookup"><span data-stu-id="56556-139">However, Visual Studio notifies you of binding conflicts, and you can add binding redirects to resolve the conflicts.</span></span> <span data-ttu-id="56556-140">由于始终会提示你添加绑定重定向，因此你不需要为 web 应用显式禁用此功能。</span><span class="sxs-lookup"><span data-stu-id="56556-140">Because you're always prompted to add binding redirects, you don't need to explicitly disable this feature for a web app.</span></span>
 
-<span data-ttu-id="7767f-141">向**web.config 文件添加**绑定重定向：</span><span class="sxs-lookup"><span data-stu-id="7767f-141">To add binding redirects to a **web.config** file:</span></span>
+<span data-ttu-id="56556-141">向**web.config 文件添加**绑定重定向：</span><span class="sxs-lookup"><span data-stu-id="56556-141">To add binding redirects to a **web.config** file:</span></span>
 
-1. <span data-ttu-id="7767f-142">在 Visual Studio 中，编译应用，然后检查生成警告。</span><span class="sxs-lookup"><span data-stu-id="7767f-142">In Visual Studio, compile the app, and check for build warnings.</span></span>
+1. <span data-ttu-id="56556-142">在 Visual Studio 中，编译应用，然后检查生成警告。</span><span class="sxs-lookup"><span data-stu-id="56556-142">In Visual Studio, compile the app, and check for build warnings.</span></span>
 
-   <span data-ttu-id="7767f-143">![程序集引用冲突的生成警告](./media/clr-assemblyrefwarning.png "CLR_AssemblyRefWarning")</span><span class="sxs-lookup"><span data-stu-id="7767f-143">![Build warning for assembly reference conflicts](./media/clr-assemblyrefwarning.png "CLR_AssemblyRefWarning")</span></span>
+   <span data-ttu-id="56556-143">![关于程序集引用冲突的生成警告](./media/clr-assemblyrefwarning.png "CLR_AssemblyRefWarning")</span><span class="sxs-lookup"><span data-stu-id="56556-143">![Build warning for assembly reference conflicts](./media/clr-assemblyrefwarning.png "CLR_AssemblyRefWarning")</span></span>
 
-2. <span data-ttu-id="7767f-144">如果存在程序集绑定冲突，则将显示警告。</span><span class="sxs-lookup"><span data-stu-id="7767f-144">If there are assembly binding conflicts, a warning appears.</span></span> <span data-ttu-id="7767f-145">双击警告，或选择警告，然后按**enter**。</span><span class="sxs-lookup"><span data-stu-id="7767f-145">Double-click the warning, or select the warning and press **Enter**.</span></span>
+2. <span data-ttu-id="56556-144">如果存在程序集绑定冲突，则将显示警告。</span><span class="sxs-lookup"><span data-stu-id="56556-144">If there are assembly binding conflicts, a warning appears.</span></span> <span data-ttu-id="56556-145">双击警告，或选择警告，然后按**enter**。</span><span class="sxs-lookup"><span data-stu-id="56556-145">Double-click the warning, or select the warning and press **Enter**.</span></span>
 
-   <span data-ttu-id="7767f-146">一个对话框，使你能够自动将必要的绑定重定向添加到源**web.config**文件中。</span><span class="sxs-lookup"><span data-stu-id="7767f-146">A dialog box that enables you to automatically add the necessary binding redirects to the source **web.config** file appears.</span></span>
+   <span data-ttu-id="56556-146">一个对话框，使你能够自动将必要的绑定重定向添加到源**web.config**文件中。</span><span class="sxs-lookup"><span data-stu-id="56556-146">A dialog box that enables you to automatically add the necessary binding redirects to the source **web.config** file appears.</span></span>
 
-   <span data-ttu-id="7767f-147">![绑定重定向权限对话框](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")</span><span class="sxs-lookup"><span data-stu-id="7767f-147">![Binding redirect permission dialog](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")</span></span>
+   <span data-ttu-id="56556-147">![绑定重定向权限对话框](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")</span><span class="sxs-lookup"><span data-stu-id="56556-147">![Binding redirect permission dialog](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="7767f-148">请参阅</span><span class="sxs-lookup"><span data-stu-id="7767f-148">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="56556-148">另请参阅</span><span class="sxs-lookup"><span data-stu-id="56556-148">See also</span></span>
 
-- [<span data-ttu-id="7767f-149">\<bindingRedirect > 元素</span><span class="sxs-lookup"><span data-stu-id="7767f-149">\<bindingRedirect> Element</span></span>](./file-schema/runtime/bindingredirect-element.md)
-- [<span data-ttu-id="7767f-150">重定向程序集版本</span><span class="sxs-lookup"><span data-stu-id="7767f-150">Redirecting Assembly Versions</span></span>](redirect-assembly-versions.md)
+- [<span data-ttu-id="56556-149">\<bindingRedirect>Element</span><span class="sxs-lookup"><span data-stu-id="56556-149">\<bindingRedirect> Element</span></span>](./file-schema/runtime/bindingredirect-element.md)
+- [<span data-ttu-id="56556-150">重定向程序集版本</span><span class="sxs-lookup"><span data-stu-id="56556-150">Redirecting Assembly Versions</span></span>](redirect-assembly-versions.md)
