@@ -3,22 +3,22 @@ title: <windowsAuthentication> 的 <serviceCredentials>
 ms.date: 03/30/2017
 ms.assetid: e0709473-0997-4de3-8f49-783527309a48
 ms.openlocfilehash: ded04f6e87fce2e12dac8f681ba2d4178f8fd204
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70399115"
 ---
-# <a name="windowsauthentication-of-servicecredentials"></a>\<windowsAuthentication > \<serviceCredentials >
+# <a name="windowsauthentication-of-servicecredentials"></a>\<windowsAuthentication> 的 \<serviceCredentials>
 指定 Windows 服务凭据的设置。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<行为 >** ](behaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceBehaviors >** ](servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<行为 >** ](behavior-of-servicebehaviors.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<serviceCredentials >** ](servicecredentials.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<windowsAuthentication >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<behaviors>**](behaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceBehaviors>**](servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<behavior>**](behavior-of-servicebehaviors.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<serviceCredentials>**](servicecredentials.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<windowsAuthentication>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -32,10 +32,10 @@ ms.locfileid: "70399115"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|`includeWindowsGroups`|一个可选的布尔值属性，指定系统是否将 Windows 组包含在安全上下文中。 默认值为 `true`。<br /><br /> 将此属性设置为 `true` 会影响性能，因为这会导致完全组扩展。 如果不需要建立用户所属组的列表，请将此属性设置为 `false`。|  
-|`allowAnonymousLogons`|一个可选的布尔值属性，指定是否允许匿名的未经过身份验证的调用方。 默认值为 `false`。<br /><br /> 如果将绑定的 `clientCredentialType` 属性设置为 `Windows`，则系统不允许匿名的调用方。 这意味着，只有经过身份验证的域或工作组调用方才可以访问系统。 可以使用此属性重写此行为。<br /><br /> 使用此设置应特别小心。|  
+|`includeWindowsGroups`|一个可选的布尔值属性，指定系统是否将 Windows 组包含在安全上下文中。 默认为 `true`。<br /><br /> 将此属性设置为 `true` 会影响性能，因为这会导致完全组扩展。 如果不需要建立用户所属组的列表，请将此属性设置为 `false`。|  
+|`allowAnonymousLogons`|一个可选的布尔值属性，指定是否允许匿名的未经过身份验证的调用方。 默认为 `false`。<br /><br /> 如果将绑定的 `clientCredentialType` 属性设置为 `Windows`，则系统不允许匿名的调用方。 这意味着，只有经过身份验证的域或工作组调用方才可以访问系统。 可以使用此属性重写此行为。<br /><br /> 使用此设置应特别小心。|  
   
 ### <a name="child-elements"></a>子元素  
  无。  
@@ -46,10 +46,10 @@ ms.locfileid: "70399115"
 |-------------|-----------------|  
 |[\<serviceCredentials>](servicecredentials.md)|指定要用于对服务进行身份验证的凭据以及与客户端凭据验证相关的设置。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  通过设置 `allowAnonymousLogons` 属性，使用此元素可指定是否允许匿名 Windows 用户访问。 此外，通过设置 `includeWindowsGroups` 属性还可以指定是否在 AuthorizationContext 中包含用户所属的组信息。 如果将它设置为 `true`（默认设置），服务就可以确定客户端所属的 Windows 组。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Configuration.WindowsServiceElement>
 - <xref:System.ServiceModel.Configuration.ServiceCredentialsElement.WindowsAuthentication%2A>

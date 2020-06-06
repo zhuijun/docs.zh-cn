@@ -10,20 +10,20 @@ helpviewer_keywords:
 - assemblyIdentity element
 ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
 ms.openlocfilehash: b026dafbde796bbd8726de56b532ed6710ba2290
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79154304"
 ---
-# <a name="assemblyidentity-element-for-runtime"></a>\<用于运行时>的\<程序集标识>元素
+# <a name="assemblyidentity-element-for-runtime"></a>\<runtime> 的 \<assemblyIdentity> 元素
 包含有关程序集的标识信息。  
   
-[**\<配置>**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<运行时>**](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<程序集绑定>**](assemblybinding-element-for-runtime.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<从属装配>**](dependentassembly-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<程序集标识>**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<assemblyBinding>**](assemblybinding-element-for-runtime.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<dependentAssembly>**](dependentassembly-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<assemblyIdentity>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -37,42 +37,42 @@ culture="assembly culture"/>
 ## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a>特性  
   
-|Attribute|说明|  
+|属性|说明|  
 |---------------|-----------------|  
 |`name`|必需的特性。<br /><br /> 程序集的名称|  
-|`culture`|可选特性。<br /><br /> 指定程序集的语言和国家/区域的字符串。|  
-|`publicKeyToken`|可选特性。<br /><br /> 指定程序集的强名称的十六进制值。|  
-|`processorArchitecture`|可选特性。<br /><br /> 值"x86"、"amd64"、"msil"或"ia64"的值之一，指定包含特定于处理器代码的程序集的处理器体系结构。 这些值不区分大小写。 如果为该属性分配了任何其他值，则忽略`<assemblyIdentity>`整个元素。 请参阅 <xref:System.Reflection.ProcessorArchitecture>。|  
+|`culture`|可选特性。<br /><br /> 一个字符串，指定程序集的语言和国家/地区。|  
+|`publicKeyToken`|可选特性。<br /><br /> 一个十六进制值，该值指定程序集的强名称。|  
+|`processorArchitecture`|可选特性。<br /><br /> 值 "x86"、"amd64"、"msil" 或 "ia64" 之一，为包含特定于处理器的代码的程序集指定处理器体系结构。 这些值不区分大小写。 如果为该属性分配了其他任何值，则将 `<assemblyIdentity>` 忽略整个元素。 请参阅 <xref:System.Reflection.ProcessorArchitecture>。|  
   
-## <a name="processorarchitecture-attribute"></a>处理器体系结构属性  
+## <a name="processorarchitecture-attribute"></a>processorArchitecture 特性  
   
 |值|说明|  
 |-----------|-----------------|  
-|`amd64`|仅限 AMD x86-64 架构。|  
-|`ia64`|仅限英特尔 Itanium 架构。|  
+|`amd64`|仅适用于 AMD x86-64 体系结构。|  
+|`ia64`|仅限 Intel Itanium 体系结构。|  
 |`msil`|不特定于处理器和每字位数。|  
-|`x86`|32 位 x86 处理器，本机处理器或 Windows 上 Windows （WOW） 环境中的 64 位平台。|  
+|`x86`|32位 x86 处理器，在64位平台上的 Windows on windows （WOW）环境中。|  
   
 ### <a name="child-elements"></a>子元素  
  无。  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |`assemblyBinding`|包含有关程序集版本重定向和程序集位置的信息。|  
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
-|`dependentAssembly`|封装每个程序集的绑定策略和程序集位置。 为每个程序集`<dependentAssembly>`使用一个元素。|  
+|`dependentAssembly`|封装每个程序集的绑定策略和程序集位置。 `<dependentAssembly>`为每个程序集使用一个元素。|  
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|  
   
-## <a name="remarks"></a>备注  
- 每个**\<从属程序集>** 元素必须具有一个**\<程序集标识>** 子元素。  
+## <a name="remarks"></a>注解  
+ 每个 **\<dependentAssembly>** 元素必须有一个 **\<assemblyIdentity>** 子元素。  
   
- 如果存在该`processorArchitecture`属性，则`<assemblyIdentity>`该元素仅适用于具有相应处理器体系结构的程序集。 如果属性`processorArchitecture`不存在，则`<assemblyIdentity>`元素可以应用于具有任何处理器体系结构的程序集。  
+ 如果该 `processorArchitecture` 属性存在，则 `<assemblyIdentity>` 元素仅适用于具有相应处理器体系结构的程序集。 如果该 `processorArchitecture` 属性不存在，则该 `<assemblyIdentity>` 元素可应用于具有任何处理器体系结构的程序集。  
   
- 下面的示例显示了两个具有相同名称的程序集的配置文件，该文件针对的是两个不同的两个不同的处理器体系结构，并且其版本尚未同步维护。当应用程序在 x86 平台上执行时，将`<assemblyIdentity>`应用第一个元素，忽略另一个元素。 如果应用程序在 x86 或 ia64 以外的平台上执行，则两者都将被忽略。  
+ 下面的示例显示了两个程序集的配置文件，这些程序集具有两个不同的两个处理器体系结构，并且其版本尚未保持同步。当应用程序在 x86 平台上执行时，第一个 `<assemblyIdentity>` 元素应用，另一个元素将被忽略。 如果应用程序在 x86 或 ia64 以外的平台上执行，则会忽略这两者。  
   
 ```xml  
 <configuration>  
@@ -99,7 +99,7 @@ culture="assembly culture"/>
 </configuration>  
 ```  
   
- 如果配置文件包含没有`<assemblyIdentity>``processorArchitecture`属性的元素，并且不包含与平台匹配的元素，则使用没有该`processorArchitecture`属性的元素。  
+ 如果配置文件包含 `<assemblyIdentity>` 没有属性的元素 `processorArchitecture` ，并且不包含与平台相匹配的元素，则使用没有属性的元素 `processorArchitecture` 。  
   
 ## <a name="example"></a>示例  
  下面的示例演示如何提供有关程序集的信息。  

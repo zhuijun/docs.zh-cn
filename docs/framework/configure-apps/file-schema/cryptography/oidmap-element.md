@@ -9,18 +9,18 @@ helpviewer_keywords:
 - oidMap element
 ms.assetid: 7f0c2246-c070-4748-b96a-2f66a296c539
 ms.openlocfilehash: a28eaf68fe1e6ab3f26592eee5ae2d0f2e7a3256
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79155162"
 ---
-# <a name="oidmap-element"></a>\<oidMap>元素
-包含 ASN.1 对象标识符 （OID） 映射到类。  
+# <a name="oidmap-element"></a>\<oidMap> 元素
+包含与类的 ASN 对象标识符（OID）映射。  
 
-[**\<配置>**](../configuration-element.md)\
-&nbsp;&nbsp;[**\<姆斯科利布>**](mscorlib-element-for-cryptography-settings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**\<密码设置>**](cryptographysettings-element.md)\
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<mscorlib>**](mscorlib-element-for-cryptography-settings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<cryptographySettings>**](cryptographysettings-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<oidMap>**
 
 ## <a name="syntax"></a>语法  
@@ -33,14 +33,14 @@ ms.locfileid: "79155162"
 ## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a>特性  
  无。  
   
 ### <a name="child-elements"></a>子元素  
   
 |元素|说明|  
 |-------------|-----------------|  
-|[\<oidentry>](oidentry-element.md)|将 ASN.1 OID 映射到友好名称。|  
+|[\<oidEntry>](oidentry-element.md)|将一个 asn.1 OID 映射到友好名称。|  
   
 ### <a name="parent-elements"></a>父元素  
   
@@ -48,10 +48,10 @@ ms.locfileid: "79155162"
 |-------------|-----------------|  
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`cryptographySettings`|包含加密设置。|  
-|`mscorlib`|包含元素`cryptographySettings`。|  
+|`mscorlib`|包含 `cryptographySettings` 元素。|  
   
 ## <a name="example"></a>示例  
- 下面的示例演示如何使用**\<oidMap>** 元素将 RIPEMD-160 哈希算法的 OID 映射到该哈希算法的实现。  
+ 下面的示例演示如何使用元素来 **\<oidMap>** 包含 RIPEMD-160 哈希算法的 OID 到哈希算法的实现的映射。  
   
 ```xml  
 <configuration>  
@@ -73,7 +73,7 @@ ms.locfileid: "79155162"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [配置文件架构](../index.md)
 - [密码设置架构](index.md)

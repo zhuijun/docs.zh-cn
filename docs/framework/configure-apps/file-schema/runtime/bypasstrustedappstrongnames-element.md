@@ -8,19 +8,19 @@ helpviewer_keywords:
 - <bypassTrustedAppStrongNames> element
 ms.assetid: 71b2ebf6-3843-41e2-ad52-ffa5cd083a40
 ms.openlocfilehash: 96361a6742d1d2f76cb237344189d3277d7c8069
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73739094"
 ---
 # <a name="bypasstrustedappstrongnames-element"></a>\<bypassTrustedAppStrongNames> 元素
 
-指定是否绕过对加载到完全信任的 <xref:System.AppDomain>中的完全信任程序集的强名称的验证。
+指定是否在加载到完全信任的完全信任程序集上绕过强名称验证 <xref:System.AppDomain> 。
 
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<runtime >** ](runtime-element.md) \
-&nbsp;&nbsp;&nbsp;&nbsp; **\<bypasstrustedappstrongnames> element >**
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<bypassTrustedAppStrongNames>**
 
 ## <a name="syntax"></a>语法
 
@@ -35,16 +35,16 @@ ms.locfileid: "73739094"
 
 ### <a name="attributes"></a>特性
 
-|特性|描述|
+|属性|说明|
 |---------------|-----------------|
-|`enabled`|必需的特性。<br /><br /> 指定是否启用回避功能，以避免为完全信任程序集验证强名称。 当启用此功能时，加载程序集时，不会验证强名称是否正确。 默认值为 `true`。|
+|`enabled`|必需的特性。<br /><br /> 指定是否启用回避功能，以避免为完全信任程序集验证强名称。 当启用此功能时，加载程序集时，不会验证强名称是否正确。 默认为 `true`。|
 
 ## <a name="enabled-attribute"></a>enabled 特性
 
-|“值”|描述|
+|值|说明|
 |-----------|-----------------|
-|`true`|将程序集加载到完全信任 <xref:System.AppDomain>中时，不会验证完全信任程序集上的强名称签名。 这是默认设置。|
-|`false`|将程序集加载到完全信任的 <xref:System.AppDomain>时，会验证完全信任程序集上的强名称签名。 仅对签名正确性检查强名称签名;与另一个匹配的强名称没有比较。|
+|`true`|将程序集加载到完全信任时，不会验证完全信任程序集上的强名称签名 <xref:System.AppDomain> 。 这是默认设置。|
+|`false`|将程序集加载到完全信任时，会验证完全信任程序集上的强名称签名 <xref:System.AppDomain> 。 仅对签名正确性检查强名称签名;与另一个匹配的强名称没有比较。|
 
 ### <a name="child-elements"></a>子元素
 
@@ -57,13 +57,13 @@ ms.locfileid: "73739094"
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 强名称跳过功能可避免完全信任程序集的强名称签名验证的系统开销。
 
 跳过功能适用于使用强名称进行签名及具有以下特征的任何程序集：
 
-- 完全受信任，无 <xref:System.Security.Policy.StrongName> 证据（例如，具有 `MyComputer` 区域证据）。
+- 完全受信任，无需 <xref:System.Security.Policy.StrongName> 证据（如具有 `MyComputer` 区域证据）。
 
 - 加载到完全受信任的 <xref:System.AppDomain>。
 
@@ -86,7 +86,7 @@ ms.locfileid: "73739094"
 </configuration>
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [运行时设置架构](index.md)
 - [配置文件架构](../index.md)

@@ -3,22 +3,22 @@ title: <localServiceSettings> 元素
 ms.date: 03/30/2017
 ms.assetid: 0658549c-3f65-46dd-8c5c-9895441ed734
 ms.openlocfilehash: 4883fd563ecf989d67c369085df4fc43d0c5f078
-ms.sourcegitcommit: 093571de904fc7979e85ef3c048547d0accb1d8a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/06/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70400302"
 ---
-# <a name="localservicesettings-element"></a>\<localServiceSettings > 元素
+# <a name="localservicesettings-element"></a>\<localServiceSettings> 元素
 指定此绑定的本地服务安全设置。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<System.servicemodel >** ](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[ **\<绑定 >** ](bindings.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<绑定 >** \
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ **\<安全 >** ](security-of-custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **\<localServiceSettings >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[**\<bindings>**](bindings.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<customBinding>**](custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<binding>**\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<security>**](security-of-custombinding.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<localServiceSettings>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -46,10 +46,10 @@ ms.locfileid: "70400302"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|`detectReplays`|一个布尔值，指定是否自动检测和处理针对通道的重放攻击。 默认值为 `false`。|  
-|`inactivityTimeout`|一个正的 <xref:System.TimeSpan>，指定通道在超时之前等待的无活动持续时间。默认值为“01:00:00”。|  
+|`detectReplays`|一个布尔值，指定是否自动检测和处理针对通道的重放攻击。 默认为 `false`。|  
+|`inactivityTimeout`|一个正值 <xref:System.TimeSpan> ，指定通道在超时之前等待的无活动持续时间。默认值为 "01:00:00"。|  
 |`issuedCookieLifeTime`|一个 <xref:System.TimeSpan>，指定颁发给所有新安全 Cookie 的生存期。 超过生存期的 Cookie 会被回收，且需要再次对其进行协商。 默认值为“10:00:00”。|  
 |`maxCachedCookies`|一个正整数，指定可以缓存的最大 Cookie 数。 默认值为 1000。|  
 |`maxClockSkew`|一个 <xref:System.TimeSpan>，指定通信双方的系统时钟之间的最大时间差异。 默认值为“00:05:00”。<br /><br /> 当此值被设置为默认值时，接收方所接受的消息的发送时间时间戳最多可比消息接收时间晚或早 5 分钟。 未通过发送时间测试的消息会被拒绝。 此设置与 `replayWindow` 属性结合使用。|  
@@ -73,7 +73,7 @@ ms.locfileid: "70400302"
 |[\<security>](security-of-custombinding.md)|指定自定义绑定的安全选项。|  
 |[\<secureConversationBootstrap>](secureconversationbootstrap.md)|指定用于启动安全对话服务的默认值。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  这些设置并非作为安全策略的组成部分而发布，而且不影响客户端绑定，因此是本地的。  
   
  `localServiceSecuritySettings` 元素的下列属性有助于缓解拒绝服务 (DOS) 安全攻击：  
@@ -88,7 +88,7 @@ ms.locfileid: "70400302"
   
  请注意，在安全对话会话中，绑定上的 `inactivityTimeout` 和 `receiveTimeout` 属性将影响会话超时。 两个属性中时间较短者将确定何时发生超时。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>
 - <xref:System.ServiceModel.Configuration.SecurityElementBase.LocalServiceSettings%2A>

@@ -12,18 +12,18 @@ helpviewer_keywords:
 - sharedListeners element
 ms.assetid: de200534-19dd-4156-86cf-c50521802c4c
 ms.openlocfilehash: 69f15cc9583b397017ac30a0c567914495867c18
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79153316"
 ---
-# <a name="sharedlisteners-element"></a>\<共享侦听器>元素
-包含任何源或跟踪元素可以引用的侦听器。  默认情况下，这些侦听器不会接收任何跟踪，并且无法在运行时检索这些侦听器。 标识为共享侦听器的侦听器可以按名称添加到源或跟踪中。  
+# <a name="sharedlisteners-element"></a>\<sharedListeners> 元素
+包含任何源或跟踪元素可以引用的侦听器。  默认情况下，这些侦听器不会接收任何跟踪，而且不能在运行时检索这些侦听器。 可以按名称将标识为共享侦听器的侦听器添加到源或跟踪。  
   
-[**\<配置>**](../configuration-element.md)  
-&nbsp;&nbsp;[**\<系统.诊断>**](system-diagnostics-element.md)  
-&nbsp;&nbsp;&nbsp;&nbsp;**\<共享侦听器>**  
+[**\<configuration>**](../configuration-element.md)  
+&nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)  
+&nbsp;&nbsp;&nbsp;&nbsp;**\<sharedListeners>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -36,14 +36,14 @@ ms.locfileid: "79153316"
 ## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a>特性  
  无。  
   
 ### <a name="child-elements"></a>子元素  
   
 |元素|说明|  
 |-------------|-----------------|  
-|[\<添加>](add-element-for-listeners-for-trace.md)|将侦听器添加到 `sharedListeners` 集合中。|  
+|[\<add>](add-element-for-listeners-for-trace.md)|将侦听器添加到 `sharedListeners` 集合中。|  
   
 ### <a name="parent-elements"></a>父元素  
   
@@ -52,13 +52,13 @@ ms.locfileid: "79153316"
 |`Configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`system.diagnostics`|为 ASP.NET 配置节指定根元素。|  
   
-## <a name="remarks"></a>备注  
- 将侦听器添加到共享侦听器集合不会使其成为活动侦听器。 仍必须通过将其添加到该跟踪元素`Listeners`的集合并将其添加到跟踪源或跟踪中。 .NET 框架中的侦听器类派生自<xref:System.Diagnostics.TraceListener>类。  
+## <a name="remarks"></a>注解  
+ 将侦听器添加到共享侦听器集合并不会使其成为活动侦听器。 还必须将其添加到跟踪源或跟踪，方法是将其添加到跟踪 `Listeners` 元素的集合。 .NET Framework 中的侦听器类派生自 <xref:System.Diagnostics.TraceListener> 类。  
   
- 此元素可用于计算机配置文件 （Machine.config） 和应用程序配置文件。  
+ 此元素可在计算机配置文件（Machine.config）和应用程序配置文件中使用。  
   
 ## <a name="example"></a>示例  
- 下面的示例演示如何使用`<sharedListeners>`元素将侦听器`console`添加到 和`Listeners`<xref:System.Diagnostics.TraceSource><xref:System.Diagnostics.Trace>类的集合。 控制台跟踪侦听器通过调用<xref:System.Diagnostics.TraceSource>或<xref:System.Diagnostics.Trace>向 向 控制台写入跟踪信息。  
+ 下面的示例演示如何使用 `<sharedListeners>` 元素将侦听器添加 `console` 到 `Listeners` <xref:System.Diagnostics.TraceSource> 和类的集合 <xref:System.Diagnostics.Trace> 。 控制台跟踪侦听器通过对或的调用将跟踪信息写入控制台 <xref:System.Diagnostics.TraceSource> <xref:System.Diagnostics.Trace> 。  
   
 ```xml  
 <configuration>  

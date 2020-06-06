@@ -3,13 +3,13 @@ title: <ImpliesType>元素 (.NET Native)
 ms.date: 03/30/2017
 ms.assetid: 3abd2071-0f28-40ba-b9a0-d52bd94cd2f6
 ms.openlocfilehash: 57f4208233cd5e8544b4f1c254e3b0e0eaacd508
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "79181005"
 ---
-# <a name="impliestype-element-net-native"></a>\<隐含类型>元素（.NET 本机）
+# <a name="impliestype-element-net-native"></a>\<ImpliesType>元素 (.NET Native)
 如果该策略已应用到该包含类型或方法，将该策略应用到一个类型。  
   
 ## <a name="syntax"></a>语法  
@@ -31,9 +31,9 @@ ms.locfileid: "79181005"
 ## <a name="attributes-and-elements"></a>特性和元素  
  下列各节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>属性  
+### <a name="attributes"></a>特性  
   
-|Attribute|属性类型|说明|  
+|属性|属性类型|说明|  
 |---------------|--------------------|-----------------|  
 |`Name`|常规|必需的特性。 指定类型名称。|  
 |`Activate`|反射|可选特性。 控制运行时对构造函数的访问，以启用实例激活。|  
@@ -66,11 +66,11 @@ ms.locfileid: "79181005"
   
 |元素|说明|  
 |-------------|-----------------|  
-|[\<键入>](type-element-net-native.md)|将反射策略应用到一种类型及其所有成员。|  
-|[\<类型即时>](typeinstantiation-element-net-native.md)|将反射策略应用到一种构造泛型类型及其所有成员。|  
-|[\<方法>](method-element-net-native.md)|将反射策略应用到一个方法。|  
+|[\<Type>](type-element-net-native.md)|将反射策略应用到一种类型及其所有成员。|  
+|[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|将反射策略应用到一种构造泛型类型及其所有成员。|  
+|[\<Method>](method-element-net-native.md)|将反射策略应用到一个方法。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  该 `<ImpliesType>` 元素主要是供库使用的。 它讨论的是以下情景：  
   
 - 如果一个例程需要反射到一个类型，它必然也要反射到另一种类型。  
@@ -89,7 +89,7 @@ ms.locfileid: "79181005"
   
  这个指令是不起作用的，除非 `Explicit` 的一个实例化具有一个已定义的 `Dynamic` 策略设置。 例如，如果对于 `Explicit<Int32>` 情况如此，`Implicit<Int32>` 会同其根公共成员一起被实例化，并且它们的元数据就能由动态编程访问。  
   
- 以下是一个至少可以应用到序列化程序的实际实例。 指令捕获了以下要求：对类型化`IList<`*的东西*`>`进行反射也涉及对相应的`List<`*事物*`>`类型进行反思，而无需任何每个应用程序注释。  
+ 以下是一个至少可以应用到序列化程序的实际实例。 指令捕获对类型化为内容的内容进行反射的需求， `IList<` *something* `>` `List<` *something* `>` 而不需要每个应用程序的批注就会反映相应的内容类型。  
   
 ```xml  
 <Type Name="System.Collections.Generic.IList{T}">  

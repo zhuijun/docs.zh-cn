@@ -6,18 +6,18 @@ helpviewer_keywords:
 - legacyCorruptedStateExceptionsPolicy element
 ms.assetid: e0a55ddc-bfa8-4f3e-ac14-d1fc3330e4bb
 ms.openlocfilehash: d1d29a37999a01f3e370897a1052f4f94435a218
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "73116462"
 ---
-# <a name="legacycorruptedstateexceptionspolicy-element"></a>\<legacyCorruptedStateExceptionsPolicy > 元素
+# <a name="legacycorruptedstateexceptionspolicy-element"></a>\<legacyCorruptedStateExceptionsPolicy> 元素
 指定公共语言运行时是否允许托管代码捕获访问冲突和其他损坏状态异常。  
   
-[ **\<configuration>** ](../configuration-element.md)\
-&nbsp; &nbsp;[ **\<runtime >** ](runtime-element.md) \
-&nbsp;&nbsp;&nbsp;&nbsp; **\<legacyCorruptedStateExceptionsPolicy >**  
+[**\<configuration>**](../configuration-element.md)\
+&nbsp;&nbsp;[**\<runtime>**](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<legacyCorruptedStateExceptionsPolicy>**  
   
 ## <a name="syntax"></a>语法  
   
@@ -30,13 +30,13 @@ ms.locfileid: "73116462"
   
 ### <a name="attributes"></a>特性  
   
-|特性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
 |`enabled`|必需的特性。<br /><br /> 指定应用程序将捕获损坏状态异常故障，例如访问冲突。|  
   
 ## <a name="enabled-attribute"></a>enabled 特性  
   
-|“值”|描述|  
+|值|说明|  
 |-----------|-----------------|  
 |`false`|应用程序不会捕获损坏状态异常故障，例如访问冲突。 这是默认设置。|  
 |`true`|应用程序将捕获损坏状态异常故障，例如访问冲突。|  
@@ -51,16 +51,16 @@ ms.locfileid: "73116462"
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  在 .NET Framework 版本3.5 及更早版本中，公共语言运行时允许托管代码捕获由损坏的进程状态引发的异常。 访问冲突就是这种类型的异常的一个示例。  
   
- 从 .NET Framework 4 开始，托管代码不再在 `catch` 块中捕获这些类型的异常。 不过，你可以通过两种方式重写此更改并保持对损坏状态异常的处理：  
+ 从 .NET Framework 4 开始，托管代码不再在块中捕获这些类型的异常 `catch` 。 不过，你可以通过两种方式重写此更改并保持对损坏状态异常的处理：  
   
-- 将 `<legacyCorruptedStateExceptionsPolicy>` 元素的 `enabled` 属性设置为 "`true`"。 此配置设置将应用 processwide 并影响所有方法。  
+- 将 `<legacyCorruptedStateExceptionsPolicy>` 元素的 `enabled` 属性设置为 `true` 。 此配置设置将应用 processwide 并影响所有方法。  
   
- 或  
+ -或-  
   
-- 将 <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType> 特性应用于包含异常 `catch` 块的方法。  
+- 将特性应用于 <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute?displayProperty=nameWithType> 包含异常块的方法 `catch` 。  
   
  此配置元素仅在 .NET Framework 4 及更高版本中可用。  
   
@@ -75,7 +75,7 @@ ms.locfileid: "73116462"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Runtime.ExceptionServices.HandleProcessCorruptedStateExceptionsAttribute>
 - [运行时设置架构](index.md)
