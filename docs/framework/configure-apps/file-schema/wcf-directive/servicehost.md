@@ -3,17 +3,17 @@ title: '@ServiceHost'
 ms.date: 03/30/2017
 ms.assetid: 96ba6967-00f2-422f-9aa7-15de4d33ebf3
 ms.openlocfilehash: fdd6d83836c4ef31a4d7c8e68cb0cc050ac6bea4
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2020
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "76787805"
 ---
-# <a name="servicehost"></a><span data-ttu-id="265b4-101">\@ServiceHost</span><span class="sxs-lookup"><span data-stu-id="265b4-101">\@ServiceHost</span></span>
+# <a name="servicehost"></a><span data-ttu-id="84357-101">\@服务主机</span><span class="sxs-lookup"><span data-stu-id="84357-101">\@ServiceHost</span></span>
 
-<span data-ttu-id="265b4-102">将用于生成服务主机的工厂与要承载的服务以及访问或编译 .svc 文件中提供的宿主代码所需的其他编程方面相关联。</span><span class="sxs-lookup"><span data-stu-id="265b4-102">Associates the factory used to produce the service host with the service to be hosted and other programming aspects required to access or compile the hosting code provided in the .svc file.</span></span>
+<span data-ttu-id="84357-102">将用于生成服务主机的工厂与要承载的服务以及访问或编译 .svc 文件中提供的宿主代码所需的其他编程方面相关联。</span><span class="sxs-lookup"><span data-stu-id="84357-102">Associates the factory used to produce the service host with the service to be hosted and other programming aspects required to access or compile the hosting code provided in the .svc file.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="265b4-103">语法</span><span class="sxs-lookup"><span data-stu-id="265b4-103">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="84357-103">语法</span><span class="sxs-lookup"><span data-stu-id="84357-103">Syntax</span></span>
 
 ```xml
 <% @ServiceHost
@@ -25,43 +25,43 @@ CodeBehind = "CodeBehind"
 %>
 ```
 
-## <a name="attributes"></a><span data-ttu-id="265b4-104">特性</span><span class="sxs-lookup"><span data-stu-id="265b4-104">Attributes</span></span>
+## <a name="attributes"></a><span data-ttu-id="84357-104">特性</span><span class="sxs-lookup"><span data-stu-id="84357-104">Attributes</span></span>
 
-### <a name="service"></a><span data-ttu-id="265b4-105">服务</span><span class="sxs-lookup"><span data-stu-id="265b4-105">Service</span></span>
+### <a name="service"></a><span data-ttu-id="84357-105">服务</span><span class="sxs-lookup"><span data-stu-id="84357-105">Service</span></span>
 
-<span data-ttu-id="265b4-106">承载的服务的 CLR 类型名称。</span><span class="sxs-lookup"><span data-stu-id="265b4-106">The CLR type name of the service hosted.</span></span> <span data-ttu-id="265b4-107">此名称应为实现一个或多个服务协定的类型的限定名称。</span><span class="sxs-lookup"><span data-stu-id="265b4-107">This should be a qualified name of a type that implements one or more of the service contacts.</span></span>
+<span data-ttu-id="84357-106">承载的服务的 CLR 类型名称。</span><span class="sxs-lookup"><span data-stu-id="84357-106">The CLR type name of the service hosted.</span></span> <span data-ttu-id="84357-107">此名称应为实现一个或多个服务协定的类型的限定名称。</span><span class="sxs-lookup"><span data-stu-id="84357-107">This should be a qualified name of a type that implements one or more of the service contacts.</span></span>
 
-### <a name="factory"></a><span data-ttu-id="265b4-108">Factory</span><span class="sxs-lookup"><span data-stu-id="265b4-108">Factory</span></span>
+### <a name="factory"></a><span data-ttu-id="84357-108">Factory</span><span class="sxs-lookup"><span data-stu-id="84357-108">Factory</span></span>
 
-<span data-ttu-id="265b4-109">用于实例化服务主机的服务主机工厂的 CLR 类型名称。</span><span class="sxs-lookup"><span data-stu-id="265b4-109">The CLR type name of the service host factory used to instantiate the service host.</span></span> <span data-ttu-id="265b4-110">此属性是可选的。</span><span class="sxs-lookup"><span data-stu-id="265b4-110">This attribute is optional.</span></span> <span data-ttu-id="265b4-111">如果未指定，则使用默认的 <xref:System.ServiceModel.Activation.ServiceHostFactory>，这将返回 <xref:System.ServiceModel.ServiceHost> 的实例。</span><span class="sxs-lookup"><span data-stu-id="265b4-111">If unspecified, the default <xref:System.ServiceModel.Activation.ServiceHostFactory> is used, which returns an instance of <xref:System.ServiceModel.ServiceHost>.</span></span>
+<span data-ttu-id="84357-109">用于实例化服务主机的服务主机工厂的 CLR 类型名称。</span><span class="sxs-lookup"><span data-stu-id="84357-109">The CLR type name of the service host factory used to instantiate the service host.</span></span> <span data-ttu-id="84357-110">此属性是可选的。</span><span class="sxs-lookup"><span data-stu-id="84357-110">This attribute is optional.</span></span> <span data-ttu-id="84357-111">如果未指定，则使用默认的 <xref:System.ServiceModel.Activation.ServiceHostFactory>，这将返回 <xref:System.ServiceModel.ServiceHost> 的实例。</span><span class="sxs-lookup"><span data-stu-id="84357-111">If unspecified, the default <xref:System.ServiceModel.Activation.ServiceHostFactory> is used, which returns an instance of <xref:System.ServiceModel.ServiceHost>.</span></span>
 
-### <a name="debug"></a><span data-ttu-id="265b4-112">调试</span><span class="sxs-lookup"><span data-stu-id="265b4-112">Debug</span></span>
+### <a name="debug"></a><span data-ttu-id="84357-112">调试</span><span class="sxs-lookup"><span data-stu-id="84357-112">Debug</span></span>
 
-<span data-ttu-id="265b4-113">指示是否应用调试符号编译 Windows Communication Foundation （WCF）服务。</span><span class="sxs-lookup"><span data-stu-id="265b4-113">Indicates whether the Windows Communication Foundation (WCF) service should be compiled with debug symbols.</span></span> <span data-ttu-id="265b4-114">`true` 如果 WCF 服务应用调试符号编译，则为; 否则为。否则，`false`。</span><span class="sxs-lookup"><span data-stu-id="265b4-114">`true` if the WCF service should be compiled with debug symbols; otherwise, `false`.</span></span>
+<span data-ttu-id="84357-113">指示是否应用调试符号编译 Windows Communication Foundation （WCF）服务。</span><span class="sxs-lookup"><span data-stu-id="84357-113">Indicates whether the Windows Communication Foundation (WCF) service should be compiled with debug symbols.</span></span> <span data-ttu-id="84357-114">`true`如果应用调试符号编译 WCF 服务，则为; 否则为。否则为 `false` 。</span><span class="sxs-lookup"><span data-stu-id="84357-114">`true` if the WCF service should be compiled with debug symbols; otherwise, `false`.</span></span>
 
-### <a name="language"></a><span data-ttu-id="265b4-115">Language</span><span class="sxs-lookup"><span data-stu-id="265b4-115">Language</span></span>
+### <a name="language"></a><span data-ttu-id="84357-115">语言</span><span class="sxs-lookup"><span data-stu-id="84357-115">Language</span></span>
 
-<span data-ttu-id="265b4-116">指定编译文件 (.svc) 中的所有内联代码时使用的语言。</span><span class="sxs-lookup"><span data-stu-id="265b4-116">Specifies the language used when compiling all the inline code within file (.svc).</span></span> <span data-ttu-id="265b4-117">值可以表示任意。NET 支持的语言，包括 `C#`、`VB`和 `JS`，分别引用C#、Visual Basic 和 JScript .net。</span><span class="sxs-lookup"><span data-stu-id="265b4-117">The values can represent any .NET-supported language, including `C#`, `VB`, and `JS`, which refer to C#, Visual Basic, and JScript .NET, respectively.</span></span> <span data-ttu-id="265b4-118">此属性是可选的。</span><span class="sxs-lookup"><span data-stu-id="265b4-118">This attribute is optional.</span></span>
+<span data-ttu-id="84357-116">指定编译文件 (.svc) 中的所有内联代码时使用的语言。</span><span class="sxs-lookup"><span data-stu-id="84357-116">Specifies the language used when compiling all the inline code within file (.svc).</span></span> <span data-ttu-id="84357-117">值可以表示任意。NET 支持的语言，包括 `C#` 、 `VB` 和 `JS` ，分别引用 c #、Visual Basic 和 JScript .net。</span><span class="sxs-lookup"><span data-stu-id="84357-117">The values can represent any .NET-supported language, including `C#`, `VB`, and `JS`, which refer to C#, Visual Basic, and JScript .NET, respectively.</span></span> <span data-ttu-id="84357-118">此属性是可选的。</span><span class="sxs-lookup"><span data-stu-id="84357-118">This attribute is optional.</span></span>
 
-### <a name="codebehind"></a><span data-ttu-id="265b4-119">CodeBehind</span><span class="sxs-lookup"><span data-stu-id="265b4-119">CodeBehind</span></span>
+### <a name="codebehind"></a><span data-ttu-id="84357-119">CodeBehind</span><span class="sxs-lookup"><span data-stu-id="84357-119">CodeBehind</span></span>
 
-<span data-ttu-id="265b4-120">指定实现 XML Web service 的源文件，当实现 XML Web service 的类未驻留在同一文件中，且尚未编译成程序集并放置在 *\bin*目录中时，则为。</span><span class="sxs-lookup"><span data-stu-id="265b4-120">Specifies the source file that implements the XML Web service, when the class that implements the XML Web service does not reside in the same file and has not been compiled into an assembly and placed in the *\Bin* directory.</span></span>
+<span data-ttu-id="84357-120">指定实现 XML Web service 的源文件，当实现 XML Web service 的类未驻留在同一文件中，且尚未编译成程序集并放置在*\bin*目录中时，则为。</span><span class="sxs-lookup"><span data-stu-id="84357-120">Specifies the source file that implements the XML Web service, when the class that implements the XML Web service does not reside in the same file and has not been compiled into an assembly and placed in the *\Bin* directory.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="265b4-121">备注</span><span class="sxs-lookup"><span data-stu-id="265b4-121">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="84357-121">注解</span><span class="sxs-lookup"><span data-stu-id="84357-121">Remarks</span></span>
 
-<span data-ttu-id="265b4-122">用于承载服务的 <xref:System.ServiceModel.ServiceHost> 是 Windows Communication Foundation （WCF）编程模型中的一个扩展点。</span><span class="sxs-lookup"><span data-stu-id="265b4-122">The <xref:System.ServiceModel.ServiceHost> used to host the service is a point of extensibility within the Windows Communication Foundation (WCF) programming model.</span></span> <span data-ttu-id="265b4-123">由于 <xref:System.ServiceModel.ServiceHost> 可能属于宿主环境不应直接实例化的多态类型，因此使用工厂模式对其进行实例化。</span><span class="sxs-lookup"><span data-stu-id="265b4-123">A factory pattern is used to instantiate the <xref:System.ServiceModel.ServiceHost> because it is, potentially, a polymorphic type that the hosting environment should not instantiate directly.</span></span>
+<span data-ttu-id="84357-122"><xref:System.ServiceModel.ServiceHost>用于承载服务的是 Windows Communication Foundation （WCF）编程模型中的一个扩展点。</span><span class="sxs-lookup"><span data-stu-id="84357-122">The <xref:System.ServiceModel.ServiceHost> used to host the service is a point of extensibility within the Windows Communication Foundation (WCF) programming model.</span></span> <span data-ttu-id="84357-123">由于 <xref:System.ServiceModel.ServiceHost> 可能属于宿主环境不应直接实例化的多态类型，因此使用工厂模式对其进行实例化。</span><span class="sxs-lookup"><span data-stu-id="84357-123">A factory pattern is used to instantiate the <xref:System.ServiceModel.ServiceHost> because it is, potentially, a polymorphic type that the hosting environment should not instantiate directly.</span></span>
 
-<span data-ttu-id="265b4-124">默认实现使用 <xref:System.ServiceModel.Activation.ServiceHostFactory> 创建 <xref:System.ServiceModel.ServiceHost> 的实例。</span><span class="sxs-lookup"><span data-stu-id="265b4-124">The default implementation uses <xref:System.ServiceModel.Activation.ServiceHostFactory> to create an instance of <xref:System.ServiceModel.ServiceHost>.</span></span> <span data-ttu-id="265b4-125">但你可以通过在 `@ServiceHost` 指令中指定工厂实现的 CLR 类型名称来提供自己的工厂（一个返回派生主机的工厂）。</span><span class="sxs-lookup"><span data-stu-id="265b4-125">But you can provide your own factory (one that returns your derived host) by specifying the CLR type name of your factory implementation in the `@ServiceHost` directive.</span></span>
+<span data-ttu-id="84357-124">默认实现使用 <xref:System.ServiceModel.Activation.ServiceHostFactory> 创建 <xref:System.ServiceModel.ServiceHost> 的实例。</span><span class="sxs-lookup"><span data-stu-id="84357-124">The default implementation uses <xref:System.ServiceModel.Activation.ServiceHostFactory> to create an instance of <xref:System.ServiceModel.ServiceHost>.</span></span> <span data-ttu-id="84357-125">但你可以通过在指令中指定工厂实现的 CLR 类型名称来提供自己的工厂（一个返回派生主机的工厂） `@ServiceHost` 。</span><span class="sxs-lookup"><span data-stu-id="84357-125">But you can provide your own factory (one that returns your derived host) by specifying the CLR type name of your factory implementation in the `@ServiceHost` directive.</span></span>
 
-<span data-ttu-id="265b4-126">若要使用自定义服务主机工厂而不是默认工厂，只需在 `@ServiceHost` 指令中提供类型名称，如下所示。</span><span class="sxs-lookup"><span data-stu-id="265b4-126">To use you own custom service host factory instead of the default factory, just provide the type name in the `@ServiceHost` directive as follows.</span></span>
+<span data-ttu-id="84357-126">若要使用自定义服务主机工厂而不是默认工厂，只需在指令中提供类型名称，如下所示 `@ServiceHost` 。</span><span class="sxs-lookup"><span data-stu-id="84357-126">To use you own custom service host factory instead of the default factory, just provide the type name in the `@ServiceHost` directive as follows.</span></span>
 
 ```xml
 <% @ServiceHost Factory="DerivedFactory" Service="MyService" %>
 ```
 
-<span data-ttu-id="265b4-127">尽可能简化工厂实现。</span><span class="sxs-lookup"><span data-stu-id="265b4-127">Keep the factory implementations as light as possible.</span></span> <span data-ttu-id="265b4-128">如果具有大量的自定义逻辑，则应将这些逻辑放入宿主而不是工厂内，这样可以获得更好的代码重用性。</span><span class="sxs-lookup"><span data-stu-id="265b4-128">If you have lots of custom logic, your code is more reusable if you put that logic inside your host instead of inside the factory.</span></span>
+<span data-ttu-id="84357-127">尽可能简化工厂实现。</span><span class="sxs-lookup"><span data-stu-id="84357-127">Keep the factory implementations as light as possible.</span></span> <span data-ttu-id="84357-128">如果具有大量的自定义逻辑，则应将这些逻辑放入宿主而不是工厂内，这样可以获得更好的代码重用性。</span><span class="sxs-lookup"><span data-stu-id="84357-128">If you have lots of custom logic, your code is more reusable if you put that logic inside your host instead of inside the factory.</span></span>
 
-<span data-ttu-id="265b4-129">例如，若要为 `MyService`启用支持 AJAX 的终结点，请在 `@ServiceHost` 指令中指定 `Factory` 属性值的 <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>，而不是默认 <xref:System.ServiceModel.Activation.ServiceHostFactory>，如以下示例中所示：</span><span class="sxs-lookup"><span data-stu-id="265b4-129">For example, to enable an AJAX-enabled endpoint for `MyService`, specify the <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> for the value of the `Factory` attribute, instead of the default <xref:System.ServiceModel.Activation.ServiceHostFactory>, in the `@ServiceHost` directive as shown in the following example:</span></span>
+<span data-ttu-id="84357-129">例如，若要为启用支持 AJAX 的终结点 `MyService` ，请 <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> `Factory` 在指令中指定属性值（而不是默认值 <xref:System.ServiceModel.Activation.ServiceHostFactory> ）， `@ServiceHost` 如以下示例中所示：</span><span class="sxs-lookup"><span data-stu-id="84357-129">For example, to enable an AJAX-enabled endpoint for `MyService`, specify the <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> for the value of the `Factory` attribute, instead of the default <xref:System.ServiceModel.Activation.ServiceHostFactory>, in the `@ServiceHost` directive as shown in the following example:</span></span>
 
 ```xml
 <% @ServiceHost
@@ -72,6 +72,6 @@ Factory="WebScriptServiceHostFactory"
 %>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="265b4-130">另请参阅</span><span class="sxs-lookup"><span data-stu-id="265b4-130">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="84357-130">另请参阅</span><span class="sxs-lookup"><span data-stu-id="84357-130">See also</span></span>
 
-- [<span data-ttu-id="265b4-131">自定义服务主机</span><span class="sxs-lookup"><span data-stu-id="265b4-131">Custom Service Host</span></span>](../../../wcf/samples/custom-service-host.md)
+- [<span data-ttu-id="84357-131">自定义服务主机</span><span class="sxs-lookup"><span data-stu-id="84357-131">Custom Service Host</span></span>](../../../wcf/samples/custom-service-host.md)

@@ -3,21 +3,21 @@ title: <filters> 的 <routing>
 ms.date: 03/30/2017
 ms.assetid: 7993cf90-9afd-4c3c-9608-184d5da1105c
 ms.openlocfilehash: c9bc3a2c379e14d8cf687676a3ec40702d150e1e
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 06/06/2020
 ms.locfileid: "70855247"
 ---
-# <a name="filters-of-routing"></a><span data-ttu-id="12612-102">\<筛选\<路由 > ></span><span class="sxs-lookup"><span data-stu-id="12612-102">\<filters> of \<routing></span></span>
+# <a name="filters-of-routing"></a><span data-ttu-id="85a3f-102">\<filters> 的 \<routing></span><span class="sxs-lookup"><span data-stu-id="85a3f-102">\<filters> of \<routing></span></span>
 
-<span data-ttu-id="12612-103">表示用于定义一组路由筛选器的配置节，这些筛选器确定计算传入消息时使用<xref:System.ServiceModel.Dispatcher.MessageFilter>的 Windows Communication Foundation （WCF）的类型。</span><span class="sxs-lookup"><span data-stu-id="12612-103">Represents a configuration section for defining a set of routing filters, which determine the type of Windows Communication Foundation (WCF) <xref:System.ServiceModel.Dispatcher.MessageFilter> to be used when evaluating incoming messages.</span></span>
+<span data-ttu-id="85a3f-103">表示用于定义一组路由筛选器的配置节，这些筛选器确定 <xref:System.ServiceModel.Dispatcher.MessageFilter> 计算传入消息时使用的 Windows Communication Foundation （WCF）的类型。</span><span class="sxs-lookup"><span data-stu-id="85a3f-103">Represents a configuration section for defining a set of routing filters, which determine the type of Windows Communication Foundation (WCF) <xref:System.ServiceModel.Dispatcher.MessageFilter> to be used when evaluating incoming messages.</span></span>
 
-<span data-ttu-id="12612-104">[ **\<system.serviceModel>** ](system-servicemodel.md)</span><span class="sxs-lookup"><span data-stu-id="12612-104">[**\<system.serviceModel>**](system-servicemodel.md)</span></span>\
-<span data-ttu-id="12612-105">&nbsp;&nbsp;[ **\<routing>** ](routing.md)</span><span class="sxs-lookup"><span data-stu-id="12612-105">&nbsp;&nbsp;[**\<routing>**](routing.md)</span></span>\
-<span data-ttu-id="12612-106">&nbsp;&nbsp;&nbsp;&nbsp; **\<filters>**</span><span class="sxs-lookup"><span data-stu-id="12612-106">&nbsp;&nbsp;&nbsp;&nbsp;**\<filters>**</span></span>  
+[**\<system.serviceModel>**](system-servicemodel.md)\
+&nbsp;&nbsp;[**\<routing>**](routing.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;**\<filters>**  
   
-## <a name="syntax"></a><span data-ttu-id="12612-107">语法</span><span class="sxs-lookup"><span data-stu-id="12612-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="85a3f-104">语法</span><span class="sxs-lookup"><span data-stu-id="85a3f-104">Syntax</span></span>  
   
 ```xml  
 <system.serviceModel>
@@ -32,26 +32,26 @@ ms.locfileid: "70855247"
 </system.serviceModel>
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="12612-108">特性和元素</span><span class="sxs-lookup"><span data-stu-id="12612-108">Attributes and elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="85a3f-105">特性和元素</span><span class="sxs-lookup"><span data-stu-id="85a3f-105">Attributes and elements</span></span>
 
-<span data-ttu-id="12612-109">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="12612-109">The following sections describe attributes, child elements, and parent elements.</span></span>
+<span data-ttu-id="85a3f-106">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="85a3f-106">The following sections describe attributes, child elements, and parent elements.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="12612-110">特性</span><span class="sxs-lookup"><span data-stu-id="12612-110">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="85a3f-107">特性</span><span class="sxs-lookup"><span data-stu-id="85a3f-107">Attributes</span></span>
 
-<span data-ttu-id="12612-111">无</span><span class="sxs-lookup"><span data-stu-id="12612-111">None</span></span>
+<span data-ttu-id="85a3f-108">无</span><span class="sxs-lookup"><span data-stu-id="85a3f-108">None</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="12612-112">子元素</span><span class="sxs-lookup"><span data-stu-id="12612-112">Child elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="85a3f-109">子元素</span><span class="sxs-lookup"><span data-stu-id="85a3f-109">Child elements</span></span>
 
-|     | <span data-ttu-id="12612-113">描述</span><span class="sxs-lookup"><span data-stu-id="12612-113">Description</span></span> |
+|     | <span data-ttu-id="85a3f-110">说明</span><span class="sxs-lookup"><span data-stu-id="85a3f-110">Description</span></span> |
 | --- | ----------- |
-| [<span data-ttu-id="12612-114"> **\<filter>** </span><span class="sxs-lookup"><span data-stu-id="12612-114">**\<filter>**</span></span>](filter.md) | <span data-ttu-id="12612-115">包含一个路由筛选器，该筛选器确定计算传入消息<xref:System.ServiceModel.Dispatcher.MessageFilter>时将使用的 Windows Communication Foundation （WCF）的类型。</span><span class="sxs-lookup"><span data-stu-id="12612-115">Contains a routing filter that determines the type of Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> will be used when evaluating incoming messages.</span></span> |
+| [**\<filter>**](filter.md) | <span data-ttu-id="85a3f-111">包含一个路由筛选器，该筛选器确定 <xref:System.ServiceModel.Dispatcher.MessageFilter> 计算传入消息时将使用的 Windows Communication Foundation （WCF）的类型。</span><span class="sxs-lookup"><span data-stu-id="85a3f-111">Contains a routing filter that determines the type of Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> will be used when evaluating incoming messages.</span></span> |
 
-### <a name="parent-elements"></a><span data-ttu-id="12612-116">父元素</span><span class="sxs-lookup"><span data-stu-id="12612-116">Parent elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="85a3f-112">父元素</span><span class="sxs-lookup"><span data-stu-id="85a3f-112">Parent elements</span></span>
 
-|     | <span data-ttu-id="12612-117">描述</span><span class="sxs-lookup"><span data-stu-id="12612-117">Description</span></span> |
+|     | <span data-ttu-id="85a3f-113">说明</span><span class="sxs-lookup"><span data-stu-id="85a3f-113">Description</span></span> |
 | --- | ----------- |
-| [<span data-ttu-id="12612-118"> **\<routing>** </span><span class="sxs-lookup"><span data-stu-id="12612-118">**\<routing>**</span></span>](routing.md) | <span data-ttu-id="12612-119">表示用于定义一组路由筛选器的配置节，这些筛选器确定计算传入消息时要<xref:System.ServiceModel.Dispatcher.MessageFilter>使用的 Windows Communication Foundation （WCF）的类型，以及用于定义目标终结点的路由表。当筛选器匹配时向发送消息。</span><span class="sxs-lookup"><span data-stu-id="12612-119">Represents a configuration section for defining a set of routing filters, which determine the type of Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> to be used when evaluating incoming messages, as well as routing tables that define the target endpoints to send messages to when a filter matches.</span></span> |
+| [**\<routing>**](routing.md) | <span data-ttu-id="85a3f-114">表示用于定义一组路由筛选器的配置节，这些筛选器确定计算传入消息时使用的 Windows Communication Foundation （WCF）的类型，以及用于 <xref:System.ServiceModel.Dispatcher.MessageFilter> 定义在筛选器匹配时要将消息发送到的目标终结点的路由表。</span><span class="sxs-lookup"><span data-stu-id="85a3f-114">Represents a configuration section for defining a set of routing filters, which determine the type of Windows Communication Foundation (WCF)<xref:System.ServiceModel.Dispatcher.MessageFilter> to be used when evaluating incoming messages, as well as routing tables that define the target endpoints to send messages to when a filter matches.</span></span> |
 
-## <a name="see-also"></a><span data-ttu-id="12612-120">请参阅</span><span class="sxs-lookup"><span data-stu-id="12612-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="85a3f-115">另请参阅</span><span class="sxs-lookup"><span data-stu-id="85a3f-115">See also</span></span>
 
 - <xref:System.ServiceModel.Routing.Configuration.FilterElement?displayProperty=nameWithType>
