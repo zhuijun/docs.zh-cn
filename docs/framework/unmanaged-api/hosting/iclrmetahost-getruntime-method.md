@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: a10749f1-ab91-47cf-982f-d8ccd2e81bd2
 topic_type:
 - apiref
-ms.openlocfilehash: a0d6496e014b767b2bdaf68cdc62017813e1e57f
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: d482e25c7bf0f028e2478c8e7b7863bc54d7aeb9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703633"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504186"
 ---
 # <a name="iclrmetahostgetruntime-method"></a>ICLRMetaHost::GetRuntime 方法
-获取与特定版本的公共语言运行时（CLR）相对应的[ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)接口。 此方法取代了与[STARTUP_LOADER_SAFEMODE](startup-flags-enumeration.md)标志一起使用的[CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)函数。  
+获取与特定版本的公共语言运行时（CLR）相对应的[ICLRRuntimeInfo](iclrruntimeinfo-interface.md)接口。 此方法取代了与[STARTUP_LOADER_SAFEMODE](startup-flags-enumeration.md)标志一起使用的[CorBindToRuntimeEx](corbindtoruntimeex-function.md)函数。  
   
 ## <a name="syntax"></a>语法  
   
@@ -58,8 +58,8 @@ HRESULT GetRuntime (
 |S_OK|该方法已成功完成。|  
 |E_POINTER|`pwzVersion` 或 `ppRuntime` 为 null。|  
   
-## <a name="remarks"></a>备注  
- 此方法与旧接口（如[ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)接口）和旧功能（如已弃用的函数）一致地进行交互 `CorBindTo*` （请参阅 .NET FRAMEWORK 2.0 托管 API 中[弃用的 CLR 承载函数](deprecated-clr-hosting-functions.md)）。 也就是说，用旧版 API 加载的运行时对新 API 可见，而与新 API 一起加载的运行时对旧 API 可见。  
+## <a name="remarks"></a>注解  
+ 此方法与旧接口（如[ICorRuntimeHost](icorruntimehost-interface.md)接口）和旧功能（如已弃用的函数）一致地进行交互 `CorBindTo*` （请参阅 .NET FRAMEWORK 2.0 托管 API 中[弃用的 CLR 承载函数](deprecated-clr-hosting-functions.md)）。 也就是说，用旧版 API 加载的运行时对新 API 可见，而与新 API 一起加载的运行时对旧 API 可见。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  

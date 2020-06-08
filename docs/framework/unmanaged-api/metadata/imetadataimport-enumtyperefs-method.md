@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b4896b8f-8e97-469c-8089-e72a025661b5
 topic_type:
 - apiref
-ms.openlocfilehash: e5d4ddd43b27d733a63c2e0dc5e92ffd2ba94a7f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0c7e96c50e59902cde4686f908047a86dd2b6a47
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175429"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503739"
 ---
 # <a name="imetadataimportenumtyperefs-method"></a>IMetaDataImport::EnumTypeRefs 方法
 枚举当前元数据范围内定义的 TypeRef 标记。  
@@ -36,39 +36,39 @@ HRESULT EnumTypeRefs (
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
  `phEnum`  
- [进出]指向枚举器的指针。 对于此方法的第一次调用，这必须为 NULL。  
+ [in，out]指向枚举器的指针。 第一次调用此方法时，此值必须为 NULL。  
   
  `rTypeRefs`  
- [出]用于存储 TypeRef 令牌的数组。  
+ 弄用于存储 TypeRef 标记的数组。  
   
  `cMax`  
  [in] `rTypeRefs` 数组的最大大小。  
   
  `pcTypeRefs`  
- [出]指向 在 中`rTypeRefs`返回的 TypeRef 令牌数的指针。  
+ 弄一个指针，指向中返回的 TypeRef 标记的数目 `rTypeRefs` 。  
   
 ## <a name="return-value"></a>返回值  
   
 |HRESULT|说明|  
 |-------------|-----------------|  
 |`S_OK`|`EnumTypeRefs`已成功返回。|  
-|`S_FALSE`|没有要枚举的令牌。 在这种情况下，`pcTypeRefs`为零。|  
+|`S_FALSE`|没有要枚举的令牌。 在这种情况下， `pcTypeRefs` 为零。|  
   
-## <a name="remarks"></a>备注  
- TypeRef 令牌表示对类型的引用。  
+## <a name="remarks"></a>注解  
+ TypeRef 标记表示对类型的引用。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
- **标题：** 科尔赫  
+ **标头：** Cor  
   
- **库：** 作为资源包含在 MsCorEE.dll 中  
+ **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

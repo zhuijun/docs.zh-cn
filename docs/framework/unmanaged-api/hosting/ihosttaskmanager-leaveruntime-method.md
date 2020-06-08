@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 43689cc4-e48e-46e5-a22d-bafd768b8759
 topic_type:
 - apiref
-ms.openlocfilehash: 2939f13933c4681e7e2220e5290e019e10c2844e
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: deaebbce3b9b8a26bf9668b826a6818dba94dcc3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83841914"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501373"
 ---
 # <a name="ihosttaskmanagerleaveruntime-method"></a>IHostTaskManager::LeaveRuntime 方法
 通知宿主当前正在执行的任务即将离开公共语言运行时（CLR）并输入非托管代码。  
@@ -52,8 +52,8 @@ HRESULT LeaveRuntime (
 |E_FAIL|发生未知的灾难性故障。 当方法返回 E_FAIL 时，CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
 |E_OUTOFMEMORY|没有足够的内存可用来完成请求的分配。|  
   
-## <a name="remarks"></a>备注  
- 与非托管代码之间的调用序列可以嵌套。 例如，下面的列表描述了一种假设的情况，在这种情况下 `LeaveRuntime` ，对、 [IHostTaskManager：： ReverseEnterRuntime](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-reverseenterruntime-method.md)、 [IHostTaskManager：： ReverseLeaveRuntime](ihosttaskmanager-reverseleaveruntime-method.md)的调用序列，并 `IHostTaskManager::EnterRuntime` 允许主机标识嵌套层。  
+## <a name="remarks"></a>注解  
+ 与非托管代码之间的调用序列可以嵌套。 例如，下面的列表描述了一种假设的情况，在这种情况下 `LeaveRuntime` ，对、 [IHostTaskManager：： ReverseEnterRuntime](ihosttaskmanager-reverseenterruntime-method.md)、 [IHostTaskManager：： ReverseLeaveRuntime](ihosttaskmanager-reverseleaveruntime-method.md)的调用序列，并 `IHostTaskManager::EnterRuntime` 允许主机标识嵌套层。  
   
 |操作|对应的方法调用|  
 |------------|-------------------------------|  

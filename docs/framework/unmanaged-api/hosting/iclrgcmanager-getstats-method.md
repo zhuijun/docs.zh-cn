@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ce259d1d-cd81-4490-a7a1-0d0ea0804872
 topic_type:
 - apiref
-ms.openlocfilehash: 1e881b4a55a99bac3f9ca0e8db1556807b888f13
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8622920a81f4b469361ffa879f7a4eeda697cab9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616956"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504220"
 ---
 # <a name="iclrgcmanagergetstats-method"></a>ICLRGCManager::GetStats 方法
 获取有关公共语言运行时的垃圾回收系统的当前统计信息集。  
@@ -48,10 +48,10 @@ HRESULT GetStats (
 |HOST_E_ABANDONED|已阻止的线程或纤程正在等待某个事件时，该事件被取消。|  
 |E_FAIL|发生未知的灾难性故障。 方法返回 E_FAIL 后，CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  CLR 只计算和返回由的字段指定的统计信息 `Flags` `pStats` 。  
   
- 将 `Flags` 字段设置为一个或多个[COR_GC_STAT_TYPES](../../../../docs/framework/unmanaged-api/hosting/cor-gc-stat-types-enumeration.md)枚举的值，以指定要设置[COR_GC_STATS](cor-gc-stats-structure.md)结构中的哪些统计信息。  
+ 将 `Flags` 字段设置为一个或多个[COR_GC_STAT_TYPES](cor-gc-stat-types-enumeration.md)枚举的值，以指定要设置[COR_GC_STATS](cor-gc-stats-structure.md)结构中的哪些统计信息。  
   
  用法的示例如下所示：  
   

@@ -1,5 +1,6 @@
 ---
 title: authenticationModules 的 <add> 元素（网络设置）
+description: <add>ConnectionManagement 的网络设置元素将 IP 地址或 DNS 名称添加到 .NET Framework 中的连接管理列表。
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#add
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - <authenticationModules>, add element
 - <add> element, authenticationModules
 ms.assetid: 333c5fb0-a2ab-4db8-8531-a7fe37bb9b5b
-ms.openlocfilehash: 4181a045079bdb455a63ebda722dd6b0daf33c4d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1a6d0f79f076a69cec33ac14f0e0f33f7c3c6577
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155110"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504636"
 ---
 # <a name="add-element-for-authenticationmodules-network-settings"></a>authenticationModules 的 \<add> 元素（网络设置）
 向应用程序添加身份验证模块。  
@@ -38,7 +39,7 @@ ms.locfileid: "79155110"
   
 ### <a name="attributes"></a>特性  
   
-|**特性**|**描述**|  
+|**特性**|**说明**|  
 |-------------------|---------------------|  
 |`type`|完全限定的类型名称（由属性指示 <xref:System.Type.FullName%2A> ）和程序集名称（由 <xref:System.Reflection.Assembly.FullName%2A> 属性指示），用逗号分隔。|  
   
@@ -47,7 +48,7 @@ ms.locfileid: "79155110"
   
 ### <a name="parent-elements"></a>父元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[authenticationModules](authenticationmodules-element-network-settings.md)|指定用于对网络请求进行身份验证的模块。|  
   

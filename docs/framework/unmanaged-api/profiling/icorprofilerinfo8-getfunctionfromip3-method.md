@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 6d50a5d74eccff6fe39aca111f768bac4d8f2e2e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 6822757608429ca5f4ef9520ab7574d440b67b26
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868325"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495251"
 ---
 # <a name="icorprofilerinfo8getfunctionfromip3-method"></a>ICorProfilerInfo8：： GetFunctionFromIP3 方法
 
@@ -34,7 +34,7 @@ HRESULT GetFunctionFromIP3([in] LPCBYTE ip,
 
 - `ip`
 
-  \[中的] 托管代码中的指令指针。
+  \[in] 托管代码中的指令指针。
 
 - `pFunctionId`
 
@@ -44,19 +44,19 @@ HRESULT GetFunctionFromIP3([in] LPCBYTE ip,
 
   \[out] 函数的 JIT 重新编译版本的标识。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 此方法适用于动态和非动态方法。 它是[GetFunctionFromIP2](icorprofilerinfo4-getfunctionfromip2-method.md)的超集，只适用于具有元数据的函数。
 
-## <a name="requirements"></a>需求
+## <a name="requirements"></a>要求
 
-**平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。
+**平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。
 
 **头文件：** CorProf.idl、CorProf.h
 
 **库：** CorGuids.lib
 
-**.NET Framework 版本：** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
+**.NET Framework 版本：**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>另请参阅
 

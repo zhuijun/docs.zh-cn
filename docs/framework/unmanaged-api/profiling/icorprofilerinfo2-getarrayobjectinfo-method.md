@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bda75017-739f-4ce5-9000-f3b526e8473c
 topic_type:
 - apiref
-ms.openlocfilehash: 839cd574e5352b74b47cd6242d5706bc6405d439
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 368b8f270797beb525e0745a29990667913f4071
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862901"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497345"
 ---
 # <a name="icorprofilerinfo2getarrayobjectinfo-method"></a>ICorProfilerInfo2::GetArrayObjectInfo 方法
 获取有关数组对象的详细信息。  
@@ -50,19 +50,19 @@ HRESULT GetArrayObjectInfo(
  弄一个包含整数的数组，其中每个整数表示数组维度的下限。  
   
  `ppData`  
- 弄一个指针，它指向数组的原始缓冲区的地址，该地址根据C++约定进行布局。  
+ 弄指向数组的原始缓冲区的地址的指针，该缓冲区根据 c + + 约定进行布局。  
   
-## <a name="remarks"></a>备注  
- `pDimensionSizes` 和 `pDimensionLowerBounds` 是并行数组，因此位于每个数组中同一索引处的元素是同一实体的特征。  
+## <a name="remarks"></a>注解  
+ `pDimensionSizes`和 `pDimensionLowerBounds` 是并行数组，因此位于每个数组中同一索引处的元素是同一实体的特征。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

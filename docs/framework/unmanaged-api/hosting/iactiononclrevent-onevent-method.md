@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0970f10c-4304-4c12-91c0-83e51455afb4
 topic_type:
 - apiref
-ms.openlocfilehash: a216a2925382016adeb100554bdceefdf3ee902b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: bbf5e299285071ba6d43fd2c40fc724d19bc7b2a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616055"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504337"
 ---
 # <a name="iactiononclreventonevent-method"></a>IActionOnCLREvent::OnEvent 方法
 对已使用[ICLROnEventManager：： RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md)方法的调用注册的事件执行回调。  
@@ -52,10 +52,10 @@ HRESULT OnEvent (
 |HOST_E_ABANDONED|已阻止的线程或纤程正在等待某个事件时，该事件被取消。|  
 |E_FAIL|发生未知的灾难性故障。 如果方法返回 E_FAIL，则 CLR 在该进程内将不再可用。 对任何宿主方法的后续调用都会返回 HOST_E_CLRNOTAVAILABLE。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `data`参数是指向未指定类型的对象的指针。 如果 `event` 参数为 `Event_DomainUnload` ， `data` 则是已卸载的的数值标识符 <xref:System.AppDomain> 。 主机可以使用此标识符作为键来执行适当的操作。  
   
- 如果 `event` 为 `Event_MDAFired` ， `data` 则为指向[MDAInfo](../../../../docs/framework/unmanaged-api/hosting/mdainfo-structure.md)实例的指针，其中包含来自托管调试助手（MDA）的消息输出。 Mda 是 CLR 的一项功能，可帮助开发人员进行调试，方法是生成有关其他难以捕获的事件的 XML 消息。 在调试托管代码和非托管代码之间的转换时，此类消息特别有用。 有关详细信息，请参阅[诊断托管调试助手的错误](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)。  
+ 如果 `event` 为 `Event_MDAFired` ， `data` 则为指向[MDAInfo](mdainfo-structure.md)实例的指针，其中包含来自托管调试助手（MDA）的消息输出。 Mda 是 CLR 的一项功能，可帮助开发人员进行调试，方法是生成有关其他难以捕获的事件的 XML 消息。 在调试托管代码和非托管代码之间的转换时，此类消息特别有用。 有关详细信息，请参阅[诊断托管调试助手的错误](../../debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  

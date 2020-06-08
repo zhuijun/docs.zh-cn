@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: fb511c9b-3fe4-41b0-822a-6ba4a079d1f5
 topic_type:
 - apiref
-ms.openlocfilehash: 76a50be6da790ed7bd193c489d36e2823cdbe587
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f878e2f1f86bc42c0ff5abada8d7df4feb9ed228
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616952"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504181"
 ---
 # <a name="iclrgcmanager-interface"></a>ICLRGCManager 接口
 提供允许主机与公共语言运行时的垃圾回收系统交互的方法。  
   
 > [!NOTE]
-> 从 .NET Framework 4.5 开始，你可以使用[ICLRGCManager2：： SetGCStartupLimitsEx](../../../../docs/framework/unmanaged-api/hosting/iclrgcmanager2-setgcstartuplimitsex-method.md)方法将垃圾回收段的大小和垃圾回收系统的第0代的最大大小设置为大于 `DWORD` [SetGCStartupLimits](iclrgcmanager-setgcstartuplimits-method.md)方法施加的限制的值。  
+> 从 .NET Framework 4.5 开始，你可以使用[ICLRGCManager2：： SetGCStartupLimitsEx](iclrgcmanager2-setgcstartuplimitsex-method.md)方法将垃圾回收段的大小和垃圾回收系统的第0代的最大大小设置为大于 `DWORD` [SetGCStartupLimits](iclrgcmanager-setgcstartuplimits-method.md)方法施加的限制的值。  
   
 ## <a name="methods"></a>方法  
   
@@ -35,7 +35,7 @@ ms.locfileid: "83616952"
 |[GetStats 方法](iclrgcmanager-getstats-method.md)|获取有关垃圾回收系统的当前统计信息集。|  
 |[SetGCStartupLimits 方法](iclrgcmanager-setgcstartuplimits-method.md)|设置垃圾回收段的大小以及垃圾回收系统的第0代的最大大小。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  公共语言运行时（CLR）实现了托管类型的垃圾回收机制 <xref:System.GC> 。 有关垃圾回收系统的详细信息，请参阅[垃圾](../../../standard/garbage-collection/index.md)回收。  
   
 ## <a name="requirements"></a>要求  

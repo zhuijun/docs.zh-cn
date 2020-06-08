@@ -1,5 +1,5 @@
 ---
-title: ICorProfiler回拨9：:Dynamic方法未加载方法
+title: ICorProfilerCallback9：:D ynamicMethodUnloaded 方法
 ms.date: 04/10/2018
 api_name:
 - ICorProfilerCallback9.DynamicMethodUnloaded
@@ -8,17 +8,17 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-ms.openlocfilehash: 0eb38c83e9ab706c96bdef971f0bf17cc096822b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2391ad854b17ec117940a3d3568c40d6cf7f4725
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177028"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498968"
 ---
-# <a name="icorprofilercallback9dynamicmethodunloaded-method"></a>ICorProfiler回拨9：:Dynamic方法未加载方法
-[在 .NET 框架 4.7.2 和更高版本中支持]  
+# <a name="icorprofilercallback9dynamicmethodunloaded-method"></a>ICorProfilerCallback9：:D ynamicMethodUnloaded 方法
+[.NET Framework 4.7.2 和更高版本中支持]  
   
-每当收集动态方法并随后卸载时，通知探查器。  
+每当对动态方法进行垃圾回收并随后卸载时，通知探查器。  
   
 ## <a name="syntax"></a>语法  
   
@@ -28,22 +28,22 @@ HRESULT DynamicMethodUnloaded(
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
 [in] `functionId`  
-已垃圾回收和卸载的内存中函数的标识符。
+已被垃圾回收和卸载的内存中函数的标识符。
 
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [ICorProfiler回调8.动态方法JIT编译启动方法](icorprofilercallback8-dynamicmethodjitcompilationstarted-method.md)
-- [ICorProfiler回调8.动态方法JIT编译完成方法](icorprofilercallback8-dynamicmethodjitcompilationfinished-method.md)
+- [ICorProfilerCallback8. DynamicMethodJITCompilationStarted 方法](icorprofilercallback8-dynamicmethodjitcompilationstarted-method.md)
+- [ICorProfilerCallback8. DynamicMethodJITCompilationFinished 方法](icorprofilercallback8-dynamicmethodjitcompilationfinished-method.md)
 - [ICorProfilerCallback9 接口](icorprofilercallback9-interface.md)
 - [COR_PRF_HIGH_MONITOR_DYNAMIC_FUNCTION_UNLOADS](cor-prf-high-monitor-enumeration.md)

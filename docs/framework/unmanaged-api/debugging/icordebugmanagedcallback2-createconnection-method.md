@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 49e647be-9d63-4250-9d11-704e2a400d1b
 topic_type:
 - apiref
-ms.openlocfilehash: 51d34e68851bc6a60d25f643f63d112396abdc4e
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 8e31f0a649fd1ca80d6557a0a7176549c67bf203
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83209066"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501919"
 ---
 # <a name="icordebugmanagedcallback2createconnection-method"></a>ICorDebugManagedCallback2::CreateConnection 方法
 通知调试器已创建新连接。  
@@ -45,12 +45,12 @@ HRESULT CreateConnection (
  `pConnName`  
  中指向新连接名称的指针。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `CreateConnection`在以下任一情况下，都将激发回调：  
   
 - 调试器附加到包含连接的进程时。 在这种情况下，运行时将 `CreateConnection` 为进程中的每个连接生成并调度一个事件和一个[ICorDebugManagedCallback2：： ChangeConnection](icordebugmanagedcallback2-changeconnection-method.md)事件。  
   
-- 当主机在[托管 API](../hosting/index.md)中调用[ICLRDebugManager：： BeginConnection](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-beginconnection-method.md)时。  
+- 当主机在[托管 API](../hosting/index.md)中调用[ICLRDebugManager：： BeginConnection](../hosting/iclrdebugmanager-beginconnection-method.md)时。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
@@ -61,7 +61,7 @@ HRESULT CreateConnection (
   
  **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [ICorDebugManagedCallback2 接口](icordebugmanagedcallback2-interface.md)
 - [ICorDebugManagedCallback 接口](icordebugmanagedcallback-interface.md)

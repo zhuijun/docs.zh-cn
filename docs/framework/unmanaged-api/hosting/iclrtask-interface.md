@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: b3a44df3-578a-4451-b55e-70c8e7695f5e
 topic_type:
 - apiref
-ms.openlocfilehash: 419baaf64397830ef86cfd9e5c3437e3f5b57795
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: b1327e13006ca4b3f9074c1348b1817c9a1b3728
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83763002"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503947"
 ---
 # <a name="iclrtask-interface"></a>ICLRTask 接口
 提供允许宿主向公共语言运行时（CLR）发出请求，或向 CLR 提供有关关联任务的通知的方法。  
@@ -41,7 +41,7 @@ ms.locfileid: "83763002"
 |[YieldTask 方法](iclrtask-yieldtask-method.md)|请求 CLR 使处理器时间可供其他任务使用。 CLR 不保证任务将处于可产生处理时间的状态。|  
   
 ## <a name="remarks"></a>注解  
- `ICLRTask`是 CLR 任务的表示形式。 在代码执行过程中的任意时刻，都可以将任务描述为正在运行或等待运行。 宿主调用 `ICLRTask::SwitchIn` 方法，以通知 CLR 当前实例所表示的任务 `ICLRTask` 现在处于可使用状态。 调用后 `ICLRTask::SwitchIn` ，宿主可以在任何操作系统线程上计划任务，但运行时需要线程关联的情况除外，这是由对[IHostTaskManager：： BeginThreadAffinity](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-beginthreadaffinity-method.md)和[IHostTaskManager：： EndThreadAffinity](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-endthreadaffinity-method.md)方法的调用指定的。 稍后，操作系统可能决定从线程中删除任务并将其置于非运行状态。 例如，每当任务阻止同步基元或等待 i/o 操作完成时，就会发生这种情况。 主机调用[SwitchOut](iclrtask-switchout-method.md)来通知 CLR 当前实例所表示的任务 `ICLRTask` 不再处于可使用状态。  
+ `ICLRTask`是 CLR 任务的表示形式。 在代码执行过程中的任意时刻，都可以将任务描述为正在运行或等待运行。 宿主调用 `ICLRTask::SwitchIn` 方法，以通知 CLR 当前实例所表示的任务 `ICLRTask` 现在处于可使用状态。 调用后 `ICLRTask::SwitchIn` ，宿主可以在任何操作系统线程上计划任务，但运行时需要线程关联的情况除外，这是由对[IHostTaskManager：： BeginThreadAffinity](ihosttaskmanager-beginthreadaffinity-method.md)和[IHostTaskManager：： EndThreadAffinity](ihosttaskmanager-endthreadaffinity-method.md)方法的调用指定的。 稍后，操作系统可能决定从线程中删除任务并将其置于非运行状态。 例如，每当任务阻止同步基元或等待 i/o 操作完成时，就会发生这种情况。 主机调用[SwitchOut](iclrtask-switchout-method.md)来通知 CLR 当前实例所表示的任务 `ICLRTask` 不再处于可使用状态。  
   
  任务通常在代码执行结束时终止。 此时，主机将调用 `ICLRTask::ExitTask` 以销毁关联的 `ICLRTask` 。 但是，还可以使用对的调用来回收任务，这样就可以 `ICLRTask::Reset` `ICLRTask` 再次使用实例。 此方法可防止重复创建和销毁实例的系统开销。  
   

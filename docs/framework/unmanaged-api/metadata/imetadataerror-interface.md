@@ -14,34 +14,34 @@ helpviewer_keywords:
 ms.assetid: 0020b62c-ea88-40c7-a9ee-16b064f81624
 topic_type:
 - apiref
-ms.openlocfilehash: 44ecb73375f8a408fb0a38c3a2e2913f92ec4ca4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 46370da4e61dc90f2386170745da4f95ac7de63b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441630"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492746"
 ---
 # <a name="imetadataerror-interface"></a>IMetaDataError 接口
 提供用于在元数据合并期间报告错误的回调机制。  
   
 > [!NOTE]
-> `IMetaDataError` 接口必须由客户端实现。  
+> `IMetaDataError`接口必须由客户端实现。  
   
 ## <a name="methods"></a>方法  
   
 |方法|说明|  
 |------------|-----------------|  
-|[OnError 方法](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-onerror-method.md)|提供在元数据合并期间发生的错误的通知。|  
+|[OnError 方法](imetadataerror-onerror-method.md)|提供在元数据合并期间发生的错误的通知。|  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 用作 Mscoree.dll 中的资源  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [元数据接口](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)
+- [元数据接口](metadata-interfaces.md)

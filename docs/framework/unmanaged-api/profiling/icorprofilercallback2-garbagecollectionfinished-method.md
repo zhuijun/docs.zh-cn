@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1a5758ea-2354-43c0-92a3-32c9909d64e1
 topic_type:
 - apiref
-ms.openlocfilehash: 30f2e675532848c2dbb1f055a0f1489cf3b2baa1
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 47f25dbb1f88dbf580b096246016cd46f2d0d89c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865787"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499816"
 ---
 # <a name="icorprofilercallback2garbagecollectionfinished-method"></a>ICorProfilerCallback2::GarbageCollectionFinished 方法
 通知探查器垃圾回收已完成，并为其发出了所有垃圾回收回调。  
@@ -32,16 +32,16 @@ HRESULT GarbageCollectionFinished();
 ```  
   
 ## <a name="remarks"></a>备注  
- 调用 `GarbageCollectionFinished` 方法时，探查器可以安全检查其最终位置中的对象。  
+ 调用方法时，探查器可以安全检查其最终位置中的对象 `GarbageCollectionFinished` 。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

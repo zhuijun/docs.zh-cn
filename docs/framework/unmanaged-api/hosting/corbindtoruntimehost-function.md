@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5c826ba3-8258-49bc-a417-78807915fcaf
 topic_type:
 - apiref
-ms.openlocfilehash: afb25ad9e1760f390aa8dfb3e1de39ea60f185c2
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 9d1c7f4f5b881f7f55539602c152b557a7950472
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616614"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504402"
 ---
 # <a name="corbindtoruntimehost-function"></a>CorBindToRuntimeHost 函数
 使宿主可以将指定版本的公共语言运行时（CLR）加载到进程中。  
@@ -69,7 +69,7 @@ HRESULT CorBindToRuntimeHost (
  中一组标志，这些标志控制并发垃圾回收、非特定于域的代码和参数的行为 `pwszVersion` 。 如果未设置任何标志，则默认值为单一域。 有关支持的值的列表，请参阅[STARTUP_FLAGS 枚举](startup-flags-enumeration.md)。  
   
  `rclsid`  
- 中`CLSID`用于实现[ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)或[ICLRRuntimeHost](iclrruntimehost-interface.md)接口的 coclass 的。 支持的值为 CLSID_CorRuntimeHost 或 CLSID_CLRRuntimeHost。  
+ 中`CLSID`用于实现[ICorRuntimeHost](icorruntimehost-interface.md)或[ICLRRuntimeHost](iclrruntimehost-interface.md)接口的 coclass 的。 支持的值为 CLSID_CorRuntimeHost 或 CLSID_CLRRuntimeHost。  
   
  `riid`  
  中`IID`你请求的接口的。 支持的值为 IID_ICorRuntimeHost 或 IID_ICLRRuntimeHost。  

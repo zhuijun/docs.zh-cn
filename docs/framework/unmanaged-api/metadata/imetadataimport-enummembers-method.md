@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3fb8e178-342b-4c89-9bcf-f7f834e6cb77
 topic_type:
 - apiref
-ms.openlocfilehash: 20c7a90f27defa18a5ef311d1f3a549b81fc5c40
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cc3bc5140da0634b5172f6253de3de37bff487f1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175481"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492025"
 ---
 # <a name="imetadataimportenummembers-method"></a>IMetaDataImport::EnumMembers 方法
 枚举表示指定类型的成员的 MemberDef 标记。  
@@ -37,44 +37,44 @@ HRESULT EnumMembers (
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
  `phEnum`  
- [进出]指向枚举器的指针。  
+ [in，out]指向枚举器的指针。  
   
  `cl`  
- [在]表示要枚举其成员的类型的类型的类型的类型。  
+ 中一个 TypeDef 标记，表示要枚举其成员的类型。  
   
  `rMembers`  
- [出]用于保存成员Def令牌的数组。  
+ 弄用于保存 MemberDef 标记的数组。  
   
  `cMax`  
  [in] `rMembers` 数组的最大大小。  
   
  `pcTokens`  
- [出]在 中`rMembers`返回的会员Def令牌的实际数量。  
+ 弄中返回的 MemberDef 令牌的实际数量 `rMembers` 。  
   
 ## <a name="return-value"></a>返回值  
   
 |HRESULT|说明|  
 |-------------|-----------------|  
 |`S_OK`|`EnumMembers`已成功返回。|  
-|`S_FALSE`|没有要枚举的会员Def令牌。 在这种情况下，`pcTokens`为零。|  
+|`S_FALSE`|没有要枚举的 MemberDef 令牌。 在这种情况下， `pcTokens` 为零。|  
   
-## <a name="remarks"></a>备注  
- 枚举类成员的集合时，`EnumMembers`仅返回直接在类上定义的成员（字段和方法，**但不包括**属性或事件）。 它不返回类继承的任何成员，即使类为这些继承成员提供了实现也是如此。 要枚举继承的成员，调用方必须显式遍历继承链。 请注意，继承链的规则可能因发出原始元数据的语言或编译器而异。
+## <a name="remarks"></a>注解  
+ 枚举类的成员集合时， `EnumMembers` 只返回直接在类上定义的成员（字段和方法，但**不**是属性或事件）。 即使该类为这些继承成员提供了实现，它也不会返回类继承的任何成员。 若要枚举继承成员，调用方必须显式遍历继承链。 请注意，根据发出原始元数据的语言或编译器，继承链的规则可能会有所不同。
 
- 属性和事件不由 枚举`EnumMembers`枚举。 要枚举这些，请使用[枚举属性](imetadataimport-enumproperties-method.md)或[枚举事件](imetadataimport-enumevents-method.md)。
+ 属性和事件不是由枚举的 `EnumMembers` 。 若要枚举这些枚举，请使用[EnumProperties](imetadataimport-enumproperties-method.md)或[EnumEvents](imetadataimport-enumevents-method.md)。
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
- **标题：** 科尔赫  
+ **标头：** Cor  
   
- **库：** 作为资源包含在 MsCorEE.dll 中  
+ **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

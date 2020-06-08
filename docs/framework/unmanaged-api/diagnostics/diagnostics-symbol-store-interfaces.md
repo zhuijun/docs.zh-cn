@@ -9,12 +9,12 @@ helpviewer_keywords:
 - debugging interfaces [.NET Framework]
 - interfaces [.NET Framework debugging]
 ms.assetid: f96987d5-e6a5-478b-ac5e-302e16545cce
-ms.openlocfilehash: 044ed5e08a85442c5a73c123cf51529d2fd3f1fc
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 34eee8c05e1c356d4c431245c6837bd2b3a89b32
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442171"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504467"
 ---
 # <a name="diagnostics-symbol-store-interfaces"></a>诊断符号存储区接口
 本主题介绍了一些非托管接口，这些接口允许编译器生成符号信息以供调试器使用。  
@@ -42,7 +42,7 @@ ms.locfileid: "83442171"
  此接口是[ISymUnmanagedAsyncMethodPropertiesWriter 接口](isymunmanagedasyncmethodpropertieswriter-interface.md)的读取补充。  
   
  [ISymUnmanagedAsyncMethodPropertiesWriter 接口](isymunmanagedasyncmethodpropertieswriter-interface.md)  
- 允许为每个方法符号定义可选的异步方法信息。 必须使用与已打开的方法（即，在对[OpenMethod 方法](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-openmethod-method.md)和[CloseMethod 方法](isymunmanagedwriter-closemethod-method.md)的调用之间）。  
+ 允许为每个方法符号定义可选的异步方法信息。 必须使用与已打开的方法（即，在对[OpenMethod 方法](isymunmanagedwriter-openmethod-method.md)和[CloseMethod 方法](isymunmanagedwriter-closemethod-method.md)的调用之间）。  
   
  [ISymUnmanagedBinder 接口](isymunmanagedbinder-interface.md)  
  表示非托管代码的符号联编程序。  

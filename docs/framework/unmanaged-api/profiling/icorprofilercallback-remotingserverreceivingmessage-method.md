@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5604d21f-e6b7-490e-b469-42122a7568e1
 topic_type:
 - apiref
-ms.openlocfilehash: 6e045a99de9ad30516fd12a7b490e26c860bde7e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 157e6bc6cb9603fa9558ad6d39f0b086849fc7b0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866008"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499891"
 ---
 # <a name="icorprofilercallbackremotingserverreceivingmessage-method"></a>ICorProfilerCallback::RemotingServerReceivingMessage 方法
 通知探查器进程已收到远程方法调用或激活请求。  
@@ -46,19 +46,19 @@ HRESULT RemotingClientSendingMessage(
  这样就可以轻松地配对远程调用和逻辑调用堆栈的创建。  
   
  `fIsAsync`  
- 中如果调用是异步的，则为 `true` 的值;否则，`false`。  
+ 中`true`如果调用是异步的，则该值为; 否则为 `false` 。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  如果消息请求是异步的，则该请求可由任意线程提供服务。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

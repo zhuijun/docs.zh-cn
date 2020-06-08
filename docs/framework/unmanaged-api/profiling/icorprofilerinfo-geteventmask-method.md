@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ec34cc13-45a3-4695-abc3-b3347d4e6fc2
 topic_type:
 - apiref
-ms.openlocfilehash: 63f19fe899abd75380249e171f248480949bc471
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 7faa4a5f7b1ca1fbf165c40eb3a3cb32a42a21a4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76863902"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498331"
 ---
 # <a name="icorprofilerinfogeteventmask-method"></a>ICorProfilerInfo::GetEventMask 方法
 获取探查器要从公共语言运行时 (CLR) 中接收其事件通知的当前事件类别。  
@@ -36,19 +36,19 @@ HRESULT GetEventMask(
  `pdwEvents`  
  [out] 一个指向指定事件类别的 4 字节值的指针。 每个位都可控制不同的功能、行为或事件类型。 [COR_PRF_MONITOR](cor-prf-monitor-enumeration.md)枚举中描述了这些位。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
   
 > [!NOTE]
-> 应调用[GetEventMask2](icorprofilerinfo5-geteventmask2-method.md)方法，而不是此方法。 尽管 `SetEventMask` 方法继续受支持，但[GetEventMask2](icorprofilerinfo5-geteventmask2-method.md)提供了其他功能。  
+> 应调用[GetEventMask2](icorprofilerinfo5-geteventmask2-method.md)方法，而不是此方法。 尽管此 `SetEventMask` 方法继续受支持，但[GetEventMask2](icorprofilerinfo5-geteventmask2-method.md)提供其他功能。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

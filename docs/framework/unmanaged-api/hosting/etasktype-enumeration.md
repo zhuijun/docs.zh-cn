@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: aa527b31-89d4-41f2-ad6f-63b76950b7df
 topic_type:
 - apiref
-ms.openlocfilehash: 435d23d4a56d6ea98e3d368f0a5aa37c73e31d96
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 0fa72568df77c4916a3c6676e1dcca7c0c616c4a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616156"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493313"
 ---
 # <a name="etasktype-enumeration"></a>ETaskType 枚举
-包含一些值，这些值指示由[ICLRTask](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)或[IHostTask](ihosttask-interface.md)接口表示的任务的类型。  
+包含一些值，这些值指示由[ICLRTask](iclrtask-interface.md)或[IHostTask](ihosttask-interface.md)接口表示的任务的类型。  
   
 ## <a name="syntax"></a>语法  
   
