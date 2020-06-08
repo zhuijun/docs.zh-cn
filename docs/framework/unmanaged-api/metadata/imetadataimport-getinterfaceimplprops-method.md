@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: be3f5985-b1e4-4036-8602-c16e8508d4af
 topic_type:
 - apiref
-ms.openlocfilehash: 4b8ddf7fec12d175f030c0ea0ed982c6fb334aee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1c9d9647084aa729817eeeb17ee3f5cd320c0d29
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175377"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491207"
 ---
 # <a name="imetadataimportgetinterfaceimplprops-method"></a>IMetaDataImport::GetInterfaceImplProps 方法
-获取实现指定方法的 的 元数据<xref:System.Type>令牌以及声明该方法的接口的指针。
+获取一个指针，该指针指向实现指定方法的的元数据标记 <xref:System.Type> 和声明该方法的接口。
   
 ## <a name="syntax"></a>语法  
   
@@ -35,29 +35,29 @@ HRESULT GetInterfaceImplProps (
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
  `iiImpl`  
- [在]表示要返回类和接口令牌的方法的元数据令牌。  
+ 中表示要为其返回类和接口标记的方法的元数据标记。  
   
  `pClass`  
- [出]表示实现方法的类的元数据令牌。  
+ 弄表示实现方法的类的元数据标记。  
   
  `ptkIface`  
- [出]表示定义已实现方法的接口的元数据令牌。  
+ 弄表示用于定义实现的方法的接口的元数据标记。  
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
- 通过调用`iImpl`[EnumInterfaceImpls](imetadataimport-enuminterfaceimpls-method.md)方法，可以获取 的值。
+ 可以 `iImpl` 通过调用[EnumInterfaceImpls](imetadataimport-enuminterfaceimpls-method.md)方法来获取的值。
 
- 例如，假设一个类的`mdTypeDef`令牌值为 0x02000007，并且它实现了三个接口，其类型具有令牌：
+ 例如，假设某个类的 `mdTypeDef` 标记值为0x02000007，并且它实现了三个类型具有标记的接口：
 
-- 0x0200003 （类型定义）
-- 0x0100000A （类型参考）
-- 0x0200001C （类型定义）
+- 0x02000003 （TypeDef）
+- 0x0100000A （TypeRef）
+- 0x0200001C （TypeDef）
 
-从概念上讲，此信息存储在接口实现表中，如：
+从概念上讲，此信息存储到接口实现表中，如下所示：
 
-| 行号 | 类令牌 | 接口令牌 |
+| 行号 | 类标记 | 接口令牌 |
 |------------|-------------|-----------------|
 | 4          |             |                 |
 | 5          | 02000007    | 02000003        |
@@ -65,23 +65,23 @@ HRESULT GetInterfaceImplProps (
 | 7          |             |                 |
 | 8          | 02000007    | 0200001C        |
 
-回想，令牌是 4 字节的值：
+请记住，该令牌是一个4字节的值：
 
-- 较低的 3 个字节保留行号或 RID。
-- 上字节保存的令牌类型 = 0x09。 `mdtInterfaceImpl`
+- 下3个字节保存行号或 RID。
+- 上部字节保留标记类型– 0x09 `mdtInterfaceImpl` 。
 
-`GetInterfaceImplProps`返回您在`iImpl`参数中提供的令牌行中持有的信息。
+`GetInterfaceImplProps`返回在参数中提供其标记的行中保存的信息 `iImpl` 。
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
- **标题：** 科尔赫  
+ **标头：** Cor  
   
- **库：** 作为资源包含在 MsCorEE.dll 中  
+ **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

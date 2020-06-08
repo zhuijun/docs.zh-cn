@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 22fc0a3f-dce4-4766-9a3c-9fab15f4b4ca
 topic_type:
 - apiref
-ms.openlocfilehash: 2e22b8a2d0213b3bd766d80218d6f396721a90e1
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 7b09bb9c3abcb23997bfd412c3ea939404e583c1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703764"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504168"
 ---
 # <a name="iclrmetahostenumerateloadedruntimes-method"></a>ICLRMetaHost::EnumerateLoadedRuntimes 方法
-返回一个枚举，该枚举包含给定进程中加载的每个版本的公共语言运行时（CLR）的有效[ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)接口指针。 此方法取代了[GetVersionFromProcess](getversionfromprocess-function.md)函数。  
+返回一个枚举，该枚举包含给定进程中加载的每个版本的公共语言运行时（CLR）的有效[ICLRRuntimeInfo](iclrruntimeinfo-interface.md)接口指针。 此方法取代了[GetVersionFromProcess](getversionfromprocess-function.md)函数。  
   
 ## <a name="syntax"></a>语法  
   
@@ -49,7 +49,7 @@ HRESULT EnumerateLoadedRuntimes (
 |S_OK|该方法已成功完成。|  
 |E_POINTER|`ppEnumerator` 为 null。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  此方法列出所有加载的运行时，即使它们是用弃用的函数（如[CorBindToRuntime](corbindtoruntime-function.md)）加载的。  
   
 ## <a name="requirements"></a>要求  

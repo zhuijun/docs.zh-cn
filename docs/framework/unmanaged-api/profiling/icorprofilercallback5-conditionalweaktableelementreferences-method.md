@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 532c7a02-a9de-4cea-bb2b-7f470da594de
 topic_type:
 - apiref
-ms.openlocfilehash: ad721d28f6a7dc6ae0370ce10178990cb02fb9f9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 17fbc99b30921f795c1f7ff882ec73432aade8c6
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74430049"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499241"
 ---
 # <a name="icorprofilercallback5conditionalweaktableelementreferences-method"></a>ICorProfilerCallback5::ConditionalWeakTableElementReferences 方法
 
@@ -46,7 +46,7 @@ HRESULT ConditionalWeakTableElementReferences(
 [in] 一个包含对象 ID 的数组，其中每个对象 ID 都包含相关句柄对中主要元素的 `ObjectID`。
 
 `valueRefIds`\
-[in] 一个包含对象 ID 的数组，其中每个对象 ID 都包含相关句柄对中次要元素的 `ObjectID`。 （`keyRefIds[i]` 保持 `valueRefIds[i]` 活动状态。）
+[in] 一个包含对象 ID 的数组，其中每个对象 ID 都包含相关句柄对中次要元素的 `ObjectID`。 （ `keyRefIds[i]` 保持 `valueRefIds[i]` 活动状态。）
 
 `rootIds`\
 [in] 一个包含 `GCHandleID` 值的数组，这些值指向包含有关垃圾回收根的附加信息的整数。
@@ -78,17 +78,17 @@ HRESULT Callback5Impl::ConditionalWeakTableElementReferences(
 }
 ```
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-.NET Framework 4.5 或更高版本的探查器将实现[ICorProfilerCallback5](icorprofilercallback5-interface.md)接口并记录由 `ConditionalWeakTableElementReferences` 方法指定的依赖项。 `ICorProfilerCallback5` 提供了 `ConditionalWeakTable` 条目表示的活动对象之间的完整依赖关系集。 使用[ICorProfilerCallback：： ObjectReferences](icorprofilercallback-objectreferences-method.md)方法指定的这些依赖项和成员字段引用，托管探查器可以生成活动对象的完整对象图。
+.NET Framework 4.5 或更高版本的探查器将实现[ICorProfilerCallback5](icorprofilercallback5-interface.md)接口并记录由方法指定的依赖项 `ConditionalWeakTableElementReferences` 。 `ICorProfilerCallback5`提供条目所表示的活动对象之间的依赖关系的完整集合 `ConditionalWeakTable` 。 使用[ICorProfilerCallback：： ObjectReferences](icorprofilercallback-objectreferences-method.md)方法指定的这些依赖项和成员字段引用，托管探查器可以生成活动对象的完整对象图。
 
 ## <a name="requirements"></a>要求
 
-**平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。
+**平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。
 
 **头文件：** CorProf.idl、CorProf.h
 
-**.NET Framework 版本：** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]
+**.NET Framework 版本：**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]
 
 ## <a name="see-also"></a>另请参阅
 

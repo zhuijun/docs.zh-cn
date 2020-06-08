@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1f3dbdf5-db0c-4b07-bbb7-375de2a63673
 topic_type:
 - apiref
-ms.openlocfilehash: 6b7aa7c60b5e861787d7a115d90a00d67cc48db0
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: cff2dd9fdb05ea4dd160dfa57df6f047beb57f69
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866528"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500294"
 ---
 # <a name="icorprofilercallbackexceptioncatcherleave-method"></a>ICorProfilerCallback::ExceptionCatcherLeave 方法
-通知探查器控制正在从相应的 `catch` 块传递出去。  
+通知探查器控制正在传递到适当的 `catch` 块。  
   
 ## <a name="syntax"></a>语法  
   
@@ -36,14 +36,14 @@ HRESULT ExceptionCatcherLeave();
   
  探查器的此方法的实现不应调入托管代码或以任何方式导致托管内存分配。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

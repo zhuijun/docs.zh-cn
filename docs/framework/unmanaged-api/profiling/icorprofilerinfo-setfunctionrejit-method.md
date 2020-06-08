@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 36ba4f15-78e5-4e52-b3b8-6341f710c696
 topic_type:
 - apiref
-ms.openlocfilehash: 6eb7d7dc19ab5cbb7e78dc589202a12d9f1f599b
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 5b2309fabc1c00110c5108ca2f36e857b3c62dcd
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76869124"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502920"
 ---
 # <a name="icorprofilerinfosetfunctionrejit-method"></a>ICorProfilerInfo::SetFunctionReJIT 方法
 未实现。 请勿使用。  
@@ -32,14 +32,14 @@ HRESULT SetFunctionReJIT(
     [in] FunctionID functionId);  
 ```  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** 1.0  
+ **.NET Framework 版本：** 1。0  
   
 ## <a name="see-also"></a>另请参阅
 

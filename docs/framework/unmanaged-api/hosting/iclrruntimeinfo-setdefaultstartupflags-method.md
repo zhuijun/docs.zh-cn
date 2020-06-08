@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 98ae174f-bff0-48f1-9e05-6cb63b451824
 topic_type:
 - apiref
-ms.openlocfilehash: 7d201962976d198372226eb686696fcdccf3eb69
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: aa02d42511a863434fef236f90afae2c5417a78d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762157"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504012"
 ---
 # <a name="iclrruntimeinfosetdefaultstartupflags-method"></a>ICLRRuntimeInfo::SetDefaultStartupFlags 方法
-设置启动标志和将用于启动运行时的主机配置文件。 此方法取代了 `startupFlags` [CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)和[CorBindToRuntimeHost](corbindtoruntimehost-function.md)函数中的参数使用。  
+设置启动标志和将用于启动运行时的主机配置文件。 此方法取代了 `startupFlags` [CorBindToRuntimeEx](corbindtoruntimeex-function.md)和[CorBindToRuntimeHost](corbindtoruntimehost-function.md)函数中的参数使用。  
   
 ## <a name="syntax"></a>语法  
   
@@ -35,7 +35,7 @@ HRESULT SetDefaultStartupFlags(
   
 ## <a name="parameters"></a>参数  
  `dwStartupFlags`  
- 中要设置的主机启动标志。 使用与[CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)和[CorBindToRuntimeHost](corbindtoruntimehost-function.md)函数相同的标志。  
+ 中要设置的主机启动标志。 使用与[CorBindToRuntimeEx](corbindtoruntimeex-function.md)和[CorBindToRuntimeHost](corbindtoruntimehost-function.md)函数相同的标志。  
   
  `pwzHostConfigFile`  
  中要设置的主机配置文件的目录路径。  

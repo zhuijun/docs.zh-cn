@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7a59f405-73e8-4434-8bcc-a9dc45ea08e6
 topic_type:
 - apiref
-ms.openlocfilehash: 8a4fbb40ec2426d000628fbd6d5f0241d3152c18
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: f6155eb777b5071ff522af4f27d5fb2d73aa25ef
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441664"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501828"
 ---
 # <a name="isymunmanagedbinder2-interface"></a>ISymUnmanagedBinder2 接口
 表示非托管代码的符号联编程序，并扩展[ISymUnmanagedBinder](isymunmanagedbinder-interface.md)接口。  
@@ -31,7 +31,7 @@ ms.locfileid: "83441664"
   
 |方法|说明|  
 |------------|-----------------|  
-|[GetReaderForFile2 方法](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md)|给定元数据接口和文件名后，将返回正确的[ISymUnmanagedReader](isymunmanagedreader-interface.md)接口，该接口将读取与模块关联的调试符号。 与[ISymUnmanagedBinder：： GetReaderForFile](isymunmanagedbinder-getreaderforfile-method.md)方法相比，提供的搜索范围更广。|  
+|[GetReaderForFile2 方法](isymunmanagedbinder2-getreaderforfile2-method.md)|给定元数据接口和文件名后，将返回正确的[ISymUnmanagedReader](isymunmanagedreader-interface.md)接口，该接口将读取与模块关联的调试符号。 与[ISymUnmanagedBinder：： GetReaderForFile](isymunmanagedbinder-getreaderforfile-method.md)方法相比，提供的搜索范围更广。|  
   
 ## <a name="requirements"></a>要求  
  **标头：** CorSym，CorSym  

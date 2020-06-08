@@ -1,5 +1,6 @@
 ---
 title: <connectionManagement> 元素（网络设置）
+description: <connectionManagement>网络设置元素指定与 .NET Framework 中的网络主机的最大连接数。
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/connectionManagement
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <connectionManagement> element
 - connectionManagement element
 ms.assetid: bedccaab-12a2-4511-8f67-e961f249aec6
-ms.openlocfilehash: 9f1e382bbbaad2cb95e2c33bbbdfb4c505378c9e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4ceec06fb0e21bfae67038efe0ce758d3d5b708f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154889"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504610"
 ---
 # <a name="connectionmanagement-element-network-settings"></a>\<connectionManagement> 元素（网络设置）
 指定到网络主机的最大连接数。  
@@ -37,7 +38,7 @@ ms.locfileid: "79154889"
   
 ### <a name="child-elements"></a>子元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[add](add-element-for-connectionmanagement-network-settings.md)|将 IP 地址或 DNS 名称添加到连接管理列表。|  
 |[清除](clear-element-for-connectionmanagement-network-settings.md)|清除连接管理列表。|  
@@ -45,7 +46,7 @@ ms.locfileid: "79154889"
   
 ### <a name="parent-elements"></a>父元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|包含指定 .NET Framework 如何连接到网络的设置。|  
   

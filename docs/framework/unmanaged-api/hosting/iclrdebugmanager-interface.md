@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e835062c-c7d6-4945-8a44-2de7ebf3928e
 topic_type:
 - apiref
-ms.openlocfilehash: 717a3d12528a34eafbd918c29d8e13bb87097d82
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 653c8d1d3edd38e646b4e90c0e48dbe15bed102a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615769"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504259"
 ---
 # <a name="iclrdebugmanager-interface"></a>ICLRDebugManager 接口
 提供允许主机将一组任务与标识符和友好名称关联的方法。  
@@ -32,11 +32,11 @@ ms.locfileid: "83615769"
 |[EndConnection 方法](iclrdebugmanager-endconnection-method.md)|删除任务列表与标识符和友好名称之间的关联。|  
 |[GetDacl 方法](iclrdebugmanager-getdacl-method.md)|未实现此方法。|  
 |[IsDebuggerAttached 方法](iclrdebugmanager-isdebuggerattached-method.md)|获取一个值，它指示调试器是否已附加到进程。|  
-|[SetConnectionTasks 方法](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-setconnectiontasks-method.md)|将[ICLRTask](iclrtask-interface.md)实例列表与标识符和友好名称关联。|  
+|[SetConnectionTasks 方法](iclrdebugmanager-setconnectiontasks-method.md)|将[ICLRTask](iclrtask-interface.md)实例列表与标识符和友好名称关联。|  
 |[SetDacl 方法](iclrdebugmanager-setdacl-method.md)|未实现此方法。|  
 |[SetSymbolReadingPolicy 方法](iclrdebugmanager-setsymbolreadingpolicy-method.md)|设置用于读取程序数据库（PDB）文件的策略。 策略确定有关行号和文件的信息是否包含在调用堆栈中。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  在调试方案中，主机可能需要根据任务自己的编程逻辑对任务进行分组。 例如，分组允许开发人员仅查看开发人员的 Api 所需的任务，而不是查看在进程中运行的每个任务。 `ICLRDebugManager`允许宿主实现这种分组。  
   
 > [!IMPORTANT]

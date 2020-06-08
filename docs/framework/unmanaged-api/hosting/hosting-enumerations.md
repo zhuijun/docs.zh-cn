@@ -6,12 +6,12 @@ helpviewer_keywords:
 - enumerations [.NET Framework hosting]
 - hosting enumerations [.NET Framework]
 ms.assetid: e09131eb-1f7d-4f52-ae42-7393e9b62ef6
-ms.openlocfilehash: e6fb22f91d57a356a9a7c3749e44a9fb3c36b699
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8edace3191ee4477b19f199d5db6c891c993dcd5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616107"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504298"
 ---
 # <a name="hosting-enumerations"></a>承载枚举
 本部分介绍宿主 API 使用的非托管枚举。  
@@ -72,13 +72,13 @@ ms.locfileid: "83616107"
  包含一些值，这些值指示在请求特定内存分配但无法满足时，失败所造成的影响。  
   
  [EPolicyAction 枚举](epolicyaction-enumeration.md)  
- 描述主机可为[EClrOperation 枚举](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)描述的操作和[EClrFailure 枚举](eclrfailure-enumeration.md)描述的故障设置的策略操作。  
+ 描述主机可为[EClrOperation 枚举](eclroperation-enumeration.md)描述的操作和[EClrFailure 枚举](eclrfailure-enumeration.md)描述的故障设置的策略操作。  
   
  [ESymbolReadingPolicy 枚举](esymbolreadingpolicy-enumeration.md)  
  包含设置用于读取程序数据库（PDB）文件的策略的值。  
   
  [ETaskType 枚举](etasktype-enumeration.md)  
- 包含一些值，这些值指示由[ICLRTask 接口](../../../../docs/framework/unmanaged-api/hosting/iclrtask-interface.md)或[IHostTask 接口](ihosttask-interface.md)接口表示的任务的类型。  
+ 包含一些值，这些值指示由[ICLRTask 接口](iclrtask-interface.md)或[IHostTask 接口](ihosttask-interface.md)接口表示的任务的类型。  
   
  [HOST_TYPE 枚举](host-type-enumeration.md)  
  包含的值用于指定启动应用程序的主机的类型。  
@@ -108,7 +108,7 @@ ms.locfileid: "83616107"
  指示 CLR 请求的操作阻止时主机应执行的操作。  
   
 ## <a name="related-sections"></a>相关章节  
- [承载 Coclass](hosting-coclasses.md)  
+ [承载组件类](hosting-coclasses.md)  
   
  [承载接口](hosting-interfaces.md)  
   

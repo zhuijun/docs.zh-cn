@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 050649e5-ffc0-4458-a0a4-d9ee128a219e
 topic_type:
 - apiref
-ms.openlocfilehash: 661229e5fbd5d106662f0e823a1753bd76c33311
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 481fc2c40331e31f6a018d012fb2b2543d4fd9b5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866164"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503362"
 ---
 # <a name="icorprofilercallbackmoduleloadfinished-method"></a>ICorProfilerCallback::ModuleLoadFinished 方法
 通知探查器模块已完成加载。  
@@ -40,19 +40,19 @@ HRESULT ModuleLoadFinished(
  `hrStatus`  
  中一个 HRESULT，指示是否已成功加载该模块。  
   
-## <a name="remarks"></a>备注  
- 在调用 `ModuleLoadFinished` 方法之前，`moduleId` 的值对信息请求无效。  
+## <a name="remarks"></a>注解  
+ 在 `moduleId` 调用方法之前，的值对信息请求无效 `ModuleLoadFinished` 。  
   
- 在 `ModuleLoadFinished` 回调后，加载模块的某些部分可能会继续。 如果 `hrStatus` 失败，则指示失败。 不过，`hrStatus` 中的 HRESULT 成功只指示加载模块的第一部分已成功完成。  
+ 在回调后，加载模块的某些部分可能会继续 `ModuleLoadFinished` 。 中的 HRESULT 失败 `hrStatus` 表示失败。 但是，中的成功 HRESULT `hrStatus` 仅指示加载模块的第一部分已成功。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5245d4b5-b6c3-48df-9cb9-8caf059f43fb
 topic_type:
 - apiref
-ms.openlocfilehash: 7271fe8e28da0bb5fd878aae5d36ab703e64ebf0
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: c95b787101d4d0302ce4d2a5cd3bdc7e11f9cd63
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803021"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501425"
 ---
 # <a name="ihosttaskalert-method"></a>IHostTask::Alert 方法
 请求宿主唤醒当前[IHostTask](ihosttask-interface.md)实例表示的任务，以便可以中止该任务。  
@@ -42,11 +42,11 @@ HRESULT Alert ();
 |HOST_E_ABANDONED|已阻止的线程或纤程正在等待某个事件时，该事件被取消。|  
 |E_FAIL|发生未知的灾难性故障。 当方法返回 E_FAIL 时，CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `Alert`当 <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> 从用户代码调用时，或当 <xref:System.AppDomain> 与当前的关联关闭时，CLR 将调用方法 <xref:System.Threading.Thread> 。 由于调用是异步进行的，因此主机必须立即返回。 如果主机无法立即对任务发出警报，则必须在下一次进入状态时唤醒该任务。  
   
 > [!NOTE]
-> `Alert`仅影响运行时将 WAIT_ALERTABLE [WAIT_OPTION](../../../../docs/framework/unmanaged-api/hosting/wait-option-enumeration.md)值传递到[联接](ihosttask-join-method.md)等方法的任务。  
+> `Alert`仅影响运行时将 WAIT_ALERTABLE [WAIT_OPTION](wait-option-enumeration.md)值传递到[联接](ihosttask-join-method.md)等方法的任务。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  

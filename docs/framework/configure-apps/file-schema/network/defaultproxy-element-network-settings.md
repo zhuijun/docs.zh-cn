@@ -1,5 +1,6 @@
 ---
 title: <defaultProxy> 元素（网络设置）
+description: <defaultProxy>网络设置元素在 .NET Framework 中配置超文本传输协议（HTTP）代理服务器。
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#defaultProxy
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - defaultProxy element
 - <defaultProxy> element
 ms.assetid: 9d663c4b-07b4-4f6f-9b12-efbd3630354f
-ms.openlocfilehash: 0945629c1395917bc1cf825f2ba84d20afa99957
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 915fdc96dbd4d417f9c9e6aa3ff96de3026491ef
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "71698212"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504597"
 ---
 # <a name="defaultproxy-element-network-settings"></a>\<defaultProxy> 元素（网络设置）
 配置超文本传输协议 (HTTP) 代理服务器。  
@@ -39,14 +40,14 @@ ms.locfileid: "71698212"
   
 ### <a name="attributes"></a>特性  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |`enabled`|指定是否使用 Web 代理。 默认值为 `true`。|  
 |`useDefaultCredentials`|指定是否使用此主机的默认凭据来访问 Web 代理。 默认值为 `false`。|  
   
 ### <a name="child-elements"></a>子元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[bypasslist](bypasslist-element-network-settings.md)|提供一组描述不使用代理的地址的正则表达式。|  
 |[模块](module-element-network-settings.md)|向应用程序添加新的代理模块。|  
@@ -54,7 +55,7 @@ ms.locfileid: "71698212"
   
 ### <a name="parent-elements"></a>父元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|包含指定 .NET Framework 如何连接到网络的设置。|  
   

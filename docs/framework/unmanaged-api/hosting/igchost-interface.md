@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: 9ad70ffd-6963-4ab2-8c84-3d86c3fb8deb
 topic_type:
 - apiref
-ms.openlocfilehash: 9d6c9d22f4e50c21e2f41b7efd402907ff5843db
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 6b6f2dbaa49c29f6614e9c39a3f408d4d1453983
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805218"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501620"
 ---
 # <a name="igchost-interface"></a>IGCHost 接口
 提供一些方法，用于获取有关垃圾回收系统的信息并控制垃圾回收的某些方面。  
   
 > [!NOTE]
-> 从 .NET Framework 4.5 开始，你可以使用[IGCHost2：： SetGCStartupLimitsEx](../../../../docs/framework/unmanaged-api/hosting/igchost2-setgcstartuplimitsex-method.md)方法将垃圾回收段的大小和垃圾回收系统的第0代的最大大小设置为大于 `DWORD` [SetGCStartupLimits](igchost-setgcstartuplimits-method.md)方法施加的限制的值。  
+> 从 .NET Framework 4.5 开始，你可以使用[IGCHost2：： SetGCStartupLimitsEx](igchost2-setgcstartuplimitsex-method.md)方法将垃圾回收段的大小和垃圾回收系统的第0代的最大大小设置为大于 `DWORD` [SetGCStartupLimits](igchost-setgcstartuplimits-method.md)方法施加的限制的值。  
   
 > [!NOTE]
 > 此接口仅供专家使用。 如果使用不当，可能会影响应用程序的性能。  

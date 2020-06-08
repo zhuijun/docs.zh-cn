@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e0667ef7-1d31-4c89-a2d3-d426f023f8d2
 topic_type:
 - apiref
-ms.openlocfilehash: 4a258ce9121a287929ca5bc39c480f1ca2596e78
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3c7c3525f2f8753241c9a206e4cf5e552bf06efe
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437458"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503616"
 ---
 # <a name="imetadataimportgetmethodprops-method"></a>IMetaDataImport::GetMethodProps 方法
 获取与指定的 MethodDef 标记引用的方法关联的元数据。  
@@ -53,10 +53,10 @@ HRESULT GetMethodProps (
  弄指向包含方法名称的缓冲区的指针。  
   
  `cchMethod`  
- 中请求的 `szMethod`大小。  
+ 中请求的大小 `szMethod` 。  
   
  `pchMethod`  
- 弄一个指针，它指向 `szMethod`的宽字符大小，或者在截断的情况下，为方法名称中的实际宽字符数。  
+ 弄一个指针，它指向 `szMethod` 方法名称中实际的宽字符数（以宽字符为范围），或在截断的情况下为。  
   
  `pdwAttr`  
  弄一个指针，指向与方法关联的任何标志。  
@@ -65,7 +65,7 @@ HRESULT GetMethodProps (
  弄指向方法的二进制元数据签名的指针。  
   
  `pcbSigBlob`  
- 弄一个指针，指向 `ppvSigBlob`的大小（以字节为单位）。  
+ 弄一个指针，它指向的大小（以字节为单位） `ppvSigBlob` 。  
   
  `pulCodeRVA`  
  弄指向方法的相对虚拟地址的指针。  
@@ -74,15 +74,15 @@ HRESULT GetMethodProps (
  弄一个指针，指向方法的任何实现标志。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

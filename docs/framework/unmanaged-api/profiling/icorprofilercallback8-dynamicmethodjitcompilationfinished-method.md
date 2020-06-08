@@ -1,5 +1,5 @@
 ---
-title: ICorProfiler回调8：:DynamicMethodJIT编译完成方法
+title: ICorProfilerCallback8：:D ynamicMethodJITCompilationFinished 方法
 ms.date: 04/10/2018
 api_name:
 - ICorProfilerCallback8.DynamicMethodJITCompilationFinished
@@ -8,17 +8,17 @@ api_location:
 - corprof.idl
 api_type:
 - COM
-ms.openlocfilehash: c2e9489654a0fe5fa65ec638ed0f991a6c01415a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 554cc93de934061e87322c7557e05545e5e7bc62
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175104"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499072"
 ---
-# <a name="icorprofilercallback8dynamicmethodjitcompilationfinished-method"></a>ICorProfiler回调8：:DynamicMethodJIT编译完成方法
-[在 .NET 框架 4.7 和更高版本中支持]  
+# <a name="icorprofilercallback8dynamicmethodjitcompilationfinished-method"></a>ICorProfilerCallback8：:D ynamicMethodJITCompilationFinished 方法
+[.NET Framework 4.7 及更高版本中支持]  
   
-每当动态方法的 JIT 编译完成时，通知探查器。  
+当动态方法的 JIT 编译完成时，通知探查器。  
   
 ## <a name="syntax"></a>语法  
   
@@ -30,30 +30,30 @@ HRESULT DynamicMethodJITCompilationFinished(
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
 [in] `functionId`  
-启动 JIT 编译的内存中函数的标识符。
+开始 JIT 编译的内存中函数的标识符。
 
-[在]`hrStatus`指示 JIT 编译是否成功的值。
+[in] `hrStatus`一个值，该值指示 JIT 编译是否成功。
 
-[在]`fIsSafeToBlock`指示阻塞可能导致运行时等待调用线程从此回调
-`true`返回;`false`指示阻塞不会影响运行时的操作。  
+[in] `fIsSafeToBlock` 
+ `true`指示阻止可能会导致运行时等待调用线程从该回调返回;`false`指示阻止操作不会影响运行时的操作。  
 
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
 
-每当动态方法的 JIT 编译完成时，都会触发此回调。 这包括各种 IL 存根和 LCG 方法。 其目的是向探查器编写器提供足够的信息，以便向用户标识编译的方法。
+只要动态方法的 JIT 编译完成，就会触发此回调。 这包括各种 IL 存根和 LCG 方法。 其目标是为探查器编写者提供足够的信息，以便向用户标识编译的方法。
 
 > [!NOTE]
-> `functionId`值不能用于解析到其元数据令牌，因为动态方法没有元数据。
+> `functionId`由于动态方法没有元数据，因此不能使用值来解析为其元数据标记。
 
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

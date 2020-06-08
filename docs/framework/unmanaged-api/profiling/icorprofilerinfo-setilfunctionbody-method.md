@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b159c712-00f4-4fc7-a990-40bf9f642e8f
 topic_type:
 - apiref
-ms.openlocfilehash: 296c3973403a5b09332efa24961d7a474d814aab
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 462fc7222243f8cad4e1d03d1717eedace549836
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76863343"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502933"
 ---
 # <a name="icorprofilerinfosetilfunctionbody-method"></a>ICorProfilerInfo::SetILFunctionBody 方法
 替换指定模块中指定函数的主体。  
@@ -44,21 +44,21 @@ HRESULT SetILFunctionBody(
  `pbNewILMethodHeader`  
  中函数的新标头。  
   
-## <a name="remarks"></a>备注  
- `SetILFunctionBody` 方法将替换元数据中函数的相对虚拟地址，以使其指向新的函数体，并根据需要调整所有内部数据结构。  
+## <a name="remarks"></a>注解  
+ `SetILFunctionBody`方法替换元数据中函数的相对虚拟地址，以使其指向新的函数体，并根据需要调整任何内部数据结构。  
   
- 仅可对从未由实时（JIT）编译器编译的函数调用 `SetILFunctionBody` 方法即可。  
+ `SetILFunctionBody`仅可对从未由实时（JIT）编译器编译的函数调用方法。。  
   
  使用[ICorProfilerInfo：： GetILFunctionBodyAllocator](icorprofilerinfo-getilfunctionbodyallocator-method.md)方法为新方法分配空间，以确保缓冲区兼容。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

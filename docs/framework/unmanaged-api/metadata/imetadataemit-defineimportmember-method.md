@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c7dd94c6-335b-46ff-9dfe-505056db5673
 topic_type:
 - apiref
-ms.openlocfilehash: ec8a24251ac4f0701b1adab19829078270229ced
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 2facc63023a20dd6aaac64d7d036324c31658bc8
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004590"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501308"
 ---
 # <a name="imetadataemitdefineimportmember-method"></a>IMetaDataEmit::DefineImportMember 方法
 创建对在当前范围外定义的类型或模块的指定成员的引用，并定义该引用的标记。  
@@ -65,12 +65,12 @@ HRESULT DefineImportMember (
  `pmr`  
  弄`mdMemberRef`在成员引用的当前范围内定义的标记。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `DefineImportMember`方法查找由指定的成员，该成员 `mbMember` 在指定的另一个范围内定义， `pImport` 并检索其属性。 它使用此信息调用当前范围中的[IMetaDataEmit：:D efinememberref](imetadataemit-definememberref-method.md)方法来创建成员引用。  
   
  通常，在使用方法之前， `DefineImportMember` 必须在当前作用域内为目标成员的父类、接口或模块创建类型引用或模块引用。 然后，在参数中传递此引用的元数据标记 `tkParent` 。 如果目标成员的父成员稍后将由编译器或链接器解析，则不需要创建对它的引用。 总结：  
   
-- 如果目标成员是字段或方法，则使用[IMetaDataEmit：:D efinetyperefbyname](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetyperefbyname-method.md)或[IMetaDataEmit：:D efineimporttype](imetadataemit-defineimporttype-method.md)方法为成员的父类或父接口创建类型引用（在当前范围内）。  
+- 如果目标成员是字段或方法，则使用[IMetaDataEmit：:D efinetyperefbyname](imetadataemit-definetyperefbyname-method.md)或[IMetaDataEmit：:D efineimporttype](imetadataemit-defineimporttype-method.md)方法为成员的父类或父接口创建类型引用（在当前范围内）。  
   
 - 如果目标成员是全局变量或全局函数（即不是类或接口的成员），请使用[IMetaDataEmit：:D efinemoduleref](imetadataemit-definemoduleref-method.md)方法为成员的父模块创建一个模块引用（在当前范围内）。  
   

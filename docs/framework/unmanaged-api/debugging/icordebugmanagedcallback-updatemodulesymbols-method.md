@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0863f644-58e8-45a0-b0c3-a28e99b20938
 topic_type:
 - apiref
-ms.openlocfilehash: 9ee6f43c94b8ff2e765d2a0dde0697c4c895a94f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: c0381cf924e44e581c8b275c9750cacba045cf1b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212368"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501776"
 ---
 # <a name="icordebugmanagedcallbackupdatemodulesymbols-method"></a>ICorDebugManagedCallback::UpdateModuleSymbols 方法
 通知调试器公共语言运行时模块的符号已发生更改。  
@@ -45,8 +45,8 @@ HRESULT UpdateModuleSymbols (
  `pSymbolStream`  
  中指向 Win32 COM `IStream` 对象的指针，该对象包含修改后的符号。  
   
-## <a name="remarks"></a>备注  
- 此方法通过调用[ISymUnmanagedReader：： UpdateSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md)或[ISymUnmanagedReader：： ReplaceSymbolStore](../diagnostics/isymunmanagedreader-replacesymbolstore-method.md)，提供更新模块的符号的调试器视图的机会。  
+## <a name="remarks"></a>注解  
+ 此方法通过调用[ISymUnmanagedReader：： UpdateSymbolStore](../diagnostics/isymunmanagedreader-updatesymbolstore-method.md)或[ISymUnmanagedReader：： ReplaceSymbolStore](../diagnostics/isymunmanagedreader-replacesymbolstore-method.md)，提供更新模块的符号的调试器视图的机会。  
   
  对于同一个模块，此回调可能发生多次。  
   
@@ -61,6 +61,6 @@ HRESULT UpdateModuleSymbols (
   
  **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [ICorDebugManagedCallback 接口](icordebugmanagedcallback-interface.md)

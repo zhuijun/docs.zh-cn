@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: f069802a-198f-46dd-9f09-4f77adffc9ba
 topic_type:
 - apiref
-ms.openlocfilehash: cd1f3982fe1439135bf96579370a5a798c61dd2e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 339c5db1610a3cf087085ce19fc663436d9c4ec1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76863772"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498305"
 ---
 # <a name="icorprofilerinfogetfunctionfromip-method"></a>ICorProfilerInfo::GetFunctionFromIP 方法
-将托管代码指令指针映射到 `FunctionID`。  
+将托管代码指令指针映射到 `FunctionID` 。  
   
 ## <a name="syntax"></a>语法  
   
@@ -37,20 +37,20 @@ HRESULT GetFunctionFromIP(
 
 - `ip`
 
-  \[中的] 托管代码中的指令指针。
+  \[in] 托管代码中的指令指针。
 
 - `pFunctionId`
 
   \[out] 返回的函数 ID。
 
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

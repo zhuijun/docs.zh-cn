@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: bf4ffa50-4506-4dd4-aa13-a0457b47ca74
 topic_type:
 - apiref
-ms.openlocfilehash: caea1d3d526017c0118f95bb138ee4ac45d2c137
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 52870c7446987817ff00b90db26c3265bccdd096
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866991"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500723"
 ---
 # <a name="functionenter-function"></a>FunctionEnter 函数
 通知探查器控制正在传递到函数。  
   
 > [!NOTE]
-> `FunctionEnter` 函数在 .NET Framework 版本2.0 中已弃用，其使用将导致性能下降。 改为使用[FunctionEnter2](functionenter2-function.md)函数。  
+> 此 `FunctionEnter` 函数在 .NET Framework 版本2.0 中已弃用，其使用将导致性能下降。 改为使用[FunctionEnter2](functionenter2-function.md)函数。  
   
 ## <a name="syntax"></a>语法  
   
@@ -39,10 +39,10 @@ void __stdcall FunctionEnter (
 
 - `funcID`
 
-  \[中] 控制传递到的函数的标识符。
+  \[in] 控件传递到的函数的标识符。
 
-## <a name="remarks"></a>备注  
- `FunctionEnter` 函数是回调;必须实现此方法。 实现必须使用 `__declspec`（`naked`）存储类特性。  
+## <a name="remarks"></a>注解  
+ `FunctionEnter`函数是回调; 必须实现它。 实现必须使用 `__declspec` （ `naked` ）存储类特性。  
   
  在调用此函数之前，执行引擎不会保存任何注册。  
   
@@ -50,18 +50,18 @@ void __stdcall FunctionEnter (
   
 - 退出时，必须通过弹出由其调用方推送的所有参数来还原堆栈。  
   
- `FunctionEnter` 的实现不应被阻止，因为它将延迟垃圾回收。 实现不应尝试垃圾回收，因为堆栈可能不处于垃圾回收友好状态。 如果尝试垃圾回收，则运行时将被阻止，直到 `FunctionEnter` 返回。  
+ 的实现 `FunctionEnter` 不应被阻止，因为它将延迟垃圾回收。 实现不应尝试垃圾回收，因为堆栈可能不处于垃圾回收友好状态。 如果尝试垃圾回收，则运行时将被阻止，直到 `FunctionEnter` 返回。  
   
- 此外，`FunctionEnter` 函数不得调入托管代码或以任何方式导致托管的内存分配。  
+ 此外，该 `FunctionEnter` 函数不得调入托管代码或以任何方式导致托管的内存分配。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Corprof.idl .idl  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** 1.1、1.0  
+ **.NET Framework 版本：** 1.1、1。0  
   
 ## <a name="see-also"></a>另请参阅
 

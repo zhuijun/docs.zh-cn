@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 535a6839-c443-405b-a6f4-e2af90725d5b
 topic_type:
 - apiref
-ms.openlocfilehash: 29aecd530d18b931420467e9127bcbf96d3a4a5f
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 48ac09e1862ae58e79707235e891f72920de1251
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866759"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500554"
 ---
 # <a name="iclrprofilingattachprofiler-method"></a>ICLRProfiling::AttachProfiler 方法
 将指定的探查器附加到指定的进程中。  
@@ -41,32 +41,32 @@ HRESULT AttachProfiler(
 
 - `dwProfileeProcessID`
 
-  \[中] 应将探查器附加到的进程的进程 ID。 在 64 位计算机上，被分析进程的位数必须匹配调用 `AttachProfiler` 的触发进程的位数。 如果调用 `AttachProfiler` 的用户帐户具有管理特权，则目标进程可能是系统上的任何进程。 否则，相同的用户帐户必须拥有目标进程。
+  \[in] 应将探查器附加到的进程的进程 ID。 在 64 位计算机上，被分析进程的位数必须匹配调用 `AttachProfiler` 的触发进程的位数。 如果调用 `AttachProfiler` 的用户帐户具有管理特权，则目标进程可能是系统上的任何进程。 否则，相同的用户帐户必须拥有目标进程。
 
 - `dwMillisecondsMax`
 
-  中 \[] 完成 `AttachProfiler` 的持续时间（以毫秒为单位）。 触发器进程应传递一个特定探查器足以完成其初始化的已知超时。
+  \[in] 完成的持续时间（以毫秒为单位） `AttachProfiler` 。 触发器进程应传递一个特定探查器足以完成其初始化的已知超时。
   
 - `pClsidProfiler`
 
-  \[中的] 一个指针，指向要加载的探查器的 CLSID。 `AttachProfiler` 返回后，触发器进程可重用此内存。
+  \[in] 一个指针，指向要加载的探查器的 CLSID。 `AttachProfiler` 返回后，触发器进程可重用此内存。
 
 - `wszProfilerPath`
 
-  \[中] 要加载的探查器 DLL 文件的完整路径。 此字符串应包含不超过 260 个字符，包括 null 终止符。 如果 `wszProfilerPath` 为 null 或为空字符串，公共语言运行时 (CLR) 将通过在 `pClsidProfiler` 指向的 CLSID 的注册表中查找探查器的 DLL 文件的位置。
+  \[in] 要加载的探查器 DLL 文件的完整路径。 此字符串应包含不超过 260 个字符，包括 null 终止符。 如果 `wszProfilerPath` 为 null 或为空字符串，公共语言运行时 (CLR) 将通过在 `pClsidProfiler` 指向的 CLSID 的注册表中查找探查器的 DLL 文件的位置。
 
 - `pvClientData`
 
-  中 \[] 一个指针，指向要通过[ICorProfilerCallback3：： InitializeForAttach](icorprofilercallback3-initializeforattach-method.md)方法传递到探查器的数据。 `AttachProfiler` 返回后，触发器进程可重用此内存。 如果 `pvClientData` 为 null，`cbClientData` 必须为 0（零）。
+  \[in] 一个指针，指向由[ICorProfilerCallback3：： InitializeForAttach](icorprofilercallback3-initializeforattach-method.md)方法传递到探查器的数据。 `AttachProfiler` 返回后，触发器进程可重用此内存。 如果 `pvClientData` 为 null，`cbClientData` 必须为 0（零）。
 
 - `cbClientData`
 
-  \[] 中 `pvClientData` 指向的数据的大小（以字节为单位）。
+  \[in] 指向的数据的大小（以字节为单位） `pvClientData` 。
 
 ## <a name="return-value"></a>返回值  
  此方法将返回以下 HRESULT。  
   
-|HRESULT|描述|  
+|HRESULT|说明|  
 |-------------|-----------------|  
 |S_OK|指定的探查器已成功附加到目标进程中。|  
 |CORPROF_E_PROFILER_ALREADY_ACTIVE|已有活动的或附加到目标进程的探查器。|  
@@ -81,23 +81,23 @@ HRESULT AttachProfiler(
 |E_FAIL|出现其他未指定错误。|  
 |其他错误代码|如果探查器的[ICorProfilerCallback3：： InitializeForAttach](icorprofilercallback3-initializeforattach-method.md)方法返回一个指示失败的 hresult，则 `AttachProfiler` 返回相同的 hresult。 在这种情况下，E_NOTIMPL 将转换为 CORPROF_E_PROFILER_NOT_ATTACHABLE。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
   
 ## <a name="memory-management"></a>内存管理  
  与 COM 约定一致，`AttachProfiler` 的调用方（例如，由探查器开发人员创作的触发器代码）将负责分配和释放 `pvClientData` 参数指向的数据的内存。 当 CLR 执行 `AttachProfiler` 调用时，会创建 `pvClientData` 指向的内存的副本，并将其传输到目标进程中。 当目标进程内部的 CLR 接收到自己的 `pvClientData` 块副本时，会通过 `InitializeForAttach` 方法将块传递给探查器，然后从目标进程释放其 `pvClientData` 块的副本。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - [ICorProfilerCallback 接口](icorprofilercallback-interface.md)
 - [ICorProfilerInfo3 接口](icorprofilerinfo3-interface.md)
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [分析](index.md)

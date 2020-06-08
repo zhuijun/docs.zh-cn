@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9f1c7ccd-7fb2-41d8-aa00-24b823376527
 topic_type:
 - apiref
-ms.openlocfilehash: 0cb0dee7db7faa4c1324d705218934489ec6a4b6
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 28aea8534eed3bcd1f645844e28849be89e130d0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005851"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501321"
 ---
 # <a name="imetadatadispenserexsetoption-method"></a>IMetaDataDispenserEx::SetOption 方法
 为当前元数据范围将指定的选项设置为给定的值。 选项控制如何处理对当前元数据范围的调用。  
@@ -41,16 +41,16 @@ HRESULT SetOption (
  `pValue`  
  中用于设置选项的值。 此值的类型必须是指定选项的类型的变体。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  下表列出了参数可以指向的可用 Guid， `optionId` 以及相应参数的有效值 `pValue` 。  
   
 |GUID|描述|`pValue`参数|  
 |----------|-----------------|------------------------|  
-|MetaDataCheckDuplicatesFor|控制检查哪些项是否有重复项。 每次调用创建新项的[IMetaDataEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)方法时，都可以要求方法检查当前范围中是否已存在该项。 例如，你可以检查项是否存在 `mdMethodDef` ; 在这种情况下，当你调用[IMetaDataEmit：:D efinemethod](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definemethod-method.md)时，它将检查当前范围中是否尚不存在该方法。 此检查使用唯一标识给定方法的键：父类型、名称和签名。|必须是 UI4 类型的变量，并且必须包含[CorCheckDuplicatesFor](corcheckduplicatesfor-enumeration.md)枚举值的组合。|  
+|MetaDataCheckDuplicatesFor|控制检查哪些项是否有重复项。 每次调用创建新项的[IMetaDataEmit](imetadataemit-interface.md)方法时，都可以要求方法检查当前范围中是否已存在该项。 例如，你可以检查项是否存在 `mdMethodDef` ; 在这种情况下，当你调用[IMetaDataEmit：:D efinemethod](imetadataemit-definemethod-method.md)时，它将检查当前范围中是否尚不存在该方法。 此检查使用唯一标识给定方法的键：父类型、名称和签名。|必须是 UI4 类型的变量，并且必须包含[CorCheckDuplicatesFor](corcheckduplicatesfor-enumeration.md)枚举值的组合。|  
 |MetaDataRefToDefCheck|控制哪些引用项将被转换为定义。 默认情况下，如果在当前范围内实际定义了引用项，则元数据引擎将通过将引用项转换为其定义来优化代码。|必须是 UI4 类型的变量，并且必须包含[CorRefToDefCheck](correftodefcheck-enumeration.md)枚举值的组合。|  
-|MetaDataNotificationForTokenMovement|控制在元数据合并期间发生的标记重新映射生成回调。 使用[IMetaDataEmit：： SetHandler](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md)方法建立[IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md)接口。|必须是 UI4 类型的变量，并且必须包含[CorNotificationForTokenMovement](cornotificationfortokenmovement-enumeration.md)枚举值的组合。|  
+|MetaDataNotificationForTokenMovement|控制在元数据合并期间发生的标记重新映射生成回调。 使用[IMetaDataEmit：： SetHandler](imetadataemit-sethandler-method.md)方法建立[IMapToken](imaptoken-interface.md)接口。|必须是 UI4 类型的变量，并且必须包含[CorNotificationForTokenMovement](cornotificationfortokenmovement-enumeration.md)枚举值的组合。|  
 |MetaDataSetENC|控制 "编辑并继续" （ENC）的行为。 一次只能设置一种行为模式。|必须是 UI4 类型的变体，并且必须包含[CorSetENC](corsetenc-enumeration.md)枚举的值。 该值不是位掩码。|  
-|MetaDataErrorIfEmitOutOfOrder|控制哪些发出的有序错误生成回调。 发出元数据的顺序不是致命的;但是，如果您以元数据引擎所采用的顺序发出元数据，则元数据将更紧凑，因而可以更有效地搜索。 使用 `IMetaDataEmit::SetHandler` 方法建立[IMetaDataError](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-interface.md)接口。|必须是 UI4 类型的变量，并且必须包含[CorErrorIfEmitOutOfOrder](corerrorifemitoutoforder-enumeration.md)枚举值的组合。|  
+|MetaDataErrorIfEmitOutOfOrder|控制哪些发出的有序错误生成回调。 发出元数据的顺序不是致命的;但是，如果您以元数据引擎所采用的顺序发出元数据，则元数据将更紧凑，因而可以更有效地搜索。 使用 `IMetaDataEmit::SetHandler` 方法建立[IMetaDataError](imetadataerror-interface.md)接口。|必须是 UI4 类型的变量，并且必须包含[CorErrorIfEmitOutOfOrder](corerrorifemitoutoforder-enumeration.md)枚举值的组合。|  
 |MetaDataImportOption|控制在 ENC 中删除的哪些类型的项由枚举器检索。|必须是 UI4 类型的变体，并且必须包含[CorImportOptions 枚举](corimportoptions-enumeration.md)枚举的值的组合。|  
 |MetaDataThreadSafetyOptions|控制元数据引擎是否获取读取器/写入器锁，从而确保线程安全。 默认情况下，引擎假定调用方对访问是单线程的，因此不会获取任何锁。 使用元数据 API 时，客户端负责维护适当的线程同步。|必须是 UI4 类型的变体，并且必须包含[CorThreadSafetyOptions](corthreadsafetyoptions-enumeration.md)枚举的值。 该值不是位掩码。|  
 |MetaDataGenerateTCEAdapters|控制类型库导入程序是否应为 COM 连接点容器生成紧密耦合的事件（TCE）适配器。|必须是 BOOL 类型的变体。 如果 `pValue` 设置为 `true` ，则类型库导入程序将生成 TCE 适配器。|  

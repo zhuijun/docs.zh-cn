@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f759f87a-18ae-4c1a-8300-29b803432d0a
 topic_type:
 - apiref
-ms.openlocfilehash: a6aff37a480460bfed7064d59b4c5276daf3207c
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 1cf4d82200709971201da60d06d0cb929641a104
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212495"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501880"
 ---
 # <a name="icordebugmodulegettoken-method"></a>ICorDebugModule::GetToken 方法
 获取此模块的表项的标记。  
@@ -37,8 +37,8 @@ HRESULT GetToken(
  `pToken`  
  弄指向 `mdModule` 引用模块元数据的标记的指针。  
   
-## <a name="remarks"></a>备注  
- 该令牌可以传递到[IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)、 [IMetaDataImport2](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)和[IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md)元数据导入接口。  
+## <a name="remarks"></a>注解  
+ 该令牌可以传递到[IMetaDataImport](../metadata/imetadataimport-interface.md)、 [IMetaDataImport2](../metadata/imetadataimport2-interface.md)和[IMetaDataAssemblyImport](../metadata/imetadataassemblyimport-interface.md)元数据导入接口。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
@@ -49,6 +49,6 @@ HRESULT GetToken(
   
  **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [元数据](../metadata/index.md)

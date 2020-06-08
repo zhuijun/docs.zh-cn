@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: fdc5a3a7-71ff-4025-99a1-59e4ee0bfe1b
 topic_type:
 - apiref
-ms.openlocfilehash: 3275a69683a312340f35841815685066def10b23
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 45e27ac3c2d4912d2ed3e5d43ea3020b9db5dbdc
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762521"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504025"
 ---
 # <a name="iclrruntimeinfoisloaded-method"></a>ICLRRuntimeInfo::IsLoaded 方法
 指示是否将与[ICLRRuntimeInfo](iclrruntimeinfo-interface.md)接口关联的公共语言运行时（CLR）加载到进程中。 可以在不启动的情况下加载运行时。  
@@ -57,7 +57,7 @@ HRESULT IsLoaded(
   
 - 弃用 `CorBindTo*` 的函数（请参阅 .NET Framework 2.0 托管 API 中[弃用的 CLR 承载函数](deprecated-clr-hosting-functions.md)）。  
   
- 宿主可以调用某个弃用的函数（ `CorBindTo*` 如[CorBindToRuntime](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntime-function.md)函数）来实例化特定版本的 CLR。 然后，宿主可以调用[ICLRMetaHost：： GetRuntime](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-getruntime-method.md)方法，并指定相同的版本号以获取[ICLRRuntimeInfo](iclrruntimeinfo-interface.md)接口。  
+ 宿主可以调用某个弃用的函数（ `CorBindTo*` 如[CorBindToRuntime](corbindtoruntime-function.md)函数）来实例化特定版本的 CLR。 然后，宿主可以调用[ICLRMetaHost：： GetRuntime](iclrmetahost-getruntime-method.md)方法，并指定相同的版本号以获取[ICLRRuntimeInfo](iclrruntimeinfo-interface.md)接口。  
   
  如果宿主在 `IsLoaded` 返回的[ICLRRuntimeInfo](iclrruntimeinfo-interface.md)接口上调用方法，则 `pbLoaded` 返回 `true` ; 否则返回 `false` 。  
   

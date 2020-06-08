@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8c4aa124-5e00-46d9-b1e8-57ba6574bb0d
 topic_type:
 - apiref
-ms.openlocfilehash: db089a55128fa675ceedf157b046fe205d8c6b51
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: d6b34403a45cc40863d79b59396041e496989045
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804331"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503921"
 ---
 # <a name="ihostpolicymanager-interface"></a>IHostPolicyManager 接口
 提供一些方法，这些方法可通知宿主公共语言运行时（CLR）在中止、超时或失败时所执行的操作。  
@@ -28,9 +28,9 @@ ms.locfileid: "83804331"
   
 |方法|说明|  
 |------------|-----------------|  
-|[OnDefaultAction 方法](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-ondefaultaction-method.md)|向宿主通知 CLR 将使用对[ICLRPolicyManager：： SetDefaultAction](iclrpolicymanager-setdefaultaction-method.md)的调用指定的默认操作来响应线程中止或 <xref:System.AppDomain> 卸载。|  
-|[OnFailure 方法](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-onfailure-method.md)|向宿主通知 CLR 即将获取调用[ICLRPolicyManager：： SetActionOnFailure](iclrpolicymanager-setactiononfailure-method.md)所指定的操作，以响应资源分配或回收失败。|  
-|[OnTimeout 方法](../../../../docs/framework/unmanaged-api/hosting/ihostpolicymanager-ontimeout-method.md)|向宿主通知 CLR 即将使用对[ICLRPolicyManager：： SetActionOnTimeout](iclrpolicymanager-setactionontimeout-method.md)的调用指定的操作来响应超时。|  
+|[OnDefaultAction 方法](ihostpolicymanager-ondefaultaction-method.md)|向宿主通知 CLR 将使用对[ICLRPolicyManager：： SetDefaultAction](iclrpolicymanager-setdefaultaction-method.md)的调用指定的默认操作来响应线程中止或 <xref:System.AppDomain> 卸载。|  
+|[OnFailure 方法](ihostpolicymanager-onfailure-method.md)|向宿主通知 CLR 即将获取调用[ICLRPolicyManager：： SetActionOnFailure](iclrpolicymanager-setactiononfailure-method.md)所指定的操作，以响应资源分配或回收失败。|  
+|[OnTimeout 方法](ihostpolicymanager-ontimeout-method.md)|向宿主通知 CLR 即将使用对[ICLRPolicyManager：： SetActionOnTimeout](iclrpolicymanager-setactionontimeout-method.md)的调用指定的操作来响应超时。|  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  

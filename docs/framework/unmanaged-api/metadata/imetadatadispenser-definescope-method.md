@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: af28db02-29af-45ac-aec6-8d6c6123c2ff
 topic_type:
 - apiref
-ms.openlocfilehash: 021ef8de602d6dd928f49e69e36f8d4a61425745
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 12a32b5d2f0647ea2d9b696d08d6644e30be0c65
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84008360"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501347"
 ---
 # <a name="imetadatadispenserdefinescope-method"></a>IMetaDataDispenser::DefineScope 方法
 在内存中创建一个新区域，您可以在其中创建新的元数据。  
@@ -51,10 +51,10 @@ HRESULT DefineScope (
  `ppIUnk`  
  弄指向返回的接口的指针。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `DefineScope`创建一组内存中的元数据表，为元数据生成唯一的 GUID （模块版本标识符或 MVID），并在模块表中为发出的编译单元创建一个条目。  
   
- 根据需要，可以使用[IMetaDataEmit：： SetModuleProps](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmoduleprops-method.md)或[IMetaDataEmit：:D efinecustomattribute](imetadataemit-definecustomattribute-method.md)方法，将属性作为一个整体附加到元数据范围。  
+ 根据需要，可以使用[IMetaDataEmit：： SetModuleProps](imetadataemit-setmoduleprops-method.md)或[IMetaDataEmit：:D efinecustomattribute](imetadataemit-definecustomattribute-method.md)方法，将属性作为一个整体附加到元数据范围。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  

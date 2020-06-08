@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5a90d16f-7929-4987-8f83-a631becf564d
 topic_type:
 - apiref
-ms.openlocfilehash: 25c5568e4cae0ead82b59b09dbbb9a11e4bc2df2
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 751f2ac44e543fed76c7031791bb57d75ed0fd48
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76863424"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498097"
 ---
 # <a name="icorprofilerinfogetmoduleinfo-method"></a>ICorProfilerInfo::GetModuleInfo 方法
 给定模块 ID 后，将返回模块的文件名和模块的父程序集的 ID。  
@@ -57,27 +57,27 @@ HRESULT GetModuleInfo(
  `pAssemblyId`  
  [out] 指向模块的父程序集的 ID 的指针。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  对于动态模块，`szName` 参数是空字符串，并且基址是 0（零）。  
   
- 尽管只要存在模块的 ID，就可以调用 `GetModuleInfo` 方法，但在探查器接收到[ICorProfilerCallback：： ModuleAttachedToAssembly](icorprofilercallback-moduleattachedtoassembly-method.md)回调之前，父程序集的 ID 将不可用。  
+ 尽管在 `GetModuleInfo` 模块的 ID 存在后可以调用方法，但在探查器接收到[ICorProfilerCallback：： ModuleAttachedToAssembly](icorprofilercallback-moduleattachedtoassembly-method.md)回调之前，父程序集的 ID 将不可用。  
   
  返回 `GetModuleInfo` 后，必须验证 `szName` 缓冲区的大小是否足够包含模块的完整文件名。 为此，请比较 `pcchName` 指向的值和 `cchName` 参数的值。 如果 `pcchName` 指向的值大于 `cchName`，请分配更大的 `szName` 缓冲区，并用新的、更大的大小更新 `cchName`，然后再次调用 `GetModuleInfo`。  
   
  或者，可以先用长度为零的 `szName` 缓冲区调用 `GetModuleInfo` 以获取正确的缓冲区大小。 然后，可将缓冲区大小设置为 `pcchName` 中返回的值，并再次调用 `GetModuleInfo`。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - [ICorProfilerInfo 接口](icorprofilerinfo-interface.md)
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [分析](index.md)
 - [GetModuleInfo2 方法](icorprofilerinfo3-getmoduleinfo2-method.md)

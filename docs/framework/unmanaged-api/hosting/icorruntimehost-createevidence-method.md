@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: e235ea80-b84c-4442-a4c3-fc96c25a8eb9
 topic_type:
 - apiref
-ms.openlocfilehash: 4a91f57126c0cf2074bd086ddb2fb4cd9e0716d4
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 264f16fc9e767584229376e67f5aee6db1069025
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762313"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501607"
 ---
 # <a name="icorruntimehostcreateevidence-method"></a>ICorRuntimeHost::CreateEvidence 方法
-获取类型的接口指针 <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType> ，该指针允许主机创建要传递给[CreateDomain](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md)或[CreateDomainEx](icorruntimehost-createdomainex-method.md)方法的安全证据。  
+获取类型的接口指针 <xref:System.Security.Principal.IIdentity?displayProperty=nameWithType> ，该指针允许主机创建要传递给[CreateDomain](icorruntimehost-createdomain-method.md)或[CreateDomainEx](icorruntimehost-createdomainex-method.md)方法的安全证据。  
   
 ## <a name="syntax"></a>语法  
   

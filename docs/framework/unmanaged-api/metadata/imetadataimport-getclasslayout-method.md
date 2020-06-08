@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8f35414d-f40b-4b99-8768-9adb675c622a
 topic_type:
 - apiref
-ms.openlocfilehash: e02d7dd4b287d027b633ae9bf2e98e036062bdd0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 36c0ffef2d984604be4ae19899e8f3f912cee123
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175403"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491467"
 ---
 # <a name="imetadataimportgetclasslayout-method"></a>IMetaDataImport::GetClassLayout 方法
 获取指定的 TypeDef 标记所引用类的布局信息。  
@@ -38,35 +38,35 @@ HRESULT GetClassLayout  (
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
  `td`  
- [在]要返回布局的类的 TypeDef 令牌。  
+ 中具有要返回的布局的类的 TypeDef 标记。  
   
  `pdwPackSize`  
- [出]值 1、2、4、8 或 16，表示类的包大小。  
+ 弄值1、2、4、8或16，表示类的 pack 大小。  
   
  `rFieldOffset`  
- [出][COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md)值的数组。  
+ 弄[COR_FIELD_OFFSET](cor-field-offset-structure.md)值的数组。  
   
  `cMax`  
  [in] `rFieldOffset` 数组的最大大小。  
   
  `pcFieldOffset`  
- [出]中`rFieldOffset`返回的元素数。  
+ 弄中返回的元素的数目 `rFieldOffset` 。  
   
  `pulClassSize`  
- [出]以 的类大小（以字节为单位）。 `td`  
+ 弄所表示的类的大小（以字节为单位） `td` 。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
- **标题：** 科尔赫  
+ **标头：** Cor  
   
- **库：** 作为资源包含在 MsCorEE.dll 中  
+ **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

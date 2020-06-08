@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b38bbc9a-872c-41a9-b8c3-ca011d25456a
 topic_type:
 - apiref
-ms.openlocfilehash: 81b6f009ea61294f398a21c4def927ef2609f32b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f63b761497b3e9a19a9b939b45acf60d5a7d37b0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83615733"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504233"
 ---
 # <a name="iclrdebugmanagersetconnectiontasks-method"></a>ICLRDebugManager::SetConnectionTasks 方法
 将[ICLRTask](iclrtask-interface.md)实例列表与标识符和友好名称关联。  
@@ -57,8 +57,8 @@ HRESULT SetConnectionTasks (
 |E_FAIL|发生未知的灾难性故障。 方法返回 E_FAIL 后，CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
 |E_INVALIDARG|尚未使用的此值调用[BeginConnection](iclrdebugmanager-beginconnection-method.md) ，或者 `id` `dwCount` 或 `id` 为零，或的一个元素 `ppCLRTask` 为空。|  
   
-## <a name="remarks"></a>备注  
- [ICLRDebugManager](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-interface.md)提供了三种方法： `BeginConnection` 、 `SetConnectionTasks` 和[EndConnection](iclrdebugmanager-endconnection-method.md)，用于将任务列表与标识符和友好名称关联起来。  
+## <a name="remarks"></a>注解  
+ [ICLRDebugManager](iclrdebugmanager-interface.md)提供了三种方法： `BeginConnection` 、 `SetConnectionTasks` 和[EndConnection](iclrdebugmanager-endconnection-method.md)，用于将任务列表与标识符和友好名称关联起来。  
   
 > [!IMPORTANT]
 > 对于每组任务，这三种方法都必须按特定的顺序进行调用。 `BeginConnection`首先调用以建立新连接。 `SetConnectionTasks`在旁边调用，提供要与该连接相关联的一组任务。 `EndConnection`最后调用，以删除任务列表与标识符和友好名称之间的关联。但是，可以嵌套不同连接的调用。  

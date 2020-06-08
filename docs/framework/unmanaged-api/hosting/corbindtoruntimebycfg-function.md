@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ded1e492-a782-4185-9c66-709e421c1782
 topic_type:
 - apiref
-ms.openlocfilehash: 9326484c6a9f96d245e3c61a0ac3e3465a8a6dcd
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8b7dcdcc6d9d0106af1bb83ee591cff76239b416
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616640"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504428"
 ---
 # <a name="corbindtoruntimebycfg-function"></a>CorBindToRuntimeByCfg 函数
 使用从 XML 文件中读取的版本信息将公共语言运行时（CLR）加载到进程中。  
@@ -50,7 +50,7 @@ HRESULT CorBindToRuntimeByCfg (
  中[STARTUP_FLAGS](startup-flags-enumeration.md)枚举的一个值，该值指定 CLR 的启动行为。  
   
  `rclsid`  
- 中`CLSID`用于实现[ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)或[ICLRRuntimeHost](iclrruntimehost-interface.md)接口的 coclass 的。 支持的值为 CLSID_CorRuntimeHost 或 CLSID_CLRRuntimeHost。  
+ 中`CLSID`用于实现[ICorRuntimeHost](icorruntimehost-interface.md)或[ICLRRuntimeHost](iclrruntimehost-interface.md)接口的 coclass 的。 支持的值为 CLSID_CorRuntimeHost 或 CLSID_CLRRuntimeHost。  
   
  `riid`  
  中`IID` `ICorRuntimeHost` 或 `ICLRRuntimeHost` 接口的。 支持的值为 IID_ICorRuntimeHost 或 IID_ICLRRuntimeHost。  
@@ -58,7 +58,7 @@ HRESULT CorBindToRuntimeByCfg (
  `ppv`  
  弄指向返回的接口的地址的指针。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  XML 文件的格式将建模为标准应用程序配置文件。 有关 XML 文件的详细信息，请参阅[配置文件架构](../../configure-apps/file-schema/index.md)。  
   
 ## <a name="requirements"></a>要求  

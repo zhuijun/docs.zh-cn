@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8aea2e2c-23a3-4cda-9a06-e19f97383830
 topic_type:
 - apiref
-ms.openlocfilehash: 22c0a317777a12294ba7a90f7af1ceeca3ad0a47
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 0a283c837e23ab1aafd3545df1dfe8a267de0557
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009257"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501282"
 ---
 # <a name="imetadataemitgetsavesize-method"></a>IMetaDataEmit::GetSaveSize 方法
 获取当前范围内的程序集和它的元数据的预计二进制大小。  
@@ -47,10 +47,10 @@ HRESULT GetSaveSize (
  `pdwSaveSize`  
  弄一个指针，指向保存该文件所需的大小。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `GetSaveSize`计算在当前作用域中保存程序集及其所有元数据所需的空间（以字节为单位）。 （对[IMetaDataEmit：： SaveToStream](imetadataemit-savetostream-method.md)方法的调用将发出此数目的字节。）  
   
- 如果调用方实现[IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md)接口（通过[IMetaDataEmit：： SetHandler](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md)或[IMetaDataEmit：： Merge](imetadataemit-merge-method.md)），将对 `GetSaveSize` 元数据执行两次传递以优化和压缩该接口。 否则，不执行任何优化。  
+ 如果调用方实现[IMapToken](imaptoken-interface.md)接口（通过[IMetaDataEmit：： SetHandler](imetadataemit-sethandler-method.md)或[IMetaDataEmit：： Merge](imetadataemit-merge-method.md)），将对 `GetSaveSize` 元数据执行两次传递以优化和压缩该接口。 否则，不执行任何优化。  
   
  如果执行了优化，则第一个传递将只对元数据结构进行排序，以优化导入时间搜索的性能。 此步骤通常会导致四处移动记录，并产生副作用，由工具保留的标记将会失效。 但是，在第二次传递后，元数据不会将这些令牌更改通知给调用方。 在第二个阶段中，将执行各种优化，这些优化旨在减少元数据的总大小，例如， `mdTypeRef` `mdMemberRef` 在引用到当前元数据范围内声明的类型或成员时进行优化（早期绑定）和标记。 在此阶段中，会发生另一轮标记映射。 此次传递后，元数据引擎通过其接口通知调用方 `IMapToken` 所有已更改的令牌值。  
   

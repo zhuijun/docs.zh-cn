@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 37b95cce-9bfb-4ecf-a00b-33dcba782c67
 topic_type:
 - apiref
-ms.openlocfilehash: e07210203d8a8010890eeb511ff1c08821bfc4a7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: fa2b5052a1d569487f0c6c72699ff9ab571beefc
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616328"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504389"
 ---
 # <a name="eclrfailure-enumeration"></a>EClrFailure 枚举
 描述主机可对其设置策略操作的失败集。  
@@ -50,8 +50,8 @@ typedef enum {
 |`FAIL_AccessViolation`|尝试读取或写入受保护的内存。 在 .NET Framework 4 中不受支持。|  
 |`FAIL_CodeContract`|发生代码协定失败。 请参阅[代码协定](../../debug-trace-profile/code-contracts.md)。|  
   
-## <a name="remarks"></a>备注  
- 请参阅[ICLRPolicyManager：： SetActionOnFailure](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setactiononfailure-method.md)方法，以获取[EPolicyAction](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)值的列表，主机可以使用这些值来指定失败情况的策略操作。 有关代码的关键和非关键区域的详细信息，请参阅[EClrOperation](eclroperation-enumeration.md)。  
+## <a name="remarks"></a>注解  
+ 请参阅[ICLRPolicyManager：： SetActionOnFailure](iclrpolicymanager-setactiononfailure-method.md)方法，以获取[EPolicyAction](epolicyaction-enumeration.md)值的列表，主机可以使用这些值来指定失败情况的策略操作。 有关代码的关键和非关键区域的详细信息，请参阅[EClrOperation](eclroperation-enumeration.md)。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  

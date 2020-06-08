@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 72dd76ba-239e-45ac-9ded-318fb07d6c6d
 topic_type:
 - apiref
-ms.openlocfilehash: 8788d6e2220778a3f0926d5ed3dd59142487bcca
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 901c62e6f2519fc4f9251f348c77b11bbe0992be
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616185"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504340"
 ---
 # <a name="epolicyaction-enumeration"></a>EPolicyAction 枚举
-描述主机可为[EClrOperation](../../../../docs/framework/unmanaged-api/hosting/eclroperation-enumeration.md)描述的操作设置的策略操作以及[EClrFailure](eclrfailure-enumeration.md)描述的故障。  
+描述主机可为[EClrOperation](eclroperation-enumeration.md)描述的操作设置的策略操作以及[EClrFailure](eclrfailure-enumeration.md)描述的故障。  
   
 ## <a name="syntax"></a>语法  
   
@@ -56,8 +56,8 @@ typedef enum {
 |`eThrowException`|指定应引发适用于条件的异常，例如内存不足、缓冲区溢出，等等。|  
 |`eUnloadAppDomain`|指定 <xref:System.AppDomain> 应卸载。 CLR 尝试运行终结器。|  
   
-## <a name="remarks"></a>备注  
- 宿主通过调用[ICLRPolicyManager](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md)接口的方法来设置策略操作。 有关 "强制" 和 "正常中止" 的信息，请参阅[EClrOperation](eclroperation-enumeration.md)枚举。  
+## <a name="remarks"></a>注解  
+ 宿主通过调用[ICLRPolicyManager](iclrpolicymanager-interface.md)接口的方法来设置策略操作。 有关 "强制" 和 "正常中止" 的信息，请参阅[EClrOperation](eclroperation-enumeration.md)枚举。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  

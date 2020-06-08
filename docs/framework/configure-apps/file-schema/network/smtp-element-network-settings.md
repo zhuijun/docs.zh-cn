@@ -1,5 +1,6 @@
 ---
 title: <smtp> 元素（网络设置）
+description: "\" <smtp> 网络设置\" 元素在 .NET Framework 中配置发送电子邮件选项的传递格式、传递方法和发件人地址。"
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/mailSettings/smtp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <smtp> element
 - smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
-ms.openlocfilehash: 625c3cb82a8659c742b540724e5cf31be65a705e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b30b82922a69ea660f4c4abfd808e89fa9945183
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74089099"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504506"
 ---
 # <a name="smtp-element-network-settings"></a>\<smtp> 元素（网络设置）
 配置发送电子邮件的传递格式、传递方法和发件人地址。  
@@ -55,7 +56,7 @@ ms.locfileid: "74089099"
   
 ### <a name="parent-elements"></a>父元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[\<mailSettings>元素（网络设置）](mailsettings-element-network-settings.md)|配置邮件发送选项。|  
   

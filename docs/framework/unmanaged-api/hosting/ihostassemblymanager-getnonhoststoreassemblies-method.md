@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d2250b38-c76a-40ce-80c8-ba45149886e8
 topic_type:
 - apiref
-ms.openlocfilehash: 0dc2f625da7f4e37583f198c8d6dba86f6dcdb10
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 9a1440be7011130b16d7112ae15026eb74856190
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805056"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501583"
 ---
 # <a name="ihostassemblymanagergetnonhoststoreassemblies-method"></a>IHostAssemblyManager::GetNonHostStoreAssemblies 方法
 获取一个指向[ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md)的接口指针，该指针表示宿主需要公共语言运行时（CLR）加载的程序集的列表。  
@@ -49,14 +49,14 @@ HRESULT GetNonHostStoreAssemblies (
 |E_FAIL|发生未知的灾难性故障。 当方法返回 E_FAIL 时，CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
 |E_OUTOFMEMORY|没有足够的内存可用于创建请求的引用列表 `ICLRAssemblyReferenceList` 。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  CLR 使用以下一组准则来解析引用：  
   
 - 首先，它会咨询返回的程序集引用的列表 `GetNonHostStoreAssemblies` 。  
   
 - 如果该程序集出现在列表中，则 CLR 正常绑定到该程序集。  
   
-- 如果程序集未出现在列表中，并且宿主已提供[IHostAssemblyStore](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-interface.md)的实现，则 CLR 将调用[IHostAssemblyStore：:P rovideassembly](ihostassemblystore-provideassembly-method.md) ，以允许主机提供要绑定到的程序集。  
+- 如果程序集未出现在列表中，并且宿主已提供[IHostAssemblyStore](ihostassemblystore-interface.md)的实现，则 CLR 将调用[IHostAssemblyStore：:P rovideassembly](ihostassemblystore-provideassembly-method.md) ，以允许主机提供要绑定到的程序集。  
   
 - 否则，CLR 无法绑定到程序集。  
   

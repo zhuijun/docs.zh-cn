@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f165200e-3a91-47f7-88fc-13ff10c8babc
 topic_type:
 - apiref
-ms.openlocfilehash: 798815c1122129395e57ff1274c23292696504f0
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 3681106bca94f1fefb2f24a1aa4254eb2b1b0531
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865709"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499735"
 ---
 # <a name="icorprofilercallback2survivingreferences-method"></a>ICorProfilerCallback2::SurvivingReferences 方法
 将堆中对象的布局报告为非压缩垃圾回收的结果。  
@@ -50,7 +50,7 @@ HRESULT SurvivingReferences(
   
  `objectIDRangeStart` 数组中引用的每个块均指定了大小。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
   
 > [!IMPORTANT]
 > 此方法将 64 位平台上大于 4 GB 的对象的大小报告为 `MAX_ULONG`。 对于大于 4 GB 的对象，请改用[ICorProfilerCallback4：： SurvivingReferences2](icorprofilercallback4-survivingreferences2-method.md)方法。  
@@ -61,7 +61,7 @@ HRESULT SurvivingReferences(
   
  对于以下范围内 `i` 的任何值，此对象在垃圾回收后仍存在：  
   
- 0 <= `i` < `cSurvivingObjectIDRanges`  
+ 0 <=`i` < `cSurvivingObjectIDRanges`  
   
  非压缩垃圾回收将回收“死”对象占用的内存，但不会压缩释放的空间。 由此，内存返回到堆中，但“活”对象不会移动。  
   
@@ -69,14 +69,14 @@ HRESULT SurvivingReferences(
   
  由于内部缓冲有限、服务器垃圾回收期间的多个线程报告以及其他原因，在特定的垃圾回收过程中，可能收到多个 `SurvivingReferences` 回调。 如果在垃圾回收期间收到多个回调，则信息是累积的 — 任何 `SurvivingReferences` 回调中报告的任何引用都将在垃圾回收后仍然存在。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

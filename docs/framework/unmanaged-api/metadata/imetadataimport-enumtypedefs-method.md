@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4e508711-da92-4381-aaf8-6803075cdaa2
 topic_type:
 - apiref
-ms.openlocfilehash: 2d6e86a7f5a93b900e79907f8ee0762869d7f737
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cdfd4e10236d546af2555b125d44233172849a21
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177288"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503726"
 ---
 # <a name="imetadataimportenumtypedefs-method"></a>IMetaDataImport::EnumTypeDefs 方法
 枚举表示当前范围内的所有类型的 TypeDef 标记。  
@@ -36,39 +36,39 @@ HRESULT EnumTypeDefs (
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
  `phEnum`  
- [出]指向新枚举器的指针。 对于此方法的第一次调用，这必须为 NULL。  
+ 弄指向新枚举器的指针。 第一次调用此方法时，此值必须为 NULL。  
   
  `rTypeDefs`  
- [在]用于存储 TypeDef 令牌的数组。  
+ 中用于存储 TypeDef 标记的数组。  
   
  `cMax`  
  [in] `rTypeDefs` 数组的最大大小。  
   
  `pcTypeDefs`  
- [出]在 中`rTypeDefs`返回的 TypeDef 令牌数。  
+ 弄中返回的 TypeDef 标记的数目 `rTypeDefs` 。  
   
 ## <a name="return-value"></a>返回值  
   
 |HRESULT|说明|  
 |-------------|-----------------|  
 |`S_OK`|`EnumTypeDefs`已成功返回。|  
-|`S_FALSE`|没有要枚举的令牌。 在这种情况下，`pcTypeDefs`为零。|  
+|`S_FALSE`|没有要枚举的令牌。 在这种情况下， `pcTypeDefs` 为零。|  
   
-## <a name="remarks"></a>备注  
- TypeDef 令牌表示类或接口的类型，以及通过扩展机制添加的任何类型。  
+## <a name="remarks"></a>注解  
+ TypeDef 标记表示一种类型，如类或接口，以及通过扩展性机制添加的任何类型。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
- **标题：** 科尔赫  
+ **标头：** Cor  
   
- **库：** 作为资源包含在 MsCorEE.dll 中  
+ **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

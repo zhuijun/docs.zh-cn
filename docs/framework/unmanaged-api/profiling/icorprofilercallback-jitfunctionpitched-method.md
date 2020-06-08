@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 116085df-7a77-404a-afac-d0557a12b986
 topic_type:
 - apiref
-ms.openlocfilehash: cda629b7a6560ca5d731cd88cffc2cffd3486d8a
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 2715a5b6b03a5ad33a6f18fb736fce3911bfbef0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866206"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500021"
 ---
 # <a name="icorprofilercallbackjitfunctionpitched-method"></a>ICorProfilerCallback::JITFunctionPitched 方法
 通知探查器已从内存中删除了实时（JIT）编译的函数。  
@@ -36,19 +36,19 @@ HRESULT JITFunctionPitched(
  `functionId`  
  中已移除的函数的 ID。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  如果调用删除的函数，则在重新编译该函数时，探查器将接收新的 JIT 编译事件。 当前，公共语言运行时（CLR） JIT 编译器不会从内存中删除函数，因此，当前未使用此回调，探查器将不会接收该回调。  
   
- 重新编译该函数之前，`functionId` 的值无效。 重新编译函数时，将使用相同的 `functionId` 值。  
+ 重新 `functionId` 编译该函数之前，的值无效。 重新编译函数时， `functionId` 将使用相同的值。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
