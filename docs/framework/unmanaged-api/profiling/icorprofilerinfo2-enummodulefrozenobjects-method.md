@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 920b6483-7064-4d64-8613-fcc38ccf9b1e
 topic_type:
 - apiref
-ms.openlocfilehash: 27b3037459ac4f995e37515f6e96c28449c80a4f
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 1fe44f8f84c079e920c8c82fb9d52d1980d3b852
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862940"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497200"
 ---
 # <a name="icorprofilerinfo2enummodulefrozenobjects-method"></a>ICorProfilerInfo2::EnumModuleFrozenObjects 方法
 获取一个枚举器，该枚举数允许对指定模块中的冻结对象进行迭代。此方法已过时。  
@@ -40,14 +40,14 @@ HRESULT EnumModuleFrozenObjects(
  `ppEnum`  
  弄一个指针，指向用于枚举冻结对象的[ICorProfilerObjectEnum](icorprofilerobjectenum-interface.md)接口的地址。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** 3.5、3.0 SP1、3.0、2.0 SP1、2.0  
+ **.NET Framework 版本：** 3.5、3.0 SP1、3.0、2.0 SP1、2。0  
   
 ## <a name="see-also"></a>另请参阅
 

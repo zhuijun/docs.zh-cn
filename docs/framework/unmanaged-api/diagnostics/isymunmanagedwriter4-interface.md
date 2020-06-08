@@ -2,12 +2,12 @@
 title: ISymUnmanagedWriter4 接口
 ms.date: 03/30/2017
 ms.assetid: 4af5e8c0-987d-405e-b934-8b9e70fcae6e
-ms.openlocfilehash: eaf2e8e60d9812ab6a31fb3b9050cbaae0f1a9d7
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 21d6520aae1367368973da1692f6bca3aeb2c129
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83609464"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493651"
 ---
 # <a name="isymunmanagedwriter4-interface"></a>ISymUnmanagedWriter4 接口
 ISymUnmanagedWriter4 接口。  
@@ -23,7 +23,7 @@ ISymUnmanagedWriter4 接口。
   
 |方法|说明|  
 |------------|-----------------|  
-|[GetDebugInfoWithPadding 方法](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter4-getdebuginfowithpadding-method.md)|与[GetDebugInfo 方法](isymunmanagedwriter-getdebuginfo-method.md)相同，不同之处在于，在终止 null 字符后使用零填充路径字符串，使字符串数据成为固定大小的字符串数据 `MAX_PATH` 。 仅当路径字符串长度本身小于时才会提供填充 `MAX_PATH` 。<br /><br /> 这样可以更轻松地编写不同 PE 文件的工具。|  
+|[GetDebugInfoWithPadding 方法](isymunmanagedwriter4-getdebuginfowithpadding-method.md)|与[GetDebugInfo 方法](isymunmanagedwriter-getdebuginfo-method.md)相同，不同之处在于，在终止 null 字符后使用零填充路径字符串，使字符串数据成为固定大小的字符串数据 `MAX_PATH` 。 仅当路径字符串长度本身小于时才会提供填充 `MAX_PATH` 。<br /><br /> 这样可以更轻松地编写不同 PE 文件的工具。|  
   
 ## <a name="requirements"></a>要求  
  **标头：** CorSym，CorSym  

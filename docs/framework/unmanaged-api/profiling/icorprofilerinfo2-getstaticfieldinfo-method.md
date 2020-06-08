@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: fc663e76-e23f-49a8-bdd5-52cdf1a3b2b3
 topic_type:
 - apiref
-ms.openlocfilehash: d30d0bc262d76cf8980f90d8384173d89baf92d5
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: e1dd6addd9053ffb6cf2ce23408673d8fca17cb5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862680"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84496836"
 ---
 # <a name="icorprofilerinfo2getstaticfieldinfo-method"></a>ICorProfilerInfo2::GetStaticFieldInfo 方法
 获取一个值，该值指示应用于指定字段的静态类型。  
@@ -44,19 +44,19 @@ HRESULT GetStaticFieldInfo (
  `pFieldInfo`  
  弄一个指针，指向[COR_PRF_STATIC_TYPE](cor-prf-static-type-enumeration.md)枚举的值，该值指示指定字段是否为静态的，如果为，则为应用于该字段的静态类型。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  此信息可用于确定要调用哪个函数以获取静态字段的地址。  
   
  探查器代码仍应检查静态字段的元数据，以确保它实际具有地址。 静态文本（即常量）仅存在于元数据中，并且没有地址。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

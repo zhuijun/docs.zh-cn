@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: 24d0fcfa-1601-4fba-868f-da8c97303467
 topic_type:
 - apiref
-ms.openlocfilehash: 2713fa90240cb0bf41f455b6ed65d76c568a2cf8
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: fe11c0bbe273ae07cdae43f681a558e07a291ffb
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868260"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494886"
 ---
 # <a name="icorprofilermoduleenum-interface"></a>ICorProfilerModuleEnum 接口
 提供用于按顺序循环访问应用程序或探查器加载的模块集合的方法。  
   
 ## <a name="methods"></a>方法  
   
-|方法|描述|  
+|方法|说明|  
 |------------|-----------------|  
 |[Clone 方法](icorprofilermoduleenum-clone-method.md)|获取指向此 `ICorProfilerModuleEnum` 接口副本的接口指针。|  
 |[GetCount 方法](icorprofilermoduleenum-getcount-method.md)|获取已加载到应用程序的托管模块数。|  
@@ -34,20 +34,20 @@ ms.locfileid: "76868260"
 |[Reset 方法](icorprofilermoduleenum-reset-method.md)|将枚举器的光标移动到序列的起始位置。|  
 |[Skip 方法](icorprofilermoduleenum-skip-method.md)|前移枚举器的光标位置，以便跳过指定的元素数。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `ICorProfilerModuleEnum` 接口是一个枚举器。 它可以让数组接收器以其合适的速率从发送器拉取元素。 换而言之，接收器可以显式控制数组元素流，从而避免将大型数组作为方法形参传递方面的相关问题。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - [ICorProfilerInfo 接口](icorprofilerinfo-interface.md)
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [EnumModules 方法](icorprofilerinfo3-enummodules-method.md)

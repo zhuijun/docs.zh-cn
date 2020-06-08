@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: 80a5308e-c22f-4201-ba89-31cc8562515b
 topic_type:
 - apiref
-ms.openlocfilehash: c287b630aee58c6795ef405cc1801149e220fd51
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 58d11e9084f53c69f2656b4f0ee6bc7d2cc4ae21
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868416"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495861"
 ---
 # <a name="icorprofilerinfo4-interface"></a>ICorProfilerInfo4 接口
-提供代码探查器用于与公共语言运行时（CLR）进行通信以控制事件监视和请求信息的方法。 。 `ICorProfilerInfo4` 接口是其他 `ICorProfilerInfo` 接口的扩展。 它提供了用于支持实时（JIT）重新编译的新方法，已添加到 .NET Framework 4.5。  
+提供代码探查器用于与公共语言运行时（CLR）进行通信以控制事件监视和请求信息的方法。 . `ICorProfilerInfo4`接口是其他接口的扩展 `ICorProfilerInfo` 。 它提供了用于支持实时（JIT）重新编译的新方法，已添加到 .NET Framework 4.5。  
   
 ## <a name="methods"></a>方法  
   
-|方法|描述|  
+|方法|说明|  
 |------------|-----------------|  
 |[EnumJITedFunctions2 方法](icorprofilerinfo4-enumjitedfunctions2-method.md)|返回之前 JIT 编译和 JIT 重新编译的所有函数的枚举器。|  
 |[EnumThreads 方法](icorprofilerinfo4-enumthreads-method.md)|获取一个枚举器，该枚举器提供按顺序循环访问所分析进程中所有托管线程的集合的方法。|  
@@ -39,19 +39,19 @@ ms.locfileid: "76868416"
 |[RequestReJIT 方法](icorprofilerinfo4-requestrejit-method.md)|请求 JIT 重新编译指定函数的所有实例。|  
 |[RequestRevert 方法](icorprofilerinfo4-requestrevert-method.md)|将指定函数的所有实例还原为其初始版本。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  CLR 通过使用自由线程模型实现 `ICorProfilerInfo4` 接口的方法。 每个方法均返回一个 HRESULT，指示成功或失败。 有关可能的返回代码的列表，请参阅 CorError.h 文件。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [ICorProfilerInfo 接口](icorprofilerinfo-interface.md)

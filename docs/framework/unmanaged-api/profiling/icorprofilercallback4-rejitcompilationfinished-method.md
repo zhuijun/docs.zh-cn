@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3b5cff02-2005-44eb-a2bc-50214c4b0e1d
 topic_type:
 - apiref
-ms.openlocfilehash: e010a49dabd3b44602136e70b4c5524a68bdd9e2
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: ff06c285bf5306977b520ed9ff845e70fb25989a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865202"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499371"
 ---
 # <a name="icorprofilercallback4rejitcompilationfinished-method"></a>ICorProfilerCallback4::ReJITCompilationFinished 方法
 通知探查器实时（JIT）编译器已完成对某个函数的重新编译。  
@@ -45,18 +45,18 @@ HRESULT ReJITCompilationFinished(
  中一个值，该值指示 JIT 重新编译是否成功。  
   
  `fIsSafeToBlock`  
- [in] `true` 指示阻止可能导致运行时等待调用线程从此回调返回;`false`，指示阻止操作不会影响运行时的操作。  
+ [in] `true`指示阻止可能会导致运行时等待调用线程从该回调返回;`false`指示阻止操作不会影响运行时的操作。  
   
- 值 `true` 不会损害运行时，但会影响分析结果。  
+ 的值 `true` 不会损害运行时，但会影响分析结果。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

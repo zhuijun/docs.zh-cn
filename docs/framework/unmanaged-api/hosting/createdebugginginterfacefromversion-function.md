@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: a746a849-463c-44f5-a2f0-9e812ed8bcc3
 topic_type:
 - apiref
-ms.openlocfilehash: 0e1395229b67c4054df62935375a4136edf63078
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 6f5eec282aec6a2757664023ce8031410e316f10
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616471"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501841"
 ---
 # <a name="createdebugginginterfacefromversion-function"></a>CreateDebuggingInterfaceFromVersion 函数
 基于指定的版本信息创建[ICorDebug](../debugging/icordebug-interface.md)对象。  
   
- 此函数在 .NET Framework 4 中已过时。 相反，若要获取公共语言运行时（CLR）2.0 的接口，请使用[ICLRRuntimeInfo：： GetInterface](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-getinterface-method.md)方法并指定类标识符 CLSID_CLRDebuggingLegacy 和接口标识符 IID_ICorDebug。 若要获取 CLR 4 或更高版本的接口，请调用[CLRCreateInstance](clrcreateinstance-function.md)函数并指定类标识符 CLSID_CLRDebugging 和接口标识符 IID_ICLRDebugging。  
+ 此函数在 .NET Framework 4 中已过时。 相反，若要获取公共语言运行时（CLR）2.0 的接口，请使用[ICLRRuntimeInfo：： GetInterface](iclrruntimeinfo-getinterface-method.md)方法并指定类标识符 CLSID_CLRDebuggingLegacy 和接口标识符 IID_ICorDebug。 若要获取 CLR 4 或更高版本的接口，请调用[CLRCreateInstance](clrcreateinstance-function.md)函数并指定类标识符 CLSID_CLRDebugging 和接口标识符 IID_ICLRDebugging。  
   
 ## <a name="syntax"></a>语法  
   
@@ -42,7 +42,7 @@ HRESULT CreateDebuggingInterfaceFromVersion (
  中调试器所需的的版本 `ICorDebug` 。 有关有效值，请参阅[CorDebugInterfaceVersion](../debugging/cordebuginterfaceversion-enumeration.md)枚举。  
   
  `szDebuggeeVersion`  
- 中与要调试的应用程序或进程关联的公共语言运行时版本。 有关检索此值的信息，请参阅[GetVersionFromProcess](../../../../docs/framework/unmanaged-api/hosting/getversionfromprocess-function.md)或[GetRequestedRuntimeVersion](getrequestedruntimeversion-function.md)方法。  
+ 中与要调试的应用程序或进程关联的公共语言运行时版本。 有关检索此值的信息，请参阅[GetVersionFromProcess](getversionfromprocess-function.md)或[GetRequestedRuntimeVersion](getrequestedruntimeversion-function.md)方法。  
   
  `ppCordb`  
  弄接收指向对象的指针的位置 `ICorDebug` 。  
@@ -55,7 +55,7 @@ HRESULT CreateDebuggingInterfaceFromVersion (
 |S_OK|该方法已成功完成。|  
 |E_INVALIDARG|`szDebuggeeVersion`或 `ppCordb` 为 null，或者版本字符串不正确。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `szDebuggeeVersion`参数映射到 mscordbi.dll 的相应版本。  
   
 ## <a name="requirements"></a>要求  

@@ -9,12 +9,12 @@ api_location:
 api_type:
 - COM
 ms.assetid: d62c4a4c-8a62-45aa-8f01-a8387cf36159
-ms.openlocfilehash: a675cc301d2dd32f87e3864a3123e2044761ef91
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 43d6bdeae5f522bd73b0bdf3a5c403ec69ee384c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868351"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495433"
 ---
 # <a name="icorprofilerinfo7getinmemorysymbolslength-method"></a>ICorProfilerInfo7：： GetInMemorySymbolsLength 方法
 [仅在 .NET Framework 4.6.1 及更高版本中受支持]  
@@ -38,24 +38,24 @@ HRESULT GetInMemorySymbolsLength(
  弄一个指向 `DWORD` 值的指针，当该方法返回时，将包含流的长度（以字节为单位）。  
   
 ## <a name="return-value"></a>返回值  
- 如果可以确定内存流的长度，则该方法将返回 `S_OK` （即使它是零（0））。  
+ `S_OK`如果可以确定内存流的长度（即使它为零（0）），则方法将返回。  
   
- 如果该方法是使用 <xref:System.Reflection.Emit?displayProperty=nameWithType>创建的，则该方法将返回 `CORPROF_E_MODULE_IS_DYNAMIC`。  
+ `CORPROF_E_MODULE_IS_DYNAMIC`如果该方法是使用创建的，则该方法返回 <xref:System.Reflection.Emit?displayProperty=nameWithType> 。  
   
-## <a name="remarks"></a>备注  
- 如果模块有内存中符号，则流的长度将置于 `pCountSymbolBytes`中。 如果模块没有内存中符号，请 `*pCountSymbolBytes = 0`。  
+## <a name="remarks"></a>注解  
+ 如果模块有内存中符号，则流的长度将被置于中 `pCountSymbolBytes` 。 如果模块没有内存中符号，则为 `*pCountSymbolBytes = 0` 。  
   
 > [!NOTE]
-> 当前实现不支持反射。发出。 如果该模块是使用反射创建的，则该方法将返回 `CORPROF_E_MODULE_IS_DYNAMIC`。  
+> 当前实现不支持反射。发出。 如果该模块是使用反射创建的，则该方法返回 `CORPROF_E_MODULE_IS_DYNAMIC` 。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

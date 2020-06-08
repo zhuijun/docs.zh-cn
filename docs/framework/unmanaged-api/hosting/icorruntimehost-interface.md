@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4369533d-7834-4497-bc37-bfea0ad737b1
 topic_type:
 - apiref
-ms.openlocfilehash: ac4787379436faa568727329e7b012f83d0a53d5
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 4b8018bb84dea08987d91f351b1ab0d9f3b48c56
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83760727"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503895"
 ---
 # <a name="icorruntimehost-interface"></a>ICorRuntimeHost 接口
 提供使宿主能够显式启动和停止公共语言运行时（CLR）、创建和配置应用程序域、访问默认域以及枚举在进程中运行的所有域的方法。  
@@ -34,7 +34,7 @@ ms.locfileid: "83760727"
 |[CreateDomain 方法](icorruntimehost-createdomain-method.md)|创建应用程序域。 调用方接收类型为的实例的接口指针 <xref:System._AppDomain> <xref:System.AppDomain?displayProperty=nameWithType> 。|  
 |[CreateDomainEx 方法](icorruntimehost-createdomainex-method.md)|创建应用程序域。 此方法允许调用方传递 IAppDomainSetup 实例，以配置返回的实例的附加功能 <xref:System._AppDomain> 。|  
 |[CreateDomainSetup 方法](icorruntimehost-createdomainsetup-method.md)|获取实例的类型的接口指针 `IAppDomainSetup` <xref:System.AppDomainSetup> 。 `IAppDomainSetup`提供用于配置应用程序域在创建之前的各个方面的方法。|  
-|[CreateEvidence 方法](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createevidence-method.md)|获取类型的接口指针 <xref:System.Security.Principal.IIdentity> ，该指针允许主机创建要传递给[CreateDomain](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-createdomain-method.md)或[CreateDomainEx](icorruntimehost-createdomainex-method.md)的安全证据。|  
+|[CreateEvidence 方法](icorruntimehost-createevidence-method.md)|获取类型的接口指针 <xref:System.Security.Principal.IIdentity> ，该指针允许主机创建要传递给[CreateDomain](icorruntimehost-createdomain-method.md)或[CreateDomainEx](icorruntimehost-createdomainex-method.md)的安全证据。|  
 |[CreateLogicalThreadState 方法](icorruntimehost-createlogicalthreadstate-method.md)|请勿使用。|  
 |[CurrentDomain 方法](icorruntimehost-currentdomain-method.md)|获取类型的接口指针 <xref:System._AppDomain> ，该指针表示当前线程上加载的域。|  
 |[DeleteLogicalThreadState 方法](icorruntimehost-deletelogicalthreadstate-method.md)|请勿使用。|  

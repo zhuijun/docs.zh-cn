@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 88e2eac0-8ccb-404f-abbc-287d55159842
 topic_type:
 - apiref
-ms.openlocfilehash: bf8e725908177d9a15407b096f68cbcb947c7a01
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: f6e25bfe11880730f6f447ccc0406d716d185624
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804154"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501490"
 ---
 # <a name="ihostsecuritycontext-interface"></a>IHostSecurityContext 接口
 允许公共语言运行时（CLR）维护宿主实现的安全上下文信息。  
@@ -28,9 +28,9 @@ ms.locfileid: "83804154"
   
 |方法|说明|  
 |------------|-----------------|  
-|[Capture 方法](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-capture-method.md)|获取 `IHostSecurityContext` 从对[IHostSecurityManager：： GetSecurityContext](ihostsecuritymanager-getsecuritycontext-method.md)的调用返回的实例的克隆。|  
+|[Capture 方法](ihostsecuritycontext-capture-method.md)|获取 `IHostSecurityContext` 从对[IHostSecurityManager：： GetSecurityContext](ihostsecuritymanager-getsecuritycontext-method.md)的调用返回的实例的克隆。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  宿主可以通过 CLR 和用户代码控制对线程标记的所有代码访问。 它还可以确保在异步操作或代码点之间跨受限制的代码访问传递完整的安全上下文信息。 `IHostSecurityContext`封装此安全上下文信息，这对于运行时是不透明的。 运行时使用捕获此信息 `Capture` ，并将其移动到线程池辅助角色项调度、终结器执行和模块和类构造函数中。  
   
 ## <a name="requirements"></a>要求  

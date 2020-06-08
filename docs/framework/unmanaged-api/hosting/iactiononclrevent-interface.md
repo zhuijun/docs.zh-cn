@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: b5f9b41e-7301-429c-911f-21d5422292b3
 topic_type:
 - apiref
-ms.openlocfilehash: 4e72cd8bee2cb4f35155d7b99cfe8d9cf63f463a
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f577e9252d97ec188ff1076fd8340336b16c8257
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616068"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504324"
 ---
 # <a name="iactiononclrevent-interface"></a>IActionOnCLREvent 接口
-提供了[IActionOnCLREvent：： OnEvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-onevent-method.md)方法，该方法对已通过调用[ICLROnEventManager：： RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md)方法注册的事件执行回调。  
+提供了[IActionOnCLREvent：： OnEvent](iactiononclrevent-onevent-method.md)方法，该方法对已通过调用[ICLROnEventManager：： RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md)方法注册的事件执行回调。  
   
 ## <a name="methods"></a>方法  
   

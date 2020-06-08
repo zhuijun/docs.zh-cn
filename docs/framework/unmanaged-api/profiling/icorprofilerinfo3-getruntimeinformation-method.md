@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4400fb8c-0407-4791-8557-f011fd2aee51
 topic_type:
 - apiref
-ms.openlocfilehash: e3d167be9a4091ae57a3283424186142e90ca7a1
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: b8e503af11fa1d02aac2ec83edde0ffbd562d8e5
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868546"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84496394"
 ---
 # <a name="icorprofilerinfo3getruntimeinformation-method"></a>ICorProfilerInfo3::GetRuntimeInformation 方法
 提供有关正在分析的公共语言运行时（CLR）的版本信息。  
@@ -43,10 +43,10 @@ HRESULT GetRuntimeInformation(
   
 ## <a name="parameters"></a>参数  
  `pClrInstanceId`  
- 弄进程中正在运行的 CLR 实例的代表 ID。 这与 Windows 事件跟踪（ETW）启动事件报告的 `ClrInstanceID` 相同。  
+ 弄进程中正在运行的 CLR 实例的代表 ID。 这与 `ClrInstanceID` Windows 事件跟踪（ETW）启动事件报告所用的相同。  
   
  `pRuntimeType`  
- 弄运行时类型。 此参数为 CLR 的桌面版本或在 Silverlight 中使用的 CLR 核心版本 `COR_PRF_CORE_CLR` 返回 `COR_PRF_DESKTOP_CLR`。  
+ 弄运行时类型。 此参数 `COR_PRF_DESKTOP_CLR` 为 clr 的桌面版本或 `COR_PRF_CORE_CLR` Silverlight 中使用的 clr 的核心版本返回。  
   
  `pMajorVersion`  
  弄CLR 的主版本号。  
@@ -61,28 +61,28 @@ HRESULT GetRuntimeInformation(
  弄与软件更新关联的 CLR 的版本号。  
   
  `cchVersionString`  
- 中`szVersionString` 指向的缓冲区的长度（以字符为单位）。  
+ 中指向的缓冲区的长度（以字符为单位） `szVersionString` 。  
   
  `pcchVersionString`  
- 弄`szVersionString`的长度（以字符为字符）。  
+ 弄的长度，以字符为字符 `szVersionString` 。  
   
  `szVersionString`  
  弄CLR 版本字符串。  
   
-## <a name="remarks"></a>备注  
- 可以为任何参数传递 null。 但 `pcchVersionString` 不能为 null，除非 `szVersionString` 也为 null。  
+## <a name="remarks"></a>注解  
+ 可以为任何参数传递 null。 但是， `pcchVersionString` 除非也为 null，否则不能为 null `szVersionString` 。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - [ICorProfilerInfo3 接口](icorprofilerinfo3-interface.md)
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [分析](index.md)

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5de13327-96c6-4697-a89e-b8bf40717855
 topic_type:
 - apiref
-ms.openlocfilehash: c3011149b9b23e776ad3baac9e41f3c42213654d
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 4aeacc718632c133550ed8de6649716c5d8b7423
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616822"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504437"
 ---
 # <a name="clrcreateinstance-function"></a>CLRCreateInstance 函数
-提供以下三个接口之一： [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)、 [ICLRMetaHostPolicy](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)或[ICLRDebugging](../debugging/iclrdebugging-interface.md)。  
+提供以下三个接口之一： [ICLRMetaHost](iclrmetahost-interface.md)、 [ICLRMetaHostPolicy](iclrmetahostpolicy-interface.md)或[ICLRDebugging](../debugging/iclrdebugging-interface.md)。  
   
 ## <a name="syntax"></a>语法  
   
@@ -43,7 +43,7 @@ HRESULT CLRCreateInstance(
  中三个接口标识符（Iid）之一： IID_ICLRMetaHost、IID_ICLRMetaHostPolicy 或 IID_ICLRDebugging。  
   
  `ppInterface`  
- 弄以下三个接口之一： [ICLRMetaHost](../../../../docs/framework/unmanaged-api/hosting/iclrmetahost-interface.md)、 [ICLRMetaHostPolicy](../../../../docs/framework/unmanaged-api/hosting/iclrmetahostpolicy-interface.md)或[ICLRDebugging](../debugging/iclrdebugging-interface.md)。  
+ 弄以下三个接口之一： [ICLRMetaHost](iclrmetahost-interface.md)、 [ICLRMetaHostPolicy](iclrmetahostpolicy-interface.md)或[ICLRDebugging](../debugging/iclrdebugging-interface.md)。  
   
 ## <a name="return-value"></a>返回值  
  此方法返回以下特定 HRESULT 以及表示方法失败的 HRESULT 错误。  
@@ -53,7 +53,7 @@ HRESULT CLRCreateInstance(
 |S_OK|该方法已成功完成。|  
 |E_POINTER|`ppInterface` 为 null。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  下表显示了和支持的组合 `clsid` `riid` 。  
   
 |`clsid`|`riid`|  

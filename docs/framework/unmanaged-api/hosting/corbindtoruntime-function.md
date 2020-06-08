@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 799740aa-46ec-4532-95da-6444565b4971
 topic_type:
 - apiref
-ms.openlocfilehash: 0bcfe42a70d64c091851a1eec81d03e49dbde52b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 52594c36c54c74941371f9950fbc6fb543b86de0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616654"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493547"
 ---
 # <a name="corbindtoruntime-function"></a>CorBindToRuntime 函数
 使非托管宿主能够将公共语言运行时（CLR）加载到进程中。  
@@ -55,7 +55,7 @@ HRESULT CorBindToRuntime (
  如果 `pwszBuildFlavor` 设置为 null，则加载工作站生成。 在单处理器计算机上运行时，始终会加载工作站构建，即使将 `pwszBuildFlavor` 设置为 `svr` 。 但是，如果将 `pwszBuildFlavor` 设置为 `svr` ，并且指定了并发垃圾回收（请参阅参数的说明 `flags` ），则将加载服务器生成。  
   
  `rclsid`  
- 中`CLSID`用于实现[ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)或[ICLRRuntimeHost](iclrruntimehost-interface.md)接口的 coclass 的。 支持的值为 CLSID_CorRuntimeHost 或 CLSID_CLRRuntimeHost。  
+ 中`CLSID`用于实现[ICorRuntimeHost](icorruntimehost-interface.md)或[ICLRRuntimeHost](iclrruntimehost-interface.md)接口的 coclass 的。 支持的值为 CLSID_CorRuntimeHost 或 CLSID_CLRRuntimeHost。  
   
  `riid`  
  中所 `IID` 请求的接口的 `rclsid` 。 支持的值为 IID_ICorRuntimeHost 或 IID_ICLRRuntimeHost。  
@@ -63,7 +63,7 @@ HRESULT CorBindToRuntime (
  `ppv`  
  弄返回的接口指针 `riid` 。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  如果 `pwszVersion` 指定不存在的运行时版本，则 `CorBindToRuntimeEx` 返回的 HRESULT 值为 CLR_E_SHIM_RUNTIMELOAD。  
   
 ## <a name="execution-context-and-flow-of-windows-identity"></a>执行上下文和 Windows 标识流  
@@ -75,13 +75,13 @@ HRESULT CorBindToRuntime (
   
 2. 通过将进程默认模式更改为版本1兼容模式，该模式中的 <xref:System.Security.Principal.WindowsIdentity> 对象不会在任何异步点上流动，无论 <xref:System.Threading.ExecutionContext> 当前线程上的设置如何。 更改默认模式的方式取决于您使用的是托管可执行文件还是非托管承载接口来加载 CLR：  
   
-    1. 对于托管可执行文件，必须将 `enabled` [ \< legacyImpersonationPolicy>](../../configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md)元素的属性设置为 `true` 。  
+    1. 对于托管可执行文件，必须将 `enabled` 元素的属性设置 [\<legacyImpersonationPolicy>](../../configure-apps/file-schema/runtime/legacyimpersonationpolicy-element.md) 为 `true` 。  
   
     2. 对于非托管承载接口，请在 `STARTUP_LEGACY_IMPERSONATION` `flags` 调用函数时在参数中设置标志 `CorBindToRuntimeEx` 。  
   
      版本1兼容性模式适用于整个进程和进程中的所有应用程序域。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  [CorBindToRuntimeEx](corbindtoruntimeex-function.md)和 `CorBindToRuntime` 执行相同的操作，但 `CorBindToRuntimeEx` 函数允许您设置标志来指定 CLR 的行为。  
   
 ## <a name="requirements"></a>要求  

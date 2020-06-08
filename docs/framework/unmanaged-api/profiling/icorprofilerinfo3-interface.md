@@ -14,26 +14,26 @@ helpviewer_keywords:
 ms.assetid: 044a262f-0fa7-485d-b0c1-64cdc359c654
 topic_type:
 - apiref
-ms.openlocfilehash: c3642154ba5f9798f59ca8fc49cb848d7e2f73c7
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 0a474719935ba763cbd15dc6e18fe5ba99c14ebc
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862225"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84496299"
 ---
 # <a name="icorprofilerinfo3-interface"></a>ICorProfilerInfo3 接口
-提供了一些方法，可由代码探查器用于与公共语言运行时 (CLR) 通信，从而控制事件监视并请求信息。 `ICorProfilerInfo3` 接口是[ICorProfilerInfo2](icorprofilerinfo2-interface.md)接口的扩展。 它提供 .NET Framework 4 及更高版本中支持的新方法。  
+提供了一些方法，可由代码探查器用于与公共语言运行时 (CLR) 通信，从而控制事件监视并请求信息。 `ICorProfilerInfo3`接口是[ICorProfilerInfo2](icorprofilerinfo2-interface.md)接口的扩展。 它提供 .NET Framework 4 及更高版本中支持的新方法。  
   
 ## <a name="methods"></a>方法  
   
-|方法|描述|  
+|方法|说明|  
 |------------|-----------------|  
 |[EnumJITedFunctions 方法](icorprofilerinfo3-enumjitedfunctions-method.md)|返回所有先前 JIT 编译的函数的枚举器。|  
 |[EnumModules 方法](icorprofilerinfo3-enummodules-method.md)|返回一个枚举器，此枚举器提供方法以按顺序循环访问加载到应用程序的托管模块集合。|  
 |[GetAppDomainsContainingModule 方法](icorprofilerinfo3-getappdomainscontainingmodule-method.md)|获取其中已加载给定模块的应用程序域的标识符。|  
-|[GetFunctionEnter3Info 方法](icorprofilerinfo3-getfunctionenter3info-method.md)|提供由[FunctionEnter3WithInfo](functionenter3withinfo-function.md)函数向探查器报告的函数的堆栈帧和参数信息;只能在 `FunctionEnter3WithInfo` 回调过程中调用。|  
-|[GetFunctionLeave3Info 方法](icorprofilerinfo3-getfunctionleave3info-method.md)|提供由[FunctionLeave3WithInfo 函数](functionleave3withinfo-function.md)函数向探查器报告的函数的堆栈帧和返回值;只能在 `FunctionLeave3WithInfo` 回调过程中调用。|  
-|[GetFunctionTailcall3Info 方法](icorprofilerinfo3-getfunctiontailcall3info-method.md)|提供由[FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md)函数向探查器报告的函数的堆栈帧;只能在 `FunctionTailcall3WithInfo` 回调过程中调用。|  
+|[GetFunctionEnter3Info 方法](icorprofilerinfo3-getfunctionenter3info-method.md)|提供由[FunctionEnter3WithInfo](functionenter3withinfo-function.md)函数向探查器报告的函数的堆栈帧和参数信息;只能在回调过程中调用 `FunctionEnter3WithInfo` 。|  
+|[GetFunctionLeave3Info 方法](icorprofilerinfo3-getfunctionleave3info-method.md)|提供由[FunctionLeave3WithInfo 函数](functionleave3withinfo-function.md)函数向探查器报告的函数的堆栈帧和返回值;只能在回调过程中调用 `FunctionLeave3WithInfo` 。|  
+|[GetFunctionTailcall3Info 方法](icorprofilerinfo3-getfunctiontailcall3info-method.md)|提供由[FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md)函数向探查器报告的函数的堆栈帧;只能在回调过程中调用 `FunctionTailcall3WithInfo` 。|  
 |[GetModuleInfo2 方法](icorprofilerinfo3-getmoduleinfo2-method.md)|若给定模块 ID，返回模块的文件名、模块父程序集的 ID 以及描述模块属性的位掩码。|  
 |[GetRuntimeInformation 方法](icorprofilerinfo3-getruntimeinformation-method.md)|提供有关正在探查的运行时的版本信息。|  
 |[GetStringLayout2 方法](icorprofilerinfo3-getstringlayout2-method.md)|获取有关字符串对象布局的信息。|  
@@ -43,21 +43,21 @@ ms.locfileid: "76862225"
 |[SetEnterLeaveFunctionHooks3WithInfo 方法](icorprofilerinfo3-setenterleavefunctionhooks3withinfo-method.md)|指定将在托管函数的[FunctionEnter3WithInfo](functionenter3withinfo-function.md)、 [FunctionLeave3WithInfo](functionleave3withinfo-function.md)和[FunctionTailcall3WithInfo](functiontailcall3withinfo-function.md)挂钩上调用的探查器实现函数。|  
 |[SetFunctionIDMapper2 方法](icorprofilerinfo3-setfunctionidmapper2-method.md)|指定将调用以将 `FunctionID` 值映射至替换值（传递至探查器的输入/退出挂钩）的探查器实现函数。 此方法将[ICorProfilerInfo：： SetFunctionIDMapper](icorprofilerinfo-setfunctionidmapper-method.md)与探查器可能用于消除运行时之间的歧义的参数进行扩展。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  CLR 通过使用自由线程模型实现 `ICorProfilerInfo3` 接口的方法。 每个方法均返回一个 HRESULT，指示成功或失败。 有关可能的返回代码的列表，请参阅 CorError.h 文件。  
   
- 使用探查器的[ICorProfilerCallback：： Initialize](icorprofilercallback-initialize-method.md)或[ICorProfilerCallback3：： InitializeForAttach](icorprofilercallback3-initializeforattach-method.md)方法的实现，在初始化期间，CLR 将 `ICorProfilerInfo3` 接口传递到每个代码探查器。 然后，代码探查器可调用 `ICorProfilerInfo3` 方法获取有关正在 CLR 控件下执行的托管代码的信息。  
+ 在 `ICorProfilerInfo3` 初始化期间，使用探查器的[ICorProfilerCallback：： Initialize](icorprofilercallback-initialize-method.md)或[ICorProfilerCallback3：： InitializeForAttach](icorprofilercallback3-initializeforattach-method.md)方法的实现将一个接口传递到每个代码探查器。 然后，代码探查器可调用 `ICorProfilerInfo3` 方法获取有关正在 CLR 控件下执行的托管代码的信息。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [ICorProfilerInfo 接口](icorprofilerinfo-interface.md)
