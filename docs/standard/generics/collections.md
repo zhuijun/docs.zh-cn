@@ -11,16 +11,16 @@ helpviewer_keywords:
 - generic collections [.NET]
 - generic types [.NET]
 ms.assetid: 5b646751-6ab7-465c-916c-b1a76aefa9f5
-ms.openlocfilehash: dce0e38b0198396ec0dbc3ced7f2f59c2b112b56
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5767bac0bb1e3ae9e586e9a10d8452d421519447
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708405"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287566"
 ---
 # <a name="generic-collections-in-net"></a>.NET 中的泛型集合
 
- .NET 类库提供了许多 <xref:System.Collections.Generic> 和 <xref:System.Collections.ObjectModel> 命名空间中的泛型集合类。 若要详细了解这些类，请参阅[常用集合类型](../../../docs/standard/collections/commonly-used-collection-types.md)。  
+ .NET 类库提供了许多 <xref:System.Collections.Generic> 和 <xref:System.Collections.ObjectModel> 命名空间中的泛型集合类。 若要详细了解这些类，请参阅[常用集合类型](../collections/commonly-used-collection-types.md)。  
   
 ## <a name="systemcollectionsgeneric"></a>System.Collections.Generic
 
@@ -51,10 +51,10 @@ ms.locfileid: "75708405"
  [!code-csharp[Conceptual.Generics.Overview#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.generics.overview/cs/source2.cs#7)]
  [!code-vb[Conceptual.Generics.Overview#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.generics.overview/vb/source2.vb#7)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Collections.Generic?displayProperty=nameWithType>
 - <xref:System.Collections.ObjectModel?displayProperty=nameWithType>
-- [泛型](../../../docs/standard/generics/index.md)
-- [用于控制数组和列表的泛型委托](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)
-- [泛型接口](../../../docs/standard/generics/interfaces.md)
+- [泛型](index.md)
+- [用于控制数组和列表的泛型委托](delegates-for-manipulating-arrays-and-lists.md)
+- [泛型接口](interfaces.md)

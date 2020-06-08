@@ -9,12 +9,12 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: 0273d16028315452e35f83086dbc134d6fcb66c6
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: 802c84bf93b3821459ab652e69a12fcc50280b9e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635990"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290547"
 ---
 # <a name="details-of-regular-expression-behavior"></a>正则表达式行为的详细信息
 
@@ -31,7 +31,7 @@ ms.locfileid: "80635990"
  程序员更喜欢传统 NFA 引擎，因为与 DFA 或 POSIX NFA 引擎相比，通过它们可更好地控制字符串匹配。 不过在最糟糕的情况下，它们可能会运行缓慢，你可以使用减少歧义和限制回溯的模式，控制它们以线性方式或在多项式时间内找到匹配项。 换句话说，虽然 NFA 引擎以牺牲性能为代价来实现强大功能和灵活性，不过在大多数情况下，如果正则表达式编写良好并避免回溯呈指数级降低性能的情况，它们可提供可接受的良好性能。
 
 > [!NOTE]
-> 若要了解过度回溯导致的性能损失，以及如何生成正则表达式来解决此问题，请参阅[回溯](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)。
+> 若要了解过度回溯导致的性能损失，以及如何生成正则表达式来解决此问题，请参阅[回溯](backtracking-in-regular-expressions.md)。
 
 ## <a name="net-framework-engine-capabilities"></a>.NET Framework 引擎功能
 
@@ -53,7 +53,7 @@ ms.locfileid: "80635990"
     |`(\d+)`|匹配至少一个数字字符，并将其分配给第一个捕获组。|
     |`\.`|匹配句点。|
 
-     若要详细了解惰性量符，请参阅[量符](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)。
+     若要详细了解惰性量符，请参阅[量符](quantifiers-in-regular-expressions.md)。
 
 - 正预测先行断言：`(?=`subexpression  `)`。 此功能允许回溯引擎在匹配子表达式之后返回到文本中的相同位置。 它可用于通过验证从相同位置开始的多个模式来搜索整个文本。 它还允许引擎验证匹配项末尾是否存在某个子字符串，而无需在匹配的文本中包含该子字符串。 下面的示例使用正预测先行提取句子中后面不是标点符号的单词。
 
@@ -69,7 +69,7 @@ ms.locfileid: "80635990"
     |`\b`|在单词边界处结束匹配。|
     |`(?=\P{P})`|预测先行以确定下一个字符是否为标点符号。 如果不是，则匹配成功。|
 
-     若要详细了解正预测先行断言，请参阅[分组构造](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)。
+     若要详细了解正预测先行断言，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
 
 - 负预测先行断言：`(?!`subexpression  `)`。 通过此功能可以仅当子表达式未能匹配时才匹配表达式。 这对于修剪搜索十分有用，因为针对应消除的情况提供表达式通常比针对必须包括的情况提供表达式要更简单。 例如，难以为不以“non”开头的单词编写表达式。 下面的示例使用负预测先行排除它们。
 
@@ -85,7 +85,7 @@ ms.locfileid: "80635990"
     |`(\w+)`|匹配一个或多个单词字符。|
     |`\b`|在单词边界处结束匹配。|
 
-     若要详细了解负预测先行断言，请参阅[分组构造](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)。
+     若要详细了解负预测先行断言，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
 
 - 条件求值：`(?(`expression  `)`yes  `|`no  `)` 和 `(?(`name  `)`yes  `|`no  `)`，其中 expression  是要匹配的子表达式，name  是捕获组的名称，yes  是在 expression  匹配或 name  是有效的非空捕获组时要匹配的字符串，no  是在 expression  不匹配或 name  不是有效的非空捕获组时要匹配的子表达式。 此功能允许引擎使用多个备用模式进行搜索（具体取决于上一个子表达式匹配的结果或零宽度断言的结果）。 这样可实现功能更强大的反向引用形式，例如，它允许基于上一个子表达式是否匹配来匹配子表达式。 下面示例中的正则表达式匹配旨在供公共和内部使用的段落。 仅供内部使用的段落以 `<PRIVATE>` 标记开头。 正则表达式模式 `^(?<Pvt>\<PRIVATE\>\s)?(?(Pvt)((\w+\p{P}?\s)+)|((\w+\p{P}?\s)+))\r?$` 使用条件评估将旨在供公共使用和内部使用的段落内容分配给不同的捕获组。 这些段落随后可以按不同方式进行处理。
 
@@ -102,9 +102,9 @@ ms.locfileid: "80635990"
     |<code>&#124;((\w+\p{P}?\s)+))</code>|如果 `Pvt` 捕获组不存在，则匹配后跟零个或一个标点分隔符、再后跟一个空白字符的一个或多个单词字符的一个或多个匹配项。 将子字符串分配给第三个捕获组。|
     |`\r?$`|匹配行尾或字符串末尾。|
 
-     若要详细了解条件求值，请参阅[替换构造](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)。
+     若要详细了解条件求值，请参阅[替换构造](alternation-constructs-in-regular-expressions.md)。
 
-- 平衡组定义：`(?<`*name1*`-`*name2*`>` *subexpression*`)`。 此功能允许正则表达式引擎跟踪嵌套构造（如圆括号或者左方括号和右方括号）。 有关示例，请参阅[分组构造](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)。
+- 平衡组定义：`(?<`*name1*`-`*name2*`>` *subexpression*`)`。 此功能允许正则表达式引擎跟踪嵌套构造（如圆括号或者左方括号和右方括号）。 有关示例，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
 
 - 原子组：`(?>`subexpression`)`  。 此功能允许回溯引擎保证子表达式仅匹配为该子表达式找到的第一个匹配项，就如同该表达式独立于其包含表达式运行一样。 如果不使用此构造，则来自较大表达式的回溯搜索可能会更改子表达式的行为。 例如，正则表达式 `(a+)\w` 除了一系列“a”字符后面的单词字符匹配，还与一个或多个“a”字符相匹配，并且它将该系列“a”字符分配给第一个捕获组。 但是，如果输入字符串的最后一个字符也是“a“，则它由 `\w` 语言元素匹配且不包含在捕获的组中。
 
@@ -116,16 +116,16 @@ ms.locfileid: "80635990"
      [!code-csharp[Conceptual.RegularExpressions.Design#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/nonbacktracking1.cs#8)]
      [!code-vb[Conceptual.RegularExpressions.Design#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/nonbacktracking1.vb#8)]
 
-     要详细了解原子组，请参阅[分组构造](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)。
+     要详细了解原子组，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
 
 - 从右到左匹配：指定方式为向 <xref:System.Text.RegularExpressions.Regex> 类构造函数或静态实例匹配方法提供 <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> 选项。 当从右到左（而不是从左到右）进行搜索时，或是在从模式右侧部分（而不是左侧部分）开始匹配效率更高的情况下，此功能非常有用。 如下面的示例所示，使用从右到左匹配可以更改贪婪限定符的行为。 该示例对以数字结尾的句子执行两个搜索。 使用贪婪限定符 `+` 的从左到右搜索匹配句子中六个数字之一，而从右到左搜索匹配所有六个数字。 有关正则表达式模式的介绍，请参见此部分前面说明惰性限定符的示例。
 
      [!code-csharp[Conceptual.RegularExpressions.Design#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/rtl1.cs#6)]
      [!code-vb[Conceptual.RegularExpressions.Design#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/rtl1.vb#6)]
 
-     有关从右到左匹配的更多信息，请参见[正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)。
+     有关从右到左匹配的更多信息，请参见[正则表达式选项](regular-expression-options.md)。
 
-- 正负回顾后发断言：`(?<=`subexpression  `)`（正回顾后发断言）和 `(?<!`subexpression  `)`（负回顾后发断言）。 此功能非常类似于本主题前面讨论的预测先行。 由于正则表达式引擎允许完全的从右到左匹配，因此正则表达式允许无限制回顾。 当嵌套子表达式是外部表达式的超集时，正回顾和负回顾还可以用于避免嵌套限定符。 具有此类嵌套限定符的正则表达式通常性能不佳。 例如，下面的示例验证字符串是否以字母数字字符开头和结尾，以及字符串中的任何其他字符是否为更大子集之一。 它形成用于验证电子邮件地址的正则表达式的一部分内容；有关详细信息，请参阅[如何：确认字符串是有效的电子邮件格式](../../../docs/standard/base-types/how-to-verify-that-strings-are-in-valid-email-format.md)。
+- 正负回顾后发断言：`(?<=`subexpression  `)`（正回顾后发断言）和 `(?<!`subexpression  `)`（负回顾后发断言）。 此功能非常类似于本主题前面讨论的预测先行。 由于正则表达式引擎允许完全的从右到左匹配，因此正则表达式允许无限制回顾。 当嵌套子表达式是外部表达式的超集时，正回顾和负回顾还可以用于避免嵌套限定符。 具有此类嵌套限定符的正则表达式通常性能不佳。 例如，下面的示例验证字符串是否以字母数字字符开头和结尾，以及字符串中的任何其他字符是否为更大子集之一。 它形成用于验证电子邮件地址的正则表达式的一部分内容；有关详细信息，请参阅[如何：确认字符串是有效的电子邮件格式](how-to-verify-that-strings-are-in-valid-email-format.md)。
 
      [!code-csharp[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/lookbehind1.cs#5)]
      [!code-vb[Conceptual.RegularExpressions.Design#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/lookbehind1.vb#5)]
@@ -140,18 +140,18 @@ ms.locfileid: "80635990"
     |`(?<=[A-Z0-9])`|回顾上一个字符（必须是数字或字母数字）。 （比较不区分大小写。）|
     |`$`|在字符串的结尾结束匹配。|
 
-     若要详细了解正负向后行断言，请参阅[分组构造](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)。
+     若要详细了解正负向后行断言，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
 
 ## <a name="related-articles"></a>相关文章
 
 |Title|描述|
 |-----------|-----------------|
-|[回溯](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)|提供有关正则表达式回溯如何进行分支以查找替代匹配的信息。|
-|[编译和重用](../../../docs/standard/base-types/compilation-and-reuse-in-regular-expressions.md)|提供有关编译和重复使用正则表达式以提高性能的信息。|
-|[线程安全性](../../../docs/standard/base-types/thread-safety-in-regular-expressions.md)|提供有关正则表达式线程安全的信息，并说明何时应同步对正则表达式对象进行的访问。|
-|[.NET Framework 正则表达式](../../../docs/standard/base-types/regular-expressions.md)|提供正则表达式的编程语言方面的概述。|
-|[正则表达式对象模型](../../../docs/standard/base-types/the-regular-expression-object-model.md)|提供演示如何使用正则表达式类的信息和代码示例。|
-|[正则表达式语言 - 快速参考](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|提供有关可用来定义正则表达式的字符集、运算符和构造的信息。|
+|[回溯](backtracking-in-regular-expressions.md)|提供有关正则表达式回溯如何进行分支以查找替代匹配的信息。|
+|[编译和重用](compilation-and-reuse-in-regular-expressions.md)|提供有关编译和重复使用正则表达式以提高性能的信息。|
+|[线程安全性](thread-safety-in-regular-expressions.md)|提供有关正则表达式线程安全的信息，并说明何时应同步对正则表达式对象进行的访问。|
+|[.NET Framework 正则表达式](regular-expressions.md)|提供正则表达式的编程语言方面的概述。|
+|[正则表达式对象模型](the-regular-expression-object-model.md)|提供演示如何使用正则表达式类的信息和代码示例。|
+|[正则表达式语言 - 快速参考](regular-expression-language-quick-reference.md)|提供有关可用来定义正则表达式的字符集、运算符和构造的信息。|
 
 ## <a name="reference"></a>参考
 

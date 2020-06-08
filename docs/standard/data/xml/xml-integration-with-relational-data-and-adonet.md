@@ -3,12 +3,12 @@ title: 关系数据和 ADO.NET 的 XML 集成
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: f6ebb1a1-f2ca-49b9-92c9-0150940cf6e6
-ms.openlocfilehash: 30b788c77a2352d0d02ee772ab3f428381facd9f
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: f54c7a890ada01f2cffdd54c024cfbc98777200d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155615"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289013"
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>关系数据和 ADO.NET 的 XML 集成
 XmlDataDocument  类是 XmlDocument  的派生类，包含 XML 数据。 XmlDataDocument  的优势在于，在关系数据和分层数据之间架起了桥梁。 它是可绑定到 DataSet  的 XmlDocument  ，这两个类可以同步对其中所含数据的更改。 绑定到 DataSet  的 XmlDocument  允许 XML 与关系数据集成，不必将数据表示为 XML 格式或关系格式。 您可以用这两种格式表示数据，而不是限于一种数据表示形式。  
@@ -41,10 +41,10 @@ XmlDataDocument  类是 XmlDocument  的派生类，包含 XML 数据。 XmlData
 |保留源 XML 中的元素顺序并不重要。|保留源 XML 中的元素顺序很重要。|  
 |源 XML 中元素间的空白和格式设置不需要保留。|保留源 XML 中的空白和格式设置很重要。|  
   
- 如果直接将 XML 加载并写入和写出 DataSet  可满足需求，请参阅[从 XML 加载 DataSet](../../../../docs/framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) 和[以 XML 数据形式写入 DataSet](../../../../docs/framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)。  
+ 如果直接将 XML 加载并写入和写出 DataSet  可满足需求，请参阅[从 XML 加载 DataSet](../../../framework/data/adonet/dataset-datatable-dataview/loading-a-dataset-from-xml.md) 和[以 XML 数据形式写入 DataSet](../../../framework/data/adonet/dataset-datatable-dataview/writing-dataset-contents-as-xml-data.md)。  
   
- 如果从 XmlDataDocument  加载 DataSet  可满足需求，请参阅[将 DataSet 与 XML 文档同步](../../../../docs/framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)。  
+ 如果从 XmlDataDocument  加载 DataSet  可满足需求，请参阅[将 DataSet 与 XML 文档同步](../../../framework/data/adonet/dataset-datatable-dataview/dataset-and-xmldatadocument-synchronization.md)。  
   
 ## <a name="see-also"></a>请参阅
 
-- [在数据集中使用 XML](../../../../docs/framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)
+- [在数据集中使用 XML](../../../framework/data/adonet/dataset-datatable-dataview/using-xml-in-a-dataset.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - /optioninfer compiler option [Visual Basic]
 - optioninfer compiler option [Visual Basic]
 ms.assetid: f6c09db1-0553-464a-abe3-d4510c61d6ed
-ms.openlocfilehash: d7209e431b84e52e487bccbf73bd633a346efde0
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 524660fca7c56fa490cc85169898bf2bf6d1a16e
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775622"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400573"
 ---
 # <a name="-optioninfer"></a>-optioninfer
 允许在变量声明中使用局部类型推理。  
@@ -34,7 +34,7 @@ ms.locfileid: "72775622"
 > 你可使用 `-noconfig` 选项来保留编译器的内部默认值(而非在 vbc.rsp 中指定的那些值）。 此选项默认的编译器是 `-optioninfer-`。  
   
 ## <a name="remarks"></a>备注  
- 如果源代码文件包含 [Option Infer 语句](../../../visual-basic/language-reference/statements/option-infer-statement.md)，则语句将重写 `-optioninfer` 命令行编译器设置。  
+ 如果源代码文件包含 [Option Infer 语句](../../language-reference/statements/option-infer-statement.md)，则语句将重写 `-optioninfer` 命令行编译器设置。  
   
 ### <a name="to-set--optioninfer-in-the-visual-studio-ide"></a>若要在 Visual Studio IDE 中设置 -optioninfer  
   
@@ -51,14 +51,14 @@ vbc -optioninfer+ test.vb
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
-- [-optionexplicit](../../../visual-basic/reference/command-line-compiler/optionexplicit.md)
-- [-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Option Infer 语句](../../../visual-basic/language-reference/statements/option-infer-statement.md)
-- [局部类型推理](../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
+- [Visual Basic 命令行编译器](index.md)
+- [-optioncompare](optioncompare.md)
+- [-optionexplicit](optionexplicit.md)
+- [-optionstrict](optionstrict.md)
+- [示例编译命令行](sample-compilation-command-lines.md)
+- [Option Infer 语句](../../language-reference/statements/option-infer-statement.md)
+- [局部类型推理](../../programming-guide/language-features/variables/local-type-inference.md)
 - [“选项”对话框 ->“项目”->“Visual Basic 默认值”](/visualstudio/ide/reference/visual-basic-defaults-projects-options-dialog-box)
 - [“项目设计器”->“编译”页 (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)
-- [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)
-- [从命令行生成](../../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md)
+- [-noconfig](noconfig.md)
+- [从命令行生成](building-from-the-command-line.md)

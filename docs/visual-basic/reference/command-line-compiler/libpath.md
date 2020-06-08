@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /libpath compiler option [Visual Basic]
 - -libpath compiler option [Visual Basic]
 ms.assetid: 5f1c26c9-3455-4e89-bdf3-b12d6c2e655b
-ms.openlocfilehash: 9a5822a097828f818da020735c3822e86eb3236b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: dff7e0c3eb696b9b18f4c4e59240a26c1cb9782c
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716639"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408531"
 ---
 # <a name="-libpath"></a>-libpath
 指定引用的程序集的位置。  
@@ -29,7 +29,7 @@ ms.locfileid: "75716639"
 |`dirList`|必需。 在当前工作目录（调用编译器的目录）或公共语言运行时的系统目录中未找到引用的程序集时，编译器将在其中进行查找的由分号分隔的目录列表。 如果目录名包含空格，则将名称括在引号 (" ") 内。|  
   
 ## <a name="remarks"></a>备注  
- `-libpath` 选项指定通过 [-reference](../../../visual-basic/reference/command-line-compiler/reference.md) 选项引用的程序集的位置。  
+ `-libpath` 选项指定通过 [-reference](reference.md) 选项引用的程序集的位置。  
   
  编译器按以下顺序搜索未完全限定的程序集引用：  
   
@@ -59,5 +59,5 @@ vbc -libpath:c:\;"c:\New Assemblies" -reference:t2.dll t2.vb
 ## <a name="see-also"></a>请参阅
 
 - [.NET 中的程序集](../../../standard/assembly/index.md)
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [示例编译命令行](sample-compilation-command-lines.md)

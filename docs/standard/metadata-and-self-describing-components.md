@@ -15,12 +15,12 @@ helpviewer_keywords:
 - PE files, metadata
 - components [.NET Framework], metadata
 ms.assetid: 3dd13c5d-a508-455b-8dce-0a852882a5a7
-ms.openlocfilehash: a4f4c0e1af379d31c5b478472780d5c7de813bf6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5327bd70b05bac8970fa9802fb15e94ba5f686c8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73121938"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290053"
 ---
 # <a name="metadata-and-self-describing-components"></a>元数据和自描述组件
 
@@ -64,11 +64,11 @@ ms.locfileid: "73121938"
 
 - 特性。
 
-  .NET Framework 允许您在编译文件中声明特定种类的元数据（称为特性）。 特性在 .NET Framework 中处处可见，用于更精确地控制您的程序在运行时的行为。 另外，您可以通过用户定义的自定义特性，向 .NET Framework 文件发出您自己的自定义元数据。 有关更多信息，请参阅[特性](../../docs/standard/attributes/index.md)。
+  .NET Framework 允许您在编译文件中声明特定种类的元数据（称为特性）。 特性在 .NET Framework 中处处可见，用于更精确地控制您的程序在运行时的行为。 另外，您可以通过用户定义的自定义特性，向 .NET Framework 文件发出您自己的自定义元数据。 有关更多信息，请参阅[特性](attributes/index.md)。
 
 ## <a name="metadata-and-the-pe-file-structure"></a>元数据和 PE 文件结构
 
-元数据存储在 .NET Framework 可迁移可执行文件 (PE) 文件的一个部分中，而 Microsoft 中间语言 (MSIL) 则存储在 PE 文件的另一部分中。 文件的元数据部分包含一系列的表和堆数据结构。 MSIL 部分包含 MSIL 和引用 PE 文件元数据部分的元数据标记。 例如，使用 [MSIL 反汇编程序 (Ildasm.exe)](../../docs/framework/tools/ildasm-exe-il-disassembler.md) 等工具查看代码的 MSIL 时，可能会遇到元数据标记。
+元数据存储在 .NET Framework 可迁移可执行文件 (PE) 文件的一个部分中，而 Microsoft 中间语言 (MSIL) 则存储在 PE 文件的另一部分中。 文件的元数据部分包含一系列的表和堆数据结构。 MSIL 部分包含 MSIL 和引用 PE 文件元数据部分的元数据标记。 例如，使用 [MSIL 反汇编程序 (Ildasm.exe)](../framework/tools/ildasm-exe-il-disassembler.md) 等工具查看代码的 MSIL 时，可能会遇到元数据标记。
 
 ### <a name="metadata-tables-and-heaps"></a>元数据表和堆
 
@@ -134,7 +134,7 @@ public class MyApp
 
 当代码运行时，运行时将模块加载到内存并向元数据咨询该类的信息。 加载后，运行时对方法的 Microsoft 中间语言 (MSIL) 流执行广泛的分析，将其转换为快速本机指令。 运行时根据需要使用实时 (JIT) 编译器将 MSIL 指令转换为本机代码，每次转换一个方法。
 
-下面的示例显示了从以前代码的 `Main` 功能生成的部分 MSIL。 可使用 [MSIL 反汇编程序 (Ildasm.exe)](../../docs/framework/tools/ildasm-exe-il-disassembler.md) 从任何 .NET Framework 应用程序中查看 MSIL 和元数据。
+下面的示例显示了从以前代码的 `Main` 功能生成的部分 MSIL。 可使用 [MSIL 反汇编程序 (Ildasm.exe)](../framework/tools/ildasm-exe-il-disassembler.md) 从任何 .NET Framework 应用程序中查看 MSIL 和元数据。
 
 ```console
 .entrypoint
@@ -173,4 +173,4 @@ JIT 编译器读取整个方法的 MSIL，对其进行彻底地分析，然后�
 
 |Title|描述|
 |-----------|-----------------|
-|[特性](../../docs/standard/attributes/index.md)|描述如何应用特性、编写自定义特性及检索存储在特性中的信息。|
+|[特性](attributes/index.md)|描述如何应用特性、编写自定义特性及检索存储在特性中的信息。|

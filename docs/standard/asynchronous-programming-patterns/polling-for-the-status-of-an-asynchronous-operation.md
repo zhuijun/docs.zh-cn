@@ -10,19 +10,19 @@ helpviewer_keywords:
 - polling asynchronous operation status
 - status information [.NET Framework], asynchronous operations
 ms.assetid: b541af31-dacb-4e20-8847-1b1ff7c35363
-ms.openlocfilehash: ff9cefc73adfe1ece1bf7545c75ccb6cc618e89f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f10b4ae5617edc8cf8a38a6cbac999e10a935dc2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73123966"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291378"
 ---
 # <a name="polling-for-the-status-of-an-asynchronous-operation"></a>轮询异步操作的状态
 如果应用可以在等待异步操作结果期间继续执行其他工作，不得阻止应用一直到操作完成。 请使用下列方法之一，在应用等待异步操作完成期间继续执行指令：  
   
 - 使用异步操作的 **Begin**_OperationName_ 方法返回的 <xref:System.IAsyncResult> 的 <xref:System.IAsyncResult.IsCompleted%2A> 属性，确定操作是否已完成。 这种方法称为“轮询”，本主题介绍的就是它。  
   
-- 使用 <xref:System.AsyncCallback> 委托，在单独的线程中处理异步操作结果。 有关展示这种方法的示例，请参阅[使用 AsyncCallback 委托结束异步操作](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md)。  
+- 使用 <xref:System.AsyncCallback> 委托，在单独的线程中处理异步操作结果。 有关展示这种方法的示例，请参阅[使用 AsyncCallback 委托结束异步操作](using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md)。  
   
 ## <a name="example"></a>示例  
  下面的代码示例展示了如何使用 <xref:System.Net.Dns> 类中的异步方法，检索用户指定计算机的域名系统信息。 此示例启动异步操作，然后在控制台打印句点 (".")，直到操作完成。 请注意，对 <xref:System.Net.Dns.BeginGetHostByName%2A><xref:System.AsyncCallback> 和 <xref:System.Object> 参数传递的是 null（Visual Basic 中的 Nothing），因为使用这种方法时这些是可选参数。  
@@ -32,5 +32,5 @@ ms.locfileid: "73123966"
   
 ## <a name="see-also"></a>另请参阅
 
-- [基于事件的异步模式 (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
-- [基于事件的异步模式概述](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [基于事件的异步模式 (EAP)](event-based-asynchronous-pattern-eap.md)
+- [基于事件的异步模式概述](event-based-asynchronous-pattern-overview.md)

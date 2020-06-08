@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - synchronization primitives, SpinLock
 ms.assetid: f9af93bb-7a0d-4ba5-afe8-74f48b6b6958
-ms.openlocfilehash: eac9a1be38ea81e8ccee1d05d9061ceeb597627f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a5202be5e3055702954ad7a1565999ad2496eaea
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73106174"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291118"
 ---
 # <a name="spinlock"></a>SpinLock
 <xref:System.Threading.SpinLock> 结构是低级互斥同步基元，在等待获取锁时旋转。 在多核计算机上，如果应缩短等待时间且争用最少，那么 <xref:System.Threading.SpinLock> 的性能优于其他种类的锁。 不过，建议仅在通过分析确定 <xref:System.Threading.Monitor?displayProperty=nameWithType> 方法或 <xref:System.Threading.Interlocked> 方法显著降低程序性能时，才使用 <xref:System.Threading.SpinLock>。  
@@ -19,10 +19,10 @@ ms.locfileid: "73106174"
   
  由于 SpinLock 是值类型，因此如果希望两个副本引用的是同一个锁，必须通过引用显式传递它。  
   
- 若要详细了解如何使用此类型，请参阅 <xref:System.Threading.SpinLock?displayProperty=nameWithType>。 有关示例，请参阅[如何：使用 SpinLock 执行低级同步](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md)。  
+ 若要详细了解如何使用此类型，请参阅 <xref:System.Threading.SpinLock?displayProperty=nameWithType>。 有关示例，请参阅[如何：使用 SpinLock 执行低级同步](how-to-use-spinlock-for-low-level-synchronization.md)。  
   
- <xref:System.Threading.SpinLock> 支持*线程*-*跟踪*模式，可以在开发阶段使用此模式，有助于跟踪在特定时间保留锁的线程。 虽然线程跟踪模式对于调试非常有用，但建议在程序的发行版中禁用它，因为它可能会降低性能。 有关详细信息，请参阅[如何：在 SpinLock 中启用线程跟踪模式](../../../docs/standard/threading/how-to-enable-thread-tracking-mode-in-spinlock.md)。  
+ <xref:System.Threading.SpinLock> 支持*线程*-*跟踪*模式，可以在开发阶段使用此模式，有助于跟踪在特定时间保留锁的线程。 虽然线程跟踪模式对于调试非常有用，但建议在程序的发行版中禁用它，因为它可能会降低性能。 有关详细信息，请参阅[如何：在 SpinLock 中启用线程跟踪模式](how-to-enable-thread-tracking-mode-in-spinlock.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [线程处理对象和功能](../../../docs/standard/threading/threading-objects-and-features.md)
+- [线程处理对象和功能](threading-objects-and-features.md)

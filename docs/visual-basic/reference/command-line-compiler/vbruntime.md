@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -vbruntime compiler option [Visual Basic]
 - /vbruntime compiler option [Visual Basic]
 ms.assetid: 1aa0239e-511a-4c29-957d-fd72877b350a
-ms.openlocfilehash: 8c7789c6af7b82ecb40ecd73d09f64aa1da3fd4b
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 31b719fb7e43cdd6ac44424b359999410dd608a5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005052"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403039"
 ---
 # <a name="-vbruntime"></a>-vbruntime
 指定编译器应在不引用 Visual Basic 运行库的情况下进行编译，或在引用特定运行库的情况下进行编译。  
@@ -85,7 +85,7 @@ ms.locfileid: "72005052"
 ## <a name="referencing-a-specified-library"></a>引用指定库  
  可以使用 `path` 参数在引用自定义运行时库（而不是默认 Visual Basic 运行时库）的情况下进行编译。  
   
- 如果 `path` 参数的值是 DLL 的完全限定路径，则编译器将使用该文件作为运行时库。 如果 `path` 参数的值不是 DLL 的完全限定路径，则 Visual Basic 编译器将首先在当前文件夹中搜索标识的 DLL。 随后它将在使用 [-sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md) 编译器选项指定的路径中进行搜索。 如果未使用 `-sdkpath` 编译器选项，则编译器将在 .NET Framework 文件夹 (`%systemroot%\Microsoft.NET\Framework\versionNumber`) 中搜索标识的 DLL。  
+ 如果 `path` 参数的值是 DLL 的完全限定路径，则编译器将使用该文件作为运行时库。 如果 `path` 参数的值不是 DLL 的完全限定路径，则 Visual Basic 编译器将首先在当前文件夹中搜索标识的 DLL。 随后它将在使用 [-sdkpath](sdkpath.md) 编译器选项指定的路径中进行搜索。 如果未使用 `-sdkpath` 编译器选项，则编译器将在 .NET Framework 文件夹 (`%systemroot%\Microsoft.NET\Framework\versionNumber`) 中搜索标识的 DLL。  
   
 ## <a name="example"></a>示例  
  下面的示例演示如何使用 `-vbruntime` 选项在引用自定义库的情况下进行编译。  
@@ -97,6 +97,6 @@ vbc -vbruntime:C:\VBLibraries\CustomVBLibrary.dll
 ## <a name="see-also"></a>请参阅
 
 - [Visual Basic 核心 – Visual Studio 2010 SP1 中的新编译模式](https://devblogs.microsoft.com/vbteam/vb-core-new-compilation-mode-in-visual-studio-2010-sp1/)
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [-sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md)
+- [Visual Basic 命令行编译器](index.md)
+- [示例编译命令行](sample-compilation-command-lines.md)
+- [-sdkpath](sdkpath.md)

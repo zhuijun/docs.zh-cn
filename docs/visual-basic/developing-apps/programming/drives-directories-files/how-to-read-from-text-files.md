@@ -8,12 +8,12 @@ helpviewer_keywords:
 - examples [Visual Basic], reading text files
 - text files [Visual Basic], reading
 ms.assetid: 735fe9d7-0f7a-4185-ba02-f35e580ec4b8
-ms.openlocfilehash: 8af088ad269cc77bc5c83aedb86bde9af2e37a15
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0d99209ed123686355e8d49c82ba23f94084f895
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74334588"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411611"
 ---
 # <a name="how-to-read-from-text-files-in-visual-basic"></a>如何：在 Visual Basic 中读取文本文件
 
@@ -64,10 +64,10 @@ ms.locfileid: "74334588"
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.ReadAllText%2A>
-- [从文件读取](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [如何：读取逗号分隔的文本文件](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-comma-delimited-text-files.md)
-- [如何：读取固定宽度的文本文件](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)
-- [如何：读取具有多种格式的文本文件](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)
-- [排除故障：读取和写入文本文件](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)
-- [演练：在 Visual Basic 中操作文件和目录](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)
-- [文件编码](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)
+- [从文件读取](reading-from-files.md)
+- [如何：读取逗号分隔的文本文件](how-to-read-from-comma-delimited-text-files.md)
+- [如何：读取固定宽度的文本文件](how-to-read-from-fixed-width-text-files.md)
+- [如何：读取具有多种格式的文本文件](how-to-read-from-text-files-with-multiple-formats.md)
+- [排除故障：读取和写入文本文件](troubleshooting-reading-from-and-writing-to-text-files.md)
+- [演练：在 Visual Basic 中操作文件和目录](walkthrough-manipulating-files-and-directories.md)
+- [文件编码](file-encodings.md)

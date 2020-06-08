@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, exceptions
 ms.assetid: beb51e50-9061-4d3d-908c-56a4f7c2e8c1
-ms.openlocfilehash: aa6d4b706eb11921ffd419402bcf4cf059a29b11
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 674abcfe4477e14295f131e766a48422779391de
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021515"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290040"
 ---
 # <a name="exception-handling-task-parallel-library"></a>异常处理（任务并行库）
 
@@ -63,7 +63,7 @@ ms.locfileid: "82021515"
 
 ## <a name="exceptions-that-indicate-cooperative-cancellation"></a>指示协作取消的异常
 
-在任务中的用户代码响应取消请求时，正确的过程是引发传入在其上传达请求的取消标记中的 <xref:System.OperationCanceledException> 。 在尝试传播异常之前，任务实例会将异常中的标记与创建异常时传递给异常的标记进行比较。 如果标记相同，则任务会传播包装在 <xref:System.Threading.Tasks.TaskCanceledException> 中的 <xref:System.AggregateException>，并且将可以在检查内部异常时看到它。 但是，如果调用线程未在等待任务，则将不会传播此特定异常。 有关详细信息，请参阅[任务取消](../../../docs/standard/parallel-programming/task-cancellation.md)。
+在任务中的用户代码响应取消请求时，正确的过程是引发传入在其上传达请求的取消标记中的 <xref:System.OperationCanceledException> 。 在尝试传播异常之前，任务实例会将异常中的标记与创建异常时传递给异常的标记进行比较。 如果标记相同，则任务会传播包装在 <xref:System.Threading.Tasks.TaskCanceledException> 中的 <xref:System.AggregateException>，并且将可以在检查内部异常时看到它。 但是，如果调用线程未在等待任务，则将不会传播此特定异常。 有关详细信息，请参阅[任务取消](task-cancellation.md)。
 
 [!code-csharp[TPL_Exceptions#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_exceptions/cs/exceptions.cs#4)]
 [!code-vb[TPL_Exceptions#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_exceptions/vb/tpl_exceptions.vb#4)]
@@ -104,4 +104,4 @@ ms.locfileid: "82021515"
 
 ## <a name="see-also"></a>请参阅
 
-- [任务并行库 (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
+- [任务并行库 (TPL)](task-parallel-library-tpl.md)

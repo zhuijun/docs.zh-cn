@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - I/O [.NET Framework], enumerating directories and files
 ms.assetid: 86b69a08-3bfa-4e5f-b4e1-3b7cb8478215
-ms.openlocfilehash: 6a26d0ef529b81976c4d2caafed34bb5f08d8d46
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bcb10426175c1f2cabeec6d8d4f8d2ed74e5e3b4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75707740"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291872"
 ---
 # <a name="how-to-enumerate-directories-and-files"></a>如何：枚举目录和文件
 在处理目录和文件的大型集合时，可枚举的集合能够比数组提供更好的性能。 要枚举目录和文件，请使用可返回目录和文件名的可枚举集合的方法或其 <xref:System.IO.DirectoryInfo>、<xref:System.IO.FileInfo> 或 <xref:System.IO.FileSystemInfo> 对象。  
@@ -63,4 +63,4 @@ ms.locfileid: "75707740"
   
 ## <a name="see-also"></a>请参阅
 
-- [文件和流 I/O](../../../docs/standard/io/index.md)
+- [文件和流 I/O](index.md)

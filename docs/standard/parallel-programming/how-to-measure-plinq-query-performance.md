@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to measure performance
 ms.assetid: 491ba43b-2c10-473d-9aab-e2cb96446711
-ms.openlocfilehash: 37bd3bc464f719876b2fe13ee1a11ebca4339988
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: f240b2c275305aec5699eb42406e0689925490a8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635828"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288181"
 ---
 # <a name="how-to-measure-plinq-query-performance"></a>如何：衡量 PLINQ 查询性能
 
@@ -29,4 +29,4 @@ ms.locfileid: "80635828"
   
 ## <a name="see-also"></a>请参阅
 
-- [并行 LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
+- [并行 LINQ (PLINQ)](introduction-to-plinq.md)

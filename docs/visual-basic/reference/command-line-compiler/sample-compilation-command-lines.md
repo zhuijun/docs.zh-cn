@@ -8,12 +8,12 @@ helpviewer_keywords:
 - compiling source code [Visual Basic], from command line
 - Visual Basic compiler, sample command lines
 ms.assetid: 5bfbb487-5f47-4267-969a-39dfb917beeb
-ms.openlocfilehash: 27a20a5a3525353ffbced729b8ac9c98b3e48fc1
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 496627d3b77b0382ae7d15c8225a6fbd41f1db73
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350845"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403117"
 ---
 # <a name="sample-compilation-command-lines-visual-basic"></a>示例编译命令行 (Visual Basic)
 
@@ -38,5 +38,5 @@ Visual Basic 命令行编译器支持一组完整的选项，这些选项控制�
 
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [条件编译](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)
+- [Visual Basic 命令行编译器](index.md)
+- [条件编译](../../programming-guide/program-structure/conditional-compilation.md)

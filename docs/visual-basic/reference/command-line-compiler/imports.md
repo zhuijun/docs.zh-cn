@@ -6,12 +6,12 @@ helpviewer_keywords:
 - imports compiler option [Visual Basic]
 - -imports compiler option [Visual Basic]
 ms.assetid: 9a93fb53-c080-497b-bf9b-441022dbbc39
-ms.openlocfilehash: 2a1dd19189ff65413255b9bc137e1a7f0227bbe1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: cc9fc222843bdfe8e49d2d291dc36ff3e0c63fc2
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716651"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408590"
 ---
 # <a name="-imports-visual-basic"></a>-imports (Visual Basic)
 从指定程序集导入命名空间。  
@@ -31,7 +31,7 @@ ms.locfileid: "75716651"
 ## <a name="remarks"></a>备注  
  `-imports` 选项会导入在当前源文件集中定义的任何命名空间或是从任何引用程序集导入任何命名空间。  
   
- 使用 `-imports` 指定的命名空间中的成员可用于编译中的所有源代码文件。 使用 [Imports 语句（.NET 命名空间和类型）](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)可将命名空间用于单个源代码文件中。  
+ 使用 `-imports` 指定的命名空间中的成员可用于编译中的所有源代码文件。 使用 [Imports 语句（.NET 命名空间和类型）](../../language-reference/statements/imports-statement-net-namespace-and-type.md)可将命名空间用于单个源代码文件中。  
   
 |若在 Visual Studio 集成开发环境中设置 -imports|  
 |---|  
@@ -50,6 +50,6 @@ End Module
 
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [引用和 Imports 语句](../../../visual-basic/programming-guide/program-structure/references-and-the-imports-statement.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [引用和 Imports 语句](../../programming-guide/program-structure/references-and-the-imports-statement.md)
+- [示例编译命令行](sample-compilation-command-lines.md)

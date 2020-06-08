@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - data structures, multi-threading
 ms.assetid: bdc82f2f-4754-45a1-a81e-fe2e9c30cef9
-ms.openlocfilehash: a2271feae78100940b4ecac3c42c9bfefa7e1769
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f9c130b73044440f24b7b8bbebe9527490a165c1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73123140"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288519"
 ---
 # <a name="data-structures-for-parallel-programming"></a>用于并行编程的数据结构
 .NET Framework 版本 4 引入了几种对并行编程非常有用的新类型，包括一组并发回收类、轻型同步基元和迟缓初始化类型。 可以将这些类型与任何多线程应用代码（包括任务并行库和 PLINQ）结合使用。  
@@ -28,7 +28,7 @@ ms.locfileid: "73123140"
 |<xref:System.Collections.Concurrent.ConcurrentQueue%601?displayProperty=nameWithType>|可缩放的并发 FIFO 队列。|  
 |<xref:System.Collections.Concurrent.ConcurrentStack%601?displayProperty=nameWithType>|可缩放的并发 LIFO 堆栈。|  
   
- 有关详细信息，请参阅[线程安全集合](../../../docs/standard/collections/thread-safe/index.md)。  
+ 有关详细信息，请参阅[线程安全集合](../collections/thread-safe/index.md)。  
   
 ## <a name="synchronization-primitives"></a>同步基元  
  通过消除旧多线程处理代码中高昂的锁定机制，<xref:System.Threading?displayProperty=nameWithType> 命名空间中的新同步基元实现了细粒度并发和更快速的性能。 一些新类型（如 <xref:System.Threading.Barrier?displayProperty=nameWithType> 和 <xref:System.Threading.CountdownEvent?displayProperty=nameWithType>）在旧版 .NET Framework 中并没有对等的类型。  
@@ -37,18 +37,18 @@ ms.locfileid: "73123140"
   
 |类型|说明|  
 |----------|-----------------|  
-|<xref:System.Threading.Barrier?displayProperty=nameWithType>|通过让每个任务可以在某一点指示自己已到达，并一直阻止到部分或全部任务已到达，让多个线程可以并行处理算法。 有关详细信息，请参阅 [Barrier](../../../docs/standard/threading/barrier.md)。|  
-|<xref:System.Threading.CountdownEvent?displayProperty=nameWithType>|通过提供简单的回收机制，简化分支和联接方案。 有关详细信息，请参阅 [CountdownEvent](../../../docs/standard/threading/countdownevent.md)。|  
+|<xref:System.Threading.Barrier?displayProperty=nameWithType>|通过让每个任务可以在某一点指示自己已到达，并一直阻止到部分或全部任务已到达，让多个线程可以并行处理算法。 有关详细信息，请参阅 [Barrier](../threading/barrier.md)。|  
+|<xref:System.Threading.CountdownEvent?displayProperty=nameWithType>|通过提供简单的回收机制，简化分支和联接方案。 有关详细信息，请参阅 [CountdownEvent](../threading/countdownevent.md)。|  
 |<xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>|类似于 <xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> 的同步基元。 虽然 <xref:System.Threading.ManualResetEventSlim> 是轻型基元，但只能用于进程内通信。|  
-|<xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType>|限制可同时访问资源或资源池的线程数的同步基元。 有关详细信息，请参阅 [Semaphore 和 SemaphoreSlim](../../../docs/standard/threading/semaphore-and-semaphoreslim.md)。|  
-|<xref:System.Threading.SpinLock?displayProperty=nameWithType>|互斥锁基元，导致尝试获取锁的线程先在循环中等待或旋转  一段时间，再生成量程。 在应缩短锁等待时间的情况下，<xref:System.Threading.SpinLock> 的性能优于其他形式的锁定。 有关详细信息，请参阅 [SpinLock](../../../docs/standard/threading/spinlock.md)。|  
-|<xref:System.Threading.SpinWait?displayProperty=nameWithType>|小的轻型类型，它会旋转一段指定的时间，并最终将线程置于等待状态（如果超出旋转计数的话）。  有关详细信息，请参阅 [SpinWait](../../../docs/standard/threading/spinwait.md)。|  
+|<xref:System.Threading.SemaphoreSlim?displayProperty=nameWithType>|限制可同时访问资源或资源池的线程数的同步基元。 有关详细信息，请参阅 [Semaphore 和 SemaphoreSlim](../threading/semaphore-and-semaphoreslim.md)。|  
+|<xref:System.Threading.SpinLock?displayProperty=nameWithType>|互斥锁基元，导致尝试获取锁的线程先在循环中等待或旋转  一段时间，再生成量程。 在应缩短锁等待时间的情况下，<xref:System.Threading.SpinLock> 的性能优于其他形式的锁定。 有关详细信息，请参阅 [SpinLock](../threading/spinlock.md)。|  
+|<xref:System.Threading.SpinWait?displayProperty=nameWithType>|小的轻型类型，它会旋转一段指定的时间，并最终将线程置于等待状态（如果超出旋转计数的话）。  有关详细信息，请参阅 [SpinWait](../threading/spinwait.md)。|  
   
  有关详情，请参阅：  
   
-- [如何：使用 SpinLock 进行低级别同步](../../../docs/standard/threading/how-to-use-spinlock-for-low-level-synchronization.md)  
+- [如何：使用 SpinLock 进行低级别同步](../threading/how-to-use-spinlock-for-low-level-synchronization.md)  
   
-- [如何：使用 Barrier 同步并发操作](../../../docs/standard/threading/how-to-synchronize-concurrent-operations-with-a-barrier.md)。  
+- [如何：使用 Barrier 同步并发操作](../threading/how-to-synchronize-concurrent-operations-with-a-barrier.md)。  
   
 ## <a name="lazy-initialization-classes"></a>迟缓初始化类  
  通过迟缓初始化，除非需要，否则不分配对象内存。 迟缓初始化可以提升性能，具体是通过在整个程序生存期内均匀分布对象分配。 若要为任何自定义类型启用迟缓初始化，可以包装类型 <xref:System.Lazy%601>。  
@@ -61,13 +61,13 @@ ms.locfileid: "73123140"
 |<xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType>|每线程提供迟缓初始化值，其中每线程迟缓调用初始化函数。|  
 |<xref:System.Threading.LazyInitializer?displayProperty=nameWithType>|提供静态方法，避免出现需要分配专用迟缓初始化实例的情况。 相反，它们使用引用是为了确保目标在获得访问时已初始化。|  
   
- 若要了解详细信息，请参阅[迟缓初始化](../../../docs/framework/performance/lazy-initialization.md)  
+ 若要了解详细信息，请参阅[迟缓初始化](../../framework/performance/lazy-initialization.md)  
   
 ## <a name="aggregate-exceptions"></a>聚合异常  
- <xref:System.AggregateException?displayProperty=nameWithType> 类型可用于捕获对各个线程并发抛出的多个异常，并将它们作为一个异常返回给联接线程。 为此，<xref:System.Threading.Tasks.Task?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> 类型以及 PLINQ 大量使用 <xref:System.AggregateException>。 有关详细信息，请参阅[异常处理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)和[如何：处理 PLINQ 查询中的异常](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md)。  
+ <xref:System.AggregateException?displayProperty=nameWithType> 类型可用于捕获对各个线程并发抛出的多个异常，并将它们作为一个异常返回给联接线程。 为此，<xref:System.Threading.Tasks.Task?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Parallel?displayProperty=nameWithType> 类型以及 PLINQ 大量使用 <xref:System.AggregateException>。 有关详细信息，请参阅[异常处理](exception-handling-task-parallel-library.md)和[如何：处理 PLINQ 查询中的异常](how-to-handle-exceptions-in-a-plinq-query.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - <xref:System.Threading?displayProperty=nameWithType>
-- [并行编程](../../../docs/standard/parallel-programming/index.md)
+- [并行编程](index.md)

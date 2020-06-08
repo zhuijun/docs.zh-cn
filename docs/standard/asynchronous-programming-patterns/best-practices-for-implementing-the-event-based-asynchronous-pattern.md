@@ -12,17 +12,17 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 4acd2094-4f46-4eff-9190-92d0d9ff47db
-ms.openlocfilehash: 439b862612d7997c9277ffb2cf4f15b14bd0b106
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 66979415f2951acc78dc4eb7b2aafe3c84e85397
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78156044"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289936"
 ---
 # <a name="best-practices-for-implementing-the-event-based-asynchronous-pattern"></a>实现基于事件的异步模式的最佳做法
 基于事件的异步模式提供了一种在类中使用熟悉的事件和委托语义公开异步行为的有效方法。 若要实现基于事件的异步模式，你需要遵循某些特定的行为要求。 以下部分描述了在你实现遵循基于事件的异步模式的类时应该考虑的要求和准则。  
   
- 有关概述，请参阅[实现基于事件的异步模式](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)。  
+ 有关概述，请参阅[实现基于事件的异步模式](implementing-the-event-based-asynchronous-pattern.md)。  
   
 ## <a name="required-behavioral-guarantees"></a>必需的行为保证  
  若要实现基于事件的异步模式，你必须提供一些保证来确保类的行为正确且类的客户端能够依赖这种行为。  
@@ -73,7 +73,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 - 如果类支持多个并发调用，应让开发人员可以单独跟踪各个调用，具体操作是定义 <em>MethodName</em>Async  重载，此重载需要使用对象赋值状态参数或任务 ID（名为 `userSuppliedState`）。 此参数应始终是 <em>MethodName</em>Async  方法签名中的最后一个参数。  
   
-- 如果类定义了需要使用对象赋值状态参数或任务 ID 的 <em>MethodName</em>Async  重载，应务必使用相应任务 ID 跟踪操作的生存期，并将它 返回给完成事件处理器。 有一些用来提供帮助的帮助器类。 有关并发管理的详细信息，请参阅[如何：实现支持基于事件的异步模式的组件](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)。  
+- 如果类定义了需要使用对象赋值状态参数或任务 ID 的 <em>MethodName</em>Async  重载，应务必使用相应任务 ID 跟踪操作的生存期，并将它 返回给完成事件处理器。 有一些用来提供帮助的帮助器类。 有关并发管理的详细信息，请参阅[如何：实现支持基于事件的异步模式的组件](component-that-supports-the-event-based-asynchronous-pattern.md)。  
   
 - 如果类定义了不使用状态参数的 <em>MethodName</em>Async 方法，且它不支持多个并发调用，则应确保在先前 <em>MethodName</em>Async 调用完成前，只要尝试调用 <em>MethodName</em>Async 都会导致 <xref:System.InvalidOperationException> 抛出。  
   
@@ -127,7 +127,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
 > [!NOTE]
 > 如果你明确想违反应用程序模型的策略，但仍想获得使用基于事件的异步模式的其他好处，则你可以避开这些规则。 例如，你可能希望在 Windows 窗体中进行操作的某个类是自由线程类。 只要开发人员了解隐含的限制，你就可以创建自由线程类。 控制台应用程序不会同步 <xref:System.ComponentModel.AsyncOperation.Post%2A> 调用的执行。 这会导致按错误的顺序引发 `ProgressChanged` 事件。 如果希望序列化 <xref:System.ComponentModel.AsyncOperation.Post%2A> 调用的执行，请实现并安装 <xref:System.Threading.SynchronizationContext?displayProperty=nameWithType> 类。  
   
- 若要详细了解如何使用 <xref:System.ComponentModel.AsyncOperation> 和 <xref:System.ComponentModel.AsyncOperationManager> 启用异步操作，请参阅[如何：实现支持基于事件的异步模式的组件](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)。  
+ 若要详细了解如何使用 <xref:System.ComponentModel.AsyncOperation> 和 <xref:System.ComponentModel.AsyncOperationManager> 启用异步操作，请参阅[如何：实现支持基于事件的异步模式的组件](component-that-supports-the-event-based-asynchronous-pattern.md)。  
   
 ## <a name="guidelines"></a>准则  
   
@@ -141,7 +141,7 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
   
 - 如果你正在创建自 <xref:System.ComponentModel.Component> 派生的类，请不要实现和安装你自己的 <xref:System.Threading.SynchronizationContext> 类。 所使用的 <xref:System.Threading.SynchronizationContext> 由应用程序模型而不是组件控制。  
   
-- 当你使用任何形式的多线程时，都有可能会遇到非常严重且复杂的 Bug。 在实现任何使用多线程处理的解决方案之前，请参阅[托管线程处理最佳做法](../../../docs/standard/threading/managed-threading-best-practices.md)。  
+- 当你使用任何形式的多线程时，都有可能会遇到非常严重且复杂的 Bug。 在实现任何使用多线程处理的解决方案之前，请参阅[托管线程处理最佳做法](../threading/managed-threading-best-practices.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
@@ -150,9 +150,9 @@ private void Form1_MethodNameCompleted(object sender, MethodNameCompletedEventAr
 - <xref:System.ComponentModel.AsyncCompletedEventArgs>
 - <xref:System.ComponentModel.ProgressChangedEventArgs>
 - <xref:System.ComponentModel.BackgroundWorker>
-- [实现基于事件的异步模式](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)
-- [基于事件的异步模式 (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
-- [确定何时实现基于事件的异步模式](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md)
-- [实现基于事件的异步模式的最佳做法](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
-- [如何：使用支持基于事件的异步模式的组件](../../../docs/standard/asynchronous-programming-patterns/how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
-- [如何：实现支持基于事件的异步模式的组件](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)
+- [实现基于事件的异步模式](implementing-the-event-based-asynchronous-pattern.md)
+- [基于事件的异步模式 (EAP)](event-based-asynchronous-pattern-eap.md)
+- [确定何时实现基于事件的异步模式](deciding-when-to-implement-the-event-based-asynchronous-pattern.md)
+- [实现基于事件的异步模式的最佳做法](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
+- [如何：使用支持基于事件的异步模式的组件](how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
+- [如何：实现支持基于事件的异步模式的组件](component-that-supports-the-event-based-asynchronous-pattern.md)

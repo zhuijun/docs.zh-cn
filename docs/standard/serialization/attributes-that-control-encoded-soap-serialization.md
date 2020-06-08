@@ -9,12 +9,12 @@ helpviewer_keywords:
 - attributes [.NET Framework], XML serialization
 - serialization, attributes
 ms.assetid: 93ee258c-9c0f-4a08-897c-c10db7a00f91
-ms.openlocfilehash: 9e99856c3ac70b122c0def23e36bbc3059c5891c
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: d9a4631189d348c02ab36054257a54c9c4673018
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378463"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84289663"
 ---
 # <a name="attributes-that-control-encoded-soap-serialization"></a>用来控制编码的 SOAP 序列化的属性
 
@@ -22,7 +22,7 @@ ms.locfileid: "83378463"
 
 下表显示属性、属性的应用范围及其作用。 有关使用这些特性控制 XML 序列化的更多信息，请参阅[如何：将对象序列化为 SOAP 编码的 XML 流](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)以及[如何：替代编码的 SOAP XML 序列化](how-to-override-encoded-soap-xml-serialization.md)。
 
-有关属性的详细信息，请参阅[属性](../../../docs/standard/attributes/index.md)。
+有关属性的详细信息，请参阅[属性](../attributes/index.md)。
 
 |特性|适用对象|指定|
 |---------------|----------------|---------------|
@@ -38,7 +38,7 @@ ms.locfileid: "83378463"
 - [XML 和 SOAP 序列化](xml-and-soap-serialization.md)
 - [如何：将对象序列化为 SOAP 编码的 XML 流](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
 - [如何：替代编码的 SOAP XML 序列化](how-to-override-encoded-soap-xml-serialization.md)
-- [特性](../../../docs/standard/attributes/index.md)
+- [特性](../attributes/index.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [如何：序列化对象](how-to-serialize-an-object.md)
 - [如何：反序列化对象](how-to-deserialize-an-object.md)

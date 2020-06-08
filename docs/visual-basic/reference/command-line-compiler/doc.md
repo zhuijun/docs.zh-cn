@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -doc compiler option [Visual Basic]
 - /doc compiler option [Visual Basic]
 ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
-ms.openlocfilehash: a818fd46bd93682f0bede1d22b8cbc2ca6467a40
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 57a81983278c26090c62995f4da55c5cbfd66047
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716745"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408668"
 ---
 # <a name="-doc"></a>-doc
 将文档注释处理到一个 XML 文件中。  
@@ -40,24 +40,24 @@ or
   
  在源代码文件中，文档注释可先于以下定义：  
   
-- 用户定义类型，例如[类](../../../visual-basic/language-reference/statements/class-statement.md)或[接口](../../../visual-basic/language-reference/statements/interface-statement.md)  
+- 用户定义类型，例如[类](../../language-reference/statements/class-statement.md)或[接口](../../language-reference/statements/interface-statement.md)  
   
-- 成员，例如字段、[事件](../../../visual-basic/language-reference/statements/event-statement.md)、[属性](../../../visual-basic/language-reference/statements/property-statement.md)、[函数](../../../visual-basic/language-reference/statements/function-statement.md)或[子例程](../../../visual-basic/language-reference/statements/sub-statement.md)。  
+- 成员，例如字段、[事件](../../language-reference/statements/event-statement.md)、[属性](../../language-reference/statements/property-statement.md)、[函数](../../language-reference/statements/function-statement.md)或[子例程](../../language-reference/statements/sub-statement.md)。  
   
  若要将生成的 XML 文件与 Visual Studio [IntelliSense](/visualstudio/ide/using-intellisense) 功能配合使用，请将 XML 文件的文件名设为与要支持的程序集相同的名称。 确保 XML 文件与程序集位于同一目录中，以便在 Visual Studio 项目中引用此程序集时，也可以找到 .xml 文件。 IntelliSense 不需要 XML 文档文件来处理项目内或项目引用的项目中的代码。  
   
  除非使用 `-target:module` 进行编译，否则 XML 文件包含标记 `<assembly></assembly>`。 这些标记指定包含编译输出文件的程序集清单的文件的名称。  
   
- 有关从代码中的注释生成文档的方法，请参阅 [XML 注释标记](../../../visual-basic/language-reference/xmldoc/index.md)。  
+ 有关从代码中的注释生成文档的方法，请参阅 [XML 注释标记](../../language-reference/xmldoc/index.md)。  
   
 |在 Visual Studio 集成开发环境中设置 -doc|  
 |---|  
 |1.在 **“解决方案资源管理器”** 中选择一个项目。 在“项目”菜单上，单击“属性”   。 <br />2.单击“编译”  选项卡。<br />3.在“生成 XML 文档文件”  框中设置值。|  
   
 ## <a name="example"></a>示例  
- 有关示例，请参阅[使用 XML 来记录代码](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)。  
+ 有关示例，请参阅[使用 XML 来记录代码](../../programming-guide/program-structure/documenting-your-code-with-xml.md)。  
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [使用 XML 记录代码](../../../visual-basic/programming-guide/program-structure/documenting-your-code-with-xml.md)
+- [Visual Basic 命令行编译器](index.md)
+- [使用 XML 记录代码](../../programming-guide/program-structure/documenting-your-code-with-xml.md)

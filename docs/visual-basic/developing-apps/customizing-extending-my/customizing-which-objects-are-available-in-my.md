@@ -5,12 +5,12 @@ helpviewer_keywords:
 - My namespace [Visual Basic], customizing
 - My namespace
 ms.assetid: 4e8279c2-ed5b-4681-8903-8a6671874000
-ms.openlocfilehash: 0387aca08e3a31b0a2045369919894d88caf5b76
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5245c129281bc8c7c1c6fe9215a221889380a901
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74330307"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410213"
 ---
 # <a name="customizing-which-objects-are-available-in-my-visual-basic"></a>自定义 My 中可用的对象 (Visual Basic)
 
@@ -78,10 +78,10 @@ ms.locfileid: "74330307"
 - <xref:Microsoft.VisualBasic.Devices.Computer>
 - <xref:Microsoft.VisualBasic.Logging.Log>
 - <xref:Microsoft.VisualBasic.ApplicationServices.User>
-- [My 对项目类型的依赖方式](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)
-- [条件编译](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)
-- [-define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)
-- [My.Forms 对象](../../../visual-basic/language-reference/objects/my-forms-object.md)
-- [My.Request 对象](../../../visual-basic/language-reference/objects/my-request-object.md)
-- [My.Response 对象](../../../visual-basic/language-reference/objects/my-response-object.md)
-- [My.WebServices 对象](../../../visual-basic/language-reference/objects/my-webservices-object.md)
+- [My 对项目类型的依赖方式](../development-with-my/how-my-depends-on-project-type.md)
+- [条件编译](../../programming-guide/program-structure/conditional-compilation.md)
+- [-define (Visual Basic)](../../reference/command-line-compiler/define.md)
+- [My.Forms 对象](../../language-reference/objects/my-forms-object.md)
+- [My.Request 对象](../../language-reference/objects/my-request-object.md)
+- [My.Response 对象](../../language-reference/objects/my-response-object.md)
+- [My.WebServices 对象](../../language-reference/objects/my-webservices-object.md)

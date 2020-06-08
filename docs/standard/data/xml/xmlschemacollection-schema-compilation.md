@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 76f28770-7126-428f-9ed5-7b5ae8bad5ee
-ms.openlocfilehash: af6df3729f1bd926e9a47cc5b9d9bf460c8e1225
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 3d517652665d6d0693e141d623483ff8946bbbf4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159281"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290235"
 ---
 # <a name="xmlschemacollection-schema-compilation"></a>XmlSchemaCollection 架构编译
 XmlSchemaCollection  是可用于存储和验证 XML 数据缩减 (XDR) 和 XML 架构定义语言 (XSD) 架构的缓存或库。 XmlSchemaCollection  在内存中缓存架构，而不是通过文件或 URL 访问架构，从而提升了性能。  
@@ -20,7 +20,7 @@ XmlSchemaCollection  是可用于存储和验证 XML 数据缩减 (XDR) 和 XML 
 > 尽管 XmlSchemaCollection  类存储 XDR 架构和 XML 架构，但任何需要使用或返回 XmlSchema  对象的方法和属性都只支持 XML 架构。  
   
 > [!IMPORTANT]
-> 现在，<xref:System.Xml.Schema.XmlSchemaCollection> 类已过时，已由 <xref:System.Xml.Schema.XmlSchemaSet> 类所取代。 若要详细了解 <xref:System.Xml.Schema.XmlSchemaSet> 类，请参阅[用于编译架构的 XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)。  
+> 现在，<xref:System.Xml.Schema.XmlSchemaCollection> 类已过时，已由 <xref:System.Xml.Schema.XmlSchemaSet> 类所取代。 若要详细了解 <xref:System.Xml.Schema.XmlSchemaSet> 类，请参阅[用于编译架构的 XmlSchemaSet](xmlschemaset-for-schema-compilation.md)。  
   
 ## <a name="add-schemas-to-the-collection"></a>向集合中添加架构  
  架构是使用 XmlSchemaCollection  的 Add  方法在集合中加载，此时架构与命名空间 URI 相关联。 对于 XML 架构，命名空间 URI 通常是该架构的目标命名空间。 对于 XDR 架构，命名空间 URI 是在将架构添加到集合时指定的命名空间。  
@@ -57,5 +57,5 @@ vr.Schemas.Add(xsc);
   
 ## <a name="see-also"></a>请参阅
 
-- [使用 XmlSchemaCollection 进行 XDR 验证](../../../../docs/standard/data/xml/xdr-validation-with-xmlschemacollection.md)
-- [使用 XmlSchemaCollection 进行 XML 架构 (XSD) 验证](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemacollection.md)
+- [使用 XmlSchemaCollection 进行 XDR 验证](xdr-validation-with-xmlschemacollection.md)
+- [使用 XmlSchemaCollection 进行 XML 架构 (XSD) 验证](xml-schema-xsd-validation-with-xmlschemacollection.md)

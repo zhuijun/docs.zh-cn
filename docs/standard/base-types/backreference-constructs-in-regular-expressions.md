@@ -12,12 +12,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, backreference constructs
 - regular expressions, backreference constructs
 ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
-ms.openlocfilehash: 905578d763ebe5d5b8eb96a9056fbe11fbfab137
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 87c3dbde2eb2b5a19b91f34bb2b088af5c0d1827
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75711527"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290599"
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a>正则表达式中的反向引用构造
 
@@ -26,7 +26,7 @@ ms.locfileid: "75711527"
 > [!NOTE]
 > 单独语法用于引用替换字符串中命名的和带编号的捕获组。 有关更多信息，请参见 [替代](substitutions-in-regular-expressions.md)。
 
-.NET 定义引用编号和命名捕获组的单独语言元素。 若要详细了解捕获组，请参阅[分组构造](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)。
+.NET 定义引用编号和命名捕获组的单独语言元素。 若要详细了解捕获组，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
 
 ## <a name="numbered-backreferences"></a>带编号的反向引用
 
@@ -138,4 +138,4 @@ ms.locfileid: "75711527"
 
 ## <a name="see-also"></a>另请参阅
 
-- [正则表达式语言 - 快速参考](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [正则表达式语言 - 快速参考](regular-expression-language-quick-reference.md)

@@ -5,15 +5,15 @@ helpviewer_keywords:
 - highentropyva compiler option (Visual Basic)
 - /highentropyva compiler option (Visual Basic)
 ms.assetid: ff25f20a-6ca2-467b-9e52-5cf439f5028e
-ms.openlocfilehash: 7934dcaada4675bf687624bef5ed1ea25e842832
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 9501ea46eb13baa171208e20d0c9645d118c4301
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344242"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408616"
 ---
 # <a name="-highentropyva-visual-basic"></a>-highentropyva (Visual Basic)
-指示 64 位可执行文件或由 [-platform:anycpu](../../../visual-basic/reference/command-line-compiler/platform.md) 编译器选项标记的可执行文件是否支持高熵地址空间布局随机化 (ASLR)。  
+指示 64 位可执行文件或由 [-platform:anycpu](platform.md) 编译器选项标记的可执行文件是否支持高熵地址空间布局随机化 (ASLR)。  
   
 ## <a name="syntax"></a>语法  
   
@@ -32,5 +32,5 @@ ms.locfileid: "74344242"
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [示例编译命令行](sample-compilation-command-lines.md)

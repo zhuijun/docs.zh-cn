@@ -3,12 +3,12 @@ title: 内存中 XML 数据处理
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 1bbb4d05-ead7-4bda-8ece-f86d35c57ad4
-ms.openlocfilehash: 038bcfcb9d40ee6087efa3487b6f27f252393f2c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 06863d162a9f9fbf67f41cb12ea4fbb1935b424d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710422"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291274"
 ---
 # <a name="processing-xml-data-in-memory"></a>内存中 XML 数据处理
 Microsoft .NET Framework 包括三种用于处理 XML 数据的模型：<xref:System.Xml.XmlDocument> 类、<xref:System.Xml.XPath.XPathDocument> 类，以及 [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) 和 [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)。  
@@ -20,14 +20,14 @@ Microsoft .NET Framework 包括三种用于处理 XML 数据的模型：<xref:Sy
  [LINQ to XML](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) 是.NET Framework 3.5 版中引入的用于处理 XML 数据的模型。 这是利用[语言集成查询 (LINQ)](../../../csharp/programming-guide/concepts/linq/index.md) 的内存中模型。 LINQ 扩展 C# 和 Visual Basic 的语言语法以提供新的查询功能。  
   
 ## <a name="in-this-section"></a>本节内容  
- [使用 DOM 模型处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)  
+ [使用 DOM 模型处理 XML 数据](process-xml-data-using-the-dom-model.md)  
  讨论如何使用 <xref:System.Xml.XmlDocument> 及其相关的类来处理 XML 数据。  
   
- [使用 XPath 数据模型处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+ [使用 XPath 数据模型处理 XML 数据](process-xml-data-using-the-xpath-data-model.md)  
  讨论如何使用 <xref:System.Xml.XPath.XPathDocument>、<xref:System.Xml.XmlDocument> 和 <xref:System.Xml.XPath.XPathNavigator> 类来处理 XML 数据。  
   
- [使用 LINQ to XML 处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-linq-to-xml.md)  
+ [使用 LINQ to XML 处理 XML 数据](process-xml-data-using-linq-to-xml.md)  
  简要概述 LINQ to XML 并提供到 LINQ to XML 文档的链接。  
   
 ## <a name="related-sections"></a>相关章节  
- [XML 文档和数据](../../../../docs/standard/data/xml/index.md)
+ [XML 文档和数据](index.md)

@@ -7,16 +7,16 @@ helpviewer_keywords:
 - rapid application development (RAD), My.Forms
 - rapid application development (RAD), My.WebServices
 ms.assetid: de930027-9108-4f0c-b97c-5e7db4d6ef79
-ms.openlocfilehash: d06df4bd023892429b2aaefdd624398a6546d06d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 847724450ee2bc8bc591371f71171e8ba4ed9337
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74330205"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411735"
 ---
 # <a name="default-object-instances-provided-by-myforms-and-mywebservices-visual-basic"></a>My.Forms 和 My.WebServices 提供的默认对象实例 (Visual Basic)
 
-[My.Forms](../../../visual-basic/language-reference/objects/my-forms-object.md) 和 [My.WebServices](../../../visual-basic/language-reference/objects/my-webservices-object.md) 对象提供对应用程序使用的窗体、数据源和 XML Web Service 的访问权限。 它们通过提供其中每个对象的默认实例  的集合来实现此目的。  
+[My.Forms](../../language-reference/objects/my-forms-object.md) 和 [My.WebServices](../../language-reference/objects/my-webservices-object.md) 对象提供对应用程序使用的窗体、数据源和 XML Web Service 的访问权限。 它们通过提供其中每个对象的默认实例  的集合来实现此目的。  
   
 ## <a name="default-instances"></a>默认实例  
 
@@ -30,6 +30,6 @@ ms.locfileid: "74330205"
   
 ## <a name="see-also"></a>请参阅
 
-- [My.Forms 对象](../../../visual-basic/language-reference/objects/my-forms-object.md)
-- [My.WebServices 对象](../../../visual-basic/language-reference/objects/my-webservices-object.md)
-- [My 对项目类型的依赖方式](../../../visual-basic/developing-apps/development-with-my/how-my-depends-on-project-type.md)
+- [My.Forms 对象](../../language-reference/objects/my-forms-object.md)
+- [My.WebServices 对象](../../language-reference/objects/my-webservices-object.md)
+- [My 对项目类型的依赖方式](how-my-depends-on-project-type.md)

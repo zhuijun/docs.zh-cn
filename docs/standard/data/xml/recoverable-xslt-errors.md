@@ -3,12 +3,12 @@ title: 可恢复的 XSLT 错误
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 484929b0-fefb-4629-87ee-ebdde70ff1f8
-ms.openlocfilehash: e3ff86cc80887d14fdffe50f256409cb70ff2d88
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: ada0b352cd867417ed3ecf86291df023ca7c579e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710370"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289091"
 ---
 # <a name="recoverable-xslt-errors"></a>可恢复的 XSLT 错误
 W3C XSL 转换 (XSLT) 1.0 版建议中涉及到实现提供者可以在哪些方面确定如何处理某种情况。 这些方面被认为是任意行为。 例如，在第 7.3 节“Creating Processing Instructions”中，XSLT 1.0 建议指出，如果实例化 `xsl:processing-instruction` 的内容会创建文本节点以外的节点，则会发生错误。 对于某些问题，XSLT 1.0 建议指示在处理器决定从错误中恢复时应做的决策。 对于 7.3 节中给出的问题，W3C 指出，实现可以通过忽略节点及其内容来从此错误中恢复。  
@@ -50,8 +50,8 @@ W3C XSL 转换 (XSLT) 1.0 版建议中涉及到实现提供者可以在哪些方
 |`value` 的 `xsl:number` 属性为 NAN、无限大或小于 0.5。|errata 24|恢复|  
 |文档函数的第二个自变量 node-set 为空，且 URI 引用是相对的。|errata 14|恢复|  
   
- <sup>*</sup> 此行为与 <xref:System.Xml.Xsl.XslTransform> 类的行为不同。 有关详细信息，请参阅[在 XslTransform 类中实现任意行为](../../../../docs/standard/data/xml/implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)。  
+ <sup>*</sup> 此行为与 <xref:System.Xml.Xsl.XslTransform> 类的行为不同。 有关详细信息，请参阅[在 XslTransform 类中实现任意行为](implementation-of-discretionary-behaviors-in-the-xsltransform-class.md)。  
   
 ## <a name="see-also"></a>请参阅
 
-- [XSLT 转换](../../../../docs/standard/data/xml/xslt-transformations.md)
+- [XSLT 转换](xslt-transformations.md)

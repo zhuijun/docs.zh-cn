@@ -6,12 +6,12 @@ helpviewer_keywords:
 - keycontainer compiler option [Visual Basic]
 - /keycontainer compiler option [Visual Basic]
 ms.assetid: 6a9bc861-1752-4db1-9f64-b5252f0482cc
-ms.openlocfilehash: be2ad1416e801398fb513593c7f3828e5488bfaf
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 575b337c262fbb36a9e118aa293916c296cc2db3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005523"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408557"
 ---
 # <a name="-keycontainer"></a>-keycontainer
 指定密钥对的密钥容器名称从而为程序集赋予强名称。  
@@ -31,11 +31,11 @@ ms.locfileid: "72005523"
 ## <a name="remarks"></a>备注  
  通过将公钥插入到程序集清单并且用私钥签名最终程序集，编译器可创建可共享的组件。 若要生成密钥文件，请在命令行键入 `sn -k file`。 `-i` 选项将密钥对安装到容器中。 有关详细信息，请参阅 [Sn.exe（强名称工具）](../../../framework/tools/sn-exe-strong-name-tool.md)。  
   
- 如果使用 `-target:module` 进行编译，密钥文件的名称将保存在模块中，并在使用 [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) 编译程序集时包含到创建的程序集中。  
+ 如果使用 `-target:module` 进行编译，密钥文件的名称将保存在模块中，并在使用 [-addmodule](addmodule.md) 编译程序集时包含到创建的程序集中。  
   
  还可以将此选项指定为任何 Microsoft 中间语言 (MSIL) 模块的源代码中的自定义特性 (<xref:System.Reflection.AssemblyKeyNameAttribute>)。  
   
- 此外，可使用 [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md) 将加密信息传递给编译器。 如果需要部分签名的程序集，请使用 [-delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md)。  
+ 此外，可使用 [-keyfile](keyfile.md) 将加密信息传递给编译器。 如果需要部分签名的程序集，请使用 [-delaysign](delaysign.md)。  
   
  有关对程序集签名的详细信息，请参阅[创建和使用具有强名称的程序集](../../../standard/assembly/create-use-strong-named.md)。  
   
@@ -52,6 +52,6 @@ vbc -keycontainer:key1 input.vb
 ## <a name="see-also"></a>请参阅
 
 - [.NET 中的程序集](../../../standard/assembly/index.md)
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [-keyfile](keyfile.md)
+- [示例编译命令行](sample-compilation-command-lines.md)

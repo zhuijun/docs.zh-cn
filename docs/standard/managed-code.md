@@ -4,12 +4,12 @@ description: 了解托管代码为何是其执行由运行时（公共语言运�
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 20bb7ea8-192e-4a96-8ef3-e10e1950fd3d
-ms.openlocfilehash: 9133859bd9c999e076effcf0d4d631c59db02f33
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2d89fd48e4c05dc7ec7c27846a3580ee36b1886f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "61910112"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290079"
 ---
 # <a name="what-is-managed-code"></a>什么是“托管代码”？
 
@@ -38,5 +38,5 @@ ms.locfileid: "61910112"
 ## <a name="more-resources"></a>更多资源
 
 * [.NET Framework 概述](../framework/get-started/overview.md)
-* [不安全代码和指针](../../docs/csharp/programming-guide/unsafe-code-pointers/index.md)
+* [不安全代码和指针](../csharp/programming-guide/unsafe-code-pointers/index.md)
 * [本机互操作性](./native-interop/index.md)
