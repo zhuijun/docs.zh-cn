@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, how to cancel
 ms.assetid: 08574301-8331-4719-ad50-9cf7f6ff3048
-ms.openlocfilehash: 4e0e783a4dfe3bf3a55795d7baef461369d7405a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ca6b5f10840d935aa45cb660da86685d1c90554b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73134205"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290027"
 ---
 # <a name="how-to-cancel-a-task-and-its-children"></a>如何：取消任务及其子级
 这些示例展示了如何执行下列任务：  
@@ -34,7 +34,7 @@ ms.locfileid: "73134205"
  [!code-csharp[TPL_Cancellation#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_cancellation/cs/cancel1.cs#04)]
  [!code-vb[TPL_Cancellation#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_cancellation/vb/cancel1.vb#04)]  
   
- <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> 类与基于 <xref:System.Threading.CancellationTokenSource?displayProperty=nameWithType> 和 <xref:System.Threading.CancellationToken?displayProperty=nameWithType> 类型的取消模型完全集成。 有关详细信息，请参阅[托管线程中的取消](../../../docs/standard/threading/cancellation-in-managed-threads.md)和[任务取消](../../../docs/standard/parallel-programming/task-cancellation.md)。  
+ <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> 类与基于 <xref:System.Threading.CancellationTokenSource?displayProperty=nameWithType> 和 <xref:System.Threading.CancellationToken?displayProperty=nameWithType> 类型的取消模型完全集成。 有关详细信息，请参阅[托管线程中的取消](../threading/cancellation-in-managed-threads.md)和[任务取消](task-cancellation.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
@@ -42,6 +42,6 @@ ms.locfileid: "73134205"
 - <xref:System.Threading.CancellationToken?displayProperty=nameWithType>
 - <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>
 - <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>
-- [基于任务的异步编程](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)
-- [附加和分离的子任务](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)
-- [PLINQ 和 TPL 中的 Lambda 表达式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)
+- [基于任务的异步编程](task-based-asynchronous-programming.md)
+- [附加和分离的子任务](attached-and-detached-child-tasks.md)
+- [PLINQ 和 TPL 中的 Lambda 表达式](lambda-expressions-in-plinq-and-tpl.md)

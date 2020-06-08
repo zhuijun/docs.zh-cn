@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /errorreport compiler option [Visual Basic]
 - errorreport compiler option [Visual Basic]
 ms.assetid: a7fe83a2-a6d8-460c-8dad-79a8f433f501
-ms.openlocfilehash: a9741f7a8283f8603e02dae5abea151c6ee5d75e
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: b6a1c8fce17e3e5a54366c2ff4dff4e6aa668f56
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775667"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408655"
 ---
 # <a name="-errorreport"></a>-errorreport
 
@@ -38,9 +38,9 @@ ms.locfileid: "72775667"
 |`send`|若出现内部编译器错误，并且计算机和用户策略设置允许此操作，编译器会将数据发送给 Microsoft。<br /><br /> 若 [Windows 错误报告](/windows/desktop/wer/windows-error-reporting)系统设置启用了报告，选项 `-errorreport:send` 会尝试自动将错误信息发送给 Microsoft。 |
 |`none`|若出现内部编译器错误，不会收集它，也不会将其发送给 Microsoft。|
 
-出现错误时，编译器会发送数据，其中包括通常会包含部分源代码的堆栈。 若将 `-errorreport` 与 [-bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md) 选项配合使用，将发送完整的源文件。
+出现错误时，编译器会发送数据，其中包括通常会包含部分源代码的堆栈。 若将 `-errorreport` 与 [-bugreport](bugreport.md) 选项配合使用，将发送完整的源文件。
 
-此选项最适合与 [-bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md) 选项配合使用，因为这样 Microsoft 工程师即可以轻松地重现错误。
+此选项最适合与 [-bugreport](bugreport.md) 选项配合使用，因为这样 Microsoft 工程师即可以轻松地重现错误。
 
 > [!NOTE]
 > `-errorreport` 选项在 Visual Studio 开发环境内无法使用；仅当从命令行编译时才可用。
@@ -55,6 +55,6 @@ vbc -errorreport:prompt t2.vb
 
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [-bugreport](../../../visual-basic/reference/command-line-compiler/bugreport.md)
+- [Visual Basic 命令行编译器](index.md)
+- [示例编译命令行](sample-compilation-command-lines.md)
+- [-bugreport](bugreport.md)

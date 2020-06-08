@@ -12,12 +12,12 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-ms.openlocfilehash: bf352d6494a823d4f7b24eb2876d9bffa5877b2b
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 8c742c855234bfd9653bb57036c41e7ccce66295
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242772"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289286"
 ---
 # <a name="regular-expression-options"></a>正则表达式选项
 
@@ -49,14 +49,14 @@ ms.locfileid: "81242772"
   [!code-csharp[Conceptual.Regex.Language.Options#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#6)]
   [!code-vb[Conceptual.Regex.Language.Options#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#6)]
 
-- 通过在包含语法 `(?imnsx-imnsx)` 的正则表达式模式中应用内联选项。 该选项从选项定义为模式末尾的点应用于该模式，或应用于另一内联选项未定义选项的点。 请注意，<xref:System.Text.RegularExpressions.Regex> 实例的 <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> 属性不会反映这些内联选项。 有关详细信息，请参阅[其他构造](../../../docs/standard/base-types/miscellaneous-constructs-in-regular-expressions.md)主题。
+- 通过在包含语法 `(?imnsx-imnsx)` 的正则表达式模式中应用内联选项。 该选项从选项定义为模式末尾的点应用于该模式，或应用于另一内联选项未定义选项的点。 请注意，<xref:System.Text.RegularExpressions.Regex> 实例的 <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType> 属性不会反映这些内联选项。 有关详细信息，请参阅[其他构造](miscellaneous-constructs-in-regular-expressions.md)主题。
 
   下面的示例进行了这方面的演示。 在标识以字母“d”开头的单词时，它使用内联选项来启用不区分大小写匹配和忽略模式空白。
 
   [!code-csharp[Conceptual.Regex.Language.Options#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#7)]
   [!code-vb[Conceptual.Regex.Language.Options#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#7)]
 
-- 通过在包含语法 `(?imnsx-imnsx:`subexpression  `)` 的正则表达式模式的特定分组构造中，应用内联选项。 一组选项前面没有符号用于打开该设置；一组选项前面的减号用于关闭该设置。 （无论选项是启用还是禁用，`?` 都是所需的语言构造语法的固定部分。）选项只应用于该组。 有关详细信息，请参阅[分组构造](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)。
+- 通过在包含语法 `(?imnsx-imnsx:`subexpression  `)` 的正则表达式模式的特定分组构造中，应用内联选项。 一组选项前面没有符号用于打开该设置；一组选项前面的减号用于关闭该设置。 （无论选项是启用还是禁用，`?` 都是所需的语言构造语法的固定部分。）选项只应用于该组。 有关详细信息，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
 
   下面的示例进行了这方面的演示。 在标识以字母“d”开头的单词时，它使用分组构造中的内联选项来启用不区分大小写匹配和忽略模式空白。
 
@@ -298,7 +298,7 @@ ms.locfileid: "81242772"
 [!code-csharp[Conceptual.Regex.Language.Options#17](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/righttoleft1.cs#17)]
 [!code-vb[Conceptual.Regex.Language.Options#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/righttoleft1.vb#17)]
 
-另请注意，预测先行断言（`(?=`subexpression  `)` 语言元素）和回顾后发断言（`(?<=`subexpression  `)` 语言元素）不会更改方向。 预测先行断言向右搜索；回顾后发断言向左搜索。 例如，正则表达式 `(?<=\d{1,2}\s)\w+,?\s\d{4}` 使用回顾后发断言测试月份名称前面的日期。 然后该正则表达式匹配月份和年份。 有关预测先行和回顾后发断言的信息，请参阅[分组构造](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)。
+另请注意，预测先行断言（`(?=`subexpression  `)` 语言元素）和回顾后发断言（`(?<=`subexpression  `)` 语言元素）不会更改方向。 预测先行断言向右搜索；回顾后发断言向左搜索。 例如，正则表达式 `(?<=\d{1,2}\s)\w+,?\s\d{4}` 使用回顾后发断言测试月份名称前面的日期。 然后该正则表达式匹配月份和年份。 有关预测先行和回顾后发断言的信息，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
 
 [!code-csharp[Conceptual.Regex.Language.Options#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/righttoleft2.cs#18)]
 [!code-vb[Conceptual.Regex.Language.Options#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/righttoleft2.vb#18)]
@@ -324,7 +324,7 @@ ms.locfileid: "81242772"
 
 ECMAScript 和规范化正则表达式的行为在三个方面不同：字符类语法、自引用捕获组和八进制与反向引用的解释。
 
-- 字符类语法。 因为规范的正则表达式支持 Unicode，却不支持 ECMAScript，ECMAScript 中的字符类具有一个受限更多的语法且某些字符类语言元素具有不同的含义。 例如，ECMAScript 不支持语言元素（例如 Unicode 类别或块元素 `\p` 和 `\P`）。 同样，使用 ECMAScript 时，与单词字符匹配的 `\w` 元素等效于 `[a-zA-Z_0-9]` 字符类，使用规范化行为时，该元素等效于 `[\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]`。 有关更多信息，请参见 [字符类](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)。
+- 字符类语法。 因为规范的正则表达式支持 Unicode，却不支持 ECMAScript，ECMAScript 中的字符类具有一个受限更多的语法且某些字符类语言元素具有不同的含义。 例如，ECMAScript 不支持语言元素（例如 Unicode 类别或块元素 `\p` 和 `\P`）。 同样，使用 ECMAScript 时，与单词字符匹配的 `\w` 元素等效于 `[a-zA-Z_0-9]` 字符类，使用规范化行为时，该元素等效于 `[\p{Ll}\p{Lu}\p{Lt}\p{Lo}\p{Nd}\p{Pc}\p{Lm}]`。 有关更多信息，请参见 [字符类](character-classes-in-regular-expressions.md)。
 
   下面的示例阐释了规范化与 ECMAScript 模式匹配之间的差异。 它定义了正则表达式 `\b(\w+\s*)+`，该表达式与后跟空白字符的单词匹配。 由两个字符串组成的输入，其中一个字符串使用拉丁字符集，另一个则使用西里尔字符集。 如输出所示，对使用 ECMAScript 匹配的 <xref:System.Text.RegularExpressions.Regex.IsMatch%28System.String%2CSystem.String%2CSystem.Text.RegularExpressions.RegexOptions%29?displayProperty=nameWithType> 方法的调用无法与西里尔文的单词匹配，而使用规范化匹配的方法调用与这些单词匹配。
 
@@ -363,7 +363,7 @@ ECMAScript 和规范化正则表达式的行为在三个方面不同：字符类
 [!code-vb[Conceptual.Regex.Language.Options#14](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/culture1.vb#14)]
 
 > [!NOTE]
-> 有关区分大小写和使用固定区域性的字符串比较的更多信息，请参见[针对使用字符串的最佳做法](../../../docs/standard/base-types/best-practices-strings.md)。
+> 有关区分大小写和使用固定区域性的字符串比较的更多信息，请参见[针对使用字符串的最佳做法](best-practices-strings.md)。
 
 不使用当前区域性的不区分大小写比较，可以指定 <xref:System.Text.RegularExpressions.RegexOptions.CultureInvariant?displayProperty=nameWithType> 选项忽略语言的区域性差异，并使用固定区域性的约定。
 
@@ -377,4 +377,4 @@ ECMAScript 和规范化正则表达式的行为在三个方面不同：字符类
 
 ## <a name="see-also"></a>请参阅
 
-- [正则表达式语言 - 快速参考](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [正则表达式语言 - 快速参考](regular-expression-language-quick-reference.md)

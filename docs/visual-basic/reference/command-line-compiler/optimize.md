@@ -7,12 +7,12 @@ helpviewer_keywords:
 - optimization [Visual Basic], enabling
 - -optimize compiler option [Visual Basic]
 ms.assetid: fcba4a97-3622-4b87-a891-0f77deab4998
-ms.openlocfilehash: e8daf4a49123623b6470bc3c6281869f1b9b3d0f
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 337cb794ef9a405a178f1998cbe27b5da7709382
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005367"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397436"
 ---
 # <a name="-optimize"></a>-optimize
 启用或禁用编译器优化。  
@@ -32,7 +32,7 @@ ms.locfileid: "72005367"
 ## <a name="remarks"></a>备注  
  编译器优化会使输出文件更智能、更快并且更有效。 但是，由于优化会导致输出文件中的代码重排，因此 `-optimize+` 可能会增加调试的难度。  
   
- 使用 `-target:module` 为程序集生成的所有模块都必须使用与程序集相同的 `-optimize` 设置。 有关详细信息，请参阅 [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)。  
+ 使用 `-target:module` 为程序集生成的所有模块都必须使用与程序集相同的 `-optimize` 设置。 有关详细信息，请参阅 [-target (Visual Basic)](target.md)。  
   
  可以组合 `-optimize` 和 `-debug` 选项。  
   
@@ -49,7 +49,7 @@ vbc t2.vb -optimize
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-debug (Visual Basic)](../../../visual-basic/reference/command-line-compiler/debug.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
+- [Visual Basic 命令行编译器](index.md)
+- [-debug (Visual Basic)](debug.md)
+- [示例编译命令行](sample-compilation-command-lines.md)
+- [-target (Visual Basic)](target.md)

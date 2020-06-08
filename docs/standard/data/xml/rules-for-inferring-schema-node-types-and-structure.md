@@ -3,12 +3,12 @@ title: 推断架构节点类型和结构的规则
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: d74ce896-717d-4871-8fd9-b070e2f53cb0
-ms.openlocfilehash: 6d66384dea7018bcc3b2dd8fde96f4fa2653f8e8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 381c5fbd3823514de98b38840b8259a417e48fb8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710240"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289078"
 ---
 # <a name="rules-for-inferring-schema-node-types-and-structure"></a>推断架构节点类型和结构的规则
 本主题介绍架构推断过程如何将 XML 文档中的节点类型转换为 XML 架构定义语言 (XSD) 结构。  
@@ -35,12 +35,12 @@ ms.locfileid: "75710240"
 > [!NOTE]
 > 所有 `complexType` 声明均推断为匿名类型。 唯一推断的全局元素是根元素；所有其他元素都是局部元素。  
   
- 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)。  
+ 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](inferring-schemas-from-xml-documents.md)。  
   
 ### <a name="simple-typed-element"></a>简单类型化的元素  
  下表显示 <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> 方法的 XML 输入以及生成的 XML 架构。 粗体的元素显示为简单类型元素推断的架构。  
   
- 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)。  
+ 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](inferring-schemas-from-xml-documents.md)。  
   
 |XML|架构|  
 |---------|------------|  
@@ -49,7 +49,7 @@ ms.locfileid: "75710240"
 ### <a name="empty-element"></a>空元素  
  下表显示 <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> 方法的 XML 输入以及生成的 XML 架构。 粗体的元素显示为空元素推断的架构。  
   
- 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)。  
+ 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](inferring-schemas-from-xml-documents.md)。  
   
 |XML|架构|  
 |---------|------------|  
@@ -58,7 +58,7 @@ ms.locfileid: "75710240"
 ### <a name="empty-element-with-attributes"></a>具有属性的空元素  
  下表显示 <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> 方法的 XML 输入以及生成的 XML 架构。 粗体的元素显示为具有属性的空元素推断的架构。  
   
- 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)。  
+ 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](inferring-schemas-from-xml-documents.md)。  
   
 |XML|架构|  
 |---------|------------|  
@@ -67,7 +67,7 @@ ms.locfileid: "75710240"
 ### <a name="element-with-attributes-and-simple-content"></a>具有属性和简单内容的元素  
  下表显示 <xref:System.Xml.Schema.XmlSchemaInference.InferSchema%2A> 方法的 XML 输入以及生成的 XML 架构。 粗体的元素显示为具有属性和简单内容的元素推断的架构。  
   
- 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)。  
+ 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](inferring-schemas-from-xml-documents.md)。  
   
 |XML|架构|  
 |---------|------------|  
@@ -79,7 +79,7 @@ ms.locfileid: "75710240"
 > [!NOTE]
 > 即使元素只有一个子元素，仍作为一系列子元素对待。  
   
- 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)。  
+ 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](inferring-schemas-from-xml-documents.md)。  
   
 |XML|架构|  
 |---------|------------|  
@@ -91,7 +91,7 @@ ms.locfileid: "75710240"
 > [!NOTE]
 > 即使元素只有一个子元素，仍作为一系列子元素对待。  
   
- 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)。  
+ 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](inferring-schemas-from-xml-documents.md)。  
   
 |XML|架构|  
 |---------|------------|  
@@ -103,7 +103,7 @@ ms.locfileid: "75710240"
 > [!NOTE]
 > 在推断出的架构中，`maxOccurs` 元素的 `xs:choice` 属性设置为 `"unbounded"`。  
   
- 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)。  
+ 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](inferring-schemas-from-xml-documents.md)。  
   
 |XML|架构|  
 |---------|------------|  
@@ -115,7 +115,7 @@ ms.locfileid: "75710240"
 > [!NOTE]
 > 在推断出的架构中，`maxOccurs` 元素的 `xs:choice` 属性设置为 `"unbounded"`。  
   
- 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)。  
+ 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](inferring-schemas-from-xml-documents.md)。  
   
 |XML|架构|  
 |---------|------------|  
@@ -142,12 +142,12 @@ ms.locfileid: "75710240"
 |文档类型|已忽略。|  
 |命名空间|已忽略。|  
   
- 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)。  
+ 若要详细了解架构推理进程，请参阅[从 XML 文档推理架构](inferring-schemas-from-xml-documents.md)。  
   
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.Schema.XmlSchemaInference>
-- [XML 架构对象模型 (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
-- [推断 XML 架构](../../../../docs/standard/data/xml/inferring-an-xml-schema.md)
-- [从 XML 文档推断架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)
-- [推断简单类型的规则](../../../../docs/standard/data/xml/rules-for-inferring-simple-types.md)
+- [XML 架构对象模型 (SOM)](xml-schema-object-model-som.md)
+- [推断 XML 架构](inferring-an-xml-schema.md)
+- [从 XML 文档推断架构](inferring-schemas-from-xml-documents.md)
+- [推断简单类型的规则](rules-for-inferring-simple-types.md)

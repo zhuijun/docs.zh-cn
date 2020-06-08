@@ -8,12 +8,12 @@ helpviewer_keywords:
 - UploadFile method [Visual Basic]
 - My.Computer.Network.UploadFile method
 ms.assetid: a8b37924-c523-4fd3-b5ca-cb0074df29cd
-ms.openlocfilehash: 52b731606c74ab7ff06a42dfdbe078616ba33d88
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cee6811d6b6d295c28eb683c5d2f7bcbb5fe94ab
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345560"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401805"
 ---
 # <a name="how-to-upload-a-file-in-visual-basic"></a>如何：在 Visual Basic 中上传文件
 
@@ -51,5 +51,5 @@ ms.locfileid: "74345560"
 
 - <xref:Microsoft.VisualBasic.Devices.Network?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>
-- [如何：下载文件](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)
-- [如何：分析文件路径](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [如何：下载文件](how-to-download-a-file.md)
+- [如何：分析文件路径](../drives-directories-files/how-to-parse-file-paths.md)

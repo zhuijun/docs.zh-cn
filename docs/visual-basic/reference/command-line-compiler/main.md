@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /main compiler option [Visual Basic]
 - -main compiler option [Visual Basic]
 ms.assetid: 83fc339d-6652-415d-b205-b5133319b5b0
-ms.openlocfilehash: 91f2a27ed9b6fb296dbb9e50fc488fd012311890
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 5530da4c784346df4a1088998b8d2027feee08e3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005503"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403156"
 ---
 # <a name="-main"></a>-main
 指定包含 `Sub Main` 过程的类或模块。  
@@ -29,7 +29,7 @@ ms.locfileid: "72005503"
 ## <a name="remarks"></a>备注  
  创建可执行文件或 Windows 可执行程序时，请使用此选项。 如果省略“-main”  选项，编译器将在所有公共类和模块中搜索有效的共享 `Sub Main`。  
   
- 有关 `Main` 过程的各种形式的讨论，请参阅 [Visual Basic 中的 Main 过程](../../../visual-basic/programming-guide/program-structure/main-procedure.md)。  
+ 有关 `Main` 过程的各种形式的讨论，请参阅 [Visual Basic 中的 Main 过程](../../programming-guide/program-structure/main-procedure.md)。  
   
  如果 `location` 是从 <xref:System.Windows.Forms.Form> 继承的类，则编译器将提供一个默认的 `Main` 过程，该过程在类没有 `Main` 过程的情况下启动应用程序。 这使你可以在开发环境中创建的命令行上编译代码。  
   
@@ -54,7 +54,7 @@ vbc t2.vb t3.vb -main:Test2
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Visual Basic 中的 Main 过程](../../../visual-basic/programming-guide/program-structure/main-procedure.md)
+- [Visual Basic 命令行编译器](index.md)
+- [-target (Visual Basic)](target.md)
+- [示例编译命令行](sample-compilation-command-lines.md)
+- [Visual Basic 中的 Main 过程](../../programming-guide/program-structure/main-procedure.md)

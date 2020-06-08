@@ -18,12 +18,12 @@ helpviewer_keywords:
 - comparing strings
 - strings [.NET Framework],comparing
 ms.assetid: b9f0bf53-e2de-4116-8ce9-d4f91a1df4f7
-ms.openlocfilehash: 0fb7ec8d9de8fae7a0443984511e538d38d93c7a
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 28c1397c71debeed181acb2c1acb01b0f8cee7c9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441001"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289360"
 ---
 # <a name="best-practices-for-using-strings-in-net"></a>有关使用 .NET 中字符串的最佳做法
 
@@ -309,7 +309,7 @@ InvariantCulture: a + ̊ = å
 当给用户显示非字符串数据（如数字、日期和时间）时，使用用户的区域性设置来格式化他们。 默认情况下，以下所有内容都在格式设置操作中使用当前线程区域性：
 
 - [C#](../../csharp/language-reference/tokens/interpolated.md) 和 [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) 编译器支持的内插字符串。
-- 字符串串联操作，它使用 [C#](../../csharp/language-reference/operators/addition-operator.md#string-concatenation) 或 [Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md ) 串联运算符或直接调用 <xref:System.String.Concat%2A?displayProperty=nameWithType> 方法。
+- 字符串串联操作，它使用 [C#](../../csharp/language-reference/operators/addition-operator.md#string-concatenation) 或 [Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md) 串联运算符或直接调用 <xref:System.String.Concat%2A?displayProperty=nameWithType> 方法。
 - <xref:System.String.Format%2A?displayProperty=nameWithType> 方法。
 - 数值类型的 `ToString` 方法以及日期和时间类型。
 

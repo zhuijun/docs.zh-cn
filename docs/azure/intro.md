@@ -2,12 +2,12 @@
 title: Azure 和 .NET 入门
 description: 学习了解 Azure 和 .NET 所需的基础知识。
 ms.date: 03/15/2020
-ms.openlocfilehash: 64defed4433647c2a0dcce91493d9ec77d21b541
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: d57d1d50852c9d7fff099554bd64c48c15129bb4
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607881"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446387"
 ---
 # <a name="introduction-to-azure-and-net"></a>Azure 和 .NET 简介
 
@@ -77,5 +77,5 @@ Azure 提供多种服务，方便你根据自己的需求存储数据。 .NET �
 
 * [将第一个 ASP.NET Core Web 应用部署到 Azure](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet)
 * [了解在用于 .NET 的 Azure SDK 中进行的身份验证](./sdk/authentication.md)
-* [Diagnose errors in your cloud apps](https://blogs.msdn.microsoft.com/webdev/2018/02/07/diagnosing-errors-on-your-cloud-apps)（诊断云应用中的错误）
+* [Diagnose errors in your cloud apps](https://devblogs.microsoft.com/aspnet/diagnosing-errors-on-your-cloud-apps/)（诊断云应用中的错误）
 * 下载免费电子书：[Azure Quick Start Guide for .NET Developers](https://www.microsoft.com/net/download/thank-you/azure-quick-start-ebook)（面向 .NET 开发人员的 Azure 快速入门指南）

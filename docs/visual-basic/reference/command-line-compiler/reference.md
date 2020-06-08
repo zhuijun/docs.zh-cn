@@ -9,12 +9,12 @@ helpviewer_keywords:
 - reference compiler option [Visual Basic]
 - -r compiler option [Visual Basic]
 ms.assetid: 66bdfced-bbf6-43d1-a554-bc0990315737
-ms.openlocfilehash: 35e02d1ad4409e754c2466f7d0ae7e68214772e6
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 633b457106203e213f5d30003e576b7e8132f4d2
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716694"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84400482"
 ---
 # <a name="-reference-visual-basic"></a>-reference (Visual Basic)
 使编译器让指定程序集中的类型信息可供当前正在编译的项目使用。  
@@ -38,7 +38,7 @@ or
 |`fileList`|必需。 程序集文件名的逗号分隔列表。 如果文件名包含空格，则将名称括在引号内。|  
   
 ## <a name="remarks"></a>备注  
- 导入的文件必须包含程序集元数据。 仅公共类型在程序集外部可见。 [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) 选项从模块导入元数据。  
+ 导入的文件必须包含程序集元数据。 仅公共类型在程序集外部可见。 [-addmodule](addmodule.md) 选项从模块导入元数据。  
   
  如果引用的程序集（程序集 A）引用了另一个程序集（程序集 B），那么在下列情况下需要引用程序集 B：  
   
@@ -46,7 +46,7 @@ or
   
 - 调用具有程序集 B 中的返回类型或参数类型的字段、属性、事件或方法。  
   
- 使用 [-libpath](../../../visual-basic/reference/command-line-compiler/libpath.md) 指定一个或多个程序集引用所在的目录。  
+ 使用 [-libpath](libpath.md) 指定一个或多个程序集引用所在的目录。  
   
  为了使编译器能够识别程序集（而非模块）中的类型，必须强制其解析该类型。 如何执行此操作的一个示例是定义类型的实例。 还可以使用其他方法来为编译器解析程序集中的类型名称。 例如，如果从程序集中的类型继承，则编译器将知道类型名称。  
   
@@ -63,8 +63,8 @@ vbc -reference:metad1.dll,metad2.dll -out:out.exe input.vb
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)
-- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
-- [Public](../../../visual-basic/language-reference/modifiers/public.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [-noconfig](noconfig.md)
+- [-target (Visual Basic)](target.md)
+- [Public](../../language-reference/modifiers/public.md)
+- [示例编译命令行](sample-compilation-command-lines.md)

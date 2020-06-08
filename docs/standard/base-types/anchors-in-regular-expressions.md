@@ -16,12 +16,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, anchors
 - .NET Framework regular expressions, atomic zero-width assertions
 ms.assetid: 336391f6-2614-499b-8b1b-07a6837108a7
-ms.openlocfilehash: c4853a6854f5da1a3217c976a03ddbde3b528560
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e86bae8a687e89acba9a0b713630b43809f081d1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159658"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290624"
 ---
 # <a name="anchors-in-regular-expressions"></a>正则表达式中的定位点
 定位点（原子零宽度断言）指定字符串中必须出现匹配的位置。 在搜索表达式中使用定位点时，正则表达式引擎不在字符串中前进或使用字符，它仅在指定位置查找匹配。 例如， `^` 指定必须从行或字符串的开头开始匹配。 因此，正则表达式 `^http:` 仅当 "http:" 出现在行开头时才与之匹配。 下表列出了 .NET 中正则表达式支持的定位点。  
@@ -38,7 +38,7 @@ ms.locfileid: "78159658"
 |`\B`|匹配不得出现在字边界上。 有关详细信息，请参阅 [非字边界](#non-word-boundary-b)。|  
 
 ## <a name="start-of-string-or-line-"></a>字符串或行的开头：^  
- 默认情况下，`^` 定位点指定以下模式必须从字符串的第一个字符位置开始。 如果结合使用 `^` 与 <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> 选项（请参阅[正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)），匹配必须出现在每行的开头。  
+ 默认情况下，`^` 定位点指定以下模式必须从字符串的第一个字符位置开始。 如果结合使用 `^` 与 <xref:System.Text.RegularExpressions.RegexOptions.Multiline?displayProperty=nameWithType> 选项（请参阅[正则表达式选项](regular-expression-options.md)），匹配必须出现在每行的开头。  
   
  以下示例在正则表达式中使用 `^` 定位点，可提取有关某些职业棒球队存在年限的信息。 该示例调用 <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> 方法的两个重载：  
   
@@ -119,7 +119,7 @@ ms.locfileid: "78159658"
 |`,?`|匹配文本逗号字符的零个或一个匹配项。|
 
 ## <a name="word-boundary-b"></a>字边界：\b  
- `\b` 定位符指定匹配必须出现单词字符（ `\w` 语言元素）和非单词字符（ `\W` 语言元素）之间的边界上。 单词字符包括字母数字字符和下划线；非单词字符包括不为字母数字字符或下划线的任何字符。 （有关详细信息，请参阅[字符类](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)。）匹配也可以出现在字符串开头或结尾处的单词边界上。  
+ `\b` 定位符指定匹配必须出现单词字符（ `\w` 语言元素）和非单词字符（ `\W` 语言元素）之间的边界上。 单词字符包括字母数字字符和下划线；非单词字符包括不为字母数字字符或下划线的任何字符。 （有关详细信息，请参阅[字符类](character-classes-in-regular-expressions.md)。）匹配也可以出现在字符串开头或结尾处的单词边界上。  
   
  `\b` 定位点经常用于确保子表达式与整个单词而不仅与单词的开头或结尾匹配。 以下示例中的正则表达式 `\bare\w*\b` 阐释了这种用法。 它与任何以子字符串“are”开头的单词匹配。 该示例的输出也阐释了 `\b` 与输入字符串的开头和结尾均匹配。  
   
@@ -153,5 +153,5 @@ ms.locfileid: "78159658"
   
 ## <a name="see-also"></a>请参阅
 
-- [正则表达式语言 - 快速参考](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
-- [正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)
+- [正则表达式语言 - 快速参考](regular-expression-language-quick-reference.md)
+- [正则表达式选项](regular-expression-options.md)

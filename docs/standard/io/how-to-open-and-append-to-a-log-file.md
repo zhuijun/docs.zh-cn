@@ -11,12 +11,12 @@ helpviewer_keywords:
 - log files, appending to
 - I/O [.NET Framework], log files
 ms.assetid: 74423362-1721-49cb-aa0a-e04005f72a06
-ms.openlocfilehash: a549aba3a763bcfc5a3889efd65e2495eca7622c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 025c35344b9262e1f2fa6da87b68e46e21a54222
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78155706"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291820"
 ---
 # <a name="how-to-open-and-append-to-a-log-file"></a>如何：打开并追加到日志文件
 <xref:System.IO.StreamWriter> 和 <xref:System.IO.StreamReader> 对流执行字符写入和读取操作。 下面的代码示例打开 log.txt 文件以供输入，或创建该文件（如果尚无文件的话），并将日志信息追加到文件末尾  。 然后，示例将文件内容写入标准输出以供显示。
@@ -37,10 +37,10 @@ ms.locfileid: "78155706"
 - <xref:System.IO.File.AppendText%2A?displayProperty=nameWithType>  
 - <xref:System.IO.File.OpenText%2A?displayProperty=nameWithType>  
 - <xref:System.IO.StreamReader.ReadLine%2A?displayProperty=nameWithType>  
-- [如何：枚举目录和文件](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)  
-- [如何：对新建的数据文件进行读取和写入](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)  
-- [如何：从文件中读取文本](../../../docs/standard/io/how-to-read-text-from-a-file.md)  
-- [如何：将文本写入文件](../../../docs/standard/io/how-to-write-text-to-a-file.md)  
-- [如何：从字符串中读取字符](../../../docs/standard/io/how-to-read-characters-from-a-string.md)  
-- [如何：向字符串写入字符](../../../docs/standard/io/how-to-write-characters-to-a-string.md)  
-- [文件和流 I/O](../../../docs/standard/io/index.md)
+- [如何：枚举目录和文件](how-to-enumerate-directories-and-files.md)  
+- [如何：对新建的数据文件进行读取和写入](how-to-read-and-write-to-a-newly-created-data-file.md)  
+- [如何：从文件中读取文本](how-to-read-text-from-a-file.md)  
+- [如何：将文本写入文件](how-to-write-text-to-a-file.md)  
+- [如何：从字符串中读取字符](how-to-read-characters-from-a-string.md)  
+- [如何：向字符串写入字符](how-to-write-characters-to-a-string.md)  
+- [文件和流 I/O](index.md)

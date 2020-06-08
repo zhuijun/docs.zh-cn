@@ -15,19 +15,19 @@ helpviewer_keywords:
 - format providers [.NET Framework]
 - custom format strings
 ms.assetid: a281bfbf-6596-45ed-a2d6-3782d535ada2
-ms.openlocfilehash: 5345c90d966ea9ce0a0bbf6c884b8d8abc8b5fa7
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: d12899fff7d9e6cb63728ba0b160b70fa2a41a1a
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523940"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290508"
 ---
 # <a name="how-to-define-and-use-custom-numeric-format-providers"></a>如何：定义和使用自定义数值格式提供程序
 .NET Framework 使你可以全面控制数值的字符串表示形式。 它支持用于自定义数值格式的以下功能：  
   
-- 标准数字格式字符串，提供一组预定义格式以用于将数字转换为其字符串表示形式。 可以将它们与包含 `format` 参数的任何数字格式设置方法（如 <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>）结合使用。 有关详细信息，请参阅[标准数字格式字符串](../../../docs/standard/base-types/standard-numeric-format-strings.md)。  
+- 标准数字格式字符串，提供一组预定义格式以用于将数字转换为其字符串表示形式。 可以将它们与包含 `format` 参数的任何数字格式设置方法（如 <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>）结合使用。 有关详细信息，请参阅[标准数字格式字符串](standard-numeric-format-strings.md)。  
   
-- 自定义数字格式字符串，提供一组可以进行组合以定义自定义数字格式说明符的符号。 它们还可以与包含 `format` 参数的任何数字格式设置方法（如 <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>）结合使用。 有关详细信息，请参阅[自定义数字格式字符串](../../../docs/standard/base-types/custom-numeric-format-strings.md)。  
+- 自定义数字格式字符串，提供一组可以进行组合以定义自定义数字格式说明符的符号。 它们还可以与包含 `format` 参数的任何数字格式设置方法（如 <xref:System.Decimal.ToString%28System.String%29?displayProperty=nameWithType>）结合使用。 有关详细信息，请参阅[自定义数字格式字符串](custom-numeric-format-strings.md)。  
   
 - 自定义 <xref:System.Globalization.CultureInfo> 或 <xref:System.Globalization.NumberFormatInfo> 对象，定义用于显示数值的字符串表示形式的符号和格式模式。 可以将它们与包含 `provider` 参数的任何数字格式设置方法（如 <xref:System.Int32.ToString%2A>）结合使用。 `provider` 参数通常用于指定区域性专用格式设置。  
   

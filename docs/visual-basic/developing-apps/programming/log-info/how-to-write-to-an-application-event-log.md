@@ -7,12 +7,12 @@ helpviewer_keywords:
 - My.Computer.EventLog element
 - event logs, writing to
 ms.assetid: cadbc8c1-87af-4746-934e-55b79a4f6e2b
-ms.openlocfilehash: 511bb8fb16851872c1a16ae7627ed0fc6594337c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 298d6d85f8b21176b72db8e676617577eb03fada
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74352050"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410031"
 ---
 # <a name="how-to-write-to-an-application-event-log-visual-basic"></a>如何：写入应用程序事件日志 (Visual Basic)
 
@@ -59,11 +59,11 @@ ms.locfileid: "74352050"
     将 `APPLICATION_NAME` 替换为应用程序的名称。
 
     > [!NOTE]
-    > 通常情况下，应用程序只将错误信息写入事件日志。 有关筛选日志输出的信息，请参阅 [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)。
+    > 通常情况下，应用程序只将错误信息写入事件日志。 有关筛选日志输出的信息，请参阅 [Walkthrough: Filtering My.Application.Log Output](walkthrough-filtering-my-application-log-output.md)。
 
 ## <a name="to-write-event-information-to-the-event-log"></a>将事件信息写入事件日志
 
-使用 `My.Application.Log.WriteEntry` 或 `My.Application.Log.WriteException` 方法可以将信息写入事件日志。 有关详细信息，请参阅[如何：编写日志消息](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)和[如何：记录异常](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)。
+使用 `My.Application.Log.WriteEntry` 或 `My.Application.Log.WriteException` 方法可以将信息写入事件日志。 有关详细信息，请参阅[如何：编写日志消息](how-to-write-log-messages.md)和[如何：记录异常](how-to-log-exceptions.md)。
 
 为程序集配置事件日志侦听器后，它将接收该程序集写入 `My.Application.Log` 的所有消息。
 
@@ -72,6 +72,6 @@ ms.locfileid: "74352050"
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
-- [使用应用程序日志](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [如何：日志异常](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
-- [演练：确定 My.Application.Log 写入信息的位置](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [使用应用程序日志](working-with-application-logs.md)
+- [如何：日志异常](how-to-log-exceptions.md)
+- [演练：确定 My.Application.Log 写入信息的位置](walkthrough-determining-where-my-application-log-writes-information.md)

@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic Application Model, extending
 ms.assetid: e91d3bed-4c27-40e3-871d-2be17467c72c
-ms.openlocfilehash: 46c18ab540c90c4147514685c2acc824755b435f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: e707f034f05aababdc70d5d6e1f9e1da0ed558bc
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976862"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410226"
 ---
 # <a name="extending-the-visual-basic-application-model"></a>扩展 Visual Basic 应用程序模型
 
@@ -102,5 +102,5 @@ Visual Basic 应用程序模型还提供 <xref:Microsoft.VisualBasic.Application
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.UnhandledException>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.NetworkAvailabilityChanged>
-- [Visual Basic 应用程序模型概述](../../../visual-basic/developing-apps/development-with-my/overview-of-the-visual-basic-application-model.md)
+- [Visual Basic 应用程序模型概述](../development-with-my/overview-of-the-visual-basic-application-model.md)
 - [“项目设计器”->“应用程序”页 (Visual Basic)](/visualstudio/ide/reference/application-page-project-designer-visual-basic)

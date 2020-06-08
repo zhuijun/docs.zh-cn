@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - parallel programming, pitfalls
 ms.assetid: 1e357177-e699-4b8f-9e49-56d3513ed128
-ms.openlocfilehash: ff6ac9e8c41ee203ae72e1b28c088f462ddf6a54
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 00b4c89440223d229a06b0192032c9abcf931d58
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73140029"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291690"
 ---
 # <a name="potential-pitfalls-in-data-and-task-parallelism"></a>数据并行和任务并行中的潜在缺陷
 在许多情况下，与普通的顺序循环相比，<xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> 可以显著提升性能。 但是，对循环进行并行化的工作增加了复杂性，可能会导致在顺序代码中出现不常见或根本不会遇到的问题。 本主题列出了一些在编写并行循环时要避免的做法。  
@@ -22,7 +22,7 @@ ms.locfileid: "73140029"
  在某些情况下，并行循环可能比它等效的顺序循环的运行速度更慢。 基本的经验法则是具有较少迭代和快速用户委托的并行循环未必会快很多。 但是，由于性能会涉及到很多因素，因此我们建议始终衡量实际的结果。  
   
 ## <a name="avoid-writing-to-shared-memory-locations"></a>避免写入共享内存位置  
- 在顺序代码中，从静态变量或类字段中读取或写入静态变量或类字段的情况很常见。 但是，每当多个线程同时访问此类变量时，则很有可能会出现争用条件。 即使可以使用锁来同步对变量的访问，但同步开销可能会对性能造成损害。 因此，我们建议尽可能地避免在一个并行循环中访问共享状态，或至少限制对共享状态的访问。 为此，最好使用 <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> 的重载，以便在循环执行期间使用 <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> 变量存储线程本地状态。 有关详细信息，请参阅[如何：编写具有线程局部变量的 Parallel.For 循环](../../../docs/standard/parallel-programming/how-to-write-a-parallel-for-loop-with-thread-local-variables.md)和[如何：使用分区本地变量编写 Parallel.ForEach 循环](../../../docs/standard/parallel-programming/how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md)。  
+ 在顺序代码中，从静态变量或类字段中读取或写入静态变量或类字段的情况很常见。 但是，每当多个线程同时访问此类变量时，则很有可能会出现争用条件。 即使可以使用锁来同步对变量的访问，但同步开销可能会对性能造成损害。 因此，我们建议尽可能地避免在一个并行循环中访问共享状态，或至少限制对共享状态的访问。 为此，最好使用 <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Parallel.ForEach%2A?displayProperty=nameWithType> 的重载，以便在循环执行期间使用 <xref:System.Threading.ThreadLocal%601?displayProperty=nameWithType> 变量存储线程本地状态。 有关详细信息，请参阅[如何：编写具有线程局部变量的 Parallel.For 循环](how-to-write-a-parallel-for-loop-with-thread-local-variables.md)和[如何：使用分区本地变量编写 Parallel.ForEach 循环](how-to-write-a-parallel-foreach-loop-with-partition-local-variables.md)。  
   
 ## <a name="avoid-over-parallelization"></a>避免过度并行化  
  通过使用并行循环，将会产生对源集合进行分区和同步工作线程的开销成本。 计算机上的处理器数量进一步限制了并行化的优点。 仅在一个处理器上运行多个受计算限制的线程时，速度并不会得到提升。 因此，必须要小心，不要对循环进行过度并行化。  
@@ -80,6 +80,6 @@ ms.locfileid: "73140029"
   
 ## <a name="see-also"></a>请参阅
 
-- [并行编程](../../../docs/standard/parallel-programming/index.md)
-- [PLINQ 的潜在问题](../../../docs/standard/parallel-programming/potential-pitfalls-with-plinq.md)
+- [并行编程](index.md)
+- [PLINQ 的潜在问题](potential-pitfalls-with-plinq.md)
 - [并行编程模式：了解并使用 .NET Framework 4 应用并行模式](https://www.microsoft.com/download/details.aspx?id=19222)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - rapid application development (RAD), My.Settings
 - My.Resources object [Visual Basic], developing applications
 ms.assetid: 68284ab1-b685-4814-a2a4-01ae40445ff8
-ms.openlocfilehash: ce9a5bf76ba3132f58aa40227a145d8b5bf1591d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6c53d11a3830a5a8a2cb898728bed8694a226686
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349267"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84411663"
 ---
 # <a name="rapid-application-development-with-myresources-and-mysettings-visual-basic"></a>使用 My.Resources 和 My.Settings 快速开发应用程序 (Visual Basic)
 
@@ -26,10 +26,10 @@ ms.locfileid: "74349267"
   
  `My.Resources` 对象只公开全局资源。 它不提供对与窗体关联的资源文件的访问权限。 必须从窗体访问窗体资源。  
   
- 同样，`My.Settings` 对象提供对应用程序设置的访问，并允许你动态地存储和检索应用程序的属性设置和其他信息。 有关详细信息，请参阅 [My.Resources 对象](../../../visual-basic/language-reference/objects/my-resources-object.md)和 [My.Settings 对象](../../../visual-basic/language-reference/objects/my-settings-object.md)。  
+ 同样，`My.Settings` 对象提供对应用程序设置的访问，并允许你动态地存储和检索应用程序的属性设置和其他信息。 有关详细信息，请参阅 [My.Resources 对象](../../language-reference/objects/my-resources-object.md)和 [My.Settings 对象](../../language-reference/objects/my-settings-object.md)。  
   
 ## <a name="see-also"></a>请参阅
 
-- [My.Resources 对象](../../../visual-basic/language-reference/objects/my-resources-object.md)
-- [My.Settings 对象](../../../visual-basic/language-reference/objects/my-settings-object.md)
-- [访问应用程序设置](../../../visual-basic/developing-apps/programming/app-settings/index.md)
+- [My.Resources 对象](../../language-reference/objects/my-resources-object.md)
+- [My.Settings 对象](../../language-reference/objects/my-settings-object.md)
+- [访问应用程序设置](../programming/app-settings/index.md)

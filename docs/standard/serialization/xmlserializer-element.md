@@ -7,12 +7,12 @@ helpviewer_keywords:
 - XML serialization, configuration
 - xmlSerializer element
 ms.assetid: d129d10c-3eb7-45d9-8098-5fa853825e47
-ms.openlocfilehash: 68037959893ec307a896ea86d21e40a9d7aa824c
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 667d59f7eb0d1c7682afcdda584cc5b0ca2da802
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380025"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84288922"
 ---
 # <a name="xmlserializer-element"></a>\<xmlSerializer> 元素
 指定是否完成 <xref:System.Xml.Serialization.XmlSerializer> 进度的额外检查。  
@@ -43,7 +43,7 @@ ms.locfileid: "83380025"
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<system.xml.serialization> 元素](../../../docs/standard/serialization/system-xml-serialization-element.md)|包含 <xref:System.Xml.Serialization.XmlSerializer> 和 <xref:System.Xml.Serialization.XmlSchemaImporter> 类的配置设置。|  
+|[\<system.xml.serialization> 元素](system-xml-serialization-element.md)|包含 <xref:System.Xml.Serialization.XmlSerializer> 和 <xref:System.Xml.Serialization.XmlSchemaImporter> 类的配置设置。|  
   
 ## <a name="remarks"></a>备注  
  默认情况下，当反序列化不受信任的数据时，<xref:System.Xml.Serialization.XmlSerializer> 会额外提供一层防范潜在拒绝服务攻击的安全保护。 它通过在反序列化期间尝试检测无限循环来实现以上保护。 若检测到此类情况，将引发异常，并出现以下消息：“内部错误: 反序列化无法越过基础流。”  
@@ -64,5 +64,5 @@ ms.locfileid: "83380025"
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [\<system.xml.serialization> 元素](../../../docs/standard/serialization/system-xml-serialization-element.md)
-- [XML 和 SOAP 序列化](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [\<system.xml.serialization> 元素](system-xml-serialization-element.md)
+- [XML 和 SOAP 序列化](xml-and-soap-serialization.md)

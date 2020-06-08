@@ -12,12 +12,12 @@ helpviewer_keywords:
 - characters, matching syntax
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-ms.openlocfilehash: 07bd63c90bc8d78c9831e2007695a232a85111b1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 85107bf2234eda1705126e524acd5b35952094bc
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159333"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84292093"
 ---
 # <a name="character-classes-in-regular-expressions"></a>正则表达式中的字符类
 
@@ -58,7 +58,7 @@ ms.locfileid: "78159333"
 
 `[*character_group*]`
 
- 其中，*character_group* 是单个字符的列表，这些字符可出现在输入字符串中以便成功匹配。 character  _group 可以包含一个或多个文本字符、[转义字符](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)或字符类的任意组合。  
+ 其中，*character_group* 是单个字符的列表，这些字符可出现在输入字符串中以便成功匹配。 character  _group 可以包含一个或多个文本字符、[转义字符](character-escapes-in-regular-expressions.md)或字符类的任意组合。  
   
  用于指定字符范围的语法如下：  
   
@@ -114,7 +114,7 @@ ms.locfileid: "78159333"
 
 `[*^character_group*]`
 
- 其中，*character_group* 是单个字符的列表，这些字符不可出现在输入字符串中以便成功匹配。 character  _group 可以包含一个或多个文本字符、[转义字符](../../../docs/standard/base-types/character-escapes-in-regular-expressions.md)或字符类的任意组合。  
+ 其中，*character_group* 是单个字符的列表，这些字符不可出现在输入字符串中以便成功匹配。 character  _group 可以包含一个或多个文本字符、[转义字符](character-escapes-in-regular-expressions.md)或字符类的任意组合。  
   
  用于指定字符范围的语法如下：  
 
@@ -158,7 +158,7 @@ ms.locfileid: "78159333"
 ## <a name="any-character-"></a>任意字符：.  
  句点字符 (.) 匹配除 `\n`（换行符 \u000A）之外的任何字符，有以下两个限制：  
   
-- 如果通过 <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> 选项修改正则表达式模式，或者通过 `.` 选项修改包含 `s` 字符类的模式的部分，则 `.` 可匹配任何字符。 有关详细信息，请参阅 [正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)。  
+- 如果通过 <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> 选项修改正则表达式模式，或者通过 `.` 选项修改包含 `s` 字符类的模式的部分，则 `.` 可匹配任何字符。 有关详细信息，请参阅 [正则表达式选项](regular-expression-options.md)。  
   
      下面的示例阐释了默认情况下以及使用 `.` 选项的情况下 <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> 字符类的不同的行为。 正则表达式 `^.+` 在字符串开头开始并匹配每个字符。 默认情况下，匹配在第一行的结尾结束；正则表达式模式匹配回车符、`\r` 或 \u000D，但不匹配 `\n`。 由于 <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> 选项将整个输入字符串解释为单行，因此它匹配输入字符串中的每个字符，包括 `\n`。  
   
@@ -174,7 +174,7 @@ ms.locfileid: "78159333"
      [!code-vb[Conceptual.RegEx.Language.CharacterClasses#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/any1.vb#4)]  
   
 > [!NOTE]
-> 由于它匹配任何字符，因此当正则表达式模式尝试多次匹配任何字符时，`.` 语言元素通常会与惰性限定符一起使用。 有关更多信息，请参见 [数量词](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)。  
+> 由于它匹配任何字符，因此当正则表达式模式尝试多次匹配任何字符时，`.` 语言元素通常会与惰性限定符一起使用。 有关更多信息，请参见 [数量词](quantifiers-in-regular-expressions.md)。  
   
 <a name="CategoryOrBlock"></a>
 ## <a name="unicode-category-or-unicode-block-p"></a>Unicode 类别或 Unicode 块：\p{}  
@@ -237,10 +237,10 @@ ms.locfileid: "78159333"
 |Nd|数字，十进制数|  
 |Pc|标点，连接符。 此类别包含 10 个字符，最常用的字符是 LOWLINE 字符 (_)，u+005F。|  
   
- 如果指定了符合 ECMAScript 的行为，则 `\w` 等效于 `[a-zA-Z_0-9]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
+ 如果指定了符合 ECMAScript 的行为，则 `\w` 等效于 `[a-zA-Z_0-9]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
   
 > [!NOTE]
-> 由于它匹配任何单词字符，因此当正则表达式模式尝试多次匹配任何单词字符且后跟特定单词字符时，`\w` 语言元素通常会与惰性限定符一起使用。 有关更多信息，请参见 [数量词](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)。  
+> 由于它匹配任何单词字符，因此当正则表达式模式尝试多次匹配任何单词字符且后跟特定单词字符时，`\w` 语言元素通常会与惰性限定符一起使用。 有关更多信息，请参见 [数量词](quantifiers-in-regular-expressions.md)。  
   
  下面的示例使用 `\w` 语言元素来匹配单词中的重复字符。 该示例定义可按如下方式解释的正则表达式模式 `(\w)\1`。  
   
@@ -271,10 +271,10 @@ ms.locfileid: "78159333"
 |Nd|数字，十进制数|  
 |Pc|标点，连接符。 此类别包含 10 个字符，最常用的字符是 LOWLINE 字符 (_)，u+005F。|  
   
- 如果指定了符合 ECMAScript 的行为，则 `\W` 等效于 `[^a-zA-Z_0-9]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
+ 如果指定了符合 ECMAScript 的行为，则 `\W` 等效于 `[^a-zA-Z_0-9]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
   
 > [!NOTE]
-> 由于它匹配任何非单词字符，因此当正则表达式模式尝试多次匹配任何非单词字符且后跟特定非单词字符时，`\W` 语言元素通常会与惰性限定符一起使用。 有关更多信息，请参见 [数量词](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)。  
+> 由于它匹配任何非单词字符，因此当正则表达式模式尝试多次匹配任何非单词字符且后跟特定非单词字符时，`\W` 语言元素通常会与惰性限定符一起使用。 有关更多信息，请参见 [数量词](quantifiers-in-regular-expressions.md)。  
   
  下面的示例阐释 `\W` 字符类。  它定义正则表达式模式 `\b(\w+)(\W){1,2}`，该模式匹配后跟一个或两个非单词字符（例如，空白或标点符号）的单词。 正则表达式模式可以解释为下表中所示内容。  
   
@@ -303,7 +303,7 @@ ms.locfileid: "78159333"
 |`\x85`|省略号或 NEXT LINE (NEL) 字符 (…)，\u0085。|  
 |`\p{Z}`|匹配任何分隔符。|  
   
- 如果指定了符合 ECMAScript 的行为，则 `\s` 等效于 `[ \f\n\r\t\v]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
+ 如果指定了符合 ECMAScript 的行为，则 `\s` 等效于 `[ \f\n\r\t\v]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
   
  下面的示例阐释 `\s` 字符类。 它定义正则表达式模式 `\b\w+(e)?s(\s|$)`，该模式匹配以“s”或“es”结尾且后跟一个空白字符或输入字符串末尾的单词。 正则表达式模式可以解释为下表中所示内容。  
   
@@ -322,7 +322,7 @@ ms.locfileid: "78159333"
 ## <a name="non-whitespace-character-s"></a>非空格字符：\S  
  `\S` 匹配任何非空白字符。 它等效于 `[^\f\n\r\t\v\x85\p{Z}]` 正则表达式模式或与等效于 `\s` 的正则表达式模式（与空白字符匹配）相反。 有关详细信息，请参阅[空白字符：\s](#WhitespaceCharacter)。  
   
- 如果指定了符合 ECMAScript 的行为，则 `\S` 等效于 `[^ \f\n\r\t\v]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
+ 如果指定了符合 ECMAScript 的行为，则 `\S` 等效于 `[^ \f\n\r\t\v]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
   
  下面的示例阐释 `\S` 语言元素。 正则表达式模式 `\b(\S+)\s?` 匹配由空白字符分隔的字符串。 匹配项的 <xref:System.Text.RegularExpressions.GroupCollection> 对象中的第二个元素包含匹配的字符串。 正则表达式可按下表中的方式解释。  
   
@@ -339,7 +339,7 @@ ms.locfileid: "78159333"
 ## <a name="decimal-digit-character-d"></a>十进制数字字符：\d  
  `\d` 匹配任何十进制数字。 它等效于 `\p{Nd}` 正则表达式模式，该模式包含标准的十进制数字 0-9 以及众多其他字符集的十进制数字。  
   
- 如果指定了符合 ECMAScript 的行为，则 `\d` 等效于 `[0-9]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
+ 如果指定了符合 ECMAScript 的行为，则 `\d` 等效于 `[0-9]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
   
  下面的示例阐释 `\d` 语言元素。 它测试输入字符串是否表示美国和加拿大的有效电话号码。 正则表达式模式 `^(\(?\d{3}\)?[\s-])?\d{3}-\d{4}$` 的定义如下表所示。  
   
@@ -361,7 +361,7 @@ ms.locfileid: "78159333"
 ## <a name="non-digit-character-d"></a>非数字字符：\D  
  `\D` 匹配任何非数字字符。 它等效于 `\P{Nd}` 正则表达式模式。  
   
- 如果指定了符合 ECMAScript 的行为，则 `\D` 等效于 `[^0-9]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
+ 如果指定了符合 ECMAScript 的行为，则 `\D` 等效于 `[^0-9]`。 有关 ECMAScript 正则表达式的信息，请参阅[正则表达式选项](regular-expression-options.md)中的“ECMAScript 匹配行为”部分。  
   
  下面的示例阐释了 \D 语言元素。 它测试部件号等字符串是否包含适当的十进制和非十进制数字字符的组合。 正则表达式模式 `^\D\d{1,5}\D*$` 的定义如下表所示。  
   
@@ -570,5 +570,5 @@ ms.locfileid: "78159333"
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Char.GetUnicodeCategory%2A>
-- [正则表达式语言 - 快速参考](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
-- [正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)
+- [正则表达式语言 - 快速参考](regular-expression-language-quick-reference.md)
+- [正则表达式选项](regular-expression-options.md)

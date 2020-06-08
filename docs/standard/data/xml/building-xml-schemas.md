@@ -7,12 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 8a5ea56c-0140-4b51-8997-875ae6a8e0cb
-ms.openlocfilehash: c921331b00fe137d4ad52d62951e8c161768dfae
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: adc1a10bb9acb14ee88589c13e28c49773e42100
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711137"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291586"
 ---
 # <a name="building-xml-schemas"></a>生成 XML 架构
 <xref:System.Xml.Schema?displayProperty=nameWithType> 命名空间中的类映射到万维网联合会 (W3C) XML 架构建议中定义的结构，可以用于在内存中生成 XML 架构。  
@@ -88,10 +88,10 @@ ms.locfileid: "75711137"
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 架构对象模型概述](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
-- [读取和编写 XML 架构](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
-- [遍历 XML 架构](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
-- [编辑 XML 架构](../../../../docs/standard/data/xml/editing-xml-schemas.md)
-- [包含或导入 XML 架构](../../../../docs/standard/data/xml/including-or-importing-xml-schemas.md)
-- [用于编译架构的 XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
-- [后架构编译信息集](../../../../docs/standard/data/xml/post-schema-compilation-infoset.md)
+- [XML 架构对象模型概述](xml-schema-object-model-overview.md)
+- [读取和编写 XML 架构](reading-and-writing-xml-schemas.md)
+- [遍历 XML 架构](traversing-xml-schemas.md)
+- [编辑 XML 架构](editing-xml-schemas.md)
+- [包含或导入 XML 架构](including-or-importing-xml-schemas.md)
+- [用于编译架构的 XmlSchemaSet](xmlschemaset-for-schema-compilation.md)
+- [后架构编译信息集](post-schema-compilation-infoset.md)

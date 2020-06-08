@@ -3,12 +3,12 @@ title: 修改 XML 文档中的节点、内容和值
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 761773e0-db72-4986-b9f5-a522213d8397
-ms.openlocfilehash: 4a53ba4fe16a3653b1be380da49e6b75cb347a28
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: f544b7d8472285095af9a71b1c24f94f61f93bc6
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710669"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288818"
 ---
 # <a name="modifying-nodes-content-and-values-in-an-xml-document"></a>修改 XML 文档中的节点、内容和值
 有多种方法可以修改文档中的节点和内容。 你可以：  
@@ -46,4 +46,4 @@ ms.locfileid: "75710669"
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 文档对象模型 (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [XML 文档对象模型 (DOM)](xml-document-object-model-dom.md)

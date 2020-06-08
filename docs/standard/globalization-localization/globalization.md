@@ -13,12 +13,12 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-ms.openlocfilehash: c08f4309d7673d7e7fb1c6bd84307e4323411d9e
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: adc617362cf3ba07ff63f1095968e2bd88df88d9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242681"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291911"
 ---
 # <a name="globalization"></a>全球化
 
@@ -57,7 +57,7 @@ ms.locfileid: "81242681"
 
 对于创建本地化应用来说，使用资源文件具有独特优势。 在附属程序集中部署资源时，公共语言运行时会基于由 <xref:System.Globalization.CultureInfo.CurrentUICulture%2A?displayProperty=nameWithType> 属性定义的用户当前 UI 区域性来自动选择适合区域性的资源。 只要提供了相应的区域性特定资源并正确示例化了 <xref:System.Resources.ResourceManager> 对象或使用了强类型的资源类，运行时就会负责检索适合的资源。
 
-若要详细了解如何创建资源文件，请参阅[创建资源文件](../../../docs/framework/resources/creating-resource-files-for-desktop-apps.md)。 若要了解如何创建和部署附属程序集，请参阅[创建附属程序集](../../../docs/framework/resources/creating-satellite-assemblies-for-desktop-apps.md)以及[打包和部署资源](../../../docs/framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)。
+若要详细了解如何创建资源文件，请参阅[创建资源文件](../../framework/resources/creating-resource-files-for-desktop-apps.md)。 若要了解如何创建和部署附属程序集，请参阅[创建附属程序集](../../framework/resources/creating-satellite-assemblies-for-desktop-apps.md)以及[打包和部署资源](../../framework/resources/packaging-and-deploying-resources-in-desktop-apps.md)。
 
 ### <a name="search-and-compare-strings"></a>搜索和比较字符串
 
@@ -143,7 +143,7 @@ ms.locfileid: "81242681"
 
 - <xref:System.DateTimeOffset.ToString%28System.String%29?displayProperty=nameWithType>，其中包含一个格式字符串
 
-- [复合格式](../../../docs/standard/base-types/composite-formatting.md)功能（与日期配合使用时）
+- [复合格式](../base-types/composite-formatting.md)功能（与日期配合使用时）
 
 以下示例显示了两次 2012 年 10 月 11 日的日出和日落数据。 它首先将当前区域性设置为克罗地亚语(克罗地亚)，然后是英语(英国)。 在每个用例中，日期和时间以适合当地区域性的格式显示。
 
@@ -174,7 +174,7 @@ ms.locfileid: "81242681"
 
 一个日期和时间值可能有多个解释，从常规时间（“商店于 2013 年 1 月 2 日上午 9 点开门。”）到某个特定时刻（“出生日期：2013 年 1 月 2 日上午 6:32:00。”）。 当时间值表示某个特定时刻并且将它从序列化的值中还原时，无论用户处于哪个地理位置或时区，都应确保它表示的是同一时刻。
 
-以下示例阐释了此问题。 它将一个本地日期和时间值保存为字符串，采用 3 种[标准格式](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)（"G" 表示常规日期长时间，"s" 表示可排序日期/时间，"o" 表示往返日期/时间）以及二进制格式。
+以下示例阐释了此问题。 它将一个本地日期和时间值保存为字符串，采用 3 种[标准格式](../base-types/standard-date-and-time-format-strings.md)（"G" 表示常规日期长时间，"s" 表示可排序日期/时间，"o" 表示往返日期/时间）以及二进制格式。
 
 [!code-csharp[Conceptual.Globalization#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates4.cs#10)]
 [!code-vb[Conceptual.Globalization#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates4.vb#10)]
@@ -224,7 +224,7 @@ ms.locfileid: "81242681"
 3/31/2013 3:00:00 AM Local
 ```
 
-有关详细信息，请参阅[转换时区时间](../../../docs/standard/datetime/converting-between-time-zones.md)。
+有关详细信息，请参阅[转换时区时间](../datetime/converting-between-time-zones.md)。
 
 ### <a name="perform-date-and-time-arithmetic"></a>执行日期和时间算法
 
@@ -248,7 +248,7 @@ ms.locfileid: "81242681"
 [!code-csharp[Conceptual.Globalization#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/dates6.cs#9)]
 [!code-vb[Conceptual.Globalization#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/dates6.vb#9)]
 
-有关详细信息，请参阅[执行日期和时间算术运算](../../../docs/standard/datetime/performing-arithmetic-operations.md)。
+有关详细信息，请参阅[执行日期和时间算术运算](../datetime/performing-arithmetic-operations.md)。
 
 ### <a name="use-culture-sensitive-names-for-date-elements"></a>对日期元素使用区分区域性的名称
 
@@ -259,7 +259,7 @@ ms.locfileid: "81242681"
 
 但是，此代码始终以英语返回一周中某天的名称。 提取月份名称的代码通常更加固定。 它常常采用特定语言的月份名称来假设十二月历。
 
-使用[自定义日期和时间格式字符串](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)或 <xref:System.Globalization.DateTimeFormatInfo> 对象的属性，可以轻松提取字符串，以反映用户区域性中的星期几或月份名称，如下面的示例所示。 它将当前区域性更改为法语(法国)，并为 2013 年 7 月 1 日显示一周中某天的名称和月份的名称。
+使用[自定义日期和时间格式字符串](../base-types/custom-date-and-time-format-strings.md)或 <xref:System.Globalization.DateTimeFormatInfo> 对象的属性，可以轻松提取字符串，以反映用户区域性中的星期几或月份名称，如下面的示例所示。 它将当前区域性更改为法语(法国)，并为 2013 年 7 月 1 日显示一周中某天的名称和月份的名称。
 
 [!code-csharp[Conceptual.Globalization#20](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/monthname2.cs#20)]
 [!code-vb[Conceptual.Globalization#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/monthname2.vb#20)]
@@ -279,7 +279,7 @@ ms.locfileid: "81242681"
 
 - 任何数值类型的 `ToString(String)` 方法，其中将格式字符串作为参数
 
-- [复合格式](../../../docs/standard/base-types/composite-formatting.md)功能（与数值配合使用时）
+- [复合格式](../base-types/composite-formatting.md)功能（与数值配合使用时）
 
 以下示例显示法国巴黎每月的平均气温。 在显示数据之前，它首先将当前区域性设置为法语(法国)，然后再设置为英语(美国)。 在每个用例中，月份名称和气温以适合当地区域性的格式显示。 请注意，两个区域性使用不同的小数分隔符以分隔气温值。 另请注意，该示例使用“MMMM”自定义日期和时间格式字符串以显示完整的月份名称，并且它通过确定 <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A?displayProperty=nameWithType> 数组中最长月份名称的长度为结果字符串中的月份名称分配了足够的空间。
 
@@ -336,9 +336,9 @@ ms.locfileid: "81242681"
 
 - .NET 支持替换区域性。 由此可定义补充现有标准区域性或完全替换现有标准区域性的新的自定义区域性。
 
-- 在 Windows 系统上，用户可使用“控制面板”中的“区域和语言”  应用，自定义区域性专用设置。 在实例化 <xref:System.Globalization.CultureInfo> 对象时，可调用 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> 构造函数来确定它是否反射这些用户自定义。 通常，对最终用户应用而言，你应考虑用户首选项，以用户期望的格式呈现数据。
+- 在 Windows 系统上，用户可使用“控制面板”中的“区域和语言”应用，自定义区域性专用设置。 在实例化 <xref:System.Globalization.CultureInfo> 对象时，可调用 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> 构造函数来确定它是否反射这些用户自定义。 通常，对最终用户应用而言，你应考虑用户首选项，以用户期望的格式呈现数据。
 
 ## <a name="see-also"></a>请参阅
 
-- [全球化和本地化](../../../docs/standard/globalization-localization/index.md)
-- [有关使用字符串的最佳做法](../../../docs/standard/base-types/best-practices-strings.md)
+- [全球化和本地化](index.md)
+- [有关使用字符串的最佳做法](../base-types/best-practices-strings.md)

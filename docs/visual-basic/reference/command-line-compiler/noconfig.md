@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -noconfig compiler option [Visual Basic]
 - /noconfig compiler option [Visual Basic]
 ms.assetid: a7405067-bd21-4171-adf4-a126fa3ad6c3
-ms.openlocfilehash: c57ed1699d110959e9faf3dc3d43bcc200851c1c
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: ee7cd1b8039a8d9312a8b058cc85c41ca536ed2b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005444"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401935"
 ---
 # <a name="-noconfig"></a>-noconfig
 指定编译器不应自动引用常用 .NET Framework 程序集，也不应导入 `System` 和 `Microsoft.VisualBasic` 命名空间。  
@@ -28,7 +28,7 @@ ms.locfileid: "72005444"
 > [!NOTE]
 > 始终引用 Mscorlib.dll 和 Microsoft.VisualBasic.dll 程序集。  
   
- 你可以修改 Vbc.rsp 文件以指定应包括在每个 Vbc.exe 编译中的其他编译器选项（指定 `-noconfig` 选项时除外）。 有关详细信息，请参阅 [@（指定响应文件）](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)。  
+ 你可以修改 Vbc.rsp 文件以指定应包括在每个 Vbc.exe 编译中的其他编译器选项（指定 `-noconfig` 选项时除外）。 有关详细信息，请参阅 [@（指定响应文件）](specify-response-file.md)。  
   
  编译器最后处理传递给 `vbc` 命令的选项。 因此，命令行中的任何选项都将替代 Vbc.rsp 文件中相同选项的设置。  
   
@@ -37,7 +37,7 @@ ms.locfileid: "72005444"
   
 ## <a name="see-also"></a>请参阅
 
-- [-nostdlib (Visual Basic)](../../../visual-basic/reference/command-line-compiler/nostdlib.md)
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [@（指定响应文件）](../../../visual-basic/reference/command-line-compiler/specify-response-file.md)
-- [-reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
+- [-nostdlib (Visual Basic)](nostdlib.md)
+- [Visual Basic 命令行编译器](index.md)
+- [@（指定响应文件）](specify-response-file.md)
+- [-reference (Visual Basic)](reference.md)

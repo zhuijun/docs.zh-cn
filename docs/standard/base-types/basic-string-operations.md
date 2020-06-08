@@ -8,12 +8,12 @@ helpviewer_keywords:
 - custom strings
 ms.assetid: 8133d357-90b5-4b62-9927-43323d99b6b6
 ms.custom: seadec18
-ms.openlocfilehash: 2ce1b148a2b1605b5b1283bdc3398409661f3f83
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 8c19f6bcbdf5e4829c91aee1e2fd631537ed2e0a
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523993"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277747"
 ---
 # <a name="basic-string-operations-in-net"></a>.NET 中的基本字符串操作
 
@@ -23,8 +23,8 @@ ms.locfileid: "80523993"
 
 ## <a name="related-sections"></a>相关章节
 
-[.NET 中的类型转换](../../../docs/standard/base-types/type-conversion.md)\
+[.NET 中的类型转换](type-conversion.md)\
 介绍了如何从一种类型转换为另一种类型。  
 
-[格式设置类型](../../../docs/standard/base-types/formatting-types.md)\
+[格式设置类型](formatting-types.md)\
 介绍了如何使用格式说明符设置字符串格式。

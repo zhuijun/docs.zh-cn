@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /warnaserror compiler option [Visual Basic]
 - -warnaserror compiler option [Visual Basic]
 ms.assetid: 49819f1d-a1bd-4201-affe-5afe6d9712e1
-ms.openlocfilehash: f9ca5575e2a042d68fc490494f2e86991d58b80c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 94a8b43a891df9837925869e17fac4536a995264
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351711"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414267"
 ---
 # <a name="-warnaserror-visual-basic"></a>-warnaserror (Visual Basic)
 使编译器将第一次出现的警告视为错误。  
@@ -37,7 +37,7 @@ ms.locfileid: "74351711"
  如果希望仅将一些特定警告视为错误，则可以指定视为错误的警告编号的逗号分隔列表。  
   
 > [!NOTE]
-> `-warnaserror` 选项不控制警告的显示方式。 使用 [-nowarn](../../../visual-basic/reference/command-line-compiler/nowarn.md) 选项来禁用警告。  
+> `-warnaserror` 选项不控制警告的显示方式。 使用 [-nowarn](nowarn.md) 选项来禁用警告。  
   
 |设置 -warnaserror 以将所有警告视为 Visual Studio IDE 中的错误|  
 |---|  
@@ -63,6 +63,6 @@ vbc -warnaserror:42024 t2.vb
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [示例编译命令行](sample-compilation-command-lines.md)
 - [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)

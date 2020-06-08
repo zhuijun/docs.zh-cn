@@ -16,12 +16,12 @@ helpviewer_keywords:
 - Insert method
 - strings [.NET Framework], StringBuilder object
 ms.assetid: 5c14867c-9a99-45bc-ae7f-2686700d377a
-ms.openlocfilehash: 19ee90f3300e3b610eeefd4949baa2759b834a60
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a8116013cc20ead3be13763ce72999d2c608dbce
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73121680"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289260"
 ---
 # <a name="using-the-stringbuilder-class-in-net"></a>使用 .NET 中的 StringBuilder 类
 <xref:System.String> 对象不可变。 每次使用 <xref:System.String?displayProperty=nameWithType> 类中的方法之一，都要在内存中新建字符串对象，这就需要为新对象分配新空间。 在需要重复修改字符串的情况下，与新建 <xref:System.String> 对象关联的开销可能会非常大。 若要修改字符串（而不新建对象），可以使用 <xref:System.Text.StringBuilder?displayProperty=nameWithType> 类。 例如，如果在循环中将许多字符串连接在一起，使用 <xref:System.Text.StringBuilder> 类可以提升性能。  
@@ -76,7 +76,7 @@ ms.locfileid: "73121680"
  [!code-vb[Conceptual.StringBuilder#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/Example.vb#4)]  
   
 ### <a name="appendformat"></a>AppendFormat  
- <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> 方法将文本添加到 <xref:System.Text.StringBuilder> 对象末尾。 它调用要设置格式的一个或多个对象的 <xref:System.IFormattable> 实现，支持复合格式功能（有关详细信息，请参阅[复合格式](../../../docs/standard/base-types/composite-formatting.md)）。 因此，它接受数字、日期和时间以及枚举值的标准格式字符串、数字以及日期和时间值的自定义格式字符串，以及为自定义类型定义的格式字符串。 （有关格式化的信息，请参阅[格式设置类型](../../../docs/standard/base-types/formatting-types.md)。）此方法可用于自定义变量格式，并将这些值追加到 <xref:System.Text.StringBuilder>。 下面的示例使用 <xref:System.Text.StringBuilder.AppendFormat%2A> 方法，将格式为货币值的整数值添加到 <xref:System.Text.StringBuilder> 对象末尾。  
+ <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> 方法将文本添加到 <xref:System.Text.StringBuilder> 对象末尾。 它调用要设置格式的一个或多个对象的 <xref:System.IFormattable> 实现，支持复合格式功能（有关详细信息，请参阅[复合格式](composite-formatting.md)）。 因此，它接受数字、日期和时间以及枚举值的标准格式字符串、数字以及日期和时间值的自定义格式字符串，以及为自定义类型定义的格式字符串。 （有关格式化的信息，请参阅[格式设置类型](formatting-types.md)。）此方法可用于自定义变量格式，并将这些值追加到 <xref:System.Text.StringBuilder>。 下面的示例使用 <xref:System.Text.StringBuilder.AppendFormat%2A> 方法，将格式为货币值的整数值添加到 <xref:System.Text.StringBuilder> 对象末尾。  
   
  [!code-cpp[Conceptual.StringBuilder#5](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#5)]
  [!code-csharp[Conceptual.StringBuilder#5](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#5)]
@@ -112,5 +112,5 @@ ms.locfileid: "73121680"
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Text.StringBuilder?displayProperty=nameWithType>
-- [基本字符串操作](../../../docs/standard/base-types/basic-string-operations.md)
-- [格式设置类型](../../../docs/standard/base-types/formatting-types.md)
+- [基本字符串操作](basic-string-operations.md)
+- [格式设置类型](formatting-types.md)

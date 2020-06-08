@@ -12,18 +12,18 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: a00046aa-785d-4f7f-a8e5-d06475ea50da
-ms.openlocfilehash: 5fca32953af91184fe99d8ef6afe5a2374f325d6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c235a838504889a105ef98df47f7373a145503da
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67663716"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289442"
 ---
 # <a name="deciding-when-to-implement-the-event-based-asynchronous-pattern"></a>确定何时实现基于事件的异步模式
 
 基于事件的异步模式可用于公开类的异步行为。 通过引入此模式， .NET Framework 定义了两种用于公开异步行为的模式：基于 <xref:System.IAsyncResult?displayProperty=nameWithType> 接口的异步模式和基于事件的模式。 本主题介绍了何时适合实现这两种模式。
 
-若要详细了解如何使用 <xref:System.IAsyncResult> 接口进行异步编程，请参阅[异步编程模型 (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md)。
+若要详细了解如何使用 <xref:System.IAsyncResult> 接口进行异步编程，请参阅[异步编程模型 (APM)](asynchronous-programming-model-apm.md)。
 
 ## <a name="general-principles"></a>一般原则
 
@@ -86,8 +86,8 @@ ms.locfileid: "67663716"
 
 ## <a name="see-also"></a>另请参阅
 
-- [如何：实现支持基于事件的异步模式的组件](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)
-- [基于事件的异步模式 (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
-- [实现基于事件的异步模式](../../../docs/standard/asynchronous-programming-patterns/implementing-the-event-based-asynchronous-pattern.md)
-- [实现基于事件的异步模式的最佳做法](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
-- [基于事件的异步模式概述](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [如何：实现支持基于事件的异步模式的组件](component-that-supports-the-event-based-asynchronous-pattern.md)
+- [基于事件的异步模式 (EAP)](event-based-asynchronous-pattern-eap.md)
+- [实现基于事件的异步模式](implementing-the-event-based-asynchronous-pattern.md)
+- [实现基于事件的异步模式的最佳做法](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
+- [基于事件的异步模式概述](event-based-asynchronous-pattern-overview.md)

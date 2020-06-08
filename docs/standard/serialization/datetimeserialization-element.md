@@ -7,12 +7,12 @@ helpviewer_keywords:
 - XML serialization, configuration
 - <dateTimeSerialization> element
 ms.assetid: 90fda55c-7730-41e9-bc4b-6423a4b920af
-ms.openlocfilehash: 652a88e25f59cd905e47ef71351e47e67f375286
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: a2684ab72c1fb109d711e333e01836d3399caf86
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375828"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84289637"
 ---
 # <a name="datetimeserialization-element"></a>\<dateTimeSerialization> 元素
 确定 <xref:System.DateTime> 对象的序列化模式。  
@@ -56,7 +56,7 @@ ms.locfileid: "83375828"
 - <xref:System.DateTime>
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [配置文件架构](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<schemaImporterExtensions> 元素](../../../docs/standard/serialization/schemaimporterextensions-element.md)
-- [\<schemaImporterExtensions> 的 \<add> 元素](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
-- [\<system.xml.serialization> 元素](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [配置文件架构](../../framework/configure-apps/file-schema/index.md)
+- [\<schemaImporterExtensions> 元素](schemaimporterextensions-element.md)
+- [\<add> 的 \<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md) 元素
+- [\<system.xml.serialization> 元素](system-xml-serialization-element.md)

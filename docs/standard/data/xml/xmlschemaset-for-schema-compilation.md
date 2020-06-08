@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 55c4b175-3170-4071-9d60-dd5a42f79b54
-ms.openlocfilehash: 55347de81c65b7390584415dd29044f4ca4ba02a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 44850755c41b212e88e0b90dd3b016f96a0af96d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709811"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290222"
 ---
 # <a name="xmlschemaset-for-schema-compilation"></a>用于编译架构的 XmlSchemaSet
 介绍 <xref:System.Xml.Schema.XmlSchemaSet>，一个可以存储和验证 XML 架构定义语言 (XSD) 架构的缓存。  
@@ -247,7 +247,7 @@ foreach (XmlSchema schema in schemaSet.Schemas())
 ## <a name="validating-xml-documents"></a>验证 XML 文档  
  XML 文档可以针对 <xref:System.Xml.Schema.XmlSchemaSet> 中的架构进行验证。 若要验证 XML 文档，可以将架构添加到 <xref:System.Xml.XmlReaderSettings> 对象的 <xref:System.Xml.Schema.XmlSchemaSet><xref:System.Xml.XmlReaderSettings.Schemas%2A> 属性中，也可以将 <xref:System.Xml.Schema.XmlSchemaSet> 添加到 <xref:System.Xml.XmlReaderSettings> 对象的 <xref:System.Xml.XmlReaderSettings.Schemas%2A> 属性中。 然后，<xref:System.Xml.XmlReaderSettings> 类的 <xref:System.Xml.XmlReader.Create%2A> 方法使用 <xref:System.Xml.XmlReader> 对象创建一个 <xref:System.Xml.XmlReader> 对象并验证该 XML 文档。  
   
- 若要详细了解如何使用 <xref:System.Xml.Schema.XmlSchemaSet> 验证 XML 文档，请参阅[使用 XmlSchemaSet 进行 XML 架构 (XSD) 验证](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md)。  
+ 若要详细了解如何使用 <xref:System.Xml.Schema.XmlSchemaSet> 验证 XML 文档，请参阅[使用 XmlSchemaSet 进行 XML 架构 (XSD) 验证](xml-schema-xsd-validation-with-xmlschemaset.md)。  
   
 ## <a name="see-also"></a>请参阅
 
@@ -258,5 +258,5 @@ foreach (XmlSchema schema in schemaSet.Schemas())
 - <xref:System.Xml.Schema.XmlSchemaSet.Reprocess%2A>
 - <xref:System.Xml.Schema.XmlSchemaSet.Remove%2A>
 - <xref:System.Xml.Schema.XmlSchemaSet.RemoveRecursive%2A>
-- [XmlSchemaSet 作为架构缓存](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
-- [使用 XmlSchemaSet 进行 XML 架构 (XSD) 验证](../../../../docs/standard/data/xml/xml-schema-xsd-validation-with-xmlschemaset.md)
+- [XmlSchemaSet 作为架构缓存](xmlschemaset-for-schema-compilation.md)
+- [使用 XmlSchemaSet 进行 XML 架构 (XSD) 验证](xml-schema-xsd-validation-with-xmlschemaset.md)

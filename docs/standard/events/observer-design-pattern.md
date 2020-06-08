@@ -12,12 +12,12 @@ helpviewer_keywords:
 - IObservable(Of T) interface
 - observer design pattern [.NET Framework]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-ms.openlocfilehash: 817337cec604a431f9f7d4eacb04378ee0d3c227
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5794cd1ec9b63a6e151b35c28e09e29f86dcfac6
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73131580"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291261"
 ---
 # <a name="observer-design-pattern"></a>观察者设计模式
 
@@ -93,6 +93,6 @@ ms.locfileid: "73131580"
 
 |标题|说明|
 |-----------|-----------------|
-|[监视程序设计模式最佳做法](../../../docs/standard/events/observer-design-pattern-best-practices.md)|描述开发实现观察者设计模式的应用程序时要采用的最佳做法。|
-|[如何：实现提供程序](../../../docs/standard/events/how-to-implement-a-provider.md)|为温度监控应用程序提供一个提供程序的分步实现。|
-|[如何：实现监视程序](../../../docs/standard/events/how-to-implement-an-observer.md)|为温度监控应用程序提供一个观察者的分步实现。|
+|[监视程序设计模式最佳做法](observer-design-pattern-best-practices.md)|描述开发实现观察者设计模式的应用程序时要采用的最佳做法。|
+|[如何：实现提供程序](how-to-implement-a-provider.md)|为温度监控应用程序提供一个提供程序的分步实现。|
+|[如何：实现监视程序](how-to-implement-an-observer.md)|为温度监控应用程序提供一个观察者的分步实现。|

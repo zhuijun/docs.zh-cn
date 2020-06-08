@@ -17,22 +17,22 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 43402d19-8d30-426d-8785-1a4478233bfa
-ms.openlocfilehash: 9865fa169e0776765f9a97ec0a7b4555bf253886
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 484050b45b5da72386e9ac29805d7faf0ca9cbd6
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67663707"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289377"
 ---
 # <a name="implementing-the-event-based-asynchronous-pattern"></a>实现基于事件的异步模式
 
-如果你正在编写的类具有一些可能会带来明显延迟的操作，请考虑实施[基于事件的异步模式概述](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)中的操作，为该类提供异步功能。
+如果你正在编写的类具有一些可能会带来明显延迟的操作，请考虑实施[基于事件的异步模式概述](event-based-asynchronous-pattern-overview.md)中的操作，为该类提供异步功能。
 
 基于事件的异步模式提供了打包具有异步功能的类的标准化方式。 如果使用帮助程序类（如 <xref:System.ComponentModel.AsyncOperationManager>）进行实现，类可以在任何应用模型（包括 ASP.NET、控制台应用和 Windows 窗体应用）下正常运行。
 
-有关实现基于事件的异步模式的示例，请参阅[如何：实现支持基于事件的异步模式的组件](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)。
+有关实现基于事件的异步模式的示例，请参阅[如何：实现支持基于事件的异步模式的组件](component-that-supports-the-event-based-asynchronous-pattern.md)。
 
-对于简单的异步操作，可能会发现 <xref:System.ComponentModel.BackgroundWorker> 组件非常适合。 若要详细了解 <xref:System.ComponentModel.BackgroundWorker>，请参阅[如何：在后台运行操作](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)。
+对于简单的异步操作，可能会发现 <xref:System.ComponentModel.BackgroundWorker> 组件非常适合。 若要详细了解 <xref:System.ComponentModel.BackgroundWorker>，请参阅[如何：在后台运行操作](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md)。
 
 以下列表介绍本主题中讨论的基于事件的异步模式的功能。
 
@@ -60,7 +60,7 @@ ms.locfileid: "67663707"
 
 对于异步实现，任何操作都是候选项，但应优先考虑预计会产生较长延迟的操作。 最适合的操作是客户端在其中调用方法，并在完成时收到通知，无需进一步的干预。 其次是连续运行、定期向客户端通知进度、增量结果和状态更改的操作。
 
-若要深入了解决定何时支持基于事件的异步模式，请参阅[决定何时实现基于事件的异步模式](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md)。
+若要深入了解决定何时支持基于事件的异步模式，请参阅[决定何时实现基于事件的异步模式](deciding-when-to-implement-the-event-based-asynchronous-pattern.md)。
 
 ## <a name="naming-asynchronous-methods"></a>命名异步方法
 
@@ -150,13 +150,13 @@ ms.locfileid: "67663707"
 
 通常，这些方法会立即返回，并且操作实际上可能会/无法取消。 在 MethodNameCompleted 事件的事件处理程序中，MethodNameCompletedEventArgs 对象包含 `Cancelled` 字段，客户端可使用此字段来确定是否取消了操作。
 
-请遵守[实现基于事件的异步模式的最佳做法](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)中所述的取消语义。
+请遵守[实现基于事件的异步模式的最佳做法](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)中所述的取消语义。
 
 ## <a name="optionally-support-the-isbusy-property"></a>选择性地支持 IsBusy 属性
 
 如果你的类不支持多个并发调用，请考虑公开 `IsBusy` 属性。 这样一来，开发人员可以确定能否运行 MethodNameAsync 方法，同时又不会捕获到 MethodNameAsync 方法抛出的异常。    
 
-请遵守[实现基于事件的异步模式的最佳做法](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)中所述的 `IsBusy` 语义。
+请遵守[实现基于事件的异步模式的最佳做法](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)中所述的 `IsBusy` 语义。
 
 ## <a name="optionally-provide-support-for-progress-reporting"></a>选择性地为进度报告提供支持
 
@@ -178,7 +178,7 @@ ms.locfileid: "67663707"
 
 可能出现多个操作支持进度，并且每个操作返回不同的进度指示器的情况。 在这种情况下，不合适支持单个 `ProgressChanged` 事件，你可能需要考虑支持多个 `ProgressChanged` 事件。 在这种情况下，对每个 MethodNameAsync 方法使用 MethodNameProgressChanged 命名模式。    
 
-请遵守[实现基于事件的异步模式的最佳做法](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)中所述的进度报告语义。
+请遵守[实现基于事件的异步模式的最佳做法](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)中所述的进度报告语义。
 
 ## <a name="optionally-provide-support-for-returning-incremental-results"></a>选择性地为返回增量结果提供支持
 
@@ -208,7 +208,7 @@ ms.locfileid: "67663707"
 
 - 单独定义针对每个异步方法有适当 <xref:System.EventArgs> 的 MethodNameProgressChanged 事件，以处理此方法的增量结果数据。
 
-按照[实现基于事件的异步模式的最佳做法](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)所述，在适当线程上调用事件处理程序。
+按照[实现基于事件的异步模式的最佳做法](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)所述，在适当线程上调用事件处理程序。
 
 ## <a name="handling-out-and-ref-parameters-in-methods"></a>处理方法中的 Out 和 Ref 参数
 
@@ -261,9 +261,9 @@ public class MethodNameCompletedEventArgs : System.ComponentModel.AsyncCompleted
 
 - <xref:System.ComponentModel.ProgressChangedEventArgs>
 - <xref:System.ComponentModel.AsyncCompletedEventArgs>
-- [如何：实现支持基于事件的异步模式的组件](../../../docs/standard/asynchronous-programming-patterns/component-that-supports-the-event-based-asynchronous-pattern.md)
-- [如何：在后台运行操作](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
-- [如何：实现使用后台操作的窗体](../../../docs/framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
-- [确定何时实现基于事件的异步模式](../../../docs/standard/asynchronous-programming-patterns/deciding-when-to-implement-the-event-based-asynchronous-pattern.md)
-- [实现基于事件的异步模式的最佳做法](../../../docs/standard/asynchronous-programming-patterns/best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
-- [基于事件的异步模式 (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
+- [如何：实现支持基于事件的异步模式的组件](component-that-supports-the-event-based-asynchronous-pattern.md)
+- [如何：在后台运行操作](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
+- [如何：实现使用后台操作的窗体](../../framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
+- [确定何时实现基于事件的异步模式](deciding-when-to-implement-the-event-based-asynchronous-pattern.md)
+- [实现基于事件的异步模式的最佳做法](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
+- [基于事件的异步模式 (EAP)](event-based-asynchronous-pattern-eap.md)

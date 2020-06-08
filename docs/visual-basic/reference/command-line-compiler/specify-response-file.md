@@ -4,12 +4,12 @@ ms.date: 03/13/2018
 helpviewer_keywords:
 - '@ (Specify Response File) compiler option [Visual Basic]'
 ms.assetid: a6847eaa-e5f9-4303-9421-45b55484b9ca
-ms.openlocfilehash: c578495bbba0efee79f02da284c7feffb8c12fab
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 91cf1b5a55d16ab47a83fbd259dd1d83d8e9c31a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348553"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403091"
 ---
 # <a name="-specify-response-file-visual-basic"></a>@（指定响应文件）(Visual Basic)
 
@@ -40,7 +40,7 @@ ms.locfileid: "74348553"
 
 可以结合使用命令行上指定的选项与一个或多个响应文件中指定的选项。 编译器在遇到命令选项时会进行处理。 因此，命令行参数可以重写先前在响应文件中列出的选项。 反之，响应文件中的选项也将重写先前在命令行或其他响应文件中列出的选项。
 
-Visual Basic 提供 Vbc.rsp 文件，该文件与 Vbc.exe 文件位于同一目录。 默认情况下，除非使用 `-noconfig` 选项，否则将包含 Vbc.rsp 文件。 有关详细信息，请参阅 [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)。
+Visual Basic 提供 Vbc.rsp 文件，该文件与 Vbc.exe 文件位于同一目录。 默认情况下，除非使用 `-noconfig` 选项，否则将包含 Vbc.rsp 文件。 有关详细信息，请参阅 [-noconfig](noconfig.md)。
 
 > [!NOTE]
 > `@` 选项在 Visual Studio 开发环境内无法使用；仅当从命令行编译时才可用。
@@ -67,6 +67,6 @@ vbc @file1.rsp
 
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [-noconfig](noconfig.md)
+- [示例编译命令行](sample-compilation-command-lines.md)

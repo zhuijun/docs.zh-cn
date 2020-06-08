@@ -11,18 +11,18 @@ helpviewer_keywords:
 - stopping asynchronous operations
 - asynchronous programming, beginning operations
 ms.assetid: c9b3501e-6bc6-40f9-8efd-4b6d9e39ccf0
-ms.openlocfilehash: 0a9ea3c8c9c589bb5954fa9771ffd1bb095f6d73
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 96ad18e613d68ee97f4e5666afe77febadc6f991
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73140138"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289975"
 ---
 # <a name="asynchronous-programming-model-apm"></a>异步编程模型 (APM)
 使用 <xref:System.IAsyncResult> 设计模式的异步操作是通过名为 `BeginOperationName` 和 `EndOperationName` 的两个方法来实现的，这两个方法分别开始和结束异步操作 OperationName  。 例如， <xref:System.IO.FileStream> 类提供 <xref:System.IO.FileStream.BeginRead%2A> 和 <xref:System.IO.FileStream.EndRead%2A> 方法来从文件异步读取字节。 这两个方法实现了 <xref:System.IO.FileStream.Read%2A> 方法的异步版本。  
   
 > [!NOTE]
-> 从 .NET Framework 4 开始，任务并行库为异步和并行编程提供了一种新模型。 有关详细信息，请参阅 [Task Parallel Library (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md) 和 [Task-based Asynchronous Pattern (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)。  
+> 从 .NET Framework 4 开始，任务并行库为异步和并行编程提供了一种新模型。 有关详细信息，请参阅 [Task Parallel Library (TPL)](../parallel-programming/task-parallel-library-tpl.md) 和 [Task-based Asynchronous Pattern (TAP)](task-based-asynchronous-pattern-tap.md)。  
   
  在调用 `BeginOperationName` 后，应用程序可以继续在调用线程上执行指令，同时异步操作在另一个线程上执行。 每次调用 `BeginOperationName` 时，应用程序还应调用 `EndOperationName` 来获取操作的结果。  
   
@@ -53,18 +53,18 @@ ms.locfileid: "73140138"
   
  对于访问异步操作的结果，应用程序开发人员有若干种设计选择。 正确的选择取决于应用程序是否有可以在操作完成时执行的指令。 如果应用程序在接收到异步操作结果之前不能进行任何其他工作，则必须在获得这些结果之前先阻止该应用程序进行其他工作。 若要在异步操作完成之前阻止应用程序，可以使用下列方法之一：  
   
-- 从应用程序的主线程调用 `EndOperationName`，阻止应用程序执行，直到操作完成之后再继续执行。 有关展示了此方法的示例，请参阅[通过结束异步操作阻止应用执行](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-by-ending-an-async-operation.md)。  
+- 从应用程序的主线程调用 `EndOperationName`，阻止应用程序执行，直到操作完成之后再继续执行。 有关展示了此方法的示例，请参阅[通过结束异步操作阻止应用执行](blocking-application-execution-by-ending-an-async-operation.md)。  
   
-- 使用 <xref:System.IAsyncResult.AsyncWaitHandle%2A> 来阻止应用程序执行，直到一个或多个操作完成。 有关演示此方法的示例，请参阅 [Blocking Application Execution Using an AsyncWaitHandle](../../../docs/standard/asynchronous-programming-patterns/blocking-application-execution-using-an-asyncwaithandle.md)。  
+- 使用 <xref:System.IAsyncResult.AsyncWaitHandle%2A> 来阻止应用程序执行，直到一个或多个操作完成。 有关演示此方法的示例，请参阅 [Blocking Application Execution Using an AsyncWaitHandle](blocking-application-execution-using-an-asyncwaithandle.md)。  
   
  在异步操作完成时不需要阻止的应用程序可使用下列方法之一：  
   
-- 按以下方式轮询操作完成状态：定期检查 <xref:System.IAsyncResult.IsCompleted%2A> 属性，操作完成后调用 `EndOperationName`。 有关演示此方法的示例，请参阅 [Polling for the Status of an Asynchronous Operation](../../../docs/standard/asynchronous-programming-patterns/polling-for-the-status-of-an-asynchronous-operation.md)。  
+- 按以下方式轮询操作完成状态：定期检查 <xref:System.IAsyncResult.IsCompleted%2A> 属性，操作完成后调用 `EndOperationName`。 有关演示此方法的示例，请参阅 [Polling for the Status of an Asynchronous Operation](polling-for-the-status-of-an-asynchronous-operation.md)。  
   
-- 使用 <xref:System.AsyncCallback> 委托来指定要在操作完成时调用的方法。 有关演示此方法的示例，请参阅 [Using an AsyncCallback Delegate to End an Asynchronous Operation](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md)。  
+- 使用 <xref:System.AsyncCallback> 委托来指定要在操作完成时调用的方法。 有关演示此方法的示例，请参阅 [Using an AsyncCallback Delegate to End an Asynchronous Operation](using-an-asynccallback-delegate-to-end-an-asynchronous-operation.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [基于事件的异步模式 (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
-- [使用异步方式调用同步方法](../../../docs/standard/asynchronous-programming-patterns/calling-synchronous-methods-asynchronously.md)
-- [使用 AsyncCallback 委托和状态对象](../../../docs/standard/asynchronous-programming-patterns/using-an-asynccallback-delegate-and-state-object.md)
+- [基于事件的异步模式 (EAP)](event-based-asynchronous-pattern-eap.md)
+- [使用异步方式调用同步方法](calling-synchronous-methods-asynchronously.md)
+- [使用 AsyncCallback 委托和状态对象](using-an-asynccallback-delegate-and-state-object.md)

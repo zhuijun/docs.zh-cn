@@ -20,12 +20,12 @@ helpviewer_keywords:
 - waiting for asynchronous calls
 - status information [.NET Framework], asynchronous operations
 ms.assetid: 41972034-92ed-450a-9664-ab93fcc6f1fb
-ms.openlocfilehash: 06df584f0120fbd4978e18647854a3ee844a2095
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6a3dd83fe9d3fc48f66a0bb6bef333e4ff399108
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73105132"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289897"
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a>使用异步方式调用同步方法
 
@@ -39,7 +39,7 @@ ms.locfileid: "73105132"
 `EndInvoke` 方法用于检索异步调用的结果。 它可以在调用 `BeginInvoke`之后的任意时间调用。 如果异步调用尚未完成，那么 `EndInvoke` 将阻止调用线程，直到完成异步调用。 `EndInvoke` 的参数包括要异步执行的方法的 `out` 和 `ref` 参数（Visual Basic 中的 `<Out>` `ByRef` 和 `ByRef`）以及 `BeginInvoke` 返回的 <xref:System.IAsyncResult>。
 
 > [!NOTE]
-> Visual Studio 中的 IntelliSense 功能可显示 `BeginInvoke` 和 `EndInvoke` 的参数。 如果未使用 Visual Studio 或类似工具，或者如果使用的是包含 Visual Studio 的 C#，请参阅[异步编程模型 (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md)，获取关于为这些方法定义的参数的说明。
+> Visual Studio 中的 IntelliSense 功能可显示 `BeginInvoke` 和 `EndInvoke` 的参数。 如果未使用 Visual Studio 或类似工具，或者如果使用的是包含 Visual Studio 的 C#，请参阅[异步编程模型 (APM)](asynchronous-programming-model-apm.md)，获取关于为这些方法定义的参数的说明。
 
 本主题的代码示例演示了使用 `BeginInvoke` 和 `EndInvoke` 进行异步调用的四种常用方法。 调用 `BeginInvoke` 之后可以执行以下操作：
 
@@ -112,4 +112,4 @@ ms.locfileid: "73105132"
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Delegate>
-- [基于事件的异步模式 (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
+- [基于事件的异步模式 (EAP)](event-based-asynchronous-pattern-eap.md)

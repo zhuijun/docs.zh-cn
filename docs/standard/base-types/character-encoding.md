@@ -11,12 +11,12 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-ms.openlocfilehash: 8e0cf961f4d6b481c354bdc854806f971458ce21
-ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
+ms.openlocfilehash: c626e79e7bbcd71c90775df8ee8c4d6570c29125
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624938"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290573"
 ---
 # <a name="how-to-use-character-encoding-classes-in-net"></a>如何在 .NET 中使用字符编码类
 
@@ -33,11 +33,11 @@ ms.locfileid: "82624938"
 
 .NET 中的所有字符编码类都继承自 <xref:System.Text.Encoding?displayProperty=nameWithType> 类，这是定义所有字符编码通用功能的抽象类。 若要访问在 .NET 中实现的单个编码对象，请执行以下操作：
 
-- 使用 <xref:System.Text.Encoding> 类的静态属性，这些属性返回表示 .NET 标准字符编码（ASCII、UTF-7、UTF-8、UTF-16 和 UTF-32）的对象。 例如， <xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> 属性返回 <xref:System.Text.UnicodeEncoding> 对象。 每个对象都使用替换回退处理不能进行编码的字符串和不能进行解码的字节。 有关详细信息，请参阅[替换回退](../../../docs/standard/base-types/character-encoding.md#Replacement)。
+- 使用 <xref:System.Text.Encoding> 类的静态属性，这些属性返回表示 .NET 标准字符编码（ASCII、UTF-7、UTF-8、UTF-16 和 UTF-32）的对象。 例如， <xref:System.Text.Encoding.Unicode%2A?displayProperty=nameWithType> 属性返回 <xref:System.Text.UnicodeEncoding> 对象。 每个对象都使用替换回退处理不能进行编码的字符串和不能进行解码的字节。 有关详细信息，请参阅[替换回退](character-encoding.md#Replacement)。
 
-- 调用编码的类构造函数。 以这种方式可以将 ASCII、utf-7、utf-8、utf-16 和 utf-32 编码对象实例化。 默认情况下，每个对象都使用替换回退处理不能进行编码的字符串和不能进行解码的字节，但你可指定应引发异常。 有关详细信息，请参阅[替换回退](../../../docs/standard/base-types/character-encoding.md#Replacement)和[异常回退](../../../docs/standard/base-types/character-encoding.md#Exception)。
+- 调用编码的类构造函数。 以这种方式可以将 ASCII、utf-7、utf-8、utf-16 和 utf-32 编码对象实例化。 默认情况下，每个对象都使用替换回退处理不能进行编码的字符串和不能进行解码的字节，但你可指定应引发异常。 有关详细信息，请参阅[替换回退](character-encoding.md#Replacement)和[异常回退](character-encoding.md#Exception)。
 
-- 调用 <xref:System.Text.Encoding.%23ctor%28System.Int32%29> 构造函数并向其传递一个表示编码的整数。 标准编码对象使用替换回退，代码页编码和双字节字符集 (DBCS) 编码对象使用最佳回退处理不能进行编码的字符串和不能进行解码的字节。 有关详细信息，请参阅[最佳回退](../../../docs/standard/base-types/character-encoding.md#BestFit)。
+- 调用 <xref:System.Text.Encoding.%23ctor%28System.Int32%29> 构造函数并向其传递一个表示编码的整数。 标准编码对象使用替换回退，代码页编码和双字节字符集 (DBCS) 编码对象使用最佳回退处理不能进行编码的字符串和不能进行解码的字节。 有关详细信息，请参阅[最佳回退](character-encoding.md#BestFit)。
 
 - 调用 <xref:System.Text.Encoding.GetEncoding%2A?displayProperty=nameWithType> 方法，此方法返回 .NET 中的任何标准编码、代码页编码或 DBCS 编码。 可通过重载同时指定编码器和解码器的回退对象。
 
@@ -145,7 +145,7 @@ ms.locfileid: "82624938"
 最佳映射是 <xref:System.Text.Encoding> 对象的默认行为，该对象将 Unicode 数据编码为代码页数据，并且存在依赖此行为的旧版应用程序。 但是，为了安全起见，大多数新应用程序应避免最佳行为。 例如，应用程序不应通过最佳编码放置域名。
 
 > [!NOTE]
-> 还可实现编码的自定义最佳回退映射。 有关详细信息，请参阅 [Implementing a Custom Fallback Strategy](../../../docs/standard/base-types/character-encoding.md#Custom) 一节。
+> 还可实现编码的自定义最佳回退映射。 有关详细信息，请参阅 [Implementing a Custom Fallback Strategy](character-encoding.md#Custom) 一节。
 
 如果最佳回退是编码对象的默认设置，当通过调用 <xref:System.Text.Encoding> 或 <xref:System.Text.Encoding.GetEncoding%28System.Int32%2CSystem.Text.EncoderFallback%2CSystem.Text.DecoderFallback%29?displayProperty=nameWithType> 重载检索. <xref:System.Text.Encoding.GetEncoding%28System.String%2CSystem.Text.EncoderFallback%2CSystem.Text.DecoderFallback%29?displayProperty=nameWithType> 对象时，可选择另一个回退策略。 以下一节的内容包括一个示例，该示例用星号 (*) 替换每个不可映射到代码页 1252 的每个字符。
 
@@ -167,7 +167,7 @@ ms.locfileid: "82624938"
 [!code-vb[Conceptual.Encoding#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.encoding/vb/bestfit1a.vb#3)]
 
 > [!NOTE]
-> 还可以实现编码的替换类。 有关详细信息，请参阅 [Implementing a Custom Fallback Strategy](../../../docs/standard/base-types/character-encoding.md#Custom) 一节。
+> 还可以实现编码的替换类。 有关详细信息，请参阅 [Implementing a Custom Fallback Strategy](character-encoding.md#Custom) 一节。
 
 除了问号 (U+003F) 外，Unicode 替换字符 (U+FFFD) 通常用作替换字符串，特别是当解码无法成功转换为 Unicode 字符的字节序列时。 但是，你可以自由选择任何替换字符串，并且它可以包含多个字符。
 
@@ -181,7 +181,7 @@ ms.locfileid: "82624938"
 [!code-vb[Conceptual.Encoding#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.encoding/vb/exceptionascii.vb#4)]
 
 > [!NOTE]
-> 还可以实现编码操作的自定义异常处理程序。 有关详细信息，请参阅 [Implementing a Custom Fallback Strategy](../../../docs/standard/base-types/character-encoding.md#Custom) 一节。
+> 还可以实现编码操作的自定义异常处理程序。 有关详细信息，请参阅 [Implementing a Custom Fallback Strategy](character-encoding.md#Custom) 一节。
 
 <xref:System.Text.EncoderFallbackException> 和 <xref:System.Text.DecoderFallbackException> 对象提供以下有关导致异常的条件的信息：
 
@@ -268,4 +268,4 @@ ms.locfileid: "82624938"
 - <xref:System.Text.DecoderFallback>
 - <xref:System.Text.Encoding>
 - <xref:System.Text.EncoderFallback>
-- [全球化和本地化](../../../docs/standard/globalization-localization/index.md)
+- [全球化和本地化](../globalization-localization/index.md)

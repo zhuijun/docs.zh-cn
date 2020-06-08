@@ -9,12 +9,12 @@ helpviewer_keywords:
 - PLINQ queries, how to cancel
 - cancellation, PLINQ
 ms.assetid: 80b14640-edfa-4153-be1b-3e003d3e9c1a
-ms.openlocfilehash: 312c71b787ac7b4aa092f1517d2ed5af314a22e4
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: 09405a8a9f5d96d80454bcc98cbf29db54df6725
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635881"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288207"
 ---
 # <a name="how-to-cancel-a-plinq-query"></a>如何：取消 PLINQ 查询
 下面的示例展示了取消 PLINQ 查询的两种方法。 第一个示例展示了如何取消主要由数据遍历组成的查询。 第二个示例展示了如何取消包含计算成本很高的用户函数的查询。
@@ -22,7 +22,7 @@ ms.locfileid: "80635881"
 > [!NOTE]
 > 选中“仅我的代码”后，Visual Studio 会在抛出异常的代码行处中断，并显示错误消息“用户代码未处理异常”。 此错误是良性的。 可以按 F5 继续运行，并请参阅下面示例中所示的异常处理行为。 为了阻止 Visual Studio 在第一个错误出现时中断，只需依次转到“工具”、“选项”、“调试”、“常规”  下，取消选中“仅我的代码”复选框即可。
 >
-> 本示例旨在演示用法，运行速度可能不如等效的顺序 LINQ to Objects 查询快。 若要详细了解加速，请参阅[了解 PLINQ 中的加速](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)。
+> 本示例旨在演示用法，运行速度可能不如等效的顺序 LINQ to Objects 查询快。 若要详细了解加速，请参阅[了解 PLINQ 中的加速](understanding-speedup-in-plinq.md)。
 
 ## <a name="example"></a>示例
 
@@ -53,5 +53,5 @@ PLINQ 框架不会将一个 <xref:System.OperationCanceledException> 滚动到 <
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Linq.ParallelEnumerable>
-- [并行 LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
-- [托管线程中的取消](../../../docs/standard/threading/cancellation-in-managed-threads.md)
+- [并行 LINQ (PLINQ)](introduction-to-plinq.md)
+- [托管线程中的取消](../threading/cancellation-in-managed-threads.md)

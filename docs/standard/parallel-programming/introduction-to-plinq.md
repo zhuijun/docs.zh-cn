@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, introduction to
 ms.assetid: eaa720d8-8999-4eb7-8df5-3c19ca61cad0
-ms.openlocfilehash: e9ef72c2691a4dbb9c68202b29e0f5c77dcdaa74
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: e50b2bf15d9a627f70ff01616bf2c72c70d7ff33
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588185"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290676"
 ---
 # <a name="introduction-to-plinq"></a>PLINQ 介绍
 
@@ -26,10 +26,10 @@ ms.locfileid: "80588185"
 
 一个 PLINQ 查询的许多方面都类似于非并行的 LINQ to Objects 查询。 与顺序 LINQ 查询一样，PLINQ 查询对任何内存中 <xref:System.Collections.IEnumerable> 或 <xref:System.Collections.Generic.IEnumerable%601> 数据源执行操作，并且推迟了执行，即在枚举查询前不会开始执行。 主要区别在于，PLINQ 会尝试充分利用系统上的所有处理器。 方法是将数据源分区成片段，然后在多个处理器上针对单独工作线程上的每个片段执行并行查询。 在许多情况下，并行执行意味着查询运行速度显著提高。
 
-通过并行执行，通常只需向数据源添加 <xref:System.Linq.ParallelEnumerable.AsParallel%2A> 查询操作，PLINQ 即可显著提升性能（与某些类型查询的旧代码相比）。 但是，并行可能会引入其自身的复杂性，因此并非所有的查询操作的运行速度在 PLINQ 中都更快。 事实上，并行实际上会降低某些查询的速度。 因此，应了解排序等问题将如何对并行查询产生影响。 有关详细信息，请参阅[了解 PLINQ 中的加速](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)。
+通过并行执行，通常只需向数据源添加 <xref:System.Linq.ParallelEnumerable.AsParallel%2A> 查询操作，PLINQ 即可显著提升性能（与某些类型查询的旧代码相比）。 但是，并行可能会引入其自身的复杂性，因此并非所有的查询操作的运行速度在 PLINQ 中都更快。 事实上，并行实际上会降低某些查询的速度。 因此，应了解排序等问题将如何对并行查询产生影响。 有关详细信息，请参阅[了解 PLINQ 中的加速](understanding-speedup-in-plinq.md)。
 
 > [!NOTE]
-> 本文档使用 lambda 表达式在 PLINQ 中定义委托。 如果不熟悉 C# 或 Visual Basic 中的 lambda 表达式，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)。
+> 本文档使用 lambda 表达式在 PLINQ 中定义委托。 如果不熟悉 C# 或 Visual Basic 中的 lambda 表达式，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](lambda-expressions-in-plinq-and-tpl.md)。
 
 本文的其余部分将概述主 PLINQ 类，并讨论如何创建 PLINQ 查询。 每部分包含指向更详细信息以及代码示例的链接。
 
@@ -65,7 +65,7 @@ ms.locfileid: "80588185"
 
 ## <a name="execution-modes"></a>执行模式
 
-默认情况下，PLINQ 是保守的。 在运行时，PLINQ 基础结构将分析查询的总体结构。 如果通过并行可能会提高查询速度，PLINQ 则将源序列分区为可以同时运行的任务。 如果并行化查询不安全，PLINQ 则只会按顺序运行查询。 如果 PLINQ 可以在可能会较昂贵的并行算法或成本较低的顺序算法之间进行选择，它会默认选择顺序算法。 可以使用 <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> 方法和 <xref:System.Linq.ParallelExecutionMode?displayProperty=nameWithType> 枚举指示 PLINQ 选择并行算法。 如果你通过测试和测量知道特定查询以并行方式执行得更快时，此做法非常有用。 有关详细信息，请参阅[如何：在 PLINQ 中指定执行模式](../../../docs/standard/parallel-programming/how-to-specify-the-execution-mode-in-plinq.md)。
+默认情况下，PLINQ 是保守的。 在运行时，PLINQ 基础结构将分析查询的总体结构。 如果通过并行可能会提高查询速度，PLINQ 则将源序列分区为可以同时运行的任务。 如果并行化查询不安全，PLINQ 则只会按顺序运行查询。 如果 PLINQ 可以在可能会较昂贵的并行算法或成本较低的顺序算法之间进行选择，它会默认选择顺序算法。 可以使用 <xref:System.Linq.ParallelEnumerable.WithExecutionMode%2A> 方法和 <xref:System.Linq.ParallelExecutionMode?displayProperty=nameWithType> 枚举指示 PLINQ 选择并行算法。 如果你通过测试和测量知道特定查询以并行方式执行得更快时，此做法非常有用。 有关详细信息，请参阅[如何：在 PLINQ 中指定执行模式](how-to-specify-the-execution-mode-in-plinq.md)。
 
 ## <a name="degree-of-parallelism"></a>并行度
 
@@ -85,15 +85,15 @@ ms.locfileid: "80588185"
 [!code-csharp[PLINQ#3](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinq2_cs.cs#3)]
 [!code-vb[PLINQ#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq2_vb.vb#3)]
 
-有关详细信息，请参阅 [PLINQ 中的顺序保留](../../../docs/standard/parallel-programming/order-preservation-in-plinq.md)。
+有关详细信息，请参阅 [PLINQ 中的顺序保留](order-preservation-in-plinq.md)。
 
 ## <a name="parallel-vs-sequential-queries"></a>并行和顺序查询
 
-某些操作要求按顺序提供源数据。 必要时，<xref:System.Linq.ParallelEnumerable> 查询运算符自动还原为顺序模式。 对于要求顺序执行的用户定义的查询运算符和用户委托，PLINQ 提供了 <xref:System.Linq.ParallelEnumerable.AsSequential%2A> 方法。 使用 <xref:System.Linq.ParallelEnumerable.AsSequential%2A> 时，查询中的所有后续运算符都会顺序执行，直到再次调用 <xref:System.Linq.ParallelEnumerable.AsParallel%2A>。 有关详细信息，请参阅[如何：合并并行和顺序 LINQ 查询](../../../docs/standard/parallel-programming/how-to-combine-parallel-and-sequential-linq-queries.md)。
+某些操作要求按顺序提供源数据。 必要时，<xref:System.Linq.ParallelEnumerable> 查询运算符自动还原为顺序模式。 对于要求顺序执行的用户定义的查询运算符和用户委托，PLINQ 提供了 <xref:System.Linq.ParallelEnumerable.AsSequential%2A> 方法。 使用 <xref:System.Linq.ParallelEnumerable.AsSequential%2A> 时，查询中的所有后续运算符都会顺序执行，直到再次调用 <xref:System.Linq.ParallelEnumerable.AsParallel%2A>。 有关详细信息，请参阅[如何：合并并行和顺序 LINQ 查询](how-to-combine-parallel-and-sequential-linq-queries.md)。
 
 ## <a name="options-for-merging-query-results"></a>合并查询结果的选项
 
-当一个 PLINQ 查询并行执行时，它从每个工作线程得到的结果必须合并回到主线程上，以便由 `foreach` 循环（在 Visual Basic 中为 `For Each`）使用或插入到列表或数组中。 例如在某些情况下，指定一个特定类型的合并操作可能会有好处，以更快地开始产生结果。 为此，PLINQ 支持 <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A> 方法和 <xref:System.Linq.ParallelMergeOptions> 枚举。 有关详细信息，请参阅 [PLINQ 中的合并选项](../../../docs/standard/parallel-programming/merge-options-in-plinq.md)。
+当一个 PLINQ 查询并行执行时，它从每个工作线程得到的结果必须合并回到主线程上，以便由 `foreach` 循环（在 Visual Basic 中为 `For Each`）使用或插入到列表或数组中。 例如在某些情况下，指定一个特定类型的合并操作可能会有好处，以更快地开始产生结果。 为此，PLINQ 支持 <xref:System.Linq.ParallelEnumerable.WithMergeOptions%2A> 方法和 <xref:System.Linq.ParallelMergeOptions> 枚举。 有关详细信息，请参阅 [PLINQ 中的合并选项](merge-options-in-plinq.md)。
 
 ## <a name="the-forall-operator"></a>ForAll 运算符
 
@@ -104,15 +104,15 @@ ms.locfileid: "80588185"
 
 下图展示了 `foreach` 与 <xref:System.Linq.ParallelEnumerable.ForAll%2A> 在查询执行方面的区别。
 
-![ForAll 与ForEach](../../../docs/standard/parallel-programming/media/vs-isvnt-allvseach.png "VS_ISVNT_ALLvsEACH")
+![ForAll 与ForEach](media/vs-isvnt-allvseach.png "VS_ISVNT_ALLvsEACH")
 
 ## <a name="cancellation"></a>取消
 
-PLINQ 在 .NET Framework 4 中与取消类型集成在一起。 （有关详细信息，请参阅[托管线程中的取消](../../../docs/standard/threading/cancellation-in-managed-threads.md)。）因此，与顺序 LINQ to Objects 查询不同，可以取消 PLINQ 查询。 若要创建可取消 PLINQ 查询，请在查询中使用 <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> 运算符，并提供 <xref:System.Threading.CancellationToken> 实例作为参数。 如果令牌上的 <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> 属性设置为 true，PLINQ 就会注意到它，停止处理所有线程并抛出 <xref:System.OperationCanceledException>。
+PLINQ 在 .NET Framework 4 中与取消类型集成在一起。 （有关详细信息，请参阅[托管线程中的取消](../threading/cancellation-in-managed-threads.md)。）因此，与顺序 LINQ to Objects 查询不同，可以取消 PLINQ 查询。 若要创建可取消 PLINQ 查询，请在查询中使用 <xref:System.Linq.ParallelEnumerable.WithCancellation%2A> 运算符，并提供 <xref:System.Threading.CancellationToken> 实例作为参数。 如果令牌上的 <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> 属性设置为 true，PLINQ 就会注意到它，停止处理所有线程并抛出 <xref:System.OperationCanceledException>。
 
 在设置取消标记后，PLINQ 查询还可能会继续处理一些元素。
 
-为了提高响应速度，还可以在长时间运行的用户委托中响应取消请求。 有关详细信息，请参阅[如何：取消 PLINQ 查询](../../../docs/standard/parallel-programming/how-to-cancel-a-plinq-query.md)。
+为了提高响应速度，还可以在长时间运行的用户委托中响应取消请求。 有关详细信息，请参阅[如何：取消 PLINQ 查询](how-to-cancel-a-plinq-query.md)。
 
 ## <a name="exceptions"></a>异常
 
@@ -120,7 +120,7 @@ PLINQ 在 .NET Framework 4 中与取消类型集成在一起。 （有关详细�
 
 如果允许异常向上冒泡回到联接线程，则查询也许可以在引发异常后继续处理一些项。
 
-有关详细信息，请参阅[如何：处理 PLINQ 查询中的异常](../../../docs/standard/parallel-programming/how-to-handle-exceptions-in-a-plinq-query.md)。
+有关详细信息，请参阅[如何：处理 PLINQ 查询中的异常](how-to-handle-exceptions-in-a-plinq-query.md)。
 
 ## <a name="custom-partitioners"></a>自定义分区程序
 
@@ -129,13 +129,13 @@ PLINQ 在 .NET Framework 4 中与取消类型集成在一起。 （有关详细�
 [!code-csharp[PLINQ#2](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinq2_cs.cs#2)]
 [!code-vb[PLINQ#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/plinq/vb/plinq3.vb#2)]
 
-PLINQ 支持固定数量的分区（尽管在运行时期间为了负载均衡可能会将数据重新动态分配到这些分区）。 <xref:System.Threading.Tasks.Parallel.For%2A> 和 <xref:System.Threading.Tasks.Parallel.ForEach%2A> 仅支持动态分区。也就是说，分区数在运行时发生变化。 有关详细信息，请参阅 [PLINQ 和 TPL 的自定义分区程序](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)。
+PLINQ 支持固定数量的分区（尽管在运行时期间为了负载均衡可能会将数据重新动态分配到这些分区）。 <xref:System.Threading.Tasks.Parallel.For%2A> 和 <xref:System.Threading.Tasks.Parallel.ForEach%2A> 仅支持动态分区。也就是说，分区数在运行时发生变化。 有关详细信息，请参阅 [PLINQ 和 TPL 的自定义分区程序](custom-partitioners-for-plinq-and-tpl.md)。
 
 ## <a name="measuring-plinq-performance"></a>衡量 PLINQ 性能
 
-在很多情况下，可以并行化查询，但是设置并行查询的开销可能会超出获得的性能收益。 如果查询不执行大量的计算，或者如果数据源较小，则 PLINQ 查询的速度可能比顺序 LINQ to Objects 查询的速度慢。 可以在 Visual Studio Team Server 中使用并行性能分析器比较各种查询的性能，查找处理瓶颈，以及确定查询是并行运行还是按顺序运行。 有关详细信息，请参阅[并发可视化工具 SDK](/visualstudio/profiling/concurrency-visualizer)和[如何：衡量 PLINQ 查询性能](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md)。
+在很多情况下，可以并行化查询，但是设置并行查询的开销可能会超出获得的性能收益。 如果查询不执行大量的计算，或者如果数据源较小，则 PLINQ 查询的速度可能比顺序 LINQ to Objects 查询的速度慢。 可以在 Visual Studio Team Server 中使用并行性能分析器比较各种查询的性能，查找处理瓶颈，以及确定查询是并行运行还是按顺序运行。 有关详细信息，请参阅[并发可视化工具 SDK](/visualstudio/profiling/concurrency-visualizer)和[如何：衡量 PLINQ 查询性能](how-to-measure-plinq-query-performance.md)。
 
 ## <a name="see-also"></a>请参阅
 
-- [并行 LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
-- [了解 PLINQ 中的加速](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)
+- [并行 LINQ (PLINQ)](introduction-to-plinq.md)
+- [了解 PLINQ 中的加速](understanding-speedup-in-plinq.md)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -win32resource compiler option [Visual Basic]
 - win32resource compiler option [Visual Basic]
 ms.assetid: e226946d-19ce-4cc9-91f5-aed24f77aa2b
-ms.openlocfilehash: cee06adec89aac4b3e3f170df3bf932e466f3070
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: bcbc690690993a094bc5360d0c13bddebf8cd615
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004961"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414241"
 ---
 # <a name="-win32resource"></a>-win32resource
 在输出文件中插入 Win32 资源文件。  
@@ -34,7 +34,7 @@ ms.locfileid: "72004961"
   
  Win32 资源可以包含版本或位图（图标）信息，这些信息有助于在文件资源管理器  中标识你的应用程序。 如果不指定 `-win32resource`，编译器将根据程序集版本生成版本信息。 `-win32resource` 和 `-win32icon` 选项互斥。  
   
- 请参阅 [-linkresource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/linkresource.md) 以引用 .NET Framework 资源文件，或参阅 [-resource (Visual Basic)](../../../visual-basic/reference/command-line-compiler/resource.md) 以附加 .NET Framework 资源文件。  
+ 请参阅 [-linkresource (Visual Basic)](linkresource.md) 以引用 .NET Framework 资源文件，或参阅 [-resource (Visual Basic)](resource.md) 以附加 .NET Framework 资源文件。  
   
 > [!NOTE]
 > `-win32resource` 选项在 Visual Studio 开发环境内无法使用；仅当从命令行编译时才可用。  
@@ -48,5 +48,5 @@ vbc -win32resource:rf.res in.vb
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [示例编译命令行](sample-compilation-command-lines.md)

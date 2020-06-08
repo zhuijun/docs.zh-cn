@@ -6,12 +6,12 @@ helpviewer_keywords:
 - langversion compiler option [Visual Basic]
 - -langversion compiler option [Visual Basic]
 ms.assetid: 59b7b0c8-2dde-4e9b-94e7-0237f7e0bafb
-ms.openlocfilehash: 72a5638a5c5364381ffd68604b0d44830d53f365
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 271606ac021e6afcb28fdac3e1bc86e1aaba7d2b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344203"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408533"
 ---
 # <a name="-langversion-visual-basic"></a>-langversion (Visual Basic)
 使编译器仅接受包含在指定 Visual Basic 语言版本中的语法。  
@@ -46,6 +46,6 @@ vbc -langversion:9.0 sample.vb
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [示例编译命令行](sample-compilation-command-lines.md)
 - [面向特定的 .NET Framework 版本](/visualstudio/ide/visual-studio-multi-targeting-overview)

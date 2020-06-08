@@ -9,15 +9,15 @@ helpviewer_keywords:
 - tasks, cancellation
 - asynchronous task cancellation
 ms.assetid: 3ecf1ea9-e399-4a6a-a0d6-8475f48dcb28
-ms.openlocfilehash: 17cabde95644dbc1584dd85b99e26ff7c5cb686d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9f17b11699195e5b2186d008ebefce306834ea8d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139970"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285269"
 ---
 # <a name="task-cancellation"></a>任务取消
-<xref:System.Threading.Tasks.Task?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> 类通过使用 .NET Framework 中的取消标记来支持取消。 有关详细信息，请参阅[托管线程中的取消](../../../docs/standard/threading/cancellation-in-managed-threads.md)。 在任务类中，取消涉及用户委托间的协作，这表示可取消的操作和请求取消的代码。  成功取消涉及调用 <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> 方法的请求代码，以及及时终止操作的用户委托。 可以使用以下选项之一终止操作：  
+<xref:System.Threading.Tasks.Task?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType> 类通过使用 .NET Framework 中的取消标记来支持取消。 有关详细信息，请参阅[托管线程中的取消](../threading/cancellation-in-managed-threads.md)。 在任务类中，取消涉及用户委托间的协作，这表示可取消的操作和请求取消的代码。  成功取消涉及调用 <xref:System.Threading.CancellationTokenSource.Cancel%2A?displayProperty=nameWithType> 方法的请求代码，以及及时终止操作的用户委托。 可以使用以下选项之一终止操作：  
   
 - 简单地从委托中返回。 在许多情况下，这样已足够；但是，采用这种方式取消的任务实例会转换为 <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType> 状态，而不是 <xref:System.Threading.Tasks.TaskStatus.Canceled?displayProperty=nameWithType> 状态。  
   
@@ -28,7 +28,7 @@ ms.locfileid: "73139970"
  [!code-csharp[TPL_Cancellation#02](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_cancellation/cs/snippet02.cs#02)]
  [!code-vb[TPL_Cancellation#02](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_cancellation/vb/module1.vb#02)]  
   
- 有关更完整的示例，请参阅[如何：取消任务及其子级](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)。  
+ 有关更完整的示例，请参阅[如何：取消任务及其子级](how-to-cancel-a-task-and-its-children.md)。  
   
  当任务实例观察到用户代码引发的 <xref:System.OperationCanceledException> 时，它会将该异常的标记与其关联的标记（传递到创建任务的 API 的标记）进行比较。 如果这两个标记相同，并且标记的 <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> 属性返回 true，则任务会将此解释为确认取消并转换为 Canceled 状态。 如果您不使用 <xref:System.Threading.Tasks.Task.Wait%2A> 或 <xref:System.Threading.Tasks.Task.WaitAll%2A> 方法来等待任务，则任务只会将其状态设置为 <xref:System.Threading.Tasks.TaskStatus.Canceled>。  
   
@@ -40,5 +40,5 @@ ms.locfileid: "73139970"
   
 ## <a name="see-also"></a>另请参阅
 
-- [托管线程中的取消](../../../docs/standard/threading/cancellation-in-managed-threads.md)
-- [如何：取消任务及其子级](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)
+- [托管线程中的取消](../threading/cancellation-in-managed-threads.md)
+- [如何：取消任务及其子级](how-to-cancel-a-task-and-its-children.md)

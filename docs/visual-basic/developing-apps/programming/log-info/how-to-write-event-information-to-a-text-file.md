@@ -6,12 +6,12 @@ helpviewer_keywords:
 - text files [Visual Basic], writing event information to a text file
 - events [Visual Basic], writing event information to a text file
 ms.assetid: 9ca7cc03-bf99-4933-9e5e-61ee28e9a6b4
-ms.openlocfilehash: c3c81e331eb3d8ee450ba0cac38e57976846ee63
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6e83f8450ca7be8a2dcd5ff43eab3dd2ec0d2f1b
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74352075"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410057"
 ---
 # <a name="how-to-write-event-information-to-a-text-file-visual-basic"></a>如何：将事件信息写入文本文件 (Visual Basic)
 
@@ -33,7 +33,7 @@ ms.locfileid: "74352075"
 
 2. 在应用程序配置文件中找到 `<listeners>` 部分。
 
-     \<侦听器> 部分位于 name 属性为“DefaultSource”的 \<源> 部分中，后者嵌套在 \<system.diagnostics> 部分中，该部分又嵌套在顶级 \<配置> 部分下。
+     \<listeners> 部分位于 name 属性为“DefaultSource”的 \<source> 部分当中，后者又嵌套在 \<system.diagnostics> 部分当中，位于顶级 \<configuration> 部分之下。
 
 3. 将此元素添加到该 `<listeners>` 部分：
 
@@ -62,7 +62,7 @@ ms.locfileid: "74352075"
 
 ### <a name="to-write-event-information-to-the-file-log"></a>将事件信息写入文件日志
 
-可以使用 `My.Application.Log.WriteEntry` 或 `My.Application.Log.WriteException` 方法将信息写入文件日志。 有关详细信息，请参阅[如何：编写日志消息](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)和[如何：记录异常](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)。
+可以使用 `My.Application.Log.WriteEntry` 或 `My.Application.Log.WriteException` 方法将信息写入文件日志。 有关详细信息，请参阅[如何：编写日志消息](how-to-write-log-messages.md)和[如何：记录异常](how-to-log-exceptions.md)。
 
 为程序集配置文件日志侦听器后，它将接收该程序集写入 `My.Application.Log` 的所有消息。
 
@@ -71,5 +71,5 @@ ms.locfileid: "74352075"
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
-- [使用应用程序日志](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [如何：日志异常](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [使用应用程序日志](working-with-application-logs.md)
+- [如何：日志异常](how-to-log-exceptions.md)

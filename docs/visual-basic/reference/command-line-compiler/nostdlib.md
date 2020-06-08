@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -nostdlib compiler option [Visual Basic]
 - /nostdlib compiler option [Visual Basic]
 ms.assetid: 140381b8-dc96-4ad5-ae11-792c9ed0be4d
-ms.openlocfilehash: db6b047f521d8ef44d2bd1b70b654a4233ebb1a7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0934799853323110e73087ba6d8975c30f84d8f7
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347916"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84387707"
 ---
 # <a name="-nostdlib-visual-basic"></a>-nostdlib (Visual Basic)
 导致编译器不自动引用标准库。  
@@ -40,7 +40,7 @@ vbc -nostdlib -define:_MYTYPE=\"Empty\" T2.vb
   
 ## <a name="see-also"></a>请参阅
 
-- [-noconfig](../../../visual-basic/reference/command-line-compiler/noconfig.md)
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [自定义 My 中可用的对象](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)
+- [-noconfig](noconfig.md)
+- [Visual Basic 命令行编译器](index.md)
+- [示例编译命令行](sample-compilation-command-lines.md)
+- [自定义 My 中可用的对象](../../developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)
