@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 909aa530-2e3b-4d0a-a38a-a2750e535d7d
 topic_type:
 - apiref
-ms.openlocfilehash: bd7ba7ff10918e5953ea8ae89a60af3115af48a3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e6921a0f6420546ba1e866e37a7a7cb129a77c67
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437682"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491428"
 ---
 # <a name="imetadataimportgetcustomattributebyname-method"></a>IMetaDataImport::GetCustomAttributeByName 方法
 获取自定义特性（给定其名称和所有者）。  
@@ -47,21 +47,21 @@ HRESULT GetCustomAttributeByName (
  弄一个指针，它指向作为自定义属性的值的数据数组。  
   
  `pcbData`  
- 弄在 *`ppData`中返回的数据的大小（以字节为单位）。  
+ 弄在 * 中返回的数据的大小（以字节为单位） `ppData` 。  
   
-## <a name="remarks"></a>备注  
- 为同一个所有者定义多个自定义属性是合法的;它们甚至可能具有相同的名称。 但 `GetCustomAttributeByName` 仅返回一个实例。 （`GetCustomAttributeByName` 返回它遇到的第一个实例。）若要查找自定义属性的所有实例，请调用[IMetaDataImport：： EnumCustomAttributes](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md)方法。  
+## <a name="remarks"></a>注解  
+ 为同一个所有者定义多个自定义属性是合法的;它们甚至可能具有相同的名称。 但是， `GetCustomAttributeByName` 只返回一个实例。 （ `GetCustomAttributeByName` 返回它遇到的第一个实例。）若要查找自定义属性的所有实例，请调用[IMetaDataImport：： EnumCustomAttributes](imetadataimport-enumcustomattributes-method.md)方法。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: a6f8ad36-61e1-42b0-9db2-add575646d18
 topic_type:
 - apiref
-ms.openlocfilehash: 7079a915c0402df62afa5648317619af82c943b0
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 4037ffe63d8ebfca67cbd0b3293d36be7481b1bd
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83841974"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501412"
 ---
 # <a name="ihosttaskmanagercreatetask-method"></a>IHostTaskManager::CreateTask 方法
 请求宿主创建新任务。  
@@ -47,7 +47,7 @@ HRESULT CreateTask (
  中指向要传递到函数的用户数据的指针; 如果函数不采用任何参数，则为 null。  
   
  `ppTask`  
- 弄指向主机创建的[IHostTask](../../../../docs/framework/unmanaged-api/hosting/ihosttask-interface.md)实例的地址的指针; 如果无法创建任务，则为 null。 在通过调用[IHostTask：： Start](ihosttask-start-method.md)显式启动任务之前，任务将保持挂起状态。  
+ 弄指向主机创建的[IHostTask](ihosttask-interface.md)实例的地址的指针; 如果无法创建任务，则为 null。 在通过调用[IHostTask：： Start](ihosttask-start-method.md)显式启动任务之前，任务将保持挂起状态。  
   
 ## <a name="return-value"></a>返回值  
   
@@ -61,7 +61,7 @@ HRESULT CreateTask (
 |E_FAIL|发生未知的灾难性故障。 当方法返回 E_FAIL 时，CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
 |E_OUTOFMEMORY|没有足够的内存可用于创建请求的任务。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  CLR 调用 `CreateTask` 来请求宿主创建新任务。 主机返回指向实例的接口指针 `IHostTask` 。 返回的任务必须保持挂起状态，直到通过调用显式启动它 `IHostTask::Start` 。  
   
 ## <a name="requirements"></a>要求  

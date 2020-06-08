@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7a3c97c3-1e31-47b1-bf23-386785c509c4
 topic_type:
 - apiref
-ms.openlocfilehash: 1e08d246136b33ffaaea91367d428e0bf2db99c1
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 41083b2fcd61a9a726e835c3d5710308aa634600
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76864123"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84498604"
 ---
 # <a name="icorprofilerinfogetassemblyinfo-method"></a>ICorProfilerInfo::GetAssemblyInfo 方法
 接受程序集 ID，并返回此程序集的名称及其清单模块的 ID。  
@@ -57,22 +57,22 @@ HRESULT GetAssemblyInfo(
  `pModuleId`  
  [out] 指向程序集的清单模块 ID 的指针。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  此方法返回后，必须验证 `szName` 缓冲区大小是否足以包含程序集全名。 为此，请比较 `pcchName` 指向的值和 `cchName` 参数的值。 如果 `pcchName` 指向的值大于 `cchName`，请分配更大的 `szName` 缓冲区，并用新的、更大的大小更新 `cchName`，然后再次调用 `GetAssemblyInfo`。  
   
  或者，可以先用长度为零的 `szName` 缓冲区调用 `GetAssemblyInfo` 以获取正确的缓冲区大小。 然后可根据 `pcchName` 中返回的值调整缓冲区大小，并再次调用 `GetAssemblyInfo`。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - [ICorProfilerInfo 接口](icorprofilerinfo-interface.md)
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [分析](index.md)

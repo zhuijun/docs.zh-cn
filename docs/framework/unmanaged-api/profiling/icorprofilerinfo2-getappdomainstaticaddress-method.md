@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 2a9e0ea7-a9e2-4817-b1c4-fcf15b215ea9
 topic_type:
 - apiref
-ms.openlocfilehash: 05d8c44655d8670194035c336bd62ae5d53bfec3
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 3dc5f04504cca632892c16d31c92a33935b356e0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862953"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497330"
 ---
 # <a name="icorprofilerinfo2getappdomainstaticaddress-method"></a>ICorProfilerInfo2::GetAppDomainStaticAddress 方法
 获取指定应用程序域静态字段在指定应用程序域范围内的地址。  
@@ -48,23 +48,23 @@ RESULT GetAppDomainStaticAddress(
  `ppAddress`  
  弄指向指定应用程序域中的静态字段的地址的指针。  
   
-## <a name="remarks"></a>备注  
- `GetAppDomainStaticAddress` 方法可能会返回以下内容之一：  
+## <a name="remarks"></a>注解  
+ 此 `GetAppDomainStaticAddress` 方法可能会返回以下内容之一：  
   
 - 如果未在指定的上下文中为给定的静态字段分配地址，则 CORPROF_E_DATAINCOMPLETE HRESULT。  
   
 - 可能位于垃圾回收堆中的对象的地址。 这些地址可能会在垃圾回收后失效，因此，在垃圾回收后，探查器不应假定它们是有效的。  
   
- 在类的类构造函数完成之前，尽管某些静态字段可能已经初始化并为垃圾回收对象提供了根，`GetAppDomainStaticAddress` 仍将返回其所有静态字段的 CORPROF_E_DATAINCOMPLETE。  
+ 在类的类构造函数完成之前， `GetAppDomainStaticAddress` 将为其所有静态字段返回 CORPROF_E_DATAINCOMPLETE，不过，某些静态字段可能已经初始化并为垃圾回收对象提供了根。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

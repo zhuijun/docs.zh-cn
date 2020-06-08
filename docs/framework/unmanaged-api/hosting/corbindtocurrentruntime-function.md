@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6105c13e-d9cd-44d2-a95a-924e042830c7
 topic_type:
 - apiref
-ms.openlocfilehash: 348ca9d157a668dcd180076475f1fe9861197174
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 4c015d77deb4e6ed3d43074f2903e26b687de84f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616655"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493560"
 ---
 # <a name="corbindtocurrentruntime-function"></a>CorBindToCurrentRuntime 函数
 使用存储在 XML 文件中的版本信息将公共语言运行时（CLR）加载到进程中。 XML 文件的格式将建模为标准应用程序配置文件。 有关配置文件的详细信息，请参阅[配置文件架构](../../configure-apps/file-schema/index.md)。  
@@ -42,12 +42,12 @@ HRESULT CorBindToCurrentRuntime (
  `pwszFileName`  
  中指定要加载的 CLR 版本的应用程序配置文件的名称。 如果文件名不是完全限定的，则假定它与进行调用的可执行文件位于同一目录中。  
   
- 配置文件的[ \< q>](../../configure-apps/file-schema/startup/requiredruntime-element.md)元素中的 version 特性描述了要加载的运行时的版本。  
+ 配置文件的元素中的 version 特性描述了要加载的运行时的版本 [\<requiredRuntime>](../../configure-apps/file-schema/startup/requiredruntime-element.md) 。  
   
  如果未指定任何版本，或者如果 `<requiredRuntime>` 找不到该元素，则会加载计算机上安装的最新版本的 CLR。  
   
  `rclsid`  
- 中`CLSID`用于实现[ICorRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/icorruntimehost-interface.md)或[ICLRRuntimeHost](iclrruntimehost-interface.md)接口的 coclass 的。 支持的值为 CLSID_CorRuntimeHost 或 CLSID_CLRRuntimeHost。  
+ 中`CLSID`用于实现[ICorRuntimeHost](icorruntimehost-interface.md)或[ICLRRuntimeHost](iclrruntimehost-interface.md)接口的 coclass 的。 支持的值为 CLSID_CorRuntimeHost 或 CLSID_CLRRuntimeHost。  
   
  `riid`  
  中`IID`你请求的接口的。 支持的值为 IID_ICorRuntimeHost 或 IID_ICLRRuntimeHost。  

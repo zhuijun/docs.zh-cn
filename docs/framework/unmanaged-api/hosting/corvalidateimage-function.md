@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 0117e080-05f9-4772-885d-e1847230947c
 topic_type:
 - apiref
-ms.openlocfilehash: 8841fab0517353849ef99594bcbd03dda772c766
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 426b39aa3d1ada5ae44565a742b70681a7bcf6d3
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616497"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493430"
 ---
 # <a name="_corvalidateimage-function"></a>_CorValidateImage 函数
 验证托管模块映像，并在加载后通知操作系统加载程序。  
@@ -48,7 +48,7 @@ STDAPI _CorValidateImage (
 |`STATUS_INVALID_IMAGE_FORMAT`|图像无效。 此值具有 HRESULT 0xC000007BL。|  
 |`STATUS_SUCCESS`|图像有效。 此值具有 HRESULT 0x00000000L。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  在 Windows XP 和更高版本中，操作系统加载程序通过检查通用对象文件格式（COFF）标头中的 COM 描述符目录位检查托管模块。 设置位表示托管模块。 如果加载程序检测到托管模块，它将加载 Mscoree.dll 并调用 `_CorValidateImage` ，这会执行以下操作：  
   
 - 确认映像是有效的托管模块。  
@@ -59,7 +59,7 @@ STDAPI _CorValidateImage (
   
 - 加载托管模块映像时返回到加载程序。  
   
- 对于可执行映像，操作系统加载器会调用[_CorExeMain](../../../../docs/framework/unmanaged-api/hosting/corexemain-function.md)函数，而不考虑可执行文件中指定的入口点。 对于 DLL 程序集映像，加载程序将调用[_CorDllMain](cordllmain-function.md)函数。  
+ 对于可执行映像，操作系统加载器会调用[_CorExeMain](corexemain-function.md)函数，而不考虑可执行文件中指定的入口点。 对于 DLL 程序集映像，加载程序将调用[_CorDllMain](cordllmain-function.md)函数。  
   
  `_CorExeMain`或 `_CorDllMain` 执行以下操作：  
   

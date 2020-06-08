@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4c02ec37-cdf0-46b2-890e-235092741236
 topic_type:
 - apiref
-ms.openlocfilehash: 8a9fdcd650e18bb91e2a4e30e5a22fb2a991d25c
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: a3018d8477d5abd7d03ad8675503624d2e44e8f4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703491"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504129"
 ---
 # <a name="iclroneventmanagerunregisteractiononevent-method"></a>ICLROnEventManager::UnregisterActionOnEvent 方法
 为指定的事件注销先前注册的回调指针。  
@@ -39,7 +39,7 @@ HRESULT UnregisterActionOnEvent (
  中[EClrEvent](eclrevent-enumeration.md)值之一，指示要撤消注册的回调指针的事件 `pAction` 。  
   
  `pAction`  
- 中指向作为参数传递给[RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md)方法的[IActionOnCLREvent](../../../../docs/framework/unmanaged-api/hosting/iactiononclrevent-interface.md)对象的指针。  
+ 中指向作为参数传递给[RegisterActionOnEvent](iclroneventmanager-registeractiononevent-method.md)方法的[IActionOnCLREvent](iactiononclrevent-interface.md)对象的指针。  
   
 ## <a name="return-value"></a>返回值  
   

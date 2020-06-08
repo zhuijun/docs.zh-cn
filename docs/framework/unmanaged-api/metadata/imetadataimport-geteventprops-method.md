@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 5eaf3b4a-92b7-4d5b-97e0-1e83721e0052
 topic_type:
 - apiref
-ms.openlocfilehash: 306c1748b4997309ee15fb7751bc818b0287aaf0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3b47d1559300a462ccda42bc88da43f66c1043ec
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177268"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491298"
 ---
 # <a name="imetadataimportgeteventprops-method"></a>IMetaDataImport::GetEventProps 方法
-获取由指定事件令牌表示的事件的元数据信息，包括声明类型、代理的添加和删除方法以及任何标志和其他关联数据。  
+获取指定事件标记所表示的事件的元数据信息，包括声明类型、委托的添加和移除方法以及任何标志和其他关联的数据。  
   
 ## <a name="syntax"></a>语法  
   
@@ -45,53 +45,53 @@ HRESULT GetEventProps (
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
  `ev`  
- [在]表示要获取其元数据的事件元数据令牌。  
+ 中表示要获取其元数据的事件的事件元数据标记。  
   
  `pClass`  
- [出]指向表示声明事件的类的 TypeDef 令牌的指针。  
+ 弄一个指针，指向表示声明事件的类的 TypeDef 标记。  
   
  `szEvent`  
- [出]引用`ev`的事件的名称。  
+ 弄引用的事件的名称 `ev` 。  
   
  `pchEvent`  
- [在]请求的长度以宽字符。 `szEvent`  
+ 中请求的长度（以宽字符为范围） `szEvent` 。  
   
  `pdwEventFlags`  
- [出]返回的长度以宽字符。 `szEvent`  
+ 弄返回的宽字符的长度 `szEvent` 。  
   
  `ptkEventType`  
- [出]指向表示事件<xref:System.Delegate>类型的 TypeRef 或 TypeDef 元数据令牌的指针。  
+ 弄指向表示事件类型的 TypeRef 或 TypeDef 元数据标记的指针 <xref:System.Delegate> 。  
   
  `pmdAddOn`  
- [出]指向元数据令牌的指针，表示为事件添加处理程序的方法。  
+ 弄指向表示添加事件处理程序的方法的元数据标记的指针。  
   
  `pmdRemoveOn`  
- [出]指向表示删除事件处理程序的方法的元数据令牌的指针。  
+ 弄指向表示删除事件处理程序的方法的元数据标记的指针。  
   
  `pmdFire`  
- [出]指向表示引发事件的方法的元数据令牌的指针。  
+ 弄指向表示引发事件的方法的元数据标记的指针。  
   
  `rmdOtherMethod`  
- [出]指向与事件关联的其他方法的令牌指针数组。  
+ 弄指向与事件关联的其他方法的标记指针的数组。  
   
  `cMax`  
  [in] `rmdOtherMethod` 数组的最大大小。  
   
  `pcOtherMethod`  
- [出]在 中`rmdOtherMethod`返回的令牌数。  
+ 弄返回的令牌数 `rmdOtherMethod` 。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
- **标题：** 科尔赫  
+ **标头：** Cor  
   
- **库：** 作为资源包含在 MsCorEE.dll 中  
+ **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

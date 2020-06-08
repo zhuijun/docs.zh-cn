@@ -6,12 +6,12 @@ helpviewer_keywords:
 - profiling interfaces [.NET Framework]
 - interfaces [.NET Framework profiling]
 ms.assetid: d9303db8-e881-4217-91b7-8c7573c8ef9e
-ms.openlocfilehash: 8b6b9acff2945e2d8fd684bfa31e4af086ea5ab9
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: f073794b4fdf89f289b70fed9967ee37b5f4e133
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868143"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494028"
 ---
 # <a name="profiling-interfaces"></a>分析接口
 本节描述允许对公共语言运行时 (CLR) 正在执行的程序进行分析的非托管接口。  
@@ -20,7 +20,7 @@ ms.locfileid: "76868143"
  [ICLRProfiling 接口](iclrprofiling-interface.md)  
  提供[AttachProfiler](iclrprofiling-attachprofiler-method.md)方法，该方法可使探查器附加到正在运行的进程。  
   
- [ICorProfilerAssemblyReferenceProvider 接口](icorprofilerassemblyreferenceprovider-interface.md)  
+ [ICorProfilerAssemblyReferenceProvider 方法](icorprofilerassemblyreferenceprovider-interface.md)  
  启用探查器以通知程序集引用的 CLR，探查器将在[ICorProfilerCallback：： ModuleLoadFinished](icorprofilercallback-moduleloadfinished-method.md)回调中添加这些引用。  
   
  [ICorProfilerCallback 接口](icorprofilercallback-interface.md)  
@@ -63,7 +63,7 @@ ms.locfileid: "76868143"
  使用 NET Framework 2.0 及更高版本支持的方法扩展 `ICorProfilerInfo` 接口。  
   
  [ICorProfilerInfo3 接口](icorprofilerinfo3-interface.md)  
- 利用 .NET Framework 4 及更高版本中支持的方法扩展 `ICorProfilerInfo2` 接口。  
+ `ICorProfilerInfo2`用 .NET Framework 4 及更高版本中支持的方法扩展接口。  
   
  [ICorProfilerInfo4 接口](icorprofilerinfo4-interface.md)  
  提供一些方法，代码探查器可以使用这些方法与 CLR 通信，从而控制事件监视并请求信息。  
@@ -81,7 +81,7 @@ ms.locfileid: "76868143"
  提供用于按顺序循环访问应用程序或探查器加载的模块集合的方法。  
   
  [ICorProfilerObjectEnum 接口](icorprofilerobjectenum-interface.md)  
- 提供按顺序循环访问[ngen.exe （本机映像生成器）](../../../../docs/framework/tools/ngen-exe-native-image-generator.md)生成的冻结对象的集合的方法。  
+ 提供按顺序循环访问[ngen.exe （本机映像生成器）](../../tools/ngen-exe-native-image-generator.md)生成的冻结对象的集合的方法。  
   
  [ICorProfilerThreadEnum 接口](icorprofilerthreadenum-interface.md)  
  提供按顺序循环访问 CLR 中线程集合的方法。  

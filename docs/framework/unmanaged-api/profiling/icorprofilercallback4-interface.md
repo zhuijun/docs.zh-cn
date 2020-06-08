@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: 665f3cfc-cd6f-4880-906c-ea65ad384783
 topic_type:
 - apiref
-ms.openlocfilehash: 1b85c48859ac29738347d112dd0466a76bfdfd2c
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 295d3d440529623f4569fd6c5f4debe7e4558990
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865332"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499436"
 ---
 # <a name="icorprofilercallback4-interface"></a>ICorProfilerCallback4 接口
 提供公共语言运行时（CLR）用于将信息传递给探查器的回调方法。  
   
 ## <a name="methods"></a>方法  
   
-|方法|描述|  
+|方法|说明|  
 |------------|-----------------|  
 |[GetReJITParameters 方法](icorprofilercallback4-getrejitparameters-method.md)|允许代码探查器为新的重新编译的方法体设置备用代码生成标志。|  
 |[MovedReferences2 方法](icorprofilercallback4-movedreferences2-method.md)|作为压缩垃圾回收的结果，报告堆中对象的新布局。|  
@@ -37,17 +37,17 @@ ms.locfileid: "76865332"
   
 ## <a name="remarks"></a>备注  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - [ICorProfilerCallback2 接口](icorprofilercallback2-interface.md)
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [ICorProfilerInfo 接口](icorprofilerinfo-interface.md)

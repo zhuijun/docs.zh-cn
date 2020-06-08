@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4db97cf9-e4c1-4233-8efa-cbdc0e14a8e4
 topic_type:
 - apiref
-ms.openlocfilehash: 05902436c09d082f90af01f48c7e918650317ce7
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: d2693a94f02214df6d7265b26e3d70d91adcf8a7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84009413"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503830"
 ---
 # <a name="imetadataassemblyimportfindassembliesbyname-method"></a>IMetaDataAssemblyImport::FindAssembliesByName 方法
 `szAssemblyName`使用由公共语言运行时（CLR）用于解析引用的标准规则，获取具有指定参数的程序集的数组。  
@@ -64,10 +64,10 @@ HRESULT FindAssembliesByName (
 |`S_OK`|`FindAssembliesByName`已成功返回。|  
 |`S_FALSE`|没有程序集。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  在给定程序集名称的 `FindAssembliesByName` 情况下，方法通过遵循用于解析程序集引用的标准规则查找程序集。 （有关详细信息，请参阅[运行时如何定位程序集](../../deployment/how-the-runtime-locates-assemblies.md)。）`FindAssembliesByName`允许调用方配置程序集解析程序上下文的各个方面，例如应用程序基和专用搜索路径。  
   
- `FindAssembliesByName`方法要求在进程中初始化 CLR，以便调用程序集解析逻辑。 因此，在调用之前，必须先调用[CoInitializeEE](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) （传递 COINITEE_DEFAULT） `FindAssembliesByName` ，然后调用[CoUninitializeCor](../hosting/couninitializecor-function.md)。  
+ `FindAssembliesByName`方法要求在进程中初始化 CLR，以便调用程序集解析逻辑。 因此，在调用之前，必须先调用[CoInitializeEE](../hosting/coinitializeee-function.md) （传递 COINITEE_DEFAULT） `FindAssembliesByName` ，然后调用[CoUninitializeCor](../hosting/couninitializecor-function.md)。  
   
  `FindAssembliesByName`返回一个[IMetaDataImport](imetadataimport-interface.md)指针，该指针指向包含传入的程序集名称的程序集清单的文件。 如果给定的程序集名称未完全指定（例如，如果不包含版本），则可能会返回多个程序集。  
   

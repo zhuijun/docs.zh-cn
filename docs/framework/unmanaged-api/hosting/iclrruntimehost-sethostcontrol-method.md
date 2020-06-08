@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6136be87-e631-4756-81ed-74b66581bad4
 topic_type:
 - apiref
-ms.openlocfilehash: 8d6a4e1ca934c748352b0c4f5120536a4dd24e0b
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 644b31ae8e8f0c51c08bcad57220a028406cfd3a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703955"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504066"
 ---
 # <a name="iclrruntimehostsethostcontrol-method"></a>ICLRRuntimeHost::SetHostControl 方法
 设置公共语言运行时（CLR）可用于获取宿主的[IHostControl 接口](ihostcontrol-interface.md)实现的接口指针。  
@@ -49,8 +49,8 @@ HRESULT SetHostControl(
 |E_FAIL|发生未知的灾难性故障。 如果方法返回 E_FAIL，则 CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
 |E_CLR_ALREADY_STARTED|CLR 已初始化。|  
   
-## <a name="remarks"></a>备注  
- 必须在 `SetHostControl` 初始化 CLR 之前调用，也就是说，在调用[Start 方法](../../../../docs/framework/unmanaged-api/hosting/iclrruntimehost-start-method.md)或使用任何[元数据接口](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)之前。 建议在 `SetHostControl` 调用[CorBindToCurrentRuntime 函数](../../../../docs/framework/unmanaged-api/hosting/corbindtocurrentruntime-function.md)或[CorBindToRuntimeEx 函数](corbindtoruntimeex-function.md)之后立即调用。  
+## <a name="remarks"></a>注解  
+ 必须在 `SetHostControl` 初始化 CLR 之前调用，也就是说，在调用[Start 方法](iclrruntimehost-start-method.md)或使用任何[元数据接口](../metadata/metadata-interfaces.md)之前。 建议在 `SetHostControl` 调用[CorBindToCurrentRuntime 函数](corbindtocurrentruntime-function.md)或[CorBindToRuntimeEx 函数](corbindtoruntimeex-function.md)之后立即调用。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  

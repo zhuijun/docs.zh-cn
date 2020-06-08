@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c1e744b8-a6fb-4d9c-a971-8babc875d8f0
 topic_type:
 - apiref
-ms.openlocfilehash: 489fa217744e41ccb5d27d088790131c15e1ee52
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d2252f58af1a319d953fb320a99fad1cfec3dca0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177403"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492689"
 ---
 # <a name="imetadataerroronerror-method"></a>IMetaDataError::OnError 方法
-提供元数据合并期间发生的错误通知。  
+提供在元数据合并期间发生的错误的通知。  
   
 ## <a name="syntax"></a>语法  
   
@@ -34,22 +34,22 @@ HRESULT OnError (
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
  `hrError`  
- [在]HRESULT 错误值返回到调用方法。  
+ 中返回到调用方法的 HRESULT 错误值。  
   
  `token`  
- [在]发生错误时正在合并的代码对象的元数据令牌。  
+ 中发生错误时正在合并的代码对象的元数据标记。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
- **标题：** 科尔赫  
+ **标头：** Cor  
   
- **库：** 用作 MsCorEE.dll 中的资源  
+ **库：** 用作 Mscoree.dll 中的资源  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataError 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-interface.md)
+- [IMetaDataError 接口](imetadataerror-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4664033f-db97-4388-b988-2ec470796e58
 topic_type:
 - apiref
-ms.openlocfilehash: fb2ecc80f272a3fc9b63b20c5956e7a28f117784
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 727cd82226b9a59c4879ffea5e87f93dd5fe38c9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703472"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504103"
 ---
 # <a name="iclrpolicymanagersetactiononfailure-method"></a>ICLRPolicyManager::SetActionOnFailure 方法
 指定发生指定的故障时公共语言运行时（CLR）应执行的策略操作。  
@@ -53,8 +53,8 @@ HRESULT SetActionOnFailure (
 |E_FAIL|发生未知的灾难性故障。 方法返回 E_FAIL 后，CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
 |E_INVALIDARG|无法为指定的操作设置策略操作，或者为该操作指定了无效的策略操作。|  
   
-## <a name="remarks"></a>备注  
- 默认情况下，CLR 在无法分配内存等资源时引发异常。 `SetActionOnFailure`允许主机通过指定在失败时要执行的策略操作来重写此行为。 下表显示了支持的[EClrFailure](eclrfailure-enumeration.md)和[EPolicyAction](../../../../docs/framework/unmanaged-api/hosting/epolicyaction-enumeration.md)值的组合。 （ [EClrFailure](eclrfailure-enumeration.md)值中省略了 FAIL_ 前缀。）  
+## <a name="remarks"></a>注解  
+ 默认情况下，CLR 在无法分配内存等资源时引发异常。 `SetActionOnFailure`允许主机通过指定在失败时要执行的策略操作来重写此行为。 下表显示了支持的[EClrFailure](eclrfailure-enumeration.md)和[EPolicyAction](epolicyaction-enumeration.md)值的组合。 （ [EClrFailure](eclrfailure-enumeration.md)值中省略了 FAIL_ 前缀。）  
   
 ||NonCriticalResource|CriticalResource|FatalRuntime|OrphanedLock|StackOverflow|AccessViolation|CodeContract|  
 |-|-------------------------|----------------------|------------------|------------------|-------------------|---------------------|------------------|  

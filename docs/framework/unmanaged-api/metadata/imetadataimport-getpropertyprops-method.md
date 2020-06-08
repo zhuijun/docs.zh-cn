@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: dc0ff3e6-7e7d-4f6c-948d-52b28f5cb78c
 topic_type:
 - apiref
-ms.openlocfilehash: 5fc71bf240b89afadbf8f2ba10906322921bdda2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cac5aaa7ed13b6a48b36ad550da8b73d0deb2ee7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175325"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491038"
 ---
 # <a name="imetadataimportgetpropertyprops-method"></a>IMetaDataImport::GetPropertyProps 方法
-获取指定令牌表示的属性的元数据。  
+获取由指定标记表示的属性的元数据。  
   
 ## <a name="syntax"></a>语法  
   
@@ -48,65 +48,65 @@ HRESULT GetPropertyProps (
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
  `prop`  
- [在]表示要为其返回元数据的属性的令牌。  
+ 中一个标记，它表示要为其返回元数据的属性。  
   
  `pClass`  
- [出]指向 TypeDef 令牌的指针，表示实现该属性的类型。  
+ 弄一个指针，指向表示实现属性的类型的 TypeDef 标记。  
   
  `szProperty`  
- [出]保存属性名称的缓冲区。  
+ 弄用于保存属性名称的缓冲区。  
   
  `cchProperty`  
- [在]以 宽字符表示`szProperty`的大小。  
+ 中的大小（以宽字符为大小） `szProperty` 。  
   
  `pchProperty`  
- [出]在 中`szProperty`返回的宽字符数。  
+ 弄返回的宽字符数 `szProperty` 。  
   
  `pdwPropFlags`  
- [出]指向应用于该属性的任何属性标志的指针。 此值是[CorPropertyAttr](../../../../docs/framework/unmanaged-api/metadata/corpropertyattr-enumeration.md)枚举中的位掩码。  
+ 弄指向应用于属性的任何属性标志的指针。 此值是[CorPropertyAttr](corpropertyattr-enumeration.md)枚举中的位掩码。  
   
  `ppvSig`  
- [出]指向属性的元数据签名的指针。  
+ 弄指向属性的元数据签名的指针。  
   
  `pbSig`  
- [出]在 中`ppvSig`返回的字节数。  
+ 弄返回的字节数 `ppvSig` 。  
   
  `pdwCPlusTypeFlag`  
- [出]指定作为属性默认值的常量类型的标志。 此值来自 CorElementType 枚举。  
+ 弄一个标志，该标志指定作为属性的默认值的常量的类型。 此值来自 CorElementType 枚举。  
   
  `ppDefaultValue`  
- [出]指向存储此属性的默认值的字节的指针。  
+ 弄指向存储此属性的默认值的字节的指针。  
   
  `pcchDefaultValue`  
- [出]大字符的大小`ppDefaultValue`，如果`pdwCPlusTypeFlag`为ELEMENT_TYPE_STRING;否则，此值不相关。 在这种情况下，将从 指定的类型推断`ppDefaultValue`的长度`pdwCPlusTypeFlag`。  
+ 弄如果 ELEMENT_TYPE_STRING，则为的宽字符大小 `ppDefaultValue` `pdwCPlusTypeFlag` ; 否则，此值是不相关的。 在这种情况下，的长度 `ppDefaultValue` 是从指定的类型推断出来的 `pdwCPlusTypeFlag` 。  
   
  `pmdSetter`  
- [出]指向 MethodDef 令牌的指针，表示属性的设置访问器方法。  
+ 弄一个指针，它指向表示属性的 set 访问器方法的 MethodDef 标记。  
   
  `pmdGetter`  
- [出]指向 MethodDef 令牌的指针，表示属性的 get 访问器方法。  
+ 弄一个指针，它指向表示属性的 get 访问器方法的 MethodDef 标记。  
   
  `rmdOtherMethod`  
- [出]表示与属性关联的其他方法的 MethodDef 令牌数组。  
+ 弄MethodDef 标记的数组，表示与属性关联的其他方法。  
   
  `cMax`  
- [in] `rmdOtherMethod` 数组的最大大小。 如果提供的数组足够大以容纳所有方法，则不会发出警告即可跳过这些方法。  
+ [in] `rmdOtherMethod` 数组的最大大小。 如果未提供足够大的数组来容纳所有方法，则会跳过这些方法，而不发出警告。  
   
  `pcOtherMethod`  
- [出]在 中`rmdOtherMethod`返回的 MethodDef 令牌数。  
+ 弄中返回的 MethodDef 标记的数目 `rmdOtherMethod` 。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
- **标题：** 科尔赫  
+ **标头：** Cor  
   
- **库：** 作为资源包含在 MsCorEE.dll 中  
+ **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

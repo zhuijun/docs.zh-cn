@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0aa60f24-8bbd-4c83-83c5-86ad191b1d82
 topic_type:
 - apiref
-ms.openlocfilehash: dcd162aec12dc75585f1828cffdd4cdbedcf9988
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: f5438ddc655f0f6a7c11d978a47b1bf9e2a13059
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868655"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84496997"
 ---
 # <a name="icorprofilerinfo2getfunctioninfo2-method"></a>ICorProfilerInfo2::GetFunctionInfo2 方法
 获取每个类型参数或某个函数（如果存在）的父类、元数据标记和 `ClassID`。  
@@ -64,8 +64,8 @@ HRESULT GetFunctionInfo2(
  `typeArgs`  
  [out] 一个由 `ClassID` 值构成的数组，其中的每个值都是函数的类型参数的 ID。 方法返回时，`typeArgs` 将包含部分或全部 `ClassID` 值。  
   
-## <a name="remarks"></a>备注  
- 探查器代码可调用[ICorProfilerInfo：： GetModuleMetaData](icorprofilerinfo-getmodulemetadata-method.md)以获取给定模块的[元数据](../../../../docs/framework/unmanaged-api/metadata/index.md)接口。 然后，返回到 `pToken` 所引用位置的元数据标记便可用于访问该函数的元数据。  
+## <a name="remarks"></a>注解  
+ 探查器代码可调用[ICorProfilerInfo：： GetModuleMetaData](icorprofilerinfo-getmodulemetadata-method.md)以获取给定模块的[元数据](../metadata/index.md)接口。 然后，返回到 `pToken` 所引用位置的元数据标记便可用于访问该函数的元数据。  
   
  通过 `pClassId` 和 `typeArgs` 参数返回的类 ID 和类型参数取决于传入 `frameInfo` 参数的值，如下表中所示。  
   
@@ -79,18 +79,18 @@ HRESULT GetFunctionInfo2(
   
  或者，可以先用长度为零的 `pcTypeArgs` 缓冲区调用 `GetFunctionInfo2` 以获取正确的缓冲区大小。 然后，可将缓冲区大小设置为 `pcTypeArgs` 中返回的值除以 `ClassID` 值的大小，然后再次调用 `GetFunctionInfo2`。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - [ICorProfilerInfo 接口](icorprofilerinfo-interface.md)
 - [ICorProfilerInfo2 接口](icorprofilerinfo2-interface.md)
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [分析](index.md)

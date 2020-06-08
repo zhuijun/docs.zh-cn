@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 70261da5-5933-4e25-9de0-ddf51cba56cc
 topic_type:
 - apiref
-ms.openlocfilehash: 73d122b1ffa890bfa43f8eef7e24595ac0d26ebe
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: b85a7893cf5271c65bc842bb6ea598c825225376
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861783"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495718"
 ---
 # <a name="icorprofilerinfo4requestrevert-method"></a>ICorProfilerInfo4::RequestRevert 方法
 将指定函数的所有实例还原为其初始版本。  
@@ -51,17 +51,17 @@ HRESULT RequestRevert (
 ## <a name="return-value"></a>返回值  
  此方法返回以下特定 HRESULT 以及表示方法失败的 HRESULT 错误。  
   
-|HRESULT|描述|  
+|HRESULT|说明|  
 |-------------|-----------------|  
 |S_OK|尝试还原所有请求；但是，必须检查返回的状态数组，确定成功还原了哪些函数。|  
 |CORPROF_E_CALLBACK4_REQUIRED|探查器必须实现[ICorProfilerCallback4](icorprofilercallback4-interface.md)接口，以便支持此调用。|  
-|CORPROF_E_REJIT_NOT_ENABLED|尚未启用 JIT 重新编译。 必须通过使用[ICorProfilerInfo：： SetEventMask](icorprofilerinfo-seteventmask-method.md)方法设置 `COR_PRF_ENABLE_REJIT` 标志来在初始化期间启用 JIT 重新编译。|  
+|CORPROF_E_REJIT_NOT_ENABLED|尚未启用 JIT 重新编译。 必须通过使用[ICorProfilerInfo：： SetEventMask](icorprofilerinfo-seteventmask-method.md)方法设置标志来在初始化期间启用 JIT 重新编译 `COR_PRF_ENABLE_REJIT` 。|  
 |E_INVALIDARG|`cFunctions` 为 0，或者 `moduleIds` 或 `methodIds` 为 `NULL`。|  
 |E_OUTOFMEMORY|CLR 无法完成请求，因为它已耗尽内存。|  
   
 ## <a name="status-hresults"></a>状态 HRESULTS  
   
-|状态数组 HRESULT|描述|  
+|状态数组 HRESULT|说明|  
 |--------------------------|-----------------|  
 |S_OK|已成功还原相应函数。|  
 |E_INVALIDARG|`moduleID` 或 `methodDef` 参数为 `NULL`。|  
@@ -70,20 +70,20 @@ HRESULT RequestRevert (
 |CORPROF_E_ACTIVE_REJIT_REQUEST_NOT_FOUND|CLR 无法还原指定函数，因为找不到对应的活动的重新编译请求。 从未请求重新编译或此函数已还原。|  
 |其他|操作系统返回了 CLR 控件范围之外的失败。 例如，如果用于更改内存页访问权限保护的系统调用失败，将显示操作系统错误。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  在下次调用任何已还原的函数实例时，将运行此函数的初始版本。 如果已在运行某个函数，则将完成正在运行的版本的执行操作。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - [ICorProfilerInfo4 接口](icorprofilerinfo4-interface.md)
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [分析](index.md)

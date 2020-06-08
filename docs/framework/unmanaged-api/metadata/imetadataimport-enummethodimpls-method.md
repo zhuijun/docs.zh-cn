@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4e0f865d-88b5-44bd-be35-492622e5e08e
 topic_type:
 - apiref
-ms.openlocfilehash: e766cec8fd84713e12c43cd1095650ed5b757bcb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b8fabea78f85448e39fc6d31f0a7969458343877
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175468"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492000"
 ---
 # <a name="imetadataimportenummethodimpls-method"></a>IMetaDataImport::EnumMethodImpls 方法
 枚举表示指定类型的方法的 MethodBody 和 MethodDeclaration 标记。  
@@ -38,42 +38,42 @@ HRESULT EnumMethodImpls (
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
  `phEnum`  
- [进出]指向枚举器的指针。 对于此方法的第一次调用，这必须为 NULL。  
+ [in，out]指向枚举器的指针。 第一次调用此方法时，此值必须为 NULL。  
   
  `td`  
- [在]方法要枚举的类型的类型的 TypeDef 令牌。  
+ 中要枚举其方法实现的类型的 TypeDef 标记。  
   
  `rMethodBody`  
- [出]要存储方法体令牌的数组。  
+ 弄用于存储 MethodBody 标记的数组。  
   
  `rMethodDecl`  
- [出]要存储方法声明令牌的数组。  
+ 弄用于存储 MethodDeclaration 标记的数组。  
   
  `cMax`  
- [在]`rMethodBody`和`rMethodDecl`数组的最大大小。  
+ 中和数组的最大 `rMethodBody` 大小 `rMethodDecl` 。  
   
  `pcTokens`  
- [在]在 和`rMethodBody``rMethodDecl`中返回的实际方法数。  
+ 中和中返回的实际方法数 `rMethodBody` `rMethodDecl` 。  
   
 ## <a name="return-value"></a>返回值  
   
 |HRESULT|说明|  
 |-------------|-----------------|  
 |`S_OK`|`EnumMethodImpls`已成功返回。|  
-|`S_FALSE`|没有要枚举的方法令牌。 在这种情况下，`pcTokens`为零。|  
+|`S_FALSE`|没有要枚举的方法标记。 在这种情况下， `pcTokens` 为零。|  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
- **标题：** 科尔赫  
+ **标头：** Cor  
   
- **库：** 作为资源包含在 MsCorEE.dll 中  
+ **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

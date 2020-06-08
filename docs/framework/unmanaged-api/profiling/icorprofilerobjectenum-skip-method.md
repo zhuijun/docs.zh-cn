@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f8e498f8-f93a-4b82-bd22-55bdbf5e8d45
 topic_type:
 - apiref
-ms.openlocfilehash: 096489fcdc9d604e003386501c22967b45ba6d7f
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 2248f99b76aaabff4bd3dc78b6e777a95692bb9c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861094"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84494512"
 ---
 # <a name="icorprofilerobjectenumskip-method"></a>ICorProfilerObjectEnum::Skip 方法
 将此枚举器的光标从其当前位置前移，以便跳过指定数目的元素。  
@@ -37,17 +37,17 @@ HRESULT Skip (
  `celt`  
  中要跳过的元素数。  
   
-## <a name="remarks"></a>备注  
- 此枚举器的游标的新位置为：（当前位置） + `celt`。  
+## <a name="remarks"></a>注解  
+ 此枚举器的游标的新位置为：（当前位置） + `celt` 。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

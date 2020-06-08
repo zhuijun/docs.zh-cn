@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d7888aa9-dfaa-420f-9f99-e06ab35ca482
 topic_type:
 - apiref
-ms.openlocfilehash: 66195ea9df4c8e9ce847b38f7d020a3bebffcd37
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 488069f3ea16352cb7bb5e81b9a726637a7a65f8
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76865176"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84499358"
 ---
 # <a name="icorprofilercallback4rejiterror-method"></a>ICorProfilerCallback4::ReJITError 方法
 通知探查器，实时（JIT）编译器在重新编译过程中遇到错误。  
@@ -37,13 +37,13 @@ HRESULT ReJITError(
   
 ## <a name="parameters"></a>参数  
  `moduleID`  
- 中尝试重新编译失败的 `ModuleID`。  
+ 中`ModuleID`尝试重新编译失败的。  
   
  `methodId`  
- 中尝试重新编译失败的方法的 `MethodDef`。  
+ 中`MethodDef`尝试重新编译失败的方法的。  
   
  `functionId`  
- 中正在重新编译或标记为要重新编译的函数实例。 如果失败发生在每个方法的基础上，而不是基于每个实例化，则此值可能 `NULL` （例如，如果探查器为要重新编译的方法指定了无效的元数据标记）。  
+ 中正在重新编译或标记为要重新编译的函数实例。 `NULL`如果失败发生在每个方法的基础上，而不是基于每个实例化的，则此值可能为（例如，如果探查器为要重新编译的方法指定了无效的元数据标记）。  
   
  `hrStatus`  
  中指示失败性质的 HRESULT。 有关值的列表，请参阅状态 HRESULT 部分。  
@@ -53,23 +53,23 @@ HRESULT ReJITError(
   
 ## <a name="status-hresults"></a>状态 HRESULTS  
   
-|状态数组 HRESULT|描述|  
+|状态数组 HRESULT|说明|  
 |--------------------------|-----------------|  
-|E_INVALIDARG|`moduleID` 或 `methodDef` 令牌 `NULL`。|  
+|E_INVALIDARG|`moduleID`或 `methodDef` 标记为 `NULL` 。|  
 |CORPROF_E_DATAINCOMPLETE|该模块尚未完全加载，或正在被卸载。|  
-|CORPROF_E_MODULE_IS_DYNAMIC|指定的模块是动态生成的（例如，通过 `Reflection.Emit`），因此不受此方法支持。|  
-|CORPROF_E_FUNCTION_IS_COLLECTIBLE|方法被实例化为可回收的程序集，因此无法重新编译。 请注意，在非反射上下文中定义的类型和函数（例如 `List<MyCollectibleStruct>`）可以实例化为可回收的程序集。|  
+|CORPROF_E_MODULE_IS_DYNAMIC|指定的模块是动态生成的（例如，通过 `Reflection.Emit` ），因此不受此方法支持。|  
+|CORPROF_E_FUNCTION_IS_COLLECTIBLE|方法被实例化为可回收的程序集，因此无法重新编译。 请注意，在非反射上下文中定义的类型和函数（例如 `List<MyCollectibleStruct>` ）可实例化为可回收的程序集。|  
 |E_OUTOFMEMORY|尝试将指定的方法标记为 JIT 重新编译时，CLR 用尽了内存。|  
 |其他|操作系统返回了 CLR 控件范围之外的失败。 例如，如果系统调用更改内存页的访问保护失败，则会显示操作系统错误。|  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

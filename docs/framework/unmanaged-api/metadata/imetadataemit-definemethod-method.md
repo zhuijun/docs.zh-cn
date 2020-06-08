@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3e2102c5-48b7-4c0e-b805-7e2b5e156e3d
 topic_type:
 - apiref
-ms.openlocfilehash: 514f227e3c0c385f61090079d2f5214dac9b3924
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: fbf6ce8c8c9628b08872058a794fb0e005764ab1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004525"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501295"
 ---
 # <a name="imetadataemitdefinemethod-method"></a>IMetaDataEmit::DefineMethod 方法
 使用指定的签名创建方法或全局函数的定义，并将标记返回到该方法定义。  
@@ -65,7 +65,7 @@ HRESULT DefineMethod (
  `pmd`  
  弄成员标记。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  元数据 API 保证按调用方为给定的封闭类或接口发出方法（在参数中指定）来保持方法的顺序相同 `td` 。  
   
  下面给出了有关使用 `DefineMethod` 和特定参数设置的其他信息。  
@@ -81,7 +81,7 @@ HRESULT DefineMethod (
  不应定义重复的方法。 也就是说，不应 `DefineMethod` 使用 `td` 、和参数中的重复值集调用 `wzName` `pvSig` 。 （这三个参数一起唯一定义方法。） 不过，你可以使用一种重复的三重，为其中一个方法定义设置 `mdPrivateScope` 参数中的位 `dwMethodFlags` 。 （ `mdPrivateScope` Bit 表示编译器不会发出对此方法定义的引用。）  
   
 ## <a name="method-implementation-information"></a>方法实现信息  
- 在声明该方法时，有关方法实现的信息通常是未知的。 因此，在调用时，不需要在和参数中传递值 `ulCodeRVA` `dwImplFlags` `DefineMethod` 。 可在以后根据需要通过[IMetaDataEmit：： SetMethodImplFlags](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-setmethodimplflags-method.md)或[IMetaDataEmit：： SetRVA](imetadataemit-setrva-method.md)来提供这些值。  
+ 在声明该方法时，有关方法实现的信息通常是未知的。 因此，在调用时，不需要在和参数中传递值 `ulCodeRVA` `dwImplFlags` `DefineMethod` 。 可在以后根据需要通过[IMetaDataEmit：： SetMethodImplFlags](imetadataemit-setmethodimplflags-method.md)或[IMetaDataEmit：： SetRVA](imetadataemit-setrva-method.md)来提供这些值。  
   
  在某些情况下（例如平台调用（PInvoke）或 COM 互操作方案），将不提供方法体，并且 `ulCodeRVA` 应将其设置为零。 在这些情况下，不应将方法标记为抽象方法，因为运行时将找到实现。  
   

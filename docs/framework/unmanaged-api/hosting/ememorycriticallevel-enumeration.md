@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2ca8a7a2-7b54-4ba3-8e73-277c7df485f3
 topic_type:
 - apiref
-ms.openlocfilehash: 248f1d281697923e2da14517ca174fe615bba4ff
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 359dd84032fce920892631dda2615f63aa54fa6b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616198"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504376"
 ---
 # <a name="ememorycriticallevel-enumeration"></a>EMemoryCriticalLevel 枚举
 包含一些值，这些值指示在请求特定内存分配但无法满足时，失败所造成的影响。  
@@ -42,8 +42,8 @@ typedef enum {
 |`eProcessCritical`|指示分配对于进程中的托管代码执行至关重要。 此值在启动和运行终结器时使用。 如果无法分配内存，则 CLR 无法在进程中运行。 如果分配失败，则会有效地禁用 CLR。 对 CLR 的所有后续调用都将失败，并 HOST_E_CLRNOTAVAILABLE。|  
 |`eTaskCritical`|指示分配对于运行已请求分配的任务至关重要。 如果无法分配内存，则 CLR 无法保证任务能够执行。 发生故障时，CLR 将 <xref:System.Threading.ThreadAbortException> 在物理操作系统线程上引发。|  
   
-## <a name="remarks"></a>备注  
- [IHostMemoryManager](../../../../docs/framework/unmanaged-api/hosting/ihostmemorymanager-interface.md)和[IHostMAlloc](ihostmalloc-interface.md)接口中定义的内存分配方法采用此类型的参数。 根据故障的严重性，主机可以决定是立即对分配请求进行故障转移还是要等待，直到它得以满足。  
+## <a name="remarks"></a>注解  
+ [IHostMemoryManager](ihostmemorymanager-interface.md)和[IHostMAlloc](ihostmalloc-interface.md)接口中定义的内存分配方法采用此类型的参数。 根据故障的严重性，主机可以决定是立即对分配请求进行故障转移还是要等待，直到它得以满足。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  

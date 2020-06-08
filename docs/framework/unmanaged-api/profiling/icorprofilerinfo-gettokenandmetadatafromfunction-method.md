@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e525aa16-c923-4b16-833b-36f1f0dd70fc
 topic_type:
 - apiref
-ms.openlocfilehash: d924dbf21a0f0b046c8d8f8f294e91bc5ff6c015
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 1cc05f4c10f4a5b042ff14c05f3c85a7b5935184
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76869406"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84497889"
 ---
 # <a name="icorprofilerinfogettokenandmetadatafromfunction-method"></a>ICorProfilerInfo::GetTokenAndMetadataFromFunction 方法
 获取可用于指定函数的标记的元数据标记和元数据接口实例。  
@@ -48,14 +48,14 @@ HRESULT GetTokenAndMetaDataFromFunction(
  `pToken`  
  弄指向指定函数的元数据标记的指针。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 00061a25-ba05-47a7-b984-fd916b06b149
 topic_type:
 - apiref
-ms.openlocfilehash: c9ac624e17223def206e86fd92ee4fd2de7f6082
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6346b1e34e508e5c173bfd0119ac7451d7eef40e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436747"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490791"
 ---
 # <a name="imetadataimportgettypedefprops-method"></a>IMetaDataImport::GetTypeDefProps 方法
-返回指定的 TypeDef 标记所表示的 <xref:System.Type> 的元数据信息。  
+返回 <xref:System.Type> 由指定的 TypeDef 标记所表示的的元数据信息。  
   
 ## <a name="syntax"></a>语法  
   
@@ -46,27 +46,27 @@ HRESULT GetTypeDefProps (
  弄包含类型名称的缓冲区。  
   
  `cchTypeDef`  
- 中`szTypeDef`的大小（以宽字符为大小）。  
+ 中的大小（以宽字符为大小） `szTypeDef` 。  
   
  `pchTypeDef`  
- 弄`szTypeDef`中返回的宽字符数。  
+ 弄返回的宽字符数 `szTypeDef` 。  
   
  `pdwTypeDefFlags`  
- 弄指向修改类型定义的任何标志的指针。 此值是[CorTypeAttr](../../../../docs/framework/unmanaged-api/metadata/cortypeattr-enumeration.md)枚举中的位掩码。  
+ 弄指向修改类型定义的任何标志的指针。 此值是[CorTypeAttr](cortypeattr-enumeration.md)枚举中的位掩码。  
   
  `ptkExtends`  
  弄一个 TypeDef 或 TypeRef 元数据标记，它表示所请求类型的基类型。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)
