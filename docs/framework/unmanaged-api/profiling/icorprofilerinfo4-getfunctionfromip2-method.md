@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 46ff70f4-13e9-40a0-802a-0a40abcfc6a0
 topic_type:
 - apiref
-ms.openlocfilehash: 8ad04a7a6705b961686317c9473b885fb90676ce
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: ea66474e809b3813faceef79a69dd8a639a72a3b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861913"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502790"
 ---
-# <a name="icorprofilerinfo4getfunctionfromip2-method"></a><span data-ttu-id="56582-102">ICorProfilerInfo4::GetFunctionFromIP2 方法</span><span class="sxs-lookup"><span data-stu-id="56582-102">ICorProfilerInfo4::GetFunctionFromIP2 Method</span></span>
-<span data-ttu-id="56582-103">将托管代码指令指针映射到函数的 JIT 重新编译版本。</span><span class="sxs-lookup"><span data-stu-id="56582-103">Maps a managed code instruction pointer to the JIT-recompiled version of a function.</span></span>  
+# <a name="icorprofilerinfo4getfunctionfromip2-method"></a><span data-ttu-id="eeb06-102">ICorProfilerInfo4::GetFunctionFromIP2 方法</span><span class="sxs-lookup"><span data-stu-id="eeb06-102">ICorProfilerInfo4::GetFunctionFromIP2 Method</span></span>
+<span data-ttu-id="eeb06-103">将托管代码指令指针映射到函数的 JIT 重新编译版本。</span><span class="sxs-lookup"><span data-stu-id="eeb06-103">Maps a managed code instruction pointer to the JIT-recompiled version of a function.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="56582-104">语法</span><span class="sxs-lookup"><span data-stu-id="56582-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="eeb06-104">语法</span><span class="sxs-lookup"><span data-stu-id="eeb06-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetFunctionFromIP2(  
@@ -34,31 +34,31 @@ HRESULT GetFunctionFromIP2(
     [out] ReJITID *pReJitId);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="56582-105">参数</span><span class="sxs-lookup"><span data-stu-id="56582-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="eeb06-105">参数</span><span class="sxs-lookup"><span data-stu-id="eeb06-105">Parameters</span></span>  
  `ip`  
- <span data-ttu-id="56582-106">中托管代码中的指令指针。</span><span class="sxs-lookup"><span data-stu-id="56582-106">[in] The instruction pointer in managed code.</span></span>  
+ <span data-ttu-id="eeb06-106">中托管代码中的指令指针。</span><span class="sxs-lookup"><span data-stu-id="eeb06-106">[in] The instruction pointer in managed code.</span></span>  
   
  `pFunctionId`  
- <span data-ttu-id="56582-107">弄函数 ID。</span><span class="sxs-lookup"><span data-stu-id="56582-107">[out] The function ID.</span></span>  
+ <span data-ttu-id="eeb06-107">弄函数 ID。</span><span class="sxs-lookup"><span data-stu-id="eeb06-107">[out] The function ID.</span></span>  
   
  `pReJitId`  
- <span data-ttu-id="56582-108">弄函数的 JIT 重新编译版本的标识。</span><span class="sxs-lookup"><span data-stu-id="56582-108">[out] The identity of the JIT-recompiled version of the function.</span></span>  
+ <span data-ttu-id="eeb06-108">弄函数的 JIT 重新编译版本的标识。</span><span class="sxs-lookup"><span data-stu-id="eeb06-108">[out] The identity of the JIT-recompiled version of the function.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="56582-109">备注</span><span class="sxs-lookup"><span data-stu-id="56582-109">Remarks</span></span>  
- <span data-ttu-id="56582-110">`GetFunctionFromIP2` 类似于 `GetFunctionFromIP`，只不过它会获取 JIT 重新编译的 ID，而不是包含指定 IP 地址的函数的函数 ID。</span><span class="sxs-lookup"><span data-stu-id="56582-110">`GetFunctionFromIP2` is similar to `GetFunctionFromIP`, except that it gets the JIT-recompiled ID instead of the function ID of the function that contains the specified IP address.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="eeb06-109">注解</span><span class="sxs-lookup"><span data-stu-id="eeb06-109">Remarks</span></span>  
+ <span data-ttu-id="eeb06-110">`GetFunctionFromIP2`类似于 `GetFunctionFromIP` ，只不过它会获取 JIT 重新编译的 ID，而不是包含指定 IP 地址的函数的函数 ID。</span><span class="sxs-lookup"><span data-stu-id="eeb06-110">`GetFunctionFromIP2` is similar to `GetFunctionFromIP`, except that it gets the JIT-recompiled ID instead of the function ID of the function that contains the specified IP address.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="56582-111">`GetFunctionFromIP2` 可以触发垃圾回收，而 `GetFunctionFromIP` 则不会。</span><span class="sxs-lookup"><span data-stu-id="56582-111">`GetFunctionFromIP2` can trigger a garbage collection, whereas `GetFunctionFromIP` will not.</span></span>  <span data-ttu-id="56582-112">有关详细信息，请参阅[CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](corprof-e-unsupported-call-sequence-hresult.md)。</span><span class="sxs-lookup"><span data-stu-id="56582-112">For more information, see [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](corprof-e-unsupported-call-sequence-hresult.md).</span></span>  
+> <span data-ttu-id="eeb06-111">`GetFunctionFromIP2`可以触发垃圾回收，而 `GetFunctionFromIP` 不会。</span><span class="sxs-lookup"><span data-stu-id="eeb06-111">`GetFunctionFromIP2` can trigger a garbage collection, whereas `GetFunctionFromIP` will not.</span></span>  <span data-ttu-id="eeb06-112">有关详细信息，请参阅[CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](corprof-e-unsupported-call-sequence-hresult.md)。</span><span class="sxs-lookup"><span data-stu-id="eeb06-112">For more information, see [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](corprof-e-unsupported-call-sequence-hresult.md).</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="56582-113">需求</span><span class="sxs-lookup"><span data-stu-id="56582-113">Requirements</span></span>  
- <span data-ttu-id="56582-114">**平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。</span><span class="sxs-lookup"><span data-stu-id="56582-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="eeb06-113">要求</span><span class="sxs-lookup"><span data-stu-id="eeb06-113">Requirements</span></span>  
+ <span data-ttu-id="eeb06-114">**平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。</span><span class="sxs-lookup"><span data-stu-id="eeb06-114">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="56582-115">**头文件：** CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="56582-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="eeb06-115">**头文件：** CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="eeb06-115">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="56582-116">**库：** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="56582-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="eeb06-116">**库：** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="eeb06-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="56582-117">**.NET Framework 版本：** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="56582-117">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
+ <span data-ttu-id="eeb06-117">**.NET Framework 版本：**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="eeb06-117">**.NET Framework Versions:** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="56582-118">另请参阅</span><span class="sxs-lookup"><span data-stu-id="56582-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="eeb06-118">另请参阅</span><span class="sxs-lookup"><span data-stu-id="eeb06-118">See also</span></span>
 
-- [<span data-ttu-id="56582-119">ICorProfilerInfo 接口</span><span class="sxs-lookup"><span data-stu-id="56582-119">ICorProfilerInfo Interface</span></span>](icorprofilerinfo-interface.md)
+- [<span data-ttu-id="eeb06-119">ICorProfilerInfo 接口</span><span class="sxs-lookup"><span data-stu-id="eeb06-119">ICorProfilerInfo Interface</span></span>](icorprofilerinfo-interface.md)
