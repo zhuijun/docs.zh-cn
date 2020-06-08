@@ -6,12 +6,12 @@ helpviewer_keywords:
 - I/O [Visual Basic], My.Computer.FileSystem.WriteAllText method
 - I/O [Visual Basic], WriteAllText method
 ms.assetid: bbbd7fb5-f169-41a9-b53f-520ea9613913
-ms.openlocfilehash: 97bcb5c511452e418df010f12d4b63f04251d021
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 53b2e4c9030e9d1dd81a4121ad3f92aad796e3e1
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74348873"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84359950"
 ---
 # <a name="how-to-append-to-text-files-in-visual-basic"></a>如何：在 Visual Basic 中向文本文件追加内容
 
@@ -47,4 +47,4 @@ ms.locfileid: "74348873"
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
-- [写入文件](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
+- [写入文件](writing-to-files.md)

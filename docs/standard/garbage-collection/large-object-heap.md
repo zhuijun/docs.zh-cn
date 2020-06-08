@@ -7,12 +7,12 @@ helpviewer_keywords:
 - LOH
 - garbage collection, large object heap
 - GC [.NET ], large object heap
-ms.openlocfilehash: dae8a3690d63d77a47a5cd2e76f210ca8210f058
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 87105acbd43eb8eda0daa00c65ca0635f5e1cc74
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420573"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286023"
 ---
 # <a name="the-large-object-heap-on-windows-systems"></a>Windows 系统上的大型对象堆
 
@@ -203,7 +203,7 @@ perfview /GCOnly /AcceptEULA /nogui collect
 
 ### <a name="a-debugger"></a>调试器
 
-如果只有内存转储，则需要查看 LOH 上实际有哪些对象，你可使用 .NET 提供的 [SoS 调试器扩展](../../../docs/framework/tools/sos-dll-sos-debugging-extension.md)来查看。
+如果只有内存转储，则需要查看 LOH 上实际有哪些对象，你可使用 .NET 提供的 [SoS 调试器扩展](../../framework/tools/sos-dll-sos-debugging-extension.md)来查看。
 
 > [!NOTE]
 > 此部分提到的调试命令适用于 [Windows 调试器](https://www.microsoft.com/whdc/devtools/debugging/default.mspx)。

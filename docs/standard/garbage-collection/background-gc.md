@@ -5,18 +5,18 @@ ms.date: 04/21/2020
 helpviewer_keywords:
 - garbage collection, background
 - background garbage collection
-ms.openlocfilehash: dcb1d348e679e07646273b8fbc4ea29b44ee4974
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 8134c0af55d74e57dcfce8c7174265b8c9902feb
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82103495"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307067"
 ---
 # <a name="background-garbage-collection"></a>后台垃圾回收
 
 在后台垃圾回收 (GC) 中，在进行第 2 代回收的过程中，将会根据需要收集暂时代（第 0 代和第 1 代）。 后台垃圾回收是在一个或多个专用线程上执行的，具体取决于它是后台还是服务器 GC，它只适用于第 2 代回收。
 
-默认启用后台垃圾回收。 可以在 .NET Framework 应用程序中使用 [gcConcurrent](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) 配置设置或 .NET Core 应用中的 [System.GC.Concurrent](../../core/run-time-config/garbage-collector.md#systemgcconcurrentcomplus_gcconcurrent) 来启用或禁用后台垃圾回收。
+默认启用后台垃圾回收。 可以在 .NET Framework 应用程序中使用 [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) 配置设置或 .NET Core 应用中的 [System.GC.Concurrent](../../core/run-time-config/garbage-collector.md#systemgcconcurrentcomplus_gcconcurrent) 来启用或禁用后台垃圾回收。
 
 > [!NOTE]
 > 后台垃圾回收替换在 .NET Framework 4 及更高版本中可用的[并行垃圾回收](#concurrent-garbage-collection)。 在 .NET Framework 4 中，仅支持工作站垃圾回收  。 从 .NET Framework 4.5 开始，后台垃圾回收可用于工作站和服务器垃圾回收   。
@@ -39,11 +39,11 @@ ms.locfileid: "82103495"
 
 下图显示对独立专用线程执行的后台工作站垃圾回收  ：
 
-![后台工作站垃圾回收](./media/fundamentals/background-workstation-garbage-collection.png)
+![后台工作站垃圾回收](media/fundamentals/background-workstation-garbage-collection.png)
 
 下图显示对独立专用线程执行的后台服务器垃圾回收  ：
 
-![后台服务器垃圾回收](./media/fundamentals/background-server-garbage-collection.png)
+![后台服务器垃圾回收](media/fundamentals/background-server-garbage-collection.png)
 
 ## <a name="concurrent-garbage-collection"></a>并行垃圾回收
 
@@ -55,7 +55,7 @@ ms.locfileid: "82103495"
 >
 > 在更高的版本中，后台垃圾回收取代了并行垃圾回收。
 
-在工作站或服务器垃圾回收中，你可以[启用并发垃圾回收](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)，以便在大多数回收期间，让各线程与执行垃圾回收的专用线程并发运行。 此选项只影响第 2 代中的垃圾回收；第 0 代和第 1 代中的垃圾回收始终是非并发的，因为它们完成的速度很快。
+在工作站或服务器垃圾回收中，你可以[启用并发垃圾回收](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)，以便在大多数回收期间，让各线程与执行垃圾回收的专用线程并发运行。 此选项只影响第 2 代中的垃圾回收；第 0 代和第 1 代中的垃圾回收始终是非并发的，因为它们完成的速度很快。
 
 并发垃圾回收通过最大程度地减少因回收引起的暂停，使交互应用程序能够更快地响应。 在运行并发垃圾回收线程的大多数时间，托管线程可以继续运行。 这可以使得在发生垃圾回收时的暂停时间更短。
 
@@ -63,7 +63,7 @@ ms.locfileid: "82103495"
 
 下图演示了在单独的专用线程上执行的并发垃圾回收。
 
-![并发垃圾回收线程](./media/gc-concurrent.png)
+![并发垃圾回收线程](media/gc-concurrent.png)
 
 ## <a name="see-also"></a>请参阅
 

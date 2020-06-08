@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - registry [Visual Basic]
 ms.assetid: 4a0dcce0-c27b-4199-baa8-ee4528da6a56
-ms.openlocfilehash: 841344186b8e56717b81e90397aabc608bdc6dab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 10431b1ad40ed320541a22fb46cc8db6dbb775b0
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345490"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360067"
 ---
 # <a name="reading-from-and-writing-to-the-registry-using-the-microsoftwin32-namespace-visual-basic"></a>使用 Microsoft.Win32 命名空间读取和写入注册表 (Visual Basic)
 
@@ -47,6 +47,6 @@ ms.locfileid: "74345490"
 - <xref:System.SystemException>
 - <xref:System.ApplicationException>
 - <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>
-- [Try...Catch...Finally 语句](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)
-- [读取和写入注册表](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
-- [安全性与注册表](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)
+- [Try...Catch...Finally 语句](../../../language-reference/statements/try-catch-finally-statement.md)
+- [读取和写入注册表](reading-from-and-writing-to-the-registry.md)
+- [安全性与注册表](security-and-the-registry.md)

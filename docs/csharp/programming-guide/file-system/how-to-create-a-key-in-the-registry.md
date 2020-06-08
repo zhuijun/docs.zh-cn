@@ -6,12 +6,12 @@ helpviewer_keywords:
 - registry keys, creating [C#]
 - keys, creating in registry
 ms.assetid: 8fa475b0-e01f-483a-9327-fd03488fdf5d
-ms.openlocfilehash: 16974db950a3a460416cfb917147439707e1d007
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9e340083ffca118337dc9a53bdf20808cd1b15cb
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635439"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241625"
 ---
 # <a name="how-to-create-a-key-in-the-registry-c-programming-guide"></a>如何在注册表中创建注册表项（C# 编程指南）
 本示例将值对“Name”和“Isabella”添加到当前用户注册表中的项“Names”之下。  
@@ -48,14 +48,14 @@ key.Close();
   
 - 注册表项为只读。  
   
-## <a name="net-framework-security"></a>.NET Framework 安全性  
+## <a name="net-security"></a>.NET 安全性  
  将数据写入用户文件夹 `Microsoft.Win32.Registry.CurrentUser` 比写入本地计算机 `Microsoft.Win32.Registry.LocalMachine` 更安全。  
   
  创建注册表值时，需要确定该值已存在时应执行的操作。 另一进程（可能是恶意进程）可能已创建了该值，并拥有对该值的访问权。 将数据放入注册表值后，其他进程即可使用这些数据。 若要防止出现这种情况，请使用 `Overload:Microsoft.Win32.RegistryKey.GetValue` 方法。 如果项不存在，则该方法返回 null。  
   
  即使注册表项受访问控制列表 (ACL) 保护，在注册表中以纯文本形式存储机密信息（例如密码）也不安全。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.IO?displayProperty=nameWithType>
 - [C# 编程指南](../index.md)

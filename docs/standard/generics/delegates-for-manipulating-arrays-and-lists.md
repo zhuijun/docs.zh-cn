@@ -10,12 +10,12 @@ helpviewer_keywords:
 - lists [.NET Framework], generic delegates
 - generics [.NET Framework], delegates
 ms.assetid: 416be383-cc61-4102-9b1b-88b51adb963e
-ms.openlocfilehash: baf8497289ee71c2dbdc544607212de90928289c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b0ecd8661b7c58645e49ca884ed0499e8c828af9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708379"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287527"
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>用于操作数组和列表的泛型委托
 此主题概述了用于转换的泛型委托、搜索谓词以及对数组或集合中的元素所采取的操作。  
@@ -43,7 +43,7 @@ ms.locfileid: "75708379"
 
 - <xref:System.Collections.Generic?displayProperty=nameWithType>
 - <xref:System.Collections.ObjectModel?displayProperty=nameWithType>
-- [泛型](../../../docs/standard/generics/index.md)
-- [.NET Framework 中的泛型集合](../../../docs/standard/generics/collections.md)
-- [泛型接口](../../../docs/standard/generics/interfaces.md)
-- [协变和逆变](../../../docs/standard/generics/covariance-and-contravariance.md)
+- [泛型](index.md)
+- [.NET Framework 中的泛型集合](collections.md)
+- [泛型接口](interfaces.md)
+- [协变和逆变](covariance-and-contravariance.md)

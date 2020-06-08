@@ -6,12 +6,12 @@ helpviewer_keywords:
 - registry [Visual Basic], writing to
 - registry [Visual Basic], reading
 ms.assetid: a13da106-185b-41d7-b23c-416da65e21e4
-ms.openlocfilehash: 89db9ef9db4235c069d6239d32e4f8679fbabf0b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb400ef89edaa4eb743aee3a7f2cc5b9dfec4534
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74349754"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84360054"
 ---
 # <a name="reading-from-and-writing-to-the-registry-visual-basic"></a>读取和写入注册表 (Visual Basic)
 
@@ -21,19 +21,19 @@ ms.locfileid: "74349754"
   
 ## <a name="in-this-section"></a>本节内容  
 
- [如何：创建注册表项并设置其值](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-create-a-registry-key-and-set-its-value.md)  
+ [如何：创建注册表项并设置其值](how-to-create-a-registry-key-and-set-its-value.md)  
  介绍如何使用 `My.Computer.Registry` 对象的 `CreateSubKey` 和 `SetValue` 方法创建注册表项并设置其值。  
   
- [如何：从注册表项读取值](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-read-a-value-from-a-registry-key.md)  
+ [如何：从注册表项读取值](how-to-read-a-value-from-a-registry-key.md)  
  介绍如何使用 `My.Computer.Registry` 对象的 `GetValue` 方法读取注册表项的值。  
   
- [如何：删除注册表项](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-delete-a-registry-key.md)  
+ [如何：删除注册表项](how-to-delete-a-registry-key.md)  
  介绍如何使用 `My.Computer.Registry.CurrentUser` 属性的 `DeleteSubKey` 方法删除注册表项。  
   
- [使用 Microsoft.Win32 命名空间读取和写入注册表](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace.md)  
+ [使用 Microsoft.Win32 命名空间读取和写入注册表](reading-from-and-writing-to-the-registry-using-the-microsoft-win32-namespace.md)  
  介绍如何使用 .NET Framework 的 `Registry` 和 `RegistryKey` 类访问注册表。  
   
- [安全性与注册表](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)  
+ [安全性与注册表](security-and-the-registry.md)  
  讨论与注册表相关的安全问题。  
   
 ## <a name="related-sections"></a>相关章节  

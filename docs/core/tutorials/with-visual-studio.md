@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 9c3456cd8c940e53e8a70c1d3a7c3b09de77c21d
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 144d7bb087034839ad2cde2fa28a4961cff4321f
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201587"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306989"
 ---
 # <a name="tutorial-create-a-net-core-console-application-in-visual-studio-2019"></a>教程：在 Visual Studio 2019 中创建 .NET Core 控制台应用程序
 
@@ -97,9 +97,8 @@ ms.locfileid: "84201587"
 
 1. 将 `Main` 方法的内容（当前只是调用 `Console.WriteLine` 的行）替换为以下代码：
 
-   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="Snippet1":::
-
-   :::code language="vb" source="./snippets/with-visual-studio/vb/Program.vb" id="Snippet1":::
+   [!code-csharp[GettingStarted#1](./snippets/with-visual-studio/csharp/Program.cs#1)]
+   [!code-vb[GettingStarted#1](./snippets/with-visual-studio/vb/Program.vb#1)]
 
    此代码在控制台中显示“What is your name?”， 然后等待用户输入字符串并按 Enter 键。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量（Visual Basic 中为 `currentDate`）。 最后，它会在控制台窗口中显示这些值。
 

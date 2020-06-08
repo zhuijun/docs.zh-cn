@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.openlocfilehash: a9ca935814d1a7f77ded5f371ccd496c3859c523
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: 43e896bfe267299d3b0cb12a8f71e42fe2c87a88
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635928"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280785"
 ---
 # <a name="delegates-and-lambdas"></a>委托和 lambda
 
@@ -153,10 +153,10 @@ public MainWindow()
 }
 ```
 
-此上下文中的 `+=` 运算符用于订阅[事件](../../docs/csharp/language-reference/keywords/event.md)。 有关详细信息，请参阅[如何订阅和取消订阅事件](../../docs/csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)。
+此上下文中的 `+=` 运算符用于订阅[事件](../csharp/language-reference/keywords/event.md)。 有关详细信息，请参阅[如何订阅和取消订阅事件](../csharp/programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)。
 
 ## <a name="further-reading-and-resources"></a>其他阅读材料和资源
 
-* [委托](../../docs/csharp/programming-guide/delegates/index.md)
-* [匿名函数](../../docs/csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
-* [Lambda 表达式](../../docs/csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)
+* [委托](../csharp/programming-guide/delegates/index.md)
+* [匿名函数](../csharp/programming-guide/statements-expressions-operators/anonymous-functions.md)
+* [Lambda 表达式](../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)

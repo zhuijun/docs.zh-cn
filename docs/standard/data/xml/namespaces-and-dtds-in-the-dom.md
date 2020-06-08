@@ -3,12 +3,12 @@ title: DOM 中的命名空间和 DTD
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 1e9b55c4-76ad-4f54-8d96-7ce4b4cf1e05
-ms.openlocfilehash: 22762e3a7003d9b28a53c7b500829aaa41924c6d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 748be66c255aa018fb3e1ed541c6e5a92775408c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710591"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288779"
 ---
 # <a name="namespaces-and-dtds-in-the-dom"></a>DOM 中的命名空间和 DTD
 文档类型定义 (DTD) 使命名空间支持变得很复杂。 例如，在下面的 XML 中，默认属性的名称中包含冒号。  
@@ -33,4 +33,4 @@ ms.locfileid: "75710591"
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 文档对象模型 (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [XML 文档对象模型 (DOM)](xml-document-object-model-dom.md)

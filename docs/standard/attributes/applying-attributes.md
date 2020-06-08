@@ -10,12 +10,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework], attributes
 - attributes [.NET Framework], applying
 ms.assetid: dd7604eb-9fa3-4b60-b2dd-b47739fa3148
-ms.openlocfilehash: 14cd6fef80ff9ae3a9d78531785edab0da7cc6b9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5557da1531eb55c13d1c7540a50b044d1a7b8a1d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73130917"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276330"
 ---
 # <a name="applying-attributes"></a>应用特性
 使用以下过程将特性应用于代码的元素。  
@@ -48,12 +48,12 @@ ms.locfileid: "73130917"
  [!code-csharp[Conceptual.Attributes.Usage#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source1.cs#2)]
  [!code-vb[Conceptual.Attributes.Usage#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source1.vb#2)]  
   
- 应用此特性时，字符串 `"My Assembly"` 将被放置在文件元数据部分的程序集清单中。 可通过后列方法查看特性：使用 [MSIL 反汇编程序 (Ildasm.exe)](../../../docs/framework/tools/ildasm-exe-il-disassembler.md)，或创建一个自定义程序来检索特性。  
+ 应用此特性时，字符串 `"My Assembly"` 将被放置在文件元数据部分的程序集清单中。 可通过后列方法查看特性：使用 [MSIL 反汇编程序 (Ildasm.exe)](../../framework/tools/ildasm-exe-il-disassembler.md)，或创建一个自定义程序来检索特性。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [特性](../../../docs/standard/attributes/index.md)
-- [检索存储在特性中的信息](../../../docs/standard/attributes/retrieving-information-stored-in-attributes.md)
+- [特性](index.md)
+- [检索存储在特性中的信息](retrieving-information-stored-in-attributes.md)
 - [概念](/cpp/windows/attributed-programming-concepts)
 - [特性 (C#)](../../csharp/programming-guide/concepts/attributes/index.md)
 - [特性概述 (Visual Basic)](../../visual-basic/programming-guide/concepts/attributes/index.md)

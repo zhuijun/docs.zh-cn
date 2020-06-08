@@ -13,12 +13,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
-ms.openlocfilehash: 7534ad702039b37a85a24223576320aea8052e9e
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: d9b71b7530debde7708ee107c990541e2b97cd44
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421262"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84277955"
 ---
 # <a name="xml-serialization"></a>XML 序列化
 
@@ -33,7 +33,7 @@ ms.locfileid: "83421262"
 
  对象中的数据是用编程语言构造来描述的，如类、字段、属性、基元类型、数组，甚至是 XmlElement 或 XmlAttribute 对象形式的嵌入 XML 。 您可以创建自己的用特性批注的类，也可以使用 XML 架构定义工具生成基于现有 XML 架构的类。
 
- 如果有 XML 架构，则可以运行 XML 架构定义工具生成一组类，将这组类的类型强制为此架构，并用特性进行批注。 当序列化这种类的实例时，生成的 XML 符合 XML 架构。 对于这种类，可以采用易于操作的对象模型进行编程，同时确保生成的 XML 符合 XML 架构。 这是使用 .NET Framework 中的其他类（如 XmlReader 和 XmlWriter 类）分析和编写 XML 流的另一种方法 。 有关详细信息，请参阅 [XML 文档和数据](../../../docs/standard/data/xml/index.md)。 这些类可让您分析任何 XML 流。 相反，如果 XML 流应符合已知的 XML 架构，则使用 XmlSerializer。
+ 如果有 XML 架构，则可以运行 XML 架构定义工具生成一组类，将这组类的类型强制为此架构，并用特性进行批注。 当序列化这种类的实例时，生成的 XML 符合 XML 架构。 对于这种类，可以采用易于操作的对象模型进行编程，同时确保生成的 XML 符合 XML 架构。 这是使用 .NET Framework 中的其他类（如 XmlReader 和 XmlWriter 类）分析和编写 XML 流的另一种方法 。 有关详细信息，请参阅 [XML 文档和数据](../data/xml/index.md)。 这些类可让您分析任何 XML 流。 相反，如果 XML 流应符合已知的 XML 架构，则使用 XmlSerializer。
 
  特性可控制 XmlSerializer 类生成的 XML 流，使你能够设置 XML 流的 XML 命名空间、元素名称、特性名称等。 有关这些特性以及它们如何控制 XML 序列化的详细信息，请参阅[使用特性控制 XML 序列化](controlling-xml-serialization-using-attributes.md)。 有关那些用于控制生成的 XML 的特性的表格，请参阅[控制 XML 序列化的特性](attributes-that-control-xml-serialization.md)。
 

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - security [Visual Basic], registry
 - registry [Visual Basic], security issues
 ms.assetid: 9980aff7-2f69-492b-8f66-29a9a76d3df5
-ms.openlocfilehash: 454180207d6432e80d87941d1f329f2a4ea7a801
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2eba9d177769b22de3f931bc7af4905a80e316b5
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345482"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84359963"
 ---
 # <a name="security-and-the-registry-visual-basic"></a>安全性与注册表 (Visual Basic)
 
@@ -44,4 +44,4 @@ ms.locfileid: "74345482"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>
-- [读取和写入注册表](../../../../visual-basic/developing-apps/programming/computer-resources/reading-from-and-writing-to-the-registry.md)
+- [读取和写入注册表](reading-from-and-writing-to-the-registry.md)

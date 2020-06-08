@@ -13,12 +13,12 @@ helpviewer_keywords:
 - strings [.NET Framework], creating
 - Insert method
 ms.assetid: 06fdf123-2fac-4459-8904-eb48ab908a30
-ms.openlocfilehash: ef65c50111d6ba91ab70d0b9c8cb90c606f9366c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a5dfe6429ac135202874f0524a252a7af900bd8d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73103818"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279007"
 ---
 # <a name="creating-new-strings-in-net"></a>新建 .NET 中的字符串
 借助 .NET Framework，可以使用简单的分配来创建字符串，也可以重载类构造函数，以支持使用许多不同参数来创建字符串。 .NET Framework 还在 <xref:System.String?displayProperty=nameWithType> 类中提供了多个方法，可通过合并多个字符串、字符串数组或对象来新建字符串对象。  
@@ -41,7 +41,7 @@ ms.locfileid: "73103818"
 |<xref:System.String.CopyTo%2A?displayProperty=nameWithType>|将一个字符串中的指定字符复制到一个字符数组中的指定位置。|  
   
 ### <a name="format"></a>格式  
- 可以使用 String.Format  方法，创建格式化字符串，并连接表示多个对象的字符串。 此方法自动将传递给它的任何对象转换为字符串。 例如，如果应用必须向用户显示 Int32  值和 DateTime  值，可以使用 Format  方法，轻松构造表示这些值的字符串。 有关此方法使用的格式化约定的信息，请参阅有关[复合格式化](../../../docs/standard/base-types/composite-formatting.md)的部分。  
+ 可以使用 String.Format  方法，创建格式化字符串，并连接表示多个对象的字符串。 此方法自动将传递给它的任何对象转换为字符串。 例如，如果应用必须向用户显示 Int32  值和 DateTime  值，可以使用 Format  方法，轻松构造表示这些值的字符串。 有关此方法使用的格式化约定的信息，请参阅有关[复合格式化](composite-formatting.md)的部分。  
   
  下面的示例使用 Format  方法，创建使用整数变量的字符串。  
   
@@ -80,5 +80,5 @@ ms.locfileid: "73103818"
   
 ## <a name="see-also"></a>另请参阅
 
-- [基本字符串操作](../../../docs/standard/base-types/basic-string-operations.md)
-- [复合格式设置](../../../docs/standard/base-types/composite-formatting.md)
+- [基本字符串操作](basic-string-operations.md)
+- [复合格式设置](composite-formatting.md)

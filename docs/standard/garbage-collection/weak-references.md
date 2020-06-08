@@ -8,12 +8,12 @@ helpviewer_keywords:
 - weak references, long
 - garbage collection, weak references
 ms.assetid: 6a600fe5-3af3-4c64-82da-10a0a8e2d79b
-ms.openlocfilehash: 120777ca3c26b1634bd2143863547cfa4ea5deac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4b7e7a62b92b2c685ff39baa75f4bc33602b5da2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73141327"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287579"
 ---
 # <a name="weak-references"></a>弱引用
 如果应用程序的代码可以访问一个正由该程序使用的对象，垃圾回收器就不能回收该对象， 那么，就认为应用程序对该对象具有强引用。  
@@ -52,4 +52,4 @@ ms.locfileid: "73141327"
   
 ## <a name="see-also"></a>另请参阅
 
-- [垃圾回收](../../../docs/standard/garbage-collection/index.md)
+- [垃圾回收](index.md)

@@ -3,12 +3,12 @@ title: XPath 查询识别的节点类型
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 1d33e22d-18e5-43f8-a466-2e3d0a8dd094
-ms.openlocfilehash: cc1aa668ccf6fc7f210f48a28cf76b364459c784
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: b9fc55b11455491406970af2a9232b277160875f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710539"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288727"
 ---
 # <a name="node-types-recognized-with-xpath-queries"></a>XPath 查询识别的节点类型
 XPath 查询识别的节点类型与文档对象模型 (DOM) 中的节点类型不同。  
@@ -42,16 +42,16 @@ XPath 查询识别的节点类型与文档对象模型 (DOM) 中的节点类型�
   
  命名空间节点类型是 XPath 数据模型的补充，并且不是可识别的 DOM 节点类型。  
   
- 若要详细了解如何浏览元素、属性和命名空间节点，请参阅[使用 XPathNavigator 的节点集定位](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md)和[使用 XPathNavigator 的属性和命名空间节点定位](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)主题。  
+ 若要详细了解如何浏览元素、属性和命名空间节点，请参阅[使用 XPathNavigator 的节点集定位](node-set-navigation-using-xpathnavigator.md)和[使用 XPathNavigator 的属性和命名空间节点定位](attribute-and-namespace-node-navigation-using-xpathnavigator.md)主题。  
   
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [使用 XPath 数据模型处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [使用 XPathNavigator 选择 XML 数据](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)
-- [使用 XPathNavigator 计算 XPath 表达式](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)
-- [使用 XPathNavigator 匹配节点](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)
-- [XPath 查询和命名空间](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)
-- [已编译的 XPath 表达式](../../../../docs/standard/data/xml/compiled-xpath-expressions.md)
+- [使用 XPath 数据模型处理 XML 数据](process-xml-data-using-the-xpath-data-model.md)
+- [使用 XPathNavigator 选择 XML 数据](select-xml-data-using-xpathnavigator.md)
+- [使用 XPathNavigator 计算 XPath 表达式](evaluate-xpath-expressions-using-xpathnavigator.md)
+- [使用 XPathNavigator 匹配节点](matching-nodes-using-xpathnavigator.md)
+- [XPath 查询和命名空间](xpath-queries-and-namespaces.md)
+- [已编译的 XPath 表达式](compiled-xpath-expressions.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - validating numeric input [C#]
 - strings [C#], numeric
 ms.assetid: a4e84e10-ea0a-489f-a868-503dded9d85f
-ms.openlocfilehash: 15a21a6298f8f0a57e0189554246202b220dd259
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 37437460ea4c6ca216f2844d63af3688ccc984c6
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79157060"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241716"
 ---
 # <a name="how-to-determine-whether-a-string-represents-a-numeric-value-c-programming-guide"></a>如何确定字符串是否表示数值（C# 编程指南）
 若要确定字符串是否是指定数值类型的有效表示形式，请使用由所有基元数值类型以及如 <xref:System.DateTime> 和 <xref:System.Net.IPAddress> 等类型实现的静态 `TryParse` 方法。 以下示例演示如何确定“108”是否为有效的 [int](../../language-reference/builtin-types/integral-numeric-types.md)。  
@@ -35,10 +35,10 @@ bool result = int.TryParse(s, out i); //i now = 108
 ## <a name="robust-programming"></a>可靠编程  
  基元数值类型还实现 `Parse` 静态方法，如果字符串不是有效数字，该方法将引发异常。 `TryParse` 通常更高效，因为如果数值无效，它仅返回 false。  
   
-## <a name="net-framework-security"></a>.NET Framework 安全性  
+## <a name="net-security"></a>.NET 安全性  
  请务必使用 `TryParse` 或 `Parse` 方法验证控件（如文本框和组合框）中的用户输入。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何将字节数组转换为 int](../types/how-to-convert-a-byte-array-to-an-int.md)
 - [如何将字符串转换为数字](../types/how-to-convert-a-string-to-a-number.md)

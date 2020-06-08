@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, forced
 ms.assetid: 019008fe-4708-4e65-bebf-04fd9941e149
-ms.openlocfilehash: 604b49ef577a46204b523ebf5a8575a30b81635e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 36dff45587c6c28ba17fd7389dc3863893ff8f61
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73120922"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286036"
 ---
 # <a name="induced-collections"></a>被动回收
 在大多数情况下，垃圾回收器可以确定执行回收的最佳时间，应让其独立运行。 在某些不常见的情况下，强制回收可以提高应用程序的性能。 在这种情况下，可以使用 <xref:System.GC.Collect%2A?displayProperty=nameWithType> 方法强制执行垃圾回收，从而诱导垃圾回收。  
@@ -36,5 +36,5 @@ ms.locfileid: "73120922"
   
 ## <a name="see-also"></a>另请参阅
 
-- [延迟模式](../../../docs/standard/garbage-collection/latency.md)
-- [垃圾回收](../../../docs/standard/garbage-collection/index.md)
+- [延迟模式](latency.md)
+- [垃圾回收](index.md)

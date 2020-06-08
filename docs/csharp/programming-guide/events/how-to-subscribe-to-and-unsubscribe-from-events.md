@@ -6,25 +6,25 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: 0a9e2cc64da56c376445efce32e8da36ba9b6cdc
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: d917ea097cf9253a65c1907efdca71a640df9497
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738225"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240663"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>如何订阅和取消订阅事件（C# 编程指南）
 如果想编写引发事件时调用的自定义代码，则可以订阅由其他类发布的事件。 例如，可以订阅某个按钮的 `click` 事件，以使应用程序在用户单击该按钮时执行一些有用的操作。  
   
 ### <a name="to-subscribe-to-events-by-using-the-visual-studio-ide"></a>使用 Visual Studio IDE 订阅事件  
   
-1. 如果看不到“属性”窗口，请在“设计”视图中，右键单击要为其创建事件处理程序的窗体或控件，然后选择“属性”    。  
+1. 如果看不到“属性”窗口，请在“设计”视图中，右键单击要为其创建事件处理程序的窗体或控件，然后选择“属性”  。  
   
-2. 在“属性”窗口的顶部，单击“事件”图标   。  
+2. 在“属性”窗口的顶部，单击“事件”图标 。  
   
 3. 双击要创建的事件，例如 `Load` 事件。  
   
-     Visual C# 会创建一个空事件处理程序方法，并将其添加到你的代码中。 或者，也可以在“代码”视图中手动添加代码  。 例如，下面的代码行声明了一个在 `Form` 类引发 `Load` 事件时调用的事件处理程序方法。  
+     Visual C# 会创建一个空事件处理程序方法，并将其添加到你的代码中。 或者，也可以在“代码”视图中手动添加代码。 例如，下面的代码行声明了一个在 `Form` 类引发 `Load` 事件时调用的事件处理程序方法。  
   
      [!code-csharp[csProgGuideEvents#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEvents/CS/Events.cs#11)]  
   
@@ -101,6 +101,6 @@ ms.locfileid: "81738225"
 
 - [事件](./index.md)
 - [event](../../language-reference/keywords/event.md)
-- [如何发布符合 .NET Framework 准则的事件](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+- [如何发布符合 .NET 准则的事件](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
 - [- 和 -= 运算符](../../language-reference/operators/subtraction-operator.md)
 - [+ 和 += 运算符](../../language-reference/operators/addition-operator.md)

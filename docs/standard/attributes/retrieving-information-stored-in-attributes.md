@@ -11,18 +11,18 @@ helpviewer_keywords:
 - multiple attribute instances
 - attributes [.NET Framework], retrieving
 ms.assetid: 37dfe4e3-7da0-48b6-a3d9-398981524e1c
-ms.openlocfilehash: 4f0f3555ae1ab7e662d5f88ac65739a7c791a964
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fc8dcb38471d80d01d1f87993783af3d24868506
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78158072"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276125"
 ---
 # <a name="retrieving-information-stored-in-attributes"></a>检索存储在特性中的信息
 检索自定义属性的过程非常简单。 首先，声明要检索的属性实例。 然后，使用 <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType> 方法，用要检索的属性的值初始化新属性。 在初始化新属性后，只需使用它的属性即可获取值。  
   
 > [!IMPORTANT]
-> 本主题介绍了如何为执行上下文中加载的代码检索属性。 若要为仅反射上下文中加载的代码检索属性，必须使用 <xref:System.Reflection.CustomAttributeData> 类，如[如何：将程序集加载到仅反射上下文](../../../docs/framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)中所述。  
+> 本主题介绍了如何为执行上下文中加载的代码检索属性。 若要为仅反射上下文中加载的代码检索属性，必须使用 <xref:System.Reflection.CustomAttributeData> 类，如[如何：将程序集加载到仅反射上下文](../../framework/reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md)中所述。  
   
  此部分介绍了如何通过以下方式检索属性：  
   
@@ -87,4 +87,4 @@ The attribute was not found.
 - <xref:System.Type?displayProperty=nameWithType>
 - <xref:System.Attribute.GetCustomAttribute%2A?displayProperty=nameWithType>
 - <xref:System.Attribute.GetCustomAttributes%2A?displayProperty=nameWithType>
-- [特性](../../../docs/standard/attributes/index.md)
+- [特性](index.md)

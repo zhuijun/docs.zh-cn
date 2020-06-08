@@ -6,12 +6,12 @@ helpviewer_keywords:
 - garbage collection, intrusiveness
 - garbage collection, latency modes
 ms.assetid: 96278bb7-6eab-4612-8594-ceebfc887d81
-ms.openlocfilehash: a8eaf0c80aa32978eead80c51a905cbcd66a537b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ee45fe5e8016c7507bc3a873e615fd8379810a8e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74283597"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286010"
 ---
 # <a name="latency-modes"></a>延迟模式
 
@@ -58,12 +58,12 @@ ms.locfileid: "74283597"
 
 - 知道可以分配的线程。 由于 <xref:System.Runtime.GCSettings.LatencyMode%2A> 属性设置属于进程范围的设置，因此可以在分配的任何线程上生成 <xref:System.OutOfMemoryException> 异常。
 
-- 将低延迟代码包装在受约束的执行区域中。 有关详细信息，请参阅[受约束的执行区域](../../../docs/framework/performance/constrained-execution-regions.md)。
+- 将低延迟代码包装在受约束的执行区域中。 有关详细信息，请参阅[受约束的执行区域](../../framework/performance/constrained-execution-regions.md)。
 
 - 在低延迟期间，可以通过调用 <xref:System.GC.Collect%28System.Int32%2CSystem.GCCollectionMode%29?displayProperty=nameWithType> 方法强制进行第 2 代回收。
 
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.GC?displayProperty=nameWithType>
-- [已引发回收](../../../docs/standard/garbage-collection/induced.md)
-- [垃圾回收](../../../docs/standard/garbage-collection/index.md)
+- [已引发回收](induced.md)
+- [垃圾回收](index.md)

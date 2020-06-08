@@ -9,12 +9,12 @@ helpviewer_keywords:
 - exceptions, COM interop
 - COM interop, exceptions
 ms.assetid: e6104aa8-8e5f-4069-b864-def85579c96c
-ms.openlocfilehash: 17cd739ac40b43bdd4a93b83a4ab9d0d92400e2d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9c8eb374058ddbd2ba3d866079f0f40b292b69ea
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708927"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286101"
 ---
 # <a name="handling-com-interop-exceptions"></a>处理 COM 互操作异常
 托管和非托管代码可协同工作来处理异常。 如果方法在托管代码中引发异常，公共语言运行时可将 HRESULT 传递至 COM 对象。 如果方法因返回失败 HRESULT 而在非托管代码中失败，运行时会引发可由托管代码捕获的异常。  
@@ -26,7 +26,7 @@ ms.locfileid: "75708927"
 ## <a name="working-with-ierrorinfo"></a>处理 IErrorInfo  
  当错误从 COM 传递至托管代码时，运行时会将错误信息填充至异常对象。 支持 IErrorInfo 并返回 HRESULT 的 COM 对象将向托管代码异常提供此信息。 例如，运行时将“说明”从 COM 错误映射至异常的 <xref:System.Exception.Message%2A> 属性。 如果 HRESULT 未提供任何其他错误信息，运行时将对很多异常的属性填充默认值。  
   
- 如果方法在非托管代码中失败，则异常可以传递至托管代码段中。 主题 [HRESULTS 和异常](../../../docs/framework/interop/how-to-map-hresults-and-exceptions.md)中的表展示了如何将 HRESULTS 映射到运行时异常对象。  
+ 如果方法在非托管代码中失败，则异常可以传递至托管代码段中。 主题 [HRESULTS 和异常](../../framework/interop/how-to-map-hresults-and-exceptions.md)中的表展示了如何将 HRESULTS 映射到运行时异常对象。  
 
 ## <a name="see-also"></a>另请参阅
 

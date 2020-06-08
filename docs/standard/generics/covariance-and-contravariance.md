@@ -11,12 +11,12 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-ms.openlocfilehash: 909b03588d2a41f667bfa117a5cecb420b125088
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b11b5fc93d9b7289e62d6abc9d3ca19027a107c5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708392"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287553"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>泛型中的协变和逆变
 协变和逆变都是术语，前者指能够使用比原始指定的派生类型的派生程度更大（更具体的）的类型，后者指能够使用比原始指定的派生类型的派生程度更小（不太具体的）的类型。 泛型类型参数支持协变和逆变，可在分配和使用泛型类型方面提供更大的灵活性。 在引用类型系统时，协变、逆变和不变性具有如下定义。 这些示例假定一个名为 `Base` 的基类和一个名为 `Derived`的派生类。  
@@ -126,18 +126,18 @@ ms.locfileid: "75708392"
  从 .NET Framework 4 开始，Visual Basic 和 C# 提供了一些关键字，利用这些关键字，可以将接口和委托的泛型类型参数标记为协变或逆变。  
   
 > [!NOTE]
-> 从 .NET Framework 2.0 版开始，公共语言运行时支持泛型类型参数上的变化批注。 在 .NET Framework 4 之前，定义包含这些批注的泛型类的唯一方法就是利用 [Ilasm.exe（IL 汇编程序）](../../../docs/framework/tools/ilasm-exe-il-assembler.md) 编译该类或在动态程序集中发出该类，从而使用 Microsoft 中间语言 (MSIL)。  
+> 从 .NET Framework 2.0 版开始，公共语言运行时支持泛型类型参数上的变化批注。 在 .NET Framework 4 之前，定义包含这些批注的泛型类的唯一方法就是利用 [Ilasm.exe（IL 汇编程序）](../../framework/tools/ilasm-exe-il-assembler.md) 编译该类或在动态程序集中发出该类，从而使用 Microsoft 中间语言 (MSIL)。  
   
- 协变类型参数用 `out` 关键字（在 Visual Basic 中为`Out` 关键字，在 `+` MSIL 汇编程序 [中为](../../../docs/framework/tools/ilasm-exe-il-assembler.md)）标记。 可以将协变类型参数用作属于接口的方法的返回值，或用作委托的返回类型。 但不能将协变类型参数用作接口方法的泛型类型约束。  
+ 协变类型参数用 `out` 关键字（在 Visual Basic 中为`Out` 关键字，在 `+` MSIL 汇编程序 [中为](../../framework/tools/ilasm-exe-il-assembler.md)）标记。 可以将协变类型参数用作属于接口的方法的返回值，或用作委托的返回类型。 但不能将协变类型参数用作接口方法的泛型类型约束。  
   
 > [!NOTE]
 > 如果接口的方法具有泛型委托类型的参数，则接口类型的协变类型参数可用于指定委托类型的逆变类型参数。  
   
- 逆变类型参数用 `in` 关键字（在 Visual Basic 中为`In` 关键字，在 `-` MSIL 汇编程序 [中为](../../../docs/framework/tools/ilasm-exe-il-assembler.md)）标记。 可以将逆变类型参数用作属于接口的方法的参数类型，或用作委托的参数类型。 也可以将逆变类型参数用作接口方法的泛型类型约束。  
+ 逆变类型参数用 `in` 关键字（在 Visual Basic 中为`In` 关键字，在 `-` MSIL 汇编程序 [中为](../../framework/tools/ilasm-exe-il-assembler.md)）标记。 可以将逆变类型参数用作属于接口的方法的参数类型，或用作委托的参数类型。 也可以将逆变类型参数用作接口方法的泛型类型约束。  
   
  只有接口类型和委托类型才能具有 Variant 类型参数。 接口或委托类型可以同时具有协变和逆变类型参数。  
   
- Visual Basic 和 C# 不允许违反协变和逆变类型参数的使用规则，也不允许将协变和逆变批注添加到接口和委托类型之外的类型参数中。 [MSIL 汇编程序](../../../docs/framework/tools/ilasm-exe-il-assembler.md) 不执行此类检查，但如果你尝试加载违反规则的类型，则会引发 <xref:System.TypeLoadException> 。  
+ Visual Basic 和 C# 不允许违反协变和逆变类型参数的使用规则，也不允许将协变和逆变批注添加到接口和委托类型之外的类型参数中。 [MSIL 汇编程序](../../framework/tools/ilasm-exe-il-assembler.md) 不执行此类检查，但如果你尝试加载违反规则的类型，则会引发 <xref:System.TypeLoadException> 。  
   
  有关信息和示例代码，请参阅[泛型接口中的差异 (C#)](../../csharp/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md) 和[泛型接口中的差异 (Visual Basic)](../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)。  
 

@@ -3,12 +3,12 @@ title: 基本序列化技术示例
 description: 本示例说明公共语言运行时 (CLR) 将内存中的对象图序列化成流的能力。 此示例可以使用 SoapFormatter 或 BinaryFormatter。
 ms.date: 03/30/2017
 ms.assetid: 9d824e16-08d1-4a36-bc7f-2388c1f75f34
-ms.openlocfilehash: fcbf790c3b3d48a0aeb27fd1ef6f75dcd7609ae0
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 3f2273e6afb3a72f9734444ffe92d30871fb762b
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378433"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84276564"
 ---
 # <a name="basic-serialization-technology-sample"></a>基本序列化技术示例
 
@@ -100,9 +100,9 @@ Serialize.exe -sb Test.bin 10000 >somefile.txt
 - <xref:System.Runtime.Serialization.IFormatter>
 - <xref:System.SerializableAttribute>
 - <xref:System.Xml.Serialization>
-- [基本序列化](../../../docs/standard/serialization/basic-serialization.md)
-- [二进制序列化](../../../docs/standard/serialization/binary-serialization.md)
-- [使用属性控制 XML 序列化](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)
-- [XML 序列化简介](../../../docs/standard/serialization/introducing-xml-serialization.md)
-- [序列化](../../../docs/standard/serialization/index.md)
-- [XML 和 SOAP 序列化](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [基本序列化](basic-serialization.md)
+- [二进制序列化](binary-serialization.md)
+- [使用属性控制 XML 序列化](controlling-xml-serialization-using-attributes.md)
+- [XML 序列化简介](introducing-xml-serialization.md)
+- [序列化](index.md)
+- [XML 和 SOAP 序列化](xml-and-soap-serialization.md)

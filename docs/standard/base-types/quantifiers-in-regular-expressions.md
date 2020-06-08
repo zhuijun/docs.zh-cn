@@ -14,12 +14,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: f1627248cbed0f03c6fb76ce660f9b2bf7764781
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dbfe4422b89b6223988ec9c6034d4b91b6ec8b5d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160009"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84276143"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>正则表达式中的限定符
 限定符指定输入中必须存在字符、组或字符类的多少实例才能找到匹配项。  下表列出了 .NET 支持的限定符。  
@@ -36,13 +36,13 @@ ms.locfileid: "78160009"
  数量 `n` 和 `m` 是整数常量。 通常，限定符是贪婪的；它们使正则表达式引擎匹配尽可能多的特定模式实例。 向限定符追加 `?` 字符可使它成为惰性的；会使正则表达式引擎匹配尽可能少的实例。 有关贪婪与惰性限定符之间的差异的完整说明，请参见本主题后面的[贪婪与惰性限定符](#Greedy)部分。  
   
 > [!IMPORTANT]
-> 嵌套限定符（例如正则表达式模式 `(a*)*` 的行为）可以按输入字符串中的字符数的指数函数形式，来增加正则表达式引擎必须执行的比较次数。 若要详细了解此行为及其解决方法，请参阅[回溯](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)。  
+> 嵌套限定符（例如正则表达式模式 `(a*)*` 的行为）可以按输入字符串中的字符数的指数函数形式，来增加正则表达式引擎必须执行的比较次数。 若要详细了解此行为及其解决方法，请参阅[回溯](backtracking-in-regular-expressions.md)。  
   
 ## <a name="regular-expression-quantifiers"></a>正则表达式限定符  
  以下部分列出了 .NET 正则表达式支持的限定符。  
   
 > [!NOTE]
-> 如果在正则表达式模式中遇到 *、+、?、{ 和 } 字符，正则表达式引擎会将它们解释为量符或量符构造的一部分，除非它们包含在[字符类](../../../docs/standard/base-types/character-classes-in-regular-expressions.md)中。 若要在字符类外部将这些字符解释文本字符，必须通过在它们前面加反斜杠来对它们进行转义。 例如，正则表达式模式中的字符串 `\*` 会被解释为文本星号（“\*”）字符。  
+> 如果在正则表达式模式中遇到 *、+、?、{ 和 } 字符，正则表达式引擎会将它们解释为量符或量符构造的一部分，除非它们包含在[字符类](character-classes-in-regular-expressions.md)中。 若要在字符类外部将这些字符解释文本字符，必须通过在它们前面加反斜杠来对它们进行转义。 例如，正则表达式模式中的字符串 `\*` 会被解释为文本星号（“\*”）字符。  
   
 ### <a name="match-zero-or-more-times-"></a>匹配零次或多次：*  
  `*` 限定符与前面的元素匹配零次或多次。 它相当于 `{0,}` 量符。 `*` 是贪婪量符，相当的惰性量符是 `*?`。  
@@ -271,5 +271,5 @@ ms.locfileid: "78160009"
   
 ## <a name="see-also"></a>请参阅
 
-- [正则表达式语言 - 快速参考](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
-- [回溯](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)
+- [正则表达式语言 - 快速参考](regular-expression-language-quick-reference.md)
+- [回溯](backtracking-in-regular-expressions.md)

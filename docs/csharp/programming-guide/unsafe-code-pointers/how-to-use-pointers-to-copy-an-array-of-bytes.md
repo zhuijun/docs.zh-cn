@@ -5,12 +5,12 @@ helpviewer_keywords:
 - byte arrays [C#]
 - arrays [C#], byte
 - pointers [C#], to copy bytes
-ms.openlocfilehash: 4929699c2d1e07b16d4694cff79f9b1394b1de38
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8c1afc06fb567a923d604ad53dc26f94178a8d60
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75698451"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84397410"
 ---
 # <a name="how-to-use-pointers-to-copy-an-array-of-bytes-c-programming-guide"></a>如何使用指针复制字节数组（C# 编程指南）
 
@@ -22,7 +22,7 @@ ms.locfileid: "75698451"
 
 ## <a name="example"></a>示例
 
-[!code-csharp[Struct with embedded inline array](../../../../samples/snippets/csharp/keywords/FixedKeywordExamples.cs#8)]
+[!code-csharp[Struct with embedded inline array](snippets/FixedKeywordExamples.cs#8)]
 
 ## <a name="see-also"></a>另请参阅
 

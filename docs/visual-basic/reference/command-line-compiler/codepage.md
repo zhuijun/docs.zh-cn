@@ -6,12 +6,12 @@ helpviewer_keywords:
 - codepage compiler option [Visual Basic]
 - -codepage compiler option [Visual Basic]
 ms.assetid: be36ec33-6800-4505-838c-4124564f5cc9
-ms.openlocfilehash: a38fb4be9347b3372b4a459fce2e96b9e38c3a51
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 34dbf36cc79a8c4715cf6a07c57d559e14f40030
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74343542"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363625"
 ---
 # <a name="-codepage-visual-basic"></a>-codepage (Visual Basic)
 指定要用于编译中所有源代码文件的代码页。  
@@ -38,4 +38,4 @@ ms.locfileid: "74343542"
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic 命令行编译器](index.md)

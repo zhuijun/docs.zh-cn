@@ -13,12 +13,12 @@ helpviewer_keywords:
 - parsing strings, other strings
 - Boolean data type, parsing strings
 ms.assetid: d139bc00-3c4e-4d78-ac9a-5c951b258d28
-ms.openlocfilehash: 08e891501bbefcf8b32eff10dd7294af9d81adac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a3503e0e499c6010fcc3d8669fa5c1eaf2dbf570
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73127571"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277539"
 ---
 # <a name="parsing-other-strings-in-net"></a>分析 .NET 中的其他字符串
 除了数字和 <xref:System.DateTime> 字符串之外，还可以将表示类型 <xref:System.Char>、<xref:System.Boolean> 和 <xref:System.Enum> 的字符串分析为数据类型。  
@@ -50,6 +50,6 @@ ms.locfileid: "73127571"
   
 ## <a name="see-also"></a>另请参阅
 
-- [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)
-- [格式设置类型](../../../docs/standard/base-types/formatting-types.md)
-- [.NET 中的类型转换](../../../docs/standard/base-types/type-conversion.md)
+- [Parsing Strings](parsing-strings.md)
+- [格式设置类型](formatting-types.md)
+- [.NET 中的类型转换](type-conversion.md)
