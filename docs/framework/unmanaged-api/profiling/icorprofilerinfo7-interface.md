@@ -2,12 +2,12 @@
 title: ICorProfilerInfo7 接口
 ms.date: 03/30/2017
 ms.assetid: cf37c462-73c5-412a-a7f8-bb26ca746313
-ms.openlocfilehash: f80f310c10bae33583cb7cd2048ede4f5efbe14c
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 0e9f76717aeff27e863245faac241927e7495076
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861744"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495484"
 ---
 # <a name="icorprofilerinfo7-interface"></a>ICorProfilerInfo7 接口
 [仅在 .NET Framework 4.6.1 及更高版本中受支持]  
@@ -16,19 +16,19 @@ ms.locfileid: "76861744"
   
 ## <a name="methods"></a>方法  
   
-|方法|描述|  
+|方法|说明|  
 |------------|-----------------|  
-|[ApplyMetaData 方法](icorprofilerinfo7-applymetadata-method.md)|将 `IMetadataEmit::Define*` 方法新定义的元数据应用于指定的模块。|  
+|[ApplyMetaData 方法](icorprofilerinfo7-applymetadata-method.md)|将方法的新定义的元数据应用于 `IMetadataEmit::Define*` 指定的模块。|  
 |[GetInMemorySymbolsLength 方法](icorprofilerinfo7-getinmemorysymbolslength-method.md)|返回内存中符号流的长度。|  
 |[ReadInMemorySymbols](icorprofilerinfo7-readinmemorysymbols.md)|从内存中的符号流中读取字节。|  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)

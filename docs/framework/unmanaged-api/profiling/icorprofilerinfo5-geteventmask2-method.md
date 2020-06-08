@@ -12,12 +12,12 @@ api_type:
 ms.assetid: f854b68f-009c-4ffb-89cd-ca874d1c0fb7
 topic_type:
 - apiref
-ms.openlocfilehash: f3943eef969f777b40dc51c4900b190561f14887
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 758e5b71443b127c80c820eb8531056530e81b13
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868390"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495692"
 ---
 # <a name="icorprofilerinfo5geteventmask2-method"></a>ICorProfilerInfo5::GetEventMask2 方法
 [仅在 .NET Framework 4.5.2 及更高版本中受支持]  
@@ -40,19 +40,19 @@ HRESULT GetEventMask2(
  `pdwEventsHigh`  
  [out] 一个指向指定事件类别的 4 字节值的指针。  每个位都可控制不同的功能、行为或事件类型。 [COR_PRF_HIGH_MONITOR](cor-prf-high-monitor-enumeration.md)枚举中描述了这些位。  
   
-## <a name="remarks"></a>备注  
- `GetEventMask2` 方法用于确定探查器已订阅了哪些回调。 通常，您需要执行 `pdwEventsLow` 和 `pdwEventsHigh` 值以及要设置的任何新位的逻辑或，然后调用[SetEventMask2](icorprofilerinfo5-seteventmask2-method.md)方法。  
+## <a name="remarks"></a>注解  
+ `GetEventMask2` 方法用于确定探查器已订阅了哪些回调。 通常，您 `pdwEventsLow` 需要对和 `pdwEventsHigh` 值以及要设置的任何新位执行逻辑 "或"，然后调用[SetEventMask2](icorprofilerinfo5-seteventmask2-method.md)方法。  
   
  此方法是[GetEventMask](icorprofilerinfo-geteventmask-method.md)方法的建议替代方法。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v452plus](../../../../includes/net-current-v452plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

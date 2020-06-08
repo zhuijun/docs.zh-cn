@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 66eeca30-adb4-45f4-aff5-347564c95724
 topic_type:
 - apiref
-ms.openlocfilehash: 57f771d933e896677dfc0bd5d9dac58da2af22c8
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8b1e918edf641d38dd6b91d790bcaff8020293a0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83617251"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493261"
 ---
 # <a name="getclridentitymanager-function"></a>GetCLRIdentityManager 函数
 获取一个指向接口的指针，该接口允许公共语言运行时（CLR）管理标识。  
@@ -40,9 +40,9 @@ STDAPI GetCLRIdentityManager(
  中一个 `REFIID` （接口标识符），它指定要获取的接口。 此值必须是 IID_ICLRAssemblyIdentityManager 或 IID_ICLRHostBindingPolicyManager。  
   
  `ppManager`  
- 弄指向[ICLRAssemblyIdentityManager](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyidentitymanager-interface.md)或[ICLRHostBindingPolicyManager](iclrhostbindingpolicymanager-interface.md)对象地址的指针。  
+ 弄指向[ICLRAssemblyIdentityManager](iclrassemblyidentitymanager-interface.md)或[ICLRHostBindingPolicyManager](iclrhostbindingpolicymanager-interface.md)对象地址的指针。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  调用[GetRealProcAddress](getrealprocaddress-function.md)函数以获取指向函数的指针 `GetCLRIdentityManager` 。  
   
 ## <a name="requirements"></a>要求  

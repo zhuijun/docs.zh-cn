@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 4d5e5f00-bcab-4f41-b191-176511a186a7
 topic_type:
 - apiref
-ms.openlocfilehash: bb73ccdd9eee4b5a655a56b5d6757e0c6003fbc9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c2abf2813c6e1a9db4264bded32d9cb9c58a2bcb
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437123"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491051"
 ---
 # <a name="imetadataimportgetparamprops-method"></a>IMetaDataImport::GetParamProps 方法
 获取指定的 ParamDef 标记所引用的参数的元数据值。  
@@ -56,37 +56,37 @@ HRESULT GetParamProps (
  弄用于保存参数名称的缓冲区。  
   
  `cchName`  
- 中`szName`中的请求大小（以宽字符为大小）。  
+ 中请求的大小（以宽字符为大小） `szName` 。  
   
  `pchName`  
- 弄`szName`的宽字符返回的大小。  
+ 弄返回的宽字符大小 `szName` 。  
   
  `pdwAttr`  
- 弄指向与参数关联的任何特性标志的指针。 这是 `CorParamAttr` 值的位掩码。  
+ 弄指向与参数关联的任何特性标志的指针。 这是一个值的位掩码 `CorParamAttr` 。  
   
  `pdwCPlusTypeFlag`  
- 弄指向标志的指针，该标志指定参数为 <xref:System.ValueType>。  
+ 弄指向标志的指针，该标志指定参数为 <xref:System.ValueType> 。  
   
  `ppValue`  
  弄指向参数返回的常量字符串的指针。  
   
  `pcchValue`  
- 弄宽字符中 `ppValue` 的大小，如果 `ppValue` 不包含字符串，则为零。  
+ 弄以宽字符为大小的大小 `ppValue` ; 如果不包含字符串，则为零 `ppValue` 。  
   
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-对于参数，`pulSequence` 中的序列值从1开始。 返回值的序列号为0。
+参数的序列值 `pulSequence` 从1开始。 返回值的序列号为0。
 
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

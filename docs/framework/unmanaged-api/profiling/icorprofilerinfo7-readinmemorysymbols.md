@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerInfo7::ReadInMemorySymbols
+title: ICorProfilerInfo7：： ReadInMemorySymbols
 ms.date: 03/30/2017
 api_name:
 - ICorProfilerInfo7.ReadInMemorySymbols
@@ -10,14 +10,14 @@ api_location:
 api_type:
 - COM
 ms.assetid: 1745a0b9-8332-4777-a670-b549bff3b901
-ms.openlocfilehash: 53c01d2db44f4d0adf1ba5b9cc225ab49581aa5d
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 6732457220d795bbf8ae54277ef9f5c07cf96359
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868338"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495354"
 ---
-# <a name="icorprofilerinfo7readinmemorysymbols"></a>ICorProfilerInfo7::ReadInMemorySymbols
+# <a name="icorprofilerinfo7readinmemorysymbols"></a>ICorProfilerInfo7：： ReadInMemorySymbols
 [仅在 .NET Framework 4.6.1 及更高版本中受支持]  
   
  从内存中的符号流中读取字节。  
@@ -42,7 +42,7 @@ HRESULT ReadInMemorySymbols(
  中内存中流中的偏移量，从此处开始读取字节。  
   
  `pSymbolBytes`  
- 弄指向数据将复制到的缓冲区的指针。 缓冲区的可用空间应 `countSymbolBytes`。  
+ 弄指向数据将复制到的缓冲区的指针。 缓冲区应有 `countSymbolBytes` 可用空间。  
   
  `countSymbolBytes`  
  中要复制的字节数。  
@@ -51,24 +51,24 @@ HRESULT ReadInMemorySymbols(
  弄当该方法返回时，包含所读取的实际字节数。  
   
 ## <a name="return-value"></a>返回值  
- 如果读取了非零字节数，则 `S_OK`。  
+ `S_OK`如果读取的字节数为非零，则为。  
   
- 如果该模块是使用 <xref:System.Reflection.Emit>创建的 `CORPROF_E_MODULE_IS_DYNAMIC`，则为。  
+ `CORPROF_E_MODULE_IS_DYNAMIC`如果该模块是使用创建的，则为 <xref:System.Reflection.Emit> 。  
   
-## <a name="remarks"></a>备注  
- `ReadInMemorySymbols` 方法尝试读取内存中流中 `symbolsReadOffset` 偏移开始的数据 `countSymbolBytes`。 数据将复制到 `pSymbolBytes`，这应该具有可用的空间 `countSymbolBytes`。     `pCountSymbolsBytesRead` 包含读取的实际字节数，如果已到达流的末尾，则该值可能小于 `countSymbolBytes`。  
+## <a name="remarks"></a>注解  
+ 此 `ReadInMemorySymbols` 方法尝试 `countSymbolBytes` 从 `symbolsReadOffset` 内存中流内的偏移量开始读取数据。 将数据复制到 `pSymbolBytes` ，该数据应具有 `countSymbolBytes` 可用空间。     `pCountSymbolsBytesRead`包含读取的实际字节数， `countSymbolBytes` 如果已到达流的末尾，则可以小于。  
   
 > [!NOTE]
-> 当前实现不支持反射。发出。 如果该模块是使用反射创建的，则该方法将返回 `CORPROF_E_MODULE_IS_DYNAMIC`。  
+> 当前实现不支持反射。发出。 如果该模块是使用反射创建的，则该方法返回 `CORPROF_E_MODULE_IS_DYNAMIC` 。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v461plus](../../../../includes/net-current-v461plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

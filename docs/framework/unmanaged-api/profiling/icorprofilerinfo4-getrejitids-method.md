@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 634ac28c-a5b7-4fc3-af84-256c24ca8177
 topic_type:
 - apiref
-ms.openlocfilehash: 9069498a4f62f4d9dbb50a7075323b14c3cc5ab9
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: ba15440df79dded95a8afa9438657d064e167f36
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868442"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84495965"
 ---
 # <a name="icorprofilerinfo4getrejitids-method"></a>ICorProfilerInfo4::GetReJITIDs 方法
 返回 Id 的数组，这些 Id 标识仍分配的指定函数的所有 JIT 重新编译版本。 这包括 JIT 重新编译的函数版本，这些版本已进行了还原但尚未释放（例如，当包含还原函数的应用程序域仍在使用时）。  
@@ -37,10 +37,10 @@ HRESULT GetReJITIDs (
   
 ## <a name="parameters"></a>参数  
  `functionId`  
- 中要枚举其版本的函数实例的 `FunctionID`。  
+ 中`FunctionID`要枚举其版本的函数实例的。  
   
  `cReJitIds`  
- 中`reJitIds` 数组中分配的 JIT 重新编译 Id 的数目。  
+ 中在数组中分配的 JIT 重新编译的 Id 的数目 `reJitIds` 。  
   
  `pcReJitIds`  
  弄JIT 重新编译的 Id 的实际数目。  
@@ -48,20 +48,20 @@ HRESULT GetReJITIDs (
  `reJitIds`  
  弄调用方分配的数组，其中包含指定函数的 JIT 重新编译的 Id。  
   
-## <a name="remarks"></a>备注  
- `GetReJITIDs` 枚举给定函数实例的活动 JIT 重新编译的 Id。 它遵循的使用模式与接受调用方分配的缓冲区的其他 `ICorProfilerInfo` 函数相同。  
+## <a name="remarks"></a>注解  
+ `GetReJITIDs`枚举给定函数实例的活动 JIT 重新编译的 Id。 它遵循与 `ICorProfilerInfo` 接受调用方分配的缓冲区的其他函数相同的使用模式。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - [ICorProfilerInfo4 接口](icorprofilerinfo4-interface.md)
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [分析](index.md)

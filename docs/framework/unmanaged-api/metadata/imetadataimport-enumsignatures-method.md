@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d0d65060-6f90-42a2-95cf-6ffb04352996
 topic_type:
 - apiref
-ms.openlocfilehash: 9dbbdcc9d0fb9f0a8d2a64edfa4a0ad92570933c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 652ebf1be6a58e08da27aaed5b2e84a8f2aee98a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450005"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503765"
 ---
 # <a name="imetadataimportenumsignatures-method"></a>IMetaDataImport::EnumSignatures 方法
 枚举当前范围内表示独立签名的 Signature 标记。  
@@ -47,28 +47,28 @@ HRESULT EnumSignatures (
  [in] `rSignatures` 数组的最大大小。  
   
  `pcSignatures`  
- 弄`rSignatures`中返回的签名令牌数。  
+ 弄中返回的签名令牌数 `rSignatures` 。  
   
 ## <a name="return-value"></a>返回值  
   
 |HRESULT|说明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumSignatures` 成功返回。|  
-|`S_FALSE`|没有要枚举的令牌。 在这种情况下，`pcSignatures` 为零。|  
+|`S_OK`|`EnumSignatures`已成功返回。|  
+|`S_FALSE`|没有要枚举的令牌。 在这种情况下， `pcSignatures` 为零。|  
   
-## <a name="remarks"></a>备注  
- 签名令牌由[IMetaDataEmit：： GetTokenFromSig](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromsig-method.md)方法创建。  
+## <a name="remarks"></a>注解  
+ 签名令牌由[IMetaDataEmit：： GetTokenFromSig](imetadataemit-gettokenfromsig-method.md)方法创建。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

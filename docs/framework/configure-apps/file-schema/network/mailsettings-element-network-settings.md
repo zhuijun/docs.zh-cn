@@ -1,5 +1,6 @@
 ---
 title: <mailSettings> 元素（网络设置）
+description: <mailSettings>网络设置元素在 .NET Framework 中配置邮件发送选项。
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#mailSettings
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - mailSettings element
 - <mailSettings> element
 ms.assetid: 54f0f153-17e5-4f49-afdc-deadb940c9c1
-ms.openlocfilehash: 4e8bf23ce39edadf80f019315c690b597b3d7361
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ce7b8564e4ee5ea73d42259612c077420d36645b
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74089236"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504558"
 ---
 # <a name="mailsettings-element-network-settings"></a>\<mailSettings> 元素（网络设置）
 配置邮件发送选项。  
@@ -44,7 +45,7 @@ ms.locfileid: "74089236"
   
 ### <a name="parent-elements"></a>父元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[\<system.Net>元素（网络设置）](system-net-element-network-settings.md)|包含指定 .NET Framework 如何连接到网络的设置。|  
   

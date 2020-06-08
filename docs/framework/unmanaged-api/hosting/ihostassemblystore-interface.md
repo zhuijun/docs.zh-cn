@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: cccb650f-abe0-41e2-9fd1-b383788eb1f6
 topic_type:
 - apiref
-ms.openlocfilehash: 87fe0b10f0a1eefa8154c40d39b54285990c410c
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: cca73eec663b9afd12ecea5ab9d7073ea0168d33
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805036"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501550"
 ---
 # <a name="ihostassemblystore-interface"></a>IHostAssemblyStore 接口
 提供允许主机独立于公共语言运行时（CLR）加载程序集和模块的方法。  
@@ -28,10 +28,10 @@ ms.locfileid: "83805036"
   
 |方法|说明|  
 |------------|-----------------|  
-|[ProvideAssembly 方法](../../../../docs/framework/unmanaged-api/hosting/ihostassemblystore-provideassembly-method.md)|获取对[IHostAssemblyManager：： GetNonHostStoreAssemblies](ihostassemblymanager-getnonhoststoreassemblies-method.md)调用返回的[ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)未引用的程序集的引用。|  
+|[ProvideAssembly 方法](ihostassemblystore-provideassembly-method.md)|获取对[IHostAssemblyManager：： GetNonHostStoreAssemblies](ihostassemblymanager-getnonhoststoreassemblies-method.md)调用返回的[ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md)未引用的程序集的引用。|  
 |[ProvideModule 方法](ihostassemblystore-providemodule-method.md)|解析程序集或链接（而非嵌入）资源文件中的模块。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `IHostAssemblyStore`提供一种方法，使主机可以根据程序集标识有效地加载程序集。 宿主通过返回直接指向字节的实例来加载程序集 `IStream` 。  
   
  CLR `IHostAssemblyStore` 通过在初始化时调用来确定宿主是否已实现 `IHostAssemblyManager::GetNonHostAssemblyStores` 。 例如，这允许主机控制与用户程序集的绑定，但要依赖于运行时绑定到 .NET Framework 程序集。  

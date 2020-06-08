@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ba6e178f-128b-4e47-a13c-b4be73eb106c
 topic_type:
 - apiref
-ms.openlocfilehash: b535fdd5027a26cc4dd0eafec9883f0186773dd1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 910c40413075131765a37e00703ac892e3f39641
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175494"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492182"
 ---
 # <a name="imetadataimportenuminterfaceimpls-method"></a>IMetaDataImport::EnumInterfaceImpls 方法
-枚举指定`TypeDef`实现的所有接口。
+枚举由指定实现的所有接口 `TypeDef` 。
   
 ## <a name="syntax"></a>语法  
   
@@ -37,43 +37,43 @@ HRESULT EnumInterfaceImpls (
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
  `phEnum`  
- [进出]指向枚举器的指针。  
+ [in，out]指向枚举器的指针。  
   
  `td`  
- [在]要枚举其表示接口实现的 TypeDef 令牌的令牌。  
+ 中要枚举其 MethodDef 标记表示接口实现的 TypeDef 的标记。  
   
  `rImpls`  
- [出]用于存储 MethodDef 令牌的数组。  
+ 弄用于存储 MethodDef 标记的数组。  
   
  `cMax`  
- [在]`rImpls`数组的最大长度。  
+ 中数组的最大长度 `rImpls` 。  
   
  `pcImpls`  
- [出]在 中`rImpls`返回的实际令牌数。  
+ 弄返回的标记的实际数量 `rImpls` 。  
   
 ## <a name="return-value"></a>返回值  
   
 |HRESULT|说明|  
 |-------------|-----------------|  
 |`S_OK`|`EnumInterfaceImpls`已成功返回。|  
-|`S_FALSE`|没有要枚举的 MethodDef 令牌。 在这种情况下，`pcImpls`设置为零。|  
+|`S_FALSE`|没有要枚举的 MethodDef 标记。 在这种情况下， `pcImpls` 设置为零。|  
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
-枚举返回指定`mdInterfaceImpl``TypeDef`实现的每个接口的令牌集合。 接口令牌按指定接口（通过`DefineTypeDef`或`SetTypeDefProps`）的顺序返回。 返回的`mdInterfaceImpl`令牌的属性可以使用[GetInterfaceImplProps](imetadataimport-getinterfaceimplprops-method.md)查询。
+枚举返回 `mdInterfaceImpl` 由指定的实现的每个接口的令牌集合 `TypeDef` 。 接口令牌按指定的顺序（通过 `DefineTypeDef` 或 `SetTypeDefProps` ）返回。 `mdInterfaceImpl`可以使用[GetInterfaceImplProps](imetadataimport-getinterfaceimplprops-method.md)查询返回的标记的属性。
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
- **标题：** 科尔赫  
+ **标头：** Cor  
   
- **库：** 作为资源包含在 MsCorEE.dll 中  
+ **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

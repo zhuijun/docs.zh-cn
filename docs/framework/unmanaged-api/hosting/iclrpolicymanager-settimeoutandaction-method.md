@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 60454f91-d855-4ddf-bb6d-60a02f5eabab
 topic_type:
 - apiref
-ms.openlocfilehash: efd30ef04c148d5e098110efcb37e50f143884e4
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 02e836601be72d54f561e077cd3c466470bafb25
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703424"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504090"
 ---
 # <a name="iclrpolicymanagersettimeoutandaction-method"></a>ICLRPolicyManager::SetTimeoutAndAction 方法
 设置指定操作的超时值，并指定操作发生时公共语言运行时（CLR）应执行的策略操作。  
@@ -65,8 +65,8 @@ HRESULT SetTimeoutAndAction (
 |E_FAIL|发生未知的灾难性故障。 方法返回 E_FAIL 后，CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
 |E_INVALIDARG|无法为指定的设置超时 `operation` ，或者为提供的值无效 `action` 。|  
   
-## <a name="remarks"></a>备注  
- `SetTimeoutAndAction`封装了[ICLRPolicyManager：： SetTimeout](../../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-settimeout-method.md)和[ICLRPolicyManager：： SetActionOnTimeout](iclrpolicymanager-setactionontimeout-method.md)方法的功能，可调用这些方法来代替对这两个方法的顺序调用。  
+## <a name="remarks"></a>注解  
+ `SetTimeoutAndAction`封装了[ICLRPolicyManager：： SetTimeout](iclrpolicymanager-settimeout-method.md)和[ICLRPolicyManager：： SetActionOnTimeout](iclrpolicymanager-setactionontimeout-method.md)方法的功能，可调用这些方法来代替对这两个方法的顺序调用。  
   
 > [!IMPORTANT]
 > 并非所有策略操作值都可以指定为 CLR 操作的超时行为。 有关有效值，请参阅主题的 "备注" 部分。  

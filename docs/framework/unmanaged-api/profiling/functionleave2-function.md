@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 8cdac941-8b94-4497-b874-4e571785f3fe
 topic_type:
 - apiref
-ms.openlocfilehash: 0b1ecd1266528f8a08ef114de2f111dd0f71ca8b
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: a2a3d58e0631fceab96c32f9d86fef25973fed84
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866926"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500658"
 ---
 # <a name="functionleave2-function"></a>FunctionLeave2 函数
 通知探查器函数将要返回到调用方，并提供有关堆栈帧和函数返回值的信息。  
@@ -39,28 +39,28 @@ void __stdcall FunctionLeave2 (
 
 - `funcId`
 
-  \[中] 返回的函数的标识符。
+  \[in] 返回的函数的标识符。
 
 - `clientData`
 
-  中 \[] 重新映射的函数标识符，探查器先前通过[FunctionIDMapper](functionidmapper-function.md)函数指定。
+  \[in] 重新映射的函数标识符，先前通过[FunctionIDMapper](functionidmapper-function.md)函数指定的探查器。
 
 - `func`
 
-  \[中的] `COR_PRF_FRAME_INFO` 值，该值指向有关堆栈帧的信息。
+  \[in] 一个 `COR_PRF_FRAME_INFO` 值，该值指向有关堆栈帧的信息。
 
   探查器应将此视为不透明的句柄，该句柄可传递回[ICorProfilerInfo2：： GetFunctionInfo2](icorprofilerinfo2-getfunctioninfo2-method.md)方法中的执行引擎。  
   
 - `retvalRange`
 
-  \[中的）一个指向[COR_PRF_FUNCTION_ARGUMENT_RANGE](cor-prf-function-argument-range-structure.md)结构的指针，该结构指定函数的返回值的内存位置。
+  \[in] 一个指向[COR_PRF_FUNCTION_ARGUMENT_RANGE](cor-prf-function-argument-range-structure.md)结构的指针，该结构指定函数的返回值的内存位置。
 
-  若要访问返回值信息，必须设置 `COR_PRF_ENABLE_FUNCTION_RETVAL` 标志。 探查器可以使用[ICorProfilerInfo：： SetEventMask](icorprofilerinfo-seteventmask-method.md)方法来设置事件标志。
+  若要访问返回值信息， `COR_PRF_ENABLE_FUNCTION_RETVAL` 必须设置标志。 探查器可以使用[ICorProfilerInfo：： SetEventMask](icorprofilerinfo-seteventmask-method.md)方法来设置事件标志。
 
-## <a name="remarks"></a>备注  
- `FunctionLeave2` 函数返回后，`func` 和 `retvalRange` 参数的值无效，因为值可能会更改或被销毁。  
+## <a name="remarks"></a>注解  
+ `func` `retvalRange` 当函数返回后，和参数的值无效， `FunctionLeave2` 因为值可能会更改或被销毁。  
   
- `FunctionLeave2` 函数是回调;必须实现此方法。 实现必须使用 `__declspec`（`naked`）存储类特性。  
+ `FunctionLeave2`函数是回调; 必须实现它。 实现必须使用 `__declspec` （ `naked` ）存储类特性。  
   
  在调用此函数之前，执行引擎不会保存任何注册。  
   
@@ -68,18 +68,18 @@ void __stdcall FunctionLeave2 (
   
 - 退出时，必须通过弹出由其调用方推送的所有参数来还原堆栈。  
   
- `FunctionLeave2` 的实现不应被阻止，因为它将延迟垃圾回收。 实现不应尝试垃圾回收，因为堆栈可能不处于垃圾回收友好状态。 如果尝试垃圾回收，则运行时将被阻止，直到 `FunctionLeave2` 返回。  
+ 的实现 `FunctionLeave2` 不应被阻止，因为它将延迟垃圾回收。 实现不应尝试垃圾回收，因为堆栈可能不处于垃圾回收友好状态。 如果尝试垃圾回收，则运行时将被阻止，直到 `FunctionLeave2` 返回。  
   
- 此外，`FunctionLeave2` 函数不得调入托管代码或以任何方式导致托管的内存分配。  
+ 此外，该 `FunctionLeave2` 函数不得调入托管代码或以任何方式导致托管的内存分配。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Corprof.idl .idl  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

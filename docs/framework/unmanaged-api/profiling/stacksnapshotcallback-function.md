@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d0f235b2-91fe-4f82-b7d5-e5c64186eea8
 topic_type:
 - apiref
-ms.openlocfilehash: 49e154ade91ea1a207645f924bd8aea1dbdb635c
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: a0f5316900dedc6c8983f9e670f60767ed783a40
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76868117"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493976"
 ---
 # <a name="stacksnapshotcallback-function"></a>StackSnapshotCallback 函数
 在堆栈遍历期间，为探查器提供有关每个托管帧和每个托管帧的每个运行的信息，由[ICorProfilerInfo2：:D ostacksnapshot](icorprofilerinfo2-dostacksnapshot-method.md)方法启动。  
@@ -48,29 +48,29 @@ HRESULT __stdcall StackSnapshotCallback (
  中一个 `COR_PRF_FRAME_INFO` 值，该值引用有关堆栈帧的信息。 此值仅在此回调期间有效。  
   
  `contextSize`  
- 中`context` 参数引用的 `CONTEXT` 结构的大小。  
+ 中`CONTEXT`由参数引用的结构的大小 `context` 。  
   
  `context`  
- 中指向 Win32 `CONTEXT` 结构的指针，该结构表示此帧的 CPU 状态。  
+ 中指向 Win32 `CONTEXT` 结构的指针，该结构表示此帧的 CPU 的状态。  
   
- 仅当在 `ICorProfilerInfo2::DoStackSnapshot`中传递了 COR_PRF_SNAPSHOT_CONTEXT 标志时，`context` 参数才有效。  
+ `context`仅当传入 COR_PRF_SNAPSHOT_CONTEXT 标志时，此参数才有效 `ICorProfilerInfo2::DoStackSnapshot` 。  
   
  `clientData`  
- 中指向客户端数据的指针，通过从 `ICorProfilerInfo2::DoStackSnapshot`直接传递此数据。  
+ 中指向客户端数据的指针，该数据是通过从直接传递的 `ICorProfilerInfo2::DoStackSnapshot` 。  
   
-## <a name="remarks"></a>备注  
- `StackSnapshotCallback` 函数由探查器编写器实现。 必须限制 `StackSnapshotCallback`中完成的工作的复杂性。 例如，以异步方式使用 `ICorProfilerInfo2::DoStackSnapshot` 时，目标线程可能会持有锁。 如果 `StackSnapshotCallback` 中的代码需要相同的锁，则可能会不幸死锁。  
+## <a name="remarks"></a>注解  
+ `StackSnapshotCallback`函数由探查器编写器实现。 必须限制中完成的工作的复杂性 `StackSnapshotCallback` 。 例如， `ICorProfilerInfo2::DoStackSnapshot` 以异步方式使用时，目标线程可能会持有锁。 如果中 `StackSnapshotCallback` 的代码需要相同的锁，则可能会不幸死锁。  
   
- `ICorProfilerInfo2::DoStackSnapshot` 方法为每个托管帧调用一次 `StackSnapshotCallback` 函数，或每次运行非托管帧调用一次。 如果调用 `StackSnapshotCallback` 来运行非托管帧，则探查器可能会使用寄存器上下文（由 `context` 参数引用）来执行其自己的非托管堆栈遍历。 在这种情况下，Win32 `CONTEXT` 结构表示在非托管帧运行内最近推送的帧的 CPU 状态。 尽管 Win32 `CONTEXT` 结构包含所有寄存器的值，但你只应依赖堆栈指针寄存器的值、帧指针寄存器、指令指针寄存器和非易失性（即，保留的）整数寄存器的值。  
+ `ICorProfilerInfo2::DoStackSnapshot`方法对 `StackSnapshotCallback` 每个托管帧调用一次函数，或在每次运行非托管帧时调用函数。 如果 `StackSnapshotCallback` 调用来运行非托管帧，则探查器可能会使用寄存器上下文（由 `context` 参数引用）来执行它自己的非托管堆栈遍历。 在这种情况下，Win32 `CONTEXT` 结构表示在非托管帧运行内最近推送的帧的 CPU 状态。 尽管 Win32 `CONTEXT` 结构包含所有寄存器的值，但你只应依赖堆栈指针寄存器的值、帧指针寄存器、指令指针寄存器和非易失性（即，保留的）整数寄存器的值。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Corprof.idl .idl  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 

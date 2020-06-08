@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea102e62-0454-4477-bcf3-126773acd184
 topic_type:
 - apiref
-ms.openlocfilehash: dbcf9230a953069d311c3908aa3ed21fcfd5075c
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 627df3600b920e2fe2250f2fc3da51c852edc774
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420261"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84496202"
 ---
 # <a name="icorprofilerinfo3requestprofilerdetach-method"></a>ICorProfilerInfo3::RequestProfilerDetach 方法
 指示运行时分离探查器。  
@@ -48,7 +48,7 @@ HRESULT RequestProfilerDetach(
 |CORPROF_E_RUNTIME_UNINITIALIZED|托管应用程序中的运行时尚未初始化。 （也就是说，运行时尚未完全加载。）当在探查器回调的[ICorProfilerCallback：： Initialize](icorprofilercallback-initialize-method.md)方法内请求分离时，可能会返回此错误代码。|  
 |CORPROF_E_UNSUPPORTED_CALL_SEQUENCE|在不支持时调用了 `RequestProfilerDetach`。 如果在托管线程上调用方法，而不是从[ICorProfilerCallback](icorprofilercallback-interface.md) [方法中](icorprofilercallback-interface.md)调用，或者不能容忍垃圾回收，则会发生这种情况。 有关详细信息，请参阅[CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](corprof-e-unsupported-call-sequence-hresult.md)。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  在分离过程中，分离线程（专为分离探查器创建的线程）有时会检查是否所有线程均已退出探查器的代码。 探查器应通过 `dwExpectedCompletionMilliseconds` 参数估计此操作的耗时。 最佳使用值是探查器在任何给定 `ICorProfilerCallback*` 方法内通常花费的时间量；此值不应小于探查器预计花费时间量的一半。  
   
  分离线程使用 `dwExpectedCompletionMilliseconds` 决定在检查探查器回调代码是否已从所有堆栈中弹出之前需要休眠多长时间。 尽管以下算法的详细信息在 CLR 的未来版本中可能有所更改，但它展示了在确定何时可安全卸载探查器时可使用 `dwExpectedCompletionMilliseconds` 的一种方法。 分离线程先休眠 `dwExpectedCompletionMilliseconds` 毫秒。 如果在唤醒后，CLR 发现探查器回调代码仍存在，分离线程将再次休眠，这一次是两次 `dwExpectedCompletionMilliseconds` 。 如果从第二次休眠状态唤醒后，分离线程仍发现存在探查器回调代码，则将休眠 10 分钟再进行检查。 分离线程每隔 10 分钟继续进行重新检查。  
@@ -56,7 +56,7 @@ HRESULT RequestProfilerDetach(
  如果探查器将 `dwExpectedCompletionMilliseconds` 指定为 0（零），CLR 使用默认值 5000，这意味着探查器在 5 秒钟后执行检查，10 秒后再次检查，然后每隔 10 分钟进行重新检查。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
