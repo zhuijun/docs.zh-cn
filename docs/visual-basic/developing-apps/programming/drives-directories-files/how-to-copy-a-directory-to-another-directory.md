@@ -7,12 +7,12 @@ helpviewer_keywords:
 - folders [Visual Basic], copying
 - directories [Visual Basic], copying
 ms.assetid: 2a370bd7-10ba-4219-afc4-4519d031eb6c
-ms.openlocfilehash: a23079f093f53ab8e20eb71c684a594dcf7f894b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e28f50f6a812188ac7af801cea691818488bd6cd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74348867"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401714"
 ---
 # <a name="how-to-copy-a-directory-to-another-directory-in-visual-basic"></a>如何：在 Visual Basic 中将一个目录复制到另一个目录
 
@@ -65,5 +65,5 @@ ms.locfileid: "74348867"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CopyDirectory%2A>
-- [如何：查找具有特定模式的子目录](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-find-subdirectories-with-a-specific-pattern.md)
-- [如何：获取目录中的文件集合](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+- [如何：查找具有特定模式的子目录](how-to-find-subdirectories-with-a-specific-pattern.md)
+- [如何：获取目录中的文件集合](how-to-get-the-collection-of-files-in-a-directory.md)

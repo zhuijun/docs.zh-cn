@@ -3,12 +3,12 @@ title: 解析外部资源
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: ad3fa320-4b8f-4e5c-b549-01157591007a
-ms.openlocfilehash: 05cc41cef7da07581d4f0ec8e584858b913d1a80
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 82e9231be8a3619f59313460f0d5e0b246eb9436
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710266"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291482"
 ---
 # <a name="resolving-external-resources"></a>解析外部资源
 XmlDocument  类使用 XmlDocument  的 XmlResolver  属性，定位没有在 XML 数据中内联的资源，如外部文档类型定义 (DTD)、实体和架构。 这些项可以位于网络或本地驱动器上，并通过统一资源标识符 (URI) 进行标识。 这样一来，XmlDocument  可以解析文档中的 EntityReference  节点，并根据外部 DTD 或架构验证文档。  
@@ -52,4 +52,4 @@ XmlDocument  类使用 XmlDocument  的 XmlResolver  属性，定位没有在 XM
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 文档对象模型 (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [XML 文档对象模型 (DOM)](xml-document-object-model-dom.md)

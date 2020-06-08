@@ -7,19 +7,19 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 03a7c5a1-b296-4af4-b209-043c958dc0a5
-ms.openlocfilehash: ea42cbfe7427e026f5e3339af5f5a2ceec17dad3
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 3b64bc8666274798ebaefc87ef3883fcec1ef6b1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202202"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288831"
 ---
 # <a name="modify-xml-data-using-xpathnavigator"></a>使用 XPathNavigator 修改 XML 数据
 <xref:System.Xml.XPath.XPathNavigator> 类提供一组方法用于修改 XML 文档中的节点和值。 要使用这些方法，<xref:System.Xml.XPath.XPathNavigator> 对象必须可编辑，即其 <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> 属性必须为 `true`。  
   
  可以编辑 XML 文档的 <xref:System.Xml.XPath.XPathNavigator> 对象由 <xref:System.Xml.XmlDocument.CreateNavigator%2A> 类的 <xref:System.Xml.XmlDocument> 方法创建。 由 <xref:System.Xml.XPath.XPathNavigator> 类创建的 <xref:System.Xml.XPath.XPathDocument> 对象是只读的，如果尝试使用由 <xref:System.Xml.XPath.XPathNavigator> 对象创建的 <xref:System.Xml.XPath.XPathDocument> 对象的编辑方法，将引发 <xref:System.NotSupportedException>。  
   
- 若要详细了解如何创建可编辑 <xref:System.Xml.XPath.XPathNavigator> 对象，请参阅[使用 XPathDocument 和 XmlDocument 读取 XML 数据](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)。  
+ 若要详细了解如何创建可编辑 <xref:System.Xml.XPath.XPathNavigator> 对象，请参阅[使用 XPathDocument 和 XmlDocument 读取 XML 数据](reading-xml-data-using-xpathdocument-and-xmldocument.md)。  
   
 ## <a name="modifying-nodes"></a>修改节点  
  更改节点值的一种简单的方法是，使用 <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> 类的 <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> 和 <xref:System.Xml.XPath.XPathNavigator> 方法。  
@@ -39,7 +39,7 @@ ms.locfileid: "84202202"
 > [!NOTE]
 > 不支持编辑 <xref:System.Xml.XPath.XPathNodeType.Namespace> 节点或 <xref:System.Xml.XPath.XPathNodeType.Root> 节点。  
   
- <xref:System.Xml.XPath.XPathNavigator> 类还提供一组方法，用于插入和移除节点。 若要详细了解如何在 XML 文档中插入和删除节点，请参阅[使用 XPathNavigator 插入 XML 数据](../../../../docs/standard/data/xml/insert-xml-data-using-xpathnavigator.md)和[使用 XPathNavigator 删除 XML 数据](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md)主题。  
+ <xref:System.Xml.XPath.XPathNavigator> 类还提供一组方法，用于插入和移除节点。 若要详细了解如何在 XML 文档中插入和删除节点，请参阅[使用 XPathNavigator 插入 XML 数据](insert-xml-data-using-xpathnavigator.md)和[使用 XPathNavigator 删除 XML 数据](remove-xml-data-using-xpathnavigator.md)主题。  
   
 ### <a name="modifying-untyped-values"></a>修改非类型化的值  
  <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> 方法只需将作为参数传递的非类型化的 `string` 值作为 <xref:System.Xml.XPath.XPathNavigator> 对象当前所处的节点的值插入。 插入的值没有任何类型或不验证新值是否符合节点的类型（如果架构信息可用）。  
@@ -113,7 +113,7 @@ navigator.SetTypedValue(DateTime.Now);
   
  假设元素的有效性取决于其子元素和属性的有效性，对任意一项的修改都会造成元素有效性的改变（如果元素以前有效）。 尤其是，如果插入、更新或删除了元素的子元素或属性，元素的有效性将变为未知。 此情况通过将元素的 <xref:System.Xml.Schema.IXmlSchemaInfo.Validity%2A> 属性的 <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> 属性设置 <xref:System.Xml.Schema.XmlSchemaValidity.NotKnown> 来表示。 另外，此结果将在 XML 文档中循环向上层叠，因为元素的父元素（及其父元素，依此类推）的有效性也将变为未知。  
   
- 若要详细了解架构有效性和 <xref:System.Xml.XPath.XPathNavigator> 类，请参阅[使用 XPathNavigator 验证架构](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)。  
+ 若要详细了解架构有效性和 <xref:System.Xml.XPath.XPathNavigator> 类，请参阅[使用 XPathNavigator 验证架构](schema-validation-using-xpathnavigator.md)。  
   
 ### <a name="modifying-attributes"></a>修改属性  
  <xref:System.Xml.XPath.XPathNavigator.SetValue%2A> 和 <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> 方法可以用于修改非类型化和类型化的属性节点以及“修改节点”一节中列出的其他节点类型。  
@@ -244,13 +244,13 @@ Console.WriteLine(navigator.OuterXml);
 > 如果 `xsi:nil` 属性设置为 `false` 的元素的内容已删除，该属性的值不会更改为 `true`。  
   
 ## <a name="saving-an-xml-document"></a>保存 XML 文档  
- 使用 <xref:System.Xml.XmlDocument> 类的方法保存本主题中所述的编辑方法对 <xref:System.Xml.XmlDocument> 对象的更改。 若要详细了解如何保存对 <xref:System.Xml.XmlDocument> 对象所做的更改，请参阅[保存和编写文档](../../../../docs/standard/data/xml/saving-and-writing-a-document.md)。  
+ 使用 <xref:System.Xml.XmlDocument> 类的方法保存本主题中所述的编辑方法对 <xref:System.Xml.XmlDocument> 对象的更改。 若要详细了解如何保存对 <xref:System.Xml.XmlDocument> 对象所做的更改，请参阅[保存和编写文档](saving-and-writing-a-document.md)。  
   
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [使用 XPath 数据模型处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [使用 XPathNavigator 插入 XML 数据](../../../../docs/standard/data/xml/insert-xml-data-using-xpathnavigator.md)
-- [使用 XPathNavigator 删除 XML 数据](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md)
+- [使用 XPath 数据模型处理 XML 数据](process-xml-data-using-the-xpath-data-model.md)
+- [使用 XPathNavigator 插入 XML 数据](insert-xml-data-using-xpathnavigator.md)
+- [使用 XPathNavigator 删除 XML 数据](remove-xml-data-using-xpathnavigator.md)

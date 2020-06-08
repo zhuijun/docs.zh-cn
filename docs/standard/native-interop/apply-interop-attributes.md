@@ -14,17 +14,17 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - COM interop, applying attributes
 ms.assetid: b6014613-641c-4912-9e2f-83a99210a037
-ms.openlocfilehash: 831f8d79030264ef013a75cd91cb771c9d168576
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: f9ccf59e52c1ef27649cd70a57f7b24bb5a8e9bf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420534"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291326"
 ---
 # <a name="applying-interop-attributes"></a>应用互操作特性
 <xref:System.Runtime.InteropServices> 命名空间提供三类特定于互操作的特性：在设计时由你应用的特性、在转换进程中由 COM 互操作工具和 API 应用的特性以及由你或 COM 互操作应用的特性。  
   
- 如果不熟悉将特性应用到托管代码的任务，请参阅[利用特性扩展元数据](../../../docs/standard/attributes/index.md)。 如其他自定义特性一样，可以将特定于互操作的特性应用于类型、方法、属性、参数、字段和其他成员。  
+ 如果不熟悉将特性应用到托管代码的任务，请参阅[利用特性扩展元数据](../attributes/index.md)。 如其他自定义特性一样，可以将特定于互操作的特性应用于类型、方法、属性、参数、字段和其他成员。  
   
 ## <a name="design-time-attributes"></a>设计时特性  
  可以使用设计时特性调整由 COM 互操作工具和 API 执行的转换进程的结果。 下表介绍了可以应用到托管源代码的特性。 有时，COM 互操作工具也可能应用此表中所述的特性。  
@@ -70,7 +70,7 @@ ms.locfileid: "83420534"
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices>
-- [向 COM 公开 .NET Framework 组件](../../../docs/framework/interop/exposing-dotnet-components-to-com.md)
-- [特性](../../../docs/standard/attributes/index.md)
-- [为互操作限定 .NET 类型](../../../docs/standard/native-interop/qualify-net-types-for-interoperation.md)
-- [打包用于 COM 的 .NET Framework 程序集](../../../docs/framework/interop/packaging-an-assembly-for-com.md)
+- [向 COM 公开 .NET Framework 组件](../../framework/interop/exposing-dotnet-components-to-com.md)
+- [特性](../attributes/index.md)
+- [为互操作限定 .NET 类型](qualify-net-types-for-interoperation.md)
+- [打包用于 COM 的 .NET Framework 程序集](../../framework/interop/packaging-an-assembly-for-com.md)

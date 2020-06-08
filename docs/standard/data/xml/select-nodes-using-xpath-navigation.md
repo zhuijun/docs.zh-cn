@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
-ms.openlocfilehash: 58f1487486c2802a2c64b51afcecb01c76dd291a
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: 85f3ae9ec9f3b4d0949a893dd1e59fbbda139066
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78155602"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291456"
 ---
 # <a name="select-nodes-using-xpath-navigation"></a>使用 XPath 导航选择节点
 XML 文档对象模型 (DOM) 包含的方法使您可以使用 XML 路径语言 (XPath) 浏览功能查询 DOM 中的信息。 可以使用 XPath 查找单个特定节点，或查找与某个条件匹配的所有节点。  
@@ -162,4 +162,4 @@ this doc.DocumentElement.FirstChild.SelectNodes(. . .);
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 文档对象模型 (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [XML 文档对象模型 (DOM)](xml-document-object-model-dom.md)

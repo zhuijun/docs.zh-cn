@@ -3,12 +3,12 @@ title: 使用 DOM 模型处理 XML 数据
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 56b6e9c7-ed82-4a65-a647-7be32c83bcc8
-ms.openlocfilehash: 01ef4bef57b8a2e3e13f28a98adb21b111f3f4ed
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 242554cc948ef16972ffd26d5464dae2727ed339
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710448"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290832"
 ---
 # <a name="process-xml-data-using-the-dom-model"></a>使用 DOM 模型处理 XML 数据
 XML 文档对象模型 (DOM) 将 XML 数据作为一组标准的对象对待，用于处理内存中的 XML 数据。 `System.Xml` 命名空间提供 XML 文档、片断、节点或节点集的编程表示形式。 基于万维网联合会 (W3C) DOM 级别 1 核心和 DOM 级别 2 核心建议。  
@@ -17,44 +17,44 @@ XML 文档对象模型 (DOM) 将 XML 数据作为一组标准的对象对待，�
   
 ## <a name="in-this-section"></a>本节内容  
   
-- [XML 文档对象模型 (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)  
+- [XML 文档对象模型 (DOM)](xml-document-object-model-dom.md)  
   
-- [XML 节点类型](../../../../docs/standard/data/xml/types-of-xml-nodes.md)  
+- [XML 节点类型](types-of-xml-nodes.md)  
   
-- [XML 文档对象模型 (DOM) 层次结构](../../../../docs/standard/data/xml/xml-document-object-model-dom-hierarchy.md)  
+- [XML 文档对象模型 (DOM) 层次结构](xml-document-object-model-dom-hierarchy.md)  
   
-- [将对象层次结构映射到 XML 数据](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)  
+- [将对象层次结构映射到 XML 数据](mapping-the-object-hierarchy-to-xml-data.md)  
   
-- [创建 XML 文档](../../../../docs/standard/data/xml/xml-document-creation.md)  
+- [创建 XML 文档](xml-document-creation.md)  
   
-- [将 XML 文档读入 DOM](../../../../docs/standard/data/xml/reading-an-xml-document-into-the-dom.md)  
+- [将 XML 文档读入 DOM](reading-an-xml-document-into-the-dom.md)  
   
-- [将节点插入 XML 文档中](../../../../docs/standard/data/xml/inserting-nodes-into-an-xml-document.md)  
+- [将节点插入 XML 文档中](inserting-nodes-into-an-xml-document.md)  
   
-- [从 XML 删除文档中的节点、内容和值](../../../../docs/standard/data/xml/removing-nodes-content-and-values-from-an-xml-document.md)  
+- [从 XML 删除文档中的节点、内容和值](removing-nodes-content-and-values-from-an-xml-document.md)  
   
-- [修改 XML 文档中的节点、内容和值](../../../../docs/standard/data/xml/modifying-nodes-content-and-values-in-an-xml-document.md)  
+- [修改 XML 文档中的节点、内容和值](modifying-nodes-content-and-values-in-an-xml-document.md)  
   
-- [在 DOM 中验证 XML 文档](../../../../docs/standard/data/xml/validating-an-xml-document-in-the-dom.md)  
+- [在 DOM 中验证 XML 文档](validating-an-xml-document-in-the-dom.md)  
   
-- [保存和编写文档](../../../../docs/standard/data/xml/saving-and-writing-a-document.md)  
+- [保存和编写文档](saving-and-writing-a-document.md)  
   
-- [使用 XPath 导航选择节点](../../../../docs/standard/data/xml/select-nodes-using-xpath-navigation.md)  
+- [使用 XPath 导航选择节点](select-nodes-using-xpath-navigation.md)  
   
-- [解析外部资源](../../../../docs/standard/data/xml/resolving-external-resources.md)  
+- [解析外部资源](resolving-external-resources.md)  
   
-- [使用 XmlNameTable 的对象比较](../../../../docs/standard/data/xml/object-comparison-using-xmlnametable.md)  
+- [使用 XmlNameTable 的对象比较](object-comparison-using-xmlnametable.md)  
   
-- [NamedNodeMap 和 NodeList 中的节点集合](../../../../docs/standard/data/xml/node-collections-in-namednodemaps-and-nodelists.md)  
+- [NamedNodeMap 和 NodeList 中的节点集合](node-collections-in-namednodemaps-and-nodelists.md)  
   
-- [NodeList 和 NamedNodeMap 的动态更新](../../../../docs/standard/data/xml/dynamic-updates-to-nodelists-and-namednodemaps.md)  
+- [NodeList 和 NamedNodeMap 的动态更新](dynamic-updates-to-nodelists-and-namednodemaps.md)  
   
-- [DOM 中的命名空间支持](../../../../docs/standard/data/xml/namespace-support-in-the-dom.md)  
+- [DOM 中的命名空间支持](namespace-support-in-the-dom.md)  
   
-- [使用 XmlNodeChangedEventArgs 的 XML 文档中的事件处理](../../../../docs/standard/data/xml/event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs.md)  
+- [使用 XmlNodeChangedEventArgs 的 XML 文档中的事件处理](event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs.md)  
   
-- [扩展 DOM](../../../../docs/standard/data/xml/extending-the-dom.md)  
+- [扩展 DOM](extending-the-dom.md)  
   
 ## <a name="related-sections"></a>相关章节  
- [使用 XPath 数据模型处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)  
+ [使用 XPath 数据模型处理 XML 数据](process-xml-data-using-the-xpath-data-model.md)  
  讨论如何使用 <xref:System.Xml.XPath.XPathNavigator> 类进行 XML 处理。

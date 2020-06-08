@@ -13,12 +13,12 @@ helpviewer_keywords:
 - command-line compilers [Visual Basic], Visual Basic
 - command line [Visual Basic], Visual Basic
 ms.assetid: e61947e9-a42e-4717-a699-5f70a98cdd03
-ms.openlocfilehash: c7219c0497bb87f0cc44f27229eaf25f9b3eebce
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ec6ae3328c2042af950d1ee78a33d3de97219f10
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344795"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414293"
 ---
 # <a name="building-from-the-command-line-visual-basic"></a>从命令行生成 (Visual Basic)
 
@@ -35,18 +35,18 @@ Visual Basic 提供命令行编译器作为替代方法，用于在 Visual Studi
 
 ## <a name="in-this-section"></a>本节内容
 
-[如何：调用命令行编译器](../../../visual-basic/reference/command-line-compiler/how-to-invoke-the-command-line-compiler.md) \
+[如何：调用命令行编译器](how-to-invoke-the-command-line-compiler.md) \
 介绍如何在 MS-DOS 提示符下或从特定子目录调用命令行编译器。
 
-[示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md) \
+[示例编译命令行](sample-compilation-command-lines.md) \
 提供可以进行修改以供自己使用的示例命令行的列表。
 
 ## <a name="related-sections"></a>相关章节
 
-[Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md) \
+[Visual Basic 命令行编译器](index.md) \
 提供按字母顺序或用途组织的编译器选项的列表。
 
-[条件编译](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md) \
+[条件编译](../../programming-guide/program-structure/conditional-compilation.md) \
 介绍如何编译代码的特定部分。
 
 [在 Visual Studio 中生成和清理项目和解决方案](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) \

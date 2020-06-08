@@ -6,15 +6,15 @@ helpviewer_keywords:
 - XML serialization, configuration
 - <add> element for <schemaImporterExtensions> element
 ms.assetid: c828a558-094b-441e-9065-790b87315fa0
-ms.openlocfilehash: 401d1ba9cc2f97e93d7851f96f73b552e6ed6356
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 6fd8113ad39a22c927035fca574151ae8f002685
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378480"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84288324"
 ---
 # <a name="add-element-for-schemaimporterextensions"></a>\<schemaImporterExtensions> 的 \<add> 元素
-添加将 XSD 类型映射到 .NET Framework 类型时 <xref:System.Xml.Serialization.XmlSchemaImporter> 所用的类型。 有关配置文件的详细信息，请参阅[配置文件架构](../../../docs/framework/configure-apps/file-schema/index.md)。  
+添加将 XSD 类型映射到 .NET Framework 类型时 <xref:System.Xml.Serialization.XmlSchemaImporter> 所用的类型。 有关配置文件的详细信息，请参阅[配置文件架构](../../framework/configure-apps/file-schema/index.md)。  
   
  \<configuration>  
 \<system.xml.serialization>  
@@ -64,5 +64,5 @@ ms.locfileid: "83378480"
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
-- [\<system.xml.serialization> 元素](../../../docs/standard/serialization/system-xml-serialization-element.md)
-- [\<schemaImporterExtensions> 元素](../../../docs/standard/serialization/schemaimporterextensions-element.md)
+- [\<system.xml.serialization> 元素](system-xml-serialization-element.md)
+- [\<schemaImporterExtensions> 元素](schemaimporterextensions-element.md)

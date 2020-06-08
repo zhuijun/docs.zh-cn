@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-ms.openlocfilehash: 04ad3c8d8ea076e881e27e295d87572a51cbc128
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: 47e54bb76c65dd5acc8ce1921ee385a5cb55cf95
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635969"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287986"
 ---
 # <a name="commonly-used-collection-types"></a>常用的集合类型
 集合类型是数据集合（如哈希表、队列、堆栈、包、字典和列表）的常见变体。  
@@ -28,16 +28,16 @@ ms.locfileid: "80635969"
   
  集合会因元素的存储方式、排序方式、执行搜索的方式以及比较方式的不同而不同。 <xref:System.Collections.Queue> 类和 <xref:System.Collections.Generic.Queue%601> 泛型类提供先进先出列表，而 <xref:System.Collections.Stack> 类和 <xref:System.Collections.Generic.Stack%601> 泛型类提供后进先出列表。 <xref:System.Collections.SortedList> 类和 <xref:System.Collections.Generic.SortedList%602> 泛型类提供 <xref:System.Collections.Hashtable> 类和 <xref:System.Collections.Generic.Dictionary%602> 泛型类的已排序版本。 <xref:System.Collections.Hashtable> 或 <xref:System.Collections.Generic.Dictionary%602> 的元素只能通过元素的键访问，但 <xref:System.Collections.SortedList> 或 <xref:System.Collections.ObjectModel.KeyedCollection%602> 的元素能通过元素的键或索引访问。 所有集合中的索引都从零开始，<xref:System.Array> 除外，它允许不从零开始的数组。  
   
- LINQ to Objects 功能让你可以通过使用 LINQ 查询来访问内存中的对象，条件是该对象类型实现 <xref:System.Collections.IEnumerable> 或 <xref:System.Collections.Generic.IEnumerable%601>。 LINQ 查询提供了一种通用的数据访问模式；与标准 `foreach` 循环相比，它通常更加简洁；可读性更高，并且可提供筛选、排序和分组功能。 LINQ 查询还可提高性能。 有关详细信息，请参阅 “[LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md)”、“[LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)” 和 “[并行 LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)”。  
+ LINQ to Objects 功能让你可以通过使用 LINQ 查询来访问内存中的对象，条件是该对象类型实现 <xref:System.Collections.IEnumerable> 或 <xref:System.Collections.Generic.IEnumerable%601>。 LINQ 查询提供了一种通用的数据访问模式；与标准 `foreach` 循环相比，它通常更加简洁；可读性更高，并且可提供筛选、排序和分组功能。 LINQ 查询还可提高性能。 有关详细信息，请参阅 “[LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md)”、“[LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)” 和 “[并行 LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md)”。  
   
 ## <a name="related-topics"></a>相关主题  
   
 |Title|描述|  
 |-----------|-----------------|  
-|[集合和数据结构](../../../docs/standard/collections/index.md)|讨论在 .NET Framework 中提供的各种集合类型，包括堆栈、队列、列表、数组和字典。|  
-|[哈希表和字典集合类型](../../../docs/standard/collections/hashtable-and-dictionary-collection-types.md)|描述泛型和非泛型的基于哈希的字典类型的功能。|  
-|[已排序的集合类型](../../../docs/standard/collections/sorted-collection-types.md)|描述为列表和集提供排序功能的类。|  
-|[泛型](../../../docs/standard/generics/index.md)|描述泛型功能，包括 .NET Framework 提供的泛型集合、委托和接口。 为 C#、Visual Basic 和 Visual C++ 提供功能文档链接和支持技术（如反射）链接。|  
+|[集合和数据结构](index.md)|讨论在 .NET Framework 中提供的各种集合类型，包括堆栈、队列、列表、数组和字典。|  
+|[哈希表和字典集合类型](hashtable-and-dictionary-collection-types.md)|描述泛型和非泛型的基于哈希的字典类型的功能。|  
+|[已排序的集合类型](sorted-collection-types.md)|描述为列表和集提供排序功能的类。|  
+|[泛型](../generics/index.md)|描述泛型功能，包括 .NET Framework 提供的泛型集合、委托和接口。 为 C#、Visual Basic 和 Visual C++ 提供功能文档链接和支持技术（如反射）链接。|  
   
 ## <a name="reference"></a>参考  
  <xref:System.Collections?displayProperty=nameWithType>  

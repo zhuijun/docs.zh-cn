@@ -6,12 +6,12 @@ helpviewer_keywords:
 - win32manifest compiler option [Visual Basic]
 - -win32manifest compiler option [Visual Basic]
 ms.assetid: 9e3191b4-90db-41c8-966a-28036fd20005
-ms.openlocfilehash: cef1e6c19e7fdd6fc9f42c8fc36008314ea80a80
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6f77649365f8ca7b163cd55854aa9960d88f2984
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349134"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414254"
 ---
 # <a name="-win32manifest-visual-basic"></a>-win32manifest (Visual Basic)
 标识用户定义的 Win32 应用程序清单文件要嵌入到项目的可移植可执行 (PE) 文件。  
@@ -32,7 +32,7 @@ ms.locfileid: "74349134"
  默认情况下，Visual Basic 编译器嵌入指定“asInvoker”的请求执行级别的应用程序清单。 它在生成该可执行文件的同一文件夹中创建清单，如果使用 Visual Studio，该文件夹通常为 bin\Debug 或 bin\Release。 如果要提供自定义清单（例如，指定 highestAvailable 或 requireAdministrator 的请求执行级别的清单），请使用此选项指定文件名。  
   
 > [!NOTE]
-> 此选项和 [-win32resource](../../../visual-basic/reference/command-line-compiler/win32resource.md) 选项是互斥的。 如果尝试在同一命令行中同时使用这两个选项，将收到一个生成错误。  
+> 此选项和 [-win32resource](win32resource.md) 选项是互斥的。 如果尝试在同一命令行中同时使用这两个选项，将收到一个生成错误。  
   
  如果应用程序没有用于指定请求执行级别的应用程序清单，将受到 Windows Vista 的用户帐户控制功能下的文件/注册表虚拟化的影响。 有关虚拟化的详细信息，请参阅 [Windows Vista 上的 ClickOnce 部署](/visualstudio/deployment/clickonce-deployment-on-windows-vista)。  
   
@@ -68,5 +68,5 @@ ms.locfileid: "74349134"
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-nowin32manifest (Visual Basic)](../../../visual-basic/reference/command-line-compiler/nowin32manifest.md)
+- [Visual Basic 命令行编译器](index.md)
+- [-nowin32manifest (Visual Basic)](nowin32manifest.md)

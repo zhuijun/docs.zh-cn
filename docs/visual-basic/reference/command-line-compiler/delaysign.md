@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -delaysign compiler option [Visual Basic]
 - -delaysign compiler option [Visual Basic]
 ms.assetid: c76e61a4-1884-4252-9fb2-377f99caa690
-ms.openlocfilehash: 3ee94df096b756be544964cfbbd405355e3f728f
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: c9bb302e2b34ebe1f51cf39bb3db1094d420d7f4
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581270"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408694"
 ---
 # <a name="-delaysign"></a>-delaysign
 
@@ -30,7 +30,7 @@ ms.locfileid: "72581270"
 
 ## <a name="remarks"></a>备注
 
-除非与 [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md) 或 [-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md) 一同使用，否则 `-delaysign` 选项将不起作用。
+除非与 [-keyfile](keyfile.md) 或 [-keycontainer](keycontainer.md) 一同使用，否则 `-delaysign` 选项将不起作用。
 
 在请求完全签名的程序集时，编译器会对包含清单（程序集元数据）的文件进行哈希处理，并使用私钥对哈希进行签名。 产生的数字签名存储在包含清单的文件中。 在对程序集延迟签名时，编译器不会计算和存储签名，而是在文件中保留空间，以便稍后可添加签名。
 
@@ -48,7 +48,7 @@ ms.locfileid: "72581270"
 
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-keyfile](../../../visual-basic/reference/command-line-compiler/keyfile.md)
-- [-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [-keyfile](keyfile.md)
+- [-keycontainer](keycontainer.md)
+- [示例编译命令行](sample-compilation-command-lines.md)

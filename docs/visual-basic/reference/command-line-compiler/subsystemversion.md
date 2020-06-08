@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -subsystemversion compiler option [Visual Basic]
 - subsystemversion compiler option [Visual Basic]
 ms.assetid: 08be22b2-f447-4cd3-8203-120b1b920b54
-ms.openlocfilehash: e8607f8254783b5486b02ccc4c7e4081da506fae
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 09ddc4bb735b645e09d34198c66dff78183592bf
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802159"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84403078"
 ---
 # <a name="-subsystemversion-visual-basic"></a>-subsystemversion (Visual Basic)
 
@@ -54,11 +54,11 @@ ms.locfileid: "74802159"
 
 - 只要设置了以下列表中的任意编译器选项，则默认值为 6.02：
 
-  - [/target:appcontainerexe](../../../visual-basic/reference/command-line-compiler/target.md)
+  - [/target:appcontainerexe](target.md)
 
-  - [/target:winmdobj](../../../visual-basic/reference/command-line-compiler/target.md)
+  - [/target:winmdobj](target.md)
 
-  - [-platform:arm](../../../visual-basic/reference/command-line-compiler/platform.md)
+  - [-platform:arm](platform.md)
 
 - 如果使用 MSBuild，面向 .NET Framework 4.5，并且未设置先前在此列表中指定的任何编译器选项，则默认值为 6.00。
 
@@ -70,6 +70,6 @@ ms.locfileid: "74802159"
 
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
+- [Visual Basic 命令行编译器](index.md)
 
 - [MSBuild 属性](/visualstudio/msbuild/msbuild-properties)

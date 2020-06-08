@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 81fa0e41-d9c9-46f0-b22b-50da839c77f5
-ms.openlocfilehash: bfcbf7306e896af54808c49e25f95d0631f5bcc0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: f6e56616543bf7d2ad2e6be4d7bf7cbc50ba3a23
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710201"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84292002"
 ---
 # <a name="schema-validation-using-xpathnavigator"></a>使用 XPathNavigator 验证架构
 使用 <xref:System.Xml.XmlDocument> 类，可以通过两种方式验证 <xref:System.Xml.XmlDocument> 对象中包含的 XML 内容。 第一种方式是使用验证 <xref:System.Xml.XmlReader> 对象验证 XML 内容，第二种方式是使用 <xref:System.Xml.XmlDocument.Validate%2A> 类的 <xref:System.Xml.XmlDocument> 方法。 还可以使用 <xref:System.Xml.XPath.XPathDocument> 类对 XML 内容执行只读验证。  
@@ -348,22 +348,22 @@ class ValidatingReaderExample
   
  使用 <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> 类的 <xref:System.Xml.XPath.XPathNavigator> 方法进行的修改引发了 <xref:System.InvalidCastException>，因为新值不符合节点的架构类型。  
   
- 若要详细了解如何使用 <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> 方法修改值，请参阅[使用 XPathNavigator 修改 XML 数据](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md)主题。  
+ 若要详细了解如何使用 <xref:System.Xml.XPath.XPathNavigator.SetTypedValue%2A> 方法修改值，请参阅[使用 XPathNavigator 修改 XML 数据](modify-xml-data-using-xpathnavigator.md)主题。  
   
 ### <a name="read-only-validation"></a>只读验证  
  <xref:System.Xml.XPath.XPathDocument> 类是 XML 文档在内存中的只读表示形式。 <xref:System.Xml.XPath.XPathDocument> 类和 <xref:System.Xml.XmlDocument> 类均创建 <xref:System.Xml.XPath.XPathNavigator> 对象来浏览和编辑 XML 文档。 因为 <xref:System.Xml.XPath.XPathDocument> 类是只读类，从 <xref:System.Xml.XPath.XPathNavigator> 对象返回的 <xref:System.Xml.XPath.XPathDocument> 对象不能编辑 <xref:System.Xml.XPath.XPathDocument> 对象中包含的 XML 文档。  
   
  在验证时，可以创建一个 <xref:System.Xml.XPath.XPathDocument> 对象，就好像使用验证 <xref:System.Xml.XmlDocument> 对象创建 <xref:System.Xml.XmlReader> 对象一样，如本主题前面所述。 <xref:System.Xml.XPath.XPathDocument> 对象在 XML 文档加载时进行验证，但是因为不能编辑 <xref:System.Xml.XPath.XPathDocument> 对象中的 XML 数据，所以，无法重新验证 XML 文档。  
   
- 若要详细了解只读和可编辑 <xref:System.Xml.XPath.XPathNavigator> 对象，请参阅[使用 XPathDocument 和 XmlDocument 读取 XML 数据](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)主题。  
+ 若要详细了解只读和可编辑 <xref:System.Xml.XPath.XPathNavigator> 对象，请参阅[使用 XPathDocument 和 XmlDocument 读取 XML 数据](reading-xml-data-using-xpathdocument-and-xmldocument.md)主题。  
   
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [使用 XPath 数据模型处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [使用 XPathDocument 和 XmlDocument 读取 XML 数据](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)
-- [使用 XPathNavigator 选择、计算和匹配 XML 数据](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)
-- [使用 XPathNavigator 访问 XML 数据](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)
-- [使用 XPathNavigator 编辑 XML 数据](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)
+- [使用 XPath 数据模型处理 XML 数据](process-xml-data-using-the-xpath-data-model.md)
+- [使用 XPathDocument 和 XmlDocument 读取 XML 数据](reading-xml-data-using-xpathdocument-and-xmldocument.md)
+- [使用 XPathNavigator 选择、计算和匹配 XML 数据](selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)
+- [使用 XPathNavigator 访问 XML 数据](accessing-xml-data-using-xpathnavigator.md)
+- [使用 XPathNavigator 编辑 XML 数据](editing-xml-data-using-xpathnavigator.md)

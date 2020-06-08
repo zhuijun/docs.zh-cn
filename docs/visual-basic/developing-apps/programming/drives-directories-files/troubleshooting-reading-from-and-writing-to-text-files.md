@@ -9,12 +9,12 @@ helpviewer_keywords:
 - writing to files [Visual Basic], troubleshooting
 - reading text files [Visual Basic], troubleshooting
 ms.assetid: a8e9b44d-facb-4718-8c0f-466537171182
-ms.openlocfilehash: dbc53ca3cc9ae9b2d14b925f891d0409b2b7debd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8af4160d09f39f2622a007aef793173d614a8b44
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74333788"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84406620"
 ---
 # <a name="troubleshooting-reading-from-and-writing-to-text-files-visual-basic"></a>疑难解答：读取和写入文本文件 (Visual Basic)
 
@@ -30,15 +30,15 @@ ms.locfileid: "74333788"
   
 ### <a name="file-encodings"></a>文件编码  
 
- 文件编码也称为字符编码，用于指定在处理文本时如何表示字符。 文本文件中的意外字符可能是由于不正确的编码导致的。 对于大多数文件，一种编码可能优于另一种编码主要取决于它能处理或不能处理哪些语言字符，不过通常首选的是 Unicode。 有关详细信息，请参阅[文件编码](../../../../visual-basic/developing-apps/programming/drives-directories-files/file-encodings.md)和 <xref:System.Text.Encoding>。  
+ 文件编码也称为字符编码，用于指定在处理文本时如何表示字符。 文本文件中的意外字符可能是由于不正确的编码导致的。 对于大多数文件，一种编码可能优于另一种编码主要取决于它能处理或不能处理哪些语言字符，不过通常首选的是 Unicode。 有关详细信息，请参阅[文件编码](file-encodings.md)和 <xref:System.Text.Encoding>。  
   
 ### <a name="incorrect-paths"></a>错误路径  
 
- 分析文件路径尤其是相对路径时，很容易提供错误的数据。 请确保提供正确的路径，这样可以纠正许多问题。 有关详细信息，请参阅[如何：分析文件路径](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)。  
+ 分析文件路径尤其是相对路径时，很容易提供错误的数据。 请确保提供正确的路径，这样可以纠正许多问题。 有关详细信息，请参阅[如何：分析文件路径](how-to-parse-file-paths.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
-- [从文件读取](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)
-- [写入文件](../../../../visual-basic/developing-apps/programming/drives-directories-files/writing-to-files.md)
-- [使用 TextFieldParser 对象分析文本文件](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
+- [从文件读取](reading-from-files.md)
+- [写入文件](writing-to-files.md)
+- [使用 TextFieldParser 对象分析文本文件](parsing-text-files-with-the-textfieldparser-object.md)

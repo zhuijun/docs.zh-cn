@@ -7,12 +7,12 @@ helpviewer_keywords:
 - My.Computer.Ports object
 - ports, serial port availability
 ms.assetid: eaf2ee5a-8103-4e10-a205-ed1d4db120ba
-ms.openlocfilehash: c7e5f797c1d098a3b2d01745b949ed50375ea7e8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e7a9166f1879ed0850ca893bed307a0318298bbb
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74345577"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401818"
 ---
 # <a name="how-to-show-available-serial-ports-in-visual-basic"></a>如何：在 Visual Basic 中显示可用的串行端口
 
@@ -36,7 +36,7 @@ ms.locfileid: "74345577"
   
 - 对 System.Windows.Forms.dll 的项目引用。  
   
-- 对 <xref:System.Windows.Forms> 命名空间成员的访问权限。 如果未在代码中完全限定成员名称，则添加 `Imports` 语句。 有关详细信息，请参阅 [Imports 语句（.NET 命名空间和类型）](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md)。  
+- 对 <xref:System.Windows.Forms> 命名空间成员的访问权限。 如果未在代码中完全限定成员名称，则添加 `Imports` 语句。 有关详细信息，请参阅 [Imports 语句（.NET 命名空间和类型）](../../../language-reference/statements/imports-statement-net-namespace-and-type.md)。  
   
 - 窗体具有名为 `ListBox1` 的 <xref:System.Windows.Forms.ListBox> 控件。  
   
@@ -50,6 +50,6 @@ ms.locfileid: "74345577"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:Microsoft.VisualBasic.Devices.Ports>
-- [如何：使用连接到串行端口的调制解调器拨号](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-dial-modems-attached-to-serial-ports.md)
-- [如何：将字符串发送到串行端口](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-send-strings-to-serial-ports.md)
-- [如何：从串行端口接收字符串](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-receive-strings-from-serial-ports.md)
+- [如何：使用连接到串行端口的调制解调器拨号](how-to-dial-modems-attached-to-serial-ports.md)
+- [如何：将字符串发送到串行端口](how-to-send-strings-to-serial-ports.md)
+- [如何：从串行端口接收字符串](how-to-receive-strings-from-serial-ports.md)

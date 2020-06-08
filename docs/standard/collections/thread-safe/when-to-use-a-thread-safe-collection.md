@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, when to upgrade
 ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
-ms.openlocfilehash: 5a0abef6de9f932f44fc7e3239b98c3a27846580
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e2c5d612abb824c93c611514a836c811e6e65efe
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75711215"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288870"
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>何时使用线程安全集合
 .NET Framework 4 新引入了五个专为支持多线程添加和删除操作而设计的集合类型。 为了实现线程安全性，这些新类型使用多种高效的锁定和免锁定同步机制。 同步会增加操作的开销。 开销数取决于所用的同步类型、执行的操作类型和其他因素，例如尝试并行访问该集合的线程数。  
@@ -63,5 +63,5 @@ ms.locfileid: "75711215"
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
-- [线程安全集合](../../../../docs/standard/collections/thread-safe/index.md)
-- [并行编程](../../../../docs/standard/parallel-programming/index.md)
+- [线程安全集合](index.md)
+- [并行编程](../../parallel-programming/index.md)

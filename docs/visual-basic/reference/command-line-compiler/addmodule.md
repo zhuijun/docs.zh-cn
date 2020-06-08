@@ -6,12 +6,12 @@ helpviewer_keywords:
 - addmodule compiler option [Visual Basic]
 - -addmodule compiler option [Visual Basic]
 ms.assetid: fb4b89d4-4926-4f20-868d-427fa28497b2
-ms.openlocfilehash: dd98b45d75ff421dc81666ed47695132a49bfa3a
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 9e8146497d63d949f138d6cd08c9ea8c7b03c651
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524478"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84414306"
 ---
 # <a name="-addmodule"></a>-addmodule
 使编译器让指定文件中的所有类型信息可供当前正在编译的项目使用。  
@@ -31,9 +31,9 @@ ms.locfileid: "72524478"
   
  通过 `-addmodule` 添加的所有模块在运行时必须位于与输出文件相同的目录中。 也就是说，在编译时可在任何目录中指定模块，但在运行时该模块必须位于应用程序目录中。 若非如此，你会获得 <xref:System.TypeLoadException> 错误。  
   
- 若你使用 `-addmodule` 指定（隐式或显式）除 `-target:module` 之外的任何 [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md) 选项，传递给 `-addmodule` 的文件会成为该项目的程序集的一部分。 必须具有程序集，才能运行包含一个或多个由 `-addmodule` 添加的文件的输出文件。  
+ 若你使用 `-addmodule` 指定（隐式或显式）除 `-target:module` 之外的任何 [-target (Visual Basic)](target.md) 选项，传递给 `-addmodule` 的文件会成为该项目的程序集的一部分。 必须具有程序集，才能运行包含一个或多个由 `-addmodule` 添加的文件的输出文件。  
   
- 使用 [-reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md) 从包含程序集的文件导入元数据。  
+ 使用 [-reference (Visual Basic)](reference.md) 从包含程序集的文件导入元数据。  
   
 > [!NOTE]
 > `-addmodule` 选项在 Visual Studio 开发环境内无法使用；仅当从命令行编译时才可用。  
@@ -51,7 +51,7 @@ ms.locfileid: "72524478"
   
 ## <a name="see-also"></a>请参阅
 
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-target (Visual Basic)](../../../visual-basic/reference/command-line-compiler/target.md)
-- [-reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [-target (Visual Basic)](target.md)
+- [-reference (Visual Basic)](reference.md)
+- [示例编译命令行](sample-compilation-command-lines.md)

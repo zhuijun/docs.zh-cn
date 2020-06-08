@@ -3,17 +3,17 @@ title: 扩展但不保留实体引用
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: ffd97806-ab43-4538-8de2-5828bfbbde57
-ms.openlocfilehash: ae3db77d7659b7e1d36a9bccf7143f52c536dbbf
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 1d26e9a35497bb0d5293e8a5b630bf4356325401
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710929"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84292041"
 ---
 # <a name="entity-references-are-expanded-and-not-preserved"></a>扩展但不保留实体引用
 如果实体引用进行扩展且替换为它表示的文本，将不创建 XmlEntityReference  节点。 相反，将分析实体声明，并复制通过声明内容创建的节点以取代 XmlEntityReference  。 因此，`&publisher;` 示例不保存 `&publisher;`，而是创建 XmlText  节点。  
   
- ![展开的树结构](../../../../docs/standard/data/xml/media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")  
+ ![展开的树结构](media/xmlentityref-expanded-nodes.gif "xmlentityref_expanded_nodes")  
 展开的实体引用的树结构  
   
  不保留 `B` 或 `<` 这类字符实体。 相反，它们总是扩展并表示为文本节点。  
@@ -40,4 +40,4 @@ ms.locfileid: "75710929"
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 文档对象模型 (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [XML 文档对象模型 (DOM)](xml-document-object-model-dom.md)

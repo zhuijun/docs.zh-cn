@@ -8,12 +8,12 @@ helpviewer_keywords:
 - My.Forms object
 - forms [Visual Basic], accessing all open
 ms.assetid: 9aaf5aaf-2012-4f97-89c7-6e62b9d17863
-ms.openlocfilehash: 332b6a7563160528b6c17210170af0db6e9bc0e7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 44f98632fd2fd6c4c087a78b805d5b7da750df87
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74349242"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84410200"
 ---
 # <a name="accessing-application-forms-visual-basic"></a>访问应用程序窗体 (Visual Basic)
 
@@ -25,7 +25,7 @@ ms.locfileid: "74349242"
   
 |到|请参阅|  
 |---|---|  
-|在应用程序中从某一窗体访问另一窗体。|[My.Forms 对象](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
+|在应用程序中从某一窗体访问另一窗体。|[My.Forms 对象](../../language-reference/objects/my-forms-object.md)|  
 |显示应用程序所有打开的窗体的标题。|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>|  
 |在应用程序启动时，使用状态信息更新初始屏幕。|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>|  
   
@@ -33,4 +33,4 @@ ms.locfileid: "74349242"
 
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.SplashScreen%2A>
-- [My.Forms 对象](../../../visual-basic/language-reference/objects/my-forms-object.md)
+- [My.Forms 对象](../../language-reference/objects/my-forms-object.md)

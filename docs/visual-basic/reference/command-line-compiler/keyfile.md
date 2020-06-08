@@ -6,12 +6,12 @@ helpviewer_keywords:
 - keyfile compiler option [Visual Basic]
 - -keyfile compiler option [Visual Basic]
 ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
-ms.openlocfilehash: cffc3c5f0ff3dd48ca2c74bde346a967b209dc5f
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 3f476f6b6db1a788002a938eb5ae4bbbed7a5dae
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78266737"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84408570"
 ---
 # <a name="-keyfile"></a>-keyfile
 指定包含密钥或密钥对的文件从而为程序集赋予强名称。  
@@ -29,13 +29,13 @@ ms.locfileid: "78266737"
 ## <a name="remarks"></a>备注  
  编译器在程序集清单中插入公钥，然后使用私钥对最终的程序集进行签名。 若要生成密钥文件，请在命令行键入 `sn -k file`。 有关详细信息，请参阅 [Sn.exe（强名称工具）](../../../framework/tools/sn-exe-strong-name-tool.md)。  
   
- 如果使用 `-target:module` 进行编译，密钥文件的名称将保存在模块中，并在使用 [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) 编译程序集时包含到创建的程序集中。  
+ 如果使用 `-target:module` 进行编译，密钥文件的名称将保存在模块中，并在使用 [-addmodule](addmodule.md) 编译程序集时包含到创建的程序集中。  
   
- 也可以使用 [-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md) 将加密信息传递给编译器。 如果需要部分签名的程序集，请使用 [-delaysign](../../../visual-basic/reference/command-line-compiler/delaysign.md)。  
+ 也可以使用 [-keycontainer](keycontainer.md) 将加密信息传递给编译器。 如果需要部分签名的程序集，请使用 [-delaysign](delaysign.md)。  
   
  还可以将此选项指定为任何 Microsoft 中间语言模块的源代码中的自定义属性 (<xref:System.Reflection.AssemblyKeyFileAttribute>)。  
   
- 如果在同一编译中同时指定 `-keyfile` 和 [-keycontainer](../../../visual-basic/reference/command-line-compiler/keycontainer.md)（通过命令行选项或通过自定义特性），则编译器将首先尝试密钥容器。 如果成功，则使用密钥容器中的信息对程序集签名。 如果编译器没有找到密钥容器，它将尝试用 `-keyfile` 指定的文件。 如果成功，则使用密钥文件中的信息对程序集签名，并且将密钥信息安装到密钥容器中（类似于 `sn -i`），以便在下一次编译中，密钥容器选项将生效。  
+ 如果在同一编译中同时指定 `-keyfile` 和 [-keycontainer](keycontainer.md)（通过命令行选项或通过自定义特性），则编译器将首先尝试密钥容器。 如果成功，则使用密钥容器中的信息对程序集签名。 如果编译器没有找到密钥容器，它将尝试用 `-keyfile` 指定的文件。 如果成功，则使用密钥文件中的信息对程序集签名，并且将密钥信息安装到密钥容器中（类似于 `sn -i`），以便在下一次编译中，密钥容器选项将生效。  
   
  请注意，密钥文件可能仅包含公钥。  
   
@@ -55,6 +55,6 @@ vbc -keyfile:myfile.sn input.vb
 ## <a name="see-also"></a>请参阅
 
 - [.NET 中的程序集](../../../standard/assembly/index.md)
-- [Visual Basic 命令行编译器](../../../visual-basic/reference/command-line-compiler/index.md)
-- [-reference (Visual Basic)](../../../visual-basic/reference/command-line-compiler/reference.md)
-- [示例编译命令行](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [Visual Basic 命令行编译器](index.md)
+- [-reference (Visual Basic)](reference.md)
+- [示例编译命令行](sample-compilation-command-lines.md)
