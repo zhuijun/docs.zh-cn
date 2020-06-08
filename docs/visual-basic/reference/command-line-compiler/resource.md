@@ -9,55 +9,55 @@ helpviewer_keywords:
 - -res compiler option [Visual Basic]
 - resource compiler option [Visual Basic]
 ms.assetid: eee2f227-91f2-4f2b-a9d6-1c51c5320858
-ms.openlocfilehash: a781d543dd32ffb3d0ac0b11c544dbfd8cd5d806
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: cf9fe8dae0d35df694891633a6e3cf950bfb7376
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348558"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84363612"
 ---
-# <a name="-resource-visual-basic"></a><span data-ttu-id="f879b-102">-resource (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f879b-102">-resource (Visual Basic)</span></span>
-<span data-ttu-id="f879b-103">将托管资源嵌入程序集。</span><span class="sxs-lookup"><span data-stu-id="f879b-103">Embeds a managed resource in an assembly.</span></span>  
+# <a name="-resource-visual-basic"></a><span data-ttu-id="1148a-102">-resource (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1148a-102">-resource (Visual Basic)</span></span>
+<span data-ttu-id="1148a-103">将托管资源嵌入程序集。</span><span class="sxs-lookup"><span data-stu-id="1148a-103">Embeds a managed resource in an assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="f879b-104">语法</span><span class="sxs-lookup"><span data-stu-id="f879b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="1148a-104">语法</span><span class="sxs-lookup"><span data-stu-id="1148a-104">Syntax</span></span>  
   
 ```console  
 -resource:filename[,identifier[,public|private]]  
 ```
 
-<span data-ttu-id="f879b-105">or</span><span class="sxs-lookup"><span data-stu-id="f879b-105">or</span></span>  
+<span data-ttu-id="1148a-105">or</span><span class="sxs-lookup"><span data-stu-id="1148a-105">or</span></span>  
 
 ```console
 -res:filename[,identifier[,public|private]]  
 ```  
   
-## <a name="arguments"></a><span data-ttu-id="f879b-106">自变量</span><span class="sxs-lookup"><span data-stu-id="f879b-106">Arguments</span></span>  
+## <a name="arguments"></a><span data-ttu-id="1148a-106">自变量</span><span class="sxs-lookup"><span data-stu-id="1148a-106">Arguments</span></span>  
   
-|<span data-ttu-id="f879b-107">术语</span><span class="sxs-lookup"><span data-stu-id="f879b-107">Term</span></span>|<span data-ttu-id="f879b-108">定义</span><span class="sxs-lookup"><span data-stu-id="f879b-108">Definition</span></span>|  
+|<span data-ttu-id="1148a-107">术语</span><span class="sxs-lookup"><span data-stu-id="1148a-107">Term</span></span>|<span data-ttu-id="1148a-108">定义</span><span class="sxs-lookup"><span data-stu-id="1148a-108">Definition</span></span>|  
 |---|---|  
-|`filename`|<span data-ttu-id="f879b-109">必需。</span><span class="sxs-lookup"><span data-stu-id="f879b-109">Required.</span></span> <span data-ttu-id="f879b-110">要嵌入到输出文件中的资源文件的名称。</span><span class="sxs-lookup"><span data-stu-id="f879b-110">The name of the resource file to embed in the output file.</span></span> <span data-ttu-id="f879b-111">默认情况下，`filename` 在程序集中是公共的。</span><span class="sxs-lookup"><span data-stu-id="f879b-111">By default, `filename` is public in the assembly.</span></span> <span data-ttu-id="f879b-112">如果文件名包含空格，则将名称括在引号 (" ") 内。</span><span class="sxs-lookup"><span data-stu-id="f879b-112">Enclose the file name in quotation marks (" ") if it contains a space.</span></span>|  
-|`identifier`|<span data-ttu-id="f879b-113">可选。</span><span class="sxs-lookup"><span data-stu-id="f879b-113">Optional.</span></span> <span data-ttu-id="f879b-114">资源的逻辑名称；用于加载资源的名称。</span><span class="sxs-lookup"><span data-stu-id="f879b-114">The logical name for the resource; the name used to load it.</span></span> <span data-ttu-id="f879b-115">默认值是文件的名称。</span><span class="sxs-lookup"><span data-stu-id="f879b-115">The default is the name of the file.</span></span> <span data-ttu-id="f879b-116">可以选择在程序集清单中指定资源是公共还是专用的，如下所示：`-res:filename.res, myname.res, public`</span><span class="sxs-lookup"><span data-stu-id="f879b-116">Optionally, you can specify whether the resource is public or private in the assembly manifest, as with the following: `-res:filename.res, myname.res, public`</span></span>|  
+|`filename`|<span data-ttu-id="1148a-109">必需。</span><span class="sxs-lookup"><span data-stu-id="1148a-109">Required.</span></span> <span data-ttu-id="1148a-110">要嵌入到输出文件中的资源文件的名称。</span><span class="sxs-lookup"><span data-stu-id="1148a-110">The name of the resource file to embed in the output file.</span></span> <span data-ttu-id="1148a-111">默认情况下，`filename` 在程序集中是公共的。</span><span class="sxs-lookup"><span data-stu-id="1148a-111">By default, `filename` is public in the assembly.</span></span> <span data-ttu-id="1148a-112">如果文件名包含空格，则将名称括在引号 (" ") 内。</span><span class="sxs-lookup"><span data-stu-id="1148a-112">Enclose the file name in quotation marks (" ") if it contains a space.</span></span>|  
+|`identifier`|<span data-ttu-id="1148a-113">可选。</span><span class="sxs-lookup"><span data-stu-id="1148a-113">Optional.</span></span> <span data-ttu-id="1148a-114">资源的逻辑名称；用于加载资源的名称。</span><span class="sxs-lookup"><span data-stu-id="1148a-114">The logical name for the resource; the name used to load it.</span></span> <span data-ttu-id="1148a-115">默认值是文件的名称。</span><span class="sxs-lookup"><span data-stu-id="1148a-115">The default is the name of the file.</span></span> <span data-ttu-id="1148a-116">可以选择在程序集清单中指定资源是公共还是专用的，如下所示：`-res:filename.res, myname.res, public`</span><span class="sxs-lookup"><span data-stu-id="1148a-116">Optionally, you can specify whether the resource is public or private in the assembly manifest, as with the following: `-res:filename.res, myname.res, public`</span></span>|  
   
-## <a name="remarks"></a><span data-ttu-id="f879b-117">备注</span><span class="sxs-lookup"><span data-stu-id="f879b-117">Remarks</span></span>  
- <span data-ttu-id="f879b-118">使用 `-linkresource` 将资源链接到程序集，而不将资源文件置于输出文件中。</span><span class="sxs-lookup"><span data-stu-id="f879b-118">Use `-linkresource` to link a resource to an assembly without placing the resource file in the output file.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="1148a-117">备注</span><span class="sxs-lookup"><span data-stu-id="1148a-117">Remarks</span></span>  
+ <span data-ttu-id="1148a-118">使用 `-linkresource` 将资源链接到程序集，而不将资源文件置于输出文件中。</span><span class="sxs-lookup"><span data-stu-id="1148a-118">Use `-linkresource` to link a resource to an assembly without placing the resource file in the output file.</span></span>  
   
- <span data-ttu-id="f879b-119">例如，如果 `filename` [是由资源文件生成器 (Resgen.exe)](../../../framework/tools/resgen-exe-resource-file-generator.md) 创建的或在开发环境中创建的 .NET Framework 资源文件，则可使用 <xref:System.Resources> 命名空间中的成员来访问它（有关详细信息，请参阅 <xref:System.Resources.ResourceManager>）。</span><span class="sxs-lookup"><span data-stu-id="f879b-119">If `filename` is a .NET Framework resource file created, for example, by the [Resgen.exe (Resource File Generator)](../../../framework/tools/resgen-exe-resource-file-generator.md) or in the development environment, it can be accessed with members in the <xref:System.Resources> namespace (see <xref:System.Resources.ResourceManager> for more information).</span></span> <span data-ttu-id="f879b-120">若要在运行时访问所有其他资源，请使用以下方法之一：<xref:System.Reflection.Assembly.GetManifestResourceInfo%2A>、<xref:System.Reflection.Assembly.GetManifestResourceNames%2A> 或 <xref:System.Reflection.Assembly.GetManifestResourceStream%2A>。</span><span class="sxs-lookup"><span data-stu-id="f879b-120">To access all other resources at run time, use one of the following methods: <xref:System.Reflection.Assembly.GetManifestResourceInfo%2A>, <xref:System.Reflection.Assembly.GetManifestResourceNames%2A>, or <xref:System.Reflection.Assembly.GetManifestResourceStream%2A>.</span></span>  
+ <span data-ttu-id="1148a-119">例如，如果 `filename` [是由资源文件生成器 (Resgen.exe)](../../../framework/tools/resgen-exe-resource-file-generator.md) 创建的或在开发环境中创建的 .NET Framework 资源文件，则可使用 <xref:System.Resources> 命名空间中的成员来访问它（有关详细信息，请参阅 <xref:System.Resources.ResourceManager>）。</span><span class="sxs-lookup"><span data-stu-id="1148a-119">If `filename` is a .NET Framework resource file created, for example, by the [Resgen.exe (Resource File Generator)](../../../framework/tools/resgen-exe-resource-file-generator.md) or in the development environment, it can be accessed with members in the <xref:System.Resources> namespace (see <xref:System.Resources.ResourceManager> for more information).</span></span> <span data-ttu-id="1148a-120">若要在运行时访问所有其他资源，请使用以下方法之一：<xref:System.Reflection.Assembly.GetManifestResourceInfo%2A>、<xref:System.Reflection.Assembly.GetManifestResourceNames%2A> 或 <xref:System.Reflection.Assembly.GetManifestResourceStream%2A>。</span><span class="sxs-lookup"><span data-stu-id="1148a-120">To access all other resources at run time, use one of the following methods: <xref:System.Reflection.Assembly.GetManifestResourceInfo%2A>, <xref:System.Reflection.Assembly.GetManifestResourceNames%2A>, or <xref:System.Reflection.Assembly.GetManifestResourceStream%2A>.</span></span>  
   
- <span data-ttu-id="f879b-121">`-resource` 的缩写形式是 `-res`。</span><span class="sxs-lookup"><span data-stu-id="f879b-121">The short form of `-resource` is `-res`.</span></span>  
+ <span data-ttu-id="1148a-121">`-resource` 的缩写形式是 `-res`。</span><span class="sxs-lookup"><span data-stu-id="1148a-121">The short form of `-resource` is `-res`.</span></span>  
   
- <span data-ttu-id="f879b-122">有关如何在 Visual Studio IDE 中设置 `-resource` 的信息，请参阅[管理应用程序资源 (.NET)](/visualstudio/ide/managing-application-resources-dotnet)。</span><span class="sxs-lookup"><span data-stu-id="f879b-122">For information about how to set `-resource` in the Visual Studio IDE, see [Managing Application Resources (.NET)](/visualstudio/ide/managing-application-resources-dotnet).</span></span>  
+ <span data-ttu-id="1148a-122">有关如何在 Visual Studio IDE 中设置 `-resource` 的信息，请参阅[管理应用程序资源 (.NET)](/visualstudio/ide/managing-application-resources-dotnet)。</span><span class="sxs-lookup"><span data-stu-id="1148a-122">For information about how to set `-resource` in the Visual Studio IDE, see [Managing Application Resources (.NET)](/visualstudio/ide/managing-application-resources-dotnet).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="f879b-123">示例</span><span class="sxs-lookup"><span data-stu-id="f879b-123">Example</span></span>  
- <span data-ttu-id="f879b-124">下面的代码编译 `In.vb` 并附加资源文件 `Rf.resource`。</span><span class="sxs-lookup"><span data-stu-id="f879b-124">The following code compiles `In.vb` and attaches resource file `Rf.resource`.</span></span>  
+## <a name="example"></a><span data-ttu-id="1148a-123">示例</span><span class="sxs-lookup"><span data-stu-id="1148a-123">Example</span></span>  
+ <span data-ttu-id="1148a-124">下面的代码编译 `In.vb` 并附加资源文件 `Rf.resource`。</span><span class="sxs-lookup"><span data-stu-id="1148a-124">The following code compiles `In.vb` and attaches resource file `Rf.resource`.</span></span>  
   
 ```console
 vbc -res:rf.resource in.vb  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="f879b-125">请参阅</span><span class="sxs-lookup"><span data-stu-id="f879b-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1148a-125">请参阅</span><span class="sxs-lookup"><span data-stu-id="1148a-125">See also</span></span>
 
-- [<span data-ttu-id="f879b-126">Visual Basic 命令行编译器</span><span class="sxs-lookup"><span data-stu-id="f879b-126">Visual Basic Command-Line Compiler</span></span>](../../../visual-basic/reference/command-line-compiler/index.md)
-- [<span data-ttu-id="f879b-127">-win32resource</span><span class="sxs-lookup"><span data-stu-id="f879b-127">-win32resource</span></span>](../../../visual-basic/reference/command-line-compiler/win32resource.md)
-- [<span data-ttu-id="f879b-128">-linkresource (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f879b-128">-linkresource (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/linkresource.md)
-- [<span data-ttu-id="f879b-129">-target (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f879b-129">-target (Visual Basic)</span></span>](../../../visual-basic/reference/command-line-compiler/target.md)
-- [<span data-ttu-id="f879b-130">示例编译命令行</span><span class="sxs-lookup"><span data-stu-id="f879b-130">Sample Compilation Command Lines</span></span>](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
+- [<span data-ttu-id="1148a-126">Visual Basic 命令行编译器</span><span class="sxs-lookup"><span data-stu-id="1148a-126">Visual Basic Command-Line Compiler</span></span>](index.md)
+- [<span data-ttu-id="1148a-127">-win32resource</span><span class="sxs-lookup"><span data-stu-id="1148a-127">-win32resource</span></span>](win32resource.md)
+- [<span data-ttu-id="1148a-128">-linkresource (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1148a-128">-linkresource (Visual Basic)</span></span>](linkresource.md)
+- [<span data-ttu-id="1148a-129">-target (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="1148a-129">-target (Visual Basic)</span></span>](target.md)
+- [<span data-ttu-id="1148a-130">示例编译命令行</span><span class="sxs-lookup"><span data-stu-id="1148a-130">Sample Compilation Command Lines</span></span>](sample-compilation-command-lines.md)
