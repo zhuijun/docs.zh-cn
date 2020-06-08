@@ -15,41 +15,41 @@ helpviewer_keywords:
 ms.assetid: b2a8240b-07fe-4859-bb2b-7d3adbfa0a9f
 topic_type:
 - apiref
-ms.openlocfilehash: 49c3ab4901537805a1ae1be79097c55cc331d29d
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: fcebe65b7f39dd2849946e445a694ad5e9b1a65d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76866708"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500476"
 ---
-# <a name="icorprofilercallbackappdomaincreationstarted-method"></a><span data-ttu-id="89c1c-102">ICorProfilerCallback::AppDomainCreationStarted 方法</span><span class="sxs-lookup"><span data-stu-id="89c1c-102">ICorProfilerCallback::AppDomainCreationStarted Method</span></span>
-<span data-ttu-id="89c1c-103">通知探查器正在创建应用程序域。</span><span class="sxs-lookup"><span data-stu-id="89c1c-103">Notifies the profiler that an application domain is being created.</span></span>  
+# <a name="icorprofilercallbackappdomaincreationstarted-method"></a><span data-ttu-id="cee79-102">ICorProfilerCallback::AppDomainCreationStarted 方法</span><span class="sxs-lookup"><span data-stu-id="cee79-102">ICorProfilerCallback::AppDomainCreationStarted Method</span></span>
+<span data-ttu-id="cee79-103">通知探查器正在创建应用程序域。</span><span class="sxs-lookup"><span data-stu-id="cee79-103">Notifies the profiler that an application domain is being created.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="89c1c-104">语法</span><span class="sxs-lookup"><span data-stu-id="89c1c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cee79-104">语法</span><span class="sxs-lookup"><span data-stu-id="cee79-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT AppDomainCreationStarted(  
     [in] AppDomainID appDomainId);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="89c1c-105">参数</span><span class="sxs-lookup"><span data-stu-id="89c1c-105">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="cee79-105">参数</span><span class="sxs-lookup"><span data-stu-id="cee79-105">Parameters</span></span>
 
 - `appDomainId`
 
-  <span data-ttu-id="89c1c-106">\[中的] 标识正在创建的域。</span><span class="sxs-lookup"><span data-stu-id="89c1c-106">\[in] Identifies the domain which is being created.</span></span>
+  <span data-ttu-id="cee79-106">\[in] 标识正在创建的域。</span><span class="sxs-lookup"><span data-stu-id="cee79-106">\[in] Identifies the domain which is being created.</span></span>
   
-## <a name="remarks"></a><span data-ttu-id="89c1c-107">备注</span><span class="sxs-lookup"><span data-stu-id="89c1c-107">Remarks</span></span>  
- <span data-ttu-id="89c1c-108">在调用[ICorProfilerCallback：： AppDomainCreationFinished](icorprofilercallback-appdomaincreationfinished-method.md)方法之前，ID 对任何信息请求都无效。</span><span class="sxs-lookup"><span data-stu-id="89c1c-108">The ID is not valid for any information request until the [ICorProfilerCallback::AppDomainCreationFinished](icorprofilercallback-appdomaincreationfinished-method.md) method is called.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="cee79-107">注解</span><span class="sxs-lookup"><span data-stu-id="cee79-107">Remarks</span></span>  
+ <span data-ttu-id="cee79-108">在调用[ICorProfilerCallback：： AppDomainCreationFinished](icorprofilercallback-appdomaincreationfinished-method.md)方法之前，ID 对任何信息请求都无效。</span><span class="sxs-lookup"><span data-stu-id="cee79-108">The ID is not valid for any information request until the [ICorProfilerCallback::AppDomainCreationFinished](icorprofilercallback-appdomaincreationfinished-method.md) method is called.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="89c1c-109">需求</span><span class="sxs-lookup"><span data-stu-id="89c1c-109">Requirements</span></span>  
- <span data-ttu-id="89c1c-110">**平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。</span><span class="sxs-lookup"><span data-stu-id="89c1c-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cee79-109">要求</span><span class="sxs-lookup"><span data-stu-id="cee79-109">Requirements</span></span>  
+ <span data-ttu-id="cee79-110">**平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。</span><span class="sxs-lookup"><span data-stu-id="cee79-110">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="89c1c-111">**头文件：** CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="89c1c-111">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="cee79-111">**头文件：** CorProf.idl、CorProf.h</span><span class="sxs-lookup"><span data-stu-id="cee79-111">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="89c1c-112">**库：** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="89c1c-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="cee79-112">**库：** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="cee79-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="89c1c-113">**.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="89c1c-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="cee79-113">**.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cee79-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="89c1c-114">另请参阅</span><span class="sxs-lookup"><span data-stu-id="89c1c-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cee79-114">另请参阅</span><span class="sxs-lookup"><span data-stu-id="cee79-114">See also</span></span>
 
-- [<span data-ttu-id="89c1c-115">ICorProfilerCallback 接口</span><span class="sxs-lookup"><span data-stu-id="89c1c-115">ICorProfilerCallback Interface</span></span>](icorprofilercallback-interface.md)
+- [<span data-ttu-id="cee79-115">ICorProfilerCallback 接口</span><span class="sxs-lookup"><span data-stu-id="cee79-115">ICorProfilerCallback Interface</span></span>](icorprofilercallback-interface.md)

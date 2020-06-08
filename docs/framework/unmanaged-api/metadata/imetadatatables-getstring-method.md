@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 895c35cf-b95d-4e3b-93b5-cfc1cf9044fc
 topic_type:
 - apiref
-ms.openlocfilehash: 216a1f7bd2ff5a596fa7abf7874b5e603d5a9f7b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 41e7b8193ce3288d526db8d7d8c289b0a053ee4e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79175234"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84489751"
 ---
-# <a name="imetadatatablesgetstring-method"></a><span data-ttu-id="7da05-102">IMetaDataTables::GetString 方法</span><span class="sxs-lookup"><span data-stu-id="7da05-102">IMetaDataTables::GetString Method</span></span>
-<span data-ttu-id="7da05-103">从当前引用作用域中的表列获取指定索引处的字符串。</span><span class="sxs-lookup"><span data-stu-id="7da05-103">Gets the string at the specified index from the table column in the current reference scope.</span></span>  
+# <a name="imetadatatablesgetstring-method"></a><span data-ttu-id="9c65e-102">IMetaDataTables::GetString 方法</span><span class="sxs-lookup"><span data-stu-id="9c65e-102">IMetaDataTables::GetString Method</span></span>
+<span data-ttu-id="9c65e-103">从当前引用范围内的表列中获取指定索引处的字符串。</span><span class="sxs-lookup"><span data-stu-id="9c65e-103">Gets the string at the specified index from the table column in the current reference scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7da05-104">语法</span><span class="sxs-lookup"><span data-stu-id="7da05-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="9c65e-104">语法</span><span class="sxs-lookup"><span data-stu-id="9c65e-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetString (
@@ -34,23 +34,23 @@ HRESULT GetString (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="7da05-105">parameters</span><span class="sxs-lookup"><span data-stu-id="7da05-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="9c65e-105">参数</span><span class="sxs-lookup"><span data-stu-id="9c65e-105">Parameters</span></span>  
  `ixString`  
- <span data-ttu-id="7da05-106">[在]开始搜索下一个值的索引。</span><span class="sxs-lookup"><span data-stu-id="7da05-106">[in] The index at which to start to search for the next value.</span></span>  
+ <span data-ttu-id="9c65e-106">中开始搜索下一个值的索引位置。</span><span class="sxs-lookup"><span data-stu-id="9c65e-106">[in] The index at which to start to search for the next value.</span></span>  
   
  `ppString`  
- <span data-ttu-id="7da05-107">[出]指向返回的字符串值的指针。</span><span class="sxs-lookup"><span data-stu-id="7da05-107">[out] A pointer to a pointer to the returned string value.</span></span>  
+ <span data-ttu-id="9c65e-107">弄指向返回的字符串值的指针的指针。</span><span class="sxs-lookup"><span data-stu-id="9c65e-107">[out] A pointer to a pointer to the returned string value.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7da05-108">要求</span><span class="sxs-lookup"><span data-stu-id="7da05-108">Requirements</span></span>  
- <span data-ttu-id="7da05-109">**平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。</span><span class="sxs-lookup"><span data-stu-id="7da05-109">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="9c65e-108">要求</span><span class="sxs-lookup"><span data-stu-id="9c65e-108">Requirements</span></span>  
+ <span data-ttu-id="9c65e-109">**平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。</span><span class="sxs-lookup"><span data-stu-id="9c65e-109">**Platforms:** See [System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7da05-110">**标题：** 科尔赫</span><span class="sxs-lookup"><span data-stu-id="7da05-110">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="9c65e-110">**标头：** Cor</span><span class="sxs-lookup"><span data-stu-id="9c65e-110">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="7da05-111">**库：** 用作 MsCorEE.dll 中的资源</span><span class="sxs-lookup"><span data-stu-id="7da05-111">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="9c65e-111">**库：** 用作 Mscoree.dll 中的资源</span><span class="sxs-lookup"><span data-stu-id="9c65e-111">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="7da05-112">**.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7da05-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="9c65e-112">**.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9c65e-112">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7da05-113">另请参阅</span><span class="sxs-lookup"><span data-stu-id="7da05-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9c65e-113">另请参阅</span><span class="sxs-lookup"><span data-stu-id="9c65e-113">See also</span></span>
 
-- [<span data-ttu-id="7da05-114">IMetaDataTables 接口</span><span class="sxs-lookup"><span data-stu-id="7da05-114">IMetaDataTables Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md)
-- [<span data-ttu-id="7da05-115">IMetaDataTables2 接口</span><span class="sxs-lookup"><span data-stu-id="7da05-115">IMetaDataTables2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-interface.md)
+- [<span data-ttu-id="9c65e-114">IMetaDataTables 接口</span><span class="sxs-lookup"><span data-stu-id="9c65e-114">IMetaDataTables Interface</span></span>](imetadatatables-interface.md)
+- [<span data-ttu-id="9c65e-115">IMetaDataTables2 接口</span><span class="sxs-lookup"><span data-stu-id="9c65e-115">IMetaDataTables2 Interface</span></span>](imetadatatables2-interface.md)
