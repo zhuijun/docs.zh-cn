@@ -6,28 +6,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ef6402be-2f8e-4be2-8d3e-a80891cdef8b
-ms.openlocfilehash: 91503ce0bffa1a9390432a51bff1ef10d80f563a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d3314a7ff4cf957dac4cd8ad0416aad434b19af2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709772"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84283190"
 ---
-# <a name="xpath-queries-and-namespaces"></a><span data-ttu-id="57cf7-102">XPath 查询和命名空间</span><span class="sxs-lookup"><span data-stu-id="57cf7-102">XPath Queries and Namespaces</span></span>
-<span data-ttu-id="57cf7-103">XPath 查询支持 XML 文档中的命名空间，可以使用命名空间前缀来限定元素和属性的名称。</span><span class="sxs-lookup"><span data-stu-id="57cf7-103">XPath queries are aware of namespaces in an XML document and can use namespace prefixes to qualify element and attribute names.</span></span> <span data-ttu-id="57cf7-104">使用命名空间前缀来限定元素和属性的名称可以限制 XPath 查询只返回属于特定命名空间的节点。</span><span class="sxs-lookup"><span data-stu-id="57cf7-104">Qualifying element and attribute names with a namespace prefix limits the nodes returned by an XPath query to only those nodes that belong to a specific namespace.</span></span>  
+# <a name="xpath-queries-and-namespaces"></a><span data-ttu-id="974b3-102">XPath 查询和命名空间</span><span class="sxs-lookup"><span data-stu-id="974b3-102">XPath Queries and Namespaces</span></span>
+<span data-ttu-id="974b3-103">XPath 查询支持 XML 文档中的命名空间，可以使用命名空间前缀来限定元素和属性的名称。</span><span class="sxs-lookup"><span data-stu-id="974b3-103">XPath queries are aware of namespaces in an XML document and can use namespace prefixes to qualify element and attribute names.</span></span> <span data-ttu-id="974b3-104">使用命名空间前缀来限定元素和属性的名称可以限制 XPath 查询只返回属于特定命名空间的节点。</span><span class="sxs-lookup"><span data-stu-id="974b3-104">Qualifying element and attribute names with a namespace prefix limits the nodes returned by an XPath query to only those nodes that belong to a specific namespace.</span></span>  
   
- <span data-ttu-id="57cf7-105">例如，如果前缀 `books` 映射到命名空间 `http://www.contoso.com/books`，以下 XPath 查询 `/books:books/books:book` 将只选择命名空间 `book` 中的 `http://www.contoso.com/books` 元素。</span><span class="sxs-lookup"><span data-stu-id="57cf7-105">For example if the prefix `books` maps to the namespace `http://www.contoso.com/books`, then the following XPath query `/books:books/books:book` selects only those `book` elements in the namespace `http://www.contoso.com/books`.</span></span>  
+ <span data-ttu-id="974b3-105">例如，如果前缀 `books` 映射到命名空间 `http://www.contoso.com/books`，以下 XPath 查询 `/books:books/books:book` 将只选择命名空间 `book` 中的 `http://www.contoso.com/books` 元素。</span><span class="sxs-lookup"><span data-stu-id="974b3-105">For example if the prefix `books` maps to the namespace `http://www.contoso.com/books`, then the following XPath query `/books:books/books:book` selects only those `book` elements in the namespace `http://www.contoso.com/books`.</span></span>  
   
-## <a name="the-xmlnamespacemanager"></a><span data-ttu-id="57cf7-106">XmlNamespaceManager</span><span class="sxs-lookup"><span data-stu-id="57cf7-106">The XmlNamespaceManager</span></span>  
- <span data-ttu-id="57cf7-107">要在 XPath 查询中使用命名空间，构造一个从 <xref:System.Xml.IXmlNamespaceResolver> 接口派生的对象（例如 <xref:System.Xml.XmlNamespaceManager> 类），包含要加入 XPath 查询的命名空间 URI 和前缀。</span><span class="sxs-lookup"><span data-stu-id="57cf7-107">To use namespaces in an XPath query, an object derived from the <xref:System.Xml.IXmlNamespaceResolver> interface like the <xref:System.Xml.XmlNamespaceManager> class is constructed with the namespace URI and prefix to include in the XPath query.</span></span>  
+## <a name="the-xmlnamespacemanager"></a><span data-ttu-id="974b3-106">XmlNamespaceManager</span><span class="sxs-lookup"><span data-stu-id="974b3-106">The XmlNamespaceManager</span></span>  
+ <span data-ttu-id="974b3-107">要在 XPath 查询中使用命名空间，构造一个从 <xref:System.Xml.IXmlNamespaceResolver> 接口派生的对象（例如 <xref:System.Xml.XmlNamespaceManager> 类），包含要加入 XPath 查询的命名空间 URI 和前缀。</span><span class="sxs-lookup"><span data-stu-id="974b3-107">To use namespaces in an XPath query, an object derived from the <xref:System.Xml.IXmlNamespaceResolver> interface like the <xref:System.Xml.XmlNamespaceManager> class is constructed with the namespace URI and prefix to include in the XPath query.</span></span>  
   
- <span data-ttu-id="57cf7-108"><xref:System.Xml.XmlNamespaceManager> 对象可以通过下列任意方式在查询中使用。</span><span class="sxs-lookup"><span data-stu-id="57cf7-108">The <xref:System.Xml.XmlNamespaceManager> object may be used in the query in each of the following ways.</span></span>  
+ <span data-ttu-id="974b3-108"><xref:System.Xml.XmlNamespaceManager> 对象可以通过下列任意方式在查询中使用。</span><span class="sxs-lookup"><span data-stu-id="974b3-108">The <xref:System.Xml.XmlNamespaceManager> object may be used in the query in each of the following ways.</span></span>  
   
-- <span data-ttu-id="57cf7-109">使用 <xref:System.Xml.XmlNamespaceManager> 对象的 <xref:System.Xml.XPath.XPathExpression> 方法将 <xref:System.Xml.XPath.XPathExpression.SetContext%2A> 对象与现有的 <xref:System.Xml.XPath.XPathExpression> 对象关联。</span><span class="sxs-lookup"><span data-stu-id="57cf7-109">The <xref:System.Xml.XmlNamespaceManager> object is associated with an existing <xref:System.Xml.XPath.XPathExpression> object by using the <xref:System.Xml.XPath.XPathExpression.SetContext%2A> method of the <xref:System.Xml.XPath.XPathExpression> object.</span></span> <span data-ttu-id="57cf7-110">还可以使用静态 <xref:System.Xml.XPath.XPathExpression> 方法编译新的 <xref:System.Xml.XPath.XPathExpression.Compile%2A> 对象，该方法使用表示 XPath 表达式的字符串和 <xref:System.Xml.XmlNamespaceManager> 对象作为参数，并返回一个新的 <xref:System.Xml.XPath.XPathExpression> 对象。</span><span class="sxs-lookup"><span data-stu-id="57cf7-110">You may also compile a new <xref:System.Xml.XPath.XPathExpression> object using the static <xref:System.Xml.XPath.XPathExpression.Compile%2A> method which takes a string representing the XPath expression and an <xref:System.Xml.XmlNamespaceManager> object as parameters and returns a new <xref:System.Xml.XPath.XPathExpression> object.</span></span>  
+- <span data-ttu-id="974b3-109">使用 <xref:System.Xml.XmlNamespaceManager> 对象的 <xref:System.Xml.XPath.XPathExpression> 方法将 <xref:System.Xml.XPath.XPathExpression.SetContext%2A> 对象与现有的 <xref:System.Xml.XPath.XPathExpression> 对象关联。</span><span class="sxs-lookup"><span data-stu-id="974b3-109">The <xref:System.Xml.XmlNamespaceManager> object is associated with an existing <xref:System.Xml.XPath.XPathExpression> object by using the <xref:System.Xml.XPath.XPathExpression.SetContext%2A> method of the <xref:System.Xml.XPath.XPathExpression> object.</span></span> <span data-ttu-id="974b3-110">还可以使用静态 <xref:System.Xml.XPath.XPathExpression> 方法编译新的 <xref:System.Xml.XPath.XPathExpression.Compile%2A> 对象，该方法使用表示 XPath 表达式的字符串和 <xref:System.Xml.XmlNamespaceManager> 对象作为参数，并返回一个新的 <xref:System.Xml.XPath.XPathExpression> 对象。</span><span class="sxs-lookup"><span data-stu-id="974b3-110">You may also compile a new <xref:System.Xml.XPath.XPathExpression> object using the static <xref:System.Xml.XPath.XPathExpression.Compile%2A> method which takes a string representing the XPath expression and an <xref:System.Xml.XmlNamespaceManager> object as parameters and returns a new <xref:System.Xml.XPath.XPathExpression> object.</span></span>  
   
-- <span data-ttu-id="57cf7-111"><xref:System.Xml.XmlNamespaceManager> 对象本身与表示 XPath 表达式的字符串一起作为参数传递给接受方的 <xref:System.Xml.XPath.XPathNavigator> 类方法。</span><span class="sxs-lookup"><span data-stu-id="57cf7-111">The <xref:System.Xml.XmlNamespaceManager> object itself is passed as a parameter to an accepting <xref:System.Xml.XPath.XPathNavigator> class method along with a string representing the XPath expression.</span></span>  
+- <span data-ttu-id="974b3-111"><xref:System.Xml.XmlNamespaceManager> 对象本身与表示 XPath 表达式的字符串一起作为参数传递给接受方的 <xref:System.Xml.XPath.XPathNavigator> 类方法。</span><span class="sxs-lookup"><span data-stu-id="974b3-111">The <xref:System.Xml.XmlNamespaceManager> object itself is passed as a parameter to an accepting <xref:System.Xml.XPath.XPathNavigator> class method along with a string representing the XPath expression.</span></span>  
   
- <span data-ttu-id="57cf7-112">以下是 <xref:System.Xml.XPath.XPathNavigator> 类中接受从 <xref:System.Xml.IXmlNamespaceResolver> 接口派生的对象作为参数的方法。</span><span class="sxs-lookup"><span data-stu-id="57cf7-112">The following are the methods of the <xref:System.Xml.XPath.XPathNavigator> class that accept an object derived from the <xref:System.Xml.IXmlNamespaceResolver> interface as a parameter.</span></span>  
+ <span data-ttu-id="974b3-112">以下是 <xref:System.Xml.XPath.XPathNavigator> 类中接受从 <xref:System.Xml.IXmlNamespaceResolver> 接口派生的对象作为参数的方法。</span><span class="sxs-lookup"><span data-stu-id="974b3-112">The following are the methods of the <xref:System.Xml.XPath.XPathNavigator> class that accept an object derived from the <xref:System.Xml.IXmlNamespaceResolver> interface as a parameter.</span></span>  
   
 - <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A>  
   
@@ -35,8 +35,8 @@ ms.locfileid: "75709772"
   
 - <xref:System.Xml.XPath.XPathNavigator.SelectSingleNode%2A>  
   
-### <a name="the-default-namespace"></a><span data-ttu-id="57cf7-113">默认命名空间</span><span class="sxs-lookup"><span data-stu-id="57cf7-113">The Default Namespace</span></span>  
- <span data-ttu-id="57cf7-114">在下面的 XML 文档中，具有空前缀的默认命名空间用于声明 `http://www.contoso.com/books` 命名空间。</span><span class="sxs-lookup"><span data-stu-id="57cf7-114">In the XML document that follows, the default namespace with an empty prefix is used to declare the `http://www.contoso.com/books` namespace.</span></span>  
+### <a name="the-default-namespace"></a><span data-ttu-id="974b3-113">默认命名空间</span><span class="sxs-lookup"><span data-stu-id="974b3-113">The Default Namespace</span></span>  
+ <span data-ttu-id="974b3-114">在下面的 XML 文档中，具有空前缀的默认命名空间用于声明 `http://www.contoso.com/books` 命名空间。</span><span class="sxs-lookup"><span data-stu-id="974b3-114">In the XML document that follows, the default namespace with an empty prefix is used to declare the `http://www.contoso.com/books` namespace.</span></span>  
   
 ```xml  
 <books xmlns="http://www.contoso.com/books">  
@@ -48,13 +48,13 @@ ms.locfileid: "75709772"
 </books>  
 ```  
   
- <span data-ttu-id="57cf7-115">XPath 将空前缀作为 `null` 命名空间对待。</span><span class="sxs-lookup"><span data-stu-id="57cf7-115">XPath treats the empty prefix as the `null` namespace.</span></span> <span data-ttu-id="57cf7-116">也就是说，XPath 查询中只能使用映射到命名空间上的前缀。</span><span class="sxs-lookup"><span data-stu-id="57cf7-116">In other words, only prefixes mapped to namespaces can be used in XPath queries.</span></span> <span data-ttu-id="57cf7-117">这意味着如果要针对 XML 文档中的某个命名空间进行查询，即使是默认的命名空间，也需要为其定义前缀。</span><span class="sxs-lookup"><span data-stu-id="57cf7-117">This means that if you want to query against a namespace in an XML document, even if it is the default namespace, you need to define a prefix for it.</span></span>  
+ <span data-ttu-id="974b3-115">XPath 将空前缀作为 `null` 命名空间对待。</span><span class="sxs-lookup"><span data-stu-id="974b3-115">XPath treats the empty prefix as the `null` namespace.</span></span> <span data-ttu-id="974b3-116">也就是说，XPath 查询中只能使用映射到命名空间上的前缀。</span><span class="sxs-lookup"><span data-stu-id="974b3-116">In other words, only prefixes mapped to namespaces can be used in XPath queries.</span></span> <span data-ttu-id="974b3-117">这意味着如果要针对 XML 文档中的某个命名空间进行查询，即使是默认的命名空间，也需要为其定义前缀。</span><span class="sxs-lookup"><span data-stu-id="974b3-117">This means that if you want to query against a namespace in an XML document, even if it is the default namespace, you need to define a prefix for it.</span></span>  
   
- <span data-ttu-id="57cf7-118">例如，在没有为上面的 XML 文档定义前缀的情况下，XPath 查询 `/books/book` 不会返回任何结果。</span><span class="sxs-lookup"><span data-stu-id="57cf7-118">For example, without defining a prefix for the XML document above, the XPath query `/books/book` would not return any results.</span></span>  
+ <span data-ttu-id="974b3-118">例如，在没有为上面的 XML 文档定义前缀的情况下，XPath 查询 `/books/book` 不会返回任何结果。</span><span class="sxs-lookup"><span data-stu-id="974b3-118">For example, without defining a prefix for the XML document above, the XPath query `/books/book` would not return any results.</span></span>  
   
- <span data-ttu-id="57cf7-119">必须绑定前缀，这样，如果查询的文档中有些节点在某个命名空间，有些节点在默认命名空间，可以避免混淆情况。</span><span class="sxs-lookup"><span data-stu-id="57cf7-119">A prefix must be bound to prevent ambiguity when querying documents with some nodes not in a namespace, and some in a default namespace.</span></span>  
+ <span data-ttu-id="974b3-119">必须绑定前缀，这样，如果查询的文档中有些节点在某个命名空间，有些节点在默认命名空间，可以避免混淆情况。</span><span class="sxs-lookup"><span data-stu-id="974b3-119">A prefix must be bound to prevent ambiguity when querying documents with some nodes not in a namespace, and some in a default namespace.</span></span>  
   
- <span data-ttu-id="57cf7-120">以下代码为默认命名空间定义前缀，并选择 `book` 命名空间中的所有 `http://www.contoso.com/books` 元素。</span><span class="sxs-lookup"><span data-stu-id="57cf7-120">The following code defines a prefix for the default namespace and selects all the `book` elements from the `http://www.contoso.com/books` namespace.</span></span>  
+ <span data-ttu-id="974b3-120">以下代码为默认命名空间定义前缀，并选择 `book` 命名空间中的所有 `http://www.contoso.com/books` 元素。</span><span class="sxs-lookup"><span data-stu-id="974b3-120">The following code defines a prefix for the default namespace and selects all the `book` elements from the `http://www.contoso.com/books` namespace.</span></span>  
   
 ```vb  
 Dim document As XPathDocument = New XPathDocument("books.xml")  
@@ -76,14 +76,14 @@ query.SetContext(manager);
 XPathNodeIterator nodes = navigator.Select(query);  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="57cf7-121">请参阅</span><span class="sxs-lookup"><span data-stu-id="57cf7-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="974b3-121">请参阅</span><span class="sxs-lookup"><span data-stu-id="974b3-121">See also</span></span>
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [<span data-ttu-id="57cf7-122">使用 XPath 数据模型处理 XML 数据</span><span class="sxs-lookup"><span data-stu-id="57cf7-122">Process XML Data Using the XPath Data Model</span></span>](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [<span data-ttu-id="57cf7-123">使用 XPathNavigator 选择 XML 数据</span><span class="sxs-lookup"><span data-stu-id="57cf7-123">Select XML Data Using XPathNavigator</span></span>](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)
-- [<span data-ttu-id="57cf7-124">使用 XPathNavigator 计算 XPath 表达式</span><span class="sxs-lookup"><span data-stu-id="57cf7-124">Evaluate XPath Expressions using XPathNavigator</span></span>](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)
-- [<span data-ttu-id="57cf7-125">使用 XPathNavigator 匹配节点</span><span class="sxs-lookup"><span data-stu-id="57cf7-125">Matching Nodes using XPathNavigator</span></span>](../../../../docs/standard/data/xml/matching-nodes-using-xpathnavigator.md)
-- [<span data-ttu-id="57cf7-126">XPath 查询识别的节点类型</span><span class="sxs-lookup"><span data-stu-id="57cf7-126">Node Types Recognized with XPath Queries</span></span>](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)
-- [<span data-ttu-id="57cf7-127">已编译的 XPath 表达式</span><span class="sxs-lookup"><span data-stu-id="57cf7-127">Compiled XPath Expressions</span></span>](../../../../docs/standard/data/xml/compiled-xpath-expressions.md)
+- [<span data-ttu-id="974b3-122">使用 XPath 数据模型处理 XML 数据</span><span class="sxs-lookup"><span data-stu-id="974b3-122">Process XML Data Using the XPath Data Model</span></span>](process-xml-data-using-the-xpath-data-model.md)
+- [<span data-ttu-id="974b3-123">使用 XPathNavigator 选择 XML 数据</span><span class="sxs-lookup"><span data-stu-id="974b3-123">Select XML Data Using XPathNavigator</span></span>](select-xml-data-using-xpathnavigator.md)
+- [<span data-ttu-id="974b3-124">使用 XPathNavigator 计算 XPath 表达式</span><span class="sxs-lookup"><span data-stu-id="974b3-124">Evaluate XPath Expressions using XPathNavigator</span></span>](evaluate-xpath-expressions-using-xpathnavigator.md)
+- [<span data-ttu-id="974b3-125">使用 XPathNavigator 匹配节点</span><span class="sxs-lookup"><span data-stu-id="974b3-125">Matching Nodes using XPathNavigator</span></span>](matching-nodes-using-xpathnavigator.md)
+- [<span data-ttu-id="974b3-126">XPath 查询识别的节点类型</span><span class="sxs-lookup"><span data-stu-id="974b3-126">Node Types Recognized with XPath Queries</span></span>](node-types-recognized-with-xpath-queries.md)
+- [<span data-ttu-id="974b3-127">已编译的 XPath 表达式</span><span class="sxs-lookup"><span data-stu-id="974b3-127">Compiled XPath Expressions</span></span>](compiled-xpath-expressions.md)

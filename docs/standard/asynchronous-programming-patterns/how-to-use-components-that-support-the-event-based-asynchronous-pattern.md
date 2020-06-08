@@ -18,29 +18,29 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 35e9549c-1568-4768-ad07-17cc6dff11e1
-ms.openlocfilehash: 9ac98b5c576c065f8944714c72b492539e0d2f05
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0f15cd870efbdcd00dafa071175be078311a9a37
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "61870235"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289390"
 ---
-# <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a><span data-ttu-id="51261-102">如何：使用支持基于事件的异步模式的组件</span><span class="sxs-lookup"><span data-stu-id="51261-102">How to: Use Components That Support the Event-based Asynchronous Pattern</span></span>
-<span data-ttu-id="51261-103">许多组件都支持异步执行工作。</span><span class="sxs-lookup"><span data-stu-id="51261-103">Many components provide you with the option of performing their work asynchronously.</span></span> <span data-ttu-id="51261-104">例如，通过 <xref:System.Media.SoundPlayer> 和 <xref:System.Windows.Forms.PictureBox> 组件，可以“在后台”加载音频和图像，同时主线程继续运行而不中断。</span><span class="sxs-lookup"><span data-stu-id="51261-104">The <xref:System.Media.SoundPlayer> and <xref:System.Windows.Forms.PictureBox> components, for example, enable you to load sounds and images "in the background" while your main thread continues running without interruption.</span></span>  
+# <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a><span data-ttu-id="8d6b5-102">如何：使用支持基于事件的异步模式的组件</span><span class="sxs-lookup"><span data-stu-id="8d6b5-102">How to: Use Components That Support the Event-based Asynchronous Pattern</span></span>
+<span data-ttu-id="8d6b5-103">许多组件都支持异步执行工作。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-103">Many components provide you with the option of performing their work asynchronously.</span></span> <span data-ttu-id="8d6b5-104">例如，通过 <xref:System.Media.SoundPlayer> 和 <xref:System.Windows.Forms.PictureBox> 组件，可以“在后台”加载音频和图像，同时主线程继续运行而不中断。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-104">The <xref:System.Media.SoundPlayer> and <xref:System.Windows.Forms.PictureBox> components, for example, enable you to load sounds and images "in the background" while your main thread continues running without interruption.</span></span>  
   
- <span data-ttu-id="51261-105">对支持[基于事件的异步模式概述](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)的类使用异步方法，这与将事件处理程序附加到组件的 _MethodName_**Completed** 事件一样简单，就像处理其他任何事件一样。</span><span class="sxs-lookup"><span data-stu-id="51261-105">Using asynchronous methods on a class that supports the [Event-based Asynchronous Pattern Overview](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md) can be as simple as attaching an event handler to the component's _MethodName_**Completed** event, just as you would for any other event.</span></span> <span data-ttu-id="51261-106">调用 _MethodName_**Async** 方法后，应用程序会继续运行而不中断，除非 _MethodName_**Completed** 事件抛出。</span><span class="sxs-lookup"><span data-stu-id="51261-106">When you call the _MethodName_**Async** method, your application will continue running without interruption until the _MethodName_**Completed** event is raised.</span></span> <span data-ttu-id="51261-107">在事件处理程序中，可以检查 <xref:System.ComponentModel.AsyncCompletedEventArgs> 参数，以确定异步操作是已成功完成，还是已取消。</span><span class="sxs-lookup"><span data-stu-id="51261-107">In your event handler, you can examine the <xref:System.ComponentModel.AsyncCompletedEventArgs> parameter to determine if the asynchronous operation successfully completed or if it was canceled.</span></span>  
+ <span data-ttu-id="8d6b5-105">对支持[基于事件的异步模式概述](event-based-asynchronous-pattern-overview.md)的类使用异步方法，这与将事件处理程序附加到组件的 _MethodName_**Completed** 事件一样简单，就像处理其他任何事件一样。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-105">Using asynchronous methods on a class that supports the [Event-based Asynchronous Pattern Overview](event-based-asynchronous-pattern-overview.md) can be as simple as attaching an event handler to the component's _MethodName_**Completed** event, just as you would for any other event.</span></span> <span data-ttu-id="8d6b5-106">调用 _MethodName_**Async** 方法后，应用程序会继续运行而不中断，除非 _MethodName_**Completed** 事件抛出。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-106">When you call the _MethodName_**Async** method, your application will continue running without interruption until the _MethodName_**Completed** event is raised.</span></span> <span data-ttu-id="8d6b5-107">在事件处理程序中，可以检查 <xref:System.ComponentModel.AsyncCompletedEventArgs> 参数，以确定异步操作是已成功完成，还是已取消。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-107">In your event handler, you can examine the <xref:System.ComponentModel.AsyncCompletedEventArgs> parameter to determine if the asynchronous operation successfully completed or if it was canceled.</span></span>  
   
- <span data-ttu-id="51261-108">若要详细了解如何使用事件处理程序，请参阅[事件处理程序概述](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)。</span><span class="sxs-lookup"><span data-stu-id="51261-108">For more information about using event handlers, see [Event Handlers Overview](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md).</span></span>  
+ <span data-ttu-id="8d6b5-108">若要详细了解如何使用事件处理程序，请参阅[事件处理程序概述](../../framework/winforms/event-handlers-overview-windows-forms.md)。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-108">For more information about using event handlers, see [Event Handlers Overview](../../framework/winforms/event-handlers-overview-windows-forms.md).</span></span>  
   
- <span data-ttu-id="51261-109">下面的过程展示了如何使用 <xref:System.Windows.Forms.PictureBox> 控件的异步图像加载功能。</span><span class="sxs-lookup"><span data-stu-id="51261-109">The following procedure shows how to use the asynchronous image-loading capability of a <xref:System.Windows.Forms.PictureBox> control.</span></span>  
+ <span data-ttu-id="8d6b5-109">下面的过程展示了如何使用 <xref:System.Windows.Forms.PictureBox> 控件的异步图像加载功能。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-109">The following procedure shows how to use the asynchronous image-loading capability of a <xref:System.Windows.Forms.PictureBox> control.</span></span>  
   
-### <a name="to-enable-a-picturebox-control-to-asynchronously-load-an-image"></a><span data-ttu-id="51261-110">启用 PictureBox 控件以异步加载图像的具体步骤</span><span class="sxs-lookup"><span data-stu-id="51261-110">To enable a PictureBox control to asynchronously load an image</span></span>  
+### <a name="to-enable-a-picturebox-control-to-asynchronously-load-an-image"></a><span data-ttu-id="8d6b5-110">启用 PictureBox 控件以异步加载图像的具体步骤</span><span class="sxs-lookup"><span data-stu-id="8d6b5-110">To enable a PictureBox control to asynchronously load an image</span></span>  
   
-1. <span data-ttu-id="51261-111">在窗体中，创建 <xref:System.Windows.Forms.PictureBox> 组件的实例。</span><span class="sxs-lookup"><span data-stu-id="51261-111">Create an instance of the <xref:System.Windows.Forms.PictureBox> component in your form.</span></span>  
+1. <span data-ttu-id="8d6b5-111">在窗体中，创建 <xref:System.Windows.Forms.PictureBox> 组件的实例。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-111">Create an instance of the <xref:System.Windows.Forms.PictureBox> component in your form.</span></span>  
   
-2. <span data-ttu-id="51261-112">将事件处理程序分配给 <xref:System.Windows.Forms.PictureBox.LoadCompleted> 事件。</span><span class="sxs-lookup"><span data-stu-id="51261-112">Assign an event handler to the <xref:System.Windows.Forms.PictureBox.LoadCompleted> event.</span></span>  
+2. <span data-ttu-id="8d6b5-112">将事件处理程序分配给 <xref:System.Windows.Forms.PictureBox.LoadCompleted> 事件。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-112">Assign an event handler to the <xref:System.Windows.Forms.PictureBox.LoadCompleted> event.</span></span>  
   
-     <span data-ttu-id="51261-113">检查是否有异步下载期间可能会发生的任何错误。</span><span class="sxs-lookup"><span data-stu-id="51261-113">Check for any errors that may have occurred during the asynchronous download here.</span></span> <span data-ttu-id="51261-114">此时，还检查是否有取消事件。</span><span class="sxs-lookup"><span data-stu-id="51261-114">This is also where you check for cancellation.</span></span>  
+     <span data-ttu-id="8d6b5-113">检查是否有异步下载期间可能会发生的任何错误。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-113">Check for any errors that may have occurred during the asynchronous download here.</span></span> <span data-ttu-id="8d6b5-114">此时，还检查是否有取消事件。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-114">This is also where you check for cancellation.</span></span>  
   
      [!code-csharp[System.Windows.Forms.PictureBox.LoadAsync#2](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/CS/Form1.cs#2)]
      [!code-vb[System.Windows.Forms.PictureBox.LoadAsync#2](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/VB/Form1.vb#2)]  
@@ -48,7 +48,7 @@ ms.locfileid: "61870235"
      [!code-csharp[System.Windows.Forms.PictureBox.LoadAsync#5](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/CS/Form1.cs#5)]
      [!code-vb[System.Windows.Forms.PictureBox.LoadAsync#5](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/VB/Form1.vb#5)]  
   
-3. <span data-ttu-id="51261-115">将两个按钮 `loadButton` 和 `cancelLoadButton` 添加到窗体。</span><span class="sxs-lookup"><span data-stu-id="51261-115">Add two buttons, called `loadButton` and `cancelLoadButton`, to your form.</span></span> <span data-ttu-id="51261-116">添加 <xref:System.Windows.Forms.Control.Click> 事件处理程序，以启动和取消下载。</span><span class="sxs-lookup"><span data-stu-id="51261-116">Add <xref:System.Windows.Forms.Control.Click> event handlers to start and cancel the download.</span></span>  
+3. <span data-ttu-id="8d6b5-115">将两个按钮 `loadButton` 和 `cancelLoadButton` 添加到窗体。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-115">Add two buttons, called `loadButton` and `cancelLoadButton`, to your form.</span></span> <span data-ttu-id="8d6b5-116">添加 <xref:System.Windows.Forms.Control.Click> 事件处理程序，以启动和取消下载。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-116">Add <xref:System.Windows.Forms.Control.Click> event handlers to start and cancel the download.</span></span>  
   
      [!code-csharp[System.Windows.Forms.PictureBox.LoadAsync#3](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/CS/Form1.cs#3)]
      [!code-vb[System.Windows.Forms.PictureBox.LoadAsync#3](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/VB/Form1.vb#3)]  
@@ -56,11 +56,11 @@ ms.locfileid: "61870235"
      [!code-csharp[System.Windows.Forms.PictureBox.LoadAsync#4](../../../samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/CS/Form1.cs#4)]
      [!code-vb[System.Windows.Forms.PictureBox.LoadAsync#4](../../../samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.PictureBox.LoadAsync/VB/Form1.vb#4)]  
   
-4. <span data-ttu-id="51261-117">运行您的应用程序。</span><span class="sxs-lookup"><span data-stu-id="51261-117">Run your application.</span></span>  
+4. <span data-ttu-id="8d6b5-117">运行您的应用程序。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-117">Run your application.</span></span>  
   
-     <span data-ttu-id="51261-118">随着图像继续下载，可以随意移动窗体，也能最小化和最大化窗体。</span><span class="sxs-lookup"><span data-stu-id="51261-118">As the image download proceeds, you can move the form freely, minimize it, and maximize it.</span></span>  
+     <span data-ttu-id="8d6b5-118">随着图像继续下载，可以随意移动窗体，也能最小化和最大化窗体。</span><span class="sxs-lookup"><span data-stu-id="8d6b5-118">As the image download proceeds, you can move the form freely, minimize it, and maximize it.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="51261-119">另请参阅</span><span class="sxs-lookup"><span data-stu-id="51261-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8d6b5-119">另请参阅</span><span class="sxs-lookup"><span data-stu-id="8d6b5-119">See also</span></span>
 
-- [<span data-ttu-id="51261-120">如何：在后台运行操作</span><span class="sxs-lookup"><span data-stu-id="51261-120">How to: Run an Operation in the Background</span></span>](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
-- [<span data-ttu-id="51261-121">基于事件的异步模式概述</span><span class="sxs-lookup"><span data-stu-id="51261-121">Event-based Asynchronous Pattern Overview</span></span>](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [<span data-ttu-id="8d6b5-120">如何：在后台运行操作</span><span class="sxs-lookup"><span data-stu-id="8d6b5-120">How to: Run an Operation in the Background</span></span>](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
+- [<span data-ttu-id="8d6b5-121">基于事件的异步模式概述</span><span class="sxs-lookup"><span data-stu-id="8d6b5-121">Event-based Asynchronous Pattern Overview</span></span>](event-based-asynchronous-pattern-overview.md)
