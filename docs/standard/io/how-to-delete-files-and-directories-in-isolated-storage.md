@@ -17,19 +17,19 @@ helpviewer_keywords:
 - storing data using isolated storage, deleting files and directories
 - deleting directories within isolated stage file
 ms.assetid: 8fcc0dea-435b-4d40-ba4d-ba056265c202
-ms.openlocfilehash: ec4de3e3a139cfcf66f1f6252c03c467f4ccfbc5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dc84fefbde1177993b17e9ec687a1ef759b74735
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75707852"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291898"
 ---
 # <a name="how-to-delete-files-and-directories-in-isolated-storage"></a>如何：在独立存储中删除文件和目录
 可以删除独立存储文件中的目录和文件。 在存储区中，文件名和目录名依赖于操作系统，并指定为虚拟文件系统根目录的相对路径。 在 Windows 操作系统中，它们不区分大小写。  
   
  <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType> 类提供了两个用于删除目录和文件的方法：<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> 和 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A>。 如果尝试删除并不存在的文件和目录，则会引发 <xref:System.IO.IsolatedStorage.IsolatedStorageException> 异常。 如果在名称中包含通配符，<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> 将引发 <xref:System.IO.IsolatedStorage.IsolatedStorageException> 异常，并且 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteFile%2A> 会引发 <xref:System.ArgumentException> 异常。  
   
- 如果目录中包含任何文件或子目录，<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> 方法将会失败。 可以使用 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> 和 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> 方法检索现有文件和目录。 若要详细了解如何搜索存储的虚拟文件系统，请参阅[如何：在独立存储中查找现有文件和目录](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)。  
+ 如果目录中包含任何文件或子目录，<xref:System.IO.IsolatedStorage.IsolatedStorageFile.DeleteDirectory%2A> 方法将会失败。 可以使用 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetFileNames%2A> 和 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A> 方法检索现有文件和目录。 若要详细了解如何搜索存储的虚拟文件系统，请参阅[如何：在独立存储中查找现有文件和目录](how-to-find-existing-files-and-directories-in-isolated-storage.md)。  
   
 ## <a name="example"></a>示例  
  下面的代码示例创建并删除多个目录和文件。  
@@ -41,4 +41,4 @@ ms.locfileid: "75707852"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile?displayProperty=nameWithType>
-- [独立存储](../../../docs/standard/io/isolated-storage.md)
+- [独立存储](isolated-storage.md)

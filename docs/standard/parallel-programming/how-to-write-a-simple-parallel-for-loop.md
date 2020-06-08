@@ -10,19 +10,19 @@ helpviewer_keywords:
 - for loop, parallel construction in .NET
 - parallel for loops, how to use
 ms.assetid: 9029ba7f-a9d1-4526-8c84-c88716dba5d4
-ms.openlocfilehash: 78f07a4f0118c6bce7a043f111988281ddd6add0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b18e110b86389dd5d28bbc370e207aaaf7571aaf
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139665"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290728"
 ---
 # <a name="how-to-write-a-simple-parallelfor-loop"></a>如何：编写简单的 Parallel.For 循环
 
 本主题包含两个示例，这两个示例阐释了 <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> 方法。 第一个示例使用 <xref:System.Threading.Tasks.Parallel.For%28System.Int64%2CSystem.Int64%2CSystem.Action%7BSystem.Int64%7D%29?displayProperty=nameWithType> 方法重载，而第二个示例使用 <xref:System.Threading.Tasks.Parallel.For%28System.Int32%2CSystem.Int32%2CSystem.Action%7BSystem.Int32%7D%29?displayProperty=nameWithType> 重载，它们是 <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> 方法最简单的两个重载。 如果不需要取消循环、中断循环迭代或保持任何线程本地状态，则可以使用 <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> 方法的这两个重载。
 
 > [!NOTE]
-> 本文档使用 lambda 表达式在 TPL 中定义委托。 如果不熟悉 C# 或 Visual Basic 中的 lambda 表达式，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)。
+> 本文档使用 lambda 表达式在 TPL 中定义委托。 如果不熟悉 C# 或 Visual Basic 中的 lambda 表达式，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](lambda-expressions-in-plinq-and-tpl.md)。
 
 第一个示例计算单个目录中文件的大小。 第二个示例计算两个矩阵的乘积。
 
@@ -44,7 +44,7 @@ ms.locfileid: "73139665"
 
 ## <a name="the-delegate"></a>委托
 
-<xref:System.Threading.Tasks.Parallel.For%2A> 的此重载的第三个参数是类型为 `Action<int>`（C# 中）或 `Action(Of Integer)`（Visual Basic 中）的委托。 不管 `Action` 委托具有零个、一个或十六个类型参数，它都始终返回 void。 在 Visual Basic 中，`Action` 的行为是用 `Sub` 定义的。 示例使用 lambda 表达式来创建委托，但也可以用其他方式创建委托。 有关详细信息，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)。
+<xref:System.Threading.Tasks.Parallel.For%2A> 的此重载的第三个参数是类型为 `Action<int>`（C# 中）或 `Action(Of Integer)`（Visual Basic 中）的委托。 不管 `Action` 委托具有零个、一个或十六个类型参数，它都始终返回 void。 在 Visual Basic 中，`Action` 的行为是用 `Sub` 定义的。 示例使用 lambda 表达式来创建委托，但也可以用其他方式创建委托。 有关详细信息，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](lambda-expressions-in-plinq-and-tpl.md)。
 
 ## <a name="the-iteration-value"></a>迭代值
 
@@ -72,5 +72,5 @@ ms.locfileid: "73139665"
 
 - <xref:System.Threading.Tasks.Parallel.For%2A>
 - <xref:System.Threading.Tasks.Parallel.ForEach%2A>
-- [数据并行](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
-- [并行编程](../../../docs/standard/parallel-programming/index.md)
+- [数据并行](data-parallelism-task-parallel-library.md)
+- [并行编程](index.md)

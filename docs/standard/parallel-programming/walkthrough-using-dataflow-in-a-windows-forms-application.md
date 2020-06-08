@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - Windows Forms, and TPL
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
-ms.openlocfilehash: 794253514edf63f02276e1ece21c60a85c534390
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7cd82ffde5fccf938027a6ab6ea15fef226fef6f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159762"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288428"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>演练：在 Windows 窗体应用程序中使用数据流
 本文档演示如何创建在 Windows 窗体应用程序中执行图像处理的数据流块网络。  
@@ -20,7 +20,7 @@ ms.locfileid: "78159762"
  此示例从指定的文件夹加载图像文件、创建复合图像，并显示结果。 本示例使用数据流模型通过网络路由图像。 在数据流模型中，程序的独立组件之间通过发送消息进行通信。 某个组件收到一条消息时，它会执行某项操作，然后将结果传递给另一个组件。 相比之下，在控制流模型中，应用程序使用控制结构（例如条件语句和循环等等）控制程序中操作的顺序。  
   
 ## <a name="prerequisites"></a>先决条件  
- 开始本演练之前，请阅读[数据流](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)。  
+ 开始本演练之前，请阅读[数据流](dataflow-task-parallel-library.md)。  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
 
@@ -99,7 +99,7 @@ ms.locfileid: "78159762"
   
  因为 `displayCompositeBitmap` 和 `operationCancelled` 数据流块是在用户界面上操作，所以这些操作要在用户界面线程上执行，这一点很重要。 为此，在构造期间，每个对象都提供将 <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.TaskScheduler%2A> 属性设置为 <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> 的 <xref:System.Threading.Tasks.Dataflow.ExecutionDataflowBlockOptions> 对象。 <xref:System.Threading.Tasks.TaskScheduler.FromCurrentSynchronizationContext%2A?displayProperty=nameWithType> 方法会创建一个在当前同步上下文中执行工作的 <xref:System.Threading.Tasks.TaskScheduler> 对象。 因为 `CreateImageProcessingNetwork` 方法是通过“选择文件夹”  按钮的处理程序调用的，而该处理程序在用户界面线程上运行，所以 `displayCompositeBitmap` 和 `operationCancelled` 数据流块的操作也在用户界面线程上运行。  
   
- 此示例使用共享的取消令牌，而不是设置 <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> 属性，因为 <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> 属性永久取消数据流块执行。 利用取消标记，此示例可多次重复使用同一数据流网络，即使用户取消一个或多个操作也是如此。 有关使用 <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> 永久取消数据流块执行的示例，请参阅[如何：取消数据流块](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md)。  
+ 此示例使用共享的取消令牌，而不是设置 <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> 属性，因为 <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> 属性永久取消数据流块执行。 利用取消标记，此示例可多次重复使用同一数据流网络，即使用户取消一个或多个操作也是如此。 有关使用 <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> 永久取消数据流块执行的示例，请参阅[如何：取消数据流块](how-to-cancel-a-dataflow-block.md)。  
   
 <a name="ui"></a>
 ## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>将数据流网络连接到用户界面  
@@ -127,8 +127,8 @@ ms.locfileid: "78159762"
   
  下图显示公共 \Sample Pictures\ 文件夹的典型输出。  
   
- ![Windows 窗体应用程序](../../../docs/standard/parallel-programming/media/tpldataflow-compositeimages.gif "TPLDataflow_CompositeImages")  
+ ![Windows 窗体应用程序](media/tpldataflow-compositeimages.gif "TPLDataflow_CompositeImages")  
 
 ## <a name="see-also"></a>请参阅
 
-- [数据流](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [数据流](dataflow-task-parallel-library.md)

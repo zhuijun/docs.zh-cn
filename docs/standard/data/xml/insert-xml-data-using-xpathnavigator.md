@@ -7,19 +7,19 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 2ed8c28b-b88d-4be7-9c87-92df01f0821f
-ms.openlocfilehash: 68c003467d837fe79d5e275968e47fa5dc3490cc
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 1dbe1a709f7c1b527a1754ab943a0a10ff52c6e8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710721"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289182"
 ---
 # <a name="insert-xml-data-using-xpathnavigator"></a>使用 XPathNavigator 插入 XML 数据
 <xref:System.Xml.XPath.XPathNavigator> 类提供一组方法用于在 XML 文档中插入同级节点、子节点和属性节点。 要使用这些方法，<xref:System.Xml.XPath.XPathNavigator> 对象必须可编辑，即其 <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> 属性必须为 `true`。  
   
  可以编辑 XML 文档的 <xref:System.Xml.XPath.XPathNavigator> 对象由 <xref:System.Xml.XmlDocument.CreateNavigator%2A> 类的 <xref:System.Xml.XmlDocument> 方法创建。 由 <xref:System.Xml.XPath.XPathNavigator> 类创建的 <xref:System.Xml.XPath.XPathDocument> 对象是只读的，如果尝试使用由 <xref:System.Xml.XPath.XPathNavigator> 对象创建的 <xref:System.Xml.XPath.XPathDocument> 对象的编辑方法，将引发 <xref:System.NotSupportedException>。  
   
- 若要详细了解如何创建可编辑 <xref:System.Xml.XPath.XPathNavigator> 对象，请参阅[使用 XPathDocument 和 XmlDocument 读取 XML 数据](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)。  
+ 若要详细了解如何创建可编辑 <xref:System.Xml.XPath.XPathNavigator> 对象，请参阅[使用 XPathDocument 和 XmlDocument 读取 XML 数据](reading-xml-data-using-xpathdocument-and-xmldocument.md)。  
   
 ## <a name="inserting-nodes"></a>插入节点  
  <xref:System.Xml.XPath.XPathNavigator> 类提供在 XML 文档中插入同级节点、子节点和属性节点的方法。 通过这些方法可以在与 <xref:System.Xml.XPath.XPathNavigator> 对象的当前位置有关的不同位置插入节点和属性，如下面各节所述。  
@@ -218,7 +218,7 @@ navigator.SetTypedValue(DateTime.Now);
   
  <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> 属性更改 <xref:System.Xml.XPath.XPathNavigator> 对象当前所处的子节点以及给定 XML `string` 的已分析内容的 XML 标记。 同样，<xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> 属性更改 <xref:System.Xml.XPath.XPathNavigator> 对象当前所处的子节点以及当前节点本身的 XML 标记。  
   
- 除了本主题中所述的方法之外，<xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> 和 <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> 属性也可以用于在 XML 文档中插入节点和值。 若要详细了解如何使用 <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> 和 <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> 属性插入节点和值，请参阅[使用 XPathNavigator 修改 XML 数据](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md)主题。  
+ 除了本主题中所述的方法之外，<xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> 和 <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> 属性也可以用于在 XML 文档中插入节点和值。 若要详细了解如何使用 <xref:System.Xml.XPath.XPathNavigator.InnerXml%2A> 和 <xref:System.Xml.XPath.XPathNavigator.OuterXml%2A> 属性插入节点和值，请参阅[使用 XPathNavigator 修改 XML 数据](modify-xml-data-using-xpathnavigator.md)主题。  
   
 ## <a name="namespace-and-xmllang-conflicts"></a>命名空间和 xml:lang 冲突  
  在使用 `xml:lang` 类的 <xref:System.Xml.XPath.XPathNavigator.InsertBefore%2A>、<xref:System.Xml.XPath.XPathNavigator.InsertAfter%2A>、<xref:System.Xml.XPath.XPathNavigator.AppendChild%2A> 和 <xref:System.Xml.XPath.XPathNavigator.PrependChild%2A> 方法（这些方法使用 <xref:System.Xml.XPath.XPathNavigator> 对象作为参数）插入 XML 数据时，可能会发生某些与命名空间和 <xref:System.Xml.XmlReader> 声明的范围有关的冲突，。  
@@ -326,13 +326,13 @@ document.Save("book.xml");
 ```  
   
 ## <a name="saving-an-xml-document"></a>保存 XML 文档  
- 使用 <xref:System.Xml.XmlDocument> 类的方法保存本主题中所述的方法对 <xref:System.Xml.XmlDocument> 对象的更改。 若要详细了解如何保存对 <xref:System.Xml.XmlDocument> 对象所做的更改，请参阅[保存和编写文档](../../../../docs/standard/data/xml/saving-and-writing-a-document.md)。  
+ 使用 <xref:System.Xml.XmlDocument> 类的方法保存本主题中所述的方法对 <xref:System.Xml.XmlDocument> 对象的更改。 若要详细了解如何保存对 <xref:System.Xml.XmlDocument> 对象所做的更改，请参阅[保存和编写文档](saving-and-writing-a-document.md)。  
   
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [使用 XPath 数据模型处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [使用 XPathNavigator 修改 XML 数据](../../../../docs/standard/data/xml/modify-xml-data-using-xpathnavigator.md)
-- [使用 XPathNavigator 删除 XML 数据](../../../../docs/standard/data/xml/remove-xml-data-using-xpathnavigator.md)
+- [使用 XPath 数据模型处理 XML 数据](process-xml-data-using-the-xpath-data-model.md)
+- [使用 XPathNavigator 修改 XML 数据](modify-xml-data-using-xpathnavigator.md)
+- [使用 XPathNavigator 删除 XML 数据](remove-xml-data-using-xpathnavigator.md)

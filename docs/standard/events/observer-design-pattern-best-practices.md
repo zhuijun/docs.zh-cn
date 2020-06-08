@@ -6,18 +6,18 @@ helpviewer_keywords:
 - observer design pattern [.NET Framework], best practices
 - best practices [.NET Framework], observer design pattern
 ms.assetid: c834760f-ddd4-417f-abb7-a059679d5b8c
-ms.openlocfilehash: 2da29e0baf429142707d0ddd39b1a11c13a17a90
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b4f8e568dcb6790dac1dc8fc5c969d6fa1367c4e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73141539"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288454"
 ---
 # <a name="observer-design-pattern-best-practices"></a>观察程序设计模式最佳做法
 在 .NET Framework 中，将观察者设计模式作为一组接口实现。 <xref:System.IObservable%601?displayProperty=nameWithType> 接口表示数据提供程序，也负责提供允许观察者取消订阅通知的 <xref:System.IDisposable> 实现。 <xref:System.IObserver%601?displayProperty=nameWithType> 接口表示观察者。 本主题描述使用这些接口实现观察者设计模式时开发人员应遵循的最佳做法。  
   
 ## <a name="threading"></a>线程  
- 提供程序通常通过向由一些集合对象表示的订阅者列表添加特定观察者来实现 <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> 方法，并通过从订阅者列表中删除特定观察者来实现 <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> 方法。 观察者可在任何时候调用这些方法。 此外，由于提供程序/观察者协定未指定由谁负责在 <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> 回调方法后取消订阅，因此提供程序和观察者都可能尝试从列表中删除相同成员。 由于这种可能性，<xref:System.IObservable%601.Subscribe%2A> 和 <xref:System.IDisposable.Dispose%2A> 方法都应该是线程安全的。 这通常需要使用[并发回收](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md)或锁。 非线程安全的实现应显式注明它们非线程安全。  
+ 提供程序通常通过向由一些集合对象表示的订阅者列表添加特定观察者来实现 <xref:System.IObservable%601.Subscribe%2A?displayProperty=nameWithType> 方法，并通过从订阅者列表中删除特定观察者来实现 <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> 方法。 观察者可在任何时候调用这些方法。 此外，由于提供程序/观察者协定未指定由谁负责在 <xref:System.IObserver%601.OnCompleted%2A?displayProperty=nameWithType> 回调方法后取消订阅，因此提供程序和观察者都可能尝试从列表中删除相同成员。 由于这种可能性，<xref:System.IObservable%601.Subscribe%2A> 和 <xref:System.IDisposable.Dispose%2A> 方法都应该是线程安全的。 这通常需要使用[并发回收](../parallel-programming/data-structures-for-parallel-programming.md)或锁。 非线程安全的实现应显式注明它们非线程安全。  
   
  任何其他保证均须在提供程序/观察者协定之上指定。 实施者应清楚地调出何时施加其他需求，从而避免用户对观察者协定产生混淆。  
   
@@ -53,6 +53,6 @@ ms.locfileid: "73141539"
   
 ## <a name="see-also"></a>另请参阅
 
-- [观察程序设计模式](../../../docs/standard/events/observer-design-pattern.md)
-- [如何：实现监视程序](../../../docs/standard/events/how-to-implement-an-observer.md)
-- [如何：实现提供程序](../../../docs/standard/events/how-to-implement-a-provider.md)
+- [观察程序设计模式](observer-design-pattern.md)
+- [如何：实现监视程序](how-to-implement-an-observer.md)
+- [如何：实现提供程序](how-to-implement-a-provider.md)

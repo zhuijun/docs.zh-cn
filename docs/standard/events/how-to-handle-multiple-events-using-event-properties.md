@@ -12,12 +12,12 @@ helpviewer_keywords:
 - event handling [.NET Framework], with multiple events
 - events [.NET Framework], multiple
 ms.assetid: 30047cba-e2fd-41c6-b9ca-2ad7a49003db
-ms.openlocfilehash: f74d75a09da350b34dfb067c3d0db8fc669116ac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5be541c1a40c5d16a0502e76adef24f6a41cc89
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73124771"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288467"
 ---
 # <a name="how-to-handle-multiple-events-using-event-properties"></a>如何：使用事件属性处理多个事件
 若要使用事件属性，请在引发事件的类中定义事件属性，然后在处理事件的类中设置事件属性的委托。 若要在类中实现多个事件属性，此类必须在内部存储和维护为每个事件定义的委托。 典型的方法是实现通过事件键索引的委托集合。  
@@ -48,6 +48,6 @@ ms.locfileid: "73124771"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.ComponentModel.EventHandlerList?displayProperty=nameWithType>
-- [事件](../../../docs/standard/events/index.md)
+- [事件](index.md)
 - <xref:System.Web.UI.Control.Events%2A?displayProperty=nameWithType>
 - [如何：声明自定义事件以节省内存](../../visual-basic/programming-guide/language-features/events/how-to-declare-custom-events-to-conserve-memory.md)

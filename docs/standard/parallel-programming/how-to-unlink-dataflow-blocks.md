@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, unlinking dataflow blocks
 ms.assetid: 40f0208d-4618-47f7-85cf-4913d07d2d7d
-ms.openlocfilehash: b49cfc9730ba154202baf15093a54ba3ce0e2a8a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8af978ca2ca237988dae8328656d70574dbc1f14
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139297"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288051"
 ---
 # <a name="how-to-unlink-dataflow-blocks"></a>如何：取消链接数据流块
 本文档介绍如何取消目标数据流块与其源的链接。
@@ -34,4 +34,4 @@ ms.locfileid: "73139297"
   
 ## <a name="see-also"></a>另请参阅
 
-- [数据流](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [数据流](dataflow-task-parallel-library.md)

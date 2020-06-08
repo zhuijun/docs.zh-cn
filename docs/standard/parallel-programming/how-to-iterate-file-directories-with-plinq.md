@@ -5,12 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - PLINQ queries, how to iterate directories
 ms.assetid: 354e8ce3-35c4-431c-99ca-7661d1f3901b
-ms.openlocfilehash: 208076cb9b7b56ab13458fa0dd4d92f2023106b9
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: abf31ea69af6a85140efb783959a9a586ef6a59e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635835"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277994"
 ---
 # <a name="how-to-iterate-file-directories-with-plinq"></a>如何：使用 PLINQ 循环访问文件目录
 
@@ -19,7 +19,7 @@ ms.locfileid: "80635835"
 第二个查询使用立即开始返回结果的静态 <xref:System.IO.Directory.EnumerateDirectories%2A> 和 <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> 方法。 循环访问大型目录树时，这种方法可能会比第一个示例更快，不过处理时间取决于很多因素。  
   
 > [!NOTE]
-> 这些示例用于演示用法，可能不会比相当的顺序 LINQ to Objects 查询快。 若要详细了解加速，请参阅[了解 PLINQ 中的加速](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)。  
+> 这些示例用于演示用法，可能不会比相当的顺序 LINQ to Objects 查询快。 若要详细了解加速，请参阅[了解 PLINQ 中的加速](understanding-speedup-in-plinq.md)。  
   
 ## <a name="getfiles-example"></a>GetFiles 示例
 
@@ -33,10 +33,10 @@ ms.locfileid: "80635835"
   
  [!code-csharp[PLINQ#34](../../../samples/snippets/csharp/VS_Snippets_Misc/plinq/cs/plinqfileiteration.cs#34)]  
   
- 使用 <xref:System.IO.Directory.GetFiles%2A> 时，请确保有权访问树中的所有目录。 否则，将引发异常，且不会返回任何结果。 如果在 PLINQ 查询中使用 <xref:System.IO.Directory.EnumerateDirectories%2A>，棘手的是合理处理 I/O 异常，以便能够继续循环访问。 如果代码必须处理 I/O 或未经授权的访问异常，应考虑使用[如何：使用并行类循环访问文件目录](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-the-parallel-class.md)中介绍的方法。  
+ 使用 <xref:System.IO.Directory.GetFiles%2A> 时，请确保有权访问树中的所有目录。 否则，将引发异常，且不会返回任何结果。 如果在 PLINQ 查询中使用 <xref:System.IO.Directory.EnumerateDirectories%2A>，棘手的是合理处理 I/O 异常，以便能够继续循环访问。 如果代码必须处理 I/O 或未经授权的访问异常，应考虑使用[如何：使用并行类循环访问文件目录](how-to-iterate-file-directories-with-the-parallel-class.md)中介绍的方法。  
   
- 如果 I/O 延迟造成问题（例如，对于通过网络的文件 I/O），请考虑使用 [TPL 和传统 .NET Framework 异步编程](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md)和这篇[博客文章](https://devblogs.microsoft.com/pfxteam/parallel-extensions-and-io/)中介绍的异步 I/O 方法之一。  
+ 如果 I/O 延迟造成问题（例如，对于通过网络的文件 I/O），请考虑使用 [TPL 和传统 .NET Framework 异步编程](tpl-and-traditional-async-programming.md)和这篇[博客文章](https://devblogs.microsoft.com/pfxteam/parallel-extensions-and-io/)中介绍的异步 I/O 方法之一。  
   
 ## <a name="see-also"></a>请参阅
 
-- [并行 LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
+- [并行 LINQ (PLINQ)](introduction-to-plinq.md)

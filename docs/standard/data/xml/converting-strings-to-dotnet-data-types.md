@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-ms.openlocfilehash: e54990785cafd6061c6d53c13af6476a4b46e20e
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: fda5441c58d14b91a9eca16fff9149c8795f95b9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160347"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289221"
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>将字符串转换为 .NET Framework 数据类型
 若要将字符串转换为 .NET Framework 数据类型，请使用满足应用要求的 XmlConvert  方法。 有关 XmlConvert  类提供的所有转换方法的列表，请参阅 <xref:System.Xml.XmlConvert>。  
@@ -133,5 +133,5 @@ writer.WriteElementString("Infinity", XmlConvert.ToString(value));
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 数据类型转换](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)
-- [将 .NET Framework 类型转换为字符串](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)
+- [XML 数据类型转换](conversion-of-xml-data-types.md)
+- [将 .NET Framework 类型转换为字符串](converting-dotnet-types-to-strings.md)

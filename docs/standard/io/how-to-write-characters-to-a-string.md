@@ -11,12 +11,12 @@ helpviewer_keywords:
 - streams, writing characters to strings
 - I/O [.NET Framework], writing characters to strings
 ms.assetid: 1222cbeb-0760-44bf-9888-914a2a37174b
-ms.openlocfilehash: ecbfa2de2c21ff79df269f74eeddfa0738e7e25c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 04fc21c452258a88292a886d952353ac55573121
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160270"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288246"
 ---
 # <a name="how-to-write-characters-to-a-string"></a>如何：向字符串写入字符
 下面的代码示例从字符数组以同步或异步方式向字符串写入字符。  
@@ -38,11 +38,11 @@ ms.locfileid: "78160270"
 - <xref:System.IO.StringWriter>  
 - <xref:System.IO.StringWriter.Write%2A?displayProperty=nameWithType>  
 - <xref:System.Text.StringBuilder>  
-- [文件和流 I/O](../../../docs/standard/io/index.md)  
-- [异步文件 I/O](../../../docs/standard/io/asynchronous-file-i-o.md)  
-- [如何：枚举目录和文件](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)  
-- [如何：对新建的数据文件进行读取和写入](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)  
-- [如何：打开并追加到日志文件](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)  
-- [如何：从文件中读取文本](../../../docs/standard/io/how-to-read-text-from-a-file.md)  
-- [如何：将文本写入文件](../../../docs/standard/io/how-to-write-text-to-a-file.md)  
-- [如何：从字符串中读取字符](../../../docs/standard/io/how-to-read-characters-from-a-string.md)
+- [文件和流 I/O](index.md)  
+- [异步文件 I/O](asynchronous-file-i-o.md)  
+- [如何：枚举目录和文件](how-to-enumerate-directories-and-files.md)  
+- [如何：对新建的数据文件进行读取和写入](how-to-read-and-write-to-a-newly-created-data-file.md)  
+- [如何：打开并追加到日志文件](how-to-open-and-append-to-a-log-file.md)  
+- [如何：从文件中读取文本](how-to-read-text-from-a-file.md)  
+- [如何：将文本写入文件](how-to-write-text-to-a-file.md)  
+- [如何：从字符串中读取字符](how-to-read-characters-from-a-string.md)

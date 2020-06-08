@@ -13,12 +13,12 @@ helpviewer_keywords:
 - reading data, strings
 - streams, reading characters from string
 ms.assetid: 27ea5e52-6db8-42d8-980a-50bcfc7fd270
-ms.openlocfilehash: ed267ad62e46f6216c94906df1bcefb0684ab51b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6d32e9c5f89dba7590958bae6cc0489f104cd19a
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78155758"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291768"
 ---
 # <a name="how-to-read-characters-from-a-string"></a>如何：从字符串中读取字符
 下面的代码示例展示了如何从字符串中异步或同步读取字符。  
@@ -39,11 +39,11 @@ ms.locfileid: "78155758"
 
 - <xref:System.IO.StringReader>  
 - <xref:System.IO.StringReader.Read%2A?displayProperty=nameWithType>  
-- [异步文件 I/O](../../../docs/standard/io/asynchronous-file-i-o.md)  
+- [异步文件 I/O](asynchronous-file-i-o.md)  
 - [如何：创建目录列表](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100))  
-- [如何：对新建的数据文件进行读取和写入](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)  
-- [如何：打开并追加到日志文件](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)  
-- [如何：从文件中读取文本](../../../docs/standard/io/how-to-read-text-from-a-file.md)  
-- [如何：将文本写入文件](../../../docs/standard/io/how-to-write-text-to-a-file.md)  
-- [如何：向字符串写入字符](../../../docs/standard/io/how-to-write-characters-to-a-string.md)  
-- [文件和流 I/O](../../../docs/standard/io/index.md)
+- [如何：对新建的数据文件进行读取和写入](how-to-read-and-write-to-a-newly-created-data-file.md)  
+- [如何：打开并追加到日志文件](how-to-open-and-append-to-a-log-file.md)  
+- [如何：从文件中读取文本](how-to-read-text-from-a-file.md)  
+- [如何：将文本写入文件](how-to-write-text-to-a-file.md)  
+- [如何：向字符串写入字符](how-to-write-characters-to-a-string.md)  
+- [文件和流 I/O](index.md)

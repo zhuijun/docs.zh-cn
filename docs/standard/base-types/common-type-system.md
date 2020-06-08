@@ -16,12 +16,12 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: f079613f790121c000a312132e7135121ca721a6
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: a1aa244d470402823fc22e12cb5e32bbbdcd87fe
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635898"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289338"
 ---
 # <a name="common-type-system"></a>通用类型系统
 
@@ -267,7 +267,7 @@ ms.locfileid: "80635898"
 
 ### <a name="events"></a>事件
 
- 事件定义可以响应的事情，并定义订阅、取消订阅及引发事件的方法。 事件通常用于通知其他类型的状态改变。 有关详细信息，请参阅[事件](../../../docs/standard/events/index.md)。  
+ 事件定义可以响应的事情，并定义订阅、取消订阅及引发事件的方法。 事件通常用于通知其他类型的状态改变。 有关详细信息，请参阅[事件](../events/index.md)。  
 
 ### <a name="nested-types"></a>嵌套类型
 
@@ -307,5 +307,5 @@ ms.locfileid: "80635898"
 ## <a name="see-also"></a>请参阅
 
 - [.NET API 浏览器](/dotnet/api)
-- [公共语言运行时](../../../docs/standard/clr.md)
-- [.NET 中的类型转换](../../../docs/standard/base-types/type-conversion.md)
+- [公共语言运行时](../clr.md)
+- [.NET 中的类型转换](type-conversion.md)

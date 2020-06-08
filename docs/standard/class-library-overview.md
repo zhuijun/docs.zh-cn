@@ -37,12 +37,12 @@ helpviewer_keywords:
 - integer value type
 - base types, class library
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
-ms.openlocfilehash: 596c0fd8fec8f59d977f1db445f9000df23ad5ce
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b076298a5a5f90a3c2dd39e4c5c9684e02a291c4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79398765"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289234"
 ---
 # <a name="net-class-library-overview"></a>.NET 类库概述
 
@@ -76,7 +76,7 @@ ms.locfileid: "79398765"
   
  利用命名模式将相关类型分组为命名空间是生成和记录类库的一种非常有用的方式。 但是，此命名方案对可见性、成员访问、继承、安全性或绑定无效。 一个命名空间可以被划分在多个程序集中，而单个程序集可以包含来自多个命名空间的类型。 程序集为公共语言运行时中的版本控制、部署、安全性、加载和可见性提供外形结构。  
   
- 有关命名空间和类型名的更多信息，请参阅[通用类型系统](../../docs/standard/base-types/common-type-system.md)。  
+ 有关命名空间和类型名的更多信息，请参阅[通用类型系统](base-types/common-type-system.md)。  
   
 ## <a name="system-namespace"></a>系统命名空间
 
@@ -110,6 +110,6 @@ ms.locfileid: "79398765"
   
 ## <a name="see-also"></a>请参阅
 
-- [常规类型系统](../../docs/standard/base-types/common-type-system.md)
+- [常规类型系统](base-types/common-type-system.md)
 - [.NET API 浏览器](../../api/index.md)
-- [概述](../../docs/framework/get-started/overview.md)
+- [概述](../framework/get-started/overview.md)

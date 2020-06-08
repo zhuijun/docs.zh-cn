@@ -10,12 +10,12 @@ helpviewer_keywords:
 - managed execution process
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
-ms.openlocfilehash: 46a266849f137076170287aeb10becedf83ccf78
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3cfe66f188c5abf245370f841d4b4d31e7b6db8b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160217"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290066"
 ---
 # <a name="managed-execution-process"></a>托管执行过程
 <a name="introduction"></a> 托管的执行过程包括以下步骤，在本主题后面将对此进行详细讨论：  
@@ -40,7 +40,7 @@ ms.locfileid: "78160217"
 ## <a name="choosing-a-compiler"></a>选择编译器  
  若要获取公共语言运行时 (CLR) 提供的好处，必须使用一个或多个面向运行时的语言编译器，如 Visual Basic、C#、Visual C++、F# 或众多第三方编译器之一，如 Eiffel、Perl 或 COBOL 编译器。  
   
- 因为它是一个多语言的执行环境，运行时支持各种各样的数据类型和语言功能。 你使用的语言编译器确定哪些运行时功能是可用的，并且可以使用这些功能设计你的代码。 编译器（而非运行时）设定代码必须使用的语法。 如果组件必须完全可供以其他语言编写的组件使用，则组件的导出类型必须仅公开 [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md) (CLS) 中包含的语言功能。 可以使用 <xref:System.CLSCompliantAttribute> 属性来确保你的代码符合 CLS。 有关详细信息，请参阅 “[语言独立性和与语言无关的组件](../../docs/standard/language-independence-and-language-independent-components.md)”。  
+ 因为它是一个多语言的执行环境，运行时支持各种各样的数据类型和语言功能。 你使用的语言编译器确定哪些运行时功能是可用的，并且可以使用这些功能设计你的代码。 编译器（而非运行时）设定代码必须使用的语法。 如果组件必须完全可供以其他语言编写的组件使用，则组件的导出类型必须仅公开 [Language Independence and Language-Independent Components](language-independence-and-language-independent-components.md) (CLS) 中包含的语言功能。 可以使用 <xref:System.CLSCompliantAttribute> 属性来确保你的代码符合 CLS。 有关详细信息，请参阅 “[语言独立性和与语言无关的组件](language-independence-and-language-independent-components.md)”。  
   
  [返回页首](#introduction)  
   
@@ -58,7 +58,7 @@ ms.locfileid: "78160217"
   
 - .NET Framework 实时 (JIT) 编译器。  
   
-- .NET Framework [Ngen.exe（本机映像生成器）](../../docs/framework/tools/ngen-exe-native-image-generator.md)。  
+- .NET Framework [Ngen.exe（本机映像生成器）](../framework/tools/ngen-exe-native-image-generator.md)。  
   
 ### <a name="compilation-by-the-jit-compiler"></a>由 JIT 编译器编译  
  在加载和执行程序集的内容时，JIT 编译在应用程序运行时按需将 MSIL 转换为本机代码。 由于公共语言运行时为每个受支持的 CPU 基础结构提供 JIT 编译器，开发人员可以构建一组 MSIL 程序集，这些程序集可以进行 JIT 编译并可在具有不同计算机基础结构的不同计算机上运行。 但是，如果你的托管代码调用特定于平台的本机 API 或特定于平台的类库，它将仅在该操作系统上运行。  
@@ -66,7 +66,7 @@ ms.locfileid: "78160217"
  JIT 编译将执行期间可能永远不会调用的某些代码的可能性考虑在内。 它根据需要在执行期间转换 MSIL，而不是使用时间和内存来将 PE 文件中所有 MSIL 转换为本机代码，并在内存中存储生成的本机代码，以便该进程上下文中的后续调用可以对其进行访问。 加载类型并将其初始化时，加载程序创建并将存根附加到类型中的每个方法。 第一次调用某个方法时，存根将控件传递给 JIT 编译器，后者将该方法的 MSIL 转换为本机代码，并将存根修改为直接指向生成的本机代码。 因此，对 JIT 编译的方法的后续调用会直接转到本机代码。  
   
 ### <a name="install-time-code-generation-using-ngenexe"></a>使用 NGen.exe 的安装时代码生成  
- 由于在调用该程序集中定义的各个方法时，JIT 编译器将程序集的 MSIL 转换为本机代码，因此它在运行时中对性能产生负面影响。 在大多数情况下，这种性能降低的程度是可以接受的。 更为重要的是，由 JIT 编译器生成的代码会绑定到触发编译的进程上。 它无法在多个进程之间进行共享。 若要允许生成的代码跨应用程序的多个调用或跨共享一组程序集的多个进程进行共享，则公共语言运行时支持预编译模式。 这种预编译模式使用 [Ngen.exe（本机映像生成器）](../../docs/framework/tools/ngen-exe-native-image-generator.md)将 MSIL 程序集转换为本机代码，非常类似 JIT 编译器执行的操作。 但是，Ngen.exe 的操作在三个方面不同于 JIT 编译器的操作：  
+ 由于在调用该程序集中定义的各个方法时，JIT 编译器将程序集的 MSIL 转换为本机代码，因此它在运行时中对性能产生负面影响。 在大多数情况下，这种性能降低的程度是可以接受的。 更为重要的是，由 JIT 编译器生成的代码会绑定到触发编译的进程上。 它无法在多个进程之间进行共享。 若要允许生成的代码跨应用程序的多个调用或跨共享一组程序集的多个进程进行共享，则公共语言运行时支持预编译模式。 这种预编译模式使用 [Ngen.exe（本机映像生成器）](../framework/tools/ngen-exe-native-image-generator.md)将 MSIL 程序集转换为本机代码，非常类似 JIT 编译器执行的操作。 但是，Ngen.exe 的操作在三个方面不同于 JIT 编译器的操作：  
   
 - 它在运行应用程序之前而非运行该应用程序时，将 MSIL 转换为本机代码。  
   
@@ -107,12 +107,12 @@ ms.locfileid: "78160217"
   
 ## <a name="see-also"></a>另请参阅
 
-- [概述](../../docs/framework/get-started/overview.md)
-- [语言独立性和与语言无关的组件](../../docs/standard/language-independence-and-language-independent-components.md)
-- [元数据和自描述组件](../../docs/standard/metadata-and-self-describing-components.md)
-- [Ilasm.exe（IL 汇编程序）](../../docs/framework/tools/ilasm-exe-il-assembler.md)
-- [安全性](../../docs/standard/security/index.md)
-- [与非托管代码交互操作](../../docs/framework/interop/index.md)
-- [部署](../../docs/framework/deployment/net-framework-applications.md)
+- [概述](../framework/get-started/overview.md)
+- [语言独立性和与语言无关的组件](language-independence-and-language-independent-components.md)
+- [元数据和自描述组件](metadata-and-self-describing-components.md)
+- [Ilasm.exe（IL 汇编程序）](../framework/tools/ilasm-exe-il-assembler.md)
+- [安全性](security/index.md)
+- [与非托管代码交互操作](../framework/interop/index.md)
+- [部署](../framework/deployment/net-framework-applications.md)
 - [.NET 中的程序集](assembly/index.md)
-- [应用程序域](../../docs/framework/app-domains/application-domains.md)
+- [应用程序域](../framework/app-domains/application-domains.md)

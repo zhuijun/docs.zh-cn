@@ -16,12 +16,12 @@ helpviewer_keywords:
 - global applications, localizability
 - localizing resources
 ms.assetid: 3aee2fbb-de47-4e37-8fe4-ddebb9719247
-ms.openlocfilehash: b286bdd2c5d7b03a0a2b5f94478e252da6cd0ae2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ef23cff2416792f13fda04dbe9beb34cbacfd7ea
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73120853"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288272"
 ---
 # <a name="localizability-review"></a>本地化评审
 
@@ -38,7 +38,7 @@ ms.locfileid: "73120853"
 <a name="global"></a>
 ## <a name="implement-globalization-recommendations"></a>实现全球化建议
 
-如果在设计和开发应用时考虑了本地化因素，并且遵循了[全球化](../../../docs/standard/globalization-localization/globalization.md)一文中给出的建议，那么可本地化评审在很大程度上就会成为质量保证关口。 否则，请在此阶段评审并实现[全球化](../../../docs/standard/globalization-localization/globalization.md)建议，修复源代码中妨碍本地化的错误。
+如果在设计和开发应用时考虑了本地化因素，并且遵循了[全球化](globalization.md)一文中给出的建议，那么可本地化评审在很大程度上就会成为质量保证关口。 否则，请在此阶段评审并实现[全球化](globalization.md)建议，修复源代码中妨碍本地化的错误。
 
 <a name="culture"></a>
 ## <a name="handle-culture-sensitive-features"></a>处理区分区域性的功能
@@ -75,11 +75,11 @@ ms.locfileid: "73120853"
 
 - 返回意外结果的字符串比较或相等比较。
 
-如果在开发应用时遵循了全球化建议，并正确处理了区域性敏感型功能，同时还发现并解决了测试期间出现的本地化问题，就可以执行下一步[本地化](../../../docs/standard/globalization-localization/localization.md)。
+如果在开发应用时遵循了全球化建议，并正确处理了区域性敏感型功能，同时还发现并解决了测试期间出现的本地化问题，就可以执行下一步[本地化](localization.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-- [全球化和本地化](../../../docs/standard/globalization-localization/index.md)
-- [本地化](../../../docs/standard/globalization-localization/localization.md)
-- [全球化](../../../docs/standard/globalization-localization/globalization.md)
-- [桌面应用中的资源](../../../docs/framework/resources/index.md)
+- [全球化和本地化](index.md)
+- [本地化](localization.md)
+- [全球化](globalization.md)
+- [桌面应用中的资源](../../framework/resources/index.md)

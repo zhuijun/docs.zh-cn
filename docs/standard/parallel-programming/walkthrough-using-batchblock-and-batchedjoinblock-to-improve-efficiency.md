@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, improving efficiency
 ms.assetid: 5beb4983-80c2-4f60-8c51-a07f9fd94cb3
-ms.openlocfilehash: 4b2b6a6124bf8cc0fb3b379607135283678e3268
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e572c5a14958ccc069ae7649af8c8ed4eb967dc1
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73091364"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284580"
 ---
 # <a name="walkthrough-using-batchblock-and-batchedjoinblock-to-improve-efficiency"></a>演练：使用 BatchBlock 和 BatchedJoinBlock 提高效率
 
@@ -24,7 +24,7 @@ TPL 数据流库提供 <xref:System.Threading.Tasks.Dataflow.BatchBlock%601?disp
 
 ## <a name="prerequisites"></a>系统必备
 
-1. 开始本演练前，请先阅读[数据流](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)文档中的“联接块”部分。
+1. 开始本演练前，请先阅读[数据流](dataflow-task-parallel-library.md)文档中的“联接块”部分。
 
 2. 确保计算机上有 Northwind 数据库的副本 Northwind.sdf。 此文件通常位于 %Program Files%\Microsoft SQL Server Compact Edition\v3.5\Samples\\ 文件夹中。
 
@@ -131,4 +131,4 @@ TPL 数据流库提供 <xref:System.Threading.Tasks.Dataflow.BatchBlock%601?disp
 
 ## <a name="see-also"></a>另请参阅
 
-- [数据流](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [数据流](dataflow-task-parallel-library.md)

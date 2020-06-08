@@ -9,12 +9,12 @@ helpviewer_keywords:
 - cancellation tokens, joining
 - LinkedTokenSource, how to
 ms.assetid: 6f4f3804-2ed7-41b4-a97a-6e32b93f6e05
-ms.openlocfilehash: e35472040b6ee1263ebc4c4968fa1822045a2064
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3f92d1d9e8fec91475886e8bd7bffbc97bb632a0
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73138013"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279390"
 ---
 # <a name="how-to-listen-for-multiple-cancellation-requests"></a>如何：侦听多个取消请求
 此示例展示了如何同时侦听两个取消令牌，以便在其中任意一个令牌发出请求时取消操作。  
@@ -34,4 +34,4 @@ ms.locfileid: "73138013"
   
 ## <a name="see-also"></a>另请参阅
 
-- [托管线程中的取消](../../../docs/standard/threading/cancellation-in-managed-threads.md)
+- [托管线程中的取消](cancellation-in-managed-threads.md)

@@ -7,12 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
-ms.openlocfilehash: 93686ddf1afff76926e77acdbf5aa58e93d6cb77
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 949dc52c332b17784b0e1851d178465fe4881b6f
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710032"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287631"
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>在 DOM 中验证 XML 文档
 
@@ -92,5 +92,5 @@ XML 架构验证错误在验证加载到 DOM 的 XML 数据时报告。 会通�
 - <xref:System.Xml.XmlReader>
 - <xref:System.Xml.Schema.ValidationEventHandler>
 - <xref:System.Xml.XmlReaderSettings>
-- [使用 DOM 模型处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
-- [使用 XML 架构](../../../../docs/standard/data/xml/working-with-xml-schemas.md)
+- [使用 DOM 模型处理 XML 数据](process-xml-data-using-the-dom-model.md)
+- [使用 XML 架构](working-with-xml-schemas.md)

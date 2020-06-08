@@ -3,12 +3,12 @@ title: 推断简单类型的规则
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-ms.openlocfilehash: 17429e77f7764873e607a8feaa62da1cc6e014a4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 571019d13433312a5d31f581c3527aae901bbba7
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710227"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289065"
 ---
 # <a name="rules-for-inferring-simple-types"></a>推断简单类型的规则
 描述 <xref:System.Xml.Schema.XmlSchemaInference> 类如何推断属性和元素的数据类型。  
@@ -76,6 +76,6 @@ ms.locfileid: "75710227"
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 架构对象模型 (SOM)](../../../../docs/standard/data/xml/xml-schema-object-model-som.md)
-- [从 XML 文档推断架构](../../../../docs/standard/data/xml/inferring-schemas-from-xml-documents.md)
-- [推断架构节点类型和结构的规则](../../../../docs/standard/data/xml/rules-for-inferring-schema-node-types-and-structure.md)
+- [XML 架构对象模型 (SOM)](xml-schema-object-model-som.md)
+- [从 XML 文档推断架构](inferring-schemas-from-xml-documents.md)
+- [推断架构节点类型和结构的规则](rules-for-inferring-schema-node-types-and-structure.md)

@@ -3,12 +3,12 @@ title: 使用 XPathNavigator 的节点集定位
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 1a954b41-7173-40bc-8544-d430f209b1e5
-ms.openlocfilehash: 91115af03b635d7660721fac5ce8bd749953e4ff
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 132154afdfd3e5bd6769bfcce338e598136e7515
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710565"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288753"
 ---
 # <a name="node-set-navigation-using-xpathnavigator"></a>使用 XPathNavigator 的节点集定位
 可以使用 <xref:System.Xml.XPath.XPathDocument> 类的节点集浏览方法在 <xref:System.Xml.XmlDocument> 或 <xref:System.Xml.XPath.XPathNavigator> 对象中浏览节点。 可以浏览所有节点，也可以浏览 <xref:System.Xml.XPath.XPathNavigator> 类的一种选择方法返回的所选节点集。  
@@ -16,7 +16,7 @@ ms.locfileid: "75710565"
 ## <a name="element-node-set-navigation"></a>浏览元素节点集  
  <xref:System.Xml.XPath.XPathNavigator> 类提供多种方法用于浏览元素节点。 下表显示可用的浏览方法以及各种方法如何移动的说明；其中不包括用于浏览属性和命名空间节点的方法。  
   
- 若要详细了解如何在 <xref:System.Xml.XPath.XPathNavigator> 对象中选择节点，请参阅[使用 XPathNavigator 选择、计算和匹配 XML 数据](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)。 若要详细了解如何浏览属性和命名空间节点，请参阅[使用 XPathNavigator 的属性和命名空间节点定位](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)。  
+ 若要详细了解如何在 <xref:System.Xml.XPath.XPathNavigator> 对象中选择节点，请参阅[使用 XPathNavigator 选择、计算和匹配 XML 数据](selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)。 若要详细了解如何浏览属性和命名空间节点，请参阅[使用 XPathNavigator 的属性和命名空间节点定位](attribute-and-namespace-node-navigation-using-xpathnavigator.md)。  
   
 |方法|描述|  
 |------------|-----------------|  
@@ -55,7 +55,7 @@ ms.locfileid: "75710565"
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [使用 XPath 数据模型处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [使用 XPathNavigator 的属性和命名空间节点定位](../../../../docs/standard/data/xml/attribute-and-namespace-node-navigation-using-xpathnavigator.md)
-- [使用 XPathNavigator 提取 XML 数据](../../../../docs/standard/data/xml/extract-xml-data-using-xpathnavigator.md)
-- [使用 XPathNavigator 访问强类型 XML 数据](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)
+- [使用 XPath 数据模型处理 XML 数据](process-xml-data-using-the-xpath-data-model.md)
+- [使用 XPathNavigator 的属性和命名空间节点定位](attribute-and-namespace-node-navigation-using-xpathnavigator.md)
+- [使用 XPathNavigator 提取 XML 数据](extract-xml-data-using-xpathnavigator.md)
+- [使用 XPathNavigator 访问强类型 XML 数据](accessing-strongly-typed-xml-data-using-xpathnavigator.md)

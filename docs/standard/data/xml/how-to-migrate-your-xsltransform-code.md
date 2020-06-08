@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 910beb2f-cfb3-4e8e-9936-f7e0c5f4064a
-ms.openlocfilehash: 2bc5cbc1b0857a82d3b0a11f05a4eb5756724546
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 42ca884c269611ebf7dae3b4e7aa8a39ba96b521
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710838"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287735"
 ---
 # <a name="how-to-migrate-your-xsltransform-code"></a>如何：迁移 XslTransform 代码
 业已设计的新 XSLT 类与现有类非常相似。 <xref:System.Xml.Xsl.XslCompiledTransform> 类替换 <xref:System.Xml.Xsl.XslTransform> 类。 样式表使用 <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> 方法进行编译。 使用 <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> 方法执行转换。 下面的过程演示常见 XSLT 任务，并比较使用 <xref:System.Xml.Xsl.XslTransform> 类和使用 <xref:System.Xml.Xsl.XslCompiledTransform> 类的代码。  
@@ -93,5 +93,5 @@ ms.locfileid: "75710838"
   
 ## <a name="see-also"></a>请参阅
 
-- [从 XslTransform 类迁移](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)
-- [使用 XslCompiledTransform 类](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+- [从 XslTransform 类迁移](migrating-from-the-xsltransform-class.md)
+- [使用 XslCompiledTransform 类](using-the-xslcompiledtransform-class.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - garbage collection, troubleshooting
 - garbage collection, performance
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
-ms.openlocfilehash: 72cf742aae26f9441229b355dc6e70da7a5fc9cd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1d9c72a64d172dcadf1bff1b1edf3050ca5f7d05
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75900586"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287618"
 ---
 # <a name="garbage-collection-and-performance"></a>垃圾回收和性能
 
@@ -23,7 +23,7 @@ ms.locfileid: "75900586"
 
 ### <a name="memory-performance-counters"></a>内存性能计数器
 
-可以使用性能计数器来收集性能数据。 有关说明，请参阅[运行时分析](../../../docs/framework/debug-trace-profile/runtime-profiling.md)。 如 [.NET Framework 中的性能计数器](../../../docs/framework/debug-trace-profile/performance-counters.md)中所述，性能计数器的 .NET CLR 内存类别提供有关垃圾回收器的信息。
+可以使用性能计数器来收集性能数据。 有关说明，请参阅[运行时分析](../../framework/debug-trace-profile/runtime-profiling.md)。 如 [.NET Framework 中的性能计数器](../../framework/debug-trace-profile/performance-counters.md)中所述，性能计数器的 .NET CLR 内存类别提供有关垃圾回收器的信息。
 
 ### <a name="debugging-with-sos"></a>用 SOS 调试
 
@@ -33,7 +33,7 @@ ms.locfileid: "75900586"
 
 ### <a name="garbage-collection-etw-events"></a>垃圾回收 ETW 事件
 
-Windows 事件跟踪 (ETW) 是一个跟踪系统，对由 .NET Framework 提供的分析和调试支持提供补充。 从 .NET Framework 4 开始，[垃圾回收 ETW 事件](../../../docs/framework/performance/garbage-collection-etw-events.md)将捕获有用信息，用于从统计的角度来分析托管堆。 例如，在将要发生垃圾回收时引发的 `GCStart_V1` 事件提供了以下信息：
+Windows 事件跟踪 (ETW) 是一个跟踪系统，对由 .NET Framework 提供的分析和调试支持提供补充。 从 .NET Framework 4 开始，[垃圾回收 ETW 事件](../../framework/performance/garbage-collection-etw-events.md)将捕获有用信息，用于从统计的角度来分析托管堆。 例如，在将要发生垃圾回收时引发的 `GCStart_V1` 事件提供了以下信息：
 
 - 正在收集哪一代对象。
 
@@ -45,13 +45,13 @@ ETW 事件日志有效，且不会掩盖与垃圾回收相关的任何性能问�
 
 ### <a name="the-profiling-api"></a>分析 API
 
-公共语言运行时 (CLR) 分析接口将提供有关垃圾回收期间受影响对象的详细信息。 垃圾回收开始和结束时，可以通知探查器。 它可以提供有关托管堆上对象的报告，其中包括每一代对象的标识。 有关详细信息，请参阅[分析概述](../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)。
+公共语言运行时 (CLR) 分析接口将提供有关垃圾回收期间受影响对象的详细信息。 垃圾回收开始和结束时，可以通知探查器。 它可以提供有关托管堆上对象的报告，其中包括每一代对象的标识。 有关详细信息，请参阅[分析概述](../../framework/unmanaged-api/profiling/profiling-overview.md)。
 
 探查器可以提供全面的信息。 但是，复杂的探查器可能会修改应用程序的行为。
 
 ### <a name="application-domain-resource-monitoring"></a>应用程序域资源监控
 
-从 .NET Framework 4 开始，应用程序域资源监视 (ARM) 使主机可以通过应用程序域监视 CPU 和内存使用情况。 有关详细信息，请参阅[应用程序域资源监控](../../../docs/standard/garbage-collection/app-domain-resource-monitoring.md)。
+从 .NET Framework 4 开始，应用程序域资源监视 (ARM) 使主机可以通过应用程序域监视 CPU 和内存使用情况。 有关详细信息，请参阅[应用程序域资源监控](app-domain-resource-monitoring.md)。
 
 ## <a name="troubleshooting-performance-issues"></a>故障排除性能问题
 
@@ -99,7 +99,7 @@ ETW 事件日志有效，且不会掩盖与垃圾回收相关的任何性能问�
 
 ### <a name="issue-the-process-uses-too-much-memory"></a>问题：进程占用过多内存
 
-通常会假设 Windows 任务管理器“性能”  选项卡上的内存使用量显示可以指示何时使用了太多内存。 然而，该显示与工作集相关；它不提供有关虚拟内存使用量的信息。
+通常会假设 Windows 任务管理器“性能”选项卡上的内存使用量显示可以指示何时使用了太多内存。 然而，该显示与工作集相关；它不提供有关虚拟内存使用量的信息。
 
 如果确定问题是托管堆引发的，必须测量一段时间的托管堆，以确定模式。
 
@@ -143,7 +143,7 @@ ETW 事件日志有效，且不会掩盖与垃圾回收相关的任何性能问�
 
 - 大型暂时性对象的创建会导致大型对象堆频繁分配和释放堆段。
 
-  当承载 CLR 时，应用程序可以请求垃圾回收器保留其片段。 这将减少段分配的频率。 通过使用 [STARTUP_FLAGS 枚举](../../../docs/framework/unmanaged-api/hosting/startup-flags-enumeration.md)中的 STARTUP_HOARD_GC_VM 标志来完成。
+  当承载 CLR 时，应用程序可以请求垃圾回收器保留其片段。 这将减少段分配的频率。 通过使用 [STARTUP_FLAGS 枚举](../../framework/unmanaged-api/hosting/startup-flags-enumeration.md)中的 STARTUP_HOARD_GC_VM 标志来完成。
 
 |性能检查|
 |------------------------|
@@ -161,9 +161,9 @@ ETW 事件日志有效，且不会掩盖与垃圾回收相关的任何性能问�
 
 短暂的垃圾回收（第 0 代和第 1 代）只会持续几毫秒，所以减少暂停时间通常是不可行的。 然而，你可以通过更改应用程序的分配请求的模式，在第 2 代回收中减少暂停。
 
-另一个更准确的方法是使用[垃圾回收 ETW 事件](../../../docs/framework/performance/garbage-collection-etw-events.md)。 可以通过为某个事件序列添加时间戳的差异来查找回收的计时。 整个集合序列包括暂停执行引擎、垃圾回收本身以及恢复执行引擎。
+另一个更准确的方法是使用[垃圾回收 ETW 事件](../../framework/performance/garbage-collection-etw-events.md)。 可以通过为某个事件序列添加时间戳的差异来查找回收的计时。 整个集合序列包括暂停执行引擎、垃圾回收本身以及恢复执行引擎。
 
-可以使用[垃圾回收通知](../../../docs/standard/garbage-collection/notifications.md)，确定服务器是否将要进行第 2 代回收，以及将请求重新路由到另一个服务器是否可以减轻任何暂停问题。
+可以使用[垃圾回收通知](notifications.md)，确定服务器是否将要进行第 2 代回收，以及将请求重新路由到另一个服务器是否可以减轻任何暂停问题。
 
 |性能检查|
 |------------------------|
@@ -181,7 +181,7 @@ ETW 事件日志有效，且不会掩盖与垃圾回收相关的任何性能问�
 
 在垃圾回收期间，CPU 的使用率会很高。 如果在垃圾回收中花费大量的处理时间，则回收的数量将过于频繁或回收的持续时间将过长。 托管堆上增加的对象分配率将导致垃圾回收更频繁地发生。 减少分配速率可减少垃圾回收的频率。
 
-可以通过使用 `Allocated Bytes/second` 性能计数器来监视分配速率。 有关详细信息，请参阅 [.NET Framework 中的性能计数器](../../../docs/framework/debug-trace-profile/performance-counters.md)。
+可以通过使用 `Allocated Bytes/second` 性能计数器来监视分配速率。 有关详细信息，请参阅 [.NET Framework 中的性能计数器](../../framework/debug-trace-profile/performance-counters.md)。
 
 收集的持续时间是分配后幸存对象数量的主要因素。 如果有许多对象仍需收集，则垃圾回收器必须要检查大量的内存。 压缩幸存对象的工作很耗时。 若要确定回收期间处理对象的数量，请在指定代的垃圾回收结束时，在调试器中设置一个断点。
 
@@ -351,9 +351,9 @@ ETW 事件日志有效，且不会掩盖与垃圾回收相关的任何性能问�
 
 1. 则启动 Windows 任务管理器。
 
-2. 在“性能”  选项卡上，查看已提交的值。 （在 Windows 7 中，查看“系统组”  中的“提交 (KB)”  。）
+2. 在“性能”选项卡上，查看已提交的值。 （在 Windows 7 中，查看“系统组”中的“提交 (KB)”。）
 
-    如果“总数”  接近“限值”  ，则物理内存将不足。
+    如果“总数”接近“限值”，则物理内存将不足。
 
 <a name="ManagedHeapCommit"></a>
 
@@ -654,7 +654,7 @@ ETW 事件日志有效，且不会掩盖与垃圾回收相关的任何性能问�
 
   第 2 个第 2代垃圾回收在第 3 个间隔期间开始并在第 5 个间隔处完成。 假设最坏情况下，最后一次垃圾回收是针对在第 2 个间隔开始时完成的 0 代回收，且第 2 代垃圾回收在第 5 个间隔结束时完成。 因此，第 0 代垃圾回收结束和第 2 代垃圾回收结束之间的时间是 4 秒。 因为 `% Time in GC` 计数器为 20%，所以第 2 代垃圾回收可能使用的最长时间为（4 秒 * 20%= 800 毫秒）。
 
-- 或者，可以通过使用[垃圾回收 ETW 事件](../../../docs/framework/performance/garbage-collection-etw-events.md)，确定垃圾回收的时长，并分析此信息以确定垃圾回收的持续时间。
+- 或者，可以通过使用[垃圾回收 ETW 事件](../../framework/performance/garbage-collection-etw-events.md)，确定垃圾回收的时长，并分析此信息以确定垃圾回收的持续时间。
 
   例如，以下数据显示了一个发生在非并发垃圾回收期间的事件序列。
 
@@ -796,4 +796,4 @@ ETW 事件日志有效，且不会掩盖与垃圾回收相关的任何性能问�
 
 ## <a name="see-also"></a>请参阅
 
-- [垃圾回收](../../../docs/standard/garbage-collection/index.md)
+- [垃圾回收](index.md)

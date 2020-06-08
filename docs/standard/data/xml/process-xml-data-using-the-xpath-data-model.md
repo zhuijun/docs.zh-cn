@@ -3,12 +3,12 @@ title: 使用 XPath 数据模型处理 XML 数据
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 536c6fce-1453-4654-9c72-bca54d47e081
-ms.openlocfilehash: f964864577cf08eb074bdfb9af7f7daf3ffb37b9
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d449fe19640b19b1417c41b3a1ac7bd3a4de907a
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710435"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291287"
 ---
 # <a name="process-xml-data-using-the-xpath-data-model"></a>使用 XPath 数据模型处理 XML 数据
 <xref:System.Xml?displayProperty=nameWithType> 命名空间使用 <xref:System.Xml.XmlDocument> 或 <xref:System.Xml.XPath.XPathDocument> 类提供内存中 XML 文档、片断、节点或节点集的编程表示形式。  
@@ -18,19 +18,19 @@ ms.locfileid: "75710435"
  下面各节介绍 <xref:System.Xml.XPath.XPathNavigator> 类的功能（基于返回该类的类）。  
   
 ## <a name="in-this-section"></a>本节内容  
- [使用 XPathDocument 和 XmlDocument 读取 XML 数据](../../../../docs/standard/data/xml/reading-xml-data-using-xpathdocument-and-xmldocument.md)  
+ [使用 XPathDocument 和 XmlDocument 读取 XML 数据](reading-xml-data-using-xpathdocument-and-xmldocument.md)  
  描述如何创建只读 <xref:System.Xml.XPath.XPathDocument> 类对象来读取 XML 文档以及如何创建可编辑的 <xref:System.Xml.XmlDocument> 类对象来读取和编辑 XML 文档。 本主题还描述如何从每个类返回 <xref:System.Xml.XPath.XPathNavigator> 对象，以浏览和编辑 XML 文档。  
   
- [使用 XPathNavigator 选择、计算和匹配 XML 数据](../../../../docs/standard/data/xml/selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)  
+ [使用 XPathNavigator 选择、计算和匹配 XML 数据](selecting-evaluating-and-matching-xml-data-using-xpathnavigator.md)  
  介绍 <xref:System.Xml.XPath.XPathNavigator> 类中的方法，这些方法用于使用 XPath 查询在 <xref:System.Xml.XPath.XPathDocument> 或 <xref:System.Xml.XmlDocument> 对象中选择节点，计算和检查 XPath 表达式的结果，并确定 XML 文档中的节点是否与给定的 XPath 表达式匹配。  
   
- [使用 XPathNavigator 访问 XML 数据](../../../../docs/standard/data/xml/accessing-xml-data-using-xpathnavigator.md)  
+ [使用 XPathNavigator 访问 XML 数据](accessing-xml-data-using-xpathnavigator.md)  
  介绍 <xref:System.Xml.XPath.XPathNavigator> 类中的方法，这些方法用于在 <xref:System.Xml.XPath.XPathDocument> 或 <xref:System.Xml.XmlDocument> 对象中浏览节点，提取 XML 数据，以及访问强类型 XML 数据。  
   
- [使用 XPathNavigator 编辑 XML 数据](../../../../docs/standard/data/xml/editing-xml-data-using-xpathnavigator.md)  
+ [使用 XPathNavigator 编辑 XML 数据](editing-xml-data-using-xpathnavigator.md)  
  介绍 <xref:System.Xml.XPath.XPathNavigator> 类中的方法，这些方法用于在 <xref:System.Xml.XmlDocument> 对象包含的 XML 文档中插入、修改和移除节点和值。  
   
- [使用 XPathNavigator 验证架构](../../../../docs/standard/data/xml/schema-validation-using-xpathnavigator.md)  
+ [使用 XPathNavigator 验证架构](schema-validation-using-xpathnavigator.md)  
  描述如何验证 <xref:System.Xml.XPath.XPathDocument> 或 <xref:System.Xml.XmlDocument> 对象中包含的 XML 内容。  
   
 ## <a name="see-also"></a>请参阅
@@ -38,4 +38,4 @@ ms.locfileid: "75710435"
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [使用 DOM 模型处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-the-dom-model.md)
+- [使用 DOM 模型处理 XML 数据](process-xml-data-using-the-dom-model.md)

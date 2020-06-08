@@ -10,18 +10,18 @@ helpviewer_keywords:
 - TPL dataflow library, creating custom dataflow blocks
 - dataflow blocks, creating custom in TPL
 ms.assetid: a6147146-0a6a-4d9b-ab0f-237b3c1ac691
-ms.openlocfilehash: cb953952bbed90edd2db799e92d44ec9f062babf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 37857e465bf4089dbeecc4cfd532d0702f795495
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139880"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284697"
 ---
 # <a name="walkthrough-creating-a-custom-dataflow-block-type"></a>演练：创建自定义数据流块类型
 尽管 TPL 数据流库提供了多种可启用各种功能的数据流块类型，但也可以创建自定义块类型。 本文档介绍了如何创建实现自定义行为的数据流块类型。  
   
 ## <a name="prerequisites"></a>系统必备  
- 阅读本文档前，请先阅读[数据流](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)。  
+ 阅读本文档前，请先阅读[数据流](dataflow-task-parallel-library.md)。  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
   
@@ -52,4 +52,4 @@ ms.locfileid: "73139880"
   
 ## <a name="see-also"></a>另请参阅
 
-- [数据流](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [数据流](dataflow-task-parallel-library.md)

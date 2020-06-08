@@ -18,19 +18,19 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 35e9549c-1568-4768-ad07-17cc6dff11e1
-ms.openlocfilehash: 9ac98b5c576c065f8944714c72b492539e0d2f05
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0f15cd870efbdcd00dafa071175be078311a9a37
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "61870235"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289390"
 ---
 # <a name="how-to-use-components-that-support-the-event-based-asynchronous-pattern"></a>如何：使用支持基于事件的异步模式的组件
 许多组件都支持异步执行工作。 例如，通过 <xref:System.Media.SoundPlayer> 和 <xref:System.Windows.Forms.PictureBox> 组件，可以“在后台”加载音频和图像，同时主线程继续运行而不中断。  
   
- 对支持[基于事件的异步模式概述](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)的类使用异步方法，这与将事件处理程序附加到组件的 _MethodName_**Completed** 事件一样简单，就像处理其他任何事件一样。 调用 _MethodName_**Async** 方法后，应用程序会继续运行而不中断，除非 _MethodName_**Completed** 事件抛出。 在事件处理程序中，可以检查 <xref:System.ComponentModel.AsyncCompletedEventArgs> 参数，以确定异步操作是已成功完成，还是已取消。  
+ 对支持[基于事件的异步模式概述](event-based-asynchronous-pattern-overview.md)的类使用异步方法，这与将事件处理程序附加到组件的 _MethodName_**Completed** 事件一样简单，就像处理其他任何事件一样。 调用 _MethodName_**Async** 方法后，应用程序会继续运行而不中断，除非 _MethodName_**Completed** 事件抛出。 在事件处理程序中，可以检查 <xref:System.ComponentModel.AsyncCompletedEventArgs> 参数，以确定异步操作是已成功完成，还是已取消。  
   
- 若要详细了解如何使用事件处理程序，请参阅[事件处理程序概述](../../../docs/framework/winforms/event-handlers-overview-windows-forms.md)。  
+ 若要详细了解如何使用事件处理程序，请参阅[事件处理程序概述](../../framework/winforms/event-handlers-overview-windows-forms.md)。  
   
  下面的过程展示了如何使用 <xref:System.Windows.Forms.PictureBox> 控件的异步图像加载功能。  
   
@@ -62,5 +62,5 @@ ms.locfileid: "61870235"
   
 ## <a name="see-also"></a>另请参阅
 
-- [如何：在后台运行操作](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
-- [基于事件的异步模式概述](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
+- [如何：在后台运行操作](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
+- [基于事件的异步模式概述](event-based-asynchronous-pattern-overview.md)

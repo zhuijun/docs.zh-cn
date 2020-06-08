@@ -11,15 +11,15 @@ helpviewer_keywords:
 - enumerations [.NET Framework], parsing strings
 - base types, parsing strings
 ms.assetid: e39324ee-72e5-42d4-a80d-bf3ee7fc6c59
-ms.openlocfilehash: ac44282a06b2b3710d3a9e5390c7a514c1632c3a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 000419e63e86607cd76728ae6e15ac6cd67b87f4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73127603"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277643"
 ---
 # <a name="parsing-numeric-strings-in-net"></a>分析 .NET 中的数字字符串
-所有数字类型都具有两个静态分析方法（`Parse` 和 `TryParse`），可以使用它们将数字的字符串表示形式转换为数字类型。 这两个方法使你可以分析使用[标准数字格式字符串](../../../docs/standard/base-types/standard-numeric-format-strings.md)和[自定义数字格式字符串](../../../docs/standard/base-types/custom-numeric-format-strings.md)中所述的格式字符串生成的字符串。 默认情况下，`Parse` 和 `TryParse` 方法可以成功地将仅包含整数十进制数字的字符串转化为整数值。 它们可以将包含整数和小数十进制数字、组分隔符和十进制分隔符的字符串转换为浮点值。 `Parse` 方法在操作失败时引发异常，而 `TryParse` 方法返回 `false`。  
+所有数字类型都具有两个静态分析方法（`Parse` 和 `TryParse`），可以使用它们将数字的字符串表示形式转换为数字类型。 这两个方法使你可以分析使用[标准数字格式字符串](standard-numeric-format-strings.md)和[自定义数字格式字符串](custom-numeric-format-strings.md)中所述的格式字符串生成的字符串。 默认情况下，`Parse` 和 `TryParse` 方法可以成功地将仅包含整数十进制数字的字符串转化为整数值。 它们可以将包含整数和小数十进制数字、组分隔符和十进制分隔符的字符串转换为浮点值。 `Parse` 方法在操作失败时引发异常，而 `TryParse` 方法返回 `false`。  
   
 ## <a name="parsing-and-format-providers"></a>分析和格式提供程序  
  通常，数值的字符串表示因区域性而异。 数值字符串的元素都会因区域性而异，如货币符号、组（或千位）分隔符和十进制分隔符。 分析方法可隐式或显式使用可以识别这些特定于区域性的变体的格式提供程序。 如果在 `Parse` 或 `TryParse` 方法调用中未指定任何格式提供程序，使用的是与当前线程区域性关联的格式提供程序（<xref:System.Globalization.NumberFormatInfo.CurrentInfo%2A?displayProperty=nameWithType> 属性返回的 <xref:System.Globalization.NumberFormatInfo> 对象）。  
@@ -84,5 +84,5 @@ ms.locfileid: "73127603"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Globalization.NumberStyles>
-- [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)
-- [格式设置类型](../../../docs/standard/base-types/formatting-types.md)
+- [Parsing Strings](parsing-strings.md)
+- [格式设置类型](formatting-types.md)

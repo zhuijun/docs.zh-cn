@@ -24,12 +24,12 @@ helpviewer_keywords:
 - Implicit operator
 - data types [.NET Framework], converting
 ms.assetid: ba36154f-064c-47d3-9f05-72f93a7ca96d
-ms.openlocfilehash: 0e88303f2bac2dae90a97f9d2de92af1d2a0f80d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 33b8c49033c901917e674879048558799f484194
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73976495"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291651"
 ---
 # <a name="type-conversion-in-the-net-framework"></a>.NET Framework 中的类型转换
 每个值都有与之关联的类型，此类型定义分配给该值的空间大小、它可以具有的可能值的范围以及它可以提供的成员等特性。 许多值可以表示为多种类型。 例如，值 4 可以表示为整数或浮点值。 类型转换可以创建一个等同于旧类型值的新类型值，但却不必保留原始对象的恒等值（或精确值）。  
@@ -101,7 +101,7 @@ ms.locfileid: "73976495"
  大多数编译器允许以有检查或无检查的方式执行显式转换。 当执行有检查转换时，如果被转换类型的值超出了目标类型的范围，则会引发 <xref:System.OverflowException>。 在相同条件下执行无检查转换时，转换可能不会引发异常，但无法确定确切的行为，并且可能产生不正确的值。  
   
 > [!NOTE]
-> 在 C# 中，可将 `checked` 关键字与强制转换运算符一起使用来执行有检查转换，也可通过指定 `/checked+` 编译器选项来执行有检查转换。 反过来，可将 `unchecked` 关键字与强制转换运算符一起使用来执行无检查转换，或者通过指定 `/checked-` 编译器选项来执行无检查转换。 默认情况下，显式转换将为无检查转换。 在 Visual Basic 中，通过清除项目的“高级编译器设置”  对话框中的“不做整数溢出检查”  复选框或指定 `/removeintchecks-` 编译器选项，可以执行有检查转换。 反之，通过选中项目的“高级编译器设置”  对话框中的“不做整数溢出检查”  复选框，或者指定 `/removeintchecks+` 编译器选项，可以执行无检查转换。 默认情况下，显式转换将为有检查转换。  
+> 在 C# 中，可将 `checked` 关键字与强制转换运算符一起使用来执行有检查转换，也可通过指定 `/checked+` 编译器选项来执行有检查转换。 反过来，可将 `unchecked` 关键字与强制转换运算符一起使用来执行无检查转换，或者通过指定 `/checked-` 编译器选项来执行无检查转换。 默认情况下，显式转换将为无检查转换。 在 Visual Basic 中，通过清除项目的“高级编译器设置”对话框中的“不做整数溢出检查”复选框或指定 `/removeintchecks-` 编译器选项，可以执行有检查转换。 反之，通过选中项目的“高级编译器设置”对话框中的“不做整数溢出检查”复选框，或者指定 `/removeintchecks+` 编译器选项，可以执行无检查转换。 默认情况下，显式转换将为有检查转换。  
   
  下面的 C# 示例使用 `checked` 和 `unchecked` 关键字阐释了将 <xref:System.Byte> 范围外的值转换为 <xref:System.Byte> 时的行为差异。 有检查转换会引发异常，但无检查转换会向 <xref:System.Byte.MaxValue?displayProperty=nameWithType> 变量赋予 <xref:System.Byte>。  
   
@@ -157,7 +157,7 @@ ms.locfileid: "73976495"
  [!code-csharp[Conceptual.Conversion#9](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.conversion/cs/convert1.cs#9)]
  [!code-vb[Conceptual.Conversion#9](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.conversion/vb/convert1.vb#9)]  
   
- 有关列出 <xref:System.Convert> 类支持的扩大转换和收缩转换的表，请参阅[类型转换表](../../../docs/standard/base-types/conversion-tables.md)。  
+ 有关列出 <xref:System.Convert> 类支持的扩大转换和收缩转换的表，请参阅[类型转换表](conversion-tables.md)。  
 
 ### <a name="custom-conversions-with-the-changetype-method"></a>使用 ChangeType 方法的自定义转换  
  除了支持到每个基类型的转换外，<xref:System.Convert> 类还可用于将一个自定义类型转换为一个或多个预定义类型。 此转换是通过 <xref:System.Convert.ChangeType%28System.Object%2CSystem.Type%2CSystem.IFormatProvider%29?displayProperty=nameWithType> 方法执行的，而此方法包装了对 <xref:System.IConvertible.ToType%2A?displayProperty=nameWithType> 参数的 `value` 方法的调用。 这意味着 `value` 参数所表示的对象必须提供 <xref:System.IConvertible> 接口的实现。  
@@ -194,4 +194,4 @@ ms.locfileid: "73976495"
 
 - <xref:System.Convert?displayProperty=nameWithType>
 - <xref:System.IConvertible>
-- [类型转换表](../../../docs/standard/base-types/conversion-tables.md)
+- [类型转换表](conversion-tables.md)

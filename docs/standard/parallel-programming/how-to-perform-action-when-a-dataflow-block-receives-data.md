@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - TPL dataflow library, receiving data
 ms.assetid: fc2585dc-965e-4632-ace7-73dd02684ed3
-ms.openlocfilehash: 89ab2bb18e5fe00a4d1b79d911bb0f7524b83104
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 647e77f0c5e182cea90f6e90063826b705de354b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73124216"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288168"
 ---
 # <a name="how-to-perform-action-when-a-dataflow-block-receives-data"></a>如何：在数据流块收到数据时执行操作
 在接收数据时，执行数据流块  类型会调用用户提供的委托。 <xref:System.Threading.Tasks.Dataflow.ActionBlock%601?displayProperty=nameWithType>、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602?displayProperty=nameWithType> 类是执行数据流块类型。 当为执行数据流块提供工作函数时，可以使用 `delegate` 关键字（Visual Basic 中为 `Sub`）、<xref:System.Action%601>、<xref:System.Func%602> 或 lambda 表达式。 本文档描述如何使用 <xref:System.Func%602> 和 lambda 表达式在执行块中执行操作。  
@@ -27,9 +27,9 @@ ms.locfileid: "73124216"
  [!code-csharp[TPLDataflow_ExecutionBlocks#1](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_executionblocks/cs/dataflowexecutionblocks.cs#1)]
  [!code-vb[TPLDataflow_ExecutionBlocks#1](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpldataflow_executionblocks/vb/dataflowexecutionblocks.vb#1)]  
   
- 虽然可以为 <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> 对象提供 Lambda 表达式，但是本示例使用 <xref:System.Func%602> 来允许其他代码使用 `CountBytes` 方法。 因为要执行的工作是此任务特有的，使用其他代码不可能有用，所以 <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> 对象使用 lambda 表达式。 有关 lambda 表达式如何在任务并行库中工作的详细信息，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)。  
+ 虽然可以为 <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> 对象提供 Lambda 表达式，但是本示例使用 <xref:System.Func%602> 来允许其他代码使用 `CountBytes` 方法。 因为要执行的工作是此任务特有的，使用其他代码不可能有用，所以 <xref:System.Threading.Tasks.Dataflow.ActionBlock%601> 对象使用 lambda 表达式。 有关 lambda 表达式如何在任务并行库中工作的详细信息，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](lambda-expressions-in-plinq-and-tpl.md)。  
   
- [Dataflow](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) 文档中的“委托类型摘要”汇总了可以提供给 <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602> 和 <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> 对象的委托类型。 该表还指出委托类型是同步执行还是异步执行。  
+ [Dataflow](dataflow-task-parallel-library.md) 文档中的“委托类型摘要”汇总了可以提供给 <xref:System.Threading.Tasks.Dataflow.ActionBlock%601>、<xref:System.Threading.Tasks.Dataflow.TransformBlock%602> 和 <xref:System.Threading.Tasks.Dataflow.TransformManyBlock%602> 对象的委托类型。 该表还指出委托类型是同步执行还是异步执行。  
   
 ## <a name="robust-programming"></a>可靠编程  
  此示例为 <xref:System.Func%602> 对象提供类型 <xref:System.Threading.Tasks.Dataflow.TransformBlock%602> 的委托，以同步执行数据流块的任务。 为了使数据流块异步执行操作，请为数据流块提供类型 <xref:System.Func%601> 的委托。 当数据流块异步执行操作时，数据流块的任务只有在返回的 <xref:System.Threading.Tasks.Task%601> 对象完成时才会完成。 下面的示例修改了 `CountBytes` 方法，并使用 [async](../../csharp/language-reference/keywords/async.md) 和 [await](../../csharp/language-reference/operators/await.md) 运算符（Visual Basic 中为 [Async](../../visual-basic/language-reference/modifiers/async.md) 和 [Await](../../visual-basic/language-reference/operators/await-operator.md)）异步计算所提供文件中为零的字节的总数。 <xref:System.IO.FileStream.ReadAsync%2A> 方法异步执行文件读取操作。  
@@ -44,4 +44,4 @@ ms.locfileid: "73124216"
   
 ## <a name="see-also"></a>另请参阅
 
-- [数据流](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [数据流](dataflow-task-parallel-library.md)

@@ -10,16 +10,16 @@ helpviewer_keywords:
 - threading [.NET Framework], pausing
 - pausing threads
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
-ms.openlocfilehash: 3020694b93479d5f1d64d31c203f8fe033a10320
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 369631603791d90c51244c1dc9907b9d8ec17364
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73129005"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291157"
 ---
 # <a name="pausing-and-interrupting-threads"></a>暂停和中断线程
 
-同步线程活动最常见的方法是阻止和释放线程，或者锁定对象或代码区域。 有关这些锁定和阻止机制的详细信息，请参阅[同步基元概述](../../../docs/standard/threading/overview-of-synchronization-primitives.md)。  
+同步线程活动最常见的方法是阻止和释放线程，或者锁定对象或代码区域。 有关这些锁定和阻止机制的详细信息，请参阅[同步基元概述](overview-of-synchronization-primitives.md)。  
   
  也可使线程将自身置于睡眠状态。 当线程被阻止或处于休眠状态时，可以使用 <xref:System.Threading.ThreadInterruptedException> 使它们脱离等待状态。  
   
@@ -45,13 +45,13 @@ ms.locfileid: "73129005"
   
 - <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> 将线程从其可能处于的任何等待中唤醒，并导致在目标线程中引发 <xref:System.Threading.ThreadInterruptedException>。  
   
-- <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> 将线程从可能处于的任何等待中唤醒，并导致 <xref:System.Threading.ThreadAbortException> 在线程中抛出。 有关详细信息，请参阅[销毁线程](../../../docs/standard/threading/destroying-threads.md)。  
+- <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> 将线程从可能处于的任何等待中唤醒，并导致 <xref:System.Threading.ThreadAbortException> 在线程中抛出。 有关详细信息，请参阅[销毁线程](destroying-threads.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Threading.Thread>
 - <xref:System.Threading.ThreadInterruptedException>
 - <xref:System.Threading.ThreadAbortException>
-- [线程处理](../../../docs/standard/threading/index.md)
-- [使用线程和线程处理](../../../docs/standard/threading/using-threads-and-threading.md)
-- [同步基元概述](../../../docs/standard/threading/overview-of-synchronization-primitives.md)
+- [线程处理](index.md)
+- [使用线程和线程处理](using-threads-and-threading.md)
+- [同步基元概述](overview-of-synchronization-primitives.md)

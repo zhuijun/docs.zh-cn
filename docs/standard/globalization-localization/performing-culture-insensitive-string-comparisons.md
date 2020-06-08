@@ -13,12 +13,12 @@ helpviewer_keywords:
 - culture-insensitive string operations, comparisons
 - culture parameter
 ms.assetid: abae50ef-32f7-4a50-a540-fd256fd1aed0
-ms.openlocfilehash: 85ba91b63ab0edbccc768e2d1ad4aaef31fd2f21
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 91996bc721db55b24521be97e4d9accd53ef7924
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73120836"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288610"
 ---
 # <a name="performing-culture-insensitive-string-comparisons"></a>执行不区分区域性的字符串比较
 默认情况下，<xref:System.String.Compare%2A?displayProperty=nameWithType> 方法执行区分区域性和区分大小写的比较。 此方法还包括多个重载，这些重载提供了一个 `culture` 参数和一个 `comparisonType` 参数，前者允许你指定要使用的区域性，后者允许你指定要使用的比较规则。 调用这些方法（而非调用默认重载）将消除与特定方法调用中使用的规则相关的任何歧义，并阐明某个特定比较是区分区域性的还是不区分区域性的。  
@@ -43,5 +43,5 @@ ms.locfileid: "73120836"
 
 - <xref:System.String.Compare%2A?displayProperty=nameWithType>
 - <xref:System.String.CompareTo%2A?displayProperty=nameWithType>
-- [执行不区分区域性的字符串操作](../../../docs/standard/globalization-localization/performing-culture-insensitive-string-operations.md)
-- [有关使用字符串的最佳做法](../../../docs/standard/base-types/best-practices-strings.md)
+- [执行不区分区域性的字符串操作](performing-culture-insensitive-string-operations.md)
+- [有关使用字符串的最佳做法](../base-types/best-practices-strings.md)

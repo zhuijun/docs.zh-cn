@@ -7,12 +7,12 @@ helpviewer_keywords:
 - .NET, parallel programming in
 - Parallel Programming
 ms.assetid: b8f99f43-9104-45fd-9bff-385a20488a23
-ms.openlocfilehash: 74a6fc20e95e11bfdbec617742f304a940f3e769
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 45c9f43e67b66b00758afa0659897971aef317c2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507554"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284970"
 ---
 # <a name="task-parallel-library-tpl"></a>任务并行库 (TPL)
 任务并行库 (TPL) 是 <xref:System.Threading?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks?displayProperty=nameWithType> 空间中的一组公共类型和 API。 TPL 的目的是通过简化将并行和并发添加到应用程序的过程来提高开发人员的工作效率。 TPL 动态缩放并发的程度以最有效地使用所有可用的处理器。 此外，TPL 还处理工作分区、<xref:System.Threading.ThreadPool> 上的线程调度、取消支持、状态管理以及其他低级别的细节操作。 通过使用 TPL，你可以在将精力集中于程序要完成的工作，同时最大程度地提高代码的性能。  
@@ -23,13 +23,13 @@ ms.locfileid: "82507554"
   
 |Title|描述|  
 |-|-|  
-|[数据并行](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)|描述如何创建并行的 `for` 和 `foreach` 循环（在 Visual Basic 中为 `For` 和 `For Each`）。|  
-|[基于任务的异步编程](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)|描述如何通过使用 <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> 隐式创建和运行任务，或通过直接使用 <xref:System.Threading.Tasks.Task> 对象显式创建和运行任务。|  
-|[数据流](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)|描述如何使用 TPL 数据流库中的数据流组件处理多项运算，这些运算必须彼此通信，或在数据可用时处理数据。|  
-|[将 TPL 和其他异步模式结合使用](../../../docs/standard/parallel-programming/using-tpl-with-other-asynchronous-patterns.md)|描述如何将 TPL 与 .NET 中的其他异步模式一起使用。|  
-|[数据和任务并行的潜在问题](../../../docs/standard/parallel-programming/potential-pitfalls-in-data-and-task-parallelism.md)|描述一些常见缺陷以及如何避免它们。|  
-|[并行 LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)|描述如何使用 LINQ 查询实现数据并行化。|  
-|[并行编程](../../../docs/standard/parallel-programming/index.md)|.NET 并行编程的顶级节点。|  
+|[数据并行](data-parallelism-task-parallel-library.md)|描述如何创建并行的 `for` 和 `foreach` 循环（在 Visual Basic 中为 `For` 和 `For Each`）。|  
+|[基于任务的异步编程](task-based-asynchronous-programming.md)|描述如何通过使用 <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> 隐式创建和运行任务，或通过直接使用 <xref:System.Threading.Tasks.Task> 对象显式创建和运行任务。|  
+|[数据流](dataflow-task-parallel-library.md)|描述如何使用 TPL 数据流库中的数据流组件处理多项运算，这些运算必须彼此通信，或在数据可用时处理数据。|  
+|[将 TPL 和其他异步模式结合使用](using-tpl-with-other-asynchronous-patterns.md)|描述如何将 TPL 与 .NET 中的其他异步模式一起使用。|  
+|[数据和任务并行的潜在问题](potential-pitfalls-in-data-and-task-parallelism.md)|描述一些常见缺陷以及如何避免它们。|  
+|[并行 LINQ (PLINQ)](introduction-to-plinq.md)|描述如何使用 LINQ 查询实现数据并行化。|  
+|[并行编程](index.md)|.NET 并行编程的顶级节点。|  
   
 ## <a name="see-also"></a>请参阅
 

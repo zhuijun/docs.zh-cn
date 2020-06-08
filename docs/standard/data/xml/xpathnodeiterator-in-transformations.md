@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2bc6ddc6-674a-4f75-b264-abc35e4e5857
-ms.openlocfilehash: 63beeb3ca9d3f3cb6e6bde418e99ee2bd0a12e20
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 88b8f4acbb9fa92d71659ee006ee544275353954
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709733"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282748"
 ---
 # <a name="xpathnodeiterator-in-transformations"></a>转换中的 XPathNodeIterator
 <xref:System.Xml.XPath.XPathNodeIterator> 提供的方法可以循环访问执行 XML 路径语言 (XPath) 查询所创建的节点集或者使用 node-set 方法转换成节点集的结果树片段。 <xref:System.Xml.XPath.XPathNodeIterator> 使您能够循环访问该节点集内的节点。 检索到节点集后，<xref:System.Xml.XPath.XPathNodeIterator> 类提供对选定节点集的只读、只进游标。 该节点集以文档顺序创建，因此调用此方法会移到文档顺序中的下一个节点。 <xref:System.Xml.XPath.XPathNodeIterator> 不生成节点集内所有节点的节点树， 而是提供数据的单节点窗口，当你在树中浏览时，会公开所指向的基础节点。 <xref:System.Xml.XPath.XPathNodeIterator> 类中可用的方法和属性使您能够获取当前节点中的信息。 有关可用方法和属性的列表，请参阅 <xref:System.Windows.Forms.ToolBar>。  
@@ -158,4 +158,4 @@ xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
   
 ## <a name="see-also"></a>请参阅
 
-- [XslTransform 类实现 XSLT 处理器](../../../../docs/standard/data/xml/xsltransform-class-implements-the-xslt-processor.md)
+- [XslTransform 类实现 XSLT 处理器](xsltransform-class-implements-the-xslt-processor.md)

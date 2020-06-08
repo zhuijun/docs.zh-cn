@@ -8,15 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - parallel loops, how to iterate directories
 ms.assetid: 555e9f48-f53d-4774-9bcf-3e965c732ec5
-ms.openlocfilehash: fda8443666d1c90b31cf02c2f925d1c89243a8e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5639f4bdb83906273b60ed20494c288286f32560
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73091319"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288194"
 ---
 # <a name="how-to-iterate-file-directories-with-the-parallel-class"></a>如何：使用并行类循环访问文件目录
-在许多情况下，文件迭代是可以轻松并行执行的操作。 主题[如何：使用 PLINQ 循环访问文件目录](../../../docs/standard/parallel-programming/how-to-iterate-file-directories-with-plinq.md)介绍了如何在许多情况下以最简单的方式执行此任务。 不过，如果代码必须处理访问文件系统时可能会出现的多种异常，可能会带来麻烦。 下面的示例展示了一种解决此问题的方法。 它使用基于堆栈的迭代遍历指定目录下的所有文件和文件夹，并让代码能够捕获和处理各种异常。 当然，如何处理异常还是取决于自己的选择。  
+在许多情况下，文件迭代是可以轻松并行执行的操作。 主题[如何：使用 PLINQ 循环访问文件目录](how-to-iterate-file-directories-with-plinq.md)介绍了如何在许多情况下以最简单的方式执行此任务。 不过，如果代码必须处理访问文件系统时可能会出现的多种异常，可能会带来麻烦。 下面的示例展示了一种解决此问题的方法。 它使用基于堆栈的迭代遍历指定目录下的所有文件和文件夹，并让代码能够捕获和处理各种异常。 当然，如何处理异常还是取决于自己的选择。  
   
 ## <a name="example"></a>示例  
  下面的示例按顺序循环访问目录，但会并行处理文件。 这可能是文件与目录比很大时的最佳方法。 也可以并行执行目录迭代，并顺序访问每个文件。 并行执行两个循环的效率可能并不高，除非专门定目标到有大量处理器的计算机。 不过，与所有情况一样，应彻底测试应用，以确定最佳方法。  
@@ -24,7 +24,7 @@ ms.locfileid: "73091319"
  [!code-csharp[TPL_Parallel#08](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/parallel_file.cs#08)]
  [!code-vb[TPL_Parallel#08](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/fileiteration08.vb#08)]  
   
- 在此示例中，文件 I/O 是同步执行。 若要处理大文件或网络连接速度慢，最好异步访问文件。 可以将异步 I/O 技术与并行迭代结合使用。 有关详细信息，请参阅 [TPL 和传统 .NET Framework 异步编程](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md)。  
+ 在此示例中，文件 I/O 是同步执行。 若要处理大文件或网络连接速度慢，最好异步访问文件。 可以将异步 I/O 技术与并行迭代结合使用。 有关详细信息，请参阅 [TPL 和传统 .NET Framework 异步编程](tpl-and-traditional-async-programming.md)。  
   
  此示例使用局部 `fileCount` 变量维护已处理的总文件数的计数。 由于多个任务可能并发访问此变量，可以调用 <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType> 方法来同步对它的访问。  
   
@@ -32,4 +32,4 @@ ms.locfileid: "73091319"
   
 ## <a name="see-also"></a>另请参阅
 
-- [数据并行](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
+- [数据并行](data-parallelism-task-parallel-library.md)

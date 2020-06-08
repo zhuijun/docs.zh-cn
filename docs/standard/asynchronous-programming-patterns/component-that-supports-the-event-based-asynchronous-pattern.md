@@ -18,15 +18,15 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-ms.openlocfilehash: 44a1019ac8169138aa95b03e2027d9539cbf8391
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 83a60e0e793f33b8b0a1cec8342942fd05c82f55
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71957373"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289884"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>如何：实现支持基于事件的异步模式的组件
-若要编写的类有一些可能会带来明显延迟的操作，请考虑按照[基于事件的异步模式概述](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)中的步骤操作，为它实现异步功能。  
+若要编写的类有一些可能会带来明显延迟的操作，请考虑按照[基于事件的异步模式概述](event-based-asynchronous-pattern-overview.md)中的步骤操作，为它实现异步功能。  
   
  本演练展示了如何创建实现基于事件的异步模式的组件。 此组件是使用 <xref:System.ComponentModel?displayProperty=nameWithType> 命名空间中的帮助程序类进行实现，这可确保它在任何应用模型（包括 ASP.NET、控制台应用和 Windows 窗体应用）下都能正常运行。 也可以使用 <xref:System.Windows.Forms.PropertyGrid> 控件和自己的自定义设计器来设计此组件。  
   
@@ -48,7 +48,7 @@ ms.locfileid: "71957373"
   
 - 实现启动和取消方法  
   
- 若要将本主题中的代码复制为一个代码清单，请参阅[如何：实现基于事件的异步模式的客户端](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md)。  
+ 若要将本主题中的代码复制为一个代码清单，请参阅[如何：实现基于事件的异步模式的客户端](how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md)。  
   
 ## <a name="creating-the-component"></a>创建组件  
  第一步是，创建实现基于事件的异步模式的组件。  
@@ -176,7 +176,7 @@ ms.locfileid: "71957373"
  `CalculateWorker` 方法包装在委托中，通过调用 `BeginInvoke` 进行异步调用。  
   
 > [!NOTE]
-> 进度事件报告是在 `BuildPrimeNumberList` 方法中实现。 在快速运行的计算机上，`ProgressChanged` 事件可能会快速连续抛出。 对其抛出这些事件的客户端线程必须能够处理这种情况。 消息可能会像洪水般涌入用户界面代码，导致代码无法不断更新，继而导致无响应。 有关处理这种情况的示例用户界面，请参阅[如何：实现基于事件的异步模式的客户端](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md)。  
+> 进度事件报告是在 `BuildPrimeNumberList` 方法中实现。 在快速运行的计算机上，`ProgressChanged` 事件可能会快速连续抛出。 对其抛出这些事件的客户端线程必须能够处理这种情况。 消息可能会像洪水般涌入用户界面代码，导致代码无法不断更新，继而导致无响应。 有关处理这种情况的示例用户界面，请参阅[如何：实现基于事件的异步模式的客户端](how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md)。  
   
 ### <a name="to-execute-the-prime-number-calculation-asynchronously"></a>若要异步执行质数计算，请执行以下操作：  
   
@@ -242,7 +242,7 @@ ms.locfileid: "71957373"
   
  `PrimeNumberCalculator` 组件现已完成且可供使用。  
   
- 有关使用 `PrimeNumberCalculator` 组件的示例客户端，请参阅[如何：实现基于事件的异步模式的客户端](../../../docs/standard/asynchronous-programming-patterns/how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md)。  
+ 有关使用 `PrimeNumberCalculator` 组件的示例客户端，请参阅[如何：实现基于事件的异步模式的客户端](how-to-implement-a-client-of-the-event-based-asynchronous-pattern.md)。  
   
 ## <a name="next-steps"></a>后续步骤  
  可以编写与 `CalculatePrimeAsync` 方法相当的同步方法 `CalculatePrime`，扩充此示例。 这样一来，`PrimeNumberCalculator` 组件就完全符合基于事件的异步模式了。  
@@ -253,6 +253,6 @@ ms.locfileid: "71957373"
   
 ## <a name="see-also"></a>另请参阅
 
-- [如何：在后台运行操作](../../../docs/framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
-- [基于事件的异步模式概述](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-overview.md)
-- [基于事件的异步模式 (EAP)](../../../docs/standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)
+- [如何：在后台运行操作](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
+- [基于事件的异步模式概述](event-based-asynchronous-pattern-overview.md)
+- [基于事件的异步模式 (EAP)](event-based-asynchronous-pattern-eap.md)

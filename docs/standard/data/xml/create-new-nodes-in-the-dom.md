@@ -3,12 +3,12 @@ title: 在 DOM 中创建新节点
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 6c2b9789-b61a-49f9-b33f-db01a945edf2
-ms.openlocfilehash: f48990286405baee347becef87d0511cd42e9e77
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d99a3c68c7554ab266d71a4cbf2e676bc6db8cbc
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710994"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289572"
 ---
 # <a name="create-new-nodes-in-the-dom"></a>在 DOM 中创建新节点
 <xref:System.Xml.XmlDocument> 为所有节点类型提供了 create 方法。 为该方法提供名称（需要时）以及那些具有内容的节点（如文本节点）的内容或其他参数，这样便可创建节点。 下面的方法需要填充名称和几个其他参数以创建相应的节点。  
@@ -37,7 +37,7 @@ ms.locfileid: "75710994"
   
  其他节点类型不仅仅只要求向参数提供数据。  
   
- 若要了解属性，请参阅[新建 DOM 中元素的属性](../../../../docs/standard/data/xml/creating-new-attributes-for-elements-in-the-dom.md)。 若要了解元素和属性名验证，请参阅[新建节点时的 XML 元素和属性名验证](../../../../docs/standard/data/xml/xml-element-and-attribute-name-verification-when-creating-new-nodes.md)。 若要了解如何创建实体引用，请参阅[新建实体引用](../../../../docs/standard/data/xml/creating-new-entity-references.md)。 若要了解命名空间对实体引用扩展产生的影响，请参阅[命名空间影响包含元素和属性的新节点的实体引用扩展](../../../../docs/standard/data/xml/namespace-affect-on-entity-ref-expansion-for-new-nodes.md)。  
+ 若要了解属性，请参阅[新建 DOM 中元素的属性](creating-new-attributes-for-elements-in-the-dom.md)。 若要了解元素和属性名验证，请参阅[新建节点时的 XML 元素和属性名验证](xml-element-and-attribute-name-verification-when-creating-new-nodes.md)。 若要了解如何创建实体引用，请参阅[新建实体引用](creating-new-entity-references.md)。 若要了解命名空间对实体引用扩展产生的影响，请参阅[命名空间影响包含元素和属性的新节点的实体引用扩展](namespace-affect-on-entity-ref-expansion-for-new-nodes.md)。  
   
  创建新节点后，有几个方法可用于将其插入到树中。 下表列出了这些方法，并描述了新节点在 XML 文档对象模型 (DOM) 中的位置。  
   
@@ -51,4 +51,4 @@ ms.locfileid: "75710994"
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 文档对象模型 (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [XML 文档对象模型 (DOM)](xml-document-object-model-dom.md)

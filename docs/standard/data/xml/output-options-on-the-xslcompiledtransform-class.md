@@ -3,12 +3,12 @@ title: XslCompiledTransform 类的输出选项
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 91ce8cba-386c-411e-bb38-0891a0393c0a
-ms.openlocfilehash: 504057bd5e10498d39b2bce908742fc20b112c52
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e9ffdc1377dbf124f042802279e7e7a275222eff
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710500"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288701"
 ---
 # <a name="output-options-on-the-xslcompiledtransform-class"></a>XslCompiledTransform 类的输出选项
 本主题讨论可用的 XSLT 输出选项。 可以在样式表中指定输出选项，或在 <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> 方法上指定输出选项。  
@@ -57,4 +57,4 @@ ms.locfileid: "75710500"
   
 ## <a name="see-also"></a>请参阅
 
-- [XSLT 转换](../../../../docs/standard/data/xml/xslt-transformations.md)
+- [XSLT 转换](xslt-transformations.md)

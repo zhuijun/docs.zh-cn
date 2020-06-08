@@ -7,18 +7,18 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: fe1b4a11-37f4-4e1a-93c9-239f4fe736c0
-ms.openlocfilehash: d9a18876d8a5ba3067aa35c617b1e20fce0411f5
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: f6c2829d45db147c81592c00710f04168b40679e
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710773"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287696"
 ---
 # <a name="including-or-importing-xml-schemas"></a>包含或导入 XML 架构
 XML 架构可以包含 `<xs:import />`、`<xs:include />` 和 `<xs:redefine />` 元素。 这些架构元素引用其他 XML 架构，可以用于补充包括或导入这些架构的架构的结构。 <xref:System.Xml.Schema.XmlSchemaImport>、<xref:System.Xml.Schema.XmlSchemaInclude> 和 <xref:System.Xml.Schema.XmlSchemaRedefine> 类映射到架构对象模型 (SOM) API 中的这些元素。  
   
 ## <a name="including-or-importing-an-xml-schema"></a>包括或导入 XML 架构  
- 下面的代码示例为[生成 XML 架构](../../../../docs/standard/data/xml/building-xml-schemas.md)主题中创建的客户架构补充了地址架构。 为客户架构补充地址架构后，可以在客户架构中使用地址类型。  
+ 下面的代码示例为[生成 XML 架构](building-xml-schemas.md)主题中创建的客户架构补充了地址架构。 为客户架构补充地址架构后，可以在客户架构中使用地址类型。  
   
  地址架构可以使用 `<xs:include />` 或 `<xs:import />` 元素加入，以原样使用地址架构的组件，也可以使用 `<xs:redefine />` 元素修改其任意组件，以适合客户架构的需要。 因为地址架构的 `targetNamespace` 与客户架构的不同，所以，将使用 `<xs:import />` 元素以及导入语义。  
   
@@ -99,9 +99,9 @@ XML 架构可以包含 `<xs:import />`、`<xs:include />` 和 `<xs:redefine />` 
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 架构对象模型概述](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)
-- [读取和编写 XML 架构](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)
-- [生成 XML 架构](../../../../docs/standard/data/xml/building-xml-schemas.md)
-- [遍历 XML 架构](../../../../docs/standard/data/xml/traversing-xml-schemas.md)
-- [编辑 XML 架构](../../../../docs/standard/data/xml/editing-xml-schemas.md)
-- [用于编译架构的 XmlSchemaSet](../../../../docs/standard/data/xml/xmlschemaset-for-schema-compilation.md)
+- [XML 架构对象模型概述](xml-schema-object-model-overview.md)
+- [读取和编写 XML 架构](reading-and-writing-xml-schemas.md)
+- [生成 XML 架构](building-xml-schemas.md)
+- [遍历 XML 架构](traversing-xml-schemas.md)
+- [编辑 XML 架构](editing-xml-schemas.md)
+- [用于编译架构的 XmlSchemaSet](xmlschemaset-for-schema-compilation.md)

@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, with other asynchronous models
 ms.assetid: e7b31170-a156-433f-9f26-b1fc7cd1776f
-ms.openlocfilehash: e71c609b500bc6771c405cfb6f4ac14923cc3939
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 7db031c655980dd800de77cbbd6a07a0ba94b33b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507541"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284879"
 ---
 # <a name="tpl-and-traditional-net-framework-asynchronous-programming"></a>TPL 和传统 .NET Framework 异步编程
 .NET Framework 提供了以下两种标准模式，用于执行 I/O 密集型和计算密集型异步操作：  
@@ -102,7 +102,7 @@ ms.locfileid: "82507541"
  [!code-csharp[FromAsync#10](../../../samples/snippets/csharp/VS_Snippets_Misc/fromasync/cs/snippet10.cs#10)]
  [!code-vb[FromAsync#10](../../../samples/snippets/visualbasic/VS_Snippets_Misc/fromasync/vb/snippet10.vb#10)]  
   
- 有关包括其他异常处理且展示了如何通过客户端代码调用方法的更完整示例，请参阅[如何：在任务中包装 EAP 模式](../../../docs/standard/parallel-programming/how-to-wrap-eap-patterns-in-a-task.md)。  
+ 有关包括其他异常处理且展示了如何通过客户端代码调用方法的更完整示例，请参阅[如何：在任务中包装 EAP 模式](how-to-wrap-eap-patterns-in-a-task.md)。  
   
  请记住，通过 <xref:System.Threading.Tasks.TaskCompletionSource%601> 创建的任何任务均由 TaskCompletionSource 启动，因此用户代码不应在此任务中调用 Start 方法。  
   
@@ -119,4 +119,4 @@ ms.locfileid: "82507541"
   
 ## <a name="see-also"></a>请参阅
 
-- [任务并行库 (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
+- [任务并行库 (TPL)](task-parallel-library-tpl.md)

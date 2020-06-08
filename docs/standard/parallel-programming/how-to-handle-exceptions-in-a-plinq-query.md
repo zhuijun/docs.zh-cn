@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to handle exceptions
 ms.assetid: 8d56ff9b-a571-4d31-b41f-80c0b51b70a5
-ms.openlocfilehash: 5ccddfb01d6b173900dfffc465292c7812626ddc
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 4097d222b5fa51cc638a2d07d3fd2eddf5d9859c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80587990"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84278644"
 ---
 # <a name="how-to-handle-exceptions-in-a-plinq-query"></a>如何：处理 PLINQ 查询中的异常
 
@@ -24,7 +24,7 @@ ms.locfileid: "80587990"
 > [!NOTE]
 > 选中“仅我的代码”后，Visual Studio 会在抛出异常的代码行处中断，并显示错误消息“用户代码未处理异常”。 此错误是良性的。 可以按 F5 继续运行，并请参阅下面示例中所示的异常处理行为。 为了阻止 Visual Studio 在第一个错误出现时中断，只需依次转到“工具”、“选项”、“调试”、“常规”  下，取消选中“仅我的代码”复选框即可。
 >
-> 本示例旨在演示用法，运行速度可能不如等效的顺序 LINQ to Objects 查询快。 若要详细了解加速，请参阅[了解 PLINQ 中的加速](../../../docs/standard/parallel-programming/understanding-speedup-in-plinq.md)。
+> 本示例旨在演示用法，运行速度可能不如等效的顺序 LINQ to Objects 查询快。 若要详细了解加速，请参阅[了解 PLINQ 中的加速](understanding-speedup-in-plinq.md)。
 
 ## <a name="example"></a>示例
 
@@ -53,4 +53,4 @@ ms.locfileid: "80587990"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Linq.ParallelEnumerable>
-- [并行 LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)
+- [并行 LINQ (PLINQ)](introduction-to-plinq.md)

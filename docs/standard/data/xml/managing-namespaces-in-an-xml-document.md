@@ -3,12 +3,12 @@ title: 管理 XML 文档中的命名空间
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-ms.openlocfilehash: 1b3e57c0a8a37574a92d23cf1d623301cc54b984
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: b60e773183bd008c99022946a2ec53932234fe23
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82796147"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289143"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>管理 XML 文档中的命名空间
 XML 命名空间将 XML 文档中的元素和属性名称与自定义和预定义的 URI 关联起来。 要创建这些关联，您应为命名空间 URI 定义前缀，并使用这些前缀来限定 XML 数据中的元素和属性名称。 命名空间可防止元素和属性名称冲突，并允许以不同方式处理和验证同名的元素和属性。  
@@ -83,4 +83,4 @@ XML 命名空间将 XML 文档中的元素和属性名称与自定义和预定�
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.XmlNamespaceManager>
-- [XML 文档和数据](../../../../docs/standard/data/xml/index.md)
+- [XML 文档和数据](index.md)

@@ -3,12 +3,12 @@ title: XSLT 扩展对象
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: a4ebdbad-087c-4cfe-acc0-17c48142f81a
-ms.openlocfilehash: 6ad5b5140239ad7dc0ad72e65d10af744dfbd784
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 03e24153cc11c139fc9d9e692ef93bd82c51ee3d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709707"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282592"
 ---
 # <a name="xslt-extension-objects"></a>XSLT 扩展对象
 扩展对象用于扩展样式表的功能。 扩展对象通过 <xref:System.Xml.Xsl.XsltArgumentList> 类来维护。  
@@ -22,7 +22,7 @@ ms.locfileid: "75709707"
  使用 <xref:System.Xml.Xsl.XsltArgumentList> 方法将 XSLT 扩展对象添加到 <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> 对象。 此时，限定名和命名空间 URI 与扩展对象关联。  
   
 > [!NOTE]
-> 调用 <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> 方法要求具有 FullTrust 权限集。 有关详细信息，请参阅[代码访问安全性](../../../../docs/framework/misc/code-access-security.md)和[命名权限集](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100))。  
+> 调用 <xref:System.Xml.Xsl.XsltArgumentList.AddExtensionObject%2A> 方法要求具有 FullTrust 权限集。 有关详细信息，请参阅[代码访问安全性](../../../framework/misc/code-access-security.md)和[命名权限集](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100))。  
   
  从扩展对象返回的数据类型是四种 XPath 基本数据类型之一：`number`、`string`、`Boolean` 和 `node set`。  
   
@@ -38,5 +38,5 @@ ms.locfileid: "75709707"
   
 ## <a name="see-also"></a>请参阅
 
-- [XSLT 转换](../../../../docs/standard/data/xml/xslt-transformations.md)
-- [XSLT 安全注意事项](../../../../docs/standard/data/xml/xslt-security-considerations.md)
+- [XSLT 转换](xslt-transformations.md)
+- [XSLT 安全注意事项](xslt-security-considerations.md)

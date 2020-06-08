@@ -35,12 +35,12 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, classes
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-ms.openlocfilehash: 8956be3cf8f96a8dd255f378d4927404c172c908
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ad7957fd555c1de8fe47c092d3eb399a803fb1fb
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159996"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290897"
 ---
 # <a name="the-regular-expression-object-model"></a>正则表达式对象模型
 <a name="introduction"></a> 本主题介绍了处理 .NET 正则表达式时使用的对象模型。 它包含下列部分：  
@@ -284,7 +284,7 @@ ms.locfileid: "78159996"
   
  <xref:System.Text.RegularExpressions.Group> 类的属性提供有关捕获的组的信息：`Group.Value` 属性包含捕获的子字符串，`Group.Index` 属性指示输入文本中捕获的组的起始位置，`Group.Length` 属性包含捕获的文本的长度，`Group.Success` 属性指示子字符串是否与捕获组所定义的模式匹配。  
   
- 通过对组应用量符（有关详细信息，请参阅[量符](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)），可以每捕获组修改一个捕获的关系，具体方式分为以下两种：  
+ 通过对组应用量符（有关详细信息，请参阅[量符](quantifiers-in-regular-expressions.md)），可以每捕获组修改一个捕获的关系，具体方式分为以下两种：  
   
 - 如果对组应用 `*` 或 `*?` 限定符（将指定零个或多个匹配项），则捕获组在输入字符串中可能没有匹配项。 在没有捕获的文本时，将如下表所示设置 <xref:System.Text.RegularExpressions.Group> 对象的属性。  
   
@@ -352,5 +352,5 @@ ms.locfileid: "78159996"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Text.RegularExpressions>
-- [.NET 正则表达式](../../../docs/standard/base-types/regular-expressions.md)
-- [正则表达式语言 - 快速参考](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [.NET 正则表达式](regular-expressions.md)
+- [正则表达式语言 - 快速参考](regular-expression-language-quick-reference.md)

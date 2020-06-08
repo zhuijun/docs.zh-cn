@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: 7de8c4e44e1866e3df36c666c9ecc210dc6a7d83
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c6952b4b341a76e15d9699a06cd64ae7b6b4f047
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159359"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285607"
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>使用延续任务来链接任务
 在异步编程中，一个异步操作在完成时调用另一个操作并将数据传递到其中的情况较常见。 传统上，延续性是通过使用回调方法完成的。 在任务并行库中， *延续任务*提供了同样的功能。 延续任务（也简称为“延续”）是一个异步任务，由另一个任务（称为 *前面的任务*）在完成时调用。  
@@ -75,7 +75,7 @@ ms.locfileid: "78159359"
  [!code-csharp[TPL_Continuations#2](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/result1.cs#2)]
  [!code-vb[TPL_Continuations#2](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/result1.vb#2)]  
   
- 如果希望延续即使在前面的任务未完成运行时也运行，则必须防止出现异常。 一种方法是测试前面的任务的 <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> 属性，并且仅在状态不是 <xref:System.Threading.Tasks.Task%601.Result%2A> 或 <xref:System.Threading.Tasks.TaskStatus.Faulted> 时才尝试访问 <xref:System.Threading.Tasks.TaskStatus.Canceled>属性。 也可以检查前面的任务的 <xref:System.Threading.Tasks.Task.Exception%2A> 属性。 有关详细信息，请参阅[异常处理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)。 下面的示例将之前的示例修改为仅在前面的任务的状态为 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 时，才访问该任务的 <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType>属性。  
+ 如果希望延续即使在前面的任务未完成运行时也运行，则必须防止出现异常。 一种方法是测试前面的任务的 <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> 属性，并且仅在状态不是 <xref:System.Threading.Tasks.Task%601.Result%2A> 或 <xref:System.Threading.Tasks.TaskStatus.Faulted> 时才尝试访问 <xref:System.Threading.Tasks.TaskStatus.Canceled>属性。 也可以检查前面的任务的 <xref:System.Threading.Tasks.Task.Exception%2A> 属性。 有关详细信息，请参阅[异常处理](exception-handling-task-parallel-library.md)。 下面的示例将之前的示例修改为仅在前面的任务的状态为 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 时，才访问该任务的 <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType>属性。  
   
  [!code-csharp[TPL_Continuations#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/result2.cs#7)]
  [!code-vb[TPL_Continuations#7](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/result2.vb#7)]  
@@ -114,12 +114,12 @@ ms.locfileid: "78159359"
  [!code-csharp[TPL_Continuations#10](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/detached1.cs#10)]
  [!code-vb[TPL_Continuations#10](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/detached1.vb#10)]  
   
- 前面的任务的最终状态取决于任何附加的子任务的最终状态。 分离的子任务的状态不影响父级。 有关详细信息，请参阅[附加和分离的子任务](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)。  
+ 前面的任务的最终状态取决于任何附加的子任务的最终状态。 分离的子任务的状态不影响父级。 有关详细信息，请参阅[附加和分离的子任务](attached-and-detached-child-tasks.md)。  
   
 ## <a name="associating-state-with-continuations"></a>将状态与延续关联  
  可以将任意状态与任务延续关联。 <xref:System.Threading.Tasks.Task.ContinueWith%2A> 方法提供重载版本，每个重载版本都带有一个表示延续状态的 <xref:System.Object> 值。 可以之后通过使用 <xref:System.Threading.Tasks.Task.AsyncState%2A?displayProperty=nameWithType> 属性访问此状态对象。 如果未提供值，则此状态对象为 `null`。  
   
- 将使用[异步编程模型 (APM)](../../../docs/standard/asynchronous-programming-patterns/asynchronous-programming-model-apm.md) 的现有代码转换为使用 TPL 时，延续状态非常有用。 在 APM 中，通常在 **Begin**_Method_ 方法中提供对象状态，并在之后通过使用 <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType> 属性访问该状态。 通过使用 <xref:System.Threading.Tasks.Task.ContinueWith%2A> 方法，你可在将使用 APM 的代码转换为使用 TPL 时保留此状态。  
+ 将使用[异步编程模型 (APM)](../asynchronous-programming-patterns/asynchronous-programming-model-apm.md) 的现有代码转换为使用 TPL 时，延续状态非常有用。 在 APM 中，通常在 **Begin**_Method_ 方法中提供对象状态，并在之后通过使用 <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType> 属性访问该状态。 通过使用 <xref:System.Threading.Tasks.Task.ContinueWith%2A> 方法，你可在将使用 APM 的代码转换为使用 TPL 时保留此状态。  
   
  在 Visual Studio 调试器中处理 <xref:System.Threading.Tasks.Task> 对象时，延续状态也非常有用。 例如，在“并行任务”  窗口中，“任务”  列显示每个任务的状态对象的字符串表示形式。 有关“并行任务”  窗口的详细信息，请参阅[使用并行任务窗口](/visualstudio/debugger/using-the-tasks-window)。  
   
@@ -146,10 +146,10 @@ ms.locfileid: "78159359"
      [!code-csharp[TPL_Continuations#11](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_continuations/cs/exception2.cs#11)]
      [!code-vb[TPL_Continuations#11](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_continuations/vb/exception2.vb#11)]  
   
-     有关详细信息，请参阅[异常处理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)。  
+     有关详细信息，请参阅[异常处理](exception-handling-task-parallel-library.md)。  
   
-- 如果延续为附加子任务并且是通过使用 <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> 选项创建的，则父级会将该延续的异常传播回调用线程，就像任何其他附加子级的情况一样。 有关详细信息，请参阅[附加和分离的子任务](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)。  
+- 如果延续为附加子任务并且是通过使用 <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> 选项创建的，则父级会将该延续的异常传播回调用线程，就像任何其他附加子级的情况一样。 有关详细信息，请参阅[附加和分离的子任务](attached-and-detached-child-tasks.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [任务并行库 (TPL)](../../../docs/standard/parallel-programming/task-parallel-library-tpl.md)
+- [任务并行库 (TPL)](task-parallel-library-tpl.md)

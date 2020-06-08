@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - cancellation, how to register callbacks
 ms.assetid: 8838dd75-18ed-4b8b-b322-cd4531faac64
-ms.openlocfilehash: 87ba1ab9ac095c733a53f766d00ebb7530a8d9c4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0482d43925f4f547114119a95909501cbf09eedb
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73138001"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279357"
 ---
 # <a name="how-to-register-callbacks-for-cancellation-requests"></a>如何：注册取消请求的回调
 下面的示例展示了如何注册委托，以在 <xref:System.Threading.CancellationToken.IsCancellationRequested%2A> 属性因对创建令牌的对象调用 <xref:System.Threading.CancellationTokenSource.Cancel%2A> 而变为 True 时调用。 使用此技术可取消本地不支持统一取消框架的异步操作，也可取消阻止可能等待异步操作结束的方法。  
@@ -31,4 +31,4 @@ ms.locfileid: "73138001"
   
 ## <a name="see-also"></a>另请参阅
 
-- [托管线程中的取消](../../../docs/standard/threading/cancellation-in-managed-threads.md)
+- [托管线程中的取消](cancellation-in-managed-threads.md)

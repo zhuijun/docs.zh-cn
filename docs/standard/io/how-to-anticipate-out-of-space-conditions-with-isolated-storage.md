@@ -22,16 +22,16 @@ helpviewer_keywords:
 - isolated storage, out of space conditions
 - data storage using isolated storage, out of space conditions
 ms.assetid: e35d4535-3732-421e-b1a3-37412e036145
-ms.openlocfilehash: 5666019e1a65880221261ef5ad704f82c37263b2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bdc2cee343e9d9be44230e84ff45d6fa54901f48
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708110"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288584"
 ---
 # <a name="how-to-anticipate-out-of-space-conditions-with-isolated-storage"></a>如何：预见独立存储中的空间不足条件
 
-使用独立存储的代码受[配额](../../../docs/standard/io/isolated-storage.md#quotas)限制，配额指定了独立存储文件和目录所在数据隔离舱的大小上限。 该配额由安全策略定义，管理员可以对其进行配置。 如果尝试写入数据时超过了所允许的最大大小，将引发 <xref:System.IO.IsolatedStorage.IsolatedStorageException> 异常并使操作失败。 这有助于防止恶意的拒绝服务攻击，此类攻击可能会导致应用因为数据存储已满而拒绝请求。
+使用独立存储的代码受[配额](isolated-storage.md#quotas)限制，配额指定了独立存储文件和目录所在数据隔离舱的大小上限。 该配额由安全策略定义，管理员可以对其进行配置。 如果尝试写入数据时超过了所允许的最大大小，将引发 <xref:System.IO.IsolatedStorage.IsolatedStorageException> 异常并使操作失败。 这有助于防止恶意的拒绝服务攻击，此类攻击可能会导致应用因为数据存储已满而拒绝请求。
 
 为有助于确定给定写入尝试是否有可能由于此原因而失败，<xref:System.IO.IsolatedStorage.IsolatedStorage> 类提供了下列三个只读属性：<xref:System.IO.IsolatedStorage.IsolatedStorage.AvailableFreeSpace%2A>、<xref:System.IO.IsolatedStorage.IsolatedStorage.UsedSize%2A> 和 <xref:System.IO.IsolatedStorage.IsolatedStorage.Quota%2A>。 您可以使用这些属性来确定写入存储区是否将导致超过存储区所允许的最大大小。 记住独立存储可能被同时访问；因此，当计算剩余存储量时，该存储空间可能在您尝试写入存储区时已被使用。 但是，您可以使用存储区的最大大小来确定是否将达到可用存储的上限。
 
@@ -48,5 +48,5 @@ ms.locfileid: "75708110"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile>
-- [独立存储](../../../docs/standard/io/isolated-storage.md)
-- [如何：获取独立存储的存储区](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)
+- [独立存储](isolated-storage.md)
+- [如何：获取独立存储的存储区](how-to-obtain-stores-for-isolated-storage.md)

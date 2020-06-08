@@ -7,15 +7,15 @@ helpviewer_keywords:
 - schemaImporterExtensions element
 - <schemaImporterExtensions> element
 ms.assetid: 465ef2a0-f909-4ac1-9a56-0ead5c849698
-ms.openlocfilehash: 5b9820ccdf2c75bed9beda72358c4c4d82ff9ff7
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: c46c5cb6e01463723f0f2ce3873fb4a6ec0b4e60
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83379792"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84278397"
 ---
 # <a name="schemaimporterextensions-element"></a>\<schemaImporterExtensions> 元素
-包含将 XSD 类型映射到 .NET Framework 类型时 <xref:System.Xml.Serialization.XmlSchemaImporter> 所用的类型。 有关配置文件的详细信息，请参阅[配置文件架构](../../../docs/framework/configure-apps/file-schema/index.md)。  
+包含将 XSD 类型映射到 .NET Framework 类型时 <xref:System.Xml.Serialization.XmlSchemaImporter> 所用的类型。 有关配置文件的详细信息，请参阅[配置文件架构](../../framework/configure-apps/file-schema/index.md)。  
   
 ## <a name="syntax"></a>语法  
   
@@ -29,13 +29,13 @@ ms.locfileid: "83379792"
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<schemaImporterExtensions> 的 \<add> 元素](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)|添加 <xref:System.Xml.Serialization.XmlSchemaImporter> 用来创建映射的类型。|  
+|[\<add> 的 \<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md) 元素|添加 <xref:System.Xml.Serialization.XmlSchemaImporter> 用来创建映射的类型。|  
   
 ## <a name="parent-elements"></a>父元素  
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<system.xml.serialization> 元素](../../../docs/standard/serialization/system-xml-serialization-element.md)|用于控制 XML 序列化的顶级元素。|  
+|[\<system.xml.serialization> 元素](system-xml-serialization-element.md)|用于控制 XML 序列化的顶级元素。|  
   
 ## <a name="example"></a>示例  
  下面的代码示例演示如何添加将 XSD 类型映射到 .NET Framework 类型时 <xref:System.Xml.Serialization.XmlSchemaImporter> 所用的类型。  
@@ -55,7 +55,7 @@ ms.locfileid: "83379792"
 
 - <xref:System.Xml.Serialization.XmlSchemaImporter>
 - <xref:System.Xml.Serialization.Configuration.DateTimeSerializationSection.DateTimeSerializationMode>
-- [配置文件架构](../../../docs/framework/configure-apps/file-schema/index.md)
-- [\<dateTimeSerialization> 元素](../../../docs/standard/serialization/datetimeserialization-element.md)
-- [\<schemaImporterExtensions> 的 \<add> 元素](../../../docs/standard/serialization/add-element-for-schemaimporterextensions.md)
-- [\<system.xml.serialization> 元素](../../../docs/standard/serialization/system-xml-serialization-element.md)
+- [配置文件架构](../../framework/configure-apps/file-schema/index.md)
+- [\<dateTimeSerialization> 元素](datetimeserialization-element.md)
+- [\<add> 的 \<schemaImporterExtensions>](add-element-for-schemaimporterextensions.md) 元素
+- [\<system.xml.serialization> 元素](system-xml-serialization-element.md)

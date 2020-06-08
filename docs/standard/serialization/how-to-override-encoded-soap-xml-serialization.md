@@ -6,16 +6,16 @@ helpviewer_keywords:
 - overriding XML serialization
 - SOAP, overriding encoded XML serialization
 ms.assetid: d0791df8-04e3-46b4-a6be-fe0ed09267e8
-ms.openlocfilehash: 76e8009b83182d8517ff403f4f1e67bf0e7846b8
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 50688cb25294f14a9dd4596258eb95adf93cdb41
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83375831"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84277981"
 ---
 # <a name="how-to-override-encoded-soap-xml-serialization"></a>如何：替代编码的 SOAP XML 序列化
 
-将对象的 XML 序列化重写为 SOAP 消息的过程类似于重写标准 XML 序列化的过程。 有关重写标准 XML 序列化的信息，请参见[如何：指定 XML 流的替代元素名称](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)。
+将对象的 XML 序列化重写为 SOAP 消息的过程类似于重写标准 XML 序列化的过程。 有关重写标准 XML 序列化的信息，请参见[如何：指定 XML 流的替代元素名称](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)。
 
 ## <a name="to-override-serialization-of-objects-as-soap-messages"></a>将对象的序列化重写为 SOAP 消息
 
@@ -281,9 +281,9 @@ public class Run
 
 ## <a name="see-also"></a>请参阅
 
-- [XML 和 SOAP 序列化](../../../docs/standard/serialization/xml-and-soap-serialization.md)
-- [用来控制编码的 SOAP 序列化的属性](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)
-- [使用 XML Web services 进行 XML 序列化](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)
-- [如何：序列化对象](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [如何：反序列化对象](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
-- [如何：将对象序列化为 SOAP 编码的 XML 流](../../../docs/standard/serialization/how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)
+- [XML 和 SOAP 序列化](xml-and-soap-serialization.md)
+- [用来控制编码的 SOAP 序列化的属性](attributes-that-control-encoded-soap-serialization.md)
+- [使用 XML Web services 进行 XML 序列化](xml-serialization-with-xml-web-services.md)
+- [如何：序列化对象](how-to-serialize-an-object.md)
+- [如何：反序列化对象](how-to-deserialize-an-object.md)
+- [如何：将对象序列化为 SOAP 编码的 XML 流](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)

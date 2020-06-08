@@ -10,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, miscellaneous constructs
 - regular expressions, miscellaneous constructs
 ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
-ms.openlocfilehash: a43ce44e11a9231dee2961ee02bac745d9ca71cb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8ca888074aa757a1bfba786a7bec5928b75b1da2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73141599"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290404"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>正则表达式中的其他构造
 .NET 中的正则表达式包括三个其他语言构造。 其中一个使你可以在正则表达式模式中间启用或禁用特定匹配选项。 其余两个使你可以在正则表达式中包含注释。  
@@ -25,7 +25,7 @@ ms.locfileid: "73141599"
   
 `(?imnsx-imnsx)`  
   
- 在问号后列出要启用的选项，在负号后列出要禁用的选项。 下表对每个选项进行了描述。 有关每个选项的更多信息，请参见[正则表达式选项](../../../docs/standard/base-types/regular-expression-options.md)。  
+ 在问号后列出要启用的选项，在负号后列出要禁用的选项。 下表对每个选项进行了描述。 有关每个选项的更多信息，请参见[正则表达式选项](regular-expression-options.md)。  
   
 |选项|描述|  
 |------------|-----------------|  
@@ -38,7 +38,7 @@ ms.locfileid: "73141599"
  如果 `(?imnsx-imnsx)` 构造定义的正则表达式选项有任何更改，更改在封闭组结束前一直有效。  
   
 > [!NOTE]
-> `(?imnsx-imnsx:`subexpression  `)` 分组构造为子表达式提供了完全相同的功能。 有关详细信息，请参阅 [分组构造](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)。  
+> `(?imnsx-imnsx:`subexpression  `)` 分组构造为子表达式提供了完全相同的功能。 有关详细信息，请参阅 [分组构造](grouping-constructs-in-regular-expressions.md)。  
   
  下面的示例使用 `i`、`n` 和 `x` 选项，启用不区分大小写和显式捕获，并在正则表达式中间忽略正则表达式模式中的空格。  
   
@@ -99,4 +99,4 @@ ms.locfileid: "73141599"
   
 ## <a name="see-also"></a>请参阅
 
-- [正则表达式语言 - 快速参考](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [正则表达式语言 - 快速参考](regular-expression-language-quick-reference.md)

@@ -17,15 +17,15 @@ helpviewer_keywords:
 - strings [.NET Framework], regular expressions
 - parsing text with regular expressions, backtracking
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
-ms.openlocfilehash: 9c525229eb1ba5ca00ad1042864f92621bb366d2
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: d9fb976c73891646df60b5329beb09493acbae8a
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243227"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277799"
 ---
 # <a name="backtracking-in-regular-expressions"></a>正则表达式中的回溯
-当正则表达式模式包含可选[限定符](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)或[备用构造](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)时，会发生回溯，并且正则表达式引擎会返回以前保存的状态，以继续搜索匹配项。 回溯是正则表达式的强大功能的中心；它使得表达式强大、灵活，可以匹配非常复杂的模式。 同时，这种强大功能需要付出一定代价。 通常，回溯是影响正则表达式引擎性能的单个最重要的因素。 幸运的是，开发人员可以控制正则表达式引擎的行为及其使用回溯的方式。 本主题说明回溯的工作方式以及如何对其进行控制。  
+当正则表达式模式包含可选[限定符](quantifiers-in-regular-expressions.md)或[备用构造](alternation-constructs-in-regular-expressions.md)时，会发生回溯，并且正则表达式引擎会返回以前保存的状态，以继续搜索匹配项。 回溯是正则表达式的强大功能的中心；它使得表达式强大、灵活，可以匹配非常复杂的模式。 同时，这种强大功能需要付出一定代价。 通常，回溯是影响正则表达式引擎性能的单个最重要的因素。 幸运的是，开发人员可以控制正则表达式引擎的行为及其使用回溯的方式。 本主题说明回溯的工作方式以及如何对其进行控制。  
   
 > [!NOTE]
 > 通常情况下，非确定性有限自动机 (NFA) 引擎（如 .NET 正则表达式引擎）会将构造快速高效的正则表达式的职责交给开发人员。  
@@ -103,7 +103,7 @@ ms.locfileid: "81243227"
  输入字符串与正则表达式的比较将以此方式继续，直到正则表达式引擎已尝试所有可能的匹配组合然后得出无匹配的结论。 因为存在嵌套的限定符，所以此比较为 O(2<sup>n</sup>) 或指数操作，其中 n 是输入字符串中的字符数  。 这意味着在最糟糕的情况下，包含 30 个字符的输入字符串大约需要进行 1,073,741,824 次比较，包含 40 个字符的输入字符串大约需要进行 1,099,511,627,776 次比较。 如果使用上述长度甚至更长的字符串，则正则表达式方法在处理与正则表达式模式不匹配的输入时，会需要超长的时间来完成。
 
 ## <a name="controlling-backtracking"></a>控制回溯  
- 通过回溯可以创建强大、灵活的正则表达式。 但如上一节所示，回溯在提供这些优点的同时，可能也会使性能差的无法接受。 若要防止过度回溯，则应在实例化 <xref:System.Text.RegularExpressions.Regex> 对象或调用静态正则表达式匹配方法时定义超时间隔。 下一节中将对此进行讨论。 此外，.NET 支持下面三个正则表达式语言元素，它们限制或禁止回溯、支持复杂的正则表达式，且不或几乎不损害性能：[原子组](#atomic-groups)、[回顾后发断言](#lookbehind-assertions)和[先行断言](#lookahead-assertions)。 有关每个语言元素的详细信息，请参见 [分组构造](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)。  
+ 通过回溯可以创建强大、灵活的正则表达式。 但如上一节所示，回溯在提供这些优点的同时，可能也会使性能差的无法接受。 若要防止过度回溯，则应在实例化 <xref:System.Text.RegularExpressions.Regex> 对象或调用静态正则表达式匹配方法时定义超时间隔。 下一节中将对此进行讨论。 此外，.NET 支持下面三个正则表达式语言元素，它们限制或禁止回溯、支持复杂的正则表达式，且不或几乎不损害性能：[原子组](#atomic-groups)、[回顾后发断言](#lookbehind-assertions)和[先行断言](#lookahead-assertions)。 有关每个语言元素的详细信息，请参见 [分组构造](grouping-constructs-in-regular-expressions.md)。  
 
 ### <a name="defining-a-time-out-interval"></a>定义超时间隔  
  从 .NET Framework 4.5 开始，可以设置超时值，该值表示正则表达式引擎在放弃尝试并引发 <xref:System.Text.RegularExpressions.RegexMatchTimeoutException> 异常之前将搜索单个匹配项的最长间隔。 你可以通过向实例正则表达式的 <xref:System.TimeSpan> 构造函数提供 <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29> 值来指定超时间隔。 此外，每种静态模式匹配方法都具有带 <xref:System.TimeSpan> 参数的重载，该参数允许你指定超时值。 默认情况下，超时间隔设置为 <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> 且正则表达式引擎不会超时。  
@@ -190,8 +190,8 @@ ms.locfileid: "81243227"
   
 ## <a name="see-also"></a>请参阅
 
-- [.NET 正则表达式](../../../docs/standard/base-types/regular-expressions.md)
-- [正则表达式语言 - 快速参考](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
-- [数量词](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)
-- [替换构造](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)
-- [分组构造](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)
+- [.NET 正则表达式](regular-expressions.md)
+- [正则表达式语言 - 快速参考](regular-expression-language-quick-reference.md)
+- [数量词](quantifiers-in-regular-expressions.md)
+- [替换构造](alternation-constructs-in-regular-expressions.md)
+- [分组构造](grouping-constructs-in-regular-expressions.md)

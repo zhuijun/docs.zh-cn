@@ -11,17 +11,17 @@ helpviewer_keywords:
 - raising events
 - events [.NET Framework], samples
 ms.assetid: 42afade7-3a02-4f2e-868b-95845f302f8f
-ms.openlocfilehash: 256b5ae9ac2145e339136985872dfa5423aca730
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4d0b24b8a6f1b914745d819b90b973752e32447c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73131588"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279953"
 ---
 # <a name="how-to-raise-and-consume-events"></a>如何：引发和使用事件
 本主题中的示例演示如何处理事件。 它们包含 <xref:System.EventHandler>、<xref:System.EventHandler%601> 委托和自定义委托的示例，用于说明包含数据和不包含数据的事件。  
   
- 这些示例使用[事件](../../../docs/standard/events/index.md)一文中介绍的概念。  
+ 这些示例使用[事件](index.md)一文中介绍的概念。  
   
 ## <a name="example"></a>示例  
  第一个示例演示如何引发和使用一个没有数据的事件。 它包含一个名为 `Counter` 类，该类具有一个名为 `ThresholdReached` 的事件。 当计数器值等于或者超过阈值时，将引发此事件。 <xref:System.EventHandler> 委托与此事件关联，因为没有提供任何事件数据。  
@@ -44,4 +44,4 @@ ms.locfileid: "73131588"
   
 ## <a name="see-also"></a>另请参阅
 
-- [事件](../../../docs/standard/events/index.md)
+- [事件](index.md)

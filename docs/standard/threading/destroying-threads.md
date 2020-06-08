@@ -9,12 +9,12 @@ helpviewer_keywords:
 - destroying threads
 - threading [.NET Framework], destroying threads
 ms.assetid: df54e648-c5d1-47c9-bd29-8e4438c1db6d
-ms.openlocfilehash: 842ca4ff17f9cbab3a1518d2dea37436c9b23f9d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9f69773ec19008ebafd28a68e4e2007b6f9bb979
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78155927"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279810"
 ---
 # <a name="destroying-threads"></a>销毁线程
 
@@ -69,4 +69,4 @@ catch (ThreadAbortException ex)
 
 - <xref:System.Threading.ThreadAbortException>
 - <xref:System.Threading.Thread>
-- [使用线程和线程处理](../../../docs/standard/threading/using-threads-and-threading.md)
+- [使用线程和线程处理](using-threads-and-threading.md)

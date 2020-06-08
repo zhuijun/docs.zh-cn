@@ -17,18 +17,18 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET Framework], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-ms.openlocfilehash: ec06edc16829c6d4caf8c760922aac1471e365c2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2ed9ca7337e40b5520ddbfc92925c5bedb45f701
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75346632"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289273"
 ---
 # <a name="standard-timespan-format-strings"></a>标准 TimeSpan 格式字符串
 
-标准 <xref:System.TimeSpan> 格式字符串使用一个格式说明符，定义格式设置操作生成的 <xref:System.TimeSpan> 值的文本表示形式。 任何包含一个以上字符（包括空格）的格式字符串都被解释为自定义 <xref:System.TimeSpan> 格式字符串。 有关详细信息，请参阅[自定义 TimeSpan 格式字符串](../../../docs/standard/base-types/custom-timespan-format-strings.md)。  
+标准 <xref:System.TimeSpan> 格式字符串使用一个格式说明符，定义格式设置操作生成的 <xref:System.TimeSpan> 值的文本表示形式。 任何包含一个以上字符（包括空格）的格式字符串都被解释为自定义 <xref:System.TimeSpan> 格式字符串。 有关详细信息，请参阅[自定义 TimeSpan 格式字符串](custom-timespan-format-strings.md)。  
   
- 通过调用 <xref:System.TimeSpan> 方法的重载以及通过支持复合格式设置的方法（如 <xref:System.TimeSpan.ToString%2A?displayProperty=nameWithType>）产生 <xref:System.String.Format%2A?displayProperty=nameWithType> 值的字符串表示形式。 有关更多信息，请参见[格式设置类型](../../../docs/standard/base-types/formatting-types.md)和[复合格式设置](../../../docs/standard/base-types/composite-formatting.md)。 以下示例演示了标准格式字符串在格式设置操作中的用法。  
+ 通过调用 <xref:System.TimeSpan> 方法的重载以及通过支持复合格式设置的方法（如 <xref:System.TimeSpan.ToString%2A?displayProperty=nameWithType>）产生 <xref:System.String.Format%2A?displayProperty=nameWithType> 值的字符串表示形式。 有关更多信息，请参见[格式设置类型](formatting-types.md)和[复合格式设置](composite-formatting.md)。 以下示例演示了标准格式字符串在格式设置操作中的用法。  
   
  [!code-csharp[Conceptual.TimeSpan.Standard#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.timespan.standard/cs/formatexample1.cs#2)]
  [!code-vb[Conceptual.TimeSpan.Standard#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.timespan.standard/vb/formatexample1.vb#2)]  
@@ -122,6 +122,6 @@ ms.locfileid: "75346632"
   
 ## <a name="see-also"></a>请参阅
 
-- [格式设置类型](../../../docs/standard/base-types/formatting-types.md)
-- [自定义 TimeSpan 格式字符串](../../../docs/standard/base-types/custom-timespan-format-strings.md)
-- [分析字符串](../../../docs/standard/base-types/parsing-strings.md)
+- [格式设置类型](formatting-types.md)
+- [自定义 TimeSpan 格式字符串](custom-timespan-format-strings.md)
+- [分析字符串](parsing-strings.md)

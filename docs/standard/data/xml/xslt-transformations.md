@@ -3,12 +3,12 @@ title: XSLT 转换
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 202f8820-224c-494f-b61e-cd127eac6e03
-ms.openlocfilehash: 4bbecfbf1b163a9d7bfe6957806095b5b17fbab7
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 92d0af1519260d458d3954beaef38e698142367a
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709629"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288298"
 ---
 # <a name="xslt-transformations"></a>XSLT 转换
 可扩展样式表语言转换 (XSLT) 可以将源 XML 文档的内容转换为另一个格式或结构不同的文档。 例如，可以使用 XSLT 将 XML 转换为在网站上使用的 HTML 或转换为只包含应用程序所需字段的文档。 此转换过程由 [W3C XSL 转换 (XSLT) 版本 1.0 建议](https://www.w3.org/TR/xslt-10/)规定。  
@@ -19,16 +19,16 @@ ms.locfileid: "75709629"
 > <xref:System.Xml.Xsl.XslTransform> 类在 .NET Framework 2.0 版中已过时。 <xref:System.Xml.Xsl.XslCompiledTransform> 类是 XSLT 引擎的新实现。 它包括性能改进和新的安全功能。 建议的做法是使用 <xref:System.Xml.Xsl.XslCompiledTransform> 类创建 XSLT 应用程序。  
   
 ## <a name="in-this-section"></a>本节内容  
- [使用 XslCompiledTransform 类](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)  
+ [使用 XslCompiledTransform 类](using-the-xslcompiledtransform-class.md)  
  提供如何使用 <xref:System.Xml.Xsl.XslCompiledTransform> 类的信息。  
   
- [从 XslTransform 类迁移](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)  
+ [从 XslTransform 类迁移](migrating-from-the-xsltransform-class.md)  
  讨论如何从 <xref:System.Xml.Xsl.XslTransform> 类迁移代码。  
   
- [XSLT 编译器 (xsltc.exe)](../../../../docs/standard/data/xml/xslt-compiler-xsltc-exe.md)  
+ [XSLT 编译器 (xsltc.exe)](xslt-compiler-xsltc-exe.md)  
  提供有关如何使用 XSLT 编译器的信息。  
   
- [XslTransform 类的 XSLT 转换](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)  
+ [XslTransform 类的 XSLT 转换](xslt-transformations-with-the-xsltransform-class.md)  
  提供如何使用 <xref:System.Xml.Xsl.XslTransform> 类的信息。  
   
 ## <a name="reference"></a>参考  
@@ -37,4 +37,4 @@ ms.locfileid: "75709629"
  <xref:System.Xml.Xsl.XsltSettings>  
   
 ## <a name="related-sections"></a>相关章节  
- [XML 文档和数据](../../../../docs/standard/data/xml/index.md)
+ [XML 文档和数据](index.md)

@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, how to unwrap nested tasks
 ms.assetid: a0769dd2-0f6d-48ca-8418-a9d39de7f450
-ms.openlocfilehash: c72654a2bc21035fe706d76018bb163d8ba01ee8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9a69fa42da41ee4a071a6571042fd96fb5a009d2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73106905"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288025"
 ---
 # <a name="how-to-unwrap-a-nested-task"></a>如何：解除嵌套任务的包装
 可以从方法返回任务，再等待或继续执行此任务，如下面的示例所示：  
@@ -44,4 +44,4 @@ ms.locfileid: "73106905"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Threading.Tasks.TaskExtensions?displayProperty=nameWithType>
-- [基于任务的异步编程](../../../docs/standard/parallel-programming/task-based-asynchronous-programming.md)
+- [基于任务的异步编程](task-based-asynchronous-programming.md)

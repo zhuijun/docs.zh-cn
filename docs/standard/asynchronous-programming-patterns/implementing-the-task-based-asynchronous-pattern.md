@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: fab6bd41-91bd-44ad-86f9-d8319988aa78
-ms.openlocfilehash: 7d031bab6ba0a4420062eff107aeb1262d9b3b40
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 1f2f44b6b92f66f95816778c6dc8e893f1291abe
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421223"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289351"
 ---
 # <a name="implementing-the-task-based-asynchronous-pattern"></a>实现基于任务的异步模式
 可使用以下三种方式实现基于任务的异步模式 (TAP)：使用 Visual Studio 中的 C# 和 Visual Basic 编译器、手动实现或编译器和手动方法相结合。 以下各节详细地讨论了每一种方法。 可以使用 TAP 模式实现计算密集型和 I/O 密集型异步操作。 [工作负载](#workloads)部分介绍了各种类型的操作。
@@ -98,10 +98,10 @@ ms.locfileid: "83421223"
 [!code-csharp[Conceptual.TAP_Patterns#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.tap_patterns/cs/patterns1.cs#7)]
 [!code-vb[Conceptual.TAP_Patterns#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.tap_patterns/vb/patterns1.vb#7)]
 
-此示例还演示了如何通过多个异步操作使单个取消标记线程化。 有关详细信息，请参阅[使用基于任务的异步模式](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md)中的取消用法部分。
+此示例还演示了如何通过多个异步操作使单个取消标记线程化。 有关详细信息，请参阅[使用基于任务的异步模式](consuming-the-task-based-asynchronous-pattern.md)中的取消用法部分。
 
 ## <a name="see-also"></a>请参阅
 
-- [基于任务的异步模式 (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)
-- [使用基于任务的异步模式](../../../docs/standard/asynchronous-programming-patterns/consuming-the-task-based-asynchronous-pattern.md)
-- [与其他异步模式和类型互操作](../../../docs/standard/asynchronous-programming-patterns/interop-with-other-asynchronous-patterns-and-types.md)
+- [基于任务的异步模式 (TAP)](task-based-asynchronous-pattern-tap.md)
+- [使用基于任务的异步模式](consuming-the-task-based-asynchronous-pattern.md)
+- [与其他异步模式和类型互操作](interop-with-other-asynchronous-patterns-and-types.md)

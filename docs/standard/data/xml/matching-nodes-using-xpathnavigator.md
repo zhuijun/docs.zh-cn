@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e6848c47-ee5d-401a-89a5-50b5eed40f30
-ms.openlocfilehash: f0988c3a112fefc351175de02c790dc25fe6e94a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 47b0ba7e705ad602825dcca3f24c207362174a4c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710682"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289117"
 ---
 # <a name="matching-nodes-using-xpathnavigator"></a>使用 XPathNavigator 匹配节点
 <xref:System.Xml.XPath.XPathNavigator> 类提供了 <xref:System.Xml.XPath.XPathNavigator.Matches%2A> 方法来确定节点是否与 XPath 表达式匹配。 <xref:System.Xml.XPath.XPathNavigator.Matches%2A> 方法使用 XPath 表达式作为输入并返回一个 <xref:System.Boolean>，指示当前节点是否与给定的 XPath 表达式或给定的已编译 <xref:System.Xml.XPath.XPathExpression> 对象匹配。  
@@ -41,9 +41,9 @@ navigator.Matches("b[@c]");
 - <xref:System.Xml.XmlDocument>
 - <xref:System.Xml.XPath.XPathDocument>
 - <xref:System.Xml.XPath.XPathNavigator>
-- [使用 XPath 数据模型处理 XML 数据](../../../../docs/standard/data/xml/process-xml-data-using-the-xpath-data-model.md)
-- [使用 XPathNavigator 选择 XML 数据](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)
-- [使用 XPathNavigator 计算 XPath 表达式](../../../../docs/standard/data/xml/evaluate-xpath-expressions-using-xpathnavigator.md)
-- [XPath 查询识别的节点类型](../../../../docs/standard/data/xml/node-types-recognized-with-xpath-queries.md)
-- [XPath 查询和命名空间](../../../../docs/standard/data/xml/xpath-queries-and-namespaces.md)
-- [已编译的 XPath 表达式](../../../../docs/standard/data/xml/compiled-xpath-expressions.md)
+- [使用 XPath 数据模型处理 XML 数据](process-xml-data-using-the-xpath-data-model.md)
+- [使用 XPathNavigator 选择 XML 数据](select-xml-data-using-xpathnavigator.md)
+- [使用 XPathNavigator 计算 XPath 表达式](evaluate-xpath-expressions-using-xpathnavigator.md)
+- [XPath 查询识别的节点类型](node-types-recognized-with-xpath-queries.md)
+- [XPath 查询和命名空间](xpath-queries-and-namespaces.md)
+- [已编译的 XPath 表达式](compiled-xpath-expressions.md)

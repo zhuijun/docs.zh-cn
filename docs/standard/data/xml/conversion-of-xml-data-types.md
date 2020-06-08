@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a2aa99ba-8239-4818-9281-f1d72ee40bde
-ms.openlocfilehash: b6e6f2c4b28e9220727bf0fe1a958a7b69111571
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: d8b60428bc129958355ce5b285662847e9e712c3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202158"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282410"
 ---
 # <a name="conversion-of-xml-data-types"></a>XML 数据类型的转换
 XmlConvert 类中的大多数方法都可用于在字符串和强类型格式之间转换数据。 这些方法与区域设置无关。 这意味着它们在执行转换时不考虑任何区域设置。  
@@ -66,5 +66,5 @@ writer.WriteElementString("TestInt32",XmlConvert.ToString(vInt32));
   
 ## <a name="see-also"></a>请参阅
 
-- [将字符串转换为 .NET Framework 数据类型](../../../../docs/standard/data/xml/converting-strings-to-dotnet-data-types.md)
-- [将 .NET Framework 类型转换为字符串](../../../../docs/standard/data/xml/converting-dotnet-types-to-strings.md)
+- [将字符串转换为 .NET Framework 数据类型](converting-strings-to-dotnet-data-types.md)
+- [将 .NET Framework 类型转换为字符串](converting-dotnet-types-to-strings.md)

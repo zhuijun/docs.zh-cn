@@ -3,12 +3,12 @@ title: System.Xml 类中的类型支持
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 63570538-06e3-4401-ad4d-ac50be90c7bf
-ms.openlocfilehash: cec47d40a0353639bc17b880265f7c15f2f53ac4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8ceda15cb8463db3e81260529ebb1e3a67a0c1af
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710097"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84283294"
 ---
 # <a name="type-support-in-the-systemxml-classes"></a>System.Xml 类中的类型支持
 在 .NET Framework 2.0 版中，核心 XML 类已得到增强，具有类型支持功能。 <xref:System.Xml.XmlReader>、<xref:System.Xml.XmlWriter> 和 <xref:System.Xml.XPath.XPathNavigator> 类具有类型支持功能，可以在 XML 架构类型和公共语言运行库 (CLR) 类型之间转换。  
@@ -27,14 +27,14 @@ ms.locfileid: "75710097"
 > 在 .NET Framework 1.0 版中，需要使用 <xref:System.Xml.XmlConvert> 类在 XML 架构和 CLR 类型之间进行转换。  
   
 ## <a name="in-this-section"></a>本节内容  
- [将 XML 数据类型映射到 CLR 类型](../../../../docs/standard/data/xml/mapping-xml-data-types-to-clr-types.md)  
+ [将 XML 数据类型映射到 CLR 类型](mapping-xml-data-types-to-clr-types.md)  
  介绍 XML 数据类型与 CLR 类型的默认映射。  
   
- [XML 类型支持实现说明](../../../../docs/standard/data/xml/xml-type-support-implementation-notes.md)  
+ [XML 类型支持实现说明](xml-type-support-implementation-notes.md)  
  介绍一些类型支持实现的详细信息。  
   
- [XML 数据类型转换](../../../../docs/standard/data/xml/conversion-of-xml-data-types.md)  
+ [XML 数据类型转换](conversion-of-xml-data-types.md)  
  描述如何使用 <xref:System.Xml.XmlConvert> 类在 XML 架构和 CLR 类型之间进行转换。  
   
 ## <a name="related-sections"></a>相关章节  
- [使用 XPathNavigator 访问强类型 XML 数据](../../../../docs/standard/data/xml/accessing-strongly-typed-xml-data-using-xpathnavigator.md)
+ [使用 XPathNavigator 访问强类型 XML 数据](accessing-strongly-typed-xml-data-using-xpathnavigator.md)

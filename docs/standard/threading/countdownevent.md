@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - synchronization primitives, CountdownEvent
 ms.assetid: eec3812a-e20f-4ecd-bfef-6921d508b708
-ms.openlocfilehash: 628d6a96606117d447c61d01595d13dd4a957ce4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8ed1414ad377015400d9e126d924bf426fbc753d
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73138113"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84277851"
 ---
 # <a name="countdownevent"></a>CountdownEvent
 <xref:System.Threading.CountdownEvent?displayProperty=nameWithType> 是在收到信号特定次数后取消阻止等待线程的同步基元。 <xref:System.Threading.CountdownEvent> 适用于以下情况：不得不先使用 <xref:System.Threading.ManualResetEvent> 或 <xref:System.Threading.ManualResetEventSlim> 并手动递减变量，然后再向事件发出信号。 例如，在分支/联接方案中，可以只创建信号计数为 5 的 <xref:System.Threading.CountdownEvent>，然后在线程池中启动五个工作项，并让每个工作项在完成时调用 <xref:System.Threading.CountdownEvent.Signal%2A>。 每次调用 <xref:System.Threading.CountdownEvent.Signal%2A> 都会让信号计数递减 1。 在主线程上，<xref:System.Threading.CountdownEvent.Wait%2A> 调用一直阻止到信号计数为零。  
@@ -38,7 +38,7 @@ ms.locfileid: "73138113"
  [!code-vb[CDS_CountdownEvent#01](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_countdownevent/vb/module1.vb#01)]  
   
 ## <a name="countdownevent-with-cancellation"></a>结合使用 CountdownEvent 和取消令牌  
- 下面的示例展示了如何使用取消令牌对 <xref:System.Threading.CountdownEvent> 取消等待操作。 基本模式遵循 .NET Framework 4 中引入的统一取消模型。 有关详细信息，请参阅[托管线程中的取消](../../../docs/standard/threading/cancellation-in-managed-threads.md)。  
+ 下面的示例展示了如何使用取消令牌对 <xref:System.Threading.CountdownEvent> 取消等待操作。 基本模式遵循 .NET Framework 4 中引入的统一取消模型。 有关详细信息，请参阅[托管线程中的取消](cancellation-in-managed-threads.md)。  
   
  [!code-csharp[CDS_CountdownEvent#02](../../../samples/snippets/csharp/VS_Snippets_Misc/cds_countdownevent/cs/countdownevent.cs#02)]
  [!code-vb[CDS_CountdownEvent#02](../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_countdownevent/vb/canceleventwait.vb#02)]  

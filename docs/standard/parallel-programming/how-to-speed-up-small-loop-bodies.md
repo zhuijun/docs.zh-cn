@@ -8,15 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - parallel loops, how to speed up
 ms.assetid: c7a66677-cb59-4cbf-969a-d2e8fc61a6ce
-ms.openlocfilehash: 29d7fa8200ddd972c1a5c98ea6f30a7c8ff732e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4983cafb9d4a72262dc7a6a6c37fab23937b3274
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139749"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84288077"
 ---
 # <a name="how-to-speed-up-small-loop-bodies"></a>如何：加快小型循环体的速度
-如果 <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> 循环的主体很小，它的执行速度可能慢于相当的顺序循环，如 C# 中的 [for](../../csharp/language-reference/keywords/for.md) 循环和 Visual Basic 中的 [For](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/44kykk21(v=vs.90)) 循环。 性能下降是由数据分区中的开销和在每个循环迭代上调用委托的成本所引起的。 若要解决这种情况下，<xref:System.Collections.Concurrent.Partitioner> 类提供了 <xref:System.Collections.Concurrent.Partitioner.Create%2A?displayProperty=nameWithType> 方法，使你能够为委托主体提供一个顺序循环，以便每个分区仅调用一次委托，而不是每个迭代调用一次委托。 有关详细信息，请参阅 [PLINQ 和 TPL 的自定义分区程序](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)。  
+如果 <xref:System.Threading.Tasks.Parallel.For%2A?displayProperty=nameWithType> 循环的主体很小，它的执行速度可能慢于相当的顺序循环，如 C# 中的 [for](../../csharp/language-reference/keywords/for.md) 循环和 Visual Basic 中的 [For](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/44kykk21(v=vs.90)) 循环。 性能下降是由数据分区中的开销和在每个循环迭代上调用委托的成本所引起的。 若要解决这种情况下，<xref:System.Collections.Concurrent.Partitioner> 类提供了 <xref:System.Collections.Concurrent.Partitioner.Create%2A?displayProperty=nameWithType> 方法，使你能够为委托主体提供一个顺序循环，以便每个分区仅调用一次委托，而不是每个迭代调用一次委托。 有关详细信息，请参阅 [PLINQ 和 TPL 的自定义分区程序](custom-partitioners-for-plinq-and-tpl.md)。  
   
 ## <a name="example"></a>示例  
  [!code-csharp[TPL_Partitioners#01](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_partitioners/cs/partitioner01.cs#01)]
@@ -26,8 +26,8 @@ ms.locfileid: "73139749"
   
 ## <a name="see-also"></a>另请参阅
 
-- [数据并行](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)
-- [PLINQ 和 TPL 的自定义分区程序](../../../docs/standard/parallel-programming/custom-partitioners-for-plinq-and-tpl.md)
+- [数据并行](data-parallelism-task-parallel-library.md)
+- [PLINQ 和 TPL 的自定义分区程序](custom-partitioners-for-plinq-and-tpl.md)
 - [迭代器 (C#)](../../csharp/programming-guide/concepts/iterators.md)
 - [迭代器 (Visual Basic)](../../visual-basic/programming-guide/concepts/iterators.md)
-- [PLINQ 和 TPL 中的 Lambda 表达式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)
+- [PLINQ 和 TPL 中的 Lambda 表达式](lambda-expressions-in-plinq-and-tpl.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - threading [.NET Framework],exceptions in managed threads
 - managed threading
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
-ms.openlocfilehash: 6c14c60b30f8f70aa5e888ed45d6f867154e18d8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 56900ddab5e1e6ee5375c8979dc19694d4ad9c54
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159645"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279693"
 ---
 # <a name="exceptions-in-managed-threads"></a>托管线程中的异常
 从 .NET Framework 2.0 版开始，公共语言运行时允许线程中的多数未经处理的异常正常继续。 在多数情况下，这意味着未经处理的异常会导致应用程序终止。  
@@ -64,7 +64,7 @@ ms.locfileid: "78159645"
   
 - 如果线程必须停止才能使进程终止，请将该线程设置为后台线程，这样它就会在进程退出时自动终止。  
   
- 在所有情况下，迁移策略均应遵循异常设计准则。 请参阅[异常设计准则](../../../docs/standard/design-guidelines/exceptions.md)。  
+ 在所有情况下，迁移策略均应遵循异常设计准则。 请参阅[异常设计准则](../design-guidelines/exceptions.md)。  
   
 ### <a name="application-compatibility-flag"></a>应用程序兼容性标志  
  作为临时的兼容性措施，管理员可以将兼容性标志放在应用程序配置文件的 `<runtime>` 节中。 这会导致公共语言运行时回到 1.0 和 1.1 版的行为。  
@@ -74,8 +74,8 @@ ms.locfileid: "78159645"
 ```  
   
 ## <a name="host-override"></a>主机重写  
- 在 .NET Framework 2.0 版中，非托管主机可以使用宿主 API 中的 [ICLRPolicyManager](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) 接口来重写公共语言运行时的默认未经处理的异常。 [ICLRPolicyManager::SetUnhandledExceptionPolicy](../../../docs/framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md) 函数用于设置未经处理的异常的策略。  
+ 在 .NET Framework 2.0 版中，非托管主机可以使用宿主 API 中的 [ICLRPolicyManager](../../framework/unmanaged-api/hosting/iclrpolicymanager-interface.md) 接口来重写公共语言运行时的默认未经处理的异常。 [ICLRPolicyManager::SetUnhandledExceptionPolicy](../../framework/unmanaged-api/hosting/iclrpolicymanager-setunhandledexceptionpolicy-method.md) 函数用于设置未经处理的异常的策略。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [托管线程处理基本知识](../../../docs/standard/threading/managed-threading-basics.md)
+- [托管线程处理基本知识](managed-threading-basics.md)

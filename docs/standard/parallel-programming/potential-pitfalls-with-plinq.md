@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, pitfalls
 ms.assetid: 75a38b55-4bc4-488a-87d5-89dbdbdc76a2
-ms.openlocfilehash: 44f40d6caad9187376a790f9a0ed09e22c861e37
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: b4d58734fba4b834d5f5819a6bf19da0b7b7e8db
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588598"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285308"
 ---
 # <a name="potential-pitfalls-with-plinq"></a>PLINQ 的潜在缺陷
 
@@ -44,7 +44,7 @@ ms.locfileid: "80588598"
 
 - 已知目标系统具有足够的处理器来处理通过对 `cust.Orders` 上的查询进行并行化所产生的线程数。
 
-在所有情况下，确定最佳查询形式的最好方法是进行测试和测量。 有关详细信息，请参阅[如何：衡量 PLINQ 查询性能](../../../docs/standard/parallel-programming/how-to-measure-plinq-query-performance.md)。
+在所有情况下，确定最佳查询形式的最好方法是进行测试和测量。 有关详细信息，请参阅[如何：衡量 PLINQ 查询性能](how-to-measure-plinq-query-performance.md)。
 
 ## <a name="avoid-calls-to-non-thread-safe-methods"></a>避免调用非线程安全方法
 

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
-ms.openlocfilehash: 8383d8cb3e5819c46a0716c59323e492bb9add8e
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: d18cf72f0629d347fb5f55ad7332e6046614c01b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937995"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282384"
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>从 XslTransform 类迁移
 
@@ -35,7 +35,7 @@ Visual Studio 2005 版本重新设计了 XSLT 体系结构。 <xref:System.Xml.X
 [!code-csharp[XML_Migration#16](../../../../samples/snippets/csharp/VS_Snippets_Data/XML_Migration/CS/migration.cs#16)]
 [!code-vb[XML_Migration#16](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XML_Migration/VB/migration.vb#16)]
 
-有关详细信息，请参阅 [XSLT 安全注意事项](../../../../docs/standard/data/xml/xslt-security-considerations.md)。
+有关详细信息，请参阅 [XSLT 安全注意事项](xslt-security-considerations.md)。
 
 ## <a name="new-features"></a>新增功能
 
@@ -97,7 +97,7 @@ using (XmlWriter writer = doc.CreateNavigator().AppendChild()) {
 
 ### <a name="discretionary-behavior"></a>任意行为
 
-W3C XSL 转换 (XSLT) 1.0 版建议中涉及到实现提供者可以在哪些方面确定如何处理某种情况。 这些方面被认为是任意行为。 在有些方面，<xref:System.Xml.Xsl.XslCompiledTransform> 行为不同于 <xref:System.Xml.Xsl.XslTransform> 类。 有关详细信息，请参阅[可恢复的 XSLT 错误](../../../../docs/standard/data/xml/recoverable-xslt-errors.md)。
+W3C XSL 转换 (XSLT) 1.0 版建议中涉及到实现提供者可以在哪些方面确定如何处理某种情况。 这些方面被认为是任意行为。 在有些方面，<xref:System.Xml.Xsl.XslCompiledTransform> 行为不同于 <xref:System.Xml.Xsl.XslTransform> 类。 有关详细信息，请参阅[可恢复的 XSLT 错误](recoverable-xslt-errors.md)。
 
 ### <a name="extension-objects-and-script-functions"></a>扩展对象和脚本函数
 
@@ -109,7 +109,7 @@ W3C XSL 转换 (XSLT) 1.0 版建议中涉及到实现提供者可以在哪些方
 
 在 <xref:System.Xml.Xsl.XslCompiledTransform> 中，脚本函数的绑定（方法名称查找）发生在编译时，当使用 <xref:System.Xml.Xsl.XslCompiledTransform> 加载由 XslTranform 使用的样式表时，这些样式表可能会引发异常。
 
-<xref:System.Xml.Xsl.XslCompiledTransform> 支持在 `msxsl:using` 元素中具有 `msxsl:assembly` 和 `msxsl:script` 子元素。 `msxsl:using` 和 `msxsl:assembly` 元素用于声明其他命名空间和程序集，以便在脚本块中使用。 有关详细信息，请参阅[使用 msxsl:script 的脚本块](../../../../docs/standard/data/xml/script-blocks-using-msxsl-script.md)。
+<xref:System.Xml.Xsl.XslCompiledTransform> 支持在 `msxsl:using` 元素中具有 `msxsl:assembly` 和 `msxsl:script` 子元素。 `msxsl:using` 和 `msxsl:assembly` 元素用于声明其他命名空间和程序集，以便在脚本块中使用。 有关详细信息，请参阅[使用 msxsl:script 的脚本块](script-blocks-using-msxsl-script.md)。
 
 <xref:System.Xml.Xsl.XslCompiledTransform> 禁止扩展对象具有相同数量的自变量的多个重载。
 
@@ -127,5 +127,5 @@ W3C XSL 转换 (XSLT) 1.0 版建议中涉及到实现提供者可以在哪些方
 
 ## <a name="see-also"></a>请参阅
 
-- [XSLT 转换](../../../../docs/standard/data/xml/xslt-transformations.md)
-- [使用 XslCompiledTransform 类](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)
+- [XSLT 转换](xslt-transformations.md)
+- [使用 XslCompiledTransform 类](using-the-xslcompiledtransform-class.md)

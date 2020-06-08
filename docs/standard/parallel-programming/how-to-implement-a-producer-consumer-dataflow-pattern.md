@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - producer-consumer patterns, implementing [TPL]
 ms.assetid: 47a1d38c-fe9c-44aa-bd15-937bd5659b0b
-ms.openlocfilehash: 2db8cfcfc26b001703e08a501c430be4313aca03
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 491f3912998e56fe768d21da82ff68cb64f6d6c8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73091491"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289520"
 ---
 # <a name="how-to-implement-a-producer-consumer-dataflow-pattern"></a>如何：实现制造者-使用者数据流模式
 本文档描述如何使用 TPL 数据流库实现制造者-使用者模式。 在此模式下，制造者  向消息块发送消息，使用者  从该块读取消息。  
@@ -40,4 +40,4 @@ ms.locfileid: "73091491"
   
 ## <a name="see-also"></a>另请参阅
 
-- [数据流](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md)
+- [数据流](dataflow-task-parallel-library.md)

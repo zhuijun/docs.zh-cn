@@ -10,19 +10,19 @@ helpviewer_keywords:
 - serialization, attributes
 - XML Schema, serializing
 ms.assetid: 414b820f-a696-4206-b576-2711d85490c7
-ms.openlocfilehash: 3a269e1f3e8fd6e982db3c241c113f471134f9d3
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: fbc42ff696107f4a1b06d3611fc97a09cc4a3542
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378448"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84276694"
 ---
 # <a name="attributes-that-control-xml-serialization"></a>用来控制 XML 序列化的属性
-通过将下表中的特性应用于类和类成员，可以控制 <xref:System.Xml.Serialization.XmlSerializer> 序列化或反序列化该类的实例的方式。 若要了解这些属性如何控制 XML 序列化，请参阅[使用属性控制 XML 序列化](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)。  
+通过将下表中的特性应用于类和类成员，可以控制 <xref:System.Xml.Serialization.XmlSerializer> 序列化或反序列化该类的实例的方式。 若要了解这些属性如何控制 XML 序列化，请参阅[使用属性控制 XML 序列化](controlling-xml-serialization-using-attributes.md)。  
   
- 这些属性还可用于控制 XML Web services 生成的文本样式的 SOAP 消息。 有关将这些属性应用于 XML Web service 方法的更多信息，请参阅 [使用 XML Web service 进行 XML 序列化](../../../docs/standard/serialization/xml-serialization-with-xml-web-services.md)。  
+ 这些属性还可用于控制 XML Web services 生成的文本样式的 SOAP 消息。 有关将这些属性应用于 XML Web service 方法的更多信息，请参阅 [使用 XML Web service 进行 XML 序列化](xml-serialization-with-xml-web-services.md)。  
   
- 有关属性的详细信息，请参阅[属性](../../../docs/standard/attributes/index.md)。  
+ 有关属性的详细信息，请参阅[属性](../attributes/index.md)。  
   
 |特性|适用对象|指定|  
 |---------------|----------------|---------------|  
@@ -42,13 +42,13 @@ ms.locfileid: "83378448"
   
  除了这些特性（全部位于 <xref:System.Xml.Serialization> 命名空间中）之外，还可以将 <xref:System.ComponentModel.DefaultValueAttribute> 特性应用于字段。 如果没有指定值，使用 DefaultValueAttribute 可设置将自动分配给成员的值。  
   
- 若要控制编码的 SOAP XML 序列化，请参阅[控制编码的 SOAP 序列化的特性](../../../docs/standard/serialization/attributes-that-control-encoded-soap-serialization.md)。  
+ 若要控制编码的 SOAP XML 序列化，请参阅[控制编码的 SOAP 序列化的特性](attributes-that-control-encoded-soap-serialization.md)。  
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 和 SOAP 序列化](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [XML 和 SOAP 序列化](xml-and-soap-serialization.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [使用属性控制 XML 序列化](../../../docs/standard/serialization/controlling-xml-serialization-using-attributes.md)
-- [如何：指定 XML 流的替代元素名称](../../../docs/standard/serialization/how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
-- [如何：序列化对象](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [如何：反序列化对象](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+- [使用属性控制 XML 序列化](controlling-xml-serialization-using-attributes.md)
+- [如何：指定 XML 流的替代元素名称](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
+- [如何：序列化对象](how-to-serialize-an-object.md)
+- [如何：反序列化对象](how-to-deserialize-an-object.md)

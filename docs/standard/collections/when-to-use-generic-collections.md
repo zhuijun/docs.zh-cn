@@ -6,12 +6,12 @@ helpviewer_keywords:
 - collections [.NET Framework], generic
 - generic collections [.NET Framework]
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
-ms.openlocfilehash: feccd8c53e5171889666ed407258b9d36ad8a140
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: c59a125a8df95e3c4fe6e1839956d800bd6ee910
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728196"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290378"
 ---
 # <a name="when-to-use-generic-collections"></a>何时使用泛型集合
 
@@ -60,7 +60,7 @@ ms.locfileid: "82728196"
 
 ## <a name="linq-to-objects"></a>LINQ to Objects
 
-你可以通过 LINQ to Objects 功能使用 LINQ 查询来访问内存中的对象，但条件是该对象类型要实现 <xref:System.Collections.IEnumerable?displayProperty=nameWithType> 或 <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> 接口。 LINQ 查询提供了一种通用的数据访问模式；与标准 `foreach` 循环相比，它通常更加简洁；可读性更高，并且可提供筛选、排序和分组功能。 LINQ 查询还可提高性能。 有关详细信息，请参阅 “[LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md)”、“[LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)” 和 “[并行 LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)”。
+你可以通过 LINQ to Objects 功能使用 LINQ 查询来访问内存中的对象，但条件是该对象类型要实现 <xref:System.Collections.IEnumerable?displayProperty=nameWithType> 或 <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> 接口。 LINQ 查询提供了一种通用的数据访问模式；与标准 `foreach` 循环相比，它通常更加简洁；可读性更高，并且可提供筛选、排序和分组功能。 LINQ 查询还可提高性能。 有关详细信息，请参阅 “[LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md)”、“[LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)” 和 “[并行 LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md)”。
 
 ## <a name="additional-functionality"></a>其他功能
 一些泛型类型具有非泛型集合类型中找不到的功能。 比如与非泛型 <xref:System.Collections.Generic.List%601> 类相对的 <xref:System.Collections.ArrayList> 类有大量接受泛型委托的方法，例如允许你指定搜索列表的方法的 <xref:System.Predicate%601> 委托、代表对列表中每个元素发挥作用的 <xref:System.Action%601> 委托和在类型间定义对话的 <xref:System.Converter%602> 委托。
@@ -69,6 +69,6 @@ ms.locfileid: "82728196"
 
 ## <a name="see-also"></a>请参阅
 
-- [集合和数据结构](../../../docs/standard/collections/index.md)
-- [常用的集合类型](../../../docs/standard/collections/commonly-used-collection-types.md)
-- [泛型](../../../docs/standard/generics/index.md)
+- [集合和数据结构](index.md)
+- [常用的集合类型](commonly-used-collection-types.md)
+- [泛型](../generics/index.md)

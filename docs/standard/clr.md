@@ -16,12 +16,12 @@ helpviewer_keywords:
 - code, runtime functionality
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
 ms.custom: updateeachrelease
-ms.openlocfilehash: 6f9ad8aafc37039b55ae3bf6eb743e07ad8e2235
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 74421f79c18f32e121d51c47f3eb32f3c2ed71fd
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74884405"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289241"
 ---
 # <a name="common-language-runtime-clr-overview"></a>公共语言运行时 (CLR) 概述
 
@@ -58,7 +58,7 @@ ms.locfileid: "74884405"
 
 - 垃圾回收。
 
-- 使用委托取代函数指针，从而增强了类型安全和安全性。 有关委派的详细信息，请参阅[通用类型系统](../../docs/standard/base-types/common-type-system.md)。
+- 使用委托取代函数指针，从而增强了类型安全和安全性。 有关委派的详细信息，请参阅[通用类型系统](base-types/common-type-system.md)。
 
 ## <a name="clr-versions"></a>CLR 版本
 

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - Replace method
 - validating user input
 ms.assetid: b4319c8a-9032-4129-a9d5-6f6fc28e7f32
-ms.openlocfilehash: cc90e6609f9335b7e2f08271e5540b182901e8c9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5f2a1e7a3202b14d32ed02c6808fe2411465d9b5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73127655"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290430"
 ---
 # <a name="how-to-strip-invalid-characters-from-a-string"></a>如何：从字符串中剥离无效字符
 下面的示例使用静态 <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> 方法，从字符串中剥离无效字符。  
@@ -36,4 +36,4 @@ ms.locfileid: "73127655"
   
 ## <a name="see-also"></a>另请参阅
 
-- [.NET 正则表达式](../../../docs/standard/base-types/regular-expressions.md)
+- [.NET 正则表达式](regular-expressions.md)

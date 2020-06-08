@@ -15,12 +15,12 @@ helpviewer_keywords:
 - storing data using isolated storage, deleting stores
 - data storage using isolated storage, deleting stores
 ms.assetid: 3947e333-5af6-4601-b2f1-24d4d6129cf3
-ms.openlocfilehash: 6b1e8e651fd8e18c79dd629c154fb6c4d74243e3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 885dc8e3ca0ea99de460cee7dd093b061f916388
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75707822"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291885"
 ---
 # <a name="how-to-delete-stores-in-isolated-storage"></a>如何：删除独立存储中的存储区
 <xref:System.IO.IsolatedStorage.IsolatedStorageFile> 类提供了两个用于删除独立存储文件的方法：  
@@ -39,4 +39,4 @@ ms.locfileid: "75707822"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile>
-- [独立存储](../../../docs/standard/io/isolated-storage.md)
+- [独立存储](isolated-storage.md)

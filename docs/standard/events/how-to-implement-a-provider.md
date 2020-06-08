@@ -10,15 +10,15 @@ helpviewer_keywords:
 - providers [.NET Framework], in observer design pattern
 - observables [.NET Framework], in observer design pattern
 ms.assetid: 790b5d8b-d546-40a6-beeb-151b574e5ee5
-ms.openlocfilehash: f5bb3cda0caa39ba3fd094b80e0b769a4bfc1f85
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4f8a213c0df3ef3c633106b7249a4947fe77c0d2
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73141554"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84280018"
 ---
 # <a name="how-to-implement-a-provider"></a>如何：实现提供程序
-观察程序设计模式要求区分提供程序（监视数据并发送通知）和一个或多个观察程序（通过提供程序接收通知（回调））。 本主题介绍了如何创建提供程序。 相关主题[如何：实现观察程序](../../../docs/standard/events/how-to-implement-an-observer.md)介绍了如何创建观察程序。  
+观察程序设计模式要求区分提供程序（监视数据并发送通知）和一个或多个观察程序（通过提供程序接收通知（回调））。 本主题介绍了如何创建提供程序。 相关主题[如何：实现观察程序](how-to-implement-an-observer.md)介绍了如何创建观察程序。  
   
 ### <a name="to-create-a-provider"></a>创建提供程序的具体步骤  
   
@@ -61,6 +61,6 @@ ms.locfileid: "73141554"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.IObservable%601>
-- [观察程序设计模式](../../../docs/standard/events/observer-design-pattern.md)
-- [如何：实现监视程序](../../../docs/standard/events/how-to-implement-an-observer.md)
-- [监视程序设计模式最佳做法](../../../docs/standard/events/observer-design-pattern-best-practices.md)
+- [观察程序设计模式](observer-design-pattern.md)
+- [如何：实现监视程序](how-to-implement-an-observer.md)
+- [监视程序设计模式最佳做法](observer-design-pattern-best-practices.md)
