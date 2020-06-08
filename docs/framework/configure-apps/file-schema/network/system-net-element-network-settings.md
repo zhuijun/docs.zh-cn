@@ -1,5 +1,6 @@
 ---
 title: <system.Net> 元素（网络设置）
+description: <system.Net> 网络设置元素包含用于指定 .NET Framework 如何连接到 .NET Framework 中的网络选项的设置。
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#system.Net
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - system.Net element
 - <system.Net> element
 ms.assetid: 52de4d6c-b24d-44aa-ba7d-6b5061f1357e
-ms.openlocfilehash: 88098f2afaad9728e38c4f9935b45f45826a0ca9
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9f18c7a3586948c03391d609f437e216a91bc27f
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154551"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504480"
 ---
 # <a name="systemnet-element-network-settings"></a>\<system.Net> 元素（网络设置）
 包含指定 .NET Framework 如何连接到网络的设置。  
@@ -36,7 +37,7 @@ ms.locfileid: "79154551"
   
 ### <a name="child-elements"></a>子元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[authenticationModules](authenticationmodules-element-network-settings.md)|指定用于对 Internet 请求进行身份验证的模块。|  
 |[connectionManagement](connectionmanagement-element-network-settings.md)|指定与 Internet 主机的最大连接数。|  
@@ -48,7 +49,7 @@ ms.locfileid: "79154551"
   
 ### <a name="parent-elements"></a>父元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[configuration](../configuration-element.md)|包含所有命名空间的设置。|  
   

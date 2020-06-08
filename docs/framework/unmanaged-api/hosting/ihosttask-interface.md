@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a71dbbd5-64b8-47eb-9f03-8e8c85fbe2bc
 topic_type:
 - apiref
-ms.openlocfilehash: f8f476f681764a46700dd5ec83c8f9b2739f18f6
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 1b7209a36f8e9d6f02bd4cc1882adeef8af30c3d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842476"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503912"
 ---
 # <a name="ihosttask-interface"></a>IHostTask 接口
 提供允许公共语言运行时（CLR）与宿主通信以管理任务的方法。  
@@ -30,12 +30,12 @@ ms.locfileid: "83842476"
 |------------|-----------------|  
 |[Alert 方法](ihosttask-alert-method.md)|请求宿主唤醒当前实例表示的任务 `IHostTask` ，以便可以中止任务。|  
 |[GetPriority 方法](ihosttask-getpriority-method.md)|获取当前实例表示的任务的线程优先级别 `IHostTask` 。|  
-|[Join 方法](../../../../docs/framework/unmanaged-api/hosting/ihosttask-join-method.md)|阻止调用任务，直到当前实例表示的任务 `IHostTask` 完成、指定的时间间隔结束或调用[IHostTask：： Alert](ihosttask-alert-method.md) 。|  
-|[SetCLRTask 方法](../../../../docs/framework/unmanaged-api/hosting/ihosttask-setclrtask-method.md)|将[ICLRTask 接口](iclrtask-interface.md)实例与当前实例相关联 `IHostTask` 。|  
+|[Join 方法](ihosttask-join-method.md)|阻止调用任务，直到当前实例表示的任务 `IHostTask` 完成、指定的时间间隔结束或调用[IHostTask：： Alert](ihosttask-alert-method.md) 。|  
+|[SetCLRTask 方法](ihosttask-setclrtask-method.md)|将[ICLRTask 接口](iclrtask-interface.md)实例与当前实例相关联 `IHostTask` 。|  
 |[SetPriority 方法](ihosttask-setpriority-method.md)|请求宿主调整当前实例所表示的任务的线程优先级别 `IHostTask` 。|  
 |[Start 方法](ihosttask-start-method.md)|请求宿主将当前实例表示的任务 `IHostTask` 从挂起状态移动到实时状态，在此状态下可以执行代码。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  CLR 调用定义的方法 `IHostTask` 来启动任务、设置其线程优先级别，等等。  
   
 ## <a name="requirements"></a>要求  

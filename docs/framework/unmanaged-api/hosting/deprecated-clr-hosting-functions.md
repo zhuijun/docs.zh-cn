@@ -7,12 +7,12 @@ helpviewer_keywords:
 - .NET Framework 2.0, hosting global static functions
 - hosting global static functions [.NET Framework], version 2.0
 ms.assetid: 91fbbb35-e543-4814-b806-371cebae8c5a
-ms.openlocfilehash: 8925278bdf4d48efc9e589ffc4e181d904444e6b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 083d0ff285abb4a99ad05c791bc504ff7f282c6a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616419"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504363"
 ---
 # <a name="deprecated-clr-hosting-functions"></a>弃用的 CLR 承载函数
 本部分介绍了早期版本的托管 API 使用的非托管全局静态函数。  
@@ -24,7 +24,7 @@ ms.locfileid: "83616419"
  已弃用。 创建指定托管类型的实例。  
   
  [CoInitializeCor 函数](coinitializecor-function.md)  
- 已过时。 若要初始化公共语言运行时（CLR），请使用[CorBindToRuntimeEx](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimeex-function.md)或[CorBindToCurrentRuntime](corbindtocurrentruntime-function.md)。  
+ 已过时。 若要初始化公共语言运行时（CLR），请使用[CorBindToRuntimeEx](corbindtoruntimeex-function.md)或[CorBindToCurrentRuntime](corbindtocurrentruntime-function.md)。  
   
  [CoInitializeEE 函数](coinitializeee-function.md)  
  已弃用。 确保 CLR 执行引擎已加载到进程中。 改为使用[ICLRRuntimeHost：： Start](iclrruntimehost-start-method.md)方法。  

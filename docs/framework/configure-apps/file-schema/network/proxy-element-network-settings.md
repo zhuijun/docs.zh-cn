@@ -1,5 +1,6 @@
 ---
 title: <proxy> 元素（网络设置）
+description: <proxy>网络设置元素定义 .NET Framework 中的代理服务器选项。 本文包含一个示例。
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/defaultProxy/proxy
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-ms.openlocfilehash: 590ea747c2fa9e5e85e5e9d05f6fb80fe60251d3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0d462fcc92fc1be5ddbc2e76237d8436219c7295
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154785"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504532"
 ---
 # <a name="proxy-element-network-settings"></a>\<proxy> 元素（网络设置）
 定义代理服务器。  
@@ -40,7 +41,7 @@ ms.locfileid: "79154785"
   
 ### <a name="attributes"></a>特性  
   
-|**特性**|**描述**|  
+|**特性**|**说明**|  
 |-------------------|---------------------|  
 |`autoDetect`|指定是否自动检测代理。 默认值为 `unspecified`。|  
 |`bypassonlocal`|指定对于本地资源是否跳过代理。 本地资源包括本地服务器（ `http://localhost` 、 `http://loopback` 或 `http://127.0.0.1` ）和没有句点（）的 URI `http://webserver` 。 默认值为 `unspecified`。|  
@@ -53,7 +54,7 @@ ms.locfileid: "79154785"
   
 ### <a name="parent-elements"></a>父元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[defaultProxy](defaultproxy-element-network-settings.md)|配置超文本传输协议 (HTTP) 代理服务器。|  
   

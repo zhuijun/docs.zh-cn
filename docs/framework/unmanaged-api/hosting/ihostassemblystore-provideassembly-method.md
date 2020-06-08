@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 625c3dd5-a3f0-442c-adde-310dadbb5054
 topic_type:
 - apiref
-ms.openlocfilehash: f97490e89e835716911072dbad5f70d8e55e76e6
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 162def0d703ea81efc3df3ea5ee08b58e34822e6
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83805017"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501568"
 ---
 # <a name="ihostassemblystoreprovideassembly-method"></a>IHostAssemblyStore::ProvideAssembly 方法
-获取对程序集的引用，该程序集未由从[IHostAssemblyManager：： GetNonHostStoreAssemblies](ihostassemblymanager-getnonhoststoreassemblies-method.md)返回的[ICLRAssemblyReferenceList](../../../../docs/framework/unmanaged-api/hosting/iclrassemblyreferencelist-interface.md)引用。 公共语言运行时（CLR）对不 `ProvideAssembly` 显示在列表中的每个程序集都进行调用。  
+获取对程序集的引用，该程序集未由从[IHostAssemblyManager：： GetNonHostStoreAssemblies](ihostassemblymanager-getnonhoststoreassemblies-method.md)返回的[ICLRAssemblyReferenceList](iclrassemblyreferencelist-interface.md)引用。 公共语言运行时（CLR）对不 `ProvideAssembly` 显示在列表中的每个程序集都进行调用。  
   
 ## <a name="syntax"></a>语法  
   
@@ -66,7 +66,7 @@ HRESULT ProvideAssembly (
 |COR_E_FILENOTFOUND （0x80070002）|找不到请求的程序集。|  
 |E_NOT_SUFFICIENT_BUFFER|指定的缓冲区大小 `pAssemblyId` 不够大，无法容纳主机需要返回的标识符。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  为返回的标识值 `pAssemblyId` 由主机指定。 标识符在进程的生存期内必须是唯一的。 CLR 使用此值作为流的唯一标识符。 它会对照的值检查每个值，以使其他对的 `pAssemblyId` 调用返回 `ProvideAssembly` 。 如果主机为其他主机返回相同的 `pAssemblyId` 值 `IStream` ，则 CLR 将检查是否已映射该流的内容。 如果是这样，则运行时加载映像的现有副本，而不是映射一个新副本。  
   
 ## <a name="requirements"></a>要求  

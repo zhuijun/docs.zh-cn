@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: 59ec1832-9cc1-4b5c-983d-03407e51de56
 topic_type:
 - apiref
-ms.openlocfilehash: 52da5ec7ccd6ce48871e13a94f5957fa00d2a613
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 37167b7a9aefa6cd9d5e4df043e8bbc1b0514261
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83703550"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504116"
 ---
 # <a name="iclrmetahostpolicygetrequestedruntime-method"></a>ICLRMetaHostPolicy::GetRequestedRuntime 方法
 
-提供基于宿主策略、托管程序集、版本字符串和配置流的公共语言运行时 (CLR) 的首选版本的接口。 此方法实际上不会加载或激活 CLR，只是返回表示策略结果的[ICLRRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/iclrruntimeinfo-interface.md)接口。 此方法取代了[GetRequestedRuntimeInfo](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeinfo-function.md)、 [GetRequestedRuntimeVersion](../../../../docs/framework/unmanaged-api/hosting/getrequestedruntimeversion-function.md)、 [CorBindToRuntimeHost](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimehost-function.md)、 [CorBindToRuntimeByCfg](../../../../docs/framework/unmanaged-api/hosting/corbindtoruntimebycfg-function.md)和[GetCORRequiredVersion](getcorrequiredversion-function.md)方法。
+提供基于宿主策略、托管程序集、版本字符串和配置流的公共语言运行时 (CLR) 的首选版本的接口。 此方法实际上不会加载或激活 CLR，只是返回表示策略结果的[ICLRRuntimeInfo](iclrruntimeinfo-interface.md)接口。 此方法取代了[GetRequestedRuntimeInfo](getrequestedruntimeinfo-function.md)、 [GetRequestedRuntimeVersion](getrequestedruntimeversion-function.md)、 [CorBindToRuntimeHost](corbindtoruntimehost-function.md)、 [CorBindToRuntimeByCfg](corbindtoruntimebycfg-function.md)和[GetCORRequiredVersion](getcorrequiredversion-function.md)方法。
 
 ## <a name="syntax"></a>语法
 
@@ -53,11 +53,11 @@ HRESULT GetRequestedRuntime(
 |`pcchVersion`|[in, out] 必需。 输入时指定 `pwzVersion` 的预期的大小，以避免缓冲区溢出。 如果 `pwzVersion` 为 null，则当 `GetRequestedRuntime` 返回时，`pcchVersion` 包含 `pwzVersion` 的预期的大小以允许预分配；否则为 `pcchVersion` 包含写入 `pwzVersion` 的字符数量。|
 |`pwzImageVersion`|[out] 可选。 `GetRequestedRuntime`返回时，包含对应于返回的[ICLRRuntimeInfo](iclrruntimeinfo-interface.md)接口的 CLR 版本。|
 |`pcchImageVersion`|[in, out] 可选。 输入时指定 `pwzImageVersion` 的预期的大小以避免缓冲区溢出。 如果 `pwzImageVersion` 为 null，则当 `GetRequestedRuntime` 返回时，`pcchImageVersion` 包含 `pwzImageVersion` 的所需大小，以允许预分配。|
-|`pdwConfigFlags`|[out] 可选。 如果在 `GetRequestedRuntime` 绑定过程中使用配置文件，则在它返回时， `pdwConfigFlags` 将包含一个[METAHOST_CONFIG_FLAGS](metahost-config-flags-enumeration.md)值，该值指示[ \< 启动>](../../../../docs/framework/configure-apps/file-schema/startup/startup-element.md)元素是否具有 `useLegacyV2RuntimeActivationPolicy` 属性集以及特性的值。 将[METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_MASK](metahost-config-flags-enumeration.md)掩码应用到 `pdwConfigFlags` ，以获取与相关的值 `useLegacyV2RuntimeActivationPolicy` 。|
+|`pdwConfigFlags`|[out] 可选。 如果在 `GetRequestedRuntime` 绑定过程中使用配置文件，则在它返回时， `pdwConfigFlags` 将包含一个[METAHOST_CONFIG_FLAGS](metahost-config-flags-enumeration.md)值，该值指示 [\<startup>](../../configure-apps/file-schema/startup/startup-element.md) 元素是否具有 `useLegacyV2RuntimeActivationPolicy` 属性集和属性的值。 将[METAHOST_CONFIG_FLAGS_LEGACY_V2_ACTIVATION_POLICY_MASK](metahost-config-flags-enumeration.md)掩码应用到 `pdwConfigFlags` ，以获取与相关的值 `useLegacyV2RuntimeActivationPolicy` 。|
 |`riid`|中为请求的[ICLRRuntimeInfo](iclrruntimeinfo-interface.md)接口指定接口标识符 IID_ICLRRuntimeInfo。|
 |`ppRuntime`|弄当 `GetRequestedRuntime` 返回时，包含指向对应的[ICLRRuntimeInfo](iclrruntimeinfo-interface.md)接口的指针。|
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 如果此方法成功，当且仅当一个或多个以下元素存在于 `<configuration><runtime>` 部分内的配置流中时，该方法具有将其他标志与返回运行时接口的当前默认启动标志结合的副作用：
 
@@ -76,9 +76,9 @@ HRESULT GetRequestedRuntime(
 |HRESULT|说明|
 |-------------|-----------------|
 |S_OK|该方法已成功完成。|
-|E_POINTER|`pwzVersion` 不为 null 且 `pcchVersion` 为 null。<br /><br /> -或-<br /><br /> `pwzImageVersion` 不为 null 且 `pcchImageVersion` 为 null。|
+|E_POINTER|`pwzVersion` 不为 null 且 `pcchVersion` 为 null。<br /><br /> \- 或 -<br /><br /> `pwzImageVersion` 不为 null 且 `pcchImageVersion` 为 null。|
 |E_INVALIDARG|`dwPolicyFlags` 未指定 `METAHOST_POLICY_HIGHCOMPAT`。|
-|ERROR_INSUFFICIENT_BUFFER|分配给 `pwzVersion` 的内存不足。<br /><br /> -或-<br /><br /> 分配给 `pwzImageVersion` 的内存不足。|
+|ERROR_INSUFFICIENT_BUFFER|分配给 `pwzVersion` 的内存不足。<br /><br /> \- 或 -<br /><br /> 分配给 `pwzImageVersion` 的内存不足。|
 |CLR_E_SHIM_RUNTIMELOAD|`dwPolicyFlags` 包括 METAHOST_POLICY_APPLY_UPGRADE_POLICY，并且 `pwzVersion` 和 `pcchVersion` 均为 null。|
 
 ## <a name="requirements"></a>要求

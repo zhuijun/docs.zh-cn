@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e4372384-ee69-48d7-97e0-8fab7866597a
 topic_type:
 - apiref
-ms.openlocfilehash: 79ef08ef70ad1132ceacc3e2b997651e57032b9a
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 6a6b4d0351e22026dc873aad8281d0259d871a14
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803814"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501477"
 ---
 # <a name="ihostsecuritymanagersetsecuritycontext-method"></a>IHostSecurityManager::SetSecurityContext 方法
 设置当前正在执行的线程的安全上下文。  
@@ -52,8 +52,8 @@ HRESULT SetSecurityContext (
 |HOST_E_ABANDONED|已阻止的线程或纤程正在等待某个事件时，该事件被取消。|  
 |E_FAIL|发生未知的灾难性故障。 当方法返回 E_FAIL 时，CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
   
-## <a name="remarks"></a>备注  
- CLR `SetSecurityContext` 在多个方案中调用。 在执行类和模块构造函数和终结器之前，CLR 将调用 `SetSecurityContext` 以防止执行失败。 然后，在执行构造函数或终结器后，通过使用对的另一调用，将安全上下文重置为其原始状态 `SetSecurityContext` 。 I/o 完成时，会出现类似的模式。 如果主机实现[IHostIoCompletionManager](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-interface.md)，则 CLR 会在 `SetSecurityContext` 主机调用[ICLRIoCompletionManager：： OnComplete](iclriocompletionmanager-oncomplete-method.md)后调用。  
+## <a name="remarks"></a>注解  
+ CLR `SetSecurityContext` 在多个方案中调用。 在执行类和模块构造函数和终结器之前，CLR 将调用 `SetSecurityContext` 以防止执行失败。 然后，在执行构造函数或终结器后，通过使用对的另一调用，将安全上下文重置为其原始状态 `SetSecurityContext` 。 I/o 完成时，会出现类似的模式。 如果主机实现[IHostIoCompletionManager](ihostiocompletionmanager-interface.md)，则 CLR 会在 `SetSecurityContext` 主机调用[ICLRIoCompletionManager：： OnComplete](iclriocompletionmanager-oncomplete-method.md)后调用。  
   
  在工作线程中的异步点，CLR 在 `SetSecurityContext` <xref:System.Threading.ThreadPool.QueueUserWorkItem%2A?displayProperty=nameWithType> [IHostThreadPoolManager：： QueueUserWorkItem](ihostthreadpoolmanager-queueuserworkitem-method.md)内或内调用，具体取决于宿主或 CLR 是否实现线程池。  
   

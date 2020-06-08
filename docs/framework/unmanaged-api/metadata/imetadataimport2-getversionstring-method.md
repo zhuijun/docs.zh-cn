@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 308183ee-fd44-4432-9d86-ef00d181b49b
 topic_type:
 - apiref
-ms.openlocfilehash: 0c9f667edf30feb23e1cdaa28950503283fce42e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 84cf5ac9eab5749d3bdc63670fe5c31bfb62abcd
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445221"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490398"
 ---
 # <a name="imetadataimport2getversionstring-method"></a>IMetaDataImport2::GetVersionString 方法
 获取用于生成程序集的运行时的版本号。  
@@ -40,24 +40,24 @@ HRESULT GetVersionString (
  弄用于存储指定版本的字符串的数组。  
   
  `ccBufSize`  
- 中`pwzBuf` 数组的大小（以宽字符为范围）。  
+ 中数组的大小（以宽字符为范围） `pwzBuf` 。  
   
  `pccBufSize`  
- 弄在 `pwzBuf` 数组中返回的宽字符数，包括 null 结束符。  
+ 弄数组中返回的宽字符数，包括 null 结束符 `pwzBuf` 。  
   
-## <a name="remarks"></a>备注  
- `GetVersionString` 方法获取当前元数据范围的生成版本。 如果从未保存过范围，则它将不会有内置版本，并将返回空字符串。  
+## <a name="remarks"></a>注解  
+ `GetVersionString`方法获取当前元数据范围的生成版本。 如果从未保存过范围，则它将不会有内置版本，并将返回空字符串。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 用作 Mscoree.dll 中的资源  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)

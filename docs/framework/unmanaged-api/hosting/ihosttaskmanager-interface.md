@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 4a0b05b9-3ef1-4607-b7c8-bd4dd43647a0
 topic_type:
 - apiref
-ms.openlocfilehash: b742f717f4caa0ba23d5a4c1438ed3ce4dcc60d7
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 190908c675b96b8ea2d81fb0203aa16a80d6a8b4
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842252"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501390"
 ---
 # <a name="ihosttaskmanager-interface"></a>IHostTaskManager 接口
 提供允许公共语言运行时（CLR）通过主机而不是使用标准操作系统线程或纤程函数来处理任务的方法。  
@@ -40,14 +40,14 @@ ms.locfileid: "83842252"
 |[LeaveRuntime 方法](ihosttaskmanager-leaveruntime-method.md)|通知宿主托管代码将要对非托管函数进行调用。|  
 |[ReverseEnterRuntime 方法](ihosttaskmanager-reverseenterruntime-method.md)|通知宿主从非托管代码向公共语言运行时（CLR）发出调用。|  
 |[ReverseLeaveRuntime 方法](ihosttaskmanager-reverseleaveruntime-method.md)|通知宿主控件离开 CLR，并进入从托管代码调用的非托管函数。|  
-|[SetCLRTaskManager 方法](../../../../docs/framework/unmanaged-api/hosting/ihosttaskmanager-setclrtaskmanager-method.md)|向宿主提供一个接口指针，该指针指向 CLR 实现的[ICLRTaskManager](iclrtaskmanager-interface.md)实例。|  
+|[SetCLRTaskManager 方法](ihosttaskmanager-setclrtaskmanager-method.md)|向宿主提供一个接口指针，该指针指向 CLR 实现的[ICLRTaskManager](iclrtaskmanager-interface.md)实例。|  
 |[SetLocale 方法](ihosttaskmanager-setlocale-method.md)|通知宿主 CLR 已更改当前任务的区域设置。|  
 |[SetStackGuarantee 方法](ihosttaskmanager-setstackguarantee-method.md)|保留以仅供内部使用。|  
 |[SetUILocale 方法](ihosttaskmanager-setuilocale-method.md)|通知宿主用户界面区域设置在当前任务上已更改。|  
 |[Sleep 方法](ihosttaskmanager-sleep-method.md)|通知宿主当前任务将要进入睡眠状态。|  
 |[SwitchToTask 方法](ihosttaskmanager-switchtotask-method.md)|通知宿主应切换到当前任务。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `IHostTaskManager`允许 CLR 创建和管理任务，以便在控制从托管到非托管代码的传输时，为宿主提供挂钩，并指定在代码执行期间宿主可以和不能执行的某些操作。  
   
 ## <a name="requirements"></a>要求  

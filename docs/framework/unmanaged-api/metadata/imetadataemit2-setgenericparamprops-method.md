@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: cd93a48d-1fed-4706-bec6-a05dc3b64fbd
 topic_type:
 - apiref
-ms.openlocfilehash: fd7f149e806727d849cdceb3ffbc5dc7392fcf1d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8feba8e67f3a90dd48fd957065a9c166c204b87c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79177409"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84492728"
 ---
 # <a name="imetadataemit2setgenericparamprops-method"></a>IMetaDataEmit2::SetGenericParamProps 方法
-设置指定令牌引用的泛型参数定义的属性值。  
+设置指定的标记所引用的泛型参数定义的属性值。  
   
 ## <a name="syntax"></a>语法  
   
@@ -37,32 +37,32 @@ HRESULT SetGenericParamProps (
 );  
 ```  
   
-## <a name="parameters"></a>parameters  
+## <a name="parameters"></a>参数  
  `gp`  
- [在]要为其设置值的泛型参数定义的令牌。  
+ 中要为其设置值的泛型参数定义的标记。  
   
  `dwParamFlags`  
- [在]描述泛型参数类型的[CorgenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md)枚举的值。  
+ 中描述泛型参数类型的[CorGenericParamAttr](corgenericparamattr-enumeration.md)枚举的值。  
   
  `szName`  
  [in] 可选。 要为其设置值的参数的名称。  
   
  `reserved`  
- [在]保留以供将来扩展。  
+ 中保留以供将来进行扩展。  
   
  `rtkConstraints`  
- [in] 可选。 类型约束的零端接数组。 数组成员必须是`mdTypeDef`，`mdTypeRef`或`mdTypeSpec`元数据令牌。  
+ [in] 可选。 类型约束的零终止数组。 数组成员必须是 `mdTypeDef` 、 `mdTypeRef` 或 `mdTypeSpec` 元数据标记。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
- **标题：** 科尔赫  
+ **标头：** Cor  
   
- **库：** 用作 MsCorEE.dll 中的资源  
+ **库：** 用作 Mscoree.dll 中的资源  
   
- **.NET 框架版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataEmit2 Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit2-interface.md)
-- [IMetaDataEmit Interface](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-interface.md)
+- [IMetaDataEmit2 接口](imetadataemit2-interface.md)
+- [IMetaDataEmit 接口](imetadataemit-interface.md)

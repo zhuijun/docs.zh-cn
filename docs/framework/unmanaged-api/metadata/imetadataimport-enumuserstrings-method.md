@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 2b1f1418-4be8-4cdb-b418-b3abccc527a7
 topic_type:
 - apiref
-ms.openlocfilehash: 1c9f15881d3515f24a63f29e9337a7a356937f2d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: cd164008098c053e7d6506a6eef7d3bc8e4274b6
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449942"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503691"
 ---
 # <a name="imetadataimportenumuserstrings-method"></a>IMetaDataImport::EnumUserStrings 方法
 枚举表示当前元数据范围内的硬编码字符串的 String 标记。  
@@ -47,28 +47,28 @@ HRESULT EnumUserStrings (
  [in] `rStrings` 数组的最大大小。  
   
  `pcStrings`  
- 弄`rStrings`中返回的字符串标记的数目。  
+ 弄中返回的字符串标记的数目 `rStrings` 。  
   
 ## <a name="return-value"></a>返回值  
   
 |HRESULT|说明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumUserStrings` 成功返回。|  
-|`S_FALSE`|没有要枚举的令牌。 在这种情况下，`pcStrings` 为零。|  
+|`S_OK`|`EnumUserStrings`已成功返回。|  
+|`S_FALSE`|没有要枚举的令牌。 在这种情况下， `pcStrings` 为零。|  
   
-## <a name="remarks"></a>备注  
- 字符串标记由[IMetaDataEmit：:D efineuserstring](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineuserstring-method.md)方法创建。 此方法旨在由元数据浏览器而不是编译器使用。  
+## <a name="remarks"></a>注解  
+ 字符串标记由[IMetaDataEmit：:D efineuserstring](imetadataemit-defineuserstring-method.md)方法创建。 此方法旨在由元数据浏览器而不是编译器使用。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

@@ -1,5 +1,6 @@
 ---
 title: <network> 元素（网络设置）
+description: <network>网络设置元素为 .NET Framework 中的外部 SMTP 服务器选项配置网络选项。
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#network
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <network> element
 - network element
 ms.assetid: 2c2c6ad4-ed11-48ab-b28e-2bc0ba9b42c7
-ms.openlocfilehash: f7cfcc3b9d5a717c23175cd15aa48ae97c828e57
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 36857e63871b4672df349934594f0887a042609e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154811"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504545"
 ---
 # <a name="network-element-network-settings"></a>\<network> 元素（网络设置）
 配置外部简单邮件传输协议（SMTP）服务器的网络选项。  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8a7d4e40-28fe-4e14-b801-4049880130e7
 topic_type:
 - apiref
-ms.openlocfilehash: d1683965193801dbdee038ab06366178891fd978
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: af226f9317b67b23e03d06614ed5b9c956939c22
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74426720"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503414"
 ---
 # <a name="imetadataimport2enumgenericparamconstraints-method"></a>IMetaDataImport2::EnumGenericParamConstraints 方法
 获取与指定标记表示的泛型参数关联的泛型参数约束数组的枚举器。  
@@ -48,28 +48,28 @@ HRESULT EnumGenericParamConstraints (
  弄要枚举的泛型参数约束的数组。  
   
  `cMax`  
- 中  请求的最大标记数 `rGenericParamConstraints`。  
+ 中  要放入的请求的最大数量 `rGenericParamConstraints` 。  
   
  `pcGenericParamConstraints`  
- 弄一个指针，指向 `rGenericParamConstraints`中放置的标记数。  
+ 弄一个指针，指向中放置的标记数 `rGenericParamConstraints` 。  
   
 ## <a name="return-value"></a>返回值  
   
 |HRESULT|说明|  
 |-------------|-----------------|  
-|`S_OK`|`EnumGenericParameterConstraints` 成功返回。|  
-|`S_FALSE`|`phEnum` 没有成员元素。 在这种情况下，`pcGenericParameterConstraints` 设置为0（零）。|  
+|`S_OK`|`EnumGenericParameterConstraints`已成功返回。|  
+|`S_FALSE`|`phEnum`没有成员元素。 在这种情况下， `pcGenericParameterConstraints` 设置为0（零）。|  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 用作 Mscoree.dll 中的资源  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
