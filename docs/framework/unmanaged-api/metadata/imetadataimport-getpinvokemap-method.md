@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b8685c1e-b80c-4198-8eb3-748d6f48a99e
 topic_type:
 - apiref
-ms.openlocfilehash: c458fef77b49f522ca21dd5487731f4d43588cea
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8409e56b5ec4dbe47035a0555b6b7ce175b517ee
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437095"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84490973"
 ---
 # <a name="imetadataimportgetpinvokemap-method"></a>IMetaDataImport::GetPinvokeMap 方法
 获取用于表示 PInvoke 调用的目标程序集的 ModuleRef 标记。  
@@ -43,30 +43,30 @@ HRESULT GetPinvokeMap (
  中要为其获取 PInvoke 映射元数据的 FieldDef 或 MethodDef 标记。  
   
  `pdwMappingFlags`  
- 弄一个指针，指向用于映射的标志。 此值是[CorPinvokeMap](../../../../docs/framework/unmanaged-api/metadata/corpinvokemap-enumeration.md)枚举中的位掩码。  
+ 弄一个指针，指向用于映射的标志。 此值是[CorPinvokeMap](corpinvokemap-enumeration.md)枚举中的位掩码。  
   
  `szImportName`  
  弄非托管目标 DLL 的名称。  
   
  `cchImportName`  
- 中`szImportName`的大小（以宽字符为大小）。  
+ 中的大小（以宽字符为大小） `szImportName` 。  
   
  `pchImportName`  
- 弄`szImportName`中返回的宽字符数。  
+ 弄返回的宽字符数 `szImportName` 。  
   
  `pmrImportDLL`  
  弄一个指针，指向表示非托管目标对象库的 ModuleRef 标记。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

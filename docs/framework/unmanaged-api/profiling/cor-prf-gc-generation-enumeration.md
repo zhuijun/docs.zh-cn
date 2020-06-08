@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d6ece160-26ad-4d39-abd7-05acd6f78c48
 topic_type:
 - apiref
-ms.openlocfilehash: 0eb1f57e3505f9ce5bb8b831d30c3891e51097c3
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: b7a068efcf20b2028e9c193567d15b59e582febf
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158562"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84500918"
 ---
 # <a name="cor_prf_gc_generation-enumeration"></a>COR_PRF_GC_GENERATION 枚举
 标识垃圾回收生成。  
@@ -38,7 +38,7 @@ typedef enum {
   
 ## <a name="members"></a>成员  
   
-|成员|说明|  
+|成员|描述|  
 |------------|-----------------|  
 |`COR_PRF_GC_GEN_0`|对象存储为第0代。|  
 |`COR_PRF_GC_GEN_1`|对象存储为第1代。|  
@@ -46,7 +46,7 @@ typedef enum {
 |`COR_PRF_GC_LARGE_OBJECT_HEAP`|对象存储在大型对象堆中。|  
 |`COR_PRF_GC_PINNED_OBJECT_HEAP`|对象存储在固定对象堆中。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  垃圾回收器通过将对象划分为基于年龄的代来改善内存管理性能。 垃圾回收器当前使用三个代，编号为0、1和2，以及两个特殊堆段，一个用于大型对象，一个用于固定的对象。
   
  大小大于阈值的对象存储在大对象堆中。 固定的对象可以分配给固定对象堆，以避免在正常堆上分配这些对象的性能成本。 其他已分配对象开始属于0代。 发生垃圾回收后存在的所有对象都将升级到第1代。 在第1代中发生垃圾回收后存在的对象将移入第2代。  
@@ -56,7 +56,7 @@ typedef enum {
  `COR_PRF_GC_GENERATION`枚举由[COR_PRF_GC_GENERATION_RANGE](cor-prf-gc-generation-range-structure.md)结构使用。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   

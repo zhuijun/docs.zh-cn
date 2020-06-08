@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 603b3881-ea94-4dca-95cd-91eebac873a0
 topic_type:
 - apiref
-ms.openlocfilehash: 56221c6b3ac40595e999f2a2a3739f023441c46d
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 8615deb2e42b039120d97b3eb5af23beb31b0808
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76862403"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502842"
 ---
 # <a name="icorprofilerinfo3getappdomainscontainingmodule-method"></a>ICorProfilerInfo3::GetAppDomainsContainingModule 方法
 获取其中已加载给定模块的应用程序域的标识符。  
@@ -49,21 +49,21 @@ HRESULT GetAppDomainsContainingModule(
  `appDomainIds`  
  [out] 应用程序域 ID 值的数组。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  此方法使用调用方分配的缓冲区。  
   
-## <a name="requirements"></a>需求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+## <a name="requirements"></a>要求  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **头文件：** CorProf.idl、CorProf.h  
   
  **库：** CorGuids.lib  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
 - [ICorProfilerFunctionEnum 接口](icorprofilerfunctionenum-interface.md)
 - [ICorProfilerInfo3 接口](icorprofilerinfo3-interface.md)
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)
 - [分析](index.md)

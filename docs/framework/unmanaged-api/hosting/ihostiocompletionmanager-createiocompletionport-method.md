@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 907a2b43-68db-44a7-acac-89e792e7bb3c
 topic_type:
 - apiref
-ms.openlocfilehash: 2b679a9ea427d53d67474a196b5b3ae2c698ea5e
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 240712296254e02f4d268a00e1c15ef34f4519f1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804787"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501533"
 ---
 # <a name="ihostiocompletionmanagercreateiocompletionport-method"></a>IHostIoCompletionManager::CreateIoCompletionPort 方法
 请求宿主创建新的 i/o 完成端口。  
@@ -49,8 +49,8 @@ HRESULT CreateIoCompletionPort (
 |E_FAIL|发生未知的灾难性故障。 当方法返回 E_FAIL 时，CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
 |E_OUTOFMEMORY|没有足够的内存可用于分配请求的资源。|  
   
-## <a name="remarks"></a>备注  
- CLR 调用 `CreateIoCompletionPort` 方法来请求宿主创建新的 i/o 完成端口。 它通过调用[IHostIoCompletionManager：： Bind](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-bind-method.md)方法将 i/o 操作绑定到此端口。 主机通过调用[ICLRIoCompletionManager：： OnComplete](iclriocompletionmanager-oncomplete-method.md)将状态报告回 CLR。  
+## <a name="remarks"></a>注解  
+ CLR 调用 `CreateIoCompletionPort` 方法来请求宿主创建新的 i/o 完成端口。 它通过调用[IHostIoCompletionManager：： Bind](ihostiocompletionmanager-bind-method.md)方法将 i/o 操作绑定到此端口。 主机通过调用[ICLRIoCompletionManager：： OnComplete](iclriocompletionmanager-oncomplete-method.md)将状态报告回 CLR。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5e018eaa-d60e-4a0b-a2c5-8c36bd09d905
 topic_type:
 - apiref
-ms.openlocfilehash: 0542c518b64764ad27aa00b8d595be1191059436
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2cfb66203d8f2d69ea188f6913a5ef34dd74791e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437456"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84503596"
 ---
 # <a name="imetadataimportgetmethodsemantics-method"></a>IMetaDataImport::GetMethodSemantics 方法
 获取指示指定的 MethodDef 标记所引用的方法与指定的 EventProp 标记所引用的成对属性和事件之间的关系的标志。  
@@ -43,21 +43,21 @@ HRESULT GetMethodSemantics (
  中一个标记，它表示要为其获取方法的角色的成对属性和事件。  
   
  `pdwSemanticsFlags`  
- 弄指向关联语义标志的指针。 此值是[CorMethodSemanticsAttr](../../../../docs/framework/unmanaged-api/metadata/cormethodsemanticsattr-enumeration.md)枚举中的位掩码。  
+ 弄指向关联语义标志的指针。 此值是[CorMethodSemanticsAttr](cormethodsemanticsattr-enumeration.md)枚举中的位掩码。  
   
-## <a name="remarks"></a>备注  
- [IMetaDataEmit：:D efineproperty](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md)方法设置方法的语义标志。  
+## <a name="remarks"></a>注解  
+ [IMetaDataEmit：:D efineproperty](imetadataemit-defineproperty-method.md)方法设置方法的语义标志。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)

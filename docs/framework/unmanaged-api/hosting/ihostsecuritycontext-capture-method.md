@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: ae0836d0-1170-4494-bac5-d0e809df51a2
 topic_type:
 - apiref
-ms.openlocfilehash: 40857620e47befce361ff8cb04af527915051df3
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: e1df31ed8b652837a33b360b1378f99e6800cbea
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804199"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501516"
 ---
 # <a name="ihostsecuritycontextcapture-method"></a>IHostSecurityContext::Capture 方法
-获取通过调用[IHostSecurityManager：： GetSecurityContext](ihostsecuritymanager-getsecuritycontext-method.md)返回的[IHostSecurityContext](../../../../docs/framework/unmanaged-api/hosting/ihostsecuritycontext-interface.md)实例的克隆。  
+获取通过调用[IHostSecurityManager：： GetSecurityContext](ihostsecuritymanager-getsecuritycontext-method.md)返回的[IHostSecurityContext](ihostsecuritycontext-interface.md)实例的克隆。  
   
 ## <a name="syntax"></a>语法  
   
@@ -48,7 +48,7 @@ HRESULT Capture (
 |HOST_E_ABANDONED|已阻止的线程或纤程正在等待某个事件时，该事件被取消。|  
 |E_FAIL|发生未知的灾难性故障。 当方法返回 E_FAIL 时，CLR 在该进程内将不再可用。 对宿主方法的后续调用会返回 HOST_E_CLRNOTAVAILABLE。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  从返回的接口指针 `Capture` 是捕获上下文的克隆。 在异步代码点上移动此信息时，其生存期与进行调用的指针的生存期分开。 因此，可以释放原始指针。  
   
 ## <a name="requirements"></a>要求  

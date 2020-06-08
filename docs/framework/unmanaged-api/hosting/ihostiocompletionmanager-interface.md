@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c28d1983-83f7-46e2-990f-dbb9dc07c818
 topic_type:
 - apiref
-ms.openlocfilehash: 90675d9be71342efa903767abbf63102b40a2c35
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: 095872f8d4bd4f7d3351b8b3e3f8f8445b615cd8
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83804679"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501529"
 ---
 # <a name="ihostiocompletionmanager-interface"></a>IHostIoCompletionManager 接口
 提供允许公共语言运行时（CLR）与主机提供的 i/o 完成端口进行交互的方法。  
@@ -36,11 +36,11 @@ ms.locfileid: "83804679"
 |[GetMaxThreads 方法](ihostiocompletionmanager-getmaxthreads-method.md)|获取主机可为服务 i/o 请求分配的最大线程数。|  
 |[GetMinThreads 方法](ihostiocompletionmanager-getminthreads-method.md)|获取主机提供的用于处理 i/o 请求的最小线程数。|  
 |[InitializeHostOverlapped 方法](ihostiocompletionmanager-initializehostoverlapped-method.md)|向宿主提供初始化有关 i/o 请求的任何自定义数据的机会。|  
-|[SetCLRIoCompletionManager 方法](../../../../docs/framework/unmanaged-api/hosting/ihostiocompletionmanager-setclriocompletionmanager-method.md)|向宿主提供一个接口指针，该指针指向 CLR 实现的[ICLRIoCompletionManager](iclriocompletionmanager-interface.md)实例。|  
+|[SetCLRIoCompletionManager 方法](ihostiocompletionmanager-setclriocompletionmanager-method.md)|向宿主提供一个接口指针，该指针指向 CLR 实现的[ICLRIoCompletionManager](iclriocompletionmanager-interface.md)实例。|  
 |[SetMaxThreads 方法](ihostiocompletionmanager-setmaxthreads-method.md)|设置主机 allots i/o 请求的最大线程数。|  
 |[SetMinThreads 方法](ihostiocompletionmanager-setminthreads-method.md)|设置主机应为 i/o 完成分配的最小线程数。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `IHostIoCompletionManager`对应于 `ICLRIoCompletionManager` CLR 实现的接口。 CLR 调用的方法将 `IHostIoCompletionManager` 句柄绑定到主机提供的端口，并且宿主将调用的方法 `ICLRIoCompletionManager` 来报告 i/o 请求的完成。  
   
 ## <a name="requirements"></a>要求  

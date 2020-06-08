@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6eefb243-a281-41c1-bcdc-7e17513bc446
 topic_type:
 - apiref
-ms.openlocfilehash: 9a80336db4a5a8d7cfdebb7eb8d25bcb8f96e87c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 320cfae93f8aae94f9315e8e20ed6cf7f9cced7c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74437647"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84491311"
 ---
 # <a name="imetadataimportgetcustomattributeprops-method"></a>IMetaDataImport::GetCustomAttributeProps 方法
 获取给定元数据标记的自定义属性的值。  
@@ -45,7 +45,7 @@ HRESULT GetCustomAttributeProps (
  [out, optional] 表示自定义属性修改的对象的元数据标记。 此值可为任何类型的元数据标记（`mdCustomAttribute` 除外）。  
   
  `ptkType`  
- [out, optional] 表示已返回自定义属性的 `mdMethodDef` 的 `mdMemberRef` 或 <xref:System.Type> 元数据标记。  
+ [out, optional] 表示已返回自定义属性的 <xref:System.Type> 的 `mdMethodDef` 或 `mdMemberRef` 元数据标记。  
   
  `ppBlob`  
  [out, optional] 指向自定义属性的值的数据数组指针。  
@@ -53,19 +53,19 @@ HRESULT GetCustomAttributeProps (
  `pcbSize`  
  [out, optional] *`ppBlob` 中返回的数据大小（以字节为单位）。  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  自定义属性以元数据引擎理解的格式存储为数据数组。  
   
 ## <a name="requirements"></a>要求  
- **平台：** 请参阅[系统要求](../../../../docs/framework/get-started/system-requirements.md)。  
+ **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Cor  
   
  **库：** 作为资源包括在 Mscoree.dll 中  
   
- **.NET Framework 版本：** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
+ **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
 ## <a name="see-also"></a>另请参阅
 
-- [IMetaDataImport 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [IMetaDataImport2 接口](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [IMetaDataImport 接口](imetadataimport-interface.md)
+- [IMetaDataImport2 接口](imetadataimport2-interface.md)
