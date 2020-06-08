@@ -1,13 +1,13 @@
 ---
 title: C# 中的异步编程
 description: 对使用 async、await、Task 和 Task<T> 的异步编程的 C# 语言支持的概述
-ms.date: 05/26/2020
-ms.openlocfilehash: 703392ca6ba4e6fb08dd8a88817babc167394788
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.date: 06/04/2020
+ms.openlocfilehash: fbbd08f8c0e650c366ca1d283825e629fcb952d7
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007957"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446419"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>使用 Async 和 Await 的异步编程
 
@@ -32,6 +32,10 @@ ms.locfileid: "84007957"
 
 :::code language="csharp" source="snippets/index/AsyncBreakfast-starter/Program.cs" highlight="8-27":::
 
+:::image type="content" source="media/synchronous-breakfast.png" alt-text="同步早餐":::
+
+同步准备的早餐大约花费了 30 分钟，因为总耗时是每个任务耗时的总和。
+
 > [!NOTE]
 > `Coffee`、`Egg`、`Bacon`、`Toast` 和 `Juice` 类为空。 它们是仅用于演示的简单标记类，不含任何属性，且不用于其他用途。
 
@@ -50,6 +54,9 @@ ms.locfileid: "84007957"
 我们首先更新此代码，使线程在任务运行时不会阻塞。 `await` 关键字提供了一种非阻塞方式来启动任务，然后在此任务完成时继续执行。 “做早餐”代码的简单异步版本类似于以下片段：
 
 :::code language="csharp" source="snippets/index/AsyncBreakfast-V2/Program.cs" id="SnippetMain":::
+
+> [!IMPORTANT]
+> 总实耗时间和最初同步版本大致相同。 此代码尚未利用某些关键功能异步编程。
 
 > [!TIP]
 > `FryEggsAsync`、`FryBaconAsync` 和 `ToastBreadAsync` 的方法主体都已更新，现会分别返回 `Task<Egg>`、`Task<Bacon>` 和 `Task<Toast>`。 这些方法的名称与其原始版本不同，将包含“Async”后缀。 它们的实现在本文的稍后部分显示为[最终版本](#final-version)的一部分。
@@ -116,6 +123,10 @@ Console.WriteLine("bacon is ready");
 Console.WriteLine("Breakfast is ready!");
 ```
 
+:::image type="content" source="media/asynchronous-breakfast.png" alt-text="异步早餐":::
+
+异步准备的早餐大约花费了 20 分钟，这是因为一些任务可以并发运行。
+
 上述代码效果更好。 你可以一次启动所有的异步任务。 你仅在需要结果时才会等待每项任务。 上述代码可能类似于 Web 应用程序中请求各种微服务，然后将结果合并到单个页面中的代码。 你将立即发出所有请求，然后 `await` 所有这些任务并组成 Web 页面。
 
 ## <a name="composition-with-tasks"></a>与任务组合
@@ -172,6 +183,10 @@ while (breakfastTasks.Count > 0)
 
 进行所有这些更改之后，代码的最终版本将如下所示：<a id="final-version"></a>
 :::code language="csharp" source="snippets/index/AsyncBreakfast-final/Program.cs" highlight="9-40":::
+
+:::image type="content" source="media/whenany-async-breakfast.png" alt-text="when any 异步早餐":::
+
+异步准备的早餐的最终版本大约花费了 15 分钟，这是因为一些任务能够同时运行，并且该代码能够同时监视多个任务，只在需要时才执行操作。
 
 此最终代码是异步的。 它更为准确地反映了一个人做早餐的流程。 将上述代码与本文中的第一个代码示例进行比较。 阅读代码时，核心操作仍然很明确。 你可以按照阅读本文开始时早餐制作说明的相同方式阅读此代码。 `async` 和 `await` 的语言功能支持每个人做出转变以遵循这些书面指示：尽可能启动任务，不要在等待任务完成时造成阻塞。
 

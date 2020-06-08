@@ -1,5 +1,6 @@
 ---
 title: 处理和引发事件
+description: 了解如何处理并引发基于委托模型的 .NET 事件。 此模型允许订阅者向提供商注册或接收通知。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: b8ed028bc1edabf14d7b2dd67d94b28d574d2eb4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8cf0ff323e9bf7305e3d9cbb6dabd8f685059e97
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159619"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447103"
 ---
 # <a name="handling-and-raising-events"></a>处理和引发事件
 
@@ -29,7 +30,7 @@ ms.locfileid: "78159619"
   
 ## <a name="events"></a>事件
 
-事件是由对象发送的用于发出操作信号的消息。 该操作可能是由用户交互引起，例如单击按钮；也可能是由某些其他程序的逻辑导致，例如更改属性值。 引发事件的对象称为“事件发送方”  。 事件发送方不知道哪个对象或方法将接收（处理）它引发的事件。 事件通常是事件发送方的成员，例如 <xref:System.Web.UI.WebControls.Button.Click> 事件是 <xref:System.Web.UI.WebControls.Button> 类的成员，<xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> 事件是实现  <xref:System.ComponentModel.INotifyPropertyChanged> 接口的类的成员。  
+事件是由对象发送的用于发出操作信号的消息。 该操作可能是由用户交互引起，例如单击按钮；也可能是由某些其他程序的逻辑导致，例如更改属性值。 引发事件的对象称为“事件发送方”。 事件发送方不知道哪个对象或方法将接收（处理）它引发的事件。 事件通常是事件发送方的成员，例如 <xref:System.Web.UI.WebControls.Button.Click> 事件是 <xref:System.Web.UI.WebControls.Button> 类的成员，<xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> 事件是实现  <xref:System.ComponentModel.INotifyPropertyChanged> 接口的类的成员。  
   
 若要定义一个事件，可以在事件类签名中使用 [`event`](../../csharp/language-reference/keywords/event.md)（在 C# 中）或 [`Event`](../../visual-basic/language-reference/statements/event-statement.md)（在 Visual Basic 中）关键字，并指定事件的委托类型。 委托在下一节中介绍。  
   
@@ -88,14 +89,14 @@ ms.locfileid: "78159619"
   
 ## <a name="related-topics"></a>相关主题  
   
-|标题|说明|  
+|Title|描述|  
 |-----------|-----------------|  
-|[如何：引发和使用事件](how-to-raise-and-consume-events.md)|包含引发和使用事件的示例。|  
+|[如何：抛出和使用事件](how-to-raise-and-consume-events.md)|包含引发和使用事件的示例。|  
 |[如何：使用事件属性处理多个事件](how-to-handle-multiple-events-using-event-properties.md)|演示如何使用事件属性处理多个事件。|  
 |[观察程序设计模式](observer-design-pattern.md)|描述允许订阅者向提供方注册和接收通知的设计模式。|  
 |[如何：在 Web 窗体应用程序中使用事件](how-to-consume-events-in-a-web-forms-application.md)|演示如何处理 Web 窗体控件引发的事件。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.EventHandler>
 - <xref:System.EventHandler%601>
