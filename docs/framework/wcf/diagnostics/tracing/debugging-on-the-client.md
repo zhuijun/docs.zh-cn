@@ -2,12 +2,12 @@
 title: 在客户端上调试
 ms.date: 03/30/2017
 ms.assetid: 56f9ad05-ea1b-4ef6-85f2-890f7ed71567
-ms.openlocfilehash: 21598b84d0d493bad29a77adf31b85f4989afdc7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0330e0954969fbaf798fe3be029b443f0fa219cd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61912596"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589352"
 ---
-# <a name="debugging-on-the-client"></a><span data-ttu-id="89c54-102">在客户端上调试</span><span class="sxs-lookup"><span data-stu-id="89c54-102">Debugging on the Client</span></span>
-<span data-ttu-id="89c54-103">若要使用户更轻松地编写您的 WCF 服务的客户端应用程序，可以添加[ \<serviceDebug >](../../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md)服务到服务的配置文件的行为。</span><span class="sxs-lookup"><span data-stu-id="89c54-103">To make it easier for users to write client applications for your WCF service, you can add the [\<serviceDebug>](../../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) service behavior to the configuration file of your service.</span></span> <span data-ttu-id="89c54-104">此行为可用于发布帮助页，以及在返回到客户端的 SOAP 错误的详细信息中返回托管异常信息。</span><span class="sxs-lookup"><span data-stu-id="89c54-104">This behavior can be used to publish help pages, and return managed exception information in the details of SOAP faults returned to the client.</span></span>
+# <a name="debugging-on-the-client"></a><span data-ttu-id="d7b69-102">在客户端上调试</span><span class="sxs-lookup"><span data-stu-id="d7b69-102">Debugging on the Client</span></span>
+<span data-ttu-id="d7b69-103">为了使用户能够更轻松地为 WCF 服务编写客户端应用程序，你可以将 [\<serviceDebug>](../../../configure-apps/file-schema/wcf/servicedebug.md) 服务行为添加到服务的配置文件中。</span><span class="sxs-lookup"><span data-stu-id="d7b69-103">To make it easier for users to write client applications for your WCF service, you can add the [\<serviceDebug>](../../../configure-apps/file-schema/wcf/servicedebug.md) service behavior to the configuration file of your service.</span></span> <span data-ttu-id="d7b69-104">此行为可用于发布帮助页，以及在返回到客户端的 SOAP 错误的详细信息中返回托管异常信息。</span><span class="sxs-lookup"><span data-stu-id="d7b69-104">This behavior can be used to publish help pages, and return managed exception information in the details of SOAP faults returned to the client.</span></span>
