@@ -2,21 +2,21 @@
 title: System.ServiceModel.Channels.InitiatingTcpConnection
 ms.date: 03/30/2017
 ms.assetid: d0a2749d-3f97-41b8-ac08-37b5069fe41e
-ms.openlocfilehash: b9316f677b68ee1e7c8c166a87eb849a1b28e48b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: af501e3b8178c61ef18e60a61f497ce1c2b9e835
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792478"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596137"
 ---
-# <a name="systemservicemodelchannelsinitiatingtcpconnection"></a><span data-ttu-id="c98a0-102">System.ServiceModel.Channels.InitiatingTcpConnection</span><span class="sxs-lookup"><span data-stu-id="c98a0-102">System.ServiceModel.Channels.InitiatingTcpConnection</span></span>
-<span data-ttu-id="c98a0-103">System.ServiceModel.Channels.InitiatingTcpConnection</span><span class="sxs-lookup"><span data-stu-id="c98a0-103">System.ServiceModel.Channels.InitiatingTcpConnection</span></span>  
+# <a name="systemservicemodelchannelsinitiatingtcpconnection"></a><span data-ttu-id="aadfe-102">System.ServiceModel.Channels.InitiatingTcpConnection</span><span class="sxs-lookup"><span data-stu-id="aadfe-102">System.ServiceModel.Channels.InitiatingTcpConnection</span></span>
+<span data-ttu-id="aadfe-103">System.ServiceModel.Channels.InitiatingTcpConnection</span><span class="sxs-lookup"><span data-stu-id="aadfe-103">System.ServiceModel.Channels.InitiatingTcpConnection</span></span>  
   
-## <a name="description"></a><span data-ttu-id="c98a0-104">描述</span><span class="sxs-lookup"><span data-stu-id="c98a0-104">Description</span></span>  
- <span data-ttu-id="c98a0-105">启动一个 TCP 连接。</span><span class="sxs-lookup"><span data-stu-id="c98a0-105">Initiating a TCP connection.</span></span>  
+## <a name="description"></a><span data-ttu-id="aadfe-104">描述</span><span class="sxs-lookup"><span data-stu-id="aadfe-104">Description</span></span>  
+ <span data-ttu-id="aadfe-105">启动一个 TCP 连接。</span><span class="sxs-lookup"><span data-stu-id="aadfe-105">Initiating a TCP connection.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c98a0-106">请参阅</span><span class="sxs-lookup"><span data-stu-id="c98a0-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="aadfe-106">另请参阅</span><span class="sxs-lookup"><span data-stu-id="aadfe-106">See also</span></span>
 
-- [<span data-ttu-id="c98a0-107">跟踪</span><span class="sxs-lookup"><span data-stu-id="c98a0-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="c98a0-108">使用跟踪来排除应用程序故障</span><span class="sxs-lookup"><span data-stu-id="c98a0-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="c98a0-109">管理和诊断</span><span class="sxs-lookup"><span data-stu-id="c98a0-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="aadfe-107">跟踪</span><span class="sxs-lookup"><span data-stu-id="aadfe-107">Tracing</span></span>](index.md)
+- [<span data-ttu-id="aadfe-108">使用跟踪来排除应用程序故障</span><span class="sxs-lookup"><span data-stu-id="aadfe-108">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="aadfe-109">管理和诊断</span><span class="sxs-lookup"><span data-stu-id="aadfe-109">Administration and Diagnostics</span></span>](../index.md)
