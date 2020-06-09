@@ -5,31 +5,35 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b27b52cf-6172-485f-a75c-70ff9c5a2bd4
-ms.openlocfilehash: 6c14e87c5caede4fea52867d9f184f3f64a5ed3b
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: a1427747d03f01e52f1ee7ad1fc11d47d310edbe
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249638"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590600"
 ---
-# <a name="how-to-implement-copytodatatablet-where-the-generic-type-t-is-not-a-datarow"></a>如何：实现 copytoDataTable\<T>通用类型 T 不是数据行的位置
+# <a name="how-to-implement-copytodatatablet-where-the-generic-type-t-is-not-a-datarow"></a>如何：在泛型 T 不是 DataRow 的位置实现 CopyToDataTable\<T>
 <xref:System.Data.DataTable> 对象通常用于数据绑定。 <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 方法接收查询结果并将数据复制到 <xref:System.Data.DataTable> 中，后者随后会使用该数据进行数据绑定。 但是，只在 <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 源上执行 <xref:System.Collections.Generic.IEnumerable%601> 方法，其中泛型参数 `T` 的类型为 <xref:System.Data.DataRow>。 虽然这十分有用，但是它并不允许从标量类型的序列、投影匿名类型的查询或执行表联接的查询创建表。  
   
  此主题描述如何实现两个自定义的 `CopyToDataTable<T>` 扩展方法，其接受类型不是 `T` 的泛型参数 <xref:System.Data.DataRow>。 从 <xref:System.Data.DataTable> 源创建 <xref:System.Collections.Generic.IEnumerable%601> 的逻辑包含在 `ObjectShredder<T>` 类中，该类稍后被包装在两个重载的 `CopyToDataTable<T>` 扩展方法中。 `Shred` 类的 `ObjectShredder<T>` 方法返回填充的 <xref:System.Data.DataTable> 并接受三个输入参数：一个 <xref:System.Collections.Generic.IEnumerable%601> 源、一个 <xref:System.Data.DataTable> 和一个 <xref:System.Data.LoadOption> 枚举。 返回的 <xref:System.Data.DataTable> 的初始架构是以类型为 `T` 的架构为基础的。 如果现有表作为输入提供，则该架构必须与类型为 `T` 的架构一致。 每个公共属性和类型为 `T` 的字段将转换为返回的表中的 <xref:System.Data.DataColumn>。 如果源序列包含从 `T` 派生的类型，则为任何其他公共属性或字段扩展返回的表的架构。  
   
  有关使用自定义 `CopyToDataTable<T>` 方法的示例，请参阅[从查询创建数据表](creating-a-datatable-from-a-query-linq-to-dataset.md)。  
   
-### <a name="to-implement-the-custom-copytodatatablet-methods-in-your-application"></a>在应用程序中实现自定义 CopyToDataTable\<T> 方法  
+### <a name="to-implement-the-custom-copytodatatablet-methods-in-your-application"></a>\<T>在应用程序中实现自定义 CopyToDataTable 方法  
   
 1. 实现 `ObjectShredder<T>` 类，以从下面的 <xref:System.Data.DataTable> 源创建 <xref:System.Collections.Generic.IEnumerable%601>：  
   
      [!code-csharp[DP Custom CopyToDataTable Examples#ObjectShredderClass](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#objectshredderclass)]
      [!code-vb[DP Custom CopyToDataTable Examples#ObjectShredderClass](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#objectshredderclass)]  
 
-    前面的示例假定 属性`DataColumn`不是空值类型。 要处理具有空值类型的属性，请使用以下代码：
+    前面的示例假定的属性和字段 `DataColumn` 不能为 null 值类型。 若要处理具有可为 null 的值类型的属性和字段，请使用以下代码：
 
     ```csharp
+    // Nullable-aware code for properties.
     DataColumn dc = table.Columns.Contains(p.Name) ? table.Columns[p.Name] : table.Columns.Add(p.Name, Nullable.GetUnderlyingType(p.PropertyType) ?? p.PropertyType);
+
+    // Nullable-aware code for fields.
+    DataColumn dc = table.Columns.Contains(f.Name) ? table.Columns[f.Name] : table.Columns.Add(f.Name, Nullable.GetUnderlyingType(f.FieldType) ?? f.FieldType);
     ```
 
 2. 在下面类中实现自定义 `CopyToDataTable<T>` 扩展方法：  
@@ -73,7 +77,7 @@ public class ObjectShredder<T>
 }  
 ```
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [从查询创建数据表](creating-a-datatable-from-a-query-linq-to-dataset.md)
 - [编程指南](programming-guide-linq-to-dataset.md)

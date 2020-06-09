@@ -2,18 +2,18 @@
 title: 跟踪和消息日志记录的推荐设置
 ms.date: 03/30/2017
 ms.assetid: c6aca6e8-704e-4779-a9ef-50c46850249e
-ms.openlocfilehash: 604aae2c0a0c5390428e7f1a2c99e17e90ee76a9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9d2586570a3f590735c2a8e1ca176580886c8d92
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185734"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578911"
 ---
 # <a name="recommended-settings-for-tracing-and-message-logging"></a>跟踪和消息日志记录的推荐设置
 本主题描述用于不同操作环境的跟踪和消息日志记录的推荐设置。  
   
 ## <a name="recommended-settings-for-a-production-environment"></a>生产环境中的推荐设置  
- 对于生产环境，如果您使用的是 WCF 跟踪源，请将 `switchValue` 设置为“警告”。 如果您使用的是 WCF `System.ServiceModel` 跟踪源，请将 `switchValue` 属性设置为 `Warning`，并将 `propagateActivity` 属性设置为 `true`。 如果您使用的是用户定义的跟踪源，请将 `switchValue` 属性设置为 `Warning, ActivityTracing`。 这可以使用[配置编辑器工具 （SvcConfigEditor.exe）](../../../../../docs/framework/wcf/configuration-editor-tool-svcconfigeditor-exe.md)手动完成。 如果你没有预测性能情况，则可以在上述所有情况中，将 `switchValue` 属性设置为 `Information`，这将生成大量的跟踪数据。 下面的示例演示这些推荐的设置。  
+ 对于生产环境，如果您使用的是 WCF 跟踪源，请将 `switchValue` 设置为“警告”。 如果您使用的是 WCF `System.ServiceModel` 跟踪源，请将 `switchValue` 属性设置为 `Warning`，并将 `propagateActivity` 属性设置为 `true`。 如果您使用的是用户定义的跟踪源，请将 `switchValue` 属性设置为 `Warning, ActivityTracing`。 可以使用[配置编辑器工具（svcconfigeditor.exe）](../../configuration-editor-tool-svcconfigeditor-exe.md)手动完成此操作。 如果你没有预测性能情况，则可以在上述所有情况中，将 `switchValue` 属性设置为 `Information`，这将生成大量的跟踪数据。 下面的示例演示这些推荐的设置。  
   
 ```xml  
 <configuration>  
@@ -97,10 +97,10 @@ ms.locfileid: "79185734"
 ```  
   
 ## <a name="using-wmi-to-modify-settings"></a>使用 WMI 修改设置  
- 可以使用 WMI 更改运行时的配置设置（通过按照上述配置示例，启用配置中的 `wmiProviderEnabled` 属性）。 例如，可以在运行时使用 CIM Studio 中的 WMI 将跟踪源级别从“警告”更改为“信息”。 应该注意，这种方式的即时调试的性能开销可能非常高。 有关使用 WMI 的详细信息，请参阅[使用 Windows 管理检测进行诊断](../../../../../docs/framework/wcf/diagnostics/wmi/index.md)主题。  
+ 可以使用 WMI 更改运行时的配置设置（通过按照上述配置示例，启用配置中的 `wmiProviderEnabled` 属性）。 例如，可以在运行时使用 CIM Studio 中的 WMI 将跟踪源级别从“警告”更改为“信息”。 应该注意，这种方式的即时调试的性能开销可能非常高。 有关使用 WMI 的详细信息，请参阅[使用诊断 Windows Management Instrumentation](../wmi/index.md)主题。  
   
 ## <a name="enable-correlated-events-in-aspnet-tracing"></a>在 ASP.NET 跟踪中启用相关事件  
- 除非启用了 ASP.NET 事件跟踪，否则 ASP.NET 事件不会设置关联 ID (ActivityID)。 要正确查看相关事件，您必须使用命令控制台中的以下命令打开ASP.NET事件跟踪，该命令可以通过"**开始**"、**运行**和键入**cmd**来调用该命令，  
+ 除非启用了 ASP.NET 事件跟踪，否则 ASP.NET 事件不会设置关联 ID (ActivityID)。 若要正确查看相关事件，必须使用命令控制台中的以下命令打开 ASP.NET 事件跟踪，可通过转到 "**启动**"、"**运行**" 并键入**cmd**来调用它。  
   
 ```console  
 logman start mytrace -pf logman.providers -o test.etl –ets  
@@ -114,4 +114,4 @@ logman stop mytrace -ets
   
 ## <a name="see-also"></a>另请参阅
 
-- [使用 Windows Management Instrumentation 进行诊断](../../../../../docs/framework/wcf/diagnostics/wmi/index.md)
+- [使用 Windows Management Instrumentation 诊断](../wmi/index.md)

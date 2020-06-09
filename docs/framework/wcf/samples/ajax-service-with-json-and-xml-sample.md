@@ -2,16 +2,16 @@
 title: 具有 JSON 和 XML 的 AJAX 服务示例
 ms.date: 03/30/2017
 ms.assetid: 8ea5860d-0c42-4ae9-941a-e07efdd8e29c
-ms.openlocfilehash: ca9bdbfa135ac7dc0b69589d4f8fce07bc4c4afe
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 8f70b6aa2e61d01a075a6edb3fe490ef593e73b0
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716220"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84575948"
 ---
 # <a name="ajax-service-with-json-and-xml-sample"></a>具有 JSON 和 XML 的 AJAX 服务示例
 
-此示例演示如何使用 Windows Communication Foundation （WCF）创建返回 JavaScript 对象表示法（JSON）或 XML 数据的异步 JavaScript 和 XML （AJAX）服务。 可以从 Web 浏览器客户端使用 JavaScript 代码来访问 AJAX 服务。 此示例以[基本 AJAX 服务](../../../../docs/framework/wcf/samples/basic-ajax-service.md)示例为基础。
+此示例演示如何使用 Windows Communication Foundation （WCF）创建返回 JavaScript 对象表示法（JSON）或 XML 数据的异步 JavaScript 和 XML （AJAX）服务。 可以从 Web 浏览器客户端使用 JavaScript 代码来访问 AJAX 服务。 此示例以[基本 AJAX 服务](basic-ajax-service.md)示例为基础。
 
 与其他 AJAX 示例不同的是，此示例不使用 ASP.NET AJAX 和 <xref:System.Web.UI.ScriptManager> 控件。 利用一些附加配置，可以通过 JavaScript 从任何 HTML 页面访问 WCF AJAX 服务，此处显示了这种情况。 有关将 WCF 与 ASP.NET AJAX 一起使用的示例，请参阅[Ajax 示例](ajax.md)。
 
@@ -20,7 +20,7 @@ ms.locfileid: "74716220"
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。
 
-为了启用非 ASP.NET AJAX 客户端，请在 .svc 文件中使用 <xref:System.ServiceModel.Activation.WebServiceHostFactory>（而不是 <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>）。 <xref:System.ServiceModel.Activation.WebServiceHostFactory> 将 <xref:System.ServiceModel.Description.WebHttpEndpoint> 标准终结点添加到服务中。 在相对于 .svc 文件的空地址处配置终结点;这意味着服务的地址是 `http://localhost/ServiceModelSamples/service.svc`的，除了操作名称外没有其他后缀。
+为了启用非 ASP.NET AJAX 客户端，请在 .svc 文件中使用 <xref:System.ServiceModel.Activation.WebServiceHostFactory>（而不是 <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory>）。 <xref:System.ServiceModel.Activation.WebServiceHostFactory> 将 <xref:System.ServiceModel.Description.WebHttpEndpoint> 标准终结点添加到服务中。 在相对于 .svc 文件的空地址处配置终结点;这意味着服务的地址是 `http://localhost/ServiceModelSamples/service.svc` ，除操作名称外没有其他后缀。
 
 `<%@ServiceHost language="c#" Debug="true" Service="Microsoft.Samples.XmlAjaxService.CalculatorService" Factory="System.ServiceModel.Activation.WebServiceHostFactory" %>`
 
@@ -37,7 +37,7 @@ ms.locfileid: "74716220"
 </system.serviceModel>
 ```
 
-<xref:System.ServiceModel.Description.WebHttpEndpoint> 的默认数据格式为 XML，而 <xref:System.ServiceModel.Description.WebScriptEndpoint> 的默认数据格式为 JSON。 有关详细信息，请参阅在[不 ASP.NET 的情况下创建 WCF AJAX 服务](../../../../docs/framework/wcf/feature-details/creating-wcf-ajax-services-without-aspnet.md)。
+的默认数据格式 <xref:System.ServiceModel.Description.WebHttpEndpoint> 为 XML，而的默认数据格式 <xref:System.ServiceModel.Description.WebScriptEndpoint> 为 JSON。 有关详细信息，请参阅在[不 ASP.NET 的情况下创建 WCF AJAX 服务](../feature-details/creating-wcf-ajax-services-without-aspnet.md)。
 
 以下示例中的服务是一个包含两个操作的标准 WCF 服务。 这两个操作都需要针对 <xref:System.ServiceModel.Web.WebMessageBodyStyle.Wrapped> 或 <xref:System.ServiceModel.Web.WebGetAttribute> 属性使用 <xref:System.ServiceModel.Web.WebInvokeAttribute> 正文样式，该样式特定于 `webHttp` 行为，对于 JSON/XML 数据格式开关没有任何影响。
 
@@ -47,7 +47,7 @@ ms.locfileid: "74716220"
 MathResult DoMathXml(double n1, double n2);
 ```
 
-操作的响应格式指定为 XML，这是[\<wcf-webhttp >](../../../../docs/framework/configure-apps/file-schema/wcf/webhttp.md)行为的默认设置。 但是，最好显式指定响应格式。
+操作的响应格式指定为 XML，这是行为的默认设置 [\<webHttp>](../../configure-apps/file-schema/wcf/webhttp.md) 。 但是，最好显式指定响应格式。
 
 另一个操作使用 `WebInvokeAttribute` 属性并显式指定响应的 JSON（而不是 XML）。
 
@@ -57,9 +57,9 @@ MathResult DoMathXml(double n1, double n2);
 MathResult DoMathJson(double n1, double n2);
 ```
 
-请注意，在这两种情况下，操作都返回复杂类型，`MathResult`，这是一个标准的 WCF 数据协定类型。
+请注意，在这两种情况下，操作都返回复杂类型，即 `MathResult` 标准 WCF 数据协定类型。
 
-客户端网页 Xmlajaxclientpage.htm 包含 JavaScript 代码，该代码在用户单击页面上的 "**执行计算" （返回 JSON）** 或 "**执行计算（返回 XML）** " 按钮时调用上述两个操作之一。 用来调用服务的代码将构造 JSON 正文并使用 HTTP POST 发送它。 该请求是在 JavaScript 中手动创建的，不同于[基本 AJAX 服务](../../../../docs/framework/wcf/samples/basic-ajax-service.md)示例和其他使用 ASP.NET ajax 的示例。
+客户端网页 Xmlajaxclientpage.htm 包含 JavaScript 代码，该代码在用户单击页面上的 "**执行计算" （返回 JSON）** 或 "**执行计算（返回 XML）** " 按钮时调用上述两个操作之一。 用来调用服务的代码将构造 JSON 正文并使用 HTTP POST 发送它。 该请求是在 JavaScript 中手动创建的，不同于[基本 AJAX 服务](basic-ajax-service.md)示例和其他使用 ASP.NET ajax 的示例。
 
 ```csharp
 // Create HTTP request
@@ -104,12 +104,12 @@ xmlHttp.onreadystatechange=function(){
 
 #### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-2. 按照[生成 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中所述生成解决方案 XmlAjaxService。
+2. 按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中所述生成解决方案 XmlAjaxService。
 
-3. 导航到 `http://localhost/ServiceModelSamples/XmlAjaxClientPage.htm` （不要在浏览器中从项目目录打开 Xmlajaxclientpage.htm）。
+3. 导航到 `http://localhost/ServiceModelSamples/XmlAjaxClientPage.htm` （不要在浏览器中从项目目录打开 xmlajaxclientpage.htm）。
 
 ## <a name="see-also"></a>另请参阅
 
-- [使用 HTTP POST 的 AJAX 服务](../../../../docs/framework/wcf/samples/ajax-service-using-http-post.md)
+- [使用 HTTP POST 的 AJAX 服务](ajax-service-using-http-post.md)

@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - metadata [WCF], exporting and importing
 ms.assetid: 614a75bb-e0b0-4c95-b6d8-02cb5e5ddb38
-ms.openlocfilehash: 692382de81459ad52d306ca7fd05546b4e36294d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f07a1a10529aa1615bb00a0f3faeca9cb249aa64
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963663"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595526"
 ---
 # <a name="exporting-and-importing-metadata"></a>导出和导入元数据
-在 Windows Communication Foundation (WCF) 中, 导出元数据是描述服务终结点并将其投影到并行的标准化表示形式的过程, 客户端可以使用该表示形式来了解如何使用服务。 导入服务元数据是一个从服务元数据生成 <xref:System.ServiceModel.Description.ServiceEndpoint> 实例或部分的过程。  
+在 Windows Communication Foundation （WCF）中，导出元数据是描述服务终结点并将其投影到并行的标准化表示形式的过程，客户端可以使用该表示形式来了解如何使用服务。 导入服务元数据是一个从服务元数据生成 <xref:System.ServiceModel.Description.ServiceEndpoint> 实例或部分的过程。  
   
 ## <a name="exporting-metadata"></a>导出元数据  
- 若要从 <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> 实例导出元数据，请使用 <xref:System.ServiceModel.Description.MetadataExporter> 抽象类的实现。 类型是 WCF 中包含的<xref:System.ServiceModel.Description.MetadataExporter>抽象类的实现。 <xref:System.ServiceModel.Description.WsdlExporter>  
+ 若要从 <xref:System.ServiceModel.Description.ServiceEndpoint?displayProperty=nameWithType> 实例导出元数据，请使用 <xref:System.ServiceModel.Description.MetadataExporter> 抽象类的实现。 <xref:System.ServiceModel.Description.WsdlExporter>类型是 <xref:System.ServiceModel.Description.MetadataExporter> WCF 中包含的抽象类的实现。  
   
  <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> 类型使用封装在 <xref:System.ServiceModel.Description.MetadataSet> 实例中的附加策略表达式生成 Web 服务描述语言 (WSDL) 元数据。 可以使用 <xref:System.ServiceModel.Description.WsdlExporter?displayProperty=nameWithType> 实例以迭代方式为 <xref:System.ServiceModel.Description.ContractDescription> 对象和 <xref:System.ServiceModel.Description.ServiceEndpoint> 对象导出元数据。 还可以导出 <xref:System.ServiceModel.Description.ServiceEndpoint> 对象的集合，并将其与特定的服务名称相关联。  
   
@@ -25,7 +25,7 @@ ms.locfileid: "69963663"
 ## <a name="importing-metadata"></a>导入元数据  
   
 ### <a name="importing-wsdl-documents"></a>导入 WSDL 文档  
- 若要在 WCF 中导入服务元数据, 请<xref:System.ServiceModel.Description.MetadataImporter>使用抽象类的实现。 类型是 WCF 中包含的<xref:System.ServiceModel.Description.MetadataImporter>抽象类的实现。 <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType> <xref:System.ServiceModel.Description.WsdlImporter> 类型使用捆绑在 <xref:System.ServiceModel.Description.MetadataSet> 对象中的附加策略来导入 WSDL 元数据。  
+ 若要在 WCF 中导入服务元数据，请使用 <xref:System.ServiceModel.Description.MetadataImporter> 抽象类的实现。 <xref:System.ServiceModel.Description.WsdlImporter?displayProperty=nameWithType>类型是 <xref:System.ServiceModel.Description.MetadataImporter> WCF 中包含的抽象类的实现。 <xref:System.ServiceModel.Description.WsdlImporter> 类型使用捆绑在 <xref:System.ServiceModel.Description.MetadataSet> 对象中的附加策略来导入 WSDL 元数据。  
   
  <xref:System.ServiceModel.Description.WsdlImporter> 类型可让您控制如何导入元数据。 可以导入所有终结点、所有绑定或所有协定。 可以导入与特定的 WSDL 服务、绑定或端口类型相关联的所有终结点。 还可以导入特定的 WSDL 端口的终结点、特定的 WSDL 绑定的绑定或特定的 WSDL 端口类型的协定。  
   
@@ -48,19 +48,19 @@ ms.locfileid: "69963663"
  <xref:System.ServiceModel.Description.WsdlExporter> 类型会再次引发在导出过程中捕获的所有异常。 这些异常不会作为 `Errors` 属性中的错误而捕获。 一旦 <xref:System.ServiceModel.Description.WsdlExporter> 引发异常，则会进入错误状态，并且无法重用。 当某个操作因使用了通配符操作而无法导出时以及在遇到重复的绑定名称时，<xref:System.ServiceModel.Description.WsdlExporter> 确实会将警告添加到其 `Errors` 属性中。  
   
 ## <a name="in-this-section"></a>本节内容  
- [如何：将元数据导入服务终结点](../../../../docs/framework/wcf/feature-details/how-to-import-metadata-into-service-endpoints.md)  
+ [如何：将元数据导入服务终结点](how-to-import-metadata-into-service-endpoints.md)  
  描述如何将下载的元数据导入到说明对象中。  
   
- [如何：从服务终结点导出元数据](../../../../docs/framework/wcf/feature-details/how-to-export-metadata-from-service-endpoints.md)  
+ [如何：从服务终结点导出元数据](how-to-export-metadata-from-service-endpoints.md)  
  描述如何将说明对象导出到元数据中。  
   
- [ServiceDescription 和 WSDL 引用](../../../../docs/framework/wcf/feature-details/servicedescription-and-wsdl-reference.md)  
+ [ServiceDescription 和 WSDL 引用](servicedescription-and-wsdl-reference.md)  
  描述说明对象和 WSDL 之间的映射。  
   
- [如何：使用 Svcutil.exe 从已编译的服务代码中导出元数据](../../../../docs/framework/wcf/feature-details/how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)  
+ [如何：使用 Svcutil.exe 将元数据从已编译的服务代码中导出](how-to-use-svcutil-exe-to-export-metadata-from-compiled-service-code.md)  
  描述如何使用 Svcutil.exe 导出已编译程序集中的服务、协定和数据类型的元数据。  
   
- [数据协定架构引用](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)  
+ [数据协定架构参考](data-contract-schema-reference.md)  
  描述 <xref:System.Runtime.Serialization.DataContractSerializer> 用来说明 XML 序列化的公共语言运行库 (CLR) 类型的 XML 架构 (XSD) 的子集。  
   
 ## <a name="reference"></a>参考  
@@ -70,5 +70,5 @@ ms.locfileid: "69963663"
   
 ## <a name="see-also"></a>请参阅
 
-- [导出 WCF 扩展的自定义元数据](../../../../docs/framework/wcf/extending/exporting-custom-metadata-for-a-wcf-extension.md)
-- [导入 WCF 扩展的自定义元数据](../../../../docs/framework/wcf/extending/importing-custom-metadata-for-a-wcf-extension.md)
+- [导出 WCF 扩展的自定义元数据](../extending/exporting-custom-metadata-for-a-wcf-extension.md)
+- [导入 WCF 扩展的自定义元数据](../extending/importing-custom-metadata-for-a-wcf-extension.md)
