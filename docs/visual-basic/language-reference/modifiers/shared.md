@@ -11,12 +11,12 @@ helpviewer_keywords:
 - shared [elements VB]
 - elements [Visual Basic], shared
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
-ms.openlocfilehash: 000cc13bc6e80914e9a21b6ee60e91127809ee08
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: d8c9879ea2f62bfbeaa378d0aaee806623ea1c55
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307080"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579107"
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
 
@@ -26,13 +26,13 @@ ms.locfileid: "84307080"
 
 共享类或结构的成员使其可用于每个实例，而不是*非共享*，其中每个实例都保留其自己的副本。 例如，如果将变量的值应用于整个应用程序，则此方法很有用。 如果将该变量声明为 `Shared` ，则所有实例都将访问相同的存储位置，并且如果一个实例更改该变量的值，则所有实例都将访问更新的值。
 
-共享不会更改成员的访问级别。 例如，类成员可以是共享的，也可以是专用的（只能从类中访问），也可以是非共享的和公共的。 有关详细信息，请参阅[Visual Basic 中的访问级别](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md)。
+共享不会更改成员的访问级别。 例如，类成员可以是共享的，也可以是专用的（只能从类中访问），也可以是非共享的和公共的。 有关详细信息，请参阅[Visual Basic 中的访问级别](../../programming-guide/language-features/declared-elements/access-levels.md)。
 
 ## <a name="rules"></a>规则
 
 - **声明上下文。** 只能在模块级别使用 `Shared`。 这意味着元素的声明上下文 `Shared` 必须是类或结构，不能是源文件、命名空间或过程。
 
-- **组合修饰符。** 不能 `Shared` 在同一声明中同时指定[替代](../../../visual-basic/language-reference/modifiers/overrides.md)、[重写](../../../visual-basic/language-reference/modifiers/overridable.md)、 [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)、 [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)或[静态](../../../visual-basic/language-reference/modifiers/static.md)。
+- **组合修饰符。** 不能 `Shared` 在同一声明中同时指定[替代](overrides.md)、[重写](overridable.md)、 [NotOverridable](notoverridable.md)、 [MustOverride](mustoverride.md)或[静态](static.md)。
 
 - **访问.** 使用共享元素的类或结构名称（而不是其类或结构的特定实例的变量名称）来限定共享元素。 甚至不必创建类或结构的实例即可访问其共享成员。
 
@@ -42,7 +42,7 @@ ms.locfileid: "84307080"
      If Double.IsNaN(result) Then Console.WriteLine("Result is mathematically undefined.")
      ```
 
-- **隐式共享。** 不能 `Shared` 在[Const 语句](../../../visual-basic/language-reference/statements/const-statement.md)中使用修饰符，而是隐式共享常量。 同样，不能将模块或接口的成员声明为 `Shared` ，但它们是隐式共享的。
+- **隐式共享。** 不能 `Shared` 在[Const 语句](../statements/const-statement.md)中使用修饰符，而是隐式共享常量。 同样，不能将模块或接口的成员声明为 `Shared` ，但它们是隐式共享的。
 
 ## <a name="behavior"></a>行为
 
@@ -93,7 +93,7 @@ ms.locfileid: "84307080"
 - [Property Statement](../statements/property-statement.md)
 - [Sub 语句](../statements/sub-statement.md)
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [Shadows](shadows.md)
 - [静态](static.md)

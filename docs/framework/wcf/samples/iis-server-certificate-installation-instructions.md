@@ -2,12 +2,12 @@
 title: Internet Information Services (IIS) 服务器证书安装说明
 ms.date: 03/30/2017
 ms.assetid: 11281490-d2ac-4324-8f33-e7714611a34b
-ms.openlocfilehash: 300d689925d60998ef475ad63f3878bf6d066850
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 301a10c615a13a42e1a6e1b89d2724476ca4fbae
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989855"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594655"
 ---
 # <a name="internet-information-services-iis-server-certificate-installation-instructions"></a>Internet Information Services (IIS) 服务器证书安装说明
 若要运行可与 Internet 信息服务 (IIS) 安全通信的示例，您必须创建和安装服务器证书。  
@@ -34,9 +34,9 @@ makecert -sr LocalMachine -ss My -n CN=ServiceModelSamples-HTTPS-Server -sky exc
   
 5. 完成向导。 选择用于分配证书的选项。 从显示的证书列表中选择 ServiceModelSamples-HTTPS-Server 证书。  
   
-     ![IIS 证书向导](../../../../docs/framework/wcf/samples/media/iiscertificate-wizard.GIF "IISCertificate_Wizard")  
+     ![IIS 证书向导](media/iiscertificate-wizard.GIF "IISCertificate_Wizard")  
   
-6. 使用 HTTPS 地址`https://localhost/servicemodelsamples/service.svc`在浏览器中测试对服务的访问。  
+6. 使用 HTTPS 地址在浏览器中测试对服务的访问 `https://localhost/servicemodelsamples/service.svc` 。  
   
 #### <a name="if-ssl-was-previously-configured-by-using-httpcfgexe"></a>如果以前使用 Httpcfg.exe 配置了 SSL  
   
@@ -63,9 +63,9 @@ PermissiveCertificatePolicy.Enact("CN=ServiceModelSamples-HTTPS-Server");
   
 4. 从 "**类型**" 下拉列表中选择 " **HTTPS** "。  
   
-5. 从 " **SSL 证书**" 下拉列表中选择 " **ServiceModelSamples-HTTPS-服务器**"，然后单击 **"确定"** 。  
+5. 从 " **SSL 证书**" 下拉列表中选择 " **ServiceModelSamples-HTTPS-服务器**"，然后单击 **"确定"**。  
   
-6. 使用 HTTPS 地址`https://localhost/servicemodelsamples/service.svc`在浏览器中测试对服务的访问。  
+6. 使用 HTTPS 地址在浏览器中测试对服务的访问 `https://localhost/servicemodelsamples/service.svc` 。  
   
 > [!NOTE]
 > 由于刚刚安装的测试证书不是受信任的证书，因此，在浏览用此证书保护的本地 Web 地址时，你可能会遇到其他 Internet Explorer 安全警告。  

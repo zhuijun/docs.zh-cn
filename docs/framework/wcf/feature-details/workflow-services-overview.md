@@ -2,12 +2,12 @@
 title: 工作流服务概述
 ms.date: 03/30/2017
 ms.assetid: e536dda3-e286-441e-99a7-49ddc004b646
-ms.openlocfilehash: cb013dd419d09af61eaff290709164427b1b655f
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: f752eca621f9d30f38d85d7e71228fdfe1343c32
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347860"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594863"
 ---
 # <a name="workflow-services-overview"></a>工作流服务概述
 
@@ -46,7 +46,7 @@ WCF 定义了两个基于 MSMQ 的绑定：<xref:System.ServiceModel.NetMsmqBind
 
 ## <a name="hosting-a-workflow-service"></a>承载工作流服务
 
-与 WCF 服务类似，必须承载工作流服务。 WCF 服务使用 <xref:System.ServiceModel.ServiceHost> 类来承载服务和工作流服务使用 <xref:System.ServiceModel.Activities.WorkflowServiceHost> 来承载服务。 与 WCF 服务类似，工作流服务可以通过多种方式来托管，例如：
+与 WCF 服务类似，必须承载工作流服务。 WCF 服务使用 <xref:System.ServiceModel.ServiceHost> 类承载服务和工作流服务， <xref:System.ServiceModel.Activities.WorkflowServiceHost> 以便使用宿主服务。 与 WCF 服务类似，工作流服务可以通过多种方式来托管，例如：
 
 - 在托管的 .NET Framework 应用程序中。
 
@@ -56,9 +56,9 @@ WCF 定义了两个基于 MSMQ 的绑定：<xref:System.ServiceModel.NetMsmqBind
 
 - 在托管 Windows 服务中。
 
-托管 .NET Framework 应用程序或托管的 Windows 服务中承载的工作流服务创建 <xref:System.ServiceModel.Activities.WorkflowServiceHost> 类的实例，并向其传递一个 <xref:System.ServiceModel.Activities.WorkflowService> 实例，该实例包含 <xref:System.ServiceModel.Activities.WorkflowService.Body%2A> 属性中的工作流定义。 包含消息传递活动的工作流定义公开为工作流服务。
+托管 .NET Framework 应用程序或托管的 Windows 服务中承载的工作流服务创建类的实例 <xref:System.ServiceModel.Activities.WorkflowServiceHost> ，并向其传递 <xref:System.ServiceModel.Activities.WorkflowService> 包含属性内的工作流定义的实例 <xref:System.ServiceModel.Activities.WorkflowService.Body%2A> 。 包含消息传递活动的工作流定义公开为工作流服务。
 
-若要在 IIS 或 WAS 中承载工作流服务，请将包含工作流服务定义的 .xamlx 文件放置到虚拟目录中。 系统会自动创建一个默认终结点（使用 <xref:System.ServiceModel.BasicHttpBinding>），有关详细信息，请参阅[简化配置](../../../../docs/framework/wcf/simplified-configuration.md)。 也可以在虚拟目录中放置 Web.config 文件以指定你自己的终结点。 如果您的工作流定义位于程序集中，则可以在虚拟目录中放置一个 .svc 文件，并在 App_Code 目录中放置该工作流程序集。 该 .svc 文件必须指定服务主机工厂以及实现该工作流服务的类。 下面的示例演示如何指定服务主机工厂以及实现该工作流服务的类。
+若要在 IIS 或 WAS 中承载工作流服务，请将包含工作流服务定义的 .xamlx 文件放置到虚拟目录中。 系统会自动创建一个默认终结点（使用 <xref:System.ServiceModel.BasicHttpBinding> ），有关详细信息，请参阅[简化配置](../simplified-configuration.md)。 也可以在虚拟目录中放置 Web.config 文件以指定你自己的终结点。 如果您的工作流定义位于程序集中，则可以在虚拟目录中放置一个 .svc 文件，并在 App_Code 目录中放置该工作流程序集。 该 .svc 文件必须指定服务主机工厂以及实现该工作流服务的类。 下面的示例演示如何指定服务主机工厂以及实现该工作流服务的类。
 
 ```
 <%@ServiceHost Factory=" System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory

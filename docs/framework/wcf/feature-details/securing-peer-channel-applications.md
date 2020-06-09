@@ -2,15 +2,15 @@
 title: 保护对等通道应用程序
 ms.date: 03/30/2017
 ms.assetid: d4a0311d-3f78-4525-9c4b-5c93c4492f28
-ms.openlocfilehash: 4b52e0476ce6ac54a2e4a3a8cfceb112d662186b
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: a77449710e9093bc8ea2d5446e6359c26a3d1c1e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959884"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589872"
 ---
 # <a name="securing-peer-channel-applications"></a>保护对等通道应用程序
-等下 WinFX，其他绑定`NetPeerTcpBinding`默认情况下启用了安全性并提供了同时基于传输和消息的安全 （或两者）。 本主题讨论这两种类型的安全。 安全类型由绑定规范中的安全模式标记指定 (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`)。  
+与 WinFX 下的其他绑定一样， `NetPeerTcpBinding` 默认情况下已启用安全性，并提供基于传输和消息的安全（或两者）。 本主题讨论这两种类型的安全。 安全类型由绑定规范中的安全模式标记指定 (<xref:System.ServiceModel.NetPeerTcpBinding.Security%2A>`Mode`)。  
   
 ## <a name="transport-based-security"></a>基于传输的安全  
  对等通道支持两种类型的用于保护传输安全的身份验证凭据，这两种类型都要求设置关联 `ClientCredentialSettings.Peer` 上的 `ChannelFactory` 属性：  
@@ -22,7 +22,7 @@ ms.locfileid: "65959884"
 ## <a name="message-based-security"></a>基于消息的安全  
  使用消息安全时，应用程序可以对传出的消息进行签名，以便所有接收方都可以验证此消息是由受信任方发送的并且此消息没有被篡改。 目前，对等通道仅支持 X.509 凭据消息签名。  
   
-## <a name="best-practices"></a>最佳做法  
+## <a name="best-practices"></a>最佳实践  
   
 - 本节讨论保护对等通道应用程序安全的最佳做法。  
   
@@ -39,9 +39,9 @@ ms.locfileid: "65959884"
  使用消息身份验证来验证消息来自受信任的源，并且消息在传输期间没有被篡改。 如果不使用消息身份验证，则恶意客户端很容易实施欺骗或篡改网格中的消息。  
   
 ## <a name="peer-channel-code-examples"></a>对等通道代码示例  
- [对等通道方案](../../../../docs/framework/wcf/feature-details/peer-channel-scenarios.md)  
+ [对等通道方案](peer-channel-scenarios.md)  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [对等通道安全性](../../../../docs/framework/wcf/feature-details/peer-channel-security.md)
-- [生成对等通道应用程序](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+- [对等通道安全性](peer-channel-security.md)
+- [生成对等通道应用程序](building-a-peer-channel-application.md)

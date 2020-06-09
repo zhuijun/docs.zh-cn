@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], obtaining
 ms.assetid: d53762fd-15ea-42dc-b0ea-6a6597aa23f7
-ms.openlocfilehash: bfe6dcfe6850ee17a7bbb59f3a6ccad6c3c3e7d7
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: d020f3e97023d07abb572d30dd53896bfec1da46
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964243"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597015"
 ---
 # <a name="how-to-obtain-a-certificate-wcf"></a>如何：获取证书 (WCF)
 若要使用使用 x.509 证书的的任何 Windows Communication Foundation （WCF）功能，只需获取证书。  
@@ -29,5 +29,5 @@ ms.locfileid: "75964243"
   
 ## <a name="see-also"></a>另请参阅
 
-- [使用证书](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [如何：创建开发期间使用的临时证书](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)
+- [使用证书](working-with-certificates.md)
+- [如何：创建开发期间使用的临时证书](how-to-create-temporary-certificates-for-use-during-development.md)

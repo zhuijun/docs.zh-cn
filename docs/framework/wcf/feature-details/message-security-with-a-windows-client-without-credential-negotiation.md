@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fc07a26c-cbee-41c5-8fb0-329085fef749
-ms.openlocfilehash: d3b05a1786131a119d516edeba0d6e8e24289f87
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 7845bc45d0baecb07e4c03531f21d900c4e23bf7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76212027"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595240"
 ---
 # <a name="message-security-with-a-windows-client-without-credential-negotiation"></a>没有凭据协商的 Windows 客户端的消息安全
 
@@ -19,9 +19,9 @@ ms.locfileid: "76212027"
 服务和客户端位于相同的域或可信域。
 
 > [!NOTE]
-> 此方案与[Windows 客户端的消息安全](../../../../docs/framework/wcf/feature-details/message-security-with-a-windows-client.md)之间的区别在于，在发送应用程序消息之前，此方案不会与服务协商服务凭据。 此外，由于这需要 Kerberos 协议，所以此方案需要一个 Windows 域环境。
+> 此方案与[Windows 客户端的消息安全](message-security-with-a-windows-client.md)之间的区别在于，在发送应用程序消息之前，此方案不会与服务协商服务凭据。 此外，由于这需要 Kerberos 协议，所以此方案需要一个 Windows 域环境。
 
-![无凭据协商的消息安全](../../../../docs/framework/wcf/feature-details/media/0c9f9baa-2439-4ef9-92f4-43c242d85d0d.gif "0c9f9baa-2439-4ef9-92f4-43c242d85d0d")
+![没有凭证协商的消息安全](media/0c9f9baa-2439-4ef9-92f4-43c242d85d0d.gif "0c9f9baa-2439-4ef9-92f4-43c242d85d0d")
 
 |特征|描述|
 |--------------------|-----------------|
@@ -30,13 +30,13 @@ ms.locfileid: "76212027"
 |身份验证（服务器）|服务器和客户端的相互身份验证|
 |身份验证（客户端）|服务器和客户端的相互身份验证|
 |完整性|是|
-|保密性|是|
+|机密性|是|
 |Transport|HTTP|
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|
 
 ## <a name="service"></a>服务
 
-下面的代码和配置应独立运行。 执行以下操作之一：
+下面的代码和配置应独立运行。 执行下列操作之一：
 
 - 使用代码（而不使用配置）创建独立服务。
 
@@ -47,18 +47,18 @@ ms.locfileid: "76212027"
 下面的代码创建使用消息安全的服务终结点。 代码禁用了服务凭据协商并禁止建立安全上下文令牌 (SCT)。
 
 > [!NOTE]
-> 若要使用没有协商的 Windows 凭据类型，则服务的用户帐户必须能够访问在 Active Directory 域注册的服务主体名称 (SPN)。 可以采取两种方式来实现此目的：
+> 若要使用没有协商的 Windows 凭据类型，则服务的用户帐户必须能够访问在 Active Directory 域注册的服务主体名称 (SPN)。 可通过两种方式实现此目的：
 
-1. 使用 `NetworkService` 或 `LocalSystem` 帐户运行服务。 由于这些帐户有权访问在计算机加入 Active Directory 域时建立的计算机 SPN，因此 WCF 将自动在服务的元数据中的服务终结点内生成正确的 SPN 元素（Web 服务说明语言或 WSDL）。
+1. 使用 `NetworkService` 或 `LocalSystem` 帐户运行服务。 由于这些帐户有权访问在计算机加入 Active Directory 域时建立的计算机 SPN，因此 WCF 将自动在服务的元数据（Web 服务描述语言或 WSDL）中的服务终结点内生成正确的 SPN 元素。
 
 2. 使用任意 Active Directory 域帐户运行服务。 在这种情况下，您需要为该域帐户建立一个 SPN。 执行此操作的一种方法是使用 Setspn.exe 实用工具。 为服务帐户创建 SPN 后，将 WCF 配置为通过其元数据（WSDL）将该 SPN 发布到服务的客户端。 通过为公开的终结点设置终结点标识（或通过应用程序配置文件或代码）也可完成此操作。 下面的示例以编程方式发布标识。
 
-有关 Spn、Kerberos 协议和 Active Directory 的详细信息，请参阅[适用于 Windows 的 Kerberos 技术补充](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10))。 有关终结点标识的详细信息，请参阅[SecurityBindingElement Authentication 模式](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md)。
+有关 Spn、Kerberos 协议和 Active Directory 的详细信息，请参阅[适用于 Windows 的 Kerberos 技术补充](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10))。 有关终结点标识的详细信息，请参阅[SecurityBindingElement Authentication 模式](securitybindingelement-authentication-modes.md)。
 
 [!code-csharp[C_SecurityScenarios#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#12)]
 [!code-vb[C_SecurityScenarios#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#12)]
 
-### <a name="configuration"></a>配置
+### <a name="configuration"></a>Configuration
 
 以下配置可代替代码使用。
 
@@ -96,9 +96,9 @@ ms.locfileid: "76212027"
 </configuration>
 ```
 
-## <a name="client"></a>Client
+## <a name="client"></a>客户端
 
-下面的代码和配置应独立运行。 执行以下操作之一：
+下面的代码和配置应独立运行。 执行下列操作之一：
 
 - 使用代码（和客户端代码）创建独立客户端。
 
@@ -112,16 +112,16 @@ ms.locfileid: "76212027"
 下面的代码将配置客户端。 安全模式设置为 Message，客户端凭据类型设置为 Windows。 请注意，<xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> 和 <xref:System.ServiceModel.NonDualMessageSecurityOverHttp.EstablishSecurityContext%2A> 属性设置为 `false`。
 
 > [!NOTE]
-> 若要使用没有协商的 Windows 凭据类型，则必须在开始与服务进行通信前使用服务的帐户 SPN 配置客户端。 客户端使用 SPN 获取 Kerberos 令牌对与服务的通信进行身份验证和保护。 下面的示例演示如何使用服务的 SPN 配置客户端。 如果你使用的[元数据实用工具（svcutil.exe）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)来生成客户端，则服务的 SPN 将自动从服务的元数据（WSDL）传播到客户端（如果服务的元数据包含该信息）。 有关如何配置服务以在服务的元数据中包含其 SPN 的详细信息，请参阅本主题后面的 "服务" 一节。
+> 若要使用没有协商的 Windows 凭据类型，则必须在开始与服务进行通信前使用服务的帐户 SPN 配置客户端。 客户端使用 SPN 获取 Kerberos 令牌对与服务的通信进行身份验证和保护。 下面的示例演示如何使用服务的 SPN 配置客户端。 如果你使用的[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)来生成客户端，则服务的 SPN 将自动从服务的元数据（WSDL）传播到客户端（如果服务的元数据包含该信息）。 有关如何配置服务以在服务的元数据中包含其 SPN 的详细信息，请参阅本主题后面的 "服务" 一节。
 >
-> 有关 Spn、Kerberos 和 Active Directory 的详细信息，请参阅[适用于 Windows 的 Kerberos 技术补充](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10))。 有关终结点标识的详细信息，请参阅[SecurityBindingElement Authentication 模式](../../../../docs/framework/wcf/feature-details/securitybindingelement-authentication-modes.md)主题。
+> 有关 Spn、Kerberos 和 Active Directory 的详细信息，请参阅[适用于 Windows 的 Kerberos 技术补充](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10))。 有关终结点标识的详细信息，请参阅[SecurityBindingElement Authentication 模式](securitybindingelement-authentication-modes.md)主题。
 
 [!code-csharp[C_SecurityScenarios#19](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#19)]
 [!code-vb[C_SecurityScenarios#19](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#19)]
 
-### <a name="configuration"></a>配置
+### <a name="configuration"></a>Configuration
 
-下面的代码将配置客户端。 请注意， [\<servicePrincipalName >](../../../../docs/framework/configure-apps/file-schema/wcf/serviceprincipalname.md)元素必须设置为与服务的 SPN 匹配 Active Directory 域中服务的帐户。
+下面的代码将配置客户端。 请注意， [\<servicePrincipalName>](../../configure-apps/file-schema/wcf/serviceprincipalname.md) 必须将元素设置为与在 Active Directory 域中为服务帐户注册的服务 SPN 匹配。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -155,6 +155,6 @@ ms.locfileid: "76212027"
 
 ## <a name="see-also"></a>另请参阅
 
-- [安全性概述](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [服务标识和身份验证](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
+- [安全性概述](security-overview.md)
+- [服务标识和身份验证](service-identity-and-authentication.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

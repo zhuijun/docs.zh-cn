@@ -2,12 +2,12 @@
 title: 如何：创建支持凭据
 ms.date: 03/30/2017
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-ms.openlocfilehash: 3f33bf5a78c575237ee4bc609a482a81fd30fc53
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: b8e7ddcd6118c77e14e090a0b1fa8d65aeb8e3df
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964547"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597145"
 ---
 # <a name="how-to-create-a-supporting-credential"></a>如何：创建支持凭据
 自定义安全方案可能要求提供多个凭据。 例如，某个服务可能要求客户端不仅提供用户名和密码，还要提供能够证明客户端用户已满 18 岁的凭据。 第二个凭据是*支持凭据*。 本主题说明如何在 Windows Communication Foundation （WCF）客户端中实现此类凭据。  
@@ -27,15 +27,15 @@ ms.locfileid: "75964547"
 ## <a name="endorsing-signing-and-encrypting"></a>认可、签名和加密  
  支持凭据会导致在消息内传输*支持令牌*。 WS-SecurityPolicy 规范定义了四种将支持令牌附加到消息的方法，如下表所述。  
   
-|目标|描述|  
+|目的|描述|  
 |-------------|-----------------|  
-|已签名|支持令牌包含在安全标头中，并由消息签名进行签名。|  
+|有符号|支持令牌包含在安全标头中，并由消息签名进行签名。|  
 |认可|*认可令牌*对消息签名进行签名。|  
 |签名和认可|签名的认可令牌对从消息签名生成的整个 `ds:Signature` 元素进行签名，并由该消息签名对自己进行签名；也就是说，两种令牌（用于消息签名的令牌和已签名的认可令牌）互相进行签名。|  
 |签名和加密|签名的加密支持令牌是在 `wsse:SecurityHeader` 中出现时还进行加密的签名支持令牌。|  
   
 ## <a name="programming-supporting-credentials"></a>对支持凭据进行编程  
- 若要创建使用支持令牌的服务，必须创建一个[\<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)。 （有关详细信息，请参阅[如何：使用 SecurityBindingElement 创建自定义绑定](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)。）  
+ 若要创建使用支持令牌的服务，必须创建 [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) 。 （有关详细信息，请参阅[如何：使用 SecurityBindingElement 创建自定义绑定](how-to-create-a-custom-binding-using-the-securitybindingelement.md)。）  
   
  创建自定义绑定的第一步是创建一个安全绑定元素，该元素可以是以下三种类型之一：  
   
@@ -55,7 +55,7 @@ ms.locfileid: "75964547"
   
 - <xref:System.ServiceModel.Channels.SecurityBindingElement.OptionalOperationSupportingTokenParameters%2A>  
   
-#### <a name="scopes"></a>范围  
+#### <a name="scopes"></a>作用域  
  支持凭据存在两个范围：  
   
 - 支持*令牌的终结*点支持终结点的所有操作。 即，每当调用任何终结点操作，都可以使用该支持令牌表示的凭据。  
@@ -82,4 +82,4 @@ ms.locfileid: "75964547"
   
 ## <a name="see-also"></a>另请参阅
 
-- [如何：使用 SecurityBindingElement 创建自定义绑定](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [如何：使用 SecurityBindingElement 创建自定义绑定](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
