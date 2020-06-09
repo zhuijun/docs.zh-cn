@@ -1,5 +1,6 @@
 ---
 title: 演练：创建加密应用程序
+description: 演练如何创建加密应用程序。 了解如何对 Windows 窗体应用程序中的内容进行加密和解密。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - cryptography [NET Framework], cryptographic application example
 - cryptography [NET Framework], application example
 ms.assetid: abf48c11-1e72-431d-9562-39cf23e1a8ff
-ms.openlocfilehash: 246028566c59e5c8a77b26a21729d3f143d38d07
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 72116227fbec2435d428ad2bbdb4cc74e5c3663f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289702"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602175"
 ---
 # <a name="walkthrough-creating-a-cryptographic-application"></a>演练：创建加密应用程序
 本演练演示如何对内容进行加密和解密。 下面的代码示例是特为 Windows 窗体应用程序设计的。 此应用程序不演示实际方案，例如使用智能卡。 而演示加密和解密的基础知识。  
@@ -43,7 +44,7 @@ ms.locfileid: "84289702"
 |导入公钥|将密钥从 XML 文件加载到密钥容器中。|  
 |测试应用程序|列出用于测试此应用程序的步骤。|  
   
-## <a name="prerequisites"></a>先决条件  
+## <a name="prerequisites"></a>必备条件  
  您需要满足以下条件才能完成本演练：  
   
 - 对 <xref:System.IO> 和 <xref:System.Security.Cryptography> 命名空间的引用。  
@@ -51,7 +52,7 @@ ms.locfileid: "84289702"
 ## <a name="creating-a-windows-forms-application"></a>创建 Windows 窗体应用程序  
  本演练中的大多数代码示例均设计为按钮控件的事件处理程序。 下表列出了示例应用程序所需的控件及其匹配代码示例所需的名称。  
   
-|控件|名称|文本属性（根据需要）|  
+|控制|名称|文本属性（根据需要）|  
 |-------------|----------|---------------------------------|  
 |<xref:System.Windows.Forms.Button>|`buttonEncryptFile`|加密文件|  
 |<xref:System.Windows.Forms.Button>|`buttonDecryptFile`|解密文件|  

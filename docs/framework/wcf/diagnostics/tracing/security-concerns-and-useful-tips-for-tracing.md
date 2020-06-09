@@ -2,12 +2,12 @@
 title: 有关跟踪的安全注意事项和有用提示
 ms.date: 03/30/2017
 ms.assetid: 88bc2880-ecb9-47cd-9816-39016a07076f
-ms.openlocfilehash: 5ced4f3a3a5e83564703db88b28ee2b3c6eeb1a0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0a09e387a4f964441f11d07a84bd492345d5b691
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185712"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578872"
 ---
 # <a name="security-concerns-and-useful-tips-for-tracing"></a>有关跟踪的安全注意事项和有用提示
 本主题说明防止敏感信息公开的方法以及使用 WebHost 时的有用提示。  
@@ -84,12 +84,12 @@ ms.locfileid: "79185712"
   
  只有当应用程序启动或重新启动之后，更改才有效。 在两个属性都设置为 `true` 的情况下，会在启动时记录一个事件。 如果 `logKnownPii` 设置为 `true` 但 `enableLoggingKnownPii` 设置为 `false`，也会记录一个事件。  
   
- 有关 PII 日志记录的详细信息，请参阅[PII 安全锁定](../../../../../docs/framework/wcf/samples/pii-security-lockdown.md)示例。  
+ 有关 PII 日志记录的详细信息，请参阅[Pii 安全锁定](../../samples/pii-security-lockdown.md)示例。  
   
- 计算机管理员和应用程序部署人员应谨慎使用这两个开关。 如果启用了 PII 日志记录，则会记录安全密钥和 PII。 如果禁用了 PII 日志记录，仍会在消息头和正文中记录敏感数据和特定于应用程序的数据。 有关隐私和保护 PII 免受暴露的更彻底的讨论，请参阅[用户隐私](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480490(v=msdn.10))。  
+ 计算机管理员和应用程序部署人员应谨慎使用这两个开关。 如果启用了 PII 日志记录，则会记录安全密钥和 PII。 如果禁用了 PII 日志记录，仍会在消息头和正文中记录敏感数据和特定于应用程序的数据。 若要深入了解隐私并保护 PII，请参阅[用户隐私](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480490(v=msdn.10))。  
   
  另外，对于面向连接的传输，每次连接时会记录一次消息发送方的 IP 地址；对于非面向连接的传输，每发送一条消息会记录一次消息发送方的 IP 地址。 这是在未经发送方同意的情况下进行的。 不过，只有在“信息”或“详细”跟踪级别才会发生此日志记录，这些级别不是生产中的默认或推荐跟踪级别（现场调试时除外）。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [跟踪](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
+- [跟踪](index.md)
