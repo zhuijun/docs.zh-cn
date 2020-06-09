@@ -2,12 +2,12 @@
 title: 令牌提供程序
 ms.date: 03/30/2017
 ms.assetid: 947986cf-9946-4987-84e5-a14678d96edb
-ms.openlocfilehash: 6971a70e633f7768c165ee6171fd83f0eefc4183
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: acdb820206dee83ff44152a5562642a5c685d648
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425125"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84584072"
 ---
 # <a name="token-provider"></a>令牌提供程序
 此示例演示如何实现自定义令牌提供程序。 Windows Communication Foundation （WCF）中的令牌提供程序用于向安全基础结构提供凭据。 令牌提供程序一般检查目标并颁发相应的凭据，以使安全基础结构能够确保消息的安全。 WCF 附带了默认的凭据管理器令牌提供程序。 WCF 还附带了一个 CardSpace 令牌提供程序。 自定义令牌提供程序在下列情况下有用：
@@ -246,9 +246,9 @@ static void DisplayIdentityInformation()
 
 #### <a name="to-set-up-and-build-the-sample"></a>设置和生成示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-2. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+2. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>在同一计算机上运行示例
 

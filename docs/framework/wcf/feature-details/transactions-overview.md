@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, transactions
 - Windows Communication Foundation, transactions
 ms.assetid: c7757854-1207-4019-8b31-552578b7d570
-ms.openlocfilehash: 1c3589b336ee8982cd6d694112e4c1f784f59ad2
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a8e3306612e016568ad7cfd5138ab538af771a17
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64585784"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84585826"
 ---
 # <a name="windows-communication-foundation-transactions-overview"></a>Windows Communication Foundation 事务概述
 事务可提供一种分组方法，将一组操作分为单个不可分的执行单元。 事务是指具有下列属性的操作集合：  
@@ -24,11 +24,11 @@ ms.locfileid: "64585784"
   
 - 持续性。 这意味着一旦提交对托管资源（如数据库记录）的更新，即使出现失败这些更新也会保持持久。  
   
- Windows Communication Foundation (WCF) 提供了一组丰富的功能，使您可以在 Web 服务应用程序中创建分布式的事务。  
+ Windows Communication Foundation （WCF）提供了一组丰富的功能，使您能够在 Web 服务应用程序中创建分布式事务。  
   
- WCF 实现对 WS-AtomicTransaction (WS-AT) 协议，使事务流动到可互操作应用程序，例如使用第三方技术生成的可互操作 Web 服务的 WCF 应用程序的支持。 WCF 还实现对 OLE 事务协议，可在方案中您不需要互操作功能启用事务流的支持。  
+ WCF 实现对 ws-atomictransaction （WS-AT）协议的支持，该协议使 WCF 应用程序能够将事务流式传输到可互操作的应用程序，如使用第三方技术生成的可互操作的 Web 服务。 WCF 还实现对 OLE 事务协议的支持，该协议可用于不需要互操作功能来启用事务流的情况。  
   
- 你可以使用应用程序配置文件来配置绑定以启用或禁用事务流，以及设置有关绑定的所需事务协定。 此外，你可以使用配置文件在服务级别设置事务超时值。 有关详细信息，请参阅[启用事务流](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)。  
+ 你可以使用应用程序配置文件来配置绑定以启用或禁用事务流，以及设置有关绑定的所需事务协定。 此外，你可以使用配置文件在服务级别设置事务超时值。 有关详细信息，请参阅[启用事务流](enabling-transaction-flow.md)。  
   
  <xref:System.ServiceModel> 命名空间中的事务属性允许你进行以下操作：  
   
@@ -38,9 +38,9 @@ ms.locfileid: "64585784"
   
 - 使用协定方法上的 <xref:System.ServiceModel.ServiceContractAttribute> 和 <xref:System.ServiceModel.OperationContractAttribute> 属性来要求、允许或拒绝事务流。  
   
- 有关详细信息，请参阅[ServiceModel 事务特性](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)。  
+ 有关详细信息，请[参阅 "](servicemodel-transaction-attributes.md)"。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [ServiceModel 事务特性](../../../../docs/framework/wcf/feature-details/servicemodel-transaction-attributes.md)
-- [启用事务流](../../../../docs/framework/wcf/feature-details/enabling-transaction-flow.md)
+- [ServiceModel 事务属性](servicemodel-transaction-attributes.md)
+- [启用事务流](enabling-transaction-flow.md)

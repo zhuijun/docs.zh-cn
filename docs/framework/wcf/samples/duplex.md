@@ -1,19 +1,19 @@
 ---
-title: 双面打印
+title: 双工
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Duplex Service Contract
 ms.assetid: bc5de6b6-1a63-42a3-919a-67d21bae24e0
-ms.openlocfilehash: 64036a1314bc3f60023cdc555fa1eaece7c687c8
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 77eab6a4975fc67c20558a53f399c7e709215587
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715147"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84575194"
 ---
-# <a name="duplex"></a>双面打印
+# <a name="duplex"></a>双工
 
-“双工”示例演示如何定义和实现双工协定。 当客户端与服务建立会话并为服务提供可用来将消息发送回客户端的通道时，就会发生双工通信。 此示例基于[入门](../../../../docs/framework/wcf/samples/getting-started-sample.md)。 双工协定以一对接口形式定义：一个从客户端到服务的主接口和一个从服务到客户端的回调接口。 在本示例中，`ICalculatorDuplex` 接口允许客户端执行数学运算，通过会话计算结果。 服务在 `ICalculatorDuplexCallback` 接口上返回结果。 双工协定需要会话，因为必须建立上下文才能将客户端和服务之间发送的一组消息关联在一起。
+“双工”示例演示如何定义和实现双工协定。 当客户端与服务建立会话并为服务提供可用来将消息发送回客户端的通道时，就会发生双工通信。 此示例基于[入门](getting-started-sample.md)。 双工协定以一对接口形式定义：一个从客户端到服务的主接口和一个从服务到客户端的回调接口。 在本示例中，`ICalculatorDuplex` 接口允许客户端执行数学运算，通过会话计算结果。 服务在 `ICalculatorDuplexCallback` 接口上返回结果。 双工协定需要会话，因为必须建立上下文才能将客户端和服务之间发送的一组消息关联在一起。
 
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。
@@ -164,14 +164,14 @@ client.Close();
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-2. 若要生成C#、 C++或 Visual Basic 的 .net 版本的解决方案，请按照[生成 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+2. 若要生成 c #、c + + 或 Visual Basic .NET 版本的解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
 
-3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/running-the-samples.md)中的说明进行操作。
+3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
     > [!IMPORTANT]
-    > 在跨计算机配置中运行客户端时，请确保使用相应计算机的名称替换[> wsDualHttpBinding `clientBaseAddress`](../../../../docs/framework/configure-apps/file-schema/wcf/wsdualhttpbinding.md)元素的[\<终结点 \<](../../configure-apps/file-schema/wcf/endpoint-of-client.md)的 `address` 属性中的 "localhost"，并将其名称替换为[相应计算机的](../../configure-apps/file-schema/wcf/bindings.md)名称，如下所示：
+    > 在跨计算机配置中运行客户端时，请确保 `address` 使用相应计算机的名称，将元素的属性[ \<endpoint> \<client> ](../../configure-apps/file-schema/wcf/endpoint-of-client.md)中的 "localhost" 替换为该元素的元素的属性 `clientBaseAddress` ，如下 [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) [\<wsDualHttpBinding>](../../configure-apps/file-schema/wcf/wsdualhttpbinding.md) 所示：
 
     ```xml
     <client>

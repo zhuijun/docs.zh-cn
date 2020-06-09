@@ -2,15 +2,15 @@
 title: 消息安全示例
 ms.date: 03/30/2017
 ms.assetid: 82444166-6288-493a-85d4-85f43f134d19
-ms.openlocfilehash: 43e1a9104bdd44509d86bd198559c5e7477a9964
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 935695a46e907bf1deeb2e5cb24917ba92b81fe0
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183515"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84584841"
 ---
 # <a name="message-security-sample"></a>消息安全示例
-此示例演示如何实现使用 `basicHttpBinding` 和消息安全性的应用程序。 此示例基于实现计算器服务的[入门](../../../../docs/framework/wcf/samples/getting-started-sample.md)。  
+此示例演示如何实现使用 `basicHttpBinding` 和消息安全性的应用程序。 此示例基于实现计算器服务的[入门](getting-started-sample.md)。  
   
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。  
@@ -34,7 +34,7 @@ ms.locfileid: "79183515"
 </system.serviceModel>  
 ```  
   
- `mode`绑定配置将[\<安全>](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-basichttpbinding.md)的属性设置到`Message`，并将`clientCredentialType`[\<消息的属性>，](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-basichttpbinding.md)`Certificate`如以下示例配置所示：  
+ 绑定配置将的 `mode` 属性设置 [\<security>](../../configure-apps/file-schema/wcf/security-of-basichttpbinding.md) 为 `Message` ，并将的属性设置为， `clientCredentialType` [\<message>](../../configure-apps/file-schema/wcf/message-of-basichttpbinding.md) `Certificate` 如下面的示例配置所示：  
   
 ```xml  
 <bindings>  
@@ -112,9 +112,9 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-and-build-the-sample"></a>设置和生成示例  
   
-1. 确保已为 Windows[通信基础示例执行一次性设置过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
-2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。  
+2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。  
   
 ### <a name="to-run-the-sample-on-the-same-machine"></a>在同一计算机上运行示例  
   
@@ -127,7 +127,7 @@ Press <ENTER> to terminate client.
   
 3. 从 \client\bin 运行客户端应用程序。 客户端活动将显示在客户端控制台应用程序上。  
   
-4. 如果客户端和服务无法通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+4. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 5. 在运行完该示例后运行 Cleanup.bat 移除证书。 其他安全示例使用相同的证书。  
   
@@ -141,15 +141,15 @@ Press <ENTER> to terminate client.
   
 4. 将客户端程序文件复制到客户端计算机上的客户端目录中。 另外，将 Setup.bat、Cleanup.bat 和 ImportServiceCert.bat 文件复制到客户端上。  
   
-5. 在服务器上运行 `setup.bat service`。 使用`setup.bat``service`参数运行将创建具有计算机完全限定域名的服务证书，并将服务证书导出到名为 Service.cer 的文件。  
+5. 在服务器上运行 `setup.bat service`。 `setup.bat`使用参数运行将 `service` 使用计算机的完全限定的域名创建一个服务证书，并将服务证书导出到名为 .cer 的文件中。  
   
-6. 编辑 Service.exe.config 以反映与计算机完全限定的域名`findValue`相同的新证书名称（在[\<服务证书>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)元素中的属性中）。 还要更改基址的值以指定一个完全限定的计算机名（而不是 localhost）。`.`  
+6. 编辑 setup.exe，以反映新的证书名称（在元素的属性中），该名称与 `findValue` [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) 计算机的完全限定域名相同。 还要更改基址的值以指定一个完全限定的计算机名（而不是 localhost）。`.`  
   
 7. 将服务目录中的 Service.cer 文件复制到客户端计算机上的客户端目录中。  
   
 8. 在客户端上，运行 `setup.bat client`。 如果使用 `setup.bat` 自变量运行 `client`，则会创建一个名为 client.com 的客户端证书，并将此客户端证书导出到名为 Client.cer 的文件中。  
   
-9. 在客户端计算机上的 Client.exe.config 文件中，更改终结点的地址值，使其与服务的新地址相匹配。 通过使用服务器的完全限定域名替换 localhost 来执行此操作。 `findValue`[还将\<默认证书>](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md)的属性更改为新的服务证书名称，即服务器的完全限定域名。  
+9. 在客户端计算机上的 Client.exe.config 文件中，更改终结点的地址值，使其与服务的新地址相匹配。 通过使用服务器的完全限定域名替换 localhost 来执行此操作。 还将 `findValue` 的属性更改 [\<defaultCertificate>](../../configure-apps/file-schema/wcf/defaultcertificate-element.md) 为新的服务证书名称，该名称是服务器的完全限定域名。  
   
 10. 将客户端目录中的 Client.cer 文件复制到服务器上的服务目录中。  
   
@@ -161,20 +161,20 @@ Press <ENTER> to terminate client.
   
 14. 在客户端计算机上，从命令提示符窗口中启动 Client.exe。  
   
-    1. 如果客户端和服务无法通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+    1. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 ### <a name="to-clean-up-after-the-sample"></a>运行示例后进行清理  
   
 - 运行完示例后运行示例文件夹中的 Cleanup.bat。  
   
     > [!NOTE]
-    > 此脚本不会在跨计算机运行此示例时移除客户端上的服务证书。 如果已运行跨计算机使用证书的 Windows 通信基础 （WCF） 示例，请确保清除已安装在 CurrentUser - TrustedPeople 存储中的服务证书。 为此，请使用以下命令：`certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`，例如：`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`。  
+    > 此脚本不会在跨计算机运行此示例时移除客户端上的服务证书。 如果你已运行跨计算机使用证书的 Windows Communication Foundation （WCF）示例，请确保清除已安装在 CurrentUser-TrustedPeople 存储中的服务证书。 为此，请使用以下命令：`certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`，例如：`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`。  
   
 > [!IMPORTANT]
 > 您的计算机上可能已安装这些示例。 在继续操作之前，请先检查以下（默认）目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Basic\MessageSecurity`  

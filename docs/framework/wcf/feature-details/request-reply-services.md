@@ -7,12 +7,12 @@ helpviewer_keywords:
 - WCF [WCF], request-reply services
 - request-reply contracts [WCF]
 ms.assetid: 2fa710f1-47f4-4598-b063-3ab3bd22ebba
-ms.openlocfilehash: f58da6f1cdaad1b976659ee2e9febe12cc07726f
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: df42f3fa8f5a15572987b0d4859856c7f838e632
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991141"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586229"
 ---
 # <a name="request-reply-services"></a>请求-答复服务
 请求-答复服务是 Windows Communication Foundation （WCF）中的默认操作协定类型。 客户端调用服务操作并等待服务的响应。 你可以同步执行对服务操作的调用（客户端接收到服务的响应或调用超时前客户端将保持阻止状态），也可以异步执行对服务操作的调用（客户端调用服务操作，继续工作，并在其他线程上接收服务的响应）。  
@@ -30,7 +30,7 @@ public interface IRequestReplyCalculator
   
  您不必将 <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> 属性设置为 `false`，因为这是默认行为。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [单向服务](../../../../docs/framework/wcf/feature-details/one-way-services.md)
-- [双工服务](../../../../docs/framework/wcf/feature-details/duplex-services.md)
+- [单向服务](one-way-services.md)
+- [双工服务](duplex-services.md)
