@@ -2,15 +2,15 @@
 title: 传输：UDP 示例上的自定义事务
 ms.date: 03/30/2017
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
-ms.openlocfilehash: ba9fb91623606d3aaba5ba56784b20bb92d343a7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ce1e6f0aedff46aaf58e22d8c23c37b03f8789dd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143793"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596534"
 ---
 # <a name="transport-custom-transactions-over-udp-sample"></a>传输：UDP 示例上的自定义事务
-此示例基于 Windows 通信基础 （WCF）[传输可扩展性](../../../../docs/framework/wcf/samples/transport-extensibility.md)中的[传输：UDP](../../../../docs/framework/wcf/samples/transport-udp.md)示例。 它扩展 UDP 传输示例，以支持自定义事务流并演示 <xref:System.ServiceModel.Channels.TransactionMessageProperty> 属性的用法。  
+此示例基于 Windows Communication Foundation （WCF）[传输扩展性](transport-extensibility.md)中的[传输： UDP](transport-udp.md)示例。 它扩展 UDP 传输示例，以支持自定义事务流并演示 <xref:System.ServiceModel.Channels.TransactionMessageProperty> 属性的用法。  
   
 ## <a name="code-changes-in-the-udp-transport-sample"></a>UDP 传输示例中的代码更改  
  为了演示事务流，示例对 `ICalculatorContract` 的服务协定进行了更改，用于为 `CalculatorService.Add()` 设定一个事务范围。 本示例还向 `System.Guid` 操作的协定另外添加了一个 `Add` 参数。 此参数用于将客户端事务的标识符传递给服务。  
@@ -38,7 +38,7 @@ class CalculatorService : IDatagramContract, ICalculatorContract
 }  
 ```  
   
- [传输：UDP](../../../../docs/framework/wcf/samples/transport-udp.md)示例使用 UDP 数据包在客户端和服务之间传递消息。 [传输：自定义传输示例](../../../../docs/framework/wcf/samples/transport-custom-transactions-over-udp-sample.md)使用相同的机制来传输消息，但当事务流动时，它将与编码消息一起插入到 UDP 数据包中。  
+ [传输： udp](transport-udp.md)示例使用 udp 包在客户端和服务之间传递消息。 [传输：自定义传输示例](transport-custom-transactions-over-udp-sample.md)使用相同的机制传输消息，但当事务流动时，会将其插入 UDP 数据包以及编码的消息中。  
   
 ```csharp  
 byte[] txmsgBuffer = TransactionMessageBuffer.WriteTransactionMessageBuffer(txPropToken, messageBuffer);  
@@ -48,7 +48,7 @@ int bytesSent = this.socket.SendTo(txmsgBuffer, 0, txmsgBuffer.Length, SocketFla
   
  `TransactionMessageBuffer.WriteTransactionMessageBuffer` 是一个帮助器方法，包含用于将当前事务的传播程序令牌与消息实体合并，并将合并结果放入缓冲区中的新功能。  
   
- 对于自定义事务流传输，客户端实现必须知道哪些服务操作需要事务流，并将此信息传递给 WCF。 还应存在用于将用户事务传递到传输层的机制。 此示例使用"WCF 消息检查器"来获取此信息。 此处实现的名为 `TransactionFlowInspector` 的客户端消息检查器执行下列任务：  
+ 对于自定义事务流传输，客户端实现必须知道哪些服务操作需要事务流，并将此信息传递给 WCF。 还应存在用于将用户事务传递到传输层的机制。 此示例使用 "WCF 消息检查器" 获取此信息。 此处实现的名为 `TransactionFlowInspector` 的客户端消息检查器执行下列任务：  
   
 - 确定对于给定的消息操作，事务是否必须进行流处理（这发生在 `IsTxFlowRequiredForThisOperation()` 中）。  
   
@@ -176,9 +176,9 @@ if (transaction != null)
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 要生成解决方案，请按照生成 Windows[通信基础示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。  
+1. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。  
   
-2. 当前示例应与[传输：UDP](../../../../docs/framework/wcf/samples/transport-udp.md)示例类似运行。 若要运行该示例，请使用 UdpTestService.exe 启动服务。 如果您正在运行 Windows Vista，则必须使用提升的权限启动服务。 为此，请右键单击文件资源管理器中的 UdpTestService.exe，然后单击"**以管理员身份运行**"。  
+2. 当前示例的运行方式与[传输： UDP](transport-udp.md)示例类似。 若要运行该示例，请使用 UdpTestService.exe 启动服务。 如果运行的是 Windows Vista，则必须以提升的权限启动该服务。 为此，请在文件资源管理器中右键单击 Udptestservice.exe，然后单击 "以**管理员身份运行**"。  
   
 3. 将生成以下输出。  
   
@@ -258,10 +258,10 @@ if (transaction != null)
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transactions\TransactionMessagePropertyUDPTransport`  
   
 ## <a name="see-also"></a>另请参阅
 
-- [传输：UDP](../../../../docs/framework/wcf/samples/transport-udp.md)
+- [传输：UDP](transport-udp.md)

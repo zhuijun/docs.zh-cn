@@ -2,12 +2,12 @@
 title: 自定义绑定安全性
 ms.date: 03/30/2017
 ms.assetid: a6383dff-4308-46d2-bc6d-acd4e18b4b8d
-ms.openlocfilehash: b0b293c58e13f7add6f2cb49ea3c108a86292691
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: eb575594cec9ea714578bc104344acc14b00e9df
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990016"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84592458"
 ---
 # <a name="custom-binding-security"></a>自定义绑定安全性
 
@@ -24,7 +24,7 @@ ms.locfileid: "70990016"
 
 - Windows 消息安全。
 
-自定义绑定配置通过同时启用消息级安全性来启用安全传输。 在定义自定义绑定时，绑定元素的排序非常重要，因为每个元素都表示通道堆栈中的一个层（请参阅[自定义绑定](../../../../docs/framework/wcf/extending/custom-bindings.md)）。 自定义绑定在服务和客户端配置文件中进行定义，如下面的示例配置所示。
+自定义绑定配置通过同时启用消息级安全性来启用安全传输。 在定义自定义绑定时，绑定元素的排序非常重要，因为每个元素都表示通道堆栈中的一个层（请参阅[自定义绑定](../extending/custom-bindings.md)）。 自定义绑定在服务和客户端配置文件中进行定义，如下面的示例配置所示。
 
 ```xml
 <bindings>
@@ -58,7 +58,7 @@ ms.locfileid: "70990016"
 </behaviors>
 ```
 
-此外，此自定义绑定将消息安全性与 Windows 凭据类型（默认凭据类型）一起使用。 这是通过 `security` 绑定元素实现的。 如果 Kerberos 身份验证机制可用，则使用消息级安全性对客户端和服务进行身份验证。 如果在 Active Directory 环境中运行示例，则会发生这种情况。 如果 Kerberos 身份验证机制不可用，则使用 NTLM 身份验证。 NTLM 向服务对客户端进行身份验证，但不向客户端对服务进行身份验证。 `security` 绑定元素配置为使用 `SecureConversation` `authenticationType`，这将导致在客户端和服务器上创建安全会话。 为了使服务的双工协定起作用，需要这么做。
+此外，此自定义绑定将消息安全性与 Windows 凭据类型（默认凭据类型）一起使用。 这是通过 `security` 绑定元素实现的。 如果 Kerberos 身份验证机制可用，则使用消息级安全性对客户端和服务进行身份验证。 如果在 Active Directory 环境中运行示例，则会发生这种情况。 如果 Kerberos 身份验证机制不可用，则使用 NTLM 身份验证。 NTLM 向服务对客户端进行身份验证，但不向客户端对服务进行身份验证。 `security`绑定元素配置为使用 `SecureConversation` `authenticationType` ，这将导致在客户端和服务上创建安全会话。 为了使服务的双工协定起作用，需要这么做。
 
 运行示例时，操作请求和响应将显示在客户端的控制台窗口中。 在客户端窗口中按 Enter 可以关闭客户端。
 
@@ -106,11 +106,11 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。
 
-3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/running-the-samples.md)中的说明进行操作。
+3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>在同一计算机上运行示例
 
@@ -135,22 +135,22 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
     3. 将 Setup.bat 和 Cleanup.bat 文件复制到服务计算机上。
 
-    4. 在使用管理员权限打开的 Visual Studio 开发人员命令提示中运行以下命令： `Setup.bat service`。 这会用与运行批处理文件的计算机的名称匹配的主题名称创建服务证书。
+    4. 在使用管理员权限打开的 Visual Studio 开发人员命令提示中运行以下命令： `Setup.bat service` 。 这会用与运行批处理文件的计算机的名称匹配的主题名称创建服务证书。
 
         > [!NOTE]
         > Setup.bat 批处理文件设计为通过 Visual Studio 2010 命令提示运行。 这要求路径环境变量指向 SDK 的安装目录。 将在 Visual Studio 2010 命令提示中自动设置此环境变量。
 
-    5. 更改 serviceCertificate 文件中的[ \<>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) ，以反映在上一步中生成的证书的使用者名称。
+    5. 更改 [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) setup.exe .config 文件中的，以反映在上一步中生成的证书的使用者名称。
 
     6. 在命令提示符下运行 Service.exe。
 
-2. 在客户端计算机上：
+2. 在客户端计算机上执行以下操作：
 
     1. 将 \client\bin\ 文件夹中的客户端程序文件复制到客户端计算机上。 还要复制 Cleanup.bat 文件。
 
     2. 运行 Cleanup.bat 以移除先前示例中使用的所有旧证书。
 
-    3. 通过使用管理特权打开 Visual Studio 的开发人员命令提示，并在服务计算机上运行以下命令来导出服务的证书（用计算机的`%SERVER_NAME%`完全限定名称替换服务正在运行）：
+    3. 通过使用管理特权打开 Visual Studio 的开发人员命令提示，并在服务计算机上运行以下命令（用 `%SERVER_NAME%` 运行服务的计算机的完全限定名称替换）来导出服务的证书：
 
         ```console
         certmgr -put -r LocalMachine -s My -c -n %SERVER_NAME% %SERVER_NAME%.cer
@@ -158,7 +158,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
     4. 将 %SERVER_NAME%.cer 复制到客户端计算机（用运行服务的计算机的完全限定名称替换 %SERVER_NAME%）。
 
-    5. 通过使用管理特权打开 Visual Studio 的开发人员命令提示，然后在客户端计算机上运行以下命令来导入服务的证书（将% SERVER_NAME% 替换为计算机的完全限定名称，其中服务正在运行）：
+    5. 通过使用管理特权打开 Visual Studio 的开发人员命令提示，然后在客户端计算机上运行以下命令来导入服务的证书（用运行服务的计算机的完全限定名称替换% SERVER_NAME%）：
 
         ```console
         certmgr.exe -add -c %SERVER_NAME%.cer -s -r CurrentUser TrustedPeople
@@ -179,7 +179,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
         </client>
         ```
 
-    7. 如果在域环境中 NetworkService 或 LocalSystem 以外的帐户下运行服务，则可能需要修改客户端的 App.config 文件中服务终结点的终结点标识，以便基于用于运行服务的帐户来设置相应的 UPN 或 SPN。 有关终结点标识的详细信息，请参阅[服务标识和身份验证](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)主题。
+    7. 如果在域环境中 NetworkService 或 LocalSystem 以外的帐户下运行服务，则可能需要修改客户端的 App.config 文件中服务终结点的终结点标识，以便基于用于运行服务的帐户来设置相应的 UPN 或 SPN。 有关终结点标识的详细信息，请参阅[服务标识和身份验证](../feature-details/service-identity-and-authentication.md)主题。
 
     8. 在命令提示符下运行 Client.exe。
 

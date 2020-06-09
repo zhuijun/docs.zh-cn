@@ -5,40 +5,40 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 4114c974da9c108f641aebdb69f32fb3b0c484c9
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 8cb7ee2ea2418602d944c3c08cec2b9279dca3b9
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591529"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601057"
 ---
 # <a name="security-considerations-for-data"></a>数据的安全考虑事项
 
-在处理时 Windows Communication Foundation (WCF) 中的数据，必须考虑许多种类的威胁。 下表列出了与数据处理相关的最重要的威胁类。 WCF 提供了缓解这些威胁的工具。
+处理 Windows Communication Foundation （WCF）中的数据时，必须考虑许多威胁类别。 下表列出了与数据处理相关的最重要的威胁类。 WCF 提供了缓解这些威胁的工具。
 
-拒绝服务接收不受信任的数据时，数据可能会导致接收方访问成比例的各种资源，例如内存、 线程、 可用连接或处理器周期非常耗时的计算。 针对服务器的拒绝服务攻击可能导致它崩溃，从而无法处理来自其他合法客户端的消息。
+拒绝服务：当接收不受信任的数据时，数据可能导致接收方访问数量不相称的各种资源，例如内存、线程、可用连接或处理器周期，因为这会导致冗长的计算。 针对服务器的拒绝服务攻击可能导致它崩溃，从而无法处理来自其他合法客户端的消息。
 
-传入的不受信任的数据会导致在接收端运行代码的恶意代码执行它本不想为。
+恶意代码执行传入的不受信任的数据会导致接收方运行它不打算执行的代码。
 
-信息泄露远程攻击方强制接收方响应其请求泄露它想的详细信息的方式。
+信息泄露远程攻击者会强制接收方以一种方式来响应其请求，从而获得比预期更多的信息。
 
 ## <a name="user-provided-code-and-code-access-security"></a>用户提供的代码和代码访问安全性
 
-许多 Windows Communication Foundation (WCF) 基础结构中的位置运行用户提供的代码。 例如， <xref:System.Runtime.Serialization.DataContractSerializer> 序列化引擎可能调用用户提供的属性 `set` 访问器和 `get` 访问器。 WCF 通道基础结构可能还调入用户提供的派生类的<xref:System.ServiceModel.Channels.Message>类。
+Windows Communication Foundation （WCF）基础结构中的许多位置都运行用户提供的代码。 例如， <xref:System.Runtime.Serialization.DataContractSerializer> 序列化引擎可能调用用户提供的属性 `set` 访问器和 `get` 访问器。 WCF 信道基础结构还可以调入到用户提供的类的派生类 <xref:System.ServiceModel.Channels.Message> 。
 
 代码创作者应负责确保不存在任何安全漏洞。 例如，如果您创建一个具有整数类型的数据成员属性的数据协定类型，并在 `set` 访问器实现中基于该属性值分配一个数组，则当恶意消息中包含该数据成员的一个极其庞大的值时，您可能会遭到拒绝服务攻击。 通常，应当在用户提供的代码中避免任何基于传入数据或耗时处理的分配（尤其当耗时处理可以由少量的传入数据导致时）。 当对用户提供的代码执行安全分析时，应确保同时考虑所有失败情况（即，引发异常的所有代码分支）。
 
-用户提供的代码的最终示例是每个操作的服务实现内部的代码。 确保服务实现的安全是您的责任。 很容易意外创建可能导致拒绝服务漏洞的非安全操作实现。 例如这样一个操作：它接受一个字符串，并从数据库中返回名称以该字符串开头的客户列表。 如果您处理的是一个大型数据库，而所传递的字符串仅仅是一个字母，则您的代码可能会尝试创建一个大于所有可用内存的消息，从而导致整个服务失败 ( <xref:System.OutOfMemoryException> .NET Framework 中可恢复并不总是会导致你的应用程序终止。)
+用户提供的代码的最终示例是每个操作的服务实现内部的代码。 确保服务实现的安全是您的责任。 很容易意外创建可能导致拒绝服务漏洞的非安全操作实现。 例如这样一个操作：它接受一个字符串，并从数据库中返回名称以该字符串开头的客户列表。 如果您处理的是一个大型数据库，而所传递的字符串仅仅是一个字母，则您的代码可能会尝试创建一个大于所有可用内存的消息，从而导致整个服务失败 （ <xref:System.OutOfMemoryException> 无法在 .NET Framework 中恢复，并且总是会导致应用程序终止。）
 
 您应当确保没有任何恶意代码插入各个扩展点。 在部分信任情况下运行时、处理部分受信任的程序集中的类型时或创建可由部分受信任的代码使用的组件时，这一点尤为重要。 有关更多信息，请参见后面一节中的“部分信任威胁”。
 
-请注意，在部分信任情况下运行时，数据协定序列化基础结构仅支持数据协定编程模型的有限子集，例如，不支持使用 <xref:System.SerializableAttribute> 属性的私有数据成员或类型。 有关详细信息，请参阅[部分信任](../../../../docs/framework/wcf/feature-details/partial-trust.md)。
+请注意，在部分信任情况下运行时，数据协定序列化基础结构仅支持数据协定编程模型的有限子集，例如，不支持使用 <xref:System.SerializableAttribute> 属性的私有数据成员或类型。 有关详细信息，请参阅[部分信任](partial-trust.md)。
 
 ## <a name="avoiding-unintentional-information-disclosure"></a>避免无意中的信息泄露
 
 当在考虑到安全性的情况下设计可序列化类型时，信息泄露是一个可能需要考虑的问题。
 
-请考虑以下几点：
+请考虑以下要点：
 
 - <xref:System.Runtime.Serialization.DataContractSerializer> 编程模型允许在序列化期间，在类型或程序集的外部公开私有数据和内部数据。 此外，在导出架构的过程中也可以公开类型的形状。 请务必了解类型的序列化工程。 如果您不希望公开任何内容，应禁止对它进行序列化（例如，如果是数据协定，则不应用 <xref:System.Runtime.Serialization.DataMemberAttribute> 属性即可实现此禁止）。
 
@@ -54,21 +54,21 @@ ms.locfileid: "65591529"
 
 通常使用配额来缓解拒绝服务攻击。 当超过配额时，通常会引发 <xref:System.ServiceModel.QuotaExceededException> 异常。 如果没有配额，则恶意消息可能导致所有可用的内存都受到访问，从而产生 <xref:System.OutOfMemoryException> 异常，或者导致所有可用的堆栈都受到访问，从而产生 <xref:System.StackOverflowException>。
 
-超过配额的情况是可恢复的；如果是在正在运行的服务中遇到此问题，则会丢弃当前正在处理的消息，服务继续运行并处理更多的消息。 内存不足和堆栈溢出的情况，但是，不是.NET Framework; 中的任意位置可恢复如果遇到此类异常将终止该服务。
+超过配额的情况是可恢复的；如果是在正在运行的服务中遇到此问题，则会丢弃当前正在处理的消息，服务继续运行并处理更多的消息。 但是，内存不足和堆栈溢出方案在 .NET Framework 中的任何位置都是不可恢复的;如果此服务遇到此类异常，则该服务将终止。
 
 WCF 中的配额不涉及任何预分配。 例如，如果 <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> 配额（在各个类中都可找到）设置为 128 KB，并不意味着会自动为每个消息分配 128 KB。 实际分配的量取决于实际的传入消息大小。
 
-传输层有许多配额。 这些配额是由正在使用的特定传输通道（HTTP、TCP 等等）强制施加的。 虽然本主题讨论其中的一些配额，但这些配额的详细介绍是在 [Transport Quotas](../../../../docs/framework/wcf/feature-details/transport-quotas.md)中。
+传输层有许多配额。 这些配额是由正在使用的特定传输通道（HTTP、TCP 等等）强制施加的。 虽然本主题讨论其中的一些配额，但这些配额的详细介绍是在 [Transport Quotas](transport-quotas.md)中。
 
 ### <a name="hashtable-vulnerability"></a>哈希表漏洞
 
-当数据协定包含哈希表或集合时存在漏洞。 如果大量的值插入到哈希表，其中大量的这些值生成相同的哈希值，则会出现此问题。 这可用作 DOS 攻击。  可通过设置 MaxReceivedMessageSize 绑定配额来缓解这一漏洞。 当设置此配额以避免此类攻击时，请务必小心。 此配额对 WCF 消息的大小设置一个上限。 此外，避免在数据协定中使用哈希表或集合。
+当数据协定包含哈希表或集合时存在漏洞。 如果大量的值插入到哈希表，其中大量的这些值生成相同的哈希值，则会出现此问题。 这可用作 DOS 攻击。  可以通过设置 MaxReceivedMessageSize 绑定配额来缓解此漏洞。 当设置此配额以避免此类攻击时，请务必小心。 此配额对 WCF 消息的大小设置一个上限。 此外，避免在数据协定中使用哈希表或集合。
 
 ## <a name="limiting-memory-consumption-without-streaming"></a>在不使用流模式的情况下限制内存消耗
 
 防止消息过大的安全模型取决于是否使用流模式。 在基本的非流模式的情况下，消息会缓冲到内存中。 在这种情况下，使用 <xref:System.ServiceModel.Channels.TransportBindingElement.MaxReceivedMessageSize%2A> 或系统提供的绑定的 <xref:System.ServiceModel.Channels.TransportBindingElement> 配额，可通过限制可访问的最大消息大小来防止消息过大。 请注意，服务可能同时处理多个消息，在这种情况下，所有这些消息都在内存中。 使用遏制功能可缓解这种威胁。
 
-另外，请注意， `MaxReceivedMessageSize` 不对每个消息的内存消耗设置上限，但限制它不得超过一个常量系数。 例如，如果 `MaxReceivedMessageSize` 是 1 MB，那么当接收到一个 1 MB 的消息，之后又对它进行反序列化时，则需要额外的内存来存放反序列化的对象图，从而导致总内存消耗大大超过 1 MB。 为此，应避免创建无需过多传入数据即会导致消耗大量内存的可序列化类型。 例如，数据协定"MyContract"具有 50 个可选数据成员字段和额外的 100 个私有字段无法使用 XML 构造进行实例化"\<MyContract / >"。 此 XML 将导致为 150 个字段访问内存。 请注意数据成员默认情况下是可选的。 当这样的类型是数组的一部分时，问题会变得更复杂。
+另外，请注意， `MaxReceivedMessageSize` 不对每个消息的内存消耗设置上限，但限制它不得超过一个常量系数。 例如，如果 `MaxReceivedMessageSize` 是 1 MB，那么当接收到一个 1 MB 的消息，之后又对它进行反序列化时，则需要额外的内存来存放反序列化的对象图，从而导致总内存消耗大大超过 1 MB。 为此，应避免创建无需过多传入数据即会导致消耗大量内存的可序列化类型。 例如，具有50可选数据成员字段和额外100私有字段的数据协定 "MyContract" 可使用 XML 构造 "" 实例化 \<MyContract/> 。 此 XML 将导致为 150 个字段访问内存。 请注意数据成员默认情况下是可选的。 当这样的类型是数组的一部分时，问题会变得更复杂。
 
 仅仅`MaxReceivedMessageSize` 还不足以防止所有的拒绝服务攻击。 例如，传入消息可能强制反序列化程序反序列化深度嵌套的对象图（一个对象包含另一个对象，而后者又包含另一个对象，依此类推）。 <xref:System.Runtime.Serialization.DataContractSerializer> 和 <xref:System.Xml.Serialization.XmlSerializer> 均以嵌套方式调用方法来反序列化此类对象图。 方法调用的深度嵌套可能导致不可恢复的 <xref:System.StackOverflowException>。 通过设置 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement.MaxDepth%2A> 配额来限制 XML 嵌套的级别（在本主题后面的“安全地使用 XML”一节中介绍），可以缓解这种威胁。
 
@@ -76,21 +76,21 @@ WCF 中的配额不涉及任何预分配。 例如，如果 <xref:System.Service
 
 ## <a name="limiting-memory-consumption-with-streaming"></a>在使用流模式的情况下限制内存消耗
 
-当使用流模式时，您可能使用一个小的 `MaxReceivedMessageSize` 设置来防止拒绝服务攻击。 但是，在流模式下可能出现更复杂的情况。 例如，文件上载服务接受大于所有可用内存的文件。 在这种情况下，应当将 `MaxReceivedMessageSize` 设置为一个非常大的值，此时预计的情况是：几乎不会有任何数据缓冲在内存中，并且消息将以流的形式直接传送到磁盘中。 如果恶意消息可以以某种方式强制 WCF 缓冲区数据而不是这种情况下，流`MaxReceivedMessageSize`不再能阻止消息访问所有可用内存。
+当使用流模式时，您可能使用一个小的 `MaxReceivedMessageSize` 设置来防止拒绝服务攻击。 但是，在流模式下可能出现更复杂的情况。 例如，文件上载服务接受大于所有可用内存的文件。 在这种情况下，应当将 `MaxReceivedMessageSize` 设置为一个非常大的值，此时预计的情况是：几乎不会有任何数据缓冲在内存中，并且消息将以流的形式直接传送到磁盘中。 如果恶意消息可以通过某种方式强制 WCF 缓冲数据，而不是在这种情况下对其进行流式处理，则 `MaxReceivedMessageSize` 不再能阻止消息访问所有可用内存。
 
-若要缓解此威胁，特定的配额设置存在 WCF 的各种数据处理组件上该限制缓冲。 其中最重要的一个设置是各个传输绑定元素和标准绑定的 `MaxBufferSize` 属性。 当采用流模式时，应当在考虑将为每个消息分配的最大内存量的情况下设置此配额。 与 `MaxReceivedMessageSize`一样，此设置也不对内存消耗施加一个绝对上限值，而只限定它不得超过某个常量系数。 此外，与 `MaxReceivedMessageSize`一样，也要注意同时处理多个消息的可能性。
+为了缓解这种威胁，限制缓冲的各种 WCF 数据处理组件上存在特定的配额设置。 其中最重要的一个设置是各个传输绑定元素和标准绑定的 `MaxBufferSize` 属性。 当采用流模式时，应当在考虑将为每个消息分配的最大内存量的情况下设置此配额。 与 `MaxReceivedMessageSize`一样，此设置也不对内存消耗施加一个绝对上限值，而只限定它不得超过某个常量系数。 此外，与 `MaxReceivedMessageSize`一样，也要注意同时处理多个消息的可能性。
 
 ### <a name="maxbuffersize-details"></a>MaxBufferSize 详细信息
 
-`MaxBufferSize`属性限制缓冲 WCF does 任何大容量。 例如，WCF 始终缓冲 SOAP 标头和 SOAP 错误，以及发现但不能在自然读取顺序消息传输优化机制 (MTOM) 消息中的所有 MIME 部分。 此设置可限制所有这些情况下的缓冲量。
+`MaxBufferSize`属性限制任何大容量缓冲 WCF 执行的工作。 例如，WCF 始终缓冲 SOAP 标头和 SOAP 错误，以及在消息传输优化机制（MTOM）消息中找到的任何 MIME 部分均未处于自然读取顺序。 此设置可限制所有这些情况下的缓冲量。
 
-WCF 通过完成此操作将传递`MaxBufferSize`可能进行缓冲的各个组件的值。 例如， <xref:System.ServiceModel.Channels.Message.CreateMessage%2A> 类的一些 <xref:System.ServiceModel.Channels.Message> 重载采用 `maxSizeOfHeaders` 参数。 WCF 将传递`MaxBufferSize`给此参数来限制 SOAP 标头缓冲量的值。 当直接使用 <xref:System.ServiceModel.Channels.Message> 类时，设置此参数非常重要。 一般情况下，当使用采用配额参数的 WCF 中的一个组件，是必须了解这些参数的安全含义并正确地设置它们。
+WCF 通过将 `MaxBufferSize` 值传递给可能会缓冲的各种组件来完成此工作。 例如， <xref:System.ServiceModel.Channels.Message.CreateMessage%2A> 类的一些 <xref:System.ServiceModel.Channels.Message> 重载采用 `maxSizeOfHeaders` 参数。 WCF 将 `MaxBufferSize` 值传递给此参数以限制 SOAP 标头缓冲的量。 当直接使用 <xref:System.ServiceModel.Channels.Message> 类时，设置此参数非常重要。 通常，在使用采用配额参数的 WCF 中的组件时，必须了解这些参数的安全含义并正确地设置它们，这一点很重要。
 
 MTOM 消息编码器也有一个 `MaxBufferSize` 设置。 当使用标准绑定时，它自动设置为传输层的 `MaxBufferSize` 值。 但是，当使用 MTOM 消息编码器绑定元素来构造一个自定义绑定时，在使用流模式的情况下应当将 `MaxBufferSize` 属性设置为一个安全值，这一点非常重要。
 
 ## <a name="xml-based-streaming-attacks"></a>基于 XML 的流式攻击
 
-`MaxBufferSize` 单独不足以确保 WCF，不能强制到时预计使用流缓冲。 例如，WCF XML 读取器，始终会缓冲整个 XML 元素开始标记时开始读取新元素。 这样做是为了正确处理命名空间和属性。 如果 `MaxReceivedMessageSize` 配置为一个很大的值（例如，为了启用直接到磁盘的大型文件流式传送方案），那么，当整个消息正文是一个大型的 XML 元素开始标记时，可能会构造恶意消息。 尝试读取它会导致 <xref:System.OutOfMemoryException>。 这是许多可能的基于 XML 的拒绝服务攻击，所有可缓解使用本主题后面的"安全地使用 XML"部分所述的 XML 读取器配额之一。 当使用流模式时，设置所有这些配额尤为重要。
+`MaxBufferSize`只需确保流式处理时，WCF 才能强制进入缓冲。 例如，WCF XML 读取器在开始读取新元素时，始终会缓冲整个 XML 元素开始标记。 这样做是为了正确处理命名空间和属性。 如果 `MaxReceivedMessageSize` 配置为一个很大的值（例如，为了启用直接到磁盘的大型文件流式传送方案），那么，当整个消息正文是一个大型的 XML 元素开始标记时，可能会构造恶意消息。 尝试读取它会导致 <xref:System.OutOfMemoryException>。 这是许多可能的基于 XML 的拒绝服务攻击之一，可以使用 XML 读取器配额来缓解这些攻击，本主题后面的 "安全地使用 XML" 一节对此进行了讨论。 当使用流模式时，设置所有这些配额尤为重要。
 
 ### <a name="mixing-streaming-and-buffering-programming-models"></a>混合流式和缓冲编程模型
 
@@ -118,20 +118,20 @@ MTOM 消息编码器也有一个 `MaxBufferSize` 设置。 当使用标准绑定
 
 流式拒绝服务攻击类不涉及内存消耗。 此类攻击涉及数据的慢速发送方或接收方。 当等待发送或接收数据时，诸如线程和可用连接之类的资源将消耗殆尽。 恶意攻击或者慢速网络连接上的合法发送方/接收方均会导致这种情形的发生。
 
-若要缓解这样的攻击，应正确设置传输超时时间。 有关详细信息，请参阅[传输配额](../../../../docs/framework/wcf/feature-details/transport-quotas.md)。 其次，绝不要使用同步`Read`或`Write`操作时使用 WCF 中的流。
+若要缓解这样的攻击，应正确设置传输超时时间。 有关详细信息，请参阅[传输配额](transport-quotas.md)。 其次，在 `Read` `Write` WCF 中处理流时从不使用同步或操作。
 
 ## <a name="using-xml-safely"></a>安全地使用 XML
 
 > [!NOTE]
-> 虽然本节是有关 XML 的内容，但是这些信息同样适用于 JavaScript 对象表示法 (JSON) 文档。 使用 [Mapping Between JSON and XML](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md)时，配额同样发挥作用。
+> 虽然本节是有关 XML 的内容，但是这些信息同样适用于 JavaScript 对象表示法 (JSON) 文档。 使用 [Mapping Between JSON and XML](mapping-between-json-and-xml.md)时，配额同样发挥作用。
 
 ### <a name="secure-xml-readers"></a>安全的 XML 读取器
 
-XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自不受信任源的 XML 数据时，可能存在许多必须缓解的拒绝服务攻击。 WCF 提供特殊而安全的 XML 读取器。 在 WCF （文本、 二进制或 MTOM） 中使用的标准编码之一时，将自动创建这些读取器。
+XML 信息集构成 WCF 中所有消息处理的基础。 当接受来自不受信任源的 XML 数据时，可能存在许多必须缓解的拒绝服务攻击。 WCF 提供了特殊的安全 XML 读取器。 在 WCF 中使用其中一种标准编码（文本、二进制或 MTOM）时，会自动创建这些读取器。
 
 这些读取器上的一些安全功能始终处于活动状态。 例如，这些读取器从不处理文档类型定义 (DTD)，这些定义是拒绝服务攻击的潜在来源，绝不应出现在合法的 SOAP 消息中。 其他安全功能包括必须配置的读取器配额，这些在下一节介绍。
 
-直接使用 XML 读取器时 (如编写您自己的自定义编码器或者直接使用<xref:System.ServiceModel.Channels.Message>类)，可能使用不受信任数据时始终使用 WCF 安全读取器。 通过在 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>类上调用 <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> 或 <xref:System.Xml.XmlDictionaryReader> 的静态工厂方法重载之一来创建安全读取器。 创建读取器时，应传入安全的配额值。 不要调用 `Create` 方法重载。 这些不会创建一个 WCF 读取器。 而是创建不受本节所介绍的安全功能保护的读取器。
+当直接处理 XML 读取器（例如，编写自己的自定义编码器或直接使用 <xref:System.ServiceModel.Channels.Message> 类时）时，当有可能使用不受信任的数据时，始终使用 WCF 安全读取器。 通过在 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>类上调用 <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> 或 <xref:System.Xml.XmlDictionaryReader> 的静态工厂方法重载之一来创建安全读取器。 创建读取器时，应传入安全的配额值。 不要调用 `Create` 方法重载。 它们不会创建 WCF 读取器。 而是创建不受本节所介绍的安全功能保护的读取器。
 
 ### <a name="reader-quotas"></a>读取器配额
 
@@ -147,7 +147,7 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 #### <a name="maxdepth"></a>MaxDepth
 
-此配额限制 XML 元素的最大嵌套深度。 例如，文档"\<一个 >\<B >\<C / >\<b </B > \< /A >"的嵌套深度为 3。 由于以下原因，<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> 非常重要：
+此配额限制 XML 元素的最大嵌套深度。 例如，文档 "" 的 \<A> \<B> \<C/> \</B> \</A> 嵌套深度为3。 由于以下原因，<xref:System.Xml.XmlDictionaryReaderQuotas.MaxDepth%2A> 非常重要：
 
 - `MaxDepth` 与 `MaxBytesPerRead`交互：读取器始终在内存中保留当前元素以及它的所有上级的数据，因此读取器的最大内存消耗与这两个设置的积成比例。
 
@@ -155,7 +155,7 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 #### <a name="maxnametablecharcount"></a>MaxNameTableCharCount
 
-此配额限制读取器的名称表 的大小。 名称表包含在处理 XML 文档时遇到的一些字符串（例如，命名空间和前缀）。 因为这些字符串缓冲在内存中，所以设置此配额可防止在预计使用流模式时进行过度缓冲。
+此配额限制读取器的名称表 ** 的大小。 名称表包含在处理 XML 文档时遇到的一些字符串（例如，命名空间和前缀）。 因为这些字符串缓冲在内存中，所以设置此配额可防止在预计使用流模式时进行过度缓冲。
 
 #### <a name="maxstringcontentlength"></a>MaxStringContentLength
 
@@ -167,9 +167,9 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 ## <a name="threats-specific-to-the-binary-encoding"></a>二进制编码所特有的威胁
 
-二进制 XML 编码 WCF 支持包括*字典字符串*功能。 可以仅仅使用几个字节对一个大型字符串进行编码。 这会实现显著的性能改进，但也引入了必须缓解的新型拒绝服务威胁。
+二进制 XML 编码 WCF 支持包含*字典字符串*功能。 可以仅仅使用几个字节对一个大型字符串进行编码。 这会实现显著的性能改进，但也引入了必须缓解的新型拒绝服务威胁。
 
-有两种类型的字典： *静态* 字典和 *动态*字典。 静态字典是可以使用二进制编码中的短代码表示的长字符串的内置列表。 当读取器已创建且无法修改时，这一字符串列表是固定的。 默认情况下使用 WCF 的静态字典中的字符串都大到造成严重的拒绝服务威胁，尽管它们仍可用于字典展开攻击中。 在您提供自己的静态字典的复杂情况下，在引入大型字典字符串时应谨慎。
+有两种类型的字典： *静态* 字典和 *动态*字典。 静态字典是可以使用二进制编码中的短代码表示的长字符串的内置列表。 当读取器已创建且无法修改时，这一字符串列表是固定的。 默认情况下，WCF 使用的静态字典中的任何字符串都足以产生严重的拒绝服务威胁，但它们仍可能在字典扩展攻击中使用。 在您提供自己的静态字典的复杂情况下，在引入大型字典字符串时应谨慎。
 
 动态字典功能使得消息可以定义它们自己的字符串，并将它们与短代码关联。 字符串与代码的这些映射在整个通信会话期间一直保留在内存中，这样后续消息就不必重新发送字符串，并且可以利用已经定义的代码。 这些字符串可以是任意长度，因此造成了比静态字典中的字符串更严重的威胁。
 
@@ -183,7 +183,7 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 <xref:System.Xml.XmlDictionaryReaderQuotas.MaxNameTableCharCount%2A>、 `MaxStringContentLength`和 `MaxArrayLength` 属性仅限制内存消耗。 在非流式使用模式下，通常不需要它们来缓解任何威胁，因为内存使用已受 `MaxReceivedMessageSize`限制。 但是， `MaxReceivedMessageSize` 计算的是展开前的字节数。 当使用的是二进制编码时，内存消耗可以超过 `MaxReceivedMessageSize`，而仅受 <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement.MaxSessionSize%2A>这一个因素的限制。 为此，当使用二进制编码时应总是设置所有的读取器配额（尤其是 <xref:System.Xml.XmlDictionaryReaderQuotas.MaxStringContentLength%2A>），这一点非常重要。
 
-当同时使用二进制编码和 <xref:System.Runtime.Serialization.DataContractSerializer>时， `IExtensibleDataObject` 接口可能被误用来发起字典展开攻击。 此接口实质上是为并非属于协定一部分的任意数据提供不受限制的存储。 如果配额不能设置得足够低以使 `MaxSessionSize` 与 `MaxReceivedMessageSize` 的乘积不会造成问题，那么当使用二进制编码时应禁用 `IExtensibleDataObject` 功能。 为此，应当将 `IgnoreExtensionDataObject` 属性 (Attribute) 的 `true` 属性 (Property) 设置为 `ServiceBehaviorAttribute` 。 或者，不实现 `IExtensibleDataObject` 接口。 有关详细信息，请参阅[向前兼容的数据协定](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)。
+当同时使用二进制编码和 <xref:System.Runtime.Serialization.DataContractSerializer>时， `IExtensibleDataObject` 接口可能被误用来发起字典展开攻击。 此接口实质上是为并非属于协定一部分的任意数据提供不受限制的存储。 如果配额不能设置得足够低以使 `MaxSessionSize` 与 `MaxReceivedMessageSize` 的乘积不会造成问题，那么当使用二进制编码时应禁用 `IExtensibleDataObject` 功能。 为此，应当将 `IgnoreExtensionDataObject` 属性 (Attribute) 的 `true` 属性 (Property) 设置为 `ServiceBehaviorAttribute` 。 或者，不实现 `IExtensibleDataObject` 接口。 有关详细信息，请参阅[向前兼容的数据协定](forward-compatible-data-contracts.md)。
 
 ### <a name="quotas-summary"></a>配额概述
 
@@ -191,7 +191,7 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 |条件|要设置的重要配额|
 |---------------|-----------------------------|
-|非流式或流式小型消息、文本或 MTOM 编码|`MaxReceivedMessageSize`、 `MaxBytesPerRead`和 `MaxDepth`|
+|非流式或流式小型消息、文本或 MTOM 编码|`MaxReceivedMessageSize`、`MaxBytesPerRead` 和 `MaxDepth`|
 |非流式或流式小型消息或二进制编码|`MaxReceivedMessageSize`、 `MaxSessionSize`以及所有 `ReaderQuotas`|
 |流式大型消息、文本或 MTOM 编码|`MaxBufferSize` 和所有 `ReaderQuotas`|
 |流式大型消息或二进制编码|`MaxBufferSize`、 `MaxSessionSize`以及所有 `ReaderQuotas`|
@@ -212,7 +212,7 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 ## <a name="datacontractserializer"></a>DataContractSerializer
 
-（有关 <xref:System.Xml.Serialization.XmlSerializer> 的安全信息，请参见相关文档。）<xref:System.Xml.Serialization.XmlSerializer> 的安全模型与 <xref:System.Runtime.Serialization.DataContractSerializer> 的安全模型类似，但从细节而言，有很大的不同。 例如，用于类型包括的是 <xref:System.Xml.Serialization.XmlIncludeAttribute> 属性，而不是 <xref:System.Runtime.Serialization.KnownTypeAttribute> 属性。 但是， <xref:System.Xml.Serialization.XmlSerializer> 特有的一些威胁将在本主题的后面部分讨论。
+（有关的安全信息 <xref:System.Xml.Serialization.XmlSerializer> ，请参阅相关文档。）的安全模型与的安全模型 <xref:System.Xml.Serialization.XmlSerializer> 类似 <xref:System.Runtime.Serialization.DataContractSerializer> ，主要在详细信息中有所不同。 例如，用于类型包括的是 <xref:System.Xml.Serialization.XmlIncludeAttribute> 属性，而不是 <xref:System.Runtime.Serialization.KnownTypeAttribute> 属性。 但是， <xref:System.Xml.Serialization.XmlSerializer> 特有的一些威胁将在本主题的后面部分讨论。
 
 ### <a name="preventing-unintended-types-from-being-loaded"></a>防止加载意外类型
 
@@ -244,9 +244,9 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 当编写返回已知类型列表的方法时，或者将一个列表直接传递给 <xref:System.Runtime.Serialization.DataContractSerializer> 构造函数时，应确保准备该列表的代码是安全的，并仅仅作用于受信任的数据。
 
-如果在配置中指定已知类型，应确保配置文件是安全的。 应始终在配置中使用强名称（通过指定该类型所在的已签名程序集的公钥），但不要指定要加载的类型的版本。 类型加载程序在可能的情况下会自动选取最新版本。 如果在配置中指定的特定版本，则运行以下风险：类型可能具有可能的未来版本中修复的安全漏洞，但显式指定配置中的因此，仍将加载的易受攻击的版本。
+如果在配置中指定已知类型，应确保配置文件是安全的。 应始终在配置中使用强名称（通过指定该类型所在的已签名程序集的公钥），但不要指定要加载的类型的版本。 类型加载程序在可能的情况下会自动选取最新版本。 如果您在配置中指定特定版本，将面临以下风险：类型可能具有一个可在将来的版本中修复的安全漏洞，但仍然加载有漏洞的版本，因为在配置中显式指定了它。
 
-具有过多的已知的类型有另一个后果：<xref:System.Runtime.Serialization.DataContractSerializer>应用程序域，它必须序列化和反序列化每种类型的条目中创建的序列化/反序列化代码缓存。 只要应用程序域在运行，就绝不会清除这一缓存。 因此，知道应用程序使用许多已知类型的攻击者可能导致所有这些类型都反序列化，从而导致缓存消耗了极大的内存量。
+具有过多的已知类型有另一个后果： <xref:System.Runtime.Serialization.DataContractSerializer> 将在应用程序域中创建序列化/反序列化代码的缓存，其中对于每个必须序列化和反序列化的类型，都有一个相应的项。 只要应用程序域在运行，就绝不会清除这一缓存。 因此，知道应用程序使用许多已知类型的攻击者可能导致所有这些类型都反序列化，从而导致缓存消耗了极大的内存量。
 
 ### <a name="preventing-types-from-being-in-an-unintended-state"></a>防止类型处于意外状态
 
@@ -270,19 +270,19 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 - 当 <xref:System.Runtime.Serialization.DataContractSerializer> 反序列化大多数类时，构造函数都不会运行。 因此，不要依赖在构造函数中执行的任何状态管理。
 
-- 使用回调可确保对象处于有效状态。 标记有 <xref:System.Runtime.Serialization.OnDeserializedAttribute> 属性的回调尤其有用，因为它在反序列化完成后运行，有可能检查并更正整体状态。 有关详细信息，请参阅[版本容错序列化回调](../../../../docs/framework/wcf/feature-details/version-tolerant-serialization-callbacks.md)。
+- 使用回调可确保对象处于有效状态。 标记有 <xref:System.Runtime.Serialization.OnDeserializedAttribute> 属性的回调尤其有用，因为它在反序列化完成后运行，有可能检查并更正整体状态。 有关详细信息，请参阅[版本容错序列化回调](version-tolerant-serialization-callbacks.md)。
 
 - 在设计数据协定类型时，不要使它依赖项属性 setter 的任何特定调用顺序。
 
-- 使用标有 <xref:System.SerializableAttribute> 属性的旧式类型时应小心。 其中许多旨在使用.NET Framework 远程处理用于受信任的数据。 标有此属性的现有类型在设计时可能并未考虑状态安全性。
+- 使用标有 <xref:System.SerializableAttribute> 属性的旧式类型时应小心。 其中许多功能都设计为仅与受信任的数据一起使用 .NET Framework 远程处理。 标有此属性的现有类型在设计时可能并未考虑状态安全性。
 
 - 考虑到状态安全性，不要依赖 <xref:System.Runtime.Serialization.DataMemberAttribute.IsRequired%2A> 属性 (Attribute) 的 <xref:System.Runtime.Serialization.DataMemberAttribute> 属性 (Property) 来保证数据的存在。 数据可能总是 `null`、 `zero`或 `invalid`。
 
-- 在未首先验证的情况下，绝不要信任从不受信任的数据源反序列化的对象图。 每个单独的对象可能都处于一致状态，但对象图整体有可能处于不一致状态。 此外，即使禁用对象图保存模式，反序列化的对象图也可能具有对同一对象的多个引用或者具有循环引用。 有关详细信息，请参阅[序列化和反序列化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)。
+- 在未首先验证的情况下，绝不要信任从不受信任的数据源反序列化的对象图。 每个单独的对象可能都处于一致状态，但对象图整体有可能处于不一致状态。 此外，即使禁用对象图保存模式，反序列化的对象图也可能具有对同一对象的多个引用或者具有循环引用。 有关详细信息，请参阅[序列化和反序列](serialization-and-deserialization.md)化。
 
 ### <a name="using-the-netdatacontractserializer-securely"></a>安全地使用 NetDataContractSerializer
 
-<xref:System.Runtime.Serialization.NetDataContractSerializer> 是一个序列化引擎，它使用类型的紧密耦合。 这类似于 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 和 <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>。 也就是说，它确定要通过从传入的数据读取的.NET Framework 程序集和类型名称来实例化哪个类型。 尽管它是 WCF 的一部分，但没有任何提供的方法来插入此序列化引擎;必须编写自定义代码。 `NetDataContractSerializer`提供主要是为了简化从.NET Framework 远程处理迁移到 WCF。 有关详细信息，请参阅中的相关部分[序列化和反序列化](../../../../docs/framework/wcf/feature-details/serialization-and-deserialization.md)。
+<xref:System.Runtime.Serialization.NetDataContractSerializer> 是一个序列化引擎，它使用类型的紧密耦合。 这类似于 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 和 <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>。 也就是说，它通过从传入数据中读取 .NET Framework 程序集和类型名来确定要实例化的类型。 尽管它是 WCF 的一部分，但没有提供的方法来插入此序列化引擎;必须编写自定义代码。 `NetDataContractSerializer`提供主要是为了简化从 .NET Framework 远程处理到 WCF 的迁移。 有关详细信息，请参阅[序列化和反序列](serialization-and-deserialization.md)化中的相关部分。
 
 因为消息本身可能指示可以加载的任何类型，所以 <xref:System.Runtime.Serialization.NetDataContractSerializer> 机制本质上是不安全的，应当仅与受信任的数据一起使用。 通过使用 <xref:System.Runtime.Serialization.NetDataContractSerializer.Binder%2A> 属性编写安全的、类型限制的类型联编程序来仅允许加载安全类型，可使它变成安全的机制。
 
@@ -296,7 +296,7 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 <xref:System.Xml.Serialization.XmlSerializer> 安全模型与 <xref:System.Runtime.Serialization.DataContractSerializer>的安全模型类似。 但是，有几个威胁是 <xref:System.Xml.Serialization.XmlSerializer>特有的。
 
-<xref:System.Xml.Serialization.XmlSerializer> 在运行时生成序列化程序集  ，它们包含实际执行序列化和反序列化的代码；这些程序集是在临时文件目录中创建的。 如果另外某个进程或用户对该目录拥有访问权限，可能用任意代码来覆盖序列化/反序列化代码。 之后 <xref:System.Xml.Serialization.XmlSerializer> 将使用它的安全上下文来运行这些代码，而不是运行序列化/反序列化代码。 请确保在临时文件目录上正确地设置了权限，以防止这种情况的发生。
+<xref:System.Xml.Serialization.XmlSerializer> 在运行时生成序列化程序集 ** ，它们包含实际执行序列化和反序列化的代码；这些程序集是在临时文件目录中创建的。 如果另外某个进程或用户对该目录拥有访问权限，可能用任意代码来覆盖序列化/反序列化代码。 之后 <xref:System.Xml.Serialization.XmlSerializer> 将使用它的安全上下文来运行这些代码，而不是运行序列化/反序列化代码。 请确保在临时文件目录上正确地设置了权限，以防止这种情况的发生。
 
 <xref:System.Xml.Serialization.XmlSerializer> 还具有这样一种模式，即：使用预先生成的序列化程序集，而不是在运行时生成这些程序集。 只要 <xref:System.Xml.Serialization.XmlSerializer> 可以找到一个合适的序列化程序集，就会触发这一模式。 <xref:System.Xml.Serialization.XmlSerializer> 检查对序列化程序集进行签名的密钥是否就是对包含所序列化的类型的程序集进行签名的密钥。 这有助于防止恶意程序集伪装成序列化程序集。 但是，如果包含可序列化类型的程序集未签名，则 <xref:System.Xml.Serialization.XmlSerializer> 将无法执行此检查，而使用具有正确名称的任何程序集。 这就使得运行恶意代码成为可能。 应始终对包含可序列化类型的程序集进行签名，或者严格控制对应用程序的目录和全局程序集缓存的访问，以防止引入恶意程序集。
 
@@ -310,7 +310,7 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 - 在部分受信任的代码可以通过扩展点（代理项）、要序列化的类型或其他方法控制序列化过程的情况下，部分受信任的代码可能会导致序列化程序将大量数据输出到序列化流中，这将导致此流的接收方会受到拒绝服务 (DoS) 攻击。 如果要序列化数据，而这些数据专用于易于遭到 DoS 威胁的目标，则不序列化部分受信任的类型，或以其他方式使部分受信任的代码控制序列化。
 
-- 如果允许部分受信任的代码访问你<xref:System.Runtime.Serialization.DataContractSerializer>实例，或以其他方式控制[数据协定代理项](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)，它可能会进行大量的控制序列化/反序列化过程。 例如，它可能会插入任意类型、导致信息泄漏、篡改生成的对象图或序列化数据，或使产生的序列化流溢出。 “安全地使用 NetDataContractSerializer”一节中介绍了等效的 <xref:System.Runtime.Serialization.NetDataContractSerializer> 威胁。
+- 如果允许部分受信任的代码访问 <xref:System.Runtime.Serialization.DataContractSerializer> 实例或控制[数据协定代理](../extending/data-contract-surrogates.md)项，则可能会对序列化/反序列化过程进行大量控制。 例如，它可能会插入任意类型、导致信息泄漏、篡改生成的对象图或序列化数据，或使产生的序列化流溢出。 “安全地使用 NetDataContractSerializer”一节中介绍了等效的 <xref:System.Runtime.Serialization.NetDataContractSerializer> 威胁。
 
 - 如果对类型应用了 <xref:System.Runtime.Serialization.DataContractAttribute> 属性（或者类型标记为 <xref:System.SerializableAttribute> ，但不是 <xref:System.Runtime.Serialization.ISerializable>），即使所有构造函数都不是公共的或者受需求保护，反序列化程序也可以创建这样一个类型的实例。
 
@@ -338,7 +338,7 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
     [!code-csharp[CDF_WCF_SecurityConsiderationsForData#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/cdf_wcf_securityconsiderationsfordata/cs/program.cs#1)]
 
-    在上面的示例中， `PermissionsHelper.InternetZone` 对应于部分信任情况下的 <xref:System.Security.PermissionSet> 。 现在，如果没有<xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute>属性，该应用程序将失败，引发<xref:System.Security.SecurityException>，该值指示不能在部分信任中序列化非公共成员。
+    在上面的示例中， `PermissionsHelper.InternetZone` 对应于部分信任情况下的 <xref:System.Security.PermissionSet> 。 现在，如果没有 <xref:System.Runtime.CompilerServices.InternalsVisibleToAttribute> 属性，应用程序将失败，并引发， <xref:System.Security.SecurityException> 指示非公共成员不能在部分信任中序列化。
 
     但如果将以下行添加到源文件，则程序将成功运行。
 
@@ -354,11 +354,11 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 ## <a name="schema-import"></a>架构导入
 
-通常，导入架构以生成类型的过程只会在设计时发生，例如，当在 Web 服务上使用 [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) 来生成客户端类时就会发生此过程。 但是，在更复杂的情况下，也可能在运行时处理架构。 请注意，这样做可能会有遭到拒绝服务攻击的风险。 有些架构可能需要很长时间才能导入。 如果架构可能来自不受信任的源，那么在这种情况下绝不要使用 <xref:System.Xml.Serialization.XmlSerializer> 架构导入组件。
+通常，导入架构以生成类型的过程只会在设计时发生，例如，当在 Web 服务上使用 [ServiceModel Metadata Utility Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md) 来生成客户端类时就会发生此过程。 但是，在更复杂的情况下，也可能在运行时处理架构。 请注意，这样做可能会有遭到拒绝服务攻击的风险。 有些架构可能需要很长时间才能导入。 如果架构可能来自不受信任的源，那么在这种情况下绝不要使用 <xref:System.Xml.Serialization.XmlSerializer> 架构导入组件。
 
 ## <a name="threats-specific-to-aspnet-ajax-integration"></a>特定于 ASP.NET AJAX 集成的威胁
 
-当用户实现<xref:System.ServiceModel.Description.WebScriptEnablingBehavior>或<xref:System.ServiceModel.Description.WebHttpBehavior>，WCF 公开的终结点可以接受 XML 和 JSON 消息。 但是，只有一组读取器配额，供 XML 读取器和 JSON 读取器同时使用。 某些配额设置可能适合于一种读取器，但对另一种读取器而言太大。
+当用户实现 <xref:System.ServiceModel.Description.WebScriptEnablingBehavior> 或时 <xref:System.ServiceModel.Description.WebHttpBehavior> ，WCF 公开可同时接受 XML 和 JSON 消息的终结点。 但是，只有一组读取器配额，供 XML 读取器和 JSON 读取器同时使用。 某些配额设置可能适合于一种读取器，但对另一种读取器而言太大。
 
 实现 `WebScriptEnablingBehavior`时，用户可选择公开位于终结点的 JavaScript 代理。 必须考虑以下安全问题：
 
@@ -368,9 +368,9 @@ XML 信息集在 WCF 中窗体的所有消息处理的基础。 当接受来自�
 
 ## <a name="a-note-on-components"></a>关于组件的说明
 
-WCF 是一个灵活和可自定义系统。 本主题的内容大部分专注于最常见的 WCF 使用方案。 但是，就可以编写 WCF 提供了多种不同方式的组件。 必须了解使用每个组件的安全含义。 具体而言：
+WCF 是一个灵活且可自定义的系统。 本主题中的大部分内容侧重于最常见的 WCF 使用方案。 但是，可以通过多种不同的方式撰写 WCF 提供的组件。 必须了解使用每个组件的安全含义。 具体而言：
 
-- 当您必须使用 XML 读取器时，应使用 <xref:System.Xml.XmlDictionaryReader> 类所提供的读取器，而不要使用其他任何读取器。 安全读取器是使用 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>或 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> 方法创建的。 不要使用 <xref:System.Xml.XmlReader.Create%2A> 方法。 应始终为读取器配置安全配额。 WCF 中的序列化引擎是用于从 WCF 安全 XML 读取器时仅安全的。
+- 当您必须使用 XML 读取器时，应使用 <xref:System.Xml.XmlDictionaryReader> 类所提供的读取器，而不要使用其他任何读取器。 安全读取器是使用 <xref:System.Xml.XmlDictionaryReader.CreateTextReader%2A>、 <xref:System.Xml.XmlDictionaryReader.CreateBinaryReader%2A>或 <xref:System.Xml.XmlDictionaryReader.CreateMtomReader%2A> 方法创建的。 不要使用 <xref:System.Xml.XmlReader.Create%2A> 方法。 应始终为读取器配置安全配额。 WCF 中的序列化引擎仅在与 WCF 中的安全 XML 读取器一起使用时才是安全的。
 
 - 当使用 <xref:System.Runtime.Serialization.DataContractSerializer> 来反序列化可能不受信任的数据时，应总是设置 <xref:System.Runtime.Serialization.DataContractSerializer.MaxItemsInObjectGraph%2A> 属性。
 
@@ -382,9 +382,9 @@ WCF 是一个灵活和可自定义系统。 本主题的内容大部分专注于
 
 - 通常，当使用接受配额的任何组件时，都应了解它的安全含义并将它设置为一个安全值。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Xml.XmlDictionaryReader>
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [数据协定已知类型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
+- [数据协定已知类型](data-contract-known-types.md)

@@ -2,16 +2,16 @@
 title: WCF 中的消息安全
 ms.date: 03/30/2017
 ms.assetid: a80efb59-591a-4a37-bb3c-8fffa6ca0b7d
-ms.openlocfilehash: 32f6659f6ac744ab7af07c23e7e26ea1124d020c
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 6875339df327371a79bc9b9072aca2df0bc7d3f6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76212072"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602656"
 ---
 # <a name="message-security-in-wcf"></a>WCF 中的消息安全
 
-Windows Communication Foundation （WCF）有两种主要模式，用于提供安全性（`Transport` 和 `Message`）和组合两者的第三种模式（`TransportWithMessageCredential`）。 本主题讨论消息安全和使用它的原因。
+Windows Communication Foundation （WCF）提供了两种用于提供安全性的主要模式（ `Transport` 和 `Message` ）和将两者组合在一起的第三种模式（ `TransportWithMessageCredential` ）。 本主题讨论消息安全和使用它的原因。
 
 ## <a name="what-is-message-security"></a>何为消息安全？
 
@@ -29,7 +29,7 @@ Windows Communication Foundation （WCF）有两种主要模式，用于提供�
 
 - 对多个传输的支持。 可以通过许多不同的传输（例如命名管道和 TCP）来发送受保护的消息，而不必依赖于安全协议。 使用传输级安全时，所有安全信息的范围限定于单个特殊的传输连接，不能从消息内容本身获取这些信息。 无论您使用什么传输来传送消息，消息安全都会让消息变得安全，并且安全上下文直接嵌入消息内。
 
-- 对一组范围广泛的凭据和声明的支持。 消息安全基于 WS-Security 规范，该规范提供能够在 SOAP 消息内传输任何类型声明的可扩展框架。 与传输安全不同，您可以使用的这组身份验证机制或声明不受传输能力的限制。 WCF 消息安全包括多种类型的身份验证和声明传输，可以根据需要进行扩展以支持其他类型。 例如，由于这些原因，如果没有消息安全，联合凭据方案不可能实现。 有关 WCF 支持的联合方案的详细信息，请参阅[联合和颁发的令牌](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)。
+- 对一组范围广泛的凭据和声明的支持。 消息安全基于 WS-Security 规范，该规范提供能够在 SOAP 消息内传输任何类型声明的可扩展框架。 与传输安全不同，您可以使用的这组身份验证机制或声明不受传输能力的限制。 WCF 消息安全包括多种类型的身份验证和声明传输，可以根据需要进行扩展以支持其他类型。 例如，由于这些原因，如果没有消息安全，联合凭据方案不可能实现。 有关 WCF 支持的联合方案的详细信息，请参阅[联合和颁发的令牌](federation-and-issued-tokens.md)。
 
 ## <a name="how-message-and-transport-security-compare"></a>消息安全与传输安全比较
 
@@ -65,7 +65,7 @@ Windows Communication Foundation （WCF）有两种主要模式，用于提供�
 
 ## <a name="see-also"></a>另请参阅
 
-- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [传输安全性](../../../../docs/framework/wcf/feature-details/transport-security.md)
-- [如何：使用传输安全性和消息凭据](../../../../docs/framework/wcf/feature-details/how-to-use-transport-security-and-message-credentials.md)
-- [Microsoft 模式和实践，第3章：实现传输和消息层安全性](https://docs.microsoft.com/previous-versions/msp-n-p/ff647370(v=pandp.10))
+- [保护服务和客户端的安全](securing-services-and-clients.md)
+- [传输安全](transport-security.md)
+- [如何：使用传输安全和消息凭据](how-to-use-transport-security-and-message-credentials.md)
+- [Microsoft Patterns and Practices, Chapter 3: Implementing Transport and Message Layer Security（《Microsoft 模式与实践》第 3 章：实现传输和消息层安全性）](https://docs.microsoft.com/previous-versions/msp-n-p/ff647370(v=pandp.10))

@@ -2,22 +2,22 @@
 title: 按正文路由
 ms.date: 03/30/2017
 ms.assetid: 07a6fc3b-c360-42e0-b663-3d0f22cf4502
-ms.openlocfilehash: c3f4b19e646a6a9716d2264a3969b339208c60a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 146baf806f4922f5e3ddd92a762772786e61d443
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79144183"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594590"
 ---
 # <a name="route-by-body"></a>按正文路由
-此示例演示如何实现一种使用任何 SOAP 操作接受消息对象的服务。 此示例基于实现计算器服务的[入门](../../../../docs/framework/wcf/samples/getting-started-sample.md)。 该服务实现一个 `Calculate` 操作，此操作接受一个 <xref:System.ServiceModel.Channels.Message> 请求参数并返回一个 <xref:System.ServiceModel.Channels.Message> 响应。  
+此示例演示如何实现一种使用任何 SOAP 操作接受消息对象的服务。 此示例基于实现计算器服务的[入门](getting-started-sample.md)。 该服务实现一个 `Calculate` 操作，此操作接受一个 <xref:System.ServiceModel.Channels.Message> 请求参数并返回一个 <xref:System.ServiceModel.Channels.Message> 响应。  
   
  在此示例中，客户端是一个控制台应用程序 (.exe)，并且服务承载在 IIS 中。  
   
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。  
   
- 此示例演示基于正文内容的消息调度。 内置的 Windows 通信基础 （WCF） 服务模型消息调度机制基于消息操作。 不过，有许多现有的 Web 服务使用 Action="" 来定义其所有操作。 不可能基于 WSDL 生成基于 Action 信息调度请求消息的服务。 此示例演示一个基于 WSDL 的服务协定，此 WSDL 包含在该示例包括的 Service.wsdl 中。 服务协定是计算器，类似于[入门](../../../../docs/framework/wcf/samples/getting-started-sample.md)中使用的协定。 但是，`[OperationContract]` 指定所有操作的 `Action=""`。  
+ 此示例演示基于正文内容的消息调度。 内置 Windows Communication Foundation （WCF）服务模型消息调度机制基于消息操作。 不过，有许多现有的 Web 服务使用 Action="" 来定义其所有操作。 不可能基于 WSDL 生成基于 Action 信息调度请求消息的服务。 此示例演示一个基于 WSDL 的服务协定，此 WSDL 包含在该示例包括的 Service.wsdl 中。 服务协定是计算器，类似于[入门](getting-started-sample.md)中使用的协定。 但是，`[OperationContract]` 指定所有操作的 `Action=""`。  
   
 ```csharp  
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples"),
@@ -35,9 +35,9 @@ ms.locfileid: "79144183"
     }  
 ```  
   
- 给定协定之后，服务需要自定义调度行为 `DispatchByBodyBehavior` 以便允许在操作之间调度消息。 此调度行为用由相应包装`DispatchByBodyElementOperationSelector`元素的 QName 键控的操作名称表初始化自定义操作选择器。 `DispatchByBodyElementOperationSelector` 在正文第一个子级的开始标记中查找，并使用前面提到的表选择操作。  
+ 给定协定之后，服务需要自定义调度行为 `DispatchByBodyBehavior` 以便允许在操作之间调度消息。 此调度行为 `DispatchByBodyElementOperationSelector` 使用由各自包装元素的 QName 进行键控的操作名称表初始化自定义操作选择器。 `DispatchByBodyElementOperationSelector` 在正文第一个子级的开始标记中查找，并使用前面提到的表选择操作。  
   
- 客户端使用服务[模型元数据实用程序工具 （Svcutil.exe）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)从服务导出的 WSDL 自动生成的代理。  
+ 客户端使用通过使用的[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)从服务导出的 WSDL 自动生成的代理。  
   
 ```console  
 svcutil.exe  /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples /uxs http://localhost/servicemodelsamples/service.svc?wsdl /out:generatedProxy.cs  
@@ -58,17 +58,17 @@ Press <ENTER> to terminate client.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 确保已为 Windows[通信基础示例执行一次性设置过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
-2. 要生成解决方案，请按照生成 Windows[通信基础示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。  
+2. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。  
   
-3. 要在单机或跨计算机配置中运行示例，请按照[运行 Windows 通信基础示例中的](../../../../docs/framework/wcf/samples/running-the-samples.md)说明操作。  
+3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
   
 > [!IMPORTANT]
 > 您的计算机上可能已安装这些示例。 在继续操作之前，请先检查以下（默认）目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\RouteByBody`  

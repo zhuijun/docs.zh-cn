@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XsdDataContractExporter class
 - XsdDataContractImporter class
 ms.assetid: bb57b962-70c1-45a9-93d5-e721e340a13f
-ms.openlocfilehash: 3db3cc1c529ab40bf775c06a5128e4dabf3c8a56
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d356450af8ce6690e2142f3487e153bcde095324
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963658"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595513"
 ---
 # <a name="exporting-schemas-from-classes"></a>从类导出架构
 若要从数据协定模型中使用的类生成 XML 架构定义语言 (XSD) 架构，请使用 <xref:System.Runtime.Serialization.XsdDataContractExporter> 类。 本主题描述创建架构的过程。  
@@ -21,11 +21,11 @@ ms.locfileid: "69963658"
 ## <a name="the-export-process"></a>导出过程  
  架构导出过程以一个或多个类型开始，并生成一个 <xref:System.Xml.Schema.XmlSchemaSet> ，描述这些类型的 XML 投影。  
   
- `XmlSchemaSet`是 .NET Framework 的架构对象模型 (SOM) 的一部分, 表示一组 XSD 架构文档。 若要从 `XmlSchemaSet`创建 XSD 文档，请使用 <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> 类的 `XmlSchemaSet` 属性的架构集合。 然后使用 <xref:System.Xml.Schema.XmlSchema> 序列化每个 <xref:System.Xml.Serialization.XmlSerializer>对象。  
+ `XmlSchemaSet`是 .NET Framework 的架构对象模型（SOM）的一部分，表示一组 XSD 架构文档。 若要从 `XmlSchemaSet`创建 XSD 文档，请使用 <xref:System.Xml.Schema.XmlSchemaSet.Schemas%2A> 类的 `XmlSchemaSet` 属性的架构集合。 然后使用 <xref:System.Xml.Schema.XmlSchema> 序列化每个 <xref:System.Xml.Serialization.XmlSerializer>对象。  
   
 #### <a name="to-export-schemas"></a>导出架构  
   
-1. 创建 <xref:System.Runtime.Serialization.XsdDataContractExporter>的一个实例。  
+1. 创建 <xref:System.Runtime.Serialization.XsdDataContractExporter> 的实例：  
   
 2. 可选。 在构造函数中传递一个 <xref:System.Xml.Schema.XmlSchemaSet> 。 在此情况下，会将架构导出期间生成的架构添加到此 <xref:System.Xml.Schema.XmlSchemaSet> 实例中，而不是以空白 <xref:System.Xml.Schema.XmlSchemaSet>开始。  
   
@@ -43,12 +43,12 @@ ms.locfileid: "69963658"
 ## <a name="export-options"></a>导出选项  
  您可以将 <xref:System.Runtime.Serialization.XsdDataContractExporter.Options%2A> 的 <xref:System.Runtime.Serialization.XsdDataContractExporter> 属性设置为 <xref:System.Runtime.Serialization.ExportOptions> 类的实例以控制导出过程的各个方面。 您可以具体设置以下选项：  
   
-- <xref:System.Runtime.Serialization.ExportOptions.KnownTypes%2A>。 这一 `Type` 集合表示要导出的类型的已知类型。 (有关详细信息, 请参阅[数据协定已知类型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)。)每次调用 `Export` 时，除了导出已传递给 `Export` 方法的类型外，还导出这些已知类型。  
+- <xref:System.Runtime.Serialization.ExportOptions.KnownTypes%2A>. 这一 `Type` 集合表示要导出的类型的已知类型。 （有关详细信息，请参阅[数据协定已知类型](data-contract-known-types.md)。）`Export`除了传递给方法的类型外，还会在每次调用时导出这些已知类型 `Export` 。  
   
-- <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A>。 通过此属性可以提供 <xref:System.Runtime.Serialization.IDataContractSurrogate> ，该属性将自定义导出过程。 有关详细信息, 请参阅[数据协定代理](../../../../docs/framework/wcf/extending/data-contract-surrogates.md)项。 默认情况下，不使用代理项。  
+- <xref:System.Runtime.Serialization.ExportOptions.DataContractSurrogate%2A>. 通过此属性可以提供 <xref:System.Runtime.Serialization.IDataContractSurrogate> ，该属性将自定义导出过程。 有关详细信息，请参阅[数据协定代理](../extending/data-contract-surrogates.md)项。 默认情况下，不使用代理项。  
   
 ## <a name="helper-methods"></a>帮助器方法  
- 除了具有导出架构的主要作用， `XsdDataContractExporter` 还具有几个有用的帮助器方法，它们可提供有关类型的信息。 这些问题包括：  
+ 除了具有导出架构的主要作用， `XsdDataContractExporter` 还具有几个有用的帮助器方法，它们可提供有关类型的信息。 其中包括：  
   
 - <xref:System.Runtime.Serialization.XsdDataContractExporter.GetRootElementName%2A> 方法。 此方法采用 `Type` 并返回表示根元素名称和命名空间的 <xref:System.Xml.XmlQualifiedName> ，此名称和命名空间可在此类型被序列化为根对象时使用。  
   
@@ -58,10 +58,10 @@ ms.locfileid: "69963658"
   
  导出选项会影响所有这些方法。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Runtime.Serialization.XsdDataContractImporter>
 - <xref:System.Runtime.Serialization.XsdDataContractExporter>
-- [架构导入和导出](../../../../docs/framework/wcf/feature-details/schema-import-and-export.md)
-- [导入架构以生成类](../../../../docs/framework/wcf/feature-details/importing-schema-to-generate-classes.md)
+- [架构导入和导出](schema-import-and-export.md)
+- [导入架构以生成类](importing-schema-to-generate-classes.md)

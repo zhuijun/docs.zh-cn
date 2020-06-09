@@ -2,12 +2,12 @@
 title: HTTP 传输安全
 ms.date: 03/30/2017
 ms.assetid: d3439262-c58e-4d30-9f2b-a160170582bb
-ms.openlocfilehash: 4bd3fbfd39538eee4344ef0a8ca4fe61b372ab70
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 28d0ac164022f585f25b44b16c68994b592ef041
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76212135"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84592718"
 ---
 # <a name="http-transport-security"></a>HTTP 传输安全
 如果使用 HTTP 作为传输，则由安全套接字层 (SSL) 实现提供安全。 SSL 广泛用于 Internet 中，以便向客户端证明服务的身份，并且随后向通道提供保密性（加密）。 本主题说明 SSL 如何工作，以及如何在 Windows Communication Foundation （WCF）中实现它。  
@@ -37,7 +37,7 @@ ms.locfileid: "76212135"
   
 ### <a name="using-iis-for-transport-security"></a>使用 IIS 实现传输安全  
   
-#### <a name="iis-70"></a>IIS 7.0  
+#### <a name="iis-70"></a>IIS 7.0  
  若要将 IIS 7.0 设置为安全主机（使用 SSL），请参阅[在 IIS 7.0 中配置安全套接字层](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc771438(v=ws.10))。  
   
 若要配置用于 IIS 7.0 的证书，请参阅[在 iis 7.0 中配置服务器证书](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。  
@@ -51,9 +51,9 @@ ms.locfileid: "76212135"
 
  如果要创建自承载的 WCF 应用程序，请使用[httpcfg.exe](/windows/win32/http/httpcfg-exe)工具。
   
- 若要详细了解如何使用 Httpcfg.exe 工具设置包含 x.509 证书的端口，请参阅[如何：使用 SSL 证书配置端口](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)。  
+ 若要详细了解如何使用 Httpcfg.exe 工具设置包含 x.509 证书的端口，请参阅[如何：使用 SSL 证书配置端口](how-to-configure-a-port-with-an-ssl-certificate.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [传输安全性](../../../../docs/framework/wcf/feature-details/transport-security.md)
-- [消息安全性](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)
+- [传输安全](transport-security.md)
+- [消息安全](message-security-in-wcf.md)

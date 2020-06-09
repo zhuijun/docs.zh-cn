@@ -2,18 +2,18 @@
 title: ASP.NET 缓存集成
 ms.date: 03/30/2017
 ms.assetid: f581923a-8a72-42fc-bd6a-46de2aaeecc1
-ms.openlocfilehash: 23c10e56dba7daec2d1027de92e8252c8fe69055
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: c541f3caad8a500b9fdb33d00b58706bac876e37
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716176"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594746"
 ---
 # <a name="aspnet-caching-integration"></a>ASP.NET 缓存集成
 
 此示例演示如何通过 WCF WEB HTTP 编程模型使用 ASP.NET 输出缓存。 本主题重点介绍 ASP.NET 输出缓存集成功能。
 
-## <a name="demonstrates"></a>演示文本
+## <a name="demonstrates"></a>演示
 
 与 ASP.NET 输出缓存的集成
 
@@ -26,13 +26,13 @@ ms.locfileid: "74716176"
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Web\AspNetCachingIntegration`
 
-## <a name="discussion"></a>讨论
+## <a name="discussion"></a>讨论区
 
-该示例使用 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> 来利用 Windows Communication Foundation （WCF）服务的 ASP.NET 输出缓存。 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> 应用于服务操作，并在应该应用于给定操作的响应的配置文件中提供缓存配置文件的名称。
+该示例使用将 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> ASP.NET output 缓存与 Windows Communication Foundation （WCF）服务结合使用。 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> 应用于服务操作，并在应该应用于给定操作的响应的配置文件中提供缓存配置文件的名称。
 
-在示例服务项目的 Service.cs 文件中，`GetCustomer` 和 `GetCustomers` 操作都用 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute>进行标记，这将提供缓存配置文件名称 "CacheFor60Seconds"。 在服务项目的 web.config 文件中，缓存配置文件 "CacheFor60Seconds" 以 <`system.web`> 的 <`caching`> 元素提供。 对于此缓存配置文件，`duration` 属性的值是 "60"，因此与此配置文件关联的响应将在 ASP.NET 输出缓存中缓存60秒。 此外，对于此缓存配置文件，`varmByParam` 特性设置为 "format"，因此 `format` 查询字符串参数具有不同值的请求会分别缓存其响应。 最后，缓存配置文件的 `varyByHeader` 属性设置为 "接受"，因此具有不同 Accept 标头值的请求会分别缓存其响应。
+在示例服务项目的 Service.cs 文件中， `GetCustomer` 和 `GetCustomers` 操作都用来标记 <xref:System.ServiceModel.Web.AspNetCacheProfileAttribute> ，后者提供缓存配置文件名称 "CacheFor60Seconds"。 在服务项目的 web.config 文件中，缓存配置文件 "CacheFor60Seconds" 在 `caching` < > 的 < > 元素下提供 `system.web` 。 对于此缓存配置文件，属性的值 `duration` 为 "60"，因此与此配置文件关联的响应将在 ASP.NET 输出缓存中缓存60秒。 此外，对于此缓存配置文件，该 `varmByParam` 属性设置为 "format"，因此具有不同 `format` 查询字符串参数值的请求会分别缓存其响应。 最后，缓存配置文件的 `varyByHeader` 属性设置为 "接受"，因此具有不同 Accept 标头值的请求会分别缓存其响应。
 
-客户端项目中的 Program.cs 演示如何使用 <xref:System.Net.HttpWebRequest> 编写此类客户端。 请注意，这只是访问 WCF 服务的一种方式。 还可以使用其他 .NET Framework 类（例如 WCF 通道工厂和 <xref:System.Net.WebClient>）来访问服务。 SDK 中的其他示例（如[基本 HTTP 服务](../../../../docs/framework/wcf/samples/basic-http-service.md)示例）演示如何使用这些类与 WCF 服务进行通信。
+客户端项目中的 Program.cs 演示如何使用 <xref:System.Net.HttpWebRequest> 编写此类客户端。 请注意，这只是访问 WCF 服务的一种方式。 还可以使用其他 .NET Framework 类（例如 WCF 通道工厂和）来访问该服务 <xref:System.Net.WebClient> 。 SDK 中的其他示例（如[基本 HTTP 服务](basic-http-service.md)示例）演示如何使用这些类与 WCF 服务进行通信。
 
 ## <a name="to-run-the-sample"></a>运行示例
 
@@ -50,7 +50,7 @@ ms.locfileid: "74716176"
 
 1. 打开 ASP.NET 缓存集成示例的解决方案。
 
-2. 按 Ctrl+Shift+B 生成解决方案。
+2. 按 CTRL+SHIFT+B 生成解决方案。
 
 3. 如果 "**解决方案资源管理器**" 窗口尚未打开，请按 CTRL + W + S。
 

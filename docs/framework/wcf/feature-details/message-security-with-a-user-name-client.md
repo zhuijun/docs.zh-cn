@@ -5,29 +5,29 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
-ms.openlocfilehash: 3dd21268d4ea7dc59c74889ac94dc86678e91865
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9447487012cae370d35880e5b780465f9434051b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184642"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602617"
 ---
 # <a name="message-security-with-a-user-name-client"></a>用户名客户端的消息安全
-下图显示了使用消息级安全性保护的 Windows 通信基础 （WCF） 服务和客户端。 服务使用 X.509 证书进行身份验证。 客户端使用用户名和密码进行身份验证。  
+下图显示了使用消息级安全性保护 Windows Communication Foundation （WCF）服务和客户端。 服务使用 X.509 证书进行身份验证。 客户端使用用户名和密码进行身份验证。  
   
- 有关示例应用程序，请参阅[消息安全用户名](../../../../docs/framework/wcf/samples/message-security-user-name.md)。  
+ 有关示例应用程序，请参阅[消息安全用户名](../samples/message-security-user-name.md)。  
   
- ![使用用户名身份验证的消息安全](../../../../docs/framework/wcf/feature-details/media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61-7e1d-42f5-b1af-195bfee5b3c6")  
+ ![使用用户名身份验证的消息安全](media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61-7e1d-42f5-b1af-195bfee5b3c6")  
   
-|特征|说明|  
+|特征|描述|  
 |--------------------|-----------------|  
-|安全模式|消息|  
-|互操作性|仅限 Windows 通信基金会 （WCF）|  
+|安全模式|Message|  
+|互操作性|仅 Windows Communication Foundation （WCF）|  
 |身份验证（服务器）|初始协商需要服务器身份验证|  
 |身份验证（客户端）|用户名/密码|  
 |完整性|是，使用共享安全上下文|  
 |机密性|是，使用共享安全上下文|  
-|传输|HTTP|  
+|Transport|HTTP|  
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>服务  
@@ -43,7 +43,7 @@ ms.locfileid: "79184642"
  [!code-csharp[C_SecurityScenarios#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#9)]
  [!code-vb[C_SecurityScenarios#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#9)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  以下配置可代替代码使用：  
   
 ```xml  
@@ -86,7 +86,7 @@ ms.locfileid: "79184642"
 </configuration>  
 ```  
   
-## <a name="client"></a>Client  
+## <a name="client"></a>客户端  
   
 ### <a name="code"></a>代码  
  下面的代码创建客户端。 绑定设置为消息模式安全，客户端凭据类型设置为 `UserName`。 用户名和密码只能使用代码指定（不可配置）。 返回用户名和密码的代码未在此处显示，因为这必须在应用程序级完成。 例如，使用 Windows 窗体对话框查询用户以获得这些数据。  
@@ -94,7 +94,7 @@ ms.locfileid: "79184642"
  [!code-csharp[C_SecurityScenarios#16](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#16)]
  [!code-vb[C_SecurityScenarios#16](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#16)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  下面的代码将配置客户端。 绑定设置为消息模式安全，客户端凭据类型设置为 `UserName`。 用户名和密码只能使用代码指定（不可配置）。  
   
 ```xml  
@@ -127,8 +127,8 @@ ms.locfileid: "79184642"
   
 ## <a name="see-also"></a>另请参阅
 
-- [安全概述](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [用户名消息安全](../../../../docs/framework/wcf/samples/message-security-user-name.md)
-- [服务标识和身份验证](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [\<身份>](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)
+- [安全性概述](security-overview.md)
+- [用户名消息安全](../samples/message-security-user-name.md)
+- [服务标识和身份验证](service-identity-and-authentication.md)
+- [\<identity>](../../configure-apps/file-schema/wcf/identity.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
