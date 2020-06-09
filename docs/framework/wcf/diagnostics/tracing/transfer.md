@@ -2,18 +2,18 @@
 title: 传输
 ms.date: 03/30/2017
 ms.assetid: dfcfa36c-d3bb-44b4-aa15-1c922c6f73e6
-ms.openlocfilehash: e0ebfff97cd33e7a588a1ab92399a97a0fbec039
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 52b0cf35a2f8bab17252d3711f3143738c2bc39c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185710"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84587763"
 ---
 # <a name="transfer"></a>传输
-本主题介绍 Windows 通信基础 （WCF） 活动跟踪模型中的传输。  
+本主题介绍 Windows Communication Foundation （WCF）活动跟踪模型中的传输。  
   
 ## <a name="transfer-definition"></a>传输定义  
- 活动之间的传输表示终结点内相关活动中的事件之间的因果关系。 当两个活动之间存在控制流（例如方法调用跨越活动边界）时，这两个活动将与传输相关。 在 WCF 中，当服务上传入字节时，侦听活动将传输到创建消息对象的接收字节活动。 有关端到端跟踪方案及其各自的活动和跟踪设计的列表，请参阅端到端[跟踪方案](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)。  
+ 活动之间的传输表示终结点内相关活动中的事件之间的因果关系。 当两个活动之间存在控制流（例如方法调用跨越活动边界）时，这两个活动将与传输相关。 在 WCF 中，在服务上传入字节时，侦听活动会传输到接收字节活动，其中创建了消息对象。 有关端到端跟踪方案及其各自的活动和跟踪设计的列表，请参阅[端到端跟踪方案](end-to-end-tracing-scenarios.md)。  
   
  若要发出传输跟踪，请在跟踪源中使用如下配置代码所示的 `ActivityTracing` 设置。  
   
@@ -26,7 +26,7 @@ ms.locfileid: "79185710"
   
  活动 M 和活动 N 之间存在控制流时，会从 M 向 N 发出传输跟踪。例如，由于存在跨越活动边界的方法调用，因而 N 会为 M 执行某些工作。 N 可能已存在或已创建。 N 由 M 生成，此时 N 是新活动，为 M 执行某些工作。  
   
- 从 M 到 N 的传输之后可能不会紧跟一个从 N 到 M 的反向传输。这是因为 M 可能会在 N 中生成一些工作，并且不会跟踪何时 N 将完成这些工作。 实际上，M 可以在 N 完成其任务之前终止。 这将发生在生成侦听器活动 （N） 然后终止的"打开服务主机"活动 （M） 中。 从 N 传回 M 意味着 N 已完成与 M 相关的工作。  
+ 从 M 到 N 的传输之后可能不会紧跟一个从 N 到 M 的反向传输。这是因为 M 可能会在 N 中生成一些工作，并且不会跟踪何时 N 将完成这些工作。 实际上，M 可以在 N 完成其任务之前终止。 这发生在生成侦听器活动（N）的 "打开 ServiceHost" 活动（M）中，然后终止。 从 N 传回 M 意味着 N 已完成与 M 相关的工作。  
   
  N 可以继续执行与 M 无关的其他处理，例如继续从不同登录活动接收登录请求 (M) 的现有身份验证器活动 (N)。  
   
@@ -104,7 +104,7 @@ ts.TraceEvent(TraceEventType.Resume, 667, "Resume: Activity " + i-1);
   
 ## <a name="see-also"></a>另请参阅
 
-- [配置跟踪](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
-- [使用服务跟踪查看器查看相关跟踪和进行故障排除](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
-- [端到端跟踪方案](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
-- [服务跟踪查看器工具 (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [配置跟踪](configuring-tracing.md)
+- [使用服务跟踪查看器查看相关跟踪和进行故障诊断](using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [端到端跟踪方案](end-to-end-tracing-scenarios.md)
+- [服务跟踪查看器工具 (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)

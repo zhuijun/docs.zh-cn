@@ -2,20 +2,20 @@
 title: 如何：使用配置文件发布服务的元数据
 ms.date: 03/30/2017
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-ms.openlocfilehash: 179ccf97ce4f5e2aa3e132db7e77c93259d5e4ac
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 976e1e0bb2c6479f7599165a1c6fe83bae4e17c1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144937"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596976"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>如何：使用配置文件发布服务的元数据
 这是演示如何发布 Windows Communication Foundation （WCF）服务的元数据的两个帮助主题之一。 有两种方式可以指定服务应如何发布元数据：使用配置文件和使用代码。 本主题演示如何使用配置文件发布服务的元数据。  
   
 > [!CAUTION]
-> 本主题演示如何以不安全的方式发布元数据。 任何客户端都可以检索服务的元数据。 如果您要求服务以安全方式发布元数据，请参阅[自定义安全元数据终结点](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md)。  
+> 本主题演示如何以不安全的方式发布元数据。 任何客户端都可以检索服务的元数据。 如果您要求服务以安全方式发布元数据，请参阅[自定义安全元数据终结点](../samples/custom-secure-metadata-endpoint.md)。  
   
- 有关在代码中发布元数据的详细信息，请参阅[如何：使用代码发布服务的元数据](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)。 通过发布元数据，客户端可以使用 WS-Transfer GET 请求或使用 `?wsdl` 查询字符串的 HTTP/GET 来检索元数据。 若要确保代码正常工作，请创建一个基本的 WCF 服务。 为了简单起见，将在以下代码中提供一个基本的自承载服务。  
+ 有关在代码中发布元数据的详细信息，请参阅[如何：使用代码发布服务的元数据](how-to-publish-metadata-for-a-service-using-code.md)。 通过发布元数据，客户端可以使用 WS-Transfer GET 请求或使用 `?wsdl` 查询字符串的 HTTP/GET 来检索元数据。 若要确保代码正常工作，请创建一个基本的 WCF 服务。 为了简单起见，将在以下代码中提供一个基本的自承载服务。  
   
 ```csharp  
 using System;  
@@ -179,7 +179,7 @@ namespace Metadata.Samples
     </configuration>  
     ```  
   
-     由于该服务有一个 <xref:System.ServiceModel.Description.ServiceMetadataBehavior> 设置为 `httpGetEnabled` 的 `true`，因此该服务启用了发布元数据，但是由于未显式添加任何终结点，因此运行时添加默认终结点。 有关默认终结点、绑定和行为的详细信息，请参阅[简化配置](../../../../docs/framework/wcf/simplified-configuration.md)和 [WCF 服务的简化配置](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)。  
+     由于该服务有一个 <xref:System.ServiceModel.Description.ServiceMetadataBehavior> 设置为 `httpGetEnabled` 的 `true`，因此该服务启用了发布元数据，但是由于未显式添加任何终结点，因此运行时添加默认终结点。 有关默认终结点、绑定和行为的详细信息，请参阅[简化配置](../simplified-configuration.md)和 [WCF 服务的简化配置](../samples/simplified-configuration-for-wcf-services.md)。  
   
 ## <a name="example"></a>示例  
  下面的代码示例演示如何实现基本 WCF 服务和发布服务的元数据的配置文件。  
@@ -256,8 +256,8 @@ namespace Metadata.Samples
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>
-- [如何：在托管应用程序中承载 WCF 服务](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)
-- [自承载](../../../../docs/framework/wcf/samples/self-host.md)
-- [元数据体系结构概述](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)
-- [使用元数据](../../../../docs/framework/wcf/feature-details/using-metadata.md)
-- [如何：使用代码发布服务的元数据](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)
+- [如何：在托管应用程序中承载 WCF 服务](../how-to-host-a-wcf-service-in-a-managed-application.md)
+- [自承载](../samples/self-host.md)
+- [元数据体系结构概述](metadata-architecture-overview.md)
+- [使用元数据](using-metadata.md)
+- [如何：使用代码发布服务的元数据](how-to-publish-metadata-for-a-service-using-code.md)

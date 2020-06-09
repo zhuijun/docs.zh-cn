@@ -2,24 +2,24 @@
 title: 使用消息安全保护消息
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: a6b062d0d6a74ce2a2ff9afa7e8a0a18853dbd22
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 70c645101033c31da01d79f624ab03ce328dd3a6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746444"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589976"
 ---
 # <a name="securing-messages-using-message-security"></a>使用消息安全保护消息
-本部分讨论使用 <xref:System.ServiceModel.NetMsmqBinding>时的 WCF 消息安全性。  
+本部分介绍了使用时的 WCF 消息安全性 <xref:System.ServiceModel.NetMsmqBinding> 。  
   
 > [!NOTE]
-> 在阅读本主题之前，建议你阅读[安全概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)。  
+> 在阅读本主题之前，建议你阅读[安全概念](security-concepts.md)。  
   
  下图提供了使用 WCF 进行排队通信的概念模型。 此图及术语用于说明  
   
  传输安全概念。  
   
- ![排队应用程序关系图](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "分布式队列图")  
+ ![排队应用程序关系图](media/distributed-queue-figure.jpg "分布式队列图")  
   
  当使用 WCF 发送排队消息时，WCF 消息将附加为消息队列（MSMQ）消息的正文。 传输安全保护整个 MSMQ 消息，而消息（或 SOAP）安全仅保护 MSMQ 消息正文。  
   
@@ -65,7 +65,7 @@ ms.locfileid: "76746444"
   
 ## <a name="see-also"></a>另请参阅
 
-- [使用传输安全性保护消息](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)
-- [基于消息队列的消息安全性](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
-- [安全性概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)
-- [保护服务和客户端的安全](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [使用传输安全保护消息](securing-messages-using-transport-security.md)
+- [基于消息队列的消息安全性](../samples/message-security-over-message-queuing.md)
+- [安全性概念](security-concepts.md)
+- [保护服务和客户端的安全](securing-services-and-clients.md)

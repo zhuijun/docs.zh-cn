@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2d06c2aa-d0d7-4e5e-ad7e-77416aa1c10b
-ms.openlocfilehash: 69db887bf8e7b51c4450c04bd1a08d3d952e84f7
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 10d6db63368ee55040f85f922b9483982e8ff264
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64643574"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596963"
 ---
 # <a name="how-to-secure-a-service-with-an-x509-certificate"></a>如何：使用 X.509 证书保证服务的安全
-保护使用 X.509 证书的服务是大多数绑定 Windows Communication Foundation (WCF) 中使用的基本技术。 本主题演练使用 X.509 证书配置自承载服务的步骤。  
+使用 x.509 证书保护服务是 Windows Communication Foundation （WCF）中的大多数绑定使用的基本技术。 本主题演练使用 X.509 证书配置自承载服务的步骤。  
   
- 先决条件是具有可用于对服务器进行身份验证的有效证书。 证书必须由受信任的证书颁发机构颁发给服务器。 如果证书无效，则尝试使用该服务的任何客户端都不会信任该服务，因此不会建立连接。 有关使用证书的详细信息，请参阅[Working with Certificates](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)。  
+ 先决条件是具有可用于对服务器进行身份验证的有效证书。 证书必须由受信任的证书颁发机构颁发给服务器。 如果证书无效，则尝试使用该服务的任何客户端都不会信任该服务，因此不会建立连接。 有关使用证书的详细信息，请参阅使用[证书](working-with-certificates.md)。  
   
 ### <a name="to-configure-a-service-with-a-certificate-using-code"></a>使用代码用证书配置服务  
   
-1. 创建服务协定和实现的服务。 有关详细信息，请参阅[设计和实现服务](../../../../docs/framework/wcf/designing-and-implementing-services.md)。  
+1. 创建服务协定和实现的服务。 有关详细信息，请参阅[设计和实现服务](../designing-and-implementing-services.md)。  
   
 2. 创建 <xref:System.ServiceModel.WSHttpBinding> 类的一个实例，并将其安全模式设置为 <xref:System.ServiceModel.SecurityMode.Message>，如下面的代码所示。  
   
@@ -31,7 +31,7 @@ ms.locfileid: "64643574"
      [!code-csharp[C_SecureWithCertificate#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#2)]
      [!code-vb[C_SecureWithCertificate#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#2)]  
   
-4. 为服务的基址创建 <xref:System.Uri> 类的一个实例。 因为`WSHttpBinding`使用 HTTP 传输，统一资源标识符 (URI) 必须以与该架构，或打开该服务时，Windows Communication Foundation (WCF) 将引发异常。  
+4. 为服务的基址创建 <xref:System.Uri> 类的一个实例。 由于 `WSHttpBinding` 使用 HTTP 传输，统一资源标识符（URI）必须以该架构开头，否则 Windows Communication Foundation （WCF）将在打开服务时引发异常。  
   
      [!code-csharp[C_SecureWithCertificate#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securewithcertificate/cs/source.cs#3)]
      [!code-vb[C_SecureWithCertificate#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securewithcertificate/vb/source.vb#3)]  
@@ -82,6 +82,6 @@ ms.locfileid: "64643574"
   
 - <xref:System.Runtime.Serialization>  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [使用证书](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [使用证书](working-with-certificates.md)

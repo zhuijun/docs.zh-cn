@@ -2,15 +2,15 @@
 title: 传播
 ms.date: 03/30/2017
 ms.assetid: f8181e75-d693-48d1-b333-a776ad3b382a
-ms.openlocfilehash: ab8b6c003f9e483dccd7b9c7b2687a409f27fdc3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 732ae5cb1ce311b78728f8d5de0fd9102bf32499
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64600021"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578950"
 ---
 # <a name="propagation"></a>传播
-本主题介绍 Windows Communication Foundation (WCF) 跟踪模型中的活动传播。  
+本主题介绍 Windows Communication Foundation （WCF）跟踪模型中的活动传播。  
   
 ## <a name="using-propagation-to-correlate-activities-across-endpoints"></a>使用传播关联终结点之间的活动  
  传播可向用户提供应用程序终结点之间相同处理单元的错误跟踪的直接关联，如请求。 在不同终结点为相同处理单元发出的错误将被分组到相同的活动中，甚至跨应用程序域。 这是通过活动 ID 在消息头中的传播实现的。 因此，如果客户端由于服务器内部错误而超时，则这两个错误都会显示在同一活动中以便直接关联。  
@@ -21,7 +21,7 @@ ms.locfileid: "64600021"
 <source name="System.ServiceModel" switchValue="Verbose,ActivityTracing" propagateActivity="true" >  
 ```  
   
- 活动传播是一种可配置的功能，会导致 WCF 将标头添加到出站消息，其中包括 TLS 上的活动 ID。 通过在服务器端的后续跟踪上包括此 ID，可以关联客户端和服务器活动。  
+ 活动传播是一种可配置的功能，可使 WCF 向出站消息添加标头，其中包括 TLS 上的活动 ID。 通过在服务器端的后续跟踪上包括此 ID，可以关联客户端和服务器活动。  
   
 ## <a name="propagation-definition"></a>传播定义  
  如果下列所有条件都适用，则活动 M 的 gAId 会传播到活动 N。  
@@ -76,9 +76,9 @@ ms.locfileid: "64600021"
 ## <a name="synchronization"></a>同步  
  为了同步不同计算机上运行的各终结点之间的事件，向在消息中传播的 ActivityId 标头中添加了一个 CorrelationId。 工具可使用此 ID 来同步计算机之间具有时钟差的事件。 具体地说，服务跟踪查看器工具可使用此 ID 显示终结点之间的消息流。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [配置跟踪](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)
-- [使用服务跟踪查看器查看相关跟踪和进行故障排除](../../../../../docs/framework/wcf/diagnostics/tracing/using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
-- [端到端跟踪方案](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing-scenarios.md)
-- [服务跟踪查看器工具 (SvcTraceViewer.exe)](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [配置跟踪](configuring-tracing.md)
+- [使用服务跟踪查看器查看相关跟踪和进行故障诊断](using-service-trace-viewer-for-viewing-correlated-traces-and-troubleshooting.md)
+- [端到端跟踪方案](end-to-end-tracing-scenarios.md)
+- [服务跟踪查看器工具 (SvcTraceViewer.exe)](../../service-trace-viewer-tool-svctraceviewer-exe.md)

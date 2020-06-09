@@ -2,12 +2,12 @@
 title: 端到端跟踪方案
 ms.date: 03/30/2017
 ms.assetid: f83b7d53-6061-4362-a9a3-ee1daf6542be
-ms.openlocfilehash: 18fbd1e9733d55d60d7aa21f2fe8ac259b3da51b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d881a8396e21d31b2303d1bb270bed52823c8d49
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650365"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589248"
 ---
 # <a name="end-to-end-tracing-scenarios"></a>端到端跟踪方案
 本节包含的主题描述使用跟踪的不同方案。  
@@ -24,21 +24,21 @@ ms.locfileid: "64650365"
   
 ## <a name="in-this-section"></a>本节内容  
   
-- [活动列表](../../../../../docs/framework/wcf/diagnostics/tracing/activity-list.md)  
+- [活动列表](activity-list.md)  
   
-- [活动 ID 传播](../../../../../docs/framework/wcf/diagnostics/tracing/activity-id-propagation.md)  
+- [活动 ID 传播](activity-id-propagation.md)  
   
-- [使用 HTTP、TCP 或命名管道的同步方案](../../../../../docs/framework/wcf/diagnostics/tracing/synchronous-scenarios-using-http-tcp-or-named-pipe.md)  
+- [使用 HTTP、TCP 或命名管道的同步方案](synchronous-scenarios-using-http-tcp-or-named-pipe.md)  
   
-- [使用 HTTP、TCP 或命名管道的异步方案](../../../../../docs/framework/wcf/diagnostics/tracing/asynchronous-scenarios-using-http-tcp-or-named-pipe.md)  
+- [使用 HTTP、TCP 或命名管道的异步方案](asynchronous-scenarios-using-http-tcp-or-named-pipe.md)  
   
-- [消息安全中的活动跟踪](../../../../../docs/framework/wcf/diagnostics/tracing/activity-tracing-in-message-security.md)  
+- [消息安全中的活动跟踪](activity-tracing-in-message-security.md)  
   
-- [MSMQ](../../../../../docs/framework/wcf/diagnostics/tracing/msmq.md)  
+- [MSMQ](msmq.md)  
   
-- [COM+](../../../../../docs/framework/wcf/diagnostics/tracing/com.md)  
+- [COM +](com.md)  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [使用跟踪来排除应用程序故障](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [端到端跟踪](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing.md)
+- [使用跟踪来排除应用程序故障](using-tracing-to-troubleshoot-your-application.md)
+- [端到端跟踪](end-to-end-tracing.md)

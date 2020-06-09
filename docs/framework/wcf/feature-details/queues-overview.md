@@ -4,23 +4,23 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF], MSMQ integration
 ms.assetid: b8757992-ffce-40ad-9e9b-3243f6d0fce1
-ms.openlocfilehash: 78d80a88153ee15f7ab152da44801c77900f874d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3e75b6d5926b65a93204241eb7c71ca23a5694af
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184604"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596716"
 ---
 # <a name="queues-overview"></a>队列概述
 
-本节介绍与排队通信相关的一般概念和核心概念。 后续部分详细介绍了此处描述的排队概念在 Windows 通信基础 （WCF） 中的体现方式。  
+本节介绍与排队通信相关的一般概念和核心概念。 后续部分将详细介绍此处所述的队列概念在 Windows Communication Foundation （WCF）中的显示方式。  
   
 ## <a name="basic-queuing-concepts"></a>基本的队列概念  
  设计分布式应用程序时，在服务和客户端之间选择正确的通信传输是非常重要的。 使用的传输种类受几个因素影响。 一个重要的因素是服务、客户端和传输之间的隔离，它可确定是使用排队传输，还是使用直接传输（如 TCP 或 HTTP）。 由于直接传输（如 TCP 和 HTTP）的特性，如果服务或客户端停止工作或网络发生故障时，通信就会停止。 服务、客户端和网络必须同时运行，应用程序才能工作。 排队传输可提供隔离，即如果服务或客户端发生故障或它们之间的通信链接出现问题，客户端和服务还可以继续工作。  
   
- 即使通信方或网络出现故障，队列也可以提供可靠的通信。 队列捕获和传送在通信方之间交换的消息。 通常，某些种类的存储（可变或持久）可支持队列。 队列存储来自代表服务的客户端的消息，然后将这些消息转发给该服务。 间接寻址队列可确保隔离出现故障的任意一方，因此可将它作为高可用性系统和断开服务的首选通信机制。 间接寻址会产生因高延迟而引起的成本。 *延迟*是客户端发送消息到服务接收消息之间的时间延迟。 这表示发送消息后，不知道何时会处理该消息。 大多数的排队应用程序都需要处理高延迟。 下面的插图显示了排队通信的概念模型。  
+ 即使通信方或网络出现故障，队列也可以提供可靠的通信。 队列捕获和传送在通信方之间交换的消息。 通常，某些种类的存储（可变或持久）可支持队列。 队列存储来自代表服务的客户端的消息，然后将这些消息转发给该服务。 间接寻址队列可确保隔离出现故障的任意一方，因此可将它作为高可用性系统和断开服务的首选通信机制。 间接寻址会产生因高延迟而引起的成本。 *延迟*是客户端发送消息的时间与服务接收该消息的时间之间的时间延迟。 这表示发送消息后，不知道何时会处理该消息。 大多数的排队应用程序都需要处理高延迟。 下面的插图显示了排队通信的概念模型。  
   
- ![排队通信的模型](../../../../docs/framework/wcf/feature-details/media/qconceptual-figure1c.gif "Q 概念-图1c")  
+ ![排队通信的模型](media/qconceptual-figure1c.gif "QConceptual-Figure1c")  
   
  排队通信概念模型  
   
@@ -28,14 +28,14 @@ ms.locfileid: "79184604"
   
  客户端将消息发送至队列时，队列管理器会将该消息定址到由服务队列管理器管理的目标队列。 客户端上的队列管理器将消息发送至传输（或传出）队列。 传输队列是客户端队列管理器（将传输的消息存储至目标队列）上的队列。 然后队列管理器查找一个拥有目标队列的队列管理器的路径并将消息传输给它。 要确保可靠通信，队列管理器将实现可靠传输协议以避免数据丢失。 目标队列管理器接受定址到目标队列的消息，该管理器可拥有并存储消息。 服务发出从目标队列读取的请求时，队列管理器将消息传送至目标应用程序。 下面的插图显示了四方之间的通信。  
   
- ![排队应用程序关系图](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "分布式队列图")  
+ ![排队应用程序关系图](media/distributed-queue-figure.jpg "分布式队列图")  
   
  典型的部署方案中的排队通信  
   
  因此，队列管理器可提供所需的隔离，这样在发送方和接收方单独出现故障时，不会影响实际的通信。 队列提供的额外间接寻址的优点还可以启用多个应用程序实例，以从同一队列中进行读取操作，这样节点间场工作的吞吐量可以更高。 因此，队列用于实现较高的缩放和吞吐量需求的情况并不少见。  
   
 ## <a name="queues-and-transactions"></a>队列和事务  
- 事务允许您将一组操作组合到一起，这样如果一个操作失败，所有的操作都将失败。 如何使用交易的一个示例是，当一个人使用 ATM 将 1，000 美元从他们的储蓄账户转移到其支票帐户时。 需要的操作如下：  
+ 事务允许您将一组操作组合到一起，这样如果一个操作失败，所有的操作都将失败。 例如，当某个用户使用 ATM 将 $1000 从其储蓄帐户传输到其支票帐户时，如何使用交易。 需要的操作如下：  
   
 - 从存款帐户中取出 1,000 美元。  
   
@@ -47,7 +47,7 @@ ms.locfileid: "79184604"
   
  由于高延迟，因此发送消息后，您无法知道需要多长时间消息才能到达它的目标队列，也不会知道需要多长时间服务才能处理该消息。 因此，不要使用单个事务来发送消息、接收消息以及处理消息。 这将创建不确定时间量内未提交的事务。 客户端和服务通过队列使用事务进行通信时，会涉及两个事务：一个在客户端上，另一个在服务上。 下面的插图显示了在典型排队通信中的事务边界。  
   
- ![事务队列](../../../../docs/framework/wcf/feature-details/media/qwithtransactions-figure3.gif "QWithTransactions Figure3")  
+ ![事务队列](media/qwithtransactions-figure3.gif "QWithTransactions Figure3")  
   
  排队通信，其中分别显示了捕获和传送事务  
   
@@ -76,11 +76,11 @@ ms.locfileid: "79184604"
   
 ## <a name="see-also"></a>另请参阅
 
-- [在 WCF 中排队](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
-- [会话和队列](../../../../docs/framework/wcf/samples/sessions-and-queues.md)
-- [死信队列](../../../../docs/framework/wcf/samples/dead-letter-queues.md)
-- [可变排队通信](../../../../docs/framework/wcf/samples/volatile-queued-communication.md)
-- [Windows Communication Foundation 到消息队列](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
-- [安装“消息队列 (MSMQ)”](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)
-- [到 Windows Communication Foundation 的消息队列](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
-- [基于消息队列的消息安全性](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
+- [在 WCF 中排队](queuing-in-wcf.md)
+- [会话和队列](../samples/sessions-and-queues.md)
+- [死信队列](../samples/dead-letter-queues.md)
+- [可变排队通信](../samples/volatile-queued-communication.md)
+- [Windows Communication Foundation 到消息队列](../samples/wcf-to-message-queuing.md)
+- [安装“消息队列 (MSMQ)”](../samples/installing-message-queuing-msmq.md)
+- [到 Windows Communication Foundation 的消息队列](../samples/message-queuing-to-wcf.md)
+- [基于消息队列的消息安全性](../samples/message-security-over-message-queuing.md)

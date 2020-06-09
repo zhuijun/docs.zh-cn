@@ -2,12 +2,12 @@
 title: WCF 中使用的安全概念
 ms.date: 03/30/2017
 ms.assetid: 3b9dfcf5-4bf1-4f35-9070-723171c823a1
-ms.openlocfilehash: faf7b44c0ff1b207a7b017163ad2b032f26199b8
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: f852ba4e1100103289bc5fd879b19ebd40443b8d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743879"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595175"
 ---
 # <a name="security-concepts-used-in-wcf"></a>WCF 中使用的安全概念
 Windows Communication Foundation （WCF）安全基于已在使用并部署在各种安全基础结构中的概念而构建。  
@@ -31,7 +31,7 @@ Microsoft 模式和实践组编写了一篇称为[WCF 安全指南](https://arch
  X.509 证书是安全应用程序中使用的主要凭据形式。 有关 x.509 证书的详细信息，请参阅[X.509 公钥证书](/windows/win32/seccertenroll/about-x-509-public-key-certificates)。 X.509 证书存储在证书存储区中。 运行 Windows 的计算机有多种证书存储区，每一种都针对不同的用途。 有关不同存储的详细信息，请参阅[证书存储](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10))。  
   
 ## <a name="web-services-security-specifications"></a>Web 服务安全规范  
- 系统定义的绑定支持许多常用 Web 服务安全规范。 有关系统提供的绑定和它们支持的 web 服务规范的完整列表，请参阅：[系统提供的互操作性绑定支持的 Web 服务协议](../../../../docs/framework/wcf/feature-details/web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
+ 系统定义的绑定支持许多常用 Web 服务安全规范。 有关系统提供的绑定和它们支持的 web 服务规范的完整列表，请参阅：[系统提供的互操作性绑定支持的 Web 服务协议](web-services-protocols-supported-by-system-provided-interoperability-bindings.md)  
   
 ## <a name="access-control-mechanisms"></a>访问控制机制  
  WCF 提供了多种服务或操作的访问控制方式。 其中包括：  
@@ -46,9 +46,9 @@ Microsoft 模式和实践组编写了一篇称为[WCF 安全指南](https://arch
   
 5. 标识模型  
   
- 有关这些主题的详细信息，请参阅[访问控制机制](../../../../docs/framework/wcf/feature-details/access-control-mechanisms.md)  
+ 有关这些主题的详细信息，请参阅[访问控制机制](access-control-mechanisms.md)  
   
 ## <a name="see-also"></a>另请参阅
 
-- [安全概述](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [安全性概述](security-overview.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
