@@ -5,24 +5,24 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f450f5d4-3547-47ec-9320-2809e6a12634
-ms.openlocfilehash: 2fa13a12a377cc16a95318367605d8b5d92769a7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 591f7db0f6b4e928a991961d3bc7c404f41028bf
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184689"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579275"
 ---
 # <a name="intranet-unsecured-client-and-service"></a>不安全的 Intranet 客户端和服务
-下图描述了为向 WCF 应用程序提供有关安全专用网络的信息而开发的简单 Windows 通信基础 （WCF） 服务。 不需要安全性，因为数据的重要性较低，网络预期具有固有的安全性，或者安全性由 WCF 基础结构下面的层提供。  
+下图描绘了一个简单的 Windows Communication Foundation （WCF）服务，该服务是为在 WCF 应用程序中提供有关安全专用网络的信息而开发的。 安全不是必需的，因为数据重要性较低，网络本来就是安全的，或者是由 WCF 基础结构下面的层提供的。  
   
- ![内联网不安全的客户端和服务方案。](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
+ ![Intranet 不安全的客户端和服务方案。](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
   
-|特征|说明|  
+|特征|描述|  
 |--------------------|-----------------|  
 |安全模式|无|  
-|传输|TCP|  
+|Transport|TCP|  
 |绑定|<xref:System.ServiceModel.NetTcpBinding>|  
-|互操作性|仅限 WCF|  
+|互操作性|仅 WCF|  
 |身份验证|无|  
 |完整性|无|  
 |机密性|无|  
@@ -40,7 +40,7 @@ ms.locfileid: "79184689"
  [!code-csharp[C_UnsecuredService#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredservice/cs/source.cs#2)]
  [!code-vb[C_UnsecuredService#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredservice/vb/source.vb#2)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  下面的代码使用配置设置相同的终结点：  
   
 ```xml  
@@ -70,7 +70,7 @@ ms.locfileid: "79184689"
 </configuration>  
 ```  
   
-## <a name="client"></a>Client  
+## <a name="client"></a>客户端  
  下面的代码和配置应独立运行。 执行下列操作之一：  
   
 - 使用代码（和客户端代码）创建独立客户端。  
@@ -81,12 +81,12 @@ ms.locfileid: "79184689"
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>代码  
- 以下代码显示使用 TCP 协议访问不安全终结点的基本 WCF 客户端。  
+ 下面的代码演示一个基本 WCF 客户端，它使用 TCP 协议访问不安全的终结点。  
   
  [!code-csharp[C_UnsecuredClient#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#2)]
  [!code-vb[C_UnsecuredClient#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#2)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  下面的配置代码应用于客户端：  
   
 ```xml  
@@ -115,5 +115,5 @@ ms.locfileid: "79184689"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.NetTcpBinding>
-- [安全概述](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [安全性概述](security-overview.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

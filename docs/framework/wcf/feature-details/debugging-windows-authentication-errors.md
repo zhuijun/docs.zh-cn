@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: 4a5e56f6b7f33a4c6f29aa384635737eeee37ddd
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: eb3274b98234324bd47aa456feb4845da5a7f3a9
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77095029"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599277"
 ---
 # <a name="debug-windows-authentication-errors"></a>调试 Windows 身份验证错误
 
@@ -63,7 +63,7 @@ ms.locfileid: "77095029"
 ### <a name="kerberos-protocol"></a>Kerberos 协议  
   
 #### <a name="spnupn-problems-with-the-kerberos-protocol"></a>Kerberos 协议的 SPN/UPN 问题  
- 在使用 Windows 身份验证并且 SSPI 使用或协商 Kerberos 协议时，客户端终结点使用的 URL 必须包括服务主机在服务 URL 中的完全限定域名。 这假定运行服务的帐户有权访问计算机（默认）服务主体名称（SPN）密钥，该密钥是在将计算机添加到 Active Directory 域时创建的，最常见的做法是在Network Service 帐户。 如果服务不能访问计算机 SPN 密钥，则必须在客户端的终结点标识中提供在其下运行该服务的帐户的正确 SPN 或用户主体名称 (UPN)。 有关 WCF 如何与 SPN 和 UPN 一起使用的详细信息，请参阅[服务标识和身份验证](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)。  
+ 在使用 Windows 身份验证并且 SSPI 使用或协商 Kerberos 协议时，客户端终结点使用的 URL 必须包括服务主机在服务 URL 中的完全限定域名。 此处假定在其下运行服务的帐户可以访问将该计算机添加到 Active Directory 域中时所创建的计算机（默认）服务主体名称 (SPN) 密钥，这通常可以通过在“网络服务”帐户下运行该服务来实现。 如果服务不能访问计算机 SPN 密钥，则必须在客户端的终结点标识中提供在其下运行该服务的帐户的正确 SPN 或用户主体名称 (UPN)。 有关 WCF 如何与 SPN 和 UPN 一起使用的详细信息，请参阅[服务标识和身份验证](service-identity-and-authentication.md)。  
   
  在负载平衡方案（如网络场或网络园）中，常见的做法是为每个应用程序定义唯一帐户，为该帐户分配 SPN，并确保应用程序的所有服务都使用该帐户来运行。  
   
@@ -94,12 +94,12 @@ ms.locfileid: "77095029"
   
     1. 为此，可在代码中使用下面的语句：`ChannelFactory.Credentials.Windows.AllowNtlm = false`  
   
-    2. 或者在配置文件中将 `allowNtlm` 属性设置为 `false`。 此属性包含在[\<windows >](../../../../docs/framework/configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md)中。  
+    2. 或者在配置文件中将 `allowNtlm` 属性设置为 `false`。 此属性包含在中 [\<windows>](../../configure-apps/file-schema/wcf/windows-of-clientcredentials-element.md) 。  
   
 ### <a name="ntlm-protocol"></a>NTLM 协议  
   
 #### <a name="negotiate-ssp-falls-back-to-ntlm-but-ntlm-is-disabled"></a>协商 SSP 回退到 NTLM，但 NTLM 已被禁用  
- <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> 属性设置为 `false`，这会使 Windows Communication Foundation （WCF）在使用 NTLM 时尽力引发异常。 将此属性设置为 `false` 可能不会阻止通过网络发送 NTLM 凭据。  
+ <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A>属性设置为 `false` ，这将导致 WINDOWS COMMUNICATION FOUNDATION （WCF）在使用 NTLM 时尽力引发异常。 将此属性设置为 `false` 可能不会阻止通过网络发送 NTLM 凭据。  
   
  下面演示了如何禁用回退到 NTLM。  
   
@@ -122,7 +122,7 @@ ms.locfileid: "77095029"
  [!code-csharp[C_DebuggingWindowsAuth#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_debuggingwindowsauth/cs/source.cs#6)]
  [!code-vb[C_DebuggingWindowsAuth#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_debuggingwindowsauth/vb/source.vb#6)]  
   
- 有关模拟的详细信息，请参阅[委派和模拟](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)。  
+ 有关模拟的详细信息，请参阅[委派和模拟](delegation-and-impersonation-with-wcf.md)。  
   
  或者，客户端正在使用内置帐户 SYSTEM 作为 Windows 服务运行。  
   
@@ -151,5 +151,5 @@ ms.locfileid: "77095029"
 - <xref:System.ServiceModel.Security.WindowsServiceCredential>
 - <xref:System.ServiceModel.Security.WindowsClientCredential>
 - <xref:System.ServiceModel.ClientBase%601>
-- [委托和模拟](../../../../docs/framework/wcf/feature-details/delegation-and-impersonation-with-wcf.md)
-- [不支持的方案](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
+- [委托和模拟](delegation-and-impersonation-with-wcf.md)
+- [不受支持的方案](unsupported-scenarios.md)

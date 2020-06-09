@@ -2,12 +2,12 @@
 title: 单并发模式中的有序消息处理
 ms.date: 03/30/2017
 ms.assetid: a90f5662-a796-46cd-ae33-30a4072838af
-ms.openlocfilehash: ecabb9a6e838b0137c538d76c554646356ea87f5
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: baba75fe398d974f989acfda7ef7366986f6813b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991506"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598731"
 ---
 # <a name="ordered-processing-of-messages-in-single-concurrency-mode"></a>单并发模式中的有序消息处理
 WCF 不会保证消息的处理顺序，除非基础通道是会话的。  例如，使用 MsmqInputChannel 的 WCF 服务（不是会话通道）将无法按顺序处理消息。 在某些情况下，开发人员可能希望按顺序处理行为，但不希望使用会话。 本主题介绍在单一并发模式中运行服务时，如何配置这种行为。  
@@ -25,7 +25,7 @@ WCF 不会保证消息的处理顺序，除非基础通道是会话的。  例�
   
  如果 <xref:System.ServiceModel.ServiceBehaviorAttribute.ConcurrencyMode%2A> 设置为任何其他值，则引发 <xref:System.InvalidOperationException>。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [会话、实例化和并发](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)
-- [并发](../../../../docs/framework/wcf/samples/concurrency.md)
+- [会话、实例化和并发](sessions-instancing-and-concurrency.md)
+- [并发](../samples/concurrency.md)

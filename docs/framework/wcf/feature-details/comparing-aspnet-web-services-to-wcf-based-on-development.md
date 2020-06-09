@@ -2,12 +2,12 @@
 title: 从开发的角度比较 ASP.NET Web 服务与 WCF
 ms.date: 03/30/2017
 ms.assetid: f362d00e-ce82-484f-9d4f-27e579d5c320
-ms.openlocfilehash: c5a2145a6d7b631a666df94eb0c1fc53cbc3c55f
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: c6e83bb234751dc477776f0fa540ffa8688dc667
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202267"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597587"
 ---
 # <a name="comparing-aspnet-web-services-to-wcf-based-on-development"></a>从开发的角度比较 ASP.NET Web 服务与 WCF
 
@@ -201,7 +201,7 @@ public class LineItem
 }
 ```
 
-Windows 软件开发工具包（SDK）包含一个名为 "Svcutil.exe" 的[元数据实用工具（）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)的命令行工具。 与用于 ASP.NET Web 服务的 xsd.exe 工具一样，Svcutil.exe 可以从 XML 架构生成 .NET 数据类型的定义。 如果 <xref:System.Runtime.Serialization.DataContractSerializer> 可发出由 XML 架构定义的格式的 XML，类型将为数据协定；否则，它们专用于通过 <xref:System.Xml.Serialization.XmlSerializer> 进行序列化。 Svcutil.exe 还可以通过使用数据协定的开关从数据协定生成 XML 架构 `dataContractOnly` 。
+Windows 软件开发工具包（SDK）包含一个名为 "Svcutil.exe" 的[元数据实用工具（）](../servicemodel-metadata-utility-tool-svcutil-exe.md)的命令行工具。 与用于 ASP.NET Web 服务的 xsd.exe 工具一样，Svcutil.exe 可以从 XML 架构生成 .NET 数据类型的定义。 如果 <xref:System.Runtime.Serialization.DataContractSerializer> 可发出由 XML 架构定义的格式的 XML，类型将为数据协定；否则，它们专用于通过 <xref:System.Xml.Serialization.XmlSerializer> 进行序列化。 Svcutil.exe 还可以通过使用数据协定的开关从数据协定生成 XML 架构 `dataContractOnly` 。
 
 > [!NOTE]
 > 尽管 ASP.NET Web 服务使用 <xref:System.Xml.Serialization.XmlSerializer> ，并且 wcf ASP.NET 兼容模式使 wcf 服务能够模仿 ASP.NET Web 服务的行为，但 ASP.NET 兼容性选项不会限制一个使用 <xref:System.Xml.Serialization.XmlSerializer> 。 用户仍然可以将 <xref:System.Runtime.Serialization.DataContractSerializer> 用于以 ASP.NET 兼容模式运行的服务。
@@ -418,9 +418,9 @@ typeof(Service), //"Service" is the name of the service type baseAddresses))
 
 ## <a name="client-development"></a>客户端开发
 
-ASP.NET Web 服务的客户端通过使用命令行工具 WSDL.exe 生成，该工具可将 .asmx 文件的 URL 作为输入提供。 WCF 提供的相应工具为 " [Svcutil.exe 元数据实用工具（）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)"。 它使用服务协定的定义和 WCF 客户端类的定义生成代码模块。 它还使用服务的地址和绑定生成一个配置文件。
+ASP.NET Web 服务的客户端通过使用命令行工具 WSDL.exe 生成，该工具可将 .asmx 文件的 URL 作为输入提供。 WCF 提供的相应工具为 " [Svcutil.exe 元数据实用工具（）](../servicemodel-metadata-utility-tool-svcutil-exe.md)"。 它使用服务协定的定义和 WCF 客户端类的定义生成代码模块。 它还使用服务的地址和绑定生成一个配置文件。
 
-通常，建议您基于异步模式对远程服务的客户端进行编程。 默认情况下，不论是同步模式还是异步模式，始终都会提供由 WSDL.exe 工具生成的代码。 可为任一模式提供 " [svcutil.exe" 元数据实用工具（）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)生成的代码。 默认为对同步模式提供。 如果执行该工具时使用 `/async` 开关，则将为异步模式提供生成的代码。
+通常，建议您基于异步模式对远程服务的客户端进行编程。 默认情况下，不论是同步模式还是异步模式，始终都会提供由 WSDL.exe 工具生成的代码。 可为任一模式提供 " [svcutil.exe" 元数据实用工具（）](../servicemodel-metadata-utility-tool-svcutil-exe.md)生成的代码。 默认为对同步模式提供。 如果执行该工具时使用 `/async` 开关，则将为异步模式提供生成的代码。
 
 不保证 ASP.NET 生成的 WCF 客户端类中的名称。默认情况下，NET 的 WSDL.EXE 工具与 Svcutil.exe 工具生成的 WCF 客户端类中的名称相匹配。 尤其是，在默认情况下，必须使用 <xref:System.Xml.Serialization.XmlSerializer> 序列化的类的属性名将在 Svcutil.exe 工具生成的代码中获得后缀 Property，这与 WSDL.exe 工具的情况并不一样。
 
@@ -763,6 +763,6 @@ WCF 自动将来自任何类型的安全令牌的声明组合在一起，这是�
 
 通过 ASP.NET 配置语言，您可以为这些服务单独指定区域性。 WCF 不支持 ASP.NET 兼容模式下的该配置设置。 若要本地化不使用 ASP.NET 兼容模式的 WCF 服务，请将服务类型编译为区域性特定的程序集，并为每个区域性特定的程序集提供单独的区域性特定的终结点。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [基于目标和使用的标准比较 ASP.NET Web 服务与 WCF](../../../../docs/framework/wcf/feature-details/comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)
+- [基于目标和使用的标准比较 ASP.NET Web 服务与 WCF](comparing-aspnet-web-services-to-wcf-based-on-purpose-and-standards-used.md)

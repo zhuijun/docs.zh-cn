@@ -2,15 +2,15 @@
 title: UDP 激活
 ms.date: 03/30/2017
 ms.assetid: 4b0ccd10-0dfb-4603-93f9-f0857c581cb7
-ms.openlocfilehash: c0b351adb0b45f42404e94c74bdcff7785c2d0ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 13d20524693b234a14b2b31061c6259f75b1c0b8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143715"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84591097"
 ---
 # <a name="udp-activation"></a>UDP 激活
-此示例基于[传输：UDP](../../../../docs/framework/wcf/samples/transport-udp.md)示例。 它扩展[了传输：UDP](../../../../docs/framework/wcf/samples/transport-udp.md)示例，以支持使用 Windows 进程激活服务 （WAS） 进行进程激活。  
+此示例基于[Transport： UDP](transport-udp.md)示例。 它扩展了[传输： UDP](transport-udp.md)示例，以支持使用 Windows 进程激活服务（WAS）的进程激活。  
   
  该示例主要由三个部分组成：  
   
@@ -46,7 +46,7 @@ ms.locfileid: "79143715"
   
  当首次传入针对某个应用程序的新请求时，侦听器适配器会将 `WebhostOpenListenerChannelInstance` 调入 WAS，从而启动工作进程（如果尚未启动）。 然后加载协议处理程序，并可以启动侦听器适配器与虚拟应用程序之间的通信。  
   
- 侦听器适配器在 <>`listenerAdapters`部分的 %SystemRoot%_System32_inetsrv_应用Host.config 中注册如下：  
+ 侦听器适配器在 < > 部分的%SystemRoot%\System32\inetsrv\ApplicationHost.config 中注册，如下所示 `listenerAdapters` ：  
   
 ```xml  
 <add name="net.udp" identity="S-1-5-21-2127521184-1604012920-1887927527-387045" />  
@@ -59,7 +59,7 @@ ms.locfileid: "79143715"
  在此示例中，我们使用 WCF 在激活器和 WAS 工作进程之间进行通信。 驻留在激活器中的服务称为“控制服务”。  
   
 ## <a name="protocol-handlers"></a>协议处理程序  
- 侦听器适配器调用 `WebhostOpenListenerChannelInstance` 之后，WAS 进程管理器将启动工作进程（如果尚未启动）。 工作进程内部的应用程序管理器随后使用该 `ListenerChannelId` 的请求加载 UDP 进程协议处理程序 (PPH)。 PPH 依次调用`IAdphManager`。`StartAppDomainProtocolListenerChannel` 启动 UDP AppDomain 协议处理程序 （ADPH）。  
+ 侦听器适配器调用 `WebhostOpenListenerChannelInstance` 之后，WAS 进程管理器将启动工作进程（如果尚未启动）。 工作进程内部的应用程序管理器随后使用该 `ListenerChannelId` 的请求加载 UDP 进程协议处理程序 (PPH)。 中的 PPH 将调用 `IAdphManager` 。`StartAppDomainProtocolListenerChannel` 启动 UDP AppDomain 协议处理程序（ADPH）。  
   
 ## <a name="hostedudptransportconfiguration"></a>HostedUDPTransportConfiguration  
  该信息按如下方式在 Web.config 中注册：  
@@ -75,7 +75,7 @@ ms.locfileid: "79143715"
   
 #### <a name="to-set-up-this-sample"></a>设置此示例  
   
-1. 使用以下命令安装ASP.NET 4.0。  
+1. 使用以下命令安装 ASP.NET 4.0。  
   
     ```console  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
@@ -89,13 +89,13 @@ ms.locfileid: "79143715"
   
     - 这还为该虚拟应用程序启用“net.udp”协议。  
   
-3. 启动用户接口应用程序“WasNetActivator.exe”。 单击 **"设置"** 选项卡，选中以下复选框，然后单击"**安装**"以安装它们：  
+3. 启动用户接口应用程序“WasNetActivator.exe”。 单击 "**设置**" 选项卡，选中以下复选框，然后单击 "**安装**" 以安装它们：  
   
     - UDP 侦听器适配器  
   
     - UDP 协议处理程序  
   
-4. 单击用户界面应用程序的**激活**选项卡"WasNetActivator.exe"。 单击"**开始"** 按钮可启动侦听器适配器。 现在即可运行程序。  
+4. 单击用户界面应用程序 "Wasnetactivator.exe" 的 "**激活**" 选项卡。 单击 "**启动**" 按钮以启动侦听器适配器。 现在即可运行程序。  
   
     > [!NOTE]
     > 完成此示例后，必须运行 Cleanup.bat，从“默认网站”中移除 net.udp 绑定。  
@@ -107,7 +107,7 @@ ms.locfileid: "79143715"
   
 - UDPActivation.dll：包含所有主要 UDP 实现的库。  
   
-- Service.dll：服务代码。 此代码被复制到虚拟应用程序 ServiceModelSamples 的 \bin 目录。 服务文件为 Service.svc，配置文件为 Web.config。编译后，它们将复制到以下位置：%系统驱动器%\Inetpub_wwwroot_服务模型示例。  
+- Service.dll：服务代码。 此代码被复制到虚拟应用程序 ServiceModelSamples 的 \bin 目录。 服务文件为 node.js，配置文件为 web.config。编译完成后，会将其复制到以下位置：%Systemdrive%\inetpub\wwwroot\servicemodelsamples。  
   
 - WasNetActivator：UDP 激活器程序。  
   
@@ -119,7 +119,7 @@ ms.locfileid: "79143715"
   
     - Internet Information Services (IIS)：W3SVC。  
   
-2. 然后启动激活器 WasNetActivator.exe。 在 **"激活"** 选项卡下，唯一的协议**UDP**在下拉列表中被选中。 单击"**开始"** 按钮启动激活器。  
+2. 然后启动激活器 WasNetActivator.exe。 在 "**激活**" 选项卡下，在下拉列表中选择唯一的协议 " **UDP**"。 单击 "**启动**" 按钮以启动激活器。  
   
 3. 启动激活器后，可以通过在命令窗口中运行 Client.exe 来运行客户端代码。 下面是示例输出：  
   
@@ -158,6 +158,6 @@ ms.locfileid: "79143715"
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Transport\UdpActivation`  

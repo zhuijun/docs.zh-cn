@@ -2,15 +2,15 @@
 title: 可重入的 ConcurrencyMode
 ms.date: 03/30/2017
 ms.assetid: b2046c38-53d8-4a6c-a084-d6c7091d92b1
-ms.openlocfilehash: 613a1ed827173b3915892dda54dd20ebabdf6dcf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 67e719afd40b52f37c777cf9791291a16878592f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183891"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600083"
 ---
 # <a name="concurrencymode-reentrant"></a>可重入的 ConcurrencyMode
-本示例演示对服务实现使用 ConcurrencyMode.Reentrant 的必要性和含义。 ConcurrencyMode.Reentrant 暗示服务（或回调）只在给定时间处理一个消息（类似于 `ConcurencyMode.Single`）。 为了确保线程安全，Windows 通信基础 （WCF）`InstanceContext`锁定处理消息，以便无法处理其他消息。 在处于可重入模式的情况下，`InstanceContext` 将仅在服务进行传出调用之前解除锁定，从而允许后续调用（可按示例中的演示重入），并在下次进入服务时被锁定。 为了演示此行为，示例演示了客户端和服务如何使用双工协定相互发送消息。  
+本示例演示对服务实现使用 ConcurrencyMode.Reentrant 的必要性和含义。 ConcurrencyMode.Reentrant 暗示服务（或回调）只在给定时间处理一个消息（类似于 `ConcurencyMode.Single`）。 为了确保线程安全，Windows Communication Foundation （WCF）会锁定 `InstanceContext` 处理消息，以便不能处理其他消息。 在处于可重入模式的情况下，`InstanceContext` 将仅在服务进行传出调用之前解除锁定，从而允许后续调用（可按示例中的演示重入），并在下次进入服务时被锁定。 为了演示此行为，示例演示了客户端和服务如何使用双工协定相互发送消息。  
   
  定义的协定是双工协定，其 `Ping` 方法由服务实现，其回调方法 `Pong` 由客户端实现。 客户端用滴答计数调用服务的 `Ping` 方法，从而启动调用。 服务检查滴答计数是否等于 0，然后调用回调 `Pong` 方法，同时递减滴答计数。 以上过程通过示例中的以下代码完成。  
   
@@ -46,14 +46,14 @@ public void Pong(int ticks)
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 确保已为 Windows[通信基础示例执行一次性设置过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
-2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。  
+2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。  
   
-3. 要在单机或跨计算机配置中运行示例，请按照[运行 Windows 通信基础示例中的](../../../../docs/framework/wcf/samples/running-the-samples.md)说明操作。  
+3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
   
 ## <a name="demonstrates"></a>演示  
- 若要运行示例，请生成客户端和服务器项目。 然后打开两个命令窗口，并将目录更改为\<示例>_CS_Service_bin_调试和\<示例>_CS_Client_bin_调试目录。 然后，通过键入`service.exe`来启动服务，然后调用 Client.exe，初始值的刻度作为输入参数传递。 显示了 10 次滴答的示例输出。  
+ 若要运行示例，请生成客户端和服务器项目。 然后打开两个命令窗口，并将目录更改为 \<sample> \CS\Service\bin\debug 和 \<sample> \CS\Client\bin\debug 目录。 然后，键入 `service.exe` ，然后调用该客户端，并将其初始值作为输入参数传递。 显示了 10 次滴答的示例输出。  
   
 ```console  
 Prompt>Service.exe  
@@ -78,6 +78,6 @@ Pong: Ticks = 1
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Reentrant`  

@@ -2,12 +2,12 @@
 title: 按正文元素调度
 ms.date: 03/30/2017
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
-ms.openlocfilehash: 754151f856dfe09b8fd12912ab06d1d8720be016
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 19913cdaa47d766f62a313e216a653ac69633a99
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183710"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594694"
 ---
 # <a name="dispatch-by-body-element"></a>按正文元素调度
 本示例演示如何实现用于将传入消息分配到操作的可选算法。  
@@ -70,9 +70,9 @@ private Message CreateMessageCopy(Message message,
 ```  
   
 ## <a name="adding-an-operation-selector-to-a-service"></a>向服务添加操作选择器  
- 服务调度操作选择器是 Windows 通信基础 （WCF） 调度程序的扩展。 在双工协定回调通道上选择方法时，还可以使用客户端操作选择器，其工作方式类似于本文说明的调度操作选择器，但未显式包括在此示例中。  
+ 服务调度操作选择器是对 Windows Communication Foundation （WCF）调度程序的扩展。 在双工协定回调通道上选择方法时，还可以使用客户端操作选择器，其工作方式类似于本文说明的调度操作选择器，但未显式包括在此示例中。  
   
- 和多数服务模型扩展一样，调度操作选择器通过使用行为来添加到调度程序。 *行为*是配置对象，它向调度运行时（或客户端运行时）添加一个或多个扩展，或者更改其设置。  
+ 和多数服务模型扩展一样，调度操作选择器通过使用行为来添加到调度程序。 *行为*是配置对象，它将一个或多个扩展添加到调度运行时（或客户端运行时），或者更改其设置。  
   
  由于操作选择器具有协定范围，因此本示例要实现的适当行为是 <xref:System.ServiceModel.Description.IContractBehavior>。 由于接口是在 <xref:System.Attribute> 派生类上实现的（如下面的代码所示），因此可以以声明方式将行为添加到任何服务协定。 每当打开 <xref:System.ServiceModel.ServiceHost> 并生成调度运行时时，都会自动添加作为协定、操作和服务实现上的属性的所有行为或作为服务配置中的元素的所有行为，随后要求这些行为提供扩展或修改默认设置。  
   
@@ -120,9 +120,9 @@ public void ApplyDispatchBehavior(ContractDescription contractDescription, Servi
 ## <a name="implementing-the-service"></a>实现服务  
  本示例中实现的行为直接影响如何解释和调度来自网络的消息，这是服务协定的功能。 因此，在选择使用该行为的任何服务实现中，均应在服务协定级别声明该行为。  
   
- 示例项目`DispatchByBodyElementBehaviorAttribute`服务将协定行为应用于`IDispatchedByBody`服务协定，并标记两个操作`OperationForBodyA()`中的每一个`OperationForBodyB()``DispatchBodyElementAttribute`操作以及操作行为。 如前面所述，在打开实现此协定的服务的服务主机时，调度程序生成器将选取此元数据。  
+ 示例项目服务将 `DispatchByBodyElementBehaviorAttribute` 协定行为应用于 `IDispatchedByBody` 服务协定，并标记两个操作 `OperationForBodyA()` 和 `OperationForBodyB()` 一个 `DispatchBodyElementAttribute` 操作行为。 如前面所述，在打开实现此协定的服务的服务主机时，调度程序生成器将选取此元数据。  
   
- 由于操作选择器只根据消息正文元素进行调度并忽略“Action”，因此需要通过将通配符“*”分配给 `ReplyAction` 的 <xref:System.ServiceModel.OperationContractAttribute> 属性来告诉运行时不要对返回的答复检查“Action”标头。 此外，需要具有默认操作，该操作将"操作"属性设置为通配符""。\* 此默认操作接收所有无法调度的消息并且没有 `DispatchBodyElementAttribute`：  
+ 由于操作选择器只根据消息正文元素进行调度并忽略“Action”，因此需要通过将通配符“*”分配给 `ReplyAction` 的 <xref:System.ServiceModel.OperationContractAttribute> 属性来告诉运行时不要对返回的答复检查“Action”标头。 此外，需要将 "Action" 属性的默认操作设置为通配符 " \* "。 此默认操作接收所有无法调度的消息并且没有 `DispatchBodyElementAttribute`：  
   
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"),  
@@ -164,17 +164,17 @@ public interface IDispatchedByBody
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 确保已为 Windows[通信基础示例执行一次性设置过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
-2. 要生成解决方案，请按照生成 Windows[通信基础示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。  
+2. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。  
   
-3. 要在单机或跨计算机配置中运行示例，请按照[运行 Windows 通信基础示例中的](../../../../docs/framework/wcf/samples/running-the-samples.md)说明操作。  
+3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
   
 > [!IMPORTANT]
 > 您的计算机上可能已安装这些示例。 在继续操作之前，请先检查以下（默认）目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\AdvancedDispatchByBody`  
