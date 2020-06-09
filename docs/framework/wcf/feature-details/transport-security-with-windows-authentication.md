@@ -5,28 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 96dd26e2-46e7-4de0-9a29-4fcb05bf187b
-ms.openlocfilehash: d335cd47de68dccdbb6af7f402d1182fcd811a7d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6703da4f97cba38ee0dc334d3010ca509d1fb3ef
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184317"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598692"
 ---
 # <a name="transport-security-with-windows-authentication"></a>通过 Windows 身份验证确保的传输安全
-以下方案显示了由 Windows 安全保护的 Windows 通信基础 （WCF） 客户端和服务。 有关编程的详细信息，请参阅[：使用 Windows 凭据保护服务](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)。  
+下面的方案演示了 Windows 安全性所保护的 Windows Communication Foundation （WCF）客户端和服务。 有关编程的详细信息，请参阅[如何：使用 Windows 凭据保护服务](../how-to-secure-a-service-with-windows-credentials.md)。  
   
  Intranet Web 服务显示了人力资源信息。 客户端是 Windows 窗体应用程序。 该应用程序部署在具有 Kerberos 控制器保护的域中。  
   
  ![使用 Windows 身份验证的传输安全性](./media/transport-security-with-windows-authentication/secured-windows-authentication.gif)  
   
-|特征|说明|  
+|特征|描述|  
 |--------------------|-----------------|  
-|安全模式|传输|  
-|互操作性|仅限 WCF|  
+|安全模式|Transport|  
+|互操作性|仅 WCF|  
 |身份验证（服务器）<br /><br /> 身份验证（客户端）|是（使用 Windows 集成身份验证）<br /><br /> 是（使用 Windows 集成身份验证）|  
 |完整性|是|  
 |机密性|是|  
-|传输|NET.TCP|  
+|Transport|NET.TCP|  
 |绑定|<xref:System.ServiceModel.NetTcpBinding>|  
   
 ## <a name="service"></a>服务  
@@ -42,7 +42,7 @@ ms.locfileid: "79184317"
  [!code-csharp[C_SecurityScenarios#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#3)]
  [!code-vb[C_SecurityScenarios#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#3)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  可以使用下面的配置代替代码来设置服务终结点：  
   
 ```xml  
@@ -73,7 +73,7 @@ ms.locfileid: "79184317"
 </configuration>  
 ```  
   
-## <a name="client"></a>Client  
+## <a name="client"></a>客户端  
  下面的代码和配置应独立运行。 执行下列操作之一：  
   
 - 使用代码（和客户端代码）创建独立客户端。  
@@ -89,7 +89,7 @@ ms.locfileid: "79184317"
  [!code-csharp[C_SecurityScenarios#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#4)]
  [!code-vb[C_SecurityScenarios#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#4)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  可以使用下面的配置代替代码来创建客户端。  
   
 ```xml  
@@ -119,6 +119,6 @@ ms.locfileid: "79184317"
   
 ## <a name="see-also"></a>另请参阅
 
-- [安全概述](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [如何：使用 Windows 凭据保护服务的安全](../../../../docs/framework/wcf/how-to-secure-a-service-with-windows-credentials.md)
+- [安全性概述](security-overview.md)
+- [如何：使用 Windows 凭据保护服务的安全](../how-to-secure-a-service-with-windows-credentials.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

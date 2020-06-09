@@ -2,18 +2,18 @@
 title: 对 WCF 使用多个身份验证方案
 ms.date: 03/30/2017
 ms.assetid: f32a56a0-e2b2-46bf-a302-29e1275917f9
-ms.openlocfilehash: b0f5da9a4c6fdfede9a86434f49f9e9821778176
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1874963573a6ec12939bd12b79574f1e2c889bfd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61932674"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600213"
 ---
 # <a name="using-multiple-authentication-schemes-with-wcf"></a>对 WCF 使用多个身份验证方案
-WCF 现在允许您对单个终结点上指定多个身份验证方案。 此外，Web 承载的服务可以直接从 IIS 继承其身份验证设置。 自承载服务可以指定可使用的身份验证方案。 有关在 IIS 中设置身份验证设置的详细信息，请参阅[IIS 身份验证](https://go.microsoft.com/fwlink/?LinkId=232458)  
+WCF 现在允许您对单个终结点上指定多个身份验证方案。 此外，Web 承载的服务可以直接从 IIS 继承其身份验证设置。 自承载服务可以指定可使用的身份验证方案。 有关在 IIS 中设置身份验证设置的详细信息，请参阅[Iis 身份验证](https://go.microsoft.com/fwlink/?LinkId=232458)  
   
 ## <a name="iis-hosted-services"></a>承载于 IIS 中的服务  
- 对于承载于 IIS 中的服务，设置您希望在 IIS 中使用的身份验证方案。 然后在你的服务的 web.config 文件中，在绑定配置客户端凭据类型指定为"InheritedFromHost"以下 XML 代码段中所示：  
+ 对于承载于 IIS 中的服务，设置您希望在 IIS 中使用的身份验证方案。 然后，在你的服务的 web.config 文件中，在绑定配置中将 clientCredential 类型指定为 "InheritedFromHost"，如下面的 XML 代码段中所示：  
   
 ```xml  
 <bindings>  
@@ -27,7 +27,7 @@ WCF 现在允许您对单个终结点上指定多个身份验证方案。 此外
     </bindings>  
 ```  
   
- 您可以指定仅希望将一部分的身份验证方案，可与你的服务使用 ServiceAuthenticationBehavior 或\<serviceAuthenticationManager > 元素。 在代码中对此进行配置时，使用 ServiceAuthenticationBehavior，如下面的 XML 代码段中所示。  
+ 你可以使用 ServiceAuthenticationBehavior 或元素指定你只希望将身份验证方案的一个子集用于服务 \<serviceAuthenticationManager> 。 在代码中对此进行配置时，使用 ServiceAuthenticationBehavior，如下面的 XML 代码段中所示。  
   
 ```csharp  
 // ...  
@@ -47,7 +47,7 @@ else
 // ...  
 ```  
   
- 在配置此配置文件中时，使用\<serviceAuthenticationManager > 元素，如以下 XML 代码段中所示。  
+ 在配置文件中配置此配置时，请使用 \<serviceAuthenticationManager> 元素，如下面的 XML 代码段中所示。  
   
 ```xml  
 <behaviors>  
@@ -63,7 +63,7 @@ else
  这将确保只有一部分此处列出的身份验证方案将被考虑应用于服务终结点，具体是哪些身份验证方案取决于 IIS 中所选的内容。 这意味着，开发人员可以通过从 serviceAuthenticationManager 列表中省略基本身份验证而从列表中排除它，甚至即使在 IIS 中启用基本身份验证，它也将不会在服务终结点上应用  
   
 ## <a name="self-hosted-services"></a>自承载服务  
- 自承载服务在配置上稍有不同，因为没有要从其继承设置的 IIS。 在本例中使用\<serviceAuthenticationManager > 元素或 ServiceAuthenticationBehavior 指定将继承的身份验证设置。 在代码中如下所示：  
+ 自承载服务在配置上稍有不同，因为没有要从其继承设置的 IIS。 在这里，你将使用 \<serviceAuthenticationManager> 元素或 ServiceAuthenticationBehavior 指定将继承的身份验证设置。 在代码中如下所示：  
   
 ```csharp  
 // ...  
@@ -119,11 +119,11 @@ else
     </binding>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [绑定与安全](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)
-- [终结点：地址、 绑定和协定](../../../../docs/framework/wcf/feature-details/endpoints-addresses-bindings-and-contracts.md)
-- [配置系统提供的绑定](../../../../docs/framework/wcf/feature-details/configuring-system-provided-bindings.md)
-- [使用自定义绑定的安全功能](../../../../docs/framework/wcf/feature-details/security-capabilities-with-custom-bindings.md)
-- [绑定](../../../../docs/framework/wcf/feature-details/bindings.md)
-- [自定义绑定](../../../../docs/framework/wcf/extending/custom-bindings.md)
+- [绑定与安全](bindings-and-security.md)
+- [终结点：地址、绑定和协定](endpoints-addresses-bindings-and-contracts.md)
+- [配置系统提供的绑定](configuring-system-provided-bindings.md)
+- [使用自定义绑定的安全功能](security-capabilities-with-custom-bindings.md)
+- [绑定](bindings.md)
+- [自定义绑定](../extending/custom-bindings.md)

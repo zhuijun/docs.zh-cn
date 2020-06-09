@@ -8,29 +8,29 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 98e82101-4cff-4bb8-a220-f7abed3556e5
-ms.openlocfilehash: 39c54c5d91c38e43fd7d0b1205537948e84a0782
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1cfcca524e5dd2b0c1560eb7600795766e2db1d6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587532"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598952"
 ---
 # <a name="how-to-create-a-security-token-service"></a>如何：创建安全令牌服务
 安全令牌服务实现在 WS-Trust 规范中定义的协议。 此协议为颁发、续订、取消和验证安全令牌定义消息格式和消息交换模式。 给定的安全令牌服务提供这些功能中的一个或多个功能。 本主题考虑最常见的情况：实现令牌颁发。  
   
 ## <a name="issuing-tokens"></a>颁发令牌  
- WS-Trust 基于 `RequestSecurityToken` XML 架构定义语言 (XSD) 架构元素和用于执行令牌颁发的 `RequestSecurityTokenResponse` XSD 架构元素来定义消息格式。 此外，它还定义关联的操作统一资源标识符 (URI)。 URI 与关联的操作`RequestSecurityToken`消息是`http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue`。 URI 与关联的操作`RequestSecurityTokenResponse`消息是`http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue`。  
+ WS-Trust 基于 `RequestSecurityToken` XML 架构定义语言 (XSD) 架构元素和用于执行令牌颁发的 `RequestSecurityTokenResponse` XSD 架构元素来定义消息格式。 此外，它还定义关联的操作统一资源标识符 (URI)。 与消息关联的操作 URI `RequestSecurityToken` 是 `http://schemas.xmlsoap.org/ws/2005/02/trust/RST/Issue` 。 与消息关联的操作 URI `RequestSecurityTokenResponse` 是 `http://schemas.xmlsoap.org/ws/2005/02/trust/RSTR/Issue` 。  
   
 ### <a name="request-message-structure"></a>请求消息结构  
  颁发请求消息结构通常包括以下项：  
   
-- 请求的值键入 URI `http://schemas.xmlsoap.org/ws/2005/02/trust/Issue`。
+- 一个请求类型 URI，其值为 `http://schemas.xmlsoap.org/ws/2005/02/trust/Issue` 。
   
-- 令牌类型 URI。 安全断言标记语言 (SAML) 1.1 令牌，此 URI 的值都是`http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1`。  
+- 令牌类型 URI。 对于安全断言标记语言（SAML）1.1 令牌，此 URI 的值为 `http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV1.1` 。  
   
 - 密钥大小值，指示与颁发的令牌关联的密钥中的位数。  
   
-- 密钥类型 URI。 对于对称密钥，此 URI 的值是`http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey`。  
+- 密钥类型 URI。 对于对称密钥，此 URI 的值为 `http://schemas.xmlsoap.org/ws/2005/02/trust/SymmetricKey` 。  
   
  此外，可能会显示几个其他项：  
   
@@ -98,7 +98,7 @@ ms.locfileid: "64587532"
  [!code-csharp[c_CreateSTS#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#4)]
  [!code-vb[c_CreateSTS#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#4)]  
   
- 有关详细信息，请参阅[联合身份验证示例](../../../../docs/framework/wcf/samples/federation-sample.md)。  
+ 有关详细信息，请参阅[联合示例](../samples/federation-sample.md)。  
   
 ## <a name="creating-response-messages"></a>创建响应消息  
  一旦安全令牌服务处理颁发请求并构造要随校验密钥一起颁发的令牌，就需要构造响应消息，其中至少包括请求的令牌、证明令牌和颁发的令牌引用。 此颁发的令牌通常是从 <xref:System.IdentityModel.Tokens.SamlSecurityToken> 中创建的 <xref:System.IdentityModel.Tokens.SamlAssertion>，如以下示例所示。  
@@ -111,7 +111,7 @@ ms.locfileid: "64587532"
  [!code-csharp[c_CreateSTS#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#6)]
  [!code-vb[c_CreateSTS#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#6)]  
   
- 有关如何构造证明令牌时，如果客户端和安全令牌服务提供的共享密钥的密钥材料的详细信息，请参阅[联合身份验证示例](../../../../docs/framework/wcf/samples/federation-sample.md)。  
+ 有关当客户端和 security token service 都为共享密钥提供密钥材料时如何构造证明令牌的详细信息，请参阅[联合示例](../samples/federation-sample.md)。  
   
  通过创建 <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause> 类的实例来构造颁发的令牌的引用。  
   
@@ -121,9 +121,9 @@ ms.locfileid: "64587532"
  然后这些不同的值序列化到返回客户端的响应消息中。  
   
 ## <a name="example"></a>示例  
- 安全令牌服务的完整代码，请参阅[联合身份验证示例](../../../../docs/framework/wcf/samples/federation-sample.md)。  
+ 有关 security token service 的完整代码，请参阅[联合示例](../samples/federation-sample.md)。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.IdentityModel.Tokens.SigningCredentials>
 - <xref:System.IdentityModel.Tokens.SecurityKey>
@@ -132,4 +132,4 @@ ms.locfileid: "64587532"
 - <xref:System.IdentityModel.Tokens.SamlAssertion>
 - <xref:System.ServiceModel.Security.Tokens.BinarySecretSecurityToken>
 - <xref:System.IdentityModel.Tokens.SecurityKeyIdentifierClause>
-- [联合示例](../../../../docs/framework/wcf/samples/federation-sample.md)
+- [联合示例](../samples/federation-sample.md)

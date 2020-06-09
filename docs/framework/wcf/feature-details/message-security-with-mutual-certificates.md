@@ -5,31 +5,31 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99d7a528-7ae4-4d39-a0f9-3066ea237de0
-ms.openlocfilehash: e2aaf1a5e6ae1074a81c08fc798f22ea5e9ce139
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 44d06762bf66950ea0cc06986c61ecd548ae2e0c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184607"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84576403"
 ---
 # <a name="message-security-with-mutual-certificates"></a>使用相互证书的消息安全
-以下方案显示了使用消息安全模式保护的 Windows 通信基础 （WCF） 服务和客户端。 使用证书对客户端和服务进行身份验证。  
+下面的方案演示 Windows Communication Foundation （WCF）服务和使用消息安全模式保护的客户端。 使用证书对客户端和服务进行身份验证。  
   
  本方案是可互操作的，因为它使用具有 X.509 证书令牌配置文件的 WS-Security。  
   
 > [!NOTE]
 > 本方案不对服务证书执行协商。 在进行任何通信之前，必须先向客户端提供服务证书。 服务器证书可以随应用程序一起分发，也可以通过带外通信来提供。  
   
- ![具有相互证书的消息安全性](../../../../docs/framework/wcf/feature-details/media/f4157312-b17c-416c-a5ee-fa7b54db211b.gif "f4157312-b17c-416c-a5ee-fa7b54db211b")  
+ ![具有相互证书的消息安全](media/f4157312-b17c-416c-a5ee-fa7b54db211b.gif "f4157312-b17c-416c-a5ee-fa7b54db211b")  
   
-|特征|说明|  
+|特征|描述|  
 |--------------------|-----------------|  
-|安全模式|消息|  
+|安全模式|Message|  
 |互操作性|是，使用 WS-Security 和 X.509 证书令牌配置文件兼容的客户端和服务。|  
 |身份验证|服务器和客户端的相互身份验证。|  
 |完整性|是|  
 |机密性|是|  
-|传输|HTTP|  
+|Transport|HTTP|  
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>服务  
@@ -45,7 +45,7 @@ ms.locfileid: "79184607"
  [!code-csharp[C_SecurityScenarios#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#13)]
  [!code-vb[C_SecurityScenarios#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#13)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  可以使用下面的配置，而不使用代码来创建同样的服务。  
   
 ```xml  
@@ -90,7 +90,7 @@ ms.locfileid: "79184607"
 </configuration>  
 ```  
   
-## <a name="client"></a>Client  
+## <a name="client"></a>客户端  
  下面的代码和配置应独立运行。 执行下列操作之一：  
   
 - 使用代码（和客户端代码）创建独立客户端。  
@@ -106,8 +106,8 @@ ms.locfileid: "79184607"
  [!code-csharp[C_SecurityScenarios#20](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#20)]
  [!code-vb[C_SecurityScenarios#20](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#20)]  
   
-### <a name="configuration"></a>配置  
- 下面配置客户端。 必须使用[\<客户端证书>指定客户端](../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md)证书。 此外，服务证书是使用[\<默认证书>](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md)指定。  
+### <a name="configuration"></a>Configuration  
+ 下面配置客户端。 必须使用指定客户端证书 [\<clientCertificate>](../../configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md) 。 此外，还使用指定服务证书 [\<defaultCertificate>](../../configure-apps/file-schema/wcf/defaultcertificate-element.md) 。  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -160,6 +160,6 @@ ms.locfileid: "79184607"
   
 ## <a name="see-also"></a>另请参阅
 
-- [安全概述](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [安全性概述](security-overview.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
-- [如何：在开发过程中在 WCF 中创建和安装临时证书，用于运输安全](https://docs.microsoft.com/previous-versions/msp-n-p/ff648498(v=pandp.10))
+- [如何：在 WCF 中创建和安装用于传输安全的临时证书](https://docs.microsoft.com/previous-versions/msp-n-p/ff648498(v=pandp.10))

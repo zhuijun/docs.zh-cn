@@ -2,15 +2,15 @@
 title: PII 安全锁定
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: ad4f4a024b04a028b815faedded58713e001cab0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64c07825f0756b029781e173eb2098711cdbe60a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79144261"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600472"
 ---
 # <a name="pii-security-lockdown"></a>PII 安全锁定
-此示例演示如何通过以下方式控制 Windows 通信基础 （WCF） 服务的几个与安全相关的功能：  
+此示例演示如何通过以下方法控制 Windows Communication Foundation （WCF）服务的多个安全相关功能：  
   
 - 加密服务配置文件中的敏感信息。  
   
@@ -23,31 +23,31 @@ ms.locfileid: "79144261"
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
   
 ## <a name="discussion"></a>讨论区  
- 这些功能中的每种功能都可以单独使用，也可以一起使用来控制服务安全的各个方面。 这不是保护 WCF 服务的明确指南。  
+ 这些功能中的每种功能都可以单独使用，也可以一起使用来控制服务安全的各个方面。 这不是用于保护 WCF 服务的权威指南。  
   
  .NET Framework 配置文件可以包含敏感信息，如用于连接到数据库的连接字符串。 在 Web 承载的共享方案中，可能需要对服务配置文件中的此信息进行加密，以避免他人无意中查看配置文件中包含的数据。 .NET Framework 2.0 和更高版本可以通过使用 Windows 数据保护应用程序编程接口 (DPAPI) 或 RSA 加密提供程序对配置文件的部分进行加密。 使用 DPAPI 或 RSA 的 aspnet_regiis.exe 可以对配置文件的选择部分进行加密。  
   
- 在 Web 承载的方案中，可以使服务位于其他服务的子目录中。 用于确定配置值的默认语义允许嵌套目录中的配置文件重写父目录中的配置值。 在某些情况下，出于各种原因可能不希望这样做。 WCF 服务配置支持锁定配置值，以便在使用重写的配置值运行嵌套服务时生成异常。  
+ 在 Web 承载的方案中，可以使服务位于其他服务的子目录中。 用于确定配置值的默认语义允许嵌套目录中的配置文件重写父目录中的配置值。 在某些情况下，出于各种原因可能不希望这样做。 WCF 服务配置支持锁定配置值，以便在使用重写的配置值运行嵌套的服务时，嵌套的配置会生成异常。  
   
- 此示例演示如何在跟踪和消息日志中控制已知个人身份信息 (PII) 日志记录，如用户名和密码。 默认情况下禁用已知 PII 的日志记录，但在特定情况下，PII 日志记录可能会对应用程序的调试大有帮助。 此示例基于[入门](../../../../docs/framework/wcf/samples/getting-started-sample.md)。 此外，此示例还使用跟踪和消息日志记录。 有关详细信息，请参阅[跟踪和消息日志记录](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md)示例。  
+ 此示例演示如何在跟踪和消息日志中控制已知个人身份信息 (PII) 日志记录，如用户名和密码。 默认情况下禁用已知 PII 的日志记录，但在特定情况下，PII 日志记录可能会对应用程序的调试大有帮助。 此示例基于[入门](getting-started-sample.md)。 此外，此示例还使用跟踪和消息日志记录。 有关详细信息，请参阅[跟踪和消息日志记录](tracing-and-message-logging.md)示例。  
   
 ## <a name="encrypting-configuration-file-elements"></a>对配置文件元素进行加密  
- 出于安全目的，在以 Web 为宿主的共享环境中，可能需要对包含敏感信息的特定配置元素（如数据库连接字符串）进行加密。 配置元素可以使用 .NET 框架文件夹中的 aspnet_regiis.exe 工具进行加密 例如，%WINDIR%\Microsoft.NET_Framework_v4.0.20728。  
+ 出于安全目的，在以 Web 为宿主的共享环境中，可能需要对包含敏感信息的特定配置元素（如数据库连接字符串）进行加密。 使用 .NET Framework 文件夹中 aspnet_regiis 的 .exe 工具（例如%WINDIR%\Microsoft.NET\Framework\v4.0.20728.）可以对配置元素进行加密。  
   
 #### <a name="to-encrypt-the-values-in-the-appsettings-section-in-webconfig-for-the-sample"></a>对示例的 Web.config 中的 appSettings 节中的值进行加密  
   
-1. 使用"启动>运行"打开命令提示。 键入并`cmd`单击 **"确定**"。  
+1. 使用 "开始->运行 ..." 打开命令提示符。 键入 `cmd` ，然后单击 **"确定"**。  
   
 2. 通过发出下面的命令导航到当前的 .NET Framework 目录：`cd %WINDIR%\Microsoft.NET\Framework\v4.0.20728`。  
   
 3. 通过发出下面的命令对 Web.config 文件夹中的 appSettings 配置设置进行加密：`aspnet_regiis -pe "appSettings" -app "/servicemodelsamples" -prov "DataProtectionConfigurationProvider"`。  
   
- 有关加密配置文件部分的详细信息，请参阅 ASP.NET 配置中的 DPAPI 操作操作（[构建安全ASP.NET应用程序：身份验证、授权和安全通信](https://docs.microsoft.com/previous-versions/msp-n-p/ff649248(v=pandp.10))）和 ASP.NET 配置中的 RSA 操作（[如何：使用 RSA ASP.NET 2.0 加密配置部分](https://docs.microsoft.com/previous-versions/msp-n-p/ff650304(v=pandp.10))）。  
+ 有关配置文件加密节的详细信息，请参阅 ASP.NET 配置中的操作方法（[构建安全 ASP.NET 应用程序：身份验证、授权和安全通信](https://docs.microsoft.com/previous-versions/msp-n-p/ff649248(v=pandp.10))）和 ASP.NET 配置中的 Rsa （[如何：使用 RSA 加密 ASP.NET 2.0 中的配置节](https://docs.microsoft.com/previous-versions/msp-n-p/ff650304(v=pandp.10))）。  
   
 ## <a name="locking-configuration-file-elements"></a>锁定配置文件元素  
  在 Web 承载的方案中，可以使服务位于其他服务的子目录中。 在这些情况下，通过检查 Machine.config 中的值并依次与父目录中的任何 Web.config 文件合并，然后沿目录树向下移动，最后合并包含该服务的目录中的 Web.config 文件，来计算子目录中服务的配置值。 多数配置元素的默认行为都允许子目录中的配置文件重写父目录中设置的值。 在特定情况下，可能需要阻止子目录中的配置文件重写父目录配置中设置的值。  
@@ -76,7 +76,7 @@ ms.locfileid: "79144261"
 ## <a name="pii-logging-configuration"></a>PII 日志记录配置  
  PII 日志记录由两个开关控制：Machine.config 中可以让计算机管理员允许或拒绝 PII 日志记录的计算机范围的设置，和允许应用程序管理员针对 Web.config 或 App.config 文件中的每个源来切换 PII 日志记录的应用程序设置。  
   
- 计算机范围的设置通过在 Machine.config `true` `false`中`machineSettings`的元素中的设置`enableLoggingKnownPii`或 控制。例如，以下允许应用程序打开 PII 的日志记录。  
+ 计算机范围的设置通过 `enableLoggingKnownPii` `true` `false` 在 machine.config 的元素中将设置为或进行控制 `machineSettings` 。例如，以下应用程序允许应用程序启用 PII 日志记录。  
   
 ```xml  
 <configuration>  
@@ -120,9 +120,9 @@ ms.locfileid: "79144261"
 > 除配置文件中列出的第一个属性外，System.Diagnostics 将忽略所有源上的所有属性。 向配置文件中的第二个源添加 `logKnownPii` 属性不起作用。  
   
 > [!IMPORTANT]
-> 要运行此示例，需要手动修改机器。修改 Machine.config 时应小心谨慎，因为不正确的值或语法可能会阻止所有 .NET 框架应用程序运行。  
+> 若要运行此示例，需要手动修改 Machine.config。修改 Machine.config 时应谨慎，因为错误的值或语法可能会阻止所有 .NET Framework 的应用程序运行。  
   
- 使用 DPAPI 和 RSA 也可以对配置文件元素进行加密。 有关更多信息，请参见下列链接：  
+ 使用 DPAPI 和 RSA 也可以对配置文件元素进行加密。 有关详细信息，请参阅以下链接：  
   
 - [生成安全的 ASP.NET 应用程序：身份验证、授权和安全通信](https://docs.microsoft.com/previous-versions/msp-n-p/ff649248(v=pandp.10))  
   
@@ -130,13 +130,13 @@ ms.locfileid: "79144261"
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 确保已为 Windows[通信基础示例执行一次性设置过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
 2. 编辑 Machine.config，将 `enableLoggingKnownPii` 属性设置为 `true`，需要时添加父节点。  
   
-3. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。  
+3. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。  
   
-4. 要在单计算机或跨计算机配置中运行示例，请按照[运行 Windows 通信基础示例中的](../../../../docs/framework/wcf/samples/running-the-samples.md)说明操作。  
+4. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
   
 #### <a name="to-clean-up-the-sample"></a>清除示例  
   

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-ms.openlocfilehash: 6399d64746db158ba0569eaf0137127603973513
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: d396ccdaca81eab74de5e20d7ba7a9a00acbf7a6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76919349"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597470"
 ---
 # <a name="configure-ws-atomic-transaction-support"></a>配置 WS 原子事务支持
 
@@ -23,11 +23,11 @@ WS-AT 配置实用工具 (wsatConfig.exe) 用于配置 WS-AT 设置。 为了启
 
 在 Windows SDK 安装位置“%WINDIR%\Microsoft.NET\Framework\v3.0\Windows Communication Foundation”中，可访问命令行窗口。
 
-有关命令行工具的详细信息，请参阅[Ws-atomictransaction 配置实用工具（wsatconfig.exe）](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)。
+有关命令行工具的详细信息，请参阅[Ws-atomictransaction 配置实用工具（wsatconfig.exe）](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md)。
 
-如果运行的是 Windows XP 或 Windows Server 2003，则可以通过导航到 **"控制面板"/"管理工具"/"组件服务**"，右键单击**我的电脑**，然后选择 "**属性**" 来访问 MMC 管理单元。 Microsoft 分布式事务处理协调器 (MSDTC) 也可以在这个位置配置。 可用于配置的选项分组在 " **ws-at** " 选项卡下。如果运行的是 Windows Vista 或 Windows Server 2008，则可以通过单击 "**开始**" 按钮，然后在**搜索**框中输入 `dcomcnfg.exe` 来找到 MMC 管理单元。 打开 MMC 时，导航到 "我的**Computer\Distributed Transaction 处理协调器 DTC** " 节点，右键单击并选择 "**属性**"。 可用于配置的选项分组在 " **ws-at** " 选项卡下。
+如果运行的是 Windows XP 或 Windows Server 2003，则可以通过导航到 **"控制面板"/"管理工具"/"组件服务**"，右键单击**我的电脑**，然后选择 "**属性**" 来访问 MMC 管理单元。 Microsoft 分布式事务处理协调器 (MSDTC) 也可以在这个位置配置。 可用于配置的选项分组在 " **ws-at** " 选项卡下。如果运行的是 Windows Vista 或 Windows Server 2008，则可以通过单击 "**开始**" 按钮，并 `dcomcnfg.exe` 在 "**搜索**" 框中输入来找到 MMC 管理单元。 打开 MMC 时，导航到 "我的**Computer\Distributed Transaction 处理协调器 DTC** " 节点，右键单击并选择 "**属性**"。 可用于配置的选项分组在 " **ws-at** " 选项卡下。
 
-有关管理单元的详细信息，请参阅[Ws-atomictransaction 配置 MMC 管理单元](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)。
+有关管理单元的详细信息，请参阅[Ws-atomictransaction 配置 MMC 管理单元](../ws-atomictransaction-configuration-mmc-snap-in.md)。
 
 若要启用该工具的用户界面，必须首先注册 WsatUI.dll 文件，该文件位于以下路径下
 
@@ -57,7 +57,7 @@ WS-AT 协议服务要求管理员显式授权各个帐户参与分布式事务�
 
 ### <a name="create-and-export-certificates"></a>创建和导出证书
 
-此过程需要使用 MMC“证书”管理单元。 打开“开始”/“运行”菜单，并在输入框中输入“mmc”，然后按“确定”可访问该管理单元。 然后，在 "**控制台**1" 窗口中，导航到 **"文件"/"添加/删除**" 管理单元，单击 "添加"，然后从 "**可用的独立管理单元**" 列表中选择 "**证书**"。 最后，选择要管理的**计算机帐户**，然后单击 **"确定"** 。 "**证书**" 节点显示在管理单元控制台中。
+此过程需要使用 MMC“证书”管理单元。 打开“开始”/“运行”菜单，并在输入框中输入“mmc”，然后按“确定”可访问该管理单元。 然后，在 "**控制台**1" 窗口中，导航到 **"文件"/"添加/删除**" 管理单元，单击 "添加"，然后从 "**可用的独立管理单元**" 列表中选择 "**证书**"。 最后，选择要管理的**计算机帐户**，然后单击 **"确定"**。 "**证书**" 节点显示在管理单元控制台中。
 
 必须拥有必需的证书才能建立信任。 若要了解如何在执行以下步骤之前创建和安装新证书，请参阅[如何：在开发过程中在 WCF 中创建和安装临时客户端证书](https://docs.microsoft.com/previous-versions/msp-n-p/ff650751(v=pandp.10))。
 
@@ -81,7 +81,7 @@ WS-AT 协议服务要求管理员显式授权各个帐户参与分布式事务�
 
 由于 WS-AT 协议服务既作为客户端又作为服务器，因此它必须侦听传入连接和发起传出连接。 因此，需要对 MSDTC 进行配置，以使它知道在与外部各方通信时要使用哪个证书，在接受传入通信时要授权哪个证书。
 
-可以使用 MMC WS-AT 管理单元进行这一配置。 有关此工具的详细信息，请参阅[Ws-atomictransaction 配置 MMC 管理单元](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)主题。 下面的步骤介绍如何在运行 MSDTC 的两台计算机之间建立信任。
+可以使用 MMC WS-AT 管理单元进行这一配置。 有关此工具的详细信息，请参阅[Ws-atomictransaction 配置 MMC 管理单元](../ws-atomictransaction-configuration-mmc-snap-in.md)主题。 下面的步骤介绍如何在运行 MSDTC 的两台计算机之间建立信任。
 
 1. 配置计算机 A 的设置。 对于 "终结点证书"，请选择 certA。 对于 "授权的证书"，请选择 certB。
 
@@ -102,7 +102,7 @@ WS-AT 协议服务要求管理员显式授权各个帐户参与分布式事务�
 
 ## <a name="tracing"></a>跟踪
 
-WS-AT 协议服务支持集成的事务特定跟踪，可通过使用[Ws-atomictransaction 配置 MMC 管理单元](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)工具启用和管理。 跟踪可包含指示以下内容的数据：特定事务的登记时间、事务达到其最终状态的时间、每个事务登记收到的结果。 可以使用[服务跟踪查看器工具（svctraceviewer.exe）](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)工具查看所有跟踪。
+WS-AT 协议服务支持集成的事务特定跟踪，可通过使用[Ws-atomictransaction 配置 MMC 管理单元](../ws-atomictransaction-configuration-mmc-snap-in.md)工具启用和管理。 跟踪可包含指示以下内容的数据：特定事务的登记时间、事务达到其最终状态的时间、每个事务登记收到的结果。 可以使用[服务跟踪查看器工具（svctraceviewer.exe）](../service-trace-viewer-tool-svctraceviewer-exe.md)工具查看所有跟踪。
 
 通过 ETW 跟踪会话，WS-AT 协议服务还支持集成 ServiceModel 跟踪。 这样，除了现有事务跟踪之外，可提供更多特定于通信的详细跟踪。  若要启用这些附加跟踪，请按照以下步骤操作
 
@@ -110,7 +110,7 @@ WS-AT 协议服务支持集成的事务特定跟踪，可通过使用[Ws-atomict
 
 2. 在**注册表编辑器**中，导航到左侧窗格中的以下文件夹，Hkey_Local_Machine \software\microsoft\wsat\3.0\
 
-3. 右键单击右窗格中的 `ServiceModelDiagnosticTracing` 值，然后选择 "**修改**"。
+3. 右键单击 `ServiceModelDiagnosticTracing` 右窗格中的值，然后选择 "**修改**"。
 
 4. 在 "**值数据**输入" 框中，输入以下有效值之一，以指定要启用的跟踪级别。
 
@@ -118,7 +118,7 @@ WS-AT 协议服务支持集成的事务特定跟踪，可通过使用[Ws-atomict
 
 - 1：严重
 
-- 3：错误。 这是默认值。
+- 3：错误。 此为默认值。
 
 - 7：警告
 
@@ -128,5 +128,5 @@ WS-AT 协议服务支持集成的事务特定跟踪，可通过使用[Ws-atomict
 
 ## <a name="see-also"></a>另请参阅
 
-- [WS-AtomicTransaction 配置实用工具 (wsatConfig.exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
-- [WS-AtomicTransaction 配置 MMC 管理单元](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md)
+- [WS-AtomicTransaction 配置实用工具 (wsatConfig.exe)](../ws-atomictransaction-configuration-utility-wsatconfig-exe.md)
+- [WS-AtomicTransaction 配置 MMC 管理单元](../ws-atomictransaction-configuration-mmc-snap-in.md)

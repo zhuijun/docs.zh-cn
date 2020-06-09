@@ -2,15 +2,15 @@
 title: WCF Web HTTP 服务帮助页
 ms.date: 03/30/2017
 ms.assetid: 63c7c695-44b6-4f31-bb9c-00f2763f525e
-ms.openlocfilehash: 8d798c8080bf1afee87305cd00a27db2ece7e970
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ef42457dea8bfe12a3e5054c5eacdf5a2964fdc7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975919"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600161"
 ---
 # <a name="wcf-web-http-service-help-page"></a>WCF Web HTTP 服务帮助页
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]提供了 WCF WEB HTTP 服务的自动帮助页。 此帮助页列出了每个操作的说明、请求和响应格式以及架构。 默认情况下关闭此功能。 当用户浏览到 WCF WEB HTTP 服务并在 URL 的末尾追加 "/Help" 时（例如 `http://localhost:8000/Customers/Help`），将显示如下所示的帮助页。  
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]提供了 WCF WEB HTTP 服务的自动帮助页。 此帮助页列出了每个操作的说明、请求和响应格式以及架构。 默认情况下关闭此功能。 当用户浏览到 WCF WEB HTTP 服务并在 URL 的末尾追加 "/Help" 时，将显示如下所 `http://localhost:8000/Customers/Help` 示的帮助页。  
   
  ![具有 WCF REST 帮助页打开的浏览器。](./media/wcf-web-http-service-help-page/windows-communication-foundation-rest-help-page.gif)  
   
@@ -240,4 +240,4 @@ using (WebServiceHost host = new WebServiceHost(typeof(Service), new Uri("http:/
 </xs:schema>  
 ```  
   
- 有关数据协定序列化架构的详细信息，请参阅[数据协定架构引用](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)。
+ 有关数据协定序列化架构的详细信息，请参阅[数据协定架构引用](data-contract-schema-reference.md)。

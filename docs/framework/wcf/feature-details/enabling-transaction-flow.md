@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - transactions [WCF], enabling flow
 ms.assetid: a03f5041-5049-43f4-897c-e0292d4718f7
-ms.openlocfilehash: 8aff6afb09c97d7d01f5e7b7f1b92ae24bb99fb7
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 5cea72e503087ac2a8f3b6ff2a07c2919ee00630
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141762"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597418"
 ---
 # <a name="enabling-transaction-flow"></a>启用事务流
 Windows Communication Foundation （WCF）提供了非常灵活的选项来控制事务流。 服务事务流设置可以使用属性与配置的组合来表示。  
@@ -31,27 +31,27 @@ Windows Communication Foundation （WCF）提供了非常灵活的选项来控�
   
  下表列出了可以使用这些不同组合生成的不同类型的事务流。  
   
-|TransactionFlow<br /><br /> 绑定|TransactionFlow 绑定属性|TransactionFlowProtocol 绑定协议|事务流的类型|  
+|TransactionFlow<br /><br /> binding|TransactionFlow 绑定属性|TransactionFlowProtocol 绑定协议|事务流的类型|  
 |---------------------------------|--------------------------------------|----------------------------------------------|------------------------------|  
-|强制|true|WS-AT|事务必须以可以互操作的 WS-AT 格式流动。|  
-|强制|true|OleTransactions|事务必须以 WCF OleTransactions 格式流动。|  
-|强制|False|不适用|不适用，因为这是无效的配置。|  
-|Allowed|true|WS-AT|事务可以以可互操作的 WS-AT 格式流动。|  
-|Allowed|true|OleTransactions|事务可能以 WCF OleTransactions 格式流动。|  
-|Allowed|False|任意值|不流动事务。|  
-|NotAllowed|任意值|任意值|不流动事务。|  
+|必需|是|WS-AT|事务必须以可以互操作的 WS-AT 格式流动。|  
+|必需|是|OleTransactions|事务必须以 WCF OleTransactions 格式流动。|  
+|必需|false|不适用|不适用，因为这是无效的配置。|  
+|允许|是|WS-AT|事务可以以可互操作的 WS-AT 格式流动。|  
+|允许|是|OleTransactions|事务可能以 WCF OleTransactions 格式流动。|  
+|允许|false|任何值|不流动事务。|  
+|NotAllowed|任何值|任何值|不流动事务。|  
   
  下表对消息处理结果做了总结。  
   
 |传入消息|TransactionFlow 设置|事务标头|消息处理结果|  
 |----------------------|-----------------------------|------------------------|-------------------------------|  
 |事务与预期的协议格式匹配|Allowed 或 Mandatory|`MustUnderstand` 等于 `true`。|过程|  
-|事务不与预期的协议格式匹配|强制|`MustUnderstand` 等于 `false`。|因要求一个事务而拒绝|  
-|事务不与预期的协议格式匹配|Allowed|`MustUnderstand` 等于 `false`。|因无法理解标头而拒绝|  
+|事务不与预期的协议格式匹配|必需|`MustUnderstand` 等于 `false`。|因要求一个事务而拒绝|  
+|事务不与预期的协议格式匹配|允许|`MustUnderstand` 等于 `false`。|因无法理解标头而拒绝|  
 |使用任何协议格式的事务|NotAllowed|`MustUnderstand` 等于 `false`。|因无法理解标头而拒绝|  
-|无事务|强制|不可用|因要求一个事务而拒绝|  
-|无事务|Allowed|不可用|过程|  
-|无事务|NotAllowed|不可用|过程|  
+|无事务|必需|空值|因要求一个事务而拒绝|  
+|无事务|允许|空值|过程|  
+|无事务|NotAllowed|空值|过程|  
   
  虽然协定上的每个方法都有不同的事务流需求，但事务流协议设置的范围处于绑定级别。 这意味着，共享同一个终结点（并因此共享同一绑定）的所有方法也共享允许或要求事务流的同一个策略以及同一个事务协议（如果适用）。  
   
@@ -59,17 +59,17 @@ Windows Communication Foundation （WCF）提供了非常灵活的选项来控�
  对于服务协定中的所有方法，事务流要求并不总是相同。 因此，WCF 还提供基于特性的机制，以允许表示每个方法的事务流首选项。 这通过指定服务操作接受事务标头所处的级别的 <xref:System.ServiceModel.TransactionFlowAttribute> 来实现。 如果需要启用事务流，则应使用此属性标记服务协定方法。 此属性采用 <xref:System.ServiceModel.TransactionFlowOption> 枚举值之一，其中默认值为 <xref:System.ServiceModel.TransactionFlowOption.NotAllowed>。 如果指定除 <xref:System.ServiceModel.TransactionFlowOption.NotAllowed> 以外的任何值，则要求该方法不要成为单向方法。 开发人员可以使用此属性在设计时指定方法级别的事务流需求或约束。  
   
 ## <a name="enabling-transaction-flow-at-the-endpoint-level"></a>在终结点级别启用事务流  
- 除了提供 <xref:System.ServiceModel.TransactionFlowAttribute> 特性的方法级别事务流设置外，WCF 还为事务流提供了一个终结点范围的设置，以允许管理员在更高级别控制事务流。  
+ 除了属性提供的方法级别事务流设置外 <xref:System.ServiceModel.TransactionFlowAttribute> ，WCF 还为事务流提供了一个终结点范围的设置，以允许管理员在更高级别控制事务流。  
   
  这可以通过 <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> 来实现，该类允许您在终结点绑定设置中启用或禁用传入事务流，并允许指定传入事务所需的事务协议格式。  
   
  如果该绑定已禁用事务流，但对服务协定的操作之一要求一个传入事务，则将在服务启动时引发验证异常。  
   
- WCF 提供的大多数持续绑定都包含 `transactionFlow` 和 `transactionProtocol` 属性，使你能够将特定的绑定配置为接受传入事务。 有关设置配置元素的详细信息，请参阅[\<绑定 >](../../configure-apps/file-schema/wcf/bindings.md)。  
+ WCF 提供的大多数持续绑定 `transactionFlow` 都包含和 `transactionProtocol` 特性，使你能够将特定的绑定配置为接受传入事务。 有关设置配置元素的详细信息，请参阅 [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) 。  
   
  管理员或部署人员可以使用终结点级别的事务流在部署时使用配置文件来配置事务流需求或约束。  
   
-## <a name="security"></a>安全  
+## <a name="security"></a>安全性  
  若要确保系统的安全性和完整性，你必须在应用程序之间流动事务时保护消息交换。 你不应向无资格参与某一事务的任何应用程序流动或透露该事务的详细信息。  
   
  使用元数据交换将 WCF 客户端生成到未知或不受信任的 Web 服务时，在可能的情况下，对这些 Web 服务上的操作的调用应禁止显示当前事务。 下面的示例演示如何执行此操作。  
@@ -92,4 +92,4 @@ using (TransactionScope scope = new TransactionScope(TransactionScopeOption.Supp
   
  事务流策略断言通过指定客户端应发送给服务以表示事务的 SOAP 标头来影响事务流。 所有事务标头都必须标记为 `MustUnderstand` 等于 `true`。 以其他方式标记标头的任何消息都将被拒绝，并出现 SOAP 错误。  
   
- 一个操作上只能出现一个与事务相关的策略断言。 操作上具有多个事务断言的策略文档被视为无效，并被 WCF 拒绝。 此外，每个端口类型内仅可出现一个事务协议。 在单个端口类型内引用多个事务协议的操作的策略文档被视为无效，并被工作的[元数据实用工具（svcutil.exe）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)拒绝。 事务断言出现在输出消息或单向输入消息上的策略文档也将被视为无效。
+ 一个操作上只能出现一个与事务相关的策略断言。 操作上具有多个事务断言的策略文档被视为无效，并被 WCF 拒绝。 此外，每个端口类型内仅可出现一个事务协议。 在单个端口类型内引用多个事务协议的操作的策略文档被视为无效，并被工作的[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)拒绝。 事务断言出现在输出消息或单向输入消息上的策略文档也将被视为无效。

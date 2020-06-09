@@ -2,22 +2,22 @@
 title: 持久性已颁发令牌提供程序
 ms.date: 03/30/2017
 ms.assetid: 76fb27f5-8787-4b6a-bf4c-99b4be1d2e8b
-ms.openlocfilehash: 08c6837f45ba1c422cdc3df2c884aa81b50a7f2b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fed5f44e6cc40cfe2ca963077b6371c14b3b086a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79144742"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600551"
 ---
 # <a name="durable-issued-token-provider"></a>持久性已颁发令牌提供程序
 此示例演示如何实现一个自定义客户端已颁发令牌提供程序。  
   
 ## <a name="discussion"></a>讨论区  
- Windows 通信基础 （WCF） 中的令牌提供程序用于向安全基础结构提供凭据。 令牌提供程序一般检查目标并颁发相应的凭据，以使安全基础结构能够确保消息的安全。 WCF 附带一个卡德空间令牌提供程序。 自定义令牌提供程序在下列情况下有用：  
+ Windows Communication Foundation （WCF）中的令牌提供程序用于向安全基础结构提供凭据。 令牌提供程序一般检查目标并颁发相应的凭据，以使安全基础结构能够确保消息的安全。 WCF 附带了一个 CardSpace 令牌提供程序。 自定义令牌提供程序在下列情况下有用：  
   
 - 存在不能由内置令牌提供程序操作的凭据存储区。  
   
-- 如果要提供自己的自定义机制，以便从用户提供详细信息到 WCF 客户端使用凭据时将凭据转换。  
+- 如果希望提供自己的自定义机制，以便在 WCF 客户端使用凭据时，从用户提供详细信息时开始转换凭据。  
   
 - 要生成一个自定义令牌。  
   
@@ -27,7 +27,7 @@ ms.locfileid: "79144742"
   
 - 如何使用自定义令牌提供程序对客户端进行配置。  
   
-- 如何缓存已发出的令牌并将其提供给 WCF 客户端。  
+- 如何缓存颁发的令牌并将其提供给 WCF 客户端。  
   
 - 客户端如何使用服务器的 X.509 证书对服务器进行身份验证。  
   
@@ -36,7 +36,7 @@ ms.locfileid: "79144742"
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。  
   
- 此示例使用[\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)公开 I计算器协定。 下面的代码演示了此绑定在客户端上的配置。  
+ 此示例使用公开 ICalculator 协定 [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) 。 下面的代码演示了此绑定在客户端上的配置。  
   
 ```xml  
 <bindings>
@@ -110,7 +110,7 @@ ms.locfileid: "79144742"
  安全令牌服务使用标准 wsHttpBinding 来公开一个终结点。 安全令牌服务响应客户端对令牌的请求，使用 Windows 帐户提供客户端身份验证，并颁发包含客户端用户名（作为已颁发令牌中的声明）的令牌。 作为创建令牌的一部分，安全令牌服务使用与 CN=STS 证书关联的私钥对令牌进行签名。 另外，它还创建对称密钥并使用与 CN=localhost 证书关联的公钥对该密钥进行加密。 在向客户端返回令牌的过程中，安全令牌服务还返回对称密钥。 客户端向计算器服务出示颁发的令牌，并通过使用该对称密钥对消息进行签名来证明客户端知道该密钥。  
   
 ## <a name="custom-client-credentials-and-token-provider"></a>自定义客户端凭据和令牌提供程序  
- 以下步骤演示如何开发缓存已发出令牌并将其与 WCF：安全性集成的自定义令牌提供程序。  
+ 以下步骤演示如何开发自定义令牌提供程序，以便缓存已颁发的令牌并将其与 WCF： security 集成。  
   
 ### <a name="to-develop-a-custom-token-provider"></a>开发自定义安全令牌提供程序  
   
@@ -235,7 +235,7 @@ ms.locfileid: "79144742"
   
 1. 运行 Setup.cmd 文件以创建所需的证书。  
   
-2. 要生成解决方案，请按照生成 Windows[通信基础示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。 确保生成解决方案中的所有项目（Shared、RSTRSTR、Service、SecurityTokenService 和 Client）。  
+2. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。 确保生成解决方案中的所有项目（Shared、RSTRSTR、Service、SecurityTokenService 和 Client）。  
   
 3. 确保 Service.exe 和 SecurityTokenService.exe 都使用管理员权限运行。  
   
@@ -250,6 +250,6 @@ ms.locfileid: "79144742"
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Security\DurableIssuedTokenProvider`  

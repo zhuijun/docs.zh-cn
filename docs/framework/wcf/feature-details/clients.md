@@ -2,29 +2,29 @@
 title: 客户端
 ms.date: 03/30/2017
 ms.assetid: cce50025-0318-4a5e-9ce8-c67feab83b06
-ms.openlocfilehash: aa6d415c0908845bedf7c95ed66281bc0f17eb2b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c5c44016a0367ea80485f220418e5bd8365b9694
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61781454"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599316"
 ---
 # <a name="clients"></a>客户端
-在本部分中的主题介绍客户端体系结构，如何访问 Windows Communication Foundation (WCF) 服务、 如何配置 WCF 客户端和 WCF 客户端的一些安全注意事项。  
+本节中的主题涵盖客户端体系结构、如何访问 Windows Communication Foundation （WCF）服务、如何配置 WCF 客户端以及 WCF 客户端的一些安全注意事项。  
   
 ## <a name="in-this-section"></a>本节内容  
- [WCF 客户端体系结构](../../../../docs/framework/wcf/feature-details/client-architecture.md)  
- 介绍 WCF 客户端体系结构。  
+ [WCF 客户端体系结构](client-architecture.md)  
+ 描述 WCF 客户端体系结构。  
   
- [使用 WCF 客户端访问服务](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)  
- 介绍如何访问 WCF 服务。  
+ [使用 WCF 客户端访问服务](accessing-services-using-a-client.md)  
+ 描述如何访问 WCF 服务。  
   
- [WCF 客户端配置](../../../../docs/framework/wcf/feature-details/client-configuration.md)  
+ [WCF 客户端配置](client-configuration.md)  
  介绍如何配置 WCF 客户端。  
   
- [保护客户端](../../../../docs/framework/wcf/securing-clients.md)  
- 介绍 WCF 客户端的一些安全注意事项。  
+ [保证客户端的安全](../securing-clients.md)  
+ 描述 WCF 客户端的一些安全注意事项。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [客户端示例](../samples/client.md)

@@ -2,12 +2,12 @@
 title: 根据服务元数据生成 WCF 客户端
 ms.date: 03/30/2017
 ms.assetid: 27f8f545-cc44-412a-b104-617e0781b803
-ms.openlocfilehash: e40a908894ca5acac33401ff20a9110d617547ec
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: ebf124b75e7c2b0feabfffb8c7e790b44749edb5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75963905"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597366"
 ---
 # <a name="generating-a-wcf-client-from-service-metadata"></a>根据服务元数据生成 WCF 客户端
 本主题介绍如何使用 Svcutil.exe 中的各种开关，根据元数据文档生成客户端。  
@@ -18,9 +18,9 @@ ms.locfileid: "75963905"
   
 - 发往所提供地址的 MEX 请求，并追加了 `/mex`。  
   
-- DISCO 请求（使用 ASP.NET Web 服务中的 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol>）到提供的地址。  
+- DISCO 请求（使用 <xref:System.Web.Services.Discovery.DiscoveryClientProtocol> from ASP.NET Web 服务）到提供的地址。  
   
- Svcutil.exe 基于 Web 服务描述语言 (WSDL) 或从服务接收的策略文件生成客户端。 用户主体名称（UPN）是通过将用户名与 "\@" 连接然后添加完全限定的域名（FQDN）而生成的。 但是，对于在 Active Directory 上注册的用户，此格式无效，该工具生成的 UPN 导致 Kerberos 身份验证失败，并出现以下错误消息：**登录尝试失败。** 若要解决此问题，请手动修复该工具生成的客户端文件。  
+ Svcutil.exe 基于 Web 服务描述语言 (WSDL) 或从服务接收的策略文件生成客户端。 用户主体名称（UPN）是通过将用户名与 "" 连接起来生成的 \@ ，然后添加完全限定的域名（FQDN）。 但是，对于在 Active Directory 上注册的用户，此格式无效，该工具生成的 UPN 导致 Kerberos 身份验证失败，并出现以下错误消息：**登录尝试失败。** 若要解决此问题，请手动修复该工具生成的客户端文件。  
   
 ```console
 svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>  
@@ -30,7 +30,7 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
   
 |选项|描述|  
 |------------|-----------------|  
-|**/reference：\<文件路径 >**|引用指定程序集中的类型。 在生成客户端时，使用此选项来指定可能包含类型的程序集，这些类型表示所导入的元数据。<br /><br /> 缩写形式：`/r`|  
+|**/reference\<file path>**|引用指定程序集中的类型。 在生成客户端时，使用此选项来指定可能包含类型的程序集，这些类型表示所导入的元数据。<br /><br /> 缩写形式：`/r`|  
 |**/excludeType:\<type>**|指定要从引用的协定类型中排除的完全限定或程序集限定类型名称。<br /><br /> 缩写形式：`/et`|  
   
 ## <a name="choosing-a-serializer"></a>选择序列化程序  
@@ -47,13 +47,13 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
   
 |选项|描述|  
 |------------|-----------------|  
-|**/language：\<语言 >**|指定要用于代码生成的编程语言。 提供在 Machine.config 文件中注册的语言名称或从 <xref:System.CodeDom.Compiler.CodeDomProvider> 继承的类的完全限定名称。<br /><br /> 值：c#、cs、csharp、vb、vbs、visualbasic、vbscript、javascript、c++、mc、cpp<br /><br /> 默认设置：csharp<br /><br /> 缩写形式：`/l`<br /><br /> 有关详细信息，请参阅 <xref:System.CodeDom.Compiler.CodeDomProvider> 类。|  
+|**/language\<language>**|指定要用于代码生成的编程语言。 提供在 Machine.config 文件中注册的语言名称或从 <xref:System.CodeDom.Compiler.CodeDomProvider> 继承的类的完全限定名称。<br /><br /> 值：c#、cs、csharp、vb、vbs、visualbasic、vbscript、javascript、c++、mc、cpp<br /><br /> 默认设置：csharp<br /><br /> 缩写形式：`/l`<br /><br /> 有关详细信息，请参阅 <xref:System.CodeDom.Compiler.CodeDomProvider> 类。|  
   
 ## <a name="choosing-a-namespace-for-the-client"></a>为客户端选择命名空间  
   
 |选项|描述|  
 |------------|-----------------|  
-|**/namespace：\<string，string >**|指定从 WSDL 或 XML 架构 `targetNamespace` 到公共语言运行库 (CLR) 命名空间的映射。 将通配符 (*) 用于 `targetNamespace` 将映射所有 `targetNamespaces`，而不显式映射到该 CLR 命名空间。<br /><br /> 若要确保消息协定名称不与操作名称相冲突，请用双冒号 (`::`) 限定类型引用，或者确保名称是唯一的。<br /><br /> 默认设置：派生自 `DataContracts` 的架构文档的目标命名空间。 默认命名空间用于所有其他生成的类型。<br /><br /> 缩写形式：`/n`|  
+|**/namespace\<string,string>**|指定从 WSDL 或 XML 架构 `targetNamespace` 到公共语言运行库 (CLR) 命名空间的映射。 将通配符 (*) 用于 `targetNamespace` 将映射所有 `targetNamespaces`，而不显式映射到该 CLR 命名空间。<br /><br /> 若要确保消息协定名称不与操作名称相冲突，请用双冒号 (`::`) 限定类型引用，或者确保名称是唯一的。<br /><br /> 默认设置：派生自 `DataContracts` 的架构文档的目标命名空间。 默认命名空间用于所有其他生成的类型。<br /><br /> 缩写形式：`/n`|  
   
 ## <a name="choosing-a-data-binding"></a>选择数据绑定  
   
@@ -65,11 +65,11 @@ svcutil.exe [/t:code]  <metadataDocumentPath>* | <url>* | <epr>
   
 |选项|描述|  
 |------------|-----------------|  
-|**/config：\<Read-configfile >**|指定已生成的配置文件的文件名。<br /><br /> 默认设置：output.config|  
+|**/config\<configFile>**|指定已生成的配置文件的文件名。<br /><br /> 默认设置：output.config|  
 |**/mergeConfig**|将生成的配置合并到现有文件中，而不是覆盖现有文件。|  
 |**/noConfig**|不生成配置文件。|  
   
 ## <a name="see-also"></a>另请参阅
 
-- [使用元数据](../../../../docs/framework/wcf/feature-details/using-metadata.md)
-- [元数据体系结构概述](../../../../docs/framework/wcf/feature-details/metadata-architecture-overview.md)
+- [使用元数据](using-metadata.md)
+- [元数据体系结构概述](metadata-architecture-overview.md)

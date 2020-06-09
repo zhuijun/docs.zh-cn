@@ -4,31 +4,31 @@ ms.date: 03/30/2017
 dev_langs:
 - csharp
 ms.assetid: 3d726b71-4d8b-4581-a3bb-02b9af51d11b
-ms.openlocfilehash: ad2f0922afbd94e1699b383cf2fc9762771b637d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 47322cbcddf9f33101bbfbeaa07a3fab74b9d26a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184321"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84576013"
 ---
 # <a name="transport-security-with-certificate-authentication"></a>利用证书身份验证的传输安全
 
-本文讨论在使用传输安全性时使用 X.509 证书进行服务器和客户端身份验证。 有关 X.509 证书的详细信息，请参阅 [X.509 公钥证书](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates)。 证书必须由证书颁发机构颁发，证书颁发机构通常是证书的第三方颁发者。 在 Windows Server 域中，可以使用 Active Directory 证书服务向域中的客户端计算机颁发证书。 在此方案中，该服务承载在使用安全套接字层 (SSL) 配置的 Internet Information Services (IIS) 之下。 该服务使用 SSL (X.509) 证书进行配置，以允许客户端验证服务器的身份。 客户端也使用 X.509 证书进行配置，以允许服务验证客户端的身份。 客户端必须信任服务器的证书，服务器也必须信任客户端的证书。 服务和客户端如何验证彼此身份的实际机制超出了本文的范围。 有关详细信息，请参阅维基百科上[的数字签名](https://en.wikipedia.org/wiki/Digital_signature)。
+本文讨论在使用传输安全时，如何使用 x.509 证书进行服务器和客户端身份验证。 有关 X.509 证书的详细信息，请参阅 [X.509 公钥证书](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates)。 证书必须由证书颁发机构颁发，证书颁发机构通常是证书的第三方颁发者。 在 Windows Server 域中，可以使用 Active Directory 证书服务向域中的客户端计算机颁发证书。 在此方案中，该服务承载在使用安全套接字层 (SSL) 配置的 Internet Information Services (IIS) 之下。 该服务使用 SSL (X.509) 证书进行配置，以允许客户端验证服务器的身份。 客户端也使用 X.509 证书进行配置，以允许服务验证客户端的身份。 客户端必须信任服务器的证书，服务器也必须信任客户端的证书。 服务和客户端验证彼此身份的实际机制超出了本文的范围。 有关详细信息，请参阅维基百科上的[数字签名](https://en.wikipedia.org/wiki/Digital_signature)。
   
  该方案实现一个请求/回复消息模式，如下图所示。  
   
- ![使用证书安全传输](../../../../docs/framework/wcf/feature-details/media/8f7b8968-899f-4538-a9e8-0eaa872a291c.gif "8f7b8968-899f-4538-a9e8-0ea872a291c")  
+ ![使用证书进行安全传输](media/8f7b8968-899f-4538-a9e8-0eaa872a291c.gif "8f7b8968-899f-4538-a9e8-0eaa872a291c")  
   
- 有关将证书与服务一起使用的详细信息，请参阅[使用证书](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)以及如何[：使用 SSL 证书配置端口](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)。 下表描述了该方案的各项特征。  
+ 有关将证书用于服务的详细信息，请参阅使用[证书](working-with-certificates.md)和[如何：使用 SSL 证书配置端口](how-to-configure-a-port-with-an-ssl-certificate.md)。 下表描述了该方案的各项特征。  
   
-|特征|说明|  
+|特征|描述|  
 |--------------------|-----------------|  
-|安全模式|传输|  
+|安全模式|Transport|  
 |互操作性|与现有 Web 服务客户端和服务。|  
 |身份验证（服务器）<br /><br /> 身份验证（客户端）|是（使用 SSL 证书）<br /><br /> 是（使用 X.509 证书）|  
 |数据完整性|是|  
 |数据保密性|是|  
-|传输|HTTPS|  
+|Transport|HTTPS|  
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="configure-the-service"></a>配置服务  
@@ -140,5 +140,5 @@ cc.Close();
   
 ## <a name="see-also"></a>另请参阅
 
-- [安全概述](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [安全性概述](security-overview.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

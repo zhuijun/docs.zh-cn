@@ -2,19 +2,19 @@
 title: 基本示例
 ms.date: 03/30/2017
 ms.assetid: c1910bc1-3d0a-4fa6-b12a-4ed6fe759620
-ms.openlocfilehash: 2ea5af0a1c05b5632632b2619c0ee4813696d2fc
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: db560ec7dea3912ecec8d84943cc9a01512d1f33
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76738181"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84575766"
 ---
 # <a name="basic-sample"></a>基本示例
 
 此示例演示如何使服务可发现以及如何搜索和调用可发现服务。 此示例由两个项目组成：服务项目和客户端项目。
 
 > [!NOTE]
-> 此示例在代码中实现发现。  有关在配置中实现发现的示例，请参阅[配置](../../../../docs/framework/wcf/samples/configuration-sample.md)。
+> 此示例在代码中实现发现。  有关在配置中实现发现的示例，请参阅[配置](configuration-sample.md)。
 
 ## <a name="service"></a>服务
 

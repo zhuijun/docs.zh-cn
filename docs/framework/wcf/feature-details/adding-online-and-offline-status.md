@@ -2,12 +2,12 @@
 title: 添加联机和脱机状态
 ms.date: 03/30/2017
 ms.assetid: 05e5f51d-81b6-4c17-b364-9dda447a5fce
-ms.openlocfilehash: 74b113d64003756982a6b5701d9601c3116a9046
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: da170bbc22d04dcbf5f7cd4ac084a004bb4b026e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69960646"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597678"
 ---
 # <a name="adding-online-and-offline-status"></a>添加联机和脱机状态
 在很多情况下，应用程序必须监控有关对等通道连接状态的特定详细信息。 通过对 `GetProperty` 接口的实现调用 <xref:System.ServiceModel.IOnlineStatus> 方法可以获取此信息。 实现此接口的对象可以监视连接状态或注册事件处理程序（如 `OnOnline` 和 `OnOffline`），并对联机状态的更改立即做出反应。  
@@ -17,6 +17,6 @@ ms.locfileid: "69960646"
 > [!NOTE]
 > 联机事件处理程序首先应确保节点在发送消息之前处于打开状态。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [生成对等通道应用程序](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+- [生成对等通道应用程序](building-a-peer-channel-application.md)

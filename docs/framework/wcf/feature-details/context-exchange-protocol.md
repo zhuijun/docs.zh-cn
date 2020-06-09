@@ -2,17 +2,17 @@
 title: 上下文交换协议
 ms.date: 03/30/2017
 ms.assetid: 3dfd38e0-ae52-491c-94f4-7a862b9843d4
-ms.openlocfilehash: 00adb68d96f77ce0953811d13b5377ec4ed1e0ea
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 86d2a19b086fbd5d6be6f1a084bfd7aaace0e250
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185266"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597431"
 ---
 # <a name="context-exchange-protocol"></a>上下文交换协议
-本节介绍 Windows 通信基础 （WCF） 版本 .NET 框架版本 3.5 中引入的上下文交换协议。 此协议允许客户端通道接受某个服务提供的上下文，并将其应用于通过相同客户端通道实例发送的针对该服务的所有后续请求。 上下文交换协议的实现可以使用以下两个机制之一在服务器和客户端之间传播上下文：HTTP Cookie 或 SOAP 标头。  
+本部分介绍 Windows Communication Foundation （WCF）版本3.5 中引入的上下文交换协议 .NET Framework。 此协议允许客户端通道接受某个服务提供的上下文，并将其应用于通过相同客户端通道实例发送的针对该服务的所有后续请求。 上下文交换协议的实现可以使用以下两个机制之一在服务器和客户端之间传播上下文：HTTP Cookie 或 SOAP 标头。  
   
- 上下文交换协议是在自定义通道层中实现的。 通道使用 <xref:System.ServiceModel.Channels.ContextMessageProperty> 属性在应用程序层之间来回传递上下文。 对于终结点之间的传输，上下文的值或者在通道层序列化为 SOAP 标头，或者在表示 HTTP 请求和响应的消息属性之间来回转换。 在后一种情况下，应有一个基础通道层将 HTTP 请求和响应消息属性分别与 HTTP Cookie 来回进行转换。 可通过使用 <xref:System.ServiceModel.Channels.ContextExchangeMechanism> 上的 <xref:System.ServiceModel.Channels.ContextBindingElement> 属性来选择用于交换上下文的机制。 有效值为 `HttpCookie` 或 `SoapHeader`。  
+ 上下文交换协议是在自定义通道层中实现的。 通道使用 <xref:System.ServiceModel.Channels.ContextMessageProperty> 属性在应用程序层之间来回传递上下文。 对于终结点之间的传输，上下文的值或者在通道层序列化为 SOAP 标头，或者在表示 HTTP 请求和响应的消息属性之间来回转换。 在后一种情况下，应有一个基础通道层将 HTTP 请求和响应消息属性分别与 HTTP Cookie 来回进行转换。 可通过使用 <xref:System.ServiceModel.Channels.ContextExchangeMechanism> 上的 <xref:System.ServiceModel.Channels.ContextBindingElement> 属性来选择用于交换上下文的机制。 有效值为 `HttpCookie` or `SoapHeader`进行求值的基于 SQL 语言的筛选器表达式。  
   
  在客户端上，通道的实例可以基于通道属性 <xref:System.ServiceModel.Channels.IContextManager.Enabled%2A> 上的设置在两种模式中操作。  
   
@@ -69,4 +69,4 @@ ms.locfileid: "79185266"
   
 ## <a name="see-also"></a>另请参阅
 
-- [Web 服务协议互操作性指南](../../../../docs/framework/wcf/feature-details/web-services-protocols-interoperability-guide.md)
+- [Web 服务协议互操作性指南](web-services-protocols-interoperability-guide.md)

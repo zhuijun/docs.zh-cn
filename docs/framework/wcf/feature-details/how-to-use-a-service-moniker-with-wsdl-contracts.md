@@ -2,12 +2,12 @@
 title: 如何：将服务名字对象用于 WSDL 协定
 ms.date: 03/30/2017
 ms.assetid: a88d9650-bb50-4f48-8c85-12f5ce98a83a
-ms.openlocfilehash: 7bc628952d4a7198f0b5545014ae931bbf73dab3
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 70d7e9ff45616f832597ebc48db00198967935c6
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969002"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601135"
 ---
 # <a name="how-to-use-a-service-moniker-with-wsdl-contracts"></a>如何：将服务名字对象用于 WSDL 协定
 在某些情况下，您可能希望具有完全自包含的 COM 互操作客户端。 您要调用的服务可能不会公开 MEX 终结点，而 WCF 客户端 DLL 可能不会为 COM 互操作注册。 在这些情况下，您可以创建用于描述该服务的 WSDL 文件，并将该文件传递到 WCF 服务标记中。 本主题描述如何使用 WCF WSDL 标记调用 WCF 入门示例。  
@@ -16,7 +16,7 @@ ms.locfileid: "70969002"
   
 1. 打开并生成 GettingStarted 示例解决方案。  
   
-2. 打开 Internet Explorer 并浏览到`http://localhost/ServiceModelSamples/Service.svc` ，确保该服务正在运行。  
+2. 打开 Internet Explorer 并浏览到， `http://localhost/ServiceModelSamples/Service.svc` 确保该服务正在运行。  
   
 3. 在 Service.cs 文件中，将下面的属性添加到 CalculatorService 类中：  
   
@@ -24,7 +24,7 @@ ms.locfileid: "70969002"
   
 4. 将绑定命名空间添加到服务 App.config 中：  
 
-5. 为要读取的应用程序创建 WSDL 文件。 由于命名空间是在步骤3和步骤4中添加的，因此可以使用 IE 通过浏览到来`http://localhost/ServiceModelSamples/Service.svc?wsdl`查询服务的整个 WSDL 说明。 然后，将文件从 Internet Explorer 另存为 serviceWSDL.xml。 如果未在步骤 3 和 4 中指定命名空间，则从查询上述 URL 返回的 WSDL 文档将不是完整的 WSDL。 返回的 WSDL 文档将包括导入其他 WSDL 文档的多条导入语句。 您必须完成每条导入语句并生成完整的 WSDL 文档，从而将从服务返回的 WSDL 与导入的 WSDL 合并在一起。  
+5. 为要读取的应用程序创建 WSDL 文件。 由于命名空间是在步骤3和步骤4中添加的，因此可以使用 IE 通过浏览到来查询服务的整个 WSDL 说明 `http://localhost/ServiceModelSamples/Service.svc?wsdl` 。 然后，将文件从 Internet Explorer 另存为 serviceWSDL.xml。 如果未在步骤 3 和 4 中指定命名空间，则从查询上述 URL 返回的 WSDL 文档将不是完整的 WSDL。 返回的 WSDL 文档将包括导入其他 WSDL 文档的多条导入语句。 您必须完成每条导入语句并生成完整的 WSDL 文档，从而将从服务返回的 WSDL 与导入的 WSDL 合并在一起。  
   
 6. 打开 Visual Basic 6.0 并创建一个新的 Standard .exe 文件。 在窗体中添加一个按钮并双击该按钮，以将以下代码添加到 Click 处理程序中：  
   
@@ -54,7 +54,7 @@ ms.locfileid: "70969002"
   
 7. 运行 Visual Basic 应用程序。 将显示一个消息框，其中列出调用 Subtract(145, 76.54) 的结果。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [入门](../../../../docs/framework/wcf/samples/getting-started-sample.md)
-- [与 COM 应用程序集成的概述](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications-overview.md)
+- [入门](../samples/getting-started-sample.md)
+- [COM 应用程序集成概述](integrating-with-com-applications-overview.md)

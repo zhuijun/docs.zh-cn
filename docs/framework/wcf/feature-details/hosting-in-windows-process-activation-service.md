@@ -4,17 +4,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: 1882feee4e8071f1d32fb59ab02519c6e6fe2684
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: d0253202b0fad9a452507ed4296bc4a09b78e569
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84143558"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597301"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>在 Windows 进程激活服务中承载
 Windows 进程激活服务 (WAS) 管理辅助进程的激活和生命周期，这些进程包含托管 Windows Communication Foundation (WCF) 服务的应用程序。 WAS 进程模型通过删除对 HTTP 的依赖，将 HTTP 服务器的 IIS 6.0 进程模型通用化。 这使 WCF 服务可以在支持基于消息的激活的宿主环境中同时使用 HTTP 和非 HTTP 协议（例如 Net.tcp），并提供在给定计算机上托管大量应用程序的功能。  
   
- 有关生成在 WAS 宿主环境中运行的 WCF 服务的详细信息，请参阅[如何：在 was 中承载 Wcf 服务](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)。  
+ 有关生成在 WAS 宿主环境中运行的 WCF 服务的详细信息，请参阅[如何：在 was 中承载 Wcf 服务](how-to-host-a-wcf-service-in-was.md)。  
   
  WAS 进程模型提供了一些功能，可以以一种更为可靠、更易管理并有效地使用资源的方式承载应用程序：  
   
@@ -50,8 +50,8 @@ Windows 进程激活服务 (WAS) 管理辅助进程的激活和生命周期，�
   
 ## <a name="see-also"></a>另请参阅
 
-- [WAS 激活体系结构](../../../../docs/framework/wcf/feature-details/was-activation-architecture.md)
-- [配置 WAS 以用于 WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)
-- [如何：安装和配置 WCF 激活组件](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)
-- [如何：在 WAS 中承载 WCF 服务](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-was.md)
+- [WAS 激活体系结构](was-activation-architecture.md)
+- [配置 WAS 以用于 WCF](configuring-the-wpa--service-for-use-with-wcf.md)
+- [如何：安装和配置 WCF 激活组件](how-to-install-and-configure-wcf-activation-components.md)
+- [如何：在 WAS 中承载 WCF 服务](how-to-host-a-wcf-service-in-was.md)
 - [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

@@ -9,30 +9,30 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-ms.openlocfilehash: 2ab0a41e87a9b14d1beac9fb0c39586f0ea16a4a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: b7d78def4d656dea59af5400c7ed7deeef28cd0c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040185"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597444"
 ---
 # <a name="data-contract-known-types"></a>数据协定已知类型
-<xref:System.Runtime.Serialization.KnownTypeAttribute> 类允许您预先指定应该在反序列化期间包括在考虑范围内的类型。 有关工作示例，请参阅 [Known Types](../../../../docs/framework/wcf/samples/known-types.md) 示例。  
+<xref:System.Runtime.Serialization.KnownTypeAttribute> 类允许您预先指定应该在反序列化期间包括在考虑范围内的类型。 有关工作示例，请参阅 [Known Types](../samples/known-types.md) 示例。  
   
  通常，在客户端和服务之间传递参数和返回值时，这两个终结点共享要传输的数据的所有数据协定。 但是，在以下情况下并非如此：  
   
-- 已发送的数据协定派生自预期的数据协定。 有关详细信息, 请参阅[数据协定等效](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)性中有关继承的部分。 在该情况下，传输的数据没有与接收终结点所预期相同的数据协定。  
+- 已发送的数据协定派生自预期的数据协定。 有关详细信息，请参阅[数据协定等效](data-contract-equivalence.md)性中有关继承的部分。 在该情况下，传输的数据没有与接收终结点所预期相同的数据协定。  
   
 - 要传输的信息的声明类型是接口，而非类、结构或枚举。 因此，无法预先知道实际发送了实现接口的哪个类型，接收终结点就无法预先确定已传输数据的数据协定。  
   
-- 要传输的信息的声明类型是 <xref:System.Object>。 由于每个类型都继承自 <xref:System.Object>，而且无法预先知道实际发送了哪个类型，因此接收终结点无法预先确定已传输数据的数据协定。 这是第一项的一种特殊情况:每个数据协定均派生自默认值, 它是为生成的<xref:System.Object>空白数据协定。  
+- 要传输的信息的声明类型是 <xref:System.Object>。 由于每个类型都继承自 <xref:System.Object>，而且无法预先知道实际发送了哪个类型，因此接收终结点无法预先确定已传输数据的数据协定。 这是第一个项的特殊情况：每个数据协定都源自为 <xref:System.Object>生成的默认空数据协定。  
   
-- 某些类型 (包括 .NET Framework 类型) 具有上述三种类别之一中的成员。 例如， <xref:System.Collections.Hashtable> 使用 <xref:System.Object> 在哈希表中存储实际对象。 在序列化这些类型时，接收方无法预先确定这些成员的数据协定。  
+- 某些类型（包括 .NET Framework 类型）具有上述三种类别之一中的成员。 例如， <xref:System.Collections.Hashtable> 使用 <xref:System.Object> 在哈希表中存储实际对象。 在序列化这些类型时，接收方无法预先确定这些成员的数据协定。  
   
 ## <a name="the-knowntypeattribute-class"></a>KnownTypeAttribute 类  
- 当数据到达接收终结点时, WCF 运行时尝试将数据反序列化到公共语言运行时 (CLR) 类型的实例中。 通过首先检查传入消息选择为反序列化而实例化的类型，以确定消息内容遵循的数据协定。 然后反序列化引擎尝试查找实现与消息内容兼容的数据协定的 CLR 类型。 反序列化引擎在此过程中允许的侯选类型集称为反序列化程序的“已知类型”集。  
+ 当数据到达接收终结点时，WCF 运行时尝试将数据反序列化到公共语言运行时（CLR）类型的实例中。 通过首先检查传入消息选择为反序列化而实例化的类型，以确定消息内容遵循的数据协定。 然后反序列化引擎尝试查找实现与消息内容兼容的数据协定的 CLR 类型。 反序列化引擎在此过程中允许的侯选类型集称为反序列化程序的“已知类型”集。  
   
- 让反序列化引擎了解某个类型的一种方法是使用 <xref:System.Runtime.Serialization.KnownTypeAttribute>。 不能将属性应用于单个数据成员，只能将它应用于整个数据协定类型。 将属性应用于可能为类或结构的“外部类型” 。 在其最基本的用法中，应用属性会将类型指定为“已知类型”。 只要反序列化外部类型的对象或通过其成员引用的任何对象，这就会导致已知类型成为已知类型集的一部分。 可以将多个 <xref:System.Runtime.Serialization.KnownTypeAttribute> 属性应用于同一类型。  
+ 让反序列化引擎了解某个类型的一种方法是使用 <xref:System.Runtime.Serialization.KnownTypeAttribute>。 不能将属性应用于单个数据成员，只能将它应用于整个数据协定类型。 将属性应用于可能为类或结构的“外部类型” ** 。 在其最基本的用法中，应用属性会将类型指定为“已知类型”。 只要反序列化外部类型的对象或通过其成员引用的任何对象，这就会导致已知类型成为已知类型集的一部分。 可以将多个 <xref:System.Runtime.Serialization.KnownTypeAttribute> 属性应用于同一类型。  
   
 ## <a name="known-types-and-primitives"></a>已知类型和基元  
  基元类型以及被视为基元的某些类型（例如， <xref:System.DateTime> 和 <xref:System.Xml.XmlElement>）始终是“已知”的，且从来不必通过此机制进行添加。 但是，必须显式添加基元类型的数组。 大多数集合被视为等效于数组。 （非泛型集合被视为等效于 <xref:System.Object>的数组）。 有关使用基元、基元数组和基元集合的示例，请参见示例 4。  
@@ -100,7 +100,7 @@ ms.locfileid: "70040185"
 ## <a name="known-types-using-open-generic-methods"></a>使用开放式泛型方法的已知类型  
  可能需要将泛型类型作为已知类型添加。 但是，不能将开放式泛型类型作为参数传递到 `KnownTypeAttribute` 属性。  
   
- 可以通过使用替代机制来解决此问题:编写一个方法, 该方法返回要添加到已知类型集合的类型的列表。 然后将方法名称指定为 `KnownTypeAttribute` 属性的字符串参数（由于某些限制所致）。  
+ 通过使用替代机制可以解决此问题：编写一个返回要添加到已知类型集合的类型列表的方法。 然后将方法名称指定为 `KnownTypeAttribute` 属性的字符串参数（由于某些限制所致）。  
   
  方法必须存在于应用 `KnownTypeAttribute` 属性的类型上，不得接受参数，且必须返回可以分配给 <xref:System.Collections.IEnumerable> 的 <xref:System.Type>的对象。  
   
@@ -131,7 +131,7 @@ ms.locfileid: "70040185"
  [!code-vb[C_KnownTypeAttribute#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_knowntypeattribute/vb/source.vb#10)]  
   
 ## <a name="additional-ways-to-add-known-types"></a>添加已知类型的其他方法  
- 此外，可以通过配置文件添加已知类型。 如果不控制需要已知类型才能正确反序列化的类型 (例如, 将第三方类型库与 Windows Communication Foundation (WCF) 结合使用, 则此方法很有用。  
+ 此外，可以通过配置文件添加已知类型。 如果不控制需要已知类型才能正确反序列化的类型（例如，将第三方类型库与 Windows Communication Foundation （WCF）结合使用，则此方法很有用。  
   
  下面的配置文件演示如何在配置文件中指定已知类型。  
   
@@ -167,13 +167,13 @@ ms.locfileid: "70040185"
   
  在前面的配置文件中，名为 `MyCompany.Library.Shape` 的数据协定类型被声明具有已知类型 `MyCompany.Library.Circle` 。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Runtime.Serialization.KnownTypeAttribute>
 - <xref:System.Collections.Hashtable>
 - <xref:System.Object>
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Runtime.Serialization.DataContractSerializer.KnownTypes%2A>
-- [已知类型](../../../../docs/framework/wcf/samples/known-types.md)
-- [数据协定等效性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
-- [设计服务协定](../../../../docs/framework/wcf/designing-service-contracts.md)
+- [已知类型](../samples/known-types.md)
+- [数据协定等效性](data-contract-equivalence.md)
+- [设计服务协定](../designing-service-contracts.md)
