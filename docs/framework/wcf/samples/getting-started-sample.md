@@ -7,43 +7,43 @@ dev_langs:
 helpviewer_keywords:
 - basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-ms.openlocfilehash: 7bfef2c3fa5d0d3c6dafad5a6015eb9f5ca2b5c6
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: fc4a7e9acb15f77140732638b2982dd4a9dae9ce
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921323"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84575181"
 ---
-# <a name="getting-started-sample"></a><span data-ttu-id="5e771-102">入门示例</span><span class="sxs-lookup"><span data-stu-id="5e771-102">Getting Started Sample</span></span>
+# <a name="getting-started-sample"></a><span data-ttu-id="f5018-102">入门示例</span><span class="sxs-lookup"><span data-stu-id="f5018-102">Getting Started Sample</span></span>
 
-<span data-ttu-id="5e771-103">入门示例演示如何使用 Windows Communication Foundation （WCF）实现典型的服务和典型的客户端。</span><span class="sxs-lookup"><span data-stu-id="5e771-103">The Getting Started sample demonstrates how to implement a typical service and a typical client using Windows Communication Foundation (WCF).</span></span> <span data-ttu-id="5e771-104">此示例是所有其他基本技术示例的基础。</span><span class="sxs-lookup"><span data-stu-id="5e771-104">This sample is the basis for all other basic technology samples.</span></span>
+<span data-ttu-id="f5018-103">入门示例演示如何使用 Windows Communication Foundation （WCF）实现典型的服务和典型的客户端。</span><span class="sxs-lookup"><span data-stu-id="f5018-103">The Getting Started sample demonstrates how to implement a typical service and a typical client using Windows Communication Foundation (WCF).</span></span> <span data-ttu-id="f5018-104">此示例是所有其他基本技术示例的基础。</span><span class="sxs-lookup"><span data-stu-id="f5018-104">This sample is the basis for all other basic technology samples.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5e771-105">本主题的最后介绍了此示例的设置过程和生成说明。</span><span class="sxs-lookup"><span data-stu-id="5e771-105">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>
+> <span data-ttu-id="f5018-105">本主题的最后介绍了此示例的设置过程和生成说明。</span><span class="sxs-lookup"><span data-stu-id="f5018-105">The setup procedure and build instructions for this sample are located at the end of this topic.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="5e771-106">您的计算机上可能已安装这些示例。</span><span class="sxs-lookup"><span data-stu-id="5e771-106">The samples may already be installed on your computer.</span></span> <span data-ttu-id="5e771-107">在继续操作之前，请先检查以下（默认）目录：</span><span class="sxs-lookup"><span data-stu-id="5e771-107">Check for the following (default) directory before continuing.</span></span>
+> <span data-ttu-id="f5018-106">您的计算机上可能已安装这些示例。</span><span class="sxs-lookup"><span data-stu-id="f5018-106">The samples may already be installed on your computer.</span></span> <span data-ttu-id="f5018-107">在继续操作之前，请先检查以下（默认）目录：</span><span class="sxs-lookup"><span data-stu-id="f5018-107">Check for the following (default) directory before continuing.</span></span>
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> <span data-ttu-id="5e771-108">如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。</span><span class="sxs-lookup"><span data-stu-id="5e771-108">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="5e771-109">此示例位于以下目录：</span><span class="sxs-lookup"><span data-stu-id="5e771-109">This sample is located in the following directory.</span></span>
+> <span data-ttu-id="f5018-108">如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。</span><span class="sxs-lookup"><span data-stu-id="f5018-108">If this directory does not exist, go to [Windows Communication Foundation (WCF) and Windows Workflow Foundation (WF) Samples for .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) to download all Windows Communication Foundation (WCF) and [!INCLUDE[wf1](../../../../includes/wf1-md.md)] samples.</span></span> <span data-ttu-id="f5018-109">此示例位于以下目录：</span><span class="sxs-lookup"><span data-stu-id="f5018-109">This sample is located in the following directory.</span></span>
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\GettingStarted\GettingStarted`
 
-<span data-ttu-id="5e771-110">服务描述它在服务协定中执行的操作，服务协定由服务作为元数据公开。</span><span class="sxs-lookup"><span data-stu-id="5e771-110">The service describes the operations it performs in a service contract that it exposes publicly as metadata.</span></span> <span data-ttu-id="5e771-111">服务中还包含用来实现操作的代码。</span><span class="sxs-lookup"><span data-stu-id="5e771-111">The service also contains the code to implement the operations.</span></span>
+<span data-ttu-id="f5018-110">服务描述它在服务协定中执行的操作，服务协定由服务作为元数据公开。</span><span class="sxs-lookup"><span data-stu-id="f5018-110">The service describes the operations it performs in a service contract that it exposes publicly as metadata.</span></span> <span data-ttu-id="f5018-111">服务中还包含用来实现操作的代码。</span><span class="sxs-lookup"><span data-stu-id="f5018-111">The service also contains the code to implement the operations.</span></span>
 
-<span data-ttu-id="5e771-112">客户端中包含服务协定的定义，以及一个用来访问服务的代理类。</span><span class="sxs-lookup"><span data-stu-id="5e771-112">The client contains a definition of the service contract and a proxy class for accessing the service.</span></span> <span data-ttu-id="5e771-113">代理代码是使用[Svcutil.exe 元数据实用工具（）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)从服务元数据生成的。</span><span class="sxs-lookup"><span data-stu-id="5e771-113">The proxy code is generated from the service metadata using the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span>
+<span data-ttu-id="f5018-112">客户端中包含服务协定的定义，以及一个用来访问服务的代理类。</span><span class="sxs-lookup"><span data-stu-id="f5018-112">The client contains a definition of the service contract and a proxy class for accessing the service.</span></span> <span data-ttu-id="f5018-113">代理代码是使用[Svcutil.exe 元数据实用工具（）](../servicemodel-metadata-utility-tool-svcutil-exe.md)从服务元数据生成的。</span><span class="sxs-lookup"><span data-stu-id="f5018-113">The proxy code is generated from the service metadata using the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span>
 
-<span data-ttu-id="5e771-114">在 Windows Vista 上，该服务承载于 Windows 激活服务（WAS）中。</span><span class="sxs-lookup"><span data-stu-id="5e771-114">On Windows Vista, the service is hosted in the Windows Activation Service (WAS).</span></span> <span data-ttu-id="5e771-115">在 Windows XP 和 Windows Server 2003 上，它是由 Internet Information Services （IIS）和 ASP.NET 承载的。</span><span class="sxs-lookup"><span data-stu-id="5e771-115">On Windows XP and Windows Server 2003, it is hosted by Internet Information Services (IIS) and ASP.NET.</span></span> <span data-ttu-id="5e771-116">如果将服务承载于 IIS 或 WAS 中，那么，在首次访问服务时，系统将自动激活服务。</span><span class="sxs-lookup"><span data-stu-id="5e771-116">Hosting a service in IIS or WAS allows the service to be activated automatically when it is accessed for the first time.</span></span>
+<span data-ttu-id="f5018-114">在 Windows Vista 上，该服务承载于 Windows 激活服务（WAS）中。</span><span class="sxs-lookup"><span data-stu-id="f5018-114">On Windows Vista, the service is hosted in the Windows Activation Service (WAS).</span></span> <span data-ttu-id="f5018-115">在 Windows XP 和 Windows Server 2003 上，它是由 Internet Information Services （IIS）和 ASP.NET 承载的。</span><span class="sxs-lookup"><span data-stu-id="f5018-115">On Windows XP and Windows Server 2003, it is hosted by Internet Information Services (IIS) and ASP.NET.</span></span> <span data-ttu-id="f5018-116">如果将服务承载于 IIS 或 WAS 中，那么，在首次访问服务时，系统将自动激活服务。</span><span class="sxs-lookup"><span data-stu-id="f5018-116">Hosting a service in IIS or WAS allows the service to be activated automatically when it is accessed for the first time.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5e771-117">如果希望开始使用在控制台应用程序（而非 IIS）中承载服务的示例，请参阅[自承载](../../../../docs/framework/wcf/samples/self-host.md)示例。</span><span class="sxs-lookup"><span data-stu-id="5e771-117">If you would prefer to get started with a sample that hosts the service in a console application instead of IIS, see the [Self-Host](../../../../docs/framework/wcf/samples/self-host.md) sample.</span></span>
+> <span data-ttu-id="f5018-117">如果希望开始使用在控制台应用程序（而非 IIS）中承载服务的示例，请参阅[自承载](self-host.md)示例。</span><span class="sxs-lookup"><span data-stu-id="f5018-117">If you would prefer to get started with a sample that hosts the service in a console application instead of IIS, see the [Self-Host](self-host.md) sample.</span></span>
 
-<span data-ttu-id="5e771-118">服务和客户端的配置文件设置中均指定了访问详细信息，这些设置在部署时提供了灵活性。</span><span class="sxs-lookup"><span data-stu-id="5e771-118">The service and client specify access details in configuration file settings, which provide flexibility at the time of deployment.</span></span> <span data-ttu-id="5e771-119">其中包括指定地址、绑定和协定的终结点定义。</span><span class="sxs-lookup"><span data-stu-id="5e771-119">This includes an endpoint definition that specifies an address, binding, and contract.</span></span> <span data-ttu-id="5e771-120">绑定为如何访问服务指定了传输和安全详细信息。</span><span class="sxs-lookup"><span data-stu-id="5e771-120">The binding specifies transport and security details for how the service is to be accessed.</span></span>
+<span data-ttu-id="f5018-118">服务和客户端的配置文件设置中均指定了访问详细信息，这些设置在部署时提供了灵活性。</span><span class="sxs-lookup"><span data-stu-id="f5018-118">The service and client specify access details in configuration file settings, which provide flexibility at the time of deployment.</span></span> <span data-ttu-id="f5018-119">其中包括指定地址、绑定和协定的终结点定义。</span><span class="sxs-lookup"><span data-stu-id="f5018-119">This includes an endpoint definition that specifies an address, binding, and contract.</span></span> <span data-ttu-id="f5018-120">绑定为如何访问服务指定了传输和安全详细信息。</span><span class="sxs-lookup"><span data-stu-id="f5018-120">The binding specifies transport and security details for how the service is to be accessed.</span></span>
 
-<span data-ttu-id="5e771-121">服务配置了一个运行时行为来发布其元数据。</span><span class="sxs-lookup"><span data-stu-id="5e771-121">The service configures a run-time behavior to publish its metadata.</span></span>
+<span data-ttu-id="f5018-121">服务配置了一个运行时行为来发布其元数据。</span><span class="sxs-lookup"><span data-stu-id="f5018-121">The service configures a run-time behavior to publish its metadata.</span></span>
 
-<span data-ttu-id="5e771-122">该服务实现定义“请求-答复”通信模式的协定。</span><span class="sxs-lookup"><span data-stu-id="5e771-122">The service implements a contract that defines a request-reply communication pattern.</span></span> <span data-ttu-id="5e771-123">该协定由 `ICalculator` 接口定义，此接口公开数学运算（加、减、乘和除）。</span><span class="sxs-lookup"><span data-stu-id="5e771-123">The contract is defined by the `ICalculator` interface, which exposes math operations (add, subtract, multiply, and divide).</span></span> <span data-ttu-id="5e771-124">客户端向给定的数学运算发出请求，服务使用结果进行回复。</span><span class="sxs-lookup"><span data-stu-id="5e771-124">The client makes requests to a given math operation and the service replies with the result.</span></span> <span data-ttu-id="5e771-125">服务实现一个 `ICalculator` 协定，下面的代码对该协定进行了定义。</span><span class="sxs-lookup"><span data-stu-id="5e771-125">The service implements an `ICalculator` contract that is defined in the following code.</span></span>
+<span data-ttu-id="f5018-122">该服务实现定义“请求-答复”通信模式的协定。</span><span class="sxs-lookup"><span data-stu-id="f5018-122">The service implements a contract that defines a request-reply communication pattern.</span></span> <span data-ttu-id="f5018-123">该协定由 `ICalculator` 接口定义，此接口公开数学运算（加、减、乘和除）。</span><span class="sxs-lookup"><span data-stu-id="f5018-123">The contract is defined by the `ICalculator` interface, which exposes math operations (add, subtract, multiply, and divide).</span></span> <span data-ttu-id="f5018-124">客户端向给定的数学运算发出请求，服务使用结果进行回复。</span><span class="sxs-lookup"><span data-stu-id="f5018-124">The client makes requests to a given math operation and the service replies with the result.</span></span> <span data-ttu-id="f5018-125">服务实现一个 `ICalculator` 协定，下面的代码对该协定进行了定义。</span><span class="sxs-lookup"><span data-stu-id="f5018-125">The service implements an `ICalculator` contract that is defined in the following code.</span></span>
 
 ```vb
 ' Define a service contract.
@@ -76,7 +76,7 @@ public interface ICalculator
 }
 ```
 
-<span data-ttu-id="5e771-126">服务实现计算并返回相应的结果，如下面的示例代码中所示。</span><span class="sxs-lookup"><span data-stu-id="5e771-126">The service implementation calculates and returns the appropriate result, as shown in the following example code.</span></span>
+<span data-ttu-id="f5018-126">服务实现计算并返回相应的结果，如下面的示例代码中所示。</span><span class="sxs-lookup"><span data-stu-id="f5018-126">The service implementation calculates and returns the appropriate result, as shown in the following example code.</span></span>
 
 ```vb
 ' Service class which implements the service contract.
@@ -123,7 +123,7 @@ public class CalculatorService : ICalculator
 }
 ```
 
-<span data-ttu-id="5e771-127">服务会公开一个终结点，以便与使用配置文件 (Web.config) 定义的服务进行通信，如下面的示例配置中所示。</span><span class="sxs-lookup"><span data-stu-id="5e771-127">The service exposes an endpoint for communicating with the service, defined using a configuration file (Web.config), as shown in the following sample configuration.</span></span>
+<span data-ttu-id="f5018-127">服务会公开一个终结点，以便与使用配置文件 (Web.config) 定义的服务进行通信，如下面的示例配置中所示。</span><span class="sxs-lookup"><span data-stu-id="f5018-127">The service exposes an endpoint for communicating with the service, defined using a configuration file (Web.config), as shown in the following sample configuration.</span></span>
 
 ```xaml
 <services>
@@ -140,11 +140,11 @@ public class CalculatorService : ICalculator
 </services>
 ```
 
-<span data-ttu-id="5e771-128">服务在 IIS 或 WAS 主机所提供的基址处公开该终结点。</span><span class="sxs-lookup"><span data-stu-id="5e771-128">The service exposes the endpoint at the base address provided by the IIS or WAS host.</span></span> <span data-ttu-id="5e771-129">绑定是用标准 <xref:System.ServiceModel.WSHttpBinding> 进行配置的，该标准配置提供 HTTP 通信以及用来进行寻址和实现安全性的标准 Web 服务协议。</span><span class="sxs-lookup"><span data-stu-id="5e771-129">The binding is configured with a standard <xref:System.ServiceModel.WSHttpBinding>, which provides HTTP communication and standard Web service protocols for addressing and security.</span></span> <span data-ttu-id="5e771-130">协定是由服务实现的 `ICalculator`。</span><span class="sxs-lookup"><span data-stu-id="5e771-130">The contract is the `ICalculator` implemented by the service.</span></span>
+<span data-ttu-id="f5018-128">服务在 IIS 或 WAS 主机所提供的基址处公开该终结点。</span><span class="sxs-lookup"><span data-stu-id="f5018-128">The service exposes the endpoint at the base address provided by the IIS or WAS host.</span></span> <span data-ttu-id="f5018-129">绑定是用标准 <xref:System.ServiceModel.WSHttpBinding> 进行配置的，该标准配置提供 HTTP 通信以及用来进行寻址和实现安全性的标准 Web 服务协议。</span><span class="sxs-lookup"><span data-stu-id="f5018-129">The binding is configured with a standard <xref:System.ServiceModel.WSHttpBinding>, which provides HTTP communication and standard Web service protocols for addressing and security.</span></span> <span data-ttu-id="f5018-130">协定是由服务实现的 `ICalculator`。</span><span class="sxs-lookup"><span data-stu-id="f5018-130">The contract is the `ICalculator` implemented by the service.</span></span>
 
-<span data-ttu-id="5e771-131">配置后，可以在同一台计算机上的客户端 `http://localhost/servicemodelsamples/service.svc` 访问该服务。</span><span class="sxs-lookup"><span data-stu-id="5e771-131">As configured, the service can be accessed at `http://localhost/servicemodelsamples/service.svc` by a client on the same computer.</span></span> <span data-ttu-id="5e771-132">若要使远程计算机上的客户端能够访问该服务，必须指定完全限定域名，而不是本地主机。</span><span class="sxs-lookup"><span data-stu-id="5e771-132">For clients on remote computers to access the service, a fully-qualified domain name must be specified instead of localhost.</span></span>
+<span data-ttu-id="f5018-131">在配置后， `http://localhost/servicemodelsamples/service.svc` 同一台计算机上的客户端可以访问该服务。</span><span class="sxs-lookup"><span data-stu-id="f5018-131">As configured, the service can be accessed at `http://localhost/servicemodelsamples/service.svc` by a client on the same computer.</span></span> <span data-ttu-id="f5018-132">若要使远程计算机上的客户端能够访问该服务，必须指定完全限定域名，而不是本地主机。</span><span class="sxs-lookup"><span data-stu-id="f5018-132">For clients on remote computers to access the service, a fully-qualified domain name must be specified instead of localhost.</span></span>
 
-<span data-ttu-id="5e771-133">默认情况下，框架不公开任何元数据。</span><span class="sxs-lookup"><span data-stu-id="5e771-133">The framework does not expose metadata by default.</span></span> <span data-ttu-id="5e771-134">因此，该服务会打开 <xref:System.ServiceModel.Description.ServiceMetadataBehavior> 并在 `http://localhost/servicemodelsamples/service.svc/mex`公开元数据交换（MEX）终结点。</span><span class="sxs-lookup"><span data-stu-id="5e771-134">As such, the service turns on the <xref:System.ServiceModel.Description.ServiceMetadataBehavior> and exposes a metadata exchange (MEX) endpoint at `http://localhost/servicemodelsamples/service.svc/mex`.</span></span> <span data-ttu-id="5e771-135">下面的配置对此进行了演示。</span><span class="sxs-lookup"><span data-stu-id="5e771-135">The following configuration demonstrates this.</span></span>
+<span data-ttu-id="f5018-133">默认情况下，框架不公开任何元数据。</span><span class="sxs-lookup"><span data-stu-id="f5018-133">The framework does not expose metadata by default.</span></span> <span data-ttu-id="f5018-134">因此，该服务将打开 <xref:System.ServiceModel.Description.ServiceMetadataBehavior> ，并在处公开元数据交换（MEX）终结点 `http://localhost/servicemodelsamples/service.svc/mex` 。</span><span class="sxs-lookup"><span data-stu-id="f5018-134">As such, the service turns on the <xref:System.ServiceModel.Description.ServiceMetadataBehavior> and exposes a metadata exchange (MEX) endpoint at `http://localhost/servicemodelsamples/service.svc/mex`.</span></span> <span data-ttu-id="f5018-135">下面的配置对此进行了演示。</span><span class="sxs-lookup"><span data-stu-id="f5018-135">The following configuration demonstrates this.</span></span>
 
 ```xaml
 <system.serviceModel>
@@ -174,19 +174,19 @@ public class CalculatorService : ICalculator
 </system.serviceModel>
 ```
 
-<span data-ttu-id="5e771-136">客户端使用指定的协定类型进行通信，该客户端类是由一种由一种类型的[元数据实用工具（svcutil.exe）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)生成的。</span><span class="sxs-lookup"><span data-stu-id="5e771-136">The client communicates using a given contract type by using a client class that is generated by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span> <span data-ttu-id="5e771-137">所生成的这个客户端类包含在 generatedClient.cs 文件或 generatedClient.vb 文件中。</span><span class="sxs-lookup"><span data-stu-id="5e771-137">This generated client is contained in the file generatedClient.cs or generatedClient.vb.</span></span> <span data-ttu-id="5e771-138">此实用工具检索给定服务的元数据，并生成要由客户端应用程序使用给定的协定类型进行通信的客户端。</span><span class="sxs-lookup"><span data-stu-id="5e771-138">This utility retrieves metadata for a given service and generates a client for use by the client application to communicate using a given contract type.</span></span> <span data-ttu-id="5e771-139">承载服务必须可用于生成客户端代码，因为将使用该服务来检索更新的元数据。</span><span class="sxs-lookup"><span data-stu-id="5e771-139">The hosted service must be available to generate the client code, because the service is used to retrieve the updated metadata.</span></span>
+<span data-ttu-id="f5018-136">客户端使用指定的协定类型进行通信，该客户端类是由一种由一种类型的[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)生成的。</span><span class="sxs-lookup"><span data-stu-id="f5018-136">The client communicates using a given contract type by using a client class that is generated by the [ServiceModel Metadata Utility Tool (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md).</span></span> <span data-ttu-id="f5018-137">所生成的这个客户端类包含在 generatedClient.cs 文件或 generatedClient.vb 文件中。</span><span class="sxs-lookup"><span data-stu-id="f5018-137">This generated client is contained in the file generatedClient.cs or generatedClient.vb.</span></span> <span data-ttu-id="f5018-138">此实用工具检索给定服务的元数据，并生成要由客户端应用程序使用给定的协定类型进行通信的客户端。</span><span class="sxs-lookup"><span data-stu-id="f5018-138">This utility retrieves metadata for a given service and generates a client for use by the client application to communicate using a given contract type.</span></span> <span data-ttu-id="f5018-139">承载服务必须可用于生成客户端代码，因为将使用该服务来检索更新的元数据。</span><span class="sxs-lookup"><span data-stu-id="f5018-139">The hosted service must be available to generate the client code, because the service is used to retrieve the updated metadata.</span></span>
 
- <span data-ttu-id="5e771-140">在客户端目录中通过从 SDK 命令提示运行以下命令来生成类型化代理：</span><span class="sxs-lookup"><span data-stu-id="5e771-140">Run the following command from the SDK command prompt in the client directory to generate the typed proxy:</span></span>
+ <span data-ttu-id="f5018-140">在客户端目录中通过从 SDK 命令提示运行以下命令来生成类型化代理：</span><span class="sxs-lookup"><span data-stu-id="f5018-140">Run the following command from the SDK command prompt in the client directory to generate the typed proxy:</span></span>
 
 ```console
 svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost/servicemodelsamples/service.svc/mex /out:generatedClient.cs
 ```
 
-<span data-ttu-id="5e771-141">若要在 Visual Basic 中生成客户端，请从 SDK 命令提示中键入以下命令：</span><span class="sxs-lookup"><span data-stu-id="5e771-141">To generate client in Visual Basic type the following from the SDK command prompt:</span></span>
+<span data-ttu-id="f5018-141">若要在 Visual Basic 中生成客户端，请从 SDK 命令提示中键入以下命令：</span><span class="sxs-lookup"><span data-stu-id="f5018-141">To generate client in Visual Basic type the following from the SDK command prompt:</span></span>
 
 `Svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples" http://localhost/servicemodelsamples/service.svc/mex /l:vb /out:generatedClient.vb`
 
-<span data-ttu-id="5e771-142">通过使用所生成的客户端类，客户端可以通过配置相应的地址和绑定来访问给定的服务终结点。</span><span class="sxs-lookup"><span data-stu-id="5e771-142">By using the generated client, the client can access a given service endpoint by configuring the appropriate address and binding.</span></span> <span data-ttu-id="5e771-143">像服务一样，客户端使用配置文件 (App.config) 来指定要与其通信的终结点。</span><span class="sxs-lookup"><span data-stu-id="5e771-143">Like the service, the client uses a configuration file (App.config) to specify the endpoint with which it wants to communicate.</span></span> <span data-ttu-id="5e771-144">客户端终结点配置由服务终结点的绝对地址、绑定和协定组成，如下面的示例中所示。</span><span class="sxs-lookup"><span data-stu-id="5e771-144">The client endpoint configuration consists of an absolute address for the service endpoint, the binding, and the contract, as shown in the following example.</span></span>
+<span data-ttu-id="f5018-142">通过使用所生成的客户端类，客户端可以通过配置相应的地址和绑定来访问给定的服务终结点。</span><span class="sxs-lookup"><span data-stu-id="f5018-142">By using the generated client, the client can access a given service endpoint by configuring the appropriate address and binding.</span></span> <span data-ttu-id="f5018-143">像服务一样，客户端使用配置文件 (App.config) 来指定要与其通信的终结点。</span><span class="sxs-lookup"><span data-stu-id="f5018-143">Like the service, the client uses a configuration file (App.config) to specify the endpoint with which it wants to communicate.</span></span> <span data-ttu-id="f5018-144">客户端终结点配置由服务终结点的绝对地址、绑定和协定组成，如下面的示例中所示。</span><span class="sxs-lookup"><span data-stu-id="f5018-144">The client endpoint configuration consists of an absolute address for the service endpoint, the binding, and the contract, as shown in the following example.</span></span>
 
 ```xaml
 <client>
@@ -197,7 +197,7 @@ svcutil.exe /n:"http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Sam
 </client>
 ```
 
-<span data-ttu-id="5e771-145">该客户端实现将实例化客户端，并使用类型化接口开始与服务通信，如下面的示例代码中所示。</span><span class="sxs-lookup"><span data-stu-id="5e771-145">The client implementation instantiates the client and uses the typed interface to begin communicating with the service, as shown in the following example code.</span></span>
+<span data-ttu-id="f5018-145">该客户端实现将实例化客户端，并使用类型化接口开始与服务通信，如下面的示例代码中所示。</span><span class="sxs-lookup"><span data-stu-id="f5018-145">The client implementation instantiates the client and uses the typed interface to begin communicating with the service, as shown in the following example code.</span></span>
 
 ```vb
 ' Create a client
@@ -262,7 +262,7 @@ Console.WriteLine("Divide({0},{1}) = {2}", value1, value2, result);
 client.Close();
 ```
 
-<span data-ttu-id="5e771-146">运行示例时，操作请求和响应将显示在客户端控制台窗口中。</span><span class="sxs-lookup"><span data-stu-id="5e771-146">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="5e771-147">在客户端窗口中按 Enter 可以关闭客户端。</span><span class="sxs-lookup"><span data-stu-id="5e771-147">Press ENTER in the client window to shut down the client.</span></span>
+<span data-ttu-id="f5018-146">运行示例时，操作请求和响应将显示在客户端控制台窗口中。</span><span class="sxs-lookup"><span data-stu-id="f5018-146">When you run the sample, the operation requests and responses are displayed in the client console window.</span></span> <span data-ttu-id="f5018-147">在客户端窗口中按 Enter 可以关闭客户端。</span><span class="sxs-lookup"><span data-stu-id="f5018-147">Press ENTER in the client window to shut down the client.</span></span>
 
 ```output
 Add(100,15.99) = 115.99
@@ -273,17 +273,17 @@ Divide(22,7) = 3.14285714285714
 Press <ENTER> to terminate client.
 ```
 
-<span data-ttu-id="5e771-148">此入门示例演示了一种创建服务和客户端的标准方法。</span><span class="sxs-lookup"><span data-stu-id="5e771-148">The Getting Started sample shows the standard way to create a service and client.</span></span> <span data-ttu-id="5e771-149">本示例中的其他[基本](../../../../docs/framework/wcf/samples/basic-sample.md)版本用于演示特定产品功能。</span><span class="sxs-lookup"><span data-stu-id="5e771-149">The other [Basic](../../../../docs/framework/wcf/samples/basic-sample.md) build on this sample to demonstrate specific product features.</span></span>
+<span data-ttu-id="f5018-148">此入门示例演示了一种创建服务和客户端的标准方法。</span><span class="sxs-lookup"><span data-stu-id="f5018-148">The Getting Started sample shows the standard way to create a service and client.</span></span> <span data-ttu-id="f5018-149">本示例中的其他[基本](basic-sample.md)版本用于演示特定产品功能。</span><span class="sxs-lookup"><span data-stu-id="f5018-149">The other [Basic](basic-sample.md) build on this sample to demonstrate specific product features.</span></span>
 
-### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="5e771-150">设置、生成和运行示例</span><span class="sxs-lookup"><span data-stu-id="5e771-150">To set up, build, and run the sample</span></span>
+### <a name="to-set-up-build-and-run-the-sample"></a><span data-ttu-id="f5018-150">设置、生成和运行示例</span><span class="sxs-lookup"><span data-stu-id="f5018-150">To set up, build, and run the sample</span></span>
 
-1. <span data-ttu-id="5e771-151">确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。</span><span class="sxs-lookup"><span data-stu-id="5e771-151">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).</span></span>
+1. <span data-ttu-id="f5018-151">确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。</span><span class="sxs-lookup"><span data-stu-id="f5018-151">Ensure that you have performed the [One-Time Setup Procedure for the Windows Communication Foundation Samples](one-time-setup-procedure-for-the-wcf-samples.md).</span></span>
 
-2. <span data-ttu-id="5e771-152">若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。</span><span class="sxs-lookup"><span data-stu-id="5e771-152">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).</span></span>
+2. <span data-ttu-id="f5018-152">若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。</span><span class="sxs-lookup"><span data-stu-id="f5018-152">To build the C# or Visual Basic .NET edition of the solution, follow the instructions in [Building the Windows Communication Foundation Samples](building-the-samples.md).</span></span>
 
-3. <span data-ttu-id="5e771-153">若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/running-the-samples.md)中的说明进行操作。</span><span class="sxs-lookup"><span data-stu-id="5e771-153">To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/running-the-samples.md).</span></span>
+3. <span data-ttu-id="f5018-153">若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。</span><span class="sxs-lookup"><span data-stu-id="f5018-153">To run the sample in a single- or cross-computer configuration, follow the instructions in [Running the Windows Communication Foundation Samples](running-the-samples.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="5e771-154">另请参阅</span><span class="sxs-lookup"><span data-stu-id="5e771-154">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f5018-154">另请参阅</span><span class="sxs-lookup"><span data-stu-id="f5018-154">See also</span></span>
 
-- [<span data-ttu-id="5e771-155">如何：在托管应用程序中托管 WCF 服务</span><span class="sxs-lookup"><span data-stu-id="5e771-155">How to: Host a WCF Service in a Managed Application</span></span>](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)
-- [<span data-ttu-id="5e771-156">如何：在 IIS 中承载 WCF 服务</span><span class="sxs-lookup"><span data-stu-id="5e771-156">How to: Host a WCF Service in IIS</span></span>](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)
+- [<span data-ttu-id="f5018-155">如何：在托管应用程序中承载 WCF 服务</span><span class="sxs-lookup"><span data-stu-id="f5018-155">How to: Host a WCF Service in a Managed Application</span></span>](../how-to-host-a-wcf-service-in-a-managed-application.md)
+- [<span data-ttu-id="f5018-156">如何：在 IIS 中承载 WCF 服务</span><span class="sxs-lookup"><span data-stu-id="f5018-156">How to: Host a WCF Service in IIS</span></span>](../feature-details/how-to-host-a-wcf-service-in-iis.md)
