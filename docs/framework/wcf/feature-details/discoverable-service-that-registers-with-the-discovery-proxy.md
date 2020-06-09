@@ -2,15 +2,15 @@
 title: 如何：实现向发现代理注册的可发现的服务
 ms.date: 03/30/2017
 ms.assetid: eb275bc1-535b-44c8-b9f3-0b75e9aa473b
-ms.openlocfilehash: 053ace300610cd4129c4541f4e2658ac8d09da85
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: bf878dff59a9a258567ff99098b0b3f8761194e2
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626988"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599225"
 ---
 # <a name="how-to-implement-a-discoverable-service-that-registers-with-the-discovery-proxy"></a>如何：实现向发现代理注册的可发现的服务
-本主题是讨论如何实现发现代理的四个主题中的第二个主题。 在上一主题中，[如何：实现发现代理](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)，实现发现代理。 在本主题中，创建将发送公告消息的 WCF 服务 (`Hello`和`Bye`) 到发现代理，从而导致它来注册和注销本身向发现代理。
+本主题是讨论如何实现发现代理的四个主题中的第二个主题。 在上一个主题中，[如何：实现发现代理](how-to-implement-a-discovery-proxy.md)，你已实现了发现代理。 在本主题中，你将创建一个 WCF 服务，该服务将公告消息（ `Hello` 和 `Bye` ）发送到发现代理，使其能够向发现代理注册并向其注销。
 
 ### <a name="to-define-the-service-contract"></a>定义服务协定
 
@@ -156,7 +156,7 @@ ms.locfileid: "64626988"
     }
     ```
 
-至此您已完成可检测到的服务的实现过程。 继续阅读[如何：实现使用发现代理查找服务的客户端应用程序](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)。
+至此您已完成可检测到的服务的实现过程。 继续[操作如何：实现使用发现代理查找服务的客户端应用程序](client-app-discovery-proxy-to-find-a-service.md)。
 
 ## <a name="example"></a>示例
  下面是本主题中使用的代码的完整清单。
@@ -289,8 +289,8 @@ namespace Microsoft.Samples.Discovery
 }
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [WCF 发现](../../../../docs/framework/wcf/feature-details/wcf-discovery.md)
-- [如何：实现发现代理](../../../../docs/framework/wcf/feature-details/how-to-implement-a-discovery-proxy.md)
-- [如何：实现使用发现代理查找服务的客户端应用程序](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
+- [WCF Discovery](wcf-discovery.md)
+- [如何：实现发现代理](how-to-implement-a-discovery-proxy.md)
+- [如何：实现使用发现代理查找服务的客户端应用程序](client-app-discovery-proxy-to-find-a-service.md)

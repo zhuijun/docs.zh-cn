@@ -2,28 +2,28 @@
 title: MSMQ 4.0 中的病毒消息处理
 ms.date: 03/30/2017
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
-ms.openlocfilehash: 4b662094923c85e825edcc9025a73f1a1b42cb9b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 54e69d60aabb3793ef4a8d800dd0e6238c28f231
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79144235"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602435"
 ---
 # <a name="poison-message-handling-in-msmq-40"></a>MSMQ 4.0 中的病毒消息处理
-本示例演示如何在服务中执行病毒消息处理。 此示例基于[交易 MSMQ 绑定](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)示例。 其中使用到了 `netMsmqBinding`。 此服务是自承载控制台应用程序，通过它可以观察服务接收排队消息。
+本示例演示如何在服务中执行病毒消息处理。 此示例基于已进行[事务处理的 MSMQ 绑定](transacted-msmq-binding.md)示例。 其中使用到了 `netMsmqBinding`。 此服务是自承载控制台应用程序，通过它可以观察服务接收排队消息。
 
  在排队通信中，客户端使用队列与服务进行通信。 更确切地说，客户端向队列发送消息。 服务从队列接收消息。 因此不必同时运行服务和客户端便可使用队列进行通信。
 
- 病毒消息是一类当服务读取消息时不能对消息进行处理，并因此终止从中读取消息的事务时从队列重复读取的消息。 在这种情况下，将再次重试消息。 如果消息出现问题，这种情况在理论上将永远继续下去。 仅当使用事务从队列中读取并调用服务操作时，才能发生这种情况。
+ 病毒消息是一类当服务读取消息时不能对消息进行处理，并因此终止从中读取消息的事务时从队列重复读取的消息。 在这种情况下，将再次重试消息。 如果消息出现问题，这种情况在理论上将永远继续下去。 仅当使用事务从队列中读取并调用服务操作时，才会发生这种情况。
 
  根据 MSMQ 版本，NetMsmqBinding 支持对病毒消息进行有限检测和完全检测。 在已经将消息检测为病毒后，可以通过多种方式对消息进行处理。 同样，根据 MSMQ 版本，NetMsmqBinding 支持对病毒消息进行有限处理和完全处理。
 
- 此示例说明了 Windows Server 2003 和 Windows XP 平台上提供的有限毒剂设施，以及 Windows Vista 上提供的完整毒物设施。 在这两个示例中，目标是将有害消息从队列中移至另一个队列。 然后，该队列可以通过有害消息服务提供服务。
+ 此示例演示了 windows Server 2003 和 Windows XP 平台上提供的有限病毒功能，以及 Windows Vista 上提供的完整病毒功能。 在这两个示例中，目标是将病毒消息从队列移出到另一个队列。 然后，可以通过病毒消息服务来处理该队列。
 
 ## <a name="msmq-v40-poison-handling-sample"></a>MSMQ v4.0 病毒处理示例
- 在 Windows Vista 中，MSMQ 提供了一个可用于存储有害消息的毒死子队列工具。 此示例演示了使用 Windows Vista 处理有害消息的最佳做法。
+ 在 Windows Vista 中，MSMQ 提供了一个可用于存储病毒消息的病毒子队列设备。 此示例演示使用 Windows Vista 处理病毒消息的最佳实践。
 
- Windows Vista 中的有害消息检测非常复杂。 有 3 属性可帮助检测。 <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> 是重新从队列中读取给定消息并将其调度到应用程序中以进行处理的次数。 当由于某一消息无法调度到应用程序或应用程序在服务操作中回滚事务，该消息返回到队列中时，即会从队列中重新读取该消息。 <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A> 是将消息移动到重试队列的次数。 当达到 <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> 时，即会将该消息移动到重试队列。 属性 <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A> 是将消息从重试队列移回到主队列之前的时间延迟。 <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> 重置为 0。 再次尝试消息。 如果读取消息的所有尝试都失败，则会将该消息标记为已中毒。
+ Windows Vista 中的病毒消息检测功能非常复杂。 有 3 属性可帮助检测。 <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> 是重新从队列中读取给定消息并将其调度到应用程序中以进行处理的次数。 当由于某一消息无法调度到应用程序或应用程序在服务操作中回滚事务，该消息返回到队列中时，即会从队列中重新读取该消息。 <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A> 是将消息移动到重试队列的次数。 当达到 <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> 时，即会将该消息移动到重试队列。 属性 <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A> 是将消息从重试队列移回到主队列之前的时间延迟。 <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> 重置为 0。 再次尝试消息。 如果读取消息的所有尝试都失败，则会将该消息标记为已中毒。
 
  一旦将消息标记为已中毒，则将按照 <xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A> 枚举中的设置来处理该消息。 迭代可能的值：
 
@@ -31,11 +31,11 @@ ms.locfileid: "79144235"
 
 - 放置：将放置消息。
 
-- 移动：将消息移动到有害消息子队列。 此值仅在 Windows Vista 上可用。
+- Move：将消息移动到病毒消息子队列。 此值仅适用于 Windows Vista。
 
-- Reject：要通过将消息发送回发送方死信队列来拒绝消息。 此值仅在 Windows Vista 上可用。
+- Reject：要通过将消息发送回发送方死信队列来拒绝消息。 此值仅适用于 Windows Vista。
 
- 示例演示了如何使用 `Move` 处理病毒消息。 `Move`使消息移动到有害子队列。
+ 示例演示了如何使用 `Move` 处理病毒消息。 `Move`使消息移动到病毒子队列。
 
  服务协定是 `IOrderProcessor`，它定义了适合与队列一起使用的单向服务。
 
@@ -48,7 +48,7 @@ public interface IOrderProcessor
 }
 ```
 
- 该服务操作显示一条指示它正在处理订单的消息。 为了演示有害消息功能，`SubmitPurchaseOrder`服务操作会引发一个异常，用于在随机调用服务时回滚事务。 这将导致消息被放回队列中。 并最终将消息标记为病毒。 配置设置为将毒消息移动到毒死子队列。
+ 该服务操作显示一条指示它正在处理订单的消息。 为了演示病毒消息功能， `SubmitPurchaseOrder` 服务操作将引发异常，以便在服务的随机调用中回滚事务。 这将导致消息被放回队列中。 并最终将消息标记为病毒。 将该配置设置为将病毒消息移动到病毒子队列。
 
 ```csharp
 // Service class that implements the service contract.
@@ -157,7 +157,7 @@ public class OrderProcessorService : IOrderProcessor
 ## <a name="processing-messages-from-the-poison-message-queue"></a>处理病毒消息队列中的消息
  病毒消息服务从最终病毒消息队列中读取消息并处理这些消息。
 
- 病毒消息队列中的消息是指发送到正在处理消息的服务的消息，这可能不同于病毒消息服务终结点。 因此，当毒消息服务从队列中读取消息时，WCF 通道层会发现终结点不匹配，并且不调度消息。 在这种情况下，消息将发送到订单处理服务，但将由病毒消息服务接收。 如果无论消息是否发送到不同的终结点都要继续接收消息，则我们必须添加 `ServiceBehavior` 来筛选地址，其中匹配标准是要匹配消息发送到的任何服务终结点。 这是成功处理从病毒消息队列中读取的消息所必需的。
+ 病毒消息队列中的消息是指发送到正在处理消息的服务的消息，这可能不同于病毒消息服务终结点。 因此，当病毒消息服务从队列中读取消息时，WCF 通道层将查找终结点中不匹配项，并且不会调度消息。 在这种情况下，消息将发送到订单处理服务，但将由病毒消息服务接收。 如果无论消息是否发送到不同的终结点都要继续接收消息，则我们必须添加 `ServiceBehavior` 来筛选地址，其中匹配标准是要匹配消息发送到的任何服务终结点。 这是成功处理从病毒消息队列中读取的消息所必需的。
 
  病毒消息服务实现本身非常类似于服务实现。 它实现协定并处理订单。 代码示例如下所示。
 
@@ -206,7 +206,7 @@ public class OrderProcessorService : IOrderProcessor
     }
 ```
 
- 与从订单队列读取消息的订单处理服务不同，毒消息服务从毒死子队列中读取消息。 毒队列是主队列的子队列，名为"毒"，由 MSMQ 自动生成。 要访问它，请提供主队列名称，后跟";" 和子队列名称（在本例中为 -"毒"，如以下示例配置所示）。
+ 不同于从订单队列读取消息的订单处理服务，病毒消息服务从病毒子队列读取消息。 病毒队列是主队列的子队列，名为 "有害"，由 MSMQ 自动生成。 若要访问它，请提供主队列名称，后跟一个 ";" 和子队列名称，在本例中为 "有害"，如下面的示例配置中所示。
 
 > [!NOTE]
 > 在 MSMQ 3.0 版的示例中，病毒队列名称不是子队列，而是将消息移动到的队列。
@@ -273,23 +273,23 @@ Processing Purchase Order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89
 
 #### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例
 
-1. 确保已为 Windows[通信基础示例执行一次性设置过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
 2. 如果先运行服务，则它将检查以确保队列存在。 如果队列不存在，则服务将创建一个队列。 可以先运行服务以创建队列或通过 MSMQ 队列管理器创建一个队列。 执行下面的步骤来在 Windows 2008 中创建队列。
 
-    1. 2012 年在可视化工作室中打开服务器管理器。
+    1. 在 Visual Studio 2012 中打开服务器管理器。
 
-    2. 展开 **"功能"** 选项卡。
+    2. 展开 "**功能**" 选项卡。
 
-    3. 右键单击 **"专用消息队列**"，然后选择 **"新建**"**专用队列**。
+    3. 右键单击 "**专用消息队列**"，然后选择 "**新建****专用队列**"。
 
-    4. 选中 **"事务"** 框。
+    4. 选中 "**事务性**" 框。
 
-    5. 输入`ServiceModelSamplesTransacted`为新队列的名称。
+    5. 输入 `ServiceModelSamplesTransacted` 作为新队列的名称。
 
-3. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+3. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。
 
-4. 要在单台计算机或跨计算机配置中运行示例，请更改队列名称以反映实际主机名而不是本地主机，并按照[运行 Windows 通信基础示例](../../../../docs/framework/wcf/samples/running-the-samples.md)中的说明进行操作。
+4. 若要以单一计算机配置或跨计算机配置来运行示例，请更改队列名称以反映实际主机名而不是 localhost，并按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
  默认情况下对 `netMsmqBinding` 绑定传输启用了安全性。 `MsmqAuthenticationMode` 和 `MsmqProtectionLevel` 这两个属性共同确定了传输安全性的类型。 默认情况下，身份验证模式设置为 `Windows`，保护级别设置为 `Sign`。 MSMQ 必须是域的成员才可以提供身份验证和签名功能。 如果在不是域成员的计算机上运行此示例，则会接收以下错误：“用户的内部消息队列证书不存在”。
 
@@ -309,18 +309,18 @@ Processing Purchase Order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89
 
      确保通过设置终结点的 bindingConfiguration 属性将终结点与绑定关联。
 
-2. 在运行示例之前，请确保更改"毒邮件服务器"、服务器和客户端上的配置。
+2. 请确保在运行示例前更改 PoisonMessageServer、服务器和客户端上的配置。
 
     > [!NOTE]
     > 将 `security mode` 设置为 `None` 等效于将 `MsmqAuthenticationMode`、`MsmqProtectionLevel` 和 `Message` 安全设置为 `None`。  
   
-3. 若要使元数据交换正常工作，应当向 http 绑定注册一个 URL。 这要求服务在具有提升权限的命令窗口中运行。 否则，您会收到异常，例如： `Unhandled Exception: System.ServiceModel.AddressAccessDeniedException: HTTP could not register URL http://+:8000/ServiceModelSamples/service/. Your process does not have access rights to this namespace (see https://go.microsoft.com/fwlink/?LinkId=70353 for details). ---> System.Net.HttpListenerException: Access is denied`。  
+3. 若要使元数据交换正常工作，应当向 http 绑定注册一个 URL。 这要求服务在具有提升权限的命令窗口中运行。 否则，你将得到如下所示的异常： `Unhandled Exception: System.ServiceModel.AddressAccessDeniedException: HTTP could not register URL http://+:8000/ServiceModelSamples/service/. Your process does not have access rights to this namespace (see https://go.microsoft.com/fwlink/?LinkId=70353 for details). ---> System.Net.HttpListenerException: Access is denied` 。  
   
 > [!IMPORTANT]
 > 您的计算机上可能已安装这些示例。 在继续操作之前，请先检查以下（默认）目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Poison\MSMQ4`

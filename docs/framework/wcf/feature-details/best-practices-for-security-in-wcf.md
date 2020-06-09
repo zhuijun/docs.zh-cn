@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - best practices [WCF], security
 ms.assetid: 3639de41-1fa7-4875-a1d7-f393e4c8bd69
-ms.openlocfilehash: c8c0c084ac3b1cf06fc5f2b3df85fa979744e17b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c99ab5e1e72aefc688df1692091e60caf930d5e4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185421"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597613"
 ---
 # <a name="best-practices-for-security-in-wcf"></a>WCF 中安全性的最佳做法
-以下各节列出了在使用 Windows Communication Foundation (WCF) 创建安全应用程序时应考虑的最佳做法。 有关安全性的详细信息，请参阅[安全注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)、[数据的安全注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)和[元数据的安全注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)。  
+以下各节列出了在使用 Windows Communication Foundation (WCF) 创建安全应用程序时应考虑的最佳做法。 有关安全性的详细信息，请参阅[安全注意事项](security-considerations-in-wcf.md)、[数据的安全注意事项](security-considerations-for-data.md)和[元数据的安全注意事项](security-considerations-with-metadata.md)。  
   
 ## <a name="identify-services-performing-windows-authentication-with-spns"></a>使用 SPN 标识执行 Windows 身份验证的服务  
  服务可以使用用户主体名称 (UPN) 或服务主体名称 (SPN) 来标识。 使用计算机帐户运行的服务（如网络服务）具有 SPN 标识，该标识对应于正在运行它们的计算机。 使用用户帐户运行的服务具有 UPN 标识，该标识对应于它们正在以其身份运行的用户，但可以使用 `setspn` 工具为该用户帐户分配一个 SPN。 配置服务以便可以通过 SPN 标识它，同时将连接到该服务的客户端配置为使用该 SPN，这可以提高对某些攻击的抵御能力。 此指导信息适用于使用 Kerberos 或 SSPI 协商的绑定。  即使 SSPI 降级为 NTLM，客户端应仍指定 SPN。  
@@ -45,19 +45,19 @@ ms.locfileid: "79185421"
  确保信任元数据的源，并确保没有人篡改元数据。 使用 HTTP 协议检索到的元数据是以明文形式发送的，可能被篡改。 如果服务使用 <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> 和 <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A> 属性，请根据服务创建者提供的 URL，使用 HTTPS 协议下载数据。  
   
 ## <a name="publish-metadata-using-security"></a>使用安全发布元数据  
- 要防止篡改服务的已发布元数据，可使用传输或消息级安全来保证元数据交换终结点的安全。 有关详细信息，请参阅[发布元数据终结点](../../../../docs/framework/wcf/publishing-metadata-endpoints.md)和[如何：使用代码发布服务的元数据](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-code.md)。  
+ 要防止篡改服务的已发布元数据，可使用传输或消息级安全来保证元数据交换终结点的安全。 有关详细信息，请参阅[发布元数据终结点](../publishing-metadata-endpoints.md)和[如何：使用代码发布服务的元数据](how-to-publish-metadata-for-a-service-using-code.md)。  
   
 ## <a name="ensure-use-of-local-issuer"></a>确保使用本地颁发者  
  如果为某个给定绑定指定了颁发者地址和绑定，则不对使用该绑定的终结点使用本地颁发者。 希望始终使用本地颁发者的客户应确保不使用这样的绑定，或修改绑定以使颁发者地址为 null。  
   
 ## <a name="saml-token-size-quotas"></a>SAML 令牌大小配额  
- 如果在消息中序列化安全断言标记语言 (SAML) 令牌，无论这些令牌是由安全令牌服务 (STS) 颁发的，还是客户端将其作为身份验证的一部分提交给服务，最大消息大小配额都必须足够大，以便能够容纳 SAML 令牌和其他消息部分。 正常情况下，默认消息大小配额足够使用。 但是，当 SAML 令牌由于包含数以百计的声明而过于庞大时，您可能需要提高配额，以便容纳序列化的令牌。 有关配额的详细信息，请参阅[数据的安全注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)。  
+ 如果在消息中序列化安全断言标记语言 (SAML) 令牌，无论这些令牌是由安全令牌服务 (STS) 颁发的，还是客户端将其作为身份验证的一部分提交给服务，最大消息大小配额都必须足够大，以便能够容纳 SAML 令牌和其他消息部分。 正常情况下，默认消息大小配额足够使用。 但是，当 SAML 令牌由于包含数以百计的声明而过于庞大时，您可能需要提高配额，以便容纳序列化的令牌。 有关配额的详细信息，请参阅[数据的安全注意事项](security-considerations-for-data.md)。  
   
 ## <a name="set-securitybindingelementincludetimestamp-to-true-on-custom-bindings"></a>将自定义绑定上的 SecurityBindingElement.IncludeTimestamp 设置为 True  
  创建自定义绑定时，必须将 <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> 设置为 `true`。 否则如果将 <xref:System.ServiceModel.Channels.SecurityBindingElement.IncludeTimestamp%2A> 设置为 `false`，并且客户端使用基于非对称密钥的令牌（例如 X509 证书），则不会对消息进行签名。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [安全注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [数据的安全注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-for-data.md)
-- [元数据的安全性注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
+- [安全注意事项](security-considerations-in-wcf.md)
+- [数据的安全考虑事项](security-considerations-for-data.md)
+- [元数据的安全注意事项](security-considerations-with-metadata.md)

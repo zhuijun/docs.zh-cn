@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0face17f-43ca-417b-9b33-737c0fc360df
-ms.openlocfilehash: 5eae08ab6b8dee5ebece66a1c41c87ebab3387bc
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 400ed8e5ee8b236e9d0f843f27b7c2112ec28861
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75963281"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601252"
 ---
 # <a name="how-to-call-wcf-service-operations-asynchronously"></a>如何：以异步方式调用 WCF 服务操作
 
 本文介绍客户端如何以异步方式访问服务操作。 本文中的服务实现 `ICalculator` 接口。 通过使用事件驱动的异步调用模型，客户端可以对此接口异步调用操作。 （有关基于事件的异步调用模型的详细信息，请参阅[采用基于事件的异步模式进行多线程编程](../../../standard/asynchronous-programming-patterns/event-based-asynchronous-pattern-eap.md)）。 有关演示如何在服务中异步实现操作的示例，请参阅[如何：实现异步服务操作](../how-to-implement-an-asynchronous-service-operation.md)。 有关同步和异步操作的详细信息，请参阅[同步和异步操作](../synchronous-and-asynchronous-operations.md)。  
   
 > [!NOTE]
-> 使用 <xref:System.ServiceModel.ChannelFactory%601> 时，不支持事件驱动的异步调用模型。 有关使用 <xref:System.ServiceModel.ChannelFactory%601>进行异步调用的信息，请参阅[如何：使用通道工厂以异步方式调用操作](../../../../docs/framework/wcf/feature-details/how-to-call-operations-asynchronously-using-a-channel-factory.md)。  
+> 使用 <xref:System.ServiceModel.ChannelFactory%601> 时，不支持事件驱动的异步调用模型。 有关使用进行异步调用的信息 <xref:System.ServiceModel.ChannelFactory%601> ，请参阅[如何：使用通道工厂以异步方式调用操作](how-to-call-operations-asynchronously-using-a-channel-factory.md)。  
   
 ## <a name="procedure"></a>过程  
   
 #### <a name="to-call-wcf-service-operations-asynchronously"></a>以异步方式调用 WCF 服务操作  
   
-1. 同时运行带有 `/async` 和 `/tcv:Version35` 命令选项的[Svcutil.exe 元数据实用工具（）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)工具，如以下命令中所示。  
+1. 同时运行带的[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)工具 `/async` 和 `/tcv:Version35` 命令选项，如下面的命令中所示。  
   
     ```console
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a /tcv:Version35  
@@ -31,17 +31,17 @@ ms.locfileid: "75963281"
   
      这除了同步和标准的基于委托的异步操作，还会生成一个包含以下内容的 WCF 客户端类：  
   
-    - 两个 <`operationName`>`Async` 操作与基于事件的异步调用方法一起使用。 例如：  
+    - 两个 <`operationName` > `Async` 操作，用于基于事件的异步调用方法。 例如：  
   
          [!code-csharp[EventAsync#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#1)]
          [!code-vb[EventAsync#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#1)]  
   
-    - 操作完成的窗体事件 <`operationName`>`Completed` 用于基于事件的异步调用方法。 例如：  
+    - <窗体的操作完成事件 `operationName` > `Completed` 与基于事件的异步调用方法一起使用。 例如：  
   
          [!code-csharp[EventAsync#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#2)]
          [!code-vb[EventAsync#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#2)]  
   
-    - 每个操作的 <xref:System.EventArgs?displayProperty=nameWithType> 类型（窗体 <`operationName`>`CompletedEventArgs`）用于基于事件的异步调用方法。 例如：  
+    - <xref:System.EventArgs?displayProperty=nameWithType>每个操作的类型（窗体 <`operationName` > `CompletedEventArgs` ）用于基于事件的异步调用方法。 例如：  
   
          [!code-csharp[EventAsync#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/generatedclient.cs#3)]
          [!code-vb[EventAsync#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/generatedclient.vb#3)]  
@@ -51,7 +51,7 @@ ms.locfileid: "75963281"
      [!code-csharp[EventAsync#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#4)]
      [!code-vb[EventAsync#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#4)]  
   
-3. 在调用操作之前，请使用类型 < 的新泛型 <xref:System.EventHandler%601?displayProperty=nameWithType>`operationName`>`EventArgs` 将处理程序方法（在上一步中创建）添加到 <`operationName`>事件。 然后调用 <`operationName`>`Async` 方法。 例如：  
+3. 在调用操作之前，请使用类型 <的新泛型， <xref:System.EventHandler%601?displayProperty=nameWithType> `operationName` > `EventArgs` 将处理程序方法（在上一步中创建）添加到 <`operationName` > `Completed` 事件。 然后调用 <`operationName` > `Async` 方法。 例如：  
   
      [!code-csharp[EventAsync#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#5)]
      [!code-vb[EventAsync#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#5)]  
@@ -66,4 +66,4 @@ ms.locfileid: "75963281"
   
 ## <a name="see-also"></a>另请参阅
 
-- [如何：实现异步服务操作](../../../../docs/framework/wcf/how-to-implement-an-asynchronous-service-operation.md)
+- [如何：实现异步服务操作](../how-to-implement-an-asynchronous-service-operation.md)

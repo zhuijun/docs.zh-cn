@@ -2,17 +2,17 @@
 title: 服务终结点和队列寻址
 ms.date: 03/30/2017
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-ms.openlocfilehash: 8b323993a698dac219e0f2be43e9b508a19065dd
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: a17e680732cd257fbdfd95eb09df8c53f5894400
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202415"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600382"
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>服务终结点和队列寻址
 本主题讨论客户端如何对从队列中读取的服务进行寻址以及服务终结点如何映射到队列。 作为提醒，下图显示了经典 Windows Communication Foundation （WCF）排队的应用程序部署。  
   
- ![排队应用程序关系图](../../../../docs/framework/wcf/feature-details/media/distributed-queue-figure.jpg "分布式队列图")  
+ ![排队应用程序关系图](media/distributed-queue-figure.jpg "分布式队列图")  
   
  客户端为了将消息发送到服务，需要确定该消息在目标队列中的地址。 服务为了从队列中读取消息，需要在目标队列中设置它的侦听地址。 WCF 中的寻址是基于统一资源标识符（URI）的，而消息队列（MSMQ）队列名称不是基于 URI 的。 因此，必须了解如何使用 WCF 来寻址在 MSMQ 中创建的队列。  
   
@@ -46,7 +46,7 @@ ms.locfileid: "84202415"
   
  队列地址用作侦听器从中读取消息的侦听 URI。 换言之，队列地址等效于 TCP 套接字的侦听端口。  
   
- 从队列中读取消息的终结点必须使用以前在打开 ServiceHost 时指定的同一方案指定队列地址。 有关示例，请参阅[NET MSMQ 绑定](../../../../docs/framework/wcf/samples/net-msmq-binding.md)。  
+ 从队列中读取消息的终结点必须使用以前在打开 ServiceHost 时指定的同一方案指定队列地址。 有关示例，请参阅[NET MSMQ 绑定](../samples/net-msmq-binding.md)。  
   
 ### <a name="multiple-contracts-in-a-queue"></a>队列中存在多个协定  
  队列中的消息可以实现不同的协定。 在这种情况下，下列条件中必须有一个成立才能成功读取并处理所有消息：  
@@ -89,7 +89,7 @@ ms.locfileid: "84202415"
   
  net.tcp：//localhost/[private/] \<*custom-dead-letter-queue-name*> 。  
   
- WCF 服务验证接收到的所有消息是否已发送到它正在侦听的特定队列。 如果消息的目标队列与它所在的队列不匹配，服务不会处理该消息。 这存在一个问题：侦听死信队列的服务必须寻址，因为死信队列中的任何消息都需要传递到别处。 若要从死信队列或病毒队列中读取消息，必须使用带有 `ServiceBehavior` 参数的 <xref:System.ServiceModel.AddressFilterMode.Any>。 有关示例，请参阅[死信队列](../../../../docs/framework/wcf/samples/dead-letter-queues.md)。  
+ WCF 服务验证接收到的所有消息是否已发送到它正在侦听的特定队列。 如果消息的目标队列与它所在的队列不匹配，服务不会处理该消息。 这存在一个问题：侦听死信队列的服务必须寻址，因为死信队列中的任何消息都需要传递到别处。 若要从死信队列或病毒队列中读取消息，必须使用带有 `ServiceBehavior` 参数的 <xref:System.ServiceModel.AddressFilterMode.Any>。 有关示例，请参阅[死信队列](../samples/dead-letter-queues.md)。  
   
 ## <a name="msmqintegrationbinding-and-service-addressing"></a>MsmqIntegrationBinding 和服务寻址  
  `MsmqIntegrationBinding` 用于与传统 MSMQ 应用程序进行通信。 为了便于与现有 MSMQ 应用程序进行互操作，WCF 仅支持格式名寻址。 因此，使用此绑定发送的消息必须符合 URI 方案。  
@@ -104,6 +104,6 @@ ms.locfileid: "84202415"
   
  请注意，对于 `MsmqIntegrationBinding`，不能使用 net.msmq:// 寻址。 由于 `MsmqIntegrationBinding` 支持自由格式的 MSMQ 格式名寻址，因此你可以使用 WCF 服务，该服务使用此绑定来使用 MSMQ 中的多路广播和通讯组列表功能。 一个例外是在使用 `CustomDeadLetterQueue` 时指定 `MsmqIntegrationBinding`。 它必须采用 net.msmq:// 形式，这与使用 `NetMsmqBinding` 进行指定的方式相似。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [承载排队应用程序的 Web](../../../../docs/framework/wcf/feature-details/web-hosting-a-queued-application.md)
+- [承载排队应用程序的 Web](web-hosting-a-queued-application.md)

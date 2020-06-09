@@ -2,17 +2,17 @@
 title: 独立诊断源示例
 ms.date: 03/30/2017
 ms.assetid: d31c6c1f-292c-4d95-8e23-ed8565970ea5
-ms.openlocfilehash: e8edb6c603e21a517244901993226fce3f055bbe
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 0402805b7eb5b0b224db32eb07780743e5f32fb3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141113"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600914"
 ---
 # <a name="stand-alone-diagnostics-feed-sample"></a>独立诊断源示例
 此示例演示如何使用 Windows Communication Foundation （WCF）为联合创建 RSS/Atom 源。 它是一个基本的 "Hello World" 程序，它显示对象模型的基础知识，以及如何在 Windows Communication Foundation （WCF）服务上对其进行设置。  
   
- WCF 将联合源建模为返回特殊数据类型的服务操作<xref:System.ServiceModel.Syndication.SyndicationFeedFormatter>。 <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> 的实例可以将源序列化为 RSS 2.0 和 Atom 1.0 格式。 下面的示例代码演示所使用的协定。  
+ WCF 将联合源建模为返回特殊数据类型的服务操作 <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> 。 <xref:System.ServiceModel.Syndication.SyndicationFeedFormatter> 的实例可以将源序列化为 RSS 2.0 和 Atom 1.0 格式。 下面的示例代码演示所使用的协定。  
   
 ```csharp  
 [ServiceContract(Namespace = "")]  
@@ -32,7 +32,7 @@ ms.locfileid: "82141113"
     }  
 ```  
   
- 此`GetProcesses`操作用<xref:System.ServiceModel.Web.WebGetAttribute>属性进行批注，该属性使您能够控制 WCF 如何向服务操作调度 HTTP GET 请求并指定所发送消息的格式。  
+ 此 `GetProcesses` 操作用属性进行批注 <xref:System.ServiceModel.Web.WebGetAttribute> ，该属性使您能够控制 WCF 如何向服务操作调度 HTTP GET 请求并指定所发送消息的格式。  
   
  与任何 WCF 服务一样，联合源可在任何托管的应用程序中自承载。 联合服务需要使用特定绑定 (<xref:System.ServiceModel.WebHttpBinding>) 和特定终结点行为 (<xref:System.ServiceModel.Description.WebHttpBehavior>) 才能正常运行。 新的 <xref:System.ServiceModel.Web.WebServiceHost> 类提供了一个方便的 API，用于在不使用特定配置的情况下创建此类终结点。  
   
@@ -49,9 +49,9 @@ WebServiceHost host = new WebServiceHost(typeof(ProcessService), new Uri("http:/
 <% @ServiceHost Language="C#|VB" Debug="true" Service="ProcessService" %>
 ```
   
- 由于此服务使用标准 HTTP GET 接收请求，因此可以使用任何识别 RSS 或 ATOM 的客户端来访问此服务。 例如，可以通过在识别 RSS 的浏览器中导航到或`http://localhost:8000/diagnostics/feed/?format=atom` `http://localhost:8000/diagnostics/feed/?format=rss`来查看此服务的输出。
+ 由于此服务使用标准 HTTP GET 接收请求，因此可以使用任何识别 RSS 或 ATOM 的客户端来访问此服务。 例如，可以通过在 `http://localhost:8000/diagnostics/feed/?format=atom` `http://localhost:8000/diagnostics/feed/?format=rss` 识别 RSS 的浏览器中导航到或来查看此服务的输出。
   
- 你还可以使用[WCF 联合对象模型如何映射到 Atom 和 RSS](../../../../docs/framework/wcf/feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md)来读取联合数据并使用命令性代码对其进行处理。  
+ 你还可以使用[WCF 联合对象模型如何映射到 Atom 和 RSS](../feature-details/how-the-wcf-syndication-object-model-maps-to-atom-and-rss.md)来读取联合数据并使用命令性代码对其进行处理。  
   
 ```csharp
 XmlReader reader = XmlReader.Create( "http://localhost:8000/diagnostics/feed/?format=rss",
@@ -82,14 +82,14 @@ foreach (SyndicationItem i in feed.Items)
 
 3. 运行控制台应用程序。
 
-4. 当控制台应用程序正在运行时，导航`http://localhost:8000/diagnostics/feed/?format=atom`到`http://localhost:8000/diagnostics/feed/?format=rss`或使用识别 RSS 的浏览器。
+4. 当控制台应用程序正在运行时，导航到 `http://localhost:8000/diagnostics/feed/?format=atom` 或 `http://localhost:8000/diagnostics/feed/?format=rss` 使用识别 RSS 的浏览器。
 
 > [!IMPORTANT]
 > 您的计算机上可能已安装这些示例。 在继续操作之前，请先检查以下（默认）目录：
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和[!INCLUDE[wf1](../../../../includes/wf1-md.md)]示例。 此示例位于以下目录：
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Syndication\DiagnosticsFeed`
 

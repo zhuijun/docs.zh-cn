@@ -2,19 +2,19 @@
 title: 如何：使用 WorkflowServiceHost 配置跟踪
 ms.date: 03/30/2017
 ms.assetid: ed1485fe-7529-4351-bca3-8bb915260b17
-ms.openlocfilehash: 3f78b77849d6da7dfff3bdcba90bb4d5200186a7
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 54594a8f464e77062c658606db6bc941e319f71d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81464161"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599095"
 ---
 # <a name="how-to-configure-tracking-with-workflowservicehost"></a>如何：使用 WorkflowServiceHost 配置跟踪
 本主题说明如何为 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] 中承载的 <xref:System.ServiceModel.Activities.WorkflowServiceHost>工作流配置跟踪。 可以通过指定服务行为使用 Web.config 文件进行配置。  
   
 ### <a name="configure-tracking-in-configuration"></a>在配置中配置跟踪  
   
-1. 在<xref:System.Activities.Tracking.EtwTrackingParticipant>配置文件中添加使用`behavior`<>元素，如以下示例所示。  
+1. <xref:System.Activities.Tracking.EtwTrackingParticipant> `behavior` 在配置文件中使用 <> 元素添加，如下面的示例中所示。  
   
     ```xml  
     <behaviors>  
@@ -27,9 +27,9 @@ ms.locfileid: "81464161"
     ```  
   
     > [!NOTE]
-    > 上面的配置示例使用的是简化配置。 有关详细信息，请参阅[简化配置](../../../../docs/framework/wcf/simplified-configuration.md)。  
+    > 上面的配置示例使用的是简化配置。 有关详细信息，请参阅[简化配置](../simplified-configuration.md)。  
   
-     上面的配置示例添加一个 <xref:System.Activities.Tracking.EtwTrackingParticipant>，并指定一个跟踪配置文件名称。 跟踪配置文件在<>`trackingProfile``tracking`元素中<>元素中创建。 跟踪配置文件包含跟踪查询，这些查询允许跟踪参与者订阅工作流实例的状态在运行时发生更改时发出的工作流事件。 下面的示例演示如何创建跟踪配置文件。  
+     上面的配置示例添加一个 <xref:System.Activities.Tracking.EtwTrackingParticipant>，并指定一个跟踪配置文件名称。 跟踪配置文件是在 `trackingProfile` <> 元素内的 <> 元素中创建的 `tracking` 。 跟踪配置文件包含跟踪查询，这些查询允许跟踪参与者订阅工作流实例的状态在运行时发生更改时发出的工作流事件。 下面的示例演示如何创建跟踪配置文件。  
   
     ```xml  
     <system.serviceModel>  
@@ -50,9 +50,9 @@ ms.locfileid: "81464161"
     </system.serviceModel>  
     ```  
   
-     有关跟踪配置文件的详细信息，请参阅[跟踪配置文件](../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)。  
+     有关跟踪配置文件的详细信息，请参阅[跟踪配置文件](../../windows-workflow-foundation/tracking-profiles.md)。  
   
-     有关跟踪的详细信息，请参阅[工作流跟踪和跟踪](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)。  
+     有关常规跟踪的详细信息，请参阅[工作流跟踪和跟踪](../../windows-workflow-foundation/workflow-tracking-and-tracing.md)。  
   
 ### <a name="configure-tracking-in-code"></a>在代码中配置跟踪  
   
@@ -62,14 +62,14 @@ ms.locfileid: "81464161"
     host.Description.Behaviors.Add(new EtwTrackingBehavior { ProfileName = "Sample Tracking Profile" });  
     ```  
   
-     上面的代码示例添加一个 <xref:System.Activities.Tracking.EtwTrackingParticipant>，并指定一个跟踪配置文件名称。 跟踪配置文件在<>`trackingProfile``tracking`元素<>元素中创建，如上一节所示。  
+     上面的代码示例添加一个 <xref:System.Activities.Tracking.EtwTrackingParticipant>，并指定一个跟踪配置文件名称。 跟踪配置文件是在 `trackingProfile` <> 元素内的 <> 元素中创建的 `tracking` ，如上一节所示。  
   
-     有关跟踪配置文件的详细信息，请参阅[跟踪配置文件](../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)。  
+     有关跟踪配置文件的详细信息，请参阅[跟踪配置文件](../../windows-workflow-foundation/tracking-profiles.md)。  
   
-     有关跟踪的详细信息，请参阅[工作流跟踪和跟踪](../../../../docs/framework/windows-workflow-foundation/workflow-tracking-and-tracing.md)。 有关以编程方式配置跟踪的示例，请参阅[配置工作流跟踪](../../../../docs/framework/windows-workflow-foundation/configuring-tracking-for-a-workflow.md)。  
+     有关常规跟踪的详细信息，请参阅[工作流跟踪和跟踪](../../windows-workflow-foundation/workflow-tracking-and-tracing.md)。 有关以编程方式配置跟踪的示例，请参阅为[工作流配置跟踪](../../windows-workflow-foundation/configuring-tracking-for-a-workflow.md)。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [WCF 服务的简化配置](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)
-- [工作流服务](../../../../docs/framework/wcf/feature-details/workflow-services.md)
-- [跟踪配置文件](../../../../docs/framework/windows-workflow-foundation/tracking-profiles.md)
+- [WCF 服务的简化配置](../samples/simplified-configuration-for-wcf-services.md)
+- [工作流服务](workflow-services.md)
+- [跟踪配置文件](../../windows-workflow-foundation/tracking-profiles.md)

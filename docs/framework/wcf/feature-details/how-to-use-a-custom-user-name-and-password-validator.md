@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - WCF, username and password
 ms.assetid: 8e08b74b-fa44-4018-b63d-0d0805f85e3f
-ms.openlocfilehash: 3d01a29671f42e80fdb7ca45223007aa60273ba9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 5ada34ca2d0d757ea333fed60aef179d6578356c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283257"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601174"
 ---
 # <a name="how-to-use-a-custom-user-name-and-password-validator"></a>如何：使用自定义用户名和密码验证程序
 
@@ -40,30 +40,30 @@ ms.locfileid: "74283257"
 
 1. 配置一个绑定，该绑定在任何传输上使用消息安全，或者在 HTTP(S) 上使用传输级安全。
 
-    使用消息安全时，添加一个系统提供的绑定（例如[\<wsHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)）或支持消息安全和 `UserName` 凭据类型的[\<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md) 。
+    使用消息安全时，添加一个系统提供的绑定，如 [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) ，或 [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) 支持消息安全和 `UserName` 凭据类型的。
 
-    在 HTTP （S）上使用传输级安全时，请添加[\<wsHttpBinding >](../../configure-apps/file-schema/wcf/wshttpbinding.md)或[\<basicHttpBinding >](../../configure-apps/file-schema/wcf/basichttpbinding.md)，\<的[netTcpBinding >](../../configure-apps/file-schema/wcf/nettcpbinding.md)或使用 HTTP （S）和\<authentication 方案 > [customBinding `Basic`](../../configure-apps/file-schema/wcf/custombinding.md) 。
+    在 HTTP （S）上使用传输级安全时，请添加 [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) [\<netTcpBinding>](../../configure-apps/file-schema/wcf/nettcpbinding.md) [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) 使用 http （s）和 `Basic` 身份验证方案的或。
 
     > [!NOTE]
     > 使用 .NET Framework 3.5 或更高版本时，可以将自定义用户名和密码验证程序用于消息和传输安全。 使用 WinFX，自定义用户名和密码验证程序只能与消息安全一起使用。
 
     > [!TIP]
-    > 有关在此上下文中使用 \<netTcpBinding > 的详细信息，请参阅[\<安全 >](../../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)。
+    > 有关 \<netTcpBinding> 在此上下文中使用的详细信息，请参阅 [\<security>](../../configure-apps/file-schema/wcf/security-of-nettcpbinding.md) 。
 
-    1. 在配置文件中的[\<system.servicemodel >](../../configure-apps/file-schema/wcf/system-servicemodel.md)元素下，添加一个[> 元素\<绑定](../../configure-apps/file-schema/wcf/bindings.md)。
+    1. 在配置文件中的元素下， [\<system.serviceModel>](../../configure-apps/file-schema/wcf/system-servicemodel.md) 添加一个 [\<bindings>](../../configure-apps/file-schema/wcf/bindings.md) 元素。
 
-    2. 将[\<wsHttpBinding >](../../configure-apps/file-schema/wcf/wshttpbinding.md)或[\<basicHttpBinding >](../../configure-apps/file-schema/wcf/basichttpbinding.md)元素添加到 "绑定" 部分。 有关创建 WCF 绑定元素的详细信息，请参阅[如何：在配置中指定服务绑定](../how-to-specify-a-service-binding-in-configuration.md)。
+    2. 将 [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) 或 [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) 元素添加到 "绑定" 部分。 有关创建 WCF 绑定元素的详细信息，请参阅[如何：在配置中指定服务绑定](../how-to-specify-a-service-binding-in-configuration.md)。
 
-    3. 将[\<security >](../../configure-apps/file-schema/wcf/security-of-wshttpbinding.md)或[\<security >](../../configure-apps/file-schema/wcf/security-of-basichttpbinding.md)的 `mode` 属性设置为 `Message`、`Transport`或 `TransportWithMessageCredential`。
+    3. 将 `mode` 或的属性设置 [\<security>](../../configure-apps/file-schema/wcf/security-of-wshttpbinding.md) [\<security>](../../configure-apps/file-schema/wcf/security-of-basichttpbinding.md) 为 `Message` 、 `Transport` 或 `TransportWithMessageCredential` 。
 
-    4. 设置[\<消息](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md)的 `clientCredentialType` 属性 > 或[\<传输 >](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-wshttpbinding.md)。
+    4. 设置 `clientCredentialType` 或的属性 [\<message>](../../configure-apps/file-schema/wcf/message-of-wshttpbinding.md) [\<transport>](../../configure-apps/file-schema/wcf/transport-of-wshttpbinding.md) 。
 
-        使用消息安全时，请将[\<消息 >](../../../../docs/framework/configure-apps/file-schema/wcf/message-of-wshttpbinding.md)的 `clientCredentialType` 属性设置为 "`UserName`"。
+        使用消息安全时，将 `clientCredentialType` 的特性设置 [\<message>](../../configure-apps/file-schema/wcf/message-of-wshttpbinding.md) 为 `UserName` 。
 
-        当通过 HTTP 使用传输级安全时，请将[\<传输 >](../../configure-apps/file-schema/wcf/transport-of-wshttpbinding.md)的 `clientCredentialType` 属性或[\<传输 >](../../configure-apps/file-schema/wcf/transport-of-basichttpbinding.md)设置为 `Basic`。
+        当通过 HTTP 使用传输级安全时，请将 `clientCredentialType` 或的属性设置 [\<transport>](../../configure-apps/file-schema/wcf/transport-of-wshttpbinding.md) [\<transport>](../../configure-apps/file-schema/wcf/transport-of-basichttpbinding.md) 为 `Basic` 。
 
         > [!NOTE]
-        > 当 WCF 服务承载于使用传输级安全性的 Internet Information Services （IIS）中，并且 <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.UserNamePasswordValidationMode%2A> 属性设置为 <xref:System.ServiceModel.Security.UserNamePasswordValidationMode.Custom>时，自定义身份验证方案将使用 Windows 身份验证的子集。 这是因为在这种情况下，IIS 将在 WCF 调用自定义验证器之前执行 Windows 身份验证。
+        > 当 WCF 服务在使用传输级安全性的 Internet Information Services （IIS）中承载并且 <xref:System.ServiceModel.Security.UserNamePasswordServiceCredential.UserNamePasswordValidationMode%2A> 属性设置为时 <xref:System.ServiceModel.Security.UserNamePasswordValidationMode.Custom> ，自定义身份验证方案将使用 Windows 身份验证的子集。 这是因为在这种情况下，IIS 将在 WCF 调用自定义验证器之前执行 Windows 身份验证。
 
     有关创建 WCF 绑定元素的详细信息，请参阅[如何：在配置中指定服务绑定](../how-to-specify-a-service-binding-in-configuration.md)。
 
@@ -85,24 +85,24 @@ ms.locfileid: "74283257"
 
 2. 配置一个行为，该行为指定使用自定义用户名和密码验证程序来验证传入的 <xref:System.IdentityModel.Tokens.UserNameSecurityToken> 安全令牌的用户名和密码对。
 
-    1. 作为[\<system.servicemodel >](../../configure-apps/file-schema/wcf/system-servicemodel.md)元素的子元素，请将[\<行为添加 >](../../configure-apps/file-schema/wcf/behaviors.md)元素。
+    1. 添加元素作为元素的子元素 [\<system.serviceModel>](../../configure-apps/file-schema/wcf/system-servicemodel.md) [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) 。
 
-    2. 将[\<serviceBehaviors >](../../configure-apps/file-schema/wcf/servicebehaviors.md)添加到[\<行为 >](../../configure-apps/file-schema/wcf/behaviors.md)元素。
+    2. 将添加 [\<serviceBehaviors>](../../configure-apps/file-schema/wcf/servicebehaviors.md) 到 [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) 元素。
 
-    3. 将[\<行为添加 >](../../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)元素，并将 `name` 特性设置为合适的值。
+    3. 添加 [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) 元素，并将 `name` 属性设置为合适的值。
 
-    4. 将[\<serviceCredentials >](../../configure-apps/file-schema/wcf/servicecredentials.md)添加到[\<行为 >](../../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md)元素。
+    4. 将添加 [\<serviceCredentials>](../../configure-apps/file-schema/wcf/servicecredentials.md) 到 [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) 元素。
 
-    5. 将[\<userNameAuthentication >](../../configure-apps/file-schema/wcf/usernameauthentication.md)添加到[\<serviceCredentials >](../../configure-apps/file-schema/wcf/servicecredentials.md)。
+    5. 将添加 [\<userNameAuthentication>](../../configure-apps/file-schema/wcf/usernameauthentication.md) 到 [\<serviceCredentials>](../../configure-apps/file-schema/wcf/servicecredentials.md) 。
 
     6. 将 `userNamePasswordValidationMode` 设置为 `Custom`。
 
         > [!IMPORTANT]
-        > 如果未设置 `userNamePasswordValidationMode` 值，WCF 将使用 Windows 身份验证，而不是自定义用户名和密码验证程序。
+        > 如果 `userNamePasswordValidationMode` 未设置此值，WCF 将使用 Windows 身份验证而不是自定义用户名和密码验证程序。
 
     7. 将 `customUserNamePasswordValidatorType` 设置为表示自定义用户名和密码验证程序的类型。
 
-    下面的示例显示了至此点的 `<serviceCredentials>` 片段：
+    下面的示例显示了 `<serviceCredentials>` 到此点的片段：
 
     ```xml
     <serviceCredentials>

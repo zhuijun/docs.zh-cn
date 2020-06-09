@@ -2,12 +2,12 @@
 title: WSDL 和策略
 ms.date: 03/30/2017
 ms.assetid: cea87440-3519-4640-8494-b8a2b0e88c84
-ms.openlocfilehash: b032f91999695d848f20fac5009047dcc2e20451
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 201920a8ebf639c74acfb20b2e990c8bbc0c5b55
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144677"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600096"
 ---
 # <a name="wsdl-and-policy"></a>WSDL 和策略
 本主题介绍 Windows Communication Foundation （WCF） WSDL 1.1、WS 策略和 Ws-policyattachment 实现的详细信息，以及 WCF 引入的附加 WS 策略断言和 WSDL 1.1 扩展。  
@@ -52,7 +52,7 @@ ms.locfileid: "84144677"
 ## <a name="policy-assertions-implemented-by-wcf"></a>由 WCF 实现的策略断言  
  除了在 Web Services 规范（WS-*）中引入的策略断言，以及本文档的其他部分所述，WCF 还实现了以下策略断言。  
   
-|策略断言|策略主题|说明|  
+|策略断言|策略主题|描述|  
 |----------------------|--------------------|-----------------|  
 |http:HttpBasicAuthentication|终结点|终结点使用 HTTP 基本身份验证。|  
 |http:HttpDigestAuthentication|终结点|终结点使用 HTTP 摘要式身份验证。|  
@@ -74,6 +74,6 @@ ms.locfileid: "84144677"
   
 ## <a name="see-also"></a>另请参阅
 
-- [自定义 WSDL 发布](../../../../docs/framework/wcf/samples/custom-wsdl-publication.md)
-- [如何：导出自定义 WSDL](../../../../docs/framework/wcf/extending/how-to-export-custom-wsdl.md)
-- [如何：导入自定义 WSDL](../../../../docs/framework/wcf/extending/how-to-import-custom-wsdl.md)
+- [自定义 WSDL 发布](../samples/custom-wsdl-publication.md)
+- [如何：导出自定义 WSDL](../extending/how-to-export-custom-wsdl.md)
+- [如何：导入自定义 WSDL](../extending/how-to-import-custom-wsdl.md)

@@ -2,37 +2,37 @@
 title: 网络 MSMQ 绑定
 ms.date: 03/30/2017
 ms.assetid: fe4bb696-f57c-4cb3-9b7e-9d95fe6b8323
-ms.openlocfilehash: ee32ea09eed28c1c7cd5df2df2d13fd5f41f4b22
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 622341ef00f5d8950fa0c013e427f20e02187893
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972375"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602422"
 ---
 # <a name="net-msmq-binding"></a>网络 MSMQ 绑定
 本节包含演示如何使用终结点元素的 MSMQ 绑定特性的示例。  
   
 ## <a name="in-this-section"></a>本节内容  
- [已进行事务处理的 MSMQ 绑定](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)  
+ [已经过事务处理的 MSMQ 绑定](transacted-msmq-binding.md)  
  演示如何使用消息队列 (MSMQ) 执行已经过事务处理的排队通信。  
   
- [可变排队通信](../../../../docs/framework/wcf/samples/volatile-queued-communication.md)  
+ [可变排队通信](volatile-queued-communication.md)  
  演示如何通过消息队列 (MSMQ) 传输来执行可变排队通信。  
   
- [死信队列](../../../../docs/framework/wcf/samples/dead-letter-queues.md)  
+ [死信队列](dead-letter-queues.md)  
  演示如何处理传递失败的消息。  
   
- [MSMQ 4.0 中的病毒消息处理](../../../../docs/framework/wcf/samples/poison-message-handling-in-msmq-4-0.md)  
+ [MSMQ 4.0 中的病毒消息处理](poison-message-handling-in-msmq-4-0.md)  
  演示如何使用 MSMQ 4.0 在服务中执行病毒消息处理。  
   
- [会话和队列](../../../../docs/framework/wcf/samples/sessions-and-queues.md)  
+ [会话和队列](sessions-and-queues.md)  
  演示如何通过消息队列 (MSMQ) 传输来发送和接收排队通信中的一组相关消息。  
   
- [双向通信](../../../../docs/framework/wcf/samples/two-way-communication.md)  
+ [双向通信](two-way-communication.md)  
  演示如何通过 MSMQ 执行事务处理双向排队通信。
   
- [SRMP](../../../../docs/framework/wcf/samples/srmp.md)  
+ [SRMP](srmp.md)  
  演示如何使用 HTTP 上的消息队列 (MSMQ) 执行已经过事务处理的排队通信。  
   
- [基于消息队列的消息安全性](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)  
+ [基于消息队列的消息安全性](message-security-over-message-queuing.md)  
  演示如何实现使用 WS-Security 的应用程序，此应用程序使用 X.509v3 证书对客户端进行身份验证，并要求通过 MSMQ 使用服务器的 X.509v3 证书的服务器身份验证。

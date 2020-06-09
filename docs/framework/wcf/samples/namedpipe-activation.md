@@ -2,16 +2,16 @@
 title: NamedPipe 激活
 ms.date: 03/30/2017
 ms.assetid: f3c0437d-006c-442e-bfb0-6b29216e4e29
-ms.openlocfilehash: a562ec51d35af08f49e89b652670e9a57b0f00c2
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 8d9a10b94c52514db611144352653b911d109056
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837852"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602461"
 ---
 # <a name="namedpipe-activation"></a>NamedPipe 激活
 
-本示例演示如何承载使用 Windows 进程激活服务 (WAS) 的服务以激活通过命名管道进行通信的服务。 此示例基于[入门](../../../../docs/framework/wcf/samples/getting-started-sample.md)，并要求运行 Windows Vista。
+本示例演示如何承载使用 Windows 进程激活服务 (WAS) 的服务以激活通过命名管道进行通信的服务。 此示例基于[入门](getting-started-sample.md)，并要求运行 Windows Vista。
 
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。
@@ -161,15 +161,15 @@ Press <ENTER> to terminate client.
 
 1. 确保已安装 IIS 7.0。 激活 WAS 需要 IIS 7.0。
 
-2. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+2. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
     此外，还必须安装 WCF 非 HTTP 激活组件：
 
-    1. 从“开始”菜单中，选择“控制面板”。
+    1. 从“开始”菜单中，选择“控制面板” 。
 
     2. 选择 "**程序和功能**"。
 
-    3. 单击 **"打开或关闭 Windows 组件"** 。
+    3. 单击 **"打开或关闭 Windows 组件"**。
 
     4. 展开**Microsoft .NET Framework 3.0**节点并检查**Windows Communication Foundation 非 HTTP 激活**功能。
 
@@ -198,9 +198,9 @@ Press <ENTER> to terminate client.
         > [!NOTE]
         > 此命令是单行文本。
 
-        此命令允许使用 `http://localhost/servicemodelsamples` 和 `net.tcp://localhost/servicemodelsamples`访问/servicemodelsamples 应用程序。
+        此命令允许使用和访问/servicemodelsamples 应用程序 `http://localhost/servicemodelsamples` `net.tcp://localhost/servicemodelsamples` 。
 
-4. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+4. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。
 
 5. 移除为此示例添加的 net.pipe 网站绑定。
 
@@ -226,4 +226,4 @@ Press <ENTER> to terminate client.
 
 ## <a name="see-also"></a>另请参阅
 
-- [AppFabric 宿主和持久性示例](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))
+- [AppFabric 承载和持久性示例](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))

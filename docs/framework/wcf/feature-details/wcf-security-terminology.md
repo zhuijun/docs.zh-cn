@@ -6,22 +6,22 @@ helpviewer_keywords:
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-ms.openlocfilehash: 6751513b72f732bd7392de11a203467a9ead1bce
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a07d7c6da71f4195cb1641ae8ac7585b4158ed63
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743354"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600966"
 ---
 # <a name="wcf-security-terminology"></a>WCF 安全术语
 在讨论安全时使用的某些术语可能是您所不熟悉的。 本主题提供了一些安全术语的扼要解释，但并不试图提供每个术语的全面文档。  
   
- 有关 Windows Communication Foundation （WCF）文档中使用的术语的详细信息，请参阅[基本 Windows Communication Foundation 概念](../../../../docs/framework/wcf/fundamental-concepts.md)。  
+ 有关 Windows Communication Foundation （WCF）文档中使用的术语的详细信息，请参阅[基本 Windows Communication Foundation 概念](../fundamental-concepts.md)。  
   
  Access Control List (ACL) — 访问控制列表 (ACL)  
  适用于某个对象的安全保护的列表。 （对象可以是文件、进程、事件，也可以是具有安全描述符的任何其他内容。）ACL 中的项是访问控制项（ACE）。 有两种类型的 ACL：自由和系统。  
   
- 喷靡  
+ authentication  
  验证用户、计算机、服务或进程声称具有的身份是否属实的过程。  
   
  authorization  
@@ -34,7 +34,7 @@ ms.locfileid: "76743354"
  一个 CA 层次结构包含多个 CA。 它经过组织，因此，每个 CA 都由层次结构中的另一个 CA 认证，直到达到层次结构（也称为*根颁发机构*）的顶部。  
   
  证书 (certificate)  
- 一种数字签名的声明，其中包含有关实体和实体的公钥的信息，从而将这两个信息片段绑定在一起。 证书由称为证书颁发机构的受信任组织（或实体）颁发，颁发时间是在该颁发机构已验证实体声称具有的身份属实之后。  
+ 一个经过数字签名的声明，该声明包含与某个实体以及该实体的公钥有关的信息，从而将这两部分信息绑定在一起。 证书由称为证书颁发机构的受信任组织（或实体）颁发，颁发时间是在该颁发机构已验证实体声称具有的身份属实之后。  
   
  证书可以包含不同类型的数据。 例如，一个 X.509 证书包括该证书的格式、该证书的序列号、用于对该证书进行签名的算法、颁发该证书的 CA 的名称、请求该证书的实体的名称和公钥以及 CA 的签名。  
   
@@ -54,7 +54,7 @@ ms.locfileid: "76743354"
  一种由公钥加密标准 (PKCS) #7 定义的数据内容类型，其中包含任意类型的数据以及内容的消息哈希（摘要）。  
   
  数字签名  
- 将发送方的标识绑定到正被发送的信息的数据。 数字签名可以与任何消息、文件或其他数字编码的信息绑定，也可以单独传输。 数字签名用于公钥环境中，并提供身份验证和完整性服务。  
+ 用于将发送方的标识绑定到要发送的信息的数据。 数字签名可以与任何消息、文件或其他经过数字编码的信息捆绑在一起，也可以单独传送。 数字签名用于公钥环境中，并提供身份验证和完整性服务。  
   
  encoding  
  将数据转换为位流的过程。 编码是将数据转换为由 1 和 0 组成的流的序列化过程的一部分。  
@@ -92,7 +92,7 @@ ms.locfileid: "76743354"
  明文  
  一个未加密的消息。 纯文本消息有时称为*明文*消息。  
   
- privilege  
+ 特权  
  用户用于执行各种系统相关操作（如关闭系统、加载设备驱动程序或更改系统时间）的权限。 用户的访问令牌包含用户或用户所属组拥有的特权的列表。  
   
  私钥 (private key)  
@@ -125,7 +125,7 @@ ms.locfileid: "76743354"
  安全套接字层（Secure Sockets Layer，SSL）  
  一种协议，用于将公钥技术和私钥技术结合起来以确保网络通信的安全。  
   
- 安全上下文  
+ 安全性上下文  
  当前生效的安全属性或规则。 例如，当前登录到计算机中的用户或由智能卡用户输入的个人识别码。 对于 SSPI，安全上下文是一种不透明的数据结构，其中包含与连接相关的安全数据，如会话密钥或会话持续时间指示。  
   
  安全主体 (security principal)  
@@ -173,7 +173,7 @@ ms.locfileid: "76743354"
  决定是否信任给定文件的软件。 此决定基于与该文件相关联的证书。  
   
  用户主体名称 (UPN)  
- 用户帐户名（有时称为 "*用户登录名*"）和一个域名（标识用户帐户所在的域）。 这是登录到 Windows 域的标准用法。 格式为： someone@example.com （对于电子邮件地址）。  
+ 用户帐户名（有时称为 "*用户登录名*"）和一个域名（标识用户帐户所在的域）。 这是登录到 Windows 域的标准用法。 格式为： someone@example.com （用于电子邮件地址）。  
   
 > [!NOTE]
 > 除了标准 UPN 格式外，WCF 还在下层形式接受 Upn，例如 cohowinery. com\someone。  
@@ -183,6 +183,6 @@ ms.locfileid: "76743354"
   
 ## <a name="see-also"></a>另请参阅
 
-- [Windows Communication Foundation 基础概念](../../../../docs/framework/wcf/fundamental-concepts.md)
-- [安全性概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)
+- [Windows Communication Foundation 基础概念](../fundamental-concepts.md)
+- [安全性概念](security-concepts.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - classes [Visual Basic]
 - objects [Visual Basic]
 ms.assetid: c68c5752-1006-46e1-975a-6717b62a42fc
-ms.openlocfilehash: 10e257a1cbc8778565a9838aeef423522f9d2970
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9e3cf262ef617a1ae5ee92bcc3d6fd5c691602f9
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290612"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600408"
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Visual Basic 中的对象和类
 
@@ -110,7 +110,7 @@ warningLabel.ForeColor = System.Drawing.Color.Red
 
 - 属性是 `String` 数据类型，并且对字符串的大小或值没有约束。
 
-- 有关详细信息，请参阅[属性过程](../../../../visual-basic/programming-guide/language-features/procedures/property-procedures.md)。
+- 有关详细信息，请参阅[属性过程](../procedures/property-procedures.md)。
 
 > [!TIP]
 > 始终保持非常量字段为私有。 要使其成为公共的，请改用属性。

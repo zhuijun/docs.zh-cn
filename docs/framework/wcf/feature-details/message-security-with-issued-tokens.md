@@ -2,21 +2,21 @@
 title: 使用已颁发令牌的消息安全
 ms.date: 03/30/2017
 ms.assetid: 731fc871-54d0-4689-90fd-1c9415c45621
-ms.openlocfilehash: a9863c959575b12c360b32ee7401cac344d538b5
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 4742af43c2f4965b0a1f0458a35638e220c1a59f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76211980"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84576455"
 ---
 # <a name="message-security-with-issued-tokens"></a>使用已颁发令牌的消息安全
 颁发的令牌客户端启用 Windows Communication Foundation （WCF）中的联合安全方案。  
   
  使用联合安全，可以在独立的域之间建立信任。 每个域都将身份验证和授权集中在安全令牌服务中。 在这样的两个服务之间建立信任后，每个域的成员都可以使用另一个域的服务。  
   
- 有关联合方案的详细说明，请参阅[联合和颁发的令牌](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)。  
+ 有关联合方案的详细说明，请参阅[联合和颁发的令牌](federation-and-issued-tokens.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [联合令牌与颁发的令牌](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)
+- [联合令牌与颁发的令牌](federation-and-issued-tokens.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

@@ -5,29 +5,29 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-ms.openlocfilehash: 3660877194931c2be5b9b1c9aa54e2595701697f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2b2717bc68da9f07cd38e10a5d75b2a7df9add45
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184646"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602630"
 ---
 # <a name="message-security-with-a-certificate-client"></a>使用证书客户端的消息安全
-以下方案显示使用消息安全模式保护的 Windows 通信基础 （WCF） 客户端和服务。 使用证书对客户端和服务进行身份验证。 有关详细信息，请参阅[分布式应用程序安全性](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)。
+下面的方案演示使用消息安全模式保护 Windows Communication Foundation （WCF）客户端和服务。 使用证书对客户端和服务进行身份验证。 有关详细信息，请参阅[分布式应用程序安全性](distributed-application-security.md)。
 
  ![显示具有证书的客户端的屏幕截图。](./media/message-security-with-a-certificate-client/client-with-certificate.gif)  
   
- 有关示例应用程序，请参阅[消息安全证书](../../../../docs/framework/wcf/samples/message-security-certificate.md)。  
+ 有关示例应用程序，请参阅[消息安全证书](../samples/message-security-certificate.md)。  
 
-|特征|说明|  
+|特征|描述|  
 |--------------------|-----------------|  
-|安全模式|消息|  
-|互操作性|仅限 WCF|  
+|安全模式|Message|  
+|互操作性|仅 WCF|  
 |身份验证（服务器）|使用服务证书|  
 |身份验证（客户端）|使用客户端证书|  
 |完整性|是|  
 |机密性|是|  
-|传输|HTTP|  
+|Transport|HTTP|  
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>服务  
@@ -43,7 +43,7 @@ ms.locfileid: "79184646"
  [!code-csharp[C_SecurityScenarios#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#10)]
  [!code-vb[C_SecurityScenarios#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#10)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  以下配置可代替代码使用。  
   
 ```xml  
@@ -84,7 +84,7 @@ ms.locfileid: "79184646"
 </configuration>  
 ```  
   
-## <a name="client"></a>Client  
+## <a name="client"></a>客户端  
  下面的代码和配置应独立运行。 执行下列操作之一：  
   
 - 使用代码（和客户端代码）创建独立客户端。  
@@ -100,8 +100,8 @@ ms.locfileid: "79184646"
  [!code-csharp[C_SecurityScenarios#17](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#17)]
  [!code-vb[C_SecurityScenarios#17](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#17)]  
   
-### <a name="configuration"></a>配置  
- 下面的配置使用终结点行为指定客户端证书。 有关证书的详细信息，请参阅[使用证书](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)。 该代码还使用<>`identity`元素来指定预期的服务器标识的域名系统 （DNS）。 有关标识的详细信息，请参阅[服务标识和身份验证](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)。  
+### <a name="configuration"></a>Configuration  
+ 下面的配置使用终结点行为指定客户端证书。 有关证书的详细信息，请参阅[使用证书](working-with-certificates.md)。 此代码还使用 <`identity`> 元素来指定预期服务器标识的域名系统（DNS）。 有关标识的详细信息，请参阅[服务标识和身份验证](service-identity-and-authentication.md)。  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -145,7 +145,7 @@ ms.locfileid: "79184646"
   
 ## <a name="see-also"></a>另请参阅
 
-- [安全概述](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [服务标识和身份验证](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [使用证书](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [安全性概述](security-overview.md)
+- [服务标识和身份验证](service-identity-and-authentication.md)
+- [使用证书](working-with-certificates.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

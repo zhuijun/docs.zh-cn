@@ -2,12 +2,12 @@
 title: 自定义消息拦截器
 ms.date: 03/30/2017
 ms.assetid: 73f20972-53f8-475a-8bfe-c133bfa225b0
-ms.openlocfilehash: 433b14433a7e2dd6edad551a2732e9049a9861ea
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b9a517d0f8ada3680d49cd5ab0b13fa9e4d85402
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79145081"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600057"
 ---
 # <a name="custom-message-interceptor"></a>自定义消息拦截器
 此示例演示通道扩展模型的使用。 特别是，演示如何实现可创建通道工厂和通道侦听器的自定义绑定元素，以便在运行时堆栈的特定点截获所有传入和传出消息。 此示例还包括一个客户端和一个服务器，用于演示这些自定义工厂的使用。  
@@ -22,11 +22,11 @@ ms.locfileid: "79145081"
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\MessageInterceptor`  
   
- 该示例介绍了通过使用通道框架并遵循 WCF 最佳实践，在 Windows 通信基础 （WCF） 中创建自定义分层通道的建议过程。 创建自定义分层通道的步骤如下所示：  
+ 该示例介绍了使用通道框架和以下 WCF 最佳方案在 Windows Communication Foundation （WCF）中创建自定义分层通道的建议过程。 创建自定义分层通道的步骤如下所示：  
   
 1. 确定您的通道工厂和通道侦听器将要支持哪些通道形状。  
   
@@ -57,7 +57,7 @@ class InterceptingChannelListener<TChannel> : ListenerFactoryBase<TChannel>
 ```  
   
 ## <a name="adding-a-binding-element"></a>添加绑定元素  
- 此示例定义了一个自定义绑定元素：`InterceptingBindingElement`。 `InterceptingBindingElement`将`ChannelMessageInterceptor`作为输入，并用它来`ChannelMessageInterceptor`操作通过它的消息。 这是唯一必须公开的类。 工厂、侦听器和通道都可以是公共运行库接口的内部实现。  
+ 此示例定义了一个自定义绑定元素：`InterceptingBindingElement`。 `InterceptingBindingElement`采用 `ChannelMessageInterceptor` 作为输入，并使用它 `ChannelMessageInterceptor` 来处理通过它的消息。 这是唯一必须公开的类。 工厂、侦听器和通道都可以是公共运行库接口的内部实现。  
   
 ```csharp
 public class InterceptingBindingElement : BindingElement
@@ -157,16 +157,16 @@ Dangerous wind detected! Reported speed (70) is greater than 64 kph.
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 使用以下命令安装ASP.NET 4.0。  
+1. 使用以下命令安装 ASP.NET 4.0。  
   
     ```console  
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable  
     ```  
   
-2. 确保已为 Windows[通信基础示例执行一次性设置过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。  
+2. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
-3. 要生成解决方案，请按照生成 Windows[通信基础示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。  
+3. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。  
   
-4. 要在单机或跨计算机配置中运行示例，请按照[运行 Windows 通信基础示例中的](../../../../docs/framework/wcf/samples/running-the-samples.md)说明操作。  
+4. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
   
 5. 先运行 Service.exe，然后运行 Client.exe 并观察两个控制台窗口的输出。  

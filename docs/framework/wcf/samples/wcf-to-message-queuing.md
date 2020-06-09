@@ -2,12 +2,12 @@
 title: Windows Communication Foundation 到消息队列
 ms.date: 03/30/2017
 ms.assetid: 78d0d0c9-648e-4d4a-8f0a-14d9cafeead9
-ms.openlocfilehash: beb4382d61804e9b9ea12e1d191f3e96a637f871
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 872632dc7d0a8a94f8829ffb3fe8eea2607697c8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094795"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602332"
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a>Windows Communication Foundation 到消息队列
 
@@ -99,7 +99,7 @@ client.Close();
 
  客户端按顺序使用自定义客户端将 MSMQ 消息发送给队列。 由于接收和处理消息的应用程序是 MSMQ 应用程序，而不是 WCF 应用程序，因此两个应用程序之间没有隐式服务协定。 所以在此方案中，我们不能使用 Svcutil.exe 工具创建代理。
 
- 对于使用 `MsmqIntegration` 绑定发送消息的所有 WCF 应用程序，自定义客户端本质上都是相同的。 与其他客户端不同，它不包含一系列服务操作。 它只是一个提交消息操作。
+ 对于使用绑定发送消息的所有 WCF 应用程序而言，自定义客户端本质上都是相同的 `MsmqIntegration` 。 与其他客户端不同，它不包含一系列服务操作。 它只是一个提交消息操作。
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -131,11 +131,11 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
  运行示例时，客户端和服务活动将显示在服务和客户端控制台窗口中。 您可以看到服务从客户端接收消息。 在每个控制台窗口中按 Enter 可以关闭服务和客户端。 请注意：由于正在使用队列，因此不必同时启动和运行客户端和服务。 例如，可以先运行客户端，再将其关闭，然后启动服务，这样服务仍然会收到客户端的消息。
 
 > [!NOTE]
-> 此示例要求安装 Message Queuing（消息队列）。 请参阅[消息队列](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))中的安装说明。
+> 此示例需要安装消息队列。 请参阅[消息队列](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))中的安装说明。
 
 ## <a name="set-up-build-and-run-the-sample"></a>设置、生成和运行示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
 2. 如果先运行服务，则它将检查以确保队列存在。 如果队列不存在，则服务将创建一个队列。 可以先运行服务以创建队列或通过 MSMQ 队列管理器创建一个队列。 执行下面的步骤来在 Windows 2008 中创建队列。
 
@@ -143,15 +143,15 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
 
     2. 展开 "**功能**" 选项卡。
 
-    3. 右键单击 "**专用消息队列**"，然后选择 "**新建** > **专用队列**"。
+    3. 右键单击 "**专用消息队列**"，然后选择 "**新建**  >  **专用队列**"。
 
     4. 选中 "**事务性**" 框。
 
     5. 输入 `ServiceModelSamplesTransacted` 作为新队列的名称。
 
-3. 若要生成C#或 Visual Basic 版本的解决方案，请按照[生成 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+3. 若要生成 c # 或 Visual Basic 版解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
 
-4. 若要在单计算机配置中运行示例，请按照[运行 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/running-the-samples.md)中的说明进行操作。
+4. 若要在单计算机配置中运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
 ## <a name="run-the-sample-across-computers"></a>跨计算机运行示例
 
@@ -176,5 +176,5 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
 
 ## <a name="see-also"></a>另请参阅
 
-- [如何：与 WCF 终结点和消息队列应用程序交换消息](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
+- [如何：与 WCF 终结点和消息队列应用程序交换消息](../feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
 - [消息队列](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))

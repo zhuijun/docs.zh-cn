@@ -2,15 +2,15 @@
 title: 事务协议版本 1.0
 ms.date: 03/30/2017
 ms.assetid: 034679af-0002-402e-98a8-ef73dcd71bb6
-ms.openlocfilehash: 6063c643be4c60e9830a020d10ac9fbcd236dac2
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: f725361b9a90c9336b763cc7f292ae043e445966
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144768"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598705"
 ---
 # <a name="transaction-protocols-version-10"></a>事务协议版本 1.0
-Windows Communication Foundation （WCF）版本1实现了 WS 原子事务和 WS 协调协议版本1.0。 有关版本1.1 的详细信息，请参阅[事务协议](../../../../docs/framework/wcf/feature-details/transaction-protocols.md)。  
+Windows Communication Foundation （WCF）版本1实现了 WS 原子事务和 WS 协调协议版本1.0。 有关版本1.1 的详细信息，请参阅[事务协议](transaction-protocols.md)。  
   
 |规范/文档|链接|  
 |-----------------------------|----------|  
@@ -99,7 +99,7 @@ Windows Communication Foundation （WCF）版本1实现了 WS 原子事务和 WS
 #### <a name="activation-message-binding-configuration"></a>激活消息绑定配置  
  激活消息通常不参与互操作，因为他们一般出现在应用程序及其本地事务管理器之间。  
   
- B1221：对于激活消息，WCF 使用双工 HTTPS 绑定（在[消息协议](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)中进行了描述）。 请求消息和答复消息是使用 WS-Addressing 2004/08 进行关联的。  
+ B1221：对于激活消息，WCF 使用双工 HTTPS 绑定（在[消息协议](messaging-protocols.md)中进行了描述）。 请求消息和答复消息是使用 WS-Addressing 2004/08 进行关联的。  
   
  WS-Atomic Transaction 规范第 8 节更详尽地说明了关联和消息交换模式。  
   
@@ -110,11 +110,11 @@ Windows Communication Foundation （WCF）版本1实现了 WS 原子事务和 WS
  `t:IssuedTokens`应生成新的标头以附加到传出 `wscoor:CreateCoordinationContextResponse` 消息。  
   
 #### <a name="registration-message-binding-configuration"></a>注册消息绑定配置  
- B1231： WCF 使用双工 HTTPS 绑定（在[消息协议](../../../../docs/framework/wcf/feature-details/messaging-protocols.md)中介绍）。 请求消息和答复消息是使用 WS-Addressing 2004/08 进行关联的。  
+ B1231： WCF 使用双工 HTTPS 绑定（在[消息协议](messaging-protocols.md)中介绍）。 请求消息和答复消息是使用 WS-Addressing 2004/08 进行关联的。  
   
  WS-AtomicTransaction 第 8 节更详尽地说明了关联和消息交换模式。  
   
- R1232：传出 `wscoor:Register` 消息必须使用 `IssuedTokenOverTransport` [安全协议](../../../../docs/framework/wcf/feature-details/security-protocols.md)中描述的身份验证模式。  
+ R1232：传出 `wscoor:Register` 消息必须使用 `IssuedTokenOverTransport` [安全协议](security-protocols.md)中描述的身份验证模式。  
   
  `wsse:Timestamp`元素必须使用发出的进行签名 `SecurityContextToken STx` 。 此签名是拥有与特定事务关联的令牌的证明，用于对登记事务的参与者进行身份验证。 RegistrationResponse 消息通过 HTTPS 发回。  
   

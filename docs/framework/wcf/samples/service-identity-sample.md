@@ -2,15 +2,15 @@
 title: 服务标识示例
 ms.date: 03/30/2017
 ms.assetid: 79fa8c1c-85bb-4b67-bc67-bfaf721303f8
-ms.openlocfilehash: 868bd6e0ac7429224462c973c1c48132ec3860ba
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: e4b5e739db04fbb3270c9870468433aec7787061
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76919365"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599901"
 ---
 # <a name="service-identity-sample"></a>服务标识示例
-此服务标识示例演示如何为服务设置标识。 客户端可以在设计时使用服务的元数据来检索标识，然后在运行时对服务的标识进行身份验证。 服务标识的概念是允许客户端在调用服务的任何操作之前对服务进行身份验证，从而保护客户端，防止进行未经身份验证的调用。 在安全连接中，服务还在允许客户端访问其之前对客户端的凭据进行身份验证，但这不是此示例要介绍的重点。 请参阅[客户端](../../../../docs/framework/wcf/samples/client.md)中显示服务器身份验证的示例。
+此服务标识示例演示如何为服务设置标识。 客户端可以在设计时使用服务的元数据来检索标识，然后在运行时对服务的标识进行身份验证。 服务标识的概念是允许客户端在调用服务的任何操作之前对服务进行身份验证，从而保护客户端，防止进行未经身份验证的调用。 在安全连接中，服务还在允许客户端访问其之前对客户端的凭据进行身份验证，但这不是此示例要介绍的重点。 请参阅[客户端](client.md)中显示服务器身份验证的示例。
 
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。
@@ -107,22 +107,22 @@ class CustomIdentityVerifier : IdentityVerifier
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。
 
-3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/running-the-samples.md)中的说明进行操作。
+3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>在同一计算机上运行示例
 
-1. 在 Windows XP 或 Windows Vista 上，使用 MMC 管理单元工具将标识解决方案文件夹中的 Identity 证书文件导入到 LocalMachine/My （个人）证书存储区。 此文件受密码保护。 在导入过程中，将提示您输入密码。 在 "密码" 框中键入 `xyz`。 有关详细信息，请参阅[如何：通过 MMC 管理单元查看证书](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)主题。 完成此操作后，在 Visual Studio 的开发人员命令提示中，使用管理员权限运行 Setup.exe，此操作将此证书复制到 CurrentUser/受信任的人员存储区，以便在客户端上使用。
+1. 在 Windows XP 或 Windows Vista 上，使用 MMC 管理单元工具将标识解决方案文件夹中的 Identity 证书文件导入到 LocalMachine/My （个人）证书存储区。 此文件受密码保护。 在导入过程中，将提示您输入密码。 `xyz`在 "密码" 框中键入。 有关详细信息，请参阅[如何：通过 MMC 管理单元查看证书](../feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)主题。 完成此操作后，在 Visual Studio 的开发人员命令提示中，使用管理员权限运行 Setup.exe，此操作将此证书复制到 CurrentUser/受信任的人员存储区，以便在客户端上使用。
 
 2. 在 Windows Server 2003 上，使用管理员权限在 Visual Studio 2012 命令提示符下从示例安装文件夹运行安装程序。 这将安装运行示例所需的所有证书。
 
     > [!NOTE]
     > 设置 bat 批处理文件设计为在 Visual Studio 2012 命令提示符下运行。 在 Visual Studio 2012 命令提示符中设置的 PATH 环境变量指向包含安装程序 bat 脚本所需的可执行文件的目录。 请确保在运行完该示例后通过运行 Cleanup.bat 来移除证书。 其他安全示例使用相同的证书。  
   
-3. 启动 \service\bin 目录中的 Service.exe。 确保该服务指示它已准备就绪，并显示按 \<进入 > 终止服务的提示。  
+3. 启动 \service\bin 目录中的 Service.exe。 确保该服务指示它已准备就绪，并显示按 \<Enter> 以终止服务的提示。  
   
 4. 启动 \client\bin 目录中的 Client.exe，或在 Visual Studio 中按 F5 以生成并运行。 客户端活动将显示在客户端控制台应用程序上。  
   
@@ -140,7 +140,7 @@ class CustomIdentityVerifier : IdentityVerifier
   
 5. 将客户端程序文件复制到客户端计算机上的客户端目录中。 另外，将 Setup.bat、Cleanup.bat 和 ImportServiceCert.bat 文件复制到客户端上。  
   
-6. 在服务上，在使用管理员特权打开的 Visual Studio 开发人员命令提示中运行 `setup.bat service`。 使用 `service` 参数运行 `setup.bat` 将使用计算机的完全限定的域名创建一个服务证书，并将服务证书导出到名为的文件。  
+6. 在服务上， `setup.bat service` 在使用管理员特权打开的 Visual Studio 开发人员命令提示中运行。 使用参数运行将使用 `setup.bat` `service` 计算机的完全限定的域名创建一个服务证书，并将服务证书导出到名为的文件。  
   
 7. 将服务目录中的 Service.cer 文件复制到客户端计算机上的客户端目录中。  
   

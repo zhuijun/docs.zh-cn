@@ -2,12 +2,12 @@
 title: 如何：使用 XmlSerializer 改善 WCF 客户端应用程序的启动时间
 ms.date: 03/30/2017
 ms.assetid: 21093451-0bc3-4b1a-9a9d-05f7f71fa7d0
-ms.openlocfilehash: ca15d710a30586135f0d030e155b09b63a22ee45
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 91712963908ecc56ff17fbac028389207544b82f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976061"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600252"
 ---
 # <a name="how-to-improve-the-startup-time-of-wcf-client-applications-using-the-xmlserializer"></a>如何：使用 XmlSerializer 改善 WCF 客户端应用程序的启动时间
 如果服务和客户端应用程序使用可用 <xref:System.Xml.Serialization.XmlSerializer> 进行序列化的数据类型，则会在运行时生成并编译这些数据类型的序列化代码，从而导致启动性能降低。  
@@ -15,7 +15,7 @@ ms.locfileid: "73976061"
 > [!NOTE]
 > 预生成的序列化代码只能在客户端应用程序中使用，不能在服务中使用。  
   
- 使用配置的[元数据实用工具（svcutil.exe）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)可以通过从应用程序的编译程序集生成必要的序列化代码，从而提高这些应用程序的启动性能。 Svcutil.exe 会为已编译的应用程序集的服务协定中使用的所有数据生成序列化代码，该代码可使用 <xref:System.Xml.Serialization.XmlSerializer> 进行序列化。 使用 <xref:System.Xml.Serialization.XmlSerializer> 的服务和操作协定用 <xref:System.ServiceModel.XmlSerializerFormatAttribute> 进行标记。  
+ 使用配置的[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)可以通过从应用程序的编译程序集生成必要的序列化代码，从而提高这些应用程序的启动性能。 Svcutil.exe 会为已编译的应用程序集的服务协定中使用的所有数据生成序列化代码，该代码可使用 <xref:System.Xml.Serialization.XmlSerializer> 进行序列化。 使用 <xref:System.Xml.Serialization.XmlSerializer> 的服务和操作协定用 <xref:System.ServiceModel.XmlSerializerFormatAttribute> 进行标记。  
   
 ### <a name="to-generate-xmlserializer-serialization-code"></a>生成 XmlSerializer 序列化代码  
   
@@ -41,17 +41,17 @@ ms.locfileid: "73976061"
   
     2. 将生成的序列化代码编译成单独的程序集，并在使用 <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute> 的服务协定上使用 <xref:System.ServiceModel.XmlSerializerFormatAttribute>。 将 <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.AssemblyName%2A> 或 <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.CodeBase%2A> 属性设置为指向已编译的序列化程序集。  
   
-    3. 将生成的序列化代码编译到您的应用程序集内并将 <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute><xref:System.ServiceModel.XmlSerializerFormatAttribute>添加到使用  的服务协定中。 不要设置 <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.AssemblyName%2A> 或 <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.CodeBase%2A> 属性。 默认序列化程序集假定为当前程序集。  
+    3. 将生成的序列化代码编译到您的应用程序集内并将 添加到使用  的服务协定中。 不要设置 <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.AssemblyName%2A> 或 <xref:System.Xml.Serialization.XmlSerializerAssemblyAttribute.CodeBase%2A> 属性。 默认序列化程序集假定为当前程序集。  
   
 ### <a name="to-generate-xmlserializer-serialization-code-in-visual-studio"></a>在 Visual Studio 中生成 XmlSerializer 序列化代码  
   
 1. 在 Visual Studio 中创建 WCF 服务和客户端项目。 然后，将服务引用添加到客户端项目。  
   
-2. 将 <xref:System.ServiceModel.XmlSerializerFormatAttribute> 添加到**serviceReference** -> 的客户端应用程序项目中的*reference.cs*文件中的服务**协定。** 请注意，需要在**解决方案资源管理器**中显示所有文件以查看这些文件。  
+2. 将添加 <xref:System.ServiceModel.XmlSerializerFormatAttribute> 到 " *reference.cs* " 文件中的 " **serviceReference**" 下的客户端应用项目中的服务协定  ->  **reference.svcmap**。 请注意，需要在**解决方案资源管理器**中显示所有文件以查看这些文件。  
   
 3. 生成客户端应用。  
   
-4. 使用[Svcutil.exe 元数据实用工具（）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) ，通过使用命令创建预生成的序列化程序 *.cs*文件：  
+4. 使用[Svcutil.exe 元数据实用工具（）](../servicemodel-metadata-utility-tool-svcutil-exe.md) ，通过使用命令创建预生成的序列化程序 *.cs*文件：  
   
     ```console  
     svcutil.exe /t:xmlSerializer  <assemblyPath>*  
@@ -86,6 +86,6 @@ ms.locfileid: "73976061"
 svcutil /t:xmlserializer myContractLibrary.exe  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [ServiceModel 元数据实用工具 (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [ServiceModel 元数据实用工具 (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)

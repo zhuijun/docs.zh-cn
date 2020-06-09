@@ -2,12 +2,12 @@
 title: BasicBinding
 ms.date: 03/30/2017
 ms.assetid: 86fbeb87-4d89-4b61-9577-867e0ac12945
-ms.openlocfilehash: ddbe3e505028acf3abbadc9a741f66fdceca3784
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 84bfe78aa9e82b9600c48e0a32514f669fcc7d77
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716061"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84575649"
 ---
 # <a name="basicbinding"></a>BasicBinding
 
@@ -27,9 +27,9 @@ ms.locfileid: "74716061"
 
 ## <a name="sample-details"></a>示例详细信息
 
-此示例基于实现计算器服务的[入门](../../../../docs/framework/wcf/samples/getting-started-sample.md)。
+此示例基于实现计算器服务的[入门](getting-started-sample.md)。
 
-若要将基本绑定与默认行为一起使用，只需要使用绑定节的名称。 如果要配置基本绑定并更改它的某些设置，则必须定义一个绑定配置。 终结点必须通过使用 <`endpoint`> 元素的 `bindingConfiguration` 属性，按名称引用绑定配置，如下面的示例代码所示。
+若要将基本绑定与默认行为一起使用，只需要使用绑定节的名称。 如果要配置基本绑定并更改它的某些设置，则必须定义一个绑定配置。 终结点必须通过使用 <> 元素的属性按名称引用绑定配置 `bindingConfiguration` `endpoint` ，如下面的示例代码所示。
 
 ```xml
 <services>
@@ -90,8 +90,8 @@ Press <ENTER> to terminate client.
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable
     ```
 
-2. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+2. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-3. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+3. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。
 
-4. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/running-the-samples.md)中的说明进行操作。
+4. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。

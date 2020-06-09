@@ -6,12 +6,12 @@ helpviewer_keywords:
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: 01470bd7f317acca068b3c1be1c751e3050ee7e8
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: fd78f2cd8266f94c577801623a84b56919c82973
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320212"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600849"
 ---
 # <a name="what-is-windows-communication-foundation"></a>什么是 Windows Communication Foundation
 Windows Communication Foundation （WCF）是用于生成面向服务的应用程序的框架。 使用 WCF，可以将数据作为异步消息从一个服务终结点发送到另一个服务终结点。 服务终结点可以是由 IIS 承载的持续可用的服务的一部分，也可以是应用程序中承载的服务。 终结点可以是从服务终结点请求数据的服务客户端。 简单消息可以是作为 XML 发送的单个字符或单个单词，复杂消息可以是二进制数据流。 一些示例方案包括：
@@ -52,9 +52,9 @@ WCF 包括以下功能集。 有关详细信息，请参阅[WCF 功能详细信�
 
 - **数据协定**
 
-     因为 WCF 是使用 .NET Framework 生成的，所以它还包含提供要强制执行的协定的代码友好方法。 数据协定就是其中一种通用类型的协定。 实质上，当您使用 Visual C# 或 Visual Basic 对服务进行编码时，处理数据的最简单方法是使用属于数据实体的属性创建表示该数据实体的类。 WCF 包含一个用于以这种简单方式处理数据的综合系统。 在创建了表示数据的类之后，服务会自动生成使客户端能够符合所设计数据类型的元数据。 有关详细信息，请参阅[使用数据协定](../../../docs/framework/wcf/feature-details/using-data-contracts.md)。
+     因为 WCF 是使用 .NET Framework 生成的，所以它还包含提供要强制执行的协定的代码友好方法。 数据协定就是其中一种通用类型的协定。 实质上，当您使用 Visual C# 或 Visual Basic 对服务进行编码时，处理数据的最简单方法是使用属于数据实体的属性创建表示该数据实体的类。 WCF 包含一个用于以这种简单方式处理数据的综合系统。 在创建了表示数据的类之后，服务会自动生成使客户端能够符合所设计数据类型的元数据。 有关详细信息，请参阅[使用数据协定](feature-details/using-data-contracts.md)。
 
-- **Security**
+- **安全性**
 
      可对消息进加密以保护隐私，而且可以要求用户对其自身进行身份验证，然后才允许接收消息。 可使用众所周知的标准（如 SSL 或 WS-SecureConversation）实现安全性。 有关详细信息，请参阅[安全性](./feature-details/security.md)。
 
@@ -72,7 +72,7 @@ WCF 包括以下功能集。 有关详细信息，请参阅[WCF 功能详细信�
 
 - **事务**
 
-     WCF 还支持使用以下三种事务模型之一的事务： AtomicTransactions、<xref:System.Transactions> 命名空间中的 Api 和 Microsoft 分布式事务处理协调器。 有关 WCF 中事务支持的详细信息，请参阅[事务](./feature-details/transactions-in-wcf.md)。
+     WCF 还支持使用以下三种事务模型之一的事务： AtomicTransactions、命名空间中的 Api <xref:System.Transactions> 和 Microsoft 分布式事务处理协调器。 有关 WCF 中事务支持的详细信息，请参阅[事务](./feature-details/transactions-in-wcf.md)。
 
 - **AJAX 和 REST 支持**
 
@@ -94,13 +94,13 @@ Microsoft Silverlight 是一个用于创建可互操作的、丰富 Web 应用�
 
 Windows Server AppFabric 应用程序服务器的托管功能专门用于部署和管理使用 WCF 进行通信的应用程序。 托管功能包括丰富的工具和配置选项，专门为启用了 WCF 的应用程序而设计。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel>
 - [Windows Communication Foundation 基础概念](fundamental-concepts.md)
 - [Windows Communication Foundation 体系结构](architecture.md)
 - [指南与最佳做法](guidelines-and-best-practices.md)
 - [入门教程](getting-started-tutorial.md)
-- [文档使用指南](guide-to-the-documentation.md)
+- [文档指南](guide-to-the-documentation.md)
 - [基本 WCF 编程](basic-wcf-programming.md)
 - [Windows Communication Foundation 示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751514%28v=vs.90%29)

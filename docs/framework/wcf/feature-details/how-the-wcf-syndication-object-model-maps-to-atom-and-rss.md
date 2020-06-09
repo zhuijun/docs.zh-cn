@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0365eb37-98cc-4b13-80fb-f1e78847a748
-ms.openlocfilehash: 1a2723a445c71dd883492907587f8cbe7b89666a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 67fbbb035a3a6683cefbf24e299f32579b674bbd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64613222"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597249"
 ---
 # <a name="how-the-wcf-syndication-object-model-maps-to-atom-and-rss"></a>WCF 联合对象模型如何映射到 Atom 和 RSS
-开发 Windows Communication Foundation (WCF) 联合服务时，您创建源和项使用以下类：  
+开发 Windows Communication Foundation （WCF）联合服务时，可以使用以下类创建源和项：  
   
 - <xref:System.ServiceModel.Syndication.SyndicationFeed>  
   
@@ -31,9 +31,9 @@ ms.locfileid: "64613222"
   
 - <xref:System.ServiceModel.Syndication.XmlSyndicationContent>  
   
- 可以按照为其定义格式化程序的任何联合格式序列化 <xref:System.ServiceModel.Syndication.SyndicationFeed>。 WCF 配有两个格式化程序：<xref:System.ServiceModel.Syndication.Atom10FeedFormatter>和<xref:System.ServiceModel.Syndication.Rss20FeedFormatter>。  
+ 可以按照为其定义格式化程序的任何联合格式序列化 <xref:System.ServiceModel.Syndication.SyndicationFeed>。 WCF 附带了两个格式化程序： <xref:System.ServiceModel.Syndication.Atom10FeedFormatter> 和 <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> 。  
   
- 与 RSS 2.0 规范相比，围绕 <xref:System.ServiceModel.Syndication.SyndicationFeed> 和 <xref:System.ServiceModel.Syndication.SyndicationItem> 的对象模型具有与 Atom 1.0 规范更密切的关系。 这是因为 Atom 1.0 是更为充分的规范，它定义了在 RSS 2.0 规范中不明确的或被忽略的元素。 正因为如此，WCF 联合对象模型中的许多项在 RSS 2.0 规范中已没有直接的表示形式。 序列化时<xref:System.ServiceModel.Syndication.SyndicationFeed>和<xref:System.ServiceModel.Syndication.SyndicationItem>对象到 RSS 2.0 中，WCF 允许你将 Atom 特定的数据元素序列化为符合 Atom 规范的命名空间限定扩展元素。 可以通过传递到 <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> 构造函数的参数对此进行控制。  
+ 与 RSS 2.0 规范相比，围绕 <xref:System.ServiceModel.Syndication.SyndicationFeed> 和 <xref:System.ServiceModel.Syndication.SyndicationItem> 的对象模型具有与 Atom 1.0 规范更密切的关系。 这是因为 Atom 1.0 是更为充分的规范，它定义了在 RSS 2.0 规范中不明确的或被忽略的元素。 因此，WCF 联合对象模型中的许多项在 RSS 2.0 规范中没有直接表示形式。 将 <xref:System.ServiceModel.Syndication.SyndicationFeed> 和对象序列化为 <xref:System.ServiceModel.Syndication.SyndicationItem> RSS 2.0 时，WCF 允许你将特定于 atom 的数据元素序列化为符合 Atom 规范的命名空间限定扩展元素。 可以通过传递到 <xref:System.ServiceModel.Syndication.Rss20FeedFormatter> 构造函数的参数对此进行控制。  
   
  本主题中的代码示例使用此处定义的两种方法之一进行实际的序列化。  
   
@@ -397,10 +397,10 @@ ms.locfileid: "64613222"
   
  `</content>`  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [WCF 联合概述](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)
-- [联合体系结构](../../../../docs/framework/wcf/feature-details/architecture-of-syndication.md)
-- [如何：创建基本 RSS 源](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-rss-feed.md)
-- [如何：创建基本 Atom 源](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-atom-feed.md)
-- [如何：公开源作为 Atom 和 RSS](../../../../docs/framework/wcf/feature-details/how-to-expose-a-feed-as-both-atom-and-rss.md)
+- [WCF 联合概述](wcf-syndication-overview.md)
+- [联合体系结构](architecture-of-syndication.md)
+- [如何：创建基本 RSS 源](how-to-create-a-basic-rss-feed.md)
+- [如何：创建基本 Atom 源](how-to-create-a-basic-atom-feed.md)
+- [如何：作为 Atom 和 RSS 公开源](how-to-expose-a-feed-as-both-atom-and-rss.md)

@@ -2,12 +2,12 @@
 title: 对等网络
 ms.date: 03/30/2017
 ms.assetid: ad6cb67b-fd1c-4ca1-a767-b410da2e16ca
-ms.openlocfilehash: 2905a429e907f7e97c482c22229a6bc928c52243
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 42bda754afa58354c087e587e500bebfe72169f4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744669"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600758"
 ---
 # <a name="peer-to-peer-networking"></a>对等网络
 对等通道是 Windows Communication Foundation （WCF）中的一种多方对等（P2P）通信技术。 它为应用程序开发人员提供了基于消息的、安全且可伸缩的 P2P 信道。 可从对等通道中获益的多方应用程序的一个常见示例是协作应用程序，例如聊天应用程序，其中一组人以对等方式（无需服务器）相互聊天。 对等通道可为消费者和企业方案启用 P2P 协作、内容分发、负载平衡和分布式处理。  
@@ -17,11 +17,11 @@ ms.locfileid: "76744669"
  以下各节包含有关对等网络以及使用对等通道类来创建启用对等的网络应用程序的信息。  
   
 ## <a name="in-this-section"></a>本节内容  
- [对等通道方案](../../../../docs/framework/wcf/feature-details/peer-channel-scenarios.md)：介绍对等通道 api 支持的开发方案，如发布/订阅消息传递、协作、分布式处理和游戏。  
+ [对等通道方案](peer-channel-scenarios.md)：介绍对等通道 api 支持的开发方案，如发布/订阅消息传递、协作、分布式处理和游戏。  
   
- [对等通道概念](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)：介绍对等网格、对等节点、对等通道安全和对等解析程序。  
+ [对等通道概念](peer-channel-concepts.md)：介绍对等网格、对等节点、对等通道安全和对等解析程序。  
   
- [生成对等通道应用程序](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)：提供有关开发对等通道应用程序的指导。  
+ [生成对等通道应用程序](building-a-peer-channel-application.md)：提供有关开发对等通道应用程序的指导。  
   
 ## <a name="peer-channel-code-examples"></a>对等通道代码示例  
  [对等通道自定义对等解析程序](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751466(v=vs.90))  

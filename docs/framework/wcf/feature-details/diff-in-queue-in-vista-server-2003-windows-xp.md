@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF], differences in operating systems
 ms.assetid: aa809d93-d0a3-4ae6-a726-d015cca37c04
-ms.openlocfilehash: 0d7b952382b50daae0291ed6afb22bb612447670
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: abd81b5e7bf611fc6b4f446a82628b83130f2d54
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920150"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599199"
 ---
 # <a name="differences-in-queuing-features-in-windows-vista-windows-server-2003-and-windows-xp"></a>Windows Vista、Windows Server 2003 和 Windows XP 在排队功能方面的差异
 本主题概述了 Windows Vista、Windows Server 2003 和 Windows XP 之间的 Windows Communication Foundation （WCF）队列功能之间的差异。  
@@ -26,9 +26,9 @@ ms.locfileid: "76920150"
   
  与病毒处理相关的 Windows Vista、Windows Server 2003 和 Windows XP 上的消息队列（MSMQ）之间的主要差异包括：  
   
-- Windows Vista 中的 MSMQ 支持子队列，而 Windows Server 2003 和 Windows XP 不支持子队列。 子队列用于病毒消息处理。 重试队列和病毒队列是应用程序队列的子队列，是基于病毒消息处理设置创建的。 `MaxRetryCycles` 用于指示要创建的重试子队列的数量。 因此，在 Windows Server 2003 或 Windows XP 上运行时，将忽略 `MaxRetryCycles` 并且不允许 `ReceiveErrorHandling.Move`。  
+- Windows Vista 中的 MSMQ 支持子队列，而 Windows Server 2003 和 Windows XP 不支持子队列。 子队列用于病毒消息处理。 重试队列和病毒队列是应用程序队列的子队列，是基于病毒消息处理设置创建的。 `MaxRetryCycles` 用于指示要创建的重试子队列的数量。 因此，在 Windows Server 2003 或 Windows XP 上运行时， `MaxRetryCycles` 将被忽略，并且 `ReceiveErrorHandling.Move` 不被允许。  
   
-- Windows Vista 中的 MSMQ 支持否定确认，而 Windows Server 2003 和 Windows XP 则不支持。 来自接收队列管理器的否定确认会致使发送队列管理器将被拒绝的消息放入死信队列。 因此，不允许在 Windows Server 2003 和 Windows XP 中使用 `ReceiveErrorHandling.Reject`。  
+- Windows Vista 中的 MSMQ 支持否定确认，而 Windows Server 2003 和 Windows XP 则不支持。 来自接收队列管理器的否定确认会致使发送队列管理器将被拒绝的消息放入死信队列。 同样， `ReceiveErrorHandling.Reject` Windows Server 2003 和 WINDOWS XP 不允许这样做。  
   
 - Windows Vista 中的 MSMQ 支持消息属性，该属性保留尝试消息传递的次数。 此中止计数属性在 Windows Server 2003 和 Windows XP 上不可用。 WCF 在内存中维护中止计数，因此当 Web 场中的多个 WCF 服务读取同一条消息时，此属性可能不会包含准确值。  
   
@@ -37,5 +37,5 @@ ms.locfileid: "76920150"
   
 ## <a name="see-also"></a>另请参阅
 
-- [使用死信队列处理消息传输故障](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)
-- [有害消息处理](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)
+- [使用死信队列处理消息传输故障](using-dead-letter-queues-to-handle-message-transfer-failures.md)
+- [病毒消息处理](poison-message-handling.md)
