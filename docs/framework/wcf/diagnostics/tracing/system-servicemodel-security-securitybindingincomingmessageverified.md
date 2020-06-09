@@ -2,12 +2,12 @@
 title: System.ServiceModel.Security.SecurityBindingIncomingMessageVerified
 ms.date: 03/30/2017
 ms.assetid: 40fc744e-8d6f-49e0-a5fd-4f9a31cc0ed7
-ms.openlocfilehash: a38c14d3e56a96450852bd566d565f34cdd71928
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f38402ad3d68f6bb020ffcf9fe0733ca102d94ef
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61948423"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84576690"
 ---
 # <a name="systemservicemodelsecuritysecuritybindingincomingmessageverified"></a>System.ServiceModel.Security.SecurityBindingIncomingMessageVerified
 System.ServiceModel.Security.SecurityBindingIncomingMessageVerified  
@@ -15,8 +15,8 @@ System.ServiceModel.Security.SecurityBindingIncomingMessageVerified
 ## <a name="description"></a>描述  
  安全协议已验证传入的消息。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [跟踪](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [使用跟踪来排除应用程序故障](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理和诊断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [跟踪](index.md)
+- [使用跟踪来排除应用程序故障](using-tracing-to-troubleshoot-your-application.md)
+- [管理和诊断](../index.md)

@@ -2,23 +2,23 @@
 title: 选择筛选器
 ms.date: 03/30/2017
 ms.assetid: 67ab5af9-b9d9-4300-b3b1-41abb5a1fd10
-ms.openlocfilehash: 282f6e9e2bc986feee0d1825ee9d87217d453e50
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: e951c472543239df0c01dcba3e46f120ced9e192
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964818"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84587490"
 ---
 # <a name="choosing-a-filter"></a>选择筛选器
 配置路由服务时，选择正确的消息筛选器并将它们配置为允许您针对接收的消息进行完全匹配非常重要。 如果所选筛选器筛选出的匹配项太广或者配置不当，则消息会错误地进行路由。 如果筛选器的筛选范围太窄，则某些消息可能没有任何可用的有效路由。
 
-## <a name="filter-types"></a>滤波器类型
+## <a name="filter-types"></a>筛选器类型
 
 选择由路由服务使用的筛选器时，了解每个筛选器的工作方式以及哪些信息可以作为传入消息的一部分非常重要。 例如，如果所有消息都是通过同一终结点接收的，则 Address 和 EndpointName 筛选器可能没有用，因为所有消息都与这两个筛选器匹配。
 
 ### <a name="action"></a>操作
 
-Action 筛选器检查 <xref:System.ServiceModel.Channels.MessageHeaders.Action%2A> 属性。 如果消息中 Action 标头的内容与筛选器配置中指定的筛选器数据值相匹配，此筛选器将返回 `true`。 下面的示例定义了一个 `FilterElement`，该使用操作筛选器来匹配包含值为 `http://namespace/contract/operation/`的操作标头的消息。
+Action 筛选器检查 <xref:System.ServiceModel.Channels.MessageHeaders.Action%2A> 属性。 如果消息中 Action 标头的内容与筛选器配置中指定的筛选器数据值相匹配，此筛选器将返回 `true`。 下面的示例定义一个 `FilterElement` ，它使用操作筛选器来匹配包含值为的操作标头的消息 `http://namespace/contract/operation/` 。
 
 ```xml
 <filter name="action1" filterType="Action" filterData="http://namespace/contract/operation/" />
@@ -32,7 +32,7 @@ ActionMessageFilter action1 = new ActionMessageFilter(new string[] { "http://nam
 
 ### <a name="endpointaddress"></a>EndpointAddress
 
-EndpointAddress 筛选器检查接收消息的 EndpointAddress。 如果消息到达的地址与筛选器配置中指定的筛选器地址完全匹配，此筛选器将返回 `true`。 下面的示例定义了一个 `FilterElement`，该使用 Address 筛选器来匹配发送到 "http://\<hostname >/vdir/s.svc/b" 的任何消息。
+EndpointAddress 筛选器检查接收消息的 EndpointAddress。 如果消息到达的地址与筛选器配置中指定的筛选器地址完全匹配，此筛选器将返回 `true`。 下面的示例定义一个 `FilterElement` ，它使用地址筛选器来匹配发送到 "http:///vdir/s.svc/b" 的任何消息 \<hostname> 。
 
 ```xml
 <filter name="address1" filterType="EndpointAddress" filterData="http://host/vdir/s.svc/b" />
@@ -51,7 +51,7 @@ EndpointAddressMessageFilter address1 = new EndpointAddressMessageFilter(new End
 
 ### <a name="endpointaddressprefix"></a>EndpointAddressPrefix
 
-EndpointAddressPrefix 筛选器与 EndpointAddress 筛选器类似。 EndpointAddressPrefix 筛选器检查接收消息的 EndpointAddress。 但是，EndpointAddressPrefix 筛选器在匹配以筛选器配置中指定的值开头的地址时用作通配符。 下面的示例定义了一个 `FilterElement`，该使用 EndpointAddressPrefix 筛选器来匹配任何发送到 `http://<hostname>/vdir*`的消息。
+EndpointAddressPrefix 筛选器与 EndpointAddress 筛选器类似。 EndpointAddressPrefix 筛选器检查接收消息的 EndpointAddress。 但是，EndpointAddressPrefix 筛选器在匹配以筛选器配置中指定的值开头的地址时用作通配符。 下面的示例定义一个 `FilterElement` ，它使用 EndpointAddressPrefix 筛选器来匹配发送到的所有消息 `http://<hostname>/vdir*` 。
 
 ```xml
 <filter name="prefix1" filterType="EndpointAddressPrefix" filterData="http://host/vdir" />
@@ -84,7 +84,7 @@ StrictAndMessageFilter and1=new StrictAndMessageFilter(address1, action1);
 
 如果您必须组合多个筛选器中的逻辑来确定应进行匹配的条件，则应使用此筛选器。 例如，如果您有多个目标，而这些目标只能接收发送到特定地址的操作和消息的某些组合，则可以使用 AND 筛选器组合必要的 Action 筛选器和 Address 筛选器。
 
-### <a name="custom"></a>“自定义”
+### <a name="custom"></a>自定义
 
 选择自定义筛选器类型时，必须提供一个 customType 值，该值包含包含要用于此筛选器的**MessageFilter**实现的程序集的类型。 此外，filterData 必须包含自定义筛选器在计算消息时可能需要的任何值。 下面的示例定义一个 `FilterElement`，它使用 `CustomAssembly.MyCustomMsgFilter` MessageFilter 实现。
 
@@ -96,11 +96,11 @@ StrictAndMessageFilter and1=new StrictAndMessageFilter(address1, action1);
 MyCustomMsgFilter custom1=new MyCustomMsgFilter("Custom Data");
 ```
 
-如果需要针对 [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]提供的筛选器未涵盖的消息执行自定义匹配逻辑，则必须创建作为**MessageFilter**类的实现的自定义筛选器。 例如，您可以创建这样的自定义筛选器：比较传入消息中的字段与作为配置提供给该筛选器的已知值列表，或者对特定消息元素进行哈希处理然后检查该值以确定该筛选器应返回 `true` 还是 `false`。
+如果需要对随提供的筛选器未涵盖的消息执行自定义匹配逻辑 [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)] ，则必须创建作为**MessageFilter**类的实现的自定义筛选器。 例如，您可以创建这样的自定义筛选器：比较传入消息中的字段与作为配置提供给该筛选器的已知值列表，或者对特定消息元素进行哈希处理然后检查该值以确定该筛选器应返回 `true` 还是 `false`。
 
 ### <a name="endpointname"></a>EndpointName
 
-EndpointName 筛选器检查接收消息的终结点的名称。 下面的示例定义了一个 `FilterElement`，该使用终结点筛选器来路由 "SvcEndpoint" 上收到的消息。
+EndpointName 筛选器检查接收消息的终结点的名称。 下面的示例定义一个 `FilterElement` ，它使用终结点筛选器来路由 "SvcEndpoint" 上收到的消息。
 
 ```xml
 <filter name="name1" filterType="Endpoint" filterData="SvcEndpoint" />
@@ -128,7 +128,7 @@ MatchAllMessageFilter matchAll1 = new MatchAllMessageFilter();
 
 ### <a name="xpath"></a>XPath
 
-使用 XPath 筛选器可以指定用于检查消息中的特定元素的 XPath 查询。 XPath 筛选是一个功能强大的筛选选项，通过它可以直接检查消息中的任何 XML 可寻址条目；但是该筛选要求您非常了解要接收的消息的结构。 下面的示例定义了一个 `FilterElement`，该使用 XPath 筛选器检查消息中是否有 "ns" 命名空间前缀所引用的命名空间中名为 "element" 的元素。
+使用 XPath 筛选器可以指定用于检查消息中的特定元素的 XPath 查询。 XPath 筛选是一个功能强大的筛选选项，通过它可以直接检查消息中的任何 XML 可寻址条目；但是该筛选要求您非常了解要接收的消息的结构。 下面的示例定义一个 `FilterElement` ，它使用 XPath 筛选器来检查消息中是否有 "ns" 命名空间前缀所引用的命名空间中名为 "element" 的元素。
 
 ```xml
 <filter name="xpath1" filterType="XPath" filterData="//ns:element" />
@@ -140,11 +140,11 @@ XPathMessageFilter xpath1=new XPathMessageFilter("//ns:element");
 
 如果您知道要接收的消息包含特定值，则此筛选器非常有用。 例如，如果您要承载同一服务的两个版本，并且知道发送到较新版本服务的消息在自定义标头中包含唯一值，则您可以创建这样的筛选器：使用 XPath 导航到此标头，并比较标头中存在的值与筛选器配置中指定的另一个值来确定筛选器是否匹配。
 
-由于 XPath 查询通常包含唯一命名空间（通常为很长或复杂的字符串值），因此 XPath 筛选器允许您使用命名空间表来定义命名空间的唯一前缀。 有关命名空间表的详细信息，请参阅[消息筛选器](../../../../docs/framework/wcf/feature-details/message-filters.md)。
+由于 XPath 查询通常包含唯一命名空间（通常为很长或复杂的字符串值），因此 XPath 筛选器允许您使用命名空间表来定义命名空间的唯一前缀。 有关命名空间表的详细信息，请参阅[消息筛选器](message-filters.md)。
 
 有关设计 XPath 查询的详细信息，请参阅[Xpath 语法](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256471(v=vs.100))。
 
 ## <a name="see-also"></a>另请参阅
 
-- [消息筛选器](../../../../docs/framework/wcf/feature-details/message-filters.md)
-- [如何：使用筛选器](../../../../docs/framework/wcf/feature-details/how-to-use-filters.md)
+- [消息筛选器](message-filters.md)
+- [如何：使用筛选器](how-to-use-filters.md)

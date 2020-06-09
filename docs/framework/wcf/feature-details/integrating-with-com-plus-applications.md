@@ -9,27 +9,27 @@ helpviewer_keywords:
 - COM+ [WCF]
 - WCF, COM+ integration
 ms.assetid: 98bf7dc4-d49a-4129-a59b-db7a7ec8c241
-ms.openlocfilehash: cd72265fe8e49c7def91ebbf05ad84618dd71d19
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 40778cf0dea4406160e20c74f17921673993bec2
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62046926"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586424"
 ---
 # <a name="integrating-with-com-applications"></a>与 COM+ 应用程序集成
-Windows Communication Foundation (WCF) 提供了用于创建分布式应用程序的丰富环境。 如果您在 COM + 中承载的基于组件的应用程序逻辑有大量投入时，可以使用 WCF 来扩展现有的逻辑，而不是无需将其重写。 本部分中的主题介绍如何通过 WCF 使用 COM +。  
+Windows Communication Foundation （WCF）提供了一个用于创建分布式应用程序的丰富环境。 如果你对 COM + 中承载的基于组件的应用程序逻辑有大量投资，则可以使用 WCF 来扩展现有的逻辑，而无需重写它。 本节中的主题介绍如何将 COM + 与 WCF 配合使用。  
   
 ## <a name="in-this-section"></a>本节内容  
- [与 COM+ 应用程序集成的概述](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications-overview.md)  
+ [与 COM + 应用程序集成概述](integrating-with-com-plus-applications-overview.md)  
  概述何时以及如何集成 COM+ 组件。  
   
- [如何：使用 COM + 服务模型配置工具](../../../../docs/framework/wcf/feature-details/how-to-use-the-com-service-model-configuration-tool.md)  
- 介绍如何使用 COM + 服务模块配置命令行工具 (ComSvcConfig.exe) 来配置要作为 WCF 服务公开的应用程序接口。  
+ [如何：使用 COM+ 服务模型配置工具](how-to-use-the-com-service-model-configuration-tool.md)  
+ 介绍如何使用 COM + 服务模块配置命令行工具（Comsvcconfig.exe）来配置要作为 WCF 服务公开的应用程序接口。  
   
- [如何：配置 COM + 服务设置](../../../../docs/framework/wcf/feature-details/how-to-configure-com-service-settings.md)  
- 介绍如何为 WCF 服务配置的 COM + 对象。  
+ [如何：配置 COM+ 服务设置](how-to-configure-com-service-settings.md)  
+ 说明如何将 COM + 对象配置为 WCF 服务。  
   
- [如何：将 COM + 集成应用程序部署](../../../../docs/framework/wcf/feature-details/how-to-deploy-a-com-integration-application.md)  
+ [如何：部署 COM+ 集成应用程序](how-to-deploy-a-com-integration-application.md)  
  介绍如何移动 COM+ 集成应用程序。  
   
 ## <a name="reference"></a>参考  
@@ -37,4 +37,4 @@ Windows Communication Foundation (WCF) 提供了用于创建分布式应用程�
   
 ## <a name="see-also"></a>请参阅
 
-- [与 COM 应用程序集成](../../../../docs/framework/wcf/feature-details/integrating-with-com-applications.md)
+- [与 COM 应用程序集成](integrating-with-com-applications.md)

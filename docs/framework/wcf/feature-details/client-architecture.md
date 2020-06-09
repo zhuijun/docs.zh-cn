@@ -2,18 +2,18 @@
 title: 客户端体系结构
 ms.date: 03/30/2017
 ms.assetid: 02624403-0d77-41cb-9a86-ab55e98c7966
-ms.openlocfilehash: 6ed00054de45abc23fdd9ad69f61c758f567b973
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c873368b82551312d203eb28d208eb6e3f50c89b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64656062"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586996"
 ---
 # <a name="client-architecture"></a>客户端体系结构
-应用程序使用 Windows Communication Foundation (WCF) 客户端对象调用服务操作。 本主题讨论 WCF 客户端对象、 WCF 客户端通道和基础通道体系结构及其关系。 WCF 客户端对象的基本概述，请参阅[WCF 客户端概述](../../../../docs/framework/wcf/wcf-client-overview.md)。 有关通道层的详细信息，请参阅[扩展通道层](../../../../docs/framework/wcf/extending/extending-the-channel-layer.md)。  
+应用程序使用 Windows Communication Foundation （WCF）客户端对象来调用服务操作。 本主题讨论 WCF 客户端对象、WCF 客户端信道及其与基础通道体系结构的关系。 有关 WCF 客户端对象的基本概述，请参阅[Wcf 客户端概述](../wcf-client-overview.md)。 有关通道层的详细信息，请参阅[扩展通道层](../extending/extending-the-channel-layer.md)。  
   
 ## <a name="overview"></a>概述  
- 服务模型运行时创建 WCF 客户端，将以下内容组成：  
+ 服务模型运行时创建 WCF 客户端，这些客户端由以下内容组成：  
   
 - 自动生成的服务协定客户端实现，该实现可以将应用程序代码中的调用转换为传出消息，将响应消息转换为输出参数并返回应用程序可以检索的值。  
   
@@ -21,25 +21,25 @@ ms.locfileid: "64656062"
   
 - 基于由使用的绑定指定的配置设置而生成的客户端通道。  
   
- 应用程序可以按需，通过创建此类客户端<xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType>或通过创建的实例<xref:System.ServiceModel.ClientBase%601>派生类，它是由生成[ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)。 这些预先生成的客户端类可以封装并委托给由 <xref:System.ServiceModel.ChannelFactory> 动态构造的客户端通道实现。 因此，客户端通道和生成这些客户端通道的客户端工厂是此处讨论的焦点。  
+ 应用程序可以按需创建这类客户端， <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> 或者通过创建派生类的实例， <xref:System.ServiceModel.ClientBase%601> 因为它是由由[个元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)生成的。 这些预先生成的客户端类可以封装并委托给由 <xref:System.ServiceModel.ChannelFactory> 动态构造的客户端通道实现。 因此，客户端通道和生成这些客户端通道的客户端工厂是此处讨论的焦点。  
   
 ## <a name="client-objects-and-client-channels"></a>客户端对象和客户端通道  
- WCF 客户端的基接口是<xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType>接口公开核心客户端功能以及的基本通信对象功能<xref:System.ServiceModel.ICommunicationObject?displayProperty=nameWithType>的上下文功能<xref:System.ServiceModel.IContextChannel?displayProperty=nameWithType>，以及可扩展的行为<xref:System.ServiceModel.IExtensibleObject%601?displayProperty=nameWithType>.  
+ WCF 客户端的基接口是 <xref:System.ServiceModel.IClientChannel?displayProperty=nameWithType> 接口，该接口公开核心客户端功能以及的基本通信对象功能、的 <xref:System.ServiceModel.ICommunicationObject?displayProperty=nameWithType> 上下文功能以及的 <xref:System.ServiceModel.IContextChannel?displayProperty=nameWithType> 可扩展行为 <xref:System.ServiceModel.IExtensibleObject%601?displayProperty=nameWithType> 。  
   
- 但 <xref:System.ServiceModel.IClientChannel> 接口并不定义服务协定本身。 这些协定通过服务协定接口进行声明 (通常从服务元数据之类的工具生成[ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md))。 WCF 客户端类型同时扩展<xref:System.ServiceModel.IClientChannel>和目标服务协定接口，以使应用程序能够直接调用操作，还可以访问客户端的运行时功能。 创建 WCF 客户端提供了 WCF<xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType>可以连接和配置的服务终结点与之交互的对象创建运行的时所需的信息。  
+ 但 <xref:System.ServiceModel.IClientChannel> 接口并不定义服务协定本身。 这些是由服务协定接口声明的（通常使用一种类似于 " [svcutil.exe" 元数据实用工具（）](../servicemodel-metadata-utility-tool-svcutil-exe.md)的工具从服务元数据生成）。 WCF 客户端类型同时扩展 <xref:System.ServiceModel.IClientChannel> 和目标服务协定接口，以使应用程序能够直接调用操作，同时还可以访问客户端运行时功能。 创建 WCF 客户端将 <xref:System.ServiceModel.ChannelFactory?displayProperty=nameWithType> 为 wcf 对象提供必要的信息，以创建可连接并与配置的服务终结点交互的运行时间。  
   
- 前面曾提到，然后才能使用它们，必须配置两种 WCF 客户端类型。 最简单的 WCF 客户端类型是派生的对象<xref:System.ServiceModel.ClientBase%601>(或<xref:System.ServiceModel.DuplexClientBase%601>如果服务协定是双工协定)。 通过使用以编程方式进行配置的构造函数，或者通过使用配置文件，然后直接调用该配置文件以调用服务操作，可以创建这些类型。 有关的基本概述<xref:System.ServiceModel.ClientBase%601>对象，请参阅[WCF 客户端概述](../../../../docs/framework/wcf/wcf-client-overview.md)。  
+ 如前文所述，必须先配置这两个 WCF 客户端类型，然后才能使用它们。 最简单的 WCF 客户端类型是派生自的对象 <xref:System.ServiceModel.ClientBase%601> （或者， <xref:System.ServiceModel.DuplexClientBase%601> 如果服务协定是双工协定）。 通过使用以编程方式进行配置的构造函数，或者通过使用配置文件，然后直接调用该配置文件以调用服务操作，可以创建这些类型。 有关对象的基本概述 <xref:System.ServiceModel.ClientBase%601> ，请参阅[WCF 客户端概述](../wcf-client-overview.md)。  
   
- 第二个类型是在运行时从对 <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A> 方法的调用中生成的。 通常涉及严格控制通信详细信息的应用程序使用此客户端类型，称为*客户端通道对象*，因为它可让更直接交互比基础的客户端运行时和通道系统。  
+ 第二个类型是在运行时从对 <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A> 方法的调用中生成的。 与严格控制通信细节相关的应用程序通常使用这种客户端类型，称为*客户端信道对象*，因为它可以实现比底层客户端运行时和通道系统更直接的交互。  
   
 ## <a name="channel-factories"></a>通道工厂  
- 负责创建可支持客户端调用的基础运行时的类为 <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> 类。 WCF 客户端对象和 WCF 客户端通道对象使用<xref:System.ServiceModel.ChannelFactory%601>对象来创建实例;<xref:System.ServiceModel.ClientBase%601>派生的客户端对象封装通道工厂的处理，但对于许多方案，它是非常合理直接通道工厂。 对此，常见的情况是从现有工厂重复创建新的客户端通道。 如果使用客户端对象，则可以通过调用，从 WCF 客户端对象获取基础通道工厂<xref:System.ServiceModel.ClientBase%601.ChannelFactory%2A?displayProperty=nameWithType>属性。  
+ 负责创建可支持客户端调用的基础运行时的类为 <xref:System.ServiceModel.ChannelFactory%601?displayProperty=nameWithType> 类。 WCF 客户端对象和 WCF 客户端通道对象均使用 <xref:System.ServiceModel.ChannelFactory%601> 对象来创建实例; <xref:System.ServiceModel.ClientBase%601> 派生的客户端对象封装通道工厂的处理，但对于许多方案，直接使用通道工厂是完全合理的。 对此，常见的情况是从现有工厂重复创建新的客户端通道。 如果你使用的是客户端对象，则可以通过调用属性来从 WCF 客户端对象获取基础通道工厂 <xref:System.ServiceModel.ClientBase%601.ChannelFactory%2A?displayProperty=nameWithType> 。  
   
- 应该记住的是，在调用 <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> 之前，通道工厂会为所提供的配置创建客户端通道的新实例。 一旦您调用<xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A>(或<xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType>， <xref:System.ServiceModel.ClientBase%601.CreateChannel%2A?displayProperty=nameWithType>，或在 WCF 客户端对象上的执行任何操作)，不能修改通道工厂和期待获取到不同的服务实例的通道即使只更改目标终结点地址。 如果您想用不同配置创建客户端对象或客户端通道，则必须首先创建新的通道工厂。  
+ 应该记住的是，在调用 <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A?displayProperty=nameWithType> 之前，通道工厂会为所提供的配置创建客户端通道的新实例。 调用 <xref:System.ServiceModel.ChannelFactory%601.CreateChannel%2A> （或 <xref:System.ServiceModel.ClientBase%601.Open%2A?displayProperty=nameWithType> 、 <xref:System.ServiceModel.ClientBase%601.CreateChannel%2A?displayProperty=nameWithType> 或对 WCF 客户端对象进行的任何操作）后，就不能修改通道工厂，而希望获取不同服务实例的通道，即使只是更改目标终结点地址也是如此。 如果您想用不同配置创建客户端对象或客户端通道，则必须首先创建新的通道工厂。  
   
- 有关使用 WCF 客户端对象和 WCF 客户端通道的各种问题的详细信息，请参阅[使用 WCF 客户端访问服务](../../../../docs/framework/wcf/feature-details/accessing-services-using-a-client.md)。  
+ 有关使用 WCF 客户端对象和 WCF 客户端通道的各种问题的详细信息，请参阅[使用 Wcf 客户端访问服务](accessing-services-using-a-client.md)。  
   
- 以下两个部分介绍创建和使用的 WCF 客户端通道对象。  
+ 以下两节介绍了如何创建和使用 WCF 客户端通道对象。  
   
 #### <a name="creating-a-new-wcf-client-channel-object"></a>创建新的 WCF 客户端通道对象  
  为了说明客户端通道的用法，假设已生成以下服务协定。  
@@ -57,6 +57,6 @@ ms.locfileid: "64656062"
   
  客户端通道对象在创建后可实现 <xref:System.ServiceModel.IClientChannel> 和协定接口。 因此，可以直接使用这些对象来调用操作，与支持该协定的服务进行交互。  
   
- 使用客户端对象和客户端通道对象之间的区别仅仅在于其易于使用性和开发人员的喜好。 许多开发人员习惯于使用类和对象会更喜欢使用 WCF 客户端对象而不是 WCF 客户端通道。  
+ 使用客户端对象和客户端通道对象之间的区别仅仅在于其易于使用性和开发人员的喜好。 很多熟悉使用类和对象的开发人员将更喜欢使用 WCF 客户端对象，而不是 WCF 客户端信道。  
   
- 有关示例，请参见 [如何：考虑使用 ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)。
+ 有关示例，请参阅[如何：使用 ChannelFactory](how-to-use-the-channelfactory.md)。

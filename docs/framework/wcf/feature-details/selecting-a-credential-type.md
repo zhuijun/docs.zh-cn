@@ -2,12 +2,12 @@
 title: 选择凭据类型
 ms.date: 03/30/2017
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-ms.openlocfilehash: 6737f7daeb37e2e296ca0429d73b963743c409a2
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 7bcc5f407077b32d85b7f1e5f7ddbc5aba4b80c1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746149"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586190"
 ---
 # <a name="selecting-a-credential-type"></a>选择凭据类型
 *凭据*是 WINDOWS COMMUNICATION FOUNDATION （WCF）用于建立声明的标识或功能的数据。 例如，护照就是政府颁发的用以证明国家或地区的公民身份的凭据。 在 WCF 中，凭据可以采用多种形式，例如用户名令牌和 x.509 证书。 本主题讨论凭据、凭据在 WCF 中的使用方式以及如何为应用程序选择正确的凭据。  
@@ -28,10 +28,10 @@ ms.locfileid: "76746149"
 |无|指定客户端不需要提供任何凭据。 这相当于匿名客户端。|  
 |基本|为客户端指定基本身份验证。 有关其他信息，请参阅 RFC2617-[HTTP authentication：基本和摘要式身份验证](ftp://ftp.rfc-editor.org/in-notes/rfc2617.txt)。|  
 |摘要|为客户端指定摘要式身份验证。 有关其他信息，请参阅 RFC2617-[HTTP authentication：基本和摘要式身份验证](ftp://ftp.rfc-editor.org/in-notes/rfc2617.txt)。|  
-|Ntlm|指定 NT LAN Manager (NTLM) 身份验证。 在由于某种原因无法使用 Kerberos 身份验证时使用。 你还可以通过将 <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> 属性设置为 `false`来禁用其用作回退，这将导致 WCF 在使用 NTLM 时尽力引发异常。 请注意，将此属性设置为 `false` 可能不阻止通过网络发送 NTLM 凭据。|  
+|Ntlm|指定 NT LAN Manager (NTLM) 身份验证。 在由于某种原因无法使用 Kerberos 身份验证时使用。 你还可以通过将属性设置为来禁用其用作回退 <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> `false` ，这会使 WCF 在使用 NTLM 时尽力引发异常。 请注意，将此属性设置为 `false` 可能不阻止通过网络发送 NTLM 凭据。|  
 |Windows|指定 Windows 身份验证。 若要在 Windows 域上仅指定 Kerberos 协议，则将 <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> 属性设置为 `false`（默认值为 `true`）。|  
 |证书|使用 X.509 证书执行客户端身份验证。|  
-|密码|用户必须提供用户名和密码。 使用 Windows 身份验证或其他自定义解决方案验证用户名/密码对。|  
+|Password|用户必须提供用户名和密码。 使用 Windows 身份验证或其他自定义解决方案验证用户名/密码对。|  
   
 ### <a name="message-client-credential-types"></a>消息客户端凭据类型  
  下表列出了在创建使用消息安全的应用程序时可以使用的可能的凭据类型。 可以在代码或配置文件中使用这些值。  
@@ -42,15 +42,15 @@ ms.locfileid: "76746149"
 |Windows|允许在使用 Windows 凭据建立的安全上下文中交换 SOAP 消息。|  
 |用户名|允许服务可以要求使用用户名凭据对客户端进行身份验证。 请注意，WCF 不允许对用户名进行任何加密操作，例如生成签名或加密数据。 WCF 可确保在使用用户名凭据时确保传输的安全性。|  
 |证书|允许服务可以要求使用 X.509 证书对客户端进行身份验证。|  
-|已颁发的令牌|根据安全策略配置的自定义令牌类型。 默认令牌类型为安全断言标记语言 (SAML)。 令牌由安全令牌服务颁发。 有关详细信息，请参阅[联合和颁发的令牌](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)。|  
+|已颁发的令牌|根据安全策略配置的自定义令牌类型。 默认令牌类型为安全断言标记语言 (SAML)。 令牌由安全令牌服务颁发。 有关详细信息，请参阅[联合和颁发的令牌](federation-and-issued-tokens.md)。|  
   
 ### <a name="negotiation-model-of-service-credentials"></a>服务凭据的协商模型  
  *协商*是通过交换凭据在客户端和服务之间建立信任关系的过程。 该过程在客户端和服务之间以迭代方式进行，以便仅公开协商过程下一步所需的信息。 实际上，最终结果是将服务凭据传递给要在后续操作中使用的客户端。  
   
- 但有一个例外，默认情况下，在使用消息级安全性时，WCF 中系统提供的绑定会自动协商服务凭据。 （例外情况是 <xref:System.ServiceModel.BasicHttpBinding>，默认情况下不启用安全性。）若要禁用此行为，请参阅 "<xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A>" 和 "<xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A>" 属性。  
+ 但有一个例外，默认情况下，在使用消息级安全性时，WCF 中系统提供的绑定会自动协商服务凭据。 （例外情况是 <xref:System.ServiceModel.BasicHttpBinding> ，默认情况下不启用安全性。）若要禁用此行为，请参见 <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> 和 <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A> 属性。  
   
 > [!NOTE]
-> 当 SSL 安全与 .NET Framework 3.5 及更高版本一起使用时，WCF 客户端将使用其证书存储区中的中间证书和 SSL 协商期间收到的中间证书，在服务的证书. .NET Framework 3.0 仅使用本地证书存储区中安装的中间证书。  
+> 当 SSL 安全与 .NET Framework 3.5 及更高版本一起使用时，WCF 客户端将使用其证书存储区中的中间证书和 SSL 协商期间收到的中间证书，对服务的证书执行证书链验证。 .NET Framework 3.0 仅使用本地证书存储区中安装的中间证书。  
   
 #### <a name="out-of-band-negotiation"></a>带外协商  
  如果禁用自动协商，则在将任何消息发送到服务之前必须向客户端提供服务凭据。 这也称为*带*外设置。 例如，如果指定的凭据类型为证书，且禁用了自动协商，则客户端必须联系服务所有者以在运行客户端应用程序的计算机上接收和安装证书。 例如，当要严格控制哪些客户端可以访问企业对企业方案中的服务时，可以执行上述操作。 此带外协商可以通过电子邮件完成，而 x.509 证书则使用 Microsoft 管理控制台（MMC）证书管理单元之类的工具存储在 Windows 证书存储中。  
@@ -64,7 +64,7 @@ ms.locfileid: "76746149"
  根据是对服务进行编程还是对客户端进行编程，设置凭据的方法会略有不同。  
   
 ### <a name="setting-service-credentials"></a>设置服务凭据  
- 如果使用的是传输模式，且使用 HTTP 作为传输，则必须使用 Internet Information Services (IIS)，或使用证书配置端口。 有关详细信息，请参阅[传输安全性概述](../../../../docs/framework/wcf/feature-details/transport-security-overview.md)和[HTTP 传输安全](../../../../docs/framework/wcf/feature-details/http-transport-security.md)。  
+ 如果使用的是传输模式，且使用 HTTP 作为传输，则必须使用 Internet Information Services (IIS)，或使用证书配置端口。 有关详细信息，请参阅[传输安全性概述](transport-security-overview.md)和[HTTP 传输安全](http-transport-security.md)。  
   
  若要在代码中使用凭据配置服务，则创建 <xref:System.ServiceModel.ServiceHost> 类的一个实例，并使用 <xref:System.ServiceModel.Description.ServiceCredentials> 类指定适当的凭据，该类可通过 <xref:System.ServiceModel.ServiceHostBase.Credentials%2A> 属性访问。  
   
@@ -95,7 +95,7 @@ ms.locfileid: "76746149"
 > [!IMPORTANT]
 > 无法切换标识时，要格外注意一种情况（即启用建立安全上下文时的默认行为）。 如果创建与第二个服务进行通信的服务，则无法更改用于向第二个服务打开 WCF 客户端的标识。 如果允许多个客户端使用第一个服务，且该服务访问第二个服务时将模拟客户端，则这将成为问题所在。 如果该服务重新使用所有调用方的相同客户端，则对第二个服务的所有调用都是以第一个调用方的标识进行的，该标识用于打开第二个服务的客户端。 换言之，该服务将第一个客户端的标识用于它的所有客户端以与第二个服务进行通信。 这可以导致特权提升。 如果这不是服务所需的行为，就必须跟踪每个调用方并为每个单独的调用方创建第二个服务的新客户端，并确保该服务仅使用正确调用方的正确客户端与第二个服务进行通信。  
   
- 有关凭据和安全会话的详细信息，请参阅安全[会话的安全注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-for-secure-sessions.md)。  
+ 有关凭据和安全会话的详细信息，请参阅安全[会话的安全注意事项](security-considerations-for-secure-sessions.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
@@ -110,7 +110,7 @@ ms.locfileid: "76746149"
 - <xref:System.ServiceModel.TcpTransportSecurity.ClientCredentialType%2A?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.SetCertificate%2A?displayProperty=nameWithType>
-- [安全性概念](../../../../docs/framework/wcf/feature-details/security-concepts.md)
-- [保护服务和客户端的安全](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
-- [WCF 安全编程](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)
-- [HTTP 传输安全性](../../../../docs/framework/wcf/feature-details/http-transport-security.md)
+- [安全性概念](security-concepts.md)
+- [保护服务和客户端的安全](securing-services-and-clients.md)
+- [WCF 安全编程](programming-wcf-security.md)
+- [HTTP 传输安全](http-transport-security.md)

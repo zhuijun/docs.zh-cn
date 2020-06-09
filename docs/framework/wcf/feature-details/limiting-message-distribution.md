@@ -2,12 +2,12 @@
 title: 限制消息分布
 ms.date: 03/30/2017
 ms.assetid: 8b5ec4b8-1ce9-45ef-bb90-2c840456bcc1
-ms.openlocfilehash: 36d9d43760e68f6bcf0099ac17dec5a8278d0e49
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 188d7bd365caad7d4cd438744c78ae8e7cd95e7e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76211897"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586307"
 ---
 # <a name="limiting-message-distribution"></a>限制消息分布
 
@@ -57,13 +57,13 @@ ms.locfileid: "76211897"
 
   - *网格的复杂子集*： MessagePropagationFilter。
 
-- **频率**
+- **发送频率**
 
   - *非常频繁*：直接连接、PeerHopCount、MessagePropagationFilter。
 
   - *偶尔*：本地筛选器。
 
-- **带宽使用**
+- **所用带宽**
 
   - *高*：直接连接，不建议使用 MessagePropagationFilter 或本地筛选器。
 
@@ -71,4 +71,4 @@ ms.locfileid: "76211897"
 
 ## <a name="see-also"></a>另请参阅
 
-- [生成对等通道应用程序](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+- [生成对等通道应用程序](building-a-peer-channel-application.md)

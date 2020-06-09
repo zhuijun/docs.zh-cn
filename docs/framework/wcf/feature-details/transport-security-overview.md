@@ -5,21 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-ms.openlocfilehash: 6796ca0b16e65a07735aec075d63b0cdfe38d080
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 5c6b6389122b32ed8db701020a8c13ba17225867
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81464018"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84585670"
 ---
 # <a name="transport-security-overview"></a>传输安全概述
-Windows 通信基础 （WCF） 中的传输安全机制取决于所使用的绑定和传输。 例如，当使用 <xref:System.ServiceModel.WSHttpBinding> 类时，传输为 HTTP，保证传输安全的主要机制为 HTTP 上的安全套接字层 (SSL) （通常称为 HTTPS）。 本主题讨论 WCF 系统提供的绑定中使用的主要运输安全机制。  
+Windows Communication Foundation （WCF）中的传输安全机制取决于所使用的绑定和传输。 例如，当使用 <xref:System.ServiceModel.WSHttpBinding> 类时，传输为 HTTP，保证传输安全的主要机制为 HTTP 上的安全套接字层 (SSL) （通常称为 HTTPS）。 本主题讨论 WCF 系统提供的绑定中使用的主要传输安全机制。  
   
 > [!NOTE]
-> 当 SSL 安全性与 .NET Framework 3.5 以及更高版本一起使用时，WCF 客户端使用其证书存储中的中间证书和 SSL 协商期间接收的中间证书对服务的证书执行证书链验证。 .NET Framework 3.0 仅使用本地证书存储区中安装的中间证书。  
+> 当 SSL 安全与 .NET Framework 3.5 及更高版本一起使用时，WCF 客户端将同时使用其证书存储区中的中间证书和 SSL 协商期间收到的中间证书，对服务的证书执行证书链验证。 .NET Framework 3.0 仅使用本地证书存储区中安装的中间证书。  
   
 > [!WARNING]
-> 在使用传输安全时，可能会覆盖 <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> 属性。 为了防止这种情况发生，<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A?displayProperty=nameWithType>将 设置为<xref:System.ServiceModel.Description.PrincipalPermissionMode.None?displayProperty=nameWithType>。 <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> 是可对服务说明设置的服务行为。  
+> 在使用传输安全时，可能会覆盖 <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> 属性。 若要防止此情况发生，请将设置 <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.PrincipalPermissionMode%2A?displayProperty=nameWithType> 为 <xref:System.ServiceModel.Description.PrincipalPermissionMode.None?displayProperty=nameWithType> 。 <xref:System.ServiceModel.Description.ServiceAuthorizationBehavior> 是可对服务说明设置的服务行为。  
   
 ## <a name="basichttpbinding"></a>BasicHttpBinding  
  默认情况下，<xref:System.ServiceModel.BasicHttpBinding> 类不提供安全性。 此绑定旨在提供与不实现安全机制的 Web 服务提供程序的互操作性。 但可以通过将 <xref:System.ServiceModel.BasicHttpSecurity.Mode%2A> 属性设置为 <xref:System.ServiceModel.BasicHttpSecurityMode.None> 以外的值来启用安全。 若要启用传输安全，请将该属性设置为 <xref:System.ServiceModel.BasicHttpSecurityMode.Transport>。  
@@ -47,22 +47,22 @@ Windows 通信基础 （WCF） 中的传输安全机制取决于所使用的绑�
  以下几节讨论其他客户端凭据类型。  
   
 #### <a name="basic"></a>基本  
- 这对应于 IIS 中的基本身份验证方法。 使用此模式时，必须为 IIS 服务器配置 Windows 用户帐户和适当的 NTFS 文件系统权限。 有关 IIS 6.0 的详细信息，请参阅[启用基本身份验证和配置领域名称](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc785293(v=ws.10))。 有关 IIS 7.0 的详细信息，请参阅[配置基本身份验证 （IIS 7）。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772009(v=ws.10))  
+ 这对应于 IIS 中的基本身份验证方法。 使用此模式时，必须为 IIS 服务器配置 Windows 用户帐户和适当的 NTFS 文件系统权限。 有关 IIS 6.0 的详细信息，请参阅[启用基本身份验证和配置领域名称](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc785293(v=ws.10))。 有关 IIS 7.0 的详细信息，请参阅[配置基本身份验证（IIS 7）](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc772009(v=ws.10))。  
   
 #### <a name="certificate"></a>证书  
- IIS 有一个要求客户端使用证书进行登录的选项。 此功能还可以使 IIS 将客户端证书映射到 Windows 帐户。 有关 IIS 6.0 的详细信息，请参阅[在 IIS 6.0 中启用客户端证书](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc727994(v=ws.10))。 有关 IIS 7.0 的详细信息，请参阅[在 IIS 7 中配置服务器证书](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。  
+ IIS 有一个要求客户端使用证书进行登录的选项。 此功能还可以使 IIS 将客户端证书映射到 Windows 帐户。 有关 IIS 6.0 的详细信息，请参阅[在 iis 6.0 中启用客户端证书](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc727994(v=ws.10))。 有关 IIS 7.0 的详细信息，请参阅[在 iis 7 中配置服务器证书](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。  
   
 #### <a name="digest"></a>摘要  
- 摘要式身份验证类似于基本身份验证，但其具有以哈希形式而不是明文形式发送凭据的优点。 有关 IIS 6.0 的详细信息，请参阅[IIS 6.0 中的摘要身份验证](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10))。 有关 IIS 7.0 的详细信息，请参阅[配置摘要身份验证 （IIS 7）。](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754104(v=ws.10))  
+ 摘要式身份验证类似于基本身份验证，但其具有以哈希形式而不是明文形式发送凭据的优点。 有关 IIS 6.0 的详细信息，请参阅[iis 6.0 中的摘要式身份验证](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10))。 有关 IIS 7.0 的详细信息，请参阅[配置摘要式身份验证（IIS 7）](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc754104(v=ws.10))。  
   
 #### <a name="windows"></a>Windows  
- 这对应于 IIS 中的集成 Windows 身份验证。 设置为此值时，还需要服务器位于使用 Kerberos 协议作为其域控制器的 Windows 域中。 如果服务器不在支持 Kerberos 的域中，或者如果 Kerberos 系统失败，您可以使用下一节中说明的 NT LAN Manager (NTLM) 值。 有关 IIS 6.0 的详细信息，请参阅[IIS 6.0 中的集成 Windows 身份验证](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738016(v=ws.10))。 有关 IIS 7.0 的详细信息，请参阅[在 IIS 7 中配置服务器证书](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。
+ 这对应于 IIS 中的集成 Windows 身份验证。 设置为此值时，还需要服务器位于使用 Kerberos 协议作为其域控制器的 Windows 域中。 如果服务器不在支持 Kerberos 的域中，或者如果 Kerberos 系统失败，您可以使用下一节中说明的 NT LAN Manager (NTLM) 值。 有关 IIS 6.0 的详细信息，请参阅[iis 6.0 中的集成 Windows 身份验证](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc738016(v=ws.10))。 有关 IIS 7.0 的详细信息，请参阅[在 iis 7 中配置服务器证书](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。
   
 #### <a name="ntlm"></a>NTLM  
  这使服务器可以在 Kerberos 协议失败时使用 NTLM 进行身份验证。 有关在 IIS 6.0 中配置 IIS 的详细信息，请参阅[强制 NTLM 身份验证](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc786486(v=ws.10))。 对于 IIS 7.0，Windows 身份验证包括 NTLM 身份验证。 有关详细信息，请参阅 [在 IIS 7 中配置服务器证书](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))。
   
 ## <a name="wshttpbinding"></a>WsHttpBinding  
- <xref:System.ServiceModel.WSHttpBinding> 类专用于与实现 WS* 规范的服务进行互操作。 此绑定的传输安全为 HTTP 上的安全套接字层 (SSL)，即 HTTPS。 要创建使用 SSL 的 WCF 应用程序，请使用 IIS 托管该应用程序。 或者，如果您要创建自承载的应用程序，请使用 HttpCfg.exe 工具将 X.509 证书绑定到计算机上的特定端口。 端口号作为 WCF 应用程序的一部分指定为终结点地址。 使用传输模式时，终结点地址必须包括 HTTPS 协议，否则运行时将引发异常。 有关详细信息，请参阅[HTTP 传输安全](../../../../docs/framework/wcf/feature-details/http-transport-security.md)。  
+ <xref:System.ServiceModel.WSHttpBinding> 类专用于与实现 WS* 规范的服务进行互操作。 此绑定的传输安全为 HTTP 上的安全套接字层 (SSL)，即 HTTPS。 若要创建使用 SSL 的 WCF 应用程序，请使用 IIS 来承载应用程序。 或者，如果您要创建自承载的应用程序，请使用 HttpCfg.exe 工具将 X.509 证书绑定到计算机上的特定端口。 端口号被指定为 WCF 应用程序的一部分作为终结点地址。 使用传输模式时，终结点地址必须包括 HTTPS 协议，否则运行时将引发异常。 有关详细信息，请参阅[HTTP 传输安全](http-transport-security.md)。  
   
  对于客户端身份验证，请将 <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A> 类的 <xref:System.ServiceModel.HttpTransportSecurity> 属性设置为 <xref:System.ServiceModel.HttpClientCredentialType> 枚举值之一。 枚举值与 <xref:System.ServiceModel.BasicHttpBinding> 的客户端凭据类型等同，并由 IIS 服务承载。  
   
@@ -88,12 +88,12 @@ Windows 通信基础 （WCF） 中的传输安全机制取决于所使用的绑�
 > [!NOTE]
 > 如果您要使用 Windows 安全性，则不需要证书。  
   
- 下面的代码使用唯一标识证书的证书指纹。 有关证书的详细信息，请参阅[使用证书](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)。  
+ 下面的代码使用唯一标识证书的证书指纹。 有关证书的详细信息，请参阅[使用证书](working-with-certificates.md)。  
   
  [!code-csharp[c_ProgrammingSecurity#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_programmingsecurity/cs/source.cs#13)]
  [!code-vb[c_ProgrammingSecurity#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_programmingsecurity/vb/source.vb#13)]  
   
- 或者，在行为部分中使用[\<客户端凭据>](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)元素在客户端配置中指定证书。  
+ 或者，使用 [\<clientCredentials>](../../configure-apps/file-schema/wcf/clientcredentials.md) "行为" 部分中的元素在客户端配置中指定证书。  
   
 ```xml  
 <behaviors>  
@@ -112,14 +112,14 @@ Windows 通信基础 （WCF） 中的传输安全机制取决于所使用的绑�
  <xref:System.ServiceModel.NetNamedPipeBinding> 类用于进行有效的计算机内通信；也就是说，虽然可以在同一网络上的两台计算机之间创建命名管道通道，但进程是在同一台计算机上运行的。 此绑定只提供传输级别的安全。 在创建使用此绑定的应用程序时，终结点地址必须包括“net.pipe”作为终结点地址的协议。  
   
 ## <a name="wsfederationhttpbinding"></a>WSFederationHttpBinding  
- 使用传输安全时，此绑定与已颁发的令牌 (<xref:System.ServiceModel.WSFederationHttpSecurityMode.TransportWithMessageCredential>) 一起使用 HTTP 上的 SSL（称为 HTTPS）。 有关联合应用程序的详细信息，请参阅[联合和已颁发令牌](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)。  
+ 使用传输安全时，此绑定与已颁发的令牌 (<xref:System.ServiceModel.WSFederationHttpSecurityMode.TransportWithMessageCredential>) 一起使用 HTTP 上的 SSL（称为 HTTPS）。 有关联合应用程序的详细信息，请参阅[联合和颁发的令牌](federation-and-issued-tokens.md)。  
   
 ## <a name="netpeertcpbinding"></a>NetPeerTcpBinding  
- <xref:System.ServiceModel.NetPeerTcpBinding> 类是旨在使用对等网络功能进行有效通信的一种安全传输。 TCP 是协议，这与类和绑定的名称相一致。 当安全模式设置为“传输”时，绑定将实现 TCP 上的 TLS。 有关对等功能的详细信息，请参阅对[等网络](../../../../docs/framework/wcf/feature-details/peer-to-peer-networking.md)。  
+ <xref:System.ServiceModel.NetPeerTcpBinding> 类是旨在使用对等网络功能进行有效通信的一种安全传输。 TCP 是协议，这与类和绑定的名称相一致。 当安全模式设置为“传输”时，绑定将实现 TCP 上的 TLS。 有关对等功能的详细信息，请参阅[对等网络](peer-to-peer-networking.md)。  
   
 ## <a name="msmqintegrationbinding-and-netmsmqbinding"></a>MsmqIntegrationBinding 和 NetMsmqBinding  
- 有关使用消息队列（以前称为 MSMQ）传输安全性的完整讨论，请参阅[使用传输安全保护消息](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)。  
+ 有关使用消息队列（以前称为 MSMQ）的传输安全的完整讨论，请参阅[使用传输安全保护消息](securing-messages-using-transport-security.md)。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [WCF 安全编程](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)
+- [WCF 安全编程](programming-wcf-security.md)

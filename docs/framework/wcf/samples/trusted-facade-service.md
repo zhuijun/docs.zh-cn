@@ -2,15 +2,15 @@
 title: 受信任的外观服务
 ms.date: 03/30/2017
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-ms.openlocfilehash: 17901b7a68d4701287d02bc7ee3174683e777fd1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e7aa5e96fb8104c8140a8cebc6be45d2000821aa
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143741"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84591288"
 ---
 # <a name="trusted-facade-service"></a>受信任的外观服务
-此示例演示如何使用 Windows 通信基础 （WCF） 安全基础结构将调用方的身份信息从一个服务流向另一个服务。  
+本方案示例演示如何使用 Windows Communication Foundation （WCF）安全基础结构将调用方的标识信息从一个服务流到另一个服务。  
   
  使用外观服务向公共网络公开由服务提供的功能是一种常见设计模式。 外观服务通常驻留在周边网络（也称为 DMZ、外围安全区域和被筛选的子网）中，可与实现业务逻辑的后端服务通信和访问内部数据。 外观服务和后端服务之间的通信通道通过防火墙并通常仅限用于单一目的。  
   
@@ -22,7 +22,7 @@ ms.locfileid: "79143741"
   
 - 计算器后端服务  
   
- 外观服务负责验证请求和对调用方进行身份验证。 成功进行身份验证和验证后，服务将使用从周边网络到内部网络的受控通信通道将请求转发到后端服务。 作为所转发请求的一部分，外观服务包含有关调用方标识的信息，这样后端服务可以在其处理过程中使用此信息。 使用消息 `Username` 标头内部的 `Security` 安全令牌传输调用方标识。 该示例使用 WCF 安全基础结构从`Security`标头传输和提取此信息。  
+ 外观服务负责验证请求和对调用方进行身份验证。 成功进行身份验证和验证后，服务将使用从周边网络到内部网络的受控通信通道将请求转发到后端服务。 作为所转发请求的一部分，外观服务包含有关调用方标识的信息，这样后端服务可以在其处理过程中使用此信息。 使用消息 `Username` 标头内部的 `Security` 安全令牌传输调用方标识。 该示例使用 WCF 安全基础结构从标头传输和提取此信息 `Security` 。  
   
 > [!IMPORTANT]
 > 后端服务委托外观服务对调用方进行身份验证。 因此，后端服务不再对调用方进行身份验证；它使用外观服务在转发的请求中提供的标识信息。 由于此信任关系，后端服务必须对外观服务进行身份验证，以确保转发的消息来自受信任的源（在本例中为外观服务）。  
@@ -109,9 +109,9 @@ public class MyUserNamePasswordValidator : UserNamePasswordValidator
 </bindings>  
 ```  
   
- 绑定元素的安全>负责初始调用方的用户名传输和提取。 [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/security-of-custombinding.md) [windows 流安全>和 tcpTransport>负责验证外观和后端服务和消息保护。 \<](../../../../docs/framework/configure-apps/file-schema/wcf/windowsstreamsecurity.md) [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/tcptransport.md)  
+ [\<security>](../../configure-apps/file-schema/wcf/security-of-custombinding.md)绑定元素负责发送和提取初始调用方的用户名。 [\<windowsStreamSecurity>](../../configure-apps/file-schema/wcf/windowsstreamsecurity.md)和 [\<tcpTransport>](../../configure-apps/file-schema/wcf/tcptransport.md) 负责对外观和后端服务和消息保护进行身份验证。  
   
- 要转发请求，facade 服务实现必须提供初始调用方的用户名，以便 WCF 安全基础结构可以对此进行转发的消息。 初始调用方的用户名是在外观服务实现中提供的，具体方式为在外观服务用于与后端服务进行通信的客户端代理实例的 `ClientCredentials` 属性中设置该用户名。  
+ 若要转发请求，外观服务实现必须提供初始调用方的用户名，以便 WCF 安全基础结构能够将其放入转发的消息中。 初始调用方的用户名是在外观服务实现中提供的，具体方式为在外观服务用于与后端服务进行通信的客户端代理实例的 `ClientCredentials` 属性中设置该用户名。  
   
  下面的代码演示如何在外观服务上实现 `GetCallerIdentity` 方法。 其他方法使用相同的模式。  
   
@@ -126,9 +126,9 @@ public string GetCallerIdentity()
 }  
 ```  
   
- 如前面的代码中所示，未针对 `ClientCredentials` 属性设置密码，只设置用户名。 在这种情况下，WCF 安全基础结构创建没有密码的用户名安全令牌，这正是此方案中所需的。  
+ 如前面的代码中所示，未针对 `ClientCredentials` 属性设置密码，只设置用户名。 在这种情况下，WCF 安全基础结构创建不含密码的用户名安全令牌，这正是这种情况下所要求的。  
   
- 在后端服务上，必须对用户名安全令牌中包含的信息进行身份验证。 默认情况下，WCF 安全尝试使用提供的密码将用户映射到 Windows 帐户。 在这种情况下，不提供密码且不需要后端服务对用户名进行身份验证，因为外观服务已经执行了身份验证。 为了在 WCF 中实现此功能，`UserNamePasswordValidator`提供一个自定义项，该自定义项仅强制在令牌中指定用户名，并且不执行任何其他身份验证。  
+ 在后端服务上，必须对用户名安全令牌中包含的信息进行身份验证。 默认情况下，WCF 安全尝试使用提供的密码将用户映射到 Windows 帐户。 在这种情况下，不提供密码且不需要后端服务对用户名进行身份验证，因为外观服务已经执行了身份验证。 若要在 WCF 中实现此功能，提供了一个自定义， `UserNamePasswordValidator` 它只强制在令牌中指定用户名，不执行任何其他身份验证。  
   
 ```csharp  
 public class MyUserNamePasswordValidator : UserNamePasswordValidator  
@@ -209,7 +209,7 @@ public string GetCallerIdentity()
 }  
 ```  
   
- 使用 `ServiceSecurityContext.Current.WindowsIdentity` 属性提取外观服务帐户信息。 为访问有关初始调用方的信息，后端服务使用 `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` 属性。 该属性查找类型为 `Identity` 的 `Name`声明。 此声明由 WCF 安全基础结构从`Username`安全令牌中包含的信息自动生成。  
+ 使用 `ServiceSecurityContext.Current.WindowsIdentity` 属性提取外观服务帐户信息。 为访问有关初始调用方的信息，后端服务使用 `ServiceSecurityContext.Current.AuthorizationContext.ClaimSets` 属性。 该属性查找类型为 `Identity` 的 `Name`声明。 此声明是由 WCF 安全基础结构根据安全令牌中包含的信息自动生成的 `Username` 。  
   
 ## <a name="running-the-sample"></a>运行示例  
  运行示例时，操作请求和响应将显示在客户端控制台窗口中。 在客户端窗口中按 Enter 可以关闭客户端。 在外观服务和后端服务控制台窗口中按 Enter 可以关闭服务。  
@@ -260,9 +260,9 @@ Press <ENTER> to terminate client.
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 确保已为 Windows[通信基础示例执行一次性设置过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
-2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。  
+2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。  
   
 #### <a name="to-run-the-sample-on-the-same-machine"></a>在同一计算机上运行示例  
   
@@ -276,7 +276,7 @@ Press <ENTER> to terminate client.
   
 5. 启动 \client\bin 中的 Client.exe。 客户端活动将显示在客户端控制台应用程序上。  
   
-6. 如果客户端和服务无法通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+6. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 #### <a name="to-clean-up-after-the-sample"></a>运行示例后进行清理  
   
@@ -287,6 +287,6 @@ Press <ENTER> to terminate client.
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\TrustedFacade`  

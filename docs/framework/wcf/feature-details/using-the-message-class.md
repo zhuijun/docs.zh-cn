@@ -5,25 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d1d62bfb-2aa3-4170-b6f8-c93d3afdbbed
-ms.openlocfilehash: 76ac5fad653604c7abe403def72d31696d26b547
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 142578ef76a70fed27dc0137378b59e228cd25c9
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967850"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84585644"
 ---
 # <a name="using-the-message-class"></a>使用 Message 类
-类<xref:System.ServiceModel.Channels.Message>是 Windows Communication Foundation (WCF) 的基础。 客户端与服务之间的所有通信最终都会产生要进行发送和接收的 <xref:System.ServiceModel.Channels.Message> 实例。  
+<xref:System.ServiceModel.Channels.Message>类是 Windows Communication Foundation （WCF）的基础。 客户端与服务之间的所有通信最终都会产生要进行发送和接收的 <xref:System.ServiceModel.Channels.Message> 实例。  
   
- 您通常不会与 <xref:System.ServiceModel.Channels.Message> 类直接进行交互。 相反, WCF 服务模型构造 (如数据协定、消息协定和操作协定) 用于描述传入消息和传出消息。 但是，在某些高级方案中，可以直接使用 <xref:System.ServiceModel.Channels.Message> 类进行编程。 例如，在以下情况下可能需要使用 <xref:System.ServiceModel.Channels.Message> 类：  
+ 您通常不会与 <xref:System.ServiceModel.Channels.Message> 类直接进行交互。 相反，WCF 服务模型构造（如数据协定、消息协定和操作协定）用于描述传入消息和传出消息。 但是，在某些高级方案中，可以直接使用 <xref:System.ServiceModel.Channels.Message> 类进行编程。 例如，在以下情况下可能需要使用 <xref:System.ServiceModel.Channels.Message> 类：  
   
-- 如果需要另一种方式来创建传出消息内容 (例如, 直接从磁盘上的文件创建消息), 而不是序列化 .NET Framework 的对象。  
+- 如果需要另一种方式来创建传出消息内容（例如，直接从磁盘上的文件创建消息），而不是序列化 .NET Framework 的对象。  
   
-- 当你需要使用传入消息内容的另一种方法时 (例如, 当你想要将 XSLT 转换应用到原始 XML 内容时), 而不是反序列化到 .NET Framework 的对象。  
+- 当你需要使用传入消息内容的另一种方法时（例如，当你想要将 XSLT 转换应用到原始 XML 内容时），而不是反序列化到 .NET Framework 的对象。  
   
 - 无论消息内容怎样都需要使用常规方式来处理消息（例如，在生成路由器、负载平衡器或发布-订阅系统时对消息进行路由或转发）。  
   
- 使用<xref:System.ServiceModel.Channels.Message>类之前, 请先熟悉[数据传输体系结构概述](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)中的 WCF 数据传输体系结构。  
+ 使用类之前 <xref:System.ServiceModel.Channels.Message> ，请先熟悉[数据传输体系结构概述](data-transfer-architectural-overview.md)中的 WCF 数据传输体系结构。  
   
  <xref:System.ServiceModel.Channels.Message> 是一种通用的数据容器，但其设计严格遵循 SOAP 协议中消息的设计方式。 就像 SOAP 中一样，消息同时具有消息正文和标头。 消息正文包含实际负载数据，而标头包含其他已命名的数据容器。 用于读取和写入消息正文与标头的规则是不同的，例如，标头总是在内存中进行缓冲，并且可以按任意顺序访问任意次，而正文仅能读取一次且可以进行流式处理。 通常，使用 SOAP 时，消息正文被映射到 SOAP 正文，而消息头被映射到 SOAP 标头。  
   
@@ -87,14 +87,14 @@ ms.locfileid: "69967850"
  无论使用哪种访问方式，都只能访问 `Message` 的正文一次。 消息对象具有 `State` 属性，该属性最初设置为 Created。 前面列表中描述的三种访问方法分别将状态设置为 Written、Read 和 Copied。 此外，`Close` 方法可以在不再需要消息正文内容时将状态设置为 Closed。 只有当消息正文处于 Created 状态时，才能对其进行访问，并且在状态已更改后，无法返回到 Created 状态。  
   
 ## <a name="writing-messages"></a>写入消息  
- <xref:System.ServiceModel.Channels.Message.WriteBodyContents%28System.Xml.XmlDictionaryWriter%29> 方法将给定 `Message` 实例的正文内容写出到给定 XML 编写器。 方法执行相同的工作, 只不过它将正文内容封装在适当的包装元素中 (例如 <`soap:body`>)。 <xref:System.ServiceModel.Channels.Message.WriteBody%2A> 最后，<xref:System.ServiceModel.Channels.Message.WriteMessage%2A> 写出整个消息，包括 SOAP 包装信封和标头。 如果 SOAP 处于关闭状态 (<xref:System.ServiceModel.Channels.Message.Version>为<xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType>), 则所有这三种方法都执行相同的操作: 写出消息正文内容。  
+ <xref:System.ServiceModel.Channels.Message.WriteBodyContents%28System.Xml.XmlDictionaryWriter%29> 方法将给定 `Message` 实例的正文内容写出到给定 XML 编写器。 <xref:System.ServiceModel.Channels.Message.WriteBody%2A>方法执行相同的工作，只不过它将正文内容封装在适当的包装元素中（例如 <`soap:body`>）。 最后，<xref:System.ServiceModel.Channels.Message.WriteMessage%2A> 写出整个消息，包括 SOAP 包装信封和标头。 如果 SOAP 处于关闭状态（ <xref:System.ServiceModel.Channels.Message.Version> 为 <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType> ），则所有这三种方法都执行相同的操作：写出消息正文内容。  
   
  例如，下面的代码将一个传入消息的正文写出到一个文件中。  
   
  [!code-csharp[C_UsingTheMessageClass#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#5)]
  [!code-vb[C_UsingTheMessageClass#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#5)]  
   
- 另有两个帮助器方法可写出某些 SOAP 开始元素标记。 这些方法不访问消息正文，因而不会更改消息状态。 这些问题包括：  
+ 另有两个帮助器方法可写出某些 SOAP 开始元素标记。 这些方法不访问消息正文，因而不会更改消息状态。 其中包括：  
   
 - <xref:System.ServiceModel.Channels.Message.WriteStartBody%2A> 可写入开始正文元素，如 `<soap:Body>`。  
   
@@ -133,7 +133,7 @@ ms.locfileid: "69967850"
  `MessageBuffer` 类还有其他值得注意的成员。 当不再需要缓冲区内容时，可以调用 <xref:System.ServiceModel.Channels.MessageBuffer.Close%2A> 方法来释放资源。 <xref:System.ServiceModel.Channels.MessageBuffer.BufferSize%2A> 属性返回已分配的缓冲区的大小。 <xref:System.ServiceModel.Channels.MessageBuffer.MessageContentType%2A> 属性返回消息的 MIME 内容类型。  
   
 ## <a name="accessing-the-message-body-for-debugging"></a>访问消息正文以进行调试  
- 出于调试目的，您可以调用 <xref:System.ServiceModel.Channels.Message.ToString%2A> 方法以获取消息的字符串表示。 如果消息由文本编码器进行编码，则此表示通常与该消息在网络上的表示方式相匹配，只不过 XML 会以更好的格式表示以方便人们阅读。 一个例外的情况是消息正文。 正文只能被读取一次，且 `ToString` 不会更改消息状态。 因此, `ToString`方法可能无法访问正文, 并可能替换占位符 (如 "..."或三个点), 而不是消息正文。 因此，如果消息的正文内容很重要，则不要使用 `ToString` 来记录消息。  
+ 出于调试目的，您可以调用 <xref:System.ServiceModel.Channels.Message.ToString%2A> 方法以获取消息的字符串表示。 如果消息由文本编码器进行编码，则此表示通常与该消息在网络上的表示方式相匹配，只不过 XML 会以更好的格式表示以方便人们阅读。 一个例外的情况是消息正文。 正文只能被读取一次，且 `ToString` 不会更改消息状态。 因此， `ToString` 方法可能无法访问正文，并可能替换占位符（如 "..."或三个点），而不是消息正文。 因此，如果消息的正文内容很重要，则不要使用 `ToString` 来记录消息。  
   
 ## <a name="accessing-other-message-parts"></a>访问其他消息部分  
  该类提供了各种属性，以便访问除正文内容之外的其他与消息有关的信息。 但是，一旦关闭了消息，将无法调用这些属性：  
@@ -151,7 +151,7 @@ ms.locfileid: "69967850"
  可以使用 <xref:System.ServiceModel.Channels.Message.GetBodyAttribute%28System.String%2CSystem.String%29> 方法访问正文包装元素（如 `<soap:Body>`）上由特定名称和命名空间标识的特定属性。 如果未找到这样一个属性，则返回 `null`。 仅当 `Message` 处于 Created 状态时（即尚未访问消息正文时），才能调用此方法。  
   
 ## <a name="working-with-headers"></a>使用标头  
- 可以包含任意数量的命名 XML 片段, 这些片段称为*标头。* `Message` 每个片断通常都映射到一个 SOAP 标头。 可以通过类型为 `Headers` 的 <xref:System.ServiceModel.Channels.MessageHeaders> 属性来访问标头。 <xref:System.ServiceModel.Channels.MessageHeaders> 是一个 <xref:System.ServiceModel.Channels.MessageHeaderInfo> 对象集合，可以通过其 <xref:System.Collections.IEnumerable> 接口或其索引器来访问各个标头。 例如，下面的代码列出了某个 `Message` 中的所有标头的名称。  
+ `Message`可以包含任意数量的命名 XML 片段，这些片段称为*标头*。 每个片断通常都映射到一个 SOAP 标头。 可以通过类型为 `Headers` 的 <xref:System.ServiceModel.Channels.MessageHeaders> 属性来访问标头。 <xref:System.ServiceModel.Channels.MessageHeaders> 是一个 <xref:System.ServiceModel.Channels.MessageHeaderInfo> 对象集合，可以通过其 <xref:System.Collections.IEnumerable> 接口或其索引器来访问各个标头。 例如，下面的代码列出了某个 `Message` 中的所有标头的名称。  
   
  [!code-csharp[C_UsingTheMessageClass#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#8)]
  [!code-vb[C_UsingTheMessageClass#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#8)]  
@@ -161,14 +161,14 @@ ms.locfileid: "69967850"
   
  使用 <xref:System.ServiceModel.Channels.MessageHeaders.FindHeader%2A> 方法检索特定标头。 此方法采用要查找的标头的名称和命名空间作为参数，并返回该标头的索引。 如果该标头出现了多次，则引发异常。 如果未找到该标头，则返回 –1。  
   
- 在 SOAP 标头模型中，标头可以具有一个 `Actor` 值，该值指定标头的预期接收方。 最基本的 `FindHeader` 重载仅搜索准备发送给消息的最终接收方的标头。 但是，使用另一个重载可以指定搜索中包括哪些 `Actor` 值。 有关详细信息, 请参阅 SOAP 规范。  
+ 在 SOAP 标头模型中，标头可以具有一个 `Actor` 值，该值指定标头的预期接收方。 最基本的 `FindHeader` 重载仅搜索准备发送给消息的最终接收方的标头。 但是，使用另一个重载可以指定搜索中包括哪些 `Actor` 值。 有关详细信息，请参阅 SOAP 规范。  
   
  提供了 <xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29> 方法，以便将标头从 <xref:System.ServiceModel.Channels.MessageHeaders> 集合复制到 <xref:System.ServiceModel.Channels.MessageHeaderInfo> 对象数组。  
   
  若要访问标头中的 XML 数据，可以调用 <xref:System.ServiceModel.Channels.MessageHeaders.GetReaderAtHeader%2A>，并为特定标头索引返回一个 XML 读取器。 如果您希望将标头内容反序列化为对象，请使用 <xref:System.ServiceModel.Channels.MessageHeaders.GetHeader%60%601%28System.Int32%29> 或其他重载之一。 最基本的重载使用以默认方式配置的 <xref:System.Runtime.Serialization.DataContractSerializer> 来反序列化标头。 如果您希望使用其他序列化程序或 `DataContractSerializer` 的其他配置，请使用采用一个 `XmlObjectSerializer` 作为参数的重载之一。 还有一些重载采用标头名称、命名空间作为参数，还可能采用一个 `Actor` 值列表而不是一个索引作为参数；这种重载是 `FindHeader` 和 `GetHeader` 的组合。  
   
 ## <a name="working-with-properties"></a>使用属性  
- 一个 `Message` 实例可以包含任意多个具有任意类型的命名对象。 此集合可以通过类型为 `Properties` 的 `MessageProperties` 属性访问。 此集合实现了 <xref:System.Collections.Generic.IDictionary%602> 接口，并充当从 <xref:System.String> 到 <xref:System.Object> 的映射。 通常情况下, 属性值不会直接映射到线路上的任何消息部分, 而是向 WCF 通道堆栈或<xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29>服务框架中的各种通道提供各种消息处理提示。 有关示例, 请参阅[数据传输体系结构概述](../../../../docs/framework/wcf/feature-details/data-transfer-architectural-overview.md)。  
+ 一个 `Message` 实例可以包含任意多个具有任意类型的命名对象。 此集合可以通过类型为 `Properties` 的 `MessageProperties` 属性访问。 此集合实现了 <xref:System.Collections.Generic.IDictionary%602> 接口，并充当从 <xref:System.String> 到 <xref:System.Object> 的映射。 通常情况下，属性值不会直接映射到线路上的任何消息部分，而是向 WCF 通道堆栈或服务框架中的各种通道提供各种消息处理提示 <xref:System.ServiceModel.Channels.MessageHeaders.CopyTo%28System.ServiceModel.Channels.MessageHeaderInfo%5B%5D%2CSystem.Int32%29> 。 有关示例，请参阅[数据传输体系结构概述](data-transfer-architectural-overview.md)。  
   
 ## <a name="inheriting-from-the-message-class"></a>从 Message 类继承  
  如果使用 `CreateMessage` 创建的内置消息类型不能满足您的要求，请创建一个从 `Message` 类派生的类。  
@@ -181,7 +181,7 @@ ms.locfileid: "69967850"
  [!code-csharp[C_UsingTheMessageClass#9](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#9)]
  [!code-vb[C_UsingTheMessageClass#9](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#9)]  
   
- <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents> 和 <xref:System.ServiceModel.Channels.Message.OnCreateBufferedCopy%2A> 方法具有适用于大多数情况的默认实现。 这些默认实现调用 <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A>，对结果进行缓冲，并且使用得到的缓冲区。 但是，在某些情况下，这可能还无法满足需要。 在前面的示例中，读取消息会导致 100,000 个 XML 元素被缓冲，这可能并不是理想的结果。 您可能希望重写 <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents> 以返回能够提供随机数的自定义 <xref:System.Xml.XmlDictionaryReader> 派生类。 然后, 可以重<xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A>写以使用该<xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents>方法返回的读取器, 如下面的示例中所示。  
+ <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents> 和 <xref:System.ServiceModel.Channels.Message.OnCreateBufferedCopy%2A> 方法具有适用于大多数情况的默认实现。 这些默认实现调用 <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A>，对结果进行缓冲，并且使用得到的缓冲区。 但是，在某些情况下，这可能还无法满足需要。 在前面的示例中，读取消息会导致 100,000 个 XML 元素被缓冲，这可能并不是理想的结果。 您可能希望重写 <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents> 以返回能够提供随机数的自定义 <xref:System.Xml.XmlDictionaryReader> 派生类。 然后，可以重写 <xref:System.ServiceModel.Channels.Message.OnWriteBodyContents%2A> 以使用该方法返回的读取器 <xref:System.ServiceModel.Channels.Message.OnGetReaderAtBodyContents> ，如下面的示例中所示。  
   
  [!code-csharp[C_UsingTheMessageClass#10](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_usingthemessageclass/cs/source.cs#10)]
  [!code-vb[C_UsingTheMessageClass#10](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_usingthemessageclass/vb/source.vb#10)]  
@@ -193,7 +193,7 @@ ms.locfileid: "69967850"
  请注意，如果您创建消息的副本，则该副本将使用原始消息中的消息头。  
   
 ### <a name="other-members-that-can-be-overridden"></a>其他可以重写的成员  
- 可以重写 <xref:System.ServiceModel.Channels.Message.OnWriteStartEnvelope%2A>、<xref:System.ServiceModel.Channels.Message.OnWriteStartHeaders%2A> 和 <xref:System.ServiceModel.Channels.Message.OnWriteStartBody%2A> 方法以指定如何写出 SOAP 信封、SOAP 标头和 SOAP 正文元素开始标记。这些方法通常对应于 `<soap:Envelope>`、`<soap:Header>` 和 `<soap:Body>`。 如果 <xref:System.ServiceModel.Channels.Message.Version> 属性返回 <xref:System.ServiceModel.Channels.MessageVersion.None>，则这些方法通常不应该写出任何内容。  
+ 您可以重写 <xref:System.ServiceModel.Channels.Message.OnWriteStartEnvelope%2A> 、 <xref:System.ServiceModel.Channels.Message.OnWriteStartHeaders%2A> 和 <xref:System.ServiceModel.Channels.Message.OnWriteStartBody%2A> 方法，以指定如何写出 SOAP 信封、soap 标头和 soap 正文元素开始标记。它们通常对应于 `<soap:Envelope>` 、 `<soap:Header>` 和 `<soap:Body>` 。 如果 <xref:System.ServiceModel.Channels.Message.Version> 属性返回 <xref:System.ServiceModel.Channels.MessageVersion.None>，则这些方法通常不应该写出任何内容。  
   
 > [!NOTE]
 > `OnGetReaderAtBodyContents` 的默认实现在调用 `OnWriteStartEnvelope` 以及缓冲结果之前调用 `OnWriteStartBody` 和 `OnWriteBodyContents`。 标头不会写出。  

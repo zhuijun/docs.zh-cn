@@ -2,12 +2,12 @@
 title: System.ServiceModel.Channels.PeerNodeOpenFailed
 ms.date: 03/30/2017
 ms.assetid: fd908a42-30d1-4301-bc33-35b503896634
-ms.openlocfilehash: 1aada8e4784af8f304b6ddb4842b79e149e06bd9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3b44c477b9ddaf775a3cfcec3db39b0908513255
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61774941"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84577144"
 ---
 # <a name="systemservicemodelchannelspeernodeopenfailed"></a>System.ServiceModel.Channels.PeerNodeOpenFailed
 尝试打开邻居连接失败。  
@@ -18,8 +18,8 @@ ms.locfileid: "61774941"
 ## <a name="troubleshooting"></a>疑难解答  
  确保这两个节点均有有效的地址并正确进行了配置。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [跟踪](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [使用跟踪来排除应用程序故障](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理和诊断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [跟踪](index.md)
+- [使用跟踪来排除应用程序故障](using-tracing-to-troubleshoot-your-application.md)
+- [管理和诊断](../index.md)

@@ -2,23 +2,23 @@
 title: 与 POX 应用程序的互操作性
 ms.date: 03/30/2017
 ms.assetid: 449276b8-4633-46f0-85c9-81f01d127636
-ms.openlocfilehash: 17b85ab41589a130e950cd52c759305cc17e92b7
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 64a6d850a32b14bc60cd43466e04b53a7a39be81
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591047"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579262"
 ---
 # <a name="interoperability-with-pox-applications"></a>与 POX 应用程序的互操作性
 
-"Plain Old XML"(POX) 应用程序通过交换原始 HTTP 消息包含只 XML 应用程序数据不包含 SOAP 信封内进行通信。 Windows Communication Foundation (WCF) 可以提供服务和使用 POX 消息的客户端。 在服务上，可以使用 WCF 实现客户端，如 Web 浏览器向公开终结点的服务，并发送和接收 POX 消息的脚本语言。 在客户端，WCF 编程模型可用于实现客户端与基于 POX 的服务进行通信。  
+"纯旧式 XML" （POX）应用程序通过交换原始 HTTP 消息进行通信，这些消息仅包含未包含在 SOAP 信封中的 XML 应用程序数据。 Windows Communication Foundation （WCF）可以同时提供使用 POX 消息的服务和客户端。 在服务上，WCF 可用于实现向客户端公开终结点的服务，如用于发送和接收 POX 消息的 Web 浏览器和脚本语言。 在客户端上，可以使用 WCF 编程模型实现与基于 POX 的服务进行通信的客户端。  
   
 > [!NOTE]
-> 本文档最初是面向.NET Framework 3.0。  .NET framework 3.5 具有对处理 POX 应用程序的内置支持。 有关更多信息，请参阅[WCF Web HTTP 编程模型](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)。
+> 本文档最初是为 .NET Framework 3.0 编写的。  .NET Framework 3.5 内置了对 POX 应用程序的支持。 有关详细信息，请参阅[WCF WEB HTTP 编程模型](wcf-web-http-programming-model.md)。
   
-## <a name="pox-programming-with-wcf"></a>使用 WCF 进行 POX 编程
+## <a name="pox-programming-with-wcf"></a>POX 编程和 WCF
 
-通过使用 POX 消息使用的 HTTP 通信的 WCF 服务[ \<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md)。
+使用 POX 消息通过 HTTP 进行通信的 WCF 服务使用 [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) 。
 
 ```xml
 <customBinding>
@@ -31,13 +31,13 @@ ms.locfileid: "65591047"
 
 此自定义绑定包含两个元素：
 
-- [\<httpTransport>](../../../../docs/framework/configure-apps/file-schema/wcf/httptransport.md)
+- [\<httpTransport>](../../configure-apps/file-schema/wcf/httptransport.md)
 
-- [\<textMessageEncoding>](../../../../docs/framework/configure-apps/file-schema/wcf/textmessageencoding.md)
+- [\<textMessageEncoding>](../../configure-apps/file-schema/wcf/textmessageencoding.md)
 
-WCF 文本消息编码器被专门配置为使用的标准<xref:System.ServiceModel.Channels.MessageVersion.None%2A>值，使其可以处理 XML 消息负载并到达包装在 SOAP 信封中。
+标准 WCF 文本消息编码器专门配置为使用 <xref:System.ServiceModel.Channels.MessageVersion.None%2A> 值，这使它能够处理未包装在 SOAP 信封中的 XML 消息负载。
 
-使用 POX 消息通过 HTTP 进行通信的 WCF 客户端使用类似的绑定 （如下面的命令性代码所示）。
+使用 POX 消息通过 HTTP 进行通信的 WCF 客户端使用类似的绑定（如下面的命令性代码中所示）。
 
 ```csharp
 private static Binding CreatePoxBinding()
@@ -52,13 +52,13 @@ private static Binding CreatePoxBinding()
 
 因为 POX 客户端必须显式指定将消息发送到的 URI，所以它们通常必须将 <xref:System.ServiceModel.Channels.HttpTransportBindingElement> 配置为手动寻址模式，方法是将该元素的 <xref:System.ServiceModel.Channels.TransportBindingElement.ManualAddressing%2A> 属性设置为 `true`。 这样，应用程序代码就可以对消息进行显式寻址，因此，当应用程序将消息发送到不同的 HTTP URI 时，不必每次都创建一个新的 <xref:System.ServiceModel.ChannelFactory>。
 
-因为 POX 消息不使用 SOAP 标头传送重要的协议信息，所以 POX 客户端和服务通常必须操作用于发送或接收消息的基础 HTTP 请求片段。 例如 HTTP 标头和状态代码的特定于 HTTP 协议信息显示在 WCF 编程模型通过两个类中：
+因为 POX 消息不使用 SOAP 标头传送重要的协议信息，所以 POX 客户端和服务通常必须操作用于发送或接收消息的基础 HTTP 请求片段。 Http 特定的协议信息，如 HTTP 标头和状态代码通过两个类出现在 WCF 编程模型中：
 
 - <xref:System.ServiceModel.Channels.HttpRequestMessageProperty>，包含有关 HTTP 请求的信息，例如 HTTP 方法和请求标头。
 
 - <xref:System.ServiceModel.Channels.HttpResponseMessageProperty>，包含有关 HTTP 响应的信息（例如 HTTP 状态代码和状态说明）以及任何 HTTP 响应标头。
   
-下面的代码示例演示如何创建 HTTP GET 请求消息发送到`http://localhost:8100/customers`。
+下面的代码示例演示如何创建一个发送到的 HTTP GET 请求消息 `http://localhost:8100/customers` 。
 
 ```csharp
 Message request = Message.CreateMessage( MessageVersion.None, String.Empty );
