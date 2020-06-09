@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], enumeration types
 ms.assetid: b5d694da-68cb-4b74-a5fb-75108a68ec3b
-ms.openlocfilehash: f8d399859e4f861158ab74db9ed410aec280dbe2
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 86fa38b281d8944797fa858f8c67f0b60c733be8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65586684"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595539"
 ---
 # <a name="enumeration-types-in-data-contracts"></a>数据协定中的枚举类型
 枚举可以用数据协定模型来表示。 本主题演练几个介绍编程模型的示例。  
@@ -30,7 +30,7 @@ ms.locfileid: "65586684"
  可以照常将 <xref:System.Runtime.Serialization.DataContractAttribute> 属性（<xref:System.Runtime.Serialization.DataContractAttribute.Name%2A> 和 <xref:System.Runtime.Serialization.DataContractAttribute.Namespace%2A>）用于枚举数据协定。  
   
 ### <a name="enumeration-member-values"></a>枚举成员值  
- 通常数据协定包括枚举成员名称，而不包括数值。 但是，在使用数据协定模型中，如果接收方是 WCF 客户端，则导出的架构保留数值。 请注意，这种情况下使用时不[使用 XmlSerializer 类](../../../../docs/framework/wcf/feature-details/using-the-xmlserializer-class.md)。  
+ 通常数据协定包括枚举成员名称，而不包括数值。 但是，在使用数据协定模型时，如果接收方是 WCF 客户端，则导出的架构将保留数字值。 请注意，使用[XmlSerializer 类](using-the-xmlserializer-class.md)时不会出现这种情况。  
   
  在上面的示例中，如果将 `condition` 设置为 `Used` 并且将数据序列化为 XML，则生成的 XML 是 `<condition>Used</condition>` 而不是 `<condition>1</condition>`。 因此，下面的数据协定等效于 `CarConditionEnum` 的数据协定。  
   
@@ -39,7 +39,7 @@ ms.locfileid: "65586684"
   
  例如，您可以在发送端使用 `CarConditionEnum` 并且在接收端使用 `CarConditionWithNumbers`。 尽管发送端的 `Used` 使用值“1”而接收端使用值“20”，但是两端的 XML 表示形式均为 `<condition>Used</condition>`。  
   
- 若要包含在数据协定中，必须应用 <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性。 在.NET Framework 中，始终可以为枚举，这也是任何枚举的默认值应用特殊值 0 （零）。 但是，即使对于此特殊值零，也只能使用 <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性标记才能进行序列化。  
+ 若要包含在数据协定中，必须应用 <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性。 在 .NET Framework 中，始终可以将特殊值0（零）应用于枚举，这也是任何枚举的默认值。 但是，即使对于此特殊值零，也只能使用 <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性标记才能进行序列化。  
   
  以下为此规则的两种例外情况：  
   
@@ -81,7 +81,7 @@ ms.locfileid: "65586684"
   
 1. 尝试查找映射到数值的枚举成员（应用了 <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性）。 如果可以找到，请发送仅包含该成员的列表。  
   
-2. 尝试将此数值分解为和的形式，以便枚举成员（每个成员都应用了 <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性）可以映射到和的各个部分。 发送包含所有这些成员的列表。 请注意，*贪婪算法*用于查找总和，并因此没有此类找到即使存在不能保证。 为避免出现这种问题，请确保枚举成员的数值为 2 的幂。  
+2. 尝试将此数值分解为和的形式，以便枚举成员（每个成员都应用了 <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性）可以映射到和的各个部分。 发送包含所有这些成员的列表。 请注意，*贪婪算法*用于查找这样的总和，因此不能保证即使存在此类 sum 也是如此。 为避免出现这种问题，请确保枚举成员的数值为 2 的幂。  
   
 3. 如果上面的两个步骤均无法实现并且数值为非零，则引发一个 <xref:System.Runtime.Serialization.SerializationException>。 如果数值为零，则发送空列表。  
   
@@ -99,5 +99,5 @@ ms.locfileid: "65586684"
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
-- [使用数据协定](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [在服务协定中指定数据传输](../../../../docs/framework/wcf/feature-details/specifying-data-transfer-in-service-contracts.md)
+- [使用数据协定](using-data-contracts.md)
+- [在服务协定中指定数据传输](specifying-data-transfer-in-service-contracts.md)

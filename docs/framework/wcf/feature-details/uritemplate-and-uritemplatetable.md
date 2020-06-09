@@ -2,12 +2,12 @@
 title: UriTemplate 和 UriTemplateTable
 ms.date: 03/30/2017
 ms.assetid: 5cbbe03f-4a9e-4d44-9e02-c5773239cf52
-ms.openlocfilehash: 2742217cb082f5c0354510a7e66818bafd6f1393
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 106ba21b58dabab96afbc8fb6db5cb305386f2fe
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144690"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595071"
 ---
 # <a name="uritemplate-and-uritemplatetable"></a>UriTemplate 和 UriTemplateTable
 Web 开发人员需要能够描述其服务所响应的 URI 的形状和布局。 Windows Communication Foundation （WCF）添加了两个新类，使开发人员能够控制其 Uri。 <xref:System.UriTemplate>和 <xref:System.UriTemplateTable> 构成 WCF 中基于 URI 的调度引擎的基础。 还可以自行使用这些类，使开发人员可以利用模板和 URI 映射机制，而无需实现 WCF 服务。  
@@ -326,8 +326,8 @@ Console.WriteLine("Bound URI: {0}", boundUri);
   
 ## <a name="see-also"></a>另请参阅
 
-- [WCF Web HTTP 编程模型概述](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
-- [WCF Web HTTP 编程对象模型](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)
-- [UriTemplate](../../../../docs/framework/wcf/samples/uritemplate-sample.md)
-- [UriTemplate 表](../../../../docs/framework/wcf/samples/uritemplate-table-sample.md)
-- [UriTemplate 表调度程序](../../../../docs/framework/wcf/samples/uritemplate-table-dispatcher-sample.md)
+- [WCF Web HTTP 编程模型概述](wcf-web-http-programming-model-overview.md)
+- [WCF Web HTTP 编程对象模型](wcf-web-http-programming-object-model.md)
+- [UriTemplate](../samples/uritemplate-sample.md)
+- [UriTemplate 表](../samples/uritemplate-table-sample.md)
+- [UriTemplate 表调度程序](../samples/uritemplate-table-dispatcher-sample.md)

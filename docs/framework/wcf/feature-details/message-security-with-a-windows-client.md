@@ -5,27 +5,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 01e7d0b8-10f9-45c3-a4c5-53d44dc61eb8
-ms.openlocfilehash: bcfeb5f863b1dd6cf9171a7fc53c8984ea68ecb3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dcb311523c6ec41b62f6e69fe6bc7635b9d49708
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184626"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595227"
 ---
 # <a name="message-security-with-a-windows-client"></a>Windows 客户端的消息安全
-此方案显示受消息安全模式保护的 Windows 通信基础 （WCF） 客户端和服务器。 客户端和服务使用 Windows 凭据进行身份验证。  
+此方案显示 Windows Communication Foundation （WCF）客户端和由消息安全模式保护的服务器。 客户端和服务使用 Windows 凭据进行身份验证。  
   
- ![Windows 客户端的消息安全性](../../../../docs/framework/wcf/feature-details/media/1c8618d4-0005-4022-beb6-32fd087a8c3c.gif "1c8618d4-0005-4022-beb6-32fd087a8c3c")  
+ ![Windows 客户端的消息安全性](media/1c8618d4-0005-4022-beb6-32fd087a8c3c.gif "1c8618d4-0005-4022-beb6-32fd087a8c3c")  
   
-|特征|说明|  
+|特征|描述|  
 |--------------------|-----------------|  
-|安全模式|消息|  
-|互操作性|仅限 WCF|  
+|安全模式|Message|  
+|互操作性|仅 WCF|  
 |身份验证（服务器）|服务器和客户端的相互身份验证|  
 |身份验证（客户端）|服务器和客户端的相互身份验证|  
 |完整性|是，使用共享安全上下文|  
 |机密性|是，使用共享安全上下文|  
-|传输|NET.TCP|  
+|Transport|NET.TCP|  
 |绑定|<xref:System.ServiceModel.NetTcpBinding>|  
   
 ## <a name="service"></a>服务  
@@ -41,7 +41,7 @@ ms.locfileid: "79184626"
  [!code-csharp[C_SecurityScenarios#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#11)]
  [!code-vb[C_SecurityScenarios#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#11)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  下面的配置可代替代码用于设置服务：  
   
 ```xml  
@@ -72,7 +72,7 @@ ms.locfileid: "79184626"
 </configuration>  
 ```  
   
-## <a name="client"></a>Client  
+## <a name="client"></a>客户端  
  下面的代码和配置应独立运行。 执行下列操作之一：  
   
 - 使用代码（和客户端代码）创建独立客户端。  
@@ -88,7 +88,7 @@ ms.locfileid: "79184626"
  [!code-csharp[C_SecurityScenarios#18](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#18)]
  [!code-vb[C_SecurityScenarios#18](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#18)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  下面的配置用于设置客户端属性。  
   
 ```xml  
@@ -118,5 +118,5 @@ ms.locfileid: "79184626"
   
 ## <a name="see-also"></a>另请参阅
 
-- [安全概述](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [安全性概述](security-overview.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

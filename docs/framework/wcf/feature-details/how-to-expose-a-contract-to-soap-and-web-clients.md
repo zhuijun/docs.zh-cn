@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: bb765a48-12f2-430d-a54d-6f0c20f2a23a
-ms.openlocfilehash: 303367c85e311ac5c07c11b849b5586354980a3c
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: fa02260976c710401a05cce3d723cc0f66804c6e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65636158"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593122"
 ---
 # <a name="how-to-expose-a-contract-to-soap-and-web-clients"></a>如何：向 SOAP 和 Web 客户端公开协定
 
-默认情况下，Windows Communication Foundation (WCF) 使终结点仅供 SOAP 客户端。 在[如何：创建基本 WCF Web HTTP 服务](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)，终结点可向非 SOAP 客户端。 有时可能需要使相同的协定可以同时作为 Web 终结点和 SOAP 终结点使用。 本主题演示了如何实现此目的的示例。
+默认情况下，Windows Communication Foundation （WCF）使终结点仅可用于 SOAP 客户端。 [如何：创建基本 WCF WEB HTTP 服务](how-to-create-a-basic-wcf-web-http-service.md)，终结点可供非 SOAP 客户端使用。 有时可能需要使相同的协定可以同时作为 Web 终结点和 SOAP 终结点使用。 本主题演示了如何实现此目的的示例。
 
 ## <a name="to-define-the-service-contract"></a>定义服务协定
 
-1. 定义服务协定使用标记的接口<xref:System.ServiceModel.ServiceContractAttribute>，<xref:System.ServiceModel.Web.WebInvokeAttribute>和<xref:System.ServiceModel.Web.WebGetAttribute>属性，如以下代码所示：
+1. 使用用标记的接口和特性定义服务协定 <xref:System.ServiceModel.ServiceContractAttribute> ， <xref:System.ServiceModel.Web.WebInvokeAttribute> <xref:System.ServiceModel.Web.WebGetAttribute> 如下面的代码所示：
 
     [!code-csharp[htSoapWeb#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#0)]
     [!code-vb[htSoapWeb#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#0)]
@@ -26,36 +26,36 @@ ms.locfileid: "65636158"
     > [!NOTE]
     > 默认情况下，<xref:System.ServiceModel.Web.WebInvokeAttribute> 将 POST 调用映射到操作。 但是，可以通过指定“method=”参数指定要映射到操作的方法。 <xref:System.ServiceModel.Web.WebGetAttribute> 不具有“method=”参数，仅将 GET 调用映射到服务操作。
 
-2. 实现服务协定，如下面的代码中所示：
+2. 实现服务协定，如下面的代码所示：
 
      [!code-csharp[htSoapWeb#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#1)]
      [!code-vb[htSoapWeb#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#1)]
 
 ## <a name="to-host-the-service"></a>承载服务
 
-1. 创建<xref:System.ServiceModel.ServiceHost>对象，如下面的代码中所示：
+1. 创建一个 <xref:System.ServiceModel.ServiceHost> 对象，如下面的代码所示：
 
      [!code-csharp[htSoapWeb#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#2)]
      [!code-vb[htSoapWeb#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#2)]
 
-2. 添加<xref:System.ServiceModel.Description.ServiceEndpoint>与<xref:System.ServiceModel.BasicHttpBinding>对于 SOAP 终结点，如下面的代码中所示：
+2. 为 <xref:System.ServiceModel.Description.ServiceEndpoint> <xref:System.ServiceModel.BasicHttpBinding> SOAP 终结点添加一个，如下面的代码所示：
 
      [!code-csharp[htSoapWeb#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#3)]
      [!code-vb[htSoapWeb#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#3)]
 
-3. 添加<xref:System.ServiceModel.Description.ServiceEndpoint>与<xref:System.ServiceModel.WebHttpBinding>为非 SOAP 终结点，并添加<xref:System.ServiceModel.Description.WebHttpBehavior>到终结点，如下面的代码中所示：
+3. 为 <xref:System.ServiceModel.Description.ServiceEndpoint> <xref:System.ServiceModel.WebHttpBinding> 非 SOAP 终结点添加，并将添加 <xref:System.ServiceModel.Description.WebHttpBehavior> 到终结点，如下面的代码所示：
 
      [!code-csharp[htSoapWeb#4](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#4)]
      [!code-vb[htSoapWeb#4](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#4)]
 
-4. 调用`Open()`上<xref:System.ServiceModel.ServiceHost>实例，以打开服务主机，如下面的代码中所示：
+4. 对 `Open()` 实例调用 <xref:System.ServiceModel.ServiceHost> 以打开服务主机，如下面的代码所示：
 
      [!code-csharp[htSoapWeb#5](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#5)]
      [!code-vb[htSoapWeb#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#5)]
 
 ## <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>在 Internet Explorer 中调用映射到 GET 的服务操作
 
-1. 打开 Internet Explorer 并键入"`http://localhost:8000/Web/EchoWithGet?s=Hello, world!`"然后按 ENTER。 URL 包含服务的基址 (`http://localhost:8000/`)，该终结点的相对地址 ("")，服务操作调用 ("EchoWithGet") 和问号后跟一系列由与号分隔的命名参数 (&)。
+1. 打开 Internet Explorer 并键入 " `http://localhost:8000/Web/EchoWithGet?s=Hello, world!` "，然后按 enter。 URL 包含服务的基址（ `http://localhost:8000/` ）、终结点的相对地址（""）、要调用的服务操作（"EchoWithGet"）和一个问号，后跟一个用 "and" 符分隔的命名参数列表（&）。
 
 ## <a name="to-call-service-operations-on-the-web-endpoint-in-code"></a>使用代码在 Web 终结点上调用服务操作
 
@@ -93,7 +93,7 @@ ms.locfileid: "65636158"
 
 ## <a name="example"></a>示例
 
-下面是本主题中列出的完整代码：
+下面是此主题的完整代码列表：
 
 [!code-csharp[htSoapWeb#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/htsoapweb/cs/program.cs#13)]
 [!code-vb[htSoapWeb#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/htsoapweb/vb/program.vb#13)]
@@ -102,7 +102,7 @@ ms.locfileid: "65636158"
 
  编译 Service.cs 时，请参考 System.ServiceModel.dll 和 System.ServiceModel.Web.dll。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.WebHttpBinding>
 - <xref:System.ServiceModel.Web.WebGetAttribute>
@@ -110,4 +110,4 @@ ms.locfileid: "65636158"
 - <xref:System.ServiceModel.Web.WebServiceHost>
 - <xref:System.ServiceModel.ChannelFactory>
 - <xref:System.ServiceModel.Description.WebHttpBehavior>
-- [WCF Web HTTP 编程模型](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [WCF Web HTTP 编程模型](wcf-web-http-programming-model.md)

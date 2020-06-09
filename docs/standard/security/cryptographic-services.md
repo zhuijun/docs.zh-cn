@@ -1,5 +1,6 @@
 ---
 title: 加密服务
+description: 阅读有关 .NET 支持的加密方法和实践的概述，例如 ClickOnce 清单、Suite B、& 下一代加密技术（CNG）支持。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -24,12 +25,12 @@ helpviewer_keywords:
 - cryptography [.NET Framework], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-ms.openlocfilehash: e67b1feb27b6eae7062e7b3e02ac79c8929f1df1
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 701dce82669395743c884a613512bfadc06c91b3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288402"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596327"
 ---
 # <a name="cryptographic-services"></a>加密服务
 
@@ -268,7 +269,7 @@ RSA 允许加密和签名，但 DSA 仅可用于签名，而 Diffie-Hellman 仅�
 
 ## <a name="related-topics"></a>相关主题
 
-|Title|说明|
+|Title|描述|
 |-----------|-----------------|
 |[加密模型](cryptography-model.md)|介绍如何在基类库中实现加密。|
 |[演练：创建加密应用程序](walkthrough-creating-a-cryptographic-application.md)|演示基本加密和解密任务。|

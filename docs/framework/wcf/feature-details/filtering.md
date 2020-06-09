@@ -2,17 +2,17 @@
 title: 筛选
 ms.date: 03/30/2017
 ms.assetid: 4002946c-e34a-4356-8cfb-e25912a4be63
-ms.openlocfilehash: efbedc16fe48d83cdc4223862bc691e9cbe15c10
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: d04141e4720320784bc92c332a3f0b96a7b1ac92
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964296"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595461"
 ---
 # <a name="filtering"></a>筛选
 Windows Communication Foundation （WCF）筛选系统可以使用声明性筛选器来匹配消息并做出操作决策。 使用筛选器，可以通过检查消息的某个部分来确定如何处理消息。 例如，查询过程可以使用 XPath 1.0 查询来检查已知标头的优先级元素，以确定是否将消息移动到队列的靠前位置。  
   
- 筛选系统由一组类组成，这些类可以有效地确定为特定 WCF 消息 `true` 了一组筛选器。  
+ 筛选系统由一组类组成，这些类可以有效地确定一组筛选器中哪个 `true` 特定的 WCF 消息。  
   
  筛选系统是 WCF 消息传递的核心组件;它的设计速度非常快。 每个筛选器实现已针对特定类型的 WCF 消息进行了优化。  
   
@@ -21,7 +21,7 @@ Windows Communication Foundation （WCF）筛选系统可以使用声明性筛�
 ## <a name="where-filtering-fits"></a>筛选的适用范围  
  筛选在接收到消息之后执行，并且是将消息调度到正确的应用程序组件这一过程的一部分。 筛选系统的设计满足了多个 WCF 子系统的要求，包括消息传递、路由、安全、事件处理和系统管理。  
   
-## <a name="filters"></a>筛选器。  
+## <a name="filters"></a>筛选器  
  筛选器引擎具有两个主要组件，即筛选器和筛选器表。 筛选器基于用户指定的逻辑条件做出有关消息的布尔逻辑判定。 筛选器实现 <xref:System.ServiceModel.Dispatcher.MessageFilter> 类。  
   
  <xref:System.ServiceModel.Dispatcher.MessageFilter.Match%2A> 方法用于确定消息是否满足筛选器的条件。 其中一个方法测试消息头，但无法检查消息正文。 另一种方法采用*消息缓冲区*作为输入参数，并且可以检查消息正文。  
@@ -42,7 +42,7 @@ Windows Communication Foundation （WCF）筛选系统可以使用声明性筛�
   
 ### <a name="prefix-endpoint-address-filters"></a>前缀终结点地址筛选器  
   
-1. <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> 的工作方式与 <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> 筛选器非常类似，不同之处在于可以对消息 URI 的前缀进行匹配。 例如，指定地址的筛选器 `http://www.adatum.com` 匹配发送 `http://www.adatum.com/userA`的消息。  
+1. <xref:System.ServiceModel.Dispatcher.PrefixEndpointAddressMessageFilter> 的工作方式与 <xref:System.ServiceModel.Dispatcher.EndpointAddressMessageFilter> 筛选器非常类似，不同之处在于可以对消息 URI 的前缀进行匹配。 例如，指定地址的筛选器将 `http://www.adatum.com` 匹配发送到 `http://www.adatum.com/userA` 的消息。  
   
 ### <a name="xpath-message-filters"></a>XPath 消息筛选器  
  <xref:System.ServiceModel.Dispatcher.XPathMessageFilter> 使用 XPath 表达式来确定 XML 文档是否包含特定元素、属性、文本或其他 XML 语法构造。 该筛选器经过优化，可以非常高效地筛选 XPath 的严格子集。 XML 路径语言在[W3C Xml 路径语言1.0 规范](https://www.w3.org/TR/xpath/all/)中进行了介绍。  
@@ -68,7 +68,7 @@ Windows Communication Foundation （WCF）筛选系统可以使用声明性筛�
   
  <xref:System.ServiceModel.Dispatcher.XPathMessageFilterTable%601> 类针对 XPath 的子集优化了匹配，该类适用于大多数消息处理方案，同时支持完整的 XPath 1.0 语法。 该类具有适合于高效并行匹配的优化算法。  
   
- 此表具有多个专用 `Match` 方法，这些方法对一个 <xref:System.Xml.XPath.XPathNavigator> 和一个 <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> 进行操作。 通过添加 <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> 属性，<xref:System.Xml.XPath.XPathNavigator> 扩展了 <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition%2A> 类。 利用此属性可以快速保存和加载 XML 文档内的位置，而无需克隆导航器 — 此克隆操作需要执行大量内存分配，并且是 <xref:System.Xml.XPath.XPathNavigator> 执行类似的保存和加载操作所需要的。 在对 XML 文档执行查询的过程中，WCF XPath 引擎必须频繁地记录游标的位置，因此 <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> 为消息处理提供了重要优化。  
+ 此表具有多个专用 `Match` 方法，这些方法对一个 <xref:System.Xml.XPath.XPathNavigator> 和一个 <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> 进行操作。 通过添加 <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> 属性，<xref:System.Xml.XPath.XPathNavigator> 扩展了 <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator.CurrentPosition%2A> 类。 利用此属性可以快速保存和加载 XML 文档内的位置，而无需克隆导航器 — 此克隆操作需要执行大量内存分配，并且是 <xref:System.Xml.XPath.XPathNavigator> 执行类似的保存和加载操作所需要的。 在对 XML 文档执行查询的过程中，WCF XPath 引擎必须频繁地记录游标的位置，因此为 <xref:System.ServiceModel.Dispatcher.SeekableXPathNavigator> 消息处理提供了一个重要的优化。  
   
 ## <a name="customer-scenarios"></a>客户方案  
  只要您希望根据消息中包含的数据将消息发送到不同处理模块，就可以使用筛选。 两种典型的方案是基于消息的操作代码对消息进行路由，以及基于消息的终结点地址对消息流进行多路分解。  
@@ -85,4 +85,4 @@ Windows Communication Foundation （WCF）筛选系统可以使用声明性筛�
   
 ## <a name="see-also"></a>另请参阅
 
-- [数据传输和序列化](../../../../docs/framework/wcf/feature-details/data-transfer-and-serialization.md)
+- [数据传输和序列化](data-transfer-and-serialization.md)

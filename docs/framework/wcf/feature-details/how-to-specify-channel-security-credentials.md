@@ -2,12 +2,12 @@
 title: 如何：指定通道安全凭据
 ms.date: 03/30/2017
 ms.assetid: f8e03f47-9c4f-4dd5-8f85-429e6d876119
-ms.openlocfilehash: 72fdcd18fba2eabe8255f73acd240e12e57d56ea
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 45a13460ce94cbacae0465fede4b455a2833ce81
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144703"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596937"
 ---
 # <a name="how-to-specify-channel-security-credentials"></a>如何：指定通道安全凭据
 Windows Communication Foundation （WCF）服务标记允许 COM 应用程序调用 WCF 服务。 大多数 WCF 服务都要求客户端指定凭据以进行身份验证和授权。 从 WCF 客户端调用 WCF 服务时，可以在托管代码或应用程序配置文件中指定这些凭据。 从 COM 应用程序调用 WCF 服务时，可以使用 <xref:System.ServiceModel.ComIntegration.IChannelCredentials> 接口来指定凭据。 本主题将介绍使用 <xref:System.ServiceModel.ComIntegration.IChannelCredentials> 接口指定凭据的各种方法。  
@@ -15,7 +15,7 @@ Windows Communication Foundation （WCF）服务标记允许 COM 应用程序调
 > [!NOTE]
 > <xref:System.ServiceModel.ComIntegration.IChannelCredentials> 是一种基于 IDispatch 的接口，在 Visual Studio 环境中使用它将无法获取 IntelliSense 功能。  
   
- 本文将使用[消息安全示例](../../../../docs/framework/wcf/samples/message-security-sample.md)中定义的 WCF 服务。  
+ 本文将使用[消息安全示例](../samples/message-security-sample.md)中定义的 WCF 服务。  
   
 ### <a name="to-specify-a-client-certificate"></a>指定客户端证书  
   
@@ -115,7 +115,7 @@ Windows Communication Foundation （WCF）服务标记允许 COM 应用程序调
   
 ### <a name="to-specify-an-issue-token"></a>指定颁发令牌  
   
-1. 颁发令牌仅用于使用联合安全的应用程序。 有关联合安全的详细信息，请参阅[联合和颁发的令牌](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)和[联合身份验证示例](../../../../docs/framework/wcf/samples/federation-sample.md)。  
+1. 颁发令牌仅用于使用联合安全的应用程序。 有关联合安全的详细信息，请参阅[联合和颁发的令牌](federation-and-issued-tokens.md)和[联合身份验证示例](../samples/federation-sample.md)。  
   
      下面的 Visual Basic 代码示例演示如何调用 <xref:System.ServiceModel.ComIntegration.IChannelCredentials.SetIssuedToken%28System.String%2CSystem.String%2CSystem.String%29> 方法：  
   
@@ -133,8 +133,8 @@ Windows Communication Foundation （WCF）服务标记允许 COM 应用程序调
   
 ## <a name="see-also"></a>另请参阅
 
-- [联合](../../../../docs/framework/wcf/feature-details/federation.md)
-- [如何：在联合身份验证服务上配置凭据](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
-- [如何：创建联合客户端](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
-- [消息安全](../../../../docs/framework/wcf/feature-details/message-security-in-wcf.md)
-- [绑定与安全](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)
+- [联合](federation.md)
+- [如何：在联合身份验证服务上配置凭据](how-to-configure-credentials-on-a-federation-service.md)
+- [如何：创建联合客户端](how-to-create-a-federated-client.md)
+- [消息安全](message-security-in-wcf.md)
+- [绑定与安全](bindings-and-security.md)

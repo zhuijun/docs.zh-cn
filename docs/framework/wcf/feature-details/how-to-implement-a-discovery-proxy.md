@@ -2,16 +2,16 @@
 title: 如何：实现发现代理
 ms.date: 03/30/2017
 ms.assetid: 78d70e0a-f6c3-4cfb-a7ca-f66ebddadde0
-ms.openlocfilehash: dafd5e25f998f2dda3f736caeea51cd534ce8e5e
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: ca7ab2ee434aef7649d71cbfc33273f48020788f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71351575"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597067"
 ---
 # <a name="how-to-implement-a-discovery-proxy"></a>如何：实现发现代理
 
-本主题介绍如何实现发现代理。 有关 Windows Communication Foundation （WCF）中的发现功能的详细信息，请参阅[WCF 发现概述](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)。 可以通过创建一个扩展 <xref:System.ServiceModel.Discovery.DiscoveryProxy> 抽象类的类来实现发现代理。 此示例中定义并使用了多个其他支持类。 `OnResolveAsyncResult`、`OnFindAsyncResult`和 `AsyncResult`。 这些类实现 <xref:System.IAsyncResult> 接口。 有关 <xref:System.IAsyncResult> 的详细信息，请参阅 system.exception[接口](xref:System.IAsyncResult)。
+本主题介绍如何实现发现代理。 有关 Windows Communication Foundation （WCF）中的发现功能的详细信息，请参阅[WCF 发现概述](wcf-discovery-overview.md)。 可以通过创建一个扩展 <xref:System.ServiceModel.Discovery.DiscoveryProxy> 抽象类的类来实现发现代理。 此示例中定义并使用了多个其他支持类。 `OnResolveAsyncResult`、 `OnFindAsyncResult`和 `AsyncResult`。 这些类实现 <xref:System.IAsyncResult> 接口。 有关详细信息， <xref:System.IAsyncResult> 请参阅 system.exception[接口](xref:System.IAsyncResult)。
 
  本主题分三个主要部分来讨论如何实现发现代理：
 
@@ -487,7 +487,7 @@ OnBegin. / OnEnd. 方法提供后续发现操作的逻辑。 例如，<xref:Syst
 
 1. 打开 DiscoveryProxyExample 项目中的 Program.cs 文件。
 
-2. 添加下面的 `using` 语句。
+2. 添加以下 `using` 语句。
 
     ```csharp
     using System;
@@ -546,7 +546,7 @@ OnBegin. / OnEnd. 方法提供后续发现操作的逻辑。 例如，<xref:Syst
     }
     ```
 
-您已完成实现发现代理。 继续[操作如何：实现使用发现代理注册的可发现服务](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)。
+您已完成实现发现代理。 继续[操作如何：实现使用发现代理注册的可发现服务](discoverable-service-that-registers-with-the-discovery-proxy.md)。
 
 ## <a name="example"></a>示例
 
@@ -975,7 +975,7 @@ namespace Microsoft.Samples.Discovery
 
 ## <a name="see-also"></a>另请参阅
 
-- [WCF 发现概述](../../../../docs/framework/wcf/feature-details/wcf-discovery-overview.md)
-- [如何：实现向发现代理注册的可检测服务](../../../../docs/framework/wcf/feature-details/discoverable-service-that-registers-with-the-discovery-proxy.md)
-- [如何：实现使用发现代理查找服务的客户端应用程序](../../../../docs/framework/wcf/feature-details/client-app-discovery-proxy-to-find-a-service.md)
-- [如何：测试发现代理](../../../../docs/framework/wcf/feature-details/how-to-test-the-discovery-proxy.md)
+- [WCF Discovery 概述](wcf-discovery-overview.md)
+- [如何：实现向发现代理注册的可发现的服务](discoverable-service-that-registers-with-the-discovery-proxy.md)
+- [如何：实现使用发现代理查找服务的客户端应用程序](client-app-discovery-proxy-to-find-a-service.md)
+- [如何：测试发现代理](how-to-test-the-discovery-proxy.md)

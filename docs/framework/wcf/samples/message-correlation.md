@@ -2,12 +2,12 @@
 title: 消息相关性
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: 9ded0886920f9f0b3d2f9b441061253b42a1c567
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 84b10b507f9fdaa7c53cf937bb132c8cc0aac33f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76747167"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84591627"
 ---
 # <a name="message-correlation"></a>消息相关性
 
@@ -17,7 +17,7 @@ ms.locfileid: "76747167"
 
  `IOrderProcessor` 服务协定定义了适合与队列一起使用的单向服务操作。 MSMQ 消息没有 Action 标头，因此无法将不同的 MSMQ 消息自动映射到操作协定。 因此，在这种情况下只有一个操作协定。 如果您希望在服务中定义更多的操作协定，则应用程序必须提供相关信息，如 MSMQ 消息中的哪个标头（例如标签或 correlationID）可用于确定要调度的操作协定。
 
- MSMQ 消息也不包含诸如哪些标头映射到操作协定的不同参数等信息。 因此，在该操作协定中只有一个参数。 参数的类型为 <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601>，其中包含基础 MSMQ 消息。 `MsmqMessage<T>` 类中的“T”类型表示序列化到 MSMQ 消息正文中的数据。 在此示例中，`PurchaseOrder` 类型序列化到 MSMQ 消息正文中。
+ MSMQ 消息也不包含诸如哪些标头映射到操作协定的不同参数等信息。 因此，在该操作协定中只有一个参数。 参数的类型为 <xref:System.ServiceModel.MsmqIntegration.MsmqMessage%601> ，包含基础 MSMQ 消息。 `MsmqMessage<T>` 类中的“T”类型表示序列化到 MSMQ 消息正文中的数据。 在此示例中，`PurchaseOrder` 类型序列化到 MSMQ 消息正文中。
 
 ```csharp
 [ServiceContract(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -68,7 +68,7 @@ public class OrderProcessorService : IOrderProcessor
 
  服务使用自定义客户端 `OrderResponseClient` 将 MSMQ 消息发送到队列。 由于接收和处理消息的应用程序是 MSMQ 应用程序，而不是 WCF 应用程序，因此两个应用程序之间没有隐式服务协定。 所以在此方案中，我们不能使用 Svcutil.exe 工具创建代理。
 
- 对于使用 `msmqIntegrationBinding` 绑定发送消息的所有 WCF 应用程序而言，自定义代理本质上都是相同的。 与其他代理不同，它不包含一系列服务操作。 它只是一个提交消息操作。
+ 对于使用绑定发送消息的所有 WCF 应用程序而言，自定义代理本质上是相同的 `msmqIntegrationBinding` 。 与其他代理不同，它不包含一系列服务操作。 它只是一个提交消息操作。
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -272,7 +272,7 @@ static void DisplayOrderStatus()
 
 ## <a name="set-up-build-and-run-the-sample"></a>设置、生成和运行示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
 2. 如果先运行服务，则它将检查以确保队列存在。 如果队列不存在，则服务将创建一个队列。 可以先运行服务以创建队列或通过 MSMQ 队列管理器创建一个队列。 执行下面的步骤来在 Windows 2008 中创建队列。
 
@@ -280,15 +280,15 @@ static void DisplayOrderStatus()
 
     2. 展开 "**功能**" 选项卡。
 
-    3. 右键单击 "**专用消息队列**"，然后选择 "**新建** **专用队列**"。
+    3. 右键单击 "**专用消息队列**"，然后选择 "**新建****专用队列**"。
 
     4. 选中 "**事务性**" 框。
 
     5. 输入 `ServiceModelSamplesTransacted` 作为新队列的名称。
 
-3. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+3. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。
 
-4. 若要在单计算机配置中运行示例，请按照[运行 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/running-the-samples.md)中的说明进行操作。
+4. 若要在单计算机配置中运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
 ## <a name="run-the-sample-across-computers"></a>跨计算机运行示例
 
@@ -315,5 +315,5 @@ static void DisplayOrderStatus()
 
 ## <a name="see-also"></a>另请参阅
 
-- [在 WCF 中排队](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
+- [在 WCF 中排队](../feature-details/queuing-in-wcf.md)
 - [消息队列](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms711472(v=vs.85))

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9f71b6ae-737c-4382-8d89-0a7b1c7e182b
-ms.openlocfilehash: 2746c608fb47b94446c5d7e10748ba185d555e7f
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: c5efd921d3826ef814bf45d6895255981101d992
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202332"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84592952"
 ---
 # <a name="how-to-secure-metadata-endpoints"></a>如何：保护元数据终结点
 
@@ -22,7 +22,7 @@ ms.locfileid: "84202332"
 
 ### <a name="to-create-a-secure-https-get-metadata-endpoint-in-code"></a>在代码中创建安全的 HTTPS GET 元数据终结点
 
-1. 使用适当的 X.509 证书配置端口。 该证书必须来自受信任的颁发机构，而且还必须有既定的“服务授权”用途。 必须使用 HttpCfg.exe 工具将该证书附加到该端口。 请参阅[如何：使用 SSL 证书配置端口](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)。
+1. 使用适当的 X.509 证书配置端口。 该证书必须来自受信任的颁发机构，而且还必须有既定的“服务授权”用途。 必须使用 HttpCfg.exe 工具将该证书附加到该端口。 请参阅[如何：使用 SSL 证书配置端口](how-to-configure-a-port-with-an-ssl-certificate.md)。
 
     > [!IMPORTANT]
     > 该证书或其域名系统 (DNS) 的主题必须与计算机的名称匹配。 这一点非常重要，原因是 HTTPS 机制所执行的前几个步骤之一是检查是否将证书颁发给了在其上调用了该证书的地址的统一资源标识符 (URI)。
@@ -40,21 +40,21 @@ ms.locfileid: "84202332"
 
 ### <a name="to-create-a-secure-https-get-metadata-endpoint-in-configuration"></a>在配置中创建安全的 HTTPS GET 元数据终结点
 
-1. 将一个 [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) 元素添加到 [\<system.serviceModel>](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) 服务的配置文件的元素中。
+1. 将一个 [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) 元素添加到 [\<system.serviceModel>](../../configure-apps/file-schema/wcf/system-servicemodel.md) 服务的配置文件的元素中。
 
-2. 向 [\<serviceBehaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/servicebehaviors.md) 元素添加元素 [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md) 。
+2. 向 [\<serviceBehaviors>](../../configure-apps/file-schema/wcf/servicebehaviors.md) 元素添加元素 [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) 。
 
-3. 向 [\<behavior>](../../../../docs/framework/configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) 元素添加元素 `<serviceBehaviors>` 。
+3. 向 [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-servicebehaviors.md) 元素添加元素 `<serviceBehaviors>` 。
 
 4. 将 `name` 元素的 `<behavior>` 属性设置为适当的值。 需要 `name` 属性。 下面的示例使用 `mySvcBehavior` 值。
 
-5. 将添加 [\<serviceMetadata>](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) 到 `<behavior>` 元素。
+5. 将添加 [\<serviceMetadata>](../../configure-apps/file-schema/wcf/servicemetadata.md) 到 `<behavior>` 元素。
 
 6. 将 `httpsGetEnabled` 元素的 `<serviceMetadata>` 属性设置为 `true`。
 
 7. 将 `httpsGetUrl` 元素的 `<serviceMetadata>` 属性设置为适当的值。 请注意，如果指定了绝对地址，则 URL 必须以方案开头 `https://` 。 如果指定相对地址，则必须为服务主机提供一个 HTTPS 基址。 如果不设置此属性，则默认地址为 ""，或者直接为服务的 HTTPS 基址。
 
-8. 若要将行为与服务一起使用，请将 `behaviorConfiguration` 元素的属性设置 [\<service>](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) 为行为元素的 name 特性的值。 下面的配置代码演示了一个完整的示例。
+8. 若要将行为与服务一起使用，请将 `behaviorConfiguration` 元素的属性设置 [\<service>](../../configure-apps/file-schema/wcf/service.md) 为行为元素的 name 特性的值。 下面的配置代码演示了一个完整的示例。
 
     ```xml
     <?xml version="1.0" encoding="utf-8" ?>
@@ -95,12 +95,12 @@ ms.locfileid: "84202332"
 
 - <xref:System.ServiceModel.Description?displayProperty=nameWithType>
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetUrl%2A>
-- [如何：使用 SSL 证书配置端口](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
-- [使用证书](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [元数据的安全注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-with-metadata.md)
-- [保护服务和客户端的安全](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [如何：使用 SSL 证书配置端口](how-to-configure-a-port-with-an-ssl-certificate.md)
+- [使用证书](working-with-certificates.md)
+- [元数据的安全注意事项](security-considerations-with-metadata.md)
+- [保护服务和客户端的安全](securing-services-and-clients.md)

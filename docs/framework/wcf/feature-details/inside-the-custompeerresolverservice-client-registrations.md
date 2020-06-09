@@ -2,12 +2,12 @@
 title: CustomPeerResolverService 内部：客户端注册
 ms.date: 03/30/2017
 ms.assetid: 40236953-a916-4236-84a6-928859e1331a
-ms.openlocfilehash: 3d1e1c6493da54bc3ae0e74a33985da59382ea52
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ce694408edbb40309d1750be49b8414ebcbce3f7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64619783"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596833"
 ---
 # <a name="inside-the-custompeerresolverservice-client-registrations"></a>CustomPeerResolverService 内部：客户端注册
 网格中的每个节点都通过 `Register` 函数，将自己的终结点信息发布到解析程序服务。 解析程序服务将此信息存储为注册记录。 此记录包含节点的唯一标识符 (RegistrationID) 和终结点信息 (PeerNodeAddress)。  
@@ -26,13 +26,13 @@ ms.locfileid: "64619783"
   
  若要实现您自己的解析程序服务，需编写一个维护函数来删除过时的注册记录。 有若干方法可实现此操作：  
   
-- **定期维护**:设置一个计时器以定期响起并完成数据存储区中删除旧记录。 <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService> 使用此方法。  
+- **定期维护**：将计时器设置为定期关闭，并浏览数据存储以删除旧记录。 <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService> 使用此方法。  
   
-- **被动删除**:而不是按固定间隔主动搜索过时的记录，可以标识和删除过时的记录时你的服务已在执行另一个函数。 这可能会延长对解析程序客户端请求的响应时间，但此方法不需要计时器。此外，如果预期很少有节点会不调用 `Unregister` 便离开，此方法将更有效。  
+- **被动删除**：当服务已在执行其他功能时，可以确定并删除过时记录，而不是定期定期搜索过时记录。 这可能会延长对解析程序客户端请求的响应时间，但此方法不需要计时器。此外，如果预期很少有节点会不调用 `Unregister` 便离开，此方法将更有效。  
   
 ## <a name="registrationlifetime-and-refresh"></a>RegistrationLifetime 和 Refresh  
  节点向解析程序服务注册时，它将从该服务收到一个 <xref:System.ServiceModel.PeerResolvers.RegisterResponseInfo> 对象。 此对象具有 `RegistrationLifetime` 属性，该属性告知节点，注册将在多久之后过期并被解析程序服务删除。 例如，如果 `RegistrationLifetime` 为 2 分钟，则节点需要在 2 分钟内调用 `Refresh`，以确保记录保持不过时状态，以免被删除。 解析程序服务收到 `Refresh` 请求时，它会查找记录并重置过期时间。 Refresh 返回一个具有 <xref:System.ServiceModel.PeerResolvers.RefreshResponseInfo> 属性的 `RegistrationLifetime` 对象。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [对等解析程序](../../../../docs/framework/wcf/feature-details/peer-resolvers.md)
+- [对等解析程序](peer-resolvers.md)

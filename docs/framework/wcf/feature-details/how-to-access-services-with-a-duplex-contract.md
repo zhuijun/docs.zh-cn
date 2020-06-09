@@ -7,28 +7,28 @@ dev_langs:
 helpviewer_keywords:
 - duplex contracts [WCF]
 ms.assetid: 746a9d64-f21c-426c-b85d-972e916ec6c5
-ms.openlocfilehash: 366fd9d6aa220bcbec1ee8fb2a04d1b84755800a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bc42792b827b49265a0b1addf959de2fa1a041e3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855135"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597210"
 ---
 # <a name="how-to-access-services-with-a-duplex-contract"></a>如何：使用双工协定访问服务
 
-Windows Communication Foundation (WCF) 的一个功能是能够创建使用双工消息模式的服务。 此模式允许服务通过回调与客户端进行通信。 本主题演示创建 WCF 客户端实现回调接口的客户端类中的步骤。
+Windows Communication Foundation （WCF）的一项功能是能够创建使用双工消息传递模式的服务。 此模式允许服务通过回调与客户端进行通信。 本主题演示在实现回调接口的客户端类中创建 WCF 客户端的步骤。
 
 双向绑定向服务公开客户端的 IP 地址。 客户端应使用安全来确保仅连接到自己信任的服务。
 
-有关创建基本 WCF 服务和客户端的教程，请参阅[入门教程](../../../../docs/framework/wcf/getting-started-tutorial.md)。
+有关创建基本 WCF 服务和客户端的教程，请参阅[入门教程](../getting-started-tutorial.md)。
 
 ## <a name="to-access-a-duplex-service"></a>访问双工服务
 
-1. 创建包含两个接口的服务。 第一个接口用于服务，第二个接口用于回调。 有关创建双工服务的详细信息，请参阅[如何：创建双工协定](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)。
+1. 创建包含两个接口的服务。 第一个接口用于服务，第二个接口用于回调。 有关创建双工服务的详细信息，请参阅[如何：创建双工协定](how-to-create-a-duplex-contract.md)。
 
 2. 运行服务。
 
-3. 使用[ServiceModel Metadata Utility Tool (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)为客户端生成协定 （接口）。 有关如何执行此操作的信息，请参阅[如何：创建客户端](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md)。
+3. 使用 " [svcutil.exe" 元数据实用工具（）](../servicemodel-metadata-utility-tool-svcutil-exe.md)为客户端生成协定（接口）。 有关如何执行此操作的信息，请参阅[如何：创建客户端](../how-to-create-a-wcf-client.md)。
 
 4. 在客户端类中实现回调接口，如下面的示例所示。
 
@@ -68,7 +68,7 @@ Windows Communication Foundation (WCF) 的一个功能是能够创建使用双�
     Dim site As InstanceContext = New InstanceContext(new CallbackHandler())
     ```
 
-6. 创建的 WCF 客户端使用需要的构造函数实例<xref:System.ServiceModel.InstanceContext>对象。 该构造函数的第二个参数是配置文件中找到的终结点的名称。
+6. 使用需要对象的构造函数创建 WCF 客户端的实例 <xref:System.ServiceModel.InstanceContext> 。 该构造函数的第二个参数是配置文件中找到的终结点的名称。
 
     ```csharp
     CalculatorDuplexClient wcfClient = new CalculatorDuplexClient(site, "default");
@@ -78,7 +78,7 @@ Windows Communication Foundation (WCF) 的一个功能是能够创建使用双�
     Dim wcfClient As New CalculatorDuplexClient(site, "default")
     ```
 
-7. 调用 WCF 客户端所需的方法。
+7. 根据需要调用 WCF 客户端的方法。
 
 ## <a name="example"></a>示例
 
@@ -87,10 +87,10 @@ Windows Communication Foundation (WCF) 的一个功能是能够创建使用双�
 [!code-csharp[S_DuplexClients#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_duplexclients/cs/client.cs#1)]
 [!code-vb[S_DuplexClients#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_duplexclients/vb/client.vb#1)]
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [入门教程](../../../../docs/framework/wcf/getting-started-tutorial.md)
-- [如何：创建双工协定](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)
-- [ServiceModel 元数据实用工具 (Svcutil.exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)
-- [如何：创建客户端](../../../../docs/framework/wcf/how-to-create-a-wcf-client.md)
-- [如何：考虑使用 ChannelFactory](../../../../docs/framework/wcf/feature-details/how-to-use-the-channelfactory.md)
+- [入门教程](../getting-started-tutorial.md)
+- [如何：创建双工协定](how-to-create-a-duplex-contract.md)
+- [ServiceModel 元数据实用工具 (Svcutil.exe)](../servicemodel-metadata-utility-tool-svcutil-exe.md)
+- [如何：创建客户端](../how-to-create-a-wcf-client.md)
+- [如何：使用 ChannelFactory](how-to-use-the-channelfactory.md)

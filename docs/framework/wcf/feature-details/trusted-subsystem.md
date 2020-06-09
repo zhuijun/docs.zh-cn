@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f5ce46b-e259-4bc9-a0b9-89d06fc9341c
-ms.openlocfilehash: b226eed9218207cde99add61ef1f3eb64b459009
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f90906b4c3fc1d1d76977451abfb238bb33fb581
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184294"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595110"
 ---
 # <a name="trusted-subsystem"></a>受信任的子系统
 客户端访问分布在网络上的一个或多个 Web 服务。 Web 服务的设计使对其他资源（比如数据库或其他 Web 服务）的访问包装在 Web 服务的企业逻辑中。 必须保护这些资源不受到未经授权的访问。 下图描述了一个受信任的子系统过程。  
   
- ![受信任的子系统](../../../../docs/framework/wcf/feature-details/media/wcfc-trustedsubsystemc.gif "wcfc_TrustedSubsystemc")  
+ ![受信任子系统](media/wcfc-trustedsubsystemc.gif "wcfc_TrustedSubsystemc")  
   
  以下步骤说明如图所示的受信任子系统过程：  
   
@@ -29,16 +29,16 @@ ms.locfileid: "79184294"
   
 5. 受信任子系统处理响应并对客户端发出其自己的响应。  
   
-|特征|说明|  
+|特征|描述|  
 |--------------------|-----------------|  
-|安全模式|消息|  
-|互操作性|仅限 Windows 通信基础 （WCF）。|  
+|安全模式|Message|  
+|互操作性|仅 Windows Communication Foundation （WCF）。|  
 |身份验证（服务）|安全令牌服务对客户端进行身份验证和授权。|  
 |身份验证（客户端）|受信任子系统对客户端进行身份验证，资源对受信任子系统服务进行身份验证。|  
 |完整性|是|  
 |机密性|是|  
-|传输|客户端和受信任子系统服务之间采用 HTTP。<br /><br /> 受信任子系统服务和资源（后端服务）之间采用 NET.TCP。|  
-|绑定|<xref:System.ServiceModel.WSHttpBinding><xref:System.ServiceModel.NetTcpBinding>[和\<ws联邦http绑定>](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
+|Transport|客户端和受信任子系统服务之间采用 HTTP。<br /><br /> 受信任子系统服务和资源（后端服务）之间采用 NET.TCP。|  
+|绑定|<xref:System.ServiceModel.WSHttpBinding>与<xref:System.ServiceModel.NetTcpBinding>[\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
   
 ## <a name="resource-back-end-service"></a>资源（后端服务）  
   
@@ -48,7 +48,7 @@ ms.locfileid: "79184294"
  [!code-csharp[TrustedSubSystemsResource#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/trustedsubsystemsresource/cs/source.cs#1)]
  [!code-vb[TrustedSubSystemsResource#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/trustedsubsystemsresource/vb/source.vb#1)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  下面的配置使用配置设置相同的终结点。  
   
 ```xml  
@@ -100,7 +100,7 @@ ms.locfileid: "79184294"
  [!code-csharp[TrustedSubSystems#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/trustedsubsystems/cs/source.cs#2)]
  [!code-vb[TrustedSubSystems#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/trustedsubsystems/vb/source.vb#2)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  下面的配置使用配置设置相同的终结点。 注意有两个绑定：一个用于保证承载于受信任子系统中的服务的安全，另一个用于在受信任子系统和后端服务之间进行通信。  
   
 ```xml  
@@ -163,7 +163,7 @@ ms.locfileid: "79184294"
 </configuration>  
 ```  
   
-## <a name="client"></a>Client  
+## <a name="client"></a>客户端  
   
 ### <a name="code"></a>代码  
  下面的代码演示如何创建与受信任子系统进行通信的客户端，该客户端使用 HTTP 上的消息安全协议以及用户名和密码进行身份验证。  
@@ -171,7 +171,7 @@ ms.locfileid: "79184294"
  [!code-csharp[TrustedSubSystemsClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/trustedsubsystemsclient/cs/source.cs#1)]
  [!code-vb[TrustedSubSystemsClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/trustedsubsystemsclient/vb/source.vb#1)]  
   
-### <a name="configuration"></a>配置  
+### <a name="configuration"></a>Configuration  
  下面的代码将客户端配置成使用 HTTP 上的消息安全协议以及用户名和密码进行身份验证。 用户名和密码只能使用代码指定（不可配置）。  
   
 ```xml  
@@ -212,5 +212,5 @@ ms.locfileid: "79184294"
   
 ## <a name="see-also"></a>另请参阅
 
-- [安全概述](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [安全性概述](security-overview.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

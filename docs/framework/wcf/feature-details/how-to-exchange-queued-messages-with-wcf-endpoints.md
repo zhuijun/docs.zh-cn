@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 938e7825-f63a-4c3d-b603-63772fabfdb3
-ms.openlocfilehash: 09b21c9483b4f2716409b560dbbb478fe5a6badd
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 7da7ba1b680bae2b29eeff8fe669e097ea8eda32
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972227"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595370"
 ---
 # <a name="how-to-exchange-queued-messages-with-wcf-endpoints"></a>如何：使用 WCF 终结点交换排队消息
 队列确保客户端和 Windows Communication Foundation （WCF）服务之间可以发生可靠消息传送，即使该服务在通信时不可用。 下面的过程演示如何通过在实现 WCF 服务时使用标准排队绑定来确保客户端和服务之间的持久通信。  
   
- 本部分介绍如何将<xref:System.ServiceModel.NetMsmqBinding>用于 wcf 客户端和 wcf 服务之间的排队通信。  
+ 本部分介绍如何将 <xref:System.ServiceModel.NetMsmqBinding> 用于 wcf 客户端和 wcf 服务之间的排队通信。  
   
 ### <a name="to-use-queuing-in-a-wcf-service"></a>在 WCF 服务中使用队列  
   
@@ -58,7 +58,7 @@ ms.locfileid: "70972227"
   
 2. 在配置中定义 <xref:System.ServiceModel.Description.ServiceEndpoint>，指定地址并使用标准 <xref:System.ServiceModel.NetMsmqBinding> 绑定，如下面的示例所示。  
 
-3. 创建事务范围以写入到事务性队列，调用`SubmitPurchaseOrder`操作并关闭 WCF 客户端，如下面的示例中所示。  
+3. 创建事务范围以写入到事务性队列，调用 `SubmitPurchaseOrder` 操作并关闭 WCF 客户端，如下面的示例中所示。  
   
      [!code-csharp[S_Msmq_Transacted#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/client.cs#8)]
      [!code-vb[S_Msmq_Transacted#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/client.vb#8)]  
@@ -75,13 +75,13 @@ ms.locfileid: "70972227"
  [!code-csharp[S_Msmq_Transacted#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_msmq_transacted/cs/client.cs#12)]
  [!code-vb[S_Msmq_Transacted#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_msmq_transacted/vb/client.vb#12)]  
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.NetMsmqBinding>
-- [已进行事务处理的 MSMQ 绑定](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md)
-- [在 WCF 中排队](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)
-- [如何：与 WCF 终结点和消息队列应用程序交换消息](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
-- [Windows Communication Foundation 到消息队列](../../../../docs/framework/wcf/samples/wcf-to-message-queuing.md)
-- [安装消息队列 (MSMQ)](../../../../docs/framework/wcf/samples/installing-message-queuing-msmq.md)
-- [到 Windows Communication Foundation 的消息队列](../../../../docs/framework/wcf/samples/message-queuing-to-wcf.md)
-- [基于消息队列的消息安全性](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
+- [已经过事务处理的 MSMQ 绑定](../samples/transacted-msmq-binding.md)
+- [在 WCF 中排队](queuing-in-wcf.md)
+- [如何：与 WCF 终结点和消息队列应用程序交换消息](how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
+- [Windows Communication Foundation 到消息队列](../samples/wcf-to-message-queuing.md)
+- [安装“消息队列 (MSMQ)”](../samples/installing-message-queuing-msmq.md)
+- [到 Windows Communication Foundation 的消息队列](../samples/message-queuing-to-wcf.md)
+- [基于消息队列的消息安全性](../samples/message-security-over-message-queuing.md)

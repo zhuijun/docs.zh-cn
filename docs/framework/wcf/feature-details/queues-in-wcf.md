@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF]
 ms.assetid: 43008409-1bb4-4bd4-85d7-862c8f10ae20
-ms.openlocfilehash: 92bd3a6809386764251c4a69c6bc583ed745205d
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: d1fee4fdde18563ec6ccce4f0675d8581184be08
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921362"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596729"
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Windows Communication Foundation 中的队列
 本节中的主题讨论 Windows Communication Foundation （WCF）对队列的支持。 WCF 通过利用 Microsoft 消息队列（以前称为 MSMQ）作为传输来提供队列支持，并启用以下方案：  
@@ -18,48 +18,48 @@ ms.locfileid: "76921362"
   
 - 故障隔离。 应用程序与队列之间发送或接收消息如果失败，两种操作互不影响。 例如，如果接收应用程序失败，发送应用程序可以继续向队列发送消息。 接收方再次启动时，即可处理队列中的消息。 故障隔离提高了整体系统的可靠性和可用性。  
   
-- 负载量。 发送应用程序发出的消息可能使接收应用程序过载。 队列可以管理不匹配的消息生成率和处理率，以使接收方不会过载。  
+- 负载调节。 发送应用程序发出的消息可能使接收应用程序过载。 队列可以管理不匹配的消息生成率和处理率，以使接收方不会过载。  
   
 - 断开连接的操作。 在高延迟网络或有限可用性网络上通信（例如，在移动设备中）时，发送、接收和处理操作可能会断开连接。 队列允许这些操作继续执行，即使终结点断开连接也是如此。 重新建立连接后，队列将消息转发到接收应用程序。  
   
- 若要在 WCF 应用程序中使用队列功能，可以使用其中一个标准绑定，如果其中一个标准绑定不满足你的要求，则可以创建自定义绑定。 有关相关标准绑定和如何选择的详细信息，请参阅[如何：与 WCF 终结点和消息队列应用程序交换消息](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)。 有关创建自定义绑定的详细信息，请参阅[自定义绑定](../../../../docs/framework/wcf/extending/custom-bindings.md)。  
+ 若要在 WCF 应用程序中使用队列功能，可以使用其中一个标准绑定，如果其中一个标准绑定不满足你的要求，则可以创建自定义绑定。 有关相关标准绑定和如何选择的详细信息，请参阅[如何：与 WCF 终结点和消息队列应用程序交换消息](how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)。 有关创建自定义绑定的详细信息，请参阅[自定义绑定](../extending/custom-bindings.md)。  
   
 ## <a name="in-this-section"></a>本节内容  
- [队列概述](../../../../docs/framework/wcf/feature-details/queues-overview.md)  
+ [队列概述](queues-overview.md)  
  消息队列概念概述。  
   
- [在 WCF 中排队](../../../../docs/framework/wcf/feature-details/queuing-in-wcf.md)  
+ [在 WCF 中排队](queuing-in-wcf.md)  
  WCF 队列支持概述。  
   
- [如何：使用 WCF 终结点交换排队消息](../../../../docs/framework/wcf/feature-details/how-to-exchange-queued-messages-with-wcf-endpoints.md)  
- 介绍如何使用 <xref:System.ServiceModel.NetMsmqBinding> 类在 WCF 客户端和 WCF 服务之间进行通信。  
+ [如何：使用 WCF 终结点交换排队消息](how-to-exchange-queued-messages-with-wcf-endpoints.md)  
+ 介绍如何使用类在 <xref:System.ServiceModel.NetMsmqBinding> wcf 客户端和 wcf 服务之间进行通信。  
   
- [如何：与 WCF 终结点和消息队列应用程序交换消息](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
- 介绍如何使用 <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> 在 WCF 和消息队列应用程序之间进行通信。  
+ [如何：与 WCF 终结点和消息队列应用程序交换消息](how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)  
+ 介绍如何使用在 <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> WCF 和消息队列应用程序之间进行通信。  
   
- [在会话中对排队消息进行分组](../../../../docs/framework/wcf/feature-details/grouping-queued-messages-in-a-session.md)  
+ [在会话中对排队消息进行分组](grouping-queued-messages-in-a-session.md)  
  说明如何对队列中的消息分组，以便单个接收应用程序加速处理相关消息。  
   
- [在事务中对消息进行批处理](../../../../docs/framework/wcf/feature-details/batching-messages-in-a-transaction.md)  
+ [在事务中对消息进行批处理](batching-messages-in-a-transaction.md)  
  说明如何在事务中对消息进行批处理。  
   
- [使用死信队列处理消息传输故障](../../../../docs/framework/wcf/feature-details/using-dead-letter-queues-to-handle-message-transfer-failures.md)  
+ [使用死信队列处理消息传输故障](using-dead-letter-queues-to-handle-message-transfer-failures.md)  
  说明如何使用死信队列来处理消息传输和传送故障，以及如何处理死信队列中的消息。  
   
- [有害消息处理](../../../../docs/framework/wcf/feature-details/poison-message-handling.md)  
+ [病毒消息处理](poison-message-handling.md)  
  说明如何处理病毒消息（向接收应用程序尝试传送的次数超出最大次数的消息）。  
   
- [Windows Vista、Windows Server 2003 和 Windows XP 在排队功能方面的差异](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)  
+ [Windows Vista、Windows Server 2003 和 Windows XP 在排队功能方面的差异](diff-in-queue-in-vista-server-2003-windows-xp.md)  
  概述 Windows Vista、Windows Server 2003 和 Windows XP 之间的 WCF 队列功能之间的差异。  
   
- [使用传输安全性保护消息](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
+ [使用传输安全保护消息](securing-messages-using-transport-security.md)  
  介绍如何使用传输安全来保护排队消息。  
   
- [使用消息安全性保护消息](../../../../docs/framework/wcf/feature-details/securing-messages-using-message-security.md)  
+ [使用消息安全保护消息](securing-messages-using-message-security.md)  
  介绍如何使用消息安全来保护排队消息。  
   
- [排队消息处理疑难解答](../../../../docs/framework/wcf/feature-details/troubleshooting-queued-messaging.md)  
+ [排队消息处理疑难解答](troubleshooting-queued-messaging.md)  
  说明如何解决常见队列问题。  
   
- [排队通信的最佳做法](../../../../docs/framework/wcf/feature-details/best-practices-for-queued-communication.md)  
+ [排队通信的最佳做法](best-practices-for-queued-communication.md)  
  介绍使用 WCF 排队通信的最佳做法。  

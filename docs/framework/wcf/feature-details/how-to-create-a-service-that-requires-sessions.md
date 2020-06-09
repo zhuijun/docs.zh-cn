@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8a7613ef-0df9-47c3-b8dc-47f42cb1fd8b
-ms.openlocfilehash: 495de5a926cfc0c5aab88337f5f33b991c49e71a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 29c2a87daaf763a50aa657c9badc002ff2fa27e1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184993"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593329"
 ---
 # <a name="how-to-create-a-service-that-requires-sessions"></a>如何：创建要求会话的服务
-会话在两个或更多终结点之间创建一个共享状态，从而启用一些有用的功能，例如回调、多跳安全性以及客户端和服务实例之间的关联。 有关 Windows 通信基础 （WCF） 应用程序中的会话的详细信息，请参阅[使用会话](../../../../docs/framework/wcf/using-sessions.md)。  
+会话在两个或更多终结点之间创建一个共享状态，从而启用一些有用的功能，例如回调、多跳安全性以及客户端和服务实例之间的关联。 有关 Windows Communication Foundation （WCF）应用程序中的会话的详细信息，请参阅[使用会话](../using-sessions.md)。  
   
 ### <a name="to-specify-that-a-contract-require-its-binding-to-support-sessions"></a>指定协定需要其绑定来支持会话  
   
-1. 创建至少包含一个操作的服务协定。 有关如何创建服务协定的示例，请参阅[如何：定义服务协定](../../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)。  
+1. 创建至少包含一个操作的服务协定。 有关如何创建服务协定的示例，请参阅[如何：定义服务协定](../how-to-define-a-wcf-service-contract.md)。  
   
 2. 修改声明协定的 <xref:System.ServiceModel.ServiceContractAttribute?displayProperty=nameWithType>，将 <xref:System.ServiceModel.ServiceContractAttribute.SessionMode%2A?displayProperty=nameWithType> 属性设置为：  
   

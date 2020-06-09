@@ -2,12 +2,12 @@
 title: Microsoft.Transactions.TransactionBridge.CreateTransactionFailure
 ms.date: 03/30/2017
 ms.assetid: c3468e23-49a9-4a84-972d-a79a658851b3
-ms.openlocfilehash: 968444947714315bae902d3d038129c5b8a04cf2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f35cc0c12f2ac42c2b26536186c21feef193ae5d
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61997940"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594395"
 ---
 # <a name="microsofttransactionstransactionbridgecreatetransactionfailure"></a>Microsoft.Transactions.TransactionBridge.CreateTransactionFailure
 无法创建事务。  
@@ -18,8 +18,8 @@ ms.locfileid: "61997940"
 ## <a name="troubleshooting"></a>疑难解答  
  检查跟踪消息中的状态字符串以确定是否存在任何可操作的项。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [跟踪](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [使用跟踪来排除应用程序故障](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理和诊断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [跟踪](index.md)
+- [使用跟踪来排除应用程序故障](using-tracing-to-troubleshoot-your-application.md)
+- [管理和诊断](../index.md)

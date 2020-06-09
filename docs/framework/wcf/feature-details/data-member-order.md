@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], ordering members
 ms.assetid: 0658a47d-b6e5-4ae0-ba72-ababc3c6ff33
-ms.openlocfilehash: 2a5d7430953bdc31644e92b9207cd2865209cce5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 717d7014f4c4a56249ead0c839cf05f4f83a6f5f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185199"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593459"
 ---
 # <a name="data-member-order"></a>数据成员顺序
 在一些应用程序中，有必要知道各个数据成员中数据的发送顺序或预期接收顺序（比如序列化 XML 中数据的显示顺序）。 有时，必须要更改此顺序。 本主题说明排序规则。  
@@ -65,5 +65,5 @@ ms.locfileid: "79185199"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Runtime.Serialization.DataContractAttribute>
-- [数据协定等效性](../../../../docs/framework/wcf/feature-details/data-contract-equivalence.md)
-- [使用数据协定](../../../../docs/framework/wcf/feature-details/using-data-contracts.md)
+- [数据协定等效性](data-contract-equivalence.md)
+- [使用数据协定](using-data-contracts.md)
