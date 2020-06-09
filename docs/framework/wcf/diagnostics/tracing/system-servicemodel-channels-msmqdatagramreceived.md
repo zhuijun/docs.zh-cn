@@ -2,21 +2,21 @@
 title: System.ServiceModel.Channels.MsmqDatagramReceived
 ms.date: 03/30/2017
 ms.assetid: c924ab16-573a-4fd6-8059-071fc12f4b1b
-ms.openlocfilehash: 6c63f260a46e745ca10fe7b750686a9d666b3b7c
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 375fe864c8cfa64d49462f5954282a39b01a5ccd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792309"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594031"
 ---
-# <a name="systemservicemodelchannelsmsmqdatagramreceived"></a><span data-ttu-id="d8cb7-102">System.ServiceModel.Channels.MsmqDatagramReceived</span><span class="sxs-lookup"><span data-stu-id="d8cb7-102">System.ServiceModel.Channels.MsmqDatagramReceived</span></span>
-<span data-ttu-id="d8cb7-103">System.ServiceModel.Channels.MsmqDatagramReceived</span><span class="sxs-lookup"><span data-stu-id="d8cb7-103">System.ServiceModel.Channels.MsmqDatagramReceived</span></span>  
+# <a name="systemservicemodelchannelsmsmqdatagramreceived"></a><span data-ttu-id="91749-102">System.ServiceModel.Channels.MsmqDatagramReceived</span><span class="sxs-lookup"><span data-stu-id="91749-102">System.ServiceModel.Channels.MsmqDatagramReceived</span></span>
+<span data-ttu-id="91749-103">System.ServiceModel.Channels.MsmqDatagramReceived</span><span class="sxs-lookup"><span data-stu-id="91749-103">System.ServiceModel.Channels.MsmqDatagramReceived</span></span>  
   
-## <a name="description"></a><span data-ttu-id="d8cb7-104">描述</span><span class="sxs-lookup"><span data-stu-id="d8cb7-104">Description</span></span>  
- <span data-ttu-id="d8cb7-105">已收到 MSMQ 数据报消息。</span><span class="sxs-lookup"><span data-stu-id="d8cb7-105">MSMQ datagram message received.</span></span>  
+## <a name="description"></a><span data-ttu-id="91749-104">描述</span><span class="sxs-lookup"><span data-stu-id="91749-104">Description</span></span>  
+ <span data-ttu-id="91749-105">已收到 MSMQ 数据报消息。</span><span class="sxs-lookup"><span data-stu-id="91749-105">MSMQ datagram message received.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d8cb7-106">请参阅</span><span class="sxs-lookup"><span data-stu-id="d8cb7-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="91749-106">另请参阅</span><span class="sxs-lookup"><span data-stu-id="91749-106">See also</span></span>
 
-- [<span data-ttu-id="d8cb7-107">跟踪</span><span class="sxs-lookup"><span data-stu-id="d8cb7-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="d8cb7-108">使用跟踪来排除应用程序故障</span><span class="sxs-lookup"><span data-stu-id="d8cb7-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="d8cb7-109">管理和诊断</span><span class="sxs-lookup"><span data-stu-id="d8cb7-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="91749-107">跟踪</span><span class="sxs-lookup"><span data-stu-id="91749-107">Tracing</span></span>](index.md)
+- [<span data-ttu-id="91749-108">使用跟踪来排除应用程序故障</span><span class="sxs-lookup"><span data-stu-id="91749-108">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="91749-109">管理和诊断</span><span class="sxs-lookup"><span data-stu-id="91749-109">Administration and Diagnostics</span></span>](../index.md)
