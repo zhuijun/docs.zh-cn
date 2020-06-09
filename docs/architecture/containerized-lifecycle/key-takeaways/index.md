@@ -2,12 +2,12 @@
 title: 关键结论
 description: 查看本指南的关键要点。
 ms.date: 04/20/2020
-ms.openlocfilehash: 2aa0b3a9ca59a55a7493b86647f334f4438eaa3e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 51662c52ce0917aa89b86151cf7cab5f13f846e6
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447012"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502777"
 ---
 # <a name="key-takeaways"></a>关键结论
 
@@ -23,4 +23,5 @@ ms.locfileid: "84447012"
 
 - Azure DevOps Services 通过从 CI/CD 管道部署到 Docker 环境，极大地简化了 DevOps 环境。 这一说法适用于简单的 Docker 环境，以及基于 Azure 的高级微服务和容器业务流程协调程序。
 
-> [!div class="step-by-step"][previous](../run-manage-monitor-docker-environments/monitor-containerized-application-services.md)
+> [!div class="step-by-step"]
+> [previous](../run-manage-monitor-docker-environments/monitor-containerized-application-services.md)
