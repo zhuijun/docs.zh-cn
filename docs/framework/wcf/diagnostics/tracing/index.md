@@ -2,43 +2,43 @@
 title: 跟踪
 ms.date: 03/30/2017
 ms.assetid: 2649eae2-dbf8-421c-9cfb-cfa9e01de87f
-ms.openlocfilehash: 3520d2aca07f988c45d65d5d8113d05292a37638
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 569a97dc21a434cd711ad4c735f828df588f3af7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664951"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84578976"
 ---
-# <a name="tracing"></a><span data-ttu-id="23224-102">跟踪</span><span class="sxs-lookup"><span data-stu-id="23224-102">Tracing</span></span>
-<span data-ttu-id="23224-103">Windows Communication Foundation (WCF) 提供有关错误监视和分析应用程序检测和诊断数据。</span><span class="sxs-lookup"><span data-stu-id="23224-103">Windows Communication Foundation (WCF) provides application instrumentation and diagnostic data for fault monitoring and analysis.</span></span> <span data-ttu-id="23224-104">您可以使用跟踪代替调试器来了解应用程序的运行行为，或者为什么出错。</span><span class="sxs-lookup"><span data-stu-id="23224-104">You can use tracing instead of a debugger to understand how an application is behaving, or why it faults.</span></span> <span data-ttu-id="23224-105">您还可以在组件之间关联错误和处理，以提供端对端体验。</span><span class="sxs-lookup"><span data-stu-id="23224-105">You can also correlate faults and processing across components to provide an end-to-end experience.</span></span>  
+# <a name="tracing"></a><span data-ttu-id="c08b2-102">跟踪</span><span class="sxs-lookup"><span data-stu-id="c08b2-102">Tracing</span></span>
+<span data-ttu-id="c08b2-103">Windows Communication Foundation （WCF）为错误监视和分析提供应用程序检测和诊断数据。</span><span class="sxs-lookup"><span data-stu-id="c08b2-103">Windows Communication Foundation (WCF) provides application instrumentation and diagnostic data for fault monitoring and analysis.</span></span> <span data-ttu-id="c08b2-104">您可以使用跟踪代替调试器来了解应用程序的运行行为，或者为什么出错。</span><span class="sxs-lookup"><span data-stu-id="c08b2-104">You can use tracing instead of a debugger to understand how an application is behaving, or why it faults.</span></span> <span data-ttu-id="c08b2-105">您还可以在组件之间关联错误和处理，以提供端对端体验。</span><span class="sxs-lookup"><span data-stu-id="c08b2-105">You can also correlate faults and processing across components to provide an end-to-end experience.</span></span>  
   
- <span data-ttu-id="23224-106">WCF 输出诊断跟踪的以下数据：</span><span class="sxs-lookup"><span data-stu-id="23224-106">WCF outputs the following data for diagnostic tracing:</span></span>  
+ <span data-ttu-id="c08b2-106">WCF 输出用于诊断跟踪的以下数据：</span><span class="sxs-lookup"><span data-stu-id="c08b2-106">WCF outputs the following data for diagnostic tracing:</span></span>  
   
-- <span data-ttu-id="23224-107">应用程序所有组件之间进程里程碑的跟踪，如操作调用、代码异常、警告及其他重大处理事件。</span><span class="sxs-lookup"><span data-stu-id="23224-107">Traces for process milestones across all components of the applications, such as operation calls, code exceptions, warnings and other significant processing events."</span></span>  
+- <span data-ttu-id="c08b2-107">应用程序所有组件之间进程里程碑的跟踪，如操作调用、代码异常、警告及其他重大处理事件。</span><span class="sxs-lookup"><span data-stu-id="c08b2-107">Traces for process milestones across all components of the applications, such as operation calls, code exceptions, warnings and other significant processing events."</span></span>  
   
-- <span data-ttu-id="23224-108">跟踪功能出现故障时发生的 Windows 错误事件。</span><span class="sxs-lookup"><span data-stu-id="23224-108">Windows error events when the tracing feature malfunctions.</span></span>  
+- <span data-ttu-id="c08b2-108">跟踪功能出现故障时发生的 Windows 错误事件。</span><span class="sxs-lookup"><span data-stu-id="c08b2-108">Windows error events when the tracing feature malfunctions.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="23224-109">本节内容</span><span class="sxs-lookup"><span data-stu-id="23224-109">In This Section</span></span>  
- [<span data-ttu-id="23224-110">配置跟踪</span><span class="sxs-lookup"><span data-stu-id="23224-110">Configuring Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/configuring-tracing.md)  
+## <a name="in-this-section"></a><span data-ttu-id="c08b2-109">本节内容</span><span class="sxs-lookup"><span data-stu-id="c08b2-109">In This Section</span></span>  
+ [<span data-ttu-id="c08b2-110">配置跟踪</span><span class="sxs-lookup"><span data-stu-id="c08b2-110">Configuring Tracing</span></span>](configuring-tracing.md)  
   
- <span data-ttu-id="23224-111">本主题说明如何在不同级别配置跟踪以适应特定的需要。</span><span class="sxs-lookup"><span data-stu-id="23224-111">This topic describes how you can configure tracing at different levels to suit your specific need.</span></span>  
+ <span data-ttu-id="c08b2-111">本主题说明如何在不同级别配置跟踪以适应特定的需要。</span><span class="sxs-lookup"><span data-stu-id="c08b2-111">This topic describes how you can configure tracing at different levels to suit your specific need.</span></span>  
   
- [<span data-ttu-id="23224-112">端到端跟踪</span><span class="sxs-lookup"><span data-stu-id="23224-112">End-to-End Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/end-to-end-tracing.md)  
+ [<span data-ttu-id="c08b2-112">端到端跟踪</span><span class="sxs-lookup"><span data-stu-id="c08b2-112">End-to-End Tracing</span></span>](end-to-end-tracing.md)  
   
- <span data-ttu-id="23224-113">本节说明如何使用端对端关联的活动跟踪和传播以帮助调试。</span><span class="sxs-lookup"><span data-stu-id="23224-113">This section describes how you can use Activity Tracing and Propagation for end-to-end correlation to assist debugging.</span></span>  
+ <span data-ttu-id="c08b2-113">本节说明如何使用端对端关联的活动跟踪和传播以帮助调试。</span><span class="sxs-lookup"><span data-stu-id="c08b2-113">This section describes how you can use Activity Tracing and Propagation for end-to-end correlation to assist debugging.</span></span>  
   
- [<span data-ttu-id="23224-114">使用跟踪来排除应用程序故障</span><span class="sxs-lookup"><span data-stu-id="23224-114">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)  
+ [<span data-ttu-id="c08b2-114">使用跟踪来排除应用程序故障</span><span class="sxs-lookup"><span data-stu-id="c08b2-114">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)  
   
- <span data-ttu-id="23224-115">本节说明如何使用跟踪来调试应用程序。</span><span class="sxs-lookup"><span data-stu-id="23224-115">This section describes how you can use tracing to debug your application.</span></span>  
+ <span data-ttu-id="c08b2-115">本节说明如何使用跟踪来调试应用程序。</span><span class="sxs-lookup"><span data-stu-id="c08b2-115">This section describes how you can use tracing to debug your application.</span></span>  
   
- [<span data-ttu-id="23224-116">有关跟踪的安全注意事项和有用提示</span><span class="sxs-lookup"><span data-stu-id="23224-116">Security Concerns and Useful Tips for Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/security-concerns-and-useful-tips-for-tracing.md)  
+ [<span data-ttu-id="c08b2-116">有关跟踪的安全注意事项和有用提示</span><span class="sxs-lookup"><span data-stu-id="c08b2-116">Security Concerns and Useful Tips for Tracing</span></span>](security-concerns-and-useful-tips-for-tracing.md)  
   
- <span data-ttu-id="23224-117">本主题说明防止敏感信息公开的方法以及使用 WebHost 时的有用提示。</span><span class="sxs-lookup"><span data-stu-id="23224-117">This topic describes how you can protect sensitive information from being exposed, as well as useful tips when using WebHost.</span></span>  
+ <span data-ttu-id="c08b2-117">本主题说明防止敏感信息公开的方法以及使用 WebHost 时的有用提示。</span><span class="sxs-lookup"><span data-stu-id="c08b2-117">This topic describes how you can protect sensitive information from being exposed, as well as useful tips when using WebHost.</span></span>  
   
- [<span data-ttu-id="23224-118">跟踪参考</span><span class="sxs-lookup"><span data-stu-id="23224-118">Traces Reference</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/traces-reference.md)  
+ [<span data-ttu-id="c08b2-118">跟踪参考</span><span class="sxs-lookup"><span data-stu-id="c08b2-118">Traces Reference</span></span>](traces-reference.md)  
   
- <span data-ttu-id="23224-119">本主题列出了由 WCF 生成的所有跟踪。</span><span class="sxs-lookup"><span data-stu-id="23224-119">This topic lists all the traces generated by WCF.</span></span>  
+ <span data-ttu-id="c08b2-119">本主题列出了 WCF 生成的所有跟踪。</span><span class="sxs-lookup"><span data-stu-id="c08b2-119">This topic lists all the traces generated by WCF.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="23224-120">请参阅</span><span class="sxs-lookup"><span data-stu-id="23224-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c08b2-120">另请参阅</span><span class="sxs-lookup"><span data-stu-id="c08b2-120">See also</span></span>
 
-- [<span data-ttu-id="23224-121">服务跟踪查看器工具 (SvcTraceViewer.exe)</span><span class="sxs-lookup"><span data-stu-id="23224-121">Service Trace Viewer Tool (SvcTraceViewer.exe)</span></span>](../../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md)
+- [<span data-ttu-id="c08b2-121">服务跟踪查看器工具 (SvcTraceViewer.exe)</span><span class="sxs-lookup"><span data-stu-id="c08b2-121">Service Trace Viewer Tool (SvcTraceViewer.exe)</span></span>](../../service-trace-viewer-tool-svctraceviewer-exe.md)

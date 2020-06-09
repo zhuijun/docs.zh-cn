@@ -8,20 +8,20 @@ helpviewer_keywords:
 - claims [WCF], finding in a claimset
 - claims [WCF]
 ms.assetid: a76ce107-aeb3-47d0-bfa9-134c53664e20
-ms.openlocfilehash: 42e6ee682220913f872da337eb41f6c290082988
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 1954da20d382630f965582fcc01bbaf72665720a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61856412"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595448"
 ---
-# <a name="finding-claims-in-a-claimset"></a><span data-ttu-id="67588-102">在 ClaimSet 中查找声明</span><span class="sxs-lookup"><span data-stu-id="67588-102">Finding Claims in a ClaimSet</span></span>
-<span data-ttu-id="67588-103">在使用基于声明的授权时，一项常见任务就是检查 <xref:System.IdentityModel.Claims.ClaimSet> 的内容以查找特定类型的声明。</span><span class="sxs-lookup"><span data-stu-id="67588-103">Examining the content of a <xref:System.IdentityModel.Claims.ClaimSet> for particular types of claims is a common task when using claim-based authorization.</span></span> <span data-ttu-id="67588-104">若要检查 <xref:System.IdentityModel.Claims.ClaimSet> 以查找是否存在特定声明，请使用 <xref:System.IdentityModel.Claims.ClaimSet.FindClaims%2A> 方法。</span><span class="sxs-lookup"><span data-stu-id="67588-104">To examine a <xref:System.IdentityModel.Claims.ClaimSet> for the presence of particular claims, use the <xref:System.IdentityModel.Claims.ClaimSet.FindClaims%2A> method.</span></span> <span data-ttu-id="67588-105">相对于直接在 <xref:System.IdentityModel.Claims.ClaimSet> 上循环，该方法可以提供更好的性能。</span><span class="sxs-lookup"><span data-stu-id="67588-105">This method provides better performance than iterating directly over the <xref:System.IdentityModel.Claims.ClaimSet>.</span></span> <span data-ttu-id="67588-106">下面的示例演示此用法。</span><span class="sxs-lookup"><span data-stu-id="67588-106">The following example demonstrates this usage.</span></span> <span data-ttu-id="67588-107">请注意，`claimType` 和 `claimRight` 参数可以为 `null`。</span><span class="sxs-lookup"><span data-stu-id="67588-107">Note that the `claimType` and `claimRight` parameters can be `null`.</span></span> <span data-ttu-id="67588-108">在此例中，这些参数将与所有声明类型以及声明权限相匹配。</span><span class="sxs-lookup"><span data-stu-id="67588-108">In that case, the parameters will match all claim types and claim rights.</span></span>  
+# <a name="finding-claims-in-a-claimset"></a><span data-ttu-id="a3f8c-102">在 ClaimSet 中查找声明</span><span class="sxs-lookup"><span data-stu-id="a3f8c-102">Finding Claims in a ClaimSet</span></span>
+<span data-ttu-id="a3f8c-103">在使用基于声明的授权时，一项常见任务就是检查 <xref:System.IdentityModel.Claims.ClaimSet> 的内容以查找特定类型的声明。</span><span class="sxs-lookup"><span data-stu-id="a3f8c-103">Examining the content of a <xref:System.IdentityModel.Claims.ClaimSet> for particular types of claims is a common task when using claim-based authorization.</span></span> <span data-ttu-id="a3f8c-104">若要检查 <xref:System.IdentityModel.Claims.ClaimSet> 以查找是否存在特定声明，请使用 <xref:System.IdentityModel.Claims.ClaimSet.FindClaims%2A> 方法。</span><span class="sxs-lookup"><span data-stu-id="a3f8c-104">To examine a <xref:System.IdentityModel.Claims.ClaimSet> for the presence of particular claims, use the <xref:System.IdentityModel.Claims.ClaimSet.FindClaims%2A> method.</span></span> <span data-ttu-id="a3f8c-105">相对于直接在 <xref:System.IdentityModel.Claims.ClaimSet> 上循环，该方法可以提供更好的性能。</span><span class="sxs-lookup"><span data-stu-id="a3f8c-105">This method provides better performance than iterating directly over the <xref:System.IdentityModel.Claims.ClaimSet>.</span></span> <span data-ttu-id="a3f8c-106">下面的示例演示此用法。</span><span class="sxs-lookup"><span data-stu-id="a3f8c-106">The following example demonstrates this usage.</span></span> <span data-ttu-id="a3f8c-107">请注意，`claimType` 和 `claimRight` 参数可以为 `null`。</span><span class="sxs-lookup"><span data-stu-id="a3f8c-107">Note that the `claimType` and `claimRight` parameters can be `null`.</span></span> <span data-ttu-id="a3f8c-108">在此例中，这些参数将与所有声明类型以及声明权限相匹配。</span><span class="sxs-lookup"><span data-stu-id="a3f8c-108">In that case, the parameters will match all claim types and claim rights.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="67588-109">示例</span><span class="sxs-lookup"><span data-stu-id="67588-109">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="a3f8c-109">示例</span><span class="sxs-lookup"><span data-stu-id="a3f8c-109">Example</span></span>  
  [!code-csharp[c_FindClaimsPerf#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_findclaimsperf/cs/c_findclaimsperf.cs#2)]
  [!code-vb[c_FindClaimsPerf#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_findclaimsperf/vb/c_findclaimsperf.vb#2)]  
   
-## <a name="see-also"></a><span data-ttu-id="67588-110">请参阅</span><span class="sxs-lookup"><span data-stu-id="67588-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a3f8c-110">另请参阅</span><span class="sxs-lookup"><span data-stu-id="a3f8c-110">See also</span></span>
 
-- [<span data-ttu-id="67588-111">使用标识模型管理声明和授权</span><span class="sxs-lookup"><span data-stu-id="67588-111">Managing Claims and Authorization with the Identity Model</span></span>](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md)
+- [<span data-ttu-id="a3f8c-111">使用标识模型管理声明和授权</span><span class="sxs-lookup"><span data-stu-id="a3f8c-111">Managing Claims and Authorization with the Identity Model</span></span>](managing-claims-and-authorization-with-the-identity-model.md)
