@@ -2,15 +2,15 @@
 title: 如何：使用 WCF Web HTTP 编程模型创建返回任意数据的服务
 ms.date: 03/30/2017
 ms.assetid: 0283955a-b4ae-458d-ad9e-6fbb6f529e3d
-ms.openlocfilehash: c85ab6725876a2d523a18c817ce3fd89f0d2285a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9753fbc9b333cb7e89ddc8dff030cb1f62ede23b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184483"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600356"
 ---
 # <a name="how-to-create-a-service-that-returns-arbitrary-data-using-the-wcf-web-http-programming-model"></a>如何：使用 WCF Web HTTP 编程模型创建返回任意数据的服务
-有时，开发人员必须完全控制从服务操作返回数据的方式。 当服务操作必须以 WCF 不支持的格式返回数据时，就是这种情况。 本主题讨论使用 WCF WEB HTTP 编程模型创建此类服务。 此服务具有一个返回流的操作。  
+有时，开发人员必须完全控制从服务操作返回数据的方式。 当服务操作必须返回 WCF 不支持的格式的数据时，就会出现这种情况。 本主题讨论如何使用 WCF WEB HTTP 编程模型来创建此类服务。 此服务具有一个返回流的操作。  
   
 ### <a name="to-implement-the-service-contract"></a>实现服务协定  
   
@@ -25,7 +25,7 @@ ms.locfileid: "79184483"
         }  
     ```  
   
-     由于 该方法返回<xref:System.IO.Stream>A WCF 假定该操作对从服务操作返回的字节具有完全控制，并且它不对返回的数据应用任何格式。  
+     由于方法返回，因此 <xref:System.IO.Stream> WCF 假设操作对从服务操作返回的字节具有完全控制，并且不会对返回的数据应用任何格式设置。  
   
 2. 实现服务协定。 该协定只有一个操作：`GetImage`。 此方法生成一个位图，再以 .jpg 格式将其保存到 <xref:System.IO.MemoryStream>。 随后，操作将该流返回给调用方。  
   
@@ -53,7 +53,7 @@ ms.locfileid: "79184483"
   
      请注意代码的倒数第二行：`WebOperationContext.Current.OutgoingResponse.ContentType = "image/jpeg";`  
   
-     这将内容类型标头设置到`"image/jpeg"`。 虽然此示例演示如何返回 .jpg 文件，但可以对其进行修改，以任意格式返回所需的任意类型的数据。 该操作必须检索或生成数据，然后将它写入流。  
+     这会将内容类型标头设置为 `"image/jpeg"` 。 虽然此示例演示如何返回 .jpg 文件，但可以对其进行修改，以任意格式返回所需的任意类型的数据。 该操作必须检索或生成数据，然后将它写入流。  
   
 ### <a name="to-host-the-service"></a>承载服务  
   
@@ -177,4 +177,4 @@ namespace RawImageService
   
 ## <a name="see-also"></a>另请参阅
 
-- [WCF Web HTTP 编程模型](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [WCF Web HTTP 编程模型](wcf-web-http-programming-model.md)

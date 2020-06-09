@@ -5,23 +5,23 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97a10d79-3e7d-4bd1-9a99-fd9807fd70bc
-ms.openlocfilehash: 7eb640576bc00bc767ba16f8dc4a5d5952a479c6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0b02d1efc98f02390555861871d280f9800ced1e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184728"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598874"
 ---
 # <a name="internet-unsecured-client-and-service"></a>不安全的 Internet 客户端和服务
-下图显示了公共、不安全的 Windows 通信基础 （WCF） 客户端和服务的示例：  
+下图显示了一个公共的、不安全的 Windows Communication Foundation （WCF）客户端和服务的示例：  
   
- ![显示不安全 Internet 场景的屏幕截图](./media/internet-unsecured-client-and-service/public-unsecured-internet.gif)  
+ ![显示不安全的 Internet 方案的屏幕截图](./media/internet-unsecured-client-and-service/public-unsecured-internet.gif)  
   
-|特征|说明|  
+|特征|描述|  
 |--------------------|-----------------|  
 |安全模式|无|  
-|传输|HTTP|  
-|绑定|<xref:System.ServiceModel.BasicHttpBinding>在代码中，或配置中[\<的基本 HttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/basichttpbinding.md)元素。|  
+|Transport|HTTP|  
+|绑定|<xref:System.ServiceModel.BasicHttpBinding>在代码中，或 [\<basicHttpBinding>](../../configure-apps/file-schema/wcf/basichttpbinding.md) 配置中的元素。|  
 |互操作性|与现有的 Web 服务客户端和服务进行互操作|  
 |身份验证|无|  
 |完整性|无|  
@@ -67,7 +67,7 @@ ms.locfileid: "79184728"
 </configuration>  
 ```  
   
-## <a name="client"></a>Client  
+## <a name="client"></a>客户端  
  下面的代码和配置应独立运行。 执行下列操作之一：  
   
 - 使用代码（和客户端代码）创建独立客户端。  
@@ -78,7 +78,7 @@ ms.locfileid: "79184728"
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>代码  
- 以下代码显示访问不安全终结点的基本 WCF 客户端。  
+ 下面的代码演示了访问不安全终结点的基本 WCF 客户端。  
   
  [!code-csharp[C_UnsecuredClient#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#1)]
  [!code-vb[C_UnsecuredClient#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#1)]  
@@ -111,6 +111,6 @@ ms.locfileid: "79184728"
   
 ## <a name="see-also"></a>另请参阅
 
-- [常用安全方案](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)
-- [安全概述](../../../../docs/framework/wcf/feature-details/security-overview.md)
+- [常用安全方案](common-security-scenarios.md)
+- [安全性概述](security-overview.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

@@ -8,23 +8,23 @@ helpviewer_keywords:
 - WCF, federation
 - federation
 ms.assetid: 15263371-514e-4ea6-90fb-14b4939154cd
-ms.openlocfilehash: 0028a0522447588ee0fb183b5b2f93d334a7b2b2
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 7da3cd34d0840eea48c9ef0bb89fb6580b87623b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972066"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601239"
 ---
 # <a name="how-to-configure-a-local-issuer"></a>如何：配置本地颁发者
 
 本主题说明如何配置客户端以便为已颁发令牌使用本地颁发者。
 
-当客户端与联合服务通信时，服务端通常指定安全令牌服务的地址，客户端需要该安全令牌服务来颁发客户端用于向联合服务对自己进行身份验证的令牌。 在某些情况下, 可以将客户端配置为使用*本地颁发者*。
+当客户端与联合服务通信时，服务端通常指定安全令牌服务的地址，客户端需要该安全令牌服务来颁发客户端用于向联合服务对自己进行身份验证的令牌。 在某些情况下，可以将客户端配置为使用*本地颁发者*。
 
-当联合绑定的颁发者地址为或`http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` `null`时, Windows Communication Foundation (WCF) 使用本地颁发者。 在这样的情况下，必须使用本地颁发者的地址和要使用的绑定来配置 <xref:System.ServiceModel.Description.ClientCredentials>，这样才能与该颁发者通信。
+当联合绑定的颁发者地址为或时，Windows Communication Foundation （WCF）使用本地颁发者 `http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` `null` 。 在这样的情况下，必须使用本地颁发者的地址和要使用的绑定来配置 <xref:System.ServiceModel.Description.ClientCredentials>，这样才能与该颁发者通信。
 
 > [!NOTE]
-> 如果`ClientCredentials`类<xref:System.ServiceModel.Description.ClientCredentials.SupportInteractive%2A>的属性设置为`true`, 则不指定本地颁发者地址[ \<, 并且 wsFederationHttpBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/wsfederationhttpbinding.md)或其他联合绑定指定的颁发者地址为。 `http://schemas.xmlsoap.org/ws/2005/05/identity/issuer/self` 、`http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous`或为`null`, 则使用 Windows CardSpace 颁发者。
+> 如果 <xref:System.ServiceModel.Description.ClientCredentials.SupportInteractive%2A> 类的属性 `ClientCredentials` 设置为，则 `true` 未指定本地颁发者地址，或其他联合绑定指定的颁发者地址 [\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md) 为 `http://schemas.xmlsoap.org/ws/2005/05/identity/issuer/self` 、 `http://schemas.microsoft.com/2005/12/ServiceModel/Addressing/Anonymous` 或为 `null` ，则使用 Windows CardSpace 颁发者。
 
 ## <a name="to-configure-the-local-issuer-in-code"></a>在代码中配置本地颁发者
 
@@ -45,12 +45,12 @@ ms.locfileid: "68972066"
      [!code-csharp[c_CreateSTS#11](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#11)]
      [!code-vb[c_CreateSTS#11](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#11)]
 
-     参数是<xref:System.ServiceModel.Channels.AddressHeader>实例的数组, 如下所示。 `addressHeaders`
+     `addressHeaders`参数是实例的数组 <xref:System.ServiceModel.Channels.AddressHeader> ，如下所示。
 
      [!code-csharp[c_CreateSTS#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#12)]
      [!code-vb[c_CreateSTS#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#12)]
 
-4. 使用<xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A>属性设置本地颁发者的绑定。
+4. 使用属性设置本地颁发者的绑定 <xref:System.ServiceModel.Security.IssuedTokenClientCredential.LocalIssuerBinding%2A> 。
 
      [!code-csharp[c_CreateSTS#13](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_creatests/cs/source.cs#13)]
      [!code-vb[c_CreateSTS#13](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_creatests/vb/source.vb#13)]
@@ -62,22 +62,22 @@ ms.locfileid: "68972066"
 
 ## <a name="to-configure-the-local-issuer-in-configuration"></a>在配置中配置本地颁发者
 
-1. 创建一个[ \<localIssuer >](../../../../docs/framework/configure-apps/file-schema/wcf/localissuer.md)元素作为[ \<issuedToken >](../../../../docs/framework/configure-apps/file-schema/wcf/issuedtoken.md)元素的子元素, 该元素本身是终结点行为中的[ \<clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)元素的子元素。
+1. 创建一个 [\<localIssuer>](../../configure-apps/file-schema/wcf/localissuer.md) 元素 [\<issuedToken>](../../configure-apps/file-schema/wcf/issuedtoken.md) ，作为元素的子元素，该元素本身是 [\<clientCredentials>](../../configure-apps/file-schema/wcf/clientcredentials.md) 终结点行为中的元素的子元素。
 
 2. 将 `address` 属性设置为将要接收令牌请求的本地颁发者的地址。
 
 3. 将 `binding` 和 `bindingConfiguration` 属性设置为这样的值，即在与本地颁发者终结点通信时，这些值可引用要使用的适当绑定。
 
-4. 可选。 `localIssuer` [将标识>元素设置为<>元素的子元素,并指定本地颁发\<](../../../../docs/framework/configure-apps/file-schema/wcf/identity.md)者的标识信息。
+4. 可选。 将 [\<identity>](../../configure-apps/file-schema/wcf/identity.md) 元素设置为 <> 元素的子元素 `localIssuer` ，并指定本地颁发者的标识信息。
 
-5. 可选。 `localIssuer` [将标头>元素设置为<>元素的子元素,并指定正确处理本地颁发者所需\<](../../../../docs/framework/configure-apps/file-schema/wcf/headers.md)的其他标头。
+5. 可选。 将 [\<headers>](../../configure-apps/file-schema/wcf/headers.md) 元素设置为 <> 元素的子元素 `localIssuer` ，并指定正确处理本地颁发者所需的其他标头。
 
 ## <a name="net-framework-security"></a>.NET Framework 安全性
 
 请注意，如果颁发者地址和绑定是为给定的绑定而指定的，则不对使用该绑定的终结点使用本地颁发者。 希望始终使用本地颁发者的客户端应该确保不使用这样的绑定，或修改该绑定，使颁发者地址为 `null`。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [如何：在联合身份验证服务上配置凭据](../../../../docs/framework/wcf/feature-details/how-to-configure-credentials-on-a-federation-service.md)
-- [如何：创建联合客户端](../../../../docs/framework/wcf/feature-details/how-to-create-a-federated-client.md)
-- [如何：创建 WSFederationHttpBinding](../../../../docs/framework/wcf/feature-details/how-to-create-a-wsfederationhttpbinding.md)
+- [如何：在联合身份验证服务上配置凭据](how-to-configure-credentials-on-a-federation-service.md)
+- [如何：创建联合客户端](how-to-create-a-federated-client.md)
+- [如何：创建 WSFederationHttpBinding](how-to-create-a-wsfederationhttpbinding.md)

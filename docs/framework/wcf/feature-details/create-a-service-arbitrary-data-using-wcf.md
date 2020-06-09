@@ -2,19 +2,19 @@
 title: 如何：使用 WCF REST 编程模型创建接受任意数据的服务
 ms.date: 03/30/2017
 ms.assetid: e566c15a-b600-4e4a-be3a-4af43e767dae
-ms.openlocfilehash: a1c30491f6c5b0a91f93a6f26417f9dc2b996a48
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d908651f7815c102b45ea106f5bec4c07d869950
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64614804"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601330"
 ---
 # <a name="how-to-create-a-service-that-accepts-arbitrary-data-using-the-wcf-rest-programming-model"></a>如何：使用 WCF REST 编程模型创建接受任意数据的服务
-有时，开发人员必须完全控制从服务操作返回数据的方式。 当服务操作必须返回数据的格式不支持 byWCF 时，这是这种情况。 本主题讨论如何使用 WCF REST 编程模型来创建接收任意数据的服务。  
+有时，开发人员必须完全控制从服务操作返回数据的方式。 如果服务操作必须以不支持的格式返回数据 byWCF，则会出现这种情况。 本主题讨论如何使用 WCF REST 编程模型创建接收任意数据的服务。  
   
 ### <a name="to-implement-the-service-contract"></a>实现服务协定  
   
-1. 定义服务协定。 接收任意数据的操作必须具有一个类型为 <xref:System.IO.Stream> 的参数。 此外，此参数必须为传入请求正文的唯一参数。 本示例中介绍的操作还采用一个文件名参数。 此参数在请求的 URL 中传递。 通过在 <xref:System.UriTemplate> 中指定 <xref:System.ServiceModel.Web.WebInvokeAttribute> 可以指定在 URL 中传递参数。 在本例中使用的 URI 来调用此方法以"UploadFile/Some-filename"结尾。 URI 模板的"{filename}"部分指定操作的文件名参数用于调用该操作的 URI 中传递。  
+1. 定义服务协定。 接收任意数据的操作必须具有一个类型为 <xref:System.IO.Stream> 的参数。 此外，此参数必须为传入请求正文的唯一参数。 本示例中介绍的操作还采用一个文件名参数。 此参数在请求的 URL 中传递。 通过在 <xref:System.UriTemplate> 中指定 <xref:System.ServiceModel.Web.WebInvokeAttribute> 可以指定在 URL 中传递参数。 在这种情况下，用于调用此方法的 URI 以 "UploadFile/Filename" 结尾。 URI 模板的 "{filename}" 部分指定在用于调用操作的 URI 内传递操作的 filename 参数。  
   
     ```csharp  
      [ServiceContract]  
@@ -193,8 +193,8 @@ namespace ReceiveRawData
   
 - 编译该代码时，请引用 System.ServiceModel.dll 和 System.ServiceModel.Web.dll  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [UriTemplate 和 UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)
-- [WCF Web HTTP 编程模型](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
-- [WCF Web HTTP 编程模型概述](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model-overview.md)
+- [UriTemplate 和 UriTemplateTable](uritemplate-and-uritemplatetable.md)
+- [WCF Web HTTP 编程模型](wcf-web-http-programming-model.md)
+- [WCF Web HTTP 编程模型概述](wcf-web-http-programming-model-overview.md)

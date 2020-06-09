@@ -7,17 +7,17 @@ dev_langs:
 helpviewer_keywords:
 - data contracts [WCF], forward compatibility
 ms.assetid: 413c9044-26f8-4ecb-968c-18495ea52cd9
-ms.openlocfilehash: 90d9409d7e41ddda99caf24ebe0e249ee04723d6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 34bde56b78ec0148cf6b924f8edd29343b97faa4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61855902"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597379"
 ---
 # <a name="forward-compatible-data-contracts"></a>向前兼容的数据协定
-一项功能的 Windows Communication Foundation (WCF) 是数据协定系统的协定可以随时间而改进不间断的方式。 也就是说，具有旧版本数据协定的客户端可以与具有相同数据协定的新版本的服务进行通信，或者具有新版本数据协定的客户端可以与相同数据协定的旧版本进行通信。 有关详细信息，请参阅[最佳实践：数据协定版本管理](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)。  
+Windows Communication Foundation （WCF）数据协定系统的一项功能是，协定可以不间断地随着时间推移而发展。 也就是说，具有旧版本数据协定的客户端可以与具有相同数据协定的新版本的服务进行通信，或者具有新版本数据协定的客户端可以与相同数据协定的旧版本进行通信。 有关详细信息，请参阅[最佳做法：数据协定版本控制](../best-practices-data-contract-versioning.md)。  
   
- 如果创建了现有数据协定的新版本，您可以根据需要来应用大多数版本管理功能。 但是，一个版本管理功能*往返*，必须生成到的第一个版本中的类型才能正常工作。  
+ 如果创建了现有数据协定的新版本，您可以根据需要来应用大多数版本管理功能。 但是，必须将一个版本控制功能从第一个版本内置到类型*中，才能*正常工作。  
   
 ## <a name="round-tripping"></a>往返  
  当数据从数据协定的新版本传递到旧版本，然后传递回新版本时，就发生了往返。 往返保证了数据不会丢失。 如果启用往返功能，则可以使类型向前兼容于数据协定版本管理模型所支持的任何未来更改。  
@@ -35,15 +35,15 @@ ms.locfileid: "61855902"
  [!code-csharp[C_DataContract#8](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#8)]
  [!code-vb[C_DataContract#8](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#8)]  
   
- 当 WCF 基础结构遇到不是原始的数据协定的一部分的数据时，并将数据存储在属性中保留。 除非是临时存储，否则不会以任何其他方式处理该数据。 如果对象返回到它的起始位置，则原始（未知）数据也将返回。 由此，数据完成了从起始终结点又回到起始终结点的往返过程而没有丢失。 但请注意，如果起始终结点要求处理数据，则不会满足这一期望，该终结点必须以某种方式检测并调整更改。  
+ 在 WCF 基础结构遇到的数据不是原始数据协定的一部分时，数据存储在属性中并保留。 除非是临时存储，否则不会以任何其他方式处理该数据。 如果对象返回到它的起始位置，则原始（未知）数据也将返回。 由此，数据完成了从起始终结点又回到起始终结点的往返过程而没有丢失。 但请注意，如果起始终结点要求处理数据，则不会满足这一期望，该终结点必须以某种方式检测并调整更改。  
   
  <xref:System.Runtime.Serialization.ExtensionDataObject> 类型不包含公共方法或属性。 因此，无法直接访问存储在 <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> 属性内部的数据。  
   
  通过在 `ignoreExtensionDataObject` 构造函数中将 `true` 设置为 <xref:System.Runtime.Serialization.DataContractSerializer>，或者在 <xref:System.ServiceModel.ServiceBehaviorAttribute.IgnoreExtensionDataObject%2A> 中将 `true` 属性设置为 <xref:System.ServiceModel.ServiceBehaviorAttribute>，可以关闭往返功能。 当该功能关闭时，反序列化程序将不填充 <xref:System.Runtime.Serialization.IExtensibleDataObject.ExtensionData%2A> 属性，序列化程序也不发出该属性的内容。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Runtime.Serialization.IExtensibleDataObject>
 - <xref:System.Runtime.Serialization.ExtensionDataObject>
-- [数据协定版本控制](../../../../docs/framework/wcf/feature-details/data-contract-versioning.md)
-- [最佳做法：数据协定版本管理](../../../../docs/framework/wcf/best-practices-data-contract-versioning.md)
+- [数据协定版本管理](data-contract-versioning.md)
+- [最佳做法：数据协定版本管理](../best-practices-data-contract-versioning.md)

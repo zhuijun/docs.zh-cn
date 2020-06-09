@@ -2,12 +2,12 @@
 title: 持久性实例上下文
 ms.date: 03/30/2017
 ms.assetid: 97bc2994-5a2c-47c7-927a-c4cd273153df
-ms.openlocfilehash: d70617fef7ebe0a94e22e858ee403d5d4f1840e3
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 567ca62d48e80993328548b11f8b59c4fcd355fe
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728411"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600589"
 ---
 # <a name="durable-instance-context"></a>持久性实例上下文
 
@@ -49,7 +49,7 @@ class DurableInstanceContextChannelBase
 }
 ```
 
-这两种方法使用所实现的 `IContextManager` 将上下文 ID 写入消息中或从消息中读取上下文 ID。 （`IContextManager`是用于为所有上下文管理器定义协定的自定义接口。）通道可以在自定义 SOAP 标头或 HTTP cookie 标头中包含上下文 ID。 每个上下文管理器实现都继承自 `ContextManagerBase` 类，该类包含所有上下文管理器的常用功能。 使用该类中的 `GetContextId` 方法，可以客户端中产生上下文 ID。 首次产生某个上下文 ID 时，此方法会将该上下文 ID 保存到一个文本文件中，该文件的名称是由远程终结点地址构造的（典型 URI 中的无效文件名字符会替换为 @ 字符）。
+这两种方法使用所实现的 `IContextManager` 将上下文 ID 写入消息中或从消息中读取上下文 ID。 （ `IContextManager` 是用于为所有上下文管理器定义协定的自定义接口。）通道可以在自定义 SOAP 标头或 HTTP cookie 标头中包含上下文 ID。 每个上下文管理器实现都继承自 `ContextManagerBase` 类，该类包含所有上下文管理器的常用功能。 使用该类中的 `GetContextId` 方法，可以客户端中产生上下文 ID。 首次产生某个上下文 ID 时，此方法会将该上下文 ID 保存到一个文本文件中，该文件的名称是由远程终结点地址构造的（典型 URI 中的无效文件名字符会替换为 @ 字符）。
 
 以后，当需要针对同一个远程终结点使用该上下文 ID 时，此方法会检查是否存在相应的文件。 如果存在的话，此方法会读取并返回该上下文 ID。 否则，此方法会返回一个新生成的上下文 ID 并将其保存到文件中。 使用默认配置时，这些文件放置在一个名为 ContextStore 的目录中，该目录位于当前用户的 temp 目录中。 不过，可以使用绑定元素来配置此位置。
 
@@ -89,7 +89,7 @@ message.Properties.Add(DurableInstanceContextUtility.ContextIdProperty, contextI
 
 在继续操作之前，一定要先了解 `Properties` 类的 `Message` 集合的用法。 通常，在将数据从较低的通道层传递到较高层时，将使用这个 `Properties` 集合。 这样，无论协议细节如何，都可以按照一致的方式向较高层提供所需的数据。 换句话说，通道层可以作为 SOAP 标头或 HTTP cookie 标头来发送和接收上下文 ID。 但是，较高层没有必要知道这些细节，因为通道层会使 `Properties` 集合中提供这些信息。
 
-现在，`DurableInstanceContextChannelBase` 类已经就绪，必须实现全部十个必要的接口（IOutputChannel、IInputChannel、IOutputSessionChannel、IInputSessionChannel、IRequestChannel、IReplyChannel、IRequestSessionChannel、IReplySessionChannel、IDuplexChannel 和 IDuplexSessionChannel）。 它们类似于每个可用的消息交换模式（数据报、单工、双工和它们的会话变体）。 其中每个实现都继承前面描述的基类，并`ApplyContext`相应`ReadContextId`地调用和。 例如，用来实现 IOutputChannel 接口的 `DurableInstanceContextOutputChannel` 从发送消息的每种方法中调用 `ApplyContext` 方法。
+现在，`DurableInstanceContextChannelBase` 类已经就绪，必须实现全部十个必要的接口（IOutputChannel、IInputChannel、IOutputSessionChannel、IInputSessionChannel、IRequestChannel、IReplyChannel、IRequestSessionChannel、IReplySessionChannel、IDuplexChannel 和 IDuplexSessionChannel）。 它们类似于每个可用的消息交换模式（数据报、单工、双工和它们的会话变体）。 其中每个实现都继承前面描述的基类，并 `ApplyContext` `ReadContextId` 相应地调用和。 例如，用来实现 IOutputChannel 接口的 `DurableInstanceContextOutputChannel` 从发送消息的每种方法中调用 `ApplyContext` 方法。
 
 ```csharp
 public void Send(Message message, TimeSpan timeout)
@@ -100,7 +100,7 @@ public void Send(Message message, TimeSpan timeout)
 }
 ```
 
-另一方面， `DurableInstanceContextInputChannel`实现`IInputChannel`接口的是`ReadContextId`在每个方法中调用方法，后者接收消息。
+另一方面， `DurableInstanceContextInputChannel` 实现 `IInputChannel` 接口的是 `ReadContextId` 在每个方法中调用方法，后者接收消息。
 
 ```csharp
 public Message Receive(TimeSpan timeout)
@@ -122,7 +122,7 @@ if (isFirstMessage)
 }
 ```
 
-然后， `DurableInstanceContextBindingElement`类和`DurableInstanceContextBindingElementSection`类会相应地将这些通道实现添加到 WCF 信道运行时。 有关绑定元素和绑定元素部分的详细信息，请参阅[HttpCookieSession](../../../../docs/framework/wcf/samples/httpcookiesession.md)信道示例文档。
+然后， `DurableInstanceContextBindingElement` 类和类会相应地将这些通道实现添加到 WCF 信道运行时 `DurableInstanceContextBindingElementSection` 。 有关绑定元素和绑定元素部分的详细信息，请参阅[HttpCookieSession](httpcookiesession.md)信道示例文档。
 
 ## <a name="service-model-layer-extensions"></a>服务模型层扩展
 
@@ -136,7 +136,7 @@ public interface IStorageManager
 }
 ```
 
-`SqlServerStorageManager` 类包含默认的 `IStorageManager` 实现。 在其`SaveInstance`方法中，将使用 XmlSerializer 序列化给定对象并将其保存到 SQL Server 数据库中。
+`SqlServerStorageManager` 类包含默认的 `IStorageManager` 实现。 在其 `SaveInstance` 方法中，将使用 XmlSerializer 序列化给定对象并将其保存到 SQL Server 数据库中。
 
 ```csharp
 XmlSerializer serializer = new XmlSerializer(state.GetType());
@@ -171,7 +171,7 @@ using (SqlConnection connection = new SqlConnection(GetConnectionString()))
 }
 ```
 
-在`GetInstance`方法中，读取给定上下文 ID 的序列化数据，并将其构造的对象返回给调用方。
+在 `GetInstance` 方法中，读取给定上下文 ID 的序列化数据，并将其构造的对象返回给调用方。
 
 ```csharp
 object data;
@@ -234,13 +234,13 @@ else
 
 作为此过程的第一步，我们必须保存已通过通道层到达当前 InstanceContext 的上下文 ID。 InstanceContext 是一个运行时组件，它充当 WCF 调度程序和服务实例之间的链接。 可用来向服务实例提供其他状态和行为。 这是必不可少的，因为在会话通信中，上下文 ID 仅随第一条消息发送。
 
-WCF 允许通过使用其可扩展对象模式添加新的状态和行为来扩展其 InstanceContext 运行时组件。 在 WCF 中使用可扩展对象模式，以使用新功能扩展现有的运行时类，或者向对象中添加新的状态功能。 可扩展对象模式中有三个接口-IExtensibleObject\<t>、IExtension\<t> 和 IExtensionCollection\<t>：
+WCF 允许通过使用其可扩展对象模式添加新的状态和行为来扩展其 InstanceContext 运行时组件。 在 WCF 中使用可扩展对象模式，以使用新功能扩展现有的运行时类，或者向对象中添加新的状态功能。 可扩展对象模式中有三个接口-IExtensibleObject \<T> 、IExtension \<T> 和 IExtensionCollection \<T> ：
 
-- IExtensibleObject\<T> 接口由允许自定义其功能的扩展的对象实现。
+- IExtensibleObject \<T> 接口由允许自定义其功能的扩展的对象实现。
 
-- IExtension\<t> 接口由属于类型为 T 的类的扩展的对象实现。
+- IExtension \<T> 接口是由类型为 T 的类的扩展的对象实现的。
 
-- IExtensionCollection\<T> 接口是 iextension 的集合，允许按类型检索 iextension。
+- IExtensionCollection \<T> 接口是 iextension 的集合，可用于按其类型检索 iextension。
 
 因此，应当创建一个 InstanceContextExtension 类，该类实现 IExtension 接口并定义保存上下文 ID 所必需的状态。 此类还提供用来存放正使用的存储管理器的状态。 在保存了新状态之后，就无法对其进行修改。 因此，状态是在构造实例时提供并保存到实例中的，之后，只能使用只读属性来进行访问。
 
@@ -282,7 +282,7 @@ public void Initialize(InstanceContext instanceContext, Message message)
 
 如上所述，上下文 ID 读取自 `Properties` 类的 `Message` 集合并传递到扩展类的构造函数。 这演示了如何以一致的方式在层之间交换信息。
 
-下一个重要步骤是重写服务实例的创建过程。 WCF 允许实现自定义实例化行为，并使用 IInstanceProvider 接口将它们挂钩到运行时。 这可以通过实现新的 `InstanceProvider` 类来完成。 构造函数中接受实例提供程序所需的服务类型。 以后，可以使用此服务类型来创建新实例。 在`GetInstance`实现中，创建一个存储管理器实例以查找持久化实例。 如果它返回`null`，则会实例化服务类型的新实例并将其返回给调用方。
+下一个重要步骤是重写服务实例的创建过程。 WCF 允许实现自定义实例化行为，并使用 IInstanceProvider 接口将它们挂钩到运行时。 这可以通过实现新的 `InstanceProvider` 类来完成。 构造函数中接受实例提供程序所需的服务类型。 以后，可以使用此服务类型来创建新实例。 在 `GetInstance` 实现中，创建一个存储管理器实例以查找持久化实例。 如果它返回 `null` ，则会实例化服务类型的新实例并将其返回给调用方。
 
 ```csharp
 public object GetInstance(InstanceContext instanceContext, Message message)
@@ -302,11 +302,11 @@ public object GetInstance(InstanceContext instanceContext, Message message)
 }
 ```
 
-下一个重要步骤是将`InstanceContextExtension`、 `InstanceContextInitializer`和`InstanceProvider`类安装到服务模型运行时中。 自定义属性可用来标记服务实现类以安装该行为。 `DurableInstanceContextAttribute` 包含对该属性的实现，它实现了用来扩展整个服务运行库的 `IServiceBehavior` 接口。
+下一个重要步骤是将 `InstanceContextExtension` 、 `InstanceContextInitializer` 和 `InstanceProvider` 类安装到服务模型运行时中。 自定义属性可用来标记服务实现类以安装该行为。 `DurableInstanceContextAttribute` 包含对该属性的实现，它实现了用来扩展整个服务运行库的 `IServiceBehavior` 接口。
 
-此类有一个接受要使用的存储管理器类型的属性。 通过这种方式，实现使用户能够将自己`IStorageManager`的实现指定为此特性的参数。
+此类有一个接受要使用的存储管理器类型的属性。 通过这种方式，实现使用户能够将自己的 `IStorageManager` 实现指定为此特性的参数。
 
-在`ApplyDispatchBehavior`实现中， `InstanceContextMode`正在验证当前`ServiceBehavior`属性的。 如果此属性设置为 Singleton，则将无法启用持久性实例化，而且将引发 `InvalidOperationException` 以通知主机。
+在 `ApplyDispatchBehavior` 实现中， `InstanceContextMode` `ServiceBehavior` 正在验证当前属性的。 如果此属性设置为 Singleton，则将无法启用持久性实例化，而且将引发 `InvalidOperationException` 以通知主机。
 
 ```csharp
 ServiceBehaviorAttribute serviceBehavior =
@@ -351,13 +351,13 @@ foreach (ChannelDispatcherBase cdb in serviceHostBase.ChannelDispatchers)
 
 剩下的就是通过某种方法来将服务实例保存到持久性存储中。 如上所述，已经有一个必需的功能来将状态保存在 `IStorageManager` 实现中。 现在，我们必须将此集成到 WCF 运行时。 需要另一个适用于服务实现类中的方法的属性。 此属性假设应用于对服务实例的状态进行更改的方法。
 
-`SaveStateAttribute` 类实现了此功能。 它还实现`IOperationBehavior`类以修改每个操作的 WCF 运行时。 使用此特性标记方法时，WCF 运行时将调用`ApplyBehavior`方法，同时构造适当`DispatchOperation`的。 此方法实现中有一个代码行：
+`SaveStateAttribute` 类实现了此功能。 它还实现 `IOperationBehavior` 类以修改每个操作的 WCF 运行时。 使用此特性标记方法时，WCF 运行时将调用方法， `ApplyBehavior` 同时构造适当的 `DispatchOperation` 。 此方法实现中有一个代码行：
 
 ```csharp
 dispatch.Invoker = new OperationInvoker(dispatch.Invoker);
 ```
 
-此指令会创建 `OperationInvoker` 类型的一个实例并将它分配给正构造的 `Invoker` 的 `DispatchOperation` 属性。 `OperationInvoker` 类是一个包装，它面向为 `DispatchOperation` 创建的默认操作调用程序。 此类实现 `IOperationInvoker` 接口。 在`Invoke`方法实现中，实际方法调用被委托给内部操作调用程序。 但是，在返回结果之前，会使用 `InstanceContext` 中的存储管理器来保存服务实例。
+此指令会创建 `OperationInvoker` 类型的一个实例并将它分配给正构造的 `Invoker` 的 `DispatchOperation` 属性。 `OperationInvoker` 类是一个包装，它面向为 `DispatchOperation` 创建的默认操作调用程序。 此类实现 `IOperationInvoker` 接口。 在 `Invoke` 方法实现中，实际方法调用被委托给内部操作调用程序。 但是，在返回结果之前，会使用 `InstanceContext` 中的存储管理器来保存服务实例。
 
 ```csharp
 object result = innerOperationInvoker.Invoke(instance,
@@ -419,7 +419,7 @@ type="Microsoft.ServiceModel.Samples.DurableInstanceContextBindingElementSection
 </bindings>
 ```
 
-## <a name="conclusion"></a>结束语
+## <a name="conclusion"></a>结论
 
 此示例演示了如何创建自定义协议通道以及如何通过自定义服务行为来启用该通道。
 
@@ -444,11 +444,11 @@ Press ENTER to shut down client
 
 #### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-2. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+2. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
 
-3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/running-the-samples.md)中的说明进行操作。
+3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
 > [!NOTE]
 > 必须运行 SQL Server 2005 或 SQL Express 2005 才能运行此示例。 如果您运行的是 SQL Server 2005，则必须修改服务连接字符串的配置。 在跨计算机运行时，只需要在服务器计算机上安装 SQL Server。
@@ -458,6 +458,6 @@ Press ENTER to shut down client
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和[!INCLUDE[wf1](../../../../includes/wf1-md.md)]示例。 此示例位于以下目录：
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Durable`

@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6400bc71-a858-4ac2-8d5a-caa72d3b5482
-ms.openlocfilehash: cd8d76137ac195e452a7d66fb6ddbeda405a922f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 28f2858d68de99839d7fec66b0fe4528d7e42325
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185087"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579522"
 ---
 # <a name="how-to-configure-a-windows-communication-foundation-service-to-use-port-sharing"></a>如何：配置 Windows Communication Foundation 服务以使用端口共享
-在 Windows 通信基础 （WCF） 应用程序中使用 net.tcp：// 端口共享的最简单方法是使用 公开<xref:System.ServiceModel.NetTcpBinding>服务。  
+在 Windows Communication Foundation （WCF）应用程序中使用 net.tcp：//端口共享的最简单方法是使用公开服务 <xref:System.ServiceModel.NetTcpBinding> 。  
   
  此绑定提供了一个 <xref:System.ServiceModel.NetTcpBinding.PortSharingEnabled%2A> 属性，该属性控制是否为配置了此绑定的服务启用 net.tcp:// 端口共享。  
   
@@ -21,7 +21,7 @@ ms.locfileid: "79185087"
   
 ### <a name="to-enable-nettcp-port-sharing-on-a-nettcpbinding-in-code"></a>使用代码在 NetTcpBinding 上启用 net.tcp:// 端口共享  
   
-1. 创建一个服务来实现称为`IMyService`的协定并调用它`MyService`。  
+1. 创建一个服务来实现名为的协定 `IMyService` ，并调用它 `MyService` 。  
   
      [!code-csharp[c_ConfigurePortSharing#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_configureportsharing/cs/source.cs#1)]
      [!code-vb[c_ConfigurePortSharing#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_configureportsharing/vb/source.vb#1)]  
@@ -62,5 +62,5 @@ ms.locfileid: "79185087"
   
 ## <a name="see-also"></a>另请参阅
 
-- [Net.TCP 端口共享](../../../../docs/framework/wcf/feature-details/net-tcp-port-sharing.md)
-- [如何：启用 Net.TCP 端口共享服务](../../../../docs/framework/wcf/feature-details/how-to-enable-the-net-tcp-port-sharing-service.md)
+- [Net.TCP 端口共享](net-tcp-port-sharing.md)
+- [如何：启用 Net.TCP 端口共享服务](how-to-enable-the-net-tcp-port-sharing-service.md)

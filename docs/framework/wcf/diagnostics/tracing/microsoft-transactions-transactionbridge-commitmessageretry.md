@@ -2,12 +2,12 @@
 title: Microsoft.Transactions.TransactionBridge.CommitMessageRetry
 ms.date: 03/30/2017
 ms.assetid: 4abe01f0-6398-4fba-b2f3-c054b7f7e971
-ms.openlocfilehash: 3c398aa13a8cd2b87068216d3c07fb29e1a27c3f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f37bc252e12aef94d77c0745d36b5c8232a169eb
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61997953"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599732"
 ---
 # <a name="microsofttransactionstransactionbridgecommitmessageretry"></a>Microsoft.Transactions.TransactionBridge.CommitMessageRetry
 已向无反应参与者发送提交消息重试。  
@@ -18,8 +18,8 @@ ms.locfileid: "61997953"
 ## <a name="troubleshooting"></a>疑难解答  
  调查导致响应未及时传送的潜在网络或产品问题。  如果看到很多这样的消息，可能表明基础结构有问题或响应时间异常长。 这两种问题都会明显降低系统中事务的吞吐量。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [跟踪](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [使用跟踪来排除应用程序故障](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理和诊断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [跟踪](index.md)
+- [使用跟踪来排除应用程序故障](using-tracing-to-troubleshoot-your-application.md)
+- [管理和诊断](../index.md)

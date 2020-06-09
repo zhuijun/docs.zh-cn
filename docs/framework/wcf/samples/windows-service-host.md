@@ -5,15 +5,15 @@ helpviewer_keywords:
 - NT Service
 - NT Service Host Sample [Windows Communication Foundation]
 ms.assetid: 1b2f45c5-2bed-4979-b0ee-8f9efcfec028
-ms.openlocfilehash: 83b40f467af933b5da69b859d990fbe4ba005928
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9c041f6e9505d2ec5865dd512359b497a411cb40
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79143520"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602279"
 ---
 # <a name="windows-service-host"></a>Windows 服务主机
-此示例演示托管 Windows 服务中托管的 Windows 通信基础 （WCF） 服务。 Windows 服务使用 **"控制面板**"中的服务小程序进行控制，并可配置为在系统重新启动后自动启动。 此示例包含一个客户端程序和一个 Windows 服务程序。 服务作为一个 .exe 程序实现，并包含其自己的主机代码。 在其他承载环境（如 Windows 进程激活服务 (WAS) 或 Internet Information Services (IIS)）中，你没有必要编写承载代码。
+此示例演示在托管 Windows 服务中承载的 Windows Communication Foundation （WCF）服务。 Windows 服务是使用**控制面板**中的 "服务" 小程序控制的，并且可以配置为在系统重新启动之后自动启动。 此示例包含一个客户端程序和一个 Windows 服务程序。 服务作为一个 .exe 程序实现，并包含其自己的主机代码。 在其他承载环境（如 Windows 进程激活服务 (WAS) 或 Internet Information Services (IIS)）中，你没有必要编写承载代码。
 
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。
@@ -23,15 +23,15 @@ ms.locfileid: "79143520"
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WindowsService`  
   
- 生成此服务之后，必须像任何其他 Windows 服务一样使用 Installutil.exe 实用工具安装此服务。 如果要对此服务进行更改，必须首先使用 `installutil /u` 将其卸载。 此示例中随附的 Setup.bat 和 Cleanup.bat 文件是用于安装和启动 Windows 服务的命令，还可用于关闭和卸载 Windows 服务。 仅当 Windows 服务正在运行时，WCF 服务才能响应客户端。 如果使用 **"控制面板**"中的服务小程序停止 Windows 服务并运行客户端，则客户端尝试<xref:System.ServiceModel.EndpointNotFoundException>访问该服务时将发生异常。 如果重新启动 Windows 服务并重新运行客户端，通信将成功。  
+ 生成此服务之后，必须像任何其他 Windows 服务一样使用 Installutil.exe 实用工具安装此服务。 如果要对此服务进行更改，必须首先使用 `installutil /u` 将其卸载。 此示例中随附的 Setup.bat 和 Cleanup.bat 文件是用于安装和启动 Windows 服务的命令，还可用于关闭和卸载 Windows 服务。 如果 Windows 服务正在运行，WCF 服务只能响应客户端。 如果使用 "**控制面板**" 中的 "服务" 小程序停止 Windows 服务并运行客户端，则 <xref:System.ServiceModel.EndpointNotFoundException> 当客户端尝试访问该服务时，将发生异常。 如果重新启动 Windows 服务并重新运行客户端，通信将成功。  
   
- 服务代码包括安装程序类、实现 I计算器协定的 WCF 服务实现类以及充当运行时主机的 Windows 服务类。 安装程序类继承自 <xref:System.Configuration.Install.Installer>，允许通过 Installutil.exe 工具将程序安装为 NT 服务。 服务实现类`WcfCalculatorService`是实现基本服务协定的 WCF 服务。 此 WCF 服务托管在称为`WindowsCalculatorService`的 Windows 服务类中。 为了符合作为 Windows 服务的要求，该类从 <xref:System.ServiceProcess.ServiceBase> 继承并实现 <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> 和 <xref:System.ServiceProcess.ServiceBase.OnStop> 方法。 在 <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> 中，为 <xref:System.ServiceModel.ServiceHost> 类型创建并打开了 `WcfCalculatorService` 对象。 在 <xref:System.ServiceProcess.ServiceBase.OnStop> 中，通过调用 <xref:System.ServiceModel.Channels.CommunicationObject.Close%28System.TimeSpan%29> 对象的 <xref:System.ServiceModel.ServiceHost> 方法关闭了 ServiceHost。 主机的基本地址使用[\<add>](../../../../docs/framework/configure-apps/file-schema/wcf/add-of-baseaddresses.md)元素进行配置，该元素是[\<基地址>](../../../../docs/framework/configure-apps/file-schema/wcf/baseaddresses.md)的子元素，它是[\<主机>](../../../../docs/framework/configure-apps/file-schema/wcf/host.md)元素的子项，该元素是[\<服务>](../../../../docs/framework/configure-apps/file-schema/wcf/service.md)元素的子元素。  
+ 服务代码包含一个安装程序类、一个实现 ICalculator 协定的 WCF 服务实现类和一个充当运行时主机的 Windows 服务类。 安装程序类继承自 <xref:System.Configuration.Install.Installer>，允许通过 Installutil.exe 工具将程序安装为 NT 服务。 服务实现类 `WcfCalculatorService` 是实现基本服务协定的 WCF 服务。 此 WCF 服务承载于名为的 Windows 服务类中 `WindowsCalculatorService` 。 为了符合作为 Windows 服务的要求，该类从 <xref:System.ServiceProcess.ServiceBase> 继承并实现 <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> 和 <xref:System.ServiceProcess.ServiceBase.OnStop> 方法。 在 <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> 中，为 <xref:System.ServiceModel.ServiceHost> 类型创建并打开了 `WcfCalculatorService` 对象。 在 <xref:System.ServiceProcess.ServiceBase.OnStop> 中，通过调用 <xref:System.ServiceModel.Channels.CommunicationObject.Close%28System.TimeSpan%29> 对象的 <xref:System.ServiceModel.ServiceHost> 方法关闭了 ServiceHost。 主机的基址是使用元素配置的，该元素是元素的子元素的子元素，该元素 [\<add>](../../configure-apps/file-schema/wcf/add-of-baseaddresses.md) [\<baseAddresses>](../../configure-apps/file-schema/wcf/baseaddresses.md) [\<host>](../../configure-apps/file-schema/wcf/host.md) 是元素的子元素 [\<service>](../../configure-apps/file-schema/wcf/service.md) 。  
   
- 定义的终结点使用基本地址和[\<wsHttpBinding>](../../../../docs/framework/configure-apps/file-schema/wcf/wshttpbinding.md)。 下面的示例演示了基本地址的配置以及公开 CalculatorService 的终结点。  
+ 定义的终结点使用基址和 [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) 。 下面的示例演示了基本地址的配置以及公开 CalculatorService 的终结点。  
   
 ```xml  
 <services>  
@@ -55,13 +55,13 @@ ms.locfileid: "79143520"
   
 ### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 确保已为 Windows[通信基础示例执行一次性设置过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
-2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。  
+2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。  
   
-3. 构建解决方案后，从提升的 Visual Studio 2012 命令提示符运行安装程序.bat，使用 Installutil.exe 工具安装 Windows 服务。 该服务应出现在“服务”中。  
+3. 构建解决方案后，从提升的 Visual Studio 2012 命令提示符运行安装程序，使用 Installutil.exe 工具安装 Windows 服务。 该服务应出现在“服务”中。  
   
-4. 要在单计算机或跨计算机配置中运行示例，请按照[运行 Windows 通信基础示例中的](../../../../docs/framework/wcf/samples/running-the-samples.md)说明操作。  
+4. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
   
 ## <a name="see-also"></a>另请参阅
 

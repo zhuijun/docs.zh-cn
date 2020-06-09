@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - transactions [WCF], ServiceModel configuration
 ms.assetid: 5636067a-7fbd-4485-aaa2-8141c502acf3
-ms.openlocfilehash: 79772d19ddaec041aa1fac936b9951731507b6e6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1d04a7bb756cccb33b436c1f57decc0249764828
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184456"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600330"
 ---
 # <a name="servicemodel-transaction-configuration"></a>ServiceModel 事务配置
-Windows 通信基础 （WCF） 提供了三个属性来配置服务的事务`transactionFlow`：`transactionProtocol`和`transactionTimeout`。  
+Windows Communication Foundation （WCF）提供了三个属性，用于为服务配置事务： `transactionFlow` 、 `transactionProtocol` 和 `transactionTimeout` 。  
   
 ## <a name="configuring-transactionflow"></a>配置 transactionFlow  
- WCF 提供的大多数预定义的绑定都包含`transactionFlow`和`transactionProtocol`属性，以便可以将绑定配置为使用特定的事务流协议接受特定终结点的传入事务。 此外，你可以使用 `transactionFlow` 元素及其 `transactionProtocol` 特性生成你自己的自定义绑定。 有关设置配置元素的详细信息，请参阅[\<绑定>](../../configure-apps/file-schema/wcf/bindings.md)和[WCF 配置架构](../../../../docs/framework/configure-apps/file-schema/wcf/index.md)。  
+ WCF 提供的大多数预定义绑定都包含 `transactionFlow` 和 `transactionProtocol` 属性，以便您可以将绑定配置为使用特定的事务流协议为特定终结点接受传入事务。 此外，你可以使用 `transactionFlow` 元素及其 `transactionProtocol` 特性生成你自己的自定义绑定。 有关设置配置元素的详细信息，请参阅 [\<binding>](../../configure-apps/file-schema/wcf/bindings.md) 和[WCF 配置架构](../../configure-apps/file-schema/wcf/index.md)。  
   
  `transactionFlow` 属性指定是否为使用绑定的服务终结点启用事务流。  
   
@@ -42,7 +42,7 @@ Windows 通信基础 （WCF） 提供了三个属性来配置服务的事务`tra
 ```  
   
 ## <a name="configuring-transactiontimeout"></a>配置 transactionTimeout  
- 您可以在配置文件`behavior`的元素中`transactionTimeout`配置 WCF 服务的属性。 下面的代码演示如何执行此操作。  
+ 您可以 `transactionTimeout` 在配置文件的元素中配置您的 WCF 服务的属性 `behavior` 。 下面的代码演示如何执行此操作。  
   
 ```xml  
 <configuration>  
@@ -64,5 +64,5 @@ Windows 通信基础 （WCF） 提供了三个属性来配置服务的事务`tra
   
 ## <a name="see-also"></a>另请参阅
 
-- [\<绑定>](../../configure-apps/file-schema/wcf/bindings.md)
-- [WCF 配置架构](../../../../docs/framework/configure-apps/file-schema/wcf/index.md)
+- [\<binding>](../../configure-apps/file-schema/wcf/bindings.md)
+- [WCF 配置架构](../../configure-apps/file-schema/wcf/index.md)

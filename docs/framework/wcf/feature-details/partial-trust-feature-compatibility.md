@@ -2,15 +2,15 @@
 title: 部分信任功能兼容性
 ms.date: 03/30/2017
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
-ms.openlocfilehash: 3e0f1c2f673d4ba603df7da431d10c211cf779ac
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: 85e34e365d125fe4f00756549ba5bda4311b78f8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76212128"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84579158"
 ---
 # <a name="partial-trust-feature-compatibility"></a>部分信任功能兼容性
-在部分受信任的环境中运行时，Windows Communication Foundation （WCF）支持有限的功能子集。 部分信任中支持的功能围绕 [Supported Deployment Scenarios](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md) 主题中所述的一组特定的方案而设计。  
+在部分受信任的环境中运行时，Windows Communication Foundation （WCF）支持有限的功能子集。 部分信任中支持的功能围绕 [Supported Deployment Scenarios](supported-deployment-scenarios.md) 主题中所述的一组特定的方案而设计。  
   
 ## <a name="minimum-permission-requirements"></a>最低权限要求  
  WCF 支持在以下任一标准命名权限集下运行的应用程序中的功能子集：  
@@ -58,7 +58,7 @@ ms.locfileid: "76212128"
 ### <a name="unsupported-bindings"></a>不支持的绑定  
  不支持使用可靠消息传递、事务或消息级安全的绑定。  
   
-## <a name="serialization"></a>Serialization  
+## <a name="serialization"></a>序列化  
  在部分信任环境中支持 <xref:System.Runtime.Serialization.DataContractSerializer> 和 <xref:System.Xml.Serialization.XmlSerializer> 。 但是，使用 <xref:System.Runtime.Serialization.DataContractSerializer> 时需要遵循以下条件：  
   
 - 所有可序列化的 `[DataContract]` 类型必须为 `public`。  
@@ -71,12 +71,12 @@ ms.locfileid: "76212128"
   
 - 实现 <xref:System.Runtime.Serialization.IObjectReference> 的类型在部分受信任的环境中会引发异常。  
   
- 有关在部分受信任的应用程序中安全使用 [T:System.Runtime.Serialization.DataContractSerializer](../../../../docs/framework/wcf/feature-details/partial-trust-best-practices.md) 的更多安全信息，请参见 <xref:System.Runtime.Serialization.DataContractSerializer> 中的“序列化”一节。  
+ 有关在部分受信任的应用程序中安全使用 [T:System.Runtime.Serialization.DataContractSerializer](partial-trust-best-practices.md) 的更多安全信息，请参见 <xref:System.Runtime.Serialization.DataContractSerializer> 中的“序列化”一节。  
   
 ### <a name="collection-types"></a>集合类型  
  一些集合类型可实现 <xref:System.Collections.Generic.IEnumerable%601> 和 <xref:System.Collections.IEnumerable>。 示例包括实现 <xref:System.Collections.Generic.ICollection%601>的类型。 这些类型可以实现 `public` 的 `GetEnumerator()`实现和 `GetEnumerator()`的显式实现。 在此情况下， <xref:System.Runtime.Serialization.DataContractSerializer> 调用 `public` 的 `GetEnumerator()`，而不调用 `GetEnumerator()`的显式实现。 如果所有 `GetEnumerator()` 实现都不是 `public` 而全部是显式实现，则 <xref:System.Runtime.Serialization.DataContractSerializer> 调用 `IEnumerable.GetEnumerator()`。  
   
- 对于集合类型，当在部分信任环境中运行 WCF 时，如果没有 `public``GetEnumerator()` 实现，或者它们都不是显式接口实现，则会引发安全异常。  
+ 对于集合类型，当在部分信任环境中运行 WCF 时，如果没有任何 `GetEnumerator()` 实现 `public` ，或者它们都不是显式接口实现，则引发安全异常。  
   
 ### <a name="netdatacontractserializer"></a>NetDataContractSerializer  
  在部分信任环境中， <xref:System.Collections.Generic.List%601>不支持许多 .NET Framework 集合类型，如 <xref:System.Collections.ArrayList>、 <xref:System.Collections.Generic.Dictionary%602> 、 <xref:System.Collections.Hashtable> 和 <xref:System.Runtime.Serialization.NetDataContractSerializer> 。 这些类型设置了 `[Serializable]` 属性，如前面“序列化”一节中所述，此属性在部分信任环境中不受支持。 <xref:System.Runtime.Serialization.DataContractSerializer> 以特殊方式处理集合，因而能够避开此限制， <xref:System.Runtime.Serialization.NetDataContractSerializer> 没有这类机制可避开此限制。  
@@ -86,23 +86,23 @@ ms.locfileid: "76212128"
  在部分信任环境中运行时，无法将代理项用于 <xref:System.Runtime.Serialization.NetDataContractSerializer> （使用 <xref:System.Runtime.Serialization.SurrogateSelector> 机制）。 请注意，此限制适用于使用代理项，而不适用于序列化代理项。  
   
 ## <a name="enabling-common-behaviors-to-run"></a>使常见行为能够运行  
- 当应用程序在部分信任环境中运行时，未使用添加到配置文件的[\<commonBehaviors >](../../../../docs/framework/configure-apps/file-schema/wcf/commonbehaviors.md)节中的 <xref:System.Security.AllowPartiallyTrustedCallersAttribute> 属性（APTCA）标记的服务或终结点行为将不会运行，并且在发生这种情况时不会引发异常。 若要强制运行常见行为，必须执行下列选项之一：  
+ <xref:System.Security.AllowPartiallyTrustedCallersAttribute>当应用程序在部分信任环境中运行时，未用添加到配置文件的部分中的属性（APTCA）标记的服务或终结点行为 [\<commonBehaviors>](../../configure-apps/file-schema/wcf/commonbehaviors.md) 将不会运行，并且在发生这种情况时不会引发异常。 若要强制运行常见行为，必须执行下列选项之一：  
   
-- 使用 <xref:System.Security.AllowPartiallyTrustedCallersAttribute> 属性标记常见行为，以使其在部署为部分信任应用程序时能够运行。 请注意，可以在计算机上设置注册表项，以防运行标有 APTCA 的程序集。 。  
+- 使用 <xref:System.Security.AllowPartiallyTrustedCallersAttribute> 属性标记常见行为，以使其在部署为部分信任应用程序时能够运行。 请注意，可以在计算机上设置注册表项，以防运行标有 APTCA 的程序集。 .  
   
-- 确保在将应用程序作为完全受信任的应用程序部署时，用户不能修改代码访问安全设置，从而无法在部分信任环境中运行该应用程序。 如果用户可以这样做，则不会运行该行为，且不引发任何异常。 若要确保这一点，请参阅使用 Caspol.exe 的**levelfinal**选项[（代码访问安全策略工具）](../../../../docs/framework/tools/caspol-exe-code-access-security-policy-tool.md)。  
+- 确保在将应用程序作为完全受信任的应用程序部署时，用户不能修改代码访问安全设置，从而无法在部分信任环境中运行该应用程序。 如果用户可以这样做，则不会运行该行为，且不引发任何异常。 若要确保这一点，请参阅使用 Caspol.exe 的**levelfinal**选项[（代码访问安全策略工具）](../../tools/caspol-exe-code-access-security-policy-tool.md)。  
   
- 有关常见行为的示例，请参阅[如何：锁定企业中的终结点](../../../../docs/framework/wcf/extending/how-to-lock-down-endpoints-in-the-enterprise.md)。  
+ 有关常见行为的示例，请参阅[如何：锁定企业中的终结点](../extending/how-to-lock-down-endpoints-in-the-enterprise.md)。  
   
-## <a name="configuration"></a>配置  
- 有一个例外，部分受信任的代码只能加载本地 `app.config` 文件中的 WCF 配置节。 若要加载引用 machine.config 或根 web.config 文件中的 WCF 部分的 WCF 配置节，需要 ConfigurationPermission （无限制）。 如果没有此权限，则对本地配置文件之外的 WCF 配置节（行为、绑定）的引用会导致在加载配置时出现异常。  
+## <a name="configuration"></a>Configuration  
+ 有一个例外，部分受信任的代码只能加载本地文件中的 WCF 配置节 `app.config` 。 若要加载引用 machine.config 或根 web.config 文件中的 WCF 部分的 WCF 配置节，需要 ConfigurationPermission （无限制）。 如果没有此权限，则对本地配置文件之外的 WCF 配置节（行为、绑定）的引用会导致在加载配置时出现异常。  
   
  一个例外情况是序列化的已知类型配置，如本主题中的“序列化”一节所述。  
   
 > [!IMPORTANT]
 > 仅当在完全信任环境下运行时，才支持配置扩展。  
   
-## <a name="diagnostics"></a>Diagnostics  
+## <a name="diagnostics"></a>诊断  
   
 ### <a name="event-logging"></a>事件日志记录  
  部分信任环境下支持有限的事件日志记录。 事件日志中仅记录服务激活错误和跟踪/消息日志记录错误。 为了避免向事件日志写入过多消息，一个进程最多可以记录 5 个事件。  
@@ -111,7 +111,7 @@ ms.locfileid: "76212128"
  在部分信任环境中运行 WCF 时，消息日志记录不起作用。 如果在部分信任下启用消息日志记录，不会出现服务激活失败，但不记录消息。  
   
 ### <a name="tracing"></a>跟踪  
- 在部分信任环境中运行时可使用有限的跟踪功能。 在配置文件中 <`listeners`> 元素中，可以添加的唯一类型是 <xref:System.Diagnostics.TextWriterTraceListener> 和新的 <xref:System.Diagnostics.EventSchemaTraceListener>。 使用标准的 <xref:System.Diagnostics.XmlWriterTraceListener> 可能会造成日志不完整或不正确。  
+ 在部分信任环境中运行时可使用有限的跟踪功能。 在 `listeners` 配置文件中 <> 元素中，唯一可以添加的类型是 <xref:System.Diagnostics.TextWriterTraceListener> 和新的 <xref:System.Diagnostics.EventSchemaTraceListener> 。 使用标准的 <xref:System.Diagnostics.XmlWriterTraceListener> 可能会造成日志不完整或不正确。  
   
  支持的跟踪源有：  
   
@@ -119,7 +119,7 @@ ms.locfileid: "76212128"
   
 - <xref:System.Runtime.Serialization>  
   
-- <xref:System.IdentityModel.Claims>、<xref:System.IdentityModel.Policy>、<xref:System.IdentityModel.Selectors> 和 <xref:System.IdentityModel.Tokens>。  
+- <xref:System.IdentityModel.Claims>、 <xref:System.IdentityModel.Policy>、 <xref:System.IdentityModel.Selectors>和 <xref:System.IdentityModel.Tokens>。  
   
  不支持下面的跟踪源：  
   
@@ -127,7 +127,7 @@ ms.locfileid: "76212128"
   
 - <xref:System.IO.Log>  
 
-- [System.ServiceModel.Internal.TransactionBridge](https://docs.microsoft.com/previous-versions/aa346556(v=vs.110))]
+- [System.servicemodel. TransactionBridge](https://docs.microsoft.com/previous-versions/aa346556(v=vs.110))]
   
  不应指定下面的 <xref:System.Diagnostics.TraceOptions> 枚举成员：  
   
@@ -149,7 +149,7 @@ ms.locfileid: "76212128"
   
  在部分信任环境中运行 indigo2 时，不启用以下的其他功能：  
   
-- Windows Management Instrumentation (WMI)  
+- Windows 管理规范 (WMI)  
   
 - 事件日志记录仅部分启用（请参见“ **诊断** ”一节的讨论）。  
   
@@ -166,5 +166,5 @@ ms.locfileid: "76212128"
 - <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>
 - <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>
 - <xref:System.ServiceModel.Channels.WebMessageEncodingBindingElement>
-- [支持的部署方案](../../../../docs/framework/wcf/feature-details/supported-deployment-scenarios.md)
-- [T:System.Runtime.Serialization.DataContractSerializer](../../../../docs/framework/wcf/feature-details/partial-trust-best-practices.md)
+- [支持的部署方案](supported-deployment-scenarios.md)
+- [部分信任最佳实践](partial-trust-best-practices.md)

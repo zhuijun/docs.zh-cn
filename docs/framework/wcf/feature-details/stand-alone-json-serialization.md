@@ -2,12 +2,12 @@
 title: 使用 DataContractJsonSerializer 的独立 JSON 序列化
 ms.date: 03/30/2017
 ms.assetid: 312bd7b2-1300-4b12-801e-ebe742bd2287
-ms.openlocfilehash: 6bd075405a3bca0cc64dda90225526096b6fa8e3
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 5561cddb22a02fdae9f792b1d1ec71d01c4fc916
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202395"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600901"
 ---
 # <a name="stand-alone-json-serialization-using-datacontractjsonserializer"></a>使用 DataContractJsonSerializer 的独立 JSON 序列化
 
@@ -18,9 +18,9 @@ JSON（JavaScript 对象表示法）是专门为浏览器中的网页上运行�
 
 在未与 ASP.NET 集成的情况下（在此情况下，XML 将是默认格式，但可以选择 JSON）创建 AJAX 服务时，也可以使用此格式。
 
-最后，如果需要 JSON 支持但不创建 AJAX 服务，则可以使用 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>，以便将 .NET 对象直接序列化为 JSON 数据并将此类数据反序列化回 .NET 类型的实例。 有关如何执行此操作的说明，请参阅[如何：对 JSON 数据进行序列化和反序列](../../../../docs/framework/wcf/feature-details/how-to-serialize-and-deserialize-json-data.md)化。
+最后，如果需要 JSON 支持但不创建 AJAX 服务，则可以使用 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>，以便将 .NET 对象直接序列化为 JSON 数据并将此类数据反序列化回 .NET 类型的实例。 有关如何执行此操作的说明，请参阅[如何：对 JSON 数据进行序列化和反序列](how-to-serialize-and-deserialize-json-data.md)化。
 
-使用 JSON 时，它支持的 .NET 类型与 <xref:System.Runtime.Serialization.DataContractSerializer> 支持的类型相同，但有少数例外。 有关支持的类型的列表，请参阅[数据协定序列化程序支持的类型](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)。 支持的类型包括大多数基元类型、大多数数组和集合类型，以及使用 <xref:System.Runtime.Serialization.DataContractAttribute> 和 <xref:System.Runtime.Serialization.DataMemberAttribute> 的复杂类型。
+使用 JSON 时，它支持的 .NET 类型与 <xref:System.Runtime.Serialization.DataContractSerializer> 支持的类型相同，但有少数例外。 有关支持的类型的列表，请参阅[数据协定序列化程序支持的类型](types-supported-by-the-data-contract-serializer.md)。 支持的类型包括大多数基元类型、大多数数组和集合类型，以及使用 <xref:System.Runtime.Serialization.DataContractAttribute> 和 <xref:System.Runtime.Serialization.DataMemberAttribute> 的复杂类型。
 
 ## <a name="mapping-net-types-to-json-types"></a>将 .NET 类型映射到 JSON 类型
 
@@ -28,11 +28,11 @@ JSON（JavaScript 对象表示法）是专门为浏览器中的网页上运行�
 
 |.NET 类型|JSON/JavaScript|说明|
 |----------------|----------------------|-----------|
-|所有数值类型，例如 <xref:System.Int32>、<xref:System.Decimal> 或 <xref:System.Double>|数字|不支持 `Double.NaN`、`Double.PositiveInfinity` 和 `Double.NegativeInfinity` 等特殊值，它们会导致无效的 JSON。|
-|<xref:System.Enum>|数字|请参见本主题中后面的“枚举和 JSON”。|
+|所有数值类型，例如 <xref:System.Int32>、<xref:System.Decimal> 或 <xref:System.Double>|Number|不支持 `Double.NaN`、`Double.PositiveInfinity` 和 `Double.NegativeInfinity` 等特殊值，它们会导致无效的 JSON。|
+|<xref:System.Enum>|Number|请参见本主题中后面的“枚举和 JSON”。|
 |<xref:System.Boolean>|布尔|--|
 |<xref:System.String>, <xref:System.Char>|String|--|
-|<xref:System.TimeSpan>, <xref:System.Guid>, <xref:System.Uri>|String|JSON 中的这些类型的格式与 XML 中的格式相同（实质上为时间跨度，格式为 ISO 8601，格式为 "12345678-1234567890AB"，格式为 " http://www.example.com "）。 有关精确信息，请参阅[数据协定架构参考](../../../../docs/framework/wcf/feature-details/data-contract-schema-reference.md)。|
+|<xref:System.TimeSpan>, <xref:System.Guid>, <xref:System.Uri>|String|JSON 中的这些类型的格式与 XML 中的格式相同（实质上为时间跨度，格式为 ISO 8601，格式为 "12345678-1234567890AB"，格式为 " http://www.example.com "）。 有关精确信息，请参阅[数据协定架构参考](data-contract-schema-reference.md)。|
 |<xref:System.Xml.XmlQualifiedName>|String|格式为“名称:命名空间”（第一个冒号之前的所有内容都是名称）。 可以缺少名称或命名空间。 如果没有命名空间，则也可以省略冒号。|
 |<xref:System.Array> 类型的 <xref:System.Byte>|数字数组|每个数字都表示一个字节的值。|
 |<xref:System.DateTime>|DateTime 或 String|请参见本主题中后面的“日期/时间和 JSON”。|
@@ -46,7 +46,7 @@ JSON（JavaScript 对象表示法）是专门为浏览器中的网页上运行�
 
 ### <a name="enumerations-and-json"></a>枚举和 JSON
 
-在 JSON 中，枚举成员值被作为数字处理，这与数据协定中处理枚举成员值的方式不同。在数据协定中，枚举成员值被视为成员名称。 有关数据协定处理的详细信息，请参阅[数据协定中的枚举类型](../../../../docs/framework/wcf/feature-details/enumeration-types-in-data-contracts.md)。
+在 JSON 中，枚举成员值被作为数字处理，这与数据协定中处理枚举成员值的方式不同。在数据协定中，枚举成员值被视为成员名称。 有关数据协定处理的详细信息，请参阅[数据协定中的枚举类型](enumeration-types-in-data-contracts.md)。
 
 - 例如，如果存在 `public enum Color {red, green, blue, yellow, pink}`，则序列化 `yellow` 将生成数字 3，而不是字符串“yellow”。
 
@@ -87,11 +87,11 @@ XML 类型成为 JSON 字符串。
 
 - 如果想要直接使用 JSON（动态访问键和值，而不预定义严格的协定），您有下面几个选择：
 
-  - 请考虑使用[弱类型 JSON 序列化（AJAX）](../../../../docs/framework/wcf/samples/weakly-typed-json-serialization-sample.md)示例。
+  - 请考虑使用[弱类型 JSON 序列化（AJAX）](../samples/weakly-typed-json-serialization-sample.md)示例。
 
   - 请考虑使用 <xref:System.Runtime.Serialization.ISerializable> 接口和反序列化构造函数。这两个机制允许分别访问序列化和反序列化时的 JSON 键/值对，但不能用于部分受信任的方案。
 
-  - 请考虑使用[JSON 和 XML 之间的映射，](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md)而不是使用序列化程序。
+  - 请考虑使用[JSON 和 XML 之间的映射，](mapping-between-json-and-xml.md)而不是使用序列化程序。
 
   - 序列化上下文中的*多态性*指的是在需要其基类型的情况下序列化派生类型的能力。 在以多态形式使用集合时（例如，在将集合分配给 <xref:System.Object> 时），有一些 JSON 特定的特殊规则。 有关此问题的更多详细讨论，请参见本主题后面的“高级信息”一节。
 
@@ -105,7 +105,7 @@ XML 类型成为 JSON 字符串。
 
 JSON 类型在反序列化时并不一定要与上面的表匹配。 例如，`Int` 通常映射到 JSON 数字，但只要 JSON 字符串中包含有效的数字，就可以成功地从该字符串反序列化到此类型。 即，如果存在名为“q”的 `Int` 数据成员，则 {"q":42} 和 {"q":"42"} 都是有效的。
 
-### <a name="polymorphism"></a>多形性
+### <a name="polymorphism"></a>多态性
 
 多态序列化具备在需要基类型时序列化派生类型的能力。 WCF 可以通过 WCF 与支持 XML 序列化的方式进行 JSON 序列化。 例如，可以序列化 `MyDerivedType` 预期位置 `MyBaseType` ，或序列化 `Int` 预期位置 `Object` 。
 
@@ -113,13 +113,13 @@ JSON 类型在反序列化时并不一定要与上面的表匹配。 例如，`I
 
 反序列化为接口类型时，<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 会将声明的类型作为对象进行反序列化。
 
-在处理自己的基类型和派生类型时，通常需要使用 <xref:System.Runtime.Serialization.KnownTypeAttribute>、<xref:System.ServiceModel.ServiceKnownTypeAttribute> 或与之等效的机制。 例如，如果你有一个具有返回值的操作， `Animal` 并且该操作实际返回的实例 `Cat` （派生自 `Animal` ），则应将、应用 <xref:System.Runtime.Serialization.KnownTypeAttribute> 到 `Animal` 类型或 <xref:System.ServiceModel.ServiceKnownTypeAttribute> 操作，并 `Cat` 在这些特性中指定类型。 有关详细信息，请参阅[数据协定已知类型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)。
+在处理自己的基类型和派生类型时，通常需要使用 <xref:System.Runtime.Serialization.KnownTypeAttribute>、<xref:System.ServiceModel.ServiceKnownTypeAttribute> 或与之等效的机制。 例如，如果你有一个具有返回值的操作， `Animal` 并且该操作实际返回的实例 `Cat` （派生自 `Animal` ），则应将、应用 <xref:System.Runtime.Serialization.KnownTypeAttribute> 到 `Animal` 类型或 <xref:System.ServiceModel.ServiceKnownTypeAttribute> 操作，并 `Cat` 在这些特性中指定类型。 有关详细信息，请参阅[数据协定已知类型](data-contract-known-types.md)。
 
 有关多态序列化工作方式的详细信息，以及使用多态序列化时必须遵从的部分限制的讨论，请参见本主题后面的“高级信息”一节。
 
 ### <a name="versioning"></a>版本管理
 
-JSON 中完全支持数据协定版本管理功能，其中包括 <xref:System.Runtime.Serialization.IExtensibleDataObject> 接口。 不仅如此，在多数情况下还可以将一个类型反序列化为一种格式（例如 XML），然后再将其序列化为另一种格式（例如 JSON），同时仍然保留 <xref:System.Runtime.Serialization.IExtensibleDataObject> 中的数据。 有关详细信息，请参阅[向前兼容的数据协定](../../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)。 请记住，JSON 不进行排序，因此所有顺序信息都将丢失。 而且，JSON 不支持多个键/值对使用同一键名。 最后，对 <xref:System.Runtime.Serialization.IExtensibleDataObject> 执行的所有操作在本质上都是多态的，即它们的派生类型均被分配给所有类型的基类型 <xref:System.Object>。
+JSON 中完全支持数据协定版本管理功能，其中包括 <xref:System.Runtime.Serialization.IExtensibleDataObject> 接口。 不仅如此，在多数情况下还可以将一个类型反序列化为一种格式（例如 XML），然后再将其序列化为另一种格式（例如 JSON），同时仍然保留 <xref:System.Runtime.Serialization.IExtensibleDataObject> 中的数据。 有关详细信息，请参阅[向前兼容的数据协定](forward-compatible-data-contracts.md)。 请记住，JSON 不进行排序，因此所有顺序信息都将丢失。 而且，JSON 不支持多个键/值对使用同一键名。 最后，对 <xref:System.Runtime.Serialization.IExtensibleDataObject> 执行的所有操作在本质上都是多态的，即它们的派生类型均被分配给所有类型的基类型 <xref:System.Object>。
 
 ## <a name="json-in-urls"></a>URL 中的 JSON
 
@@ -179,13 +179,13 @@ ASP.NET AJAX 客户端 JavaScript 代码会自动将此类字符串转换为 Jav
 
 #### <a name="ixmlserializable-types-including-xelement-and-dataset"></a>包括 XElement 和 DataSet 的 IXmlSerializable 类型
 
-<xref:System.Runtime.Serialization.ISerializable> 类型可分为“内容类型”、“数据集类型”和“元素类型”。 有关这些类型的定义，请参阅[数据协定中的 XML 和 ADO.NET 类型](../../../../docs/framework/wcf/feature-details/xml-and-ado-net-types-in-data-contracts.md)。
+<xref:System.Runtime.Serialization.ISerializable> 类型可分为“内容类型”、“数据集类型”和“元素类型”。 有关这些类型的定义，请参阅[数据协定中的 XML 和 ADO.NET 类型](xml-and-ado-net-types-in-data-contracts.md)。
 
 “内容”和“数据集”类型类似，它们都会被序列化为上一节中所讨论的 <xref:System.Array> 的 <xref:System.Xml.XmlNode> 对象。 它们的包装元素的名称和命名空间与数据协定的名称和相应类型的命名空间相对应。
 
 “元素”类型（例如 <xref:System.Xml.Linq.XElement>）按原样序列化，这与本主题前面讨论的 <xref:System.Xml.XmlElement> 类似。
 
-### <a name="polymorphism"></a>多形性
+### <a name="polymorphism"></a>多态性
 
 #### <a name="preserving-type-information"></a>保留类型信息
 
@@ -261,7 +261,7 @@ ASP.NET AJAX 客户端 JavaScript 代码会自动将此类字符串转换为 Jav
 
 #### <a name="known-types-and-configuration"></a>已知类型和配置
 
-<xref:System.Runtime.Serialization.DataContractSerializer> 使用的所有已知类型机制同样受 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 支持。 这两个序列化程序读取相同的配置元素， [\<dataContractSerializer>](../../../../docs/framework/configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md) [\<system.runtime.serialization>](../../../../docs/framework/configure-apps/file-schema/wcf/system-runtime-serialization.md) 以发现通过配置文件添加的已知类型。
+<xref:System.Runtime.Serialization.DataContractSerializer> 使用的所有已知类型机制同样受 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 支持。 这两个序列化程序读取相同的配置元素， [\<dataContractSerializer>](../../configure-apps/file-schema/wcf/datacontractserializer-of-system-runtime-serialization.md) [\<system.runtime.serialization>](../../configure-apps/file-schema/wcf/system-runtime-serialization.md) 以发现通过配置文件添加的已知类型。
 
 #### <a name="collections-assigned-to-object"></a>分配给对象的集合
 
@@ -291,8 +291,8 @@ ASP.NET AJAX 客户端 JavaScript 代码会自动将此类字符串转换为 Jav
 
 ### <a name="valid-json-key-names"></a>有效的 JSON 键名
 
-序列化程序 XML 编码的键名不是有效的 XML 名称。 例如，名称为 "123" 的数据成员将具有编码名称（如 " \_ x0031 \_ \_ x0032 \_ \_ x0033 \_ "），因为 "123" 是无效的 XML 元素名称（以数字开头）。 在 XML 名称中，如果某些国际字符集无效，也会出现类似的情况。 有关 XML 对 JSON 处理的影响的说明，请参阅[json 和 XML 之间的映射](../../../../docs/framework/wcf/feature-details/mapping-between-json-and-xml.md)。
+序列化程序 XML 编码的键名不是有效的 XML 名称。 例如，名称为 "123" 的数据成员将具有编码名称（如 " \_ x0031 \_ \_ x0032 \_ \_ x0033 \_ "），因为 "123" 是无效的 XML 元素名称（以数字开头）。 在 XML 名称中，如果某些国际字符集无效，也会出现类似的情况。 有关 XML 对 JSON 处理的影响的说明，请参阅[json 和 XML 之间的映射](mapping-between-json-and-xml.md)。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [对 JSON 和其他数据传输格式的支持](../../../../docs/framework/wcf/feature-details/support-for-json-and-other-data-transfer-formats.md)
+- [对 JSON 和其他数据传输格式的支持](support-for-json-and-other-data-transfer-formats.md)

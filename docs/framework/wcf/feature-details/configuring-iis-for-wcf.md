@@ -2,12 +2,12 @@
 title: 为 Windows Communication Foundation 配置 Internet Information Services 7.0
 ms.date: 03/30/2017
 ms.assetid: 1050d395-092e-44d3-b4ba-66be3b039ffb
-ms.openlocfilehash: 41eedcf78d8ca6f10fcd0380e43420dcc1b328f1
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 6343049e2a21b06965a8c7851d891303a49c82b5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964510"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597561"
 ---
 # <a name="configuring-internet-information-services-70-for-windows-communication-foundation"></a>为 Windows Communication Foundation 配置 Internet Information Services 7.0
 
@@ -18,11 +18,11 @@ Internet Information Services (IIS) 7.0 具有模块化设计，允许有选择�
 
  在 "控制面板" 中，单击 "**程序**"，然后单击 "**程序和功能**" 下的 "**打开或关闭 Windows 功能**"，WAS 组件显示在列表中，如下图所示。
 
- ![打开或关闭功能对话框](../../../../docs/framework/wcf/feature-details/media/wcfc-turnfeaturesonoroffs.gif "wcfc_TurnFeaturesOnOrOffs")
+ ![打开或关闭功能对话框](media/wcfc-turnfeaturesonoroffs.gif "wcfc_TurnFeaturesOnOrOffs")
 
  此功能具有下列子组件：
 
-- .NET Environment
+- .NET 环境
 
 - 配置 API
 
@@ -35,26 +35,26 @@ Internet Information Services (IIS) 7.0 具有模块化设计，允许有选择�
 ## <a name="iis-70-default-installation"></a>IIS 7.0：默认安装
  通过检查**Internet Information Services**功能，会自动检查某些子节点，如下图所示。
 
- ![IIS 7.0 功能的默认设置](../../../../docs/framework/wcf/feature-details/media/wcfc-turningfeaturesonoroff2.gif "wcfc_TurningFeaturesOnOrOff2")
+ ![IIS 7.0 功能的默认设置](media/wcfc-turningfeaturesonoroff2.gif "wcfc_TurningFeaturesOnOrOff2")
 
  这是 IIS 7.0 的默认安装。 使用此安装，可以使用 IIS 7.0 为静态内容（如 HTML 页面和其他内容）提供服务。 但是，不能运行 ASP.NET 或 CGI 应用程序，也不能托管 WCF 服务。
 
 ## <a name="iis-70-installation-with-aspnet-support"></a>IIS 7.0：带 ASP.NET 支持的安装
  必须安装 ASP.NET 才能在 IIS 7.0 上进行 ASP.NET 工作。 检查**ASP.NET**后，屏幕应如下图所示。
 
- ![Asp.NET 必需设置](../../../../docs/framework/wcf/feature-details/media/wcfc-trunfeaturesonoroff3s.gif "wcfc_TrunFeaturesOnOrOFf3s")
+ ![Asp.NET 需要的设置](media/wcfc-trunfeaturesonoroff3s.gif "wcfc_TrunFeaturesOnOrOFf3s")
 
  这是 WCF 和 ASP.NET 应用程序在 IIS 7.0 中工作的最小环境。
 
 ## <a name="iis-70-installation-with-iis-60-compatibility-components"></a>IIS 7.0：带 IIS 6.0 兼容组件的安装
  在使用 Visual Studio 2005 的系统上安装 IIS 7.0，或在配置使用 IIS 6.0 元数据库 API 的虚拟应用程序的其他一些自动化脚本或工具（如 Adsutil.vbs）时，请确保检查 IIS 6.0**脚本工具**。 这会自动检查 IIS 6.0**管理兼容性**的其他子节点。 下图显示了完成此操作后的屏幕：
 
- ![IIS 6.0 管理兼容性设置](../../../../docs/framework/wcf/feature-details/media/scfc-turnfeaturesonoroff5s.gif "scfc_TurnFeaturesOnOrOff5s")
+ ![IIS 6.0 管理兼容性设置](media/scfc-turnfeaturesonoroff5s.gif "scfc_TurnFeaturesOnOrOff5s")
 
  通过此安装，你可以使用 Web 上提供的 IIS 7.0、ASP.NET 和 WCF 功能和示例所需的一切。
 
 ## <a name="request-limits"></a>请求限制
- 在带有 IIS 7 的 Windows Vista 上，`maxUri` 和 `maxQueryStringSize` 设置的默认值已更改。 默认情况下，IIS 7.0 中的请求筛选功能允许 URL 的长度为 4096 个字符，查询字符串的长度为 2048 个字符。 更改这些默认值，可将以下 XML 添加到 App.config 文件中。
+ 在带有 IIS 7 的 Windows Vista 上，和设置的默认值已 `maxUri` `maxQueryStringSize` 更改。 默认情况下，IIS 7.0 中的请求筛选功能允许 URL 的长度为 4096 个字符，查询字符串的长度为 2048 个字符。 更改这些默认值，可将以下 XML 添加到 App.config 文件中。
 
 ```xml
  <system.webServer>
@@ -68,7 +68,7 @@ Internet Information Services (IIS) 7.0 具有模块化设计，允许有选择�
 
 ## <a name="see-also"></a>另请参阅
 
-- [WAS 激活体系结构](../../../../docs/framework/wcf/feature-details/was-activation-architecture.md)
-- [配置 WAS 以用于 WCF](../../../../docs/framework/wcf/feature-details/configuring-the-wpa--service-for-use-with-wcf.md)
-- [如何：安装和配置 WCF 激活组件](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)
+- [WAS 激活体系结构](was-activation-architecture.md)
+- [配置 WAS 以用于 WCF](configuring-the-wpa--service-for-use-with-wcf.md)
+- [如何：安装和配置 WCF 激活组件](how-to-install-and-configure-wcf-activation-components.md)
 - [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

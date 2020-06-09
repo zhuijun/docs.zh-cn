@@ -2,15 +2,15 @@
 title: 如何：服务数据分区
 ms.date: 03/30/2017
 ms.assetid: 1ccff72e-d76b-4e36-93a2-e51f7b32dc83
-ms.openlocfilehash: 49aefd88d73732a139a79f8c53d5beca44d4d4ba
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3b2f86ee6a4dea25fb5c972d4cecb1b9ed411b29
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69947875"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601187"
 ---
 # <a name="how-to-service-data-partitioning"></a>如何：服务数据分区
-本主题概述了在同一目标服务的多个实例之间划分消息时所需采取的基本步骤。 如果需要缩放服务以提供更好的服务质量，或者需要以特定方式处理来自不同客户的请求，此时通常采用服务数据划分。 例如, 来自高价值或 "黄金" 客户的消息可能需要比标准客户的消息处理更高的优先级。  
+本主题概述了在同一目标服务的多个实例之间划分消息时所需采取的基本步骤。 如果需要缩放服务以提供更好的服务质量，或者需要以特定方式处理来自不同客户的请求，此时通常采用服务数据划分。 例如，来自高价值或 "黄金" 客户的消息可能需要比标准客户的消息处理更高的优先级。  
   
  在本示例中，将消息路由到 regularCalc 服务的两个实例之一。 服务的两个实例相同；但是，calculator1 终结点表示的服务负责处理从高价值客户收到的消息，而 calculator 2 终结点负责处理来自其他客户的消息。  
   
@@ -85,7 +85,7 @@ ms.locfileid: "69947875"
     </filterTables>  
     ```  
   
-4. 若要根据表中包含的筛选器对传入消息求值，必须使用路由行为将筛选器表与服务终结点关联。 下面的示例演示如何将 "filterTable1" 与服务终结点相关联:  
+4. 若要根据表中包含的筛选器对传入消息求值，必须使用路由行为将筛选器表与服务终结点关联。 下面的示例演示如何将 "filterTable1" 与服务终结点相关联：  
   
     ```xml  
     <behaviors>  
@@ -173,6 +173,6 @@ ms.locfileid: "69947875"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [路由服务](../../../../docs/framework/wcf/samples/routing-services.md)
+- [路由服务](../samples/routing-services.md)

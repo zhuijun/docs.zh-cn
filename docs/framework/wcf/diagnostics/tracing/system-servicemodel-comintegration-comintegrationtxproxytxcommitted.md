@@ -2,21 +2,21 @@
 title: System.ServiceModel.ComIntegration.ComIntegrationTxProxyTxCommitted
 ms.date: 03/30/2017
 ms.assetid: f9f5d2aa-04db-4d4d-b802-3bf5d4626e59
-ms.openlocfilehash: 3835cf472912bfebe07326d2b28350ed1ace44a8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a583ae2b7e45978090f9d899e9fcd0af4e548f1a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61969697"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601772"
 ---
 # <a name="systemservicemodelcomintegrationcomintegrationtxproxytxcommitted"></a>System.ServiceModel.ComIntegration.ComIntegrationTxProxyTxCommitted
 System.ServiceModel.ComIntegration.ComIntegrationTxProxyTxCommitted  
   
 ## <a name="description"></a>描述  
- ComPlus:提交的事务。  
+ ComPlus：事务已提交。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [跟踪](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [使用跟踪来排除应用程序故障](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理和诊断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [跟踪](index.md)
+- [使用跟踪来排除应用程序故障](using-tracing-to-troubleshoot-your-application.md)
+- [管理和诊断](../index.md)
