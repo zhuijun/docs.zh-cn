@@ -2,21 +2,21 @@
 title: System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction
 ms.date: 03/30/2017
 ms.assetid: 5b236bdd-38e8-4c42-9ea5-ac7e5575ebf8
-ms.openlocfilehash: 5ff86d95a3004b9e065da48c7d367a46bb96c2bc
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0f9df4a23d6b44fbfb9f5965a2db9a75c154131c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61997693"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599511"
 ---
-# <a name="systemservicemodelchannelsmsmqmessagelockedunderthetransaction"></a><span data-ttu-id="29edd-102">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span><span class="sxs-lookup"><span data-stu-id="29edd-102">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span></span>
-<span data-ttu-id="29edd-103">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span><span class="sxs-lookup"><span data-stu-id="29edd-103">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span></span>  
+# <a name="systemservicemodelchannelsmsmqmessagelockedunderthetransaction"></a><span data-ttu-id="047b9-102">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span><span class="sxs-lookup"><span data-stu-id="047b9-102">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span></span>
+<span data-ttu-id="047b9-103">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span><span class="sxs-lookup"><span data-stu-id="047b9-103">System.ServiceModel.Channels.MsmqMessageLockedUnderTheTransaction</span></span>  
   
-## <a name="description"></a><span data-ttu-id="29edd-104">描述</span><span class="sxs-lookup"><span data-stu-id="29edd-104">Description</span></span>  
- <span data-ttu-id="29edd-105">无法移动或删除消息，因为它仍在事务的锁定之下。</span><span class="sxs-lookup"><span data-stu-id="29edd-105">Cannot move or delete message because it is still locked under the transaction.</span></span>  
+## <a name="description"></a><span data-ttu-id="047b9-104">描述</span><span class="sxs-lookup"><span data-stu-id="047b9-104">Description</span></span>  
+ <span data-ttu-id="047b9-105">无法移动或删除消息，因为它仍在事务的锁定之下。</span><span class="sxs-lookup"><span data-stu-id="047b9-105">Cannot move or delete message because it is still locked under the transaction.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="29edd-106">请参阅</span><span class="sxs-lookup"><span data-stu-id="29edd-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="047b9-106">另请参阅</span><span class="sxs-lookup"><span data-stu-id="047b9-106">See also</span></span>
 
-- [<span data-ttu-id="29edd-107">跟踪</span><span class="sxs-lookup"><span data-stu-id="29edd-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="29edd-108">使用跟踪来排除应用程序故障</span><span class="sxs-lookup"><span data-stu-id="29edd-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="29edd-109">管理和诊断</span><span class="sxs-lookup"><span data-stu-id="29edd-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="047b9-107">跟踪</span><span class="sxs-lookup"><span data-stu-id="047b9-107">Tracing</span></span>](index.md)
+- [<span data-ttu-id="047b9-108">使用跟踪来排除应用程序故障</span><span class="sxs-lookup"><span data-stu-id="047b9-108">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="047b9-109">管理和诊断</span><span class="sxs-lookup"><span data-stu-id="047b9-109">Administration and Diagnostics</span></span>](../index.md)

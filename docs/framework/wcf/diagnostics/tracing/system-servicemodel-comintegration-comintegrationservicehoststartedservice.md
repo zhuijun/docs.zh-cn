@@ -2,21 +2,21 @@
 title: System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedService
 ms.date: 03/30/2017
 ms.assetid: f395f028-8c9c-4b5d-857b-8d18f94d3375
-ms.openlocfilehash: 20c53090ad24463c777526e25543f2441339448d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 11f1065cbf2fd313b2475d54d9e5ff4a6c47955b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61939186"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598328"
 ---
-# <a name="systemservicemodelcomintegrationcomintegrationservicehoststartedservice"></a><span data-ttu-id="3e0a9-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedService</span><span class="sxs-lookup"><span data-stu-id="3e0a9-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedService</span></span>
-<span data-ttu-id="3e0a9-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedService</span><span class="sxs-lookup"><span data-stu-id="3e0a9-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedService</span></span>  
+# <a name="systemservicemodelcomintegrationcomintegrationservicehoststartedservice"></a><span data-ttu-id="6bad8-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedService</span><span class="sxs-lookup"><span data-stu-id="6bad8-102">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedService</span></span>
+<span data-ttu-id="6bad8-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedService</span><span class="sxs-lookup"><span data-stu-id="6bad8-103">System.ServiceModel.ComIntegration.ComIntegrationServiceHostStartedService</span></span>  
   
-## <a name="description"></a><span data-ttu-id="3e0a9-104">描述</span><span class="sxs-lookup"><span data-stu-id="3e0a9-104">Description</span></span>  
- <span data-ttu-id="3e0a9-105">ComPlus:启动的服务。</span><span class="sxs-lookup"><span data-stu-id="3e0a9-105">ComPlus: Started service.</span></span>  
+## <a name="description"></a><span data-ttu-id="6bad8-104">描述</span><span class="sxs-lookup"><span data-stu-id="6bad8-104">Description</span></span>  
+ <span data-ttu-id="6bad8-105">ComPlus：已启动服务。</span><span class="sxs-lookup"><span data-stu-id="6bad8-105">ComPlus: Started service.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="3e0a9-106">请参阅</span><span class="sxs-lookup"><span data-stu-id="3e0a9-106">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6bad8-106">另请参阅</span><span class="sxs-lookup"><span data-stu-id="6bad8-106">See also</span></span>
 
-- [<span data-ttu-id="3e0a9-107">跟踪</span><span class="sxs-lookup"><span data-stu-id="3e0a9-107">Tracing</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [<span data-ttu-id="3e0a9-108">使用跟踪来排除应用程序故障</span><span class="sxs-lookup"><span data-stu-id="3e0a9-108">Using Tracing to Troubleshoot Your Application</span></span>](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [<span data-ttu-id="3e0a9-109">管理和诊断</span><span class="sxs-lookup"><span data-stu-id="3e0a9-109">Administration and Diagnostics</span></span>](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [<span data-ttu-id="6bad8-107">跟踪</span><span class="sxs-lookup"><span data-stu-id="6bad8-107">Tracing</span></span>](index.md)
+- [<span data-ttu-id="6bad8-108">使用跟踪来排除应用程序故障</span><span class="sxs-lookup"><span data-stu-id="6bad8-108">Using Tracing to Troubleshoot Your Application</span></span>](using-tracing-to-troubleshoot-your-application.md)
+- [<span data-ttu-id="6bad8-109">管理和诊断</span><span class="sxs-lookup"><span data-stu-id="6bad8-109">Administration and Diagnostics</span></span>](../index.md)
