@@ -2,12 +2,12 @@
 title: 信息泄露
 ms.date: 03/30/2017
 ms.assetid: 4064c89f-afa6-444a-aa7e-807ef072131c
-ms.openlocfilehash: 0bcf1aa04d7ba7477a6c3f1559a77bbda1f974af
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.openlocfilehash: a58ac4dd3715052031c7fb5c1da480c0d01396ea
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76211956"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596859"
 ---
 # <a name="information-disclosure"></a>信息泄露
 
@@ -19,7 +19,7 @@ ms.locfileid: "76211956"
 
 ## <a name="policy-information"></a>策略信息
 
-保持策略安全是十分重要的，在联合方案中尤其如此 — 在这些方案中，会在策略中公开敏感的已颁发令牌要求或令牌颁发者信息。 在这些情况下，建议保护联合服务的策略终结点，以防止攻击者获取服务的有关信息（如要放置在已颁发令牌中的声明的类型）或是将客户端重定向到恶意的令牌颁发者。 例如，攻击者可能通过将联合信任链重新配置为终止于执行中间人攻击的颁发者处，来发现用户名/密码对。 此外，还建议通过策略检索来获取绑定的联合客户端验证是否信任所获得的联合信任链中的颁发者。 有关联合方案的详细信息，请参阅[联合](../../../../docs/framework/wcf/feature-details/federation.md)。
+保持策略安全是十分重要的，在联合方案中尤其如此 — 在这些方案中，会在策略中公开敏感的已颁发令牌要求或令牌颁发者信息。 在这些情况下，建议保护联合服务的策略终结点，以防止攻击者获取服务的有关信息（如要放置在已颁发令牌中的声明的类型）或是将客户端重定向到恶意的令牌颁发者。 例如，攻击者可能通过将联合信任链重新配置为终止于执行中间人攻击的颁发者处，来发现用户名/密码对。 此外，还建议通过策略检索来获取绑定的联合客户端验证是否信任所获得的联合信任链中的颁发者。 有关联合方案的详细信息，请参阅[联合](federation.md)。
 
 ## <a name="memory-dumps-can-reveal-claim-information"></a>内存转储可能泄露声明信息
 
@@ -55,7 +55,7 @@ ms.locfileid: "76211956"
 
 在创建客户端时，如果指定不带域名的客户端凭据或指定无效的服务器标识，则会导致使用 NTLM 而不是 Kerberos 协议（如果 `AllowNtlm` 属性设置为 `true`）。 因为 NTLM 不进行服务器身份验证，所以信息可能会泄露。
 
-例如，可以指定不带域名的 Windows 客户端凭据，如下面的 Visual C#代码所示。
+例如，可以指定不带域名的 Windows 客户端凭据，如以下 Visual c # 代码中所示。
 
 ```csharp
 MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCredential("username", "password");
@@ -63,13 +63,13 @@ MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCr
 
 这段代码未指定域名，因而将使用 NTLM。
 
-如果指定了域，但使用终结点标识功能指定了无效的服务主体名称，则会使用 NTLM。 有关如何指定终结点标识的详细信息，请参阅[服务标识和身份验证](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)。
+如果指定了域，但使用终结点标识功能指定了无效的服务主体名称，则会使用 NTLM。 有关如何指定终结点标识的详细信息，请参阅[服务标识和身份验证](service-identity-and-authentication.md)。
 
 ## <a name="see-also"></a>另请参阅
 
-- [安全注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [特权提升](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)
-- [拒绝服务](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
-- [篡改](../../../../docs/framework/wcf/feature-details/tampering.md)
-- [不支持的方案](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
-- [重放攻击](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
+- [安全注意事项](security-considerations-in-wcf.md)
+- [特权提升](elevation-of-privilege.md)
+- [拒绝服务](denial-of-service.md)
+- [篡改](tampering.md)
+- [不受支持的方案](unsupported-scenarios.md)
+- [重播攻击](replay-attacks.md)

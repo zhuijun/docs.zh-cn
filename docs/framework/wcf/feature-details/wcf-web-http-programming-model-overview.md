@@ -2,28 +2,28 @@
 title: WCF Web HTTP 编程模型概述
 ms.date: 03/30/2017
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-ms.openlocfilehash: 9f2350b58e3cb33613ebc8e2c3cda1e234bcde25
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.openlocfilehash: 34d7945b8a7898955794e2ad5813bc66f52b60c7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291744"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594928"
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>WCF Web HTTP 编程模型概述
-Windows 通信基础 （WCF） WEB HTTP 编程模型提供了使用 WCF 构建 WEB HTTP 服务所需的基本元素。 WCF WEB HTTP 服务旨在由最广泛的客户端（包括 Web 浏览器）访问，并且具有以下独特要求：  
+Windows Communication Foundation （WCF） WEB HTTP 编程模型提供了用 WCF 生成 WEB HTTP 服务所需的基本元素。 WCF WEB HTTP 服务旨在由最大范围的可能客户端（包括 Web 浏览器）访问，并且具有以下独特要求：  
   
-- **URI 和 URI 处理**URI 在 WEB HTTP 服务的设计中起着核心作用。 WCF WEB HTTP 编程模型使用<xref:System.UriTemplate><xref:System.UriTemplateTable>和 类来提供 URI 处理功能。  
+- **Uri 和 Uri 处理**Uri 在 WEB HTTP 服务的设计中扮演着一个中心角色。 WCF WEB HTTP 编程模型使用 <xref:System.UriTemplate> 和 <xref:System.UriTemplateTable> 类来提供 URI 处理功能。  
   
-- **支持 GET 和 POST 操作**WEB HTTP 服务除了使用用于数据修改和远程调用的各种调用谓词外，还使用 GET 谓词进行数据检索。 WCF WEB HTTP 编程模型使用<xref:System.ServiceModel.Web.WebGetAttribute><xref:System.ServiceModel.Web.WebInvokeAttribute>并将服务操作与 GET 和其他 HTTP 谓词（如 PUT、POST 和 DELETE）相关联。  
+- **支持 GET 和 POST 操作**WEB HTTP 服务除了使用各种调用谓词来进行数据修改和远程调用以外，还使用 GET 谓词进行数据检索。 WCF WEB HTTP 编程模型使用 <xref:System.ServiceModel.Web.WebGetAttribute> 和 <xref:System.ServiceModel.Web.WebInvokeAttribute> 将服务操作与 GET 和其他 HTTP 谓词（如 PUT、POST 和 DELETE）相关联。  
   
-- **多种数据格式**除了 SOAP 消息之外，Web 样式服务还处理多种数据。 WCF WEB HTTP 编程模型使用<xref:System.ServiceModel.WebHttpBinding><xref:System.ServiceModel.Description.WebHttpBehavior>和 支持许多不同的数据格式，包括 XML 文档、JSON 数据对象和二进制内容（如图像、视频文件或纯文本）流。  
+- **多种数据格式**除了 SOAP 消息以外，Web 样式服务还处理多种类型的数据。 WCF WEB HTTP 编程模型使用 <xref:System.ServiceModel.WebHttpBinding> 和 <xref:System.ServiceModel.Description.WebHttpBehavior> 来支持多种不同的数据格式，包括 XML 文档、JSON 数据对象和二进制内容（如图像、视频文件或纯文本）的流。  
   
- WCF WEB HTTP 编程模型扩展了 WCF 的覆盖范围，以涵盖 Web 样式的方案，包括 WEB HTTP 服务、AJAX 和 JSON 服务以及联合 （ATOM/RSS） 源。 有关 AJAX 和 JSON 服务的详细信息，请参阅[AJAX 集成和 JSON 支持](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)。 有关联合的更多信息，请参阅[WCF 联合概述](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md)。  
+ WCF WEB HTTP 编程模型扩展了 WCF 的覆盖范围，以涵盖包括 WEB HTTP 服务、AJAX 和 JSON 服务以及联合（ATOM/RSS）源的 Web 样式方案。 有关 AJAX 和 JSON 服务的详细信息，请参阅[Ajax 集成和 Json 支持](ajax-integration-and-json-support.md)。 有关联合的详细信息，请参阅[WCF 联合概述](wcf-syndication-overview.md)。  
   
- 对于可从 WEB HTTP 服务返回的数据的类型没有额外的限制。 任何可序列化类型都可以从 WEB HTTP 服务操作返回。 因为 WEB HTTP 服务操作可以通过 Web 浏览器调用，所以对可在 URL 中指定的数据类型有一个限制。 有关默认情况下支持哪些类型的详细信息，请参阅下面的**UriTemplate 查询字符串参数和 URL**部分。 通过提供您自己的 T:System.ServiceModel.Dispatcher.QueryStringConverter 实现来指定如何将 URL 中指定的参数转换为实际参数类型，可以更改默认行为。 有关详细信息，请参阅<xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
+ 对于可从 WEB HTTP 服务返回的数据的类型没有额外的限制。 任何可序列化类型都可以从 WEB HTTP 服务操作返回。 因为 WEB HTTP 服务操作可以通过 Web 浏览器调用，所以对可在 URL 中指定的数据类型有一个限制。 有关默认情况下支持的类型的详细信息，请参阅下面的**UriTemplate 查询字符串参数和 url**部分。 通过提供您自己的 T:System.ServiceModel.Dispatcher.QueryStringConverter 实现来指定如何将 URL 中指定的参数转换为实际参数类型，可以更改默认行为。 有关详细信息，请参阅<xref:System.ServiceModel.Dispatcher.QueryStringConverter>  
   
 > [!CAUTION]
-> 使用 WCF WEB HTTP 编程模型编写的服务不使用 SOAP 消息。 由于不使用 SOAP，因此无法使用 WCF 提供的安全功能。 然而，您可以通过使用 HTTPS 承载服务来使用基于传输的安全性。 有关 WCF 安全性的详细信息，请参阅[安全概述](../../../../docs/framework/wcf/feature-details/security-overview.md)  
+> 使用 WCF WEB HTTP 编程模型编写的服务不使用 SOAP 消息。 由于不使用 SOAP，因此不能使用 WCF 提供的安全功能。 然而，您可以通过使用 HTTPS 承载服务来使用基于传输的安全性。 有关 WCF 安全的详细信息，请参阅[安全性概述](security-overview.md)  
   
 > [!WARNING]
 > 为 IIS 安装 WebDAV 扩展会导致 Web HTTP 服务返回 HTTP 405 错误，因为 WebDAV 扩展试图处理所有 PUT 请求。 若要解决此问题，你可卸载 WebDAV 扩展或为网站禁用 WebDAV 扩展。 有关详细信息，请参阅[IIS 和 WebDav](https://learn.iis.net/page.aspx/357/webdav-for-iis-70/)  
@@ -45,18 +45,18 @@ Windows 通信基础 （WCF） WEB HTTP 编程模型提供了使用 WCF 构建 W
   
  .NET Framework 提供了一个 API 来处理名为 <xref:System.UriTemplate> 的 URI 模板。 `UriTemplates` 允许执行下列操作：  
   
-- 可以使用一组参数调用其中`Bind`一个方法，以生成与模板匹配*的完全闭合 URI。* 这意味着，URI 模板中的所有变量均由实际值替换。  
+- 您可以 `Bind` 使用一组参数调用其中一个方法来生成与模板匹配的*完全关闭的 URI* 。 这意味着，URI 模板中的所有变量均由实际值替换。  
   
 - 可以使用候选 URI 调用 `Match`()，此时会使用模板将候选 URI 的各个组成部分分解开来，并会返回一个字典，其中包含根据模板中的变量标记的 URI 的不同部分。  
   
 - `Bind`() 和 `Match`() 互为逆方法，因此可以调用 `Match`( `Bind`( x ) ) 并返回到开始时的相同环境。  
   
- 在很多时候（尤其是在服务器需要基于 URI 将请求调度到某个服务操作时），对于那些可以单独对包含的每个模板进行寻址的数据结构，您需要一直跟踪其中的一组 <xref:System.UriTemplate> 对象。 <xref:System.UriTemplateTable> 表示一组 URI 模板，并在给定的一组模板和候选 URI 中选择最匹配的项。 这与任何特定的网络堆栈（包括 WCF）无关，因此您可以在必要时使用它。  
+ 在很多时候（尤其是在服务器需要基于 URI 将请求调度到某个服务操作时），对于那些可以单独对包含的每个模板进行寻址的数据结构，您需要一直跟踪其中的一组 <xref:System.UriTemplate> 对象。 <xref:System.UriTemplateTable> 表示一组 URI 模板，并在给定的一组模板和候选 URI 中选择最匹配的项。 这并不隶属于任何特定的网络堆栈（包括 WCF），因此可以在必要时使用。  
   
- WCF 服务模型使用 <xref:System.UriTemplate> 和 <xref:System.UriTemplateTable> 将服务操作与由 <xref:System.UriTemplate> 描述的一组 URI 相关联。 通过使用 <xref:System.UriTemplate> 或 <xref:System.ServiceModel.Web.WebGetAttribute>，将服务操作与 <xref:System.ServiceModel.Web.WebInvokeAttribute> 相关联。 有关<xref:System.UriTemplate>和<xref:System.UriTemplateTable>的详细信息，请参阅[UriTemplate 和 UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)  
+ WCF 服务模型使用 <xref:System.UriTemplate> 和 <xref:System.UriTemplateTable> 将服务操作与由 <xref:System.UriTemplate> 描述的一组 URI 相关联。 通过使用 <xref:System.UriTemplate> 或 <xref:System.ServiceModel.Web.WebGetAttribute>，将服务操作与 <xref:System.ServiceModel.Web.WebInvokeAttribute> 相关联。 有关和的详细 <xref:System.UriTemplate> 信息 <xref:System.UriTemplateTable> ，请参阅[UriTemplate 和 UriTemplateTable](uritemplate-and-uritemplatetable.md)  
   
 ## <a name="webget-and-webinvoke-attributes"></a>WebGet 和 WebInvoke 特性  
- WCF WEB HTTP 服务除了使用各种调用谓词（例如 HTTP POST、PUT 和 DELETE）外，还利用检索谓词（例如 HTTP GET）。 WCF WEB HTTP 编程模型允许服务开发人员使用 和 控制与其服务操作关联的 URI 模板<xref:System.ServiceModel.Web.WebGetAttribute>和<xref:System.ServiceModel.Web.WebInvokeAttribute>谓词。 可以使用 <xref:System.ServiceModel.Web.WebGetAttribute> 和 <xref:System.ServiceModel.Web.WebInvokeAttribute> 来控制各个操作如何绑定到 URI 以及与这些 URI 相关联的 HTTP 方法。 例如，在下面的代码中添加 <xref:System.ServiceModel.Web.WebGetAttribute> 和 <xref:System.ServiceModel.Web.WebInvokeAttribute>。  
+ WCF WEB HTTP 服务除了使用各种调用谓词（例如 HTTP POST、PUT 和 DELETE）之外，还使用检索谓词（例如 HTTP GET）。 WCF WEB HTTP 编程模型允许服务开发人员通过和控制与其服务操作相关联的 URI 模板和谓词 <xref:System.ServiceModel.Web.WebGetAttribute> <xref:System.ServiceModel.Web.WebInvokeAttribute> 。 可以使用 <xref:System.ServiceModel.Web.WebGetAttribute> 和 <xref:System.ServiceModel.Web.WebInvokeAttribute> 来控制各个操作如何绑定到 URI 以及与这些 URI 相关联的 HTTP 方法。 例如，在下面的代码中添加 <xref:System.ServiceModel.Web.WebGetAttribute> 和 <xref:System.ServiceModel.Web.WebInvokeAttribute>。  
   
 ```csharp
 [ServiceContract]  
@@ -96,7 +96,7 @@ interface ICustomer
 }  
 ```  
   
- 要查看使用 WCF WEB HTTP 编程模型的 WCF 服务的完整示例，请参阅[如何：创建基本 WCF Web HTTP 服务](../../../../docs/framework/wcf/feature-details/how-to-create-a-basic-wcf-web-http-service.md)  
+ 若要查看使用 WCF WEB HTTP 编程模型的 WCF 服务的完整示例，请参阅[如何：创建基本 WCF WEB Http 服务](how-to-create-a-basic-wcf-web-http-service.md)  
   
 ## <a name="uritemplate-query-string-parameters-and-urls"></a>UriTemplate 查询字符串参数和 URL  
  可以通过键入与服务操作相关联的 URL 来从 Web 浏览器调用 Web 样式服务。 这些服务操作可以采用查询字符串参数，必须在 URL 内使用字符串格式指定这些参数。 下表演示可以在 URL 内传递的类型和使用的格式。  
@@ -117,7 +117,7 @@ interface ICustomer
 |<xref:System.Decimal>|使用标准表示法的任何小数（无指数）|  
 |<xref:System.Boolean>|True 或 False（不区分大小写）|  
 |<xref:System.String>|任何字符串（不支持空字符串，且不进行转义）|  
-|<xref:System.DateTime>|MM/DD/YYYY<br /><br /> MM/DD/YYYY HH：MM：SS [AM&#124;PM]<br /><br /> 月、日、年<br /><br /> 月日年 HH：MM：SS [AM&#124;PM]|  
+|<xref:System.DateTime>|MM/DD/YYYY<br /><br /> MM/DD/YYYY HH： MM： SS [AM&#124;PM]<br /><br /> 月、日、年<br /><br /> 月份日期年 HH： MM： SS [AM&#124;PM]|  
 |<xref:System.TimeSpan>|DD.HH:MM:SS<br /><br /> 此处，DD = 天、HH = 小时、MM = 分钟、SS = 秒钟|  
 |<xref:System.Guid>|一个 GUID，例如：<br /><br /> 936DA01F-9ABD-4d9d-80C7-02AF85C822A8|  
 |<xref:System.DateTimeOffset>|MM/DD/YYYY HH:MM:SS MM:SS<br /><br /> 此处，DD = 天、HH = 小时、MM = 分钟、SS = 秒钟|  
@@ -125,7 +125,7 @@ interface ICustomer
 |具有可在类型和字符串表示形式之间来回进行转换的 `TypeConverterAttribute` 的类型。|取决于类型转换器。|  
   
 ## <a name="formats-and-the-wcf-web-http-programming-model"></a>格式和 WCF WEB HTTP 编程模型  
- WCF WEB HTTP 编程模型具有使用多种不同数据格式的新功能。 在绑定层上，<xref:System.ServiceModel.WebHttpBinding> 可以读取和写入下列不同种类的数据：  
+ WCF WEB HTTP 编程模型具有用于处理多种不同数据格式的新功能。 在绑定层上，<xref:System.ServiceModel.WebHttpBinding> 可以读取和写入下列不同种类的数据：  
   
 - XML  
   
@@ -133,19 +133,19 @@ interface ICustomer
   
 - 不透明二进制流  
   
- 这意味着 WCF WEB HTTP 编程模型可以处理任何类型的数据，但您可能正在针对<xref:System.IO.Stream>进行编程。  
+ 这意味着 WCF WEB HTTP 编程模型可以处理任何类型的数据，但您可能会对进行编程 <xref:System.IO.Stream> 。  
   
- .NET 框架 3.5 支持 JSON 数据 （AJAX） 以及联合馈送（包括 ATOM 和 RSS）。 有关这些功能的详细信息，请参阅[WCF Web HTTP 格式](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)[、WCF 联合概述](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md) [、AJAX 集成和 JSON 支持](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md)。  
+ .NET Framework 3.5 支持 JSON 数据（AJAX）和联合源（包括 ATOM 和 RSS）。 有关这些功能的详细信息，请参阅[Wcf WEB HTTP 格式设置](wcf-web-http-formatting.md)、 [wcf 联合概述](wcf-syndication-overview.md)以及[AJAX 集成和 JSON 支持](ajax-integration-and-json-support.md)。  
   
 ## <a name="wcf-web-http-programming-model-and-security"></a>WCF WEB HTTP 编程模型和安全  
 
-由于 WCF WEB HTTP 编程模型不支持 WS-* 协议，因此保护 WCF WEB HTTP 服务的唯一方法是使用 SSL 通过 HTTPS 公开服务。 有关使用 IIS 7.0 设置 SSL 的详细信息，请参阅[如何在 IIS 中实现 SSL。](https://support.microsoft.com/help/299875/how-to-implement-ssl-in-iis)
+由于 WCF WEB HTTP 编程模型不支持 WS-* 协议，因此保证 WCF WEB HTTP 服务安全的唯一方式是使用 SSL 通过 HTTPS 公开服务。 有关设置 SSL 和 IIS 7.0 的详细信息，请参阅[如何在 iis 中实现 ssl](https://support.microsoft.com/help/299875/how-to-implement-ssl-in-iis)。
   
 ## <a name="troubleshooting-the-wcf-web-http-programming-model"></a>WCF WEB HTTP 编程模型疑难解答  
  当使用 <xref:System.ServiceModel.Channels.ChannelFactoryBase%601> 调用 WCF WEB HTTP 服务以创建通道时，即使将其他 <xref:System.ServiceModel.Description.WebHttpBehavior> 传递给 <xref:System.ServiceModel.EndpointAddress>，<xref:System.ServiceModel.EndpointAddress> 也会使用配置文件中设置的 <xref:System.ServiceModel.Channels.ChannelFactoryBase%601>。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [WCF 联合](../../../../docs/framework/wcf/feature-details/wcf-syndication.md)
-- [WCF Web HTTP 编程对象模型](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-object-model.md)
-- [WCF Web HTTP 编程模型](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
+- [WCF 联合](wcf-syndication.md)
+- [WCF Web HTTP 编程对象模型](wcf-web-http-programming-object-model.md)
+- [WCF Web HTTP 编程模型](wcf-web-http-programming-model.md)

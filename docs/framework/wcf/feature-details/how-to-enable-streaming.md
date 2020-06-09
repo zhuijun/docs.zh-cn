@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
-ms.openlocfilehash: 1d1eaa1ebf41ef86478dda795b3b199239cd37b4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c2c22ab699a996f4bc40d0b5f620ddd92ffe8059
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184934"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593225"
 ---
 # <a name="how-to-enable-streaming"></a>如何：启用流处理
-Windows 通信基础 （WCF） 可以使用缓冲传输或流式传输发送消息。 在默认的缓冲传输模式中，只有在一条消息全部传递完之后，接收方才能读取该消息。 在流传输模式中，不必等到消息全部传递完，接收方便可以开始处理该消息。 当传递的信息很长且可以依次处理时，流模式非常有用。 当消息过长以致于无法全部缓冲时，流模式也非常有用。  
+Windows Communication Foundation （WCF）可以使用缓冲传输或流式传输发送消息。 在默认的缓冲传输模式中，只有在一条消息全部传递完之后，接收方才能读取该消息。 在流传输模式中，不必等到消息全部传递完，接收方便可以开始处理该消息。 当传递的信息很长且可以依次处理时，流模式非常有用。 当消息过长以致于无法全部缓冲时，流模式也非常有用。  
   
  若要启用流处理，请适当地定义 `OperationContract` 并在传输级别上启用流处理。  
   
@@ -76,5 +76,5 @@ Windows 通信基础 （WCF） 可以使用缓冲传输或流式传输发送消�
   
 ## <a name="see-also"></a>另请参阅
 
-- [大数据和流式处理](../../../../docs/framework/wcf/feature-details/large-data-and-streaming.md)
-- [流](../../../../docs/framework/wcf/samples/stream.md)
+- [大型数据和流](large-data-and-streaming.md)
+- [流](../samples/stream.md)

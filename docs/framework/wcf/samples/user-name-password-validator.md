@@ -2,12 +2,12 @@
 title: 用户名密码验证程序
 ms.date: 03/30/2017
 ms.assetid: 42f03841-286b-42d8-ba58-18c75422bc8e
-ms.openlocfilehash: e66188cfe1874c4d4097f3f842fd19cfdd4c79f1
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 5fbca30ef2dff0aebc13bda12c06adfd1989ea20
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141274"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596508"
 ---
 # <a name="user-name-password-validator"></a>用户名密码验证程序
 此示例演示如何实现自定义 UserNamePassword 验证程序。 这在以下情况中非常有用：所有内置 UserNamePassword 验证模式均不符合应用程序的需求；例如，当用户名/密码对存储在某个外部存储区（如数据库）中时。 此示例显示了一个具有自定义验证程序（可检查两个特定用户名/密码对）的服务。 客户端使用此种用户名/密码对来对服务进行身份验证。
@@ -17,7 +17,7 @@ ms.locfileid: "82141274"
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和[!INCLUDE[wf1](../../../../includes/wf1-md.md)]示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Security\UserNamePasswordValidator`  
   
@@ -32,7 +32,7 @@ ms.locfileid: "82141274"
 
 - 如何使用服务器的 X.509 证书对服务器进行身份验证。
 
- 服务公开一个终结点，以便与使用配置文件 App.config 定义的服务进行通信。终结点由地址、绑定和协定组成。 绑定使用默认为使用 WS 安全性`wsHttpBinding`和用户名身份验证的标准配置。 服务行为指定用以验证客户端用户名/密码对的 `Custom` 模式以及验证程序类的类型。 该行为还使用 `serviceCertificate` 元素指定服务器证书。 服务器证书必须包含与[ \<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) `findValue`中相同的值`SubjectName` 。
+ 服务公开一个终结点，以便与使用配置文件 App.config 定义的服务进行通信。终结点由地址、绑定和协定组成。 绑定使用 `wsHttpBinding` 默认为使用 WS 安全性和用户名身份验证的标准配置。 服务行为指定用以验证客户端用户名/密码对的 `Custom` 模式以及验证程序类的类型。 该行为还使用 `serviceCertificate` 元素指定服务器证书。 服务器证书必须包含与中相同的值 `SubjectName` `findValue` [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) 。
 
 ```xml
 <system.serviceModel>
@@ -279,7 +279,7 @@ serviceHost.Credentials. UserNameAuthentication.CustomUserNamePasswordValidator 
 
 #### <a name="to-set-up-and-build-the-sample"></a>设置和生成示例
 
-1. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+1. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
 
 2. 若要用单一计算机配置或跨计算机配置来运行示例，请按照下列说明进行操作。
 

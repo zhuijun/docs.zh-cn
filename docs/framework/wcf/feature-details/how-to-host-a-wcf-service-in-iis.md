@@ -5,27 +5,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b044b1c9-c1e5-4c9f-84d8-0f02f4537f8b
-ms.openlocfilehash: 580b380a6c6349c6a4efa26e3eefe38bd660fa1b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 326a270c4af38738c910828acd483070ab02ecd1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184927"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593082"
 ---
 # <a name="how-to-host-a-wcf-service-in-iis"></a>如何：在 IIS 中承载 WCF 服务
-本主题概述了创建 Internet 信息服务 （IIS） 中托管的 Windows 通信基础 （WCF） 服务所需的基本步骤。 本主题假设您熟悉 IIS 且了解如何使用 IIS 管理工具创建和管理 IIS 应用程序。 有关 IIS 的更多信息，请参阅[互联网信息服务](https://www.iis.net/)。 在 IIS 环境中运行的 WCF 服务充分利用了 IIS 功能，例如进程回收、空闲关闭、过程运行状况监视和基于消息的激活。 此宿主选项要求正确配置 IIS，但不需要编写任何承载代码作为应用程序的一部分。 只可以将 IIS 宿主与 HTTP 传输协议一起使用。  
+本主题概述了创建在 Internet Information Services （IIS）中承载的 Windows Communication Foundation （WCF）服务所需的基本步骤。 本主题假设您熟悉 IIS 且了解如何使用 IIS 管理工具创建和管理 IIS 应用程序。 有关 IIS 的详细信息，请参阅[Internet Information Services](https://www.iis.net/)。 在 IIS 环境中运行的 WCF 服务充分利用 IIS 功能，如进程回收、空闲关闭、进程运行状况监视和基于消息的激活。 此宿主选项要求正确配置 IIS，但不需要编写任何承载代码作为应用程序的一部分。 只可以将 IIS 宿主与 HTTP 传输协议一起使用。  
   
- 有关 WCF 和ASP.NET如何交互的详细信息，请参阅[WCF 服务和ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)。 有关配置安全性的详细信息，请参阅[安全](../../../../docs/framework/wcf/feature-details/security.md)。  
+ 有关 WCF 和 ASP.NET 如何交互的详细信息，请参阅[Wcf 服务和 ASP.NET](wcf-services-and-aspnet.md)。 有关配置安全的详细信息，请参阅[安全性](security.md)。  
   
- 有关此示例的源副本，请参阅[使用内联代码进行 IIS 托管](../../../../docs/framework/wcf/samples/iis-hosting-using-inline-code.md)。  
+ 有关此示例的源副本，请参阅[使用内联代码的 IIS 承载](../samples/iis-hosting-using-inline-code.md)。  
   
 ### <a name="to-create-a-service-hosted-by-iis"></a>创建由 IIS 承载的服务  
   
-1. 确认 IIS 已经安装并在计算机上运行。 有关安装和配置 IIS 的详细信息，请参阅[安装和配置 IIS 7.0](https://docs.microsoft.com/iis/install/installing-iis-7/installing-necessary-iis-components-on-windows-vista)  
+1. 确认 IIS 已经安装并在计算机上运行。 有关安装和配置 IIS 的详细信息，请参阅[安装和配置 iis 7.0](https://docs.microsoft.com/iis/install/installing-iis-7/installing-necessary-iis-components-on-windows-vista)  
   
-2. 为您的应用程序文件创建一个名为"IIS托管CalcService"的新文件夹，确保ASP.NET有权访问该文件夹的内容，并使用 IIS 管理工具创建位于此应用程序目录中的新 IIS 应用程序。 当为应用程序目录创建别名时，请使用“IISHostedCalc”。  
+2. 为应用程序文件创建一个名为 "IISHostedCalcService" 的新文件夹，确保 ASP.NET 有权访问该文件夹的内容，并使用 IIS 管理工具创建一个物理上位于此应用程序目录中的新 IIS 应用程序。 当为应用程序目录创建别名时，请使用“IISHostedCalc”。  
   
-3. 在应用程序目录中创建一个名为“service.svc”的新文件。 通过添加以下@ServiceHost元素编辑此文件。  
+3. 在应用程序目录中创建一个名为“service.svc”的新文件。 通过添加以下元素编辑此文件 @ServiceHost 。  
   
    ```
    <%@ServiceHost language=c# Debug="true" Service="Microsoft.ServiceModel.Samples.CalculatorService"%>
@@ -60,11 +60,11 @@ ms.locfileid: "79184927"
      [!code-csharp[c_HowTo_HostInIIS#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/cs/source.cs#12)]
      [!code-vb[c_HowTo_HostInIIS#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#12)]  
   
-10. 在应用程序目录中创建一个名为“Web.config”的文件，并将下面的配置代码添加到该文件中。 在运行时，WCF 基础结构使用信息构造客户端应用程序可以与其通信的终结点。  
+10. 在应用程序目录中创建一个名为“Web.config”的文件，并将下面的配置代码添加到该文件中。 在运行时，WCF 基础结构使用这些信息来构造客户端应用程序可与其通信的终结点。  
   
      [!code-xml[c_HowTo_HostInIIS#100](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]
   
-     此示例显式指定配置文件中的终结点。 如果您不希望向服务添加任何终结点，则运行时为您添加默认终结点。 有关默认终结点、绑定和行为的详细信息，请参阅 WCF 服务的[简化配置](../../../../docs/framework/wcf/simplified-configuration.md)和[简化配置](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)。  
+     此示例显式指定配置文件中的终结点。 如果您不希望向服务添加任何终结点，则运行时为您添加默认终结点。 有关默认终结点、绑定和行为的详细信息，请参阅适用[于 WCF 服务的](../samples/simplified-configuration-for-wcf-services.md)[简化配置](../simplified-configuration.md)和简化配置。  
   
 11. 为了确保正确承载该服务，请打开 Internet Explorer 的实例，导航到该服务的 URL：`http://localhost/IISHostedCalc/Service.svc`  
   
@@ -77,8 +77,8 @@ ms.locfileid: "79184927"
   
 ## <a name="see-also"></a>另请参阅
 
-- [在 Internet Information Services 中承载](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md)
-- [承载服务](../../../../docs/framework/wcf/hosting-services.md)
-- [WCF 服务和 ASP.NET](../../../../docs/framework/wcf/feature-details/wcf-services-and-aspnet.md)
-- [安全性](../../../../docs/framework/wcf/feature-details/security.md)
+- [在 Internet 信息服务中承载](hosting-in-internet-information-services.md)
+- [承载服务](../hosting-services.md)
+- [WCF 服务和 ASP.NET](wcf-services-and-aspnet.md)
+- [安全性](security.md)
 - [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

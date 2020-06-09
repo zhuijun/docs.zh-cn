@@ -2,26 +2,26 @@
 title: 如何：使用 Windows Server App Fabric 承载工作流服务
 ms.date: 03/30/2017
 ms.assetid: 83b62cce-5fc2-4c6d-b27c-5742ba3bac73
-ms.openlocfilehash: ecc7a954b2d88cdbcf934cc836e9ad6e3ef7ed52
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 519c76e3e46e01b5e8c696234e39fefbb9f8ad06
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964765"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593303"
 ---
 # <a name="how-to-host-a-workflow-service-with-windows-server-app-fabric"></a>如何：使用 Windows Server App Fabric 承载工作流服务
 
-在 App Fabric 中承载工作流服务类似于在 IIS/WAS 下承载。 唯一的区别在于 App Fabric 提供的用于部署、监控和管理工作流服务的工具。 本主题使用在[创建长时间运行的工作流服务](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)中创建的工作流服务。 本主题将指导您创建工作流服务。 本主题将介绍如何使用 App Fabric 承载工作流服务。 有关 Windows Server App Fabric 的详细信息，请参阅[Windows Server App Fabric 文档](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10))。 完成以下步骤之前，请确保已安装 Windows Server App Fabric。  为此，请打开 Internet Information Services （inetmgr），在 "**连接**" 视图中单击您的服务器名称，单击 "站点"，然后单击 "**默认**网站"。 在屏幕右侧，应会看到一个名为 " **App Fabric**" 的部分。 如果您看不到这一部分（它位于右侧窗格的顶部），则表示您还未安装 App Fabric。 有关安装 Windows Server App Fabric 的详细信息，请参阅[安装 Windows Server App fabric](https://docs.microsoft.com/previous-versions/appfabric/ee790960(v=azure.10))。  
+在 App Fabric 中承载工作流服务类似于在 IIS/WAS 下承载。 唯一的区别在于 App Fabric 提供的用于部署、监控和管理工作流服务的工具。 本主题使用在[创建长时间运行的工作流服务](creating-a-long-running-workflow-service.md)中创建的工作流服务。 本主题将指导您创建工作流服务。 本主题将介绍如何使用 App Fabric 承载工作流服务。 有关 Windows Server App Fabric 的详细信息，请参阅[Windows Server App Fabric 文档](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10))。 完成以下步骤之前，请确保已安装 Windows Server App Fabric。  为此，请打开 Internet Information Services （inetmgr），在 "**连接**" 视图中单击您的服务器名称，单击 "站点"，然后单击 "**默认**网站"。 在屏幕右侧，应会看到一个名为 " **App Fabric**" 的部分。 如果您看不到这一部分（它位于右侧窗格的顶部），则表示您还未安装 App Fabric。 有关安装 Windows Server App Fabric 的详细信息，请参阅[安装 Windows Server App fabric](https://docs.microsoft.com/previous-versions/appfabric/ee790960(v=azure.10))。  
   
 ### <a name="creating-a-simple-workflow-service"></a>创建简单工作流服务  
   
-1. 打开 Visual Studio 2012 并加载在[创建长时间运行的工作流服务](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)主题中创建的 OrderProcessing 解决方案。  
+1. 打开 Visual Studio 2012 并加载在[创建长时间运行的工作流服务](creating-a-long-running-workflow-service.md)主题中创建的 OrderProcessing 解决方案。  
   
 2. 右键单击 " **OrderService** " 项目并选择 "**属性**"，然后选择 " **Web** " 选项卡。  
   
 3. 在 "属性" 页的 "**启动操作**" 部分中，选择 "**特定页面**"，然后在编辑框中键入 Service1。  
   
-4. 在属性页的 "**服务器**" 部分中，选择 "**使用本地 IIS Web 服务器**"，并键入以下 URL： `http://localhost/OrderService`。  
+4. 在属性页的 "**服务器**" 部分中，选择 "**使用本地 IIS Web 服务器**"，并键入以下 URL： `http://localhost/OrderService` 。  
   
 5. 单击 "**创建虚拟目录**" 按钮。 这将新建一个虚拟目录，并将项目设置为在生成项目时将所需文件复制到此虚拟目录。  或者，你也可以手动将 .xamlx、web.config 以及任何所需的 DLL 复制到此虚拟目录。  
   
@@ -31,27 +31,27 @@ ms.locfileid: "75964765"
   
 2. 在 "**连接**" 窗格中导航到 OrderService 虚拟目录。  
   
-3. 右键单击 OrderService，然后选择 "**管理 WCF 和 WF 服务**，**配置 ...** "。 将显示 "**为应用程序配置 WCF 和 WF** " 对话框。  
+3. 右键单击 OrderService，然后选择 "**管理 WCF 和 WF 服务**，**配置 ...**"。 将显示 "**为应用程序配置 WCF 和 WF** " 对话框。  
   
 4. 选择 "**常规**" 选项卡以显示有关应用程序的一般信息，如以下屏幕截图所示。  
   
-     ![App Fabric 配置对话框的 "常规" 选项卡](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-general.gif "AppFabricConfiguration-常规")  
+     ![“App Fabric 配置”对话框的“常规”选项卡](media/appfabricconfiguration-general.gif "AppFabricConfiguration-常规")  
   
 5. 选择 "**监视**" 选项卡。这会显示各种监视设置，如以下屏幕截图所示。  
   
-     ![App Fabric 配置监视选项卡](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-monitoring.gif "AppFabricConfiguration-监视")  
+     ![“App Fabric 配置监视”选项卡](media/appfabricconfiguration-monitoring.gif "AppFabricConfiguration-监视")  
   
      有关在应用结构中配置工作流服务监视的详细信息，请参阅[配置应用构造监视](https://docs.microsoft.com/previous-versions/appfabric/ee677384(v=azure.10))。  
   
 6. 选择 "**工作流持久性**" 选项卡。这使你可以将应用程序配置为使用 App Fabric 的默认永久性提供程序，如以下屏幕截图所示。  
   
-     ![App Fabric 配置&#45;持久性](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-persistence.gif "AppFabricConfiguration-持久性")  
+     ![应用程序结构配置 &#45; 持久性](media/appfabricconfiguration-persistence.gif "AppFabricConfiguration-持久性")  
   
      有关在 Windows Server App Fabric 中配置工作流持久性的详细信息，请参阅[在应用结构中配置工作流持久性](https://docs.microsoft.com/previous-versions/appfabric/ee677353(v=azure.10))。  
   
 7. 选择 "**工作流主机管理**" 选项卡。这样，你可以指定何时卸载和持久保存空闲工作流服务实例，如以下屏幕截图中所示。  
   
-     ![应用结构配置工作流主机管理](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-management.gif "AppFabricConfiguration-管理")  
+     ![应用结构配置工作流主机管理](media/appfabricconfiguration-management.gif "AppFabricConfiguration-管理")  
   
      有关工作流主机管理配置的详细信息，请参阅[在应用结构中配置工作流主机管理](https://docs.microsoft.com/previous-versions/appfabric/ff383424(v=azure.10))。  
   
@@ -69,7 +69,7 @@ ms.locfileid: "75964765"
   
 10. 选择 "**安全**" 选项卡。这允许你为应用程序配置安全设置，如以下屏幕截图所示。  
   
-     ![App Fabric 安全配置](../../../../docs/framework/wcf/feature-details/media/appfabricconfiguration-security.gif "AppFabricConfiguration-安全性")  
+     ![App Fabric 安全配置](media/appfabricconfiguration-security.gif "AppFabricConfiguration-安全性")  
   
      有关配置 Windows Server App Fabric 安全性的详细信息，请参阅[配置应用程序结构的安全性](https://docs.microsoft.com/previous-versions/appfabric/ee677278(v=azure.10))。  
   
@@ -93,7 +93,7 @@ ms.locfileid: "75964765"
   
 ## <a name="see-also"></a>另请参阅
 
-- [创建长时间运行的工作流服务](../../../../docs/framework/wcf/feature-details/creating-a-long-running-workflow-service.md)
+- [创建长时间运行的工作流服务](creating-a-long-running-workflow-service.md)
 - [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
 - [安装 Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee790960(v=azure.10))
 - [Windows Server App Fabric 文档](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10))

@@ -1,5 +1,6 @@
 ---
 title: 程序集和 DLL 的名称
+description: 了解如何命名程序集和动态链接库（Dll）。 程序集可跨一个或多个文件，但它通常与 DLL 相互映射。
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework], names
 - DLLs, names
 ms.assetid: e800b610-31b4-4949-9c14-cb60e9f254be
-ms.openlocfilehash: 138ae8154b0d10fb813f0c98ceb7c58a2471b780
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: de7ce3ee774d4598521d7156d0d660c3fe30154c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291950"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594473"
 ---
 # <a name="names-of-assemblies-and-dlls"></a>程序集和 DLL 的名称
 程序集是托管代码程序的部署和标识单元。 尽管程序集可跨一个或多个文件，但通常程序集与 DLL 相互映射。 因此，本节仅介绍 DLL 命名约定，然后可以将其映射到程序集命名约定。

@@ -2,15 +2,15 @@
 title: 流消息传输
 ms.date: 03/30/2017
 ms.assetid: 72a47a51-e5e7-4b76-b24a-299d51e0ae5a
-ms.openlocfilehash: 6f16ab16235c9fcbe0a151d5c404df96080192c6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 462144856750a1b8726b574fdc82746da2d72ff7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64585930"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594785"
 ---
 # <a name="streaming-message-transfer"></a>流消息传输
-Windows Communication Foundation (WCF) 传输来传输消息支持两种模式：  
+Windows Communication Foundation （WCF）传输支持两种模式传输消息：  
   
 - 缓冲传输将整个消息保留在内存缓冲区中，直到传输完成。 必须完整传递缓冲的消息，接收方才能读取该消息。  
   
@@ -27,7 +27,7 @@ Windows Communication Foundation (WCF) 传输来传输消息支持两种模式�
   
  使用缓冲传输还是流传输是在终结点本地决定的。 对于 HTTP 传输协议，传输模式不会跨连接传播，也不会传播到服务器和其他中介。 设置传输模式不会反映在服务接口的说明中。 在为服务生成一个客户端类后，必须为准备用于流传输的服务编辑配置文件，以设置该传输模式。 对于 TCP 和命名管道传输协议，该传输模式将作为策略断言传播。  
   
- 有关代码示例，请参阅[如何：启用流式传输](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)。  
+ 有关代码示例，请参阅[如何：启用流式处理](how-to-enable-streaming.md)。  
   
 ## <a name="enabling-asynchronous-streaming"></a>启用异步流处理  
  若要启用异步流，请将 <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior> 终结点行为添加到服务主机，并将其 <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.AsynchronousSendEnabled%2A> 属性设置为 `true`。  
@@ -39,13 +39,13 @@ Windows Communication Foundation (WCF) 传输来传输消息支持两种模式�
   
  在整个流传输中发生的操作最多只能与一个输入或输出参数之间具有协定。 该参数对应于整个消息正文，并且必须为 <xref:System.ServiceModel.Channels.Message>、<xref:System.IO.Stream> 的派生类型或 <xref:System.Xml.Serialization.IXmlSerializable> 实现。 具有某个操作的返回值等效于具有一个输出参数。  
   
- 某些 WCF 功能，例如可靠消息传递、 事务和 SOAP 消息级安全性依赖于缓冲消息以便进行传输。 使用这些功能可能减小或消除通过使用流获得的性能好处。 若要保证流传输的安全，请只使用传输级安全，或者使用传输级安全外加仅进行身份验证的消息安全。  
+ 某些 WCF 功能（如可靠消息传递、事务和 SOAP 消息级安全）依赖于缓冲消息以便进行传输。 使用这些功能可能减小或消除通过使用流获得的性能好处。 若要保证流传输的安全，请只使用传输级安全，或者使用传输级安全外加仅进行身份验证的消息安全。  
   
- 即使传输模式设置为流模式，SOAP 标头也总是被缓冲。 消息的标头不得超出 `MaxBufferSize` 传输配额的大小。 有关此设置的详细信息，请参阅[传输配额](../../../../docs/framework/wcf/feature-details/transport-quotas.md)。  
+ 即使传输模式设置为流模式，SOAP 标头也总是被缓冲。 消息的标头不得超出 `MaxBufferSize` 传输配额的大小。 有关此设置的详细信息，请参阅[传输配额](transport-quotas.md)。  
   
 ## <a name="differences-between-buffered-and-streamed-transfers"></a>缓冲传输和流传输之间的差异  
  将传输模式从缓冲模式更改为流模式还会更改 TCP 和命名管道传输协议的本机通道形状。 对于缓冲传输模式，本机通道形状为 <xref:System.ServiceModel.Channels.IDuplexSessionChannel>。 对于流传输模式，本机通道为 <xref:System.ServiceModel.Channels.IRequestChannel> 和 <xref:System.ServiceModel.Channels.IReplyChannel>。 在直接（即，不是通过服务协定）使用这些传输协议的现有应用程序中更改传输模式需要更改通道工厂和侦听器的预期通道形状。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [如何：启用流式传输](../../../../docs/framework/wcf/feature-details/how-to-enable-streaming.md)
+- [如何：启用流处理](how-to-enable-streaming.md)

@@ -2,12 +2,12 @@
 title: 对等通道安全性
 ms.date: 03/30/2017
 ms.assetid: 2c59b164-3729-44f0-a967-f247c42de662
-ms.openlocfilehash: bc17c35bf088472cfbf36b2c6d7c868c8cc85f20
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f8015f41254d17f908f3665db65af3d82eaa2b6a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61769390"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84576078"
 ---
 # <a name="peer-channel-security"></a>对等通道安全性
 对等通道启用依赖于多方消息传递的多种分布式应用程序类型。 示例包括在 Internet 范围内由受信任源分发内容（如媒体或软件更新）、朋友们一起交换音乐和图片或同事们一起协作编辑一个文档。 这些方案都需要一个独特的安全模型。 对等通道安全模型就是为满足这些方案而设计的，此模型为不同标识、身份验证和授权模型的各自需要提供可靠的安全模型。  
@@ -24,7 +24,7 @@ ms.locfileid: "61769390"
   
  对等通道还可通过使用密码为简单应用程序提供支持。 应用程序可以根据提供的密码选择设置快速而简单的对等组。 在这种情况下，组所有者确定密码并将密码通知成员。 每个成员必须先使用此密码登录，才能加入会话。 密码仅用于允许加入会话，不能用于执行消息身份验证。 这是因为对等端组共享的对称令牌难以、也不适合用于进行源身份验证。  
   
-## <a name="security-model"></a>安全模型  
+## <a name="security-model"></a>安全模式  
  对等通道提供保证对等端之间各个链接安全的功能。 这意味着消息决不会在不安全的链接上流动（从应用程序角度讲）。 在内部，每个链接（两个对等端之间的传输通道）都使用传输层安全 (TLS) 保证安全。 这意味着某一发送方在撰写并发送消息时，消息会通过安全传输发送给该发送方的每个中间对等端，这些对等端访问消息，然后通过安全连接将消息发送到他们的中间对等端。 此安全模型仅在传输级别有效并独立于消息安全模型。  
   
  对等通道还提供一种保护消息独立于所使用的传输安全的途径。 在此模型中，虽然当前只支持 X.509 证书，但消息在源上可以使用源的安全令牌加以保护。 然后通过对等网络传输安全消息。 每个接收对等端都可以验证源的真实性。 请注意，消息具有安全保护，中介无法篡改。  
@@ -33,8 +33,8 @@ ms.locfileid: "61769390"
   
  只要应用程序选择了一种受支持的令牌类型，对等通道就不再需要特定的标识模型。 应用程序可以完全控制这些标识和身份验证决策的生命周期。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [保护对等通道应用程序](../../../../docs/framework/wcf/feature-details/securing-peer-channel-applications.md)
-- [对等通道概念](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)
-- [生成对等通道应用程序](../../../../docs/framework/wcf/feature-details/building-a-peer-channel-application.md)
+- [保护对等通道应用程序](securing-peer-channel-applications.md)
+- [对等通道概念](peer-channel-concepts.md)
+- [生成对等通道应用程序](building-a-peer-channel-application.md)

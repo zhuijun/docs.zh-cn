@@ -2,12 +2,12 @@
 title: 对等通道方案
 ms.date: 03/30/2017
 ms.assetid: dae6e0f7-900c-45ee-8be9-3647698382fb
-ms.openlocfilehash: 610668e5f3625c638fc1e814e0116df87970773b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c4c24a0bafa4f73760d02de6242a9ed438d7d60e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62046379"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596872"
 ---
 # <a name="peer-channel-scenarios"></a>对等通道方案
 对等通道 API 支持下列开发方案。  
@@ -24,6 +24,6 @@ ms.locfileid: "62046379"
 ## <a name="gaming"></a>游戏  
  使用对等通道，应用程序开发人员可以创建无服务器版本的游戏，在这样的游戏中，游戏动作可以通过对等机制（而非中央服务器）传输到其他玩家并与他们同步。 对于小型 ISV，这会帮助其消除与部署、维护和维修中央服务器相关联的运营成本。 可以通过 Internet、有线或无线本地网络来参与使用对等体系结构编写的游戏。 辅助游戏活动（如大厅和游戏中的聊天）可以使用对等网络来开发。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [对等通道概念](../../../../docs/framework/wcf/feature-details/peer-channel-concepts.md)
+- [对等通道概念](peer-channel-concepts.md)

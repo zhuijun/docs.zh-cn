@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1bb93652-d687-46ff-bff6-69ecdcf97437
-ms.openlocfilehash: 67be47f97e57792e2f1e14505d3cd121729db33b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8b9fa36408d5f2bc5445ebeccba61f71417935e7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185082"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599121"
 ---
 # <a name="how-to-configure-idle-behavior-with-workflowservicehost"></a>如何：使用 WorkflowServiceHost 配置空闲行为
 当工作流遇到必须由某种外部刺激恢复的书签时（例如，当工作流实例正在等待使用 <xref:System.ServiceModel.Activities.Receive> 活动传递消息时），将转入空闲状态。 <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior> 行为允许您指定服务实例进入空闲状态与保留或卸载服务实例之间的时间。 它包含两个使您能够设置这些时间跨度的属性。 <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A> 指定工作流服务实例进入空闲状态与保留工作流服务实例之间的时间跨度。 <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> 指定工作流服务实例进入空闲状态与卸载工作流服务实例之间的时间跨度，其中，卸载意味着将实例保留到实例存储区中并从内存中将其删除。 本主题解释如何在配置文件中配置 <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior> 。  
   
 ### <a name="to-configure-workflowidlebehavior"></a>配置 WorkflowIdleBehavior  
   
-1. 向<>`workflowIdle``behavior``serviceBehaviors`元素中的<>元素添加<>元素，如以下示例所示。  
+1. 将 <`workflowIdle`> 元素添加到 `behavior` <> 元素中的 <> 元素， `serviceBehaviors` 如下面的示例中所示。  
   
     ```xml  
     <behaviors>  
@@ -29,10 +29,10 @@ ms.locfileid: "79185082"
     </behaviors>  
     ```  
   
-     `timeToUnload` 特性指定工作流服务实例进入空闲状态与卸载工作流服务之间的时间段。 `timeToPersist` 特性指定工作流服务实例进入空闲状态与保存该实例之间的时间段。 `timeToUnload` 默认值为 1 分钟。 `timeToPersist` 的默认值为 <xref:System.TimeSpan.MaxValue>。 如果要在内存中保留空闲实例，但是为实现可靠性而保持这些实例，请设置值以使 `timeToPersist` < `timeToUnload`。 如果要防止卸载空闲实例，请将 `timeToUnload` 设置为 <xref:System.TimeSpan.MaxValue>。 有关 的详细信息<xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior>，请参阅[工作流服务主机扩展性](../../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md)  
+     `timeToUnload` 特性指定工作流服务实例进入空闲状态与卸载工作流服务之间的时间段。 `timeToPersist` 特性指定工作流服务实例进入空闲状态与保存该实例之间的时间段。 `timeToUnload` 默认值为 1 分钟。 `timeToPersist` 的默认值为 <xref:System.TimeSpan.MaxValue>。 如果要在内存中保留空闲实例，但是为实现可靠性而保持这些实例，请设置值以使 `timeToPersist` < `timeToUnload`。 如果要防止卸载空闲实例，请将 `timeToUnload` 设置为 <xref:System.TimeSpan.MaxValue>。 有关的详细信息 <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior> ，请参阅[工作流服务主机扩展性](workflow-service-host-extensibility.md)  
   
     > [!NOTE]
-    > 上面的配置示例使用的是简化配置。 有关详细信息，请参阅[简化配置](../../../../docs/framework/wcf/simplified-configuration.md)。  
+    > 上面的配置示例使用的是简化配置。 有关详细信息，请参阅[简化配置](../simplified-configuration.md)。  
   
 ### <a name="to-change-idle-behavior-in-code"></a>在代码中更改空闲行为  
   
@@ -43,6 +43,6 @@ ms.locfileid: "79185082"
   
 ## <a name="see-also"></a>另请参阅
 
-- [工作流服务主机扩展性](../../../../docs/framework/wcf/feature-details/workflow-service-host-extensibility.md)
-- [简化配置](../../../../docs/framework/wcf/simplified-configuration.md)
-- [工作流服务](../../../../docs/framework/wcf/feature-details/workflow-services.md)
+- [工作流服务主机可扩展性](workflow-service-host-extensibility.md)
+- [简化配置](../simplified-configuration.md)
+- [工作流服务](workflow-services.md)
