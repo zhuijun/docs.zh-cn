@@ -2,22 +2,22 @@
 title: 如何：在 WAS 中承载 WCF 服务
 ms.date: 03/30/2017
 ms.assetid: 9e3e213e-2dce-4f98-81a3-f62f44caeb54
-ms.openlocfilehash: 823c3b8452a3fd1c95758d2d09a9effdf02075c8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1e338440b3a630840230df838e46579e3725bb60
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184917"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593108"
 ---
 # <a name="how-to-host-a-wcf-service-in-was"></a>如何：在 WAS 中承载 WCF 服务
-本主题概述了创建 Windows 进程激活服务（也称为 WAS） 托管 Windows 通信基础 （WCF） 服务所需的基本步骤。 WAS 是新的进程激活服务，是对使用非 HTTP 传输协议的 Internet Information Services (IIS) 功能的泛化。 WCF 使用侦听器适配器接口来通信通过 WCF 支持的非 HTTP 协议（如 TCP、命名管道和消息队列）收到的激活请求。  
+本主题概述了创建 Windows 进程激活服务（也称为 WAS）托管 Windows Communication Foundation （WCF）服务所需的基本步骤。 WAS 是新的进程激活服务，是对使用非 HTTP 传输协议的 Internet Information Services (IIS) 功能的泛化。 WCF 使用侦听器适配器接口传递通过 WCF 支持的非 HTTP 协议（如 TCP、命名管道和消息队列）接收的激活请求。  
   
- 此主机选项要求正确安装和配置 WAS 激活组件，但不要求编写任何主机代码作为应用程序的一部分。 有关安装和配置 WAS 的详细信息，请参阅[如何：安装和配置 WCF 激活组件](../../../../docs/framework/wcf/feature-details/how-to-install-and-configure-wcf-activation-components.md)。  
+ 此主机选项要求正确安装和配置 WAS 激活组件，但不要求编写任何主机代码作为应用程序的一部分。 有关安装和配置 WAS 的详细信息，请参阅[如何：安装和配置 WCF 激活组件](how-to-install-and-configure-wcf-activation-components.md)。  
   
 > [!WARNING]
 > 如果将 Web 服务器的请求处理管道设置为经典模式，则将不支持 WAS 激活。 如果要使用 WAS 激活，则必须将 Web 服务器的请求处理管道设置为集成模式。  
   
- 当 WCF 服务托管在 WAS 中时，标准绑定以通常的方式使用。 但是，在使用 <xref:System.ServiceModel.NetTcpBinding> 和 <xref:System.ServiceModel.NetNamedPipeBinding> 配置 WAS 承载的服务时，必须满足一个约束条件。 当不同的终结点使用相同的传输时，绑定设置必须在以下的七个属性上相匹配：  
+ 当在 WAS 中承载 WCF 服务时，将按常规方式使用标准绑定。 但是，在使用 <xref:System.ServiceModel.NetTcpBinding> 和 <xref:System.ServiceModel.NetNamedPipeBinding> 配置 WAS 承载的服务时，必须满足一个约束条件。 当不同的终结点使用相同的传输时，绑定设置必须在以下的七个属性上相匹配：  
   
 - ConnectionBufferSize  
   
@@ -35,7 +35,7 @@ ms.locfileid: "79184917"
   
  否则，最先初始化的终结点总是确定这些属性的值，并且以后添加的终结点若与这些设置不匹配，则将引发 <xref:System.ServiceModel.ServiceActivationException>。  
   
- 有关此示例的源副本，请参阅[TCP 激活](../../../../docs/framework/wcf/samples/tcp-activation.md)。  
+ 有关此示例的源副本，请参阅[TCP 激活](../samples/tcp-activation.md)。  
   
 ### <a name="to-create-a-basic-service-hosted-by-was"></a>创建 WAS 承载的基本服务  
   
@@ -74,7 +74,7 @@ ms.locfileid: "79184917"
   
 ### <a name="to-create-a-client-to-use-the-service"></a>创建要使用服务的客户端  
   
-1. 使用[命令行中的 ServiceModel 元数据实用程序工具 （Svcutil.exe）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)从服务元数据生成代码。  
+1. 从命令行使用[Svcutil.exe 元数据实用工具（）](../servicemodel-metadata-utility-tool-svcutil-exe.md)从服务元数据生成代码。  
   
     ```console
     Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
@@ -100,5 +100,5 @@ ms.locfileid: "79184917"
   
 ## <a name="see-also"></a>另请参阅
 
-- [TCP 激活](../../../../docs/framework/wcf/samples/tcp-activation.md)
+- [TCP 激活](../samples/tcp-activation.md)
 - [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

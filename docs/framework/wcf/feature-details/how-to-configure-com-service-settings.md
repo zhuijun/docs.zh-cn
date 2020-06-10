@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - COM+ [WCF], configuring service settings
 ms.assetid: f42a55a8-3af8-4394-9fdd-bf12a93780eb
-ms.openlocfilehash: 31096ca510c868cf43ca6ef60126c98a8832d2c5
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 3fb4b31038845d223248e72d32b3e7413f2aef63
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895124"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597171"
 ---
 # <a name="how-to-configure-com-service-settings"></a>如何：配置 COM+ 服务设置
-使用 COM+ 服务配置工具添加或移除应用程序接口时，应用程序配置文件中的 Web 服务配置将更新。 在 com + 托管模式下，将应用程序 .config 文件放在应用程序根目录中（默认情况\\下%programfiles%\complus applications\ 应用程序 {appid}）。 无论在哪种 Web 宿主模式中，Web.config 文件均放置在指定的 vroot 目录中。  
+使用 COM+ 服务配置工具添加或移除应用程序接口时，应用程序配置文件中的 Web 服务配置将更新。 在 COM + 托管模式下，将应用程序 .config 文件放在应用程序根目录中（ \\ 默认情况下%Programfiles%\complus applications\ 应用程序 {appid}）。 无论在哪种 Web 宿主模式中，Web.config 文件均放置在指定的 vroot 目录中。  
   
 > [!NOTE]
 > 应使用消息签名来防止客户端和服务器之间的消息被篡改。 另外，还应该使用消息或传输层加密来防止客户端和服务器之间的消息发生信息泄漏。 与 Windows Communication Foundation （WCF）服务一样，您应该使用限制来限制并发调用、连接、实例和挂起的操作的数量。 这有助于防止过度消耗资源。 您可以通过设置服务配置文件来指定遏制行为。  
@@ -55,7 +55,7 @@ public interface IFinancesContract : IDisposable
   
 - 将终结点地址从默认的 ApplicationName/ComponentName/InterfaceName 形式更改为更可用的形式。  
   
-- 将服务的命名空间从默认`http://tempuri.org/InterfaceID`窗体修改为更相关的窗体。  
+- 将服务的命名空间从默认 `http://tempuri.org/InterfaceID` 窗体修改为更相关的窗体。  
   
 - 将终结点更改为使用其他传输绑定。  
   
@@ -96,6 +96,6 @@ public interface IFinancesContract : IDisposable
 </configuration>  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [与 COM+ 应用程序集成](../../../../docs/framework/wcf/feature-details/integrating-with-com-plus-applications.md)
+- [与 COM + 应用程序集成](integrating-with-com-plus-applications.md)

@@ -2,15 +2,15 @@
 title: 如何：使用单向和请求-答复协定访问 WCF 服务
 ms.date: 03/30/2017
 ms.assetid: 7e10d3a5-fcf4-4a4b-a8d6-92ee2c988b3b
-ms.openlocfilehash: 533b97892b15c9034679efba6e4da5e72b56099b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9c8bd0d21be1d87d536eb6f943e782fc4da352a8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185145"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597184"
 ---
 # <a name="how-to-access-wcf-services-with-one-way-and-request-reply-contracts"></a>如何：使用单向和请求-答复协定访问 WCF 服务
-以下过程介绍如何访问定义单向协定和请求-回复协定且不使用双工通信模式的 Windows 通信基础 （WCF） 服务。  
+下面的过程介绍如何访问一个 Windows Communication Foundation （WCF）服务，该服务定义单向协定和请求-答复协定，而不使用双工通信模式。  
   
 ### <a name="to-define-the-service"></a>定义服务  
   
@@ -109,7 +109,7 @@ ms.locfileid: "79185145"
   
 ### <a name="to-access-the-service"></a>访问服务  
   
-1. 使用元数据交换终结点地址运行[服务模型元数据实用程序工具 （Svcutil.exe）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)使用以下命令行为服务创建客户端类：`Svcutil http://localhost:8000/Service`[服务模型元数据实用程序工具 （Svcutil.exe）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)生成一组接口和类，如以下示例代码所示。  
+1. 使用元数据交换终结点地址运行 " [svcutil.exe" 元数据实用工具（）](../servicemodel-metadata-utility-tool-svcutil-exe.md) ，以使用以下命令行为服务创建客户端类： `Svcutil http://localhost:8000/Service` "[元数据" 元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)生成一组接口和类，如下面的示例代码所示。  
   
     ```csharp  
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "3.0.0.0")]  
@@ -402,4 +402,4 @@ namespace Microsoft.ServiceModel.Samples
   
 ## <a name="see-also"></a>另请参阅
 
-- [单向服务](../../../../docs/framework/wcf/feature-details/one-way-services.md)
+- [单向服务](one-way-services.md)

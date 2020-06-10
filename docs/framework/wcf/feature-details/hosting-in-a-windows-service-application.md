@@ -2,12 +2,12 @@
 title: 在 Windows 服务应用程序中承载
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: a07aade4619b644dadd1d5acdcb5252b305b94d0
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: ba49d123508ceb8da677d1e9c67721e4f86aa7c3
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964493"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597327"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>在 Windows 服务应用程序中承载
 Windows 服务（以前称为 Windows NT 服务）提供了一种尤其适合于下面这样的应用程序的进程模型：必须在长时间运行的可执行程序中生存，并且不显示任何形式的用户界面。 Windows 服务应用程序的进程生存期由服务控制管理器 (SCM) 管理，您可以通过该管理器启动、停止和暂停 Windows 服务应用程序。 你可以将 Windows 服务进程配置为在计算机启动时自动启动，使其成为适用于 "alwayson" 应用程序的合适宿主环境。 有关 Windows 服务应用程序的详细信息，请参阅[Windows 服务应用程序](https://go.microsoft.com/fwlink/?LinkId=89450)。  
@@ -30,7 +30,7 @@ Windows 服务（以前称为 Windows NT 服务）提供了一种尤其适合于
   
     - 重写 <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> 以打开一个或多个 <xref:System.ServiceModel.ServiceHost> 实例。 单个 Windows 服务应用程序可以托管多个以组的形式启动和停止的 WCF 服务。  
   
-    - 重写 <xref:System.ServiceProcess.ServiceBase.OnStop%2A>，以对在 <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29>期间启动的任何正在运行的 WCF 服务 <xref:System.ServiceModel.ServiceHost> 调用 <xref:System.ServiceModel.Channels.CommunicationObject.Closed>。  
+    - 重写 <xref:System.ServiceProcess.ServiceBase.OnStop%2A> 以调用在 <xref:System.ServiceModel.Channels.CommunicationObject.Closed> <xref:System.ServiceModel.ServiceHost> 中启动的任何正在运行的 WCF 服务 <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> 。  
   
     - 订阅 <xref:System.ServiceModel.Channels.CommunicationObject.Faulted> 的 <xref:System.ServiceModel.ServiceHost> 事件，并使用 <xref:System.ServiceProcess.ServiceController> 类以在出现错误时关闭 Windows 服务应用程序。  
   
@@ -40,7 +40,7 @@ Windows 服务（以前称为 Windows NT 服务）提供了一种尤其适合于
 
 - <xref:System.ServiceProcess>
 - [演练：在组件设计器中创建 Windows 服务应用程序](https://go.microsoft.com/fwlink/?LinkId=94875)
-- [如何：在托管 Windows 服务中承载 WCF 服务](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
-- [Windows 服务主机](../../../../docs/framework/wcf/samples/windows-service-host.md)
+- [如何：在托管 Windows 服务中承载 WCF 服务](how-to-host-a-wcf-service-in-a-managed-windows-service.md)
+- [Windows 服务主机](../samples/windows-service-host.md)
 - [服务应用程序编程体系结构](https://go.microsoft.com/fwlink/?LinkId=94876)
 - [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

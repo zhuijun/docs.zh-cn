@@ -2,12 +2,12 @@
 title: Microsoft.Transactions.TransactionBridge.VolatileParticipantInDoubt
 ms.date: 03/30/2017
 ms.assetid: 3e8fc825-9f22-47e7-9c16-d64ef291c932
-ms.openlocfilehash: 9434f2f902a50a37fb3efee22fd3b18b33af9129
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ab1c2c8afe3a66536810a614cc6deac12519cb9b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61997445"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599628"
 ---
 # <a name="microsofttransactionstransactionbridgevolatileparticipantindoubt"></a>Microsoft.Transactions.TransactionBridge.VolatileParticipantInDoubt
 协议服务从无法识别的可变参与者接收到已准备或重播消息。 已向参与者返回错误，声明事务的结果不确定。  
@@ -18,8 +18,8 @@ ms.locfileid: "61997445"
 ## <a name="troubleshooting"></a>疑难解答  
  调查来自可变参与者的最新消息的可能原因。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [跟踪](../../../../../docs/framework/wcf/diagnostics/tracing/index.md)
-- [使用跟踪来排除应用程序故障](../../../../../docs/framework/wcf/diagnostics/tracing/using-tracing-to-troubleshoot-your-application.md)
-- [管理和诊断](../../../../../docs/framework/wcf/diagnostics/index.md)
+- [跟踪](index.md)
+- [使用跟踪来排除应用程序故障](using-tracing-to-troubleshoot-your-application.md)
+- [管理和诊断](../index.md)

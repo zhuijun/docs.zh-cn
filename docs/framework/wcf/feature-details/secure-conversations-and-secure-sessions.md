@@ -2,21 +2,21 @@
 title: 安全对话和安全会话
 ms.date: 03/30/2017
 ms.assetid: 48cb104a-532d-40ae-aa57-769dae103fda
-ms.openlocfilehash: 887b2e6e6553a910de046950514869907519cf35
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 3245c062db003cc387eff7af92fabe1554311c73
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746462"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590223"
 ---
 # <a name="secure-conversations-and-secure-sessions"></a>安全对话和安全会话
 Windows Communication Foundation （WCF）的一项功能是能够在两个终结点之间建立安全会话，这些终结点彼此进行身份验证，并同意加密和数字签名过程。 例如，服务终结点可能要求客户端终结点发送一个基于 X.509 证书的安全令牌，以便进行身份验证。 在对客户端进行身份验证之后，服务终结点将向客户端返回一个安全上下文令牌 (SCT)，该令牌随后将用于保护该会话中的所有后续消息。 通过建立这一安全会话，可使两个终结点之间交换的一组消息更有效率，因为 SCT 具有对称密钥。 在生成数字签名或加密一组数据时，与对称密钥相比，作为 X.509 证书基础的非对称密钥明显需要更多的计算能力。  
   
- 启动策略（在[ws-securitypolicy](https://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/ws-securitypolicy-1.2-spec-os.html)标准的6.2.7 节中定义）包含用于保护通道和在 RST/SCT 和 RSTR/sct 交换之前对客户端进行身份验证的消息安全断言。 某些 WCF 标准绑定具有一个 `Security.Message.EstablishSecurityContext` 属性，该属性控制是否使用安全对话。 使用自定义绑定时，通过在配置文件中[\<secureConversationBootstrap >](../../../../docs/framework/configure-apps/file-schema/wcf/secureconversationbootstrap.md)或通过在代码中调用 <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%2A>，可以嵌套安全绑定元素。  
+ 启动策略（在[ws-securitypolicy](https://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702/ws-securitypolicy-1.2-spec-os.html)标准的6.2.7 节中定义）包含用于保护通道和在 RST/SCT 和 RSTR/sct 交换之前对客户端进行身份验证的消息安全断言。 某些 WCF 标准绑定具有一个 `Security.Message.EstablishSecurityContext` 属性，该属性控制是否使用安全对话。 使用自定义绑定时，可以通过 [\<secureConversationBootstrap>](../../configure-apps/file-schema/wcf/secureconversationbootstrap.md) 在配置文件中或通过 <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%2A> 在代码中调用来嵌套安全绑定元素，来指示启动。  
   
- 有关会话的详细信息，请参阅[使用会话](../../../../docs/framework/wcf/using-sessions.md)。  
+ 有关会话的详细信息，请参阅[使用会话](../using-sessions.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [会话、实例化和并发](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)
-- [如何：创建要求会话的服务](../../../../docs/framework/wcf/feature-details/how-to-create-a-service-that-requires-sessions.md)
+- [会话、实例化和并发](sessions-instancing-and-concurrency.md)
+- [如何：创建要求会话的服务](how-to-create-a-service-that-requires-sessions.md)

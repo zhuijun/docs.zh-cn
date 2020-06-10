@@ -2,12 +2,12 @@
 title: WCF Web HTTP 错误处理
 ms.date: 03/30/2017
 ms.assetid: 02891563-0fce-4c32-84dc-d794b1a5c040
-ms.openlocfilehash: 34912bccaefb645541f47d083c5c307b20ff77c5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b1d41bebafa2795d390b120ad84475417389479b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975960"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598640"
 ---
 # <a name="wcf-web-http-error-handling"></a>WCF Web HTTP 错误处理
 Windows Communication Foundation （WCF） Web HTTP 错误处理使你能够从 WCF Web HTTP 服务返回错误，该服务指定 HTTP 状态代码，并使用与操作相同的格式（例如，XML 或 JSON）返回错误详细信息。  
@@ -48,14 +48,14 @@ public string Operation2()
   
 - 通过访问 <xref:System.ServiceModel.Web.OutgoingWebResponseContext.Format%2A> 得到的 <xref:System.ServiceModel.Web.OutgoingWebResponseContext> 属性值。  
   
- 有关这些值如何影响操作格式的详细信息，请参阅[WCF WEB HTTP 格式设置](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)。  
+ 有关这些值如何影响操作格式的详细信息，请参阅[WCF WEB HTTP 格式设置](wcf-web-http-formatting.md)。  
   
  <xref:System.ServiceModel.Web.WebFaultException> 是一个 <xref:System.ServiceModel.FaultException>，因此可用作公开 SOAP 终结点和 Web HTTP 终结点的服务的错误异常编程模型。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [WCF Web HTTP 编程模型](../../../../docs/framework/wcf/feature-details/wcf-web-http-programming-model.md)
-- [WCF Web HTTP 格式设置](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)
-- [定义和指定错误](../../../../docs/framework/wcf/defining-and-specifying-faults.md)
-- [处理异常和错误](../../../../docs/framework/wcf/extending/handling-exceptions-and-faults.md)
-- [发送和接收错误](../../../../docs/framework/wcf/sending-and-receiving-faults.md)
+- [WCF Web HTTP 编程模型](wcf-web-http-programming-model.md)
+- [WCF Web HTTP 格式设置](wcf-web-http-formatting.md)
+- [定义和指定错误](../defining-and-specifying-faults.md)
+- [处理异常和错误](../extending/handling-exceptions-and-faults.md)
+- [发送和接收错误](../sending-and-receiving-faults.md)

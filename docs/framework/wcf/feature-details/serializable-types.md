@@ -2,12 +2,12 @@
 title: 可序列化类型
 ms.date: 03/30/2017
 ms.assetid: f1c8539a-6a79-4413-b294-896f0957b2cd
-ms.openlocfilehash: 0913d523e93505934b1cf231284e356baba5ded3
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: e65fcb93c5c36bb289b825cef58b3adc6f5155f5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591673"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84586099"
 ---
 # <a name="serializable-types"></a>可序列化类型
 默认情况下，<xref:System.Runtime.Serialization.DataContractSerializer> 序列化所有公共可见类型。 类型的所有公共读/写属性和字段均被序列化。  
@@ -36,12 +36,12 @@ ms.locfileid: "65591673"
 - 若要使公共成员、属性 (Property) 或字段“退出”序列化过程，请向该成员应用 <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> 属性 (Attribute)。  
   
 ## <a name="inheritance"></a>继承  
- 未标记类型（没有 <xref:System.Runtime.Serialization.DataContractAttribute> 属性的类型）可以从具有此属性的类型继承；但是反过来则不允许：具有该属性的类型不能从未标记类型继承。 实施此规则主要是为了确保向后兼容早期版本的.NET Framework 中编写的代码。  
+ 未标记类型（没有 <xref:System.Runtime.Serialization.DataContractAttribute> 属性的类型）可以从具有此属性的类型继承；但是反过来则不允许：具有该属性的类型不能从未标记类型继承。 此规则主要用于确保向后兼容在 .NET Framework 早期版本中编写的代码。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute>
 - <xref:System.Runtime.Serialization.DataContractAttribute>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [数据协定序列化程序支持的类型](../../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
+- [数据协定序列化程序支持的类型](types-supported-by-the-data-contract-serializer.md)
