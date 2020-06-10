@@ -1,5 +1,6 @@
 ---
 title: 在类和结构之间选择
+description: 了解如何确定是将类型设计为类，还是将类型设计为结构。 了解引用类型和值类型在 .NET 中的不同之处。
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - classes [.NET Framework], vs. structures
 - type design guidelines, classes
 ms.assetid: f8b8ec9b-0ba7-4dea-aadf-a93395cd804f
-ms.openlocfilehash: 4b4a619214fe6ba49f21a88cd132dcb3f2704608
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9d757e77292c1226fbe2328cce082033ae8f7003
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280356"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662597"
 ---
 # <a name="choosing-between-class-and-struct"></a>在类和结构之间选择
 每个框架设计器所面临的一项基本设计决策是：将类型设计为类（引用类型）还是结构（值类型）。 充分了解引用类型和值类型的行为差异对于做出此选择至关重要。
