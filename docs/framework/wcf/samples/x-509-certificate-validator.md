@@ -2,12 +2,12 @@
 title: X.509 证书验证程序
 ms.date: 03/30/2017
 ms.assetid: 3b042379-02c4-4395-b927-e57c842fd3e0
-ms.openlocfilehash: ba73381bb6211dcbd1ddad1457f9ae8611008d43
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 32d99b93ef014967aa04bc70f73fbd2ebcfe2c60
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141215"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594824"
 ---
 # <a name="x509-certificate-validator"></a>X.509 证书验证程序
 
@@ -23,7 +23,7 @@ ms.locfileid: "82141215"
 
 - 如何使用服务器的 X.509 证书对服务器进行身份验证。
 
-服务公开一个终结点，以便与使用配置文件 App.config 定义的服务进行通信。终结点由地址、绑定和协定组成。 绑定配置为使用默认为使用`wsHttpBinding` `WSSecurity`和客户端证书身份验证的标准。 服务行为指定对客户端 X.509 证书进行验证的“自定义”模式以及验证程序类的类型。 该行为还使用 serviceCertificate 元素指定服务器证书。 服务器证书必须包含与[ \<serviceCertificate>](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) `findValue`中相同的值`SubjectName` 。
+服务公开一个终结点，以便与使用配置文件 App.config 定义的服务进行通信。终结点由地址、绑定和协定组成。 绑定配置为使用 `wsHttpBinding` 默认为使用 `WSSecurity` 和客户端证书身份验证的标准。 服务行为指定对客户端 X.509 证书进行验证的“自定义”模式以及验证程序类的类型。 该行为还使用 serviceCertificate 元素指定服务器证书。 服务器证书必须包含与中相同的值 `SubjectName` `findValue` [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) 。
 
 ```xml
   <system.serviceModel>
@@ -305,7 +305,7 @@ serviceHost.Credentials.ClientCertificate.Authentication.CustomCertificateValida
 
 #### <a name="to-set-up-and-build-the-sample"></a>设置和生成示例
 
-1. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+1. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
 
 2. 若要用单一计算机配置或跨计算机配置来运行示例，请按照下列说明进行操作。
 
@@ -332,13 +332,13 @@ serviceHost.Credentials.ClientCertificate.Authentication.CustomCertificateValida
 
 4. 将客户端程序文件复制到客户端计算机上的客户端目录中。 另外，将 Setup.bat、Cleanup.bat 和 ImportServiceCert.bat 文件复制到客户端上。
 
-5. 在服务器上，在`setup.bat service`使用管理员特权打开的 Visual Studio 开发人员命令提示中运行。 使用`setup.bat` `service`参数运行将使用计算机的完全限定的域名创建一个服务证书，并将服务证书导出到名为的文件。
+5. 在服务器上， `setup.bat service` 在使用管理员特权打开的 Visual Studio 开发人员命令提示中运行。 使用参数运行将使用 `setup.bat` `service` 计算机的完全限定的域名创建一个服务证书，并将服务证书导出到名为的文件。
 
-6. `findValue` [编辑\<serviceCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md)以反映新的证书名称（在>中的属性中），该名称与计算机的完全限定域名相同。 同时将\<service>/\<baseAddresses> 元素中的计算机名更改为服务计算机的完全限定名称。
+6. 编辑 setup.exe，以反映新的证书名称（在的属性中），该名称与 `findValue` [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) 计算机的完全限定域名相同。 还要将元素中的计算机名 \<service> / \<baseAddresses> 从 localhost 更改为服务计算机的完全限定名称。
 
 7. 将服务目录中的 Service.cer 文件复制到客户端计算机上的客户端目录中。
 
-8. 在客户端上， `setup.bat client`在使用管理员特权打开的 Visual Studio 开发人员命令提示中运行。 如果使用 `setup.bat` 自变量运行 `client`，则会创建一个名为 client.com 的客户端证书，并将此客户端证书导出到名为 Client.cer 的文件中。
+8. 在客户端上， `setup.bat client` 在使用管理员特权打开的 Visual Studio 开发人员命令提示中运行。 如果使用 `setup.bat` 自变量运行 `client`，则会创建一个名为 client.com 的客户端证书，并将此客户端证书导出到名为 Client.cer 的文件中。
 
 9. 在客户端计算机上的 Client.exe.config 文件中，更改终结点的地址值，使其与服务的新地址相匹配。 通过用服务器的完全限定域名替换 localhost 来执行此操作。
 

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-ms.openlocfilehash: 698a5134683341fedf2a37f7d6383770e14c232c
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: dbd51abbc30b1010f7c4f206aad9a773eca0a714
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964805"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593173"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>如何：在托管 Windows 服务中承载 WCF 服务
 
@@ -18,7 +18,7 @@ ms.locfileid: "75964805"
 
 可以使用 Microsoft 管理控制台 (MMC) 中的 Microsoft.ManagementConsole.SnapIn 管理 Windows 服务，并且可以将其配置为在系统启动时自动启动。 此宿主选项包括注册作为托管 Windows 服务承载 WCF 服务的应用程序域（AppDomain），以便服务的进程生存期由 Windows 服务的服务控制管理器（SCM）控制。
 
-服务代码包括服务协定的服务实现、Windows 服务类和安装程序类。 `CalculatorService`的服务实现类是 WCF 服务。 `CalculatorWindowsService` 是 Windows 服务。 要符合 Windows 服务的要求，该类继承自 `ServiceBase` 并实现 `OnStart` 和 `OnStop` 方法。 在 `OnStart` 中，将为 <xref:System.ServiceModel.ServiceHost> 类型创建 `CalculatorService` 并打开它。 在 `OnStop` 中，停止并释放服务。 主机还负责提供服务主机基址，该基址已在应用程序设置中进行设置。 安装程序类继承自 <xref:System.Configuration.Install.Installer>，允许程序通过 Installutil.exe 工具安装为 Windows 服务。
+服务代码包括服务协定的服务实现、Windows 服务类和安装程序类。 服务实现类 `CalculatorService` 是 WCF 服务。 `CalculatorWindowsService` 是 Windows 服务。 要符合 Windows 服务的要求，该类继承自 `ServiceBase` 并实现 `OnStart` 和 `OnStop` 方法。 在 `OnStart` 中，将为 <xref:System.ServiceModel.ServiceHost> 类型创建 `CalculatorService` 并打开它。 在 `OnStop` 中，停止并释放服务。 主机还负责提供服务主机基址，该基址已在应用程序设置中进行设置。 安装程序类继承自 <xref:System.Configuration.Install.Installer>，允许程序通过 Installutil.exe 工具安装为 Windows 服务。
 
 ## <a name="construct-the-service-and-provide-the-hosting-code"></a>构造服务并提供主机代码
 
@@ -26,7 +26,7 @@ ms.locfileid: "75964805"
 
 2. 将 Program.cs 重命名为 Service.cs。
 
-3. 将命名空间更改为 `Microsoft.ServiceModel.Samples`。
+3. 将命名空间更改为 `Microsoft.ServiceModel.Samples` 。
 
 4. 添加对下列程序集的引用：
 
@@ -112,7 +112,7 @@ ms.locfileid: "75964805"
 
      右键单击 "**解决方案资源管理器**中的 app.config 文件，然后选择"**属性**"。 在 "**复制到输出目录**" 下，选择 "**如果较新则复制**"
 
-     此示例显式指定配置文件中的终结点。 如果您不希望向服务添加任何终结点，则运行时为您添加默认终结点。 在此示例中，由于服务的 <xref:System.ServiceModel.Description.ServiceMetadataBehavior> 设置为 `true`，因此服务还启用了发布元数据。 有关默认终结点、绑定和行为的详细信息，请参阅[简化配置](../../../../docs/framework/wcf/simplified-configuration.md)和 [WCF 服务的简化配置](../../../../docs/framework/wcf/samples/simplified-configuration-for-wcf-services.md)。
+     此示例显式指定配置文件中的终结点。 如果您不希望向服务添加任何终结点，则运行时为您添加默认终结点。 在此示例中，由于服务的 <xref:System.ServiceModel.Description.ServiceMetadataBehavior> 设置为 `true`，因此服务还启用了发布元数据。 有关默认终结点、绑定和行为的详细信息，请参阅[简化配置](../simplified-configuration.md)和 [WCF 服务的简化配置](../samples/simplified-configuration-for-wcf-services.md)。
 
 ## <a name="install-and-run-the-service"></a>安装并运行服务
 
@@ -135,7 +135,7 @@ ms.locfileid: "75964805"
 
 ## <a name="see-also"></a>另请参阅
 
-- [简化配置](../../../../docs/framework/wcf/simplified-configuration.md)
-- [在托管应用程序中承载](../../../../docs/framework/wcf/feature-details/hosting-in-a-managed-application.md)
-- [托管服务](../../../../docs/framework/wcf/hosting-services.md)
+- [简化配置](../simplified-configuration.md)
+- [在托管应用程序中承载](hosting-in-a-managed-application.md)
+- [承载服务](../hosting-services.md)
 - [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))

@@ -9,32 +9,32 @@ helpviewer_keywords:
 - instances [WCF]
 - sessions [WCF]
 ms.assetid: 143951b3-3aa0-4540-b4b7-d33e77e874a1
-ms.openlocfilehash: 9a2cd06c4c5a73d9fb5c4c7f09632e10c3eb0d87
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 910ad952192243c6aa8a79417ad711d8c2a4ba2e
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61991154"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590535"
 ---
 # <a name="reliable-sessions"></a>可靠会话
 
-本部分介绍哪些 Windows Communication Foundation (WCF) 是可靠会话、 它的用途是什么，如何和何时使用它，哪些绑定配置支持它，以及有关最佳实践。 下表汇总了有关本节中要点和相关主题的详细信息。
+本部分介绍什么是 Windows Communication Foundation （WCF）可靠会话、其用途、使用方式、使用方式、使用的绑定配置以及最佳实践的指针。 下表汇总了有关本节中要点和相关主题的详细信息。
 
-可靠会话 WCF 提供了确保终结点之间发送的消息通过 SOAP 或传输媒介传输，并在其中发送的顺序传递一次和 （可选） 的功能。
+可靠会话 WCF 提供的功能可确保在终结点之间发送的消息在 SOAP 或传输中介之间传输，并且只传递一次，并根据发送的相同顺序进行传递。
 
-若要 WCF 应用程序中使用可靠会话，请使用 WCF 中默认情况下或作为一个选项，支持可靠会话的系统提供绑定之一，或创建您自己的自定义绑定的支持会话。
+若要对 WCF 应用程序使用可靠会话，请使用 WCF 中某个系统提供的绑定（默认情况下支持可靠会话）或作为选项，或创建你自己的支持会话的自定义绑定。
 
 ## <a name="in-this-section"></a>本节内容
 
-[可靠会话概述](../../../../docs/framework/wcf/feature-details/reliable-sessions-overview.md)描述可靠会话、 何时使用这些不同的绑定支持可靠会话，以及它们如何工作。
+[可靠会话概述](reliable-sessions-overview.md)介绍可靠会话、何时使用它们、支持可靠会话的不同绑定，以及它们的工作方式。
 
-[如何：Exchange 消息内可靠会话](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-within-a-reliable-session.md)介绍如何创建通过 HTTP 使用在配置中指定的自定义绑定可靠会话。
+[如何：在可靠会话内交换消息](how-to-exchange-messages-within-a-reliable-session.md)介绍如何使用配置中指定的自定义绑定通过 HTTP 创建可靠会话。
 
-[如何：保护可靠会话内的消息](../../../../docs/framework/wcf/feature-details/how-to-secure-messages-within-reliable-sessions.md)介绍如何保护可靠会话。
+[如何：在可靠会话内保护消息](how-to-secure-messages-within-reliable-sessions.md)介绍如何保护可靠会话。
 
-[如何：使用 HTTPS 创建自定义可靠会话绑定](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-reliable-session-binding-with-https.md)介绍如何创建通过 HTTPS 的可靠会话。
+[如何：使用 HTTPS 创建自定义可靠会话绑定](how-to-create-a-custom-reliable-session-binding-with-https.md)介绍如何通过 HTTPS 创建可靠会话。
 
-[可靠会话的最佳实践](../../../../docs/framework/wcf/feature-details/best-practices-for-reliable-sessions.md)介绍了一些与使用可靠会话相关联的最佳实践。
+[可靠会话的最佳做法](best-practices-for-reliable-sessions.md)介绍与使用可靠会话相关的一些最佳实践。
 
 ## <a name="reference"></a>参考
 
@@ -42,5 +42,5 @@ ms.locfileid: "61991154"
 
 ## <a name="see-also"></a>请参阅
 
-- [队列和可靠会话](../../../../docs/framework/wcf/feature-details/queues-and-reliable-sessions.md)
-- [会话、实例化和并发](../../../../docs/framework/wcf/feature-details/sessions-instancing-and-concurrency.md)
+- [队列和可靠会话](queues-and-reliable-sessions.md)
+- [会话、实例化和并发](sessions-instancing-and-concurrency.md)

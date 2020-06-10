@@ -2,12 +2,12 @@
 title: 如何：将服务名字对象与元数据交换协定一起使用
 ms.date: 03/30/2017
 ms.assetid: c41a07e5-cb9d-45d6-9ea4-34511e227faf
-ms.openlocfilehash: 8894fdc4fd085b9d55a8fc25043e5258c306024c
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 04a940a6e8f010e5cd851684c5fc62bab2a1a034
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84143473"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84601161"
 ---
 # <a name="how-to-use-a-service-moniker-with-metadata-exchange-contracts"></a>如何：将服务名字对象与元数据交换协定一起使用
 开发一些新的 WCF 服务后，你可能会决定希望能够从脚本或 Visual Basic 6.0 应用程序调用这些服务。 一种方法是生成 WCF 客户端程序集，使用 COM 注册该程序集，将程序集安装到 GAC 中，然后从 Visual Basic 代码引用 COM 类型。 分发应用程序时，还必须分发 WCF 客户端程序集。 然后，用户必须使用 COM 注册 WCF 客户端程序集，并且将该程序集放置在 GAC 中。 WCF COM 互操作还允许您在不依赖 WCF 客户端程序集的情况下进行相同的服务调用。 利用 WCF 名字对象，您可以通过指定元数据交换（Mex）终结点 URI，从任何与 COM 兼容的语言（Visual Basic、VBScript、Visual Basic for Applications （VBA）等）调用任何 WCF 服务。 本主题说明如何使用指定 Mex 终结点的 WCF 名字对象调用入门 WCF 示例。  
@@ -34,12 +34,12 @@ ms.locfileid: "84143473"
 3. 运行 Visual Basic 应用程序或脚本。  
   
     > [!NOTE]
-    > 您所调用的服务必须公开标记的 Mex 终结点，以便能够从服务中读取元数据。 有关详细信息，请参阅[如何：使用配置文件发布服务的元数据](../../../../docs/framework/wcf/feature-details/how-to-publish-metadata-for-a-service-using-a-configuration-file.md)。  
+    > 您所调用的服务必须公开标记的 Mex 终结点，以便能够从服务中读取元数据。 有关详细信息，请参阅[如何：使用配置文件发布服务的元数据](how-to-publish-metadata-for-a-service-using-a-configuration-file.md)。  
   
     > [!NOTE]
     > 如果标记格式不正确，或如果服务不可用，则对 `GetObject` 的调用将返回一个错误，指示“语法无效”。  如果您收到此错误，请确保所使用的标记正确无误且服务可用。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [如何：使用未注册的 Windows Communication Foundation 服务名字对象](../../../../docs/framework/wcf/feature-details/use-the-wcf-service-moniker-without-registration.md)
-- [如何：将服务名字对象用于 WSDL 协定](../../../../docs/framework/wcf/feature-details/how-to-use-a-service-moniker-with-wsdl-contracts.md)
+- [如何：使用未注册的 Windows Communication Foundation 服务名字对象](use-the-wcf-service-moniker-without-registration.md)
+- [如何：将服务名字对象用于 WSDL 协定](how-to-use-a-service-moniker-with-wsdl-contracts.md)

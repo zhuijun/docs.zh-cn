@@ -2,12 +2,12 @@
 title: 安装“消息队列 (MSMQ)”
 ms.date: 03/30/2017
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-ms.openlocfilehash: 8ecbd07adfb6bfb4e9898f9b8508809480d17e16
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 1bf79ed5dbcb9f2ace903260cc440e77df3aef09
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921105"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84592289"
 ---
 # <a name="installing-message-queuing-msmq"></a>安装“消息队列 (MSMQ)”
 以下过程介绍如何安装“消息队列 4.0”和“消息队列 3.0”。  
@@ -31,7 +31,7 @@ ms.locfileid: "76921105"
   
 #### <a name="to-install-message-queuing-40-on-windows-7-or-windows-vista"></a>在 Windows 7 或 Windows Vista 上安装消息队列 4.0  
   
-1. 打开“控制面板”。  
+1. 打开“控制面板”  
   
 2. 单击 "**程序**"，然后在 "**程序和功能**" 下，单击 "**打开和关闭 Windows 功能**"。  
   
@@ -41,13 +41,13 @@ ms.locfileid: "76921105"
   
     - MSMQ HTTP 支持。  
   
-4. 单击“确定”。  
+4. 单击 **“确定”** 。  
   
 5. 如果系统提示您重新启动计算机，请单击 **"确定"** 以完成安装。  
   
 #### <a name="to-install-message-queuing-30-on-windows-xp-and-windows-server-2003"></a>在 Windows XP 和 Windows Server 2003 上安装消息队列 3.0  
   
-1. 打开“控制面板”。  
+1. 打开“控制面板”  
   
 2. 单击 "**添加删除程序**"，然后单击 "**添加 Windows 组件**"。  
   
@@ -64,4 +64,4 @@ ms.locfileid: "76921105"
   
 ## <a name="see-also"></a>另请参阅
 
-- [设置说明](../../../../docs/framework/wcf/samples/set-up-instructions.md)
+- [设置说明](set-up-instructions.md)

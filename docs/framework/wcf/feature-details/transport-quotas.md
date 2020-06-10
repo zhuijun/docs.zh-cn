@@ -4,33 +4,33 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - transport quotas [WCF]
 ms.assetid: 3e71dd3d-f981-4d9c-9c06-ff8abb61b717
-ms.openlocfilehash: a40fa9beec1eabeb02c6ccc4e2ab8179aa49288c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: fca5fbeffb560f848edda6421301785f02547d2c
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64585776"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84585696"
 ---
 # <a name="transport-quotas"></a>传输配额
 传输配额是一种策略机制，用于决定连接何时正在占用过多资源。 配额是一种硬性限制，它在超出配额值时立即禁止使用其他资源。 传输配额可防止恶意或无意的拒绝服务攻击。  
   
- Windows Communication Foundation (WCF) 传输的默认配额值基于资源的保守分配。 这些默认值适合于开发环境和小型安装方案。 如果某个安装耗尽了资源或是连接受到限制，则无论是否还有其他资源可用，服务管理员都应检查传输配额并调整各个配额值。  
+ Windows Communication Foundation （WCF）传输的默认配额值基于资源的保守分配。 这些默认值适合于开发环境和小型安装方案。 如果某个安装耗尽了资源或是连接受到限制，则无论是否还有其他资源可用，服务管理员都应检查传输配额并调整各个配额值。  
   
 ## <a name="types-of-transport-quotas"></a>传输配额的类型  
  WCF 传输具有三种类型的配额：  
   
-- *超时*缓解的拒绝服务攻击的时间长时间占用资源。  
+- *超时*可降低依赖于长时间占用资源的拒绝服务攻击。  
   
-- *内存分配限制*防止单个连接耗尽系统内存并拒绝对其他连接的服务。  
+- *内存分配限制*可防止单一连接耗尽系统内存，并拒绝服务连接到其他连接。  
   
-- *集合大小限制*绑定间接分配内存或限量供应的资源的消耗。  
+- *集合大小限制会限制*间接分配内存或处于有限供应中的资源消耗。  
   
 ## <a name="transport-quota-descriptions"></a>传输配额说明  
- 本部分介绍可用于标准的 WCF 传输的传输配额：HTTP (S)、 TCP/IP 和命名的管道。 自定义传输可以公开它们自己的、未包含在此列表中的可配置配额。 若要了解自定义传输的配额，请参考自定义传输的文档。  
+ 本部分介绍可用于标准 WCF 传输的传输配额： HTTP （S）、TCP/IP 和命名管道。 自定义传输可以公开它们自己的、未包含在此列表中的可配置配额。 若要了解自定义传输的配额，请参考自定义传输的文档。  
   
  每个配额设置都有类型、最小值和默认值。 配额的最大值由其类型限制。 由于计算机的限制，并不总是可以将配额设置为它的最大值。  
   
-|名称|类型|最小<br /><br /> 值|默认<br /><br /> 值|描述|  
+|名称|类型|最小值<br /><br /> value|默认<br /><br /> value|描述|  
 |----------|----------|--------------------|-----------------------|-----------------|  
 |`ChannelInitializationTimeout`|TimeSpan|1 个计时周期|5 秒|初始读取过程中等待连接发送前导码的最长时间。 此数据在进行身份验证前接收。 此设置通常要比 `ReceiveTimeout` 配额值小得多。|  
 |`CloseTimeout`|TimeSpan|0|1 分钟|在传输引发异常之前等待连接关闭的最长时间。|  
@@ -52,7 +52,7 @@ ms.locfileid: "64585776"
  在通过绑定或配置进行设置时，传输配额 `MaxPendingConnections` 和 `MaxOutboundConnectionsPerEndpoint` 被组合为单个传输配额，称为 `MaxConnections`。 只有使用绑定元素才能分别设置这些配额值。 `MaxConnections` 传输配额具有相同的最小值和默认值。  
   
 ## <a name="setting-transport-quotas"></a>设置传输配额  
- 传输配额通过传输绑定元素、传输绑定、应用程序配置或主机策略进行设置。 本文档不涉及通过宿主策略设置传输的内容。 若要了解宿主策略配额的设置，请参考基础传输的文档。 [配置 HTTP 和 HTTPS](../../../../docs/framework/wcf/feature-details/configuring-http-and-https.md)主题描述了 Http.sys 驱动程序的配额设置。 有关对 HTTP、TCP/IP 和命名管道连接配置 Windows 限制的更多信息，请参见 Microsoft 知识库。  
+ 传输配额通过传输绑定元素、传输绑定、应用程序配置或主机策略进行设置。 本文档不涉及通过宿主策略设置传输的内容。 若要了解宿主策略配额的设置，请参考基础传输的文档。 [配置 http 和 HTTPS](configuring-http-and-https.md)主题介绍了 http.sys 驱动程序的配额设置。 有关对 HTTP、TCP/IP 和命名管道连接配置 Windows 限制的更多信息，请参见 Microsoft 知识库。  
   
  其他类型的配额间接应用于传输。 传输用来将消息转换为字节的消息编码器可以具有它自己的配额设置。 但是，这些配额独立于所使用的传输类型。  
   
@@ -107,7 +107,7 @@ ms.locfileid: "64585776"
 ### <a name="controlling-transport-quotas-from-configuration"></a>通过配置控制传输配额  
  应用程序配置可以设置与直接访问绑定上的属性一样的传输配额。 在配置文件中，传输配额的名称总是以小写字母开头。 例如，绑定上的 `CloseTimeout` 属性对应于配置中的 `closeTimeout` 设置，而绑定上的 `MaxConnections` 属性对应于配置中的 `maxConnections` 设置。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>
 - <xref:System.ServiceModel.Channels.HttpTransportBindingElement>

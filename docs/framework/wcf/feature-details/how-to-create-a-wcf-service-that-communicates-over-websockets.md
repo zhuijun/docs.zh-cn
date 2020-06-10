@@ -1,15 +1,15 @@
 ---
-title: 如何创建通过 WebSocket 进行通信的 WCF 服务
+title: 如何：创建通过 WebSocket 进行通信的 WCF 服务
 ms.date: 03/30/2017
 ms.assetid: bafbbd89-eab8-4e9a-b4c3-b7b0178e12d8
-ms.openlocfilehash: d420ac8fcb98ddec195093be8ae25be37443da4e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5aade8e3fb2049521ed06f5f1a148be2e4636e36
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184974"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84597106"
 ---
-# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>如何创建通过 WebSocket 进行通信的 WCF 服务
+# <a name="how-to-create-a-wcf-service-that-communicates-over-websockets"></a>如何：创建通过 WebSocket 进行通信的 WCF 服务
 WCF 服务和客户端可以使用 <xref:System.ServiceModel.NetHttpBinding> 绑定通过 WebSocket 进行通信。  当 <xref:System.ServiceModel.NetHttpBinding> 确定服务协定定义回调协定时，将使用 WebSocket。 本主题描述如何实现使用 <xref:System.ServiceModel.NetHttpBinding> 通过 WebSocket 进行通信的 WCF 服务和客户端。  
   
 ### <a name="define-the-service"></a>定义服务  
@@ -320,5 +320,5 @@ namespace Client
   
 ## <a name="see-also"></a>另请参阅
 
-- [同步和异步操作](../../../../docs/framework/wcf/synchronous-and-asynchronous-operations.md)
-- [使用 NetHttpBinding](../../../../docs/framework/wcf/feature-details/using-the-nethttpbinding.md)
+- [同步和异步操作](../synchronous-and-asynchronous-operations.md)
+- [使用 NetHttpBinding](using-the-nethttpbinding.md)

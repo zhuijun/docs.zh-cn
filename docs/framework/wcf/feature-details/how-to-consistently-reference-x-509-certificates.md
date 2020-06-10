@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF], referencing X.509 certificates
 ms.assetid: a6de1c63-e450-4640-ad08-ad7302dbfbfc
-ms.openlocfilehash: 2214517784d311cbd0fe487fd6db2cbf48189955
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c13dd5ebb18df62ce64fc74da53f3f5a2e8cadb7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662789"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599082"
 ---
 # <a name="how-to-consistently-reference-x509-certificates"></a>如何：以一致的方式引用 X.509 证书
-可以采用下列多种方式来标识证书：证书哈希、颁发者和序列号或者使用者密钥标识符 (SKI)。 SKI 为证书的使用者公钥提供唯一标识，通常用于处理 XML 数字签名。 SKI 值通常为形式的 X.509 证书的一部分*X.509 证书扩展*。 Windows Communication Foundation (WCF) 具有一个默认*引用样式*如果证书中缺少 SKI 扩展，则使用颁发者和序列号。 如果证书中包含 SKI 扩展，该默认引用样式将使用 SKI 来指向证书。 如果在应用程序开发，使用的证书不使用使用 SKI 扩展的证书的 SKI 扩展的交换机中，使用 WCF 生成消息中的引用样式也会更改。  
+可以采用下列多种方式来标识证书：证书哈希、颁发者和序列号或者使用者密钥标识符 (SKI)。 SKI 为证书的使用者公钥提供唯一标识，通常用于处理 XML 数字签名。 SKI 值通常是 x.509 证书的一部分作为*x.509 证书扩展*。 如果证书中缺少 SKI 扩展，Windows Communication Foundation （WCF）具有默认的*引用样式*，该样式使用颁发者和序列号。 如果证书中包含 SKI 扩展，该默认引用样式将使用 SKI 来指向证书。 如果正在开发应用程序，则从使用不使用 SKI 扩展的证书到使用 SKI 扩展的证书的方式切换，也会更改在 WCF 生成的消息中使用的引用样式。  
   
  如果无论是否存在 SKI 扩展，都需要使用一致的引用样式，则可以配置所需的引用样式，如下面的代码中所示。  
   
@@ -36,6 +36,6 @@ ms.locfileid: "64662789"
   
 - <xref:System.ServiceModel.Security.Tokens>  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [使用证书](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
+- [使用证书](working-with-certificates.md)

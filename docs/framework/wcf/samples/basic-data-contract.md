@@ -4,16 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Data Contract
 ms.assetid: b124e9e0-cb73-4ae0-b9c3-e6cdf5eced98
-ms.openlocfilehash: fbcc93826ebe2857345823176ddc0054b7e62eea
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 66df6a1d7c2df17e79925490644891c0a536b1cd
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716110"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84585488"
 ---
 # <a name="basic-data-contract"></a>基本数据协定
 
-本示例演示如何实现数据协定。 数据协定允许您在服务中传入和传出结构化数据。 此示例基于[入门](../../../../docs/framework/wcf/samples/getting-started-sample.md)，但使用复数而不是基本数值类型。
+本示例演示如何实现数据协定。 数据协定允许您在服务中传入和传出结构化数据。 此示例基于[入门](getting-started-sample.md)，但使用复数而不是基本数值类型。
 
 在本示例中，服务是由 Internet 信息服务 (IIS) 承载的，客户端是一个控制台应用程序 (.exe)。
 
@@ -96,7 +96,7 @@ public class CalculatorService : ICalculator
 }
 ```
 
-客户端实现也使用复数。 服务协定和数据协定都是在源文件 generatedClient.cs 中定义的，该文件由服务元数据中的[元数据实用工具（svcutil.exe）](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md)生成。
+客户端实现也使用复数。 服务协定和数据协定都是在源文件 generatedClient.cs 中定义的，该文件由服务元数据中的[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)生成。
 
 ```csharp
 // Create a client.
@@ -133,11 +133,11 @@ Press <ENTER> to terminate client.
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。
 
-3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/running-the-samples.md)中的说明进行操作。
+3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
 > [!IMPORTANT]
 > 您的计算机上可能已安装这些示例。 在继续操作之前，请先检查以下（默认）目录：

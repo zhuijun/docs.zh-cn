@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 85084cd9-31cc-4e95-b667-42ef01336622
-ms.openlocfilehash: cc777da65ce1c0d425404b1cc8d47e8189684a7f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 42c056c9b56ed1245290cd66833cc6565f517b66
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62039398"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84593446"
 ---
 # <a name="how-to-create-a-one-way-contract"></a>如何：创建单向协定
-本主题演示了创建使用单向协定的方法所需的基本步骤。 此类方法调用 Windows Communication Foundation (WCF) 服务从客户端上的操作，但不是期待答复。 例如，可以使用这种类型的协定将通知发布给许多订户。 在创建双工（双向）协定（可使得客户端和服务器可以独立地相互通信，这样双方都可以启动对另一方的呼叫）时，还可以使用单向协定。 具体而言，这样做可允许服务器对客户端进行单向呼叫，而客户端可以将这些呼叫视为事件。 有关指定单向方法的详细信息，请参见 <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> 属性和 <xref:System.ServiceModel.OperationContractAttribute> 类。  
+本主题演示了创建使用单向协定的方法所需的基本步骤。 此类方法从客户端调用 Windows Communication Foundation （WCF）服务上的操作，但不希望收到回复。 例如，可以使用这种类型的协定将通知发布给许多订户。 在创建双工（双向）协定（可使得客户端和服务器可以独立地相互通信，这样双方都可以启动对另一方的呼叫）时，还可以使用单向协定。 具体而言，这样做可允许服务器对客户端进行单向呼叫，而客户端可以将这些呼叫视为事件。 有关指定单向方法的详细信息，请参见 <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> 属性和 <xref:System.ServiceModel.OperationContractAttribute> 类。  
   
- 有关创建用于双工协定的客户端应用程序的详细信息，请参阅[如何：访问服务使用单向和请求-答复协定](../../../../docs/framework/wcf/feature-details/how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)。 有关工作示例，请参阅[单向](../../../../docs/framework/wcf/samples/one-way.md)示例。  
+ 有关创建双工协定的客户端应用程序的详细信息，请参阅[如何：使用单向和请求-答复协定访问服务](how-to-access-wcf-services-with-one-way-and-request-reply-contracts.md)。 有关工作示例，请参阅单向[示例。](../samples/one-way.md)  
   
 ### <a name="to-create-a-one-way-contract"></a>创建单向协定  
   
@@ -31,11 +31,11 @@ ms.locfileid: "62039398"
  [!code-csharp[S_Service_Session#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/s_service_session/cs/service.cs#1)]
  [!code-vb[S_Service_Session#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/s_service_session/vb/service.vb#1)]  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.ServiceModel.ServiceContractAttribute>
 - <xref:System.ServiceModel.OperationContractAttribute>
-- [设计和实现服务](../../../../docs/framework/wcf/designing-and-implementing-services.md)
-- [如何：定义服务协定](../../../../docs/framework/wcf/how-to-define-a-wcf-service-contract.md)
-- [会话](../../../../docs/framework/wcf/samples/session.md)
-- [如何：创建双工协定](../../../../docs/framework/wcf/feature-details/how-to-create-a-duplex-contract.md)
+- [设计和实现服务](../designing-and-implementing-services.md)
+- [如何：定义服务协定](../how-to-define-a-wcf-service-contract.md)
+- [会话](../samples/session.md)
+- [如何：创建双工协定](how-to-create-a-duplex-contract.md)

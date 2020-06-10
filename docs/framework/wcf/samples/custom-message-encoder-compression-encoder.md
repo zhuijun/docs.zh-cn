@@ -2,12 +2,12 @@
 title: 自定义消息编码器：压缩编码器
 ms.date: 03/30/2017
 ms.assetid: 57450b6c-89fe-4b8a-8376-3d794857bfd7
-ms.openlocfilehash: 80dd29569897be501d76024a081f38ec5add4ff7
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: db20ec20579d6fcb0ec202920db0d7781b0676df
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716851"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600615"
 ---
 # <a name="custom-message-encoder-compression-encoder"></a>自定义消息编码器：压缩编码器
 
@@ -224,7 +224,7 @@ binding.Namespace = "http://tempuri.org/bindings";
 
 尽管对于大多数用户方案该操作已足够，但是，如果某个服务是由 Web 承载的，则支持文件配置是至关重要的。 若要支持由 Web 承载的方案，必须开发一个自定义配置处理程序，以便允许在文件中配置自定义绑定元素。
 
-您可以在配置系统的顶部为绑定元素生成一个配置处理程序。 绑定元素的配置处理程序必须从 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> 类派生。 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.BindingElementType?displayProperty=nameWithType> 通知配置系统要为此节创建的绑定元素的类型。 `BindingElement` 的所有可设置方面应当作为属性在 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> 派生类中公开。 如果缺少属性，<xref:System.Configuration.ConfigurationPropertyAttribute> 有助于将配置元素属性映射到属性并设置默认值。 在配置中的值加载并应用到属性之后，将调用 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A?displayProperty=nameWithType> 方法，该方法将属性转换成绑定元素的具体实例。 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A?displayProperty=nameWithType> 方法用于将 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> 派生类的属性转换为要在新创建的绑定元素上设置的值。
+您可以在配置系统的顶部为绑定元素生成一个配置处理程序。 绑定元素的配置处理程序必须从 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> 类派生。 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.BindingElementType?displayProperty=nameWithType>通知配置系统要为此节创建的绑定元素的类型。 `BindingElement` 的所有可设置方面应当作为属性在 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> 派生类中公开。 <xref:System.Configuration.ConfigurationPropertyAttribute>如果缺少属性，则有助于将配置元素特性映射到属性和设置默认值。 在配置中的值加载并应用到属性之后，将调用 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.CreateBindingElement%2A?displayProperty=nameWithType> 方法，该方法将属性转换成绑定元素的具体实例。 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement.ApplyConfiguration%2A?displayProperty=nameWithType>方法用于将派生类的属性转换为 <xref:System.ServiceModel.Configuration.BindingElementExtensionElement> 要在新创建的绑定元素上设置的值。
 
 下面的示例代码演示 `GZipMessageEncodingElement` 的实现。
 
@@ -295,7 +295,7 @@ public class GZipMessageEncodingElement : BindingElementExtensionElement
 <gzipMessageEncoding innerMessageEncoding="textMessageEncoding" />
 ```
 
-若要使用此配置处理程序，必须在[\<system.servicemodel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md)元素中注册该处理程序，如下面的示例配置中所示。
+若要使用此配置处理程序，必须在元素中注册它， [\<system.serviceModel>](../../configure-apps/file-schema/wcf/system-servicemodel.md) 如下面的示例配置中所示。
 
 ```xml
 <extensions>
@@ -342,11 +342,11 @@ Press <ENTER> to terminate client.
     %windir%\Microsoft.NET\Framework\v4.0.XXXXX\aspnet_regiis.exe /i /enable
     ```
 
-2. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。
+2. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-3. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。
+3. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
 
-4. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](../../../../docs/framework/wcf/samples/running-the-samples.md)中的说明进行操作。
+4. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
 > [!IMPORTANT]
 > 您的计算机上可能已安装这些示例。 在继续操作之前，请先检查以下（默认）目录：

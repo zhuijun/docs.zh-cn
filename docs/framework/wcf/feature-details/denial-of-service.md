@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: 55120430a9aaafe7d8bbf2b26f07806e4f1aa44a
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 1c1778ace6abc332517786f910d0442eeed577c9
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964425"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599264"
 ---
 # <a name="denial-of-service"></a>拒绝服务
 当系统处于过载状态而无法处理消息或者处理速度极慢时，会出现拒绝服务的情况。  
@@ -44,10 +44,10 @@ ms.locfileid: "75964425"
 ## <a name="auditing-event-log-can-be-filled"></a>可以填充审核事件日志  
  如果恶意用户了解到审核功能处于启用状态，则该攻击者可能会发送导致写入审核项的无效消息。 如果以这种方式填充审核日志，则审核系统会出现故障。  
   
- 为了缓解此问题，请将 <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> 属性设置为 `true`，然后使用事件查看器的属性来控制审核行为。 有关使用事件查看器查看和管理事件日志的详细信息，请参阅[事件查看器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc766042(v=ws.11))。 有关详细信息，请参阅[审核](../../../../docs/framework/wcf/feature-details/auditing-security-events.md)。  
+ 为了缓解此问题，请将 <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> 属性设置为 `true`，然后使用事件查看器的属性来控制审核行为。 有关使用事件查看器查看和管理事件日志的详细信息，请参阅[事件查看器](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc766042(v=ws.11))。 有关详细信息，请参阅[审核](auditing-security-events.md)。  
   
 ## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-to-become-unresponsive"></a>无效的 IAuthorizationPolicy 实现会导致服务无法响应  
- 对 <xref:System.IdentityModel.Policy.IAuthorizationPolicy> 接口的错误实现调用 <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> 方法可能会导致服务不响应。  
+ <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A>对接口的错误实现调用方法 <xref:System.IdentityModel.Policy.IAuthorizationPolicy> 可能会导致服务无法响应。  
   
  缓解：仅使用受信任的代码。 即，仅使用在编写后经过测试的代码或者来自受信任提供者的代码。 未经深思熟虑，请勿允许在代码中插入对 <xref:System.IdentityModel.Policy.IAuthorizationPolicy> 的不受信任的扩展。 这适用于服务实现中所使用的全部扩展。 WCF 不会对使用扩展点插入的应用程序代码和外接程序代码进行任何区分。  
   
@@ -59,7 +59,7 @@ ms.locfileid: "75964425"
   
  影响是 WCF 服务可能无法在具有自动注册功能的域上打开。 出现此问题的原因在于，有多个证书具有计算机的完全限定域名系统 (DNS) 名称，从而使得默认的服务 X.509 凭据搜索条件可能会不明确。 一个证书源于自动注册功能；而另一个可能是自行颁发的证书。  
   
- 若要缓解这种情况，请通过对[\<serviceCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md)使用更精确的搜索条件来引用要使用的确切证书。 例如，使用 <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> 选项并按照证书的唯一指纹（哈希）来指定证书。  
+ 若要缓解这种情况，请通过在上使用更精确的搜索条件来引用要使用的确切证书 [\<serviceCredentials>](../../configure-apps/file-schema/wcf/servicecredentials.md) 。 例如，使用 <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> 选项并按照证书的唯一指纹（哈希）来指定证书。  
   
  有关自动注册功能的详细信息，请参阅[Windows Server 2003 中的证书自动注册](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc778954(v%3dws.10))。  
   
@@ -75,16 +75,16 @@ ms.locfileid: "75964425"
  当客户端由某个服务成功进行身份验证，而且与此服务建立了安全会话时，此服务会记住该会话，直到该会话被客户端取消或者过期。 对于建立的每个会话都将进行计数，直到达到与该服务的同时活动会话的最大数目限制。 达到该限制时，尝试与该服务创建新会话的客户端将被拒绝，直到一个或多个活动会话过期或者被客户端取消。 一个客户端可以与某个服务建立多个会话，对于每个会话都将计数，直到达到相应的限制。  
   
 > [!NOTE]
-> 在使用有状态会话时，上述内容并不适用。 有关有状态会话的详细信息，请参阅[如何：为安全会话创建安全上下文令牌](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)。  
+> 在使用有状态会话时，上述内容并不适用。 有关有状态会话的详细信息，请参阅[如何：为安全会话创建安全上下文令牌](how-to-create-a-security-context-token-for-a-secure-session.md)。  
   
  若要缓解此问题，请通过设置 <xref:System.ServiceModel.Channels.SecurityBindingElement> 类的 <xref:System.ServiceModel.Channels.SecurityBindingElement> 属性来设置活动会话的最大数目限制以及会话的最长生存期限制。  
   
 ## <a name="see-also"></a>另请参阅
 
-- [安全注意事项](../../../../docs/framework/wcf/feature-details/security-considerations-in-wcf.md)
-- [信息泄漏](../../../../docs/framework/wcf/feature-details/information-disclosure.md)
-- [特权提升](../../../../docs/framework/wcf/feature-details/elevation-of-privilege.md)
-- [拒绝服务](../../../../docs/framework/wcf/feature-details/denial-of-service.md)
-- [重放攻击](../../../../docs/framework/wcf/feature-details/replay-attacks.md)
-- [篡改](../../../../docs/framework/wcf/feature-details/tampering.md)
-- [不支持的方案](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md)
+- [安全注意事项](security-considerations-in-wcf.md)
+- [信息泄露](information-disclosure.md)
+- [特权提升](elevation-of-privilege.md)
+- [拒绝服务](denial-of-service.md)
+- [重播攻击](replay-attacks.md)
+- [篡改](tampering.md)
+- [不受支持的方案](unsupported-scenarios.md)

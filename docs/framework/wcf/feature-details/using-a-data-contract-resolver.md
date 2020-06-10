@@ -2,15 +2,15 @@
 title: 使用数据协定解析程序
 ms.date: 03/30/2017
 ms.assetid: 2e68a16c-36f0-4df4-b763-32021bff2b89
-ms.openlocfilehash: d9082d2979cf9bd0837635af567d69ef34c2e312
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 20abd4d928fc51eb359949ecbb216615e9659b7f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975964"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84595019"
 ---
 # <a name="using-a-data-contract-resolver"></a>使用数据协定解析程序
-使用数据协定解析程序可以动态配置已知类型。 序列化或反序列化并非数据协定所需的类型时，要求提供已知类型。 有关已知类型的详细信息，请参阅[数据协定已知类型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)。 已知类型通常以静态方式指定。 这意味着您必须了解在实现某个操作期间，该操作可能接收的所有可能类型。 在某些方案中无法做到这一点，因此能够以动态方式指定已知类型十分重要。  
+使用数据协定解析程序可以动态配置已知类型。 序列化或反序列化并非数据协定所需的类型时，要求提供已知类型。 有关已知类型的详细信息，请参阅[数据协定已知类型](data-contract-known-types.md)。 已知类型通常以静态方式指定。 这意味着您必须了解在实现某个操作期间，该操作可能接收的所有可能类型。 在某些方案中无法做到这一点，因此能够以动态方式指定已知类型十分重要。  
   
 ## <a name="creating-a-data-contract-resolver"></a>创建数据协定解析程序  
  创建数据协定解析程序涉及到实现两个方法：<xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> 和 <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A>。 这两个方法分别实现在序列化和反序列化期间使用的回调。 在序列化期间将调用 <xref:System.Runtime.Serialization.DataContractResolver.TryResolveType%2A> 方法，用于获取数据协定类型并将其映射到 `xsi:type` 名称和命名空间。 在反序列化期间将调用 <xref:System.Runtime.Serialization.DataContractResolver.ResolveName%2A> 方法，用于获取 `xsi:type` 名称和命名空间并将其解析为数据协定类型。 这两个方法均具有 `knownTypeResolver` 参数，该参数可用于在实现中使用默认已知类型解析程序。  
@@ -85,10 +85,10 @@ if (serializerBehavior == null)
 SerializerBehavior.DataContractResolver = new MyCustomerResolver();  
 ```  
   
- 通过实现可以应用于服务的特性，可以通过声明方式指定数据协定解析程序。  有关详细信息，请参阅[KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)示例。 此示例实现一个名为 "KnownAssembly" 的属性，该属性将自定义数据协定解析程序添加到服务的行为。  
+ 通过实现可以应用于服务的特性，可以通过声明方式指定数据协定解析程序。  有关详细信息，请参阅[KnownAssemblyAttribute](../samples/knownassemblyattribute.md)示例。 此示例实现一个名为 "KnownAssembly" 的属性，该属性将自定义数据协定解析程序添加到服务的行为。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [数据协定已知类型](../../../../docs/framework/wcf/feature-details/data-contract-known-types.md)
-- [DataContractSerializer 示例](../../../../docs/framework/wcf/samples/datacontractserializer-sample.md)
-- [KnownAssemblyAttribute](../../../../docs/framework/wcf/samples/knownassemblyattribute.md)
+- [数据协定已知类型](data-contract-known-types.md)
+- [DataContractSerializer 示例](../samples/datacontractserializer-sample.md)
+- [KnownAssemblyAttribute](../samples/knownassemblyattribute.md)

@@ -2,20 +2,20 @@
 title: 设计模式：基于列表的发布-订阅
 ms.date: 03/30/2017
 ms.assetid: f4257abc-12df-4736-a03b-0731becf0fd4
-ms.openlocfilehash: 7342b3702338d5cd1fcc27d80e4e70cee019cc22
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5aaea5b0def544f8b3e963d71e269592b9b40784
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79144755"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84592341"
 ---
 # <a name="design-patterns-list-based-publish-subscribe"></a>设计模式：基于列表的发布-订阅
-此示例演示了作为 Windows 通信基础 （WCF） 程序实现的基于列表的发布-订阅模式。  
+此示例演示了作为 Windows Communication Foundation （WCF）程序实现的基于列表的发布-订阅模式。  
   
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。  
   
- 基于列表的发布-订阅设计模式在 Microsoft 模式&实践出版物"[集成模式](https://docs.microsoft.com/previous-versions/msp-n-p/ff647309(v=pandp.10))"中对此进行了描述。 发布-订阅模式可以向已经订阅某一信息主题的接收者群体传递信息。 基于列表的发布-订阅可维护一份订户列表。 如果有要共享的信息，则会向列表上的每个订户发送一份副本。 本示例演示基于列表的动态发布-订阅模式，在此模式下客户端可以根据需要随时订阅或取消订阅。  
+ 基于列表的发布-订阅设计模式在 Microsoft 模式 & 实践发布、[集成模式](https://docs.microsoft.com/previous-versions/msp-n-p/ff647309(v=pandp.10))中进行了介绍。 发布-订阅模式可以向已经订阅某一信息主题的接收者群体传递信息。 基于列表的发布-订阅可维护一份订户列表。 如果有要共享的信息，则会向列表上的每个订户发送一份副本。 本示例演示基于列表的动态发布-订阅模式，在此模式下客户端可以根据需要随时订阅或取消订阅。  
   
  基于列表的发布-订阅示例由客户端、服务和数据源程序组成。 可以有多个客户端和多个数据源程序同时运行。 客户端订阅服务、接收通知，然后取消订阅。 数据源程序向服务发送将与所有当前订户共享的信息。  
   
@@ -112,17 +112,17 @@ public class PriceChangeEventArgs : EventArgs
   
 ### <a name="to-set-up-and-build-the-sample"></a>设置和生成示例  
   
-1. 确保已为 Windows[通信基础示例执行一次性设置过程](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
-2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md)中的说明进行操作。  
+2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。  
   
 ### <a name="to-run-the-sample-on-the-same-machine"></a>在同一计算机上运行示例  
   
-1. 通过输入以下地址，测试是否可以使用浏览器访问服务： `http://localhost/servicemodelsamples/service.svc`. 在响应中应显示确认页。  
+1. 通过输入以下地址来测试是否可以使用浏览器访问服务： `http://localhost/servicemodelsamples/service.svc` 。 在响应中应显示确认页。  
   
-2. 从 \client_bin\\运行客户端.exe，从特定于语言的文件夹下运行。 客户端活动将显示在客户端控制台窗口上。 启动多个客户端。  
+2. \\从 \client\bin 的特定于语言的文件夹中运行客户端。 客户端活动将显示在客户端控制台窗口上。 启动多个客户端。  
   
-3. 从 [数据源\bin]\\从特定于语言的文件夹下运行数据源.exe。 数据源活动将显示在控制台窗口中。 数据源向服务发送信息后，信息应传递到每个客户端。  
+3. \\从 \datasource\bin 的特定于语言的文件夹中运行 Datasource。 数据源活动将显示在控制台窗口中。 数据源向服务发送信息后，信息应传递到每个客户端。  
   
 4. 如果客户端、数据源和服务程序无法通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
@@ -130,7 +130,7 @@ public class PriceChangeEventArgs : EventArgs
   
 1. 安装服务计算机：  
   
-    1. 在服务计算机上创建一个名为 ServiceModelSamples 的虚拟目录。 [Windows 通信基础示例的一次性安装程序中的](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md)批处理文件 Setupvroot.bat 可用于创建磁盘目录和虚拟目录。  
+    1. 在服务计算机上创建一个名为 ServiceModelSamples 的虚拟目录。 [Windows Communication Foundation 示例的一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)中的批处理文件 setupvroot.bat 可用于创建磁盘目录和虚拟目录。  
   
     2. 从 %SystemDrive%\Inetpub\wwwroot\servicemodelsamples 中将服务程序文件复制到服务计算机上的 ServiceModelSamples 虚拟目录中。 确保在 \bin 目录中包括这些文件。  
   
@@ -157,6 +157,6 @@ public class PriceChangeEventArgs : EventArgs
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DesignPatterns/ListBasedPublishSubscribe`  
