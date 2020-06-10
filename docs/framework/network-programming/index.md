@@ -1,5 +1,6 @@
 ---
 title: .NET Framework 中的网络编程
+description: 使用这些资源将 .NET Framework 提供的分层、可扩展且托管的 Internet 服务实现集成到应用程序中。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Networking
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - Internet, .NET Framework Internet services
 - Network Resources
 ms.assetid: 8d455610-67a0-4fa8-a62f-7747064a9256
-ms.openlocfilehash: 1e7f0123ab07fd4e83eea957b72bf79eeeecef2b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 117fce887a04def7f9b3f7654a8e9e675ea462d2
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74204692"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502400"
 ---
 # <a name="network-programming-in-the-net-framework"></a>.NET Framework 中的网络编程
 Microsoft .NET Framework 为 Internet 服务提供了一种分层、可扩展且托管的实现，可以快速、轻松地将其集成到你的应用程序中。 你的网络应用程序可以基于可插入协议而构建，以便自动利用新的 Internet 协议，或者，它们可以使用 Windows 套接字接口的托管实现在套接字级别上使用网络。  
@@ -85,7 +86,7 @@ Microsoft .NET Framework 为 Internet 服务提供了一种分层、可扩展且
  [网络编程示例](network-programming-samples.md)  
  可下载网络编程示例的链接，这些示例使用 <xref:System.Net>、 <xref:System.Net.Cache>、 <xref:System.Net.Configuration>、 <xref:System.Net.Mail>、 <xref:System.Net.Mime>、 <xref:System.Net.NetworkInformation>、 <xref:System.Net.PeerToPeer>、 <xref:System.Net.Security>、 <xref:System.Net.Sockets> 命名空间中的类。  
   
-## <a name="reference"></a>引用  
+## <a name="reference"></a>参考  
  <xref:System.Net?displayProperty=nameWithType>  
  为当前网络采用的多种协议提供简单的编程接口。 此命名空间中的 <xref:System.Net.WebRequest?displayProperty=nameWithType> 和 <xref:System.Net.WebResponse?displayProperty=nameWithType> 类是可插入协议的基础。  
   
@@ -134,7 +135,7 @@ Microsoft .NET Framework 为 Internet 服务提供了一种分层、可扩展且
  <xref:System.Security.Authentication.ExtendedProtection.Configuration?displayProperty=nameWithType>  
  为配置采用应用程序扩展保护的身份验证提供支持。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [.NET Framework 中的传输层安全性 (TLS) 最佳做法](tls.md)
 - [网络编程操作说明主题](network-programming-how-to-topics.md)

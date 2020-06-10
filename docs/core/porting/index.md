@@ -3,12 +3,12 @@ title: 从 .NET Framework 移植到 .NET Core
 description: 了解移植过程以及发现在将 .NET Framework 项目移植到 .NET Core 时可能有用的工具。
 author: cartermp
 ms.date: 10/22/2019
-ms.openlocfilehash: c6797a5b3a97ddd01f86498d896e859baf8997be
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: 74fe4519e41a07bc78a4dc346f8d1b52b5c7d092
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158277"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502764"
 ---
 # <a name="overview-of-porting-from-net-framework-to-net-core"></a>从 .NET Framework 移植到 .NET Core 的概述
 
@@ -29,7 +29,7 @@ ms.locfileid: "82158277"
 
 - Visual Studio 2019
 - 下载 [.NET 可移植性分析器](../../standard/analyzers/portability-analyzer.md)
-- 可选：安装 [dotnet try-convert](https://github.com/dotnet/try-convert) 
+- 可选：安装 [dotnet try-convert](https://github.com/dotnet/try-convert)
 
 ## <a name="porting-a-solution"></a>移植解决方案
 
@@ -39,6 +39,9 @@ ms.locfileid: "82158277"
 
 - [Visual Studio 中的依赖项关系图](/visualstudio/modeling/create-layer-diagrams-from-your-code)可在解决方案中创建代码定向图。
 - 运行 `msbuild _SolutionPath_ /t:GenerateRestoreGraphFile /p:RestoreGraphOutputPath=graph.dg.json` 以生成一个包含项目引用列表的 json 文档。
+- 使用 `-r DGML` 开关运行 [.NET 可移植性分析器](../../standard/analyzers/portability-analyzer.md)，检索程序集的依赖项关系图。 有关详细信息，请参阅[此文](../../standard/analyzers/portability-analyzer.md#solution-wide-view)。
+
+拥有依赖项信息后，可用它来在叶节点开始操作，一直到应用下一部分相关步骤的依赖项树。
 
 ## <a name="per-project-steps"></a>按项目步骤
 
@@ -52,7 +55,7 @@ ms.locfileid: "82158277"
 
    .NET Core 使用不同于 .NET Framework 的更简化的[项目文件格式](../tools/csproj.md)。 需要将项目文件转换为此格式才能继续操作。 借助此项目样式，还可面向 .NET Framework（你此时仍需要面向此模型）。
 
-   你可尝试使用 [dotnet try-convert](https://github.com/dotnet/try-convert) 工具，通过一次操作将较小的解决方案或单个项目移植到 .NET Core 项目文件格式。 不能保证 `dotnet try-convert` 适用于所有项目，它可能导致所依赖的行为发生细微变化。 使用它作为起点  ，以自动化可自动执行的基本操作。 该解决方案不保证会迁移项目，因为与旧样式的项目文件相比，SDK 样式的项目使用的目标中存在诸多差异。
+   你可尝试使用 [dotnet try-convert](https://github.com/dotnet/try-convert) 工具，通过一次操作将较小的解决方案或单个项目移植到 .NET Core 项目文件格式。 不能保证 `dotnet try-convert` 适用于所有项目，它可能导致所依赖的行为发生细微变化。 使用它作为起点，以自动化可自动执行的基本操作。 该解决方案不保证会迁移项目，因为与旧样式的项目文件相比，SDK 样式的项目使用的目标中存在诸多差异。
 
 1. 将希望移植的所有项目重定向到目标 .NET Framework 4.7.2 或更高版本。
 
