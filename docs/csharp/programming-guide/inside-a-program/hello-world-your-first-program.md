@@ -8,12 +8,12 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: 910fa4af1b4e45ce627b589a06910dc168490047
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6d78ec83fec72b30f5cee398af1816d0cac35886
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712138"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241859"
 ---
 # <a name="hello-world----your-first-program"></a>Hello World -- 你的第一个程序
 
@@ -21,7 +21,7 @@ ms.locfileid: "75712138"
 
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]
 
-## <a name="create-a-new-application"></a>创建新应用程序
+## <a name="create-a-new-application"></a>创建一个新的应用程序
 
 <!-- markdownlint-disable MD025 -->
 
@@ -31,14 +31,14 @@ ms.locfileid: "75712138"
 
 ![Windows 上的 Visual Studio 欢迎屏幕](./media/hello-world-your-first-program/visual-studio-windows-start-screen.png)
 
-在图像右下角选择“创建新项目”  。 Visual Studio 会显示“新建项目”对话框  ：
+在图像右下角选择“创建新项目”。 Visual Studio 会显示“新建项目”对话框：
 
 ![Windows 上的 Visual Studio 新建项目屏幕](./media/hello-world-your-first-program/visual-studio-windows-new-project.png)
 
 > [!NOTE]
-> 如果这是首次启动 Visual Studio，则“最近使用的项目模板”列表为空  。
+> 如果这是首次启动 Visual Studio，则“最近使用的项目模板”列表为空。
 
-在“新建项目”对话框中，选择“控制台应用(.NET Core)”，然后按“下一步”  。 请为项目命名（例如“HelloWorld”），然后按“创建”  。
+在“新建项目”对话框中，选择“控制台应用(.NET Core)”，然后按“下一步”。 请为项目命名（例如“HelloWorld”），然后按“创建”。
 
 Visual Studio 将打开你的项目。 一个基本的“Hello World!”已初见雏形 示例。 按 `Ctrl` + `F5` 运行项目。 Visual Studio 生成项目，将源代码转换为可执行文件。 然后，它会启动一个运行新应用程序的命令窗口。 你应在窗口中看到以下文本：
 
@@ -58,13 +58,13 @@ Press any key to close this window . . .
 ![Mac 上的 Visual Studio 欢迎屏幕](./media/hello-world-your-first-program/visual-studio-mac-start-screen.png)
 
 > [!NOTE]
-> 如果这是首次启动 Visual Studio for Mac，则“最近使用的项目模板”列表为空  。
+> 如果这是首次启动 Visual Studio for Mac，则“最近使用的项目模板”列表为空。
 
-在图像右上角选择“新建”  。 Visual Studio for Mac 会显示“新建项目”对话框  ：
+在图像右上角选择“新建”。 Visual Studio for Mac 会显示“新建项目”对话框：
 
 ![Mac 上的 Visual Studio 新建项目屏幕](./media/hello-world-your-first-program/visual-studio-mac-new-project.png)
 
-在“新建项目”对话框中，选择“.NET Core”和“控制台应用”，然后按“下一步”  。 需要选择目标框架。 默认情况下，请按“下一步”。 请为项目命名（例如“HelloWorld”），然后按“创建”  。 可以使用默认的项目位置。 请勿将项目添加到源控件。
+在“新建项目”对话框中，选择“.NET Core”和“控制台应用”，然后按“下一步”。 需要选择目标框架。 默认情况下，请按“下一步”。 请为项目命名（例如“HelloWorld”），然后按“创建”。 可以使用默认的项目位置。 请勿将项目添加到源控件。
 
 Visual Studio for Mac 打开你的项目。 一个基本的“Hello World!”已初见雏形 示例。 按 `Ctrl` + `Fn` + `F5` 运行项目。 Visual Studio for Mac 生成项目，将源代码转换为可执行文件。 然后，它会启动一个运行新应用程序的命令窗口。 你应在窗口中看到以下文本：
 
@@ -96,7 +96,7 @@ C# 控制台应用程序必须包含 `Main` 方法，控件在其中开始和结
 
 [!code-csharp[csProgGuideMain#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#12)]
 
-- 还可以返回一个整数。 整数是应用程序的“退出代码”  。
+- 还可以返回一个整数。 整数是应用程序的“退出代码”。
 
 [!code-csharp[csProgGuideMain#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#13)]
 
@@ -104,7 +104,7 @@ C# 控制台应用程序必须包含 `Main` 方法，控件在其中开始和结
 
 [!code-csharp[csProgGuideMain#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#19)]
 
-或
+\- 或 -
 
 [!code-csharp[csProgGuideMain#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#18)]
 
@@ -114,7 +114,7 @@ C# 控制台应用程序必须包含 `Main` 方法，控件在其中开始和结
 
 ## <a name="input-and-output"></a>输入和输出
 
-C# 程序通常使用由 .NET Framework 的运行时库提供的输入/输出服务。 语句 `System.Console.WriteLine("Hello World!");` 使用 <xref:System.Console.WriteLine%2A> 方法。 这是运行时库中 <xref:System.Console> 类的输出方法之一。 该方法将在标准输出流中显示其字符串参数，后接新行。 其他 <xref:System.Console> 方法可用于不同的输入和输出操作。 如果程序开头包含 `using System;` 指令，则可以直接使用 <xref:System> 类和方法，而不必进行完全限定。 例如，可以调用 `Console.WriteLine`，而非 `System.Console.WriteLine`：
+C# 程序通常使用由 .NET 的运行时库提供的输入/输出服务。 语句 `System.Console.WriteLine("Hello World!");` 使用 <xref:System.Console.WriteLine%2A> 方法。 这是运行时库中 <xref:System.Console> 类的输出方法之一。 该方法将在标准输出流中显示其字符串参数，后接新行。 其他 <xref:System.Console> 方法可用于不同的输入和输出操作。 如果程序开头包含 `using System;` 指令，则可以直接使用 <xref:System> 类和方法，而不必进行完全限定。 例如，可以调用 `Console.WriteLine`，而非 `System.Console.WriteLine`：
 
 [!code-csharp[csProgGuide#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/using.cs#1)]
 
@@ -122,7 +122,7 @@ C# 程序通常使用由 .NET Framework 的运行时库提供的输入/输出服
 
 有关输入/输出方法的详细信息，请参阅 <xref:System.IO>。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [示例和教程](../../../samples-and-tutorials/index.md)

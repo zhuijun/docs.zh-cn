@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <include> C# XML tag
 - include C# XML tag
 ms.assetid: a8a70302-6196-4643-bd09-ef33f411f18f
-ms.openlocfilehash: 22d87559766c04e53141e843ee8768c8aab89a85
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf41019c775fed25afe4bdb9453a8e52f44856b5
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156969"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287345"
 ---
 # <a name="include-c-programming-guide"></a>\<include>（C# 编程指南）
 
@@ -43,17 +43,17 @@ ms.locfileid: "79156969"
 
 ## <a name="remarks"></a>备注
 
-通过 \<include> 标记，可在其他文件中引用描述源代码中类型和成员的注释。 这是对直接在源代码文件中放入文档注释的替代方法。 通过将文档放入不同文件，可以单独从源代码对文档应用源控件。 一人可以签出源代码文件，而其他人可以签出文档文件。
+通过 `<include>` 标记，可在其他文件中引用描述源代码中类型和成员的注释。 这是对直接在源代码文件中放入文档注释的替代方法。 通过将文档放入不同文件，可以单独从源代码对文档应用源控件。 一人可以签出源代码文件，而其他人可以签出文档文件。
 
-\<include> 标记使用 XML XPath 语法。 有关如何自定义 \<include> 的用法，请参阅 XPath 文档。
+`<include>` 标记使用 XML XPath 语法。 有关如何自定义 `<include>` 用法的信息，请参阅 XPath 文档。
 
 ## <a name="example"></a>示例
 
-这是多文件示例。 下面是第一个文件，使用 \<include>。
+这是多文件示例。 下面是第一个文件，使用 `<include>`。
 
 [!code-csharp[csProgGuideDocComments#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#5)]
 
-第二个文件是 xml_include_tag.doc  ，包含下列文档注释。
+第二个文件是 xml_include_tag.doc，包含下列文档注释。
 
 ```xml
 <MyDocs>
@@ -75,7 +75,7 @@ The summary for this other type.
 
 ## <a name="program-output"></a>程序输出
 
-使用以下命令行编译 Test 和 Test2 类时，将生成下列输出：`-doc:DocFileName.xml.`。在 Visual Studio 的项目设计器的“生成”窗格中，指定 XML 文档注释选项。 当 C# 编译器发现 \<include> 标记时，它将在 xml_include_tag.doc（而不是当前源文件）中搜索文档注释。 然后编译器生成 DocFileName.xml，这是由文档工具（如 [DocFX](https://dotnet.github.io/docfx/) 和 [Sandcastle](https://github.com/EWSoftware/SHFB)）所使用的文件，用于生成最终文档。  
+使用以下命令行编译 Test 和 Test2 类时，便会生成下面的输出：`-doc:DocFileName.xml.`。在 Visual Studio 的项目设计器的“生成”窗格中，指定 XML 文档注释选项。 当 C# 编译器发现 `<include>` 标记时，它将在 xml_include_tag.doc（而不是当前源文件）中搜索文档注释。 然后编译器生成 DocFileName.xml，这是由文档工具（如 [DocFX](https://dotnet.github.io/docfx/) 和 [Sandcastle](https://github.com/EWSoftware/SHFB)）所使用的文件，用于生成最终文档。  
   
 ```xml
 <?xml version="1.0"?>
@@ -98,7 +98,7 @@ The summary for this other type.
 </doc>
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [建议的文档注释标记](./recommended-tags-for-documentation-comments.md)

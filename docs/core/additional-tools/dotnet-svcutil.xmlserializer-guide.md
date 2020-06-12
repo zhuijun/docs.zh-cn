@@ -3,18 +3,18 @@ title: 使用 dotnet-svcutil.xmlserializer
 description: 了解如何使用 `dotnet-svcutil.xmlserializer` NuGet 包为 .NET Core 项目预生成序列化程序集。
 author: huanwu
 ms.date: 11/27/2018
-ms.openlocfilehash: 4811647c294118cb160d25805e7d3ada97f071f9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14bb2e8a85ec35f08b0a83b9734a64d751074f1b
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75344899"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84284320"
 ---
 # <a name="using-dotnet-svcutilxmlserializer-on-net-core"></a>在 .NET Core 上使用 dotnet-svcutil.xmlserializer
 
 `dotnet-svcutil.xmlserializer` NuGet 包可以为 .NET Core 项目预生成序列化程序集。 它为客户端应用程序中由 WCF 服务协定使用的且可由 XmlSerializer 序列化的类型预生成 C# 序列化代码。 当序列化或反序列化这些类型的对象时，这会提高 XML 序列化的启动性能。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 * [.NET Core 2.1 SDK](https://dotnet.microsoft.com/download) 或更高版本
 * 你最喜欢的代码编辑器
@@ -96,6 +96,6 @@ ms.locfileid: "75344899"
     </ItemGroup>
     ```
 
-6. 通过运行 `dotnet build` 生成应用程序。 如果一切顺利，则会在输出文件夹中生成名为“MyWCFClient.XmlSerializers.dll”的程序集  。 如果该工具无法生成程序集，将在生成输出中看到警告。
+6. 通过运行 `dotnet build` 生成应用程序。 如果一切顺利，则会在输出文件夹中生成名为“MyWCFClient.XmlSerializers.dll”的程序集。 如果该工具无法生成程序集，将在生成输出中看到警告。
 
 7. 例如，通过在浏览器中运行 `http://localhost:2561/Service1.svc` 来启动 WCF 服务。 然后启动客户端应用程序，它将在运行时自动加载和使用预生成的序列化程序。

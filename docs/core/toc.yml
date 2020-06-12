@@ -1,486 +1,467 @@
-- name: .NET Core 文档
-  href: index.yml
-- name: .NET Core 简介
-  href: introduction.md
-- name: .NET Core 概述
-  href: about.md
-- name: 安装
-  items:
-    - name: 概述
-      href: install/index.md
-    - name: 安装 SDK
-      href: install/sdk.md
-    - name: 安装运行时
-      href: install/runtime.md
-    - name: 支持的操作系统和依赖项
-      href: install/dependencies.md
-    - name: 删除过时的运行时和 SDK
-      href: install/remove-runtime-sdk-versions.md
-    - name: 管理 .NET 模板
-      href: install/templates.md
-    - name: macOS 公证问题
-      href: install/macos-notarization-issues.md
-    - name: 如何检查 .NET Core 版本
-      href: install/how-to-detect-installed-versions.md
-    - name: Linux 包管理器
-      items:
-        - name: Ubuntu 20.04
-          href: install/linux-package-manager-ubuntu-2004.md
-        - name: Ubuntu 19.10
-          href: install/linux-package-manager-ubuntu-1910.md
-        - name: Ubuntu 19.04
-          href: install/linux-package-manager-ubuntu-1904.md
-        - name: Ubuntu 18.04
-          href: install/linux-package-manager-ubuntu-1804.md
-        - name: Ubuntu 16.04
-          href: install/linux-package-manager-ubuntu-1604.md
-        - name: CentOS 8
-          href: install/linux-package-manager-centos8.md
-        - name: CentOS 7
-          href: install/linux-package-manager-centos7.md
-        - name: Debian 10
-          href: install/linux-package-manager-debian10.md
-        - name: Debian 9
-          href: install/linux-package-manager-debian9.md
-        - name: Fedora 32
-          href: install/linux-package-manager-fedora32.md
-        - name: Fedora 31
-          href: install/linux-package-manager-fedora31.md
-        - name: Fedora 30
-          href: install/linux-package-manager-fedora30.md
-        - name: Fedora 29
-          href: install/linux-package-manager-fedora29.md
-        - name: OpenSUSE 15
-          href: install/linux-package-manager-opensuse15.md
-        - name: RHEL 8
-          href: install/linux-package-manager-rhel8.md
-        - name: RHEL 7
-          href: install/linux-package-manager-rhel7.md
-        - name: SLES 15
-          href: install/linux-package-manager-sles15.md
-        - name: SLES 12
-          href: install/linux-package-manager-sles12.md
-    - name: 安装本地化的 IntelliSense
-      href: install/localized-intellisense.md
-- name: 入门
-  href: get-started.md
-- name: .NET Core 的新增功能
-  items:
-    - name: .NET Core 3.1 的新增功能
-      href: whats-new/dotnet-core-3-1.md
-    - name: .NET Core 3.0 的新增功能
-      href: whats-new/dotnet-core-3-0.md
-    - name: .NET Core 2.2 的新增功能
-      href: whats-new/dotnet-core-2-2.md
-    - name: .NET Core 2.1 的新增功能
-      href: whats-new/dotnet-core-2-1.md
-    - name: .NET Core 2.0 的新增功能
-      href: whats-new/dotnet-core-2-0.md
-- name: 重大更改
-  displayName: app compatibility
-  href: compatibility/
-- name: 教程
-  items:
-    - name: 使用 Visual Studio
-      items:
-        - name: 创建控制台应用
-          href: tutorials/with-visual-studio.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: 调试应用
-          href: tutorials/debugging-with-visual-studio.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: 发布应用
-          href: tutorials/publishing-with-visual-studio.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: 创建库
-          href: tutorials/library-with-visual-studio.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: 对库进行单元测试
-          href: tutorials/testing-library-with-visual-studio.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: 安装并使用包
-          href: /nuget/quickstart/install-and-use-a-package-in-visual-studio
-          displayName: 'tutorials, visual studio, vs'
-        - name: 创建和发布包
-          href: /nuget/quickstart/create-and-publish-a-package-using-visual-studio
-          displayName: 'tutorials, visual studio, vs'
-    - name: 使用 Visual Studio Code
-      items:
-        - name: 创建控制台应用
-          href: tutorials/with-visual-studio-code.md
-          displayName: 'tutorials, visual studio code, vs code, cli'
-        - name: 调试应用
-          href: tutorials/debugging-with-visual-studio-code.md
-          displayName: 'tutorials, visual studio code, vs code'
-        - name: 发布应用
-          href: tutorials/publishing-with-visual-studio-code.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: 创建库
-          href: tutorials/library-with-visual-studio-code.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: 对库进行单元测试
-          href: tutorials/testing-library-with-visual-studio-code.md
-          displayName: 'tutorials, visual studio, vs'
-        - name: 安装并使用包
-          href: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
-          displayName: 'tutorials, cli'
-        - name: 创建和发布包
-          href: /nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
-          displayName: tutorials
-    - name: 使用 Visual Studio for Mac
-      items:
-        - name: 创建控制台应用
-          href: tutorials/using-on-mac-vs.md
-          displayName: tutorials
-        - name: 创建库并对其进行单元测试
-          href: tutorials/using-on-mac-vs-full-solution.md
-          displayName: tutorials
-        - name: 安装并使用包
-          href: /nuget/quickstart/install-and-use-a-package-in-visual-studio-mac
-          displayName: tutorials
-    - name: 高级主题
-      items:
-        - name: 使用 xUnit 对应用进行单元测试
-          href: tutorials/testing-with-cli.md
-          displayName: 'tutorials, cli'
-        - name: 如何创建库
-          href: tutorials/libraries.md
-        - name: 创建 CLI 的模板
-          items:
-            - name: 1 - 创建项模板
-              href: tutorials/cli-templates-create-item-template.md
-              displayName: 'tutorials, cli'
-            - name: 2 - 创建项目模板
-              href: tutorials/cli-templates-create-project-template.md
-              displayName: 'tutorials, cli'
-            - name: 3 - 创建模板包
-              href: tutorials/cli-templates-create-template-pack.md
-              displayName: 'tutorials, cli'
-        - name: 为 CLI 创建工具
-          items:
-            - name: 1 - 创建工具
-              displayName: 'tools, tutorials, cli'
-              href: tools/global-tools-how-to-create.md
-            - name: 2 - 使用全局工具
-              displayName: 'tools, tutorials, cli'
-              href: tools/global-tools-how-to-use.md
-            - name: 3 - 使用本地工具
-              href: tools/local-tools-how-to-use.md
-              displayName: 'tools, tutorials, cli'
-        - name: 使用插件创建应用
-          href: tutorials/creating-app-with-plugin-support.md
-    - name: 更多教程
-      href: tutorials/index.md
-- name: 项目 SDK
-  items:
-    - name: 概述
-      href: project-sdk/overview.md
-    - name: 参考
-      items:
-        - name: Microsoft.NET.Sdk
-          href: project-sdk/msbuild-props.md
-        - name: Microsoft.NET.Sdk.Web
-          href: /aspnet/core/razor-pages/web-sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
-        - name: Microsoft.NET.Sdk.Razor
-          href: /aspnet/core/razor-pages/sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
-- name: .NET Core SDK 概述
-  href: sdk.md
-- name: .NET Core CLI
-  items:
-    - name: 概述
-      href: tools/index.md
-    - name: 参考
-      items:
-        - name: dotnet
-          href: tools/dotnet.md
-        - name: dotnet build
-          href: tools/dotnet-build.md
-        - name: dotnet build-server
-          href: tools/dotnet-build-server.md
-        - name: dotnet clean
-          href: tools/dotnet-clean.md
-        - name: dotnet help
-          href: tools/dotnet-help.md
-        - name: dotnet migrate
-          href: tools/dotnet-migrate.md
-        - name: dotnet msbuild
-          href: tools/dotnet-msbuild.md
-        - name: dotnet new
-          href: tools/dotnet-new.md
-        - name: dotnet nuget
-          items:
-            - name: dotnet nuget delete
-              href: tools/dotnet-nuget-delete.md
-            - name: dotnet nuget locals
-              href: tools/dotnet-nuget-locals.md
-            - name: dotnet nuget push
-              href: tools/dotnet-nuget-push.md
-            - name: dotnet nuget add source
-              href: tools/dotnet-nuget-add-source.md
-            - name: dotnet nuget disable source
-              href: tools/dotnet-nuget-disable-source.md
-            - name: dotnet nuget enable source
-              href: tools/dotnet-nuget-enable-source.md
-            - name: dotnet nuget list source
-              href: tools/dotnet-nuget-list-source.md
-            - name: dotnet nuget remove source
-              href: tools/dotnet-nuget-remove-source.md
-            - name: dotnet nuget update source
-              href: tools/dotnet-nuget-update-source.md
-        - name: dotnet pack
-          href: tools/dotnet-pack.md
-        - name: dotnet publish
-          href: tools/dotnet-publish.md
-        - name: dotnet restore
-          href: tools/dotnet-restore.md
-        - name: dotnet run
-          href: tools/dotnet-run.md
-        - name: dotnet sln
-          href: tools/dotnet-sln.md
-        - name: dotnet store
-          href: tools/dotnet-store.md
-        - name: dotnet test
-          href: tools/dotnet-test.md
-        - name: dotnet tool
-          items:
-            - name: dotnet tool install
-              href: tools/dotnet-tool-install.md
-            - name: dotnet tool list
-              href: tools/dotnet-tool-list.md
-            - name: dotnet tool restore
-              href: tools/dotnet-tool-restore.md
-            - name: dotnet tool run
-              href: tools/dotnet-tool-run.md
-            - name: dotnet tool uninstall
-              href: tools/dotnet-tool-uninstall.md
-            - name: dotnet tool update
-              href: tools/dotnet-tool-update.md
-        - name: dotnet vstest
-          href: tools/dotnet-vstest.md
-        - name: dotnet-install 脚本
-          href: tools/dotnet-install-script.md
-        - name: 项目引用命令
-          items:
-            - name: dotnet add reference
-              href: tools/dotnet-add-reference.md
-            - name: dotnet list reference
-              href: tools/dotnet-list-reference.md
-            - name: dotnet remove reference
-              href: tools/dotnet-remove-reference.md
-        - name: 项目包命令
-          items:
-            - name: dotnet add package
-              href: tools/dotnet-add-package.md
-            - name: dotnet list package
-              href: tools/dotnet-list-package.md
-            - name: dotnet remove package
-              href: tools/dotnet-remove-package.md
-    - name: 全局和本地工具
-      items:
-        - name: 管理工具
-          href: tools/global-tools.md
-        - name: 排查工具问题
-          href: tools/troubleshoot-usage-issues.md
-    - name: global.json 概述
-      href: tools/global-json.md
-    - name: 自定义模板
-      href: tools/custom-templates.md
-    - name: 遥测
-      href: tools/telemetry.md
-    - name: 提升的访问权限
-      href: tools/elevated-access.md
-    - name: 启用 Tab 自动补全
-      href: tools/enable-tab-autocomplete.md
-- name: 诊断工具
-  items:
-    - name: 概述
-      href: diagnostics/index.md
-    - name: 托管调试器
-      href: diagnostics/managed-debuggers.md
-    - name: 日志记录和跟踪
-      href: diagnostics/logging-tracing.md
-    - name: .NET Core CLI 全局工具
-      items:
-        - name: dotnet-counters
-          href: diagnostics/dotnet-counters.md
-        - name: dotnet-dump
-          href: diagnostics/dotnet-dump.md
-        - name: dotnet-trace
-          href: diagnostics/dotnet-trace.md
-    - name: .NET Core 诊断教程
-      items:
-        - name: 调试内存泄露
-          href: diagnostics/debug-memory-leak.md
-- name: 其他 .NET Core 工具
-  items:
-    - name: 概述
-      href: additional-tools/index.md
-    - name: .NET Core 卸载工具
-      href: additional-tools/uninstall-tool.md
-    - name: WCF Web 服务引用提供程序
-      href: additional-tools/wcf-web-service-reference-guide.md
-    - name: dotnet-svcutil
-      href: additional-tools/dotnet-svcutil-guide.md
-    - name: dotnet-svcutil.xmlserializer
-      href: additional-tools/dotnet-svcutil.xmlserializer-guide.md
-    - name: XML 序列化程序生成器
-      href: additional-tools/xml-serializer-generator.md
-- name: 应用程序部署
-  items:
-    - name: 概述
-      href: deploying/index.md
-    - name: 使用 CLI 发布应用
-      href: deploying/deploy-with-cli.md
-    - name: 使用 Visual Studio 部署应用
-      href: deploying/deploy-with-vs.md
-    - name: 使用 CLI 创建 NuGet 包
-      href: deploying/creating-nuget-packages.md
-    - name: 自包含部署运行时前滚
-      href: deploying/runtime-patch-selection.md
-    - name: 裁剪自包含部署和可执行文件
-      href: deploying/trim-self-contained.md
-    - name: 运行时包存储区
-      href: deploying/runtime-store.md
-- name: Docker
-  items:
-    - name: .NET 和 Docker 简介
-      href: docker/introduction.md
-    - name: 使 .NET Core 应用程序容器化
-      href: docker/build-container.md
-    - name: Visual Studio 中的容器工具
-      href: /visualstudio/containers/overview
-- name: 运行时配置
-  items:
-    - name: 设置
-      href: run-time-config/index.md
-    - name: 编译设置
-      href: run-time-config/compilation.md
-    - name: 调试和分析设置
-      href: run-time-config/debugging-profiling.md
-    - name: 垃圾回收器设置
-      href: run-time-config/garbage-collector.md
-    - name: 全球化设置
-      href: run-time-config/globalization.md
-    - name: 网络设置
-      href: run-time-config/networking.md
-    - name: 线程设置
-      href: run-time-config/threading.md
-- name: 迁移
-  items:
-    - name: .NET Core 2.0 - 2.1
-      href: migration/20-21.md
-    - name: 从 project.json 迁移
-      href: migration/index.md
-    - name: project.json 和 csproj 之间的映射
-      href: tools/project-json-to-csproj.md
-    - name: CLI 变更概述
-      href: tools/cli-msbuild-architecture.md
-    - name: csproj 格式的新增内容
-      href: tools/csproj.md
-    - name: 从 DNX 迁移
-      href: migration/from-dnx.md
-- name: 从 .NET Framework 移植
-  items:
-    - name: 概述
-      href: porting/index.md
-    - name: 分析第三方依赖项
-      href: porting/third-party-deps.md
-    - name: 移植库
-      href: porting/libraries.md
-    - name: 整理 .NET Core 的项目
-      href: porting/project-structure.md
-    - name: 不可用的技术
-      href: porting/net-framework-tech-unavailable.md
-    - name: 工具
-      href: porting/tools.md
-    - name: 使用 Windows 兼容包
-      href: porting/windows-compat-pack.md
-    - name: 移植 Windows 窗体项目
-      href: porting/winforms.md
-    - name: 移植 WPF 项目
-      href: ../desktop-wpf/migration/convert-project-from-net-framework.md
-    - name: 端口 C++/CLI 项目
-      href: porting/cpp-cli.md
-- name: 单元测试
-  displayName: 'xUnit,NUnit,MSTest,unit testing,testing'
-  items:
-    - name: 概述
-      href: testing/index.md
-    - name: 单元测试最佳做法
-      href: testing/unit-testing-best-practices.md
-    - name: xUnit
-      items:
-        - name: 'C# 单元测试'
-          href: testing/unit-testing-with-dotnet-test.md
-        - name: 'F# 单元测试'
-          href: testing/unit-testing-fsharp-with-dotnet-test.md
-        - name: VB 单元测试
-          href: testing/unit-testing-visual-basic-with-dotnet-test.md
-    - name: NUnit
-      items:
-        - name: 'C# 单元测试'
-          href: testing/unit-testing-with-nunit.md
-        - name: 'F# 单元测试'
-          href: testing/unit-testing-fsharp-with-nunit.md
-        - name: VB 单元测试
-          href: testing/unit-testing-visual-basic-with-nunit.md
-    - name: MSTest
-      items:
-        - name: 'C# 单元测试'
-          href: testing/unit-testing-with-mstest.md
-        - name: 'F# 单元测试'
-          href: testing/unit-testing-fsharp-with-mstest.md
-        - name: VB 单元测试
-          href: testing/unit-testing-visual-basic-with-mstest.md
-    - name: 运行选择性单元测试
-      href: testing/selective-unit-tests.md
-    - name: 对单元测试排序
-      href: testing/order-unit-tests.md
-    - name: 对已发布的输出进行单元测试
-      href: testing/unit-testing-published-output.md
-    - name: 使用 Visual Studio 对 .NET Core 项目进行实时单元测试
-      href: /visualstudio/test/live-unit-testing-start
-- name: 版本管理
-  items:
-    - name: 概述
-      href: versions/index.md
-    - name: .NET Core 版本选择
-      href: versions/selection.md
-- name: 运行时标识符 (RID) 目录
-  href: rid-catalog.md
-- name: 资源清单名称
-  href: resources/manifest-file-names.md
-- name: 依赖项管理和加载
-  items:
-    - name: 依赖项管理
-      href: tools/dependencies.md
-    - name: 依赖项加载
-      href: dependency-loading/overview.md
-    - name: 了解 AssemblyLoadContext
-      href: dependency-loading/understanding-assemblyloadcontext.md
-    - name: 依赖项加载详细信息
-      items:
-        - name: 默认依赖项探测
-          href: dependency-loading/default-probing.md
-        - name: 加载托管程序集
-          href: dependency-loading/loading-managed.md
-        - name: 加载附属程序集
-          href: dependency-loading/loading-resources.md
-        - name: 加载非托管库
-          href: dependency-loading/loading-unmanaged.md
-    - name: 教程
-      items:
-        - name: 使用插件创建 .NET Core 应用程序
-          href: tutorials/creating-app-with-plugin-support.md
-        - name: 如何在 .NET Core 中使用和调试程序集可卸载性
-          href: ../standard/assembly/unloadability.md
-- name: .NET Core 分发打包
-  href: distribution-packaging.md
-- name: 向 COM 公开 .NET Core 组件
-  href: native-interop/expose-components-to-com.md
-- name: 从本机代码承载 .NET Core
-  href: tutorials/netcore-hosting.md
-- name: 包、元包和框架
-  href: packages.md
-- name: 持续集成
-  href: tools/using-ci-with-cli.md
+items:
+  - name: .NET Core 文档
+    href: index.yml
+  - name: .NET Core 简介
+    href: introduction.md
+  - name: .NET Core 概述
+    href: about.md
+  - name: 安装
+    items:
+      - name: 概述
+        href: install/index.md
+      - name: 安装 SDK
+        href: install/sdk.md
+      - name: 安装运行时
+        href: install/runtime.md
+      - name: 支持的操作系统和依赖项
+        href: install/dependencies.md
+      - name: 删除过时的运行时和 SDK
+        href: install/remove-runtime-sdk-versions.md
+      - name: 管理 .NET 模板
+        href: install/templates.md
+      - name: macOS 公证问题
+        href: install/macos-notarization-issues.md
+      - name: 如何检查 .NET Core 版本
+        href: install/how-to-detect-installed-versions.md
+      - name: Linux
+        items:
+          - name: 概述
+            href: install/linux.md
+          - name: Ubuntu
+            href: install/linux-ubuntu.md
+          - name: CentOS
+            href: install/linux-centos.md
+          - name: Debian
+            href: install/linux-debian.md
+          - name: Fedora
+            href: install/linux-fedora.md
+          - name: OpenSUSE
+            href: install/linux-opensuse.md
+          - name: Redhat Enterprise Linux
+            href: install/linux-rhel.md
+          - name: SLES
+            href: install/linux-sles.md
+      - name: 安装本地化的 IntelliSense
+        href: install/localized-intellisense.md
+  - name: 入门
+    href: get-started.md
+  - name: .NET Core 的新增功能
+    items:
+      - name: .NET Core 3.1 的新增功能
+        href: whats-new/dotnet-core-3-1.md
+      - name: .NET Core 3.0 的新增功能
+        href: whats-new/dotnet-core-3-0.md
+      - name: .NET Core 2.2 的新增功能
+        href: whats-new/dotnet-core-2-2.md
+      - name: .NET Core 2.1 的新增功能
+        href: whats-new/dotnet-core-2-1.md
+      - name: .NET Core 2.0 的新增功能
+        href: whats-new/dotnet-core-2-0.md
+  - name: 重大更改
+    displayName: app compatibility
+    href: compatibility/
+  - name: 教程
+    items:
+      - name: 使用 Visual Studio
+        items:
+          - name: 创建控制台应用
+            href: tutorials/with-visual-studio.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: 调试应用
+            href: tutorials/debugging-with-visual-studio.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: 发布应用
+            href: tutorials/publishing-with-visual-studio.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: 创建库
+            href: tutorials/library-with-visual-studio.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: 对库进行单元测试
+            href: tutorials/testing-library-with-visual-studio.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: 安装并使用包
+            href: /nuget/quickstart/install-and-use-a-package-in-visual-studio
+            displayName: 'tutorials, visual studio, vs'
+          - name: 创建和发布包
+            href: /nuget/quickstart/create-and-publish-a-package-using-visual-studio
+            displayName: 'tutorials, visual studio, vs'
+      - name: 使用 Visual Studio Code
+        items:
+          - name: 创建控制台应用
+            href: tutorials/with-visual-studio-code.md
+            displayName: 'tutorials, visual studio code, vs code, cli'
+          - name: 调试应用
+            href: tutorials/debugging-with-visual-studio-code.md
+            displayName: 'tutorials, visual studio code, vs code'
+          - name: 发布应用
+            href: tutorials/publishing-with-visual-studio-code.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: 创建库
+            href: tutorials/library-with-visual-studio-code.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: 对库进行单元测试
+            href: tutorials/testing-library-with-visual-studio-code.md
+            displayName: 'tutorials, visual studio, vs'
+          - name: 安装并使用包
+            href: /nuget/quickstart/install-and-use-a-package-using-the-dotnet-cli
+            displayName: 'tutorials, cli'
+          - name: 创建和发布包
+            href: /nuget/quickstart/create-and-publish-a-package-using-the-dotnet-cli
+            displayName: tutorials
+      - name: 使用 Visual Studio for Mac
+        items:
+          - name: 创建控制台应用
+            href: tutorials/using-on-mac-vs.md
+            displayName: tutorials
+          - name: 创建库并对其进行单元测试
+            href: tutorials/using-on-mac-vs-full-solution.md
+            displayName: tutorials
+          - name: 安装并使用包
+            href: /nuget/quickstart/install-and-use-a-package-in-visual-studio-mac
+            displayName: tutorials
+      - name: 高级主题
+        items:
+          - name: 使用 xUnit 对应用进行单元测试
+            href: tutorials/testing-with-cli.md
+            displayName: 'tutorials, cli'
+          - name: 如何创建库
+            href: tutorials/libraries.md
+          - name: 创建 CLI 的模板
+            items:
+              - name: 1 - 创建项模板
+                href: tutorials/cli-templates-create-item-template.md
+                displayName: 'tutorials, cli'
+              - name: 2 - 创建项目模板
+                href: tutorials/cli-templates-create-project-template.md
+                displayName: 'tutorials, cli'
+              - name: 3 - 创建模板包
+                href: tutorials/cli-templates-create-template-pack.md
+                displayName: 'tutorials, cli'
+          - name: 为 CLI 创建工具
+            items:
+              - name: 1 - 创建工具
+                displayName: 'tools, tutorials, cli'
+                href: tools/global-tools-how-to-create.md
+              - name: 2 - 使用全局工具
+                displayName: 'tools, tutorials, cli'
+                href: tools/global-tools-how-to-use.md
+              - name: 3 - 使用本地工具
+                href: tools/local-tools-how-to-use.md
+                displayName: 'tools, tutorials, cli'
+          - name: 使用插件创建应用
+            href: tutorials/creating-app-with-plugin-support.md
+      - name: 更多教程
+        href: tutorials/index.md
+  - name: 项目 SDK
+    items:
+      - name: 概述
+        href: project-sdk/overview.md
+      - name: 参考
+        items:
+          - name: Microsoft.NET.Sdk
+            href: project-sdk/msbuild-props.md
+          - name: Microsoft.NET.Sdk.Web
+            href: /aspnet/core/razor-pages/web-sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
+          - name: Microsoft.NET.Sdk.Razor
+            href: /aspnet/core/razor-pages/sdk?toc=/dotnet/core/toc.json&bc=/dotnet/breadcrumb/toc.json
+  - name: .NET Core SDK 概述
+    href: sdk.md
+  - name: .NET Core CLI
+    items:
+      - name: 概述
+        href: tools/index.md
+      - name: 参考
+        items:
+          - name: dotnet
+            href: tools/dotnet.md
+          - name: dotnet build
+            href: tools/dotnet-build.md
+          - name: dotnet build-server
+            href: tools/dotnet-build-server.md
+          - name: dotnet clean
+            href: tools/dotnet-clean.md
+          - name: dotnet help
+            href: tools/dotnet-help.md
+          - name: dotnet migrate
+            href: tools/dotnet-migrate.md
+          - name: dotnet msbuild
+            href: tools/dotnet-msbuild.md
+          - name: dotnet new
+            href: tools/dotnet-new.md
+          - name: dotnet nuget
+            items:
+              - name: dotnet nuget delete
+                href: tools/dotnet-nuget-delete.md
+              - name: dotnet nuget locals
+                href: tools/dotnet-nuget-locals.md
+              - name: dotnet nuget push
+                href: tools/dotnet-nuget-push.md
+              - name: dotnet nuget add source
+                href: tools/dotnet-nuget-add-source.md
+              - name: dotnet nuget disable source
+                href: tools/dotnet-nuget-disable-source.md
+              - name: dotnet nuget enable source
+                href: tools/dotnet-nuget-enable-source.md
+              - name: dotnet nuget list source
+                href: tools/dotnet-nuget-list-source.md
+              - name: dotnet nuget remove source
+                href: tools/dotnet-nuget-remove-source.md
+              - name: dotnet nuget update source
+                href: tools/dotnet-nuget-update-source.md
+          - name: dotnet pack
+            href: tools/dotnet-pack.md
+          - name: dotnet publish
+            href: tools/dotnet-publish.md
+          - name: dotnet restore
+            href: tools/dotnet-restore.md
+          - name: dotnet run
+            href: tools/dotnet-run.md
+          - name: dotnet sln
+            href: tools/dotnet-sln.md
+          - name: dotnet store
+            href: tools/dotnet-store.md
+          - name: dotnet test
+            href: tools/dotnet-test.md
+          - name: dotnet tool
+            items:
+              - name: dotnet tool install
+                href: tools/dotnet-tool-install.md
+              - name: dotnet tool list
+                href: tools/dotnet-tool-list.md
+              - name: dotnet tool restore
+                href: tools/dotnet-tool-restore.md
+              - name: dotnet tool run
+                href: tools/dotnet-tool-run.md
+              - name: dotnet tool uninstall
+                href: tools/dotnet-tool-uninstall.md
+              - name: dotnet tool update
+                href: tools/dotnet-tool-update.md
+          - name: dotnet vstest
+            href: tools/dotnet-vstest.md
+          - name: dotnet-install 脚本
+            href: tools/dotnet-install-script.md
+          - name: 项目引用命令
+            items:
+              - name: dotnet add reference
+                href: tools/dotnet-add-reference.md
+              - name: dotnet list reference
+                href: tools/dotnet-list-reference.md
+              - name: dotnet remove reference
+                href: tools/dotnet-remove-reference.md
+          - name: 项目包命令
+            items:
+              - name: dotnet add package
+                href: tools/dotnet-add-package.md
+              - name: dotnet list package
+                href: tools/dotnet-list-package.md
+              - name: dotnet remove package
+                href: tools/dotnet-remove-package.md
+      - name: 全局和本地工具
+        items:
+          - name: 管理工具
+            href: tools/global-tools.md
+          - name: 排查工具问题
+            href: tools/troubleshoot-usage-issues.md
+      - name: global.json 概述
+        href: tools/global-json.md
+      - name: 自定义模板
+        href: tools/custom-templates.md
+      - name: 遥测
+        href: tools/telemetry.md
+      - name: 提升的访问权限
+        href: tools/elevated-access.md
+      - name: 启用 Tab 自动补全
+        href: tools/enable-tab-autocomplete.md
+  - name: 诊断工具
+    items:
+      - name: 概述
+        href: diagnostics/index.md
+      - name: 托管调试器
+        href: diagnostics/managed-debuggers.md
+      - name: 日志记录和跟踪
+        href: diagnostics/logging-tracing.md
+      - name: .NET Core CLI 全局工具
+        items:
+          - name: dotnet-counters
+            href: diagnostics/dotnet-counters.md
+          - name: dotnet-dump
+            href: diagnostics/dotnet-dump.md
+          - name: dotnet-trace
+            href: diagnostics/dotnet-trace.md
+      - name: .NET Core 诊断教程
+        items:
+          - name: 调试内存泄露
+            href: diagnostics/debug-memory-leak.md
+  - name: 其他 .NET Core 工具
+    items:
+      - name: 概述
+        href: additional-tools/index.md
+      - name: .NET Core 卸载工具
+        href: additional-tools/uninstall-tool.md
+      - name: WCF Web 服务引用提供程序
+        href: additional-tools/wcf-web-service-reference-guide.md
+      - name: dotnet-svcutil
+        href: additional-tools/dotnet-svcutil-guide.md
+      - name: dotnet-svcutil.xmlserializer
+        href: additional-tools/dotnet-svcutil.xmlserializer-guide.md
+      - name: XML 序列化程序生成器
+        href: additional-tools/xml-serializer-generator.md
+  - name: 应用程序部署
+    items:
+      - name: 概述
+        href: deploying/index.md
+      - name: 使用 CLI 发布应用
+        href: deploying/deploy-with-cli.md
+      - name: 使用 Visual Studio 部署应用
+        href: deploying/deploy-with-vs.md
+      - name: 使用 CLI 创建 NuGet 包
+        href: deploying/creating-nuget-packages.md
+      - name: 自包含部署运行时前滚
+        href: deploying/runtime-patch-selection.md
+      - name: 裁剪自包含部署和可执行文件
+        href: deploying/trim-self-contained.md
+      - name: 运行时包存储区
+        href: deploying/runtime-store.md
+  - name: Docker
+    items:
+      - name: .NET 和 Docker 简介
+        href: docker/introduction.md
+      - name: 使 .NET Core 应用程序容器化
+        href: docker/build-container.md
+      - name: Visual Studio 中的容器工具
+        href: /visualstudio/containers/overview
+  - name: 运行时配置
+    items:
+      - name: 设置
+        href: run-time-config/index.md
+      - name: 编译设置
+        href: run-time-config/compilation.md
+      - name: 调试和分析设置
+        href: run-time-config/debugging-profiling.md
+      - name: 垃圾回收器设置
+        href: run-time-config/garbage-collector.md
+      - name: 全球化设置
+        href: run-time-config/globalization.md
+      - name: 网络设置
+        href: run-time-config/networking.md
+      - name: 线程设置
+        href: run-time-config/threading.md
+  - name: 迁移
+    items:
+      - name: .NET Core 2.0 - 2.1
+        href: migration/20-21.md
+      - name: 从 project.json 迁移
+        href: migration/index.md
+      - name: project.json 和 csproj 之间的映射
+        href: tools/project-json-to-csproj.md
+      - name: CLI 变更概述
+        href: tools/cli-msbuild-architecture.md
+      - name: csproj 格式的新增内容
+        href: tools/csproj.md
+      - name: 从 DNX 迁移
+        href: migration/from-dnx.md
+  - name: 从 .NET Framework 移植
+    items:
+      - name: 概述
+        href: porting/index.md
+      - name: 分析第三方依赖项
+        href: porting/third-party-deps.md
+      - name: 移植库
+        href: porting/libraries.md
+      - name: 整理 .NET Core 的项目
+        href: porting/project-structure.md
+      - name: 不可用的技术
+        href: porting/net-framework-tech-unavailable.md
+      - name: 工具
+        href: porting/tools.md
+      - name: 使用 Windows 兼容包
+        href: porting/windows-compat-pack.md
+      - name: 移植 Windows 窗体项目
+        href: porting/winforms.md
+      - name: 移植 WPF 项目
+        href: ../desktop-wpf/migration/convert-project-from-net-framework.md
+      - name: 端口 C++/CLI 项目
+        href: porting/cpp-cli.md
+  - name: 单元测试
+    displayName: 'xUnit,NUnit,MSTest,unit testing,testing'
+    items:
+      - name: 概述
+        href: testing/index.md
+      - name: 单元测试最佳做法
+        href: testing/unit-testing-best-practices.md
+      - name: xUnit
+        items:
+          - name: 'C# 单元测试'
+            href: testing/unit-testing-with-dotnet-test.md
+          - name: 'F# 单元测试'
+            href: testing/unit-testing-fsharp-with-dotnet-test.md
+          - name: VB 单元测试
+            href: testing/unit-testing-visual-basic-with-dotnet-test.md
+      - name: NUnit
+        items:
+          - name: 'C# 单元测试'
+            href: testing/unit-testing-with-nunit.md
+          - name: 'F# 单元测试'
+            href: testing/unit-testing-fsharp-with-nunit.md
+          - name: VB 单元测试
+            href: testing/unit-testing-visual-basic-with-nunit.md
+      - name: MSTest
+        items:
+          - name: 'C# 单元测试'
+            href: testing/unit-testing-with-mstest.md
+          - name: 'F# 单元测试'
+            href: testing/unit-testing-fsharp-with-mstest.md
+          - name: VB 单元测试
+            href: testing/unit-testing-visual-basic-with-mstest.md
+      - name: 运行选择性单元测试
+        href: testing/selective-unit-tests.md
+      - name: 对单元测试排序
+        href: testing/order-unit-tests.md
+      - name: 对已发布的输出进行单元测试
+        href: testing/unit-testing-published-output.md
+      - name: 使用 Visual Studio 对 .NET Core 项目进行实时单元测试
+        href: /visualstudio/test/live-unit-testing-start
+  - name: 版本管理
+    items:
+      - name: 概述
+        href: versions/index.md
+      - name: .NET Core 版本选择
+        href: versions/selection.md
+  - name: 运行时标识符 (RID) 目录
+    href: rid-catalog.md
+  - name: 资源清单名称
+    href: resources/manifest-file-names.md
+  - name: 依赖项管理和加载
+    items:
+      - name: 依赖项管理
+        href: tools/dependencies.md
+      - name: 依赖项加载
+        href: dependency-loading/overview.md
+      - name: 了解 AssemblyLoadContext
+        href: dependency-loading/understanding-assemblyloadcontext.md
+      - name: 依赖项加载详细信息
+        items:
+          - name: 默认依赖项探测
+            href: dependency-loading/default-probing.md
+          - name: 加载托管程序集
+            href: dependency-loading/loading-managed.md
+          - name: 加载附属程序集
+            href: dependency-loading/loading-resources.md
+          - name: 加载非托管库
+            href: dependency-loading/loading-unmanaged.md
+      - name: 教程
+        items:
+          - name: 使用插件创建 .NET Core 应用程序
+            href: tutorials/creating-app-with-plugin-support.md
+          - name: 如何在 .NET Core 中使用和调试程序集可卸载性
+            href: ../standard/assembly/unloadability.md
+  - name: .NET Core 分发打包
+    href: distribution-packaging.md
+  - name: 向 COM 公开 .NET Core 组件
+    href: native-interop/expose-components-to-com.md
+  - name: 从本机代码承载 .NET Core
+    href: tutorials/netcore-hosting.md
+  - name: 包、元包和框架
+    href: packages.md
+  - name: 持续集成
+    href: tools/using-ci-with-cli.md

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <exception> C# XML tag
 - exception C# XML tag
 ms.assetid: dd73aac5-3c74-4fcf-9498-f11bff3a2f3c
-ms.openlocfilehash: 14318ac0b0cdf781d0488eecaf934879017d91f6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fb193c586456497ee60aad941d56241ad7c6b63a
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789803"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287373"
 ---
 # <a name="exception-c-programming-guide"></a>\<exception>（C# 编程指南）
 
@@ -37,7 +37,7 @@ ms.locfileid: "76789803"
 
 ## <a name="remarks"></a>备注
 
-\<exception> 标记让你指定可引发的异常。 此标记可应用于方法、属性、事件和索引器的定义。
+`<exception>` 标记可用于指定可引发的异常。 此标记可应用于方法、属性、事件和索引器的定义。
 
 使用 [-doc](../../language-reference/compiler-options/doc-compiler-option.md) 进行编译以便将文档注释处理到文件中。
 
@@ -47,7 +47,7 @@ ms.locfileid: "76789803"
 
 [!code-csharp[csProgGuideDocComments#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#4)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [建议的文档注释标记](recommended-tags-for-documentation-comments.md)

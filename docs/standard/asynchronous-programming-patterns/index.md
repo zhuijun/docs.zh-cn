@@ -1,17 +1,18 @@
 ---
 title: 异步编程模式
+description: 了解 .NET 中的基于任务的异步模式 (TAP)、基于事件的异步模式 (EAP) 和异步编程模型 (APM)。
 ms.date: 10/16/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - asynchronous design patterns, .NET
 - .NET Framework, asynchronous design patterns
 ms.assetid: 4ece5c0b-f8fe-4114-9862-ac02cfe5a5d7
-ms.openlocfilehash: e1efe9c3eb57f317def91e527506c358eb086679
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bd4d44d8de8a64be82e9ce6af593a86719b59fcf
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160048"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84583500"
 ---
 # <a name="asynchronous-programming-patterns"></a>异步编程模式
 
@@ -19,9 +20,9 @@ ms.locfileid: "78160048"
 
 - **基于任务的异步模式 (TAP)** ，该模式使用单一方法表示异步操作的开始和完成。 TAP 是在 .NET Framework 4 中引入的。 **这是在 .NET 中进行异步编程的推荐方法。** C# 中的 [async](../../csharp/language-reference/keywords/async.md) 和 [await](../../csharp/language-reference/operators/await.md) 关键词以及 Visual Basic 中的 [Async](../../visual-basic/language-reference/modifiers/async.md) 和 [Await](../../visual-basic/language-reference/operators/await-operator.md) 运算符为 TAP 添加了语言支持。 有关详细信息，请参阅[基于任务的异步模式 (TAP)](task-based-asynchronous-pattern-tap.md)。  
 
-- 基于事件的异步模式 (EAP)  ，是提供异步行为的基于事件的旧模型。 这种模式需要后缀为 `Async` 的方法，以及一个或多个事件、事件处理程序委托类型和 `EventArg` 派生类型。 EAP 是在 .NET Framework 2.0 中引入的。 建议新开发中不再使用这种模式。 有关详细信息，请参阅[基于事件的异步模式 (EAP)](event-based-asynchronous-pattern-eap.md)。  
+- 基于事件的异步模式 (EAP)，是提供异步行为的基于事件的旧模型。 这种模式需要后缀为 `Async` 的方法，以及一个或多个事件、事件处理程序委托类型和 `EventArg` 派生类型。 EAP 是在 .NET Framework 2.0 中引入的。 建议新开发中不再使用这种模式。 有关详细信息，请参阅[基于事件的异步模式 (EAP)](event-based-asynchronous-pattern-eap.md)。  
 
-- 异步编程模型 (APM)  模式（也称为 <xref:System.IAsyncResult> 模式），这是使用 <xref:System.IAsyncResult> 接口提供异步行为的旧模型。 在这种模式下，同步操作需要 `Begin` 和 `End` 方法（例如，`BeginWrite` 和 `EndWrite`以实现异步写入操作）。 不建议新的开发使用此模式。 有关详细信息，请参阅[异步编程模型 (APM)](asynchronous-programming-model-apm.md)。  
+- 异步编程模型 (APM) 模式（也称为 <xref:System.IAsyncResult> 模式），这是使用 <xref:System.IAsyncResult> 接口提供异步行为的旧模型。 在这种模式下，同步操作需要 `Begin` 和 `End` 方法（例如，`BeginWrite` 和 `EndWrite`以实现异步写入操作）。 不建议新的开发使用此模式。 有关详细信息，请参阅[异步编程模型 (APM)](asynchronous-programming-model-apm.md)。  
   
 ## <a name="comparison-of-patterns"></a>模式的比较
 
@@ -65,7 +66,7 @@ public class MyClass
 }  
 ```  
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [深入了解异步](../async-in-depth.md)
 - [C# 中的异步编程](../../csharp/async.md)

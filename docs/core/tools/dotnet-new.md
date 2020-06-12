@@ -2,16 +2,16 @@
 title: dotnet new 命令
 description: dotnet new 命令可根据指定模板新建 .NET Core 项目。
 ms.date: 04/10/2020
-ms.openlocfilehash: 1544f519f2a5f6a1a6e042c1db720eff45f5d98c
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 39301ad95761848b60b45cb5c18ede937f70c32c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83442236"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84283970"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
- 本文适用于： ✔️ .NET Core 2.0 SDK 及更高版本
+本文适用于： ✔️ .NET Core 2.0 SDK 及更高版本
 
 ## <a name="name"></a>“属性”
 
@@ -46,7 +46,7 @@ dotnet new -h|--help
 
   调用命令时要实例化的模板。 每个模板可能具有可传递的特定选项。 有关详细信息，请参阅[模板选项](#template-options)。
 
-  可以运行 `dotnet new --list` 或 `dotnet new -l` 以查看所有已安装模板的列表。 如果 `TEMPLATE` 值与返回表中的“模板”  或“短名称”  列中的文本不完全匹配，则会对这两列执行 substring 匹配。
+  可以运行 `dotnet new --list` 或 `dotnet new -l` 以查看所有已安装模板的列表。 如果 `TEMPLATE` 值与返回表中的“模板”或“短名称”列中的文本不完全匹配，则会对这两列执行 substring 匹配。
 
   从 .NET Core 3.0 SDK 开始，当你在以下情况下调用 `dotnet new` 命令时，CLI 将在 NuGet.org 中搜索模板：
 
@@ -75,6 +75,7 @@ dotnet new -h|--help
 | MVC ViewImports                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2.0        |
 | MVC ViewStart                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2.0        |
 | Blazor Server 应用                            | [blazorserver](#blazorserver)   | [C#]         | Web/Blazor                            | 3.0        |
+| Blazor WebAssembly 应用                       | `blazorwasm`                    | [C#]         | Web/Blazor/WebAssembly                            | 3.1.300    |
 | ASP.NET Core 空                           | [web](#web)                     | [C#]，F#     | Web/空                             | 1.0        |
 | ASP.NET Core Web 应用程序 (Model-View-Controller) | [mvc](#web-options)             | [C#]，F#     | Web/MVC                               | 1.0        |
 | ASP.NET Core Web 应用程序                         | [webapp、razor](#web-options)   | [C#]         | Web/MVC/Razor Pages                   | 2.2、2.0   |
@@ -148,7 +149,7 @@ dotnet new -h|--help
   如果未指定此选项的参数，该命令将列出已安装的模板及其详细信息。
 
   > [!NOTE]
-  > 若要使用 `PATH` 卸载模板，需要完全限定路径。 例如，C:/Users/\<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp  有效，但是包含文件夹中的 ./GarciaSoftware.ConsoleTemplate.CSharp  无效。
+  > 若要使用 `PATH` 卸载模板，需要完全限定路径。 例如，C:/Users/\<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp 有效，但是包含文件夹中的 ./GarciaSoftware.ConsoleTemplate.CSharp 无效 。
   > 模板路径中不要包含最后的终止目录斜杠。
 
 - **`--update-apply`**
@@ -246,7 +247,7 @@ dotnet new -h|--help
 
 - **`--exclude-launch-settings`**
 
-  从生成的模板中排除 launchSettings.json  。
+  从生成的模板中排除 launchSettings.json。
 
 - **`--no-restore`**
 
@@ -377,7 +378,7 @@ dotnet new -h|--help
 
 - **`--exclude-launch-settings`**
 
-  从生成的模板中排除 launchSettings.json  。
+  从生成的模板中排除 launchSettings.json。
 
 - **`--no-https`**
 
@@ -397,7 +398,7 @@ dotnet new -h|--help
 
 - **`--exclude-launch-settings`**
 
-  从生成的模板中排除 launchSettings.json  。
+  从生成的模板中排除 launchSettings.json。
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -476,7 +477,7 @@ dotnet new -h|--help
 
 - **`--exclude-launch-settings`**
 
-  从生成的模板中排除 launchSettings.json  。
+  从生成的模板中排除 launchSettings.json。
 
 - **`--no-https`**
 
@@ -524,7 +525,7 @@ dotnet new -h|--help
 
 - **`--exclude-launch-settings`**
 
-  从生成的模板中排除 launchSettings.json  。
+  从生成的模板中排除 launchSettings.json。
 
 - **`--no-restore`**
 
@@ -556,7 +557,7 @@ dotnet new -h|--help
 
 - **`--exclude-launch-settings`**
 
-  从生成的模板中排除 launchSettings.json  。
+  从生成的模板中排除 launchSettings.json。
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -633,7 +634,7 @@ dotnet new -h|--help
 
 - **`--exclude-launch-settings`**
 
-  从生成的模板中排除 launchSettings.json  。
+  从生成的模板中排除 launchSettings.json。
 
 - **`--no-https`**
 
@@ -665,7 +666,7 @@ dotnet new -h|--help
 
 - **`--sdk-version <VERSION_NUMBER>`**
 
-  指定要在 global.json  文件中使用的 .NET Core SDK 版本。
+  指定要在 global.json 文件中使用的 .NET Core SDK 版本。
 
 ***
 
@@ -707,13 +708,13 @@ dotnet new -h|--help
   dotnet new spa -l
   ```
 
-- 列出与“we”子字符串匹配的所有模板  。 找不到完全匹配，因此子字符串匹配针对短名称和名称列运行。
+- 列出与“we”子字符串匹配的所有模板。 找不到完全匹配，因此子字符串匹配针对短名称和名称列运行。
 
   ```dotnetcli
   dotnet new we -l
   ```
 
-- 尝试调用与 ng 匹配的模板  。 如果无法确定单个匹配项，请列出部分匹配项的模板。
+- 尝试调用与 ng 匹配的模板。 如果无法确定单个匹配项，请列出部分匹配项的模板。
 
   ```dotnetcli
   dotnet new ng
@@ -731,7 +732,7 @@ dotnet new -h|--help
   dotnet new -u
   ```
 
-- 在当前目录中创建 global.json  ，将 SDK 版本设置为 3.1.101：
+- 在当前目录中创建 global.json，将 SDK 版本设置为 3.1.101：
 
   ```dotnetcli
   dotnet new globaljson --sdk-version 3.1.101

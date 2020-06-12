@@ -5,12 +5,12 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: 09b290713f3bc2a7a7824bb19c98138943ad5b2c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a9411557e9177c8dbed45ec25984d574479da0de
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77673376"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241781"
 ---
 # <a name="objects-c-programming-guide"></a>对象（C# 编程指南）
 类或结构定义的作用类似于蓝图，指定该类型可以进行哪些操作。 从本质上说，对象是按照此蓝图分配和配置的内存块。 程序可以创建同一个类的多个对象。 对象也称为实例，可以存储在命名变量中，也可以存储在数组或集合中。 使用这些变量来调用对象方法及访问对象公共属性的代码称为客户端代码。 在 C# 等面向对象的语言中，典型的程序由动态交互的多个对象组成。  
@@ -29,7 +29,7 @@ ms.locfileid: "77673376"
   
  [!code-csharp[csProgGuideStatements#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStatements/CS/Statements.cs#31)]  
   
- `p1` 和 `p2` 的内存在线程堆栈上进行分配。 该内存随声明它的类型或方法一起回收。 这就是在赋值时复制结构的一个原因。 相比之下，当对类实例对象的所有引用都超出范围时，为该类实例分配的内存将由公共语言运行时自动回收（垃圾回收）。 无法像在 C++ 中那样明确地销毁类对象。 有关 .NET Framework 中的垃圾回收的详细信息，请参阅[垃圾回收](../../../standard/garbage-collection/index.md)。  
+ `p1` 和 `p2` 的内存在线程堆栈上进行分配。 该内存随声明它的类型或方法一起回收。 这就是在赋值时复制结构的一个原因。 相比之下，当对类实例对象的所有引用都超出范围时，为该类实例分配的内存将由公共语言运行时自动回收（垃圾回收）。 无法像在 C++ 中那样明确地销毁类对象。 有关 .NET 中的垃圾回收的详细信息，请参阅[垃圾回收](../../../standard/garbage-collection/index.md)。  
   
 > [!NOTE]
 > 公共语言运行时中高度优化了托管堆上内存的分配和释放。 在大多数情况下，在堆上分配类实例与在堆栈上分配结构实例在性能成本上没有显著的差别。
@@ -37,7 +37,7 @@ ms.locfileid: "77673376"
 ## <a name="object-identity-vs-value-equality"></a>对象标识与值相等性  
  在比较两个对象是否相等时，首先必须明确是想知道两个变量是否表示内存中的同一对象，还是想知道这两个对象的一个或多个字段的值是否相等。 如果要对值进行比较，则必须考虑这两个对象是值类型（结构）的实例，还是引用类型（类、委托、数组）的实例。  
   
-- 若要确定两个类实例是否引用内存中的同一位置（这意味着它们具有相同的标识  ），可使用静态 <xref:System.Object.Equals%2A> 方法。 （<xref:System.Object?displayProperty=nameWithType> 是所有值类型和引用类型的隐式基类，其中包括用户定义的结构和类。）  
+- 若要确定两个类实例是否引用内存中的同一位置（这意味着它们具有相同的标识），可使用静态 <xref:System.Object.Equals%2A> 方法。 （<xref:System.Object?displayProperty=nameWithType> 是所有值类型和引用类型的隐式基类，其中包括用户定义的结构和类。）  
   
 - 若要确定两个结构实例中的实例字段是否具有相同的值，可使用 <xref:System.ValueType.Equals%2A?displayProperty=nameWithType> 方法。 由于所有结构都隐式继承自 <xref:System.ValueType?displayProperty=nameWithType>，因此可以直接在对象上调用该方法，如以下示例所示：  
   

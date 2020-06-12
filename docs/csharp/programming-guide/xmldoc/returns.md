@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <returns> C# XML tag
 - returns C# XML tag
 ms.assetid: bb2d9958-62fc-47c7-9511-6311171f119f
-ms.openlocfilehash: 784d9effa589c962b8a2b982fd199f74309fb4dc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7bc950a8d89a3ac2b5c3b7a68e05c7778e97f85c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789714"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287228"
 ---
 # <a name="returns-c-programming-guide"></a>\<returns>（C# 编程指南）
 
@@ -31,7 +31,7 @@ ms.locfileid: "76789714"
 
 ## <a name="remarks"></a>备注
 
-在方法声明的注释中应使用 \<returns> 标记来描述返回值。
+在方法声明的注释中应使用 `<returns>` 标记来描述返回值。
 
 使用 [-doc](../../language-reference/compiler-options/doc-compiler-option.md) 进行编译以便将文档注释处理到文件中。
 
@@ -39,7 +39,7 @@ ms.locfileid: "76789714"
 
 [!code-csharp[csProgGuideDocComments#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#10)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [建议的文档注释标记](./recommended-tags-for-documentation-comments.md)

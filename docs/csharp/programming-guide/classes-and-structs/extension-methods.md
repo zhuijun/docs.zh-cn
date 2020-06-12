@@ -6,12 +6,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: fc816123134995b753beda0a6f281133d6ddd691
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 5db2797870b6c2e1998f17f1d8e4df8aa3f95c9e
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82506813"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241404"
 ---
 # <a name="extension-methods-c-programming-guide"></a>扩展方法（C# 编程指南）
 
@@ -97,7 +97,7 @@ static class DomainEntityExtensions
 
 ### <a name="extending-predefined-types"></a>扩展预定义类型
 
-当需要创建可重用功能时，我们无需创建新对象，而是可以扩展现有类型，例如 .NET Framework 或 CLR 类型。 例如，如果不使用扩展方法，我们可能会创建 `Engine` 或 `Query` 类，对可从代码中的多个位置调用的 SQL Server 执行查询。 但是，如果换做使用扩展方法扩展 <xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType> 类，就可以从与 SQL Server 连接的任何位置执行该查询。 一些其他示例可能是向 <xref:System.String?displayProperty=nameWithType> 类添加常见功能、扩展 <xref:System.IO.File?displayProperty=nameWithType>、<xref:System.IO.Stream?displayProperty=nameWithType> 以及 <xref:System.Exception?displayProperty=nameWithType> 对象的数据处理功能以实现特定的错误处理功能。 这些用例的类型仅受想象力和判断力的限制。
+当需要创建可重用功能时，我们无需创建新对象，而是可以扩展现有类型，例如 .NET 或 CLR 类型。 例如，如果不使用扩展方法，我们可能会创建 `Engine` 或 `Query` 类，对可从代码中的多个位置调用的 SQL Server 执行查询。 但是，如果换做使用扩展方法扩展 <xref:System.Data.SqlClient.SqlConnection?displayProperty=nameWithType> 类，就可以从与 SQL Server 连接的任何位置执行该查询。 一些其他示例可能是向 <xref:System.String?displayProperty=nameWithType> 类添加常见功能、扩展 <xref:System.IO.File?displayProperty=nameWithType>、<xref:System.IO.Stream?displayProperty=nameWithType> 以及 <xref:System.Exception?displayProperty=nameWithType> 对象的数据处理功能以实现特定的错误处理功能。 这些用例的类型仅受想象力和判断力的限制。
 
 使用 `struct` 类型扩展预定义类型可能很困难，因为它们已通过值传递给方法。 这意味着将对结构的副本进行任何结构更改。 扩展方法退出后，将不显示这些更改。 从 C# 7.2 开始，可以将 `ref` 修饰符添加到扩展方法的第一个参数。 添加 `ref` 修饰符意味着第一个参数是通过引用传递的。 在这种情况下，可以编写扩展方法来更改要扩展的结构的状态。
 
@@ -114,7 +114,7 @@ static class DomainEntityExtensions
 - 如果扩展方法与该类型中定义的方法具有相同的签名，则扩展方法永远不会被调用。
 - 在命名空间级别将扩展方法置于范围中。 例如，如果你在一个名为 `Extensions` 的命名空间中具有多个包含扩展方法的静态类，则这些扩展方法将全部由 `using Extensions;` 指令置于范围中。
 
-针对已实现的类库，不应为了避免程序集的版本号递增而使用扩展方法。 如果要向你拥有源代码的库中添加重要功能，应遵循适用于程序集版本控制的标准 .NET Framework 准则。 有关详细信息，请参阅[程序集版本控制](../../../standard/assembly/versioning.md)。
+针对已实现的类库，不应为了避免程序集的版本号递增而使用扩展方法。 如果要向你拥有源代码的库中添加重要功能，请遵循适用于程序集版本控制的 .NET 准则。 有关详细信息，请参阅[程序集版本控制](../../../standard/assembly/versioning.md)。
 
 ## <a name="see-also"></a>请参阅
 

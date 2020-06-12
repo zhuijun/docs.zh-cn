@@ -1,18 +1,18 @@
 ---
 title: 按字母顺序列出的 C# 编译器选项
-ms.date: 05/15/2018
+ms.date: 06/04/2020
 helpviewer_keywords:
 - compiler options [C#], listed alphabetically
 - C# language, compiler options listed alphabetically
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: d6d471cd27f35de6325a130e6c909d13cb1dcc85
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9765d13191f862a2e92bb00aa66a92c3a64ac303
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73972744"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446934"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>按字母顺序列出的 C# 编译器选项
 
@@ -29,7 +29,7 @@ ms.locfileid: "73972744"
 |[-baseaddress](baseaddress-compiler-option.md)|指定要生成的库的基址。|
 |[-bugreport](bugreport-compiler-option.md)|创建“Bug 报告”文件。 如果与 -errorreport:prompt 或 -errorreport:send 一起使用，则发送任何崩溃信息时都将随附此文件。|
 |[/checked](checked-compiler-option.md)|使编译器生成溢出检查。|
-|-checksumalgorithm:\<alg>|指定用于计算 PDB 中存储的源文件校验和的算法。  受支持的值为:SHA256（默认值）或 SHA1。<br>由于与 SHA1 冲突，Microsoft 建议使用 SHA256。 |
+|-checksumalgorithm：\<alg>|指定用于计算 PDB 中存储的源文件校验和的算法。  受支持的值为:SHA256（默认值）或 SHA1。<br>由于与 SHA1 冲突，Microsoft 建议使用 SHA256。 |
 |[-codepage](codepage-compiler-option.md)|指定在打开源文件时使用的代码页。|
 |[-debug](debug-compiler-option.md)|发出调试信息。|
 |[-define](define-compiler-option.md)|定义条件编译符号。|
@@ -37,9 +37,9 @@ ms.locfileid: "73972744"
 |[-deterministic](deterministic-compiler-option.md)|如果输入相同，则会导致编译器输出的程序集其二进制内容在整个编译中相同。|
 |[-doc](doc-compiler-option.md)|指定要生成的 XML 文档文件。|
 |-embed|在 PDB 中嵌入所有源文件。|
-|-embed:\<file list>|在 PDB 中嵌入特定文件。|
+|-embed：\<file list>|在 PDB 中嵌入特定文件。|
 |-errorendlocation|每个错误结尾位置的输出行和列。|
-|-errorlog:\<file>|指定要记录所有编译器和分析器诊断的文件。|
+|-errorlog：\<file>|指定要记录所有编译器和分析器诊断的文件。|
 |[-errorreport](errorreport-compiler-option.md)|指定如何处理内部编译器错误；prompt、send 或 none。 默认值为 none。|
 |[-filealign](filealign-compiler-option.md)|指定用于输出文件节的对齐方式。|
 |[/fullpaths](fullpaths-compiler-option.md)|使编译器生成完全限定的路径。|
@@ -48,18 +48,19 @@ ms.locfileid: "73972744"
 |-incremental|启用增量编译 [已过时]。|
 |[-keycontainer](keycontainer-compiler-option.md)|指定强名称密钥容器。|
 |[-keyfile](keyfile-compiler-option.md)|指定强名称密钥文件。|
-|[-langversion:\<string>](langversion-compiler-option.md)|指定语言版本：默认、ISO-1、ISO-2、3、4、5、6、7、7.1、7.2、7.3 或最新版本 |
+|[-langversion：\<string>](langversion-compiler-option.md)|指定语言版本：默认、ISO-1、ISO-2、3、4、5、6、7、7.1、7.2、7.3 或最新版本 |
 |[/lib](lib-compiler-option.md)|指定要在其中搜索引用的附加目录。|
 |[-link](link-compiler-option.md)|使指定程序集中的 COM 类型信息对项目可用。|
 |[-linkresource](linkresource-compiler-option.md)|将指定的资源链接到此程序集。|
 |[-main](main-compiler-option.md)|指定包含入口点的类型（忽略所有其他可能的入口点）。|
 |[-moduleassemblyname](moduleassemblyname-compiler-option.md)|指定一个程序集，.netmodule 可以访问其非公共类型。|
-|-modulename:\<string>|指定源模块的名称|
+|-modulename：\<string>|指定源模块的名称|
 |[-noconfig](noconfig-compiler-option.md)|指示编译器不自动包含 CSC.RSP 文件。|
 |[-nologo](nologo-compiler-option.md)|取消编译器版权消息。|
 |[-nostdlib](nostdlib-compiler-option.md)|指示编译器不引用标准库 (mscorlib.dll)。|
 |[-nowarn](nowarn-compiler-option.md)|禁用特定的警告消息|
 |[-nowin32manifest](nowin32manifest-compiler-option.md)|指示编译器不在可执行文件中嵌入应用程序清单。|
+|[-nullable](nullable-compiler-option.md)|指定可为空上下文选项。|
 |[-optimize](optimize-compiler-option.md)|启用/禁用优化。|
 |[-out](out-compiler-option.md)|指定输出文件名（默认值：包含主类的文件或第一个文件的基名称）。|
 |-parallel[+&#124;-]|指定是否使用并发生成 (+)。|
@@ -74,7 +75,7 @@ ms.locfileid: "73972744"
 |[/refonly](refonly-compiler-option.md)|生成引用程序集，而不生成主程序集。|
 |-reportanalyzer|报告其他分析器信息，如执行时间。|
 |[-resource](resource-compiler-option.md)|嵌入指定的资源。|
-|-ruleset:\<file>|指定可禁用特定诊断的规则集文件。|
+|-ruleset：\<file>|指定可禁用特定诊断的规则集文件。|
 |[-subsystemversion](subsystemversion-compiler-option.md)|指定可执行文件可以使用的子系统的最低版本。|
 |[-target](target-compiler-option.md)|使用下列四个选项之一指定输出文件的格式：[-target:appcontainerexe](target-appcontainerexe-compiler-option.md)、[-target:exe](target-exe-compiler-option.md)、[-target:library](target-library-compiler-option.md)、[-target:module](target-module-compiler-option.md)、[-target:winexe](target-winexe-compiler-option.md)、[-target:winmdobj](target-winmdobj-compiler-option.md)。|
 |[unsafe](unsafe-compiler-option.md)|允许[不安全](../keywords/unsafe.md)代码。|
@@ -91,4 +92,4 @@ ms.locfileid: "73972744"
 - [C# 编译器选项](index.md)
 - [按类别列出的 C# 编译器选项](listed-by-category.md)
 - [如何为 Visual Studio 命令行设置环境变量](how-to-set-environment-variables-for-the-visual-studio-command-line.md)
-- [\<compiler> Element](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)
+- [\<compiler> 元素](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)

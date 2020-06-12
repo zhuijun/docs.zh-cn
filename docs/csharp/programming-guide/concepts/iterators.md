@@ -2,16 +2,16 @@
 title: 循环访问 C# 中的集合
 ms.date: 08/14/2018
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
-ms.openlocfilehash: aceedd11466c75cedad3c67224c3a5595b4cabfa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 15b77fd11c0ff606119425ec7aae8e7127315e82
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77626265"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240689"
 ---
 # <a name="iterators-c"></a>迭代器 (C#)
 
-迭代器  可用于逐步迭代集合，例如列表和数组。
+迭代器可用于逐步迭代集合，例如列表和数组。
 
 迭代器方法或 `get` 访问器可对集合执行自定义迭代。 迭代器方法使用 [yield return](../../language-reference/keywords/yield.md) 语句返回元素，每次返回一个。 到达 `yield return` 语句时，会记住当前在代码中的位置。 下次调用迭代器函数时，将从该位置重新开始执行。
 
@@ -350,7 +350,7 @@ public class Stack<T> : IEnumerable<T>
 
 - 在第一次 `foreach` 循环迭代之后，修改列表序列。
 
-- 避免在 `foreach` 循环的第一次迭代之前完全加载大型列表。 一个示例是用于加载一批表格行的分页提取。 另一个示例关于 <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> 方法，该方法在 .NET Framework 中实现迭代器。
+- 避免在 `foreach` 循环的第一次迭代之前完全加载大型列表。 一个示例是用于加载一批表格行的分页提取。 另一个示例是 <xref:System.IO.DirectoryInfo.EnumerateFiles%2A> 方法，该方法在 .NET 中实现迭代器。
 
 - 在迭代器中封装生成列表。 使用迭代器方法，可生成该列表，然后在循环中产出每个结果。
 

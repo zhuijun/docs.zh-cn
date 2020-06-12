@@ -2,12 +2,12 @@
 title: 演练：使用 async 和 await 访问 Web (C#)
 ms.date: 07/20/2015
 ms.assetid: c95d8d71-5a98-4bf0-aaf4-45fed2ebbacd
-ms.openlocfilehash: 42b09dab26fd514e184163eaf41aff117d3a463f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: edc45f252b75c742afe4f073ca7dd92d9784d2c4
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74281786"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240642"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-c"></a>演练：使用 async 和 await 访问 Web (C#)
 
@@ -26,63 +26,63 @@ ms.locfileid: "74281786"
 
 1. 启动 Visual Studio。
 
-2. 在菜单栏上，依次选择“文件”   > “新建”   > “项目”  。
+2. 在菜单栏上，依次选择“文件” > “新建” > “项目”。
 
      **“新建项目”** 对话框随即打开。
 
-3. 在“已安装的模板”  窗格中，选择“Visual C#”，然后从项目类型列表选择“WPF 应用程序”  。
+3. 在“已安装的模板”窗格中，选择“Visual C#”，然后从项目类型列表选择“WPF 应用程序”。
 
-4. 在“名称”  文本框中，输入 `AsyncExampleWPF`，然后选择“确定”  按钮。
+4. 在“名称”文本框中，输入 `AsyncExampleWPF`，然后选择“确定”按钮。
 
-     新项目将出现在“解决方案资源管理器”  中。
+     新项目将出现在“解决方案资源管理器”中。
 
 ## <a name="design-a-simple-wpf-mainwindow"></a>设计简单的 WPF MainWindow
 
 1. 在 Visual Studio 代码编辑器中，选择 **“MainWindow.xaml”** 选项卡。
 
-2. 如果“工具箱”  窗口不可见，则打开“视图”  菜单，然后选择“工具箱”  。
+2. 如果“工具箱”窗口不可见，则打开“视图”菜单，然后选择“工具箱”  。
 
-3. 向“MainWindow”  窗口添加一个“Button”  控件和一个“TextBox”  控件。
+3. 向“MainWindow”窗口添加一个“Button”控件和一个“TextBox”控件。
 
-4. 突出显示“TextBox”  控件，在“属性”  窗口中，设置下列值：
+4. 突出显示“TextBox”控件，在“属性”窗口中，设置下列值：
 
-    - 将“名称”  属性设置为 `resultsTextBox`。
+    - 将“名称”属性设置为 `resultsTextBox`。
 
-    - 将“高度”  属性设置为 250。
+    - 将“高度”属性设置为 250。
 
-    - 将“宽度”  属性设置为 500。
+    - 将“宽度”属性设置为 500。
 
-    - 在“文本”  选项卡中，指定等宽字体，例如 Lucida Console 或 Global Monospace。
+    - 在“文本”选项卡中，指定等宽字体，例如 Lucida Console 或 Global Monospace。
 
-5. 突出显示“Button”  控件，在“属性”  窗口中，设置下列值：
+5. 突出显示“Button”控件，在“属性”窗口中，设置下列值：
 
-    - 将“名称”  属性设置为 `startButton`。
+    - 将“名称”属性设置为 `startButton`。
 
-    - 将“内容”  属性的值从“Button”  更改为“Start”  。
+    - 将“内容”属性的值从“Button”更改为“Start”。
 
-6. 确定文本框和按钮的位置，以便它们都在“MainWindow”  窗口中显示。
+6. 确定文本框和按钮的位置，以便它们都在“MainWindow”窗口中显示。
 
      有关 WPF XAML 设计器的详细信息，请参阅[使用 XAML 设计器创建 UI](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio)。
 
 ## <a name="add-a-reference"></a>添加引用
 
-1. 在“解决方案资源管理器”  中，突出显示项目的名称。
+1. 在“解决方案资源管理器”中，突出显示项目的名称。
 
-2. 在菜单栏上，选择“项目”   > “添加引用”  。
+2. 在菜单栏上，选择“项目” > “添加引用”。
 
-     此时将显示“引用管理器”  对话框。
+     此时将显示“引用管理器”对话框。
 
 3. 在对话框顶部，验证项目是否以 .NET Framework 4.5 或更高版本为目标。
 
-4. 在“程序集”  类别中，选择“Framework”  （如果尚未选择它）。
+4. 在“程序集”类别中，选择“Framework”（如果尚未选择它） 。
 
-5. 在名称列表中，选中“System.Net.Http”  复选框。
+5. 在名称列表中，选中“System.Net.Http”复选框。
 
-6. 选择“确定”  按钮关闭对话框。
+6. 选择“确定”按钮关闭对话框。
 
 ## <a name="add-necessary-using-directives"></a>添加必要的 using 指令
 
-1. 在“解决方案资源管理器”  中，打开 MainWindow.xaml.cs 的快捷菜单，然后选择“查看代码”  。
+1. 在“解决方案资源管理器”中，打开 MainWindow.xaml.cs 的快捷菜单，然后选择“查看代码”。
 
 2. 将下列 `using` 指令添加到代码文件的顶部（如果它们尚不存在）。
 
@@ -94,7 +94,7 @@ ms.locfileid: "74281786"
 
 ## <a name="create-a-synchronous-app"></a>创建同步应用
 
-1. 在设计窗口 MainWindow.xaml 中，双击“启动”  按钮以在 MainWindow.xaml.cs 中创建 `startButton_Click` 事件处理程序。
+1. 在设计窗口 MainWindow.xaml 中，双击“启动”按钮以在 MainWindow.xaml.cs 中创建 `startButton_Click` 事件处理程序。
 
 2. 在 MainWindow.xaml.cs 中，将下列代码复制到 `startButton_Click` 的正文中：
 
@@ -197,7 +197,7 @@ ms.locfileid: "74281786"
 
 ## <a name="test-the-synchronous-solution"></a>测试同步解决方案
 
-按 F5  键运行程序，然后选择“启动”  按钮。
+按 F5 键运行程序，然后选择“启动”按钮。
 
 此时应显示类似于以下列表的输出：
 
@@ -218,11 +218,11 @@ Total bytes returned:  1834802
 Control returned to startButton_Click.
 ```
 
-请注意，显示计数需要几秒钟时间。 与此同时，在等待请求的资源下载时，UI 线程处于被阻止状态。 因此，选择“启动”  按钮后，将无法移动、最大化、最小化显示窗口，甚至也无法关闭显示窗口。 在字节计数开始显示之前，这些操作都会失败。 如果网站没有响应，将不会指示哪个网站失败。 甚至停止等待和关闭程序也会很困难。
+请注意，显示计数需要几秒钟时间。 与此同时，在等待请求的资源下载时，UI 线程处于被阻止状态。 因此，选择“启动”按钮后，将无法移动、最大化、最小化显示窗口，甚至也无法关闭显示窗口。 在字节计数开始显示之前，这些操作都会失败。 如果网站没有响应，将不会指示哪个网站失败。 甚至停止等待和关闭程序也会很困难。
 
 ## <a name="convert-geturlcontents-to-an-asynchronous-method"></a>将 GetURLContents 转换为异步方法
 
-1. 要将同步解决方案转换为异步解决方案，最佳着手点在 `GetURLContents` 中，因为对 <xref:System.Net.HttpWebRequest> 方法 <xref:System.Net.HttpWebRequest.GetResponse%2A> 的调用以及对 <xref:System.IO.Stream> 方法 <xref:System.IO.Stream.CopyTo%2A> 的调用是应用程序访问 Web 的位置。 .NET Framework 提供两种方法的异步版本，这让转换变得轻松。
+1. 要将同步解决方案转换为异步解决方案，最佳着手点在 `GetURLContents` 中，因为对 <xref:System.Net.HttpWebRequest> 方法 <xref:System.Net.HttpWebRequest.GetResponse%2A> 的调用以及对 <xref:System.IO.Stream> 方法 <xref:System.IO.Stream.CopyTo%2A> 的调用是应用程序访问 Web 的位置。 .NET Framework 提供两种方法的异步版本，使转换变得轻松。
 
      有关 `GetURLContents` 中使用的方法的详细信息，请参阅 <xref:System.Net.WebRequest>。
 
@@ -235,7 +235,7 @@ Control returned to startButton_Click.
     using (WebResponse response = webReq.GetResponseAsync())
     ```
 
-2. `GetResponseAsync` 返回 <xref:System.Threading.Tasks.Task%601>。 在这种情况下，任务返回变量  `TResult` 具有类型 <xref:System.Net.WebResponse>。 该任务是在请求的任务已下载且任务已完成运行后，生成实际 `WebResponse` 对象的承诺。
+2. `GetResponseAsync` 返回 <xref:System.Threading.Tasks.Task%601>。 在这种情况下，任务返回变量 `TResult` 具有类型 <xref:System.Net.WebResponse>。 该任务是在请求的任务已下载且任务已完成运行后，生成实际 `WebResponse` 对象的承诺。
 
      要从任务检索 `WebResponse` 值，请将 [await](../../../language-reference/operators/await.md) 运算符应用到对 `GetResponseAsync` 的调用，如下列代码所示。
 
@@ -359,7 +359,7 @@ Control returned to startButton_Click.
     //await sumTask;
     ```
 
-3. 要防止意外重新进入操作，请在 `startButton_Click` 顶部添加下列语句，以禁用“启动”  按钮。
+3. 要防止意外重新进入操作，请在 `startButton_Click` 顶部添加下列语句，以禁用“启动”按钮。
 
     ```csharp
     // Disable the button until the operation is complete.
@@ -387,17 +387,17 @@ Control returned to startButton_Click.
 
 ## <a name="test-the-asynchronous-solution"></a>测试异步解决方案
 
-1. 按 F5  键运行程序，然后选择“启动”  按钮。
+1. 按 F5 键运行程序，然后选择“启动”按钮。
 
 2. 此时应显示类似于同步解决方案的输出的输出。 但是，请注意下列差异。
 
-    - 处理完成后，所有结果不会同时出现。 例如，两个程序都在 `startButton_Click` 中包含一行可以清除文本框的代码。 目的在于，在一组结果显示后，第二次选择“启动”  按钮时，可以清除运行之间的文本框。 在同步版本中，下载完成且 UI 线程可以自由完成其他工作时，文本框在计数第二次显示之前即被清除。 在异步版本中，选择“启动”  按钮后立即清除文本框。
+    - 处理完成后，所有结果不会同时出现。 例如，两个程序都在 `startButton_Click` 中包含一行可以清除文本框的代码。 目的在于，在一组结果显示后，第二次选择“启动”按钮时，可以清除运行之间的文本框。 在同步版本中，下载完成且 UI 线程可以自由完成其他工作时，文本框在计数第二次显示之前即被清除。 在异步版本中，选择“启动”按钮后立即清除文本框。
 
-    - 最重要的是，UI 线程在下载过程中未被阻止。 在 Web 资源下载、计数和显示期间，可以移动窗口或调整窗口大小。 如果其中一个网站速度缓慢或没有响应，则可以通过选择“关闭”  按钮取消操作（右上角红色字段中的 x）。
+    - 最重要的是，UI 线程在下载过程中未被阻止。 在 Web 资源下载、计数和显示期间，可以移动窗口或调整窗口大小。 如果其中一个网站速度缓慢或没有响应，则可以通过选择“关闭”按钮取消操作（右上角红色字段中的 x）。
 
-## <a name="replace-method-geturlcontentsasync-with-a-net-framework-method"></a>使用 .NET Framework 方法替换 GetURLContentsAsync
+## <a name="replace-method-geturlcontentsasync-with-a-net-method"></a>使用 .NET 方法替换方法 GetURLContentsAsync
 
-1. .NET Framework 4.5 提供可供你使用的许多异步方法。 其中一个是 <xref:System.Net.Http.HttpClient> 方法 <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29>，它可以执行本演练所需的操作。 你可以使用它来替代你在早前过程中创建的 `GetURLContentsAsync` 方法。
+1. .NET Framework 4.5 及更高版本提供了许多可供使用的异步方法。 其中一个是 <xref:System.Net.Http.HttpClient> 方法 <xref:System.Net.Http.HttpClient.GetByteArrayAsync%28System.String%29>，它可以执行本演练所需的操作。 你可以使用它来替代你在早前过程中创建的 `GetURLContentsAsync` 方法。
 
      第一步是在方法 `SumPageSizesAsync` 中创建 `HttpClient` 对象。 在方法的开头添加下列声明。
 
@@ -416,7 +416,7 @@ Control returned to startButton_Click.
 
 3. 删除或注释禁用你编写的 `GetURLContentsAsync` 方法。
 
-4. 按 F5  键运行程序，然后选择“启动”  按钮。
+4. 按 F5 键运行程序，然后选择“启动”按钮。
 
      此版本的项目的行为应与“测试异步解决方案”过程描述的行为匹配，且你的工作量应该更少。
 

@@ -5,21 +5,21 @@ helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-ms.openlocfilehash: 4893bf5ebe73988bb6535cc2a85591ff0dde6ebd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 672a0bebdc60eff00acf9b1bdbecc25052f7bc16
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712164"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241677"
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>泛型和反射（C# 编程指南）
 因为公共语言运行时 (CLR) 能够在运行时访问泛型类型信息，所以可以使用反射获取关于泛型类型的信息，方法与用于非泛型类型的方法相同。 有关详细信息，请参阅[运行时中的泛型](./generics-in-the-run-time.md)。  
   
- 在 .NET Framework 2.0 中，向 <xref:System.Type> 类添加了多个新成员来启用泛型类型的运行时信息。 有关如何使用这些方法和属性的详细信息，请参阅这些类的文档。 <xref:System.Reflection.Emit> 命名空间还包含支持泛型的新成员。 请参阅[如何：用反射发出定义泛型类型](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)。  
+ 在 .NET Framework 2.0 中，向 <xref:System.Type> 类添加了多个新成员来启用泛型类型的运行时信息。 有关如何使用这些方法和属性的详细信息，请参阅这些类的文档。 <xref:System.Reflection.Emit> 命名空间还包含支持泛型的新成员。 请参阅[如何：使用反射发出定义泛型类型](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)。  
   
  有关泛型反射中使用的术语的固定条件列表，请参阅 <xref:System.Type.IsGenericType%2A> 属性注解。  
   
-|System.Type 成员名称|说明|  
+|System.Type 成员名称|描述|  
 |-----------------------------|-----------------|  
 |<xref:System.Type.IsGenericType%2A>|如果类型是泛型，则返回 true。|  
 |<xref:System.Type.GetGenericArguments%2A>|返回 `Type` 对象的数组，这些对象表示为构造类型提供的类型实参或泛型类型定义的类型形参。|  
@@ -35,7 +35,7 @@ ms.locfileid: "75712164"
   
  此外，<xref:System.Reflection.MethodInfo> 类的成员还为泛型方法启用运行时信息。 有关用于反射泛型方法的术语的固定条件列表，请参阅 <xref:System.Reflection.MethodBase.IsGenericMethod%2A> 属性注解。  
   
-|System.Reflection.MemberInfo 成员名称|说明|  
+|System.Reflection.MemberInfo 成员名称|描述|  
 |----------------------------------------------|-----------------|  
 |<xref:System.Reflection.MethodBase.IsGenericMethod%2A>|如果方法是泛型，则返回 true。|  
 |<xref:System.Reflection.MethodInfo.GetGenericArguments%2A>|返回类型对象的数组，这些对象表示构造泛型方法的类型实参或泛型方法定义的类型形参。|  
@@ -44,7 +44,7 @@ ms.locfileid: "75712164"
 |<xref:System.Reflection.MethodBase.IsGenericMethodDefinition%2A>|如果当前 <xref:System.Reflection.MethodInfo> 表示泛型方法的定义，则返回 true。|  
 |<xref:System.Reflection.MethodInfo.MakeGenericMethod%2A>|用类型数组的元素替代当前泛型方法定义的类型参数，并返回表示结果构造方法的 <xref:System.Reflection.MethodInfo> 对象。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [泛型](./index.md)

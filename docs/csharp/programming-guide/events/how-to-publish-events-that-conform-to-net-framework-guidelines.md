@@ -1,19 +1,19 @@
 ---
-title: 如何发布符合 .NET Framework 准则的事件 - C# 编程指南
+title: 发布符合 .NET 准则的事件 - C# 编程指南
 ms.date: 05/26/2020
 helpviewer_keywords:
 - events [C#], implementation guidelines
 ms.assetid: 9310ae16-8627-44a2-b08c-05e5976202b1
-ms.openlocfilehash: 137e52b80703491a4528a3eddc7fa12f9dce6f52
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: df2f643f867b93b74d04d8fbd673df545c28938e
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144794"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84240741"
 ---
-# <a name="how-to-publish-events-that-conform-to-net-framework-guidelines-c-programming-guide"></a>如何发布符合 .NET Framework 准则的事件（C# 编程指南）
+# <a name="how-to-publish-events-that-conform-to-net-guidelines-c-programming-guide"></a>如何发布符合 .NET 准则的事件（C# 编程指南）
 
-下面的过程演示了如何将遵循标准 .NET Framework 模式的事件添加到类和结构中。 .NET Framework 类库中的所有事件均基于 <xref:System.EventHandler> 委托，定义如下：
+下面的过程演示了如何将遵循标准 .NET 模式的事件添加到类和结构中。 .NET Framework 类库中的所有事件均基于 <xref:System.EventHandler> 委托，定义如下：
 
 ```csharp
 public delegate void EventHandler(object sender, EventArgs e);
@@ -22,11 +22,11 @@ public delegate void EventHandler(object sender, EventArgs e);
 > [!NOTE]
 > .NET Framework 2.0 引入了泛型版本的委托 <xref:System.EventHandler%601>。 下例演示了如何使用这两个版本。
 
-尽管定义的类中的事件可基于任何有效委托类型，甚至是返回值的委托，但一般还是建议使用 <xref:System.EventHandler> 使事件基于 .NET Framework 模式，如下例中所示。
+尽管定义的类中的事件可基于任何有效委托类型，甚至是返回值的委托，但一般还是建议使用 <xref:System.EventHandler> 使事件基于 .NET 模式，如下例中所示。
 
 名称 `EventHandler` 可能导致一些混淆，因为它不会实际处理事件。 <xref:System.EventHandler> 和泛型 <xref:System.EventHandler%601> 均为委托类型。 其签名与委托定义匹配的方法或 Lambda 表达式是事件处理程序，并将在引发事件时调用。
 
-### <a name="to-publish-events-based-on-the-eventhandler-pattern"></a>发布基于 EventHandler 模式的事件
+## <a name="publish-events-based-on-the-eventhandler-pattern"></a>发布基于 EventHandler 模式的事件
 
 1. （如果无需随事件一起发送自定义数据，请跳过此步骤转到步骤 3a。）将自定义数据的类声明为对发布服务器和订阅者类均可见的范围。 然后添加所需成员以保留自定义事件数据。 在此示例中，将返回一个简单的字符串。
 

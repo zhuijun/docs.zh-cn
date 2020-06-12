@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 调试 .NET Core 控制台应用程序
 description: 了解如何使用 Visual Studio Code 调试 .NET Core 控制台应用。
 ms.date: 05/26/2020
-ms.openlocfilehash: eaeb97f54442006d2f0e29483a68dc3de89b5778
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 82b2798397d702aa2a50c04bf6e4d569b97e3666
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202489"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241508"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>教程：使用 Visual Studio Code 调试 .NET Core 控制台应用程序
 
@@ -29,7 +29,13 @@ ms.locfileid: "84202489"
 
 断点会在执行包含断点的代码行之前暂时中断执行应用程序。
 
-1. 在 Program.cs 中，单击代码窗口的左边缘，在显示名称、日期和时间的行上设置断点 。 左边缘在行号的左侧。 设置断点的另一种方法是：将光标放于代码行中，然后按 <kbd>F9</kbd>。
+1. 打开 Visual Studio Code。
+
+1. 打开在[在 Visual Studio Code 中创建 .NET Core 控制台应用程序](with-visual-studio-code.md)中创建的 HelloWorld 项目文件夹。
+
+1. 打开 *Program.cs* 文件。
+
+1. 单击代码窗口的左边缘，在显示名称、日期和时间的行上设置断点。 左边缘在行号的左侧。 设置断点的另一种方法是：将光标放于代码行中，然后按 <kbd>F9</kbd>。
 
    如下图所示，Visual Studio Code 通过在左边缘显示红点来指示设置了断点的行。
 
@@ -215,10 +221,7 @@ dotnet run --configuration Release
 
 ## <a name="next-steps"></a>后续步骤
 
-在本教程中，使用了 Visual Studio Code 调试工具。 若要了解如何发布应用的可部署版本，请参阅[发布应用](cli-create-console-app.md#publish-your-app)。
-
-<!--In the next tutorial, you publish a deployable version of the app.
+在本教程中，使用了 Visual Studio Code 调试工具。 在下一教程中，你将发布应用的可部署版本。
 
 > [!div class="nextstepaction"]
-> [Publish a .NET Core console application with Visual Studio Code](publishing-with-visual-studio-code.md)
--->
+> [使用 Visual Studio Code 发布 .NET Core 控制台应用程序](publishing-with-visual-studio-code.md)

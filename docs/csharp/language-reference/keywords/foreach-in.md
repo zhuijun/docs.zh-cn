@@ -1,6 +1,6 @@
 ---
 title: C# foreach 语句
-ms.date: 05/17/2019
+ms.date: 06/03/2020
 f1_keywords:
 - foreach
 - foreach_CSharpKeyword
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: 188d909fd33b14755d9b121953b1fa434ecf536d
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 1645a246c9feee2a92c0d4e4bbeda47f0afde7d9
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738819"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84401883"
 ---
 # <a name="foreach-in-c-reference"></a>foreach，in（C# 参考）
 
@@ -22,6 +22,18 @@ ms.locfileid: "81738819"
 
 - 具有公共无参数 `GetEnumerator` 方法，其返回类型为类、结构或接口类型。
 - `GetEnumerator` 方法的返回类型具有公共 `Current` 属性和公共无参数 `MoveNext` 方法（其返回类型为 <xref:System.Boolean>）。
+
+在大多数情况下，`foreach` 会循环访问其中每个元素都是 `T` 类型的 `IEnumerable<T>` 表达式。 但是，这些元素可以是从 `Current` 属性的类型中进行隐式或显式转换的任何类型。 如果 `Current` 属性返回 `SomeType`，则元素的类型可能如下：
+
+- `SomeType` 的任何基类。
+- `SomeType` 实现的任何接口。
+
+此外，如果 `SomeType` 是 `class` 或 `interface` 而不是 `sealed`，则元素的类型可能包括：
+
+- 派生自 `SomeType` 的任何类型。
+- 任何任意接口。 允许任何接口，因为任何接口都可以由派生自或实现 `SomeType` 的类实现。
+
+可以使用与上述规则匹配的任何类型来声明迭代变量。 如果从 `SomeType` 转换为迭代变量的类型需要显式强制转换，则该操作可能在转换失败时引发 <xref:System.InvalidCastException>。
 
 从 C# 7.3 开始，如果枚举器的 `Current` 属性返回 [引用返回值](ref.md#reference-return-values)（`ref T`，其中 `T` 为集合元素类型），就可以使用 `ref` 或 `ref readonly` 修饰符来声明迭代变量。
 
@@ -37,19 +49,19 @@ ms.locfileid: "81738819"
 
 以下示例介绍 `foreach` 语句的使用，其中包含实现 <xref:System.Collections.Generic.IEnumerable%601> 接口的 <xref:System.Collections.Generic.List%601> 类型的实例：
 
-[!code-csharp-interactive[list example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#1)]
+:::code language="csharp" source="snippets/IterationKeywordsExamples.cs" id="1" interactive="try-dotnet-method" :::
 
 下一个示例使用 `foreach` 语句，其中包含 <xref:System.Span%601?displayProperty=nameWithType> 类型的实例，该实例不实现任何接口：
 
-[!code-csharp[span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#2)]
+:::code language="csharp" source="snippets/IterationKeywordsExamples.cs" id="2" :::
 
 下面的示例使用 `ref` 迭代变量来设置 stackalloc 数组中每个项的值。 `ref readonly` 版本循环访问该集合以打印所有值。 `readonly` 声明使用隐式局部变量声明。 隐式变量声明可与 `ref` 或 `ref readonly` 声明配合使用，显式类型化变量声明也一样。
 
-[!code-csharp[ref span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#RefSpan)]
+:::code language="csharp" source="snippets/IterationKeywordsExamples.cs" id="RefSpan" :::
 
 以下示例使用 `await foreach` 循环访问异步生成每个元素的集合：
 
-[!code-csharp[ref span example](~/samples/snippets/csharp/keywords/IterationKeywordsExamples.cs#AwaitForeach)]
+:::code language="csharp" source="snippets/IterationKeywordsExamples.cs" id="AwaitForeach"  :::
 
 ## <a name="c-language-specification"></a>C# 语言规范
 

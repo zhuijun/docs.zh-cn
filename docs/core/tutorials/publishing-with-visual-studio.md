@@ -8,12 +8,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: e4ef8c12f3e52faa7cf09058a98abae65b0dcfce
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 745fb2af332afa278c78ec9baeea7230fe725c02
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005076"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241484"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-with-visual-studio"></a>教程：使用 Visual Studio 发布 .NET Core 控制台应用程序
 
@@ -59,25 +59,25 @@ ms.locfileid: "84005076"
 
    如下图所示，已发布的输出包括以下文件：
 
-      * HelloWorld.deps.json
+   * HelloWorld.deps.json
 
-         这是应用程序的运行时依赖项文件。 它定义了运行应用程序所需的 .NET Core 组件和库（包括包含该应用程序的动态链接库）。 有关详细信息，请参阅[运行时配置文件](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md)。
+      这是应用程序的运行时依赖项文件。 它定义了运行应用程序所需的 .NET Core 组件和库（包括包含该应用程序的动态链接库）。 有关详细信息，请参阅[运行时配置文件](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md)。
 
-      * HelloWorld.dll
+   * HelloWorld.dll
 
-         这是应用程序的[依赖于框架的部署](../deploying/deploy-with-cli.md#framework-dependent-deployment)版本。 若要执行此动态链接库，请在命令提示符处输入 `dotnet HelloWorld.dll`。
+      这是应用程序的[依赖于框架的部署](../deploying/deploy-with-cli.md#framework-dependent-deployment)版本。 若要执行此动态链接库，请在命令提示符处输入 `dotnet HelloWorld.dll`。 这种运行应用的方法适用于安装了 .NET Core 运行时的任何平台。
 
-      * *HelloWorld.exe*
+   * *HelloWorld.exe*
 
-         这是应用程序的[依赖于框架的可执行文件](../deploying/deploy-with-cli.md#framework-dependent-executable)版本。 若要运行该版本，请在命令提示符处输入 `HelloWorld.exe`。
+      这是应用程序的[依赖于框架的可执行文件](../deploying/deploy-with-cli.md#framework-dependent-executable)版本。 若要运行该版本，请在命令提示符处输入 `HelloWorld.exe`。 文件特定于操作系统。
 
-      * HelloWorld.pdb（对于部署是可选的）
+   * HelloWorld.pdb（对于部署是可选的）
 
-         这是调试符号文件。 尽管应在需要调试应用程序的已发布版本时保存此文件，但无需将此文件与应用程序一起部署。
+      这是调试符号文件。 尽管应在需要调试应用程序的已发布版本时保存此文件，但无需将此文件与应用程序一起部署。
 
-      * HelloWorld.runtimeconfig.json
+   * HelloWorld.runtimeconfig.json
 
-         这是应用程序的运行时配置文件。 它标识用于运行应用程序的 .NET Core 版本。 还可向其添加配置选项。 有关详细信息，请参阅 [.NET Core 运行时配置设置](../run-time-config/index.md#runtimeconfigjson)。
+      这是应用程序的运行时配置文件。 它标识用于运行应用程序的 .NET Core 版本。 还可向其添加配置选项。 有关详细信息，请参阅 [.NET Core 运行时配置设置](../run-time-config/index.md#runtimeconfigjson)。
 
 ## <a name="run-the-published-app"></a>运行已发布的应用
 
@@ -91,13 +91,13 @@ ms.locfileid: "84005076"
 
 1. 使用可执行文件运行应用：
 
-   1. 输入 `HelloWorld.exe`，然后按 Enter。
+   1. 输入 `HelloWorld.exe`，然后按 <kbd>Enter</kbd>。
 
    1. 输入一个名字以响应提示，并按任意键退出。
 
 1. 使用 `dotnet` 命令运行应用：
 
-   1. 输入 `dotnet HelloWorld.dll`，然后按 Enter。
+   1. 输入 `dotnet HelloWorld.dll`，然后按 <kbd>Enter</kbd>。
 
    1. 输入一个名字以响应提示，并按任意键退出。
 

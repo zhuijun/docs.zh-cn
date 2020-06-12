@@ -4,12 +4,12 @@ description: 了解 C# 中的未命名元组类型和命名元组类型
 ms.date: 05/15/2018
 ms.technology: csharp-fundamentals
 ms.assetid: ee8bf7c3-aa3e-4c9e-a5c6-e05cc6138baa
-ms.openlocfilehash: 9ce9e1d4395d1a75f36004384ec215c615cd9802
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 497f95811677c300e1fadad65eb495dced7f2da3
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156904"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374611"
 ---
 # <a name="c-tuple-types"></a>C# 元组类型
 
@@ -43,7 +43,7 @@ C# 元组是使用轻量语法定义的类型。 其优点包括：更简单的�
 
 [!code-csharp[UnnamedTuple](../../samples/snippets/csharp/tuples/program.cs#01_UnNamedTuple "Unnamed tuple")]
 
-上例中的元组已使用文本常量进行初始化，并且不会有 C# 7.1 中使用“元组字段名称投影”  创建的元素名称。
+上例中的元组已使用文本常量进行初始化，并且不会有 C# 7.1 中使用“元组字段名称投影”创建的元素名称。
 
 但是，在初始化元组时，可以使用新语言功能为每个字段提供更好的名称。 如此便创建了*命名元组*。
 命名元组仍将元素命名为 `Item1`、`Item2`、`Item3` 等。
@@ -217,7 +217,7 @@ private static (double, double, int) ComputeSumAndSumOfSquares(IEnumerable<doubl
 
 ## <a name="deconstruction"></a>析构
 
-通过对方法返回的元组进行析构，可以解封元组中的所有项  。 有三种元组析构方法。  首先，可在括号内显式声明每个字段的类型，为元组中的每个元素创建离散变量：
+通过对方法返回的元组进行析构，可以解封元组中的所有项。 有三种元组析构方法。  首先，可在括号内显式声明每个字段的类型，为元组中的每个元素创建离散变量：
 
 [!code-csharp[Deconstruct](../../samples/snippets/csharp/tuples/statistics.cs#10_Deconstruct "Deconstruct")]
 
@@ -246,13 +246,13 @@ public class Point
 ```
 
 > [!WARNING]
-> 不能混合现有声明和括号内的声明。 例如，不允许以下内容：`(var x, y) = MyMethod();`。 这将产生错误 CS8184，因为 x  在括号内声明，且 y  以前在其他位置声明。
+> 不能混合现有声明和括号内的声明。 例如，不允许以下内容：`(var x, y) = MyMethod();`。 这将产生错误 CS8184，因为 x 在括号内声明，且 y 以前在其他位置声明。
 
 ### <a name="deconstructing-user-defined-types"></a>析构用户定义类型
 
 如上所示，可以析构任何元组类型。 也可以对任何用户定义的类型（类、结构甚至接口）轻松启用析构。
 
-类型作者可定义一个或多个赋值给任意数量的 `out` 变量的 `Deconstruct` 方法，这类变量表示构成该类型的数据元素。 例如，以下 `Person` 类型定义 `Deconstruct` 方法，该方法将 person 对象析构成表示名字和姓氏的元素：
+类型作者可定义一个或多个赋值给任意数量的 [`out` 变量](language-reference/keywords/out-parameter-modifier.md)的 `Deconstruct` 方法，这类变量表示构成该类型的数据元素。 例如，以下 `Person` 类型定义 `Deconstruct` 方法，该方法将 person 对象析构成表示名字和姓氏的元素：
 
 [!code-csharp[TypeWithDeconstructMethod](../../samples/snippets/csharp/tuples/person.cs#12_TypeWithDeconstructMethod "Type with a deconstruct method")]
 
@@ -286,11 +286,11 @@ if (("Althea", "Goodwin") == p)
 
 ## <a name="tuples-as-out-parameters"></a>元组作为 out 参数
 
-元组自身可用作 out 参数  。 不要与前面提到的[析构函数](#deconstruction)部分中的任何多义性混淆。 在方法调用中，只需描述元组的形状：
+元组自身可用作 [`out` 参数](language-reference/keywords/out-parameter-modifier.md)。 不要与前面提到的[析构函数](#deconstruction)部分中的任何多义性混淆。 在方法调用中，只需描述元组的形状：
 
 [!code-csharp[TuplesAsOutParameters](~/samples/snippets/csharp/tuples/program.cs#01_TupleAsOutVariable "Tuples as out parameters")]
 
-另外，还可以使用 [unnamed  ](#named-and-unnamed-tuples) 元组，并将其字段作为 `Item1` 和 `Item2` 引用：
+另外，还可以使用 [unnamed](#named-and-unnamed-tuples) 元组，并将其字段作为 `Item1` 和 `Item2` 引用：
 
 ```csharp
 dict.TryGetValue(2, out (int, string) pair);

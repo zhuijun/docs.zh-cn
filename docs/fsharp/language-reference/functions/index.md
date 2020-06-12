@@ -1,13 +1,13 @@
 ---
 title: 函数
-description: 了解中的F#函数以及如何F#支持常见的函数编程构造。
+description: 了解 F# 中的函数，以及 F# 如何支持常见函数编程构造。
 ms.date: 05/16/2016
-ms.openlocfilehash: c6b8307f51ffcdc77fe4352b2305fca1f247ccbb
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: e49183e0634dee1750757abadbfe9e9c824f51a8
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423958"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596469"
 ---
 # <a name="functions"></a>函数
 
@@ -36,7 +36,7 @@ let f x = x + 1
 
 在上一示例中，函数名称为 `f`，参数为 `x`（具有类型 `int`），函数体为 `x + 1`，且返回值的类型为 `int`。
 
-可将函数标记为 `inline`。 有关 `inline` 的信息，请参阅[内联函数](../functions/inline-functions.md)。
+可将函数标记为 `inline`。 有关 `inline` 的信息，请参阅[内联函数](inline-functions.md)。
 
 ## <a name="scope"></a>范围
 
@@ -112,7 +112,7 @@ let vol = cylinderVolume 2.0 3.0
 
 ## <a name="recursive-functions"></a>递归函数
 
-递归函数是调用自身的函数。 它们要求在指定 **let** 关键字之后指定 **rec** 关键字。 从函数的主体内调用递归函数与调用任何函数调用是一样的。 以下递归函数计算<sup>第</sup> *n*个斐波那契数。 斐波纳契数序列很早就为人所知，此序列中的每个连续的数字都是序列中前两个数字之和。
+递归函数是调用自身的函数。 它们要求在指定 **let** 关键字之后指定 **rec** 关键字。 从函数的主体内调用递归函数与调用任何函数调用是一样的。 以下递归函数计算第 n 个斐波纳契数<sup></sup>。 斐波纳契数序列很早就为人所知，此序列中的每个连续的数字都是序列中前两个数字之和。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet108.fs)]
 
@@ -142,7 +142,7 @@ let vol = cylinderVolume 2.0 3.0
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet112.fs)]
 
-可通过使用 `fun` 关键字来定义 lambda 表达式。 lambda 表达式类似于函数定义，只不过使用了 `->` 标记将参数列表与函数体分隔，而不是使用 `=` 标记。 与在常规函数定义中一样，可推断或显式指定参数类型，并且从主体中最后一个表达式的类型推断出 lambda 表达式的返回类型。 有关详细信息，请参阅 [Lambda 表达式：`fun` 关键字](../functions/lambda-expressions-the-fun-keyword.md)。
+可通过使用 `fun` 关键字来定义 lambda 表达式。 lambda 表达式类似于函数定义，只不过使用了 `->` 标记将参数列表与函数体分隔，而不是使用 `=` 标记。 与在常规函数定义中一样，可推断或显式指定参数类型，并且从主体中最后一个表达式的类型推断出 lambda 表达式的返回类型。 有关详细信息，请参阅 [Lambda 表达式：`fun` 关键字](lambda-expressions-the-fun-keyword.md)。
 
 ## <a name="function-composition-and-pipelining"></a>函数组合和流水线处理
 

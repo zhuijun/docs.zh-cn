@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 10/10/2018
-ms.openlocfilehash: 78d9a6490c0479d9c21e01d0bcba41294d674a5c
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 3e6f3a921238a5897c7aa4b6034be979724b7167
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644385"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84283437"
 ---
 # <a name="whats-new-in-net-core-21"></a>.NET Core 2.1 的新增功能
 
@@ -65,7 +65,7 @@ ms.locfileid: "81644385"
 
 ### <a name="global-tools"></a>全局工具
 
-.NET Core 2.1 支持全局工具  ，即，可通过命令行在全局范围内使用的自定义工具。 以前版本的 .NET Core 中的扩展性模型只能通过使用 `DotnetCliToolReference` 在每个项目的基础上提供自定义工具。
+.NET Core 2.1 支持全局工具，即，可通过命令行在全局范围内使用的自定义工具。 以前版本的 .NET Core 中的扩展性模型只能通过使用 `DotnetCliToolReference` 在每个项目的基础上提供自定义工具。
 
 若要安装全局工具，请使用 [dotnet tool install](../tools/dotnet-tool-install.md) 命令。 例如：
 
@@ -89,9 +89,9 @@ dotnet tool install -g dotnetsay
 
 ## <a name="roll-forward"></a>前滚
 
-从 .NET Core 2.0 开始，所有 .NET Core 应用程序都将自动前滚到系统上安装的最新次要版本  。
+从 .NET Core 2.0 开始，所有 .NET Core 应用程序都将自动前滚到系统上安装的最新次要版本。
 
-从 .NET Core 2.0 开始，如果在其中构建应用程序的 .NET Core 版本在运行时不存在，应用程序将针对最新安装的次要版本  的 .NET Core 自动运行。 换而言之，如果应用程序在 .NET Core 2.0 中生成，而主机系统未安装 .NET Core 2.0 但安装了 .NET Core 2.1，则应用程序将通过 .NET Core 2.1 运行。
+从 .NET Core 2.0 开始，如果在其中构建应用程序的 .NET Core 版本在运行时不存在，应用程序将针对最新安装的次要版本的 .NET Core 自动运行。 换而言之，如果应用程序在 .NET Core 2.0 中生成，而主机系统未安装 .NET Core 2.0 但安装了 .NET Core 2.1，则应用程序将通过 .NET Core 2.1 运行。
 
 > [!IMPORTANT]
 > 此前滚行为不适用于预览版本。 默认情况下，它也不适用于主要版本，但可以通过以下设置进行更改。
@@ -106,7 +106,7 @@ dotnet tool install -g dotnetsay
 
 - 将 `DOTNET_ROLL_FORWARD_ON_NO_CANDIDATE_FX` 环境变量设置为所需的值。
 
-- 使用所需的值将下列行添加到 .runtimeconfig.json  文件：
+- 使用所需的值将下列行添加到 .runtimeconfig.json 文件：
 
    ```json
    "rollForwardOnNoCandidateFx" : 0
@@ -137,13 +137,13 @@ dotnet tool install -g dotnetsay
 
 ## <a name="jit-compiler-improvements"></a>JIT 编译器改进
 
-.NET Core 包含新的 JIT 编译器技术，称为“分层编译”  （也称为“自适应优化”  ），可以显著提高性能。 分层编译是一个可选设置。
+.NET Core 包含新的 JIT 编译器技术，称为“分层编译”（也称为“自适应优化”），可以显著提高性能。 分层编译是一个可选设置。
 
 由 JIT 编译器执行的重要任务之一是优化代码执行。 然而，对于很少使用的代码路径，相比运行未优化代码所花费的运行时，编译器可能需要更多的时间来优化代码。 分层编译介绍了 JIT 编译中的两个阶段：
 
-- 第一层  ，将尽可能快地生成代码。
+- 第一层，将尽可能快地生成代码。
 
-- 第二层  ，将为那些频繁执行的方法生成优化代码。 为了增强性能，第二层编译并行执行。
+- 第二层，将为那些频繁执行的方法生成优化代码。 为了增强性能，第二层编译并行执行。
 
 可以通过这两种方法之一选择加入分层编译。
 

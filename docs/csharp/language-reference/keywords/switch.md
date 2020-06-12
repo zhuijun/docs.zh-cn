@@ -12,18 +12,18 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 49b3836f17e91ae8de10d68e97fd662aae80d1ff
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: a4e6f8e43c2ec8c867af9f78bd83b435b78c73d5
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249313"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446758"
 ---
 # <a name="switch-c-reference"></a>switch（C# 参考）
 
 本文介绍 `switch` 语句。 有关 `switch` 表达式（在 C# 8.0 中引入）的信息，请参阅 [表达式和运算符](../operators/index.md)部分中有关 [`switch` 表达式](../operators/switch-expression.md)的文章。
 
-`switch` 是一个选择语句，它根据与匹配表达式  匹配的模式，从候选列表中选择单个开关部分  进行执行。
+`switch` 是一个选择语句，它根据与匹配表达式匹配的模式，从候选列表中选择单个开关部分进行执行。
 
 [!code-csharp[switch#1](~/samples/snippets/csharp/language-reference/keywords/switch/switch1.cs#1)]
 
@@ -55,13 +55,13 @@ ms.locfileid: "80249313"
 
 ## <a name="the-switch-section"></a>开关部分
 
-`switch` 语句包含一个或多个开关部分。 每个 switch 部分包含一个或多个 case 标签  （case 或 default 标签），后接一个或多个语句。 `switch` 语句最多可包含一个置于任何 switch 部分中的 default 标签。 以下示例显示了一个简单的 `switch` 语句，该语句包含三个 switch 部分，每个部分包含两个语句。 第二个 switch 部分包含 `case 2:` 和 `case 3:` 标签。
+`switch` 语句包含一个或多个开关部分。 每个 switch 部分包含一个或多个 case 标签（case 或 default 标签），后接一个或多个语句。 `switch` 语句最多可包含一个置于任何 switch 部分中的 default 标签。 以下示例显示了一个简单的 `switch` 语句，该语句包含三个 switch 部分，每个部分包含两个语句。 第二个 switch 部分包含 `case 2:` 和 `case 3:` 标签。
 
 `switch` 语句中可以包含任意数量的开关部分，每个开关部分可以具有一个或多个 case 标签，如以下示例所示。 但是，任何两个 case 标签不可包含相同的表达式。
 
 [!code-csharp[switch#2](~/samples/snippets/csharp/language-reference/keywords/switch/switch2.cs#1)]
 
-switch 语句执行中只有一个开关部分。 C# 禁止从一个 switch 部分继续执行到下一个 switch 部分。 因此，下面的代码生成编译器错误 CS0163：“控制不能从一个 case 标签（\<case 标签 >）贯穿到另一个 case 标签。”
+switch 语句执行中只有一个开关部分。 C# 禁止从一个 switch 部分继续执行到下一个 switch 部分。 因此，下面的代码生成编译器错误 CS0163：“控件不能从一个 case 标签 (\<case label>) 贯穿到另一个 case 标签。”
 
 ```csharp
 switch (caseSwitch)
@@ -108,7 +108,7 @@ switch (caseSwitch)
 
 `default` case 可以在 `switch` 语句中以任何顺序显示。 无论它在源代码中的顺序如何，始终都将在计算所有 `case` 标签后，最后计算它。
 
-## <a name="pattern-matching-with-the-switch-statement"></a>使用 `switch` 语句的 <a name="pattern" /> 模式匹配
+## <a name="pattern-matching-with-the-switch-statement"></a>使用 `switch` 语句的 <a name="pattern"></a> 模式匹配
 
 每个 `case` 语句定义一个模式，如果它与匹配表达式相匹配，则会导致执行其包含的开关部分。 所有版本的 C# 都支持常量模式。 其余模式从 C# 7.0 开始支持。
 
@@ -151,7 +151,7 @@ switch (caseSwitch)
    case type varname
 ```
 
-其中 *type* 是 *expr* 结果要转换到的类型的名称，*varname* 是 *expr* 结果要转换到的对象（如果匹配成功）。 自 C# 7.1 起，expr  的编译时类型可能为泛型类型参数。
+其中 *type* 是 *expr* 结果要转换到的类型的名称，*varname* 是 *expr* 结果要转换到的对象（如果匹配成功）。 自 C# 7.1 起，expr 的编译时类型可能为泛型类型参数。
 
 如果以下任一条件成立，则 `case` 表达式为 `true`：
 
@@ -159,7 +159,7 @@ switch (caseSwitch)
 
 - *expr* 是派生自 *type* 的类型的一个实例。 换言之，*expr* 结果可以向上转换为 *type* 的一个实例。
 
-- *expr* 具有属于 *type* 的一个基类的编译时类型，*expr* 还具有属于 *type* 或派生自 *type* 的运行时类型。 变量的编译时类型  是其类型声明中定义的变量类型。 变量的运行时类型  是分配给该变量的实例类型。
+- *expr* 具有属于 *type* 的一个基类的编译时类型，*expr* 还具有属于 *type* 或派生自 *type* 的运行时类型。 变量的编译时类型是其类型声明中定义的变量类型。 变量的运行时类型是分配给该变量的实例类型。
 
 - *expr* 是实现 *type* 接口的类型的一个实例。
 
