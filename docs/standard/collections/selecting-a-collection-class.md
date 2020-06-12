@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - grouping data in collections, selecting collection class
 ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
-ms.openlocfilehash: d79f1ca0d264a5a17306bb66f285b6fbe6b4e7ca
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 62f4f768753637043ab91219cfb63c741a194b96
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728489"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84287921"
 ---
 # <a name="selecting-a-collection-class"></a>选择集合类
 
@@ -34,9 +34,9 @@ ms.locfileid: "82728489"
 
 - 是否需要以特定顺序（如先进先出、后进先出或随机）访问元素？
 
-  - <xref:System.Collections.Queue> 类以及 <xref:System.Collections.Generic.Queue%601>、<xref:System.Collections.Concurrent.ConcurrentQueue%601> 和 <xref:System.Collections.Immutable.ImmutableQueue%601> 泛型类都提供 FIFO 访问权限。 有关详细信息，请参阅[何时使用线程安全集合](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md)。
+  - <xref:System.Collections.Queue> 类以及 <xref:System.Collections.Generic.Queue%601>、<xref:System.Collections.Concurrent.ConcurrentQueue%601> 和 <xref:System.Collections.Immutable.ImmutableQueue%601> 泛型类都提供 FIFO 访问权限。 有关详细信息，请参阅[何时使用线程安全集合](thread-safe/when-to-use-a-thread-safe-collection.md)。
 
-  - <xref:System.Collections.Stack> 类以及 <xref:System.Collections.Generic.Stack%601>、<xref:System.Collections.Concurrent.ConcurrentStack%601> 和 <xref:System.Collections.Immutable.ImmutableStack%601> 泛型类都提供 LIFO 访问权限。 有关详细信息，请参阅[何时使用线程安全集合](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md)。
+  - <xref:System.Collections.Stack> 类以及 <xref:System.Collections.Generic.Stack%601>、<xref:System.Collections.Concurrent.ConcurrentStack%601> 和 <xref:System.Collections.Immutable.ImmutableStack%601> 泛型类都提供 LIFO 访问权限。 有关详细信息，请参阅[何时使用线程安全集合](thread-safe/when-to-use-a-thread-safe-collection.md)。
 
   - <xref:System.Collections.Generic.LinkedList%601> 泛型类允许从开头到末尾或从末尾到开头的顺序访问。
 
@@ -68,7 +68,7 @@ ms.locfileid: "82728489"
 
 - 是否需要快速搜索和信息检索？
 
-  - 对于小集合（10 项或更少），<xref:System.Collections.Specialized.ListDictionary> 速度比 <xref:System.Collections.Hashtable> 快。 <xref:System.Collections.Generic.Dictionary%602> 泛型类提供比 <xref:System.Collections.Generic.SortedDictionary%602> 泛型类更快的查找。 多线程的实现为 <xref:System.Collections.Concurrent.ConcurrentDictionary%602>。 <xref:System.Collections.Concurrent.ConcurrentBag%601> 为无序数据提供快速的多线程插入。 有关这两种多线程类型的详细信息，请参阅[何时使用线程安全集合](../../../docs/standard/collections/thread-safe/when-to-use-a-thread-safe-collection.md)。
+  - 对于小集合（10 项或更少），<xref:System.Collections.Specialized.ListDictionary> 速度比 <xref:System.Collections.Hashtable> 快。 <xref:System.Collections.Generic.Dictionary%602> 泛型类提供比 <xref:System.Collections.Generic.SortedDictionary%602> 泛型类更快的查找。 多线程的实现为 <xref:System.Collections.Concurrent.ConcurrentDictionary%602>。 <xref:System.Collections.Concurrent.ConcurrentBag%601> 为无序数据提供快速的多线程插入。 有关这两种多线程类型的详细信息，请参阅[何时使用线程安全集合](thread-safe/when-to-use-a-thread-safe-collection.md)。
 
 - 是否需要只接受字符串的集合？
 
@@ -80,11 +80,11 @@ ms.locfileid: "82728489"
 
 LINQ to Objects 让开发人员能够使用 LINQ 查询访问内存中对象，条件是该对象类型实现 <xref:System.Collections.IEnumerable> 或 <xref:System.Collections.Generic.IEnumerable%601>。 LINQ 查询提供了一种通用的数据访问模式，与标准 `foreach` 循环相比，它通常更加简洁，可读性更高，并且可提供筛选、排序和分组功能。 有关详细信息，请参阅 [LINQ to Objects (C#)](../../csharp/programming-guide/concepts/linq/linq-to-objects.md) 和 [LINQ to Objects (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)。
 
-PLINQ 提供 LINQ to Objects 的并行实现，在许多情况下，可通过更有效地利用多核计算机提供更快的查询执行。 有关详细信息，请参阅[并行 LINQ (PLINQ)](../../../docs/standard/parallel-programming/introduction-to-plinq.md)。
+PLINQ 提供 LINQ to Objects 的并行实现，在许多情况下，可通过更有效地利用多核计算机提供更快的查询执行。 有关详细信息，请参阅[并行 LINQ (PLINQ)](../parallel-programming/introduction-to-plinq.md)。
 
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Collections>
 - <xref:System.Collections.Specialized>
 - <xref:System.Collections.Generic>
-- [线程安全集合](../../../docs/standard/collections/thread-safe/index.md)
+- [线程安全集合](thread-safe/index.md)

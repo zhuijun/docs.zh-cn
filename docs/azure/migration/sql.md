@@ -2,24 +2,22 @@
 title: 将 SQL Server 数据库迁移到 Azure
 description: 了解如何将 SQL Server 数据库从本地 SQL Server 迁移到 Azure。
 ms.topic: how-to
-ms.date: 11/15/2017
-ms.openlocfilehash: dac35970f2d77e232c2ee1a5e3a1f6e7bfec2317
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.date: 05/27/2020
+ms.openlocfilehash: ed5d6ef9395dca14d8e0ecba82d3fc18cb3d629a
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "81433324"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241443"
 ---
 # <a name="migrate-a-sql-server-database-to-azure"></a>将 SQL Server 数据库迁移到 Azure
 
-本短文提供了用于将 SQL Server 数据库迁移到 Azure 的两个选项的简要概述。
-
-Azure 提供两个主要选项用于迁移生产 SQL Server 数据库：
+本文提供了用于将 SQL Server 数据库迁移到 Azure 的两个选项的简要概述。 Azure 提供三个主要选项用于迁移生产 SQL Server 数据库。 本文重点介绍以下两个选项：
 
 1. [Azure VM 中的 SQL Server](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-iaas-overview)：在 Azure 中运行的 Windows 虚拟机上安装和托管的 SQL Server 实例，也称为基础结构即服务 (IaaS)。
 2. [Azure SQL 数据库](https://docs.microsoft.com/azure/sql-database/sql-database-technical-overview)：完全托管的 SQL 数据库 Azure 服务，也称为平台即服务 (PaaS)。
 
-两者各有利弊，在迁移之前需要进行评估。
+两者各有利弊，在迁移之前需要进行评估。 第三个选项是 [Azure SQL 数据库托管实例](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance)。
 
 ## <a name="get-started"></a>入门
 
@@ -63,16 +61,16 @@ Azure 提供两个主要选项用于迁移生产 SQL Server 数据库：
 | 迁移 | 需要对数据库进行少量的更改。 | 如果使用 Azure SQL 中不可用的功能（哪些功能可用由[数据迁移助手](https://www.microsoft.com/download/details.aspx?id=53595)确定），或者存在其他依赖项（例如本地安装的可执行文件），则可能需要对数据库进行更改。|
 | 管理可用性、恢复和升级 | 手动配置可用性和恢复。 可以使用 [VM 规模集](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade)自动升级。 | 由系统自动管理。 |
 | 基础 OS 配置 | 手动配置。 | 由系统自动管理。 |
-| 管理数据库大小 | 支持为每个 SQL Server 实例最多配置 64TB 存储。 | 支持 4TB 存储，超过此限制后，需要横向分区。 |
+| 管理数据库大小 | 支持为每个 SQL Server 实例最多配置 256 TB 存储。 | 支持 8 TB 存储，超过此限制后，需要横向分区。 |
 | 管理成本 | 必须管理 SQL Server 许可成本、Windows Server 许可成本和 VM 成本（基于核心数、RAM 和存储）。 | 必须管理服务成本（基于 [eDTU 或 DTU](https://docs.microsoft.com/azure/sql-database/sql-database-what-is-a-dtu)、存储，以及数据库数目（如果使用弹性池））。 此外，必须管理任何 SLA 的成本。 |
 
-若要详细了解两者之间的差异，请阅读“选择云 SQL Server 选项：[Azure SQL 数据库或 Azure VM 上的 SQL Server](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas)”。
+若要详细了解这两者之间的差异，请参阅[在 Azure SQL 中选择正确的部署选项](https://docs.microsoft.com/azure/sql-database/sql-database-paas-vs-sql-server-iaas)。
 
 ## <a name="faq"></a>FAQ
 
 * **是否仍可对 Azure VM 中的 SQL Server 或 Azure SQL 数据库使用 SQL Server Management Studio 和 SQL Server Reporting Services (SSRS) 等工具？**
 
-    可以！ 所有 Microsoft SQL 工具都适用于这两个服务。 不过，SSRS 不是 Azure SQL 数据库的一部分，我们建议在 Azure VM 中运行它，然后将它指向数据库实例。
+    可以。 所有 Microsoft SQL 工具都适用于这两个服务。 不过，SSRS 不是 Azure SQL 数据库的一部分，我们建议在 Azure VM 中运行它，然后将它指向数据库实例。
 
 * **我想要改用 PaaS，但我不确定数据库是否兼容。是否可以借助某些工具？**
 

@@ -2,15 +2,15 @@
 title: 模型生成器 Azure 培训资源
 description: Azure 机器学习资源指南
 ms.topic: reference
-ms.date: 02/27/2020
+ms.date: 06/01/2020
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: a19e13955d0eaea344109eb817f3a3959c3dd883
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d9eb5560ef33f8f80dbe53e17087c606a8697378
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79185826"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289468"
 ---
 # <a name="model-builder-azure-training-resources"></a>模型生成器 Azure 培训资源
 
@@ -49,6 +49,10 @@ Azure 机器学习计算是基于云的 Linux VM，用于训练。
     | Standard_NC24   | 24 | 224 | 1440 | 4 | 48 | 64 | 4 |
 
     有关 GPU 优化计算类型的更多详细信息，请访问 [NC 系列 Linux VM 文档](https://docs.microsoft.com/azure/virtual-machines/nc-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json)。
+- 计算优先级
+
+  - 低优先级：适用于执行时间较短的任务。 可能会受到中断和缺乏可用性的影响。 通常成本较低，因为它充分利用了 Azure 中的过剩容量。
+  - 专用：适用于任何持续时间的任务，特别是长时间运行的作业。 不受中断或缺乏可用性影响。 通常成本更高，因为它在 Azure 中为任务保留一组专用计算资源。
 
 ## <a name="training"></a>训练
 
@@ -63,11 +67,11 @@ Azure 机器学习计算是基于云的 Linux VM，用于训练。
 
   - bestModel.onnx：Open Neural Network Exchange (ONNX) 格式的模型序列化版本。 ONNX 是 AI 模型的开源格式，它支持 ML.NET、PyTorch 和 TensorFlow 等框架之间的互操作性。
   - bestModelMap.json：进行预测以将模型输出映射到文本类别时使用的类别列表。
-  - MLModel.zip：ML.NET 预测管道的序列化版本，它使用 bestModel.onnx  模型的序列化版本进行预测，使用 `bestModelMap.json` 文件映射输出。
+  - MLModel.zip：ML.NET 预测管道的序列化版本，它使用 bestModel.onnx 模型的序列化版本进行预测，使用 `bestModelMap.json` 文件映射输出。
 
 ## <a name="use-the-machine-learning-model"></a>使用机器学习模型
 
-模型  项目中的 `ModelInput` 和 `ModelOutput` 类分别定义模型预期输入和输出的架构。
+模型项目中的 `ModelInput` 和 `ModelOutput` 类分别定义模型预期输入和输出的架构。
 
 在图像分类方案中，`ModelInput` 包含两列：
 

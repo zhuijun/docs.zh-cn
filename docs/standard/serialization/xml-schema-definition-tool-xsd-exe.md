@@ -3,12 +3,12 @@ title: XML Schema Definition Tool (Xsd.exe)
 description: XML 序列化程序生成器为特定程序集中的类型创建 XML 序列化程序集，从而提高 XmlSerializer 的启动性能。
 ms.date: 03/30/2017
 ms.assetid: a6e6e65c-347f-4494-9457-653bf29baac2
-ms.openlocfilehash: 9b2be0b0b267973bd25ffd021dec18a7b9bcadec
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 0275ecfebd427feb104013024654d4a0bc98748a
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380051"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84288974"
 ---
 # <a name="xml-schema-definition-tool-xsdexe"></a>XML Schema Definition Tool (Xsd.exe)
 
@@ -63,7 +63,7 @@ xsd {file.dll | file.exe} [-outputdir:directory] [/type:typename [...]][/paramet
 |------------|-----------------|
 |/e\[lement\]:element|指定架构中要为其生成代码的元素。 默认情况下，键入所有元素。 可以多次指定该参数。|
 |**/enableDataBinding**|在所有生成的类型上实现 <xref:System.ComponentModel.INotifyPropertyChanged> 接口以启用数据绑定。 缩写形式为 `/edb`。|
-|**/enableLinqDataSet**|（缩写形式：`/eld`。）指定可使用 LINQ to DataSet 查询的生成的数据集。 此选项在同时指定 /dataset 选项的情况下使用。 有关详细信息，请参阅 [LINQ to DataSet 概述](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)和[查询类型化数据集](../../../docs/framework/data/adonet/querying-typed-datasets.md)。 有关使用 LINQ 的常规信息，请参阅[语言集成查询 (LINQ) - C#](../../csharp/programming-guide/concepts/linq/index.md) 或[语言集成查询 (LINQ) - Visual Basic](../../visual-basic/programming-guide/concepts/linq/index.md)。|
+|**/enableLinqDataSet**|（缩写形式：`/eld`。）指定可使用 LINQ to DataSet 查询的生成的数据集。 此选项在同时指定 /dataset 选项的情况下使用。 有关详细信息，请参阅 [LINQ to DataSet 概述](../../framework/data/adonet/linq-to-dataset-overview.md)和[查询类型化数据集](../../framework/data/adonet/querying-typed-datasets.md)。 有关使用 LINQ 的常规信息，请参阅[语言集成查询 (LINQ) - C#](../../csharp/programming-guide/concepts/linq/index.md) 或[语言集成查询 (LINQ) - Visual Basic](../../visual-basic/programming-guide/concepts/linq/index.md)。|
 |/f\[ields\]|生成字段，而不是生成属性。 默认情况下生成属性。|
 |/l\[anguage\]:language|指定要使用的编程语言。 从 `CS`（默认情况下为 C#）、`VB` (Visual Basic)、`JS` (JScript) 或 `VJS` (Visual J#) 中进行选择。 也可指定实现 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> 的类的完全限定名|
 |/n\[amespace\]:namespace|为生成的类型指定运行时命名空间。 默认命名空间为 `Schemas`。|
@@ -233,9 +233,9 @@ xsd myAssembly.dll
 
 - <xref:System.Data.DataSet>
 - <xref:System.Xml.Serialization.XmlSerializer?displayProperty=nameWithType>
-- [工具](../../../docs/framework/tools/index.md)
-- [命令提示](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
-- [LINQ to DataSet 概述](../../../docs/framework/data/adonet/linq-to-dataset-overview.md)
-- [查询类型化数据集](../../../docs/framework/data/adonet/querying-typed-datasets.md)
+- [工具](../../framework/tools/index.md)
+- [命令提示](../../framework/tools/developer-command-prompt-for-vs.md)
+- [LINQ to DataSet 概述](../../framework/data/adonet/linq-to-dataset-overview.md)
+- [查询类型化数据集](../../framework/data/adonet/querying-typed-datasets.md)
 - [LINQ（语言集成查询）(C#)](../../csharp/programming-guide/concepts/linq/index.md)
 - [LINQ（语言集成查询）(Visual Basic)](../../visual-basic/programming-guide/concepts/linq/index.md)

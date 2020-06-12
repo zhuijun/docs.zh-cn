@@ -10,18 +10,18 @@ helpviewer_keywords:
 - threading [.NET Framework], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: a76cc40f308ac2f636a650cd4a17da0e94e23a34
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 30d746d739654ecad2b485b9d69cfe300caca2ff
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160256"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84291183"
 ---
 # <a name="managed-threading-best-practices"></a>托管线程处理的最佳做法
 多线程处理需在编程时倍加注意。 对于多数任务，通过将执行请求以线程池线程的方式排队，可以降低复杂性。 本主题将探讨更复杂的情形，比如协调多个线程的工作或处理造成阻止的线程。  
   
 > [!NOTE]
-> 自 .NET Framework 4 起，任务并行库和 PLINQ 提供了 API，可降低多线程编程的一些复杂性和风险。 有关详细信息，请参阅 [.NET 中的并行编程](../../../docs/standard/parallel-programming/index.md)。  
+> 自 .NET Framework 4 起，任务并行库和 PLINQ 提供了 API，可降低多线程编程的一些复杂性和风险。 有关详细信息，请参阅 [.NET 中的并行编程](../parallel-programming/index.md)。  
   
 ## <a name="deadlocks-and-race-conditions"></a>死锁和争用条件  
  多线程处理解决了吞吐量和响应性问题，但引入此功能会带来新的问题：死锁和争用条件。  
@@ -64,7 +64,7 @@ else {
   
  在多线程应用程序中，一个已加载并递增该值的线程可能会被另一个线程抢先，抢先的线程执行全部三个步骤；第一个线程继续执行并存储其值时，它会覆盖 `objCt`，但不考虑该值在其暂停执行期间已更改这一事实。  
   
- 通过使用 <xref:System.Threading.Interlocked> 类的方法（如 <xref:System.Threading.Interlocked.Increment%2A?displayProperty=nameWithType>），可以轻松避免这种争用条件。 若要了解在多个线程间同步数据的其他技巧，请参阅[为多线程处理同步数据](../../../docs/standard/threading/synchronizing-data-for-multithreading.md)。  
+ 通过使用 <xref:System.Threading.Interlocked> 类的方法（如 <xref:System.Threading.Interlocked.Increment%2A?displayProperty=nameWithType>），可以轻松避免这种争用条件。 若要了解在多个线程间同步数据的其他技巧，请参阅[为多线程处理同步数据](synchronizing-data-for-multithreading.md)。  
   
  争用条件也可能会在同步多个线程的活动时发生。 编写每一行代码时，都必须考虑出现以下情况时会发生什么情况：一个线程在执行该行代码（或构成该行的任何机器指令）前，其他线程抢先执行了该代码。  
   
@@ -90,7 +90,7 @@ else {
   
 - 不要从主程序中控制工作线程的执行（如使用事件）。 而应设计程序，使工作线程负责等待任务可用，然后执行任务，并在完成时通知程序的其他部分。 如果不阻止工作线程，请考虑使用线程池线程。 <xref:System.Threading.Monitor.PulseAll%2A?displayProperty=nameWithType> 非常适用于阻止工作线程。  
   
-- 不要将类型用作锁定对象。 也就是说，避免一些代码，如 C# 中的 `lock(typeof(X))` 或 Visual Basic 中的 `SyncLock(GetType(X))`，或避免使用 <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> 和 <xref:System.Type> 对象。 对于给定类型，每个应用域只有一个 <xref:System.Type?displayProperty=nameWithType> 实例。 如果锁定对象的类型是“公共的”，那么不属于自己的代码也能锁定该对象，从而导致死锁。 有关其他问题，请参阅[可靠性最佳做法](../../../docs/framework/performance/reliability-best-practices.md)。  
+- 不要将类型用作锁定对象。 也就是说，避免一些代码，如 C# 中的 `lock(typeof(X))` 或 Visual Basic 中的 `SyncLock(GetType(X))`，或避免使用 <xref:System.Threading.Monitor.Enter%2A?displayProperty=nameWithType> 和 <xref:System.Type> 对象。 对于给定类型，每个应用域只有一个 <xref:System.Type?displayProperty=nameWithType> 实例。 如果锁定对象的类型是“公共的”，那么不属于自己的代码也能锁定该对象，从而导致死锁。 有关其他问题，请参阅[可靠性最佳做法](../../framework/performance/reliability-best-practices.md)。  
   
 - 锁定实例时要谨慎，例如，C# 中的 `lock(this)` 或 Visual Basic 中的 `SyncLock(Me)`。 如果应用程序中不属于该类型的其他代码锁定了该对象，则会发生死锁。  
   
@@ -172,7 +172,7 @@ else {
   
 - 避免提供可更改静态状态的静态方法。 在常见服务器方案中，静态状态可在各个请求之间共享，这意味着多个线程可同时执行该代码。 这可能导致线程出现 bug。 请考虑使用一种设计模式，将数据封装到在各请求之间不共享的实例中。 此外，如果同步静态数据，更改状态的静态方法间的调用可导致死锁或冗余同步，进而降低性能。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [线程处理](../../../docs/standard/threading/index.md)
-- [线程与线程处理](../../../docs/standard/threading/threads-and-threading.md)
+- [线程处理](index.md)
+- [线程与线程处理](threads-and-threading.md)

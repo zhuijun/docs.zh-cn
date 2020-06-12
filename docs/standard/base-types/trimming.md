@@ -1,5 +1,6 @@
 ---
 title: 修整和删除 .NET 中的字符串字符
+description: 了解如何在字符串的开头或结尾修整空格，或者从 .NET 的字符串中的指定位置删除任意数量的空格或字符。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -15,17 +16,17 @@ helpviewer_keywords:
 - TrimStart method
 - removing characters
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
-ms.openlocfilehash: bdbe267bb178e90c0008422e6543a23178c2c4d8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 630fe6b51d151d1f1384f2e3cde62750c303d883
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159983"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446888"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>修整和删除 .NET 中的字符串字符
 如果将句子分析成单个单词，最后得到的结果可能是任意一端带有空白（也称为空格）的单词。 在这种情形下，可以使用 **System.String** 类中的其中一种剪裁方法，从字符串中的指定位置移除任何数量的空格或其他字符。 下表描述了可用的剪裁方法。  
   
-|方法名称|用途|  
+|方法名称|使用|  
 |-----------------|---------|  
 |<xref:System.String.Trim%2A?displayProperty=nameWithType>|从字符串的开头和结尾移除空白或者指定的字符|  
 |<xref:System.String.TrimEnd%2A?displayProperty=nameWithType>|从字符串的结尾移除在字符数组中指定的字符。|  
@@ -49,7 +50,7 @@ ms.locfileid: "78159983"
 
  **String.TrimEnd** 方法从字符串的结尾移除字符，同时创建新的字符串对象。 通过向此方法传递一个字符数组来指定要移除的字符。 字符数组中的元素顺序并不影响剪裁操作。 找到未在数组中指定的字符时，剪裁停止。  
   
- 下面的示例使用 TrimEnd  方法，删除字符串的最后几个字母。 在此示例中，`'r'` 字符和 `'W'` 字符的位置交换，说明数组中字符的顺序并不重要。 请注意，此代码移除 `MyString` 的最后一个单词和第一个单词的一部分。  
+ 下面的示例使用 TrimEnd 方法，删除字符串的最后几个字母。 在此示例中，`'r'` 字符和 `'W'` 字符的位置交换，说明数组中字符的顺序并不重要。 请注意，此代码移除 `MyString` 的最后一个单词和第一个单词的一部分。  
   
  [!code-cpp[Conceptual.String.BasicOps#18](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.string.basicops/cpp/trimming.cpp#18)]
  [!code-csharp[Conceptual.String.BasicOps#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/trimming.cs#18)]
@@ -94,6 +95,6 @@ ms.locfileid: "78159983"
  [!code-csharp[Conceptual.String.BasicOps#23](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/replace1.cs#23)]
  [!code-vb[Conceptual.String.BasicOps#23](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/replace1.vb#23)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [基本字符串操作](../../../docs/standard/base-types/basic-string-operations.md)
+- [基本字符串操作](basic-string-operations.md)

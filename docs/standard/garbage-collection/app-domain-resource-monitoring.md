@@ -8,12 +8,12 @@ helpviewer_keywords:
 - memory use, monitoring
 - application domains, resource monitoring
 ms.assetid: 318bedf8-7f35-4f00-b34a-2b7b8e3fa315
-ms.openlocfilehash: 54e300bef1818fd08f27d7920eec68ee1f2c45bb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 12dfdd3ac6d75a3e2a33f93d8847c963ded912e8
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73141377"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84286088"
 ---
 # <a name="application-domain-resource-monitoring"></a>应用程序域资源监控
 
@@ -29,9 +29,9 @@ ARM 是轻型服务，足可用于实际应用。 若要访问信息，可以使
 
 一旦启用，ARM 就会开始收集进程中所有应用域的相关数据。如果在启用 ARM 前就创建了应用域，累积数据会在 ARM 启用时启动，而不是在应用域创建时启动。一旦启用，ARM 便无法再禁用。
 
-- 可以在 CLR 启动时启用 ARM，具体操作是向配置文件添加 [\<appDomainResourceMonitoring>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md) 元素，并将 `enabled` 属性设置为 `true`。 值 `false`（默认值）只表示不在启动时启用 ARM；稍后可以使用其他激活机制之一来激活它。
+- 可以在 CLR 启动时启用 ARM，具体操作是向配置文件添加 [\<appDomainResourceMonitoring>](../../framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md) 元素，并将 `enabled` 属性设置为 `true`。 值 `false`（默认值）只表示不在启动时启用 ARM；稍后可以使用其他激活机制之一来激活它。
 
-- 主机可以请求获取 [ICLRAppDomainResourceMonitor](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) 托管接口来启用 ARM。 成功获取此接口后，就会启用 ARM。
+- 主机可以请求获取 [ICLRAppDomainResourceMonitor](../../framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md) 托管接口来启用 ARM。 成功获取此接口后，就会启用 ARM。
 
 - 托管代码可以将静态 <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType> 属性（Visual Basic 中的 `Shared`）设置为 `true`，从而启用 ARM。 设置此属性后，就会启用 ARM。
 
@@ -45,15 +45,15 @@ ARM 提供应用域使用的总处理器时间，以及关于内存使用情况�
 
   - 托管 API：<xref:System.AppDomain.MonitoringTotalProcessorTime%2A?displayProperty=nameWithType> 属性。
 
-  - 宿主 API：[ICLRAppDomainResourceMonitor::GetCurrentCpuTime](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md) 方法。
+  - 宿主 API：[ICLRAppDomainResourceMonitor::GetCurrentCpuTime](../../framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentcputime-method.md) 方法。
 
-  - ETW 事件：`ThreadCreated`、`ThreadAppDomainEnter` 和 `ThreadTerminated` 事件。 若要了解提供程序和关键字，请参阅 [CLR ETW 事件](../../../docs/framework/performance/clr-etw-events.md) 中的“应用域资源监视事件”。
+  - ETW 事件：`ThreadCreated`、`ThreadAppDomainEnter` 和 `ThreadTerminated` 事件。 若要了解提供程序和关键字，请参阅 [CLR ETW 事件](../../framework/performance/clr-etw-events.md) 中的“应用域资源监视事件”。
 
 - **应用程序域在其生命周期内进行的托管分配总量（以字节为单位）** ：总分配并不总是反映应用程序域的内存使用情况，因为所分配的对象可能是短期的。 不过，如果应用分配并释放大量对象，分配成本可能会非常高。
 
   - 托管 API：<xref:System.AppDomain.MonitoringTotalAllocatedMemorySize%2A?displayProperty=nameWithType> 属性。
 
-  - 宿主 API：[ICLRAppDomainResourceMonitor::GetCurrentAllocated](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md) 方法。
+  - 宿主 API：[ICLRAppDomainResourceMonitor::GetCurrentAllocated](../../framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentallocated-method.md) 方法。
 
   - ETW 事件：`AppDomainMemAllocated` 事件、`Allocated` 字段。
 
@@ -61,7 +61,7 @@ ARM 提供应用域使用的总处理器时间，以及关于内存使用情况�
 
   - 托管 API：<xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType> 属性。
 
-  - 宿主 API：[ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) 方法、`pAppDomainBytesSurvived` 参数。
+  - 宿主 API：[ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) 方法、`pAppDomainBytesSurvived` 参数。
 
   - ETW 事件：`AppDomainMemSurvived` 事件、`Survived` 字段。
 
@@ -69,7 +69,7 @@ ARM 提供应用域使用的总处理器时间，以及关于内存使用情况�
 
   - 托管 API：<xref:System.AppDomain.MonitoringSurvivedProcessMemorySize%2A?displayProperty=nameWithType> 属性。
 
-  - 宿主 API：[ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) 方法、`pTotalBytesSurvived` 参数。
+  - 宿主 API：[ICLRAppDomainResourceMonitor::GetCurrentSurvived](../../framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-getcurrentsurvived-method.md) 方法、`pTotalBytesSurvived` 参数。
 
   - ETW 事件：`AppDomainMemSurvived` 事件、`ProcessSurvived` 字段。
 
@@ -85,11 +85,11 @@ ARM 提供应用域使用的总处理器时间，以及关于内存使用情况�
 
 #### <a name="hosting-api"></a>宿主 API
 
-如果使用非托管宿主 API，主机必须向 CLR 传递 [IHostGCManager](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-interface.md) 接口实现。 如果 CLR 恢复执行在回收发生时被暂停的线程，便会调用 [IHostGCManager::SuspensionEnding](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md) 方法。 CLR 将生成的已完成回收作为方法参数进行传递，以便主机能够确定回收是完全回收还是部分回收。 实现 [IHostGCManager::SuspensionEnding](../../../docs/framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md) 方法可以查询保留的内存，以确保在内存更新时立即检索计数。
+如果使用非托管宿主 API，主机必须向 CLR 传递 [IHostGCManager](../../framework/unmanaged-api/hosting/ihostgcmanager-interface.md) 接口实现。 如果 CLR 恢复执行在回收发生时被暂停的线程，便会调用 [IHostGCManager::SuspensionEnding](../../framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md) 方法。 CLR 将生成的已完成回收作为方法参数进行传递，以便主机能够确定回收是完全回收还是部分回收。 实现 [IHostGCManager::SuspensionEnding](../../framework/unmanaged-api/hosting/ihostgcmanager-suspensionending-method.md) 方法可以查询保留的内存，以确保在内存更新时立即检索计数。
 
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.AppDomain.MonitoringIsEnabled%2A?displayProperty=nameWithType>
-- [ICLRAppDomainResourceMonitor 接口](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)
-- [\<appDomainResourceMonitoring>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)
-- [CLR ETW 事件](../../../docs/framework/performance/clr-etw-events.md)
+- [ICLRAppDomainResourceMonitor 接口](../../framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)
+- [\<appDomainResourceMonitoring>](../../framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)
+- [CLR ETW 事件](../../framework/performance/clr-etw-events.md)

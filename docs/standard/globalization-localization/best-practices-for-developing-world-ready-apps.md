@@ -8,12 +8,12 @@ helpviewer_keywords:
 - globalization [.NET Framework], best practices
 - international applications [.NET Framework], best practices
 ms.assetid: f08169c7-aad8-4ec3-9a21-9ebd3b89986c
-ms.openlocfilehash: a2cd1039f95a763002922fc2fa24eff77838de80
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f0e5ccf999b6aa96b6317b88e25f3cd9d9fbc899
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73141295"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279875"
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a>开发全球通用应用程序的最佳做法
 
@@ -49,7 +49,7 @@ ms.locfileid: "73141295"
 
 9. 在国际操作系统版本上使用国际数据来测试应用程序功能。
 
-10. 如果安全决策基于字符串比较或大小写更改操作的结果，请使用不区分区域性的字符串操作。 这种做法可确保结果不会受 `CultureInfo.CurrentCulture` 值的影响。 有关展示了区分区域性字符串比较如何产生不一致结果的示例，请参阅[字符串使用最佳做法](../../../docs/standard/base-types/best-practices-strings.md)的[“使用当前区域性的字符串比较”](../../../docs/standard/base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture)部分。
+10. 如果安全决策基于字符串比较或大小写更改操作的结果，请使用不区分区域性的字符串操作。 这种做法可确保结果不会受 `CultureInfo.CurrentCulture` 值的影响。 有关展示了区分区域性字符串比较如何产生不一致结果的示例，请参阅[字符串使用最佳做法](../base-types/best-practices-strings.md)的[“使用当前区域性的字符串比较”](../base-types/best-practices-strings.md#string-comparisons-that-use-the-current-culture)部分。
 
 ## <a name="localization-best-practices"></a>本地化最佳做法
 
@@ -69,11 +69,11 @@ ms.locfileid: "73141295"
 
 8. 使用 <xref:System.Resources.ResourceManager?displayProperty=nameWithType> 类来根据区域性检索资源。
 
-9. 使用 [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) 创建 Windows 窗体对话框，以便可以使用 [Windows 窗体资源编辑器 (Winres.exe)](../../../docs/framework/tools/winres-exe-windows-forms-resource-editor.md) 对它们进行本地化。 不要对 Windows 窗体对话框进行手动编码。
+9. 使用 [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) 创建 Windows 窗体对话框，以便可以使用 [Windows 窗体资源编辑器 (Winres.exe)](../../framework/tools/winres-exe-windows-forms-resource-editor.md) 对它们进行本地化。 不要对 Windows 窗体对话框进行手动编码。
 
 10. 安排进行专业本地化工作（翻译）。
 
-11. 有关创建并本地化资源的完整说明，请参阅[应用中的资源](../../../docs/framework/resources/index.md)。
+11. 有关创建并本地化资源的完整说明，请参阅[应用中的资源](../../framework/resources/index.md)。
 
 ## <a name="globalization-best-practices-for-aspnet-applications"></a>ASP.NET 应用程序的全球化最佳做法
 
@@ -99,7 +99,7 @@ ms.locfileid: "73141295"
 
 5. 请注意，uiCulture 值可以设置为浏览器接受的语言。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [全球化和本地化](../../../docs/standard/globalization-localization/index.md)
-- [桌面应用中的资源](../../../docs/framework/resources/index.md)
+- [全球化和本地化](index.md)
+- [桌面应用中的资源](../../framework/resources/index.md)

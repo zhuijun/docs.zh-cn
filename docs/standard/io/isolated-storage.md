@@ -18,12 +18,12 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: ed784bafda2aed829f2e97d7e7e8b2716c48c7ba
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f98af970c8827623298fb43cd0653bdaafb20dd3
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75706577"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84278877"
 ---
 # <a name="isolated-storage"></a>独立存储
 <a name="top"></a> 对于桌面应用，独立存储是一种数据存储机制，它在代码与保存的数据之间定义了标准化的关联方式，从而提供隔离性和安全性。 同时，标准化也提供了其他好处。 管理员可以使用旨在操作独立存储的工具来配置文件存储空间、设置安全策略及删除未使用的数据。 通过独立存储，代码不再需要使用唯一的路径来指定文件系统中的安全位置，同时可以保护数据免遭只具有独立存储访问权限的其他应用程序的损坏。 不再需要指示应用程序的存储区域位置的硬编码信息。
@@ -49,7 +49,7 @@ ms.locfileid: "75706577"
 
 - [相关主题](#related_topics)
 
-- [引用](#reference)
+- [参考](#reference)
 
 <a name="data_compartments_and_stores"></a>
 
@@ -99,9 +99,9 @@ ms.locfileid: "75706577"
 |-------------------|---------------------|---------------------|
 |<xref:System.Security.Permissions.IsolatedStorageContainment.None>|不允许使用任何独立存储。|没有安全影响。|
 |<xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser>|按用户、域和程序集隔离。 每个程序集在域中都有单独的子存储区。 使用此权限的存储也由计算机隐式隔离。|此权限级别无法阻止他人未经授权滥用资源，尽管强制的配额对此做法增添了一些难度。 这叫做拒绝服务攻击。|
-|<xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByRoamingUser>|与 `DomainIsolationByUser` 相同，但如果启用漫游用户配置文件且不强制配额，则存储将保存到将漫游的位置。|因为必须禁用配额，所以存储资源更易受到拒绝服务攻击。|
+|<xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByRoamingUser>|与 `DomainIsolationByUser`相同，但如果启用漫游用户配置文件且不强制配额，则存储将保存到将漫游的位置。|因为必须禁用配额，所以存储资源更易受到拒绝服务攻击。|
 |<xref:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByUser>|按用户和程序集隔离。 使用此权限的存储也由计算机隐式隔离。|在此级别强制实施配额以帮助防止拒绝服务攻击。 由于另一个域中相同的程序集可以访问该存储区，这就使信息可能在应用程序间泄露。|
-|<xref:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByRoamingUser>|与 `AssemblyIsolationByUser` 相同，但如果启用漫游用户配置文件且不强制配额，则存储将保存到将漫游的位置。|与 `AssemblyIsolationByUser` 中相同，但没有配额，增加了拒绝服务攻击的风险。|
+|<xref:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByRoamingUser>|与 `AssemblyIsolationByUser`相同，但如果启用漫游用户配置文件且不强制配额，则存储将保存到将漫游的位置。|与 `AssemblyIsolationByUser`中相同，但没有配额，增加了拒绝服务攻击的风险。|
 |<xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser>|按用户隔离。 通常，只有管理或调试工具才使用此级别的权限。|使用该权限访问允许代码查看或删除任何的用户独立存储文件或目录（而不论程序集是否隔离）。 存在的风险包括（但不限于）泄露信息和数据丢失。|
 |<xref:System.Security.Permissions.IsolatedStorageContainment.UnrestrictedIsolatedStorage>|按所有用户、域和程序集隔离。 通常，只有管理或调试工具才使用此级别的权限。|此权限有可能会整个危害所有用户的所有独立存储区。|
 
@@ -113,10 +113,10 @@ ms.locfileid: "75706577"
 
 |操作系统|在文件系统中的位置|
 |----------------------|-----------------------------|
-|Windows 2000、Windows XP、Windows Server 2003（从 Windows NT 4.0 升级）|支持漫游的存储区 =<br /><br /> \<SYSTEMROOT>\Profiles\\<用户\>\Application Data<br /><br /> 非漫游存储区 =<br /><br /> \<SYSTEMROOT>\Profiles\\<用户\>\Local Settings\Application Data|
-|Windows 2000 - 全新安装（和从 Windows 98 及 Windows NT 3.51 升级）|支持漫游的存储区 =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<用户\>\Application Data<br /><br /> 非漫游存储区 =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<用户\>\Local Settings\Application Data|
-|Windows XP、Windows Server 2003 - 全新安装（和从 Windows 2000 及 Windows 98 升级）|支持漫游的存储区 =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<用户\>\Application Data<br /><br /> 非漫游存储区 =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<用户\>\Local Settings\Application Data|
-|Windows 8、Windows 7、Windows Server 2008、Windows Vista|支持漫游的存储区 =<br /><br /> \<SYSTEMDRIVE>\Users\\<用户\>\AppData\Roaming<br /><br /> 非漫游存储区 =<br /><br /> \<SYSTEMDRIVE>\Users\\<用户\>\AppData\Local|
+|Windows 2000、Windows XP、Windows Server 2003（从 Windows NT 4.0 升级）|支持漫游的存储区 =<br /><br /> \<SYSTEMROOT>\Profiles\\<user\>\Application Data<br /><br /> 非漫游存储区 =<br /><br /> \<SYSTEMROOT>\Profiles\\<user\>\Local Settings\Application Data|
+|Windows 2000 - 全新安装（和从 Windows 98 及 Windows NT 3.51 升级）|支持漫游的存储区 =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Application Data<br /><br /> 非漫游存储区 =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Local Settings\Application Data|
+|Windows XP、Windows Server 2003 - 全新安装（和从 Windows 2000 及 Windows 98 升级）|支持漫游的存储区 =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Application Data<br /><br /> 非漫游存储区 =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Local Settings\Application Data|
+|Windows 8、Windows 7、Windows Server 2008、Windows Vista|支持漫游的存储区 =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Roaming<br /><br /> 非漫游存储区 =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Local|
 
 <a name="isolated_storage_tasks"></a>
 
@@ -132,7 +132,7 @@ ms.locfileid: "75706577"
 
 独立存储类使您可以创建、枚举并删除独立存储。 通过 <xref:System.IO.IsolatedStorage.IsolatedStorageFile> 对象可以使用执行这些任务的方法。 某些操作要求你具有 <xref:System.Security.Permissions.IsolatedStorageFilePermission> 权限（表示管理独立存储的权限）；你可能还需要具有访问文件或目录的操作系统权限。
 
-有关演示常见的独立存储任务的一系列示例，请参阅[相关主题](#related_topics)中列出的帮助主题。
+有关演示常见的独立存储任务的一系列示例，请参见 [相关主题](#related_topics)中列出的帮助主题。
 
 <a name="scenarios_for_isolated_storage"></a>
 
@@ -162,22 +162,22 @@ ms.locfileid: "75706577"
 
 ## <a name="related-topics"></a>相关主题
 
-|标题|说明|
+|Title|描述|
 |-----------|-----------------|
-|[隔离的类型](../../../docs/standard/io/types-of-isolation.md)|描述不同类型的隔离。|
-|[如何：获取独立存储的存储区](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)|提供使用 <xref:System.IO.IsolatedStorage.IsolatedStorageFile> 类获取按用户和程序集隔离的存储区的示例。|
-|[如何：枚举独立存储的存储区](../../../docs/standard/io/how-to-enumerate-stores-for-isolated-storage.md)|演示如何使用 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> 方法计算用户的所有独立存储的大小。|
-|[如何：删除独立存储中的存储区](../../../docs/standard/io/how-to-delete-stores-in-isolated-storage.md)|演示如何使用 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A?displayProperty=nameWithType> 方法以两种不同方式删除独立存储区。|
-|[如何：预见独立存储中空间不足的情况](../../../docs/standard/io/how-to-anticipate-out-of-space-conditions-with-isolated-storage.md)|说明如何测量独立存储区中剩余的空间。|
-|[如何：在独立存储中创建文件和目录](../../../docs/standard/io/how-to-create-files-and-directories-in-isolated-storage.md)|提供一些在独立存储区中创建文件和目录的示例。|
-|[如何：在独立存储中查找现有文件和目录](../../../docs/standard/io/how-to-find-existing-files-and-directories-in-isolated-storage.md)|演示如何读取独立存储区中的目录结构和文件。|
-|[如何：在独立存储中读取和写入文件](../../../docs/standard/io/how-to-read-and-write-to-files-in-isolated-storage.md)|提供一个向独立存储文件写入字符串并将其读取回的示例。|
-|[如何：在独立存储中删除文件和目录](../../../docs/standard/io/how-to-delete-files-and-directories-in-isolated-storage.md)|演示如何删除独立存储文件和目录。|
-|[文件和流 I/O](../../../docs/standard/io/index.md)|解释如何执行同步和异步文件和数据流访问。|
+|[隔离的类型](types-of-isolation.md)|描述不同类型的隔离。|
+|[如何：获取独立存储的存储区](how-to-obtain-stores-for-isolated-storage.md)|提供使用 <xref:System.IO.IsolatedStorage.IsolatedStorageFile> 类获取按用户和程序集隔离的存储区的示例。|
+|[如何：枚举独立存储的存储区](how-to-enumerate-stores-for-isolated-storage.md)|演示如何使用 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType> 方法计算用户的所有独立存储的大小。|
+|[如何：删除独立存储中的存储区](how-to-delete-stores-in-isolated-storage.md)|演示如何使用 <xref:System.IO.IsolatedStorage.IsolatedStorageFile.Remove%2A?displayProperty=nameWithType> 方法以两种不同方式删除独立存储区。|
+|[如何：预见独立存储中的空间不足条件](how-to-anticipate-out-of-space-conditions-with-isolated-storage.md)|说明如何测量独立存储区中剩余的空间。|
+|[如何：在独立存储中创建文件和目录](how-to-create-files-and-directories-in-isolated-storage.md)|提供一些在独立存储区中创建文件和目录的示例。|
+|[如何：在独立存储中查找现有文件和目录](how-to-find-existing-files-and-directories-in-isolated-storage.md)|演示如何读取独立存储区中的目录结构和文件。|
+|[如何：在独立存储中读取和写入文件](how-to-read-and-write-to-files-in-isolated-storage.md)|提供一个向独立存储文件写入字符串并将其读取回的示例。|
+|[如何：在独立存储中删除文件和目录](how-to-delete-files-and-directories-in-isolated-storage.md)|演示如何删除独立存储文件和目录。|
+|[文件和流 I/O](index.md)|解释如何执行同步和异步文件和数据流访问。|
 
 <a name="reference"></a>
 
-## <a name="reference"></a>引用
+## <a name="reference"></a>参考
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType>
 

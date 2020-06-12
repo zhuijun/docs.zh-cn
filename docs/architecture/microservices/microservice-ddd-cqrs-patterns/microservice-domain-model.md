@@ -2,16 +2,16 @@
 title: 设计微服务域模型
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解设计面向 DDD 的域模型时的关键概念。
 ms.date: 01/30/2020
-ms.openlocfilehash: 234d6e518eac8de5b2f130b91adb32b6a24a7265
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: fe78e719570d5758b71531beab883e5c24a88dca
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144586"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306900"
 ---
 # <a name="design-a-microservice-domain-model"></a>设计微服务域模型
 
-为每个业务微服务或绑定上下文定义一个丰富域模型。 
+为每个业务微服务或绑定上下文定义一个丰富域模型。
 
 你的目标是为每个业务微服务或边界上下文 (BC) 创建一个内聚域模型。 但请记住，BC 或业务微服务有时可能由共享一个域模型的多个物理服务组成。 域模型必须捕获它所代表的单个绑定上下文或业务微服务的规则、行为、业务语言和约束。
 
@@ -19,13 +19,13 @@ ms.locfileid: "84144586"
 
 实体表示域对象，主要由其标识、连续性和随时间推移的持久性来定义，而不仅仅由构成它们的属性来定义。 正如 Eric Evans 所说，“主要由其标识定义的对象称为实体”。 实体在域模型中非常重要，因为它们是模型的基础。 因此，应对其进行仔细识别和设计。
 
-实体的标识可以跨多个微服务或绑定上下文。 
+实体的标识可以跨多个微服务或绑定上下文。
 
 同一标识（即，同一 `Id`，不过可能不是同一域实体）可以跨多个绑定上下文或微服务建模。 不过，这并不意味着具有相同属性和逻辑的相同实体会在多个绑定上下文中实现。 相反，每个绑定上下文中的实体都会将其属性和行为限制为该绑定上下文域中所需的属性和行为。
 
 例如，买家实体可能具有某个人的大部分属性，这些属性在配置文件或标识微服务的用户实体中定义，其中包括标识。 但是订购微服务中的买家实体可能具有较少的属性，因为只有某些买家数据与订单流程相关。 每个微服务的上下文或每个绑定上下文都会影响其域模型。
 
-除了实现数据属性外，域实体还必须实现行为。 
+除了实现数据属性外，域实体还必须实现行为。
 
 DDD 中的域实体必须实现与实体数据（在内存中访问的对象）相关的域逻辑或行为。 例如，作为订单实体类的一部分，你必须将业务逻辑和操作作为任务（例如添加订单项、数据验证和总计算）的方法实现。 实体的方法负责处理实体的不变量和规则，而不是将这些规则分布在应用层中。
 
@@ -35,7 +35,7 @@ DDD 中的域实体必须实现与实体数据（在内存中访问的对象）�
 
 **图 7-8**。 实现数据加行为的域实体设计示例
 
-域模型实体通过方法实现行为，即，它不是“贫乏”模型。 当然，实体有时可能不会在实体类中实现任何逻辑。 如果某个聚合内的子实体没有任何特殊逻辑，因为大多数逻辑都在聚合根中定义，则该子实体可能出现这种情况。 如果你有一个复杂的微服务，它在服务类而非域实体中实现了大量逻辑，那么你可能会陷入贫乏域模型中，下一节将对此进行解释。
+域模型实体通过方法实现行为，即，它不是“贫乏”模型。 当然，实体有时可能不会在实体类中实现任何逻辑。 如果某个聚合内的子实体没有任何特殊逻辑，因为大多数逻辑都在聚合根中定义，则该子实体可能出现这种情况。 如果你有一个复杂的微服务，它在服务类而非域实体中实现了逻辑，那么你可能会陷入贫乏域模型中，下一节将对此进行解释。
 
 ### <a name="rich-domain-model-versus-anemic-domain-model"></a>丰富域模型与贫乏域模型
 
@@ -76,17 +76,17 @@ Martin Fowler 在他的博客文章 [AnemicDomainModel](https://martinfowler.com
 
 值对象在关系数据库和 ORM（如 Entity Framework (EF)）中很难管理，而在面向文档的数据库中，它们更易于实现和使用。
 
-EF Core 2.0 及更高版本包含[从属实体](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting)功能，这样可以更易于处理值对象，如我们稍后详细介绍的一样。
+EF Core 2.0 及更高版本包含[从属实体](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting)功能，这样更易于处理值对象，稍后将会详细介绍。
 
 #### <a name="additional-resources"></a>其他资源
 
 - **Martin Fowler。值对象模式** \
   <https://martinfowler.com/bliki/ValueObject.html>
 
-- 值对象   \
+- 值对象 \
   <https://deviq.com/value-object/>
 
-- 测试驱动开发中的值对象   \
+- 测试驱动开发中的值对象 \
   [https://leanpub.com/tdd-ebook/read\#leanpub-auto-value-objects](https://leanpub.com/tdd-ebook/read#leanpub-auto-value-objects)
 
 - **Eric Evans。域驱动设计：软件核心复杂性应对之道.** （书；包括值对象的讨论）\
@@ -114,14 +114,14 @@ EF Core 2.0 及更高版本包含[从属实体](https://devblogs.microsoft.com/d
 
 DDD 域模型由聚合组成，聚合可以只具有一个实体或多个实体，并且还可以包含值对象。 请注意，视你的域而定，Buyer 聚合可能会有其他子实体，就像在 eShopOnContainers 参考应用程序的订购微服务中那样。 图 7-9 仅列举了买家具有单个实体的情况，作为仅包含聚合根的聚合示例。
 
-为了让聚合一直相互隔离并保持它们之间的清晰界限，建议禁止在 DDD 域模型中的聚合之间直接导航，并且模型仅具有外键 (FK) 字段，正如在 eShopOnContainers 的[订购微服务域模型](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs)中所实现的那样。 Order 实体针对买家只有 FK 字段，没有 EF Core 导航属性，如以下代码所示：
+为了让聚合一直相互隔离并保持它们之间的清晰界限，建议禁止在 DDD 域模型中的聚合之间直接导航，并且模型仅具有外键 (FK) 字段，正如在 eShopOnContainers 的[订购微服务域模型](https://github.com/dotnet-architecture/eShopOnContainers/blob/master/src/Services/Ordering/Ordering.Domain/AggregatesModel/OrderAggregate/Order.cs)中所实现的那样。 Order 实体针对买家只有外键字段，没有 EF Core 导航属性，如以下代码所示：
 
 ```csharp
 public class Order : Entity, IAggregateRoot
 {
     private DateTime _orderDate;
     public Address Address { get; private set; }
-    private int? _buyerId; //FK pointing to a different aggregate root
+    private int? _buyerId; // FK pointing to a different aggregate root
     public OrderStatus OrderStatus { get; private set; }
     private readonly List<OrderItem> _orderItems;
     public IReadOnlyCollection<OrderItem> OrderItems => _orderItems;

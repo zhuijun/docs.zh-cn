@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
-ms.openlocfilehash: f80e6ae520ab03c0f5f4edc30c0b7102193ee6c5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64a9b963ce6a8554a581f9d5d0f77cf4edfa71b4
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73139812"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289455"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>使用基于任务的异步模式
 
@@ -245,13 +245,13 @@ catch(Exception exc)
 ### <a name="taskwhenany"></a>Task.WhenAny
  <xref:System.Threading.Tasks.Task.WhenAny%2A> 方法可用于异步等待多个表示为要完成的任务的异步操作之一。  此方法适用于四个主要用例：
 
-- 冗余：多次执行一个操作并选择最先完成的一次（例如，联系能够生成一个结果的多个股市行情 Web 服务并选择完成最快的一个）。
+- 冗余：多次执行一个操作并选择最先完成的一次（例如，联系将生成一个结果的多个股市行情 Web 服务并选择最快完成的一个）。
 
-- 交错：启动多个操作并等待所有这些操作完成，但是在完成这些操作时对其进行处理。
+- 交错：启动多个操作并等待所有这些操作完成，但在这些操作完成时对其进行处理。
 
-- 限制：允许其他操作完成时开始附加操作。  这是交错方案的扩展。
+- 限制：允许在其他操作完成时开始附加操作。  这是交错方案的扩展。
 
-- 早期释放：例如，用任务 t1 表示的操作可以与任务 t2 组成 <xref:System.Threading.Tasks.Task.WhenAny%2A> 任务，您可以等待 <xref:System.Threading.Tasks.Task.WhenAny%2A> 任务。 任务 t2 可以表示超时、取消或其他一些导致 <xref:System.Threading.Tasks.Task.WhenAny%2A> 任务先于 t1 完成的信号。
+- 早期释放：例如，用任务 t1 表示的操作可以与任务 t2 组成 <xref:System.Threading.Tasks.Task.WhenAny%2A> 任务，并且可以等待 <xref:System.Threading.Tasks.Task.WhenAny%2A> 任务。 任务 t2 可以表示超时、取消或其他一些导致 <xref:System.Threading.Tasks.Task.WhenAny%2A> 任务先于 t1 完成的信号。
 
 #### <a name="redundancy"></a>冗余
  假设你想要决定是否购买股票。  你信任一些股票建议 Web 服务，但每个服务最终会在不同的时间段变得很慢，具体取决于每日负载。  <xref:System.Threading.Tasks.Task.WhenAny%2A> 方法可用于在任何操作完成时接收通知：
@@ -288,7 +288,7 @@ while(recommendations.Count > 0)
 }
 ```
 
- 此外，即使第一个任务成功完成，后续任务也可能会失败。  此时，可以有多个选择来处理异常：可以等待所有启动的任务完成，这种情况可以使用 <xref:System.Threading.Tasks.Task.WhenAll%2A> 方法，或者决定所有异常是否重要且必须记录。  为此，可以使用延续任务以在任务异步完成时接收通知：
+ 此外，即使第一个任务成功完成，后续任务也可能会失败。  此时，有多个用于处理异常的选项：可以等待所有启动的任务完成，在这种情况下可以使用 <xref:System.Threading.Tasks.Task.WhenAll%2A> 方法；或者做出所有异常都重要且必须记录的决定。  为此，可以使用延续任务以在任务异步完成时接收通知：
 
 ```csharp
 foreach(Task recommendation in recommendations)
@@ -831,10 +831,10 @@ private static void Produce(int data)
 ```
 
 > [!NOTE]
-> <xref:System.Threading.Tasks.Dataflow> 命名空间通过 NuGet 可用于 .NET Framework 4.5  。 若要安装包含 <xref:System.Threading.Tasks.Dataflow> 命名空间的程序集，请在 Visual Studio 中打开项目，选择“项目”菜单中的“管理 NuGet 包”  ，再在线搜索 Microsoft.Tpl.Dataflow 包。
+> <xref:System.Threading.Tasks.Dataflow> 命名空间通过 NuGet 可用于 .NET Framework 4.5。 若要安装包含 <xref:System.Threading.Tasks.Dataflow> 命名空间的程序集，请在 Visual Studio 中打开项目，选择“项目”菜单中的“管理 NuGet 包”，再在线搜索 Microsoft.Tpl.Dataflow 包。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [基于任务的异步模式 (TAP)](../../../docs/standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)
-- [实现基于任务的异步模式](../../../docs/standard/asynchronous-programming-patterns/implementing-the-task-based-asynchronous-pattern.md)
-- [与其他异步模式和类型互操作](../../../docs/standard/asynchronous-programming-patterns/interop-with-other-asynchronous-patterns-and-types.md)
+- [基于任务的异步模式 (TAP)](task-based-asynchronous-pattern-tap.md)
+- [实现基于任务的异步模式](implementing-the-task-based-asynchronous-pattern.md)
+- [与其他异步模式和类型互操作](interop-with-other-asynchronous-patterns-and-types.md)

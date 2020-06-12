@@ -6,17 +6,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 88373fe2-4a6b-44f9-8a62-8a3e348e3a46
-ms.openlocfilehash: 73a432db9a3fcb6587184e27e6dfe9ba49010e92
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: eec5d6588d907e2d12b588ab3bfe743d6d1eaff9
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709603"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84281604"
 ---
 # <a name="xsltransform-class-implements-the-xslt-processor"></a>XslTransform 类实现 XSLT 处理器
 
 > [!NOTE]
-> <xref:System.Xml.Xsl.XslTransform> 类在 .NET Framework 2.0 中已过时。 可以使用 <xref:System.Xml.Xsl.XslCompiledTransform> 类执行可扩展样式表语言转换 (XSLT) 转换。 请参阅[使用 XslCompiledTransform 类](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md)和[从 XslTransform 类迁移](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md)，以获取详细信息。
+> <xref:System.Xml.Xsl.XslTransform> 类在 .NET Framework 2.0 中已过时。 可以使用 <xref:System.Xml.Xsl.XslCompiledTransform> 类执行可扩展样式表语言转换 (XSLT) 转换。 请参阅[使用 XslCompiledTransform 类](using-the-xslcompiledtransform-class.md)和[从 XslTransform 类迁移](migrating-from-the-xsltransform-class.md)，以获取详细信息。
 
 <xref:System.Xml.Xsl.XslTransform> 类是实现 XSL 转换 (XSLT) 1.0 版建议的 XSLT 处理器。 <xref:System.Xml.Xsl.XslTransform.Load%2A> 方法定位并读取样式表，<xref:System.Xml.Xsl.XslTransform.Transform%2A> 方法转换给定的源文档。 任何实现了 <xref:System.Xml.XPath.IXPathNavigable> 接口的存储区都可以用作 <xref:System.Xml.Xsl.XslTransform> 的源文档。 .NET Framework 当前在 <xref:System.Xml.XmlDocument>、<xref:System.Xml.XmlDataDocument> 和 <xref:System.Xml.XPath.XPathDocument> 上实现了 <xref:System.Xml.XPath.IXPathNavigable> 接口，所以它们都可以用作转换的输入源文档。
 
@@ -76,9 +76,9 @@ public void Load(XPathNavigator, XmlResolver, Evidence);
 
 如果未提供 URI 或证据，那么样式表的 证据集就完全受信任。 不要从不受信任的源加载样式表或将不受信任的扩展对象添加到 <xref:System.Xml.Xsl.XsltArgumentList>。
 
-若要详细了解安全级别和证据及其对脚本的影响，请参阅[使用 \<msxsl:script> 编写 XSLT 样式表脚本](../../../../docs/standard/data/xml/xslt-stylesheet-scripting-using-msxsl-script.md)。 若要了解安全级别和证据及其对扩展对象的影响，请参阅[样式表参数和扩展对象的 XsltArgumentList](../../../../docs/standard/data/xml/xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)。
+若要详细了解安全级别和证据及其对脚本的影响，请参阅[使用 \<msxsl:script> 编写 XSLT 样式表脚本](xslt-stylesheet-scripting-using-msxsl-script.md)。 若要了解安全级别和证据及其对扩展对象的影响，请参阅[样式表参数和扩展对象的 XsltArgumentList](xsltargumentlist-for-style-sheet-parameters-and-extension-objects.md)。
 
-若要了解安全级别和证据及其对 `document()` 函数的影响，请参阅[解析外部 XSLT 样式表和文档](../../../../docs/standard/data/xml/resolving-external-xslt-style-sheets-and-documents.md)。
+若要了解安全级别和证据及其对 `document()` 函数的影响，请参阅[解析外部 XSLT 样式表和文档](resolving-external-xslt-style-sheets-and-documents.md)。
 
 可以给样式表提供许多输入参数。 样式表也可以调用扩展对象上的函数。 参数和扩展对象都是使用 <xref:System.Xml.Xsl.XsltArgumentList> 类提供给样式表的。 有关 <xref:System.Xml.Xsl.XsltArgumentList> 的详细信息，请参阅<xref:System.Xml.Xsl.XsltArgumentList>。
 
@@ -238,9 +238,9 @@ print_root.xsl
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.Xsl.XslTransform>
-- [XslTransform 类的 XSLT 转换](../../../../docs/standard/data/xml/xslt-transformations-with-the-xsltransform-class.md)
-- [转换中的 XPathNavigator](../../../../docs/standard/data/xml/xpathnavigator-in-transformations.md)
-- [转换中的 XPathNodeIterator](../../../../docs/standard/data/xml/xpathnodeiterator-in-transformations.md)
-- [XslTransform 的 XPathDocument 输入](../../../../docs/standard/data/xml/xpathdocument-input-to-xsltransform.md)
-- [XslTransform 的 XmlDataDocument 输入](../../../../docs/standard/data/xml/xmldatadocument-input-to-xsltransform.md)
-- [XslTransform 的 XmlDocument 输入](../../../../docs/standard/data/xml/xmldocument-input-to-xsltransform.md)
+- [XslTransform 类的 XSLT 转换](xslt-transformations-with-the-xsltransform-class.md)
+- [转换中的 XPathNavigator](xpathnavigator-in-transformations.md)
+- [转换中的 XPathNodeIterator](xpathnodeiterator-in-transformations.md)
+- [XslTransform 的 XPathDocument 输入](xpathdocument-input-to-xsltransform.md)
+- [XslTransform 的 XmlDataDocument 输入](xmldatadocument-input-to-xsltransform.md)
+- [XslTransform 的 XmlDocument 输入](xmldocument-input-to-xsltransform.md)

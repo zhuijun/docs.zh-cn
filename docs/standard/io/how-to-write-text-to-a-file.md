@@ -1,5 +1,6 @@
 ---
 title: 如何：将文本写入文件
+description: 了解将文本写入或追加到 .NET 应用文件的方式。 使用 StreamWriter 或文件类中的方法以同步方式或异步方式写入文本。
 ms.date: 01/04/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - streams, writing text to files
 - data streams, writing text to files
 ms.assetid: 060cbe06-2adf-4337-9e7b-961a5c840208
-ms.openlocfilehash: ba1c1815f0e49c02d1f0ee3c48ba01b7c2f5e727
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 52d3d07f4ffdbdc6510425a65fc173d36e674d06
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160243"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447207"
 ---
 # <a name="how-to-write-text-to-a-file"></a>如何：将文本写入文件
 本主题介绍将文本写入 .NET 应用文件的不同方法。
@@ -67,8 +68,8 @@ ms.locfileid: "78160243"
 - <xref:System.IO.StreamWriter>
 - <xref:System.IO.Path>
 - <xref:System.IO.File.CreateText%2A?displayProperty=nameWithType>
-- [如何：枚举目录和文件](../../../docs/standard/io/how-to-enumerate-directories-and-files.md)
-- [如何：对新建的数据文件进行读取和写入](../../../docs/standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)
-- [如何：打开并追加到日志文件](../../../docs/standard/io/how-to-open-and-append-to-a-log-file.md)
-- [如何：从文件中读取文本](../../../docs/standard/io/how-to-read-text-from-a-file.md)
-- [文件和流 I/O](../../../docs/standard/io/index.md)
+- [如何：枚举目录和文件](how-to-enumerate-directories-and-files.md)
+- [如何：对新建的数据文件进行读取和写入](how-to-read-and-write-to-a-newly-created-data-file.md)
+- [如何：打开并追加到日志文件](how-to-open-and-append-to-a-log-file.md)
+- [如何：从文件中读取文本](how-to-read-text-from-a-file.md)
+- [文件和流 I/O](index.md)

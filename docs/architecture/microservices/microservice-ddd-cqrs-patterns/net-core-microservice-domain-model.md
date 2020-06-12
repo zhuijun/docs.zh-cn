@@ -2,16 +2,16 @@
 title: 使用 .NET Core 实现微服务域模型
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 获取面向 DDD 的域模型的实现详细信息。
 ms.date: 10/08/2018
-ms.openlocfilehash: 8aff06a2e37dc87e5ba4f556e9b808598ff3653a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0b42ecc2440faf5870b2d99e31d03cda00b21ce0
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144573"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306899"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>使用 .NET Core 实现微服务域模型
 
-上一节解释了域模型设计的基本设计原则和模式。 现在开始探索使用 .NET Core（纯 C\# 代码）和 EF Core 实现域模型的可能方式。 请注意，域模型将仅由代码组成。 它只有 EF Core 模型要求，并不真正依赖于 EF。 你不应该硬依赖或引用 EF Core 或域模型中的任何其他 ORM。
+上一节解释了域模型设计的基本设计原则和模式。 现在开始探索使用 .NET Core（纯 C\# 代码）和 EF Core 实现域模型的可能方式。 域模型将仅由代码组成。 它只有 EF Core 模型要求，并不真正依赖于 EF。 你不应该硬依赖或引用 EF Core 或域模型中的任何其他 ORM。
 
 ## <a name="domain-model-structure-in-a-custom-net-standard-library"></a>自定义 .NET Standard 库中的域模型结构
 
@@ -95,7 +95,7 @@ public class Order : Entity, IAggregateRoot
 }
 ```
 
-值得注意的是，这是一个作为 POCO 类实现的域实体。 它不直接依赖于 Entity Framework Core 或任何其他基础结构框架。 DDD 中采用的就是这种实现方式，即完全通过 C\# 代码来实现域模型。
+值得注意的是，这是一个作为 POCO 类实现的域实体。 它不直接依赖于 Entity Framework Core 或任何其他基础结构框架。 DDD 中采用的就是这种实现方式，即完全通过 C# 代码来实现域模型。
 
 此外，该类用名为 IAggregateRoot 的接口修饰。 该接口是一个空接口，有时称为*标记接口*，仅用于指示此实体类也是聚合根。
 
@@ -109,7 +109,7 @@ public class Order : Entity, IAggregateRoot
 
 请注意，在前面的代码中，许多属性是只读或私有属性，只能由类方法进行更新，因此任何更新都应考虑在类方法中指定的业务领域不变量和逻辑。
 
-例如，使用 DDD 模式时，不  能从任何命令处理程序方法或应用层类执行以下命令（实际上，你应该无法这样做）：
+例如，使用 DDD 模式时，不能从任何命令处理程序方法或应用层类执行以下命令（实际上，你应该无法这样做）：
 
 ```csharp
 // WRONG ACCORDING TO DDD PATTERNS – CODE AT THE APPLICATION LAYER OR

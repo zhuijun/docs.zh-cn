@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: af0b857e98ffbe0ff9f12108174b79f873c2b38f
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: eb11f0b8ddd34df7c6970c275d4b83cb95f59a53
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378380"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84287488"
 ---
 # <a name="serialization-guidelines"></a>序列化准则
 本文档列出了在设计要序列化的 API 时要考虑的准则。  
@@ -92,7 +92,7 @@ ms.locfileid: "83378380"
      [!code-csharp[SerializationGuidelines#5](../../../samples/snippets/csharp/VS_Snippets_CFX/serializationguidelines/cs/source.cs#5)]
      [!code-vb[SerializationGuidelines#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/serializationguidelines/vb/source.vb#5)]  
   
-     有关详细信息，请参阅[向前兼容的数据协定](../../../docs/framework/wcf/feature-details/forward-compatible-data-contracts.md)。  
+     有关详细信息，请参阅[向前兼容的数据协定](../../framework/wcf/feature-details/forward-compatible-data-contracts.md)。  
   
 #### <a name="supporting-xml-serialization"></a>支持 XML 序列化  
  数据协定序列化是 .NET Framework 中的主要（默认）序列化技术，但也存在数据协定序列化不支持的序列化情况。 例如，数据协定序列化无法让您完全控制序列化程序生成或使用的 XML 的形状。 如果要求此类精细控制，则必须使用 XML 序列化，而且需要设计类型以支持此序列化技术。  
@@ -140,10 +140,10 @@ ms.locfileid: "83378380"
   
 ## <a name="see-also"></a>请参阅
 
-- [使用数据协定](../../../docs/framework/wcf/feature-details/using-data-contracts.md)
-- [数据协定序列化程序](../../../docs/framework/wcf/feature-details/data-contract-serializer.md)
-- [数据协定序列化程序支持的类型](../../../docs/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
+- [使用数据协定](../../framework/wcf/feature-details/using-data-contracts.md)
+- [数据协定序列化程序](../../framework/wcf/feature-details/data-contract-serializer.md)
+- [数据协定序列化程序支持的类型](../../framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [二进制序列化](binary-serialization.md)
 - [.NET 远程处理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
 - [XML 和 SOAP 序列化](xml-and-soap-serialization.md)
-- [安全性和序列化](../../../docs/framework/misc/security-and-serialization.md)
+- [安全性和序列化](../../framework/misc/security-and-serialization.md)

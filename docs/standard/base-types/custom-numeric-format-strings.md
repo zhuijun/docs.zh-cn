@@ -1,5 +1,6 @@
 ---
 title: 自定义数字格式字符串
+description: 了解如何创建自定义数字格式字符串，以便在 .NET 中设置数值数据的格式。 自定义数字格式字符串有一个或多个自定义数值说明符。
 ms.date: 06/25/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,37 +17,37 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-ms.openlocfilehash: 1eb9c3c189d7bba3a12fdcd0c3d600a66bf819ca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bd96766c7483a3de1a3c70d1efbe1aa91ea45fbc
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75348298"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447233"
 ---
 # <a name="custom-numeric-format-strings"></a>自定义数字格式字符串
 
-你可以创建自定义数字格式字符串，这种字符串由一个或多个自定义数字说明符组成，用于定义设置数值数据格式的方式。 自定义数字格式字符串是任何不属于 [标准数字格式字符串](../../../docs/standard/base-types/standard-numeric-format-strings.md)的格式字符串。
+你可以创建自定义数字格式字符串，这种字符串由一个或多个自定义数字说明符组成，用于定义设置数值数据格式的方式。 自定义数字格式字符串是任何不属于 [标准数字格式字符串](standard-numeric-format-strings.md)的格式字符串。
 
-所有数字类型的 `ToString` 方法的某些重载支持自定义数字格式字符串。 例如，可将数字格式字符串提供给 <xref:System.Int32.ToString%28System.String%29> 类型的 <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> 方法和 <xref:System.Int32> 方法。 .NET [复合格式功能](../../../docs/standard/base-types/composite-formatting.md)也支持自定义数字格式字符串，以供 <xref:System.Console> 和 <xref:System.IO.StreamWriter> 类的一些 `Write` 和 `WriteLine` 方法、<xref:System.String.Format%2A?displayProperty=nameWithType> 方法以及 <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> 方法使用。 [字符串内插](../../csharp/language-reference/tokens/interpolated.md)功能还支持自定义数字格式字符串。
+所有数字类型的 `ToString` 方法的某些重载支持自定义数字格式字符串。 例如，可将数字格式字符串提供给 <xref:System.Int32.ToString%28System.String%29> 类型的 <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> 方法和 <xref:System.Int32> 方法。 .NET [复合格式功能](composite-formatting.md)也支持自定义数字格式字符串，以供 <xref:System.Console> 和 <xref:System.IO.StreamWriter> 类的一些 `Write` 和 `WriteLine` 方法、<xref:System.String.Format%2A?displayProperty=nameWithType> 方法以及 <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> 方法使用。 [字符串内插](../../csharp/language-reference/tokens/interpolated.md)功能还支持自定义数字格式字符串。
 
 > [!TIP]
-> 你可以下载格式设置实用工具，它属于一种 .NET Core Windows 窗体应用程序，通过该应用程序，你可将格式字符串应用于数值或日期和时间值并显示结果字符串  。 源代码适用于 [C#](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs) 和 [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)。
+> 你可以下载格式设置实用工具，它属于一种 .NET Core Windows 窗体应用程序，通过该应用程序，你可将格式字符串应用于数值或日期和时间值并显示结果字符串。 源代码适用于 [C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) 和 [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)。
 
-<a name="table"></a> 下表描述自定义数字格式说明符并显示由每个格式说明符产生的示例输出。 有关使用自定义数字格式字符串的其他信息，请参阅[说明](#NotesCustomFormatting)部分，有关使用方法的完整演示，请参阅[示例](#example)部分。
+<a name="table"></a> 下表描述自定义数字格式说明符并显示由每个格式说明符产生的示例输出。 有关使用自定义数字格式字符串的其他信息，请参见 [说明](#NotesCustomFormatting) 一节，有关使用方法的完整演示，请参见 [示例](#example) 一节。
 
-|格式说明符|名称|说明|示例|
+|格式说明符|“属性”|描述|示例|
 |----------------------|----------|-----------------|--------------|
-|“0”|零占位符|用对应的数字（如果存在）替换零；否则，将在结果字符串中显示零。<br /><br /> 有关详细信息，请参阅 [“0”自定义说明符](#Specifier0)。|1234.5678 ("00000") -> 01235<br /><br /> 0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|
-|"#"|数字占位符|用对应的数字（如果存在）替换“#”符号；否则，不会在结果字符串中显示任何数字。<br /><br /> 请注意，如果输入字符串中的相应数字是无意义的 0，则在结果字符串中不会出现任何数字。 例如，0003 ("####") -> 3。<br /><br /> 有关详细信息，请参阅 [“#”自定义说明符](#SpecifierD)。|1234.5678 ("#####") -> 1235<br /><br /> 0.45678 ("#.##", en-US) -> .46<br /><br /> 0.45678 ("#.##", fr-FR) -> ,46|
-|"."|小数点|确定小数点分隔符在结果字符串中的位置。<br /><br /> 有关详细信息，请参阅 ["."自定义说明符](#SpecifierPt)。|0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|
-|","|组分隔符和数字比例换算|用作组分隔符和数字比例换算说明符。 作为组分隔符时，它在各个组之间插入本地化的组分隔符字符。 作为数字比例换算说明符，对于每个指定的逗号，它将数字除以 1000。<br /><br /> 有关详细信息，请参阅 [“,”自定义说明符](#SpecifierTh)。|组分隔符说明符：<br /><br /> 2147483647 ("##,#", en-US) -> 2,147,483,647<br /><br /> 2147483647 ("##,#", es-ES) -> 2.147.483.647<br /><br /> 比例换算说明符：<br /><br /> 2147483647 ("#,#,,", en-US) -> 2,147<br /><br /> 2147483647 ("#,#,,", es-ES) -> 2.147|
-|"%"|百分比占位符|将数字乘以 100，并在结果字符串中插入本地化的百分比符号。<br /><br /> 有关详细信息，请参阅 [“%”自定义说明符](#SpecifierPct)。|0.3697 ("%#0.00", en-US) -> %36.97<br /><br /> 0.3697 ("%#0.00", el-GR) -> %36,97<br /><br /> 0.3697 ("##.0 %", en-US) -> 37.0 %<br /><br /> 0.3697 ("##.0 %", el-GR) -> 37,0 %|
-|"‰"|千分比占位符|将数字乘以 1000，并在结果字符串中插入本地化的千分比符号。<br /><br /> 有关详细信息，请参阅 [“‰”自定义说明符](#SpecifierPerMille)。|0.03697 ("#0.00‰", en-US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36,97‰|
-|“E0”<br /><br /> “E+0”<br /><br /> “E-0”<br /><br /> “E0”<br /><br /> “E+0”<br /><br /> “E-0”|指数表示法|如果后跟至少一个 0（零），则使用指数表示法设置结果格式。 “E”或“e”指示指数符号在结果字符串中是大写还是小写。 跟在“E”或“e”字符后面的零的数目确定指数中的最小位数。 加号 (+) 指示符号字符总是置于指数前面。 减号 (-) 指示符号字符仅置于负指数前面。<br /><br /> 有关详细信息，请参阅 [“E”和“e”自定义说明符](#SpecifierExponent)。|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 ("0.0##e+00") -> 1.504e+03<br /><br /> 1.8901385E-16 ("0.0e+00") -> 1.9e-16|
-|“\\”|转义符|使下一个字符被解释为文本而不是自定义格式说明符。<br /><br /> 有关详细信息，请参阅[“\\”转义字符](#SpecifierEscape)。|987654 ("\\###00\\#") -> #987654#|
-|'string  '<br /><br /> "string  "|文本字符串分隔符|指示应复制到未更改的结果字符串的封闭字符。<br/><br/>有关详细信息，请参阅[字符文本](#character-literals)。|68 ("# 'degrees'") -> 68 degrees<br /><br /> 68 ("# ' degrees'") -> 68  degrees|
-|;|部分分隔符|通过分隔格式字符串定义正数、负数和零各部分。<br /><br /> 有关详细信息，请参阅 [“;”部分分隔符](#SectionSeparator)。|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|
-|其他|所有其他字符|字符将复制到未更改的结果字符串。<br/><br/>有关详细信息，请参阅[字符文本](#character-literals)。|68 ("# °") -> 68 °|
+|“0”|零占位符|用对应的数字（如果存在）替换零；否则，将在结果字符串中显示零。<br /><br /> 更多信息：[“0”自定义说明符](#Specifier0)。|1234.5678 ("00000") -> 01235<br /><br /> 0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|
+|"#"|数字占位符|用对应的数字（如果存在）替换“#”符号；否则，不会在结果字符串中显示任何数字。<br /><br /> 请注意，如果输入字符串中的相应数字是无意义的 0，则在结果字符串中不会出现任何数字。 例如，0003 ("####") -> 3。<br /><br /> 更多信息：[“#”自定义说明符](#SpecifierD)。|1234.5678 ("#####") -> 1235<br /><br /> 0.45678 ("#.##", en-US) -> .46<br /><br /> 0.45678 ("#.##", fr-FR) -> ,46|
+|"."|小数点|确定小数点分隔符在结果字符串中的位置。<br /><br /> 更多信息：[“.”自定义说明符](#SpecifierPt)。|0.45678 ("0.00", en-US) -> 0.46<br /><br /> 0.45678 ("0.00", fr-FR) -> 0,46|
+|","|组分隔符和数字比例换算|用作组分隔符和数字比例换算说明符。 作为组分隔符时，它在各个组之间插入本地化的组分隔符字符。 作为数字比例换算说明符，对于每个指定的逗号，它将数字除以 1000。<br /><br /> 更多信息：[“,”自定义说明符](#SpecifierTh)。|组分隔符说明符：<br /><br /> 2147483647 ("##,#", en-US) -> 2,147,483,647<br /><br /> 2147483647 ("##,#", es-ES) -> 2.147.483.647<br /><br /> 比例换算说明符：<br /><br /> 2147483647 ("#,#,,", en-US) -> 2,147<br /><br /> 2147483647 ("#,#,,", es-ES) -> 2.147|
+|"%"|百分比占位符|将数字乘以 100，并在结果字符串中插入本地化的百分比符号。<br /><br /> 更多信息：[“%”自定义说明符](#SpecifierPct)。|0.3697 ("%#0.00", en-US) -> %36.97<br /><br /> 0.3697 ("%#0.00", el-GR) -> %36,97<br /><br /> 0.3697 ("##.0 %", en-US) -> 37.0 %<br /><br /> 0.3697 ("##.0 %", el-GR) -> 37,0 %|
+|"‰"|千分比占位符|将数字乘以 1000，并在结果字符串中插入本地化的千分比符号。<br /><br /> 更多信息：[“‰”自定义说明符](#SpecifierPerMille)。|0.03697 ("#0.00‰", en-US) -> 36.97‰<br /><br /> 0.03697 ("#0.00‰", ru-RU) -> 36,97‰|
+|“E0”<br /><br /> “E+0”<br /><br /> “E-0”<br /><br /> “E0”<br /><br /> “E+0”<br /><br /> “E-0”|指数表示法|如果后跟至少一个 0（零），则使用指数表示法设置结果格式。 “E”或“e”指示指数符号在结果字符串中是大写还是小写。 跟在“E”或“e”字符后面的零的数目确定指数中的最小位数。 加号 (+) 指示符号字符总是置于指数前面。 减号 (-) 指示符号字符仅置于负指数前面。<br /><br /> 更多信息：[“E”和“e”自定义说明符](#SpecifierExponent)。|987654 ("#0.0e0") -> 98.8e4<br /><br /> 1503.92311 ("0.0##e+00") -> 1.504e+03<br /><br /> 1.8901385E-16 ("0.0e+00") -> 1.9e-16|
+|“\\”|转义符|使下一个字符被解释为文本而不是自定义格式说明符。<br /><br /> 更多信息：[“\\”转义字符](#SpecifierEscape)。|987654 ("\\###00\\#") -> #987654#|
+|'string'<br /><br /> "*string*"|文本字符串分隔符|指示应复制到未更改的结果字符串的封闭字符。<br/><br/>更多信息：[字符文本](#character-literals)。|68 ("# 'degrees'") -> 68 degrees<br /><br /> 68 ("# ' degrees'") -> 68  degrees|
+|;|部分分隔符|通过分隔格式字符串定义正数、负数和零各部分。<br /><br /> 更多信息：[“;”部分分隔符](#SectionSeparator)。|12.345 ("#0.0#;(#0.0#);-\0-") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#);-\0-") -> -0-<br /><br /> -12.345 ("#0.0#;(#0.0#);-\0-") -> (12.35)<br /><br /> 12.345 ("#0.0#;(#0.0#)") -> 12.35<br /><br /> 0 ("#0.0#;(#0.0#)") -> 0.0<br /><br /> -12.345 ("#0.0#;(#0.0#)") -> (12.35)|
+|其他|所有其他字符|字符将复制到未更改的结果字符串。<br/><br/>更多信息：[字符文本](#character-literals)。|68 ("# °") -> 68 °|
 
 以下各节提供有关每个自定义数字格式说明符的详细信息。
 
@@ -84,7 +85,7 @@ ms.locfileid: "75348298"
 [!code-csharp[Formatting.Numeric.Custom#2](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/custom.cs#2)]
 [!code-vb[Formatting.Numeric.Custom#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/formatting.numeric.custom/vb/Custom.vb#2)]
 
-若要返回空缺数字或前导零替换为空格的结果字符串，请使用 [复合格式功能](../../../docs/standard/base-types/composite-formatting.md) 并指定字段宽度，如以下示例所示。
+若要返回空缺数字或前导零替换为空格的结果字符串，请使用 [复合格式功能](composite-formatting.md) 并指定字段宽度，如以下示例所示。
 
 [!code-cpp[Formatting.Numeric.Custom#12](../../../samples/snippets/cpp/VS_Snippets_CLR/formatting.numeric.custom/cpp/SpaceOrDigit1.cpp#12)]
 [!code-csharp[Formatting.Numeric.Custom#12](../../../samples/snippets/csharp/VS_Snippets_CLR/formatting.numeric.custom/cs/SpaceOrDigit1.cs#12)]
@@ -118,7 +119,7 @@ ms.locfileid: "75348298"
 
   当前 <xref:System.Globalization.NumberFormatInfo.NumberGroupSeparator%2A> 对象的 <xref:System.Globalization.NumberFormatInfo.NumberGroupSizes%2A> 和 <xref:System.Globalization.NumberFormatInfo> 属性将确定用作数字组分隔符的字符以及每个数字组的大小。 例如，如果使用字符串“#,#”和固定区域性对数字 1000 进行格式化，则输出为“1,000”。
 
-- 数字比例换算说明符：如果在紧邻显式或隐式小数点的左侧指定一个或多个逗号，则对于每个逗号，将要设置格式的数字除以 1000。 例如，如果使用字符串“0,,”对数字 100000000 进行格式化，则输出为“100”。
+- 数字比例换算符：如果在紧邻显式或隐式小数点的左侧指定一个或多个逗号，则对于每个逗号，将要设置格式的数字除以 1000。 例如，如果使用字符串“0,,”对数字 100000000 进行格式化，则输出为“100”。
 
 可以在同一格式字符串中使用组分隔符和数字比例换算说明符。 例如，如果使用字符串“#,0,,”和固定区域性对数字 1000000000 进行格式化，则输出为“1,000”。
 
@@ -205,7 +206,7 @@ ms.locfileid: "75348298"
 
 分号 (;) 是条件格式说明符，它可以对数字应用不同的格式设置，具体取决于值为正、为负还是为零。 为产生这种行为，自定义格式字符串可以包含最多三个用分号分隔的部分。 下表描述了这些部分。
 
-|部分数目|说明|
+|部分数目|描述|
 |------------------------|-----------------|
 |一个部分|格式字符串应用于所有值。|
 |两个部分|第一部分应用于正值和零，第二部分应用于负值。<br /><br /> 如果要设置格式的数字为负，但根据第二部分中的格式舍入后为零，则最终的零根据第一部分进行格式设置。|
@@ -255,7 +256,7 @@ ms.locfileid: "75348298"
 
 <a name="NotesCustomFormatting"></a>
 
-## <a name="notes"></a>备注
+## <a name="notes"></a>说明
 
 ### <a name="floating-point-infinities-and-nan"></a>浮点型无穷大和 NaN
 
@@ -263,9 +264,9 @@ ms.locfileid: "75348298"
 
 ### <a name="control-panel-settings"></a>控制面板设置
 
-控制面板中“区域和语言选项”  项中的设置会影响由格式设置操作产生的结果字符串。 这些设置用于初始化与当前线程区域性关联的 <xref:System.Globalization.NumberFormatInfo> 对象，并且当前线程区域性将提供用于控制格式设置的值。 使用不同设置的计算机将生成不同的结果字符串。
+控制面板中 **“区域和语言选项”** 项中的设置会影响由格式化操作产生的结果字符串。 这些设置用于初始化与当前线程区域性关联的 <xref:System.Globalization.NumberFormatInfo> 对象，并且当前线程区域性将提供用于控制格式设置的值。 使用不同设置的计算机将生成不同的结果字符串。
 
-此外，如果使用 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> 构造函数实例化表示当前系统区域性的新 <xref:System.Globalization.CultureInfo> 对象，通过控制面板中的“区域和语言选项”  项创建的任何自定义都会应用于新 <xref:System.Globalization.CultureInfo> 对象。 可以使用 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> 构造函数来创建不会反映系统的自定义项的 <xref:System.Globalization.CultureInfo> 对象。
+此外，如果使用 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29> 构造函数实例化一个新的 <xref:System.Globalization.CultureInfo> 对象以表示与当前的系统区域性相同的区域性，则通过控制面板中的 **“区域和语言选项”** 建立的任何自定义都将应用到新的 <xref:System.Globalization.CultureInfo> 对象。 可以使用 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> 构造函数来创建不会反映系统的自定义项的 <xref:System.Globalization.CultureInfo> 对象。
 
 ### <a name="rounding-and-fixed-point-format-strings"></a>舍入和定点格式字符串
 
@@ -285,11 +286,11 @@ ms.locfileid: "75348298"
 
 [返回表首](#table)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Globalization.NumberFormatInfo?displayProperty=nameWithType>
-- [格式设置类型](../../../docs/standard/base-types/formatting-types.md)
-- [标准数字格式字符串](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [如何：用前导零填充数字](../../../docs/standard/base-types/how-to-pad-a-number-with-leading-zeros.md)
-- [示例：.NET Core WinForms 格式设置实用工具 (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)
-- [示例：.NET Core WinForms 格式设置实用工具 (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-vb)
+- [格式设置类型](formatting-types.md)
+- [标准数字格式字符串](standard-numeric-format-strings.md)
+- [如何：用前导零填充数字](how-to-pad-a-number-with-leading-zeros.md)
+- [示例：.NET Core WinForms 格式设置实用工具 (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
+- [示例：.NET Core WinForms 格式设置实用工具 (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)

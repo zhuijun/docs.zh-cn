@@ -4,17 +4,17 @@ description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序 | 开�
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 955d4ec4a0bd0ddf2d022d4154fc6528b2abf3d0
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: be674f3292238b1983064408184777d379cf52a7
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144547"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307002"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>开发 ASP.NET Core MVC 应用
 
 > “第一次是否正确完成并不重要。 最后一次正确完成才至关重要。”  
-> — Andrew Hunt 和 David Thomas 
+> — Andrew Hunt 和 David Thomas
 
 ASP.NET Core 是一个跨平台的开源框架，用于构建新式云优化 Web 应用程序。 ASP.NET Core 具有轻量级和模块化的特点，并且内置了对依赖关系注入的支持，因此具有更好的可测试性和可维护性。 而 MVC 支持构建新式 Web API 和基于视图的应用，ASP.NET Core 与之结合后将成为一个功能强大的框架，用于构建企业 Web 应用程序。
 
@@ -38,9 +38,9 @@ Razor Page 的页面模型结合了 MVC 控制器和视图模型的职责。 不
 
 ## <a name="mapping-requests-to-responses"></a>将请求映射到响应
 
-ASP.NET Core 应用的核心在于将传入请求映射到传出响应。 较低级别的实现方式是使用中间件，简单的 ASP.NET Core 应用和微服务可能只包含自定义中间件。 在某种程度上，使用 ASP.NET Core MVC 可以实现更高级别的操作，需要考虑路由、控制器和操作    。 每个传入请求都会和应用程序的路由表进行对比，如果找到匹配的路由，则调用关联的操作方法（属于控制器）来处理该请求。 如果未找到匹配的路由，则调用错误处理程序（此时返回 NotFound 结果）。
+ASP.NET Core 应用的核心在于将传入请求映射到传出响应。 较低级别的实现方式是使用中间件，简单的 ASP.NET Core 应用和微服务可能只包含自定义中间件。 在某种程度上，使用 ASP.NET Core MVC 可以实现更高级别的操作，需要考虑路由、控制器和操作  。 每个传入请求都会和应用程序的路由表进行对比，如果找到匹配的路由，则调用关联的操作方法（属于控制器）来处理该请求。 如果未找到匹配的路由，则调用错误处理程序（此时返回 NotFound 结果）。
 
-ASP.NET Core MVC 应用可以使用传统路由或属性路由，或二者同时使用。 传统路由在代码中定义，使用类似以下示例中的语法指定路由约定  ：
+ASP.NET Core MVC 应用可以使用传统路由或属性路由，或二者同时使用。 传统路由在代码中定义，使用类似以下示例中的语法指定路由约定：
 
 ```csharp
 app.UseEndpoints(endpoints =>
@@ -49,7 +49,7 @@ app.UseEndpoints(endpoints =>
 });
 ```
 
-此示例向路由表添加了一个名为“default”的路由。 它定义了一个具有 controller、action 和 id 占位符的路由模板    。controller 和 action 占位符具有指定的默认值（分别为“Home”和“Index”），id 占位符则为可选项（通过应用“?”来实现）。 此处定义的约定规定，请求的第一部分应与控制器的名称对应，第二部分与操作对应，第三部分（如有）表示 id 参数。 通常在同一个位置定义应用程序的传统路由，例如在 Startup 类的 Configure 方法中。
+此示例向路由表添加了一个名为“default”的路由。 它定义了一个具有 controller、action 和 id 占位符的路由模板  。controller 和 action 占位符具有指定的默认值（分别为“Home”和“Index”），id 占位符则为可选项（通过应用“?”来实现）。 此处定义的约定规定，请求的第一部分应与控制器的名称对应，第二部分与操作对应，第三部分（如有）表示 id 参数。 通常在同一个位置定义应用程序的传统路由，例如在 Startup 类的 Configure 方法中。
 
 属性路由直接应用到控制器和操作，而不是在全局范围内指定。 其优势在于，查看特定方法时，属性路由更容易发现，但也意味着路由信息不会保存在应用程序中的同一个地方。 通过属性路由可以为给定操作轻松指定多个路由，并将控制器和操作之间的路由合并在一起。 例如：
 
@@ -82,13 +82,13 @@ Razor Pages 不使用属性路由。 可以作为 Razor Pages 的 `@page` 指令
 @page "{id:int}"
 ```
 
-在前面的示例中，问题中的页面将匹配具有整数 `id` 参数的路由。 例如，位于 `/Pages` 根目录中的“Products.cshtml”页面将具有以下路由  ：
+在前面的示例中，问题中的页面将匹配具有整数 `id` 参数的路由。 例如，位于 `/Pages` 根目录中的“Products.cshtml”页面将具有以下路由：
 
 ```csharp
 "/Products/123"
 ```
 
-给定请求与路由匹配之后，ASP.NET Core MVC 会对该请求执行[模型绑定](/aspnet/core/mvc/models/model-binding)和[模型验证](/aspnet/core/mvc/models/validation)，然后才调用操作方法。 模型绑定负责将传入到指定 .NET 类型的 HTTP 数据转换为要调用的操作方法的参数。 例如，如果操作方法需要一个 int id 参数，模型绑定将尝试根据请求中提供的值来提供此参数。 为此，模型绑定会查找已发布表单中的值、路由中的值和查询字符串值。 假设找到了 id 值，该值会被转换为整数，然后传入操作方法。
+给定请求与路由匹配之后，ASP.NET Core MVC 会对该请求执行[模型绑定](/aspnet/core/mvc/models/model-binding)和[模型验证](/aspnet/core/mvc/models/validation)，然后才调用操作方法。 模型绑定负责将传入到指定 .NET 类型的 HTTP 数据转换为要调用的操作方法的参数。 例如，如果操作方法需要一个 `int id` 参数，模型绑定将尝试根据请求中提供的值来提供此参数。 为此，模型绑定会查找已发布表单中的值、路由中的值和查询字符串值。 假设找到了 id 值，该值会被转换为整数，然后传入操作方法。
 
 模型验证发生在绑定模型之后，调用操作方法之前。 模型验证对模型类型使用可选属性，且有助于确保提供的模型对象符合特定数据要求。 可以将某些值指定为必需项，将其限制为特定长度，或将其限制在一定数值范围内，等等。如果指定了验证特性，但该模型不符合其要求，则属性 ModelState.IsValid 将为 false，并且失败的验证规则集将可被发送到发出请求的客户端。
 
@@ -158,7 +158,7 @@ Startup 类是一个范例，应照此构建 ASP.NET Core 应用程序的其他�
 
 ## <a name="structuring-the-application"></a>构建应用程序
 
-整体式应用程序通常只有一个入口点。 对 ASP.NET Core Web 应用程序而言，入口点是 ASP.NET Core Web 项目。 但是，这并不意味着解决方案只应包含一个项目。 按照分离关注点的原则，将应用程序分解到不同层中非常有用。 分解到不同层，有助于脱离文件夹的局限来分离项目，可帮助实现更好的封装。 通过 ASP.NET Core 应用程序实现这些目标的最佳方法是第 5 章中所述的整洁架构的变体。 按照此方法，应用程序的解决方案将包含 UI、基础结构和 ApplicationCore 各自单独的库。
+整体式应用程序通常只有一个入口点。 对 ASP.NET Core Web 应用程序而言，入口点是 ASP.NET Core Web 项目。 但是，这并不意味着解决方案只应包含一个项目。 按照分离关注点的原则，将应用程序分解到不同层中非常有用。 分解到不同层，有助于脱离文件夹的局限来分离项目，可帮助实现更好的封装。 通过 ASP.NET Core 应用程序实现这些目标的最佳方法是第 5 章中所述的整洁架构的变体。 按照此方法，应用程序的解决方案将由分别用于 UI、基础结构和 ApplicationCore 的库构成。
 
 除这些项目之外，还包含一个单独的测试项目（第 9 章中对测试进行介绍）。
 
@@ -172,13 +172,13 @@ ASP.NET Core UI 项目负责所有 UI 级问题，但不得包含业务逻辑或
 
 ### <a name="feature-organization"></a>功能整理
 
-默认情况下，ASP.NET Core 应用程序将其文件夹结构整理为包含 Controllers 和 Views，还经常包含 ViewModels。 支持这些服务器端结构的客户端代码通常单独存放在 wwwroot 文件夹中。 但是对于大型应用程序而言，这种整理方式可能会出现问题，因为处理任何给定功能通常会要求在这些文件夹之间跳转。 每个文件夹中的文件和子文件夹数量越多，通过解决方案资源管理器的滚动就越多，这种整理方式实现起来也就越难。 解决此问题的其中一种办法是按功能，而不要按文件类型来整理应用程序代码  。 这种整理方式通常被称为功能文件夹或[功能切片](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc)（另请参阅：[垂直切片](https://deviq.com/vertical-slices/)）。
+默认情况下，ASP.NET Core 应用程序将其文件夹结构整理为包含 Controllers 和 Views，还经常包含 ViewModels。 支持这些服务器端结构的客户端代码通常单独存放在 wwwroot 文件夹中。 但是对于大型应用程序而言，这种整理方式可能会出现问题，因为处理任何给定功能通常会要求在这些文件夹之间跳转。 每个文件夹中的文件和子文件夹数量越多，通过解决方案资源管理器的滚动就越多，这种整理方式实现起来也就越难。 解决此问题的其中一种办法是按功能，而不要按文件类型来整理应用程序代码。 这种整理方式通常被称为功能文件夹或[功能切片](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc)（另请参阅：[垂直切片](https://deviq.com/vertical-slices/)）。
 
 ASP.NET Core MVC 支持使用 Areas 实现此目的。 使用区域可以在每个 Area 文件夹中创建单独的 Controllers 和 Views 文件夹集（以及任何关联的模型）。 图 7-1 显示了一个使用 Areas 的示例文件夹结构。
 
 ![示例 Area 整理](./media/image7-1.png)
 
-图 7-1  。 示例 Area 整理
+图 7-1。 示例 Area 整理
 
 使用 Areas 时，必须使用属性通过控制器所属的区域名称来修饰控制器：
 
@@ -497,9 +497,9 @@ public class Program
 
 ## <a name="domain-driven-design--should-you-apply-it"></a>领域驱动设计 - 是否该使用？
 
-领域驱动设计 (DDD) 是一种敏捷方法，用于构建强调业务领域的软件。  它非常注重与业务领域专家的沟通和互动，这些专家可以让开发人员了解真实世界中的系统是如何工作的。 例如，如果你在构建处理股票交易的系统，那么领域专家可能是一位经验丰富的股票经纪人。 DDD 旨在解决大型、复杂的业务问题，通常不适合小型简单的应用程序，因为在理解领域和为领域建模上所花费的投入是不必要的。
+领域驱动设计 (DDD) 是一种敏捷方法，用于构建强调业务领域的软件。 它非常注重与业务领域专家的沟通和互动，这些专家可以让开发人员了解真实世界中的系统是如何工作的。 例如，如果你在构建处理股票交易的系统，那么领域专家可能是一位经验丰富的股票经纪人。 DDD 旨在解决大型、复杂的业务问题，通常不适合小型简单的应用程序，因为在理解领域和为领域建模上所花费的投入是不必要的。
 
-采用 DDD 方法构建软件时，团队（包括非技术型利益干系人和参与者）应为问题空间开发一种通用语言  。 即，要进行建模的实际概念、软件同义词以及可能存在以维持该概念的任何结构（例如数据库表）应使用相同的术语。 因此，通用语言中所述的概念应该形成域模型的基础  。
+采用 DDD 方法构建软件时，团队（包括非技术型利益干系人和参与者）应为问题空间开发一种通用语言。 即，要进行建模的实际概念、软件同义词以及可能存在以维持该概念的任何结构（例如数据库表）应使用相同的术语。 因此，通用语言中所述的概念应该形成域模型的基础。
 
 组成域模型的对象彼此交互，以表现系统行为。 这些对象可分为以下几类：
 
@@ -580,7 +580,7 @@ ASP.NET Core 应用程序是控制台应用程序，服务器启动时必须启�
 
 - 高级诊断
 
-请在[第 10 章](development-process-for-azure.md)中了解有关 Azure 部署选项的详细信息  。
+请在[第 10 章](development-process-for-azure.md)中了解有关 Azure 部署选项的详细信息。
 
 > ### <a name="references--deployment"></a>参考 - 部署
 >

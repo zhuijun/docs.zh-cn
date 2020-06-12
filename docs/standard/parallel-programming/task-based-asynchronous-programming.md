@@ -1,5 +1,6 @@
 ---
 title: 基于任务的异步编程 - .NET
+description: 本文介绍如何通过 .NET 中的任务并行库 (TPL) 使用基于任务的异步编程。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,16 +9,16 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: 66904a24817eee0161d877ace7f4584d58fe30f0
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: f7cb42c8982cb6a704b39730a4f7aa0ce781d506
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507567"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84446374"
 ---
 # <a name="task-based-asynchronous-programming"></a>基于任务的异步编程
 
-任务并行库 (TPL) 以“任务”  的概念为基础，后者表示异步操作。 在某些方面，任务类似于线程或 <xref:System.Threading.ThreadPool> 工作项，但是抽象级别更高。 术语“任务并行”  是指一个或多个独立的任务同时运行。 任务提供两个主要好处：
+任务并行库 (TPL) 以“任务”的概念为基础，后者表示异步操作。 在某些方面，任务类似于线程或 <xref:System.Threading.ThreadPool> 工作项，但是抽象级别更高。 术语“任务并行”是指一个或多个独立的任务同时运行。 任务提供两个主要好处：
 
 - 系统资源的使用效率更高，可伸缩性更好。
 
@@ -34,7 +35,7 @@ ms.locfileid: "82507567"
 <xref:System.Threading.Tasks.Parallel.Invoke%2A?displayProperty=nameWithType> 方法提供了一种简便方式，可同时运行任意数量的任意语句。 只需为每个工作项传入 <xref:System.Action> 委托即可。 创建这些委托的最简单方式是使用 lambda 表达式。 lambda 表达式可调用指定的方法，或提供内联代码。 下面的示例演示一个基本的 <xref:System.Threading.Tasks.Parallel.Invoke%2A> 调用，该调用创建并启动同时运行的两个任务。 第一个任务由调用名为 `DoSomeWork` 的方法的 lambda 表达式表示，第二个任务由调用名为 `DoSomeOtherWork` 的方法的 lambda 表达式表示。
 
 > [!NOTE]
-> 本文档使用 lambda 表达式在 TPL 中定义委托。 如果不熟悉 C# 或 Visual Basic 中的 lambda 表达式，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](../../../docs/standard/parallel-programming/lambda-expressions-in-plinq-and-tpl.md)。
+> 本文档使用 lambda 表达式在 TPL 中定义委托。 如果不熟悉 C# 或 Visual Basic 中的 lambda 表达式，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](lambda-expressions-in-plinq-and-tpl.md)。
 
 [!code-csharp[TPL#21](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl/cs/tpl.cs#21)]
 [!code-vb[TPL#21](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl/vb/tpl_vb.vb#21)]
@@ -42,7 +43,7 @@ ms.locfileid: "82507567"
 > [!NOTE]
 > <xref:System.Threading.Tasks.Task> 在后台创建的 <xref:System.Threading.Tasks.Parallel.Invoke%2A> 实例数不一定与所提供的委托数相等。 TPL 可能会使用各种优化，特别是对于大量的委托。
 
-有关详细信息，请参阅[如何：使用 Parallel.Invoke 来执行并行操作](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md)。
+有关详细信息，请参阅[如何：使用 Parallel.Invoke 来执行并行操作](how-to-use-parallel-invoke-to-execute-parallel-operations.md)。
 
 为了更好地控制任务执行或从任务返回值，必须更加显式地使用 <xref:System.Threading.Tasks.Task> 对象。
 
@@ -70,7 +71,7 @@ ms.locfileid: "82507567"
 [!code-csharp[TPL_TaskIntro#4](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/result1.cs#4)]
 [!code-vb[TPL_TaskIntro#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/result1.vb#4)]
 
-有关详细信息，请参阅[如何：从任务中返回值](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)。
+有关详细信息，请参阅[如何：从任务中返回值](how-to-return-a-value-from-a-task.md)。
 
 使用 lambda 表达式创建委托时，你有权访问源代码中当时可见的所有变量。 然而，在某些情况下，特别是在循环中，lambda 不按照预期的方式捕获变量。 它仅捕获最终值，而不是它每次迭代后更改的值。 以下示例演示了该问题。 它将循环计数器传递给实例化 `CustomData` 对象并使用循环计数器作为对象标识符的 lambda 表达式。 如示例输出所示，每个 `CustomData` 对象都具有相同的标识符。
 
@@ -89,7 +90,7 @@ ms.locfileid: "82507567"
 
 ## <a name="task-id"></a>任务 ID
 
-每个任务都获得一个在应用程序域中唯一标识自己的整数 ID，可以使用 <xref:System.Threading.Tasks.Task.Id%2A?displayProperty=nameWithType> 属性访问该 ID。 该 ID 可有效用于在 Visual Studio 调试器的“并行堆栈”  和“任务”  窗口中查看任务信息。 该 ID 是惰式创建的，这意味着它不会在被请求之前创建；因此每次运行该程序时，任务可能具有不同的 ID。 有关如何在调试器中查看任务 ID 的详细信息，请参阅[使用任务窗口](/visualstudio/debugger/using-the-tasks-window)和[使用并行堆栈窗口](/visualstudio/debugger/using-the-parallel-stacks-window)。
+每个任务都获得一个在应用程序域中唯一标识自己的整数 ID，可以使用 <xref:System.Threading.Tasks.Task.Id%2A?displayProperty=nameWithType> 属性访问该 ID。 该 ID 可有效用于在 Visual Studio 调试器的“并行堆栈”和“任务”窗口中查看任务信息。 该 ID 是惰式创建的，这意味着它不会在被请求之前创建；因此每次运行该程序时，任务可能具有不同的 ID。 有关如何在调试器中查看任务 ID 的详细信息，请参阅[使用任务窗口](/visualstudio/debugger/using-the-tasks-window)和[使用并行堆栈窗口](/visualstudio/debugger/using-the-parallel-stacks-window)。
 
 ## <a name="task-creation-options"></a>任务创建选项
 
@@ -100,7 +101,7 @@ ms.locfileid: "82507567"
 |<xref:System.Threading.Tasks.TaskCreationOptions.None>|未指定任何选项时的默认值。 计划程序将使用其默认试探法来计划任务。|
 |<xref:System.Threading.Tasks.TaskCreationOptions.PreferFairness>|指定应当计划任务，以使越早创建的任务将更可能越早执行，而越晚创建的任务将更可能越晚执行。|
 |<xref:System.Threading.Tasks.TaskCreationOptions.LongRunning>|指定该任务表示长时间运行的运算。|
-|<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>|指定应将任务创建为当前任务（如果存在）的附加子级。 有关详细信息，请参阅[附加和分离的子任务](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)。|
+|<xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent>|指定应将任务创建为当前任务（如果存在）的附加子级。 有关详细信息，请参阅[附加和分离的子任务](attached-and-detached-child-tasks.md)。|
 |<xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach>|指定如果内部任务指定 `AttachedToParent` 选项，则该任务不会成为附加的子任务。|
 |<xref:System.Threading.Tasks.TaskCreationOptions.HideScheduler>|指定通过调用特定任务内部的 <xref:System.Threading.Tasks.TaskFactory.StartNew%2A?displayProperty=nameWithType> 或 <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> 等方法创建的任务的任务计划程序是默认计划程序，而不是正在运行此任务的计划程序。|
 
@@ -114,7 +115,7 @@ ms.locfileid: "82507567"
 每个线程都具有一个关联的区域性和 UI 区域性，分别由 <xref:System.Threading.Thread.CurrentCulture%2A?displayProperty=nameWithType> 和 <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType> 属性定义。 线程的区域性用在诸如格式、分析、排序和字符串比较操作中。 线程的 UI 区域性用于查找资源。 通常，除非使用 <xref:System.Globalization.CultureInfo.DefaultThreadCurrentCulture%2A?displayProperty=nameWithType> 和 <xref:System.Globalization.CultureInfo.DefaultThreadCurrentUICulture%2A?displayProperty=nameWithType> 属性在应用程序域中为所有线程指定默认区域性，线程的默认区域性和 UI 区域性则由系统区域性定义。 如果你显式设置线程的区域性并启动新线程，则新线程不会继承正在调用的线程的区域性；相反，其区域性就是默认系统区域性。 基于任务的应用编程模型遵循这种做法，这些应用指定 .NET Framework 4.6 之前的 .NET Framework 版本。
 
 > [!IMPORTANT]
-> 请注意，作为任务上下文一部分的调用线程的区域性适用于面向.NET Framework 4.6 的应用，而不是在 .NET Framework 4.6 下运行的应用   。 可以在 Visual Studio 中创建项目时，定目标到特定版本的 .NET Framework，具体操作是从“新建项目”  对话框顶部的下拉列表选择相应版本。在 Visual Studio 外部，可以使用 <xref:System.Runtime.Versioning.TargetFrameworkAttribute> 属性定目标到特定版本。 对于指定 .NET Framework 4.6 之前的 .NET Framework 版本的应用，或者对于不指定 .NET Framework 特定版本的应用，任务的区域性将继续由它运行的线程的区域性确定。
+> 请注意，作为任务上下文一部分的调用线程的区域性适用于面向.NET Framework 4.6 的应用，而不是在 .NET Framework 4.6 下运行的应用 。 可以在 Visual Studio 中创建项目时，定目标到特定版本的 .NET Framework，具体操作是从“新建项目”对话框顶部的下拉列表选择相应版本。在 Visual Studio 外部，可以使用 <xref:System.Runtime.Versioning.TargetFrameworkAttribute> 属性定目标到特定版本。 对于指定 .NET Framework 4.6 之前的 .NET Framework 版本的应用，或者对于不指定 .NET Framework 特定版本的应用，任务的区域性将继续由它运行的线程的区域性确定。
 
 启动指定 .NET Framework 4.6 的应用程序，即使任务在线程池线程上以异步方式运行，调用线程的区域性仍然通过每个任务继承。
 
@@ -123,7 +124,7 @@ ms.locfileid: "82507567"
 [!code-csharp[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/cs/asyncculture1.cs#5)]
 [!code-vb[System.Globalization.CultureInfo.Class.Async#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.globalization.cultureinfo.class.async/vb/asyncculture1.vb#5)]
 
-如果使用的是 Visual Studio，可以省略 <xref:System.Runtime.Versioning.TargetFrameworkAttribute> 属性，并在创建项目时在“新建项目”  对话框中改选“.NET Framework 4.6”作为目标。
+如果使用的是 Visual Studio，可以省略 <xref:System.Runtime.Versioning.TargetFrameworkAttribute> 属性，并在创建项目时在“新建项目”对话框中改选“.NET Framework 4.6”作为目标。
 
 对于反映指定 .NET Framework 4.6 之前的 .NET Framework 版本的应用程序行为的输出，请从源代码中移除 <xref:System.Runtime.Versioning.TargetFrameworkAttribute> 属性。 输出将会反应默认系统区域性的格式设置约定，而不是调用线程的区域性。
 
@@ -131,7 +132,7 @@ ms.locfileid: "82507567"
 
 ## <a name="creating-task-continuations"></a>创建任务延续
 
-使用 <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> 方法，可以指定要在先行任务  完成时启动的任务。 延续任务的委托已传递了对先行任务的引用，因此它可以检查先行任务的状态，并通过检索 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 属性的值将先行任务的输出用作延续任务的输入。
+使用 <xref:System.Threading.Tasks.Task.ContinueWith%2A?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Task%601.ContinueWith%2A?displayProperty=nameWithType> 方法，可以指定要在先行任务完成时启动的任务。 延续任务的委托已传递了对先行任务的引用，因此它可以检查先行任务的状态，并通过检索 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 属性的值将先行任务的输出用作延续任务的输入。
 
 在下面的示例中，`getData` 任务通过调用 <xref:System.Threading.Tasks.TaskFactory.StartNew%60%601%28System.Func%7B%60%600%7D%29?displayProperty=nameWithType> 方法来启动。 当 `processData` 完成时，`getData` 任务自动启动，当 `displayData` 完成时，`processData` 启动。 `getData` 产生一个整数数组，通过 `processData` 任务的 `getData` 属性，<xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 任务可访问该数组。 `processData` 任务处理该数组并返回结果，结果的类型从传递到 <xref:System.Threading.Tasks.Task%601.ContinueWith%60%601%28System.Func%7BSystem.Threading.Tasks.Task%7B%600%7D%2C%60%600%7D%29?displayProperty=nameWithType> 方法的 Lambda 表达式的返回类型推断而来。 `displayData` 完成时，`processData` 任务自动执行，而 <xref:System.Tuple%603> 任务可通过 `processData` 任务的 `displayData` 属性访问由 `processData` lambda 表达式返回的 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 对象。 `displayData` 任务采用 `processData` 任务的结果，继而得出自己的结果，其类型以相似方式推断而来，且可由程序中的 <xref:System.Threading.Tasks.Task%601.Result%2A> 属性使用。
 
@@ -145,11 +146,11 @@ ms.locfileid: "82507567"
 
 使用 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> 和 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> 方法，可以从多个任务继续。
 
-有关详细信息，请参阅[使用延续任务链接任务](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)。
+有关详细信息，请参阅[使用延续任务链接任务](chaining-tasks-by-using-continuation-tasks.md)。
 
 ## <a name="creating-detached-child-tasks"></a>创建分离的子任务
 
-如果在任务中运行的用户代码创建一个新任务，且未指定 <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> 选项，则该新任务不采用任何特殊方式与父任务同步。 这种不同步的任务类型称为“分离的嵌套任务”  或“分离的子任务”  。 以下示例展示了创建一个分离子任务的任务。
+如果在任务中运行的用户代码创建一个新任务，且未指定 <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> 选项，则该新任务不采用任何特殊方式与父任务同步。 这种不同步的任务类型称为“分离的嵌套任务”或“分离的子任务”。 以下示例展示了创建一个分离子任务的任务。
 
 [!code-csharp[TPL_TaskIntro#07](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#07)]
 [!code-vb[TPL_TaskIntro#07](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#07)]
@@ -158,12 +159,12 @@ ms.locfileid: "82507567"
 
 ## <a name="creating-child-tasks"></a>创建子任务
 
-如果任务中运行的用户代码在创建任务时指定了 <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> 选项，新任务就称为父任务的附加子任务  。 因为父任务隐式地等待所有附加子任务完成，所以你可以使用 <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> 选项表示结构化的任务并行。 以下示例展示了创建十个附加子任务的父任务。 请注意，虽然此示例调用 <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> 方法等待父任务完成，但不必显式等待附加子任务完成。
+如果任务中运行的用户代码在创建任务时指定了 <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> 选项，新任务就称为父任务的附加子任务。 因为父任务隐式地等待所有附加子任务完成，所以你可以使用 <xref:System.Threading.Tasks.TaskCreationOptions.AttachedToParent> 选项表示结构化的任务并行。 以下示例展示了创建十个附加子任务的父任务。 请注意，虽然此示例调用 <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType> 方法等待父任务完成，但不必显式等待附加子任务完成。
 
 [!code-csharp[TPL_TaskIntro#8](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/child1.cs#8)]
 [!code-vb[TPL_TaskIntro#8](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/child1.vb#8)]
 
-父任务可使用 <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> 选项阻止其他任务附加到父任务。 有关详细信息，请参阅[附加和分离的子任务](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)。
+父任务可使用 <xref:System.Threading.Tasks.TaskCreationOptions.DenyChildAttach?displayProperty=nameWithType> 选项阻止其他任务附加到父任务。 有关详细信息，请参阅[附加和分离的子任务](attached-and-detached-child-tasks.md)。
 
 ## <a name="waiting-for-tasks-to-finish"></a>等待任务完成
 
@@ -182,7 +183,7 @@ ms.locfileid: "82507567"
 [!code-csharp[TPL_TaskIntro#06](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_taskintro/cs/taskintro.cs#06)]
 [!code-vb[TPL_TaskIntro#06](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_taskintro/vb/tpl_intro.vb#06)]
 
-有关演示异常处理的示例，请参见[异常处理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)。
+有关演示异常处理的示例，请参见[异常处理](exception-handling-task-parallel-library.md)。
 
 某些重载允许你指定超时，而其他重载采用额外的 <xref:System.Threading.CancellationToken> 作为输入参数，以便可以通过编程方式或根据用户输入来取消等待。
 
@@ -214,7 +215,7 @@ ms.locfileid: "82507567"
 
 ### <a name="tasktfromresult"></a>Task(T).FromResult
 
-通过使用 <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> 方法，你可以创建包含预计算结果的 <xref:System.Threading.Tasks.Task%601> 对象。 执行返回 <xref:System.Threading.Tasks.Task%601> 对象的异步运算，且已计算该 <xref:System.Threading.Tasks.Task%601> 对象的结果时，此方法将十分有用。 有关使用 <xref:System.Threading.Tasks.Task.FromResult%2A> 检索缓存中包含的异步下载运算结果的示例，请参阅[如何：创建预先计算的任务](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md)。
+通过使用 <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> 方法，你可以创建包含预计算结果的 <xref:System.Threading.Tasks.Task%601> 对象。 执行返回 <xref:System.Threading.Tasks.Task%601> 对象的异步运算，且已计算该 <xref:System.Threading.Tasks.Task%601> 对象的结果时，此方法将十分有用。 有关使用 <xref:System.Threading.Tasks.Task.FromResult%2A> 检索缓存中包含的异步下载运算结果的示例，请参阅[如何：创建预先计算的任务](how-to-create-pre-computed-tasks.md)。
 
 ## <a name="handling-exceptions-in-tasks"></a>处理任务中的异常
 
@@ -230,7 +231,7 @@ ms.locfileid: "82507567"
 
 联接线程也可以通过在对任务进行垃圾回收之前访问 <xref:System.Threading.Tasks.Task.Exception%2A> 属性来处理异常。 通过访问此属性，可防止未处理的异常在对象完成时触发终止进程的异常传播行为。
 
-有关异常和任务的的详细信息，请参阅[异常处理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)。
+有关异常和任务的的详细信息，请参阅[异常处理](exception-handling-task-parallel-library.md)。
 
 ## <a name="canceling-tasks"></a>取消任务
 
@@ -238,7 +239,7 @@ ms.locfileid: "82507567"
 
 你可以创建标记，并使用 <xref:System.Threading.CancellationTokenSource> 类在以后某一时间发出取消请求。 可以将该标记作为参数传递给 <xref:System.Threading.Tasks.Task>，还可以在执行响应取消请求的工作的用户委托中引用同一标记。
 
-有关详细信息，请参阅[任务取消](../../../docs/standard/parallel-programming/task-cancellation.md)和[如何：取消任务及其子级](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)。
+有关详细信息，请参阅[任务取消](task-cancellation.md)和[如何：取消任务及其子级](how-to-cancel-a-task-and-its-children.md)。
 
 ## <a name="the-taskfactory-class"></a>TaskFactory 类
 
@@ -246,9 +247,9 @@ ms.locfileid: "82507567"
 
 - 最常用模式为 <xref:System.Threading.Tasks.TaskFactory.StartNew%2A>，它在一个语句中创建并启动任务。
 
-- 如果通过多个先行任务创建延续任务，请使用 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> 方法或 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> 方法，或它们在 <xref:System.Threading.Tasks.Task%601> 类中的相当方法。 有关详细信息，请参阅[使用延续任务链接任务](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)。
+- 如果通过多个先行任务创建延续任务，请使用 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A> 方法或 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A> 方法，或它们在 <xref:System.Threading.Tasks.Task%601> 类中的相当方法。 有关详细信息，请参阅[使用延续任务链接任务](chaining-tasks-by-using-continuation-tasks.md)。
 
-- 若要在 `BeginX` 或 `EndX` 实例中封装异步编程模型 <xref:System.Threading.Tasks.Task> 和 <xref:System.Threading.Tasks.Task%601> 方法，请使用 <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> 方法。 有关详细信息，请参阅 [TPL 和传统 .NET Framework 异步编程](../../../docs/standard/parallel-programming/tpl-and-traditional-async-programming.md)。
+- 若要在 `BeginX` 或 `EndX` 实例中封装异步编程模型 <xref:System.Threading.Tasks.Task> 和 <xref:System.Threading.Tasks.Task%601> 方法，请使用 <xref:System.Threading.Tasks.TaskFactory.FromAsync%2A> 方法。 有关详细信息，请参阅 [TPL 和传统 .NET Framework 异步编程](tpl-and-traditional-async-programming.md)。
 
 默认的 <xref:System.Threading.Tasks.TaskFactory> 可作为 <xref:System.Threading.Tasks.Task> 类或 <xref:System.Threading.Tasks.Task%601> 类上的静态属性访问。 你还可以直接实例化 <xref:System.Threading.Tasks.TaskFactory> 并指定各种选项，包括 <xref:System.Threading.CancellationToken>、<xref:System.Threading.Tasks.TaskCreationOptions> 选项、<xref:System.Threading.Tasks.TaskContinuationOptions> 选项或 <xref:System.Threading.Tasks.TaskScheduler>。 创建任务工厂时所指定的任何选项将应用于它创建的所有任务，除非 <xref:System.Threading.Tasks.Task> 是通过使用 <xref:System.Threading.Tasks.TaskCreationOptions> 枚举创建的（在这种情况下，任务的选项重写任务工厂的选项）。
 
@@ -262,7 +263,7 @@ ms.locfileid: "82507567"
 
 ## <a name="related-data-structures"></a>相关数据结构
 
-TPL 有几种在并行和顺序方案中都有用的新公共类型。 它们包括 <xref:System.Collections.Concurrent?displayProperty=nameWithType> 命名空间中的一些线程安全的、快速且可缩放的集合类，还包括一些新的同步类型（例如 <xref:System.Threading.Semaphore?displayProperty=nameWithType> 和 <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>），对特定类型的工作负荷而言，这些新同步类型比旧的同步类型效率更高。 .NET Framework 4 中的其他新类型（例如 <xref:System.Threading.Barrier?displayProperty=nameWithType> 和 <xref:System.Threading.SpinLock?displayProperty=nameWithType>）提供了早期版本中未提供的功能。 有关详细信息，请参阅[用于并行编程的数据结构](../../../docs/standard/parallel-programming/data-structures-for-parallel-programming.md)。
+TPL 有几种在并行和顺序方案中都有用的新公共类型。 它们包括 <xref:System.Collections.Concurrent?displayProperty=nameWithType> 命名空间中的一些线程安全的、快速且可缩放的集合类，还包括一些新的同步类型（例如 <xref:System.Threading.Semaphore?displayProperty=nameWithType> 和 <xref:System.Threading.ManualResetEventSlim?displayProperty=nameWithType>），对特定类型的工作负荷而言，这些新同步类型比旧的同步类型效率更高。 .NET Framework 4 中的其他新类型（例如 <xref:System.Threading.Barrier?displayProperty=nameWithType> 和 <xref:System.Threading.SpinLock?displayProperty=nameWithType>）提供了早期版本中未提供的功能。 有关详细信息，请参阅[用于并行编程的数据结构](data-structures-for-parallel-programming.md)。
 
 ## <a name="custom-task-types"></a>自定义任务类型
 
@@ -274,20 +275,20 @@ TPL 有几种在并行和顺序方案中都有用的新公共类型。 它们包
 
 |Title|描述|
 |-|-|
-|[使用延续任务来链接任务](../../../docs/standard/parallel-programming/chaining-tasks-by-using-continuation-tasks.md)|描述延续任务的工作方式。|
-|[附加和分离的子任务](../../../docs/standard/parallel-programming/attached-and-detached-child-tasks.md)|描述附加子任务和分离子任务之间的差异。|
-|[任务取消](../../../docs/standard/parallel-programming/task-cancellation.md)|描述在 <xref:System.Threading.Tasks.Task> 对象中内置的取消支持。|
-|[异常处理](../../../docs/standard/parallel-programming/exception-handling-task-parallel-library.md)|描述如何处理并行线程中的异常。|
-|[如何：使用 Parallel.Invoke 来执行并行操作](../../../docs/standard/parallel-programming/how-to-use-parallel-invoke-to-execute-parallel-operations.md)|描述如何使用 <xref:System.Threading.Tasks.Parallel.Invoke%2A>。|
-|[如何：从任务中返回值](../../../docs/standard/parallel-programming/how-to-return-a-value-from-a-task.md)|描述如何从任务中返回值。|
-|[如何：取消任务及其子级](../../../docs/standard/parallel-programming/how-to-cancel-a-task-and-its-children.md)|描述如何取消任务。|
-|[如何：创建预先计算的任务](../../../docs/standard/parallel-programming/how-to-create-pre-computed-tasks.md)|描述如何使用 <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> 方法去检索缓存中包含的异步下载运算结果。|
-|[如何：使用并行任务遍历二叉树](../../../docs/standard/parallel-programming/how-to-traverse-a-binary-tree-with-parallel-tasks.md)|描述如何使用任务遍历二叉树。|
-|[如何：解除嵌套任务的包装](../../../docs/standard/parallel-programming/how-to-unwrap-a-nested-task.md)|演示如何使用 <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> 扩展方法。|
-|[数据并行](../../../docs/standard/parallel-programming/data-parallelism-task-parallel-library.md)|描述如何使用 <xref:System.Threading.Tasks.Parallel.For%2A> 和 <xref:System.Threading.Tasks.Parallel.ForEach%2A> 来创建循环访问数据的并行循环。|
-|[并行编程](../../../docs/standard/parallel-programming/index.md)|.NET Framework 并行编程的顶级节点。|
+|[使用延续任务来链接任务](chaining-tasks-by-using-continuation-tasks.md)|描述延续任务的工作方式。|
+|[附加和分离的子任务](attached-and-detached-child-tasks.md)|描述附加子任务和分离子任务之间的差异。|
+|[任务取消](task-cancellation.md)|描述在 <xref:System.Threading.Tasks.Task> 对象中内置的取消支持。|
+|[异常处理](exception-handling-task-parallel-library.md)|描述如何处理并行线程中的异常。|
+|[如何：使用 Parallel.Invoke 来执行并行操作](how-to-use-parallel-invoke-to-execute-parallel-operations.md)|描述如何使用 <xref:System.Threading.Tasks.Parallel.Invoke%2A>。|
+|[如何：从任务中返回值](how-to-return-a-value-from-a-task.md)|描述如何从任务中返回值。|
+|[如何：取消任务及其子级](how-to-cancel-a-task-and-its-children.md)|描述如何取消任务。|
+|[如何：创建预先计算的任务](how-to-create-pre-computed-tasks.md)|描述如何使用 <xref:System.Threading.Tasks.Task.FromResult%2A?displayProperty=nameWithType> 方法去检索缓存中包含的异步下载运算结果。|
+|[如何：使用并行任务遍历二叉树](how-to-traverse-a-binary-tree-with-parallel-tasks.md)|描述如何使用任务遍历二叉树。|
+|[如何：解除嵌套任务的包装](how-to-unwrap-a-nested-task.md)|演示如何使用 <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> 扩展方法。|
+|[数据并行](data-parallelism-task-parallel-library.md)|描述如何使用 <xref:System.Threading.Tasks.Parallel.For%2A> 和 <xref:System.Threading.Tasks.Parallel.ForEach%2A> 来创建循环访问数据的并行循环。|
+|[并行编程](index.md)|.NET Framework 并行编程的顶级节点。|
 
 ## <a name="see-also"></a>请参阅
 
-- [并行编程](../../../docs/standard/parallel-programming/index.md)
+- [并行编程](index.md)
 - [使用 .NET Core 和 .NET Standard 并行编程的示例](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)

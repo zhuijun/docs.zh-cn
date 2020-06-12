@@ -1,5 +1,6 @@
 ---
 title: 异常的最佳做法 - .NET
+description: 了解异常的最佳做法，例如使用 try/catch/finally、处理没有异常的常见条件以及使用预定义的 .NET 异常类型。
 ms.date: 12/05/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: 1de231b01e3fa97e78a87ae6b0595a9b5536374e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 90dda00acd32852b032fc383580c5f34022ec9b4
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78160165"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447090"
 ---
 # <a name="best-practices-for-exceptions"></a>异常的最佳做法
 
@@ -64,7 +65,7 @@ ms.locfileid: "78160165"
 
 ## <a name="use-the-predefined-net-exception-types"></a>使用预定义的 .NET 异常类型
 
-仅当预定义的异常类不适用时，引入新异常类。 例如:
+仅当预定义的异常类不适用时，引入新异常类。 例如：
 
 - 如果根据对象的当前状态，属性集或方法调用不适当，则会引发 <xref:System.InvalidOperationException> 异常。
 
@@ -72,7 +73,7 @@ ms.locfileid: "78160165"
 
 ## <a name="end-exception-class-names-with-the-word-exception"></a>异常类名称的结尾为 `Exception`
 
-需要自定义异常时，对其正确命名并从 <xref:System.Exception> 类进行派生。 例如:
+需要自定义异常时，对其正确命名并从 <xref:System.Exception> 类进行派生。 例如：
 
 [!code-cpp[Conceptual.Exception.Handling#4](~/samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#4)]
 [!code-csharp[Conceptual.Exception.Handling#4](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#4)]
@@ -88,7 +89,7 @@ ms.locfileid: "78160165"
 
 - <xref:System.Exception.%23ctor%28System.String%2CSystem.Exception%29>，它接受字符串消息和内部异常。
 
-有关示例，请参阅[如何：创建用户定义的异常](how-to-create-user-defined-exceptions.md)。
+有关示例，请参见 [如何：创建用户定义的异常](how-to-create-user-defined-exceptions.md)。
 
 ## <a name="ensure-that-exception-data-is-available-when-code-executes-remotely"></a>确保代码远程执行时异常数据可用
 
@@ -126,7 +127,7 @@ ms.locfileid: "78160165"
 
 ## <a name="use-exception-builder-methods"></a>使用异常生成器方法
 
-类从其实现中的不同位置引发同一异常是常见的情况。 为避免过多的代码，应使用帮助器方法创建异常并将其返回。 例如:
+类从其实现中的不同位置引发同一异常是常见的情况。 为避免过多的代码，应使用帮助器方法创建异常并将其返回。 例如：
 
 [!code-cpp[Conceptual.Exception.Handling#6](~/samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#6)]
 [!code-csharp[Conceptual.Exception.Handling#6](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#6)]
@@ -214,6 +215,6 @@ Catch ex As Exception
 End Try
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [异常](index.md)

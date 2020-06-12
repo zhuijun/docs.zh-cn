@@ -5,12 +5,12 @@ helpviewer_keywords:
 - custom log listeners
 - My.Application.Log object, custom log listeners
 ms.assetid: 0e019115-4b25-4820-afb1-af8c6e391698
-ms.openlocfilehash: 7b611e93119dc66a9404cf271ea201676d7b5318
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5a140607a4fe7e1e13de54e8d56cab53e52aaa2a
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74353615"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84398261"
 ---
 # <a name="walkthrough-creating-custom-log-listeners-visual-basic"></a>演练：创建自定义日志侦听器 (Visual Basic)
 
@@ -41,19 +41,19 @@ ms.locfileid: "74353615"
 
 1. 在 **“解决方案资源管理器”** 中选择一个项目。 在 **“项目”** 菜单上，选择 **“属性”** 。
 
-2. 单击“签名”选项卡。 
+2. 单击“签名”选项卡。
 
-3. 选择 **“为程序集签名”** 框。
+3. 选择“为程序集签名”框。
 
-4. 在“选择强名称密钥文件”下拉列表中，选择“\<新建>”。
+4. 在“选择强名称密钥文件”下拉列表中，选择“\<New>”。 
 
-     将打开“创建强名称密钥”对话框。 
+     将打开“创建强名称密钥”对话框。
 
-5. 在“密钥文件名”框中提供密钥文件的名称。 
+5. 在“密钥文件名”框中提供密钥文件的名称。
 
-6. 在“输入密码”和“确认密码”框中输入密码。  
+6. 在“输入密码”和“确认密码”框中输入密码。 
 
-7. 单击“确定”。 
+7. 单击“确定”。
 
 8. 重新生成应用程序。
 
@@ -77,15 +77,15 @@ ms.locfileid: "74353615"
 
 #### <a name="to-add-the-listener-to-myapplicationlog"></a>将侦听器添加到 My.Application.Log
 
-1. 在“解决方案资源管理器”中右键单击 app.config，然后选择“打开”。  
+1. 在“解决方案资源管理器”中右键单击 app.config，然后选择“打开”。 
 
-     或
+     \- 或 -
 
      如果其中有 app.config 文件：
 
     1. 在 **“项目”** 菜单上选择 **“添加新项”** 。
 
-    2. 在“添加新项”  对话框中，选择“应用程序配置文件”  。
+    2. 在“添加新项”  对话框中，选择“应用程序配置文件” 。
 
     3. 单击 **添加**。
 
@@ -107,10 +107,10 @@ ms.locfileid: "74353615"
 
      将 `SimpleLogStrongName` 的值更改为该侦听器的强名称。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:Microsoft.VisualBasic.Logging.Log?displayProperty=nameWithType>
-- [使用应用程序日志](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [如何：日志异常](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
-- [如何：编写日志消息](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)
-- [演练：更改 My.Application.Log 写入信息的位置](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [使用应用程序日志](working-with-application-logs.md)
+- [如何：日志异常](how-to-log-exceptions.md)
+- [如何：写入日志消息](how-to-write-log-messages.md)
+- [演练：更改 My.Application.Log 在哪里写入信息](walkthrough-changing-where-my-application-log-writes-information.md)

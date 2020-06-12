@@ -13,12 +13,12 @@ helpviewer_keywords:
 - classes, overriding
 - overriding classes
 ms.assetid: 5cc1c0b0-f94b-4525-9a41-88a582cd6668
-ms.openlocfilehash: d9851226b602226e00648d8742bf0a49c902c33b
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: d7e482ee6e1e1a7318ab05766508537d4b87789e
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83377396"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84289585"
 ---
 # <a name="how-to-specify-an-alternate-element-name-for-an-xml-stream"></a>如何：指定 XML 流的替代元素名称
   
@@ -97,7 +97,7 @@ public void SerializeOverride()
 - <xref:System.Xml.Serialization.XmlElementAttribute>
 - <xref:System.Xml.Serialization.XmlAttributes>
 - <xref:System.Xml.Serialization.XmlAttributeOverrides>
-- [XML 和 SOAP 序列化](../../../docs/standard/serialization/xml-and-soap-serialization.md)
+- [XML 和 SOAP 序列化](xml-and-soap-serialization.md)
 - <xref:System.Xml.Serialization.XmlSerializer>
-- [如何：序列化对象](../../../docs/standard/serialization/how-to-serialize-an-object.md)
-- [如何：反序列化对象](../../../docs/standard/serialization/how-to-deserialize-an-object.md)
+- [如何：序列化对象](how-to-serialize-an-object.md)
+- [如何：反序列化对象](how-to-deserialize-an-object.md)

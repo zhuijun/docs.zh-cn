@@ -3,12 +3,12 @@ title: XML 节点类型
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 71d03b78-6898-4ce7-b0fc-1282573f31f7
-ms.openlocfilehash: 83b8c09323e73a9b3ba7dea8d272d7d41d03add1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 5e11d61e16659ac1a8ca1b0b2c0d493ffdad5621
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710084"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84282059"
 ---
 # <a name="types-of-xml-nodes"></a>XML 节点类型
 当将 XML 文档作为节点树读入内存时，这些节点的节点类型在创建节点时确定。 XML 文档对象模型 (DOM) 具有多种节点类型，这些类型由万维网联合会 (W3C) 确定并在 1.1.1 节“The DOM Structure Model”中列出。 下表列出了节点类型、分配给该节点类型的对象以及每种节点类型的简短说明。  
@@ -28,22 +28,22 @@ ms.locfileid: "75710084"
 |实体|<xref:System.Xml.XmlEntity>|表示 XML 文档（来自内部文档类型定义 (DTD) 子集或来自外部 DTD 和参数实体）中的 `<!ENTITY…>` 声明。|  
 |Notation|<xref:System.Xml.XmlNotation>|表示 DTD 中声明的表示法。|  
   
- 尽管属性 (attr  ) 在 W3C DOM 级别 1 的第 1.2 节“基本接口”中作为节点列出，但不能将属性视为任何元素节点的子级。  
+ 尽管属性 (attr) 在 W3C DOM 级别 1 的第 1.2 节“基本接口”中作为节点列出，但不能将属性视为任何元素节点的子级。  
   
- 下表列出了 W3C 未定义的其他节点类型，但这些类型可作为 XmlNodeType  枚举在 Microsoft .NET Framework 对象模型中使用。 因此，这些节点类型不存在匹配的 DOM 节点类型列。  
+ 下表列出了 W3C 未定义的其他节点类型，但这些类型可作为 XmlNodeType 枚举在 Microsoft .NET Framework 对象模型中使用。 因此，这些节点类型不存在匹配的 DOM 节点类型列。  
   
 |节点类型|描述|  
 |---------------|-----------------|  
 |<xref:System.Xml.XmlDeclaration>|表示声明节点 `<?xml version="1.0"…>`。|  
 |<xref:System.Xml.XmlSignificantWhitespace>|表示有效空白（混合内容中的空白）。|  
 |<xref:System.Xml.XmlWhitespace>|表示元素内容中的空白。|  
-|EndElement|当 XmlReader  到达元素末尾时返回。<br /><br /> 示例 XML：\</item> <br /><br /> 有关详细信息，请参阅 <xref:System.Xml.XmlNodeType>。|  
-|EndEntity|当 XmlReader  由于 <xref:System.Xml.XmlReader.ResolveEntity%2A> 调用而到达实体替换的末尾时返回。 有关详细信息，请参阅 <xref:System.Xml.XmlNodeType>。|  
+|EndElement|当 XmlReader 到达元素末尾时返回。<br /><br /> 示例 XML： **\</item>**<br /><br /> 有关详细信息，请参阅 <xref:System.Xml.XmlNodeType>。|  
+|EndEntity|当 XmlReader 由于 <xref:System.Xml.XmlReader.ResolveEntity%2A> 调用而到达实体替换的末尾时返回。 有关详细信息，请参阅 <xref:System.Xml.XmlNodeType>。|  
   
  若要查看读取 XML 并对节点类型使用 case 构造以打印节点及其内容相关信息的代码示例，请参阅 <xref:System.Xml.XmlSignificantWhitespace.NodeType%2A>。  
   
- 若要详细了解节点类型及对应的相当对象名称的对象层次结构，请参阅 [XML 文档对象模型 (DOM) 层次结构](../../../../docs/standard/data/xml/xml-document-object-model-dom-hierarchy.md)。 若要详细了解在节点树中创建的对象，请参阅[将对象层次结构映射到 XML 数据](../../../../docs/standard/data/xml/mapping-the-object-hierarchy-to-xml-data.md)。  
+ 若要详细了解节点类型及对应的相当对象名称的对象层次结构，请参阅 [XML 文档对象模型 (DOM) 层次结构](xml-document-object-model-dom-hierarchy.md)。 若要详细了解在节点树中创建的对象，请参阅[将对象层次结构映射到 XML 数据](mapping-the-object-hierarchy-to-xml-data.md)。  
   
 ## <a name="see-also"></a>请参阅
 
-- [XML 文档对象模型 (DOM)](../../../../docs/standard/data/xml/xml-document-object-model-dom.md)
+- [XML 文档对象模型 (DOM)](xml-document-object-model-dom.md)

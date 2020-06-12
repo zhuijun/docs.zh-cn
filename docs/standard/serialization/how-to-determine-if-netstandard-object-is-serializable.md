@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - serializing objects
 - objects, serializing steps
-ms.openlocfilehash: 4037dee36aeb619eb2757016904fd877158e57cf
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.openlocfilehash: b6791ae0666aeb0ac02d8a38ca419d7de2b263cf
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159892"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84289598"
 ---
 # <a name="how-to-determine-if-a-net-standard-object-is-serializable"></a>如何确定 .NET Standard 对象是否可序列化
 

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - what's new [Visual Basic]
 - Visual Basic, what's new
 ms.assetid: d7e97396-7f42-4873-a81c-4ebcc4b6ca02
-ms.openlocfilehash: 3ab468f6c68429a3a5cb8706152288afae520df3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a9bac04a7839796229a2e1c61771ca32573f8fcd
+ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79187145"
+ms.lasthandoff: 06/04/2020
+ms.locfileid: "84374507"
 ---
 # <a name="whats-new-for-visual-basic"></a>Visual Basic 的新增功能
 
@@ -154,7 +154,7 @@ Dim number As Integer = &H_C305_F860
 
 **其他编译器开关**
 
-Visual Basic 命令行编译器现在支持 [-refout](../reference/command-line-compiler/refout-compiler-option.md) 和 [-refonly](../reference/command-line-compiler/refonly-compiler-option.md) 编译器选项，可控制引用程序集的输出   。 -refout 定义引用程序集的输出目录，-refonly 指定只通过编译输出一个引用程序集   。
+Visual Basic 命令行编译器现在支持 [-refout](../reference/command-line-compiler/refout-compiler-option.md) 和 [-refonly](../reference/command-line-compiler/refonly-compiler-option.md) 编译器选项，可控制引用程序集的输出 。 -refout 定义引用程序集的输出目录，-refonly 指定只通过编译输出一个引用程序集 。
 
 ## <a name="visual-basic-2017"></a>Visual Basic 2017
 
@@ -182,7 +182,7 @@ Visual Basic 命令行编译器现在支持 [-refout](../reference/command-line-
 
 有关详细信息，请参阅 [Byte](../language-reference/data-types/byte-data-type.md#literal-assignments)、[Integer](../language-reference/data-types/integer-data-type.md#literal-assignments)、[Long](../language-reference/data-types/long-data-type.md#literal-assignments)、[Short](../language-reference/data-types/short-data-type.md#literal-assignments)、[SByte](../language-reference/data-types/sbyte-data-type.md#literal-assignments)、[UInteger](../language-reference/data-types/uinteger-data-type.md#literal-assignments)、[ULong](../language-reference/data-types/ulong-data-type.md#literal-assignments) 和 [UShort](../language-reference/data-types/ushort-data-type.md#literal-assignments) 数据类型的“文本分配”部分。
 
-[支持 C# 引用返回值](../programming-guide/language-features/procedures/ref-return-values.md) 
+[支持 C# 引用返回值](../programming-guide/language-features/procedures/ref-return-values.md)
 
 从 C# 7.0 开始，C# 支持引用返回值。 也就是说，当调用方法收到引用返回的值时，可以更改引用的值。 Visual Basic 不允许使用引用返回值创建方法，但允许使用和修改引用返回值。
 
@@ -210,7 +210,7 @@ Visual Basic 命令行编译器现在支持 [-refout](../reference/command-line-
 
 可以在错误消息中使用类型或成员的非限定字符串名，而无需对字符串进行硬编码。  这使代码可以在重构时保持正确。  此功能也可用于挂接“模型-视图-控制器”MVC 链接并触发属性更改事件。
 
-[字符串内插](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
+[字符串内插](../programming-guide/language-features/strings/interpolated-strings.md)
 
 可以使用字符串内插表达式构造字符串。  内插字符串表达式类似于包含表达式的模板字符串。  与[复合格式设置](../../standard/base-types/composite-formatting.md)相比，内插字符串在自变量方面更易于理解。
 
@@ -218,7 +218,7 @@ Visual Basic 命令行编译器现在支持 [-refout](../reference/command-line-
 
 可以在执行成员访问 (`?.`) 或索引 (`?[]`) 操作之前以非常轻量的语法方式测试是否存在 null。  这些运算符可帮助编写更少的代码来处理 null 检查，尤其是对于下降到数据结构。  如果左操作数或对象引用为 null，则操作会返回 null。
 
-[多行字符串文本](../../visual-basic/programming-guide/language-features/strings/string-basics.md)
+[多行字符串文本](../programming-guide/language-features/strings/string-basics.md)
 
 字符串可以包含换行符序列。  不再需要使用 `<xml><![CDATA[...text with newlines...]]></xml>.Value` 这种旧的解决方法
 
@@ -238,11 +238,11 @@ Visual Basic 命令行编译器现在支持 [-refout](../reference/command-line-
 
 可以使用读写属性实现只读接口属性。 该接口可保证最小功能，不会阻止实现类允许设置属性。
 
-[TypeOf \<表达式> IsNot \<类型>](../../visual-basic/language-reference/operators/typeof-operator.md)
+[TypeOf \<expr> IsNot \<type>](../language-reference/operators/typeof-operator.md)
 
 为提高代码的可读性，现在可以将 `TypeOf` 与 `IsNot` 一起使用。
 
-[#Disable Warning \<ID> 和 #Enable Warning \<ID>](../../visual-basic/language-reference/directives/index.md)
+[#Disable Warning \<ID> 和 #Enable Warning \<ID>](../language-reference/directives/index.md)
 
 可以对源文件中的区域禁用和启用特定警告。
 
@@ -250,15 +250,15 @@ Visual Basic 命令行编译器现在支持 [-refout](../reference/command-line-
 
 编写文档注释时，可获取智能编辑器和生成支持，以用于验证参数名、正确处理 `crefs`（泛型、运算符等）、着色和重构。
 
-[部分模块和接口定义](../../visual-basic/language-reference/modifiers/partial.md)
+[部分模块和接口定义](../language-reference/modifiers/partial.md)
 
 除了类和结构之外，还可以声明部分模块和接口。
 
-[方法体中的 #Region 指令](../../visual-basic/language-reference/directives/region-directive.md)
+[方法体中的 #Region 指令](../language-reference/directives/region-directive.md)
 
 可以将 #Region…#End Region 限定符放置在文件中、函数内部甚至是跨越函数体的任何位置。
 
-[替代定义是隐式重载](../../visual-basic/language-reference/modifiers/overrides.md)
+[替代定义是隐式重载](../language-reference/modifiers/overrides.md)
 
 如果你向定义添加 `Overrides` 修饰符，则编译器会隐式添加 `Overloads`，以便你可以在常见情况下输入更少的代码。
 

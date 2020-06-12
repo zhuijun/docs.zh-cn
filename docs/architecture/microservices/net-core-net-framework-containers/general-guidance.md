@@ -2,18 +2,18 @@
 title: 通用指南
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 通用指南
 ms.date: 09/11/2018
-ms.openlocfilehash: e3bb4b8cf3e371c31d783fe4cfafeac282fb72b8
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 6e63d7804abc1703f17378584d58d66a933022c7
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144560"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306872"
 ---
 # <a name="general-guidance"></a>通用指南
 
 本部分提供有关何时选择 .NET Core 或 .NET Framework 的总结。 后面各部分将提供对上述选择的详细介绍。
 
-将 .NET Core 与 Linux 或 Windows 容器结合使用并用于容器化 Docker 服务器应用程序的适用情况：
+在以下情况下，将 .NET Core 与 Linux 或 Windows 容器结合使用并用于容器化 Docker 服务器应用程序：
 
 - 用户有跨平台需求。 例如，想同时使用 Linux 和 Windows 容器。
 

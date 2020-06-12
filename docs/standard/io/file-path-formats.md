@@ -1,5 +1,6 @@
 ---
 title: Windows 系统中的文件路径格式
+description: 本文介绍 Windows 系统上的文件路径格式，如传统 DOS 路径、DOS 设备路径和通用命名约定 (UNC) 路径。
 ms.date: 06/06/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: b3510be5d417b555d2db163636eac5ce0c0779e4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2d3ede97b372dd8922a10a377f69155a12f88bda
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77628041"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447129"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Windows 系统中的文件路径格式
 
@@ -30,7 +31,7 @@ ms.locfileid: "77628041"
 
 如果以上三项都存在，则为绝对路径。 如未指定卷号或驱动器号，且目录名称的开头是[目录分隔符](<xref:System.IO.Path.DirectorySeparatorChar>)，则路径属于当前驱动器根路径上的相对路径。 否则路径相对于当前目录。 下表显示了一些可能出现的目录和文件路径。
 
-|路径  |说明  |
+|路径  |描述  |
 | -- | -- |
 | `C:\Documents\Newsletters\Summer2018.pdf` | C: 盘根路径上的绝对文件路径。 |
 | `\Program Files\Custom Utilities\StringFinder.exe` | 当前驱动器根路径上的绝对路径。 |
@@ -62,7 +63,7 @@ ms.locfileid: "77628041"
 
 以下是一些 UNC 路径的示例：
 
-|路径  |说明  |
+|路径  |描述  |
 | -- | -- |
 | `\\system07\C$\` | `system07` 上 C: 盘的根目录。 |
 | `\\Server2\Share\Test\Foo.txt` | \\\\Server2\\Share 卷的测试目录中的 Foo.txt 文件。|
@@ -95,7 +96,7 @@ DOS 设备路径由以下部分组成：
 
    设备路径说明符后的第一个 DOS 设备路径段标识了卷或驱动器。 （例如，`\\?\C:\` 和 `\\.\BootPartition\`。）
 
-   UNC 有个特定的链接，很自然地名为 `UNC`。 例如:
+   UNC 有个特定的链接，很自然地名为 `UNC`。 例如：
 
   `\\.\UNC\Server\Share\Test\Foo.txt`
   `\\?\UNC\Server\Share\Test\Foo.txt`
@@ -181,7 +182,7 @@ DOS 设备路径通过定义进行完全限定。 不允许使用相对目录段
    此规则意味着可以创建以空格结尾的目录名称，方法是在空格后添加结尾分隔符。
 
    > [!IMPORTANT]
-   > 请勿创建以空格结尾的目录名或文件名  。 如果以空格结尾，则可能难以或者无法访问目录，并且应用程序在尝试处理这样的目录或文件时通常会操作失败。
+   > 请勿创建以空格结尾的目录名或文件名。 如果以空格结尾，则可能难以或者无法访问目录，并且应用程序在尝试处理这样的目录或文件时通常会操作失败。
 
 ## <a name="skipping-normalization"></a>跳过规范化
 

@@ -1,5 +1,6 @@
 ---
 title: 如何：用前导零填充数字
+description: 了解如何用前导零填充数字。 将前导零添加到整数或将数值添加到特定的总长度或特定数量的前导零。
 ms.date: 02/25/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,16 +12,16 @@ helpviewer_keywords:
 - number formatting [.NET Framework]
 - numbers [.NET Framework], format strings
 ms.assetid: 0b2c2cb5-c580-4891-8d81-cb632f5ec384
-ms.openlocfilehash: bc3c4b75c484274c214141d8fbfcf8ac592b0b99
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6ef0ddb37f1bc73254aa639d7c018ec6a01abd9b
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73131980"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447181"
 ---
 # <a name="how-to-pad-a-number-with-leading-zeros"></a>如何：用前导零填充数字
 
-通过结合使用“D”[标准数字格式字符串](../../../docs/standard/base-types/standard-numeric-format-strings.md)和精度说明符，将前导零添加到整数。 你可以通过使用[自定义数字格式字符串](../../../docs/standard/base-types/custom-numeric-format-strings.md)，将前导零添加到整数和浮点数。 本文介绍如何通过这两种方法用前导零填充数字。
+通过结合使用“D”[标准数字格式字符串](standard-numeric-format-strings.md)和精度说明符，将前导零添加到整数。 你可以通过使用[自定义数字格式字符串](custom-numeric-format-strings.md)，将前导零添加到整数和浮点数。 本文介绍如何通过这两种方法用前导零填充数字。
 
 ## <a name="to-pad-an-integer-with-leading-zeros-to-a-specific-length"></a>使用前导零将整数填充到特定的长度
 
@@ -28,11 +29,11 @@ ms.locfileid: "73131980"
 
 1. 确定是要将整数显示为十进制值还是十六进制值。
 
-    - 若要将整数显示为十进制值，则调用其 `ToString(String)` 方法，并传递字符串“Dn”作为 `format` 参数的值，其中 n 表示字符串的最小长度。
+    - 若要将整数显示为十进制值，则调用其 `ToString(String)` 方法，并传递字符串“Dn”作为 `format` 参数的值，其中 n 表示字符串的最小长度 。
 
-    - 若要将整数显示为十六进制值，则调用其 `ToString(String)` 方法，并传递字符串“Xn  ”作为 format 参数的值，其中 n  表示字符串的最小长度。
+    - 若要将整数显示为十六进制值，则调用其 `ToString(String)` 方法，并传递字符串“Xn”作为 format 参数的值，其中 n 表示字符串的最小长度。
 
-此外，你也可以在 [C#](../../csharp/language-reference/tokens/interpolated.md) 和 [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) 的内插字符串中使用格式字符串，或者可以调用一个 <xref:System.String.Format%2A?displayProperty=nameWithType> 或 <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> 等使用[复合格式设置](../../../docs/standard/base-types/composite-formatting.md)的方法。
+此外，你也可以在 [C#](../../csharp/language-reference/tokens/interpolated.md) 和 [Visual Basic](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md) 的内插字符串中使用格式字符串，或者可以调用一个 <xref:System.String.Format%2A?displayProperty=nameWithType> 或 <xref:System.Console.WriteLine%2A?displayProperty=nameWithType> 等使用[复合格式设置](composite-formatting.md)的方法。
 
 以下示例使用前导零设置若干整数值的格式，以便格式化数字的总长度至少为八个字符。
 
@@ -53,7 +54,7 @@ ms.locfileid: "73131980"
 
 1. 将你要在格式化字符串中包括的前导零的数目添加到未填充的数字字符串的长度上。 添加前导零的个数将定义填充字符串的总长度。
 
-1. 调用整数值的 `ToString(String)` 方法，并且对于十进制字符串传递字符串“Dn  ”，对于十六进制字符串传递“Xn  ”；其中，n  表示填充的字符串的总长度。 也可以在支持复合格式设置的方法中使用“Dn  ”或“Xn  ”格式字符串。
+1. 调用整数值的 `ToString(String)` 方法，并且对于十进制字符串传递字符串“Dn”，对于十六进制字符串传递“Xn”；其中，n 表示填充的字符串的总长度。 也可以在支持复合格式设置的方法中使用“Dn”或“Xn”格式字符串。
 
 下面的示例使用五个前导零来填充整数值。
 
@@ -83,7 +84,7 @@ ms.locfileid: "73131980"
 
     1. 如果它包括小数点符号，则确定小数点左侧的字符数。
 
-         或
+         \- 或 -
 
          如果它不包括小数点符号，则确定字符串的长度。
 
@@ -100,8 +101,8 @@ ms.locfileid: "73131980"
 [!code-csharp[Formatting.HowTo.PadNumber#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Formatting.HowTo.PadNumber/cs/Pad1.cs#4)]
 [!code-vb[Formatting.HowTo.PadNumber#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.PadNumber/vb/Pad1.vb#4)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [自定义数字格式字符串](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [标准数字格式字符串](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [复合格式设置](../../../docs/standard/base-types/composite-formatting.md)
+- [自定义数字格式字符串](custom-numeric-format-strings.md)
+- [标准数字格式字符串](standard-numeric-format-strings.md)
+- [复合格式设置](composite-formatting.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, compilation
 - regular expressions, engines
 ms.assetid: 182ec76d-5a01-4d73-996c-0b0d14fcea18
-ms.openlocfilehash: b89f7f88233ecdab25ba2a74647aafeb4d8b74af
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 54f14a4f31bef00dd222686cc523935b2d9dd5fa
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80344194"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84279033"
 ---
 # <a name="compilation-and-reuse-in-regular-expressions"></a>正则表达式中的编译和重复使用
 通过了解正则表达式引擎编译表达式的方式以及正则表达式的缓存方式，可以优化大量使用正则表达式的应用程序的性能。 本主题介绍编译和缓存。  
@@ -44,4 +44,4 @@ ms.locfileid: "80344194"
   
 ## <a name="see-also"></a>请参阅
 
-- [.NET 正则表达式](../../../docs/standard/base-types/regular-expressions.md)
+- [.NET 正则表达式](regular-expressions.md)

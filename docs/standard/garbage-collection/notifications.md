@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - garbage collection, notifications
 ms.assetid: e12d8e74-31e3-4035-a87d-f3e66f0a9b89
-ms.openlocfilehash: d5646c4969c95350ab4cd63b16f6f99ffba3a4ec
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 389e851782edb82578c216951be440070b92723c
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73131537"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84285997"
 ---
 # <a name="garbage-collection-notifications"></a>垃圾回收通知
 在有些情况下，公共语言运行时执行的完整垃圾回收（即第 2 代回收）可能会对性能产生负面影响。 特别是，处理大量请求的服务器可能会出现此问题；在这种情况下，长时间垃圾回收会导致请求超时。为了防止在关键时期发生完全回收，可以接收即将执行完全垃圾回收的通知，再采取措施将工作负载重定向到另一个服务器实例。 也可以自行诱导回收，前提是当前服务器实例不需要处理请求。  
@@ -22,7 +22,7 @@ ms.locfileid: "73131537"
  <xref:System.GC.RegisterForFullGCNotification%2A> 方法注册为，在运行时检测到即将执行完全垃圾回收时发出通知。 此通知分为两个部分：完全垃圾回收何时即将执行，以及完全垃圾回收何时完成。  
   
 > [!WARNING]
-> 只有阻止垃圾回收会引发通知。 如果 [\<gcConcurrent>](../../../docs/framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) 配置元素已启用，后台垃圾回收不会发出通知。  
+> 只有阻止垃圾回收会引发通知。 如果 [\<gcConcurrent>](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) 配置元素已启用，后台垃圾回收不会发出通知。  
   
  若要确定何时发出通知，请使用 <xref:System.GC.WaitForFullGCApproach%2A> 和 <xref:System.GC.WaitForFullGCComplete%2A> 方法。 通常，在 `while` 循环中使用这些方法，以持续获取表示通知状态的 <xref:System.GCNotificationStatus> 枚举。 如果值为 <xref:System.GCNotificationStatus.Succeeded>，可以执行下列操作：  
   
@@ -122,4 +122,4 @@ ms.locfileid: "73131537"
   
 ## <a name="see-also"></a>请参阅
 
-- [垃圾回收](../../../docs/standard/garbage-collection/index.md)
+- [垃圾回收](index.md)

@@ -1,5 +1,6 @@
 ---
 title: .NET 中的格式设置类型
+description: 了解如何对 .NET 中的类型进行格式设置。 了解如何使用或替代 ToString 方法。 了解区分区域性的自定义复合格式设置。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -25,12 +26,12 @@ helpviewer_keywords:
 - custom formatting [.NET Framework]
 - strings [.NET Framework], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-ms.openlocfilehash: 124c32a09a32dd90b8b96b39aa80352094030b23
-ms.sourcegitcommit: 79b0dd8bfc63f33a02137121dd23475887ecefda
+ms.openlocfilehash: 5d280b53d15bc674f325a726d69915d763aec34f
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80523948"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447077"
 ---
 # <a name="format-types-in-net"></a>.NET 中的格式类型
 
@@ -45,7 +46,7 @@ ms.locfileid: "80523948"
 - 应用程序可能需要以不同方式显示相同的值。 例如，应用程序可能通过显示名称的字符串表示形式来表示一个枚举成员，或通过显示基础值来表示该枚举成员。 有关以不同方式设置 <xref:System.DayOfWeek> 枚举成员格式的示例，请参见 [标准格式字符串](#standard-format-strings) 一节。
 
 > [!NOTE]
-> 格式设置将类型的值转换为字符串表示形式。 分析是格式设置的反向操作。 分析操作根据数据类型的字符串表示形式创建该数据类型的实例。 有关将字符串转换成其他数据类型的信息，请参见 “[分析字符串](../../../docs/standard/base-types/parsing-strings.md)”。
+> 格式设置将类型的值转换为字符串表示形式。 分析是格式设置的反向操作。 分析操作根据数据类型的字符串表示形式创建该数据类型的实例。 有关将字符串转换成其他数据类型的信息，请参见 “[分析字符串](parsing-strings.md)”。
 
 .NET 提供了丰富的格式设置支持，使得开发人员可以满足这些要求。
 
@@ -137,7 +138,7 @@ ms.locfileid: "80523948"
 [!code-csharp[Conceptual.Formatting.Overview#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/standard1.cs#4)]
 [!code-vb[Conceptual.Formatting.Overview#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/standard1.vb#4)]
 
-有关枚举格式字符串的信息，请参见 [Enumeration Format Strings](../../../docs/standard/base-types/enumeration-format-strings.md)。
+有关枚举格式字符串的信息，请参见 [Enumeration Format Strings](enumeration-format-strings.md)。
 
 数字类型的标准格式字符串通常定义一个结果字符串，该结果字符串的确切显示由一个或多个属性值控制。 例如，“C”格式说明符会将数字的格式设置为货币值。 调用 `ToString` 方法并使用“C”格式说明符作为唯一参数时，来自当前区域性的 <xref:System.Globalization.NumberFormatInfo> 对象的以下属性值用于定义数字值的字符串表示形式：
 
@@ -166,14 +167,14 @@ ms.locfileid: "80523948"
 [!code-csharp[Conceptual.Formatting.Overview#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/precisionspecifier1.cs#6)]
 [!code-vb[Conceptual.Formatting.Overview#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/precisionspecifier1.vb#6)]
 
-有关标准数字格式字符串的更多信息，请参见 [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)。
+有关标准数字格式字符串的更多信息，请参见 [Standard Numeric Format Strings](standard-numeric-format-strings.md)。
 
 日期和时间值的标准格式字符串是由特定 <xref:System.Globalization.DateTimeFormatInfo> 属性存储的自定义格式字符串的别名。 例如，如果使用“D”格式说明符调用日期和时间值的 `ToString` 方法，则使用当前区域性的 <xref:System.Globalization.DateTimeFormatInfo.LongDatePattern%2A?displayProperty=nameWithType> 属性中存储的自定义格式字符串来显示日期和时间。 （若要详细了解自定义格式字符串，请参阅[下一部分](#custom-format-strings)。）下面的示例阐释了此关系。
 
 [!code-csharp[Conceptual.Formatting.Overview#5](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.formatting.overview/cs/alias1.cs#5)]
 [!code-vb[Conceptual.Formatting.Overview#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/alias1.vb#5)]
 
-有关标准日期和时间格式字符串的更多信息，请参见 “[标准日期和时间格式字符串](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)”。
+有关标准日期和时间格式字符串的更多信息，请参见 “[标准日期和时间格式字符串](standard-date-and-time-format-strings.md)”。
 
 还可以使用标准格式字符串来定义应用程序所定义的对象的字符串表示形式，它由对象的 `ToString(String)` 方法生成。 可以定义对象支持的特定标准格式说明符，还可以决定这些格式说明符是否区分大小写。 `ToString(String)` 方法的实现应支持下列各项：
 
@@ -188,7 +189,7 @@ ms.locfileid: "80523948"
 
 ### <a name="custom-format-strings"></a>自定义格式字符串
 
-除了标准格式字符串之外，.NET 还为数字值以及日期和时间值定义了自定义格式字符串。 自定义格式字符串由定义值的字符串表示形式的一个或多个自定义格式说明符组成。 例如，对于 en-US 区域性，自定义日期和时间格式字符串“yyyy/mm/dd hh:mm:ss.ffff t zzz”将日期转换为“2008/11/15 07:45:00.0000 P -08:00”形式的字符串表示形式。 同样，自定义格式字符串“0000”将整数值 12 转换为“0012”。 有关自定义格式字符串的完整列表，请参见 “[自定义日期和时间格式字符串](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)” 和 “[自定义数字格式字符串](../../../docs/standard/base-types/custom-numeric-format-strings.md)”。
+除了标准格式字符串之外，.NET 还为数字值以及日期和时间值定义了自定义格式字符串。 自定义格式字符串由定义值的字符串表示形式的一个或多个自定义格式说明符组成。 例如，对于 en-US 区域性，自定义日期和时间格式字符串“yyyy/mm/dd hh:mm:ss.ffff t zzz”将日期转换为“2008/11/15 07:45:00.0000 P -08:00”形式的字符串表示形式。 同样，自定义格式字符串“0000”将整数值 12 转换为“0012”。 有关自定义格式字符串的完整列表，请参见 “[自定义日期和时间格式字符串](custom-date-and-time-format-strings.md)” 和 “[自定义数字格式字符串](custom-numeric-format-strings.md)”。
 
 如果格式字符串仅包含一个自定义格式说明符，则此格式说明符前面应带有百分比 (%) 符号，以免与标准格式说明符混淆。 下面的示例使用“M”自定义格式说明符来显示特定日期的一位数或两位数的月份。
 
@@ -213,13 +214,13 @@ ms.locfileid: "80523948"
 
 |Title|定义|
 |-----------|----------------|
-|[Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)|描述用于创建数字值的常用字符串表示形式的标准格式字符串。|
-|[Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md)|描述用于创建数字值的应用程序特定格式的自定义格式字符串。|
-|[标准日期和时间格式字符串](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)|介绍了创建 <xref:System.DateTime> 和 <xref:System.DateTimeOffset> 值的常用字符串表示形式的标准格式字符串。|
-|[自定义日期和时间格式字符串](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|介绍了创建 <xref:System.DateTime> 和 <xref:System.DateTimeOffset> 值的应用专用格式的自定义格式字符串。|
-|[标准 TimeSpan 格式字符串](../../../docs/standard/base-types/standard-timespan-format-strings.md)|描述用于创建时间间隔的常用字符串表示形式的标准格式字符串。|
-|[自定义 TimeSpan 格式字符串](../../../docs/standard/base-types/custom-timespan-format-strings.md)|描述用于创建时间间隔的应用程序特定格式的自定义格式字符串。|
-|[Enumeration Format Strings](../../../docs/standard/base-types/enumeration-format-strings.md)|描述用于创建枚举值的字符串表示形式的标准格式字符串。|
+|[Standard Numeric Format Strings](standard-numeric-format-strings.md)|描述用于创建数字值的常用字符串表示形式的标准格式字符串。|
+|[Custom Numeric Format Strings](custom-numeric-format-strings.md)|描述用于创建数字值的应用程序特定格式的自定义格式字符串。|
+|[标准日期和时间格式字符串](standard-date-and-time-format-strings.md)|介绍了创建 <xref:System.DateTime> 和 <xref:System.DateTimeOffset> 值的常用字符串表示形式的标准格式字符串。|
+|[自定义日期和时间格式字符串](custom-date-and-time-format-strings.md)|介绍了创建 <xref:System.DateTime> 和 <xref:System.DateTimeOffset> 值的应用专用格式的自定义格式字符串。|
+|[标准 TimeSpan 格式字符串](standard-timespan-format-strings.md)|描述用于创建时间间隔的常用字符串表示形式的标准格式字符串。|
+|[自定义 TimeSpan 格式字符串](custom-timespan-format-strings.md)|描述用于创建时间间隔的应用程序特定格式的自定义格式字符串。|
+|[Enumeration Format Strings](enumeration-format-strings.md)|描述用于创建枚举值的字符串表示形式的标准格式字符串。|
 |<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|描述 <xref:System.Guid> 值的标准格式字符串。|
 
 ## <a name="culture-sensitive-formatting-with-format-providers"></a>使用格式提供程序进行区分区域性的格式设置
@@ -329,7 +330,7 @@ ms.locfileid: "80523948"
 
      请注意，如果对齐字符串组件和格式字符串组件均存在，则前者位于后者之前（例如， `{0,-20:g}`）。
 
-有关复合格式的更多信息，请参见 “[复合格式设置](../../../docs/standard/base-types/composite-formatting.md)”。
+有关复合格式的更多信息，请参见 “[复合格式设置](composite-formatting.md)”。
 
 ## <a name="custom-formatting-with-icustomformatter"></a>使用 ICustomFormatter 进行自定义格式设置
 
@@ -351,15 +352,15 @@ ms.locfileid: "80523948"
 
 |Title|定义|
 |-----------|----------------|
-|[Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)|描述用于创建数字值的常用字符串表示形式的标准格式字符串。|
-|[Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md)|描述用于创建数字值的应用程序特定格式的自定义格式字符串。|
-|[标准日期和时间格式字符串](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)|描述用于创建 <xref:System.DateTime> 值的常用字符串表示形式的标准格式字符串。|
-|[自定义日期和时间格式字符串](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|描述用于创建 <xref:System.DateTime> 值的应用程序特定格式的自定义格式字符串。|
-|[标准 TimeSpan 格式字符串](../../../docs/standard/base-types/standard-timespan-format-strings.md)|描述用于创建时间间隔的常用字符串表示形式的标准格式字符串。|
-|[自定义 TimeSpan 格式字符串](../../../docs/standard/base-types/custom-timespan-format-strings.md)|描述用于创建时间间隔的应用程序特定格式的自定义格式字符串。|
-|[Enumeration Format Strings](../../../docs/standard/base-types/enumeration-format-strings.md)|描述用于创建枚举值的字符串表示形式的标准格式字符串。|
-|[复合格式设置](../../../docs/standard/base-types/composite-formatting.md)|描述如何将一个或多个设置了格式的值嵌入字符串。 然后该字符串可以显示在控制台上或被写至流。|
-|[分析字符串](../../../docs/standard/base-types/parsing-strings.md)|描述如何将对象初始化为这些对象的字符串表示形式所描述的值。 分析是格式化的反向操作。|
+|[Standard Numeric Format Strings](standard-numeric-format-strings.md)|描述用于创建数字值的常用字符串表示形式的标准格式字符串。|
+|[Custom Numeric Format Strings](custom-numeric-format-strings.md)|描述用于创建数字值的应用程序特定格式的自定义格式字符串。|
+|[标准日期和时间格式字符串](standard-date-and-time-format-strings.md)|描述用于创建 <xref:System.DateTime> 值的常用字符串表示形式的标准格式字符串。|
+|[自定义日期和时间格式字符串](custom-date-and-time-format-strings.md)|描述用于创建 <xref:System.DateTime> 值的应用程序特定格式的自定义格式字符串。|
+|[标准 TimeSpan 格式字符串](standard-timespan-format-strings.md)|描述用于创建时间间隔的常用字符串表示形式的标准格式字符串。|
+|[自定义 TimeSpan 格式字符串](custom-timespan-format-strings.md)|描述用于创建时间间隔的应用程序特定格式的自定义格式字符串。|
+|[Enumeration Format Strings](enumeration-format-strings.md)|描述用于创建枚举值的字符串表示形式的标准格式字符串。|
+|[复合格式设置](composite-formatting.md)|描述如何将一个或多个设置了格式的值嵌入字符串。 然后该字符串可以显示在控制台上或被写至流。|
+|[分析字符串](parsing-strings.md)|描述如何将对象初始化为这些对象的字符串表示形式所描述的值。 分析是格式化的反向操作。|
 
 ## <a name="reference"></a>参考
 

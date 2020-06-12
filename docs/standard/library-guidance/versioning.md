@@ -2,12 +2,12 @@
 title: 版本控制和 .NET 库
 description: 版本控制 .NET 库的最佳实践建议。
 ms.date: 12/10/2018
-ms.openlocfilehash: a274410714791e2790da0e3deb2a595390ee9389
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ab15d56e40abedd842b681496b9e5ee737c8b1cd
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79398495"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84290118"
 ---
 # <a name="versioning"></a>版本管理
 
@@ -49,9 +49,9 @@ ms.locfileid: "79398495"
 <AssemblyVersion>1.0.0.0</AssemblyVersion>
 ```
 
-Windows .NET Framework CLR 要求完全匹配以便加载具有强名称的程序集。 例如，`Libary1, Version=1.0.0.0` 已使用对 `Newtonsoft.Json, Version=11.0.0.0` 的引用进行编译。 .NET Framework 将仅加载该确切版本 `11.0.0.0`。 若要在运行时加载其他版本，必须向 .NET 应用程序的配置文件添加绑定重定向。
+.NET Framework CLR 要求完全匹配以便加载具有强名称的程序集。 例如，`Libary1, Version=1.0.0.0` 已使用对 `Newtonsoft.Json, Version=11.0.0.0` 的引用进行编译。 .NET Framework 将仅加载该确切版本 `11.0.0.0`。 若要在运行时加载其他版本，必须向 .NET 应用程序的配置文件添加绑定重定向。
 
-与程序集版本组合使用的强命名启用[严格的程序集版本加载](../assembly/versioning.md)。 虽然强命名库具有很多好处，但通常会导致出现找不到程序集的运行时异常，并且在要修复的 `app.config`/`web.config` 中[需要绑定重定向](../../framework/configure-apps/redirect-assembly-versions.md)。 已放宽 .NET Core 程序集加载，并且 .NET Core CLR 将在运行时自动加载更高版本的程序集。
+与程序集版本组合使用的强命名启用[严格的程序集版本加载](../assembly/versioning.md)。 虽然强命名库具有很多好处，但通常会导致出现找不到程序集的运行时异常，并且在要修复的 `app.config` 或 `web.config` 中[需要绑定重定向](../../framework/configure-apps/redirect-assembly-versions.md)。 在 .NET Core 中，程序集加载更加宽松。 .NET Core 运行时在运行时自动加载版本较高的程序集。
 
 ✔️ 请考虑在 AssemblyVersion 中仅包括主版本。
 

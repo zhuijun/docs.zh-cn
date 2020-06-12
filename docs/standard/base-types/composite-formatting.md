@@ -1,5 +1,6 @@
 ---
 title: 复合格式设置
+description: 了解 .NET 复合格式设置，它使用对象列表和复合格式字符串作为输入，其中包含带有索引占位符的固定文本。
 ms.date: 10/26/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,19 +14,19 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: b1ec8cfc0f8c6e660d716c51bf3c3387b73a278f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 36197b382c449a2570e1d5530f307c4e66b0d983
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79398477"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447259"
 ---
 # <a name="composite-formatting"></a>复合格式设置
 
-.NET 复合格式设置功能使用对象列表和复合格式字符串作为输入。 复合格式字符串由固定文本和索引占位符混合组成，其中索引占位符称为格式项，对应于列表中的对象。 格式设置操作产生的结果字符串由原始固定文本和列表中对象的字符串表示形式混合组成。  
+.NET 复合格式设置功能使用对象列表和复合格式字符串作为输入。 复合格式字符串由固定文本和索引占位符混和组成，其中索引占位符称为格式项，对应于列表中的对象。 格式设置操作产生的结果字符串由原始固定文本和列表中对象的字符串表示形式混和组成。  
   
 > [!IMPORTANT]
-> 相较使用复合格式字符串，如果正在使用的语言和语言版本支持，则可使用*内插字符串*。 内插字符串是包含内插表达式的字符串  。 每个内插表达式都使用表达式的值进行解析，并在分配字符串时包含在结果字符串中。 有关详细信息，请参阅[字符串内插（C# 参考）](../../csharp/language-reference/tokens/interpolated.md)和[内插字符串（Visual Basic 参考）](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)。
+> 相较使用复合格式字符串，如果正在使用的语言和语言版本支持，则可使用*内插字符串*。 内插字符串是包含内插表达式的字符串。 每个内插表达式都使用表达式的值进行解析，并在分配字符串时包含在结果字符串中。 有关详细信息，请参阅[字符串内插（C# 参考）](../../csharp/language-reference/tokens/interpolated.md)和[内插字符串（Visual Basic 参考）](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)。
 
 复合格式设置功能受诸如以下方法的支持：  
   
@@ -43,7 +44,7 @@ ms.locfileid: "79398477"
 - <xref:System.Diagnostics.TraceSource.TraceInformation%28System.String%2CSystem.Object%5B%5D%29?displayProperty=nameWithType> 方法，它将信息性方法写入跟踪侦听器中。  
   
 ## <a name="composite-format-string"></a>复合格式字符串  
- 复合格式字符串和对象列表将用作支持复合格式设置功能的方法的参数。 复合格式字符串由零个或多个固定文本段与一个或多个格式项混合组成。 固定文本是所选择的任何字符串，并且每个格式项对应于列表中的一个对象或装箱的结构。 复合格式设置功能返回新的结果字符串，其中每个格式项都被列表中相应对象的字符串表示形式取代。  
+ 复合格式字符串和对象列表将用作支持复合格式设置功能的方法的参数。 复合格式字符串由零个或多个固定文本段与一个或多个格式项混和组成。 固定文本是所选择的任何字符串，并且每个格式项对应于列表中的一个对象或装箱的结构。 复合格式设置功能返回新的结果字符串，其中每个格式项都被列表中相应对象的字符串表示形式取代。  
   
  可考虑使用以下 <xref:System.String.Format%2A> 代码段。  
   
@@ -81,17 +82,17 @@ ms.locfileid: "79398477"
  [!code-vb[Formatting.Composite#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Composite/vb/alignment1.vb#8)]  
   
 ### <a name="format-string-component"></a>格式字符串组件  
- 可选的*格式字符串*组件是适合正在设置格式的对象类型的格式字符串。 如果相应对象是数值，指定标准或自定义数字格式字符串；如果相应对象是 <xref:System.DateTime> 对象，指定标准或自定义日期和时间格式字符串；或者，如果相应对象是枚举值，指定[枚举格式字符串](../../../docs/standard/base-types/enumeration-format-strings.md)。 如果不指定 *formatString*，则对数字、日期和时间或者枚举类型使用常规（“G”）格式说明符。 如果指定 *formatString*，则需要使用冒号。  
+ 可选的*格式字符串*组件是适合正在设置格式的对象类型的格式字符串。 如果相应对象是数值，指定标准或自定义数字格式字符串；如果相应对象是 <xref:System.DateTime> 对象，指定标准或自定义日期和时间格式字符串；或者，如果相应对象是枚举值，指定[枚举格式字符串](enumeration-format-strings.md)。 如果不指定 *formatString*，则对数字、日期和时间或者枚举类型使用常规（“G”）格式说明符。 如果指定 *formatString*，则需要使用冒号。  
   
  下表列出了 .NET Framework 类库中支持预定义的格式字符串集的类型或类型的类别，并提供指向列出了支持的格式字符串的主题的链接。 请注意，字符串格式化是一个可扩展的机制，可使用该机制定义所有现有类型的新的格式字符串，并定义受应用程序定义的类型支持的格式字符串集。 有关详细信息，请参阅 <xref:System.IFormattable> 和 <xref:System.ICustomFormatter> 接口主题。  
   
 |类型或类型类别|查看|  
 |---------------------------|---------|  
-|日期和时间类型（<xref:System.DateTime>，<xref:System.DateTimeOffset>）|[标准日期和时间格式字符串](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [自定义日期和时间格式字符串](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
-|枚举类型（所有派生自 <xref:System.Enum?displayProperty=nameWithType> 的类型）|[枚举格式字符串](../../../docs/standard/base-types/enumeration-format-strings.md)|  
-|数值类型（<xref:System.Numerics.BigInteger>、<xref:System.Byte>、<xref:System.Decimal>、<xref:System.Double>、<xref:System.Int16>、<xref:System.Int32>、<xref:System.Int64>、<xref:System.SByte>、<xref:System.Single>、<xref:System.UInt16>、 <xref:System.UInt32>、<xref:System.UInt64>）|[标准数字格式字符串](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [自定义数字格式字符串](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
+|日期和时间类型（<xref:System.DateTime>，<xref:System.DateTimeOffset>）|[标准日期和时间格式字符串](standard-date-and-time-format-strings.md)<br /><br /> [自定义日期和时间格式字符串](custom-date-and-time-format-strings.md)|  
+|枚举类型（所有派生自 <xref:System.Enum?displayProperty=nameWithType> 的类型）|[枚举格式字符串](enumeration-format-strings.md)|  
+|数值类型（<xref:System.Numerics.BigInteger>、<xref:System.Byte>、<xref:System.Decimal>、<xref:System.Double>、<xref:System.Int16>、<xref:System.Int32>、<xref:System.Int64>、<xref:System.SByte>、<xref:System.Single>、<xref:System.UInt16>、 <xref:System.UInt32>、<xref:System.UInt64>）|[标准数字格式字符串](standard-numeric-format-strings.md)<br /><br /> [自定义数字格式字符串](custom-numeric-format-strings.md)|  
 |<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
-|<xref:System.TimeSpan>|[标准 TimeSpan 格式字符串](../../../docs/standard/base-types/standard-timespan-format-strings.md)<br /><br /> [自定义 TimeSpan 格式字符串](../../../docs/standard/base-types/custom-timespan-format-strings.md)|  
+|<xref:System.TimeSpan>|[标准 TimeSpan 格式字符串](standard-timespan-format-strings.md)<br /><br /> [自定义 TimeSpan 格式字符串](custom-timespan-format-strings.md)|  
   
 ### <a name="escaping-braces"></a>转义大括号  
  左大括号和右大括号被解释为格式项的开始和结束。 因此，必须使用转义序列显示文本左大括号或右大括号。 在固定文本中指定两个左大括号 ("{{") 以显示一个左大括号 ("{")，或指定两个右大括号 ("}}") 以显示一个右大括号 ("}")。 按照在格式项中遇到大括号的顺序依次解释它们。 不支持解释嵌套的大括号。  
@@ -120,9 +121,9 @@ ms.locfileid: "79398477"
   
 1. 如果要设置格式的值为 `null`，则将返回空字符串 <xref:System.String.Empty?displayProperty=nameWithType>。  
   
-2. 如果 <xref:System.ICustomFormatter> 实现可用，则运行时将调用其 <xref:System.ICustomFormatter.Format%2A> 方法。 它向方法传递格式项的 formatString 值（若有）或 `null`（若无）以及 <xref:System.IFormatProvider> 实现  。 如果对 <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> 方法的调用返回 `null`，则继续执行下一步骤，将返回 <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> 调用的结果。
+2. 如果 <xref:System.ICustomFormatter> 实现可用，则运行时将调用其 <xref:System.ICustomFormatter.Format%2A> 方法。 它向方法传递格式项的 formatString 值（若有）或 `null`（若无）以及 <xref:System.IFormatProvider> 实现。 如果对 <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> 方法的调用返回 `null`，则继续执行下一步骤，将返回 <xref:System.ICustomFormatter.Format%2A?displayProperty=nameWithType> 调用的结果。
   
-3. 如果该值实现 <xref:System.IFormattable> 接口，则调用此接口的 <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> 方法。 如果格式项中存在 formatString 值，则向方法传递该值；如果不存在该值，则传递 `null`  。 按如下方式确定 <xref:System.IFormatProvider> 自变量：  
+3. 如果该值实现 <xref:System.IFormattable> 接口，则调用此接口的 <xref:System.IFormattable.ToString%28System.String%2CSystem.IFormatProvider%29> 方法。 如果格式项中存在 formatString 值，则向方法传递该值；如果不存在该值，则传递 `null`。 按如下方式确定 <xref:System.IFormatProvider> 自变量：  
   
     - 对于数值，如果调用带非 null <xref:System.IFormatProvider> 自变量的复合格式设置方法，则运行时从其 <xref:System.Globalization.NumberFormatInfo> 方法请求 <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> 对象。 在以下情况下，使用当前线程区域性的 <xref:System.Globalization.NumberFormatInfo> 对象：无法提供该值、参数值为 `null` 或复合格式设置方法没有 <xref:System.IFormatProvider> 参数。  
   
@@ -130,7 +131,7 @@ ms.locfileid: "79398477"
   
     - 对于其他类型的对象，如果调用带 <xref:System.IFormatProvider> 参数的复合格式设置方法，它的值会直接传递到 <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> 实现。 否则，`null` 传递到 <xref:System.IFormattable.ToString%2A?displayProperty=nameWithType> 实现。  
   
-4. 调用类型的无参数的 `ToString` 方法（该方法将重写 <xref:System.Object.ToString?displayProperty=nameWithType> 或继承其基类的行为）。 在这种情况下，如果格式项中存在 formatString 组件指定的格式字符串，则将忽略该字符串  。  
+4. 调用类型的无参数的 `ToString` 方法（该方法将重写 <xref:System.Object.ToString?displayProperty=nameWithType> 或继承其基类的行为）。 在这种情况下，如果格式项中存在 formatString 组件指定的格式字符串，则将忽略该字符串。  
   
  前面的步骤执行完毕之后应用对齐。  
   
@@ -163,11 +164,11 @@ ms.locfileid: "79398477"
 - <xref:System.String.Format%2A?displayProperty=nameWithType>
 - [字符串内插 (C#)](../../csharp/language-reference/tokens/interpolated.md)
 - [字符串内插 (Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
-- [格式设置类型](../../../docs/standard/base-types/formatting-types.md)
-- [标准数字格式字符串](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [自定义数字格式字符串](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [标准日期和时间格式字符串](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
-- [自定义日期和时间格式字符串](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
-- [标准 TimeSpan 格式字符串](../../../docs/standard/base-types/standard-timespan-format-strings.md)
-- [自定义 TimeSpan 格式字符串](../../../docs/standard/base-types/custom-timespan-format-strings.md)
-- [枚举格式字符串](../../../docs/standard/base-types/enumeration-format-strings.md)
+- [格式设置类型](formatting-types.md)
+- [标准数字格式字符串](standard-numeric-format-strings.md)
+- [自定义数字格式字符串](custom-numeric-format-strings.md)
+- [标准日期和时间格式字符串](standard-date-and-time-format-strings.md)
+- [自定义日期和时间格式字符串](custom-date-and-time-format-strings.md)
+- [标准 TimeSpan 格式字符串](standard-timespan-format-strings.md)
+- [自定义 TimeSpan 格式字符串](custom-timespan-format-strings.md)
+- [枚举格式字符串](enumeration-format-strings.md)

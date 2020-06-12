@@ -2,12 +2,12 @@
 title: 使用 Web API 实现微服务应用层
 description: 了解依赖关系注入和转存进程模式及其在 Web API 应用层中的实现详细信息。
 ms.date: 01/30/2020
-ms.openlocfilehash: 3efa4939bb8762534af398d4e92361e81e668b85
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: c6e82b610a528b688cb4334bdec01700abbd2a62
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144599"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306924"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>使用 Web API 实现微服务应用层
 
@@ -15,7 +15,7 @@ ms.locfileid: "84144599"
 
 如前所述，可以在要生成的项目（程序集）中实现应用层，例如在 Web API 项目或 MVC web 应用项目中。 如果使用 ASP.NET Core 构建微服务，应用程序层通常是 Web API 库。 如果要从自定义应用程序层代码中分离来自 ASP.NET Core 的内容（其基础结构以及你的控制器），还可将应用程序层置于单独的类库，但这是可选操作。
 
-例如，订购微服务的应用层代码直接在 Ordering.API 项目（ASP.NET Core Web API 项目）中实现，如图 7-23 所示  。
+例如，订购微服务的应用层代码直接在 Ordering.API 项目（ASP.NET Core Web API 项目）中实现，如图 7-23 所示。
 
 :::image type="complex" source="./media/microservice-application-layer-implementation-web-api/ordering-api-microservice.png" alt-text="解决方案资源管理器中 Ordering.API 微服务的屏幕截图。":::
 Ordering.API 微服务的解决方案资源管理器视图，显示“应用程序”文件夹下的子文件夹：行为、命令、DomainEventHandler、IntegrationEvent、模型、查询和验证。
@@ -23,9 +23,9 @@ Ordering.API 微服务的解决方案资源管理器视图，显示“应用程�
 
 **图 7-23**。 Ordering.API ASP.NET Core Web API 项目中的应用程序层
 
-ASP.NET Core 包含一个简单的[内置 IoC 容器](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection)（表示为 接口），默认情况下，该容器支持构造函数注入，ASP.NET 可通过 DI 提供某些服务。 ASP.NET Core 使用“服务”这一术语来表示将通过 DI 注入的你注册的类型  。 可以在应用程序的 Startup 类中的 ConfigureServices 方法中配置内置容器的服务。 依赖项会在类型需要以及在 IoC 容器中注册的服务中实现。
+ASP.NET Core 包含一个简单的[内置 IoC 容器](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection)（表示为 接口），默认情况下，该容器支持构造函数注入，ASP.NET 可通过 DI 提供某些服务。 ASP.NET Core 使用“服务”这一术语来表示将通过 DI 注入的你注册的类型。 可以在应用程序的 Startup 类中的 ConfigureServices 方法中配置内置容器的服务。 依赖项会在类型需要以及在 IoC 容器中注册的服务中实现。
 
-通常需要注入实现基础结构对象的依赖项。 一个要注入的非常典型的依赖项是存储库。 但可注入任何其他你拥有的基础结构依赖项。 对于较简单的实现，可直接注入 Unit of Work 模式对象（EF DbContext 对象），因为 DBContext 也是基础结构持久性对象的实现。
+通常需要注入实现基础结构对象的依赖项。 一个要注入的典型的依赖项是存储库。 但可注入任何其他你拥有的基础结构依赖项。 对于较简单的实现，可直接注入 Unit of Work 模式对象（EF DbContext 对象），因为 DBContext 也是基础结构持久性对象的实现。
 
 在下面的示例中，可以看到 .NET 如何通过构造函数注入所需的存储库对象。 此类是一个命令处理程序，我们将在下一部分中对其进行介绍。
 
@@ -156,11 +156,11 @@ Autofac 还具有用于[按名称约定扫描程序集和注册类型](https://a
 
 实例作用域类型确定实例在相同服务或依赖项的请求之间的共享方式。 发出依赖项请求时，IoC 容器会返回以下项：
 
-- 每个生存期范围的一个实例（在 ASP.NET Core IoC 容器中称为“已设置范围”  ）。
+- 每个生存期范围的一个实例（在 ASP.NET Core IoC 容器中称为“已设置范围”）。
 
-- 每个依赖项的一个实例（在 ASP.NET Core IoC 容器中称为“暂时”  ）。
+- 每个依赖项的一个实例（在 ASP.NET Core IoC 容器中称为“暂时”）。
 
-- 使用 IoC 容器的跨所有对象共享的一个实例（在 ASP.NET Core IoC 容器中称为“单一实例”  ）。
+- 使用 IoC 容器的跨所有对象共享的一个实例（在 ASP.NET Core IoC 容器中称为“单一实例”）。
 
 #### <a name="additional-resources"></a>其他资源
 
@@ -435,7 +435,7 @@ public class CreateOrderCommandHandler
 
 转存进程是封装此进程方式的对象。它基于状态、命令处理程序调用方式或提供给处理程序的负载，协调执行。 借助转存进程组件，可通过应用修饰器（或[管道行为](https://github.com/jbogard/MediatR/wiki/Behaviors)从 [MediatR 3](https://www.nuget.org/packages/MediatR/3.0.0) 开始），采用集中且透明的方式，应用整合问题。 有关更多信息，请参见[修饰器模式](https://en.wikipedia.org/wiki/Decorator_pattern)。
 
-修饰器和行为类似于[面向方面编程 (AOP)](https://en.wikipedia.org/wiki/Aspect-oriented_programming)，仅应用于由转存进程组件管理的特定进程管道。 AOP 中实现整合问题的方面基于编译时注入的 aspect weaver 或基于对象调用截获应用  。 这两种典型 AOP 方法的工作方式有时“就像是魔术”，因为不容易了解 AOP 的工作方式。 处理严重问题或 bug 时，AOP 可能难以调试。 另一方面，这些修饰器/行为是显式的，且仅在转存进程的上下文中应用，因此调试更可预测、更轻松。
+修饰器和行为类似于[面向方面编程 (AOP)](https://en.wikipedia.org/wiki/Aspect-oriented_programming)，仅应用于由转存进程组件管理的特定进程管道。 AOP 中实现整合问题的方面基于编译时注入的 aspect weaver 或基于对象调用截获应用。 这两种典型 AOP 方法的工作方式有时“就像是魔术”，因为不容易了解 AOP 的工作方式。 处理严重问题或 bug 时，AOP 可能难以调试。 另一方面，这些修饰器/行为是显式的，且仅在转存进程的上下文中应用，因此调试更可预测、更轻松。
 
 例如，在 eShopOnContainers 订购微服务中，我们实现了两个示例行为：一个 [LogBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/LoggingBehavior.cs) 类和一个 [ValidatorBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/ValidatorBehavior.cs) 类。 下一节通过演示 eShopOnContainers 如何使用 [MediatR 3](https://www.nuget.org/packages/MediatR/3.0.0) [行为](https://github.com/jbogard/MediatR/wiki/Behaviors)介绍了行为的实现。
 
@@ -477,7 +477,7 @@ public class CreateOrderCommandHandler
 
 > 我认为在这里值得提一下测试，它提供了针对系统行为的良好一致窗口。 请求传入，响应传出。我们发现这对生成行为一致的测试很有用。
 
-首先，让我们看一下示例 WebAPI 控制器，你会在其中使用转存进程对象。 如果你没有使用转存进程对象，则需要为此控制器注入所有依赖项，例如记录器对象等。 因此，构造函数可能十分复杂。 但是，如果你使用转存进程对象，控制器的构造函数可以简单很多，只需几个依赖项而不是许多依赖项（如果你针对每个整合操作使用一个依赖项），如以下示例所示：
+首先，让我们看一下示例 WebAPI 控制器，你会在其中使用转存进程对象。 如果你没有使用转存进程对象，则需要为此控制器注入所有依赖项，例如记录器对象等。 因此，构造函数可能很复杂。 但是，如果你使用转存进程对象，控制器的构造函数可以简单很多，只需几个依赖项而不是许多依赖项（如果你针对每个整合操作使用一个依赖项），如以下示例所示：
 
 ```csharp
 public class MyMicroserviceController : Controller
@@ -506,7 +506,7 @@ public async Task<IActionResult> ExecuteBusinessOperation([FromBody]RunOpCommand
 
 ### <a name="implement-idempotent-commands"></a>实现幂等命令
 
-在 eShopOnContainers  中，比上述更高级的示例是从订购微服务提交 CreateOrderCommand 对象。 但由于订购业务进程有点复杂，所以在我们的示例中，其实是从购物篮微服务开始，提交 CreateOrderCommand 对象的操作从名为 [UserCheckoutAcceptedIntegrationEventHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) 的集成事件处理程序（而不是从客户端应用调用的简单 WebAPI 控制器，如之前较简单示例所示）执行。
+在 eShopOnContainers 中，比上述更高级的示例是从订购微服务提交 CreateOrderCommand 对象。 但由于订购业务进程有点复杂，所以在我们的示例中，其实是从购物篮微服务开始，提交 CreateOrderCommand 对象的操作从名为 [UserCheckoutAcceptedIntegrationEventHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) 的集成事件处理程序（而不是从客户端应用调用的简单 WebAPI 控制器，如之前较简单示例所示）执行。
 
 不过，将命令提交到 MediatR 的操作非常类似，如下面的代码所示。
 

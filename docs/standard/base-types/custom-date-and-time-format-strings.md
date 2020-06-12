@@ -1,5 +1,6 @@
 ---
 title: 自定义日期和时间格式字符串
+description: 了解如何使用自定义日期和时间格式字符串将 DateTime 或 DateTimeOffset 值转换为文本表示形式，或分析日期和时间字符串。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,19 +15,19 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: ae2711aac8bd864e623efe18e698c8de75a3ac32
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: 89601d0628e4f5f00ec02d5cdd6fb79216b1469d
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83440988"
+ms.lasthandoff: 06/05/2020
+ms.locfileid: "84447246"
 ---
 # <a name="custom-date-and-time-format-strings"></a>自定义日期和时间格式字符串
 
-日期和时间格式字符串定义由格式设置操作生成的 <xref:System.DateTime> 或 <xref:System.DateTimeOffset> 值的文本表示形式。 它还可定义分析操作中需要的日期和时间值的表示形式，以便成功将字符串转换为日期和时间。 自定义格式字符串由一个或多个自定义日期和时间格式说明符组成。 任何不是[标准日期和时间格式字符串](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)的字符串都会解释为自定义日期和时间格式字符串。
+日期和时间格式字符串定义由格式设置操作生成的 <xref:System.DateTime> 或 <xref:System.DateTimeOffset> 值的文本表示形式。 它还可定义分析操作中需要的日期和时间值的表示形式，以便成功将字符串转换为日期和时间。 自定义格式字符串由一个或多个自定义日期和时间格式说明符组成。 任何不是[标准日期和时间格式字符串](standard-date-and-time-format-strings.md)的字符串都会解释为自定义日期和时间格式字符串。
 
 > [!TIP]
-> 你可以下载格式设置实用工具，它属于一种 .NET Core Windows 窗体应用程序，通过该应用程序，你可将格式字符串应用于数值或日期和时间值并显示结果字符串  。 源代码适用于 [C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) 和 [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)。
+> 你可以下载格式设置实用工具，它属于一种 .NET Core Windows 窗体应用程序，通过该应用程序，你可将格式字符串应用于数值或日期和时间值并显示结果字符串。 源代码适用于 [C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) 和 [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)。
 
 自定义日期和时间格式字符串可以与 <xref:System.DateTime> 和 <xref:System.DateTimeOffset> 值一起使用。
 
@@ -44,56 +45,56 @@ ms.locfileid: "83440988"
 
 下表描述自定义日期和时间格式说明符并显示由每个格式说明符生成的结果字符串。 默认情况下，结果字符串反映 zh-cn 区域性的格式设置约定。 如果特定格式说明符生成本地化结果字符串，则该示例还注明结果字符串适用的区域性。 有关使用自定义日期和时间格式字符串的详细信息，请参阅[备注](#notes)部分。
 
-| 格式说明符 | 说明 | 示例 |
+| 格式说明符 | 描述 | 示例 |
 | ---------------------- | ----------------- | -------------- |
-|"d"|一个月中的某一天（1 到 31）。<br /><br /> 有关详细信息，请参阅[“d”自定义格式说明符](#dSpecifier)。|2009-06-01T13:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 15|
-|“dd”|一个月中的某一天（01 到 31）。<br /><br /> 有关详细信息，请参阅[“dd”自定义格式说明符](#ddSpecifier)。|2009-06-01T13:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 15|
-|“ddd”|一周中某天的缩写名称。<br /><br /> 有关详细信息，请参阅[“ddd”自定义格式说明符](#dddSpecifier)。|2009-06-15T13:45:30 -> Mon (en-US)<br /><br /> 2009-06-15T13:45:30 -> Пн (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> lun. (fr-FR)|
-|“dddd”|一周中某天的完整名称。<br /><br /> 有关详细信息，请参阅[“dddd”自定义格式说明符](#ddddSpecifier)。|2009-06-15T13:45:30 -> Monday (en-US)<br /><br /> 2009-06-15T13:45:30 -> понедельник (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> lundi (fr-FR)|
-|“f”|日期和时间值的十分之几秒。<br /><br /> 有关详细信息，请参阅[“f”自定义格式说明符](#fSpecifier)。|2009-06-15T13:45:30.6170000 -> 6<br /><br /> 2009-06-15T13:45:30.05 -> 0|
-|“ff”|日期和时间值的百分之几秒。<br /><br /> 有关详细信息，请参阅[“ff”自定义格式说明符](#ffSpecifier)。|2009-06-15T13:45:30.6170000 -> 61<br /><br /> 2009-06-15T13:45:30.0050000 -> 00|
-|“fff”|日期和时间值的千分之几秒。<br /><br /> 有关详细信息，请参阅[“fff”自定义格式说明符](#fffSpecifier)。|6/15/2009 13:45:30.617 -> 617<br /><br /> 6/15/2009 13:45:30.0005 -> 000|
-|“ffff”|日期和时间值的万分之几秒。<br /><br /> 有关详细信息，请参阅[“ffff”自定义格式说明符](#ffffSpecifier)。|2009-06-15T13:45:30.6175000 -> 6175<br /><br /> 2009-06-15T13:45:30.0000500  -> 0000|
-|“fffff”|日期和时间值的十万分之几秒。<br /><br /> 有关详细信息，请参阅[“fffff”自定义格式说明符](#fffffSpecifier)。|2009-06-15T13:45:30.6175400 -> 61754<br /><br /> 6/15/2009 13:45:30.000005 -> 00000|
-|“ffffff”|日期和时间值的百万分之几秒。<br /><br /> 有关详细信息，请参阅[“ffffff”自定义格式说明符](#ffffffSpecifier)。|2009-06-15T13:45:30.6175420 -> 617542<br /><br /> 2009-06-15T13:45:30.0000005 -> 000000|
-|“fffffff”|日期和时间值的千万分之几秒。<br /><br /> 有关详细信息，请参阅[“fffffff”自定义格式说明符](#fffffffSpecifier)。|2009-06-15T13:45:30.6175425 -> 6175425<br /><br /> 2009-06-15T13:45:30.0001150 -> 0001150|
-|“F”|如果非零，则为日期和时间值的十分之几秒。<br /><br /> 有关详细信息，请参阅[“F”自定义格式说明符](#F_Specifier)。|2009-06-15T13:45:30.6170000 -> 6<br /><br /> 2009-06-15T13:45:30.0500000 ->（无输出）|
-|“FF”|如果非零，则为日期和时间值的百分之几秒。<br /><br /> 有关详细信息，请参阅[“FF”自定义格式说明符](#FF_Specifier)。|2009-06-15T13:45:30.6170000 -> 61<br /><br /> 2009-06-15T13:45:30.0050000 ->（无输出）|
-|“FFF”|如果非零，则为日期和时间值的千分之几秒。<br /><br /> 有关详细信息，请参阅[“FFF”自定义格式说明符](#FFF_Specifier)。|2009-06-15T13:45:30.6170000 -> 617<br /><br /> 2009-06-15T13:45:30.0005000 ->（无输出）|
-|“FFFF”|如果非零，则为日期和时间值的万分之几秒。<br /><br /> 有关详细信息，请参阅[“FFFF”自定义格式说明符](#FFFF_Specifier)。|2009-06-15T13:45:30.5275000 -> 5275<br /><br /> 2009-06-15T13:45:30.0000500 ->（无输出）|
-|“FFFFF”|如果非零，则为日期和时间值的十万分之几秒。<br /><br /> 有关详细信息，请参阅[“FFFFF”自定义格式说明符](#FFFFF_Specifier)。|2009-06-15T13:45:30.6175400 -> 61754<br /><br /> 2009-06-15T13:45:30.0000050 ->（无输出）|
-|“FFFFFF”|如果非零，则为日期和时间值的百万分之几秒。<br /><br /> 有关详细信息，请参阅[“FFFFFF”自定义格式说明符](#FFFFFF_Specifier)。|2009-06-15T13:45:30.6175420 -> 617542<br /><br /> 2009-06-15T13:45:30.0000005 ->（无输出）|
-|“FFFFFFF”|如果非零，则为日期和时间值的千万分之几秒。<br /><br /> 有关详细信息，请参阅[“FFFFFFF”自定义格式说明符](#FFFFFFF_Specifier)。|2009-06-15T13:45:30.6175425 -> 6175425<br /><br /> 2009-06-15T13:45:30.0001150 -> 000115|
-|“g”、“gg”|时期或纪元。<br /><br /> 有关详细信息，请参阅[“g”或“gg”自定义格式说明符](#gSpecifier)。|2009-06-15T13:45:30.6170000 -> A.D.|
-|“h”|采用 12 小时制的小时（从 1 到 12）。<br /><br /> 有关详细信息，请参阅[“h”自定义格式说明符](#hSpecifier)。|2009-06-15T01:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 1|
-|“hh”|采用 12 小时制的小时（从 01 到 12）。<br /><br /> 有关详细信息，请参阅[“hh”自定义格式说明符](#hhSpecifier)。|2009-06-15T01:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 01|
-|“H”|采用 24 小时制的小时（从 0 到 23）。<br /><br /> 有关详细信息，请参阅[“H”自定义格式说明符](#H_Specifier)。|2009-06-15T01:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 13|
-|“HH”|采用 24 小时制的小时（从 00 到 23）。<br /><br /> 有关详细信息，请参阅[“HH”自定义格式说明符](#HH_Specifier)。|2009-06-15T01:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 13|
-|“K”|时区信息。<br /><br /> 有关详细信息，请参阅[“K”自定义格式说明符](#KSpecifier)。|带 <xref:System.DateTime> 值：<br /><br /> 2009-06-15T13:45:30, Kind Unspecified -><br /><br /> 2009-06-15T13:45:30, Kind Utc -> Z<br /><br /> 2009-06-15T13:45:30, Kind Local -> -07:00（取决于本地计算机的设置）<br /><br /> 带 <xref:System.DateTimeOffset> 值：<br /><br /> 2009-06-15T01:45:30-07:00 --> -07:00<br /><br /> 2009-06-15T08:45:30+00:00 --> +00:00|
-|“m”|分钟（0 到 59）。<br /><br /> 有关详细信息，请参阅[“m”自定义格式说明符](#mSpecifier)。|2009-06-15T01:09:30 -> 9<br /><br /> 2009-06-15T13:29:30 -> 29|
-|“mm”|分钟（00 到 59）。<br /><br /> 有关详细信息，请参阅[“mm”自定义格式说明符](#mmSpecifier)。|2009-06-15T01:09:30 -> 09<br /><br /> 2009-06-15T01:45:30 -> 45|
-|“M”|月份（1 到 12）。<br /><br /> 有关详细信息，请参阅[“M”自定义格式说明符](#M_Specifier)。|2009-06-15T13:45:30 -> 6|
-|“MM”|月份（1 到 12）。<br /><br /> 有关详细信息，请参阅[“MM”自定义格式说明符](#MM_Specifier)。|2009-06-15T13:45:30 -> 06|
-|“MMM”|月份的缩写名称。<br /><br /> 有关详细信息，请参阅[“MMM”自定义格式说明符](#MMM_Specifier)。|2009-06-15T13:45:30 -> Jun (en-US)<br /><br /> 2009-06-15T13:45:30 -> juin (fr-FR)<br /><br /> 2009-06-15T13:45:30 -> Jun (zu-ZA)|
-|“MMMM”|月份的完整名称。<br /><br /> 有关详细信息，请参阅[“MMMM”自定义格式说明符](#MMMM_Specifier)。|2009-06-15T13:45:30 -> June (en-US)<br /><br /> 2009-06-15T13:45:30 -> juni (da-DK)<br /><br /> 2009-06-15T13:45:30 -> uJuni (zu-ZA)|
-|“s”|秒（0 到 59）。<br /><br /> 有关详细信息，请参阅[“s”自定义格式说明符](#sSpecifier)。|2009-06-15T13:45:09 -> 9|
-|“ss”|秒（00 到 59）。<br /><br /> 有关详细信息，请参阅[“ss”自定义格式说明符](#ssSpecifier)。|2009-06-15T13:45:09 -> 09|
-|“t”|AM/PM 指示符的第一个字符。<br /><br /> 有关详细信息，请参阅[“t”自定义格式说明符](#tSpecifier)。|2009-06-15T13:45:30 -> P (en-US)<br /><br /> 2009-06-15T13:45:30 -> 午 (ja-JP)<br /><br /> 2009-06-15T13:45:30 ->  (fr-FR)|
-|“tt”|AM/PM 指示符。<br /><br /> 有关详细信息，请参阅[“tt”自定义格式说明符](#ttSpecifier)。|2009-06-15T13:45:30 -> PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 午後 (ja-JP)<br /><br /> 2009-06-15T13:45:30 ->  (fr-FR)|
-|“y”|年份（0 到 99）。<br /><br /> 有关详细信息，请参阅[“y”自定义格式说明符](#ySpecifier)。|0001-01-01T00:00:00 -> 1<br /><br /> 0900-01-01T00:00:00 -> 0<br /><br /> 1900-01-01T00:00:00 -> 0<br /><br /> 2009-06-15T13:45:30 -> 9<br /><br /> 2019-06-15T13:45:30 -> 19|
-|“yy”|年份（00 到 99）。<br /><br /> 有关详细信息，请参阅[“yy”自定义格式说明符](#yySpecifier)。|0001-01-01T00:00:00 -> 01<br /><br /> 0900-01-01T00:00:00 -> 00<br /><br /> 1900-01-01T00:00:00 -> 00<br /><br /> 2019-06-15T13:45:30 -> 19|
-|“yyy”|年份（最少三位数字）。<br /><br /> 有关详细信息，请参阅[“yyy”自定义格式说明符](#yyySpecifier)。|0001-01-01T00:00:00 -> 001<br /><br /> 0900-01-01T00:00:00 -> 900<br /><br /> 1900-01-01T00:00:00 -> 1900<br /><br /> 2009-06-15T13:45:30 -> 2009|
-|“yyyy”|由四位数字表示的年份。<br /><br /> 有关详细信息，请参阅[“yyyy”自定义格式说明符](#yyyySpecifier)。|0001-01-01T00:00:00 -> 0001<br /><br /> 0900-01-01T00:00:00 -> 0900<br /><br /> 1900-01-01T00:00:00 -> 1900<br /><br /> 2009-06-15T13:45:30 -> 2009|
-|“yyyyy”|由五位数字表示的年份。<br /><br /> 有关详细信息，请参阅[“yyyyy”自定义格式说明符](#yyyyySpecifier)。|0001-01-01T00:00:00 -> 00001<br /><br /> 2009-06-15T13:45:30 -> 02009|
-|“z”|相对于 UTC 的小时偏移量，无前导零。<br /><br /> 有关详细信息，请参阅[“z”自定义格式说明符](#zSpecifier)。|2009-06-15T13:45:30-07:00 -> -7|
-|“zz”|相对于 UTC 的小时偏移量，带有表示一位数值的前导零。<br /><br /> 有关详细信息，请参阅[“zz”自定义格式说明符](#zzSpecifier)。|2009-06-15T13:45:30-07:00 -> -07|
-|“zzz”|相对于 UTC 的小时和分钟偏移量。<br /><br /> 有关详细信息，请参阅[“zzz”自定义格式说明符](#zzzSpecifier)。|2009-06-15T13:45:30-07:00 -> -07:00|
-|":"|时间分隔符。<br /><br /> 有关详细信息，请参阅[“:”自定义格式说明符](#timeSeparator)。|2009-06-15T13:45:30 -> : (en-US)<br /><br /> 2009-06-15T13:45:30 -> . (it-IT)<br /><br /> 2009-06-15T13:45:30 -> : (ja-JP)|
-|"/"|日期分隔符。<br /><br /> 有关详细信息，请参阅[“/”自定义格式说明符](#dateSeparator)。|2009-06-15T13:45:30 -> / (en-US)<br /><br /> 2009-06-15T13:45:30 -> - (ar-DZ)<br /><br /> 2009-06-15T13:45:30 -> . (tr-TR)|
-|"string  "<br /><br /> 'string  '|文本字符串分隔符。<br /><br /> 有关详细信息，请参阅[字符文本](#Literals)。|2009-06-15T13:45:30 ("arr:" h:m t) -> arr: 1:45 P<br /><br /> 2009-06-15T13:45:30 ('arr:' h:m t) -> arr: 1:45 P|
+|"d"|一个月中的某一天（1 到 31）。<br /><br /> 更多信息：[“d”自定义格式说明符](#dSpecifier)。|2009-06-01T13:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 15|
+|“dd”|一个月中的某一天（01 到 31）。<br /><br /> 更多信息：[“dd”自定义格式说明符](#ddSpecifier)。|2009-06-01T13:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 15|
+|“ddd”|一周中某天的缩写名称。<br /><br /> 更多信息：[“ddd”自定义格式说明符](#dddSpecifier)。|2009-06-15T13:45:30 -> Mon (en-US)<br /><br /> 2009-06-15T13:45:30 -> Пн (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> lun. (fr-FR)|
+|“dddd”|一周中某天的完整名称。<br /><br /> 更多信息：[“dddd”自定义格式说明符](#ddddSpecifier)。|2009-06-15T13:45:30 -> Monday (en-US)<br /><br /> 2009-06-15T13:45:30 -> понедельник (ru-RU)<br /><br /> 2009-06-15T13:45:30 -> lundi (fr-FR)|
+|“f”|日期和时间值的十分之几秒。<br /><br /> 更多信息：[“f”自定义格式说明符](#fSpecifier)。|2009-06-15T13:45:30.6170000 -> 6<br /><br /> 2009-06-15T13:45:30.05 -> 0|
+|“ff”|日期和时间值的百分之几秒。<br /><br /> 更多信息：[“ff”自定义格式说明符](#ffSpecifier)。|2009-06-15T13:45:30.6170000 -> 61<br /><br /> 2009-06-15T13:45:30.0050000 -> 00|
+|“fff”|日期和时间值的千分之几秒。<br /><br /> 更多信息：[“fff”自定义格式说明符](#fffSpecifier)。|6/15/2009 13:45:30.617 -> 617<br /><br /> 6/15/2009 13:45:30.0005 -> 000|
+|“ffff”|日期和时间值的万分之几秒。<br /><br /> 更多信息：[“ffff”自定义格式说明符](#ffffSpecifier)。|2009-06-15T13:45:30.6175000 -> 6175<br /><br /> 2009-06-15T13:45:30.0000500  -> 0000|
+|“fffff”|日期和时间值的十万分之几秒。<br /><br /> 更多信息：[“fffff”自定义格式说明符](#fffffSpecifier)。|2009-06-15T13:45:30.6175400 -> 61754<br /><br /> 6/15/2009 13:45:30.000005 -> 00000|
+|“ffffff”|日期和时间值的百万分之几秒。<br /><br /> 更多信息：[“ffffff”自定义格式说明符](#ffffffSpecifier)。|2009-06-15T13:45:30.6175420 -> 617542<br /><br /> 2009-06-15T13:45:30.0000005 -> 000000|
+|“fffffff”|日期和时间值的千万分之几秒。<br /><br /> 更多信息：[“fffffff”自定义格式说明符](#fffffffSpecifier)。|2009-06-15T13:45:30.6175425 -> 6175425<br /><br /> 2009-06-15T13:45:30.0001150 -> 0001150|
+|“F”|如果非零，则为日期和时间值的十分之几秒。<br /><br /> 更多信息：[“F”自定义格式说明符](#F_Specifier)。|2009-06-15T13:45:30.6170000 -> 6<br /><br /> 2009-06-15T13:45:30.0500000 ->（无输出）|
+|“FF”|如果非零，则为日期和时间值的百分之几秒。<br /><br /> 更多信息：[“FF”自定义格式说明符](#FF_Specifier)。|2009-06-15T13:45:30.6170000 -> 61<br /><br /> 2009-06-15T13:45:30.0050000 ->（无输出）|
+|“FFF”|如果非零，则为日期和时间值的千分之几秒。<br /><br /> 更多信息：[“FFF”自定义格式说明符](#FFF_Specifier)。|2009-06-15T13:45:30.6170000 -> 617<br /><br /> 2009-06-15T13:45:30.0005000 ->（无输出）|
+|“FFFF”|如果非零，则为日期和时间值的万分之几秒。<br /><br /> 更多信息：[“FFFF”自定义格式说明符](#FFFF_Specifier)。|2009-06-15T13:45:30.5275000 -> 5275<br /><br /> 2009-06-15T13:45:30.0000500 ->（无输出）|
+|“FFFFF”|如果非零，则为日期和时间值的十万分之几秒。<br /><br /> 更多信息：[“FFFFF”自定义格式说明符](#FFFFF_Specifier)。|2009-06-15T13:45:30.6175400 -> 61754<br /><br /> 2009-06-15T13:45:30.0000050 ->（无输出）|
+|“FFFFFF”|如果非零，则为日期和时间值的百万分之几秒。<br /><br /> 更多信息：[“FFFFFF”自定义格式说明符](#FFFFFF_Specifier)。|2009-06-15T13:45:30.6175420 -> 617542<br /><br /> 2009-06-15T13:45:30.0000005 ->（无输出）|
+|“FFFFFFF”|如果非零，则为日期和时间值的千万分之几秒。<br /><br /> 更多信息：[“FFFFFFF”自定义格式说明符](#FFFFFFF_Specifier)。|2009-06-15T13:45:30.6175425 -> 6175425<br /><br /> 2009-06-15T13:45:30.0001150 -> 000115|
+|“g”、“gg”|时期或纪元。<br /><br /> 更多信息：[“g”或“gg”自定义格式说明符](#gSpecifier)。|2009-06-15T13:45:30.6170000 -> A.D.|
+|“h”|采用 12 小时制的小时（从 1 到 12）。<br /><br /> 更多信息：[“h”自定义格式说明符](#hSpecifier)。|2009-06-15T01:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 1|
+|“hh”|采用 12 小时制的小时（从 01 到 12）。<br /><br /> 更多信息：[“hh”自定义格式说明符](#hhSpecifier)。|2009-06-15T01:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 01|
+|“H”|采用 24 小时制的小时（从 0 到 23）。<br /><br /> 更多信息：[“H”自定义格式说明符](#H_Specifier)。|2009-06-15T01:45:30 -> 1<br /><br /> 2009-06-15T13:45:30 -> 13|
+|“HH”|采用 24 小时制的小时（从 00 到 23）。<br /><br /> 更多信息：[“HH”自定义格式说明符](#HH_Specifier)。|2009-06-15T01:45:30 -> 01<br /><br /> 2009-06-15T13:45:30 -> 13|
+|“K”|时区信息。<br /><br /> 更多信息：[“K”自定义格式说明符](#KSpecifier)。|带 <xref:System.DateTime> 值：<br /><br /> 2009-06-15T13:45:30, Kind Unspecified -><br /><br /> 2009-06-15T13:45:30, Kind Utc -> Z<br /><br /> 2009-06-15T13:45:30, Kind Local -> -07:00（取决于本地计算机的设置）<br /><br /> 带 <xref:System.DateTimeOffset> 值：<br /><br /> 2009-06-15T01:45:30-07:00 --> -07:00<br /><br /> 2009-06-15T08:45:30+00:00 --> +00:00|
+|“m”|分钟（0 到 59）。<br /><br /> 更多信息：[“m”自定义格式说明符](#mSpecifier)。|2009-06-15T01:09:30 -> 9<br /><br /> 2009-06-15T13:29:30 -> 29|
+|“mm”|分钟（00 到 59）。<br /><br /> 更多信息：[“mm”自定义格式说明符](#mmSpecifier)。|2009-06-15T01:09:30 -> 09<br /><br /> 2009-06-15T01:45:30 -> 45|
+|“M”|月份（1 到 12）。<br /><br /> 更多信息：[“M”自定义格式说明符](#M_Specifier)。|2009-06-15T13:45:30 -> 6|
+|“MM”|月份（1 到 12）。<br /><br /> 更多信息：[“MM”自定义格式说明符](#MM_Specifier)。|2009-06-15T13:45:30 -> 06|
+|“MMM”|月份的缩写名称。<br /><br /> 更多信息：[“MMM”自定义格式说明符](#MMM_Specifier)。|2009-06-15T13:45:30 -> Jun (en-US)<br /><br /> 2009-06-15T13:45:30 -> juin (fr-FR)<br /><br /> 2009-06-15T13:45:30 -> Jun (zu-ZA)|
+|“MMMM”|月份的完整名称。<br /><br /> 更多信息：[“MMMM”自定义格式说明符](#MMMM_Specifier)。|2009-06-15T13:45:30 -> June (en-US)<br /><br /> 2009-06-15T13:45:30 -> juni (da-DK)<br /><br /> 2009-06-15T13:45:30 -> uJuni (zu-ZA)|
+|“s”|秒（0 到 59）。<br /><br /> 更多信息：[“s”自定义格式说明符](#sSpecifier)。|2009-06-15T13:45:09 -> 9|
+|“ss”|秒（00 到 59）。<br /><br /> 更多信息：[“ss”自定义格式说明符](#ssSpecifier)。|2009-06-15T13:45:09 -> 09|
+|“t”|AM/PM 指示符的第一个字符。<br /><br /> 更多信息：[“t”自定义格式说明符](#tSpecifier)。|2009-06-15T13:45:30 -> P (en-US)<br /><br /> 2009-06-15T13:45:30 -> 午 (ja-JP)<br /><br /> 2009-06-15T13:45:30 ->  (fr-FR)|
+|“tt”|AM/PM 指示符。<br /><br /> 更多信息：[“tt”自定义格式说明符](#ttSpecifier)。|2009-06-15T13:45:30 -> PM (en-US)<br /><br /> 2009-06-15T13:45:30 -> 午後 (ja-JP)<br /><br /> 2009-06-15T13:45:30 ->  (fr-FR)|
+|“y”|年份（0 到 99）。<br /><br /> 更多信息：[“y”自定义格式说明符](#ySpecifier)。|0001-01-01T00:00:00 -> 1<br /><br /> 0900-01-01T00:00:00 -> 0<br /><br /> 1900-01-01T00:00:00 -> 0<br /><br /> 2009-06-15T13:45:30 -> 9<br /><br /> 2019-06-15T13:45:30 -> 19|
+|“yy”|年份（00 到 99）。<br /><br /> 更多信息：[“yy”自定义格式说明符](#yySpecifier)。|0001-01-01T00:00:00 -> 01<br /><br /> 0900-01-01T00:00:00 -> 00<br /><br /> 1900-01-01T00:00:00 -> 00<br /><br /> 2019-06-15T13:45:30 -> 19|
+|“yyy”|年份（最少三位数字）。<br /><br /> 更多信息：[“yyy”自定义格式说明符](#yyySpecifier)。|0001-01-01T00:00:00 -> 001<br /><br /> 0900-01-01T00:00:00 -> 900<br /><br /> 1900-01-01T00:00:00 -> 1900<br /><br /> 2009-06-15T13:45:30 -> 2009|
+|“yyyy”|由四位数字表示的年份。<br /><br /> 更多信息：[“yyyy”自定义格式说明符](#yyyySpecifier)。|0001-01-01T00:00:00 -> 0001<br /><br /> 0900-01-01T00:00:00 -> 0900<br /><br /> 1900-01-01T00:00:00 -> 1900<br /><br /> 2009-06-15T13:45:30 -> 2009|
+|“yyyyy”|由五位数字表示的年份。<br /><br /> 更多信息：[“yyyyy”自定义格式说明符](#yyyyySpecifier)。|0001-01-01T00:00:00 -> 00001<br /><br /> 2009-06-15T13:45:30 -> 02009|
+|“z”|相对于 UTC 的小时偏移量，无前导零。<br /><br /> 更多信息：[“z”自定义格式说明符](#zSpecifier)。|2009-06-15T13:45:30-07:00 -> -7|
+|“zz”|相对于 UTC 的小时偏移量，带有表示一位数值的前导零。<br /><br /> 更多信息：[“zz”自定义格式说明符](#zzSpecifier)。|2009-06-15T13:45:30-07:00 -> -07|
+|“zzz”|相对于 UTC 的小时和分钟偏移量。<br /><br /> 更多信息：[“zzz”自定义格式说明符](#zzzSpecifier)。|2009-06-15T13:45:30-07:00 -> -07:00|
+|":"|时间分隔符。<br /><br /> 更多信息：[“:”自定义格式说明符](#timeSeparator)。|2009-06-15T13:45:30 -> : (en-US)<br /><br /> 2009-06-15T13:45:30 -> . (it-IT)<br /><br /> 2009-06-15T13:45:30 -> : (ja-JP)|
+|"/"|日期分隔符。<br /><br /> 详细信息：[“/”自定义格式说明符](#dateSeparator)。|2009-06-15T13:45:30 -> / (en-US)<br /><br /> 2009-06-15T13:45:30 -> - (ar-DZ)<br /><br /> 2009-06-15T13:45:30 -> . (tr-TR)|
+|"string"<br /><br /> 'string'|文本字符串分隔符。<br /><br /> 更多信息：[字符文本](#Literals)。|2009-06-15T13:45:30 ("arr:" h:m t) -> arr:1:45 P<br /><br /> 2009-06-15T13:45:30 ('arr:' h:m t) -> arr:1:45 P|
 |%|将下面的字符定义为自定义格式说明符。<br /><br /> 有关详细信息，请参阅[使用单个自定义格式说明符](#UsingSingleSpecifiers)。|2009-06-15T13:45:30 (%h) -> 1|
-|&#92;|转义字符。<br /><br /> 有关详细信息，请参阅[字符文本](#Literals)和[使用转义字符](#escape)。|2009-06-15T13:45:30 (h \h) -> 1 h|
-|任何其他字符|字符将复制到未更改的结果字符串。<br /><br /> 有关详细信息，请参阅[字符文本](#Literals)。|2009-06-15T01:45:30 (arr hh:mm t) -> arr 01:45 A|
+|&#92;|转义字符。<br /><br /> 更多信息：[字符文本](#Literals)和[使用转义字符](#escape)。|2009-06-15T13:45:30 (h \h) -> 1 h|
+|任何其他字符|字符将复制到未更改的结果字符串。<br /><br /> 更多信息：[字符文本](#Literals)。|2009-06-15T01:45:30 (arr hh:mm t) -> arr 01:45 A|
 
 以下各节提供有关每个自定义日期和时间格式说明符的附加信息。 除非另行说明，否则，每个说明符将生成相同的字符串表示形式，这与它是与 <xref:System.DateTime> 值一起使用还是与 <xref:System.DateTimeOffset> 值一起使用无关。
 
@@ -356,7 +357,7 @@ ms.locfileid: "83440988"
 
 如果使用“K”格式说明符而没有其他自定义格式说明符，则将该说明符解释为标准日期和时间格式说明符，并引发 <xref:System.FormatException>。 有关使用单个格式说明符的更多信息，请参阅本文后面的[使用单个自定义格式说明符](#UsingSingleSpecifiers)。
 
-下面的示例显示对美国太平洋时区中的系统上的各种 <xref:System.DateTime> 和 <xref:System.DateTimeOffset> 值使用"K"自定义格式说明符所产生的字符串。
+下面的示例显示对美国太平洋时区中的系统上的各种 <xref:System.DateTime> 和 <xref:System.DateTimeOffset> 值使用“K”自定义格式说明符。
 
 [!code-csharp-interactive[Formatting.DateAndTime.Custom#12](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/Custom1.cs#12)]
 [!code-vb[Formatting.DateAndTime.Custom#12](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/Custom1.vb#12)]
@@ -628,8 +629,8 @@ ms.locfileid: "83440988"
 ||||||
 |-|-|-|-|-|
 |F|H|K|M|d|
-|f|g|h|m|s|
-|t|y|z|%|:|
+|f|g|h|m|秒|
+|T|y|z|%|:|
 |/|"|'|&#92;||
 
 所有其他字符始终解释为字符文本，在格式设置操作中，将按原样包含在结果字符串中。  在分析操作中，这些字符必须与输入字符串中的字符完全匹配；比较时区分大小写。
@@ -653,7 +654,7 @@ ms.locfileid: "83440988"
 [!code-csharp[Formatting.DateAndTime.Custom#22](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx3.cs#22)]
 [!code-vb[Formatting.DateAndTime.Custom#22](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx3.vb#22)]
 
-## <a name="notes"></a>备注
+## <a name="notes"></a>说明
 
 ### <a name="using-single-custom-format-specifiers"></a><a name="UsingSingleSpecifiers"></a>使用单个自定义格式说明符
 
@@ -682,9 +683,9 @@ ms.locfileid: "83440988"
 
 ### <a name="control-panel-settings"></a>控制面板设置
 
-对于包含许多自定义日期和时间格式说明符的格式设置操作，控制面板中的“区域和语言选项”  设置会影响其产生的结果字符串。 这些设置用于初始化与当前线程区域性关联的 <xref:System.Globalization.DateTimeFormatInfo> 对象，当前线程区域性提供用于控制格式设置的值。 使用不同设置的计算机将生成不同的结果字符串。
+对于包含许多自定义日期和时间格式说明符的格式设置操作，控制面板中的“区域和语言选项”设置会影响其产生的结果字符串。 这些设置用于初始化与当前线程区域性关联的 <xref:System.Globalization.DateTimeFormatInfo> 对象，当前线程区域性提供用于控制格式设置的值。 使用不同设置的计算机将生成不同的结果字符串。
 
-此外，如果使用 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29> 构造函数实例化表示当前系统区域性的新 <xref:System.Globalization.CultureInfo> 对象，通过控制面板中的“区域和语言选项”  项创建的任何自定义都会应用于新 <xref:System.Globalization.CultureInfo> 对象。 可以使用 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> 构造函数来创建不会反映系统的自定义项的 <xref:System.Globalization.CultureInfo> 对象。
+此外，如果使用 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29> 构造函数实例化一个新的 <xref:System.Globalization.CultureInfo> 对象以表示与当前的系统区域性相同的区域性，则通过控制面板中的 **“区域和语言选项”** 建立的任何自定义都将应用到新的 <xref:System.Globalization.CultureInfo> 对象。 可以使用 <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29> 构造函数来创建不会反映系统的自定义项的 <xref:System.Globalization.CultureInfo> 对象。
 
 ### <a name="datetimeformatinfo-properties"></a>DateTimeFormatInfo 属性
 
@@ -692,11 +693,11 @@ ms.locfileid: "83440988"
 
 由许多自定义日期和时间格式说明符产生的结果字符串还取决于当前的 <xref:System.Globalization.DateTimeFormatInfo> 对象的属性。 应用程序通过更改相应的 <xref:System.Globalization.DateTimeFormatInfo> 属性，可以改变由某些自定义日期和时间格式说明符产生的结果。 例如，“ddd”格式说明符将在 <xref:System.Globalization.DateTimeFormatInfo.AbbreviatedDayNames%2A> 字符串数组中找到的缩写的星期名称添加到结果字符串。 类似地，"MMMM"格式说明符将在 <xref:System.Globalization.DateTimeFormatInfo.MonthNames%2A> 字符串数组中找到的月的完整名称添加到结果字符串。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.DateTime?displayProperty=nameWithType>
 - <xref:System.IFormatProvider?displayProperty=nameWithType>
-- [格式设置类型](../../../docs/standard/base-types/formatting-types.md)
-- [标准日期和时间格式字符串](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
+- [格式设置类型](formatting-types.md)
+- [标准日期和时间格式字符串](standard-date-and-time-format-strings.md)
 - [示例：.NET Core WinForms 格式设置实用工具 (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
 - [示例：.NET Core WinForms 格式设置实用工具 (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)

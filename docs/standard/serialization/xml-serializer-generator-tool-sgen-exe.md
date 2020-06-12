@@ -3,12 +3,12 @@ title: XML 序列化程序生成器工具 (Sgen.exe)
 description: XML 序列化程序生成器为程序集中的类型创建 XML 序列化程序集，从而提高 XmlSerializer 的启动性能。
 ms.date: 03/30/2017
 ms.assetid: cc1d1f1c-fb26-4be9-885a-3fe84c81cec6
-ms.openlocfilehash: 65e368cfd9294497608b061f15a4fe4755ed745c
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: b6d9406ca6a69f7bdff3129b55c89dd5d1589d3f
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83380039"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84288935"
 ---
 # <a name="xml-serializer-generator-tool-sgenexe"></a>XML 序列化程序生成器工具 (Sgen.exe)
 
@@ -64,5 +64,5 @@ sgen Data.dll
   
 ## <a name="see-also"></a>请参阅
 
-- [工具](../../../docs/framework/tools/index.md)
-- [命令提示](../../../docs/framework/tools/developer-command-prompt-for-vs.md)
+- [工具](../../framework/tools/index.md)
+- [命令提示](../../framework/tools/developer-command-prompt-for-vs.md)

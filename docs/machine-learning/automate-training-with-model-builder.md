@@ -1,14 +1,14 @@
 ---
 title: 什么是模型生成器，它的工作原理是怎样的？
 description: 如何使用 ML.NET 模型生成器自动训练机器学习模型
-ms.date: 03/25/2020
+ms.date: 06/01/2020
 ms.custom: overview, mlnet-tooling
-ms.openlocfilehash: 4afdbfd1682a30647b09d05d51a5c73c214fe2bd
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 2ed4a0c3c94ae9f46bb1cf6ddb1e9774baf82367
+ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616924"
+ms.lasthandoff: 06/02/2020
+ms.locfileid: "84289494"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>什么是模型生成器，它的工作原理是怎样的？
 
@@ -119,7 +119,7 @@ ML.NET 模型生成器是一个直观的图形化 Visual Studio 扩展，用于�
 
 ## <a name="train"></a>训练
 
-选择方案、数据和标签后，模型生成器会训练该模型。
+选择方案、环境、数据和标签后，模型生成器会训练该模型。
 
 ### <a name="what-is-training"></a>什么是训练？
 
@@ -149,6 +149,8 @@ ML.NET 模型生成器是一个直观的图形化 Visual Studio 扩展，用于�
 - 列的类型
 - ML 任务
 - 用于训练的计算机的 CPU、磁盘和内存性能
+
+通常建议使用的数据集超过 100 行，因为数据集少于 100 行可能不会生成任何结果，并且可能需要花费更长的时间进行训练。
 
 ## <a name="evaluate"></a>评估
 
@@ -193,7 +195,7 @@ F1 分数等其他指标可用于控制精准率与召回率之间的平衡。
 
 - 延长训练时间。 有了更多时间，自动机器学习引擎可以体验更多算法和设置。
 
-- 添加更多数据。 有时候可能是数据量不足，无法训练出高质量的机器学习模型。
+- 添加更多数据。 有时，数据量不足以训练高质量的机器学习模型。对于包含少量示例的数据集，尤其如此。
 
 - 均衡分配数据。 对于分类任务，请确保在各个类别间均匀分配训练集。 例如，若有四个类别和 100 个训练示例，前两类（标记 1 和标记 2）包含 90 个记录，而剩下两类（标记 3 和标记 4）只包含 10 个记录，这就存在数据不均衡的问题，可能会导致模型很难正确预测标记 3 或标记 4。
 

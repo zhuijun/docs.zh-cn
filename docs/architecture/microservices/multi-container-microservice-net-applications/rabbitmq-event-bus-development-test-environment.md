@@ -2,18 +2,18 @@
 title: 使用 RabbitMQ 实现用于开发或测试环境的事件总线
 description: 容器化 .NET 应用程序的 .NET 微服务架构 | 使用 RabbitMQ 实现用于开发或测试环境的集成事件的事件总线消息传递。
 ms.date: 10/02/2018
-ms.openlocfilehash: 32259c76fe81d324ba3ea9b35f7fddc6a0f9cdbc
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 1af72d18825eb610d6900178205450e2c2e34c25
+ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144287"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84306885"
 ---
 # <a name="implementing-an-event-bus-with-rabbitmq-for-the-development-or-test-environment"></a>使用 RabbitMQ 实现用于开发或测试环境的事件总线
 
-首先应假设基于在容器中运行的 RabbitMQ 创建自定义事件总线，正如 eShopOnContainers 应用程序一样，它应仅用于你的开发和测试环境。 你不应将其用于生产环境，除非你要将其构建为生产就绪服务总线的一部分。 简单的自定义事件总线可能缺少商业服务总线具有的许多生产就绪关键功能。
+首先应假设基于在容器中运行的 RabbitMQ 创建自定义事件总线，正如 eShopOnContainers 应用程序一样，它应仅用于你的开发和测试环境。 不要将其用于生产环境，除非你要将其构建为生产就绪服务总线的一部分。 简单的自定义事件总线可能缺少商业服务总线具有的许多生产就绪关键功能。
 
-eShopOnContainers 中的事件总线自定义实现之一基本上是一个使用 RabbitMQ API 的库. （还有另一个基于 Azure 服务总线的实现）。
+eShopOnContainers 中的事件总线自定义实现之一基本上是一个使用 RabbitMQ API 的库。 （还有另一个基于 Azure 服务总线的实现）。
 
 借助 RabbitMQ 的事件总线实现，微服务可订阅事件、发布事件和接收事件，如图 6-21 所示。
 
@@ -114,7 +114,7 @@ public class EventBusRabbitMQ : IEventBus, IDisposable
 
 ## <a name="additional-resources"></a>其他资源
 
-生产就绪型解决方案，内附对 RabbitMQ 的支持。
+支持 RabbitMQ 的生产就绪型解决方案。
 
 - **EasyNetQ** - 为 RabbitMQ 打开源 .NET API 客户端 \
   <https://easynetq.com/>

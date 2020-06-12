@@ -1,17 +1,21 @@
 ---
-title: ''
+title: 如何使用 C# 对 JSON 进行序列化和反序列化 - .NET
 description: 本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。
-ms.date: ''
+ms.date: 05/13/2020
 no-loc:
 - System.Text.Json
 - Newtonsoft.Json
-helpviewer_keywords: []
-ms.openlocfilehash: f1a5da448b08f9b4f1cf3fa6cba67fb376b00a6f
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+helpviewer_keywords:
+- JSON serialization
+- serializing objects
+- serialization
+- objects, serializing
+ms.openlocfilehash: 7ad2721f12c5d14b61b35ecf7696ff0d6a6f27da
+ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702276"
+ms.lasthandoff: 06/06/2020
+ms.locfileid: "84289507"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>如何在 .NET 中对 JSON 进行序列化和反序列化（封送和拆收）
 
@@ -380,46 +384,10 @@ JSON 属性命名策略：
 下面是要进行序列化的示例对象和 JSON 输出：
 
 |Property |“值”  |
-|---
-title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
-ms.date: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
-ms.date: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' helpviewer_keywords:
-- 
-- 
-- 
-- 
-
------|--- title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
-ms.date: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
-ms.date: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' helpviewer_keywords:
-- 
-- 
-- 
-- 
-
------| | 日期    | 2019/8/1 午夜 12:00:00 -07:00| | TemperatureCelsius| 25 | | 摘要| null|
+|---------|---------|
+| 日期    | 8/1/2019 12:00:00 AM -07:00|
+| TemperatureCelsius| 25 |
+| 总结| null|
 
 ```json
 {
@@ -672,65 +640,13 @@ ms.date: no-loc:
 将前面显示的 JSON 反序列化为此示例类型时，额外数据会成为 `ExtensionData` 属性的键值对：
 
 |Property |“值”  |说明  |
-|---
-title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
-ms.date: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
-ms.date: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' helpviewer_keywords:
-- 
-- 
-- 
-- 
-
------|--- title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
-ms.date: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
-ms.date: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' helpviewer_keywords:
-- 
-- 
-- 
-- 
-
------|--- title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
-ms.date: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' helpviewer_keywords:
-- 
-- 
-- 
-- 
-
--
-title: description:“本文演示如何使用 System.Text.Json 命名空间在 .NET 中对 JSON 进行序列化和反序列化。 文中包含示例代码。”
-ms.date: no-loc:
-- 'System.Text.Json'
-- 'Newtonsoft.Json' helpviewer_keywords:
-- 
-- 
-- 
-- 
-
------| | 日期    | 2019/8/1 午夜 12:00:00 -07:00|| | TemperatureCelsius| 0 | 大小写不匹配（JSON 中的 `temperatureCelsius`），因此未设置属性。 | | 摘要 | 热 || | ExtensionData | temperatureCelsius:25 |因为大小写不匹配，所以此 JSON 属性是额外属性，会成为字典中的键值对。| || DatesAvailable:<br>  8/1/2019 12:00:00 AM -07:00<br>2019/8/2 午夜 12:00:00 -07:00 |JSON 中的额外属性会成为键值对，将数组作为值对象。| | |SummaryWords:<br>酷<br>Windy<br>Humid |JSON 中的额外属性会成为键值对，将数组作为值对象。|
+|---------|---------|---------|
+| 日期    | 8/1/2019 12:00:00 AM -07:00||
+| TemperatureCelsius| 0 | 区分大小写的不匹配（JSON 中的 `temperatureCelsius`），因此未设置属性。 |
+| 总结 | 热 ||
+| ExtensionData | temperatureCelsius：25 |因为大小写不匹配，所以此 JSON 属性是额外属性，会成为字典中的键值对。|
+|| DatesAvailable：<br>  8/1/2019 12:00:00 AM -07:00<br>8/2/2019 12:00:00 AM -07:00 |JSON 中的额外属性会成为键值对，将数组作为值对象。|
+| |SummaryWords：<br>酷<br>Windy<br>Humid |JSON 中的额外属性会成为键值对，将数组作为值对象。|
 
 序列化目标对象时，扩展数据键值对会成为 JSON 属性，就如同它们处于传入 JSON 中一样：
 
