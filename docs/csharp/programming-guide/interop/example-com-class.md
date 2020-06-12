@@ -5,39 +5,39 @@ helpviewer_keywords:
 - examples [C#], COM classes
 - COM, exposing Visual C# objects to
 ms.assetid: 6504dea9-ad1c-4993-a794-830fec5270af
-ms.openlocfilehash: 6af85d0314a44acbde0996cecbe6dad82cdcc8db
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6051ff91d13a3cb3ca6229d813db34dd6a9f3af6
+ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712073"
+ms.lasthandoff: 06/01/2020
+ms.locfileid: "84241846"
 ---
-# <a name="example-com-class-c-programming-guide"></a><span data-ttu-id="42fe4-102">COM 类示例（C# 编程指南）</span><span class="sxs-lookup"><span data-stu-id="42fe4-102">Example COM Class (C# Programming Guide)</span></span>
-<span data-ttu-id="42fe4-103">下面是将公开为 COM 对象的类的示例。</span><span class="sxs-lookup"><span data-stu-id="42fe4-103">The following is an example of a class that you would expose as a COM object.</span></span> <span data-ttu-id="42fe4-104">在将此代码放置在 .cs 文件中并添加到项目后，将“注册 COM 互操作”  属性设置为“True”  。</span><span class="sxs-lookup"><span data-stu-id="42fe4-104">After this code has been placed in a .cs file and added to your project, set the **Register for COM Interop** property to **True**.</span></span> <span data-ttu-id="42fe4-105">有关详细信息，请参阅[如何：为 COM 互操作注册组件](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w29wacsy(v=vs.100))。</span><span class="sxs-lookup"><span data-stu-id="42fe4-105">For more information, see [How to: Register a Component for COM Interop](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w29wacsy(v=vs.100)).</span></span>
+# <a name="example-com-class-c-programming-guide"></a><span data-ttu-id="13c80-102">COM 类示例（C# 编程指南）</span><span class="sxs-lookup"><span data-stu-id="13c80-102">Example COM Class (C# Programming Guide)</span></span>
+<span data-ttu-id="13c80-103">下面是将公开为 COM 对象的类的示例。</span><span class="sxs-lookup"><span data-stu-id="13c80-103">The following is an example of a class that you would expose as a COM object.</span></span> <span data-ttu-id="13c80-104">在将此代码放置在 .cs 文件中并添加到项目后，将“注册 COM 互操作”属性设置为“True”。</span><span class="sxs-lookup"><span data-stu-id="13c80-104">After this code has been placed in a .cs file and added to your project, set the **Register for COM Interop** property to **True**.</span></span> <span data-ttu-id="13c80-105">有关详细信息，请参阅[如何：注册 COM 互操作组件](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w29wacsy(v=vs.100))。</span><span class="sxs-lookup"><span data-stu-id="13c80-105">For more information, see [How to: Register a Component for COM Interop](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/w29wacsy(v=vs.100)).</span></span>
   
- <span data-ttu-id="42fe4-106">对 COM 公开 Visual C# 对象需要声明类接口、事件接口（如有必要）和类本身。</span><span class="sxs-lookup"><span data-stu-id="42fe4-106">Exposing Visual C# objects to COM requires declaring a class interface, an events interface if it is required, and the class itself.</span></span> <span data-ttu-id="42fe4-107">类成员必须遵循这些规则才能显示在 COM 中：</span><span class="sxs-lookup"><span data-stu-id="42fe4-107">Class members must follow these rules to be visible to COM:</span></span>  
+ <span data-ttu-id="13c80-106">对 COM 公开 Visual C# 对象需要声明类接口、事件接口（如有必要）和类本身。</span><span class="sxs-lookup"><span data-stu-id="13c80-106">Exposing Visual C# objects to COM requires declaring a class interface, an events interface if it is required, and the class itself.</span></span> <span data-ttu-id="13c80-107">类成员必须遵循这些规则才能显示在 COM 中：</span><span class="sxs-lookup"><span data-stu-id="13c80-107">Class members must follow these rules to be visible to COM:</span></span>  
   
-- <span data-ttu-id="42fe4-108">类必须是公开的。</span><span class="sxs-lookup"><span data-stu-id="42fe4-108">The class must be public.</span></span>  
+- <span data-ttu-id="13c80-108">类必须是公开的。</span><span class="sxs-lookup"><span data-stu-id="13c80-108">The class must be public.</span></span>  
   
-- <span data-ttu-id="42fe4-109">属性、方法和事件必须是公开的。</span><span class="sxs-lookup"><span data-stu-id="42fe4-109">Properties, methods, and events must be public.</span></span>  
+- <span data-ttu-id="13c80-109">属性、方法和事件必须是公开的。</span><span class="sxs-lookup"><span data-stu-id="13c80-109">Properties, methods, and events must be public.</span></span>  
   
-- <span data-ttu-id="42fe4-110">必须在类接口上声明属性和方法。</span><span class="sxs-lookup"><span data-stu-id="42fe4-110">Properties and methods must be declared on the class interface.</span></span>  
+- <span data-ttu-id="13c80-110">必须在类接口上声明属性和方法。</span><span class="sxs-lookup"><span data-stu-id="13c80-110">Properties and methods must be declared on the class interface.</span></span>  
   
-- <span data-ttu-id="42fe4-111">必须在事件接口中声明事件。</span><span class="sxs-lookup"><span data-stu-id="42fe4-111">Events must be declared in the event interface.</span></span>  
+- <span data-ttu-id="13c80-111">必须在事件接口中声明事件。</span><span class="sxs-lookup"><span data-stu-id="13c80-111">Events must be declared in the event interface.</span></span>  
   
- <span data-ttu-id="42fe4-112">该类中未在这些接口中声明的其他公共成员将对 COM 不可见，但它们对其他 .NET Framework 对象可见。</span><span class="sxs-lookup"><span data-stu-id="42fe4-112">Other public members in the class that are not declared in these interfaces will not be visible to COM, but they will be visible to other .NET Framework objects.</span></span>  
+ <span data-ttu-id="13c80-112">该类中未在这些接口中声明的其他公共成员将对 COM 不可见，但它们对其他 .NET 对象可见。</span><span class="sxs-lookup"><span data-stu-id="13c80-112">Other public members in the class that are not declared in these interfaces will not be visible to COM, but they will be visible to other .NET objects.</span></span>  
   
- <span data-ttu-id="42fe4-113">若要对 COM 公开属性和方法，则必须在类接口上声明这些属性和方法，将它们标记为 `DispId` 属性，并在类中实现它们。</span><span class="sxs-lookup"><span data-stu-id="42fe4-113">To expose properties and methods to COM, you must declare them on the class interface and mark them with a `DispId` attribute, and implement them in the class.</span></span> <span data-ttu-id="42fe4-114">在接口中声明成员的顺序是用于 COM vtable 的顺序。</span><span class="sxs-lookup"><span data-stu-id="42fe4-114">The order in which the members are declared in the interface is the order used for the COM vtable.</span></span>  
+ <span data-ttu-id="13c80-113">若要对 COM 公开属性和方法，则必须在类接口上声明这些属性和方法，将它们标记为 `DispId` 属性，并在类中实现它们。</span><span class="sxs-lookup"><span data-stu-id="13c80-113">To expose properties and methods to COM, you must declare them on the class interface and mark them with a `DispId` attribute, and implement them in the class.</span></span> <span data-ttu-id="13c80-114">在接口中声明成员的顺序是用于 COM vtable 的顺序。</span><span class="sxs-lookup"><span data-stu-id="13c80-114">The order in which the members are declared in the interface is the order used for the COM vtable.</span></span>  
   
- <span data-ttu-id="42fe4-115">若要从类中公开事件，则必须在事件接口上声明这些事件并将其标记为 `DispId` 属性。</span><span class="sxs-lookup"><span data-stu-id="42fe4-115">To expose events from your class, you must declare them on the events interface and mark them with a `DispId` attribute.</span></span> <span data-ttu-id="42fe4-116">此类不应实现此接口。</span><span class="sxs-lookup"><span data-stu-id="42fe4-116">The class should not implement this interface.</span></span>  
+ <span data-ttu-id="13c80-115">若要从类中公开事件，则必须在事件接口上声明这些事件并将其标记为 `DispId` 属性。</span><span class="sxs-lookup"><span data-stu-id="13c80-115">To expose events from your class, you must declare them on the events interface and mark them with a `DispId` attribute.</span></span> <span data-ttu-id="13c80-116">此类不应实现此接口。</span><span class="sxs-lookup"><span data-stu-id="13c80-116">The class should not implement this interface.</span></span>  
   
- <span data-ttu-id="42fe4-117">此类实现此类接口；它可以实现多个接口，但第一个实现将为默认类接口。</span><span class="sxs-lookup"><span data-stu-id="42fe4-117">The class implements the class interface; it can implement more than one interface, but the first implementation will be the default class interface.</span></span> <span data-ttu-id="42fe4-118">在此处实现向 COM 公开的方法和属性。</span><span class="sxs-lookup"><span data-stu-id="42fe4-118">Implement the methods and properties exposed to COM here.</span></span> <span data-ttu-id="42fe4-119">它们必须标记为公共，并且必须匹配类接口中的声明。</span><span class="sxs-lookup"><span data-stu-id="42fe4-119">They must be marked public and must match the declarations in the class interface.</span></span> <span data-ttu-id="42fe4-120">此外，在此处声明此类引发的事件。</span><span class="sxs-lookup"><span data-stu-id="42fe4-120">Also, declare the events raised by the class here.</span></span> <span data-ttu-id="42fe4-121">它们必须标记为公共，并且必须匹配事件接口中的声明。</span><span class="sxs-lookup"><span data-stu-id="42fe4-121">They must be marked public and must match the declarations in the events interface.</span></span>  
+ <span data-ttu-id="13c80-117">此类实现此类接口；它可以实现多个接口，但第一个实现将为默认类接口。</span><span class="sxs-lookup"><span data-stu-id="13c80-117">The class implements the class interface; it can implement more than one interface, but the first implementation will be the default class interface.</span></span> <span data-ttu-id="13c80-118">在此处实现向 COM 公开的方法和属性。</span><span class="sxs-lookup"><span data-stu-id="13c80-118">Implement the methods and properties exposed to COM here.</span></span> <span data-ttu-id="13c80-119">它们必须标记为公共，并且必须匹配类接口中的声明。</span><span class="sxs-lookup"><span data-stu-id="13c80-119">They must be marked public and must match the declarations in the class interface.</span></span> <span data-ttu-id="13c80-120">此外，在此处声明此类引发的事件。</span><span class="sxs-lookup"><span data-stu-id="13c80-120">Also, declare the events raised by the class here.</span></span> <span data-ttu-id="13c80-121">它们必须标记为公共，并且必须匹配事件接口中的声明。</span><span class="sxs-lookup"><span data-stu-id="13c80-121">They must be marked public and must match the declarations in the events interface.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="42fe4-122">示例</span><span class="sxs-lookup"><span data-stu-id="42fe4-122">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="13c80-122">示例</span><span class="sxs-lookup"><span data-stu-id="13c80-122">Example</span></span>  
  [!code-csharp[csProgGuideInterop#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInterop/CS/ExampleCOM.cs#8)]  
   
-## <a name="see-also"></a><span data-ttu-id="42fe4-123">另请参阅</span><span class="sxs-lookup"><span data-stu-id="42fe4-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="13c80-123">请参阅</span><span class="sxs-lookup"><span data-stu-id="13c80-123">See also</span></span>
 
-- [<span data-ttu-id="42fe4-124">C# 编程指南</span><span class="sxs-lookup"><span data-stu-id="42fe4-124">C# Programming Guide</span></span>](../index.md)
-- [<span data-ttu-id="42fe4-125">互操作性</span><span class="sxs-lookup"><span data-stu-id="42fe4-125">Interoperability</span></span>](./index.md)
-- [<span data-ttu-id="42fe4-126">“项目设计器”->“生成”页 (C#)</span><span class="sxs-lookup"><span data-stu-id="42fe4-126">Build Page, Project Designer (C#)</span></span>](/visualstudio/ide/reference/build-page-project-designer-csharp)
+- [<span data-ttu-id="13c80-124">C# 编程指南</span><span class="sxs-lookup"><span data-stu-id="13c80-124">C# Programming Guide</span></span>](../index.md)
+- [<span data-ttu-id="13c80-125">互操作性</span><span class="sxs-lookup"><span data-stu-id="13c80-125">Interoperability</span></span>](./index.md)
+- [<span data-ttu-id="13c80-126">“项目设计器”->“生成”页 (C#)</span><span class="sxs-lookup"><span data-stu-id="13c80-126">Build Page, Project Designer (C#)</span></span>](/visualstudio/ide/reference/build-page-project-designer-csharp)
