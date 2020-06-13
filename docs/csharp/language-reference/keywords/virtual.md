@@ -33,7 +33,7 @@ public virtual double Area()
 
 默认情况下，方法是非虚拟的。 不能替代非虚方法。
 
-`virtual` 修饰符不能与 `static`、`abstract``private` 或 `override` 修饰符一起使用。 以下示例显示了虚拟属性：
+`virtual` 修饰符不能与 `static`、`abstract`、`private` 或 `override` 修饰符一起使用。 以下示例显示了虚拟属性：
 
 [!code-csharp[csrefKeywordsModifiers#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#26)]
 
