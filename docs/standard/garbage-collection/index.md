@@ -1,5 +1,6 @@
 ---
 title: .NET 垃圾回收
+description: 了解 .NET 中的垃圾回收。 .NET 垃圾回收器管理应用程序的内存分配和释放。
 ms.date: 04/21/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -18,12 +19,12 @@ helpviewer_keywords:
 - runtime, garbage collection
 - garbage collection, about
 ms.assetid: 22b6cb97-0c80-4eeb-a2cf-5ed7655e37f9
-ms.openlocfilehash: ef7e078c6ef2f0b4081c49aa0db09316e79f0702
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: dde0012ff7233eb7ee13efab1931f129b0eae276
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286049"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662480"
 ---
 # <a name="garbage-collection"></a>垃圾回收
 

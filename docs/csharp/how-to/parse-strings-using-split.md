@@ -9,12 +9,12 @@ helpviewer_keywords:
 - parse strings
 ms.assetid: 729c2923-4169-41c6-9c90-ef176c1e2953
 ms.custom: mvc
-ms.openlocfilehash: cf8307517213b54041b272843232eb595660b2e9
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 4f0056426fb29ec3d76093e57fa45e2046f27a4f
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389509"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662987"
 ---
 # <a name="how-to-parse-strings-using-stringsplit-in-c"></a>如何使用 String.Split 分析字符串（C\# 指南）
 
@@ -24,11 +24,11 @@ ms.locfileid: "81389509"
 
 下方代码将一个常用短语拆分为一个由每个单词组成的字符串数组。
 
-[!code-csharp-interactive[split strings on word boundaries](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#1)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet1":::
 
 分隔符的每个实例都会在返回的数组中产生一个值。 连续的分隔符将生成空字符串作为返回的数组中的值。 下面的示例介绍如何创建空字符串，该示例使用空格字符作为分隔符。
 
-[!code-csharp-interactive[split strings with repeated separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#2)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet2":::
 
 该行为可以更容易地用逗号分隔值 (CSV) 文件之类的格式表示表格数据。 连续的逗号表示空白列。
 
@@ -36,19 +36,17 @@ ms.locfileid: "81389509"
 
 <xref:System.String.Split%2A?displayProperty=nameWithType> 可使用多个分隔符。
 以下示例使用空格、逗号、句点、冒号和制表符，所有内容均在包含这些分隔字符的数组中传递到 <xref:System.String.Split%2A>。
-代码底部的循环显示返回数组中的每个单词。  
+代码底部的循环显示返回数组中的每个单词。
 
-[!code-csharp-interactive[split strings using multiple separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#3)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet3":::
 
 任何分隔符的连续实例都会在输出数组中生成空字符串：
 
-[!code-csharp-interactive[split strings using multiple consecutive separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#4)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet4":::
 
-<xref:System.String.Split%2A?displayProperty=nameWithType> 可采用字符串数组（充当用于分析目标字符串的分隔符的字符序列，而非单个字符）。  
-  
-[!code-csharp-interactive[split strings using strings as separators](../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs#5)]
+<xref:System.String.Split%2A?displayProperty=nameWithType> 可采用字符串数组（充当用于分析目标字符串的分隔符的字符序列，而非单个字符）。
 
-可通过查看 [GitHub 存储库](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings)中的代码来尝试这些示例。 也可以下载这些示例的 [zip 文件](../../../samples/snippets/csharp/how-to/strings.zip)。
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ParseStringsUsingSplit.cs" id="Snippet5":::
 
 ## <a name="see-also"></a>请参阅
 

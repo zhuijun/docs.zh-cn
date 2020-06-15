@@ -4,12 +4,12 @@ description: 通过使用 dotnet test 和 xUnit 分步生成 Visual Basic 示例
 author: billwagner
 ms.author: wiwagn
 ms.date: 05/18/2020
-ms.openlocfilehash: ed1291a980f9a39284525877bab8d0a93389fbd0
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: d87550d692e0b7f3bfee1633bd00cbf501cc2e67
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702956"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502751"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-xunit"></a>使用 dotnet test 和 xUnit 进行 Visual Basic .NET Core 库单元测试
 
@@ -222,7 +222,7 @@ Public Function IsPrime(candidate As Integer) As Boolean
 End Function
 ```
 
-遵循 TDD 方法，添加更多失败的测试，然后更新目标代码。 请参阅[已完成的测试版本](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.vb)和[库的完整实现](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-dotnet-test/PrimeService/PrimeService.vb)。
+遵循 TDD 方法，添加更多失败的测试，然后更新目标代码。 请参阅[已完成的测试版本](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.vb)和[库的完整实现](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-vb-dotnet-test/PrimeService/PrimeService.vb)。
 
 已完成的 `IsPrime` 方法不是用于测试素性的有效算法。
 

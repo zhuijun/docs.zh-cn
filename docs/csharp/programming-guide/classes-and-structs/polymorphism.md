@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: 58980bd0d70d8a778cdb208f56d31ee8465871a4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 65f5c882ec4d7f8cbcc7ec7bf535091febfba64d
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170164"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662649"
 ---
 # <a name="polymorphism-c-programming-guide"></a>多态性（C# 编程指南）
 
@@ -50,7 +50,7 @@ ms.locfileid: "79170164"
 
 字段不能是虚拟的，只有方法、属性、事件和索引器才可以是虚拟的。 当派生类重写某个虚拟成员时，即使该派生类的实例被当作基类的实例访问，也会调用该成员。 以下代码提供了一个示例：
 
-[!code-csharp[Virtual overview example](~/samples/snippets/csharp/objectoriented/Inheritance.cs#VirtualMethods)]
+[!code-csharp[Virtual overview example](~/samples/snippets/csharp/objectoriented/Inheritance.cs#SnippetTestVirtualMethods)]
 
 虚方法和属性允许派生类扩展基类，而无需使用方法的基类实现。 有关详细信息，请参阅[使用 Override 和 New 关键字进行版本控制](./versioning-with-the-override-and-new-keywords.md)。 接口提供另一种方式来定义将实现留给派生类的方法或方法集。 有关详细信息，请参阅[接口](../interfaces/index.md)。
 

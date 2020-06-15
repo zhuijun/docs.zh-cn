@@ -1,5 +1,6 @@
 ---
 title: 文件和流 I/O - .NET
+description: 了解文件和流 I/O（即在 .NET 中的存储媒体中传入或传出数据）的基础知识。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - streams, I/O
 - data streams, I/O
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
-ms.openlocfilehash: 3c69e0fd23b1f8bc11fe908c66ba492f31a53f30
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2761d17846009ba06a2ffb1fc58b430f3ec9a949
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75706590"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662714"
 ---
 # <a name="file-and-stream-io"></a>文件和流 I/O
 

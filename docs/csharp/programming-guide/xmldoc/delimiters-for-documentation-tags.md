@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /** */ delimiters for C# documentation tags
 - /// delimiter for C# documentation
 ms.assetid: 9b2bdd18-4f5c-4c0b-988e-fb992e0d233e
-ms.openlocfilehash: 7e62c75fd393c4009c987830cca41e512cdb6250
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: db8d43edc8b7cb0066fd3afcb75a1852603e86c4
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287375"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594421"
 ---
 # <a name="delimiters-for-documentation-tags-c-programming-guide"></a>文档标记分隔符（C# 编程指南）
 

@@ -2,12 +2,12 @@
 title: dotnet test 命令
 description: dotnet test 命令可用于在给定项目中执行单元测试。
 ms.date: 04/29/2020
-ms.openlocfilehash: 1190ecb75e83c9930c60726e7cd83203b11928cb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: cbe9e7cce1722efb808c68ee49bb9012be6dcff7
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283931"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594447"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -192,8 +192,8 @@ dotnet test -h|--help
   ```dotnetcli
   dotnet test --logger "console;verbosity=detailed"
   ```
-  
-  - 在当前目录下的项目中运行测试，并报告在测试主机发生故障时正在进行的测试：
+
+- 在当前目录下的项目中运行测试，并报告在测试主机发生故障时正在进行的测试：
 
   ```dotnetcli
   dotnet test --blame
