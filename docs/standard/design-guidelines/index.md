@@ -1,5 +1,6 @@
 ---
 title: 框架设计准则
+description: 请参阅框架设计准则，用于设计扩展和与 .NET 交互的库，以确保 API 一致性和易用性。
 titleSuffix: ''
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - class library design guidelines [.NET Framework], about
 - class library design guidelines [.NET Framework]
 ms.assetid: 5fbcaf4f-ea2a-4d20-b0d6-e61dee202b4b
-ms.openlocfilehash: 5a4edca70844a2b2a3972381b34efe85664f353d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 17998adb1d18579f6763a80a82944e742e284e4e
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84276031"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769062"
 ---
 # <a name="framework-design-guidelines"></a>框架设计准则
 本部分提供了有关设计扩展和与 .NET Framework 进行交互的库的指南。 其目标是通过提供与用于开发的编程语言无关的统一编程模型，来帮助库设计人员确保 API 一致性和易用性。 建议在开发扩展 .NET Framework 的类和组件时遵循这些设计指导原则。 不一致的库设计会对开发人员工作效率产生负面影响，并防止采用。  

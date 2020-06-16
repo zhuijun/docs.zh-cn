@@ -1,5 +1,6 @@
 ---
 title: 使用可移植类库的跨平台开发
+description: 使用 .NET 中的可移植类库项目类型，快速轻松地为 Microsoft 平台构建跨平台应用程序和库。
 ms.date: 09/17/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - targeting multiple platforms
 - multiple platforms, targeting
 ms.assetid: c31e1663-c164-4e65-b66d-d3aa8750a154
-ms.openlocfilehash: 033c9bc6e506d0ae2b9f20fedb72d1b7f29e434b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: be1a49f7da7ce98f9e5e3ff8d927ce5230bfa8d8
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288909"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769140"
 ---
 # <a name="cross-platform-development-with-the-portable-class-library"></a>具有可移植类库的跨平台开发
 

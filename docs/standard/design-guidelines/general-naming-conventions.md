@@ -1,5 +1,6 @@
 ---
 title: 通用命名约定
+description: 使用与 word 选项相关的常规命名约定、有关使用缩写和首字母缩写词的准则，以及避免使用特定于语言的名称的指南。
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - names [.NET Framework], type names
 - names [.NET Framework], acronyms
 ms.assetid: d3a77ea1-75d2-4969-a8c3-3e1e3e1aaedc
-ms.openlocfilehash: c90987fd28d5157cfb7f7eea4680b5ab4be1a200
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b7f06a57c57800afcfa7febf9452094b4ad5ddc1
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290949"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769075"
 ---
 # <a name="general-naming-conventions"></a>通用命名约定
 
@@ -73,7 +74,7 @@ ms.locfileid: "84290949"
 |**bool**|**布尔值**|**bool**|**布尔值**|
 |**char**|**Char**|**wchar_t**|**Char**|
 |**string**|**字符串**|**字符串**|**字符串**|
-|对象|**Object**|**Object**|**Object**|
+|**object**|**Object**|**Object**|**Object**|
 
  ✔️使用公用名（如 `value` 或 `item` ），而不是重复类型名称，在极少数情况下，标识符没有语义含义，并且参数的类型并不重要。
 

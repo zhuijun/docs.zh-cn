@@ -1,5 +1,6 @@
 ---
 title: .NET 中的安全性
+description: 了解 .NET 中的安全性。 请访问描述主要安全概念、基于角色的安全性、加密模型和安全编码准则的链接。
 ms.date: 06/04/2018
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - security [.NET Framework]
 - security [.NET]
 ms.assetid: 9a9621d7-8883-4a4f-a874-65e8e09e20a6
-ms.openlocfilehash: 2e4c289d7049fb587cdc9a4928f98852483fde5f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 21511b580a4f922d2aef04cc79f5d551f0406b45
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705988"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767814"
 ---
 # <a name="security-in-net"></a>.NET 中的安全性
 
@@ -31,7 +32,7 @@ ms.locfileid: "75705988"
 - [加密模型](cryptography-model.md)  
 概述 .NET 提供的加密服务。 本节是开发人员感兴趣的内容。
 
-- [安全编码准则](secure-coding-guidelines.md)  
+- [代码安全维护指南](secure-coding-guidelines.md)  
 描述创建可靠的 .NET 应用程序的一些最佳实践。 本节是开发人员感兴趣的内容。
 
 ## <a name="related-sections"></a>相关章节

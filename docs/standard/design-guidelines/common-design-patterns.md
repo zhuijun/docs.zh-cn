@@ -1,17 +1,18 @@
 ---
 title: 常见设计模式
+description: 请参阅在 .NET 中描述几个常见设计模式的链接：依赖属性和释放模式。
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - design patterns in class libraries
 - class library design guidelines [.NET Framework], design patterns
 ms.assetid: f7bd1361-4ab2-4132-972d-a044b8f197e1
-ms.openlocfilehash: 9b9525a7597f7df6c9a554b51160a99f0e06232c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d44a01152d0bddc8aaad9423f97c2a5b95458258
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290962"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767749"
 ---
 # <a name="common-design-patterns"></a>常见设计模式
 软件模式、模式语言和对立模式有很多书籍，它们可满足各种模式的使用。 因此，本章提供了与一组非常有限的模式相关的指南和讨论，这些模式经常在 .NET Framework Api 的设计中使用。  
