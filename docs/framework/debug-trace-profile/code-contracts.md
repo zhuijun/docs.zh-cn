@@ -1,5 +1,6 @@
 ---
 title: 代码协定
+description: 探索代码协定，它提供了一种方法，用于指定 .NET 代码中的前置条件、后置条件和对象固定。
 ms.date: 09/05/2018
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - Code contracts
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
-ms.openlocfilehash: b60f992cf9d934ed622c89a49c491a80377fb6fe
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 60f794373af75bd3f745c224e0a8c7a84192e4c4
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216719"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904138"
 ---
 # <a name="code-contracts"></a>代码协定
 
@@ -67,7 +68,7 @@ if (x == null) throw new ...
 Contract.EndContractBlock(); // All previous "if" checks are preconditions
 ```
 
-请注意，上述测试中的条件是取反的前置条件。 （实际的前提条件将为 `x != null`。）求反的前置条件受到严格限制：必须按前面的示例所示编写：也就是说，它不应包含任何 `else` 子句，`then` 子句的主体必须是单个 `throw` 语句。 `if` 测试受纯度和可见性规则约束（请参阅[使用准则](#usage_guidelines)），但 `throw` 表达式仅受纯度规则约束。 但是，引发的异常类型必须与发生协定的方法同样可见。
+请注意，上述测试中的条件是取反的前置条件。 （实际前提条件为 `x != null` 。）求反的前置条件受到严格限制：必须按前面的示例所示编写：也就是说，它不应包含 `else` 子句，并且子句的主体 `then` 必须是单个 `throw` 语句。 `if` 测试受纯度和可见性规则约束（请参阅[使用准则](#usage_guidelines)），但 `throw` 表达式仅受纯度规则约束。 但是，引发的异常类型必须与发生协定的方法同样可见。
 
 ## <a name="postconditions"></a>Postconditions
 
@@ -91,9 +92,9 @@ Contract.Ensures(this.F > 0);
 Contract.EnsuresOnThrow<T>(this.F > 0);
 ```
 
-自变量是指每次引发作为 `true` 的子类型的异常时必须为 `T` 的条件。
+自变量是指每次引发作为 `T` 的子类型的异常时必须为 `true` 的条件。
 
-有一些异常类型很难在异常后置条件中使用。 例如，若要使用 <xref:System.Exception> 的 `T` 类型，则无论引发的异常类型如何（即使是堆栈溢出或其他不可控制的异常），方法都必须保证条件。 应仅将异常后置条件用于调用成员时可能引发的特定异常，例如，当对 <xref:System.InvalidTimeZoneException> 方法调用引发 <xref:System.TimeZoneInfo> 时。
+有一些异常类型很难在异常后置条件中使用。 例如，若要使用 `T` 的 <xref:System.Exception> 类型，则无论引发的异常类型如何（即使是堆栈溢出或其他不可控制的异常），方法都必须保证条件。 应仅将异常后置条件用于调用成员时可能引发的特定异常，例如，当对 <xref:System.TimeZoneInfo> 方法调用引发 <xref:System.InvalidTimeZoneException> 时。
 
 ### <a name="special-postconditions"></a>特殊后置条件
 
@@ -101,7 +102,7 @@ Contract.EnsuresOnThrow<T>(this.F > 0);
 
 - 通过使用表达式 `Contract.Result<T>()`（其中 `T` 替换为方法的返回类型），可引用后置条件中的方法返回值。 编译器无法推断出类型时，必须显式提供此类型。 例如，C# 编译器无法推断不带任何参数的方法类型，因此它需要后置条件 `Contract.Ensures(0 <Contract.Result<int>())`。返回类型为 `void` 的方法无法引用后置条件中的 `Contract.Result<T>()`。
 
-- 后置条件中的预状态值是指方法或属性开头的表达式的值。 它使用表达式 `Contract.OldValue<T>(e)`，其中 `T` 是 `e` 的类型。 每次编译器可推断出类型时，都可发出泛型类型参数。 （例如， C#编译器始终会推断类型，因为它采用了参数。）`e` 和可能出现旧表达式的上下文有几个限制。 旧表达式中不能包含其他旧表达式。 最重要的是，旧表达式必须引用方法前置条件状态中的一个值。 换言之，只要方法前置条件为 `true`，此表达式都必须可以进行计算。 以下是此规则的几个实例。
+- 后置条件中的预状态值是指方法或属性开头的表达式的值。 它使用表达式 `Contract.OldValue<T>(e)`，其中 `T` 是 `e` 的类型。 每次编译器可推断出类型时，都可发出泛型类型参数。 （例如，c # 编译器始终会推断类型，因为它采用了参数。）在中可能出现的情况 `e` 和可能出现旧表达式的上下文中有几个限制。 旧表达式中不能包含其他旧表达式。 最重要的是，旧表达式必须引用方法前置条件状态中的一个值。 换言之，只要方法前置条件为 `true`，此表达式都必须可以进行计算。 以下是此规则的几个实例。
 
   - 方法的前置条件状态中必须存在值。 若要引用对象上的字段，前提条件必须保证对象始终为非 null。
 
@@ -163,11 +164,11 @@ protected void ObjectInvariant ()
 }
 ```
 
-固定协定由 CONTRACTS_FULL 预处理器符号有条件地进行定义。 在运行时检查期间，每次公共方法结束都要检查固定协定。 如果固定协定提到相同类中的公共方法，则将禁用通常在此公共方法结束时执行的固定协定检查。 相反，仅在此方法的最外层方法调用结束时进行检查。 如果因调用其他类上的方法而重新输入类，也会发生此类情况。 不会检查对象终结器和 <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> 实现的固定条件。
+固定协定由 CONTRACTS_FULL 预处理器符号有条件地进行定义。 在运行时检查期间，每次公共方法结束都要检查固定协定。 如果固定协定提到相同类中的公共方法，则将禁用通常在此公共方法结束时执行的固定协定检查。 相反，仅在此方法的最外层方法调用结束时进行检查。 如果因调用其他类上的方法而重新输入类，也会发生此类情况。 不会检查对象终结器和实现的固定条件 <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> 。
 
 <a name="usage_guidelines"></a>
 
-## <a name="usage-guidelines"></a>使用指南
+## <a name="usage-guidelines"></a>使用准则
 
 ### <a name="contract-ordering"></a>协定顺序
 

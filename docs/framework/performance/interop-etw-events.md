@@ -1,16 +1,17 @@
 ---
 title: 互操作 ETW 事件
+description: 查看互操作 ETW （Windows 事件跟踪）事件，这些事件在 .NET 中捕获有关 Microsoft 中间语言（MSIL）存根生成 & 缓存的信息。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - interop events [.NET Framework]
 - ETW, interop events (CLR)
 ms.assetid: eb6eac2e-45f4-4923-a32c-38f203da66df
-ms.openlocfilehash: 80fd1f7487dbe3925b875e728eaeddac86927ad4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9dac9bc70cd070eb3e94969ce47ce24325a6f89d
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716021"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904242"
 ---
 # <a name="interop-etw-events"></a>互操作 ETW 事件
 互操作事件捕获有关 Microsoft 中间语言 (MSIL) 存根生成和缓存的信息。  
@@ -19,19 +20,19 @@ ms.locfileid: "75716021"
 
 下表显示了关键字和级别。 （有关详细信息，请参阅 [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md)。）  
   
-|引发事件的关键字|Level|  
+|引发事件的关键字|级别|  
 |-----------------------------------|-----------|  
 |`InteropKeyword` (0x2000)|信息性 (4)|  
   
  下表显示了事件信息。  
   
-|Event|事件 ID|在发生以下情况时引发|  
+|事件|事件 ID|在发生以下情况时引发|  
 |-----------|--------------|-----------------|  
 |`ILStubGenerated`|88|已生成 MSIL 存根。|  
   
  下表显示了事件数据。  
   
-|字段名|数据类型|描述|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt16|模块标识符。|  
 |StubMethodID|win:UInt64|存根方法标识符。|  
@@ -49,19 +50,19 @@ ms.locfileid: "75716021"
 
 下表显示了关键字和级别。  
   
-|引发事件的关键字|Level|  
+|引发事件的关键字|级别|  
 |-----------------------------------|-----------|  
 |`InteropKeyword` (0x2000)|信息性 (4)|  
   
  下表显示了事件信息。  
   
-|Event|事件 ID|在发生以下情况时引发|  
+|事件|事件 ID|在发生以下情况时引发|  
 |-----------|--------------|-----------------|  
 |`ILStubCacheHit`|89|已访问 MSIL 缓存。|  
   
  下表显示了事件数据。  
   
-|字段名|数据类型|描述|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt16|模块标识符。|  
 |StubMethodID|win:UInt64|存根方法标识符。|  

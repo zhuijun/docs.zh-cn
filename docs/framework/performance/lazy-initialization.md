@@ -1,5 +1,6 @@
 ---
 title: 延迟初始化
+description: 探索 .NET 中的迟缓初始化，性能提高意味着对象创建被延迟到首次使用该对象时。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,15 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - lazy initialization in .NET, introduction
 ms.assetid: 56b4ae5c-4745-44ff-ad78-ffe4fcde6b9b
-ms.openlocfilehash: 4f2b585dded6e20bb604f623217c6d1f1505c097
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 355fa326fc19e9a50a74e21ace0a6353f5c740c5
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180564"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904229"
 ---
 # <a name="lazy-initialization"></a>延迟初始化
-对象的** 迟缓初始化意味着推迟创建该对象，直到它被首次使用。 （对于本主题，术语 *"延迟初始化和**延迟实例化*"是同义词。延迟初始化主要用于提高性能、避免浪费计算和减少程序内存需求。 以下是常见方案：  
+对象的** 迟缓初始化意味着推迟创建该对象，直到它被首次使用。 （在本主题中，术语 "*迟缓初始化*" 和 "*迟缓实例化*" 是同义词。）迟缓初始化主要用于提高性能，避免浪费计算，并降低程序内存要求。 以下是常见方案：  
   
 - 对象创建成本高且程序可能不会使用它。 例如，假定内存中有具有 `Orders` 属性的 `Customer` 对象，该对象包含大量 `Order` 对象，初始化这些对象需要数据库连接。 如果用户永远不要求显示 Orders 或在计算中使用该数据，则无需使用系统内存或计算周期来创建它。 通过使用 `Lazy<Orders>` 来声明 `Orders` 对象用于迟缓初始化，可以避免在不使用该对象时浪费系统资源。  
   
@@ -32,7 +33,7 @@ ms.locfileid: "79180564"
 |<xref:System.Threading.LazyInitializer>|为对象的迟缓初始化提供高级 `static`（Visual Basic 中的 `Shared`）方法，无需支付类的成本。|  
   
 ## <a name="basic-lazy-initialization"></a>基本迟缓初始化  
- 若要定义迟缓初始化类型（例如 `MyType`），使用 `Lazy<MyType>`（Visual Basic 中的 `Lazy(Of MyType)`），如以下示例所示。 如果没有在 <xref:System.Lazy%601> 构造函数中传入委托，则在首次访问值属性时，将使用 <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> 创建包装类型。 如果类型没有无参数构造函数，则引发运行时异常。  
+ 若要定义迟缓初始化类型（例如 `MyType`），使用 `Lazy<MyType>`（Visual Basic 中的 `Lazy(Of MyType)`），如以下示例所示。 如果没有在 <xref:System.Lazy%601> 构造函数中传入委托，则在首次访问值属性时，将使用 <xref:System.Activator.CreateInstance%2A?displayProperty=nameWithType> 创建包装类型。 如果该类型没有无参数构造函数，则会引发运行时异常。  
   
  在以下示例中，假定 `Orders` 是包含从数据库检索的大量 `Order` 对象的类。 `Customer` 对象包含 `Orders` 的实例，但根据用户操作，可能不需要 `Orders` 对象的数据。  
   
@@ -49,7 +50,7 @@ ms.locfileid: "79180564"
  [!code-csharp[Lazy#3](../../../samples/snippets/csharp/VS_Snippets_Misc/lazy/cs/cs_lazycodefile.cs#3)]
  [!code-vb[Lazy#3](../../../samples/snippets/visualbasic/VS_Snippets_Misc/lazy/vb/lazy_vb.vb#3)]  
   
- <xref:System.Lazy%601> 对象总是返回其初始化的相同对象或值。 因此，<xref:System.Lazy%601.Value%2A> 属性为只读。 如果 <xref:System.Lazy%601.Value%2A> 存储了引用类型，将无法为其分配新对象。 （但是，您可以更改其可设置的公共字段和属性的值。如果<xref:System.Lazy%601.Value%2A>存储值类型，则无法修改其值。 但是，可以通过再次调用变量构造函数，使用新参数来创建新变量。  
+ <xref:System.Lazy%601> 对象总是返回其初始化的相同对象或值。 因此，<xref:System.Lazy%601.Value%2A> 属性为只读。 如果 <xref:System.Lazy%601.Value%2A> 存储了引用类型，将无法为其分配新对象。 （但是，您可以更改其可设置的公共字段和属性的值。）如果 <xref:System.Lazy%601.Value%2A> 存储值类型，则不能修改其值。 但是，可以通过再次调用变量构造函数，使用新参数来创建新变量。  
   
  [!code-csharp[Lazy#4](../../../samples/snippets/csharp/VS_Snippets_Misc/lazy/cs/cs_lazycodefile.cs#4)]
  [!code-vb[Lazy#4](../../../samples/snippets/visualbasic/VS_Snippets_Misc/lazy/vb/lazy_vb.vb#4)]  
@@ -85,9 +86,9 @@ ms.locfileid: "79180564"
   
 <a name="ExceptionsInLazyObjects"></a>
 ## <a name="exceptions-in-lazy-objects"></a>迟缓对象的异常  
- 如前所述，<xref:System.Lazy%601> 对象始终返回其初始化的相同对象或值，因此 <xref:System.Lazy%601.Value%2A> 属性是只读的。 如果启用异常缓存，则此永久性还会扩展到异常行为。 如果延迟初始化的对象启用了异常缓存，并在首次访问<xref:System.Lazy%601.Value%2A>该属性时从其初始化方法引发异常，则每次后续尝试访问该<xref:System.Lazy%601.Value%2A>属性时都会引发相同的异常。 也就是说，即使在多线程方案中，包装类型的构造函数也绝不会被重新调用。 因此，<xref:System.Lazy%601> 对象不能在一次访问时引发异常，并在随后访问时返回值。  
+ 如前所述，<xref:System.Lazy%601> 对象始终返回其初始化的相同对象或值，因此 <xref:System.Lazy%601.Value%2A> 属性是只读的。 如果启用异常缓存，则此永久性还会扩展到异常行为。 如果延迟初始化的对象已启用异常缓存并在第一次访问该属性时从其初始化方法引发异常 <xref:System.Lazy%601.Value%2A> ，则每次访问该属性的尝试都会引发相同的异常 <xref:System.Lazy%601.Value%2A> 。 也就是说，即使在多线程方案中，包装类型的构造函数也绝不会被重新调用。 因此，<xref:System.Lazy%601> 对象不能在一次访问时引发异常，并在随后访问时返回值。  
   
- 当使用任何采用初始化方法（`valueFactory` 参数）的 <xref:System.Lazy%601?displayProperty=nameWithType> 构造函数时，都会启用异常缓存；例如，当使用 `Lazy(T)(Func(T))` 构造函数时，会启用异常缓存。 如果构造函数还使用 <xref:System.Threading.LazyThreadSafetyMode> 值（`mode` 参数），请指定 <xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication?displayProperty=nameWithType> 或 <xref:System.Threading.LazyThreadSafetyMode.None?displayProperty=nameWithType>。 指定初始化方法可启用这两种模式的异常缓存。 初始化方法非常简单。 例如，它可能调用无参数构造函数的`T`：`new Lazy<Contents>(() => new Contents(), mode)`在 C# 中`New Lazy(Of Contents)(Function() New Contents())`，或在 Visual Basic 中调用。 如果使用不指定初始化方法的 <xref:System.Lazy%601?displayProperty=nameWithType> 构造函数，则不会缓存 `T` 无参数构造函数引发的异常。 有关详细信息，请参见 <xref:System.Threading.LazyThreadSafetyMode> 枚举。  
+ 当使用任何采用初始化方法（`valueFactory` 参数）的 <xref:System.Lazy%601?displayProperty=nameWithType> 构造函数时，都会启用异常缓存；例如，当使用 `Lazy(T)(Func(T))` 构造函数时，会启用异常缓存。 如果构造函数还使用 <xref:System.Threading.LazyThreadSafetyMode> 值（`mode` 参数），请指定 <xref:System.Threading.LazyThreadSafetyMode.ExecutionAndPublication?displayProperty=nameWithType> 或 <xref:System.Threading.LazyThreadSafetyMode.None?displayProperty=nameWithType>。 指定初始化方法可启用这两种模式的异常缓存。 初始化方法非常简单。 例如，它可能会调用的无参数构造函数 `T` ： `new Lazy<Contents>(() => new Contents(), mode)` 在 c # 中，或 `New Lazy(Of Contents)(Function() New Contents())` 在 Visual Basic 中。 如果使用不指定初始化方法的 <xref:System.Lazy%601?displayProperty=nameWithType> 构造函数，则不会缓存 `T` 无参数构造函数引发的异常。 有关详细信息，请参见 <xref:System.Threading.LazyThreadSafetyMode> 枚举。  
   
 > [!NOTE]
 > 如果通过将 `isThreadSafe` 构造函数参数设置为 `false` 或将 `mode` 构造函数参数设置为 <xref:System.Threading.LazyThreadSafetyMode.None?displayProperty=nameWithType> 来创建 <xref:System.Lazy%601> 对象，则必须从单个线程访问 <xref:System.Lazy%601> 对象或提供你自己的同步。 这适用于对象的所有方面，包括异常缓存。  
@@ -152,7 +153,7 @@ ms.locfileid: "79180564"
   
 ## <a name="see-also"></a>另请参阅
 
-- [托管线程基础知识](../../standard/threading/managed-threading-basics.md)
+- [托管线程处理基本知识](../../standard/threading/managed-threading-basics.md)
 - [线程与线程处理](../../standard/threading/threads-and-threading.md)
 - [任务并行库 (TPL)](../../standard/parallel-programming/task-parallel-library-tpl.md)
 - [如何：执行对象的延迟初始化](how-to-perform-lazy-initialization-of-objects.md)

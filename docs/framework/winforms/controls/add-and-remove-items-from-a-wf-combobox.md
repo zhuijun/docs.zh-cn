@@ -1,6 +1,7 @@
 ---
 title: 在 ComboBox、ListBox 或 CheckedListBox 控件中添加和删除项
 ms.date: 03/30/2017
+description: 了解如何仅在不使用数据绑定的情况下，添加和删除 Windows 窗体 ComboBox、ListBox 和 CheckedListBox 控件。
 dev_langs:
 - csharp
 - vb
@@ -14,19 +15,19 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], removing items
 - CheckedListBox control [Windows Forms], adding and removing items
 ms.assetid: 7224c8d2-4118-443e-ae1e-d7c17d1e69ee
-ms.openlocfilehash: 3a83d98af42386b566b4af7bc11ff383dea8fd6b
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: f3701257bbe410bf03c4c21700705e87b581bf2e
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746302"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904437"
 ---
 # <a name="how-to-add-and-remove-items-from-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>如何：在 Windows 窗体 ComboBox 控件、ListBox 控件或 CheckedListBox 控件中添加或移除项
-可以通过多种方式将项添加到 Windows 窗体组合框、列表框或选中的列表框中，因为这些控件可以绑定到各种数据源。 不过，本主题说明最简单的方法，并且不需要数据绑定。 显示的项通常是字符串;但是，可以使用任何对象。 控件中显示的文本是对象的 `ToString` 方法返回的值。  
+可以通过多种方式将项添加到 Windows 窗体组合框、列表框或选中的列表框中，因为这些控件可以绑定到各种数据源。 不过，本主题说明最简单的方法，并且不需要数据绑定。 显示的项通常是字符串;但是，可以使用任何对象。 控件中显示的文本是由对象的方法返回的值 `ToString` 。  
   
 ### <a name="to-add-items"></a>添加项  
   
-1. 使用 `ObjectCollection` 类的 `Add` 方法，将字符串或对象添加到列表。 使用 `Items` 属性引用集合：  
+1. 使用类的方法将字符串或对象添加到列表 `Add` `ObjectCollection` 。 使用属性引用集合 `Items` ：  
   
     ```vb  
     ComboBox1.Items.Add("Tokyo")  
@@ -42,7 +43,7 @@ ms.locfileid: "76746302"
   
      - 或 -  
   
-2. 将字符串或对象插入到列表中所需的 `Insert` 方法：  
+2. 将字符串或对象插入到列表中的所需位置， `Insert` 方法如下：  
   
     ```vb  
     CheckedListBox1.Items.Insert(0, "Copenhagen")  
@@ -58,7 +59,7 @@ ms.locfileid: "76746302"
   
      - 或 -  
   
-3. 将整个数组分配到 `Items` 集合：  
+3. 将整个数组分配给 `Items` 集合：  
   
     ```vb  
     Dim ItemObject(9) As System.Object  
@@ -91,7 +92,7 @@ ms.locfileid: "76746302"
   
 1. 调用 `Remove` 或 `RemoveAt` 方法来删除项。  
   
-     `Remove` 具有一个参数，该参数指定要删除的项。`RemoveAt` 删除具有指定索引号的项。  
+     `Remove`有一个参数，该参数指定要删除的项。`RemoveAt` 删除具有指定索引号的项。  
   
     ```vb  
     ' To remove item with index 0:  
@@ -122,7 +123,7 @@ ms.locfileid: "76746302"
   
 ### <a name="to-remove-all-items"></a>删除所有项  
   
-1. 调用 `Clear` 方法可从集合中删除所有项：  
+1. 调用 `Clear` 方法可从集合中移除所有项：  
   
     ```vb  
     ListBox1.Items.Clear()  
@@ -141,6 +142,6 @@ ms.locfileid: "76746302"
 - <xref:System.Windows.Forms.ComboBox>
 - <xref:System.Windows.Forms.ListBox>
 - <xref:System.Windows.Forms.CheckedListBox>
-- [如何：对 Windows 窗体 ComboBox、ListBox 或 CheckedListBox 控件的内容进行排序](sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)
+- [如何：对 Windows 窗体 ComboBox 控件、ListBox 控件或 CheckedListBox 控件的内容排序](sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)
 - [何时使用 Windows 窗体 ComboBox 而非 ListBox](when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md)
 - [用于列出选项的 Windows 窗体控件](windows-forms-controls-used-to-list-options.md)

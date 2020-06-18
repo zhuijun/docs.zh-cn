@@ -1,5 +1,6 @@
 ---
 title: 调整窗体大小
+description: 了解如何通过为 "Size" 属性设置新值或分别调整 "高度" 或 "宽度" 属性来调整窗体的高度和宽度。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - resizing Windows Forms
 - Windows Forms, resizing
 ms.assetid: 5d9dd47e-e68c-48c9-a0a3-a9ff34ba009d
-ms.openlocfilehash: 8d4ce46ada505f952fc3090d10c5d893338d19f2
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0d6383e4d29d9407d3da97bf8b94761f06d99748
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739301"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903267"
 ---
 # <a name="how-to-resize-windows-forms"></a>如何：调整 Windows 窗体的大小
 
@@ -58,7 +59,7 @@ Form1->Width = 300;
 
 \- 或 -
 
-通过设置 <xref:System.Drawing.Size.Width%2A> 属性更改 <xref:System.Drawing.Size.Height%2A> 或 <xref:System.Windows.Forms.Form.Size%2A>。
+通过设置 <xref:System.Windows.Forms.Form.Size%2A> 属性更改 <xref:System.Drawing.Size.Width%2A> 或 <xref:System.Drawing.Size.Height%2A>。
 
 但是，如以下代码示例所示，这种方法比只设置 <xref:System.Windows.Forms.Control.Width%2A> 或 <xref:System.Windows.Forms.Control.Height%2A> 属性更繁琐。
 
@@ -115,5 +116,5 @@ f->Size->X += 100;
 
 ## <a name="see-also"></a>另请参阅
 
-- [Windows 窗体入门](getting-started-with-windows-forms.md)
+- [入门与 Windows 窗体](getting-started-with-windows-forms.md)
 - [增强 Windows 窗体应用程序](./advanced/index.md)

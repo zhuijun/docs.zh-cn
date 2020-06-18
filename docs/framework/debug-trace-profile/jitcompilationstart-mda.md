@@ -1,5 +1,6 @@
 ---
 title: jitCompilationStart MDA
+description: 使用 jitCompilationStart 托管调试助手（MDA），该助手已开始报告实时（JIT）编译器何时开始编译 .NET 函数。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - JIT compilation
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - JitCompilationStart MDA
 - managed debugging assistants (MDAs), JIT compilation
 ms.assetid: 5ffd2857-d0ba-4342-9824-9ffe04ec135d
-ms.openlocfilehash: 9cae942bc01e9263720dbfe9acfb21bbb70bc548
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: bf2d09f433f0b8e4056fecd1f4e82bf3b91dd2bc
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216263"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904125"
 ---
 # <a name="jitcompilationstart-mda"></a>jitCompilationStart MDA
 激活 `jitCompilationStart` 托管调试助手 (MDA) 以报告实时 (MDA) 编译器何时开始编译函数。  
@@ -37,7 +38,7 @@ method name="Test!ns2.C0::m"
 ```  
   
 ## <a name="configuration"></a>配置  
- 以下配置文件显示多种筛选器，可筛选出首次 JIT 编译时，报告哪些方法。 您可以通过将 name 属性的值设置为 \*来指定报告所有方法。  
+ 以下配置文件显示多种筛选器，可筛选出首次 JIT 编译时，报告哪些方法。 您可以通过将 name 特性的值设置为来指定报告所有方法 \* 。  
   
 ```xml  
 <mdaConfig>  

@@ -1,5 +1,6 @@
 ---
 title: 事件顺序
+description: 了解有关应用程序和控件生存期内几个重要阶段 Windows 窗体中的事件顺序的详细信息。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - events [Windows Forms], order of
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - validation events [Windows Forms], order of
 - application startup event order
 ms.assetid: e81db09b-4453-437f-b78a-62d7cd5c9829
-ms.openlocfilehash: 618ac5a6a6a32ae1a53fc60ac80700d7648c81a7
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: b16d544d11500b2c684e87a915fc4b8eec071faa
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734857"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904333"
 ---
 # <a name="order-of-events-in-windows-forms"></a>Windows 窗体中的事件顺序
 对于依次处理其中每个事件的开发人员，Windows 窗体应用程序中引发事件的顺序非常具有吸引力。 当出现需要谨慎处理事件的情况时（例如，在重绘窗体的某些部件时），有必要了解运行时引发事件的确切顺序。 本主题提供了应用程序和控件的生存期中几个重要阶段中的事件顺序的详细信息。 有关鼠标输入事件顺序的特定详细信息，请参阅[中的鼠标事件 Windows 窗体](mouse-events-in-windows-forms.md)。 有关 Windows 窗体中事件的概述，请参阅[事件概述](events-overview-windows-forms.md)。 有关事件处理程序的构成的详细信息，请参阅[事件处理程序概述](event-handlers-overview-windows-forms.md)。  
@@ -46,7 +47,7 @@ ms.locfileid: "76734857"
   
 - <xref:System.Windows.Forms.Form.Deactivate?displayProperty=nameWithType>  
   
- 在主窗体关闭事件后，将引发 <xref:System.Windows.Forms.Application.ApplicationExit> 类的 <xref:System.Windows.Forms.Application> 事件。  
+ 在主窗体关闭事件后，将引发 <xref:System.Windows.Forms.Application> 类的 <xref:System.Windows.Forms.Application.ApplicationExit> 事件。  
   
 > [!NOTE]
 > Visual Basic 2005 包括其他应用程序事件，例如 <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Startup?displayProperty=nameWithType> 和 <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.Shutdown?displayProperty=nameWithType>。  

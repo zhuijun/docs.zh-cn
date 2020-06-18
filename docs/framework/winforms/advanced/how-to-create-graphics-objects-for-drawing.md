@@ -1,5 +1,6 @@
 ---
 title: 如何：创建用于绘制的 Graphics 对象
+description: 了解如何创建一个图形对象，该对象需要使用 GDI + 绘制线条和形状、呈现文本或显示和操作图像。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,51 +11,51 @@ helpviewer_keywords:
 - images [Windows Forms], creating
 - GDI+, creating images
 ms.assetid: 162861f9-f050-445e-8abb-b2c43a918b8b
-ms.openlocfilehash: d591d65904484e33285e5db7aa99760f3e1909d3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1a0884c1e9956dc6f4608e32372deeea24ef4670
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79142428"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903202"
 ---
 # <a name="how-to-create-graphics-objects-for-drawing"></a>如何：创建用于绘制的 Graphics 对象
-在使用 GDI+ 绘制线条和形状、渲染文本或显示和操作图像之前，需要创建一个<xref:System.Drawing.Graphics>对象。 该<xref:System.Drawing.Graphics>对象表示 GDI+ 绘图表面，是用于创建图形图像的对象。  
+你需要创建一个对象，然后才能使用 GDI + 绘制线条和形状、呈现文本或显示和操作图像 <xref:System.Drawing.Graphics> 。 <xref:System.Drawing.Graphics>对象表示 GDI + 绘图图面，是用于创建图形图像的对象。  
   
- 使用图形有两个步骤：  
+ 使用图形需要执行两个步骤：  
   
-1. 创建<xref:System.Drawing.Graphics>对象。  
+1. 创建 <xref:System.Drawing.Graphics> 对象。  
   
-2. 使用<xref:System.Drawing.Graphics>对象绘制线条和形状、渲染文本或显示和操作图像。  
+2. 使用 <xref:System.Drawing.Graphics> 对象绘制线条和形状、呈现文本或显示和操作图像。  
   
 ## <a name="creating-a-graphics-object"></a>创建图形对象  
- 图形对象可以通过多种方式创建。  
+ 可以通过多种方式创建图形对象。  
   
 #### <a name="to-create-a-graphics-object"></a>创建图形对象  
   
-- 在窗体或控件<xref:System.Windows.Forms.PaintEventArgs><xref:System.Windows.Forms.Control.Paint>的情况下，接收对图形对象的引用，作为 的一部分。 这通常是在为控件创建绘制代码时获取图形对象的引用的方式。 同样，在处理 的事件<xref:System.Drawing.Printing.PrintPageEventArgs>时<xref:System.Drawing.Printing.PrintDocument.PrintPage>，还可以获取图形对象作为<xref:System.Drawing.Printing.PrintDocument>属性。  
+- <xref:System.Windows.Forms.PaintEventArgs>在 <xref:System.Windows.Forms.Control.Paint> 窗体或控件的事件中，接收对图形对象的引用作为的一部分。 这通常是在创建控件的绘制代码时获取对图形对象的引用的方式。 同样，在为处理事件时，还可以获取图形对象作为的属性 <xref:System.Drawing.Printing.PrintPageEventArgs> <xref:System.Drawing.Printing.PrintDocument.PrintPage> <xref:System.Drawing.Printing.PrintDocument> 。  
   
-     -或-  
+     \- 或 -  
   
-- 调用控件<xref:System.Windows.Forms.Control.CreateGraphics%2A>或窗体的方法以获取对表示该控件或窗体的绘图<xref:System.Drawing.Graphics>表面的对象的引用。 如果要在已存在的窗体或控件上绘制，请使用此方法。  
+- 调用 <xref:System.Windows.Forms.Control.CreateGraphics%2A> 控件或窗体的方法来获取对对象的引用， <xref:System.Drawing.Graphics> 该对象表示该控件或窗体的绘图图面。 如果要在已存在的窗体或控件上进行绘制，请使用此方法。  
   
-     -或-  
+     \- 或 -  
   
-- 从<xref:System.Drawing.Graphics>继承的任何<xref:System.Drawing.Image>对象创建对象。 当您要更改已有的映像时，此方法非常有用。  
+- <xref:System.Drawing.Graphics>从继承自的任何对象创建对象 <xref:System.Drawing.Image> 。 当您想要更改现有的映像时，此方法非常有用。  
   
-     以下各节详细介绍了每个过程。  
+     以下各节将详细介绍其中每个过程。  
   
-## <a name="painteventargs-in-the-paint-event-handler"></a>绘制事件处理程序中的绘制事件  
- 在编程<xref:System.Windows.Forms.PaintEventHandler>控件 或<xref:System.Drawing.Printing.PrintDocument.PrintPage>的 时<xref:System.Drawing.Printing.PrintDocument>，图形对象作为 或<xref:System.Windows.Forms.PaintEventArgs><xref:System.Drawing.Printing.PrintPageEventArgs>的属性之一提供。  
+## <a name="painteventargs-in-the-paint-event-handler"></a>Paint 事件处理程序中的 PaintEventArgs  
+ 在 <xref:System.Windows.Forms.PaintEventHandler> 对控件或的进行编程时 <xref:System.Drawing.Printing.PrintDocument.PrintPage> <xref:System.Drawing.Printing.PrintDocument> ，图形对象作为或的属性之一提供 <xref:System.Windows.Forms.PaintEventArgs> <xref:System.Drawing.Printing.PrintPageEventArgs> 。  
   
-#### <a name="to-obtain-a-reference-to-a-graphics-object-from-the-painteventargs-in-the-paint-event"></a>从"绘制"事件中的"绘制事件"中获取对图形对象的引用  
+#### <a name="to-obtain-a-reference-to-a-graphics-object-from-the-painteventargs-in-the-paint-event"></a>从画图事件的 PaintEventArgs 中获取对图形对象的引用  
   
-1. 声明对象<xref:System.Drawing.Graphics>。  
+1. 声明 <xref:System.Drawing.Graphics> 对象。  
   
-2. 分配变量以引用作为 的<xref:System.Drawing.Graphics><xref:System.Windows.Forms.PaintEventArgs>一部分传递的对象。  
+2. 分配变量以引用 <xref:System.Drawing.Graphics> 作为的一部分传递的对象 <xref:System.Windows.Forms.PaintEventArgs> 。  
   
-3. 插入代码以绘制窗体或控件。  
+3. 插入用于绘制窗体或控件的代码。  
   
-     下面的示例演示如何引用<xref:System.Drawing.Graphics><xref:System.Windows.Forms.PaintEventArgs>事件中<xref:System.Windows.Forms.Control.Paint>的对象：  
+     下面的示例演示如何 <xref:System.Drawing.Graphics> <xref:System.Windows.Forms.PaintEventArgs> 在事件中引用对象 <xref:System.Windows.Forms.Control.Paint> ：  
   
     ```vb  
     Private Sub Form1_Paint(sender As Object, pe As PaintEventArgs) Handles _  
@@ -89,12 +90,12 @@ ms.locfileid: "79142428"
        }  
     ```  
   
-## <a name="creategraphics-method"></a>创建图形方法  
- 您还可以使用控件或窗体<xref:System.Windows.Forms.Control.CreateGraphics%2A>的方法来获取对表示该控件或窗体的绘图表面<xref:System.Drawing.Graphics>的对象的引用。  
+## <a name="creategraphics-method"></a>CreateGraphics 方法  
+ 你还可以使用 <xref:System.Windows.Forms.Control.CreateGraphics%2A> 控件或窗体的方法来获取对对象的引用， <xref:System.Drawing.Graphics> 该对象表示该控件或窗体的绘图图面。  
   
-#### <a name="to-create-a-graphics-object-with-the-creategraphics-method"></a>使用"创建图形"方法创建图形对象  
+#### <a name="to-create-a-graphics-object-with-the-creategraphics-method"></a>使用 CreateGraphics 方法创建图形对象  
   
-- 调用要<xref:System.Windows.Forms.Control.CreateGraphics%2A>呈现图形的窗体或控件的方法。  
+- 调用 <xref:System.Windows.Forms.Control.CreateGraphics%2A> 要在其上呈现图形的窗体或控件的方法。  
   
     ```vb  
     Dim g as Graphics  
@@ -117,14 +118,14 @@ ms.locfileid: "79142428"
     g = this->CreateGraphics();  
     ```  
   
-## <a name="create-from-an-image-object"></a>从图像对象创建  
- 此外，还可以从从<xref:System.Drawing.Image>类派生的任何对象创建图形对象。  
+## <a name="create-from-an-image-object"></a>从 Image 对象创建  
+ 此外，还可以从派生自类的任何对象创建图形对象 <xref:System.Drawing.Image> 。  
   
 #### <a name="to-create-a-graphics-object-from-an-image"></a>从图像创建图形对象  
   
-- 调用<xref:System.Drawing.Graphics.FromImage%2A?displayProperty=nameWithType>方法，提供要从中创建<xref:System.Drawing.Graphics>对象的 Image 变量的名称。  
+- 调用 <xref:System.Drawing.Graphics.FromImage%2A?displayProperty=nameWithType> 方法，并提供要从中创建对象的图像变量的名称 <xref:System.Drawing.Graphics> 。  
   
-     下面的示例演示如何使用<xref:System.Drawing.Bitmap>对象：  
+     下面的示例演示如何使用 <xref:System.Drawing.Bitmap> 对象：  
   
     ```vb  
     Dim myBitmap as New Bitmap("C:\Documents and Settings\Joe\Pics\myPic.bmp")  
@@ -144,29 +145,29 @@ ms.locfileid: "79142428"
     ```  
   
 > [!NOTE]
-> 只能从非索引<xref:System.Drawing.Graphics>的 .bmp 文件创建对象，例如 16 位、24 位和 32 位 .bmp 文件。 非索引 .bmp 文件的每个像素都包含一种颜色，而索引 .bmp 文件的像素将索引保留到颜色表。  
+> 只能 <xref:System.Drawing.Graphics> 从非索引的 .bmp 文件创建对象，例如16位、24位和32位 .bmp 文件。 非索引 .bmp 文件的每个像素都包含一种颜色，这与用于保存颜色表的索引的索引 .bmp 文件的像素不同。  
   
 ## <a name="drawing-and-manipulating-shapes-and-images"></a>绘制和操作形状和图像  
- 创建对象后，可以使用对象<xref:System.Drawing.Graphics>绘制线条和形状、渲染文本或显示和操作图像。 与<xref:System.Drawing.Graphics>对象一起使用的主体对象是：  
+ 创建对象后， <xref:System.Drawing.Graphics> 可以使用对象来绘制线条和形状、呈现文本或显示和操作图像。 与对象一起使用的主体对象 <xref:System.Drawing.Graphics> 包括：  
   
-- 类<xref:System.Drawing.Pen>— 用于绘制线条、勾画形状或渲染其他几何表示。  
+- <xref:System.Drawing.Pen>类-用于绘制线条、显示形状或呈现其他几何表示形式。  
   
-- 类<xref:System.Drawing.Brush>— 用于填充图形区域，如填充形状、图像或文本。  
+- <xref:System.Drawing.Brush>类-用于填充图形区域，如填充的形状、图像或文本。  
   
-- 类<xref:System.Drawing.Font>— 提供渲染文本时要使用的形状的说明。  
+- <xref:System.Drawing.Font>类-提供要在呈现文本时使用的形状的说明。  
   
-- 结构<xref:System.Drawing.Color>— 表示要显示的不同颜色。  
+- <xref:System.Drawing.Color>结构-表示要显示的不同颜色。  
   
 #### <a name="to-use-the-graphics-object-you-have-created"></a>使用已创建的图形对象  
   
-- 使用上面列出的相应对象绘制所需的内容。  
+- 使用上面列出的相应对象来绘制您需要的内容。  
   
-     有关详情，请参阅以下主题：  
+     有关详细信息，请参阅下列主题：  
   
-    |渲染|请参阅|  
+    |呈现|查看|  
     |---------------|---------|  
-    |线条|[如何：在 Windows 窗体上绘制线条](how-to-draw-a-line-on-a-windows-form.md)|  
-    |形状|[如何：绘制空心形状](how-to-draw-an-outlined-shape.md)|  
+    |线条|[如何：在 Windows 窗体上绘制直线](how-to-draw-a-line-on-a-windows-form.md)|  
+    |形状|[如何：绘制轮廓形状](how-to-draw-an-outlined-shape.md)|  
     |文本|[如何：在 Windows 窗体上绘制文本](how-to-draw-text-on-a-windows-form.md)|  
     |映像|[如何：使用 GDI+ 呈现图像](how-to-render-images-with-gdi.md)|  
   

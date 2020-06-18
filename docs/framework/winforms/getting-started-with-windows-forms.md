@@ -1,5 +1,6 @@
 ---
 title: 入门
+description: 了解如何使用 Windows 窗体来创建功能强大的基于 Windows 的应用程序，这些应用程序显示数据、处理用户输入并帮助你部署应用程序。
 ms.date: 03/30/2017
 f1_keywords:
 - Designer_System.Windows.Forms.Design.FormDocumentDesigner
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - Windows Forms, getting started
 - getting started [Windows Forms], Windows Forms
 ms.assetid: a031aa58-5027-4082-b590-df7c12c77dec
-ms.openlocfilehash: c5ea75bf826aa658269ec983b60e9dd2eb520ce0
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: ac4f166ca264f2533c5f174273fe60dcb9622a29
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743479"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903592"
 ---
 # <a name="getting-started-with-windows-forms"></a>Windows 窗体入门
 利用 Windows 窗体，你可以创建功能强大的基于 Windows 的应用程序。 以下主题详细介绍了如何利用 Windows 窗体的功能来显示数据、处理用户输入并轻松地部署应用程序以及增强安全性。  
@@ -22,7 +23,7 @@ ms.locfileid: "76743479"
  [Windows 窗体概述](windows-forms-overview.md)  
  包含 Windows 窗体和智能客户端应用程序的概述。  
   
- [新建 Windows 窗体](creating-a-new-windows-form.md)  
+ [创建新的 Windows 窗体](creating-a-new-windows-form.md)  
  包含指向一些主题的链接，这些主题描述用于创建 Windows 窗体应用程序的基本概念。  
   
  [在 Windows 窗体中创建事件处理程序](creating-event-handlers-in-windows-forms.md)  

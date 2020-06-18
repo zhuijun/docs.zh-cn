@@ -14,26 +14,26 @@ helpviewer_keywords:
 ms.assetid: 20fc1b9d-e228-4107-bd76-53934c1724b9
 topic_type:
 - apiref
-ms.openlocfilehash: 0a5a87c71bea603073c35dd851e443ca8c497523
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: acf490895db35af1c5d0d1e7fe7e3de5ae2a16b6
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83210431"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904281"
 ---
 # <a name="icordebugheapsegmentenum-interface"></a>ICorDebugHeapSegmentEnum 接口
 提供针对托管堆的内存区域的枚举器。 此接口是 ICorDebugEnum 接口的子类。  
   
 ## <a name="methods"></a>方法  
   
-|方法|描述|  
+|方法|说明|  
 |------------|-----------------|  
-|[Next 方法](icordebugheapsegmentenum-next-method.md)|获取指定数量的[COR_HEAPOBJECT](cor-heapobject-structure.md)实例，这些实例包含有关托管堆区域的信息。|  
+|[Next 方法](icordebugheapsegmentenum-next-method.md)|获取指定数量的[COR_SEGMENT](cor-segment-structure.md)实例，这些实例包含有关托管堆区域的信息。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
  `ICorDebugHeapSegmentEnum`接口实现 ICorDebugEnum 接口。  
   
- `ICorDebugHeapSegmentEnum`实例通过调用[ICorDebugProcess5：： EnumerateHeapRegions](icordebugprocess5-enumerateheapregions-method.md)方法填充[COR_HEAPOBJECT](cor-heapobject-structure.md)的实例。 可以通过调用[ICorDebugHeapSegmentEnum：： Next](icordebugheapsegmentenum-next-method.md)方法枚举集合中的[COR_HEAPOBJECT](cor-heapobject-structure.md)对象。  
+ `ICorDebugHeapSegmentEnum`实例通过调用[ICorDebugProcess5：： EnumerateHeapRegions](icordebugprocess5-enumerateheapregions-method.md)方法填充[COR_SEGMENT](cor-segment-structure.md)的实例。 可以通过调用[ICorDebugHeapSegmentEnum：： Next](icordebugheapsegmentenum-next-method.md)方法枚举集合中的[COR_SEGMENT](cor-segment-structure.md)对象。  
   
  `ICorDebugHeapSegmentEnum`集合对象枚举可能包含托管对象的所有内存区域，但不保证托管对象实际驻留在这些区域中。 它可能包括有关空的或保留的内存区域的信息。  
   
@@ -46,6 +46,6 @@ ms.locfileid: "83210431"
   
  **.NET Framework 版本：**[!INCLUDE[net_current_v45plus](../../../../includes/net-current-v45plus-md.md)]  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [调试接口](debugging-interfaces.md)
