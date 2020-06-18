@@ -1,16 +1,17 @@
 ---
 title: 自动缩放
+description: 了解自动缩放如何使在一台计算机上设计的窗体及其控件在另一台计算机上正确显示。
 ms.date: 06/15/2017
 helpviewer_keywords:
 - scalability [Windows Forms], automatic in Windows Forms
 - Windows Forms, automatic scaling
 ms.assetid: 68fad25b-afbc-44bd-8e1b-966fc43507a4
-ms.openlocfilehash: 96dbbb5ed20027e25f1bde89748710766ec06506
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 93d6b9097c85d7fa7ca88b405ee3d3654e51304b
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76732375"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903683"
 ---
 # <a name="automatic-scaling-in-windows-forms"></a>Windows 窗体中的自动缩放
 
@@ -32,7 +33,7 @@ ms.locfileid: "76732375"
 
 1. 在设计时，将 <xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A> 属性（现已弃用）设置为开发人员计算机上默认系统字体的高度和宽度。
 
-2. 在运行时，用户计算机的默认系统字体用于初始化 <xref:System.Windows.Forms.Control.Font%2A> 类的 <xref:System.Windows.Forms.Form> 属性。
+2. 在运行时，用户计算机的默认系统字体用于初始化 <xref:System.Windows.Forms.Form> 类的 <xref:System.Windows.Forms.Control.Font%2A> 属性。
 
 3. 在显示窗体前，调用 <xref:System.Windows.Forms.Form.ApplyAutoScaling%2A> 方法以缩放窗体。 此方法计算 <xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A> 和 <xref:System.Windows.Forms.Control.Font%2A> 的相对缩放大小，然后调用 <xref:System.Windows.Forms.Control.Scale%2A> 方法来实际缩放窗体及其子窗体。
 
@@ -40,13 +41,13 @@ ms.locfileid: "76732375"
 
 虽然此机制足够实现大多数目的时，但具有以下限制：
 
-- 由于 <xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A> 属性将基准字体大小表示为整数值，因此当窗体通过多种分辨率循环时，将会出现舍入误差。
+- 由于 <xref:System.Windows.Forms.Form.AutoScaleBaseSize%2A> 属性将基准字体大小表示为整数值，因此当窗体通过多个分辨率循环时，将会出现舍入误差。
 
 - 自动缩放仅在 <xref:System.Windows.Forms.Form> 类中实现，无法在 <xref:System.Windows.Forms.ContainerControl> 类中实现。 因此，只有在用户控件的分辨率设计为与窗体的相同且在设计时置于窗体时，用户控件才可正确缩放。
 
 - 窗体及其子控件只可由计算机分辨率相同的多名开发人员进行同时设计。 同样，如果窗体依赖与父窗体关联的分辨率，也会被继承。
 
-- 它与 .NET Framework 版本2.0 引入的较新布局管理器不兼容，如 <xref:System.Windows.Forms.FlowLayoutPanel> 和 <xref:System.Windows.Forms.TableLayoutPanel>。
+- 它与 .NET Framework 版本2.0 引入的较新布局管理器（如和）不兼容 <xref:System.Windows.Forms.FlowLayoutPanel> <xref:System.Windows.Forms.TableLayoutPanel> 。
 
 - 它不支持直接基于与 .NET Compact Framework 的兼容性所需的显示分辨率进行缩放。
 
@@ -84,7 +85,7 @@ Windows 窗体现在使用以下逻辑自动缩放窗体及其内容：
 
 4. 在以下情况下也可自动调用 <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A>：
 
-    - 如果缩放模式为 <xref:System.Windows.Forms.Control.OnFontChanged%2A>，则响应 <xref:System.Windows.Forms.AutoScaleMode.Font> 事件。
+    - 如果缩放模式为 <xref:System.Windows.Forms.AutoScaleMode.Font>，则响应 <xref:System.Windows.Forms.Control.OnFontChanged%2A> 事件。
 
     - 当容器控件的布局继续执行并在 <xref:System.Windows.Forms.ContainerControl.AutoScaleDimensions%2A> 或 <xref:System.Windows.Forms.ContainerControl.AutoScaleMode%2A> 属性中检测到更改时。
 
@@ -105,4 +106,4 @@ Windows 窗体现在使用以下逻辑自动缩放窗体及其内容：
 - <xref:System.Windows.Forms.ContainerControl.PerformAutoScale%2A>
 - <xref:System.Windows.Forms.ContainerControl.AutoScaleDimensions%2A>
 - [使用视觉样式呈现控件](./controls/rendering-controls-with-visual-styles.md)
-- [如何：通过避免自动缩放改善性能](./advanced/how-to-improve-performance-by-avoiding-automatic-scaling.md)
+- [如何：通过避免自动缩放来改善性能](./advanced/how-to-improve-performance-by-avoiding-automatic-scaling.md)

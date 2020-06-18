@@ -1,16 +1,17 @@
 ---
 title: 客户端的 UI 自动化事件
+description: 了解 .NET 中的 UI 自动化客户端如何使用 Microsoft UI 自动化事件。 UI 自动化允许客户端订阅感兴趣的事件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, events for clients
 - events, UI Automation clients
 ms.assetid: b909e388-3f24-4997-b6d4-bd9c35c2dc27
-ms.openlocfilehash: d7105e9211c35e7d6125c3017e8b4b829a25b128
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 84568cf228a30535ec603cdad5bddbfd5697be0a
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179909"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903735"
 ---
 # <a name="ui-automation-events-for-clients"></a>客户端的 UI 自动化事件
 > [!NOTE]
@@ -25,7 +26,7 @@ ms.locfileid: "79179909"
 > [!NOTE]
 > 不要假定所有可能的事件都是由 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] 提供程序引发的。 例如，并非所有属性更改都会导致 Windows 窗体和 Win32 控件的标准代理提供程序引发事件。  
   
- 有关[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]事件的更广泛视图，请参阅[UI 自动化事件概述](ui-automation-events-overview.md)。  
+ 有关更广泛的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件视图，请参阅[UI 自动化事件概述](ui-automation-events-overview.md)。  
   
 <a name="Subscribing_to_Events"></a>
 ## <a name="subscribing-to-events"></a>订阅事件  
@@ -55,11 +56,11 @@ ms.locfileid: "79179909"
 |<xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A>|通过使用 <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A> 取消注册已注册的事件处理程序。|  
 |<xref:System.Windows.Automation.Automation.RemoveAllEventHandlers%2A>|取消注册所有已注册的事件处理程序。|  
   
- 例如，请参阅订阅[UI 自动化事件](subscribe-to-ui-automation-events.md)。  
+ 有关代码示例，请参阅[订阅 UI 自动化事件](subscribe-to-ui-automation-events.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
 - [订阅 UI 自动化事件](subscribe-to-ui-automation-events.md)
 - [UI 自动化事件概述](ui-automation-events-overview.md)
 - [UI 自动化属性概述](ui-automation-properties-overview.md)
-- [跟踪焦点示例](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FocusTracker)
+- [TrackFocus 示例](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/FocusTracker)

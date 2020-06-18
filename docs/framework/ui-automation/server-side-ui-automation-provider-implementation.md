@@ -1,17 +1,18 @@
 ---
 title: 服务器端 UI 自动化提供程序的实现
+description: 了解如何在 .NET 中实现自定义控件的服务器端 UI 自动化提供程序。 WPF 和非 WPF 元素的实现不同。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - server-side UI Automation provider implementation
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: 8a52d84f7152b9cb431ad0aa97c88b143463be2d
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: ea1b5e668e29d854233d4dde4c0e6152d591da97
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789613"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903891"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>服务器端 UI 自动化提供程序的实现
 
@@ -20,11 +21,11 @@ ms.locfileid: "76789613"
 
 本部分将介绍如何实现自定义控件的服务器端 UI 自动化提供程序。
 
-Windows Presentation Foundation （WPF）元素和非 WPF 元素（例如为 Windows 窗体设计的元素）的实现在本质上是不同的。 WPF 元素通过从 <xref:System.Windows.Automation.Peers.AutomationPeer>派生的类为 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 提供支持。 非 WPF 元素通过提供程序接口的实现提供支持。
+Windows Presentation Foundation （WPF）元素和非 WPF 元素（例如为 Windows 窗体设计的元素）的实现在本质上是不同的。 WPF 元素通过从派生的类提供对的支持 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] <xref:System.Windows.Automation.Peers.AutomationPeer> 。 非 WPF 元素通过提供程序接口的实现提供支持。
 
 <a name="Security_Considerations"></a>
 
-## <a name="security-considerations"></a>需要考虑的安全性因素
+## <a name="security-considerations"></a>安全注意事项
 
 应编写提供程序，使它们能够在部分信任环境中的工作。 因为 UIAutomationClient.dll 未配置为在部分信任下运行，所以提供程序代码不应引用该程序集。 如果情况如此，则代码可以在完全信任环境中运行，但无法在部分信任环境中运行。
 
@@ -40,7 +41,7 @@ Windows Presentation Foundation （WPF）元素和非 WPF 元素（例如为 Win
 
 ## <a name="provider-implementation-by-non-wpf-elements"></a>通过非 WPF 元素实现的提供程序实现
 
-不属于 WPF 框架但以托管代码（大多数情况下为 Windows 窗体控件）编写的自定义控件，通过实现接口为 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 提供支持。 每个元素必须实现至少一个下一部分中第一个表中列出的接口。 此外，如果该元素支持一个或多个控件模式，它必须实现每个控件模式的相应接口。
+不属于 WPF 框架但以托管代码（大多数情况下为 Windows 窗体控件）编写的自定义控件， [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 通过实现接口为提供支持。 每个元素必须实现至少一个下一部分中第一个表中列出的接口。 此外，如果该元素支持一个或多个控件模式，它必须实现每个控件模式的相应接口。
 
 你的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 提供程序项目必须引用以下程序集：
 
@@ -56,15 +57,15 @@ Windows Presentation Foundation （WPF）元素和非 WPF 元素（例如为 Win
 
 每个 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 提供程序必须实现以下的一个接口。
 
-|界面|描述|
+|接口|说明|
 |---------------|-----------------|
 |<xref:System.Windows.Automation.Provider.IRawElementProviderSimple>|为承载在窗口中的简单控件提供功能，包括支持控件模式和属性。|
-|<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>|继承自 <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>。 为复杂控件中的元素添加功能，包括在片段中导航，设置焦点并返回该元素的边框。|
+|<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>|继承自 <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>。 为复杂控件中的元素添加功能，包括在片段中导航、设置焦点并返回该元素的边框。|
 |<xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>|继承自 <xref:System.Windows.Automation.Provider.IRawElementProviderFragment>。 为复杂控件中的根元素添加功能，包括找到指定坐标处的子元素和设置整个控件的焦点状态。|
 
 以下接口可提供额外的功能，但并不需要实现。
 
-|界面|描述|
+|接口|说明|
 |---------------|-----------------|
 |<xref:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents>|启用提供程序跟踪事件请求。|
 |<xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride>|启用对片段的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树内的基于窗口的元素的重定位。|
@@ -115,9 +116,9 @@ Windows Presentation Foundation （WPF）元素和非 WPF 元素（例如为 Win
 - <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty>
 
 > [!NOTE]
-> 承载在窗口的简单元素或片段根的 <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> 是从窗口中获取的；但是，根下的片段元素（如列表框中的列表项）必须提供自己的标识符。 有关更多信息，请参见<xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>。
+> 承载在窗口的简单元素或片段根的 <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> 是从窗口中获取的；但是，根下的片段元素（如列表框中的列表项）必须提供自己的标识符。 有关详细信息，请参阅 <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>。
 >
-> 应为 Windows 窗体控件中承载的提供程序返回 <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>。 在这种情况下，默认的窗口提供程序可能无法检索正确值。
+> <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>应为 Windows 窗体控件中承载的提供程序返回。 在这种情况下，默认的窗口提供程序可能无法检索正确值。
 >
 > <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> 通常由宿主提供程序提供。 例如，如果自定义控件从 <xref:System.Windows.Forms.Control>派生，则名称从控件的 `Text` 属性派生。
 
@@ -129,7 +130,7 @@ Windows Presentation Foundation （WPF）元素和非 WPF 元素（例如为 Win
 
 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 提供程序应引发事件以通知客户端应用程序有关 UI 状态的变化。 以下方法用于引发事件。
 
-|方法|描述|
+|方法|说明|
 |------------|-----------------|
 |<xref:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseAutomationEvent%2A>|引发各种事件，包括由控件模式触发的事件。|
 |<xref:System.Windows.Automation.Provider.AutomationInteropProvider.RaiseAutomationPropertyChangedEvent%2A>|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性更改时引发事件。|
@@ -139,7 +140,7 @@ Windows Presentation Foundation （WPF）元素和非 WPF 元素（例如为 Win
 
 若要优化性能，提供程序可以有选择地引发事件，或者，如果没有注册任何接收事件的客户端应用程序，则不引发任何事件。 以下方法用于进行优化。
 
-|方法|描述|
+|方法|说明|
 |------------|-----------------|
 |<xref:System.Windows.Automation.Provider.AutomationInteropProvider.ClientsAreListening%2A>|此静态属性指定是否存在已订阅 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件的客户端应用程序。|
 |<xref:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents>|提供程序在片段根上对此接口的实现使其能够在当客户端在片段上注册和注销事件处理程序时接收到通知。|
@@ -194,6 +195,6 @@ Windows Presentation Foundation （WPF）元素和非 WPF 元素（例如为 Win
 - [UI 自动化提供程序概述](ui-automation-providers-overview.md)
 - [公开服务器端 UI 自动化提供程序](expose-a-server-side-ui-automation-provider.md)
 - [从 UI 自动化提供程序返回属性](return-properties-from-a-ui-automation-provider.md)
-- [从 UI 自动化提供程序引发事件](raise-events-from-a-ui-automation-provider.md)
+- [从 UI 自动化提供程序中引发事件](raise-events-from-a-ui-automation-provider.md)
 - [在 UI 自动化片段提供程序中启用导航](enable-navigation-in-a-ui-automation-fragment-provider.md)
 - [在 UI 自动化提供程序中支持控件模式](support-control-patterns-in-a-ui-automation-provider.md)
