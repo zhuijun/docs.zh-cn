@@ -169,7 +169,8 @@
         "docs/azure/sdk/**/**.yml": "https://github.com/azure/azure-sdk-for-net",
         "docs/fsharp/**/**.md": "https://github.com/Microsoft/visualfsharp",
         "docs/machine-learning/**/**.md": "https://github.com/dotnet/machinelearning",
-        "docs/standard/data/sqlite/**/*.md": "https://github.com/aspnet/EntityFrameworkCore"
+        "docs/standard/data/sqlite/**/*.md": "https://github.com/aspnet/EntityFrameworkCore",
+        "docs/spark/**/**.md": "https://github.com/dotnet/spark"
       },
       "ms.prod": {
         "_csharplang/**/*.md": "dotnet-csharp",
@@ -533,7 +534,7 @@
         "_vblang/spec/statements.md": "Statements",
         "_vblang/spec/expressions.md": "Expressions",
         "_vblang/spec/documentation-comments.md": "Documentation comments",
-        "_vblang/spec/overload-resolution.md": "Overload resolution"  
+           "_vblang/spec/overload-resolution.md": "Overload resolution"  
       },
       "titleSuffix": {
         "_csharplang/spec/*.md": "C# language specification",
@@ -568,7 +569,7 @@
         "docs/visual-basic/**/**.md": "Visual Basic"
       },
       "open_to_public_contributors": {
-	      "docs/standard/design-guidelines/**.md": false
+        "docs/standard/design-guidelines/**.md": false
       }
     },
     "dest": "_site",
