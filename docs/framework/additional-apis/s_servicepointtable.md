@@ -1,5 +1,6 @@
 ---
-title: 服务点管理器.s_ServicePointTable字段
+title: ServicePointManager 字段 s_ServicePointTable
+description: 阅读有关 .NET 中的 s_ServicePointTable ServicePointManager 字段的信息。 此哈希表字段包含 AppDomain 中的活动 HTTP 连接（ServicePoints）。
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,16 +11,16 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 24459679-291c-401a-9def-e42b29466fcf
-ms.openlocfilehash: 6a56ecd6fc85005f5987c3c2ad0d1680ca63c398
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9462ae10125dd37706f786a1f2cef78e62fbabcc
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155803"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989544"
 ---
-# <a name="servicepointmanagers_servicepointtable-field"></a>服务点管理器的服务\_点表字段
+# <a name="servicepointmanagers_servicepointtable-field"></a>ServicePointManager \_ ServicePointTable 字段
 
-`ServicePointManager.s_ServicePointTable`是<xref:System.Collections.Hashtable>包含 中的活动 HTTP 连接的列表<xref:System.Net.ServicePoint>的<xref:System.AppDomain>。
+`ServicePointManager.s_ServicePointTable`一个 <xref:System.Collections.Hashtable> ，它包含中的活动 HTTP 连接的列表 <xref:System.Net.ServicePoint> <xref:System.AppDomain> 。
 
 ## <a name="syntax"></a>语法
   
@@ -28,14 +29,14 @@ private static Hashtable s_ServicePointTable
 ```
 
 > [!WARNING]
-> 该`ServicePointManager.s_ServicePointTable`字段是私有的，不应直接用于代码。
+> 此 `ServicePointManager.s_ServicePointTable` 字段是专用的，不应在代码中直接使用。
 >
-> 在任何情况下，Microsoft 都不支持在生产应用程序中使用此字段。
+> 在任何情况下，Microsoft 不支持在生产应用程序中使用此字段。
 
 ## <a name="requirements"></a>要求
 
-**命名空间：**<xref:System.Net>
+**命名空间：** <xref:System.Net>
 
-**装配：** 系统（系统中）
+**程序集：** 系统（System.dll）
 
-**.NET 框架版本：** 自 2.0 起可用。
+**.NET Framework 版本：** 自2.0 起可用。

@@ -1,5 +1,6 @@
 ---
-title: DISPPARAMS 结构 (stdole)
+title: DISPPARAMS 结构（stdole）
+description: 获取有关 .NET 中的 DISPPARAMS 结构的参考信息。 结构位于 stdole 命名空间和 stdole 程序集中。
 ms.date: 03/16/2019
 topic_type:
 - apiref
@@ -9,12 +10,12 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 3f424dffae8c8f40bd87ab3d46a6645a31aa7fcb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8b07d400649fda2af2035fa6a23d2a45d9b0a095
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706099"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989561"
 ---
 # <a name="dispparams-structure"></a>DISPPARAMS 结构
 
@@ -24,6 +25,6 @@ public struct DISPPARAMS
 
 ## <a name="requirements"></a>要求
 
-**Namespace**：`stdole`
+**命名空间：** `stdole`
 
-**程序集：** stdole （在 stdole.dll)
+**程序集：** stdole （在 stdole.dll 中）

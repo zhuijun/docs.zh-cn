@@ -1,5 +1,6 @@
 ---
-title: 连接类 （System.Net）
+title: Connection 类（System.Net）
+description: 了解 .NET 中的 Connection 类。 此类分析服务器响应、队列请求和管道请求。 它位于 System.NET 命名空间中。
 ms.date: 05/01/2017
 ms.technology: dotnet-networking
 topic_type:
@@ -11,16 +12,16 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 6f0b8902-f31c-4ab9-a8c9-de43228995ec
-ms.openlocfilehash: dc0a594f7ae2bb9fc1883ec7ef672805bbc08778
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cb28724ed782fc5395dc74e9c59249ebdea44ddf
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156176"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989827"
 ---
 # <a name="connection-class"></a>连接类
 
-该`Connection`类分析服务器响应、队列请求和管道请求。
+`Connection`类分析服务器响应、队列请求和管道请求。
 
 ## <a name="syntax"></a>语法
   
@@ -29,14 +30,14 @@ internal class Connection : PooledStream
 ```
 
 > [!WARNING]
-> 该`Connection`类是内部的，不应直接在代码中使用。
+> `Connection`类是内部的，不应在代码中直接使用。
 >
-> 在任何情况下，Microsoft 都不支持在生产应用程序中使用此类。
+> 在任何情况下，Microsoft 不支持在生产应用程序中使用此类。
 
 ## <a name="requirements"></a>要求
 
-**命名空间：**<xref:System.Net>
+**命名空间：** <xref:System.Net>
 
-**装配：** 系统（系统中）
+**程序集：** 系统（System.dll）
 
-**.NET 框架版本：** 自 2.0 起可用。
+**.NET Framework 版本：** 自2.0 起可用。

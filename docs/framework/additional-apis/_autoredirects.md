@@ -1,5 +1,6 @@
 ---
-title: httpWeb请求._AutoRedirects字段
+title: HttpWebRequest 字段 _AutoRedirects
+description: 阅读有关 .NET 中的 _AutoRedirects HttpWebRequest 字段的信息。 此字段是一个 Int32 值，用于反映针对 HTTP web 请求进行的重定向次数。
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,16 +11,16 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: bd58e91c-4e35-4866-9d55-75ff58c3ed73
-ms.openlocfilehash: ff4b9b430bdb9ebc82a945012dcb53ed83b1e48f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 62c765a26424a5c0a96f291aae0a6ccdf0546d46
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79156293"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989968"
 ---
-# <a name="httpwebrequest_autoredirects-field"></a>HttpWeb请求。\_自动重定向字段
+# <a name="httpwebrequest_autoredirects-field"></a>HttpWebRequest。 \_AutoRedirects 字段
 
-`HttpWebRequest._AutoRedirects`是反映<xref:System.Int32>为此<xref:System.Net.HttpWebRequest>进行的重定向数的 。
+`HttpWebRequest._AutoRedirects`是一个 <xref:System.Int32> ，反映为此进行的重定向次数 <xref:System.Net.HttpWebRequest> 。
 
 ## <a name="syntax"></a>语法  
   
@@ -28,14 +29,14 @@ private int _AutoRedirects
 ```
 
 > [!WARNING]
-> 该`HttpWebRequest._AutoRedirects`字段是内部字段，不应直接用于代码。
+> `HttpWebRequest._AutoRedirects`字段是内部的，不应在代码中直接使用。
 >
-> 在任何情况下，Microsoft 都不支持在生产应用程序中使用此字段。
+> 在任何情况下，Microsoft 不支持在生产应用程序中使用此字段。
 
 ## <a name="requirements"></a>要求
 
-**命名空间：**<xref:System.Net>
+**命名空间：** <xref:System.Net>
 
-**装配：** 系统（系统中）
+**程序集：** 系统（System.dll）
 
-**.NET 框架版本：** 自 2.0 起可用。
+**.NET Framework 版本：** 自2.0 起可用。

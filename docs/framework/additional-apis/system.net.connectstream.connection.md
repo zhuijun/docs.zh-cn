@@ -11,12 +11,12 @@ api_location:
 - System.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 6200530ec9761438c8932803bf12c63c1445a37e
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 374d53346c964c5f8135c7e121bd3a2db8a8fd7b
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72847216"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989515"
 ---
 # <a name="connectstreamconnection-property"></a>ConnectStream 属性
 
@@ -30,13 +30,14 @@ internal Connection Connection { get; }
 
 ## <a name="property-value"></a>属性值
 
-`System.Net.Connection`  
+`System.Net.Connection`
+
 连接对象。
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 > [!WARNING]
-> `ConnectStream.Connection` 属性是内部的，不应在代码中直接使用。
+> `ConnectStream.Connection`属性是内部的，不应在代码中直接使用。
 >
 > 在任何情况下，Microsoft 不支持在生产应用程序中使用此属性。
 
@@ -44,6 +45,6 @@ internal Connection Connection { get; }
 
 **命名空间：** <xref:System.Net>
 
-**程序集：** 系统（在 System.web 中）
+**程序集：** 系统（System.dll）
 
 **.NET Framework 版本：** 自1.0 起可用。

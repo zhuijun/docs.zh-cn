@@ -8,22 +8,23 @@ helpviewer_keywords:
 - dynamic properties
 - user preferences [Windows Forms], tracking
 ms.assetid: 0dd8bca5-a6bf-4ac4-8eec-5725d08b38dc
-ms.openlocfilehash: 369495322328350bc06827b87598160469d864bb
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 72a15736fd21d1d626f88e728d70b7dd7ee6768f
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307054"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990186"
 ---
 # <a name="application-settings-overview"></a>应用程序设置概述
-本主题讨论如何代表你的应用程序和你的用户创建和存储设置数据。
+
+本文讨论如何代表你的应用程序和用户创建和存储设置数据。
 
  Windows 窗体的应用程序设置功能使你可以在客户端计算机上轻松创建、存储和维护自定义应用程序和用户首选项。 利用 Windows 窗体应用程序设置，不仅可以存储应用程序数据（如数据库连接字符串），还可以存储特定于用户的数据（如用户应用程序首选项）。 使用 Visual Studio 或自定义托管代码，可以创建新设置、从磁盘读取设置和将设置写入磁盘、将设置绑定到窗体上的属性，以及在加载和保存设置数据前对设置数据进行验证。
 
  应用程序设置使开发人员可以使用极少量的自定义代码在他们的应用程序中保存状态，并且替换为以前版本的 .NET Framework 中的动态属性。 应用程序设置在很多方面优于动态属性，动态属性是只读的、后期绑定的，且需要较多的自定义编程。 动态属性类已保留在 .NET Framework 2.0 中，但它们只是 shell 类，用于对应用程序设置类进行简单包装。
 
 ## <a name="what-are-application-settings"></a>什么是应用程序设置？
- Windows 窗体应用程序经常会需要某些特殊数据，这些数据对运行应用程序至关重要，但你又不想在应用程序代码中直接包含它们。 如果你的应用程序使用 Web 服务或数据库服务器，则你可能想将这种信息存储在一个单独的文件中，以便将来更改它而无需重新编译该应用程序。 同样，应用程序还可能需要存储特定于当前用户的数据。 例如，大多数应用程序都有用户首选项功能，该功能用于自定义应用程序的外观和行为。
+ 您的 Windows 窗体应用程序通常需要数据对运行应用程序至关重要，但您不希望直接在应用程序的代码中包含这些数据。 如果你的应用程序使用 Web 服务或数据库服务器，则你可能希望将此信息存储在单独的文件中，以便将来可以在不重新编译的情况下进行更改。 同样，应用程序还可能需要存储特定于当前用户的数据。 例如，大多数应用程序都有用户首选项功能，该功能用于自定义应用程序的外观和行为。
 
  应用程序设置通过提供一种简便方法，将应用程序范围设置和用户范围设置存储在客户端计算机上，从而满足了上述这两种需求。 使用 Visual Studio 或代码编辑器，可以通过指定设置的名称、数据类型和范围（应用程序或用户）来定义给定属性的设置。 还可以将相关设置放在命名组中以方便使用和读取。 定义设置后，这些设置将保持不变并在运行时被自动读回到内存中。 可插入体系结构允许更改保持机制，但默认情况下使用本地文件系统。
 
@@ -41,13 +42,13 @@ ms.locfileid: "84307054"
  应用程序设置不具备用于自动加密信息的内置功能。 切勿以明文形式存储与安全有关的信息，例如数据库密码。 如果要存储此类敏感信息，你作为应用程序开发人员有责任确保它是安全的。 如果要存储连接字符串，我们建议你使用 Windows 集成安全性，而不采用将密码硬编码到 URL 中的做法。 有关更多信息，请参见 [Code Access Security and ADO.NET](../../data/adonet/code-access-security.md)。
 
 ## <a name="getting-started-with-application-settings"></a>开始使用应用程序设置
- 如果使用 Visual Studio，则可以在 Windows 窗体设计器中使用“属性” **** 窗口中的“(ApplicationSettings)” **** 属性来定义设置。 当以这种方式定义设置时，Visual Studio 自动创建一个自定义托管包装器类，该包装器类将每个设置与一个类属性关联。 Visual Studio 还负责将设置绑定到窗体或控件上的属性，以便在显示控件窗体时自动还原控件设置，并在关闭窗体时自动保存控件设置。
+ 如果使用 Visual Studio，则可以在 Windows 窗体设计器中使用“属性” **** 窗口中的“(ApplicationSettings)” **** 属性来定义设置。 当你以这种方式定义设置时，Visual Studio 会自动创建一个自定义托管包装器类，该类将每个设置与一个类属性关联。 Visual Studio 还负责将设置绑定到窗体或控件上的属性，以便在显示控件窗体时自动还原控件设置，并在关闭窗体时自动保存控件设置。
 
  如果要对设置进行更细致的控制，你可以定义自己的自定义应用程序设置包装器类。 此操作的实现步骤如下：从 <xref:System.Configuration.ApplicationSettingsBase>派生一个类，然后添加与每个设置相对应的属性，最后将特殊的特性应用到这些属性。 有关创建包装类的详细信息，请参阅[应用程序设置体系结构](application-settings-architecture.md)。
 
  还可以使用 <xref:System.Windows.Forms.Binding> 类以编程方式将设置绑定到窗体和控件上的属性。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Configuration.ApplicationSettingsBase>
 - <xref:System.Configuration.SettingsProvider>

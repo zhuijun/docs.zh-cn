@@ -1,5 +1,6 @@
 ---
-title: httpWeb请求._CoreResponse字段
+title: HttpWebRequest 字段 _CoreResponse
+description: 阅读有关 .NET 中的 _CoreResponse HttpWebRequest 字段的信息。 此字段是包含 HTTP 响应分析结果的 CoreResponseData 或 Exception 对象。
 ms.date: 01/29/2018
 topic_type:
 - apiref
@@ -10,16 +11,16 @@ api_location:
 api_type:
 - Assembly
 author: stevewhims
-ms.openlocfilehash: b275f3eece96ac8a9ae3fb0ebd030c8d79e21fc1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5093ec7ed2c3b94931dcd622ae9ccdb42feffa18
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155916"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989756"
 ---
-# <a name="httpwebrequest_coreresponse-field"></a>HttpWeb请求。\_核心响应字段
+# <a name="httpwebrequest_coreresponse-field"></a>HttpWebRequest。 \_CoreResponse 字段
 
-`HttpWebRequest._CoreResponse`是包含 HTTP 响应分析结果的对象（[核心响应数据](coreresponsedata.md)或<xref:System.Exception>）。
+`HttpWebRequest._CoreResponse`[CoreResponseData](coreresponsedata.md) <xref:System.Exception> 包含 HTTP 响应分析结果的对象（CoreResponseData 或）。
 
 ## <a name="syntax"></a>语法
   
@@ -28,14 +29,14 @@ private object _CoreResponse
 ```
 
 > [!WARNING]
-> 此 API 不应直接用于代码。 相反，您应该使用 挂钩<xref:System.Diagnostics.DiagnosticSource>网络代码。 请参阅[诊断源用户指南](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md)。
+> 此 API 不应在代码中直接使用。 相反，应使用 <xref:System.Diagnostics.DiagnosticSource> 挂钩网络代码。 请参阅[DiagnosticSource 用户指南](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md)。
 >
-> 在任何情况下，Microsoft 都不支持在生产应用程序中使用此类。
+> 在任何情况下，Microsoft 不支持在生产应用程序中使用此类。
 
 ## <a name="requirements"></a>要求
 
-**命名空间：**<xref:System.Net>
+**命名空间：** <xref:System.Net>
 
-**装配：** 系统（系统中）
+**程序集：** 系统（System.dll）
 
-**.NET 框架版本：** 自 2.0 起可用。
+**.NET Framework 版本：** 自2.0 起可用。

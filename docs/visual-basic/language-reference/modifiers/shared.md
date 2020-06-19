@@ -11,12 +11,12 @@ helpviewer_keywords:
 - shared [elements VB]
 - elements [Visual Basic], shared
 ms.assetid: 2bf7cf2c-b0dd-485e-8749-b5d674dab4cd
-ms.openlocfilehash: d8c9879ea2f62bfbeaa378d0aaee806623ea1c55
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b51c88e1af3a720912af8ba6aaf8ae4016af9cfa
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579107"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990198"
 ---
 # <a name="shared-visual-basic"></a>Shared (Visual Basic)
 
@@ -24,7 +24,7 @@ ms.locfileid: "84579107"
 
 ## <a name="when-to-use-shared"></a>何时使用共享
 
-共享类或结构的成员使其可用于每个实例，而不是*非共享*，其中每个实例都保留其自己的副本。 例如，如果将变量的值应用于整个应用程序，则此方法很有用。 如果将该变量声明为 `Shared` ，则所有实例都将访问相同的存储位置，并且如果一个实例更改该变量的值，则所有实例都将访问更新的值。
+共享类或结构的成员使其可用于每个实例，而不是*非共享*，其中每个实例都保留其自己的副本。 例如，如果将变量的值应用于整个应用程序，则共享会很有用。 如果将该变量声明为 `Shared` ，则所有实例都将访问相同的存储位置，并且如果一个实例更改该变量的值，则所有实例都将访问更新的值。
 
 共享不会更改成员的访问级别。 例如，类成员可以是共享的，也可以是专用的（只能从类中访问），也可以是非共享的和公共的。 有关详细信息，请参阅[Visual Basic 中的访问级别](../../programming-guide/language-features/declared-elements/access-levels.md)。
 
@@ -50,7 +50,7 @@ ms.locfileid: "84579107"
 
 - **通过实例变量访问。** 可以通过使用包含其类或结构的特定实例的变量的名称来限定共享元素，从而访问该共享元素。 虽然这通常按预期方式工作，但编译器会生成一条警告消息，并通过类或结构名称而不是变量来进行访问。
 
-- **通过实例表达式访问。** 如果通过返回类或结构的实例的表达式访问共享元素，编译器将通过类或结构名称进行访问，而不是计算表达式。 如果你希望表达式执行其他操作以及返回实例，则会产生意外的结果。 下面的示例对此进行了演示。
+- **通过实例表达式访问。** 如果通过返回类或结构的实例的表达式访问共享元素，编译器将通过类或结构名称进行访问，而不是计算表达式。 如果你希望表达式执行其他操作以及返回实例，则此访问会产生意外结果。 下面的示例说明了这种情况。
   
     ```vb
     Sub Main()
@@ -82,7 +82,7 @@ ms.locfileid: "84579107"
     End Class
     ```
 
-     在前面的示例中，编译器会在代码通过实例访问共享属性时生成警告消息 `Total` 。 在每种情况下，它会直接通过类进行访问 `ShareTotal` ，而不会使用任何实例。 对于对过程的预期调用 `ReturnClass` ，这意味着它甚至不会生成对的调用 `ReturnClass` ，因此，不会执行显示 "Function ReturnClass （）" 的其他操作。
+     在前面的示例中，编译器会在代码通过实例访问共享属性时生成警告消息 `Total` 。 在每种情况下，它通过类直接进行访问 `ShareTotal` ，不使用任何实例。 对于对过程的预期调用 `ReturnClass` ，这意味着它甚至不会生成对的调用 `ReturnClass` ，因此，不会执行显示 "Function ReturnClass （）" 的其他操作。
 
 `Shared` 修饰符可用于下面的上下文中：
 

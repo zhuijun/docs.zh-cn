@@ -1,5 +1,6 @@
 ---
-title: 连接.m_WriteList字段
+title: 连接 m_WriteList 字段
+description: 获取有关 .NET 中 m_WriteList 字段的信息。 此 ArrayList 字段包含排队等候通过 HTTP 发送的 HttpWebRequest 对象。
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,16 +11,16 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 235503c1-1d01-4f59-895f-ae2cf15b3345
-ms.openlocfilehash: 6c60831ddf23ce8ac9afcf244383d24732c3ef8b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a627cb062036e3ab098c2d6e97f9a77ebfa75a33
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155832"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989589"
 ---
-# <a name="connectionm_writelist-field"></a>连接.m\_写入列表字段
+# <a name="connectionm_writelist-field"></a>Connection \_ WriteList 字段
 
-`Connection.m_WriteList`<xref:System.Collections.ArrayList>是排队通过<xref:System.Net.HttpWebRequest>HTTP 发送的对象。
+`Connection.m_WriteList`是对象的，已 <xref:System.Collections.ArrayList> <xref:System.Net.HttpWebRequest> 排队等待通过 HTTP 发送。
 
 ## <a name="syntax"></a>语法
   
@@ -28,14 +29,14 @@ private ArrayList m_WriteList
 ```
 
 > [!WARNING]
-> 该`Connection.m_WriteList`字段是私有的，不应直接用于代码。
+> 此 `Connection.m_WriteList` 字段是专用的，不应在代码中直接使用。
 >
-> 在任何情况下，Microsoft 都不支持在生产应用程序中使用此字段。
+> 在任何情况下，Microsoft 不支持在生产应用程序中使用此字段。
 
 ## <a name="requirements"></a>要求
 
-**命名空间：**<xref:System.Net>
+**命名空间：** <xref:System.Net>
 
-**装配：** 系统（系统中）
+**程序集：** 系统（System.dll）
 
-**.NET 框架版本：** 自 2.0 起可用。
+**.NET Framework 版本：** 自2.0 起可用。
