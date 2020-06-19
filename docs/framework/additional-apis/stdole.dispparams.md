@@ -1,5 +1,6 @@
 ---
-title: DISPPARAMS 结构 (stdole)
+title: DISPPARAMS 结构（stdole）
+description: 获取有关 .NET 中的 DISPPARAMS 结构的参考信息。 结构位于 stdole 命名空间和 stdole 程序集中。
 ms.date: 03/16/2019
 topic_type:
 - apiref
@@ -9,21 +10,21 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 3f424dffae8c8f40bd87ab3d46a6645a31aa7fcb
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8b07d400649fda2af2035fa6a23d2a45d9b0a095
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706099"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989561"
 ---
-# <a name="dispparams-structure"></a><span data-ttu-id="9c176-102">DISPPARAMS 结构</span><span class="sxs-lookup"><span data-stu-id="9c176-102">DISPPARAMS Structure</span></span>
+# <a name="dispparams-structure"></a><span data-ttu-id="86eea-104">DISPPARAMS 结构</span><span class="sxs-lookup"><span data-stu-id="86eea-104">DISPPARAMS Structure</span></span>
 
 ```csharp
 public struct DISPPARAMS
 ```
 
-## <a name="requirements"></a><span data-ttu-id="9c176-103">要求</span><span class="sxs-lookup"><span data-stu-id="9c176-103">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="86eea-105">要求</span><span class="sxs-lookup"><span data-stu-id="86eea-105">Requirements</span></span>
 
-<span data-ttu-id="9c176-104">**Namespace**：`stdole`</span><span class="sxs-lookup"><span data-stu-id="9c176-104">**Namespace:** `stdole`</span></span>
+<span data-ttu-id="86eea-106">**命名空间：** `stdole`</span><span class="sxs-lookup"><span data-stu-id="86eea-106">**Namespace:** `stdole`</span></span>
 
-<span data-ttu-id="9c176-105">**程序集：** stdole （在 stdole.dll)</span><span class="sxs-lookup"><span data-stu-id="9c176-105">**Assembly:** stdole (in stdole.dll)</span></span>
+<span data-ttu-id="86eea-107">**程序集：** stdole （在 stdole.dll 中）</span><span class="sxs-lookup"><span data-stu-id="86eea-107">**Assembly:** stdole (in stdole.dll)</span></span>
