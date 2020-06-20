@@ -1,5 +1,6 @@
 ---
-title: IPicture.Handle 属性 (stdole)
+title: IPicture 属性（stdole）
+description: 获取有关 .NET 中的 IPicture 属性的参考信息。 此属性获取此图片对象中管理的图片的句柄。
 ms.date: 02/22/2019
 topic_type:
 - apiref
@@ -10,16 +11,16 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: e65be9cbccbe4e52b81b2eba7a473720eb966e83
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 85c8f2c3fcdbecd69bc9b3dc9c13f4ccea41038b
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634441"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105342"
 ---
 # <a name="ipicturehandle-property"></a>IPicture.Handle 属性
 
-获取此图片对象为指定的位置中托管图片的句柄。
+获取此图片对象中管理的图片到指定位置的句柄。
 
 ```csharp
 int Handle { get; }
@@ -31,6 +32,6 @@ int Handle { get; }
 
 ## <a name="requirements"></a>要求
 
-**Namespace**：`stdole`
+**命名空间：** `stdole`
 
-**程序集：** stdole （在 stdole.dll)
+**程序集：** stdole （在 stdole.dll 中）

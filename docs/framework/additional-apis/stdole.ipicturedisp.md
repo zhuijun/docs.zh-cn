@@ -1,5 +1,6 @@
 ---
-title: IPictureDisp 接口 (stdole)
+title: IPictureDisp 接口（stdole）
+description: 查找有关 .NET 中的 IPictureDisp 接口的信息。 此接口位于 stdole 命名空间和 stdole 程序集（在 stdole.dll 库中）。
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,12 +10,12 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: eb5db8598780a18d2bd65b08964f5df84fc9b8af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 54f2139500bfa62a6c862157283079f05d69215b
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706008"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105303"
 ---
 # <a name="ipicturedisp-interface"></a>IPictureDisp 接口
 
@@ -26,6 +27,6 @@ public interface IPictureDisp
 
 ## <a name="requirements"></a>要求
 
-**Namespace**：`stdole`
+**命名空间：** `stdole`
 
-**程序集：** stdole （在 stdole.dll)
+**程序集：** stdole （在 stdole.dll 中）

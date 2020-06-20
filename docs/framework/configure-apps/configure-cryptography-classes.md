@@ -1,5 +1,6 @@
 ---
 title: 配置加密类
+description: 了解计算机管理员如何配置 .NET 和应用程序使用的默认加密算法和算法实现。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - configuration files [.NET Framework], cryptography
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework application configuration, cryptography
 - default cryptography
 ms.assetid: eee3ccb8-2c0d-4f35-b38d-6892a46c14e5
-ms.openlocfilehash: e53f4c5c9e24fb25b43b7f27b80ab984214eeac2
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5d12aae31ec78f80bea7df1bb0f37ac78dc37de2
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69927773"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105063"
 ---
 # <a name="configuring-cryptography-classes"></a>配置加密类
 Windows SDK 允许计算机管理员配置 .NET Framework 和适当编写的应用程序使用的默认加密算法和算法实现。  例如，具有自己的加密算法实现的企业可以使该实现成为默认实现，而不是在 Windows SDK 中提供的实现。 尽管使用加密的托管应用程序始终可以选择显式绑定到特定的实现，但建议使用加密配置系统来创建加密对象。  

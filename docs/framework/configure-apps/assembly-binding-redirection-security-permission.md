@@ -1,16 +1,17 @@
 ---
 title: 程序集绑定重定向安全权限
+description: 了解 .NET 中的应用程序配置文件中显式程序集绑定重定向所需的安全权限。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 24a5cdff-7ed9-4195-93f3-edf6899019fc
-ms.openlocfilehash: b59689e78f901637674c0a1df28ed74411e8e7c7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a8596bcac4efb0aea07efcfde6726d8bbf148c24
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69921376"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105094"
 ---
 # <a name="assembly-binding-redirection-security-permission"></a>程序集绑定重定向安全权限
 应用程序配置文件中的显式程序集绑定重定向需要安全权限。 这适用于对 .NET Framework 程序集和来自第三方的程序集的重定向。 通过在上设置标志来授予权限 <xref:System.Security.Permissions.SecurityPermissionFlag> <xref:System.Security.Permissions.SecurityPermission> 。 默认情况下，托管程序集没有权限。  
@@ -28,7 +29,7 @@ ms.locfileid: "69921376"
 |Internet 区域|**OFF**|  
 |不受信任区域|**OFF**|  
   
- 管理员可以更改这些安全设置，以支持或限制给定计算机上的特定方案。 没有用于更改**BindingRedirects**标志设置的默认值的工具;管理员必须手动编辑用户计算机上的安全配置文件。  
+ 管理员可以更改这些安全设置，以支持或限制给定计算机上的特定方案。 没有用于更改**BindingRedirects**标志设置的默认值的工具;管理员必须手动编辑用户计算机上的 Security.config 文件。  
   
 ## <a name="see-also"></a>另请参阅
 

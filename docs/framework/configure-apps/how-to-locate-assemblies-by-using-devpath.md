@@ -1,5 +1,6 @@
 ---
 title: 如何：使用 DEVPATH 查找程序集
+description: 使用 XML 计算机配置文件和 DEVPATH 环境变量，测试共享程序集是否可在 .NET 中的许多应用程序中正常工作。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - DEVPATH
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 44d2eadf-7eec-443c-a2ac-d601fd919e17
-ms.openlocfilehash: 6fa864f814d6a9ce04f2bce92c61cd0075ab5145
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 50b61eedddabd660b1834565a61738f460ae9ff9
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69913002"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105384"
 ---
 # <a name="how-to-locate-assemblies-by-using-devpath"></a>如何：使用 DEVPATH 查找程序集
 开发人员可能希望确保它们所构建的共享程序集在多个应用程序中正常工作。 开发人员可以创建一个 DEVPATH 环境变量，该变量指向程序集的生成输出目录，而不是在开发周期期间将程序集不断置于全局程序集缓存中。  

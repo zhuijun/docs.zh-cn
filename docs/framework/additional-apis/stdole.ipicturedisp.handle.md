@@ -1,5 +1,6 @@
 ---
-title: IPictureDisp.Handle 属性 (stdole)
+title: IPictureDisp 属性（stdole）
+description: 了解 .NET 中的 IPictureDisp 属性。 此属性位于 stdole 命名空间和 stdole 程序集（在 stdole.dll 库中）。
 ms.date: 02/22/2019
 topic_type:
 - apiref
@@ -10,12 +11,12 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 27a081b0faee348d8ff2064aa473fef315ee5d1c
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c75cb2b28801924987d42fe442fee492245fe809
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634412"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105308"
 ---
 # <a name="ipicturedisphandle-property"></a>IPictureDisp.Handle 属性
 
@@ -29,6 +30,6 @@ int Handle { get; }
 
 ## <a name="requirements"></a>要求
 
-**Namespace**：`stdole`
+**命名空间：** `stdole`
 
-**程序集：** stdole （在 stdole.dll)
+**程序集：** stdole （在 stdole.dll 中）

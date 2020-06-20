@@ -1,5 +1,6 @@
 ---
 title: 将算法名称映射到加密类
+description: 在 .NET 中将算法名称映射到加密类。 开发人员有四个选项用于创建加密对象。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - mapping algorithm names
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - cryptographic algorithms
 - names [.NET Framework], algorithm mapping
 ms.assetid: 01327c69-c5e1-4ef6-b73f-0a58351f0492
-ms.openlocfilehash: 513000169504473aa6dd46feaca214f58502ffd0
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5a1d7acdd34182dd82f4dce66d136c4ef4de6e95
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69912868"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105350"
 ---
 # <a name="mapping-algorithm-names-to-cryptography-classes"></a>将算法名称映射到加密类
 开发人员可通过以下四种方式使用 Windows SDK 创建加密对象：  
@@ -32,7 +33,7 @@ ms.locfileid: "69912868"
  如果使用的哈希算法并不重要，开发人员可以调用 <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> 方法，这将返回实现哈希转换的对象。  
   
 ## <a name="mapping-algorithm-names-in-configuration-files"></a>在配置文件中映射算法名称  
- 默认情况下，运行时 <xref:System.Security.Cryptography.SHA1CryptoServiceProvider> 为所有四个方案返回一个对象。 但是，计算机管理员可以更改最后两个方案中的方法返回的对象的类型。 为此，必须将友好算法名称映射到要在计算机配置文件（Machine.config）中使用的类。  
+ 默认情况下，运行时 <xref:System.Security.Cryptography.SHA1CryptoServiceProvider> 为所有四个方案返回一个对象。 但是，计算机管理员可以更改最后两个方案中的方法返回的对象的类型。 为此，必须将友好算法名称映射到要在计算机配置文件中使用的类（Machine.config）。  
   
  下面的示例演示如何配置运行**时，使**其成为**CryptoConfig、CRYPTOCONFIG.CREATEFROMNAME （"SHA1"）** 和 HashAlgorithm。将返回一个对象，即 " **System.Security.Cryptography.HashAlgorithm.Create** " 方法。 `MySHA1HashClass`  
   

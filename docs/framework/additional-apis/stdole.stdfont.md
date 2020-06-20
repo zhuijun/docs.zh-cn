@@ -1,5 +1,6 @@
 ---
-title: 刺耳界面（刺）
+title: StdFont 接口（stdole）
+description: 请参阅有关 .NET 中的 StdFont 接口的参考信息。 此接口位于 stdole 命名空间和 stdole 程序集（在 stdole.dll 库中）。
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,12 +10,12 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 703a8dd6134ad6045fc46d4d0a9c652feb204ff5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 974d3a3b0ea6dc762f27f812a609eeec4376bc24
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155802"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105277"
 ---
 # <a name="stdfont-interface"></a>StdFont 接口
 
@@ -26,6 +27,6 @@ public interface StdFont : Font,
 
 ## <a name="requirements"></a>要求
 
-**命名空间：**`stdole`
+**命名空间：** `stdole`
 
-**装配**：stdole（在 stdole.dll 中）
+**程序集：** stdole （在 stdole.dll 中）

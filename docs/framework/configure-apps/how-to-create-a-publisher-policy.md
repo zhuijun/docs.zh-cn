@@ -1,5 +1,6 @@
 ---
 title: 如何：创建发行者策略
+description: 了解程序集供应商如何在 .NET 中使用升级的程序集创建发行者策略文件，以规定应用程序应使用较新版本。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - publisher policy assembly
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-ms.openlocfilehash: 7c36f6126f0d779a43a22fc11e647ba2d3b03a30
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 23e9d8144ec5742e0371d566b7af59dc9dd30c9b
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81646060"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105403"
 ---
 # <a name="how-to-create-a-publisher-policy"></a>如何：创建发行者策略
 
@@ -49,7 +50,7 @@ ms.locfileid: "81646060"
 
 ## <a name="creating-the-publisher-policy-assembly"></a>创建发行者策略程序集
 
-使用[程序集链接器（al.exe）](../tools/al-exe-assembly-linker.md)来创建发行者策略程序集。
+使用[程序集链接器（Al.exe）](../tools/al-exe-assembly-linker.md)创建发行者策略程序集。
 
 #### <a name="to-create-a-publisher-policy-assembly"></a>创建发行者策略程序集
 
@@ -65,7 +66,7 @@ al /link:publisherPolicyFile /out:publisherPolicyAssemblyFile /keyfile:keyPairFi
 
 - `publisherPolicyAssemblyFile`自变量是此命令生成的发行者策略程序集的名称。 程序集文件名必须采用以下格式：
 
-  "majorNumber. minorNumber. mainAssemblyName"
+  "policy.majorNumber.minorNumber.mainAssemblyName.dll"
 
 - `keyPairFile`参数是包含密钥对的文件的名称。 必须用相同的密钥对对程序集和发行者策略程序集进行签名。
 
@@ -88,7 +89,7 @@ al /link:pub.config /out:policy.1.0.myAssembly.dll /keyfile:sgKey.snk /platform:
 
 ## <a name="adding-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>将发行者策略程序集添加到全局程序集缓存
 
-使用[全局程序集缓存工具（gacutil.exe）](../tools/gacutil-exe-gac-tool.md)将发行者策略程序集添加到全局程序集缓存中。
+使用[全局程序集缓存工具（Gacutil.exe）](../tools/gacutil-exe-gac-tool.md)将发行者策略程序集添加到全局程序集缓存中。
 
 ### <a name="to-add-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>将发行者策略程序集添加到全局程序集缓存
 

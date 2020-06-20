@@ -1,16 +1,17 @@
 ---
 title: 启用或禁用自动生成绑定重定向
+description: 阅读如何启用或禁用自动绑定重定向。 此功能影响面向 .NET 4.5.1 或更高版本的桌面应用和 web 应用。
 ms.date: 10/30/2018
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 5fca42f3-bdce-4b81-a704-61e42c89d3ba
-ms.openlocfilehash: 178d5070dd7018bbc0fce474cdd0b31ba3d17f77
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: edee95f6c3b2c2d74c4f1b68e0a65e5cb0e85f54
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69913036"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105394"
 ---
 # <a name="how-to-enable-and-disable-automatic-binding-redirection"></a>如何：启用和禁用自动绑定重定向
 
@@ -85,9 +86,9 @@ ms.locfileid: "69913036"
 
 ## <a name="enable-automatic-binding-redirects-in-web-apps"></a>在 web 应用中启用自动绑定重定向
 
-Web 应用的自动绑定重定向实现方式有所不同。 由于必须为 web 应用修改源**配置（web.config**）文件，因此绑定重定向不会自动添加到配置文件中。 但是，Visual Studio 会通知你绑定冲突，你可以添加绑定重定向来解决此冲突。 由于始终会提示你添加绑定重定向，因此你不需要为 web 应用显式禁用此功能。
+Web 应用的自动绑定重定向实现方式有所不同。 由于必须为 web 应用修改源配置（**web.config**）文件，因此绑定重定向不会自动添加到配置文件中。 但是，Visual Studio 会通知你绑定冲突，你可以添加绑定重定向来解决此冲突。 由于始终会提示你添加绑定重定向，因此你不需要为 web 应用显式禁用此功能。
 
-向**web.config 文件添加**绑定重定向：
+将绑定重定向添加到**web.config**文件：
 
 1. 在 Visual Studio 中，编译应用，然后检查生成警告。
 
@@ -95,11 +96,11 @@ Web 应用的自动绑定重定向实现方式有所不同。 由于必须为 we
 
 2. 如果存在程序集绑定冲突，则将显示警告。 双击警告，或选择警告，然后按**enter**。
 
-   一个对话框，使你能够自动将必要的绑定重定向添加到源**web.config**文件中。
+   将显示一个对话框，通过该对话框，可以自动将所需的绑定重定向添加到源**web.config**文件中。
 
    ![绑定重定向权限对话框](./media/clr-addbindingredirect.png "CLR_AddBindingRedirect")
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [\<bindingRedirect>Element](./file-schema/runtime/bindingredirect-element.md)
+- [\<bindingRedirect> 元素](./file-schema/runtime/bindingredirect-element.md)
 - [重定向程序集版本](redirect-assembly-versions.md)
