@@ -1,5 +1,6 @@
 ---
-title: XpsDocumentWriter._WritingCompleted事件（系统.Windows.Xps）
+title: System.windows.xps.xpsdocumentwriter> 事件（_WritingCompleted）
+description: 了解 System.windows.xps.xpsdocumentwriter> 事件，该事件在 .NET 中的 XML 纸张规范（XPS）文档的写入操作完成时发生 _WritingCompleted。
 ms.date: 10/17/2017
 api_location:
 - system.printing.dll
@@ -11,27 +12,27 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 0c233965638217ad5b25b9792fe07fb4d73dbe18
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3926630cafa2fea4e499e86d7c8b8eb707b8fd95
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155617"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105199"
 ---
-# <a name="xpsdocumentwriter_writingcompleted-event"></a><span data-ttu-id="80ce1-102">XpsDocumentWriter。\_编写已完成的事件</span><span class="sxs-lookup"><span data-stu-id="80ce1-102">XpsDocumentWriter.\_WritingCompleted Event</span></span>
+# <a name="xpsdocumentwriter_writingcompleted-event"></a><span data-ttu-id="0e812-103">System.windows.xps.xpsdocumentwriter>。 \_WritingCompleted 事件</span><span class="sxs-lookup"><span data-stu-id="0e812-103">XpsDocumentWriter.\_WritingCompleted Event</span></span>
 
-<span data-ttu-id="80ce1-103">在写操作完成时发生。</span><span class="sxs-lookup"><span data-stu-id="80ce1-103">Occurs when a write operation finishes.</span></span>
+<span data-ttu-id="0e812-104">在写操作完成时发生。</span><span class="sxs-lookup"><span data-stu-id="0e812-104">Occurs when a write operation finishes.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="80ce1-104">语法</span><span class="sxs-lookup"><span data-stu-id="80ce1-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="0e812-105">语法</span><span class="sxs-lookup"><span data-stu-id="0e812-105">Syntax</span></span>
 
 ``` csharp
 internal event WritingCompletedEventHandler _WritingCompleted
 ```
 
-## <a name="requirements"></a><span data-ttu-id="80ce1-105">要求</span><span class="sxs-lookup"><span data-stu-id="80ce1-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="0e812-106">要求</span><span class="sxs-lookup"><span data-stu-id="0e812-106">Requirements</span></span>
 
-<span data-ttu-id="80ce1-106">**命名空间：**<xref:System.Windows.Xps></span><span class="sxs-lookup"><span data-stu-id="80ce1-106">**Namespace:** <xref:System.Windows.Xps></span></span>
+<span data-ttu-id="0e812-107">**命名空间：** <xref:System.Windows.Xps></span><span class="sxs-lookup"><span data-stu-id="0e812-107">**Namespace:** <xref:System.Windows.Xps></span></span>
 
-<span data-ttu-id="80ce1-107">**装配：** 系统.打印（系统中.打印.dll）</span><span class="sxs-lookup"><span data-stu-id="80ce1-107">**Assembly:** System.Printing (in system.printing.dll)</span></span>
+<span data-ttu-id="0e812-108">**程序集：** System. 打印（system.printing.dll）</span><span class="sxs-lookup"><span data-stu-id="0e812-108">**Assembly:** System.Printing (in system.printing.dll)</span></span>
 
-<span data-ttu-id="80ce1-108">**.NET 框架版本：** 自 3.0 起可用</span><span class="sxs-lookup"><span data-stu-id="80ce1-108">**.NET Framework versions:** Available since 3.0</span></span>
+<span data-ttu-id="0e812-109">**.NET Framework 版本：** 自3.0 之后可用</span><span class="sxs-lookup"><span data-stu-id="0e812-109">**.NET Framework versions:** Available since 3.0</span></span>

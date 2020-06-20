@@ -1,5 +1,6 @@
 ---
-title: 刺耳界面（刺）
+title: StdFont 接口（stdole）
+description: 请参阅有关 .NET 中的 StdFont 接口的参考信息。 此接口位于 stdole 命名空间和 stdole 程序集（在 stdole.dll 库中）。
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,14 +10,14 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 703a8dd6134ad6045fc46d4d0a9c652feb204ff5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 974d3a3b0ea6dc762f27f812a609eeec4376bc24
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155802"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105277"
 ---
-# <a name="stdfont-interface"></a><span data-ttu-id="9c713-102">StdFont 接口</span><span class="sxs-lookup"><span data-stu-id="9c713-102">StdFont Interface</span></span>
+# <a name="stdfont-interface"></a><span data-ttu-id="3c38b-104">StdFont 接口</span><span class="sxs-lookup"><span data-stu-id="3c38b-104">StdFont Interface</span></span>
 
 ```csharp
 [GuidAttribute("BEF6E003-A874-101A-8BBA-00AA00300CAB")]
@@ -24,8 +25,8 @@ public interface StdFont : Font,
   FontEvents_Event
 ```
 
-## <a name="requirements"></a><span data-ttu-id="9c713-103">要求</span><span class="sxs-lookup"><span data-stu-id="9c713-103">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="3c38b-105">要求</span><span class="sxs-lookup"><span data-stu-id="3c38b-105">Requirements</span></span>
 
-<span data-ttu-id="9c713-104">**命名空间：**`stdole`</span><span class="sxs-lookup"><span data-stu-id="9c713-104">**Namespace:** `stdole`</span></span>
+<span data-ttu-id="3c38b-106">**命名空间：** `stdole`</span><span class="sxs-lookup"><span data-stu-id="3c38b-106">**Namespace:** `stdole`</span></span>
 
-<span data-ttu-id="9c713-105">**装配**：stdole（在 stdole.dll 中）</span><span class="sxs-lookup"><span data-stu-id="9c713-105">**Assembly:** stdole (in stdole.dll)</span></span>
+<span data-ttu-id="3c38b-107">**程序集：** stdole （在 stdole.dll 中）</span><span class="sxs-lookup"><span data-stu-id="3c38b-107">**Assembly:** stdole (in stdole.dll)</span></span>

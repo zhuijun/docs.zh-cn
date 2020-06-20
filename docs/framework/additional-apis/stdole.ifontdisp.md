@@ -1,5 +1,6 @@
 ---
-title: IFontDisp 接口 (stdole)
+title: IFontDisp 接口（stdole）
+description: 请参阅有关 .NET 中的 IFontDisp 接口的参考信息。 此接口位于 stdole 命名空间和 stdole 程序集（在 stdole.dll 库中）。
 ms.date: 03/28/2019
 topic_type:
 - apiref
@@ -9,14 +10,14 @@ api_location:
 - stdole.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 82d487b599401188f42d6a4dc6856030d5a2eef6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f2e955997c66dc4db0de804ee6eded02735a3276
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675255"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85105322"
 ---
-# <a name="ipicturefont-interface"></a><span data-ttu-id="3ef20-102">IPictureFont 接口</span><span class="sxs-lookup"><span data-stu-id="3ef20-102">IPictureFont Interface</span></span>
+# <a name="ifontdisp-interface"></a><span data-ttu-id="e4546-104">IFontDisp 接口</span><span class="sxs-lookup"><span data-stu-id="e4546-104">IFontDisp Interface</span></span>
 
 ```csharp
 [GuidAttribute("BEF6E003-A874-101A-8BBA-00AA00300CAB")]
@@ -24,8 +25,8 @@ ms.locfileid: "61675255"
 public interface IFontDisp
 ```
 
-## <a name="requirements"></a><span data-ttu-id="3ef20-103">要求</span><span class="sxs-lookup"><span data-stu-id="3ef20-103">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="e4546-105">要求</span><span class="sxs-lookup"><span data-stu-id="e4546-105">Requirements</span></span>
 
-<span data-ttu-id="3ef20-104">**Namespace**：`stdole`</span><span class="sxs-lookup"><span data-stu-id="3ef20-104">**Namespace:** `stdole`</span></span>
+<span data-ttu-id="e4546-106">**命名空间：** `stdole`</span><span class="sxs-lookup"><span data-stu-id="e4546-106">**Namespace:** `stdole`</span></span>
 
-<span data-ttu-id="3ef20-105">**程序集：** stdole （在 stdole.dll)</span><span class="sxs-lookup"><span data-stu-id="3ef20-105">**Assembly:** stdole (in stdole.dll)</span></span>
+<span data-ttu-id="e4546-107">**程序集：** stdole （在 stdole.dll 中）</span><span class="sxs-lookup"><span data-stu-id="e4546-107">**Assembly:** stdole (in stdole.dll)</span></span>
