@@ -6,12 +6,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 5db2797870b6c2e1998f17f1d8e4df8aa3f95c9e
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 0f9c0f053e531a44640084a35dc5d8e844ee0b46
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241404"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803190"
 ---
 # <a name="extension-methods-c-programming-guide"></a>扩展方法（C# 编程指南）
 
@@ -80,7 +80,7 @@ using System.Linq;
 
 使用洋葱架构或其他分层应用程序设计时，通常具有一组域实体或数据传输对象，可用于跨应用程序边界进行通信。 这些对象通常不包含任何功能，或者只包含适用于应用程序的所有层的最少功能。 使用扩展方法可以添加特定于每个应用程序层的功能，而无需使用其他层中不需要的方法来向下加载对象。
 
-```aspx-csharp
+```csharp
 public class DomainEntity
 {
     public int Id { get; set; }

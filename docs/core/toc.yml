@@ -29,6 +29,8 @@ items:
             href: install/linux.md
           - name: Ubuntu
             href: install/linux-ubuntu.md
+          - name: Alpine
+            href: install/linux-alpine.md
           - name: CentOS
             href: install/linux-centos.md
           - name: Debian
@@ -403,25 +405,25 @@ items:
         href: testing/unit-testing-best-practices.md
       - name: xUnit
         items:
-          - name: 'C# 单元测试'
+          - name: C# 单元测试
             href: testing/unit-testing-with-dotnet-test.md
-          - name: 'F# 单元测试'
+          - name: F# 单元测试
             href: testing/unit-testing-fsharp-with-dotnet-test.md
           - name: VB 单元测试
             href: testing/unit-testing-visual-basic-with-dotnet-test.md
       - name: NUnit
         items:
-          - name: 'C# 单元测试'
+          - name: C# 单元测试
             href: testing/unit-testing-with-nunit.md
-          - name: 'F# 单元测试'
+          - name: F# 单元测试
             href: testing/unit-testing-fsharp-with-nunit.md
           - name: VB 单元测试
             href: testing/unit-testing-visual-basic-with-nunit.md
       - name: MSTest
         items:
-          - name: 'C# 单元测试'
+          - name: C# 单元测试
             href: testing/unit-testing-with-mstest.md
-          - name: 'F# 单元测试'
+          - name: F# 单元测试
             href: testing/unit-testing-fsharp-with-mstest.md
           - name: VB 单元测试
             href: testing/unit-testing-visual-basic-with-mstest.md
@@ -429,6 +431,8 @@ items:
         href: testing/selective-unit-tests.md
       - name: 对单元测试排序
         href: testing/order-unit-tests.md
+      - name: 单元测试代码覆盖率
+        href: testing/unit-testing-code-coverage.md
       - name: 对已发布的输出进行单元测试
         href: testing/unit-testing-published-output.md
       - name: 使用 Visual Studio 对 .NET Core 项目进行实时单元测试

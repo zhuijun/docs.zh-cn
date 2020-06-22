@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: ffa5372678362e47eb59d8b041da55c79bf8475d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1e78b920eb6a1eae870a425b91711ac9d87b6530
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447038"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84811681"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>按类别列出的 C# 编译器选项
 
@@ -107,7 +107,7 @@ ms.locfileid: "84447038"
 |[unsafe](unsafe-compiler-option.md)|启用使用 [unsafe](../keywords/unsafe.md) 关键字的代码编译。|
 |[-utf8output](utf8output-compiler-option.md)|显示使用 UTF-8 编码的编译器输出。|
 |-parallel[+&#124;-]|指定是否使用并发生成 (+)。|
-|-checksumalgorithm：\<alg>|指定用于计算 PDB 中存储的源文件校验和的算法。  受支持的值为:SHA1（默认值）或 SHA256。<br>由于与 SHA1 冲突，Microsoft 建议使用 SHA256。|
+|-checksumalgorithm：\<alg>|指定用于计算 PDB 中存储的源文件校验和的算法。  受支持的值为:SHA256（默认值）或 SHA1。<br>由于与 SHA1 冲突，Microsoft 建议使用 SHA256。|
 
 ## <a name="obsolete-options"></a>已过时的选项
 

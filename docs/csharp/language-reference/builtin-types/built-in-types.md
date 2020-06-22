@@ -6,12 +6,12 @@ helpviewer_keywords:
 - types [C#], built-in
 - built-in C# types
 ms.assetid: 54f901f2-bf2f-472c-ae8d-73e8ecfc57fe
-ms.openlocfilehash: bf8823c6674b1ff3f0028a50df8ce8d0f803cfc1
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 3366f718cd83a28f475fae9b4e65ce37fe7d8c7b
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389497"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803192"
 ---
 # <a name="built-in-types-c-reference"></a>内置类型（C# 参考）
 
@@ -39,6 +39,7 @@ ms.locfileid: "81389497"
 |--------------|-------------------------|
 |[`object`](reference-types.md#the-object-type)|<xref:System.Object?displayProperty=nameWithType>|
 |[`string`](reference-types.md#the-string-type)|<xref:System.String?displayProperty=nameWithType>|
+|[`dynamic`](reference-types.md#the-dynamic-type)|<xref:System.Object?displayProperty=nameWithType>|
 
 在上表中，左侧列中的每个 C# 类型关键字都是相应 .NET 类型的别名。 它们是可互换的。 例如，以下声明声明了相同类型的变量：
 
@@ -53,4 +54,3 @@ System.Int32 b = 123;
 
 - [C# 参考](../index.md)
 - [C# 类型的默认值](default-values.md)
-- [`dynamic` 关键字](reference-types.md#the-dynamic-type)

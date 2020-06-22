@@ -1,5 +1,6 @@
 ---
 title: 使用应用程序域和程序集编程
+description: 了解如何在 .NET 中使用应用程序域和程序集进行编程。 请参阅关于如何创建应用程序域和程序集的操作指南主题和示例的链接。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET Framework], programming
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - application domains, programming
 - programming application domains
 ms.assetid: 96d3b8e3-bef8-4da0-9a81-9841e23a94e9
-ms.openlocfilehash: 3f66eacaf30f8001cdbf3a486e5ce1c878712e2f
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 1c28fe0abeb279a1dbbc6dcf043c1780c72d79df
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644276"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903433"
 ---
 # <a name="programming-with-application-domains-and-assemblies"></a>使用应用程序域和程序集编程
 
