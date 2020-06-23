@@ -1,5 +1,6 @@
 ---
 title: 将对象标识符映射到加密算法
+description: 请参阅如何使用 XML 配置文件中的 y 和 y 元素将对象标识符（OID）映射到 .NET 中的加密算法。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - digital signatures
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - mapping object identifiers
 - cryptography, mapping object identifiers
 ms.assetid: c9673f81-bf9e-47fd-bc6f-6bc1c1c4c15e
-ms.openlocfilehash: a5aebac2d392d4540581dfe7c7afff0819968ac0
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e22510014071455b83ba28cd82690b5ecdce9bc9
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69912544"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141999"
 ---
 # <a name="mapping-object-identifiers-to-cryptography-algorithms"></a>将对象标识符映射到加密算法
 数字签名确保在将数据从一个程序发送到另一个程序时，数据不会被篡改。 通常通过将数学函数应用于要签名的数据的哈希来计算数字签名。 设置要签名的哈希值的格式时，某些数字签名算法会在格式设置操作过程中追加一个 "ASN. 1" 对象标识符（OID）。 OID 标识用于计算哈希的算法。 可以将算法映射到对象标识符，以将加密机制扩展为使用自定义算法。 下面的示例演示如何将对象标识符映射到新的哈希算法。  

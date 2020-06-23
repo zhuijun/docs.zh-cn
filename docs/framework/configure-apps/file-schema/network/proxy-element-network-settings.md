@@ -9,12 +9,12 @@ helpviewer_keywords:
 - <proxy> element
 - proxy element
 ms.assetid: 37a548d8-fade-4ac5-82ec-b49b6c6cb22a
-ms.openlocfilehash: 0d462fcc92fc1be5ddbc2e76237d8436219c7295
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 8ae30b8c29dcf3aaa183ff295c7ee8592322797f
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504532"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141776"
 ---
 # <a name="proxy-element-network-settings"></a>\<proxy> 元素（网络设置）
 定义代理服务器。  
@@ -28,11 +28,11 @@ ms.locfileid: "84504532"
   
 ```xml  
 <proxy
-  autoDetect="true|false|unspecified"
-  bypassonlocal="true|false|unspecified"
+  autoDetect="True|False|Unspecified"
+  bypassonlocal="True|False|Unspecified"
   proxyaddress="uriString"
   scriptLocation="uriString"
-  usesystemdefault="true|false|unspecified"
+  usesystemdefault="True|False|Unspecified"
 />
 ```  
   
@@ -43,11 +43,11 @@ ms.locfileid: "84504532"
   
 |**特性**|**说明**|  
 |-------------------|---------------------|  
-|`autoDetect`|指定是否自动检测代理。 默认值为 `unspecified`。|  
-|`bypassonlocal`|指定对于本地资源是否跳过代理。 本地资源包括本地服务器（ `http://localhost` 、 `http://loopback` 或 `http://127.0.0.1` ）和没有句点（）的 URI `http://webserver` 。 默认值为 `unspecified`。|  
+|`autoDetect`|指定是否自动检测代理。 默认值为 `Unspecified`。|  
+|`bypassonlocal`|指定对于本地资源是否跳过代理。 本地资源包括本地服务器（ `http://localhost` 、 `http://loopback` 或 `http://127.0.0.1` ）和没有句点（）的 URI `http://webserver` 。 默认值为 `Unspecified`。|  
 |`proxyaddress`|指定要使用的代理 URI。|  
 |`scriptLocation`|指定配置脚本的位置。 不要将 `bypassonlocal` 属性与此属性一起使用。 |  
-|`usesystemdefault`|指定是否使用 Internet Explorer 代理设置。 如果设置为 `true` ，则后续特性将重写 Internet Explorer 代理设置。 默认值为 `unspecified`。|  
+|`usesystemdefault`|指定是否使用 Internet Explorer 代理设置。 如果设置为 `True` ，则后续特性将重写 Internet Explorer 代理设置。 默认值为 `Unspecified`。|  
   
 ### <a name="child-elements"></a>子元素  
  无。  
@@ -60,7 +60,7 @@ ms.locfileid: "84504532"
   
 ## <a name="text-value"></a>文本值  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
  `proxy`元素为应用程序定义代理服务器。 如果配置文件中缺少此元素，则 .NET Framework 将使用 Internet Explorer 中的代理设置。  
   
  特性的值 `proxyaddress` 应为格式正确的统一资源标识符（URI）。  
@@ -82,9 +82,9 @@ ms.locfileid: "84504532"
   <system.net>  
     <defaultProxy>  
       <proxy  
-        usesystemdefault="true"  
+        usesystemdefault="True"  
         proxyaddress="http://192.168.1.10:3128"  
-        bypassonlocal="true"  
+        bypassonlocal="True"  
       />  
     </defaultProxy>  
   </system.net>  

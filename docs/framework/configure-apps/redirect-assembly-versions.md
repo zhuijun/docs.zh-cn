@@ -1,5 +1,6 @@
 ---
 title: 重定向程序集版本
+description: 将编译时绑定引用重定向到不同版本的 .NET 程序集、第三方程序集或你自己的应用程序集。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assembly binding, redirection
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], binding redirection
 ms.assetid: 88fb1a17-6ac9-4b57-8028-193aec1f727c
-ms.openlocfilehash: 0d55171e37ec056b3470d238a60bc32f2feb04fb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4cfd4336fb9999c996bea28eb86f1143932d4c51
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81646040"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141729"
 ---
 # <a name="redirecting-assembly-versions"></a>重定向程序集版本
 
@@ -23,7 +24,7 @@ ms.locfileid: "81646040"
 ## <a name="assembly-unification-and-default-binding"></a>程序集统一和默认绑定
  到 .NET Framework 程序集的绑定有时会通过称为 *“程序集统一”* 的过程进行重定向。 .NET Framework 包括一个公共语言运行时版本和构成类型库的约二十个 .NET Framework 程序集。 运行时将这些 .NET Framework 程序集视为单个单元。 默认情况下，当启动应用时，由运行时运行的所有对代码中的类型的引用都将定向到具有与进程中加载的运行时相同的版本号的 .NET Framework 程序集。 此模型发生的重定向是运行时的默认行为。
 
- 例如，如果你的应用程序引用了 System.web 命名空间中的类型，并且是使用 .NET Framework 4.5 生成的，则该应用程序包含对运行时版本4.5 随附的 System.web 程序集的静态引用。 如果想要重定向绑定引用，以指向 System.XML 程序集（随附 .NET Framework 4），你可以将重定向信息放在应用配置文件中。 统一的 .NET Framework 程序集的配置文件中的绑定重定向将取消该程序集的统一。
+ 例如，如果你的应用程序引用 System.XML 命名空间中的类型，并且是使用 .NET Framework 4.5 生成的，则该应用程序包含对运行时版本4.5 随附的 System.XML 程序集的静态引用。 如果想要重定向绑定引用，以指向 System.XML 程序集（随附 .NET Framework 4），你可以将重定向信息放在应用配置文件中。 统一的 .NET Framework 程序集的配置文件中的绑定重定向将取消该程序集的统一。
 
  此外，如果有多个可用版本，可能需要手动重定向第三方程序集的程序集绑定。
 
@@ -57,7 +58,7 @@ ms.locfileid: "81646040"
 
 在 Visual Studio 中创建面向 .NET Framework 4.5.1 或更高版本的桌面应用程序时，应用程序将使用自动绑定重定向。 这意味着如果两个组件引用同一强名称程序集的不同版本，则运行时会自动添加绑定重定向到输出应用配置 (app.config) 文件中的程序集的较新版本。 此重定向将重写可能会发生的程序集统一。 不修改源 app.config 文件。 例如，假设你的应用直接引用带外 .NET Framework 组件，但使用面向同一组件的较旧版本的第三方库。 在编译该应用时，将修改输出应用配置文件以包含绑定重定向到较新版本的组件。 如果创建一个 Web 应用，你将收到有关绑定冲突的生成警告，这反过来将为你提供将必要的绑定重定向添加到源 Web 配置文件的选项。
 
-如果你在编译时手动添加绑定重定向到源 app.config 文件，则 Visual Studio 会尝试基于你添加的绑定重定向统一程序集。 例如，假设你对某一程序集插入以下绑定重定向：
+如果你在编译时手动添加绑定重定向到源 app.config 文件，则 Visual Studio 会尝试基于你添加的绑定重定向来统一程序集。 例如，假设你对某一程序集插入以下绑定重定向：
 
 `<bindingRedirect oldVersion="3.0.0.0" newVersion="2.0.0.0" />`
 
@@ -65,7 +66,7 @@ ms.locfileid: "81646040"
 
 `<bindingRedirect oldVersion="1.0.0.0" newVersion="2.0.0.0" />`
 
-如果你的应用面向 .NET Framework 的旧版本，则可以启用自动绑定重定向。 您可以通过在 app.config 文件中提供任何程序集的绑定重定向信息，或关闭绑定重定向功能，来重写此默认行为。 有关如何打开或关闭此功能的信息，请参阅[如何：启用和禁用自动绑定重定向](how-to-enable-and-disable-automatic-binding-redirection.md)。
+如果你的应用面向 .NET Framework 的旧版本，则可以启用自动绑定重定向。 您可以通过在任何程序集的 app.config 文件中提供绑定重定向信息，或关闭绑定重定向功能，来重写此默认行为。 有关如何打开或关闭此功能的信息，请参阅[如何：启用和禁用自动绑定重定向](how-to-enable-and-disable-automatic-binding-redirection.md)。
 
 <a name="bypass_PP"></a>
 ### <a name="bypassing-publisher-policy"></a>跳过发布服务器策略
@@ -155,7 +156,7 @@ ms.locfileid: "81646040"
 ## <a name="see-also"></a>另请参阅
 
 - [如何：启用和禁用自动绑定重定向](how-to-enable-and-disable-automatic-binding-redirection.md)
-- [\<bindingRedirect>Element](./file-schema/runtime/bindingredirect-element.md)
+- [\<bindingRedirect> 元素](./file-schema/runtime/bindingredirect-element.md)
 - [程序集绑定重定向安全权限](assembly-binding-redirection-security-permission.md)
 - [.NET 中的程序集](../../standard/assembly/index.md)
 - [使用程序集编程](../../standard/assembly/index.md)

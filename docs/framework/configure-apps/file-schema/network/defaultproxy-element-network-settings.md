@@ -9,12 +9,12 @@ helpviewer_keywords:
 - defaultProxy element
 - <defaultProxy> element
 ms.assetid: 9d663c4b-07b4-4f6f-9b12-efbd3630354f
-ms.openlocfilehash: 915fdc96dbd4d417f9c9e6aa3ff96de3026491ef
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 85004d49ce7605b050709a3019592ec696a7bada
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504597"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141626"
 ---
 # <a name="defaultproxy-element-network-settings"></a>\<defaultProxy> 元素（网络设置）
 配置超文本传输协议 (HTTP) 代理服务器。  
@@ -27,8 +27,8 @@ ms.locfileid: "84504597"
   
 ```xml  
 <defaultProxy  
-  enabled="true|false"  
-  useDefaultCredentials="true|false">  
+  enabled="True|False"  
+  useDefaultCredentials="True|False">  
     <bypasslist>...</bypasslist>  
     <proxy>...</proxy>  
     <module>...</module>  
@@ -42,8 +42,8 @@ ms.locfileid: "84504597"
   
 |**元素**|**说明**|  
 |-----------------|---------------------|  
-|`enabled`|指定是否使用 Web 代理。 默认值为 `true`。|  
-|`useDefaultCredentials`|指定是否使用此主机的默认凭据来访问 Web 代理。 默认值为 `false`。|  
+|`enabled`|指定是否使用 Web 代理。 默认值为 `True`。|  
+|`useDefaultCredentials`|指定是否使用此主机的默认凭据来访问 Web 代理。 默认值为 `False`。|  
   
 ### <a name="child-elements"></a>子元素  
   
@@ -51,7 +51,7 @@ ms.locfileid: "84504597"
 |-----------------|---------------------|  
 |[bypasslist](bypasslist-element-network-settings.md)|提供一组描述不使用代理的地址的正则表达式。|  
 |[模块](module-element-network-settings.md)|向应用程序添加新的代理模块。|  
-|[proxy](proxy-element-network-settings.md)|定义代理服务器。|  
+|[代理](proxy-element-network-settings.md)|定义代理服务器。|  
   
 ### <a name="parent-elements"></a>父元素  
   
@@ -59,7 +59,7 @@ ms.locfileid: "84504597"
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|包含指定 .NET Framework 如何连接到网络的设置。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
  如果 defaultProxy 元素为空，则将沿用 Internet Explorer 中的代理设置。 这种行为在 .NET Framework 1.1 版中有所不同。  
   
  如果[module](module-element-network-settings.md)元素指定非公共类型，该类型不是从 <xref:System.Net.IWebProxy> 类派生，则此对象的无参数构造函数中出现异常，或者在检索系统指定的默认代理时出现异常，则会引发异常。 异常的 <xref:System.Exception.InnerException%2A> 属性应具有错误根本原因的详细信息。  
@@ -75,9 +75,9 @@ ms.locfileid: "84504597"
   <system.net>  
     <defaultProxy>  
       <proxy  
-        usesystemdefault="true"  
+        usesystemdefault="True"  
         proxyaddress="http://192.168.1.10:3128"  
-        bypassonlocal="true"  
+        bypassonlocal="True"  
       />  
       <bypasslist>  
         <add address="[a-z]+\.contoso\.com$" />  

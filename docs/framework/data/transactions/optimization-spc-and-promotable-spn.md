@@ -1,13 +1,14 @@
 ---
 title: 使用单阶段提交和可提升的单阶段通知进行优化
+description: 使用单阶段提交和可提升的单阶段通知优化性能。 了解 .NET 中的 System. 事务基础结构。
 ms.date: 03/30/2017
 ms.assetid: 57beaf1a-fb4d-441a-ab1d-bc0c14ce7899
-ms.openlocfilehash: f486315b8a8c90e6616ca95fb6be4b2ae3719b7e
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 89ce82e673340c93254983c078f78a2501129383
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205898"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141973"
 ---
 # <a name="optimization-using-single-phase-commit-and-promotable-single-phase-notification"></a>使用单阶段提交和可提升的单阶段通知进行优化
 
@@ -32,9 +33,9 @@ ms.locfileid: "70205898"
 如果需要升级 <xref:System.Transactions> 事务（例如，要支持多个 RM），则 <xref:System.Transactions> 会通过在 <xref:System.Transactions.ITransactionPromoter.Promote%2A> 接口（从其派生 <xref:System.Transactions.ITransactionPromoter> 接口）上调用 <xref:System.Transactions.IPromotableSinglePhaseNotification> 方法，向资源管理器发出通知。 然后，资源管理器在内部将该事务从本地事务（不要求进行日志记录）转换为能够参与 DTC 事务的事务对象，并将其与已执行的工作关联。 在请求提交该事务时，事务管理器仍会将 <xref:System.Transactions.IPromotableSinglePhaseNotification.SinglePhaseCommit%2A> 通知发送给资源管理器，而后者会提交在升级期间创建的分布式事务。
 
 > [!NOTE]
-> **TransactionCommitted**跟踪 (在升级的事务上调用 Commit 时生成) 包含 DTC 事务的活动 ID。
+> **TransactionCommitted**跟踪（在升级的事务上调用 Commit 时生成）包含 DTC 事务的活动 ID。
 
-有关管理升级的详细信息, 请参阅[事务管理升级](transaction-management-escalation.md)。
+有关管理升级的详细信息，请参阅[事务管理升级](transaction-management-escalation.md)。
 
 ## <a name="transaction-management-escalation-scenario"></a>事务管理升级方案
 
@@ -50,7 +51,7 @@ ms.locfileid: "70205898"
 
 4. 此时，CN1 使用 SQL 2005 和 <xref:System.Data> 特定的某一机制升级该事务。
 
-5. <xref:System.Transactions.ITransactionPromoter.Promote%2A> 方法中的返回值是一个包含事务的传播标记的字节数组。 <xref:System.Transactions>使用此传播令牌创建可合并到本地事务中的 DTC 事务。
+5. <xref:System.Transactions.ITransactionPromoter.Promote%2A> 方法中的返回值是一个包含事务的传播标记的字节数组。  <xref:System.Transactions>使用此传播令牌创建可合并到本地事务中的 DTC 事务。
 
 6. 此时，CN2 可使用通过调用 <xref:System.Transactions.TransactionInterop> 方法之一而接收到的数据，来将事务传入 SQL 中。
 
@@ -58,13 +59,13 @@ ms.locfileid: "70205898"
 
 ## <a name="single-phase-commit-optimization"></a>单阶段提交优化
 
-单阶段提交协议在运行时更有效，因为使用它时，无需进行任何显式协调即可执行所有更新。 若要利用此优化，应对资源使用 <xref:System.Transactions.ISinglePhaseNotification> 接口来实现资源管理器，并使用 <xref:System.Transactions.Transaction.EnlistDurable%2A> 或 <xref:System.Transactions.Transaction.EnlistVolatile%2A> 方法在事务中登记。 具体而言, *EnlistmentOptions*参数应该等于<xref:System.Transactions.EnlistmentOptions.None> , 以确保执行单阶段提交。
+单阶段提交协议在运行时更有效，因为使用它时，无需进行任何显式协调即可执行所有更新。 若要利用此优化，应对资源使用 <xref:System.Transactions.ISinglePhaseNotification> 接口来实现资源管理器，并使用 <xref:System.Transactions.Transaction.EnlistDurable%2A> 或 <xref:System.Transactions.Transaction.EnlistVolatile%2A> 方法在事务中登记。 具体而言， *EnlistmentOptions*参数应该等于， <xref:System.Transactions.EnlistmentOptions.None> 以确保执行单阶段提交。
 
 由于 <xref:System.Transactions.ISinglePhaseNotification> 接口是从 <xref:System.Transactions.IEnlistmentNotification> 接口派生的，因此如果 RM 不适合执行单阶段提交，它仍可接收两阶段提交通知。 如果 RM 从 TM 接收到 <xref:System.Transactions.ISinglePhaseNotification.SinglePhaseCommit%2A> 通知，它应尝试完成提交所需的工作，并在 <xref:System.Transactions.SinglePhaseEnlistment.Committed%2A> 参数上调用 <xref:System.Transactions.SinglePhaseEnlistment.Aborted%2A>、<xref:System.Transactions.SinglePhaseEnlistment.InDoubt%2A> 或 <xref:System.Transactions.SinglePhaseEnlistment> 方法，来相应地通知事务管理器是提交还是回滚事务。 在此阶段中，登记时的 <xref:System.Transactions.Enlistment.Done%2A> 响应表示 ReadOnly 语义。 因此，不应答复 <xref:System.Transactions.Enlistment.Done%2A> 以及任何其他方法。
 
-如果只有一个可变登记并且没有持久登记, 则可变登记会收到 SPC 通知。 如果存在任何易失性登记并且只有一个持久登记, 则可变登记会接收2PC。 完成提交后，持久登记会接收到 SPC 通知。
+如果只有一个可变登记并且没有持久登记，则可变登记会收到 SPC 通知。 如果存在任何易失性登记并且只有一个持久登记，则可变登记会接收2PC。 完成提交后，持久登记会接收到 SPC 通知。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [在事务中将资源登记为参与者](enlisting-resources-as-participants-in-a-transaction.md)
-- [单阶段和多阶段确认事务](committing-a-transaction-in-single-phase-and-multi-phase.md)
+- [在单阶段和多阶段中提交事务](committing-a-transaction-in-single-phase-and-multi-phase.md)

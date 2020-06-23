@@ -1,16 +1,17 @@
 ---
 title: 使用 CommittableTransaction 执行显式事务
+description: 使用 .NET 中的 CommittableTransaction 类实现显式事务。 此类为应用程序提供了使用事务的显式方法。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 29efe5e5-897b-46c2-a35f-e599a273acc8
-ms.openlocfilehash: f8db79db6c4a66dfe13ec936313c4cf2c3b93be5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 40001422e665a7dda3fb938c8d57860909525404
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174402"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141986"
 ---
 # <a name="implementing-an-explicit-transaction-using-committabletransaction"></a>使用 CommittableTransaction 执行显式事务
 <xref:System.Transactions.CommittableTransaction> 类为应用程序使用事务提供了一种显式方法，而不是隐式地使用 <xref:System.Transactions.TransactionScope> 类。 对于要跨多个函数调用或多个线程调用使用同一事务的应用程序，前一种类十分有用。 与 <xref:System.Transactions.TransactionScope> 类不同，应用程序编写器需要明确调用 <xref:System.Transactions.CommittableTransaction.Commit%2A> 和 <xref:System.Transactions.Transaction.Rollback%2A> 方法以提交或中止事务。  
@@ -43,7 +44,7 @@ ms.locfileid: "79174402"
   
  调用 <xref:System.Transactions.CommittableTransaction.BeginCommit%2A> 可将提交延迟调度到线程池中的某一线程。 此外，还可以调用 <xref:System.Transactions.CommittableTransaction.EndCommit%2A> 来确定是否确实已提交事务。 如果无法提交事务（无论出于什么原因），<xref:System.Transactions.CommittableTransaction.EndCommit%2A> 就会引发事务异常。 如果在调用 <xref:System.Transactions.CommittableTransaction.EndCommit%2A> 时仍未提交事务，则调用方就会处于锁定状态，直到提交或中止事务为止。  
   
- 执行异步提交的最简单方法就是提供要在完成提交时调用的回调方法。 但是，必须在用于执行该调用的原始 <xref:System.Transactions.CommittableTransaction.EndCommit%2A> 对象上调用 <xref:System.Transactions.CommittableTransaction> 方法。 要获取该对象，可以向下转换回调方法的*IAsyncResult*参数，因为<xref:System.Transactions.CommittableTransaction>类实现了<xref:System.IAsyncResult>类。  
+ 执行异步提交的最简单方法就是提供要在完成提交时调用的回调方法。 但是，必须在用于执行该调用的原始 <xref:System.Transactions.CommittableTransaction.EndCommit%2A> 对象上调用 <xref:System.Transactions.CommittableTransaction> 方法。 若要获取该对象，可以向下转换回调方法的*IAsyncResult*参数，因为 <xref:System.Transactions.CommittableTransaction> 类实现 <xref:System.IAsyncResult> 类。  
   
  下面的示例演示如何执行异步提交。  
   

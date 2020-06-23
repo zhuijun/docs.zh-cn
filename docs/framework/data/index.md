@@ -1,17 +1,18 @@
 ---
 title: 数据和建模-.NET
+description: 查看介绍建模以及如何在 .NET 中访问数据的文章的链接。 本文介绍 WCF 数据服务、ADO.NET 和事务处理。
 ms.date: 09/09/2019
 helpviewer_keywords:
 - .NET Framework, data access
 - data access [.NET Framework], about .NET Framework data access
 - data [.NET Framework], accessing
 ms.assetid: 8c37635d-e2c1-4b64-a258-61d9e87405e6
-ms.openlocfilehash: ad9e63f74f5a79eba937ef16310926ae9b9f287d
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 654f6f37e40d5df76910a7de7c5de4ffa2787b58
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894358"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141832"
 ---
 # <a name="data-and-modeling-in-net"></a>.NET 中的数据和建模
 
@@ -19,7 +20,7 @@ ms.locfileid: "70894358"
   
 ## <a name="in-this-section"></a>本节内容
 
- [WCF Data Services 4.5](./wcf/index.md)  
+ [WCF 数据服务 4.5](./wcf/index.md)  
  提供有关如何使用 WCF 数据服务在 Web 或 Intranet 上部署数据服务的信息。  
 
  [ADO.NET](./adonet/index.md)  
@@ -31,7 +32,7 @@ ms.locfileid: "70894358"
 ## <a name="related-sections"></a>相关章节
 
  [语言集成查询 (LINQ)](../../csharp/programming-guide/concepts/linq/index.md)  
- 提供使用C#的有关语言集成查询（LINQ）的相关文档的链接。  
+ 提供指向使用 c # 的语言集成查询（LINQ）的相关文档的链接。  
   
  [语言集成查询 (LINQ) (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/index.md)  
  提供有关使用 Visual Basic 的语言集成查询（LINQ）的相关文档的链接。  

@@ -1,13 +1,14 @@
 ---
 title: 诊断跟踪
+description: 了解 .NET 中的诊断跟踪。 跟踪是指发布在执行应用程序期间生成的特定消息。
 ms.date: 03/30/2017
 ms.assetid: 28e77a63-d20d-4b6a-9caf-ddad86550427
-ms.openlocfilehash: 76712710bf42f498ba859c7b1cd18a261387078c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5de8fdf7b95cf01b119118dac75d373c32949dcd
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174415"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141806"
 ---
 # <a name="diagnostic-traces"></a>诊断跟踪
 跟踪是指发布在执行应用程序期间生成的特定消息。 使用跟踪时，必须具有收集和记录所发送消息的机制。 跟踪消息由侦听器来接收。 侦听器的用途是收集、存储和路由跟踪消息。 侦听器会将跟踪输出定向到适当的目标，如日志、窗口或文本文件。  
@@ -39,13 +40,13 @@ ms.locfileid: "79174415"
   
 |跟踪级别|说明|  
 |-----------------|-----------------|  
-|严重|表示发生了类似于下面的严重故障：<br /><br /> - 可能导致用户功能立即丢失的错误。<br />- 需要管理员采取措施以避免功能丢失的事件。<br />- 代码挂起。<br />- 此跟踪级别还可以为解释其他关键跟踪提供足够的上下文。 这可以帮助确定导致严重故障的操作序列。|  
+|严重|表示发生了类似于下面的严重故障：<br /><br /> -可能导致用户功能立即丢失的错误。<br />-一个事件，要求管理员采取措施以避免功能丢失。<br />-代码挂起。<br />-此跟踪级别还可以提供足够的上下文来解释其他关键跟踪。 这可以帮助确定导致严重故障的操作序列。|  
 |错误|发生了可能会导致用户功能丧失的错误（如无效的配置或网络行为）。|  
 |警告|存在一种状况，它可能会在以后导致错误或严重故障（例如，分配失败或达到限制）。 对用户代码中的错误（例如，事务中止、超时、身份验证失败）的正常处理也可能会生成警告。|  
 |信息|生成对监视和诊断系统状态、测量性能或执行分析十分有用的消息。 这些消息可包括事务和登记生存期事件，如创建或提交事务、跨重要边界或分配重要资源等。 开发人员可利用此类信息规划容量和管理性能。|  
   
 ## <a name="trace-codes"></a>跟踪代码  
- 下表列出了由 <xref:System.Transactions> 基础结构生成的跟踪代码。 表中包括跟踪代码标识符、跟踪的枚<xref:System.Diagnostics.EventTypeFilter.EventType%2A>举级别以及跟踪的**TraceRecord**中包含的额外数据。 此外，跟踪的相应跟踪级别也存储在**跟踪记录中**。  
+ 下表列出了由 <xref:System.Transactions> 基础结构生成的跟踪代码。 表中包含的是跟踪代码标识符、跟踪的 <xref:System.Diagnostics.EventTypeFilter.EventType%2A> 枚举级别以及用于跟踪的**TraceRecord**中包含的额外数据。 此外，跟踪的相应跟踪级别也存储在**TraceRecord**中。  
   
 |TraceCode|EventType|TraceRecord 中的额外数据|  
 |---------------|---------------|-------------------------------|  
@@ -56,12 +57,12 @@ ms.locfileid: "79174415"
 |TransactionRollbackCalled|警告|TransactionTraceId|  
 |TransactionAborted|警告|TransactionTraceId|  
 |TransactionInDoubt|警告|TransactionTraceId|  
-|TransactionScopeCreated|信息|TransactionScopeResult，可为以下各项：<br /><br /> - 新交易<br />- 交易通过。<br />- 已传递从属事务。<br />- 使用当前事务。<br />-没有交易<br /><br /> 新的当前 TransactionTraceId|  
-|TransactionScopeDisposed|信息|作用域的"预期"当前事务的事务跟踪Id。|  
-|TransactionScopeIncomplete|警告|作用域的"预期"当前事务的事务跟踪Id。|  
-|TransactionScopeNestedIncorrectly|警告|作用域的"预期"当前事务的事务跟踪Id。|  
+|TransactionScopeCreated|信息|TransactionScopeResult，可为以下各项：<br /><br /> -新事务。<br />-事务已通过。<br />从属事务已通过。<br />-使用当前事务。<br />-无事务。<br /><br /> 新的当前 TransactionTraceId|  
+|TransactionScopeDisposed|信息|作用域的 "预期" 当前事务的 TransactionTraceId。|  
+|TransactionScopeIncomplete|警告|作用域的 "预期" 当前事务的 TransactionTraceId。|  
+|TransactionScopeNestedIncorrectly|警告|作用域的 "预期" 当前事务的 TransactionTraceId。|  
 |TransactionScopeCurrentTransactionChanged|警告|旧的当前 TransactionTraceId、其他 TransactionTraceId|  
-|TransactionScopeTimeout|警告|作用域的"预期"当前事务的事务跟踪Id。|  
+|TransactionScopeTimeout|警告|作用域的 "预期" 当前事务的 TransactionTraceId。|  
 |DependentCloneCreated|信息|TransactionTraceId、已创建的依赖事务的类型 (RollbackIfNotComplete/BlockCommitUntilComplete)|  
 |DependentCloneComplete|信息|TransactionTraceId|  
 |RecoveryComplete|信息|资源管理器 GUID（来自基类型）|  

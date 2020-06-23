@@ -1,13 +1,14 @@
 ---
 title: 事务处理
+description: 查看 .NET 中的事务处理。 事务确保了面向数据的资源不会永久更新，除非所有操作都成功完成。
 ms.date: 03/30/2017
 ms.assetid: effdc8e6-accf-41eb-98a5-431603ba218b
-ms.openlocfilehash: de88247e5916ab6e080c4de361efecee0b193e18
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 30d69c55d968865cc80b8633bdbc2442f6d216de
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205917"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141909"
 ---
 # <a name="transaction-processing"></a>事务处理
 当您从网上书店购买书籍时，会用钱（以信贷方式）来交换书籍。 如果您的信用良好，则一系列相关操作可确保您和书店可以相应地获得书籍和钱。 但如果在交换期间该系列操作中的单个操作发生故障，则整个交换就会失败。 结果，您就得不到书籍，而书店也得不到钱。  
@@ -25,6 +26,6 @@ ms.locfileid: "70205917"
  [由 System.Transactions 提供的功能](features-provided-by-system-transactions.md)  
  讨论如何使用 System.Transactions 中的功能编写您自己的事务应用程序。  
   
-## <a name="reference"></a>参考  
+## <a name="reference"></a>引用  
  <xref:System.Transactions>  
  提供用于使您的代码参与事务的类。 这些类支持的事务可使用多个分布式参与者、多阶段通知和持久登记。

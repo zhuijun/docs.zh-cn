@@ -1,20 +1,21 @@
 ---
 title: 实现资源管理器
+description: 在 .NET 中实现资源管理器。 资源管理器管理事务中使用的资源。 事务管理器协调资源管理器操作。
 ms.date: 03/30/2017
 ms.assetid: d5c153f6-4419-49e3-a5f1-a50ae4c81bf3
-ms.openlocfilehash: f64a729f49d546dd16c25a2be1f9bd64a2ca8f63
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: bf40c6eaee35a5a548c6de4a286e46c4d4a66aca
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205950"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141844"
 ---
 # <a name="implementing-a-resource-manager"></a>实现资源管理器
 事务中使用的每个资源都由资源管理器进行管理，而后者的操作则由事务管理器进行协调。 资源管理器与事务管理器协调工作，为应用程序提供了原子性和隔离性的保证。 例如，Microsoft SQL Server、持久消息队列、内存中的哈希表都是资源管理器。  
   
  资源管理器可管理持久或可变数据。 资源管理器的持久性（反之为可变性）是指资源管理器是否支持故障恢复。 如果资源管理器支持故障恢复，则它会在第 1 阶段（准备阶段）将数据保存到持久存储区中；这样，一旦资源管理器出现故障，它就可在恢复时在事务中重新登记，并根据从 TM 接收到的通知执行适当的操作。 通常，可变资源管理器管理如内存中的数据结构之类的可变资源（如内存中的事务处理哈希表），而持久资源管理器则管理具有更持久的后备存储区的资源（例如，其后备存储区为磁盘的数据库）。  
   
- 资源若要参与事务，它必须在事务中进行登记。 类定义一组方法, 这些方法的名称以提供此功能的征用开头。 <xref:System.Transactions.Transaction> 不同的**登记**方法对应于资源管理器可能具有的不同类型的登记。 具体来说，<xref:System.Transactions.Transaction.EnlistVolatile%2A> 方法用于登记可变资源，而 <xref:System.Transactions.Transaction.EnlistDurable%2A> 方法则用于登记持久资源。 为了简单起见，在根据资源的持久性支持决定是使用 <xref:System.Transactions.Transaction.EnlistDurable%2A> 还是 <xref:System.Transactions.Transaction.EnlistVolatile%2A> 方法后，应为资源管理器实现 <xref:System.Transactions.IEnlistmentNotification> 接口，从而将资源登记为参与两阶段提交 (2PC)。 有关2PC 的详细信息, 请参阅[在单阶段和多阶段提交事务](committing-a-transaction-in-single-phase-and-multi-phase.md)。  
+ 资源若要参与事务，它必须在事务中进行登记。 <xref:System.Transactions.Transaction>类定义一组方法，这些方法的名称以提供此功能的**征用**开头。 不同的**登记**方法对应于资源管理器可能具有的不同类型的登记。 具体来说，<xref:System.Transactions.Transaction.EnlistVolatile%2A> 方法用于登记可变资源，而 <xref:System.Transactions.Transaction.EnlistDurable%2A> 方法则用于登记持久资源。 为了简单起见，在根据资源的持久性支持决定是使用 <xref:System.Transactions.Transaction.EnlistDurable%2A> 还是 <xref:System.Transactions.Transaction.EnlistVolatile%2A> 方法后，应为资源管理器实现 <xref:System.Transactions.IEnlistmentNotification> 接口，从而将资源登记为参与两阶段提交 (2PC)。 有关2PC 的详细信息，请参阅[在单阶段和多阶段提交事务](committing-a-transaction-in-single-phase-and-multi-phase.md)。  
   
  通过登记，资源管理器可确保在事务提交或中止时能够从事务管理器获取回调。 每个登记都有一个 <xref:System.Transactions.IEnlistmentNotification> 实例。 通常情况下，在每个事务中只执行一次登记，但资源管理器可选择在同一事务中执行多次登记。  
   
@@ -30,7 +31,7 @@ ms.locfileid: "70205950"
   
  总之，两阶段提交协议和资源管理器共同使事务具有了原子性和持久性。  
   
- <xref:System.Transactions.Transaction> 类还提供了 <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> 方法来登记可提升的单阶段登记 (PSPE)。 这使持久资源管理器 (RM) 可承载和“拥有”以后可在需要时升级为由 MSDTC 进行管理的事务。 有关此内容的详细信息, 请参阅[使用单阶段提交和可提升的单阶段通知进行优化](optimization-spc-and-promotable-spn.md)。  
+ <xref:System.Transactions.Transaction> 类还提供了 <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> 方法来登记可提升的单阶段登记 (PSPE)。 这使持久资源管理器 (RM) 可承载和“拥有”以后可在需要时升级为由 MSDTC 进行管理的事务。 有关此内容的详细信息，请参阅[使用单阶段提交和可提升的单阶段通知进行优化](optimization-spc-and-promotable-spn.md)。  
   
 ## <a name="in-this-section"></a>本节内容  
  下列主题概括了资源管理器通常所遵循的步骤。  
@@ -39,7 +40,7 @@ ms.locfileid: "70205950"
   
  描述如何在事务中登记持久或可变资源。  
   
- [单阶段和多阶段确认事务](committing-a-transaction-in-single-phase-and-multi-phase.md)  
+ [在单阶段和多阶段中提交事务](committing-a-transaction-in-single-phase-and-multi-phase.md)  
   
  描述资源管理器如何响应提交通知并准备提交。  
   
@@ -47,7 +48,7 @@ ms.locfileid: "70205950"
   
  描述如何从故障中恢复持久资源管理器。  
   
- [访问资源中的安全信任级别](security-trust-levels-in-accessing-resources.md)  
+ [访问资源时的安全信任级别](security-trust-levels-in-accessing-resources.md)  
   
  描述 System.Transactions 的三种信任级别如何限制对 <xref:System.Transactions> 所公开的资源类型的访问。  
   
