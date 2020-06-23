@@ -1,27 +1,28 @@
 ---
 title: 如何：使用用户名和密码进行身份验证
+description: 了解如何通过使用示例代码，使 WCF 服务能够通过使用 Windows 域用户名和密码对客户端进行身份验证。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [WCF], user name and password
 ms.assetid: a5415be2-0ef3-464c-9f76-c255cb8165a4
-ms.openlocfilehash: e8dc9177afc590a6467855decfa8450b37c6fc77
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1f938f8041b2577b3705266948f29b42f23a6fd7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601278"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247242"
 ---
-# <a name="how-to-authenticate-with-a-user-name-and-password"></a><span data-ttu-id="b79dc-102">如何：使用用户名和密码进行身份验证</span><span class="sxs-lookup"><span data-stu-id="b79dc-102">How to: Authenticate with a User Name and Password</span></span>
+# <a name="how-to-authenticate-with-a-user-name-and-password"></a><span data-ttu-id="2c009-103">如何：使用用户名和密码进行身份验证</span><span class="sxs-lookup"><span data-stu-id="2c009-103">How to: Authenticate with a User Name and Password</span></span>
 
-<span data-ttu-id="b79dc-103">本主题演示如何使 Windows Communication Foundation （WCF）服务能够使用 Windows 域用户名和密码对客户端进行身份验证。</span><span class="sxs-lookup"><span data-stu-id="b79dc-103">This topic demonstrates how to enable a Windows Communication Foundation (WCF) service to authenticate a client with a Windows domain username and password.</span></span> <span data-ttu-id="b79dc-104">它假定您有一个正在工作的自承载 WCF 服务。</span><span class="sxs-lookup"><span data-stu-id="b79dc-104">It assumes you have a working, self-hosted WCF service.</span></span> <span data-ttu-id="b79dc-105">有关创建基本的自承载 WCF 服务的示例，请参阅[入门教程](../getting-started-tutorial.md)。</span><span class="sxs-lookup"><span data-stu-id="b79dc-105">For an example of creating a basic self-hosted WCF service see, [Getting Started Tutorial](../getting-started-tutorial.md).</span></span> <span data-ttu-id="b79dc-106">本主题假定在代码中配置服务。</span><span class="sxs-lookup"><span data-stu-id="b79dc-106">This topic assumes the service is configured in code.</span></span> <span data-ttu-id="b79dc-107">若要查看使用配置文件配置类似服务的示例，请参阅[消息安全用户名](../samples/message-security-user-name.md)。</span><span class="sxs-lookup"><span data-stu-id="b79dc-107">If you would like to see an example of configuring a similar service using a configuration file, see [Message Security User Name](../samples/message-security-user-name.md).</span></span>
+<span data-ttu-id="2c009-104">本主题演示如何使 Windows Communication Foundation （WCF）服务能够使用 Windows 域用户名和密码对客户端进行身份验证。</span><span class="sxs-lookup"><span data-stu-id="2c009-104">This topic demonstrates how to enable a Windows Communication Foundation (WCF) service to authenticate a client with a Windows domain username and password.</span></span> <span data-ttu-id="2c009-105">它假定您有一个正在工作的自承载 WCF 服务。</span><span class="sxs-lookup"><span data-stu-id="2c009-105">It assumes you have a working, self-hosted WCF service.</span></span> <span data-ttu-id="2c009-106">有关创建基本的自承载 WCF 服务的示例，请参阅[入门教程](../getting-started-tutorial.md)。</span><span class="sxs-lookup"><span data-stu-id="2c009-106">For an example of creating a basic self-hosted WCF service see, [Getting Started Tutorial](../getting-started-tutorial.md).</span></span> <span data-ttu-id="2c009-107">本主题假定在代码中配置服务。</span><span class="sxs-lookup"><span data-stu-id="2c009-107">This topic assumes the service is configured in code.</span></span> <span data-ttu-id="2c009-108">若要查看使用配置文件配置类似服务的示例，请参阅[消息安全用户名](../samples/message-security-user-name.md)。</span><span class="sxs-lookup"><span data-stu-id="2c009-108">If you would like to see an example of configuring a similar service using a configuration file, see [Message Security User Name](../samples/message-security-user-name.md).</span></span>
 
-<span data-ttu-id="b79dc-108">要配置服务以使用 Windows 域用户名和密码对其客户端进行身份验证，请使用 <xref:System.ServiceModel.WSHttpBinding>，并将其 `Security.Mode` 属性设置为 `Message`。</span><span class="sxs-lookup"><span data-stu-id="b79dc-108">To configure a service to authenticate its clients using Windows Domain username and passwords use the <xref:System.ServiceModel.WSHttpBinding> and set its `Security.Mode` property to `Message`.</span></span> <span data-ttu-id="b79dc-109">此外，您必须指定 X509 证书，该证书用于在将用户名和密码从客户端发送到服务时对它们进行加密。</span><span class="sxs-lookup"><span data-stu-id="b79dc-109">In addition you must specify an X509 certificate that will be used to encrypt the username and password as they are sent from the client to the service.</span></span>
+<span data-ttu-id="2c009-109">要配置服务以使用 Windows 域用户名和密码对其客户端进行身份验证，请使用 <xref:System.ServiceModel.WSHttpBinding>，并将其 `Security.Mode` 属性设置为 `Message`。</span><span class="sxs-lookup"><span data-stu-id="2c009-109">To configure a service to authenticate its clients using Windows Domain username and passwords use the <xref:System.ServiceModel.WSHttpBinding> and set its `Security.Mode` property to `Message`.</span></span> <span data-ttu-id="2c009-110">此外，您必须指定 X509 证书，该证书用于在将用户名和密码从客户端发送到服务时对它们进行加密。</span><span class="sxs-lookup"><span data-stu-id="2c009-110">In addition you must specify an X509 certificate that will be used to encrypt the username and password as they are sent from the client to the service.</span></span>
 
-<span data-ttu-id="b79dc-110">在客户端上，您必须提示用户输入用户名和密码，并指定用户在 WCF 客户端代理上的凭据。</span><span class="sxs-lookup"><span data-stu-id="b79dc-110">On the client, you must prompt the user for the username and password and specify the user’s credentials on the WCF client proxy.</span></span>
+<span data-ttu-id="2c009-111">在客户端上，您必须提示用户输入用户名和密码，并指定用户在 WCF 客户端代理上的凭据。</span><span class="sxs-lookup"><span data-stu-id="2c009-111">On the client, you must prompt the user for the username and password and specify the user’s credentials on the WCF client proxy.</span></span>
 
-## <a name="to-configure-a-wcf-service-to-authenticate-using-windows-domain-username-and-password"></a><span data-ttu-id="b79dc-111">将 WCF 服务配置为使用 Windows 域用户名和密码进行身份验证</span><span class="sxs-lookup"><span data-stu-id="b79dc-111">To configure a WCF service to authenticate using Windows domain username and password</span></span>
+## <a name="to-configure-a-wcf-service-to-authenticate-using-windows-domain-username-and-password"></a><span data-ttu-id="2c009-112">将 WCF 服务配置为使用 Windows 域用户名和密码进行身份验证</span><span class="sxs-lookup"><span data-stu-id="2c009-112">To configure a WCF service to authenticate using Windows domain username and password</span></span>
 
-1. <span data-ttu-id="b79dc-112">创建 <xref:System.ServiceModel.WSHttpBinding> 的实例，将绑定的安全模式设置为 <xref:System.ServiceModel.WSHttpSecurity.Message?displayProperty=nameWithType>，将绑定的 `ClientCredentialType` 设置为 <xref:System.ServiceModel.MessageCredentialType.UserName?displayProperty=nameWithType>，并使用配置的绑定将服务终结点添加到服务主机，如下面的代码中所示：</span><span class="sxs-lookup"><span data-stu-id="b79dc-112">Create an instance of the <xref:System.ServiceModel.WSHttpBinding>, set the security mode of the binding to <xref:System.ServiceModel.WSHttpSecurity.Message?displayProperty=nameWithType>, set the `ClientCredentialType` of the binding to <xref:System.ServiceModel.MessageCredentialType.UserName?displayProperty=nameWithType>, and add a service endpoint using the configured binding to the service host as shown in the following code:</span></span>
+1. <span data-ttu-id="2c009-113">创建 <xref:System.ServiceModel.WSHttpBinding> 的实例，将绑定的安全模式设置为 <xref:System.ServiceModel.WSHttpSecurity.Message?displayProperty=nameWithType>，将绑定的 `ClientCredentialType` 设置为 <xref:System.ServiceModel.MessageCredentialType.UserName?displayProperty=nameWithType>，并使用配置的绑定将服务终结点添加到服务主机，如下面的代码中所示：</span><span class="sxs-lookup"><span data-stu-id="2c009-113">Create an instance of the <xref:System.ServiceModel.WSHttpBinding>, set the security mode of the binding to <xref:System.ServiceModel.WSHttpSecurity.Message?displayProperty=nameWithType>, set the `ClientCredentialType` of the binding to <xref:System.ServiceModel.MessageCredentialType.UserName?displayProperty=nameWithType>, and add a service endpoint using the configured binding to the service host as shown in the following code:</span></span>
 
     ```csharp
     // ...
@@ -32,7 +33,7 @@ ms.locfileid: "84601278"
     // ...
     ```
 
-2. <span data-ttu-id="b79dc-113">指定用于对通过网络发送的用户名和密码信息进行加密的服务器证书。</span><span class="sxs-lookup"><span data-stu-id="b79dc-113">Specify the server certificate used to encrypt the username and password information sent over the wire.</span></span> <span data-ttu-id="b79dc-114">此代码应紧跟在上面的代码之后。</span><span class="sxs-lookup"><span data-stu-id="b79dc-114">This code should immediately follow the code above.</span></span> <span data-ttu-id="b79dc-115">下面的示例使用由 "[消息安全用户名](../samples/message-security-user-name.md)" 示例中的 setup.exe 文件创建的证书：</span><span class="sxs-lookup"><span data-stu-id="b79dc-115">The following example uses the certificate that is created by the setup.bat file from the [Message Security User Name](../samples/message-security-user-name.md) sample:</span></span>
+2. <span data-ttu-id="2c009-114">指定用于对通过网络发送的用户名和密码信息进行加密的服务器证书。</span><span class="sxs-lookup"><span data-stu-id="2c009-114">Specify the server certificate used to encrypt the username and password information sent over the wire.</span></span> <span data-ttu-id="2c009-115">此代码应紧跟在上面的代码之后。</span><span class="sxs-lookup"><span data-stu-id="2c009-115">This code should immediately follow the code above.</span></span> <span data-ttu-id="2c009-116">下面的示例使用 "[消息安全用户名](../samples/message-security-user-name.md)" 示例中由 setup.bat 文件创建的证书：</span><span class="sxs-lookup"><span data-stu-id="2c009-116">The following example uses the certificate that is created by the setup.bat file from the [Message Security User Name](../samples/message-security-user-name.md) sample:</span></span>
 
     ```csharp
     // ...
@@ -40,14 +41,14 @@ ms.locfileid: "84601278"
     // ...
     ```
 
-    <span data-ttu-id="b79dc-116">您可以使用您自己的证书，只需修改代码以引用您的证书。</span><span class="sxs-lookup"><span data-stu-id="b79dc-116">You can use your own certificate, just modify the code to refer to your certificate.</span></span> <span data-ttu-id="b79dc-117">有关创建和使用证书的详细信息，请参阅使用[证书](working-with-certificates.md)。</span><span class="sxs-lookup"><span data-stu-id="b79dc-117">For more information about creating and using certificates see [Working with Certificates](working-with-certificates.md).</span></span> <span data-ttu-id="b79dc-118">确保证书在本地计算机的受信任人证书存储区中。</span><span class="sxs-lookup"><span data-stu-id="b79dc-118">Make sure the certificate is in the Trusted People certificate store for the Local Machine.</span></span> <span data-ttu-id="b79dc-119">为此，可以运行 mmc.exe，然后选择 "**文件**"、"**添加/删除管理单元 ...** " 菜单项。</span><span class="sxs-lookup"><span data-stu-id="b79dc-119">You can do this by running mmc.exe and selecting the **File**, **Add/Remove Snap-in...** menu item.</span></span> <span data-ttu-id="b79dc-120">在 "**添加或删除管理单元**" 对话框中，选择 "**证书" 管理单元**，然后单击 "**添加**"。</span><span class="sxs-lookup"><span data-stu-id="b79dc-120">In the **Add or Remove Snap-ins** dialog, select the **Certificates snap-in** and click **Add**.</span></span> <span data-ttu-id="b79dc-121">在 "证书" 管理单元对话框中，选择 "**计算机帐户**"。</span><span class="sxs-lookup"><span data-stu-id="b79dc-121">In the Certificates Snap-in dialog select **Computer account**.</span></span> <span data-ttu-id="b79dc-122">默认情况下，从消息安全用户名称示例生成的证书将位于个人/证书文件夹中。</span><span class="sxs-lookup"><span data-stu-id="b79dc-122">By default the certificate generated from the Message Security User name sample will be located in the Personal/Certificates folder.</span></span>  <span data-ttu-id="b79dc-123">它将在 MMC 窗口中的 "颁发给" 列下作为 "localhost" 列出。</span><span class="sxs-lookup"><span data-stu-id="b79dc-123">It will be listed as "localhost" under the Issued to column in the MMC window.</span></span> <span data-ttu-id="b79dc-124">将证书拖放到 "**受信任人**" 文件夹中。</span><span class="sxs-lookup"><span data-stu-id="b79dc-124">Drag and drop the certificate into the **Trusted People** folder.</span></span> <span data-ttu-id="b79dc-125">这将允许 WCF 在执行身份验证时，将证书视为受信任的证书。</span><span class="sxs-lookup"><span data-stu-id="b79dc-125">This will allow WCF to treat the certificate as a trusted certificate when performing authentication.</span></span>
+    <span data-ttu-id="2c009-117">您可以使用您自己的证书，只需修改代码以引用您的证书。</span><span class="sxs-lookup"><span data-stu-id="2c009-117">You can use your own certificate, just modify the code to refer to your certificate.</span></span> <span data-ttu-id="2c009-118">有关创建和使用证书的详细信息，请参阅使用[证书](working-with-certificates.md)。</span><span class="sxs-lookup"><span data-stu-id="2c009-118">For more information about creating and using certificates see [Working with Certificates](working-with-certificates.md).</span></span> <span data-ttu-id="2c009-119">确保证书在本地计算机的受信任人证书存储区中。</span><span class="sxs-lookup"><span data-stu-id="2c009-119">Make sure the certificate is in the Trusted People certificate store for the Local Machine.</span></span> <span data-ttu-id="2c009-120">为此，可以运行 mmc.exe 并选择 "**文件**"、"**添加/删除管理单元 ...** " 菜单项。</span><span class="sxs-lookup"><span data-stu-id="2c009-120">You can do this by running mmc.exe and selecting the **File**, **Add/Remove Snap-in...** menu item.</span></span> <span data-ttu-id="2c009-121">在 "**添加或删除管理单元**" 对话框中，选择 "**证书" 管理单元**，然后单击 "**添加**"。</span><span class="sxs-lookup"><span data-stu-id="2c009-121">In the **Add or Remove Snap-ins** dialog, select the **Certificates snap-in** and click **Add**.</span></span> <span data-ttu-id="2c009-122">在 "证书" 管理单元对话框中，选择 "**计算机帐户**"。</span><span class="sxs-lookup"><span data-stu-id="2c009-122">In the Certificates Snap-in dialog select **Computer account**.</span></span> <span data-ttu-id="2c009-123">默认情况下，从消息安全用户名称示例生成的证书将位于个人/证书文件夹中。</span><span class="sxs-lookup"><span data-stu-id="2c009-123">By default the certificate generated from the Message Security User name sample will be located in the Personal/Certificates folder.</span></span>  <span data-ttu-id="2c009-124">它将在 MMC 窗口中的 "颁发给" 列下作为 "localhost" 列出。</span><span class="sxs-lookup"><span data-stu-id="2c009-124">It will be listed as "localhost" under the Issued to column in the MMC window.</span></span> <span data-ttu-id="2c009-125">将证书拖放到 "**受信任人**" 文件夹中。</span><span class="sxs-lookup"><span data-stu-id="2c009-125">Drag and drop the certificate into the **Trusted People** folder.</span></span> <span data-ttu-id="2c009-126">这将允许 WCF 在执行身份验证时，将证书视为受信任的证书。</span><span class="sxs-lookup"><span data-stu-id="2c009-126">This will allow WCF to treat the certificate as a trusted certificate when performing authentication.</span></span>
 
-## <a name="to-call-the-service-passing-username-and-password"></a><span data-ttu-id="b79dc-126">调用服务传递用户名和密码</span><span class="sxs-lookup"><span data-stu-id="b79dc-126">To call the service passing username and password</span></span>
+## <a name="to-call-the-service-passing-username-and-password"></a><span data-ttu-id="2c009-127">调用服务传递用户名和密码</span><span class="sxs-lookup"><span data-stu-id="2c009-127">To call the service passing username and password</span></span>
 
-1. <span data-ttu-id="b79dc-127">客户端应用程序必须提示用户输入其用户名和密码。</span><span class="sxs-lookup"><span data-stu-id="b79dc-127">The client application must prompt the user for their username and password.</span></span> <span data-ttu-id="b79dc-128">以下代码要求用户输入用户名和密码：</span><span class="sxs-lookup"><span data-stu-id="b79dc-128">The following code asks the user for username and password:</span></span>
+1. <span data-ttu-id="2c009-128">客户端应用程序必须提示用户输入其用户名和密码。</span><span class="sxs-lookup"><span data-stu-id="2c009-128">The client application must prompt the user for their username and password.</span></span> <span data-ttu-id="2c009-129">以下代码要求用户输入用户名和密码：</span><span class="sxs-lookup"><span data-stu-id="2c009-129">The following code asks the user for username and password:</span></span>
 
     > [!WARNING]
-    > <span data-ttu-id="b79dc-129">此代码不应在生产中使用，因为密码在输入时将显示出来。</span><span class="sxs-lookup"><span data-stu-id="b79dc-129">This code should not be used in production as the password is displayed while being entered.</span></span>
+    > <span data-ttu-id="2c009-130">此代码不应在生产中使用，因为密码在输入时将显示出来。</span><span class="sxs-lookup"><span data-stu-id="2c009-130">This code should not be used in production as the password is displayed while being entered.</span></span>
 
     ```csharp
     public static void GetPassword(out string username, out string password)
@@ -60,7 +61,7 @@ ms.locfileid: "84601278"
     }
     ```
 
-2. <span data-ttu-id="b79dc-130">创建客户端代理的实例，指定客户端的凭据，如以下代码所示：</span><span class="sxs-lookup"><span data-stu-id="b79dc-130">Create an instance of the client proxy specifying the client's credentials as shown in the following code:</span></span>
+2. <span data-ttu-id="2c009-131">创建客户端代理的实例，指定客户端的凭据，如以下代码所示：</span><span class="sxs-lookup"><span data-stu-id="2c009-131">Create an instance of the client proxy specifying the client's credentials as shown in the following code:</span></span>
 
     ```csharp
     string username;
@@ -81,7 +82,7 @@ ms.locfileid: "84601278"
     // Call the service operation using the proxy
     ```
 
-## <a name="see-also"></a><span data-ttu-id="b79dc-131">另请参阅</span><span class="sxs-lookup"><span data-stu-id="b79dc-131">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="2c009-132">请参阅</span><span class="sxs-lookup"><span data-stu-id="2c009-132">See also</span></span>
 
 - <xref:System.ServiceModel.WSHttpBinding>
 - <xref:System.ServiceModel.WSHttpSecurity>
@@ -91,6 +92,6 @@ ms.locfileid: "84601278"
 - <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>
 - <xref:System.ServiceModel.WSHttpSecurity.Mode%2A>
 - <xref:System.ServiceModel.HttpTransportSecurity.ClientCredentialType%2A>
-- [<span data-ttu-id="b79dc-132">通过基本身份验证确保的传输安全</span><span class="sxs-lookup"><span data-stu-id="b79dc-132">Transport Security with Basic Authentication</span></span>](transport-security-with-basic-authentication.md)
-- [<span data-ttu-id="b79dc-133">分布式应用程序安全</span><span class="sxs-lookup"><span data-stu-id="b79dc-133">Distributed Application Security</span></span>](distributed-application-security.md)
+- [<span data-ttu-id="2c009-133">通过基本身份验证确保的传输安全</span><span class="sxs-lookup"><span data-stu-id="2c009-133">Transport Security with Basic Authentication</span></span>](transport-security-with-basic-authentication.md)
+- [<span data-ttu-id="2c009-134">分布式应用程序安全</span><span class="sxs-lookup"><span data-stu-id="2c009-134">Distributed Application Security</span></span>](distributed-application-security.md)
 - [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md)
