@@ -1,13 +1,14 @@
 ---
 title: ETW 跟踪
+description: 此示例演示如何使用 Windows 事件跟踪（ETW）和 ETWTraceListener 实现端到端（E2E）跟踪。
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: 0bdbf6699a0cfa3dce58abda4c989fb25d764459
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 210186285ed749a5d1567becd6738939b0bd9d03
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600553"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244421"
 ---
 # <a name="etw-tracing"></a>ETW 跟踪
 本示例演示如何通过使用 Windows 事件跟踪 (ETW) 和本示例提供的 `ETWTraceListener` 来实现端对端 (E2E) 跟踪。 该示例基于[入门](getting-started-sample.md)，并包括 ETW 跟踪。  
@@ -52,7 +53,7 @@ ms.locfileid: "84600553"
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。 有关这些工具的详细信息，请参阅<https://go.microsoft.com/fwlink/?LinkId=56580>  
   
- 使用 ETWTraceListener 时，将在二进制 .etl 文件中记录跟踪。 在打开 ServiceModel 跟踪的情况下，所有生成的跟踪都显示在同一个文件中。 使用[服务跟踪查看器工具（svctraceviewer.exe）](../service-trace-viewer-tool-svctraceviewer-exe.md)来查看 .etl 和 .svclog 日志文件。 该查看器可创建系统的端对端视图，可以从消息源到消息目标和使用点来跟踪消息。  
+ 使用 ETWTraceListener 时，将在二进制 .etl 文件中记录跟踪。 在打开 ServiceModel 跟踪的情况下，所有生成的跟踪都显示在同一个文件中。 使用[服务跟踪查看器工具（SvcTraceViewer.exe）](../service-trace-viewer-tool-svctraceviewer-exe.md)查看 .etl 和 .svclog 日志文件。 该查看器可创建系统的端对端视图，可以从消息源到消息目标和使用点来跟踪消息。  
   
  ETW 跟踪侦听器支持循环记录。 若要启用此功能，请参阅**开始**、**运行**和键入 `cmd` 以启动命令控制台。 在下面的命令中，用日志文件的名称替换 `<logfilename>` 参数。  
   
@@ -74,7 +75,7 @@ logman start Wcf
 logman stop Wcf  
 ```  
   
- 此过程将生成二进制循环日志，可以通过所选的工具[（包括服务跟踪查看器工具（svctraceviewer.exe）](../service-trace-viewer-tool-svctraceviewer-exe.md)或 Tracerpt）进行处理。  
+ 此过程生成可通过所选工具处理的二进制循环日志，包括[服务跟踪查看器工具（SvcTraceViewer.exe）](../service-trace-viewer-tool-svctraceviewer-exe.md)或 Tracerpt。  
   
  若要详细了解如何执行循环日志记录，还可以查看[循环跟踪](circular-tracing.md)示例。  
   
@@ -106,6 +107,6 @@ logman stop Wcf
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\AnalyticTrace`  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [AppFabric 监视示例](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

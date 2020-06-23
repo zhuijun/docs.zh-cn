@@ -1,13 +1,14 @@
 ---
 title: 部署承载于 Internet 信息服务中的 WCF 服务
+description: 了解开发和部署在 IIS 中承载的 WCF 服务所需的任务（从验证组件安装开始）
 ms.date: 03/30/2017
 ms.assetid: 04ebd329-3fbd-44c3-b3ab-1de3517e27d7
-ms.openlocfilehash: 826a8798ada8f04173b047dc27829c384f79e2b8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 886fd9b8d8cf3059b1fd8679c5dd89ee015f2adf
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599238"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245088"
 ---
 # <a name="deploying-an-internet-information-services-hosted-wcf-service"></a>部署承载于 Internet 信息服务中的 WCF 服务
 
@@ -35,7 +36,7 @@ ms.locfileid: "84599238"
 
 如果计算机上已存在 IIS，则 .NET Framework 的安装过程会自动将 WCF 注册到 IIS。 如果在 .NET Framework 后安装 IIS，则需要执行其他步骤以将 WCF 注册到 IIS 和 ASP.NET。 根据您的操作系统，可以按如下所述执行此操作：
 
-- Windows 7 和 Windows Server 2003：使用[System.servicemodel 注册工具（servicemodelreg.exe）](../servicemodelreg-exe.md)工具将 WCF 注册到 IIS。 若要使用此工具，请在[Visual Studio 的开发人员命令提示](../../tools/developer-command-prompt-for-vs.md)中键入**servicemodelreg.exe/i/x** 。
+- Windows 7 和 Windows Server 2003：使用[System.servicemodel 注册工具（ServiceModelReg.exe）](../servicemodelreg-exe.md)工具将 WCF 注册到 IIS。 若要使用此工具，请在[Visual Studio 的开发人员命令提示](../../tools/developer-command-prompt-for-vs.md)中键入**ServiceModelReg.exe/i/x** 。
 
 - Windows 7：最后，必须验证是否已将 ASP.NET 配置为使用 .NET Framework 版本4或更高版本。 可以通过使用选项运行 ASPNET_Regiis 工具来执行此操作 `–i` 。 有关详细信息，请参阅[ASP.NET IIS 注册工具](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/k6h9cz8h(v=vs.90))。
 
@@ -75,7 +76,7 @@ new ServiceHost( typeof( MyNamespace.MyServiceImplementationTypeName ) );
 
 ## <a name="configure-the-wcf-service"></a>配置 WCF 服务
 
-IIS 承载的 WCF 服务将其配置存储在应用程序的 web.config 文件中。 承载于 iis 中的服务使用与在 IIS 外部承载的 WCF 服务相同的配置元素和语法。 但是，下面的约束对 IIS 承载环境是唯一的：
+IIS 承载的 WCF 服务将其配置存储在应用程序 Web.config 文件中。 承载于 iis 中的服务使用与在 IIS 外部承载的 WCF 服务相同的配置元素和语法。 但是，下面的约束对 IIS 承载环境是唯一的：
 
 - 承载于 IIS 中的服务的基址。
 
@@ -109,7 +110,7 @@ IIS 承载的 WCF 服务可以利用 HTTP 传输安全（例如，HTTPS 和 HTTP
 
 例如，配置为使用 HTTP 摘要式身份验证的 WCF 终结点必须驻留在也配置为允许 HTTP 摘要式身份验证的 IIS 虚拟目录中。 IIS 设置和 WCF 终结点设置的不匹配组合会导致服务激活期间出错。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [在 Internet 信息服务中承载](hosting-in-internet-information-services.md)
 - [Internet 信息服务承载最佳实践](internet-information-services-hosting-best-practices.md)

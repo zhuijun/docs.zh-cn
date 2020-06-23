@@ -1,15 +1,16 @@
 ---
 title: 承载服务
+description: 了解 WCF 服务的宿主选项。 服务必须承载于创建它并控制其上下文和生存期的运行时环境中。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF]
 ms.assetid: 192be927-6be2-4fda-98f0-e513c4881acc
-ms.openlocfilehash: 9608f9cc55bbba29686440be529659c6606b0eb8
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 86ce392bb76b22e2b6a65fa1d005ed8e9589af15
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921053"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246373"
 ---
 # <a name="hosting-services"></a>托管服务
 
@@ -28,17 +29,17 @@ WCF 提供了一个统一的编程模型，用于生成面向服务的应用程�
 
 ### <a name="managed-windows-services"></a>托管 Windows 服务
 
-此宿主选项包括注册作为托管 Windows 服务（以前称为 NT 服务）承载 WCF 服务的应用程序域（AppDomain），以便服务的进程生存期由的服务控制管理器（SCM）控制Windows 服务。 与自承载选项一样，此类型的宿主环境要求作为应用程序的一部分编写某些宿主代码。 通过使服务从 <xref:System.ServiceProcess.ServiceBase> 类以及从 WCF 服务协定接口继承，将该服务同时实现为 Windows 服务和 WCF 服务。 然后创建 <xref:System.ServiceModel.ServiceHost> ，在被重写的 <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> 方法内打开它并在被重写的 <xref:System.ServiceProcess.ServiceBase.OnStop> 方法内关闭它。 还必须实现从 <xref:System.Configuration.Install.Installer> 继承的安装程序类，以允许 Installutil.exe 工具将程序安装为 Windows 服务。 有关详细信息，请参阅[如何：在托管 Windows 服务中承载 WCF 服务](./feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)。 托管 Windows 服务宿主选项启用的方案是在非消息激活的安全环境中，在 IIS 外部承载的长时间运行的 WCF 服务。 服务的生存期改由操作系统控制。 此宿主选项在 Windows 的所有版本中都是可用的。
+此宿主选项包括注册作为托管 Windows 服务（以前称为 NT 服务）承载 WCF 服务的应用程序域（AppDomain），以便服务的进程生存期由 Windows 服务的服务控制管理器（SCM）控制。 与自承载选项一样，此类型的宿主环境要求作为应用程序的一部分编写某些宿主代码。 通过使服务从 <xref:System.ServiceProcess.ServiceBase> 类以及从 WCF 服务协定接口继承，将该服务同时实现为 Windows 服务和 wcf 服务。 然后创建 <xref:System.ServiceModel.ServiceHost> ，在被重写的 <xref:System.ServiceProcess.ServiceBase.OnStart%28System.String%5B%5D%29> 方法内打开它并在被重写的 <xref:System.ServiceProcess.ServiceBase.OnStop> 方法内关闭它。 还必须实现从 <xref:System.Configuration.Install.Installer> 继承的安装程序类，以允许 Installutil.exe 工具将程序安装为 Windows 服务。 有关详细信息，请参阅[如何：在托管 Windows 服务中承载 WCF 服务](./feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)。 托管 Windows 服务宿主选项启用的方案是在非消息激活的安全环境中，在 IIS 外部承载的长时间运行的 WCF 服务。 服务的生存期改由操作系统控制。 此宿主选项在 Windows 的所有版本中都是可用的。
 
 ### <a name="internet-information-services-iis"></a>Internet Information Services (IIS)
 
 IIS 托管选项与 ASP.NET 集成，并使用这些技术提供的功能，如进程回收、空闲关闭、进程运行状况监视和基于消息的激活。 在 Windows XP 和 Windows Server 2003 操作系统上，这是用于托管必须高度可用且高度可缩放的 Web 服务应用程序的首选解决方案。 IIS 还提供了客户期望企业级服务器产品具有的集成可管理性。 此宿主选项要求正确配置 IIS，但不需要编写任何承载代码作为应用程序的一部分。 有关如何为 WCF 服务配置 IIS 托管的详细信息，请参阅[如何：在 iis 中承载 Wcf 服务](./feature-details/how-to-host-a-wcf-service-in-iis.md)。
 
- 承载于 IIS 中的服务只能使用 HTTP 传输。 在 IIS 5.1 中，它的实现在 Windows XP 中引入了一些限制。 Windows XP 上的 IIS 5.1 为 WCF 服务提供的基于消息的激活会阻止同一计算机上任何其他自承载的 WCF 服务使用端口80进行通信。 当 Windows Server 2003 上的 IIS 6.0 承载时，WCF 服务可以在与其他应用程序相同的 AppDomain/应用程序池/工作进程中运行。 但是，因为 WCF 和 IIS 6.0 都使用内核模式 HTTP 堆栈（http.sys），所以 IIS 6.0 可以与在同一台计算机上运行的其他自承载 WCF 服务共享端口80，这与 IIS 5.1 不同。
+ 承载于 IIS 中的服务只能使用 HTTP 传输。 在 IIS 5.1 中，它的实现在 Windows XP 中引入了一些限制。 Windows XP 上的 IIS 5.1 为 WCF 服务提供的基于消息的激活会阻止同一计算机上任何其他自承载的 WCF 服务使用端口80进行通信。 当 Windows Server 2003 上的 IIS 6.0 承载时，WCF 服务可以在与其他应用程序相同的 AppDomain/应用程序池/工作进程中运行。 但是，因为 WCF 和 IIS 6.0 都使用内核模式 HTTP 堆栈（HTTP.sys），所以 IIS 6.0 可以与在同一台计算机上运行的其他自承载 WCF 服务共享端口80，这与 IIS 5.1 不同。
 
 ### <a name="windows-process-activation-service-was"></a>Windows 进程激活服务 (WAS)
 
-Windows 进程激活服务（WAS）是 windows Vista 上也提供的 Windows Server 2008 的新进程激活机制。 它保留了熟悉的 IIS 6.0 进程模型（应用程序池和基于消息的进程激活）和承载功能（如快速故障保护、运行状况监视和回收），但它会从激活中删除对 HTTP 的依赖关系种. IIS 7.0 使用 WAS 通过 HTTP 完成基于消息的激活。 另外，还可以将其他 WCF 组件插入到中，以基于 WCF 支持的其他协议（如 TCP、MSMQ 和命名管道）提供基于消息的激活。 这样，使用通信协议的应用程序就可以使用 IIS 功能（如进程回收、快速失败保护）和仅对基于 HTTP 的应用程序可用的通用配置系统。
+Windows 进程激活服务（WAS）是 windows Vista 上也提供的 Windows Server 2008 的新进程激活机制。 它保留了熟悉的 IIS 6.0 进程模型（应用程序池和基于消息的进程激活）和承载功能（如快速故障保护、运行状况监视和回收），但是它从激活体系结构中消除了对 HTTP 的依赖。 IIS 7.0 使用 WAS 通过 HTTP 实现基于消息的激活。 另外，还可以将其他 WCF 组件插入到中，以基于 WCF 支持的其他协议（如 TCP、MSMQ 和命名管道）提供基于消息的激活。 这样，使用通信协议的应用程序就可以使用 IIS 功能（如进程回收、快速失败保护）和仅对基于 HTTP 的应用程序可用的通用配置系统。
 
  此承载选项要求正确配置 WAS，但不需要编写任何承载代码作为应用程序的一部分。 有关如何配置 WAS 托管的详细信息，请参阅[如何：在 WAS 中承载 WCF 服务](./feature-details/how-to-host-a-wcf-service-in-was.md)。
 
@@ -49,9 +50,9 @@ Windows 进程激活服务（WAS）是 windows Vista 上也提供的 Windows Ser
 |-------------------------|----------------------|----------------------------------|
 |托管应用程序（“自承载”）|-开发期间使用的控制台应用程序。<br />-丰富的 WinForm 和 WPF 客户端应用程序访问服务。|可伸缩.<br />-易于部署。<br />-不是服务的企业解决方案。|
 |Windows 服务（以前称为 NT 服务）|-在 IIS 外部承载的长时间运行的 WCF 服务。|-由操作系统控制的服务进程生存期，未激活消息。<br />-受 Windows 的所有版本支持。<br />-安全环境。|
-|IIS 5.1、IIS 6.0|-使用 HTTP 协议在 Internet 上并行运行 WCF 服务和 ASP.NET 内容。|-进程回收。<br />-空闲关机。<br />-进程运行状况监视。<br />-基于消息的激活。<br />-仅限 HTTP。|
+|IIS 5.1、IIS 6。0|-使用 HTTP 协议在 Internet 上并行运行 WCF 服务和 ASP.NET 内容。|-进程回收。<br />-空闲关机。<br />-进程运行状况监视。<br />-基于消息的激活。<br />-仅限 HTTP。|
 |Windows 进程激活服务 (WAS)|-在未使用各种传输协议在 Internet 上安装 IIS 的情况下运行 WCF 服务。|-不需要 IIS。<br />-进程回收。<br />-空闲关机。<br />-进程运行状况监视。<br />-基于消息的激活。<br />-适用于 HTTP、TCP、命名管道和 MSMQ。|
-|IIS 7.0|-运行包含 ASP.NET 内容的 WCF 服务。<br />-使用各种传输协议在 Internet 上运行 WCF 服务。|-是有益的。<br />-与 ASP.NET 和 IIS 内容集成。|
+|IIS 7.0|-运行包含 ASP.NET 内容的 WCF 服务。<br />-使用各种传输协议在 Internet 上运行 WCF 服务。|-是有益的。<br />-与 ASP.NET 和 IIS 内容集成。|
 
  宿主环境的选择取决于部署它的 Windows 版本、它要求发送消息的传输以及它要求的进程和应用程序域回收的类型。 下表汇总了与这些要求相关的数据。
 
@@ -63,13 +64,13 @@ Windows 进程激活服务（WAS）是 windows Vista 上也提供的 Windows Ser
 |IIS 6.0|Windows Server 2003|HTTP|是|
 |Windows 进程激活服务 (WAS)|Windows Vista 和 Windows Server 2008|HTTP；<br /><br /> net.tcp；<br /><br /> net.pipe；<br /><br /> net.msmq|是|
 
- 值得注意的是，从不受信任的主机运行服务或任何扩展会危害安全。 此外，在模拟下打开 <xref:System.ServiceModel.ServiceHost> 时，应用程序必须确保用户不是注销，例如通过缓存用户的 <xref:System.Security.Principal.WindowsIdentity>。
+ 值得注意的是，从不受信任的主机运行服务或任何扩展会危害安全。 此外，在使用 <xref:System.ServiceModel.ServiceHost> 模拟功能打开时，应用程序必须确保用户不是注销，例如通过缓存 <xref:System.Security.Principal.WindowsIdentity> 用户的。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [基本编程生命周期](basic-programming-lifecycle.md)
 - [实现服务协定](implementing-service-contracts.md)
 - [如何：在 IIS 中承载 WCF 服务](./feature-details/how-to-host-a-wcf-service-in-iis.md)
 - [如何：在 WAS 中承载 WCF 服务](./feature-details/how-to-host-a-wcf-service-in-was.md)
 - [如何：在托管 Windows 服务中承载 WCF 服务](./feature-details/how-to-host-a-wcf-service-in-a-managed-windows-service.md)
-- [如何：在托管应用程序中托管 WCF 服务](how-to-host-a-wcf-service-in-a-managed-application.md)
+- [如何：在托管应用程序中承载 WCF 服务](how-to-host-a-wcf-service-in-a-managed-application.md)

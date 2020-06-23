@@ -1,5 +1,6 @@
 ---
 title: 教程：承载和运行基本 Windows Communication Foundation 服务
+description: 了解如何在控制台应用程序中托管 WCF 服务，这是一系列文章中的一部分，可帮助你开始创建 WCF 应用程序。
 ms.date: 03/19/2019
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - WCF services [WCF]
 - WCF services [WCF], running
 ms.assetid: 31774d36-923b-4e2d-812e-aa190127266f
-ms.openlocfilehash: 872844487578843492e05dd2abb87b50e0bec91c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5318991087e71430523681d601d3b38c4513027b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291391"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246124"
 ---
 # <a name="tutorial-host-and-run-a-basic-windows-communication-foundation-service"></a>教程：承载和运行基本 Windows Communication Foundation 服务
 
@@ -25,7 +26,7 @@ ms.locfileid: "84291391"
 - 一个包含描述客户端如何与服务进行通信的信息的绑定。
 - 定义服务向其客户端提供的功能的协定。
 
-在本教程中，了解如何：
+在本教程中，你将了解如何执行以下操作：
 > [!div class="checklist"]
 >
 > - 创建和配置用于承载 WCF 服务的控制台应用程序项目。
@@ -194,7 +195,7 @@ ms.locfileid: "84291391"
 
 1. 生成解决方案，然后从 Visual Studio 内部运行**GettingStartedHost**控制台应用程序。
 
-    必须以管理员权限运行该服务。 由于你以管理员权限打开了 Visual Studio，因此，当你在 Visual Studio 中运行**GettingStartedHost**时，该应用程序也会以管理员权限运行。 作为替代方法，您可以以管理员身份打开新的命令提示符（从快捷菜单中选择 "**更多**以  >  **管理员身份运行**"），并在其中运行**GettingStartedHost** 。
+    必须以管理员权限运行该服务。 由于你以管理员权限打开了 Visual Studio，因此，当你在 Visual Studio 中运行**GettingStartedHost**时，该应用程序也会以管理员权限运行。 作为替代方法，您可以以管理员身份打开新的命令提示符（从快捷菜单中选择 "**更多**以  >  **管理员身份运行**"），并在其中运行**GettingStartedHost.exe** 。
 
 2. 打开 web 浏览器并浏览到中的服务页面 `http://localhost:8000/GettingStarted/CalculatorService` 。
 
@@ -226,7 +227,7 @@ ms.locfileid: "84291391"
 
 ## <a name="next-steps"></a>后续步骤
 
-在本教程中，你了解了如何执行以下操作：
+在本教程中，你将了解：
 > [!div class="checklist"]
 >
 > - 创建和配置用于承载 WCF 服务的控制台应用程序项目。

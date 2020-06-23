@@ -1,16 +1,17 @@
 ---
 title: Windows Communication Foundation
+description: 了解 WCF 是面向服务的应用程序的编程模型，使你能够构建安全、可靠的事务处理解决方案。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Communication Foundation [WCF]
 - WCF [WCF]
 ms.assetid: 149348a6-bf82-4ccc-9604-fa7cc88c0749
-ms.openlocfilehash: 836913dd35d127d181c753341a7c39c453242a8f
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: dc4218e830c34e44536bbb816af9c1b35b4b5b07
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552688"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244291"
 ---
 # <a name="develop-service-oriented-applications-with-wcf"></a>利用 WCF 开发面向服务的应用程序
 
@@ -18,13 +19,13 @@ ms.locfileid: "74552688"
 
 ## <a name="in-this-section"></a>本节内容
 
- [Windows Communication Foundation 4.5\ 的新增功能](whats-new.md)
+ [Windows Communication Foundation 4.5 的新增功能](whats-new.md)\
  讨论 Windows Communication Foundation 的新功能。
 
  [WCF 简化功能](wcf-simplification-features.md)\
  讨论使编写 WCF 应用程序变得更简单的新功能。
 
- [文档\ 指南](guide-to-the-documentation.md)
+ [文档指南](guide-to-the-documentation.md)\
  WCF 文档的描述
 
  [概念性概述](conceptual-overview.md)\
@@ -48,13 +49,13 @@ ms.locfileid: "74552688"
  [管理和诊断](./diagnostics/index.md)\
  介绍 WCF 的诊断功能
 
- [WCF\ 所需的操作系统资源](operating-system-resources-required-by-wcf.md)
+ [WCF 所需的操作系统资源](operating-system-resources-required-by-wcf.md)\
  介绍 WCF 要求的操作系统资源
 
  [安装问题疑难解答](troubleshooting-setup-issues.md)\
  为解决 WCF 设置问题提供指导
 
- [从 .Net 远程处理迁移到 WCF](migrating-from-net-remoting-to-wcf.md)\
+ [从 .NET 远程处理迁移到 WCF](migrating-from-net-remoting-to-wcf.md)\
  比较 .NET 远程处理与 WCF，并提供常用方案的迁移指南。
 
  [使用 WCF 开发工具](using-the-wcf-development-tools.md)\
@@ -66,7 +67,7 @@ ms.locfileid: "74552688"
  [Windows Communication Foundation 示例](./samples/index.md)\
  对 Windows Communication Foundation 的各方面进行说明的示例
 
- [Windows Communication Foundation 词汇表](glossary.md)\
+ [Windows Communication Foundation 术语表](glossary.md)\
  显示特定于 WCF 的术语的列表
 
  [常规参考](general-reference.md)\

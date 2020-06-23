@@ -1,16 +1,17 @@
 ---
 title: 如何：在托管应用程序中承载 WCF 服务
+description: 了解如何通过创建自承载服务并对其进行测试，在托管应用程序内承载 WCF 服务。
 ms.date: 09/17/2018
 dev_langs:
 - csharp
 - vb
 ms.assetid: 5eb29db0-b6dc-4e77-8c68-0a62f79d743b
-ms.openlocfilehash: e3adcad6ba70aa64b797325cd45a043301d7e680
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 7d1d61b683f60a6c643d2a2f03d367a6ae6c6c15
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320982"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246163"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-app"></a>如何：在托管应用程序中托管 WCF 服务
 
@@ -28,13 +29,13 @@ ms.locfileid: "72320982"
 
 1. 创建新的控制台应用程序：
 
-   1. 打开 Visual Studio，然后从 "**文件**" 菜单中选择 "**新建**"  > **项目**。
+   1. 打开 Visual Studio，然后**New**  >  从 "**文件**" 菜单中选择 "新建**项目**"。
 
-   2. 在 "**已安装的模板**" 列表中，选择 " **Visual C#**  " 或 " **Visual Basic**"，然后选择 " **Windows 桌面**"。
+   2. 在 "**已安装的模板**" 列表中，选择 " **Visual c #** " 或 " **Visual Basic**，然后选择" **Windows 桌面**"。
 
-   3. 选择 "**控制台应用程序**" 模板。 在 "**名称**" 框中键入 `SelfHost`，然后选择 **"确定"** 。
+   3. 选择 "**控制台应用程序**" 模板。 `SelfHost`在 "**名称**" 框中键入，然后选择 **"确定"**。
 
-2. 在**解决方案资源管理器**中右键单击 " **SelfHost** "，然后选择 "**添加引用**"。 从 " **.net** " 选项卡中选择 " **system.servicemodel** "，然后选择 **"确定"** 。
+2. 在**解决方案资源管理器**中右键单击 " **SelfHost** "，然后选择 "**添加引用**"。 从 " **.net** " 选项卡中选择 " **system.servicemodel** "，然后选择 **"确定"**。
 
     > [!TIP]
     > 如果 "**解决方案资源管理器**" 窗口不可见，请从 "**视图**" 菜单中选择 "**解决方案资源管理器**"。
@@ -65,20 +66,20 @@ ms.locfileid: "72320982"
     > [!NOTE]
     > 此示例使用默认终结点，且该服务不需要任何配置文件。 如果未配置任何终结点，则运行时会为该服务实现的每个服务协定的每个基地址创建一个终结点。 有关默认终结点的详细信息，请参阅[WCF 服务的](./samples/simplified-configuration-for-wcf-services.md)[简化配置](simplified-configuration.md)和简化配置。
 
-7. 按**Ctrl** +**Shift** +**B**生成解决方案。
+7. 按**Ctrl** + **Shift** + **B**生成解决方案。
 
 ## <a name="test-the-service"></a>测试服务
 
-1. 按**Ctrl** +**F5**运行该服务。
+1. 按**Ctrl** + **F5**运行该服务。
 
 2. 打开**WCF 测试客户端**。
 
     > [!TIP]
-    > 若要打开**WCF 测试客户端**，请打开 Visual Studio 开发人员命令提示，然后执行**wcftestclient.exe**。
+    > 若要打开**WCF 测试客户端**，请打开 Visual Studio 开发人员命令提示，并执行**WcfTestClient.exe**。
 
 3. 从 "**文件**" 菜单中选择 "**添加服务**"。
 
-4. 在 "地址" 框中键入 `http://localhost:8080/hello`，然后单击 **"确定"** 。
+4. `http://localhost:8080/hello`在 "地址" 框中键入，然后单击 **"确定"**。
 
     > [!TIP]
     > 确保服务正在运行，否则此步骤将失败。 如果已经更改了代码中的基址，则在此步骤中使用修改后的基址。
@@ -101,7 +102,7 @@ ms.locfileid: "72320982"
 - <xref:System.Configuration.ConfigurationManager>
 - [如何：在 IIS 中承载 WCF 服务](./feature-details/how-to-host-a-wcf-service-in-iis.md)
 - [自承载](./samples/self-host.md)
-- [托管服务](hosting-services.md)
+- [承载服务](hosting-services.md)
 - [如何：定义服务协定](how-to-define-a-wcf-service-contract.md)
 - [如何：实现服务协定](how-to-implement-a-wcf-contract.md)
 - [ServiceModel 元数据实用工具 (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)

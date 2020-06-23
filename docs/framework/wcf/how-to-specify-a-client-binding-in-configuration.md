@@ -1,26 +1,27 @@
 ---
 title: 如何：在配置中指定客户端绑定
+description: 了解如何在配置文件中以声明方式指定 WCF 客户端的绑定。 在此示例中，客户端将访问服务。
 ms.date: 03/30/2017
 ms.assetid: 4a7c79aa-50ee-4991-891e-adc0599323a7
-ms.openlocfilehash: 574f56173c2acfcf41a5e9a9e99abe45281e3636
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 28778b6ae853199c5d7943f329bb087760f4bb11
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79184040"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244486"
 ---
 # <a name="how-to-specify-a-client-binding-in-configuration"></a>如何：在配置中指定客户端绑定
 在此示例中，创建了一个使用计算器服务的客户端控制台应用程序，并在配置中以声明方式为该客户端指定了绑定。 该客户端访问实现了 `CalculatorService` 接口的 `ICalculator`，并且服务和客户端都使用 <xref:System.ServiceModel.BasicHttpBinding> 类。  
   
- 上述过程假设计算器服务正在运行。 有关如何生成服务的信息，请参阅[如何：在 配置 中指定服务绑定](how-to-specify-a-service-binding-in-configuration.md)。 它还使用 Windows 通信基础 （WCF） 提供的[服务模型元数据实用程序工具 （Svcutil.exe）](servicemodel-metadata-utility-tool-svcutil-exe.md)来自动生成客户端组件。 该工具生成用于访问服务的客户端代码和配置。  
+ 上述过程假设计算器服务正在运行。 有关如何生成服务的信息，请参阅[如何：在配置中指定服务绑定](how-to-specify-a-service-binding-in-configuration.md)。 它还使用 Windows Communication Foundation （WCF）提供的使用的[元数据实用工具（Svcutil.exe）](servicemodel-metadata-utility-tool-svcutil-exe.md)来自动生成客户端组件。 该工具生成用于访问服务的客户端代码和配置。  
   
  客户端分两部分生成。 Svcutil.exe 生成实现 `ClientCalculator` 接口的 `ICalculator`。 然后，通过构造 `ClientCalculator` 的实例来构造客户端应用程序。  
   
  通常，最佳做法是以声明方式在配置中指定绑定和地址信息，而不是在代码中强制指定。 在代码中定义终结点通常是不可行的，因为已部署服务的绑定和地址通常与在部署服务时所用的绑定和地址不同。 一般说来，通过将绑定和寻址信息放置在代码之外，无需重新编译或重新部署应用程序即可更改这些信息。  
   
- 您可以使用[配置编辑器工具 （SvcConfigEditor.exe）](configuration-editor-tool-svcconfigeditor-exe.md)执行以下所有配置步骤。  
+ 您可以使用[配置编辑器工具（SvcConfigEditor.exe）](configuration-editor-tool-svcconfigeditor-exe.md)执行以下所有配置步骤。  
   
- 有关此示例的源副本，请参阅[基本绑定](./samples/basicbinding.md)示例。  
+ 有关此示例的源副本，请参阅[BasicBinding](./samples/basicbinding.md)示例。  
   
 ### <a name="specifying-a-client-binding-in-configuration"></a>在配置中指定客户端绑定  
   
@@ -40,7 +41,7 @@ ms.locfileid: "79184040"
      [!code-csharp[C_HowTo_ConfigureClientBinding#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/generatedclient.cs#2)]
      [!code-csharp[C_HowTo_ConfigureClientBinding#2](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/cs/source.cs#2)]  
   
-4. Svcutil.exe 还为使用 <xref:System.ServiceModel.BasicHttpBinding> 类的客户端生成配置。 使用 Visual Studio 时，命名此文件 App.config。请注意，地址和绑定信息在服务实现中的任何位置都没有指定。 而且，不必编写代码也可从配置文件中检索该信息。  
+4. Svcutil.exe 还为使用 <xref:System.ServiceModel.BasicHttpBinding> 类的客户端生成配置。 使用 Visual Studio 时，将此文件命名 App.config。请注意，在服务的实现内部，未指定地址和绑定信息。 而且，不必编写代码也可从配置文件中检索该信息。  
   
      [!code-xml[C_HowTo_ConfigureClientBinding#100](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_configureclientbinding/common/client.exe.config#100)]
 
@@ -50,6 +51,6 @@ ms.locfileid: "79184040"
   
 6. 编译并运行客户端。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用绑定配置服务和客户端](using-bindings-to-configure-services-and-clients.md)

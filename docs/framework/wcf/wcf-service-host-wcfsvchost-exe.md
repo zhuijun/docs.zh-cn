@@ -1,17 +1,18 @@
 ---
 title: WCF 服务主机 (WcfSvcHost.exe)
+description: 使用 WCF 服务主机承载和测试已实现的服务。 您可以使用 WCF 测试客户端或您自己的客户端来测试服务。
 ms.date: 03/30/2017
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
-ms.openlocfilehash: b8fb32111a80178f5eb92411eb4990decb645bb6
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: efc9512766d2a9cc814083ab632226d98917bf4e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837735"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245721"
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>WCF 服务主机 (WcfSvcHost.exe)
 
-Windows Communication Foundation （WCF）服务主机（Wcfsvchost.exe）允许您启动 Visual Studio 调试器（F5）以自动承载和测试已实现的服务。 然后，你可以使用 WCF 测试客户端（Wcftestclient.exe）或你自己的客户端来测试服务，以查找并解决任何潜在错误。
+Windows Communication Foundation （WCF）服务主机（WcfSvcHost.exe）允许您启动 Visual Studio 调试器（F5）以自动承载和测试已实现的服务。 然后，您可以使用 WCF 测试客户端（WcfTestClient.exe）或您自己的客户端来测试服务，以查找并解决任何潜在错误。
 
 ## <a name="wcf-service-host"></a>WCF 服务主机
 
@@ -51,7 +52,7 @@ WCF 服务主机可以承载以下 WCF 服务库项目类型： WCF 服务库、
 
 #### <a name="using-a-custom-client"></a>使用自定义客户端
 
-若要使用自定义客户端，请在 Visual Studio 的**解决方案资源管理器**中右键单击您的项目，选择 "**属性**"，然后选择 "**调试**" 选项卡。单击 "**启动项目**"，然后在 "**命令行参数**" 对话框中编辑 `/client` 参数以指向您的自定义客户端，如下面的示例中所示。
+若要使用自定义客户端，请在 Visual Studio 的**解决方案资源管理器**中右键单击项目，选择 "**属性**"，然后选择 "**调试**" 选项卡。单击 "**启动项目**"，然后 `/client` 在 "**命令行参数**" 对话框中编辑参数以指向自定义客户端，如下面的示例中所示。
 
 `/client:"path/CustomClient.exe"`
 
@@ -111,16 +112,16 @@ WCF 服务主机可以承载以下 WCF 服务库项目类型： WCF 服务库、
 
 ## <a name="using-service-host-without-administrator-privilege"></a>在无管理员权限的情况下使用服务主机
 
-若要使没有管理员权限的用户能够开发 WCF 服务，请在安装 Visual Studio 的过程中为命名空间 "http://+:8731/Design_Time_Addresses" 创建 ACL （访问控制列表）。 该 ACL 被设置为“(UI)”，这将包括登录到此计算机的所有交互用户。 管理员可以在此 ACL 中添加或删除用户，或者打开其他端口。此 ACL 使用户可以使用 WCF 服务自动主机（Wcfsvchost.exe），而无需授予其管理员权限。
+若要使没有管理员权限的用户能够开发 WCF 服务，请在 http://+:8731/Design_Time_Addresses 安装 Visual Studio 的过程中为命名空间 "" 创建 ACL （访问控制列表）。 该 ACL 被设置为“(UI)”，这将包括登录到此计算机的所有交互用户。 管理员可以在此 ACL 中添加或删除用户，或者打开其他端口。此 ACL 使用户可以使用 WCF 服务自动主机（wcfSvcHost.exe），而无需授予其管理员权限。
 
-你可以使用提升的管理员帐户，使用 Windows Vista 中的 netsh 工具来修改访问权限。 下面是使用 netsh.exe 的示例。
+你可以使用提升的管理员帐户在 Windows Vista 中使用 netsh.exe 工具来修改访问权限。 下面是使用 netsh.exe 的示例。
 
 ```console
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>
 ```
 
-有关 dism.exe 的详细信息，请参阅 "[如何使用 Dism.exe 工具和命令行开关](https://docs.microsoft.com/previous-versions/tn-archive/bb490939(v=technet.10))"。
+有关 netsh.exe 的详细信息，请参阅 "[如何使用 Netsh.exe 工具和命令行开关](https://docs.microsoft.com/previous-versions/tn-archive/bb490939(v=technet.10))"。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [WCF 测试客户端 (WcfTestClient.exe)](wcf-test-client-wcftestclient-exe.md)

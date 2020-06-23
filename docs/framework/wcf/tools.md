@@ -1,16 +1,17 @@
 ---
 title: Windows Communication Foundation 工具
+description: 了解旨在使你更轻松地创建、部署和管理 WCF 应用程序的 WCF 工具。 在命令提示符下运行这些工具。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF, tools
 - Windows Communication Foundation, tools
 ms.assetid: 399a47b4-bfea-434b-8e83-f76b5063d79d
-ms.openlocfilehash: edd54c93207456156ef2520a00ad567cd087d89c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: acc142e8e3108a827b63cf013b818d30b5dcaa52
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321361"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245960"
 ---
 # <a name="windows-communication-foundation-tools"></a>Windows Communication Foundation 工具
 Microsoft Windows Communication Foundation （WCF）工具旨在使你更轻松地创建、部署和管理 WCF 应用程序。 本节包含有关这些工具的详细信息。 请注意，这些工具不受支持。  
@@ -19,12 +20,12 @@ Microsoft Windows Communication Foundation （WCF）工具旨在使你更轻松�
   
  下表列出这些工具并提供了简要说明。  
   
-|工具|描述|  
+|工具|说明|  
 |----------|-----------------|  
 |[ServiceModel 元数据实用工具 (Svcutil.exe)](servicemodel-metadata-utility-tool-svcutil-exe.md)|依据元数据文档生成服务模块代码，以及依据服务模块代码生成元数据文档。|  
 |[“查找私钥”工具 (FindPrivateKey.exe)](find-private-key-tool-findprivatekey-exe.md)|从指定的存储中检索私钥。|  
 |[ServiceModel 注册工具 (ServiceModelReg.exe)](servicemodelreg-exe.md)|管理 ServiceModel 在单一计算机上的注册和注销。|  
-|[COM+ 服务模型配置工具 (ComSvcConfig.exe)](com-service-model-configuration-tool-comsvcconfig-exe.md)|配置要作为 Web 服务公开的 COM+ 接口。|  
+|[COM+ 服务模块配置工具 (ComSvcConfig.exe)](com-service-model-configuration-tool-comsvcconfig-exe.md)|配置要作为 Web 服务公开的 COM+ 接口。|  
 |[配置编辑器工具 (SvcConfigEditor.exe)](configuration-editor-tool-svcconfigeditor-exe.md)|创建和修改 WCF 服务的配置设置。|  
 |[服务跟踪查看器工具 (SvcTraceViewer.exe)](service-trace-viewer-tool-svctraceviewer-exe.md)|帮助您查看、分组和筛选跟踪消息，以便能够诊断、修复和验证 WCF 服务的问题。|  
 |[WS-AtomicTransaction 配置实用工具 (wsatConfig.exe)](ws-atomictransaction-configuration-utility-wsatconfig-exe.md)|使用命令行工具配置基本的 WS-AtomicTransaction 支持设置。|  

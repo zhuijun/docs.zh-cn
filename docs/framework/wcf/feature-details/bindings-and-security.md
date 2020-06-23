@@ -1,5 +1,6 @@
 ---
 title: 绑定与安全
+description: 了解如何根据您的安全需求来选择正确的绑定。 WCF 提供的系统提供的绑定提供了对 WCF 应用程序进行编程的一种快速方法。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], security
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-ms.openlocfilehash: 0c41f357d63158979e448c2cc36f1e80b74b18d4
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e012ec9ad340c74f5bc776cfc6d8b88326210fec
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587503"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245322"
 ---
 # <a name="bindings-and-security"></a>绑定与安全
 
@@ -194,8 +195,8 @@ WCF 中的每个绑定都有两种形式：作为 API，以及在配置文件中
 
 |设置|功能|
 |-------------|--------------|
-|Transport|服务器身份验证<br /><br /> 客户端身份验证<br /><br /> 点对点安全性<br /><br /> 互操作性<br /><br /> 硬件加速<br /><br /> 高吞吐量<br /><br /> 安全防火墙<br /><br /> 高延迟应用程序<br /><br /> 跨越多个跃点重新加密|
-|Message|服务器身份验证<br /><br /> 客户端身份验证<br /><br /> 端到端安全性<br /><br /> 互操作性<br /><br /> 丰富的声明<br /><br /> 联合<br /><br /> 多重身份验证<br /><br /> 自定义令牌<br /><br /> 公证人/时间戳服务<br /><br /> 高延迟应用程序<br /><br /> 消息签名的持久性|
+|传输|服务器身份验证<br /><br /> 客户端身份验证<br /><br /> 点对点安全性<br /><br /> 互操作性<br /><br /> 硬件加速<br /><br /> 高吞吐量<br /><br /> 安全防火墙<br /><br /> 高延迟应用程序<br /><br /> 跨越多个跃点重新加密|
+|消息|服务器身份验证<br /><br /> 客户端身份验证<br /><br /> 端到端安全性<br /><br /> 互操作性<br /><br /> 丰富的声明<br /><br /> 联合<br /><br /> 多重身份验证<br /><br /> 自定义令牌<br /><br /> 公证人/时间戳服务<br /><br /> 高延迟应用程序<br /><br /> 消息签名的持久性|
 |TransportWithMessageCredential|服务器身份验证<br /><br /> 客户端身份验证<br /><br /> 点对点安全性<br /><br /> 互操作性<br /><br /> 硬件加速<br /><br /> 高吞吐量<br /><br /> 丰富的客户端声明<br /><br /> 联合<br /><br /> 多重身份验证<br /><br /> 自定义令牌<br /><br /> 安全防火墙<br /><br /> 高延迟应用程序<br /><br /> 跨越多个跃点重新加密|
 
 下表列出了支持各种模式设置的绑定。 请从该表中选择用来创建服务终结点的绑定。
@@ -237,7 +238,7 @@ WCF 中的每个绑定都有两种形式：作为 API，以及在配置文件中
 |证书|允许服务要求使用证书对客户端进行身份验证。|
 |IssuedToken|允许服务使用安全令牌服务来提供自定义令牌。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
 - [保护服务和客户端的安全](securing-services-and-clients.md)

@@ -1,5 +1,6 @@
 ---
 title: 使用 WCF 客户端访问服务
+description: 了解如何为 WCF 服务创建 WCF 客户端代理。 客户端应用程序使用客户端代理与服务进行通信。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - clients [WCF], consuming services
 ms.assetid: d780af9f-73c5-42db-9e52-077a5e4de7fe
-ms.openlocfilehash: 462d9a3923009f0124c2b90b6fa86dfa9869a3c5
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 25446a89a0b5657d32d77e2d0d57f58f36bed71b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72316542"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245539"
 ---
 # <a name="accessing-services-using-a-wcf-client"></a>使用 WCF 客户端访问服务
 
@@ -26,10 +27,10 @@ ms.locfileid: "72316542"
 
 3. 实例化 WCF 客户端代理。
 
-通过使用服务模型元数据实用工具（Svcutil.exe），可以手动生成 WCF 客户端代理。有关详细信息，请参阅 ""[元数据实用工具（svcutil.exe）](servicemodel-metadata-utility-tool-svcutil-exe.md)。 还可以使用**添加服务引用**功能在 Visual Studio 中生成 WCF 客户端代理。 若要使用上述两种方法中的一种生成 WCF 客户端代理，必须运行该服务。 如果服务是自承载服务，则必须运行主机。 如果服务是在 IIS/WAS 中承载的，则无需执行任何其他操作。
+可以使用服务模型元数据实用工具（SvcUtil.exe）手动生成 WCF 客户端代理。有关详细信息[Svcutil.exe](servicemodel-metadata-utility-tool-svcutil-exe.md)，请参阅 "" 还可以使用**添加服务引用**功能在 Visual Studio 中生成 WCF 客户端代理。 若要使用上述两种方法中的一种生成 WCF 客户端代理，必须运行该服务。 如果服务是自承载服务，则必须运行主机。 如果服务是在 IIS/WAS 中承载的，则无需执行任何其他操作。
 
 ## <a name="servicemodel-metadata-utility-tool"></a>ServiceModel 元数据实用工具
- [Svcutil.exe 元数据实用工具（）](servicemodel-metadata-utility-tool-svcutil-exe.md)是一个命令行工具，用于从元数据生成代码。 下面是一个基本 Svcutil.exe 命令示例。
+ "行[元数据实用工具（Svcutil.exe）](servicemodel-metadata-utility-tool-svcutil-exe.md) " 是一个命令行工具，用于从元数据生成代码。 下面是一个基本 Svcutil.exe 命令示例。
 
 ```console
 Svcutil.exe <service's Metadata Exchange (MEX) address or HTTP GET address>
@@ -56,7 +57,7 @@ Svcutil.exe <file1 [,file2]>
 
 ## <a name="add-service-reference-in-visual-studio"></a>Visual Studio 中的“添加服务引用”功能
 
- 在运行服务的情况下，右键单击将包含 WCF 客户端代理的项目，然后选择 "**添加** > **服务引用**"。 在 "**添加服务引用" 对话框**中，键入要调用的服务的 URL，然后单击 "**开始**" 按钮。 该对话框将显示在您指定的地址上提供的服务列表。 双击服务以查看可用的协定和操作，为生成的代码指定命名空间，然后单击 **"确定"** 按钮。
+ 在运行服务的情况下，右键单击将包含 WCF 客户端代理的项目，然后选择 "**添加**  >  **服务引用**"。 在 "**添加服务引用" 对话框**中，键入要调用的服务的 URL，然后单击 "**开始**" 按钮。 该对话框将显示在您指定的地址上提供的服务列表。 双击服务以查看可用的协定和操作，为生成的代码指定命名空间，然后单击 **"确定"** 按钮。
 
 ## <a name="example"></a>示例
  下面的代码示例演示为服务创建的一个服务协定。
@@ -176,7 +177,7 @@ Console.WriteLine("Add({0},{1}) = {2}", value1, value2, result)
 
 ## <a name="debugging-exceptions-thrown-by-a-client"></a>调试客户端引发的异常
 
-WCF 客户端引发的许多异常由服务上的异常引起。 以下是这种情况的一些示例：
+WCF 客户端引发的许多异常由服务上的异常引起。 这些功能的示例包括：
 
 - <xref:System.Net.Sockets.SocketException>: 现有连接被远程主机强行关闭。
 

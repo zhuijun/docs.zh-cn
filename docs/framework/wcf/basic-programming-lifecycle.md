@@ -1,15 +1,16 @@
 ---
 title: 基本编程生命周期
+description: 了解用于生成 WCF 应用程序的任务。 WCF 使应用可以在同一台计算机上、通过网络或在不同的应用程序平台上进行通信。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - service creation [WCF]
 ms.assetid: 7cf21bfe-23bd-46aa-8033-609f851dbf76
-ms.openlocfilehash: fe578ba3c655c9c9ea8398b9b2e4d4f974153c8e
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: c672827fff780fd263f5355520bb6ccf02bb902e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320817"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245526"
 ---
 # <a name="basic-programming-lifecycle"></a>基本编程生命周期
 Windows Communication Foundation （WCF）使应用程序可以在同一台计算机上、在 Internet 上或在不同应用程序平台上通信。 本主题概述生成 WCF 应用程序所需的任务。 有关有效的示例应用程序，请参阅[入门教程](getting-started-tutorial.md)。  

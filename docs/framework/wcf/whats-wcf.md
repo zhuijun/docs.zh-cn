@@ -1,17 +1,18 @@
 ---
 title: 什么是 Windows Communication Foundation
+description: 了解 Windows Communication Foundation，它是用于生成面向服务的应用程序的框架。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Communication Foundation [WCF], technology overview
 - technology overview [WCF]
 - WCF [WCF], technology overview
 ms.assetid: 40e1009d-ef15-450b-9848-62eabe5e5738
-ms.openlocfilehash: fd78f2cd8266f94c577801623a84b56919c82973
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 84cb45d62409769a79fa6a401fdb1aa6934c4099
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600849"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245604"
 ---
 # <a name="what-is-windows-communication-foundation"></a>什么是 Windows Communication Foundation
 Windows Communication Foundation （WCF）是用于生成面向服务的应用程序的框架。 使用 WCF，可以将数据作为异步消息从一个服务终结点发送到另一个服务终结点。 服务终结点可以是由 IIS 承载的持续可用的服务的一部分，也可以是应用程序中承载的服务。 终结点可以是从服务终结点请求数据的服务客户端。 简单消息可以是作为 XML 发送的单个字符或单个单词，复杂消息可以是二进制数据流。 一些示例方案包括：
@@ -70,7 +71,7 @@ WCF 包括以下功能集。 有关详细信息，请参阅[WCF 功能详细信�
 
      持久性消息决不会由于通信中断而丢失。 持久性消息模式的消息会始终保存到数据库中。 如果发生中断，数据库将允许您在恢复连接后恢复消息交换。 你还可以使用 Windows Workflow Foundation （WF）创建持久消息。 有关详细信息，请参阅[工作流服务](./feature-details/workflow-services.md)。
 
-- **事务**
+- **中的**
 
      WCF 还支持使用以下三种事务模型之一的事务： AtomicTransactions、命名空间中的 Api <xref:System.Transactions> 和 Microsoft 分布式事务处理协调器。 有关 WCF 中事务支持的详细信息，请参阅[事务](./feature-details/transactions-in-wcf.md)。
 
@@ -94,7 +95,7 @@ Microsoft Silverlight 是一个用于创建可互操作的、丰富 Web 应用�
 
 Windows Server AppFabric 应用程序服务器的托管功能专门用于部署和管理使用 WCF 进行通信的应用程序。 托管功能包括丰富的工具和配置选项，专门为启用了 WCF 的应用程序而设计。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel>
 - [Windows Communication Foundation 基础概念](fundamental-concepts.md)

@@ -1,16 +1,17 @@
 ---
 title: 如何：实现异步服务操作
+description: 了解 WFC 中异步服务操作的结构。 服务操作可以异步或同步方式实现。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 4e5d2ea5-d8f8-4712-bd18-ea3c5461702c
-ms.openlocfilehash: fd7a1399dd575ad1a4b6c95e0e0510670eb13b51
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 5f890bd5124e2353cecee37d163b7f2c65b87fde
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802291"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244616"
 ---
 # <a name="how-to-implement-an-asynchronous-service-operation"></a>如何：实现异步服务操作
 在 Windows Communication Foundation （WCF）应用程序中，可以异步或同步实现服务操作，而无需向客户端进行调用。 例如，可以同步调用异步服务操作，并且可以异步调用同步服务操作。 有关演示如何在客户端应用程序中异步调用操作的示例，请参阅[如何：异步调用服务操作](./feature-details/how-to-call-wcf-service-operations-asynchronously.md)。 有关同步和异步操作的详细信息，请参阅[设计服务协定](designing-service-contracts.md)和[同步和异步操作](synchronous-and-asynchronous-operations.md)。 本主题介绍异步服务操作的基本结构，代码并不完整。 有关服务和客户端的完整示例，请参阅[异步](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms751505(v=vs.100))。  
@@ -38,14 +39,14 @@ ms.locfileid: "74802291"
   
     2. 异步 `BeginSampleMethod` 操作。  
   
-    3. 异步 `BeginServiceAsyncMethod`/`EndServiceAsyncMethod` 操作对。  
+    3. 异步 `BeginServiceAsyncMethod` / `EndServiceAsyncMethod` 操作对。  
   
 2. 使用 <xref:System.IAsyncResult?displayProperty=nameWithType> 对象的服务实现。  
   
  [!code-csharp[C_SyncAsyncClient#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_syncasyncclient/cs/services.cs#1)]
  [!code-vb[C_SyncAsyncClient#1](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_syncasyncclient/vb/services.vb#1)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [设计服务协定](designing-service-contracts.md)
 - [同步和异步操作](synchronous-and-asynchronous-operations.md)

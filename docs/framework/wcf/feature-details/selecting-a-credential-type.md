@@ -1,13 +1,14 @@
 ---
 title: 选择凭据类型
+description: 了解凭据、凭据在 WCF 中的使用方式，以及如何为应用程序选择正确的凭据以建立声明的标识或功能。
 ms.date: 03/30/2017
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-ms.openlocfilehash: 7bcc5f407077b32d85b7f1e5f7ddbc5aba4b80c1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7a8a6880e5fc3982bb7f470c34a77c771c26effd
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586190"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244915"
 ---
 # <a name="selecting-a-credential-type"></a>选择凭据类型
 *凭据*是 WINDOWS COMMUNICATION FOUNDATION （WCF）用于建立声明的标识或功能的数据。 例如，护照就是政府颁发的用以证明国家或地区的公民身份的凭据。 在 WCF 中，凭据可以采用多种形式，例如用户名令牌和 x.509 证书。 本主题讨论凭据、凭据在 WCF 中的使用方式以及如何为应用程序选择正确的凭据。  
@@ -31,7 +32,7 @@ ms.locfileid: "84586190"
 |Ntlm|指定 NT LAN Manager (NTLM) 身份验证。 在由于某种原因无法使用 Kerberos 身份验证时使用。 你还可以通过将属性设置为来禁用其用作回退 <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> `false` ，这会使 WCF 在使用 NTLM 时尽力引发异常。 请注意，将此属性设置为 `false` 可能不阻止通过网络发送 NTLM 凭据。|  
 |Windows|指定 Windows 身份验证。 若要在 Windows 域上仅指定 Kerberos 协议，则将 <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> 属性设置为 `false`（默认值为 `true`）。|  
 |证书|使用 X.509 证书执行客户端身份验证。|  
-|Password|用户必须提供用户名和密码。 使用 Windows 身份验证或其他自定义解决方案验证用户名/密码对。|  
+|密码|用户必须提供用户名和密码。 使用 Windows 身份验证或其他自定义解决方案验证用户名/密码对。|  
   
 ### <a name="message-client-credential-types"></a>消息客户端凭据类型  
  下表列出了在创建使用消息安全的应用程序时可以使用的可能的凭据类型。 可以在代码或配置文件中使用这些值。  
@@ -97,7 +98,7 @@ ms.locfileid: "84586190"
   
  有关凭据和安全会话的详细信息，请参阅安全[会话的安全注意事项](security-considerations-for-secure-sessions.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.ClientBase%601?displayProperty=nameWithType>
 - <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A?displayProperty=nameWithType>

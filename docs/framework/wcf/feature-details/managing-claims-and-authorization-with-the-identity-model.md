@@ -1,5 +1,6 @@
 ---
 title: 使用标识模型管理声明和授权
+description: 了解 WCF 标识模型的主要编程概念，它是一种用于执行授权的基于声明的模型。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authorization [WCF]
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - claims [WCF]
 - authorization [WCF], managing with the Identity Model
 ms.assetid: 099defbb-5d35-434e-9336-1a49b9ec7663
-ms.openlocfilehash: f9138102435aab07e5c1771ce5dba85bacbcac99
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0d5687f8ac5021c008254f0f5cc453eda5e538c7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586346"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245123"
 ---
 # <a name="managing-claims-and-authorization-with-the-identity-model"></a>使用标识模型管理声明和授权
 授权是确定哪些实体具有更改、查看或其他访问计算机资源权限的过程。 例如，在一个企业中，可能只有经理们才可以访问其员工的文件。 Windows Communication Foundation （WCF）支持两种执行授权处理的机制。 第一种机制使您能够使用现有的公共语言运行库 (CLR) 构造来控制授权。 第二个是称为 "*标识模型*" 的基于声明的模型。 WCF 使用标识模型创建来自传入消息的声明;可以扩展标识模型类以支持自定义授权方案的新声明类型。 本主题概述标识模型功能的主要编程概念，并提供此功能使用的最重要的类的列表。  
@@ -69,13 +70,13 @@ ms.locfileid: "84586346"
  权限  
  对于某个资源拥有的能力。 标识模型 API 定义的权限是 <xref:System.IdentityModel.Claims.Rights> 类的属性。 系统提供的权限的示例有 <xref:System.IdentityModel.Claims.Rights.Identity%2A> 和 <xref:System.IdentityModel.Claims.Rights.PossessProperty%2A>。  
   
- “值”  
+ 值  
  用以声明权限的信息。  
   
 ## <a name="claims"></a>声明  
  标识模型是基于声明的系统。 声明描述与系统中某个实体关联的功能，该实体通常为该系统中的某个用户。 与给定实体关联的声明集可视为密钥。 特定的声明定义该密钥的形状，类似于现实中用于打开门锁的钥匙。 声明用于获取访问资源的权限。 通过比较访问该资源所需的声明和与试图进行访问的实体关联的声明，确定对给定的受保护资源的权限。  
   
- 声明是针对特定值的权限表达式。 权限可能类似于“Read”（读取）、“Write”（写入）或“Execute”（执行）。 值可以是数据库、文件、邮箱或属性。 声明还具有声明类型。 声明类型和权限的组合提供用于指定针对该值的功能的机制。 例如，声明类型为 "File"，对值 "事迹" 执行 "读取" 权限，指示与此声明关联的实体具有对文件事迹文件的读取访问权限。类型为 "Name"、"PossessProperty"、值为 "圣马丁" 的声明，指示与此声明关联的实体拥有值为 "圣马丁" 的 Name 属性。  
+ 声明是针对特定值的权限表达式。 权限可能类似于“Read”（读取）、“Write”（写入）或“Execute”（执行）。 值可以是数据库、文件、邮箱或属性。 声明还具有声明类型。 声明类型和权限的组合提供用于指定针对该值的功能的机制。 例如，声明类型为 "File"，对值 "Biography.doc" 具有 "Read" 权限，指示与此声明关联的实体具有对文件 Biography.doc 的读取访问权限。类型为 "Name"、"PossessProperty"、值为 "圣马丁" 的声明，指示与此声明关联的实体拥有值为 "圣马丁" 的 Name 属性。  
   
  尽管有各种声明类型和权限被定义为标识模型的一部分，但系统仍可以扩展，允许构建于标识模型基础结构之上的各种系统根据需要定义其他声明类型和权限。  
   
@@ -130,7 +131,7 @@ ms.locfileid: "84586346"
 ## <a name="identity-model-programming"></a>标识模型编程  
  下表说明了用于对标识模型扩展进行编程的对象模型 这些类全部存在于 <xref:System.IdentityModel.Policy> 或 <xref:System.IdentityModel.Claims> 命名空间中。  
   
-|类|描述|  
+|类|说明|  
 |-----------|-----------------|  
 |授权组件|实现 <xref:System.IdentityModel.Policy.IAuthorizationComponent> 接口的标识模型类。|  
 |<xref:System.IdentityModel.Policy.IAuthorizationComponent>|提供单一只读字符串属性的接口： Id。此属性的值对于系统中实现此接口的每个实例都是唯一的。|  
@@ -144,7 +145,7 @@ ms.locfileid: "84586346"
   
  以下类也用于标识模型编程，但不存在于 <xref:System.IdentityModel.Policy> 或 <xref:System.IdentityModel.Claims> 命名空间中。  
   
-|类|描述|  
+|类|说明|  
 |-----------|-----------------|  
 |<xref:System.ServiceModel.ServiceAuthorizationManager>|一个类，提供一种方法（<xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>），为服务中的每项操作执行基于声明的授权检查。 必须从此类派生，并重写此方法。|  
 |<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior>|一个密封类，提供与授权有关的服务行为的各种相关属性。|  
@@ -153,13 +154,13 @@ ms.locfileid: "84586346"
 ### <a name="significant-members"></a>重要成员  
  以下成员通常用于创建新声明类型。  
   
-|成员|描述|  
+|成员|说明|  
 |------------|-----------------|  
 |<xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A>|派生类实现此方法以在服务中运行操作之前执行基于声明的访问检查。 在做出访问检查决定时，可以检查提供的 <xref:System.ServiceModel.OperationContext> 中（或其他位置）的所有信息。 如果 <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> 返回 `true`，则允许进行访问和执行操作。 如果 `CheckAccessCore` 返回 `false`，则拒绝访问并且不执行操作。 有关示例，请参阅[如何：为服务创建自定义授权管理器](../extending/how-to-create-a-custom-authorization-manager-for-a-service.md)。|  
 |<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ServiceAuthorizationManager%2A>|返回服务的 <xref:System.ServiceModel.ServiceAuthorizationManager>。 <xref:System.ServiceModel.ServiceAuthorizationManager> 负责做出授权决定。|  
 |<xref:System.ServiceModel.Description.ServiceAuthorizationBehavior.ExternalAuthorizationPolicies%2A>|为服务指定的自定义授权策略的集合。 除了评估与传入消息中的凭据关联的策略外，还评估这些策略。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.IdentityModel.Policy.AuthorizationContext>
 - <xref:System.IdentityModel.Claims.Claim>

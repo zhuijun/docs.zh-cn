@@ -1,19 +1,20 @@
 ---
 title: 跟踪和消息日志记录的推荐设置
+description: 了解 WCF 中不同操作环境的推荐跟踪和消息日志记录设置。
 ms.date: 03/30/2017
 ms.assetid: c6aca6e8-704e-4779-a9ef-50c46850249e
-ms.openlocfilehash: 9d2586570a3f590735c2a8e1ca176580886c8d92
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 71067a4d6f4cec65a148a8162c40e44d82b85784
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84578911"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245319"
 ---
 # <a name="recommended-settings-for-tracing-and-message-logging"></a>跟踪和消息日志记录的推荐设置
 本主题描述用于不同操作环境的跟踪和消息日志记录的推荐设置。  
   
 ## <a name="recommended-settings-for-a-production-environment"></a>生产环境中的推荐设置  
- 对于生产环境，如果您使用的是 WCF 跟踪源，请将 `switchValue` 设置为“警告”。 如果您使用的是 WCF `System.ServiceModel` 跟踪源，请将 `switchValue` 属性设置为 `Warning`，并将 `propagateActivity` 属性设置为 `true`。 如果您使用的是用户定义的跟踪源，请将 `switchValue` 属性设置为 `Warning, ActivityTracing`。 可以使用[配置编辑器工具（svcconfigeditor.exe）](../../configuration-editor-tool-svcconfigeditor-exe.md)手动完成此操作。 如果你没有预测性能情况，则可以在上述所有情况中，将 `switchValue` 属性设置为 `Information`，这将生成大量的跟踪数据。 下面的示例演示这些推荐的设置。  
+ 对于生产环境，如果您使用的是 WCF 跟踪源，请将 `switchValue` 设置为“警告”。 如果您使用的是 WCF `System.ServiceModel` 跟踪源，请将 `switchValue` 属性设置为 `Warning`，并将 `propagateActivity` 属性设置为 `true`。 如果您使用的是用户定义的跟踪源，请将 `switchValue` 属性设置为 `Warning, ActivityTracing`。 可以使用[配置编辑器工具（SvcConfigEditor.exe）](../../configuration-editor-tool-svcconfigeditor-exe.md)手动完成此操作。 如果你没有预测性能情况，则可以在上述所有情况中，将 `switchValue` 属性设置为 `Information`，这将生成大量的跟踪数据。 下面的示例演示这些推荐的设置。  
   
 ```xml  
 <configuration>  
@@ -112,6 +113,6 @@ logman start mytrace -pf logman.providers -o test.etl –ets
 logman stop mytrace -ets  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用 Windows Management Instrumentation 诊断](../wmi/index.md)

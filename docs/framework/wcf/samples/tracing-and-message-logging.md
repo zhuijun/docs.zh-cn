@@ -1,18 +1,19 @@
 ---
 title: 跟踪和消息日志记录
+description: 了解如何使用服务跟踪查看器工具（SvcTraceViewer.exe）通过此 WFC 示例查看跟踪和消息日志。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Tracing and logging
 ms.assetid: a4f39bfc-3c5e-4d51-a312-71c5c3ce0afd
-ms.openlocfilehash: 9af50f138a2788fc7af0ce5d07e95df49d6675cb
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bb49334252c2415223b0f8f5559a6dc838d175e3
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602643"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246020"
 ---
 # <a name="tracing-and-message-logging"></a>跟踪和消息日志记录
-本示例演示如何启用跟踪和消息日志记录。 使用[服务跟踪查看器工具（svctraceviewer.exe）](../service-trace-viewer-tool-svctraceviewer-exe.md)查看生成的跟踪和消息日志。 此示例基于[入门](getting-started-sample.md)。  
+本示例演示如何启用跟踪和消息日志记录。 使用[服务跟踪查看器工具（SvcTraceViewer.exe）](../service-trace-viewer-tool-svctraceviewer-exe.md)查看生成的跟踪和消息日志。 此示例基于[入门](getting-started-sample.md)。  
   
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。  
@@ -132,7 +133,7 @@ ms.locfileid: "84602643"
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\TracingAndLogging`  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [跟踪](../diagnostics/tracing/index.md)
 - [AppFabric 监视示例](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

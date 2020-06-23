@@ -1,5 +1,6 @@
 ---
 title: < system.serviceModel >
+description: 了解 WCF 配置元素，这些元素使您能够配置 WCF 服务和客户端应用程序。
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#system.ServiceModel
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <system.serviceModel> element
 - system.serviceModel element
 ms.assetid: 78519531-ad7a-40d3-b3e7-42f1103d8854
-ms.openlocfilehash: 2125ce00b0e23f2e93ff251549f9c1276892b16b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 567cbd2cc07ee82e795daa067b9034b2b8dc1974
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399444"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85243953"
 ---
 # \<system.serviceModel>
 此配置节包含所有 Windows Communication Foundation （WCF）配置元素。  
@@ -130,6 +131,6 @@ ms.locfileid: "70399444"
 </configuration>
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.ServiceModelSectionGroup>
