@@ -1,5 +1,6 @@
 ---
 title: 如何：使用 SSL 证书配置端口
+description: 了解如何使用 x.509 证书配置端口，该证书是使用传输安全的 WSHttpBinding 类的自承载 WCF 服务所必需的。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
-ms.openlocfilehash: 30b24c4ff06cc7249d3ddb6d95549a574e313f52
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0eccdf916dae7b886cbc4e6563e6dfe17039c321
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579613"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247177"
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>如何：使用 SSL 证书配置端口
 
@@ -22,22 +23,22 @@ ms.locfileid: "84579613"
   
  若要配置端口，使用的工具取决于计算机运行的操作系统。  
   
- 如果运行的是 Windows Server 2003，请使用 Httpcfg.exe 工具。 在 Windows Server 2003 上，此工具已安装。 有关详细信息，请参阅[Httpcfg.exe 概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10))。 [Windows 支持工具文档](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10))说明了 httpcfg.exe 工具的语法。  
+ 如果运行的是 Windows Server 2003，请使用 HttpCfg.exe 工具。 在 Windows Server 2003 上，此工具已安装。 有关详细信息，请参阅[Httpcfg.exe 概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10))。 [Windows 支持工具文档](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10))说明了 Httpcfg.exe 工具的语法。  
   
- 如果运行的是 Windows Vista，请使用已安装的 Netsh 工具。
+ 如果运行的是 Windows Vista，请使用已安装的 Netsh.exe 工具。
   
 > [!NOTE]
 > 修改存储在计算机上的证书需要管理权限。  
   
 ## <a name="determine-how-ports-are-configured"></a>确定如何配置端口  
   
-1. 在 Windows Server 2003 或 Windows XP 中，使用 Httpcfg.exe 工具查看当前端口配置，使用**查询**和**ssl**开关，如以下示例中所示。  
+1. 在 Windows Server 2003 或 Windows XP 中，使用 HttpCfg.exe 工具来查看当前端口配置，使用**查询**和**ssl**开关，如以下示例中所示。  
   
     ```console
     httpcfg query ssl  
     ```  
   
-2. 在 Windows Vista 中，使用 dism.exe 工具查看当前端口配置，如下面的示例中所示。  
+2. 在 Windows Vista 中，使用 Netsh.exe 工具查看当前端口配置，如下面的示例中所示。  
   
     ```console  
     netsh http show sslcert  
@@ -55,7 +56,7 @@ ms.locfileid: "84579613"
   
 ## <a name="bind-an-ssl-certificate-to-a-port-number"></a>将 SSL 证书绑定到端口号  
   
-1. 在 Windows Server 2003 或 Windows XP 中，使用安全套接字层（SSL）存储上 "设置" 模式下的 Httpcfg.exe 工具将证书绑定到端口号。 该工具使用指纹识别证书，如下面的示例所示。  
+1. 在 Windows Server 2003 或 Windows XP 中，使用安全套接字层（SSL）存储上 "设置" 模式下的 HttpCfg.exe 工具将证书绑定到端口号。 该工具使用指纹识别证书，如下面的示例所示。  
   
     ```console  
     httpcfg set ssl -i 0.0.0.0:8012 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6  
@@ -65,7 +66,7 @@ ms.locfileid: "84579613"
   
     - **-H**开关指定证书的指纹。  
   
-2. 在 Windows Vista 中，使用 Netsh 工具，如下面的示例中所示。  
+2. 在 Windows Vista 中，使用 Netsh.exe 工具，如以下示例中所示。  
   
     ```console  
     netsh http add sslcert ipport=0.0.0.0:8000 certhash=0000000000003ed9cd0c315bbb6dc1c08da5e6 appid={00112233-4455-6677-8899-AABBCCDDEEFF}
@@ -73,13 +74,13 @@ ms.locfileid: "84579613"
   
     - **Certhash**参数指定证书的指纹。  
   
-    - **Ipport**参数指定 IP 地址和端口，以及与所述的 httpcfg.exe 工具的 **-i**开关相同的功能。  
+    - **Ipport**参数指定 IP 地址和端口，并且函数与所述 Httpcfg.exe 工具的 **-i**开关相同。  
   
     - **Appid**参数是可用于标识所属应用程序的 GUID。  
   
 ## <a name="bind-an-ssl-certificate-to-a-port-number-and-support-client-certificates"></a>将 SSL 证书绑定到端口号并支持客户端证书  
   
-1. 在 Windows Server 2003 或 Windows XP 中，若要支持在传输层使用 x.509 证书进行身份验证的客户端，请按照前面的过程进行操作，但将其他命令行参数传递给 Httpcfg.exe，如以下示例中所示。  
+1. 在 Windows Server 2003 或 Windows XP 中，若要支持在传输层使用 x.509 证书进行身份验证的客户端，请按照前面的过程进行操作，但将其他命令行参数传递给 HttpCfg.exe，如以下示例中所示。  
   
     ```console  
     httpcfg set ssl -i 0.0.0.0:8012 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6 -f 2  
@@ -101,13 +102,13 @@ ms.locfileid: "84579613"
     httpcfg query ssl>myMachinePorts.txt  
     ```
   
-2. 在 Windows Server 2003 或 Windows XP 中，将 Httpcfg.exe 工具与**delete**和**ssl**关键字一起使用。 使用 **-i**开关指定 `IP` ： `port` number，并使用 **-h**开关指定指纹。  
+2. 在 Windows Server 2003 或 Windows XP 中，将 HttpCfg.exe 工具与**delete**和**ssl**关键字一起使用。 使用 **-i**开关指定 `IP` ： `port` number，并使用 **-h**开关指定指纹。  
   
     ```console  
     httpcfg delete ssl -i 0.0.0.0:8005 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6  
     ```  
   
-3. 在 Windows Vista 中，使用 Netsh 工具，如下面的示例中所示。  
+3. 在 Windows Vista 中，使用 Netsh.exe 工具，如以下示例中所示。  
   
     ```console  
     Netsh http delete sslcert ipport=0.0.0.0:8005  
@@ -120,6 +121,6 @@ ms.locfileid: "84579613"
  [!code-csharp[c_WsHttpService#3](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wshttpservice/cs/source.cs#3)]
  [!code-vb[c_WsHttpService#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wshttpservice/vb/source.vb#3)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [HTTP 传输安全](http-transport-security.md)

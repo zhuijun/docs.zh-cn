@@ -1,15 +1,16 @@
 ---
 title: 在 Windows 进程激活服务中承载
+description: 了解如何管理包含承载 WCF 服务的应用程序的工作进程的激活和生存期。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: d0253202b0fad9a452507ed4296bc4a09b78e569
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6b0b23c21762009341fd62c029431824dd26d6c3
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597301"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247255"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>在 Windows 进程激活服务中承载
 Windows 进程激活服务 (WAS) 管理辅助进程的激活和生命周期，这些进程包含托管 Windows Communication Foundation (WCF) 服务的应用程序。 WAS 进程模型通过删除对 HTTP 的依赖，将 HTTP 服务器的 IIS 6.0 进程模型通用化。 这使 WCF 服务可以在支持基于消息的激活的宿主环境中同时使用 HTTP 和非 HTTP 协议（例如 Net.tcp），并提供在给定计算机上托管大量应用程序的功能。  
@@ -34,7 +35,7 @@ Windows 进程激活服务 (WAS) 管理辅助进程的激活和生命周期，�
   
  下表演示了使用 HTTP 和非 HTTP 网站绑定的 WAS 网站的几个可能的寻址方案。  
   
-|方案|网站绑定|应用程序路径|基应用程序 URI|  
+|场景|网站绑定|应用程序路径|基应用程序 URI|  
 |--------------|-------------------|----------------------|---------------------------|  
 |仅 HTTP|http： *：80：\*|/appTwo|`http://localhost/appTwo/`|  
 |HTTP 和非 HTTP|http： *：80：\*<br /><br /> net.tcp：808：\*|/appTwo|`http://localhost/appTwo/`<br />`net.tcp://localhost/appTwo/`|  
@@ -48,7 +49,7 @@ Windows 进程激活服务 (WAS) 管理辅助进程的激活和生命周期，�
 ## <a name="the-was-runtime"></a>WAS 运行库  
  为了便于寻址和管理，可将应用程序组织到网站中。 运行时，还会将应用程序分组到应用程序池中。 一个应用程序池可以存放多个来自许多不同网站的应用程序。 一个应用程序池中的所有应用程序共享一组公共的运行时特征。 例如，它们都在公共语言运行库 (CLR) 的同一版本下运行，并都共享一个公共的进程标识。 每个应用程序池都与辅助进程 (w3wp.exe) 的某个实例相对应。 通过 CLR AppDomain，在共享应用程序池内运行的每个托管应用程序都独立于其他的应用程序。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [WAS 激活体系结构](was-activation-architecture.md)
 - [配置 WAS 以用于 WCF](configuring-the-wpa--service-for-use-with-wcf.md)

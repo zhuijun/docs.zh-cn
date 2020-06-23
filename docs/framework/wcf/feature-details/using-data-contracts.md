@@ -1,5 +1,6 @@
 ---
 title: 使用数据协定
+description: 了解用于为每个参数或返回类型定义的数据协定，将序列化的数据序列化到 WCF 客户端和服务器之间进行交换。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - WCF, data
 - data contracts [WCF]
 ms.assetid: a3ae7b21-c15c-4c05-abd8-f483bcbf31af
-ms.openlocfilehash: 0d11b48d3021bf0d92d74ab67bc18c2bdd2bdd0e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 80ea2a8bd67c627fbe11ee07e640704c1a41ef7b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594993"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244720"
 ---
 # <a name="using-data-contracts"></a>使用数据协定
 “数据协定” ** 是在服务与客户端之间达成的正式协议，用于以抽象方式描述要交换的数据。 也就是说，为了进行通信，客户端和服务不必共享相同的类型，而只需共享相同的数据协定。 数据协定为每个参数或返回类型精确定义为进行交换而序列化哪些数据（将哪些数据转换为 XML）。  
@@ -35,7 +36,7 @@ ms.locfileid: "84594993"
  [!code-csharp[C_DataContract#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_datacontract/cs/source.cs#2)]
  [!code-vb[C_DataContract#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_datacontract/vb/source.vb#2)]  
   
-### <a name="notes"></a>说明  
+### <a name="notes"></a>备注  
  下面的注释提供在创建数据协定时需要考虑的事项：  
   
 - 仅当用于未标记的类型时，才接受 <xref:System.Runtime.Serialization.IgnoreDataMemberAttribute> 属性。 这包括未使用 <xref:System.Runtime.Serialization.DataContractAttribute>、 <xref:System.SerializableAttribute>、 <xref:System.Runtime.Serialization.CollectionDataContractAttribute>或 <xref:System.Runtime.Serialization.EnumMemberAttribute> 属性之一标记的类型，或通过任何其他方式（如 <xref:System.Xml.Serialization.IXmlSerializable>）标记为可序列化的类型。  
@@ -66,7 +67,7 @@ ms.locfileid: "84594993"
   
  有关定义数据协定的 WCF 服务的完整代码示例，请参阅 [Basic Data Contract](../samples/basic-data-contract.md) 示例。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
 - <xref:System.Runtime.Serialization.DataContractAttribute>

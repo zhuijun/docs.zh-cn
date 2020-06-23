@@ -1,15 +1,16 @@
 ---
 title: 如何：使用用户名和密码进行身份验证
+description: 了解如何通过使用示例代码，使 WCF 服务能够通过使用 Windows 域用户名和密码对客户端进行身份验证。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [WCF], user name and password
 ms.assetid: a5415be2-0ef3-464c-9f76-c255cb8165a4
-ms.openlocfilehash: e8dc9177afc590a6467855decfa8450b37c6fc77
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1f938f8041b2577b3705266948f29b42f23a6fd7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601278"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247242"
 ---
 # <a name="how-to-authenticate-with-a-user-name-and-password"></a>如何：使用用户名和密码进行身份验证
 
@@ -32,7 +33,7 @@ ms.locfileid: "84601278"
     // ...
     ```
 
-2. 指定用于对通过网络发送的用户名和密码信息进行加密的服务器证书。 此代码应紧跟在上面的代码之后。 下面的示例使用由 "[消息安全用户名](../samples/message-security-user-name.md)" 示例中的 setup.exe 文件创建的证书：
+2. 指定用于对通过网络发送的用户名和密码信息进行加密的服务器证书。 此代码应紧跟在上面的代码之后。 下面的示例使用 "[消息安全用户名](../samples/message-security-user-name.md)" 示例中由 setup.bat 文件创建的证书：
 
     ```csharp
     // ...
@@ -40,7 +41,7 @@ ms.locfileid: "84601278"
     // ...
     ```
 
-    您可以使用您自己的证书，只需修改代码以引用您的证书。 有关创建和使用证书的详细信息，请参阅使用[证书](working-with-certificates.md)。 确保证书在本地计算机的受信任人证书存储区中。 为此，可以运行 mmc.exe，然后选择 "**文件**"、"**添加/删除管理单元 ...** " 菜单项。 在 "**添加或删除管理单元**" 对话框中，选择 "**证书" 管理单元**，然后单击 "**添加**"。 在 "证书" 管理单元对话框中，选择 "**计算机帐户**"。 默认情况下，从消息安全用户名称示例生成的证书将位于个人/证书文件夹中。  它将在 MMC 窗口中的 "颁发给" 列下作为 "localhost" 列出。 将证书拖放到 "**受信任人**" 文件夹中。 这将允许 WCF 在执行身份验证时，将证书视为受信任的证书。
+    您可以使用您自己的证书，只需修改代码以引用您的证书。 有关创建和使用证书的详细信息，请参阅使用[证书](working-with-certificates.md)。 确保证书在本地计算机的受信任人证书存储区中。 为此，可以运行 mmc.exe 并选择 "**文件**"、"**添加/删除管理单元 ...** " 菜单项。 在 "**添加或删除管理单元**" 对话框中，选择 "**证书" 管理单元**，然后单击 "**添加**"。 在 "证书" 管理单元对话框中，选择 "**计算机帐户**"。 默认情况下，从消息安全用户名称示例生成的证书将位于个人/证书文件夹中。  它将在 MMC 窗口中的 "颁发给" 列下作为 "localhost" 列出。 将证书拖放到 "**受信任人**" 文件夹中。 这将允许 WCF 在执行身份验证时，将证书视为受信任的证书。
 
 ## <a name="to-call-the-service-passing-username-and-password"></a>调用服务传递用户名和密码
 
@@ -81,7 +82,7 @@ ms.locfileid: "84601278"
     // Call the service operation using the proxy
     ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.WSHttpBinding>
 - <xref:System.ServiceModel.WSHttpSecurity>

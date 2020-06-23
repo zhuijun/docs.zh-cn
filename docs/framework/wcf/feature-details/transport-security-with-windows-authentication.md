@@ -1,16 +1,17 @@
 ---
 title: 通过 Windows 身份验证确保的传输安全
+description: 查看此方案，其中显示了由 Windows 安全保护的 WCF 客户端/服务。 在此示例中，intranet 服务显示人力资源信息。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 96dd26e2-46e7-4de0-9a29-4fcb05bf187b
-ms.openlocfilehash: 6703da4f97cba38ee0dc334d3010ca509d1fb3ef
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b6134d4cbdff0c1adea704a7f3aaff7e40fd75ec
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598692"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244759"
 ---
 # <a name="transport-security-with-windows-authentication"></a>通过 Windows 身份验证确保的传输安全
 下面的方案演示了 Windows 安全性所保护的 Windows Communication Foundation （WCF）客户端和服务。 有关编程的详细信息，请参阅[如何：使用 Windows 凭据保护服务](../how-to-secure-a-service-with-windows-credentials.md)。  
@@ -19,14 +20,14 @@ ms.locfileid: "84598692"
   
  ![使用 Windows 身份验证的传输安全性](./media/transport-security-with-windows-authentication/secured-windows-authentication.gif)  
   
-|特征|描述|  
+|特征|说明|  
 |--------------------|-----------------|  
-|安全模式|Transport|  
+|安全模式|传输|  
 |互操作性|仅 WCF|  
 |身份验证（服务器）<br /><br /> 身份验证（客户端）|是（使用 Windows 集成身份验证）<br /><br /> 是（使用 Windows 集成身份验证）|  
 |完整性|是|  
 |机密性|是|  
-|Transport|NET.TCP|  
+|传输|NET.TCP|  
 |绑定|<xref:System.ServiceModel.NetTcpBinding>|  
   
 ## <a name="service"></a>服务  
@@ -73,7 +74,7 @@ ms.locfileid: "84598692"
 </configuration>  
 ```  
   
-## <a name="client"></a>客户端  
+## <a name="client"></a>Client  
  下面的代码和配置应独立运行。 执行下列操作之一：  
   
 - 使用代码（和客户端代码）创建独立客户端。  
@@ -117,7 +118,7 @@ ms.locfileid: "84598692"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
 - [如何：使用 Windows 凭据保护服务的安全](../how-to-secure-a-service-with-windows-credentials.md)

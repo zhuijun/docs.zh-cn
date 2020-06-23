@@ -1,30 +1,31 @@
 ---
 title: 通过基本身份验证确保的传输安全
+description: 查看此 WCF 方案，其中显示了 WCF 服务和客户端的基本身份验证。 服务需要客户端信任的有效证书。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b54f491d-196b-4279-876c-76b83ec0442c
-ms.openlocfilehash: 7c83de70e404fe8304bc2e35c1bb5df9e42f95b7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f15a19feaed631a76948efd24ee225acf789cb2d
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84576091"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244850"
 ---
 # <a name="transport-security-with-basic-authentication"></a>通过基本身份验证确保的传输安全
 下图显示 Windows Communication Foundation （WCF）服务和客户端。 服务器需要一个有效的可用于安全套接字层 (SSL) 的 X.509 证书，并且客户端必须信任此服务器证书。 而且，Web 服务已经有了一个可以使用的 SSL 实现。 有关在 Internet Information Services （IIS）上启用基本身份验证的详细信息，请参阅 <https://docs.microsoft.com/iis/configuration/system.webserver/security/authentication/basicauthentication> 。  
   
  ![显示具有基本身份验证的传输安全的屏幕截图。](./media/transport-security-with-basic-authentication/transport-security-basic-authentication.gif)  
   
-|特征|描述|  
+|特征|说明|  
 |--------------------|-----------------|  
-|安全模式|Transport|  
+|安全模式|传输|  
 |互操作性|与现有的 Web 服务客户端和服务进行互操作|  
 |身份验证（服务器）<br /><br /> 身份验证（客户端）|是（使用 HTTPS）<br /><br /> 是（通过用户名/密码）|  
 |完整性|是|  
 |机密性|是|  
-|Transport|HTTPS|  
+|传输|HTTPS|  
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>服务  
@@ -69,7 +70,7 @@ ms.locfileid: "84576091"
 </configuration>  
 ```  
   
-## <a name="client"></a>客户端  
+## <a name="client"></a>Client  
   
 ### <a name="code"></a>代码  
  下面的代码演示包括用户名和密码在内的客户端代码。 请注意，此用户必须提供一个有效的 Windows 用户名和密码。 此处不显示用于返回用户名和密码的代码。 使用对话框或其他界面来查询用户的相关信息。  
@@ -110,7 +111,7 @@ ms.locfileid: "84576091"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.ClientBase%601.ClientCredentials%2A>
 - <xref:System.ServiceModel.Security.UserNamePasswordClientCredential>

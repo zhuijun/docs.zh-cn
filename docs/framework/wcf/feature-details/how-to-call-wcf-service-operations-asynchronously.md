@@ -1,16 +1,17 @@
 ---
 title: 如何：以异步方式调用 WCF 服务操作
+description: 了解如何使用事件驱动的异步调用模型创建可异步访问服务操作的 WCF 客户端。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0face17f-43ca-417b-9b33-737c0fc360df
-ms.openlocfilehash: 400ed8e5ee8b236e9d0f843f27b7c2112ec28861
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: aa31f64473111800f4cd01907a0446c94f368456
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601252"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247229"
 ---
 # <a name="how-to-call-wcf-service-operations-asynchronously"></a>如何：以异步方式调用 WCF 服务操作
 
@@ -23,7 +24,7 @@ ms.locfileid: "84601252"
   
 #### <a name="to-call-wcf-service-operations-asynchronously"></a>以异步方式调用 WCF 服务操作  
   
-1. 同时运行带的[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)工具 `/async` 和 `/tcv:Version35` 命令选项，如下面的命令中所示。  
+1. 同时运行带的[元数据实用工具（Svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)工具 `/async` 和 `/tcv:Version35` 命令选项，如下面的命令中所示。  
   
     ```console
     svcutil /n:http://Microsoft.ServiceModel.Samples,Microsoft.ServiceModel.Samples http://localhost:8000/servicemodelsamples/service/mex /a /tcv:Version35  
@@ -64,6 +65,6 @@ ms.locfileid: "84601252"
  [!code-csharp[EventAsync#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/eventasync/cs/client.cs#6)]
  [!code-vb[EventAsync#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/eventasync/vb/client.vb#6)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：实现异步服务操作](../how-to-implement-an-asynchronous-service-operation.md)

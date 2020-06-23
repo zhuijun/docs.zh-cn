@@ -1,15 +1,16 @@
 ---
 title: 利用证书身份验证的传输安全
+description: 了解 WFC 如何在使用传输安全时使用证书进行服务器和客户端身份验证。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 ms.assetid: 3d726b71-4d8b-4581-a3bb-02b9af51d11b
-ms.openlocfilehash: 47322cbcddf9f33101bbfbeaa07a3fab74b9d26a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3da1202a5ad3b953470b50dd5924b2ab45f301eb
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84576013"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244773"
 ---
 # <a name="transport-security-with-certificate-authentication"></a>利用证书身份验证的传输安全
 
@@ -21,14 +22,14 @@ ms.locfileid: "84576013"
   
  有关将证书用于服务的详细信息，请参阅使用[证书](working-with-certificates.md)和[如何：使用 SSL 证书配置端口](how-to-configure-a-port-with-an-ssl-certificate.md)。 下表描述了该方案的各项特征。  
   
-|特征|描述|  
+|特征|说明|  
 |--------------------|-----------------|  
-|安全模式|Transport|  
+|安全模式|传输|  
 |互操作性|与现有 Web 服务客户端和服务。|  
 |身份验证（服务器）<br /><br /> 身份验证（客户端）|是（使用 SSL 证书）<br /><br /> 是（使用 X.509 证书）|  
 |数据完整性|是|  
 |数据保密性|是|  
-|Transport|HTTPS|  
+|传输|HTTPS|  
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="configure-the-service"></a>配置服务  
@@ -138,7 +139,7 @@ cc.Close();
 <startup><supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.0"/></startup></configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

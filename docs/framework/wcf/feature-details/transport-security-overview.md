@@ -1,16 +1,17 @@
 ---
 title: 传输安全概述
+description: 了解 WCF 系统提供的绑定中的主要传输安全机制。 这些安全机制依赖于所使用的绑定和传输。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 00959326-aa9d-44d0-af61-54933d4adc7f
-ms.openlocfilehash: 5c6b6389122b32ed8db701020a8c13ba17225867
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6302a949e8d0a041446b75dd3769b8ba2d1fc2b5
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585670"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244824"
 ---
 # <a name="transport-security-overview"></a>传输安全概述
 Windows Communication Foundation （WCF）中的传输安全机制取决于所使用的绑定和传输。 例如，当使用 <xref:System.ServiceModel.WSHttpBinding> 类时，传输为 HTTP，保证传输安全的主要机制为 HTTP 上的安全套接字层 (SSL) （通常称为 HTTPS）。 本主题讨论 WCF 系统提供的绑定中使用的主要传输安全机制。  
@@ -82,7 +83,7 @@ Windows Communication Foundation （WCF）中的传输安全机制取决于所�
  [!code-csharp[c_ProgrammingSecurity#12](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_programmingsecurity/cs/source.cs#12)]
  [!code-vb[c_ProgrammingSecurity#12](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_programmingsecurity/vb/source.vb#12)]  
   
-#### <a name="client"></a>客户端  
+#### <a name="client"></a>Client  
  在客户端，必须使用 <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A> 类的 <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential> 方法指定证书。  
   
 > [!NOTE]
@@ -120,6 +121,6 @@ Windows Communication Foundation （WCF）中的传输安全机制取决于所�
 ## <a name="msmqintegrationbinding-and-netmsmqbinding"></a>MsmqIntegrationBinding 和 NetMsmqBinding  
  有关使用消息队列（以前称为 MSMQ）的传输安全的完整讨论，请参阅[使用传输安全保护消息](securing-messages-using-transport-security.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [WCF 安全编程](programming-wcf-security.md)

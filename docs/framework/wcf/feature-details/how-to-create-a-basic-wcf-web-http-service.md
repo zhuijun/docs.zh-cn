@@ -1,16 +1,17 @@
 ---
 title: 如何：创建基本 WCF Web HTTP 服务
+description: 了解如何创建在 WCF 中公开 web 终结点的服务。 Web 终结点使用 XML 或 JSON 发送数据。 没有 SOAP 信封。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 877662d3-d372-4e08-b417-51f66a0095cd
-ms.openlocfilehash: e9646235f9423f2a4df9cfe09a5e83a91dcdcace
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 7481367f27d973ba809dff5ca1c4a4f168fbbb98
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70895189"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247099"
 ---
 # <a name="how-to-create-a-basic-wcf-web-http-service"></a>如何：创建基本 WCF Web HTTP 服务
 
@@ -77,7 +78,7 @@ Windows Communication Foundation （WCF）允许您创建公开 Web 终结点的
 
 ## <a name="to-call-service-operations-mapped-to-get-in-internet-explorer"></a>在 Internet Explorer 中调用映射到 GET 的服务操作
 
-1. 打开 Internet Explorer 并键入 "`http://localhost:8000/EchoWithGet?s=Hello, world!`"，然后按 enter。 URL 包含服务的基址（`http://localhost:8000/`）、终结点的相对地址（""）、要调用的服务操作（"EchoWithGet"）和一个问号，后跟一个用 "and" 符分隔的命名参数列表（&）。
+1. 打开 Internet Explorer 并键入 " `http://localhost:8000/EchoWithGet?s=Hello, world!` "，然后按 enter。 URL 包含服务的基址（ `http://localhost:8000/` ）、终结点的相对地址（""）、要调用的服务操作（"EchoWithGet"）和一个问号，后跟一个用 "and" 符分隔的命名参数列表（&）。
 
 ## <a name="to-call-service-operations-in-code"></a>在代码中调用服务操作
 

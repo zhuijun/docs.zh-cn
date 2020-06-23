@@ -1,5 +1,6 @@
 ---
 title: 如何：设置安全模式
+description: 了解如何在大多数预定义的绑定上设置三个常见的 WCF 安全模式： Transport、Message 和 TransportWithMessageCredential。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: 6e01dd9f-b5dd-4474-b24c-06e124de4ff7
-ms.openlocfilehash: 9b9e25cbafb6387b4584a21fd642d80bc41cd8dc
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 2f834e1930b7676592f6cbc29a577424d75ebc01
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320897"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244538"
 ---
 # <a name="how-to-set-the-security-mode"></a>如何：设置安全模式
 
@@ -76,9 +77,9 @@ Windows Communication Foundation （WCF）安全在大多数预定义的绑定�
 
 ### <a name="to-set-the-mode-and-clientcredentialtype-property-in-configuration"></a>在配置中设置 Mode 和 ClientCredentialType 属性
 
-1. 将相应的绑定元素添加到配置文件的[\<bindings >](../configure-apps/file-schema/wcf/bindings.md)元素。 下面的示例添加了一个[\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md)元素。
+1. 将相应的绑定元素添加到 [\<bindings>](../configure-apps/file-schema/wcf/bindings.md) 配置文件的元素中。 下面的示例添加一个 [\<wsHttpBinding>](../configure-apps/file-schema/wcf/wshttpbinding.md) 元素。
 
-2. 添加一个 `<binding>` 元素，并将其 `name` 属性设置为合适的值。
+2. 添加 `<binding>` 元素，并将其 `name` 属性设置为合适的值。
 
 3. 添加一个 `<security>` 元素，并将 `mode` 属性设置为 `Message`、`Transport` 或 `TransportWithMessageCredential`。
 
@@ -119,11 +120,11 @@ Windows Communication Foundation （WCF）安全在大多数预定义的绑定�
 ## <a name="see-also"></a>请参阅
 
 - [如何：使用 SSL 证书配置端口](./feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
-- [如何：使用传输安全性和消息凭据](./feature-details/how-to-use-transport-security-and-message-credentials.md)
-- [传输安全性](./feature-details/transport-security.md)
-- [消息安全性](./feature-details/message-security-in-wcf.md)
+- [如何：使用传输安全和消息凭据](./feature-details/how-to-use-transport-security-and-message-credentials.md)
+- [传输安全](./feature-details/transport-security.md)
+- [消息安全](./feature-details/message-security-in-wcf.md)
 - [安全性概述](./feature-details/security-overview.md)
 - [系统提供的绑定](system-provided-bindings.md)
-- [\<security >](../configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
-- [\<security >](../configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
-- [\<security >](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)
+- [\<security>](../configure-apps/file-schema/wcf/security-of-wshttpbinding.md)
+- [\<security>](../configure-apps/file-schema/wcf/security-of-basichttpbinding.md)
+- [\<security>](../configure-apps/file-schema/wcf/security-of-nettcpbinding.md)

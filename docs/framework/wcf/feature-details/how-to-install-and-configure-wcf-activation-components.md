@@ -1,15 +1,16 @@
 ---
 title: 如何：安装和配置 WCF 激活组件
+description: 了解如何在 Windows Vista 上设置 Windows 进程激活服务（WAS），以托管无法通过 HTTP 进行通信的 WCF 服务。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: f7a846b076691394cb855e4978e890cdcac76eb2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 84a0dcc4fed28ebd7a536bdabfcdc389be6072d8
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597028"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246878"
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>如何：安装和配置 WCF 激活组件
 
@@ -35,7 +36,7 @@ ms.locfileid: "84597028"
 
 ## <a name="to-configure-the-was-to-support-tcp-activation"></a>配置 WAS 以支持 TCP 激活
 
-1. 若要支持 net.tcp 激活，必须首先将默认的网站绑定到一个 net.tcp 端口。 可以通过使用随 IIS 7.0 管理工具集安装的 Appcmd.exe 来执行此操作。 在管理员级别命令提示符窗口中，运行以下命令。
+1. 若要支持 net.tcp 激活，必须首先将默认的网站绑定到一个 net.tcp 端口。 可以通过使用随 IIS 7.0 管理工具集一起安装 Appcmd.exe 来完成此操作。 在管理员级别命令提示符窗口中，运行以下命令。
 
     ```console
     %windir%\system32\inetsrv\appcmd.exe set site "Default Web Site" -+bindings.[protocol='net.tcp',bindingInformation='808:*']
@@ -101,7 +102,7 @@ ms.locfileid: "84597028"
     > [!NOTE]
     > 此命令是单行文本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [TCP 激活](../samples/tcp-activation.md)
 - [MSMQ 激活](../samples/msmq-activation.md)
