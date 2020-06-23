@@ -1,18 +1,19 @@
 ---
 title: WCF 测试客户端 (WcfTestClient.exe)
+description: 了解 WCF 测试客户端，它提供与 WCF 服务主机组合时的无缝服务测试。 提交客户端测试值并查看服务响应。
 ms.date: 03/30/2017
 ms.assetid: d4302855-677f-4640-aa90-c5d785d72fb7
-ms.openlocfilehash: ac89b234dfafe3f87f1423a04ce8e4dd6b44b991
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 4f636698c538809f89ee356159839a37b73adb57
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321180"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245656"
 ---
 # <a name="wcf-test-client-wcftestclientexe"></a>WCF 测试客户端 (WcfTestClient.exe)
-Windows Communication Foundation （WCF）测试客户端（Wcftestclient.exe）是一个 GUI 工具，用户使用该工具可以输入测试参数、将该输入提交给服务并查看服务发回的响应。 与 WCF 服务主机结合使用时，可以提供无缝的服务测试体验。
+Windows Communication Foundation （WCF）测试客户端（WcfTestClient.exe）是一个 GUI 工具，用户使用该工具可以输入测试参数、将该输入提交给服务并查看服务发回的响应。 与 WCF 服务主机结合使用时，可以提供无缝的服务测试体验。
 
-通常，你可以在以下位置找到 WCF 测试客户端（Wcftestclient.exe）： `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE`-社区可以是 "企业"、"专业" 或 "社区" 中的一种，具体取决于安装的 Visual Studio 级别。
+通常，你可以在以下位置找到 WCF 测试客户端（WcfTestClient.exe）： `C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` -社区可以是 "企业"、"专业" 或 "社区" 中的一个，具体取决于安装的 Visual Studio 级别。
 
 ## <a name="scenarios-for-using-test-client"></a>使用测试客户端的方案
 
@@ -30,9 +31,9 @@ Windows Communication Foundation （WCF）测试客户端（Wcftestclient.exe）
 
 ### <a name="outside-visual-studio"></a>Visual Studio 外部
 
-你还可以在 Visual Studio 外部调用 WCF 测试客户端（Wcftestclient.exe），以测试 Internet 上的任意服务。 若要找到此工具，请转到以下位置：
+你还可以在 Visual Studio 外部调用 WCF 测试客户端（WcfTestClient.exe）来测试 Internet 上的任意服务。 若要找到此工具，请转到以下位置：
 
-`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE` （其中，社区可以是 "企业"、"专业" 或 "社区" 中的一个，具体取决于计算机上安装的 Visual Studio 的级别）
+`C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE`（其中，社区可以是 "企业"、"专业" 或 "社区" 中的一个，具体取决于计算机上安装的 Visual Studio 的级别）
 
 若要使用该工具，可以双击此文件名从该位置打开它，也可以从命令行启动它。
 
@@ -73,7 +74,7 @@ WCF 测试客户端主窗口的左窗格列出了所有可用的服务及其各�
 
 使用服务操作的选项卡中的 "**启动新的代理**" 复选框可以切换会话支持。 默认情况下清除此框。
 
-如果为特定操作（或同一服务终结点中的另一个操作）输入测试参数，并单击 "多次**调用**" 并清除复选框，则这些操作将共享一个代理，服务状态会在多个运算符.
+如果为特定操作（或同一服务终结点中的另一个操作）输入测试参数，并单击 "多次**调用**" 并清除复选框，则这些操作将共享一个代理，并且服务状态在多个操作中保持不变。
 
 如果选中了 "**启动新的代理**" 复选框，则将为每个**调用**启动一个新的代理，上一个会话方案将结束，并且服务状态将重置。
 
@@ -87,13 +88,13 @@ WCF 测试客户端主窗口的左窗格列出了客户端配置文件。 双击
 
 在服务配置编辑器中保存此文件后，WCF 测试客户端将显示一条警告消息，告知你该文件已在外部修改，并询问你是否要重新加载它。
 
-如果选择 "**是**"，"客户端. .dll" 选项卡中的配置内容将反映您在编辑器中所做的更改。
+如果选择 "**是**"，则 "Client.dll.config" 选项卡中的配置内容将反映在编辑器中所做的更改。
 
-如果选择 "**否**"，则 "客户端 .dll .config" 选项卡中的配置内容将保持不变，并且修改的内容会自动保存到源文件中。
+如果选择 "**否**"，则 "Client.dll.config" 选项卡中的配置内容将保持不变，并且已修改的内容会自动保存到源文件中。
 
 #### <a name="restore-to-default-configuration"></a>还原到默认配置
 
-如果要取消所有更改并还原到默认的客户端配置，请右键单击左窗格中的 "**配置文件**"，然后选择上下文菜单 "**还原到默认配置**"。将加载默认配置值，并还原 "Client. .dll" 选项卡中的内容。
+如果要取消所有更改并还原到默认的客户端配置，请右键单击左窗格中的 "**配置文件**"，然后选择上下文菜单 "**还原到默认配置**"。将加载默认配置值，并还原 "Client.dll.config" 选项卡中的内容。
 
 #### <a name="validate-changes"></a>验证更改
 
@@ -103,9 +104,9 @@ WCF 测试客户端主窗口的左窗格列出了客户端配置文件。 双击
 
 #### <a name="persist-client-configuration"></a>使客户端配置保持不变
 
-@No__t_3**客户端配置**"选项卡上的"**工具**"->**选项**包含"**启动服务时始终重新生成配置**"选项（默认情况下启用）。 此选项指定每次 WCF 测试客户端加载服务时，它会根据最新的服务协定和服务 App.config 文件重新生成一个配置文件。
+"**工具** -> **选项** -> **客户端配置**" 选项卡包含 "**启动服务时始终重新生成配置**" 选项（默认情况下启用）。 此选项指定每次 WCF 测试客户端加载服务时，它会根据最新的服务协定和服务 App.config 文件重新生成配置文件。
 
-如果已编辑 WCF 服务的客户端配置并希望始终使用此更新的文件来调试服务，则可以取消选中 "**重新生成**" 选项。 这样，即使在更新服务并重新打开 WCF 测试客户端时，客户端 .dll 文件也是您以前更新的文件，而不是根据更新后的服务重新生成的文件。
+如果已编辑 WCF 服务的客户端配置并希望始终使用此更新的文件来调试服务，则可以取消选中 "**重新生成**" 选项。 这样，即使在更新服务并重新打开 WCF 测试客户端时，Client.dll.config 文件也是您以前更新的文件，而不是根据更新后的服务重新生成的文件。
 
 但是，您可能需要编辑此配置文件以使其与重新生成的代理一致。 如果由于更新了服务而导致重新生成的代理与配置文件不匹配，则调用该服务时将出错。
 
@@ -120,7 +121,7 @@ WCF 测试客户端主窗口的左窗格列出了客户端配置文件。 双击
 
 #### <a name="add-service"></a>添加服务
 
-单击 "**文件**" -> "**添加服务**"，将服务添加到 WCF 测试客户端。 然后您需要键入要添加的服务的 URI（终结点地址）。 该服务的地址可以是 mex 地址，也可以是 WSDL 地址。
+单击 "**文件**" " -> **添加服务**" 将服务添加到 WCF 测试客户端。 然后您需要键入要添加的服务的 URI（终结点地址）。 该服务的地址可以是 mex 地址，也可以是 WSDL 地址。
 
 你还可以在 "**最近使用的服务**" 子菜单中找到10个最近添加的服务终结点的列表。 如果选择其中一个，则会将指定的服务添加到 WCF 测试客户端。
 
@@ -142,13 +143,13 @@ WCF 测试客户端主窗口的左窗格列出了客户端配置文件。 双击
 
 ## <a name="location-of-files-generated-by-the-test-client"></a>测试客户端生成的文件的位置
 
-默认情况下，WCF 测试客户端将生成的客户端代码和配置文件存储在 "%Appdata%\local\temp\test client projects 客户端项目" 文件夹中。 在 WCF 测试客户端退出后删除此文件夹。 如果在 WCF 测试客户端中修改了某个配置文件，并且禁用了 "**启动服务时始终重新生成配置**" 选项，则会将修改后的文件复制到 "我的 Documents\Test 客户端项目" 下的 "CachedConfig" 文件夹，其中包含映射（作为索引的元数据地址到文件名称） XML 文件。
+默认情况下，WCF 测试客户端将生成的客户端代码和配置文件存储在 "%Appdata%\local\temp\test client projects 客户端项目" 文件夹中。 在 WCF 测试客户端退出后删除此文件夹。 如果在 WCF 测试客户端中修改了某个配置文件，并且禁用了 "**启动服务时始终重新生成配置**" 选项，则已修改的文件将复制到 "我的 Documents\Test 客户端项目" 下的 "CachedConfig" 文件夹中，并将映射（元数据地址到文件名称） XML 文件作为索引。
 
-你还可以在命令行中启动 WCF 测试客户端，使用 `/ProjectPath` 开关指定新的所需路径来存储生成的文件，或使用 `/RestoreProjectPath` 开关还原默认位置。 语法如下所示：
+你还可以在命令行中启动 WCF 测试客户端，使用 `/ProjectPath` 开关指定新的所需路径来存储生成的文件，或者使用 `/RestoreProjectPath` 开关还原默认位置。 语法如下所示：
 
 `wcfTestClient.exe /ProjectPath [desired location]`
 
-运行此命令不会打开 WCF 测试客户端。 而只会更改文件夹位置。 您可以运行此命令，而不管 WCF 测试客户端是否正在运行。 重新启动 WCF 测试客户端时，将应用新位置。 位置信息可以保存在注册表中，也可以保存在 "%Appdata%\local\temp\test client projects 客户端项目" 文件夹中的 Wcftestclient.exe 文件中。
+运行此命令不会打开 WCF 测试客户端。 而只会更改文件夹位置。 您可以运行此命令，而不管 WCF 测试客户端是否正在运行。 重新启动 WCF 测试客户端时，将应用新位置。 位置信息可以保存在注册表中，也可以保存在 "%Appdata%\local\temp\test client projects 客户端项目" 文件夹中的 WcfTestClient.exe。
 
 ## <a name="features-supported-by-wcf-test-client"></a>WCF 测试客户端支持的功能
 
@@ -180,7 +181,7 @@ WCF 测试客户端主窗口的左窗格列出了客户端配置文件。 双击
 
 可以通过以下方式关闭 WCF 测试客户端：
 
-- 在 "**文件**" 菜单上，单击 "**退出**"。 或者，在 WCF 测试客户端主窗口中，单击 "**关闭**"。 这两个操作还会关闭 WCF 服务自动主机，并在 Visual Studio 启动 WCF 测试客户端时停止 Visual Studio 调试过程。
+- 在 **“文件”** 菜单中，单击 **“退出”**。 或者，在 WCF 测试客户端主窗口中，单击 "**关闭**"。 这两个操作还会关闭 WCF 服务自动主机，并在 Visual Studio 启动 WCF 测试客户端时停止 Visual Studio 调试过程。
 
 - 右键单击通知区域中的 " **WCF 服务主机**" 图标，然后单击 "**退出"。** 这会关闭 WCF 服务自动主机和 WCF 测试客户端，并停止 Visual Studio 调试过程。
 

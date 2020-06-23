@@ -1,5 +1,6 @@
 ---
 title: 如何：使用传输安全和消息凭据
+description: 了解如何通过消息凭据实现传输安全，消息凭据提供 WCF 中的最优秀传输和消息安全模式。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - TransportWithMessageCredentials
 ms.assetid: 6cc35346-c37a-4859-b82b-946c0ba6e68f
-ms.openlocfilehash: f49c0eb46141081b91100a5ae1869cbcf556e353
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f632a4389eafc155cedcae94707c9418b6696f2c
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579379"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246644"
 ---
 # <a name="how-to-use-transport-security-and-message-credentials"></a>如何：使用传输安全和消息凭据
 使用传输和消息凭据来保护服务在 Windows Communication Foundation （WCF）中使用传输和消息安全模式的最佳方式。 总之，传输层安全提供了完整性和机密性，而消息层安全则提供了严格的传输安全机制所不可能提供的多种凭据。 本主题演示使用 <xref:System.ServiceModel.WSHttpBinding> 和 <xref:System.ServiceModel.NetTcpBinding> 绑定通过消息凭据实现传输的基本步骤。 有关设置安全模式的详细信息，请参阅[如何：设置安全模式](../how-to-set-the-security-mode.md)。  
@@ -160,7 +161,7 @@ ms.locfileid: "84579379"
     </bindings>  
     ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：设置安全模式](../how-to-set-the-security-mode.md)
 - [保证服务的安全](../securing-services.md)

@@ -1,5 +1,6 @@
 ---
 title: 发送和接收错误
+description: 了解当发生错误时，服务或双工客户端如何发送 SOAP 错误，以及客户端或服务应用程序如何处理这些错误。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - handling faults [WCF], sending
 ms.assetid: 7be6fb96-ce2a-450b-aebe-f932c6a4bc5d
-ms.openlocfilehash: dc9dcb5d8e36984d1e5a2e5c5124e74509de7f3d
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 23f63fde2755a29cd545d3aefe699cad8dbecb3b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320219"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244317"
 ---
 # <a name="sending-and-receiving-faults"></a>发送和接收错误
 
@@ -29,7 +30,7 @@ SOAP 错误将错误条件信息从服务传送到客户端，并且在双工情
 [!code-csharp[FaultContractAttribute#4](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#4)]
 [!code-vb[FaultContractAttribute#4](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#4)]
 
-若要向客户端传送 `GreetingFault` 错误信息，需要捕捉相应的错误条件，并引发一个类型为 <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> 的新 `GreetingFault`，其参数为一个新的 `GreetingFault` 对象，如下面的代码示例所示。 如果客户端是 WCF 客户端应用程序，它会将此作为托管异常，其中类型为类型为 `GreetingFault` 的 <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType>。
+若要向客户端传送 `GreetingFault` 错误信息，需要捕捉相应的错误条件，并引发一个类型为 <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> 的新 `GreetingFault`，其参数为一个新的 `GreetingFault` 对象，如下面的代码示例所示。 如果客户端是 WCF 客户端应用程序，则它会将此作为托管异常，其中类型为 <xref:System.ServiceModel.FaultException%601?displayProperty=nameWithType> 类型 `GreetingFault` 。
 
 [!code-csharp[FaultContractAttribute#5](../../../samples/snippets/csharp/VS_Snippets_CFX/faultcontractattribute/cs/services.cs#5)]
 [!code-vb[FaultContractAttribute#5](../../../samples/snippets/visualbasic/VS_Snippets_CFX/faultcontractattribute/vb/services.vb#5)]
@@ -39,11 +40,11 @@ SOAP 错误将错误条件信息从服务传送到客户端，并且在双工情
 如果发送未声明的错误，则在 WCF 应用程序中快速诊断和调试问题会非常有用，但它可用作调试工具。 一般来讲，在进行调试时，建议您使用 <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 属性。 在将此值设置为 true 时，客户端会将此类错误视为类型为 <xref:System.ServiceModel.FaultException%601> 的 <xref:System.ServiceModel.ExceptionDetail> 异常。
 
 > [!IMPORTANT]
-> 因为托管异常可以公开内部应用程序信息，所以将 <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 或 <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 设置为 `true` 可允许 WCF 客户端获取有关内部服务操作异常的信息，包括个人身份或其他敏感信息信息.
+> 因为托管异常可以公开内部应用程序信息，所以将 <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 或设置 <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 为 `true` 可以允许 WCF 客户端获取有关内部服务操作异常的信息，包括个人身份信息或其他敏感信息。
 >
-> 因此，仅建议将 <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 或 <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 设置为 `true` 作为一种临时调试服务应用程序的方法。 此外，以这种方式返回未处理的托管异常的方法的 WSDL 并不包含类型为 <xref:System.ServiceModel.FaultException%601> 的 <xref:System.ServiceModel.ExceptionDetail> 的协定。 客户端必须预期发生未知 SOAP 错误（返回给 WCF 客户端作为 <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> 对象）才能正确获取调试信息。
+> 因此，仅建议将 <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 或 <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 设置为 `true` 作为一种临时调试服务应用程序的方法。 此外，以这种方式返回未处理的托管异常的方法的 WSDL 并不包含类型为 <xref:System.ServiceModel.FaultException%601> 的 <xref:System.ServiceModel.ExceptionDetail> 的协定。 客户端必须预期发生未知 SOAP 错误（以对象的形式返回到 WCF 客户端 <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> ）才能正确获取调试信息。
 
-若要发送未声明的 SOAP 错误，会引发一个 <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> 对象（即，不是泛型类型 <xref:System.ServiceModel.FaultException%601>）并将该字符串传递给构造函数。 这会作为引发 <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> 异常公开给 WCF 客户端应用程序，在该异常中，通过调用 <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType> 方法可以使用字符串。
+若要发送未声明的 SOAP 错误，会引发一个 <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> 对象（即，不是泛型类型 <xref:System.ServiceModel.FaultException%601>）并将该字符串传递给构造函数。 这会作为引发的异常公开给 WCF 客户端应用程序，在 <xref:System.ServiceModel.FaultException?displayProperty=nameWithType> 该异常中，通过调用方法可以使用字符串 <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType> 。
 
 > [!NOTE]
 > 如果声明了一个字符串类型的 SOAP 错误，然后将其作为一个 <xref:System.ServiceModel.FaultException%601> 在服务中引发（其中，类型参数是一个 <xref:System.String?displayProperty=nameWithType>），则会将字符串值赋给 <xref:System.ServiceModel.FaultException%601.Detail%2A?displayProperty=nameWithType> 属性，并且无法从 <xref:System.ServiceModel.FaultException%601.ToString%2A?displayProperty=nameWithType> 获得此值。
@@ -67,7 +68,7 @@ SOAP 错误将错误条件信息从服务传送到客户端，并且在双工情
 如果在对双向操作（即，一个具有 <xref:System.ServiceModel.FaultException%601> 属性并将其 <xref:System.ServiceModel.OperationContractAttribute> 设置为 <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> 的方法）进行响应时接收到操作协定中指定的错误，则会在客户端上引发 `false` 异常。
 
 > [!NOTE]
-> 当 WCF 服务将 <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 或 <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 属性设置 `true` 为时，客户端会将其视为 <xref:System.ServiceModel.ExceptionDetail> 类型的未声明 <xref:System.ServiceModel.FaultException%601>。 客户端可以捕捉这一特定错误，也可以在 <xref:System.ServiceModel.FaultException> 的 catch 块中处理该错误。
+> 当 WCF 服务 <xref:System.ServiceModel.ServiceBehaviorAttribute.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> <xref:System.ServiceModel.Description.ServiceDebugBehavior.IncludeExceptionDetailInFaults%2A?displayProperty=nameWithType> 将或属性设置为时， `true` 客户端会将其视为未声明 <xref:System.ServiceModel.FaultException%601> 的类型 <xref:System.ServiceModel.ExceptionDetail> 。 客户端可以捕捉这一特定错误，也可以在 <xref:System.ServiceModel.FaultException> 的 catch 块中处理该错误。
 
 通常，客户端和服务只对 <xref:System.ServiceModel.FaultException%601>、<xref:System.TimeoutException> 和 <xref:System.ServiceModel.CommunicationException> 异常感兴趣。
 
@@ -118,4 +119,4 @@ SOAP 错误将错误条件信息从服务传送到客户端，并且在双工情
 - <xref:System.ServiceModel.FaultException%601>
 - <xref:System.ServiceModel.CommunicationException?displayProperty=nameWithType>
 - [预期异常](./samples/expected-exceptions.md)
-- [使用 Close 和 Abort 释放 WCF 客户端资源](./samples/use-close-abort-release-wcf-client-resources.md)
+- [使用“关闭”和“中止”发布 WCF 客户端资源](./samples/use-close-abort-release-wcf-client-resources.md)

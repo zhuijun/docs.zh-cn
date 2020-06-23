@@ -1,5 +1,6 @@
 ---
 title: 数据协定中的集合类型
+description: 了解数据协定模型如何处理 .NET Framework 中的集合，以及 WCF 如何支持集合类型的数据序列化。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - data contracts [WCF], collection types
 - collection types [WCF]
 ms.assetid: 9b45b28e-0a82-4ea3-8c33-ec0094aff9d5
-ms.openlocfilehash: a10b7c5295407cfbb36446581a4b75670e37bc6a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 83acf1f74bf3cb117f3f94743eda32d3f2cc4b82
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579744"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245175"
 ---
 # <a name="collection-types-in-data-contracts"></a>数据协定中的集合类型
 
@@ -410,6 +411,6 @@ svcutil.exe MyService.wsdl MyServiceSchema.xsd /r:C:\full_path_to_system_dll\Sys
 
 当序列化程序在保存对象引用的模式下工作时，对象引用保存也适用于集合。 具体而言，会为整个集合以及集合中包含的各个项保存对象标识。 对于字典，会为键/值对对象以及各个键和值对象保存对象标识。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.Serialization.CollectionDataContractAttribute>

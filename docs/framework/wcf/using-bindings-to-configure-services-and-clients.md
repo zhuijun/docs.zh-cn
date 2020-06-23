@@ -1,15 +1,16 @@
 ---
 title: 使用绑定配置服务和客户端
+description: 绑定包含 WFC 客户端或服务使用的配置信息。 了解如何定义绑定以及如何指定服务终结点的绑定。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], using
 ms.assetid: c39479c3-0766-4a17-ba4c-97a74607f392
-ms.openlocfilehash: dd83072d3a1c76279fcc00ea5b0a4a41e278e10a
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 60db37d4381191314e9d5588dd61015a7078e84d
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321515"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245929"
 ---
 # <a name="using-bindings-to-configure-services-and-clients"></a>使用绑定配置服务和客户端
 绑定是指定连接到终结点所需的通信详细信息的对象。 更具体地说，绑定包含用于创建客户端或服务运行时的配置信息，创建方法是定义用于各个终结点或客户端通道的传输、连网格式（消息编码）和协议的具体内容。 若要创建正常运行的 Windows Communication Foundation （WCF）服务，服务中的每个终结点都需要绑定。 本主题解释什么是绑定、如何定义绑定以及如何为终结点指定特定的绑定。  
@@ -40,7 +41,7 @@ ms.locfileid: "72321515"
  有关系统提供的绑定的完整列表和说明，请参阅[系统提供的绑定](system-provided-bindings.md)。  
   
 ## <a name="custom-bindings"></a>自定义绑定  
- 如果系统提供的绑定集合不具有某一服务应用程序所需的正确功能组合，则可以创建 <xref:System.ServiceModel.Channels.CustomBinding> 绑定。 有关 <xref:System.ServiceModel.Channels.CustomBinding> 绑定的元素的详细信息，请参阅[\<customBinding >](../configure-apps/file-schema/wcf/custombinding.md)和[自定义绑定](./extending/custom-bindings.md)。  
+ 如果系统提供的绑定集合不具有某一服务应用程序所需的正确功能组合，则可以创建 <xref:System.ServiceModel.Channels.CustomBinding> 绑定。 有关绑定元素的详细信息 <xref:System.ServiceModel.Channels.CustomBinding> ，请参阅 [\<customBinding>](../configure-apps/file-schema/wcf/custombinding.md) 和[自定义绑定](./extending/custom-bindings.md)。  
   
 ## <a name="using-bindings"></a>使用绑定  
  使用绑定需要执行两个基本步骤：  

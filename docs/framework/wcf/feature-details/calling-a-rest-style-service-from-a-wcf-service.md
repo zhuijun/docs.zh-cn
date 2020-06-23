@@ -1,13 +1,14 @@
 ---
 title: 从 WCF 服务调用 REST 样式服务
+description: 了解如何通过创建一个范围并从该范围调用 REST 样式的服务，使 WCF 服务通过 REST 样式的服务使用正确的上下文。
 ms.date: 03/30/2017
 ms.assetid: 77df81d8-7f53-4daf-8d2d-bf7996e94d5a
-ms.openlocfilehash: eaa5d08faa335740124fcf698b22d2d324cd2c54
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 15f468923cf55feb85e7aeca1a2cc5e38050d665
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84576481"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245292"
 ---
 # <a name="calling-a-rest-style-service-from-a-wcf-service"></a>从 WCF 服务调用 REST 样式服务
 
@@ -241,7 +242,7 @@ public class CallingRESTSample
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：创建基本 WCF Web HTTP 服务](how-to-create-a-basic-wcf-web-http-service.md)
 - [WCF Web HTTP 编程对象模型](wcf-web-http-programming-object-model.md)

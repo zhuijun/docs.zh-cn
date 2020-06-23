@@ -1,15 +1,16 @@
 ---
 title: 数据协定序列化程序支持的类型
+description: 请参阅 WCF 数据协定序列化程序支持的、用于序列化和反序列化的类型的完整列表。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - serialization [WCF], supported types
 ms.assetid: 7381b200-437a-4506-9556-d77bf1bc3f34
-ms.openlocfilehash: 15c3cda8329682fcbaa36609647ec49de7eb3c37
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ef9d2e61ab7121c97bd474bb151fee32907b1dac
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595097"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246527"
 ---
 # <a name="types-supported-by-the-data-contract-serializer"></a>数据协定序列化程序支持的类型
 
@@ -70,7 +71,7 @@ Windows Communication Foundation （WCF）使用 <xref:System.Runtime.Serializat
 
 - 以特殊方式处理 <xref:System.DBNull> 类型。 此类型是一个单一类型，在反序列化时，反序列化程序遵循单一约束并将所有 `DBNull` 引用指向单一实例。 因为 `DBNull` 是可序列化的类型，所以它需要 <xref:System.Security.Permissions.SecurityPermissionAttribute.SerializationFormatter%2A> 权限。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [数据协定中的 XML 和 ADO.NET 类型](xml-and-ado-net-types-in-data-contracts.md)
 - [使用数据协定](using-data-contracts.md)

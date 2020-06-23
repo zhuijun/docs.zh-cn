@@ -1,5 +1,6 @@
 ---
 title: 设计服务协定
+description: 了解服务约定，包括如何在 WCF 编程中创建服务协定、可用的操作和数据类型以及服务协定的其他方面。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,20 +8,20 @@ dev_langs:
 helpviewer_keywords:
 - service contracts [WCF]
 ms.assetid: 8e89cbb9-ac84-4f0d-85ef-0eb6be0022fd
-ms.openlocfilehash: 37723011d69e8ea2ead3f7a30a30898dede054cb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 366157b86ed7c420aed9a3a70838b4d6cd1e451f
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79176677"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245383"
 ---
 # <a name="designing-service-contracts"></a>设计服务协定
 本主题介绍什么是服务协定、如何定义服务协定、可用的操作（以及基础消息交换的含义）、使用的数据类型以及可帮助您设计能满足方案需求的操作的其他问题。  
   
 ## <a name="creating-a-service-contract"></a>创建服务协定  
- 服务公开一系列操作。 在 Windows 通信基础 （WCF） 应用程序中，通过创建方法并标记<xref:System.ServiceModel.OperationContractAttribute>属性来定义操作。 然后，若要创建服务协定，需要将操作组合到一起，具体方法是在使用 <xref:System.ServiceModel.ServiceContractAttribute> 属性标记的接口中声明这些操作，或在使用同一属性进行标记的类中定义它们。 （有关基本示例，请参阅[如何：定义服务协定](how-to-define-a-wcf-service-contract.md)。  
+ 服务公开一系列操作。 在 Windows Communication Foundation （WCF）应用程序中，通过创建方法并使用特性标记操作来定义操作 <xref:System.ServiceModel.OperationContractAttribute> 。 然后，若要创建服务协定，需要将操作组合到一起，具体方法是在使用 <xref:System.ServiceModel.ServiceContractAttribute> 属性标记的接口中声明这些操作，或在使用同一属性进行标记的类中定义它们。 （有关基本示例，请参阅[如何：定义服务协定](how-to-define-a-wcf-service-contract.md)。）  
   
- 没有任何<xref:System.ServiceModel.OperationContractAttribute>属性的方法不是服务操作，并且 WCF 服务不会公开。  
+ 没有属性的任何方法 <xref:System.ServiceModel.OperationContractAttribute> 都不是服务操作，并且不是由 WCF 服务公开的。  
   
  本主题介绍设计服务协定时的以下决策要点：  
   
@@ -35,7 +36,7 @@ ms.locfileid: "79176677"
 - 对操作输入和输出的限制。  
   
 ## <a name="classes-or-interfaces"></a>类或接口  
- 类和接口都表示功能分组，因此，两者都可用于定义 WCF 服务协定。 但是，建议您使用接口，因为接口可以直接对服务协定建模。 如果不经过实现，接口的作用只是根据特定签名对一组方法进行定义。 实现服务协定接口，并且您已经实现了 WCF 服务。  
+ 类和接口都表示一组功能，因此，这两个接口都可用于定义 WCF 服务协定。 但是，建议您使用接口，因为接口可以直接对服务协定建模。 如果不经过实现，接口的作用只是根据特定签名对一组方法进行定义。 实现服务协定接口，并已实现 WCF 服务。  
   
  服务协定接口具有托管接口的所有优点：  
   
@@ -52,9 +53,9 @@ ms.locfileid: "79176677"
   
  有关使用接口创建服务协定的示例，请参阅[如何：使用协定接口创建服务](./feature-details/how-to-create-a-service-with-a-contract-interface.md)。  
   
- 不过，您可以使用类来定义服务协定，并同时实现该协定。 可以通过直接向类和类上的方法分别应用 <xref:System.ServiceModel.ServiceContractAttribute> 和 <xref:System.ServiceModel.OperationContractAttribute> 来创建服务，这种方法的优点是快速且简便。 缺点是托管类不支持多个继承，因此，一次只能实现一个服务协定。 此外，对类或方法签名的任何修改都将修改该服务的公开协定，这可以防止未进行修改的客户端使用您的服务。 有关详细信息，请参阅[实现服务合同](implementing-service-contracts.md)。  
+ 不过，您可以使用类来定义服务协定，并同时实现该协定。 可以通过直接向类和类上的方法分别应用 <xref:System.ServiceModel.ServiceContractAttribute> 和 <xref:System.ServiceModel.OperationContractAttribute> 来创建服务，这种方法的优点是快速且简便。 缺点是托管类不支持多个继承，因此，一次只能实现一个服务协定。 此外，对类或方法签名的任何修改都将修改该服务的公开协定，这可以防止未进行修改的客户端使用您的服务。 有关详细信息，请参阅[实现服务协定](implementing-service-contracts.md)。  
   
- 有关使用类创建服务协定并同时实现服务协定的示例，请参阅["如何：使用协定类创建服务](./feature-details/how-to-create-a-wcf-contract-with-a-class.md)"。  
+ 有关使用类创建服务协定并同时实现该协定的示例，请参阅[如何：创建具有协定类的服务](./feature-details/how-to-create-a-wcf-contract-with-a-class.md)。  
   
  此时，您应了解使用接口定义服务协定与使用类定义服务协定之间的区别。 下一步将确定可在服务及其客户端之间往返传递的数据。  
   
@@ -69,14 +70,14 @@ ms.locfileid: "79176677"
 > 操作签名中的参数名称值是协定的一部分且区分大小写。 如果要在本地使用相同的参数名称，但是要在已发布的元数据中修改名称，请参见 <xref:System.ServiceModel.MessageParameterAttribute?displayProperty=nameWithType>。  
   
 #### <a name="data-contracts"></a>数据协定  
- 面向服务的应用程序（如 Windows 通信基础 （WCF） 应用程序）旨在与 Microsoft 和非 Microsoft 平台上可能数量最广的客户端应用程序进行互操作。 为了获得最大可能的互操作性，建议您使用 <xref:System.Runtime.Serialization.DataContractAttribute> 和 <xref:System.Runtime.Serialization.DataMemberAttribute> 属性对您的类型进行标记，以创建数据协定。数据协定是服务协定的一部分，用于描述您的服务操作交换的数据。  
+ 面向服务的应用程序（例如 Windows Communication Foundation （WCF）应用程序）旨在与 Microsoft 和非 Microsoft 平台上的尽可能多的客户端应用程序进行互操作。 为了获得最大可能的互操作性，建议您使用 <xref:System.Runtime.Serialization.DataContractAttribute> 和 <xref:System.Runtime.Serialization.DataMemberAttribute> 属性对您的类型进行标记，以创建数据协定。数据协定是服务协定的一部分，用于描述您的服务操作交换的数据。  
   
- 数据协定是可选的样式协定：除非您显式应用数据协定属性，否则不会序列化任何类型或数据成员。 数据协定与托管代码的访问范围无关：可以对私有数据成员进行序列化，并将其发送到其他位置，以便可以公开访问它们。 （有关数据协定的基本示例，请参阅[如何：为类或结构创建基本数据协定](./feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)。WCF 处理支持操作功能的基础 SOAP 消息的定义，以及数据类型在消息正文中和外序列化。 只要数据类型可序列化，您就无需在设计操作时考虑基础消息交换基础结构。  
+ 数据协定是可选的样式协定：除非您显式应用数据协定属性，否则不会序列化任何类型或数据成员。 数据协定与托管代码的访问范围无关：可以对私有数据成员进行序列化，并将其发送到其他位置，以便可以公开访问它们。 （有关数据协定的基本示例，请参阅[如何：为类或结构创建基本数据协定](./feature-details/how-to-create-a-basic-data-contract-for-a-class-or-structure.md)。）WCF 处理基础 SOAP 消息的定义，这些消息可实现操作的功能，以及将数据类型序列化到消息的正文中。 只要数据类型可序列化，您就无需在设计操作时考虑基础消息交换基础结构。  
   
- 尽管典型的 WCF 应用程序使用<xref:System.Runtime.Serialization.DataContractAttribute><xref:System.Runtime.Serialization.DataMemberAttribute>和 属性为操作创建数据协定，但您可以使用其他序列化机制。 标准 <xref:System.Runtime.Serialization.ISerializable>, <xref:System.SerializableAttribute> 和 <xref:System.Xml.Serialization.IXmlSerializable> 机制都可用于处理数据类型到基础 SOAP 消息的序列化，这些消息可将数据类型从一个应用程序带到另一个应用程序。 如果您的数据类型需要特别支持，您可以采用多个序列化策略。 有关 WCF 应用程序中数据类型序列化选择的详细信息，请参阅[在服务协定中指定数据传输](./feature-details/specifying-data-transfer-in-service-contracts.md)。  
+ 尽管典型的 WCF 应用程序使用 <xref:System.Runtime.Serialization.DataContractAttribute> 和 <xref:System.Runtime.Serialization.DataMemberAttribute> 属性为操作创建数据协定，但你可以使用其他序列化机制。 标准 <xref:System.Runtime.Serialization.ISerializable>, <xref:System.SerializableAttribute> 和 <xref:System.Xml.Serialization.IXmlSerializable> 机制都可用于处理数据类型到基础 SOAP 消息的序列化，这些消息可将数据类型从一个应用程序带到另一个应用程序。 如果您的数据类型需要特别支持，您可以采用多个序列化策略。 有关在 WCF 应用程序中序列化数据类型的选项的详细信息，请参阅[在服务协定中指定数据传输](./feature-details/specifying-data-transfer-in-service-contracts.md)。  
   
 #### <a name="mapping-parameters-and-return-values-to-message-exchanges"></a>将参数和返回值映射到消息交换  
- 除了应用程序支持特定标准安全、事务和与会话相关的功能时所需的数据之外，对应用程序数据进行往返传输的 SOAP 消息的基础交换还支持服务操作。 由于情况如此，服务操作的签名决定了支持数据传输和操作所需的功能的特定基础*消息交换模式*（MEP）。 您可以在 WCF 编程模型中指定三种模式：请求/回复、单向和双工消息模式。  
+ 除了应用程序支持特定标准安全、事务和与会话相关的功能时所需的数据之外，对应用程序数据进行往返传输的 SOAP 消息的基础交换还支持服务操作。 因为在这种情况下，服务操作的签名会指示特定的基础*消息交换模式*（MEP），该模式可以支持数据传输和操作所需的功能。 可以在 WCF 编程模型中指定三种模式：请求/答复、单向和双工消息模式。  
   
 ##### <a name="requestreply"></a>请求/答复  
  通过请求/答复模式，请求发送方（客户端应用程序）将接收与请求相关的答复。 这是默认的 MEP，因为它既支持传入操作（一个或多个参数传递到该操作中），也支持将返回值传回给调用方。 例如，下面的 C# 代码示例演示一个基本的服务操作，即先接收一个字符串，再返回一个字符串。  
@@ -93,9 +94,9 @@ string Hello(string greeting);
 Function Hello (ByVal greeting As String) As String  
 ```  
   
- 此操作签名指示基础消息交换的形式。 如果不存在相关性，WCF 无法确定返回值的要操作。  
+ 此操作签名指示基础消息交换的形式。 如果没有相关关系，WCF 将无法确定返回值所需的操作。  
   
- 请注意，除非您指定了不同的基础消息模式，否则即使返回`void`的服务操作（`Nothing`在 Visual Basic 中）也是请求/回复消息交换。 您操作的结果是：除非客户端异步调用操作，否则客户端将停止处理，直到收到返回消息，即使该消息正常情况下为空时也是如此。 下面的 C# 代码示例演示的操作在客户端收到空的响应消息后才返回值。  
+ 请注意，除非指定了其他基础消息模式，否则，即使在 Visual Basic 中返回的服务操作 `void` `Nothing` 也是请求/答复消息交换。 您操作的结果是：除非客户端异步调用操作，否则客户端将停止处理，直到收到返回消息，即使该消息正常情况下为空时也是如此。 下面的 C# 代码示例演示的操作在客户端收到空的响应消息后才返回值。  
   
 ```csharp  
 [OperationContractAttribute]  
@@ -109,10 +110,10 @@ void Hello(string greeting);
 Sub Hello (ByVal greeting As String)  
 ```  
   
- 如果执行操作需要很长的时间，则上面的示例会降低客户端性能和响应能力，但是，即使在请求/答复操作返回 `void` 时，这种操作仍有优势。 最明显的优势在于，响应消息中可返回 SOAP 错误，这表明可能在通信或处理中发生了一些与服务有关的错误状况。 在服务协定中指定的 SOAP 错误将作为 <xref:System.ServiceModel.FaultException%601> 对象传递到客户端应用程序，其中类型参数是在服务协定中指定的类型。 这使得通知客户端 WCF 服务中的错误条件变得容易。 有关异常、SOAP 故障和错误处理的详细信息，请参阅[在合同和服务中指定和处理故障](specifying-and-handling-faults-in-contracts-and-services.md)。 要查看请求/回复服务和客户端的示例，请参阅[如何：创建请求-回复协定](./feature-details/how-to-create-a-request-reply-contract.md)。 有关请求-答复模式问题的详细信息，请参阅[请求回复服务](./feature-details/request-reply-services.md)。  
+ 如果执行操作需要很长的时间，则上面的示例会降低客户端性能和响应能力，但是，即使在请求/答复操作返回 `void` 时，这种操作仍有优势。 最明显的优势在于，响应消息中可返回 SOAP 错误，这表明可能在通信或处理中发生了一些与服务有关的错误状况。 在服务协定中指定的 SOAP 错误将作为 <xref:System.ServiceModel.FaultException%601> 对象传递到客户端应用程序，其中类型参数是在服务协定中指定的类型。 这样就可以轻松地在 WCF 服务中向客户端通知错误情况。 有关异常、SOAP 错误和错误处理的详细信息，请参阅[在协定和服务中指定和处理错误](specifying-and-handling-faults-in-contracts-and-services.md)。 若要查看请求/答复服务和客户端的示例，请参阅[如何：创建请求-答复协定](./feature-details/how-to-create-a-request-reply-contract.md)。 有关请求-答复模式问题的详细信息，请参阅[请求-答复服务](./feature-details/request-reply-services.md)。  
   
 ##### <a name="one-way"></a>单向  
- 如果 WCF 服务应用程序的客户端不应等待操作完成，并且不处理 SOAP 故障，则该操作可以指定单向消息模式。 单向操作是客户端调用操作并在 WCF 将消息写入网络后继续处理的操作。 通常这意味着，除非在出站消息中发送的数据极其庞大，否则客户端几乎立即继续运行（除非发送数据时出错）。 此种类型的消息交换模式支持从客户端到服务应用程序的类似于事件的行为。  
+ 如果 WCF 服务应用程序的客户端不应等待操作完成并且不处理 SOAP 错误，则操作可以指定单向消息模式。 单向操作是：客户端在其中调用操作并在 WCF 将消息写入网络后继续处理。 通常这意味着，除非在出站消息中发送的数据极其庞大，否则客户端几乎立即继续运行（除非发送数据时出错）。 此种类型的消息交换模式支持从客户端到服务应用程序的类似于事件的行为。  
   
  发送一条消息而未接收任何消息的消息交换无法支持指定非 `void` 的返回值的服务操作；在这种情况下，将引发一个 <xref:System.InvalidOperationException> 异常。  
   
@@ -132,7 +133,7 @@ void Hello(string greeting);
 Sub Hello (ByVal greeting As String)  
 ```  
   
- 此方法与前面的请求/答复示例相同，但是，将 <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> 属性设置为 `true` 意味着尽管方法相同，服务操作也不会发送返回消息，而客户端将在出站消息抵达通道层时立即返回。 例如，请参阅[如何：创建单向合同](./feature-details/how-to-create-a-one-way-contract.md)。 有关单向模式的详细信息，请参阅[单向服务](./feature-details/one-way-services.md)。  
+ 此方法与前面的请求/答复示例相同，但是，将 <xref:System.ServiceModel.OperationContractAttribute.IsOneWay%2A> 属性设置为 `true` 意味着尽管方法相同，服务操作也不会发送返回消息，而客户端将在出站消息抵达通道层时立即返回。 有关示例，请参阅[如何：创建单向协定](./feature-details/how-to-create-a-one-way-contract.md)。 有关单向模式的详细信息，请参阅单向[服务](./feature-details/one-way-services.md)。  
   
 ##### <a name="duplex"></a>双工  
  双工模式的特点是，无论使用单向消息发送还是请求/答复消息发送方式，服务和客户端均能够独立地向对方发送消息。 对于必须直接与客户端通信或向消息交换的任意一方提供异步体验（包括类似于事件的行为）的服务来说，这种双向通信形式非常有用。  
@@ -143,13 +144,13 @@ Sub Hello (ByVal greeting As String)
   
  若要实现双工模式，您必须创建第二个接口，该接口包含在客户端调用的方法声明。  
   
- 有关创建服务以及访问该服务的客户端的示例，请参阅[如何：创建双工协定](./feature-details/how-to-create-a-duplex-contract.md)以及如何[：使用双工协定访问服务](./feature-details/how-to-access-services-with-a-duplex-contract.md)。 有关工作示例，请参阅[双工](./samples/duplex.md)。 有关使用双工协定的问题的详细信息，请参阅[双工服务](./feature-details/duplex-services.md)。  
+ 有关创建服务和访问该服务的客户端的示例，请参阅[如何：创建双工协定](./feature-details/how-to-create-a-duplex-contract.md)和[如何：使用双工协定访问服务](./feature-details/how-to-access-services-with-a-duplex-contract.md)。 有关工作示例，请参阅[双工](./samples/duplex.md)。 有关使用双工协定的问题的详细信息，请参阅[双工服务](./feature-details/duplex-services.md)。  
   
 > [!CAUTION]
 > 当服务接收双工消息时，它会在该传入消息中查找 `ReplyTo` 元素，以确定要发送答复的位置。 如果用于接收消息的通道不安全，则不受信任的客户端可能使用目标计算机的 `ReplyTo` 发送恶意消息，从而导致该目标计算机发生拒绝服务 (DOS)。  
   
 ##### <a name="out-and-ref-parameters"></a>Out 和 Ref 参数  
- 在大多数情况下，`in`您可以使用参数（`ByVal`在视觉基础中）和`out`和`ref`参数（`ByRef`在视觉基础中）。 由于 `out` 和 `ref` 参数都指示数据是从操作返回的，类似如下的操作签名会指定需要请求/答复操作，即使操作签名返回 `void` 也是如此。  
+ 在大多数情况下，可以使用 `in` 参数（ `ByVal` 在 Visual Basic 中） `out` 和 `ref` 参数（ `ByRef` 在 Visual Basic 中）。 由于 `out` 和 `ref` 参数都指示数据是从操作返回的，类似如下的操作签名会指定需要请求/答复操作，即使操作签名返回 `void` 也是如此。  
   
 ```csharp  
 [ServiceContractAttribute]  
@@ -177,7 +178,7 @@ End Interface
 ### <a name="specify-message-protection-level-on-the-contract"></a>指定协定上的消息保护级别  
  设计协定时，还必须确定实现您的协定的服务的消息保护级别。 仅当消息安全应用于协定终结点中的绑定时，才有必要这么做。 如果绑定将安全关闭（也就是说，如果系统提供的绑定将 <xref:System.ServiceModel.SecurityMode?displayProperty=nameWithType> 设置为值 <xref:System.ServiceModel.SecurityMode.None?displayProperty=nameWithType>），则不必确定协定的消息保护级别。 大部分情况下，系统提供的绑定应用的是消息级别的安全，可提供充分的保护级别，你不必考虑每个操作或每条消息的保护级别。  
   
- 保护级别是一个值，它指定了支持服务的消息（或消息部分）是进行签名、签名并加密，还是未经签名或加密即发送。 可以在以下多个范围设置保护级别：服务级别、针对特定操作、针对该操作内的消息或消息部分。 在一个范围设置的值会成为比该范围小的范围的默认值（除非显式重写该值）。 如果绑定配置无法提供协定中要求的最小保护级别，则将引发异常。 如果未在协定上显式设置保护级别值，并且绑定具有消息安全，则绑定配置将控制所有消息的保护级别。 此选项为默认行为。  
+ 保护级别是一个值，它指定了支持服务的消息（或消息部分）是进行签名、签名并加密，还是未经签名或加密即发送。 可以在以下多个范围设置保护级别：服务级别、针对特定操作、针对该操作内的消息或消息部分。 在一个范围设置的值会成为比该范围小的范围的默认值（除非显式重写该值）。 如果绑定配置无法提供协定中要求的最小保护级别，则将引发异常。 如果未在协定上显式设置保护级别值，并且绑定具有消息安全，则绑定配置将控制所有消息的保护级别。 这是默认行为。  
   
 > [!IMPORTANT]
 > 确定是否将协定的各种范围显式设置为小于 <xref:System.Net.Security.ProtectionLevel.EncryptAndSign?displayProperty=nameWithType> 的完全保护级别的过程，通常就是牺牲部分程度的安全性来换取改善性能的过程。 在这种情况下，您的决策必须围绕您的操作以及它们所交换的数据值进行。 有关详细信息，请参阅[保护服务](securing-services.md)。  
@@ -257,10 +258,10 @@ End Interface
   
 - `GetGuid` 操作 <xref:System.Guid?displayProperty=nameWithType> 将在一条已加密且签名的消息中返回。  
   
- 有关保护级别及其使用方式的详细信息，请参阅[了解保护级别](understanding-protection-level.md)。 有关安全性的详细信息，请参阅[保护服务](securing-services.md)。  
+ 有关保护级别以及如何使用它们的详细信息，请参阅[了解保护级别](understanding-protection-level.md)。 有关安全性的详细信息，请参阅[保护服务](securing-services.md)。  
   
 ##### <a name="other-operation-signature-requirements"></a>其他操作签名要求  
- 某些应用程序功能要求特定种类的操作签名。 例如，<xref:System.ServiceModel.NetMsmqBinding> 绑定支持持久性服务和客户端，即应用程序可以在通信期间重新启动，并在其停止的位置处拾取，不会遗漏任何消息。 （有关详细信息，请参阅[WCF 中的队列](./feature-details/queues-in-wcf.md)。但是，持久操作必须仅采用一`in`个参数，并且没有返回值。  
+ 某些应用程序功能要求特定种类的操作签名。 例如，<xref:System.ServiceModel.NetMsmqBinding> 绑定支持持久性服务和客户端，即应用程序可以在通信期间重新启动，并在其停止的位置处拾取，不会遗漏任何消息。 （有关详细信息，请参阅[WCF 中的队列](./feature-details/queues-in-wcf.md)。）但是，持久性操作只能接受一个 `in` 参数，并且没有返回值。  
   
  另一个示例是在操作中使用 <xref:System.IO.Stream> 类型。 由于 <xref:System.IO.Stream> 参数包括整个消息正文，如果输入或输出（也就是 `ref` 参数、`out` 参数或返回值）的类型为 <xref:System.IO.Stream>，则它必须是在操作中指定的唯一输入或输出。 此外，参数或返回类型必须是 <xref:System.IO.Stream>, <xref:System.ServiceModel.Channels.Message?displayProperty=nameWithType> 或 <xref:System.Xml.Serialization.IXmlSerializable?displayProperty=nameWithType>。 有关流的详细信息，请参阅[大数据和流式处理](./feature-details/large-data-and-streaming.md)。  
   
@@ -269,7 +270,7 @@ End Interface
   
  这样做的一个原因在于，如果未显式设置名称和命名空间，则在程序集上使用 IL 混淆处理时会改变协定类型名称和命名空间，并产生已修改的 WSDL 以及通常会失败的网络交换。 如果未显式设置协定名称和命名空间，但确实想使用混淆处理，请使用 <xref:System.Reflection.ObfuscationAttribute> 和 <xref:System.Reflection.ObfuscateAssemblyAttribute> 属性，以防止修改协定类型名称和命名空间。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：创建请求-答复协定](./feature-details/how-to-create-a-request-reply-contract.md)
 - [如何：创建单向协定](./feature-details/how-to-create-a-one-way-contract.md)
@@ -278,5 +279,5 @@ End Interface
 - [在协定和服务中指定和处理错误](specifying-and-handling-faults-in-contracts-and-services.md)
 - [使用会话](using-sessions.md)
 - [同步和异步操作](synchronous-and-asynchronous-operations.md)
-- [可靠的服务](reliable-services.md)
+- [Reliable Services](reliable-services.md)
 - [服务和事务](services-and-transactions.md)

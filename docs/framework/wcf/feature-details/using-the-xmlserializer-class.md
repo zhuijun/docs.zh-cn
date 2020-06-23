@@ -1,5 +1,6 @@
 ---
 title: 使用 XmlSerializer 类
+description: 了解 XmlSerializer，WCF 使用它将应用程序中的数据序列化到客户端和服务之间传输的 XML 中。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - XmlSerializer [WCF], using
 ms.assetid: c680602d-39d3-44f1-bf22-8e6654ad5069
-ms.openlocfilehash: 2ef2d0eefb571f64040fabd16fd65fdfde7a626d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f7473de3f34ba543b4fabfe93167ea267f16dda5
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600200"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246372"
 ---
 # <a name="using-the-xmlserializer-class"></a>使用 XmlSerializer 类
 
@@ -40,7 +41,7 @@ Windows Communication Foundation （WCF）可以使用两种不同的序列化�
 
 WCF 还支持 <xref:System.Xml.Serialization.XmlSerializer> 类。 <xref:System.Xml.Serialization.XmlSerializer>类对于 WCF 不是唯一的。 它与 ASP.NET Web 服务使用的序列化引擎相同。 <xref:System.Xml.Serialization.XmlSerializer> 类支持的类型少于 <xref:System.Runtime.Serialization.DataContractSerializer> 类支持的类型，但它允许对生成的 XML 进行更多的控制，并且支持更多的 XML 架构定义语言 (XSD) 标准。 它也不要求针对可序列化类型的任何声明性属性。 有关详细信息，请参阅 .NET Framework 文档中的 XML 序列化主题。 <xref:System.Xml.Serialization.XmlSerializer> 类并不支持数据协定类型。
 
-当使用 Svcutil.exe 或 Visual Studio 中的**添加服务引用**功能生成第三方服务的客户端代码，或访问第三方架构时，系统会自动选择相应的序列化程序。 如果架构与 <xref:System.Runtime.Serialization.DataContractSerializer> 不兼容，则选择 <xref:System.Xml.Serialization.XmlSerializer>。
+当使用 Visual Studio 中的 Svcutil.exe 或**添加服务引用**功能生成第三方服务的客户端代码，或访问第三方架构时，系统会自动为您选择一个合适的序列化程序。 如果架构与 <xref:System.Runtime.Serialization.DataContractSerializer> 不兼容，则选择 <xref:System.Xml.Serialization.XmlSerializer>。
 
 ## <a name="manually-switching-to-the-xmlserializer"></a>手动切换到 XmlSerializer
 
@@ -173,7 +174,7 @@ WCF 不支持 <xref:System.Xml.Serialization.SoapIncludeAttribute> <xref:System.
 
 - 生成的架构可能是有效的数据协定架构，如[数据协定架构引用](data-contract-schema-reference.md)中所述。 在此情况下，架构可以正常导入，并且将生成常规数据协定类型。
 
-- 生成的架构可能不是有效的数据协定架构。 例如，架构提供程序方法生成的架构可能包含在数据协定模型中不受支持的 XML 特性。 在此情况下，您可以将架构作为 `IXmlSerializable` 类型导入。 默认情况下，此导入模式不处于启用状态，但可以轻松启用–例如，通过 `/importXmlTypes` 命令行开关转到 "行[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)"。 [导入架构以生成类中对](importing-schema-to-generate-classes.md)此进行了详细介绍。 请注意，您必须直接处理您的类型实例的 XML。 您也可以考虑使用其他支持各种架构的不同序列化技术 – 请参见有关使用 `XmlSerializer` 的主题。
+- 生成的架构可能不是有效的数据协定架构。 例如，架构提供程序方法生成的架构可能包含在数据协定模型中不受支持的 XML 特性。 在此情况下，您可以将架构作为 `IXmlSerializable` 类型导入。 默认情况下，此导入模式不处于启用状态，但可以轻松启用–例如，通过 `/importXmlTypes` 命令行开关转到 "行[元数据" 实用工具（Svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)。 [导入架构以生成类中对](importing-schema-to-generate-classes.md)此进行了详细介绍。 请注意，您必须直接处理您的类型实例的 XML。 您也可以考虑使用其他支持各种架构的不同序列化技术 – 请参见有关使用 `XmlSerializer` 的主题。
 
 - 您可能希望重新使用代理中的现有 `IXmlSerializable` 类型，而不生成新的类型。 在此情况下，“导入架构以生成类型”主题中介绍的引用类型功能可用于指示要重新使用的类型。 这对应于在 svcutil.exe 上使用 `/reference` 开关，以指定包含要重新使用的类型的程序集。
 
@@ -218,7 +219,7 @@ WCF 不支持 <xref:System.Xml.Serialization.SoapIncludeAttribute> <xref:System.
 > [!NOTE]
 > 此 `<xmlSerializer useLegacySerializerGeneration="true"/>` 开关仅适用于运行 .NET Framework 4.5 或更高版本的计算机。 上述 `appSettings` 方法适用于所有 .NET Framework 版本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.DataContractFormatAttribute>
 - <xref:System.Runtime.Serialization.DataContractSerializer>

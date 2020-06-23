@@ -1,13 +1,14 @@
 ---
 title: 客户端配置
+description: 了解如何使用 WCF 客户端配置来指定用于连接到服务的终结点的地址、绑定、行为和协定。
 ms.date: 03/30/2017
 ms.assetid: 5da5bd3b-65d9-43b7-91b9-cc9e989b1350
-ms.openlocfilehash: 2d17438095e65ccf922061c03e406bab35b07c5d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c3e3d4904bad39e951e8ba69013ac95894130489
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593654"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245370"
 ---
 # <a name="client-configuration"></a>客户端配置
 您可以使用 Windows Communication Foundation （WCF）客户端配置来指定客户端终结点的地址、绑定、行为和协定，客户端终结点的 "ABC" 属性用于连接到服务终结点。 [\<client>](../../configure-apps/file-schema/wcf/client.md)元素有一个 [\<endpoint>](../../configure-apps/file-schema/wcf/endpoint-of-client.md) 元素，其属性用于配置终结点 abc。 这些属性在[配置终结点](#configuring-endpoints)部分中进行了讨论。  
@@ -93,7 +94,7 @@ ms.locfileid: "84593654"
 ### <a name="configuring-metadata"></a>配置元数据  
  [\<metadata>](../../configure-apps/file-schema/wcf/metadata.md)元素用于指定用于注册元数据导入扩展的设置。 有关扩展元数据系统的详细信息，请参阅[扩展元数据系统](../extending/extending-the-metadata-system.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [终结点：地址、绑定和协定](endpoints-addresses-bindings-and-contracts.md)
 - [配置客户端行为](../configuring-client-behaviors.md)

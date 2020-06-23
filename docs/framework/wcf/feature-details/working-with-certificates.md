@@ -1,5 +1,6 @@
 ---
 title: 使用证书
+description: 了解 x.509 数字证书功能以及如何在 WCF 中使用它们。 本文中的资源可以进一步解释这些概念。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: e61437efd87c30758c36d642bb9269ad2966c951
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8090e84b33e2a6f442d387c7012e6ccdc2900dd1
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600109"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246397"
 ---
 # <a name="working-with-certificates"></a>使用证书
 
@@ -188,7 +189,7 @@ IIS 和 Active Directory 的一个功能是将证书映射到 Windows 用户帐�
 
 在 WCF 第一版中，可在无需考虑域策略的情况下，执行映射。 因此，如果启用了映射，而 X.509 证书不满足域策略，则在第一版下运行正常的早期应用程序，可能会失败。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Channels>
 - <xref:System.ServiceModel.Security>

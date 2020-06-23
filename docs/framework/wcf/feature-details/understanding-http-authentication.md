@@ -1,13 +1,14 @@
 ---
 title: 了解 HTTP 身份验证
+description: 查看 WCF 中 HTTP 身份验证简介，包括 HTTP 身份验证方案和选择身份验证方案。
 ms.date: 03/30/2017
 ms.assetid: 9376309a-39e3-4819-b47b-a73982b57620
-ms.openlocfilehash: a31c9f96185364c59dca1ff26251a30f5d7a88bc
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 761ab7a92aa26ce1437eefa360e5b46df179e32d
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595084"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246514"
 ---
 # <a name="understanding-http-authentication"></a>了解 HTTP 身份验证
 身份验证是判断客户端是否有资格访问资源的过程。 HTTP 协议支持将身份验证作为协商访问安全资源的一种方式。  
@@ -17,7 +18,7 @@ ms.locfileid: "84595084"
 ## <a name="http-authentication-schemes"></a>HTTP 身份验证方案  
  服务器可以指定多个身份验证方案供客户端选择。 下表介绍了 Windows 应用程序中常见的一些身份验证方案。  
   
-|身份验证方案|描述|  
+|身份验证方案|说明|  
 |---------------------------|-----------------|  
 |匿名|匿名请求不包含任何身份验证信息。 这就相当于授予所有人访问资源的权限。|  
 |基本|基本身份验证发送包含客户端的用户名和密码的 Base64 编码字符串。 Base64 不是一种加密形式，应将其视为相当于以明文形式发送用户名和密码。 如果需要保护资源，请务必考虑使用基本身份验证之外的身份验证方案。|  
@@ -35,7 +36,7 @@ ms.locfileid: "84595084"
   
 - 服务器不应（在 WWW-Authentication 头中）提供任何它不准备接受或不足以保护受保护资源安全的方案。 客户端可以在服务器提供的任何身份验证方案间自由选择。 某些客户端默认选择安全级别低的身份验证方案，或选择服务器列表中的第一个身份验证方案。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [传输安全概述](transport-security-overview.md)
 - [将模拟用于传输安全](using-impersonation-with-transport-security.md)

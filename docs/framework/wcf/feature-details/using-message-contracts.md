@@ -1,5 +1,6 @@
 ---
 title: 使用消息约定
+description: 了解如何使用消息协定属性在 WFC 中指定 SOAP 消息的结构。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - message contracts [WCF]
 ms.assetid: 1e19c64a-ae84-4c2f-9155-91c54a77c249
-ms.openlocfilehash: 1b102b97c62df0bb8b031ded0f9165a11f8a8911
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0a75298b50df74ddf15904af43a0eb62c5ba8496
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600265"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244707"
 ---
 # <a name="using-message-contracts"></a>使用消息约定
 通常，当构建 Windows Communication Foundation （WCF）应用程序时，开发人员会密切关注数据结构和序列化问题，而无需考虑在其中携带数据的消息的结构。 对于这些应用程序，为参数或返回值创建数据协定的过程很简单。 （有关详细信息，请参阅[在服务协定中指定数据传输](specifying-data-transfer-in-service-contracts.md)。）  

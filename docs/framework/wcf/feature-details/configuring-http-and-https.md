@@ -1,21 +1,22 @@
 ---
 title: 配置 HTTP 和 HTTPS
+description: 了解如何配置 HTTP/HTTPS 以允许 WCF 服务和客户端进行通信。 使用 Netsh.exe 配置 URL 注册和防火墙例外。
 ms.date: 04/08/2019
 helpviewer_keywords:
 - configuring HTTP [WCF]
 ms.assetid: b0c29a86-bc0c-41b3-bc1e-4eb5bb5714d4
-ms.openlocfilehash: f7fd2bad6ced09b638cc1bb5d539fab1b9ce7d25
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: fbff78ff8e2c5c4fa73a56a3fdc15163596aa985
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75336697"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245136"
 ---
 # <a name="configuring-http-and-https"></a>配置 HTTP 和 HTTPS
 
 WCF 服务和客户端可以通过 HTTP 和 HTTPS 通信。 通过使用 Internet Information Services (IIS) 或命令行工具可以配置 HTTP/HTTPS 设置。 当某个 WCF 服务承载于 IIS 之下时，可以在 IIS 中配置 HTTP 或 HTTPS 设置（使用 inetmgr.exe 工具）。 如果 WCF 服务是自承载的，则可使用命令行工具配置 HTTP 或 HTTPS 设置。
 
-你至少需要为你的服务将使用的 URL 配置 URL 注册并添加防火墙例外。 可以用 Netsh 工具配置这些设置。
+你至少需要为你的服务将使用的 URL 配置 URL 注册并添加防火墙例外。 可以通过 Netsh.exe 工具配置这些设置。
 
 ## <a name="configuring-namespace-reservations"></a>配置命名空间保留
 
@@ -23,13 +24,13 @@ WCF 服务和客户端可以通过 HTTP 和 HTTPS 通信。 通过使用 Interne
 
 运行的应用程序可以创建一个类似请求来添加命名空间注册。 注册和预留会竞争命名空间的某些部分。 根据在[涉及通配符的命名空间声明之间的解析顺序，](/windows/desktop/Http/routing-incoming-requests)保留的顺序可能与注册的优先级不同。 在此情况下，预留会阻止运行的应用程序接收请求。
 
-下面的示例使用了 dism.exe 工具：
+下面的示例使用 Netsh.exe 工具：
 
 ```console
 netsh http add urlacl url=http://+:80/MyUri user=DOMAIN\user
 ```
 
-此命令为 DOMAIN\user 帐户的指定 URL 命名空间添加 URL 保留项。 有关使用 netsh 命令的详细信息，请在命令提示符下键入 `netsh http add urlacl /?`，然后按 Enter。
+此命令为 DOMAIN\user 帐户的指定 URL 命名空间添加 URL 保留项。 有关使用 netsh 命令的详细信息，请 `netsh http add urlacl /?` 在命令提示符下键入，然后按 enter。
 
 ## <a name="configuring-a-firewall-exception"></a>配置防火墙例外
 
@@ -57,9 +58,9 @@ netsh http add iplisten ipaddress=0.0.0.0:8000
 
 使用 <xref:System.ServiceModel.WSDualHttpBinding> 时，客户端连接使用与命名空间预留和 Windows 防火墙兼容的默认设置。 如果选择自定义双向连接的客户端基址，则还必须配置这些客户端上的 HTTP 设置以与新地址相匹配。
 
-HTTP 服务器 API 具有一些无法通过 Httpcfg.exe 获得的高级配置设置。 这些设置保留在注册表中并应用于在使用 HTTP 服务器 API 的系统上运行的所有应用程序。 有关这些设置的详细信息，请参阅[IIS 的 http.sys 注册表设置](https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows)。 大多数用户不需要更改这些设置。
+HTTP 服务器 API 具有一些无法通过 Httpcfg.exe 获得的高级配置设置。 这些设置保留在注册表中并应用于在使用 HTTP 服务器 API 的系统上运行的所有应用程序。 有关这些设置的详细信息，请参阅[Http.sys IIS 的注册表设置](https://support.microsoft.com/help/820129/http-sys-registry-settings-for-windows)。 大多数用户不需要更改这些设置。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.WSDualHttpBinding>
 - [如何：使用 SSL 证书配置端口](how-to-configure-a-port-with-an-ssl-certificate.md)

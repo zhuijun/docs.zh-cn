@@ -1,5 +1,6 @@
 ---
 title: 服务标识和身份验证
+description: 了解服务的终结点标识，这是一个从服务 WSDL 生成的值，WCF 使用该值对服务进行身份验证。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - authentication [WCF], specifying the identity of a service
 ms.assetid: a4c8f52c-5b30-45c4-a545-63244aba82be
-ms.openlocfilehash: 6c12c3aadf53f9fddef2f0b0124994db15565cb5
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ae217b4a2c3432321c7ef2e663922a87b82acbea
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600369"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246566"
 ---
 # <a name="service-identity-and-authentication"></a>服务标识和身份验证
 服务的*终结点标识*是从服务 Web 服务描述语言（WSDL）生成的值。 此值可传播到任何客户端，用于对服务进行身份验证。 在客户端启动与终结点的通信并且服务向客户端验证自己的身份之后，客户端将终结点标识值与终结点身份验证过程返回的实际值进行比较。 如果二者匹配，则客户端确信其已与预期的服务终结点联系。 这可以防止将客户端重定向到由恶意服务托管的终结点，从而防范*网络钓鱼*。  
@@ -32,7 +33,7 @@ ms.locfileid: "84600369"
   
  客户端上的标识处理与服务上的客户端身份验证相似。 直到已经对客户端的凭据进行了身份验证，安全服务才会执行代码。 同样，直到基于事先从服务元数据已知的内容对服务凭据进行了身份验证，客户端才会向服务发送消息。  
   
- <xref:System.ServiceModel.EndpointAddress.Identity%2A> 类的 <xref:System.ServiceModel.EndpointAddress> 属性表示由客户端调用的服务的标识。 服务在其元数据中发布 <xref:System.ServiceModel.EndpointAddress.Identity%2A>。 当客户端开发人员针对服务终结点运行配置的[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)时，生成的配置将包含服务的属性的值 <xref:System.ServiceModel.EndpointAddress.Identity%2A> 。 WCF 基础结构（如果配置为安全）将验证该服务是否拥有指定的标识。  
+ <xref:System.ServiceModel.EndpointAddress.Identity%2A> 类的 <xref:System.ServiceModel.EndpointAddress> 属性表示由客户端调用的服务的标识。 服务在其元数据中发布 <xref:System.ServiceModel.EndpointAddress.Identity%2A>。 当客户端开发人员针对服务终结点运行配置的[元数据实用工具（Svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)时，生成的配置将包含服务的属性的值 <xref:System.ServiceModel.EndpointAddress.Identity%2A> 。 WCF 基础结构（如果配置为安全）将验证该服务是否拥有指定的标识。  
   
 > [!IMPORTANT]
 > 元数据包含服务的预期标识，因此建议以安全方式公开服务元数据，例如，通过创建服务的 HTTPS 终结点。 有关详细信息，请参阅[如何：保护元数据终结点](how-to-secure-metadata-endpoints.md)。  
@@ -40,7 +41,7 @@ ms.locfileid: "84600369"
 ## <a name="identity-types"></a>标识类型  
  服务可以提供六种类型的标识。 每种标识类型对应于一个可以包含在配置中的 `<identity>` 元素内的元素。 使用的类型取决于方案和服务的安全要求。 下表描述每种标识类型。  
   
-|标识类型|描述|典型的方案|  
+|标识类型|说明|典型的方案|  
 |-------------------|-----------------|----------------------|  
 |域名系统 (DNS)|将此元素用于 X.509 证书或 Windows 帐户。 它将凭据中指定的 DNS 名称与此元素中指定的值进行比较。|DNS 检查让您可以通过 DNS 或使用者名称来使用证书。 如果使用同一个 DNS 或使用者名称来重新颁发证书，则标识检查仍然有效。 在重新颁发证书时，它会获取新的 RSA 密钥，但保留相同的 DNS 或使用者名称。 这意味着客户端不必更新其有关服务的标识信息。|  
 |证书。 `ClientCredentialType` 设置为 Certificate 时的默认值。|此元素指定要与客户端进行比较的 Base64 编码的 X.509 证书值。<br /><br /> 当使用 CardSpace 作为凭据对服务进行身份验证时，也使用此元素。|此元素将身份验证限制为单个基于其指纹值的证书。 这样将启用更为严格的身份验证，因为指纹值是唯一的。 这也带来一个需要注意的问题：如果使用相同使用者名称重新颁发证书，则证书也有一个新的指纹。 因此，客户端无法验证服务，除非新的指纹是已知的。 有关查找证书指纹的详细信息，请参阅[如何：检索证书的指纹](how-to-retrieve-the-thumbprint-of-a-certificate.md)。|  
@@ -64,7 +65,7 @@ ms.locfileid: "84600369"
  [!code-vb[C_Identity#5](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_identity/vb/source.vb#5)]  
   
 ## <a name="specifying-identity-at-the-client"></a>在客户端上指定标识  
- 在设计时，客户端开发人员通常会使用配置有的[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)来生成客户端配置。 生成的配置文件（适用于客户端使用）包含服务器的标识。 例如，下面的代码是从指定 DNS 标识的服务生成的，如前面的示例中所示。 请注意，客户端的终结点标识值与服务的标识值匹配。 在此情况下，客户端接收服务的 Windows (Kerberos) 凭据，期望的值为 `contoso.com`。  
+ 在设计时，客户端开发人员通常使用带配置的[元数据实用工具（Svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)来生成客户端配置。 生成的配置文件（适用于客户端使用）包含服务器的标识。 例如，下面的代码是从指定 DNS 标识的服务生成的，如前面的示例中所示。 请注意，客户端的终结点标识值与服务的标识值匹配。 在此情况下，客户端接收服务的 Windows (Kerberos) 凭据，期望的值为 `contoso.com`。  
 
  如果接收的不是 Windows 凭据，则服务指定作为客户端凭据类型的证书，然后证书的 DNS 属性的值应为 `contoso.com`。 （或者，如果 DNS 属性为 `null`，则证书的使用者名称必须是 `contoso.com`。）  
   
@@ -104,7 +105,7 @@ ms.locfileid: "84600369"
   
  有关如何正确地为自定义绑定堆栈绑定元素的详细信息，请参阅[创建用户定义的绑定](../extending/creating-user-defined-bindings.md)。 有关使用创建自定义绑定的详细信息 <xref:System.ServiceModel.Channels.SecurityBindingElement> ，请参阅[如何：为指定的身份验证模式创建 SecurityBindingElement](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：使用 SecurityBindingElement 创建自定义绑定](how-to-create-a-custom-binding-using-the-securitybindingelement.md)
 - [如何：为指定的身份验证模式创建 SecurityBindingElement](how-to-create-a-securitybindingelement-for-a-specified-authentication-mode.md)

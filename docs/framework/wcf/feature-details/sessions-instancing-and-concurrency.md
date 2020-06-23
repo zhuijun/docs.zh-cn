@@ -1,13 +1,14 @@
 ---
 title: 会话、实例化和并发
+description: 了解会话、实例化和并发性，以及如何使用它们以及 WFC 中它们之间的交互。
 ms.date: 03/30/2017
 ms.assetid: 50797a3b-7678-44ed-8138-49ac1602f35b
-ms.openlocfilehash: 070e9ed25e2c0cce1309fb27e3f6a02bb01f3d2c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 41eef5a962c702eebd6b9a34607b542ec6bbd97b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600317"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246540"
 ---
 # <a name="sessions-instancing-and-concurrency"></a>会话、实例化和并发
 ** “会话”是在两个终结点之间发送的所有消息的一种相互关系。 ** “实例化”是指对用户定义的服务对象以及与其相关的 <xref:System.ServiceModel.InstanceContext> 对象的生存期的控制。 ** “并发”一词是指对 <xref:System.ServiceModel.InstanceContext> 中同时执行的线程数量的控制。  
@@ -107,7 +108,7 @@ public class CalculatorService : ICalculatorConcurrency
 |PerSession|-会话通道的行为：会话和 <xref:System.ServiceModel.InstanceContext> 每个通道。<br />-无会话通道的行为：将引发异常。|-会话通道的行为：会话和 <xref:System.ServiceModel.InstanceContext> 每个通道。<br />-无会话通道的行为： <xref:System.ServiceModel.InstanceContext> 每个调用的。|-会话通道的行为：将引发异常。<br />-无会话通道的行为： <xref:System.ServiceModel.InstanceContext> 每个调用的。|  
 |Single|-会话通道的行为：一个会话，一个 <xref:System.ServiceModel.InstanceContext> 用于所有调用。<br />-无会话通道的行为：将引发异常。|-会话通道的行为：会话以及 <xref:System.ServiceModel.InstanceContext> 创建的或用户指定的单一实例。<br />-无会话通道的行为： <xref:System.ServiceModel.InstanceContext> 用于创建的或用户指定的单一实例的。|-会话通道的行为：将引发异常。<br />-无会话通道的行为： <xref:System.ServiceModel.InstanceContext> 用于每个已创建的单一实例或用户指定的单一实例的。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用会话](../using-sessions.md)
 - [如何：创建要求会话的服务](how-to-create-a-service-that-requires-sessions.md)

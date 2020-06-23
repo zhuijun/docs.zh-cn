@@ -1,17 +1,18 @@
 ---
 title: WCF 功能详细信息
+description: 详细了解 WCF 提供的有关应用程序的消息传递功能的广泛控件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - features [WCF]
 - WCF, features
 - Windows Communication Foundation, features
 ms.assetid: 9b4368ca-0bd3-40dc-a539-bcd5779cee5f
-ms.openlocfilehash: 80728cd5f677617e8727e9f8c4b0c4b85767975c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 308a32c73d33a4da2fd841ca7c330a42deb7d324
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596885"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246631"
 ---
 # <a name="wcf-feature-details"></a>WCF 功能详细信息
 Windows Communication Foundation （WCF）允许对应用程序的消息传递功能进行广泛的控制。 本节中的主题详细介绍了可用的功能。 有关基本编程的详细信息，请参阅[基本 WCF 编程](../basic-wcf-programming.md)。  
@@ -35,7 +36,7 @@ Windows Communication Foundation （WCF）允许对应用程序的消息传递�
  [队列和可靠会话](queues-and-reliable-sessions.md)  
  介绍队列，队列代表接收应用程序存储来自发送应用程序的消息，之后将这些消息转发给接收应用程序。  
   
- [事务](transactions-in-wcf.md)  
+ [中的](transactions-in-wcf.md)  
  说明如何创建可以在需要时回滚的事务处理操作。  
   
  [安全性](security.md)  

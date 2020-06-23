@@ -1,15 +1,16 @@
 ---
 title: 发布元数据
+description: 了解 WCF 服务如何通过发布一个或多个元数据终结点来发布元数据，从而使元数据可通过标准协议使用。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - metadata [WCF], publishing
 ms.assetid: 3a56831a-cabc-45c0-bd02-12e2e9bd7313
-ms.openlocfilehash: 456eecde88fec182d3234c20a4f01971fd045bb8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2aa6d877db4e5b09b4c594e6e87b63fb6c04703b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596755"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244954"
 ---
 # <a name="publishing-metadata"></a>发布元数据
 Windows Communication Foundation （WCF）服务通过发布一个或多个元数据终结点来发布元数据。 发布服务元数据之后，可以通过标准协议（如 WS-MetadataExchange (MEX) 和 HTTP/GET 请求）来使用该元数据。 元数据终结点类似于其他服务终结点，因为它们都有一个地址、一个绑定和一个协定，并且它们都可通过配置或命令代码添加到服务主机。  
@@ -22,7 +23,7 @@ Windows Communication Foundation （WCF）服务通过发布一个或多个元�
  <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> 添加一个 <xref:System.ServiceModel.Description.ServiceMetadataExtension> 实例作为服务主机的扩展。 <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> 提供了元数据发布协议的实现。 还可以使用 <xref:System.ServiceModel.Description.ServiceMetadataExtension?displayProperty=nameWithType> 通过访问 <xref:System.ServiceModel.Description.ServiceMetadataExtension.Metadata%2A?displayProperty=nameWithType> 属性来在运行时获取服务的元数据。  
   
 ### <a name="mex-metadata-endpoints"></a>MEX 元数据终结点  
- 要添加使用 MEX 协议的元数据终结点，请将服务终结点添加到使用 `IMetadataExchange` 服务协定的服务主机。 WCF 包含一个 <xref:System.ServiceModel.Description.IMetadataExchange> 接口，该接口具有此服务协定名称，你可以将其用作 WCF 编程模型的一部分。 Ws-metadataexchange 终结点（即 MEX 终结点）可以使用静态工厂方法在类上公开的四个默认绑定之一， <xref:System.ServiceModel.Description.MetadataExchangeBindings> 以匹配 WCF 工具（如 svcutil.exe）所使用的默认绑定。 还可以使用自己的自定义绑定来配置 MEX 元数据终结点。  
+ 要添加使用 MEX 协议的元数据终结点，请将服务终结点添加到使用 `IMetadataExchange` 服务协定的服务主机。 WCF 包含一个 <xref:System.ServiceModel.Description.IMetadataExchange> 接口，该接口具有此服务协定名称，你可以将其用作 WCF 编程模型的一部分。 Ws-metadataexchange 终结点（即 MEX 终结点）可以使用静态工厂方法在类上公开的四个默认绑定之一， <xref:System.ServiceModel.Description.MetadataExchangeBindings> 以匹配 WCF 工具（如 Svcutil.exe）使用的默认绑定。 还可以使用自己的自定义绑定来配置 MEX 元数据终结点。  
   
 ### <a name="http-get-metadata-endpoints"></a>HTTP GET 元数据终结点  
  若要将元数据终结点添加到响应 HTTP/GET 请求的服务，请将 <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> 的 <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> 属性设置为 `true`。 将 <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> 的 <xref:System.ServiceModel.Description.ServiceMetadataBehavior?displayProperty=nameWithType> 属性设置为 `true` 还可以配置使用 HTTPS 的元数据终结点。  

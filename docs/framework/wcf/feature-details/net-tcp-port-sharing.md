@@ -1,16 +1,17 @@
 ---
 title: Net.TCP 端口共享
+description: 了解用于高性能通信的基于 TCP 的协议，以及允许在 WCF 中的多个用户进程之间共享端口的服务。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - port activation [WCF]
 - port sharing [WCF]
 ms.assetid: f13692ee-a179-4439-ae72-50db9534eded
-ms.openlocfilehash: d9c6caa546d9f31f4e68b850dc1b1e750da2e93c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a9579c588906f509dd835d3c9b25571495d147e0
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598757"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245240"
 ---
 # <a name="nettcp-port-sharing"></a>Net.TCP 端口共享
 Windows Communication Foundation （WCF）提供了新的基于 TCP 的网络协议（net.tcp：//），以实现高性能的通信。 WCF 还引入了一个新的系统组件，即 Net.tcp 端口共享服务，该服务允许在多个用户进程之间共享 net.tcp 端口。  
@@ -22,7 +23,7 @@ Windows Communication Foundation （WCF）提供了新的基于 TCP 的网络协
   
  在 HTTP.SYS 模型中，许多不同的 HTTP 应用程序的通信中将多路复用到单个 TCP 端口。此模型已经成为 Windows 平台上的标准。 这为防火墙管理员提供了一个公共控制点，同时可以让应用程序开发人员尽可能降低生成可利用网络的新应用程序的部署成本。  
   
- 在多个 HTTP 应用程序之间共享端口的能力早已成为 Internet 信息服务 (IIS) 的一个功能。 但是，它只是引入了 HTTP。系统（内核模式 HTTP 协议侦听器），其中 IIS 6.0 已完全通用化此基础结构。 实际上，HTTP.SYS 允许任意用户进程共享专用于 HTTP 通信的 TCP 端口。 此功能可以让许多 HTTP 应用程序在同一台计算机上共存于不同的独立进程中，同时共享通过 TCP 端口 80 发送和接收通信所需要的网络基础结构。 Net.TCP Port Sharing Service 支持为 net.tcp 应用程序共享相同类型的端口。  
+ 在多个 HTTP 应用程序之间共享端口的能力早已成为 Internet 信息服务 (IIS) 的一个功能。 但是，它只是引入了与 IIS 6.0 的 HTTP.SYS （内核模式 HTTP 协议侦听器），此基础结构已完全通用化。 实际上，HTTP.SYS 允许任意用户进程共享专用于 HTTP 通信的 TCP 端口。 此功能可以让许多 HTTP 应用程序在同一台计算机上共存于不同的独立进程中，同时共享通过 TCP 端口 80 发送和接收通信所需要的网络基础结构。 Net.TCP Port Sharing Service 支持为 net.tcp 应用程序共享相同类型的端口。  
   
 ## <a name="port-sharing-architecture"></a>端口共享结构  
  WCF 中的端口共享体系结构有三个主要组件：  
@@ -48,7 +49,7 @@ Windows Communication Foundation （WCF）提供了新的基于 TCP 的网络协
 ## <a name="security-implications-of-port-sharing"></a>端口共享的安全性影响  
  虽然 Net.TCP Port Sharing Service 在应用程序和网络之间提供了一个处理层，但是仍应对使用端口共享的应用程序进行保护，就好像这些应用程序直接在网络上进行侦听一样。 具体来说，使用端口共享的应用程序应评估运行它们所依据的进程特权。 请考虑使用内置网络服务帐户运行应用程序，该内置服务帐户将以网络通信要求的最小进程特权集运行。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [配置 Net.TCP 端口共享服务](configuring-the-net-tcp-port-sharing-service.md)
 - [承载](hosting.md)

@@ -1,16 +1,17 @@
 ---
 title: 匿名客户端的传输安全
+description: 查看此 WCF 方案，该方案使用传输安全通过客户端信任的证书对服务器进行身份验证。 未对客户端进行身份验证。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 056653a5-384e-4a02-ae3c-1b0157d2ccb4
-ms.openlocfilehash: c3e44c87dfa70ac3a7acc5a83ac596efc22b6155
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 08cfb8c1a5581f17a251224430018764bed80b0f
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344757"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245006"
 ---
 # <a name="transport-security-with-an-anonymous-client"></a>匿名客户端的传输安全
 
@@ -20,21 +21,21 @@ ms.locfileid: "75344757"
 
 有关将证书用于服务的详细信息，请参阅使用[证书](working-with-certificates.md)和[如何：使用 SSL 证书配置端口](how-to-configure-a-port-with-an-ssl-certificate.md)。
 
-![使用匿名客户端的传输安全](./media/8fa2e931-0cfb-4aaa-9272-91d652b85d8d.gif)
+![对匿名客户端使用传输安全性](./media/8fa2e931-0cfb-4aaa-9272-91d652b85d8d.gif)
 
-|特征|描述|
+|特征|说明|
 |--------------------|-----------------|
-|安全模式|Transport|
+|安全模式|传输|
 |互操作性|与现有 Web 服务和客户端|
 |身份验证（服务器）<br /><br /> 身份验证（客户端）|是<br /><br /> 应用程序级别（无 WCF 支持）|
 |完整性|是|
-|保密性|是|
-|Transport|HTTPS|
+|机密性|是|
+|传输|HTTPS|
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|
 
 ## <a name="service"></a>服务
 
-下面的代码和配置应独立运行。 执行以下操作之一：
+下面的代码和配置应独立运行。 执行下列操作之一：
 
 - 使用代码（而不使用配置）创建独立服务。
 
@@ -47,7 +48,7 @@ ms.locfileid: "75344757"
 [!code-csharp[c_SecurityScenarios#5](~/samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#5)]
 [!code-vb[c_SecurityScenarios#5](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#5)]
 
-### <a name="configuration"></a>配置
+### <a name="configuration"></a>Configuration
 
 下面的代码使用配置设置相同的终结点。 客户端不通过任何机制进行身份验证，因此是匿名的。
 
@@ -80,7 +81,7 @@ ms.locfileid: "75344757"
 
 ## <a name="client"></a>Client
 
-下面的代码和配置应独立运行。 执行以下操作之一：
+下面的代码和配置应独立运行。 执行下列操作之一：
 
 - 使用代码（和客户端代码）创建独立客户端。
 
@@ -94,7 +95,7 @@ ms.locfileid: "75344757"
 [!code-csharp[c_SecurityScenarios#6](~/samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#6)]
 [!code-vb[c_SecurityScenarios#6](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#6)]
 
-### <a name="configuration"></a>配置
+### <a name="configuration"></a>Configuration
 
 下面的配置可代替代码用于设置服务。
 
@@ -121,9 +122,9 @@ ms.locfileid: "75344757"
 </configuration>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
-- [WS 传输安全性](../samples/ws-transport-security.md)
-- [传输安全性概述](transport-security-overview.md)
+- [WS 传输安全](../samples/ws-transport-security.md)
+- [传输安全概述](transport-security-overview.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

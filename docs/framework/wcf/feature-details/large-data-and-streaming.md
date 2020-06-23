@@ -1,13 +1,14 @@
 ---
 title: 大型数据和流
+description: 了解基于 WCF XML 的通信、编码器和流式处理数据（包括二进制数据传输）的注意事项。
 ms.date: 03/30/2017
 ms.assetid: ab2851f5-966b-4549-80ab-c94c5c0502d2
-ms.openlocfilehash: 21993f230b19a76020807e1f17bd6256f2ee0b1c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 2eb57e2f57bebb2e765ea798b3dff27e0187e8c7
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84586320"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246579"
 ---
 # <a name="large-data-and-streaming"></a>大型数据和流
 
@@ -66,7 +67,7 @@ Windows Communication Foundation （WCF）是一种基于 XML 的通信基础结
   
  每个标准绑定都包括一个预配置编码器，因此默认情况下带 Net* 前缀的绑定使用二进制编码器（通过包括 <xref:System.ServiceModel.Channels.BinaryMessageEncodingBindingElement> 类），而 <xref:System.ServiceModel.BasicHttpBinding> 和 <xref:System.ServiceModel.WSHttpBinding> 类则使用文本消息编码器（通过 <xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement> 类）。  
   
-|编码器绑定元素|描述|  
+|编码器绑定元素|说明|  
 |-----------------------------|-----------------|  
 |<xref:System.ServiceModel.Channels.TextMessageEncodingBindingElement>|文本消息编码器是所有基于 HTTP 的绑定的默认编码器，并且是最关注互操作性的所有自定义绑定的正确选择。 此编码器读取和编写标准 SOAP 1.1/SOAP 1.2 文本消息，而不会对二进制数据进行任何特殊处理。 如果 <xref:System.ServiceModel.Channels.MessageVersion?displayProperty=nameWithType> 消息的属性设置为 <xref:System.ServiceModel.Channels.MessageVersion.None?displayProperty=nameWithType> ，则会从输出中省略 SOAP 信封包装，并且仅序列化消息正文内容。|  
 |<xref:System.ServiceModel.Channels.MtomMessageEncodingBindingElement>|MTOM 消息编码器是一个文本编码器，实现对二进制数据的特殊处理，默认情况下在任何标准绑定中都不会使用，因为它是一个严格按具体情况进行优化的实用工具。 只有当二进制数据的量不超过某个阈值时，MTOM 编码才具有优势，如果消息包含的二进制数据超过了这个阈值，则这些数据会外部化到消息信封之后的 MIME 部分。 请参见本节后面部分中的“启用 MTOM”。|  
@@ -239,6 +240,6 @@ public class UploadStreamMessage
 > [!NOTE]
 > 使用缓冲传输还是流传输是在终结点本地决定的。 对于 HTTP 传输，传输模式不会通过连接传播，也不会传播到代理服务器和其他中间方。 设置传输模式不会反映在服务接口的说明中。 将 WCF 客户端生成到服务后，必须编辑要与流式传输一起使用的服务的配置文件，以设置模式。 对于 TCP 和命名管道传输协议，该传输模式将作为策略断言传播。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：启用流处理](how-to-enable-streaming.md)

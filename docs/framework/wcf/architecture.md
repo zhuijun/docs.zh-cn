@@ -1,17 +1,18 @@
 ---
 title: Windows Communication Foundation 体系结构
+description: 了解 Windows Communication Foundation 体系结构的主要层，包括协定、服务运行时、消息传递和 & 托管的激活。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Communication Foundation [WCF], architecture
 - WCF [WCF], architecture
 - architecture [WCF]
 ms.assetid: a3bcb0a1-56ea-4ba6-9736-d260d90dade5
-ms.openlocfilehash: f34a05a436dd021f0d1fcc05f3a12a058123acdc
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: a07d5c4be2e36b8123e39a0a04d841797e34212b
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320834"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245565"
 ---
 # <a name="windows-communication-foundation-architecture"></a>Windows Communication Foundation 体系结构
 下图演示了 Windows Communication Foundation （WCF）体系结构的主要层。  
@@ -29,7 +30,7 @@ ms.locfileid: "72320834"
   
  通过扩展性功能可以自定义运行时进程。 例如，消息检查功能用于检查消息的各个部分，使用参数筛选功能可以根据作用于消息头的筛选器来执行预设操作。  
   
-### <a name="messaging"></a>消息  
+### <a name="messaging"></a>消息传递  
  消息传送层由*通道*组成。 通道是以某种方式对消息进行处理（例如通过对消息进行身份验证）的组件。 一组通道也称为*通道堆栈*。 通道对消息和消息头进行操作。 这与服务运行时层不同，服务运行时层主要涉及对消息正文内容的处理。  
   
  有两种类型的通道：传输通道和协议通道。  

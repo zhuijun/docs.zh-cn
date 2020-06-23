@@ -1,5 +1,6 @@
 ---
 title: 入门示例
+description: 了解如何使用 WCF 实现典型的服务和典型的客户端。 此示例是所有其他基本技术示例的基础。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-ms.openlocfilehash: fc4a7e9acb15f77140732638b2982dd4a9dae9ce
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b23be1b33f227154b916429c063ec4106229bb3c
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84575181"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246228"
 ---
 # <a name="getting-started-sample"></a>入门示例
 
@@ -32,7 +33,7 @@ ms.locfileid: "84575181"
 
 服务描述它在服务协定中执行的操作，服务协定由服务作为元数据公开。 服务中还包含用来实现操作的代码。
 
-客户端中包含服务协定的定义，以及一个用来访问服务的代理类。 代理代码是使用[Svcutil.exe 元数据实用工具（）](../servicemodel-metadata-utility-tool-svcutil-exe.md)从服务元数据生成的。
+客户端中包含服务协定的定义，以及一个用来访问服务的代理类。 代理代码是使用 "服务元[数据" 实用工具（Svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)从服务元数据生成的。
 
 在 Windows Vista 上，该服务承载于 Windows 激活服务（WAS）中。 在 Windows XP 和 Windows Server 2003 上，它是由 Internet Information Services （IIS）和 ASP.NET 承载的。 如果将服务承载于 IIS 或 WAS 中，那么，在首次访问服务时，系统将自动激活服务。
 
@@ -174,7 +175,7 @@ public class CalculatorService : ICalculator
 </system.serviceModel>
 ```
 
-客户端使用指定的协定类型进行通信，该客户端类是由一种由一种类型的[元数据实用工具（svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)生成的。 所生成的这个客户端类包含在 generatedClient.cs 文件或 generatedClient.vb 文件中。 此实用工具检索给定服务的元数据，并生成要由客户端应用程序使用给定的协定类型进行通信的客户端。 承载服务必须可用于生成客户端代码，因为将使用该服务来检索更新的元数据。
+客户端使用一种给定的协定类型进行通信，该客户端类由一种由 "工作[（Svcutil.exe）](../servicemodel-metadata-utility-tool-svcutil-exe.md)" 生成的客户端类。 所生成的这个客户端类包含在 generatedClient.cs 文件或 generatedClient.vb 文件中。 此实用工具检索给定服务的元数据，并生成要由客户端应用程序使用给定的协定类型进行通信的客户端。 承载服务必须可用于生成客户端代码，因为将使用该服务来检索更新的元数据。
 
  在客户端目录中通过从 SDK 命令提示运行以下命令来生成类型化代理：
 
@@ -283,7 +284,7 @@ Press <ENTER> to terminate client.
 
 3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：在托管应用程序中承载 WCF 服务](../how-to-host-a-wcf-service-in-a-managed-application.md)
 - [如何：在 IIS 中承载 WCF 服务](../feature-details/how-to-host-a-wcf-service-in-iis.md)

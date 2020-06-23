@@ -1,13 +1,14 @@
 ---
 title: 从 .NET 远程处理迁移到 WCF
+description: 了解如何迁移使用 .NET 远程处理的应用程序以使用 WCF。 可以在 WCF 中完成若干常见的远程处理方案。
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: 8dcc019017195fd55231fbea3493d4c53d500cb3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f6f526db09806008314980b71233b208d25359fc
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183965"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246150"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>从 .NET 远程处理迁移到 WCF
 本文介绍如何迁移借助 .NET 远程处理来使用 Windows Communication Foundation (WCF) 的应用程序。 本文对这些产品之间的相似概念进行比较，并介绍如何在 WCF 中完成若干常见的远程处理方案。  
@@ -15,7 +16,7 @@ ms.locfileid: "79183965"
  .NET 远程处理是一项传统技术，仅支持向后兼容性。 由于它无法保持客户端和服务器之间的单独信任级别，因此它在混合信任环境中并不安全。 例如，你绝不应将 .NET 远程处理终结点公开到 Internet 或不受信任的客户端中。 我们建议将现有的远程处理应用程序迁移到更新和更安全的技术中。 如果应用程序的设计仅使用 HTTP 并且为 RESTful，那么我们建议迁移到 ASP.NET Web API。 有关详细信息，请参阅 ASP.NET Web API。 如果应用程序基于 SOAP，或者需要非 Http 协议（如 TCP），那么我们建议迁移到 WCF。  
 
 ## <a name="comparing-net-remoting-to-wcf"></a>比较 .NET 远程处理与 WCF  
- 本节将对 .NET 远程处理的基本构建基块与其 WCF 等效物进行比较。 稍后我们将使用这些构建基块在 WCF 中创建一些常见的客户端-服务器方案。 下图总结了 .NET 远程处理和 WCF 之间的主要相似点和差异。  
+ 本节将对 .NET 远程处理的基本构建基块与其 WCF 等效物进行比较。 稍后我们将使用这些构建基块在 WCF 中创建一些常见的客户端服务器方案。 下表总结了 .NET 远程处理与 WCF 之间的主要相似性和差异。  
   
 ||.NET 远程处理|WCF|  
 |-|-------------------|---------|  
@@ -23,10 +24,10 @@ ms.locfileid: "79183965"
 |服务操作|服务器类型上的公共方法|标记为具有 [OperationContract] 属性|  
 |序列化|ISerializable 或 [Serializable]|DataContractSerializer 或 XmlSerializer|  
 |传递的对象|按值或按引用|仅按值|  
-|错误/异常|任何可序列化的异常|故障契约\<T 细节>|  
-|客户端代理对象|从 MarshalByRefObjects 自动创建强类型透明代理|使用渠道工厂\<TChannel 按需生成强类型代理>|  
+|错误/异常|任何可序列化的异常|FaultContract\<TDetail>|  
+|客户端代理对象|从 MarshalByRefObjects 自动创建强类型透明代理|使用 ChannelFactory 按需生成强类型代理\<TChannel>|  
 |所需平台|客户端和服务器必须使用 Microsoft 操作系统和 .NET|跨平台|  
-|消息格式|专用|行业标准（SOAP、WS-* 等。）|  
+|消息格式|Private|行业标准（SOAP、WS-* 等。）|  
   
 ### <a name="server-implementation-comparison"></a>服务器实现比较  
   
@@ -140,7 +141,7 @@ Customer customer = server.GetCustomer(42);
 Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received.");
 ```  
   
- 此示例演示通道级编程，因为它非常类似于远程处理示例。 Visual Studio 中**的附加服务参考**方法也可用，该方法生成代码以简化客户端编程。 有关详情，请参阅以下主题：  
+ 此示例演示通道级编程，因为它非常类似于远程处理示例。 此外，还提供了 Visual Studio 中的**添加服务引用**方法，该方法生成代码以简化客户端编程。 有关详情，请参阅以下主题：  
   
 - [客户端通道级编程](./extending/client-channel-level-programming.md)  
   
@@ -158,9 +159,9 @@ Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received
 #### <a name="serialization-in-net-remoting"></a>.NET 远程处理中的序列化  
  .NET 远程处理支持两种序列化和反序列化客户端和服务器之间的对象的方法：  
   
-- *按值*– 对象的值跨层边界序列化，并在另一层上创建该对象的新实例。 对该新实例的方法或属性的任何调用只是在本地执行，并不影响原始对象或层。  
+- *按值*–对象的值将跨层边界序列化，并在另一层上创建该对象的新实例。 对该新实例的方法或属性的任何调用只是在本地执行，并不影响原始对象或层。  
   
-- *通过引用*– 跨层边界序列化了特殊的"对象引用"。 当一个层与该对象的方法或属性进行交互时，此层会传输回至原始层上的原始对象。 按引用对象可以在任一方向 – 服务器到客户端或客户端到服务器中流动。  
+- *按引用*–一种特殊的 "对象引用" 跨层边界序列化。 当一个层与该对象的方法或属性进行交互时，此层会传输回至原始层上的原始对象。 按引用对象可以在任一方向 – 服务器到客户端或客户端到服务器中流动。  
   
  远程处理中按值类型会标记为 [Serializable] 属性或实现 ISerializable，如下面示例所示：  
   
@@ -207,7 +208,7 @@ public class WCFCustomer
   
  [DataContract] 特性标识此类型为可在客户端和服务器之间进行序列化和反序列化。 [DataMember] 特性标识要序列化的单个属性或字段。  
   
- 当 WCF 跨多个层发送某个对象时，它仅序列化值并在另一个层上创建此对象的新实例。 与此对象的值进行的任何交互仅发生在本地 – 它们不能如 .NET 远程处理中的按引用对象一样与其他层进行通信。 有关详细信息，请参阅[序列化和反序列化](./feature-details/serialization-and-deserialization.md)。  
+ 当 WCF 跨多个层发送某个对象时，它仅序列化值并在另一个层上创建此对象的新实例。 与此对象的值进行的任何交互仅发生在本地 – 它们不能如 .NET 远程处理中的按引用对象一样与其他层进行通信。 有关详细信息，请参阅[序列化和反序列](./feature-details/serialization-and-deserialization.md)化。  
   
 ### <a name="exception-handling-capabilities"></a>异常处理功能  
   
@@ -284,11 +285,11 @@ catch (FaultException<CustomerServiceFault> fault)
   
 ### <a name="why-migrate-from-remoting-to-wcf"></a>为什么从远程处理迁移到 WCF？  
   
-- **.NET 远程处理是一项传统技术。** 如[.NET 远程处理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29)中所述，它被视为遗留产品，不建议用于新开发。 对于新的和现有的应用程序建议使用 WCF 或 ASP.NET Web API。  
+- **.NET 远程处理是一项传统技术。** 如[.Net 远程处理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29)中所述，它被视为旧产品，不建议用于新的开发。 对于新的和现有的应用程序建议使用 WCF 或 ASP.NET Web API。  
   
-- **WCF 使用跨平台标准。** WCF 设计的跨平台互操作性支持许多行业标准（SOAP、Ws-security、Ws-trust 等。）。 除了运行 Windows 操作系统的客户端之外，WCF 服务还可以与运行其他操作系统的客户端进行互操作。 远程处理主要用于服务器和客户端应用程序在 Windows 操作系统上使用 .NET 框架运行的环境。
+- **WCF 使用跨平台标准。** WCF 设计的跨平台互操作性支持许多行业标准（SOAP、Ws-security、Ws-trust 等。）。 除了运行 Windows 操作系统的客户端之外，WCF 服务还可以与运行其他操作系统的客户端进行互操作。 远程处理主要针对使用 Windows 操作系统上的 .NET Framework 运行服务器和客户端应用程序的环境。
   
-- **WCF 具有内置安全性。** WCF 的设计考虑到了安全性，为身份验证、传输级别安全性、消息级安全性等提供了许多选项。远程处理旨在使应用程序易于互操作，但设计起来在非受信任的环境中是安全的。 WCF 设计为可以在受信任和不受信任的两种环境中工作。  
+- **WCF 具有内置安全性。** WCF 的设计考虑到了安全性，并提供了许多用于身份验证、传输级别安全性、消息级别安全性等的选项。远程处理旨在使应用程序更易于互操作，但并不是在不受信任的环境中保证安全。 WCF 设计为可以在受信任和不受信任的两种环境中工作。  
   
 ### <a name="migration-recommendations"></a>迁移建议  
  若要从 .NET 远程处理迁移到 WCF，建议步骤如下所示：  
@@ -299,7 +300,7 @@ catch (FaultException<CustomerServiceFault> fault)
   
 - **创建错误协定（可选）。** 遇到错误时，请创建将在服务器和客户端之间进行交换的类型。 将这些类型标记为 [DataContract] 和 [DataMember] 以使其可序列化。 对于标记为 [OperationContract] 的所有服务操作，还可将其标记为 [FaultContract]，以指示它们可能会返回哪些错误。  
   
-- **配置和托管服务。** 完成创建服务协定后，下一步则是配置一个绑定以公开终结点中的服务。 有关详细信息，请参阅[终结点：地址、绑定和协定](./feature-details/endpoints-addresses-bindings-and-contracts.md)。  
+- **配置并托管该服务。** 完成创建服务协定后，下一步则是配置一个绑定以公开终结点中的服务。 有关详细信息，请参阅[终结点：地址、绑定和协定](./feature-details/endpoints-addresses-bindings-and-contracts.md)。  
   
  将远程处理应用程序迁移到 WCF 后，删除 .NET 远程处理中的依赖仍然很重要。 这可确保删除应用程序中的任何远程处理漏洞。 这些步骤包括：  
   
@@ -417,9 +418,9 @@ public class RemotingServer : MarshalByRefObject
        customerServiceHost.Open();  
    ```  
   
-     当启动此 ServiceHost 时，它会使用 web.config 文件以建立适当的协定、绑定和终结点。 有关配置文件的详细信息，请参阅[使用配置文件配置服务](./configuring-services-using-configuration-files.md)。 这种启动服务器的样式称为自我托管。 要了解有关托管 WCF 服务的其他选择，请参阅[托管服务](./hosting-services.md)。  
+     当启动此 ServiceHost 时，它会使用 web.config 文件以建立适当的协定、绑定和终结点。 有关配置文件的详细信息，请参阅[使用配置文件配置服务](./configuring-services-using-configuration-files.md)。 这种启动服务器的样式称为自我托管。 若要了解有关承载 WCF 服务的其他选项的详细信息，请参阅[托管服务](./hosting-services.md)。  
   
-6. 客户端项目的 app.config 必须声明匹配服务终结点的绑定信息。 在 Visual Studio 中执行此操作的最简单方法是使用**添加服务参考**，这将自动更新 app.config 文件。 或者，可以手动添加这些相同的更改。  
+6. 客户端项目的 app.config 必须声明匹配服务终结点的绑定信息。 在 Visual Studio 中执行此操作的最简单方法是使用**添加服务引用**，这将自动更新 app.config 文件。 或者，可以手动添加这些相同的更改。  
   
     ```xml  
     <configuration>  
@@ -434,7 +435,7 @@ public class RemotingServer : MarshalByRefObject
     </configuration>  
     ```  
   
-     有关使用**添加服务参考**的详细信息，请参阅[：添加、更新或删除服务参考](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)。  
+     有关使用**添加服务引用**的详细信息，请参阅[如何：添加、更新或删除服务引用](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)。  
   
 7. 现在可以从客户端中调用 WCF 服务。 可通过创建该服务的通道工厂、要求提供通道以及直接调用想要用在该通道中的方法实现此操作。 可进行此操作的原因是通道可实现服务接口，并为我们处理基础的请求/答复逻辑。 此方法调用的返回值是服务器响应的反序列化副本。  
   
@@ -524,7 +525,7 @@ public class RemotingServer : MarshalByRefObject
   
 4. 需要通过执行以下两个事件，修改服务器的配置文件，如下面的示例所示：  
   
-    1. 声明一\<个客户端>部分，用于描述会话对象的终结点。 此声明是必需的，原因是在此情况下此服务器还可作为客户端。  
+    1. 声明 \<client> 描述会话对象的终结点的部分。 此声明是必需的，原因是在此情况下此服务器还可作为客户端。  
   
     2. 声明工厂和会话对象的终结点。 此声明是必需，原因是这可允许客户端与服务终结点通信以获取 EndpointAddress10 并创建会话通道。  
   
@@ -656,7 +657,7 @@ public class RemotingServer : MarshalByRefObject
     > [!NOTE]
     > 此代码还说明了发送派生的类型 (PremiumCustomer)。 服务接口需要 Customer 对象，但 Customer 类上的 [KnownType] 属性指示也允许使用 PremiumCustomer。 WCF 通过此服务接口进行序列化或反序列化任何其他类型的尝试将失败。  
   
- 正常的 WCF 数据交换是按值进行的。 这可确保其中某个数据对象上的调用方法仅在本地执行 – 它将不会调用其他层上的代码。 虽然可以实现*从*服务器返回的引用对象，但客户端不可能将引用对象*传递给*服务器。 在 WCF 中使用双工服务可实现需要在客户端和服务器间来回会话的方案。 有关详细信息，请参阅[双工服务](./feature-details/duplex-services.md)。  
+ 正常的 WCF 数据交换是按值进行的。 这可确保其中某个数据对象上的调用方法仅在本地执行 – 它将不会调用其他层上的代码。 尽管可以实现*从*服务器返回的类似于引用对象的内容，但客户端无法将按引用对象传递*到*服务器。 在 WCF 中使用双工服务可实现需要在客户端和服务器间来回会话的方案。 有关详细信息，请参阅[双工服务](./feature-details/duplex-services.md)。  
   
-## <a name="summary"></a>总结  
+## <a name="summary"></a>摘要  
  .NET 远程处理是一种通信框架，仅用于完全信任的环境中。 它是一项传统技术，仅支持向后兼容性。 它不应用于生成新的应用程序。 相反，WCF 融入了安全性，并建议将其用于生成新的和现有的应用程序。 Microsoft 建议将现有的远程处理应用程序迁移到使用 WCF 或 ASP.NET Web API。

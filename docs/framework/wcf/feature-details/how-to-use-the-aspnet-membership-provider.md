@@ -1,17 +1,18 @@
 ---
 title: 如何：使用 ASP.NET 成员资格提供程序
+description: 了解 ASP.NET 成员资格提供程序如何支持允许用户在不使用 Windows 域帐户的情况下创建用户名和密码进行访问的网站。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF and ASP.NET
 - WCF, authorization
 - WCF, security
 ms.assetid: 322c56e0-938f-4f19-a981-7b6530045b90
-ms.openlocfilehash: 840e4a5d365f2adbaf335c1061a580665a39824d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6d527993dcf1fc5d5cd39bf22c3e772baf60e62f
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595318"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246722"
 ---
 # <a name="how-to-use-the-aspnet-membership-provider"></a>如何：使用 ASP.NET 成员资格提供程序
 
@@ -28,7 +29,7 @@ Windows Communication Foundation （WCF）开发人员可以出于安全目的�
 
 ### <a name="to-configure-the-membership-provider"></a>配置成员资格提供程序
 
-1. 在 web.config 文件中的 < > 元素下， `system.web` 创建一个 < `membership` > 元素。
+1. 在 Web.config 文件中的 <`system.web`> 元素下，创建一个 <`membership`> 元素。
 
 2. 在 `<membership>` 元素。
 
@@ -156,7 +157,7 @@ Windows Communication Foundation （WCF）开发人员可以出于安全目的�
 </configuration>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：将 ASP.NET 角色提供程序与服务一起使用](how-to-use-the-aspnet-role-provider-with-a-service.md)
 - [成员资格和角色提供程序](../samples/membership-and-role-provider.md)

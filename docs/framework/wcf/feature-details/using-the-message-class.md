@@ -1,16 +1,17 @@
 ---
 title: 使用 Message 类
+description: 了解 Message 类，它是 WCF 的基础。 只需在某些高级方案中直接使用消息类进行编程。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d1d62bfb-2aa3-4170-b6f8-c93d3afdbbed
-ms.openlocfilehash: 142578ef76a70fed27dc0137378b59e228cd25c9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f806e257cfd3ccc5118a5783e2eda48eef4ba0bf
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585644"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246488"
 ---
 # <a name="using-the-message-class"></a>使用 Message 类
 <xref:System.ServiceModel.Channels.Message>类是 Windows Communication Foundation （WCF）的基础。 客户端与服务之间的所有通信最终都会产生要进行发送和接收的 <xref:System.ServiceModel.Channels.Message> 实例。  

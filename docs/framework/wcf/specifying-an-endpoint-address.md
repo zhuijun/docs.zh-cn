@@ -1,5 +1,6 @@
 ---
 title: 指定终结点地址
+description: 了解终结点地址，即 WCF 中 ServiceEndpoint 的一部分。 与 WCF 服务的所有通信都通过其终结点进行。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - endpoints [WCF], addressing
 ms.assetid: ac24f5ad-9558-4298-b168-c473c68e819b
-ms.openlocfilehash: 5ec6432d2f9cc7bf8619f59bad470c6b2cb190e0
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: e1bd9e5a27d1bc86d2d3e04ee82221a27a4e1fa8
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83441014"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245979"
 ---
 # <a name="specifying-an-endpoint-address"></a>指定终结点地址
 
@@ -42,13 +43,13 @@ ms.locfileid: "83441014"
 
 ## <a name="defining-endpoint-addresses-in-configuration"></a>在配置中定义终结点地址
 
-若要在配置文件中定义终结点，请使用[ \< 终结点>](../configure-apps/file-schema/wcf/endpoint-element.md)元素。
+若要在配置文件中定义终结点，请使用 [\<endpoint>](../configure-apps/file-schema/wcf/endpoint-element.md) 元素。
 
 [!code-xml[S_UEHelloWorld#5](./snippets/specifying-an-endpoint-address/serviceapp2.config#5)]
 
-<xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>调用方法时（即，当宿主应用程序尝试启动服务时），系统将查找名称属性为 "UE" 的[ \< 服务>](../configure-apps/file-schema/wcf/service.md)元素。HelloService "。 如果找到[ \< 服务>](../configure-apps/file-schema/wcf/service.md)元素，系统将加载指定的类并使用配置文件中提供的终结点定义创建终结点。 此机制允许您将绑定和寻址信息放置在代码之外，而用两行代码来加载和启动服务。 此方法的优点是在进行这些更改后不必重新编译或重新部署应用程序。
+<xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>调用方法时（即，当宿主应用程序尝试启动服务时），系统将查找 [\<service>](../configure-apps/file-schema/wcf/service.md) 名称属性指定 "UE" 的元素。HelloService "。 如果 [\<service>](../configure-apps/file-schema/wcf/service.md) 找到该元素，系统将加载指定的类并使用配置文件中提供的终结点定义创建终结点。 此机制允许您将绑定和寻址信息放置在代码之外，而用两行代码来加载和启动服务。 此方法的优点是在进行这些更改后不必重新编译或重新部署应用程序。
 
-可选标头在[ \< 标头](../configure-apps/file-schema/wcf/headers-element.md)中声明>。 下面是一个元素的示例，用于在配置文件中指定服务的终结点，以区分两个标头： "黄金" 客户端 `http://tempuri1.org/` 和 "标准" 客户端 `http://tempuri2.org/` 。 调用此服务的客户端必须在其配置文件中>相应的[ \< 标头](../configure-apps/file-schema/wcf/headers-element.md)。
+可选标头在中声明 [\<headers>](../configure-apps/file-schema/wcf/headers-element.md) 。 下面是一个元素的示例，用于在配置文件中指定服务的终结点，以区分两个标头： "黄金" 客户端 `http://tempuri1.org/` 和 "标准" 客户端 `http://tempuri2.org/` 。 调用此服务的客户端 [\<headers>](../configure-apps/file-schema/wcf/headers-element.md) 在其配置文件中必须具有相应的。
 
 [!code-xml[S_UEHelloWorld#1](./snippets/specifying-an-endpoint-address/serviceapp.config#1)]
 
@@ -86,7 +87,7 @@ ms.locfileid: "83441014"
 
 如果显式提供了终结点，则仍可以添加默认终结点，方法是先在 <xref:System.ServiceModel.ServiceHostBase.AddDefaultEndpoints%2A> 上调用 <xref:System.ServiceModel.ServiceHost>，然后调用 <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A>。 有关默认终结点、绑定和行为的详细信息，请参阅[简化配置](simplified-configuration.md)和 [WCF 服务的简化配置](./samples/simplified-configuration-for-wcf-services.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.EndpointAddress>
 - [服务标识和身份验证](./feature-details/service-identity-and-authentication.md)

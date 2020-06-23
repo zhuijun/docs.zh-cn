@@ -1,5 +1,6 @@
 ---
 title: WCF 的委派和模拟
+description: 了解 WCF 使用哪些模拟和委托方法来限制客户端对服务域资源的访问。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: e491925fdbe8d44df8e0c64b563eb92569453e35
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7f8d3695a36a43ca6bf796b141c07f6d2d088354
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599251"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85245071"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>WCF 的委派和模拟
 模拟** 是一种常用技术，服务可使用该技术限制客户端对服务域资源的访问。 服务域资源可以是计算机资源，如本地文件（模拟），也可以是其他计算机上的资源，如文件共享（委托）。 有关示例应用程序，请参见 [Impersonating the Client](../samples/impersonating-the-client.md)。 有关如何使用模拟的示例，请参阅 [How to: Impersonate a Client on a Service](../how-to-impersonate-a-client-on-a-service.md)。  
@@ -92,11 +93,11 @@ ms.locfileid: "84599251"
   
 |`ImpersonationOption`|`ImpersonateCallerForAllServiceOperations`|行为|  
 |---------------------------|------------------------------------------------|--------------|  
-|必选|不适用|WCF 模拟调用方|  
+|必需|不适用|WCF 模拟调用方|  
 |允许|false|WCF 不模拟调用方|  
-|允许|是|WCF 模拟调用方|  
+|允许|true|WCF 模拟调用方|  
 |NotAllowed|false|WCF 不模拟调用方|  
-|NotAllowed|是|不允许。 （引发 <xref:System.InvalidOperationException> 。）|  
+|NotAllowed|true|不允许。 （引发 <xref:System.InvalidOperationException> 。）|  
   
 ## <a name="impersonation-level-obtained-from-windows-credentials-and-cached-token-impersonation"></a>从 Windows 凭据和缓存的令牌模拟获取的模拟级别  
  在某些情况下，当使用 Windows 凭据时，客户端能够部分控制服务执行的模拟级别。 情况之一是客户端指定 Anonymous 模拟级别。 另一种情况是执行缓存的令牌模拟。 这是通过设置 <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> 类的 <xref:System.ServiceModel.Security.WindowsClientCredential> 属性来完成的，此类可作为通用 <xref:System.ServiceModel.ChannelFactory%601> 类的属性进行访问。  
@@ -201,7 +202,7 @@ sh.Credentials.ClientCertificate.Authentication.MapClientCertificateToWindowsAcc
   
  有关配置约束委派的详细说明，请参阅[Kerberos 协议转换和约束委派](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc739587(v=ws.10))。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.OperationBehaviorAttribute>
 - <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A>
