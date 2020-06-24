@@ -2,16 +2,16 @@
 title: dotnet test 命令
 description: dotnet test 命令可用于在给定项目中执行单元测试。
 ms.date: 04/29/2020
-ms.openlocfilehash: cbe9e7cce1722efb808c68ee49bb9012be6dcff7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 911d10917c2262c0bd32ef30d48da0f85ac39a39
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594447"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803158"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
-本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
+**** 本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
 
 ## <a name="name"></a>“属性”
 
@@ -58,7 +58,7 @@ dotnet test -h|--help
   - 指向测试项目的路径。
   - 解决方案的路径。
   - 包含项目或解决方案的目录的路径。
-  - 测试项目 .dll 文件的路径。
+  - 测试项目 .dll** 文件的路径。
 
   如果未指定，则会在当前目录中搜索项目或解决方案。
 
@@ -66,7 +66,7 @@ dotnet test -h|--help
 
 - **`-a|--test-adapter-path <PATH_TO_ADAPTER>`**
 
-  要在其中搜索其他测试适配器的目录的路径。 只检查后缀为 `.TestAdapter.dll` 的 .dll 文件。 如果未指定，则会搜索测试 .dll 的目录。
+  要在其中搜索其他测试适配器的目录的路径。 只检查后缀为 `.TestAdapter.dll` 的 .dll** 文件。 如果未指定，则会搜索测试 .dll** 的目录。
 
 - **`--blame`**
 
@@ -82,7 +82,7 @@ dotnet test -h|--help
   
   若要在 .NET Core 支持的任何平台上收集代码覆盖率，请安装 [Coverlet](https://github.com/coverlet-coverage/coverlet/blob/master/README.md) 并使用 `--collect:"XPlat Code Coverage"` 选项。
 
-  在 Windows 上，可以使用 `--collect "Code Coverage"` 选项收集代码覆盖率。 此选项将生成“.coverage”文件，该文件可在 Visual Studio 2019 Enterprise 中打开。 有关详细信息，请参阅[使用代码覆盖率](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)和[自定义代码覆盖率分析](/visualstudio/test/customizing-code-coverage-analysis)。
+  在 Windows 上，可以使用 `--collect "Code Coverage"` 选项收集代码覆盖率。 此选项将生成“.coverage”文件，该文件可在 Visual Studio 2019 Enterprise 中打开**。 有关详细信息，请参阅[使用代码覆盖率](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)和[自定义代码覆盖率分析](/visualstudio/test/customizing-code-coverage-analysis)。
 
 - **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
@@ -90,7 +90,7 @@ dotnet test -h|--help
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  强制将 `dotnet` 或 .NET Framework 测试主机用于测试二进制文件。 此选项只确定要使用哪种类型的主机。 要使用的实际框架版本由测试项目的 runtimeconfig.json 决定。 如果未指定，则 [TargetFramework 程序集特性](/dotnet/api/system.runtime.versioning.targetframeworkattribute)用于确定主机的类型。 如果已从 .dll 中去除此特性，则使用的是 .NET Framework 主机。
+  强制将 `dotnet` 或 .NET Framework 测试主机用于测试二进制文件。 此选项只确定要使用哪种类型的主机。 要使用的实际框架版本由测试项目的 runtimeconfig.json** 决定。 如果未指定，则 [TargetFramework 程序集特性](/dotnet/api/system.runtime.versioning.targetframeworkattribute)用于确定主机的类型。 如果已从 .dll** 中去除此特性，则使用的是 .NET Framework 主机。
 
 - **`--filter <EXPRESSION>`**
 
@@ -134,7 +134,7 @@ dotnet test -h|--help
 
 - **`-s|--settings <SETTINGS_FILE>`**
 
-  `.runsettings` 文件用于运行测试。 `TargetPlatform` 元素 (x86|x64) 对 `dotnet test` 不起作用。 若要运行面向 x86 的测试，请安装 .NET Core 的 x86 版本。 路径上 dotnet.exe 的位数是用于运行测试的内容。 有关更多信息，请参见以下资源：
+  `.runsettings` 文件用于运行测试。 `TargetPlatform` 元素 (x86|x64) 对 `dotnet test` 不起作用。 若要运行面向 x86 的测试，请安装 .NET Core 的 x86 版本。 路径上 dotnet.exe 的位数是用于运行测试的内容**。 有关更多信息，请参见以下资源：
 
   - [使用 `.runsettings` 文件配置单元测试。](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
   - [配置测试运行](https://github.com/Microsoft/vstest-docs/blob/master/docs/configure.md)
@@ -147,7 +147,7 @@ dotnet test -h|--help
 
   设置命令的详细级别。 允许使用的值为 `q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]` 和 `diag[nostic]`。 默认值为 `minimal`。 有关详细信息，请参阅 <xref:Microsoft.Build.Framework.LoggerVerbosity>。
 
-- `RunSettings` 参数
+- `RunSettings`**** 参数
 
  内联的 `RunSettings` 作为“-- ”（请注意 -- 后面有空格）后的最后一个命令行参数传递。 内联的 `RunSettings` 被指定为 `[name]=[value]` 对。 空格用于分隔多个 `[name]=[value]` 对。
 
@@ -175,7 +175,7 @@ dotnet test -h|--help
   dotnet test --logger trx
   ```
 
-- 在当前目录运行项目中的测试，并生成代码覆盖率文件（安装 [Coverlet](https://github.com/tonerdo/coverlet/blob/master/README.md) 后）：
+- 在当前目录运行项目中的测试，并生成代码覆盖率文件（安装 [Coverlet](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/VSTestIntegration.md) 收集器集成后）：
 
   ```dotnetcli
   dotnet test --collect:"XPlat Code Coverage"

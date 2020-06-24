@@ -8,12 +8,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: f5e355d66d9b022a037d53e1241e76282852888e
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 71cbf8278b3a8092e93a8ae3d8be291540f16cc3
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241456"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990099"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>静态类和静态类成员（C# 编程指南）
 
@@ -54,7 +54,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
  因此，创建静态类基本上与创建只包含静态成员和私有构造函数的类相同。 私有构造函数可防止类进行实例化。 使用静态类的优点是编译器可以进行检查，以确保不会意外地添加任何实例成员。 编译器可保证无法创建此类的实例。  
   
- 静态类会进行密封，因此不能继承。 它们不能继承自任何类（除了 <xref:System.Object>）。 静态类不能包含实例构造函数；但是，它们可以包含静态构造函数。 如果非静态类包含了需要进行有意义的初始化的静态成员，则它也应该定义一个静态构造器。 有关详细信息，请参阅[静态构造函数](./static-constructors.md)。  
+ 静态类会进行密封，因此不能继承。 它们不能继承自任何类（除了 <xref:System.Object>）。 静态类不能包含实例构造函数。 但是，它们可以包含静态构造函数。 如果非静态类包含了需要进行有意义的初始化的静态成员，则它也应该定义一个静态构造器。 有关详细信息，请参阅[静态构造函数](./static-constructors.md)。  
   
 ## <a name="example"></a>示例  
  下面是静态类的示例，该类包含将温度从摄氏度从华氏度以及从华氏度转换为摄氏度的两个方法：  
@@ -68,9 +68,9 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
   
  静态方法可以进行重载，但不能进行替代，因为它们属于类，而不属于类的任何实例。  
   
- 虽然字段不能声明为 `static const`，不过 [const](../../language-reference/keywords/const.md) 字段在其行为方面本质上是静态的。 它属于类型，而不属于类型的实例。 因此，可以使用用于静态字段的相同 `ClassName.MemberName` 表示法来访问常量字段。 无需进行对象实例化。  
+ 虽然字段不能声明为 `static const`，不过 [const](../../language-reference/keywords/const.md) 字段在其行为方面本质上是静态的。 它属于类型，而不属于类型的实例。 因此，可以使用用于静态字段的相同 `ClassName.MemberName` 表示法来访问 `const` 字段。 无需进行对象实例化。  
   
- C# 不支持静态局部变量（在方法范围中声明的变量）。  
+ C# 不支持静态局部变量（即在方法范围中声明的变量）。  
   
  可在成员的返回类型之前使用 `static` 关键字声明静态类成员，如下面的示例所示：  
   

@@ -4,12 +4,12 @@ description: 了解有关编写单元测试的最佳做法，以提高 .NET Core
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: 586373381bcb18384cbf29bb2ca2bd220a2b2d3d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9115ff69b269e3723820fd8505d1a9f8ca278d12
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240956"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989374"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>.NET Core 和 .NET Standard 单元测试最佳做法
 
@@ -32,7 +32,7 @@ ms.locfileid: "78240956"
 使用单元测试，可在每次生成后，甚至在更改一行代码后重新运行整套测试。 让你确信新代码不会破坏现有功能。
 
 ### <a name="executable-documentation"></a>可执行文档
-在给定某个输入的情况下，特定方法的作用或行为可能并不总是很明显。 你可能会问自己：如果我将空白字符串传递给它，此方法会有怎样的行为？ Null?
+在给定某个输入的情况下，特定方法的作用或行为可能并不总是很明显。 你可能会想知道：如果我将空白字符串传递给它，此方法会有怎样的行为？ Null?
 
 如果你有一套命名正确的单元测试，每个测试应能够清楚地解释给定输入的预期输出。 此外，它应该能够验证其确实有效。
 
@@ -43,20 +43,26 @@ ms.locfileid: "78240956"
 
 ## <a name="characteristics-of-a-good-unit-test"></a>优质单元测试的特征
 
-- 快速  。 对成熟项目进行数千次单元测试，这很常见。 应花非常少的时间来运行单元测试。 几毫秒。
-- 独立  。 单元测试是独立的，可以单独运行，并且不依赖文件系统或数据库等任何外部因素。
-- 可重复  。 运行单元测试的结果应该保持一致，也就是说，如果在运行期间不更改任何内容，总是返回相同的结果。
-- 自检查  。 测试应该能够在没有任何人工交互的情况下，自动检测测试是否通过。
-- 及时  。 与要测试的代码相比，编写单元测试不应花费过多不必要的时间。 如果发现测试代码与编写代码相比需要花费大量的时间，请考虑一种更易测试的设计。
+- 快速****。 对成熟项目进行数千次单元测试，这很常见。 应花非常少的时间来运行单元测试。 几毫秒。
+- 独立****。 单元测试是独立的，可以单独运行，并且不依赖文件系统或数据库等任何外部因素。
+- 可重复****。 运行单元测试的结果应该保持一致，也就是说，如果在运行期间不更改任何内容，总是返回相同的结果。
+- 自检查****。 测试应该能够在没有任何人工交互的情况下，自动检测测试是否通过。
+- 及时****。 与要测试的代码相比，编写单元测试不应花费过多不必要的时间。 如果发现测试代码与编写代码相比需要花费大量的时间，请考虑一种更易测试的设计。
+
+## <a name="code-coverage"></a>代码覆盖率
+
+高代码覆盖率百分比通常与较高的代码质量相关联。 但该度量值本身无法确定代码的质量**。 设置过高的代码覆盖率百分比目标可能会适得其反。 假设一个复杂的项目有数千个条件分支，并且假设你设定了一个 95% 代码覆盖率的目标。 该项目当前维保持 90% 的代码覆盖率。 要覆盖剩余 5% 的所有边缘事例，需要花费巨大的工作量，而且价值主张会迅速降低。
+
+高代码覆盖率百分比不指示成功，也不意味着高代码质量。 它仅仅表示单元测试所涵盖的代码量。 有关详细信息，请参阅[单元测试代码覆盖率](unit-testing-code-coverage.md)。
 
 ## <a name="lets-speak-the-same-language"></a>让我们使用相同的术语
-遗憾的是，当谈到测试时，术语“mock”的滥用情况很严重  。 以下定义了编写单元测试时最常见的 fake 类型  ：
+遗憾的是，当谈到测试时，术语“mock”的滥用情况很严重**。 以下定义了编写单元测试时最常见的 fake 类型**：
 
-Fake - Fake 是一个通用术语，可用于描述 stub 或 mock 对象  。 它是 stub 还是 mock 取决于使用它的上下文。 也就是说，Fake 可以是 stub 或 mock。
+Fake - Fake 是一个通用术语，可用于描述 stub 或 mock 对象**。 它是 stub 还是 mock 取决于使用它的上下文。 也就是说，Fake 可以是 stub 或 mock。
 
-Mock - Mock 对象是系统中的 fake 对象，用于确定单元测试是否通过  。 Mock 起初为 Fake，直到对其断言。
+Mock - Mock 对象是系统中的 fake 对象，用于确定单元测试是否通过**。 Mock 起初为 Fake，直到对其断言。
 
-Stub - Stub 是系统中现有依赖项（或协作者）的可控制替代项  。 通过使用 Stub，可以在无需使用依赖项的情况下直接测试代码。 默认情况下，fake 起初为 Stub。
+Stub - Stub 是系统中现有依赖项（或协作者）的可控制替代项**。 通过使用 Stub，可以在无需使用依赖项的情况下直接测试代码。 默认情况下，fake 起初为 Stub。
 
 请思考以下代码片段：
 
@@ -102,7 +108,7 @@ Assert.True(mockOrder.Validated);
 
 关于 mock 与 stub 需要注意的一个重点是，mock 与 stub 很像，但可以针对 mock 对象进行断言，而不针对 stub 进行断言。
 
-## <a name="best-practices"></a>最佳做法
+## <a name="best-practices"></a>最佳实践
 
 ### <a name="naming-your-tests"></a>为测试命名
 测试的名称应包括三个部分：
@@ -124,15 +130,15 @@ Assert.True(mockOrder.Validated);
 [!code-csharp[AfterNamingAndMinimallyPassing](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterNamingAndMinimallyPassing)]
 
 ### <a name="arranging-your-tests"></a>安排测试
-“Arrange、Act、Assert”是单元测试时的常见模式  。 顾名思义，它包含三个主要操作：
+“Arrange、Act、Assert”是单元测试时的常见模式****。 顾名思义，它包含三个主要操作：
 
-- 安排对象，根据需要对其进行创建和设置  。
-- 作用于对象  。
-- 断言某些项按预期进行  。
+- 安排对象，根据需要对其进行创建和设置**。
+- 作用于对象**。
+- 断言某些项按预期进行**。
 
 #### <a name="why"></a>为什么？
 
-- 明确地将要测试的内容从“arrange”和“assert”步骤分开   。
+- 明确地将要测试的内容从“arrange”和“assert”步骤分开** **。
 - 降低将断言与“Act”代码混杂的可能性。
 
 可读性是编写测试时最重要的方面之一。 在测试中分离这些操作会明确地突出显示调用代码所需的依赖项、调用代码的方式以及尝试断言的内容。 虽然可以组合一些步骤并减小测试的大小，但主要目标是使测试尽可能可读。
@@ -165,7 +171,7 @@ Assert.True(mockOrder.Validated);
 #### <a name="why"></a>为什么？
 
 - 测试读者无需检查生产代码即可了解值的特殊之处。
-- 明确地显示所要证明的内容，而不是显示要完成的内容   。
+- 明确地显示所要证明的内容，而不是显示要完成的内容** **。
 
 魔幻字符串可能会让测试读者感到困惑。 如果字符串看起来不寻常，他们可能想知道为什么为某个参数或返回值选择了某个值。 这可能会使他们仔细查看实现细节，而不是专注于测试。
 
@@ -331,7 +337,7 @@ public void GetDiscountedPrice_OnTuesday_ReturnsHalfPrice()
 - 如果在星期二运行测试套件，则第二个测试将通过，但第一个测试将失败。
 - 如果在任何其他日期运行测试套件，则第一个测试将通过，但第二个测试将失败。
 
-要解决这些问题，需要将“seam”引入生产代码中  。 一种方法是在接口中包装需要控制的代码，并使生产代码依赖于该接口。
+要解决这些问题，需要将“seam”引入生产代码中**。 一种方法是在接口中包装需要控制的代码，并使生产代码依赖于该接口。
 
 ```csharp
 public interface IDateTimeProvider

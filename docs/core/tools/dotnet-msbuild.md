@@ -2,20 +2,20 @@
 title: dotnet msbuild 命令
 description: dotnet msbuild 命令可提供对 MSBuild 命令行的访问权限。
 ms.date: 02/14/2020
-ms.openlocfilehash: 88e85868e2d7de564b2e4c90ce6e78bde4cb350e
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 9739fe782e17db3955db087ca1781ad4280cd491
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463628"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803177"
 ---
 # <a name="dotnet-msbuild"></a>dotnet msbuild
 
 **本文适用于：** ✔️ .NET Core 2.x SDK 及更高版本
 
-## <a name="name"></a>名称
+## <a name="name"></a>“属性”
 
-`dotnet msbuild` - 生成项目及其所有依赖项。
+`dotnet msbuild` - 生成项目及其所有依赖项。 注意：如果有多个解决方案或项目文件，可能需要指定一个。
 
 ## <a name="synopsis"></a>摘要
 
@@ -25,13 +25,13 @@ dotnet msbuild <MSBUILD_ARGUMENTS>
 dotnet msbuild -h
 ```
 
-## <a name="description"></a>说明
+## <a name="description"></a>描述
 
 `dotnet msbuild` 命令允许访问功能完备的 MSBuild。
 
 该命令与仅适用于 SDK 样式项目的现有 MSBuild 命令行客户端具有完全相同的功能。 选项一致。 有关可用选项的详细信息，请参阅 [MSBuild 命令行参考](/visualstudio/msbuild/msbuild-command-line-reference)。
 
-[dotnet build](dotnet-build.md) 命令相当于 `dotnet msbuild -restore -target:Build`。 [dotnet build](dotnet-build.md) 更常用于生成项目，但由于它始终运行生成目标，因此不想生成项目时可以使用 `dotnet msbuild`。 例如，如果想要运行特定目标而不生成项目，请使用 `dotnet msbuild` 指定目标。
+[dotnet build](dotnet-build.md) 命令相当于 `dotnet msbuild -restore`。 如果不想生成项目，并且拥有要运行的特定目标，请使用 `dotnet build` 或 `dotnet msbuild` 并指定目标。
 
 ## <a name="examples"></a>示例
 
@@ -57,4 +57,5 @@ dotnet msbuild -h
 
   ```dotnetcli
   dotnet msbuild -preprocess
+  dotnet msbuild -preprocess:<fileName>.xml
   ```

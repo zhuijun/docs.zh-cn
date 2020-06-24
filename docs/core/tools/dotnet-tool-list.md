@@ -2,16 +2,16 @@
 title: dotnet tool list 命令
 description: dotnet 工具列表命令列出计算机上安装的 .NET Core 工具。
 ms.date: 02/14/2020
-ms.openlocfilehash: 28f9155407d1238f8b0960b69b34ea329ca0e8e6
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 7ca894ab0f5daf0118ff92fb39e0118b952b3d83
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463348"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768269"
 ---
 # <a name="dotnet-tool-list"></a>dotnet tool list
 
-本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
+**** 本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
 
 ## <a name="name"></a>“属性”
 
@@ -24,6 +24,8 @@ dotnet tool list -g|--global
 
 dotnet tool list --tool-path <PATH>
 
+dotnet tool list --local
+
 dotnet tool list
 
 dotnet tool list -h|--help
@@ -31,11 +33,11 @@ dotnet tool list -h|--help
 
 ## <a name="description"></a>描述
 
-`dotnet tool list` 命令为用户提供一种在计算机上安装所有 .NET Core 全局工具、工具路径工具或本地工具的方法。 此命令列出包名称、安装的版本以及工具命令。  若要使用命令，请指定以下项之一：
+`dotnet tool list` 命令为用户提供一种在计算机上安装所有 .NET Core 全局、工具路径或本地工具的方法。 此命令列出包名称、安装的版本以及工具命令。  若要使用命令，请指定以下项之一：
 
-* 在默认位置安装全局工具。 使用 `--global` 选项
-* 在自定义位置安装全局工具。 使用 `--tool-path` 选项。
-* 运行本地工具。 省略 `--global` 和 `--tool-path` 选项。
+* 若要列出在默认位置安装的全局工具，请使用 `--global` 选项
+* 若要列出在自定义位置安装的全局工具，请使用 `--tool-path` 选项。
+* 若要列出多个本地工具或单个本地工具， 请使用 `--local` 选项或省略 `--global`、`--tool-path` 和 `--local` 选项。
 
 **本地工具从 .NET Core SDK 3.0 开始可用。**
 
@@ -48,6 +50,10 @@ dotnet tool list -h|--help
 - **`-h|--help`**
 
   打印出有关命令的简短帮助。
+
+- **`--local`**
+
+  列出当前目录的本地工具。 不能与 `--global` 或 `--tool-path` 选项组合。 即使未指定 `--local`，同时省略 `--global` 和 `--tool-path` 也会列出本地工具。
 
 - **`--tool-path <PATH>`**
 
@@ -67,7 +73,7 @@ dotnet tool list -h|--help
 
   列出特定 Linux/macOS 目录中的全局工具。
 
-- **`dotnet tool list`**
+- **`dotnet tool list`** 或 **`dotnet tool list --local`**
 
   列出当前目录中所有可用的本地工具。
 

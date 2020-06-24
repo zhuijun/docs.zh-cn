@@ -1,22 +1,23 @@
 ---
 title: 64 位应用程序
+description: 获取有关在 64 位 Windows OS 上配置应用程序的信息，可以是本机 64 位应用程序，也可以是 WOW64 下（64 位 Windows 上的 32 位 Windows）的应用程序。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - applications [C++], 64-bit
 - 64-bit applications [C++]
 - 64-bit programming [C++]
 ms.assetid: fd4026bc-2c3d-4b27-86dc-ec5e96018181
-ms.openlocfilehash: 90e022d5643dc49ccc5b78d071b3b473c92f0670
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4589d7a070a477dcb229fbaea686f6c6ff7d7e08
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74429666"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989985"
 ---
 # <a name="64-bit-applications"></a>64 位应用程序
 编译应用程序时，您可以将其指定为在 Windows 64 位操作系统上作为本机应用程序或在 WOW64（Windows 64 位下的 Windows 32 位）下运行。 WOW64 是一种兼容性环境，它使 32 位应用能够在 64 位系统上运行。 WOW64 包括在所有 64 位版本的 Windows 操作系统中。  
   
-## <a name="running-32-bit-vs-64-bit-applications-on-windows"></a>在 Windows 上运行 32 位与 64 位应用程序  
+## <a name="running-32-bit-vs-64-bit-applications-on-windows"></a>在 Windows 上运行 32 位与64 位应用程序  
  在 64 位操作系统上，所有基于 .NET Framework 1.0 或 1.1 生成的应用程序都会被视为 32 位应用程序，并始终在 WOW64 和 32 位公共语言运行时 (CLR) 下执行。 基于 .NET Framework 4 或更高版本生成的 32 位应用程序也可以在 64 位系统上的 WOW64 下运行。  
   
  在 x86 计算机上，Visual Studio 会安装 32 位版本的 CLR，而在 64 位 Windows 计算机上会同时安装 32 位版本和适当的 64 位版本的 CLR。 （因为 Visual Studio 是一个 32 位应用程序，所以当安装到 64 位系统上时，它会在 WOW64 下运行。）  
@@ -24,7 +25,7 @@ ms.locfileid: "74429666"
 > [!NOTE]
 > 由于 Itanium 处理器系列的 x86 仿真和 WOW64 子系统设计，仅限在一个处理器上执行应用程序。 这些因素会降低在基于 Itanium 的系统上运行的 32 位 .NET Framework 应用程序的性能和可伸缩性。 我们建议你使用 .NET Framework 4，它包括对基于 Itanium 的系统的本机 64 位支持，以提升性能和可伸缩性。  
   
- 默认情况下，在 64 位 Windows 操作系统上运行 64 位托管应用程序时，您可以创建一个不超过 2 GB 的对象。 然而，在 .NET Framework 4.5 中，你可以增加该限制。  有关详细信息，请参阅 [\<gcAllowVeryLargeObjects> 元素](./configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md)。  
+ 默认情况下，在 64 位 Windows 操作系统上运行 64 位托管应用程序时，您可以创建一个不超过 2 GB 的对象。 然而，在 .NET Framework 4.5 中，你可以增加该限制。  有关更多信息，请参见 [\<gcAllowVeryLargeObjects> 元素](./configure-apps/file-schema/runtime/gcallowverylargeobjects-element.md)。  
   
  很多程序集可在 32 位 CLR 和 64 位 CLR 上同样运行。 然而，因为包含下列一个或多个原因，对于不同的 CLR，有些程序可能会有不同表现：  
   

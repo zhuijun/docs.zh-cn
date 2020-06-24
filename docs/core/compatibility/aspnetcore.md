@@ -2,15 +2,15 @@
 title: ASP.NET Core 中断性变更
 titleSuffix: ''
 description: 列出 ASP.NET Core 中的中断性变更。
-ms.date: 04/29/2020
+ms.date: 06/11/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 2e89a14c948365da1e7a04fc8d5ca4008842f8d8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a6ddf97f907a1cba57e51d6fd516d1f94272f725
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446961"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803276"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core 中断性变更
 
@@ -50,7 +50,9 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 - [标识：对于未经身份验证的标识，SignInAsync 会引发异常](#identity-signinasync-throws-exception-for-unauthenticated-identity)
 - [标识：SignInManager 构造函数接受新参数](#identity-signinmanager-constructor-accepts-new-parameter)
 - [标识：UI 使用静态 Web 资产功能](#identity-ui-uses-static-web-assets-feature)
+- [Kestrel：默认检测运行时的配置更改](#kestrel-configuration-changes-at-run-time-detected-by-default)
 - [Kestrel：已删除连接适配器](#kestrel-connection-adapters-removed)
+- [Kestrel：默认支持的 TLS 协议版本已更改](#kestrel-default-supported-tls-protocol-versions-changed)
 - [Kestrel：已删除空 HTTPS 程序集](#kestrel-empty-https-assembly-removed)
 - [Kestrel：请求尾部标头已移到新集合](#kestrel-request-trailer-headers-moved-to-new-collection)
 - [Kestrel：传输抽象层更改](#kestrel-transport-abstractions-removed-and-made-public)
@@ -98,7 +100,14 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 
 ***
 
-[!INCLUDE [Localization: "Pubternal" APIs removed](~/includes/core-changes/aspnetcore/5.0/localization-pubternal-apis-removed.md)]
+[!INCLUDE[Kestrel: Configuration changes at run time detected by default](~/includes/core-changes/aspnetcore/5.0/kestrel-configuration-changes-at-run-time-detected-by-default.md)]
+
+***
+[!INCLUDE[Kestrel: Default supported TLS protocol versions changed](~/includes/core-changes/aspnetcore/5.0/kestrel-default-supported-tls-protocol-versions-changed.md)]
+
+***
+
+[!INCLUDE[Localization: "Pubternal" APIs removed](~/includes/core-changes/aspnetcore/5.0/localization-pubternal-apis-removed.md)]
 
 ***
 

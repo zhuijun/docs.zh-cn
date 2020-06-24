@@ -4,12 +4,12 @@ description: 本高级教程探讨了如何安全地向现有接口定义添加�
 ms.date: 05/06/2019
 ms.technlogy: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: 650aea78b421783b3f249b3670578aa60e800ab2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1e73f9001414631975248f1a1658833d2785169b
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156774"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803216"
 ---
 # <a name="tutorial-update-interfaces-with-default-interface-methods-in-c-80"></a>教程：在 C# 8.0 中使用默认接口方法更新接口
 
@@ -51,7 +51,7 @@ ms.locfileid: "79156774"
 
 升级应提供用于设置两个属性的功能：符合折扣条件所需的订单数量以及折扣百分比。 这使其成为用于默认接口成员的完美方案。 可以向 `ICustomer` 接口添加方法，并提供最有可能的实现。 所有现有的和任何新的实现都可以使用默认实现，或者提供其自己的实现。
 
-首先，将新方法添加到实现中：
+首先，将新方法添加到接口，包括方法的主体：
 
 [!code-csharp[InitialOrderInterface](~/samples/snippets/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetLoyaltyDiscountVersionOne)]
 

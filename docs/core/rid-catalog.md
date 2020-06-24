@@ -2,16 +2,16 @@
 title: .NET Core 运行时标识符 (RID) 目录
 description: 了解运行时标识符 (RID) 及如何在 .NET Core 中使用 RID。
 ms.date: 02/22/2019
-ms.openlocfilehash: b581f46becc6808ca957ac66c0c22e5e5f973bd1
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 903dd9c619008c9e3c6149a471ba814bdc9c97cc
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795555"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903280"
 ---
 # <a name="net-core-rid-catalog"></a>.NET Core RID 目录
 
-RID 是运行时标识符  的缩写。 RID 值用于标识应用程序运行所在的目标平台。
+RID 是运行时标识符的缩写**。 RID 值用于标识应用程序运行所在的目标平台。
 .NET 包使用它们来表示 NuGet 包中特定于平台的资产。 以下值是 RID 的示例：`linux-x64`、`ubuntu.14.04-x64`、`win7-x64` 或 `osx.10.12-x64`。
 对于具有本机依赖项的包，RID 将指定在其中可以还原包的平台。
 
@@ -31,7 +31,7 @@ RID 是运行时标识符  的缩写。 RID 值用于标识应用程序运行所
 
 - `[version]` 是操作系统版本，使用的格式是以点 (`.`) 分隔的版本号。 例如 `15.10`。
 
-  - 版本不应  为营销版本，因为它们通常代表该操作系统的多个离散版本，且具有不同的平台 API 外围应用。
+  - 版本不应**** 为营销版本，因为它们通常代表该操作系统的多个离散版本，且具有不同的平台 API 外围应用。
 
 - `[architecture]` 是处理器体系结构。 例如：`x86`、`x64`、`arm` 或 `arm64`。
 
@@ -39,7 +39,7 @@ RID 是运行时标识符  的缩写。 RID 值用于标识应用程序运行所
 
 ## <a name="rid-graph"></a>RID 图表
 
-RID 图表或运行时回退图表是互相兼容的 RID 列表。 [Microsoft.NETCore.Platforms](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/) 包中定义了 RID。 可以在 `dotnet/runtime` 存储库的 [runtime.json  ](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) 文件中查看支持的 RID 列表和 RID 图表。 在此文件中，可以看到除基 RID 以外的所有 RID 均包含 `"#import"` 语句。 这些语句指示的是兼容的 RID。
+RID 图表或运行时回退图表是互相兼容的 RID 列表。 [Microsoft.NETCore.Platforms](https://www.nuget.org/packages/Microsoft.NETCore.Platforms/) 包中定义了 RID。 可以在 `dotnet/runtime` 存储库的 [runtime.json**](https://github.com/dotnet/runtime/blob/master/src/libraries/pkg/Microsoft.NETCore.Platforms/runtime.json) 文件中查看支持的 RID 列表和 RID 图表。 在此文件中，可以看到除基 RID 以外的所有 RID 均包含 `"#import"` 语句。 这些语句指示的是兼容的 RID。
 
 NuGet 还原包时，它将尝试找到指定运行时的完全匹配项。
 如果未找到完全匹配项，NuGet 将返回此图表，直至它根据 RID 图表找到最相近的兼容系统。
@@ -54,7 +54,7 @@ NuGet 还原包时，它将尝试找到指定运行时的完全匹配项。
 
 上述 RID 指定 `osx.10.12-x64` 导入 `osx.10.11-x64`。 因此，当 NuGet 还原包时，它将尝试找到包中的 `osx.10.12-x64` 的完全匹配项。 例如，如果 NuGet 无法找到特定的运行时，可以还原指定 `osx.10.11-x64` 运行时的包。
 
-以下示例演示了 runtime.json  文件中定义的另一个略大的 RID 图表：
+以下示例演示了 runtime.json** 文件中定义的另一个略大的 RID 图表：
 
 ```
     win7-x64    win7-x86
@@ -72,7 +72,7 @@ NuGet 还原包时，它将尝试找到指定运行时的完全匹配项。
 
 使用 RID 时，必须牢记以下几个注意事项：
 
-- RID 是不透明字符串  ，应将其视为黑盒。
+- RID 是不透明字符串****，应将其视为黑盒。
 - 请勿以编程方式生成 RID。
 - 使用已为平台定义的 RID。
 - RID 必须具有特定性，因此请勿通过实际的 RID 值假定任何情况。

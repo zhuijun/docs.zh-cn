@@ -4,16 +4,16 @@ description: 了解如何通过 .NET Core 对单元测试排序。
 author: IEvangelist
 ms.date: 05/18/2020
 zone_pivot_groups: unit-testing-framework-set-one
-ms.openlocfilehash: ce0d01c924075ffcc9ad49ef8aca49222c10c921
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 3400ae440a828054624d67c14807ee72783e466a
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83704531"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84989254"
 ---
 # <a name="order-unit-tests"></a>对单元测试排序
 
-有时，你可能希望按特定顺序运行单元测试。 理想情况下，单元测试的运行顺序不重要，[最佳做法](unit-testing-best-practices.md)是避免对单元测试排序。 但无论如何，可能会有需要这样做。 为此，本文将演示如何对测试运行进行排序。
+有时，你可能希望按特定顺序运行单元测试。 理想情况下，单元测试的运行顺序__ 不重要，[最佳做法](unit-testing-best-practices.md)是避免对单元测试排序。 但无论如何，可能会有需要这样做。 为此，本文将演示如何对测试运行进行排序。
 
 如果你更喜欢浏览源代码，请参阅[对 .NET Core 单元测试排序](/samples/dotnet/samples/order-unit-tests-cs)示例存储库。
 
@@ -84,4 +84,4 @@ xUnit 测试框架允许对测试运行顺序进行更细致的控制。 可以�
 ## <a name="next-steps"></a>后续步骤
 
 > [!div class="nextstepaction"]
-> [单元测试最佳做法](unit-testing-best-practices.md)
+> [单元测试代码覆盖率](unit-testing-code-coverage.md)

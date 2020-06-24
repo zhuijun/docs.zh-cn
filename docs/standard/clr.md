@@ -1,5 +1,6 @@
 ---
 title: 公共语言运行时 (CLR) 概述 - .NET Framework
+description: 公共语言运行时 (CLR) 入门，.NET 运行时环境。 CLR 运行代码并提供服务，使开发过程更轻松。
 ms.date: 04/02/2019
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - code, runtime functionality
 ms.assetid: 059a624e-f7db-4134-ba9f-08b676050482
 ms.custom: updateeachrelease
-ms.openlocfilehash: 74421f79c18f32e121d51c47f3eb32f3c2ed71fd
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ef455ac1c49c1f457d0fa432db91b5375c045840
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289241"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769205"
 ---
 # <a name="common-language-runtime-clr-overview"></a>公共语言运行时 (CLR) 概述
 
@@ -66,7 +67,7 @@ ms.locfileid: "84289241"
 
 ## <a name="related-topics"></a>相关主题
 
-|标题|说明|
+|Title|描述|
 |-----------|-----------------|
 |[托管执行过程](managed-execution-process.md)|描述使用公共语言运行时所需要的步骤。|
 |[自动内存管理](automatic-memory-management.md)|描述垃圾回收器如何分配和释放内存。|

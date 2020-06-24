@@ -7,16 +7,16 @@ helpviewer_keywords:
 - nullable compiler option [C#]
 - /nullable compiler option [C#]
 - -nullable compiler option [C#]
-ms.openlocfilehash: a68255dba18a022784cd4aaf0027c371893c577b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7454bb316507c3aaea208094127552712421dff6
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84449797"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990128"
 ---
 # <a name="-nullable-c-compiler-options"></a>-nullable（C# 编译器选项）
 
-使用 -nullable 选项可指定所需的可为空上下文。
+使用 -nullable 选项可指定所需的可为空上下文****。
 
 ## <a name="syntax"></a>语法
 
@@ -28,10 +28,10 @@ ms.locfileid: "84449797"
 ## <a name="arguments"></a>自变量
 
 `+` &#124; `-`  
-指定 `+` 或仅指定 -nullable 会使编译器启用可为空的上下文。 指定 `-`（等效于未指定 -nullable）会禁用可为空的上下文。
+指定 `+` 或仅指定 -nullable 会使编译器启用可为空的上下文****。 指定 `-`（等效于未指定 -nullable）会禁用可为空的上下文****。
 
 `enable` &#124；`disable` &#124；`warnings` &#124；`annotations`  
-指定可为空上下文选项。 与 `+` 或 `-` 类似，若要启用和禁用，只需允许更细粒度的可为空上下文特异性。 `enable` 参数（等效于指定 -nullable）会启用可为空的上下文。 指定 `disable` 将禁用可为空上下文。 如果提供 `warnings` 参数 -nullable:warnings，则将启用可为空警告上下文。 如果指定 `annotations` 参数 -nullable:annotations，则将启用可为空注释上下文。
+指定可为空上下文选项。 与 `+` 或 `-` 类似，若要启用和禁用，只需允许更细粒度的可为空上下文特异性。 `enable` 参数（等效于指定 -nullable）会启用可为空的上下文****。 指定 `disable` 将禁用可为空上下文。 如果提供 `warnings` 参数 -nullable:warnings，则将启用可为空警告上下文****。 如果指定 `annotations` 参数 -nullable:annotations，则将启用可为空注释上下文****。
 
 ## <a name="remarks"></a>备注
 
@@ -48,7 +48,7 @@ ms.locfileid: "84449797"
 
 ### <a name="to-set-this-compiler-option-in-a-project"></a>在项目中设置此编译器选项
 
-编辑 .csproj，将 `<Nullable>` 标记添加到 `Project/PropertyGroup` 层次结构中：
+编辑 .csproj 文件，将 `<Nullable>` 标记添加到 `Project/PropertyGroup` 层次结构中**：
 
 ```xml
 <Project Sdk="...">
