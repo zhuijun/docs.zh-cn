@@ -1,22 +1,19 @@
 ---
 title: 在 Visual Studio Code 中创建 .NET Standard 类库
 description: 了解如何使用 Visual Studio Code 创建 .NET Standard 类库。
-ms.date: 05/29/2020
-ms.openlocfilehash: 5720ac374d50ef27a07d463e57af1bd95a352d83
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.date: 06/08/2020
+ms.openlocfilehash: f7d2319bcea58f63ca40e43ba39745bdf1b394ce
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446947"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701794"
 ---
-# <a name="tutorial-create-a-net-standard-library-in-visual-studio-code"></a>教程：在 Visual Studio Code 中创建 .NET Standard 库
-
-类库定义的是可以由应用程序调用的类型和方法。 借助面向 .NET Standard 2.0 的类库，任何支持相应 .NET Standard 版本的 .NET 实现都可以调用库。 完成类库时，可以决定是要将其作为 NuGet 包进行分布，还是要将其作为与一个或多个应用程序捆绑在一起的组件进行添加。
-
-> [!NOTE]
-> 有关 .NET Standard 版本及其支持的平台列表，请参阅 [.NET Standard](../../standard/net-standard.md)。
+# <a name="tutorial-create-a-net-standard-library-using-visual-studio-code"></a>教程：在 Visual Studio Code 中创建 .NET Standard 库
 
 在本教程中，将创建包含一个字符串处理方法的简单实用工具库。 我们把它作为[扩展方法](../../csharp/programming-guide/classes-and-structs/extension-methods.md)进行实现，这样就可以把它作为 <xref:System.String> 类成员进行调用。
+
+类库定义的是可以由应用程序调用的类型和方法。 借助面向 .NET Standard 2.0 的类库，任何支持相应 .NET Standard 版本的 .NET 实现都可以调用库。 完成类库后，可以将其作为第三方组件进行分发，也可以作为与一个或多个应用程序捆绑在一起的组件进行分发。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -27,9 +24,11 @@ ms.locfileid: "84446947"
 
 首先，创建一个空白解决方案来放置类库项目。 解决方案用作一个或多个项目的容器。 将其他相关项目添加到同一个解决方案中。
 
-1. 打开 Visual Studio Code。
+1. 启动 Visual Studio Code。
 
-1. 在主菜单中选择“文件” > “打开文件夹”/“打开…”，创建“ClassLibraryProjects”文件夹，然后单击“选择文件夹”/“打开”   。
+1. 从主菜单中选择“文件” > “打开文件夹”（在 macOS 上为“打开...”）
+
+1. 在“打开文件夹”对话框中，创建“ClassLibraryProjects”文件夹，然后单击“选择文件夹”（在 macOS 上为“打开”）。
 
 1. 在主菜单中选择“视图” > “终端”，从 Visual Studio Code 中打开“终端”  。
 
@@ -156,7 +155,21 @@ ms.locfileid: "84446947"
    Project `ShowCase\ShowCase.csproj` added to the solution.
    ```
 
-1. 最初，新的控制台应用项目无权访问类库。 若要允许该项目调用类库中的方法，请通过运行以下命令创建对类库项目的项目引用：
+1. 打开 ShowCase/Program.cs 并将所有代码替换为以下代码。
+
+   :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/ShowCase/Program.cs":::
+
+   该代码使用 `row` 变量来维护写入到控制台窗口的数据行数计数。 如果大于或等于 25，该代码将清除控制台窗口，并向用户显示一条消息。
+
+   该程序会提示用户输入字符串。 它会指明字符串是否以大写字符开头。 如果用户没有输入字符串就按 <kbd>Enter</kbd> 键，那么应用程序会终止，控制台窗口会关闭。
+
+1. 保存更改。
+
+## <a name="add-a-project-reference"></a>添加项目引用
+
+最初，新的控制台应用项目无权访问类库。 若要允许该项目调用类库中的方法，可以创建对类库项目的项目引用。
+
+1. 运行下面的命令：
 
    ```dotnetcli
    dotnet add ShowCase/Showcase.csproj reference StringLibrary/StringLibrary.csproj
@@ -168,17 +181,9 @@ ms.locfileid: "84446947"
    Reference `..\StringLibrary\StringLibrary.csproj` added to the project.
    ```
 
-1. 打开 ShowCase/Program.cs 并将所有代码替换为以下代码。
+## <a name="run-the-app"></a>运行应用
 
-   :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/ShowCase/Program.cs":::
-
-   该代码使用 `row` 变量来维护写入到控制台窗口的数据行数计数。 如果大于或等于 25，该代码将清除控制台窗口，并向用户显示一条消息。
-
-   该程序会提示用户输入字符串。 它会指明字符串是否以大写字符开头。 如果用户没有输入字符串就按 Enter 键，那么应用程序会终止，控制台窗口会关闭。
-
-1. 保存更改。
-
-1. 运行该程序。
+1. 在终端中运行以下命令：
 
    ```dotnetcli
    dotnet run --project ShowCase/ShowCase.csproj
@@ -203,6 +208,7 @@ ms.locfileid: "84446947"
 ## <a name="additional-resources"></a>其他资源
 
 * [使用 .NET Core CLI 开发库](libraries.md)
+* [.NET Standard 版本及其支持的平台](../../standard/net-standard.md)。
 
 ## <a name="next-steps"></a>后续步骤
 

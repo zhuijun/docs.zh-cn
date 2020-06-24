@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: a4e6f8e43c2ec8c867af9f78bd83b435b78c73d5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9335399be2d4909a02fecbf2959c6f5608664732
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446758"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84493664"
 ---
 # <a name="switch-c-reference"></a>switch（C# 参考）
 
@@ -86,7 +86,7 @@ switch (caseSwitch)
 
 每个 case 标签指定一个模式与匹配表达式（前面示例中的 `caseSwitch` 变量）进行比较。 如果它们匹配，则将控件传输到包含**首次**匹配 case 标签的开关部分。 如果 case 标签模式与匹配表达式不匹配，控制权会转让给带 `default` case 标签的部分（若有）。 如果没有 `default` case，将不会执行任何 switch 部分中的语句，并且会将控制权转让到 `switch` 语句之外。
 
-有关 `switch` 语句和模式匹配的信息，请参阅使用 `switch` 语句的 [模式匹配](#pattern)部分。
+有关 `switch` 语句和模式匹配的信息，请参阅使用 `switch` 语句的 [模式匹配](#pattern-matching with-the-switch-statement)部分。
 
 因为 C# 6 仅支持常量模式且禁止重复常量值，所以 case 标签定义了互斥值，而且只能有一个模式与匹配表达式匹配。 因此，`case` 语句显示的顺序并不重要。
 
@@ -100,7 +100,7 @@ switch (caseSwitch)
 
 - 更改开关部分的顺序。
 
-- 在 `case` 标签中使用 [when clause](#when) 子句。
+- 在 `case` 标签中使用 [when clause](#the-case-statement-and-the-when-clause) 子句。
 
 ## <a name="the-default-case"></a>`default` case
 
@@ -108,7 +108,7 @@ switch (caseSwitch)
 
 `default` case 可以在 `switch` 语句中以任何顺序显示。 无论它在源代码中的顺序如何，始终都将在计算所有 `case` 标签后，最后计算它。
 
-## <a name="pattern-matching-with-the-switch-statement"></a>使用 `switch` 语句的 <a name="pattern"></a> 模式匹配
+## <a name="pattern-matching-with-the-switch-statement"></a>使用 `switch` 语句的模式匹配
 
 每个 `case` 语句定义一个模式，如果它与匹配表达式相匹配，则会导致执行其包含的开关部分。 所有版本的 C# 都支持常量模式。 其余模式从 C# 7.0 开始支持。
 
@@ -185,7 +185,7 @@ case null:
 
 [!code-csharp[type-pattern2#1](~/samples/snippets/csharp/language-reference/keywords/switch/type-pattern2.cs#1)]
 
-## <a name="the-case-statement-and-the-when-clause"></a><a name="when" />`case` 语句和 `when` 子句
+## <a name="the-case-statement-and-the-when-clause"></a>`case` 语句和 `when` 子句
 
 从 C# 7.0 开始，因为 case 语句不需要互相排斥，因此可以添加 `when` 子句来指定必须满足的附加条件使 case 语句计算为 true。 `when` 子句可以是返回布尔值的任何表达式。
 

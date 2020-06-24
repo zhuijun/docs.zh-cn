@@ -25,6 +25,10 @@
       href: tutorials/ml-sentiment-analysis.md
 - name: 操作指南
   items:
+    - name: 广播指南
+      href: how-to-guides/broadcast-guide.md
+    - name: UDF 指南
+      href: how-to-guides/udf-guide.md
     - name: 调试应用程序
       href: how-to-guides/debug.md
     - name: 将作业提交到 HDInsight

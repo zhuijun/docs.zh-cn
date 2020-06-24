@@ -3,12 +3,12 @@ title: 如何修改字符串内容 - C# 指南
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 8e9bbe76c689d3c3f9f238ca9dd95cc7fcf98b18
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: a32665b67cfa73aa7d4753a1427c6955827e1b86
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389513"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663000"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>如何修改以 C\# 编写的字符串内容
 
@@ -22,13 +22,13 @@ ms.locfileid: "81389513"
 
 下面的代码通过将现有文本替换为替代文本来创建新的字符串。
 
-[!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#1)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs" id="Snippet1":::
 
-上述代码演示了字符串的不可变  属性。 在上述示例中可以看到，原始字符串 `source` 并未被修改。 <xref:System.String.Replace%2A?displayProperty=nameWithType> 方法创建的是包含修改的新 `string`。
+上述代码演示了字符串的不可变属性。 在上述示例中可以看到，原始字符串 `source` 并未被修改。 <xref:System.String.Replace%2A?displayProperty=nameWithType> 方法创建的是包含修改的新 `string`。
 
 <xref:System.String.Replace%2A> 可替换字符串或单个字符。 在这两种情况下，搜索文本的每个匹配项均被替换。  下面的示例将所有的“ ”替换为“\_”：
 
-[!code-csharp-interactive[replace characters](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#2)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs" id="Snippet2":::
 
 源字符串并未发生更改，而是通过替换操作返回了一个新的字符串。
 
@@ -36,21 +36,21 @@ ms.locfileid: "81389513"
 
 可使用 <xref:System.String.Trim%2A?displayProperty=nameWithType>、<xref:System.String.TrimStart%2A?displayProperty=nameWithType> 和 <xref:System.String.TrimEnd%2A?displayProperty=nameWithType> 方法删除任何前导空格或尾随空格。  下面的代码就是删除两种空格的示例。 源字符串不会发生变化；这些方法返回带修改内容的新字符串。
 
-[!code-csharp-interactive[trim white space](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#3)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs" id="Snippet3":::
 
 ## <a name="remove-text"></a>删除文本
 
 可使用 <xref:System.String.Remove%2A?displayProperty=nameWithType> 方法删除字符串中的文本。 此方法移删除特定索引处开始的某些字符。 下面的示例演示如何使用 <xref:System.String.IndexOf%2A?displayProperty=nameWithType>（后接 <xref:System.String.Remove%2A>）方法，删除字符串中的文本：
 
-[!code-csharp-interactive[remove text](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#4)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs" id="Snippet4":::
 
 ## <a name="replace-matching-patterns"></a>替换匹配模式
 
-可使用[正则表达式](../../standard/base-types/regular-expressions.md)将匹配模式的文本替换为新文本，新文本可能由模式定义。 下面的示例使用 <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> 类从源字符串中查找模式并将其替换为正确的大写。 <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType> 方法使用将替换逻辑提供为其参数之一的函数。 在本示例中，该函数 `LocalReplaceMatchCase` 是在示例方法中声明的本地函数  。 `LocalReplaceMatchCase` 使用 <xref:System.Text.StringBuilder?displayProperty=nameWithType>类，以生成具有正确大写的替换字符串。
+可使用[正则表达式](../../standard/base-types/regular-expressions.md)将匹配模式的文本替换为新文本，新文本可能由模式定义。 下面的示例使用 <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> 类从源字符串中查找模式并将其替换为正确的大写。 <xref:System.Text.RegularExpressions.Regex.Replace(System.String,System.String,System.Text.RegularExpressions.MatchEvaluator,System.Text.RegularExpressions.RegexOptions)?displayProperty=nameWithType> 方法使用将替换逻辑提供为其参数之一的函数。 在本示例中，该函数 `LocalReplaceMatchCase` 是在示例方法中声明的本地函数。 `LocalReplaceMatchCase` 使用 <xref:System.Text.StringBuilder?displayProperty=nameWithType>类，以生成具有正确大写的替换字符串。
 
 正则表达式最适合用于搜索和替换遵循模式的文本，而不是已知的文本。 有关详细信息，请参阅[如何搜索字符串](search-strings.md)。 搜索模式“the\s”搜索“the”后接空格字符的单词。 该部分的模式可确保它不与源字符串中的“there”相匹配。 有关正则表达式语言元素的更多信息，请参阅[正则表达式语言 - 快速参考](../../standard/base-types/regular-expression-language-quick-reference.md)。
 
-[!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#5)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs" id="Snippet5":::
 
 <xref:System.Text.StringBuilder.ToString%2A?displayProperty=nameWithType> 方法返回一个不可变的字符串，其中包含 <xref:System.Text.StringBuilder> 对象中的内容。
 
@@ -60,17 +60,15 @@ ms.locfileid: "81389513"
 
 下面的示例演示如何替换字符串中的一组字符。 首先，它使用 <xref:System.String.ToCharArray?displayProperty=nameWithType> 方法来创建字符数组。 它使用 <xref:System.String.IndexOf%2A> 方法来查找单词“fox”的起始索引。 接下来的三个字符将替换为其他单词。 最终，从更新的字符串数组中构造了新的字符串。
 
-[!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#6)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs" id="Snippet6":::
 
 ## <a name="programmatically-build-up-string-content"></a>以编程方式生成字符串内容
 
 由于字符串是不可变的，因此前面的示例都创建了临时字符串或字符数组。 在高性能方案中，可能需要避免这些堆分配。 .NET Core 提供了一种 <xref:System.String.Create%2A?displayProperty=nameWithType> 方法，该方法使你可以通过回调以编程方式填充字符串的字符内容，同时避免中间的临时字符串分配。
 
-[!code-csharp[using string.Create to programmatically build the string content for a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#7)]
+:::code language="csharp" source="../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs" id="Snippet7":::
 
-可以使用不安全的代码修改固定块中的字符串，但是强烈  建议不要在创建字符串后修改字符串内容。 这样做将以不可预知的方式中断操作。 例如，如果某人暂存一个与你的内容相同的字符串，他们将获得你的副本，并且根本不希望你修改他们的字符串。
-
-可通过查看 [GitHub 存储库](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings)中的代码来尝试这些示例。 也可以下载这些示例的 [zip 文件](../../../samples/snippets/csharp/how-to/strings.zip)。
+可以使用不安全的代码修改固定块中的字符串，但是强烈建议不要在创建字符串后修改字符串内容。 这样做将以不可预知的方式中断操作。 例如，如果某人暂存一个与你的内容相同的字符串，他们将获得你的副本，并且根本不希望你修改他们的字符串。
 
 ## <a name="see-also"></a>请参阅
 

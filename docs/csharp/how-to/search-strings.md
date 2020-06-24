@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: f3e6d95eb4a01d48fac5b5e2c951b9c346206004
-ms.sourcegitcommit: 43cbde34970f5f38f30c43cd63b9c7e2e83717ae
+ms.openlocfilehash: f5fd61452d6f83bd035b5c6930bd09673c0ded23
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/11/2020
-ms.locfileid: "81121494"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662948"
 ---
 # <a name="how-to-search-strings"></a>如何搜索字符串
 
@@ -25,32 +25,32 @@ ms.locfileid: "81121494"
 
 <xref:System.String.Contains%2A?displayProperty=nameWithType>、<xref:System.String.StartsWith%2A?displayProperty=nameWithType> 和 <xref:System.String.EndsWith%2A?displayProperty=nameWithType> 方法搜索字符串中的特定文本。 下面的示例显示了每一个方法以及使用不区分大小写的搜索的差异：
 
-[!code-csharp-interactive[search strings using methods](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#1)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs" id="Snippet1":::
 
 前面的示例演示了使用这些方法的重点。 默认情况下搜索是区分大小写的。 使用 <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType> 枚举值指定区分大小写的搜索。
 
 ## <a name="where-does-the-sought-text-occur-in-a-string"></a>寻找的文本出现在字符串的什么位置？
 
 <xref:System.String.IndexOf%2A> 和 <xref:System.String.LastIndexOf%2A> 方法也搜索字符串中的文本。 这些方法返回查找到的文本的位置。 如果未找到文本，则返回 `-1`。 下面的示例显示“methods”第一次出现和最后一次出现的搜索结果，并显示了它们之间的文本。
-  
-[!code-csharp-interactive[search strings for indices](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#2)]
+
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs" id="Snippet2":::
 
 ## <a name="finding-specific-text-using-regular-expressions"></a>使用正则表达式查找特定文本
 
 <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> 类可用于搜索字符串。 这些搜索的范围可以从简单的内容到复杂的文本模式。
 
-下面的代码示例在一个句子中搜索了“the”或“their”（忽略大小写）。 静态方法 <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> 执行此次搜索。 你向它提供要搜索的字符串以及搜索模式。 在这种情况下，第三个参数指定不区分大小写的搜索。 有关详细信息，请参阅 <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>。  
+下面的代码示例在一个句子中搜索了“the”或“their”（忽略大小写）。 静态方法 <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> 执行此次搜索。 你向它提供要搜索的字符串以及搜索模式。 在这种情况下，第三个参数指定不区分大小写的搜索。 有关详细信息，请参阅 <xref:System.Text.RegularExpressions.RegexOptions?displayProperty=nameWithType>。
 
 搜索模式描述你所搜索的文本。 下表描述搜索模式的每个元素。 （下表使用单个 `\`，它在 C# 字符串中必须转义为 `\\`）。
 
-| pattern  | 含义     |
-| -------- |-------------|
-| the      | 匹配文本“the” |
-| (eir)?   | 匹配 0 个或 1 个“eir” |
-| \s       | 与空白符匹配    |
-  
-[!code-csharp-interactive[Search using regular expressions](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#3)]
-  
+| 模式  | 含义                          |
+|----------|----------------------------------|
+| `the`    | 匹配文本“the”             |
+| `(eir)?` | 匹配 0 个或 1 个“eir” |
+| `\s`     | 与空白符匹配    |
+
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs" id="Snippet3":::
+
 > [!TIP]
 > 搜索精确的字符串时，`string` 方法通常是更好的选择。 搜索源字符串中的一些模式时，正则表达式更适用。
 
@@ -58,21 +58,19 @@ ms.locfileid: "81121494"
 
 以下代码使用正则表达式验证数组中每个字符串的格式。 验证要求每个字符串具备电话号码的形式：用短划线分隔成三组数字，前两组包含 3 个数字，而第三组包含 4 个数字。 搜索模式采用正则表达式 `^\\d{3}-\\d{3}-\\d{4}$`。 有关更多信息，请参见[正则表达式语言 - 快速参考](../../standard/base-types/regular-expression-language-quick-reference.md)。
 
-| pattern  | 含义                             |
-| -------- |-------------------------------------|
-| ^        | 匹配字符串的开头部分 |
-| \d{3}    | 完全匹配 3 位字符  |
-| -        | 匹配字符“-”           |
-| \d{3}    | 完全匹配 3 位字符  |
-| -        | 匹配字符“-”           |
-| \d{4}    | 完全匹配 4 位字符  |
-| $        | 匹配字符串的结尾部分       |
+| 模式 | 含义                             |
+|---------|-------------------------------------|
+| `^`     | 匹配字符串的开头部分 |
+| `\d{3}` | 完全匹配 3 位字符  |
+| `-`     | 匹配字符“-”           |
+| `\d{3}` | 完全匹配 3 位字符  |
+| `-`     | 匹配字符“-”           |
+| `\d{4}` | 完全匹配 4 位字符  |
+| `$`     | 匹配字符串的结尾部分       |
 
-[!code-csharp-interactive[csProgGuideStrings#4](../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs#4)]
+:::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/SearchStrings.cs" id="Snippet4":::
 
 此单个搜索模式匹配很多有效字符串。 正则表达式更适用于搜索或验证模式，而不是单个文本字符串。
-
-可通过查看 [GitHub 存储库](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/how-to/strings)中的代码来尝试这些示例。 也可以下载这些示例的 [zip 文件](../../../samples/snippets/csharp/how-to/strings.zip)。
 
 ## <a name="see-also"></a>请参阅
 

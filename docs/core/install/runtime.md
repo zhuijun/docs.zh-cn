@@ -3,15 +3,15 @@ title: 在 Windows、Linux 和 macOS 上安装 .NET Core 运行时 - .NET Core
 description: 了解如何在 Windows、Linux 和 macOS 上安装 .NET Core。 发现运行 .NET Core 应用所需的依赖项。
 author: thraka
 ms.author: adegeo
-ms.date: 12/04/2019
+ms.date: 05/04/2020
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: ca55b8fab4aa9ca9f7e308cce57181e2c7e89f4b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c079e1856cdd370a278efc6fdfb4953059b6f2ba
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79397961"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84596288"
 ---
 # <a name="install-the-net-core-runtime"></a>安装 .NET Core 运行时
 
@@ -53,36 +53,9 @@ export PATH=$PATH:$HOME/dotnet
 
 ::: zone pivot="os-linux"
 
-## <a name="install-with-a-package-manager"></a>使用包管理器安装
+## <a name="install-on-linux"></a>在 Linux 上安装
 
-可使用许多常见的 Linux 包管理器安装 .NET Core 运行时。 有关详细信息，请参阅 [Linux 包管理器 - 安装 .NET Core](linux-package-managers.md)。
-
-仅在 x64 体系结构上支持使用包管理器安装。 如果要使用其他体系结构（如 ARM）安装 .NET Core 运行时，请遵循[下载并手动安装](#download-and-manually-install)部分中的说明。 有关支持的体系结构的详细信息，请参阅 [.NET Core 依赖项和要求](dependencies.md)。
-
-## <a name="download-and-manually-install"></a>下载并手动安装
-
-若要提取运行时并使 .NET Core CLI 命令可用于终端，请先[下载](#all-net-core-downloads) .NET Core 二进制版本。 然后，打开终端并运行以下命令。
-
-```bash
-mkdir -p $HOME/dotnet && tar zxf aspnetcore-runtime-3.1.0-linux-x64.tar.gz -C $HOME/dotnet
-export DOTNET_ROOT=$HOME/dotnet
-export PATH=$PATH:$HOME/dotnet
-```
-
-> [!TIP]
-> 前面的 `export` 命令只会使 .NET Core CLI 命令对运行它的终端会话可用。
->
-> 你可以编辑 shell 配置文件，永久地添加这些命令。 Linux 提供了许多不同的 shell，每个都有不同的配置文件。 例如：
->
-> - **Bash Shell**：~/.bash_profile  、~/.bashrc 
-> - **Korn Shell**：~/.kshrc  或 .profile 
-> - **Z Shell**：~/.zshrc  或 .zprofile 
->
-> 为 shell 编辑相应的源文件，并将 `:$HOME/dotnet` 添加到现有 `PATH` 语句的末尾。 如果不包含 `PATH` 语句，则使用 `export PATH=$PATH:$HOME/dotnet` 添加新行。
->
-> 另外，将 `export DOTNET_ROOT=$HOME/dotnet` 添加至文件的末尾。
-
-使用此方法可以将不同的版本安装到不同的位置，并明确选择应用程序要使用的对应版本。
+本文将很快删除。 目前，它已被替换为[在 Linux 上安装 .NET Core](linux.md)。
 
 ::: zone-end
 
@@ -105,7 +78,7 @@ dotnet-install.ps1 -Channel 3.1 -Runtime aspnetcore
 
 若要提取运行时并使 .NET Core CLI 命令可用于终端，请先[下载](#all-net-core-downloads) .NET Core 二进制版本。 然后，创建要安装到的目录，例如 `%USERPROFILE%\dotnet`。 最后，将下载的 zip 文件提取到该目录中。
 
-默认情况下，.NET Core CLI 命令和应用不会使用通过这种方式安装的 .NET Core。 必须明确选择使用它。 为此，请更改用于启动应用程序的环境变量：
+默认情况下，.NET Core CLI 命令和应用不会使用通过这种方式安装的 .NET Core，且你必须显式选择以使用它。 为此，请更改用于启动应用程序的环境变量：
 
 ```console
 set DOTNET_ROOT=%USERPROFILE%\dotnet

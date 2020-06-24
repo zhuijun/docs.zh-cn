@@ -1,15 +1,15 @@
 ---
-title: 使用 Visual Studio Code 发布 .NET Core Hello World 应用程序
+title: 使用 Visual Studio Code 发布 .NET Core 控制台应用程序
 description: 发布应用程序会创建运行 .NET Core 应用程序所需的一组文件。
-ms.date: 05/28/2020
-ms.openlocfilehash: b49b12bf41e3ea7be8dbc459eb7d9b1fbef25790
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.date: 06/08/2020
+ms.openlocfilehash: 442d08c9b016407327ba30db0aae78b5cf6b6fe3
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84246654"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701445"
 ---
-# <a name="tutorial-publish-a-net-core-console-application-with-visual-studio-code"></a>教程：使用 Visual Studio Code 发布 .NET Core 控制台应用程序
+# <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>教程：使用 Visual Studio Code 发布 .NET Core 控制台应用程序
 
 本教程演示如何发布控制台应用，以便其他用户可以运行它。 发布应用程序会创建运行应用程序所需的一组文件。 若要部署文件，请将文件复制到目标计算机。
 
@@ -21,7 +21,7 @@ ms.locfileid: "84246654"
 
 ## <a name="publish-the-app"></a>发布应用
 
-1. 打开 Visual Studio Code。
+1. 启动 Visual Studio Code。
 
 1. 打开在[在 Visual Studio Code 中创建 .NET Core 控制台应用程序](with-visual-studio-code.md)中创建的 HelloWorld 项目文件夹。
 
@@ -85,7 +85,7 @@ ms.locfileid: "84246654"
 
 ## <a name="run-the-published-app"></a>运行已发布的应用
 
-1. 在“资源管理器”中，右键单击“发布”文件夹（或 <kbd>Ctrl</kbd>+ 单击 macOS），然后选择“在终端中打开”。
+1. 在“资源管理器”中，右键单击“发布”文件夹（在 macOS 上按住 <kbd>Ctrl</kbd> 单击），然后选择“在终端中打开”。
 
    :::image type="content" source="media/publishing-with-visual-studio-code/open-in-terminal.png" alt-text="显示“在终端中打开”的上下文菜单":::
 
@@ -109,10 +109,7 @@ ms.locfileid: "84246654"
 
 ## <a name="next-steps"></a>后续步骤
 
-在本教程中，你发布了一个控制台应用。 若要了解如何生成库，请参阅[使用 .NET Core CLI 开发库](libraries.md)。
-
-<!--In the next tutorial, you create a class library.
+在本教程中，你发布了一个控制台应用。 在下一教程中，你将创建类库。
 
 > [!div class="nextstepaction"]
-> [Create a .NET Standard library in Visual Studio](library-with-visual-studio.md)
--->
+> [在 Visual Studio for Mac 中创建 .NET Standard 库](library-with-visual-studio-mac.md)

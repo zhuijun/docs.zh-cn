@@ -3,12 +3,12 @@ title: 卸载工具
 description: .NET Core 卸载工具概述，它是一种可实现 .NET Core SDK 和运行时的受控清理的引导式工具。
 author: sfoslund
 ms.date: 05/27/2020
-ms.openlocfilehash: 4e70fd3438b582bd5a0d6a52d7e58ed5e07f8811
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: dcfa12a3ec5fe0e8a29c5897ee4c71bfc7352eda
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446901"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590794"
 ---
 # <a name="net-core-uninstall-tool"></a>.NET Core 卸载工具
 
@@ -27,7 +27,7 @@ ms.locfileid: "84446901"
 
 ## <a name="install-the-tool"></a>安装工具
 
-可以从[此处](https://aka.ms/dotnet-core-uninstall-tool)下载 .NET Core 卸载工具，然后在 [dotnet/cli-lab](https://github.com/dotnet/cli-lab) GitHub 存储库中找到资源代码。
+可以从[工具的发布页面](https://aka.ms/dotnet-core-uninstall-tool)下载 .NET Core 卸载工具，然后在 [dotnet/cli-lab](https://github.com/dotnet/cli-lab) GitHub 存储库中找到源代码。
 
 > [!NOTE]
 > 此工具需要提升才能卸载 .NET Core SDK 和运行时。 因此，应将其安装在写入保护的目录中，如 Windows 上的 C:\Program Files 或 macOS 上的 /usr/local/bin。 另请参阅[提升的 Dotnet 命令访问权限](../tools/elevated-access.md)。 有关详细信息，请参阅[详细安装说明](https://aka.ms/dotnet-core-uninstall-tool)。

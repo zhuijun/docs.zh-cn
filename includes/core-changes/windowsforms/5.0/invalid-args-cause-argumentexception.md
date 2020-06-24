@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f1fc70075ef09a4f036c69788342c07ee51d72ce
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: aab7d8538c875e35c832acc2a6c64beb84d4fb47
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702471"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84702426"
 ---
 ### <a name="winforms-methods-now-throw-argumentexception"></a>WinForms 方法现在会引发 ArgumentException
 
@@ -19,12 +19,13 @@ ms.locfileid: "83702471"
 下表列出了受影响的方法和参数：
 
 | 方法 | 参数名称 | 条件 | 新增的版本 |
-|-|-|-|
+|-|-|-|-|
 | <xref:System.Windows.Forms.TabControl.GetToolTipText(System.Object)?displayProperty=fullName> | `item` | 参数不属于 <xref:System.Windows.Forms.TabPage> 类型。 | 5.0 预览版 1 |
+| <xref:System.Windows.Forms.DataFormats.GetFormat(System.String)?displayProperty=fullName> | `format` | 参数为 `null`、<xref:System.String.Empty?displayProperty=nameWithType> 或空格。 | 5.0 预览版 5 |
 
 #### <a name="version-introduced"></a>引入的版本
 
-.NET 5.0 预览版 1
+.NET 5.0
 
 #### <a name="recommended-action"></a>建议操作
 
@@ -38,11 +39,13 @@ Windows 窗体
 #### <a name="affected-apis"></a>受影响的 API
 
 - <xref:System.Windows.Forms.TabControl.GetToolTipText(System.Object)?displayProperty=fullName>
+- <xref:System.Windows.Forms.DataFormats.GetFormat(System.String)?displayProperty=fullName>
 
 <!-- 
 
 #### Affected APIs
 
 - `M:System.Windows.Forms.TabControl.GetToolTipText(System.Object)`
+- `M:System.Windows.Forms.DataFormats.GetFormat(System.String)`
 
 -->

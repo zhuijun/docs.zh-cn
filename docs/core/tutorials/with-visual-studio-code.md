@@ -1,17 +1,17 @@
 ---
-title: 使用 Visual Studio Code 通过 .NET Core 创建控制台应用程序
+title: 使用 Visual Studio Code 创建 .NET Core 控制台应用程序
 description: 了解如何使用 Visual Studio Code 和 .NET Core CLI 创建 .NET Core 控制台应用程序。
 ms.date: 05/22/2020
-ms.openlocfilehash: 673c4a639a2cab26261b7cdafd5d8e20acfafb94
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 6d8f9adb2f77dbfd2d1cf54c80f1cdea582b1d96
+ms.sourcegitcommit: f6350c2c542e6edd52d7e9d6667b96d85d810e67
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201706"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84717505"
 ---
-# <a name="tutorial-create-a-console-application-with-net-core-using-visual-studio-code"></a>教程：使用 Visual Studio Code 通过 .NET Core 创建控制台应用程序
+# <a name="tutorial-create-a-net-core-console-application-using-visual-studio-code"></a>教程：使用 Visual Studio Code 创建 .NET Core 控制台应用程序
 
-本教程演示如何使用 Visual Studio Code 和 .NET Core CLI 创建并运行 .NET Core 控制台应用程序。 项目任务（如创建、编译和运行项目）是使用 CLI 完成的，因此，如果你愿意，可以使用其他代码编辑器来学习本教程并在终端中运行命令。
+本教程演示如何使用 Visual Studio Code 和 .NET Core CLI 创建并运行 .NET Core 控制台应用程序。 项目任务（例如创建、编译和运行项目）通过使用 .NET Core CLI 来完成。 你可以遵循本教程中的步骤使用其他代码编辑器，然后在终端中运行命令（如果你愿意）。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -20,25 +20,29 @@ ms.locfileid: "84201706"
 
 ## <a name="create-the-app"></a>创建应用
 
-1. 打开 Visual Studio Code。
+创建一个名为“HelloWorld”的 .NET Core 控制台应用项目。
 
-1. 创建项目。
+1. 启动 Visual Studio Code。
 
-   1. 在主菜单中选择“文件” > “打开文件夹”/“打开…”，创建“HelloWorld”文件夹，然后单击“选择文件夹”/“打开”   。
+1. 从主菜单中选择“文件” > “打开文件夹”（在 macOS 上为“文件” > “打开...”）。
 
-      默认情况下，文件夹名称将是项目名称和命名空间名称。 稍后将在本教程中添加代码，假定项目命名空间为 `HelloWorld`。
+1. 在“打开文件夹”对话框中，创建“HelloWorld”文件夹，然后单击“选择文件夹”（在 macOS 上为“打开”）。
 
-   1. 在主菜单中选择“视图” > “终端”，从 Visual Studio Code 中打开“终端”  。
+   默认情况下，文件夹名称将是项目名称和命名空间名称。 稍后将在本教程中添加代码，假定项目命名空间为 `HelloWorld`。
 
-      “终端”在“HelloWorld”文件夹中连同命令提示符一起打开。
+1. 在主菜单中选择“视图” > “终端”，从 Visual Studio Code 中打开“终端”  。
 
-   1. 在“终端”中输入以下命令：
+   “终端”在“HelloWorld”文件夹中连同命令提示符一起打开。
 
-      ```dotnetcli
-      dotnet new console
-      ```
+1. 在“终端”中输入以下命令：
 
-.NET Core 控制台应用程序模板将定义类 `Program`，其中包含一个需要将 <xref:System.String> 数组用作参数的方法 `Main`。 Program.cs 文件具有以下代码：
+   ```dotnetcli
+   dotnet new console
+   ```
+
+用于创建简单的“Hello World”应用程序的模板。 它会调用 <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> 方法来显示“Hello World!” 显示文本字符串“Hello World!”。
+
+模板代码将定义类 `Program`，其中包含一个需要将 <xref:System.String> 数组用作参数的方法 `Main`：
 
 ```csharp
 using System;
@@ -56,8 +60,6 @@ namespace HelloWorld
 ```
 
 `Main` 是应用程序入口点，同时也是在应用程序启动时由运行时自动调用的方法。 *args* 数组中包含在应用程序启动时提供的所有命令行自变量。
-
-该模板创建一个简单的应用程序，以调用 <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> 方法来显示“Hello World!” 显示文本字符串“Hello World!”。
 
 ## <a name="run-the-app"></a>运行应用
 
@@ -87,9 +89,9 @@ dotnet run
 
 1. 将 Program.cs 中 `Main` 方法的内容（当前只是调用 `Console.WriteLine` 的行）替换为以下代码：
 
-   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="Snippet1":::
+   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="1":::
 
-   此代码在控制台中显示“What is your name?”， 然后等待用户输入字符串并按 Enter。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量。 最后，它会在控制台窗口中显示这些值。
+   此代码在控制台中显示“What is your name?”， 然后等待用户输入字符串并按 Enter<kbd></kbd>。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量。 最后，它会在控制台窗口中显示这些值。
 
    `\n` 表示一个换行符。
 
@@ -106,7 +108,7 @@ dotnet run
    dotnet run
    ```
 
-1. 出现提示时，输入名称并按 Enter 键。
+1. 出现提示时，输入名称并按 Enter<kbd></kbd> 键。
 
    :::image type="content" source="media/debugging-with-visual-studio-code/run-modified-program.png" alt-text="包含经过修改的程序输出的“终端”窗口":::
 
@@ -118,7 +120,7 @@ dotnet run
 
 ## <a name="next-steps"></a>后续步骤
 
-在本教程中，你创建了一个 .NET Core 应用程序。 在下一教程中，你将调试该应用。
+在本教程中，你创建了一个 .NET Core 控制台应用程序。 在下一教程中，你将调试该应用。
 
 > [!div class="nextstepaction"]
 > [使用 Visual Studio Code 调试 .NET Core 控制台应用程序](debugging-with-visual-studio-code.md)

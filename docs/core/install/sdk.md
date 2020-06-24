@@ -3,15 +3,15 @@ title: 在 Windows、Linux 和 macOS 上安装 .NET Core SDK - .NET Core
 description: 了解如何在 Windows、Linux 和 macOS 上安装 .NET Core。 发现开发 .NET Core 应用所需的依赖项。
 author: thraka
 ms.author: adegeo
-ms.date: 12/04/2019
+ms.date: 05/04/2020
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 13600ea01e18ad47e6295653ba3b79ce53ff3257
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9b170765740600641f96056adc08ff0b69a03338
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79397955"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768309"
 ---
 # <a name="install-the-net-core-sdk"></a>安装 .NET Core SDK
 
@@ -53,34 +53,9 @@ export PATH=$PATH:$HOME/dotnet
 
 ::: zone pivot="os-linux"
 
-## <a name="install-with-a-package-manager"></a>使用包管理器安装
+## <a name="install-on-linux"></a>在 Linux 上安装
 
-可使用许多常见的 Linux 包管理器安装 .NET Core SDK。 有关详细信息，请参阅 [Linux 包管理器 - 安装 .NET Core](linux-package-managers.md)。
-
-仅在 x64 体系结构上支持使用包管理器安装。 如果要使用其他体系结构（如 ARM）安装 .NET Core SDK，请遵循下面的[下载并手动安装](#download-and-manually-install)说明。 有关支持的体系结构的详细信息，请参阅 [.NET Core 依赖项和要求](dependencies.md)。
-
-## <a name="download-and-manually-install"></a>下载并手动安装
-
-若要提取 SDK 并使 .NET Core CLI 命令可用于终端，请先[下载](#all-net-core-downloads) .NET Core 二进制版本。 然后，打开终端并运行以下命令。
-
-```bash
-mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.100-linux-x64.tar.gz -C $HOME/dotnet
-export DOTNET_ROOT=$HOME/dotnet
-export PATH=$PATH:$HOME/dotnet
-```
-
-> [!TIP]
-> 前面的 `export` 命令只会使 .NET Core CLI 命令对运行它的终端会话可用。
->
-> 你可以编辑 shell 配置文件，永久地添加这些命令。 Linux 提供了许多不同的 shell，每个都有不同的配置文件。 例如：
->
-> - **Bash Shell**：~/.bash_profile  、~/.bashrc 
-> - **Korn Shell**：~/.kshrc  或 .profile 
-> - **Z Shell**：~/.zshrc  或 .zprofile 
->
-> 为 shell 编辑相应的源文件，并将 `:$HOME/dotnet` 添加到现有 `PATH` 语句的末尾。 如果不包含 `PATH` 语句，则使用 `export PATH=$PATH:$HOME/dotnet` 添加新行。
->
-> 另外，将 `export DOTNET_ROOT=$HOME/dotnet` 添加至文件的末尾。
+本文将很快删除。 目前，它已被替换为[在 Linux 上安装 .NET Core](linux.md)。
 
 ::: zone-end
 
@@ -100,8 +75,8 @@ export PATH=$PATH:$HOME/dotnet
 如果你已安装 Visual Studio，则可以使用以下步骤检查你的版本。
 
 01. 打开 Visual Studio。
-01. 选择“帮助”   > “Microsoft Visual Studio”  。
-01. 从“关于”  对话框中读取版本号。
+01. 选择“帮助” > “Microsoft Visual Studio”。
+01. 从“关于”对话框中读取版本号。
 
 Visual Studio 可安装最新的 .NET Core SDK 和运行时。
 
@@ -111,10 +86,10 @@ Visual Studio 可安装最新的 .NET Core SDK 和运行时。
 
 安装或修改 Visual Studio 时，根据要生成的应用程序的类型，选择以下一个或多个工作负载：
 
-- “其他工具集”部分中的“.NET Core 跨平台开发”工作负荷   。
-- “Web 和云”部分中的“ASP.NET 和 Web 开发”工作负荷   。
-- “Web 和云”部分中的“Azure 开发”工作负载   。
-- “桌面和移动”部分中的“NET 桌面开发”工作负载   。
+- “其他工具集”部分中的“.NET Core 跨平台开发”工作负荷 。
+- “Web 和云”部分中的“ASP.NET 和 Web 开发”工作负荷 。
+- “Web 和云”部分中的“Azure 开发”工作负载 。
+- “桌面和移动”部分中的“NET 桌面开发”工作负载 。
 
 [![具有 .NET Core 工作负载的 Windows Visual Studio 2019](media/install-sdk/windows-install-visual-studio-2019.png)](media/install-sdk/windows-install-visual-studio-2019.png#lightbox)
 
@@ -122,7 +97,7 @@ Visual Studio 可安装最新的 .NET Core SDK 和运行时。
 
 若要提取运行时并使 .NET Core CLI 命令可用于终端，请先[下载](#all-net-core-downloads) .NET Core 二进制版本。 然后，创建要安装到的目录，例如 `%USERPROFILE%\dotnet`。 最后，将下载的 zip 文件提取到该目录中。
 
-默认情况下，.NET Core CLI 命令和应用不会使用通过这种方式安装的 .NET Core。 必须明确选择使用它。 为此，请更改用于启动应用程序的环境变量：
+默认情况下，.NET Core CLI 命令和应用不会使用通过这种方式安装的 .NET Core，且你必须显式选择以使用它。 为此，请更改用于启动应用程序的环境变量：
 
 ```console
 set DOTNET_ROOT=%USERPROFILE%\dotnet
@@ -143,11 +118,13 @@ set DOTNET_MULTILEVEL_LOOKUP=0
 
 ## <a name="install-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 安装
 
-在选定“.NET Core”  工作负载时，使用 Visual Studio for Mac 安装 .NET Core SDK。 若要开始在 macOS 上进行 .NET Core 开发，请参阅[安装 Visual Studio 2019 for Mac](/visualstudio/mac/installation)。 对于最新的版本 .NET Core 3.1，则必须使用 Visual Studio for Mac 8.4 预览版。
+在选定“.NET Core”工作负载时，使用 Visual Studio for Mac 安装 .NET Core SDK。 若要开始在 macOS 上进行 .NET Core 开发，请参阅[安装 Visual Studio 2019 for Mac](/visualstudio/mac/installation)。 对于最新的版本 .NET Core 3.1，则必须使用 Visual Studio for Mac 8.4 预览版。
 
 [![具有 .NET Core 工作负载功能的 macOS Visual Studio 2019 for Mac](media/install-sdk/mac-install-selection.png)](media/install-sdk/mac-install-selection.png#lightbox)
 
 ::: zone-end
+
+::: zone pivot="os-windows,os-macos"
 
 ## <a name="install-alongside-visual-studio-code"></a>随 Visual Studio Code 一起安装
 
@@ -158,6 +135,8 @@ Visual Studio Code 是一个功能强大的轻量级源代码编辑器，可在�
 01. [下载并安装 Visual Studio Code](https://code.visualstudio.com/Download)。
 01. [下载并安装 .NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core)。
 01. [从 Visual Studio Code 市场安装 C# 扩展](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)。
+
+::: zone-end
 
 ::: zone pivot="os-windows"
 
@@ -173,7 +152,7 @@ dotnet-install.ps1 -Channel Current
 
 ::: zone-end
 
-::: zone pivot="os-linux,os-macos"
+::: zone pivot="os-macos"
 
 ## <a name="install-with-bash-automation"></a>使用 Bash 自动化安装
 

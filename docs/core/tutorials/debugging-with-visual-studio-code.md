@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 调试 .NET Core 控制台应用程序
 description: 了解如何使用 Visual Studio Code 调试 .NET Core 控制台应用。
 ms.date: 05/26/2020
-ms.openlocfilehash: 82b2798397d702aa2a50c04bf6e4d569b97e3666
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 40e9b114df1bd12fb05bfb773781d6009d087a06
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241508"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84702122"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>教程：使用 Visual Studio Code 调试 .NET Core 控制台应用程序
 
@@ -19,25 +19,25 @@ ms.locfileid: "84241508"
 
 ## <a name="use-debug-build-configuration"></a>使用“调试”生成配置
 
-“调试”和“发布”是 .NET Core 的两种生成配置 。 可使用“调试”生成配置进行调试，使用“发布”配置进行最终版本分发。
+“调试”和“发布”是 .NET Core 的内置生成配置 。 可使用“调试”生成配置进行调试，使用“发布”配置进行最终版本分发。
 
 在“调试”配置中，程序使用完整符号调试信息编译，且不进行优化。 优化会使调试复杂化，因为源代码和生成的指令之间的关系更加复杂。 程序的发布配置进行了完全优化，且不包含任何符号调试信息。
 
- 默认情况下，Visual Studio Code 使用“调试”生成配置，因此不需要在调试之前对其进行更改。
+默认情况下，Visual Studio Code 启动设置使用“调试”生成配置，因此不需要在调试之前对其进行更改。
+
+1. 启动 Visual Studio Code。
+
+1. 打开按照[在 Visual Studio Code 中创建 .NET Core 控制台应用程序](with-visual-studio-code.md)创建的项目的文件夹。
 
 ## <a name="set-a-breakpoint"></a>设置断点
 
 断点会在执行包含断点的代码行之前暂时中断执行应用程序。
 
-1. 打开 Visual Studio Code。
-
-1. 打开在[在 Visual Studio Code 中创建 .NET Core 控制台应用程序](with-visual-studio-code.md)中创建的 HelloWorld 项目文件夹。
-
 1. 打开 *Program.cs* 文件。
 
-1. 单击代码窗口的左边缘，在显示名称、日期和时间的行上设置断点。 左边缘在行号的左侧。 设置断点的另一种方法是：将光标放于代码行中，然后按 <kbd>F9</kbd>。
+1. 单击代码窗口的左边缘，在显示名称、日期和时间的行上设置断点。 左边缘在行号的左侧。 设置断点的其他方法是在选中代码行时按 <kbd>F9</kbd> 或从菜单中选择“运行” > “切换断点” 。
 
-   如下图所示，Visual Studio Code 通过在左边缘显示红点来指示设置了断点的行。
+   Visual Studio Code 通过在左边缘显示红点来指示设置了断点的行。
 
    :::image type="content" source="media/debugging-with-visual-studio-code/breakpoint-set.png" alt-text="断点集":::
 
@@ -69,7 +69,7 @@ ms.locfileid: "84241508"
 
    :::image type="content" source="media/debugging-with-visual-studio-code/select-debug-pane.png" alt-text="在 Visual Studio Code 中打开“调试”选项卡":::
 
-1. 选择窗格顶部 .NET Core Launch（控制台）旁边的绿色箭头开始调试。  启动调试的另一种方法是按 <kbd>F5</kbd>。
+1. 选择窗格顶部 .NET Core Launch（控制台）旁边的绿色箭头。 在调试模式下启动程序的另一种方法是从菜单中选择“运行” > “开始调试”。
 
    :::image type="content" source="media/debugging-with-visual-studio-code/start-debugging.png" alt-text="开始调试":::
 
@@ -83,7 +83,7 @@ ms.locfileid: "84241508"
 
    :::image type="content" source="media/debugging-with-visual-studio-code/breakpoint-hit.png" alt-text="命中断点，显示局部变量":::
 
-## <a name="change-variable-values"></a>更改变量值
+## <a name="use-the-debug-console"></a>使用“调试控制台”
 
 在“调试控制台”窗口中，可以与正在调试的应用程序进行交互。 可更改变量值，看看这样会对程序产生哪些影响。
 
@@ -113,7 +113,7 @@ ms.locfileid: "84241508"
 
 程序显示用户输入的字符串。 如果用户没有输入任何内容，情况又如何呢？ 可以使用名为“条件断点”的有用调试功能对此进行测试。
 
-1. 右键单击（在 macOS 上为 <kbd>Ctrl</kbd> + 单击）表示断点的红点。 在上下文菜单中，选择“编辑断点”，打开可输入条件表达式的对话框。
+1. 右键单击（在 macOS 上按住 <kbd>Ctrl</kbd> 并单击）表示断点的红点。 在上下文菜单中，选择“编辑断点”，打开可输入条件表达式的对话框。
 
    :::image type="content" source="media/debugging-with-visual-studio-code/breakpoint-context-menu.png" alt-text="断点上下文菜单":::
 
@@ -127,7 +127,7 @@ ms.locfileid: "84241508"
 
    每次命中断点时，调试器都会调用 `String.IsNullOrEmpty(name)` 方法，仅当该方法调用返回 `true` 时，它才会在此行上中断。
 
-   与条件表达式不同，你可以指定命中次数，这样程序就会在语句的执行次数达到指定值时中断执行；也可以指定筛选条件，这样就可以根据诸如线程标识符、进程名称或线程名称之类的属性来中断程序执行 。
+   可以指定命中次数（而不是条件表达式），这样程序就会在语句的执行次数达到指定值时中断执行。 另一种方法是指定筛选条件，这样就可以根据诸如线程标识符、进程名称或线程名称之类的特性来中断程序执行。
 
 1. 通过按 F5<kbd></kbd> 调试来启动程序。
 
@@ -149,7 +149,7 @@ ms.locfileid: "84241508"
 
 1. 选择“终端”选项卡，然后按任意键退出程序，停止调试。
 
-1. 单击代码窗口左边缘上的点，清除断点。 清除断点的另一种方法是在选中代码行时按 <kbd>F9</kbd>。
+1. 单击代码窗口左边缘上的点，清除断点。 清除断点的其他方法是在选中代码行时按 <kbd>F9</kbd> 或从菜单中选择“运行”>“切换断点”。
 
 1. 如果收到断点条件将丢失的警告，请选择“删除断点”。
 
@@ -165,17 +165,17 @@ ms.locfileid: "84241508"
 
    此时，“变量”窗口显示 `args` 数组为空，`name` 和 `date` 具有默认值。
 
-1. 选择“单步执行”或按 <kbd>F11</kbd>。
+1. 选择“运行” > “单步执行”或按 <kbd>F11</kbd>。
 
    :::image type="content" source="media/debugging-with-visual-studio-code/step-into.png" alt-text="“单步执行”按钮":::
 
    Visual Studio Code 突出显示下一行。
 
-1. 选择“单步执行”或按 <kbd>F11</kbd>。
+1. 选择“运行” > “单步执行”或按 <kbd>F11</kbd>。
 
    Visual Studio Code 执行名称提示的 `Console.WriteLine` 并突出显示下一执行行。 下一行是 `name` 的 `Console.ReadLine`。 “变量”窗口保持不变，“终端”选项卡显示“What is your name? ” 提示。
 
-1. 选择“单步执行”或按 <kbd>F11</kbd>。
+1. 选择“运行” > “单步执行”或按 <kbd>F11</kbd>。
 
    Visual Studio 突出显示 `name` 变量赋值。 “变量”窗口显示 `name` 仍为 `null`。
 
@@ -183,19 +183,19 @@ ms.locfileid: "84241508"
 
    输入字符串时，“终端”选项卡可能无法显示输入的字符串，但 <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> 方法将捕获你的输入。
 
-1. 选择“单步执行”或按 <kbd>F11</kbd>。
+1. 选择“运行” > “单步执行”或按 <kbd>F11</kbd>。
 
    Visual Studio Code 突出显示 `date` 变量赋值。 “变量”窗口显示 <xref:System.Console.ReadLine%2A?displayProperty=nameWithType> 方法调用返回的值。 “终端”选项卡显示在提示符处输入的字符串。
 
-1. 选择“单步执行”或按 <kbd>F11</kbd>。
+1. 选择“运行” > “单步执行”或按 <kbd>F11</kbd>。
 
    “变量”窗口显示通过 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性赋值后的 `date` 变量值。
 
-1. 选择“单步执行”或按 <kbd>F11</kbd>。
+1. 选择“运行” > “单步执行”或按 <kbd>F11</kbd>。
 
    Visual Studio Code 调用 <xref:System.Console.WriteLine(System.String,System.Object,System.Object)?displayProperty=nameWithType> 方法。 控制台窗口会显示格式化的字符串。
 
-1. 选择“跳出”或按 <kbd>Shift</kbd>+<kbd>F11</kbd>。
+1. 选择“运行” > “跳出”或按 <kbd>Shift</kbd>+<kbd>F11</kbd>。
 
    :::image type="content" source="media/debugging-with-visual-studio-code/step-out.png" alt-text="“跳出”按钮":::
 
@@ -205,7 +205,7 @@ ms.locfileid: "84241508"
 
 1. 按任意键退出程序。
 
-## <a name="select-release-build-configuration"></a>选择“发布”生成配置
+## <a name="use-release-build-configuration"></a>使用“发布”生成配置
 
 测试应用程序的“调试”版本后，还应该编译并测试“发布”版本。 发布版本包含编译器优化，这些优化可能会影响应用程序的行为。 例如，旨在提升性能的编译器优化可能会在多线程应用程序中创建争用条件。
 

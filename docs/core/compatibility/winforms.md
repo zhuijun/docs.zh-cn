@@ -2,12 +2,12 @@
 title: Windows 窗体重大更改
 description: 列出适用于 .NET Core 的 Windows 窗体中的中断性变更。
 ms.date: 01/08/2020
-ms.openlocfilehash: 75d369c7fb999da81a50fe46716e125c3840eb7a
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: bd87e438ecf9930bfcd5377f9a3799d5f3693f49
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158432"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84702463"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Windows 窗体中的中断性变更
 
@@ -20,6 +20,7 @@ ms.locfileid: "82158432"
 | [已删除的状态栏控件](#removed-status-bar-controls) | 5.0 |
 | [WinForms 方法现在会引发 ArgumentException](#winforms-methods-now-throw-argumentexception) | 5.0 |
 | [WinForms 方法现在会引发 ArgumentNullException](#winforms-methods-now-throw-argumentnullexception) | 5.0 |
+| [WinForms 属性现在引发 ArgumentOutOfRangeException](#winforms-properties-now-throw-argumentoutofrangeexception) | 5.0 |
 | [已删除的控件](#removed-controls) | 3.1 |
 | [如果显示工具提示，则不引发 CellFormatting 事件](#cellformatting-event-not-raised-if-tooltip-is-shown) | 3.1 |
 | [Control.DefaultFont 已更改为 Segoe UI 9 pt](#default-control-font-changed-to-segoe-ui-9-pt) | 3.0 |
@@ -47,6 +48,10 @@ ms.locfileid: "82158432"
 ***
 
 [!INCLUDE [null-args-cause-argumentnullexception](../../../includes/core-changes/windowsforms/5.0/null-args-cause-argumentnullexception.md)]
+
+***
+
+[!INCLUDE [invalid-args-cause-argumentoutofrangeexception](../../../includes/core-changes/windowsforms/5.0/invalid-args-cause-argumentoutofrangeexception.md)]
 
 ***
 

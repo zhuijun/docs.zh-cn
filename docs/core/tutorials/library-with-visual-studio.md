@@ -1,26 +1,23 @@
 ---
 title: 在 Visual Studio 中创建 .NET Standard 类库
 description: 了解如何使用 Visual Studio 创建 .NET Standard 类库。
-ms.date: 05/21/2020
+ms.date: 06/08/2020
 dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 7d64ca32bdbe20f949ae575bc4c3f9bbb594fffd
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ef9c62b0378e1064d8cfd90a8c59aed74ea312b2
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283619"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701560"
 ---
-# <a name="tutorial-create-a-net-standard-library-in-visual-studio"></a>教程：在 Visual Studio 中创建 .NET Standard 库
-
-类库定义的是可以由应用程序调用的类型和方法。 借助面向 .NET Standard 2.0 的类库，任何支持相应 .NET Standard 版本的 .NET 实现都可以调用库。 完成类库时，可以决定是要将其作为第三方组件进行分布，还是要将其作为与一个或多个应用程序捆绑在一起的组件进行添加。
-
-> [!NOTE]
-> 有关 .NET Standard 版本及其支持的平台列表，请参阅 [.NET Standard](../../standard/net-standard.md)。
+# <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>教程：在 Visual Studio 中创建 .NET Standard 库
 
 在本教程中，将创建包含一个字符串处理方法的简单实用工具库。 我们把它作为[扩展方法](../../csharp/programming-guide/classes-and-structs/extension-methods.md)进行实现，这样就可以把它作为 <xref:System.String> 类成员进行调用。
+
+类库定义的是可以由应用程序调用的类型和方法。 借助面向 .NET Standard 2.0 的类库，任何支持相应 .NET Standard 版本的 .NET 实现都可以调用库。 完成类库后，可以将其作为第三方组件进行分发，也可以作为与一个或多个应用程序捆绑在一起的组件进行分发。
 
 ## <a name="prerequisites"></a>先决条件
 
@@ -28,13 +25,13 @@ ms.locfileid: "84283619"
 
   有关详细信息，请参阅[安装 .NET Core SDK](../install/sdk.md?pivots=os-windows) 一文中的[在 Visual Studio 中安装](../install/sdk.md?pivots=os-windows#install-with-visual-studio)部分。
 
-## <a name="create-a-visual-studio-solution"></a>创建 Visual Studio 解决方案
+## <a name="create-a-solution"></a>创建解决方案
 
 首先，创建一个空白解决方案来放置类库项目。 Visual Studio 解决方案用作一个或多个项目的容器。 将其他相关项目添加到同一个解决方案中。
 
 创建空白解决方案：
 
-1. 打开 Visual Studio。
+1. 启动 Visual Studio。
 
 2. 在“开始”窗口上，选择“创建新项目”。
 
@@ -75,7 +72,7 @@ ms.locfileid: "84283619"
 
 ## <a name="add-a-console-app-to-the-solution"></a>向解决方案添加控制台应用
 
-使用控制台应用程序中的类库，此应用程序将提示用户输入字符串，并报告字符串第一个字符是否大写。
+添加使用类库的控制台应用程序。 应用将提示用户输入字符串，并报告字符串是否以大写字符开头。
 
 1. 将名为“ShowCase”的新 .NET Core 控制台应用程序添加到解决方案。
 
@@ -87,18 +84,6 @@ ms.locfileid: "84283619"
 
    1. 在“配置新项目”页面，在“项目名称”框中输入“ShowCase”。 然后选择“创建”。
 
-1. 在“**解决方案资源管理器**”中，右键单击“**ShowCase**”项目，在上下文菜单中选择“**设为启动项目**”。
-
-   ![Visual Studio 中用于设置启动项目的项目上下文菜单](media/library-with-visual-studio/set-startup-project-context-menu.png)
-
-1. 最初，新的控制台应用项目无权访问类库。 若要允许该项目调用类库中的方法，可以创建对类库项目的项目引用。 在“解决方案资源管理器”中，右键单击 `ShowCase` 项目的“依赖项”节点，并选择“添加项目引用”  。
-
-   ![在 Visual Studio 中添加引用上下文菜单](media/library-with-visual-studio/add-reference-context-menu.png)
-
-1. 在“引用管理器”对话框中，选择“StringLibrary”项目，然后选择“确定”按钮  。
-
-   ![选择了“StringLibrary”的“引用管理器”对话框](media/library-with-visual-studio/manage-project-references.png)
-
 1. 在“Program.cs”或“Program.vb”文件的代码窗口中，将所有代码替换为以下代码 。
 
    :::code language="csharp" source="./snippets/library-with-visual-studio/csharp/ShowCase/Program.cs":::
@@ -106,15 +91,38 @@ ms.locfileid: "84283619"
 
    该代码使用 `row` 变量来维护写入到控制台窗口的数据行数计数。 如果大于或等于 25，该代码将清除控制台窗口，并向用户显示一条消息。
 
-   该程序会提示用户输入字符串。 它会指明字符串是否以大写字符开头。 如果用户没有输入字符串就按 Enter 键，那么应用程序会终止，控制台窗口会关闭。
+   该程序会提示用户输入字符串。 它会指明字符串是否以大写字符开头。 如果用户没有输入字符串就按 <kbd>Enter</kbd> 键，那么应用程序会终止，控制台窗口会关闭。
 
-1. 必要时，将工具栏更改为编译 `ShowCase` 项目的“调试”版本。 选择“ShowCase”按钮上的绿色箭头，编译并运行程序。
+## <a name="add-a-project-reference"></a>添加项目引用
+
+最初，新的控制台应用项目无权访问类库。 若要允许该项目调用类库中的方法，可以创建对类库项目的项目引用。
+
+1. 在“解决方案资源管理器”中，右键单击 `ShowCase` 项目的“依赖项”节点，并选择“添加项目引用”  。
+
+   ![在 Visual Studio 中添加引用上下文菜单](media/library-with-visual-studio/add-reference-context-menu.png)
+
+1. 在“引用管理器”对话框中，选择“StringLibrary”项目，然后选择“确定”按钮  。
+
+   ![选择了“StringLibrary”的“引用管理器”对话框](media/library-with-visual-studio/manage-project-references.png)
+
+## <a name="run-the-app"></a>运行应用
+
+1. 在“**解决方案资源管理器**”中，右键单击“**ShowCase**”项目，在上下文菜单中选择“**设为启动项目**”。
+
+   ![Visual Studio 中用于设置启动项目的项目上下文菜单](media/library-with-visual-studio/set-startup-project-context-menu.png)
+
+1. 按 <kbd>Shift</kbd>+<kbd>F5</kbd> 编译并运行程序，而不进行调试。
 
    ![Visual Studio 中显示“调试”按钮的项目工具栏](media/library-with-visual-studio/visual-studio-project-toolbar.png)
 
-1. 输入字符串并按 Enter 以试用程序，然后按 Enter 退出 。
+1. 输入字符串并按 Enter 以试用程序，然后按 Enter 退出<kbd></kbd><kbd></kbd>。
 
    :::image type="content" source="media/library-with-visual-studio/run-showcase.png" alt-text="运行展示的控制台窗口":::
+
+## <a name="additional-resources"></a>其他资源
+
+* [使用 .NET Core CLI 开发库](libraries.md)
+* [.NET Standard 版本及其支持的平台](../../standard/net-standard.md)。
 
 ## <a name="next-steps"></a>后续步骤
 

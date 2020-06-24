@@ -4,17 +4,17 @@ description: 了解在生成 Web 应用时，如何在传统 Web 应用和单页
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: d4ed76455001c1a0b8e2e2f1bb90ce8715dd0052
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0aef42b78114a11c70456cb3122d3dcb5143f983
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77450103"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662701"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>在传统 Web 应用和单页应用 (SPA) 之间选择
 
 > “Atwood 定律：任何能够用 JavaScript 编写的应用程序，最终必将用 JavaScript 编写。”  
-> _Jeff Atwood\-_
+> \- Jeff Atwood
 
 目前可通过两种通用方法来构建 Web 应用程序：在服务器上执行大部分应用程序逻辑的传统 Web 应用程序，以及在 Web 浏览器中执行大部分用户界面逻辑的单页应用程序 (SPA)，后者主要使用 Web API 与 Web 服务器通信。 也可以将两种方法混合使用，最简单的方法是在更大型的传统 Web 应用程序中托管一个或多个丰富 SPA 类子应用程序。
 
@@ -40,7 +40,9 @@ ms.locfileid: "77450103"
 
 ## <a name="blazor"></a>Blazor
 
-ASP.NET Core 3.0 引入了一种新模型，用于构建称为 Blazor 的丰富的、交互式和可组合的 UI。 Blazor 服务器端允许开发人员在服务器上使用 Razor 构建 UI，还使用 [WebAssembly](https://webassembly.org/) 将此代码传递到浏览器和执行客户端。 现在 ASP.NET Core 3.0 或更高版本中提供 Blazor 服务器端。 Blazor 客户端应该于 2020 年推出。
+ASP.NET Core 3.0 引入了一种新模型，用于构建称为 Blazor 的丰富的、交互式和可组合的 UI。 Blazor 服务器端允许开发人员在服务器上使用 C# 和 Razor 生成 UI，并使 UI 使用永久性 SignalR 连接以交互方式实时连接到浏览器。
+
+Blazor WebAssembly 为 Blazor 应用引入了另一个选项，使其能够使用 WebAssembly 在浏览器中运行。 由于它是在 WebAssembly 上运行的真实 .NET，因此你可以重复使用来自应用程序的服务器端部分的代码和库。
 
 Blazor 提供了一个全新的第三个选项，可用于评估是否生成纯服务器呈现的 Web 应用程序或 SPA。 可以使用 Blazor 生成类似于 SPA 的丰富客户端行为，而无需进行大量 JavaScript 开发。 Blazor 应用程序可以调用 API 来请求数据或执行服务器端操作。
 

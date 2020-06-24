@@ -3,14 +3,14 @@ title: .NET Core SDK 和运行时依赖项 - .NET Core
 description: 详细介绍在 Windows、Linux 和 macOS 上安装 .NET Core SDK 和运行时的操作系统和 CPU 体系结构先决条件。
 author: leecow
 ms.author: leecow
-ms.date: 04/30/2020
+ms.date: 06/01/2020
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 280aa1431686ff99257580bb024a84b1e57f85c0
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 81f6ab436428d71f71d9fd0f560bd2b0512a519b
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895485"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84590755"
 ---
 # <a name="net-core-dependencies-and-requirements"></a>.NET Core 依赖项和要求
 
@@ -41,7 +41,7 @@ ms.locfileid: "82895485"
 
 # <a name="net-core-30"></a>[.NET Core 3.0](#tab/netcore30)
 
-目前不支持 .NET Core 3.0。  有关详细信息，请参阅 [.NET Core 支持策略](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)。
+目前不支持 .NET Core 3.0。有关详细信息，请参阅 [.NET Core 支持策略](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)。
 
 .NET Core 3.0 支持下列 Windows 版本：
 
@@ -59,7 +59,7 @@ ms.locfileid: "82895485"
 
 # <a name="net-core-22"></a>[.NET Core 2.2](#tab/netcore22)
 
-目前不支持 .NET Core 2.2。  有关详细信息，请参阅 [.NET Core 支持策略](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)。
+目前不支持 .NET Core 2.2。有关详细信息，请参阅 [.NET Core 支持策略](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)。
 
 .NET Core 2.2 支持下列 Windows 版本：
 
@@ -112,15 +112,15 @@ ms.locfileid: "82895485"
 
 如果遇到一个以下错误，也需要满足上述要求：
 
-> 此程序无法启动，因为计算机上缺少 api-ms-win-crt-runtime-l1-1-0.dll  。 尝试重新安装该程序以解决此问题。
+> 此程序无法启动，因为计算机上缺少 api-ms-win-crt-runtime-l1-1-0.dll。 尝试重新安装该程序以解决此问题。
 >
 > \- 或 -
 >
-> 此程序无法启动，因为计算机上缺少 api-ms-win-cor-timezone-l1-1-0.dll  。 尝试重新安装该程序以解决此问题。
+> 此程序无法启动，因为计算机上缺少 api-ms-win-cor-timezone-l1-1-0.dll。 尝试重新安装该程序以解决此问题。
 >
 > \- 或 -
 >
-> 已找到库 hostfxr.dll  ，但未能将其从 C:\\\<path_to_app>\\hostfxr.dll 中加载  。
+> 已找到库 hostfxr.dll，但未能将其从 C:\\\<path_to_app>\\hostfxr.dll 中加载。
 
 ::: zone-end
 
@@ -157,7 +157,7 @@ ms.locfileid: "82895485"
 
 # <a name="net-core-30"></a>[.NET Core 3.0](#tab/netcore30)
 
-目前不支持 .NET Core 3.0。  有关详细信息，请参阅 [.NET Core 支持策略](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)。
+目前不支持 .NET Core 3.0。有关详细信息，请参阅 [.NET Core 支持策略](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)。
 
 .NET Core 3.0 将 Linux 视为一个操作系统。 对于支持的 Linux 发行版，每芯片体系结构都对应有一个 Linux 内部版本。
 
@@ -185,7 +185,7 @@ ms.locfileid: "82895485"
 
 # <a name="net-core-22"></a>[.NET Core 2.2](#tab/netcore22)
 
-目前不支持 .NET Core 2.2。  有关详细信息，请参阅 [.NET Core 支持策略](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)。
+目前不支持 .NET Core 2.2。有关详细信息，请参阅 [.NET Core 支持策略](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)。
 
 .NET Core 2.2 将 Linux 视为一个操作系统。 对于支持的 Linux 发行版，每芯片体系结构都对应有一个 Linux 内部版本。
 
@@ -257,7 +257,7 @@ Ubuntu 发行版需要安装以下库：
 - libicu57（针对 17.x）
 - libicu60（针对 18.x）
 
-对于使用 System.Drawing.Common  程序集的 .NET Core 应用，还需要以下依赖项：
+对于使用 System.Drawing.Common 程序集的 .NET Core 应用，还需要以下依赖项：
 
 - libgdiplus（版本 6.0.1 或更高版本）
 
@@ -275,7 +275,7 @@ CentOS 发行版本需要安装以下库：
 - libicu
 - zlib
 
-Fedora 用户：如果 OpenSSL 的版本为 1.1 及更高版本，则需要安装 compat-openssl10  。
+Fedora 用户：如果 OpenSSL 的版本为 1.1 及更高版本，则需要安装 compat-openssl10。
 
 对于 .NET Core 2.0，还需要以下依赖项：
 
@@ -284,7 +284,7 @@ Fedora 用户：如果 OpenSSL 的版本为 1.1 及更高版本，则需要安�
 
 有关依赖项的详细信息，请参阅[独立式 Linux 应用](https://github.com/dotnet/core/blob/master/Documentation/self-contained-linux-apps.md)。
 
-对于使用 System.Drawing.Common  程序集的 .NET Core 应用，还需要以下依赖项：
+对于使用 System.Drawing.Common 程序集的 .NET Core 应用，还需要以下依赖项：
 
 - libgdiplus（版本 6.0.1 或更高版本）
 
@@ -305,7 +305,7 @@ Alpine 发行版需要安装以下库：
 - numactl（可选，仅适用于启用了 NUMA 的设备）
 - zlib
 
-对于使用 System.Drawing.Common  程序集的 .NET Core 应用，还需要以下依赖项：
+对于使用 System.Drawing.Common 程序集的 .NET Core 应用，还需要以下依赖项：
 
 - libgdiplus（只能用于边缘/测试存储库）
 
@@ -335,9 +335,9 @@ Alpine 发行版需要安装以下库：
 
 ## <a name="libgdiplus"></a>libgdiplus
 
-使用 System.Drawing.Common  程序集的 .NET Core 应用程序要求安装 libgdiplus。
+使用 System.Drawing.Common 程序集的 .NET Core 应用程序要求安装 libgdiplus。
 
-获取 libgdiplus 的一个简单方法是使用适用于 macOS 的 [Homebrew (“brew”)](https://brew.sh/) 包。 在安装 brew 后，通过在终端（命令）提示符处执行以下命令来安装 libgdiplus  ：
+获取 libgdiplus 的一个简单方法是使用适用于 macOS 的 [Homebrew (“brew”)](https://brew.sh/) 包。 在安装 brew 后，通过在终端（命令）提示符处执行以下命令来安装 libgdiplus：
 
 ```console
 brew update

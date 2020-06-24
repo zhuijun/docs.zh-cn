@@ -1,15 +1,15 @@
 ---
 title: 在 Visual Studio Code 中使用 .NET Core 测试 .NET Standard 类库
 description: 为 .NET Core 类库创建单元测试项目。 验证 .NET Core 类库能否正确地进行单元测试。
-ms.date: 05/29/2020
-ms.openlocfilehash: be227453bd441028cc6ce348c00fad944140238f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.date: 06/08/2020
+ms.openlocfilehash: a61fd952eea2dec0d5a9f351d3f3d01c738e8fad
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84292161"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701028"
 ---
-# <a name="tutorial-test-a-net-standard-library-with-net-core-in-visual-studio-code"></a>教程：在 Visual Studio Code 中使用 .NET Core 测试 .NET Standard 库
+# <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio-code"></a>教程：在 Visual Studio Code 中使用 .NET Core 测试 .NET Standard 类库
 
 本教程演示如何通过将测试项目添加到解决方案来自动执行单元测试。
 
@@ -19,7 +19,9 @@ ms.locfileid: "84292161"
 
 ## <a name="create-a-unit-test-project"></a>创建单元测试项目
 
-1. 打开 Visual Studio Code。
+单元测试在开发和发布期间提供自动化的软件测试。 本教程中使用的测试框架是 MSTest。 [MSTest](https://github.com/Microsoft/testfx-docs) 是可供选择的三个测试框架之一。 其他两个是 [xUnit](https://xunit.net/) 和 [nUnit](https://nunit.org/)。
+
+1. 启动 Visual Studio Code。
 
 1. 打开[在 Visual Studio 中创建 .NET Standard 库](library-with-visual-studio.md)中创建的 `ClassLibraryProjects` 解决方案。
 
@@ -55,16 +57,17 @@ ms.locfileid: "84292161"
 
    使用 [[TestClass]](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestClassAttribute) 标记的测试类中标记有 [[TestMethod]](xref:Microsoft.VisualStudio.TestTools.UnitTesting.TestMethodAttribute) 的所有测试方法都会在单元测试运行时自动执行。
 
-   > [!NOTE]
-   > MSTest 是可供选择的三个测试框架之一。 其他两个是 xUnit 和 nUnit。
-
 1. 向解决方案添加测试项目。
 
    ```dotnetcli
    dotnet sln add StringLibraryTest/StringLibraryTest.csproj
    ```
 
-1. 运行以下命令创建对类库项目的项目引用：
+## <a name="add-a-project-reference"></a>添加项目引用
+
+对于要使用 `StringLibrary` 类的测试库，请在 `StringLibraryTest` 项目中添加对 `StringLibrary` 项目的引用。
+
+1. 运行下面的命令：
 
    ```dotnetcli
    dotnet add StringLibraryTest/StringLibraryTest.csproj reference StringLibrary/StringLibrary.csproj
@@ -89,7 +92,7 @@ ms.locfileid: "84292161"
 
 由于库方法可以处理字符串，因此还需要确保它能够成功处理 [空字符串 (`String.Empty`) ](xref:System.String.Empty) 和 `null` 字符串。 空字符串不包含任何字符，且 <xref:System.String.Length> 为 0。 `null` 字符串是尚未初始化的字符串。 可以直接将 `StartsWithUpper` 作为静态方法进行调用，并向其传递一个 <xref:System.String> 自变量。 或者，可以对分配给 `null` 的 `string` 变量将 `StartsWithUpper` 作为扩展方法进行调用。
 
-将定义三个方法，每个方法都会对字符串数组中的各个元素反复调用它的 <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> 方法。 由于测试方法在第一次遇到测试不通过时会立即失败，因此将调用方法重载，以便传递字符串来指明方法调用中使用的字符串值。
+将定义三个方法，每个方法都会对字符串数组中的各个元素调用它的 <xref:Microsoft.VisualStudio.TestTools.UnitTesting.Assert> 方法。 你将调用方法重载，以便指定在测试失败时要显示的错误消息。 消息标识导致失败的字符串。
 
 创建测试方法：
 
@@ -122,7 +125,7 @@ ms.locfileid: "84292161"
 
 ## <a name="handle-test-failures"></a>处理测试失败
 
-如果进行的是测试驱动开发 (TDD)，请先编写测试，然后测试会在第一次运行时失败。 接着将可以使测试成功的代码添加到应用。 在本示例中，先编写了测试要验证的应用代码然后才创建测试，所以没有看到测试失败。 若要验证测试是否在预期失败时失败，请在测试输入中添加无效值。
+如果进行的是测试驱动开发 (TDD)，请先编写测试，然后测试会在第一次运行时失败。 接着将可以使测试成功的代码添加到应用。 在本教程中，先编写了测试要验证的应用代码然后才创建测试，所以没有看到测试失败。 若要验证测试是否在预期失败时失败，请在测试输入中添加无效值。
 
 1. 通过修改 `TestDoesNotStartWithUpper` 方法中的 `words` 数组来包含字符串“Error”。
 
@@ -137,7 +140,7 @@ ms.locfileid: "84292161"
    dotnet test StringLibraryTest/StringLibraryTest.csproj
    ```
 
-   终端输出显示一个测试失败，并提供关于失败测试的错误消息。
+   终端输出显示一个测试失败，并提供关于失败测试的错误消息：“Assert.IsFalse 失败。 “Error”应返回 false；实际返回 True”。 由于此次失败，数组中“Error”之后的所有字符串都未进行测试。
 
    ```
    Starting test execution, please wait...
@@ -157,7 +160,7 @@ ms.locfileid: "84292161"
    Total time: 1.7825 Seconds
    ```
 
-1. 撤消在步骤 1 中执行的修改并删除字符串“Error”。 重新运行测试，测试将通过。
+1. 删除在步骤 1 中添加的字符串“Error”。 重新运行测试，测试将通过。
 
 ## <a name="test-the-release-version-of-the-library"></a>测试库的发行版本
 
@@ -173,7 +176,7 @@ ms.locfileid: "84292161"
 
 ## <a name="additional-resources"></a>其他资源
 
-- [.NET Core 和 .NET Standard 中的单元测试](../testing/index.md)
+* [.NET Core 和 .NET Standard 中的单元测试](../testing/index.md)
 
 ## <a name="next-steps"></a>后续步骤
 

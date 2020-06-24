@@ -7,16 +7,16 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: 2dbed1bc-86f5-43cd-9a57-adbb1c5efba4
-ms.openlocfilehash: f04ff902743c91147a6f056bca3292ee47952bbd
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 813558299b40e0b90e8047f22b788c8f1419eb5e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420547"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84504649"
 ---
 # <a name="language-independence-and-language-independent-components"></a>语言独立性和与语言无关的组件
 
-.NET 是独立的语言。 这意味着，开发人员可使用面向 .NET 实现的多种语言之一（例如 C#、F# 和 Visual Basic）进行开发。 可访问针对 .NET 实现开发的类库的类型和成员，而不必了解它们的初始编写语言，也不必遵循任何原始语言的约定。 如果你是组件开发人员，无论组件采用哪种语言，均可由任何 .NET 应用程序访问。
+.NET 是独立的语言。 这意味着，开发人员可使用面向 .NET 实现的多种语言之一（例如 C#、F# 和 Visual Basic）进行开发。 可访问针对 .NET 实现开发的类库的类型和成员，而不必了解它们的初始编写语言，也不必遵循任何原始语言的约定。 如果你是组件开发人员，无论组件采用哪种语言，均可由任何 .NET 应用访问。
 
 > [!NOTE]
 > 本文的第一部分讨论如何创建独立于语言的组件（即以任何语言编写的应用均可以使用的组件）。 还可以从用多种语言编写的源代码创建单个组件或应用；请参阅本文第二部分的[跨语言互操作性](#cross-language-interoperability)。
@@ -24,44 +24,6 @@ ms.locfileid: "83420547"
 若要与使用任何语言编写的其他对象完全交互，对象必须只向调用方公开那些所有语言共有的功能。 此组通用功能由公共语言规范 (CLS) 定义，后者是一组适用于生成的程序集的规则。 公共语言规范在 [ECMA-335 标准：公共语言基础结构](https://www.ecma-international.org/publications/standards/Ecma-335.htm)的第 I 部分的第 7 条至第 11 条中进行了定义。
 
 如果你的组件符合公共语言规范，则保证其符合 CLS 并可通过支持 CLS 的任何编程语言编写的程序集中的代码对其进行访问。 可以通过将 [CLSCompliantAttribute](xref:System.CLSCompliantAttribute) 特性应用于源代码来确定自己的组件在编译时是否符合公共语言规范。 有关详细信息，请参阅 [CLSCompliantAttribute 特性](#the-clscompliantattribute-attribute)。
-
-本文内容：
-
-* [CLS 遵从性规则](#cls-compliance-rules)
-
-  * [类型和类型成员签名](#types-and-type-member-signatures)
-
-  * [命名约定](#naming-conventions)
-
-  * [类型转换](#type-conversion)
-
-  * [数组](#arrays)
-
-  * [接口](#interfaces)
-
-  * [枚举](#enumerations)
-
-  * [类型成员概述](#type-members-in-general)
-
-  * [成员可访问性](#member-accessibility)
-
-  * [泛型类型和成员](#generic-types-and-members)
-
-  * [构造函数](#constructors)
-
-  * [属性](#properties)
-
-  * [事件](#events)
-
-  * [重载](#overloads)
-
-  * [异常](#exceptions)
-
-  * [特性](#attributes)
-
-* [CLSCompliantAttribute 特性](#the-clscompliantattribute-attribute)
-
-* [跨语言互操作性](#cross-language-interoperability)
 
 ## <a name="cls-compliance-rules"></a>CLS 遵从性规则
 
@@ -184,9 +146,9 @@ End Class
 成员 | [类型成员概述](#type-members-in-general) | 全局静态字段和方法不符合 CLS。 | 36
 成员 | -- | 通过使用字段初始化元数据指定文本静态值。 符合 CLS 的文本必须在类型与文本（或基本类型，如果文本为 `enum`）完全相同的字段初始化元数据中指定值。 | 13
 成员 | [类型成员概述](#type-members-in-general) | vararg 约束不属于 CLS，并且 CLS 支持的唯一调用约定是标准托管调用约定。 | 15
-命名约定 | [命名约定](#naming-conventions) | 程序集应遵守用于管理允许启用且包含在标识符中的字符集的 Unicode 标准 3.0 的技术报告 15 的附件 7（可通过 [Unicode 范式](https://www.unicode.org/unicode/reports/tr15/tr15-18.html)在线获得）。 标识符应是由 Unicode 范式 C 定义的规范格式。对于 CLS，如果两个标识符的小写映射（由不区分区域设置的 Unicode、一对一小写映射指定）相同，则它们也相同。 也就是说，对于要在 CLS 下视为不同的两个标识符，它们应以大小写之外的差别进行区分。 但是，若要重写继承的定义，CLI 需要对使用的原始声明进行准确编码。 | 4
+命名约定 | [命名约定](#naming-conventions) | 程序集应遵守用于管理允许启用且包含在标识符中的字符集的 Unicode 标准 3.0 的技术报告 15 的附件 7（可通过 [Unicode 范式](https://unicode.org/reports/tr15/)在线获得）。 标识符应是由 Unicode 范式 C 定义的规范格式。对于 CLS，如果两个标识符的小写映射（由不区分区域设置的 Unicode、一对一小写映射指定）相同，则它们也相同。 也就是说，对于要在 CLS 下视为不同的两个标识符，它们应以大小写之外的差别进行区分。 但是，若要重写继承的定义，CLI 需要对使用的原始声明进行准确编码。 | 4
 重载 | [命名约定](#naming-conventions) | 在符合 CLS 的范围中引入的所有名称都应是明显独立的类型，除非名称完全相同且通过重载解析。 也就是说，CTS 允许单个类型对方法和字段使用相同的名称，但 CLS 不允许。 | 5
-重载 | [命名约定](#naming-conventions) | 即使 CTS 允许区分不同的签名，但字段和嵌套类型只能由标识符比较区分。 （标识符比较后）具有相同名称的方法、属性和事件应在除返回类型不同之外还具有其他差异，CLS 规则 39 中指定的差异除外。 | 6
+重载 | [命名约定](#naming-conventions) | 即使 CTS 允许区分不同的签名，但字段和嵌套类型只能由标识符比较区分。 （标识符比较后）具有相同名称的方法、属性和事件应在除返回类型不同之外还具有其他差异，CLS 规则 39 中指定的差异除外 | 6
 重载 | [重载](#overloads) | 只可重载属性和方法。 | 37
 重载 | [重载](#overloads) |属性和方法仅可基于其参数的数目和类型进行重载，名为 `op_Implicit` 和 `op_Explicit` 的转换运算符除外，这两种转换运算符也可基于其返回类型进行重载。 | 38
 重载 | -- | 如果类型中声明的两种或更多符合 CLS 的方法都具有相同的名称，并且对于特定的类型实例化集而言，它们具有相同的参数和返回类型，则所有这些方法在这些类型实例化时都应在语义上保持等效。 | 48
@@ -201,6 +163,24 @@ End Class
 类型 | [类型和类型成员签名](#types-and-type-member-signatures) | 非托管的指针类型不符合 CLS。 | 17
 类型 | [类型和类型成员签名](#types-and-type-member-signatures) | 符合 CLS 的类、值类型和接口不应要求实现不符合 CLS 的成员 | 20
 类型 | [类型和类型成员签名](#types-and-type-member-signatures) | [System.Object](xref:System.Object) 符合 CLS。 任何其他符合 CLS 的类应从符合 CLS 的类继承。 | 23
+
+索引到各个子部分：
+
+* [类型和类型成员签名](#types-and-type-member-signatures)
+* [命名约定](#naming-conventions)
+* [类型转换](#type-conversion)
+* [数组](#arrays)
+* [接口](#interfaces)
+* [枚举](#enumerations)
+* [类型成员概述](#type-members-in-general)
+* [成员可访问性](#member-accessibility)
+* [泛型类型和成员](#generic-types-and-members)
+* [构造函数](#constructors)
+* [属性](#properties)
+* [事件](#events)
+* [重载](#overloads)
+* [异常](#exceptions)
+* [特性](#attributes)
 
 ### <a name="types-and-type-member-signatures"></a>类型和类型成员签名
 
@@ -607,13 +587,13 @@ public class person
 //    Naming1.cs(6,14): (Location of symbol related to previous warning)
 ```
 
-编程语言识别符（例如，命名空间、类型和成员的名称）必须遵照 [Unicode 标准 3.0、技术报告 15 和附件 7](https://www.unicode.org/reports/tr15/tr15-18.html)。 这表示：
+编程语言标识符（例如，命名空间、类型和成员的名称）必须遵照 [Unicode 标准](https://unicode.org/reports/tr15/)。 这表示：
 
 * 标识符的第一个字符可以是任何 Unicode 大写字母、小写字母、标题大小写字母、修饰符字母、其他字母或字母数字。 有关 Unicode 字符类别的信息，请参阅 [System.Globalization.UnicodeCategory](xref:System.Globalization.UnicodeCategory) 枚举。
 
-* 后继字符可以作为第一个字符来自任何类别，还可以包含无间隔标记、间距组合标记、十进制数字、连接器标点符号以及格式设置代码。
+* 后继字符可以是任何类别的第一个字符，还可以包含无间隔标记、间距组合标记、十进制数字、连接器标点符号以及格式设置代码。
 
-在比较标识符之前，应筛选格式设置代码，并将标识符转换为 Unicode 范式 C，因为单个字符可由多个 UTF 16 编码的代码单位表示。 在 Unicode 范式 C 中生成相同代码单位的字符序列不符合 CLS。 下面的示例定义一个名为 `Å` 的属性（包含字符 ANGSTROM SIGN (U+212B)）和另一个名为 `Å` 的属性（包含字符 LATIN CAPITAL LETTER A WITH RING ABOVE (U+00C5)）。 C# 编译器将源代码标记为不符合 CLS。
+在比较标识符之前，应筛选格式设置代码，并将标识符转换为 Unicode 范式 C，因为单个字符可由多个 UTF 16 编码的代码单位表示。 在 Unicode 范式 C 中生成相同代码单位的字符序列不符合 CLS。 下列示例定义了一个名为 `Å` 的属性（包含字符 ANGSTROM SIGN (U+212B)）和另一个名为 `Å` 的属性（包含字符 LATIN CAPITAL LETTER A WITH RING ABOVE (U+00C5)）。 C# 编译器将源代码标记为不符合 CLS。
 
 ```csharp
 public class Size
@@ -1849,7 +1829,7 @@ End Class
 
 公共语言规范对嵌套类型和受保护成员规定了一个保守的按实例化模型。 开放式泛型类型不能公开具有包含嵌套的、受保护的泛型类型的特定实例化的签名的字段或成员。 扩大泛型基类或接口的特定实例化的非泛型类型不能公开带签名的字段或成员，此类字段或成员包含嵌套的、受保护的泛型类型的不同实例化。
 
-下面的示例定义一个泛型类型 `C1<T>` 和一个受保护的类 `C1<T>.N`。 `C1<T>` 有两种方法：`M1` 和 `M2`。 但是，`M1` 并不符合 CLS，因为它尝试从 `C1<T>` 返回 `C1<int>.N` 对象。 另一个名为 `C2` 的类派生自 `C1<long>`。 它有两种方法：`M3` 和 `M4`。 `M3` 不符合 CLS，因为它尝试从 `C1<long>` 的子类中返回 `C1<int>.N` 对象。 请注意，语言编译器可具有更高限制。 在此示例中，Visual Basic 在尝试编译 `M4` 时显示错误。
+下面的示例定义一个泛型类型 `C1<T>` 和一个受保护的类 `C1<T>.N`。 `C1<T>` 有两种方法：`M1` 和 `M2`。 但是，`M1` 并不符合 CLS，因为它尝试从 `C1<T>` 返回 `C1<int>.N` 对象。 另一个名为 `C2` 的类派生自 `C1<long>`。 它有两种方法：`M3` 和 `M4`。 `M3` 不符合 CLS，因为它尝试从 `C1<long>` 的子类中返回 `C1<int>.N` 对象。 语言编译器可能具有更高限制。 在此示例中，Visual Basic 在尝试编译 `M4` 时显示错误。
 
 ```csharp
 using System;
@@ -2501,7 +2481,7 @@ End Module
 
 在 .NET Framework 程序集中，自定义特性提供了一个可扩展机制，用于存储自定义特性和检索有关编程对象（如程序集、类型、成员和方法参数）的元数据。 自定义特性必须从 [System.Attribute](xref:System.Attribute) 派生或从派生自 `System.Attribute` 的类型派生。
 
-下面的示例与此规则冲突。 它定义了不是从 `NumericAttribute` 派生的 `System.Attribute` 类。 请注意，编译器错误仅当应用不符合 CLS 的特性时会出现，而在定义类时不会出现。
+下面的示例与此规则冲突。 它定义了不是从 `NumericAttribute` 派生的 `System.Attribute` 类。 编译器错误仅当应用不符合 CLS 的特性时会出现，而在定义类时不会出现。
 
 ```csharp
 using System;
@@ -2586,7 +2566,7 @@ End Structure
 
 * 基础类型为 `Byte`、`Int16`、`Int32` 或 `Int64` 的任意枚举类型。
 
-下面的示例定义了从 [Attribute](xref:System.Attribute) 派生的 `DescriptionAttribute` 类。 类构造函数具有 `Descriptor` 类型的参数，因此，该类不符合 CLS。 请注意，C# 编译器会发出警告，但编译成功。
+下面的示例定义了从 [Attribute](xref:System.Attribute) 派生的 `DescriptionAttribute` 类。 类构造函数具有 `Descriptor` 类型的参数，因此，该类不符合 CLS。 C# 编译器会发出警告，但编译成功。
 
 ```csharp
 using System;
@@ -2895,7 +2875,7 @@ csc /t:module NumberUtil.cs
 link numberutil.netmodule stringutil.netmodule /out:UtilityLib.dll /dll
 ```
 
-然后以下实例调用 `NumericLib.NearZero` 和 `StringLib.ToTitleCase` 方法。 请注意 Visual Basic 代码和 C# 代码都能够访问这两个类中的方法。
+然后以下实例调用 `NumericLib.NearZero` 和 `StringLib.ToTitleCase` 方法。 Visual Basic 代码和 C# 代码都能够访问这两个类中的方法。
 
 ```csharp
 using System;

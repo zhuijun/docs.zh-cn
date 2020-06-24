@@ -1,21 +1,19 @@
 ---
-title: 使用 Visual Studio 发布 .NET Core Hello World 应用程序
-description: 发布会创建运行 .NET Core 应用程序所需的一组文件。
-author: BillWagner
-ms.author: wiwagn
-ms.date: 05/20/2020
+title: 使用 Visual Studio 发布 .NET Core 控制台应用程序
+description: 发布应用程序会创建运行 .NET Core 应用程序所需的一组文件。
+ms.date: 06/08/2020
 dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 745fb2af332afa278c78ec9baeea7230fe725c02
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 44646a307d230db395b55b9dec5acfd168605940
+ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241484"
+ms.lasthandoff: 06/11/2020
+ms.locfileid: "84701279"
 ---
-# <a name="tutorial-publish-a-net-core-console-application-with-visual-studio"></a>教程：使用 Visual Studio 发布 .NET Core 控制台应用程序
+# <a name="tutorial-publish-a-net-core-console-application-using-visual-studio"></a>教程：使用 Visual Studio 发布 .NET Core 控制台应用程序
 
 本教程演示如何发布控制台应用，以便其他用户可以运行它。 发布应用程序会创建运行应用程序所需的一组文件。 若要部署文件，请将文件复制到目标计算机。
 
@@ -25,7 +23,11 @@ ms.locfileid: "84241484"
 
 ## <a name="publish-the-app"></a>发布应用
 
-1. 请确保 Visual Studio 生成的是应用程序的发布版本。 必要时，将工具栏上的生成配置设置从“调试”更改为“发布”。
+1. 启动 Visual Studio。
+
+1. 打开按照[在 Visual Studio 中创建 .NET Core 控制台应用程序](with-visual-studio.md)创建的 HelloWorld 项目。
+
+1. 请确保 Visual Studio 正在使用“发布”生成配置。 必要时，将工具栏上的生成配置设置从“调试”更改为“发布”。
 
    ![选定发布版本的 Visual Studio 工具栏](media/publishing-with-visual-studio/visual-studio-toolbar-release.png)
 
@@ -47,7 +49,7 @@ ms.locfileid: "84241484"
 
 ## <a name="inspect-the-files"></a>检查文件
 
-发布过程中会创建依赖于框架的部署，在此类部署中，已发布的应用程序在已安装 .NET Core 运行时的计算机上运行。 用户可以通过双击可执行文件或从命令提示符发出 `dotnet HelloWorld.dll` 命令来运行发布的应用。
+默认情况下，发布过程中会创建依赖于框架的部署，在此类部署中，已发布的应用程序在已安装 .NET Core 运行时的计算机上运行。 用户可以通过双击可执行文件或从命令提示符发出 `dotnet HelloWorld.dll` 命令来运行发布的应用。
 
 在下面的步骤中，查看由发布过程创建的文件。
 
@@ -83,7 +85,7 @@ ms.locfileid: "84241484"
 
 1. 在“解决方案资源管理器”中，右键单击“模型”文件夹，然后选择“复制完整路径”。
 
-1. 打开命令提示符，然后导航到“发布”文件夹。 输入 `cd`，然后粘贴完整路径。 例如：
+1. 打开命令提示符，然后导航到“发布”文件夹。 为此，请输入 `cd`，然后粘贴完整路径。 例如：
 
    ```
    cd C:\Projects\HelloWorld\bin\Release\netcoreapp3.1\publish\
