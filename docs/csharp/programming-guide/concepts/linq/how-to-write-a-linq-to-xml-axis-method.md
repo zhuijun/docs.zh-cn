@@ -2,20 +2,21 @@
 title: 如何编写 LINQ to XML 轴方法 (C#)
 ms.date: 07/20/2015
 ms.assetid: 50aef06b-1d22-4718-a18a-21237e26d7c1
-ms.openlocfilehash: 7810afd1a181523fb30f6702993bc0ad469f66aa
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf1542471f44115bd787e7be6c8ffb836a842a4f
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168539"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662441"
 ---
-# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a><span data-ttu-id="79d3c-102">如何编写 LINQ to XML 轴方法 (C#)</span><span class="sxs-lookup"><span data-stu-id="79d3c-102">How to write a LINQ to XML axis method (C#)</span></span>
-<span data-ttu-id="79d3c-103">你可以编写自己的轴方法以便从 XML 树中检索集合。</span><span class="sxs-lookup"><span data-stu-id="79d3c-103">You can write your own axis methods to retrieve collections from an XML tree.</span></span> <span data-ttu-id="79d3c-104">执行此操作的最佳方式之一是编写可返回元素或属性集合的扩展方法。</span><span class="sxs-lookup"><span data-stu-id="79d3c-104">One of the best ways to do this is to write an extension method that returns a collection of elements or attributes.</span></span> <span data-ttu-id="79d3c-105">您可以基于应用程序的需求编写扩展方法以返回元素或属性的特定子集。</span><span class="sxs-lookup"><span data-stu-id="79d3c-105">You can write your extension method to return specific subsets of elements or attributes, based on the requirements of your application.</span></span>  
+# <a name="how-to-write-a-linq-to-xml-axis-method-c"></a><span data-ttu-id="87025-102">如何编写 LINQ to XML 轴方法 (C#)</span><span class="sxs-lookup"><span data-stu-id="87025-102">How to write a LINQ to XML axis method (C#)</span></span>
+
+<span data-ttu-id="87025-103">XML [轴方法](linq-to-xml-axes-overview.md)从 XML 文档或祖先元素检索 XML 元素的集合。</span><span class="sxs-lookup"><span data-stu-id="87025-103">An XML [axis method](linq-to-xml-axes-overview.md) retrieves a collection of XML elements from an XML document or ancestor element.</span></span> <span data-ttu-id="87025-104">你可以编写自己的轴方法以便从 XML 树中检索集合。</span><span class="sxs-lookup"><span data-stu-id="87025-104">You can write your own axis methods to retrieve collections from an XML tree.</span></span> <span data-ttu-id="87025-105">执行此操作的最佳方式之一是编写可返回元素或属性集合的扩展方法。</span><span class="sxs-lookup"><span data-stu-id="87025-105">One of the best ways to do this is to write an extension method that returns a collection of elements or attributes.</span></span> <span data-ttu-id="87025-106">您可以基于应用程序的需求编写扩展方法以返回元素或属性的特定子集。</span><span class="sxs-lookup"><span data-stu-id="87025-106">You can write your extension method to return specific subsets of elements or attributes, based on the requirements of your application.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="79d3c-106">示例</span><span class="sxs-lookup"><span data-stu-id="79d3c-106">Example</span></span>  
- <span data-ttu-id="79d3c-107">下面的示例使用两个扩展方法。</span><span class="sxs-lookup"><span data-stu-id="79d3c-107">The following example uses two extension methods.</span></span> <span data-ttu-id="79d3c-108">第一个扩展方法 `GetXPath` 在 <xref:System.Xml.Linq.XObject> 上操作并返回一个 XPath 表达式，在计算该表达式时，将返回节点或属性。</span><span class="sxs-lookup"><span data-stu-id="79d3c-108">The first extension method, `GetXPath`, operates on <xref:System.Xml.Linq.XObject>, and returns an XPath expression that when evaluated will return the node or attribute.</span></span> <span data-ttu-id="79d3c-109">第二个扩展方法 `Find` 在 <xref:System.Xml.Linq.XElement> 上操作。</span><span class="sxs-lookup"><span data-stu-id="79d3c-109">The second extension method, `Find`, operates on <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="79d3c-110">它返回 <xref:System.Xml.Linq.XAttribute> 对象和包含某些指定文本的 <xref:System.Xml.Linq.XElement> 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="79d3c-110">It returns a collection of <xref:System.Xml.Linq.XAttribute> objects and <xref:System.Xml.Linq.XElement> objects that contain some specified text.</span></span>  
+## <a name="example"></a><span data-ttu-id="87025-107">示例</span><span class="sxs-lookup"><span data-stu-id="87025-107">Example</span></span>  
+ <span data-ttu-id="87025-108">下面的示例使用两个扩展方法。</span><span class="sxs-lookup"><span data-stu-id="87025-108">The following example uses two extension methods.</span></span> <span data-ttu-id="87025-109">第一个扩展方法 `GetXPath` 在 <xref:System.Xml.Linq.XObject> 上操作并返回一个 XPath 表达式，在计算该表达式时，将返回节点或属性。</span><span class="sxs-lookup"><span data-stu-id="87025-109">The first extension method, `GetXPath`, operates on <xref:System.Xml.Linq.XObject>, and returns an XPath expression that when evaluated will return the node or attribute.</span></span> <span data-ttu-id="87025-110">第二个扩展方法 `Find` 在 <xref:System.Xml.Linq.XElement> 上操作。</span><span class="sxs-lookup"><span data-stu-id="87025-110">The second extension method, `Find`, operates on <xref:System.Xml.Linq.XElement>.</span></span> <span data-ttu-id="87025-111">它返回 <xref:System.Xml.Linq.XAttribute> 对象和包含某些指定文本的 <xref:System.Xml.Linq.XElement> 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="87025-111">It returns a collection of <xref:System.Xml.Linq.XAttribute> objects and <xref:System.Xml.Linq.XElement> objects that contain some specified text.</span></span>  
   
- <span data-ttu-id="79d3c-111">本示例使用以下 XML 文档：[示例 XML 文件：多个采购订单 (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md)。</span><span class="sxs-lookup"><span data-stu-id="79d3c-111">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="87025-112">本示例使用下面的 XML 文档：[示例 XML 文件：多个采购订单 (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md)。</span><span class="sxs-lookup"><span data-stu-id="87025-112">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```csharp  
 public static class MyExtensions  
@@ -278,7 +279,7 @@ class Program
 }  
 ```  
   
- <span data-ttu-id="79d3c-112">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="79d3c-112">This code produces the following output:</span></span>  
+ <span data-ttu-id="87025-113">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="87025-113">This code produces the following output:</span></span>  
   
 ```output  
 /PurchaseOrders/PurchaseOrder[1]/@OrderDate  
