@@ -1,16 +1,17 @@
 ---
 title: 如何：创建开发期间使用的临时证书
+description: 了解如何使用 PowerShell cmdlet 创建两个临时的 x.509 证书，以用于开发安全 WCF 服务或客户端。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: 9e01ccb29ad017a2657ab08b54d7f01ef4564481
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 0a21548386639a9f6a8c8572e5d7928ffdb270d6
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964537"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247034"
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>如何：创建开发期间使用的临时证书
 
@@ -31,7 +32,7 @@ ms.locfileid: "75964537"
 $rootcert = New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -DnsName "RootCA" -TextExtension @("2.5.29.19={text}CA=true") -KeyUsage CertSign,CrlSign,DigitalSignature
 ```
 
-我们需要将该证书导出到 PFX 文件中，以便可以将其导入到后面的步骤中所需的位置。 导出带私钥的证书时，需要使用密码来保护密码。 我们将密码保存在 `SecureString` 中，并使用[get-pfxcertificate](/powershell/module/pkiclient/export-pfxcertificate) cmdlet 将具有关联私钥的证书导出到 PFX 文件。 我们还使用[导出证书](/powershell/module/pkiclient/export-certificate)cmdlet 将公共证书仅保存到 CRT 文件中。
+我们需要将该证书导出到 PFX 文件中，以便可以将其导入到后面的步骤中所需的位置。 导出带私钥的证书时，需要使用密码来保护密码。 我们将密码保存在中 `SecureString` ，并使用[get-pfxcertificate](/powershell/module/pkiclient/export-pfxcertificate) cmdlet 将具有关联私钥的证书导出到 PFX 文件。 我们还使用[导出证书](/powershell/module/pkiclient/export-certificate)cmdlet 将公共证书仅保存到 CRT 文件中。
 
 ```powershell
 [System.Security.SecureString]$rootcertPassword = ConvertTo-SecureString -String "password" -Force -AsPlainText
@@ -42,7 +43,7 @@ Export-Certificate -Cert $rootCertPath -FilePath 'RootCA.crt'
 
 ## <a name="to-create-a-new-certificate-signed-by-a-root-authority-certificate"></a>创建一个由根证书颁发机构证书签名的新证书
 
-下面的命令使用颁发者的私钥创建一个证书，该证书由使用者名称为 "SignedByRootCA" 的 `RootCA` 签名。
+下面的命令使用颁发者的私钥创建一个由使用者 `RootCA` 名称 "SignedByRootCA" 签名的证书。
 
 ```powershell
 $testCert = New-SelfSignedCertificate -CertStoreLocation Cert:\LocalMachine\My -DnsName "SignedByRootCA" -KeyExportPolicy Exportable -KeyLength 2048 -KeyUsage DigitalSignature,KeyEncipherment -Signer $rootCert
@@ -64,11 +65,11 @@ Export-Certificate -Cert $testCertPath -FilePath testcert.crt
 
 1. 打开证书管理单元。 有关详细信息，请参阅[如何：使用 MMC 管理单元查看证书](how-to-view-certificates-with-the-mmc-snap-in.md)。
 
-2. 打开要存储证书的文件夹， **“本地计算机”** 或 **“当前用户”** 。
+2. 打开要存储证书的文件夹， **“本地计算机”** 或 **“当前用户”**。
 
 3. 打开 **“受信任的根证书颁发机构”** 文件夹。
 
-4. 右击 **“证书”** 文件夹，再单击 **“所有任务”** ，然后单击 **“导入”** 。
+4. 右击 **“证书”** 文件夹，再单击 **“所有任务”**，然后单击 **“导入”**。
 
 5. 按照屏幕向导说明，将 Rootca.cer 导入到存储中。
 
@@ -112,8 +113,8 @@ Export-Certificate -Cert $testCertPath -FilePath testcert.crt
 
 请确保通过右击证书，再单击 **“删除”** ，从 **“受信任的根证书颁发机构”** 和 **“个人”** 文件夹中删除所有临时根证书颁发机构证书。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用证书](working-with-certificates.md)
 - [如何：使用 MMC 管理单元查看证书](how-to-view-certificates-with-the-mmc-snap-in.md)
-- [Securing Services and Clients](securing-services-and-clients.md)
+- [保护服务和客户端的安全](securing-services-and-clients.md)

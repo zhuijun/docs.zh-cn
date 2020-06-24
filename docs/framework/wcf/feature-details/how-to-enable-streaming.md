@@ -1,16 +1,17 @@
 ---
 title: 如何：启用流处理
+description: 了解如何在 WCF 中启用流消息而不是默认的缓冲传输，这些传输消息必须在处理前完全接收。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 6ca2cf4b-c7a1-49d8-a79b-843a90556ba4
-ms.openlocfilehash: c2c22ab699a996f4bc40d0b5f620ddd92ffe8059
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 538fd8634094aa6fbf097ddb94469d7bca749a63
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593225"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247021"
 ---
 # <a name="how-to-enable-streaming"></a>如何：启用流处理
 Windows Communication Foundation （WCF）可以使用缓冲传输或流式传输发送消息。 在默认的缓冲传输模式中，只有在一条消息全部传递完之后，接收方才能读取该消息。 在流传输模式中，不必等到消息全部传递完，接收方便可以开始处理该消息。 当传递的信息很长且可以依次处理时，流模式非常有用。 当消息过长以致于无法全部缓冲时，流模式也非常有用。  
@@ -74,7 +75,7 @@ Windows Communication Foundation （WCF）可以使用缓冲传输或流式传�
      [!code-csharp[c_HowTo_EnableStreaming#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_enablestreaming/cs/service.cs#2)]
      [!code-vb[c_HowTo_EnableStreaming#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_enablestreaming/vb/service.vb#2)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [大型数据和流](large-data-and-streaming.md)
-- [流](../samples/stream.md)
+- [Stream](../samples/stream.md)

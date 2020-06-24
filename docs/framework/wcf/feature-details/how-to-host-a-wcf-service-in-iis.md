@@ -1,16 +1,17 @@
 ---
 title: 如何：在 IIS 中承载 WCF 服务
+description: 了解如何创建在 Internet Information Services （IIS）中承载的 WCF 服务。 只可以将 IIS 宿主与 HTTP 传输协议一起使用。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b044b1c9-c1e5-4c9f-84d8-0f02f4537f8b
-ms.openlocfilehash: 326a270c4af38738c910828acd483070ab02ecd1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 63549b85f7bcdd4f246005401694db8827248038
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593082"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246904"
 ---
 # <a name="how-to-host-a-wcf-service-in-iis"></a>如何：在 IIS 中承载 WCF 服务
 本主题概述了创建在 Internet Information Services （IIS）中承载的 Windows Communication Foundation （WCF）服务所需的基本步骤。 本主题假设您熟悉 IIS 且了解如何使用 IIS 管理工具创建和管理 IIS 应用程序。 有关 IIS 的详细信息，请参阅[Internet Information Services](https://www.iis.net/)。 在 IIS 环境中运行的 WCF 服务充分利用 IIS 功能，如进程回收、空闲关闭、进程运行状况监视和基于消息的激活。 此宿主选项要求正确配置 IIS，但不需要编写任何承载代码作为应用程序的一部分。 只可以将 IIS 宿主与 HTTP 传输协议一起使用。  
@@ -75,7 +76,7 @@ ms.locfileid: "84593082"
  [!code-vb[C_HowTo_HostInIIS#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#1)]
  [!code-xml[c_HowTo_HostInIIS#100](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [在 Internet 信息服务中承载](hosting-in-internet-information-services.md)
 - [承载服务](../hosting-services.md)

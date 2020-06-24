@@ -1,5 +1,6 @@
 ---
 title: 数据协定已知类型
+description: 了解在 WCF 中的反序列化过程中，数据协定模型如何使用 KnownTypeAttribute 类来指定要包含的类型。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - KnownTypeAttribute [WCF]
 - KnownTypes [WCF]
 ms.assetid: 1a0baea1-27b7-470d-9136-5bbad86c4337
-ms.openlocfilehash: b7d78def4d656dea59af5400c7ed7deeef28cd0c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 52b0caaaac976893dcf5ef5c228ccc4f53bdbe9e
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597444"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247476"
 ---
 # <a name="data-contract-known-types"></a>数据协定已知类型
 <xref:System.Runtime.Serialization.KnownTypeAttribute> 类允许您预先指定应该在反序列化期间包括在考虑范围内的类型。 有关工作示例，请参阅 [Known Types](../samples/known-types.md) 示例。  
@@ -167,7 +168,7 @@ ms.locfileid: "84597444"
   
  在前面的配置文件中，名为 `MyCompany.Library.Shape` 的数据协定类型被声明具有已知类型 `MyCompany.Library.Circle` 。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.Serialization.KnownTypeAttribute>
 - <xref:System.Collections.Hashtable>

@@ -1,15 +1,16 @@
 ---
 title: 选择传输方式
+description: 了解在 WCF 提供的主传输中选择的条件： HTTP、TCP 和命名管道。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - choosing transports [WCF]
 ms.assetid: b169462b-f7b6-4cf4-9fca-d306909ee8bf
-ms.openlocfilehash: 7e1f6b2e1905fb92ebfe78be351feeaebb374c11
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e1a92203de25aa399316eea91a758802768442a0
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84587061"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247489"
 ---
 # <a name="choosing-a-transport"></a>选择传输方式
 本主题讨论在 Windows Communication Foundation （WCF）中包括的三个主要传输的条件： HTTP、TCP 和命名管道。 WCF 还包括消息队列（也称为 MSMQ）传输，但本文档不涵盖消息队列。  
@@ -50,7 +51,7 @@ ms.locfileid: "84587061"
 ## <a name="decision-points-for-choosing-a-transport"></a>选择传输方式的决策点  
  下表列出了选择传输方式的常用决策点。 您应该考虑适合您的应用程序的其他所有属性和传输方式。 识别对您的应用程序非常重要的属性，识别对每个属性有益的传输方式，然后选择最适合您的属性集的传输方式。  
   
-|属性|描述|适合的传输方式|  
+|属性|说明|适合的传输方式|  
 |---------------|-----------------|------------------------|  
 |诊断|使用诊断可自动检测传输的连接性问题。 所有传输方式均支持发回描述连接性的错误信息这一功能。 不过，WCF 不包含用于调查网络问题的诊断工具。|无|  
 |Hosting|所有 WCF 终结点都必须承载于应用程序中。 IIS 6.0 及更早版本仅支持托管使用 HTTP 传输的应用程序。 在 Windows Vista 上，添加了对承载所有 WCF 传输（包括 TCP 和命名管道）的支持。 有关详细信息，请参阅在[Windows 进程激活服务](hosting-in-windows-process-activation-service.md)[中进行托管 Internet Information Services](hosting-in-internet-information-services.md)和托管。|HTTP|  
@@ -61,7 +62,7 @@ ms.locfileid: "84587061"
 |吞吐量|吞吐量度量指定的时间内可以传送和处理的数据量。 与滞后时间类似，选择的传输方式会影响服务操作的吞吐量。 将传输的吞吐量最大化要求尽量减小传送内容的开销，并尽量缩短等待消息交换完成的时间。 TCP 和命名管道传输使消息正文增加的开销都不大，并支持减少消息答复等待时间的固有双工形状。|TCP、命名管道|  
 |工具|工具表示对用于开发、诊断、承载和其他活动的协议的第三方应用程序支持。 开发工具和软件以便与 HTTP 协议协同工作意味着巨大的投资。|HTTP|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.BasicHttpBinding>
 - <xref:System.ServiceModel.WSHttpBinding>

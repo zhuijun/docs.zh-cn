@@ -1,19 +1,20 @@
 ---
 title: 如何：创建自定义声明
+description: 了解如何在 WCF 中创建自定义声明。 WCF 支持各种内置声明，某些应用程序可能需要自定义声明。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: d619976b-eda3-475e-ac23-c7988a2dceb0
-ms.openlocfilehash: e78f577e0fd3473575fab998e55616936212ebb3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 89f2b1359b48b71720db6ff38f27883745cfe612
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185608"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247541"
 ---
 # <a name="how-to-create-a-custom-claim"></a>如何：创建自定义声明
-Windows 通信基础 （WCF） 中的标识模型基础结构提供了一组内置声明类型和权限，以及用于创建<xref:System.IdentityModel.Claims.Claim>具有这些类型和权限的实例的帮助器函数。 这些内置声明旨在对默认情况下 WCF 支持的客户端凭据类型中的信息建模。 在许多情况下，这些内置的声明足够满足需要，然而一些应用程序可能需要自定义声明。 声明由声明类型、要应用该声明的资源和在该资源上断言的权限组成。 本主题描述如何创建自定义声明。  
+Windows Communication Foundation （WCF）中的标识模型基础结构使用 helper 函数提供一组内置声明类型和权限，用于创建 <xref:System.IdentityModel.Claims.Claim> 具有这些类型和权限的实例。 这些内置声明旨在为 WCF 在默认情况下支持的客户端凭据类型中找到的信息建模。 在许多情况下，这些内置的声明足够满足需要，然而一些应用程序可能需要自定义声明。 声明由声明类型、要应用该声明的资源和在该资源上断言的权限组成。 本主题描述如何创建自定义声明。  
   
 ### <a name="to-create-a-custom-claim-that-is-based-on-a-primitive-data-type"></a>创建基于基元数据类型的自定义声明  
   
@@ -21,15 +22,15 @@ Windows 通信基础 （WCF） 中的标识模型基础结构提供了一组内�
   
     1. 确定声明类型的唯一值。  
   
-         声明类型是一个唯一的字符串标识符。 自定义声明的设计者负责确保声明类型所使用的字符串标识符是唯一的。 有关由 WCF 定义的声明类型的列表，请参阅类<xref:System.IdentityModel.Claims.ClaimTypes>。  
+         声明类型是一个唯一的字符串标识符。 自定义声明的设计者负责确保声明类型所使用的字符串标识符是唯一的。 有关 WCF 定义的声明类型的列表，请参见 <xref:System.IdentityModel.Claims.ClaimTypes> 类。  
   
     2. 选择资源的基元数据类型和值。  
   
-         资源是一个对象。 资源的 CLR 类型可以是一个基元类型，例如 <xref:System.String> 或 <xref:System.Int32>，也可以是任何可序列化的类型。 资源的 CLR 类型必须是可序列化的，因为声明由 WCF 在不同点序列化。 基元类型是可序列化的类型。  
+         资源是一个对象。 资源的 CLR 类型可以是一个基元类型，例如 <xref:System.String> 或 <xref:System.Int32>，也可以是任何可序列化的类型。 资源的 CLR 类型必须是可序列化的，因为声明由 WCF 在不同点进行序列化。 基元类型是可序列化的类型。  
   
-    3. 选择由 WCF 定义的权利或自定义权利的唯一值。  
+    3. 选择由 WCF 定义的权限或自定义权限的唯一值。  
   
-         权限是一个唯一的字符串标识符。 WCF 定义的权限在类中<xref:System.IdentityModel.Claims.Rights>定义。  
+         权限是一个唯一的字符串标识符。 WCF 定义的权限是在类中定义的 <xref:System.IdentityModel.Claims.Rights> 。  
   
          自定义声明的设计者负责确保权限所使用的字符串标识符是唯一的。  
   
@@ -44,11 +45,11 @@ Windows 通信基础 （WCF） 中的标识模型基础结构提供了一组内�
   
     1. 确定声明类型的唯一值。  
   
-         声明类型是一个唯一的字符串标识符。 自定义声明的设计者负责确保声明类型所使用的字符串标识符是唯一的。 有关由 WCF 定义的声明类型的列表，请参阅类<xref:System.IdentityModel.Claims.ClaimTypes>。  
+         声明类型是一个唯一的字符串标识符。 自定义声明的设计者负责确保声明类型所使用的字符串标识符是唯一的。 有关 WCF 定义的声明类型的列表，请参见 <xref:System.IdentityModel.Claims.ClaimTypes> 类。  
   
     2. 为资源选择或定义一个可序列化的非基元类型。  
   
-         资源是一个对象。 资源的 CLR 类型必须是可序列化的，因为声明由 WCF 在不同点序列化。 基元类型本身是可序列化的类型。  
+         资源是一个对象。 资源的 CLR 类型必须是可序列化的，因为声明由 WCF 在不同点进行序列化。 基元类型本身是可序列化的类型。  
   
          在定义一个新类型时，请将 <xref:System.Runtime.Serialization.DataContractAttribute> 应用于类。 另外，请将 <xref:System.Runtime.Serialization.DataMemberAttribute> 属性应用于新类型的需要作为声明的一部分序列化的所有成员。  
   
@@ -57,9 +58,9 @@ Windows 通信基础 （WCF） 中的标识模型基础结构提供了一组内�
          [!code-csharp[c_CustomClaim#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#2)]
          [!code-vb[c_CustomClaim#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#2)]
   
-    3. 选择由 WCF 定义的权利或自定义权利的唯一值。  
+    3. 选择由 WCF 定义的权限或自定义权限的唯一值。  
   
-         权限是一个唯一的字符串标识符。 WCF 定义的权限在类中<xref:System.IdentityModel.Claims.Rights>定义。  
+         权限是一个唯一的字符串标识符。 WCF 定义的权限是在类中定义的 <xref:System.IdentityModel.Claims.Rights> 。  
   
          自定义声明的设计者负责确保权限所使用的字符串标识符是唯一的。  
   
@@ -74,7 +75,7 @@ Windows 通信基础 （WCF） 中的标识模型基础结构提供了一组内�
  [!code-csharp[c_CustomClaim#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_customclaim/cs/c_customclaim.cs#0)]
  [!code-vb[c_CustomClaim#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_customclaim/vb/c_customclaim.vb#0)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.IdentityModel.Claims.Claim>
 - <xref:System.IdentityModel.Claims.Rights>

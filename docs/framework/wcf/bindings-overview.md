@@ -1,29 +1,30 @@
 ---
 title: Windows Communication Foundation 绑定概述
+description: 了解绑定，该绑定指定如何连接到 WCF 服务，其中包括绑定的元素，以及如何指定服务终结点的绑定。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - bindings [WCF], overview
 ms.assetid: cfb5842f-e0f9-4c56-a015-f2b33f258232
-ms.openlocfilehash: 8c1e44609a0a20ffcec55af43e49ee62b0842378
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: da8050c4e9aeb111de3a54315b3650bcf09f23ed
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320760"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247709"
 ---
 # <a name="windows-communication-foundation-bindings-overview"></a>Windows Communication Foundation 绑定概述
-绑定是用于指定连接到 Windows Communication Foundation （WCF）服务的终结点所需的通信详细信息的对象。 WCF 服务中的每个终结点都需要一个明确指定的绑定。 本主题概述绑定定义的通信详细信息的类型、绑定的元素、WCF 中包含的绑定以及如何为终结点指定绑定。  
+绑定是用于指定连接到 Windows Communication Foundation （WCF）服务的终结点所需的通信详细信息的对象。 WCF 服务中的每个端点都需要一个具体指定的绑定。 本主题概述绑定定义的通信详细信息的类型、绑定的元素、WCF 中包含的绑定以及如何为终结点指定绑定。  
   
 ## <a name="what-a-binding-defines"></a>绑定所定义的内容  
  绑定中的信息可能非常基本，也可能非常复杂。 最基本的绑定仅指定连接终结点所必需的传输协议（如 HTTP）。 一般来说，绑定包含的有关如何连接到终结点的信息属于以下类别之一：  
   
- **通讯**  
+ **协议**  
  确定要使用的安全机制：可靠消息传递功能或事务上下文流设置。  
   
- **编码器**  
+ **编码**  
  确定消息编码（例如，文本或二进制）。  
   
- **Transport**  
+ **传输**  
  确定要使用的基础传输协议（例如，TCP 或 HTTP）。  
   
 ## <a name="the-elements-of-a-binding"></a>绑定的元素  
@@ -45,7 +46,7 @@ ms.locfileid: "72320760"
  有关 WCF 提供的所有绑定的完整列表，请参阅[系统提供的绑定](system-provided-bindings.md)。  
   
 ## <a name="using-your-own-bindings"></a>使用自己的绑定  
- 如果系统提供的绑定都不具有服务应用程序所需的正确功能组合，则可以创建自己的绑定。 有两种方法可以实现此目的。 您可以使用 <xref:System.ServiceModel.Channels.CustomBinding> 对象从预先存在的绑定元素创建新的绑定，也可以通过从 <xref:System.ServiceModel.Channels.Binding> 绑定派生来创建完全由用户定义的绑定。 有关使用这两种方法创建自己的绑定的详细信息，请参阅[自定义绑定](./extending/custom-bindings.md)和[创建用户定义的绑定](./extending/creating-user-defined-bindings.md)。  
+ 如果系统提供的绑定都不具有服务应用程序所需的正确功能组合，则可以创建自己的绑定。 可通过两种方式来执行此操作。 您可以使用 <xref:System.ServiceModel.Channels.CustomBinding> 对象从预先存在的绑定元素创建新的绑定，也可以通过从 <xref:System.ServiceModel.Channels.Binding> 绑定派生来创建完全由用户定义的绑定。 有关使用这两种方法创建自己的绑定的详细信息，请参阅[自定义绑定](./extending/custom-bindings.md)和[创建用户定义的绑定](./extending/creating-user-defined-bindings.md)。  
   
 ## <a name="using-bindings"></a>使用绑定  
  使用绑定需要执行两个基本步骤：  

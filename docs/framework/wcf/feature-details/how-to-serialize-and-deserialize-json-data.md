@@ -1,22 +1,23 @@
 ---
 title: 如何：使用 DataContractJsonSerializer
+description: 了解如何将 .NET 类型对象序列化为 JSON 编码数据，然后将此类数据反序列化为 .NET 类型的实例。
 ms.date: 03/25/2019
 ms.assetid: 88abc1fb-8196-4ee3-a23b-c6934144d1dd
-ms.openlocfilehash: 3cf8cc52587a64e7273ab9e0de0b1751d00827cf
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 4ffa0e9dec0a677a38d244b4a0da476d91852da5
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901218"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246800"
 ---
 # <a name="how-to-use-datacontractjsonserializer"></a>如何使用 DataContractJsonSerializer
 
 > [!NOTE]
-> 本文介绍 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>。 对于涉及序列化和反序列化 JSON 的大多数方案，我们建议在[system.web 命名空间](../../../standard/serialization/system-text-json-overview.md)中提供 api。
+> 本文介绍 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 。 对于涉及序列化和反序列化 JSON 的大多数方案，我们建议在[System.Text.Js上命名空间](../../../standard/serialization/system-text-json-overview.md)中的 api。
 
 JSON（JavaScript 对象符号）是一种高效的数据编码格式，可用于在客户端浏览器和支持 AJAX 的 Web 服务之间快速交换少量数据。
 
-本文演示如何将 .NET 类型对象序列化为 JSON 编码数据，然后将 JSON 格式的数据反序列化为 .NET 类型的实例。 此示例使用数据协定演示用户定义的 `Person` 类型的序列化和反序列化，并使用 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>。
+本文演示如何将 .NET 类型对象序列化为 JSON 编码数据，然后将 JSON 格式的数据反序列化为 .NET 类型的实例。 此示例使用数据协定演示用户定义类型的序列化和反序列化 `Person` ，并使用 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 。
 
 通常，当你在服务操作中使用在支持 AJAX 的终结点上公开的数据协定类型时，将 Windows Communication Foundation 自动处理 JSON 序列化和反序列化。 但是，在某些情况下，您可能需要直接处理 JSON 数据。
 
@@ -51,7 +52,7 @@ JSON（JavaScript 对象符号）是一种高效的数据编码格式，可用�
     p.age = 42;
     ```
 
-2. 使用 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>将 `Person` 对象序列化到内存流。
+2. `Person`使用将对象序列化到内存流 <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer> 。
 
     ```csharp
     var stream1 = new MemoryStream();
@@ -139,6 +140,6 @@ public class TestDuplicateDataDerived : TestDuplicateDataBase
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [.NET 中的 JSON 序列化](../../../standard/serialization/system-text-json-overview.md)

@@ -1,16 +1,17 @@
 ---
 title: 如何：在托管 Windows 服务中承载 WCF 服务
+description: 了解如何创建由 Windows 服务承载的 WCF 服务。 此宿主选项在 Windows 的所有版本中都是可用的。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-ms.openlocfilehash: dbd51abbc30b1010f7c4f206aad9a773eca0a714
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4e07aa7aac82fae5cfd1bfc759ef724cf87a873a
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593173"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246931"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>如何：在托管 Windows 服务中承载 WCF 服务
 
@@ -110,7 +111,7 @@ ms.locfileid: "84593173"
     </configuration>
     ```
 
-     右键单击 "**解决方案资源管理器**中的 app.config 文件，然后选择"**属性**"。 在 "**复制到输出目录**" 下，选择 "**如果较新则复制**"
+     右键单击**解决方案资源管理器**中的 App.config 文件，然后选择 "**属性**"。 在 "**复制到输出目录**" 下，选择 "**如果较新则复制**"
 
      此示例显式指定配置文件中的终结点。 如果您不希望向服务添加任何终结点，则运行时为您添加默认终结点。 在此示例中，由于服务的 <xref:System.ServiceModel.Description.ServiceMetadataBehavior> 设置为 `true`，因此服务还启用了发布元数据。 有关默认终结点、绑定和行为的详细信息，请参阅[简化配置](../simplified-configuration.md)和 [WCF 服务的简化配置](../samples/simplified-configuration-for-wcf-services.md)。
 
@@ -133,7 +134,7 @@ ms.locfileid: "84593173"
 
 与“自承载”选项一样，Windows 服务主机环境要求写入一些宿主代码作为应用程序的一部分。 该服务作为控制台应用程序实现，且包含其自己的主机代码。 在其他主机环境（如 Internet 信息服务 (IIS) 中的 Windows 进程激活服务 (WAS) 主机）中，开发人员没有必要编写主机代码。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [简化配置](../simplified-configuration.md)
 - [在托管应用程序中承载](hosting-in-a-managed-application.md)

@@ -1,16 +1,17 @@
 ---
 title: 如何：启用 Net.TCP 端口共享服务
+description: 了解如何使用 MMC 配置 Net TCP 端口共享服务，以启用默认情况下禁用的 Net.tcp。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - port sharing [WCF]
 - activation services [WCF]
 ms.assetid: c9175af4-c27c-4765-bf45-b8f7528a7282
-ms.openlocfilehash: 8b305b98d620636328866bce848411f395053485
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 0292559e3befde7f0b00b36aa10a2d9615daf049
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593123"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246995"
 ---
 # <a name="how-to-enable-the-nettcp-port-sharing-service"></a>如何：启用 Net.TCP 端口共享服务
 Windows Communication Foundation （WCF）使用称为 Net.tcp 端口共享服务的 Windows 服务，以便在多个进程之间共享 TCP 端口。 此服务作为 WCF 的一部分进行安装，但默认情况下不启用该服务作为安全预防措施，因此在首次使用之前必须手动启用。 本主题描述如何使用 Microsoft 管理控制台 (MMC) 管理单元配置 Net TCP 端口共享服务。  
@@ -33,7 +34,7 @@ Windows Communication Foundation （WCF）使用称为 Net.tcp 端口共享服�
   
 ## <a name="example"></a>示例  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Net.TCP 端口共享](net-tcp-port-sharing.md)
 - [配置 Net.TCP 端口共享服务](configuring-the-net-tcp-port-sharing-service.md)

@@ -1,5 +1,6 @@
 ---
 title: 配置编辑器工具 (SvcConfigEditor.exe)
+description: 了解如何使用 WCF 服务配置编辑器管理 WCF 绑定、行为、服务和诊断的设置。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - configuration files, creating
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - Configuration file
 - configuration file schema
 ms.assetid: 2db21a57-5f64-426f-89df-fb0dc2d2def5
-ms.openlocfilehash: 3d482e2b03346c9443066c480575a1394324b9bf
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 258437ff616b969d40feabbfff364ad2cc6b25bc
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320707"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247644"
 ---
 # <a name="configuration-editor-tool-svcconfigeditorexe"></a>配置编辑器工具 (SvcConfigEditor.exe)
 
@@ -61,20 +62,20 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 ### <a name="opening-a-configuration-file"></a>打开配置文件
 
-1. 使用命令窗口导航到 WCF 安装位置，然后键入 `SvcConfigEditor.exe`，启动服务配置编辑器。
+1. 使用命令窗口导航到 WCF 安装位置，然后键入，启动服务配置编辑器 `SvcConfigEditor.exe` 。
 
 2. 从 "**文件**" 菜单中，选择 "**打开**"，然后单击要管理的文件的类型。
 
 3. 在 "**打开**" 对话框中，导航到要管理的特定文件，然后双击该文件。
 
-查看器自动跟随配置合并路径，并创建合并配置的视图。 例如，非宿主服务的实际配置是 Machine.config 和 app.config 的组合。任何更改都将应用到 Svcconfigeditor.exe 中的活动文件。 如果要编辑配置合并路径中的特定文件，应直接将其打开。
+查看器自动跟随配置合并路径，并创建合并配置的视图。 例如，非宿主服务的实际配置是 Machine.config 和 App.config 的组合。任何更改都将应用到 Svcconfigeditor.exe 中的活动文件。 如果要编辑配置合并路径中的特定文件，应直接将其打开。
 
 > [!NOTE]
 > 如果在编辑器外部修改了后者，配置编辑器将重新加载当前打开的配置文件。 发生这种情况时，未在编辑器内永久保存的所有更改都将丢失。 如果一直发生重新加载情况，最可能的原因是某项服务（例如，在后台运行的防病毒软件）在不断地访问配置文件。 若要解决此问题，请确保配置编辑器是在文件打开时唯一能够访问该文件的进程。
 
-### <a name="services"></a>Services
+### <a name="services"></a>服务
 
-"**服务**" 节点显示配置文件中当前分配的所有服务。 树中的每个子节点对应于配置文件中 < `services` > 元素的子元素。
+"**服务**" 节点显示配置文件中当前分配的所有服务。 树中的每个子节点对应于 `services` 配置文件中 <> 元素的子元素。
 
 单击 "**服务**" 节点时，可以在 "**详细信息**" 窗格中的 "服务摘要" 页上查看或执行任务。
 
@@ -110,18 +111,18 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 1. 单击**主机**节点。
 
-2. 单击 "**新建 ...** " 按钮。
+2. 单击 **“OData 源编辑器”** 按钮。 **Base Addresses**
 
 3. 在对话框中键入基址 URI。
 
 4. 单击“确定”。
 
 > [!NOTE]
-> 无法在此工具中编辑[\<baseAddressPrefixFilters >](../configure-apps/file-schema/wcf/baseaddressprefixfilters.md)的值。 若要添加或修改此元素，应使用文本编辑器或 Visual Studio。
+> 无法在 [\<baseAddressPrefixFilters>](../configure-apps/file-schema/wcf/baseaddressprefixfilters.md) 此工具中编辑的值。 若要添加或修改此元素，应使用文本编辑器或 Visual Studio。
 
-### <a name="client"></a>客户端
+### <a name="client"></a>Client
 
-**客户端**节点显示配置文件中的所有客户端终结点。 树中的每个子节点对应于配置文件中 < `client` > 元素的子元素。
+**客户端**节点显示配置文件中的所有客户端终结点。 树中的每个子节点对应于 `client` 配置文件中 <> 元素的子元素。
 
 单击 "**客户端**" 节点时，可以在 "**详细信息" 窗格**的 "客户端**摘要" 页**上查看或执行任务。
 
@@ -143,7 +144,7 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 标准终结点是一种专门的终结点，其地址、协定和绑定中的一个或多个方面已设置为默认值。
 
-此类配置设置存储在 "**标准终结点**" 节点中。 **标准终结点**节点显示配置文件中的所有标准终结点设置。 树中的每个子节点对应于配置文件中 `<standardEndpoints>` 元素的子元素。
+此类配置设置存储在 "**标准终结点**" 节点中。 **标准终结点**节点显示配置文件中的所有标准终结点设置。 树中的每个子节点对应于配置文件中元素的子元素 `<standardEndpoints>` 。
 
 单击 "**标准终结点**" 节点时，可以在 "**详细信息" 窗格**的 "标准终结点**摘要" 页**上查看或执行任务。
 
@@ -151,7 +152,7 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 可按下列方法创建新的标准终结点配置：
 
-- 右键单击 "**标准终结点**" 节点，然后选择 "**新建标准终结点配置 ...** " 在对话框中选择绑定类型，然后单击 **"确定"** 。
+- 右键单击 "**标准终结点**" 节点，然后选择 "**新建标准终结点配置 ...** " 在对话框中选择绑定类型，然后单击 **"确定"**。
 
 - 选择 "**标准终结点**" 节点，然后单击 "**新建标准终结点配置 ...** "。 在窗口左下方的**任务窗格**中。
 
@@ -181,7 +182,7 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 绑定配置用于配置终结点上的绑定。 此类配置设置存储在 "**绑定**" 节点中。 终结点按名称引用绑定配置，并且多个终结点可引用同一个绑定配置。
 
-"**绑定**" 节点显示配置文件中的所有绑定设置。 树中的每个子节点对应于配置文件中 < `bindings` > 元素中的子元素。
+"**绑定**" 节点显示配置文件中的所有绑定设置。 树中的每个子节点对应于配置文件中 <> 元素中的子元素 `bindings` 。
 
 单击 "**绑定**" 节点后，可以在 "**详细信息" 窗格**中的 "绑定**摘要" 页**上查看或执行任务。
 
@@ -189,7 +190,7 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 可按下列方法创建新的绑定配置。
 
-- 右键单击 "**绑定**" 节点，然后选择 "**新建绑定配置**..." 在对话框中选择绑定类型，然后单击 **"确定"** 。
+- 右键单击 "**绑定**" 节点，然后选择 "**新建绑定配置**..." 在对话框中选择绑定类型，然后单击 **"确定"**。
 
 - 选择 "**绑定**" 节点，然后单击 "**新建绑定配置**..." 在窗口左下方的**任务窗格**中。
 
@@ -199,11 +200,11 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 1. 选择要向其添加扩展元素的绑定。
 
-2. 单击 **添加**。
+2. 单击“添加”。
 
 3. 从可用扩展列表中，选择要添加的绑定元素扩展。 按住 Ctrl 键的同时进行选择可选择多项。
 
-4. 单击 **添加**。
+4. 单击“添加”。
 
 #### <a name="adjusting-the-extension-position-in-a-custom-binding"></a>调整自定义绑定中的扩展位置
 
@@ -225,7 +226,7 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 ### <a name="diagnostics"></a>诊断
 
-"**诊断**" 节点显示配置文件中的所有诊断设置。 它使你能够打开或关闭性能计数器、启用或禁用 Windows Management Instrumentation （WMI）、配置 WCF 跟踪以及配置 WCF 消息日志记录。 "**诊断**" 节点中的设置对应于配置文件中 `<system.serviceModel>` 的 < `system.diagnostics` > "部分和 `<diagnostics>`" 部分。
+"**诊断**" 节点显示配置文件中的所有诊断设置。 它使你能够打开或关闭性能计数器、启用或禁用 Windows Management Instrumentation （WMI）、配置 WCF 跟踪以及配置 WCF 消息日志记录。 **诊断**节点中的设置对应于配置文件中的 <`system.diagnostics`> 部分和 `<diagnostics>` 部分 `<system.serviceModel>` 。
 
 单击 "**诊断**" 节点后，可以在 "**详细信息" 窗格**中的 "诊断**摘要" 页**上查看或执行任务。
 
@@ -268,7 +269,7 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 > [!NOTE]
 > 如果希望在应用程序关闭时自动刷新跟踪和消息日志，请启用 "**自动刷新**" 选项。
 
-"**诊断** **摘要" 页面**使你可以完成配置诊断中最常见的任务。 但是，如果要手动编辑 "侦听器" 和 "源" 设置，则必须在 "**消息日志记录**"、"**侦听器**和**源**" 节点中展开 "**诊断**" 节点并编辑设置。
+"**诊断****摘要" 页面**使你可以完成配置诊断中最常见的任务。 但是，如果要手动编辑 "侦听器" 和 "源" 设置，则必须在 "**消息日志记录**"、"**侦听器**和**源**" 节点中展开 "**诊断**" 节点并编辑设置。
 
 #### <a name="enabling-wcf-custom-tracing-or-message-logging"></a>启用 WCF 自定义跟踪或消息日志记录
 
@@ -280,7 +281,7 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 4. 单击 " **TypeName** " 行将显示 "..."鼠标. 单击此按钮可打开 "**跟踪侦听器类型浏览器**"，您可以使用该浏览器查找已经安装的预配置跟踪侦听器。
 
-5. 请注意 "**源**" 部分。 在此部分中单击 "**添加**" 以打开一个对话框，其中包含一个下拉菜单，其中列出了可用的跟踪源。 选择跟踪源，并单击 **"确定"** 。
+5. 请注意 "**源**" 部分。 在此部分中单击 "**添加**" 以打开一个对话框，其中包含一个下拉菜单，其中列出了可用的跟踪源。 选择跟踪源，并单击 **"确定"**。
 
 6. 若要编辑消息日志记录设置，请单击 "**消息日志记录**" 节点。 可在属性网格中编辑这些设置。
 
@@ -308,11 +309,11 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 2. 选择要编辑的行为。
 
-3. 单击 **添加**。
+3. 单击“添加”。
 
 4. 从可用扩展列表中，选择要添加的行为元素扩展。
 
-5. 单击 **添加**。
+5. 单击“添加”。
 
 ##### <a name="adjusting-the-extension-position-in-a-behavior"></a>调整行为中的扩展位置
 
@@ -356,7 +357,7 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 选择高级节点中的某个扩展节点：
 
-1. 单击“新建”。
+1. 单击 **“新建”**。
 
 2. 输入名称和类型。
 
@@ -374,7 +375,7 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 #### <a name="creating-a-configuration-file"></a>创建配置文件
 
-1. 使用命令窗口导航到 WCF 安装位置，然后键入 `SvcConfigEditor.exe`，启动服务配置编辑器。
+1. 使用命令窗口导航到 WCF 安装位置，然后键入，启动服务配置编辑器 `SvcConfigEditor.exe` 。
 
 2. 从 "**文件**" 菜单中，选择 "**打开**"，然后单击 "**可执行**文件、 **com + 服务**或**WebHosted 服务**"，具体取决于要创建的配置文件的类型。
 
@@ -389,13 +390,13 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 ## <a name="configuring-com"></a>配置 COM+
 
-使用服务配置编辑器可以为现有 COM+ 应用程序创建新的配置文件，或者编辑现有的 COM+ 配置。 仅当配置文件中存在 < `comContract` > 部分时，才会显示 " **COM 约定**" 节点。
+使用服务配置编辑器可以为现有 COM+ 应用程序创建新的配置文件，或者编辑现有的 COM+ 配置。 仅当配置文件中存在 <> 部分时，才会显示 " **COM 约定**" 节点 `comContract` 。
 
 ### <a name="creating-a-new-com-configuration"></a>创建新的 COM+ 配置
 
 创建新的 COM+ 配置之前，请确保您的 COM+ 应用程序已安装在 Component Services 中，并已在全局程序集缓存 (GAC) 中注册。
 
-1. 选择 "**文件**" 菜单->**集成** -> **com + 应用程序。** 此操作将关闭当前打开的文件。 如果当前文件中有未保存的数据，将显示“保存”对话框。 然后，将启动**Com + 集成向导**。
+1. 选择 "**文件**" 菜单->**集成**  ->  **com + 应用程序。** 此操作将关闭当前打开的文件。 如果当前文件中有未保存的数据，将显示“保存”对话框。 然后，将启动**Com + 集成向导**。
 
 2. 在第一页中，从树中选择 COM+ 应用程序。 如果在树中找不到您的 COM+ 应用程序，请验证它是否已安装在组件服务中，并已在全局程序集缓存 (GAC) 中注册。
 
@@ -409,7 +410,7 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
 
 ### <a name="editing-an-existing-com-configuration"></a>编辑现有 COM+ 配置
 
-1. 选择 "**文件**" 菜单->**打开** -> **com + 服务**... "
+1. 选择 "**文件**" 菜单->**打开**"  ->  **com + 服务**..."
 
 2. 从列表中选择要编辑的 COM+ 服务。
 
@@ -418,7 +419,7 @@ C:\Program Files\Microsoft SDKs\Windows\v6.0\Bin\SvcConfigEditor.exe
     > [!NOTE]
     > 也可以直接打开并编辑包含 COM 约定的配置文件。
 
-## <a name="security"></a>安全
+## <a name="security"></a>安全性
 
 不能保证配置编辑器生成的服务配置文件是安全的。 请参阅[安全](./feature-details/security.md)文档，了解如何保护 WCF 服务。
 

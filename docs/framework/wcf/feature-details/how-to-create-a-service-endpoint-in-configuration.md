@@ -1,13 +1,14 @@
 ---
 title: 如何：在配置中创建服务终结点
+description: 了解如何使用同时包含相对和绝对地址的配置文件为 WCF 服务添加终结点。
 ms.date: 06/16/2016
 ms.assetid: f474e25d-2a27-4f31-84c5-395c442b8e70
-ms.openlocfilehash: 56b29da0c147eb9e73a08e2875e33e384da729ed
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 184bcb5f7f3e83f12608757b55bbb4d57be58f7d
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598913"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247060"
 ---
 # <a name="how-to-create-a-service-endpoint-in-configuration"></a>如何：在配置中创建服务终结点
 终结点使客户端能够访问 Windows Communication Foundation （WCF）服务提供的功能。 您可以通过使用相对和绝对终结点地址的组合来定义一个或多个终结点，或者如果您未定义任何服务终结点，则默认情况下运行时为您提供一些终结点。 本主题演示如何使用同时包含相对和绝对地址的配置文件来添加终结点。  

@@ -1,16 +1,17 @@
 ---
 title: 如何：在代码中创建服务终结点
+description: 了解如何在类中实现服务并以编程方式定义其终结点。 在 WCF 中，通常在配置文件中定义终结点。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 3fbb22fa-2930-48b8-b437-def1de87c6a0
-ms.openlocfilehash: 25ea843df7871d730926fe7b9aac9f21d58e263e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3b2ff2a17975bc381db61edc2c0f85f67edd3325
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598926"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247047"
 ---
 # <a name="how-to-create-a-service-endpoint-in-code"></a>如何：在代码中创建服务终结点
 在本示例中，将为计算器服务定义一个 `ICalculator` 协定，在 `CalculatorService` 类中实现该服务，然后在代码中定义其终结点（在这段代码中还指定该服务必须使用 <xref:System.ServiceModel.BasicHttpBinding> 类）。  
@@ -46,6 +47,6 @@ ms.locfileid: "84598926"
   
      有关默认终结点的详细信息，请参阅[WCF 服务的](../samples/simplified-configuration-for-wcf-services.md)[简化配置](../simplified-configuration.md)和简化配置。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：在代码中指定服务绑定](../how-to-specify-a-service-binding-in-code.md)

@@ -1,13 +1,14 @@
 ---
 title: 从 Web 浏览器访问服务（WCF 数据服务快速入门）
+description: 了解如何在 Visual Studio 中开始 WCF 数据服务并在浏览器中禁用源读取。 获取服务定义文档并访问数据服务资源。
 ms.date: 03/30/2017
 ms.assetid: 5a6fa180-3094-4e6e-ba2b-8c80975d18d1
-ms.openlocfilehash: d89f84cd3ea4f56bbae34cbefe0c3891df96fa8b
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 713436c31bc3f622c4f44a83e33fff3fcbba1c1c
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894333"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247773"
 ---
 # <a name="accessing-the-service-from-a-web-browser-wcf-data-services-quickstart"></a>从 Web 浏览器访问服务（WCF 数据服务快速入门）
 
@@ -18,7 +19,7 @@ ms.locfileid: "70894333"
 
 ## <a name="to-request-the-default-service-document-by-using-internet-explorer"></a>使用 Internet Explorer 请求默认服务文档
 
-1. 在 Internet Explorer 的 "**工具**" 菜单中，选择 " **Internet 选项**"，单击 "**内容**" 选项卡，单击 "**设置**"，然后清除 **"启用源查看"** 。
+1. 在 Internet Explorer 的 "**工具**" 菜单中，选择 " **Internet 选项**"，单击 "**内容**" 选项卡，单击 "**设置**"，然后清除 **"启用源查看"**。
 
      这可确保禁用源阅读。 如果未禁用此功能，则 Web 浏览器会将返回的 AtomPub 编码文档视为 XML 源，而不是显示原始 XML 数据。
 

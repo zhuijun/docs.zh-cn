@@ -1,13 +1,14 @@
 ---
 title: 如何：使用配置文件发布服务的元数据
+description: 了解如何使用配置文件发布 WCF 服务的元数据。 通过发布，客户端可以使用 GET 或 HTTP/GET 请求获取此元数据。
 ms.date: 03/30/2017
 ms.assetid: f061443f-92df-4824-b36a-609c4cd14a17
-ms.openlocfilehash: 976e1e0bb2c6479f7599165a1c6fe83bae4e17c1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d5d425be7f02a204476c4f6e81441aca9ea39fcc
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596976"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246813"
 ---
 # <a name="how-to-publish-metadata-for-a-service-using-a-configuration-file"></a>如何：使用配置文件发布服务的元数据
 这是演示如何发布 Windows Communication Foundation （WCF）服务的元数据的两个帮助主题之一。 有两种方式可以指定服务应如何发布元数据：使用配置文件和使用代码。 本主题演示如何使用配置文件发布服务的元数据。  
@@ -253,7 +254,7 @@ namespace Metadata.Samples
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Description.ServiceMetadataBehavior>
 - [如何：在托管应用程序中承载 WCF 服务](../how-to-host-a-wcf-service-in-a-managed-application.md)

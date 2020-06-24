@@ -1,16 +1,17 @@
 ---
 title: WCF 中的身份验证
+description: 了解 WCF 中几个提供身份验证的机制，例如 Windows 身份验证、x.509 证书、用户名和密码。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - authentication [WCF]
 - security [WCF], authentication
 ms.assetid: 9254d873-843d-4c6e-bea4-8184ac3e44f4
-ms.openlocfilehash: b513c9713bd2c04e125915d1a0a87c86ce249666
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4c3348cfb84b8571dc1f24b774ffcd691aaa5001
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597639"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247515"
 ---
 # <a name="authentication-in-wcf"></a>WCF 中的身份验证
 以下主题介绍 Windows Communication Foundation （WCF）中的一些不同机制，这些机制提供身份验证，例如 Windows 身份验证、x.509 证书以及用户名和密码。  
@@ -37,7 +38,7 @@ ms.locfileid: "84597639"
 ## <a name="related-sections"></a>相关章节  
  [常用安全方案](common-security-scenarios.md)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
 - [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

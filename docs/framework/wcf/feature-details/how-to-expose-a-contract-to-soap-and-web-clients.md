@@ -1,16 +1,17 @@
 ---
 title: 如何：向 SOAP 和 Web 客户端公开协定
+description: 了解如何使 WFC 服务器终结点可用于 SOAP 和非 SOAP 客户端。 默认情况下，终结点仅可用于 SOAP 客户端。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: bb765a48-12f2-430d-a54d-6f0c20f2a23a
-ms.openlocfilehash: fa02260976c710401a05cce3d723cc0f66804c6e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b1bdb7af51e0e2795c36865058fbeb34a716e3e2
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593122"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85246969"
 ---
 # <a name="how-to-expose-a-contract-to-soap-and-web-clients"></a>如何：向 SOAP 和 Web 客户端公开协定
 
@@ -102,7 +103,7 @@ ms.locfileid: "84593122"
 
  编译 Service.cs 时，请参考 System.ServiceModel.dll 和 System.ServiceModel.Web.dll。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.WebHttpBinding>
 - <xref:System.ServiceModel.Web.WebGetAttribute>

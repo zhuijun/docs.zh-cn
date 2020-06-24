@@ -1,15 +1,16 @@
 ---
 title: 配置消息日志记录
+description: 了解如何配置消息日志记录，包括如何启用日志记录、日志记录级别、消息筛选器以及如何在 WCF 中配置自定义侦听器。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - message logging [WCF]
 ms.assetid: 0ff4c857-8f09-4b85-9dc0-89084706e4c9
-ms.openlocfilehash: 283f43239d6cf5aea5ea668397a52313ff526e2a
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 5203f19a18e5fa6b0ed7f68e1d1de0447da41abd
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345189"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247657"
 ---
 # <a name="configuring-message-logging"></a>配置消息日志记录
 
@@ -17,7 +18,7 @@ ms.locfileid: "80345189"
 
 ## <a name="enabling-message-logging"></a>启用消息日志记录
 
-默认情况下，Windows 通信基础 （WCF） 不会记录消息。 若要激活消息日志记录，必须向 `System.ServiceModel.MessageLogging` 跟踪源添加跟踪侦听器，并在配置文件中设置 `<messagelogging>` 元素的特性。
+默认情况下，Windows Communication Foundation （WCF）不记录消息。 若要激活消息日志记录，必须向 `System.ServiceModel.MessageLogging` 跟踪源添加跟踪侦听器，并在配置文件中设置 `<messagelogging>` 元素的特性。
 
 下面的示例演示如何启用日志记录和指定其他选项。
 
@@ -47,7 +48,7 @@ ms.locfileid: "80345189"
 </system.serviceModel>
 ```
 
-有关邮件日志记录设置的详细信息，请参阅[跟踪和邮件日志记录的建议设置](./tracing/recommended-settings-for-tracing-and-message-logging.md)。
+有关消息日志记录设置的详细信息，请参阅[用于跟踪和消息日志记录的推荐设置](./tracing/recommended-settings-for-tracing-and-message-logging.md)。
 
 可以使用 `add` 指定要使用的侦听器的名称和类型。 在示例配置中，侦听器命名为“messages”，并添加了标准 .NET Framework 跟踪侦听器(`System.Diagnostics.XmlWriterTraceListener`)，作为要使用的类型。 如果使用 `System.Diagnostics.XmlWriterTraceListener`，则必须在配置文件中指定输出文件的位置和名称。 这是通过将 `initializeData` 设置为该日志文件的名称来完成的。 否则，系统将引发异常。 还可以实现能向默认文件发出日志的自定义侦听器。
 
@@ -63,7 +64,7 @@ ms.locfileid: "80345189"
 </source>
 ```
 
-如果希望禁用跟踪源，应该使用 `logMessagesAtServiceLevel`, `logMalformedMessages` 以及 `logMessagesAtTransportLevel` 元素的 `messageLogging` 属性。 应将所有这些属性设置为 `false`。 可以使用前面的代码示例中的配置文件、通过配置编辑器的 UI 接口或使用 WMI 来完成此操作。 有关配置编辑器工具的详细信息，请参阅[配置编辑器工具 （SvcConfigEditor.exe）](../configuration-editor-tool-svcconfigeditor-exe.md)。 有关 WMI 的详细信息，请参阅[使用 Windows 管理检测进行诊断](./wmi/index.md)。
+如果希望禁用跟踪源，应该使用 `logMessagesAtServiceLevel`, `logMalformedMessages` 以及 `logMessagesAtTransportLevel` 元素的 `messageLogging` 属性。 应将所有这些属性设置为 `false`。 可以使用前面的代码示例中的配置文件、通过配置编辑器的 UI 接口或使用 WMI 来完成此操作。 有关配置编辑器工具的详细信息，请参阅[配置编辑器工具（SvcConfigEditor.exe）](../configuration-editor-tool-svcconfigeditor-exe.md)。 有关 WMI 的详细信息，请参阅[使用 Windows Management Instrumentation 诊断](./wmi/index.md)。
 
 ## <a name="logging-levels-and-options"></a>日志记录的级别和选项
 
@@ -71,7 +72,7 @@ ms.locfileid: "80345189"
 
 对于传出消息，在消息离开用户代码之后和消息进入网络之前，都会立即进行日志记录。
 
-WCF 在两个不同的级别（服务和传输）记录消息。 也记录格式不正确的消息。 这三种类别是互相独立的，可以在配置中单独激活。
+WCF 在两个不同的级别、服务和传输中记录消息。 也记录格式不正确的消息。 这三种类别是互相独立的，可以在配置中单独激活。
 
 可以通过设置 `logMessagesAtServiceLevel` 元素的 `logMalformedMessages`、`logMessagesAtTransportLevel` 和 `messageLogging` 属性来控制日志记录的级别。
 
@@ -85,7 +86,7 @@ WCF 在两个不同的级别（服务和传输）记录消息。 也记录格式
 
 ### <a name="malformed-level"></a>“格式不正确”级别
 
-格式不正确的消息是 WCF 堆栈在处理的任何阶段拒绝的消息。 格式错误的消息将被如实记录：已加密（如果是加密的）、带有不适当的 XML 等。 `maxSizeOfMessageToLog` 定义了记录为 CDATA 的消息大小。 默认情况下，`maxSizeOfMessageToLog` 等于 256K。 有关此属性的详细信息，请参阅其他选项部分。
+格式不正确的消息是指在任何处理阶段由 WCF 堆栈拒绝的消息。 格式错误的消息将被如实记录：已加密（如果是加密的）、带有不适当的 XML 等。 `maxSizeOfMessageToLog` 定义了记录为 CDATA 的消息大小。 默认情况下，`maxSizeOfMessageToLog` 等于 256K。 有关此属性的详细信息，请参阅 "其他选项" 部分。
 
 ### <a name="other-options"></a>其他选项
 
@@ -102,24 +103,24 @@ WCF 在两个不同的级别（服务和传输）记录消息。 也记录格式
 
 如果在配置文件中没有定义跟踪侦听器，则不论指定什么记录级别，都不会生成记录输出。
 
-对于消息日志记录选项（例如在本部分描述的属性），可以使用 Windows Management Instrumentation (WMI) 在运行时进行更改。 这可以通过访问[AppDomainInfo](./wmi/appdomaininfo.md)实例来实现，该实例公开了这些布尔属性：`LogMessagesAtServiceLevel`和`LogMessagesAtTransportLevel`。 `LogMalformedMessages` 因此，如果为消息日志记录配置了跟踪侦听器，但是在配置中将这些选项设置为 `false`，那么可以在以后运行应用程序时将它们更改为 `true`。 这会在运行时有效地启用消息日志记录。 同样，如果在配置文件中启用了消息日志记录，可以在运行时使用 WMI 将其禁用。 有关详细信息，请参阅使用[Windows 管理检测进行诊断](./wmi/index.md)。
+对于消息日志记录选项（例如在本部分描述的属性），可以使用 Windows Management Instrumentation (WMI) 在运行时进行更改。 这可以通过访问[AppDomainInfo](./wmi/appdomaininfo.md)实例来完成，此实例将公开以下布尔属性： `LogMessagesAtServiceLevel` 、 `LogMessagesAtTransportLevel` 和 `LogMalformedMessages` 。 因此，如果为消息日志记录配置了跟踪侦听器，但是在配置中将这些选项设置为 `false`，那么可以在以后运行应用程序时将它们更改为 `true`。 这会在运行时有效地启用消息日志记录。 同样，如果在配置文件中启用了消息日志记录，可以在运行时使用 WMI 将其禁用。 有关详细信息，请参阅[使用诊断 Windows Management Instrumentation](./wmi/index.md)。
 
 消息记录中的 `source` 字段指定了在何种上下文中记录消息：在发送/接收请求消息时、在进行请求-答复或单向请求时、在服务模型或传输层上或者在发现格式不正确的消息时。
 
-对于格式错误的消息，`source`等于`Malformed`。 否则，根据上下文，源具有以下值。
+对于格式不正确的消息， `source` 等于 `Malformed` 。 否则，根据上下文，源具有以下值。
 
 对于请求/答复
 
 ||发送请求|接收请求|发送答复|接收答复|
 |-|------------------|---------------------|----------------|-------------------|
-|服务模型层|服务<br /><br /> 级别<br /><br /> Send<br /><br /> 请求|服务<br /><br /> 级别<br /><br /> 接收<br /><br /> 请求|服务<br /><br /> 级别<br /><br /> Send<br /><br /> 回复|服务<br /><br /> 级别<br /><br /> 接收<br /><br /> 回复|
+|服务模型层|服务<br /><br /> Level<br /><br /> Send<br /><br /> 请求|服务<br /><br /> Level<br /><br /> 接收<br /><br /> 请求|服务<br /><br /> Level<br /><br /> Send<br /><br /> 回复|服务<br /><br /> Level<br /><br /> 接收<br /><br /> 回复|
 |传输层|传输<br /><br /> Send|传输<br /><br /> 接收|传输<br /><br /> Send|传输<br /><br /> 接收|
 
 对于单向请求
 
 ||发送请求|接收请求|
 |-|------------------|---------------------|
-|服务模型层|服务<br /><br /> 级别<br /><br /> Send<br /><br /> 数据报|服务<br /><br /> 级别<br /><br /> 接收<br /><br /> 数据报|
+|服务模型层|服务<br /><br /> Level<br /><br /> Send<br /><br /> 数据报|服务<br /><br /> Level<br /><br /> 接收<br /><br /> 数据报|
 |传输层|传输<br /><br /> Send|传输<br /><br /> 接收|
 
 ## <a name="message-filters"></a>消息筛选器
@@ -175,6 +176,6 @@ WCF 在两个不同的级别（服务和传输）记录消息。 也记录格式
 
 ## <a name="see-also"></a>请参阅
 
-- [\<消息记录>](../../configure-apps/file-schema/wcf/messagelogging.md)
+- [\<messageLogging>](../../configure-apps/file-schema/wcf/messagelogging.md)
 - [消息日志记录](message-logging.md)
 - [跟踪和消息日志记录的推荐设置](./tracing/recommended-settings-for-tracing-and-message-logging.md)

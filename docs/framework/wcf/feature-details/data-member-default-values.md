@@ -1,5 +1,6 @@
 ---
 title: 数据成员默认值
+description: 了解如何在数据成员具有 .NET Framework 默认值时从序列化数据中省略该数据成员。 WCF 可以通过不序列化默认值来提高性能。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - data members [WCF], default values
 - data members [WCF]
 ms.assetid: 53a3b505-4b27-444b-b079-0eb84a97cfd8
-ms.openlocfilehash: e4eaaec880ecfcff24d9d5b4e8347a84738e070b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 97946a6b7da14efdcb5229b4cc5d0799eb8d7723
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593472"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85247372"
 ---
 # <a name="data-member-default-values"></a>数据成员默认值
 在 .NET Framework 中，类型具有*默认值*的概念。 例如，对于任何引用类型，默认值为 `null`，而整型的默认值为零。 如果某个数据成员设置为其默认值，有时会希望序列化数据中不包含该数据成员。 由于成员具有默认值，这个实际值不需要进行序列化；这样处理可以提高性能。  
@@ -56,7 +57,7 @@ ms.locfileid: "84593472"
   
  对于架构导入， <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A> `false` 只要检测到前面提到的 WCF 特定的批注，属性就会自动设置为。 对于属性设置为的引用类型，它还设置为， `false` `nillable` `false` 以支持在使用 ASP.NET Web 服务时经常发生的特定互操作方案。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.Serialization.DataMemberAttribute.EmitDefaultValue%2A>
 - <xref:System.Runtime.Serialization.DataMemberAttribute>
