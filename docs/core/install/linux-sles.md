@@ -4,12 +4,12 @@ description: 演示在 SLES 上安装 .NET Core SDK 和 .NET Core 运行时的�
 author: thraka
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: b2eab6a0305d492e37e1b33d02be43ca41d42b6f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9816e1f0253be58dc04c1302f334a7ea0b810810
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602788"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768388"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-sles"></a>在 SLES 上安装 .NET Core SDK 或 .NET Core 运行时
 
@@ -75,10 +75,6 @@ sudo rpm -Uvh https://packages.microsoft.com/config/sles/12/packages-microsoft-p
 ### <a name="failed-to-fetch"></a>未能提取
 
 [!INCLUDE [package-manager-failed-to-fetch-rpm](includes/package-manager-failed-to-fetch-rpm.md)]
-
-## <a name="snap"></a>Snap
-
-[!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
 ## <a name="dependencies"></a>依赖项
 

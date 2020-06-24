@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 05/04/2020
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: c079e1856cdd370a278efc6fdfb4953059b6f2ba
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: d3f7083366e2019d01884b5dff6e60d05ed565dd
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596288"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768282"
 ---
 # <a name="install-the-net-core-runtime"></a>安装 .NET Core 运行时
 
@@ -95,7 +95,7 @@ set DOTNET_MULTILEVEL_LOOKUP=0
 
 ::: zone-end
 
-::: zone pivot="os-linux,os-macos"
+::: zone pivot="os-macos"
 
 ## <a name="install-with-bash-automation"></a>使用 Bash 自动化安装
 

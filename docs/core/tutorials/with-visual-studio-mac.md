@@ -2,12 +2,12 @@
 title: 使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序
 description: 了解如何使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序。
 ms.date: 06/02/2020
-ms.openlocfilehash: 57f16e510270b7256b285493b1f978101fc11804
-ms.sourcegitcommit: f6350c2c542e6edd52d7e9d6667b96d85d810e67
+ms.openlocfilehash: 9cab838eaab2c59d8a0270267514f57acb7c60fb
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84717518"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84811671"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>教程：使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序
 
@@ -84,7 +84,7 @@ namespace HelloWorld
 
 1. 在 Program.cs 中，将 `Main` 方法的内容（是调用 `Console.WriteLine` 的行）替换为以下代码：
 
-   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="1":::
+   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
 
    此代码在控制台中显示“What is your name?”， 然后等待用户输入字符串并按 <kbd>Enter</kbd> 键。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量。 最后，它会在控制台窗口中显示这些值。
 

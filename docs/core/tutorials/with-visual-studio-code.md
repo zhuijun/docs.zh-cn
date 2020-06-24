@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 创建 .NET Core 控制台应用程序
 description: 了解如何使用 Visual Studio Code 和 .NET Core CLI 创建 .NET Core 控制台应用程序。
 ms.date: 05/22/2020
-ms.openlocfilehash: 6d8f9adb2f77dbfd2d1cf54c80f1cdea582b1d96
-ms.sourcegitcommit: f6350c2c542e6edd52d7e9d6667b96d85d810e67
+ms.openlocfilehash: 466a1353b574711a73570428569b58eab7ad8135
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84717505"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84811688"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-code"></a>教程：使用 Visual Studio Code 创建 .NET Core 控制台应用程序
 
@@ -89,7 +89,7 @@ dotnet run
 
 1. 将 Program.cs 中 `Main` 方法的内容（当前只是调用 `Console.WriteLine` 的行）替换为以下代码：
 
-   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="1":::
+   :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
 
    此代码在控制台中显示“What is your name?”， 然后等待用户输入字符串并按 Enter<kbd></kbd>。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量。 最后，它会在控制台窗口中显示这些值。
 
