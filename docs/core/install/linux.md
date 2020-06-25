@@ -4,12 +4,12 @@ description: 了解哪些 Linux 发行版支持在 Linux 上安装 .NET Core。
 author: thraka
 ms.author: adegeo
 ms.date: 06/01/2020
-ms.openlocfilehash: fec3cf9e99c2db5d7312280f676bc2a3344f1ae1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e668ad733481c2d9b73994b6344b38768f5851fe
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602668"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903371"
 ---
 # <a name="install-net-core-on-linux"></a>在 Linux 上安装 .NET Core
 
@@ -28,6 +28,26 @@ ms.locfileid: "84602668"
 - 2.0
 
 以下部分未详细介绍这些不受支持的版本，如果你尝试安装它们，则实际数据可能有所不同。
+
+## <a name="alpine"></a>Alpine
+
+Alpine 没有安装程序。 必须使用[安装脚本](linux-alpine.md#scripted-install)或按照[手动安装](linux-alpine.md#manual-install)说明进行操作。
+
+下表列出了当前支持的 .NET Core 版本以及支持它们的 Alpine 版本。 这些版本在 [.NET Core 到达支持终止日期](https://dotnet.microsoft.com/platform/support/policy/dotnet-core)或 [Alpine 的版本到达有效期](https://wiki.alpinelinux.org/wiki/Alpine_Linux:Releases)之前仍受支持。
+
+- ✔️ 指示 Alpine 或 .NET Core 版本仍受支持。
+- ❌ 指示 Alpine 或 .NET Core 版本在该 Alpine 发行版本上不受支持。
+- 当 Alpine 版本和 .NET Core 版本都有 ✔️ 时，则支持该 OS 和 .NET 的组合。
+
+| Alpine                      | .NET Core 2.1 | .NET Core 3.1 | .NET 5 预览版 |
+|-----------------------------|---------------|---------------|----------------|
+| ✔️ [3.12](linux-alpine.md)  | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
+| ✔️ [3.11](linux-alpine.md)  | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
+| ✔️ [3.10](linux-alpine.md)  | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
+| ✔️ [3.9](linux-alpine.md)   | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
+| ❌ [3.8](linux-alpine.md)   | ✔️ 2.1        | ❌ 3.1        | ❌ 5.0 预览版 |
+
+有关详细信息，请参阅[在 Alpine 上安装 .NET Core](linux-alpine.md)。
 
 ## <a name="centos"></a>CentOS
 
@@ -57,6 +77,8 @@ Debian 将 APT（高级包工具）用作包管理器。
 | ✔️ [10](linux-debian.md#debian-10-)     | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
 | ✔️ [9](linux-debian.md#debian-9-)       | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
 | ❌ [8](linux-debian.md#debian-8-)       | ✔️ 2.1        | ❌ 3.1        | ❌ 5.0 预览版 |
+
+有关详细信息，请参阅[在 Debian 上安装 .NET Core](linux-debian.md)。
 
 ## <a name="fedora"></a>Fedora
 
@@ -93,6 +115,8 @@ openSUSE 将 zypper 用作包管理器。
 |----------------------------|---------------|---------------|----------------|
 | ✔️ [15](linux-opensuse.md#opensuse-15-)     | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
 
+有关详细信息，请参阅[在 openSUSE 上安装 .NET Core](linux-opensuse.md)。
+
 ## <a name="red-hat"></a>Red Hat
 
 Red Hat Enterprise Linux (RHEL) 将 yum (RHEL 7) 和 DNF (RHEL 8) 用作包管理器。
@@ -108,6 +132,8 @@ Red Hat Enterprise Linux (RHEL) 将 yum (RHEL 7) 和 DNF (RHEL 8) 用作包管�
 | ✔️ [8](linux-rhel.md#rhel-8-) | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
 | ✔️ [7](linux-rhel.md#rhel-7-) | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
 
+有关详细信息，请参阅[在 RHEL 上安装 .NET Core](linux-rhel.md)。
+
 ## <a name="sles"></a>SLES
 
 SLES 将 zypper 用作包管理器。
@@ -122,6 +148,8 @@ SLES 将 zypper 用作包管理器。
 |------------------------|---------------|---------------|----------------|
 | ✔️ [15](linux-sles.md#sles-15-)     | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
 | ✔️ [12 SP2](linux-sles.md#sles-12-) | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
+
+有关详细信息，请参阅[在 SLES 上安装 .NET Core](linux-sles.md)。
 
 ## <a name="ubuntu"></a>Ubuntu
 
