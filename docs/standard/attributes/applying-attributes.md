@@ -32,7 +32,7 @@ ms.locfileid: "84276330"
   
  编译代码时，特性将被发到元数据中，并且通过运行时反射服务可用于公共语言运行时和任何自定义工具或应用程序。  
   
- 按照惯例，所有特性名称都以 Attribute 结尾。 但是，面向运行时的几种语言（如 Visual Basic 和 C#）无需指定特性的全名。 例如，若要初始化 <xref:System.ObsoleteAttribute?displayProperty=nameWithType>，只需将它引用为 Obsolete  即可。  
+ 按照惯例，所有特性名称都以 Attribute 结尾。 但是，面向运行时的几种语言（如 Visual Basic 和 C#）无需指定特性的全名。 例如，若要初始化 <xref:System.ObsoleteAttribute?displayProperty=nameWithType>，只需将它引用为 Obsolete 即可。  
   
 ## <a name="applying-an-attribute-to-a-method"></a>将特性应用于方法  
  以下代码示例显示如何声明 **System.ObsoleteAttribute**（其将代码标记为已过时。） 将字符串 `"Will be removed in next version"` 传递给特性。 当特性描述的代码被调用时，此特性会导致产生编译器警告，显示传递的字符串。  
@@ -42,7 +42,7 @@ ms.locfileid: "84276330"
  [!code-vb[Conceptual.Attributes.Usage#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source1.vb#3)]  
   
 ## <a name="applying-attributes-at-the-assembly-level"></a>在程序集级别应用特性  
- 如果要在程序集级别应用属性，请使用 **assembly`Assembly`（Visual Basic 中用 **）关键字。 下列代码显示在程序集级别应用的 **AssemblyTitleAttribute**。  
+ 如果要在程序集级别应用属性，请使用 **assembly`Assembly`（Visual Basic 中用** ）关键字。 下列代码显示在程序集级别应用的 **AssemblyTitleAttribute**。  
   
  [!code-cpp[Conceptual.Attributes.Usage#2](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source1.cpp#2)]
  [!code-csharp[Conceptual.Attributes.Usage#2](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source1.cs#2)]
@@ -50,7 +50,7 @@ ms.locfileid: "84276330"
   
  应用此特性时，字符串 `"My Assembly"` 将被放置在文件元数据部分的程序集清单中。 可通过后列方法查看特性：使用 [MSIL 反汇编程序 (Ildasm.exe)](../../framework/tools/ildasm-exe-il-disassembler.md)，或创建一个自定义程序来检索特性。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [特性](index.md)
 - [检索存储在特性中的信息](retrieving-information-stored-in-attributes.md)
