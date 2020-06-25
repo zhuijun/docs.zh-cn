@@ -1,5 +1,6 @@
 ---
 title: 数据绑定
+description: 了解如何使用 Windows 窗体中的数据绑定来显示和更改窗体上控件中的数据源中的信息。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data [Windows Forms]
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - data [Windows Forms], architecture
 - Windows Forms controls, data binding
 ms.assetid: c3826d8e-ea25-4ad4-a669-45bfb19192aa
-ms.openlocfilehash: 68871db848ab46b88865e668f27f09972e8debcf
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 3dfce24147caf9b138916ca8dc3b7a9010439f58
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734613"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325541"
 ---
 # <a name="windows-forms-data-binding"></a>Windows 窗体数据绑定
 Windows 窗体中的数据绑定使你可以显示和更改窗体上的控件中的数据源的信息。 可以绑定到传统数据源和几乎任何包含数据的结构。  
@@ -27,7 +28,7 @@ Windows 窗体中的数据绑定使你可以显示和更改窗体上的控件中
  [与数据绑定相关的接口](interfaces-related-to-data-binding.md)  
  介绍了几种与 Windows 窗体数据绑定一起使用的接口。  
   
- [如何：在 Windows 窗体中浏览数据](how-to-navigate-data-in-windows-forms.md)  
+ [如何：在 Windows 窗体中导航数据](how-to-navigate-data-in-windows-forms.md)  
  演示如何在数据源中的项之间进行导航。  
   
  [Windows 窗体数据绑定中的更改通知](change-notification-in-windows-forms-data-binding.md)  

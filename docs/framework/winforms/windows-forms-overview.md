@@ -1,16 +1,17 @@
 ---
 title: 概述
+description: 了解如何使用 Windows 窗体来构建满足当今企业和最终用户需求的智能客户端。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - smart clients
 - Windows Forms, about Windows Forms
 ms.assetid: 3a2b6284-c8d6-4e1c-8c69-0bed38f38cd4
-ms.openlocfilehash: c3a8394086c9d744630179b089a1f986af12b339
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 820d5bae54ecb5a868314197d6a7e45e097b57de
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734548"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325990"
 ---
 # <a name="windows-forms-overview"></a>Windows 窗体概述
 
@@ -18,13 +19,13 @@ ms.locfileid: "76734548"
 
 ## <a name="windows-forms-and-smart-client-apps"></a>Windows 窗体和智能客户端应用
 
- 可以使用 Windows 窗体开发智能客户端。 智能客户端是包含丰富图形的应用程序，可轻松进行部署和更新，无论是否连接到 Internet 均可正常工作，并能以相较于基于 Windows 的传统应用程序更为安全的方式访问本地计算机上的资源。
+ 可以使用 Windows 窗体开发智能客户端。 智能客户端** 是包含丰富图形的应用程序，可轻松进行部署和更新，无论是否连接到 Internet 均可正常工作，并能以相较于基于 Windows 的传统应用程序更为安全的方式访问本地计算机上的资源。
 
 ### <a name="build-rich-interactive-user-interfaces"></a>构建丰富的交互式用户界面
 
- Windows 窗体是一种用于 .NET Framework 的智能客户端技术，这是一组可简化常见应用程序任务（例如，读取和写入文件系统）的托管库。 使用 Visual Studio 之类的开发环境时，可以创建 Windows 窗体智能客户端应用程序，这些应用程序可显示信息、请求来自用户的输入以及通过网络与远程计算机通信。
+ Windows 窗体是用于 .NET Framework 的智能客户端技术，是一组简化读取和写入文件系统等常见应用程序任务的托管库。 使用 Visual Studio 等开发环境时，可以创建 Windows 窗体智能客户端应用，以显示信息、请求用户提供输入，以及通过网络与远程计算机通信。
 
- 在 Windows 窗体中，窗体是一种可视图面，可在其上对用户显示信息。 通常情况下，通过向窗体添加控件和开发对用户操作（如点击鼠标或按键）的响应来构建 Windows 窗体应用程序。 控件是离散的用户界面 (UI) 元素，用于显示数据或接受数据输入。
+ 在 Windows 窗体中，窗体** 是一种可视图面，可在其上对用户显示信息。 通常情况下，通过向窗体添加控件和开发对用户操作（如点击鼠标或按键）的响应来构建 Windows 窗体应用程序。 控件** 是离散的用户界面 (UI) 元素，用于显示数据或接受数据输入。
 
  当用户对你的窗体或一个窗体控件执行了某个操作，该操作将生成一个事件。 你的应用程序通过使用代码对这些事件做出反应，并在事件发生时对其进行处理。 有关详细信息，请参阅[在 Windows 窗体中创建事件处理程序](creating-event-handlers-in-windows-forms.md)。
 
@@ -32,12 +33,12 @@ ms.locfileid: "76734548"
 
  Windows 窗体具有丰富的 UI 控件，这些控件可模拟 Microsoft Office 等高端应用程序中的功能。 使用 <xref:System.Windows.Forms.ToolStrip> 和 <xref:System.Windows.Forms.MenuStrip> 控件时，可以创建包含文本和图像的工具栏和菜单、显示子菜单和托管其他控件（如文本框和组合框）。
 
- 通过在 Visual Studio 中进行拖放**Windows 窗体设计器**，可以轻松创建 Windows 窗体应用程序。 只需用光标选中控件，然后将它们添加到窗体中所需的位置即可。 设计器提供诸如网格线和对齐线的工具，以便简化对齐控件的操作。 无论您是使用 Visual Studio 还是在命令行上编译，都可以使用 <xref:System.Windows.Forms.FlowLayoutPanel>、<xref:System.Windows.Forms.TableLayoutPanel> 和 <xref:System.Windows.Forms.SplitContainer> 控件以更少的时间创建高级窗体布局。
+ 通过在 Visual Studio 中进行拖放**Windows 窗体设计器**，可以轻松创建 Windows 窗体应用程序。 只需用光标选中控件，然后将它们添加到窗体中所需的位置即可。 设计器提供诸如网格线和对齐线的工具，以便简化对齐控件的操作。 无论您是使用 Visual Studio 还是在命令行编译，都可以使用 <xref:System.Windows.Forms.FlowLayoutPanel> <xref:System.Windows.Forms.TableLayoutPanel> 和 <xref:System.Windows.Forms.SplitContainer> 控件来更少的时间创建高级窗体布局。
 
  最后，如果必须创建自己的自定义用户界面元素，<xref:System.Drawing> 命名空间包含各种类，可用以直接在窗体上呈现线条、圆形和其他形状。
 
 > [!NOTE]
-> Windows 窗体控件并未被设计用于跨应用程序域进行封送处理。 因此，Microsoft 不支持跨 <xref:System.AppDomain> 边界传递 Windows 窗体控件，即使 <xref:System.Windows.Controls.Control> 的 <xref:System.MarshalByRefObject> 基类似乎指示这一操作可行。 只要不跨应用程序域边界传递 Windows 窗体控件，就将支持具有多个应用程序域的 Windows 窗体应用程序。
+> Windows 窗体控件并未被设计用于跨应用程序域进行封送处理。 因此，Microsoft 不支持跨 <xref:System.AppDomain> 边界传递 Windows 窗体控件，即使 <xref:System.MarshalByRefObject> 的 <xref:System.Windows.Controls.Control> 基类似乎指示这一操作可行。 只要不跨应用程序域边界传递 Windows 窗体控件，就将支持具有多个应用程序域的 Windows 窗体应用程序。
 
 #### <a name="create-forms-and-controls"></a>创建窗体和控件
 
@@ -53,11 +54,11 @@ ms.locfileid: "76734548"
 ### <a name="display-and-manipulate-data"></a>显示和操作数据
  许多应用程序必须显示数据库、XML 文件、XML Web 服务或其他数据源中的数据。 Windows 窗体提供了一个灵活的控件（名为 <xref:System.Windows.Forms.DataGridView> 控件），用于以传统的行和列格式显示此类表格数据，以便使每段数据块均占据其自己的单元格。 使用 <xref:System.Windows.Forms.DataGridView> 时，可以自定义各个单元格的外观，将任意行和列锁定在所需位置，在单元格内部显示复杂控件，此外还具有其他功能。
 
- 通过网络连接到数据源对于 Windows 窗体智能客户端而言是一个简单的任务。 <xref:System.Windows.Forms.BindingSource> 组件表示与数据源的连接，并公开用于将数据绑定到控件的方法，导航到上一个和下一个记录，编辑记录，并将更改保存回原始源。 <xref:System.Windows.Forms.BindingNavigator> 控件通过 <xref:System.Windows.Forms.BindingSource> 组件提供一个简单界面，可供用户在记录间导航。
+ 通过网络连接到数据源对于 Windows 窗体智能客户端而言是一个简单的任务。 <xref:System.Windows.Forms.BindingSource>组件表示与数据源的连接，并公开用于将数据绑定到控件的方法，导航到上一个和下一个记录，编辑记录，并将更改保存回原始源。 <xref:System.Windows.Forms.BindingNavigator> 控件通过 <xref:System.Windows.Forms.BindingSource> 组件提供一个简单界面，可供用户在记录间导航。
 
  可以使用“数据源”窗口轻松创建数据绑定控件。 窗口显示数据源，如数据库、Web 服务和项目中的对象。 可以通过将此窗口中的项拖动到项目中的窗体上来创建数据绑定控件。 还可以通过将对象从“数据源”窗口拖动到现有控件上来将现有控件与数据进行数据绑定。
 
- 可在 Windows 窗体中管理的另一类数据绑定是“设置”。 大多数智能客户端应用程序均必须保留有关其运行时状态的某些信息（例如窗体的最后已知大小）并保留用户首选项数据（例如保存的文件的默认位置）。 “应用程序设置”功能通过提供一种在客户端计算机上存储两种类型的设置的简单方法来满足这些要求。 使用 Visual Studio 或代码编辑器定义这些设置后，这些设置将作为 XML 保留，并在运行时自动读回到内存中。
+ 可在 Windows 窗体中管理的另一类数据绑定是“设置”**。 大多数智能客户端应用程序均必须保留有关其运行时状态的某些信息（例如窗体的最后已知大小）并保留用户首选项数据（例如保存的文件的默认位置）。 “应用程序设置”功能通过提供一种在客户端计算机上存储两种类型的设置的简单方法来满足这些要求。 使用 Visual Studio 或代码编辑器定义这些设置后，这些设置将作为 XML 保留，并在运行时自动读回到内存中。
 
 #### <a name="display-and-manipulate-data"></a>显示和操作数据
 
@@ -103,8 +104,8 @@ Windows 窗体中有许多其他功能，可帮助快速轻松地实现常见任
 
 ## <a name="see-also"></a>另请参阅
 
-- [Windows 窗体入门](getting-started-with-windows-forms.md)
-- [新建 Windows 窗体](creating-a-new-windows-form.md)
+- [入门与 Windows 窗体](getting-started-with-windows-forms.md)
+- [创建新的 Windows 窗体](creating-a-new-windows-form.md)
 - [ToolStrip 控件概述](./controls/toolstrip-control-overview-windows-forms.md)
 - [DataGridView 控件概述](./controls/datagridview-control-overview-windows-forms.md)
 - [BindingSource 组件概述](./controls/bindingsource-component-overview.md)

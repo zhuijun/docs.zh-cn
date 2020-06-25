@@ -1,5 +1,6 @@
 ---
 title: 将对象绑定到 DataGridView 控件
+description: 了解如何将对象集合绑定到 Windows 窗体 DataGridView 控件，以便每个对象显示为单独的行。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - data grids [Windows Forms], object binding
 - object binding [Windows Forms], DataGridView control
 ms.assetid: cb8f29fa-577e-4e2b-883f-3a01c6189b9c
-ms.openlocfilehash: d5aa5cb64c7fb2b82d69d6c87134ee901b84f5c1
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: add0047937b404dcec1ea12bac8053bb9bdfcf1c
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746697"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325862"
 ---
 # <a name="how-to-bind-objects-to-windows-forms-datagridview-controls"></a>如何：将对象绑定到 Windows 窗体 DataGridView 控件
 下面的代码示例演示如何将对象集合绑定到 <xref:System.Windows.Forms.DataGridView> 控件，以便每个对象可显示为单独的一行。 此示例还演示了如何显示 <xref:System.Windows.Forms.DataGridViewComboBoxColumn> 中具有枚举类型的属性，从而使组合框下拉列表包含枚举值。  

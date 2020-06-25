@@ -1,5 +1,6 @@
 ---
 title: 如何：在运行时创建事件处理程序
+description: 了解如何在运行时使用 Visual Studio 中的 Windows 窗体设计器创建事件处理程序。 此操作允许您在运行时连接事件处理程序。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - examples [Windows Forms], event handling
 - Button control [Windows Forms], event handlers
 ms.assetid: 2e7c9e1a-61fe-444d-8113-3c5bacf1c8cb
-ms.openlocfilehash: 0b496a3da77c5bcf7a08c435edba468a7c5809cb
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 857076c46377b3276154d9b193d4bbe51841828f
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739505"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325808"
 ---
 # <a name="how-to-create-event-handlers-at-run-time-for-windows-forms"></a>如何：在运行时为 Windows 窗体创建事件处理程序
 
@@ -29,7 +30,7 @@ ms.locfileid: "76739505"
 
 2. 对于要处理的事件，将带有其方法签名的方法添加到窗体上。
 
-     例如，如果您正在处理 <xref:System.Windows.Forms.Button> 控件的 <xref:System.Windows.Forms.Control.Click> 事件，则会创建如下所示的方法：
+     例如，如果您正在处理控件的 <xref:System.Windows.Forms.Control.Click> 事件 <xref:System.Windows.Forms.Button> ，则会创建如下所示的方法：
 
     ```vb
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As EventArgs)
@@ -57,7 +58,7 @@ ms.locfileid: "76739505"
 
 4. 确定要为其创建事件处理程序的窗体或控件。
 
-5. 在窗体类的方法中添加代码，以指定用于处理事件的事件处理程序。 例如，下面的代码指定 `button1_Click` 处理 <xref:System.Windows.Forms.Button> 控件的 <xref:System.Windows.Forms.Control.Click> 事件的事件处理程序：
+5. 在窗体类的方法中添加代码，以指定用于处理事件的事件处理程序。 例如，下面的代码指定事件处理程序 `button1_Click` 处理控件的 <xref:System.Windows.Forms.Control.Click> 事件 <xref:System.Windows.Forms.Button> ：
 
     ```vb
     AddHandler Button1.Click, AddressOf Button1_Click
@@ -71,7 +72,7 @@ ms.locfileid: "76739505"
     button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
     ```
 
-     上面的 Visual Basic 代码中演示的 <xref:System.ComponentModel.EventHandlerList.AddHandler%2A> 方法为该按钮建立了一个 click 事件处理程序。
+     <xref:System.ComponentModel.EventHandlerList.AddHandler%2A>上面的 Visual Basic 代码中演示的方法将为该按钮建立一个 click 事件处理程序。
 
 ## <a name="see-also"></a>另请参阅
 

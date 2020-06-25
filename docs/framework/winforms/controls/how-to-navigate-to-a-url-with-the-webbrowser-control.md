@@ -1,5 +1,6 @@
 ---
 title: 如何：使用 WebBrowser 控件导航到 URL
+description: 了解如何使用 Windows 窗体 WebBrowser. 导航控件导航到特定的 URL。 还了解如何确定何时加载新文档。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - WebBrowser control [Windows Forms], navigating to URLs
 - examples [Windows Forms], WebBrowser control
 ms.assetid: b3ec38cb-f509-4d0b-bd79-9f3611259c62
-ms.openlocfilehash: f6cb26ff247bba75cc351d453314bade2d38d9f5
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: e6ad360cc73a84ca040869832bb59d354cb78bd5
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144833"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325575"
 ---
 # <a name="how-to-navigate-to-a-url-with-the-webbrowser-control"></a>如何：使用 WebBrowser 控件导航到 URL
 下面的代码示例演示如何将控件导航 <xref:System.Windows.Forms.WebBrowser> 到特定的 URL。

@@ -1,6 +1,6 @@
 ---
 title: System.windows.xps.xpsdocumentwriter> 事件（_WritingCancelled）
-description: 了解 System.windows.xps.xpsdocumentwriter> 事件，该事件在 .NET 中取消 XML 纸张规范（XPS） Write 或 WriteAsync 操作时发生 _WritingCancelled。
+description: 在 .NET 中取消 XML 纸张规范（XPS）写入操作时，会发生 _WritingCancelled 事件。
 ms.date: 10/17/2017
 api_location:
 - system.printing.dll
@@ -12,12 +12,12 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 5e07085ed3573f01acdb63962ca868debb7b49fa
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: abf550a0e9354f3a54f3a2ca2a22c941a1763195
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84903488"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325672"
 ---
 # <a name="xpsdocumentwriter_writingcancelled-event"></a>System.windows.xps.xpsdocumentwriter>。 \_WritingCancelled 事件
 

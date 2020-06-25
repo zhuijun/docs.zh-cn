@@ -1,5 +1,6 @@
 ---
-title: 如何：在运行时在控件集合中进行添加或移除
+title: 如何：在运行时在控件的集合中进行添加或删除
+description: 了解如何在窗体上的任何容器控件（如面板或分组框控件，甚至是窗体本身）中添加和删除控件。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,15 +13,15 @@ helpviewer_keywords:
 - run time [Windows Forms], adding controls
 - controls [Windows Forms], removing using collections
 ms.assetid: 771bf895-3d5f-469b-a324-3528f343657e
-ms.openlocfilehash: 369946581847b4bdcf8bc658aeb94b14c529061c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6c3f2d1f42b130de4d808871265b50510cfb8f47
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79182280"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325865"
 ---
-# <a name="how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time"></a>如何：在运行时在控件集合中进行添加或移除
-应用程序开发中的常见任务是向窗体上的任何容器控件（如<xref:System.Windows.Forms.Panel>或<xref:System.Windows.Forms.GroupBox>控件，甚至窗体本身）添加控件并删除控件。 在设计时，可直接将控件拖到面板或分组框上。 在运行时，这些控件维护一个 `Controls` 集合，该集合会跟踪集合中放置了哪些控件。  
+# <a name="how-to-add-to-or-remove-from-a-collection-of-controls-at-run-time"></a>如何：在运行时在控件的集合中进行添加或删除
+应用程序开发中的常见任务是向窗体上的任何容器控件（例如 <xref:System.Windows.Forms.Panel> 或 <xref:System.Windows.Forms.GroupBox> 控件，甚至是窗体本身）添加控件和删除控件。 在设计时，可直接将控件拖到面板或分组框上。 在运行时，这些控件维护一个 `Controls` 集合，该集合会跟踪集合中放置了哪些控件。  
   
 > [!NOTE]
 > 以下代码示例适用于其中维护了一个控件集合的任何控件。  
@@ -33,7 +34,7 @@ ms.locfileid: "79182280"
   
 3. 将控件添加到父控件的 `Controls` 集合。  
   
-     以下代码示例演示如何创建控件的<xref:System.Windows.Forms.Button>实例。 它需要具有<xref:System.Windows.Forms.Panel>控件的窗体，并且正在创建的`NewPanelButton_Click`按钮的事件处理方法已存在。  
+     下面的代码示例演示如何创建控件的实例 <xref:System.Windows.Forms.Button> 。 它需要一个具有控件的窗体， <xref:System.Windows.Forms.Panel> 并且所创建的按钮的事件处理方法 `NewPanelButton_Click` 已存在。  
   
     ```vb  
     Public NewPanelButton As New Button()  
@@ -66,11 +67,11 @@ ms.locfileid: "79182280"
   
 ### <a name="to-remove-controls-from-a-collection-programmatically"></a>以编程方式从集合移除控件  
   
-1. 从事件中移除事件处理程序。 在可视化基本版中，使用"删除处理程序语句"关键字;在"可视基本"中，使用["删除处理程序语句"](../../../visual-basic/language-reference/statements/removehandler-statement.md)关键字。在 C# 中，使用[-# 运算符](../../../csharp/language-reference/operators/subtraction-operator.md)。  
+1. 从事件中移除事件处理程序。 在 Visual Basic 中，使用[RemoveHandler 语句](../../../visual-basic/language-reference/statements/removehandler-statement.md)关键字;在 c # 中，使用[-= 运算符](../../../csharp/language-reference/operators/subtraction-operator.md)。  
   
 2. 使用 `Remove` 方法，从面板的 `Controls` 集合中删除所需控件。  
   
-3. 调用<xref:System.Windows.Forms.Control.Dispose%2A>方法以释放控件使用的所有资源。  
+3. 调用 <xref:System.Windows.Forms.Control.Dispose%2A> 方法以释放由控件使用的所有资源。  
   
     ```vb  
     Public Sub RemoveControl()  

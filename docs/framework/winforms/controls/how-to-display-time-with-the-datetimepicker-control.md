@@ -1,5 +1,6 @@
 ---
 title: 如何：使用 DateTimePicker 控件显示时间
+description: 了解如何使用 Windows 窗体 DateTimePicker 控件使用户可以选择日期和时间，并以指定的格式显示该日期和时间。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - examples [Windows Forms], DateTimePicker control
 - DateTimePicker control [Windows Forms], displaying time
 ms.assetid: 0c1c8b40-1b50-4301-a90c-39516775ccb1
-ms.openlocfilehash: 84f10540e7735ac1043e63eecda84161c10deeef
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: ab584367a189d05e567bb57d386c6bf629201102
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591720"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325582"
 ---
 # <a name="how-to-display-time-with-the-datetimepicker-control"></a>如何：使用 DateTimePicker 控件显示时间
 如果希望应用程序能够使用户选择日期和时间，并以指定的格式显示该日期和时间，请使用 <xref:System.Windows.Forms.DateTimePicker> 控件。 以下的过程说明如何使用 <xref:System.Windows.Forms.DateTimePicker> 控件来显示时间。  
@@ -42,6 +43,6 @@ ms.locfileid: "65591720"
   
 - 对 System、System.Data、System.Drawing 和 System.Windows.Forms 程序集的引用。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [DateTimePicker 控件](datetimepicker-control-windows-forms.md)
