@@ -1,5 +1,6 @@
 ---
 title: dateTimeInvalidLocalFormat MDA
+description: 查看 dateTimeInvalidLocalFormat 托管调试助手（MDA），当 UTC 存储的日期时间值获取仅本地日期时间格式时，将激活该助手。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - dates [.NET Framework], formatting
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - time formatting
 - UTC formatting
 ms.assetid: c4a942bb-2651-4b65-8718-809f892a0659
-ms.openlocfilehash: b01f030c474e426cb87fb907f99f241eeb76a7fd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d092b93af55d2cdf14e9284d8cffcdc8440cbf81
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174753"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415987"
 ---
 # <a name="datetimeinvalidlocalformat-mda"></a>dateTimeInvalidLocalFormat MDA
 使用只打算用于本地 <xref:System.DateTime> 实例的格式对存储为协调世界时 (UTC) 的 <xref:System.DateTime> 实例设置格式时，将激活 `dateTimeInvalidLocalFormat` MDA。 对于未指定的或默认的 <xref:System.DateTime> 实例，不激活此 MDA。  
@@ -84,7 +85,7 @@ String serialized = XmlConvert.ToString(myDateTime,
     XmlDateTimeSerializationMode.RoundtripKind);  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Globalization.DateTimeFormatInfo>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

@@ -1,5 +1,6 @@
 ---
 title: 调试、跟踪和分析
+description: 了解如何在 .NET 中进行调试、跟踪和分析。 请参阅介绍实时（JIT）调试、跟踪和检测应用程序等文章。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - debugging [.NET Framework]
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - troubleshooting applications [.NET Framework]
 - application development [.NET Framework], profiling
 ms.assetid: 4a04863e-2475-46f4-bc3f-3c11510c2a4b
-ms.openlocfilehash: 1a43c7fbcb810b22ff9bc409c233d2b1da67370e
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 745f16652c02e3409e7fa7a48beacbf7e777e924
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217405"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415974"
 ---
 # <a name="debugging-tracing-and-profiling"></a>调试、跟踪和分析
 若要调试 .NET Framework 应用程序，编译器和运行时环境必须配置为可将调试程序附加到该应用程序，并且如果可能的话，为该应用程序及其相应 Microsoft 中间语言 (MSIL) 同时生成符号和行映射。 在对托管应用程序进行调试后，可对其进行分析以增强性能。 分析计算并描述可生成最常执行的代码的源代码行，以及执行它们所需的时间。  
@@ -29,7 +30,7 @@ ms.locfileid: "77217405"
  [启用 JIT 附加调试](enabling-jit-attach-debugging.md)  
  演示如何配置注册表从而将调试引擎以 JIT 方式附加到 .NET Framework 应用程序。  
   
- [使映像更易于调试](making-an-image-easier-to-debug.md)  
+ [令映像更易于调试](making-an-image-easier-to-debug.md)  
  演示如何打开 JIT 跟踪和关闭优化，以使程序集更易于调试。  
   
  [跟踪应用程序和在应用程序中插入检测点](tracing-and-instrumenting-applications.md)  

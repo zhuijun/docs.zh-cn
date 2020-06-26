@@ -1,5 +1,6 @@
 ---
 title: 使用调试器显示特性增强调试
+description: 开始在 .NET 中使用调试器显示属性，使类型开发人员还可以指定该类型在调试器中显示时的外观。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,16 +14,16 @@ helpviewer_keywords:
 - display attributes for debugger
 - DebuggerBrowsableAttribute attribute
 ms.assetid: 72bb7aa9-459b-42c4-9163-9312fab4c410
-ms.openlocfilehash: ca118bffb045a0e7e3a5084916a0ff8020ebda90
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: f266bf7278f472c51dd355df5ba04a123cbd7df0
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216495"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415961"
 ---
 # <a name="enhancing-debugging-with-the-debugger-display-attributes"></a>使用调试器显示特性增强调试
 
-最了解且可指定类型运行时行为的类型开发人员还可以使用调试器显示属性指定类型在调试器中的显示外观。 此外，即使不了解源代码，用户也可将提供 `Target` 属性的调试器显示属性应用于程序集级别。 <xref:System.Diagnostics.DebuggerDisplayAttribute> 属性控制类型或成员在调试器变量窗口中的显示方式。 <xref:System.Diagnostics.DebuggerBrowsableAttribute> 属性决定是否在调试器变量窗口中显示字段或属性，若要显示，则决定其显示方式。 <xref:System.Diagnostics.DebuggerTypeProxyAttribute> 属性指定类型的替代类型或代理，并更改类型在调试器窗口中的显示方式。 查看具有代理或替代类型的变量时，代理将在调试器显示窗口中代表原始类型。 调试器变量窗口仅显示代理类型的公共成员。 不会显示私有成员。  
+最了解且可指定类型运行时行为的类型开发人员还可以使用调试器显示属性指定类型在调试器中的显示外观。 此外，即使不了解源代码，用户也可将提供 `Target` 属性的调试器显示属性应用于程序集级别。 <xref:System.Diagnostics.DebuggerDisplayAttribute> 属性控制类型或成员在调试器变量窗口中的显示方式。 <xref:System.Diagnostics.DebuggerBrowsableAttribute> 属性决定是否在调试器变量窗口中显示字段或属性，若要显示，则决定其显示方式。 <xref:System.Diagnostics.DebuggerTypeProxyAttribute> 属性指定类型的替代类型或代理，并更改类型在调试器窗口中的显示方式。 查看具有代理或替代类型的变量时，代理将代替调试器显示窗口中的原始类型。 调试器变量窗口仅显示代理类型的公共成员。 不会显示私有成员。  
   
 ## <a name="using-the-debuggerdisplayattribute"></a>使用 DebuggerDisplayAttribute  
 
@@ -45,7 +46,7 @@ class MyHashtable
 
 - <xref:System.Diagnostics.DebuggerBrowsableState.Never> 表示未在数据窗口中显示成员。  例如，将此值用于字段上的 <xref:System.Diagnostics.DebuggerBrowsableAttribute>，则会从层次结构中删除该字段，单击类型实例的加号 (+) 展开封闭类型时，不会显示该字段。
 
-- <xref:System.Diagnostics.DebuggerBrowsableState.Collapsed> 表示显示成员，但默认情况下不展开。  此选项为默认行为。
+- <xref:System.Diagnostics.DebuggerBrowsableState.Collapsed> 表示显示成员，但默认情况下不展开。  这是默认行为。
 
 - <xref:System.Diagnostics.DebuggerBrowsableState.RootHidden> 表示不显示成员本身，但如果成员是一个数组或集合，则会显示其组成对象。
 
@@ -95,7 +96,7 @@ class MyHashtable : Hashtable
 
 ### <a name="description"></a>说明
 
-可在 Visual Studio 中查看下面的代码示例，以查看应用 <xref:System.Diagnostics.DebuggerDisplayAttribute>、<xref:System.Diagnostics.DebuggerBrowsableAttribute>和 <xref:System.Diagnostics.DebuggerTypeProxyAttribute> 特性的结果。
+可在 Visual Studio 中查看下面的代码示例，以查看应用 <xref:System.Diagnostics.DebuggerDisplayAttribute> 、 <xref:System.Diagnostics.DebuggerBrowsableAttribute> 和特性的结果 <xref:System.Diagnostics.DebuggerTypeProxyAttribute> 。
 
 ### <a name="code"></a>代码
 
@@ -103,7 +104,7 @@ class MyHashtable : Hashtable
 [!code-csharp[System.Diagnostics.DebuggerBrowsableAttribute#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.Diagnostics.DebuggerBrowsableAttribute/CS/program.cs#1)]
 [!code-vb[System.Diagnostics.DebuggerBrowsableAttribute#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.Diagnostics.DebuggerBrowsableAttribute/VB/module1.vb#1)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Diagnostics.DebuggerDisplayAttribute>
 - <xref:System.Diagnostics.DebuggerBrowsableAttribute>

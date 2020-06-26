@@ -1,5 +1,6 @@
 ---
 title: disconnectedContext MDA
+description: 查看 .NET 中的 disconnectedContext 托管调试助手，当 CLR 试图转换到断开连接的单元或上下文时，将调用该助手。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - DisconnectedContext MDA
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - context disconnections
 - managed debugging assistants (MDAs), disconnected context
 ms.assetid: 1887d31d-7006-4491-93b3-68fd5b05f71d
-ms.openlocfilehash: 3d04e304a6b30fe6fd4deeda5a97007f11ee7b13
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 0b24aadefab7a7cb2a5294f25e674d188beec814
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216547"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416078"
 ---
 # <a name="disconnectedcontext-mda"></a>disconnectedContext MDA
 如果 CLR 在处理关于 COM 对象的请求时尝试转换到断开连接的单元或上下文，将激活 `disconnectedContext` 托管调试助手 (MDA)。  
@@ -44,7 +45,7 @@ ms.locfileid: "77216547"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

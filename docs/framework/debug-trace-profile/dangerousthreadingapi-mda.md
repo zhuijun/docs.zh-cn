@@ -1,5 +1,6 @@
 ---
 title: dangerousThreadingAPI MDA
+description: 查看 dangerousThreadingAPI 托管调试助手（MDA），当在当前线程以外的线程上调用 "挂起" 时，它将被激活。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - suspending threads
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - Suspend method
 - threading [.NET Framework], managed debugging assistants
 ms.assetid: 3e5efbc5-92e4-4229-b31f-ce368a1adb96
-ms.openlocfilehash: d3fe7d11657c2f9edd1fea7ff639f878f993d6b1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9069ccb6f106c83db94f88bc464bc0888d28586c
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174766"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416000"
 ---
 # <a name="dangerousthreadingapi-mda"></a>dangerousThreadingAPI MDA
 如果在当前线程以外的线程上调用 <xref:System.Threading.Thread.Suspend%2A?displayProperty=nameWithType> 方法，将激活 `dangerousThreadingAPI` 托管调试助手 (MDA)。  
@@ -65,7 +66,7 @@ Thread t = new Thread(delegate() { Thread.Sleep(1000); });
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Threading.Thread>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

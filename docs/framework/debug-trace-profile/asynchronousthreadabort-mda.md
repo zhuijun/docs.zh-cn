@@ -1,5 +1,6 @@
 ---
 title: asynchronousThreadAbort MDA
+description: 查看在线程尝试将异步中止放入另一个线程时，如何激活 asynchronousThreadAbort 托管调试助手（MDA）。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - asynchronous thread aborts
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - threading [.NET Framework], managed debugging assistants
 - MDAs (managed debugging assistants), asynchronous thread aborts
 ms.assetid: 9ebe40b2-d703-421e-8660-984acc42bfe0
-ms.openlocfilehash: d0c78e6d52ae4a5b3a24e0bb4278b2e8a1b98751
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 469372d57d9c21198353d171fec16458691eb25d
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217583"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415662"
 ---
 # <a name="asynchronousthreadabort-mda"></a>asynchronousThreadAbort MDA
 当线程尝试将异步中止引入到另一个线程时，将激活 `asynchronousThreadAbort` 托管调试助手 (MDA)。 同步线程中止不会激活 `asynchronousThreadAbort` MDA。
@@ -68,7 +69,7 @@ void FireMda()
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Threading.Thread>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

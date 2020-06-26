@@ -1,5 +1,6 @@
 ---
 title: dllMainReturnsFalse MDA
+description: 了解 .NET 中的 dllMainReturnsFalse 托管调试助手。 如果 DLL 初始化失败，则会激活此 MDA。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - managed debugging assistants (MDAs), DllMain returns false
@@ -7,15 +8,15 @@ helpviewer_keywords:
 - DllMain function
 - MDAs (managed debugging assistants), DllMain returns false
 ms.assetid: e2abdd04-f571-4b97-8c16-2221b8588429
-ms.openlocfilehash: 0b413521e0a2dc06c2ff0be642f080eaf541202f
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 21d5e37d6823876e07cf5b2cbb881c1cf8b47b11
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216442"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416052"
 ---
 # <a name="dllmainreturnsfalse-mda"></a>dllMainReturnsFalse MDA
-如果用户程序集的托管 `dllMainReturnsFalse` 函数（因 DLL_PROCESS_ATTACH 原因而调用）返回 FALSE，则将激活 `DllMain` 托管调试助手 (MDA)。  
+如果用户程序集的托管 `DllMain` 函数（因 DLL_PROCESS_ATTACH 原因而调用）返回 FALSE，则将激活 `dllMainReturnsFalse` 托管调试助手 (MDA)。  
   
 ## <a name="symptoms"></a>症状  
  `DllMain` 函数返回 FALSE，表示其未正确执行。 这会导致一些未确定的问题，因为 `DllMain` 函数通常包含重要的初始化代码。  
@@ -42,6 +43,6 @@ ms.locfileid: "77216442"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

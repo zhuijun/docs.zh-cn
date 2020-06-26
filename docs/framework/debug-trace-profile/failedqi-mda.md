@@ -1,5 +1,6 @@
 ---
 title: failedQI MDA
+description: 查看 .NET 中的 failedQI 托管调试助手（MDA），当或来自运行时可调用包装（RCW）的 COM 调用失败时，这可能会被激活。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - failed QueryInterface
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), failed QueryInterface
 - managed debugging assistants (MDAs), failed QueryInterface
 ms.assetid: 902dc863-34b3-477c-b433-b8a6bb6133c6
-ms.openlocfilehash: 4c36ec514645a38ef1228e76bdf6dbd06e886bae
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 2d7f14c67d47e58bcb88eab4621df63d7c598a7a
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217510"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415935"
 ---
 # <a name="failedqi-mda"></a>failedQI MDA
-当运行时代表运行时可调用包装器 (RCW) 在 COM 接口指针上调用 `failedQI` 且 `QueryInterface` 调用失败时，将激活 `QueryInterface` 托管调试助手 (MDA)。  
+当运行时代表运行时可调用包装器 (RCW) 在 COM 接口指针上调用 `QueryInterface` 且 `QueryInterface` 调用失败时，将激活 `failedQI` 托管调试助手 (MDA)。  
   
 ## <a name="symptoms"></a>症状  
  对 RCW 的强制转换失败，或从 RCW 调用 COM 意外失败。  
@@ -48,7 +49,7 @@ ms.locfileid: "77217510"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

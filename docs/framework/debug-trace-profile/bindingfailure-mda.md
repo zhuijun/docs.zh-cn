@@ -1,5 +1,6 @@
 ---
 title: bindingFailure MDA
+description: 阅读有关 bindingFailure 托管调试助手（MDA）的信息，当程序集未能加载到 .NET 中时，将激活该助手。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - binding failure
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), binding failures
 - BindingFailure MDA
 ms.assetid: 26ada5af-175c-4576-931a-9f07fa1723e9
-ms.openlocfilehash: e3a9a915d25cbe5f052f039055167cf3ae4bf424
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 98c7947c7e5d2a1f0af8c26744d3b292ed8cb4c4
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216918"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85415623"
 ---
 # <a name="bindingfailure-mda"></a>bindingFailure MDA
 
@@ -50,7 +51,7 @@ ms.locfileid: "77216918"
 
 - 根据上述所确定事项解决失败原因。 可能的解决方案选项如下：
 
-  - 在全局程序集缓存中安装请求的程序集，并调用 <xref:System.Reflection.Assembly.Load%2A> 方法以按标识加载程序集。
+  - 在全局程序集缓存中安装请求的程序集，并调用  <xref:System.Reflection.Assembly.Load%2A> 方法以按标识加载程序集。
 
   - 将请求的程序集复制到应用程序目录中，并调用 <xref:System.Reflection.Assembly.Load%2A> 方法以按标识加载程序集。
 
@@ -103,6 +104,6 @@ namespace ConsoleApplication1
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)
