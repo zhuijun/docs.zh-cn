@@ -1,16 +1,16 @@
 ---
 title: 创建 dotnet new 项目模板
 description: 了解如何创建 dotnet new 命令的项目模板。
-author: thraka
+author: adegeo
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: f53f4037f832265a35f65bf2e5096c7e5a37bcf1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 75fedb2333a4ef9e16a27126055b6cacaf37c1c5
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503530"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324323"
 ---
 # <a name="tutorial-create-a-project-template"></a>教程：创建项目模板
 

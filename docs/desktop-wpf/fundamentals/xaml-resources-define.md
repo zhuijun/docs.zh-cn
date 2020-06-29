@@ -1,15 +1,15 @@
 ---
 title: 定义 XAML 资源
 description: 了解适用于 .NET Core 的 WPF 中的 XAML 资源。 了解 XAML 资源的类型，并学习如何定义 XAML 资源。
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 08/21/2019
-ms.openlocfilehash: b278bb92afc308578d60e347871e0150b26a95db
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: f8eaf3fd931aa6804b0b9a9c19c6bcc042678ebf
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "81432568"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325719"
 ---
 # <a name="overview-of-xaml-resources"></a>XAML 资源概述
 

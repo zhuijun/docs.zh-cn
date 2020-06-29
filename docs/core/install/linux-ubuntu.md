@@ -1,15 +1,15 @@
 ---
 title: 在 Ubuntu 上安装 .NET Core - .NET Core
 description: 演示在 Ubuntu 上安装 .NET Core SDK 和 .NET Core 运行时的各种方式。
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 7045d4d1c3585ba6d26c55ded4653775c9413841
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: eef724138f2b908bf8601a509d298a06e55fb13e
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602722"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324744"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-ubuntu"></a>在 Ubuntu 上安装 .NET Core SDK 或 .NET Core 运行时
 

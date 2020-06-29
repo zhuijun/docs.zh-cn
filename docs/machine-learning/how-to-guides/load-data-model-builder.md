@@ -5,12 +5,12 @@ ms.date: 10/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to, mlnet-tooling
-ms.openlocfilehash: 23de2d06090f4c1eaa2c79178ba4c346698d45e1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64e366b3c66427ccd2810324abeb880f6cb9ebc1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78849154"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602201"
 ---
 # <a name="load-training-data-into-model-builder"></a>将培训数据加载到模型生成器
 
@@ -109,6 +109,6 @@ ms.locfileid: "78849154"
 按照以下教程使用模型生成器生成机器学习应用：
 
 - [使用回归法预测价格](../tutorials/predict-prices-with-model-builder.md)
-- [使用二元分类分析 Web 应用程序中的情绪](../tutorials/sentiment-analysis-model-builder.md )
+- [使用二元分类分析 Web 应用程序中的情绪](../tutorials/sentiment-analysis-model-builder.md)
 
 若使用代码培训模型，请[了解如何使用 ML.NET API 加载数据](load-data-ml-net.md)。

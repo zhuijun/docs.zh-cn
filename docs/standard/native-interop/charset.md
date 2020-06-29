@@ -2,12 +2,12 @@
 title: 字符集和封送 - .NET
 description: 了解字符集的不同值如何更改 .NET 将数据封送到本机代码的方式。
 ms.date: 01/18/2019
-ms.openlocfilehash: 4be4bd5a968eb5c0d6959a0f378ee1223ed906ed
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 39566593aa38bacfa41b44a8af8cc2dfb294d766
+ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706382"
+ms.lasthandoff: 06/26/2020
+ms.locfileid: "85416104"
 ---
 # <a name="charsets-and-marshaling"></a>字符集和封送
 
@@ -17,8 +17,8 @@ ms.locfileid: "75706382"
 
 | `CharSet` 值 | Windows            | Unix 上的 .NET Core 2.2 及更低版本 | Unix 上的 .NET Core 3.0 及更高版本和 Mono |
 |-----------------|--------------------|-----------------------------------|------------------------------------------|
-| Ansi            | `char`（系统默认的 [Windows (ANSI) 代码页](/windows/win32/intl/code-pages)）      | `char` (UTF-8)                    | `char` (UTF-8)                           |
-| Unicode         | `wchar_t` (UTF-16) | `char16_t` (UTF-16)               | `char16_t` (UTF-16)                      |
-| 自动            | `wchar_t` (UTF-16) | `char16_t` (UTF-16)               | `char` (UTF-8)                           |
+| `Ansi`          | `char`（系统默认的 [Windows (ANSI) 代码页](/windows/win32/intl/code-pages)）      | `char` (UTF-8)                    | `char` (UTF-8)                           |
+| `Unicode`       | `wchar_t` (UTF-16) | `char16_t` (UTF-16)               | `char16_t` (UTF-16)                      |
+| `Auto`          | `wchar_t` (UTF-16) | `char16_t` (UTF-16)               | `char` (UTF-8)                           |
 
 确保了解选择字符集时所需的本机表示形式。

@@ -1,15 +1,15 @@
 ---
 title: .NET Framework 与 .NET Core 之间的差异
 description: 介绍 Windows Presentation Foundation (WPF) 的 .NET Framework 实现与 .NET Core WPF 之间的差异。 迁移应用时，你应考虑以下不兼容性。
-author: thraka
+author: adegeo
 ms.date: 09/21/2019
 ms.author: adegeo
-ms.openlocfilehash: 341e576f17c522fbcbb9c417176e9d4a13ab1b18
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: 3bedc30046c36d4c5430feedf5854276ebaef8aa
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021843"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325688"
 ---
 # <a name="differences-in-wpf"></a>WPF 中的差异
 

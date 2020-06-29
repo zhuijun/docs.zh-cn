@@ -1,18 +1,18 @@
 ---
 title: 样式和模板
 description: 了解适用于 .NET Core 的 Windows Presentation Foundation (WPF) 中的 XAML 资源。 了解与样式和主题相关的 XAML 资源类型。
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 09/09/2019
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: f845e739ec3cae502d1e4fd6631f987c5364a42e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: faa54e0a3c827717114ca6ca4f033c1c4c3acfa8
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "81433096"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325785"
 ---
 # <a name="styles-and-templates-in-wpf"></a>WPF 中的样式和模板
 

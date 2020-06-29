@@ -1,18 +1,18 @@
 ---
 title: 使用 .NET Core CLI 发布应用
 description: 了解如何使用 .NET Core CLI 命令发布 .NET Core 应用。
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 12/12/2019
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: f4c2a4ccf551c53e4aa4e125cb5720d6f1cc9601
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a592b397d1ffee5b224638a8d17ce6fa9e44eea2
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79397991"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325030"
 ---
 # <a name="publish-net-core-apps-with-the-net-core-cli"></a>使用 .NET Core CLI 发布 .NET Core 应用
 

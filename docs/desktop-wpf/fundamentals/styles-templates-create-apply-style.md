@@ -1,18 +1,18 @@
 ---
 title: 为控件创建样式
 description: 了解如何在 Windows Presentation Foundation 和 .NET Core 中创建和引用控件样式。
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 09/12/2019
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 2956dbf93a1d34feca31d3ab10536f5089010189
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: de186cd6da83ffef8a5cd59df581e88b24bc474d
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "81432556"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325789"
 ---
 # <a name="create-a-style-for-a-control-in-wpf"></a>在 WPF 中为控件创建样式
 

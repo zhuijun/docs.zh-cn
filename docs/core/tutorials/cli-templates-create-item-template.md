@@ -1,16 +1,16 @@
 ---
 title: 创建 dotnet new 项模板 - .NET Core CLI
 description: 了解如何创建 dotnet new 命令项模板。 项模板可以包含任意数量的文件。
-author: thraka
+author: adegeo
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 5f4038e863d9bb59df470d3516c08fd2ad29c078
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0b804d26b2f33d4d600c17de2f7f71101a0f9c98
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77503557"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324380"
 ---
 # <a name="tutorial-create-an-item-template"></a>教程：创建项模板
 

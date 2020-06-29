@@ -1,17 +1,17 @@
 ---
 title: 检查 Windows、Linux 和 macOS 上安装的 .NET Core 版本 - .NET Core
 description: 了解如何列出计算机上安装的 .NET Core 版本。 这包括 .NET Core 运行时和 SDK。
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 3a78acee6cf427085e98f14353fc2c0ac65d3d80
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: cc4d9c6a366cd0e5da4c3446536c93efdc9f5503
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645336"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324814"
 ---
 # <a name="how-to-check-that-net-core-is-already-installed"></a>如何检查是否已安装 .NET Core
 

@@ -1,15 +1,15 @@
 ---
 title: 在 openSUSE 上安装 .NET Core - .NET Core
 description: 演示在 openSUSE 上安装 .NET Core SDK 和 .NET Core 运行时的各种方式。
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: a642cee9ae78f81cd671d8745d5ce241be6a3b69
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3a2ff1ca1519428f42c88048dde22aa11baaaa01
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602800"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324749"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-opensuse"></a>在 openSUSE 上安装 .NET Core SDK 或 .NET Core 运行时
 

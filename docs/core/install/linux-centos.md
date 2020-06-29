@@ -1,15 +1,15 @@
 ---
 title: 在 CentOS 上安装 .NET Core - .NET Core
 description: 演示在 CentOS 上安装 .NET Core SDK 和 .NET Core 运行时的各种方式。
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 743bd4ce47fdecef512f9605d8ec5503eb6da9ba
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9f4de70b4989be1d162f384518a015816a3e75a9
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602878"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324895"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-centos"></a>在 CentOS 上安装 .NET Core SDK 或 .NET Core 运行时
 

@@ -5,12 +5,12 @@ author: mamccrea
 ms.author: mamccrea
 ms.date: 12/13/2019
 ms.topic: tutorial
-ms.openlocfilehash: 460c37e66c2c0a8a9b197a9abaff9eead842bdeb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b00f560317c085058d791e17954603670fccf60f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79187557"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594512"
 ---
 # <a name="tutorial-do-batch-processing-with-net-for-apache-spark"></a>教程：使用 .NET for Apache Spark 进行批处理
 
@@ -28,7 +28,7 @@ ms.locfileid: "79187557"
 
 ## <a name="prerequisites"></a>先决条件
 
-如果这是你第一次使用 .NET for Apache Spark，请参阅 [.NET for Apache Spark 入门](../tutorials/get-started.md)教程，了解如何准备环境并运行第一个 .NET for Apache Spark 应用程序。
+如果这是你第一次使用 .NET for Apache Spark，请参阅 [.NET for Apache Spark 入门](get-started.md)教程，了解如何准备环境并运行第一个 .NET for Apache Spark 应用程序。
 
 ## <a name="download-the-sample-data"></a>下载示例应用数据
 

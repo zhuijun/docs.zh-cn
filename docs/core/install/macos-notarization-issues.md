@@ -1,15 +1,15 @@
 ---
 title: 处理 macOS Catalina 公证
 description: 本文介绍在安装 .NET core 运行时、SDK 以及使用 .NET Core 生成的应用时，如何处理 macOS 的公证和证书问题。
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 02/14/2020
-ms.openlocfilehash: be39c1ea56699f84736a2b37bc958507b16e826b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cd3886b2e772a182156d212aefb9705a3fb5e17c
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146744"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324628"
 ---
 # <a name="macos-catalina-notarization-and-the-impact-on-net-core-downloads-and-projects"></a>macOS Catalina 公证以及对 .NET Core 下载和项目的影响
 
