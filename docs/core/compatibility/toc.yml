@@ -1,6 +1,6 @@
 - name: 什么是中断性变更？
   href: index.md
-- name: 中断性变更类别
+- name: 兼容性
   href: categories.md
 - name: 页面选择器
   href: breaking-changes.md
@@ -25,7 +25,7 @@
           href: ../porting/net-framework-tech-unavailable.md?toc=/dotnet/core/compatibility/toc.json&bc=/dotnet/breadcrumb/toc.json
         - name: 始终引发异常的 API
           href: unsupported-apis.md
-- name: 按区域
+- name: 按技术范围
   expanded: true
   items:
     - name: ASP.NET Core
