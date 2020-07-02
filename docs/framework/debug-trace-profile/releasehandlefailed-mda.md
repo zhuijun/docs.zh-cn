@@ -1,5 +1,6 @@
 ---
 title: releaseHandleFailed MDA
+description: 查看 releaseHandleFailed 托管调试助手（MDA），因为 .NET 中的资源或内存泄漏，这可能会被激活。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - managed debugging assistants (MDAs), handles
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - SafeHandle class, run-time errors
 - MDAs (managed debugging assistants), handles
 ms.assetid: 44cd98ba-95e5-40a1-874d-e8e163612c51
-ms.openlocfilehash: 268acb01a6777315829378e6fd8c06c46d3136d2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 167a304b4571aa35f758a2054caf6ae1c60a3c60
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181750"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803633"
 ---
 # <a name="releasehandlefailed-mda"></a>releaseHandleFailed MDA
 当 <xref:System.Runtime.InteropServices.SafeHandle> 或 <xref:System.Runtime.InteropServices.CriticalHandle> 派生的类的 <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> 方法返回 `false` 时，激活 `releaseHandleFailed` 托管调试助手 (MDA) 通知开发人员。  
@@ -50,7 +51,7 @@ ms.locfileid: "79181750"
 ## <a name="effect-on-the-runtime"></a>对运行时的影响  
  此 MDA 对 CLR 无任何影响。  
   
-## <a name="output"></a>输出  
+## <a name="output"></a>Output  
  一条消息，该消息表明 <xref:System.Runtime.InteropServices.SafeHandle> 或 <xref:System.Runtime.InteropServices.CriticalHandle> 未能正确释放该句柄。 例如：  
   
 ```output
@@ -61,7 +62,7 @@ another means (such as extracting the handle using DangerousGetHandle
 and closing it directly or building another SafeHandle around it."  
 ```  
   
-## <a name="configuration"></a>配置  
+## <a name="configuration"></a>Configuration  
   
 ```xml  
 <mdaConfig>  
@@ -88,8 +89,8 @@ bool ReleaseHandle()
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)
-- [互通封送](../interop/interop-marshaling.md)
+- [互操作封送处理](../interop/interop-marshaling.md)

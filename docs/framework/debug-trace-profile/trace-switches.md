@@ -1,5 +1,6 @@
 ---
 title: 跟踪开关
+description: 探索跟踪开关，用于启用、禁用和筛选跟踪输出。 .NET 提供了 BooleanSwitch、TraceSwitch 和 SourceSwitch 类。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - trace switches
 - trace switches, creating custom
 ms.assetid: 8ab913aa-f400-4406-9436-f45bc6e54fbe
-ms.openlocfilehash: a8ce4ee5de4d330b88e98e85cce4b6547e969613
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 29de46afa2a96dd7011cec40f4f76e7bfb8ee454
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181720"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803531"
 ---
 # <a name="trace-switches"></a>跟踪开关
 跟踪开关用于启用、禁用和筛选跟踪输出。 它们是代码中存在并可通过 .config 文件在外部配置的对象。 .NET Framework 中提供三种跟踪开关类型： <xref:System.Diagnostics.BooleanSwitch> 类、 <xref:System.Diagnostics.TraceSwitch> 类和 <xref:System.Diagnostics.SourceSwitch> 类。 <xref:System.Diagnostics.BooleanSwitch> 类充当切换开关，可启用或禁用各种跟踪语句。 使用 <xref:System.Diagnostics.TraceSwitch> 和 <xref:System.Diagnostics.SourceSwitch> 类，可以启用特定跟踪级别的跟踪开关，以确保出现为该级别以及其下所有级别指定的 <xref:System.Diagnostics.Trace> 或 <xref:System.Diagnostics.TraceSource> 消息。 如果禁用此开关，则不会出现跟踪消息。 所有这些类均派生自抽象 (MustInherit**T:System.Diagnostics.Switch**) 类 **Switch**，用户开发的任何开关也应如此。  
@@ -47,7 +48,7 @@ ms.locfileid: "79181720"
   
 |枚举值|整数值|所显示的（或写入指定输出目标）的消息类型|  
 |----------------------|-------------------|---------------------------------------------------------------------------|  
-|关闭|0|无|  
+|关|0|无|  
 |错误|1|仅错误消息|  
 |警告|2|警告消息和错误消息|  
 |信息|3|信息性消息、警告消息和错误消息|  
@@ -81,7 +82,7 @@ MessageBox.Show(myTraceSwitch.TraceVerbose.ToString());
 ## <a name="developer-defined-switches"></a>开发人员定义的开关  
  除了提供 BooleanSwitch **T:System.Diagnostics.Switch** 和 **TraceSwitch**之外，可以通过从 **Switch** 类继承以及将基类方法重写为自定义的方法定义自己的开关。 有关创建开发人员定义的开关的详细信息，请参阅 .NET Framework 引用中的 <xref:System.Diagnostics.Switch> 类。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [跟踪侦听器](trace-listeners.md)
 - [如何：向应用程序代码添加跟踪语句](how-to-add-trace-statements-to-application-code.md)

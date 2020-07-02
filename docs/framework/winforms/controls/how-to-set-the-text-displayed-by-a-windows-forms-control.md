@@ -1,5 +1,6 @@
 ---
 title: 设置控件显示的文本
+description: 了解如何设置 Windows 窗体控件显示的文本。 使用 Text 属性设置或返回文本，或使用 Font 属性更改字体。
 ms.date: 08/20/2019
 dev_langs:
 - csharp
@@ -21,16 +22,16 @@ helpviewer_keywords:
 - controls [Windows Forms], captions
 - forms [Windows Forms], captions
 ms.assetid: 36b95bff-8780-479d-b86a-f1a0673653aa
-ms.openlocfilehash: eb02cbc3b335b0d5856f786b21d1d202cf444211
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 35bae5830bfee8ab91f7b6c7b9dcc6d6b8db00ca
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76738418"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622843"
 ---
 # <a name="how-to-set-the-text-displayed-by-a-windows-forms-control"></a>如何：设置 Windows 窗体控件显示的文本
 
-Windows 窗体控件通常会显示一些与控件的主要功能相关的文本。 例如，<xref:System.Windows.Forms.Button> 控件通常会显示一个标题，指示在单击该按钮时要执行的操作。 对于所有控件而言，都可通过使用 <xref:System.Windows.Forms.Control.Text%2A> 属性来设置或返回文本。 可以使用 <xref:System.Windows.Forms.Control.Font%2A> 属性更改字体。
+Windows 窗体控件通常会显示一些与控件的主要功能相关的文本。 例如， <xref:System.Windows.Forms.Button> 控件通常会显示一个标题，指示在单击该按钮时要执行的操作。 对于所有控件而言，都可通过使用 <xref:System.Windows.Forms.Control.Text%2A> 属性来设置或返回文本。 可以使用 <xref:System.Windows.Forms.Control.Font%2A> 属性更改字体。
 
 还可以使用[设计器](#designer)设置文本。
 
@@ -78,12 +79,12 @@ Windows 窗体控件通常会显示一些与控件的主要功能相关的文本
 
    若要创建带下划线的快捷键，请在将作为快捷键的字母前包含 "and" 符（&）。
 
-2. 在 "**属性**" 窗口中，选择 "**字体**" 属性旁边的省略号按钮（![省略号按钮（...](./media/visual-studio-ellipsis-button.png)属性窗口）。
+2. 在 "**属性**" 窗口中，选择 "字体" 属性旁边的省略号按钮（ ![ 省略号按钮（...），位于 Visual Studio 属性窗口中 ](./media/visual-studio-ellipsis-button.png) ）。 **Font**
 
    在 "标准字体" 对话框中，选择所需的字体、字体样式、大小、效果（如删除线或下划线）和脚本。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Windows.Forms.Control.Text%2A?displayProperty=nameWithType>
 - [如何：创建 Windows 窗体控件的访问键](how-to-create-access-keys-for-windows-forms-controls.md)
-- [如何：响应 Windows 窗体 Button 控件单击](how-to-respond-to-windows-forms-button-clicks.md)
+- [如何：响应 Windows 窗体按钮的单击](how-to-respond-to-windows-forms-button-clicks.md)

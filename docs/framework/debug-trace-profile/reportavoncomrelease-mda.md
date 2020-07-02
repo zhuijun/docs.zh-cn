@@ -1,5 +1,6 @@
 ---
 title: reportAvOnComRelease MDA
+description: 查看 reportAvOnComRelease 托管调试助手（MDA），这可能会因为 .NET 中的访问冲突和内存损坏而被激活。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MDAs (managed debugging assistants), reference counting errors
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - report access violation on Com release
 - reference counting errors
 ms.assetid: a2b86b63-08b2-4943-b344-3c2cf46ccd31
-ms.openlocfilehash: fca6b209e6432678a264f10762adb3871e3596ce
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: f9ba343060cb4d16de5909a5b619353546aca8ca
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217224"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803604"
 ---
 # <a name="reportavoncomrelease-mda"></a>reportAvOnComRelease MDA
 在执行 COM 互操作并将原始 COM 调用与 `reportAvOnComRelease` 或 <xref:System.Runtime.InteropServices.Marshal.Release%2A> 方法一起使用时，如果由于用户引用计数错误引发了异常，则将激活 <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A> 托管调试助手 (MDA)。  
@@ -33,10 +34,10 @@ ms.locfileid: "77217224"
 ## <a name="effect-on-the-runtime"></a>对运行时的影响  
  两种模式皆可用。 如果 `allowAv` 特性为 `true`，则助手会阻止运行时丢弃访问冲突。 如果 `allowAv` 为 `false`（这是默认设置），则运行时会丢弃访问冲突，但会向用户报告一条警告消息，指出引发了一个异常并丢弃了该异常。  
   
-## <a name="output"></a>输出  
+## <a name="output"></a>Output  
  如果可能，输出会 包括 COM 接口指针的原始 vtable。 否则，会显示一条信息性消息。  
   
-## <a name="configuration"></a>配置  
+## <a name="configuration"></a>Configuration  
   
 ```xml  
 <mdaConfig>  
@@ -46,7 +47,7 @@ ms.locfileid: "77217224"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

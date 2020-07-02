@@ -1,5 +1,6 @@
 ---
 title: virtualCERCall MDA
+description: 查看 virtualCERCall 托管调试助手（MDA），如果 CER 包含对无法自动准备的虚方法的调用，则会调用此方法。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MDAs (managed debugging assistants), CER calls
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - CER calls
 - managed debugging assistants (MDAs), CER calls
 ms.assetid: 1eb18c7a-f5e0-443f-80fb-67bfbb047da2
-ms.openlocfilehash: a2112baed863b1035cbee4e956c1b6e271ff6e3c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fab0686b1c7d2fbb1485f6e4b82d008495a553cd
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181713"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803555"
 ---
 # <a name="virtualcercall-mda"></a>virtualCERCall MDA
 `virtualCERCall` 托管调试助手 (MDA) 作为警告被激活，指示某个受约束的执行区域 (CER) 调用关系图中的调用站点引用了虚拟目标，即对非最终虚拟方法的虚拟调用或使用接口的调用。 公共语言运行时 (CLR) 无法只凭中间语言和元数据分析预测这些调用的目标方法。 因此无法将调用树准备为 CER 关系图的一部分，且无法阻止该子树中的线程中止。 此 MDA 警告以下情况：一旦计算调用目标所需的附加信息在运行时已知，则可能需要使用对 <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A> 方法的显式调用来扩展 CER。  
@@ -31,7 +32,7 @@ ms.locfileid: "79181713"
 ## <a name="effect-on-the-runtime"></a>对运行时的影响  
  此 MDA 对 CLR 无任何影响。  
   
-## <a name="output"></a>输出  
+## <a name="output"></a>Output  
   
 ```output
 Method 'MethodWithCer', while executing within a constrained execution region, makes a call  
@@ -44,7 +45,7 @@ declaringType name="VirtualCERCall+MyClass"
     callsite name="MethodWithCer" offset="0x0024"  
 ```  
   
-## <a name="configuration"></a>配置  
+## <a name="configuration"></a>Configuration  
   
 ```xml  
 <mdaConfig>  
@@ -94,8 +95,8 @@ void MethodWithCer(MyClass object)
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)
-- [互通封送](../interop/interop-marshaling.md)
+- [互操作封送处理](../interop/interop-marshaling.md)

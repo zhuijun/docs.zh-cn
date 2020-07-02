@@ -1,16 +1,17 @@
 ---
 title: 要使用的控件
+description: 了解可在 Windows 窗体上使用的控件和组件。 你还可以将 ActiveX 控件和自定义控件添加到 Windows 窗体。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms]
 - Windows Forms controls, list of
 ms.assetid: dec51976-eae0-4398-a537-20bca7974722
-ms.openlocfilehash: 2bcefd2ee2c9533d9f0afa2d12cd2e7437fc3d37
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: f70c2df9fc9decb811124f0106ff56682e8efc5b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76737442"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622830"
 ---
 # <a name="controls-to-use-on-windows-forms"></a>在 Windows 窗体上使用的控件
 下面按字母顺序列出了可在 Windows 窗体上使用的控件和组件。 除本节介绍的 Windows 窗体控件外，还可向 Windows 窗体添加 ActiveX 控件和自定义控件。 如果在此处列出的控件中未找到所需控件，还可创建自己的控件。 有关详细信息，请参阅[设计时开发 Windows 窗体控件](developing-windows-forms-controls-at-design-time.md)。 有关选择所需控件的详细信息，请参阅[按功能列出的 Windows 窗体控件](windows-forms-controls-by-function.md)。  
@@ -19,7 +20,7 @@ ms.locfileid: "76737442"
 > Visual Basic 控件基于 .NET Framework 提供的类。  
   
 ## <a name="in-this-section"></a>本节内容  
- [按功能列出的 Windows 窗体控件](windows-forms-controls-by-function.md)  
+ [根据功能列出的 Windows 窗体控件](windows-forms-controls-by-function.md)  
  列出并描述基于 .NET Framework Windows 窗体控件。  
   
  [具有内置所有者描述支持的控件](controls-with-built-in-owner-drawing-support.md)  
@@ -50,10 +51,10 @@ ms.locfileid: "76737442"
  在下拉式组合框中显示数据。  
   
  [ContextMenu 组件](contextmenu-component-windows-forms.md)  
- 向用户提供易于访问的菜单，该菜单包含与选定对象关联的常用命令。 尽管 <xref:System.Windows.Forms.ContextMenuStrip> 替换先前版本的 <xref:System.Windows.Forms.ContextMenu> 控件并添加功能，但如果需要，<xref:System.Windows.Forms.ContextMenu> 将保留以实现向后兼容性和将来使用。  
+ 向用户提供易于访问的菜单，该菜单包含与选定对象关联的常用命令。 尽管 <xref:System.Windows.Forms.ContextMenuStrip> 替代和添加了 <xref:System.Windows.Forms.ContextMenu> 以前版本的控件的功能，但 <xref:System.Windows.Forms.ContextMenu> 如果需要，还会保留以实现向后兼容性和将来使用。  
   
  [ContextMenuStrip 控件](contextmenustrip-control.md)  
- 表示快捷菜单。 尽管 <xref:System.Windows.Forms.ContextMenuStrip> 替换先前版本的 <xref:System.Windows.Forms.ContextMenu> 控件并添加功能，但如果需要，<xref:System.Windows.Forms.ContextMenu> 将保留以实现向后兼容性和将来使用。  
+ 表示快捷菜单。 尽管 <xref:System.Windows.Forms.ContextMenuStrip> 替代和添加了 <xref:System.Windows.Forms.ContextMenu> 以前版本的控件的功能，但 <xref:System.Windows.Forms.ContextMenu> 如果需要，还会保留以实现向后兼容性和将来使用。  
   
  [DataGrid 控件](datagrid-control-windows-forms.md)  
  显示数据集中的表格数据，并允许对数据源进行更新。  
@@ -96,7 +97,7 @@ ms.locfileid: "76737442"
  [ImageList 组件](imagelist-component-windows-forms.md)  
  在其他控件上显示图像。  
   
- [Label 控件](label-control-windows-forms.md)  
+ [标签控件](label-control-windows-forms.md)  
  显示用户无法编辑的文本。  
   
  [LinkLabel 控件](linklabel-control-windows-forms.md)  
@@ -195,13 +196,13 @@ ms.locfileid: "76737442"
  在 Windows 窗体应用程序中创建自定义工具栏和菜单。 尽管 <xref:System.Windows.Forms.ToolStrip> 替换了早期版本的 <xref:System.Windows.Forms.ToolBar> 控件并添加了功能；但是也可选择保留 <xref:System.Windows.Forms.ToolBar> 以备向后兼容和将来使用。  
   
  [ToolStripContainer 控件](toolstripcontainer-control.md)  
- 在窗体的每一侧提供面板，用于停靠、漂浮和排列 <xref:System.Windows.Forms.ToolStrip> 控件以及传统控件的中心 <xref:System.Windows.Forms.ToolStripContentPanel>。  
+ 在窗体的每一侧提供面板，用于停靠、漂浮和排列 <xref:System.Windows.Forms.ToolStrip> 控件以及 <xref:System.Windows.Forms.ToolStripContentPanel> 传统控件的中心。  
   
  [ToolStripPanel 控件](toolstrippanel-control.md)  
- 提供一个用于停靠、漂浮和排列 <xref:System.Windows.Forms.ToolStrip> 控件的面板。  
+ 提供一个用于停靠、漂浮和排列控件的面板 <xref:System.Windows.Forms.ToolStrip> 。  
   
  [ToolStripProgressBar 控件概述](toolstripprogressbar-control-overview.md)  
- 以图形方式指示操作的完成进度。 <xref:System.Windows.Forms.ToolStripProgressBar> 通常包含在 <xref:System.Windows.Forms.StatusStrip>中。  
+ 以图形方式指示操作的完成进度。 <xref:System.Windows.Forms.ToolStripProgressBar>通常包含在中 <xref:System.Windows.Forms.StatusStrip> 。  
   
  [ToolStripStatusLabel 控件](toolstripstatuslabel-control.md)  
  表示 <xref:System.Windows.Forms.StatusStrip> 控件中的一个面板。  

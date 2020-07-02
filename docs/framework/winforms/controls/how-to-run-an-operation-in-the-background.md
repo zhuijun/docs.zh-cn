@@ -1,5 +1,6 @@
 ---
 title: 如何：在后台运行操作
+description: 了解如何使用 BackgroundWorker 类在后台运行耗时 Windows 窗体操作。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,17 +14,17 @@ helpviewer_keywords:
 - threading [Windows Forms], background operations
 - background operations
 ms.assetid: 5b56e2aa-dc05-444f-930c-2d7b23f9ad5b
-ms.openlocfilehash: 77f75a7eb1d7cc536df7110ef55727fbdf789f23
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 6b2a97f5acf1e906dfe141aee62e99a4e50dca9f
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591611"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621569"
 ---
 # <a name="how-to-run-an-operation-in-the-background"></a>如何：在后台运行操作
 如果某项操作需要很长时间才能完成，而你不希望造成用户界面的延迟，则可以使用 <xref:System.ComponentModel.BackgroundWorker> 类在另一个线程上运行此操作。  
   
- 以下代码示例显示如何在后台运行耗时的操作。 此窗体具有“启动”和“取消”按钮。 单击“启动”按钮运行异步操作。 单击“取消”按钮停止运行异步操作。 每个操作的结果显示在 <xref:System.Windows.Forms.MessageBox> 中。  
+ 以下代码示例显示如何在后台运行耗时的操作。 此窗体具有“启动”**** 和“取消”**** 按钮。 单击“启动”**** 按钮运行异步操作。 单击“取消”**** 按钮停止运行异步操作。 每个操作的结果显示在 <xref:System.Windows.Forms.MessageBox> 中。  
   
  Visual Studio 中对此任务提供广泛支持。  
   

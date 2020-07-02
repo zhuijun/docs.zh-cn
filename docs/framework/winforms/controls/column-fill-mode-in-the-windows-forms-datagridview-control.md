@@ -1,5 +1,6 @@
 ---
 title: DataGridView 控件中的列填充模式
+description: 了解 "以列填充模式 Windows 窗体 DataGridView 控件如何自动调整其列的大小，以使其填充可用显示区域的宽度。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,17 +10,17 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], column fill mode
 - data grids [Windows Forms], column fill mode
 ms.assetid: b4ef7411-ebf4-4e26-bb33-aecec90de80c
-ms.openlocfilehash: 43b8915efe303b6f56cd4adf5fdbd69f51b0b754
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 766a58954250d78ce6e44404730332b3158e1fad
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76736878"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622817"
 ---
 # <a name="column-fill-mode-in-the-windows-forms-datagridview-control"></a>Windows 窗体 DataGridView 控件中的列填充模式
 在列填充模式中，<xref:System.Windows.Forms.DataGridView> 控件自动调整其列的大小，以便它们可填充可用显示区域的宽度。 该控件不显示水平滚动条，除非有必要使每列的宽度等于或大于其 <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> 属性值。  
   
- 每列的大小调整行为取决于其 <xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A> 属性。 如果列值为 <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A>（默认值），则此属性的值继承自列的 <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A> 属性或控件的 <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.NotSet> 属性。  
+ 每列的大小调整行为取决于其 <xref:System.Windows.Forms.DataGridViewColumn.InheritedAutoSizeMode%2A> 属性。 如果列值为 <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.NotSet>（默认值），则此属性的值继承自列的 <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> 属性或控件的 <xref:System.Windows.Forms.DataGridView.AutoSizeColumnsMode%2A> 属性。  
   
  每列都可有不同的大小模式，但具有 <xref:System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill> 大小模式的任何列将共享其他列未使用的显示区域宽度。 将根据列的 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 属性值在填充模式列间按比例划分宽度。 例如，如果两个列的 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 值为 100 和 200，则第一列的宽度将为第二列的一半。  
   
@@ -29,11 +30,11 @@ ms.locfileid: "76736878"
  调整填充模式列的大小后，也将按比例调整更改的所有列的 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 值。 例如，如果四个填充模式列的 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 值为 100，将第二列的宽度调整为其原始宽度的一半，将导致 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 值为 100、50、125 和 125。 调整非填充模式中列的大小不会更改任何 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 值，因为填充模式列只需在保留相同比例的情况下调整大小以进行补偿。  
   
 ## <a name="content-based-fillweight-adjustment"></a>基于内容的 FillWeight 调整  
- 可以使用 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 自动调整大小的方法（如 <xref:System.Windows.Forms.DataGridView> 方法）初始化填充模式列的 <xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A> 值。 此方法首先计算列所需的宽度以显示其内容。 接下来，该控件调整所有填充模式列的 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 值，以便其比例匹配计算的宽度的比例。 最后，该控件使用新的 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 比例调整填充模式列的大小，以便控件中的所有列都填充可用的水平空间。  
+ 可以使用 <xref:System.Windows.Forms.DataGridView> 自动调整大小的方法（如 <xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A> 方法）初始化填充模式列的 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 值。 此方法首先计算列所需的宽度以显示其内容。 接下来，该控件调整所有填充模式列的 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 值，以便其比例匹配计算的宽度的比例。 最后，该控件使用新的 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 比例调整填充模式列的大小，以便控件中的所有列都填充可用的水平空间。  
   
 ## <a name="example"></a>示例  
   
-### <a name="description"></a>说明  
+### <a name="description"></a>描述  
  通过使用 <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A>、<xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A>、<xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 和 <xref:System.Windows.Forms.DataGridViewColumn.Resizable%2A> 属性的适当值，可为多种不同方案自定义列的大小调整行为。  
   
  下面的演示代码使你能够试验不同列的 <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A>、<xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 和 <xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> 属性的不同值。 在此示例中，<xref:System.Windows.Forms.DataGridView> 控件绑定到其自身的 <xref:System.Windows.Forms.DataGridView.Columns%2A> 集合，并且有一列绑定到 <xref:System.Windows.Forms.DataGridViewColumn.HeaderText%2A>、<xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A>、<xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A>、<xref:System.Windows.Forms.DataGridViewColumn.MinimumWidth%2A> 和 <xref:System.Windows.Forms.DataGridViewColumn.Width%2A> 各属性。 每列也可由控件中的行表示，更改行的值将更新对应列的属性，这样你可以看到值如何进行交互。  
@@ -42,7 +43,7 @@ ms.locfileid: "76736878"
  [!code-csharp[System.Windows.Forms.DataGridViewFillColumnsDemo#00](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/CS/fillcolumns.cs#00)]
  [!code-vb[System.Windows.Forms.DataGridViewFillColumnsDemo#00](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/vb/fillcolumns.vb#00)]  
   
-### <a name="comments"></a>Comments  
+### <a name="comments"></a>注释  
  使用此演示应用程序：  
   
 - 更改窗体大小。 观察列如何更改宽度并同时保留由 <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A> 属性值指示的比例。  
@@ -60,7 +61,7 @@ ms.locfileid: "76736878"
   
 - 对 System、System.Drawing 和 System.Windows.Forms 程序集的引用。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.DataGridView.AutoResizeColumns%2A?displayProperty=nameWithType>

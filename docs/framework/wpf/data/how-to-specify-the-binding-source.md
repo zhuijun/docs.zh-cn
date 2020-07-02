@@ -1,5 +1,6 @@
 ---
 title: 如何：指定绑定源
+description: 了解如何在 Windows Presentation Foundation （WPF）中通过此示例指定绑定源。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - data binding [WPF], binding source
 - binding sources [WPF]
 ms.assetid: 55d47757-2648-4a52-987f-b767953f168c
-ms.openlocfilehash: 4fde66b22bac6b4a2cfeb4eceb50027daadee387
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 02f27da007ebe8c5985f91b83adfba7d3d00219a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454363"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621660"
 ---
 # <a name="how-to-specify-the-binding-source"></a>如何：指定绑定源
 在数据绑定中，绑定源对象是指从其获取数据的对象。 本主题描述了指定绑定源的不同方法。  
@@ -39,9 +40,9 @@ ms.locfileid: "73454363"
   
 |Property|描述|  
 |--------------|-----------------|  
-|<xref:System.Windows.Data.Binding.Source%2A>|使用此属性将源设置为对象的实例。 如果不需要建立一个作用域的功能，其中有多个属性继承相同的数据上下文，则可以使用 <xref:System.Windows.Data.Binding.Source%2A> 属性，而不是 `DataContext` 属性。 有关更多信息，请参见<xref:System.Windows.Data.Binding.Source%2A>。|  
-|<xref:System.Windows.Data.Binding.RelativeSource%2A>|当希望指定相对于绑定目标位置的源时，这很有用。 当想要将元素的一个属性绑定到同一元素的另一个属性时，或者如果要在样式或模板中定义绑定，则可能需要使用此属性。 有关更多信息，请参见<xref:System.Windows.Data.Binding.RelativeSource%2A>。|  
-|<xref:System.Windows.Data.Binding.ElementName%2A>|指定一个表示希望绑定到的元素的字符串。 当希望绑定到应用程序上另一个元素的属性时，这很有用。 例如，如果想要使用 <xref:System.Windows.Controls.Slider> 来控制应用程序中另一个控件的高度，或者要将控件的 <xref:System.Windows.Controls.ContentControl.Content%2A> 绑定到 <xref:System.Windows.Controls.ListBox> 控件的 <xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A> 属性。 有关更多信息，请参见<xref:System.Windows.Data.Binding.ElementName%2A>。|  
+|<xref:System.Windows.Data.Binding.Source%2A>|使用此属性将源设置为对象的实例。 如果不需要建立作用域的功能，其中有多个属性继承相同的数据上下文，则可以使用属性， <xref:System.Windows.Data.Binding.Source%2A> 而不是 `DataContext` 属性。 有关详细信息，请参阅 <xref:System.Windows.Data.Binding.Source%2A>。|  
+|<xref:System.Windows.Data.Binding.RelativeSource%2A>|当希望指定相对于绑定目标位置的源时，这很有用。 当想要将元素的一个属性绑定到同一元素的另一个属性时，或者如果要在样式或模板中定义绑定，则可能需要使用此属性。 有关详细信息，请参阅 <xref:System.Windows.Data.Binding.RelativeSource%2A>。|  
+|<xref:System.Windows.Data.Binding.ElementName%2A>|指定一个表示希望绑定到的元素的字符串。 当希望绑定到应用程序上另一个元素的属性时，这很有用。 例如，如果想要使用 <xref:System.Windows.Controls.Slider> 控制应用程序中另一个控件的高度，或者要将控件的绑定到控件的属性，则为 <xref:System.Windows.Controls.ContentControl.Content%2A> <xref:System.Windows.Controls.Primitives.Selector.SelectedValue%2A> <xref:System.Windows.Controls.ListBox> 。 有关详细信息，请参阅 <xref:System.Windows.Data.Binding.ElementName%2A>。|  
   
 ## <a name="see-also"></a>请参阅
 
@@ -50,4 +51,4 @@ ms.locfileid: "73454363"
 - [属性值继承](../advanced/property-value-inheritance.md)
 - [数据绑定概述](../../../desktop-wpf/data/data-binding-overview.md)
 - [绑定声明概述](binding-declarations-overview.md)
-- [帮助主题](data-binding-how-to-topics.md)
+- [操作指南主题](data-binding-how-to-topics.md)

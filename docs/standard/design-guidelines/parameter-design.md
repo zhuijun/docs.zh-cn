@@ -9,12 +9,12 @@ helpviewer_keywords:
 - parameters, design guidelines
 - reserved parameters
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
-ms.openlocfilehash: 46c1b8f03d054a63ea837a73fd30eeed163ab0a4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e0bc52f5679a7771d5690be9f903e677ce611605
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290092"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621582"
 ---
 # <a name="parameter-design"></a>参数设计
 
@@ -40,7 +40,7 @@ ms.locfileid: "84290092"
 
  这更好地传达了方法之间的关系。
 
-### <a name="choose-between-enum-and-boolean-parameters"></a>选择枚举参数和布尔参数
+### <a name="choosing-between-enum-and-boolean-parameters"></a>选择枚举参数和布尔参数  
  如果成员将使用两个或多个布尔参数，✔️确实使用枚举。
 
  ❌不要使用布尔值，除非你完全确定不需要两个以上的值。
@@ -49,7 +49,7 @@ ms.locfileid: "84290092"
 
  ✔️考虑为构造函数参数使用布尔值，这些参数是真正的双状态值，只用于初始化布尔属性。
 
-### <a name="validate-arguments"></a>验证参数
+### <a name="validating-arguments"></a>验证参数
  ✔️验证传递到公共、受保护或显式实现的成员的参数。 <xref:System.ArgumentException?displayProperty=nameWithType>如果验证失败，则引发或其子类之一。
 
  请注意，实际验证不一定要在公共或受保护的成员本身中发生。 在某些专用或内部例程中，它可能会在较低的级别上发生。 要点是向最终用户公开的整个图面区域会检查参数。
@@ -66,10 +66,10 @@ ms.locfileid: "84290092"
 
  如果成员区分安全，则建议您创建一个副本，然后验证并处理参数。
 
-### <a name="pass-parameters"></a>传递参数
+### <a name="parameter-passing"></a>参数传递
  从框架设计器的角度来看，有三个主要参数组：按值参数、 `ref` 参数和 `out` 参数。
 
- 当通过值参数传递参数时，该成员将接收传入的实参的副本。 如果参数是值类型，则将参数的副本放在堆栈上。 如果参数是引用类型，则将引用的副本放在堆栈上。 大多数常用的 CLR 语言（例如 c #、Visual Basic 和 c + +）默认为通过值传递参数。
+ 当通过值参数传递参数时，该成员将接收传入的实参的副本。 如果参数是值类型，则将参数的副本放在堆栈上。 如果参数是引用类型，则将引用的副本放在堆栈上。 最常用的 CLR 语言（例如 c #、VB.NET 和 c + +）默认为通过值传递参数。
 
  当通过参数传递参数时 `ref` ，该成员将接收对传入的实际参数的引用。 如果参数是值类型，则将对该参数的引用置于堆栈上。 如果参数是引用类型，则对该引用的引用将放在堆栈上。 `Ref`参数可用于允许成员修改调用方传递的参数。
 
@@ -151,11 +151,11 @@ public class String {
 
  例如，无需传递开始索引，因为可以使用简单指针算法来实现相同的结果。
 
- *部分©2005，2009 Microsoft Corporation。保留所有权利。*
+ *部分 &copy; 2005，2009 Microsoft Corporation。保留所有权利。*
 
  *皮尔逊教育，Inc. 的经许可重印权限[：从框架设计指导原则：用于可重复使用的 .Net 库的约定、惯例和模式、第2版](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)By Krzysztof Cwalina 和 Brad Abrams，发布十月22，2008，作为 Microsoft Windows 开发系列的一部分。*
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [成员设计准则](member.md)
 - [框架设计准则](index.md)

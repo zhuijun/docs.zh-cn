@@ -1,5 +1,6 @@
 ---
 title: 重入 MDA
+description: 查看可在对象堆损坏或从本机到托管代码进行转换时发生的其他严重错误时激活的重入 MDA。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - unmanaged code, debugging
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - managed code, debugging
 - native debugging, MDAs
 ms.assetid: 7240c3f3-7df8-4b03-bbf1-17cdce142d45
-ms.openlocfilehash: 5cbe8e843ad72785010240f3db30b1d344c80650
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f666e505b8382b0bec8dcfdb34c775850e46c429
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181767"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803100"
 ---
 # <a name="reentrancy-mda"></a>重入 MDA
 先前未通过有序转换执行从托管代码到本机代码的转换的情况下，如果尝试执行从本机代码到托管代码的转换，会激活 `reentrancy` 托管调试助手 (MDA)。  
@@ -43,7 +44,7 @@ ms.locfileid: "79181767"
 ## <a name="effect-on-the-runtime"></a>对运行时的影响  
  此 MDA 对 CLR 无任何影响。  
   
-## <a name="output"></a>输出  
+## <a name="output"></a>Output  
  MDA 报告正在尝试非法重入。  检查线程的堆栈以确定发生原因和如何更正此问题。 下面是示例输出。  
   
 ```output
@@ -54,7 +55,7 @@ low-level native extensibility points. Managed Debugging Assistant
 ConsoleApplication1\bin\Debug\ConsoleApplication1.vshost.exe'.  
 ```  
   
-## <a name="configuration"></a>配置  
+## <a name="configuration"></a>Configuration  
   
 ```xml  
 <mdaConfig>  
@@ -102,6 +103,6 @@ public class Reenter
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

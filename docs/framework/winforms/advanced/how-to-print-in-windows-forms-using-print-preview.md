@@ -1,5 +1,6 @@
 ---
 title: 使用打印预览打印
+description: 了解如何使用 Windows 窗体 PrintPreviewDialog 控件将打印预览服务添加到应用程序。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - printing [Windows Forms], with print preview
 - print preview
 ms.assetid: 4a16f7e2-ae10-4485-b0ae-3d558334d0fe
-ms.openlocfilehash: 1975c902fdb56326c763f2e2fc11e381ffc7fbd3
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: abcf77db40f648df1a0cd49922bb49e5c9407811
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76740603"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621608"
 ---
 # <a name="how-to-print-in-windows-forms-using-print-preview"></a>如何：使用打印预览在 Windows 窗体中进行打印
 除了打印服务之外，Windows 窗体编程中通常还提供打印预览。 要将打印预览服务添加到你的应用程序有一个简单的方法，就是将 <xref:System.Windows.Forms.PrintPreviewDialog> 控件与用于打印文件的 <xref:System.Drawing.Printing.PrintDocument.PrintPage> 事件处理逻辑结合使用。  
@@ -62,8 +63,8 @@ ms.locfileid: "76740603"
   
 - 对 System、System.Windows.Forms 和 System.Drawing 程序集的引用。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：打印 Windows 窗体中的多页文本文件](how-to-print-a-multi-page-text-file-in-windows-forms.md)
 - [Windows 窗体打印支持](windows-forms-print-support.md)
-- [Windows 窗体中更加安全的打印](../more-secure-printing-in-windows-forms.md)
+- [Windows 窗体中的更加安全的打印](../more-secure-printing-in-windows-forms.md)

@@ -1,5 +1,6 @@
 ---
 title: 如何：在 XAML 中使用视图对数据进行排序和分组
+description: 了解如何在 Windows Presentation Foundation （WPF）中创建用于分组、排序和筛选的数据集合视图。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data binding [WPF], grouping data in views in XAML
@@ -11,18 +12,18 @@ helpviewer_keywords:
 - views [WPF], sorting data
 - views [WPF], grouping data
 ms.assetid: 145c8c3f-dbdd-4d0d-816f-90b35eba7eda
-ms.openlocfilehash: 9e42dd330535f71438ab7af3dca9d078e9dfd8d3
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: a4f8e2de9345dba8e4ea0d3a16a32d57a9adb55c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460126"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621673"
 ---
 # <a name="how-to-sort-and-group-data-using-a-view-in-xaml"></a>如何：在 XAML 中使用视图对数据进行排序和分组
-此示例演示如何在 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)]中创建数据集合的视图。 视图允许对当前项的分组、排序、筛选和概念功能进行分组、排序、筛选和排序。  
+此示例演示如何在中创建数据集合的视图 [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] 。 视图允许对当前项的分组、排序、筛选和概念功能进行分组、排序、筛选和排序。  
   
 ## <a name="example"></a>示例  
- 在下面的示例中，名为 "*位置*" 的静态资源定义为 "*位置*" 对象的集合，其中每个*位置*对象都由城市名称和状态组成。 前缀*src*映射到定义了数据源*位置*的命名空间。 前缀*scm*映射到 `"clr-namespace:System.ComponentModel;assembly=WindowsBase"` 并将*dat*映射到 `"clr-namespace:System.Windows.Data;assembly=PresentationFramework"`。  
+ 在下面的示例中，名为 "*位置*" 的静态资源定义为 "*位置*" 对象的集合，其中每个*位置*对象都由城市名称和状态组成。 前缀*src*映射到定义了数据源*位置*的命名空间。 前缀*scm*映射到 `"clr-namespace:System.ComponentModel;assembly=WindowsBase"` ， *dat*映射到 `"clr-namespace:System.Windows.Data;assembly=PresentationFramework"` 。  
   
  下面的示例创建数据集合的视图，该视图按 city 名称进行排序并按状态分组。  
   
@@ -32,7 +33,7 @@ ms.locfileid: "73460126"
   
  [!code-xaml[CollectionViewSource#2](~/samples/snippets/csharp/VS_Snippets_Wpf/CollectionViewSource/CS/window1.xaml#2)]  
   
- 若要绑定到 <xref:System.Windows.Data.XmlDataProvider> 资源中定义的 XML 数据，请在 XML 名称之前加上 @ 符号。  
+ 若要绑定到资源中定义的 XML 数据 <xref:System.Windows.Data.XmlDataProvider> ，请在 XML 名称之前加上 @ 符号。  
   
  [!code-xaml[CollectionViewSource#XDPChunk](~/samples/snippets/csharp/VS_Snippets_Wpf/CollectionViewSource/CS/window1.xaml#xdpchunk)]  
   
@@ -43,4 +44,4 @@ ms.locfileid: "73460126"
 - <xref:System.Windows.Data.CollectionViewSource>
 - [获取数据集合的默认视图](how-to-get-the-default-view-of-a-data-collection.md)
 - [数据绑定概述](../../../desktop-wpf/data/data-binding-overview.md)
-- [帮助主题](data-binding-how-to-topics.md)
+- [操作指南主题](data-binding-how-to-topics.md)
