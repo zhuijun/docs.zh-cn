@@ -8,22 +8,12 @@ items:
   - name: 安装
     items:
       - name: 概述
-        href: install/index.md
-      - name: 安装 SDK
-        href: install/sdk.md
-      - name: 安装运行时
-        href: install/runtime.md
-      - name: 支持的操作系统和依赖项
-        href: install/dependencies.md
-      - name: 删除过时的运行时和 SDK
-        href: install/remove-runtime-sdk-versions.md
-      - name: 管理 .NET 模板
-        href: install/templates.md
-      - name: macOS 公证问题
-        href: install/macos-notarization-issues.md
-      - name: 如何检查 .NET Core 版本
-        href: install/how-to-detect-installed-versions.md
-      - name: Linux
+        href: install/index.yml
+      - name: 在 Windows 上安装
+        href: install/windows.md
+      - name: 在 macOS 上安装
+        href: install/macos.md
+      - name: 在 Linux 上安装
         items:
           - name: 概述
             href: install/linux.md
@@ -43,6 +33,14 @@ items:
             href: install/linux-rhel.md
           - name: SLES
             href: install/linux-sles.md
+      - name: 删除过时的运行时和 SDK
+        href: install/remove-runtime-sdk-versions.md
+      - name: 管理 .NET 模板
+        href: install/templates.md
+      - name: macOS 公证问题
+        href: install/macos-notarization-issues.md
+      - name: 如何检查 .NET Core 版本
+        href: install/how-to-detect-installed-versions.md
       - name: 安装本地化的 IntelliSense
         href: install/localized-intellisense.md
   - name: 入门
