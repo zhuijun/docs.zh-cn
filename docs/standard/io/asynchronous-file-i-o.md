@@ -1,5 +1,6 @@
 ---
 title: 异步文件 I/O
+description: 了解 .NET 中的异步文件 I/O。 了解异步方法来简化异步操作，例如 ReadAsync、WriteAsync 等。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - multiple I/O requests
 - data streams, synchronous streams
 ms.assetid: dbdd55e7-d6b9-4f9e-8abb-ab0edd4457f7
-ms.openlocfilehash: 66e7d01f37a1119b9d2076a9131aa40f26d15625
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9506a366b6f1e363ec13550e5ed68c7176dd4d0a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708186"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84598614"
 ---
 # <a name="asynchronous-file-io"></a>异步文件 I/O
 
@@ -57,7 +58,7 @@ C# 和 Visual Basic 分别具有两个用于异步编程的关键字：
 
 [!code-xaml[System.IO.WindowsRuntimeStorageExtensions#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.io.windowsruntimestorageextensions/cs/blankpage.xaml#1)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.IO.Stream>
 - [文件和流 I/O](index.md)

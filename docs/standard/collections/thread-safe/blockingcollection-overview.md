@@ -1,5 +1,6 @@
 ---
 title: BlockingCollection 概述
+description: 阅读有关 .NET 中线程安全集合类 BlockingCollection<T> 的信息。 此类提供一些功能，例如并发添加项或从多个线程中获取项。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - BlockingCollection, overview
 ms.assetid: 987ea3d7-0ad5-4238-8b64-331ce4eb3f0b
-ms.openlocfilehash: 708ab9dc8df2ee3128036ffc71e9abc51a56e33b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: fc11f6c28a551e56d3bac4c5be9c08a396c0c6b1
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287908"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600797"
 ---
 # <a name="blockingcollection-overview"></a>BlockingCollection 概述
 <xref:System.Collections.Concurrent.BlockingCollection%601> 是一个线程安全集合类，可提供以下功能：  
@@ -46,7 +47,7 @@ ms.locfileid: "84287908"
  [!code-csharp[CDS_BlockingCollection#04](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/blockingcollection.cs#04)]
  [!code-vb[CDS_BlockingCollection#04](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_blockingcollection/vb/introsnippetsbc.vb#04)]  
   
- 有关完整示例，请参阅[如何：在 BlockingCollection 中逐个添加和取出项](how-to-add-and-take-items.md)。  
+ 有关完整的示例，请参阅 [如何：在 BlockingCollection 中逐个添加和取出项](how-to-add-and-take-items.md)。  
   
 ## <a name="timed-blocking-operations"></a>计时阻塞操作  
  在针对有限集合的计时阻塞 <xref:System.Collections.Concurrent.BlockingCollection%601.TryAdd%2A> 和 <xref:System.Collections.Concurrent.BlockingCollection%601.TryTake%2A> 操作中，此方法将尝试添加或取出某个项。 如果项可用，项会被置于通过引用传入的变量中，然后方法返回 true。 如果在指定的超时期限过后未检索到任何项，方法返回 false。 相应线程可以任意执行一些其他有用的工作，然后再重新尝试访问该集合。 有关计时阻塞访问的示例，请参阅[如何：在 BlockingCollection 中逐个添加和取出项](how-to-add-and-take-items.md)中的第二个示例。  
@@ -57,7 +58,7 @@ ms.locfileid: "84287908"
  [!code-csharp[CDS_BlockingCollection#05](../../../../samples/snippets/csharp/VS_Snippets_Misc/cds_blockingcollection/cs/blockingcollection.cs#05)]
  [!code-vb[CDS_BlockingCollection#05](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/cds_blockingcollection/vb/introsnippetsbc.vb#05)]  
   
- 有关如何添加取消支持的示例，请参阅[如何：在 BlockingCollection 中逐个添加和获取项](how-to-add-and-take-items.md)中的第二个示例。  
+ 有关如何添加取消支持的示例，请参阅[如何：在 BlockingCollection 中逐个添加和取出项](how-to-add-and-take-items.md)中的第二个示例。  
   
 ## <a name="specifying-the-collection-type"></a>指定集合类型  
  创建 <xref:System.Collections.Concurrent.BlockingCollection%601> 时，不仅可以指定上限容量，而且可以指定要使用的集合类型。 例如，可为先进先出 (FIFO) 行为指定 <xref:System.Collections.Concurrent.ConcurrentQueue%601>，也可为后进先出 (LIFO) 行为指定 <xref:System.Collections.Concurrent.ConcurrentStack%601>。 可使用实现 <xref:System.Collections.Concurrent.IProducerConsumerCollection%601> 接口的任何集合类。 <xref:System.Collections.Concurrent.BlockingCollection%601> 的默认集合类型为 <xref:System.Collections.Concurrent.ConcurrentQueue%601>。 下面的代码示例演示如何创建字符串的 <xref:System.Collections.Concurrent.BlockingCollection%601>，其容量为 1000 并使用 <xref:System.Collections.Concurrent.ConcurrentBag%601>：  
@@ -70,7 +71,7 @@ Dim bc = New BlockingCollection(Of String)(New ConcurrentBag(Of String()), 1000)
 BlockingCollection<string> bc = new BlockingCollection<string>(new ConcurrentBag<string>(), 1000 );  
 ```  
   
- 有关详细信息，请参阅[如何：向集合添加控制和锁定功能](how-to-add-bounding-and-blocking.md)。  
+ 有关详细信息，请参阅[如何：向集合添加限制和阻塞功能](how-to-add-bounding-and-blocking.md)。  
   
 ## <a name="ienumerable-support"></a>IEnumerable 支持  
  <xref:System.Collections.Concurrent.BlockingCollection%601> 提供 <xref:System.Collections.Concurrent.BlockingCollection%601.GetConsumingEnumerable%2A> 方法，该方法允许使用者使用 `foreach`（在 Visual Basic 中为 `For Each`）删除项直到完成集合，也就是说，集合为空且不再添加项。 有关详细信息，请参阅[如何：使用 ForEach 移除 BlockingCollection 中的项](how-to-use-foreach-to-remove.md)。  
@@ -78,7 +79,7 @@ BlockingCollection<string> bc = new BlockingCollection<string>(new ConcurrentBag
 ## <a name="using-many-blockingcollections-as-one"></a>将多个 BlockingCollection 作为整体使用  
  在使用者需要同时取出多个集合中的项的情况下，可以创建 <xref:System.Collections.Concurrent.BlockingCollection%601> 的数组并使用静态方法，如 <xref:System.Collections.Concurrent.BlockingCollection%601.TakeFromAny%2A> 和 <xref:System.Collections.Concurrent.BlockingCollection%601.AddToAny%2A> 方法，这两个方法可以在该数组的任意集合中添加或取出项。 如果一个集合发生阻塞，此方法会立即尝试其他集合，直到找到能够执行该操作的集合。 有关详细信息，请参阅[如何：在管道中使用阻塞集合的数组](how-to-use-arrays-of-blockingcollections.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Collections.Concurrent?displayProperty=nameWithType>
 - [集合和数据结构](../index.md)

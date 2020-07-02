@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: e69ed64390504af872fa6785aa0b7d6c4db84ef0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4a0f866bc11a06ea6fcd4ab3a8320bbb6ffa5d91
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "69671029"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621048"
 ---
 ### <a name="improved-wcf-chain-trust-certificate-validation-for-nettcp-certificate-authentication"></a>改进了 Net.Tcp 证书身份验证的 WCF 链信任证书验证
 
-|   |   |
-|---|---|
-|详细信息|.NET Framework 4.7.2 改进了通过 WCF 对传输安全性使用证书身份验证时的链信任证书验证。 由于此改进，用于对服务器进行身份验证的客户端证书必须为客户端身份验证进行配置。  同样，用于对服务器进行身份验证的服务器证书必须为服务器身份验证进行配置。 由于此更改，如果禁用根证书，证书链验证将失败。 相同的更改还通过 Windows 安全汇总应用于 .NET Framework 3.5 及更高版本。 可在[此处](https://support.microsoft.com/help/4055269/security-only-update-for-net-framework-3-5-1-4-5-2-4-6-4-6-1-4-6-2-4-7)了解详细信息。此更改默认开启，可通过配置设置关闭。|
-|建议|<ul><li>验证服务器和客户端证书是否具有所需的 EKU OID。 如果没有，请更新证书。</li><li>验证根证书是否无效。 如果是这样，请更新根证书。</li><li>如何选择弃用更改：如果不能更新证书，可以暂时使用以下配置设置来躲开重大更改。但是，选择弃用更改将导致系统易遭受安全性问题。</li></ul><pre><code class="lang-xml">&lt;appSettings&gt;&#13;&#10;&lt;add key=&quot;wcf:useLegacyCertificateUsagePolicy&quot; value=&quot;true&quot; /&gt;&#13;&#10;&lt;/appSettings&gt;&#13;&#10;</code></pre>|
-|范围|次要|
-|Version|4.7.2|
+#### <a name="details"></a>详细信息
+
+.NET Framework 4.7.2 改进了通过 WCF 对传输安全性使用证书身份验证时的链信任证书验证。 由于此改进，用于对服务器进行身份验证的客户端证书必须为客户端身份验证进行配置。  同样，用于对服务器进行身份验证的服务器证书必须为服务器身份验证进行配置。 由于此更改，如果禁用根证书，证书链验证将失败。 相同的更改还通过 Windows 安全汇总应用于 .NET Framework 3.5 及更高版本。 可在[此处](https://support.microsoft.com/help/4055269/security-only-update-for-net-framework-3-5-1-4-5-2-4-6-4-6-1-4-6-2-4-7)了解详细信息。此更改默认开启，可通过配置设置关闭。
+
+#### <a name="suggestion"></a>建议
+
+<ul><li>验证服务器和客户端证书是否具有所需的 EKU OID。 如果没有，请更新证书。</li><li>验证根证书是否无效。 如果是这样，请更新根证书。</li><li>如何选择退出更改：如果不能更新证书，可以暂时使用以下配置设置来躲开重大更改。但是，选择弃用更改将导致系统易遭受安全性问题。</li></ul><pre><code class="lang-xml">&lt;appSettings&gt;&#13;&#10;&lt;add key=&quot;wcf:useLegacyCertificateUsagePolicy&quot; value=&quot;true&quot; /&gt;&#13;&#10;&lt;/appSettings&gt;&#13;&#10;</code></pre>
+
+| “属性”    | “值”       |
+|:--------|:------------|
+| 范围   |次要|
+|版本|4.7.2|
 |类型|运行时|

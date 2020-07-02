@@ -3,17 +3,19 @@ title: 什么是 .NET for Apache Spark？
 description: 了解 .NET for Apache Spark，一种免费、开放源代码、跨平台的大数据分析框架，可在编写 .NET 代码的任何位置使用 Spark。
 author: mamccrea
 ms.topic: overview
-ms.date: 10/15/2019
-ms.openlocfilehash: 12fccd478cedaccf455043feb3afa7b12221bf0e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 06/25/2020
+ms.openlocfilehash: 2c04861dabe604b52df583cd5a7eecc5ff8e5481
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73458199"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621855"
 ---
 # <a name="what-is-net-for-apache-spark"></a>什么是 .NET for Apache Spark？
 
 [Apache Spark](what-is-spark.md) 是用于分析大型数据集（通常是以 TB 或 PB 为单位的数据）的常规分布式处理引擎。 使用 .NET for Apache Spark，为常见开放源代码大数据分析框架提供免费、开放源代码、跨平台的 .NET 支持，用户现在可以使用已知的语言将 Apache Spark 的功能添加到大数据应用程序。
+
+[!INCLUDE [spark-preview-note](../../includes/spark-preview-note.md)]
 
 ## <a name="why-choose-net-for-apache-spark"></a>为什么选择 .NET for Apache Spark？
 

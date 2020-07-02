@@ -1,5 +1,6 @@
 ---
 title: 如何：编写具有线程局部变量的 Parallel.For 循环
+description: 查看示例，了解如何在 .NET 中编写使用线程局部变量的 Parallel.For 循环，这些变量可在循环中的每个独立任务中存储和检索状态。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallel for loops, how to use local state
 ms.assetid: 68384064-7ee7-41e2-90e3-71f00bde01bb
-ms.openlocfilehash: bb6ac1a64c3a71646946d1af894d1124b12e4769
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9cff507757aab2e5676df2fabb02a237a2172c17
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290754"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599784"
 ---
 # <a name="how-to-write-a-parallelfor-loop-with-thread-local-variables"></a>如何：编写具有线程局部变量的 Parallel.For 循环
 此示例演示如何使用线程本地变量来存储和检索由 <xref:System.Threading.Tasks.Parallel.For%2A> 循环创建的每个单独任务中的状态。 通过使用线程本地数据，你可以避免将大量的访问同步为共享状态的开销。 在任务的所有迭代完成之前，你将计算和存储值，而不是写入每个迭代上的共享资源。 然后，你可以将最终结果一次性写入共享资源，或将其传递到另一个方法。  
@@ -42,7 +43,7 @@ Function() new MyClass()
   
  若要详细了解如何使用 Lambda 表达式，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](lambda-expressions-in-plinq-and-tpl.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [数据并行](data-parallelism-task-parallel-library.md)
 - [并行编程](index.md)

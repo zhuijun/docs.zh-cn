@@ -1,5 +1,6 @@
 ---
 title: 如何：实现制造者-使用者数据流模式
+description: 了解如何使用 .NET 中的 TPL 数据流库实现生成方-使用方数据流模式。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,15 +11,15 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - producer-consumer patterns, implementing [TPL]
 ms.assetid: 47a1d38c-fe9c-44aa-bd15-937bd5659b0b
-ms.openlocfilehash: 491f3912998e56fe768d21da82ff68cb64f6d6c8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e9ed8f84f1daca64fa60d8aed18aa2d9be1380e0
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289520"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768919"
 ---
 # <a name="how-to-implement-a-producer-consumer-dataflow-pattern"></a>如何：实现制造者-使用者数据流模式
-本文档描述如何使用 TPL 数据流库实现制造者-使用者模式。 在此模式下，制造者  向消息块发送消息，使用者  从该块读取消息。  
+本文档描述如何使用 TPL 数据流库实现制造者-使用者模式。 在此模式下，制造者向消息块发送消息，使用者从该块读取消息。  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
   
@@ -38,6 +39,6 @@ ms.locfileid: "84289520"
   
  没有可用数据时，<xref:System.Threading.Tasks.Dataflow.IReceivableSourceBlock%601.TryReceive%2A> 方法将返回 `False`。 当多个使用者必须并发访问源块时，此机制可确保在调用 <xref:System.Threading.Tasks.Dataflow.DataflowBlock.OutputAvailableAsync%2A> 后数据仍然可用。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [数据流](dataflow-task-parallel-library.md)

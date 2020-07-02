@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: fe2e4b4c-6483-4106-a4b4-a33e2e306591
-ms.openlocfilehash: 43e896bfe267299d3b0cb12a8f71e42fe2c87a88
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 184c9f61fd8456b22e8ecb262c131793160b49b0
+ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84280785"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85244005"
 ---
 # <a name="delegates-and-lambdas"></a>委托和 lambda
 
@@ -72,7 +72,7 @@ public class Program
 }
 ```
 
-对于此简单示例而言，在 `Main` 方法之外定义方法似乎有些多余。 .NET Framework 2.0 引入了匿名委托  的概念，使你可以创建“内联”委托，而无需指定任何其他类型或方法。
+对于此简单示例而言，在 `Main` 方法之外定义方法似乎有些多余。 .NET Framework 2.0 引入了匿名委托的概念，使你可以创建“内联”委托，而无需指定任何其他类型或方法。
 
 在下面的示例中，匿名委托将列表筛选为只包含偶数，然后将它们打印到控制台。
 
@@ -106,9 +106,9 @@ public class Program
 }
 ```
 
-如你所见，该委托的正文只是一组表达式，其他所有委托也是如此。 但它并非单独定义，而是在调用 <xref:System.Collections.Generic.List%601.FindAll%2A?displayProperty=nameWithType> 方法时临时引入  。
+如你所见，该委托的正文只是一组表达式，其他所有委托也是如此。 但它并非单独定义，而是在调用 <xref:System.Collections.Generic.List%601.FindAll%2A?displayProperty=nameWithType> 方法时临时引入。
 
-但是，即使使用此方法，仍有许多可以丢弃的代码。 此时就需要使用 *lambda 表达式*。 lambda 表达式（或简称“lambda”）在 C# 3.0 中作为语言集成查询 (LINQ) 的核心构建基块被引入。 这种表达式只是使用委托的更方便的语法。 它们将声明签名和方法正文，但在分配到委托之前没有自己的正式标识。 与委托不同，可将其作为事件注册的左侧内容或在各种 LINQ 子句和方法中直接分配。
+但是，即使使用此方法，仍有许多可以丢弃的代码。 此时就需要使用 *lambda 表达式*。 lambda 表达式（或简称“lambda”）在 C# 3.0 中作为语言集成查询 (LINQ) 的核心构建基块被引入。 这种表达式只是使用委托的更方便的语法。 它们将声明签名和方法正文，但在分配到委托之前没有自己的正式标识。 与委托不同，可将其作为事件注册的右侧内容或在各种 LINQ 子句和方法中直接分配。
 
 由于 lambda 表达式只是指定委托的另一种方式，因此应可重新编写上述示例，令其使用 lambda 表达式而不是匿名委托。
 

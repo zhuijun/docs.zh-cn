@@ -1,15 +1,15 @@
 ---
 title: 在 Azure HDInsight Spark 群集的 Jupyter Notebook 中安装 .NET for Apache Spark
 description: 了解如何在 Azure HDInsight 的 Jupyter Notebook 中安装 .NET for Apache Spark。
-ms.date: 03/13/2020
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 953bffe5f6ec56cd0adf4224afd2eedfe0001aa9
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 14babf7a551192b286f309393e3bbff25d4745d5
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607410"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617738"
 ---
 # <a name="install-net-for-apache-spark-on-jupyter-notebooks-on-azure-hdinsight-spark-clusters"></a>在 Azure HDInsight Spark 群集的 Jupyter Notebook 中安装 .NET for Apache Spark
 
@@ -21,6 +21,8 @@ Azure HDInsight 群集已附带 Jupyter Notebook，因此只需将 Jupyter Noteb
 
 > [!NOTE]
 > 此功能是试验功能，HDInsight Spark 团队不支持它。 
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>先决条件
 

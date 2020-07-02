@@ -1,5 +1,6 @@
 ---
 title: 网络编程操作说明主题
+description: 使用以下操作指南文章来了解 .NET Framework 中网络编程的不同方面。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - network resources
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - networking how-tos [.NET Framework]
 - network
 ms.assetid: 8fd6c675-9ea6-4fad-a412-e2c2c1f233d8
-ms.openlocfilehash: 5f8f1a3ca9aaf4bea56f342857d2df0bb18a9ba8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f091f0f675fcf22cb7c6be83a5766fcc8d279be7
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047636"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502270"
 ---
 # <a name="network-programming-how-to-topics"></a>网络编程操作说明主题
 以下列表包含指向网络编程概念文档中操作说明主题的链接。  
@@ -31,7 +32,7 @@ ms.locfileid: "71047636"
   
 - [如何：使用 WebRequest 注册自定义协议](how-to-register-a-custom-protocol-using-webrequest.md)  
   
-- [如何：转换 WebRequest 以访问协议特定的属性](how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)  
+- [如何：转换 WebRequest 以访问协议特定属性](how-to-typecast-a-webrequest-to-access-protocol-specific-properties.md)  
   
 - [如何：访问 HTTP 特定的属性](how-to-access-http-specific-properties.md)  
   
@@ -77,7 +78,7 @@ ms.locfileid: "71047636"
   
 - [如何：Ping 主机](how-to-ping-a-host.md)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [.NET Framework 中的网络编程](index.md)
 - [网络编程示例](network-programming-samples.md)

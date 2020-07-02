@@ -1,5 +1,6 @@
 ---
 title: 代理配置
+description: 了解如何配置自适应和静态代理服务器。 代理配置控制代理服务器如何处理客户端对资源的请求。
 ms.date: 06/18/2018
 helpviewer_keywords:
 - Networking
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - network, proxy configuration
 - proxies, configuring
 ms.assetid: 353c0a8b-4cee-44f6-8e65-60e286743df9
-ms.openlocfilehash: 1fbfe25b90e810ff96924a2341582ff3f5ee5e5d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4d62f5736e9aa469be49d101e85851bc01b7c159
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71047357"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141600"
 ---
 # <a name="proxy-configuration"></a>代理配置
 代理服务器处理客户端对资源的请求。 代理可以从其缓存中返回已请求的资源，或将请求转发到资源驻留的服务器。 代理可以通过减少发送到远程服务器的请求数量来提高网络性能。 代理还可以用于限制对资源的访问。  
@@ -53,7 +54,7 @@ ms.locfileid: "71047357"
   
  下表显示了静态代理的配置选项。  
   
-|特性、属性或配置文件设置|说明|  
+|特性、属性或配置文件设置|描述|  
 |--------------------------------------------------------|-----------------|  
 |`proxyaddress` 或 <xref:System.Net.WebProxy.Address>|要使用的代理地址。|  
 |`bypassonlocal` 或 <xref:System.Net.WebProxy.BypassProxyOnLocal>|控制是否对本地地址不使用代理。|  
@@ -66,7 +67,7 @@ ms.locfileid: "71047357"
 <system.net>  
     <defaultProxy>  
         <proxy  proxyaddress="http://proxy.contoso.com:3128"  
-                bypassonlocal="true"  
+                bypassonlocal="True"  
         />  
         <bypasslist>  
             <add address="[a-z]+.blueyonderairlines.com$" />  
@@ -75,7 +76,7 @@ ms.locfileid: "71047357"
 </system.net>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Net.WebProxy>
 - <xref:System.Net.GlobalProxySelection>

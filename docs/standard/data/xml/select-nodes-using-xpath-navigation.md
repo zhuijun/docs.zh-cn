@@ -1,17 +1,18 @@
 ---
 title: 使用 XPath 导航选择节点
+description: 了解如何在 .NET 中选择 XML 节点。 如果使用文档对象模型 (DOM) 方法，则可使用 XML 路径语言 (XPath) 浏览功能查询 DOM 信息。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8e4450dc-56b3-472b-b467-32f5694f83ad
-ms.openlocfilehash: 85f3ae9ec9f3b4d0949a893dd1e59fbbda139066
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: aa8b6d93e25d974a0e1b53ae8be9868f6bf64be6
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291456"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662506"
 ---
 # <a name="select-nodes-using-xpath-navigation"></a>使用 XPath 导航选择节点
 XML 文档对象模型 (DOM) 包含的方法使您可以使用 XML 路径语言 (XPath) 浏览功能查询 DOM 中的信息。 可以使用 XPath 查找单个特定节点，或查找与某个条件匹配的所有节点。  

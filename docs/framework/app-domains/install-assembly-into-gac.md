@@ -1,5 +1,6 @@
 ---
 title: 如何：将程序集安装到全局程序集缓存
+description: 将程序集安装到 .NET 中的全局程序集缓存 (GAC)，以供多个应用程序共享。 使用 Windows Installer 或 GAC 实用程序。
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], global assembly cache
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - Global Assembly Cache tool
 - windows installer, global assembly cache
 ms.assetid: a7e6f091-d02c-49ba-b736-7295cb0eb743
-ms.openlocfilehash: 64878a795a7c5b790c8991064e32b82505685c0c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 08a5475d74327265f28b65676ae56be15afb57d3
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79155558"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104657"
 ---
 # <a name="how-to-install-an-assembly-into-the-global-assembly-cache"></a>如何：将程序集安装到全局程序集缓存
 
@@ -35,26 +36,26 @@ ms.locfileid: "79155558"
 可以使用 [.NET 全局程序集实用程序 (gacutil.exe)](../tools/gacutil-exe-gac-tool.md) 将程序集添加到全局程序集缓存，并查看全局程序集缓存的内容。
 
    > [!NOTE]
-   > Gacutil.exe 仅用于开发目的  。 请勿用于将生产程序集安装到全局程序集缓存。
+   > Gacutil.exe 仅用于开发目的。 请勿用于将生产程序集安装到全局程序集缓存。
 
-使用 gacutil.exe 在 GAC 中安装程序集的语法如下： 
+使用 gacutil.exe 在 GAC 中安装程序集的语法如下：
 
 ```cmd
 gacutil -i <assembly name>
 ```
 
-在此命令中，\<assembly name> 是要在全局程序集缓存中安装的程序集的名称  。
+在此命令中，\<assembly name> 是要在全局程序集缓存中安装的程序集的名称。
 
-如果 gacutil.exe 不在系统路径中，则使用 [VS 开发人员命令提示符\<版本>](../tools/developer-command-prompt-for-vs.md)   。
+如果 gacutil.exe 不在系统路径中，则使用 [VS 开发人员命令提示符\<version>](../tools/developer-command-prompt-for-vs.md) 。
 
-下面的示例将文件名为 hello.dll 的程序集安装到全局程序集缓存  。
+下面的示例将文件名为 hello.dll 的程序集安装到全局程序集缓存。
 
 ```cmd
 gacutil -i hello.dll
 ```
 
 > [!NOTE]
-> 在 .NET Framework 的早期版本中，可以使用 Shfusion.dll Windows 外壳扩展通过将程序集拖到“文件资源管理器”来安装这些程序集  。 从 .NET Framework 4 开始，Shfusion.dll 已过时  。
+> 在 .NET Framework 的早期版本中，可以使用 Shfusion.dll Windows 外壳扩展通过将程序集拖到“文件资源管理器”来安装这些程序集。 从 .NET Framework 4 开始，Shfusion.dll 已过时。
 
 ## <a name="see-also"></a>请参阅
 

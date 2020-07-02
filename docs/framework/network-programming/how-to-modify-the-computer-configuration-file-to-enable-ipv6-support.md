@@ -1,16 +1,17 @@
 ---
 title: 如何：修改计算机配置文件以启用 IPv6 支持
+description: 了解如何修改计算机配置文件 machine.config，以在 .NET Framework 中启用 IPv6 支持。
 ms.date: 03/30/2017
 ms.assetid: 5611b677-b9cc-43b8-a434-60e18d89aada
-ms.openlocfilehash: 73408afe9fcb35daa898c08b087a3411a6cb342b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: eb7b3665c0dbcf0edefa8c48a9e69297d7259067
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180802"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502517"
 ---
 # <a name="how-to-modify-the-computer-configuration-file-to-enable-ipv6-support"></a>如何：修改计算机配置文件以启用 IPv6 支持
-下面的代码示例演示如何修改计算机配置文件 machine.config，以启用 IPv6 支持  。 machine.config 文件存储在 Windows 安装目录的 %Windir%\Microsoft.NET\Framework 文件夹中   。 安装在计算机上的每个 .NET Framework 版本，在 %Windir%\Microsoft.NET\Framework 下的文件夹中分别有一个单独的 machine.config 文件（例如，C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\machine.config）    。  
+下面的代码示例演示如何修改计算机配置文件 machine.config，以启用 IPv6 支持。 machine.config 文件存储在 Windows 安装目录的 %Windir%\Microsoft.NET\Framework 文件夹中 。 安装在计算机上的每个 .NET Framework 版本，在 %Windir%\Microsoft.NET\Framework 下的文件夹中分别有一个单独的 machine.config 文件（例如，C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\machine.config）  。  
   
  也可以在应用程序的配置文件中做出这些设置，其优先级别高于计算机配置文件。  
   
@@ -35,7 +36,7 @@ ms.locfileid: "79180802"
 </system.net>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [IPv6 寻址](ipv6-addressing.md)
 - [网络设置架构](../configure-apps/file-schema/network/index.md)

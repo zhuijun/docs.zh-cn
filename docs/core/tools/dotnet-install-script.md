@@ -2,12 +2,12 @@
 title: dotnet-install 脚本
 description: 了解用于安装 .NET Core SDK 和共享运行时的 dotnet-install 脚本。
 ms.date: 04/30/2020
-ms.openlocfilehash: 9f5cef9cfcca1d8b344021efe803c063a7393f8e
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: d03877d76212f7b22de0a1075cf50fc75bd104b6
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802721"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324423"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet-install 脚本引用
 
@@ -28,7 +28,7 @@ dotnet-install.ps1 [-Architecture <ARCHITECTURE>] [-AzureFeed]
     [-SkipNonVersionedFiles] [-UncachedFeed] [-Verbose]
     [-Version <VERSION>]
 
-dotnet-install.ps1 -Help
+Get-Help ./dotnet-install.ps1
 ```
 
 Linux/macOS：
@@ -44,24 +44,47 @@ dotnet-install.sh  [--architecture <ARCHITECTURE>] [--azure-feed]
 dotnet-install.sh --help
 ```
 
+bash 脚本也读取 PowerShell 开关。因此，可以在 Linux/macOS 系统上将 PowerShell 开关与脚本结合使用。
+
 ## <a name="description"></a>描述
 
-`dotnet-install` 脚本用于执行 .NET Core SDK 的非管理员安装，其中包含 .NET Core CLI 和共享运行时。
+`dotnet-install` 脚本执行 .NET Core SDK 的非管理员安装，其中包含 .NET Core CLI 和共享运行时。 有两个脚本：
+
+* 在 Windows 上运行的 PowerShell 脚本。
+* 在 Linux/macOS 上运行的 bash 脚本。
+
+### <a name="purpose"></a>目标
+
+ 脚本的预期用途是用于持续集成 (CI) 方案，其中：
+
+* 需要在无需用户交互和管理员权限的情况下安装 SDK。
+* 无需在多个 CI 运行中保留 SDK 安装。
+
+  典型的事件序列：
+  * 触发 CI。
+  * CI 使用其中一个脚本安装 SDK。
+  * CI 完成其工作并清除临时数据（包括 SDK 安装）。
+
+要设置开发环境或运行应用，请使用安装程序而不是这些脚本。
+
+### <a name="recommended-version"></a>建议的版本
 
 建议使用脚本的稳定版本：
 
 - Bash (Linux/macOS)：<https://dot.net/v1/dotnet-install.sh>
 - PowerShell (Windows)：<https://dot.net/v1/dotnet-install.ps1>
 
-这些脚本主要用于自动化方案和非管理员安装。 有两个脚本：一个是适用于在 Windows 上工作的 PowerShell 脚本，另一个是在 Linux/macOS 上工作的 bash 脚本。 这两个脚本的行为相同。 bash 脚本也读取 PowerShell 开关。因此，可以在 Linux/macOS 系统上将 PowerShell 开关与脚本结合使用。
+### <a name="script-behavior"></a>脚本行为
 
-安装脚本从 CLI 生成放置下载 ZIP/tarball 文件，并将其安装在默认位置或 `-InstallDir|--install-dir` 所指定的位置。 默认情况下，安装脚本下载 SDK 并安装它。 如果只想获取共享的运行时，请指定 `-Runtime|--runtime` 参数。
+这两个脚本的行为相同。 它们从 CLI 生成放置下载 ZIP/tarball 文件，并将其安装在默认位置或 `-InstallDir|--install-dir` 所指定的位置。
 
-默认情况下，该脚本会将安装位置添加到当前会话的 $PATH。 通过指定 `-NoPath|--no-path` 参数覆盖此默认行为。
+默认情况下，安装脚本下载 SDK 并安装它。 如果只想获取共享的运行时，请指定 `-Runtime|--runtime` 参数。
+
+默认情况下，该脚本会将安装位置添加到当前会话的 $PATH。 通过指定 `-NoPath|--no-path` 参数覆盖此默认行为。 脚本未设置 `DOTNET_ROOT` 环境变量。
 
 运行脚本前，请安装所需的[依赖项](../install/dependencies.md)。
 
-可以使用 `-Version|--version` 参数安装特定版本。 必须将版本指定为由 3 部分构成的版本（例如 `2.1.0`）。 如果未提供，则使用 `latest` 版本。
+可以使用 `-Version|--version` 参数安装特定版本。 必须将版本指定为由 3 部分构成的版本号，例如 `2.1.0`。 如果未指定版本，则脚本将安装 `latest` 版本。
 
 安装脚本不会更新 Windows 上的注册表。 它们只是下载压缩的二进制文件并将其复制到文件夹。 如果要更新注册表项值，请使用 .NET Core 安装程序。
 
@@ -94,9 +117,9 @@ dotnet-install.sh --help
 
   用作追加到 Azure 源的查询字符串。 这允许更改 URL 以使用非公共 blob 存储帐户。
 
-- **`-Help|--help`**
+- **`--help`**
 
-  打印脚本帮助。
+  打印脚本帮助。 仅适用于 bash 脚本。 对于 PowerShell，请使用 `Get-Help ./dotnet-install.ps1`。
 
 - **`-InstallDir|--install-dir <DIRECTORY>`**
 

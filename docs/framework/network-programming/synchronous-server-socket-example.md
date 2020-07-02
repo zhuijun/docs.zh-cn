@@ -1,5 +1,6 @@
 ---
 title: 同步服务器套接字示例
+description: 此示例 .NET Framework 程序创建一个服务器，该服务器使用异步套接字接收来自客户端的连接。 它接收并回显一个字符串。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, synchronous server sockets
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
-ms.openlocfilehash: e8924051a7087ac26793722457f934e58a75f23d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0e2fb91dc493b2da4c68a98ac8a62494e78a9fd1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180664"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502101"
 ---
 # <a name="synchronous-server-socket-example"></a>同步服务器套接字示例
 以下示例程序创建从客户端接收连接请求的服务器。 服务器使用同步套接字构建，因此在等待客户端的连接时，暂停执行服务器应用程序。 应用程序从客户端接收字符串，在控制台上显示此字符串，然后将此字符串回显给客户端。 来自客户端的字符串必须包含字符串“\<EOF>”以在消息结束时发出信号。  
@@ -155,7 +156,7 @@ public class SynchronousSocketListener {
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [同步客户端套接字示例](synchronous-client-socket-example.md)
 - [使用同步服务器套接字](using-a-synchronous-server-socket.md)

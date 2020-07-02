@@ -1,5 +1,6 @@
 ---
 title: 异常处理（任务并行库）
+description: 探索 .NET 中使用任务并行库 (TPL) 的异常处理。 了解嵌套聚合异常、内部异常、未观察到的任务异常等。
 ms.date: 04/20/2020
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, exceptions
 ms.assetid: beb51e50-9061-4d3d-908c-56a4f7c2e8c1
-ms.openlocfilehash: 674abcfe4477e14295f131e766a48422779391de
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f1c1a994f4b3a8df0556a0190bc4eacb63f2921e
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290040"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662532"
 ---
 # <a name="exception-handling-task-parallel-library"></a>异常处理（任务并行库）
 
@@ -38,7 +39,7 @@ ms.locfileid: "84290040"
 如果允许异常向上冒泡回到联接线程，则一个任务也许可以在引发异常后继续处理一些项。
 
 > [!NOTE]
-> 某些情况下，当启用“仅我的代码”后，Visual Studio 会在引发异常的行中断运行并显示一条错误消息，该消息显示“用户代码未处理异常”。 此错误是良性的。 可以按 F5 继续并查看在这些示例中演示的异常处理行为。 若要阻止 Visual Studio 在出现第一个错误时中断运行，只需在“工具”-&gt;“选项”-&gt;“调试”-&gt;“常规”  下取消选中“启用‘仅我的代码’”  复选框即可。
+> 某些情况下，当启用“仅我的代码”后，Visual Studio 会在引发异常的行中断运行并显示一条错误消息，该消息显示“用户代码未处理异常”。 此错误是良性的。 可以按 F5 继续并查看在这些示例中演示的异常处理行为。 若要阻止 Visual Studio 在出现第一个错误时中断运行，只需在“工具”-&gt;“选项”-&gt;“调试”-&gt;“常规”  下取消选中“启用‘仅我的代码’” 复选框即可。
 
 ## <a name="attached-child-tasks-and-nested-aggregateexceptions"></a>附加子任务和嵌套 AggregateExceptions
 

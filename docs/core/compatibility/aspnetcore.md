@@ -2,15 +2,15 @@
 title: ASP.NET Core 中断性变更
 titleSuffix: ''
 description: 列出 ASP.NET Core 中的中断性变更。
-ms.date: 06/11/2020
+ms.date: 06/23/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: a6ddf97f907a1cba57e51d6fd516d1f94272f725
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: cf6b2eb46504c12aa670ccfc68531598dd9705a3
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84803276"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325453"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core 中断性变更
 
@@ -45,15 +45,18 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 - [HTTP：响应正文基础结构更改](#http-response-body-infrastructure-changes)
 - [HTTP：已更改某些 Cookie SameSite 默认值](#http-some-cookie-samesite-defaults-changed-to-none)
 - [HTTP：已默认禁用同步 IO](#http-synchronous-io-disabled-in-all-servers)
+- [HttpSys：默认情况下禁用客户端证书重新协商](#httpsys-client-certificate-renegotiation-disabled-by-default)
 - [标识：已删除 AddDefaultUI 方法重载](#identity-adddefaultui-method-overload-removed)
 - [标识：UI 启动版本更改](#identity-default-bootstrap-version-of-ui-changed)
 - [标识：对于未经身份验证的标识，SignInAsync 会引发异常](#identity-signinasync-throws-exception-for-unauthenticated-identity)
 - [标识：SignInManager 构造函数接受新参数](#identity-signinmanager-constructor-accepts-new-parameter)
 - [标识：UI 使用静态 Web 资产功能](#identity-ui-uses-static-web-assets-feature)
+- [IIS：保留 UrlRewrite 中间件查询字符串](#iis-urlrewrite-middleware-query-strings-are-preserved)
 - [Kestrel：默认检测运行时的配置更改](#kestrel-configuration-changes-at-run-time-detected-by-default)
 - [Kestrel：已删除连接适配器](#kestrel-connection-adapters-removed)
 - [Kestrel：默认支持的 TLS 协议版本已更改](#kestrel-default-supported-tls-protocol-versions-changed)
 - [Kestrel：已删除空 HTTPS 程序集](#kestrel-empty-https-assembly-removed)
+- [Kestrel：在不兼容的 Windows 版本上通过 TLS 禁用 HTTP/2](#kestrel-http2-disabled-over-tls-on-incompatible-windows-versions)
 - [Kestrel：请求尾部标头已移到新集合](#kestrel-request-trailer-headers-moved-to-new-collection)
 - [Kestrel：传输抽象层更改](#kestrel-transport-abstractions-removed-and-made-public)
 - [本地化：API 已标记为已过时](#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete)
@@ -100,10 +103,22 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 
 ***
 
+[!INCLUDE[HttpSys: Client certificate renegotiation disabled by default](~/includes/core-changes/aspnetcore/5.0/httpsys-client-certificate-renegotiation-disabled-by-default.md)]
+
+***
+
+[!INCLUDE[IIS: UrlRewrite middleware query strings are preserved](~/includes/core-changes/aspnetcore/5.0/iis-urlrewrite-middleware-query-strings-are-preserved.md)]
+
+***
+
 [!INCLUDE[Kestrel: Configuration changes at run time detected by default](~/includes/core-changes/aspnetcore/5.0/kestrel-configuration-changes-at-run-time-detected-by-default.md)]
 
 ***
 [!INCLUDE[Kestrel: Default supported TLS protocol versions changed](~/includes/core-changes/aspnetcore/5.0/kestrel-default-supported-tls-protocol-versions-changed.md)]
+
+***
+
+[!INCLUDE[Kestrel: HTTP/2 disabled over TLS on incompatible Windows versions](~/includes/core-changes/aspnetcore/5.0/kestrel-disables-http2-over-tls.md)]
 
 ***
 

@@ -1,5 +1,6 @@
 ---
 title: 使用客户端套接字
+description: 此示例演示如何使用 .NET Framework 中的套接字创建到远程服务的 TCP/IP 连接。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - sockets, client sockets
 - client sockets
 ms.assetid: 81de9f59-8177-4d98-b25d-43fc32a98383
-ms.openlocfilehash: fe2ad55c3f60347369c0e92bc834d81d98f3870e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1dc02d0b3651d5766d1d30752566217d8417af0c
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71046954"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501997"
 ---
 # <a name="using-client-sockets"></a>使用客户端套接字
 在通过 <xref:System.Net.Sockets.Socket> 发起对话之前，必须在应用程序和远程设备之间创建数据管道。 尽管存在其他网络地址系列和协议，但本示例说明如何创建与远程服务的 TCP/IP 连接。  
@@ -50,7 +51,7 @@ Dim ipe As New IPEndPoint(ipAddress, 11000)
 IPEndPoint ipe = new IPEndPoint(ipAddress,11000);  
 ```  
   
- 确定远程设备的地址并选择要用于连接的端口后，应用程序便可以尝试建立与远程设备的连接。 下面的示例使用现有的 IPEndPoint 连接到远程设备，并捕获引发的任何异常。   
+ 确定远程设备的地址并选择要用于连接的端口后，应用程序便可以尝试建立与远程设备的连接。 下面的示例使用现有的 IPEndPoint 连接到远程设备，并捕获引发的任何异常。  
   
 ```vb  
 Try  
@@ -77,7 +78,7 @@ try {
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用同步客户端套接字](using-a-synchronous-client-socket.md)
 - [使用异步客户端套接字](using-an-asynchronous-client-socket.md)

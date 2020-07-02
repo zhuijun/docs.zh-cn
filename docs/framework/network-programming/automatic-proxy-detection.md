@@ -1,5 +1,6 @@
 ---
 title: 自动代理检测
+description: 了解自动代理检测，其中系统标识 Web 代理服务器并将其用于代表客户端发送请求。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,20 +15,20 @@ helpviewer_keywords:
 - network
 - WPAD (Web Proxy Auto-Discovery)
 ms.assetid: fcd9c3bd-93de-4c92-8ff3-837327ad18de
-ms.openlocfilehash: 4c5bc9e0efb39032d388d141e8bccf3e520ebd45
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dbd5d7fa671ae5ec3b7dc00205f0c9d8381bb3ce
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180898"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502687"
 ---
 # <a name="automatic-proxy-detection"></a>自动代理检测
 自动代理检测是一个进程，系统使用该进程来标识 Web 代理服务器，并用于代表客户端发送请求。 此功能也称为 Web 代理自动发现 (WPAD)。 启用自动代理检测后，系统会尝试查找代理配置脚本，该脚本负责返回一组可用于请求的代理。 如果找到了代理配置脚本，则会在针对使用 <xref:System.Net.WebProxy> 实例的请求获取代理信息、请求流或响应时，在本地计算机上下载、编译并运行该脚本。  
   
- 自动代理检测由 <xref:System.Net.WebProxy> 类执行，且可采用请求级设置、配置文件中的设置和通过 Internet Explorer“局域网(LAN)”对话框指定的设置  。  
+ 自动代理检测由 <xref:System.Net.WebProxy> 类执行，且可采用请求级设置、配置文件中的设置和通过 Internet Explorer“局域网(LAN)”对话框指定的设置。  
   
 > [!NOTE]
-> 可通过以下方式显示 Internet Explorer 的“局域网(LAN)设置”对话框：在 Internet Explorer 主菜单中选择“工具”，然后选择“Internet 选项”    。 接下来，选择“连接”选项卡，然后单击“LAN 设置”   。  
+> 可通过以下方式显示 Internet Explorer 的“局域网(LAN)设置”对话框：在 Internet Explorer 主菜单中选择“工具”，然后选择“Internet 选项”  。 接下来，选择“连接”选项卡，然后单击“LAN 设置” 。  
   
  启用自动代理检测后，<xref:System.Net.WebProxy> 类会尝试按如下方式找到代理配置脚本：  
   
@@ -67,7 +68,7 @@ Public Shared Sub DisableForMyRequest(ByVal resource As Uri)
   
  没有代理的请求将使用应用程序域的默认代理（通过 <xref:System.Net.WebRequest.DefaultWebProxy%2A> 属性提供）。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Net.WebProxy>
 - <xref:System.Net.WebRequest>

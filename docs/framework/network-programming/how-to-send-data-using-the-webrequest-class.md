@@ -1,5 +1,6 @@
 ---
 title: 如何：使用 WebRequest 类发送数据
+description: 了解如何使用 .NET Framework 中的 WebRequest 类将数据发送到服务器。 此过程通常用于将数据发布到网页。
 ms.date: 03/25/2019
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - WebRequest class, sending data to a host
 - Sending data to a host, using WebRequest class
 ms.assetid: 66686878-38ac-4aa6-bf42-ffb568ffc459
-ms.openlocfilehash: 2467b289df7a0361b51ad91d4458d32742c42275
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4b353250fec778ee8b352f13de6d7faaf15c13ee
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "70040831"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502439"
 ---
 # <a name="how-to-send-data-by-using-the-webrequest-class"></a>如何：使用 WebRequest 类发送数据
 
@@ -32,7 +33,7 @@ ms.locfileid: "70040831"
     ```
 
     > [!NOTE]
-    > .NET Framework 为以“http:”、“https:”、“ftp:”和“file:”开头的 URI 提供派生自 <xref:System.Net.WebRequest> 和 <xref:System.Net.WebResponse> 类的特定于协议的类     。
+    > .NET Framework 为以“http:”、“https:”、“ftp:”和“file:”开头的 URI 提供派生自 <xref:System.Net.WebRequest> 和 <xref:System.Net.WebResponse> 类的特定于协议的类   。
 
     如果需要设置或读取特定于协议的属性，必须将 <xref:System.Net.WebRequest> 或 <xref:System.Net.WebResponse> 转换为特定于协议的对象类型。 有关详细信息，请参阅[对可插入协议进行编程](programming-pluggable-protocols.md)。
 

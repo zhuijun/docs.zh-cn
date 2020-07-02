@@ -1,5 +1,6 @@
 ---
 title: 观察者设计模式
+description: 了解 .NET 中的观察程序设计模式。 此模式使订阅者能够从提供程序注册并接收通知。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,16 +13,16 @@ helpviewer_keywords:
 - IObservable(Of T) interface
 - observer design pattern [.NET Framework]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-ms.openlocfilehash: 5794cd1ec9b63a6e151b35c28e09e29f86dcfac6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4edcd2645b28095f4bd18f4918b9afa5c893bd39
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291261"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662727"
 ---
 # <a name="observer-design-pattern"></a>观察者设计模式
 
-观察者设计模式使订阅者能够从提供程序注册并接收通知。 它适用于需要基于推送的通知的任何方案。 此模式定义提供程序（亦称为“使用者”或“可观察对象”），以及零个、一个或多个观察者。     观察者注册提供程序，并且每当预定义的条件、事件或状态发生更改时，该提供程序会通过调用其方法之一来自动通知所有观察者。 在此方法调用中，该提供程序还可向观察者提供当前状态信息。 在 .NET Framework 中，通过实现泛型 <xref:System.IObservable%601?displayProperty=nameWithType> 和 <xref:System.IObserver%601?displayProperty=nameWithType> 接口来应用观察者设计模式。 泛型类型参数表示提供通知信息的类型。 泛型类型参数表示提供通知信息的类型。
+观察者设计模式使订阅者能够从提供程序注册并接收通知。 它适用于需要基于推送的通知的任何方案。 此模式定义提供程序（亦称为“使用者”或“可观察对象”），以及零个、一个或多个观察者。    观察者注册提供程序，并且每当预定义的条件、事件或状态发生更改时，该提供程序会通过调用其方法之一来自动通知所有观察者。 在此方法调用中，该提供程序还可向观察者提供当前状态信息。 在 .NET Framework 中，通过实现泛型 <xref:System.IObservable%601?displayProperty=nameWithType> 和 <xref:System.IObserver%601?displayProperty=nameWithType> 接口来应用观察者设计模式。 泛型类型参数表示提供通知信息的类型。 泛型类型参数表示提供通知信息的类型。
 
 ## <a name="applying-the-pattern"></a>应用模式
 
@@ -91,7 +92,7 @@ ms.locfileid: "84291261"
 
 ## <a name="related-topics"></a>相关主题
 
-|标题|说明|
+|Title|描述|
 |-----------|-----------------|
 |[监视程序设计模式最佳做法](observer-design-pattern-best-practices.md)|描述开发实现观察者设计模式的应用程序时要采用的最佳做法。|
 |[如何：实现提供程序](how-to-implement-a-provider.md)|为温度监控应用程序提供一个提供程序的分步实现。|

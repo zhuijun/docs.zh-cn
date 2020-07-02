@@ -2,14 +2,14 @@
 title: ML.NET CLI 遥测收集
 description: 了解收集使用情况信息以供分析的 ML.NET CLI 遥测功能、收集的数据，以及如何禁用遥测。 此外，还可以找到 .NET 许可协议的链接以及有关 Microsoft GDPR 合规性的信息。
 ms.topic: conceptual
-ms.date: 09/03/2019
+ms.date: 06/03/2020
 ms.custom: mlnet-tooling
-ms.openlocfilehash: 99e11acba343cc689c3219ca9316144fc62cd618
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 833ee2ae54cf3a52adaf070837a33e00267d25dc
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78849739"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599826"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>ML.NET CLI 遥测收集
 
@@ -30,7 +30,7 @@ ms.locfileid: "78849739"
 - `mlnet`
 - `mlnet --help`
 
-运行 [ML.NET CLI 命令](../reference/ml-net-cli-reference.md)（例如 `mlnet auto-train`）时，遥测处于*启用*状态。
+运行 [ML.NET CLI 命令](../reference/ml-net-cli-reference.md)（例如 `mlnet classification`）时，遥测处于*启用*状态。
 
 ## <a name="opt-out-of-data-collection"></a>选择退出数据收集
 
@@ -42,8 +42,8 @@ ML.NET CLI 遥测功能默认处于启用状态。
 
 此功能收集以下数据：
 
-- 调用了哪个命令，如 `auto-train`
-- 使用的命令行参数名称（即“dataset-name、label-column-name、ml-task、output-path、max-exploration-time、verbosity”）
+- 调用了哪个命令，如 `classification`
+- 使用的命令行参数名称（即“dataset、label-col、output-path、train-time、verbosity”）
 - 经过哈希处理的 MAC 地址：计算机的加密 (SHA256) 匿名唯一 ID
 - 调用时间戳
 - 仅用于确定地理位置的三个八进制数 IP 地址（不是完整 IP 地址）
@@ -51,7 +51,7 @@ ML.NET CLI 遥测功能默认处于启用状态。
 - 经过哈希处理的数据集的文件名
 - 数据集文件大小存储桶
 - 操作系统和版本
-- --task 参数的值：分类值，例如 `regression`、`binary-classification` 和 `multiclass-classification`
+- ML 任务命令的值：分类值，例如 `regression`、`classification` 和 `recommendation`
 - ML.NET CLI 版本（即 0.3.27703.4）
 
 数据通过 [Azure Application Insights](https://azure.microsoft.com/services/application-insights/) 技术安全地发送到 Microsoft 服务器，提供对保留数据的受限访问权限，并在严格的安全控制下从安全的 [Azure 存储](https://azure.microsoft.com/services/storage/)系统进行使用。
@@ -72,7 +72,7 @@ ML.NET CLI 的 Microsoft 分发由 [Microsoft 软件许可条款：Microsoft .NE
 
 ## <a name="disclosure"></a>公开
 
-首次运行 [ML.NET CLI 命令](../reference/ml-net-cli-reference.md)（例如 `mlnet auto-train`）时，ML.NET CLI 工具会显示披露信息文本，告诉如何选择退出遥测。 文本可能会因运行的 CLI 版本而略有不同。
+首次运行 [ML.NET CLI 命令](../reference/ml-net-cli-reference.md)（例如 `mlnet classification`）时，ML.NET CLI 工具会显示披露信息文本，告诉如何选择退出遥测。 文本可能会因运行的 CLI 版本而略有不同。
 
 ## <a name="see-also"></a>请参阅
 

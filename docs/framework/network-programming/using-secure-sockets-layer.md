@@ -1,5 +1,6 @@
 ---
 title: 使用安全套接字层
+description: 了解 System.Net 和扩展类如何使用安全套接字层对 .NET Framework 中多个网络协议的连接进行加密。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - receiving data, Secure Sockets Layer
 - Internet, Secure Sockets Layer
 ms.assetid: 6e4289e6-d1b7-4e82-ab0d-e83e3b6063ed
-ms.openlocfilehash: ef2abc7574aea1b4f77ff93545ad84678c66ce48
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 67330962382e768849cbf67d5f412ea80f65569d
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71046908"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84501984"
 ---
 # <a name="using-secure-sockets-layer"></a>使用安全套接字层
 <xref:System.Net> 类使用安全套接字层 (SSL) 为若干网络协议加密连接。  
@@ -60,9 +61,9 @@ FtpWebResponse response = (FtpWebResponse)request.GetResponse();
 ## <a name="compiling-the-code"></a>编译代码  
  此示例需要：  
   
-- 引用 System.Net 命名空间  。  
+- 引用 System.Net 命名空间。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [网络编程中的安全性](security-in-network-programming.md)
 - [.NET Framework 中的网络编程](index.md)

@@ -1,15 +1,15 @@
 ---
 title: 教程：使用回归预测价格
 description: 本教程演示如何使用 ML.NET 生成回归模型来预测价格，特别是纽约市的出租车费。
-ms.date: 09/30/2019
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 91429383341cf718d38e636bd1d71dc25d30d20d
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 0a8ab9ca07d2d83f41b40a3f5782e8e7e201976f
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607966"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803230"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-mlnet"></a>教程：将回归与 ML.NET 配合使用以预测价格
 
@@ -36,6 +36,8 @@ ms.locfileid: "81607966"
 1. 在项目中创建一个名为“数据”的目录来保存数据集和模型文件  。
 
 1. 安装“Microsoft.ML”NuGet 包  ：
+
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
 
     在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”   。 选择“nuget.org”作为包源，然后选择“浏览”选项卡并搜索“Microsoft.ML”，在列表中选择包，再选择“安装”按钮    。 选择“预览更改”  对话框上的“确定”  按钮，如果你同意所列包的许可条款，则选择“接受许可”  对话框上的“我接受”  按钮。 对 **Microsoft.ML.FastTree** NuGet 包执行相同操作。
 

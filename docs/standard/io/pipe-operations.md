@@ -1,5 +1,6 @@
 ---
 title: .NET 中的管道操作
+description: 了解 .NET 中的管道操作。 管道为进程间通信提供了平台。 有两种类型的管道：匿名管道和命名管道。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - interprocess communication [.NET Framework], pipes
 - I/O [.NET Framework], pipes
 ms.assetid: 7b964ebd-7a4f-4d28-8194-7841f9e4c702
-ms.openlocfilehash: a634cb87a5f25b520e5fe6fd5b39eae861120a28
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 35a3910bbab1b34f085a55524be0b18b3fa81958
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278683"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768880"
 ---
 # <a name="pipe-operations-in-net"></a>.NET 中的管道操作
 管道为进程间通信提供了平台。 管道分为两种类型：  
@@ -34,7 +35,7 @@ ms.locfileid: "84278683"
   
      请参阅[如何：使用命名管道进行网络进程间通信](how-to-use-named-pipes-for-network-interprocess-communication.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [文件和流 I/O](index.md)
 - [如何：使用匿名管道进行本地进程间通信](how-to-use-anonymous-pipes-for-local-interprocess-communication.md)

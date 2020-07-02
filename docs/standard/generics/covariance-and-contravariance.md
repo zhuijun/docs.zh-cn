@@ -1,5 +1,6 @@
 ---
 title: 泛型中的协变和逆变
+description: 了解 .NET 泛型中的协变和逆变，使用前者则可使用派生程度更大的类型，而使用后者则可使用派生程度更小的派生类型。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-ms.openlocfilehash: b11b5fc93d9b7289e62d6abc9d3ca19027a107c5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 12de1554bb6e33b69d0d2bba24001e7e4c2d8a65
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287553"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84663039"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>泛型中的协变和逆变
 协变和逆变都是术语，前者指能够使用比原始指定的派生类型的派生程度更大（更具体的）的类型，后者指能够使用比原始指定的派生类型的派生程度更小（不太具体的）的类型。 泛型类型参数支持协变和逆变，可在分配和使用泛型类型方面提供更大的灵活性。 在引用类型系统时，协变、逆变和不变性具有如下定义。 这些示例假定一个名为 `Base` 的基类和一个名为 `Derived`的派生类。  
@@ -55,7 +56,7 @@ ms.locfileid: "84287553"
   
  通常，协变类型参数可用作委托的返回类型，而逆变类型参数可用作参数类型。 对于接口，协变类型参数可用作接口的方法的返回类型，而逆变类型参数可用作接口的方法的参数类型。  
   
- 协变和逆变统称为“变体”  。 未标记为协变或逆变的泛型类型参数称为“固定参数”  。 有关公共语言运行时中变体的事项的简短摘要：  
+ 协变和逆变统称为“变体”。 未标记为协变或逆变的泛型类型参数称为“固定参数” 。 有关公共语言运行时中变体的事项的简短摘要：  
   
 - 在 .NET Framework 4 中，Variant 类型参数仅限于泛型接口和泛型委托类型。  
   

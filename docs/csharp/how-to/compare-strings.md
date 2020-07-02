@@ -5,12 +5,12 @@ ms.date: 10/03/2018
 helpviewer_keywords:
 - strings [C#], comparison
 - comparing strings [C#]
-ms.openlocfilehash: 725441f5399f72b6457af461d51419c35077f4c2
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: d1ea0fc3573714347580a2aaded2d0f3118681a8
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662909"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324176"
 ---
 # <a name="how-to-compare-strings-in-c"></a>如何：比较 C\# 中的字符串
 
@@ -41,7 +41,7 @@ ms.locfileid: "84662909"
 
 默认序号比较在比较字符串时不会考虑语义规则。 它会比较两个字符串中每个 <xref:System.Char> 对象的二进制值。 因此，默认的序号比较也是区分大小写的。
 
-请注意，使用 <xref:System.String.Equals%2A?displayProperty=nameWithType> 以及 `==` 和 `!=` 运算符的相等性测试不同于使用 <xref:System.String.CompareTo%2A?displayProperty=nameWithType> 和 <xref:System.String.Compare(System.String,System.String)?displayProperty=nameWithType)> 方法的字符串比较。 虽然相等性测试执行区分大小写的序号比较，但比较方法使用当前区域性执行区分大小写、区分区域性的比较。 由于默认比较方法通常执行不同类型的比较，因此建议始终调用显式指定要执行的比较类型的重载，确保代码意图明确。
+使用 <xref:System.String.Equals%2A?displayProperty=nameWithType> 以及 `==` 和 `!=` 运算符的相等性测试不同于使用 <xref:System.String.CompareTo%2A?displayProperty=nameWithType> 和 <xref:System.String.Compare(System.String,System.String)?displayProperty=nameWithType)> 方法的字符串比较。 虽然相等性测试执行区分大小写的序号比较，但比较方法使用当前区域性执行区分大小写、区分区域性的比较。 由于默认比较方法通常执行不同类型的比较，因此建议始终调用显式指定要执行的比较类型的重载，确保代码意图明确。
 
 ## <a name="case-insensitive-ordinal-comparisons"></a>不区分大小写的序号比较
 
@@ -81,7 +81,7 @@ ms.locfileid: "84662909"
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet4":::
 
-区分区域性的比较通常用于对用户输入的字符串以及用户输入的其他字符串进行比较和排序。 字符和这些字符的排序约定可能会根据用户计算机的区域设置而有所不同。 即使是包含相同字符的字符串，也可能因当前线程的区域性而具有不同的排序。 此外，请在本地 Windows 计算机上尝试下列示例代码，将得到下列结果：
+区分区域性的比较通常用于对用户输入的字符串以及用户输入的其他字符串进行比较和排序。 字符和这些字符的排序约定可能会根据用户计算机的区域设置而有所不同。 即使是包含相同字符的字符串，也可能因当前线程的区域性而具有不同的排序。 此外，在本地 Windows 计算机上尝试下列示例代码，将得到下列结果：
 
 ```console
 <coop> is less than <co-op> using en-US culture
@@ -92,7 +92,7 @@ ms.locfileid: "84662909"
 <co-op> is less than <cop> using ordinal comparison
 ```
 
-语义比较取决于当前区域性以及操作系统。 在进行字符串比较时，需要考虑这些内容。
+语义比较取决于当前区域性以及操作系统。 在进行字符串比较时，请考虑这些内容。
 
 ## <a name="linguistic-sorting-and-searching-strings-in-arrays"></a>数组中的语义排序和字符串搜索
 
@@ -102,7 +102,7 @@ ms.locfileid: "84662909"
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet5":::
 
-对数组进行排序后，可以使用二分搜索法搜索条目。 二分搜索法从集合的中间开始搜索，判断集合的哪一半包含所找字符串。 后续的每个比较都将集合的剩余部分再次对半分开。  使用 <xref:System.StringComparer.CurrentCulture?displayProperty=nameWithType> 存储数组。 本地函数 `ShowWhere` 显示发现字符串所在位置的信息。 如果未找到字符串，返回的值会指示它可能会在的位置（如果找到）。
+对数组进行排序后，可以使用二分搜索法搜索条目。 二分搜索法从集合的中间开始搜索，判断集合的哪一半包含所找字符串。 后续的每个比较都将集合的剩余部分再次对半分开。  使用 <xref:System.StringComparer.CurrentCulture?displayProperty=nameWithType> 存储数组。 本地函数 `ShowWhere` 显示发现字符串所在位置的信息。 如果未找到字符串，返回的值会指示可以在其中找到字符串的位置。
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet6":::
 
@@ -122,7 +122,7 @@ ms.locfileid: "84662909"
 
 ## <a name="reference-equality-and-string-interning"></a>引用相等性和字符串集中
 
-这些示例都没有使用 <xref:System.Object.ReferenceEquals%2A>。 此方法确定两个字符串是否为相同的对象。 这可能会在字符串比较中产生不一致的结果。 以下示例演示了 C# 中的字符串集中功能。 如果程序声明了 2 个或多个相同的字符串变量，则编译器会将其存储在同一位置。 通过调用 <xref:System.Object.ReferenceEquals%2A> 方法，可以看到这两个字符串实际上引用的是内存中的同一对象。 使用 <xref:System.String.Copy%2A?displayProperty=nameWithType> 方法可避免集中。 创建副本后，两个字符串存储在不同位置（即使它们具有相同的值）。 运行下列示例以显示字符串 `a` 和 `b` 是集中的，也就是说它们共享相同的存储。 字符串 `a` 和 `c` 不是。
+这些示例都没有使用 <xref:System.Object.ReferenceEquals%2A>。 此方法确定两个字符串是否为同一对象，这可能导致字符串比较中出现不一致的结果。 以下示例演示了 C# 中的字符串集中功能。 如果程序声明了 2 个或多个相同的字符串变量，则编译器会将其存储在同一位置。 通过调用 <xref:System.Object.ReferenceEquals%2A> 方法，可以看到这两个字符串实际上引用的是内存中的同一对象。 使用 <xref:System.String.Copy%2A?displayProperty=nameWithType> 方法可避免集中。 创建副本后，两个字符串存储在不同位置（即使它们具有相同的值）。 运行下列示例以显示字符串 `a` 和 `b` 是集中的，也就是说它们共享相同的存储。 字符串 `a` 和 `c` 不是。
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/CompareStrings.cs" id="Snippet9":::
 

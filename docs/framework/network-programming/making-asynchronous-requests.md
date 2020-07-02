@@ -1,5 +1,6 @@
 ---
 title: 发出异步请求
+description: 了解 System.Net 类如何为异步访问 Internet 资源使用 .NET Framework 的标准异步编程模型。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - Network Resources
 - WebRequest class, asynchronous access
 ms.assetid: 735d3fce-f80c-437f-b02c-5c47f5739674
-ms.openlocfilehash: a49233596bafebd4f07372e59f29ea77afb21458
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0af143b723c90b146dc5de8447d4a7e1866e7105
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180726"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502296"
 ---
 # <a name="making-asynchronous-requests"></a>发出异步请求
 <xref:System.Net> 类为异步访问 Internet 资源使用 .NET Framework 的标准异步编程模型。 <xref:System.Net.WebRequest> 类的 <xref:System.Net.WebRequest.BeginGetResponse%2A> 和 <xref:System.Net.WebRequest.EndGetResponse%2A> 方法启动和完成 Internet 资源的异步请求。  
@@ -26,15 +27,15 @@ ms.locfileid: "79180726"
   
  以下示例代码演示如何将异步调用与 WebRequest 类一起使用。 此示例是一个控制台程序从命令行获取 URI，请求位于 URI 处的资源，然后打印控制台的数据（数据是从 Internet 接收的）。  
   
- 程序定义了两个类以供自己使用：RequestState 和 ClientGetAsync，前者跨异步调用传递数据，后者实现对 Internet 资源的异步请求。  
+ 程序定义了两个类以供自己使用：RequestState 和 ClientGetAsync，前者跨异步调用传递数据，后者实现对 Internet 资源的异步请求 。  
   
- RequestState 类跨异步方法（这些方法为请求提供服务）调用，保留请求的状态。 它包含 WebRequest 和 <xref:System.IO.Stream> 实例（含对资源的当前请求和在响应中接收的数据流）、一个缓冲区（含当前从 Internet 资源接收的数据）和一个 <xref:System.Text.StringBuilder> 实例（含完整响应）。 使用 WebRequest.BeginGetResponse 注册了 <xref:System.AsyncCallback> 方法时，将 RequestState 作为状态参数传递。  
+ RequestState 类跨异步方法（这些方法为请求提供服务）调用，保留请求的状态。 它包含 WebRequest 和 <xref:System.IO.Stream> 实例（含对资源的当前请求和在响应中接收的数据流）、一个缓冲区（含当前从 Internet 资源接收的数据）和一个 <xref:System.Text.StringBuilder> 实例（含完整响应）。 使用 WebRequest.BeginGetResponse 注册了 <xref:System.AsyncCallback> 方法时，将 RequestState 作为状态参数传递。   
   
  ClientGetAsync 类实现 Internet 资源的异步请求，并将所得的响应写入控制台。 它包含以下列表中描述的方法和属性。  
   
 - `allDone` 属性包含 <xref:System.Threading.ManualResetEvent> 类的实例，它指示请求完成。  
   
-- `Main()` 方法读取命令行并启动对指定 Internet 资源的请求。 它创建 WebRequest `wreq` 和 RequestState `rs`，调用 BeginGetResponse 开始处理请求，然后调用 `allDone.WaitOne()` 方法，以便应用程序不会在回调完成前退出。 在从 Internet 资源读取响应后，`Main()` 将该响应写入到控制台，应用程序结束。  
+- `Main()` 方法读取命令行并启动对指定 Internet 资源的请求。 它创建 WebRequest `wreq` 和 RequestState `rs`，调用 BeginGetResponse 开始处理请求，然后调用 `allDone.WaitOne()` 方法，以便应用程序不会在回调完成前退出  。 在从 Internet 资源读取响应后，`Main()` 将该响应写入到控制台，应用程序结束。  
   
 - `showusage()` 方法在控制台上写入一个示例命令行。 命令行上未提供 URI 时，由 `Main()` 调用它。  
   

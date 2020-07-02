@@ -1,5 +1,6 @@
 ---
 title: 填充 .NET 中的字符串
+description: 了解如何填充 .NET 中的字符串。 使用 String.PadLeft 和 String.PadRight 方法添加前导或尾随字符，以达到指定的总长度。
 ms.date: 03/15/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,18 +14,18 @@ helpviewer_keywords:
 - PadLeft method
 - padding strings
 ms.assetid: 84a9f142-3244-4c90-ba02-21af9bbaff71
-ms.openlocfilehash: 83d4b348c4de537d9a71363d34898a50a6a74cb3
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 5bf7023a3429e932a44ad0a0bd3409012f77cbf9
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290391"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594525"
 ---
 # <a name="padding-strings-in-net"></a>填充 .NET 中的字符串
 
 使用下面的 <xref:System.String> 方法之一，在原始字符串中填充前导或尾随字符，以达到指定总长度，从而新建字符串。 填充字符可以是空格或指定字符。 生成的字符串可能显示为右对齐或左对齐。 如果原始字符串的长度已经等于或大于所需总长度，则填充方法返回未经更改的原始字符串；有关详细信息，请参阅 <xref:System.String.PadLeft%2A?displayProperty=nameWithType> 和 <xref:System.String.PadRight%2A?displayProperty=nameWithType> 方法的两个重载的“返回”部分。
   
-|方法名称|用途|  
+|方法名称|使用|  
 |-----------------|---------|  
 |<xref:System.String.PadLeft%2A?displayProperty=nameWithType>|使用前导字符将字符串填充到指定总长度。|  
 |<xref:System.String.PadRight%2A?displayProperty=nameWithType>|使用尾随字符将字符串填充到指定总长度。|  
@@ -47,6 +48,6 @@ ms.locfileid: "84290391"
  [!code-csharp[Conceptual.String.BasicOps#4](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.string.basicops/cs/padding.cs#4)]
  [!code-vb[Conceptual.String.BasicOps#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.string.basicops/vb/padding.vb#4)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [基本字符串操作](basic-string-operations.md)

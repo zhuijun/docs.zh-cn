@@ -1,5 +1,6 @@
 ---
-title: 如何：在 ConcurrentDictionary 中添加和移除项
+title: 在 ConcurrentDictionary 中添加和移除项
+description: 阅读有关如何在 .NET 中的 ConcurrentDictionary<TKey,TValue> 集合类中添加、检索、更新和删除项的示例。
 ms.date: 05/04/2020
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,14 +9,14 @@ dev_langs:
 helpviewer_keywords:
 - thread-safe collections, concurrent dictionary
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
-ms.openlocfilehash: 6c093e907e43f9f2b978624a986dfe5d8a49869f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0bfc17d93ea3088a7b2e4209e25003856770b9e7
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287895"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325959"
 ---
-# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>如何：在 ConcurrentDictionary 中添加和移除项
+# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>如何在 ConcurrentDictionary 中添加和删除项
 
 本示例演示如何在 <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType> 中添加、检索、更新和删除项。 此集合类是一个线程安全实现。 建议在多个线程可能同时尝试访问元素时使用此集合类。
 
@@ -36,15 +37,15 @@ ms.locfileid: "84287895"
 
 <xref:System.Collections.Concurrent.ConcurrentDictionary%602> 专为多线程方案而设计。 无需在代码中使用锁定即可在集合中添加或移除项。 但始终可能出现以下情况：一个线程检索一个值，而另一线程通过为同一键赋予新值来立即更新集合。
 
-此外，尽管 <xref:System.Collections.Concurrent.ConcurrentDictionary%602> 的所有方法都是线程安全的，但并非所有方法都是原子的，尤其是 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> 和 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>。 传递给这些方法的用户委托将在词典的内部锁之外调用（此操作旨在防止未知代码阻止所有线程）。 因此，可能发生以下事件序列：
+此外，尽管 <xref:System.Collections.Concurrent.ConcurrentDictionary%602> 的所有方法都是线程安全的，但并非所有方法都是原子的，尤其是 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> 和 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A>。 为避免未知代码阻止所有线程，传递给这些方法的用户委托将在词典的内部锁之外调用。 因此，可能发生以下事件序列：
 
-1. threadA 调用 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>，未找到项，通过调用 `valueFactory` 委托创建要添加的新项  。
+1. threadA 调用 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>，未找到项，通过调用 `valueFactory` 委托创建要添加的新项。
 
-1. threadB 并发调用 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>，其 `valueFactory` 委托受到调用，并且它在 threadA 之前到达内部锁，并将其新键值对添加到词典中   。
+1. threadB 并发调用 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A>，其 `valueFactory` 委托受到调用，并且它在 threadA 之前到达内部锁，并将其新键值对添加到词典中 。
 
-1. threadA 的用户委托完成，此线程到达锁位置，但现在发现已有项存在  。
+1. threadA 的用户委托完成，此线程到达锁位置，但现在发现已有项存在。
 
-1. threadA 执行“Get”，返回之前由 threadB 添加的数据   。
+1. threadA 执行“Get”，返回之前由 threadB 添加的数据 。
 
 因此，无法保证 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.GetOrAdd%2A> 返回的数据与线程的 `valueFactory` 创建的数据相同。 调用 <xref:System.Collections.Concurrent.ConcurrentDictionary%602.AddOrUpdate%2A> 时可能发生相似的事件序列。
 

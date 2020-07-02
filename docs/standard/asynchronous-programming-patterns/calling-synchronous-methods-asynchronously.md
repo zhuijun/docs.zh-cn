@@ -1,5 +1,6 @@
 ---
 title: 使用异步方式调用同步方法
+description: 了解如何使用 BeginInvoke 和 EndInvoke 方法在 .NET 中以异步方式调用同步方法。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -20,12 +21,12 @@ helpviewer_keywords:
 - waiting for asynchronous calls
 - status information [.NET Framework], asynchronous operations
 ms.assetid: 41972034-92ed-450a-9664-ab93fcc6f1fb
-ms.openlocfilehash: 6a3dd83fe9d3fc48f66a0bb6bef333e4ff399108
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ff2d30c00e7b6becb0c3ff910d825c2e9d6f78e3
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289897"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662636"
 ---
 # <a name="calling-synchronous-methods-asynchronously"></a>使用异步方式调用同步方法
 

@@ -1,5 +1,6 @@
 ---
 title: 使用 .NET 中的 StringBuilder 类
+description: 了解如何使用 .NET 中的 StringBuilder 类。 无需创建新对象即可使用此类来修改字符串。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - Insert method
 - strings [.NET Framework], StringBuilder object
 ms.assetid: 5c14867c-9a99-45bc-ae7f-2686700d377a
-ms.openlocfilehash: a8116013cc20ead3be13763ce72999d2c608dbce
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 83d4b9327b55c511e2a46486e519e3cd0c77b1a3
+ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289260"
+ms.lasthandoff: 06/16/2020
+ms.locfileid: "84803230"
 ---
 # <a name="using-the-stringbuilder-class-in-net"></a>使用 .NET 中的 StringBuilder 类
 <xref:System.String> 对象不可变。 每次使用 <xref:System.String?displayProperty=nameWithType> 类中的方法之一，都要在内存中新建字符串对象，这就需要为新对象分配新空间。 在需要重复修改字符串的情况下，与新建 <xref:System.String> 对象关联的开销可能会非常大。 若要修改字符串（而不新建对象），可以使用 <xref:System.Text.StringBuilder?displayProperty=nameWithType> 类。 例如，如果在循环中将许多字符串连接在一起，使用 <xref:System.Text.StringBuilder> 类可以提升性能。  
@@ -53,7 +54,7 @@ ms.locfileid: "84289260"
  [!code-csharp[Conceptual.StringBuilder#3](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#3)]
  [!code-vb[Conceptual.StringBuilder#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/Example.vb#3)]  
   
- <xref:System.Text.StringBuilder.EnsureCapacity%2A> 方法可用于检查当前 StringBuilder  的容量。 如果容量大于传递的值，则不进行任何更改；但是，如果容量小于传递的值，则会更改当前的容量以使其与传递的值匹配。  
+ <xref:System.Text.StringBuilder.EnsureCapacity%2A> 方法可用于检查当前 StringBuilder 的容量。 如果容量大于传递的值，则不进行任何更改；但是，如果容量小于传递的值，则会更改当前的容量以使其与传递的值匹配。  
   
  也可以查看或设置 <xref:System.Text.StringBuilder.Length%2A> 属性。 如果将 **Length** 属性设置为大于 **Capacity** 属性的值，则自动将 **Capacity** 属性更改为与 **Length** 属性相同的值。 如果将 **Length** 属性设置为小于当前 **StringBuilder** 对象内的字符串长度的值，则会缩短该字符串。  
   
@@ -66,10 +67,10 @@ ms.locfileid: "84289260"
 |<xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>|用带格式文本替换字符串中传递的格式说明符。|  
 |<xref:System.Text.StringBuilder.Insert%2A?displayProperty=nameWithType>|将字符串或对象插入到当前 **StringBuilder** 的指定索引中。|  
 |<xref:System.Text.StringBuilder.Remove%2A?displayProperty=nameWithType>|从当前 **StringBuilder** 中删除指定数量的字符。|  
-|<xref:System.Text.StringBuilder.Replace%2A?displayProperty=nameWithType>|替换指定索引处的指定字符。|  
+|<xref:System.Text.StringBuilder.Replace%2A?displayProperty=nameWithType>|将当前 StringBuilder 中出现的所有指定字符或字符串替换为其他的指定字符或字符串。|  
   
 ### <a name="append"></a>追加  
- Append  方法可用于将对象的文本或字符串表示形式添加到当前 StringBuilder  表示的字符串末尾。 下面的示例将 **StringBuilder** 对象初始化为“Hello World”，然后将一些文本追加到该对象的末尾。 将根据需要自动分配空间。  
+ Append 方法可用于将对象的文本或字符串表示形式添加到当前 StringBuilder 表示的字符串末尾。 下面的示例将 **StringBuilder** 对象初始化为“Hello World”，然后将一些文本追加到该对象的末尾。 将根据需要自动分配空间。  
   
  [!code-cpp[Conceptual.StringBuilder#4](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#4)]
  [!code-csharp[Conceptual.StringBuilder#4](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#4)]
@@ -90,14 +91,14 @@ ms.locfileid: "84289260"
  [!code-vb[Conceptual.StringBuilder#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/Example.vb#6)]  
   
 ### <a name="remove"></a>删除  
- 可以使用 Remove  方法，从当前 <xref:System.Text.StringBuilder> 对象中指定索引（从零开始编制）处开始删除指定数量的字符。 下面的示例使用 Remove  方法缩短 <xref:System.Text.StringBuilder> 对象。  
+ 可以使用 Remove方法，从当前 <xref:System.Text.StringBuilder> 对象中指定索引（从零开始编制）处开始删除指定数量的字符。 下面的示例使用 Remove 方法缩短 <xref:System.Text.StringBuilder> 对象。  
   
  [!code-cpp[Conceptual.StringBuilder#7](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#7)]
  [!code-csharp[Conceptual.StringBuilder#7](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#7)]
  [!code-vb[Conceptual.StringBuilder#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Conceptual.StringBuilder/vb/Example.vb#7)]  
   
 ### <a name="replace"></a>替换  
- Replace  方法可用于将 <xref:System.Text.StringBuilder> 对象内的字符替换为另一个指定的字符。 下面的示例使用 Replace  方法，在 <xref:System.Text.StringBuilder> 对象中搜索感叹号字符 (!) 的所有实例，并将它们替换为问号字符 (?)。  
+ Replace 方法可用于将 <xref:System.Text.StringBuilder> 对象内的字符替换为另一个指定的字符。 下面的示例使用 Replace 方法，在 <xref:System.Text.StringBuilder> 对象中搜索感叹号字符 (!) 的所有实例，并将它们替换为问号字符 (?)。  
   
  [!code-cpp[Conceptual.StringBuilder#8](../../../samples/snippets/cpp/VS_Snippets_CLR/Conceptual.StringBuilder/cpp/example.cpp#8)]
  [!code-csharp[Conceptual.StringBuilder#8](../../../samples/snippets/csharp/VS_Snippets_CLR/Conceptual.StringBuilder/cs/Example.cs#8)]

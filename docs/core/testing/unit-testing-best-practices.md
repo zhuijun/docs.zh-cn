@@ -4,12 +4,12 @@ description: 了解有关编写单元测试的最佳做法，以提高 .NET Core
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: 9115ff69b269e3723820fd8505d1a9f8ca278d12
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 8a879c16e48dfde617f9cd20f58cab96039361f0
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84989374"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324484"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>.NET Core 和 .NET Standard 单元测试最佳做法
 
@@ -43,26 +43,26 @@ ms.locfileid: "84989374"
 
 ## <a name="characteristics-of-a-good-unit-test"></a>优质单元测试的特征
 
-- 快速****。 对成熟项目进行数千次单元测试，这很常见。 应花非常少的时间来运行单元测试。 几毫秒。
-- 独立****。 单元测试是独立的，可以单独运行，并且不依赖文件系统或数据库等任何外部因素。
-- 可重复****。 运行单元测试的结果应该保持一致，也就是说，如果在运行期间不更改任何内容，总是返回相同的结果。
-- 自检查****。 测试应该能够在没有任何人工交互的情况下，自动检测测试是否通过。
-- 及时****。 与要测试的代码相比，编写单元测试不应花费过多不必要的时间。 如果发现测试代码与编写代码相比需要花费大量的时间，请考虑一种更易测试的设计。
+- 快速。 对成熟项目进行数千次单元测试，这很常见。 应花非常少的时间来运行单元测试。 几毫秒。
+- 独立。 单元测试是独立的，可以单独运行，并且不依赖文件系统或数据库等任何外部因素。
+- 可重复。 运行单元测试的结果应该保持一致，也就是说，如果在运行期间不更改任何内容，总是返回相同的结果。
+- 自检查。 测试应该能够在没有任何人工交互的情况下，自动检测测试是否通过。
+- 及时。 与要测试的代码相比，编写单元测试不应花费过多不必要的时间。 如果发现测试代码与编写代码相比需要花费大量的时间，请考虑一种更易测试的设计。
 
 ## <a name="code-coverage"></a>代码覆盖率
 
-高代码覆盖率百分比通常与较高的代码质量相关联。 但该度量值本身无法确定代码的质量**。 设置过高的代码覆盖率百分比目标可能会适得其反。 假设一个复杂的项目有数千个条件分支，并且假设你设定了一个 95% 代码覆盖率的目标。 该项目当前维保持 90% 的代码覆盖率。 要覆盖剩余 5% 的所有边缘事例，需要花费巨大的工作量，而且价值主张会迅速降低。
+高代码覆盖率百分比通常与较高的代码质量相关联。 但该度量值本身无法确定代码的质量。 设置过高的代码覆盖率百分比目标可能会适得其反。 假设一个复杂的项目有数千个条件分支，并且假设你设定了一个 95% 代码覆盖率的目标。 该项目当前维保持 90% 的代码覆盖率。 要覆盖剩余 5% 的所有边缘事例，需要花费巨大的工作量，而且价值主张会迅速降低。
 
 高代码覆盖率百分比不指示成功，也不意味着高代码质量。 它仅仅表示单元测试所涵盖的代码量。 有关详细信息，请参阅[单元测试代码覆盖率](unit-testing-code-coverage.md)。
 
 ## <a name="lets-speak-the-same-language"></a>让我们使用相同的术语
-遗憾的是，当谈到测试时，术语“mock”的滥用情况很严重**。 以下定义了编写单元测试时最常见的 fake 类型**：
+遗憾的是，当谈到测试时，术语“mock”经常被滥用。 以下几点定义了编写单元测试时最常见的 fake 类型：
 
-Fake - Fake 是一个通用术语，可用于描述 stub 或 mock 对象**。 它是 stub 还是 mock 取决于使用它的上下文。 也就是说，Fake 可以是 stub 或 mock。
+Fake - Fake 是一个通用术语，可用于描述 stub 或 mock 对象。 它是 stub 还是 mock 取决于使用它的上下文。 也就是说，Fake 可以是 stub 或 mock。
 
-Mock - Mock 对象是系统中的 fake 对象，用于确定单元测试是否通过**。 Mock 起初为 Fake，直到对其断言。
+Mock - Mock 对象是系统中的 fake 对象，用于确定单元测试是否通过。 Mock 起初为 Fake，直到对其断言。
 
-Stub - Stub 是系统中现有依赖项（或协作者）的可控制替代项**。 通过使用 Stub，可以在无需使用依赖项的情况下直接测试代码。 默认情况下，fake 起初为 Stub。
+Stub - Stub 是系统中现有依赖项（或协作者）的可控制替代项。 通过使用 Stub，可以在无需使用依赖项的情况下直接测试代码。 默认情况下，fake 起初为 Stub。
 
 请思考以下代码片段：
 
@@ -75,7 +75,7 @@ purchase.ValidateOrders();
 Assert.True(purchase.CanBeShipped);
 ```
 
-这是 Stub 被引用为 mock 的一个示例。 在本例中，它是 Stub。 只是将 Order 作为实例化 `Purchase`（被测系统）的一种方法传递。 名称 `MockOrder` 也非常具有误导性，因为同样地 order 不是 mock。
+这是 Stub 被引用为 mock 的一个示例。 在本例中，它是 Stub。 只是将 Order 作为实例化 `Purchase`（被测系统）的一种方法传递。 名称 `MockOrder` 也具有误导性，因为同样地 order 不是 mock。
 
 更好的方法是
 
@@ -88,7 +88,7 @@ purchase.ValidateOrders();
 Assert.True(purchase.CanBeShipped);
 ```
 
-通过将类重命名为 `FakeOrder`，使类更通用，类可以用作 mock 或 stub。 以更适合测试用例者为准。 在上述示例中，`FakeOrder` 用作 stub。 在断言期间，没有以任何形状或形式使用 `FakeOrder`。 `FakeOrder` 只传递到 `Purchase` 类，以满足构造函数的要求。
+通过将类重命名为 `FakeOrder`，使类更通用，类可以用作 mock 或 stub。 以更适合测试用例者为准。 在上述示例中，`FakeOrder` 用作 stub。 在断言期间，没有以任何形状或形式使用 `FakeOrder`。 `FakeOrder` 传递到 `Purchase` 类，以满足构造函数的要求。
 
 要将其用作 Mock，可执行如下操作
 
@@ -130,15 +130,15 @@ Assert.True(mockOrder.Validated);
 [!code-csharp[AfterNamingAndMinimallyPassing](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterNamingAndMinimallyPassing)]
 
 ### <a name="arranging-your-tests"></a>安排测试
-“Arrange、Act、Assert”是单元测试时的常见模式****。 顾名思义，它包含三个主要操作：
+“Arrange、Act、Assert”是单元测试时的常见模式。 顾名思义，它包含三个主要操作：
 
-- 安排对象，根据需要对其进行创建和设置**。
-- 作用于对象**。
-- 断言某些项按预期进行**。
+- 安排对象，根据需要对其进行创建和设置。
+- 作用于对象。
+- 断言某些项按预期进行。
 
 #### <a name="why"></a>为什么？
 
-- 明确地将要测试的内容从“arrange”和“assert”步骤分开** **。
+- 明确地将要测试的内容从“arrange”和“assert”步骤分开 。
 - 降低将断言与“Act”代码混杂的可能性。
 
 可读性是编写测试时最重要的方面之一。 在测试中分离这些操作会明确地突出显示调用代码所需的依赖项、调用代码的方式以及尝试断言的内容。 虽然可以组合一些步骤并减小测试的大小，但主要目标是使测试尽可能可读。
@@ -171,7 +171,7 @@ Assert.True(mockOrder.Validated);
 #### <a name="why"></a>为什么？
 
 - 测试读者无需检查生产代码即可了解值的特殊之处。
-- 明确地显示所要证明的内容，而不是显示要完成的内容** **。
+- 明确地显示所要证明的内容，而不是显示要完成的内容 。
 
 魔幻字符串可能会让测试读者感到困惑。 如果字符串看起来不寻常，他们可能想知道为什么为某个参数或返回值选择了某个值。 这可能会使他们仔细查看实现细节，而不是专注于测试。
 
@@ -337,7 +337,7 @@ public void GetDiscountedPrice_OnTuesday_ReturnsHalfPrice()
 - 如果在星期二运行测试套件，则第二个测试将通过，但第一个测试将失败。
 - 如果在任何其他日期运行测试套件，则第一个测试将通过，但第二个测试将失败。
 
-要解决这些问题，需要将“seam”引入生产代码中**。 一种方法是在接口中包装需要控制的代码，并使生产代码依赖于该接口。
+要解决这些问题，需要将“seam”引入生产代码中。 一种方法是在接口中包装需要控制的代码，并使生产代码依赖于该接口。
 
 ```csharp
 public interface IDateTimeProvider

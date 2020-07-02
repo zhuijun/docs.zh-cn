@@ -1,14 +1,14 @@
 ---
 title: 如何安装 ML.NET 命令行接口 (CLI) 工具
 description: 了解如何安装、升级、降级和卸载 ML.NET 命令行接口 (CLI) 工具。
-ms.date: 12/18/2019
+ms.date: 06/08/2020
 ms.custom: mlnet-tooling
-ms.openlocfilehash: 9f678c7117d32bf817139951db7eef2c3d0f5eb2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 13203246411deadf3ab13a5eba0d2c8e6e9027c5
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78848634"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84602266"
 ---
 # <a name="how-to-install-the-mlnet-command-line-interface-cli-tool"></a>如何安装 ML.NET 命令行接口 (CLI) 工具
 
@@ -21,13 +21,13 @@ ML.NET CLI 使用自动化机器学习 (AutoML) 和训练数据集生成质量�
 
 ## <a name="pre-requisites"></a>先决条件
 
-- [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2)
+- [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
-- （可选）[Visual Studio 2017 或 2019](https://visualstudio.microsoft.com/vs/)
+- （可选）[Visual Studio 2019](https://visualstudio.microsoft.com/vs/)
 
 可以使用 Visual Studio 按 `F5` 键或 `dotnet run` (.NET Core CLI) 运行生成的 C# 代码项目。
 
-注意：如果在安装 [.NET Core 2.2 SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2) 后，`dotnet tool` 命令不起作用，请从 Windows 注销并再次登录。
+注意：如果在安装 .NET Core SDK 后，`dotnet tool` 命令不起作用，请从 Windows 注销并再次登录。
 
 ## <a name="install"></a>安装
 
@@ -54,7 +54,7 @@ Tool 'mlnet' (version 'X.X.X') was successfully installed.
 mlnet
 ```
 
-应该看到 mlnet 工具的可用命令帮助，例如“auto-train”命令。
+应看到 mlnet 工具的可用命令帮助，例如“classification”命令。
 
 ## <a name="install-a-specific-release-version"></a>安装特定版本
 

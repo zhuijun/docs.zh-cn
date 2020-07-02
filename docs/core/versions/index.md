@@ -1,13 +1,13 @@
 ---
 title: 如何对 .NET Core 运行时和 SDK 进行版本控制
 description: 本文介绍了 .NET Core SDK 和运行时的版本控制方式（类似于语义版本控制）。
-ms.date: 07/26/2018
-ms.openlocfilehash: f166a6dfc1c9127eb629365efd628855489a60cb
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.date: 06/24/2020
+ms.openlocfilehash: 5e315f49227f3c2ea40652a30fabbf566bdfe495
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644398"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619749"
 ---
 # <a name="overview-of-how-net-core-is-versioned"></a>.NET Core 的版本控制方式概述
 
@@ -41,7 +41,7 @@ SDK 版本号的第三个位置同时传达次要编号和修补程序编号。 
 
 ## <a name="semantic-versioning"></a>语义化版本控制
 
-.NET Core 运行时大致遵循[语义版本控制 (SemVer)](https://semver.org/)，采用 `MAJOR.MINOR.PATCH` 版本控制，通过版本号的各部分来描述更改程度和类型  。
+.NET Core 运行时大致遵循[语义版本控制 (SemVer)](https://semver.org/)，采用 `MAJOR.MINOR.PATCH` 版本控制，通过版本号的各部分来描述更改程度和类型。
 
 ```
 MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
@@ -103,6 +103,9 @@ MAJOR.MINOR.PATCH[-PRERELEASE-BUILDNUMBER]
 | 2.1       | 达 2.0     |
 | 2.2       | 达 2.0     |
 | 3.0       | 至 2.1     |
+| 3.1       | 至 2.1     |
+
+有关 .NET Standard 版本的交互表以及它们与 .NET 实现的对应关系，请参阅 [.NET Standard 版本](https://dotnet.microsoft.com/platform/dotnet-standard#versions)。
 
 ## <a name="see-also"></a>请参阅
 

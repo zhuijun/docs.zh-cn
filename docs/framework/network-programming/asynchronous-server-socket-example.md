@@ -1,5 +1,6 @@
 ---
 title: 异步服务器套接字示例
+description: 此示例 .NET Framework 程序创建一个服务器，该服务器使用异步套接字接收来自客户端的连接。 它接收并回显一个字符串。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - sockets, code examples
 - asynchronous server sockets
 ms.assetid: 13624cd3-f5c5-4950-8cda-31273b1fa6d1
-ms.openlocfilehash: 8a9a3cb26968c548aa971bac548313a459c2fdf6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 089de8ce9629e30cb6e4458c0f9a4613c9674a21
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180908"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502712"
 ---
 # <a name="asynchronous-server-socket-example"></a>异步服务器套接字示例
 以下示例程序创建从客户端接收连接请求的服务器。 该服务器是使用异步套接字构建的，因此在等待客户端的连接时，不会挂起服务器应用程序的执行。 应用程序从客户端接收字符串，在控制台上显示此字符串，然后将此字符串回显给客户端。 来自客户端的字符串必须包含字符串“\<EOF>”以在消息结束时发出信号。  
@@ -289,7 +290,7 @@ public class AsynchronousSocketListener {
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [异步客户端套接字示例](asynchronous-client-socket-example.md)
 - [使用异步服务器套接字](using-an-asynchronous-server-socket.md)

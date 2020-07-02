@@ -1,5 +1,6 @@
 ---
 title: 处理 .NET 中的 I/O 错误
+description: 了解如何处理 .NET 中的 I/O 错误。 将错误代码映射到异常、处理 I/O 操作中的异常，以及处理 IOException。
 ms.date: 08/27/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 ms.workload:
 - dotnet
 - dotnetcore
-ms.openlocfilehash: c592039b3b12eedcfceda45c2f54403a8e04b5d5
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 45f3951b727d3b615d8384541ff169e8840acab0
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242668"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599797"
 ---
 # <a name="handling-io-errors-in-net"></a>处理 .NET 中的 I/O 错误
 

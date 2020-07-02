@@ -1,5 +1,6 @@
 ---
-title: 如何：创建用户定义的异常
+title: 如何：创建用户定义异常
+description: 了解如何创建用户定义的异常，这是从 .NET 中异常基类派生的异常类层次结构的替代项。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - exceptions, examples
 - exceptions, user-defined
 ms.assetid: 25819a5a-f915-4fc8-b924-a76915674e04
-ms.openlocfilehash: 6de00490a17fff005dd50a7acc5247089c073f68
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14eb6246ba4347f33766f7dff36463f2bf996330
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75708870"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662792"
 ---
 # <a name="how-to-create-user-defined-exceptions"></a>如何创建用户定义的异常
 
@@ -31,6 +32,6 @@ ms.locfileid: "75708870"
 > [!NOTE]
 > 使用远程处理时，必须确保所有用户定义的异常的元数据在服务器（被调用方）可用，在客户端（代理对象或调用方）也可用。 有关详细信息，请参阅[异常的最佳做法](best-practices-for-exceptions.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [异常](index.md)

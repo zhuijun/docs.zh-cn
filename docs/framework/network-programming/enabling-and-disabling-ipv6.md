@@ -1,13 +1,14 @@
 ---
 title: 启用和禁用 IPv6
+description: 按照这些配置步骤使用 IPv6 协议，包括修改计算机的配置文件或应用程序的配置文件。
 ms.date: 03/30/2017
 ms.assetid: 6408d3ef-c9ba-49d9-b15e-fe74bd3ef031
-ms.openlocfilehash: 66c802dd5feb865faf7469cb7da04fbffcb4a2d6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7729647b09df20a98d5d639a641cb0a31f557330
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71048567"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502608"
 ---
 # <a name="enabling-and-disabling-ipv6"></a>启用和禁用 IPv6
 若要使用 IPv6 协议，请确保当前运行的操作系统版本支持 IPv6，并确保正确配置了操作系统和网络类。  
@@ -24,7 +25,7 @@ ms.locfileid: "71048567"
   
  请注意，要为 System.Net 命名空间中的所有类启用 IPv6 支持，必须修改计算机配置文件或应用程序的配置文件。 应用程序的配置文件优先于计算机配置文件。  
   
- 有关如何修改计算机配置文件 machine.config 以启用 Ipv6 支持的示例，请参阅[如何：修改计算机配置文件以启用 IPv6 支持](how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md)。 此外，请确保操作系统启用了 IPv6 支持。  
+ 有关如何修改计算机配置文件 machine.config 以启用 Ipv6 支持的示例，请参阅[如何：修改计算机配置文件以启用 Ipv6 支持](how-to-modify-the-computer-configuration-file-to-enable-ipv6-support.md)。 此外，请确保操作系统启用了 IPv6 支持。  
   
  .NET Framework 在配置文件中具有如下配置开关设置  
   

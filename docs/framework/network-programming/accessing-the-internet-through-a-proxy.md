@@ -1,5 +1,6 @@
 ---
 title: 通过代理访问 Internet
+description: 了解如何配置代理实例，使 .NET Framework 应用程序能够与 Web 代理通信。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Networking
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - Internet, proxy instances
 - Network Resources
 ms.assetid: cbf46f63-ce28-486d-b827-ec0f1a9d8319
-ms.openlocfilehash: 76566d06cac81d8ba4138369c6ee3ef807a99634
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 77f46cdcedbeb9b1809621d64f239a6681e82590
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "71049048"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502738"
 ---
 # <a name="accessing-the-internet-through-a-proxy"></a>通过代理访问 Internet
 如果网站使用代理提供对 Internet 的访问，则必须配置代理实例，以使应用程序能够与 Web 代理通信。  
@@ -32,7 +33,7 @@ ms.locfileid: "71049048"
   
 - [如何：重写全局代理选择](how-to-override-a-global-proxy-selection.md)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用应用程序协议](using-application-protocols.md)
 - [.NET Framework 中的网络编程](index.md)

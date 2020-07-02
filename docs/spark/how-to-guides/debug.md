@@ -1,19 +1,21 @@
 ---
 title: 在 Windows 上部署 .NET for Apache Spark 应用程序
 description: 了解如何在 Windows 上部署 .NET for Apache Spark 应用程序。
-ms.date: 01/29/2020
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: dac6aed1f7faba7f07b722a6dac0da930ab9ec66
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9209d5bdec6dd85f6d21a502fb07204effef1934
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79185810"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617751"
 ---
 # <a name="debug-a-net-for-apache-spark-application"></a>部署 .NET for Apache Spark 应用程序
 
 此操作说明介绍在 Windows 上部署 .NET for Apache Spark 应用程序的步骤。
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="debug-your-application"></a>调试应用程序
 
@@ -59,12 +61,12 @@ if (EnvironmentUtils.GetEnvironmentVariableAsBool("DOTNET_WORKER_DEBUG"))
 }
 ```
 
-导航到包含计划调试的 UDF 的 .cs  文件，并[设置断点](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2019)。 断点将显示 `The breakpoint will not currently be hit`，因为工作线程尚未加载包含 UDF 的程序集。
+导航到包含计划调试的 UDF 的 .cs 文件，并[设置断点](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints?view=vs-2019)。 断点将显示 `The breakpoint will not currently be hit`，因为工作线程尚未加载包含 UDF 的程序集。
 
 点击 `F5` 继续应用程序，最终会点击断点。
 
 > [!NOTE]
-> 将为每个任务弹出“选择实时调试器”窗口。 若要避免弹出过多窗口，请将执行器数设置为较小数目。 例如，可以将“--master local[1]”  选项用于 spark-submit，以将任务数设置为 1，这将启动一个调试器实例。
+> 将为每个任务弹出“选择实时调试器”窗口。 若要避免弹出过多窗口，请将执行器数设置为较小数目。 例如，可以将“--master local[1]”选项用于 spark-submit，以将任务数设置为 1，这将启动一个调试器实例。
 
 ## <a name="debug-scala-code"></a>调试 Scala 代码
 

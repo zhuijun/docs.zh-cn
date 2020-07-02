@@ -1,5 +1,6 @@
 ---
 title: 销毁线程
+description: 了解需销毁 .NET 中的线程时的可选方法，例如协作取消或 Thread.Abort 方法。 了解如何处理 ThreadAbortException。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - destroying threads
 - threading [.NET Framework], destroying threads
 ms.assetid: df54e648-c5d1-47c9-bd29-8e4438c1db6d
-ms.openlocfilehash: 9f69773ec19008ebafd28a68e4e2007b6f9bb979
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: baf9289413de0e99533f121eb2a404ff0d873511
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279810"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768503"
 ---
 # <a name="destroying-threads"></a>销毁线程
 
@@ -65,7 +66,7 @@ catch (ThreadAbortException ex)
   
  可以调用 <xref:System.Threading.Thread.ResetAbort%2A?displayProperty=nameWithType> 方法，以防系统重新抛出异常。 不过，只有在自己的代码导致 <xref:System.Threading.ThreadAbortException> 抛出时，才应这样做。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Threading.ThreadAbortException>
 - <xref:System.Threading.Thread>

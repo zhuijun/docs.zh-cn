@@ -1,5 +1,6 @@
 ---
 title: 正则表达式选项
+description: 了解如何使用 .NET 中的正则表达式方法，例如不区分大小写的匹配、多行模式和从右到左模式。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - inline option constructs
 - options parameter
 ms.assetid: c82dc689-7e82-4767-a18d-cd24ce5f05e9
-ms.openlocfilehash: 8c742c855234bfd9653bb57036c41e7ccce66295
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 268e05c2212539b030ccc3c7195f618bb3afa707
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289286"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662870"
 ---
 # <a name="regular-expression-options"></a>正则表达式选项
 
@@ -29,7 +30,7 @@ ms.locfileid: "84289286"
 |<xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase>|`i`|使用不区分大小写的匹配。 有关更多信息，请参见[不区分大小写的匹配](#case-insensitive-matching)。|
 |<xref:System.Text.RegularExpressions.RegexOptions.Multiline>|`m`|使用多线模式，其中 `^` 和 `$` 匹配每行的开头和末尾（不是输入字符串的开头和末尾）。 有关更多信息，请参见[多行模式](#multiline-mode)。|
 |<xref:System.Text.RegularExpressions.RegexOptions.Singleline>|`s`|使用单行模式，其中的句号 (.) 匹配每个字符（而不是除了 `\n` 以外的每个字符)。 有关详细信息，请参阅[单行模式](#single-line-mode)。|
-|<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture>|`n`|不捕获未命名的组。 唯一有效的捕获是显式命名或编号的 `(?<`name`>` subexpression`)` 形式的组   。 有关更多信息，请参见[仅显式捕获](#explicit-captures-only)。|
+|<xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture>|`n`|不捕获未命名的组。 唯一有效的捕获是显式命名或编号的 `(?<`name`>` subexpression`)` 形式的组 。 有关更多信息，请参见[仅显式捕获](#explicit-captures-only)。|
 |<xref:System.Text.RegularExpressions.RegexOptions.Compiled>|不可用|将正则表达式编译为程序集。 有关更多信息，请参见[已编译的正则表达式](#compiled-regular-expressions)。|
 |<xref:System.Text.RegularExpressions.RegexOptions.IgnorePatternWhitespace>|`x`|从模式中排除保留的空白并启用数字符号 (`#`) 后的注释。 有关更多信息，请参见[忽略空白](#ignore-white-space)。|
 |<xref:System.Text.RegularExpressions.RegexOptions.RightToLeft>|不可用|更改搜索方向。 搜索是从右向左而不是从左向右进行。 有关更多信息，请参见[从右向左模式](#right-to-left-mode)。|
@@ -56,7 +57,7 @@ ms.locfileid: "84289286"
   [!code-csharp[Conceptual.Regex.Language.Options#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/example1.cs#7)]
   [!code-vb[Conceptual.Regex.Language.Options#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/example1.vb#7)]
 
-- 通过在包含语法 `(?imnsx-imnsx:`subexpression  `)` 的正则表达式模式的特定分组构造中，应用内联选项。 一组选项前面没有符号用于打开该设置；一组选项前面的减号用于关闭该设置。 （无论选项是启用还是禁用，`?` 都是所需的语言构造语法的固定部分。）选项只应用于该组。 有关详细信息，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
+- 通过在包含语法 `(?imnsx-imnsx:`subexpression`)` 的正则表达式模式的特定分组构造中，应用内联选项。 一组选项前面没有符号用于打开该设置；一组选项前面的减号用于关闭该设置。 （无论选项是启用还是禁用，`?` 都是所需的语言构造语法的固定部分。）选项只应用于该组。 有关详细信息，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
 
   下面的示例进行了这方面的演示。 在标识以字母“d”开头的单词时，它使用分组构造中的内联选项来启用不区分大小写匹配和忽略模式空白。
 
@@ -190,7 +191,7 @@ ms.locfileid: "84289286"
 
 ## <a name="explicit-captures-only"></a>仅显式捕获
 
-默认情况下，通过在正则表达式模式中使用括号来定义捕获组。 通过 `(?<`name  `>`subexpression  `)` 语言选项为命名组指定名称或编号，而未命名组按索引进行访问。 在 <xref:System.Text.RegularExpressions.GroupCollection> 对象中，未命名的组先于已命名的组。
+默认情况下，通过在正则表达式模式中使用括号来定义捕获组。 通过 `(?<`name`>`subexpression`)` 语言选项为命名组指定名称或编号，而未命名组按索引进行访问。 在 <xref:System.Text.RegularExpressions.GroupCollection> 对象中，未命名的组先于已命名的组。
 
 分组构造通常仅用于将限定符应用于多个语言元素，而非应用于捕获的子字符串。 例如，如果下面的正则表达式：
 
@@ -198,7 +199,7 @@ ms.locfileid: "84289286"
 
 旨在仅从文档提取末尾有句号、感叹点或问号的句子，仅产生的句子（这由 <xref:System.Text.RegularExpressions.Match> 对象表示）有意义。 集合中的各单词不是。
 
-随后未使用的捕获组可能很昂贵，因为正则表达式引擎必须填充 <xref:System.Text.RegularExpressions.GroupCollection> 和 <xref:System.Text.RegularExpressions.CaptureCollection> 集合对象。 作为替换方法，也可以使用 <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> 选项或 `n` 内联选项，指定显式命名的唯一有效捕获，或由 `(?<`名称`>` 子表达式`)` 构造指定的编号组   。
+随后未使用的捕获组可能很昂贵，因为正则表达式引擎必须填充 <xref:System.Text.RegularExpressions.GroupCollection> 和 <xref:System.Text.RegularExpressions.CaptureCollection> 集合对象。 作为替换方法，也可以使用 <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> 选项或 `n` 内联选项，指定显式命名的唯一有效捕获，或由 `(?<`名称`>` 子表达式`)` 构造指定的编号组 。
 
 以下示例显示 `\b\(?((\w+),?\s?)+[\.!?]\)?` 正则表达式模式在 <xref:System.Text.RegularExpressions.Regex.Match%2A> 方法被调用且没有 <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> 选项时返回的匹配信息。 如第一个方法调用输出所示，正则表达式引擎使用有关已捕获的子字符串的信息完全填充 <xref:System.Text.RegularExpressions.GroupCollection> 和 <xref:System.Text.RegularExpressions.CaptureCollection> 集合对象。 因为第二个方法使用设置为 `options` 的 <xref:System.Text.RegularExpressions.RegexOptions.ExplicitCapture?displayProperty=nameWithType> 进行调用，所以它不会捕获有关组的信息。
 
@@ -262,13 +263,13 @@ ms.locfileid: "84289286"
 
 - 始终按原义解释字符内的空格。 例如，正则表达式模式 `[ .,;:]` 匹配任意单个空白字符、句号、逗号、分号或冒号。
 
-- 加括号的限定符内不允许有空格，如 `{`n  `}`、`{`n  `,}` 和 `{`n  `,`m  `}`。 例如，因为它包含一个空白字符，所以正则表达式模式 `\d{1, 3}` 与任何从 1 到 3 位数的数字序列不匹配。
+- 加括号的限定符内不允许有空格，如 `{`n`}`、`{`n`,}` 和 `{`n`,`m`}`。 例如，因为它包含一个空白字符，所以正则表达式模式 `\d{1, 3}` 与任何从 1 到 3 位数的数字序列不匹配。
 
 - 引入语言元素的字符序列内不允许有空格。 例如：
 
-  - 语言元素 `(?:`subexpression  `)` 表示非捕获组，并且该元素的 `(?:` 部分不能有嵌入空格。 模式 `(? :`子表达式  `)` 在运行时抛出 <xref:System.ArgumentException>，因为正则表达式引擎无法分析此模式，且模式 `( ?:`子表达式  `)` 与子表达式  不匹配。
+  - 语言元素 `(?:`subexpression`)` 表示非捕获组，并且该元素的 `(?:` 部分不能有嵌入空格。 模式 `(? :`子表达式`)` 在运行时抛出 <xref:System.ArgumentException>，因为正则表达式引擎无法分析此模式，且模式 `( ?:`子表达式`)` 与子表达式不匹配。
 
-  - 语言元素 `\p{`name  `}` 表示一个 Unicode 类别或命名块，它不能在元素的 `\p{` 部分中包括嵌入空格。 如果你包括了空格，则该元素会在运行时引发 <xref:System.ArgumentException> 异常。
+  - 语言元素 `\p{`name`}` 表示一个 Unicode 类别或命名块，它不能在元素的 `\p{` 部分中包括嵌入空格。 如果你包括了空格，则该元素会在运行时引发 <xref:System.ArgumentException> 异常。
 
 启用此选项有助于简化通常很难分析和理解的正则表达式。 它提高了可读性，并可以记录正则表达式。
 
@@ -298,7 +299,7 @@ ms.locfileid: "84289286"
 [!code-csharp[Conceptual.Regex.Language.Options#17](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/righttoleft1.cs#17)]
 [!code-vb[Conceptual.Regex.Language.Options#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/righttoleft1.vb#17)]
 
-另请注意，预测先行断言（`(?=`subexpression  `)` 语言元素）和回顾后发断言（`(?<=`subexpression  `)` 语言元素）不会更改方向。 预测先行断言向右搜索；回顾后发断言向左搜索。 例如，正则表达式 `(?<=\d{1,2}\s)\w+,?\s\d{4}` 使用回顾后发断言测试月份名称前面的日期。 然后该正则表达式匹配月份和年份。 有关预测先行和回顾后发断言的信息，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
+另请注意，预测先行断言（`(?=`subexpression`)` 语言元素）和回顾后发断言（`(?<=`subexpression`)` 语言元素）不会更改方向。 预测先行断言向右搜索；回顾后发断言向左搜索。 例如，正则表达式 `(?<=\d{1,2}\s)\w+,?\s\d{4}` 使用回顾后发断言测试月份名称前面的日期。 然后该正则表达式匹配月份和年份。 有关预测先行和回顾后发断言的信息，请参阅[分组构造](grouping-constructs-in-regular-expressions.md)。
 
 [!code-csharp[Conceptual.Regex.Language.Options#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regex.language.options/cs/righttoleft2.cs#18)]
 [!code-vb[Conceptual.Regex.Language.Options#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.options/vb/righttoleft2.vb#18)]

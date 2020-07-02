@@ -1,5 +1,6 @@
 ---
-title: 如何为请求设置缓存策略
+title: 如何：为请求设置缓存策略
+description: 了解如何在 .NET Framework 中为请求设置缓存策略。 此缓存策略允许最多使用缓存中的资源一天。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,14 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - request cache policies
 ms.assetid: 39c15e40-586b-4ac9-9cce-146f74b7e545
-ms.openlocfilehash: 4ad74d69391da0e815faf9c278f2d9bea03937d4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 248cbdd0921564898c5d3459cffa304793e85584
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180769"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502426"
 ---
-# <a name="how-to-set-cache-policy-for-a-request"></a>如何为请求设置缓存策略
+# <a name="how-to-set-cache-policy-for-a-request"></a>如何：为请求设置缓存策略
 以下示例演示如何为请求设置缓存策略。 该示例输入是一个 URI，如 `http://www.contoso.com/`。  
   
 ## <a name="example"></a>示例  
@@ -105,7 +106,7 @@ Namespace Examples.System.Net.Cache
 End Namespace  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [网络应用程序的缓存管理](cache-management-for-network-applications.md)
 - [缓存策略](cache-policy.md)

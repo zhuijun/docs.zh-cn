@@ -1,5 +1,6 @@
 ---
 title: 为多线程处理同步数据
+description: 了解如何在 .NET 中同步多线程处理数据。 选择同步代码区域、手动同步或同步上下文等策略。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-ms.openlocfilehash: 7f064738472a65ce89f17efc4d7ea00ac98280d0
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4d528c54816961caa251ce054abf2c6cf07e9d01
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291092"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769101"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>为多线程处理同步数据
 
@@ -32,9 +33,9 @@ ms.locfileid: "84291092"
   
 |类别|全局字段|静态字段|静态方法|实例字段|实例方法|特定代码块|  
 |--------------|-------------------|-------------------|--------------------|---------------------|----------------------|--------------------------|  
-|无同步|No|No|No|No|No|No|  
-|同步上下文|No|No|No|是|是|No|  
-|同步代码区域|No|No|仅当标记时|No|仅当标记时|仅当标记时|  
+|无同步|否|否|否|否|否|否|  
+|同步上下文|否|否|否|是|是|否|  
+|同步代码区域|否|否|仅当标记时|否|仅当标记时|仅当标记时|  
 |手动同步|手动|手动|手动|手动|手动|手动|  
   
 ## <a name="no-synchronization"></a>无同步  
@@ -53,7 +54,7 @@ ms.locfileid: "84291092"
   
  还可以使用值为 <xref:System.Runtime.CompilerServices.MethodImplOptions.Synchronized?displayProperty=nameWithType> 的 <xref:System.Runtime.CompilerServices.MethodImplAttribute> 修饰方法，其效果和使用 <xref:System.Threading.Monitor> 或其中一个编译器关键字锁定整个方法正文相同。  
   
- <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> 可用于中断对线程执行阻止操作（如等待访问同步代码区域）。 Thread.Interrupt  还用于中断对线程执行 <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> 等操作。  
+ <xref:System.Threading.Thread.Interrupt%2A?displayProperty=nameWithType> 可用于中断对线程执行阻止操作（如等待访问同步代码区域）。 Thread.Interrupt 还用于中断对线程执行 <xref:System.Threading.Thread.Sleep%2A?displayProperty=nameWithType> 等操作。  
   
 > [!IMPORTANT]
 > 为保护 `static` 方法（Visual Basic 中的 `Shared` 方法），请不要锁定类型，即：C# 中的 `typeof(MyType)`、Visual Basic 中的 `GetType(MyType)` 或 C++ 中的 `MyType::typeid`。 请改用私有静态对象。 同样，不要使用 C# 中的 `this`（Visual Basic 中的 `Me`）锁定实例方法。 请改用私有对象。 类或实例可由不是你自己的代码锁定，这可能会引起死锁或性能问题。  
@@ -67,7 +68,7 @@ ms.locfileid: "84291092"
 
 仅在 .NET Framework 和 Xamarin 应用程序中，可以使用任何 <xref:System.ContextBoundObject> 上的 <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> 来同步所有实例方法和字段。 同一上下文域中的所有对象都共享同一个锁。 允许多个线程访问方法和字段，但在任一时刻只允许一个线程访问。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute>
 - [线程与线程处理](threads-and-threading.md)

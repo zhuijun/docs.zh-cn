@@ -1,5 +1,6 @@
 ---
 title: 如何：使用分区本地变量编写 Parallel.ForEach 循环
+description: 请参阅如何在 .NET 中编写使用分区局部变量的 Parallel.ForEach 循环的示例。
 ms.date: 06/26/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,18 +9,18 @@ dev_langs:
 helpviewer_keywords:
 - parallel foreach loop, how to use local state
 ms.assetid: 24b10041-b30b-45cb-aa65-66cf568ca76d
-ms.openlocfilehash: eff176f7c3ae5cae4c450047214d8e9e20a6e66d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f598955fb2d6800f81bce050bdf474fc63bfb554
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290741"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84599771"
 ---
 # <a name="how-to-write-a-parallelforeach-loop-with-partition-local-variables"></a>如何：使用分区本地变量编写 Parallel.ForEach 循环
 
 下面的示例演示如何编写使用分区本地变量的 <xref:System.Threading.Tasks.Parallel.ForEach%2A> 方法。 当 <xref:System.Threading.Tasks.Parallel.ForEach%2A> 循环执行时，它会将其源集合划分为多个分区。 每个分区都有自己的分区本地变量的副本。 分区本地变量类似于[线程本地变量](xref:System.Threading.ThreadLocal%601)，只是单个线程上可以运行多个分区。
 
-此示例中的代码和参数非常类似于对应的 <xref:System.Threading.Tasks.Parallel.For%2A> 方法。 有关详细信息，请参阅[如何：编写包含线程本地变量的 Parallel.For 循环](how-to-write-a-parallel-for-loop-with-thread-local-variables.md)。
+此示例中的代码和参数非常类似于对应的 <xref:System.Threading.Tasks.Parallel.For%2A> 方法。 有关详细信息，请参阅[如何：编写具有线程局部变量的 Parallel.For 循环](how-to-write-a-parallel-for-loop-with-thread-local-variables.md)。
 
 若要在 <xref:System.Threading.Tasks.Parallel.ForEach%2A> 循环中使用分区本地变量，必须调用采用两个类型参数的其中一个方法重载。 第一个类型参数 `TSource` 指定源元素的类型，第二个类型参数 `TLocal` 指定分区本地变量的类型。
 
@@ -48,7 +49,7 @@ ms.locfileid: "84290741"
 [!code-csharp[TPL_Parallel#04](../../../samples/snippets/csharp/VS_Snippets_Misc/tpl_parallel/cs/foreachthreadlocal.cs#04)]
 [!code-vb[TPL_Parallel#04](../../../samples/snippets/visualbasic/VS_Snippets_Misc/tpl_parallel/vb/foreachthreadlocal.vb#04)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [数据并行](data-parallelism-task-parallel-library.md)
 - [如何：编写具有线程局部变量的 Parallel.For 循环](how-to-write-a-parallel-for-loop-with-thread-local-variables.md)

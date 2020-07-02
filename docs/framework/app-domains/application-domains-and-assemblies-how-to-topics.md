@@ -1,16 +1,17 @@
 ---
 title: 应用程序域和程序集帮助主题
+description: 点击链接，了解使用 .NET 中的应用程序域和程序集进行编程的相关概念性文档中的用法主题。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies [.NET Framework], how-tos
 - application domains, how-tos
 ms.assetid: 2264054e-712e-47e4-8657-1aa1cfec3e3d
-ms.openlocfilehash: bcb2ae00b02571b97dfc23100a1e5a7d3e7d8f12
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9489f23e6730e36fb43e367b34954d220f633c96
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119993"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104980"
 ---
 # <a name="application-domains-and-assemblies-how-to-topics"></a>应用程序域和程序集帮助主题
 以下各节包含使用应用程序域和程序集进行编程的相关概念性文档中的所有操作说明主题链接。  

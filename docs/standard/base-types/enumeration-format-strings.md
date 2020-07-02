@@ -1,5 +1,6 @@
 ---
 title: 枚举格式字符串
+description: 使用 .NET 中的 Enum.ToString 方法创建枚举格式字符串。 格式化枚举成员的数字、十六进制或字符串值。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - enumeration format strings
 - formatting [.NET Framework], enumeration
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
-ms.openlocfilehash: da7634758f5c4319fa18612d216682dc141318fd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 825357cf4a56132dae0870972d316eff89b0c94f
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78155953"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84583422"
 ---
 # <a name="enumeration-format-strings"></a>枚举格式字符串
 
@@ -68,6 +69,6 @@ ms.locfileid: "78155953"
 [!code-csharp[Formatting.Enum#7](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#7)]
 [!code-vb[Formatting.Enum#7](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#7)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [格式设置类型](formatting-types.md)

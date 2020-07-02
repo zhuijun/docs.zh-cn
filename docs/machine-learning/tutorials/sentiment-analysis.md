@@ -1,15 +1,15 @@
 ---
 title: 教程：分析网站评论 - 二元分类
 description: 本教程演示如何创建 .NET Core 控制台应用程序，该应用程序对网站评论情绪进行分类并采取适当的措施。 二元情绪分类器在 Visual Studio 中使用 C#。
-ms.date: 09/30/2019
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: c6e13cfca93c54648b1a0423c5983013d3e2a1a0
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: b193752437c3e84476858bb3b70ba642d8562769
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243292"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803243"
 ---
 # <a name="tutorial-analyze-sentiment-of-website-comments-with-binary-classification-in-mlnet"></a>教程：在 ML.NET 中使用二元分类分析网站评论的情绪
 
@@ -38,11 +38,13 @@ ms.locfileid: "81243292"
 
 1. 创建名为“SentimentAnalysis”的 **.NET Core 控制台应用程序**。
 
-2. 在项目中创建名为“Data”的目录，用于保存数据集文件  。
+2. 在项目中创建名为“Data”的目录，用于保存数据集文件。
 
-3. 安装“Microsoft.ML NuGet 包”  ：
+3. 安装“Microsoft.ML NuGet 包”：
 
-    在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”  。 选择“nuget.org”作为包源，然后选择“浏览”选项卡  。搜索“Microsoft.ML”，选择所需的包，然后选择“安装”按钮   。 同意所选包的许可条款，继续执行安装。 对 **Microsoft.ML.FastTree** NuGet 包执行相同操作。
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
+
+    在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”。 选择“nuget.org”作为包源，然后选择“浏览”选项卡。搜索“Microsoft.ML”，选择所需的包，然后选择“安装”按钮 。 同意所选包的许可条款，继续执行安装。
 
 ## <a name="prepare-your-data"></a>准备数据
 
@@ -51,13 +53,13 @@ ms.locfileid: "81243292"
 
 1. 下载 [UCI Sentiment Labeled Sentences 数据集 zip 文件](http://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip)并解压缩。
 
-2. 将 `yelp_labelled.txt` 文件复制到已创建的“Data”  目录中。
+2. 将 `yelp_labelled.txt` 文件复制到已创建的“Data”目录中。
 
-3. 在“解决方案资源管理器”中，右键单击 `yelp_labeled.txt` 文件并选择“属性”  。 在“高级”下，将“复制到输出目录”的值更改为“如果较新则复制”    。
+3. 在“解决方案资源管理器”中，右键单击 `yelp_labeled.txt` 文件并选择“属性”。 在“高级”下，将“复制到输出目录”的值更改为“如果较新则复制”  。
 
 ### <a name="create-classes-and-define-paths"></a>创建类和定义路径
 
-1. 将以下附加的 `using` 语句添加到“Program.cs”  文件顶部：
+1. 将以下附加的 `using` 语句添加到“Program.cs”文件顶部：
 
     [!code-csharp[AddUsings](~/samples/snippets/machine-learning/SentimentAnalysis/csharp/Program.cs#AddUsings "Add necessary usings")]
 
@@ -67,15 +69,15 @@ ms.locfileid: "81243292"
 
 1. 接下来，为输入数据和预测结果创建类。 向项目添加一个新类：
 
-    - 在“解决方案资源管理器”  中，右键单击项目，然后选择“添加”   > “新项”  。
+    - 在“解决方案资源管理器”中，右键单击项目，然后选择“添加” > “新项”。
 
-    - 在“添加新项”  对话框中，选择“类”  并将“名称”  字段更改为“SentimentData.cs”  。 然后，选择“添加”  按钮。
+    - 在“添加新项”对话框中，选择“类”并将“名称”字段更改为“SentimentData.cs”。 然后，选择“添加”按钮。
 
-1. “SentimentData.cs”  文件随即在代码编辑器中打开。 将下面的 `using` 语句添加到 SentimentData.cs  的顶部：
+1. “SentimentData.cs”文件随即在代码编辑器中打开。 将下面的 `using` 语句添加到 SentimentData.cs 的顶部：
 
     [!code-csharp[AddUsings](~/samples/snippets/machine-learning/SentimentAnalysis/csharp/SentimentData.cs#AddUsings "Add necessary usings")]
 
-1. 删除现有类定义并向“SentimentData.cs”  文件添加以下代码，其中有两个类 `SentimentData` 和 `SentimentPrediction`：
+1. 删除现有类定义并向“SentimentData.cs”文件添加以下代码，其中有两个类 `SentimentData` 和 `SentimentPrediction`：
 
     [!code-csharp[DeclareTypes](~/samples/snippets/machine-learning/SentimentAnalysis/csharp/SentimentData.cs#DeclareTypes "Declare data record types")]
 

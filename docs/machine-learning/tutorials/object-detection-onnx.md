@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 01/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 199245aa0017d9232e3c9889c7845c3b9ec9877b
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: b4f6457c4fab8549b3efec2e25f7c23213698414
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144742"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767775"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>教程：在 ML.NET 中使用 ONNX 检测对象
 
@@ -94,7 +94,7 @@ YOLO 模型采用图像 `3(RGB) x 416px x 416px`。 模型接受此输入，并�
     - 选择“nuget.org”作为“包源”，选择“浏览”选项卡，再搜索“Microsoft.ML”。
     - 选择“安装”按钮。
     - 选择“预览更改”对话框上的“确定”按钮，如果你同意所列包的许可条款，则选择“接受许可”对话框上的“我接受”按钮。
-    - 对 Microsoft.ML.ImageAnalytics 和 Microsoft.ML.OnnxTransformer 重复这些步骤 。
+    - 对 Microsoft.ML.ImageAnalytics、Microsoft.ML.OnnxTransformer 和 Microsoft.ML.OnnxRuntime 重复这些步骤  。
 
 ### <a name="prepare-your-data-and-pre-trained-model"></a>准备你的数据和预训练的模型
 

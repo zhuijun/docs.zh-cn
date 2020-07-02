@@ -10,12 +10,12 @@ helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: d25e4ae97877462b2a3b90e51262fb656921e392
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 122441e9238fd91199aed255b0125f69081c0a8c
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205502"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990137"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>如何：确定已安装的 .NET Framework 版本
 
@@ -61,7 +61,7 @@ ms.locfileid: "83205502"
 | .NET Framework 4.7     | 在 Windows 10 创意者更新上：460798<br />在所有其他 Windows 操作系统（包括其他 Windows 10 操作系统）上：460805 |
 | .NET Framework 4.7.1   | 在 Windows 10 Fall Creators Update 和 Windows Server 版本 1709 上：461308<br/>在所有其他 Windows 操作系统（包括其他 Windows 10 操作系统）上：461310 |
 | .NET Framework 4.7.2   | 在 Windows 10 2018 年 4 月更新和 Windows Server 版本 1803 上：461808<br/>在除 Windows 10 2018 年 4 月更新和 Windows Server 版本 1803 之外的所有 Windows 操作系统上：461814 |
-| .NET Framework 4.8     | 在 Windows 10 2019 年 5 月更新和 Windows 10 2019 年 11 月更新上：528040<br/>在 Windows 10 2020 年 5 月更新上：528209<br/>在所有其他 Windows 操作系统（包括其他 Windows 10 操作系统）上：528049 |
+| .NET Framework 4.8     | 在 Windows 10 2019 年 5 月更新和 Windows 10 2019 年 11 月更新上：528040<br/>在 Windows 10 2020 年 5 月更新上：528372<br/>在所有其他 Windows 操作系统（包括其他 Windows 10 操作系统）上：528049 |
 
 ### <a name="minimum-version"></a>最低版本
 

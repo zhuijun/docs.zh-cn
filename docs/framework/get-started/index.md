@@ -1,17 +1,18 @@
 ---
 title: .NET Framework 入门
+description: 介绍 .NET 入门知识，它是管理应用的运行时执行环境。 它包含公共语言运行时 (CLR) 和全面的类库。
 ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: 8708fbd21967c5acb548e0e77ba5d9e060336c50
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: b6ad74d2984443a3b8345c2261996e7ab30acdff
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345051"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621647"
 ---
 # <a name="get-started-with-net-framework"></a>.NET Framework 入门
 
@@ -53,7 +54,7 @@ ms.locfileid: "80345051"
 
 - 一些 .NET Framework 版本是早期版本的就地更新版。 例如，.NET Framework 3.5 是版本 2.0 的就地更新版，而 .NET Framework 4.8 是版本 4 到版本 4.7.2 的就地更新版。 有关详细信息，请参见 [.NET Framework 版本和依赖关系](../migration-guide/versions-and-dependencies.md)。
 
-在 Windows 8 之前版本的 Windows 上，如果选择删除 .NET Framework，请始终通过“控制面板”的“程序及功能”进行卸载  。 请勿手动删除某个版本的 .NET Framework。 在 Windows 8 和更高版本的操作系统上，.NET Framework 是一个操作系统组件，不能单独卸载。
+在 Windows 8 之前版本的 Windows 上，如果选择删除 .NET Framework，请始终通过“控制面板”的“程序及功能”进行卸载。 请勿手动删除某个版本的 .NET Framework。 在 Windows 8 和更高版本的操作系统上，.NET Framework 是一个操作系统组件，不能单独卸载。
 
 一台计算机上可同时存在多个 .NET Framework 版本。 这意味着，你不必卸载旧版本即可安装更新版本。
 

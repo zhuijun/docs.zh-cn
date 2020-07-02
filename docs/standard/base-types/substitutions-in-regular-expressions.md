@@ -1,5 +1,6 @@
 ---
 title: 正则表达式中的替代
+description: 使用 .NET 中的正则表达式用替换项替换匹配的文本。 替换项是只能在替换模式中识别的语言元素。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-ms.openlocfilehash: 6e5773c220dccd4d139b4f85e19b55048a64e7ef
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ab2ed6ff87f2d50d0f518ac64188bf8b5c98351c
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287999"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768100"
 ---
 # <a name="substitutions-in-regular-expressions"></a>正则表达式中的替代
 替换是只能在替换模式中识别的语言元素。 它们使用正则表达式模式定义全部或部分用于替换输入字符串中的匹配文本的文本。 替换模式可以包含一个或多个替换以及本文字符。 提供替换模式以将拥有 <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> 参数的 `replacement` 方法重载至 <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> 方法。 该方法将匹配的模式替换为 `replacement` 参数定义的模式。  
@@ -27,8 +28,8 @@ ms.locfileid: "84287999"
   
 |替换|描述|  
 |------------------|-----------------|  
-|$ number |包括替换字符串中的由 *number*标识的捕获组所匹配的最后一个子字符串，其中 *number* 是一个十进制值。 有关详细信息，请参阅 [替换已编号的组](#substituting-a-numbered-group)。|  
-|${ name  }|包括替换字符串中由 `(?<`*name*`> )` 指定的命名组所匹配的最后一个子字符串。 有关详细信息，请参阅 [替换命名组](#substituting-a-named-group)。|  
+|$ number|包括替换字符串中的由 *number*标识的捕获组所匹配的最后一个子字符串，其中 *number* 是一个十进制值。 有关详细信息，请参阅 [替换已编号的组](#substituting-a-numbered-group)。|  
+|${ name }|包括替换字符串中由 `(?<`*name*`> )` 指定的命名组所匹配的最后一个子字符串。 有关详细信息，请参阅 [替换命名组](#substituting-a-named-group)。|  
 |$$|包括替换字符串中的单个“$”文本。 有关详细信息，请参阅 [替换“$”符号](#substituting-a--character)。|  
 |$&|包括替换字符串中整个匹配项的副本。 有关详细信息，请参阅 [替换整个匹配项](#substituting-the-entire-match)。|  
 |$\`|包括替换字符串中的匹配项前的输入字符串的所有文本。 有关详细信息，请参阅 [替换匹配项前的文本](#substituting-the-text-before-the-match)。|  

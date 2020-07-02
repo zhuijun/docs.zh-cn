@@ -5,12 +5,12 @@ ms.date: 04/21/2020
 helpviewer_keywords:
 - garbage collection, background
 - background garbage collection
-ms.openlocfilehash: 8134c0af55d74e57dcfce8c7174265b8c9902feb
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 780503288d3474cd99a595bdbd52c3a5abba5308
+ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84307067"
+ms.lasthandoff: 06/18/2020
+ms.locfileid: "84990232"
 ---
 # <a name="background-garbage-collection"></a>后台垃圾回收
 
@@ -19,9 +19,9 @@ ms.locfileid: "84307067"
 默认启用后台垃圾回收。 可以在 .NET Framework 应用程序中使用 [gcConcurrent](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md) 配置设置或 .NET Core 应用中的 [System.GC.Concurrent](../../core/run-time-config/garbage-collector.md#systemgcconcurrentcomplus_gcconcurrent) 来启用或禁用后台垃圾回收。
 
 > [!NOTE]
-> 后台垃圾回收替换在 .NET Framework 4 及更高版本中可用的[并行垃圾回收](#concurrent-garbage-collection)。 在 .NET Framework 4 中，仅支持工作站垃圾回收  。 从 .NET Framework 4.5 开始，后台垃圾回收可用于工作站和服务器垃圾回收   。
+> 后台垃圾回收替换在 .NET Framework 4 及更高版本中可用的[并行垃圾回收](#concurrent-garbage-collection)。 在 .NET Framework 4 中，仅支持工作站垃圾回收。 从 .NET Framework 4.5 开始，后台垃圾回收可用于工作站和服务器垃圾回收 。
 
-后台垃圾回收期间对暂时代的回收称为“前台”垃圾回收  。 发生前台垃圾回收时，所有托管线程都将被挂起。
+后台垃圾回收期间对暂时代的回收称为“前台”垃圾回收。 发生前台垃圾回收时，所有托管线程都将被挂起。
 
 当后台垃圾回收正在进行并且你已在第 0 代中分配了足够的对象时，CLR 将执行第 0 代或第 1 代前台垃圾回收。 专用的后台垃圾回收线程将在常见的安全点上进行检查以确定是否存在对前台垃圾回收的请求。 如果存在，则后台回收将挂起自身以便前台垃圾回收可以发生。 在前台垃圾回收完成之后，专用的后台垃圾回收线程和用户线程将继续。
 
@@ -37,11 +37,11 @@ ms.locfileid: "84307067"
 
 - 不同于工作站后台垃圾回收线程，这些后台服务器 GC 线程不会超时。
 
-下图显示对独立专用线程执行的后台工作站垃圾回收  ：
+下图显示对独立专用线程执行的后台工作站垃圾回收：
 
 ![后台工作站垃圾回收](media/fundamentals/background-workstation-garbage-collection.png)
 
-下图显示对独立专用线程执行的后台服务器垃圾回收  ：
+下图显示对独立专用线程执行的后台服务器垃圾回收：
 
 ![后台服务器垃圾回收](media/fundamentals/background-server-garbage-collection.png)
 
@@ -57,7 +57,7 @@ ms.locfileid: "84307067"
 
 在工作站或服务器垃圾回收中，你可以[启用并发垃圾回收](../../framework/configure-apps/file-schema/runtime/gcconcurrent-element.md)，以便在大多数回收期间，让各线程与执行垃圾回收的专用线程并发运行。 此选项只影响第 2 代中的垃圾回收；第 0 代和第 1 代中的垃圾回收始终是非并发的，因为它们完成的速度很快。
 
-并发垃圾回收通过最大程度地减少因回收引起的暂停，使交互应用程序能够更快地响应。 在运行并发垃圾回收线程的大多数时间，托管线程可以继续运行。 这可以使得在发生垃圾回收时的暂停时间更短。
+并发垃圾回收通过最大程度地减少因回收引起的暂停，使交互应用程序能够更快地响应。 在运行并发垃圾回收线程的大多数时间，托管线程可以继续运行。 此设计使得在发生垃圾回收时的暂停时间更短。
 
 并发垃圾回收在一个专用线程上执行。 默认情况下，CLR 将运行工作站垃圾回收，并在单处理器和多处理器计算机上同时启用并发垃圾回收。
 

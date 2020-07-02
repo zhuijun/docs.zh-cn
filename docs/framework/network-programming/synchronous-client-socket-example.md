@@ -1,5 +1,6 @@
 ---
 title: 同步客户端套接字示例
+description: 此示例 .NET Framework 程序创建使用同步套接字连接到服务器的客户端。 它会发送字符串并显示答复。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - synchronous client sockets
 - sockets, synchronous client sockets
 ms.assetid: 2c7d5be7-2221-467c-a839-5744ec4d576d
-ms.openlocfilehash: d55d875546ff34bc38b13f792668cd00309c6e34
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7455307441045360bc62cee50f13d106df4d005e
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180676"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502114"
 ---
 # <a name="synchronous-client-socket-example"></a>同步客户端套接字示例
 以下示例程序创建连接到服务器的客户端。 客户端使用同步套接字构建，因此，将暂停执行客户端应用程序，直到服务器返回响应。 应用程序向服务器发送一个字符串，然后控制台上显示服务器返回的字符串。  
@@ -135,7 +136,7 @@ public class SynchronousSocketClient {
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [同步服务器套接字示例](synchronous-server-socket-example.md)
 - [使用同步客户端套接字](using-a-synchronous-client-socket.md)

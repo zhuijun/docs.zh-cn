@@ -1,5 +1,6 @@
 ---
 title: NTLM 和 Kerberos 身份验证
+description: 了解 .NET Framework 应用程序的默认 NTLM 身份验证和 Kerberos 身份验证的工作原理，并了解非默认的 NTLM 身份验证。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -19,12 +20,12 @@ helpviewer_keywords:
 - classes [.NET Framework], authentication
 - client authentication, NTLM
 ms.assetid: 9ef65560-f596-4469-bcce-f4d5407b55cd
-ms.openlocfilehash: 372101763bdd84b454e6e2db3ec6cf0ebdf3f991
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d91ebca084d84acd4eb8facb82ff08679ec35cd0
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180705"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502231"
 ---
 # <a name="ntlm-and-kerberos-authentication"></a>NTLM 和 Kerberos 身份验证
 默认 NTLM 身份验证和 Kerberos 身份验证使用与调用应用程序关联的 Microsoft Windows NT 用户凭据来尝试通过服务器进行身份验证。 使用非默认 NTLM 身份验证时，应用程序会将认证类型设置为 NTLM，并使用 <xref:System.Net.NetworkCredential> 对象将用户名、密码和域传递给主机，如下例所示。  
@@ -62,7 +63,7 @@ WReq.Credentials = CredentialCache.DefaultCredentials;
 > [!NOTE]
 > 无法通过代理服务器进行 NTLM 身份验证。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [基本和摘要式身份验证](basic-and-digest-authentication.md)
 - [Internet 身份验证](internet-authentication.md)

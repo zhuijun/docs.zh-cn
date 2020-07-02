@@ -1,5 +1,6 @@
 ---
 title: 前台和后台线程
+description: 使用 .NET 中的 Thread.IsBackground 属性确定或更改线程是后台线程还是前台线程。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - foreground threads
 - background threads
 ms.assetid: cfe0d632-dd35-47e0-91ad-f742a444005e
-ms.openlocfilehash: 5e7ec9e2c2a5ba3de1b4518cea15eb5f512640d3
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6cb7a92851728e16f4a317d6c24d072acee72a94
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279680"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769036"
 ---
 # <a name="foreground-and-background-threads"></a>前台和后台线程
 托管线程可以是后台线程，也可以是前台线程。 后台线程和前台线程几乎完全相同，只有一处不同，即后台线程不会确保托管执行环境一直运行。 一旦托管进程（其中 .exe 文件为托管程序集）中的所有前台线程都停止，系统会停止并关闭所有后台线程。  
@@ -30,7 +31,7 @@ ms.locfileid: "84279680"
   
  如果使用线程监视活动（如套接字连接），请将它的 <xref:System.Threading.Thread.IsBackground%2A> 属性设置为 `true`，以便线程不会阻止进程终止。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Threading.Thread.IsBackground%2A?displayProperty=nameWithType>
 - <xref:System.Threading.Thread>

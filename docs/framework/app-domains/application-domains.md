@@ -1,5 +1,6 @@
 ---
 title: 应用程序域
+description: 了解应用程序域，这些域为 .NET 中的安全性、可靠性、版本控制和卸载程序集在应用程序之间提供了隔离边界。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - process boundaries for isolation
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - code, verification process
 - verification testing code
 ms.assetid: 113a8bbf-6875-4a72-a49d-ca2d92e19cc8
-ms.openlocfilehash: a5c9f4248e060d231941269f39cadbc7147ce27f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d6accd11e33c0556fdd7596b2790f4787dce7ae1
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400907"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903475"
 ---
 # <a name="application-domains"></a>应用程序域
 

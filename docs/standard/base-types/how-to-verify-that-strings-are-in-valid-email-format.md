@@ -1,5 +1,6 @@
 ---
 title: 如何确认字符串是有效的电子邮件格式
+description: 阅读有关正则表达式如何在 .NET 中验证字符串是否为有效电子邮件格式的示例。
 ms.date: 12/10/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -18,12 +19,12 @@ helpviewer_keywords:
 - email [.NET Framework], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-ms.openlocfilehash: 360ed985575358dd9603a55fc2d5d6c297621ec8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 47ef4dedd20a2b885abaabf72c26de5f3312c66f
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290417"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768958"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>如何确认字符串是有效的电子邮件格式
 

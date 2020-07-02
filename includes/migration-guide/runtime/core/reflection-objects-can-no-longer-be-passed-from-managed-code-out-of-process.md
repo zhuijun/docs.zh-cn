@@ -1,17 +1,23 @@
 ---
-ms.openlocfilehash: 38c774417fc94fa080bf2b82c04d575e9068cdcb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a54b17b2002bd0f85b8b47c5e37e040470d6c494
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67858511"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621146"
 ---
 ### <a name="reflection-objects-can-no-longer-be-passed-from-managed-code-to-out-of-process-dcom-clients"></a>反射对象可能无法再从托管代码传递至进程外 DCOM 客户端
 
-|   |   |
-|---|---|
-|详细信息|反射对象可能无法再从托管代码传道至进程外客户端 以下类型将受影响：<ul><li><xref:System.Reflection.Assembly?displayProperty=name></li><li><xref:System.Reflection.MemberInfo?displayProperty=name>（及其派生类型，包括 <xref:System.Reflection.FieldInfo?displayProperty=name>、<xref:System.Reflection.MethodInfo?displayProperty=name>、<xref:System.Type?displayProperty=name> 和 <xref:System.Reflection.TypeInfo?displayProperty=name>）</li><li><xref:System.Reflection.MethodBody?displayProperty=name></li><li><xref:System.Reflection.Module?displayProperty=name></li><li><xref:System.Reflection.ParameterInfo?displayProperty=name>。</li></ul>调用对象的 <code>IMarshal</code> 会返回 <code>E_NOINTERFACE</code>。|
-|建议|更新封送代码，以与非反射对象一起使用|
-|范围|次要|
+#### <a name="details"></a>详细信息
+
+反射对象可能无法再从托管代码传道至进程外客户端 以下类型将受影响：<ul><li><xref:System.Reflection.Assembly?displayProperty=fullName></li><li><xref:System.Reflection.MemberInfo?displayProperty=fullName>（及其派生类型，包括 <xref:System.Reflection.FieldInfo?displayProperty=fullName>、<xref:System.Reflection.MethodInfo?displayProperty=fullName>、<xref:System.Type?displayProperty=fullName> 和 <xref:System.Reflection.TypeInfo?displayProperty=fullName>）</li><li><xref:System.Reflection.MethodBody?displayProperty=fullName></li><li><xref:System.Reflection.Module?displayProperty=fullName></li><li><xref:System.Reflection.ParameterInfo?displayProperty=fullName>。</li></ul>调用对象的 <code>IMarshal</code> 会返回 <code>E_NOINTERFACE</code>。
+
+#### <a name="suggestion"></a>建议
+
+更新封送代码，以与非反射对象一起使用
+
+| “属性”    | 值       |
+|:--------|:------------|
+| 范围   |次要|
 |Version|4.6|
 |类型|运行时|

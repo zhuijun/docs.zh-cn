@@ -1,5 +1,6 @@
 ---
 title: 如何：配置网络跟踪
+description: 了解如何在计算机配置文件或应用程序配置文件中配置网络跟踪。 应用程序配置文件优先。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - formatting [.NET Framework], network tracing
@@ -11,21 +12,21 @@ helpviewer_keywords:
 - application configuration files, network tracing
 - sockets, trace output
 ms.assetid: 5ef9fe4b-8d3d-490e-9259-1d014b2181af
-ms.openlocfilehash: 06132509860b16d1e22cfdf7e3226c968d16b7cf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b089746e9838c591ed5ccc9ac9aaeedb217de9a9
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73040645"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502556"
 ---
 # <a name="how-to-configure-network-tracing"></a>如何：配置网络跟踪
 
 应用程序或计算机配置文件可保存用于确定网络跟踪的格式和内容的设置。 在执行此过程之前，请确保启用跟踪。 有关详细信息，请参阅[启用网络跟踪](enabling-network-tracing.md)。
 
-计算机配置文件 machine.config  存储在 %windir%\Microsoft.NET\Framework  文件夹中。 安装在计算机上的每个版本的 .NET Framework，在 %windir%\Microsoft.NET\Framework  下的文件夹中分别有一个单独的 machine.config  文件，例如：
+计算机配置文件 machine.config 存储在 %windir%\Microsoft.NET\Framework 文件夹中。 安装在计算机上的每个版本的 .NET Framework，在 %windir%\Microsoft.NET\Framework 下的文件夹中分别有一个单独的 machine.config 文件，例如：
 
-- C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Config\machine.config 
-- C:\WINDOWS\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config 
+- C:\WINDOWS\Microsoft.NET\Framework\v2.0.50727\Config\machine.config
+- C:\WINDOWS\Microsoft.NET\Framework64\v4.0.30319\Config\machine.config
 
 也可以在应用程序的配置文件中做出这些设置，其优先级别高于计算机配置文件。
 
@@ -101,9 +102,9 @@ ms.locfileid: "73040645"
 
 |特性名|特性值|
 |--------------------|---------------------|
-|`value`|必选的 <xref:System.String> 特性。 设置输出的详细程度。 合法值为 `Critical`、`Error`、`Verbose`、`Warning` 和 `Information`。<br /><br />必须在 switches 元素的 add 元素上设置此属性   。 如果在 source 元素上设置此属性，则会引发异常  。<br/><br/>示例：`<add name="System.Net" value="Verbose"/>`|
-|`maxdatasize`|可选的 <xref:System.Int32> 特性。 设置每行跟踪中包含的最大网络数据字节数。 默认值为 1024。<br /><br />必须在 source 元素上设置此属性  。 如果在 switches 元素下的一个元素上设置此属性，则会引发异常  。<br/><br/>示例：`<source name="System.Net" tracemode="includehex" maxdatasize="1024">`|
-|`tracemode`|可选的 <xref:System.String> 特性。 设置为 `includehex` 将会以十六进制和文本格式显示协议跟踪。 设置为 `protocolonly` 将会仅显示文本。 默认值为 `includehex`。<br /><br />必须在 source 元素上设置此属性  。 如果在 switches 元素下的一个元素上设置此属性，则会引发异常  。<br/><br/>示例：`<source name="System.Net" tracemode="includehex" maxdatasize="1024">`|
+|`value`|必选的 <xref:System.String> 特性。 设置输出的详细程度。 合法值为 `Critical`、`Error`、`Verbose`、`Warning` 和 `Information`。<br /><br />必须在 switches 元素的 add 元素上设置此属性 。 如果在 source 元素上设置此属性，则会引发异常。<br/><br/>示例：`<add name="System.Net" value="Verbose"/>`|
+|`maxdatasize`|可选的 <xref:System.Int32> 特性。 设置每行跟踪中包含的最大网络数据字节数。 默认值为 1024。<br /><br />必须在 source 元素上设置此属性。 如果在 switches 元素下的一个元素上设置此属性，则会引发异常。<br/><br/>示例：`<source name="System.Net" tracemode="includehex" maxdatasize="1024">`|
+|`tracemode`|可选的 <xref:System.String> 特性。 设置为 `includehex` 将会以十六进制和文本格式显示协议跟踪。 设置为 `protocolonly` 将会仅显示文本。 默认值为 `includehex`。<br /><br />必须在 source 元素上设置此属性。 如果在 switches 元素下的一个元素上设置此属性，则会引发异常。<br/><br/>示例：`<source name="System.Net" tracemode="includehex" maxdatasize="1024">`|
 
 ## <a name="see-also"></a>请参阅
 

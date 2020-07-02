@@ -1,5 +1,6 @@
 ---
 title: 网络编程中的安全性 - .NET Framework
+description: 了解 .NET Framework System.Net 命名空间类支持的常用应用程序身份验证机制和代码访问权限。
 ms.date: 03/14/2018
 helpviewer_keywords:
 - sending data, Internet security
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
 ms.assetid: afb07899-2707-49ab-a57f-e0caf20d0171
-ms.openlocfilehash: bbe30292e474c9cb5956d96fbbae4d78d464d603
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 546e7223ba4af3029a798fb3edfb503c07e1ab4a
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989228"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502166"
 ---
 # <a name="security-in-network-programming"></a>网络编程中的安全性
 

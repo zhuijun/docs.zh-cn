@@ -1,14 +1,15 @@
 ---
 title: 管理 XML 文档中的命名空间
+description: 了解如何管理 XML 文档中的命名空间。 XML 命名空间将 XML 文档中的元素和属性名称与自定义和预定义的 URI 关联起来。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-ms.openlocfilehash: b60e773183bd008c99022946a2ec53932234fe23
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3a3abd2e932b1afecab85e285b0e2c42eb1eb20f
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289143"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769257"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>管理 XML 文档中的命名空间
 XML 命名空间将 XML 文档中的元素和属性名称与自定义和预定义的 URI 关联起来。 要创建这些关联，您应为命名空间 URI 定义前缀，并使用这些前缀来限定 XML 数据中的元素和属性名称。 命名空间可防止元素和属性名称冲突，并允许以不同方式处理和验证同名的元素和属性。  

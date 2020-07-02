@@ -1,5 +1,6 @@
 ---
 title: 用平台调用封送数据
+description: 在 .NET 中通过平台调用封送数据。 查看 Windows API 和 C 样式函数中使用的数据类型的列表，并查找其 .NET 托管类型等效项。
 ms.date: 03/20/2019
 dev_langs:
 - cpp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: dc5c76cf-7b12-406f-b79c-d1a023ec245d
-ms.openlocfilehash: b8c4e9d835db044912d1cbed92a14dd05e7de658
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 27045790780c1eef9537bdf7e52deb579e2b467c
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400943"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84904099"
 ---
 # <a name="marshaling-data-with-platform-invoke"></a>用平台调用封送数据
 

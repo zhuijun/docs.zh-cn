@@ -1,5 +1,6 @@
 ---
 title: 数据并行（任务并行库）
+description: 了解任务并行库 (TPL) 如何支持数据并行，以在 .NET 中同时对源集合或数组的元素执行相同的操作。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, data
 ms.assetid: 3f05f33f-f1da-4b16-81c2-9ceff1bef449
-ms.openlocfilehash: d7500666f12624d1a81d399a325827a416e5af3c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 513c5dde1526a8a21f68171f304b245d0a34f563
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84276772"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84594460"
 ---
 # <a name="data-parallelism-task-parallel-library"></a>数据并行（任务并行库）
 *数据并行*指的是对源集合或数组的元素同时（即，并行）执行相同操作的场景。 在数据并行操作中，对源集合进行分区，以便多个线程能够同时在不同的网段上操作。  

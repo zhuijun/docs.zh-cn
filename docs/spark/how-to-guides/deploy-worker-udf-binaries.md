@@ -1,19 +1,21 @@
 ---
 title: 部署 .NET for Apache Spark 辅助角色和用户定义的函数二进制文件
 description: 了解如何部署 .NET for Apache Spark 辅助角色和用户定义的函数二进制文件。
-ms.date: 01/21/2019
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 042f336431a1c8cad7d94cf10cbe64b72ddfce5b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 672a32c430bd702167a294d2b895ac1ac90bf67e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596456"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617712"
 ---
 # <a name="deploy-net-for-apache-spark-worker-and-user-defined-function-binaries"></a>部署 .NET for Apache Spark 辅助角色和用户定义的函数二进制文件
 
 本操作说明提供有关如何部署 .NET for Apache Spark 辅助角色和用户定义的函数二进制文件的常规说明。 你将了解要设置的环境变量，还将了解通过 `spark-submit` 启动应用程序的一些常用参数。
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="configurations"></a>配置
 配置显示常规环境变量和参数设置，用于部署 .NET for Apache Spark 辅助角色和用户定义的函数二进制文件。

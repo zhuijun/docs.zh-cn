@@ -1,5 +1,6 @@
 ---
 title: 托管线程中的取消
+description: 了解托管线程中的取消。 了解异步或长时间运行的同步操作的协作取消中的取消令牌。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - cancellation in .NET, overview
 ms.assetid: eea11fe5-d8b0-4314-bb5d-8a58166fb1c3
-ms.openlocfilehash: e56d0f71afdc9281271b7d15316a133e7c720bd0
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9af4a64e50eff65023d5ed5bda868af2f8323a96
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277877"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662831"
 ---
 # <a name="cancellation-in-managed-threads"></a>托管线程中的取消
 从 .NET Framework 4 开始，.NET Framework 在协作取消异步操作或长时间运行的同步操作时使用统一的模型。 此模型基于被称为取消标记的轻量对象。 调用一个或多个可取消操作的对象（例如通过创建新线程或任务）将标记传递给每个操作。 单个操作反过来可将标记的副本传递给其他操作。 稍后，创建标记的对象可使用此标记请求停止执行操作内容。 只有发出请求的对象，才能发出取消请求，而每个侦听器负责侦听是否有请求，并及时适当地响应请求。  
@@ -43,7 +44,7 @@ ms.locfileid: "84277877"
   
 - 请求对象仅使用一种方法调用，向标记的所有副本发出取消请求。  
   
-- 侦听器可以将多个令牌联接到一个链接令牌  ，从而同时侦听多个令牌。  
+- 侦听器可以将多个令牌联接到一个链接令牌，从而同时侦听多个令牌。  
   
 - 用户代码可以注意并响应来自库代码的取消请求，而库代码可以注意并响应来自用户代码的取消请求。  
   
@@ -140,7 +141,7 @@ ms.locfileid: "84277877"
   
 - 如果库代码提供了可取消操作，它还应提供接受外部取消标记的公共方法，以便用户代码可以请求取消。  
   
-- 如果库代码调用用户代码，库代码应将 OperationCanceledException(externalToken) 解释为协作取消  ，不一定要解释为失败异常。  
+- 如果库代码调用用户代码，库代码应将 OperationCanceledException(externalToken) 解释为协作取消，不一定要解释为失败异常。  
   
 - 用户委托应尝试及时响应来自库代码的取消请求。  
   

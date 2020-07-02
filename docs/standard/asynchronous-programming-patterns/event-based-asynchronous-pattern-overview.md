@@ -1,5 +1,6 @@
 ---
 title: 基于事件的异步模式概述
+description: 了解 .NET 中基于事件的异步模式 (EAP)，它具有多线程应用程序的优点，并且可以简化部分设计。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +17,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: f4aac5afbb13cafa7bb0e9c1eb6bbd92ac41bf8c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 18fbdb29e5a1fb02601dea00964538144c07122c
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289416"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768854"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>基于事件的异步模式概述
 那些同时执行多项任务、但仍能响应用户交互的应用程序通常需要实施一种使用多线程的设计方案。 <xref:System.Threading> 命名空间提供了创建高性能多线程应用程序所必需的所有工具，但要想有效地使用这些工具，需要有丰富的使用多线程软件工程的经验。 对于相对简单的多线程应用程序，<xref:System.ComponentModel.BackgroundWorker> 组件提供了一个简单的解决方案。 对于更复杂的异步应用程序，请考虑实现一个符合基于事件的异步模式的类。  
@@ -45,7 +46,7 @@ ms.locfileid: "84289416"
  基于事件的异步模式要求异步操作可以取消，并且 <xref:System.Windows.Forms.PictureBox> 控件使用其 <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> 方法支持此要求。 调用 <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> 会提交一个停止挂起的下载的请求，任务取消时会引发 <xref:System.Windows.Forms.PictureBox.LoadCompleted> 事件。  
   
 > [!CAUTION]
-> 下载有可能刚好在发出 <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> 请求时完成，因此 <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> 可能没有反映取消请求。 这称为“争用条件”  ，也是多线程编程中的常见问题。 若要详细了解多线程编程中的问题，请参阅[托管线程最佳做法](../threading/managed-threading-best-practices.md)。  
+> 下载有可能刚好在发出 <xref:System.Windows.Forms.PictureBox.CancelAsync%2A> 请求时完成，因此 <xref:System.ComponentModel.AsyncCompletedEventArgs.Cancelled%2A> 可能没有反映取消请求。 这称为“争用条件”，也是多线程编程中的常见问题。 若要详细了解多线程编程中的问题，请参阅[托管线程最佳做法](../threading/managed-threading-best-practices.md)。  
   
 ## <a name="characteristics-of-the-event-based-asynchronous-pattern"></a>基于事件的异步模式的特征  
  基于事件的异步模式可以采用多种形式，具体取决于某个特定类支持的操作的复杂程度。 最简单的类可能包含一个 _MethodName_**Async** 方法和对应的 M_MethodName_**Completed** 事件。 更复杂的类可能包含多个 _MethodName_**Async** 方法（每个方法具有一个对应的 _MethodName_**Completed** 事件），以及这些方法的同步版本。 这些类有选择性地分别支持各种异步方法的取消、进度报告和增量结果。  
@@ -131,7 +132,7 @@ public class AsyncExample
   
  一些类可能会在异步操作继续时报告增量结果。 这些结果将存储在从 <xref:System.ComponentModel.ProgressChangedEventArgs> 派生的类中并显示为此派生类中的属性。 你可以在 `ProgressChanged` 事件的事件处理程序中访问这些结果，就像访问 <xref:System.ComponentModel.ProgressChangedEventArgs.ProgressPercentage%2A> 属性一样。 如果有多个异步操作挂起，你可以使用 <xref:System.ComponentModel.ProgressChangedEventArgs.UserState%2A> 属性来分辨出哪个操作在报告增量结果。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ComponentModel.ProgressChangedEventArgs>
 - <xref:System.ComponentModel.BackgroundWorker>

@@ -2,12 +2,12 @@
 title: C# 中的异步编程
 description: 对使用 async、await、Task 和 Task<T> 的异步编程的 C# 语言支持的概述
 ms.date: 06/04/2020
-ms.openlocfilehash: fbbd08f8c0e650c366ca1d283825e629fcb952d7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 992ccd3a015653ea9ee13dfc309d47711ad0fca4
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446419"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619710"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>使用 Async 和 Await 的异步编程
 
@@ -56,7 +56,7 @@ ms.locfileid: "84446419"
 :::code language="csharp" source="snippets/index/AsyncBreakfast-V2/Program.cs" id="SnippetMain":::
 
 > [!IMPORTANT]
-> 总实耗时间和最初同步版本大致相同。 此代码尚未利用某些关键功能异步编程。
+> 总实耗时间和最初同步版本大致相同。 此代码尚未利用异步编程的某些关键功能。
 
 > [!TIP]
 > `FryEggsAsync`、`FryBaconAsync` 和 `ToastBreadAsync` 的方法主体都已更新，现会分别返回 `Task<Egg>`、`Task<Bacon>` 和 `Task<Toast>`。 这些方法的名称与其原始版本不同，将包含“Async”后缀。 它们的实现在本文的稍后部分显示为[最终版本](#final-version)的一部分。

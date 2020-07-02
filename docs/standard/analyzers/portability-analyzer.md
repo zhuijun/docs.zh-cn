@@ -4,12 +4,12 @@ description: 了解如何使用 .NET 可移植性分析器工具，评估代码�
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: 815ac8e0f0c4392a3d89530947b0739d06a0b95d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d2a9551565e9ef0a2ed76960c869829fc2e86a1f
+ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278358"
+ms.lasthandoff: 06/17/2020
+ms.locfileid: "84903605"
 ---
 # <a name="the-net-portability-analyzer"></a>.NET 可移植性分析器
 
@@ -32,6 +32,20 @@ ms.locfileid: "84278358"
 ![可移植性分析器的屏幕截图。](./media/portability-analyzer/portability-screenshot.png)
 
 还可以使用 ApiPort 控制台应用程序，可从 [ApiPort 存储库](https://aka.ms/apiportdownload)进行下载。 可以使用 `listTargets` 命令选项以显示可用的目标列表，然后通过指定 `-t` 或 `--target` 命令选项来选择目标平台。
+
+### <a name="solution-wide-view"></a>解决方案范围视图
+
+分析包含多个项目的解决方案的一个很有用的步骤是，可视化依赖项以了解程序集中各个子集的依赖关系。 一般的建议是，从依赖项关系图中的叶节点开始，以自下而上的方式应用分析结果。
+
+要检索此项，可运行以下命令：
+
+```
+ApiPort.exe analyze -r DGML -f [directory or file]
+```
+
+在 Visual Studio 中打开时，此结果如下所示：
+
+![DGML 分析的屏幕截图。](./media/portability-analyzer/dgml-example.png)
 
 ### <a name="analyze-portability"></a>分析可移植性
 若要在 Visual Studio 中分析整个项目，请在“解决方案资源管理器”中右键单击该项目，然后选择“分析程序集可移植性” 。 也可以转到“分析”菜单，选择“分析程序集可移植性”。  在该位置选择项目的可执行文件或 DLL。

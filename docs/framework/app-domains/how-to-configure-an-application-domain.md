@@ -1,5 +1,6 @@
 ---
 title: 如何：配置应用程序域
+description: 在 .NET 中配置应用程序域。 可以使用 AppDomainSetup 类为新应用程序域提供含配置信息的 CLR。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,22 +10,22 @@ helpviewer_keywords:
 - application domains, configuring
 - ApplicationBase property
 ms.assetid: 07ea8438-7a34-49f0-a7e8-3d6ff7e4a482
-ms.openlocfilehash: ca28984fa4a328e33d8d9bf79641cc451160f5ea
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 27afcf161bec74143fafb5dceb20597de73e23d4
+ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119905"
+ms.lasthandoff: 06/19/2020
+ms.locfileid: "85104852"
 ---
 # <a name="how-to-configure-an-application-domain"></a>如何：配置应用程序域
-可以使用 <xref:System.AppDomainSetup> 类为新应用程序域提供含配置信息的公共语言运行时。 创建自己的应用程序域时，最重要的属性是 <xref:System.AppDomainSetup.ApplicationBase%2A>。 其他 AppDomainSetup  属性主要由运行时宿主用于配置特殊的应用程序域。  
+可以使用 <xref:System.AppDomainSetup> 类为新应用程序域提供含配置信息的公共语言运行时。 创建自己的应用程序域时，最重要的属性是 <xref:System.AppDomainSetup.ApplicationBase%2A>。 其他 AppDomainSetup 属性主要由运行时宿主用于配置特殊的应用程序域。  
   
- ApplicationBase  属性定义应用程序的根目录。 当运行时需要满足类型请求时，它会在 ApplicationBase  属性指定的目录中探测包含该类型的程序集。  
+ ApplicationBase 属性定义应用程序的根目录。 当运行时需要满足类型请求时，它会在 ApplicationBase 属性指定的目录中探测包含该类型的程序集。  
   
 > [!NOTE]
-> 新的应用程序域只继承创建者的 ApplicationBase  属性。  
+> 新的应用程序域只继承创建者的 ApplicationBase 属性。  
   
- 以下示例创建 AppDomainSetup  类的实例，使用此类创建新的应用程序域，将信息写入控制台，然后卸载应用程序域。  
+ 以下示例创建 AppDomainSetup 类的实例，使用此类创建新的应用程序域，将信息写入控制台，然后卸载应用程序域。  
   
 ## <a name="example"></a>示例  
  [!code-cpp[ADApplicationBase#2](../../../samples/snippets/cpp/VS_Snippets_CLR/ADApplicationBase/CPP/source2.cpp#2)]

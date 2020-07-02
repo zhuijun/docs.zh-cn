@@ -1,5 +1,6 @@
 ---
 title: 使用基于任务的异步模式
+description: 了解如何在进行异步操作时使用基于任务的异步模式 (TAP)。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - Task-based Asynchronous Pattern, .NET Framework support for
 - .NET Framework, asynchronous design patterns
 ms.assetid: 033cf871-ae24-433d-8939-7a3793e547bf
-ms.openlocfilehash: 64a9b963ce6a8554a581f9d5d0f77cf4edfa71b4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f1a5070c106055b268d43751300d84269fed6a36
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289455"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325997"
 ---
 # <a name="consuming-the-task-based-asynchronous-pattern"></a>使用基于任务的异步模式
 
@@ -25,7 +26,7 @@ ms.locfileid: "84289455"
 
  实际上，await 功能通过使用延续任务在任务上安装回叫。  此回叫在挂起点恢复异步方法。 恢复异步方法时，如果等待的操作已成功完成且为 <xref:System.Threading.Tasks.Task%601>，返回的是 `TResult`。  如果等待的 <xref:System.Threading.Tasks.Task> 或 <xref:System.Threading.Tasks.Task%601> 以 <xref:System.Threading.Tasks.TaskStatus.Canceled> 状态结束，就会抛出 <xref:System.OperationCanceledException> 异常。  如果等待的 <xref:System.Threading.Tasks.Task> 或 <xref:System.Threading.Tasks.Task%601> 以 <xref:System.Threading.Tasks.TaskStatus.Faulted> 状态结束，就会抛出导致它发生故障的异常。 一个 `Task` 可能由于多个异常而出错，但只会传播一个异常。 不过，<xref:System.Threading.Tasks.Task.Exception%2A?displayProperty=nameWithType> 属性会返回包含所有错误的 <xref:System.AggregateException> 异常。
 
- 如果同步上下文（<xref:System.Threading.SynchronizationContext> 对象）与暂停时正在执行异步方法的线程（例如，如果 <xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType> 属性不是 `null`）相关联，异步方法使用上下文的 <xref:System.Threading.SynchronizationContext.Post%2A> 方法，恢复相同的同步上下文。 否则，它依赖暂停时的当前任务计划程序（<xref:System.Threading.Tasks.TaskScheduler> 对象）。 通常情况下，这是定目标到线程池的默认任务计划程序 (<xref:System.Threading.Tasks.TaskScheduler.Default%2A?displayProperty=nameWithType>)。 此任务计划程序确定等待的异步操作是否应在该操作完成时恢复，或是否应计划该恢复。 默认计划程序通常允许在完成等待操作的线程上延续任务。
+ 如果同步上下文（<xref:System.Threading.SynchronizationContext> 对象）与暂停时正在执行异步方法的线程（例如，<xref:System.Threading.SynchronizationContext.Current%2A?displayProperty=nameWithType> 属性不是 `null`）相关联，异步方法使用上下文的 <xref:System.Threading.SynchronizationContext.Post%2A> 方法，恢复相同的同步上下文。 否则，它依赖暂停时的当前任务计划程序（<xref:System.Threading.Tasks.TaskScheduler> 对象）。 通常情况下，这是定目标到线程池的默认任务计划程序 (<xref:System.Threading.Tasks.TaskScheduler.Default%2A?displayProperty=nameWithType>)。 此任务计划程序确定等待的异步操作是否应在该操作完成时恢复，或是否应计划该恢复。 默认计划程序通常允许在完成等待操作的线程上延续任务。
 
  调用异步方法时，将同步执行函数的正文，直到遇见尚未完成的可等待实例上的第一个 await 表达式，此时调用返回到调用方。 如果异步方法不返回 `void`，将会返回 <xref:System.Threading.Tasks.Task> 或 <xref:System.Threading.Tasks.Task%601> 对象，以表示正在进行的计算。 在非 void 异步方法中，如果遇到 return 语句或到达方法正文末尾，任务就以 <xref:System.Threading.Tasks.TaskStatus.RanToCompletion> 最终状态完成。 如果未经处理的异常导致无法控制异步方法正文，任务就以 <xref:System.Threading.Tasks.TaskStatus.Faulted> 状态结束。 如果异常为 <xref:System.OperationCanceledException>，任务改为以 <xref:System.Threading.Tasks.TaskStatus.Canceled> 状态结束。 通过此方式，最终将发布结果或异常。
 
@@ -64,7 +65,7 @@ await someTask.ConfigureAwait(continueOnCapturedContext:false);
 ## <a name="canceling-an-asynchronous-operation"></a>取消异步操作
  从 .NET Framework 4 开始，支持取消操作的 TAP 方法提供至少一个接受取消令牌（<xref:System.Threading.CancellationToken> 对象）的重载。
 
- 可通过取消令牌源（<xref:System.Threading.CancellationTokenSource> 对象）创建取消令牌。  源的 <xref:System.Threading.CancellationTokenSource.Token%2A> 属性返回取消令牌，它在源的 <xref:System.Threading.CancellationTokenSource.Cancel%2A> 方法获得调用收到信号。  例如，若要下载一个网页，并且希望能够取消此操作，请创建 <xref:System.Threading.CancellationTokenSource> 对象，将它的令牌传递给 TAP 方法，再在准备好取消此操作时，调用源的 <xref:System.Threading.CancellationTokenSource.Cancel%2A> 方法：
+ 可通过取消令牌源（<xref:System.Threading.CancellationTokenSource> 对象）创建取消令牌。  源的 <xref:System.Threading.CancellationTokenSource.Token%2A> 属性返回取消令牌，它在源的 <xref:System.Threading.CancellationTokenSource.Cancel%2A> 方法获得调用时收到信号。  例如，若要下载一个网页，并且希望能够取消此操作，请创建 <xref:System.Threading.CancellationTokenSource> 对象，将它的令牌传递给 TAP 方法，再在准备好取消此操作时，调用源的 <xref:System.Threading.CancellationTokenSource.Cancel%2A> 方法：
 
 ```csharp
 var cts = new CancellationTokenSource();
@@ -226,7 +227,7 @@ string [] pages = await Task.WhenAll(
  可以使用上一个返回 void 方案中所讨论的异常处理技术：
 
 ```csharp
-Task [] asyncOps =
+Task<string> [] asyncOps =
     (from url in urls select DownloadStringAsync(url)).ToArray();
 try
 {
@@ -340,7 +341,7 @@ if (await recommendation) BuyStock(symbol);
 ```
 
 #### <a name="interleaving"></a>交错
- 假设你要从 Web 下载图像，并且处理每个图像（例如，将图像添加到 UI 控件）。  必须在 UI 线程上按顺序对其进行处理，但你希望尽可能同时下载图像。 此外，你不想直到所有图像都下载完成才将图像添加到 UI — 你希望图像下载完成后就进行添加：
+ 假设你要从 Web 下载图像，并且处理每个图像（例如，将图像添加到 UI 控件）。 可以在 UI 线程上按顺序处理图像，但建议尽可能同时下载图像。 此外，建议不要直到所有图像都下载完成才将图像添加到 UI。 建议在完成下载时添加它们。
 
 ```csharp
 List<Task<Bitmap>> imageTasks =
@@ -414,7 +415,7 @@ while(imageTasks.Count > 0)
 ```
 
 #### <a name="early-bailout"></a>早期释放
- 假设正在异步等待某个操作完成的同时，对用户的取消请求的进行响应（例如，用户单击取消按钮）。 以下代码阐释了此方案：
+ 假设正在异步等待某个操作完成的同时，对用户的取消请求（例如，用户单击取消按钮）进行响应。 以下代码阐释了此方案：
 
 ```csharp
 private CancellationTokenSource m_cts;
@@ -452,7 +453,7 @@ private static async Task UntilCompletionOrCancellation(
 }
 ```
 
- 一旦决定退出，此实现将重新启用用户界面，但不会取消基础异步操作。  另一种选择是决定退出时，取消挂起的操作，但在操作实际完成之前不重新建立用户界面，可能会由于取消请求而提前结束：
+ 一旦决定退出，此实现将重新启用用户界面，但不会取消基础异步操作。 另一种选择是决定退出时，取消挂起的操作，但在操作完成之前不重新建立用户界面，可能会由于取消请求而提前结束：
 
 ```csharp
 private CancellationTokenSource m_cts;
@@ -695,10 +696,10 @@ public static Task<T[]> WhenAllOrFirstException<T>(IEnumerable<Task<T>> tasks)
 ```
 
 ## <a name="building-task-based-data-structures"></a>构建基于任务的数据结构
- 除了能够生成基于任务的自定义组合器外，<xref:System.Threading.Tasks.Task> 和表示异步操作结果和联接所必需同步操作结果的 <xref:System.Threading.Tasks.Task%601> 中有数据结构，这令其成为功能非常强大的类型，可用于生成在异步方案中使用的自定义数据结构。
+ 除了能够生成基于任务的自定义组合器，在 <xref:System.Threading.Tasks.Task> 和 <xref:System.Threading.Tasks.Task%601>（表示异步操作结果和联接所必需的同步操作结果）中包含数据结构，还可以使其成为功能非常强大的类型，基于该类型可生成在异步方案中使用的自定义数据结构。
 
 ### <a name="asynccache"></a>AsyncCache
- 任务的重要方面之一是，它可能会分发到多个使用者，所有使用者都可以等待任务、向任务注册延续、获取任务结果或异常（如果是 <xref:System.Threading.Tasks.Task%601> 的话）等。  这样一来，<xref:System.Threading.Tasks.Task> 和 <xref:System.Threading.Tasks.Task%601> 就非常适用于异步缓存基础结构。  下面的示例展示了在 <xref:System.Threading.Tasks.Task%601> 基础之上生成的功能非常强大的小型异步缓存：
+ 任务的重要方面之一是，它可能会分发到多个使用者，所有使用者都可以等待任务、向任务注册延续、获取任务结果或异常（如果是 <xref:System.Threading.Tasks.Task%601> 的话）等。  这样一来，<xref:System.Threading.Tasks.Task> 和 <xref:System.Threading.Tasks.Task%601> 就非常适用于异步缓存基础结构。  下面的示例演示了基于 <xref:System.Threading.Tasks.Task%601> 生成的功能非常强大的小型异步缓存：
 
 ```csharp
 public class AsyncCache<TKey, TValue>
@@ -751,7 +752,7 @@ private async void btnDownload_Click(object sender, RoutedEventArgs e)
 ### <a name="asyncproducerconsumercollection"></a>AsyncProducerConsumerCollection
  你还可以使用任务来构建协调异步活动的数据结构。  请考虑经典的并行设计模式之一：制造者/使用者。  在此模式下，制造者生成数据，使用者使用数据，制造者和使用者可能会并行运行。 例如，使用者处理之前由制造者生成的第 1 项，而制造者现在正在制造第 2 项。  对于制造者/使用者模式，总是需要某种数据结构来存储制造者创建的工作，以便使用者可以收到新数据的通知并及时发现新数据。
 
- 以下是基于任务构建的简单数据结构，可以将异步方法用作制造者和使用者：
+ 以下是基于任务构建的简单数据结构，可以将异步方法用作生成方和使用方：
 
 ```csharp
 public class AsyncProducerConsumerCollection<T>

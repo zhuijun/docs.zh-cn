@@ -1,18 +1,18 @@
 ---
 title: 数据绑定概述
 description: 了解可在适用于 .NET Core 的 Windows Presentation Foundation 中添加到项目的不同数据源。 数据源可以绑定到 XAML 元素以创建动态应用。
-author: thraka
+author: adegeo
 ms.date: 09/19/2019
 ms.author: adegeo
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 7f17ff094a35c04ba880c87c6966d7d249817516
-ms.sourcegitcommit: b75a45f0cfe012b71b45dd9bf723adf32369d40c
+ms.openlocfilehash: 829c93e97990b87e6e568614236de9708ef080d9
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "81433252"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325748"
 ---
 # <a name="data-binding-overview-in-wpf"></a>WPF 中的数据绑定概述
 
@@ -40,19 +40,19 @@ WPF 中的数据绑定功能与传统模型相比具有几个优点，包括本�
 
 - `ListBox` 中显示的数据（*AuctionItem* 对象）已进行模板化，以便显示每个项的说明和当前价格。 通过使用 <xref:System.Windows.DataTemplate> 来创建模板。 此外，每个项的外观取决于要显示的 *AuctionItem* 的 *SpecialFeatures* 值。 如果 *AuctionItem* 的 *SpecialFeatures* 值为 *Color*，则该项具有蓝色边框。 如果值为 *Highlight*，则该项具有橙色边框和一个星号。 [数据模板化](#data-templating)部分提供了数据模板化的相关信息。
 
-- 用户可以使用提供的 `CheckBoxes` 对数据进行分组、筛选或排序。 在上图中，选中了“按类别分组”和“按类别和日期排序”`CheckBoxes`  。 你可能已注意到，数据按产品类别分组，类别名称按字母顺序排序。 这些项还按每个类别中的开始日期排序，但难以从图中注意到这一点。 排序使用*集合视图*实现。 [绑定到集合](#binding-to-collections)部分讨论了集合视图。
+- 用户可以使用提供的 `CheckBoxes` 对数据进行分组、筛选或排序。 在上图中，选中了“按类别分组”和“按类别和日期排序”`CheckBoxes` 。 你可能已注意到，数据按产品类别分组，类别名称按字母顺序排序。 这些项还按每个类别中的开始日期排序，但难以从图中注意到这一点。 排序使用*集合视图*实现。 [绑定到集合](#binding-to-collections)部分讨论了集合视图。
 
 - 当用户选择某个项时，<xref:System.Windows.Controls.ContentControl> 显示所选项的详细信息。 此体验称为*主-从方案*。 [主-从方案](#master-detail-binding-scenario)部分提供有关此绑定类型的信息。
 
 - *StartDate* 属性的类型为 <xref:System.DateTime>，该类型返回一个包括精确到毫秒的时间的日期。 在此应用中，使用了一个自定义转换器，以便显示较短的日期字符串。 [数据转换](#data-conversion)部分提供有关转换器的信息。
 
-当用户选择“添加产品”按钮时，会出现以下窗体  。
+当用户选择“添加产品”按钮时，会出现以下窗体。
 
 ![“添加产品清单”页](./media/data-binding-overview/demo-addproductlisting.png "DataBinding_Demo_AddProductListing")
 
 用户可以编辑窗体中的字段，使用简略或详细预览窗格预览产品清单，然后选择 `Submit` 以添加新的产品清单。 任何现有的分组、筛选和排序设置都将应用于新条目。 在这种特殊情况下，上图中输入的项会作为 *Computer* 类别中的第二项显示。
 
-“开始日期”<xref:System.Windows.Controls.TextBox> 中提供的验证逻辑未在此图中显示  。 如果用户输入一个无效日期（格式无效或日期已过），则会通过 <xref:System.Windows.Controls.ToolTip> 和 <xref:System.Windows.Controls.TextBox> 旁边显示的红色感叹号来通知用户。 [数据验证](#data-validation)一节讨论了如何创建验证逻辑。
+“开始日期”<xref:System.Windows.Controls.TextBox> 中提供的验证逻辑未在此图中显示。 如果用户输入一个无效日期（格式无效或日期已过），则会通过 <xref:System.Windows.Controls.ToolTip> 和 <xref:System.Windows.Controls.TextBox> 旁边显示的红色感叹号来通知用户。 [数据验证](#data-validation)一节讨论了如何创建验证逻辑。
 
 在详细介绍数据绑定的上述不同功能之前，我们会先讨论对理解 WPF 数据绑定非常重要的基本概念。
 
@@ -190,7 +190,7 @@ WPF 中的数据绑定功能与传统模型相比具有几个优点，包括本�
 
 在[创建绑定](#creating-a-binding)部分中，该按钮为红色，因为其 <xref:System.Windows.Controls.Control.Background%2A> 属性绑定到值为“Red”的字符串属性。 此字符串值有效是因为 <xref:System.Windows.Media.Brush> 类型中存在类型转换器，可用于将字符串值转换为 <xref:System.Windows.Media.Brush>。
 
-将此信息添加[创建绑定](#creating-a-binding)部分的关系图中，使其如下所示。
+将此信息添加到[创建绑定](#creating-a-binding)部分的关系图中，使其如下所示。
 
 ![显示数据绑定 Default 属性的图。](./media/data-binding-overview/data-binding-button-default-conversion.png)
 

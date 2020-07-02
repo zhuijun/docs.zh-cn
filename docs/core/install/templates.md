@@ -1,19 +1,19 @@
 ---
 title: 安装和管理 SDK 模板 - .NET Core
 description: 了解如何在 Windows、Linux 和 macOS 上安装 .NET Core 模板。
-author: thraka
+author: adegeo
 ms.author: adegeo
 ms.date: 04/24/2020
 zone_pivot_groups: operating-systems-set-one
 no-loc:
 - dotnet new
 - dotnet nuget add source
-ms.openlocfilehash: 0a3c8655d55bf63de1e91337ce3a2ac399b07d0f
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 09acae1409eb0492be10bd3a61b14da5be57c6c7
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200599"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85324496"
 ---
 # <a name="manage-net-project-and-item-templates"></a>管理 .NET 项目和项模板
 
@@ -27,7 +27,7 @@ ms.locfileid: "82200599"
 
 ### <a name="nuget-hosted-package"></a>NuGet 托管包
 
-.NET CLI 模板上传到 [NuGet](https://www.nuget.org/) 以便进行广泛分发。 还可以从专用源安装模板。 如[本地 NuGet 包](#local-nuget-package)部分所述，可以分发和手动安装 nupkg 模板文件，而不是将模板上传到 NuGet 源  。
+.NET CLI 模板上传到 [NuGet](https://www.nuget.org/) 以便进行广泛分发。 还可以从专用源安装模板。 如[本地 NuGet 包](#local-nuget-package)部分所述，可以分发和手动安装 nupkg 模板文件，而不是将模板上传到 NuGet 源。
 
 有关配置 NuGet 源的详细信息，请参阅 [dotnet nuget add source](../tools/dotnet-nuget-add-source.md)。
 
@@ -45,7 +45,7 @@ dotnet new -i Microsoft.DotNet.Web.Spa.ProjectTemplates::2.2.6
 
 ### <a name="local-nuget-package"></a>本地 NuGet 包
 
-创建模板包后，将生成一个 nupkg 文件  。 如果有包含模板的 nupkg 文件，则可以使用 `dotnet new -i {path-to-package}` 命令进行安装  ：
+创建模板包后，将生成一个 nupkg 文件。 如果有包含模板的 nupkg 文件，则可以使用 `dotnet new -i {path-to-package}` 命令进行安装：
 
 ::: zone pivot="os-windows"
 
@@ -65,7 +65,7 @@ dotnet new -i ~/code/nuget-packages/Some.Templates.1.0.0.nupkg
 
 ### <a name="folder"></a>文件夹
 
-从 nupkg 文件安装模板的一个替代方法是使用 `dotnet new -i {folder-path}` 命令直接从文件夹安装模板  。 指定的文件夹将被视为找到的任何模板的模板包标识符。 安装指定文件夹的层次结构中找到的任何模板。
+从 nupkg 文件安装模板的一个替代方法是使用 `dotnet new -i {folder-path}` 命令直接从文件夹安装模板。 指定的文件夹将被视为找到的任何模板的模板包标识符。 安装指定文件夹的层次结构中找到的任何模板。
 
 ::: zone pivot="os-windows"
 
@@ -131,7 +131,7 @@ Currently installed items:
 
 ### <a name="nuget-package"></a>NuGet 程序包
 
-安装 NuGet 模板包后，无论是从 NuGet 源还是从 nupkg 文件安装的，都可以通过引用 NuGet 包标识符将其卸载  。
+安装 NuGet 模板包后，无论是从 NuGet 源还是从 nupkg 文件安装的，都可以通过引用 NuGet 包标识符将其卸载。
 
 若要卸载模板包，请使用 `dotnet new -u {package-id}` 命令：
 

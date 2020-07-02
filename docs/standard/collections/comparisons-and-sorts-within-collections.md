@@ -1,5 +1,6 @@
 ---
 title: 集合内的比较和排序
+description: 使用 .NET 中的 System.Collections 类进行比较和排序，这有助于查找要删除的元素或返回键值对的值。
 ms.date: 04/30/2020
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET Framework], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-ms.openlocfilehash: cb9dd3e8af570251b8bcd2e450e686ad69ab78c4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: aa001e8469947a532d77059bd52024c6b47b508e
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287973"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769192"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>集合内的比较和排序
 

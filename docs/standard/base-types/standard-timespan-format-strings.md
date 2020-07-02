@@ -1,5 +1,6 @@
 ---
 title: 标准 TimeSpan 格式字符串
+description: 查看标准 TimeSpan 格式字符串，此类字符串使用单个格式说明符来定义 .NET 中 TimeSpan 值的文本表示形式。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET Framework], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-ms.openlocfilehash: 2ed9ca7337e40b5520ddbfc92925c5bedb45f701
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 31e4158d42d794e830d9acfe666729846c43a1ee
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289273"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768113"
 ---
 # <a name="standard-timespan-format-strings"></a>标准 TimeSpan 格式字符串
 

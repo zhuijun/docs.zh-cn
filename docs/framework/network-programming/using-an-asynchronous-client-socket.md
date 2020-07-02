@@ -1,5 +1,6 @@
 ---
 title: 使用异步客户端套接字
+description: 此示例演示异步客户端套接字。 借助 .NET Framework 异步编程，应用程序可以在处理连接时继续运行。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - Internet, sockets
 - client sockets
 ms.assetid: fd85bc88-e06c-467d-a30d-9fd7cffcfca1
-ms.openlocfilehash: 748745ca6799005dccdbfcbcc37a8c2a38f2a88e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9cf46e9519bcecf4d7a20ff99b86fa5f66af2087
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180653"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502036"
 ---
 # <a name="using-an-asynchronous-client-socket"></a>使用异步客户端套接字
 异步客户端套接字在等待网络操作完成时不会挂起应用程序。 相反，它使用标准 .NET Framework 异步编程模型在一个线程上处理网络连接，而应用程序继续在原始线程上运行。 异步套接字适用于大量使用网络或不宜等待网络操作完成（才可继续运作）的应用程序。  
@@ -33,7 +34,7 @@ ms.locfileid: "79180653"
   
  异步套接字使用系统线程池中的多个线程处理网络连接。 一个线程负责发起数据的发送或接收；其他线程完成与网络设备的连接以及发送或接收数据。 在以下示例中，<xref:System.Threading.ManualResetEvent?displayProperty=nameWithType> 类的实例用于挂起主线程的执行并在执行可以继续时发出信号。  
   
- 在下面的示例中，为了将异步套接字连接到网络设备，`Connect` 方法会初始化 Socket，然后调用 <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=nameWithType> 方法（传递表示网络设备的远程终结点）、连接回调方法和状态对象（即客户端 Socket，用于在异步调用之间传递状态信息）。 该示例实现 `Connect` 方法，将指定的 Socket 连接到指定的终结点。 它假定一个名为 `connectDone` 的全局 ManualResetEvent。  
+ 在下面的示例中，为了将异步套接字连接到网络设备，`Connect` 方法会初始化 Socket，然后调用 <xref:System.Net.Sockets.Socket.Connect%2A?displayProperty=nameWithType> 方法（传递表示网络设备的远程终结点）、连接回调方法和状态对象（即客户端 Socket，用于在异步调用之间传递状态信息） 。 该示例实现 `Connect` 方法，将指定的 Socket 连接到指定的终结点。 它假定一个名为 `connectDone` 的全局 ManualResetEvent。  
   
 ```vb  
 Public Shared Sub Connect(remoteEP As EndPoint, client As Socket)  

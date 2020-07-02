@@ -1,17 +1,18 @@
 ---
 title: 垃圾回收和性能
+description: 阅读与垃圾回收和内存使用情况相关的问题。 了解如何最大程度地降低垃圾回收对应用程序的影响。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, troubleshooting
 - garbage collection, performance
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
-ms.openlocfilehash: 1d9c72a64d172dcadf1bff1b1edf3050ca5f7d05
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: dee5a4b54806bdadc18d759c5df7016da060fd75
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287618"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662844"
 ---
 # <a name="garbage-collection-and-performance"></a>垃圾回收和性能
 

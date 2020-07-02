@@ -1,5 +1,6 @@
 ---
 title: 正则表达式对象模型
+description: 查看 .NET 中的正则表达式对象模型。 使用与匹配、分组和捕获相关的正则表达式引擎、对象和集合。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -35,12 +36,12 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, classes
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-ms.openlocfilehash: ad7957fd555c1de8fe47c092d3eb399a803fb1fb
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 43672b85ecb64a15179881ec23c7fadd13d64868
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290897"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84768048"
 ---
 # <a name="the-regular-expression-object-model"></a>正则表达式对象模型
 <a name="introduction"></a> 本主题介绍了处理 .NET 正则表达式时使用的对象模型。 它包含下列部分：  
@@ -89,7 +90,7 @@ ms.locfileid: "84290897"
   
  正则表达式模式 `^\d{3}-\d{2}-\d{4}$` 的含义如下表所示。  
   
-|模式|说明|  
+|模式|描述|  
 |-------------|-----------------|  
 |`^`|匹配输入字符串的开头部分。|  
 |`\d{3}`|匹配三个十进制数字。|  
@@ -107,7 +108,7 @@ ms.locfileid: "84290897"
   
  正则表达式模式 `\b(\w+)\W+(\1)\b` 的含义如下表所示。  
   
-|模式|说明|  
+|模式|描述|  
 |-------------|-----------------|  
 |`\b`|在单词边界处开始匹配。|  
 |`(\w+)`|匹配一个或多个单词字符。 这是第一个捕获组。|  
@@ -129,7 +130,7 @@ ms.locfileid: "84290897"
   
  正则表达式模式 `\b\d+\.\d{2}\b` 的含义如下表所示。  
   
-|模式|说明|  
+|模式|描述|  
 |-------------|-----------------|  
 |`\b`|在单词边界处开始匹配。|  
 |`\d+`|匹配一个或多个十进制数字。|  
@@ -152,7 +153,7 @@ ms.locfileid: "84290897"
   
  正则表达式模式 `\b\d{1,2}\.\s` 的含义如下表所示。  
   
-|模式|说明|  
+|模式|描述|  
 |-------------|-----------------|  
 |`\b`|在单词边界处开始匹配。|  
 |`\d{1,2}`|匹配一个或两个十进制数字。|  
@@ -215,7 +216,7 @@ ms.locfileid: "84290897"
   
  正则表达式模式 `\b\d+(,\d{3})*\.\d{2}\b` 的定义如下表所示。  
   
-|模式|说明|  
+|模式|描述|  
 |-------------|-----------------|  
 |`\b`|在单词边界处开始匹配。|  
 |`\d+`|匹配一个或多个十进制数字。|  
@@ -246,7 +247,7 @@ ms.locfileid: "84290897"
   
  正则表达式模式 `\b(\w+)\s(\d{1,2}),\s(\d{4})\b` 的定义如下表所示。  
   
-|模式|说明|  
+|模式|描述|  
 |-------------|-----------------|  
 |`\b`|在单词边界处开始匹配。|  
 |`(\w+)`|匹配一个或多个单词字符。 这是第一个捕获组。|  
@@ -275,14 +276,14 @@ ms.locfileid: "84290897"
   
  正则表达式模式 `^(?<name>\w+):(?<value>\w+)` 的定义如下表所示。  
   
-|模式|说明|  
+|模式|描述|  
 |-------------|-----------------|  
 |`^`|从输入字符串的开头部分开始匹配。|  
 |`(?<name>\w+)`|匹配一个或多个单词字符。 此捕获组的名称为 `name`。|  
 |`:`|匹配冒号。|  
 |`(?<value>\w+)`|匹配一个或多个单词字符。 此捕获组的名称为 `value`。|  
   
- <xref:System.Text.RegularExpressions.Group> 类的属性提供有关捕获的组的信息：`Group.Value` 属性包含捕获的子字符串，`Group.Index` 属性指示输入文本中捕获的组的起始位置，`Group.Length` 属性包含捕获的文本的长度，`Group.Success` 属性指示子字符串是否与捕获组所定义的模式匹配。  
+ <xref:System.Text.RegularExpressions.Group> 类的属性提供有关捕获组的信息：`Group.Value` 属性包含捕获子字符串，`Group.Index` 属性在输入文本中指示捕获组的起始位置，`Group.Length` 属性包含捕获文本的长度，`Group.Success` 属性指示子字符串是否与捕获组所定义的模式匹配。  
   
  通过对组应用量符（有关详细信息，请参阅[量符](quantifiers-in-regular-expressions.md)），可以每捕获组修改一个捕获的关系，具体方式分为以下两种：  
   
@@ -299,7 +300,7 @@ ms.locfileid: "84290897"
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/nocapture1.cs#11)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/nocapture1.vb#11)]  
   
-- 限定符可以匹配由捕获组定义的模式的多个匹配项。 在此情况下，`Value` 对象的 `Length` 和 <xref:System.Text.RegularExpressions.Group> 属性仅包含有关最后捕获的子字符串的信息。 例如，下面的正则表达式匹配以句点结束的单个句子。 此表达式使用两个分组构造：第一个分组构造捕获各个单词以及空白字符；第二个分组构造捕获各个单词。 如示例中的输出所示，虽然正则表达式成功捕获整个句子，但第二个捕获组仅捕获了最后一个单词。  
+- 限定符可以匹配由捕获组定义的模式的多个匹配项。 在此情况下，`Value` 对象的 `Length` 和 <xref:System.Text.RegularExpressions.Group> 属性仅包含有关最后捕获的子字符串的信息。 例如，下面的正则表达式匹配以句点结束的单个句子。 此表达式使用两个分组构造：第一个分组构造捕获单个单词和空白字符；第二个分组构造捕获单个单词。 如示例中的输出所示，虽然正则表达式成功捕获整个句子，但第二个捕获组仅捕获了最后一个单词。  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/lastcapture1.cs#12)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/lastcapture1.vb#12)]  
@@ -339,7 +340,7 @@ ms.locfileid: "84290897"
   
  该正则表达式的定义如下表所示。  
   
-|模式|说明|  
+|模式|描述|  
 |-------------|-----------------|  
 |`\w+`|匹配一个或多个单词字符。|  
 |`(\s\w+)*`|匹配零个或多个以下模式：一个空白字符后跟一个或多个单词字符。 此模式匹配包含多个单词的城市名称。 这是第三个捕获组。|  
@@ -349,7 +350,7 @@ ms.locfileid: "84290897"
 |`;`|匹配分号。|  
 |`((\w+(\s\w+)*),(\d+);)+`|匹配一个或多个以下模式：一个单词后跟任何其他单词，后跟一个逗号、一个或多个数字和一个分号。 这是第一个捕获组。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Text.RegularExpressions>
 - [.NET 正则表达式](regular-expressions.md)

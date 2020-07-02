@@ -2,12 +2,12 @@
 title: 创建自定义特性 (C#)
 ms.date: 07/20/2015
 ms.assetid: 500e1977-c6de-462d-abce-78a0eb1eda22
-ms.openlocfilehash: ec959723c339a13a40fd62388421ceacb736dfca
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 3a70b738b376e52482e63f2eb9cc4d7bb62a9b35
+ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389560"
+ms.lasthandoff: 06/22/2020
+ms.locfileid: "85141613"
 ---
 # <a name="creating-custom-attributes-c"></a>创建自定义特性 (C#)
 可通过定义特性类创建自己的自定义特性，特性类是直接或间接派生自 <xref:System.Attribute> 的类，可快速轻松地识别元数据中的特性定义。 假设希望使用编写类型的程序员的姓名来标记该类型。 可能需要定义一个自定义 `Author` 特性类：  
@@ -16,12 +16,12 @@ ms.locfileid: "81389560"
 [System.AttributeUsage(System.AttributeTargets.Class |  
                        System.AttributeTargets.Struct)  
 ]  
-public class Author : System.Attribute  
+public class AuthorAttribute : System.Attribute  
 {  
     private string name;  
     public double version;  
   
-    public Author(string name)  
+    public AuthorAttribute(string name)  
     {  
         this.name = name;  
         version = 1.0;  
@@ -29,7 +29,7 @@ public class Author : System.Attribute
 }  
 ```  
   
- 类名是该特性的名称，即 `Author`。 由于该类派生自 `System.Attribute`，因此它是一个自定义特性类。 构造函数的参数是自定义特性的位置参数。 在此示例中，`name` 是位置参数。 所有公共读写字段或属性都是命名参数。 在本例中，`version` 是唯一的命名参数。 请注意，使用 `AttributeUsage` 特性可使 `Author` 特性仅对类和 `struct` 声明有效。  
+ 类名 `AuthorAttribute` 是该特性的名称，即 `Author` 加上 `Attribute` 后缀。 由于该类派生自 `System.Attribute`，因此它是一个自定义特性类。 构造函数的参数是自定义特性的位置参数。 在此示例中，`name` 是位置参数。 所有公共读写字段或属性都是命名参数。 在本例中，`version` 是唯一的命名参数。 请注意，使用 `AttributeUsage` 特性可使 `Author` 特性仅对类和 `struct` 声明有效。  
   
  可按如下方式使用这一新特性：  
   
@@ -48,7 +48,7 @@ class SampleClass
                        System.AttributeTargets.Struct,  
                        AllowMultiple = true)  // multiuse attribute  
 ]  
-public class Author : System.Attribute  
+public class AuthorAttribute : System.Attribute  
 ```  
   
  在下面的代码示例中，某个类应用了同一类型的多个特性。  

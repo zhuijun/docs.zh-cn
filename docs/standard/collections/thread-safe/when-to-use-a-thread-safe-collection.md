@@ -1,34 +1,36 @@
 ---
 title: 何时使用线程安全集合
+description: 了解何时在 .NET 中使用线程安全集合。 有五种专门为支持多线程添加和删除操作而设计的集合类型。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, when to upgrade
 ms.assetid: a9babe97-e457-4ff3-b528-a1bc940d5320
-ms.openlocfilehash: e2c5d612abb824c93c611514a836c811e6e65efe
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 499af6d7b8de1decbcffefe0a3b1420cc548488a
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288870"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85326036"
 ---
 # <a name="when-to-use-a-thread-safe-collection"></a>何时使用线程安全集合
-.NET Framework 4 新引入了五个专为支持多线程添加和删除操作而设计的集合类型。 为了实现线程安全性，这些新类型使用多种高效的锁定和免锁定同步机制。 同步会增加操作的开销。 开销数取决于所用的同步类型、执行的操作类型和其他因素，例如尝试并行访问该集合的线程数。  
+
+.NET Framework 4 引入了五种专为支持多线程添加和删除操作而设计的集合类型。 为了实现线程安全，这些类型使用多种高效的锁定和免锁定同步机制。 同步会增加操作的开销。 开销数取决于所用的同步类型、执行的操作类型和其他因素，例如尝试并行访问该集合的线程数。  
   
  在某些方案中，同步开销可忽略不计，使多线程类型的执行速度和缩放水平远远超过其受外部锁保护的非线程安全同等类型。 在其他方案中，开销可能会导致线程安全类型的执行速度和缩放水平与该类型外部锁定的非线程安全版本相同，甚至更差。  
   
  以下部分提供有关何时使用线程安全集合与其非线程安全同等集合（其读写操作受用户提供的锁定保护）的通用指南。 由于性能可能因多种因素而异，所以本指南并不针对某特定情况且不一定对所有情况都有效。 如果性能非常重要，那么确定要使用的集合类型的最佳方式是基于典型计算机配置和负载衡量性能。 本文档使用以下术语：  
   
- *纯生成方-使用者方案*  
+ 纯生成方-使用方方案\
  任何给定线程要么添加元素，要么删除元素，两种操作不能同时执行。  
   
- *混合生成方-使用者方案*  
+ 混合生成方-使用方方案\
  任何给定线程可同时添加和删除元素。  
   
- *加速*  
+ 加速\
  相对于同一方案中其他类型更快速的算法性能。  
   
- *可缩放性*  
+ *可伸缩性*\
  与计算机内核数相称的性能提升。 一种可伸缩的算法，相比两个内核，八个内核上的执行速度更快。  
   
 ## <a name="concurrentqueuet-vs-queuet"></a>ConcurrentQueue (T) 与 Queue(T)  

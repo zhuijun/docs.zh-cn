@@ -1,5 +1,6 @@
 ---
 title: Semaphore 和 SemaphoreSlim
+description: 了解 Semaphore 和 SemaphoreSlim。 Semaphore 类是环绕 Win32 信号灯对象的精简包装器。 SemaphoreSlim 类是快速轻量级信号灯。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - SemaphoreSlim class, about SemaphoreSlim class
 - threading [.NET Framework], Semaphore class
 ms.assetid: 7722a333-b974-47a2-a7c0-f09097fb644e
-ms.openlocfilehash: 9a18a6517548bb402e1e3b9ac02e95aae32a8f4a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 21f0d7e3fb446a7b750c45cfe8ef3f087a77888a
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291131"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84600446"
 ---
 # <a name="semaphore-and-semaphoreslim"></a>Semaphore 和 SemaphoreSlim
 <xref:System.Threading.Semaphore?displayProperty=nameWithType> 类表示一个命名（系统范围内）或本地信号量。 它是环绕 Win32 信号量对象的精简包装器。 Win32 信号量是计数信号量，该可用于控制对资源池的访问。  
@@ -44,7 +45,7 @@ ms.locfileid: "84291131"
   
  使用访问控制安全性来保护表示命名信号量的 <xref:System.Threading.Semaphore> 对象，最好通过使用指定 <xref:System.Security.AccessControl.SemaphoreSecurity?displayProperty=nameWithType> 对象的构造函数。 你还可以通过使用 <xref:System.Threading.Semaphore.SetAccessControl%2A?displayProperty=nameWithType> 方法应用访问控制安全，但这会使窗口在创建信号量的时间以及信号量受到保护的时间之间留下漏洞。 使用访问控制安全机制来保护信号量有助于阻止恶意攻击，但不能解决的意外的名称冲突问题。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Threading.Semaphore>
 - <xref:System.Threading.SemaphoreSlim>

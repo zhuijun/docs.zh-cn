@@ -1,6 +1,6 @@
 ---
 title: 常规类型系统
-description: 了解 .NET 中的类型系统。
+description: 了解 .NET 中的类型系统。 了解 .NET 中的类型（值类型或引用类型）、类型定义、类型成员和类型成员特征。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,12 +16,12 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: a1aa244d470402823fc22e12cb5e32bbbdcd87fe
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: db0ecd59f122228d33b74be6dec51371413d68b3
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289338"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84767827"
 ---
 # <a name="common-type-system"></a>通用类型系统
 
@@ -249,7 +249,7 @@ ms.locfileid: "84289338"
  [!code-csharp[Conceptual.Types.Members.Properties#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.types.members.properties/cs/example.cs#1)]
  [!code-vb[Conceptual.Types.Members.Properties#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.types.members.properties/vb/example.vb#1)]  
   
- 除了包含属性本身之外，包含可读属性的类型的 Microsoft 中间语言 (MSIL) 还包含 `get_`propertyname  方法，包含可写属性的类型的 MSIL 还包含 `set_`propertyname  方法。  
+ 除了包含属性本身之外，包含可读属性的类型的 Microsoft 中间语言 (MSIL) 还包含 `get_`propertyname 方法，包含可写属性的类型的 MSIL 还包含 `set_`propertyname 方法。  
 
 ### <a name="methods"></a>方法
 

@@ -1,5 +1,6 @@
 ---
 title: 暂停和中断线程
+description: 了解如何在 .NET 中暂停和中断线程。 了解如何使用方法（如 Thread.Sleep 和 Thread.Interrupt）和异常（如 ThreadInterruptedException）。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - threading [.NET Framework], pausing
 - pausing threads
 ms.assetid: 9fce4859-a19d-4506-b082-7dd0792688ca
-ms.openlocfilehash: 369631603791d90c51244c1dc9907b9d8ec17364
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f7f414ec716bac5f1e840c5e8a0946024e059fb6
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291157"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769114"
 ---
 # <a name="pausing-and-interrupting-threads"></a>暂停和中断线程
 
@@ -47,7 +48,7 @@ ms.locfileid: "84291157"
   
 - <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> 将线程从可能处于的任何等待中唤醒，并导致 <xref:System.Threading.ThreadAbortException> 在线程中抛出。 有关详细信息，请参阅[销毁线程](destroying-threads.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Threading.Thread>
 - <xref:System.Threading.ThreadInterruptedException>

@@ -1,5 +1,6 @@
 ---
 title: 使用延续任务来链接任务
+description: 了解如何在 .NET 中使用延续任务来链接任务。 延续任务是由其他任务调用的异步任务。
 ms.date: 02/11/2019
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,17 +9,17 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: c6952b4b341a76e15d9699a06cd64ae7b6b4f047
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 90317f3db5bcf2371494e14a1ca1dd16d049e0bd
+ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84285607"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84662467"
 ---
 # <a name="chaining-tasks-by-using-continuation-tasks"></a>使用延续任务来链接任务
 在异步编程中，一个异步操作在完成时调用另一个操作并将数据传递到其中的情况较常见。 传统上，延续性是通过使用回调方法完成的。 在任务并行库中， *延续任务*提供了同样的功能。 延续任务（也简称为“延续”）是一个异步任务，由另一个任务（称为 *前面的任务*）在完成时调用。  
   
- 尽管延续相对容易使用，但也十分强大和灵活。 例如，你能够：  
+ 尽管延续相对容易使用，但也十分强大和灵活。 例如，你可以：  
   
 - 将数据从前面的任务传递到延续。  
   
@@ -53,7 +54,7 @@ ms.locfileid: "84285607"
 ## <a name="creating-a-continuation-for-multiple-antecedents"></a>为多个前面的任务创建延续  
  还可以创建一个将在一组任务中的任意或全部任务完成时运行的延续任务。 若要在所有前面的任务都完成后执行延续，则可以调用静态（在 Visual Basic 中为`Shared` ） <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> 方法或实例 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType> 方法。 若要在多个前面的任务中的任意任务完成时执行延续，则可以调用静态（在 Visual Basic 中为`Shared` ） <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> 方法或实例 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A?displayProperty=nameWithType> 方法。  
   
- 请注意，调用 <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> 重载不会阻止调用线程。  但是，通常调用全部（ <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> 和  <xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType> 除外）方法来检索返回的  <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 属性，这不会阻止调用线程。  
+ 请注意，调用 <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> 重载不会阻止调用线程。  不过，通常调用除 <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType> 外的其他所有方法来检索返回的 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 属性，这样不会阻止调用线程。  
   
  下面的示例调用 <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> 方法来创建反映其 10 个前面的任务的结果的延续任务。 每个前面的任务计算从 1 到 10 的索引值的平方值。 如果前面的任务成功完成（其 <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> 属性为 <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType>），则延续任务的 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 属性为由每个前面的任务返回的 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 值组成的数组。 该示例计算它们的总和，得出 1 到 10 之间的所有数字的平方和。  
   
@@ -117,11 +118,11 @@ ms.locfileid: "84285607"
  前面的任务的最终状态取决于任何附加的子任务的最终状态。 分离的子任务的状态不影响父级。 有关详细信息，请参阅[附加和分离的子任务](attached-and-detached-child-tasks.md)。  
   
 ## <a name="associating-state-with-continuations"></a>将状态与延续关联  
- 可以将任意状态与任务延续关联。 <xref:System.Threading.Tasks.Task.ContinueWith%2A> 方法提供重载版本，每个重载版本都带有一个表示延续状态的 <xref:System.Object> 值。 可以之后通过使用 <xref:System.Threading.Tasks.Task.AsyncState%2A?displayProperty=nameWithType> 属性访问此状态对象。 如果未提供值，则此状态对象为 `null`。  
+ 可以将任意状态与任务延续关联。 <xref:System.Threading.Tasks.Task.ContinueWith%2A> 方法提供重载版本，每个重载版本都带有一个表示延续状态的 <xref:System.Object> 值。 可以之后通过使用 <xref:System.Threading.Tasks.Task.AsyncState%2A?displayProperty=nameWithType> 属性访问此状态对象。 如果未提供值，则此状态对象为 `null` 。  
   
- 将使用[异步编程模型 (APM)](../asynchronous-programming-patterns/asynchronous-programming-model-apm.md) 的现有代码转换为使用 TPL 时，延续状态非常有用。 在 APM 中，通常在 **Begin**_Method_ 方法中提供对象状态，并在之后通过使用 <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType> 属性访问该状态。 通过使用 <xref:System.Threading.Tasks.Task.ContinueWith%2A> 方法，你可在将使用 APM 的代码转换为使用 TPL 时保留此状态。  
+ 将使用 [异步编程模型 (APM)](../asynchronous-programming-patterns/asynchronous-programming-model-apm.md) 的现有代码转换为使用 TPL 时，延续状态非常有用。 在 APM 中，通常在 **Begin**_Method_ 方法中提供对象状态，并在之后通过使用 <xref:System.IAsyncResult.AsyncState%2A?displayProperty=nameWithType> 属性访问该状态。 通过使用 <xref:System.Threading.Tasks.Task.ContinueWith%2A> 方法，你可在将使用 APM 的代码转换为使用 TPL 时保留此状态。  
   
- 在 Visual Studio 调试器中处理 <xref:System.Threading.Tasks.Task> 对象时，延续状态也非常有用。 例如，在“并行任务”  窗口中，“任务”  列显示每个任务的状态对象的字符串表示形式。 有关“并行任务”  窗口的详细信息，请参阅[使用并行任务窗口](/visualstudio/debugger/using-the-tasks-window)。  
+ 在 Visual Studio 调试器中处理 <xref:System.Threading.Tasks.Task> 对象时，延续状态也非常有用。 例如，在“并行任务”  窗口中，“任务”  列显示每个任务的状态对象的字符串表示形式。 有关“并行任务”窗口的详细信息，请参阅[使用并行任务窗口](/visualstudio/debugger/using-the-tasks-window)。  
   
  下面的示例演示如何使用延续状态。 它将创建一个延续任务链。 每个任务都将为 <xref:System.DateTime> 方法的 `state` 参数提供当前时间，即一个 <xref:System.Threading.Tasks.Task.ContinueWith%2A> 对象。 每个 <xref:System.DateTime> 对象都表示创建延续任务的时间。 每个任务都将生成第二个 <xref:System.DateTime> 对象作为其结果，该对象表示任务的完成时间。 所有任务都完成后，本示例将显示每个延续任务的创建时间和完成时间。  
   
@@ -150,6 +151,6 @@ ms.locfileid: "84285607"
   
 - 如果延续为附加子任务并且是通过使用 <xref:System.Threading.Tasks.TaskContinuationOptions.AttachedToParent?displayProperty=nameWithType> 选项创建的，则父级会将该延续的异常传播回调用线程，就像任何其他附加子级的情况一样。 有关详细信息，请参阅[附加和分离的子任务](attached-and-detached-child-tasks.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [任务并行库 (TPL)](task-parallel-library-tpl.md)

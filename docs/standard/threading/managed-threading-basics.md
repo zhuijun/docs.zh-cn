@@ -1,5 +1,6 @@
 ---
 title: 托管线程处理基本知识
+description: 点击链接查看其他关于托管线程的文章，其中包括异常、同步数据、前台线程和后台线程、本地存储等主题。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: b2944911-0e8f-427d-a8bb-077550618935
-ms.openlocfilehash: 4d2a96619fd1c48c79b5590efdb52c307d29710c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d4a4ceabf29bd0f6f537e59ba477f9da686b1ef5
+ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291001"
+ms.lasthandoff: 06/15/2020
+ms.locfileid: "84769088"
 ---
 # <a name="managed-threading-basics"></a>托管线程处理基本知识
 
@@ -44,7 +45,7 @@ ms.locfileid: "84291001"
  [线程本地存储：线程相关的静态字段和数据槽](thread-local-storage-thread-relative-static-fields-and-data-slots.md)  
  介绍了线程相对存储机制。  
   
-## <a name="reference"></a>引用
+## <a name="reference"></a>参考
 
  <xref:System.Threading.Thread>  
  提供**线程**类的参考文档，无论该类是来自托管代码还是在托管应用程序中创建的，它都表示一个托管线程。  

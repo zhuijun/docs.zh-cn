@@ -1,14 +1,14 @@
 ---
 title: 使用 ML.NET CLI 自动进行模型训练
 description: 了解如何使用 ML.NET CLI 工具通过命令行自动训练最佳模型。
-ms.date: 12/17/2019
+ms.date: 06/03/2020
 ms.custom: how-to, mlnet-tooling
-ms.openlocfilehash: 2e8bade898adfc3fc4af92c880b62c646343eb2f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: d7c6102c2257be1daa613fde0edabce83d04b414
+ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83212407"
+ms.lasthandoff: 06/09/2020
+ms.locfileid: "84589652"
 ---
 # <a name="automate-model-training-with-the-mlnet-cli"></a>使用 ML.NET CLI 自动进行模型训练
 
@@ -33,24 +33,24 @@ ML.NET CLI 是一个 [.NET Core 工具](../core/tools/global-tools.md)。 安装
 
 目前，ML.NET CLI 支持的 ML 任务包括：
 
-- `binary-classification`
-- `multiclass-classification`
-- `regression`
-- 未来：其他机器学习任务，例如 `recommendation`、`ranking`、`anomaly-detection`、`clustering`
+- 分类（二元分类和多类分类）
+- 回归
+- 建议
+- 未来：其他机器学习任务，例如图像分类、排名、异常检测、聚类分析
 
-用法示例：
+使用情况示例（分类方案）：
 
 ```console
-mlnet auto-train --task binary-classification --dataset "customer-feedback.tsv" --label-column-name Sentiment
+mlnet classification --dataset "yelp_labelled.txt" --label-col 1 --has-header false --train-time 10
 ```
 
-![图像](media/automate-training-with-cli/cli-model-generation.gif)
+![图像](media/automate-training-with-cli/mlnet-classification-powershell.gif)
 
 可以在 Windows PowerShell、macOS/Linux bash 或 Windows CMD 上以相同的方式运行它。   但是，表格自动填写（参数建议）不适用于 *Windows CMD*。
 
 ## <a name="output-assets-generated"></a>生成的输出资产
 
-CLI `auto-train` 命令在输出文件夹中生成以下资产：
+CLI 中的 ML 任务命令在输出文件夹中生成以下资产：
 
 - 可供用于运行预测的序列化模型 .zip 文件（“最佳模型”）。
 - C# 解决方案以及：
@@ -68,23 +68,15 @@ CLI `auto-train` 命令在输出文件夹中生成以下资产：
 
 这里总结了按 ML 任务分组的指标，以便于了解自动生成的“最佳模型”的质量。
 
-### <a name="metrics-for-binary-classification-models"></a>二元分类模型指标
+### <a name="metrics-for-classification-models"></a>分类模型的指标
 
-以下显示 CLI 找到的排名前五的模型的二元分类 ML 任务指标列表：
-
-![图像](media/automate-training-with-cli/cli-binary-classification-metrics.png)
-
-准确性是分类问题的常用指标，但准确性并不总是用于选择最佳模型的最佳指标，如下文参考中所述。 在某些情况下，需要使用其他指标评估模型的质量。
-
-若要探索和了解 CLI 输出的指标，请参阅[二元分类评估指标](resources/metrics.md#evaluation-metrics-for-binary-classification)。
-
-### <a name="metrics-for-multi-class-classification-models"></a>多类分类模型指标
-
-以下显示 CLI 找到的排名前五的模型的多类分类 ML 任务指标列表：
+以下显示 CLI 找到的排名前五的模型的分类指标列表：
 
 ![图像](media/automate-training-with-cli/cli-multiclass-classification-metrics.png)
 
-若要探索和了解 CLI 输出的指标，请参阅[多类分类评估指标](resources/metrics.md#evaluation-metrics-for-multi-class-classification)。
+ 准确性是分类问题的常用指标，但准确性并不总是用于选择最佳模型的最佳指标，如下文参考中所述。 在某些情况下，需要使用其他指标评估模型的质量。
+
+若要探索和了解由 CLI 输出的指标，请参阅[分类评估指标](resources/metrics.md#evaluation-metrics-for-multi-class-classification)。
 
 ### <a name="metrics-for-regression-and-recommendation-models"></a>回归和建议模型指标
 

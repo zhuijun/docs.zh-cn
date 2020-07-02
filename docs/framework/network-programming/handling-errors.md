@@ -1,5 +1,6 @@
 ---
 title: 处理错误
+description: 了解由 WebRequest 和 WebResponse 引发的系统和特定于 Web 的异常。 使用 Status 属性来了解和解决问题。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -31,22 +32,22 @@ helpviewer_keywords:
 - ConnectionClosed enumeration member
 - SecureChannelFailure enumeration member
 ms.assetid: 657141cd-5cf5-4fdb-a4b2-4c040eba84b5
-ms.openlocfilehash: f5be5d8e14d7aa2d98009fc10c9cce314e745ed1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 786b2bd8bc4d1b394bcfe920053b2f4f55d1cdea
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180874"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502569"
 ---
 # <a name="handling-errors"></a>处理错误
 
 <xref:System.Net.WebRequest> 和 <xref:System.Net.WebResponse> 类都会引发系统异常（如 <xref:System.ArgumentException>）和特定于 Web 的异常（为 <xref:System.Net.WebRequest.GetResponse%2A> 方法所引发的 <xref:System.Net.WebException>）。  
   
-每个 WebException 包括一个 <xref:System.Net.WebException.Status%2A> 属性，它包含来自 <xref:System.Net.WebExceptionStatus> 枚举的一个值。 可以检查“状态”属性以确定发生的错误并采取适当的步骤解决该错误  。  
+每个 WebException 包括一个 <xref:System.Net.WebException.Status%2A> 属性，它包含来自 <xref:System.Net.WebExceptionStatus> 枚举的一个值。 可以检查“状态”属性以确定发生的错误并采取适当的步骤解决该错误。  
   
-下表描述了“状态”属性可能的值  。  
+下表描述了“状态”属性可能的值。  
   
-|状态|说明|  
+|状态|描述|  
 |------------|-----------------|  
 |ConnectFailure|无法在传输级别联系远程服务。|  
 |ConnectionClosed|连接被提前关闭。|  
@@ -67,9 +68,9 @@ ms.locfileid: "79180874"
 |ProxyNameResolutionFailure|名称解析程序服务无法解析代理主机名。|  
 |UnknownError|出现未知类型的异常。|  
   
-当“状态”属性为“WebExceptionStatus.ProtocolError”时，可以使用包含来自服务器的响应的 WebResponse    。 可以检查此响应以确定协议错误的实际来源。  
+当“状态”属性为“WebExceptionStatus.ProtocolError”时，可以使用包含来自服务器的响应的 WebResponse  。 可以检查此响应以确定协议错误的实际来源。  
   
-下面的示例演示如何捕获 WebException  。  
+下面的示例演示如何捕获 WebException。  
   
 ```csharp  
 try
@@ -164,11 +165,11 @@ Catch e As Exception
 End Try  
 ```  
   
-当 Windows 套接字上出现错误时，使用 <xref:System.Net.Sockets.Socket> 类的应用程序将引发 <xref:System.Net.Sockets.SocketException>。 <xref:System.Net.Sockets.TcpClient>、<xref:System.Net.Sockets.TcpListener> 和 <xref:System.Net.Sockets.UdpClient> 类在套接字类的顶层生成，并且也会引发 SocketExceptions   。  
+当 Windows 套接字上出现错误时，使用 <xref:System.Net.Sockets.Socket> 类的应用程序将引发 <xref:System.Net.Sockets.SocketException>。 <xref:System.Net.Sockets.TcpClient>、<xref:System.Net.Sockets.TcpListener> 和 <xref:System.Net.Sockets.UdpClient> 类在套接字类的顶层生成，并且也会引发 SocketExceptions 。  
   
-引发 SocketException 时，SocketException 类将 <xref:System.Net.Sockets.SocketException.ErrorCode%2A> 属性设置为最后一次发生的操作系统套接字错误。 有关套接字错误代码的详细信息，请参阅 MSDN 中的 Winsock 2.0 API 错误代码文档。  
+引发 SocketException 时，SocketException 类将 <xref:System.Net.Sockets.SocketException.ErrorCode%2A> 属性设置为最后一次发生的操作系统套接字错误 。 有关套接字错误代码的详细信息，请参阅 MSDN 中的 Winsock 2.0 API 错误代码文档。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [在 .NET 中处理和引发异常](../../standard/exceptions/index.md)
 - [请求数据](requesting-data.md)

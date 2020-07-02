@@ -1,5 +1,6 @@
 ---
 title: 独立存储
+description: 了解独立存储（一种数据存储机制），它在代码与保存的数据之间定义了标准化的关联方式，从而提供隔离性和安全性。
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -18,12 +19,12 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: f98af970c8827623298fb43cd0653bdaafb20dd3
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b9915faff2593cc51868c20e1a83a05ffca9f548
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84278877"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325933"
 ---
 # <a name="isolated-storage"></a>独立存储
 <a name="top"></a> 对于桌面应用，独立存储是一种数据存储机制，它在代码与保存的数据之间定义了标准化的关联方式，从而提供隔离性和安全性。 同时，标准化也提供了其他好处。 管理员可以使用旨在操作独立存储的工具来配置文件存储空间、设置安全策略及删除未使用的数据。 通过独立存储，代码不再需要使用唯一的路径来指定文件系统中的安全位置，同时可以保护数据免遭只具有独立存储访问权限的其他应用程序的损坏。 不再需要指示应用程序的存储区域位置的硬编码信息。
@@ -104,6 +105,97 @@ ms.locfileid: "84278877"
 |<xref:System.Security.Permissions.IsolatedStorageContainment.AssemblyIsolationByRoamingUser>|与 `AssemblyIsolationByUser`相同，但如果启用漫游用户配置文件且不强制配额，则存储将保存到将漫游的位置。|与 `AssemblyIsolationByUser`中相同，但没有配额，增加了拒绝服务攻击的风险。|
 |<xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser>|按用户隔离。 通常，只有管理或调试工具才使用此级别的权限。|使用该权限访问允许代码查看或删除任何的用户独立存储文件或目录（而不论程序集是否隔离）。 存在的风险包括（但不限于）泄露信息和数据丢失。|
 |<xref:System.Security.Permissions.IsolatedStorageContainment.UnrestrictedIsolatedStorage>|按所有用户、域和程序集隔离。 通常，只有管理或调试工具才使用此级别的权限。|此权限有可能会整个危害所有用户的所有独立存储区。|
+
+## <a name="safety-of-isolated-storage-components-with-regard-to-untrusted-data"></a>与不受信任的数据相关的独立存储组件的安全性
+
+__本节适用于以下框架：__
+
+- .NET Framework（所有版本）
+- .NET Core 2.1+
+- .NET 5.0+
+
+.NET Framework 和 .NET Core 提供[独立存储](/dotnet/standard/io/isolated-storage)作为一种为用户、应用程序或组件保留数据的机制。 这是一个旧组件，主要用于现已弃用的代码访问安全性方案。
+
+各种独立存储 API 和工具可用于跨信任边界读取数据。 例如，从计算机范围的作用域中读取数据会从计算机上其他可能不太受信任的用户帐户聚合数据。 从计算机范围的独立存储作用域读取的组件或应用程序应了解读取此数据的后果。
+
+### <a name="security-sensitive-apis-which-can-read-from-the-machine-wide-scope"></a>可从计算机范围作用域读取的安全敏感 API
+
+调用以下任意 API 的组件或应用程序从计算机范围的作用域中读取：
+
+* [IsolatedStorageFile.GetEnumerator](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getenumerator)，传递包含 IsolatedStorageScope.Machine 标志的作用域
+* [IsolatedStorageFile.GetMachineStoreForApplication](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getmachinestoreforapplication)
+* [IsolatedStorageFile.GetMachineStoreForAssembly](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getmachinestoreforassembly)
+* [IsolatedStorageFile.GetMachineStoreForDomain](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getmachinestorefordomain)
+* [IsolatedStorageFile.GetStore](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getstore)，传递包含 IsolatedStorageScope.Machine 标志的作用域
+* [IsolatedStorageFile.Remove](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.remove)，传递包含 `IsolatedStorageScope.Machine` 标志的作用域
+
+如果通过 `/machine` 开关调用，则会影响[独立存储工具](/dotnet/framework/tools/storeadm-exe-isolated-storage-tool) `storeadm.exe`，如以下代码所示：
+
+```txt
+storeadm.exe /machine [any-other-switches]
+```
+
+Visual Studio 和 .NET Framework SDK 包含独立存储工具。
+
+如果应用程序不涉及调用上述 API，或者工作流不涉及以这种方式调用 `storeadm.exe`，则不会应用此文档。
+
+### <a name="impact-in-multi-user-environments"></a>多用户环境中的影响
+
+如前所述，从一个信任环境写入的数据产生的这些 API 安全影响可从不同的信任环境中读取。 独立存储通常使用三个位置中的一个来读取和写入数据：
+
+1. `%LOCALAPPDATA%\IsolatedStorage\`：例如，`User` 范围的 `C:\Users\<username>\AppData\Local\IsolatedStorage\`。
+2. `%APPDATA%\IsolatedStorage\`：例如，`User|Roaming` 范围的 `C:\Users\<username>\AppData\Roaming\IsolatedStorage\`。
+3. `%PROGRAMDATA%\IsolatedStorage\`：例如，`Machine` 范围的 `C:\ProgramData\IsolatedStorage\`。
+
+每个用户的前两个位置都是独立的。 Windows 可确保同一计算机上的不同用户帐户无法访问彼此的用户配置文件文件夹。 使用 `User` 或 `User|Roaming` 存储区的两个不同用户帐户不会看到彼此的数据，并且不会干扰彼此的数据。
+
+第三个位置在计算机上的所有用户帐户之间共享。 不同的帐户可以从此位置读取数据以及将数据写入此位置，并且可以查看彼此的数据。
+
+上述路径可能因使用的 Windows 版本而异。
+
+现在，假设有一个多用户系统，其中有两个注册用户 Mallory 和 Bob 。 Mallory 能够访问用户配置文件目录 `C:\Users\Mallory\`，并且可以访问共享计算机范围的存储位置 `C:\ProgramData\IsolatedStorage\`。 她无法访问 Bob 的用户配置文件目录 `C:\Users\Bob\`。
+
+如果 Mallory 要攻击 Bob，她可以将数据写入到计算机范围的存储位置，然后尝试影响 Bob 从计算机范围的存储中读取数据。 当 Bob 运行从该存储区读取的应用时，该应用将对 Mallory 放置在此处的数据进行操作，但从 Bob 的用户帐户的上下文中运行。 本文档的其余部分介绍了各种攻击途径和应用可执行的步骤，以最大程度地降低这些攻击的风险。
+
+__注意：__ 为了进行这种攻击，Mallory 需要：
+
+* 计算机上的用户帐户。
+* 能够将文件放在文件系统上的已知位置。
+* 了解 Bob 将在某个时间点运行尝试读取此数据的应用。
+
+这些不是适用于标准单用户桌面环境（例如家庭电脑或单员工企业工作站）的威胁途径。
+
+#### <a name="elevation-of-privilege"></a>特权提升
+
+当 Bob 的应用读取 Mallory 的文件并根据该负载的内容自动尝试执行某些操作时，会出现特权提升攻击。 假设某个应用从计算机范围的存储读取启动脚本的内容，并将这些内容传递到 `Process.Start`。 如果 Mallory 可以在计算机范围的存储中放置恶意脚本，则在 Bob 启动其应用时：
+
+* Bob 的应用会在其用户配置文件的上下文中分析和启动 Mallory 的恶意脚本。
+* Mallory 会在本地计算机上获取对 Bob 帐户的访问权限。
+
+#### <a name="denial-of-service"></a>拒绝服务
+
+当 Bob 的应用读取 Mallory 的文件后崩溃或正常停止运行时，就会出现拒绝服务攻击。 再次假设前面提到的应用，它尝试从计算机范围的存储分析启动脚本。 如果 Mallory 可以将格式不正确的文件放在计算机范围的存储中，那么她可以：
+
+* 使 Bob 的应用在启动路径初期引发异常。
+* 出于异常原因，阻止应用成功启动。
+
+然后，她拒绝 Bob 在他自己的用户帐户下启动该应用。
+
+#### <a name="information-disclosure"></a>信息泄露
+
+当 Mallory 可以诱使 Bob 泄露 Mallory 通常不能访问的文件内容时，会出现信息泄露。 假设 Bob 有一个机密文件 C:\Users\Bob\secret.txt，Mallory 想要读取该文件。 她知道该文件的路径，但无法读取，因为 Windows 禁止她获取对 Bob 用户配置文件目录的访问权限。
+
+相反，Mallory 会将硬链接放置在计算机范围的存储中。 这是一种特殊类型的文件，它本身不包含任何内容，而是指向磁盘上的另一个文件。 尝试读取硬链接文件将改为读取链接所指向文件的内容。 创建硬链接后，Mallory 仍无法读取文件内容，因为她无权访问链接的目标 (`C:\Users\Bob\secret.txt`)。 不过，Bob 有权访问此文件。
+
+当 Bob 的应用现在从计算机范围的存储中读取内容时，会无意中读取他的 `secret.txt` 文件的内容，就像文件本身已存在于计算机范围的存储中一样。 当 Bob 的应用退出时，如果该应用尝试将文件重新保存到计算机范围的存储中，则最终会在 *C:\ProgramData\IsolatedStorage\* 目录中放置该文件的实际副本。 由于此目录可由计算机上的任何用户读取，Mallory 现在可以读取该文件的内容。
+
+### <a name="best-practices-to-defend-against-these-attacks"></a>防范这些攻击的最佳做法
+
+__重要提示：__ 如果你的环境具有多个相互不受信任的用户，请不要调用 API `IsolatedStorageFile.GetEnumerator(IsolatedStorageScope.Machine)` 或调用工具 `storeadm.exe /machine /list`。 这两种情况都假设它们正在对受信任的数据进行操作。 如果攻击者可以在计算机范围的存储中放置恶意的有效负载，则该有效负载会在运行这些命令的用户的上下文中导致特权提升攻击。
+
+如果在多用户环境中操作，请重新考虑使用针对计算机范围的独立存储功能。 如果应用必须从计算机范围的位置中读取数据，则最好从仅由管理员帐户写入的位置读取数据。 `%PROGRAMFILES%` 目录和 `HKLM` 注册表配置单元是仅由管理员写入并可由所有人读取的位置的示例。 因此从这些位置读取的数据为可信数据。
+
+如果应用必须在多用户环境中使用计算机范围，请验证从计算机范围的存储中读取的任何文件内容。 如果应用反序列化这些文件中的对象图，请考虑使用更安全的序列化程序，如 `XmlSerializer`，而不是 `BinaryFormatter` 或 `NetDataContractSerializer` 等危险序列化程序。 使用深度嵌套的对象图或根据文件内容执行资源分配的对象图。
 
 <a name="isolated_storage_locations"></a>
 
