@@ -1,7 +1,7 @@
 ---
-title: .NET Framework 正则表达式
+title: .NET 正则表达式
 description: 使用正则表达式查找特定的字符模式，验证文本，使用文本子字符串，以及将提取的字符串添加到 .NET 中的集合。
-ms.date: 03/30/2017
+ms.date: 06/30/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -21,12 +21,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions
 - strings [.NET Framework], regular expressions
 ms.assetid: 521b3f6d-f869-42e1-93e5-158c54a6895d
-ms.openlocfilehash: d9505cdfb57faf586c714aa7dd537210959f50d8
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: f57199c2ddf6569020554e74b6e70801844da641
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768828"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85802892"
 ---
 # <a name="net-regular-expressions"></a>.NET 正则表达式
 
@@ -67,6 +67,8 @@ ms.locfileid: "84768828"
 ## <a name="regular-expression-examples"></a>正则表达式示例
 
 <xref:System.String> 类包括许多字符串搜索和替换方法，当你要在较大字符串中定位文本字符串时，可以使用这些方法。 当你希望在较大字符串中定位若干子字符串之一时，或者当你希望在字符串中标识模式时，正则表达式最有用，如以下示例所示。
+
+[!INCLUDE [regex](../../../includes/regex.md)]
 
 > [!TIP]
 > <xref:System.Web.RegularExpressions> 命名空间包含大量正则表达式对象，这些对象实现预定义的正则表达式模式，用于分析 HTML、XML 和 ASP.NET 文档中的字符串。 例如，<xref:System.Web.RegularExpressions.TagRegex> 类标识字符串中的开始标记，<xref:System.Web.RegularExpressions.CommentRegex> 类标识字符串中的 ASP.NET 注释。

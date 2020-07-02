@@ -1,21 +1,23 @@
 ---
 title: 在 .NET for Apache Spark 中使用广播变量
 description: 了解如何在 .NET for Apache Spark 应用程序中使用广播变量。
-ms.date: 06/11/2020
+ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 391e32cda14a9b3186ac96800351ddcb39a3d359
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: d86b160855cc4d3f3a6502f5606d4766b7c06aa0
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105616"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617851"
 ---
 # <a name="use-broadcast-variables-in-net-for-apache-spark"></a>在 .NET for Apache Spark 中使用广播变量
 
 本文介绍如何在 .NET for Apache Spark 中使用广播变量。 [Apache Spark 中的广播变量](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables)是一种机制，可实现在应为只读的执行程序之间共享变量。 借助广播变量即可在每台计算机上缓存只读变量，无需将其副本与任务一起交付。 可以使用广播变量高效地为每个节点提供大型输入数据集的副本。
 
 由于数据仅发送一次，因此相较于随每个任务一起交付给执行程序的局部变量，广播变量具有性能优势。 请参阅[官方广播变量文档](https://spark.apache.org/docs/2.2.0/rdd-programming-guide.html#broadcast-variables)，更深入地了解广播变量及其使用原因。
+
+[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="create-broadcast-variables"></a>创建广播变量
 

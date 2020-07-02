@@ -1,7 +1,7 @@
 ---
 title: 如何确认字符串是有效的电子邮件格式
 description: 阅读有关正则表达式如何在 .NET 中验证字符串是否为有效电子邮件格式的示例。
-ms.date: 12/10/2018
+ms.date: 06/30/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -19,16 +19,18 @@ helpviewer_keywords:
 - email [.NET Framework], validating
 - IsMatch method
 ms.assetid: 7536af08-4e86-4953-98a1-a8298623df92
-ms.openlocfilehash: 47ef4dedd20a2b885abaabf72c26de5f3312c66f
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: d303c13dead6b4ba29cb7476c2a9b382a9395aff
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768958"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803191"
 ---
 # <a name="how-to-verify-that-strings-are-in-valid-email-format"></a>如何确认字符串是有效的电子邮件格式
 
 下面的示例使用正则表达式来验证一个字符串是否为有效的电子邮件格式。
+
+[!INCLUDE [regex](../../../includes/regex.md)]
 
 ## <a name="example"></a>示例
 
