@@ -1,17 +1,18 @@
 ---
 title: 带有分组框控件的组控件
+description: 了解如何使用 Windows 窗体分组框控件对控件进行分组，以便可以创建相关元素的可视分组。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], grouping
 - GroupBox control [Windows Forms], grouping controls
 - Windows Forms controls, grouping
 ms.assetid: 0bda316d-bd2a-43aa-ac73-342453303169
-ms.openlocfilehash: bb7476c410d2802b5d32cc9842a778f290765e32
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: f84c495a18f4ae5e04367f024a1e2849f1ed59f9
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76736651"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618059"
 ---
 # <a name="how-to-group-controls-with-the-windows-forms-groupbox-control"></a>如何：使用 Windows 窗体 GroupBox 控件对控件分组
 Windows 窗体 <xref:System.Windows.Forms.GroupBox> 控件用于对其他控件进行分组。 分组控件有三个原因：  
@@ -24,15 +25,15 @@ Windows 窗体 <xref:System.Windows.Forms.GroupBox> 控件用于对其他控件�
   
 ### <a name="to-create-a-group-of-controls"></a>创建一组控件  
   
-1. 在窗体上绘制 <xref:System.Windows.Forms.GroupBox> 控件。  
+1. <xref:System.Windows.Forms.GroupBox>在窗体上绘制控件。  
   
 2. 将其他控件添加到分组框，并在组框中绘制每个控件。  
   
-     如果要将现有控件置于分组框中，则可以选择所有控件，将它们剪切到剪贴板，选择 <xref:System.Windows.Forms.GroupBox> 的控件，然后将其粘贴到 "分组" 框。 您还可以将其拖动到分组框中。  
+     如果要将现有控件置于分组框中，则可以选择所有控件，将它们剪切到剪贴板，选择 <xref:System.Windows.Forms.GroupBox> 控件，然后将其粘贴到分组框中。 您还可以将其拖动到分组框中。  
   
-3. 将组框的 "<xref:System.Windows.Forms.GroupBox.Text%2A>" 属性设置为相应的标题。  
+3. 将 <xref:System.Windows.Forms.GroupBox.Text%2A> "分组框" 的属性设置为相应的标题。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Windows.Forms.GroupBox>
 - [GroupBox 控件](groupbox-control-windows-forms.md)

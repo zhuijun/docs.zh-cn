@@ -7,12 +7,12 @@ helpviewer_keywords:
 - virtual members
 - members [.NET Framework], virtual
 ms.assetid: 8ff4eb97-0364-43ec-8a02-934b5cd94d19
-ms.openlocfilehash: 9eb6cbef969e51dee1a72d402c124d06f08fe5c4
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 918208bb44f84988b7fe903c589e82c7bf1f59e3
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288493"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620763"
 ---
 # <a name="virtual-members"></a>虚成员
 可以重写虚拟成员，从而更改子类的行为。 它们与回调在其提供的扩展性上非常相似，但它们在执行性能和内存消耗方面都更好。 此外，在需要创建一种特殊类型（专用化）的方案中，虚拟成员的感觉更自然。
@@ -33,11 +33,11 @@ ms.locfileid: "84288493"
 
  类的公共成员应为该类的直接使用者提供正确的一组功能。 虚拟成员设计为在子类中被重写，受保护的可访问性是将所有虚拟扩展点的范围限定为可使用这些扩展点的最佳方式。
 
- *部分©2005，2009 Microsoft Corporation。保留所有权利。*
+ *部分 &copy; 2005，2009 Microsoft Corporation。保留所有权利。*
 
  *皮尔逊教育，Inc. 的经许可重印权限[：从框架设计指导原则：用于可重复使用的 .Net 库的约定、惯例和模式、第2版](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)By Krzysztof Cwalina 和 Brad Abrams，发布十月22，2008，作为 Microsoft Windows 开发系列的一部分。*
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [框架设计准则](index.md)
 - [扩展性设计](designing-for-extensibility.md)

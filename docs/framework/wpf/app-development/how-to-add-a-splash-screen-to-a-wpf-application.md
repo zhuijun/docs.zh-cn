@@ -1,5 +1,6 @@
 ---
 title: 如何添加初始屏幕
+description: 了解如何向 Windows Presentation Foundation （WPF）应用程序添加启动窗口或初始屏幕。
 ms.date: 08/18/2018
 helpviewer_keywords:
 - WPF [WPF], splash screen
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - SplashScreen class [WPF]
 - splash screen [WPF]
 ms.assetid: d70a25c4-5fb9-4c27-b01d-b1b8ef39b3fd
-ms.openlocfilehash: 39f53e21c40f036c65894b4f275cd5fb414999be
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0d0cf2e2a550320650c3b4a0c257071a0403c32b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76740446"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85617955"
 ---
 # <a name="how-to-add-a-splash-screen-to-a-wpf-application"></a>如何：将初始屏幕添加到 WPF 应用程序
 
@@ -30,7 +31,7 @@ ms.locfileid: "76740446"
 
 5. 从下拉列表中选择 " **SplashScreen** "。
 
-6. 按 F5 生成并运行该应用程序。
+6. 按**F5**生成并运行应用程序。
 
      初始屏幕图像显示在屏幕的中心，然后在主应用程序窗口出现时淡化。
 
@@ -44,7 +45,7 @@ ms.locfileid: "76740446"
 
 在**解决方案资源管理器**中，删除初始屏幕图像。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Windows.SplashScreen>
-- [如何：向项目中添加现有项](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9f4t9t92(v=vs.100))
+- [如何向项目中添加现有项](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9f4t9t92(v=vs.100))

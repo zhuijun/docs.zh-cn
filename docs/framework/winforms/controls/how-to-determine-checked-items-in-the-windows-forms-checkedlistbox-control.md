@@ -1,5 +1,6 @@
 ---
-title: 确定选中列表框中检查的项目
+title: 确定 CheckedListBox 控件中的选中项
+description: 了解如何通过循环访问存储在 CheckedItems 属性中的集合来确定 Windows 窗体 CheckedListBox 控件中的选中项。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,19 +10,19 @@ helpviewer_keywords:
 - check boxes [Windows Forms], determining checked state
 - CheckedListBox control [Windows Forms], determining checked state
 ms.assetid: 178b477d-27c9-489c-8914-44a9623a4d41
-ms.openlocfilehash: 5d93a63e9c1c6aae91ecfe83590c59450a565afe
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fd8845ef83da7406ff4f1468506a23e3f4d386a0
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79182195"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618345"
 ---
 # <a name="how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control"></a>如何：确定 Windows 窗体 CheckedListBox 控件中的选定项
-在 Windows 窗体<xref:System.Windows.Forms.CheckedListBox>控件中显示数据时，可以遍遍存储在<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A>属性中的集合，或者使用<xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>方法单步执行列表以确定检查哪些项。 该方法<xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>以项索引号作为其参数，并返回`true`或`false`。 与您可能期望的相反，和<xref:System.Windows.Forms.ListBox.SelectedItems%2A><xref:System.Windows.Forms.ListBox.SelectedIndices%2A>属性不确定哪些项被检查;相反，属性不会确定哪些项被检查。它们确定突出显示哪些项。  
+在 Windows 窗体控件中显示数据时 <xref:System.Windows.Forms.CheckedListBox> ，可以循环访问存储在属性中的集合 <xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> ，或使用方法单步执行列表， <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> 以确定要检查哪些项。 <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>方法使用项索引号作为其参数并返回 `true` 或 `false` 。 与您的预期不同， <xref:System.Windows.Forms.ListBox.SelectedItems%2A> 和 <xref:System.Windows.Forms.ListBox.SelectedIndices%2A> 属性不确定哪些项已选中，它们决定哪些项已突出显示。  
   
-### <a name="to-determine-checked-items-in-a-checkedlistbox-control"></a>确定选中的"检查列表"控件中的已检查项目  
+### <a name="to-determine-checked-items-in-a-checkedlistbox-control"></a>确定 CheckedListBox 控件中的选中项  
   
-1. 迭代集合，<xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A>从 0 开始，因为集合是零基的。 请注意，此方法将为您提供已检查项目列表中的物料编号，而不是整个列表中的项目编号。 因此，如果未选中列表中的第一项，并且检查了第二项，则下面的代码将显示"已检查的项目 1 = MyListItem2"之类的文本。  
+1. 循环访问 <xref:System.Windows.Forms.CheckedListBox.CheckedItems%2A> 集合，从0开始，因为集合是从零开始的。 请注意，此方法将在选中项目列表中为您指定项目编号，而不是总体列表。 因此，如果未检查列表中的第一项并且选中第二项，则以下代码将显示类似于 "Checked Item 1 = MyListItem2" 的文本。  
   
     ```vb  
     ' Determine if there are any items checked.  
@@ -68,7 +69,7 @@ ms.locfileid: "79182195"
   
      - 或 -  
   
-2. 单步执行<xref:System.Windows.Forms.CheckedListBox.Items%2A>集合，从 0 开始，因为集合是零基的，并<xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A>调用每个项的方法。 请注意，此方法将为您提供整个列表中的项目编号，因此，如果未选中列表中的第一个项目，并且检查了第二个项目，它将显示类似"项目 2 = MyListItem2"的内容。  
+2. 单步执行 <xref:System.Windows.Forms.CheckedListBox.Items%2A> 集合，从0开始，因为集合从零开始，并 <xref:System.Windows.Forms.CheckedListBox.GetItemChecked%2A> 为每个项调用方法。 请注意，此方法将向你显示总体列表中的项编号，因此，如果未检查列表中的第一项并且检查第二项，则会显示类似于 "Item 2 = MyListItem2" 的内容。  
   
     ```vb  
     Dim i As Integer  
@@ -111,6 +112,6 @@ ms.locfileid: "79182195"
     MessageBox::Show(s);  
     ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [用于列出选项的 Windows 窗体控件](windows-forms-controls-used-to-list-options.md)

@@ -1,5 +1,6 @@
 ---
 title: 如何：实现 INotifyPropertyChanged 接口
+description: 了解如何实现 Windows 窗体数据绑定中使用的业务对象上的 INotifyPropertyChanged 接口。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,15 +8,15 @@ dev_langs:
 helpviewer_keywords:
 - INotifyPropertyChanged interface [Windows Forms], implementing
 ms.assetid: eac428af-b43b-46ac-80d9-1a5f88658725
-ms.openlocfilehash: cfdfb22fd854a8f630243e0f612761c71cb778d8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 83d2ef32787d2dbcd877bc77dcede10111098f8a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61802032"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619263"
 ---
 # <a name="how-to-implement-the-inotifypropertychanged-interface"></a>如何：实现 INotifyPropertyChanged 接口
-下面的代码示例演示如何实现<xref:System.ComponentModel.INotifyPropertyChanged>接口。 在 Windows 窗体数据绑定中使用的业务对象上实现此接口。 实现时，该接口与绑定控件通信业务对象的属性更改。  
+下面的代码示例演示如何实现 <xref:System.ComponentModel.INotifyPropertyChanged> 接口。 在 Windows 窗体数据绑定中使用的业务对象上实现此接口。 实现时，接口会与绑定控件通信，属性会对业务对象进行更改。  
   
 ## <a name="example"></a>示例  
  [!code-csharp[System.ComponentModel.IPropertyChangeExample#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.ComponentModel.IPropertyChangeExample/CS/Form1.cs#1)]

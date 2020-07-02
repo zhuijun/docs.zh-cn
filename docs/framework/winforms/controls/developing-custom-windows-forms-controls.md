@@ -1,22 +1,23 @@
 ---
 title: 开发自定义控件
+description: 了解 Windows 窗体控件。 具体来说，您将学习如何组合现有的控件、扩展现有的控件以及创作您自己的自定义控件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - custom controls [Windows Forms], developing using code
 - Control class [Windows Forms], Windows Forms
 ms.assetid: 236cebc0-bd71-4f18-9fd6-5d0e592375df
-ms.openlocfilehash: 9dbc1c4530b3a0f4e579ca67c7ae88c1685222ea
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 12013496c9650489fdd7512206317000fc0ec78c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746000"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618371"
 ---
 # <a name="developing-custom-windows-forms-controls-with-the-net-framework"></a>使用 .NET Framework 开发自定义 Windows 窗体控件
 Windows 窗体控件是可以重用的组件，可以封装用户界面功能并用于客户端基于 Windows 的应用程序。 Windows 窗体不仅可以提供许多易用的控件，而且还可以提供用于开发你自己的控件的基础结构。 你可以组合现有的控件、扩展现有的控件或创作你自己的自定义控件。 本节介绍了背景信息和示例，有助于你开发 Windows 窗体控件。  
   
 ## <a name="in-this-section"></a>本节内容  
- [在 Windows 窗体中使用控件的概述](overview-of-using-controls-in-windows-forms.md)  
+ [在“Windows 窗体”中使用控件的概述](overview-of-using-controls-in-windows-forms.md)  
  突出显示使用 Windows 窗体应用程序中的控件的重要元素。  
   
  [各种自定义控件](varieties-of-custom-controls.md)  
@@ -51,7 +52,7 @@ Windows 窗体控件是可以重用的组件，可以封装用户界面功能并
  对此类进行描述，并提供指向其所有成员的链接。  
   
 ## <a name="related-sections"></a>相关章节  
- [组件的设计时特性](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/tk67c2t8(v=vs.120))  
+ [Design-Time Attributes for Components（组件的设计时属性）](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/tk67c2t8(v=vs.120))  
  将列出的元数据特性应用到组件和控件，以便在设计时正确显示在可视化设计器中。  
   
  [扩展设计时支持](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))  

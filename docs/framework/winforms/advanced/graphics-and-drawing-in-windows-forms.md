@@ -1,5 +1,6 @@
 ---
 title: 图形和绘图
+description: 了解图形、笔、画笔和颜色对象，以及如何在 Windows 窗体绘制形状、绘制文本或显示图像等任务。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - graphics [Windows Forms]
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - GDI+, using in managed code
 - drawing [Windows Forms]
 ms.assetid: 362532c5-1a06-4257-bdc8-723461009ede
-ms.openlocfilehash: 10ad18d38c84f6e447601ab6c8bf1a953dabb7cf
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 58d8cde6aa102225cf9e3c342efe37218c818307
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746401"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618397"
 ---
 # <a name="graphics-and-drawing-in-windows-forms"></a>Windows 窗体中的图形和绘制
 公共语言运行时使用名为 GDI + 的 Windows 图形设备接口（GDI）的高级实现。 利用 GDI +，你可以创建图形、绘制文本以及将图形图像作为对象进行操作。 GDI + 旨在提供性能和易用性。 可以使用 GDI + 在 Windows 窗体和控件上呈现图形图像。 尽管不能直接在 Web 窗体上使用 GDI +，但你可以通过图像 Web 服务器控件显示图形图像。  

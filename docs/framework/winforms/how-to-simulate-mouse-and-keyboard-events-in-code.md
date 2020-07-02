@@ -13,12 +13,12 @@ helpviewer_keywords:
 - mouse clicks [Windows Forms], simulating
 - mouse [Windows Forms], event simulation
 ms.assetid: 6abcb67e-3766-4af2-9590-bf5dabd17e41
-ms.openlocfilehash: 9b453787f7fa7f5041f75e04d65557a0a3838bee
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 3c60533479352151ac4f28690413ebc7d8e5879d
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84904359"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619242"
 ---
 # <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>如何：在代码中模拟鼠标和键盘事件
 
@@ -93,6 +93,6 @@ Windows 窗体提供多个选项，用于以编程方式模拟鼠标和键盘输
 
 - 对 System、System.Drawing 和 System.Windows.Forms 程序集的引用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Windows 窗体中的用户输入](user-input-in-windows-forms.md)

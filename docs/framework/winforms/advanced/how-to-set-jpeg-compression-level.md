@@ -1,5 +1,6 @@
 ---
 title: 如何：设置 JPEG 压缩级别
+description: 了解如何通过修改 Windows 窗体上的压缩级别来调整 JPEG 图像的质量。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,18 +9,18 @@ helpviewer_keywords:
 - images [Windows Forms], changing encoder parameters
 - JPEG images [Windows Forms], setting quality level
 ms.assetid: 4b9a74e3-9504-43c1-9f28-ace651d0772e
-ms.openlocfilehash: 1b325c0cb8fe9da4b198d19164c73af9b1609973
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1f6a96e8a05fff40eb08da0ce318faa86a06cc3a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64626137"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618709"
 ---
 # <a name="how-to-set-jpeg-compression-level"></a>如何：设置 JPEG 压缩级别
-在将图像保存到磁盘中时，可能需要修改图像的参数，以最大限度地减小文件的大小或提高其质量。 可以通过修改 JPEG 图像的压缩级别来调整其质量。 若要指定压缩级别保存 JPEG 图像时，必须创建<xref:System.Drawing.Imaging.EncoderParameters>对象，并将其传递给<xref:System.Drawing.Image.Save%2A>方法的<xref:System.Drawing.Image>类。 初始化<xref:System.Drawing.Imaging.EncoderParameters>对象，使它具有一个数组，其中包含一个<xref:System.Drawing.Imaging.EncoderParameter>。 当您创建<xref:System.Drawing.Imaging.EncoderParameter>，指定<xref:System.Drawing.Imaging.Encoder.Quality>编码器和所需的压缩级别。  
+在将图像保存到磁盘中时，可能需要修改图像的参数，以最大限度地减小文件的大小或提高其质量。 可以通过修改 JPEG 图像的压缩级别来调整其质量。 若要在保存 JPEG 图像时指定压缩级别，必须创建 <xref:System.Drawing.Imaging.EncoderParameters> 对象并将其传递给 <xref:System.Drawing.Image.Save%2A> 类的方法 <xref:System.Drawing.Image> 。 初始化 <xref:System.Drawing.Imaging.EncoderParameters> 对象，使其包含一个包含一个的数组 <xref:System.Drawing.Imaging.EncoderParameter> 。 当你创建时 <xref:System.Drawing.Imaging.EncoderParameter> ，请指定 <xref:System.Drawing.Imaging.Encoder.Quality> 编码器和所需的压缩级别。  
   
 ## <a name="example"></a>示例  
- 下面的示例代码创建<xref:System.Drawing.Imaging.EncoderParameter>对象，并将保存三个 JPEG 图像。 通过修改与不同质量级别保存每个 JPEG 图像`long`值传递给<xref:System.Drawing.Imaging.EncoderParameter>构造函数。 质量级别 0 对应于最大压缩，而质量级别 100 对应于最小压缩。  
+ 下面的示例代码创建一个 <xref:System.Drawing.Imaging.EncoderParameter> 对象，并保存三个 JPEG 图像。 通过修改 `long` 传递到构造函数的值，每个 JPEG 图像都以不同质量级别保存 <xref:System.Drawing.Imaging.EncoderParameter> 。 质量级别 0 对应于最大压缩，而质量级别 100 对应于最小压缩。  
   
 ```csharp  
 private void VaryQualityLevel()  
@@ -125,7 +126,7 @@ End Function
   
 - Windows 窗体应用程序。  
   
-- 一个<xref:System.Windows.Forms.PaintEventArgs>，这是一个参数的<xref:System.Windows.Forms.PaintEventHandler>。  
+- 一个 <xref:System.Windows.Forms.PaintEventArgs> ，它是的参数 <xref:System.Windows.Forms.PaintEventHandler> 。  
   
 - 一个位于 **c:\\** 位置的名为 `TestPhoto.jpg` 的图像文件。  
   

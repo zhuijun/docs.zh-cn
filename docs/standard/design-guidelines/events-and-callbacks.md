@@ -8,12 +8,12 @@ helpviewer_keywords:
 - callback methods
 - callbacks
 ms.assetid: 48b55c60-495f-4089-9396-97f9122bba7c
-ms.openlocfilehash: ad7774fd197db80ce84b3b8a5baa4e9ee06b6cef
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 4000944c3b913f71bc18462cea9062e9237ae53f
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289793"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619528"
 ---
 # <a name="events-and-callbacks"></a>事件和回调
 回调是允许框架通过委托回调到用户代码的扩展点。 通常通过方法的参数将这些委托传递到框架。
@@ -38,11 +38,11 @@ ms.locfileid: "84289793"
 
  ✔️可以通过调用委托来了解这一点，因为你正在执行任意代码，这可能会对安全性、正确性和兼容性产生影响。
 
- *部分©2005，2009 Microsoft Corporation。保留所有权利。*
+ *部分 &copy; 2005，2009 Microsoft Corporation。保留所有权利。*
 
  *皮尔逊教育，Inc. 的经许可重印权限[：从框架设计指导原则：用于可重复使用的 .Net 库的约定、惯例和模式、第2版](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619)By Krzysztof Cwalina 和 Brad Abrams，发布十月22，2008，作为 Microsoft Windows 开发系列的一部分。*
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [扩展性设计](designing-for-extensibility.md)
 - [框架设计准则](index.md)
