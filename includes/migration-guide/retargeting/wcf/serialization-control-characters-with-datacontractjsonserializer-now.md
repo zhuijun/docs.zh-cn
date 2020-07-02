@@ -1,18 +1,35 @@
 ---
-ms.openlocfilehash: 2c532bf3778b940f68db859420dd12826e9da388
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: afdf1e20db7dc564ddfb6028238604f97e00971a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77465946"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614374"
 ---
-### <a name="serialization-of-control-characters-with-datacontractjsonserializer-is-now-compatible-with-ecmascript-v6-and-v8"></a><span data-ttu-id="f0cba-101">使用 DataContractJsonSerializer 控制字符的序列化现在与 ECMAScript V6 和 V8 兼容</span><span class="sxs-lookup"><span data-stu-id="f0cba-101">Serialization of control characters with DataContractJsonSerializer is now compatible with ECMAScript V6 and V8</span></span>
+### <a name="serialization-of-control-characters-with-datacontractjsonserializer-is-now-compatible-with-ecmascript-v6-and-v8"></a><span data-ttu-id="07b96-101">使用 DataContractJsonSerializer 控制字符的序列化现在与 ECMAScript V6 和 V8 兼容</span><span class="sxs-lookup"><span data-stu-id="07b96-101">Serialization of control characters with DataContractJsonSerializer is now compatible with ECMAScript V6 and V8</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="f0cba-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="f0cba-102">Details</span></span>|<span data-ttu-id="f0cba-103">在 .NET Framework 4.6.2 及更低版本中，<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=name> 未按与 ECMAScript V6 和 V8 标准兼容的方式对一些特殊控制字符（如 \b、\f 和 \t）进行序列化。</span><span class="sxs-lookup"><span data-stu-id="f0cba-103">In .NET Framework 4.6.2 and earlier versions, the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=name> did not serialize some special control characters, such as \b, \f, and \t, in a way that was compatible with the ECMAScript V6 and V8 standards.</span></span> <span data-ttu-id="f0cba-104">从 .NET Framework 4.7 开始，这些控制字符的序列化与 ECMAScript V6 和 V8 兼容。</span><span class="sxs-lookup"><span data-stu-id="f0cba-104">Starting with .NET Framework 4.7, serialization of these control characters is compatible with ECMAScript V6 and V8.</span></span>|
-|<span data-ttu-id="f0cba-105">建议</span><span class="sxs-lookup"><span data-stu-id="f0cba-105">Suggestion</span></span>|<span data-ttu-id="f0cba-106">对面向 .NET Framework 4.7 的应用，默认启用此功能。</span><span class="sxs-lookup"><span data-stu-id="f0cba-106">For apps that target the .NET Framework 4.7, this feature is enabled by default.</span></span> <span data-ttu-id="f0cba-107">如果不需要此行为，可以在 app.config 或 web.config 文件的 <code>&lt;runtime&gt;</code> 部分中添加下面的代码行，从而选择禁用此功能：</span><span class="sxs-lookup"><span data-stu-id="f0cba-107">If this behavior is not desirable, you can opt out of this feature by adding the following line to the <code>&lt;runtime&gt;</code> section of the app.config or web.config file:</span></span><pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Runtime.Serialization.DoNotUseECMAScriptV6EscapeControlCharacter=false&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>|
-|<span data-ttu-id="f0cba-108">范围</span><span class="sxs-lookup"><span data-stu-id="f0cba-108">Scope</span></span>|<span data-ttu-id="f0cba-109">边缘</span><span class="sxs-lookup"><span data-stu-id="f0cba-109">Edge</span></span>|
-|<span data-ttu-id="f0cba-110">Version</span><span class="sxs-lookup"><span data-stu-id="f0cba-110">Version</span></span>|<span data-ttu-id="f0cba-111">4.7</span><span class="sxs-lookup"><span data-stu-id="f0cba-111">4.7</span></span>|
-|<span data-ttu-id="f0cba-112">类型</span><span class="sxs-lookup"><span data-stu-id="f0cba-112">Type</span></span>|<span data-ttu-id="f0cba-113">重定目标</span><span class="sxs-lookup"><span data-stu-id="f0cba-113">Retargeting</span></span>|
-|<span data-ttu-id="f0cba-114">受影响的 API</span><span class="sxs-lookup"><span data-stu-id="f0cba-114">Affected APIs</span></span>|<ul><li><xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.IO.Stream,System.Object)?displayProperty=nameWithType></li><li><xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.Xml.XmlDictionaryWriter,System.Object)?displayProperty=nameWithType></li><li><xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.Xml.XmlWriter,System.Object)?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="07b96-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="07b96-102">Details</span></span>
+
+<span data-ttu-id="07b96-103">在 .NET Framework 4.6.2 及更低版本中，<xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=fullName> 未按与 ECMAScript V6 和 V8 标准兼容的方式对一些特殊控制字符（如 \b、\f 和 \t）进行序列化。</span><span class="sxs-lookup"><span data-stu-id="07b96-103">In .NET Framework 4.6.2 and earlier versions, the <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer?displayProperty=fullName> did not serialize some special control characters, such as \b, \f, and \t, in a way that was compatible with the ECMAScript V6 and V8 standards.</span></span> <span data-ttu-id="07b96-104">从 .NET Framework 4.7 开始，这些控制字符的序列化与 ECMAScript V6 和 V8 兼容。</span><span class="sxs-lookup"><span data-stu-id="07b96-104">Starting with .NET Framework 4.7, serialization of these control characters is compatible with ECMAScript V6 and V8.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="07b96-105">建议</span><span class="sxs-lookup"><span data-stu-id="07b96-105">Suggestion</span></span>
+
+<span data-ttu-id="07b96-106">对面向 .NET Framework 4.7 的应用，默认启用此功能。</span><span class="sxs-lookup"><span data-stu-id="07b96-106">For apps that target the .NET Framework 4.7, this feature is enabled by default.</span></span> <span data-ttu-id="07b96-107">如果不需要此行为，可以在 app.config 或 web.config 文件的 `<runtime>` 部分中添加下面的代码行，从而选择禁用此功能：</span><span class="sxs-lookup"><span data-stu-id="07b96-107">If this behavior is not desirable, you can opt out of this feature by adding the following line to the `<runtime>` section of the app.config or web.config file:</span></span>
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.Runtime.Serialization.DoNotUseECMAScriptV6EscapeControlCharacter=false" />
+</runtime>
+```
+
+| <span data-ttu-id="07b96-108">“属性”</span><span class="sxs-lookup"><span data-stu-id="07b96-108">Name</span></span>    | <span data-ttu-id="07b96-109">值</span><span class="sxs-lookup"><span data-stu-id="07b96-109">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="07b96-110">范围</span><span class="sxs-lookup"><span data-stu-id="07b96-110">Scope</span></span>   | <span data-ttu-id="07b96-111">边缘</span><span class="sxs-lookup"><span data-stu-id="07b96-111">Edge</span></span>        |
+| <span data-ttu-id="07b96-112">Version</span><span class="sxs-lookup"><span data-stu-id="07b96-112">Version</span></span> | <span data-ttu-id="07b96-113">4.7</span><span class="sxs-lookup"><span data-stu-id="07b96-113">4.7</span></span>         |
+| <span data-ttu-id="07b96-114">类型</span><span class="sxs-lookup"><span data-stu-id="07b96-114">Type</span></span>    | <span data-ttu-id="07b96-115">重定目标</span><span class="sxs-lookup"><span data-stu-id="07b96-115">Retargeting</span></span> |
+
+#### <a name="affected-apis"></a><span data-ttu-id="07b96-116">受影响的 API</span><span class="sxs-lookup"><span data-stu-id="07b96-116">Affected APIs</span></span>
+
+- <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.IO.Stream,System.Object)?displayProperty=nameWithType>
+- <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.Xml.XmlDictionaryWriter,System.Object)?displayProperty=nameWithType>
+- <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(System.Xml.XmlWriter,System.Object)?displayProperty=nameWithType>

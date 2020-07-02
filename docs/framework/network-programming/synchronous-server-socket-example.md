@@ -1,5 +1,6 @@
 ---
 title: 同步服务器套接字示例
+description: 此示例 .NET Framework 程序创建一个服务器，该服务器使用异步套接字接收来自客户端的连接。 它接收并回显一个字符串。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,15 +10,15 @@ helpviewer_keywords:
 - sockets, code examples
 - sockets, synchronous server sockets
 ms.assetid: 5916c764-879f-4716-99fb-1d21c6237f1c
-ms.openlocfilehash: e8924051a7087ac26793722457f934e58a75f23d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0e2fb91dc493b2da4c68a98ac8a62494e78a9fd1
+ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180664"
+ms.lasthandoff: 06/08/2020
+ms.locfileid: "84502101"
 ---
-# <a name="synchronous-server-socket-example"></a><span data-ttu-id="3eee3-102">同步服务器套接字示例</span><span class="sxs-lookup"><span data-stu-id="3eee3-102">Synchronous Server Socket Example</span></span>
-<span data-ttu-id="3eee3-103">以下示例程序创建从客户端接收连接请求的服务器。</span><span class="sxs-lookup"><span data-stu-id="3eee3-103">The following example program creates a server that receives connection requests from clients.</span></span> <span data-ttu-id="3eee3-104">服务器使用同步套接字构建，因此在等待客户端的连接时，暂停执行服务器应用程序。</span><span class="sxs-lookup"><span data-stu-id="3eee3-104">The server is built with a synchronous socket, so execution of the server application is suspended while it waits for a connection from a client.</span></span> <span data-ttu-id="3eee3-105">应用程序从客户端接收字符串，在控制台上显示此字符串，然后将此字符串回显给客户端。</span><span class="sxs-lookup"><span data-stu-id="3eee3-105">The application receives a string from the client, displays the string on the console, and then echoes the string back to the client.</span></span> <span data-ttu-id="3eee3-106">来自客户端的字符串必须包含字符串“\<EOF>”以在消息结束时发出信号。</span><span class="sxs-lookup"><span data-stu-id="3eee3-106">The string from the client must contain the string "\<EOF>" to signal the end of the message.</span></span>  
+# <a name="synchronous-server-socket-example"></a><span data-ttu-id="cf437-104">同步服务器套接字示例</span><span class="sxs-lookup"><span data-stu-id="cf437-104">Synchronous Server Socket Example</span></span>
+<span data-ttu-id="cf437-105">以下示例程序创建从客户端接收连接请求的服务器。</span><span class="sxs-lookup"><span data-stu-id="cf437-105">The following example program creates a server that receives connection requests from clients.</span></span> <span data-ttu-id="cf437-106">服务器使用同步套接字构建，因此在等待客户端的连接时，暂停执行服务器应用程序。</span><span class="sxs-lookup"><span data-stu-id="cf437-106">The server is built with a synchronous socket, so execution of the server application is suspended while it waits for a connection from a client.</span></span> <span data-ttu-id="cf437-107">应用程序从客户端接收字符串，在控制台上显示此字符串，然后将此字符串回显给客户端。</span><span class="sxs-lookup"><span data-stu-id="cf437-107">The application receives a string from the client, displays the string on the console, and then echoes the string back to the client.</span></span> <span data-ttu-id="cf437-108">来自客户端的字符串必须包含字符串“\<EOF>”以在消息结束时发出信号。</span><span class="sxs-lookup"><span data-stu-id="cf437-108">The string from the client must contain the string "\<EOF>" to signal the end of the message.</span></span>  
   
 ```vb  
 Imports System  
@@ -155,8 +156,8 @@ public class SynchronousSocketListener {
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="3eee3-107">另请参阅</span><span class="sxs-lookup"><span data-stu-id="3eee3-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cf437-109">请参阅</span><span class="sxs-lookup"><span data-stu-id="cf437-109">See also</span></span>
 
-- [<span data-ttu-id="3eee3-108">同步客户端套接字示例</span><span class="sxs-lookup"><span data-stu-id="3eee3-108">Synchronous Client Socket Example</span></span>](synchronous-client-socket-example.md)
-- [<span data-ttu-id="3eee3-109">使用同步服务器套接字</span><span class="sxs-lookup"><span data-stu-id="3eee3-109">Using a Synchronous Server Socket</span></span>](using-a-synchronous-server-socket.md)
-- [<span data-ttu-id="3eee3-110">Socket 代码示例</span><span class="sxs-lookup"><span data-stu-id="3eee3-110">Socket Code Examples</span></span>](socket-code-examples.md)
+- [<span data-ttu-id="cf437-110">同步客户端套接字示例</span><span class="sxs-lookup"><span data-stu-id="cf437-110">Synchronous Client Socket Example</span></span>](synchronous-client-socket-example.md)
+- [<span data-ttu-id="cf437-111">使用同步服务器套接字</span><span class="sxs-lookup"><span data-stu-id="cf437-111">Using a Synchronous Server Socket</span></span>](using-a-synchronous-server-socket.md)
+- [<span data-ttu-id="cf437-112">Socket 代码示例</span><span class="sxs-lookup"><span data-stu-id="cf437-112">Socket Code Examples</span></span>](socket-code-examples.md)

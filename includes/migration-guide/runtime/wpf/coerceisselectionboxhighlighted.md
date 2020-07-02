@@ -1,18 +1,27 @@
 ---
-ms.openlocfilehash: d9e1cd8d346a48fafc89367bddf923167a620889
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4c8e597310ec0b02edbf993709f931a6093b6285
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67857519"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621771"
 ---
-### <a name="coerceisselectionboxhighlighted"></a><span data-ttu-id="62115-101">CoerceIsSelectionBoxHighlighted</span><span class="sxs-lookup"><span data-stu-id="62115-101">CoerceIsSelectionBoxHighlighted</span></span>
+### <a name="coerceisselectionboxhighlighted"></a><span data-ttu-id="a77aa-101">CoerceIsSelectionBoxHighlighted</span><span class="sxs-lookup"><span data-stu-id="a77aa-101">CoerceIsSelectionBoxHighlighted</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="62115-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="62115-102">Details</span></span>|<span data-ttu-id="62115-103">涉及 <xref:System.Windows.Controls.ComboBox?displayProperty=name> 及其数据源的某些操作序列可能会导致 <xref:System.NullReferenceException?displayProperty=name>。</span><span class="sxs-lookup"><span data-stu-id="62115-103">Certain sequences of actions involving a <xref:System.Windows.Controls.ComboBox?displayProperty=name> and its data source can result in a <xref:System.NullReferenceException?displayProperty=name>.</span></span>|
-|<span data-ttu-id="62115-104">建议</span><span class="sxs-lookup"><span data-stu-id="62115-104">Suggestion</span></span>|<span data-ttu-id="62115-105">如果可能，请升级到 .NET Framework 4.6.2。</span><span class="sxs-lookup"><span data-stu-id="62115-105">If possible, upgrade to .NET Framework 4.6.2.</span></span>|
-|<span data-ttu-id="62115-106">范围</span><span class="sxs-lookup"><span data-stu-id="62115-106">Scope</span></span>|<span data-ttu-id="62115-107">次要</span><span class="sxs-lookup"><span data-stu-id="62115-107">Minor</span></span>|
-|<span data-ttu-id="62115-108">Version</span><span class="sxs-lookup"><span data-stu-id="62115-108">Version</span></span>|<span data-ttu-id="62115-109">4.6</span><span class="sxs-lookup"><span data-stu-id="62115-109">4.6</span></span>|
-|<span data-ttu-id="62115-110">类型</span><span class="sxs-lookup"><span data-stu-id="62115-110">Type</span></span>|<span data-ttu-id="62115-111">运行时</span><span class="sxs-lookup"><span data-stu-id="62115-111">Runtime</span></span>|
-|<span data-ttu-id="62115-112">受影响的 API</span><span class="sxs-lookup"><span data-stu-id="62115-112">Affected APIs</span></span>|<ul><li><xref:System.Windows.Controls.ComboBox.IsSelectionBoxHighlighted?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="a77aa-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="a77aa-102">Details</span></span>
+
+<span data-ttu-id="a77aa-103">涉及 <xref:System.Windows.Controls.ComboBox?displayProperty=fullName> 及其数据源的某些操作序列可能会导致 <xref:System.NullReferenceException?displayProperty=fullName>。</span><span class="sxs-lookup"><span data-stu-id="a77aa-103">Certain sequences of actions involving a <xref:System.Windows.Controls.ComboBox?displayProperty=fullName> and its data source can result in a <xref:System.NullReferenceException?displayProperty=fullName>.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="a77aa-104">建议</span><span class="sxs-lookup"><span data-stu-id="a77aa-104">Suggestion</span></span>
+
+<span data-ttu-id="a77aa-105">如果可能，请升级到 .NET Framework 4.6.2。</span><span class="sxs-lookup"><span data-stu-id="a77aa-105">If possible, upgrade to .NET Framework 4.6.2.</span></span>
+
+| <span data-ttu-id="a77aa-106">“属性”</span><span class="sxs-lookup"><span data-stu-id="a77aa-106">Name</span></span>    | <span data-ttu-id="a77aa-107">值</span><span class="sxs-lookup"><span data-stu-id="a77aa-107">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="a77aa-108">范围</span><span class="sxs-lookup"><span data-stu-id="a77aa-108">Scope</span></span>   |<span data-ttu-id="a77aa-109">次要</span><span class="sxs-lookup"><span data-stu-id="a77aa-109">Minor</span></span>|
+|<span data-ttu-id="a77aa-110">Version</span><span class="sxs-lookup"><span data-stu-id="a77aa-110">Version</span></span>|<span data-ttu-id="a77aa-111">4.6</span><span class="sxs-lookup"><span data-stu-id="a77aa-111">4.6</span></span>|
+|<span data-ttu-id="a77aa-112">类型</span><span class="sxs-lookup"><span data-stu-id="a77aa-112">Type</span></span>|<span data-ttu-id="a77aa-113">运行时</span><span class="sxs-lookup"><span data-stu-id="a77aa-113">Runtime</span></span>
+
+#### <a name="affected-apis"></a><span data-ttu-id="a77aa-114">受影响的 API</span><span class="sxs-lookup"><span data-stu-id="a77aa-114">Affected APIs</span></span>
+
+-<xref:System.Windows.Controls.ComboBox.IsSelectionBoxHighlighted?displayProperty=nameWithType></li></ul>|

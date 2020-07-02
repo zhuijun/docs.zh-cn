@@ -1,5 +1,6 @@
 ---
 title: Winmdexp.exe 错误消息
+description: 了解 Winmdexp.exe（Windows 运行时元数据导出工具）错误消息，这些错误消息仅在 .NET 编译成功时的生成过程中显示。
 ms.date: 03/30/2017
 f1_keywords:
 - WME1095
@@ -157,21 +158,22 @@ helpviewer_keywords:
 - Windows Runtime Metadata Export Tool, error messages
 - error messages, Winmdexp.exe
 ms.assetid: 8271973c-deba-47a6-8e5e-04ce63f146ad
-ms.openlocfilehash: e99bdd106c845964f63915c87617e30eb51488f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1b44273bd5a8868ba426d9ac0eabbefcb725e70f
+ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74447311"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85325608"
 ---
-# <a name="winmdexpexe-error-messages"></a><span data-ttu-id="e677f-102">Winmdexp.exe 错误消息</span><span class="sxs-lookup"><span data-stu-id="e677f-102">Winmdexp.exe Error Messages</span></span>
-<span data-ttu-id="e677f-103">在 Visual Studio 2012 中使用 Windows 运行时组件模板时，生成进程调用 [Winmdexp.exe（Windows 运行时元数据导出工具）](winmdexp-exe-windows-runtime-metadata-export-tool.md)，因此“错误列表”中会显示 Winmdexp.exe 错误消息。</span><span class="sxs-lookup"><span data-stu-id="e677f-103">The build process calls [Winmdexp.exe (Windows Runtime Metadata Export Tool)](winmdexp-exe-windows-runtime-metadata-export-tool.md) when you use the **Windows Runtime Component** template in Visual Studio 2012, so Winmdexp.exe error messages appear in the **Error List**.</span></span> <span data-ttu-id="e677f-104">Winmdexp.exe 在用 `/target:winmdobj` 选项编译的模块上运行。</span><span class="sxs-lookup"><span data-stu-id="e677f-104">Winmdexp.exe operates on a module that is compiled with the `/target:winmdobj` option.</span></span> <span data-ttu-id="e677f-105">由于它需要将编译的模块作为输入，因此不会显示错误消息，除非编译成功。</span><span class="sxs-lookup"><span data-stu-id="e677f-105">Because it requires a compiled module as input, its error messages don't appear unless compilation succeeds.</span></span>  
-  
- <span data-ttu-id="e677f-106">错误消息包含解决其报告的错误条件所需的所有信息。</span><span class="sxs-lookup"><span data-stu-id="e677f-106">The error messages are designed to contain all the information you need to address the error conditions they report.</span></span> <span data-ttu-id="e677f-107">但是，有些问题需要消息以外的更多信息。</span><span class="sxs-lookup"><span data-stu-id="e677f-107">However, some problems require more information than will fit in the message.</span></span> <span data-ttu-id="e677f-108">[诊断 Windows 运行时组件错误条件](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))中提供更多信息。</span><span class="sxs-lookup"><span data-stu-id="e677f-108">You can find additional information in [Diagnosing Windows Runtime component error conditions](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110)).</span></span>  
-  
- <span data-ttu-id="e677f-109">如果该文章未讨论您遇到的错误，并且您认为消息所含信息不足以解决问题，请使用该文章中的反馈链接并附上错误消息。</span><span class="sxs-lookup"><span data-stu-id="e677f-109">If your error is not discussed in that article, and you feel that the message doesn't contain sufficient information to address the issue, please use the feedback link in that article and include the error message.</span></span> <span data-ttu-id="e677f-110">也可以在 [开发者社区网站](https://developercommunity.visualstudio.com/)提交 Bug。</span><span class="sxs-lookup"><span data-stu-id="e677f-110">Alternatively, you can file a bug at the [Developer Community website](https://developercommunity.visualstudio.com/).</span></span> <span data-ttu-id="e677f-111">还可以在 [Microsoft 论坛](https://social.msdn.microsoft.com/Forums/)上查找更多信息。</span><span class="sxs-lookup"><span data-stu-id="e677f-111">You can also look for more information on the [Microsoft Forums](https://social.msdn.microsoft.com/Forums/).</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="e677f-112">请参阅</span><span class="sxs-lookup"><span data-stu-id="e677f-112">See also</span></span>
+# <a name="winmdexpexe-error-messages"></a><span data-ttu-id="ce5bd-103">Winmdexp.exe 错误消息</span><span class="sxs-lookup"><span data-stu-id="ce5bd-103">Winmdexp.exe error messages</span></span>
 
-- [<span data-ttu-id="e677f-113">Winmdexp.exe（Windows 运行时元数据导出工具）</span><span class="sxs-lookup"><span data-stu-id="e677f-113">Winmdexp.exe (Windows Runtime Metadata Export Tool)</span></span>](winmdexp-exe-windows-runtime-metadata-export-tool.md)
-- <span data-ttu-id="e677f-114">[诊断 Windows 运行时组件错误条件](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))</span><span class="sxs-lookup"><span data-stu-id="e677f-114">[Diagnosing Windows Runtime component error conditions](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))</span></span>
+<span data-ttu-id="ce5bd-104">在 Visual Studio 2012 中使用 Windows 运行时组件模板时，生成进程调用 [Winmdexp.exe（Windows 运行时元数据导出工具）](winmdexp-exe-windows-runtime-metadata-export-tool.md)，因此“错误列表”中会显示 Winmdexp.exe 错误消息。</span><span class="sxs-lookup"><span data-stu-id="ce5bd-104">The build process calls [Winmdexp.exe (Windows Runtime Metadata Export Tool)](winmdexp-exe-windows-runtime-metadata-export-tool.md) when you use the **Windows Runtime Component** template in Visual Studio 2012, so Winmdexp.exe error messages appear in the **Error List**.</span></span> <span data-ttu-id="ce5bd-105">Winmdexp.exe 在用 `/target:winmdobj` 选项编译的模块上运行。</span><span class="sxs-lookup"><span data-stu-id="ce5bd-105">Winmdexp.exe operates on a module that is compiled with the `/target:winmdobj` option.</span></span> <span data-ttu-id="ce5bd-106">由于它需要将编译的模块作为输入，因此不会显示错误消息，除非编译成功。</span><span class="sxs-lookup"><span data-stu-id="ce5bd-106">Because it requires a compiled module as input, its error messages don't appear unless compilation succeeds.</span></span>  
+  
+ <span data-ttu-id="ce5bd-107">错误消息包含解决其报告的错误条件所需的所有信息。</span><span class="sxs-lookup"><span data-stu-id="ce5bd-107">The error messages are designed to contain all the information you need to address the error conditions they report.</span></span> <span data-ttu-id="ce5bd-108">但是，有些问题需要消息以外的更多信息。</span><span class="sxs-lookup"><span data-stu-id="ce5bd-108">However, some problems require more information than will fit in the message.</span></span> <span data-ttu-id="ce5bd-109">[诊断 Windows 运行时组件错误条件](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))中提供更多信息。</span><span class="sxs-lookup"><span data-stu-id="ce5bd-109">You can find additional information in [Diagnosing Windows Runtime component error conditions](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110)).</span></span>  
+  
+ <span data-ttu-id="ce5bd-110">如果该文章未讨论你遇到的错误，并且你认为消息所含信息不足以解决问题，请使用该文章中的反馈链接并附上错误消息。</span><span class="sxs-lookup"><span data-stu-id="ce5bd-110">If your error is not discussed in that article, and you feel that the message doesn't contain sufficient information to address the issue, use the feedback link in that article and include the error message.</span></span> <span data-ttu-id="ce5bd-111">也可以在 [开发者社区网站](https://developercommunity.visualstudio.com/)提交 Bug。</span><span class="sxs-lookup"><span data-stu-id="ce5bd-111">Alternatively, you can file a bug at the [Developer Community website](https://developercommunity.visualstudio.com/).</span></span> <span data-ttu-id="ce5bd-112">还可以在 [Microsoft 论坛](https://social.msdn.microsoft.com/Forums/)上查找更多信息。</span><span class="sxs-lookup"><span data-stu-id="ce5bd-112">You can also look for more information on the [Microsoft Forums](https://social.msdn.microsoft.com/Forums/).</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="ce5bd-113">请参阅</span><span class="sxs-lookup"><span data-stu-id="ce5bd-113">See also</span></span>
+
+- [<span data-ttu-id="ce5bd-114">Winmdexp.exe（Windows 运行时元数据导出工具）</span><span class="sxs-lookup"><span data-stu-id="ce5bd-114">Winmdexp.exe (Windows Runtime Metadata Export Tool)</span></span>](winmdexp-exe-windows-runtime-metadata-export-tool.md)
+- <span data-ttu-id="ce5bd-115">[诊断 Windows 运行时组件错误条件](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))</span><span class="sxs-lookup"><span data-stu-id="ce5bd-115">[Diagnosing Windows Runtime component error conditions](https://docs.microsoft.com/previous-versions/hh977010(v=vs.110))</span></span>

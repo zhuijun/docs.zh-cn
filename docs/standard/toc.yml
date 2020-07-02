@@ -639,6 +639,8 @@
       items:
         - name: 在类和结构之间选择
           href: design-guidelines/choosing-between-class-and-struct.md
+        - name: 在匿名类型和元组类型之间进行选择
+          href: design-guidelines/choosing-between-anonymous-and-tuple.md
         - name: 抽象类设计
           href: design-guidelines/abstract-class.md
         - name: 静态类设计

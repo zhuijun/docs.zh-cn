@@ -1,18 +1,34 @@
 ---
-ms.openlocfilehash: 9ec5fa379556dedeaa7a35e34f004340ab47a39c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5a061dffa1deb66e1769d6ec70dfa2155ac6a31
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67804433"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85615612"
 ---
-### <a name="calling-createdefaultauthorizationcontext-with-a-null-argument-has-changed"></a><span data-ttu-id="7db7d-101">调用具有 null 自变量的 CreateDefaultAuthorizationContext 的方式已更改</span><span class="sxs-lookup"><span data-stu-id="7db7d-101">Calling CreateDefaultAuthorizationContext with a null argument has changed</span></span>
+### <a name="calling-createdefaultauthorizationcontext-with-a-null-argument-has-changed"></a><span data-ttu-id="49342-101">调用具有 null 自变量的 CreateDefaultAuthorizationContext 的方式已更改</span><span class="sxs-lookup"><span data-stu-id="49342-101">Calling CreateDefaultAuthorizationContext with a null argument has changed</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="7db7d-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="7db7d-102">Details</span></span>|<span data-ttu-id="7db7d-103">调用具有 null authorizationPolicies 自变量的 <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=name> 所返回的 <xref:System.IdentityModel.Policy.AuthorizationContext?displayProperty=name> 实现更改了其在 .NET Framework 4.6 中的实现。</span><span class="sxs-lookup"><span data-stu-id="7db7d-103">The implementation of the <xref:System.IdentityModel.Policy.AuthorizationContext?displayProperty=name> returned by a call to the <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=name> with a null authorizationPolicies argument has changed its implementation in the .NET Framework 4.6.</span></span>|
-|<span data-ttu-id="7db7d-104">建议</span><span class="sxs-lookup"><span data-stu-id="7db7d-104">Suggestion</span></span>|<span data-ttu-id="7db7d-105">在极少数情况下，使用自定义身份验证的 WCF 应用可能会看到行为差异。</span><span class="sxs-lookup"><span data-stu-id="7db7d-105">In rare cases, WCF apps that use custom authentication may see behavioral differences.</span></span> <span data-ttu-id="7db7d-106">在这类情况下，可使用以下两种方式之一还原以前的行为：</span><span class="sxs-lookup"><span data-stu-id="7db7d-106">In such cases, the previous behavior can be restored in either of two ways:</span></span><ol><li><span data-ttu-id="7db7d-107">重新编译你的应用以面向早于 4.6 的 .NET Framework 版本。</span><span class="sxs-lookup"><span data-stu-id="7db7d-107">Recompile your app to target an earlier version of the .NET Framework than 4.6.</span></span> <span data-ttu-id="7db7d-108">对于 IIS 承载的服务，请使用 &lt;httpRuntime targetFramework=x.x /&gt; 元素以面向早期版本的 .NET Framework&quot;&quot;。</span><span class="sxs-lookup"><span data-stu-id="7db7d-108">For IIS-hosted services, use the &lt;httpRuntime targetFramework=&quot;x.x&quot; /&gt; element to target an earlier version of the .NET Framework.</span></span></li><li><span data-ttu-id="7db7d-109">将下面的行添加到 app.config 文件的 <code>&lt;appSettings&gt;</code> 部分：<code>&lt;add key=&quot;appContext.SetSwitch:Switch.System.IdentityModel.EnableCachedEmptyDefaultAuthorizationContext&quot; value=&quot;true&quot; /&gt;</code></span><span class="sxs-lookup"><span data-stu-id="7db7d-109">Add the following line to the <code>&lt;appSettings&gt;</code> section of your app.config file: <code>&lt;add key=&quot;appContext.SetSwitch:Switch.System.IdentityModel.EnableCachedEmptyDefaultAuthorizationContext&quot; value=&quot;true&quot; /&gt;</code></span></span></li></ol>|
-|<span data-ttu-id="7db7d-110">范围</span><span class="sxs-lookup"><span data-stu-id="7db7d-110">Scope</span></span>|<span data-ttu-id="7db7d-111">次要</span><span class="sxs-lookup"><span data-stu-id="7db7d-111">Minor</span></span>|
-|<span data-ttu-id="7db7d-112">Version</span><span class="sxs-lookup"><span data-stu-id="7db7d-112">Version</span></span>|<span data-ttu-id="7db7d-113">4.6</span><span class="sxs-lookup"><span data-stu-id="7db7d-113">4.6</span></span>|
-|<span data-ttu-id="7db7d-114">类型</span><span class="sxs-lookup"><span data-stu-id="7db7d-114">Type</span></span>|<span data-ttu-id="7db7d-115">重定目标</span><span class="sxs-lookup"><span data-stu-id="7db7d-115">Retargeting</span></span>|
-|<span data-ttu-id="7db7d-116">受影响的 API</span><span class="sxs-lookup"><span data-stu-id="7db7d-116">Affected APIs</span></span>|<ul><li><xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="49342-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="49342-102">Details</span></span>
+
+<span data-ttu-id="49342-103">调用具有 null authorizationPolicies 自变量的 <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=fullName> 所返回的 <xref:System.IdentityModel.Policy.AuthorizationContext?displayProperty=fullName> 实现更改了其在 .NET Framework 4.6 中的实现。</span><span class="sxs-lookup"><span data-stu-id="49342-103">The implementation of the <xref:System.IdentityModel.Policy.AuthorizationContext?displayProperty=fullName> returned by a call to the <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=fullName> with a null authorizationPolicies argument has changed its implementation in the .NET Framework 4.6.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="49342-104">建议</span><span class="sxs-lookup"><span data-stu-id="49342-104">Suggestion</span></span>
+
+<span data-ttu-id="49342-105">在极少数情况下，使用自定义身份验证的 WCF 应用可能会看到行为差异。</span><span class="sxs-lookup"><span data-stu-id="49342-105">In rare cases, WCF apps that use custom authentication may see behavioral differences.</span></span> <span data-ttu-id="49342-106">在这类情况下，可使用以下两种方式之一还原以前的行为：</span><span class="sxs-lookup"><span data-stu-id="49342-106">In such cases, the previous behavior can be restored in either of two ways:</span></span>
+
+- <span data-ttu-id="49342-107">重新编译你的应用以面向早于 4.6 的 .NET Framework 版本。</span><span class="sxs-lookup"><span data-stu-id="49342-107">Recompile your app to target an earlier version of the .NET Framework than 4.6.</span></span> <span data-ttu-id="49342-108">对于 IIS 承载的服务，请使用 `<httpRuntime targetFramework="x.x">` 元素以面向早期版本的 .NET Framework。</span><span class="sxs-lookup"><span data-stu-id="49342-108">For IIS-hosted services, use the `<httpRuntime targetFramework="x.x">` element to target an earlier version of the .NET Framework.</span></span>
+- <span data-ttu-id="49342-109">将下面的行添加到 app.config 文件的 `<appSettings>` 部分：</span><span class="sxs-lookup"><span data-stu-id="49342-109">Add the following line to the `<appSettings>` section of your app.config file:</span></span>
+
+    ```xml
+    <add key="appContext.SetSwitch:Switch.System.IdentityModel.EnableCachedEmptyDefaultAuthorizationContext" value="true" />
+    ```
+
+| <span data-ttu-id="49342-110">“属性”</span><span class="sxs-lookup"><span data-stu-id="49342-110">Name</span></span>    | <span data-ttu-id="49342-111">“值”</span><span class="sxs-lookup"><span data-stu-id="49342-111">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="49342-112">范围</span><span class="sxs-lookup"><span data-stu-id="49342-112">Scope</span></span>   | <span data-ttu-id="49342-113">次要</span><span class="sxs-lookup"><span data-stu-id="49342-113">Minor</span></span>       |
+| <span data-ttu-id="49342-114">Version</span><span class="sxs-lookup"><span data-stu-id="49342-114">Version</span></span> | <span data-ttu-id="49342-115">4.6</span><span class="sxs-lookup"><span data-stu-id="49342-115">4.6</span></span>         |
+| <span data-ttu-id="49342-116">类型</span><span class="sxs-lookup"><span data-stu-id="49342-116">Type</span></span>    | <span data-ttu-id="49342-117">重定目标</span><span class="sxs-lookup"><span data-stu-id="49342-117">Retargeting</span></span> |
+
+#### <a name="affected-apis"></a><span data-ttu-id="49342-118">受影响的 API</span><span class="sxs-lookup"><span data-stu-id="49342-118">Affected APIs</span></span>
+
+- <xref:System.IdentityModel.Policy.AuthorizationContext.CreateDefaultAuthorizationContext(System.Collections.Generic.IList{System.IdentityModel.Policy.IAuthorizationPolicy})?displayProperty=nameWithType>
