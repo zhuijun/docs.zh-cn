@@ -1,18 +1,19 @@
 ---
 title: WPF 介绍
 titleSuffix: ''
+description: 在 Windows 中创建视觉效果非凡的用户体验。 了解 Windows Presentation Foundation （WPF）的主要功能和概念。
 ms.date: 11/04/2016
 ms.topic: conceptual
 ms.assetid: b8d7cf43-d1f2-4f3d-adb0-4f3a6428edc0
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 759c1ca20ac139ef856df08ec42fb259fc3920d1
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: 7a79174f5f3aebe90190db45566b37bd5e9fbe3f
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80112006"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853581"
 ---
 # <a name="wpf-overview"></a>WPF 概述
 
@@ -44,7 +45,7 @@ WPF 还包括增强属性和事件的其他编程构造： [依赖项属性](adv
 
 XAML 是一种基于 XML 的标记语言，以声明形式实现应用程序的外观。 通常用它创建窗口、对话框、页和用户控件，并填充控件、形状和图形。
 
-下面的示例使用 XAML 来实现包含单个按钮的窗口的外观：
+下面的示例使用 XAML 来实现包含一个按钮的窗口的外观：
 
 ```xaml
 <Window
@@ -60,7 +61,7 @@ XAML 是一种基于 XML 的标记语言，以声明形式实现应用程序的�
 
 具体而言，此 XAML 通过分别使用 `Window` 和 `Button` 元素来定义窗口和按钮。 每个元素均配置了特性（如 `Window` 元素的 `Title` 特性）来指定窗口的标题栏文本。 在运行时，WPF 会将标记中定义的元素和特性转换为 WPF 类的实例。 例如， `Window` 元素被转换为 <xref:System.Windows.Window> 类的实例，该类的 <xref:System.Windows.Window.Title%2A> 属性是 `Title` 特性的值。
 
-下图显示了在前面的示例中由 XAML 定义的用户界面 （UI）：
+下图显示了上一示例中的 XAML 定义的用户界面（UI）：
 
 ![包含按钮的窗口](media/introduction-to-wpf/wpfintrofigure10.png)
 
@@ -68,7 +69,7 @@ XAML 是一种基于 XML 的标记语言，以声明形式实现应用程序的�
 
 ### <a name="code-behind"></a>代码隐藏
 
-应用程序的主要行为是实现响应用户交互的功能，包括处理事件（例如，单击菜单、工具栏或按钮）以及相应地调用业务逻辑和数据访问逻辑。 在 WPF 中，在与标记相关联的代码中实现此行为。 此类代码称为代码隐藏。 下面的示例显示了上一个示例中的更新标记和代码后面：
+应用程序的主要行为是实现响应用户交互的功能，包括处理事件（例如，单击菜单、工具栏或按钮）以及相应地调用业务逻辑和数据访问逻辑。 在 WPF 中，在与标记相关联的代码中实现此行为。 此类代码称为代码隐藏。 下面的示例显示了上一示例中的更新标记和代码隐藏：
 
 ```xaml
 <Window
@@ -135,7 +136,7 @@ Namespace SDKSample
 End Namespace
 ```
 
-在此示例中，代码隐藏实现派生自 <xref:System.Windows.Window> 类的类。 `x:Class` 特性用于将标记与代码隐藏类相关联。 从代码隐藏类的构造函数调用 `InitializeComponent`，以将标记中定义的 UI 与代码隐藏类合并在一起。 （`InitializeComponent`在生成应用程序时为您生成，这就是为什么您不需要手动实现它的原因。和 的组合`x:Class``InitializeComponent`确保在创建实现时正确初始化实现。 代码隐藏类还可实现按钮的 <xref:System.Windows.Controls.Primitives.ButtonBase.Click> 事件的事件处理程序。 单击该按钮后，事件处理程序会通过调用 <xref:System.Windows.MessageBox.Show%2A?displayProperty=fullName> 方法显示一个消息框。
+在此示例中，代码隐藏实现派生自 <xref:System.Windows.Window> 类的类。 `x:Class` 特性用于将标记与代码隐藏类相关联。 从代码隐藏类的构造函数调用 `InitializeComponent`，以将标记中定义的 UI 与代码隐藏类合并在一起。 （ `InitializeComponent` 生成应用程序时将为你生成，这就是不需要手动实现它的原因。）和的组合 `x:Class` `InitializeComponent` 可确保你的实现在创建时正确初始化。 代码隐藏类还可实现按钮的 <xref:System.Windows.Controls.Primitives.ButtonBase.Click> 事件的事件处理程序。 单击该按钮后，事件处理程序会通过调用 <xref:System.Windows.MessageBox.Show%2A?displayProperty=fullName> 方法显示一个消息框。
 
 下图显示了单击按钮时的结果：
 
@@ -143,39 +144,39 @@ End Namespace
 
 ## <a name="controls"></a>控制
 
-应用程序模型带来的用户体验是构造的控件。 在 WPF 中，*控件*是一个总括术语，适用于托管在窗口或页面中的 WPF 类类别，具有用户界面并实现某些行为。
+应用程序模型带来的用户体验是构造的控件。 在 WPF 中，*控件*是一个涵盖性术语，适用于在窗口或页中承载的 WPF 类的类别、具有用户界面并实现某些行为。
 
 有关详细信息，请参阅[控件](controls/index.md)。
 
 ### <a name="wpf-controls-by-function"></a>按功能分类的 WPF 控件
 
-内置 WPF 控件如下所示：
+下面列出了内置的 WPF 控件：
 
-- **按钮**： <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.Primitives.RepeatButton>和 。
+- **按钮**： <xref:System.Windows.Controls.Button> 和 <xref:System.Windows.Controls.Primitives.RepeatButton> 。
 
-- **数据显示**： <xref:System.Windows.Controls.DataGrid><xref:System.Windows.Controls.ListView>和<xref:System.Windows.Controls.TreeView>。
+- **数据显示**： <xref:System.Windows.Controls.DataGrid> 、 <xref:System.Windows.Controls.ListView> 和 <xref:System.Windows.Controls.TreeView> 。
 
-- **日期显示和选择** <xref:System.Windows.Controls.Calendar> ：<xref:System.Windows.Controls.DatePicker>和 。
+- **日期显示和选择**： <xref:System.Windows.Controls.Calendar> 和 <xref:System.Windows.Controls.DatePicker> 。
 
-- **对话框**： <xref:Microsoft.Win32.OpenFileDialog><xref:System.Windows.Controls.PrintDialog>和<xref:Microsoft.Win32.SaveFileDialog>。
+- **对话框**： <xref:Microsoft.Win32.OpenFileDialog> 、 <xref:System.Windows.Controls.PrintDialog> 和 <xref:Microsoft.Win32.SaveFileDialog> 。
 
-- **数字墨水** <xref:System.Windows.Controls.InkCanvas> ：<xref:System.Windows.Controls.InkPresenter>和 。
+- **数字墨迹**： <xref:System.Windows.Controls.InkCanvas> 和 <xref:System.Windows.Controls.InkPresenter> 。
 
-- **文档** <xref:System.Windows.Controls.DocumentViewer>： <xref:System.Windows.Controls.FlowDocumentPageViewer> <xref:System.Windows.Controls.FlowDocumentReader>、 <xref:System.Windows.Controls.FlowDocumentScrollViewer>、<xref:System.Windows.Controls.StickyNoteControl>和 。
+- **文档**： <xref:System.Windows.Controls.DocumentViewer> 、 <xref:System.Windows.Controls.FlowDocumentPageViewer> 、 <xref:System.Windows.Controls.FlowDocumentReader> 、 <xref:System.Windows.Controls.FlowDocumentScrollViewer> 和 <xref:System.Windows.Controls.StickyNoteControl> 。
 
-- **输入** <xref:System.Windows.Controls.TextBox>：<xref:System.Windows.Controls.RichTextBox>和<xref:System.Windows.Controls.PasswordBox>。
+- **输入**： <xref:System.Windows.Controls.TextBox> 、 <xref:System.Windows.Controls.RichTextBox> 和 <xref:System.Windows.Controls.PasswordBox> 。
 
-- **布局**： <xref:System.Windows.Controls.Border> <xref:System.Windows.Controls.Primitives.BulletDecorator>、 <xref:System.Windows.Controls.Canvas> <xref:System.Windows.Controls.DockPanel>、 <xref:System.Windows.Controls.Expander> <xref:System.Windows.Controls.Grid>、 <xref:System.Windows.Controls.GridView> <xref:System.Windows.Controls.GridSplitter>、 <xref:System.Windows.Controls.GroupBox> <xref:System.Windows.Controls.Panel>、 <xref:System.Windows.Controls.Primitives.ResizeGrip> <xref:System.Windows.Controls.Separator>、 <xref:System.Windows.Controls.Primitives.ScrollBar> <xref:System.Windows.Controls.ScrollViewer>、 <xref:System.Windows.Controls.StackPanel> <xref:System.Windows.Controls.Primitives.Thumb>、 <xref:System.Windows.Controls.Viewbox> <xref:System.Windows.Controls.VirtualizingStackPanel> <xref:System.Windows.Window>、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 、 <xref:System.Windows.Controls.WrapPanel>、
+- **布局**： <xref:System.Windows.Controls.Border> 、 <xref:System.Windows.Controls.Primitives.BulletDecorator> 、 <xref:System.Windows.Controls.Canvas> 、 <xref:System.Windows.Controls.DockPanel> 、 <xref:System.Windows.Controls.Expander> 、 <xref:System.Windows.Controls.Grid> 、 <xref:System.Windows.Controls.GridView> 、 <xref:System.Windows.Controls.GridSplitter> <xref:System.Windows.Controls.GroupBox> <xref:System.Windows.Controls.Panel> <xref:System.Windows.Controls.Primitives.ResizeGrip> <xref:System.Windows.Controls.Separator> <xref:System.Windows.Controls.Primitives.ScrollBar> <xref:System.Windows.Controls.ScrollViewer> <xref:System.Windows.Controls.StackPanel> <xref:System.Windows.Controls.Primitives.Thumb> <xref:System.Windows.Controls.Viewbox> <xref:System.Windows.Controls.VirtualizingStackPanel> <xref:System.Windows.Window> 、、、、 <xref:System.Windows.Controls.WrapPanel> 、、、、、、、和。
 
-- **媒体** <xref:System.Windows.Controls.Image>：<xref:System.Windows.Controls.MediaElement>和<xref:System.Windows.Controls.SoundPlayerAction>。
+- **媒体**： <xref:System.Windows.Controls.Image> 、 <xref:System.Windows.Controls.MediaElement> 和 <xref:System.Windows.Controls.SoundPlayerAction> 。
 
-- **菜单**： <xref:System.Windows.Controls.ContextMenu>、<xref:System.Windows.Controls.Menu>和<xref:System.Windows.Controls.ToolBar>。
+- **菜单**： <xref:System.Windows.Controls.ContextMenu> 、 <xref:System.Windows.Controls.Menu> 和 <xref:System.Windows.Controls.ToolBar> 。
 
-- **导航**： <xref:System.Windows.Controls.Frame> <xref:System.Windows.Documents.Hyperlink>、 <xref:System.Windows.Controls.Page> <xref:System.Windows.Navigation.NavigationWindow>、 <xref:System.Windows.Controls.TabControl>、 和 。
+- **导航**： <xref:System.Windows.Controls.Frame> 、 <xref:System.Windows.Documents.Hyperlink> 、 <xref:System.Windows.Controls.Page> 、 <xref:System.Windows.Navigation.NavigationWindow> 和 <xref:System.Windows.Controls.TabControl> 。
 
-- **选择** <xref:System.Windows.Controls.CheckBox>： <xref:System.Windows.Controls.ComboBox> <xref:System.Windows.Controls.ListBox>、 <xref:System.Windows.Controls.RadioButton>、 <xref:System.Windows.Controls.Slider>、 和 。
+- **选项**： <xref:System.Windows.Controls.CheckBox> 、 <xref:System.Windows.Controls.ComboBox> 、 <xref:System.Windows.Controls.ListBox> 、 <xref:System.Windows.Controls.RadioButton> 和 <xref:System.Windows.Controls.Slider> 。
 
-- **用户信息** <xref:System.Windows.Controls.AccessText> <xref:System.Windows.Controls.Label> <xref:System.Windows.Controls.Primitives.Popup>：、、、、、、<xref:System.Windows.Controls.ToolTip><xref:System.Windows.Controls.ProgressBar><xref:System.Windows.Controls.Primitives.StatusBar><xref:System.Windows.Controls.TextBlock>和 。
+- **用户信息**： <xref:System.Windows.Controls.AccessText> 、 <xref:System.Windows.Controls.Label> 、 <xref:System.Windows.Controls.Primitives.Popup> 、 <xref:System.Windows.Controls.ProgressBar> 、 <xref:System.Windows.Controls.Primitives.StatusBar> 、 <xref:System.Windows.Controls.TextBlock> 和 <xref:System.Windows.Controls.ToolTip> 。
 
 ## <a name="input-and-commands"></a>输入和命令
 
@@ -203,7 +204,7 @@ End Namespace
 
 - <xref:System.Windows.Controls.WrapPanel>：子控件按从左到右的顺序定位，在当前行上的控件超出允许的空间时，换行到下一行。
 
-下面的示例使用 布局<xref:System.Windows.Controls.DockPanel>多个<xref:System.Windows.Controls.TextBox>控件：
+下面的示例使用 <xref:System.Windows.Controls.DockPanel> 来布局几个 <xref:System.Windows.Controls.TextBox> 控件：
 
 [!code-xaml[IntroToWPFSnippets#LayoutMARKUP](~/samples/snippets/xaml/wpf/introduction-to-wpf/introduction-to-wpf_1.xaml)]
 
@@ -212,7 +213,7 @@ End Namespace
 > [!NOTE]
 > 由父控件实现以便子控件使用的属性是 WPF 构造，称为[附加属性](advanced/attached-properties-overview.md)。
 
-下图显示了上述示例中的 XAML 标记的结果：
+下图显示了前面示例中的 XAML 标记的结果：
 
 ![DockPanel 页](media/introduction-to-wpf/wpfintrofigure11.png)
 
@@ -233,7 +234,7 @@ End Namespace
 [!code-vb[SimpleDataBindingSnippets#PersonClassCODE](~/samples/snippets/visualbasic/wpf/introduction-to-wpf/introduction-to-wpf_2.vb)]
 [!code-csharp[SimpleDataBindingSnippets#PersonClassCODE](~/samples/snippets/csharp/wpf/introduction-to-wpf/introduction-to-wpf_2.cs)]
 
-以下标记绑定<xref:System.Windows.Controls.TextBox>到自定义`Person`对象的实例：
+下面的标记将绑定 <xref:System.Windows.Controls.TextBox> 到自定义对象的实例 `Person` ：
 
 ```xaml
  <Window
@@ -256,7 +257,7 @@ WPF 数据绑定引擎提供了额外支持，包括验证、排序、筛选和�
 
 有关详细信息，请参阅[数据绑定概述](../../desktop-wpf/data/data-binding-overview.md)。
 
-## <a name="graphics"></a>图形
+## <a name="graphics"></a>显卡
 
 WPF 引入了一组广泛、可伸缩的灵活图形功能，具有以下优点：
 
@@ -274,18 +275,18 @@ WPF 提供一个常用矢量绘制的二维形状库，如下图中所示的矩�
 
 ![椭圆和矩形](media/introduction-to-wpf/wpfintrofigure4.PNG)
 
-形状的一个有趣功能是它们不只是用于显示；形状实现许多你期望的控件功能，包括键盘和鼠标输入。 下面的示例显示了<xref:System.Windows.UIElement.MouseUp><xref:System.Windows.Shapes.Ellipse>正在处理的事件：
+形状的一个有趣功能是它们不只是用于显示；形状实现许多你期望的控件功能，包括键盘和鼠标输入。 下面的示例演示 <xref:System.Windows.UIElement.MouseUp> 正在处理的事件 <xref:System.Windows.Shapes.Ellipse> ：
 
 [!code-xaml[IntroToWPFSnippets#HandleEllipseMouseUpEventMARKUP](~/samples/snippets/xaml/wpf/introduction-to-wpf/introduction-to-wpf_7.xaml)]
 
 [!code-vb[IntroToWPFSnippets#HandleEllipseMouseUpEventCODEBEHIND](~/samples/snippets/visualbasic/wpf/introduction-to-wpf/introduction-to-wpf_8.vb)]
 [!code-csharp[IntroToWPFSnippets#HandleEllipseMouseUpEventCODEBEHIND](~/samples/snippets/csharp/wpf/introduction-to-wpf/introduction-to-wpf_8.cs)]
 
-下图显示了上述代码产生的内容：
+下图显示了前面的代码生成的内容：
 
 ![包含文本“单击该椭圆！”的窗口](media/introduction-to-wpf/wpfintrofigure12.png)
 
-有关详细信息，请参阅[WPF 概述中的形状和基本图形](../../desktop-wpf/data/data-binding-overview.md)。
+有关详细信息，请参阅[WPF 中的形状和基本绘图概述](../../desktop-wpf/data/data-binding-overview.md)。
 
 ### <a name="2d-geometries"></a>二维几何图形
 
@@ -301,7 +302,7 @@ WPF 提供的二维形状包含基本形状的标准集。 但是，你可能需
 
 ### <a name="2d-effects"></a>二维效果
 
-WPF 二维功能的子集包括视觉效果，如渐变、位图、绘图、用视频绘画、旋转、缩放和倾斜。 这些都是用刷子实现的;下图显示了一些示例：
+WPF 二维功能的子集包括视觉效果，如渐变、位图、绘图、用视频绘画、旋转、缩放和倾斜。 这些都是通过画笔实现的;下图显示了一些示例：
 
 ![不同画笔的图示](media/introduction-to-wpf/wpfintrofigure6.png)
 
@@ -309,15 +310,15 @@ WPF 二维功能的子集包括视觉效果，如渐变、位图、绘图、用�
 
 ### <a name="3d-rendering"></a>三维呈现
 
-WPF 还包括与 2D 图形集成的 3D 渲染功能，以便创建更令人兴奋和有趣的用户界面。 例如，下图显示了渲染到 3D 形状的 2D 图像：
+WPF 还包括三维呈现功能，这些功能与二维图形集成，以允许创建更令人兴奋且更有趣的用户界面。 例如，下图显示呈现在三维形状上的2D 图像：
 
 ![Visual3D 示例屏幕快照](media/introduction-to-wpf/wpfintrofigure13.png)
 
-有关详细信息，请参阅[3D 图形概述](graphics-multimedia/3-d-graphics-overview.md)。
+有关详细信息，请参阅[三维图形概述](graphics-multimedia/3-d-graphics-overview.md)。
 
 ## <a name="animation"></a>动画
 
-WPF 动画支持可以使控件变大、抖动、旋转和淡出，以形成有趣的页面过渡等。 你可以对大多数 WPF 类，甚至自定义类进行动画处理。 下图显示了一个简单的动画在操作中：
+WPF 动画支持可以使控件变大、抖动、旋转和淡出，以形成有趣的页面过渡等。 你可以对大多数 WPF 类，甚至自定义类进行动画处理。 下图显示了一个简单的动画操作：
 
 ![具有动画效果的立方体图](media/introduction-to-wpf/wpfintrofigure7.png)
 
@@ -333,15 +334,15 @@ WPF 动画支持可以使控件变大、抖动、旋转和淡出，以形成有�
 
 ![缩略图图像和完整尺寸图像](media/introduction-to-wpf/wpfintrofigure8.png)
 
-有关详细信息，请参阅[映像概述](graphics-multimedia/imaging-overview.md)。
+有关详细信息，请参阅[图像处理概述](graphics-multimedia/imaging-overview.md)。
 
 ### <a name="video-and-audio"></a>视频和音频
 
-<xref:System.Windows.Controls.MediaElement> 控件能够播放视频和音频，并且其足够灵活，可以用作其他自定义媒体播放器的基础。 以下 XAML 标记实现媒体播放器：
+<xref:System.Windows.Controls.MediaElement> 控件能够播放视频和音频，并且其足够灵活，可以用作其他自定义媒体播放器的基础。 以下 XAML 标记实现了媒体播放器：
 
 [!code-xaml[IntroToWPFSnippets#MediaElementMARKUP](~/samples/snippets/xaml/wpf/introduction-to-wpf/introduction-to-wpf_9.xaml)]
 
-下图中的窗口显示控件<xref:System.Windows.Controls.MediaElement>在操作中：
+下图中的窗口显示了 <xref:System.Windows.Controls.MediaElement> 操作中的控件：
 
 ![具有音频和视频的 MediaElement 控件](media/introduction-to-wpf/wpfintrofigure1.png)
 
@@ -361,7 +362,7 @@ WPF 动画支持可以使控件变大、抖动、旋转和淡出，以形成有�
 
 - 国际字体支持和回退机制。
 
-作为文本与图形集成的演示，下图显示了文本修饰的应用：
+作为文本与图形集成的演示，下图显示了文本修饰的应用程序：
 
 ![具有各种文本修饰的文本](media/introduction-to-wpf/wpfintrofigure23.png)
 
@@ -377,7 +378,7 @@ WPF 动画支持可以使控件变大、抖动、旋转和淡出，以形成有�
 
 ### <a name="content-model"></a>内容模型
 
-大多数 WPF 控件的主要用途是显示内容。 在 WPF 中，可以构成控件内容的项的类型和数目称为控件的 *内容模型*。 某些控件可以包含一种内容类型的一个项；例如， <xref:System.Windows.Controls.TextBox> 的内容是分配给 <xref:System.Windows.Controls.TextBox.Text%2A> 属性的一个字符串值。 以下示例设置 的内容<xref:System.Windows.Controls.TextBox>：
+大多数 WPF 控件的主要用途是显示内容。 在 WPF 中，可以构成控件内容的项的类型和数目称为控件的 *内容模型*。 某些控件可以包含一种内容类型的一个项；例如， <xref:System.Windows.Controls.TextBox> 的内容是分配给 <xref:System.Windows.Controls.TextBox.Text%2A> 属性的一个字符串值。 下面的示例设置的内容 <xref:System.Windows.Controls.TextBox> ：
 
 ```xaml
 <Window
@@ -394,7 +395,7 @@ WPF 动画支持可以使控件变大、抖动、旋转和淡出，以形成有�
 
 ![包含文本的 TextBox 控件](media/introduction-to-wpf/wpfintrofigure21.png)
 
-但是，其他控件可以包含不同内容类型的多个项； <xref:System.Windows.Controls.Button>的内容（由 <xref:System.Windows.Controls.ContentControl.Content%2A> 属性指定）可以包含各种项（包括布局控件、文本、图像和形状）。 下面的示例显示 包含<xref:System.Windows.Controls.Button><xref:System.Windows.Controls.DockPanel>的内容 的 显示<xref:System.Windows.Controls.Label>， <xref:System.Windows.Controls.Border>a 、 <xref:System.Windows.Controls.MediaElement>a 和 ：
+但是，其他控件可以包含不同内容类型的多个项； <xref:System.Windows.Controls.Button>的内容（由 <xref:System.Windows.Controls.ContentControl.Content%2A> 属性指定）可以包含各种项（包括布局控件、文本、图像和形状）。 下面的示例演示了 <xref:System.Windows.Controls.Button> 包含、、、 <xref:System.Windows.Controls.DockPanel> <xref:System.Windows.Controls.Label> <xref:System.Windows.Controls.Border> 和的内容 <xref:System.Windows.Controls.MediaElement> ：
 
 ```xaml
 <Window
@@ -432,7 +433,7 @@ WPF 控件的默认用户界面通常是从其他控件和形状构造的。 例
 
 有时，某个控件的默认外观可能与应用程序的整体外观不一致。 在这种情况下，可以使用 <xref:System.Windows.Controls.ControlTemplate> 更改控件的用户界面的外观，而不更改其内容和行为。
 
-下面的示例演示如何通过使用 来更改 外观<xref:System.Windows.Controls.Button><xref:System.Windows.Controls.ControlTemplate>。
+下面的示例演示如何使用更改的外观 <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.ControlTemplate> ：
 
 [!code-xaml[IntroToWPFSnippets#ButtonControlTemplateWindowMARKUP](~/samples/snippets/xaml/wpf/introduction-to-wpf/introduction-to-wpf_16.xaml)]
 
@@ -445,11 +446,11 @@ WPF 控件的默认用户界面通常是从其他控件和形状构造的。 例
 
 ### <a name="data-templates"></a>数据模板
 
-使用控件模板可以指定控件的外观，而使用数据模板则可以指定控件内容的外观。 数据模板经常用于改进绑定数据的显示方式。 下图显示了绑定到<xref:System.Windows.Controls.ListBox>`Task`对象集合的 的 默认外观，其中每个任务都有名称、说明和优先级：
+使用控件模板可以指定控件的外观，而使用数据模板则可以指定控件内容的外观。 数据模板经常用于改进绑定数据的显示方式。 下图显示了 <xref:System.Windows.Controls.ListBox> 绑定到对象集合的的默认外观 `Task` ，其中每个任务都具有名称、说明和优先级：
 
 ![具有默认外观的列表框](media/introduction-to-wpf/wpfintrofigure18.png)
 
-默认外观是你对 <xref:System.Windows.Controls.ListBox>的期望。 但是，每个任务的默认外观仅包含任务名称。 若要显示任务名称、描述和优先级，必须使用 <xref:System.Windows.Controls.ListBox> 更改 <xref:System.Windows.DataTemplate>控件绑定列表项的默认外观。 以下 XAML 定义这样的<xref:System.Windows.DataTemplate>a ，它通过使用<xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A>属性应用于每个任务：
+默认外观是你对 <xref:System.Windows.Controls.ListBox>的期望。 但是，每个任务的默认外观仅包含任务名称。 若要显示任务名称、描述和优先级，必须使用 <xref:System.Windows.Controls.ListBox> 更改 <xref:System.Windows.DataTemplate>控件绑定列表项的默认外观。 下面的 XAML 定义了这样的 <xref:System.Windows.DataTemplate> ，它通过使用特性应用于每个任务 <xref:System.Windows.Controls.ItemsControl.ItemTemplate%2A> ：
 
 ```xaml
 <Window
@@ -506,11 +507,11 @@ WPF 控件的默认用户界面通常是从其他控件和形状构造的。 例
 
 注意， <xref:System.Windows.Controls.ListBox> 已保留其行为和整体外观；仅列表框显示的内容外观已更改。
 
-有关详细信息，请参阅[数据模板概述](data/data-templating-overview.md)。
+有关详细信息，请参阅[数据模板化概述](data/data-templating-overview.md)。
 
 ### <a name="styles"></a>样式
 
-通过样式功能，开发人员和设计人员能够对其产品的特定外观进行标准化。 WPF 提供了一个强样式模型，其基础是 <xref:System.Windows.Style> 元素。 下面的示例创建一个样式，将窗口上每个窗口的背景<xref:System.Windows.Controls.Button>颜色设置为`Orange`：
+通过样式功能，开发人员和设计人员能够对其产品的特定外观进行标准化。 WPF 提供了一个强样式模型，其基础是 <xref:System.Windows.Style> 元素。 下面的示例创建一个样式，该样式将窗口上的每个的背景色设置 <xref:System.Windows.Controls.Button> 为 `Orange` ：
 
 ```xaml
 <Window
@@ -547,7 +548,7 @@ WPF 控件的默认用户界面通常是从其他控件和形状构造的。 例
 
 应用程序中的控件应共享相同的外观，它可以包括从字体和背景色到控件模板、数据模板和样式的所有内容。 你可以对用户界面资源使用 WPF 支持，以将这些资源封装在一个位置以便重复使用。
 
-下面的示例定义由 和<xref:System.Windows.Controls.Button>共享的常见背景颜色。 <xref:System.Windows.Controls.Label>
+下面的示例定义了一个由和共享的通用背景色 <xref:System.Windows.Controls.Button> <xref:System.Windows.Controls.Label> ：
 
 ```xaml
 <Window
@@ -579,7 +580,7 @@ WPF 控件的默认用户界面通常是从其他控件和形状构造的。 例
 
 这些不同种类的作用域在定义和共享资源的方式方面为你提供了灵活性。
 
-作为直接将你的资源与特定作用域关联的替代方法，可以通过使用单独的 <xref:System.Windows.ResourceDictionary> （可以在应用程序的其他部分引用）打包一个或多个资源。 例如，以下示例定义资源字典中的默认背景颜色：
+作为直接将你的资源与特定作用域关联的替代方法，可以通过使用单独的 <xref:System.Windows.ResourceDictionary> （可以在应用程序的其他部分引用）打包一个或多个资源。 例如，下面的示例定义资源字典中的默认背景色：
 
 ```xaml
 <ResourceDictionary
@@ -593,7 +594,7 @@ WPF 控件的默认用户界面通常是从其他控件和形状构造的。 例
 </ResourceDictionary>
 ```
 
-以下示例引用上一个示例中定义的资源字典，以便它在应用程序中共享：
+下面的示例引用上一个示例中定义的资源字典，以便在应用程序之间共享：
 
 ```xaml
 <Application
@@ -631,18 +632,18 @@ WPF 控件的默认用户界面通常是从其他控件和形状构造的。 例
 
 - **框架元素模型**。 当其外观由自定义呈现逻辑（而不是模板）定义时，自定义控件派生自 <xref:System.Windows.FrameworkElement> 。
 
-下面的示例显示了派生自<xref:System.Windows.Controls.UserControl>的自定义数字向上/向下控件：
+下面的示例演示一个派生自的自定义数字向上/向下控件 <xref:System.Windows.Controls.UserControl> ：
 
 [!code-xaml[IntroToWPFSnippets#UserControlMARKUP](~/samples/snippets/xaml/wpf/introduction-to-wpf/introduction-to-wpf_33.xaml)]
 
 [!code-csharp[IntroToWPFSnippets#UserControlCODEBEHIND1](~/samples/snippets/csharp/wpf/introduction-to-wpf/introduction-to-wpf_34.cs)]
 [!code-vb[IntroToWPFSnippets#UserControlCODEBEHIND1](~/samples/snippets/visualbasic/wpf/introduction-to-wpf/introduction-to-wpf_34.vb)]
 
-下面的示例说明了将用户控件合并到 中<xref:System.Windows.Window>所需的 XAML：
+下面的示例演示了将用户控件合并到中所需的 XAML <xref:System.Windows.Window> ：
 
 [!code-xaml[IntroToWPFSnippets#UserControlWindowMARKUP1](~/samples/snippets/xaml/wpf/introduction-to-wpf/introduction-to-wpf_37.xaml)]
 
-下图显示了托管在`NumericUpDown`中的控件： <xref:System.Windows.Window>
+下图显示 `NumericUpDown` 了中托管的控件 <xref:System.Windows.Window> ：
 
 ![自定义 UserControl](media/introduction-to-wpf/wpfintrofigure3.png)
 
@@ -650,7 +651,7 @@ WPF 控件的默认用户界面通常是从其他控件和形状构造的。 例
 
 ## <a name="wpf-best-practices"></a>WPF 最佳做法
 
-与任何开发平台一样，可以采用多种方式使用 WPF 以实现所需的结果。 为确保你的 WPF 应用程序提供所需的用户体验并满足一般用户的需求，针对辅助功能、全球化和本地化以及性能提供了一些建议的最佳做法。 有关详细信息，请参阅：
+与任何开发平台一样，可以采用多种方式使用 WPF 以实现所需的结果。 为确保你的 WPF 应用程序提供所需的用户体验并满足一般用户的需求，针对辅助功能、全球化和本地化以及性能提供了一些建议的最佳做法。 有关详情，请参阅：
 
 - [辅助功能](../ui-automation/accessibility-best-practices.md)
 - [WPF 全球化和本地化](advanced/wpf-globalization-and-localization-overview.md)

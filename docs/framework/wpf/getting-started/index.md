@@ -1,17 +1,18 @@
 ---
 title: 入门
+description: 使用 .NET Framework 的 Windows Presentation Foundation 的 UI 框架创建桌面客户端应用程序（WPF）。
 ms.date: 01/26/2018
 helpviewer_keywords:
 - getting started [WPF]
 - introduction [WPF]
 - WPF [WPF], getting started
 ms.assetid: 04f91da8-708c-46c7-8172-f1695ec847cd
-ms.openlocfilehash: 68e0be41acd1206ccad34dcbb478c6e628ad9f04
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 2977831bf17ac11a67f71037d26e4f4665131721
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81646409"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853854"
 ---
 # <a name="get-started-wpf"></a>入门 (WPF)
 

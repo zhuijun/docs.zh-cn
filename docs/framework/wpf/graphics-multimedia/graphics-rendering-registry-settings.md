@@ -1,5 +1,6 @@
 ---
 title: 图形呈现注册表设置
+description: 了解如何在 Windows Presentation Foundation （WPF）中使用注册表设置进行故障排除、调试和产品支持。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - rendering graphics [WPF], registry settings
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: 642dfdd784af4b85672cf5b0c8e60079763f4c47
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: a2c6cfa5a207ae89c053f6ee81597f01458b5933
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80112279"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853758"
 ---
 # <a name="graphics-rendering-registry-settings"></a>图形呈现注册表设置
 本主题概述了影响 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 应用程序的 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 图形呈现注册表设置。  
@@ -24,7 +25,7 @@ ms.locfileid: "80112279"
   
 <a name="xpdmandwddm"></a>
 ## <a name="what-are-xpdm-and-wddm"></a>什么是 XPDM 和 WDDM？  
- 某些图形呈现注册表设置具有不同的默认值，具体取决于视频卡使用的是 XPDM 还是 WDDM 驱动程序。 XPDM 是微软 Windows XP 显示驱动程序模型，WDDM 是 Windows 显示驱动程序模型。 WDDM 在运行 Windows Vista 和 Windows 7 的计算机上可用。 XPDM 在运行 Windows Vista、微软 Windows XP 和微软 Windows 服务器 2003 的计算机上可用。 有关 WDDM 的详细信息，请参阅[Windows 显示驱动程序模型 （WDDM） 设计指南](/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)。  
+ 某些图形呈现注册表设置具有不同的默认值，具体取决于视频卡使用的是 XPDM 还是 WDDM 驱动程序。 XPDM 是 Microsoft Windows XP 显示驱动程序模型，而 WDDM 是 Windows 显示器驱动程序模型。 WDDM 在运行 Windows Vista 和 Windows 7 的计算机上可用。 在运行 Windows Vista、Microsoft Windows XP 和 Microsoft Windows Server 2003 的计算机上，可以使用 XPDM。 有关 WDDM 的详细信息，请参阅[Windows 显示驱动程序模型（WDDM）设计指南](/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide)。  
   
 <a name="registry_settings"></a>
 ## <a name="registry-settings"></a>注册表设置  
@@ -33,7 +34,7 @@ ms.locfileid: "80112279"
 |设置|说明|  
 |-------------|-----------------|  
 |**禁用硬件加速选项**|指定是否应启用硬件加速。|  
-|**最大多重采样值**|指定用于抗锯齿 3D 内容的多采样程度。|  
+|**最大多重采样值**|指定使3D 内容抗锯齿的多级分级。|  
 |**必需的视频驱动程序日期设置**|指定系统是否对 2004 年 11 月之前发布的驱动程序禁用硬件加速。|  
 |**使用参考光栅器选项**|指定 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 是否应使用参考光栅器。|  
   
@@ -57,9 +58,9 @@ ms.locfileid: "80112279"
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\MaxMultisampleType`|DWORD|  
   
- 最大**多采样值**使您能够调整 3D 内容的最大抗锯齿量。 使用此级别可禁用 Windows Vista 中的 3D 反锯齿。  
+ "**最大多级采样值**" 使您可以调整三维内容的最大抗锯齿量。 使用此级别禁用 Windows Vista 中的3D 抗锯齿功能。  
   
- “最大多重采样值”**** 是一个 DWORD 值，范围为从 0 到 16。 值 0 指定应禁用 3D 内容的多样本抗锯齿，如果视频卡支持，值 16 将尝试使用多达 16 倍的多采样抗锯齿。 请注意，在使用 XPDM 驱动程序的计算机上设置此注册表项值将导致应用程序使用大量额外的视频内存，降低 3D 渲染的性能，并可能导致呈现错误和稳定性问题。  
+ “最大多重采样值”**** 是一个 DWORD 值，范围为从 0 到 16。 如果值为0，则表示应禁用3D 内容的多采样抗锯齿，如果视频卡支持，则值为16将尝试使用最多16x 的多级采样抗锯齿。 请注意，在使用 XPDM 驱动程序的计算机上设置此注册表项值将导致应用程序使用大量附加视频内存，降低三维呈现的性能，并且可能会引入呈现错误和稳定性问题。  
   
  当未设置此注册表项时， [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 将默认为 0（对于 XPDM 驱动程序）和 4（对于 WDDM 驱动程序）。  
   
@@ -70,7 +71,7 @@ ms.locfileid: "80112279"
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|String|  
   
- 2004 年 11 月，微软发布了新版本的驱动程序测试指南;在此日期之后写的驱动程序提供了更好的稳定性。 默认情况下，[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 将为这些驱动程序使用硬件加速管道，并将回退到此日期之前发布的 XPDM 驱动程序的软件呈现。  
+ 2004年11月，Microsoft 发布了新版本的驱动程序测试指南;此日期之后编写的驱动程序提供更好的稳定性。 默认情况下，[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 将为这些驱动程序使用硬件加速管道，并将回退到此日期之前发布的 XPDM 驱动程序的软件呈现。  
   
  使用“必需的视频驱动程序日期设置”****，可以为 XPDM 驱动程序指定最早备用日期。 如果确信视频驱动程序足够稳定，可支持 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]，应仅指定早于 2004 年 11 月的日期。  
   
@@ -78,7 +79,7 @@ ms.locfileid: "80112279"
   
 | |  
 |-|  
-|*YYYYMM* `/` *MM* `/` *DD*|  
+|*YYYY* `/`*MM* `/` *DD*|  
   
  其中 *YYYY* 是四位数年份，*MM* 是两位数月份，而 *DD* 是两位数日期。 当未设置此值时，[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 使用 2004 年 11 月作为必需的视频驱动程序日期。  
   
@@ -89,7 +90,7 @@ ms.locfileid: "80112279"
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\UseReferenceRasterizer`|DWORD|  
   
- **使用参考栅格器选项**使您能够强制[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]进入模拟硬件呈现模式进行调试：[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]进入硬件模式，但使用 Microsoft Direct3D 参考软件栅格器 d3dref9.dll，而不是实际的硬件设备。  
+ **使用 "使用参考光栅" 选项**，您可以强制 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 进入模拟硬件呈现模式以进行调试： [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 进入硬件模式，但使用 Microsoft Direct3D reference 软件光栅程序，d3dref9.dll，而不是实际的硬件设备。  
   
  参考光栅器非常缓慢，但可以绕过视频驱动程序以避免由驱动程序问题导致的任何呈现问题。 出于此原因，可使用参考光栅器确定呈现问题是否由视频驱动程序导致。 d3dref9.dll 文件必须位于应用程序可访问它的位置，如系统路径或应用程序的本地目录中的任何位置。  
   
@@ -98,4 +99,4 @@ ms.locfileid: "80112279"
 ## <a name="see-also"></a>另请参阅
 
 - [图形呈现层](../advanced/graphics-rendering-tiers.md)
-- [WPF 图形呈现概述](wpf-graphics-rendering-overview.md)
+- [WPF 图形呈现疑难解答](wpf-graphics-rendering-overview.md)

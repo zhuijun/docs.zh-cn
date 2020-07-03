@@ -1,5 +1,6 @@
 ---
 title: 图形和多媒体
+description: 发现 Windows Presentation Foundation 的媒体功能（WPF）。 向应用程序添加图形、转换效果、声音和视频。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - graphics features [WPF]
 - transition effects [WPF]
 ms.assetid: 1817d9dc-3d6c-46cb-afc8-63b0bae35e37
-ms.openlocfilehash: ecc54ad9453343f6306b0133fa180abd0db46f82
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ba52e78564484f7714ab0035a5e1861766b72bbf
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596418"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853686"
 ---
 # <a name="graphics-and-multimedia"></a>图形和多媒体
 

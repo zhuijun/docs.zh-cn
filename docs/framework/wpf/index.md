@@ -1,5 +1,6 @@
 ---
 title: Windows Presentation Foundation
+description: 了解 Windows Presentation Foundation （WPF）中的统一编程模型，用于在 Windows 中构建业务线桌面应用程序。
 ms.date: 01/25/2018
 applies_to:
 - Windows 10
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF]
 - WPF [WPF]
 ms.assetid: f667bd15-2134-41e9-b4af-5ced6fafab5d
-ms.openlocfilehash: 69cdae86a295793c8da6b7f663b22846ae2c32b2
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 078e747ab9237324aba8168b543b2347e845de81
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919367"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853402"
 ---
 # <a name="windows-presentation-foundation"></a>Windows Presentation Foundation
 
@@ -30,8 +31,8 @@ Windows Presentation Foundation （WPF）为开发人员提供了一个统一的
 - [应用程序开发](app-development/index.md)
 - [高级](advanced/index.md)
 - [控件](controls/index.md)
-- [Data](data/index.md)
+- [数据](data/index.md)
 - [图形和多媒体](graphics-multimedia/index.md)
-- [Security](security-wpf.md)
+- [安全性](security-wpf.md)
 - [WPF 示例](wpf-samples.md)
 - [类库](class-library-wpf.md)
