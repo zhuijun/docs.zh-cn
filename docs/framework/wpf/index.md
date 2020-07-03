@@ -1,5 +1,6 @@
 ---
 title: Windows Presentation Foundation
+description: 了解 Windows Presentation Foundation （WPF）中的统一编程模型，用于在 Windows 中构建业务线桌面应用程序。
 ms.date: 01/25/2018
 applies_to:
 - Windows 10
@@ -14,24 +15,24 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF]
 - WPF [WPF]
 ms.assetid: f667bd15-2134-41e9-b4af-5ced6fafab5d
-ms.openlocfilehash: 69cdae86a295793c8da6b7f663b22846ae2c32b2
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 078e747ab9237324aba8168b543b2347e845de81
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72919367"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853402"
 ---
-# <a name="windows-presentation-foundation"></a><span data-ttu-id="bd217-102">Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="bd217-102">Windows Presentation Foundation</span></span>
+# <a name="windows-presentation-foundation"></a><span data-ttu-id="58185-103">Windows Presentation Foundation</span><span class="sxs-lookup"><span data-stu-id="58185-103">Windows Presentation Foundation</span></span>
 
-<span data-ttu-id="bd217-103">Windows Presentation Foundation （WPF）为开发人员提供了一个统一的编程模型，用于在 Windows 上构建业务线桌面应用程序。</span><span class="sxs-lookup"><span data-stu-id="bd217-103">Windows Presentation Foundation (WPF) provides developers with a unified programming model for building line-of-business desktop applications on Windows.</span></span>
+<span data-ttu-id="58185-104">Windows Presentation Foundation （WPF）为开发人员提供了一个统一的编程模型，用于在 Windows 上构建业务线桌面应用程序。</span><span class="sxs-lookup"><span data-stu-id="58185-104">Windows Presentation Foundation (WPF) provides developers with a unified programming model for building line-of-business desktop applications on Windows.</span></span>
 
-- [<span data-ttu-id="bd217-104">WPF 介绍</span><span class="sxs-lookup"><span data-stu-id="bd217-104">Introduction to WPF</span></span>](introduction-to-wpf.md)
-- [<span data-ttu-id="bd217-105">入门</span><span class="sxs-lookup"><span data-stu-id="bd217-105">Getting Started</span></span>](getting-started/index.md)
-- [<span data-ttu-id="bd217-106">应用程序开发</span><span class="sxs-lookup"><span data-stu-id="bd217-106">Application Development</span></span>](app-development/index.md)
-- [<span data-ttu-id="bd217-107">高级</span><span class="sxs-lookup"><span data-stu-id="bd217-107">Advanced</span></span>](advanced/index.md)
-- [<span data-ttu-id="bd217-108">控件</span><span class="sxs-lookup"><span data-stu-id="bd217-108">Controls</span></span>](controls/index.md)
-- [<span data-ttu-id="bd217-109">Data</span><span class="sxs-lookup"><span data-stu-id="bd217-109">Data</span></span>](data/index.md)
-- [<span data-ttu-id="bd217-110">图形和多媒体</span><span class="sxs-lookup"><span data-stu-id="bd217-110">Graphics and Multimedia</span></span>](graphics-multimedia/index.md)
-- [<span data-ttu-id="bd217-111">Security</span><span class="sxs-lookup"><span data-stu-id="bd217-111">Security</span></span>](security-wpf.md)
-- [<span data-ttu-id="bd217-112">WPF 示例</span><span class="sxs-lookup"><span data-stu-id="bd217-112">WPF Samples</span></span>](wpf-samples.md)
-- [<span data-ttu-id="bd217-113">类库</span><span class="sxs-lookup"><span data-stu-id="bd217-113">Class Library</span></span>](class-library-wpf.md)
+- [<span data-ttu-id="58185-105">WPF 介绍</span><span class="sxs-lookup"><span data-stu-id="58185-105">Introduction to WPF</span></span>](introduction-to-wpf.md)
+- [<span data-ttu-id="58185-106">入门</span><span class="sxs-lookup"><span data-stu-id="58185-106">Getting Started</span></span>](getting-started/index.md)
+- [<span data-ttu-id="58185-107">应用程序开发</span><span class="sxs-lookup"><span data-stu-id="58185-107">Application Development</span></span>](app-development/index.md)
+- [<span data-ttu-id="58185-108">高级</span><span class="sxs-lookup"><span data-stu-id="58185-108">Advanced</span></span>](advanced/index.md)
+- [<span data-ttu-id="58185-109">控件</span><span class="sxs-lookup"><span data-stu-id="58185-109">Controls</span></span>](controls/index.md)
+- [<span data-ttu-id="58185-110">数据</span><span class="sxs-lookup"><span data-stu-id="58185-110">Data</span></span>](data/index.md)
+- [<span data-ttu-id="58185-111">图形和多媒体</span><span class="sxs-lookup"><span data-stu-id="58185-111">Graphics and Multimedia</span></span>](graphics-multimedia/index.md)
+- [<span data-ttu-id="58185-112">安全性</span><span class="sxs-lookup"><span data-stu-id="58185-112">Security</span></span>](security-wpf.md)
+- [<span data-ttu-id="58185-113">WPF 示例</span><span class="sxs-lookup"><span data-stu-id="58185-113">WPF Samples</span></span>](wpf-samples.md)
+- [<span data-ttu-id="58185-114">类库</span><span class="sxs-lookup"><span data-stu-id="58185-114">Class Library</span></span>](class-library-wpf.md)
