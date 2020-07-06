@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: C# 中的分支和循环
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: ac4f7318dc25fef9f612649f2c3f57a5142f3ead
-  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+  ms.openlocfilehash: 87ffc9668191a52774f21470dbc415bba3579a49
+  ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/06/2020
-  ms.locfileid: "82860942"
+  ms.lasthandoff: 07/02/2020
+  ms.locfileid: "85853910"
 items:
 - durationInMinutes: 1
   content: >
@@ -291,9 +291,6 @@ items:
     > [!NOTE]
 
     > 字母 `M` 被选为 `double` 与 `decimal` 关键字之间最明显不同的字母。
-
-
-    可以看到，使用十进制类型执行数学运算时，十进制小数点右侧的数字更多。
 
 
     ***挑战***

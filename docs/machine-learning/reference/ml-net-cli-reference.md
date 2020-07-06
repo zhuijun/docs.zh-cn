@@ -3,12 +3,12 @@ title: ML.NET CLI 命令参考
 description: ML.NET CLI 工具中 auto-train 命令的概述、示例和参考。
 ms.date: 06/03/2020
 ms.custom: mlnet-tooling
-ms.openlocfilehash: 397f6fda8554024624b3ef630856dc8eca9696b2
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4c6cb1346c16f6162077d3414140d693de9e0d8c
+ms.sourcegitcommit: 182c7b6c079ebcc0e1898dfd9e921b9ef472ea2c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594538"
+ms.lasthandoff: 07/03/2020
+ms.locfileid: "85946936"
 ---
 # <a name="the-mlnet-cli-command-reference"></a>ML.NET CLI 命令参考
 
@@ -309,7 +309,7 @@ ML.NET 模型文件（.zip 文件）也将获得相同的名称。
 
 ## <a name="output-path"></a>输出路径
 
-`--output-path | -o`（字符串）
+`--output | -o`（字符串）
 
 用于放置生成的输出的根位置/文件夹。 默认为当前目录。
 

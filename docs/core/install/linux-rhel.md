@@ -4,12 +4,12 @@ description: 演示在 RHEL 上安装 .NET Core SDK 和 .NET Core 运行时的�
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 4a406fe1834c16bab9a5548b69206b51270b33fa
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 9e4d0ab86355329b898a82f135b9eeb839eab1cb
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324707"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619438"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-rhel"></a>在 RHEL 上安装 .NET Core SDK 或 .NET Core 运行时
 
@@ -100,7 +100,7 @@ source scl_source enable rh-dotnet31-aspnetcore-runtime-3.1
 
 ## <a name="dependencies"></a>依赖项
 
-[!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
+[!INCLUDE [linux-rpm-install-dependencies](includes/linux-rpm-install-dependencies.md)]
 
 ## <a name="scripted-install"></a>脚本安装
 

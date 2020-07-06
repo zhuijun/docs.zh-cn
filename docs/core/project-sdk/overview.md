@@ -4,12 +4,12 @@ titleSuffix: ''
 description: 了解 .NET Core 项目 SDK。
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 67dede3caabd2967adca22e7563376c761829655
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 9db62ab7774e3dd71412fa346d78ae0c62a2f81f
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144234"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803036"
 ---
 # <a name="net-core-project-sdks"></a>.NET Core 项目 SDK
 
@@ -176,6 +176,6 @@ ms.locfileid: "84144234"
 
 ## <a name="see-also"></a>请参阅
 
-- [安装 .NET Core](../install/index.md)
+- [安装 .NET Core](../install/index.yml)
 - [如何使用 MSBuild 项目 SDK](/visualstudio/msbuild/how-to-use-project-sdk)
 - [使用 NuGet 打包自定义 MSBuild 目标和属性](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package)

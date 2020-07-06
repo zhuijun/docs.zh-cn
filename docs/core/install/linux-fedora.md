@@ -4,12 +4,12 @@ description: 演示在 Fedora 上安装 .NET Core SDK 和 .NET Core 运行时的
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: c9774ff347382a6fe0be1ac1dcb78a74242ec999
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: c90c08eefa074fa139642a268f879af79d7280da
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324785"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619476"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-fedora"></a>在 Fedora 上安装 .NET Core SDK 或 .NET Core 运行时
 
@@ -129,7 +129,7 @@ sudo wget -O /etc/yum.repos.d/microsoft-prod.repo https://packages.microsoft.com
 
 ## <a name="dependencies"></a>依赖项
 
-[!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
+[!INCLUDE [linux-rpm-install-dependencies](includes/linux-rpm-install-dependencies.md)]
 
 ## <a name="scripted-install"></a>脚本安装
 
