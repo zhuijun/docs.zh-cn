@@ -1,17 +1,29 @@
 ---
-ms.openlocfilehash: 14b8930044381d1d86ec7984d36a5c3588eebd81
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
+ms.openlocfilehash: 4303b177ffe01328965c909a5a3809414fcead91
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59773992"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85614409"
 ---
-### <a name="the-default-hash-algorithm-for-wpfs-markup-compiler-is-now-sha256"></a><span data-ttu-id="fef06-101">现在 WPF 标记编译器的默认哈希算法为 SHA256</span><span class="sxs-lookup"><span data-stu-id="fef06-101">The default hash algorithm for WPF's Markup Compiler is now SHA256</span></span>
+### <a name="the-default-hash-algorithm-for-wpfs-markup-compiler-is-now-sha256"></a><span data-ttu-id="42584-101">现在 WPF 标记编译器的默认哈希算法为 SHA256</span><span class="sxs-lookup"><span data-stu-id="42584-101">The default hash algorithm for WPF's Markup Compiler is now SHA256</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="fef06-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="fef06-102">Details</span></span>|<span data-ttu-id="fef06-103">WPF 标记编译器为 XAML 标记文件提供编译服务。</span><span class="sxs-lookup"><span data-stu-id="fef06-103">The WPF MarkupCompiler provides compilation services for XAML markup files.</span></span>  <span data-ttu-id="fef06-104">在 .NET Framework 4.7.1 及更早版本中，用于校验和的默认哈希算法为 SHA1。</span><span class="sxs-lookup"><span data-stu-id="fef06-104">In the .NET Framework 4.7.1 and earlier versions, the default hash algorithm used for checksums was SHA1.</span></span> <span data-ttu-id="fef06-105">由于 SHA1 最近出现安全问题，从 .NET Framework 4.7.2 起，此默认算法已更改为 SHA256。</span><span class="sxs-lookup"><span data-stu-id="fef06-105">Due to recent security concerns with SHA1, this default has been changed to SHA256 starting with the .NET Framework 4.7.2.</span></span>  <span data-ttu-id="fef06-106">此更改会影响编译期间标记文件的所有校验和生成。</span><span class="sxs-lookup"><span data-stu-id="fef06-106">This change affects all checksum generation for markup files during compilation.</span></span>|
-|<span data-ttu-id="fef06-107">建议</span><span class="sxs-lookup"><span data-stu-id="fef06-107">Suggestion</span></span>|<span data-ttu-id="fef06-108">如果开发人员面向 .NET Framework 4.7.2 或更高版本且想要还原到 SHA1 哈希行为，则必须设置以下 AppContext 标记。</span><span class="sxs-lookup"><span data-stu-id="fef06-108">A developer who targets .NET Framework 4.7.2 or greater and wants to revert to SHA1 hashing behavior must set the following AppContext flag.</span></span><pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Markup.DoNotUseSha256ForMarkupCompilerChecksumAlgorithm=true&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre><span data-ttu-id="fef06-109">如果开发人员面向 .NET 4.7.2 更低版本且想要利用 SHA256 哈希，则必须设置以下 AppContext 标记。</span><span class="sxs-lookup"><span data-stu-id="fef06-109">A developer who wants to utilize SHA256 hashing while targeting a framework version below .NET 4.7.2 must set the below AppContext flag.</span></span>  <span data-ttu-id="fef06-110">请注意，安装的 .NET Framework 必须是 4.7.2 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="fef06-110">Note that the installed version of the .NET Framework must be 4.7.2 or greater.</span></span><pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Markup.DoNotUseSha256ForMarkupCompilerChecksumAlgorithm=false&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>|
-|<span data-ttu-id="fef06-111">范围</span><span class="sxs-lookup"><span data-stu-id="fef06-111">Scope</span></span>|<span data-ttu-id="fef06-112">透明</span><span class="sxs-lookup"><span data-stu-id="fef06-112">Transparent</span></span>|
-|<span data-ttu-id="fef06-113">版本</span><span class="sxs-lookup"><span data-stu-id="fef06-113">Version</span></span>|<span data-ttu-id="fef06-114">4.7.2</span><span class="sxs-lookup"><span data-stu-id="fef06-114">4.7.2</span></span>|
-|<span data-ttu-id="fef06-115">类型</span><span class="sxs-lookup"><span data-stu-id="fef06-115">Type</span></span>|<span data-ttu-id="fef06-116">重定目标</span><span class="sxs-lookup"><span data-stu-id="fef06-116">Retargeting</span></span>|
+#### <a name="details"></a><span data-ttu-id="42584-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="42584-102">Details</span></span>
+
+<span data-ttu-id="42584-103">WPF 标记编译器为 XAML 标记文件提供编译服务。</span><span class="sxs-lookup"><span data-stu-id="42584-103">The WPF MarkupCompiler provides compilation services for XAML markup files.</span></span>  <span data-ttu-id="42584-104">在 .NET Framework 4.7.1 及更早版本中，用于校验和的默认哈希算法为 SHA1。</span><span class="sxs-lookup"><span data-stu-id="42584-104">In the .NET Framework 4.7.1 and earlier versions, the default hash algorithm used for checksums was SHA1.</span></span> <span data-ttu-id="42584-105">由于 SHA1 最近出现安全问题，从 .NET Framework 4.7.2 起，此默认算法已更改为 SHA256。</span><span class="sxs-lookup"><span data-stu-id="42584-105">Due to recent security concerns with SHA1, this default has been changed to SHA256 starting with the .NET Framework 4.7.2.</span></span>  <span data-ttu-id="42584-106">此更改会影响编译期间标记文件的所有校验和生成。</span><span class="sxs-lookup"><span data-stu-id="42584-106">This change affects all checksum generation for markup files during compilation.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="42584-107">建议</span><span class="sxs-lookup"><span data-stu-id="42584-107">Suggestion</span></span>
+
+<span data-ttu-id="42584-108">如果开发人员面向 .NET Framework 4.7.2 或更高版本且想要还原到 SHA1 哈希行为，则必须设置以下 AppContext 标记。</span><span class="sxs-lookup"><span data-stu-id="42584-108">A developer who targets .NET Framework 4.7.2 or greater and wants to revert to SHA1 hashing behavior must set the following AppContext flag.</span></span>
+
+<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Markup.DoNotUseSha256ForMarkupCompilerChecksumAlgorithm=true&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
+
+<span data-ttu-id="42584-109">如果开发人员面向 .NET 4.7.2 更低版本且想要利用 SHA256 哈希，则必须设置以下 AppContext 标记。</span><span class="sxs-lookup"><span data-stu-id="42584-109">A developer who wants to utilize SHA256 hashing while targeting a framework version below .NET 4.7.2 must set the below AppContext flag.</span></span>  <span data-ttu-id="42584-110">请注意，安装的 .NET Framework 必须是 4.7.2 或更高版本。</span><span class="sxs-lookup"><span data-stu-id="42584-110">Note that the installed version of the .NET Framework must be 4.7.2 or greater.</span></span>
+
+<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Markup.DoNotUseSha256ForMarkupCompilerChecksumAlgorithm=false&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
+
+| <span data-ttu-id="42584-111">“属性”</span><span class="sxs-lookup"><span data-stu-id="42584-111">Name</span></span>    | <span data-ttu-id="42584-112">“值”</span><span class="sxs-lookup"><span data-stu-id="42584-112">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="42584-113">范围</span><span class="sxs-lookup"><span data-stu-id="42584-113">Scope</span></span>   | <span data-ttu-id="42584-114">透明</span><span class="sxs-lookup"><span data-stu-id="42584-114">Transparent</span></span> |
+| <span data-ttu-id="42584-115">Version</span><span class="sxs-lookup"><span data-stu-id="42584-115">Version</span></span> | <span data-ttu-id="42584-116">4.7.2</span><span class="sxs-lookup"><span data-stu-id="42584-116">4.7.2</span></span>       |
+| <span data-ttu-id="42584-117">类型</span><span class="sxs-lookup"><span data-stu-id="42584-117">Type</span></span>    | <span data-ttu-id="42584-118">重定目标</span><span class="sxs-lookup"><span data-stu-id="42584-118">Retargeting</span></span> |
