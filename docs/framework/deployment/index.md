@@ -1,5 +1,6 @@
 ---
 title: 部署 .NET Framework 和应用程序
+description: 开始随应用程序部署 .NET。 .NET 提供不受影响的应用程序、默认情况下的专用组件和可控的代码共享等功能。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - deploying applications [.NET Framework], packaging
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework, deploying
 - .NET Framework application deployment
 ms.assetid: 238d8284-6042-4a38-a7f6-1ee8efd719da
-ms.openlocfilehash: b1ba9810b4b0d5a1688318db1093a9ce9bdf8fda
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cce888c962c9ab83c13cce4040eb9ba50270972d
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75716465"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803491"
 ---
 # <a name="deploying-the-net-framework-and-applications"></a>部署 .NET Framework 和应用程序
 
@@ -32,7 +33,7 @@ ms.locfileid: "75716465"
 
     - [Web 安装程序](../install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
 
-    - [Offline installer](../install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
+    - [脱机安装程序](../install/guide-for-developers.md#to-install-or-download-the-net-framework-redistributable)
 
   - 安装模式：
 
@@ -158,7 +159,7 @@ ms.locfileid: "75716465"
 
 ## <a name="related-topics"></a>相关主题
 
-|标题|说明|
+|Title|描述|
 |-----------|-----------------|
 |[运行时如何定位程序集](how-the-runtime-locates-assemblies.md)|描述公共语言运行时如何确定将用于满足绑定请求的程序集类型。|
 |[适用于程序集加载的最佳做法](best-practices-for-assembly-loading.md)|讨论避免类型标识问题的方法，从而避免发生 <xref:System.InvalidCastException><xref:System.MissingMethodException> 和其他错误。|
@@ -169,8 +170,8 @@ ms.locfileid: "75716465"
 |[发布 ClickOnce 应用程序](/visualstudio/deployment/publishing-clickonce-applications)|描述打包 Windows 窗体应用程序以及使用 ClickOnce 将其部署到连网的客户端计算机上的方法。|
 |[打包和部署资源](../resources/packaging-and-deploying-resources-in-desktop-apps.md)|描述 .NET Framework 用于打包和部署资源的中心辐射模型，包括资源命名约定、后备进程和打包替代项。|
 |[部署互操作应用程序](../interop/deploying-an-interop-application.md)|说明如何传送和安装互操作应用程序，通常包括 .NET Framework 客户端程序集、表示区分 COM 类型库的一个或多个互操作程序集以及一个或多个已注册的 COM 组件。|
-|[How to: Get Progress from the .NET Framework 4.5 Installer](how-to-get-progress-from-the-dotnet-installer.md)|描述如何在没有提示的情况下启动和跟踪 .NET Framework 安装进度，同时显示你自己的安装进度视图。|
+|[如何：获取 .NET Framework 4.5 安装程序的进度](how-to-get-progress-from-the-dotnet-installer.md)|描述如何在没有提示的情况下启动和跟踪 .NET Framework 安装进度，同时显示你自己的安装进度视图。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [开发指南](../development-guide.md)

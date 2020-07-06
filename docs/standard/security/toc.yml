@@ -19,8 +19,11 @@
         - name: 模拟与恢复
           href: impersonating-and-reverting.md
     - name: 加密模型
-      href: cryptography-model.md
       items:
+        - name: 概述
+          href: cryptography-model.md
+        - name: 跨平台加密
+          href: cross-platform-cryptography.md
         - name: 加密服务
           href: cryptographic-services.md
         - name: 生成加密和解密的密钥

@@ -1,0 +1,198 @@
+### YamlMime:Hub
+title: 面向 .NET 开发人员的 Azure
+summary: 查找在 Azure 上使用 .NET 所需的信息
+brand: dotnet
+metadata:
+  title: 面向 .NET 开发人员的 Azure
+  description: 关于 Azure 上 .NET 的示例、教程和培训内容
+  ms.topic: hub-page
+  ms.prod: azure-dotnet
+  ms.date: 03/04/2020
+  ms.openlocfilehash: d1fc6298f5a1aa03ba3df3f99c38245a3165b5be
+  ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/29/2020
+  ms.locfileid: "85840268"
+highlightedContent:
+  items:
+  - itemType: quickstart
+    title: 部署 ASP.NET Web 应用
+    url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet
+  - itemType: quickstart
+    title: 生成无服务器函数
+    url: https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio
+  - itemType: quickstart
+    title: ASP.NET Core 和 Docker
+    url: https://docs.microsoft.com/visualstudio/containers/container-tools?view=vs-2019
+  - itemType: learn
+    title: Azure 基础
+    url: https://docs.microsoft.com/learn/paths/azure-fundamentals/
+  - itemType: tutorial
+    title: 使用 Azure DevOps 部署 .NET 应用
+    url: https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/dotnet-core?view=azure-devops
+  - itemType: tutorial
+    title: 应用服务中的端到端全栈身份验证
+    url: https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-auth-aad
+  - itemType: learn
+    title: 使用 Microsoft 标识保护自定义 API
+    url: https://docs.microsoft.com/learn/modules/identity-secure-custom-api/
+  - itemType: download
+    title: 示例代码
+    url: https://docs.microsoft.com/samples/browse/?products=azure&languages=csharp%2Caspx-csharp%2Cfsharp%2Cvb
+conceptualContent:
+  items:
+  - title: 生成 Web 应用
+    links:
+    - itemType: learn
+      text: 通过 Azure 应用服务托管 Web 应用程序
+      url: https://docs.microsoft.com/learn/modules/host-a-web-app-with-azure-app-service/
+    - itemType: tutorial
+      text: 使用应用服务和 Azure SQL 数据库的 ASP.NET Core Web 应用
+      url: https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-dotnet-sqldatabase
+    - itemType: tutorial
+      text: 具有 ASP.NET 和 Azure SQL 数据库的托管标识
+      url: https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-connect-msi
+    - itemType: tutorial
+      text: Azure 应用服务中启用了 CORS 的 Web API
+      url: https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-rest-api
+    - itemType: learn
+      text: 使用 Azure API 管理来发布和管理 API
+      url: https://docs.microsoft.com/learn/modules/publish-manage-apis-with-azure-api-management/
+  - title: 构建云原生应用
+    links:
+    - itemType: quickstart
+      text: 在 Kubernetes 中运行和调试微服务
+      url: https://docs.microsoft.com/azure/dev-spaces/quickstart-netcore-visualstudio
+    - itemType: tutorial
+      text: 带有 Visual Studio 容器工具的 ASP.NET Core 应用
+      url: https://docs.microsoft.com/visualstudio/containers/container-tools?view=vs-2019
+    - itemType: tutorial
+      text: 在 AKS 中部署和调试多个容器
+      url: https://docs.microsoft.com/azure/dev-spaces/multi-service-netcore-visualstudio
+    - itemType: tutorial
+      text: 使用 Azure 应用配置的动态配置和功能标志
+      url: https://docs.microsoft.com/azure/azure-app-configuration/use-feature-flags-dotnet-core
+    - itemType: how-to-guide
+      text: 将 .NET Core 应用部署到 Azure 容器注册表
+      url: https://docs.microsoft.com/en-us/visualstudio/containers/hosting-web-apps-in-docker?view=vs-2019
+  - title: 使用存储和数据
+    links:
+    - itemType: learn
+      text: 开发和配置可查询 Azure SQL 数据库的 ASP.NET 应用程序
+      url: https://docs.microsoft.com/learn/modules/develop-app-that-queries-azure-sql/
+    - itemType: learn
+      text: 在 Visual Studio Code 中为 Azure Cosmos DB 构建 .NET Core 应用
+      url: https://docs.microsoft.com/learn/modules/build-cosmos-db-app-with-vscode/
+    - itemType: learn
+      text: 使用 Azure Blob 存储来存储应用程序数据
+      url: https://docs.microsoft.com/learn/modules/store-app-data-with-azure-blob-storage/
+    - itemType: tutorial
+      text: 使用 Azure Cosmos DB SQL API 创建 ASP.NET Web 应用
+      url: https://docs.microsoft.com/azure/cosmos-db/sql-api-dotnet-application
+    - itemType: quickstart
+      text: 使用 .NET 查询 Azure PostgreSQL
+      url: https://docs.microsoft.com/azure/postgresql/connect-csharp
+  - title: 身份验证和安全性
+    links:
+    - itemType: overview
+      text: Microsoft 标识平台 (Azure AD)
+      url: https://docs.microsoft.com/azure/active-directory/develop/
+    - itemType: tutorial
+      text: 将 Azure Key Vault 与 ASP.NET Core 一起使用
+      url: https://docs.microsoft.com/azure/key-vault/tutorial-net-create-vault-azure-web-app
+    - itemType: tutorial
+      text: 将 Azure AD B2C 与 Web API 集成
+      url: https://docs.microsoft.com/azure/active-directory-b2c/tutorial-single-page-app-webapi
+    - itemType: tutorial
+      text: 向 ASP.NET Web 应用添加 Microsoft 登录功能
+      url: https://docs.microsoft.com/azure/active-directory/develop/tutorial-v2-asp-webapp
+  - title: 迁移
+    links:
+    - itemType: concept
+      text: 选择 Azure 托管选项
+      url: ./migration/choose.md
+    - itemType: how-to-guide
+      text: 将 .NET Web 应用或服务迁移到 Azure 应用服务
+      url: ./migration/app-service.md
+    - itemType: how-to-guide
+      text: 将 ASP.NET 应用迁移到 Azure VM
+      url: ./migration/vm.md
+    - itemType: how-to-guide
+      text: 将 SQL Server 数据库迁移到 Azure
+      url: ./migration/sql.md
+  - title: .NET 和 Azure 免费培训
+    links:
+    - itemType: learn
+      text: Microsoft Learn
+      url: https://docs.microsoft.com/learn/
+    - itemType: video
+      text: Pluralsight：在 Azure 上使用 .NET 和 C# 进行开发
+      url: https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started?twoid=d6abac77-7dcc-4d33-9e03-f85e78989f02
+    - itemType: video
+      text: .NET 101 视频系列
+      url: https://dot.net/videos
+  - title: .NET 体系结构指南
+    links:
+    - itemType: overview
+      text: Azure 和 .NET 简介
+      url: intro.md
+    - itemType: learn
+      text: 在 Azure 中构建现代应用程序
+      url: https://docs.microsoft.com/learn/paths/architect-modern-apps/
+    - itemType: architecture
+      text: .NET 微服务：适用于容器化 .NET 应用的体系结构
+      url: https://docs.microsoft.com/dotnet/architecture/microservices/
+    - itemType: architecture
+      text: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序
+      url: https://docs.microsoft.com/dotnet/architecture/modern-web-apps-azure/
+    - itemType: architecture
+      text: 使用 Microsoft 平台和工具对 Docker 应用程序生命周期进行容器化
+      url: https://docs.microsoft.com/dotnet/architecture/containerized-lifecycle/
+    - itemType: architecture
+      text: 通过 Azure 云和 Windows 容器实现现有 .NET 应用程序的现代化
+      url: https://docs.microsoft.com/dotnet/architecture/modernize-with-azure-containers/
+    footerLink:
+      url: https://docs.microsoft.com/dotnet/architecture/
+      text: 查看更多
+tools:
+  title: 用于 .NET 的 Azure SDK
+  items:
+  - imageSrc: https://www.nuget.org/Content/gallery/img/default-package-icon.svg
+    title: NuGet 包
+    url: https://www.nuget.org/packages?q=windowsazureofficial
+  - imageSrc: https://docs.microsoft.com/en-us/media/common/i_reference.svg
+    title: 文档
+    url: ./sdk/index.yml
+  - imageSrc: https://docs.microsoft.com/en-us/media/logos/logo_visual-studio.svg
+    title: 工具
+    url: ./sdk/tools.md
+additionalContent:
+  sections:
+  - title: .NET 和 Azure 社区资源
+    items:
+    - title: .NET
+      links:
+      - text: .NET 文档
+        url: https://docs.microsoft.com/dotnet
+      - text: ASP.NET 文档
+        url: https://docs.microsoft.com/aspnet
+    - title: 网络广播和节目
+      links:
+      - text: Azure Friday
+        url: https://azure.microsoft.com/resources/videos/azure-friday/
+      - text: The Cloud Native Show
+        url: https://channel9.msdn.com/Shows/The-Cloud-Native-Show
+      - text: On .NET
+        url: https://channel9.msdn.com/Shows/On-NET
+      - text: ASP.NET 社区会议
+        url: https://dotnet.microsoft.com/platform/community/standup
+    - title: 开放源
+      links:
+      - text: 用于 .NET 的 Azure SDK
+        url: https://github.com/Azure/azure-sdk-for-net
+      - text: Microsoft 标识 Web
+        url: https://github.com/AzureAD/microsoft-identity-web
+      - text: .NET 平台
+        url: https://github.com/dotnet/
+  footer: 参与 .NET 文档的编写。请参阅我们的[参与者指南](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute)。
