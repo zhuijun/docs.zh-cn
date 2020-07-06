@@ -1,0 +1,63 @@
+### YamlMime:Landing
+title: 在 Windows、Linux 和 macOS 上安装 .NET Core
+summary: 了解如何在 Windows、Linux 和 macOS 版本上安装 .NET。 发现开发、部署和运行 .NET Core 应用所需的依赖项。
+metadata:
+  title: 在 Windows、Linux 和 macOS 上安装 .NET Core
+  description: 了解如何在 Windows、Linux 和 macOS 版本上下载并安装 .NET Core。 发现开发、部署和运行 .NET Core 应用所需的依赖项。
+  ms.topic: landing-page
+  ms.date: 06/29/2020
+  ms.openlocfilehash: dbc159bc4ff2d10bf55bd0c0b4d4e07a8fc04a4a
+  ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 07/01/2020
+  ms.locfileid: "85804437"
+landingContent:
+- title: Windows
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 在 Windows 上安装
+      url: windows.md
+    - text: 受支持的 Windows 版本
+      url: windows.md#supported-releases
+    - text: 依赖项
+      url: windows.md#dependencies
+    - text: 使用 Visual Studio 安装
+      url: windows.md#install-with-visual-studio
+    - text: 随 Visual Studio Code 一起安装
+      url: windows.md#install-alongside-visual-studio-code
+- title: macOS
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 在 macOS 上安装
+      url: macos.md
+    - text: 受支持的 macOS 版本
+      url: macos.md#supported-releases
+    - text: 依赖项
+      url: macos.md#dependencies
+    - text: 随 Visual Studio Code 一起安装
+      url: macos.md#install-alongside-visual-studio-code
+- title: Linux
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Linux 概述
+      url: linux.md
+    - text: Alpine
+      url: linux-alpine.md
+    - text: CentOS
+      url: linux-centos.md
+    - text: Debian
+      url: linux-debian.md
+    - text: Fedora
+      url: linux-fedora.md
+    - text: openSUSE
+      url: linux-opensuse.md
+    - text: Red Hat Enterprise Linux
+      url: linux-rhel.md
+    - text: SUSE Linux 企业服务器
+      url: linux-sles.md
+    - text: Ubuntu
+      url: linux-ubuntu.md

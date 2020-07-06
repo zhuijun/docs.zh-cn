@@ -1,0 +1,59 @@
+### YamlMime:Landing
+title: Windows Presentation Foundation (WPF) 文档
+summary: 了解如何在 .NET Core 上使用 Windows Presentation Foundation，这是一种适用于 Windows 的开放源代码图形用户界面。
+metadata:
+  title: 用于 .NET Core 的 Windows Presentation Foundation (WPF) 相关文档
+  description: 了解如何在 .NET Core 上使用 Windows Presentation Foundation，这是一种适用于 Windows 的开放源代码图形用户界面。
+  ms.topic: landing-page
+  ms.date: 03/25/2020
+  ms.openlocfilehash: 8d3be7a04153ee0a120919fbb634001cd3257eb2
+  ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+  ms.translationtype: HT
+  ms.contentlocale: zh-CN
+  ms.lasthandoff: 04/02/2020
+  ms.locfileid: "85840266"
+landingContent:
+- title: 了解 WPF
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Windows Presentation Foundation 概述
+      url: overview/index.md
+    - text: Windows Presentation Foundation 中的 XAML
+      url: fundamentals/xaml.md
+- title: WPF 入门
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 与 .NET Framework 上 WPF 的区别
+      url: migration/differences-from-net-framework.md
+    - text: 从 Framework 迁移到 Core
+      url: migration/convert-project-from-net-framework.md
+  - linkListType: tutorial
+    links:
+    - text: 创建 WPF 应用程序
+      url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json
+- title: 基础知识 - XAML
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: 定义 XAML 资源
+      url: fundamentals/xaml-resources-define.md
+    - text: 样式和模板
+      url: fundamentals/styles-templates-overview.md
+  - linkListType: how-to-guide
+    links:
+    - text: 创建和应用样式
+      url: fundamentals/styles-templates-create-apply-style.md
+    - text: 创建和应用模板
+      url: themes/how-to-create-apply-template.md
+  - linkListType: reference
+    links:
+    - text: XAML 语言参考
+      url: xaml-services/index.md
+- title: 基础知识 - 数据
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: 数据绑定
+      url: data/data-binding-overview.md
