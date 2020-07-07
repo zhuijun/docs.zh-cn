@@ -1,18 +1,40 @@
 ---
-ms.openlocfilehash: ee9bba91a2c4e11bd005fedb8adf0c2e7c7b0d3e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: c996dafcf65b1fd428be908be346de603ead6e0b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "67804519"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85615608"
 ---
-### <a name="certificate-eku-oid-validation"></a><span data-ttu-id="2f128-101">证书 EKU OID 验证</span><span class="sxs-lookup"><span data-stu-id="2f128-101">Certificate EKU OID validation</span></span>
+### <a name="certificate-eku-oid-validation"></a><span data-ttu-id="63016-101">证书 EKU OID 验证</span><span class="sxs-lookup"><span data-stu-id="63016-101">Certificate EKU OID validation</span></span>
 
-|   |   |
-|---|---|
-|<span data-ttu-id="2f128-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="2f128-102">Details</span></span>|<span data-ttu-id="2f128-103">从 .NET Framework 4.6 开始，<xref:System.Net.Security.SslStream> 或 <xref:System.Net.ServicePointManager> 类执行增强型密钥使用 (EKU) 对象标识符 (OID) 验证。</span><span class="sxs-lookup"><span data-stu-id="2f128-103">Starting with .NET Framework 4.6, the <xref:System.Net.Security.SslStream> or <xref:System.Net.ServicePointManager> classes perform enhanced key use (EKU) object identifier (OID) validation.</span></span> <span data-ttu-id="2f128-104">增强型密钥使用 (EKU) 扩展是指示使用密钥的应用程序的对象标识符 (OID) 的集合。</span><span class="sxs-lookup"><span data-stu-id="2f128-104">An enhanced key usage (EKU) extension is a collection of object identifiers (OIDs) that indicate the applications that use the key.</span></span> <span data-ttu-id="2f128-105">EKU OID 验证使用远程证书回叫来确保远程证书具有用于预期目的的正确 OID。</span><span class="sxs-lookup"><span data-stu-id="2f128-105">EKU OID validation uses remote certificate callbacks to ensure that the remote certificate has the correct OIDs for the intended purpose.</span></span>|
-|<span data-ttu-id="2f128-106">建议</span><span class="sxs-lookup"><span data-stu-id="2f128-106">Suggestion</span></span>|<span data-ttu-id="2f128-107">如果无需此更改，则可通过将以下切换添加到应用配置文件的 [\`](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) 中的 [\<AppContextSwitchOverrides>](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 来禁用证书 EKU OID 验证：</span><span class="sxs-lookup"><span data-stu-id="2f128-107">If this change is undesirable, you can disable certificate EKU OID validation by adding the following switch to the [\<AppContextSwitchOverrides>](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) in the [\`](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) of your app configuration file:</span></span><pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides&#13;&#10;value=&quot;Switch.System.Net.DontCheckCertificateEKUs=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre> <blockquote> [!IMPORTANT] <span data-ttu-id="2f128-108">此设置仅用于后向兼容性。</span><span class="sxs-lookup"><span data-stu-id="2f128-108">This setting is provided for backward compatibility only.</span></span> <span data-ttu-id="2f128-109">否则不建议使用它。</span><span class="sxs-lookup"><span data-stu-id="2f128-109">Its use is otherwise not recommended.</span></span></blockquote> |
-|<span data-ttu-id="2f128-110">范围</span><span class="sxs-lookup"><span data-stu-id="2f128-110">Scope</span></span>|<span data-ttu-id="2f128-111">次要</span><span class="sxs-lookup"><span data-stu-id="2f128-111">Minor</span></span>|
-|<span data-ttu-id="2f128-112">Version</span><span class="sxs-lookup"><span data-stu-id="2f128-112">Version</span></span>|<span data-ttu-id="2f128-113">4.6</span><span class="sxs-lookup"><span data-stu-id="2f128-113">4.6</span></span>|
-|<span data-ttu-id="2f128-114">类型</span><span class="sxs-lookup"><span data-stu-id="2f128-114">Type</span></span>|<span data-ttu-id="2f128-115">重定目标</span><span class="sxs-lookup"><span data-stu-id="2f128-115">Retargeting</span></span>|
-|<span data-ttu-id="2f128-116">受影响的 API</span><span class="sxs-lookup"><span data-stu-id="2f128-116">Affected APIs</span></span>|<ul><li><xref:System.Net.Security.SslStream?displayProperty=nameWithType></li><li><xref:System.Net.ServicePointManager?displayProperty=nameWithType></li><li><xref:System.Net.Http.HttpClient?displayProperty=nameWithType></li><li><xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType></li><li><xref:System.Net.HttpWebRequest?displayProperty=nameWithType></li><li><xref:System.Net.FtpWebRequest?displayProperty=nameWithType></li></ul>|
+#### <a name="details"></a><span data-ttu-id="63016-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="63016-102">Details</span></span>
+
+<span data-ttu-id="63016-103">从 .NET Framework 4.6 开始，<xref:System.Net.Security.SslStream> 或 <xref:System.Net.ServicePointManager> 类执行增强型密钥使用 (EKU) 对象标识符 (OID) 验证。</span><span class="sxs-lookup"><span data-stu-id="63016-103">Starting with .NET Framework 4.6, the <xref:System.Net.Security.SslStream> or <xref:System.Net.ServicePointManager> classes perform enhanced key use (EKU) object identifier (OID) validation.</span></span> <span data-ttu-id="63016-104">增强型密钥使用 (EKU) 扩展是指示使用密钥的应用程序的对象标识符 (OID) 的集合。</span><span class="sxs-lookup"><span data-stu-id="63016-104">An enhanced key usage (EKU) extension is a collection of object identifiers (OIDs) that indicate the applications that use the key.</span></span> <span data-ttu-id="63016-105">EKU OID 验证使用远程证书回叫来确保远程证书具有用于预期目的的正确 OID。</span><span class="sxs-lookup"><span data-stu-id="63016-105">EKU OID validation uses remote certificate callbacks to ensure that the remote certificate has the correct OIDs for the intended purpose.</span></span>
+
+#### <a name="suggestion"></a><span data-ttu-id="63016-106">建议</span><span class="sxs-lookup"><span data-stu-id="63016-106">Suggestion</span></span>
+
+<span data-ttu-id="63016-107">如果无需此更改，则可通过将以下开关添加到应用配置文件的 [\`](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) 中的 [\<AppContextSwitchOverrides>](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 来禁用证书 EKU OID 验证：</span><span class="sxs-lookup"><span data-stu-id="63016-107">If this change is undesirable, you can disable certificate EKU OID validation by adding the following switch to the [\<AppContextSwitchOverrides>](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) in the [\`](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) of your app configuration file:</span></span>
+
+```xml
+<runtime>
+  <AppContextSwitchOverrides value="Switch.System.Net.DontCheckCertificateEKUs=true" />
+</runtime>
+```
+
+> [!IMPORTANT]
+> <span data-ttu-id="63016-108">此设置仅用于后向兼容性。</span><span class="sxs-lookup"><span data-stu-id="63016-108">This setting is provided for backward compatibility only.</span></span> <span data-ttu-id="63016-109">否则不建议使用它。</span><span class="sxs-lookup"><span data-stu-id="63016-109">Its use is otherwise not recommended.</span></span>
+
+| <span data-ttu-id="63016-110">“属性”</span><span class="sxs-lookup"><span data-stu-id="63016-110">Name</span></span>    | <span data-ttu-id="63016-111">“值”</span><span class="sxs-lookup"><span data-stu-id="63016-111">Value</span></span>       |
+|:--------|:------------|
+| <span data-ttu-id="63016-112">范围</span><span class="sxs-lookup"><span data-stu-id="63016-112">Scope</span></span>   | <span data-ttu-id="63016-113">次要</span><span class="sxs-lookup"><span data-stu-id="63016-113">Minor</span></span>       |
+| <span data-ttu-id="63016-114">Version</span><span class="sxs-lookup"><span data-stu-id="63016-114">Version</span></span> | <span data-ttu-id="63016-115">4.6</span><span class="sxs-lookup"><span data-stu-id="63016-115">4.6</span></span>         |
+| <span data-ttu-id="63016-116">类型</span><span class="sxs-lookup"><span data-stu-id="63016-116">Type</span></span>    | <span data-ttu-id="63016-117">重定目标</span><span class="sxs-lookup"><span data-stu-id="63016-117">Retargeting</span></span> |
+
+#### <a name="affected-apis"></a><span data-ttu-id="63016-118">受影响的 API</span><span class="sxs-lookup"><span data-stu-id="63016-118">Affected APIs</span></span>
+
+- <xref:System.Net.Security.SslStream?displayProperty=nameWithType>
+- <xref:System.Net.ServicePointManager?displayProperty=nameWithType>
+- <xref:System.Net.Http.HttpClient?displayProperty=nameWithType>
+- <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>
+- <xref:System.Net.HttpWebRequest?displayProperty=nameWithType>
+- <xref:System.Net.FtpWebRequest?displayProperty=nameWithType>
