@@ -1,7 +1,7 @@
 ---
 title: 布尔逻辑运算符 - C# 参考
 description: 了解使用布尔操作数执行逻辑非、逻辑与、逻辑或和逻辑异或运算的 C# 运算符。
-ms.date: 09/27/2019
+ms.date: 06/29/2020
 author: pkulikov
 f1_keywords:
 - '!_CSharpKeyword'
@@ -32,12 +32,11 @@ helpviewer_keywords:
 - conditional OR operator [C#]
 - short-circuiting OR operator [C#]
 - '|| operator [C#]'
-ms.openlocfilehash: 5f85b88236c2e643f97453c64173a3f4f7159a35
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
-ms.translationtype: HT
+ms.openlocfilehash: a19c804c624153ef608885bc6493537302275765
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794996"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618189"
 ---
 # <a name="boolean-logical-operators-c-reference"></a>布尔逻辑运算符（C# 参考）
 
@@ -115,8 +114,14 @@ ms.locfileid: "82794996"
 
 ## <a name="nullable-boolean-logical-operators"></a>可以为 null 的布尔逻辑运算符
 
-对于 `bool?` 操作数，`&` 和 `|` 运算符支持三值逻辑。 由下表定义这些运算符的语义：  
-  
+对于 `bool?` 操作数，[`&`（逻辑与）](#logical-and-operator-)和 [`|`（逻辑或）](#logical-or-operator-)运算符支持三值逻辑，如下所示：
+
+- 仅当其两个操作数的计算结果都为 `true` 时，`&` 运算符才生成 `true`。 如果 `x` 或 `y` 的计算结果为 `false`，则 `x & y` 将生成 `false`（即使另一个操作数的计算结果为 `null`）。 否则，`x & y` 的结果为 `null`。
+
+- 仅当其两个操作数的计算结果都为 `false` 时，`|` 运算符才生成 `false`。 如果 `x` 或 `y` 的计算结果为 `true`，则 `x | y` 将生成 `true`（即使另一个操作数的计算结果为 `null`）。 否则，`x | y` 的结果为 `null`。
+
+下表显示了该语义：
+
 |x|y|x 和 y|x&#124;y|  
 |----|----|----|----|  
 |true|true|true|true|  

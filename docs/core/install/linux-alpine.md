@@ -4,12 +4,11 @@ description: 演示在 Alpine 上安装 .NET Core SDK 和 .NET Core 运行时的
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 92753933cbcedae28867b66293d1044f700d7baa
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
-ms.translationtype: HT
+ms.openlocfilehash: 0efe3bbacbe573b77eae8818ea29b5a3867e4570
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324832"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619515"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-alpine"></a>在 Alpine 上安装 .NET Core SDK 或 .NET Core 运行时
 
@@ -47,12 +46,11 @@ Alpine Linux 上的 .NET Core 要求安装以下依赖项：
 
 - icu-libs
 - krb5-libs
+- libgcc
 - libintl
 - libssl1.1（Alpine v3.9 或更高版本）
-- libssl1.0 (Alpine v3.8)
+- libssl1.0（Alpine v3.8 或更低版本）
 - libstdc++
-- lttng-ust
-- numactl（可选）
 - zlib
 
 ## <a name="scripted-install"></a>脚本安装

@@ -1,5 +1,6 @@
 ---
 title: 使用 .NET Framework 开发基于 Windows 的客户端应用程序
+description: 利用 .NET 开发基于 Windows 的应用程序。 可以使用通用 Windows 平台 (UWP)、Windows Presentation Foundation (WPF) 或 Windows 窗体。
 ms.date: 01/09/2018
 helpviewer_keywords:
 - client application services
@@ -13,12 +14,11 @@ helpviewer_keywords:
 - Visual C#, creating applications
 - client/server applications, Windows applications
 ms.assetid: 2dfb50b7-5af2-4e12-9bbb-c5ade0e39a68
-ms.openlocfilehash: b6b5f47980e7c0c87128b9efb782e637ed7144f4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 5920ecfae60274a8a504e4d300e531fd8b512901
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79181635"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619385"
 ---
 # <a name="develop-client-applications-with-net-framework"></a>使用 .NET Framework 开发客户端应用程序
 

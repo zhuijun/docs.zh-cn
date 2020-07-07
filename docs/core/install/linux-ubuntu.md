@@ -4,12 +4,11 @@ description: 演示在 Ubuntu 上安装 .NET Core SDK 和 .NET Core 运行时的
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: eef724138f2b908bf8601a509d298a06e55fb13e
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
-ms.translationtype: HT
+ms.openlocfilehash: ed4f5b914d03cfb072ee4ba168c67262e0d40c08
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324744"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619424"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-ubuntu"></a>在 Ubuntu 上安装 .NET Core SDK 或 .NET Core 运行时
 
@@ -193,7 +192,7 @@ sudo apt-get update; \
 
 [!INCLUDE [package-manager-failed-to-fetch-deb](includes/package-manager-failed-to-fetch-deb.md)]
 
-## <a name="snap"></a>对齐
+## <a name="snap"></a>Snap
 
 [!INCLUDE [linux-install-snap](includes/linux-install-snap.md)]
 
@@ -201,16 +200,17 @@ sudo apt-get update; \
 
 使用包管理器进行安装时，将为你安装这些库。 但是，如果手动安装 .NET Core 或发布自包含的应用，则需要确保已安装以下库：
 
-- liblttng-ust0
-- libcurl3（针对 14.x 和 16.x）
-- libcurl4（针对 18.x）
-- libssl1.0.0
-- libkrb5-3
-- zlib1g
+- libc6
+- libgcc1
+- libgssapi-krb5-2
 - libicu52（针对 14.x）
 - libicu55（针对 16.x）
-- libicu57（针对 17.x）
 - libicu60（针对 18.x）
+- libicu66（适用于 20. x）
+- libssl1.0.0（适用于 14.x、16.x）
+- libssl1.1（适用于18.x、20.x）
+- libstdc++6
+- zlib1g
 
 对于使用 System.Drawing.Common 程序集的 .NET Core 应用，还需要以下依赖项：
 

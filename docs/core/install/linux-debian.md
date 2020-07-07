@@ -4,12 +4,11 @@ description: 演示在 Debian 上安装 .NET Core SDK 和 .NET Core 运行时的
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: ded9d2be72e8ec476d5ace752e44d92eb0ee1028
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
-ms.translationtype: HT
+ms.openlocfilehash: 68a3e848b3d80806e875dfb2fb7e2cbf223f8ad5
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324923"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619489"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-debian"></a>在 Debian 上安装 .NET Core SDK 或 .NET Core 运行时
 
@@ -33,7 +32,7 @@ ms.locfileid: "85324923"
 | ✔️ [9](#debian-9-)       | ✔️ 2.1        | ✔️ 3.1        | ✔️ 5.0 预览版 |
 | ❌ [8](#debian-8-)       | ✔️ 2.1        | ❌ 3.1        | ❌ 5.0 预览版 |
 
-以下 .NET Core 版本不再受支持。 这些版本的下载仍保持发布状态：
+以下版本的 .NET Core 不再受到支持。 这些版本的下载仍保持发布状态：
 
 - 3.0
 - 2.2
@@ -127,7 +126,26 @@ sudo apt-get update; \
 
 ## <a name="dependencies"></a>依赖项
 
-[!INCLUDE [linux-install-dependencies](includes/linux-install-dependencies.md)]
+使用包管理器进行安装时，将为你安装这些库。 但是，如果手动安装 .NET Core 或发布自包含的应用，则需要确保已安装以下库：
+
+- libc6
+- libgcc1
+- libgssapi-krb5-2
+- libicu52（适用于 8.x）
+- libicu57（适用于9.x）
+- libicu63（适用于10.x）
+- libicu67（适用于11.x）
+- libssl1.0.0（适用于8.x）
+- libssl1.1（适用于9.x-11.x）
+- libstdc++6
+- zlib1g
+
+对于使用 System.Drawing.Common 程序集的 .NET Core 应用，还需要以下依赖项：
+
+- libgdiplus（版本 6.0.1 或更高版本）
+
+  > [!WARNING]
+  > 可以通过将 Mono 存储库添加到系统来安装最新版 libgdiplus。 有关详细信息，请参阅 <https://www.mono-project.com/download/stable/>。
 
 ## <a name="scripted-install"></a>脚本安装
 
