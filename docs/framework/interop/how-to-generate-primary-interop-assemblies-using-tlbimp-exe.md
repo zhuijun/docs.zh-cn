@@ -1,17 +1,17 @@
 ---
 title: 如何：使用 Tlbimp.exe 生成主互操作程序集
+description: 了解如何使用 Windows SDK 提供的类型库导入程序 (Tlbimp.exe) 来生成主互操作程序集。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - primary interop assemblies, generating
 - Tlbimp.exe
 - Type Library Importer
 ms.assetid: 5419011c-6e57-40f6-8c65-386db8f7a651
-ms.openlocfilehash: e46295b89b042452cb6e303302a8b88d68d58426
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: 779b4863b6f1513f3566d4ab31660d88cda1039b
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123913"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619125"
 ---
 # <a name="how-to-generate-primary-interop-assemblies-using-tlbimpexe"></a>如何：使用 Tlbimp.exe 生成主互操作程序集
 
@@ -39,11 +39,11 @@ ms.locfileid: "73123913"
 
     **tlbimp** *tlbfile*  **/primary /keyfile:** *filename* **/out:** *assemblyname*
 
-    在此命令中，tlbfile 是要包含 COM 类型库的文件，filename 是包含密钥对的容器或文件的名称，assemblyname 是要使用强名称签名的程序集的名称    。
+    在此命令中，tlbfile 是要包含 COM 类型库的文件，filename 是包含密钥对的容器或文件的名称，assemblyname 是要使用强名称签名的程序集的名称  。
 
 主互操作程序集仅可引用其他主互操作程序集。 如果你的程序集从第三方 COM 类型库引用类型，则必须在生成主互操作程序集之前，先从发布服务器上获取主互操作程序集。 如果你是发布者，则必须在生成引用的主互操作程序集之前，生成依赖类型库的主互操作程序集。
 
-当具有不同于原始类型库的版本号的依赖主互操作程序集安装在当前目录时，此程序集是不可发现的。 必须在 Windows 注册表中注册此依赖主互操作程序集，或者使用 /reference 选项确保 Tlbimp.exe 可以找到依赖 DLL  。
+当具有不同于原始类型库的版本号的依赖主互操作程序集安装在当前目录时，此程序集是不可发现的。 必须在 Windows 注册表中注册此依赖主互操作程序集，或者使用 /reference 选项确保 Tlbimp.exe 可以找到依赖 DLL。
 
 还可以包装类型库的多个版本。 有关说明，请参阅[如何：包装类型库的多个版本](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/1565h6hc(v=vs.100))。
 
@@ -55,7 +55,7 @@ ms.locfileid: "73123913"
 tlbimp LibUtil.tlb /primary /keyfile:CompanyA.snk /out:LibUtil.dll
 ```
 
-对于更具描述性的名称（使用 VendorName.LibraryName 命名规则），以下示例将重写默认程序集的文件名和命名空间名称   。
+对于更具描述性的名称（使用 VendorName.LibraryName 命名规则），以下示例将重写默认程序集的文件名和命名空间名称 。
 
 ```console
 tlbimp LibUtil.tlb /primary /keyfile:CompanyA.snk /namespace:CompanyA.LibUtil /out:CompanyA.LibUtil.dll

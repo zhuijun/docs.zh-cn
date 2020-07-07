@@ -1,15 +1,15 @@
 ---
 title: 如何调试 CLR 激活问题
+description: 请参阅如何调试 .NET 中的公共语言运行时 (CLR) 激活问题。 查看和调试 CLR 激活日志，这在确定根本原因时可能很有用。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR activation, debugging issues
 ms.assetid: 4fe17546-d56e-4344-a930-6d8e4a545914
-ms.openlocfilehash: 602ee3c88237a902d48339836fbe25f636ae9705
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 5215e82aebf93fa8d6d1937563ab348126a01d97
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75716510"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622609"
 ---
 # <a name="how-to-debug-clr-activation-issues"></a>如何调试 CLR 激活问题
 
@@ -92,25 +92,25 @@ CLR 激活日志提供大量关于 CLR 激活和 CLR 宿主 API 的用法的数�
 532,205950.398,FunctionCall: OnShimDllMainCalled. Reason: 0
 ```
 
-- CLR 加载日志  提供启动加载托管代码的进程的可执行文件的路径。 请注意，这可能是本地主机。
+- CLR 加载日志提供启动加载托管代码的进程的可执行文件的路径。 请注意，这可能是本地主机。
 
     ```output
     532,205950.367,CLR Loading log for C:\Tests\myapp.exe
     ```
 
-- 安装的运行时  是安装在计算机上作为激活请求的候选项的 CLR 版本集。
+- 安装的运行时是安装在计算机上作为激活请求的候选项的 CLR 版本集。
 
     ```output
     532,205950.382,Installed Runtime: v4.0.30319. VERSION_ARCHITECTURE: 0
     ```
 
-- 生成所用版本  是在生成向 [ICLRMetaHostPolicy::GetRequestedRuntime](../unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).等方法提供的二进制文件时所用的 CLR 版本。
+- 生成所用版本是在生成向 [ICLRMetaHostPolicy::GetRequestedRuntime](../unmanaged-api/hosting/iclrmetahostpolicy-getrequestedruntime-method.md).等方法提供的二进制文件时所用的 CLR 版本。
 
     ```output
     532,205950.382,C:\Tests\myapp.exe was built with version: v2.0.50727
     ```
 
-- 功能按需安装  是指在 Windows 8 上启用 .NET Framework 3.5。 请参阅 [.NET Framework 初始化错误：管理用户体验](initialization-errors-managing-the-user-experience.md)，获取有关此方案的详细信息。
+- 功能按需安装是指在 Windows 8 上启用 .NET Framework 3.5。 请参阅 [.NET Framework 初始化错误：管理用户体验](initialization-errors-managing-the-user-experience.md)，获取有关此方案的详细信息。
 
     ```output
     532,205950.398,Launching feature-on-demand installation. CmdLine: C:\Windows\system32\fondue.exe /enable-feature:NetFx3

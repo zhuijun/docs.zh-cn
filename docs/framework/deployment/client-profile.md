@@ -1,5 +1,6 @@
 ---
 title: .NET Framework Client Profile
+description: 了解 .NET 客户端配置文件，它是 .NET 的版本 4 及更早版本中提供的 .NET 的一部分。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF [.NET Framework Client Profile]
@@ -9,12 +10,11 @@ helpviewer_keywords:
 - profile [.NET Framework Client Profile]
 - .NET Framework Client Profile
 ms.assetid: f0219919-1f02-4588-8704-327a62fd91f1
-ms.openlocfilehash: 32fc29500a8a2e95b52ba16847020cdb390caceb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 9678e49cd5f3c37f59c1e5a0eda668e5602fbcb5
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75716573"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621738"
 ---
 # <a name="net-framework-client-profile"></a>.NET Framework Client Profile
 .NET Client Profile 是 .NET Framework 的子集，它随 .NET Framework 4 及早期版本一起提供并针对客户端应用程序进行了优化。 .NET Framework 是适用于 Windows、Windows Phone 和 Microsoft Azure 的开发平台，它提供了托管应用执行环境和 .NET Framework 类库。 .NET Framework 4 和早期版本提供了两个部署选项：完整的 .NET Framework 和 Client Profile。 Client Profile 启用了比完整的 .NET Framework 更快的部署和更小的应用安装包。  
@@ -25,7 +25,7 @@ ms.locfileid: "75716573"
   
  在安装 .NET Framework 4.5 时，.NET Framework 4 Client Profile 将更新到完整版本的 .NET Framework。 若要了解如何安装 .NET Framework 4.5，请参阅[安装面向开发人员的 .NET Framework](../install/guide-for-developers.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [.NET Framework Client Profile (.NET Framework 4)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc656912%28v=vs.100%29)
 - [Visual Studio 多目标概述](/visualstudio/ide/visual-studio-multi-targeting-overview)

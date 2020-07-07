@@ -1,5 +1,6 @@
 ---
 title: 封送处理不同类型的数组
+description: 封送不同的数组类型，如按值或引用的整数、按值的二维整数、按值的字符串以及包含整数或字符串的结构。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,11 @@ helpviewer_keywords:
 - marshaling, Arrays sample
 - data marshaling, Arrays sample
 ms.assetid: c5ac9920-5b6e-4dc9-bf2d-1f6f8ad3b0bf
-ms.openlocfilehash: 66c7ba5989952edb55f21aab960ad7395a92ae0d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: f1473c7917189f0b36c96b2adcf20005c5fd6b48
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181363"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621491"
 ---
 # <a name="marshaling-different-types-of-arrays"></a>封送处理不同类型的数组
 数组是包含有一个或多个相同类型的元素的托管代码中的引用类型。 尽管数组是引用类型，但它们却作为 In 参数传递到非托管函数。 此行为与托管数组传递到托管对象的方式不一致，数组作为 In/Out 参数进行传递。 有关其他详细信息，请参阅 [复制和锁定](copying-and-pinning.md)。  

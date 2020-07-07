@@ -1,5 +1,6 @@
 ---
 title: 向 COM 注册程序集
+description: 使用程序集注册工具 (Regasm.exe) 向 COM 注册或取消注册程序集，这会将关于类的信息添加到系统注册表。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM interop, registering assemblies
@@ -7,12 +8,11 @@ helpviewer_keywords:
 - interoperation with unmanaged code, registering assemblies
 - registering assemblies
 ms.assetid: 87925795-a3ae-4833-b138-125413478551
-ms.openlocfilehash: 9ff24a5705058d4e303b3b64b454ced8548053a4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: 1b73a79b8167e7f75b8c68f708179e88c575d66a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73113810"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621894"
 ---
 # <a name="registering-assemblies-with-com"></a>向 COM 注册程序集
 可运行名为[程序集注册工具 (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) 的命令行工具注册或取消注册与 COM 一起使用的程序集。 Regasm.exe 将关于类的信息添加到系统注册表，因此 COM 客户端可以透明地使用 .NET Framework 类。 <xref:System.Runtime.InteropServices.RegistrationServices> 类提供等效功能。  
@@ -32,12 +32,12 @@ ms.locfileid: "73113810"
   
 - 应用程序目录中。 从应用程序路径加载的程序集只能从应用程序访问。  
   
-- 沿 /codebase  选项指定的文件路径到 Regasm.exe。  
+- 沿 /codebase 选项指定的文件路径到 Regasm.exe。  
   
  Regasm.exe 也会在 HKCR\CLSID\\{0000…0000} 项下创建 InProcServer32 项。 项的默认值设置为初始化公共语言运行时 (Mscoree.dll) 的 DLL 的名称。  
   
 ## <a name="examining-registry-entries"></a>检查注册表项  
- COM 互操作提供标准的类工厂实现以创建任意 .NET Framework 类的实例。 客户端可以调用托管 DLL 上的“DllGetClassObject”  以获取类工厂并创建对象，与使用任何其他 COM 组件相同。  
+ COM 互操作提供标准的类工厂实现以创建任意 .NET Framework 类的实例。 客户端可以调用托管 DLL 上的“DllGetClassObject”以获取类工厂并创建对象，与使用任何其他 COM 组件相同。  
   
  关于 `InprocServer32` 子项, 出现在传统 COM 类型库中的对 Mscoree.dll 的引用表示公共语言运行时创建托管对象。  
   

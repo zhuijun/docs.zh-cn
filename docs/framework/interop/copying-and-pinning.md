@@ -1,5 +1,6 @@
 ---
 title: 复制和锁定
+description: 查看互操作封送拆收器可以如何复制或锁定正在封送的数据。 复制数据会将数据副本从一个内存位置放到另一个位置。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - pinning, interop marshaling
@@ -7,12 +8,11 @@ helpviewer_keywords:
 - interop marshaling, copying
 - interop marshaling, pinning
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
-ms.openlocfilehash: f6db7d37293015911c1285d39e19bf7542a7ac59
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: b7931813cd5254375eda81515f388c85c78fa284
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123644"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618774"
 ---
 # <a name="copying-and-pinning"></a>复制和锁定
 
@@ -45,7 +45,7 @@ ms.locfileid: "73123644"
 
 - 如果设置了 <xref:System.Runtime.InteropServices.OutAttribute> 属性，则始终在返回时将状态复制回实例，并在必要时进行封送处理。
 
-- 如果同时设置了 InAttribute 和 OutAttribute，则两个副本都需要   。 如果省略了其中任一个属性，则封送拆收器可以通过删掉其中一个副本进行优化。
+- 如果同时设置了 InAttribute 和 OutAttribute，则两个副本都需要 。 如果省略了其中任一个属性，则封送拆收器可以通过删掉其中一个副本进行优化。
 
 ## <a name="reference-types"></a>引用类型
 
@@ -59,15 +59,15 @@ ms.locfileid: "73123644"
 
   - 从调用返回时转换一次。
 
-  为避免不必要的复制和转换，将这些类型作为 In 参数封送。 若要使调用方能够看见被调用方所做的更改，必须将 InAttribute 和 OutAttribute 属性显式应用于参数   。
+  为避免不必要的复制和转换，将这些类型作为 In 参数封送。 若要使调用方能够看见被调用方所做的更改，必须将 InAttribute 和 OutAttribute 属性显式应用于参数 。
 
-- 如果引用类型按值传递且只具有 blittable 类型的成员，则可在封送处理期间将其锁定，且调用方可看见被调用方对类型成员所做的所有更改。 如果需要该行为，请显式应用 InAttribute 和 OutAttribute   。 如果没有这些方向属性，互操作封送拆收器就不会将方向信息导出到类型库（默认情况下作为 In 导出），这会造成 COM 跨单元封送处理方面的问题。
+- 如果引用类型按值传递且只具有 blittable 类型的成员，则可在封送处理期间将其锁定，且调用方可看见被调用方对类型成员所做的所有更改。 如果需要该行为，请显式应用 InAttribute 和 OutAttribute 。 如果没有这些方向属性，互操作封送拆收器就不会将方向信息导出到类型库（默认情况下作为 In 导出），这会造成 COM 跨单元封送处理方面的问题。
 
 - 如果引用类型按引用传递，则默认将它作为 In/Out 封送。
 
 ## <a name="systemstring-and-systemtextstringbuilder"></a>System.String 和 System.Text.StringBuilder
 
-按值或按引用将数据封送到非托管代码时，封送拆收器通常将数据复制到辅助缓冲区（可能在复制期间转换字符集），并将对缓冲区的引用传递给被调用方。 除非引用是用 SysAllocString 分配的 BSTR，否则将始终用 CoTaskMemAlloc 分配引用    。
+按值或按引用将数据封送到非托管代码时，封送拆收器通常将数据复制到辅助缓冲区（可能在复制期间转换字符集），并将对缓冲区的引用传递给被调用方。 除非引用是用 SysAllocString 分配的 BSTR，否则将始终用 CoTaskMemAlloc 分配引用  。
 
 作为其中一个字符串类型按值（如 Unicode 字符串）封送时的一种优化，封送拆收器将指向内部 Unicode 缓冲区中托管字符串的直接指针传递给被调用方，而不是将其复制到新缓冲区。
 
@@ -76,7 +76,7 @@ ms.locfileid: "73123644"
 
 按引用传递 <xref:System.String?displayProperty=nameWithType> 时，封送拆收器将字符串内容复制到辅助缓冲区，再进行调用。 在从调用返回时，再将该缓冲区内容复制到新字符串中。 这种技术确保不可变托管字符串保持不变。
 
-按值传递 <xref:System.Text.StringBuilder?displayProperty=nameWithType> 时，封送拆收器将对 StringBuilder 的内部缓冲区的引用直接传递给调用方  。 调用方和被调用方必须就缓冲区大小达成一致。 调用方负责创建具有足够长度的 StringBuilder  。 被调用方必须采取必要措施确保不溢出缓冲区。 对于默认将按值传递的引用类型作为 In 参数传递的规则，StringBuilder 是一个例外  。 它始终作为 In/Out 传递。
+按值传递 <xref:System.Text.StringBuilder?displayProperty=nameWithType> 时，封送拆收器将对 StringBuilder 的内部缓冲区的引用直接传递给调用方。 调用方和被调用方必须就缓冲区大小达成一致。 调用方负责创建具有足够长度的 StringBuilder。 被调用方必须采取必要措施确保不溢出缓冲区。 对于默认将按值传递的引用类型作为 In 参数传递的规则，StringBuilder 是一个例外。 它始终作为 In/Out 传递。
 
 ## <a name="see-also"></a>请参阅
 

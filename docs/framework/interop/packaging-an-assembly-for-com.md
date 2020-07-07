@@ -1,5 +1,6 @@
 ---
 title: 打包用于 COM 的 .NET Framework 程序集
+description: 打包用于 COM 的 .NET 程序集。 收集 COM 应用程序可使用的类型列表、版本控制和部署说明以及类型库。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - exposing .NET Framework components to COM
@@ -16,12 +17,11 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - Reqasm.exe
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
-ms.openlocfilehash: 6866da283cc7cdd180aada252007d67bd72cd862
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: 4963892419fd1caec4483123f820d62967a87dd6
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124097"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620828"
 ---
 # <a name="packaging-a-net-framework-assembly-for-com"></a>打包用于 COM 的 .NET Framework 程序集
 
@@ -71,15 +71,15 @@ COM 开发人员可从其计划纳入应用程序的托管类型相关信息中�
 
 ## <a name="typelibconverter-class"></a>TypeLibConverter 类
 
-位于 System.Runtime.Interop  命名空间中的 <xref:System.Runtime.InteropServices.TypeLibConverter> 类将程序集中包含的类和接口转换为 COM 类型库。 此 API 生成与类型库导出程序相同的类型信息，如上节所述。
+位于 System.Runtime.Interop 命名空间中的 <xref:System.Runtime.InteropServices.TypeLibConverter> 类将程序集中包含的类和接口转换为 COM 类型库。 此 API 生成与类型库导出程序相同的类型信息，如上节所述。
 
-TypeLibConverter 类  实现 <xref:System.Runtime.InteropServices.ITypeLibConverter>。
+TypeLibConverter 类实现 <xref:System.Runtime.InteropServices.ITypeLibConverter>。
 
 <a name="cpconpackagingassemblyforcomanchor3"></a>
 
 ## <a name="assembly-registration-tool"></a>程序集注册工具
 
-[程序集注册工具 (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) 可在应用 /tlb:  选项时生成并注册类型库。 COM 客户端要求在 Windows 注册表中安装类型库。 如果不使用此选项，Regasm.exe 仅在程序集而非类型库中注册类型。 在程序集中注册类型和注册类型库是不同的活动。
+[程序集注册工具 (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) 可在应用 /tlb: 选项时生成并注册类型库。 COM 客户端要求在 Windows 注册表中安装类型库。 如果不使用此选项，Regasm.exe 仅在程序集而非类型库中注册类型。 在程序集中注册类型和注册类型库是不同的活动。
 
 <a name="cpconpackagingassemblyforcomanchor4"></a>
 

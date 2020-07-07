@@ -1,5 +1,6 @@
 ---
 title: 在托管代码中创建原型
+description: 在 .NET 托管代码中创建原型，以便你可以访问非托管函数，并使用在托管代码中批注方法定义的属性字段。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -17,12 +18,11 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-ms.openlocfilehash: 712040c3482b51c4dafe0ee87fdda8cd848fb7fc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: 76b1a87c4513fdee21c5c3d5eba533b11e022e3a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123615"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622154"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>在托管代码中创建原型
 本主题介绍了如何访问非托管函数，并介绍了在托管代码中批注方法定义的若干属性字段。 有关演示如何构造要用于平台调用、基于 .NET 的声明的示例，请参阅[用平台调用封送数据](marshaling-data-with-platform-invoke.md)。  
@@ -101,7 +101,7 @@ extern "C" int MessageBox(
  详细的引用信息，请参阅 <xref:System.Runtime.InteropServices.DllImportAttribute>。  
   
 ## <a name="platform-invoke-security-considerations"></a>平台调用安全注意事项  
- <xref:System.Security.Permissions.SecurityAction> 枚举的 `Assert`、`Deny` 和 `PermitOnly` 成员被称为堆栈审核修饰符  。 如果将这些成员用作平台调用声明和 COM 接口定义语言 (IDL) 语句上的声明性属性，则会被忽略。  
+ <xref:System.Security.Permissions.SecurityAction> 枚举的 `Assert`、`Deny` 和 `PermitOnly` 成员被称为堆栈审核修饰符。 如果将这些成员用作平台调用声明和 COM 接口定义语言 (IDL) 语句上的声明性属性，则会被忽略。  
   
 ### <a name="platform-invoke-examples"></a>平台调用示例  
  本节中的平台调用示例阐明了如何将 `RegistryPermission` 属性和堆栈审核修饰符一起使用。  

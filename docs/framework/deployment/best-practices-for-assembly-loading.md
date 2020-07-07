@@ -1,5 +1,6 @@
 ---
 title: 适用于程序集加载的最佳做法
+description: 了解 .NET 中适用于程序集加载的最佳做法。 避免类型标识问题，这些问题可能导致转换无效、缺少方法和其他异常。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - assemblies,binding
@@ -12,12 +13,11 @@ helpviewer_keywords:
 - LoadWithPartialName method
 - load-from context
 ms.assetid: 68d1c539-6a47-4614-ab59-4b071c9d4b4c
-ms.openlocfilehash: 7575c40edf47e977335bcc34fcd9e49debab0980
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 8ee5243258ea1b853b4690b79ec032c46d1b3777
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181706"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803490"
 ---
 # <a name="best-practices-for-assembly-loading"></a>适用于程序集加载的最佳做法
 本文讨论避免类型标识问题的方法，从而避免发生 <xref:System.InvalidCastException>、<xref:System.MissingMethodException> 以及其他错误。 本文讨论以下建议：  
@@ -162,7 +162,7 @@ ms.locfileid: "79181706"
   
  请注意，可以使用 <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> 方法加载这些程序集。 由于这些程序集此时位于探测路径中，因此会将它们加载到默认加载上下文（而非加载位置上下文）中。 不过，建议切换到 <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> 方法并提供完整的程序集显示名称，从而确保始终使用正确的版本。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>
 - <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>

@@ -3,15 +3,14 @@ title: 教程：使用迁移学习自动进行肉眼检查
 description: 本教程演示如何使用图像检测 API 将混凝土表面的图像分类为有裂缝或无裂缝，以使用迁移学习在 ML.NET 中训练 TensorFlow 深度学习模型。
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 12/12/2019
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 2915259d7c7031b9e699c7fd0cf65cf723c41680
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
-ms.translationtype: HT
+ms.openlocfilehash: 17fbb8c6714f3af47c0b554aec2c53c8046021bb
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144417"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803737"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>教程：通过 ML.NET 图像分类 API 使用迁移学习自动进行肉眼检查
 
@@ -81,7 +80,10 @@ ML.NET 提供了各种执行图像分类的方式。 本教程使用图像分类
 在大致了解了迁移学习和图像分类 API 后，现在可以构建应用程序。
 
 1. 创建名为“DeepLearning_ImageClassification_Binary”的 C# .NET Core 控制台应用程序。
-1. 安装 Microsoft.ML 版本 1.4.0 NuGet 包：
+1. 安装“Microsoft.ML”NuGet 包：
+
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
+
     1. 在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”。
     1. 选择“nuget.org”作为“包源”。
     1. 选择“浏览”选项卡。
@@ -89,7 +91,7 @@ ML.NET 提供了各种执行图像分类的方式。 本教程使用图像分类
     1. 搜索 Microsoft.ML。
     1. 选择“安装”按钮。
     1. 选择“预览更改”对话框上的“确定”按钮，如果你同意所列包的许可条款，则选择“接受许可”对话框上的“我接受”按钮。
-    1. 为 Microsoft.ML.Vision 版本 1.4.0、SciSharp.TensorFlow.Redist 版本 1.15.0 和 Microsoft.ML.ImageAnalytics 版本 1.4.0 NuGet 包重复上述步骤。
+    1. 为 Microsoft.ML.Vision、SciSharp.TensorFlow.Redist 和 Microsoft.ML.ImageAnalytics NuGet 包重复上述步骤。  
 
 ### <a name="prepare-and-understand-the-data"></a>准备和了解数据
 

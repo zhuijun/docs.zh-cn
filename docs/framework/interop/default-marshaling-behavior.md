@@ -1,5 +1,6 @@
 ---
 title: 默认封送处理行为
+description: 了解 .NET 中的默认封送处理行为。 查看使用互操作封送处理进行内存管理，并查看类、委托和值类型的默认封送处理。
 ms.date: 06/26/2018
 dev_langs:
 - csharp
@@ -9,12 +10,11 @@ helpviewer_keywords:
 - interoperation with unmanaged code, marshaling
 - marshaling behavior
 ms.assetid: c0a9bcdf-3df8-4db3-b1b6-abbdb2af809a
-ms.openlocfilehash: f7df323dacfbee3361fe75d831f1e87df328b194
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
-ms.translationtype: HT
+ms.openlocfilehash: 0469874d016725eb6423bb8453e9657b2be923d4
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80989215"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618566"
 ---
 # <a name="default-marshaling-behavior"></a>默认封送处理行为
 互操作封送处理根据规则进行操作，该规则指定与方法参数相关联的数据在托管和非托管内存之间传递时的行为方式。 这些内置规则控制诸如此类的封送处理活动：数据类型转换、被调用方是否可以更改传递给它的数据并将这些更改返回给调用方以及在何种情况下封送拆收器提供性能优化。  
@@ -37,15 +37,15 @@ BSTR MethodOne (BSTR b) {
 }  
 ```  
   
- 但是，如果将方法定义为平台调用原型，将每个 BSTR 类型替换为 <xref:System.String> 类型并调用 `MethodOne`，则公共语言运行时会尝试释放 `b` 两次  。 可使用 <xref:System.IntPtr> 类型而不是字符串类型来更改封送处理行为  。  
+ 但是，如果将方法定义为平台调用原型，将每个 BSTR 类型替换为 <xref:System.String> 类型并调用 `MethodOne`，则公共语言运行时会尝试释放 `b` 两次。 可使用 <xref:System.IntPtr> 类型而不是字符串类型来更改封送处理行为。  
   
- 运行时始终使用 CoTaskMemFree 方法来释放内存  。 如果正在使用的内存未通过 **CoTaskMemAlloc** 方法分配，则必须使用 **IntPtr** 并通过适当的方法手动释放内存。 同样，可在永不应释放内存的情况下避免自动释放内存，例如，从 kernel32.dll（它将指针返回内核内存）使用 GetCommandLine 函数时  。 有关手动释放内存的详细信息，请参阅[缓冲区示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100))。  
+ 运行时始终使用 CoTaskMemFree 方法来释放内存。 如果正在使用的内存未通过 **CoTaskMemAlloc** 方法分配，则必须使用 **IntPtr** 并通过适当的方法手动释放内存。 同样，可在永不应释放内存的情况下避免自动释放内存，例如，从 kernel32.dll（它将指针返回内核内存）使用 GetCommandLine 函数时。 有关手动释放内存的详细信息，请参阅[缓冲区示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x3txb6xc(v=vs.100))。  
   
 ## <a name="default-marshaling-for-classes"></a>类的默认封送处理  
  类仅能由 COM 互操作封送，并总是作为接口封送。 在某些情况下用来将该类封送的接口称为类接口。 有关使用所选接口替代类接口的信息，请参阅[类接口简介](../../standard/native-interop/com-callable-wrapper.md#introducing-the-class-interface)。  
   
 ### <a name="passing-classes-to-com"></a>向 COM 传递类  
- 当托管类传递给 COM 时，互操作封送拆收器自动使用 COM 代理包装类，并将由代理所生成的类接口传递到 COM 方法调用。 然后，代理委托对类接口的所有调用返回托管对象。 代理还公开其他不由类显式实现的接口。 代理代表类自动实现接口，如 IUnknown 和 IDispatch   。  
+ 当托管类传递给 COM 时，互操作封送拆收器自动使用 COM 代理包装类，并将由代理所生成的类接口传递到 COM 方法调用。 然后，代理委托对类接口的所有调用返回托管对象。 代理还公开其他不由类显式实现的接口。 代理代表类自动实现接口，如 IUnknown 和 IDispatch 。  
   
 ### <a name="passing-classes-to-net-code"></a>向 .NET 代码传递类  
  组件类通常不用作 COM 中的方法参数。 而是通常以默认界接口代替组件类进行传递。  
@@ -58,31 +58,31 @@ BSTR MethodOne (BSTR b) {
   
 - 一个接口正在由另一个传递到 COM 其他位置的托管对象实现。 封送拆收器可轻易识别由托管对象公开的接口，并能够将接口与提供实现的托管对象相匹配。 接着托管对象被传递给该方法且不需要包装。  
   
-- 已包装的对象将实现该接口。 要确定是否就是这种情况，封送拆收器向该对象查询其 IUnknown 接口，并将返回的接口与其他已包装对象的接口进行比较  。 如果该接口与另一包装的接口相同，则这些对象具有相同的标识，并且现有的包装会被传递给该方法。  
+- 已包装的对象将实现该接口。 要确定是否就是这种情况，封送拆收器向该对象查询其 IUnknown 接口，并将返回的接口与其他已包装对象的接口进行比较。 如果该接口与另一包装的接口相同，则这些对象具有相同的标识，并且现有的包装会被传递给该方法。  
   
  如果接口不是来自已知对象，则封送拆收器执行以下操作：  
   
-1. 封送拆收器向对象查询 IProvideClassInfo2 接口  。 封送拆收器使用从 IProvideClassInfo2.GetGUID 返回的 CLSID（如果已提供）来识别提供接口的组件类  。 如果以前注册过程序集，通过 CLSID，封送拆收器可以从注册表定位包装。  
+1. 封送拆收器向对象查询 IProvideClassInfo2 接口。 封送拆收器使用从 IProvideClassInfo2.GetGUID 返回的 CLSID（如果已提供）来识别提供接口的组件类。 如果以前注册过程序集，通过 CLSID，封送拆收器可以从注册表定位包装。  
   
-2. 封送拆收器向接口查询 IProvideClassInfo 接口  。 封送拆收器使用从 IProvideClassInfo.GetClassinfo 返回 的 ITypeInfo（如果已提供）来确定公开该接口的类的 CLSID   。 封送拆收器可以使用 CLSID 定位包装的元数据。  
+2. 封送拆收器向接口查询 IProvideClassInfo 接口。 封送拆收器使用从 IProvideClassInfo.GetClassinfo 返回 的 ITypeInfo（如果已提供）来确定公开该接口的类的 CLSID 。 封送拆收器可以使用 CLSID 定位包装的元数据。  
   
-3. 如果封送拆收器仍不能识别类，则使用名为 System.__ComObject 的泛型包装类包装接口  。  
+3. 如果封送拆收器仍不能识别类，则使用名为 System.__ComObject 的泛型包装类包装接口。  
   
 ## <a name="default-marshaling-for-delegates"></a>委托的默认封送处理  
  托管委托基于后述调用机制封送为 COM 接口或函数指针：  
   
 - 对于平台调用，默认情况下，委托作为非托管函数指针进行封送。  
   
-- 对于 COM 互操作，默认情况下，委托作为 _Delegate 类型的 COM 接口进行封送  。 在 Mscorlib.tlb 类型库中定义 **_Delegate** 接口且该接口包含 <xref:System.Delegate.DynamicInvoke%2A?displayProperty=nameWithType> 方法，使你可以调用该委托引用的方法。  
+- 对于 COM 互操作，默认情况下，委托作为 _Delegate 类型的 COM 接口进行封送。 在 Mscorlib.tlb 类型库中定义 **_Delegate** 接口且该接口包含 <xref:System.Delegate.DynamicInvoke%2A?displayProperty=nameWithType> 方法，使你可以调用该委托引用的方法。  
   
  下表显示托管委托数据类型的封送处理选项。 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性提供若干 <xref:System.Runtime.InteropServices.UnmanagedType> 枚举值来封送委托。  
   
 |枚举类型|非托管格式说明|  
 |----------------------|-------------------------------------|  
-|UnmanagedType.FunctionPtr |非托管函数指针。|  
-|UnmanagedType.Interface |在 Mscorlib.tlb 中定义的 _Delegate 类型的接口  。|  
+|UnmanagedType.FunctionPtr|非托管函数指针。|  
+|UnmanagedType.Interface|在 Mscorlib.tlb 中定义的 _Delegate 类型的接口。|  
   
- 请考虑下面的示例代码，其中将 `DelegateTestInterface` 的方法导出到 COM 类型库。 请注意，只有标记为 ref（或 ByRef）关键字的委托作为 In/Out 参数传递   。  
+ 请考虑下面的示例代码，其中将 `DelegateTestInterface` 的方法导出到 COM 类型库。 请注意，只有标记为 ref（或 ByRef）关键字的委托作为 In/Out 参数传递 。  
   
 ```csharp  
 using System;  
@@ -172,20 +172,20 @@ internal class DelegateTest {
   
  格式化的类型是复杂类型，其中包含显式控制其成员在内存中的布局的信息。 使用 <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性提供成员布局信息。 布局可以是以下 <xref:System.Runtime.InteropServices.LayoutKind> 枚举值之一：  
   
-- LayoutKind.Auto   
+- LayoutKind.Auto  
   
      指示公共语言运行时可以自由重新排序类型的成员以提高效率。 但是，当值类型传递到非托管代码中时，成员的布局是可预测的。 尝试将这种结构进行自动封送处理会导致异常。  
   
-- LayoutKind.Sequential   
+- LayoutKind.Sequential  
   
      指示在非托管内存内布局该类型的成员，其顺序与其在托管类型定义中出现的顺序相同。  
   
-- LayoutKind.Explicit   
+- LayoutKind.Explicit  
   
      指示根据随每个字段提供的 <xref:System.Runtime.InteropServices.FieldOffsetAttribute> 对成员进行布局。  
   
 ### <a name="value-types-used-in-platform-invoke"></a>在平台调用中使用的值类型  
- 在以下示例中，`Point` 和 `Rect` 类型使用 StructLayoutAttribute 提供成员布局信息  。  
+ 在以下示例中，`Point` 和 `Rect` 类型使用 StructLayoutAttribute 提供成员布局信息。  
   
 ```vb  
 Imports System.Runtime.InteropServices  
@@ -218,7 +218,7 @@ public struct Rect {
 }  
 ```  
   
- 当封送到非托管代码时，这些格式化的类型作为 C 样式结构进行封送。 这为调用具有结构自变量的非托管 API 提供一种简单的方法。 例如，`POINT` 和 `RECT` 结构可按下述方式传递到 Microsoft Windows API“PtInRect”函数  ：  
+ 当封送到非托管代码时，这些格式化的类型作为 C 样式结构进行封送。 这为调用具有结构自变量的非托管 API 提供一种简单的方法。 例如，`POINT` 和 `RECT` 结构可按下述方式传递到 Microsoft Windows API“PtInRect”函数：  
   
 ```cpp  
 BOOL PtInRect(const RECT *lprc, POINT pt);  
@@ -251,7 +251,7 @@ internal static class NativeMethods
 > [!NOTE]
 > 如果引用类型具有非直接复制到本机结构中的类型成员，则需要进行两次转换：第一次是当参数传递到非托管端时，第二次是从调用返回时。 由于此增加的开销，如果调用方想要查看被调用方所做的更改，必须将输入/输出参数显式应用到某个参数。  
   
- 在以下示例中，`SystemTime` 类具有顺序成员布局，并且可以被传递给 Windows API GetSystemTime 函数  。  
+ 在以下示例中，`SystemTime` 类具有顺序成员布局，并且可以被传递给 Windows API GetSystemTime 函数。  
   
 ```vb  
 <StructLayout(LayoutKind.Sequential)> Public Class SystemTime  
@@ -280,13 +280,13 @@ End Class
 }  
 ```  
   
- GetSystemTime 函数定义如下  ：  
+ GetSystemTime 函数定义如下：  
   
 ```cpp  
 void GetSystemTime(SYSTEMTIME* SystemTime);  
 ```  
   
- GetSystemTime 的等效平台调用定义如下  ：  
+ GetSystemTime 的等效平台调用定义如下：  
   
 ```vb
 Friend Class NativeMethods
@@ -346,42 +346,42 @@ interface _Graphics {
 }  
 ```  
   
- 当通过 COM 接口进行封送处理时，使用用于封送值和封送对平台调用的调用的引用的规则。 例如，当 `Point` 值类型的实例从 .NET Framework 传递到 COM 时，则由值传递 `Point`。 如果 `Point` 值类型由引用传递，则在堆栈上传递指向 `Point` 的指针。 互操作封送拆收器不支持任一方向更高级别的间接寻址 (Point  \*\*)。  
+ 当通过 COM 接口进行封送处理时，使用用于封送值和封送对平台调用的调用的引用的规则。 例如，当 `Point` 值类型的实例从 .NET Framework 传递到 COM 时，则由值传递 `Point`。 如果 `Point` 值类型由引用传递，则在堆栈上传递指向 `Point` 的指针。 互操作封送拆收器不支持任一方向更高级别的间接寻址 (Point \*\*)。  
   
 > [!NOTE]
-> 将 <xref:System.Runtime.InteropServices.LayoutKind> 枚举值设置为显式的结构无法用于 COM 互操作，因为导出的类型库不能表达显式布局  。  
+> 将 <xref:System.Runtime.InteropServices.LayoutKind> 枚举值设置为显式的结构无法用于 COM 互操作，因为导出的类型库不能表达显式布局。  
   
 ### <a name="system-value-types"></a>系统值类型  
- <xref:System> 命名空间具有多个表示运行时原始类型装箱形式的值类型。 例如，值类型 <xref:System.Int32?displayProperty=nameWithType> 结构表示 ELEMENT_TYPE_I4 的装箱形式  。 不像其他格式化类型将这些类型作为结构进行封送处理，而是以它们装箱的原始类型的相同方式将它们封送处理。 因此，System.Int32 作为 ELEMENT_TYPE_I4 封送处理，而不是作为包含长类型的单个成员的结构封送处理    。 下表包含系统命名空间中的值类型列表，这些值类型是基元类型的装箱表示形式  。  
+ <xref:System> 命名空间具有多个表示运行时原始类型装箱形式的值类型。 例如，值类型 <xref:System.Int32?displayProperty=nameWithType> 结构表示 ELEMENT_TYPE_I4 的装箱形式。 不像其他格式化类型将这些类型作为结构进行封送处理，而是以它们装箱的原始类型的相同方式将它们封送处理。 因此，System.Int32 作为 ELEMENT_TYPE_I4 封送处理，而不是作为包含长类型的单个成员的结构封送处理  。 下表包含系统命名空间中的值类型列表，这些值类型是基元类型的装箱表示形式。  
   
 |系统值类型|元素类型|  
 |-----------------------|------------------|  
-|<xref:System.Boolean?displayProperty=nameWithType>|ELEMENT_TYPE_BOOLEAN |  
-|<xref:System.SByte?displayProperty=nameWithType>|ELEMENT_TYPE_I1 |  
-|<xref:System.Byte?displayProperty=nameWithType>|ELEMENT_TYPE_UI1 |  
-|<xref:System.Char?displayProperty=nameWithType>|ELEMENT_TYPE_CHAR |  
-|<xref:System.Int16?displayProperty=nameWithType>|ELEMENT_TYPE_I2 |  
-|<xref:System.UInt16?displayProperty=nameWithType>|ELEMENT_TYPE_U2 |  
-|<xref:System.Int32?displayProperty=nameWithType>|ELEMENT_TYPE_I4 |  
-|<xref:System.UInt32?displayProperty=nameWithType>|ELEMENT_TYPE_U4 |  
-|<xref:System.Int64?displayProperty=nameWithType>|ELEMENT_TYPE_I8 |  
-|<xref:System.UInt64?displayProperty=nameWithType>|ELEMENT_TYPE_U8 |  
-|<xref:System.Single?displayProperty=nameWithType>|ELEMENT_TYPE_R4 |  
-|<xref:System.Double?displayProperty=nameWithType>|ELEMENT_TYPE_R8 |  
-|<xref:System.String?displayProperty=nameWithType>|ELEMENT_TYPE_STRING |  
-|<xref:System.IntPtr?displayProperty=nameWithType>|ELEMENT_TYPE_I |  
-|<xref:System.UIntPtr?displayProperty=nameWithType>|ELEMENT_TYPE_U |  
+|<xref:System.Boolean?displayProperty=nameWithType>|ELEMENT_TYPE_BOOLEAN|  
+|<xref:System.SByte?displayProperty=nameWithType>|ELEMENT_TYPE_I1|  
+|<xref:System.Byte?displayProperty=nameWithType>|ELEMENT_TYPE_UI1|  
+|<xref:System.Char?displayProperty=nameWithType>|ELEMENT_TYPE_CHAR|  
+|<xref:System.Int16?displayProperty=nameWithType>|ELEMENT_TYPE_I2|  
+|<xref:System.UInt16?displayProperty=nameWithType>|ELEMENT_TYPE_U2|  
+|<xref:System.Int32?displayProperty=nameWithType>|ELEMENT_TYPE_I4|  
+|<xref:System.UInt32?displayProperty=nameWithType>|ELEMENT_TYPE_U4|  
+|<xref:System.Int64?displayProperty=nameWithType>|ELEMENT_TYPE_I8|  
+|<xref:System.UInt64?displayProperty=nameWithType>|ELEMENT_TYPE_U8|  
+|<xref:System.Single?displayProperty=nameWithType>|ELEMENT_TYPE_R4|  
+|<xref:System.Double?displayProperty=nameWithType>|ELEMENT_TYPE_R8|  
+|<xref:System.String?displayProperty=nameWithType>|ELEMENT_TYPE_STRING|  
+|<xref:System.IntPtr?displayProperty=nameWithType>|ELEMENT_TYPE_I|  
+|<xref:System.UIntPtr?displayProperty=nameWithType>|ELEMENT_TYPE_U|  
   
- 系统命名空间中一些其他值类型的处理方式则不同  。 由于非托管代码已具备这些类型的完善格式，因此封送拆收器具有用于将其封送的特殊规则。 下表列出系统命名空间中的特殊值类型，以及其封送到的非托管类型  。  
+ 系统命名空间中一些其他值类型的处理方式则不同。 由于非托管代码已具备这些类型的完善格式，因此封送拆收器具有用于将其封送的特殊规则。 下表列出系统命名空间中的特殊值类型，以及其封送到的非托管类型。  
   
 |系统值类型|IDL 类型|  
 |-----------------------|--------------|  
-|<xref:System.DateTime?displayProperty=nameWithType>|DATE |  
-|<xref:System.Decimal?displayProperty=nameWithType>|DECIMAL |  
+|<xref:System.DateTime?displayProperty=nameWithType>|DATE|  
+|<xref:System.Decimal?displayProperty=nameWithType>|DECIMAL|  
 |<xref:System.Guid?displayProperty=nameWithType>|**GUID**|  
-|<xref:System.Drawing.Color?displayProperty=nameWithType>|OLE_COLOR |  
+|<xref:System.Drawing.Color?displayProperty=nameWithType>|OLE_COLOR|  
   
- 下面的代码显示 Stdole2 类型库中非托管类型 DATE、GUID、DECIMAL 和 OLE_COLOR 的定义     。  
+ 下面的代码显示 Stdole2 类型库中非托管类型 DATE、GUID、DECIMAL 和 OLE_COLOR 的定义   。  
   
 #### <a name="type-library-representation"></a>类型库表示形式  
   

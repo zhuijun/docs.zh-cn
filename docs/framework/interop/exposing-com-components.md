@@ -1,17 +1,17 @@
 ---
 title: 向 .NET Framework 公开 COM 组件
+description: 了解向 .NET 公开 COM 组件的过程。 作为中间层业务应用程序或独立功能，COM 组件在托管代码中非常宝贵。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - exposing COM components to .NET Framework
 - interoperation with unmanaged code, exposing COM components
 - COM interop, exposing COM components
 ms.assetid: e78b14f1-e487-43cd-9c6d-1a07483f1730
-ms.openlocfilehash: 914f72b5e4840555541943620ca2df1f629b0604
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: 459ba7ffed2e4f6c458f89a63b2baa37180d270d
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123527"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620841"
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>向 .NET Framework 公开 COM 组件
 本部分概述向托管代码公开现有 COM 组件所需的步骤。 有关编写与 .NET Framework 紧密集成的 COM 服务器的详细信息，请参阅[互操作的设计注意事项](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))。

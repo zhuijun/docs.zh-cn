@@ -1,15 +1,14 @@
 ---
 title: 教程：使用 TensorFlow 模型分析评审情绪
 description: 本教程演示如何使用预先训练的 TensorFlow 模型对网站评论中的情绪进行分类。 二元情绪分类器是使用 Visual Studio 开发的 C# 控制台应用程序。
-ms.date: 11/15/2019
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 688c5b83cef8f21eef8fa24521a85449a9cfbd48
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 9c1e45f183bd5edc488e4f37bea648566d124c65
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78241112"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803256"
 ---
 # <a name="tutorial-analyze-sentiment-of-movie-reviews-using-a-pre-trained-tensorflow-model-in-mlnet"></a>教程：在 ML.NET 中使用预先训练的 TensorFlow 模型分析电影评论的情绪
 
@@ -34,13 +33,15 @@ ms.locfileid: "78241112"
 
 ### <a name="create-the-application"></a>创建应用程序
 
-1. 创建名为“TextClassificationTF”的“.NET Core 控制台应用程序”  。
+1. 创建名为“TextClassificationTF”的“.NET Core 控制台应用程序”。
 
-2. 在项目中创建名为“Data”的目录，用于保存数据集文件  。
+2. 在项目中创建名为“Data”的目录，用于保存数据集文件。
 
-3. 安装“Microsoft.ML NuGet 包”  ：
+3. 安装“Microsoft.ML NuGet 包”：
 
-    在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”  。 选择“nuget.org”作为包源，然后选择“浏览”选项卡  。搜索“Microsoft.ML”，选择所需的包，然后选择“安装”按钮   。 同意所选包的许可条款，继续执行安装。 对“Microsoft.ML.TensorFlow”和“SciSharp.TensorFlow.Redist”重复这些步骤   。
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
+
+    在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”。 选择“nuget.org”作为包源，然后选择“浏览”选项卡。搜索“Microsoft.ML”，选择所需的包，然后选择“安装”按钮 。 同意所选包的许可条款，继续执行安装。 对 Microsoft.ML.TensorFlow、Microsoft.ML.SampleUtils 和 SciSharp.TensorFlow.Redist，重复上述步骤。  
 
 ### <a name="add-the-tensorflow-model-to-the-project"></a>将 TensorFlow 模型添加到项目
 
@@ -54,15 +55,15 @@ ms.locfileid: "78241112"
     * `saved_model.pb`：TensorFlow 模型本身。 该模型采用表示 IMDB 评论字符串中文本的特征的固定长度（大小为 600）整数数组，并输出两个概率（总和为 1）：输入评论具有正面情绪的概率，以及输入评论具有负面情绪的概率。
     * `imdb_word_index.csv`：从单个单词到整数值的映射。 映射用于为 TensorFlow 模型生成输入特征。
 
-2. 将最内层 `sentiment_model` 目录的内容复制到 TextClassificationTF  项目的 `sentiment_model` 目录中。 此目录包含本教程所需的模型和其他支持文件，如下图所示：
+2. 将最内层 `sentiment_model` 目录的内容复制到 TextClassificationTF 项目的 `sentiment_model` 目录中。 此目录包含本教程所需的模型和其他支持文件，如下图所示：
 
    ![sentiment_model 目录内容](./media/text-classification-tf/sentiment-model-files.png)
 
-3. 在“解决方案资源管理器”中，右键单击 `sentiment_model` 目录和子目录中的每个文件，然后选择“属性”  。 在“高级”下，将“复制到输出目录”的值更改为“如果较新则复制”    。
+3. 在“解决方案资源管理器”中，右键单击 `sentiment_model` 目录和子目录中的每个文件，然后选择“属性”。 在“高级”下，将“复制到输出目录”的值更改为“如果较新则复制”  。
 
 ### <a name="add-using-statements-and-global-variables"></a>添加 using 语句和全局变量
 
-1. 将以下附加的 `using` 语句添加到“Program.cs”  文件顶部：
+1. 将以下附加的 `using` 语句添加到“Program.cs”文件顶部：
 
    [!code-csharp[AddUsings](../../../samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#AddUsings "Add necessary usings")]
 
@@ -104,13 +105,13 @@ ms.locfileid: "78241112"
 
     `VariableLengthFeatures` 属性的 [VectorType](xref:Microsoft.ML.Data.VectorTypeAttribute.%23ctor%2A) 特性用于将其指定为向量。  所有向量元素都必须是同一类型。 在具有大量列的数据集中，将多个列作为单个向量加载会减少应用数据转换时的数据传递次数。
 
-    此类在 `ResizeFeatures` 操作中使用。 它的属性名称（本例中只有一个）用于指示 DataView 中的哪些列可用作自定义映射操作的输入  。
+    此类在 `ResizeFeatures` 操作中使用。 它的属性名称（本例中只有一个）用于指示 DataView 中的哪些列可用作自定义映射操作的输入。
 
 1. 在 `Main` 方法之后为固定长度特征创建一个类：
 
     [!code-csharp[FixedLengthFeatures](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#FixedLengthFeatures)]
 
-    此类在 `ResizeFeatures` 操作中使用。 它的属性名称（本例中只有一个）用于指示 DataView 中的哪些列可用作自定义映射操作的输出  。
+    此类在 `ResizeFeatures` 操作中使用。 它的属性名称（本例中只有一个）用于指示 DataView 中的哪些列可用作自定义映射操作的输出。
 
     请注意，属性 `Features` 的名称由 TensorFlow 模型确定。 此属性名称无法更改。
 

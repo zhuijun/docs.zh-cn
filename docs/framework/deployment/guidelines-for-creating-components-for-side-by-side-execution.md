@@ -1,16 +1,16 @@
 ---
 title: 并行执行的组件的创建指南
+description: 查看有关创建并行执行的组件的指南。 例如，将类型标识绑定到某个文件版本，或使用可识别版本的存储。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - side-by-side execution, multiple application versions
 - side-by-side execution, multiple component versions
 ms.assetid: 5c540161-6e40-42e9-be92-6175aee2c46a
-ms.openlocfilehash: 42d0e2d85517d4a8fb443db9b63e6b893267caca
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: f0d25984f2444d29d9fc0edb3add23b6adc04c62
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73121585"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622635"
 ---
 # <a name="guidelines-for-creating-components-for-side-by-side-execution"></a>并行执行的组件的创建指南
 创建适用于并行执行的托管应用程序或组件时，请遵循下列一般性准则：  
@@ -47,7 +47,7 @@ ms.locfileid: "73121585"
   
 - 请不要注销在 .NET Framework 的其他版本下运行的其他应用程序可能需要的 COM 组件。  
   
-- 对于已注册的 COM 服务器，请不要更改 InprocServer32  或其他注册表项。  
+- 对于已注册的 COM 服务器，请不要更改 InprocServer32 或其他注册表项。  
   
 - 请不要删除在 .NET Framework 的其他版本下运行的其他应用程序可能需要的用户帐户或组。  
   
@@ -60,7 +60,7 @@ ms.locfileid: "73121585"
   
  仅当文件版本号更新时，[全局程序集缓存工具 (Gacutil.exe)](../tools/gacutil-exe-gac-tool.md) 才允许用户替换程序集。 安装程序在安装时通常不会覆盖程序集，除非该程序集版本号较大。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [并行执行](side-by-side-execution.md)
 - [如何：启用和禁用自动绑定重定向](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)

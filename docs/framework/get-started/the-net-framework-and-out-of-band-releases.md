@@ -1,13 +1,13 @@
 ---
 title: .NET Framework 和带外版本
+description: 了解 .NET 和带外版本。 发布了一些带外 (OOB) 的新功能，可改进跨平台开发或引入新的功能。
 ms.date: 10/10/2018
 ms.assetid: 721f10fa-3189-4124-a00d-56ddabd889b3
-ms.openlocfilehash: 058bc1a5180060d3c3c6ba4ead1f074a14336b53
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 9653696f46279e0c23418f92030d64839cc20518
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181569"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85618761"
 ---
 # <a name="net-framework-and-out-of-band-releases"></a>.NET Framework 和带外版本
 
@@ -21,7 +21,7 @@ ms.locfileid: "79181569"
 
 ## <a name="how-oob-packages-are-distributed"></a>OOB 包是如何存储的
 
-核心公共语言运行时 (CLR) 组件的 OOB 版本通过 [NuGet](https://www.nuget.org/)（.NET 的包管理器）提供。 通过 NuGet，你可轻松地从 Visual Studio 内浏览库并将其添加至你的 .NET Framework 项目。 从 Visual Studio 2012 开始，NuGet 包管理器随附于 Visual Studio 的所有版本。 在 Visual Studio 的“工具菜单”中，找到“NuGet 包管理器”。 如果未安装，请按照[安装 NuGet](/nuget/install-nuget-client-tools) 上的说明进行操作。 有关 NuGet 的详细信息，请参阅 [NuGet 文档](/nuget)。
+核心公共语言运行时 (CLR) 组件的 OOB 版本通过 [NuGet](https://www.nuget.org/)（.NET 的包管理器）提供。 通过 NuGet，你可轻松地从 Visual Studio 内浏览库并将其添加至你的 .NET Framework 项目。 从 Visual Studio 2012 开始，NuGet 包管理器随附于 Visual Studio 的所有版本。 在 Visual Studio 的“工具菜单”中，找到“NuGet 包管理器” 。 如果未安装，请按照[安装 NuGet](/nuget/install-nuget-client-tools) 上的说明进行操作。 有关 NuGet 的详细信息，请参阅 [NuGet 文档](/nuget)。
 
 ## <a name="use-a-nuget-oob-package"></a>使用 NuGet OOB 包
 

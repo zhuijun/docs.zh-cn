@@ -1,5 +1,6 @@
 ---
 title: 如何：映射 HRESULT 和异常
+description: 查看如何将从 COM 方法返回的 HRESULT 值映射到 .NET 方法引发的异常。 运行时处理 COM 和 .NET 之间的转换。
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -11,19 +12,18 @@ helpviewer_keywords:
 - COM interop, HRESULTs
 - COM interop, exceptions
 ms.assetid: 610b364b-2761-429d-9c4a-afbc3e66f1b9
-ms.openlocfilehash: e186228d1dc9a42ddfe92428f7dfad29a5789095
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 827e79bdefcde7ae94567e5341ade76097dc8eaa
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181398"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619099"
 ---
 # <a name="how-to-map-hresults-and-exceptions"></a>如何：映射 HRESULT 和异常
 COM 方法通过返回 HRESULT 来报告错误；NET 方法通过引发异常来报告错误。 运行时处理这两者之间的转换。 NET Framework 中的每个异常类都将映射到 HRESULT。  
   
- 用户定义的异常类可指定任何适用的 HRESULT。 这些异常类可动态更改通过设置异常对象上的 HResult  字段生成异常时返回的 HRESULT。 异常的其他信息通过 IErrorInfo  接口提供给客户端，这是在非管理进程中的 NET 对象上实现的。  
+ 用户定义的异常类可指定任何适用的 HRESULT。 这些异常类可动态更改通过设置异常对象上的 HResult 字段生成异常时返回的 HRESULT。 异常的其他信息通过 IErrorInfo 接口提供给客户端，这是在非管理进程中的 NET 对象上实现的。  
   
- 如果要创建扩展 System.Exception  的类，需要在构造时设置 HRESULT 字段。 否则，基类将分配 HRESULT 值。 可以通过提供异常的构造函数的值，将新的异常类映射到现有的 HRESULT。  
+ 如果要创建扩展 System.Exception 的类，需要在构造时设置 HRESULT 字段。 否则，基类将分配 HRESULT 值。 可以通过提供异常的构造函数的值，将新的异常类映射到现有的 HRESULT。  
   
  请注意，如果线程上存在 `IErrorInfo`，运行时将忽略 `HRESULT`。  此行为可以发生在 `HRESULT` 和`IErrorInfo` 表示不同错误的事例中。  
   
@@ -44,7 +44,7 @@ COM 方法通过返回 HRESULT 来报告错误；NET 方法通过引发异常来
     }  
     ```  
   
- 可能会遇到同时使用托管和非托管代码的程序（使用任何编程语言）。 例如，以下代码示例中的自定义封送处理程序使用 Marshal.ThrowExceptionForHR (int HResult)  方法，以使用特定 HRESULT 值引发异常。 此方法查找 HRESULT，并生成适当的异常类型。 例如，以下代码片段中的 HRESULT 可生成 ArgumentException  。  
+ 可能会遇到同时使用托管和非托管代码的程序（使用任何编程语言）。 例如，以下代码示例中的自定义封送处理程序使用 Marshal.ThrowExceptionForHR (int HResult) 方法，以使用特定 HRESULT 值引发异常。 此方法查找 HRESULT，并生成适当的异常类型。 例如，以下代码片段中的 HRESULT 可生成 ArgumentException。  
   
 ```cpp  
 CMyClass::MethodThatThrows  
@@ -122,23 +122,23 @@ CMyClass::MethodThatThrows
 |**COR_E_VTABLECALLSNOTSUPPORTED**|**VTableCallsNotSupportedException**|  
 |**所有其他 HRESULT**|**COMException**|  
   
- 若要检索扩展的错误信息，托管客户端需要检查已生成的异常对象的字段。 若要异常对象提供有关错误的有用信息，COM 对象需要实现 IErrorInfo  接口。 运行时使用由 IErrorInfo  提供的信息来初始化异常对象。  
+ 若要检索扩展的错误信息，托管客户端需要检查已生成的异常对象的字段。 若要异常对象提供有关错误的有用信息，COM 对象需要实现 IErrorInfo 接口。 运行时使用由 IErrorInfo 提供的信息来初始化异常对象。  
   
- 如果 COM 对象不支持 IErrorInfo，  运行时将使用默认值初始化异常对象。 下表列出与异常对象关联的每个字段，并标识了当 COM 对象支持 IErrorInfo  时的默认信息源。  
+ 如果 COM 对象不支持 IErrorInfo，运行时将使用默认值初始化异常对象。 下表列出与异常对象关联的每个字段，并标识了当 COM 对象支持 IErrorInfo 时的默认信息源。  
   
  请注意，如果线程上存在 `IErrorInfo`，运行时将忽略 `HRESULT`。  此行为可以发生在 `HRESULT` 和`IErrorInfo` 表示不同错误的事例中。  
   
 |异常字段|来自 COM 的信息源|  
 |---------------------|------------------------------------|  
 |**ErrorCode**|从调用返回的 HRESULT。|  
-|**HelpLink**|如果 IErrorInfo-> HelpContext  为非零值，字符串通过串联 IErrorInfo-> GetHelpFile  和“#”以及 IErrorInfo-> GetHelpContext  形成。 否则，字符串将从 IErrorInfo-> GetHelpFile  返回。|  
-|**InnerException**|通常为 null 引用（在 Visual Basic 中为 Nothing  ）。|  
-|**消息**|从 IErrorInfo->GetDescription  返回的字符串。|  
-|**源**|从 IErrorInfo->GetSource  返回的字符串。|  
+|**HelpLink**|如果 IErrorInfo-> HelpContext 为非零值，字符串通过串联 IErrorInfo-> GetHelpFile 和“#”以及 IErrorInfo-> GetHelpContext 形成。 否则，字符串将从 IErrorInfo-> GetHelpFile 返回。|  
+|**InnerException**|通常为 null 引用（在 Visual Basic 中为 Nothing）。|  
+|**消息**|从 IErrorInfo->GetDescription 返回的字符串。|  
+|**源**|从 IErrorInfo->GetSource 返回的字符串。|  
 |**StackTrace**|堆栈跟踪。|  
 |**TargetSite**|返回出现故障的 HRESULT 的方法的名称。|  
   
- 异常字段，如 Message、  Source  和 StackTrace  ，不可用于 StackOverflowException  。  
+ 异常字段，如 Message、Source 和 StackTrace，不可用于 StackOverflowException。  
   
 ## <a name="see-also"></a>请参阅
 

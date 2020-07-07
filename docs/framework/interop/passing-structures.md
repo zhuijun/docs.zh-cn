@@ -1,5 +1,6 @@
 ---
 title: 传递结构
+description: 了解如何将结构和类传递到非托管函数。 了解用于定义格式化类型的 StructLayoutAttribute 属性。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,15 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - platform invoke, calling unmanaged functions
 ms.assetid: 9b92ac73-32b7-4e1b-862e-6d8d950cf169
-ms.openlocfilehash: 11e329fa8f0c059b6c2f1c8ccb1d6bd0d0f0030a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: eae28d6746cd89d98b659b9eb957f158e1319190
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181342"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620815"
 ---
 # <a name="passing-structures"></a>传递结构
-许多未托管的函数希望你以函数参数的形式传递结构成员（Visual Basic 中用户定义的类型），或托管代码中定义的类的成员。 使用平台调用将结构或类传递给非托管代码时，必须提供其他信息以保留原始布局和对齐方式。 本主题介绍用于定义格式化类型的 <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性。 对于托管结构和类，可从 LayoutKind  枚举提供的几种可预测布局行为中进行选择。  
+许多未托管的函数希望你以函数参数的形式传递结构成员（Visual Basic 中用户定义的类型），或托管代码中定义的类的成员。 使用平台调用将结构或类传递给非托管代码时，必须提供其他信息以保留原始布局和对齐方式。 本主题介绍用于定义格式化类型的 <xref:System.Runtime.InteropServices.StructLayoutAttribute> 属性。 对于托管结构和类，可从 LayoutKind 枚举提供的几种可预测布局行为中进行选择。  
   
  本主题提出的概念核心是结构和类类型之间的重要区别。 结构是值类型，类是引用类型 - 类始终提供至少一个级别的内存间接（指向值的指针）。 这种差异很重要，因为未托管的函数通常要求间接，如下表第一列中的签名所示。 其余列中的托管结构和类声明显示可在声明中调整间接级别的程度。Visual Basic 和 Visual C# 均提供有声明。  
   
@@ -23,7 +23,7 @@ ms.locfileid: "79181342"
 |-------------------------|---------------------------------------------------------------------------------|--------------------------------------------------------------------------------------|  
 |`DoWork(MyType x);`<br /><br /> 要求零级间接。|`DoWork(ByVal x As MyType)` <br /> `DoWork(MyType x)`<br /><br /> 添加零级间接。|不可能，因为已存在一级间接。|  
 |`DoWork(MyType* x);`<br /><br /> 要求一级间接。|`DoWork(ByRef x As MyType)` <br /> `DoWork(ref MyType x)`<br /><br /> 添加一级间接。|`DoWork(ByVal x As MyType)` <br /> `DoWork(MyType x)`<br /><br /> 添加零级间接。|  
-|`DoWork(MyType** x);`<br /><br /> 要求二级间接。|不可能，因为不能使用 ByRef  ByRef  或 `ref` `ref`。|`DoWork(ByRef x As MyType)` <br /> `DoWork(ref MyType x)`<br /><br /> 添加一级间接。|  
+|`DoWork(MyType** x);`<br /><br /> 要求二级间接。|不可能，因为不能使用 ByRef ByRef 或 `ref` `ref`。|`DoWork(ByRef x As MyType)` <br /> `DoWork(ref MyType x)`<br /><br /> 添加一级间接。|  
   
  该表介绍了以下平台调用声明的准则：  
   
@@ -34,7 +34,7 @@ ms.locfileid: "79181342"
 - 当未托管的函数要求二级间接时，使用由引用传递的类。  
   
 ## <a name="declaring-and-passing-structures"></a>声明和传递结构  
- 以下示例演示了如何在托管代码中定义 `Point` 和 `Rect` 结构，并将类型作为参数传递给 User32.dll 文件中的 PtInRect  函数。 PtInRect  具有以下非托管签名：  
+ 以下示例演示了如何在托管代码中定义 `Point` 和 `Rect` 结构，并将类型作为参数传递给 User32.dll 文件中的 PtInRect 函数。 PtInRect 具有以下非托管签名：  
   
 ```cpp
 BOOL PtInRect(const RECT *lprc, POINT pt);  
@@ -88,7 +88,7 @@ internal static class NativeMethods
 ```  
   
 ## <a name="declaring-and-passing-classes"></a>声明和传递类  
- 只要类具有固定成员布局，就可将类的成员传递给非托管 DLL 函数。 以下示例演示如何将按顺序定义的 `MySystemTime` 类的成员传递给 User32.dll 文件中的 GetSystemTime  。 GetSystemTime  具有以下非托管签名：  
+ 只要类具有固定成员布局，就可将类的成员传递给非托管 DLL 函数。 以下示例演示如何将按顺序定义的 `MySystemTime` 类的成员传递给 User32.dll 文件中的 GetSystemTime。 GetSystemTime 具有以下非托管签名：  
   
 ```cpp
 void GetSystemTime(SYSTEMTIME* SystemTime);  

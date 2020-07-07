@@ -1,5 +1,6 @@
 ---
 title: 使用非托管 DLL 函数
+description: 通过使用平台调用服务来使用非托管 DLL 函数，该服务允许托管代码调用 DLL 库中实现的非托管函数。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - unmanaged functions, calling
@@ -13,12 +14,11 @@ helpviewer_keywords:
 - platform invoke
 - DLL functions
 ms.assetid: eca7606e-ebfb-4f47-b8d9-289903fdc045
-ms.openlocfilehash: 7ec1f129dcc19300dd5a4e7c5e627d9e0edf29a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 880cbd4701ae4aee35038f6402b3beb70e60290c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79400949"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622180"
 ---
 # <a name="consuming-unmanaged-dll-functions"></a>使用非托管 DLL 函数
 平台调用是一项服务，使托管代码能够调用动态链接库 (DLL) 中实现的非托管函数，例如 Windows API 中的非托管函数。 此服务定位并调用导出的函数，并根据需要跨交互操作边界封送其自变量（整数、字符串、数组、结构等）。  
@@ -37,11 +37,11 @@ ms.locfileid: "79400949"
   
 3. [在托管代码中创建原型](creating-prototypes-in-managed-code.md)。  
   
-     [Visual Basic] 使用 Declare 语句以及 Function 和 Lib 关键字    。 在极少数情况下，可以使用 DllImportAttribute 和 Shared Function 关键字   。 本节稍后会对这些情况进行说明。  
+     [Visual Basic] 使用 Declare 语句以及 Function 和 Lib 关键字  。 在极少数情况下，可以使用 DllImportAttribute 和 Shared Function 关键字 。 本节稍后会对这些情况进行说明。  
   
-     [C#] 使用 DllImportAttribute 标识 DLL 和函数  。 为此方法标记 static 和 extern 修饰符   。  
+     [C#] 使用 DllImportAttribute 标识 DLL 和函数。 为此方法标记 static 和 extern 修饰符 。  
   
-     [C++] 使用 DllImportAttribute 标识 DLL 和函数  。 用 extern "C" 标记此包装方法或函数  。  
+     [C++] 使用 DllImportAttribute 标识 DLL 和函数。 用 extern "C" 标记此包装方法或函数。  
   
 4. [调用 DLL 函数](calling-a-dll-function.md)。  
   

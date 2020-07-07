@@ -1,17 +1,17 @@
 ---
 title: .NET Framework 部署指南（针对开发人员）
+description: 阅读面向开发人员的 .NET 部署指南。 如果想要随应用一起安装任何版本的 .NET（从版本 4.5 到 4.8），请使用此信息。
 ms.custom: updateeachrelease
 ms.date: 01/17/2020
 helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 26c168040b0fa5e975e64a7518b0d0bf250c4711
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 95c2cacc062bbe05ce0bc5c3e832bfe3006cf412
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77628119"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622661"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>.NET Framework 部署指南（针对开发人员）
 本主题为想要随自己的应用一起安装任何 .NET Framework 版本（从 .NET Framework 4.5 到 [!INCLUDE[net_current](../../../includes/net-current-version.md)]）的开发人员提供了相关信息。
@@ -254,7 +254,7 @@ Windows Installer XML (WiX) 工具集通过 XML 源代码生成 Windows 安装�
 
 ### <a name="detecting-the-language-packs"></a>检测语言包
 
-可以测试是否已安装特定语言包，方法是在注册表的 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\\LCID 文件夹内查找名为 `Release` 的 DWORD 值  。 （请注意，“NET Framework Setup”不以句点开头。）LCID 指定一个区域设置标识符；有关这些标识符的列表，请参阅[支持的语言](#supported-languages)  。
+可以测试是否已安装特定语言包，方法是在注册表的 HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full\\LCID 文件夹内查找名为 `Release` 的 DWORD 值。 （请注意，“NET Framework Setup”不以句点开头。）LCID 指定一个区域设置标识符；有关这些标识符的列表，请参阅[支持的语言](#supported-languages)。
 
 例如，若要检测是否安装了完整的日语语言包 (LCID=1041)，请在注册表中检索以下命名值：
 
@@ -331,7 +331,7 @@ Windows Installer XML (WiX) 工具集通过 XML 源代码生成 Windows 安装�
 
 ## <a name="uninstalling-the-net-framework"></a>卸载 .NET Framework
 
-从 Windows 8 开始，你可以使用“控制面板”中的“打开或关闭 Windows 功能”  来卸载 .NET Framework 4.5 或更高版本。 在旧版本 Windows 中，你可以使用“控制面板”中的“添加或删除程序”  来卸载 .NET Framework 4.5 或更高版本。
+从 Windows 8 开始，你可以使用“控制面板”中的“打开或关闭 Windows 功能”来卸载 .NET Framework 4.5 或更高版本。 在旧版本 Windows 中，你可以使用“控制面板”中的“添加或删除程序”来卸载 .NET Framework 4.5 或更高版本。
 
 > [!IMPORTANT]
 > 对于 Windows 7 和更低版本的操作系统，卸载 .NET Framework 4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7、4.7.1、4.7.2 或 4.8 不会还原 .NET Framework 4.5 文件，卸载 .NET Framework 4.5 不会还原 .NET Framework 4 文件。 如果要回到旧版本，你必须重新安装此版本及其任何更新。

@@ -1,5 +1,6 @@
 ---
 title: 编译互操作项目
+description: 查看如何编译 COM 互操作项目，如果它们引用包含导入 COM 类型的一个或多个程序集，则这些项目可以像托管项目一样进行编译。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - interoperation with unmanaged code, compiling
@@ -9,12 +10,11 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing COM components
 - COM interop, exposing COM components
 ms.assetid: 6fcf6588-5e25-41af-b4ae-780974f2c3df
-ms.openlocfilehash: 32102910ae674a97e941e1346a1898585f503527
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: a8dfbeb88d0057eb3c9047b4435f021750ed86d2
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123673"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620854"
 ---
 # <a name="compiling-an-interop-project"></a>编译互操作项目
 
@@ -35,7 +35,7 @@ ms.locfileid: "73123673"
 > [!NOTE]
 > Visual C++ 应用程序无法嵌入类型信息，但它们可以与应用程序或加载项进行互操作。
 
- 若要编译部署时包括主互操作程序集的应用程序，请使用“/reference”  编译器开关并指定互操作程序集的名称。
+ 若要编译部署时包括主互操作程序集的应用程序，请使用“/reference”编译器开关并指定互操作程序集的名称。
 
 ## <a name="see-also"></a>请参阅
 

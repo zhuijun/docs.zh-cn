@@ -1,5 +1,6 @@
 ---
 title: 如何：配置基于 .NET Framework 的 COM 组件以进行免注册激活
+description: 配置基于 .NET 的 COM 组件以进行免注册激活。 安装程序需要 Win32 样式的应用程序清单和 .NET 组件清单。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - components [.NET Framework], manifest
@@ -8,12 +9,11 @@ helpviewer_keywords:
 - registration-free COM interop, configuring .NET-based components
 - activation, registration-free
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
-ms.openlocfilehash: 9e273bd3e4bf2bb6945fe48c850783a54fa9a869
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
-ms.translationtype: HT
+ms.openlocfilehash: 5263e042bafdb886b313f05751c29de0f5715211
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291759"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622193"
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>如何：配置基于 .NET Framework 的 COM 组件以进行免注册激活
 基于 .NET Framework 的组件的免注册激活略复杂于 COM 组件的免注册激活。 安装需要两个清单：  
@@ -166,7 +166,7 @@ ms.locfileid: "80291759"
   
      Rc.exe 生成 `myresource.res` 资源文件。  
   
-3. 再次编译该程序集的源文件，并使用 /win32res  选项指定资源文件：  
+3. 再次编译该程序集的源文件，并使用 /win32res 选项指定资源文件：  
   
     `/win32res:myresource.res`  
   

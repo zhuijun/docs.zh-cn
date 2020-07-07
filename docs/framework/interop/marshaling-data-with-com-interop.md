@@ -1,15 +1,15 @@
 ---
 title: 用 COM 互操作对数据进行封送处理
+description: 请参阅涵盖用 COM 互操作对数据进行封送处理的文章。 Tlbimp.exe 和 Tlbexp.exe 工具在 COM 类型库和互操作程序集之间转换。
 ms.date: 09/07/2017
 helpviewer_keywords:
 - COM interop, data marshaling
 - marshaling data, COM interop
-ms.openlocfilehash: ae41713d5349321725599c0c38d7c6fc515c374b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: eedfb60a75e2fe5fafdaa786dbb54adddf28400e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181375"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85621504"
 ---
 # <a name="marshaling-data-with-com-interop"></a>用 COM 互操作对数据进行封送处理
 COM 互操作同时对在托管代码中使用 COM 对象和向 COM 公开托管对象提供支持。 对于将数据封送到 COM 和从 COM 中封送数据的支持是广泛的，并几乎总是提供正确的封送行为。  

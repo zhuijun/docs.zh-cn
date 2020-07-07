@@ -1,17 +1,17 @@
 ---
 title: .NET Framework 初始化错误：管理用户体验
+description: 当发生 .NET 初始化错误时（例如，激活系统找不到要加载的正确 CLR 版本时），控制用户体验。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - no framework found experience
 - initialization errors [.NET Framework]
 - .NET Framework, initialization errors
 ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
-ms.openlocfilehash: 73a0ffd4a39b144a61bf559ac424414728fb9a3f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 6db68b43381dfe275c93cae5610386e10a6f09ae
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75716456"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85619684"
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>.NET Framework 初始化错误：管理用户体验
 
@@ -37,7 +37,7 @@ CLR 激活 API 返回 HRESULT 代码以报告对主机的激活操作结果。 �
 
 ## <a name="ui-for-initialization-errors"></a>初始化错误的 UI
 
-如果 CLR 激活系统无法加载应用程序所需运行时的正确版本，它将向用户显示一条错误消息，通知他们，他们的计算机未正确配置，无法运行该应用程序，并为他们提供机会来修复该问题。 在此情况下通常会显示以下错误消息。 用户可以选择“是”  以转到 Microsoft 网站，从中为应用程序下载正确的 .NET Framework 版本。
+如果 CLR 激活系统无法加载应用程序所需运行时的正确版本，它将向用户显示一条错误消息，通知他们，他们的计算机未正确配置，无法运行该应用程序，并为他们提供机会来修复该问题。 在此情况下通常会显示以下错误消息。 用户可以选择“是”以转到 Microsoft 网站，从中为应用程序下载正确的 .NET Framework 版本。
 
 ![“.NET Framework 初始化错误”对话框](./media/initialization-errors-managing-the-user-experience/initialization-error-dialog.png "初始化错误的典型错误消息")
 

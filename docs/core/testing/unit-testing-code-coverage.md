@@ -3,13 +3,12 @@ title: 将代码覆盖率用于单元测试
 description: 了解如何将代码覆盖率功能用于 .NET 单元测试。
 author: IEvangelist
 ms.author: dapine
-ms.date: 06/16/2020
-ms.openlocfilehash: d19975283bf60e5cf3a9656c1b6f7966e12d2176
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
-ms.translationtype: HT
+ms.date: 07/01/2020
+ms.openlocfilehash: af64116e86c3f46f37c8d5d079b9c86084095485
+ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105414"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85853901"
 ---
 # <a name="use-code-coverage-for-unit-testing"></a>将代码覆盖率用于单元测试
 
@@ -18,6 +17,8 @@ ms.locfileid: "85105414"
 本文介绍如何通过 Coverlet 在单元测试中使用代码覆盖率和使用 ReportGenerator 生成报表。 尽管本文重点介绍 C# 和 xUnit 作为测试框架，但 MSTest 和 NUnit 也适用。 Coverlet 是 [GitHub 上的开源项目](https://github.com/coverlet-coverage/coverlet)，可为 C# 提供跨平台代码覆盖率框架。 [Coverlet](https://dotnetfoundation.org/projects/coverlet) 是 .NET Foundation 的一部分。 Coverlet 收集 Cobertura 覆盖率测试运行数据，用于生成报表。
 
 此外，本文详细介绍如何使用从 Coverlet 测试运行收集的代码覆盖率信息来生成报表。 可以使用另一个 [GitHub 上的开源项目 - ReportGenerator](https://github.com/danielpalme/ReportGenerator) 来生成报表。 ReportGenerator 将由 Cobertura 生成的覆盖率报表转换为各种格式的用户可读的报表。
+
+本文基于示例浏览器中提供的[示例源代码项目](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs)。
 
 ## <a name="system-under-test"></a>测试中的系统
 
@@ -300,6 +301,7 @@ reportgenerator
 - [GitHub - ReportGenerator 存储库](https://github.com/danielpalme/ReportGenerator)
 - [ReportGenerator 项目网站](https://danielpalme.github.io/ReportGenerator)
 - [.NET Core CLI 测试命令](../tools/dotnet-test.md)
+- [示例源代码](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs)
 
 ## <a name="next-steps"></a>后续步骤
 

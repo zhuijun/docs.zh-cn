@@ -1,5 +1,6 @@
 ---
 title: COM 互操作示例：COM 客户端和 .NET 服务器
+description: 阅读代码示例，该示例显示了执行抵押计算的 COM 客户端和 .NET 服务器之间的互操作。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,11 @@ helpviewer_keywords:
 - interoperation with unmanaged code, samples
 - COM interop, samples
 ms.assetid: a219cb2c-9fa2-4c90-9b26-939e0788f178
-ms.openlocfilehash: 5a72f3f23f4601b8b0a2ee8c6f5df66ae0bc66a3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 1a9c17cda6a6d129327b296e5d7d851902f78d35
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181502"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620880"
 ---
 # <a name="com-interop-sample-com-client-and-net-server"></a>COM 互操作示例：COM 客户端和 .NET 服务器
 此示例演示 [COM 客户端](#cpconcominteropsamplecomclientnetserveranchor1) 和执行抵押计算的 [.NET 服务器](#cpconcominteropsamplecomclientnetserveranchor2)的互操作。 在本示例中，客户端创建并调用托管 `Loan` 类的实例，将四个参数（其中一个等于零）传递给该实例，并显示计算结果。 本示例中的代码例子将贯穿本节。  

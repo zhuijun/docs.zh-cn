@@ -1,17 +1,16 @@
 ---
 title: 教程：预测自行车租赁需求 - 时序
 description: 本教程介绍如何使用单变量时序分析和 ML.NET 来预测自行车租赁服务需求。
-ms.date: 11/07/2019
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: bceb32f4ea22ade6d3b49b3a99d7ec48a7ba168d
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
-ms.translationtype: HT
+ms.openlocfilehash: 4ea002b690de877fd6f955c05eb8235f46e0a870
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607397"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803206"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>教程：使用时序分析和 ML.NET 预测自行车租赁服务需求
 
@@ -33,7 +32,7 @@ ms.locfileid: "81607397"
 
 ## <a name="time-series-forecasting-sample-overview"></a>时序预测示例概述
 
-此示例为 C# .NET Core 控制台应用程序，它使用单变量时序分析算法（称为单谱分析）来预测自行车租赁需求。  此示例的代码可以在 GitHub 上的 [dotnet/machinelearning-samples 存储库](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand)找到。
+此示例为 C# .NET Core 控制台应用程序，它使用单变量时序分析算法（称为单谱分析）来预测自行车租赁需求。 此示例的代码可以在 GitHub 上的 [dotnet/machinelearning-samples 存储库](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand)找到。
 
 ## <a name="understand-the-problem"></a>了解问题
 
@@ -45,19 +44,22 @@ ms.locfileid: "81607397"
 
 ## <a name="create-console-application"></a>创建控制台应用程序
 
-1. 新建一个名称为“BikeDemandForecasting”的“C# .NET Core 控制台应用程序”。 
-1. 安装 Microsoft.ML 版本 1.4.0 NuGet 包  
-    1. 在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”  。
-    1. 选择“nuget.org”作为“包源”，选择“浏览”选项卡，再搜索“Microsoft.ML”  。 
-    1. 选中“包括预发行版”复选框  。
-    1. 选择“安装”按钮  。
-    1. 选择“预览更改”  对话框中的“确定”  按钮；如果同意所列包的许可条款，请选择“接受许可”对话框中的“我接受”  按钮。
-    1. 针对 System.Data.SqlClient 版本 4.7.0 和 Microsoft.ML.TimeSeries 版本 1.4.0 重复上述步骤     。
+1. 新建一个名称为“BikeDemandForecasting”的“C# .NET Core 控制台应用程序”。
+1. 安装 Microsoft.ML 版本 NuGet 包
+
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
+
+    1. 在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”。
+    1. 选择“nuget.org”作为“包源”，选择“浏览”选项卡，再搜索“Microsoft.ML”。
+    1. 选中“包括预发行版”复选框。
+    1. 选择“安装”按钮。
+    1. 选择“预览更改”对话框中的“确定”按钮；如果同意所列包的许可条款，请选择“接受许可”对话框中的“我接受”按钮。
+    1. 针对 System.Data.SqlClient 和 Microsoft.ML.TimeSeries 重复上述步骤 。
 
 ### <a name="prepare-and-understand-the-data"></a>准备和了解数据
 
-1. 创建一个名为“Data”的目录。 
-1. 下载 [DailyDemand.mdf 数据库文件](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Data/DailyDemand.mdf)并将其保存到“Data”目录中。  
+1. 创建一个名为“Data”的目录。
+1. 下载 [DailyDemand.mdf 数据库文件](https://github.com/dotnet/machinelearning-samples/raw/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Data/DailyDemand.mdf)并将其保存到“Data”目录中。 
 
 > [!NOTE]
 > 此教程使用的数据来自 [UCI 自行车共享数据集](http://archive.ics.uci.edu/ml/datasets/bike+sharing+dataset)。 作者 Fanaee-T,Hadi 和 Gama, Joao，“事件标签结合集合探测器和背景知识”，人工智能进展 (2013)：1-15 页，Springer Berlin Heidelberg，[网页链接](https://link.springer.com/article/10.1007%2Fs13748-013-0040-3)。
@@ -88,7 +90,7 @@ CREATE TABLE [Rentals] (
 
 ### <a name="create-input-and-output-classes"></a>创建输入和输出类
 
-1. 打开 Program.cs 文件，将现有 `using` 语句替换为以下内容： 
+1. 打开 Program.cs 文件，将现有 `using` 语句替换为以下内容：
 
     [!code-csharp [ProgramUsings](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L1-L8)]
 

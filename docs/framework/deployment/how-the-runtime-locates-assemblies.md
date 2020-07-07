@@ -1,5 +1,6 @@
 ---
 title: 运行时如何定位程序集
+description: 了解公共语言运行时 (CLR) 如何在 .NET 中查找并绑定到构成应用程序的程序集。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - app.config files, assembly locations
@@ -9,12 +10,11 @@ helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
-ms.openlocfilehash: 13e2661b67ba3b717b8917e80118175acb09e756
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 4cf1e5787fe2e430d20208d8e79b610e9126c67c
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181669"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622622"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>运行时如何定位程序集
 
@@ -33,7 +33,7 @@ ms.locfileid: "79181669"
 
 还可通过仅向调用方法提供程序集的部分信息（例如，仅指定程序集名称）动态引用程序集。 在这种情况下，仅搜索程序集的应用程序目录，不进行其他检查。 通过使用任一方式加载程序集（ <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> 或 <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>），可执行部分引用。
 
-最后，可使用 <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> 等方法执行动态引用并仅提供部分信息；然后在应用程序配置文件中用 [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) 元素限定该引用。 借助此元素，你可以提供应用程序配置文件（而不是代码）中的完全引用信息（名称、版本、区域性和公钥标记（若适用））。 如果想要完全限定应用程序目录之外的程序集引用，或者如果想要引用全局程序集缓存中的程序集且轻松指定配置文件（而不是代码）中的完全引用，可使用此技术。
+最后，可使用 <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> 等方法执行动态引用并仅提供部分信息；然后使用应用程序配置文件中的 [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) 元素限定该引用。 借助此元素，你可以提供应用程序配置文件（而不是代码）中的完全引用信息（名称、版本、区域性和公钥标记（若适用））。 如果想要完全限定应用程序目录之外的程序集引用，或者如果想要引用全局程序集缓存中的程序集且轻松指定配置文件（而不是代码）中的完全引用，可使用此技术。
 
 > [!NOTE]
 > 多个应用程序间共享的程序集不应使用此类型的部分引用。 因为配置设置是基于每个应用程序（而非每个程序集）应用的，所以使用此类部分引用的共享程序集需要使用共享程序集的每个应用程序的配置文件中都具有限定信息。
@@ -72,7 +72,7 @@ ms.locfileid: "79181669"
 
 - 计算机配置文件。
 
-这些文件遵循相同的语法，并提供绑定重定向、代码位置和特定程序集的绑定模式等信息。 每个配置文件均可包含用于重定向绑定过程的 [\<assemblyBinding> 元素](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md)。 [\<assemblyBinding> 元素](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md)的子元素包括 [\<dependentAssembly> 元素](../configure-apps/file-schema/runtime/dependentassembly-element.md)。 [\<dependentAssembly> 元素](../configure-apps/file-schema/runtime/dependentassembly-element.md)的子元素包括 [\<assemblyIdentity> 元素](/visualstudio/deployment/assemblyidentity-element-clickonce-deployment)、[\<bindingRedirect> 元素](../configure-apps/file-schema/runtime/bindingredirect-element.md)和 [\<codeBase> 元素](../configure-apps/file-schema/runtime/codebase-element.md)。
+这些文件遵循相同的语法，并提供绑定重定向、代码位置和特定程序集的绑定模式等信息。 每个配置文件均可包含用于重定向绑定过程的 [\<assemblyBinding> 元素](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md)。 [\<assemblyBinding> 元素](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md)的子元素包含 [\<dependentAssembly> 元素](../configure-apps/file-schema/runtime/dependentassembly-element.md)。 [\<dependentAssembly> 元素](../configure-apps/file-schema/runtime/dependentassembly-element.md)的子元素包含 [\<assemblyIdentity> 元素](/visualstudio/deployment/assemblyidentity-element-clickonce-deployment)、[\<bindingRedirect> 元素](../configure-apps/file-schema/runtime/bindingredirect-element.md) 和 [\<codeBase> 元素](../configure-apps/file-schema/runtime/codebase-element.md)。
 
 > [!NOTE]
 > 这 3 个配置文件中均存在配置信息；并非所有配置文件中的所有元素都有效。 例如，绑定模式和专用路径信息仅存在于应用程序配置文件。 有关包含在每个文件内的完整信息列表，请参阅 [使用配置文件配置应用](../configure-apps/index.md)。
@@ -81,7 +81,7 @@ ms.locfileid: "79181669"
 
 首先，公共语言运行时检查应用程序配置文件是否存在重写调用程序集清单中存储的版本信息的相关信息。 可借助应用程序部署应用程序配置文件，但执行应用程序时不需要此文件。 通常几乎可瞬时完成此文件的检索，但如果应用程序基位于完成计算机上（例如，在基于 Internet Explorer Web 的方案中），必须下载配置文件。
 
-对于客户端可执行文件，应用程序配置文件和应用程序的可执行文件驻留在同一目录中，并且它与扩展名为 .config 的可执行文件具有相同的基名称。 例如，C:\Program Files\Myapp\Myapp.exe 的配置文件是 C:\Program Files\Myapp\Myapp.exe.config。在基于浏览器的方案中，HTML 文件必须使用 \<link> 元素显式指向该配置文件  。
+对于客户端可执行文件，应用程序配置文件和应用程序的可执行文件驻留在同一目录中，并且它与扩展名为 .config 的可执行文件具有相同的基名称。 例如，C:\Program Files\Myapp\Myapp.exe 的配置文件是 C:\Program Files\Myapp\Myapp.exe.config。在基于浏览器的方案中，HTML 文件必须使用 \<link> 元素显式指向该配置文件。
 
 以下代码提供了一个有关应用程序配置文件的简单示例。 此示例将 <xref:System.Diagnostics.TextWriterTraceListener> 添加到 <xref:System.Diagnostics.Debug.Listeners%2A> 集合，以便可以将调试信息记录到文件中。
 
@@ -134,9 +134,9 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 共享组件已更新且使用此组件的所有应用程序都应选取共享组件的新版本时，使用发行者策略文件。 发布服务器策略文件中的设置会重写应用程序配置文件中的设置，除非应用程序配置文件强制实施了安全模式。
 
 #### <a name="safe-mode"></a>安全模式
-发布服务器策略文件通常作为服务包或程序更新的一部分显式安装。 如果升级后的共享组件有任何问题，可使用安全模式忽略发布服务器策略文件中的重写。 安全模式由仅位于应用程序配置文件中的 \<publisherPolicy apply="yes|no"/> 元素确定   。 它指定是否应从绑定进程删除发布服务器策略配置信息。
+发布服务器策略文件通常作为服务包或程序更新的一部分显式安装。 如果升级后的共享组件有任何问题，可使用安全模式忽略发布服务器策略文件中的重写。 安全模式由仅位于应用程序配置文件中的 \<publisherPolicy apply="yes**&#124;**no"/> 元素确定。 它指定是否应从绑定进程删除发布服务器策略配置信息。
 
-可针对整个应用程序或所选程序集设置安全模式。 即，可关闭构成应用程序的所有程序集的策略，也可仅打开部分程序集的策略。 若要将发布服务器策略有选择地应用于构成应用程序的程序集，请设置 \<publisherPolicy apply\=no/> 并使用 \<dependentAssembly> 元素指定要影响的程序集   。 若要将发布服务器策略应用于构成应用程序的所有程序集，请设置 \<publisherPolicy apply\=no/>，且不包含从属程序集元素  。 有关配置的详细信息，请参阅 [使用配置文件配置应用](../configure-apps/index.md)。
+可针对整个应用程序或所选程序集设置安全模式。 即，可关闭构成应用程序的所有程序集的策略，也可仅打开部分程序集的策略。 若要将发布服务器策略有选择地应用于构成应用程序的程序集，请设置 \<publisherPolicy apply\=no/> 并使用 \<**dependentAssembly**> 元素指定要影响的程序集。 若要将发布服务器策略应用于构成应用程序的所有程序集，请设置 \<publisherPolicy apply\=no/>，且不包含从属程序集元素。 有关配置的详细信息，请参阅 [使用配置文件配置应用](../configure-apps/index.md)。
 
 ### <a name="machine-configuration-file"></a>计算机配置文件
 最后，运行时检查计算机配置文件。 此文件名为 Machine.config，驻留在本地计算机上安装有运行时的根目录的配置子目录中。 管理员可使用此文件来指定此计算机本地的程序集绑定限制。 计算机配置文件中的设置优先于所有其他配置设置 ；但是，这并不意味着所有配置设置都应置于此文件中。 管理员策略文件确定的版本为最终版本，且不能重写。 Machine.config 文件中指定的重写可影响所有应用程序。 有关配置文件的详细信息，请参阅 [使用配置文件配置应用](../configure-apps/index.md)。
@@ -150,7 +150,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 如果先前的程序集请求失败，此程序集的后续请求立即失败且不会尝试加载程序集。 从 .NET Framework 2.0 版开始，将缓存程序集绑定故障，且缓存的信息用于确定是否尝试加载此程序集。
 
 > [!NOTE]
-> 若要还原到 .NET framework 1.0 和 1.1 版的行为（即，不缓存绑定故障），请将 [\<disableCachingBindingFailures> 元素](../configure-apps/file-schema/runtime/disablecachingbindingfailures-element.md)包括到配置文件中。
+> 若要还原到 .NET framework 版本 1.0 和 1.1 的行为（即，不缓存绑定故障），请将 [\<disableCachingBindingFailures> 元素](../configure-apps/file-schema/runtime/disablecachingbindingfailures-element.md)包括到配置文件中。
 
 <a name="step3"></a>
 
@@ -173,7 +173,7 @@ Al.exe /link:asm6.exe.config /out:policy.3.0.asm6.dll /keyfile: compatkey.dat /v
 
 ### <a name="locating-the-assembly-through-codebases"></a>通过基本代码查找程序集
 
-通过使用配置文件中的 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素，可提供基本代码信息。 在运行时尝试探测引用的程序集之前，始终检查此基本代码。 如果包含最终版本重定向的发布服务器策略文件也包含 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素，则使用该 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素。 例如，如果应用程序配置文件指定一个 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素，而重写应用程序信息的发布服务器策略文件也指定一个 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素，则使用发布服务器策略文件中的 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素。
+通过使用配置文件中的 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素，可提供基本代码信息。 在运行时尝试探测引用的程序集之前，始终检查此基本代码。 如果包含最终版本重定向的发布服务器策略文件也包含 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素，则使用 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素。 例如，如果应用程序配置文件指定一个 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素，而重写应用程序信息的发布服务器策略文件也指定一个 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素，则使用发布服务器策略文件中的 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素。
 
 如果在 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素指定的位置找不到匹配项，则绑定请求失败，且不再执行任何步骤。 如果运行时确定程序集与调用程序集的条件相匹配，则使用此程序集。 加载由给定 [\<codeBase>](../configure-apps/file-schema/runtime/codebase-element.md) 元素指定的文件时，运行时执行检查，确保名称、版本、区域性和公钥与调用程序集的引用相匹配。
 

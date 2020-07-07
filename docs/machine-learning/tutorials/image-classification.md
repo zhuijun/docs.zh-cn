@@ -1,15 +1,14 @@
 ---
 title: 教程：来自 TensorFlow 的 ML.NET 图像分类模型
 description: 了解如何将现有 TensorFlow 模型中的知识传输到新的 ML.NET 图像分类模型中。 TensorFlow 模型经过训练，可以将图像分为一千个类别。 ML.NET 模型使用迁移学习将图像分为更多类别。
-ms.date: 01/30/2020
+ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: ae6094d5acd4d26482f3690e174d82bbf1807266
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
-ms.translationtype: HT
+ms.openlocfilehash: 38fa349e743da54a21aeb65b76a0273a17c3fae7
+ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144430"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85803997"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>教程：从预先训练的 TensorFlow 模型生成 ML.NET 图像分类模型
 
@@ -122,12 +121,14 @@ toaster2.png    appliance
 
 1. 安装“Microsoft.ML NuGet 包”：
 
+    [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
+
     * 在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”。
     * 选择“nuget.org”作为“包源”，选择“浏览”选项卡，再搜索“Microsoft.ML”。
-    * 单击“版本”下拉列表，选择列表中的“1.4.0”包，然后选择“安装”按钮  。
+    * 选择“安装”按钮。
     * 选择“预览更改”对话框中的“确定”按钮 。
     * 如果同意所列包的许可条款，请选择“接受许可”对话框中的“我接受”按钮。
-    * 对“Microsoft.ML.ImageAnalytics v1.4.0”和“SciSharp.TensorFlow.Redist v1.15.0”、和“Microsoft.ML.TensorFlow v1.4.0”重复这些步骤  。
+    * 对 Microsoft.ML.ImageAnalytics、SciSharp.TensorFlow.Redist 和 Microsoft.ML.TensorFlow 重复上述步骤  。
 
 ### <a name="download-assets"></a>下载资产
 

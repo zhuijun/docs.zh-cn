@@ -1,5 +1,6 @@
 ---
 title: COM 互操作示例：.NET 客户端和 COM 服务器
+description: 阅读一个代码示例，该示例演示 .NET 客户端如何访问 COM 服务器来创建 COM 组件类实例并调用类成员来执行抵押贷款计算。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,17 +10,16 @@ helpviewer_keywords:
 - interoperation with unmanaged code, samples
 - COM interop, samples
 ms.assetid: a3f752bb-8945-4e1b-8163-71def6e9f137
-ms.openlocfilehash: d854f474845322ae6df1da5788890a69720a5272
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: bc95197813f5e4b0f4c7db6a8f0c24e8b27e4c3e
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181486"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85620867"
 ---
 # <a name="com-interop-sample-net-client-and-com-server"></a>COM 互操作示例：.NET 客户端和 COM 服务器
 本示例演示为访问 [COM 服务器](#cpconcominteropsamplenetclientcomserveranchor2)而生成的 [.NET client](#cpconcominteropsamplenetclientcomserveranchor1) 如何创建 COM 组件类的实例并调用类成员来执行抵押贷款计算。  
   
- 在本示例中，客户端将创建并调用 Loan  组件类的一个实例，将四个参数（其中一个等于零）传递给该实例，并显示计算结果。 本示例中出现的代码片段将贯穿本节。  
+ 在本示例中，客户端将创建并调用 Loan 组件类的一个实例，将四个参数（其中一个等于零）传递给该实例，并显示计算结果。 本示例中出现的代码片段将贯穿本节。  
   
 <a name="cpconcominteropsamplenetclientcomserveranchor1"></a>
 ## <a name="net-client"></a>.NET 客户端  

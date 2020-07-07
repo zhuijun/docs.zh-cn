@@ -1,5 +1,6 @@
 ---
 title: 标识 DLL 中的函数
+description: 标识 DLL 中的函数。 DLL 函数的标识包括函数名称或序号，以及可在其中找到实现的 DLL 文件名。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - platform invoke, identifying functions
@@ -11,12 +12,11 @@ helpviewer_keywords:
 - identifying DLL functions
 - DLL functions
 ms.assetid: 3e3f6780-6d90-4413-bad7-ba641220364d
-ms.openlocfilehash: 1a94bb2020b07ba8405d901f46ec4a0687e79700
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: HT
+ms.openlocfilehash: 054d1351a9ee6adab17117c9f423aa26d0d9ed59
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121978"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622726"
 ---
 # <a name="identifying-functions-in-dlls"></a>标识 DLL 中的函数
 DLL 函数的标识由以下元素组成：  
@@ -25,9 +25,9 @@ DLL 函数的标识由以下元素组成：
   
 - 可以找到实现的 DLL 文件的名称  
   
- 例如，指定 User32.dll 中的 MessageBox  函数可标识函数 (MessageBox  ) 及其位置（User32.dll、 User32 或 user32）。 Microsoft Windows 应用程序编程接口 (Windows API) 可以包含每个处理字符和字符串的函数的两个版本：1 字节字符 ANSI 版本和 2 字节字符 Unicode 版本。 未指定时，由 <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> 字段表示的字符集默认为 ANSI。 某些函数可以具有两个以上的版本。  
+ 例如，指定 User32.dll 中的 MessageBox 函数可标识函数 (MessageBox) 及其位置（User32.dll、 User32 或 user32）。 Microsoft Windows 应用程序编程接口 (Windows API) 可以包含每个处理字符和字符串的函数的两个版本：1 字节字符 ANSI 版本和 2 字节字符 Unicode 版本。 未指定时，由 <xref:System.Runtime.InteropServices.DllImportAttribute.CharSet> 字段表示的字符集默认为 ANSI。 某些函数可以具有两个以上的版本。  
   
- MessageBoxA  是 MessageBox  函数的 ANSI 入口点；MessageBoxW  是 Unicode 版本。 可以通过运行多种命令行工具列出特定 DLL（如 user32.dll）的函数名称。 例如，可以使用 `dumpbin /exports user32.dll` 或 `link /dump /exports user32.dll` 来获取函数名称。  
+ MessageBoxA 是 MessageBox 函数的 ANSI 入口点；MessageBoxW 是 Unicode 版本。 可以通过运行多种命令行工具列出特定 DLL（如 user32.dll）的函数名称。 例如，可以使用 `dumpbin /exports user32.dll` 或 `link /dump /exports user32.dll` 来获取函数名称。  
   
  可以将非托管函数重命名为代码内的任意名称，只要将新名称映射到 DLL 中的原始入口点。 有关重命名托管源代码中的非托管 DLL 函数的说明，请参见[指定入口点](specifying-an-entry-point.md)。  
   

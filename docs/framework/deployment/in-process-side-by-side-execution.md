@@ -1,16 +1,16 @@
 ---
 title: 进程内并行执行
+description: 使用进程内并行承载在单个 .NET 进程中执行多个公共语言运行时 (CLR) 版本。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - in-process side-by-side execution
 - side-by-side execution, in-process
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
-ms.openlocfilehash: 5ca2f03576946a23b3133bbe7532d46c4ad758ab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: HT
+ms.openlocfilehash: 078f2eaada8fac57138bef22d46218ef2ccda835
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79181666"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622596"
 ---
 # <a name="in-process-side-by-side-execution"></a>进程内并行执行
 从 .NET Framework 4 开始，可使用进程内并行承载在单个进程中运行多个公共语言运行时 (CLR) 版本。 默认情况下，托管 COM 组件使用其生成所用的 .NET Framework 版本运行，而不考虑为进程加载的 .NET Framework 版本。  
@@ -26,13 +26,13 @@ ms.locfileid: "79181666"
   
 ## <a name="effects-on-users-and-developers"></a>对用户和开发人员的影响  
   
-- 最终用户和系统管理员  。 现在这些用户可以更加放心，因为安装运行时的新版本（独立安装或与应用程序一起安装）时，不会对他们的计算机产生任何影响。 现有应用程序如以前一样继续运行。  
+- 最终用户和系统管理员。 现在这些用户可以更加放心，因为安装运行时的新版本（独立安装或与应用程序一起安装）时，不会对他们的计算机产生任何影响。 现有应用程序如以前一样继续运行。  
   
-- 应用程序开发人员  。 并行承载对应用程序开发人员几乎没有影响。 默认情况下，应用程序总是在生成它们所用的 .NET Framework 版本上运行；这一点没有变化。 但是，开发人员可替代此行为，并指示应用程序在新版 .NET Framework 上运行（请参阅[方案 2](#scenarios)）。  
+- 应用程序开发人员。 并行承载对应用程序开发人员几乎没有影响。 默认情况下，应用程序总是在生成它们所用的 .NET Framework 版本上运行；这一点没有变化。 但是，开发人员可替代此行为，并指示应用程序在新版 .NET Framework 上运行（请参阅[方案 2](#scenarios)）。  
   
-- 库开发人员和使用者  。 并行承载不能解决库开发人员面临的兼容性问题。 应用程序直接加载的库（通过直接引用或通过 <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> 调用）会继续使用其加载到的 <xref:System.AppDomain> 运行时。 应针对要支持的 .NET Framework 所有版本对库进行测试。 如果使用 .NET Framework 4 运行时编译应用程序，但包括一个使用较早运行时生成的库，则该库也将使用 .NET Framework 4 运行时。 但是，如果有一个使用较早运行时生成的应用程序和一个使用 .NET Framework 4 生成的库，则必须强制应用程序也使用 .NET Framework 4（请参阅[方案 3](#scenarios)）。  
+- 库开发人员和使用者。 并行承载不能解决库开发人员面临的兼容性问题。 应用程序直接加载的库（通过直接引用或通过 <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> 调用）会继续使用其加载到的 <xref:System.AppDomain> 运行时。 应针对要支持的 .NET Framework 所有版本对库进行测试。 如果使用 .NET Framework 4 运行时编译应用程序，但包括一个使用较早运行时生成的库，则该库也将使用 .NET Framework 4 运行时。 但是，如果有一个使用较早运行时生成的应用程序和一个使用 .NET Framework 4 生成的库，则必须强制应用程序也使用 .NET Framework 4（请参阅[方案 3](#scenarios)）。  
   
-- 托管 COM 组件开发人员  。 过去，托管 COM 组件会自动使用计算机上安装的运行时最新版本运行。 现在，可在生成 COM 组件所用的运行时版本上执行这些组件。  
+- 托管 COM 组件开发人员。 过去，托管 COM 组件会自动使用计算机上安装的运行时最新版本运行。 现在，可在生成 COM 组件所用的运行时版本上执行这些组件。  
   
      如下表所示，使用 .NET Framework 版本 1.1 生成的组件可与版本 4 的组件并行运行，但不能与版本 2.0、3.0 或 3.5 的组件一起运行，因为并行承载不可用于这些版本。  
   
@@ -58,7 +58,7 @@ ms.locfileid: "79181666"
   
      已安装的 .NET Framework 版本：早期版本的 .NET Framework 和 .NET Framework 4。  
   
-     要执行的操作：在应用程序目录的[应用程序配置文件](../configure-apps/index.md)中，使用 [\<startup> 元素](../configure-apps/file-schema/startup/startup-element.md)和 [\<supportedRuntime> 元素](../configure-apps/file-schema/startup/supportedruntime-element.md)进行如下设置：  
+     要执行的操作：在应用程序目录的[应用程序配置文件](../configure-apps/index.md)中，使用 [\<startup> 元素](../configure-apps/file-schema/startup/startup-element.md) 和 [\<supportedRuntime> 元素](../configure-apps/file-schema/startup/supportedruntime-element.md)进行如下设置：  
   
     ```xml  
     <configuration>  
@@ -86,7 +86,7 @@ ms.locfileid: "79181666"
 ## <a name="example"></a>示例  
  下例演示通过使用编译的组件要使用的 .NET Framework 版本运行托管 COM 组件的非托管 COM 主机。  
   
- 若要运行以下示例，请使用 .NET Framework 3.5 编译和注册以下托管 COM 组件。 若要注册该组件，请在“项目”菜单上，依次单击“属性”、“生成”选项卡，然后选中“注册 COM 互操作”复选框     。  
+ 若要运行以下示例，请使用 .NET Framework 3.5 编译和注册以下托管 COM 组件。 若要注册该组件，请在“项目”菜单上，依次单击“属性”、“生成”选项卡，然后选中“注册 COM 互操作”复选框   。  
   
 ```csharp
 using System;  

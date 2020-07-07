@@ -1,13 +1,13 @@
 ---
 title: .NET Core 和开放源代码
+description: 阅读有关 .NET Core 的概述，它是 .NET Standard 的常规用途、模块化、跨平台和开放源代码实现。
 ms.date: 03/30/2017
 ms.assetid: e6bd4655-ce37-4003-8462-468a6fe2c40f
-ms.openlocfilehash: 4d9d42304c58c631020d8b12bec5c038bc0c07ab
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
-ms.translationtype: HT
+ms.openlocfilehash: 08d30d047c25b3b6d681d72b46b81a0cb21f8e0a
+ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888236"
+ms.lasthandoff: 07/01/2020
+ms.locfileid: "85622752"
 ---
 # <a name="net-core-and-open-source"></a>.NET Core 和开放源代码
 
@@ -27,7 +27,7 @@ ms.locfileid: "80888236"
   
 - **灵活部署：** 部署应用有两种主要方法：依赖框架的部署或独立部署。 使用依赖框架的部署时，仅安装应用和第三方依赖关系，而应用依赖于存在系统范围版本的 .NET Core。 使用独立部署时，用于构建应用程序的 .NET Core 版本随应用和第三方依赖关系一同部署，并可与其他版本并行运行。 有关详细信息，请参阅 [.NET Core 应用程序部署](../../core/deploying/index.md)。
 
-- 模块化：  .NET Core 为模块化，因为它通过 NuGet 以较小的程序集包发布。 与包含了大部分核心功能的大型程序集不同，.NET Core 作为以功能为中心的小型数据包提供。 这种模块化为我们提供了更加灵活的开发模型，允许优化应用使其仅包含所需的 NuGet 程序包。 较小的应用图面区域的优势包括：提升安全性、减少维护、提高性能并采用按使用情况付费的模式降低成本。  
+- 模块化：.NET Core 为模块化，因为它通过 NuGet 以较小的程序集包发布。 与包含了大部分核心功能的大型程序集不同，.NET Core 作为以功能为中心的小型数据包提供。 这种模块化为我们提供了更加灵活的开发模型，允许优化应用使其仅包含所需的 NuGet 程序包。 较小的应用图面区域的优势包括：提升安全性、减少维护、提高性能并采用按使用情况付费的模式降低成本。  
   
 ## <a name="the-net-core-platform"></a>.NET Core 平台
   
