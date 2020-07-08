@@ -6,12 +6,11 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 885037f7-1c2b-4d7a-90d9-06b89be172f2
-ms.openlocfilehash: 92d0834091a1f243df6be214f606fbf0093dca54
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
-ms.translationtype: MT
+ms.openlocfilehash: 3b9dd12f2a28ae2d420e82013459613cee8140f1
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244551"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051943"
 ---
 # <a name="how-to-specify-a-service-binding-in-configuration"></a>如何：在配置中指定服务绑定
 在本示例中，为基本计算器服务定义 `ICalculator` 协定，在 `CalculatorService` 类中实现该服务，然后在 Web.config 文件中配置其终结点，该文件中指定此服务使用 <xref:System.ServiceModel.BasicHttpBinding>。 有关如何使用代码而不是配置来配置此服务的说明，请参阅[如何：在代码中指定服务绑定](how-to-specify-a-service-binding-in-code.md)。  
@@ -77,7 +76,7 @@ ms.locfileid: "85244551"
   
 4. 创建一个包含下行的 Service.svc 文件，然后将其放到 Internet 信息服务 (IIS) 虚拟目录中。  
   
-    ```  
+    ```aspx-csharp
     <%@ServiceHost language=c# Service="CalculatorService" %>
     ```  
   
