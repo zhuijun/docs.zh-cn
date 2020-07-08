@@ -2,12 +2,11 @@
 title: 如何：在 ASP.NET AJAX 终结点的 HTTP POST 和 HTTP GET 请求之间进行选择
 ms.date: 03/30/2017
 ms.assetid: b47de82a-4c92-4af6-bceb-a5cb8bb8ede9
-ms.openlocfilehash: 15d7ad43ce9120e97aba9119aff6a6c1a19f301f
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
-ms.translationtype: MT
+ms.openlocfilehash: c74b1acdf3802ab680123cd9d676919fe47236e8
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596911"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051579"
 ---
 # <a name="how-to-choose-between-http-post-and-http-get-requests-for-aspnet-ajax-endpoints"></a>如何：在 ASP.NET AJAX 终结点的 HTTP POST 和 HTTP GET 请求之间进行选择
 
@@ -75,7 +74,7 @@ Windows Communication Foundation （WCF）允许您创建一个服务，用于�
   
 3. 在应用程序中创建一个名为 service 的新文件（扩展名为 .svc）。 通过为服务添加适当的[ \@ ServiceHost](../../configure-apps/file-schema/wcf-directive/servicehost.md)指令信息来编辑此文件。 指定 <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> 要在[ \@ ServiceHost](../../configure-apps/file-schema/wcf-directive/servicehost.md)指令中使用以便自动配置 ASP.NET AJAX 终结点。  
   
-    ```
+    ```aspx-csharp
     <%@ServiceHost
         language=c#
         Debug="true"
@@ -90,7 +89,7 @@ Windows Communication Foundation （WCF）允许您创建一个服务，用于�
   
 2. 可以像使用任何其他 ASP.NET AJAX 服务一样将服务与 GET 操作一起使用，即，在 ASP.NET AJAX 脚本管理器控件的“脚本”集合中输入相应的服务 URL。 有关示例，请参阅[基本 AJAX 服务](../samples/basic-ajax-service.md)。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [为 ASP.NET AJAX 创建 WCF 服务](creating-wcf-services-for-aspnet-ajax.md)
 - [如何：将支持 AJAX 的 ASP.NET Web 服务迁移到 WCF](how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)

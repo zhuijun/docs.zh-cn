@@ -1,5 +1,6 @@
 ---
 title: marshalCleanupError MDA
+description: 查看 marshalCleanupError 托管调试助手（MDA），因为在清理临时结构时出现意外错误。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - cleanup operations
@@ -10,12 +11,11 @@ helpviewer_keywords:
 - MarshalCleanupError MDA
 - memory, cleanup errors
 ms.assetid: 2f5d9e7c-ae51-4155-a435-54347aa1f091
-ms.openlocfilehash: 1a14c548ce960d53f47934595171189db28edfbb
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: 3c7498d6f51484de3a2e84d611a2634f53724ab6
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216157"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051605"
 ---
 # <a name="marshalcleanuperror-mda"></a>marshalCleanupError MDA
 如果公共语言运行时 (CLR) 在尝试清理那些用于封送本机代码和托管代码边界之间的数据类型的临时结构和内存时遇到错误，则将激活 `marshalCleanupError` 托管调试助手 (MDA)。  
@@ -45,7 +45,7 @@ ms.locfileid: "77216157"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

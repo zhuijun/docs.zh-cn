@@ -1,5 +1,6 @@
 ---
 title: 如何：将 TraceSource 和筛选器与跟踪侦听器一起使用
+description: 在 .NET 中使用 TraceSource 类并筛选跟踪侦听器。 TraceSource 取代了较旧的 Trace 和 Debug 类的静态方法。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - initializing trace listeners
@@ -14,12 +15,11 @@ helpviewer_keywords:
 - trace listeners, filters
 - trace listeners, initializing
 ms.assetid: 21dc2169-947d-453a-b0e2-3dac3ba0cc9f
-ms.openlocfilehash: 7d2b9da72ae0b2a5c60eb90da0b56b45634e6e05
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: MT
+ms.openlocfilehash: 432c866f7c3ca1fd59f8f3d36acd61740b6584c0
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181813"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051254"
 ---
 # <a name="how-to-use-tracesource-and-filters-with-trace-listeners"></a>如何：将 TraceSource 和筛选器与跟踪侦听器一起使用
 .NET Framework 版本 2.0 的新功能之一是增强型的跟踪系统。 基本前提不变：跟踪消息通过交换机发送到侦听器，侦听器将数据报告给相关联的输出介质。 2.0 版的主要区别是，可以通过 <xref:System.Diagnostics.TraceSource> 类的实例启动跟踪。 <xref:System.Diagnostics.TraceSource> 用作增强型跟踪系统，并可用来代替较旧的 <xref:System.Diagnostics.Trace> 和 <xref:System.Diagnostics.Debug> 跟踪类的静态方法。 熟悉的 <xref:System.Diagnostics.Trace> 和 <xref:System.Diagnostics.Debug> 类仍存在，但建议使用 <xref:System.Diagnostics.TraceSource> 类进行跟踪。  
@@ -161,7 +161,7 @@ ms.locfileid: "79181813"
     }  
     ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TextWriterTraceListener>

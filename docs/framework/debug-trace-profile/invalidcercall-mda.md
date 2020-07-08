@@ -1,5 +1,6 @@
 ---
 title: invalidCERCall MDA
+description: 查看 invalidCERCall 托管调试助手（MDA），如果在受约束的执行区域（CER）图形中有无效的调用，此操作将被激活。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - invalid CER calls
@@ -9,12 +10,11 @@ helpviewer_keywords:
 - CER calls
 - managed debugging assistants (MDAs), CER calls
 ms.assetid: c4577410-602e-44e5-9dab-fea7c55bcdfe
-ms.openlocfilehash: f8e467401f7c50898613c7cf6eca68a8a705431a
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: dec32a81929d72274757b75cb03d6615d9fa948b
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217383"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051787"
 ---
 # <a name="invalidcercall-mda"></a>invalidCERCall MDA
 方法没有可靠性协定或具有过弱协定时，如果受约束的执行区域 (CER) 图内存在对此类方法的调用，将激活 `invalidCERCall` 托管调试助手 (MDA)。 弱协定是这样的一种协定：它声明最坏情况下的状态损坏的范围超出传递给调用的实例，即 <xref:System.AppDomain> 或进程状态可能会损坏，或者在 CER 中调用它时不可始终明确地计算其结果。  
@@ -25,7 +25,7 @@ ms.locfileid: "77217383"
 ## <a name="cause"></a>原因  
  CER 中的代码调用没有 <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> 或具有弱 <xref:System.Runtime.ConstrainedExecution.ReliabilityContractAttribute> 的函数，该函数不适合在 CER 中运行。  
   
- 根据可靠性协定语法，弱协定是未指定 <xref:System.Runtime.ConstrainedExecution.Consistency> 枚举值或指定 <xref:System.Runtime.ConstrainedExecution.Consistency>、<xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptProcess> 或 <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptAppDomain> 的 <xref:System.Runtime.ConstrainedExecution.Cer.None> 值的协定。 上述任一条件均指示调用的代码可能妨碍 CER 中的其他代码维护一致状态的工作。  CER 允许代码以非常明确的方式处理错误，维护对应用程序很重要的内部不变量并允许它在面对诸如内存不足异常之类的瞬态错误时继续运行。  
+ 根据可靠性协定语法，弱协定是未指定 <xref:System.Runtime.ConstrainedExecution.Consistency> 枚举值或指定 <xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptProcess>、<xref:System.Runtime.ConstrainedExecution.Consistency.MayCorruptAppDomain> 或 <xref:System.Runtime.ConstrainedExecution.Cer.None> 的 <xref:System.Runtime.ConstrainedExecution.Consistency> 值的协定。 上述任一条件均指示调用的代码可能妨碍 CER 中的其他代码维护一致状态的工作。  CER 允许代码以非常明确的方式处理错误，维护对应用程序很重要的内部不变量并允许它在面对诸如内存不足异常之类的瞬态错误时继续运行。  
   
  此 MDA 的激活指示一种可能性：CER 中正在调用的方法会以调用方未预期的方式或导致 <xref:System.AppDomain> 进程状态损坏或不可恢复的方式失败。 当然，调用的代码可能正确执行，并且问题只是缺少协定。 但是，编写可靠代码所涉及的是一些细微的问题，缺少协定是代码可能无法正确执行的一个很好的指示器。 协定是程序员已可靠地编写代码并承诺这些保证不会在将来的代码修订中改变的指示器。  也就是说，协定是意图声明，而不只是实现细节。  
   
@@ -52,7 +52,7 @@ ms.locfileid: "77217383"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareMethod%2A>
 - <xref:System.Runtime.ConstrainedExecution>

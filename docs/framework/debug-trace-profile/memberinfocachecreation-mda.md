@@ -1,5 +1,6 @@
 ---
 title: memberInfoCacheCreation MDA
+description: 了解 .NET 中的 memberInfoCacheCreation 托管调试助手（MDA），它在创建 MemberInfo 缓存时被激活。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - member info cache creation
@@ -10,15 +11,14 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), cache
 - MemberInfo cache
 ms.assetid: 5abdad23-1335-4744-8acb-934002c0b6fe
-ms.openlocfilehash: e5dbc769bd634afae06582ee614addafd611fad9
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: c48be7ac8632b8072981be01e01997ee8c34b6b3
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217316"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051137"
 ---
 # <a name="memberinfocachecreation-mda"></a>memberInfoCacheCreation MDA
-创建 `memberInfoCacheCreation` 缓存时，将激活 <xref:System.Reflection.MemberInfo> 托管调试助手 (MDA)。 这一点强烈表明程序正在使用资源昂贵的反射功能。  
+创建 <xref:System.Reflection.MemberInfo> 缓存时，将激活 `memberInfoCacheCreation` 托管调试助手 (MDA)。 这一点强烈表明程序正在使用资源昂贵的反射功能。  
   
 ## <a name="symptoms"></a>症状  
  由于程序正在使用资源昂贵的反射，所以程序的工作集增加。  
@@ -62,7 +62,7 @@ public class Exe
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Reflection.MemberInfo>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

@@ -1,5 +1,6 @@
 ---
 title: moduloObjectHashcode MDA
+description: 查看 moduloObjectHashcode 托管调试助手（MDA），这会更改对象类，以获取 GetHashCode 方法结果的余数。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - managed debugging assistants (MDAs), hashcode modulus
@@ -10,12 +11,11 @@ helpviewer_keywords:
 - GetHashCode method
 - modulus of hashcodes
 ms.assetid: b45366ff-2a7a-4b8e-ab01-537b72e9de68
-ms.openlocfilehash: 65bbdfec2d7050d1b474a8186a9ea6e9bb93bd9e
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: a929ec2b9196f1f6cad0528fdf7323839a86fa55
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216185"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86052060"
 ---
 # <a name="moduloobjecthashcode-mda"></a>moduloObjectHashcode MDA
 `moduloObjectHashcode` 托管调试助手 (MDA) 更改 <xref:System.Object> 类的行为，以便对 <xref:System.Object.GetHashCode%2A> 方法返回的哈希代码执行取模运算。 此 MDA 的模数默认为 1，这将导致 <xref:System.Object.GetHashCode%2A> 对所有对象都返回 0。  
@@ -32,7 +32,7 @@ ms.locfileid: "77216185"
 - 以前不相等的两个对象现在相等。  
   
 ## <a name="cause"></a>原因  
- 由于在 <xref:System.Collections.Hashtable> 中的键的类上，<xref:System.Object.Equals%2A> 方法实现通过比较 <xref:System.Collections.Hashtable> 方法调用的结果测试对象是否相等，因此程序可能从 <xref:System.Object.GetHashCode%2A> 中得到错误的对象。 不应该使用哈希代码测试对象是否相等，因为即使两个对象各自的字段具有不同的值，它们也可能具有相同的哈希代码。 虽然在实践中很罕见，但的确可能会发生这些哈希代码冲突。 这对 <xref:System.Collections.Hashtable> 查找的影响是两个不相等的键似乎相等，并从 <xref:System.Collections.Hashtable> 返回错误的对象。 出于性能的考虑，<xref:System.Object.GetHashCode%2A> 的实现在运行时的两个版本之间可能改变，因此在一个版本中可能不会出现的冲突可能会在随后的版本中出现。 启用此 MDA 测试代码在哈希代码冲突时是否有 bug。 启用后，此 MDA 将导致 <xref:System.Object.GetHashCode%2A> 方法返回 0，造成所有哈希代码冲突。 启用此 MDA 对程序的唯一影响是程序将会运行得更慢。  
+ 由于在 <xref:System.Collections.Hashtable> 中的键的类上，<xref:System.Object.Equals%2A> 方法实现通过比较 <xref:System.Object.GetHashCode%2A> 方法调用的结果测试对象是否相等，因此程序可能从 <xref:System.Collections.Hashtable> 中得到错误的对象。 不应该使用哈希代码测试对象是否相等，因为即使两个对象各自的字段具有不同的值，它们也可能具有相同的哈希代码。 虽然在实践中很罕见，但的确可能会发生这些哈希代码冲突。 这对 <xref:System.Collections.Hashtable> 查找的影响是两个不相等的键似乎相等，并从 <xref:System.Collections.Hashtable> 返回错误的对象。 出于性能的考虑，<xref:System.Object.GetHashCode%2A> 的实现在运行时的两个版本之间可能改变，因此在一个版本中可能不会出现的冲突可能会在随后的版本中出现。 启用此 MDA 测试代码在哈希代码冲突时是否有 bug。 启用后，此 MDA 将导致 <xref:System.Object.GetHashCode%2A> 方法返回 0，造成所有哈希代码冲突。 启用此 MDA 对程序的唯一影响是程序将会运行得更慢。  
   
  如果用于计算键的哈希代码的算法改变，则 <xref:System.Collections.Hashtable> 中的枚举顺序可能随运行时版本而改变。 要测试程序是否依赖键的枚举顺序或哈希表的值，可启用此 MDA。  
   
@@ -58,7 +58,7 @@ ms.locfileid: "77216185"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>
 - <xref:System.Object.Equals%2A?displayProperty=nameWithType>

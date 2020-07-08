@@ -5,18 +5,17 @@ ms.technology: dotnet-networking
 topic_type:
 - apiref
 api_name:
-- System.Net.QuotedPairReader
-- System.Net.QuotedPairReader.CountQuotedChars
+- System.Net.Mail.QuotedPairReader
+- System.Net.Mail.QuotedPairReader.CountQuotedChars
 api_location:
 - System.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 9b0bf835a34eecc651894f4336648b73a81b665c
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
-ms.translationtype: MT
+ms.openlocfilehash: 898c6e9d2d5dd02f3d5f9c096ad470b5dd445d1d
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990437"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051306"
 ---
 # <a name="quotedpairreader-class"></a>QuotedPairReader 类
 

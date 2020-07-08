@@ -1,5 +1,6 @@
 ---
 title: invalidOverlappedToPinvoke MDA
+description: 查看 .NET 中的 invalidOverlappedToPinvoke 托管调试助手（MDA），这可能在崩溃或无法解释堆损坏期间激活。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - overlapped pointers
@@ -9,12 +10,11 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), overlapped pointers
 - pointers, overlapped
 ms.assetid: 28876047-58bd-4fed-9452-c7da346d67c0
-ms.openlocfilehash: 1f557cc370d5c6121b0ad9a4528bd75dcb70a93c
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: 162efd55bf636cf2e8698706bd011379f2f6f11f
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216280"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051696"
 ---
 # <a name="invalidoverlappedtopinvoke-mda"></a>invalidOverlappedToPinvoke MDA
 当不是在垃圾回收堆上创建的重叠指针传递到特定的 Win32 函数时，会激活 `invalidOverlappedToPinvoke` 托管调试助手（MDA）。  
@@ -70,7 +70,7 @@ ms.locfileid: "77216280"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

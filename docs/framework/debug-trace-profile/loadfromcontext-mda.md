@@ -1,5 +1,6 @@
 ---
 title: loadFromContext MDA
+description: 了解 .NET 中的 loadFromContext 托管调试助手（MDA），如果将程序集加载到 LoadFrom 上下文，则会激活该助手。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MDAs (managed debugging assistants), LoadFrom context
@@ -7,12 +8,11 @@ helpviewer_keywords:
 - LoadFrom context
 - LoadFromContext MDA
 ms.assetid: a9b14db1-d3a9-4150-a767-dcf3aea0071a
-ms.openlocfilehash: d0090a0272d1c3b6175b351175689df1e1e4fdbd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: MT
+ms.openlocfilehash: 8d55268f2b2106dde4e488a6f0271fd3b17349da
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181798"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051644"
 ---
 # <a name="loadfromcontext-mda"></a>loadFromContext MDA
 如果程序集加载到 `LoadFrom` 上下文，将激活 `loadFromContext` 托管调试助手 (MDA)。 这种情况可能由于调用 <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> 或其他类似方法而发生。  
@@ -70,6 +70,6 @@ namespace ConsoleApplication1
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

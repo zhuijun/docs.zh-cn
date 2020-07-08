@@ -1,5 +1,6 @@
 ---
 title: 如何：创建和初始化跟踪源
+description: 使用 .NET 中的 TraceSource 类创建和初始化跟踪源。 此类提供用于跟踪事件和数据和发出信息性跟踪的方法。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,19 +10,18 @@ helpviewer_keywords:
 - initializing trace sources
 - configuration files [.NET Framework], trace sources
 ms.assetid: f88dda6f-5fda-45be-9b3c-745a9b708c4d
-ms.openlocfilehash: eeccad44bd2719a3cb2a721ba4e32a7bf477636f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: MT
+ms.openlocfilehash: 55d7854bff991ba185d3f5d6e4c6e7222c9e3039
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174727"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051267"
 ---
 # <a name="how-to-create-and-initialize-trace-sources"></a>如何：创建和初始化跟踪源
 <xref:System.Diagnostics.TraceSource> 类由应用程序用来生成可与应用程序相关联的跟踪。 <xref:System.Diagnostics.TraceSource> 提供了一些跟踪方法，利用这些跟踪方法，你可以方便地跟踪事件，跟踪数据和发出信息跟踪。 你可以使用或不使用配置文件来创建和初始化 <xref:System.Diagnostics.TraceSource> 的跟踪输出。 本主题提供这两种选项的说明。 但是，建议你使用配置文件，以便于重新配置在运行时由跟踪源生成的跟踪。  
   
 ### <a name="to-create-and-initialize-a-trace-source-using-a-configuration-file"></a>使用配置文件创建和初始化跟踪源  
   
-1. 创建 Visual Studio 控制台应用程序项目 （.NET Framework），并将提供的代码替换为以下代码。 此代码将记录错误和警告，并将其中一些输出到控制台，将其中一些输出到由配置文件中的各个项创建的 myListener 文件。  
+1. 创建 Visual Studio 控制台应用程序项目（.NET Framework），并将所提供的代码替换为以下代码。 此代码将记录错误和警告，并将其中一些输出到控制台，将其中一些输出到由配置文件中的各个项创建的 myListener 文件。  
   
      [!code-csharp[TraceSourceExample1#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tracesourceexample1/cs/program.cs#1)]
      [!code-vb[TraceSourceExample1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tracesourceexample1/vb/program.vb#1)]  
@@ -76,7 +76,7 @@ ms.locfileid: "79174727"
      [!code-csharp[TraceSourceExample2#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tracesourceexample2/cs/program.cs#1)]
      [!code-vb[TraceSourceExample2#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tracesourceexample2/vb/program.vb#1)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Diagnostics.TraceSource>
 - <xref:System.Diagnostics.TextWriterTraceListener>

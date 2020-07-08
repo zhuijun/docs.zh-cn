@@ -1,5 +1,6 @@
 ---
 title: 封送 MDA
+description: 查看封送托管调试助手（MDA），如果 CLR 为方法参数或结构字段设置封送处理信息，则会调用此方法。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - marshaling, run-time errors
@@ -7,12 +8,11 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), marshaling
 - MDAs (managed debugging assistants), marshaling
 ms.assetid: 5433b1f8-b0e5-40c9-a49a-0e5bd213363d
-ms.openlocfilehash: f7bb630d3a1e832cf6bf083ce4cf603034248ceb
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: 77811c526d1770b91b14aa1199dfc7b3177e6c59
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217325"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051150"
 ---
 # <a name="marshaling-mda"></a>封送 MDA
 当 CLR 为方法参数或结构的字段设置封送处理信息时，将激活 `marshaling` 托管调试助手 (MDA)。 此 MDA 不适合 JIT 编译的程序集。  
@@ -29,7 +29,7 @@ name="assembly!Namespace.Class::myChar
 ```  
   
 ## <a name="configuration"></a>配置  
- MDA 配置允许你基于所涉及的字段或方法名称，筛选报告的封送处理信息。  以下示例演示如何使用 `methodFilter``fieldFilter` 和 `match` 元素指定筛选器。  将 `name` 特性设置为星号（\*）将匹配所有内容。  
+ MDA 配置允许你基于所涉及的字段或方法名称，筛选报告的封送处理信息。  以下示例演示如何使用 `methodFilter``fieldFilter` 和 `match` 元素指定筛选器。  `name`将属性设置为星号（ \* ）可匹配所有内容。  
   
 ```xml  
 <mdaConfig>  
@@ -48,7 +48,7 @@ name="assembly!Namespace.Class::myChar
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

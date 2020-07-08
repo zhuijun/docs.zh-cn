@@ -2,12 +2,11 @@
 title: '@ServiceHost'
 ms.date: 03/30/2017
 ms.assetid: 96ba6967-00f2-422f-9aa7-15de4d33ebf3
-ms.openlocfilehash: fdd6d83836c4ef31a4d7c8e68cb0cc050ac6bea4
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
-ms.translationtype: MT
+ms.openlocfilehash: cb425d9f4dadd97e93946a2b4cd9d059ea8504ce
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "76787805"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051358"
 ---
 # <a name="servicehost"></a>\@服务主机
 
@@ -15,7 +14,7 @@ ms.locfileid: "76787805"
 
 ## <a name="syntax"></a>语法
 
-```xml
+```aspx-csharp
 <% @ServiceHost
 Service = "Service, ServiceNamespace"
 Factory = "Factory, FactoryNamespace"
@@ -63,7 +62,7 @@ CodeBehind = "CodeBehind"
 
 例如，若要为启用支持 AJAX 的终结点 `MyService` ，请 <xref:System.ServiceModel.Activation.WebScriptServiceHostFactory> `Factory` 在指令中指定属性值（而不是默认值 <xref:System.ServiceModel.Activation.ServiceHostFactory> ）， `@ServiceHost` 如以下示例中所示：
 
-```xml
+```aspx-csharp
 <% @ServiceHost
 Service="MyService"
 Language="C#"
@@ -72,6 +71,6 @@ Factory="WebScriptServiceHostFactory"
 %>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [自定义服务主机](../../../wcf/samples/custom-service-host.md)

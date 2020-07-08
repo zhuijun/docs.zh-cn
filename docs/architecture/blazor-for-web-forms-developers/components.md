@@ -4,12 +4,11 @@ description: 了解如何使用 Blazor 生成可重复使用的 UI 组件，以�
 author: danroth27
 ms.author: daroth
 ms.date: 09/18/2019
-ms.openlocfilehash: 1a5f6b63143c4fd7a276219b9c4877e9e355c996
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
-ms.translationtype: MT
+ms.openlocfilehash: f6528b1e68b49b6ee3949baca166f4806448718b
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378323"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051447"
 ---
 # <a name="build-reusable-ui-components-with-blazor"></a>使用 Blazor 生成可重复使用的 UI 组件
 
@@ -77,18 +76,18 @@ Razor 指令以字符开头 `@` ，通常在文件开头的新行的开头使用
 
 下表汇总了 Blazor 中使用的各种 Razor 指令及其等效的 ASP.NET Web 窗体（如果存在）。
 
-|指令    |说明|示例|Web 窗体等效项|
+|指令    |描述|示例|Web 窗体等效项|
 |-------------|-----------|-------|--------------------|
-|`@attribute` |向组件添加类级别属性|`@attribute [Authorize]`|无|
+|`@attribute` |向组件添加类级别属性|`@attribute [Authorize]`|None|
 |`@code`      |将类成员添加到组件|`@code { ... }`|`<script runat="server">...</script>`|
 |`@implements`|实现指定接口|`@implements IDisposable`|使用代码隐藏|
 |`@inherits`  |继承自指定的基类|`@inherits MyComponentBase`|`<%@ Control Inherits="MyUserControlBase" %>`|
-|`@inject`    |将服务注入组件|`@inject IJSRuntime JS`|无|
+|`@inject`    |将服务注入组件|`@inject IJSRuntime JS`|None|
 |`@layout`    |指定组件的布局组件|`@layout MainLayout`|`<%@ Page MasterPageFile="~/Site.Master" %>`|
-|`@namespace` |设置组件的命名空间|`@namespace MyNamespace`|无|
+|`@namespace` |设置组件的命名空间|`@namespace MyNamespace`|None|
 |`@page`      |指定组件的路由|`@page "/product/{id}"`|`<%@ Page %>`|
 |`@typeparam` |指定组件的泛型类型参数|`@typeparam TItem`|使用代码隐藏|
-|`@using`     |指定要引入作用域的命名空间|`@using MyComponentNamespace`|*在 web.config*中添加命名空间|
+|`@using`     |指定要引入作用域的命名空间|`@using MyComponentNamespace`|在*web.config*中添加命名空间|
 
 Razor 组件还广泛使用元素上的*指令属性*，以控制如何编译组件（事件处理、数据绑定、组件 & 元素引用等）的各个方面。 指令特性都遵循通用通用语法，其中括号中的值是可选的：
 
@@ -98,7 +97,7 @@ Razor 组件还广泛使用元素上的*指令属性*，以控制如何编译组
 
 下表总结了 Blazor 中使用的 Razor 指令的各种属性。
 
-|属性    |说明|示例|
+|特性    |说明|示例|
 |-------------|-----------|-------|
 |`@attributes`|呈现特性字典|`<input @attributes="ExtraAttributes" />`|
 |`@bind`      |创建双向数据绑定    |`<input @bind="username" @bind:event="oninput" />`|
@@ -110,7 +109,7 @@ Blazor （、、等）使用的各种指令特性 `@onclick` `@bind` `@ref` 都�
 
 *.Aspx*和 *.ascx*文件中使用的很多语法在 Razor 中具有并行语法。 下面是 ASP.NET Web 窗体和 Razor 语法的简单比较。
 
-|功能                      |Web 窗体           |语法               |Razor         |语法 |
+|功能                      |Web Forms — Web 窗体           |语法               |Razor         |语法 |
 |-----------------------------|--------------------|---------------------|--------------|-------|
 |指令                   |`<%@ [directive] %>`|`<%@ Page %>`        |`@[directive]`|`@page`|
 |代码块                  |`<% %>`             |`<% int x = 123; %>` |`@{ }`        |`@{ int x = 123; }`|
@@ -146,7 +145,7 @@ Blazor （、、等）使用的各种指令特性 `@onclick` `@bind` `@ref` 都�
 与 ASP.NET Web 窗体不同，Blazor 中的组件：
 
 - 不要使用元素前缀（例如 `asp:` ）。
-- 不需要在页面上或在*web.config*中注册。
+- 不需要在页面或*web.config*中注册。
 
 像您的 .NET 类型一样，可以像您这样做，因为这正是它们的作用。 如果引用包含组件的程序集，则可以使用该组件。 若要将组件的命名空间置于范围中，请应用 `@using` 指令：
 
@@ -602,8 +601,8 @@ Blazor 组件可以将其子内容捕获为 `RenderFragment` ，并在呈现组�
 ```html
 <h1>My list</h1>
 <ul>
-    <li>The message is: message1</li>
-    <li>The message is: message2</li>
+    <li><p>The message is: message1</p></li>
+    <li><p>The message is: message2</p></li>
 <ul>
 ```
 

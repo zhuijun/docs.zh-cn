@@ -1,5 +1,6 @@
 ---
 title: illegalPrepareConstrainedRegion MDA
+description: 查看 illegalPrepareConstrainedRegion 托管调试助手，如果 PrepareConstrainedRegions 调用后不是 try 语句，则会调用该助手。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - PrepareConstrainedRegions method
@@ -8,21 +9,20 @@ helpviewer_keywords:
 - IllegalPrepareConstrainedRegions MDA
 - MDAs (managed debugging assistants), illegal PrepareConstrainedRegions
 ms.assetid: 2f9b5031-f910-4e01-a196-f89eab313eaf
-ms.openlocfilehash: b80d6160876834b22e8d9d1eb7112b8b67c15fcc
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: d6a0d1d95840ebd735806c5547730ae9e0b2aace
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216460"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051280"
 ---
 # <a name="illegalprepareconstrainedregion-mda"></a>illegalPrepareConstrainedRegion MDA
-`illegalPrepareConstrainedRegion` 方法调用不立即出现在异常处理程序的 <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> 语句之前时，会激活 `try` 托管调试助手 (MDA)。 此限制处于 MSIL 级别，因此允许调用和 `try` 之间存在非代码生成的源，比如注释。  
+<xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A?displayProperty=nameWithType> 方法调用不立即出现在异常处理程序的 `try` 语句之前时，会激活 `illegalPrepareConstrainedRegion` 托管调试助手 (MDA)。 此限制处于 MSIL 级别，因此允许调用和 `try` 之间存在非代码生成的源，比如注释。  
   
 ## <a name="symptoms"></a>症状  
  受约束的执行区域 (CER) 从未以这种方式处理，而是作为简单的异常处理块（`finally` 或 `catch`）处理。 因此，如果内存不足或线程中止，此区域不会运行。  
   
 ## <a name="cause"></a>原因  
- CER 的准备模式未正确执行。  这是一个错误事件。 用于标记异常处理程序的 <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> 方法调用，因为在其 `catch`中引入 CER /`finally`/`fault`/`filter` 必须紧靠在 `try` 语句之前使用。  
+ CER 的准备模式未正确执行。  这是一个错误事件。 <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>用于标记异常处理程序的方法调用在其块中引入 CER 时 `catch` / `finally` / `fault` / `filter` 必须在语句之前立即使用 `try` 。  
   
 ## <a name="resolution"></a>解决方法  
  确保对 <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> 的调用在 `try` 语句之前立即发生。  
@@ -62,7 +62,7 @@ void MethodWithInvalidPCR()
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A>

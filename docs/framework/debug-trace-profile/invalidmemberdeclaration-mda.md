@@ -1,5 +1,6 @@
 ---
 title: invalidMemberDeclaration MDA
+description: 查看 invalidMemberDeclaration 托管调试助手，如果在未调用托管方法的情况下将错误 HRESULT 返回到 COM，则会调用它。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - invalid member declaration
@@ -8,12 +9,11 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), marshaling
 - MDAs (managed debugging assistants), marshaling
 ms.assetid: a84dd9a3-d6cf-4824-989a-ecbbf443eeb4
-ms.openlocfilehash: 6033cd4178b2bc493794b5dcc527bc543ba24284
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: 5dbfba2baec3263d91746c06379438e97a81f005
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77216301"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051709"
 ---
 # <a name="invalidmemberdeclaration-mda"></a>invalidMemberDeclaration MDA
 激活 `invalidMemberDeclaration` 托管调试助手 (MDA) 以报告在确定如何封送要从 COM 调用的成员的参数期间发生的错误。  
@@ -43,7 +43,7 @@ ms.locfileid: "77216301"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.MarshalAsAttribute>
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

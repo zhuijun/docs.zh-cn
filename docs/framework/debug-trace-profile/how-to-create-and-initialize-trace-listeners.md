@@ -1,5 +1,6 @@
 ---
 title: 如何：创建和初始化跟踪侦听器
+description: 了解如何在 .NET 中使用类（如 DefaultTraceListener）创建和初始化跟踪侦听器。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,12 +12,11 @@ helpviewer_keywords:
 - tracing [.NET Framework], trace listeners
 - logs, trace listeners
 ms.assetid: 21726de1-61ee-4fdc-9dd0-3be49324d066
-ms.openlocfilehash: ce0df0af32d6798c89c8db6761d18febc1c398bb
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: 752306124e41a7fb7458daccc8c2891631eb9616
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217447"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051202"
 ---
 # <a name="how-to-create-and-initialize-trace-listeners"></a>如何：创建和初始化跟踪侦听器
 
@@ -93,7 +93,7 @@ ms.locfileid: "77217447"
     myListener.Flush();
     ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [跟踪侦听器](trace-listeners.md)
 - [跟踪开关](trace-switches.md)

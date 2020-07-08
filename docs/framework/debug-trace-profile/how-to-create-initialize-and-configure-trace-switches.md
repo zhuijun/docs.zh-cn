@@ -1,5 +1,6 @@
 ---
 title: 如何：创建、初始化和配置跟踪开关
+description: 使用 .NET 中的 BooleanSwitch 和 TraceSwitch 类创建、初始化和配置跟踪开关。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,12 +12,11 @@ helpviewer_keywords:
 - tracing [.NET Framework], enabling or disabling
 - Web.config configuration file, trace switches
 ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
-ms.openlocfilehash: 8bf3b974ff0ef9f719274ab684b3dce85295c917
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
-ms.translationtype: MT
+ms.openlocfilehash: 6a43e143abba96c841f04b7be9d482c55e78aa8f
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181831"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051319"
 ---
 # <a name="how-to-create-initialize-and-configure-trace-switches"></a>如何：创建、初始化和配置跟踪开关
 跟踪开关用于启用、禁用和筛选跟踪输出。  
@@ -52,7 +52,7 @@ ms.locfileid: "79181831"
 ## <a name="configuring-trace-switches"></a>配置跟踪开关  
  分发应用程序后，你仍可以通过在应用程序中配置跟踪开关来启用或禁用跟踪输出。 配置一个开关意味着在其初始化后，从外部源中更改其值。 可以使用配置文件更改开关对象的值。 配置跟踪开关，可以将其打开和关闭，或设置其级别，从而确定它传递到侦听器的消息量和消息类型。  
   
- 使用 .config 文件配置开关。 对于 Web 应用程序，这是与项目关联的 Web.config 文件。 在 Windows 应用程序中，此文件名为（应用程序名称）。在已部署的应用程序中，此文件必须驻留在与可执行文件相同的文件夹中。  
+ 使用 .config 文件配置开关。 对于 Web 应用程序，这是与项目关联的 Web.config 文件。 在 Windows 应用程序中，此文件的名称为（应用程序名称） .exe.config。在已部署的应用程序中，此文件必须与可执行文件位于同一文件夹中。  
   
  应用程序执行首次创建交换机的实例的代码时，它会检查有关命名开关跟踪级别信息的配置文件。 跟踪系统仅为任一特定的开关检查一次配置文件 — 即应用程序首次创建开关时。  
   
@@ -77,7 +77,7 @@ ms.locfileid: "79181831"
   
          创建并打开应用程序配置文件。 这是一个根元素为 `<configuration>.` 的 XML 文档  
   
-    - **Visual C#：** 在“添加新项”对话框中，选择“XML 文件”********。 命名此文件**应用.config**。在 XML 编辑器中，在 XML 声明之后，添加以下 XML：  
+    - **Visual C#：** 在“添加新项”对话框中，选择“XML 文件”********。 将此文件命名**app.config**。在 XML 编辑器中，在 XML 声明的后面添加以下 XML：  
   
         ```xml  
         <configuration>  
@@ -123,7 +123,7 @@ ms.locfileid: "79181831"
     </system.diagnostics>  
     ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [跟踪应用程序和在应用程序中插入检测点](tracing-and-instrumenting-applications.md)
 - [如何：向应用程序代码添加跟踪语句](how-to-add-trace-statements-to-application-code.md)

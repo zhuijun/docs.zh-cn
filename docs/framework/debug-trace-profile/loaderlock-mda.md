@@ -1,5 +1,6 @@
 ---
 title: loaderLock MDA
+description: 查看 .NET 中的 loaderLock 托管调试助手（MDA），它会检测到在持有 Windows OS 加载程序锁的线程上运行托管代码的尝试。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - deadlocks [.NET Framework]
@@ -10,12 +11,11 @@ helpviewer_keywords:
 - loader locks
 - locks, threads
 ms.assetid: 8c10fa02-1b9c-4be5-ab03-451d943ac1ee
-ms.openlocfilehash: cd77640a6566f3fd94631dac184ae5bc3ffab5d1
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
-ms.translationtype: MT
+ms.openlocfilehash: 055b07a805c5f0b613519d6019950a9b249a4b38
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217354"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051616"
 ---
 # <a name="loaderlock-mda"></a>loaderLock MDA
 `loaderLock` 托管调试助手 (MDA) 检测在持有 Microsoft Windows 操作系统加载程序锁的线程上执行托管代码的尝试。  任何此类执行都是非法的，因为这样可能会导致死锁，并导致在操作系统的加载程序已初始化 DLL 之前使用 DLL。  
@@ -28,7 +28,7 @@ ms.locfileid: "77217354"
  最后，还存在这样的情况：在操作系统的加载程序正确初始化 DLL 之前，调入 DLL。  死锁故障可通过检查死锁中涉及的所有线程的堆栈进行诊断，但这不同于死锁故障，在不使用此 MDA 的情况下很难诊断出未初始化的 DLL 的使用。  
   
 ## <a name="cause"></a>原因  
- 除非采用了特殊措施（例如，与 /NOENTRY 链接），否则为 .NET Framework 1.0 或 1.1 版生成的混合托管/非托管 C++ 程序集通常尝试在加载程序锁内执行托管代码。
+ 除非采用了特殊措施（例如，与 /NOENTRY 链接），否则为 .NET Framework 1.0 或 1.1 版生成的混合托管/非托管 C++ 程序集通常尝试在加载程序锁内执行托管代码****。
   
  为 .NET Framework 2.0 版生成的混合托管/非托管 C++ 程序集与使用违反操作系统规则的非托管 DLL 的应用程序相同，风险减低，不太容易受到这些问题的影响。  例如，如果非托管 DLL 的 `DllMain` 入口点调用`CoCreateInstance` 获取已向 COM 公开的托管对象，结果就是尝试在加载程序锁内执行托管代码。 有关 .NET Framework 2.0 及更高版本中加载程序锁问题的详细信息，请参阅[混合程序集的初始化](/cpp/dotnet/initialization-of-mixed-assemblies)。  
   
@@ -53,6 +53,6 @@ ms.locfileid: "77217354"
 </mdaConfig>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用托管调试助手诊断错误](diagnosing-errors-with-managed-debugging-assistants.md)

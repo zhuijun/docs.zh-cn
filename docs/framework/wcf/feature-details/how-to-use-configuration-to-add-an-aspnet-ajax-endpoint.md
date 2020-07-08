@@ -2,12 +2,11 @@
 title: 如何：使用配置来添加 ASP.NET AJAX 终结点
 ms.date: 03/30/2017
 ms.assetid: 7cd0099e-dc3a-47e4-a38c-6e10f997f6ea
-ms.openlocfilehash: 0aa59ce04e09d700d853f213c6fc9d3a25cdb43b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
-ms.translationtype: MT
+ms.openlocfilehash: 97f8174161068f2c72b6bd2bc4e8a3044f5bccdd
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601148"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051657"
 ---
 # <a name="how-to-use-configuration-to-add-an-aspnet-ajax-endpoint"></a>如何：使用配置来添加 ASP.NET AJAX 终结点
 Windows Communication Foundation （WCF）允许你创建一个服务，该服务使可从客户端网站上的 JavaScript 中调用的 ASP.NET 启用 AJAX 的终结点可用。 若要创建此类终结点，可以使用配置文件（与所有其他 Windows Communication Foundation （WCF）终结点一样），或使用不需要任何配置元素的方法。 本主题演示配置方法。  
@@ -90,7 +89,7 @@ Windows Communication Foundation （WCF）允许你创建一个服务，该服�
   
 1. 若要在 IIS 中承载服务，请使用应用程序中的 .svc 扩展创建名为 service 的新文件。 通过为服务添加适当的[ \@ ServiceHost](../../configure-apps/file-schema/wcf-directive/servicehost.md)指令信息来编辑此文件。 例如，`CalculatorService` 示例的服务文件中的内容包含以下信息。  
   
-    ```
+    ```aspx-csharp
     <%@ServiceHost
     language=c#
     Debug="true"
@@ -104,7 +103,7 @@ Windows Communication Foundation （WCF）允许你创建一个服务，该服�
   
 1. 终结点是在相对于 .svc 文件的空地址处配置的，因此该服务现在可用，并可通过将请求发送到服务 .svc/ \<operation> -例如，为该操作发送服务。 `Add` 可以通过在 ASP.NET AJAX 脚本管理器控件的脚本集合中输入终结点 URL 来使用它。 有关示例，请参阅[使用 HTTP POST 的 AJAX 服务](../samples/ajax-service-using-http-post.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [为 ASP.NET AJAX 创建 WCF 服务](creating-wcf-services-for-aspnet-ajax.md)
 - [如何：将支持 AJAX 的 ASP.NET Web 服务迁移到 WCF](how-to-migrate-ajax-enabled-aspnet-web-services-to-wcf.md)
