@@ -3,12 +3,12 @@ title: 为 Azure 构建云本机 .NET 应用程序
 description: 构建利用 Azure 的容器、微服务和无服务器功能的云本机应用程序的指南。
 author: ardalis
 ms.date: 05/13/2020
-ms.openlocfilehash: b315f097b1584bd93f694c10f36ee7524d7e020a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 172097b4915deb2d6f0b06441d7c4ca389bbca25
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144378"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051501"
 ---
 # <a name="architecting-cloud-native-net-applications-for-azure"></a>为 Azure 构建云本机 .NET 应用程序
 
@@ -84,7 +84,7 @@ Docker 的鲸鱼徽标是 Docker Inc. 的注册商标经许可方可使用。
 - 标识和安全性
 - DevOps
 
-本指南有 PDF 格式和在线版本。 欢迎随时将此文档或其在线版本的链接转发给你的团队，以确保对这些主题有共同的理解。 这些主题中的大多数都得益于对基本原则和模式的一致理解，以及与这些主题相关的决策所涉及的权衡。 本文档的目标是为团队及其领导提供所需的信息，使其能够为应用程序的体系结构、开发和托管作出明智的决策。
+本指南有 [PDF](https://dotnet.microsoft.com/download/e-book/cloud-native-azure/pdf) 格式和在线版本。 欢迎随时将此文档或其在线版本的链接转发给你的团队，以确保对这些主题有共同的理解。 这些主题中的大多数都得益于对基本原则和模式的一致理解，以及与这些主题相关的决策所涉及的权衡。 本文档的目标是为团队及其领导提供所需的信息，使其能够为应用程序的体系结构、开发和托管作出明智的决策。
 
 ## <a name="send-your-feedback"></a>提供你的反馈
 
