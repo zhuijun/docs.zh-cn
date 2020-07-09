@@ -25,7 +25,7 @@
           href: net-core-net-framework-containers/net-container-os-targets.md
         - name: 官方 .NET Docker 映像
           href: net-core-net-framework-containers/official-net-docker-images.md
-    - name: 构建基于容器和微服务的应用
+    - name: 构建基于容器和微服务的应用程序
       href: architect-microservice-container-applications/index.md
       items:
         - name: 容器化整体式应用程序
@@ -60,12 +60,12 @@
           href: architect-microservice-container-applications/resilient-high-availability-microservices.md
         - name: 协调安排微服务和多容器应用程序，实现高可伸缩性和高可用性
           href: architect-microservice-container-applications/scalable-available-multi-container-microservice-applications.md
-    - name: 基于 Docker 的应用的开发流程
+    - name: 基于 Docker 的应用程序的开发流程
       href: docker-application-development-process/index.md
       items:
         - name: Docker 应用开发工作流
           href: docker-application-development-process/docker-app-development-workflow.md
-    - name: 设计和开发基于微服务的多容器 .NET 应用
+    - name: 设计和开发多容器化微服务 .NET 应用
       href: multi-container-microservice-net-applications/index.md
       items:
         - name: 设计面向微服务的应用程序
@@ -118,14 +118,14 @@
         - name: 设计基础结构持久性层
           href: microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-design.md
         - name: 使用 Entity Framework Core 实现基础结构持久性层
-          href: microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-implemenation-entity-framework-core.md
+          href: microservice-ddd-cqrs-patterns/infrastructure-persistence-layer-implementation-entity-framework-core.md
         - name: 将 NoSQL 数据库用作持久性基础结构
           href: microservice-ddd-cqrs-patterns/nosql-database-persistence-infrastructure.md
         - name: 设计微服务应用层和 Web API
           href: microservice-ddd-cqrs-patterns/microservice-application-layer-web-api-design.md
         - name: 使用 Web API 实现微服务应用层
           href: microservice-ddd-cqrs-patterns/microservice-application-layer-implementation-web-api.md
-    - name: 实现可复原的应用
+    - name: 实现具有恢复能力的应用程序
       href: implement-resilient-applications/index.md
       items:
         - name: 处理部分失败错误
