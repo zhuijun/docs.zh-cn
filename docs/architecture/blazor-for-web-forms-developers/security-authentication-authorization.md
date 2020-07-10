@@ -1,23 +1,25 @@
 ---
-title: 安全性： ASP.NET Web Forms 和 Blazor 中的身份验证和授权
-description: 了解如何在 ASP.NET Web 窗体和 Blazor 中处理身份验证和授权。
+title: 安全性： ASP.NET Web 窗体和中的身份验证和授权Blazor
+description: 了解如何在 ASP.NET Web 窗体和中处理身份验证和授权 Blazor 。
 author: danroth27
 ms.author: daroth
+no-loc:
+- Blazor
 ms.date: 09/11/2019
-ms.openlocfilehash: c524d8ee76d67654236cf71537bfd5c9f33daef7
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: cacd6df15c7eb18c136491d0667f69b9c2036d66
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "73840801"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173024"
 ---
-# <a name="security-authentication-and-authorization-in-aspnet-web-forms-and-blazor"></a><span data-ttu-id="68b5d-103">安全性： ASP.NET Web Forms 和 Blazor 中的身份验证和授权</span><span class="sxs-lookup"><span data-stu-id="68b5d-103">Security: authentication and authorization in ASP.NET Web Forms and Blazor</span></span>
+# <a name="security-authentication-and-authorization-in-aspnet-web-forms-and-blazor"></a><span data-ttu-id="d37e8-103">安全性： ASP.NET Web 窗体和中的身份验证和授权Blazor</span><span class="sxs-lookup"><span data-stu-id="d37e8-103">Security: authentication and authorization in ASP.NET Web Forms and Blazor</span></span>
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-<span data-ttu-id="68b5d-104">*即将推出此内容。*</span><span class="sxs-lookup"><span data-stu-id="68b5d-104">*This content is coming soon.*</span></span>
+<span data-ttu-id="d37e8-104">*即将推出此内容。*</span><span class="sxs-lookup"><span data-stu-id="d37e8-104">*This content is coming soon.*</span></span>
 
 >[!div class="step-by-step"]
-><span data-ttu-id="68b5d-105">[上一页](config.md)
->[下一页](migration.md)</span><span class="sxs-lookup"><span data-stu-id="68b5d-105">[Previous](config.md)
+><span data-ttu-id="d37e8-105">[上一页](config.md)
+>[下一页](migration.md)</span><span class="sxs-lookup"><span data-stu-id="d37e8-105">[Previous](config.md)
 [Next](migration.md)</span></span>
