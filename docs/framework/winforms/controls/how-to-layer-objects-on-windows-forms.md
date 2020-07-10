@@ -1,5 +1,6 @@
 ---
 title: 对对象进行分层
+description: 了解如何在 Windows 窗体控件和子窗体上对对象进行分层，以创建更复杂的用户界面。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,16 +16,16 @@ ms.assetid: 1acc4281-2976-4715-86f4-bda68134baaf
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 1615b9c4df222edd95cda9bceae622ba6f1d8d78
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 6269b09c56963fefd500b9e1e6c9d7f51f9619cf
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76736339"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174505"
 ---
 # <a name="how-to-layer-objects-on-windows-forms"></a>如何：在 Windows 窗体上的层对象
 
-当你创建复杂的用户界面或使用多文档界面（MDI）窗体时，通常需要将控件和子窗体分层以创建更复杂的用户界面（UI）。 若要在组的上下文中移动和跟踪控件和窗口，请处理其*z 顺序*。 Z 顺序是窗体上的控件沿窗体的 z 轴（深度）的可视化分层。 Z 顺序顶部的窗口与所有其他窗口重叠。 所有其他窗口都与 z 顺序底部的窗口重叠。
+当你创建复杂的用户界面，或使用多个文档界面 (MDI) 窗体时，通常需要将控件和子窗体分层以创建更复杂的用户界面 (UI) 。 若要在组的上下文中移动和跟踪控件和窗口，请处理其*z 顺序*。 Z 顺序是窗体上的控件沿窗体 z 轴的可视化分层 (深度) 。 Z 顺序顶部的窗口与所有其他窗口重叠。 所有其他窗口都与 z 顺序底部的窗口重叠。
 
 ## <a name="to-layer-controls-at-design-time"></a>在设计时将控件分层
 
@@ -36,7 +37,7 @@ ms.locfileid: "76736339"
 
 使用 <xref:System.Windows.Forms.Control.BringToFront%2A> 和 <xref:System.Windows.Forms.Control.SendToBack%2A> 方法来操作控件的 z 顺序。
 
-例如，如果 <xref:System.Windows.Forms.TextBox> `txtFirstName`控件在另一控件的下面，并且你想要将其置于顶层，请使用以下代码：
+例如，如果 <xref:System.Windows.Forms.TextBox> 控件 `txtFirstName` 位于另一个控件之下，并且你想要将其置于顶层，请使用以下代码：
 
 ```vb
 txtFirstName.BringToFront()
@@ -51,11 +52,11 @@ txtFirstName->BringToFront();
 ```
 
 > [!NOTE]
-> Windows 窗体支持*控件包含*。 控件包含涉及到在包含控件中放置许多控件，如 <xref:System.Windows.Forms.GroupBox> 控件中的大量 <xref:System.Windows.Forms.RadioButton> 控件。 然后，可以将控件分层到包含控件中。 移动组框也将移动控件，因为这些控件包含在其中。
+> Windows 窗体支持*控件包含*。 控件包含涉及到在包含控件中放置许多控件，如控件中的多个 <xref:System.Windows.Forms.RadioButton> 控件 <xref:System.Windows.Forms.GroupBox> 。 然后，可以将控件分层到包含控件中。 移动组框也将移动控件，因为这些控件包含在其中。
 
 ## <a name="see-also"></a>另请参阅
 
 - [Windows 窗体控件](index.md)
-- [标记各个 Windows 窗体控件并创建它们的快捷键](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
+- [标记单个 Windows 窗体控件并提供它们的快捷方式](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [在 Windows 窗体上使用的控件](controls-to-use-on-windows-forms.md)
-- [按功能列出的 Windows 窗体控件](windows-forms-controls-by-function.md)
+- [根据功能列出的 Windows 窗体控件](windows-forms-controls-by-function.md)

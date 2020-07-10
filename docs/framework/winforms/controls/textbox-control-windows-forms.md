@@ -1,25 +1,26 @@
 ---
 title: TextBox 控件
+description: 了解 Windows 窗体 TextBox 控件的各个方面，包括将它用于可编辑文本并使其成为只读的。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - text boxes
 - TextBox control [Windows Forms]
 ms.assetid: e5a06987-8aec-4271-b196-2245ba992d62
-ms.openlocfilehash: 7bdca52e62b6e7b014d28478b291a1157486527b
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 026f6d2653e41dabd3db7490660b6ce19846d397
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742790"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174440"
 ---
 # <a name="textbox-control-windows-forms"></a>TextBox 控件（Windows 窗体）
-Windows 窗体文本框用于获取用户的输入或显示文本。 `TextBox` 控件通常用于可编辑文本，但也可将其设为只读。 文本框可显示多个行，将文本自动换行到控件大小，并添加基本格式设置。 `TextBox` 控件允许在控件中显示或输入文本格式。  
+Windows 窗体文本框用于获取用户的输入或显示文本。 `TextBox`控件通常用于可编辑文本，但也可将其设为只读。 文本框可显示多个行，将文本自动换行到控件大小，并添加基本格式设置。 `TextBox`控件对于显示或输入到控件中的文本允许使用一种格式。  
   
 ## <a name="in-this-section"></a>本节内容  
  [TextBox 控件概述](textbox-control-overview-windows-forms.md)  
  说明此控件的本质及其主要功能和属性。  
   
- [如何：在 Windows 窗体 TextBox 控件中控制插入点](how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)  
+ [如何：控制 Windows 窗体 TextBox 控件中的插入点](how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)  
  提供有关指定在编辑控件第一次获得焦点时插入点出现位置的说明。  
   
  [如何：使用 Windows 窗体 TextBox 控件创建密码文本框](how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)  
@@ -37,7 +38,7 @@ Windows 窗体文本框用于获取用户的输入或显示文本。 `TextBox` �
  [如何：在 Windows 窗体 TextBox 控件中查看多个行](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)  
  描述如何使文本框可滚动。  
   
-## <a name="reference"></a>参考  
+## <a name="reference"></a>引用  
  <xref:System.Windows.Forms.TextBox> 类  
  对此类进行描述，并提供指向其所有成员的链接。  
   

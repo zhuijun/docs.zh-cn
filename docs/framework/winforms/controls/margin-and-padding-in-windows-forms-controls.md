@@ -1,5 +1,6 @@
 ---
 title: 控件中的边距和填充
+description: 了解如何在 Windows 窗体控件中添加边距和填充属性。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Padding property [Windows Forms]
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - Windows Forms, layout
 - Margin property [Windows Forms]
 ms.assetid: 3781b5a1-3085-4072-bed0-44670c23ffdc
-ms.openlocfilehash: 02cabccd0d51a3501a8aafb8733a5273deef6c49
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 4279f39bb4f89fbda8be472f49c8e60853abcac6
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76728569"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174479"
 ---
 # <a name="margin-and-padding-in-windows-forms-controls"></a>Windows 窗体控件中的边距和填充
 在窗体上精确地放置控件对于许多应用程序而言是高优先级。 <xref:System.Windows.Forms?displayProperty=nameWithType> 命名空间给你提供许多布局功能来实现此目的。 其中两个最重要的功能是 <xref:System.Windows.Forms.Control.Margin%2A> 和 <xref:System.Windows.Forms.Control.Padding%2A> 属性。  

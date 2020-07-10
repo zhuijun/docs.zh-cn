@@ -1,5 +1,6 @@
 ---
 title: 如何：在 FlowLayoutPanel 控件中锚定和停靠子控件
+description: 了解如何以编程方式在 Windows 窗体 FlowLayoutPanel 控件中锚定和停靠子控件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - layout [Windows Forms], child controls
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - controls [Windows Forms], child
 - child controls [Windows Forms], anchoring and docking
 ms.assetid: a2bcdfca-9b63-45e6-9c0e-3411015cba98
-ms.openlocfilehash: 3e9a5be944e199254ddb9cee0772c4d55be8fb77
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: b4fb3bf6d148a526a75926bd67c1f967286332bf
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046070"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174531"
 ---
 # <a name="how-to-anchor-and-dock-child-controls-in-a-flowlayoutpanel-control"></a>如何：在 FlowLayoutPanel 控件中锚定和停靠子控件
 
@@ -22,11 +23,11 @@ ms.locfileid: "70046070"
 
 1. 在窗体上创建一个 <xref:System.Windows.Forms.FlowLayoutPanel> 控件。
 
-2. <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> <xref:System.Windows.Forms.FlowDirection.TopDown>将控件的设置为 300, 并将其设置为。 <xref:System.Windows.Forms.FlowLayoutPanel> <xref:System.Windows.Forms.Control.Width%2A>
+2. 将 <xref:System.Windows.Forms.Control.Width%2A> 控件的设置 <xref:System.Windows.Forms.FlowLayoutPanel> 为**300**，并将其设置 <xref:System.Windows.Forms.FlowLayoutPanel.FlowDirection%2A> 为 <xref:System.Windows.Forms.FlowDirection.TopDown> 。
 
 3. 创建两个 <xref:System.Windows.Forms.Button> 控件，并将它们放入 <xref:System.Windows.Forms.FlowLayoutPanel> 控件中。
 
-4. 将第一个按钮的设置为**200。** <xref:System.Windows.Forms.Control.Width%2A>
+4. 将 <xref:System.Windows.Forms.Control.Width%2A> 第一个按钮的设置为**200**。
 
 5. 将第二个按钮的 <xref:System.Windows.Forms.Control.Dock%2A> 属性设置为 <xref:System.Windows.Forms.DockStyle.Fill>。
 
@@ -61,7 +62,7 @@ ms.locfileid: "70046070"
 
 - 对 System、System.Data、System.Drawing 和 System.Windows.Forms 程序集的引用。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Windows.Forms.FlowLayoutPanel>
 - [FlowLayoutPanel 控件概述](flowlayoutpanel-control-overview.md)

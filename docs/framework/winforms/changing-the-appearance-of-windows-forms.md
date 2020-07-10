@@ -1,15 +1,16 @@
 ---
 title: 自定义外观
+description: 了解如何通过更改边框、不透明度、形状、样式或设置背景图像来自定义 Windows 窗体应用程序的外观。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, changing the appearance of
 ms.assetid: 12f35d5b-1587-49cc-ada3-47eec1ff1738
-ms.openlocfilehash: c75fb1849ab9f9a07fcbbe5dd915b965f5aea05d
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0aeb783873d01b27fa00717ead0e9c2f9d1d0d0c
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76732362"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174635"
 ---
 # <a name="changing-the-appearance-of-windows-forms"></a>更改 Windows 窗体外观
 可以按多种不同的方式自定义 Windows 窗体应用程序的外观，例如，更改 Windows 窗体应用程序的边框、不透明度、形状、样式，或设置它的背景图像。  
@@ -18,7 +19,7 @@ ms.locfileid: "76732362"
  [如何：更改 Windows 窗体的边框](how-to-change-the-borders-of-windows-forms.md)  
  显示如何更改窗体的边框样式。  
   
-## <a name="reference"></a>参考  
+## <a name="reference"></a>引用  
  <xref:System.Windows.Forms.Form>  
  对此类进行描述，并提供指向其所有成员的链接。  
   

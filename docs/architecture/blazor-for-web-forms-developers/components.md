@@ -1,22 +1,25 @@
 ---
-title: 使用 Blazor 生成可重复使用的 UI 组件
-description: 了解如何使用 Blazor 生成可重复使用的 UI 组件，以及如何将其与 ASP.NET Web 窗体控件进行比较。
+title: 生成可重复使用的 UI 组件Blazor
+description: 了解如何使用生成可重复使用的 UI 组件 Blazor 及其与 ASP.NET Web 窗体控件的比较方式。
 author: danroth27
 ms.author: daroth
+no-loc:
+- Blazor
 ms.date: 09/18/2019
-ms.openlocfilehash: f6528b1e68b49b6ee3949baca166f4806448718b
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 9577fc916bb11783b885b2641242820865c0b115
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051447"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173333"
 ---
-# <a name="build-reusable-ui-components-with-blazor"></a>使用 Blazor 生成可重复使用的 UI 组件
+# <a name="build-reusable-ui-components-with-blazor"></a>生成可重复使用的 UI 组件Blazor
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-有关 ASP.NET Web 窗体的一项精彩功能，就是它如何使可重用的用户界面（UI）代码块可用于可重复使用的 UI 控件。 可以使用 *.ascx*文件在标记中定义自定义用户控件。 你还可以在代码中生成具有完全设计器支持的精致服务器控件。
+ASP.NET Web 窗体的一项精彩功能是，它使用户界面) 代码的可重用部分 (UI 的封装成为可重复使用的 UI 控件。 可以使用 *.ascx*文件在标记中定义自定义用户控件。 你还可以在代码中生成具有完全设计器支持的精致服务器控件。
 
-Blazor 还支持通过*组件*进行 UI 封装。 组件：
+Blazor还支持通过*组件*进行 UI 封装。 组件：
 
 - 是一个独立的 UI 块区。
 - 维护其自己的状态和呈现逻辑。
@@ -25,7 +28,7 @@ Blazor 还支持通过*组件*进行 UI 封装。 组件：
 
 ## <a name="an-introduction-to-razor"></a>Razor 简介
 
-Razor 是基于 HTML 和 c # 的轻型标记模板化语言。 借助 Razor，你可以在标记与 c # 代码之间无缝转换，以定义你的组件呈现逻辑。 在编译*razor*文件时，呈现逻辑在 .net 类中以结构化的方式捕获。 已编译类的名称是从*razor*文件名获取的。 命名空间是从项目的默认命名空间和文件夹路径获取的，或者可以使用指令显式指定命名空间 `@namespace` （下面的 Razor 指令更详细）。
+Razor 是基于 HTML 和 c # 的轻型标记模板化语言。 借助 Razor，你可以在标记与 c # 代码之间无缝转换，以定义你的组件呈现逻辑。 在编译*razor*文件时，呈现逻辑在 .net 类中以结构化的方式捕获。 已编译类的名称是从*razor*文件名获取的。 命名空间是从项目和文件夹路径的默认命名空间获取的，或者可以使用指令显式指定命名空间 `@namespace` () 下面的 Razor 指令。
 
 通过使用 c # 添加的动态逻辑，使用常规 HTML 标记编写组件的呈现逻辑。 `@`字符用于转换为 c #。 Razor 通常会巧妙地了解何时切换回 HTML。 例如，以下组件 `<p>` 使用当前时间呈现标记：
 
@@ -74,30 +77,30 @@ Razor 指令以字符开头 `@` ，通常在文件开头的新行的开头使用
 @namespace MyComponentNamespace
 ```
 
-下表汇总了 Blazor 中使用的各种 Razor 指令及其等效的 ASP.NET Web 窗体（如果存在）。
+下表汇总了 Blazor 和它们的 ASP.NET Web 窗体等效项（如果存在）中使用的各种 Razor 指令。
 
 |指令    |描述|示例|Web 窗体等效项|
 |-------------|-----------|-------|--------------------|
-|`@attribute` |向组件添加类级别属性|`@attribute [Authorize]`|None|
+|`@attribute` |向组件添加类级别属性|`@attribute [Authorize]`|无|
 |`@code`      |将类成员添加到组件|`@code { ... }`|`<script runat="server">...</script>`|
 |`@implements`|实现指定接口|`@implements IDisposable`|使用代码隐藏|
 |`@inherits`  |继承自指定的基类|`@inherits MyComponentBase`|`<%@ Control Inherits="MyUserControlBase" %>`|
-|`@inject`    |将服务注入组件|`@inject IJSRuntime JS`|None|
+|`@inject`    |将服务注入组件|`@inject IJSRuntime JS`|无|
 |`@layout`    |指定组件的布局组件|`@layout MainLayout`|`<%@ Page MasterPageFile="~/Site.Master" %>`|
-|`@namespace` |设置组件的命名空间|`@namespace MyNamespace`|None|
+|`@namespace` |设置组件的命名空间|`@namespace MyNamespace`|无|
 |`@page`      |指定组件的路由|`@page "/product/{id}"`|`<%@ Page %>`|
 |`@typeparam` |指定组件的泛型类型参数|`@typeparam TItem`|使用代码隐藏|
 |`@using`     |指定要引入作用域的命名空间|`@using MyComponentNamespace`|在*web.config*中添加命名空间|
 
-Razor 组件还广泛使用元素上的*指令属性*，以控制如何编译组件（事件处理、数据绑定、组件 & 元素引用等）的各个方面。 指令特性都遵循通用通用语法，其中括号中的值是可选的：
+Razor 组件还广泛地用于元素上的*指令属性*，以控制组件 (事件处理、数据绑定、组件 & 元素引用等) 的编译方式。 指令特性都遵循通用通用语法，其中括号中的值是可选的：
 
 ```razor
 @directive(-suffix(:name))(="value")
 ```
 
-下表总结了 Blazor 中使用的 Razor 指令的各种属性。
+下表汇总了中使用的 Razor 指令的各种属性 Blazor 。
 
-|特性    |说明|示例|
+|属性    |说明|示例|
 |-------------|-----------|-------|
 |`@attributes`|呈现特性字典|`<input @attributes="ExtraAttributes" />`|
 |`@bind`      |创建双向数据绑定    |`<input @bind="username" @bind:event="oninput" />`|
@@ -105,7 +108,7 @@ Razor 组件还广泛使用元素上的*指令属性*，以控制如何编译组
 |`@key`       |指定由比较算法用来保留集合中元素的键|`<DetailsEditor @key="person" Details="person.Details" />`|
 |`@ref`       |捕获对组件或 HTML 元素的引用|`<MyDialog @ref="myDialog" />`|
 
-Blazor （、、等）使用的各种指令特性 `@onclick` `@bind` `@ref` 都将在以下章节和更高章节中介绍。
+Blazor (、、等) 使用的各种指令特性 `@onclick` `@bind` `@ref` 都将在以下章节和更高章节中介绍。
 
 *.Aspx*和 *.ascx*文件中使用的很多语法在 Razor 中具有并行语法。 下面是 ASP.NET Web 窗体和 Razor 语法的简单比较。
 
@@ -113,7 +116,7 @@ Blazor （、、等）使用的各种指令特性 `@onclick` `@bind` `@ref` 都�
 |-----------------------------|--------------------|---------------------|--------------|-------|
 |指令                   |`<%@ [directive] %>`|`<%@ Page %>`        |`@[directive]`|`@page`|
 |代码块                  |`<% %>`             |`<% int x = 123; %>` |`@{ }`        |`@{ int x = 123; }`|
-|表达式<br>（HTML 编码）|`<%: %>`            |`<%:DateTime.Now %>` |式`@`<br>Jre`@()`|`@DateTime.Now`<br>`@(DateTime.Now)`|
+|表达式<br> (HTML 编码的) |`<%: %>`            |`<%:DateTime.Now %>` |式`@`<br>Jre`@()`|`@DateTime.Now`<br>`@(DateTime.Now)`|
 |注释                     |`<%-- --%>`         |`<%-- Commented --%>`|`@* *@`       |`@* Commented *@`|
 |数据绑定                 |`<%# %>`            |`<%# Bind("Name") %>`|`@bind`       |`<input @bind="username" />`|
 
@@ -130,7 +133,7 @@ Blazor （、、等）使用的各种指令特性 `@onclick` `@bind` `@ref` 都�
 }
 ```
 
-由于 Razor 基于 c #，因此它必须从 c # 项目（*.csproj*）中进行编译。 不能从 Visual Basic 项目（*. .vbproj*）编译*razor*文件。 你仍可以从 Blazor 项目引用 Visual Basic 项目。 相反的情况也是如此。
+由于 Razor 基于 c #，因此必须从 c # 项目中 (*.csproj*) 编译。 不能从 Visual Basic 项目 (*.vbproj*) 编译*razor*文件。 你仍可以从项目中引用 Visual Basic 项目 Blazor 。 相反的情况也是如此。
 
 有关完整 Razor 语法引用，请参阅[ASP.NET Core 的 Razor 语法参考](/aspnet/core/mvc/views/razor)。
 
@@ -142,9 +145,9 @@ Blazor （、、等）使用的各种指令特性 `@onclick` `@bind` `@ref` 都�
 <Counter />
 ```
 
-与 ASP.NET Web 窗体不同，Blazor 中的组件：
+不同于 ASP.NET Web 窗体，中的组件 Blazor ：
 
-- 不要使用元素前缀（例如 `asp:` ）。
+- 不要使用元素前缀 (例如 `asp:`) 。
 - 不需要在页面或*web.config*中注册。
 
 像您的 .NET 类型一样，可以像您这样做，因为这正是它们的作用。 如果引用包含组件的程序集，则可以使用该组件。 若要将组件的命名空间置于范围中，请应用 `@using` 指令：
@@ -155,7 +158,7 @@ Blazor （、、等）使用的各种指令特性 `@onclick` `@bind` `@ref` 都�
 <Counter />
 ```
 
-如默认 Blazor 项目中所示，通常将 `@using` 指令放入 *_Imports*文件中，以便将其导入到同一目录和子目录中的所有*razor*文件中。
+如默认项目中所示 Blazor ，通常将 `@using` 指令放入 *_Imports*文件中，以便将其导入到同一目录和子目录中的所有*razor*文件中。
 
 如果某个组件的命名空间不在范围内，则可以使用它的完整类型名称指定一个组件，如 c # 中所示：
 
@@ -165,7 +168,7 @@ Blazor （、、等）使用的各种指令特性 `@onclick` `@bind` `@ref` 都�
 
 ## <a name="component-parameters"></a>组件参数
 
-在 ASP.NET Web 窗体中，你可以使用公共属性将参数和数据流式传输到控件。 可以使用特性在标记中设置这些属性，也可以在代码中直接设置这些属性。 Blazor 组件的工作方式与此类似，不过，组件属性还必须标记 `[Parameter]` 为要被视为组件参数的属性。
+在 ASP.NET Web 窗体中，你可以使用公共属性将参数和数据流式传输到控件。 可以使用特性在标记中设置这些属性，也可以在代码中直接设置这些属性。 Blazor组件的工作方式与此类似，不过，组件属性还必须标记 `[Parameter]` 为要被视为组件参数的属性。
 
 以下 `Counter` 组件定义了一个名为的组件参数 `IncrementAmount` ，该参数可用于指定 `Counter` 每次单击按钮时应增加的量。
 
@@ -189,7 +192,7 @@ Blazor （、、等）使用的各种指令特性 `@onclick` `@bind` `@ref` 都�
 }
 ```
 
-若要在 Blazor 中指定组件参数，请使用 ASP.NET Web 窗体中的属性：
+若要在中指定组件参数 Blazor ，请使用 ASP.NET Web 窗体中的属性：
 
 ```razor
 <Counter IncrementAmount="10" />
@@ -197,7 +200,7 @@ Blazor （、、等）使用的各种指令特性 `@onclick` `@bind` `@ref` 都�
 
 ## <a name="event-handlers"></a>事件处理程序
 
-ASP.NET Web 窗体和 Blazor 都提供用于处理 UI 事件的基于事件的编程模型。 此类事件的示例包括按钮单击和文本输入。 在 ASP.NET Web 窗体中，您可以使用 HTML 服务器控件处理 DOM 公开的 UI 事件，也可以处理 Web 服务器控件公开的事件。 这些事件通过窗体回发请求出现在服务器上。 请考虑以下 Web 窗体按钮单击示例：
+ASP.NET Web 窗体，并 Blazor 提供基于事件的编程模型用于处理 UI 事件。 此类事件的示例包括按钮单击和文本输入。 在 ASP.NET Web 窗体中，您可以使用 HTML 服务器控件处理 DOM 公开的 UI 事件，也可以处理 Web 服务器控件公开的事件。 这些事件通过窗体回发请求出现在服务器上。 请考虑以下 Web 窗体按钮单击示例：
 
 *Counter*
 
@@ -217,7 +220,7 @@ public partial class Counter : System.Web.UI.UserControl
 }
 ```
 
-在 Blazor 中，可以使用窗体的指令特性直接注册 DOM UI 事件的处理程序 `@on{event}` 。 `{event}`占位符表示事件的名称。 例如，您可以按如下所示侦听按钮单击操作：
+在中 Blazor ，可以使用窗体的指令特性直接注册 DOM UI 事件的处理程序 `@on{event}` 。 `{event}`占位符表示事件的名称。 例如，您可以按如下所示侦听按钮单击操作：
 
 ```razor
 <button @onclick="OnClick">Click me!</button>
@@ -308,7 +311,7 @@ public partial class Counter : System.Web.UI.UserControl
 
 ## <a name="data-binding"></a>数据绑定
 
-Blazor 提供了一种简单的机制，用于将数据从 UI 组件绑定到组件的状态。 此方法不同于 ASP.NET Web 窗体中的功能，可用于将数据从数据源绑定到 UI 控件。 在处理[数据](data.md)部分，我们将介绍如何处理来自不同数据源的数据。
+Blazor提供了一种简单的机制，用于将数据从 UI 组件绑定到组件的状态。 此方法不同于 ASP.NET Web 窗体中的功能，可用于将数据从数据源绑定到 UI 控件。 在处理[数据](data.md)部分，我们将介绍如何处理来自不同数据源的数据。
 
 若要创建从 UI 组件到组件状态的双向数据绑定，请使用 `@bind` 指令特性。 在下面的示例中，复选框的值绑定到了 `isChecked` 字段。
 
@@ -430,9 +433,9 @@ public partial class Counter : System.Web.UI.UserControl
 }
 ```
 
-Blazor 组件还具有定义完善的生命周期。 组件的生命周期可用于初始化组件状态和实现高级组件行为。
+Blazor组件还具有定义完善的生命周期。 组件的生命周期可用于初始化组件状态和实现高级组件行为。
 
-所有 Blazor 的组件生命周期方法都有同步和异步版本。 组件呈现是同步的。 无法在呈现组件的过程中运行异步逻辑。 所有异步逻辑都必须作为 `async` 生命周期方法的一部分执行。
+的所有 Blazor 组件生命周期方法都有同步和异步版本。 组件呈现是同步的。 无法在呈现组件的过程中运行异步逻辑。 所有异步逻辑都必须作为 `async` 生命周期方法的一部分执行。
 
 ### <a name="oninitialized"></a>OnInitialized
 
@@ -454,7 +457,7 @@ protected override async Task OnParametersSetAsync() { await ... }
 
 ### <a name="onafterrender"></a>OnAfterRender
 
-在 `OnAfterRender` `OnAfterRenderAsync` 组件完成呈现后，调用和方法。 此时将填充元素和组件引用（有关这些概念的详细信息，请参阅下文）。 此时启用了与浏览器的交互。 可以安全地进行与 DOM 和 JavaScript 执行的交互。
+在 `OnAfterRender` `OnAfterRenderAsync` 组件完成呈现后，调用和方法。 此时将填充元素和组件引用 () 下面的概念。 此时启用了与浏览器的交互。 可以安全地进行与 DOM 和 JavaScript 执行的交互。
 
 ```csharp
 protected override void OnAfterRender(bool firstRender)
@@ -479,7 +482,7 @@ protected override async Task OnAfterRenderAsync(bool firstRender)
 
 ### <a name="idisposable"></a>IDisposable
 
-`IDisposable`从 UI 中删除组件时，Blazor 组件可以实现以释放资源。 Razor 组件可 `IDispose` 通过使用 `@implements` 指令实现：
+Blazor`IDisposable`当组件从 UI 中删除时，组件可以实现以释放资源。 Razor 组件可 `IDispose` 通过使用 `@implements` 指令实现：
 
 ```razor
 @using System
@@ -497,9 +500,9 @@ protected override async Task OnAfterRenderAsync(bool firstRender)
 
 ## <a name="capture-component-references"></a>捕获组件引用
 
-在 ASP.NET Web 窗体中，通常通过引用控件的 ID 来直接在代码中处理控件实例。 在 Blazor 中，还可以捕获和操作对组件的引用，尽管它不太常见。
+在 ASP.NET Web 窗体中，通常通过引用控件的 ID 来直接在代码中处理控件实例。 在中 Blazor ，还可以捕获和操作对组件的引用，尽管它不太常见。
 
-若要在 Blazor 中捕获组件引用，请使用 `@ref` 指令特性。 属性的值应与所引用组件的类型相同的可设置字段的名称匹配。
+若要在中捕获组件引用 Blazor ，请使用 `@ref` 指令特性。 属性的值应与所引用组件的类型相同的可设置字段的名称匹配。
 
 ```razor
 <MyLoginDialog @ref="loginDialog" ... />
@@ -520,17 +523,17 @@ protected override async Task OnAfterRenderAsync(bool firstRender)
 
 ## <a name="capture-element-references"></a>捕获元素引用
 
-Blazor 组件可以捕获对元素的引用。 与 ASP.NET Web 窗体中的 HTML 服务器控件不同，您不能直接使用 Blazor 中的元素引用来操作 DOM。 Blazor 使用其 DOM 比较算法处理大多数 DOM 交互。 Blazor 中捕获的元素引用不透明。 但是，它们用于在 JavaScript 互操作调用中传递特定的元素引用。 有关 JavaScript 互操作的详细信息，请参阅[ASP.NET Core Blazor JavaScript 互操作](/aspnet/core/blazor/javascript-interop)。
+Blazor组件可以捕获对元素的引用。 与 ASP.NET Web 窗体中的 HTML 服务器控件不同，您不能直接使用中的元素引用来操作 DOM Blazor 。 Blazor使用其 DOM 比较算法处理大多数 DOM 交互。 中捕获的元素引用 Blazor 是不透明的。 但是，它们用于在 JavaScript 互操作调用中传递特定的元素引用。 有关 JavaScript 互操作的详细信息，请参阅[ASP.NET Core Blazor javascript 互操作](/aspnet/core/blazor/javascript-interop)。
 
 ## <a name="templated-components"></a>模板化组件
 
 在 ASP.NET Web 窗体中，您可以创建*模板化控件*。 模板化控件使开发人员可以指定用于呈现容器控件的 HTML 部分。 构建模板化服务器控件的机制非常复杂，但它们可让用户以用户可自定义的方式呈现数据。 模板化控件的示例包括 `Repeater` 和 `DataList` 。
 
-还可以通过定义类型为或的组件参数，模板化 Blazor 组件 `RenderFragment` `RenderFragment<T>` 。 `RenderFragment`表示 Razor 标记的块区，该标记随后可由组件呈现。 `RenderFragment<T>`是 Razor 标记的块区，它采用可在呈现呈现片段时指定的参数。
+Blazor还可以通过定义类型为或的组件参数，模板化组件 `RenderFragment` `RenderFragment<T>` 。 `RenderFragment`表示 Razor 标记的块区，该标记随后可由组件呈现。 `RenderFragment<T>`是 Razor 标记的块区，它采用可在呈现呈现片段时指定的参数。
 
 ### <a name="child-content"></a>子内容
 
-Blazor 组件可以将其子内容捕获为 `RenderFragment` ，并在呈现组件时呈现该内容。 若要捕获子内容，请定义类型为的组件参数， `RenderFragment` 并将其命名为 `ChildContent` 。
+Blazor组件可以将其子内容捕获为 `RenderFragment` ，并在呈现组件时呈现该内容。 若要捕获子内容，请定义类型为的组件参数， `RenderFragment` 并将其命名为 `ChildContent` 。
 
 *ChildContentComponent*
 
@@ -608,7 +611,7 @@ Blazor 组件可以将其子内容捕获为 `RenderFragment` ，并在呈现组�
 
 ## <a name="code-behind"></a>代码隐藏
 
-Blazor 组件通常是在单个*razor*文件中创作的。 不过，也可以使用代码隐藏文件来分隔代码和标记。 若要使用组件文件，请添加一个与组件文件的文件名相匹配的 c # 文件，但添加了 *.cs*扩展名（*Counter.razor.cs*）。 使用 c # 文件定义组件的基类。 您可以将基类命名为任何所需的名称，但通常会将类命名为与 component 类相同的名称，但会 `Base` 添加扩展（ `CounterBase` ）。 基于组件的类还必须派生自 `ComponentBase` 。 然后，在 Razor 组件文件中添加 `@inherits` 指令以指定组件的基类（ `@inherits CounterBase` ）。
+Blazor通常，组件是在单个*razor*文件中创作的。 不过，也可以使用代码隐藏文件来分隔代码和标记。 若要使用组件文件，请添加与组件文件的文件名相匹配的 c # 文件，但添加了 (*Counter.razor.cs*) 的 *.cs 扩展名。* 使用 c # 文件定义组件的基类。 您可以将基类命名为任何所需的名称，但通常将类命名为与 component 类相同的名称，但将 `Base` 扩展添加 (`CounterBase`) 。 基于组件的类还必须派生自 `ComponentBase` 。 然后，在 Razor 组件文件中添加 `@inherits` 指令以指定组件的基类 (`@inherits CounterBase`) 。
 
 *Counter*
 
@@ -640,7 +643,7 @@ public class CounterBase : ComponentBase
 
 ## <a name="additional-resources"></a>其他资源
 
-前面不是 Blazor 组件的所有方面的全面处理。 有关如何[创建和使用 ASP.NET Core Razor 组件](/aspnet/core/blazor/components)的详细信息，请参阅 Blazor 文档。
+前面的内容并非组件的所有方面 Blazor 。 有关如何[创建和使用 ASP.NET Core Razor 组件](/aspnet/core/blazor/components)的详细信息，请参阅 Blazor 文档。
 
 >[!div class="step-by-step"]
 >[上一页](app-startup.md)

@@ -1,46 +1,48 @@
 ---
 title: 应用配置
-description: 了解如何配置 Blazor 应用而不使用配置管理器。
+description: 了解如何在 Blazor 不使用 ConfigurationManager 的情况下配置应用。
 author: csharpfritz
 ms.author: jefritz
+no-loc:
+- Blazor
 ms.date: 04/01/2020
-ms.openlocfilehash: c780a395f72e2520af86c20c7f6618953a528ff7
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: a13f663c2c6908ba906e42cb939c3b8707b8cccd
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "80588251"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173297"
 ---
 # <a name="app-configuration"></a>应用配置
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-在 Web 窗体中加载应用配置的主要方法是在服务器上使用*Web.config* &mdash;文件中的条目或*Web.config*引用的相关配置文件。可以使用静态`ConfigurationManager`对象与应用设置、数据存储库连接字符串以及添加到应用的其他扩展配置提供程序进行交互。 通常可以看到与应用配置的交互，如以下代码所示：
+在 Web 窗体中加载应用程序配置的主要方法是在服务器上使用*web.config*文件中的条目， &mdash; 或者*web.config*引用相关的配置文件。您可以使用静态 `ConfigurationManager` 对象与应用程序设置、数据存储库连接字符串以及添加到应用中的其他扩展配置提供程序进行交互。 通常，查看与应用配置的交互，如以下代码所示：
 
 ```csharp
 var configurationValue = ConfigurationManager.AppSettings["ConfigurationSettingName"];
 var connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnectionName"].ConnectionString;
 ```
 
-对于ASP.NET核心和服务器端 Blazor，如果你的应用托管在 Windows IIS 服务器上，则*Web.config*文件可能会存在。 但是，没有`ConfigurationManager`使用此配置的交互，并且可以从其他源接收更结构化的应用配置。 让我们来看看如何收集配置以及如何仍然可以从*Web.config*文件访问配置信息。
+Blazor如果你的应用程序托管在 WINDOWS IIS 服务器上，则使用 ASP.NET Core 和服务器端时，可能会出现*web.config*文件。 但是， `ConfigurationManager` 与此配置并无交互，你可以从其他来源接收更多结构化应用配置。 让我们看看如何收集配置，以及你仍可以如何从*web.config*文件访问配置信息。
 
 ## <a name="configuration-sources"></a>配置源
 
-ASP.NET Core 认识到许多配置源可能要用于你的应用。 默认情况下，框架尝试为您提供这些功能中的最佳功能。 配置由ASP.NET核心从这些不同来源读取和聚合。 以后为同一配置键加载的值优先于以前的值。
+ASP.NET Core 认识到你的应用可能需要使用很多配置源。 默认情况下，框架将尝试为您提供这些功能的最佳功能。 ASP.NET Core 从这些不同的源读取和聚合配置。 对于同一配置密钥，稍后加载的值优先于先前值。
 
-ASP.NET Core 设计为具有云感知功能，并使操作员和开发人员更轻松地配置应用。 ASP.NET核心是环境感知，知道它是否运行在你的`Production`或`Development`环境中。 环境指示器设置在系统环境变量`ASPNETCORE_ENVIRONMENT`中。 如果未配置任何值，则应用默认在`Production`环境中运行。
+ASP.NET Core 被设计为能够识别云，并使运营商和开发人员更容易地配置应用程序。 ASP.NET Core 是环境感知的，知道它是在您的 `Production` 还是环境中运行 `Development` 。 环境指示器是在 `ASPNETCORE_ENVIRONMENT` 系统环境变量中设置的。 如果未配置任何值，应用程序默认为在环境中运行 `Production` 。
 
-你的应用可以根据环境的名称触发和添加来自多个源的配置。 默认情况下，配置按列出的顺序从以下资源加载：
+应用可根据环境名称从多个源触发并添加配置。 默认情况下，按列出的顺序从以下资源加载配置：
 
-1. *应用程序设置.json*文件，如果存在
-1. *应用设置。{ENVIRONMENT_NAME}.json*文件，如果存在
-1. 用户机密文件磁盘上，如果存在
+1. *appsettings.js*文件（如果存在）
+1. *appsettings。{ENVIRONMENT_NAME} json*文件（如果存在）
+1. 磁盘上的用户机密文件（如果存在）
 1. 环境变量
 1. 命令行参数
 
-## <a name="appsettingsjson-format-and-access"></a>应用程序设置.json 格式和访问
+## <a name="appsettingsjson-format-and-access"></a>格式和访问 appsettings.js
 
-*appvalue.json*文件可以分层，其值结构如下 JSON：
+文件*上的appsettings.js*可以通过结构化的值进行分层，如以下 JSON：
 
 ```json
 {
@@ -55,40 +57,40 @@ ASP.NET Core 设计为具有云感知功能，并使操作员和开发人员更�
 }
 ```
 
-当提供前面的 JSON 时，配置系统会平展子值并引用其完全限定的分层路径。 冒号`:`（ ） 字符分隔层次结构中的每个属性。 例如，配置键`section1:key0`访问`section1`对象文本`key0`的值。
+当出现前面的 JSON 时，配置系统平展子值并引用其完全限定的分层路径。 冒号 (`:`) 字符分隔层次结构中的每个属性。 例如，配置项将 `section1:key0` 访问 `section1` 对象文字的 `key0` 值。
 
 ## <a name="user-secrets"></a>用户机密
 
 用户机密包括：
 
-* 存储在开发人员工作站上的 JSON 文件中的配置值，在应用开发文件夹之外。
-* 仅在`Development`环境中运行时加载。
-* 与特定应用关联。
-* 使用 .NET 核心 CLI`user-secrets`的命令进行管理。
+* 存储在开发人员工作站上的 JSON 文件中的配置值位于应用开发文件夹之外。
+* 仅在环境中运行时加载 `Development` 。
+* 与特定应用相关联。
+* 通过 .NET Core CLI 的命令进行管理 `user-secrets` 。
 
-通过执行`user-secrets`命令为机密存储配置应用：
+通过执行以下命令为机密存储配置应用 `user-secrets` ：
 
 ```dotnetcli
 dotnet user-secrets init
 ```
 
-前面的命令向项目文件`UserSecretsId`添加一个元素。 该元素包含一个 GUID，用于将机密与应用相关联。 然后，您可以使用 命令定义机密`set`。 例如：
+前面的命令将一个 `UserSecretsId` 元素添加到项目文件。 元素包含用于将机密与应用关联的 GUID。 然后，可以使用命令定义机密 `set` 。 例如：
 
 ```dotnetcli
 dotnet user-secrets set "Parent:ApiKey" "12345"
 ```
 
-前面的命令使`Parent:ApiKey`配置密钥在具有 值`12345`的开发人员工作站上可用。
+上述命令使 `Parent:ApiKey` 使用值的开发人员工作站上的配置密钥可用 `12345` 。
 
-有关创建、存储和管理用户机密的详细信息，请参阅[ASP.NET核心文档中开发中应用机密的安全存储](/aspnet/core/security/app-secrets)。
+有关创建、存储和管理用户机密的详细信息，请参阅 ASP.NET Core 文档中的开发中的[应用机密的安全存储](/aspnet/core/security/app-secrets)。
 
 ## <a name="environment-variables"></a>环境变量
 
-加载到应用配置中的下一组值是系统的环境变量。 现在，您可以通过配置 API 访问系统的所有环境变量设置。 在应用内读取时，分层值被拼平并由冒号字符分隔。 但是，某些操作系统不允许冒号字符环境变量名称。 ASP.NET Core 通过在访问具有双下划线 （`__`） 的值时将值转换为冒号来解决此限制。 上面`Parent:ApiKey`用户机密部分中的值可以使用环境变量`Parent__ApiKey`覆盖。
+将下一组值加载到应用配置中是系统的环境变量。 现在，你的所有系统环境变量设置都可以通过配置 API 来访问。 在应用中进行读取时，将按冒号字符分隔层次结构值。 但是，某些操作系统不允许冒号字符环境变量名称。 ASP.NET Core 通过在访问时将具有双下划线 () 的值转换为冒号来解决此限制 `__` 。 `Parent:ApiKey`可以通过环境变量重写上面的用户机密部分的值 `Parent__ApiKey` 。
 
 ## <a name="command-line-arguments"></a>命令行参数
 
-当应用启动时，也可以作为命令行参数提供配置。 使用双虚线 （`--`） 或前斜`/`杠 （ ） 表示法来指示要设置的配置值的名称和要配置的值。 语法类似于以下命令：
+当你的应用程序启动时，还可以将配置作为命令行参数提供。 使用双划线 (`--`) 或正斜杠 (`/`) 表示法来指示要设置的配置值的名称以及要配置的值。 语法类似于以下命令：
 
 ```dotnetcli
 dotnet run CommandLineKey1=value1 --CommandLineKey2=value2 /CommandLineKey3=value3
@@ -96,9 +98,9 @@ dotnet run --CommandLineKey1 value1 /CommandLineKey2 value2
 dotnet run Parent:ApiKey=67890
 ```
 
-## <a name="the-return-of-webconfig"></a>Web.config 的回归
+## <a name="the-return-of-webconfig"></a>返回 web.config
 
-如果您将应用部署到 IIS 上的 Windows，则*Web.config*文件仍会配置 IIS 来管理你的应用。 默认情况下，IIS 会添加对 ASP.NET核心模块 （ANCM） 的引用。 ANCM 是一个本机 IIS 模块，用于托管您的应用，以代替 Kestrel Web 服务器。 此*Web.config*部分类似于以下 XML 标记：
+如果已将应用程序部署到 IIS 上的 Windows，则*web.config*文件仍会将 IIS 配置为管理你的应用程序。 默认情况下，IIS 会将对 ASP.NET Core 模块的引用添加 (ANCM) 。 ANCM 是一个本机 IIS 模块，它托管你的应用程序来代替 Kestrel web 服务器。 此*web.config*部分类似于下面的 XML 标记：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -117,7 +119,7 @@ dotnet run Parent:ApiKey=67890
 </configuration>
 ```
 
-可以通过嵌套`environmentVariables`元素中的元素来定义特定于应用的`aspNetCore`配置。 本节中定义的值作为环境变量呈现给ASP.NET核心应用。 环境变量在应用启动期间适当加载。
+应用特定的配置可以通过 `environmentVariables` 在元素中嵌套元素来定义 `aspNetCore` 。 此部分中定义的值将作为环境变量提供给 ASP.NET Core 应用。 环境变量会在应用程序启动的这段时间内正确加载。
 
 ```xml
 <aspNetCore processPath="dotnet"
@@ -132,34 +134,34 @@ dotnet run Parent:ApiKey=67890
 </aspNetCore>
 ```
 
-## <a name="read-configuration-in-the-app"></a>读取应用中的配置
+## <a name="read-configuration-in-the-app"></a>在应用中读取配置
 
-ASP.NET核心通过<xref:Microsoft.Extensions.Configuration.IConfiguration>界面提供应用配置。 此配置接口应由 Blazor 组件、Blazor 页面以及需要访问配置的任何其他ASP.NET Core 托管类请求。 ASP.NET核心框架将自动填充此接口，并配置了前面配置的已解决配置。 在 Blazor 页或组件的 Razor 标记上，可以在`IConfiguration`*.razor*文件`@inject`顶部向对象注入指令，如下所示：
+ASP.NET Core 提供通过接口的应用配置 <xref:Microsoft.Extensions.Configuration.IConfiguration> 。 此配置接口应由 Blazor 组件、 Blazor 页面以及需要访问配置的任何其他 ASP.NET Core 托管类请求。 ASP.NET Core 框架将用先前配置的解析配置自动填充此接口。 在 Blazor 页或组件的 Razor 标记上，可以将对象注入到 `IConfiguration` `@inject` *Razor*文件顶部的指令，如下所示：
 
 ```razor
 @inject IConfiguration Configuration
 ```
 
-在前面的语句使`IConfiguration`该对象作为`Configuration`变量在整个 Razor 模板的其余部分中可用。
+前面的语句使 `IConfiguration` 对象在 `Configuration` Razor 模板的其余部分中可用作变量。
 
-可以通过指定作为索引器参数寻求的配置设置层次结构来读取各个配置设置：
+可以通过指定作为索引器参数查找的配置设置层次结构来读取各个配置设置：
 
 ```csharp
 var mySetting = Configuration["section1:key0"];
 ```
 
-可以使用 方法<xref:Microsoft.Extensions.Configuration.IConfiguration.GetSection%2A>检索特定位置的密钥集合，其语法类似于`GetSection("section1")`从前面的示例中检索第 1 节的配置，从而获取整个配置部分。
+您可以通过使用方法检索整个配置节，方法是使用与 <xref:Microsoft.Extensions.Configuration.IConfiguration.GetSection%2A> 类似的语法检索特定位置的键集合， `GetSection("section1")` 以便从前面的示例中检索 section1 的配置。
 
 ## <a name="strongly-typed-configuration"></a>强类型配置
 
-使用 Web 窗体，可以创建从<xref:System.Configuration.ConfigurationSection>类型和相关类型继承的强类型配置类型。 A`ConfigurationSection`允许您为这些配置值配置某些业务规则和处理。
+使用 Web 窗体，可以创建从类型和关联的类型继承的强类型配置类型 <xref:System.Configuration.ConfigurationSection> 。 `ConfigurationSection`允许您为这些配置值配置一些业务规则和处理。
 
-在ASP.NET Core 中，您可以指定将接收配置值的类层次结构。 这些类：
+在 ASP.NET Core 中，可以指定将接收配置值的类层次结构。 这些类：
 
 * 不需要从父类继承。
-* 应包含`public`与要捕获的配置结构的属性匹配的属性和类型引用的属性。
+* 应包括 `public` 与你要捕获的配置结构的属性和类型引用相匹配的属性。
 
-对于前面的*appsettings.json*示例，您可以定义以下类来捕获这些值：
+对于前面*appsettings.js*的示例，可以定义以下类来捕获值：
 
 ```csharp
 public class MyConfig
@@ -177,13 +179,13 @@ public class MyConfigSection
 }
 ```
 
-可以通过将以下行添加到`Startup.ConfigureServices`方法来填充此类层次结构：
+可以通过将以下行添加到方法来填充此类层次结构 `Startup.ConfigureServices` ：
 
 ```csharp
 services.Configure<MyConfig>(Configuration);
 ```
 
-在应用的其余部分中，您可以将输入参数添加到类或类型`@inject``IOptions<MyConfig>`Razor 模板中的指令，以接收强类型配置设置。 该`IOptions<MyConfig>.Value`属性将生成从`MyConfig`配置设置填充的值。
+在应用程序的其余部分中，你可以将输入参数添加到 `@inject` 类型的 Razor 模板中的类或指令， `IOptions<MyConfig>` 以接收强类型配置设置。 `IOptions<MyConfig>.Value`属性将生成 `MyConfig` 从配置设置填充的值。
 
 ```razor
 @inject IOptions<MyConfig> options
@@ -193,7 +195,7 @@ services.Configure<MyConfig>(Configuration);
 }
 ```
 
-有关"选项"功能的详细信息，请参阅[ASP.NET核心文档中的选项模式](/aspnet/core/fundamentals/configuration/options#options-interfaces)。
+有关选项功能的详细信息，请参阅 ASP.NET Core 文档的[选项模式](/aspnet/core/fundamentals/configuration/options#options-interfaces)。
 
 >[!div class="step-by-step"]
 >[上一页](middleware.md)

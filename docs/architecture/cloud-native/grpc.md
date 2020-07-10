@@ -2,13 +2,16 @@
 title: gRPC
 description: 了解 gRPC，它在云本机应用程序中的作用，以及它与 HTTP RESTful 通信有何不同。
 author: robvet
+no-loc:
+- Blazor
+- Blazor WebAssembly
 ms.date: 05/13/2020
-ms.openlocfilehash: 35a8325dd82e946d88b09b223287e2871be88ffa
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 6b41363008405032f4233448f134a8a602dbd26a
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201324"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173154"
 ---
 # <a name="grpc"></a>gRPC
 
@@ -16,7 +19,7 @@ ms.locfileid: "84201324"
 
 ## <a name="what-is-grpc"></a>什么是 gRPC？
 
-gRPC 是一种新式的高性能框架，可发展旧的[远程过程调用（RPC）](https://en.wikipedia.org/wiki/Remote_procedure_call)协议。 在应用程序级别，gRPC 简化了客户端和后端服务之间的消息传送。 GRPC 源自 Google，是云本机产品/服务的开放源和[云本机计算基础（CNCF）](https://www.cncf.io/)生态系统的一部分。 CNCF 考虑 gRPC[孵化项目](https://github.com/cncf/toc/blob/master/process/graduation_criteria.adoc)。 孵化表示最终用户在生产应用程序中使用技术，而项目的参与者数量是正常的。
+gRPC 是一种新式的高性能框架， (RPC) 协议演变旧的[远程过程调用](https://en.wikipedia.org/wiki/Remote_procedure_call)。 在应用程序级别，gRPC 简化了客户端和后端服务之间的消息传送。 GRPC 是源自 Google 的开源和[云本机计算基础的一部分 () CNCF](https://www.cncf.io/)云本机产品/服务的生态系统。 CNCF 考虑 gRPC[孵化项目](https://github.com/cncf/toc/blob/master/process/graduation_criteria.adoc)。 孵化表示最终用户在生产应用程序中使用技术，而项目的参与者数量是正常的。
 
 典型的 gRPC 客户端应用程序将公开一个用于实现业务操作的本地进程内函数。 在这种情况下，该本地函数调用远程计算机上的另一个函数。 本地调用似乎是对远程服务的透明进程外调用。 RPC 管道对计算机之间的点到点网络通信、序列化和执行进行了抽象。
 
@@ -33,11 +36,11 @@ gRPC 对其传输协议使用 HTTP/2。 与 HTTP 1.1 兼容，HTTP/2 功能很�
 - 同时发送客户端请求和服务器响应的双向全双工通信。
 - 内置流式处理可对大型数据集进行异步流式处理的请求和响应。
 
-gRPC 是轻型且高性能的。 与 JSON 序列化相比，与 JSON 序列化相比，它的最高速率为60-80%。 在 Microsoft [Windows Communication Foundation （WCF）](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf)行话中，gRPC 性能超出了高度优化的[wcf-nettcp 绑定](https://docs.microsoft.com/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8)的速度和效率。 不同于 Microsoft stack 的 Wcf-nettcp，gRPC 是跨平台的。
+gRPC 是轻型且高性能的。 与 JSON 序列化相比，与 JSON 序列化相比，它的最高速率为60-80%。 在 Microsoft [Windows Communication Foundation (WCF) ](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf)行话，gRPC 性能超出了高度优化的[wcf-nettcp 绑定](https://docs.microsoft.com/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8)的速度和效率。 不同于 Microsoft stack 的 Wcf-nettcp，gRPC 是跨平台的。
 
 ## <a name="protocol-buffers"></a>协议缓冲区
 
-gRPC 拥有称为[协议缓冲区](https://developers.google.com/protocol-buffers/docs/overview)的开源技术。 它们提供了一种高效且平台中立的序列化格式，用于序列化服务相互发送的结构化消息。 开发人员使用跨平台接口定义语言（IDL）为每个微服务定义服务协定。 作为基于文本的文件实现的协定将 `.proto` 描述每个服务的方法、输入和输出。 同一约定文件可用于在不同开发平台上构建的 gRPC 客户端和服务。
+gRPC 拥有称为[协议缓冲区](https://developers.google.com/protocol-buffers/docs/overview)的开源技术。 它们提供了一种高效且平台中立的序列化格式，用于序列化服务相互发送的结构化消息。 使用跨平台接口定义语言 (IDL) ，开发人员定义每个微服务的服务协定。 作为基于文本的文件实现的协定将 `.proto` 描述每个服务的方法、输入和输出。 同一约定文件可用于在不同开发平台上构建的 gRPC 客户端和服务。
 
 使用 proto 文件，Protobuf 编译器 `protoc` 生成目标平台的客户端和服务代码。 此代码包括以下组件：
 
@@ -81,7 +84,7 @@ SDK 包括用于终结点路由、内置 IoC 和日志记录的工具。 开源 
 - 点到点实时通信-gRPC 可以实时推送消息而无需轮询，并对双向流式处理提供了极佳支持。
 - 网络约束环境–二进制 gRPC 消息始终小于等效的基于文本的 JSON 消息。
 
-在撰写本文时，gRPC 主要用于后端服务。 大多数新式浏览器不能提供支持前端 gRPC 客户端所需的 HTTP/2 控制级别。 这就是，这是一项[早期的计划](https://devblogs.microsoft.com/aspnet/grpc-web-experiment/)，可让你从使用 JavaScript 或 Blazor WebAssembly 技术生成的基于浏览器的应用 gRPC 通信。 [GRPC for .net](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md)允许 ASP.NET Core gRPC 应用在浏览器应用中支持 gRPC 功能：
+在撰写本文时，gRPC 主要用于后端服务。 大多数新式浏览器不能提供支持前端 gRPC 客户端所需的 HTTP/2 控制级别。 这就是，这是一项[早期的计划](https://devblogs.microsoft.com/aspnet/grpc-web-experiment/)，可让你从使用 JavaScript 或技术生成的基于浏览器的应用 gRPC 通信 Blazor WebAssembly 。 [GRPC for .net](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md)允许 ASP.NET Core gRPC 应用在浏览器应用中支持 gRPC 功能：
 
 - 强类型的代码生成客户端
 - Compact Protobuf 消息
@@ -95,13 +98,13 @@ Microsoft 的[容器上](https://github.com/dotnet-architecture/eShopOnContainer
 
 **图 4-22**。 容器上的 eShop 的后端体系结构
 
-在上图中，请注意 eShop 如何通过公开多个 API 网关来使用前端模式（BFF）的[后端](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends)。 本章前面介绍了 BFF 模式。 请密切注意位于 Web 购物 API 网关和后端购物微服务之间的聚合器微服务（灰）。 聚合器接收来自客户端的单个请求，将其调度到不同的微服务，聚合结果并将其发送回发出请求的客户端。 此类操作通常需要同步通信，才能生成立即响应。 在 eShop 中，使用 gRPC 执行从聚合器的后端调用，如图4-23 所示。
+在上图中，请注意 eShop 如何通过公开多个 API 网关来通过[前端模式](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends) (BFF) 。 本章前面介绍了 BFF 模式。 请注意，聚合微服务 (以灰色) ，位于 Web 购物 API 网关和后端购物微服务之间。 聚合器接收来自客户端的单个请求，将其调度到不同的微服务，聚合结果并将其发送回发出请求的客户端。 此类操作通常需要同步通信，才能生成立即响应。 在 eShop 中，使用 gRPC 执行从聚合器的后端调用，如图4-23 所示。
 
 ![容器的 eShop 中的 gRPC](./media/grpc-implementation.png)
 
 图 4-23  。 容器的 eShop 中的 gRPC
 
-gRPC 通信需要客户端和服务器组件。 在上图中，请注意购物聚合器如何实现 gRPC 客户端。 客户端将同步 gRPC 调用（以红色表示）给后端微服务，每个调用都实现 gRPC 服务器。 客户端和服务器都利用 .NET Core SDK 中内置的 gRPC 管道。 客户端*存根*提供用于调用远程 gRPC 调用的管道。 服务器端组件提供自定义服务类可以继承和使用的 gRPC 管道。
+gRPC 通信需要客户端和服务器组件。 在上图中，请注意购物聚合器如何实现 gRPC 客户端。 客户端将 (以红色) 对后端微服务进行同步调用，其中每个调用都实现 gRPC 服务器。 客户端和服务器都利用 .NET Core SDK 中内置的 gRPC 管道。 客户端*存根*提供用于调用远程 gRPC 调用的管道。 服务器端组件提供自定义服务类可以继承和使用的 gRPC 管道。
 
 同时公开 RESTful API 和 gRPC 通信的微服务需要使用多个终结点来管理流量。 你将打开一个终结点，该终结点侦听 RESTful 调用的 HTTP 流量，另一个用于 gRPC 调用。 必须为 gRPC 通信所需的 HTTP/2 协议配置 gRPC 终结点。
 

@@ -1,5 +1,6 @@
 ---
 title: 鼠标事件
+description: 了解如何从鼠标事件获取鼠标位置，并了解鼠标单击事件在 Windows 窗体控件中的引发顺序。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MouseLeave event [Windows Forms]
@@ -15,26 +16,26 @@ helpviewer_keywords:
 - mouse [Windows Forms], events
 - MouseUp event
 ms.assetid: 8cf0070d-793b-4876-b09e-d20d28280fab
-ms.openlocfilehash: 4909f56fc3935848fd18bc35c1cb56b5407a24c8
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 640448109961ea5fdf3600ef9e72d7d10e8c9e49
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76740975"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174375"
 ---
 # <a name="mouse-events-in-windows-forms"></a>Windows 窗体中的鼠标事件
 
-当处理鼠标输入时，通常想要知道鼠标指针的位置和鼠标按钮的状态。 本主题详细介绍如何从鼠标事件获取此信息，并说明在 Windows 窗体控件中引发的鼠标单击事件的顺序。 有关所有鼠标事件的列表和说明，请参阅[鼠标输入在 Windows 窗体中的工作原理](how-mouse-input-works-in-windows-forms.md)。  另请参阅[事件处理程序概述（Windows 窗体）](event-handlers-overview-windows-forms.md)和[事件概述（Windows 窗体）](events-overview-windows-forms.md)。
+当处理鼠标输入时，通常想要知道鼠标指针的位置和鼠标按钮的状态。 本主题详细介绍如何从鼠标事件获取此信息，并说明在 Windows 窗体控件中引发的鼠标单击事件的顺序。 有关所有鼠标事件的列表和说明，请参阅[鼠标输入在 Windows 窗体中的工作原理](how-mouse-input-works-in-windows-forms.md)。  另请参阅[事件处理程序概述 (Windows 窗体) ](event-handlers-overview-windows-forms.md)和[事件概述 (Windows 窗体](events-overview-windows-forms.md)) 。
 
 ## <a name="mouse-information"></a>鼠标信息
 
 <xref:System.Windows.Forms.MouseEventArgs> 将发送到与单击鼠标按钮和跟踪鼠标移动相关的鼠标事件处理程序。 <xref:System.Windows.Forms.MouseEventArgs> 提供有关当前鼠标状态的信息，包括鼠标指针在客户端坐标中的位置、按下的鼠标按钮是哪一个以及是否已经滚动鼠标滚轮。 几个鼠标事件（例如通知鼠标指针进入或离开控件边界的时间）会向事件处理程序发送 <xref:System.EventArgs>，但不提供详细信息。
 
-如果想要知道鼠标按钮当前的状态或鼠标指针的位置，并且希望避免处理鼠标事件，还可以使用 <xref:System.Windows.Forms.Control.MouseButtons%2A> 类的 <xref:System.Windows.Forms.Control.MousePosition%2A> 和 <xref:System.Windows.Forms.Control> 属性。 <xref:System.Windows.Forms.Control.MouseButtons%2A> 返回有关当前按下哪些鼠标按钮的信息。 <xref:System.Windows.Forms.Control.MousePosition%2A> 返回鼠标指针的屏幕坐标，等同于由 <xref:System.Windows.Forms.Cursor.Position%2A> 返回的值。
+如果想要知道鼠标按钮当前的状态或鼠标指针的位置，并且希望避免处理鼠标事件，还可以使用 <xref:System.Windows.Forms.Control> 类的 <xref:System.Windows.Forms.Control.MouseButtons%2A> 和 <xref:System.Windows.Forms.Control.MousePosition%2A> 属性。 <xref:System.Windows.Forms.Control.MouseButtons%2A> 返回有关当前按下哪些鼠标按钮的信息。 <xref:System.Windows.Forms.Control.MousePosition%2A> 返回鼠标指针的屏幕坐标，等同于由 <xref:System.Windows.Forms.Cursor.Position%2A> 返回的值。
 
 ## <a name="converting-between-screen-and-client-coordinates"></a>在屏幕坐标和客户端坐标之间转换
 
-由于某些鼠标位置信息以客户端坐标提供，另一些以屏幕坐标提供，因此可能需要将某个点的位置信息从一个坐标系统转换到另一个坐标系统。 通过使用 <xref:System.Windows.Forms.Control.PointToClient%2A> 类提供的 <xref:System.Windows.Forms.Control.PointToScreen%2A> 和 <xref:System.Windows.Forms.Control> 方法可轻松完成此操作。
+由于某些鼠标位置信息以客户端坐标提供，另一些以屏幕坐标提供，因此可能需要将某个点的位置信息从一个坐标系统转换到另一个坐标系统。 通过使用 <xref:System.Windows.Forms.Control> 类提供的 <xref:System.Windows.Forms.Control.PointToClient%2A> 和 <xref:System.Windows.Forms.Control.PointToScreen%2A> 方法可轻松完成此操作。
 
 ## <a name="standard-click-event-behavior"></a>标准单击事件行为
 

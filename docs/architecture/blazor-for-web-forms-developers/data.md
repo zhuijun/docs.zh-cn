@@ -1,15 +1,17 @@
 ---
 title: 数据访问和管理
-description: 了解如何访问和处理 ASP.NET Web 窗体和 Blazor 中的数据。
+description: 了解如何访问和处理 ASP.NET Web 窗体和中的数据 Blazor 。
 author: csharpfritz
 ms.author: jefritz
+no-loc:
+- Blazor
 ms.date: 04/26/2020
-ms.openlocfilehash: b9805da60722de1b5d4f91107e856f647f7564a7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4bf9bee21ce1db828dbe0aeb156d5e15cae4f703
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446466"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173299"
 ---
 # <a name="work-with-data"></a>处理数据
 
@@ -25,11 +27,11 @@ ms.locfileid: "84446466"
 
 ![Data Sources](media/data/datasources.png)
 
-ADO.NET 是与数据库交互的低级别方法。 您的应用程序可以使用命令、记录集和用于交互的数据集创建与数据库的连接。 然后，可以将结果绑定到屏幕上的字段，而无需太多代码。 此方法的缺点是，每组 ADO.NET 对象（ `Connection` 、 `Command` 和 `Recordset` ）都绑定到数据库供应商提供的库。 使用这些组件将使代码变得非常复杂且难以迁移到其他数据库。
+ADO.NET 是与数据库交互的低级别方法。 您的应用程序可以使用命令、记录集和用于交互的数据集创建与数据库的连接。 然后，可以将结果绑定到屏幕上的字段，而无需太多代码。 此方法的缺点是， (、和) 的每一组 ADO.NET 对象都 `Connection` `Command` `Recordset` 绑定到数据库供应商提供的库。 使用这些组件将使代码变得非常复杂且难以迁移到其他数据库。
 
 ## <a name="entity-framework"></a>Entity Framework
 
-实体框架（EF）是由 .NET Foundation 维护的开源对象关系映射框架。 最初通过 .NET Framework 发布，EF 允许为数据库连接、存储架构和交互生成代码。 通过此抽象，你可以专注于应用的业务规则，并允许受信任的数据库管理员管理数据库。 在 .NET Core 中，可以使用名为 EF Core 的 EF 的更新版本。 EF Core 有助于使用可供你使用命令行工具的一系列命令，生成和维护你的代码和数据库之间的交互 `dotnet ef` 。 让我们看几个示例来帮助你使用数据库。
+实体框架 (EF) 是由 .NET Foundation 维护的开源对象关系映射框架。 最初通过 .NET Framework 发布，EF 允许为数据库连接、存储架构和交互生成代码。 通过此抽象，你可以专注于应用的业务规则，并允许受信任的数据库管理员管理数据库。 在 .NET Core 中，可以使用名为 EF Core 的 EF 的更新版本。 EF Core 有助于使用可供你使用命令行工具的一系列命令，生成和维护你的代码和数据库之间的交互 `dotnet ef` 。 让我们看几个示例来帮助你使用数据库。
 
 ### <a name="ef-code-first"></a>EF Code First
 
@@ -75,7 +77,7 @@ services.AddDbContext<MyDbContext>(options =>
     options.UseSqlServer("MY DATABASE CONNECTION STRING"));
 ```
 
-前面的代码将使用指定的连接字符串连接到 SQL Server 数据库。 可以将连接字符串放在*appsettings*文件、环境变量或其他配置存储位置，并适当地替换此嵌入字符串。
+前面的代码将使用指定的连接字符串连接到 SQL Server 数据库。 可以将连接字符串放置在*appsettings.js*文件、环境变量或其他配置存储位置，并适当地替换此嵌入字符串。
 
 然后，可以使用以下命令生成适用于此类的数据库表：
 
@@ -102,7 +104,7 @@ dotnet ef dbcontext scaffold "CONNECTION STRING" Microsoft.EntityFrameworkCore.S
 
 ## <a name="interact-with-web-services"></a>与 web 服务进行交互
 
-首次发布 ASP.NET 时，SOAP 服务是 web 服务器和客户端交换数据的首选方式。 自那时起，这种情况已发生变化，而与服务的首选交互已移动到直接 HTTP 客户端交互。 通过 ASP.NET Core 和 Blazor，可以 `HttpClient` 在 `Startup` 类的方法中注册的配置 `ConfigureServices` 。 需要与 HTTP 终结点交互时，请使用该配置。 请考虑以下配置代码：
+首次发布 ASP.NET 时，SOAP 服务是 web 服务器和客户端交换数据的首选方式。 自那时起，这种情况已发生变化，而与服务的首选交互已移动到直接 HTTP 客户端交互。 通过 ASP.NET Core 和 Blazor ，你可以 `HttpClient` 在 `Startup` 类的方法中注册的配置 `ConfigureServices` 。 需要与 HTTP 终结点交互时，请使用该配置。 请考虑以下配置代码：
 
 ```csharp
 services.AddHttpClient("github", client =>
@@ -115,7 +117,7 @@ services.AddHttpClient("github", client =>
 });
 ```
 
-每当需要访问 GitHub 中的数据时，请创建名称为的客户端 `github` 。 为客户端配置了基址，并正确设置了请求标头。 将 `IHttpClientFactory` `@inject` 指令或属性上的属性注入到 Blazor 组件 `[Inject]` 。 使用以下语法创建命名客户端并与服务交互：
+每当需要访问 GitHub 中的数据时，请创建名称为的客户端 `github` 。 为客户端配置了基址，并正确设置了请求标头。 将 `IHttpClientFactory` Blazor `@inject` 指令或属性上的属性注入到组件 `[Inject]` 。 使用以下语法创建命名客户端并与服务交互：
 
 ```razor
 @inject IHttpClientFactory factory
