@@ -10,13 +10,13 @@ metadata:
   ms.collection: collection
   author: BillWagner
   ms.author: wiwagn
-  ms.date: 04/21/2020
-  ms.openlocfilehash: e1f4da6baefc39281a6dd4a5558d9f961a8f98a5
-  ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
+  ms.date: 07/10/2020
+  ms.openlocfilehash: d6ff1e976117bedd4a64b47a9856bbd64dff0080
+  ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/01/2020
-  ms.locfileid: "82624925"
+  ms.lasthandoff: 07/10/2020
+  ms.locfileid: "86226642"
 highlightedContent:
   items:
   - title: 下载 .NET
@@ -34,6 +34,9 @@ highlightedContent:
   - title: .NET 文档中的新增功能
     itemType: whats-new
     url: whats-new/index.yml
+  - title: 面向 .NET 开发人员的 Azure
+    itemType: overview
+    url: azure/index.yml
 conceptualContent:
   title: .NET：可用。 跨平台。 开放源代码。
   summary: 用于构建所有应用（Web 应用、移动应用、桌面应用、游戏、IoT 等）的开发人员平台。 在 Windows、Linux 和 macOS 上受支持。
