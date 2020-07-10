@@ -3,12 +3,12 @@ title: 保护 .NET 微服务和 Web 应用程序
 description: .NET 微服务和 Web 应用中的安全性 - 了解 ASP.NET Core Web 应用中的身份验证选项。
 author: mjrousos
 ms.date: 01/30/2020
-ms.openlocfilehash: 56ebd95c8a24c7c8d30d3c6acef6650cb63383c6
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 2b503b326d1869ae095f9b177c04389bda9fe46c
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988110"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100777"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>确保 .NET 微服务和 Web 应用的安全性
 
@@ -77,7 +77,7 @@ public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
 ```
 
 > [!IMPORTANT]
-> 上述代码中的行必须采用标识所示的顺序才能正常工作  。
+> 上述代码中的行必须采用标识所示的顺序才能正常工作。
 
 使用 ASP.NET Core 标识可支持多个方案：
 
@@ -136,7 +136,7 @@ public void ConfigureServices(IServiceCollection services)
 有关为外部提供程序配置应用的详细信息，请参阅 [ASP.NET Core 文档中的外部提供程序身份验证](/aspnet/core/security/authentication/social/)。
 
 >[!TIP]
->所有详细信息都由之前提到的授权中间件和服务处理。 因此，除了注册之前提到的身份验证提供程序之外，在 Visual Studio 中创建 ASP.NET 代码 Web 应用程序项目时，必须选择“单个用户帐户”  身份验证选项，如图 9-3 所示。
+>所有详细信息都由之前提到的授权中间件和服务处理。 因此，除了注册之前提到的身份验证提供程序之外，在 Visual Studio 中创建 ASP.NET 代码 Web 应用程序项目时，必须选择“单个用户帐户”身份验证选项，如图 9-3 所示。
 
 ![“新建 ASP.NET Core Web 应用程序”对话框的屏幕截图。](./media/index/select-individual-user-account-authentication-option.png)
 
@@ -154,7 +154,7 @@ public void ConfigureServices(IServiceCollection services)
 
 ### <a name="authenticate-with-an-openid-connect-or-oauth-20-identity-provider"></a>使用 OpenID Connect 或 OAuth 2.0 标识提供程序进行身份验证
 
-如果用户信息存储在 Azure Active Directory 或其他支持 OpenID Connect 或 OAuth 2.0 的标识解决方案中，则可以使用 Microsoft.AspNetCore.Authentication.OpenIdConnect  包，通过 OpenID Connect 工作流进行身份验证。 例如，如果要对 eShopOnContainers 中的 Identity.Api microservice 进行身份验证，ASP.NET Core Web 应用可以使用该包中的中间件，如 `Startup.cs` 中的以下简化示例所示：
+如果用户信息存储在 Azure Active Directory 或其他支持 OpenID Connect 或 OAuth 2.0 的标识解决方案中，则可以使用 Microsoft.AspNetCore.Authentication.OpenIdConnect 包，通过 OpenID Connect 工作流进行身份验证。 例如，如果要对 eShopOnContainers 中的 Identity.Api microservice 进行身份验证，ASP.NET Core Web 应用可以使用该包中的中间件，如 `Startup.cs` 中的以下简化示例所示：
 
 ```csharp
 // Startup.cs
@@ -254,7 +254,7 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
 
 针对 OpenID Connect 终结点进行身份验证或自行颁发安全令牌会涵盖一些方案。 但对于某个服务，如果它只需限制对具有由其他服务提供的有效安全令牌的用户的访问，该怎么办？
 
-对于这种情况，Microsoft.AspNetCore.Authentication.JwtBearer 包中提供处理 JWT 令牌的身份验证中间件  。 JWT 代表“[JSON Web 令牌](https://tools.ietf.org/html/rfc7519)”，是适用于传递安全声明的通用安全令牌格式（由 RFC 7519 定义）。 如何通过中间件使用此类令牌的简化示例可能如以下代码片段（取自 eShopOnContainers 的 Ordering.Api 微服务）所示。
+对于这种情况，Microsoft.AspNetCore.Authentication.JwtBearer 包中提供处理 JWT 令牌的身份验证中间件。 JWT 代表“[JSON Web 令牌](https://tools.ietf.org/html/rfc7519)”，是适用于传递安全声明的通用安全令牌格式（由 RFC 7519 定义）。 如何通过中间件使用此类令牌的简化示例可能如以下代码片段（取自 eShopOnContainers 的 Ordering.Api 微服务）所示。
 
 ```csharp
 // Startup.cs
