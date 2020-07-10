@@ -5,12 +5,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: dd76450c2a6a1726d630285f652d252c5f66183f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7bf5cba51a2e72d3a648f795f018220a452e51f5
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75711904"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226590"
 ---
 # <a name="strings-c-programming-guide"></a>字符串（C# 编程指南）
 字符串是值为文本的 <xref:System.String> 类型对象。 文本在内部存储为 <xref:System.Char> 对象的依序只读集合。 在 C# 字符串末尾没有 null 终止字符；因此，一个 C# 字符串可以包含任何数量的嵌入的 null 字符 ('\0')。 字符串的 <xref:System.String.Length%2A> 属性表示其包含的 `Char` 对象数量，而非 Unicode 字符数。 若要访问字符串中的各个 Unicode 码位，请使用 <xref:System.Globalization.StringInfo> 对象。  
@@ -28,7 +28,7 @@ ms.locfileid: "75711904"
  使用 <xref:System.String.Empty> 常量值初始化字符串，以新建字符串长度为零的 <xref:System.String> 对象。 长度为零的字符串文本表示法是“”。 通过使用 <xref:System.String.Empty> 值（而不是 [null](../../language-reference/keywords/null.md)）初始化字符串，可以减少 <xref:System.NullReferenceException> 发生的可能性。 尝试访问字符串前，先使用静态 <xref:System.String.IsNullOrEmpty%28System.String%29> 方法验证字符串的值。  
   
 ## <a name="immutability-of-string-objects"></a>字符串对象的不可变性  
- 字符串对象是“不可变的”  ：它们在创建后无法更改。 看起来是在修改字符串的所有 <xref:System.String> 方法和 C# 运算符实际上都是在新的字符串对象中返回结果。 在下面的示例中，当 `s1` 和 `s2` 的内容被串联在一起以形成单个字符串时，两个原始字符串没有被修改。 `+=` 运算符创建一个新的字符串，其中包含组合的内容。 这个新对象被分配给变量 `s1`，而分配给 `s1` 的原始对象被释放，以供垃圾回收，因为没有任何其他变量包含对它的引用。  
+ 字符串对象是“不可变的”：它们在创建后无法更改。 看起来是在修改字符串的所有 <xref:System.String> 方法和 C# 运算符实际上都是在新的字符串对象中返回结果。 在下面的示例中，当 `s1` 和 `s2` 的内容被串联在一起以形成单个字符串时，两个原始字符串没有被修改。 `+=` 运算符创建一个新的字符串，其中包含组合的内容。 这个新对象被分配给变量 `s1`，而分配给 `s1` 的原始对象被释放，以供垃圾回收，因为没有任何其他变量包含对它的引用。  
   
  [!code-csharp[csProgGuideStrings#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#2)]  
   
@@ -73,10 +73,10 @@ ms.locfileid: "75711904"
 > 在编译时，逐字字符串被转换为普通字符串，并具有所有相同的转义序列。 因此，如果在调试器监视窗口中查看逐字字符串，将看到由编译器添加的转义字符，而不是来自你的源代码的逐字字符串版本。 例如，原义字符串 `@"C:\files.txt"` 在监视窗口中显示为“C:\\\files.txt”。  
   
 ## <a name="format-strings"></a>格式字符串  
- 格式字符串是在运行时以动态方式确定其内容的字符串。 格式字符串是通过将内插表达式  或占位符嵌入字符串大括号内创建的。 大括号 (`{...}`) 中的所有内容都将解析为一个值，并在运行时以格式化字符串的形式输出。 有两种方法创建格式字符串：字符串内插和复合格式。
+ 格式字符串是在运行时以动态方式确定其内容的字符串。 格式字符串是通过将内插表达式或占位符嵌入字符串大括号内创建的。 大括号 (`{...}`) 中的所有内容都将解析为一个值，并在运行时以格式化字符串的形式输出。 有两种方法创建格式字符串：字符串内插和复合格式。
 
 ### <a name="string-interpolation"></a>字符串内插
-在 C# 6.0 及更高版本中提供，[内插字符串  ](../../language-reference/tokens/interpolated.md)由 `$` 特殊字符标识，并在大括号中包含内插表达式。 如果不熟悉字符串内插，请参阅[字符串内插 - C# 交互式教程](../../tutorials/exploration/interpolated-strings.yml)快速概览。
+在 C# 6.0 及更高版本中提供，[内插字符串](../../language-reference/tokens/interpolated.md)由 `$` 特殊字符标识，并在大括号中包含内插表达式。 如果不熟悉字符串内插，请参阅[字符串内插 - C# 交互式教程](../../tutorials/exploration/interpolated-strings.yml)快速概览。
 
 使用字符串内插来改善代码的可读性和可维护性。 字符串内插可实现与 `String.Format` 方法相同的结果，但提高了易用性和内联清晰度。
 
@@ -92,7 +92,7 @@ ms.locfileid: "75711904"
 ## <a name="substrings"></a>子字符串  
  子字符串是包含在字符串中的任何字符序列。 使用 <xref:System.String.Substring%2A> 方法可以通过原始字符串的一部分新建字符串。 可以使用 <xref:System.String.IndexOf%2A> 方法搜索一次或多次出现的子字符串。 使用 <xref:System.String.Replace%2A> 方法可以将出现的所有指定子字符串替换为新字符串。 与 <xref:System.String.Substring%2A> 方法一样，<xref:System.String.Replace%2A> 实际返回的是新字符串，且不修改原始字符串。 有关详细信息，请参阅[如何搜索字符串](../../how-to/search-strings.md)和[如何修改字符串内容](../../how-to/modify-string-contents.md)。
   
- [!code-csharp[csProgGuideStrings#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#9)]  
+ [!code-csharp[csProgGuideStrings#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/Strings.cs#7)]  
   
 ## <a name="accessing-individual-characters"></a>访问单个字符  
  可以使用包含索引值的数组表示法来获取对单个字符的只读访问权限，如下面的示例中所示：  
