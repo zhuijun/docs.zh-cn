@@ -3,17 +3,17 @@ title: .NET Compiler Platform SDK (Roslyn API)
 description: 了解如何使用 .NET Compiler Platform SDK（亦称为“Roslyn API”）来理解 .NET 代码、发现并修复错误。
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: a1ceb1d11cf846e67be2c6558978e01133e591da
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 872bfd388f6974a6d99f769c43e5d341454518cc
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76742736"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226668"
 ---
 # <a name="the-net-compiler-platform-sdk"></a>.NET Compiler Platform SDK
 
-编译器在验证代码语法和语义时生成应用代码的详细模型。 此模型可用于根据源代码生成可执行输出。 .NET Compiler Platform SDK 提供对此模型的访问权限。 我们越来越依赖 IntelliSense、重构、智能重命名、“查找所有引用”和“转到定义”等集成开发环境 (IDE) 功能来提高工作效率。 我们依靠代码分析工具来提升代码质量，并依靠代码生成器来帮助构造应用。 随着这些工具越来越智能化，它们需要越来越多地访问仅由编译器在处理应用代码时创建的模型。 这就是 Roslyn API 的核心任务所在：打开“黑匣”，让工具和最终用户能够共享编译器生成的大量代码相关信息。
-编译器通过 Roslyn 成为平台，即可以在工具和应用中执行代码相关任务的 API，而不是输入源代码并输出对象代码的不透明转换器。
+编译器在验证代码语法和语义时生成应用代码的详细模型。 此模型可用于根据源代码生成可执行输出。 .NET Compiler Platform SDK 提供对此模型的访问权限。 我们越来越依赖 IntelliSense、重构、智能重命名、“查找所有引用”和“转到定义”等集成开发环境 (IDE) 功能来提高工作效率。 我们依靠代码分析工具来提升代码质量，并依靠代码生成器来帮助构造应用。 随着这些工具越来越智能化，它们需要越来越多地访问仅由编译器在处理应用代码时创建的模型。 这就是 Roslyn API 的核心任务所在：打开“不透明匣”，让工具和最终用户能够共享编译器生成的大量代码相关信息。
+通过 Roslyn，编译器成为平台（而不是不透明的源代码输入和目标代码输出转换器）：可用于在工具和应用程序中完成代码相关任务的 API。
 
 ## <a name="net-compiler-platform-sdk-concepts"></a>.NET Compiler Platform SDK 概念
 
@@ -68,7 +68,7 @@ NuGet 上有大量适用于 .NET 开发人员的库。
 - [处理语义](work-with-semantics.md)
 - [处理工作区](work-with-workspace.md)
 
-若要开始，需要安装 .NET 编译器平台 SDK  ：
+若要开始，需要安装 .NET 编译器平台 SDK：
 
 [!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
