@@ -1,24 +1,24 @@
-- name: 'C# 文档'
+- name: C# 文档
   href: index.yml
 - name: 入门
   items:
     - name: 概述
       displayName: get started
       href: getting-started/index.md
-    - name: 'C# 语言和 .NET Framework 介绍'
+    - name: C# 语言和 .NET Framework 介绍
       href: getting-started/introduction-to-the-csharp-language-and-the-net-framework.md
 - name: 教程
   items:
     - name: 概述
       displayName: tutorials
       href: tutorials/index.md
-    - name: 'C# 编程简介'
+    - name: C# 编程简介
       items:
         - name: 选择你的第一课
           href: tutorials/intro-to-csharp/index.md
         - name: Hello world
           href: tutorials/intro-to-csharp/hello-world.yml
-        - name: 'C# 中的数字'
+        - name: C# 中的数字
           href: tutorials/intro-to-csharp/numbers-in-csharp.yml
         - name: 分支和循环
           href: tutorials/intro-to-csharp/branches-and-loops.yml
@@ -28,7 +28,7 @@
           items:
             - name: 设置你的环境
               href: tutorials/intro-to-csharp/local-environment.md
-            - name: 'C# 中的数字'
+            - name: C# 中的数字
               href: tutorials/intro-to-csharp/numbers-in-csharp-local.md
             - name: 分支和循环
               href: tutorials/intro-to-csharp/branches-and-loops-local.md
@@ -36,7 +36,7 @@
               href: tutorials/intro-to-csharp/arrays-and-collections.md
             - name: 类简介
               href: tutorials/intro-to-csharp/introduction-to-classes.md
-    - name: '探索 C# 6'
+    - name: 探索 C# 6
       href: tutorials/exploration/csharp-6.yml
     - name: 探索字符串内插 - 交互式
       href: tutorials/exploration/interpolated-strings.yml
@@ -62,13 +62,13 @@
       href: tutorials/console-teleprompter.md
     - name: REST 客户端
       href: tutorials/console-webapiclient.md
-    - name: 'C# 和 .NET 中的继承'
+    - name: C# 和 .NET 中的继承
       href: tutorials/inheritance.md
     - name: 使用 LINQ
       href: tutorials/working-with-linq.md
     - name: 使用特性
       href: tutorials/attributes.md
-- name: 'C# 教程'
+- name: C# 教程
   items:
     - name: 介绍
       href: tour-of-csharp/index.md
@@ -90,32 +90,32 @@
       href: tour-of-csharp/delegates.md
     - name: 特性
       href: tour-of-csharp/attributes.md
-- name: 'C# 中的新增功能'
+- name: C# 中的新增功能
   items:
-    - name: 'C# 8.0'
+    - name: C# 8.0
       displayName: what's new
       href: whats-new/csharp-8.md
-    - name: 'C# 7.3'
+    - name: C# 7.3
       href: whats-new/csharp-7-3.md
-    - name: 'C# 7.2'
+    - name: C# 7.2
       href: whats-new/csharp-7-2.md
-    - name: 'C# 7.1'
+    - name: C# 7.1
       href: whats-new/csharp-7-1.md
-    - name: 'C# 7.0'
+    - name: C# 7.0
       href: whats-new/csharp-7.md
-    - name: 'C# 6'
+    - name: C# 6
       href: whats-new/csharp-6.md
     - name: 编译器中的重大更改
       href: whats-new/breaking-changes.md
-    - name: 'C# 版本历史记录'
+    - name: C# 版本历史记录
       href: whats-new/csharp-version-history.md
     - name: 语言与框架的关系
       href: whats-new/relationships-between-language-and-library.md
     - name: 版本和更新注意事项
       href: whats-new/version-update-considerations.md
-- name: 'C# 概念'
+- name: C# 概念
   items:
-    - name: 'C# 类型系统'
+    - name: C# 类型系统
       href: programming-guide/types/index.md
     - name: 可为空引用类型
       href: nullable-references.md
@@ -127,8 +127,6 @@
       href: basic-types.md
     - name: 类
       href: programming-guide/classes-and-structs/classes.md
-    - name: 元组
-      href: tuples.md
     - name: 析构元组和其他类型
       href: deconstruct.md
     - name: 接口
@@ -171,9 +169,9 @@
           href: linq/index.md
         - name: 查询表达式基础
           href: linq/query-expression-basics.md
-        - name: 'C# 中的 LINQ'
+        - name: C# 中的 LINQ
           href: linq/linq-in-csharp.md
-        - name: '在 C# 中编写 LINQ 查询'
+        - name: 在 C# 中编写 LINQ 查询
           href: linq/write-linq-queries.md
         - name: 查询对象的集合
           href: linq/query-a-collection-of-objects.md
@@ -237,7 +235,7 @@
       href: codedoc.md
     - name: 版本管理
       href: versioning.md
-- name: '操作指南 C# 文章'
+- name: 操作指南 C# 文章
   items:
     - name: 文章索引
       displayName: how to's
@@ -282,22 +280,22 @@
       items:
         - name: 生成首个分析器和代码修补程序
           href: roslyn-sdk/tutorials/how-to-write-csharp-analyzer-code-fix.md
-- name: 'C# 编程指南'
+- name: C# 编程指南
   items:
     - name: 概述
       displayName: programming guide
       href: programming-guide/index.md
-    - name: 'C# 程序内部探究'
+    - name: C# 程序内部探究
       items:
-        - name: 'C# 程序所含内容'
+        - name: C# 程序所含内容
           href: programming-guide/inside-a-program/index.md
         - name: Hello World -- 您的第一个程序
           href: programming-guide/inside-a-program/hello-world-your-first-program.md
-        - name: 'C# 程序的通用结构'
+        - name: C# 程序的通用结构
           href: programming-guide/inside-a-program/general-structure-of-a-csharp-program.md
         - name: 标识符名称
           href: programming-guide/inside-a-program/identifier-names.md
-        - name: 'C# 编码约定'
+        - name: C# 编码约定
           href: programming-guide/inside-a-program/coding-conventions.md
     - name: Main() 和命令行参数
       items:
@@ -402,7 +400,7 @@
             - name: 概述
               displayName: LINQ overview
               href: programming-guide/concepts/linq/index.md
-            - name: 'C# 中的 LINQ 入门'
+            - name: C# 中的 LINQ 入门
               items:
                 - name: LINQ 查询简介
                   href: programming-guide/concepts/linq/introduction-to-linq-queries.md
@@ -416,9 +414,9 @@
                   href: programming-guide/concepts/linq/type-relationships-in-linq-query-operations.md
                 - name: LINQ 中的查询语法和方法语法
                   href: programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md
-                - name: '支持 LINQ 的 C# 功能'
+                - name: 支持 LINQ 的 C# 功能
                   href: programming-guide/concepts/linq/features-that-support-linq.md
-                - name: '演练：用 C# 编写查询 (LINQ)'
+                - name: 演练：用 C# 编写查询 (LINQ)
                   href: programming-guide/concepts/linq/walkthrough-writing-queries-linq.md
             - name: 标准查询运算符概述
               items:
@@ -544,7 +542,7 @@
                       items:
                         - name: 功能构造 (LINQ to XML)
                           href: programming-guide/concepts/linq/functional-construction-linq-to-xml.md
-                        - name: '在 C# 中创建 XML 树 (LINQ to XML)'
+                        - name: 在 C# 中创建 XML 树 (LINQ to XML)
                           href: programming-guide/concepts/linq/creating-xml-trees-linq-to-xml-2.md
                         - name: 分析 XML
                           items:
@@ -574,7 +572,7 @@
                           href: programming-guide/concepts/linq/how-to-create-a-document-with-namespaces-linq-to-xml.md
                         - name: 如何控制命名空间前缀 (LINQ to XML)
                           href: programming-guide/concepts/linq/how-to-control-namespace-prefixes-linq-to-xml.md
-                        - name: 'C# 中默认命名空间的范围'
+                        - name: C# 中默认命名空间的范围
                           href: programming-guide/concepts/linq/scope-of-default-namespaces.md
                         - name: 如何编写针对命名空间中的 XML 的查询
                           href: programming-guide/concepts/linq/how-to-write-queries-on-xml-in-namespaces.md
@@ -860,7 +858,7 @@
           href: programming-guide/concepts/object-oriented-programming.md
         - name: 反射
           href: programming-guide/concepts/reflection.md
-        - name: '序列化 (C#)'
+        - name: 序列化 (C#)
           items:
             - name: 概述
               displayName: serialization
@@ -914,7 +912,7 @@
           href: programming-guide/types/how-to-convert-between-hexadecimal-strings-and-numeric-types.md
         - name: 使用类型 dynamic
           href: programming-guide/types/using-type-dynamic.md
-        - name: '演练：创建并使用动态对象（C# 和 Visual Basic）'
+        - name: 演练：创建并使用动态对象（C# 和 Visual Basic）
           href: programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md
     - name: 类和结构
       items:
@@ -954,7 +952,7 @@
               href: programming-guide/classes-and-structs/constants.md
             - name: 如何定义抽象属性
               href: programming-guide/classes-and-structs/how-to-define-abstract-properties.md
-            - name: '如何在 C# 中定义常量'
+            - name: 如何在 C# 中定义常量
               href: programming-guide/classes-and-structs/how-to-define-constants.md
         - name: 属性
           items:
@@ -1054,7 +1052,7 @@
           href: programming-guide/delegates/using-delegates.md
         - name: 带有命名方法的委托与匿名方法
           href: programming-guide/delegates/delegates-with-named-vs-anonymous-methods.md
-        - name: '如何合并委托（多播委托）（C# 编程指南）'
+        - name: 如何合并委托（多播委托）（C# 编程指南）
           href: programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md
         - name: 如何声明、实例化和使用委托
           href: programming-guide/delegates/how-to-declare-instantiate-and-use-a-delegate.md
@@ -1128,7 +1126,7 @@
           href: programming-guide/generics/generics-and-arrays.md
         - name: 泛型委托
           href: programming-guide/generics/generic-delegates.md
-        - name: 'C++ 模板和 C# 泛型之间的区别'
+        - name: C++ 模板和 C# 泛型之间的区别
           href: programming-guide/generics/differences-between-cpp-templates-and-csharp-generics.md
         - name: 运行时中的泛型
           href: programming-guide/generics/generics-in-the-run-time.md
@@ -1264,13 +1262,13 @@
           href: programming-guide/interop/index.md
         - name: 互操作性概述
           href: programming-guide/interop/interoperability-overview.md
-        - name: '如何使用 C# 功能访问 Office 互操作对象'
+        - name: 如何使用 C# 功能访问 Office 互操作对象
           href: programming-guide/interop/how-to-access-office-onterop-objects.md
         - name: 如何在 COM 互操作编程中使用索引属性
           href: programming-guide/interop/how-to-use-indexed-properties-in-com-interop-rogramming.md
         - name: 如何使用平台调用播放 WAV 文件
           href: programming-guide/interop/how-to-use-platform-invoke-to-play-a-wave-file.md
-        - name: '演练：Office 编程（C# 和 Visual Basic）'
+        - name: 演练：Office 编程（C# 和 Visual Basic）
           href: programming-guide/interop/walkthrough-office-programming.md
         - name: COM 类示例
           href: programming-guide/interop/example-com-class.md
@@ -1281,7 +1279,7 @@
       href: language-reference/index.md
     - name: 配置语言版本
       href: language-reference/configure-language-version.md
-    - name: 'C# 关键字'
+    - name: C# 关键字
       items:
         - name: 概述
           displayName: keywords
@@ -1313,6 +1311,9 @@
                 - name: 结构类型
                   href: language-reference/builtin-types/struct.md
                   displayName: 'struct type, readonly struct, ref struct, readonly ref struct'
+                - name: 元组类型
+                  href: language-reference/builtin-types/value-tuples.md
+                  displayName: 'value tuples, ValueTuple'
                 - name: 可以为 null 的值类型
                   href: language-reference/builtin-types/nullable-value-types.md
                   displayName: '? token, ? symbol'
@@ -1556,7 +1557,7 @@
               href: language-reference/keywords/by.md
             - name: in
               href: language-reference/keywords/in.md
-    - name: 'C# 运算符和表达式'
+    - name: C# 运算符和表达式
       items:
         - name: 概述
           href: language-reference/operators/index.md
@@ -1606,7 +1607,7 @@
         - name: '?? 和 ??= 运算符'
           href: language-reference/operators/null-coalescing-operator.md
           displayName: 'null-coalescing, assignment'
-        - name: => 运算符
+        - name: '=> 运算符'
           href: language-reference/operators/lambda-operator.md
           displayName: 'lambda, expression body definition'
         - name: ':: 运算符'
@@ -1639,7 +1640,7 @@
           href: language-reference/operators/true-false-operators.md
         - name: 运算符重载
           href: language-reference/operators/operator-overloading.md
-    - name: 'C# 特殊字符'
+    - name: C# 特殊字符
       items:
         - name: 概述
           displayName: special characters
@@ -1662,7 +1663,7 @@
         - name: 可为空的静态分析
           displayName: 'AllowNull, DisallowNull, MaybeNull, NotNull, MaybeNullWhen, NotNullWhen, NotNullIfNotNull, DoesNotReturn, DoesNotReturnIf'
           href: language-reference/attributes/nullable-analysis.md
-    - name: 'C# 预处理器指令'
+    - name: C# 预处理器指令
       items:
         - name: 概述
           displayName: preprocessor directives
@@ -1695,7 +1696,7 @@
           href: language-reference/preprocessor-directives/preprocessor-pragma-warning.md
         - name: '#pragma checksum'
           href: language-reference/preprocessor-directives/preprocessor-pragma-checksum.md
-    - name: 'C# 编译器选项'
+    - name: C# 编译器选项
       items:
         - name: 概述
           displayName: compiler options
@@ -1704,9 +1705,9 @@
           href: language-reference/compiler-options/command-line-building-with-csc-exe.md
         - name: 如何为 Visual Studio 命令行设置环境变量
           href: language-reference/compiler-options/how-to-set-environment-variables-for-the-visual-studio-command-line.md
-        - name: '按类别列出的 C# 编译器选项'
+        - name: 按类别列出的 C# 编译器选项
           href: language-reference/compiler-options/listed-by-category.md
-        - name: '按字母顺序列出的 C# 编译器选项'
+        - name: 按字母顺序列出的 C# 编译器选项
           href: language-reference/compiler-options/listed-alphabetically.md
           items:
             - name: '@'
@@ -1826,11 +1827,11 @@
               href: language-reference/compiler-options/win32manifest-compiler-option.md
             - name: '-win32res'
               href: language-reference/compiler-options/win32res-compiler-option.md
-    - name: 'C# 编译器错误'
+    - name: C# 编译器错误
       href: language-reference/compiler-messages/index.md
-    - name: 'C# 6.0 草稿规范'
+    - name: C# 6.0 草稿规范
       href: language-reference/specification/
-    - name: 'C# 7.0 - 8.0 建议'
+    - name: C# 7.0 - 8.0 建议
       href: language-reference/proposals/
 - name: 演练
   href: walkthroughs.md

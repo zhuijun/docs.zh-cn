@@ -1,5 +1,7 @@
 ---
 title: -nullable（C# 编译器选项）
+author: IEvangelist
+ms.author: dapine
 ms.date: 06/04/2020
 f1_keywords:
 - /nullable
@@ -7,12 +9,12 @@ helpviewer_keywords:
 - nullable compiler option [C#]
 - /nullable compiler option [C#]
 - -nullable compiler option [C#]
-ms.openlocfilehash: 7454bb316507c3aaea208094127552712421dff6
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: f1aba7e08f472411640d42f51d78ca6f7e5cc900
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990128"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100881"
 ---
 # <a name="-nullable-c-compiler-options"></a>-nullable（C# 编译器选项）
 

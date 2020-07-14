@@ -1,5 +1,6 @@
 ---
 title: 安全性和远程处理注意事项
+description: 了解远程处理的安全注意事项，该注意事项使你可以在应用程序域、进程或计算机之间设置透明调用。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - code security, remoting
@@ -7,19 +8,19 @@ helpviewer_keywords:
 - security [.NET Framework], remoting
 - secure coding, remoting
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
-ms.openlocfilehash: 7a56c9894da88382f40dcd475e89776a83a59322
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 029f9863ebed94805675b629be7eb10963a7b689
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215771"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281389"
 ---
 # <a name="security-and-remoting-considerations"></a>安全性和远程处理注意事项
 利用远程处理，你可以在应用程序域、进程或计算机之间设置透明的调用。 但是，代码访问安全堆栈审核不能跨越进程边界或计算机边界（它确实应用于同一进程的不同应用程序域之间）。  
   
  任何可远程处理的类（从 <xref:System.MarshalByRefObject> 类派生）都需要对安全负责。 要么只将代码用于封闭式安全环境中，在这种环境中可以隐式信任调用代码；要么相应地设计远程处理调用，以免这些调用会让受保护代码受到可能会被恶意使用的外部侵入的影响。  
   
- 通常，绝不应公开受声明性[LinkDemand](link-demands.md)保护的方法、属性或事件，并 <xref:System.Security.Permissions.SecurityAction.InheritanceDemand> 安全检查。 使用远程处理时，不会强制执行这些检查。 其他安全检查（例如 <xref:System.Security.Permissions.SecurityAction.Demand>、[断言](using-the-assert-method.md)等）在进程内的应用程序域之间工作，但在跨进程或跨计算机方案中不起作用。  
+ 通常，不应公开受声明性[LinkDemand](link-demands.md)和安全检查保护的方法、属性或事件 <xref:System.Security.Permissions.SecurityAction.InheritanceDemand> 。 使用远程处理时，不会强制执行这些检查。 其他安全检查（如 <xref:System.Security.Permissions.SecurityAction.Demand> 、[断言](using-the-assert-method.md)等）在进程内的应用程序域之间工作，但不能在跨进程或跨计算机方案中运行。  
   
 ## <a name="protected-objects"></a>受保护的对象  
  某些对象自己保持安全状态。 不应将这些对象传递给不受信任的代码，否则这样的代码将会获得超越其自身权限的安全授权。  
@@ -37,4 +38,4 @@ ms.locfileid: "77215771"
   
 ## <a name="see-also"></a>另请参阅
 
-- [安全编码准则](../../standard/security/secure-coding-guidelines.md)
+- [代码安全维护指南](../../standard/security/secure-coding-guidelines.md)

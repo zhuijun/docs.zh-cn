@@ -2,14 +2,17 @@
 title: .NET Core 概述
 description: 了解 .NET Core 的特性和组合，并将其与其他 .NET 实现进行比较。
 ms.date: 03/26/2020
-ms.openlocfilehash: e57451968ed8c4d5457acea084d3c6c9f998b8da
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: d5ef79fe5a8fbb56beae77edd01830fe6561fa51
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144521"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100725"
 ---
 # <a name="net-core-overview"></a>.NET Core 概述
+
+> [!div class="button"]
+> [下载 .NET Core](https://dotnet.microsoft.com/download)
 
 .NET Core 具有以下特性：
 

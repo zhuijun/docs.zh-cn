@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e7f690030a5cb5605645f1ca42a6f08dcdd214f5
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 207dba9327cfd6debd15c5573697f8950b6c2c95
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85615611"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86218216"
 ---
 ### <a name="tls-1x-by-default-passes-the-sch_send_aux_record-flag-to-the-underlying-schannel-api"></a>默认情况下，TLS 1.x 将 SCH_SEND_AUX_RECORD 标记传递给基础 SCHANNEL API
 
@@ -14,7 +14,7 @@ ms.locfileid: "85615611"
 
 #### <a name="suggestion"></a>建议
 
-如果此更改中断了与现有服务器的通信，则可以将以下开关添加到应用配置文件的 [<](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) 部分中的 [<](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 元素，禁止发送 [SCH_SEND_AUX_RECORD](https://docs.microsoft.com/windows/win32/api/schannel/ns-schannel-schannel_cred) 标记并还原之前不将数据拆分为单独记录的行为：
+如果此更改中断了与现有服务器的通信，则可以将以下开关添加到应用配置文件的 [`<runtime>`](~/docs/framework/configure-apps/file-schema/runtime/runtime-element.md) 部分中的 [`<AppContextSwitchOverrides>`](~/docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 元素，禁止发送 [SCH_SEND_AUX_RECORD](https://docs.microsoft.com/windows/win32/api/schannel/ns-schannel-schannel_cred) 标记并还原之前不将数据拆分为单独记录的行为：
 
 ```xml
 <runtime>
@@ -25,7 +25,7 @@ ms.locfileid: "85615611"
 > [!IMPORTANT]
 > 此设置仅用于后向兼容性。 否则不建议使用它。
 
-| “属性”    | 值       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 边缘        |
 | Version | 4.6         |

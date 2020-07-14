@@ -2,12 +2,12 @@
 title: 设计基础结构持久性层
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 在基础结构持久性层的设计中探索存储库模式。
 ms.date: 10/08/2018
-ms.openlocfilehash: 1b2665e81ade60affa84563121c04bca08537f07
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 3c18582eb5db61a61b366c06f361d297e698b39a
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988474"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100842"
 ---
 # <a name="design-the-infrastructure-persistence-layer"></a>设计基础结构持久性层
 
@@ -129,4 +129,4 @@ public interface IRepository<T> where T : IAggregateRoot
 
 >[!div class="step-by-step"]
 >[上一页](domain-events-design-implementation.md)
->[下一页](infrastructure-persistence-layer-implemenation-entity-framework-core.md)
+>[下一页](infrastructure-persistence-layer-implementation-entity-framework-core.md)

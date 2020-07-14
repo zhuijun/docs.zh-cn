@@ -9,12 +9,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 7736a2a26b37d8fbfac98328f94ce3c9a25be181
-  ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+  ms.openlocfilehash: a82fe645524e526d0373a4e4733c2fef9ca7c14f
+  ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/06/2020
-  ms.locfileid: "82860994"
+  ms.lasthandoff: 07/09/2020
+  ms.locfileid: "86174109"
 items:
 - durationInMinutes: 2
   content: >
@@ -53,7 +53,7 @@ items:
     上一步使用了字符串内插将一个字符串插入到了另一字符串中。 不过，作为内插字符串表达式一部分的各个内插表达式可以是任何数据类型。 下面让我们在内插字符串中添加多种数据类型表达式的值。
 
 
-    在以下示例中，我们首先定义了具有 `Name`、`Price` 和 `perPackage` 成员的 [tuple](../../tuples.md)。 在交互式窗口中运行以下代码：
+    在以下示例中，我们首先定义了具有 `Name`、`Price` 和 `perPackage` 成员的 [tuple](../../language-reference/builtin-types/value-tuples.md)。 在交互式窗口中运行以下代码：
 
 
     ```csharp

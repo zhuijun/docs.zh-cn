@@ -8,12 +8,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 406e5b8bbe0802146a65bb4b9a053e753a7827ee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0a05b2b0f3f2a8377fdba6144b8aeb12bdee1086
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398267"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86172946"
 ---
 # <a name="value-types-c-reference"></a>值类型（C# 参考）
 
@@ -56,7 +56,7 @@ C# 提供以下内置值类型，也称为“简单类型”  ：
 
 - 常数表达式的操作数都是简单类型的常数，在编译时进行评估。
 
-从 C# 7.0 开始，C# 支持[值元组](../../tuples.md)。 值元组是值类型，而不是简单类型。
+从 C# 7.0 开始，C# 支持[值元组](value-tuples.md)。 值元组是值类型，而不是简单类型。
 
 ## <a name="c-language-specification"></a>C# 语言规范
 

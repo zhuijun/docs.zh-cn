@@ -4,12 +4,12 @@ description: 了解 ASP.NET Web 应用程序适合使用哪个 Azure 迁移路�
 author: CESARDELATORRE
 ms.author: cesardl
 ms.date: 03/01/2020
-ms.openlocfilehash: a8ad946b03f97272cb8685620858af6b21a372dc
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 162dc8eb87dfd78d050b93b1c24ac573d7092126
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "81433348"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174291"
 ---
 # <a name="choose-the-right-azure-hosting-option"></a>选择正确的 Azure 托管选项
 
@@ -46,7 +46,7 @@ ms.locfileid: "81433348"
 
 ## <a name="networking-and-security-considerations"></a>网络和安全注意事项
 
-将应用程序部署到 Microsoft Azure 等公有云时，可能需要通过[创建外围网络](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/)（例如，[Azure 与本地之间的外围网络](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid)，或 [Azure 与 Internet 之间的外围网络](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-dmz)），来隔离并保护特定的网络。 可以使用 [Azure 虚拟网络](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)实施外围网络。
+将应用程序部署到 Microsoft Azure 等公有云时，可能需要通过[创建外围网络](/azure/architecture/reference-architectures/dmz/)（例如，[Azure 与本地之间的外围网络](/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid)，或 [Azure 与 Internet 之间的外围网络](/azure/architecture/reference-architectures/dmz/secure-vnet-dmz)），来隔离并保护特定的网络。 可以使用 [Azure 虚拟网络](/azure/virtual-network/virtual-networks-overview)实施外围网络。
 
 使用 Azure 虚拟网络可以：
 
@@ -57,15 +57,15 @@ ms.locfileid: "81433348"
 - 使用虚拟设备创建复杂的网络拓扑
 - 向应用程序提供独立且高度安全的环境
 
-若要开始构建自己的虚拟网络，请参阅 [Azure 虚拟网络文档](https://docs.microsoft.com/azure/virtual-network/)。
+若要开始构建自己的虚拟网络，请参阅 [Azure 虚拟网络文档](/azure/virtual-network/)。
 
 ## <a name="authentication-and-authorization-considerations-when-migrating-to-azure"></a>迁移到 Azure 时的身份验证和授权注意事项
 
 对于任何组织而言，迁移到云的最重要考虑因素是安全性。 大多数公司已投入大量的时间、资金和工程力量来设计和开发安全模型，并且必须能够利用现有投资，例如标识存储和单一登录解决方案。
 
-本地运行的许多现有企业 B2E .NET 应用程序使用 Active Directory 进行身份验证和标识管理。 使用 Azure AD Connect 可将本地目录与 Azure Active Directory 集成。 若要开始集成，请参阅[将本地目录与 Azure Active Directory 集成](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect)。
+本地运行的许多现有企业 B2E .NET 应用程序使用 Active Directory 进行身份验证和标识管理。 使用 Azure AD Connect 可将本地目录与 Azure Active Directory 集成。 若要开始集成，请参阅[将本地目录与 Azure Active Directory 集成](/azure/active-directory/connect/active-directory-aadconnect)。
 
-请参阅[混合标识解决方案的标识要求](https://docs.microsoft.com/azure/active-directory/active-directory-hybrid-identity-design-considerations-business-needs)进行 Azure Active Directory 相关的其他规划。
+请参阅[混合标识解决方案的标识要求](/azure/active-directory/active-directory-hybrid-identity-design-considerations-business-needs)进行 Azure Active Directory 相关的其他规划。
 
 其他身份验证协议选项包括消费型应用程序中经常使用的 [OAuth](https://en.wikipedia.org/wiki/OAuth) 和 [OpenID](https://en.wikipedia.org/wiki/OpenID)。 使用自治标识数据库（例如，IdentityServer4 使用 OAuth 包装的 ASP.NET 标识 SQL 数据库）时，通常不需要与本地数据库或目录建立连接。
 

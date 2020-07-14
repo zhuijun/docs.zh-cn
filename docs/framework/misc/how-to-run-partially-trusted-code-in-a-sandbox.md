@@ -1,5 +1,6 @@
 ---
 title: 如何：运行沙盒中部分受信任的代码
+description: 了解如何在 .NET 中的沙盒中运行部分受信任的代码。 AppDomain 类是一种对托管应用程序进行沙盒处理的有效方法。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - partially trusted code
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - restricted security environment
 - code security, sandboxing
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
-ms.openlocfilehash: b2f5a72e747f6c71743a7b22fe9f1962ac2f6b53
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4f186f1d901b51dd4c61ba6b22197465a41f2c44
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181184"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86282029"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>如何：运行沙盒中部分受信任的代码
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -114,7 +115,7 @@ AppDomain.CreateDomain( string friendlyName,
   
     - 可以使用指向不包含你的程序集的位置的基本代码。  
   
-    - 可以在完全信任 (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>) 的 <xref:System.Security.CodeAccessPermission.Assert%2A> 下进行创建，这样就可以创建关键类的一个实例。 （每当程序集没有透明度标记且加载为完全受信任的标记时，就会发生这种情况。因此，您必须小心只创建您信任的代码使用此函数，我们建议您仅在新的应用程序域中创建完全受信任的类的实例。  
+    - 可以在完全信任 (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>) 的 <xref:System.Security.CodeAccessPermission.Assert%2A> 下进行创建，这样就可以创建关键类的一个实例。  (如果程序集没有透明标记并加载为完全受信任，则会发生这种情况。 ) 因此，你必须小心地仅创建你信任的具有此函数的代码，我们建议你仅在新应用程序域中创建完全受信任的类的实例。  
   
     ```csharp
     ObjectHandle handle = Activator.CreateInstanceFrom(  

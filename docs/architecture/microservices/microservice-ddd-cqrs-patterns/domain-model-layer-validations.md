@@ -2,12 +2,12 @@
 title: 在域模型层中设计验证
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解域模型验证的关键概念。
 ms.date: 10/08/2018
-ms.openlocfilehash: d2efc5f3b3267c4573409952791c6e883a01aae2
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 94df2d6441581fbbae479da2524d6ffce2037d68
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988500"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100907"
 ---
 # <a name="design-validations-in-the-domain-model-layer"></a>在域模型层中设计验证
 
@@ -53,7 +53,7 @@ public void SetAddress(string line1, string line2,
 
 ### <a name="use-validation-attributes-in-the-model-based-on-data-annotations"></a>在模型中根据数据注释使用验证属性
 
-数据注释与 Required 或 MaxLength 特性一样，可用于配置 EF Core 数据库字段属性（[表映射](infrastructure-persistence-layer-implemenation-entity-framework-core.md#table-mapping)部分对此进行了详细说明）。自 .NET Framework 中的 EF 4.x 以来，可使用数据注释进行实体验证，但[它们不再适用于 EF Core 中的实体验证](https://github.com/dotnet/efcore/issues/3680)（<xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType> 方法也是如此）。
+数据注释与 Required 或 MaxLength 特性一样，可用于配置 EF Core 数据库字段属性（[表映射](infrastructure-persistence-layer-implementation-entity-framework-core.md#table-mapping)部分对此进行了详细说明）。自 .NET Framework 中的 EF 4.x 以来，可使用数据注释进行实体验证，但[它们不再适用于 EF Core 中的实体验证](https://github.com/dotnet/efcore/issues/3680)（<xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType> 方法也是如此）。
 
 在模型绑定期间（即，在像往常一样调用控制器的操作之前），数据注释和 <xref:System.ComponentModel.DataAnnotations.IValidatableObject> 接口仍然可用于模型验证，但该模型应该是一个视图模型或 DTO，因此这属于 MVC 或 API 方面的问题，而不是域模型方面的问题。
 

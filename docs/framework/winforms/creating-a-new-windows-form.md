@@ -6,18 +6,18 @@ helpviewer_keywords:
 - Windows Forms, getting started
 - Windows Forms, creating a new form
 ms.assetid: c725559c-803e-4725-80fa-96aba93de29a
-ms.openlocfilehash: f1ef899e46c804cb174814b0abbd9490ce6221d5
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: e9431ebad3fee4eaa1d39f4ac95a57a6d0313fc8
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325944"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281714"
 ---
 # <a name="creating-a-new-windows-form"></a>创建新的 Windows 窗体
 本主题包含介绍如何创建你的第一个 Windows 窗体应用程序的主题链接。 此外，本部分中的主题还将介绍一些基本的词汇和当开始创建 Windows 窗体应用程序时，应该了解的准则。 若要详细了解 Windows 窗体应用程序、可以对这些应用程序使用的控件、事件和处理事件以及如何处理用户的输入，请参阅相关主题列表。  
   
 ## <a name="in-this-section"></a>本节内容  
- [Windows 窗体坐标](windows-forms-coordinates.md)。  
+ [Windows 窗体坐标](windows-forms-coordinates.md)  
  描述客户端和屏幕坐标。  
   
  [如何：通过命令行创建 Windows 窗体应用程序](how-to-create-a-windows-forms-application-from-the-command-line.md)  
