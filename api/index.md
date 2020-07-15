@@ -2,18 +2,18 @@
 layout: ApiBrowserPage
 hide_bc: true
 title: .NET API 浏览器
-quickFilterColumn1: netcore-3.1,netframework-4.8,netstandard-2.1,aspnetcore-3.1
-quickFilterColumn2: xamarin-forms,efcore-3.1,roslyn-dotnet
+quickFilterColumn1: net-5.0,netcore-3.1,netstandard-2.1,netframework-4.8
+quickFilterColumn2: xamarin-forms,aspnetcore-3.1,efcore-3.1,roslyn-dotnet
 quickFilterColumn3: azure-dotnet,ml-dotnet,spark-dotnet
 ms.topic: landing-page
 ms.custom: updateeachrelease
 ms.date: 01/24/2020
-ms.openlocfilehash: 2c3901f8d5c8bb0c7ffde31b1aec19a81af9f4ce
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b1781d0dddbcb368e0e26bd41f51eeaeeba809e0
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78239919"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86308853"
 ---
 # <a name="net-api-browser"></a>.NET API 浏览器
 
