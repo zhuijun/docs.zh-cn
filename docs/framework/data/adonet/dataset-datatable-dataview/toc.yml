@@ -1,6 +1,8 @@
 - name: 数据集、数据表和数据视图
   href: index.md
   items:
+    - name: 安全指南
+      href: security-guidance.md
     - name: 创建数据集
       href: creating-a-dataset.md
     - name: 将数据表添加到数据集中
