@@ -11,12 +11,12 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 07/10/2020
-  ms.openlocfilehash: d6ff1e976117bedd4a64b47a9856bbd64dff0080
-  ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+  ms.openlocfilehash: aa4090f5de075015aae7fdbd85905ec5ace2e757
+  ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/10/2020
-  ms.locfileid: "86226642"
+  ms.lasthandoff: 07/13/2020
+  ms.locfileid: "86281649"
 highlightedContent:
   items:
   - title: 下载 .NET
@@ -186,6 +186,8 @@ additionalContent:
         text: Xamarin.Android
       - url: /xamarin/xamarin-forms
         text: Xamarin.Forms
+      - url: /azure/developer/mobile-apps
+        text: 使用 Azure 开发 Xamarin 应用
     - title: 桌面
       links:
       - url: /uwp
