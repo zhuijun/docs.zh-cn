@@ -11,25 +11,25 @@ helpviewer_keywords:
 - security [.NET Framework], method access
 - method access security
 ms.assetid: f7c2d6ec-3b18-4e0e-9991-acd97189d818
-ms.openlocfilehash: 287c3651be0272f1941fb2320640970d70a1bd0f
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: a7ef419cf3959cf7a3ffde874353dacd3815c81a
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86282042"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309386"
 ---
 # <a name="securing-method-access"></a>保护方法访问
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  某些方法可能不适用于允许任意不受信任的代码进行调用。 此类方法会带来几种风险：方法可能会提供一些受限制的信息；它可能信任传递给它的任何信息；它可能不会对参数执行错误检查；如果使用错误的参数，它还可能出现故障或执行某些有害操作。 应该注意这些情况，并采取措施以帮助保护这类方法。  
   
- 在某些情况下，可能需要限制并不打算用于公共用途但仍须为公共方法的方法。 例如，可能有一个需在你自己的 DLL 间调用（从而必须为公共接口）的接口，但你不希望将其以公共方式公开，以防止客户使用它，或防止恶意代码利用入口点进入组件中。 限制不打算用于公共用途（但必须为公共方法）的方法的另一个常见理由是：为了避免不得不记录和支持可能是内部接口的接口。  
+ 在某些情况下，可能需要限制并不打算用于公共用途但仍须为公共方法的方法。 例如，可能有一个需在你自己的 DLL 间调用（从而必须为公共接口）的接口，但你不希望将其以公共方式公开，以防止客户使用它，或防止恶意代码利用入口点进入组件中。 限制不打算公共使用的方法（但必须是公共方法）的另一个常见原因是为了避免必须记录和支持可能是内部接口的内容。  
   
  托管代码提供几种方法来限制方法访问：  
   
-- 如果可以信任类、程序集或派生类，则限制它们的可访问性的范围。 这是限制方法访问的最简单的方法。 请注意，派生类的可信度通常可低于其从中派生的类，尽管在某些情况下它们共享父类的标识。 特别是，不要从**受**信任的关键字推断信任，这不一定在安全上下文中使用。  
+- 如果可以信任类、程序集或派生类，则限制它们的可访问性的范围。 这是限制方法访问的最简单的方法。 通常，派生类的可信度可能低于它们派生自的类，但在某些情况下，它们共享父类的标识。 特别是，不要从关键字推断信任 `protected` ，这并不一定在安全上下文中使用。  
   
-- 限制对指定标识的调用方的方法访问-实质上，任何特定[证据](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7y5x1hcd%28v=vs.100%29) (强名称、发布服务器、区域等) 你选择。  
+- 限制对指定标识的调用方的方法访问，本质上是你选择的任何特定[证据](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7y5x1hcd%28v=vs.100%29)（强名称、发布者、区域等）。  
   
 - 限制对具有你选择的任何权限的调用方的方法访问。  
   
@@ -56,7 +56,7 @@ public class Class1
 ```  
   
 ## <a name="excluding-classes-and-members-from-use-by-untrusted-code"></a>防止不受信任的代码使用类和成员  
- 使用本节中所示的声明来防止部分受信任的代码使用特定的类、方法以及属性和事件。 将这些声明应用到类，即可对类的所有方法、属性和事件应用保护；但请注意，字段访问不受声明性安全影响。 也请注意，链接要求仅帮助不受直接调用方的攻击，可能仍会受到引诱攻击。  
+ 使用本节中所示的声明来防止部分受信任的代码使用特定的类、方法以及属性和事件。 通过将这些声明应用于类，可以将保护应用于其所有方法、属性和事件。 但是，字段访问不受声明性安全的影响。 也请注意，链接要求仅帮助不受直接调用方的攻击，可能仍会受到引诱攻击。  
   
 > [!NOTE]
 > .NET Framework 4 中引入了一个新的透明度模型。 [安全透明的代码，级别 2](security-transparent-code-level-2.md)模型用属性标识安全代码 <xref:System.Security.SecurityCriticalAttribute> 。 安全关键代码需要调用方和继承者均完全受信任。 在早期 .NET Framework 版本中的代码访问安全性规则下运行的程序集可以调用级别 2 程序集。 在这种情况下，安全关键属性将被视为完全信任的链接要求。  
@@ -233,11 +233,11 @@ class Implemented : ICanCastToMe
 ## <a name="virtual-internal-overrides-or-overloads-overridable-friend"></a>Virtual Internal 重写或 Overloads Overridable Friend  
   
 > [!NOTE]
-> 本部分对在 `virtual` `internal` `Overloads` `Overridable` `Friend` Visual Basic) 中将方法声明为和 (时的安全问题进行了警告。 此警告仅适用于 .NET Framework 版本1.0 和1.1，不适用于更高版本。  
+> 本部分对将方法声明为 `virtual` 和 `internal` （ `Overloads` `Overridable` `Friend` 在 Visual Basic 中）时的安全问题进行了警告。 此警告仅适用于 .NET Framework 版本1.0 和1.1，不适用于更高版本。  
   
- 在 .NET Framework 版本1.0 和1.1 中，你必须了解类型系统可访问性在确认你的代码对其他程序集不可用时的细微差别。 在 Visual Basic) 可以重写父类项的情况中，声明为**虚拟**和**内部** (重载可重写**Friend**的方法，并且只能在同一程序集中使用该方法，因为它是内部的。 但是，重写的可访问性由**virtual**关键字确定，只要代码有权访问类本身，就可以从其他程序集进行重写。 如果重写的可能性导致了问题，请使用声明性安全修复此问题，如果不是绝对必需的，则删除**虚拟**关键字。  
+ 在 .NET Framework 版本1.0 和1.1 中，你必须了解类型系统可访问性在确认你的代码对其他程序集不可用时的细微差别。 声明为**虚拟**和**内部**的方法（Visual Basic 中的重载可重写的**Friend** ）可以重写父类项，并且只能在同一程序集内使用，因为它是内部的。 但是，重写的可访问性由**virtual**关键字确定，只要代码有权访问类本身，就可以从其他程序集进行重写。 如果重写的可能性导致了问题，请使用声明性安全修复此问题，如果不是绝对必需的，则删除**虚拟**关键字。  
   
- 请注意，即使语言编译器通过编译错误防止这些重写，使用其他编译器编写的代码也可能发生重写。  
+ 即使语言编译器阻止这些重写的编译错误，使用其他编译器编写的代码也可能会重写。  
   
 ## <a name="see-also"></a>另请参阅
 

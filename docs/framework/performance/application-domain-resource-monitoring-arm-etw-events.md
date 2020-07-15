@@ -1,16 +1,17 @@
 ---
 title: 应用程序域资源监视 (ARM) ETW 事件
+description: 阅读有关 .NET 中的应用程序域资源监视（ARM） ETW 事件的信息，例如 ThreadCreated、AppDomainMemAllocated、AppDomainMemSurvived 等。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ETW, application domain monitoring events
 - application domain monitoring events [.NET Framework]
 ms.assetid: d38ff268-a2ee-434e-b504-d570880e0289
-ms.openlocfilehash: 0e453b2bafffd9e07a1bdddd97282c5b97f5483d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d118b3196b019a804df5399464cb86f7492c61b0
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716217"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309776"
 ---
 # <a name="application-domain-resource-monitoring-arm-etw-events"></a>应用程序域资源监视 (ARM) ETW 事件
 
@@ -22,20 +23,20 @@ ms.locfileid: "75716217"
 
 下表显示了关键字和级别。 有关详细信息，请参阅[CLR ETW 关键字和级别](clr-etw-keywords-and-levels.md)。
 
-|引发事件的关键字|Level|
+|引发事件的关键字|级别|
 |-----------------------------------|-----------|
 |`AppDomainResourceManagementKeyword` (0x800)|信息性 (4)|
 |`ThreadingKeyword` (0x10000)|信息性 (4)|
 
 下表显示了事件信息：
 
-|Event|事件 ID|在发生以下情况时引发|
+|事件|事件 ID|在发生以下情况时引发|
 |-----------|--------------|-----------------|
 |`ThreadCreated`|85|已为应用程序域创建了一个线程。|
 
 下表显示了事件数据：
 
-|字段名|数据类型|描述|
+|字段名|数据类型|说明|
 |----------------|---------------|-----------------|
 |ThreadID|win:UInt64|已创建的线程 ID。|
 |AppDomainID|win:UInt64|正在报告其线程活动的应用程序域的标识符。|
@@ -48,19 +49,19 @@ ms.locfileid: "75716217"
 
 下表显示了关键字和级别：
 
-|引发事件的关键字|Level|
+|引发事件的关键字|级别|
 |-----------------------------------|-----------|
 |`AppDomainResourceManagementKeyword` (0x800)|信息性 (4)|
 
 下表显示了事件信息：
 
-|Event|事件 ID|在发生以下情况时引发|
+|事件|事件 ID|在发生以下情况时引发|
 |-----------|--------------|-----------------|
 |`AppDomainMemAllocated`|83|应用程序域中分配每 4 MB 的内存（大约）。|
 
 下表显示了事件数据：
 
-|字段名|数据类型|描述|
+|字段名|数据类型|说明|
 |----------------|---------------|-----------------|
 |AppDomainID|win:UInt64|正在报告其资源使用情况的应用程序域的标识符。|
 |已分配|win:UInt64|自应用程序域创建以来在此应用程序域中分配的字节总数（不减去已释放的内存量）。|
@@ -70,22 +71,22 @@ ms.locfileid: "75716217"
 
 下表显示了关键字和级别：
 
-|引发事件的关键字|Level|
+|引发事件的关键字|级别|
 |-----------------------------------|-----------|
 |`AppDomainResourceManagementKeyword` (0x800)|信息性 (4)|
 
 下表显示了事件信息：
 
-|Event|事件 ID|在发生以下情况时引发|
+|事件|事件 ID|在发生以下情况时引发|
 |-----------|--------------|-----------------|
 |`AppDomainMemSurvived`|84|每个垃圾回收已结束。|
 
 下表显示了事件数据：
 
-|字段名|数据类型|描述|
+|字段名|数据类型|说明|
 |----------------|---------------|-----------------|
 |AppDomainID|win:UInt64|正在报告其资源使用情况的域的标识符。|
-|已保留|win:UInt64|上次回收后保留下来的、已知由此应用程序域保留的字节数。 此数字在完整回收之后准确且完整，但在暂时的回收之后可能不完整。|
+|Survived|win:UInt64|上次回收后保留下来的、已知由此应用程序域保留的字节数。 此数字在完整回收之后准确且完整，但在暂时的回收之后可能不完整。|
 |ProcessSurvived|win:UInt64|从上一次回收中保留的总字节数。 完整回收之后，该数字表示托管堆中实时保留的字节数。 暂时回收之后，该数字表示暂时生成中实时保留的字节数。|
 |ClrInstanceID|win:UInt16|CLR 或 CoreCLR 的实例的唯一 ID。|
 
@@ -93,20 +94,20 @@ ms.locfileid: "75716217"
 
 下表显示了关键字和级别：
 
-|引发事件的关键字|Level|
+|引发事件的关键字|级别|
 |-----------------------------------|-----------|
 |`AppDomainResourceManagementKeyword` (0x800)|信息性 (4)|
 |`ThreadingKeyword` (0x10000)|信息性 (4)|
 
 下表显示了事件信息：
 
-|Event|事件 ID|在发生以下情况时引发|
+|事件|事件 ID|在发生以下情况时引发|
 |-----------|--------------|-----------------|
 |`ThreadAppDomainEnter`|87|线程进入应用程序域。|
 
 下表显示了事件数据：
 
-|字段名|数据类型|描述|
+|字段名|数据类型|说明|
 |----------------|---------------|-----------------|
 |ThreadID|win:UInt64|线程标识符。|
 |AppDomainID|win:UInt64|应用程序域标识符。|
@@ -116,20 +117,20 @@ ms.locfileid: "75716217"
 
 下表显示了关键字和级别：
 
-|引发事件的关键字|Level|
+|引发事件的关键字|级别|
 |-----------------------------------|-----------|
 |`AppDomainResourceManagementKeyword` (0x800)|信息性 (4)|
 |`ThreadingKeyword` (0x10000)|信息性 (4)|
 
 下表显示了事件信息：
 
-|Event|事件 ID|在发生以下情况时引发|
+|事件|事件 ID|在发生以下情况时引发|
 |-----------|--------------|-----------------|
 |`ThreadTerminated`|86|线程终止。|
 
 下表显示了事件数据：
 
-|字段名|数据类型|描述|
+|字段名|数据类型|说明|
 |----------------|---------------|-----------------|
 |ThreadID|win:UInt64|线程标识符。|
 |AppDomainID|win:UInt64|应用程序域标识符。|

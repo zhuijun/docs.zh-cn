@@ -2,12 +2,12 @@
 title: 将 Windows 应用商店应用迁移到 .NET Native
 ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
-ms.openlocfilehash: 987669fc51eeaf7e3bdef3e91a2f1ce23164a055
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5e5c655d0e8d6f1730f27d35525692e110b3c80c
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81389707"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309191"
 ---
 # <a name="migrate-your-windows-store-app-to-net-native"></a>将 Windows 应用商店应用迁移到 .NET Native
 
@@ -58,7 +58,7 @@ ms.locfileid: "81389707"
 > [!NOTE]
 > 在将应用程序移植到 .NET Native 时，应彻底测试所有动态代码路径。
 
-.NET Native 的默认配置对于大多数开发人员来说已经足够，但某些开发人员可能希望通过使用运行时指令（. .xml）文件来微调其配置。 此外，在某些情况下，.NET Native 编译器无法确定哪些元数据必须可用于反射，并依赖于提示，尤其是在以下情况下：
+.NET Native 的默认配置对于大多数开发人员来说已经足够，但某些开发人员可能希望通过使用运行时指令（.rd.xml）文件来微调其配置。 此外，在某些情况下，.NET Native 编译器无法确定哪些元数据必须可用于反射，并依赖于提示，尤其是在以下情况下：
 
 - <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> 和 <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> 等一些构造无法静态确定。
 
@@ -79,7 +79,7 @@ ms.locfileid: "81389707"
 
 - 反射到 .NET Framework 类库中的类型和成员的私有反射不受支持。 然而，你可以反射到自己的私有类型和成员以及第三方库的类型和成员。
 
-- <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType> 属性为表示返回值的 `false` 对象正确返回 <xref:System.Reflection.ParameterInfo> 。 在 Windows 应用商店应用的 .NET 中，它返回 `true`。 中间语言 (IL) 不直接支持此操作，且解释需要由语言来进行。
+- <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType> 属性为表示返回值的 `false` 对象正确返回 <xref:System.Reflection.ParameterInfo> 。 在 Windows 应用商店应用的 .NET 中，它返回 `true`。 中间语言（IL）不直接支持这种情况，而解释会留给语言。
 
 - 位于 <xref:System.RuntimeFieldHandle> 和 <xref:System.RuntimeMethodHandle> 结构上的公共成员不受支持。 这些受到支持的类型仅用于 LINQ、表达式树和静态阵列初始化。
 
@@ -147,7 +147,7 @@ ms.locfileid: "81389707"
 
 <xref:System.Runtime.Serialization.KnownTypeAttribute.%23ctor%28System.String%29> 特性不受支持。 使用 <xref:System.Runtime.Serialization.KnownTypeAttribute.%23ctor%28System.Type%29> 特性。
 
-资源
+**资源**
 
 不支持使用带 <xref:System.Diagnostics.Tracing.EventSource> 类的本地化资源。 <xref:System.Diagnostics.Tracing.EventSourceAttribute.LocalizationResources%2A?displayProperty=nameWithType> 属性无法定义本地化资源。
 
@@ -278,7 +278,7 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 - 委托
 
-- 字符串（Unicode、Ansi 和 HSTRING）
+- 字符串（Unicode、ANSI 和 HSTRING）
 
 - 结构（`byref` 和 `byval`）
 

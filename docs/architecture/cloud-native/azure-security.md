@@ -2,12 +2,12 @@
 title: 适用于云原生应用的 Azure 安全性
 description: 构建适用于 Azure 的云本机 .NET 应用 |适用于云原生应用的 Azure 安全性
 ms.date: 05/13/2020
-ms.openlocfilehash: a39b64477eb9e896c6603e5609ede653bfee1e07
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 223d9e77aca611697958981bf2ee3a630fb9fffb
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614248"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374489"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>适用于云原生应用的 Azure 安全性
 
@@ -66,7 +66,7 @@ Azure 本身在[Microsoft 内部](https://azure.microsoft.com/resources/videos/r
 
 .NET Framework 已是一个非常安全的框架。 它避免了某些非托管代码的缺陷，如遍历数组的结尾。 工作正在进行，以便在发现安全漏洞时进行修复。 甚至还有一个[bug 奖励程序](https://www.microsoft.com/msrc/bounty)，它可以向研究人员提供框架中的问题并进行报告，而不是利用这些问题。
 
-有多种方法可以使 .NET 代码更安全。 遵循适用于 .NET 的[安全编码准则](https://docs.microsoft.com/dotnet/standard/security/secure-coding-guidelines)这类准则是确保代码完全安全的合理步骤。 [OWASP top 10](https://owasp.org/www-project-top-ten/)是另一个可用于构建安全代码的重要指南。
+有多种方法可以使 .NET 代码更安全。 遵循适用于 .NET 的[安全编码准则](../../standard/security/secure-coding-guidelines.md)这类准则是确保代码完全安全的合理步骤。 [OWASP top 10](https://owasp.org/www-project-top-ten/)是另一个可用于构建安全代码的重要指南。
 
 在生成过程中，可以使用生成过程来检测源代码中的问题，然后再将其投入生产。 大多数项目都具有其他某些包的依赖关系。 可以扫描过期包的工具将会在夜间生成中捕获问题。 即使在构建 Docker 映像时，检查并确保基本映像没有已知的漏洞也是非常有用的。 要检查的另一件事是没有人无意中签入凭据。
 
@@ -139,7 +139,7 @@ RBAC 中的第一个组件是一个安全主体。 安全主体可以是用户�
 
 在测试安全主体是否具有特定权限时，会考虑角色和作用域的组合。 这种组合提供了一种强大的授权机制。
 
-## <a name="deny"></a>拒绝
+## <a name="deny"></a>Deny
 
 以前，RBAC 只允许使用 "允许" 规则。 此行为使某些范围的生成变得复杂。 例如，允许安全主体访问所有存储帐户，其中一个权限要求向可能会无穷的存储帐户列表授予显式权限。 每次创建新的存储帐户时，都必须将其添加到此帐户列表中。 这就增加了当然不需要的管理开销。
 

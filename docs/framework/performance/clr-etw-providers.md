@@ -1,23 +1,24 @@
 ---
 title: CLR ETW 提供程序
+description: 查看有关 Windows （ETW）提供程序的两个公共语言运行时（CLR）事件跟踪的详细信息： runtimne 提供程序和断开提供程序。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ETW, CLR providers
 - CLR ETW providers
 ms.assetid: 0beafad4-b2c8-47f4-b342-83411d57a51f
-ms.openlocfilehash: 33ef7491c2bffeda4ef737ed8f826cdfbfbb119d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9f86e8334482880c4f7cb23ec93a3c826c083389
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401003"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309646"
 ---
 # <a name="clr-etw-providers"></a>CLR ETW 提供程序
 公共语言运行时 (CLR) 具有两个提供程序：运行时提供程序和断开提供程序。  
   
  运行时提供程序根据启用的关键字（事件的类别）引发事件。 例如，可以通过启用 `LoaderKeyword` 关键字收集加载程序事件。  
   
- Windows （ETW） 事件事件跟踪将登录到具有 .etl 扩展名的文件，该文件以后可以根据需要以逗号分隔的值 （.csv） 文件进行后处理。 有关如何将 .etl 文件转换为 .csv 文件的信息，请参阅[控制 .NET Framework 日志记录](controlling-logging.md)。  
+ Windows 事件跟踪（ETW）事件被记录到一个文件中，该文件的 .etl 扩展名为 .etl，以后可根据需要在逗号分隔值（.csv）文件中对其进行后期处理。 有关如何将 .etl 文件转换为 .csv 文件的信息，请参阅[控制 .NET Framework 日志记录](controlling-logging.md)。  
   
 ## <a name="the-runtime-provider"></a>运行时提供程序  
  运行时提供程序是主 CLR ETW 提供程序。  
@@ -35,7 +36,7 @@ ms.locfileid: "79401003"
   
  通常情况下，ETW 日志记录在进程启动前启用，在进程退出后关闭。 但是，如果在执行进程的过程中打开 ETW 日志记录功能，则需要有关进程的其他信息。 例如，对于符号解析，必须记录在启用日志记录功能前已经加载的方法的方法事件。  
   
- `DCStart` 和 `DCEnd` 事件捕获进程在数据收集开始和停止时的状态。 （国家是指高级别的信息，包括已编译的及时 （JIT） 的方法和加载的程序集。这两个事件可以提供有关过程中已经发生的情况的信息;例如，哪些方法是 JIT 编译的，等等。  
+ `DCStart` 和 `DCEnd` 事件捕获进程在数据收集开始和停止时的状态。 （状态指的是高级别的信息，包括已实时（JIT）编译的方法和已加载的程序集。这两个事件可以提供有关进程中已发生的事件的信息;例如，JIT 编译了哪些方法，等等。  
   
  在使用断开提供程序时只引发名称中包含 `DC`、`DCStart`、`DCEnd` 或 `DCInit` 的事件。 此外，仅在使用断开提供程序时才引发这些事件。  
   

@@ -1,16 +1,17 @@
 ---
 title: .NET Framework 性能
+description: 设计和规划 .NET 应用程序的性能。 使用 Microsoft 提供的工具来衡量应用程序的性能并做出改进。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - performance [.NET Framework]
 - reliability [.NET Framework]
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
-ms.openlocfilehash: 47d85ae63f0594b778523425631ff54f9f3ca32f
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: ee8260056bd87dfc66d96e394f9b93bb9427afd8
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504088"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309750"
 ---
 # <a name="net-framework-performance"></a>.NET Framework 性能
 如果想要创建一个具有卓越性能的应用，你应该像设计应用的任何其他功能一样设计和规划性能。 你可以使用由 Microsoft 所提供的用于测量你的应用性能的工具，并对内存使用、代码吞吐量和响应能力进行改进（如果需要）。 本主题列出了 Microsoft 提供的性能分析工具，并提供了介绍应用开发特定领域性能的其他主题的链接。  
@@ -28,10 +29,10 @@ ms.locfileid: "77504088"
 ### <a name="performance-tools"></a>性能工具  
  以下是一些你可以与 .NET Framework 应用一起使用的性能工具。  
   
-|Tool|描述|  
+|工具|说明|  
 |----------|-----------------|  
-|Visual Studio 性能分析|用于分析你的 .NET Framework 应用的 CPU 使用情况，该应用将部署到运行 Windows 操作系统的计算机。<br /><br /> 在打开一个项目后，此工具可以从 Visual Studio 中的“调试”菜单处获取。 有关更多信息，请参见 [性能资源管理器](/visualstudio/profiling/performance-explorer)。 **注意：** 当面向 Windows Phone 时，请使用 Windows Phone 应用程序分析（参见下一行）。|  
-|Windows Phone 应用程序分析|用于分析在你的 Windows Phone 应用中的 CPU 和内存、网络数据传输率、应用响应能力和电池消耗。<br /><br /> 安装 [Windows Phone SDK](https://go.microsoft.com/fwlink/?LinkId=265773) 后，此工具可以从 Visual Studio 中 Windows Phone 项目的“调试”菜单获取。 有关详细信息，请参阅[Windows Phone 8 的应用程序分析](https://docs.microsoft.com/previous-versions/windows/apps/jj215908(v=vs.105))。|  
+|Visual Studio 性能分析|用于分析你的 .NET Framework 应用的 CPU 使用情况，该应用将部署到运行 Windows 操作系统的计算机。<br /><br /> 在打开一个项目后，此工具可以从 Visual Studio 中的“调试”菜单处获取****。 有关更多信息，请参见 [性能资源管理器](/visualstudio/profiling/performance-explorer)。 **注意**：面向 Windows Phone 时，请使用 Windows Phone 应用程序分析（参见下一行）。|  
+|Windows Phone 应用程序分析|用于分析在你的 Windows Phone 应用中的 CPU 和内存、网络数据传输率、应用响应能力和电池消耗。<br /><br /> 安装 [Windows Phone SDK](https://go.microsoft.com/fwlink/?LinkId=265773) 后，此工具可以从 Visual Studio 中 Windows Phone 项目的“调试”菜单获取****。 有关详细信息，请参阅[Windows Phone 8 的应用程序分析](https://docs.microsoft.com/previous-versions/windows/apps/jj215908(v=vs.105))。|  
 |[PerfView](https://www.microsoft.com/download/details.aspx?id=28567)|用于识别 CPU 以及与内存相关的性能问题。 此工具使用针对 Windows (ETW) 和 CLR 分析 API 的事件跟踪以提供高级内存和 CPU 调查以及关于垃圾回收和 JIT 编译的信息。 有关如何使用 PerfView 的详细信息，请参阅应用附带的教程和帮助文件：[第 9 频道视频教程](https://channel9.msdn.com/Series/PerfView-Tutorial)和[博客文章](https://docs.microsoft.com/archive/blogs/vancem/)。<br /><br /> 对于特定于内存的问题，请参阅[使用 PerfView 进行内存调查](https://channel9.msdn.com/Series/PerfView-Tutorial/PerfView-Tutorial-9-NET-Memory-Investigation-Basics-of-GC-Heap-Snapshots)。|  
 |[Windows Performance Analyzer](https://www.microsoft.com/download/details.aspx?id=30652)|用于确定整体系统性能，如在多个应用在同一台计算机上运行时，你的应用的内存和存储使用情况。 此工具可从下载中心获得，作为适用于 Windows 8 的 Windows 评估和部署工具包（ADK）的一部分。 有关详细信息，请参阅 [Windows Performance Analyzer](/windows-hardware/test/wpt/windows-performance-analyzer)。|
   
@@ -41,18 +42,18 @@ ms.locfileid: "77504088"
 ## <a name="performance-by-app-type"></a>按应用程序类型的性能  
  每种 .NET Framework 应用都具有它自己的最佳实践、注意事项以及评估性能的工具。 下表提供指向特定 .NET Framework 应用类型的性能主题的链接。  
   
-|应用类型|查看|  
+|应用类型|请参阅|  
 |--------------|---------|  
 |针对所有平台的 .NET Framework 应用|[垃圾回收和性能](../../standard/garbage-collection/performance.md)<br /><br /> [性能提示](performance-tips.md)|  
-|Windows 8.x 应用商店应用编写于C++、 C#和 Visual Basic|[使用 C++、C# 和 Visual Basic 的 Windows 应用商店应用的性能最佳做法](https://docs.microsoft.com/previous-versions/windows/apps/hh750313%28v=win.10%29)|  
+|用 c + +、c # 和 Visual Basic 编写的 Windows 8.x 应用商店应用|[使用 C++、C# 和 Visual Basic 的 Windows 应用商店应用的性能最佳做法](https://docs.microsoft.com/previous-versions/windows/apps/hh750313%28v=win.10%29)|  
 |Windows Presentation Foundation (WPF)|[WPF 性能套件](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100))|  
 |ASP.NET|[ASP.NET 性能概述](https://docs.microsoft.com/previous-versions/aspnet/cc668225(v=vs.100))|  
   
 ## <a name="related-topics"></a>相关主题  
   
-|Title|描述|  
+|Title|说明|  
 |-----------|-----------------|  
-|[在 .NET Framework 应用程序中缓存](caching-in-net-framework-applications.md)|描述用于缓存数据以提高应用性能的技术。|  
-|[迟缓初始化](lazy-initialization.md)|描述如何按需初始化对象以提高性能，尤其是在应用启动时。|  
+|[.NET Framework 应用程序中的缓存](caching-in-net-framework-applications.md)|描述用于缓存数据以提高应用性能的技术。|  
+|[延迟初始化](lazy-initialization.md)|描述如何按需初始化对象以提高性能，尤其是在应用启动时。|  
 |[可靠性](reliability.md)|提供有关在服务器环境中防止异步异常的信息。|  
 |[编写大型的响应式 .NET Framework 应用](writing-large-responsive-apps.md)|提供从托管代码中重写的 C# 和 Visual Basic 编译器收集的性能提示，并且包括来自 C# 编译器的几个真实示例。|

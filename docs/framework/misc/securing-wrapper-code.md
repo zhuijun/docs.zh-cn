@@ -8,12 +8,12 @@ helpviewer_keywords:
 - secure coding, wrapper code
 - code security, wrapper code
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
-ms.openlocfilehash: 64c5b2455882ca121a6eeb0c0bbcbc4d04ed88cd
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 4338b3d0ab306501ea252407f386bdf89d191d6d
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281441"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309373"
 ---
 # <a name="securing-wrapper-code"></a>保护包装代码
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -51,7 +51,7 @@ ms.locfileid: "86281441"
  为了帮助防止此类安全漏洞，公共语言运行时将检查扩展到完全堆栈遍历请求中，对对由**LinkDemand**保护的方法、构造函数、属性或事件的任何间接调用。 这种保护会带来一些性能损失，并更改安全检查语义；完整的堆栈遍历需求可能会失败，其中会通过速度更快的单一级别检查。  
   
 ## <a name="assembly-loading-wrappers"></a>加载包装的程序集  
- 用于加载托管代码的几种方法，包括 <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>使用调用方的证据加载程序集。 如果包装任何这些方法，安全系统将使用代码的授予权限（而不是使用包装其调用方的权限）加载程序集。 不应使用不太受信任代码加载比包装器调用方的权限更高的代码。  
+ 用于加载托管代码的几种方法，包括 <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>使用调用方的证据加载程序集。 如果包装任何这些方法，安全系统将使用代码的授予权限（而不是使用包装其调用方的权限）加载程序集。 请勿允许不受信任的代码加载的代码的权限高于包装的调用方的权限。  
   
  否则，将会降低任何具有完全信任或比潜在调用方（）的信任程度明显更高的代码的安全性。 如果你的代码有一个公共方法，该方法采用字节数组，并将其传递给**assembly**，因此，它代表调用方创建一个程序集，这可能会破坏安全性。  
   
@@ -66,13 +66,13 @@ ms.locfileid: "86281441"
 - <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType>  
   
 ## <a name="demand-vs-linkdemand"></a>Demand VS LinkDemand  
- 声明性安全提供了两种类型相似但执行方法完全不同的安全检查。 你应该了解这两种形式，因为选择错误可能导安全性降低或性能受损。  
+ 声明性安全提供了两种类型的安全检查。 最好同时理解这两种形式，因为错误的选择可能会导致安全或性能下降。  
   
  声明性安全提供了下列安全检查：  
   
 - <xref:System.Security.Permissions.SecurityAction.Demand> 指示代码访问安全堆栈审核。 堆栈上的所有调用方必须具有特定权限或标识才能通过。 每次调用都会发生**需求**，因为堆栈可能包含不同的调用方。 如果重复调用一种方法，则每次都会执行安全检查。 **需求**是应对引诱攻击的良好保护;检测到未经授权的代码。  
   
-- [LinkDemand](link-demands.md)在实时 (JIT) 编译时间发生，并仅检查直接调用方。 这种安全检查不会检查调用方的调用方。 一旦此项检查成功，无论调用方调用的次数为多少，都无需任何其他安全性开销。 但是，这种方法没有对引诱攻击提供保护。 使用**LinkDemand**，通过允许恶意代码使用授权代码调用，通过测试并可以引用代码的任何代码都可能会破坏安全性。 因此，请不要使用**LinkDemand** ，除非可以彻底避免所有可能的漏洞。  
+- [LinkDemand](link-demands.md)在实时（JIT）编译时间发生，并仅检查直接调用方。 这种安全检查不会检查调用方的调用方。 一旦此项检查成功，无论调用方调用的次数为多少，都无需任何其他安全性开销。 但是，这种方法没有对引诱攻击提供保护。 使用**LinkDemand**，通过允许恶意代码使用授权代码调用，通过测试并可以引用代码的任何代码都可能会破坏安全性。 因此，请不要使用**LinkDemand** ，除非可以彻底避免所有可能的漏洞。  
   
     > [!NOTE]
     > 在 .NET Framework 4 中，已将链接要求替换为 <xref:System.Security.SecurityCriticalAttribute> <xref:System.Security.SecurityRuleSet.Level2> 程序集中的特性。 <xref:System.Security.SecurityCriticalAttribute>等效于完全信任的链接要求; 但是，它也会影响继承规则。 有关此更改的详细信息，请参阅[安全透明代码，级别 2](security-transparent-code-level-2.md)。  
@@ -81,7 +81,7 @@ ms.locfileid: "86281441"
   
 - 限制调用代码对类或程序集的访问权限。  
   
-- 对显示在将被调用的代码上的调用代码施行相同的安全检查并负责让其调用方也执行这种检查。 例如，如果你编写的代码调用的方法使用的是具有指定标志**LinkDemand**的的 linkdemand <xref:System.Security.Permissions.SecurityPermission> ，则 <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> 你的方法还应为该权限更**LinkDemand**强的)  (或**要求**。 这种情况的例外是，如果你的代码以有限的方式使用受**LinkDemand**保护的方法，则在考虑到其他安全保护机制 (例如，在代码中) 需求。 对于这种例外情况，调用方需对削弱基础代码的安全性保护负责。  
+- 对显示在将被调用的代码上的调用代码施行相同的安全检查并负责让其调用方也执行这种检查。 例如，如果你编写的代码调用的方法使用的是具有指定标志**LinkDemand**的的 linkdemand <xref:System.Security.Permissions.SecurityPermission> ，则 <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> 你的方法还应为此权限创建一个具有更**Demand**强的**linkdemand** 。 例外情况是，如果你的代码以有限的方式使用了受**LinkDemand**保护的方法，则在代码中考虑到其他安全保护机制（如需求）。 对于这种例外情况，调用方需对削弱基础代码的安全性保护负责。  
   
 - 确保你的代码调用方无法欺骗你的代码代表自己调用受保护的代码。 换言之，调用方不能强制授权代码向受保护的代码传递特定参数，或从受保护的代码中得到返回结果。  
   

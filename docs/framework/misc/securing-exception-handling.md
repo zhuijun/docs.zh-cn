@@ -10,15 +10,15 @@ helpviewer_keywords:
 - secure coding, exception handling
 - exception handling, security
 ms.assetid: 1f3da743-9742-47ff-96e6-d0dd1e9e1c19
-ms.openlocfilehash: 009e587c0458488db6c2aa92e13311ddc08a64b1
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 73597f83d7236cd48a18a891c987b4f5d7e1723d
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281990"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309035"
 ---
 # <a name="securing-exception-handling"></a>保护异常处理
-在 Visual C++ 和 Visual Basic 中，堆栈中的一个筛选器表达式将在任何**finally**语句之前运行。 与该筛选器相关联的**catch**块在**finally**语句之后运行。 有关详细信息，请参阅[使用用户筛选的异常](../../standard/exceptions/using-user-filtered-exception-handlers.md)。 本部分将介绍此顺序的安全隐患。 请考虑以下伪代码示例，该示例演示 filter 语句和**finally**语句的运行顺序。  
+在 Visual C++ 和 Visual Basic 中，堆栈中的一个筛选器表达式将在任何语句之前运行 `finally` 。 与该筛选器相关联的**catch**块在 `finally` 语句之后运行。 有关详细信息，请参阅[使用用户筛选的异常](../../standard/exceptions/using-user-filtered-exception-handlers.md)。 本部分将介绍此顺序的安全隐患。 请考虑以下伪代码示例，其中阐释了筛选语句和 `finally` 语句的运行顺序。  
   
 ```cpp  
 void Main()
@@ -59,7 +59,7 @@ Finally
 Catch  
 ```  
   
- 该筛选器在**finally**语句之前运行，因此，在执行其他代码的情况下，可能会发生状态更改的任何内容引入安全问题。 例如：  
+ 筛选器在语句之前运行 `finally` ，因此，在执行其他代码的情况下，任何更改状态的内容都可以引入安全问题。 例如：  
   
 ```cpp  
 try
@@ -78,7 +78,7 @@ finally
 }  
 ```  
   
- 此伪代码允许堆栈上较高的筛选器运行任意代码。 具有类似效果的其他操作示例是对其他标识的临时模拟、设置跳过某些安全检查的内部标志或更改与线程关联的区域性。 建议的解决方案是引入异常处理程序，以将代码的更改从调用方的筛选器块隔离到线程状态。 但是，必须正确地引入异常处理程序，否则不会解决此问题。 下面的示例将切换 UI 区域性，但任何类型的线程状态更改都可能会以同样的方式公开。  
+ 此伪代码允许堆栈上较高的筛选器运行任意代码。 具有类似效果的其他操作示例是对其他标识的临时模拟、设置跳过某些安全检查的内部标志或更改与线程关联的区域性。 建议的解决方案是引入异常处理程序，以将代码的更改从调用方的筛选器块隔离到线程状态。 但是，正确地引入异常处理程序或不解决此问题很重要。 下面的示例将切换 UI 区域性，但任何类型的线程状态更改都可能会以同样的方式公开。  
   
 ```cpp  
 YourObject.YourMethod()  
@@ -135,9 +135,9 @@ YourObject.YourMethod()
 }  
 ```  
   
- 这并不能解决此问题，因为在获取控件之前， **finally**语句尚未运行 `FilterFunc` 。  
+ 这不会解决此问题，因为在 `finally` 获取控件之前语句尚未运行 `FilterFunc` 。  
   
- 下面的示例通过确保在将异常提供给调用方的异常筛选器块之前执行了**finally**子句来解决此问题。  
+ 下面的示例通过确保在将 `finally` 异常提供给调用方的异常筛选器块之前执行了子句来修复此问题。  
   
 ```cpp  
 YourObject.YourMethod()  

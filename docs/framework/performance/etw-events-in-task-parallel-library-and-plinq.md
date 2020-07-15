@@ -1,19 +1,20 @@
 ---
 title: 任务并行库和 PLINQ 中的 ETW 事件
+description: 阅读任务并行库和 PLINQ 中的 ETW 事件。 使用这些事件对应用程序进行分析和故障排除。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - tasks, ETW events
 ms.assetid: 87a9cff5-d86f-4e44-a06e-d12764d0dce2
-ms.openlocfilehash: 61429babf7378b9d271ffd60a6228ae4bfe7a5e5
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: a1a068b7ba94d5e5be4fd90d6adb48b0d25a8b9e
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644249"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309633"
 ---
 # <a name="etw-events-in-task-parallel-library-and-plinq"></a>任务并行库和 PLINQ 中的 ETW 事件
 
-任务并行库和 PLINQ 均可生成 Windows 事件跟踪 (ETW) 事件，通过 Windows 性能分析器等工具使用这些事件可分析并排除应用程序故障。 但是，在大多数情况下，分析并行应用程序代码的最佳方式是在可视化工作室中使用[并发可视化工具](/visualstudio/profiling/concurrency-visualizer)。
+任务并行库和 PLINQ 均可生成 Windows 事件跟踪 (ETW) 事件，通过 Windows 性能分析器等工具使用这些事件可分析并排除应用程序故障。 但在大多数情况下，分析并行应用程序代码的最佳方式是在 Visual Studio 中使用[并发可视化工具](/visualstudio/profiling/concurrency-visualizer)。
 
 ## <a name="task-parallel-library-etw-events"></a>任务并行库 ETW 事件
 
@@ -29,7 +30,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>用户数据
 
-|**名称**|类型 |**说明**|
+|**名称**|类型|**说明**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的 TaskScheduler 的 ID。|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的任务的 ID。|
@@ -45,7 +46,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>用户数据
 
-|**名称**|类型 |**说明**|
+|**名称**|类型|**说明**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的 TaskScheduler 的 ID。|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的任务的 ID。|
@@ -59,7 +60,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>用户数据
 
-|**名称**|类型 |**说明**|
+|**名称**|类型|**说明**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的 TaskScheduler 的 ID。|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的任务的 ID。|
@@ -75,7 +76,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>用户数据
 
-|**名称**|类型 |**说明**|
+|**名称**|类型|**说明**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的 TaskScheduler 的 ID。|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的任务的 ID。|
@@ -93,7 +94,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>用户数据
 
-|**名称**|类型 |**说明**|
+|**名称**|类型|**说明**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的 TaskScheduler 的 ID。|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的任务的 ID。|
@@ -106,7 +107,7 @@ EVENT_DESCRIPTOR.Id = 1
 
 #### <a name="user-data"></a>用户数据
 
-|**名称**|类型 |**说明**|
+|**名称**|类型|**说明**|
 |--------------|--------------|---------------------|
 |OriginatingTaskSchedulerID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的 TaskScheduler 的 ID。|
 |OriginatingTaskID|<xref:System.Int32?displayProperty=nameWithType>|启动循环的任务的 ID。|

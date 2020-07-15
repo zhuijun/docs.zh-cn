@@ -1,16 +1,17 @@
 ---
 title: 安全透明的代码
+description: 了解透明代码模型的用途，如何指定透明度级别和安全性的透明度强制。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - transparent code
 - security-transparent code
 ms.assetid: 4f3dd841-82f7-4659-aab0-6d2db2166c65
-ms.openlocfilehash: ca251ec3084d40269b107e7bd8bef708e8d49622
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: a167efe12b88f796fba4abc6d60ebffe4693709a
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215836"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309841"
 ---
 # <a name="security-transparent-code"></a>安全透明的代码
 
@@ -41,7 +42,7 @@ ms.locfileid: "77215836"
 
 级别如下：
 
-- 级别2（<xref:System.Security.SecurityRuleSet.Level2>）– .NET Framework 4 透明度规则。
+- Level 2 （ <xref:System.Security.SecurityRuleSet.Level2> ）– .NET Framework 4 透明度规则。
 
 - 1 级 (<xref:System.Security.SecurityRuleSet.Level1>) –.NET Framework 2.0 透明度规则。
 
@@ -97,4 +98,4 @@ ms.locfileid: "77215836"
 ## <a name="see-also"></a>另请参阅
 
 - [安全透明代码，级别1](security-transparent-code-level-1.md)
-- [安全透明代码，级别2](security-transparent-code-level-2.md)
+- [安全透明的代码，级别 2](security-transparent-code-level-2.md)

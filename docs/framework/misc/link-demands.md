@@ -1,6 +1,6 @@
 ---
 title: 链接需求
-description: 阅读有关链接要求的信息，这会导致实时 (JIT) 编译期间进行安全检查，并仅检查代码的直接调用程序集。
+description: 阅读有关链接要求的信息，这会导致在实时（JIT）编译期间进行安全检查，并仅检查代码的直接调用程序集。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,19 +15,19 @@ helpviewer_keywords:
 - caller security checks
 - link demands
 ms.assetid: a33fd5f9-2de9-4653-a4f0-d9df25082c4d
-ms.openlocfilehash: cd89c4ef27abb92fba567a1f3b490cb9d78fdddd
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: eaf9ee1bb5cd10c724240bacac014503685a0c8c
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86282049"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309087"
 ---
 # <a name="link-demands"></a>链接需求
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  链接要求导致在实时编译过程中进行安全检查，并且只检查代码的直接调用程序集。 当代码绑定到类型引用（包括函数指针引用和方法调用）时发生链接。 如果调用程序集的权限不足以链接到代码，则加载并运行代码时将不允许该链接且将引发运行时异常。 可在继承自代码的类中重写链接要求。  
   
- 请注意，不使用此类型的要求执行完整的堆栈审核，并且代码仍容易遭受引诱攻击。 例如，如果程序集 A 中的方法受链接要求保护，则将根据程序集 B 的权限计算程序集 B 中的直接调用方。 但是，如果链接要求使用程序集 B 中的方法间接调用程序集 A 中的方法，则链接要求将不会计算程序集 C 中的方法。链接要求仅指定直接调用程序集中的直接调用方必须有权链接到您的代码。 而不指定所有调用方为了运行你的代码所必须拥有的权限。  
+ 对于这种类型的要求，不会执行完整的堆栈审核，并且你的代码仍容易遭受引诱攻击。 例如，如果程序集 A 中的方法受链接要求保护，则将根据程序集 B 的权限计算程序集 B 中的直接调用方。 但是，如果链接要求使用程序集 B 中的方法间接调用程序集 A 中的方法，则链接要求将不会计算程序集 C 中的方法。链接要求仅指定直接调用程序集中的直接调用方必须有权链接到您的代码。 而不指定所有调用方为了运行你的代码所必须拥有的权限。  
   
  <xref:System.Security.CodeAccessPermission.Assert%2A>、<xref:System.Security.CodeAccessPermission.Deny%2A> 和 <xref:System.Security.CodeAccessPermission.PermitOnly%2A> 堆栈审核修饰符不影响链接要求计算。  由于链接要求不执行堆栈审核，所以堆栈审核修饰符对链接要求并无影响。  
   
