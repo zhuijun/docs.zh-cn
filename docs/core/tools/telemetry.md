@@ -3,12 +3,12 @@ title: .NET Core SDK 遥测
 description: 了解可收集使用情况信息以供分析的 .NET Core SDK 遥测功能、收集的数据，以及如何禁用遥测。
 author: KathleenDollard
 ms.date: 08/27/2019
-ms.openlocfilehash: a79b791abc99331ff39f5e281ee0fdc62b258989
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 0917dae23588ccd1809252aaf484c397e84561c7
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507277"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226564"
 ---
 # <a name="net-core-sdk-telemetry"></a>.NET Core SDK 遥测
 
@@ -18,11 +18,11 @@ ms.locfileid: "79507277"
 
 ## <a name="scope"></a>范围
 
-`dotnet` 具有两个功能：运行应用程序和执行 CLI 命令。 按以下格式使用 `dotnet` 来启动应用程序时，不会收集遥测数据  ：
+`dotnet` 具有两个功能：运行应用程序和执行 CLI 命令。 按以下格式使用 `dotnet` 来启动应用程序时，不会收集遥测数据：
 
 - `dotnet [path-to-app].dll`
 
-使用任何 [.NET Core CLI 命令](index.md)时，都会收集遥测数据，如  ：
+使用任何 [.NET Core CLI 命令](index.md)时，都会收集遥测数据，如：
 
 - `dotnet build`
 - `dotnet pack`
@@ -52,7 +52,7 @@ Read more about .NET Core CLI Tools telemetry: https://aka.ms/dotnet-cli-telemet
 
 遥测功能不收集用户名或电子邮件地址等个人数据。 也不会扫描代码，更不会提取项目级敏感数据，如名称、存储库或作者。 数据通过 [Azure Monitor](https://azure.microsoft.com/services/monitor/) 技术安全地发送到 Microsoft 服务器，提供对保留数据的受限访问权限，并在严格的安全控制下从安全的 [Azure 存储](https://azure.microsoft.com/services/storage/)系统发布。
 
-保护你的隐私对我们很重要。 如果怀疑遥测在收集敏感数据，或认为我们处理数据的方式不安全或不恰当，请在 [dotnet/cli](https://github.com/dotnet/cli/issues) 存储库中记录问题或发送电子邮件至 [dotnet@microsoft.com](mailto:dotnet@microsoft.com) 进行调查。
+保护你的隐私对我们很重要。 如果你怀疑遥测在收集敏感数据，或认为处理数据的方式不安全或不恰当，请在 [dotnet/sdk](https://github.com/dotnet/sdk/issues) 存储库中记录问题或发送电子邮件至 [dotnet@microsoft.com](mailto:dotnet@microsoft.com) 以供我们展开调查。
 
 遥测功能收集以下数据：
 
@@ -139,4 +139,4 @@ at Microsoft.DotNet.Cli.Program.Main(String[] args)
 ## <a name="see-also"></a>请参阅
 
 - [.NET Core CLI 遥测 - 2019 第 2 季度数据](https://dotnet.microsoft.com/platform/telemetry/dotnet-core-cli-2019q2)
-- [遥测参考源（dotnet/cli 存储库）](https://github.com/dotnet/cli/tree/master/src/dotnet/Telemetry)
+- [遥测参考源（dotnet/sdk 存储库）](https://github.com/dotnet/sdk/tree/master/src/Cli/dotnet/Telemetry)

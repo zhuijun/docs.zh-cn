@@ -1,13 +1,16 @@
 ---
 title: 在匿名类型和元组类型之间进行选择
 description: 了解何时适合选择匿名类型和元组类型。
+author: IEvangelist
+ms.author: dapine
 ms.date: 07/01/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 24ab770d709b9f3968f4c7fe4b01eb0729dbd751
-ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
+ms.openlocfilehash: 9c186133a639faf187c89d872856d860a20f5a2d
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853982"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174213"
 ---
 # <a name="choosing-between-anonymous-and-tuple-types"></a>在匿名类型和元组类型之间进行选择
 
@@ -87,12 +90,7 @@ foreach (var (formatted, ticks) in
 }
 ```
 
-C# 通过 <xref:System.ValueTuple> 类型提供对元组的语言支持，还提供用于以下目的的语义：
-
-- [元组赋值](../../csharp/tuples.md#assignment-and-tuples)
-- [元组析构](../../csharp/deconstruct.md)（不限于元组）
-- [元组相等性检查](../../csharp/tuples.md#equality-and-tuples)
-- [元组投影初始值设定项](../../csharp/tuples.md#tuple-projection-initializers)
+有关元组的详细信息，请参阅[元组类型（C# 参考）](../../csharp/language-reference/builtin-types/value-tuples.md)或[元组 (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/tuples.md)。
 
 以上示例在功能上是等效的；但其可用性和基础实现存在细微差异。
 
@@ -102,7 +100,7 @@ C# 通过 <xref:System.ValueTuple> 类型提供对元组的语言支持，还提
 
 ### <a name="key-differences"></a>主要区别
 
-| “属性”                     | 访问修饰符 | 类型     | 自定义属性名称 | 析构支持 | 表达式树支持 |
+| “属性”                     | 访问修饰符 | 类型     | 自定义成员名称 | 析构支持 | 表达式树支持 |
 |--------------------------|-----------------|----------|----------------------|------------------------|-------------------------|
 | 匿名类型          | `internal`      | `class`  | ✔️                   | ❌                     | ✔️                     |
 | <xref:System.Tuple>      | `public`        | `class`  | ❌                   | ❌                     | ✔️                     |
@@ -124,5 +122,6 @@ C# 通过 <xref:System.ValueTuple> 类型提供对元组的语言支持，还提
 
 - [匿名类型](../../csharp/programming-guide/classes-and-structs/anonymous-types.md)
 - [表达式树](../../csharp/expression-trees.md)
-- [元组类型](../../csharp/tuples.md)
+- [元组类型（C# 参考）](../../csharp/language-reference/builtin-types/value-tuples.md)
+- [元组 (Visual Basic)](../../visual-basic/programming-guide/language-features/data-types/tuples.md)
 - [类型设计准则](../design-guidelines/type.md)

@@ -2,17 +2,18 @@
 title: 面向对象的编程 (C#)
 ms.date: 05/13/2020
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 98dd5147ab54375ec851ccd9b981a68098a53270
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 83140a9dbd16f60f04f50ba18c71099cdd862f15
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241885"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226629"
 ---
 # <a name="object-oriented-programming-c"></a>面向对象的编程 (C#)
 
-C# 提供对面向对象的编程（包括封装、继承和多态性）的完整支持。
+C# 提供针对面向对象的编程（包括抽象、封装、继承和多态性）的完整支持。
 
+- “抽象”意味着对类型使用者隐藏不必要的详细信息。
 - “封装”意味着将一组相关属性、方法和其他成员视为一个单元或对象。
 - “继承”描述基于现有类创建新类的能力。
 - 多态性意味着可以有多个可互换使用的类，即使每个类以不同方式实现相同属性或方法。
@@ -29,7 +30,7 @@ class SampleClass
 }
 ```
 
-C# 还提供被称为“结构”的类型，在不需要支持继承或多形性时非常有用。
+C# 还提供被称为“结构”的类型，在不需要支持继承或多形性时非常有用。 有关详细信息，请参阅[在类和结构之间选择](../../../standard/design-guidelines/choosing-between-class-and-struct.md)。
 
 定义结构：
 
@@ -89,7 +90,7 @@ class SampleClass
 
 大多数属性的方法或过程都是既可以设置也可以获取属性值。 但你可以创建只读或只写属性来限制对它们的修改或读取。 在 C# 中，可以忽略 `get` 或 `set` 属性方法。 但是，自动实现的属性不能是只写的。 可以在包含类的构造函数中设置只读自动实现的属性。
 
-有关详细信息，请参见:
+有关详情，请参阅：
 
 - [get](../../language-reference/keywords/get.md)
 - [set](../../language-reference/keywords/set.md)
@@ -121,7 +122,7 @@ public int SampleMethod(int sampleParam) { }
 
 大多数情况下，方法是在类定义中声明的。 但是，C# 还支持“扩展方法”，这种方法允许你将方法添加到实际类定义之外的现有类中。
 
-有关详细信息，请参见:
+有关详情，请参阅：
 
 - [方法](../classes-and-structs/methods.md)
 - [扩展方法](../classes-and-structs/extension-methods.md)
@@ -223,7 +224,7 @@ var sampleObject = new SampleClass
 };
 ```
 
-有关详细信息，请参见:
+有关详情，请参阅：
 
 - [new 运算符](../../language-reference/operators/new-operator.md)
 - [对象和集合初始值设定项](../classes-and-structs/object-and-collection-initializers.md)
@@ -266,7 +267,7 @@ var sampleObject = new
 };
 ```
 
-有关详细信息，请参见:[匿名类型](../classes-and-structs/anonymous-types.md)。
+有关详情，请参阅：[匿名类型](../classes-and-structs/anonymous-types.md)。
 
 ## <a name="inheritance"></a>继承
 
@@ -295,7 +296,7 @@ public sealed class A { }
 public abstract class B { }
 ```
 
-有关详细信息，请参见:
+有关详情，请参阅：
 
 - [sealed](../../language-reference/keywords/sealed.md)
 - [abstract](../../language-reference/keywords/abstract.md)
@@ -360,7 +361,7 @@ var sampleObject = new SampleGeneric<string>();
 sampleObject.Field = "Sample string";
 ```
 
-有关详细信息，请参见:
+有关详情，请参阅：
 
 - [.NET 中的泛型](../../../standard/generics/index.md)
 - [泛型 - C# 编程指南](../generics/index.md)

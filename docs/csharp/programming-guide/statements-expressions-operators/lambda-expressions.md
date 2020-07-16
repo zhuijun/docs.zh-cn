@@ -8,12 +8,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: b86fe4fd91b395498926512650490f8d3a0383a1
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: ffda4ad93451d6991aeb20ed01511f16fd3e512b
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761832"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174148"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Lambda 表达式（C# 编程指南）
 
@@ -141,7 +141,7 @@ public partial class Form1 : Form
 
 ## <a name="lambda-expressions-and-tuples"></a>lambda 表达式和元组
 
-自 C# 7.0 起，C# 语言提供对[元组](../../tuples.md)的内置支持。 可以提供一个元组作为 Lambda 表达式的参数，同时 Lambda 表达式也可以返回元组。 在某些情况下，C# 编译器使用类型推理来确定元组组件的类型。
+自 C# 7.0 起，C# 语言提供对[元组](../../language-reference/builtin-types/value-tuples.md)的内置支持。 可以提供一个元组作为 Lambda 表达式的参数，同时 Lambda 表达式也可以返回元组。 在某些情况下，C# 编译器使用类型推理来确定元组组件的类型。
 
 可通过用括号括住用逗号分隔的组件列表来定义元组。 下面的示例使用包含三个组件的元组，将一系列数字传递给 lambda 表达式，此表达式将每个值翻倍，然后返回包含乘法运算结果的元组（内含三个组件）。
 
@@ -151,7 +151,7 @@ public partial class Form1 : Form
 
 [!code-csharp-interactive[lambda and named tuples](~/samples/snippets/csharp/programming-guide/lambda-expressions/LambdasAndTuples.cs#WithComponentName)]
 
-若要详细了解 C# 元组，请参阅 [C# 元组类型](../../tuples.md)。
+若要详细了解 C# 元组，请参阅[元组类型](../../language-reference/builtin-types/value-tuples.md)。
 
 ## <a name="lambdas-with-the-standard-query-operators"></a>含标准查询运算符的 lambda
 

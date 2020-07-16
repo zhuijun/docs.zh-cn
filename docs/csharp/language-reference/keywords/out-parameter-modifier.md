@@ -4,12 +4,12 @@ ms.date: 03/19/2020
 helpviewer_keywords:
 - parameters [C#], out
 - out parameters [C#]
-ms.openlocfilehash: 57308992268e1285cfeb82b28e2abf213e7a831b
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 30946c85d2b64ead3f42e03da61108fa5b367779
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805868"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174804"
 ---
 # <a name="out-parameter-modifier-c-reference"></a>out 参数修饰符（C# 参考）
 
@@ -56,7 +56,7 @@ class CS0663_Example
 
 ## <a name="declaring-out-parameters"></a>声明 `out` 参数
 
-使用 `out` 参数声明方法是返回多个值的经典解决方法。 自 C# 7.0 起，建议在类似方案中使用[元组](../../tuples.md)。 下面的示例使用 `out` 返回具有单个方法调用的三个变量。 第三个参数分配为 null。 这使得方法可以有选择地返回值。  
+使用 `out` 参数声明方法是返回多个值的经典解决方法。 自 C# 7.0 起，可以考虑针对类似方案使用[值元组](../builtin-types/value-tuples.md)。 下面的示例使用 `out` 返回具有单个方法调用的三个变量。 第三个参数分配为 null。 这使得方法可以有选择地返回值。  
   
 [!code-csharp-interactive[cs-out-keyword](../../../../samples/snippets/csharp/language-reference/keywords/in-ref-out-modifier/OutParameterModifier.cs#3)]  
 

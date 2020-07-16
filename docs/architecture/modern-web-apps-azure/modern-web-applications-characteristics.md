@@ -3,18 +3,21 @@ title: 新式 Web 应用程序的特征
 description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序 | 新式 Web 应用程序的特征
 author: ardalis
 ms.author: wiwagn
+no-loc:
+- Blazor
+- WebAssembly
 ms.date: 12/04/2019
-ms.openlocfilehash: d70fa54adeb505fd37807399402281dfda67cf52
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fd6658a6143e132d488660d1aa4a35e427ba2d84
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77451559"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174791"
 ---
 # <a name="characteristics-of-modern-web-applications"></a>新式 Web 应用程序的特征
 
 > "… 恰当合理的设计，会使功能的价格变便宜。 这种方式有难度，但是却总有成效。”  
-> _Dennis Ritchie\-_
+> \- Dennis Ritchie
 
 新式 Web 应用程序比以往承载着更高的用户期望和要求。 当今的 Web 应用需要能在全球任何地方任意时刻可用，需要可在任何设备或屏幕尺寸上使用。 Web 应用程序必须具有安全性、灵活性和可缩放性，以便满足高峰需求。 如今复杂方案日益需要由丰富的用户体验来处理，这建立在使用 JavaScript 并通过 Web API 进行有效通信的客户端的基础之上。
 
@@ -22,7 +25,7 @@ ASP.NET Core 针对新式 Web 应用程序和基于云的托管方案进行了�
 
 ## <a name="reference-application-eshoponweb"></a>参考应用程序：eShopOnWeb
 
-本指南包含一个参考应用程序 eShopOnWeb，该应用程序演示了一些原则和建议。  该应用程序是一个简单在线商店，支持浏览衬衫、咖啡杯和其他市场产品名录。 特意选择该简单的参考应用，方便理解。
+本指南包含一个参考应用程序 eShopOnWeb，该应用程序演示了一些原则和建议。 该应用程序是一个简单在线商店，支持浏览衬衫、咖啡杯和其他市场产品名录。 特意选择该简单的参考应用，方便理解。
 
 ![eShopOnWeb](./media/image2-1.png)
 
@@ -67,13 +70,13 @@ ASP.NET Core 应用程序支持单元测试，并且通过其松散耦合和依�
 
 除 ASP.NET Core 外，传统的 ASP.NET 4.x 依然是一个用于构建 Web 应用程序的可靠强大的平台。 ASP.NET 支持 MVC 和 Web API 开发模型以及 Web 窗体。Web 窗体非常适合用于基于页面的丰富应用程序开发，具有丰富的第三方组件系统。 Microsoft Azure 长期以来支持 ASP.NET 4.x 应用程序，而且许多开发人员非常熟悉该平台。
 
-## <a name="blazor"></a>Blazor
+## Blazor
 
-Blazor 包含在 ASP.NET Core 3.0 和更高版本中。 它提供了一种新机制，可使用 Razor、C# 和 ASP.NET Core 生成丰富的交互式 Web 客户端应用程序。 它提供了在开发新式 Web 应用程序时要考虑的另一种解决方案。 有两个版本的 Blazor 可供考虑：服务器端和客户端。
+Blazor 包含在 ASP.NET Core 3.0 及更高版本中。 它提供了一种新机制，可使用 Razor、C# 和 ASP.NET Core 生成丰富的交互式 Web 客户端应用程序。 它提供了在开发新式 Web 应用程序时要考虑的另一种解决方案。 有两个版本的 Blazor 可供考虑：服务器端和客户端。
 
 服务器端 Blazor 于 2019 年随 ASP.NET Core 3.0 一起发布。 顾名思义，它在服务器上运行，通过网络将对客户端文档的更改重新呈现到浏览器。 服务器端 Blazor 提供了丰富的客户端体验，而无需客户端 JavaScript，也不需要为每个客户端页面交互单独加载页面。 服务器请求并处理已加载页面中的更改，然后使用 SignalR 将其发送回客户端。
 
-客户端 Blazor 将于 2020 年发布，将不需要在服务器上进行更改。 相反，它将利用 WebAssembly 在客户端中运行 .NET 代码。 如果需要请求数据，客户端仍然可以对服务器进行 API 调用，但是所有客户端行为都通过 WebAssembly 在客户端中运行，WebAssembly 在所有主流浏览器中受支持，并且只是一个 Javascript 库。
+客户端 Blazor 将于 2020 年发布，将不需要在服务器上呈现更改。 相反，它将利用 WebAssembly 在客户端中运行 .NET 代码。 如果需要请求数据，客户端仍然可以对服务器进行 API 调用，但是所有客户端行为都是通过 WebAssembly（它在所有主流浏览器中受支持，并且只是一个 Javascript 库）在客户端中运行的。
 
 > ### <a name="references--modern-web-applications"></a>参考 - 新式 Web 应用程序
 >

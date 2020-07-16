@@ -2,12 +2,12 @@
 title: C# 7.3 中的新增功能
 description: C# 7.3 中的新增功能概述
 ms.date: 05/16/2018
-ms.openlocfilehash: ba4cea302d91b395e88940d087fcaed306920840
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cd8f554516fb5078d9d2ed1eec787f36e8f4c7a7
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74204555"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174752"
 ---
 # <a name="whats-new-in-c-73"></a>C# 7.3 中的新增功能
 
@@ -38,7 +38,7 @@ C# 7.3 版本有两个主要主题。 第一个主题提供使安全代码的性
 
 1. 安装 [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) 全局工具。
 1. 克隆 [dotnet/try-samples](https://github.com/dotnet/try-samples) 存储库。
-1. 将当前目录设置为 try-samples 存储库的 csharp7 子目录   。
+1. 将当前目录设置为 try-samples 存储库的 csharp7 子目录 。
 1. 运行 `dotnet try`。
 
 ## <a name="enabling-more-efficient-safe-code"></a>启用更高效的安全代码
@@ -141,7 +141,7 @@ Span<int> arr = stackalloc [] {1, 2, 3};
 
 ### <a name="tuples-support--and-"></a>元组支持 `==` 和 `!=`
 
-C# 元组类型现在支持 `==` 和 `!=`。 有关详细信息，请参阅有关[元组](../tuples.md)一文中的转换[等式](../tuples.md#equality-and-tuples)部分。
+C# 元组类型现在支持 `==` 和 `!=`。 有关详细信息，请参阅[元组类型](../language-reference/builtin-types/value-tuples.md)一文的[元组相等](../language-reference/builtin-types/value-tuples.md#tuple-equality)部分。
 
 ### <a name="attach-attributes-to-the-backing-fields-for-auto-implemented-properties"></a>将特性添加到自动实现的属性的支持字段
 

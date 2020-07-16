@@ -2,12 +2,12 @@
 title: C# 7.1 中的新增功能
 description: C# 7.1 中的新增功能概述。
 ms.date: 04/09/2019
-ms.openlocfilehash: 5d2d6f51b6422f5b4db5c6bd275b5ffce1f695f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fe6e49eb01e24a27bc7970900c05150378ab194a
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398351"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174765"
 ---
 # <a name="whats-new-in-c-71"></a>C# 7.1 中的新增功能
 
@@ -34,7 +34,7 @@ C# 7.1 增加了[语言版本选择](../language-reference/configure-language-ve
 
 1. 安装 [dotnet-try](https://github.com/dotnet/try/blob/master/README.md#setup) 全局工具。
 1. 克隆 [dotnet/try-samples](https://github.com/dotnet/try-samples) 存储库。
-1. 将当前目录设置为 try-samples 存储库的 csharp7 子目录   。
+1. 将当前目录设置为 try-samples 存储库的 csharp7 子目录 。
 1. 运行 `dotnet try`。
 
 ## <a name="async-main"></a>异步 `main` 方法
@@ -106,7 +106,7 @@ string label = "Colors used in the map";
 var pair = (count, label); // element names are "count" and "label"
 ```
 
-若要详细了解此功能，可以参阅[元组](../tuples.md)一文。
+若要详细了解此功能，可以参阅[元组类型](../language-reference/builtin-types/value-tuples.md)一文。
 
 ## <a name="pattern-matching-on-generic-type-parameters"></a>泛型类型参数的模式匹配
 

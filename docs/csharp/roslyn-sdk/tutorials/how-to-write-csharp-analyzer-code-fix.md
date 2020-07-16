@@ -3,12 +3,12 @@ title: 教程：编写第一个分析器和代码修补程序
 description: 本教程提供了有关使用 .NET 编译器 SDK (Roslyn API) 生成分析器和代码修补程序的分步说明。
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: 23ebf4befc75e08592890d85f2dda51251f59cd6
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: c70fcacc6cb30969e5c69ffd0954ac52e637a915
+ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396285"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86100933"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>教程：编写第一个分析器和代码修补程序
 
@@ -17,6 +17,25 @@ ms.locfileid: "83396285"
 在本教程中，将探讨使用 Roslyn API 创建分析器以及随附的代码修补程序。 分析器是一种执行源代码分析并向用户报告问题的方法。 （可选）分析器还可以提供表示对用户源代码进行修改的代码修补程序。 本教程将创建一个分析器，用于查找可以使用 `const` 修饰符声明的但未执行此操作的局部变量声明。 随附的代码修补程序修改这些声明来添加 `const` 修饰符。
 
 ## <a name="prerequisites"></a>先决条件
+
+> [!NOTE]
+> 当前 Visual Studio“随附代码修补程序的分析器(.NET Standard)”模板有一个已知 bug，应在 Visual Studio 2019 版本 16.7 中修复。 除非进行了以下更改，否则模板中的项目将不会编译：
+>
+> 1. 选择“工具” > “选项” > “NuGet 包管理器” > “包源”   
+>    - 选择加号按钮来添加新源：
+>    - 将“源”设置为 `https://dotnet.myget.org/F/roslyn-analyzers/api/v3/index.json`，并选择“更新” 
+> 1. 在“解决方案资源管理器”中，右键单击“MakeConst.Vsix”项目，然后选择“编辑项目文件”  
+>    - 更新 `<AssemblyName>` 节点以添加 `.Visx` 后缀：
+>      - `<AssemblyName>MakeConst.Vsix</AssemblyName>`
+>    - 更新第 41 行上的 `<ProjectReference>` 节点以更改 `TargetFramework` 值：
+>      - `<ProjectReference Update="@(ProjectReference)" AdditionalProperties="TargetFramework=netstandard2.0" />`
+> 1. 在“MakeConst.Test”项目中更新“MakeConstUnitTests.cs”文件 ：
+>    - 将第 9 行更改为以下内容，注意命名空间的改变：
+>      - `using Verify = Microsoft.CodeAnalysis.CSharp.Testing.MSTest.CodeFixVerifier<`
+>    - 将第 24 行更改为以下方法：
+>      - `await Verify.VerifyAnalyzerAsync(test);`
+>    - 将第 62 行更改为以下方法：
+>      - `await Verify.VerifyCodeFixAsync(test, expected, fixtest);`
 
 - [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
 - [Visual Studio 2019](https://www.visualstudio.com/downloads)
@@ -55,7 +74,7 @@ Console.WriteLine(x);
 - 在“Visual C#”>“扩展性”下，选择“随附代码修补程序的分析器 (.NET Standard)”。
 - 给项目“MakeConst”命名，然后单击“确定”。
 
-使用代码修复模板的分析器将创建三个项目：一个包含分析器和代码修补程序，第二个是单元测试项目，第三个是 VSIX 项目。 默认启动项目是 VSIX 项目。 按 F5 启动 VSIX 项目。 这将启动已加载新分析器的第二个 Visual Studio 实例。
+使用代码修复模板的分析器将创建三个项目：一个包含分析器和代码修补程序，第二个是单元测试项目，第三个是 VSIX 项目。 默认启动项目是 VSIX 项目。 按 F5<kbd></kbd> 启动 VSIX 项目。 这将启动已加载新分析器的第二个 Visual Studio 实例。
 
 > [!TIP]
 > 在运行分析器时，请启动 Visual Studio 的第二个副本。 此第二个副本使用不同的注册表配置单元来存储设置。 这样便可以将 Visual Studio 两个副本中的可视化设置区分开来。 可以选择 Visual Studio 实验性运行的不同主题。 此外，不要在设置中漫游，也不要使用 Visual Studio 的实验性运行登录到 Visual Studio 帐户。 这样可以使设置保持不同。
@@ -170,7 +189,7 @@ if (dataFlowAnalysis.WrittenOutside.Contains(variableSymbol))
 context.ReportDiagnostic(Diagnostic.Create(Rule, context.Node.GetLocation()));
 ```
 
-可以通过按 F5 运行分析器来检查进度。 可以加载前面创建的控制台应用程序，然后添加以下测试代码：
+可以通过按 F5<kbd></kbd> 运行分析器来检查进度。 可以加载前面创建的控制台应用程序，然后添加以下测试代码：
 
 ```csharp
 int x = 0;
@@ -251,7 +270,7 @@ using Microsoft.CodeAnalysis.Formatting;
 
 [!code-csharp[replace the declaration](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#ReplaceDocument  "Generate a new document by replacing the declaration")]
 
-代码修补程序已准备就绪。  按 F5 在第二个 Visual Studio 实例中运行分析器项目。 在第二个 Visual Studio 实例中，创建一个新的 C# 控制台应用程序项目并向 Main 方法添加使用常量值初始化的几个局部变量声明。 你将看到它们被报告为警告，如下所示。
+代码修补程序已准备就绪。  按 <kbd> F5 </kbd> 在第二个 Visual Studio 实例中运行分析器项目。 在第二个 Visual Studio 实例中，创建一个新的 C# 控制台应用程序项目并向 Main 方法添加使用常量值初始化的几个局部变量声明。 你将看到它们被报告为警告，如下所示。
 
 ![可以发出 const 警告](media/how-to-write-csharp-analyzer-code-fix/make-const-warning.png)
 
@@ -310,7 +329,7 @@ public void WhenDiagnosticIsRaisedFixUpdatesCode(
 
 [!code-csharp[string constants for fix test](~/samples/snippets/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#FirstFixTest "string constants for fix test")]
 
-运行这两个测试，以确保其通过。 在 Visual Studio 中，通过选择“测试” > “Windows” > “测试资源管理器”来打开“测试资源管理器”。  按下“全部运行”链接。
+运行这两个测试，以确保其通过。 在 Visual Studio 中，通过选择“测试” > “Windows” > “测试资源管理器”来打开“测试资源管理器”。 然后选择“全部运行”链接。
 
 ## <a name="create-tests-for-valid-declarations"></a>为有效声明创建测试
 
@@ -503,12 +522,12 @@ else if (variableType.IsReferenceType && constantValue.Value != null)
 using Microsoft.CodeAnalysis.Simplification;
 ```
 
-运行测试，它们应全部通过。 通过运行已完成的分析器自行庆祝。 按 Ctrl+F5 在第二个 Visual Studio 实例中运行分析器项目，并加载 Roslyn 预览扩展。
+运行测试，它们应全部通过。 通过运行已完成的分析器自行庆祝。 按 <kbd>Ctrl+F5</kbd> 在加载了 Roslyn Preview 扩展的第二个 Visual Studio 实例中运行分析器项目。
 
 - 在第二个 Visual Studio 实例，创建一个新的 C# 控制台应用程序项目并将 `int x = "abc";` 添加到 Main 方法。 由于第一个 bug 已修复，应不会报告针对此局部变量声明的警告（尽管像预期那样出现了编译器错误）。
 - 接下来，将 `object s = "abc";` 添加到 Main 方法。 由于第二个 bug 已修复，应不会报告任何警告。
 - 最后，添加另一个使用 `var` 关键字的局部变量。 你将看到一个警告和显示在左下方的一个建议。
-- 将编辑器插入点移到波浪下划线，然后按 Ctrl+。 显示建议的代码修补程序。 选择代码修补程序，请注意，var 关键字现已正确处理。
+- 将编辑器插入点移到波浪下划线，然后按 <kbd>Ctrl+</kbd>。 显示建议的代码修补程序。 选择代码修补程序，请注意，var 关键字现已正确处理。
 
 最后，添加以下代码：
 

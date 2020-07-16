@@ -3,13 +3,15 @@ title: 常用客户端 Web 技术
 description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序 | 常用客户端 Web 技术
 author: ardalis
 ms.author: wiwagn
+no-loc:
+- Blazor
 ms.date: 12/04/2019
-ms.openlocfilehash: 2809c8539b42e8e2250039dceed1389b3cbdcd8a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e8ea035c491fad39d2932572255a19c7c1493418
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77449369"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174349"
 ---
 # <a name="common-client-side-web-technologies"></a>常用客户端 Web 技术
 
@@ -21,7 +23,7 @@ ASP.NET Core 应用程序属于 Web 应用程序，并且通常依赖于 HTML、
 尽管 HTML 和 CSS 相对稳定，但应用程序框架和实用程序开发人员用于生成基于 Web 的应用程序的 JavaScript，正以惊人的速度发展。 本章介绍 Web 开发人员使用 JavaScript 的几种方式，并提供 Angular 和 React 客户端库的简要概述。
 
 > [!NOTE]
-> Blazor 提供了 JavaScript 框架的替代方法，用于生成丰富的交互式客户端用户界面。 客户端 Blazor 支持仍处于预览状态，因此目前不在本章的范围之内。
+> Blazor 提供了 JavaScript 框架的替代方法，用于生成丰富的交互式客户端用户界面。 客户端 Blazor 支持仍处于预览状态，因此目前不在本章所讨论的范围之内。
 
 ## <a name="html"></a>HTML
 
@@ -78,7 +80,7 @@ JavaScript 是动态的解释性编程语言，已在 ECMAScript 语言规范中
 
 本质上，jQuery 缺少的大多数功能均可通过添加其他库进行添加。 但是，SPA 框架（如 Angular）以更集中的方式提供这些功能，因为它从一开始设计的时候就考虑到了这一点。 此外，jQuery 是一种命令性库，这意味着你需要调用 jQuery 函数才能使用 jQuery 执行任何任务。 SPA 框架提供的很多工作和功能都可以声明的方式完成，无需编写任何实际代码。
 
-数据绑定便是一个很好的示例。 在 jQuery 中，通常只需要一个代码行就能获得 DOM 元素的值或设置某元素的值。 但是，一旦需要更改元素值就需要编写此行代码，有时这会出现在一个页面上的多个函数中。 另一常见示例是元素可见性。 在 jQuery 中，可能需要在很多位置编写代码来控制特定元素是否可见。 每这两种情况中，如果使用数据绑定，便无需编写任何代码。 只需将相关元素的值或可见性绑定到页面上的 viewmodel 即可，对该 viewmodel 的任何更改都会自动反映在绑定的元素中  。
+数据绑定便是一个很好的示例。 在 jQuery 中，通常只需要一个代码行就能获得 DOM 元素的值或设置某元素的值。 但是，一旦需要更改元素值就需要编写此行代码，有时这会出现在一个页面上的多个函数中。 另一常见示例是元素可见性。 在 jQuery 中，可能需要在很多位置编写代码来控制特定元素是否可见。 每这两种情况中，如果使用数据绑定，便无需编写任何代码。 只需将相关元素的值或可见性绑定到页面上的 viewmodel 即可，对该 viewmodel 的任何更改都会自动反映在绑定的元素中。
 
 ### <a name="angular-spas"></a>Angular SPA
 

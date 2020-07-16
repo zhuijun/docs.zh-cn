@@ -5,20 +5,20 @@ ms.date: 01/30/2020
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: c1163a41cd2feb0e8785ae9d4c6a71dfbedf3f12
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ed0d6736f1f2e988d96a397cad77a7fc743489da
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77092611"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174226"
 ---
 # <a name="interpret-model-predictions-using-permutation-feature-importance"></a>使用排列特征重要性解释模型预测
 
 使用排列特征重要性 (PFI)，了解如何解释 ML.NET 机器学习模型预测。 PFI 可表示每个特征对预测的相对贡献。
 
-机器学习模型通常被视为黑盒，它们接收输入并生成输出。 人们对影响输出的中间步骤或特征之间的交互了解甚少。 随着机器学习被引入日常生活的更多方面（例如医疗保健），理解机器学习模型为何做出其决策变得至关重要。 例如，如果诊断由机器学习模型做出，则医疗保健专业人员需要查看影响做出诊断的因素的方法。 提供正确的诊断可以对患者是否快速康复产生重大影响。 因此，模型的可解释性水平越高，医疗保健专业人员就越有信心接受或拒绝模型做出的决策。
+机器学习模型通常被视为不透明盒，它们会接收输入并生成输出。 人们对影响输出的中间步骤或特征之间的交互了解甚少。 随着机器学习被引入日常生活的更多方面（例如医疗保健），理解机器学习模型为何做出其决策变得至关重要。 例如，如果诊断由机器学习模型做出，则医疗保健专业人员需要查看影响做出诊断的因素的方法。 提供正确的诊断可以对患者是否快速康复产生重大影响。 因此，模型的可解释性水平越高，医疗保健专业人员就越有信心接受或拒绝模型做出的决策。
 
-有各种技术被用于解释模型，其中之一是 PFI。 PFI 是一种用于解释分类和回归模型的技术，其灵感来自 [Breima 的 Random Forests  （随机森林）论文](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf)（参见第 10 部分）。 概括而言，其工作原理是一次随机为整个数据集随机抽取数据的一个特征，并计算关注性能指标的下降程度。 变化越大，特征就越重要。
+有各种技术被用于解释模型，其中之一是 PFI。 PFI 是一种用于解释分类和回归模型的技术，其灵感来自 [Breima 的 Random Forests（随机森林）论文](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf)（参见第 10 部分）。 概括而言，其工作原理是一次随机为整个数据集随机抽取数据的一个特征，并计算关注性能指标的下降程度。 变化越大，特征就越重要。
 
 此外，通过突出显示最重要的特征，模型生成器可以专注于使用一组更有意义的特征，这可能会减少干扰和训练时间。
 
@@ -26,7 +26,7 @@ ms.locfileid: "77092611"
 
 数据集中用于此示例的特征位于列 1-12 中。 目标在于预测 `Price`。
 
-| 列 | 功能 | 说明
+| 列 | 功能 | 描述
 | --- | --- | --- |
 | 1 | CrimeRate | 人均犯罪率
 | 2 | ResidentialZones | 城镇住宅区
@@ -40,7 +40,7 @@ ms.locfileid: "77092611"
 | 10 | TaxRate | 财产税率
 | 11 | StudentTeacherRatio | 师生比率
 | 12 | PercentPopulationBelowPoverty | 贫困线以下人口百分比
-| 13 | 价格 | 住宅价格
+| 13 | Price | 住宅价格
 
 数据集的示例如下所示：
 

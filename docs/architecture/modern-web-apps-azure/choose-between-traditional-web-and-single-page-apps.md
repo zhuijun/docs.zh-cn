@@ -3,13 +3,16 @@ title: 在传统 Web 应用和单页应用之间选择
 description: 了解在生成 Web 应用时，如何在传统 Web 应用和单页应用程序 (SPA) 之间进行选择。
 author: ardalis
 ms.author: wiwagn
+no-loc:
+- Blazor
+- WebAssembly
 ms.date: 12/04/2019
-ms.openlocfilehash: 0aef42b78114a11c70456cb3122d3dcb5143f983
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 4fe889fe86d96a5b2ffa5bd879d2ec1801a3cf20
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662701"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174362"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>在传统 Web 应用和单页应用 (SPA) 之间选择
 
@@ -38,13 +41,13 @@ ms.locfileid: "84662701"
 
 使用 SPA 方法改进用户体验时必须权衡这些注意事项。
 
-## <a name="blazor"></a>Blazor
+## Blazor
 
-ASP.NET Core 3.0 引入了一种新模型，用于构建称为 Blazor 的丰富的、交互式和可组合的 UI。 Blazor 服务器端允许开发人员在服务器上使用 C# 和 Razor 生成 UI，并使 UI 使用永久性 SignalR 连接以交互方式实时连接到浏览器。
+ASP.NET Core 3.0 引入了一种新模型，用于构建称为 Blazor 的丰富的、交互式且可组合的 UI。 Blazor 服务器端使开发人员能够在服务器上使用 C# 和 Razor 生成 UI，并使 UI 使用永久性 SignalR 连接以交互方式实时连接到浏览器。
 
-Blazor WebAssembly 为 Blazor 应用引入了另一个选项，使其能够使用 WebAssembly 在浏览器中运行。 由于它是在 WebAssembly 上运行的真实 .NET，因此你可以重复使用来自应用程序的服务器端部分的代码和库。
+Blazor WebAssembly 为 Blazor 应用引入了另一个选项，使这些应用能够使用 WebAssembly 在浏览器中运行。 由于它是在 WebAssembly 上运行的真实 .NET，因此你可以重复使用来自应用程序的服务器端部分的代码和库。
 
-Blazor 提供了一个全新的第三个选项，可用于评估是否生成纯服务器呈现的 Web 应用程序或 SPA。 可以使用 Blazor 生成类似于 SPA 的丰富客户端行为，而无需进行大量 JavaScript 开发。 Blazor 应用程序可以调用 API 来请求数据或执行服务器端操作。
+Blazor 提供了一个全新的第三个选项，可用于评估是生成纯服务器呈现的 Web 应用程序还是 SPA。 可以使用 Blazor 生成类似于 SPA 的丰富客户端行为，而无需进行大量 JavaScript 开发。 Blazor 应用程序可以调用 API 来请求数据或执行服务器端操作。
 
 在以下情况下考虑使用 Blazor 生成 Web 应用程序：
 
@@ -99,15 +102,15 @@ SPA 可支持丰富客户端功能，当用户执行操作或在应用的各区�
 
 ## <a name="when-to-choose-blazor"></a>何时选择 Blazor
 
-以下是有关何时为 Web 应用选择 Blazor 的详尽说明。
+以下是有关何时为 Web 应用选择 Blazor 更加详细的说明。
 
 **应用程序必须公开丰富用户界面**
 
-与基于 JavaScript 的 SPA 一样，Blazor 应用程序可以支持丰富客户端行为，而无需重载页面。 这些应用程序对用户的响应更快，仅获取响应给定用户交互所需的数据（或 HTML）。 如果设计得当，则服务器端 Blazor 应用可以配置为以客户端 Blazor 应用的形式运行，并且在支持该功能后只需进行最小的更改。
+与基于 JavaScript 的 SPA 一样，Blazor 应用程序可以支持丰富的客户端行为，而无需重载页面。 这些应用程序对用户的响应更快，仅获取响应给定用户交互所需的数据（或 HTML）。 如果设计得当，可以将服务器端 Blazor 应用配置为以客户端 Blazor 应用的形式运行，只需在此功能受支持后对它进行稍加更改即可。
 
 **与使用 JavaScript 或 TypeScript 开发相比，团队更喜欢使用 .NET 开发**
 
-与使用 JavaScript 或 TypeScript 等客户端语言相比，许多使用 .NET 和 Razor 的开发人员的工作效率更高。 由于已经使用 .NET 开发了应用程序的服务器端，因此，使用 Blazor 可以确保团队中的每个 .NET 开发人员都可以理解并且可能会生成应用程序前端的行为。
+与使用 JavaScript 或 TypeScript 等客户端语言相比，许多使用 .NET 和 Razor 的开发人员的工作效率更高。 由于已经使用 .NET 开发了应用程序的服务器端，因此，使用 Blazor 可以确保团队中的每名 .NET 开发人员都可以理解，并可能会生成应用程序前端的行为。
 
 ## <a name="decision-table"></a>决策表
 

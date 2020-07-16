@@ -4,12 +4,12 @@ description: 了解所有 C# 程序中的核心类型（数字、字符串和对
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 468482bd1b4f1a5835df9d66ee483edc33c28f61
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 93a0023969bb8bb089922a9e30fbf599eddc7203
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202211"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174174"
 ---
 # <a name="types-variables-and-values"></a>类型、变量和值
 
@@ -74,7 +74,7 @@ C# 提供了一组标准的内置数值类型来表示整数、浮点值、布�
   
 在某些情况下，为不打算存储或传递外部方法边界的简单相关值集合创建命名类型是不方便的。 为此，你可以创建匿名类型。 有关详细信息，请参阅[匿名类型](programming-guide/classes-and-structs/anonymous-types.md)。
 
-经常需要从方法返回多个值。 可以创建在单个方法调用中返回多个值的元组类型。 有关详细信息，请参阅[元组](tuples.md)。
+经常需要从方法返回多个值。 可以创建在单个方法调用中返回多个值的元组类型。 有关详细信息，请参阅[元组类型](language-reference/builtin-types/value-tuples.md)。
 
 ## <a name="the-common-type-system"></a>通用类型系统
 

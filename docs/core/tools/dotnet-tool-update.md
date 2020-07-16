@@ -1,13 +1,13 @@
 ---
 title: dotnet tool update 命令
 description: dotnet tool update 命令更新计算机上指定的 .NET Core 工具。
-ms.date: 02/14/2020
-ms.openlocfilehash: 6176846dbe8e2a91d9c6959dede15718d8f983b2
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.date: 07/08/2020
+ms.openlocfilehash: 7c4bde44ac9964828074baeb1a697ba64ed17887
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463304"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226616"
 ---
 # <a name="dotnet-tool-update"></a>dotnet tool update
 
@@ -20,17 +20,24 @@ ms.locfileid: "81463304"
 ## <a name="synopsis"></a>摘要
 
 ```dotnetcli
-dotnet tool update <PACKAGE_NAME> -g|--global
+dotnet tool update <PACKAGE_ID> -g|--global
     [--configfile <FILE>] [--framework <FRAMEWORK>]
-    [-v|--verbosity <LEVEL>] [--add-source <SOURCE>]
+    [--add-source <SOURCE>] [--disable-parallel]
+    [--ignore-failed-sources] [--interactive] [--no-cache]
+    [-v|--verbosity <LEVEL>] [--version <VERSION>]
 
-dotnet tool update <PACKAGE_NAME> --tool-path <PATH>
+dotnet tool update <PACKAGE_ID> --tool-path <PATH>
     [--configfile <FILE>] [--framework <FRAMEWORK>]
-    [-v|--verbosity <LEVEL>] [--add-source <SOURCE>]
+    [--add-source <SOURCE>] [--disable-parallel]
+    [--ignore-failed-sources] [--interactive] [--no-cache]
+    [-v|--verbosity <LEVEL>] [--version <VERSION>]
 
-dotnet tool update <PACKAGE_NAME>
+dotnet tool update <PACKAGE_ID> --local
     [--configfile <FILE>] [--framework <FRAMEWORK>]
-    [-v|--verbosity <LEVEL>] [--add-source <SOURCE>]
+    [--add-source <SOURCE>] [--disable-parallel]
+    [--ignore-failed-sources] [--interactive] [--no-cache]
+    [--tool-manifest <PATH>]
+    [-v|--verbosity <LEVEL>] [--version <VERSION>]
 
 dotnet tool update -h|--help
 ```
@@ -41,13 +48,13 @@ dotnet tool update -h|--help
 
 * 若要更新安装在默认位置的全局工具，请使用 `--global` 选项
 * 若要更新安装在自定义位置的全局工具，请使用 `--tool-path` 选项。
-* 若要更新本地工具，请省略 `--global` 和 `--tool-path` 选项。
+* 若要更新本地工具，请使用 `--local` 选项。
 
 **本地工具从 .NET Core SDK 3.0 开始可用。**
 
 ## <a name="arguments"></a>自变量
 
-- **`PACKAGE_NAME`**
+- **`PACKAGE_ID`**
 
   包含要更新的 .NET Core 全局工具的 NuGet 包的名称/ID。 你可以使用 [dotnet tool list](dotnet-tool-list.md) 命令查找包名称。
 
@@ -61,9 +68,41 @@ dotnet tool update -h|--help
 
   要使用的 NuGet 配置 (nuget.config) 文件。
 
+- **`--disable-parallel`**
+
+  防止并行还原多个项目。
+
 - **`--framework <FRAMEWORK>`**
 
   指定要更新工具的[目标框架](../../standard/frameworks.md)。
+
+- **`--ignore-failed-sources`**
+
+  将包源失败视为警告。
+
+- **`--interactive`**
+
+  允许命令停止并等待用户输入或操作（例如，完成身份验证）。
+
+- **`--local`**
+
+  更新工具和本地工具清单。 不能与 `--global` 选项一起使用。
+
+- **`--no-cache`**
+
+  不要缓存包和 HTTP 请求。
+
+- **`--tool-manifest <PATH>`**
+
+  清单文件的路径。
+
+- **`--tool-path <PATH>`**
+
+  指定全局工具的安装位置。 路径可以是绝对的，也可以是相对的。 不能与 `--global` 选项一起使用。 省略 `--global` 和 `--tool-path` 均指定要更新的工具是本地工具。
+
+- **`--version <VERSION>`**
+
+  要将工具包更新到的版本范围。 这不能用于降级版本，必须首先 `uninstall` 较新的版本。
 
 - **`-g|--global`**
 
@@ -72,10 +111,6 @@ dotnet tool update -h|--help
 - **`-h|--help`**
 
   打印出有关命令的简短帮助。
-
-- **`--tool-path <PATH>`**
-
-  指定全局工具的安装位置。 路径可以是绝对的，也可以是相对的。 不能与 `--global` 选项一起使用。 省略 `--global` 和 `--tool-path` 均指定要更新的工具是本地工具。
 
 - **`-v|--verbosity <LEVEL>`**
 
@@ -99,8 +134,17 @@ dotnet tool update -h|--help
 
   更新为当前目录安装的 [dotnetsay](https://www.nuget.org/packages/dotnetsay/) 本地工具。
 
+- **`dotnet tool update -g dotnetsay --version 2.0.*`**
+
+  将 [dotnetsay](https://www.nuget.org/packages/dotnetsay/) 全局工具更新到最新的修补程序版本，主版本为 `2`，次要版本为 `0`。
+
+- **`dotnet tool update -g dotnetsay --version (2.0.*,2.1.4)`**
+
+  将 [dotnetsay](https://www.nuget.org/packages/dotnetsay/) 全局工具更新到指定范围 `(> 2.0.0 && < 2.1.4)` 内的最低版本，因此将安装版本 `2.1.0`。 有关语义化版本控制范围的详细信息，请参阅 [NuGet 打包版本范围](/nuget/concepts/package-versioning#version-ranges)。
+
 ## <a name="see-also"></a>请参阅
 
 - [.NET Core 工具](global-tools.md)
+- [语义化版本控制](https://semver.org)
 - [教程：使用 .NET Core CLI 安装和使用 .NET Core 全局工具](global-tools-how-to-use.md)
 - [教程：使用 .NET Core CLI 安装和使用 .NET Core 本地工具](local-tools-how-to-use.md)

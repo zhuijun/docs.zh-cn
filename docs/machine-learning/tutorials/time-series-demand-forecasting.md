@@ -6,11 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: 4ea002b690de877fd6f955c05eb8235f46e0a870
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: d93bdee8d5a057be0f405fe4334d7edbdc0649ec
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803206"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174401"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>教程：使用时序分析和 ML.NET 预测自行车租赁服务需求
 
@@ -40,7 +41,7 @@ ms.locfileid: "85803206"
 
 此教程使用的数据分析技术为单变量时序分析。 单变量时序分析可按照特定间隔（如月销售额）查看一个时段内的单个数值观测。
 
-此教程使用的算法是[单谱分析 (SSA)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf)。 SSA 会将时序分解为一组主要成分， 可以将这些成分解释为信号的组成部分，对应于趋势、噪音、季节性及许多其他的因素。 然后重新构建这些成分，并用来预测未来某个时间的值。
+本教程中使用的算法是[单谱分析 (SSA)](http://ssa.cf.ac.uk/zhigljavsky/pdfs/SSA/SSA_encyclopedia.pdf)。 SSA 会将时序分解为一组主要成分， 可以将这些成分解释为信号的组成部分，对应于趋势、噪音、季节性及许多其他的因素。 然后重新构建这些成分，并用来预测未来某个时间的值。
 
 ## <a name="create-console-application"></a>创建控制台应用程序
 

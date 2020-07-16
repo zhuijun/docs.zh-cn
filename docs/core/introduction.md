@@ -4,12 +4,12 @@ description: .NET Core 是一种高性能的模块化 .NET 实现，用于创建
 author: richlander
 ms.date: 03/26/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: f99b446bbd38b2b814c13afa13ab34cd5c9aa086
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: b28ad965e54680e2e1134c389266741ade28084f
+ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645527"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86226577"
 ---
 # <a name="introduction-to-net-core"></a>.NET Core 简介
 
@@ -24,7 +24,7 @@ ms.locfileid: "81645527"
 * [适用于 Windows 和 macOS 的安装程序](https://dotnet.microsoft.com/download)
 * [Linux 包](https://docs.microsoft.com/dotnet/core/install/linux-package-managers)
 * [Docker 容器](https://hub.docker.com/_/microsoft-dotnet-core/)
-* [Zip 和 tar 包](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+* [Zip 和 tarball](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 * [安装脚本](https://dotnet.microsoft.com/download/dotnet-core/scripts)
 * [发行说明](https://github.com/dotnet/core/tree/master/release-notes)
 

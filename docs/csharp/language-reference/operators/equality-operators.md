@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 7dd3e544dc03fb94577892b42aecd1a15a6621ac
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: 011ef8b570a0bbbc38ec71df4286c3b08c3109da
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80110914"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86174778"
 ---
 # <a name="equality-operators-c-reference"></a>相等运算符（C# 参考）
 
@@ -43,7 +43,7 @@ ms.locfileid: "80110914"
 
 用户定义的 [struct](../builtin-types/struct.md) 类型默认情况下不支持 `==` 运算符。 要支持 `==` 运算符，用户定义的结构必须[重载](operator-overloading.md)它。
 
-从 C# 7.3 开始，`==` 和 `!=` 运算符由 C# [元组](../../tuples.md)支持。 有关详细信息，请参阅 [C# 元组类型](../../tuples.md)一文的[相等性和元组](../../tuples.md#equality-and-tuples)部分。
+从 C# 7.3 开始，`==` 和 `!=` 运算符由 C# [元组](../builtin-types/value-tuples.md)支持。 有关详细信息，请参阅[元组类型](../builtin-types/value-tuples.md)一文的[元组相等](../builtin-types/value-tuples.md#tuple-equality)部分。
 
 ### <a name="reference-types-equality"></a>引用类型的相等性
 

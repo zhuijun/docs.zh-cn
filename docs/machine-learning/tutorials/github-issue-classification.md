@@ -4,12 +4,12 @@ description: 了解如何在多类分类方案中使用 ML.NET 对 GitHub 问题
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0516
-ms.openlocfilehash: 5233924dab063fd1ba0232672613f9701f637385
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: d4ab7f0fcc6b582e74f54d3f0e60032696277249
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803724"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051540"
 ---
 # <a name="tutorial-categorize-support-issues-using-multiclass-classification-with-mlnet"></a>教程：将多类分类与 ML.NET 配合使用，对支持问题分类
 
@@ -37,31 +37,31 @@ ms.locfileid: "85803724"
 
 ### <a name="create-a-project"></a>创建项目
 
-1. 打开 Visual Studio 2017。 从菜单栏中选择“文件”   > “新建”   > “项目”  。 在“新项目”  对话框中，依次选择“Visual C#”  和“.NET Core”  节点。 然后，选择“控制台应用程序(.NET Core)”  项目模板。 在“名称”  文本框中，键入“GitHubIssueClassification”，然后选择“确定”  按钮。
+1. 打开 Visual Studio 2017。 从菜单栏中选择“文件” > “新建” > “项目”。 在“新项目”对话框中，依次选择“Visual C#”和“.NET Core”节点。 然后，选择“控制台应用程序(.NET Core)”项目模板。 在“名称”文本框中，键入“GitHubIssueClassification”，然后选择“确定”按钮。
 
-2. 在项目中创建一个名为“Data”  的目录来保存数据集文件：
+2. 在项目中创建一个名为“Data”的目录来保存数据集文件：
 
-    在“解决方案资源管理器”  中，右键单击项目，然后选择“添加”   > “新文件夹”  。 键入“Data”，然后按 Enter。
+    在“解决方案资源管理器”中，右键单击项目，然后选择“添加” > “新文件夹”。 键入“Data”，然后按 Enter。
 
-3. 在项目中创建一个名为“Models”的目录来保存模型  ：
+3. 在项目中创建一个名为“Models”的目录来保存模型：
 
-    在“解决方案资源管理器”  中，右键单击项目，然后选择“添加”   > “新文件夹”  。 键入“Models”，然后按 Enter。
+    在“解决方案资源管理器”中，右键单击项目，然后选择“添加” > “新文件夹”。 键入“Models”，然后按 Enter。
 
-4. 安装“Microsoft.ML NuGet 包”  ：
+4. 安装“Microsoft.ML NuGet 包”：
 
     [!INCLUDE [mlnet-current-nuget-version](../../../includes/mlnet-current-nuget-version.md)]
 
-    在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”  。 选择“nuget.org”作为包源，然后选择“浏览”选项卡并搜索“Microsoft.ML”，再选择“安装”按钮   。 选择“预览更改”  对话框上的“确定”  按钮，如果你同意所列包的许可条款，则选择“接受许可”  对话框上的“我接受”  按钮。
+    在“解决方案资源管理器”中，右键单击项目，然后选择“管理 NuGet 包”。 选择“nuget.org”作为包源，然后选择“浏览”选项卡并搜索“Microsoft.ML”，再选择“安装”按钮 。 选择“预览更改”对话框上的“确定”按钮，如果你同意所列包的许可条款，则选择“接受许可”对话框上的“我接受”按钮。
 
 ### <a name="prepare-your-data"></a>准备数据
 
-1. 下载 [issues_train.tsv](https://raw.githubusercontent.com/dotnet/samples/master/machine-learning/tutorials/GitHubIssueClassification/Data/issues_train.tsv) 和 [issues_test.tsv](https://raw.githubusercontent.com/dotnet/samples/master/machine-learning/tutorials/GitHubIssueClassification/Data/issues_test.tsv) 数据集，并将它们保存到先前创建的“Data”文件夹  。 第一个数据集用于定型机器学习模型，第二个数据集可用来评估模型的准确度。
+1. 下载 [issues_train.tsv](https://raw.githubusercontent.com/dotnet/samples/master/machine-learning/tutorials/GitHubIssueClassification/Data/issues_train.tsv) 和 [issues_test.tsv](https://raw.githubusercontent.com/dotnet/samples/master/machine-learning/tutorials/GitHubIssueClassification/Data/issues_test.tsv) 数据集，并将它们保存到先前创建的“Data”文件夹。 第一个数据集用于定型机器学习模型，第二个数据集可用来评估模型的准确度。
 
-2. 在“解决方案资源管理器”中，右键单击每个 \*.tsv 文件，然后选择“属性”  。 在“高级”下，将“复制到输出目录”的值更改为“如果较新则复制”    。
+2. 在“解决方案资源管理器”中，右键单击每个 \*.tsv 文件，然后选择“属性”。 在“高级”下，将“复制到输出目录”的值更改为“如果较新则复制”  。
 
 ### <a name="create-classes-and-define-paths"></a>创建类和定义路径
 
-将以下附加的 `using` 语句添加到“Program.cs”  文件顶部：
+将以下附加的 `using` 语句添加到“Program.cs”文件顶部：
 
 [!code-csharp[AddUsings](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#AddUsings)]
 
@@ -80,15 +80,15 @@ ms.locfileid: "85803724"
 
 为输入数据和预测创建一些类。 向项目添加一个新类：
 
-1. 在“解决方案资源管理器”  中，右键单击项目，然后选择“添加”   > “新项”  。
+1. 在“解决方案资源管理器”中，右键单击项目，然后选择“添加” > “新项”。
 
-1. 在“添加新项”对话框中，选择“类”并将“名称”字段更改为“GitHubIssueData.cs”     。 然后，选择“添加”  按钮。
+1. 在“添加新项”对话框中，选择“类”并将“名称”字段更改为“GitHubIssueData.cs”  。 然后，选择“添加”按钮。
 
-    “GitHubIssueData.cs”文件随即在代码编辑器中打开  。 将下面的 `using` 语句添加到 GitHubIssueData.cs 的顶部  ：
+    “GitHubIssueData.cs”文件随即在代码编辑器中打开。 将下面的 `using` 语句添加到 GitHubIssueData.cs 的顶部：
 
 [!code-csharp[AddUsings](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/GitHubIssueData.cs#AddUsings)]
 
-删除现有类定义并向“GitHubIssueData.cs”文件添加以下代码，其中有两个类 `GitHubIssue` 和 `IssuePrediction` ：
+删除现有类定义并向“GitHubIssueData.cs”文件添加以下代码，其中有两个类 `GitHubIssue` 和 `IssuePrediction`：
 
 [!code-csharp[DeclareGlobalVariables](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/GitHubIssueData.cs#DeclareTypes)]
 
@@ -151,7 +151,7 @@ public static IEstimator<ITransformer> ProcessData()
 
 [!code-csharp[FeaturizeText](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#FeaturizeText)]
 
-数据准备最后一步使用 [Concatenate()](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate%2A) 方法将所有特征列合并到“特征”列  。 默认情况下，学习算法仅处理“特征”列的特征  。 使用以下代码将此转换附加到管道：
+数据准备最后一步使用 [Concatenate()](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate%2A) 方法将所有特征列合并到“特征”列。 默认情况下，学习算法仅处理“特征”列的特征。 使用以下代码将此转换附加到管道：
 
 [!code-csharp[Concatenate](~/samples/snippets/machine-learning/GitHubIssueClassification/csharp/Program.cs#Concatenate)]
 

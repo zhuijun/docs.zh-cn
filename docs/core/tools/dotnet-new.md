@@ -1,13 +1,16 @@
 ---
 title: dotnet new 命令
 description: dotnet new 命令可根据指定模板新建 .NET Core 项目。
+no-loc:
+- Blazor
+- WebAssembly
 ms.date: 04/10/2020
-ms.openlocfilehash: 39301ad95761848b60b45cb5c18ede937f70c32c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ec41b3b79ed5eded7c9124d3e4d95c658ee39580
+ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283970"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86173115"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -74,7 +77,7 @@ dotnet new -h|--help
 | Razor 页                                   | [page](#page)                   | [C#]         | Web/ASP.NET                           | 2.0        |
 | MVC ViewImports                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2.0        |
 | MVC ViewStart                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2.0        |
-| Blazor Server 应用                            | [blazorserver](#blazorserver)   | [C#]         | Web/Blazor                            | 3.0        |
+| Blazor 服务器应用                            | [blazorserver](#blazorserver)   | [C#]         | Web/Blazor                            | 3.0        |
 | Blazor WebAssembly 应用                       | `blazorwasm`                    | [C#]         | Web/Blazor/WebAssembly                            | 3.1.300    |
 | ASP.NET Core 空                           | [web](#web)                     | [C#]，F#     | Web/空                             | 1.0        |
 | ASP.NET Core Web 应用程序 (Model-View-Controller) | [mvc](#web-options)             | [C#]，F#     | Web/MVC                               | 1.0        |

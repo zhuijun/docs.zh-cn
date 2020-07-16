@@ -1,13 +1,13 @@
 ---
 title: 使用 Visual Studio Code 发布 .NET Core 控制台应用程序
 description: 发布应用程序会创建运行 .NET Core 应用程序所需的一组文件。
-ms.date: 06/08/2020
-ms.openlocfilehash: 442d08c9b016407327ba30db0aae78b5cf6b6fe3
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.date: 07/04/2020
+ms.openlocfilehash: 8fd9975e8a88704b9dea45b40127c8dc03f7d09f
+ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84701445"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86051878"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>教程：使用 Visual Studio Code 发布 .NET Core 控制台应用程序
 
@@ -112,4 +112,4 @@ ms.locfileid: "84701445"
 在本教程中，你发布了一个控制台应用。 在下一教程中，你将创建类库。
 
 > [!div class="nextstepaction"]
-> [在 Visual Studio for Mac 中创建 .NET Standard 库](library-with-visual-studio-mac.md)
+> [在 Visual Studio Code 中创建 .NET Standard 库](library-with-visual-studio-code.md)
