@@ -3,12 +3,12 @@ title: 数据集和 DataTable 安全指南
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: c6b32afeadccc3fd22d6611d282840233280440f
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: f78b52ede4ec76599d761e5188f39c3e9dae2a4f
+ms.sourcegitcommit: 98548968e89739a37625e72ddbd535fe1e11121e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86382465"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86405287"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>数据集和 DataTable 安全指南
 
@@ -195,7 +195,8 @@ AppDomain.CurrentDomain.SetData("System.Data.DataSetDefaultAllowedTypes", extraA
 
 有关和的详细 `TraceSource` 信息 `TraceListener` ，请参阅文档[如何：将 TraceSource 和筛选器与跟踪侦听器一起使用](/dotnet/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners)。
 
-**注意**：在 "审核" 模式下运行的应用在 .net Core 或 .net 5.0 及更高版本中不可用。
+> [!NOTE]
+> 在审核模式下运行应用在 .NET Core 或 .NET 5.0 及更高版本中不可用。
 
 <a name="ratr"></a>
 
@@ -207,7 +208,7 @@ AppDomain.CurrentDomain.SetData("System.Data.DataSetDefaultAllowedTypes", extraA
 * 可用的选项取决于应用的目标框架。
 
 > [!WARNING]
-> 删除所有类型限制可能会在应用内引入安全漏洞。 使用此机制时，请确保应用**不**使用 `DataSet` 或 `DataTable` 读取不受信任的输入。 有关详细信息，请参阅[CVE-2020-1147](https://portal.msrc.microsoft.com/security-guidance/advisory/CVE-2020-1147)和标题为 "[有关不受信任的输入的安全](#swr)" 的部分。
+> 删除所有类型限制可能会在应用内引入安全漏洞。 使用此机制时，请确保应用**不**使用 `DataSet` 或 `DataTable` 读取不受信任的输入。 有关详细信息，请参阅[CVE-2020-1147](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/CVE-2020-1147)和标题为 "[有关不受信任的输入的安全](#swr)" 的部分。
 
 #### <a name="through-appcontext-configuration-net-framework-46---48-net-core-21-and-later-net-50-and-later"></a>通过 AppContext 配置（.NET Framework 4.6-4.8，.NET Core 2.1 及更高版本，.NET 5.0 和更高版本）
 
@@ -463,7 +464,8 @@ public class MyClass
 
 `DataSet` `DataTable` 以这种方式从不受信任的 JSON blob 反序列化或反序列化是不安全的。 此模式容易遭受拒绝服务攻击。 此类攻击可能导致应用崩溃或使其无响应。
 
-**注意**： Microsoft 不保证或支持第三方库（如_Newtonsoft.Js_）的实现。 此信息是为完整性提供的，并且在撰写本文的时间准确无误。
+> [!NOTE]
+> Microsoft 不保证或支持实现第三方库，如_Newtonsoft.Js_。 此信息是为完整性提供的，并且在撰写本文的时间准确无误。
 
 ## <a name="deserialize-a-dataset-or-datatable-via-binaryformatter"></a>通过 BinaryFormatter 反序列化 DataSet 或 DataTable
 
