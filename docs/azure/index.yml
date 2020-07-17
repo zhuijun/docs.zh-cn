@@ -8,12 +8,12 @@ metadata:
   ms.topic: hub-page
   ms.prod: azure-dotnet
   ms.date: 03/04/2020
-  ms.openlocfilehash: b31d52e3b061dc29a83f3f3ec3e702974a10e854
-  ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+  ms.openlocfilehash: c92263407ab15bd78ec323bb417d2d9f37dd77bc
+  ms.sourcegitcommit: d4f7ba08f2a45a9dbef53be597eed6d4a9410f29
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/09/2020
-  ms.locfileid: "86174329"
+  ms.lasthandoff: 07/15/2020
+  ms.locfileid: "86401953"
 highlightedContent:
   items:
   - itemType: overview
@@ -87,9 +87,15 @@ conceptualContent:
       url: /visualstudio/containers/hosting-web-apps-in-docker?view=vs-2019
   - title: 创建移动应用
     links:
+    - itemType: learn
+      text: 在 Xamarin 应用中使用 Azure 提供的 REST 服务
+      url: /learn/modules/consume-rest-services/
     - itemType: quickstart
       text: 使用 .NET SDK 和 Azure Cosmos DB 用于 MongoDB 的 API 创建 Xamarin.Forms 应用
       url: /azure/cosmos-db/create-mongodb-xamarin
+    - itemType: quickstart
+      text: 结合使用 Azure Blob 存储客户端库与 Xamarin.Forms
+      url: /azure/storage/blobs/storage-quickstart-blobs-xamarin
     - itemType: tutorial
       text: 使用 ASP.NET Core 和 Azure 通知中心向 Xamarin.Forms 应用发送推送通知
       url: /azure/notification-hubs/notification-hubs-backend-service-xamarin-forms
@@ -134,7 +140,7 @@ conceptualContent:
       text: 使用 Microsoft 标识保护自定义 API
       url: /learn/modules/identity-secure-custom-api/
     - itemType: learn
-      text: 使用 ASP.NET 标识平台保护 ASP.NET Core Web 应用
+      text: 使用 ASP.NET Identity 框架保护 ASP.NET Core Web 应用
       url: /learn/modules/secure-aspnet-core-identity/
     - itemType: tutorial
       text: 向 ASP.NET Web 应用添加 Microsoft 登录功能
@@ -183,7 +189,7 @@ conceptualContent:
       text: Azure Monitor
       url: /azure/azure-monitor/overview
     - itemType: learn
-      text: 在 Azure Web 应用中捕获和查看页面加载时间
+      text: 在 Azure Web 应用中捕获并查看页面加载时间
       url: /learn/modules/capture-page-load-times-application-insights/
     - itemType: how-to-guide
       text: 对 Azure 应用服务和 IIS 上的 ASP.NET Core 进行故障排除
@@ -261,4 +267,4 @@ additionalContent:
         url: https://github.com/AzureAD/microsoft-identity-web
       - text: .NET 平台
         url: https://github.com/dotnet/
-  footer: 参与 .NET 文档的编写。请参阅我们的[参与者指南](/contribute/dotnet/dotnet-contribute)。
+  footer: Contribute to .NET docs. Read our [contributor guide](/contribute/dotnet/dotnet-contribute).
