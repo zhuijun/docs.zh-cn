@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Visual C#, getting started
 - getting started, Visual C#
 ms.date: 04/05/2019
-ms.openlocfilehash: aff810aa7ba533682f9976fbb59ef4d7ec43ca58
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: baa21908b85130f8a0dd992b10cdc95c6e42912e
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75713923"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415918"
 ---
 # <a name="get-started-with-c"></a>C\# 入门
 
@@ -30,7 +30,7 @@ ms.locfileid: "75713923"
 
 - [在 Visual Studio 中使用 C# 和 .NET Standard 生成类库](../../core/tutorials/library-with-visual-studio.md)
 
-   使用类库，可以定义能够从另一应用程序调用的类型和类型成员。 此主题介绍了如何创建类库，其中包含一个用于确定字符串是否以大写字母开头的方法。 生成完类库后，便可以开发[单元测试](../../core/tutorials/testing-library-with-visual-studio.md)来确保类库按预期运行，然后就是使其可供[要使用它的应用程序](../../core/tutorials/consuming-library-with-visual-studio.md)使用。
+   使用类库，可以定义能够从另一应用程序调用的类型和类型成员。 此主题介绍了如何创建类库，其中包含一个用于确定字符串是否以大写字母开头的方法。 生成完类库后，便可以开发[单元测试](../../core/tutorials/testing-library-with-visual-studio.md)来确保类库按预期运行，然后就是使其可供[要使用它的应用程序](/nuget/quickstart/install-and-use-a-package-in-visual-studio)使用。
 
 - [C# 和 Visual Studio Code 入门](../../core/tutorials/with-visual-studio-code.md)
 
@@ -52,6 +52,6 @@ ms.locfileid: "75713923"
 
     提供指向使用 C# 的编程演练和每个演练的简要概述的链接。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用 Visual Studio 进行 C# 开发](/visualstudio/get-started/csharp/)

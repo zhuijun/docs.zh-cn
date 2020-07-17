@@ -65,7 +65,7 @@
           href: freezable-objects-overview.md
         - name: Alignment、Margin 和 Padding 概述
           href: alignment-margins-and-padding-overview.md
-        - name: 操作指南主题
+        - name: 帮助主题
           href: base-elements-how-to-topics.md
           items:
             - name: 将 UIElement 设为透明或半透明
@@ -97,7 +97,7 @@
           href: serialization-limitations-of-xamlwriter-save.md
         - name: 不在对象树中的对象元素的初始化
           href: initialization-for-object-elements-not-in-an-object-tree.md
-        - name: 操作指南主题
+        - name: 帮助主题
           href: element-tree-and-serialization-how-to-topics.md
           items:
             - name: 按名称查找元素
@@ -133,7 +133,7 @@
           href: collection-type-dependency-properties.md
         - name: XAML 加载和依赖项属性
           href: xaml-loading-and-dependency-properties.md
-        - name: 操作指南主题
+        - name: 帮助主题
           href: properties-how-to-topics.md
           items:
             - name: 实现依赖属性
@@ -163,7 +163,7 @@
           href: visual-basic-and-wpf-event-handling.md
         - name: 弱事件模式
           href: weak-event-patterns.md
-        - name: 操作指南主题
+        - name: 帮助主题
           href: events-how-to-topics.md
           items:
             - name: 使用代码添加事件处理程序
@@ -189,7 +189,7 @@
           href: styling-for-focus-in-controls-and-focusvisualstyle.md
         - name: 演练：创建你的第一个触控应用程序
           href: walkthrough-creating-your-first-touch-application.md
-        - name: 操作指南主题
+        - name: 帮助主题
           href: input-and-commands-how-to-topics.md
           items:
             - name: 启用命令
@@ -241,7 +241,7 @@
                       href: creating-an-ink-input-control.md
                     - name: 墨迹线程处理模型
                       href: the-ink-threading-model.md
-            - name: 操作指南主题
+            - name: 帮助主题
               href: digital-ink-how-to-topics.md
               items:
                 - name: 从自定义控件选择墨迹
@@ -271,7 +271,7 @@
           href: data-and-data-objects.md
         - name: 演练：在用户控件上启用拖放功能
           href: walkthrough-enabling-drag-and-drop-on-a-user-control.md
-        - name: 操作指南主题
+        - name: 帮助主题
           href: drag-and-drop-how-to-topics.md
           items:
             - name: 打开放入 RichTextBox 控件的文件
@@ -296,7 +296,7 @@
               href: resources-and-code.md
             - name: 合并资源字典
               href: merged-resource-dictionaries.md
-            - name: 操作指南主题
+            - name: 帮助主题
               href: resources-how-to-topics.md
               items:
                 - name: 定义和引用资源
@@ -334,7 +334,7 @@
               href: textelement-content-model-overview.md
             - name: 表概述
               href: table-overview.md
-            - name: 操作指南主题
+            - name: 帮助主题
               href: flow-content-elements-how-to-topics.md
               items:
                 - name: 调整段落间的间距
@@ -389,7 +389,7 @@
                   href: packaging-fonts-with-applications.md
                 - name: 示例 OpenType 字体包
                   href: sample-opentype-font-pack.md
-                - name: 操作指南主题
+                - name: 帮助主题
                   href: fonts-how-to-topics.md
                   items:
                     - name: 枚举系统字体
@@ -403,7 +403,7 @@
                   href: introduction-to-the-glyphrun-object-and-glyphs-element.md
                 - name: 如何：使用 Glyphs 绘制文本
                   href: draw-text-using-glyphs.md
-            - name: 操作指南主题
+            - name: 帮助主题
               href: typography-how-to-topics.md
               items:
                 - name: 创建文本修饰
@@ -429,7 +429,7 @@
           items:
             - name: 打印概述
               href: printing-overview.md
-            - name: 操作指南主题
+            - name: 帮助主题
               href: printing-how-to-topics.md
               items:
                 - name: 调用打印对话框
@@ -463,7 +463,7 @@
           href: localization-attributes-and-comments.md
         - name: WPF 中的双向功能概述
           href: bidirectional-features-in-wpf-overview.md
-        - name: 操作方法
+        - name: 操作指南
           items:
             - name: 对应用进行本地化
               href: how-to-localize-an-application.md
@@ -563,11 +563,11 @@
               href: optimizing-performance-object-behavior.md
             - name: 应用程序资源
               href: optimizing-performance-application-resources.md
-            - name: 文本
+            - name: Text
               href: optimizing-performance-text.md
             - name: 数据绑定
               href: optimizing-performance-data-binding.md
-            - name: 控制
+            - name: 控件
               href: optimizing-performance-controls.md
             - name: 其他性能建议
               href: optimizing-performance-other-recommendations.md

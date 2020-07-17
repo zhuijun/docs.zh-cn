@@ -21,13 +21,13 @@
               href: walkthrough-manipulating-data-visual-basic.md
             - name: 演练：仅使用存储过程 (Visual Basic)
               href: walkthrough-using-only-stored-procedures-visual-basic.md
-            - name: '演练：简单对象模型和查询 (C#)'
+            - name: 演练：简单对象模型和查询 (C#)
               href: walkthrough-simple-object-model-and-query-csharp.md
-            - name: '演练：跨关系查询 (C#)'
+            - name: 演练：跨关系查询 (C#)
               href: walkthrough-querying-across-relationships-csharp.md
-            - name: '演练：操作数据 (C#)'
+            - name: 演练：操作数据 (C#)
               href: walkthrough-manipulating-data-csharp.md
-            - name: '演练：仅使用存储过程 (C#)'
+            - name: 演练：仅使用存储过程 (C#)
               href: walkthrough-using-only-stored-procedures-csharp.md
     - name: 编程指南
       href: programming-guide.md
@@ -35,7 +35,7 @@
         - name: 创建对象模型
           href: creating-the-object-model.md
           items:
-            - name: '如何：在 Visual Basic 或 C# 中生成对象模型'
+            - name: 如何：在 Visual Basic 或 C# 中生成对象模型
               href: how-to-generate-the-object-model-in-visual-basic-or-csharp.md
             - name: 如何：将对象模型作为外部文件生成
               href: how-to-generate-the-object-model-as-an-external-file.md

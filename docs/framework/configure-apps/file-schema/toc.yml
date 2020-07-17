@@ -9,10 +9,6 @@
       href: linkedconfiguration-element.md
     - name: <configSections> 元素
       href: configsections-element-for-configuration.md
-    - name: <configSections> 的 <clear> 元素
-      href: clear-element-for-configsections.md
-    - name: <configSections> 的 <remove> 元素
-      href: remove-element-for-configsections.md
     - name: <sectionGroup> 元素
       href: sectiongroup-element-for-configsections.md
     - name: SingleTagSectionHandler 的自定义元素

@@ -289,11 +289,11 @@
               href: how-to-change-the-value-of-an-existing-setting-at-design-time.md
             - name: 如何：在应用程序会话间更改设置的值
               href: how-to-change-the-value-of-a-setting-between-application-sessions.md
-            - name: '如何：在运行时读取设置 (C#)'
+            - name: 如何：在运行时读取设置 (C#)
               href: how-to-read-settings-at-run-time-with-csharp.md
-            - name: '如何：在运行时编写用户设置 (C#)'
+            - name: 如何：在运行时编写用户设置 (C#)
               href: how-to-write-user-settings-at-run-time-with-csharp.md
-            - name: '如何：向应用程序添加多组设置 (C#)'
+            - name: 如何：向应用程序添加多组设置 (C#)
               href: how-to-add-multiple-sets-of-settings-to-your-application-in-csharp.md
         - name: 如何：创建应用程序设置
           href: how-to-create-application-settings.md

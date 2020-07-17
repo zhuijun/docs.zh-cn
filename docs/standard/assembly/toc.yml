@@ -64,3 +64,5 @@
   href: load-unload.md
 - name: 演练：在 Visual Studio 中嵌入托管程序集中的类型
   href: embed-types-visual-studio.md
+- name: 使用 MetadataLoadContext 检查程序集内容
+  href: inspect-contents-using-metadataloadcontext.md
