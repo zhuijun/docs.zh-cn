@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9edd6b71-0fa5-4649-ae1d-ac1c12541019
-ms.openlocfilehash: 2c8924ee3374489dded7e819ecde8e4d9da750bb
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: e6dc32274cc3b0d7ec9d66a837a422c87fb2468b
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374381"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416211"
 ---
 # <a name="consume-a-dataset-from-an-xml-web-service"></a>使用 XML web services 中的数据集
 
@@ -19,7 +19,7 @@ ms.locfileid: "86374381"
  下面的示例演示如何创建使用**数据集**的 XML Web service 和客户端传输关系数据（包括已修改的数据），并将任何更新解析回原始数据源。  
   
 > [!NOTE]
-> `DataSet` `DataTable` 如果输入不受信任，则作为 XML Web service 调用的一部分传输或实例是不安全的。 有关详细信息，请参阅[数据集和 DataTable 安全指南](/dotnet/framework/data/adonet/dataset-datatable-dataview/security-guidance)。
+> `DataSet` `DataTable` 如果输入不受信任，则作为 XML Web service 调用的一部分传输或实例是不安全的。 有关详细信息，请参阅[数据集和 DataTable 安全指南](security-guidance.md)。
 > 我们还建议你在创建 XML Web service 时始终考虑安全问题。 有关保护 XML Web service 的信息，请参阅[保护使用 ASP.NET 创建的 XML Web Services](/previous-versions/dotnet/netframework-4.0/w67h0dw7(v=vs.100))。  
   
 ## <a name="create-an-xml-web-service"></a>创建 XML web services
@@ -263,7 +263,7 @@ ms.locfileid: "86374381"
     csc client.cs -r:sample.dll -r:System.dll -r:System.Data.dll -r:System.Xml.dll -r:System.Web.Services.dll  
     ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [ADO.NET](../index.md)
 - [数据集、数据表和数据视图](index.md)

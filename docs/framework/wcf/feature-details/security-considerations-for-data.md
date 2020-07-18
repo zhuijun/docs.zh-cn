@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a7eb98da-4a93-4692-8b59-9d670c79ffb2
-ms.openlocfilehash: 8cb7ee2ea2418602d944c3c08cec2b9279dca3b9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 530bb54936f97f1d7460d63cfa316c760cbd449d
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84601057"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441812"
 ---
 # <a name="security-considerations-for-data"></a>数据的安全考虑事项
 
@@ -236,7 +236,7 @@ XML 信息集构成 WCF 中所有消息处理的基础。 当接受来自不受�
 
 上述每个机制都引入了反序列化程序可加载的更多类型，从而增加了外围应用。 应控制其中的每个机制，确保不会有任何恶意类型或意外的类型添加到已知类型列表中。
 
-一旦已知类型在范围之内，那么即使协定实际禁止使用它，也可以随时加载它，并且可以创建该类型的实例。 例如，假定使用上述某个机制将类型“MyDangerousType”添加到了已知类型列表中。 这表示：
+一旦已知类型在范围之内，那么即使协定实际禁止使用它，也可以随时加载它，并且可以创建该类型的实例。 例如，假定使用上述某个机制将类型“MyDangerousType”添加到了已知类型列表中。 这意味着：
 
 - `MyDangerousType` 已加载并且它的类构造函数已运行。
 
@@ -284,7 +284,7 @@ XML 信息集构成 WCF 中所有消息处理的基础。 当接受来自不受�
 
 <xref:System.Runtime.Serialization.NetDataContractSerializer> 是一个序列化引擎，它使用类型的紧密耦合。 这类似于 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 和 <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter>。 也就是说，它通过从传入数据中读取 .NET Framework 程序集和类型名来确定要实例化的类型。 尽管它是 WCF 的一部分，但没有提供的方法来插入此序列化引擎;必须编写自定义代码。 `NetDataContractSerializer`提供主要是为了简化从 .NET Framework 远程处理到 WCF 的迁移。 有关详细信息，请参阅[序列化和反序列](serialization-and-deserialization.md)化中的相关部分。
 
-因为消息本身可能指示可以加载的任何类型，所以 <xref:System.Runtime.Serialization.NetDataContractSerializer> 机制本质上是不安全的，应当仅与受信任的数据一起使用。 通过使用 <xref:System.Runtime.Serialization.NetDataContractSerializer.Binder%2A> 属性编写安全的、类型限制的类型联编程序来仅允许加载安全类型，可使它变成安全的机制。
+因为消息本身可能指示可以加载的任何类型，所以 <xref:System.Runtime.Serialization.NetDataContractSerializer> 机制本质上是不安全的，应当仅与受信任的数据一起使用。 有关详细信息，请参阅[BinaryFormatter security guide （安全指南](/dotnet/standard/serialization/binaryformatter-security-guide)）。
 
 即使与受信任的数据一起使用时，传入数据也可能不足以指定要加载的类型，尤其当 <xref:System.Runtime.Serialization.NetDataContractSerializer.AssemblyFormat%2A> 属性设置为 <xref:System.Runtime.Serialization.Formatters.FormatterAssemblyStyle.Simple>时更有可能如此。 可访问应用程序的目录或全局程序集缓存的任何人都可以用恶意类型来代替预计要加载的类型。 应始终通过正确地设置权限来确保应用程序的目录和全局程序集缓存的安全性。
 
@@ -382,7 +382,7 @@ WCF 是一个灵活且可自定义的系统。 本主题中的大部分内容侧
 
 - 通常，当使用接受配额的任何组件时，都应了解它的安全含义并将它设置为一个安全值。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - <xref:System.Xml.XmlDictionaryReader>

@@ -3,12 +3,12 @@ title: 数据集和 DataTable 安全指南
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: f78b52ede4ec76599d761e5188f39c3e9dae2a4f
-ms.sourcegitcommit: 98548968e89739a37625e72ddbd535fe1e11121e
+ms.openlocfilehash: 2fbac625ae0049fc4c363977dc1d3fbcfb376025
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/15/2020
-ms.locfileid: "86405287"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416196"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>数据集和 DataTable 安全指南
 
@@ -193,7 +193,7 @@ AppDomain.CurrentDomain.SetData("System.Data.DataSetDefaultAllowedTypes", extraA
 </configuration>
 ```
 
-有关和的详细 `TraceSource` 信息 `TraceListener` ，请参阅文档[如何：将 TraceSource 和筛选器与跟踪侦听器一起使用](/dotnet/framework/debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners)。
+有关和的详细 `TraceSource` 信息 `TraceListener` ，请参阅文档[如何：将 TraceSource 和筛选器与跟踪侦听器一起使用](../../../debug-trace-profile/how-to-use-tracesource-and-filters-with-trace-listeners.md)。
 
 > [!NOTE]
 > 在审核模式下运行应用在 .NET Core 或 .NET 5.0 及更高版本中不可用。
@@ -236,7 +236,7 @@ AppDomain.CurrentDomain.SetData("System.Data.DataSetDefaultAllowedTypes", extraA
 </configuration>
 ```
 
-有关详细信息，请参阅 [\<AppContextSwitchOverrides>](/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element) 元素。
+有关详细信息，请参阅 [\<AppContextSwitchOverrides>](../../../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) 元素。
 
 在 .NET Core、.NET 5 和 ASP.NET Core 中，此设置由_runtimeconfig.js_控制，如以下 JSON 中所示：
 
@@ -308,7 +308,7 @@ DataSet customers = new DataSet();
 adapter.Fill(customers, "Customers");
 ```
 
-（上面的代码示例是在[从 DataAdapter 填充数据集](/dotnet/framework/data/adonet/populating-a-dataset-from-a-dataadapter)时找到的更大示例的一部分。）
+（上面的代码示例是在[从 DataAdapter 填充数据集](../populating-a-dataset-from-a-dataadapter.md)时找到的更大示例的一部分。）
 
 > 大多数应用程序都可以简化，并假定其数据库层受信任。 但是，如果您正在对应用程序进行[威胁建模](https://www.microsoft.com/securityengineering/sdl/threatmodeling)，则威胁模型可能会将其视为应用程序（客户端）和数据库层（服务器）之间的信任边界。 在客户端和服务器之间使用[相互身份验证](/sql/relational-databases/native-client/features/service-principal-name-spn-support-in-client-connections)或[AAD 身份验证](/azure/azure-sql/database/authentication-aad-overview)是一种帮助解决与此相关的风险的方法。 本部分的剩余部分讨论连接到不受信任的服务器的客户端可能的结果。
 
@@ -487,4 +487,4 @@ public class MyClass
 * 引入[了一种不同](/ef/core/providers/)的数据库提供程序生态系统，使您可以轻松地通过实体框架对象模型来投影数据库查询。
 * 在反序列化来自不受信任源的数据时提供内置保护。
 
-对于使用 `.aspx` SOAP 终结点的应用，请考虑将这些终结点更改为使用[WCF](/dotnet/framework/wcf/)。 WCF 是为 web 服务提供的更好的替代功能 `.asmx` 。 [可以通过 SOAP 公开](/dotnet/framework/wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients)WCF 终结点，以便与现有调用方兼容。
+对于使用 `.aspx` SOAP 终结点的应用，请考虑将这些终结点更改为使用[WCF](/dotnet/framework/wcf/)。 WCF 是为 web 服务提供的更好的替代功能 `.asmx` 。 [可以通过 SOAP 公开](../../../wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md)WCF 终结点，以便与现有调用方兼容。

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - deploying [WCF Data Services
 - developing applications [WCF Data Services]
 ms.assetid: 6557c0e3-5aea-4f6e-bc14-77ad317a168b
-ms.openlocfilehash: 1dc9f3d261738a6dff0339c094c7aba5e32680ee
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 7519dce8ed17bc623173f30222296ffaa42b4341
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82200049"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416069"
 ---
 # <a name="develop-and-deploy-wcf-data-services"></a>开发和部署 WCF 数据服务
 
@@ -32,7 +32,7 @@ ms.locfileid: "82200049"
 
 3. **配置数据服务**
 
-     默认情况下，WCF 数据服务禁用对由实体容器公开的资源的访问。 使用<xref:System.Data.Services.DataServiceConfiguration>接口可以配置对资源和服务操作的访问，指定支持的 OData 版本，还可以定义其他服务范围的行为，例如批处理行为或可在单个响应源中返回的最大实体数。 有关详细信息，请参阅[配置数据服务](configuring-the-data-service-wcf-data-services.md)。
+     默认情况下，WCF 数据服务禁用对由实体容器公开的资源的访问。 使用 <xref:System.Data.Services.DataServiceConfiguration> 接口可以配置对资源和服务操作的访问，指定支持的 OData 版本，还可以定义其他服务范围的行为，例如批处理行为或可在单个响应源中返回的最大实体数。 有关详细信息，请参阅[配置数据服务](configuring-the-data-service-wcf-data-services.md)。
 
 本文主要介绍如何使用 Visual Studio 开发和部署数据服务。 有关将数据公开为 OData 源的 WCF 数据服务提供的灵活性的信息，请参阅[定义 WCF 数据服务](defining-wcf-data-services.md)。
 
@@ -63,14 +63,14 @@ ms.locfileid: "82200049"
 
     - 此服务器无法处理分块 HTTP 流，在从数据服务访问大型二进制数据时，WCF 数据服务客户端默认发送此流。 有关详细信息，请参阅[流式处理提供程序](streaming-provider-wcf-data-services.md)。
 
-    - 此服务器在处理 URL 中的句点（`.`）字符时会遇到问题，即使密钥值 WCF 数据服务支持此字符。
+    - 此服务器在处理 URL 中的句点（ `.` ）字符时会遇到问题，即使密钥值 WCF 数据服务支持此字符。
 
     > [!TIP]
     > 即使您可以使用 Visual Studio 开发服务器在开发过程中测试数据服务，您应该在部署到运行 IIS 的 Web 服务器之后再次对其进行测试。
 
 3. **Azure 开发环境**
 
-     Azure Tools for Visual Studio 包含一组集成的工具，用于在 Visual Studio 中开发 Azure 服务。 使用这些工具，可以开发可部署到 Azure 的数据服务，并且可以在部署之前在本地计算机上测试数据服务。 使用 Visual Studio 开发在 Azure 平台上运行的数据服务时，请使用这些工具。 有关安装这些工具的信息，请参阅[Azure tools For Visual Studio 2015](../../../azure/sdk/vs2015-install.md)。 有关开发在 Azure 上运行的数据服务的详细信息，请参阅文章在[azure 中部署 OData 服务](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure)。
+     Azure Tools for Visual Studio 包含一组集成的工具，用于在 Visual Studio 中开发 Azure 服务。 使用这些工具，可以开发可部署到 Azure 的数据服务，并且可以在部署之前在本地计算机上测试数据服务。 使用 Visual Studio 开发在 Azure 平台上运行的数据服务时，请使用这些工具。 有关安装这些工具的信息，请参阅[Azure tools For Visual Studio 2015](../../../azure/vs2015-install.md)。 有关开发在 Azure 上运行的数据服务的详细信息，请参阅文章在[azure 中部署 OData 服务](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure)。
 
 ### <a name="development-tips"></a>开发提示
 
@@ -115,7 +115,7 @@ WCF 数据服务在选择承载数据服务的过程方面很灵活。 可以使
 
 - **Azure**
 
-     可以使用[Azure Tools For Visual Studio](../../../azure/sdk/vs2015-install.md)将数据服务部署到 azure。 有关将数据服务部署到 Azure 的详细信息，请参阅[在 azure 中部署 OData 服务](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure)。
+     可以使用[Azure Tools For Visual Studio](../../../azure/vs2015-install.md)将数据服务部署到 azure。 有关将数据服务部署到 Azure 的详细信息，请参阅[在 azure 中部署 OData 服务](https://docs.microsoft.com/archive/blogs/astoriateam/deploying-an-odata-service-in-windows-azure)。
 
 ### <a name="deployment-considerations"></a>部署注意事项
 
@@ -125,7 +125,7 @@ WCF 数据服务在选择承载数据服务的过程方面很灵活。 可以使
 
 - 由于 WCF 数据服务包含基本 WCF 实现，因此你可以使用 Windows Server AppFabric 来监视部署到在 Windows Server 上运行的 IIS 的数据服务。 有关使用 Windows Server AppFabric 监视数据服务的详细信息，请参阅[使用 Windows Server appfabric 进行跟踪后 WCF 数据服务](https://docs.microsoft.com/archive/blogs/rjacobs/tracking-wcf-data-services-with-windows-server-appfabric)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [承载数据服务](hosting-the-data-service-wcf-data-services.md)
 - [WCF 数据服务的安全](securing-wcf-data-services.md)

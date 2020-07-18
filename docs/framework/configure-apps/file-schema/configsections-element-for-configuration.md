@@ -7,12 +7,12 @@ helpviewer_keywords:
 - configSections Element
 - <configSections> Element
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
-ms.openlocfilehash: 55116f1fe6fdffffea8f26d8a4de783c7305ada3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1e4bb7a7cfb0b140ca6d13c162708c3c30bd496d
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155344"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441682"
 ---
 # <a name="configsections-element-for-configuration"></a>\<configuration> 的 \<configSections> 元素
 
@@ -20,7 +20,7 @@ ms.locfileid: "79155344"
 
 [**\<configuration>**](configuration-element.md) &nbsp;&nbsp;**\<configSections>**
 
-## <a name="attributes"></a>特性
+## <a name="attributes"></a>属性
 
 无
 
@@ -36,10 +36,8 @@ ms.locfileid: "79155344"
 | --- | ----------- |
 | [**\<section>**](section-element.md) | 包含配置节声明。 |
 | [**\<sectionGroup>**](sectiongroup-element-for-configsections.md) | 定义配置节的命名空间。 |
-| [**\<remove>**](remove-element-for-configsections.md) | 删除预定义的节或节组。 |
-| [**\<clear>**](clear-element-for-configsections.md) | 清除所有之前定义的部分和节组。 |
 
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
 如果此元素在配置文件中，则它必须是元素的第一个子元素 **\<configuration>** 。
 
@@ -61,8 +59,8 @@ ms.locfileid: "79155344"
 
 ## <a name="configuration-file"></a>配置文件
 
-此元素可用于应用程序配置文件、计算机配置文件（*machine.config*）和不在应用程序目录级别的*web.config 文件。*
+此元素可用于应用程序配置文件、计算机配置文件（*Machine.config*）以及不在应用程序目录级别的*Web.config*文件。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [.NET Framework 的配置文件架构](index.md)
