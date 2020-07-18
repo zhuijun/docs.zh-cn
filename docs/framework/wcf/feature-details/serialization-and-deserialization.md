@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3d71814c-bda7-424b-85b7-15084ff9377a
-ms.openlocfilehash: 3927c17a2548a094a63ffd95ff8a3701403de281
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: b770543eb09ed2edc1a028561e0cf41e74fab1cc
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244902"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86444490"
 ---
 # <a name="serialization-and-deserialization"></a>序列化和反序列化
 Windows Communication Foundation （WCF）包含一个新的序列化引擎 <xref:System.Runtime.Serialization.DataContractSerializer> 。 <xref:System.Runtime.Serialization.DataContractSerializer>双向 .NET Framework 对象和 XML 之间进行转换。 本主题说明序列化程序的工作原理。  
@@ -20,7 +20,13 @@ Windows Communication Foundation （WCF）包含一个新的序列化引擎 <xre
   
  当对 XML 进行反序列化时，序列化程序使用 <xref:System.Xml.XmlReader> 和 <xref:System.Xml.XmlWriter> 类。 它还支持 <xref:System.Xml.XmlDictionaryReader> 和 <xref:System.Xml.XmlDictionaryWriter> 类，以便在某些情况下（例如使用 WCF 二进制 XML 格式时），使其能够生成优化的 XML。  
   
- WCF 还包括一个伴随序列化程序 <xref:System.Runtime.Serialization.NetDataContractSerializer> 。 与 <xref:System.Runtime.Serialization.NetDataContractSerializer> <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 和序列化程序类似， <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> 因为它还会发出 .NET Framework 类型名称作为序列化数据的一部分。 当在序列化和反序列化结束阶段共享相同的类型时使用此序列化程序。 <xref:System.Runtime.Serialization.DataContractSerializer> 和 <xref:System.Runtime.Serialization.NetDataContractSerializer> 都派生自公共基类 <xref:System.Runtime.Serialization.XmlObjectSerializer>。  
+ WCF 还包括一个伴随序列化程序 <xref:System.Runtime.Serialization.NetDataContractSerializer> 。 <xref:System.Runtime.Serialization.NetDataContractSerializer>：
+
+* 是***不***安全的。 有关详细信息，请参阅[BinaryFormatter security guide （安全指南](/dotnet/standard/serialization/binaryformatter-security-guide)）。
+* 与 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 和序列化程序类似， <xref:System.Runtime.Serialization.Formatters.Soap.SoapFormatter> 因为它还会发出 .NET Framework 类型名称作为序列化数据的一部分。
+* 当在序列化和反序列化结束时共享相同的类型时，使用。
+
+ <xref:System.Runtime.Serialization.DataContractSerializer>和都 <xref:System.Runtime.Serialization.NetDataContractSerializer> 派生自公共基类 <xref:System.Runtime.Serialization.XmlObjectSerializer> 。  
   
 > [!WARNING]
 > <xref:System.Runtime.Serialization.DataContractSerializer> 将包含带小于 20 的十六进制值的控制字符序列化为 XML 实体。 在将此类数据发送到 WCF 服务时，这可能会导致非 WCF 客户端出现问题。  
