@@ -5,12 +5,12 @@ helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: 5e39279183f7e3745c9373df246d14d69d5ff99b
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 50f2c5fc3570b6d66ed83206660caf4bd02f1f5b
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805900"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441331"
 ---
 # <a name="interfaces-c-programming-guide"></a>接口（C# 编程指南）
 
@@ -50,7 +50,7 @@ ms.locfileid: "80805900"
 
 接口具有以下属性：
 
-- 接口通常类似于只有抽象成员的抽象基类。 实现接口的任何类或结构都必须实现其所有成员。 接口可以选择性地定义其部分或全部成员的默认实现。
+- 接口通常类似于只有抽象成员的抽象基类。 实现接口的任何类或结构都必须实现其所有成员。 接口可以选择性地定义其部分或全部成员的默认实现。 有关详细信息，请参阅[默认接口方法](../../tutorials/default-interface-methods-versions.md)。
 - 接口无法直接进行实例化。 其成员由实现接口的任何类或结构来实现。
 - 一个类或结构可以实现多个接口。 一个类可以继承一个基类，还可实现一个或多个接口。
 
@@ -61,12 +61,13 @@ ms.locfileid: "80805900"
 - [如何实现接口事件](../events/how-to-implement-interface-events.md)
 - [类和结构](../classes-and-structs/index.md)  
 - [继承](../classes-and-structs/inheritance.md)  
+- [接口](../../language-reference/keywords/interface.md)
 - [方法](../classes-and-structs/methods.md)  
 - [多态性](../classes-and-structs/polymorphism.md)  
 - [抽象类、密封类及类成员](../classes-and-structs/abstract-and-sealed-classes-and-class-members.md)  
 - [属性](../classes-and-structs/properties.md)  
 - [事件](../events/index.md)  
-- [索引器](../indexers/index.md)  
+- [索引器](../indexers/index.md)
   
 ## <a name="see-also"></a>请参阅
 

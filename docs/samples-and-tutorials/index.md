@@ -4,12 +4,12 @@ description: 有关可帮助了解 .NET 的 .NET Core、ASP.NET Core 和 C# 语�
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: 44ce0d740502686db1801db428a2f79c2250f8c0
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: 367b2cbea24ac0da634051bf815c319f3679f79b
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507424"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86417326"
 ---
 # <a name="net-samples-and-tutorials"></a>.NET 示例和教程
 
@@ -87,9 +87,9 @@ ms.locfileid: "82507424"
 
 本教程演示了如何使用 Visual Studio for Mac 生成简单的 .NET Core 控制台应用。
 
-**[使用 Visual Studio for Mac 在 macOS 上构建完整的 .NET Core 解决方案](../core/tutorials/using-on-mac-vs-full-solution.md)**
+**[使用 Visual Studio for Mac 在 macOS 上创建 .NET Standard 库](../core/tutorials/library-with-visual-studio-mac.md)**
 
-本教程演示了如何构建包含可重用的库和单元测试的的完整 .NET Core 解决方案。
+本教程展示了如何使用 Visual Studio for Mac 生成 .NET Standard 库。
 
 **[创建支持插件的 .NET Core 应用程序](../core/tutorials/creating-app-with-plugin-support.md)**
 
@@ -112,6 +112,6 @@ ms.locfileid: "82507424"
 1. 在存储库的文件夹中导航到示例的位置。 当你点击示例链接时，示例位置的相对路径将显示在浏览器的地址栏中。
 1. 要运行示例，你有多个选择：
    * 使用 [.NET Core CLI](../core/tools/index.md)：在控制台窗口中，导航到示例的文件夹，然后使用 dotnet CLI 命令。
-   * 退出 [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) 或 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)：从菜单栏中依次选择“文件”>“打开”>“项目/解决方案”来打开示例，导航到示例项目文件夹，然后选择项目文件（.csproj 或 .fsproj）    。
-   * 使用 [Visual Studio Code](https://code.visualstudio.com/)：从菜单栏中选择“文件”>“打开文件夹”来打开示例，然后选择示例的项目文件夹  。
+   * 退出 [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) 或 [Visual Studio for Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)：从菜单栏中依次选择“文件”>“打开”>“项目/解决方案”来打开示例，导航到示例项目文件夹，然后选择项目文件（.csproj 或 .fsproj） 。
+   * 使用 [Visual Studio Code](https://code.visualstudio.com/)：从菜单栏中选择“文件”>“打开文件夹”来打开示例，然后选择示例的项目文件夹。
    * 使用支持 .NET Core 项目的其他 IDE。

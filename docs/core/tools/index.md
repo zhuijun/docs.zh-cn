@@ -3,20 +3,20 @@ title: .NET Core CLI
 titleSuffix: ''
 description: .NET Core CLI 及其功能概述。
 ms.date: 02/13/2020
-ms.openlocfilehash: ac5988bacbef41326f2501a2cff6c3f5aa0be798
-ms.sourcegitcommit: 267d092663aba36b6b2ea853034470aea493bfae
+ms.openlocfilehash: f92151c85b4816fef1859e84ad94945445db1854
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80110836"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415963"
 ---
 # <a name="net-core-cli-overview"></a>.NET Core CLI 概述
 
- 本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
+本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
 
 .NET Core 命令行接口 (CLI) 工具是用于开发、生成、运行和发布 .NET Core 应用程序的跨平台工具链。
 
-.NET Core CLI 包含在 [.NET Core SDK](../sdk.md) 中。 若要了解如何安装 .NET Core SDK，请参阅[安装 .NET Core SDK](../install/sdk.md)。
+.NET Core CLI 包含在 [.NET Core SDK](../sdk.md) 中。 若要了解如何安装 .NET Core SDK，请参阅[安装 .NET Core](../install/windows.md)。
 
 ## <a name="cli-commands"></a>CLI 命令
 
@@ -104,4 +104,4 @@ dotnet build
 ## <a name="see-also"></a>请参阅
 
 - [dotnet/sdk GitHub 存储库](https://github.com/dotnet/sdk/)
-- [.NET Core 安装指南](../install/sdk.md)
+- [.NET Core 安装指南](../install/windows.md)
