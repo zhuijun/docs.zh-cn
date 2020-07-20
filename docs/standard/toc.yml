@@ -744,6 +744,8 @@
         - name: 概述
           href: serialization/binary-serialization.md
           displayName: binary serialization
+        - name: BinaryFormatter 安全指南
+          href: serialization/binaryformatter-security-guide.md
         - name: 序列化概念
           href: serialization/serialization-concepts.md
         - name: 基本序列化
