@@ -2,12 +2,12 @@
 title: dotnet-install 脚本
 description: 了解用于安装 .NET Core SDK 和共享运行时的 dotnet-install 脚本。
 ms.date: 04/30/2020
-ms.openlocfilehash: d03877d76212f7b22de0a1075cf50fc75bd104b6
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: cecfbb86c4a2863161d3df7c78201fa8057abfe5
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324423"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415920"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet-install 脚本引用
 
@@ -82,7 +82,7 @@ bash 脚本也读取 PowerShell 开关。因此，可以在 Linux/macOS 系统�
 
 默认情况下，该脚本会将安装位置添加到当前会话的 $PATH。 通过指定 `-NoPath|--no-path` 参数覆盖此默认行为。 脚本未设置 `DOTNET_ROOT` 环境变量。
 
-运行脚本前，请安装所需的[依赖项](../install/dependencies.md)。
+运行脚本前，请安装所需的[依赖项](../install/windows.md#dependencies)。
 
 可以使用 `-Version|--version` 参数安装特定版本。 必须将版本指定为由 3 部分构成的版本号，例如 `2.1.0`。 如果未指定版本，则脚本将安装 `latest` 版本。
 

@@ -2,12 +2,12 @@
 title: 使用 Visual Studio for Mac 调试 .NET Core 控制台应用程序
 description: 了解如何使用 Visual Studio for Mac 调试 .NET Core 控制台应用。
 ms.date: 06/08/2020
-ms.openlocfilehash: 4941605923a9897d481aca4ec31408ab62e873f3
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 7e2a25266fab40b5ef1d0a38b8bbf06a6843746b
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84713483"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416011"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-for-mac"></a>教程：使用 Visual Studio for Mac 调试 .NET Core 控制台应用程序
 
@@ -15,7 +15,7 @@ ms.locfileid: "84713483"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 本教程适用于按照[在 Visual Studio for Mac 中创建 .NET Core 控制台应用程序](using-on-mac-vs.md)创建的控制台应用。
+- 本教程适用于按照[在 Visual Studio for Mac 中创建 .NET Core 控制台应用程序](with-visual-studio-mac.md)创建的控制台应用。
 
 ## <a name="use-debug-build-configuration"></a>使用“调试”生成配置
 
@@ -27,7 +27,7 @@ ms.locfileid: "84713483"
 
 1. 启动 Visual Studio for Mac。
 
-1. 打开按照[在 Visual Studio for Mac 中创建 .NET Core 控制台应用程序](using-on-mac-vs.md)创建的项目。
+1. 打开按照[在 Visual Studio for Mac 中创建 .NET Core 控制台应用程序](with-visual-studio-mac.md)创建的项目。
 
    当前的生成配置显示在工具栏上。 下面的工具栏图像显示 Visual Studio 配置为编译应用的“调试”版本：
 

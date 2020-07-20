@@ -4,12 +4,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 7061b6c1988da9f6dfac115ee555a914531df863
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: a3e29903448c3eb5e0b7dda027677d1785a445e7
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805924"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416293"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Main() 返回值（C# 编程指南）
 
@@ -25,7 +25,7 @@ ms.locfileid: "80805924"
 
 ## <a name="example"></a>示例
 
-此示例使用 [.NET Core](../../../core/index.yml) 命令行工具。 如果不熟悉 .NET Core 命令行工具，可通过本[入门文章](../../../core/tutorials/cli-create-console-app.md)进行了解。
+此示例使用 [.NET Core](../../../core/index.yml) 命令行工具。 如果不熟悉 .NET Core 命令行工具，可通过本[入门文章](../../../core/tutorials/with-visual-studio-code.md)进行了解。
 
 修改 program.cs 中的 `Main` 方法，如下所示  ：
 

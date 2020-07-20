@@ -2,12 +2,12 @@
 title: 自定义参数封送 - .NET
 description: 了解如何自定义 .NET 将参数封送到本机表示形式的方式。
 ms.date: 01/18/2019
-ms.openlocfilehash: ff646ad942cf051ce90cd75b24c8562e536182d9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1999cad057875f15b283421f87f485c2e5ca2306
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401159"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374307"
 ---
 # <a name="customizing-parameter-marshaling"></a>自定义参数封送
 
@@ -40,7 +40,7 @@ ms.locfileid: "79401159"
 
 .NET 还提供多种方式来封送数组参数。 如果要调用获取 C 样式数组的 API，则使用 <xref:System.Runtime.InteropServices.UnmanagedType.LPArray?displayProperty=nameWithType> 非托管类型。 如果数组中的值需要进行自定义封送，则可以为其使用 `[MarshalAs]` 属性上的 <xref:System.Runtime.InteropServices.MarshalAsAttribute.ArraySubType> 字段。
 
-如果使用的是 COM API，则可能必须将数组参数作为 `SAFEARRAY*` 进行封送。 为此，可以使用 <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType> 非托管类型。 [自定义 `object` 字段](./customize-struct-marshaling.md#marshaling-systemobjects)上的表中显示了 `SAFEARRAY` 的元素的默认类型。 可以使用 <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> 和 <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> 字段自定义 `SAFEARRAY` 的确切元素类型。
+如果使用的是 COM API，则可能必须将数组参数作为 `SAFEARRAY*` 进行封送。 为此，可以使用 <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType> 非托管类型。 [自定义 `object` 字段](./customize-struct-marshaling.md#marshal-systemobject)上的表中显示了 `SAFEARRAY` 的元素的默认类型。 可以使用 <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArraySubType?displayProperty=nameWithType> 和 <xref:System.Runtime.InteropServices.MarshalAsAttribute.SafeArrayUserDefinedSubType?displayProperty=nameWithType> 字段自定义 `SAFEARRAY` 的确切元素类型。
 
 ## <a name="customizing-boolean-or-decimal-parameters"></a>自定义布尔或十进制参数
 
@@ -62,7 +62,7 @@ ms.locfileid: "79401159"
 
 ### <a name="marshaling-to-a-variant"></a>封送到 `VARIANT`
 
-如果本机 API 采用 Win32 `VARIANT`，则可以使用 `object` 参数上的 <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> 格式将对象作为 `VARIANT` 进行封送。 如需了解 .NET 类型与 `VARIANT` 类型之间的映射，请参阅有关[自定义 `object` 字段](customize-struct-marshaling.md#marshaling-systemobjects)的文档。
+如果本机 API 采用 Win32 `VARIANT`，则可以使用 `object` 参数上的 <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> 格式将对象作为 `VARIANT` 进行封送。 如需了解 .NET 类型与 `VARIANT` 类型之间的映射，请参阅有关[自定义 `object` 字段](customize-struct-marshaling.md#marshal-systemobject)的文档。
 
 ### <a name="custom-marshalers"></a>自定义封送处理程序
 

@@ -5,12 +5,12 @@ ms.date: 03/20/2020
 ms.custom: azure-sdk-dotnet
 ms.author: casoper
 author: camsoper
-ms.openlocfilehash: 5a1fb35aeca034a7cdd1caa813a3839919a5f926
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 0b255713bc9c13e0cbdaeb25a3d0fe46e91e815d
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174825"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416030"
 ---
 # <a name="logging-with-the-azure-sdk-for-net"></a>通过 Azure SDK for .NET 启用日志记录
 
@@ -70,7 +70,7 @@ using AzureEventSourceListener listener = AzureEventSourceListener.CreateConsole
 
 ### <a name="log-to-diagnostic-traces"></a>记录到诊断跟踪
 
-如果实现跟踪侦听器，则可以使用 `CreateTraceLogger` 方法记录到标准 .NET 事件跟踪机制 ([`System.Diagnostics.Tracing`](/dotnet/api/system.diagnostics.tracing))。 有关 .NET 中的事件跟踪的详细信息，请参阅[跟踪侦听器](/dotnet/framework/debug-trace-profile/trace-listeners)。 下面的示例指定一个详细的日志级别：
+如果实现跟踪侦听器，则可以使用 `CreateTraceLogger` 方法记录到标准 .NET 事件跟踪机制 ([`System.Diagnostics.Tracing`](/dotnet/api/system.diagnostics.tracing))。 有关 .NET 中的事件跟踪的详细信息，请参阅[跟踪侦听器](../framework/debug-trace-profile/trace-listeners.md)。 下面的示例指定一个详细的日志级别：
 
 ```csharp
 using AzureEventSourceListener listener = AzureEventSourceListener.CreateTraceLogger(EventLevel.Verbose);
@@ -99,4 +99,4 @@ using AzureEventSourceListener listener = new AzureEventSourceListener((e, messa
 - [在 Azure 应用服务中为应用启用诊断日志记录](/azure/app-service/troubleshoot-diagnostic-logs)
 - 了解 [Azure 安全日志记录和审核](/azure/security/fundamentals/log-audit)选项
 - 了解如何使用 [Azure 平台日志](/azure/azure-monitor/platform/platform-logs-overview)
-- 详细了解 [.NET Core 日志记录和跟踪](/dotnet/core/diagnostics/logging-tracing)
+- 详细了解 [.NET Core 日志记录和跟踪](../core/diagnostics/logging-tracing.md)

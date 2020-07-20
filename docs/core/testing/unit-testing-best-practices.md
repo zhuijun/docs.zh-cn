@@ -4,12 +4,12 @@ description: 了解有关编写单元测试的最佳做法，以提高 .NET Core
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.openlocfilehash: 8a879c16e48dfde617f9cd20f58cab96039361f0
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: ffeaa1e11512cab64695c120f844594b8c5014a8
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324484"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281103"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>.NET Core 和 .NET Standard 单元测试最佳做法
 
@@ -22,21 +22,25 @@ ms.locfileid: "85324484"
 ## <a name="why-unit-test"></a>为什么要执行单元测试？
 
 ### <a name="less-time-performing-functional-tests"></a>比执行功能测试节省时间
+
 功能测试费用高。 它们通常涉及打开应用程序并执行一系列你（或其他人）必须遵循的步骤，以验证预期的行为。 测试人员可能并不总是了解这些步骤，这意味着为了执行测试，他们必须联系更熟悉该领域的人。 对于细微更改，测试本身可能需要几秒钟，对于较大更改，可能需要几分钟。 最后，在系统中所做的每项更改都必须重复此过程。
 
 而单元测试只需按一下按钮即可运行，只需要几毫秒时间，且无需测试人员了解整个系统。 测试通过与否取决于测试运行程序，而非测试人员。
 
 ### <a name="protection-against-regression"></a>防止回归
+
 回归缺陷是在对应用程序进行更改时引入的缺陷。 测试人员通常不仅测试新功能，还要测试预先存在的功能，以验证先前实现的功能是否仍按预期运行。
 
 使用单元测试，可在每次生成后，甚至在更改一行代码后重新运行整套测试。 让你确信新代码不会破坏现有功能。
 
 ### <a name="executable-documentation"></a>可执行文档
+
 在给定某个输入的情况下，特定方法的作用或行为可能并不总是很明显。 你可能会想知道：如果我将空白字符串传递给它，此方法会有怎样的行为？ Null?
 
 如果你有一套命名正确的单元测试，每个测试应能够清楚地解释给定输入的预期输出。 此外，它应该能够验证其确实有效。
 
 ### <a name="less-coupled-code"></a>减少耦合代码
+
 当代码紧密耦合时，可能难以进行单元测试。 如果不为编写的代码创建单元测试，则耦合可能不太明显。
 
 为代码编写测试会自然地解耦代码，因为采用其他方法测试会更困难。
@@ -56,6 +60,7 @@ ms.locfileid: "85324484"
 高代码覆盖率百分比不指示成功，也不意味着高代码质量。 它仅仅表示单元测试所涵盖的代码量。 有关详细信息，请参阅[单元测试代码覆盖率](unit-testing-code-coverage.md)。
 
 ## <a name="lets-speak-the-same-language"></a>让我们使用相同的术语
+
 遗憾的是，当谈到测试时，术语“mock”经常被滥用。 以下几点定义了编写单元测试时最常见的 fake 类型：
 
 Fake - Fake 是一个通用术语，可用于描述 stub 或 mock 对象。 它是 stub 还是 mock 取决于使用它的上下文。 也就是说，Fake 可以是 stub 或 mock。
@@ -111,6 +116,7 @@ Assert.True(mockOrder.Validated);
 ## <a name="best-practices"></a>最佳实践
 
 ### <a name="naming-your-tests"></a>为测试命名
+
 测试的名称应包括三个部分：
 
 - 要测试的方法的名称。
@@ -124,12 +130,15 @@ Assert.True(mockOrder.Validated);
 测试不仅能确保代码有效，还能提供文档。 只需查看单元测试套件，就可以在不查看代码本身的情况下推断代码的行为。 此外，测试失败时，可以确切地看到哪些方案不符合预期。
 
 #### <a name="bad"></a>不佳：
+
 [!code-csharp[BeforeNaming](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeNaming)]
 
 #### <a name="better"></a>良好：
+
 [!code-csharp[AfterNamingAndMinimallyPassing](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterNamingAndMinimallyPassing)]
 
 ### <a name="arranging-your-tests"></a>安排测试
+
 “Arrange、Act、Assert”是单元测试时的常见模式。 顾名思义，它包含三个主要操作：
 
 - 安排对象，根据需要对其进行创建和设置。
@@ -144,12 +153,15 @@ Assert.True(mockOrder.Validated);
 可读性是编写测试时最重要的方面之一。 在测试中分离这些操作会明确地突出显示调用代码所需的依赖项、调用代码的方式以及尝试断言的内容。 虽然可以组合一些步骤并减小测试的大小，但主要目标是使测试尽可能可读。
 
 #### <a name="bad"></a>不佳：
+
 [!code-csharp[BeforeArranging](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeArranging)]
 
 #### <a name="better"></a>良好：
+
 [!code-csharp[AfterArranging](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterArranging)]
 
 ### <a name="write-minimally-passing-tests"></a>以最精简方式编写通过测试
+
 单元测试中使用的输入应为最简单的输入，以便验证当前正在测试的行为。
 
 #### <a name="why"></a>为什么？
@@ -160,12 +172,15 @@ Assert.True(mockOrder.Validated);
 包含比通过测试所需信息更多信息的测试更可能将错误引入测试，并且可能使测试的意图变得不太明确。 编写测试时需要将重点放在行为上。 在模型上设置额外的属性或在不需要时使用非零值，只会偏离所要证明的内容。
 
 #### <a name="bad"></a>不佳：
+
 [!code-csharp[BeforeMinimallyPassing](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeMinimallyPassing)]
 
 #### <a name="better"></a>良好：
+
 [!code-csharp[AfterNamingAndMinimallyPassing](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterNamingAndMinimallyPassing)]
 
 ### <a name="avoid-magic-strings"></a>避免魔幻字符串
+
 单元测试中的命名变量和生产代码中的命名变量同样重要。 单元测试不应包含魔幻字符串。
 
 #### <a name="why"></a>为什么？
@@ -179,12 +194,15 @@ Assert.True(mockOrder.Validated);
 > 编写测试时，应力求表达尽可能多的意图。 对于魔幻字符串，一种很好的方法是将这些值赋给常量。
 
 #### <a name="bad"></a>不佳：
+
 [!code-csharp[BeforeMagicString](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeMagicString)]
 
 #### <a name="better"></a>良好：
+
 [!code-csharp[AfterMagicString](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterMagicString)]
 
 ### <a name="avoid-logic-in-tests"></a>在测试中应避免逻辑
+
 编写单元测试时，请避免手动字符串串联和逻辑条件，例如 `if`、`while`、`for` 和 `switch` 等等。
 
 #### <a name="why"></a>为什么？
@@ -198,12 +216,15 @@ Assert.True(mockOrder.Validated);
 > 如果不可避免地要在测试中使用逻辑，请考虑将测试分成两个或多个不同的测试。
 
 #### <a name="bad"></a>不佳：
+
 [!code-csharp[LogicInTests](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#LogicInTests)]
 
 #### <a name="better"></a>良好：
+
 [!code-csharp[AfterTestLogic](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterTestLogic)]
 
 ### <a name="prefer-helper-methods-to-setup-and-teardown"></a>更偏好 helper 方法而非 setup 和 teardown
+
 如果测试需要类似的对象或状态，那么比起使用 Setup 和 Teardown 属性（如果存在），更偏好使用 helper 方法。
 
 #### <a name="why"></a>为什么？
@@ -218,6 +239,7 @@ Assert.True(mockOrder.Validated);
 > 自版本 2.x 起，xUnit 已删除 SetUp 和 TearDown
 
 #### <a name="bad"></a>不佳：
+
 [!code-csharp[BeforeSetup](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeSetup)]
 
 ```csharp
@@ -227,6 +249,7 @@ Assert.True(mockOrder.Validated);
 [!code-csharp[BeforeHelperMethod](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeHelperMethod)]
 
 #### <a name="better"></a>良好：
+
 [!code-csharp[AfterHelperMethod](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterHelperMethod)]
 
 ```csharp
@@ -236,6 +259,7 @@ Assert.True(mockOrder.Validated);
 [!code-csharp[AfterSetup](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterSetup)]
 
 ### <a name="avoid-multiple-asserts"></a>避免多个断言
+
 在编写测试时，请尝试每次测试只包含一个 Assert。 仅使用一个 assert 的常用方法包括：
 
 - 为每个 assert 创建单独的测试。
@@ -253,12 +277,15 @@ Assert.True(mockOrder.Validated);
 > 此规则的一个常见例外是对对象进行断言。 在这种情况下，通常可以对每个属性进行多次断言，以确保对象处于所预期的状态。
 
 #### <a name="bad"></a>不佳：
+
 [!code-csharp[BeforeMultipleAsserts](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/before/StringCalculatorTests.cs#BeforeMultipleAsserts)]
 
 #### <a name="better"></a>良好：
+
 [!code-csharp[AfterMultipleAsserts](../../../samples/snippets/core/testing/unit-testing-best-practices/csharp/after/StringCalculatorTests.cs#AfterMultipleAsserts)]
 
 ### <a name="validate-private-methods-by-unit-testing-public-methods"></a>通过单元测试公共方法验证专有方法
+
 在大多数情况下，不需要测试专用方法。 专用方法是实现细节。 可以这样认为：专用方法永远不会孤立存在。 在某些时候，存在调用专用方法作为其实现的一部分的面向公共的方法。 你应关心的是调用到专用方法的公共方法的最终结果。
 
 请考虑下列情形
@@ -281,7 +308,7 @@ private string TrimInput(string input)
 真正的测试应该针对面向公共的方法 `ParseLogLine` 进行，因为这是你最终应该关心的。
 
 ```csharp
-public void ParseLogLine_ByDefault_ReturnsTrimmedResult()
+public void ParseLogLine_StartsAndEndsWithSpace_ReturnsTrimmedResult()
 {
     var parser = new Parser();
 
@@ -294,12 +321,13 @@ public void ParseLogLine_ByDefault_ReturnsTrimmedResult()
 由此，如果看到一个专用方法，可以找到公共方法并针对该方法编写测试。 不能仅仅因为专用方法返回预期结果就认为最终调用专用方法的系统正确地使用结果。
 
 ### <a name="stub-static-references"></a>Stub 静态引用
+
 单元测试的原则之一是其必须完全控制被测试的系统。 当生产代码包含对静态引用（例如 `DateTime.Now`）的调用时，这可能会存在问题。 考虑下列代码
 
 ```csharp
 public int GetDiscountedPrice(int price)
 {
-    if(DateTime.Now.DayOfWeek == DayOfWeek.Tuesday)
+    if (DateTime.Now.DayOfWeek == DayOfWeek.Tuesday)
     {
         return price / 2;
     }
@@ -313,7 +341,7 @@ public int GetDiscountedPrice(int price)
 如何对此代码进行单元测试？ 可以尝试一种方法，例如
 
 ```csharp
-public void GetDiscountedPrice_ByDefault_ReturnsFullPrice()
+public void GetDiscountedPrice_NotTuesday_ReturnsFullPrice()
 {
     var priceCalculator = new PriceCalculator();
 
@@ -347,7 +375,7 @@ public interface IDateTimeProvider
 
 public int GetDiscountedPrice(int price, IDateTimeProvider dateTimeProvider)
 {
-    if(dateTimeProvider.DayOfWeek() == DayOfWeek.Tuesday)
+    if (dateTimeProvider.DayOfWeek() == DayOfWeek.Tuesday)
     {
         return price / 2;
     }
@@ -361,7 +389,7 @@ public int GetDiscountedPrice(int price, IDateTimeProvider dateTimeProvider)
 你的测试套件现在变得
 
 ```csharp
-public void GetDiscountedPrice_ByDefault_ReturnsFullPrice()
+public void GetDiscountedPrice_NotTuesday_ReturnsFullPrice()
 {
     var priceCalculator = new PriceCalculator();
     var dateTimeProviderStub = new Mock<IDateTimeProvider>();

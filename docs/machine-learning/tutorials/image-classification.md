@@ -4,11 +4,12 @@ description: 了解如何将现有 TensorFlow 模型中的知识传输到新的 
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 38fa349e743da54a21aeb65b76a0273a17c3fae7
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: a4c671816dce1fe2abdf77f81da0f27236136536
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803997"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86282107"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>教程：从预先训练的 TensorFlow 模型生成 ML.NET 图像分类模型
 
@@ -148,15 +149,15 @@ toaster2.png    appliance
 
 1. 将以下附加的 `using` 语句添加到“Program.cs”文件顶部：
 
-    [!code-csharp[AddUsings](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#AddUsings)]
+    [!code-csharp[AddUsings](./snippets/image-classification/csharp/Program.cs#AddUsings)]
 
 1. 将以下代码添加到 `Main` 方法正上方的行中，以指定资产路径：
 
-    [!code-csharp[DeclareGlobalVariables](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DeclareGlobalVariables)]
+    [!code-csharp[DeclareGlobalVariables](./snippets/image-classification/csharp/Program.cs#DeclareGlobalVariables)]
 
 1. 为输入数据和预测结果创建类。
 
-    [!code-csharp[DeclareImageData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DeclareImageData)]
+    [!code-csharp[DeclareImageData](./snippets/image-classification/csharp/Program.cs#DeclareImageData)]
 
     `ImageData` 是输入图像数据类，包含以下 <xref:System.String> 字段：
 
@@ -165,7 +166,7 @@ toaster2.png    appliance
 
 1. 向项目添加 `ImagePrediction` 的新类：
 
-    [!code-csharp[DeclareImagePrediction](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DeclareImagePrediction)]
+    [!code-csharp[DeclareImagePrediction](./snippets/image-classification/csharp/Program.cs#DeclareImagePrediction)]
 
     `ImagePrediction` 是图像预测类，包含以下字段：
 
@@ -178,7 +179,7 @@ toaster2.png    appliance
 
 1. 使用 `MLContext` 的新实例初始化 `mlContext` 变量。  用下面 `Main` 方法中的代码替换 `Console.WriteLine("Hello World!")` 行：
 
-    [!code-csharp[CreateMLContext](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#CreateMLContext)]
+    [!code-csharp[CreateMLContext](./snippets/image-classification/csharp/Program.cs#CreateMLContext)]
 
     执行所有 ML.NET 操作都是从 [MLContext 类](xref:Microsoft.ML.MLContext)开始，初始化 `mlContext` 可创建一个新的 ML.NET 环境，可在模型创建工作流对象之间共享该环境。 从概念上讲，它与实体框架中的 `DBContext` 类似。
 
@@ -186,7 +187,7 @@ toaster2.png    appliance
 
 1. Inception 模型具有多个需要传入的参数。 紧跟在 `Main()` 方法后面，使用以下代码创建结构，以将参数值映射到易记名称：
 
-    [!code-csharp[InceptionSettings](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#InceptionSettings)]
+    [!code-csharp[InceptionSettings](./snippets/image-classification/csharp/Program.cs#InceptionSettings)]
 
 ### <a name="create-a-display-utility-method"></a>创建显示实用工具方法
 
@@ -203,7 +204,7 @@ toaster2.png    appliance
 
 1. 填充 `DisplayResults` 方法的主体：
 
-    [!code-csharp[DisplayPredictions](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DisplayPredictions)]
+    [!code-csharp[DisplayPredictions](./snippets/image-classification/csharp/Program.cs#DisplayPredictions)]
 
 ### <a name="create-a-tsv-file-utility-method"></a>创建 .tsv 文件实用工具方法
 
@@ -218,7 +219,7 @@ toaster2.png    appliance
 
 1. 填充 `ReadFromTsv` 方法的主体：
 
-    [!code-csharp[ReadFromTsv](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ReadFromTsv)]
+    [!code-csharp[ReadFromTsv](./snippets/image-classification/csharp/Program.cs#ReadFromTsv)]
 
     代码分析整个 `tags.tsv` 文件，以将文件路径添加到 `ImagePath` 属性的图像文件名中，并将它和 `Label` 加载到 `ImageData` 对象中。
 
@@ -235,11 +236,11 @@ toaster2.png    appliance
 
 1. 创建 `ImageData` 对象，其中包含单个 `ImagePath` 的完全限定路径和图像文件名。 将以下代码添加为 `ClassifySingleImage()` 方法的接下来几行：
 
-    [!code-csharp[LoadImageData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#LoadImageData)]
+    [!code-csharp[LoadImageData](./snippets/image-classification/csharp/Program.cs#LoadImageData)]
 
 1. 通过添加以下代码作为 `ClassifySingleImage` 方法中的下一行，进行单一预测：
 
-    [!code-csharp[PredictSingle](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#PredictSingle)]
+    [!code-csharp[PredictSingle](./snippets/image-classification/csharp/Program.cs#PredictSingle)]
 
     若要获得预测，请使用 [Predict()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) 方法。 [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) 是一个简便 API，可使用它对单个数据实例执行预测。 [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) 不是线程安全型。 可以在单线程环境或原型环境中使用。 为了在生产环境中提高性能和线程安全，请使用 `PredictionEnginePool` 服务，这将创建一个在整个应用程序中使用的 [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) 对象的 [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601)。 请参阅本指南，了解如何[在 ASP.NET Core Web API 中使用 `PredictionEnginePool`](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application)。
 
@@ -248,7 +249,7 @@ toaster2.png    appliance
 
 1. `ClassifySingleImage()` 方法的下一行代码用于显示预测结果：
 
-   [!code-csharp[DisplayPrediction](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DisplayPrediction)]
+   [!code-csharp[DisplayPrediction](./snippets/image-classification/csharp/Program.cs#DisplayPrediction)]
 
 ## <a name="construct-the-mlnet-model-pipeline"></a>构造 ML.NET 模型管道
 
@@ -269,13 +270,13 @@ ML.NET 模型管道是一个估算器链。 请注意，管道构造过程中不
 
 1. 添加估算器以从图像数据加载、调整和提取像素：
 
-    [!code-csharp[ImageTransforms](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ImageTransforms)]
+    [!code-csharp[ImageTransforms](./snippets/image-classification/csharp/Program.cs#ImageTransforms)]
 
     图像数据需要处理成 TensorFlow 模型所需的格式。 在本例中，图像将加载到内存中，将其调整为一致大小，并将像素提取成一个数值矢量。
 
 1. 添加估算器以加载 TensorFlow 模型并进行评分：
 
-    [!code-csharp[ScoreTensorFlowModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ScoreTensorFlowModel)]
+    [!code-csharp[ScoreTensorFlowModel](./snippets/image-classification/csharp/Program.cs#ScoreTensorFlowModel)]
 
     管道中的此阶段将 TensorFlow 模型加载到内存中，然后通过 TensorFlow 模型网络处理像素值的矢量。 将输入应用于深度学习模型并使用该模型生成输出的过程称为**评分**。 当作为一个整体使用模型时，评分将做出推理或预测。
 
@@ -285,29 +286,29 @@ ML.NET 模型管道是一个估算器链。 请注意，管道构造过程中不
 
 1. 添加估算器以将训练数据中的字符串标签映射到整数键值：
 
-    [!code-csharp[MapValueToKey](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#MapValueToKey)]
+    [!code-csharp[MapValueToKey](./snippets/image-classification/csharp/Program.cs#MapValueToKey)]
 
     接下来追加的 ML.NET 训练者要求其标签采用 `key` 格式，而不是任意字符串。 键是一个数字，一对一映射到字符串值。
 
 1. 添加 ML.NET 训练算法：
 
-    [!code-csharp[AddTrainer](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#AddTrainer)]
+    [!code-csharp[AddTrainer](./snippets/image-classification/csharp/Program.cs#AddTrainer)]
 
 1. 添加估算器以将预测的键值映射回字符串：
 
-    [!code-csharp[MapKeyToValue](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#MapKeyToValue)]
+    [!code-csharp[MapKeyToValue](./snippets/image-classification/csharp/Program.cs#MapKeyToValue)]
 
 ## <a name="train-the-model"></a>定型模型
 
 1. 使用 [LoadFromTextFile](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile(Microsoft.ML.DataOperationsCatalog,System.String,Microsoft.ML.Data.TextLoader.Options)) 包装器加载训练数据。 将以下代码作为下一行添加到 `GenerateModel()` 方法中：
 
-    [!code-csharp[LoadData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#LoadData "Load the data")]
+    [!code-csharp[LoadData](./snippets/image-classification/csharp/Program.cs#LoadData "Load the data")]
 
     ML.NET 中的数据表示为 [IDataView 类](xref:Microsoft.ML.IDataView)。 `IDataView` 是用于描述表格数据（数字和文本）的一种灵活且有效的方法。 可从文本文件或实时（例如，SQL 数据库或日志文件）将数据加载到 `IDataView` 对象。
 
 1. 用上面加载的数据训练模型：
 
-    [!code-csharp[TrainModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#TrainModel)]
+    [!code-csharp[TrainModel](./snippets/image-classification/csharp/Program.cs#TrainModel)]
 
     `Fit()` 方法通过将训练数据集应用于管道来训练模型。
 
@@ -315,13 +316,13 @@ ML.NET 模型管道是一个估算器链。 请注意，管道构造过程中不
 
 1. 通过将以下代码添加到 `GenerateModel` 方法的下一行，加载并转换测试数据：
 
-    [!code-csharp[LoadAndTransformTestData](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#LoadAndTransformTestData "Load and transform test data")]
+    [!code-csharp[LoadAndTransformTestData](./snippets/image-classification/csharp/Program.cs#LoadAndTransformTestData "Load and transform test data")]
 
     可以使用几个示例图像来评估模型。 与训练数据类似，需要将这些数据加载到 `IDataView` 中，以便模型可以对其进行转换。
 
 1. 若要评估模型，请将以下代码添加到 `GenerateModel()` 方法：
 
-    [!code-csharp[Evaluate](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#Evaluate)]
+    [!code-csharp[Evaluate](./snippets/image-classification/csharp/Program.cs#Evaluate)]
 
     在你设置预测后，[Evaluate()](xref:Microsoft.ML.RecommendationCatalog.Evaluate%2A) 方法便能：
 
@@ -332,7 +333,7 @@ ML.NET 模型管道是一个估算器链。 请注意，管道构造过程中不
 
     使用下面的代码显示指标、共享结果，然后处理它们：
 
-    [!code-csharp[DisplayMetrics](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#DisplayMetrics)]
+    [!code-csharp[DisplayMetrics](./snippets/image-classification/csharp/Program.cs#DisplayMetrics)]
 
     下面是图像分类评估指标：
 
@@ -341,17 +342,17 @@ ML.NET 模型管道是一个估算器链。 请注意，管道构造过程中不
 
 1. 添加以下代码，将经过训练的模型作为下一行代码返回：
 
-    [!code-csharp[SaveModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#ReturnModel)]
+    [!code-csharp[SaveModel](./snippets/image-classification/csharp/Program.cs#ReturnModel)]
 
 ## <a name="run-the-application"></a>运行应用程序！
 
 1. 创建 MLContext 类后，添加对 `Main` 方法中 `GenerateModel` 的调用：
 
-    [!code-csharp[CallGenerateModel](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#CallGenerateModel)]
+    [!code-csharp[CallGenerateModel](./snippets/image-classification/csharp/Program.cs#CallGenerateModel)]
 
 1. 将对 `ClassifySingleImage()` 方法的调用添加为 `Main` 方法的下一行代码：
 
-    [!code-csharp[CallClassifySingleImage](../../../samples/snippets/machine-learning/TransferLearningTF/csharp/Program.cs#CallClassifySingleImage)]
+    [!code-csharp[CallClassifySingleImage](./snippets/image-classification/csharp/Program.cs#CallClassifySingleImage)]
 
 1. 运行控制台应用 (Ctrl + F5)。 结果应如以下输出所示。  你可能会看到警告或处理消息，为清楚起见，这些消息已从以下结果中删除。
 

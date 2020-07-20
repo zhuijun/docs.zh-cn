@@ -4,11 +4,12 @@ description: 本教程演示如何使用预先训练的 TensorFlow 模型对网�
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 9c1e45f183bd5edc488e4f37bea648566d124c65
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 9a2e7f72d59e31cfd7db5b89bfad55bccb063cea
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803256"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281402"
 ---
 # <a name="tutorial-analyze-sentiment-of-movie-reviews-using-a-pre-trained-tensorflow-model-in-mlnet"></a>教程：在 ML.NET 中使用预先训练的 TensorFlow 模型分析电影评论的情绪
 
@@ -65,11 +66,11 @@ ms.locfileid: "85803256"
 
 1. 将以下附加的 `using` 语句添加到“Program.cs”文件顶部：
 
-   [!code-csharp[AddUsings](../../../samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#AddUsings "Add necessary usings")]
+   [!code-csharp[AddUsings](./snippets/text-classification-tf/csharp/Program.cs#AddUsings "Add necessary usings")]
 
 1. 在 `Main` 方法正上方创建两个全局变量，用来保留已保存的模型文件路径和特征向量长度。
 
-   [!code-csharp[DeclareGlobalVariables](../../../samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#DeclareGlobalVariables "Declare global variables")]
+   [!code-csharp[DeclareGlobalVariables](./snippets/text-classification-tf/csharp/Program.cs#DeclareGlobalVariables "Declare global variables")]
 
     * `_modelPath` 是已训练模型的文件路径。
     * `FeatureLength` 是模型需要的整数特征数组的长度。
@@ -95,13 +96,13 @@ ms.locfileid: "85803256"
 
 1. 在 `Main` 方法之后为输入数据创建一个类：
 
-    [!code-csharp[MovieReviewClass](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#MovieReviewClass "Declare movie review type")]
+    [!code-csharp[MovieReviewClass](./snippets/text-classification-tf/csharp/Program.cs#MovieReviewClass "Declare movie review type")]
 
     输入数据类 `MovieReview` 具有用于用户评论 (`ReviewText`) 的 `string`。
 
 1. 在 `Main` 方法之后为可变长度特征创建一个类：
 
-    [!code-csharp[VariableLengthFeatures](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#VariableLengthFeatures "Declare variable length features type")]
+    [!code-csharp[VariableLengthFeatures](./snippets/text-classification-tf/csharp/Program.cs#VariableLengthFeatures "Declare variable length features type")]
 
     `VariableLengthFeatures` 属性的 [VectorType](xref:Microsoft.ML.Data.VectorTypeAttribute.%23ctor%2A) 特性用于将其指定为向量。  所有向量元素都必须是同一类型。 在具有大量列的数据集中，将多个列作为单个向量加载会减少应用数据转换时的数据传递次数。
 
@@ -109,7 +110,7 @@ ms.locfileid: "85803256"
 
 1. 在 `Main` 方法之后为固定长度特征创建一个类：
 
-    [!code-csharp[FixedLengthFeatures](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#FixedLengthFeatures)]
+    [!code-csharp[FixedLengthFeatures](./snippets/text-classification-tf/csharp/Program.cs#FixedLengthFeatures)]
 
     此类在 `ResizeFeatures` 操作中使用。 它的属性名称（本例中只有一个）用于指示 DataView 中的哪些列可用作自定义映射操作的输出。
 
@@ -117,7 +118,7 @@ ms.locfileid: "85803256"
 
 1. 在 `Main` 方法之后为预测创建一个类：
 
-    [!code-csharp[Prediction](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#Prediction "Declare prediction class")]
+    [!code-csharp[Prediction](./snippets/text-classification-tf/csharp/Program.cs#Prediction "Declare prediction class")]
 
     `MovieReviewSentimentPrediction` 是在训练模型后使用的预测类。 `MovieReviewSentimentPrediction` 有一个 `float` 数组 (`Prediction`) 和一个 `VectorType` 属性。
 
@@ -127,7 +128,7 @@ ms.locfileid: "85803256"
 
 1. 使用以下代码替换 `Main` 方法中的 `Console.WriteLine("Hello World!")` 行，以声明和初始化 mlContext 变量：
 
-   [!code-csharp[CreateMLContext](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CreateMLContext "Create the ML Context")]
+   [!code-csharp[CreateMLContext](./snippets/text-classification-tf/csharp/Program.cs#CreateMLContext "Create the ML Context")]
 
 1. 通过使用 [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%2A) 方法创建字典来将单词编码为整数，以便从文件中加载映射数据，如下表所示：
 
@@ -141,21 +142,21 @@ ms.locfileid: "85803256"
 
     添加下面的代码，创建查找映射：
 
-    [!code-csharp[CreateLookupMap](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CreateLookupMap)]
+    [!code-csharp[CreateLookupMap](./snippets/text-classification-tf/csharp/Program.cs#CreateLookupMap)]
 
 1. 添加一个 `Action`，将可变长度单词整数数组的大小调整为固定大小的整数数组，再加上下面的几行代码：
 
-   [!code-csharp[ResizeFeatures](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#ResizeFeatures)]
+   [!code-csharp[ResizeFeatures](./snippets/text-classification-tf/csharp/Program.cs#ResizeFeatures)]
 
 ## <a name="load-the-pre-trained-tensorflow-model"></a>加载预先训练的 TensorFlow 模型
 
 1. 添加代码以加载 TensorFlow 模型：
 
-    [!code-csharp[LoadTensorFlowModel](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#LoadTensorFlowModel)]
+    [!code-csharp[LoadTensorFlowModel](./snippets/text-classification-tf/csharp/Program.cs#LoadTensorFlowModel)]
 
     加载模型后，可以提取其输入和输出架构。 所显示的架构仅供参考和学习。 最终应用程序不需要此代码即可运行：
 
-    [!code-csharp[GetModelSchema](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#GetModelSchema)]
+    [!code-csharp[GetModelSchema](./snippets/text-classification-tf/csharp/Program.cs#GetModelSchema)]
 
     输入架构是整数编码单词的固定长度数组。 输出架构是概率的浮点数组，指示评论的情绪是负面情绪还是正面情绪。 这些值的总和为 1，因为正面情绪的概率与负面情绪的概率相互补足。
 
@@ -163,27 +164,27 @@ ms.locfileid: "85803256"
 
 1. 创建管道并使用 [TokenizeIntoWords](xref:Microsoft.ML.TextCatalog.TokenizeIntoWords%2A) 转换将输入文本拆分为单词，从而将文本拆分为单词以作为下一行代码：
 
-   [!code-csharp[TokenizeIntoWords](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#TokenizeIntoWords)]
+   [!code-csharp[TokenizeIntoWords](./snippets/text-classification-tf/csharp/Program.cs#TokenizeIntoWords)]
 
    [TokenizeIntoWords](xref:Microsoft.ML.TextCatalog.TokenizeIntoWords%2A) 转换使用空格将文本/字符串分析为单词。 它将创建一个新列，并基于用户定义的分隔符将每个输入字符串拆分为子字符串的向量。
 
 1. 使用你在上面声明的查找表将单词映射到其整数编码：
 
-    [!code-csharp[MapValue](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#MapValue)]
+    [!code-csharp[MapValue](./snippets/text-classification-tf/csharp/Program.cs#MapValue)]
 
 1. 将可变长度整数编码调整为模型所需的固定长度：
 
-    [!code-csharp[CustomMapping](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CustomMapping)]
+    [!code-csharp[CustomMapping](./snippets/text-classification-tf/csharp/Program.cs#CustomMapping)]
 
 1. 使用加载的 TensorFlow 模型对输入进行分类：
 
-    [!code-csharp[ScoreTensorFlowModel](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#ScoreTensorFlowModel)]
+    [!code-csharp[ScoreTensorFlowModel](./snippets/text-classification-tf/csharp/Program.cs#ScoreTensorFlowModel)]
 
     TensorFlow 模型输出称为 `Prediction/Softmax`。 请注意，名称 `Prediction/Softmax` 由 TensorFlow 模型确定。 此名称无法更改。
 
 1. 为输出预测创建一个新列：
 
-    [!code-csharp[SnippetCopyColumns](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#SnippetCopyColumns)]
+    [!code-csharp[SnippetCopyColumns](./snippets/text-classification-tf/csharp/Program.cs#SnippetCopyColumns)]
 
     需要将 `Prediction/Softmax` 列复制到其名称可用作 C# 类中的属性的列：`Prediction`。 不允许在 C# 属性名称中使用 `/` 字符。
 
@@ -191,7 +192,7 @@ ms.locfileid: "85803256"
 
 1. 添加代码以从管道创建模型：
 
-    [!code-csharp[SnippetCreateModel](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#SnippetCreateModel)]
+    [!code-csharp[SnippetCreateModel](./snippets/text-classification-tf/csharp/Program.cs#SnippetCreateModel)]
 
     通过调用 `Fit` 方法，从管道中的估算器链创建 ML.NET 模型。 在这种情况下，我们不会调整任何数据以创建模型，因为 TensorFlow 模型此前已经过训练。 我们提供一个空的数据视图对象，以满足 `Fit` 方法的要求。
 
@@ -208,7 +209,7 @@ ms.locfileid: "85803256"
 
 1. 添加以下代码以创建 `PredictionEngine` 作为 `PredictSentiment()` 方法中的第一行：
 
-    [!code-csharp[CreatePredictionEngine](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CreatePredictionEngine)]
+    [!code-csharp[CreatePredictionEngine](./snippets/text-classification-tf/csharp/Program.cs#CreatePredictionEngine)]
 
     [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) 是一个简便 API，可使用它对单个数据实例执行预测。 [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) 不是线程安全型。 可以在单线程环境或原型环境中使用。 为了在生产环境中提高性能和线程安全，请使用 `PredictionEnginePool` 服务，这将创建一个在整个应用程序中使用的 [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) 对象的 [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601)。 请参阅本指南，了解如何[在 ASP.NET Core Web API 中使用 `PredictionEnginePool`](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application)。
 
@@ -217,11 +218,11 @@ ms.locfileid: "85803256"
 
 1. 通过创建一个 `MovieReview` 实例，在 `Predict()` 方法中添加一个注释来测试定型模型的预测：
 
-    [!code-csharp[CreateTestData](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CreateTestData)]
+    [!code-csharp[CreateTestData](./snippets/text-classification-tf/csharp/Program.cs#CreateTestData)]
 
 1. 通过在 `PredictSentiment()` 方法中添加接下来的几行代码，将测试评论数据传递到 `Prediction Engine`：
 
-    [!code-csharp[Predict](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#Predict)]
+    [!code-csharp[Predict](./snippets/text-classification-tf/csharp/Program.cs#Predict)]
 
 1. [Predict()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) 函数对单行数据进行预测：
 
@@ -231,11 +232,11 @@ ms.locfileid: "85803256"
 
 1. 使用以下代码显示情绪预测：
 
-    [!code-csharp[DisplayPredictions](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#DisplayPredictions)]
+    [!code-csharp[DisplayPredictions](./snippets/text-classification-tf/csharp/Program.cs#DisplayPredictions)]
 
 1. 在 `Main` 方法末尾添加对 `PredictSentiment` 的调用：
 
-    [!code-csharp[CallPredictSentiment](~/samples/snippets/machine-learning/TextClassificationTF/csharp/Program.cs#CallPredictSentiment)]
+    [!code-csharp[CallPredictSentiment](./snippets/text-classification-tf/csharp/Program.cs#CallPredictSentiment)]
 
 ## <a name="results"></a>结果
 
