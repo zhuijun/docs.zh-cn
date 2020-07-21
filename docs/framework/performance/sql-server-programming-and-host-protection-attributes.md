@@ -1,5 +1,6 @@
 ---
 title: SQL Server 编程和宿主保护特性
+description: SQL Server 编程和宿主保护属性入门。 查看 SQL Server 权限集和编程模型限制。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - SQL Server [.NET Framework]
@@ -12,24 +13,24 @@ helpviewer_keywords:
 - host protection attributes
 - HostProtectionAttribute class, reliability
 ms.assetid: 7dfa36b4-e773-4c75-a3ff-ff1af3ce4c4f
-ms.openlocfilehash: 88fa360664627e9f535a6daaaf6f29df01b64a62
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 33db32897d2f49d2c10f94dc73aeae728c17db73
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715925"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474197"
 ---
 # <a name="sql-server-programming-and-host-protection-attributes"></a>SQL Server 编程和宿主保护特性
-在 SQL Server 主机中加载和执行托管代码需要满足主机对代码访问安全性和主机资源保护的要求。  代码访问安全性要求由三个 SQL Server 权限集（SAFE、EXTERNAL-ACCESS 或 UNSAFE）其中之一指定。 在 SAFE 或 EXTERNAL-ACCESS 权限集内执行的代码必须避免某些类型或应用了 <xref:System.Security.Permissions.HostProtectionAttribute> 属性的成员。 <xref:System.Security.Permissions.HostProtectionAttribute> 不是可靠性保证的安全权限，因为它标识主机可能禁止的特定代码结构（类型或方法）。  使用 <xref:System.Security.Permissions.HostProtectionAttribute> 可执行有助于保护主机稳定性的编程模型。  
+在 SQL Server 主机中加载和执行托管代码需要满足主机对代码访问安全性和主机资源保护的要求。  代码访问安全性要求由三个 SQL Server 权限集（SAFE、EXTERNAL-ACCESS 或 UNSAFE）其中之一指定。 在 SAFE 或 EXTERNAL-ACCESS 权限集内执行的代码必须避免某些类型或应用了 <xref:System.Security.Permissions.HostProtectionAttribute> 属性的成员。 <xref:System.Security.Permissions.HostProtectionAttribute> 不是可靠性保证的安全权限，因为它标识主机可能禁止的特定代码结构（类型或方法）。  使用 <xref:System.Security.Permissions.HostProtectionAttribute> 会强制执行可帮助保护宿主稳定性的编程模型。  
   
-## <a name="host-protection-attributes"></a>主机保护属性  
+## <a name="host-protection-attributes"></a>宿主保护属性  
  主机保护属性识别不符合主机编程模型的类型或成员，并表示以下级别的可靠性威胁：  
   
-- 为良性。  
+- 在其他方面为良性。  
   
-- 可能导致服务器托管的用户代码不稳定。  
+- 可能会导致反序列化服务器托管的用户代码。  
   
-- 可能导致服务器进程本身不稳定。  
+- 可能会导致反序列化服务器进程本身。  
   
  SQL Server 不允许使用带有 <xref:System.Security.Permissions.HostProtectionAttribute> 的类型或成员，该属性指定 <xref:System.Security.Permissions.HostProtectionResource.SharedState>、<xref:System.Security.Permissions.HostProtectionResource.Synchronization>、<xref:System.Security.Permissions.HostProtectionResource.MayLeakOnAbort> 或 <xref:System.Security.Permissions.HostProtectionResource.ExternalProcessMgmt> 的 <xref:System.Security.Permissions.HostProtectionResource> 值。 这样可防止程序集调用启用共享状态、执行同步、终止时可能导致资源泄漏或影响 SQL Server 进程的完整性的成员。  
   
@@ -55,21 +56,21 @@ ms.locfileid: "75715925"
   
 |权限集|SAFE|EXTERNAL-ACCESS|UNSAFE|  
 |--------------------|----------|----------------------|------------|  
-|代码访问安全性|仅执行|执行+访问外部资源|无限制|  
+|代码访问安全性|仅执行|执行和访问外部资源|非受限|  
 |编程模型限制|是|是|无限制|  
-|可验证性要求|是|是|否|  
+|可验证性要求|是|是|No|  
 |调用本机代码的能力|否|否|是|  
   
- SAFE 是最可靠且安全的模式，在允许的编程模型方面具有相关限制。 SAFE 代码具有高可靠性和安全性功能。 SAFE 程序集有足够的权限来运行、执行计算，并有权访问本地数据库。 SAFE 程序集需要可验证类型安全，不允许调用非托管代码。  
+ SAFE 是最可靠和安全的模式，并且在允许的编程模型方面也具有相关的限制。 SAFE 代码具有高可靠性和安全性功能。 给 SAFE 程序集授予了足够的权限，以便运行、执行计算以及访问本地数据库。 SAFE 程序集需要具有可验证的类型安全性，并且不允许调用非托管代码。  
   
  EXTERNAL-ACCESS 提供了一个中间安全选项，允许代码访问数据库外部的资源，但仍具有 SAFE 的可靠性和安全性。  
   
- UNSAFE 用于只能由数据库管理员创建的高度信任的代码。 这类信任代码没有代码访问限制，可以调用非托管（本机）代码。  
+ UNSAFE 用于仅能由数据库管理员创建的高度受信任的代码。 这类信任代码没有代码访问限制，可以调用非托管（本机）代码。  
   
- SQL Server 使用主机级别代码访问安全策略层来设置主机策略，此策略根据 SQL Server 目录中存储的权限集授予三组权限之一。 在数据库内运行的托管代码始终能获得这些代码访问权限集之一。  
+ SQL Server 使用主机级别代码访问安全策略层来设置主机策略，此策略根据 SQL Server 目录中存储的权限集授予三组权限之一。 在数据库内运行的托管代码始终获取这些代码访问权限集中的一个。  
   
 ## <a name="programming-model-restrictions"></a>编程模型限制  
- SQL Server 中托管代码的编程模型需要无需使用跨多个调用的状态保留或跨多个用户会话共享状态的功能、过程和类型。 此外，如前所述，共享状态的存在可能导致关键异常，这些异常会影响应用程序的可扩展性和可靠性。  
+ SQL Server 中托管代码的编程模型需要无需使用跨多个调用的状态保留或跨多个用户会话共享状态的功能、过程和类型。 而且，如前文所述，共享状态的存在可导致能够影响应用程序的可伸缩性和可靠性的严重异常。  
   
  考虑到这些因素，SQL Server 不允许使用静态变量和静态数据成员。 对于 SAFE 和 EXTERNAL-ACCESS 程序集，SQL Server 将在 CREATE ASSEMBLY 时间检查程序集的元数据，如果发现使用静态数据成员和变量，则无法创建此类程序集。  
   

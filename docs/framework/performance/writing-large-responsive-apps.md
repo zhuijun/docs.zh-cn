@@ -1,15 +1,16 @@
 ---
 title: 编写大型的响应式 .NET Framework 应用
+description: 编写大型的响应式 .NET 应用程序或处理大量数据的应用程序，如文件或数据库。
 ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 57f65feff5260cb83df5354f5d7ee1bad0babb3a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8b1c9ab25299fcbafca6aba7b13217713a941ce8
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180586"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475185"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>编写大型的响应式 .NET Framework 应用
 
@@ -24,7 +25,7 @@ ms.locfileid: "79180586"
   
  当你的最终用户与你的应用交互时，他们期望应用能够响应。 永远不应阻止键入或命令处理。 帮助应该迅速弹出，如果用户继续键入则帮助应中止。 你的应用应该避免通过使应用感觉迟钝的长计算阻止 UI 线程。
   
- 有关罗斯林编译器的详细信息，请参阅[.NET 编译器平台 SDK](../../csharp/roslyn-sdk/index.md)。
+ 有关 Roslyn 编译器的详细信息，请参阅[.NET COMPILER PLATFORM SDK](../../csharp/roslyn-sdk/index.md)。
   
 ## <a name="just-the-facts"></a>事实小结  
  在优化性能和创建响应性 .NET Framework 应用时，请考虑以下事实。
@@ -38,7 +39,7 @@ ms.locfileid: "79180586"
  你应该为应用中的关键客户体验或方案设定性能目标，并编写测试来测量性能。 应用科学的方法调查失败的测试：使用配置文件来指导你、假设有可能是什么问题，并用利用试验或代码更改来测试你的假设。 使用定期测试建立一段时间内的基线性能测量，以便你可以隔离导致性能衰退的更改。 通过以严格的方式处理性能工作，你可以避免将时间浪费在不需要的代码更新上。
   
 ### <a name="fact-3-good-tools-make-all-the-difference"></a>事实 3：好的工具将使一切大不相同  
- 好的工具可以让你快速深入地了解最大的性能问题（CPU、内存或磁盘）并帮助你找到导致那些瓶颈的代码。 微软提供各种性能工具，如[视觉工作室探查器](/visualstudio/profiling/beginners-guide-to-performance-profiling)和[PerfView。](https://www.microsoft.com/download/details.aspx?id=28567)
+ 好的工具可以让你快速深入地了解最大的性能问题（CPU、内存或磁盘）并帮助你找到导致那些瓶颈的代码。 Microsoft 提供多种性能工具，如[Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling)和[PerfView](https://www.microsoft.com/download/details.aspx?id=28567)。
   
  PerfView 是一个免费且功能极为强大的工具，它可以帮助你专注于深层问题，如磁盘 I/O、GC 事件和内存。 可以捕获与性能相关的 [Windows 事件跟踪](../wcf/samples/etw-tracing.md) (ETW) 事件，并很轻松地查看每个应用、每个进程、每个堆栈和每个线程信息。 PerfView 向你显示应用分配了多少内存以及分配了何种内存，并显示哪些函数或调用堆栈提供了内存分配以及他们提供了多少。 有关详细信息，请参见丰富的帮助主题、演示以及工具随附的视频（如第 9 频道上的 [PerfView 教程](https://channel9.msdn.com/Series/PerfView-Tutorial)）。
   
@@ -196,7 +197,7 @@ private bool TrimmedStringStartsWith(string text, int start, string prefix) {
 // etc...
 ```  
   
- `WriteFormattedDocComment()` 的第一个版本分配了一个数组、多个子字符串、一个修整的子字符串和一个空 `params` 数组。 它还检查为"///"。 修改后的代码仅使用索引且不执行分配。 它查找第一个不是空格的字符，然后按字符检查字符以查看字符串是否以"///"开头。 新代码使用`IndexOfFirstNonWhiteSpaceChar`而不是<xref:System.String.TrimStart%2A>返回第一个索引（在指定的开始索引之后），其中发生了非空白字符。 修复并不完整，但你可以看到如何为完整解决方案应用类似的修复。 通过在整个代码中应用此方法，你可以删除 `WriteFormattedDocComment()` 中的所有分配。
+ `WriteFormattedDocComment()` 的第一个版本分配了一个数组、多个子字符串、一个修整的子字符串和一个空 `params` 数组。 它还检查 "///"。 修改后的代码仅使用索引且不执行分配。 它查找第一个非空白字符，然后按字符检查字符，以查看字符串是否以 "///" 开头。 新代码使用 `IndexOfFirstNonWhiteSpaceChar` 而不是 <xref:System.String.TrimStart%2A> 来返回非空白字符出现的第一个索引（在指定的开始索引之后）。 修复并不完整，但你可以看到如何为完整解决方案应用类似的修复。 通过在整个代码中应用此方法，你可以删除 `WriteFormattedDocComment()` 中的所有分配。
   
  **示例 4：StringBuilder**  
   
@@ -277,9 +278,9 @@ private static string GetStringAndReleaseBuilder(StringBuilder sb)
  这个简单的缓存策略符合良好的缓存设计要求，因为它具有大小上限。 然而，现在存在比原来更多的代码，这意味着更多的维护成本。 仅当你发现了性能问题时，并且 PerfView 已显示 <xref:System.Text.StringBuilder> 分配是一个重要的参与者，才应采用该缓存策略。
   
 ### <a name="linq-and-lambdas"></a>LINQ 和 lambda  
-语言集成查询 （LINQ） 与 lambda 表达式结合使用，是生产力功能的示例。 但是，随着时间的推移，它的使用可能会对性能产生重大影响，您可能会发现需要重写代码。
+结合使用语言集成查询（LINQ）和 lambda 表达式，这是一个工作效率功能的示例。 但是，它的使用可能会对性能产生很大的影响，并且可能会发现需要重写代码。
   
- **示例 5：Lambda、List\<T> 和 IEnumerable\<T>**  
+ **示例5： Lambda、List \<T> 和 IEnumerable\<T>**  
   
  此示例使用 [LINQ 和功能性代码](https://docs.microsoft.com/archive/blogs/charlie/anders-hejlsberg-on-linq-and-functional-programming)在编译器模型中查找符号，给定的名称字符串为：  
   
@@ -413,7 +414,7 @@ class Compilation { /*...*/
   
  **示例 6 的修复**  
   
- 要删除已完成<xref:System.Threading.Tasks.Task>的分配，可以使用已完成的结果缓存任务对象：  
+ 若要删除已完成的 <xref:System.Threading.Tasks.Task> 分配，可以缓存任务对象和已完成的结果：  
   
 ```csharp  
 class Compilation { /*...*/  
@@ -470,4 +471,4 @@ class Compilation { /*...*/
 - [.NET 性能提示](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973839(v%3dmsdn.10))
 - [第 9 频道 PerfView 教程](https://channel9.msdn.com/Series/PerfView-Tutorial)
 - [.NET Compiler Platform SDK](../../csharp/roslyn-sdk/index.md)
-- [点网/罗斯林存储库在 GitHub 上](https://github.com/dotnet/roslyn)
+- [GitHub 上的 dotnet/roslyn 存储库](https://github.com/dotnet/roslyn)

@@ -1,16 +1,17 @@
 ---
 title: 加载程序 ETW 事件
+description: 查看加载器 ETW 事件，其中包括应用程序域事件、CLR 加载程序程序集事件、模块事件、CLR 域模块事件和模块范围事件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - loader events [.NET Framework]
 - ETW, loader events (CLR)
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
-ms.openlocfilehash: 0f8f96cf73882ef6556e5b9e64cf9adf389a2318
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8220e8e773409be76bc7522d57551f1bddb90e5d
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180552"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474353"
 ---
 # <a name="loader-etw-events"></a>加载程序 ETW 事件
 这些事件将收集与加载和卸载应用程序域、程序集和模块相关的信息。  
@@ -37,7 +38,7 @@ ms.locfileid: "79180552"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |AppDomainID|win:UInt64|应用程序域的唯一标识符。|  
 |AppDomainFlags|win:UInt32|0x1：默认域。<br /><br /> 0x2：可执行。<br /><br /> 0x4：应用程序域，位 28-31：共享此域的策略。<br /><br /> 0：一个共享域。|  
@@ -65,7 +66,7 @@ ms.locfileid: "79180552"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |AssemblyID|win:UInt64|程序集的唯一 ID。|  
 |AppDomainID|win:UInt64|此程序集的域的 ID。|  
@@ -95,7 +96,7 @@ ms.locfileid: "79180552"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt64|模块的唯一 ID。|  
 |AssemblyID|win:UInt64|此模块所驻留的程序集的 ID。|  
@@ -138,7 +139,7 @@ ms.locfileid: "79180552"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt64|标识此模块所属的程序集。|  
 |AssemblyID|win:UInt64|此模块所驻留的程序集的 ID。|  
@@ -168,7 +169,7 @@ ms.locfileid: "79180552"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |ClrInstanceID|win:UInt16|如果加载了 CLR 的多个实例，则唯一标识进程中 CLR 的特定实例。|  
 |ModuleID|win:UInt64|标识此模块所属的程序集。|  

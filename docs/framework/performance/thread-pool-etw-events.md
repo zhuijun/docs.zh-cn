@@ -1,16 +1,17 @@
 ---
 title: 线程池 ETW 事件
+description: 查看线程池 ETW 事件，这些事件收集有关 .NET 中的线程的信息。 线程池事件为工作线程池事件或 i/o 线程池事件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - thread pool events [.NET Framework]
 - ETW, thread pool events (CLR)
 ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
-ms.openlocfilehash: 249d0607ddd280bcb4e9cf3ef34b28ff8ada3b04
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: d3059cec5007c24d41a4a779939d4990f19305ca
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240488"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475198"
 ---
 # <a name="thread-pool-etw-events"></a>线程池 ETW 事件
 这些事件收集有关工作线程和 I/O 线程的信息。  
@@ -27,7 +28,7 @@ ms.locfileid: "78240488"
 ### <a name="threadpoolworkerthreadstart-and-threadpoolworkerthreadstop"></a>ThreadPoolWorkerThreadStart 和 ThreadPoolWorkerThreadStop  
  下表显示这些事件的关键字和级别。 （有关详细信息，请参阅 [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md)。）  
   
-|引发事件的关键字|Level|  
+|引发事件的关键字|级别|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|信息性 (4)|  
   
@@ -42,7 +43,7 @@ ms.locfileid: "78240488"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |ActiveWorkerThreadCount|win:UInt32|可用于处理工作的工作线程数，包括已在处理工作的工作线程。|  
 |RetiredWorkerThreadCount|win:UInt32|不能用于处理工作但被保留以防之后需要更多线程的工作线程数。|  
@@ -54,7 +55,7 @@ ms.locfileid: "78240488"
 #### <a name="threadpoolworkerthreadadjustmentsample"></a>ThreadPoolWorkerThreadAdjustmentSample  
  下表显示了关键字和级别。  
   
-|引发事件的关键字|Level|  
+|引发事件的关键字|级别|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|信息性 (4)|  
   
@@ -66,7 +67,7 @@ ms.locfileid: "78240488"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |吞吐量|win:Double|每个时间单位的完成数。|  
 |ClrInstanceID|Win:UInt16|CLR 或 CoreCLR 的实例的唯一 ID。|  
@@ -74,7 +75,7 @@ ms.locfileid: "78240488"
 #### <a name="threadpoolworkerthreadadjustmentadjustment"></a>ThreadPoolWorkerThreadAdjustmentAdjustment  
  下表显示了关键字和级别。  
   
-|引发事件的关键字|Level|  
+|引发事件的关键字|级别|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|信息性 (4)|  
   
@@ -86,17 +87,17 @@ ms.locfileid: "78240488"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |AverageThroughput|win:Double|测量示例的平均吞吐量。|  
 |NewWorkerThreadCount|win:UInt32|新的活动工作线程数。|  
-|原因|win:UInt32|调整的原因。<br /><br /> 0x00 - 预热。<br /><br /> 0x01 - 初始化。<br /><br /> 0x02 - 随机移动。<br /><br /> 0x03 - 攀移。<br /><br /> 0x04 - 更改点。<br /><br /> 0x05 - 稳定。<br /><br /> 0x06 - 匮乏。<br /><br /> 0x07 - 线程已超时。|  
+|Reason|win:UInt32|调整的原因。<br /><br /> 0x00 - 预热。<br /><br /> 0x01 - 初始化。<br /><br /> 0x02 - 随机移动。<br /><br /> 0x03 - 攀移。<br /><br /> 0x04 - 更改点。<br /><br /> 0x05 - 稳定。<br /><br /> 0x06 - 匮乏。<br /><br /> 0x07 - 线程已超时。|  
 |ClrInstanceID|Win:UInt16|CLR 或 CoreCLR 的实例的唯一 ID。|  
   
 #### <a name="threadpoolworkerthreadadjustmentstats"></a>ThreadPoolWorkerThreadAdjustmentStats  
  下表显示了关键字和级别。  
   
-|引发事件的关键字|Level|  
+|引发事件的关键字|级别|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|信息性 (4)|  
   
@@ -108,14 +109,14 @@ ms.locfileid: "78240488"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
-|持续时间|win:Double|收集这些统计信息的时间量（以秒为单位）。|  
+|Duration|win:Double|收集这些统计信息的时间量（以秒为单位）。|  
 |吞吐量|win:Double|在此间隔期间每秒完成的平均数量。|  
-|ThreadWave|win:Double|保留供内部使用。|  
-|ThroughputWave|win:Double|保留供内部使用。|  
-|ThroughputErrorEstimate|win:Double|保留供内部使用。|  
-|ThroughputErrorEstimate|win:Double|保留供内部使用。|  
+|ThreadWave|win:Double|保留以供内部使用。|  
+|ThroughputWave|win:Double|保留以供内部使用。|  
+|ThroughputErrorEstimate|win:Double|保留以供内部使用。|  
+|ThroughputErrorEstimate|win:Double|保留以供内部使用。|  
 |ThroughputWave|win:Double|在此间隔期间因活动工作线程计数变化导致的相对吞吐量变化。|  
 |置信度|win:Double|ThroughputRatio 字段的有效性测量。|  
 |NewcontrolSetting|win:Double|将作为活动线程计数未来变化基线的活动工作线程数。|  
@@ -128,7 +129,7 @@ ms.locfileid: "78240488"
 ### <a name="iothreadcreate_v1"></a>IOThreadCreate_V1  
  下表显示了关键字和级别。  
   
-|引发事件的关键字|Level|  
+|引发事件的关键字|级别|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|信息性 (4)|  
   
@@ -140,16 +141,16 @@ ms.locfileid: "78240488"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
-|Count|win:UInt64|I/O 线程数，包括新创建的线程。|  
+|计数|win:UInt64|I/O 线程数，包括新创建的线程。|  
 |NumRetired|win:UInt64|已停用的工作线程数。|  
 |ClrInstanceID|Win:UInt16|CLR 或 CoreCLR 的实例的唯一 ID。|  
   
 ### <a name="iothreadretire_v1"></a>IOThreadRetire_V1  
  下表显示了关键字和级别。  
   
-|引发事件的关键字|Level|  
+|引发事件的关键字|级别|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|信息性 (4)|  
   
@@ -161,16 +162,16 @@ ms.locfileid: "78240488"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
-|Count|win:UInt64|线程池中剩余的 I/O 线程数。|  
+|计数|win:UInt64|线程池中剩余的 I/O 线程数。|  
 |NumRetired|win:UInt64|已停用的 I/O 线程数。|  
 |ClrInstanceID|Win:UInt16|CLR 或 CoreCLR 的实例的唯一 ID。|  
   
 ### <a name="iothreadunretire_v1"></a>IOThreadUnretire_V1  
  下表显示了关键字和级别。  
   
-|引发事件的关键字|Level|  
+|引发事件的关键字|级别|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|信息性 (4)|  
   
@@ -182,16 +183,16 @@ ms.locfileid: "78240488"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
-|Count|win:UInt64|线程池中的 I/O 线程数，包括这一个。|  
+|计数|win:UInt64|线程池中的 I/O 线程数，包括这一个。|  
 |NumRetired|win:UInt64|已停用的 I/O 线程数。|  
 |ClrInstanceID|Win:UInt16|CLR 或 CoreCLR 的实例的唯一 ID。|  
   
 ### <a name="iothreadterminate"></a>IOThreadTerminate  
  下表显示了关键字和级别。  
   
-|引发事件的关键字|Level|  
+|引发事件的关键字|级别|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|信息性 (4)|  
   
@@ -203,9 +204,9 @@ ms.locfileid: "78240488"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
-|Count|win:UInt64|线程池中剩余的 I/O 线程数。|  
+|计数|win:UInt64|线程池中剩余的 I/O 线程数。|  
 |NumRetired|win:UInt64|已停用的 I/O 线程数。|  
 |ClrInstanceID|Win:UInt16|CLR 或 CoreCLR 的实例的唯一 ID。|  
   

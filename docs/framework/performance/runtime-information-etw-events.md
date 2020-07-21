@@ -1,33 +1,34 @@
 ---
 title: 运行时信息 ETW 事件
+description: 请参阅运行时信息 ETW 事件，这些事件记录 SKU、版本号、运行时的激活方式（包括命令行参数）、GUID 等。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - runtime information events [.NET Framework]
 - ETW, runtime information events
 ms.assetid: 68b4edbc-7f3b-45f6-ab75-4fd066d6af9a
-ms.openlocfilehash: 2927ed088ba6c9e46b9676d55d0046575e23cfb1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 385519229bdb76841cdf592d95e96d2288ec5e1a
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715958"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474223"
 ---
 # <a name="runtime-information-etw-events"></a>运行时信息 ETW 事件
 这些 ETW 事件记录有关运行时的信息，包括 SKU、版本号、激活运行时的方式、启动运行时所使用的命令行参数、GUID（如果适用）以及其他相关信息。 如果多个运行时在一个进程内执行，这些事件 (ClrInstanceID) 提供的信息可帮助消除不同运行时的歧义。  
   
  下表显示了两个运行时信息事件。 这两个事件可在任意关键字或掩码下引发。 （有关详细信息，请参阅 [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md)。）  
   
-|Event|事件 ID|Provider|描述|  
+|事件|事件 ID|提供程序|描述|  
 |-----------|--------------|--------------|-----------------|  
 |`RuntimeInformationEvent`|187|CLRRuntime|加载运行时时引发。|  
 |`RuntimeInformationDCStart`|187|CLRRundown|枚举加载的运行时。|  
   
  下表显示了事件数据。  
   
-|字段名|数据类型|描述|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |ClrInstanceID|win:UInt16|CLR 或 CoreCLR 的实例的唯一 ID。|  
-|Sku|win:UInt16|1 – 桌面 CLR。<br /><br /> 2 – CoreCLR。|  
+|SKU|win:UInt16|1 – 桌面 CLR。<br /><br /> 2 – CoreCLR。|  
 |BclVersion – 主版本|win:UInt16|mscorlib.dll 的主版本。|  
 |BclVersion – 次版本|win:UInt16|mscorlib.dll 的次版本号。|  
 |BclVersion – 生成号|win:UInt16|mscorlib.dll 的生成号。|  

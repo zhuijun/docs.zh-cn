@@ -1,5 +1,6 @@
 ---
 title: 可靠性最佳做法
+description: 请参阅基于 .NET 主机的服务器应用程序中的可靠性的最佳实践，例如 SQL Server。 阻止它们泄漏资源或关闭。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - marking locks
@@ -38,12 +39,12 @@ helpviewer_keywords:
 - STA-dependent features
 - fibers
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
-ms.openlocfilehash: bd51ea1b79ac1dbd89a862f3961cc8508a87f301
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 134b71153f95dffd4525f307d291ce4389e0ce60
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715973"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474236"
 ---
 # <a name="reliability-best-practices"></a>可靠性最佳做法
 
@@ -239,7 +240,7 @@ HPA 仅影响可托管公共语言运行时且实现主机保护的非托管应�
 
 ### <a name="do-not-block-indefinitely-in-unmanaged-code"></a>不要在非托管代码中无限期阻止
 
-在非托管代码中而不是在托管代码中阻塞可能导致拒绝服务攻击，因为 CLR 无法中止线程。  已阻塞的线程会阻止 CLR 卸载 <xref:System.AppDomain>，至少是在没有执行某些极端不安全操作的情况下。  使用 Windows 同步基元进行阻止是我们无法允许的一个清晰的示例。  如果可能，应尽可能避免在套接字上对 `ReadFile` 的调用，理想情况下，Windows API 应为这样的操作提供一种机制来超时。
+在非托管代码中而不是在托管代码中阻塞可能导致拒绝服务攻击，因为 CLR 无法中止线程。  已阻塞的线程会阻止 CLR 卸载 <xref:System.AppDomain>，至少是在没有执行某些极端不安全操作的情况下。  使用 Windows 同步基元进行阻止是我们无法允许的一个清晰的示例。  如果可能，应尽可能避免在对套接字的调用中进行阻止 `ReadFile` ，理想情况下，WINDOWS API 应为此类操作提供一种机制来超时。
 
 理想情况下，任何调入本机的方法应使用具有合理、有限的超时的 Win32 调用。  如果允许用户指定超时，则在没有某些特定安全权限的情况下，不应该允许用户指定无限期的超时。  按照一般准则，如果方法将阻塞超过 10 秒，你则需要使用支持超时的版本，或需要其他的 CLR 支持。
 
@@ -275,7 +276,7 @@ HPA 仅影响可托管公共语言运行时且实现主机保护的非托管应�
 
 #### <a name="code-analysis-rule"></a>代码分析规则
 
-查看托管代码中捕获所有对象或捕获所有异常的所有 catch 块。  在C#中，这意味着标记 `catch` {} 并 `catch(Exception)` {}。  请考虑将异常类型描述得非常具体，或者查看代码以确保在它捕获到意外异常类型时不会以错误的方式执行。
+查看托管代码中捕获所有对象或捕获所有异常的所有 catch 块。  在 c # 中，这意味着标记 `catch` {} 和 `catch(Exception)` {} 。  请考虑将异常类型描述得非常具体，或者查看代码以确保在它捕获到意外异常类型时不会以错误的方式执行。
 
 ### <a name="do-not-assume-a-managed-thread-is-a-win32-thread--it-is-a-fiber"></a>不要假设托管线程是一个 Win32 线程–它是一个纤程
 
@@ -314,4 +315,4 @@ SQL Server 在纤程模式中运行；不要使用线程本地存储。 请避�
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Runtime.ConstrainedExecution>
-- [SQL Server 编程和主机保护特性](sql-server-programming-and-host-protection-attributes.md)
+- [SQL Server 编程和宿主保护特性](sql-server-programming-and-host-protection-attributes.md)
