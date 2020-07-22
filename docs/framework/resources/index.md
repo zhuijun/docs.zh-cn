@@ -1,5 +1,6 @@
 ---
 title: .NET 应用中的资源
+description: 了解 .NET 应用中的资源。 资源是在逻辑上随应用一起部署的任何不可执行的数据。
 ms.date: 07/25/2018
 helpviewer_keywords:
 - deploying applications [.NET Framework], resources
@@ -11,16 +12,16 @@ helpviewer_keywords:
 - packaging application resources
 - localizing resources
 ms.assetid: 8ad495d4-2941-40cf-bf64-e82e85825890
-ms.openlocfilehash: 0620cb16c3233f8ba2a665c9c4cb5f44bc5d5e84
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 105325170389917bfb2022314791aa1ed5923db3
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81645684"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865159"
 ---
 # <a name="resources-in-net-apps"></a>.NET 应用中的资源
 
-几乎每一个生产性应用都需要使用资源。 资源是在逻辑上随应用部署的任何不可执行的数据。 资源可以在应用中作为错误消息显示，或者作为用户界面的一部分显示。 资源可以包含多种形式的数据，包括字符串、图像和持久的对象。 （若要将持久对象写入资源文件，这些对象必须是可序列化的。）通过在资源文件中存储数据，无需重新编译整个应用即可更改这些数据。 还可以将数据存储在一个位置，而无需依赖存储在多个位置的硬编码数据。
+几乎每一个生产性应用都需要使用资源。 资源是在逻辑上随应用部署的任何不可执行的数据。 资源可以在应用中作为错误消息显示，或者作为用户界面的一部分显示。 资源可以包含多种形式的数据，包括字符串、图像和持久的对象。 （持久化对象必须是可序列化的，才能将这些对象写入到资源文件。）通过在资源文件中存储数据，可以更改这些数据，而无需重新编译整个应用。 还可以将数据存储在一个位置，而无需依赖存储在多个位置的硬编码数据。
 
 .NET Framework 和 .NET Core 为资源的创建和本地化提供全面的支持。 此外，.NET 还支持一种用于打包和部署本地化资源的简单模型。
 

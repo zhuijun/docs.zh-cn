@@ -1,16 +1,17 @@
 ---
 title: 数组 - C# 编程指南
+description: 用 C# 将同一类型的多个变量存储在数组数据结构中。 通过指定类型或指定要存储任何类型的对象来声明数组。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#]
 - C# language, arrays
 ms.assetid: bb79bdde-e570-4c30-adb0-1dd5759ae041
-ms.openlocfilehash: bbabc84c144e5b3415c19f346b890782e251662c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e302ff2e4c2488c4899c4eb99a666d2d322119ce
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75715056"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474730"
 ---
 # <a name="arrays-c-programming-guide"></a>数组（C# 编程指南）
 
@@ -48,7 +49,7 @@ type[] arrayName;
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [集合](../concepts/collections.md)
