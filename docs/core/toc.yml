@@ -304,6 +304,10 @@ items:
         items:
           - name: 调试内存泄露
             href: diagnostics/debug-memory-leak.md
+          - name: 调试高 CPU 使用率
+            href: diagnostics/debug-highcpu.md
+          - name: 调试死锁
+            href: diagnostics/debug-deadlock.md
   - name: 其他 .NET Core 工具
     items:
       - name: 概述
@@ -435,7 +439,7 @@ items:
         href: testing/unit-testing-published-output.md
       - name: 使用 Visual Studio 对 .NET Core 项目进行实时单元测试
         href: /visualstudio/test/live-unit-testing-start
-  - name: 版本管理
+  - name: 版本控制
     items:
       - name: 概述
         href: versions/index.md
