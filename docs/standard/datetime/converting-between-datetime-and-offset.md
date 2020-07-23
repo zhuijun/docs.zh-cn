@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Date data type, converting
 - local time conversions
 ms.assetid: b605ff97-0c45-4c24-833f-4c6a3e8be64c
-ms.openlocfilehash: cf55db7c22ad2495bdbeb3202fcefb89bae42d69
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 86f2c982d7f87e83102933d1de73d6e13086dc87
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768672"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924898"
 ---
 # <a name="converting-between-datetime-and-datetimeoffset"></a>在 DateTime 与 DateTimeOffset 之间进行转换
 
@@ -105,7 +105,7 @@ ms.locfileid: "84768672"
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#10)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#10)]
 
-<xref:System.DateTime>使用属性检索值时 <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> ，属性的 `get` 访问器首先将 <xref:System.DateTimeOffset> 值转换为 UTC，然后通过调用方法将其转换为本地时间 <xref:System.DateTimeOffset.ToLocalTime%2A> 。 这意味着，您可以从属性中检索一个值， <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> 以便在执行类型转换时执行时区转换。 还意味着在执行转换期间应用本地时区的调整规则。 下面的代码演示 <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> 如何使用属性同时执行类型和时区转换。
+<xref:System.DateTime>使用属性检索值时 <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> ，属性的 `get` 访问器首先将 <xref:System.DateTimeOffset> 值转换为 UTC，然后通过调用方法将其转换为本地时间 <xref:System.DateTimeOffset.ToLocalTime%2A> 。 这意味着，您可以从属性中检索一个值， <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> 以便在执行类型转换时执行时区转换。 还意味着在执行转换期间应用本地时区的调整规则。 下面的代码演示 <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> 如何使用属性同时执行类型和时区转换。 示例输出适用于设置为太平洋时区（美国和加拿大）的计算机。 11月日期为太平洋标准时间，即 UTC-8，而六月日期为夏令时（UTC-7）。
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#11](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#11)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#11)]

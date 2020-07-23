@@ -1,16 +1,17 @@
 ---
 title: UI 自动化线程处理问题
+description: 阅读有关 UI 自动化线程处理的问题。 例如，如果客户端应用程序尝试在 UI 线程上与其自己的 UI 交互，则可能会发生冲突。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, threading issues
 - threading issues with UI Automation
 ms.assetid: 0ab8d42c-5b8b-481b-b788-2caecc2f0191
-ms.openlocfilehash: 8dc21a680a19933e9db8d52a0e6b7e6ffdd333f8
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 290c26981d5eb993e2a9ab387f8d106aafa54efb
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800824"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924534"
 ---
 # <a name="ui-automation-threading-issues"></a>UI 自动化线程处理问题
 > [!NOTE]

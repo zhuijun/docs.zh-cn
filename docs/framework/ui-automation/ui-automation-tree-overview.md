@@ -1,16 +1,17 @@
 ---
 title: UI 自动化树概述
+description: 阅读有关 UI 自动化树的概述。 了解 UI 自动化树的不同视图，例如原始视图、控件视图和内容视图。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - automation tree
 - UI Automation, tree
 ms.assetid: 03b98058-bdb3-47a0-8ff7-45e6cdf67166
-ms.openlocfilehash: a0b888e8ecc80e3739c583931a86da3cdb7242d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0ffe4b4e6157f5bff3284d6978e0ec28641cf72d
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179452"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924547"
 ---
 # <a name="ui-automation-tree-overview"></a>UI 自动化树概述
 > [!NOTE]
@@ -18,7 +19,7 @@ ms.locfileid: "79179452"
   
  辅助技术产品和测试脚本通过在 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树中导航来收集有关 [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] 及其元素的信息。  
   
- 树中有[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]一个根元素 （<xref:System.Windows.Automation.AutomationElement.RootElement%2A>）， 表示当前桌面，其子元素表示应用程序窗口。 其中的每个子元素都可以包含表示 [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 的各个部分（如菜单、按钮、工具栏和列表框）的元素。 这些子元素又可以包含列表项之类的元素。  
+ 在树中， [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 有一个表示当前桌面的根元素（ <xref:System.Windows.Automation.AutomationElement.RootElement%2A> ），其子元素表示应用程序窗口。 其中的每个子元素都可以包含表示 [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 的各个部分（如菜单、按钮、工具栏和列表框）的元素。 这些子元素又可以包含列表项之类的元素。  
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的结构不固定，由于它可能包含数千个元素，因此它很少全部显示出来。 可以根据需要生成树的某些部分，添加、移动或删除元素时，树也会发生相应更改。  
   
@@ -36,7 +37,7 @@ ms.locfileid: "79179452"
   
 <a name="uiautomation_raw_view"></a>
 ### <a name="raw-view"></a>原始视图  
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的原始视图是 <xref:System.Windows.Automation.AutomationElement> 对象的完整树，该树的根元素是桌面。 原始视图完全遵循应用程序的本机编程结构，因此是最详细的可用视图。 原始视图还是其他树视图的生成基础。 由于此视图取决于基础[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]框架，[!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)]因此按钮的原始视图的原始视图将不同于 Win32 按钮。  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的原始视图是 <xref:System.Windows.Automation.AutomationElement> 对象的完整树，该树的根元素是桌面。 原始视图完全遵循应用程序的本机编程结构，因此是最详细的可用视图。 原始视图还是其他树视图的生成基础。 由于此视图依赖于基础 [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 框架，因此按钮的原始视图 [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] 将与 Win32 按钮具有不同的原始视图。  
   
  原始视图是通过以下方法来获取的：在不指定属性的情况下搜索元素，或者使用 <xref:System.Windows.Automation.TreeWalker.RawViewWalker> 在树中导航。  
   

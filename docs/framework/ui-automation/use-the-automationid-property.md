@@ -1,5 +1,6 @@
 ---
 title: 使用 AutomationID 属性
+description: 查看应用场景和示例代码，演示如何以及何时使用 AutomationID 属性在 UI 自动化树中查找元素。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - UI Automation, AutomationId property
 - properties, AutomationId
 ms.assetid: a24e807b-d7c3-4e93-ac48-80094c4e1c90
-ms.openlocfilehash: a07a9c9bf6b0bf1e2f8ce56653a90a3aad3c4b2f
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 9e6dd3935a1b4d15690e1dfecd73e9b07330ec6c
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741373"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924521"
 ---
 # <a name="use-the-automationid-property"></a>使用 AutomationID 属性
 > [!NOTE]
@@ -31,11 +32,11 @@ ms.locfileid: "75741373"
  已确定有三个主要的 UI 自动化客户端应用程序方案需要使用 <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> 才能在搜索元素时获得准确一致的结果。  
   
 > [!NOTE]
-> 除了顶级应用程序窗口外，控件视图中的所有 UI 自动化元素、派生自没有 ID 或 X：Uid 的 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] 控件的 ui 自动化元素以及派生自没有控件 ID 的 Win32 控件的 UI 自动化元素都支持 <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>。  
+> <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>除顶级应用程序窗口、派生自没有 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] ID 或 x：Uid 的控件的 ui 自动化元素以及派生自没有控件 ID 的 Win32 控件的 Ui 自动化元素外，控件视图中的所有 Ui 自动化元素都支持。  
   
 #### <a name="use-a-unique-and-discoverable-automationid-to-locate-a-specific-element-in-the-ui-automation-tree"></a>使用唯一且可发现的 AutomationID 在 UI 自动化树中查找特定元素  
   
-- 使用工具（如 UI Spy）报告感兴趣的 [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 元素的 <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty>。 然后，可以将此值复制并粘贴到客户端应用程序（如测试脚本）中，以便随后进行自动化测试。 此方法减少并简化了在运行时标识和查找元素所需的代码。  
+- 使用工具（如 UI Spy）报告 <xref:System.Windows.Automation.AutomationElement.AutomationIdProperty> [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 感兴趣的元素的。 然后，可以将此值复制并粘贴到客户端应用程序（如测试脚本）中，以便随后进行自动化测试。 此方法减少并简化了在运行时标识和查找元素所需的代码。  
   
 > [!CAUTION]
 > 通常，你应当尝试只获取 <xref:System.Windows.Automation.AutomationElement.RootElement%2A>的直接子项。 对后代的搜索可能循环访问数百个甚至数千个元素，这可能导致堆栈溢出。 如果尝试在较低级别上获取特定元素，应该从应用程序窗口或者从较低级别的容器中开始搜索。  
