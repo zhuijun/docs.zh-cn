@@ -1,18 +1,18 @@
 ---
 title: await 运算符 - C# 参考
-ms.date: 11/08/2019
+ms.date: 07/13/2020
 f1_keywords:
 - await_CSharpKeyword
 helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 83ee51fcbcc5911c688e30542cefb1c56578a578
-ms.sourcegitcommit: 839777281a281684a7e2906dccb3acd7f6a32023
+ms.openlocfilehash: 76c6b24c1cd061585c7a6964d30bc81cc5fc5975
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82141029"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86308840"
 ---
 # <a name="await-operator-c-reference"></a>await 运算符（C# 参考）
 
@@ -31,11 +31,17 @@ ms.locfileid: "82141029"
 
 `await` 运算符的操作数通常是以下其中一个 .NET 类型：<xref:System.Threading.Tasks.Task>、<xref:System.Threading.Tasks.Task%601>、<xref:System.Threading.Tasks.ValueTask> 或 <xref:System.Threading.Tasks.ValueTask%601>。 但是，任何可等待表达式都可以是 `await` 运算符的操作数。 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的[可等待表达式](~/_csharplang/spec/expressions.md#awaitable-expressions)部分。
 
-从 C# 8.0 开始，可使用 `await foreach` 语句来使用异步数据流。 有关详细信息，请参阅[`foreach`语句](../keywords/foreach-in.md)文章，和 [C# 8.0 新增功能](../../whats-new/csharp-8.md)文章的[异步流](../../whats-new/csharp-8.md#asynchronous-streams)一节。
-
 如果表达式 `t` 的类型为 <xref:System.Threading.Tasks.Task%601> 或 <xref:System.Threading.Tasks.ValueTask%601>，则表达式 `await t` 的类型为 `TResult`。 如果 `t` 的类型为 <xref:System.Threading.Tasks.Task> 或 <xref:System.Threading.Tasks.ValueTask>，则 `await t` 的类型为 `void`。 在这两种情况下，如果 `t` 引发异常，则 `await t` 将重新引发异常。 有关如何处理异常的详细信息，请参阅 [try-catch 语句](../keywords/try-catch.md)一文中的[异步方法中的异常](../keywords/try-catch.md#exceptions-in-async-methods)部分。
 
 `async` 和 `await` 关键字在 C# 5 和更高版本中都可用。
+
+## <a name="asynchronous-streams-and-disposables"></a>异步流和可释放对象
+
+从 C# 8.0 开始，可以使用异步流和可释放对象。
+
+可使用 `await foreach` 语句来使用异步数据流。 有关详细信息，请参阅[`foreach`语句](../keywords/foreach-in.md)文章，和 [C# 8.0 新增功能](../../whats-new/csharp-8.md)文章的[异步流](../../whats-new/csharp-8.md#asynchronous-streams)一节。
+
+可使用 `await using` 语句来处理异步可释放对象，即其类型可实现 <xref:System.IAsyncDisposable> 接口的对象。 有关详细信息，请参阅[实现 DisposeAsync 方法](../../../standard/garbage-collection/implementing-disposeasync.md)一文中的[使用异步可释放对象](../../../standard/garbage-collection/implementing-disposeasync.md#using-async-disposable)部分。
 
 ## <a name="await-operator-in-the-main-method"></a>Main 方法中的 await 运算符
 

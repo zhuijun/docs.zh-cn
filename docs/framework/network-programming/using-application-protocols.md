@@ -14,16 +14,17 @@ helpviewer_keywords:
 - receiving data, application protocols
 - requesting data from Internet, application protocols
 ms.assetid: 3aab4bcc-8397-4e1a-a1b6-bbd837a21430
-ms.openlocfilehash: 07c4a813d4e2c838fb236d2a7798f54a9ead3a6d
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: cd702085beff4ed6710eca83ac748a5915478387
+ms.sourcegitcommit: d4f7ba08f2a45a9dbef53be597eed6d4a9410f29
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502010"
+ms.lasthandoff: 07/15/2020
+ms.locfileid: "86401960"
 ---
 # <a name="using-application-protocols"></a>使用应用程序协议
-.NET Framework 支持常用的 Internet 应用程序协议。 本部分包括有关使用 [HTTP](http.md)、“TCP”和“UDP”协议的信息，以及使用 [Windows Sockets](sockets.md) 接口实现自定义协议的相关信息。  
-  
+
+.NET Framework 支持常用的 Internet 应用程序协议。 本部分包括有关使用 [HTTP](http.md)、[TCP](using-tcp-services.md) 和 [UDP](using-udp-services.md) 协议的信息，以及使用 [Windows Sockets](sockets.md) 接口实现自定义协议的相关信息。
+
 ## <a name="see-also"></a>请参阅
 
 - [.NET Framework 中的网络编程](index.md)

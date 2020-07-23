@@ -1,14 +1,14 @@
 ---
 title: .NET Compiler Platform SDK 概念和对象模型
 description: 此概述提供了高效使用 .NET 编译器 SDK 所需的背景。 介绍了 API 层、涉及的主要类型以及总体对象模型。
-ms.date: 10/10/2017
+ms.date: 07/13/2020
 ms.custom: mvc
-ms.openlocfilehash: 529ce6fbdef22964251c8b22abbd5d8aadab633d
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: a65d282dd3c58279bbfd635c0386d50ce3f30055
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975935"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374463"
 ---
 # <a name="understand-the-net-compiler-platform-sdk-model"></a>了解 .NET Compiler Platform SDK 模型
 
@@ -30,13 +30,11 @@ ms.locfileid: "82975935"
 
 每个编译器将这些组件合并在一起，组成一个端到端整体。
 
-这些 API 与 Visual Studio 使用的 API 相同。 例如，代码大纲和格式设置功能使用语法树，对象浏览器和导航功能使用符号表，重构和转到定义使用语义模型，编辑并继续使用所有这些信息，包括发出 API。
+这些 API 与 Visual Studio 使用的 API 相同。 例如，代码大纲和格式设置功能使用语法树，对象浏览器和导航功能使用符号表，重构和转到定义使用语义模型，编辑并继续使用所有这些信息，包括发出 API  。
 
 ## <a name="api-layers"></a>API 层
 
-.NET 编译器 SDK 包含两个主要 API 层：编译器 API 和工作区 API。
-
-![由编译器管道 API 表示的 API 层](media/compiler-api-model/api-layers.png)
+.NET 编译器 SDK 包含多个 API 层：编译器 API、诊断 API、脚本 API 和工作区 API。
 
 ### <a name="compiler-apis"></a>编译器 API
 

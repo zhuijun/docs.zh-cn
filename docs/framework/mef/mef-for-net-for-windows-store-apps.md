@@ -1,18 +1,19 @@
 ---
 title: 适用于 Windows 应用商店应用的 .NET 的 MEF
+description: 查看 Managed Extensibility Framework (MEF) 命名空间，其中包含用于开发可扩展 Windows 8.x 应用商店应用的类型。
 ms.date: 03/30/2017
 ms.assetid: 7667770e-d163-4ad6-a303-085cf73db2f2
-ms.openlocfilehash: 3a4c2a2f7f6096794f9ea723eec56aa74f5c44c5
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 764c42265ed7523d3581484cc9564b17e9a9b3bd
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802175"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281233"
 ---
 # <a name="mef-for-net-for-windows-store-apps"></a>适用于 Windows 应用商店应用的 .NET 的 MEF
 <xref:System.Composition?displayProperty=nameWithType> 及其子命名空间包含使用 Managed Extensibility Framework (MEF) 开发可扩展 Windows 8.x 应用商店应用所需的类型。 这些命名空间是适用于 Windows 8 操作系统的 Windows 8.x 应用商店应用子集的 .NET 的组成部分。  
   
- 这些命名空间不是与 .NET Framework 一起分发的核心类库的一部分。 若要安装这些命名空间，请在 Visual Studio 中打开项目，从“项目”  菜单中选择“管理 NuGet 包”  ，然后联机搜索 Microsoft.Composition 包。  
+ 这些命名空间不是与 .NET Framework 一起分发的核心类库的一部分。 若要安装这些命名空间，请在 Visual Studio 中打开项目，从“项目”菜单中选择“管理 NuGet 包”，然后联机搜索 Microsoft.Composition 包。  
   
 - <xref:System.Composition?displayProperty=nameWithType> 提供构成 Windows 8.x 应用商店应用的核心 MEF 的类。  
   

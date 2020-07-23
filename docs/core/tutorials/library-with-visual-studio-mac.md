@@ -2,16 +2,16 @@
 title: 使用 Visual Studio for Mac 创建 .NET Standard 类库
 description: 了解如何使用 Visual Studio for Mac 创建 .NET Standard 类库。
 ms.date: 06/08/2020
-ms.openlocfilehash: 3a107fff2fd6aef5e06d9af3eac334fbf5688fa5
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 8e1e4ca3bc1b12d889b847d80318f3d6cd1bbe46
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84713417"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415998"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-for-mac"></a>教程：使用 Visual Studio for Mac 创建 .NET Standard 库
 
-在本教程中，将创建包含一个字符串处理方法的简单类库。 我们把它作为[扩展方法](../../csharp/programming-guide/classes-and-structs/extension-methods.md)进行实现，这样就可以把它作为 <xref:System.String> 类成员进行调用。
+在本教程中，将创建包含一个字符串处理方法的类库。 我们把它作为[扩展方法](../../csharp/programming-guide/classes-and-structs/extension-methods.md)进行实现，这样就可以把它作为 <xref:System.String> 类成员进行调用。
 
 类库定义的是可以由应用程序调用的类型和方法。 面向 .NET Standard 2.1 的类库可由面向任何支持 .NET Standard 版本 2.1 的 .NET 实现的应用程序使用。 完成类库后，可以将其作为第三方组件进行分发，或作为与一个或多个应用程序捆绑在一起的组件进行分发。
 

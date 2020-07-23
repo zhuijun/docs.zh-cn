@@ -1,17 +1,18 @@
 ---
 title: 结构分析工具 (Mefx)
+description: 了解组合分析工具 (Mefx)，该工具用于分析包含 .NET 中的 Managed Extensibility Framework (MEF) 部件的 DLL 和 EXE 文件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Composition Analysis Tool [MEF]
 - MEF, Composition Analysis Tool
 - Mefx [MEF], Composition Analysis Tool
 ms.assetid: c48a7f93-83bb-4a06-aea0-d8e7bd1502ad
-ms.openlocfilehash: 7d0acf16ace5aad60b32b7139a58a258fb080ee0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: abb1459afc5aeb2d39ee553c62fe382bb7af58d5
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181292"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281272"
 ---
 # <a name="composition-analysis-tool-mefx"></a>结构分析工具 (Mefx)
 组合分析工具 (Mefx) 是一款命令行应用程序，用于分析包含 Managed Extensibility Framework (MEF) 部件的库 (.dll) 和应用程序 (.exe) 文件。 Mefx 的主要用途是为开发人员提供一种无需向应用程序本身添加繁琐的跟踪代码即可诊断其 MEF 应用程序中组合失败情况的方法。 它还可用于帮助你了解第三方所提供库中的部件。 本主题介绍如何使用 Mefx，并提供其语法参考。  

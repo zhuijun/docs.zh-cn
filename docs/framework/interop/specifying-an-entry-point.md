@@ -1,17 +1,18 @@
 ---
 title: 指定入口点
+description: 了解如何指定在 DLL 中标识函数位置的入口点。 可以通过将入口点映射到另一个名称来重命名该函数。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - EntryPoint field
 - platform invoke, attribute fields
 - attribute fields in platform invoke, EntryPoint
 ms.assetid: d1247f08-0965-416a-b978-e0b50652dfe3
-ms.openlocfilehash: c5f8f735dd3e8c359f88044a532c29303237acc8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5628c54103410d127c2f9c4f56e1c6f897ada754
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79181314"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86282016"
 ---
 # <a name="specifying-an-entry-point"></a>指定入口点
 
@@ -31,7 +32,7 @@ ms.locfileid: "79181314"
   
 ## <a name="renaming-a-function-in-visual-basic"></a>重命名 Visual Basic 中的函数  
 
-Visual Basic 在 Declare  语句中使用 Function  关键字设置 <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> 字段。 下面的示例演示了一个基本声明。  
+Visual Basic 在 Declare 语句中使用 Function 关键字设置 <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> 字段。 下面的示例演示了一个基本声明。  
   
 ```vb
 Friend Class NativeMethods
@@ -43,7 +44,7 @@ Friend Class NativeMethods
 End Class
 ```
   
-如下例所示，通过在定义中包括 Alias 关键字，可以用 MsgBox 替换 MessageBox 入口点    。 在这两个示例中，Auto  关键字使你无需指定入口点的字符集版本。 有关选择字符集的详细信息，请参阅[指定字符集](specifying-a-character-set.md)。  
+如下例所示，通过在定义中包括 Alias 关键字，可以用 MsgBox 替换 MessageBox 入口点  。 在这两个示例中，Auto 关键字使你无需指定入口点的字符集版本。 有关选择字符集的详细信息，请参阅[指定字符集](specifying-a-character-set.md)。  
   
 ```vb
 Friend Class NativeMethods
@@ -57,7 +58,7 @@ End Class
 ```
   
 ## <a name="renaming-a-function-in-c-and-c"></a>重命名 C# 和 C++ 中的函数  
- 可使用 <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> 字段通过名称或序号指定 DLL 函数。 如果方法定义中函数的名称与 DLL 中入口点的名称相同，则不必使用 EntryPoint  字段显式地标识函数。 否则，使用以下属性形式之一指示名称或序号：  
+ 可使用 <xref:System.Runtime.InteropServices.DllImportAttribute.EntryPoint?displayProperty=nameWithType> 字段通过名称或序号指定 DLL 函数。 如果方法定义中函数的名称与 DLL 中入口点的名称相同，则不必使用 EntryPoint 字段显式地标识函数。 否则，使用以下属性形式之一指示名称或序号：  
   
 ```csharp
 [DllImport("DllName", EntryPoint = "Functionname")]
@@ -66,7 +67,7 @@ End Class
   
  请注意，序号前必须带有井号 (#)。  
   
- 下面的示例演示如何使用 EntryPoint 字段将代码中的 MessageBoxA 替换为 MsgBox    。  
+ 下面的示例演示如何使用 EntryPoint 字段将代码中的 MessageBoxA 替换为 MsgBox  。  
   
 ```csharp
 using System;

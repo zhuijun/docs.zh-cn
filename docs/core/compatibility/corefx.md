@@ -2,12 +2,12 @@
 title: 基类库的重大更改
 description: 列出核心 .NET 库中的重大更改。
 ms.date: 09/20/2019
-ms.openlocfilehash: 1c56358e69d0dd6e8572a41229c1b9edbcdad795
-ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
+ms.openlocfilehash: 64510809a1cf69ea0e4c4816eb2df54233e8eceb
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85365606"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281289"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>核心 .NET 库重大更改
 
@@ -17,6 +17,8 @@ ms.locfileid: "85365606"
 
 | 重大更改 | 引入的版本 |
 | - | :-: |
+| [默认 ActivityIdFormat 为 W3C](#default-activityidformat-is-w3c) | 5.0 |
+| [Vector2.Lerp 和 Vector4.Lerp 的行为变更](#behavior-change-for-vector2lerp-and-vector4lerp) | 5.0 |
 | [SSE 和 SSE2 CompareGreaterThan 方法正确处理 NaN 输入](#sse-and-sse2-comparegreaterthan-methods-properly-handle-nan-inputs) | 5.0 |
 | [如果实例已存在，CounterSet.CreateCounterSetInstance 现在将引发 InvalidOperationException](#countersetcreatecountersetinstance-now-throws-invalidoperationexception-if-instance-already-exists) | 5.0 |
 | [Microsoft.DotNet.PlatformAbstractions 包已删除](#microsoftdotnetplatformabstractions-package-removed) | 5.0 |
@@ -43,6 +45,14 @@ ms.locfileid: "85365606"
 | [Process.StartInfo 对未启动的进程引发 InvalidOperationException](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE [default-activityidformat-changed](../../../includes/core-changes/corefx/5.0/default-activityidformat-changed.md)]
+
+***
+
+[!INCLUDE [vector-lerp-behavior-change](../../../includes/core-changes/corefx/5.0/vector-lerp-behavior-change.md)]
+
+***
 
 [!INCLUDE [sse-comparegreaterthan-intrinsics](../../../includes/core-changes/corefx/5.0/sse-comparegreaterthan-intrinsics.md)]
 

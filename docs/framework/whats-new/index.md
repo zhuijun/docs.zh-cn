@@ -1,5 +1,6 @@
 ---
 title: .NET Framework 中的新增功能
+description: 了解不同版本 .NET Framework 中的新变化。 阅读每个版本的主要新功能和改进的摘要。
 ms.custom: updateeachrelease
 ms.date: 04/18/2019
 dev_langs:
@@ -8,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: ee67e6577c5ad2486a483e3593e4d0a8ecbb0407
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 42f872bba87a88fc92a37879e815ee7068407cf7
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244434"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925587"
 ---
 # <a name="whats-new-in-net-framework"></a>.NET Framework 中的新增功能
 
@@ -1012,12 +1013,12 @@ URI 常量都在 <xref:System.Security.Cryptography.Xml.SignedXml> 上公开：
 
 |SignedXml 字段|返回的常量|
 |---------------------|--------------|
-|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigSHA256Url>|“http://www.w3.org/2001/04/xmlenc#sha256”|
-|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA256Url>|“http://www.w3.org/2001/04/xmldsig-more#rsa-sha256”|
-|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigSHA384Url>|“http://www.w3.org/2001/04/xmldsig-more#sha384”|
-|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA384Url>|“http://www.w3.org/2001/04/xmldsig-more#rsa-sha384”|
-|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigSHA512Url>|“http://www.w3.org/2001/04/xmlenc#sha512”|
-|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA512Url>|“http://www.w3.org/2001/04/xmldsig-more#rsa-sha512”|
+|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigSHA256Url>|"http://www.w3.org/2001/04/xmlenc#sha256"|
+|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA256Url>|"http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"|
+|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigSHA384Url>|"http://www.w3.org/2001/04/xmldsig-more#sha384"|
+|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA384Url>|"http://www.w3.org/2001/04/xmldsig-more#rsa-sha384"|
+|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigSHA512Url>|"http://www.w3.org/2001/04/xmlenc#sha512"|
+|<xref:System.Security.Cryptography.Xml.SignedXml.XmlDsigRSASHA512Url>|"http://www.w3.org/2001/04/xmldsig-more#rsa-sha512"|
 
  已将自定义 <xref:System.Security.Cryptography.SignatureDescription> 处理程序注册到 <xref:System.Security.Cryptography.CryptoConfig> 以添加对这些算法的支持的任何程序将会继续像过去一样工作，但由于现在有平台默认值，所以不再需要 <xref:System.Security.Cryptography.CryptoConfig> 注册。
 

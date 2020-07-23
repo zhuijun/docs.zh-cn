@@ -2,15 +2,15 @@
 title: ASP.NET Core 中断性变更
 titleSuffix: ''
 description: 列出 ASP.NET Core 中的中断性变更。
-ms.date: 07/08/2020
+ms.date: 07/15/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: ca9e615e88964e1c37e9c0b721bca8c34bf671ac
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: cea6771afdc05edc525e7d35f530f42e7b3bc1fa
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174388"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441942"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core 中断性变更
 
@@ -26,8 +26,10 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 - [授权：AddAuthorization 重载已移到不同的程序集](#authorization-addauthorization-overload-moved-to-different-assembly)
 - [授权：已从 AuthorizationFilterContext.Filters 中删除 IAllowAnonymous](#authorization-iallowanonymous-removed-from-authorizationfiltercontextfilters)
 - [授权：IAuthorizationPolicyProvider 实现需要新方法](#authorization-iauthorizationpolicyprovider-implementations-require-new-method)
+- [授权：终结点路由中的资源为 HttpContext](#authorization-resource-in-endpoint-routing-is-httpcontext)
 - [Azure:Microsoft 预先指定的 Azure 集成包已删除](#azure-microsoft-prefixed-azure-integration-packages-removed)
 - [Blazor：在编译时从组件中剪裁掉无意义的空白](#blazor-insignificant-whitespace-trimmed-from-components-at-compile-time)
+- [Blazor：NuGet 包的目标框架已更改](#blazor-target-framework-of-nuget-packages-changed)
 - [缓存：已删除 CompactOnMemoryPressure 属性](#caching-compactonmemorypressure-property-removed)
 - [缓存：Microsoft.Extensions.Caching.SqlServer 使用新的 SqlClient 包](#caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package)
 - [缓存：ResponseCaching“Pubternal”类型已更改为内部类型](#caching-responsecaching-pubternal-types-changed-to-internal)
@@ -62,6 +64,7 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 - [Kestrel：传输抽象层更改](#kestrel-transport-abstractions-removed-and-made-public)
 - [本地化：API 已标记为已过时](#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete)
 - [本地化：已删除“Pubternal”API](#localization-pubternal-apis-removed)
+- [本地化：请求本地化中间件中删除了已过时的构造函数](#localization-obsolete-constructor-removed-in-request-localization-middleware)
 - [本地化：ResourceManagerWithCultureStringLocalizer 类和 WithCulture 接口成员已删除](#localization-resourcemanagerwithculturestringlocalizer-class-and-withculture-interface-member-removed)
 - [日志记录：已将 DebugLogger 类设为内部类](#logging-debuglogger-class-made-internal)
 - [MVC：已删除控制器操作 Async 后缀](#mvc-async-suffix-trimmed-from-controller-action-names)
@@ -70,6 +73,8 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 - [MVC：类型已更改为内部](#mvc-pubternal-types-changed-to-internal)
 - [MVC：已删除 Web API 兼容性填充码](#mvc-web-api-compatibility-shim-removed)
 - [Razor：运行时编译已移到包](#razor-runtime-compilation-moved-to-a-package)
+- [安全性：Cookie 名称编码已删除](#security-cookie-name-encoding-removed)
+- [安全性：IdentityModel NuGet 包版本已更新](#security-identitymodel-nuget-package-versions-updated)
 - [会话状态：已删除过时的 API](#session-state-obsolete-apis-removed)
 - [共享框架：已从 Microsoft.AspNetCore.App 中删除程序集](#shared-framework-assemblies-removed-from-microsoftaspnetcoreapp)
 - [共享框架：已删除 Microsoft.AspNetCore.All](#shared-framework-removed-microsoftaspnetcoreall)
@@ -88,11 +93,19 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 
 ## <a name="aspnet-core-50"></a>ASP.NET Core 5.0
 
+[!INCLUDE[Authorization: Resource in endpoint routing is HttpContext](~/includes/core-changes/aspnetcore/5.0/authorization-resource-in-endpoint-routing.md)]
+
+***
+
 [!INCLUDE[Azure: Microsoft-prefixed Azure integration packages removed](~/includes/core-changes/aspnetcore/5.0/azure-integration-packages-removed.md)]
 
 ***
 
 [!INCLUDE[Blazor: Insignificant whitespace trimmed from components at compile time](~/includes/core-changes/aspnetcore/5.0/blazor-components-trim-insignificant-whitespace.md)]
+
+***
+
+[!INCLUDE[Blazor: Target framework of NuGet packages changed](~/includes/core-changes/aspnetcore/5.0/blazor-packages-target-framework-changed.md)]
 
 ***
 
@@ -131,7 +144,19 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 
 ***
 
+[!INCLUDE[Localization: Obsolete constructor removed in request localization middleware](~/includes/core-changes/aspnetcore/5.0/localization-requestlocalizationmiddleware-constructor-removed.md)]
+
+***
+
 [!INCLUDE[Localization: ResourceManagerWithCultureStringLocalizer class and WithCulture interface member removed](~/includes/core-changes/aspnetcore/5.0/localization-members-removed.md)]
+
+***
+
+[!INCLUDE[Security: Cookie name encoding removed](~/includes/core-changes/aspnetcore/5.0/security-cookie-name-encoding-removed.md)]
+
+***
+
+[!INCLUDE[Security: IdentityModel NuGet package versions updated](~/includes/core-changes/aspnetcore/5.0/security-identitymodel-nuget-package-versions-updated.md)]
 
 ***
 

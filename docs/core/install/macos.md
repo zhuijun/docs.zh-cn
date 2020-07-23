@@ -4,11 +4,12 @@ description: 了解可在其上安装 .NET Core 的 macOS 版本。
 author: adegeo
 ms.author: adegeo
 ms.date: 06/25/2020
-ms.openlocfilehash: bb1a0fa24e2f6e8850cbe59378793ff846f04ba9
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 2900d98dbd30c51f689cdce37ea273ccc4f598b5
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85804447"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86308918"
 ---
 # <a name="install-net-core-on-macos"></a>在 macOS 上安装 .NET Core
 
@@ -22,7 +23,8 @@ ms.locfileid: "85804447"
 
 最新版本的 .NET Core 是 3.1。
 
-[下载 .NET Core。](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [下载 .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="supported-releases"></a>支持的版本
 
@@ -58,13 +60,15 @@ ms.locfileid: "85804447"
 *.NET Core 运行时*\
 此运行时是最简单的运行时，不包括任何其他运行时。 强烈建议安装 ASP.NET Core 运行时，以最大限度地提升与 .NET Core 应用的兼容性。
 
-[下载 .NET Core 运行时。](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [下载 .NET Core 运行时](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="sdk-information"></a>SDK 信息
 
 SDK 用于生成和发布 .NET Core 应用和库。 安装 SDK 会包含两个[运行时](#runtime-information)：ASP.NET Core 和 .NET Core。
 
-[下载 .NET Core SDK。](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [下载 .NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="dependencies"></a>依赖项
 

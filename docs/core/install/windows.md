@@ -4,11 +4,12 @@ description: 了解可在其上安装 .NET Core 的 Windows 版本。
 author: adegeo
 ms.author: adegeo
 ms.date: 06/22/2020
-ms.openlocfilehash: e26494de7e9246b241cb965d8d735a781aab5478
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 97f67d00b3eb4dafc55256aea51f4295bb0ef06a
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85804448"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86308944"
 ---
 # <a name="install-net-core-on-windows"></a>在 Windows 上安装 .NET Core
 
@@ -22,7 +23,8 @@ ms.locfileid: "85804448"
 
 最新版本的 .NET Core 是 3.1。
 
-[下载 .NET Core。](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [下载 .NET Core](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="supported-releases"></a>支持的版本
 
@@ -70,13 +72,15 @@ Windows 10 版本终止服务日期按版本分段。 下表中仅考虑家庭�
 *.NET Core 运行时*\
 此运行时是最简单的运行时，不包括任何其他运行时。 强烈建议同时安装 ASP.NET Core 运行时和桌面运行时，以最大限度地提升与 .NET Core 应用的兼容性。 
 
-[下载 .NET Core 运行时。](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [下载 .NET Core 运行时](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="sdk-information"></a>SDK 信息
 
 SDK 用于生成和发布 .NET Core 应用和库。 安装 SDK 会包含三个[运行时](#runtime-information)：ASP.NET Core、桌面和 .NET Core。
 
-[下载 .NET Core SDK。](https://dotnet.microsoft.com/download/dotnet-core)
+> [!div class="button"]
+> [下载 .NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core)
 
 ## <a name="dependencies"></a>依赖项
 
@@ -217,7 +221,8 @@ dotnet-install.ps1 -Channel Current
 
 Visual Studio 可安装最新的 .NET Core SDK 和运行时。
 
-- [下载 Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2019)。
+> [!div class="button"]
+> [下载 Visual Studio](https://www.visualstudio.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=button+cta&utm_content=download+vs2019)。
 
 ### <a name="select-a-workload"></a>选择工作负载
 

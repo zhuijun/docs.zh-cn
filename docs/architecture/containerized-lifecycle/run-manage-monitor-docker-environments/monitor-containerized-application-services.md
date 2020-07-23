@@ -2,12 +2,12 @@
 title: 监视容器化应用程序服务
 description: 了解监控容器体系结构的一些关键方面
 ms.date: 02/15/2019
-ms.openlocfilehash: e14553d510751d8a75020a1b6beb9fd7bc29596e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e41df53ad94784436442c3cf7defed3fab510455
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68673454"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374437"
 ---
 # <a name="monitor-containerized-application-services"></a>监视容器化应用程序服务
 
@@ -47,7 +47,7 @@ Azure 具有管理和提供云和本地资源的四个关键方面的统一视�
   - 保持备份数据在传输和静止时加密。
   - 确保基于多因素身份验证的访问，以防止未经授权的使用。
 
-- **本地资源**。 使用[真正一致的混合云](https://azure.microsoft.com/resources/truly-consistent-hybrid-cloud-with-microsoft-azure/)。
+- **本地资源**。 使用[混合云解决方案](https://azure.microsoft.com/solutions/hybrid-cloud-app/)。
 
 >[!div class="step-by-step"]
 >[上一页](manage-production-docker-environments.md)

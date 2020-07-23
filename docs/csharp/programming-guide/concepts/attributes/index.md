@@ -1,12 +1,13 @@
 ---
 title: 特性 (C#)
+description: 了解如何使用特性将元数据或声明性信息与 C# 中的代码关联起来。 可以在运行时使用反射来查询特性。
 ms.date: 04/26/2018
-ms.openlocfilehash: 358285a39f72ad3ddf1b265e20b443308375d074
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 5c57838b649531d8e8fe89919771adf8830e7f54
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241573"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924980"
 ---
 # <a name="attributes-c"></a>特性 (C#)
 

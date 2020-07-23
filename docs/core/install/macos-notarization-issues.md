@@ -4,12 +4,12 @@ description: 本文介绍在安装 .NET core 运行时、SDK 以及使用 .NET C
 author: adegeo
 ms.author: adegeo
 ms.date: 02/14/2020
-ms.openlocfilehash: cd3886b2e772a182156d212aefb9705a3fb5e17c
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 905a8b8a4a17836823b1c6574828acb08110d224
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324628"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415952"
 ---
 # <a name="macos-catalina-notarization-and-the-impact-on-net-core-downloads-and-projects"></a>macOS Catalina 公证以及对 .NET Core 下载和项目的影响
 
@@ -33,7 +33,7 @@ ms.locfileid: "85324628"
 
 ## <a name="apphost-is-disabled-by-default"></a>默认禁用 appHost
 
-默认情况下，当项目编译、发布或运行时，.NET Core SDK 3.0 及更高版本的未公证版本会生成一个本机 Mach-O 可执行文件（即 appHost）  。 此可执行文件是运行应用的一种简便方法。 否则必须通过运行 `dotnet <filename.dll>` 启动应用。 启用 appHost 后，会在 appHost 的上下文中调用 `dotnet run` 命令。 有关详细信息，请参阅 [appHost 的上下文](#context-of-the-apphost)。
+默认情况下，当项目编译、发布或运行时，.NET Core SDK 3.0 及更高版本的未公证版本会生成一个本机 Mach-O 可执行文件（即 appHost）。 此可执行文件是运行应用的一种简便方法。 否则必须通过运行 `dotnet <filename.dll>` 启动应用。 启用 appHost 后，会在 appHost 的上下文中调用 `dotnet run` 命令。 有关详细信息，请参阅 [appHost 的上下文](#context-of-the-apphost)。
 
 从 .NET Core SDK 3.0 及更高版本的已公证版本开始，默认情况下不生成 appHost 可执行文件。 可以通过项目文件中的 [`UseAppHost`](../project-sdk/msbuild-props.md#useapphost) 布尔值设置来启用 appHost 生成。 还可以在运行的特定 `dotnet` 命令的命令行上通过 `-p:UseAppHost` 参数切换 appHost 的启用状态：
 
@@ -77,7 +77,7 @@ ms.locfileid: "85324628"
 
 ## <a name="default-entitlements"></a>默认权利
 
-.NET Core 的默认主机（`dotnet` 命令）具有一套默认权利。 需要这些权利才能正常运行 .NET Core。 你的应用程序可能需要其他权利，在这种情况下，需要生成并使用 [appHost](#apphost-is-disabled-by-default)，然后在本地添加必要的权利。
+.NET Core 的默认主机（`dotnet` 命令）具有一组默认权利。 需要这些权利才能正常运行 .NET Core。 你的应用程序可能需要其他权利，在这种情况下，需要生成并使用 [appHost](#apphost-is-disabled-by-default)，然后在本地添加必要的权利。
 
 .NET Core 的默认权利包括：
 
@@ -93,5 +93,4 @@ ms.locfileid: "85324628"
 ## <a name="next-steps"></a>后续步骤
 
 - [.NET Core 依赖项和要求](dependencies.md)。
-- [安装 .NET Core SDK](sdk.md)。
-- [安装 .NET Core 运行时](runtime.md)
+- [安装 .NET Core 运行时和 SDK](macos.md)。

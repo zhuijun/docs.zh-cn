@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 05/20/2020
 ms.technology: csharp-async
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.openlocfilehash: b5643dd7eddefebc9cbf922ff5cce75d72dee4dd
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: bcea584ded6985a0ef166ab8e24672a19e27b0a3
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100894"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86415973"
 ---
 # <a name="asynchronous-programming"></a>异步编程
 
@@ -207,7 +207,7 @@ public static async Task<User[]> GetUsersAsync(IEnumerable<int> userIds)
 }
 ```
 
-尽管它的代码较少，但在混合 LINQ 和异步代码时需要谨慎操作。 因为 LINQ 使用延迟的执行，因此异步调用将不会像在 `foreach` 循环中那样立刻发生，除非强制所生成的序列通过对 `.ToList()` 或 `.ToArray()` 的调用循环访问。
+尽管它的代码较少，但在混合 LINQ 和异步代码时需要谨慎使用。 因为 LINQ 使用延迟的执行，因此异步调用将不会像在 `foreach` 循环中那样立刻发生，除非强制所生成的序列通过对 `.ToList()` 或 `.ToArray()` 的调用循环访问。
 
 ## <a name="important-info-and-advice"></a>重要信息和建议
 

@@ -1,14 +1,15 @@
 ---
-title: 安装 .NET Core 和 Linux 发行版
+title: 在 Linux 分发上安装 .NET Core
 description: 了解哪些 Linux 发行版支持在 Linux 上安装 .NET Core。
 author: adegeo
 ms.author: adegeo
 ms.date: 06/01/2020
-ms.openlocfilehash: 06a90d7fecfe9f25d26caccb2fe3aedec0176f64
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: c827dfbb05a7d49ee18209ef2c8b5613f45a4578
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803087"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441398"
 ---
 # <a name="install-net-core-on-linux"></a>在 Linux 上安装 .NET Core
 

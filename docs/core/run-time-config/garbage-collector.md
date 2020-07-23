@@ -1,14 +1,14 @@
 ---
 title: 垃圾回收器配置设置
 description: 了解用于配置垃圾回收器如何为 .NET Core 应用管理内存的运行时设置。
-ms.date: 01/09/2020
+ms.date: 07/10/2020
 ms.topic: reference
-ms.openlocfilehash: 0ce2f70204463c1525ef7d29de21ddf5384d0238
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 6ae5b7447fb0df4978ea9dcaa5e76fcc7a6cc4ca
+ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202100"
+ms.lasthandoff: 07/17/2020
+ms.locfileid: "86441397"
 ---
 # <a name="run-time-configuration-options-for-garbage-collection"></a>用于垃圾回收的运行时配置选项
 
@@ -240,6 +240,7 @@ runtimeconfig.json 文件：
 
 - 指定 GC 堆和 GC 簿记的最大提交大小（以字节为单位）。
 - 此设置仅适用于 64 位计算机。
+- 如果已配置[每对象堆限制](#per-object-heap-limits)，则忽略此设置。
 - 默认值（仅在某些情况下适用）是 20 MB 或容器内存限制的 75%（以较大者为准）。 此默认值在以下情况下适用：
 
   - 进程正在具有指定内存限制的容器中运行。
@@ -271,6 +272,7 @@ runtimeconfig.json 文件：
 - 如果还设置了 [System.GC.heaphdlimit](#systemgcheaphardlimitcomplus_gcheaphardlimit)，则忽略此设置。
 - 此设置仅适用于 64 位计算机。
 - 如果进程正在具有指定内存限制的容器中运行，则百分比的计算结果将为该内存限制的百分比。
+- 如果已配置[每对象堆限制](#per-object-heap-limits)，则忽略此设置。
 - 默认值（仅在某些情况下适用）是 20 MB 或容器内存限制的 75%（以较小者为准）。 此默认值在以下情况下适用：
 
   - 进程正在具有指定内存限制的容器中运行。
@@ -295,6 +297,40 @@ runtimeconfig.json 文件：
 
 > [!TIP]
 > 如果要在 runtimeconfig.template.json 中设置该选项，请指定一个十进制值。 如果要将选项设置为一个环境变量，请指定一个十六进制值。 例如，若要将堆使用率限制为 30%，则该值对于 JSON 文件为 30，对于环境变量则为 0x1E 或 1E。
+
+### <a name="per-object-heap-limits"></a>每对象堆限制
+
+可以根据每个对象堆指定 GC 的允许堆使用量。 不同的堆包括大型对象堆 (LOH)、小型对象堆 (SOH) 和固定对象堆 (POH)。
+
+#### <a name="complus_gcheaphardlimitsoh-complus_gcheaphardlimitloh-complus_gcheaphardlimitpoh"></a>COMPLUS_GCHeapHardLimitSOH、COMPLUS_GCHeapHardLimitLOH、COMPLUS_GCHeapHardLimitPOH
+
+- 如果为任何 `COMPLUS_GCHeapHardLimitSOH`、`COMPLUS_GCHeapHardLimitLOH` 或 `COMPLUS_GCHeapHardLimitPOH` 设置指定值，则还必须为 `COMPLUS_GCHeapHardLimitSOH` 和 `COMPLUS_GCHeapHardLimitLOH` 指定值。 否则，运行时将无法初始化。
+- `COMPLUS_GCHeapHardLimitPOH` 的默认值为 0。 `COMPLUS_GCHeapHardLimitSOH` 和 `COMPLUS_GCHeapHardLimitLOH` 没有默认值。
+
+| | 设置名 | 值 | 引入的版本 |
+| - | - | - | - |
+| **环境变量** | `COMPLUS_GCHeapHardLimitSOH` | 十六进制值 | .NET 5.0 |
+| **环境变量** | `COMPLUS_GCHeapHardLimitLOH` | 十六进制值 | .NET 5.0 |
+| **环境变量** | `COMPLUS_GCHeapHardLimitPOH` | 十六进制值 | .NET 5.0 |
+
+> [!TIP]
+> 如果要将选项设置为一个环境变量，请指定一个十六进制值。 例如，要将堆硬限制指定为 200 个兆字节 (MiB)，则该值为 0xC800000 或 C800000。
+
+#### <a name="complus_gcheaphardlimitsohpercent-complus_gcheaphardlimitlohpercent-complus_gcheaphardlimitpohpercent"></a>COMPLUS_GCHeapHardLimitSOHPercent、COMPLUS_GCHeapHardLimitLOHPercent、COMPLUS_GCHeapHardLimitPOHPercent
+
+- 如果为任何 `COMPLUS_GCHeapHardLimitSOHPercent`、`COMPLUS_GCHeapHardLimitLOHPercent` 或 `COMPLUS_GCHeapHardLimitPOHPercent` 设置指定值，则还必须为 `COMPLUS_GCHeapHardLimitSOHPercent` 和 `COMPLUS_GCHeapHardLimitLOHPercent` 指定值。 否则，运行时将无法初始化。
+- 如果指定了 `COMPLUS_GCHeapHardLimitSOH`、`COMPLUS_GCHeapHardLimitLOH` 和 `COMPLUS_GCHeapHardLimitPOH`，则忽略这些设置。
+- 值为 1 表示 GC 使用该对象堆的总物理内存的 1%。
+- 每个值都必须大于 0 并小于 100。 此外，3 个百分比值的总和必须小于 100。 否则，运行时将无法初始化。
+
+| | 设置名 | 值 | 引入的版本 |
+| - | - | - | - |
+| **环境变量** | `COMPLUS_GCHeapHardLimitSOHPercent` | 十六进制值 | .NET 5.0 |
+| **环境变量** | `COMPLUS_GCHeapHardLimitLOHPercent` | 十六进制值 | .NET 5.0 |
+| **环境变量** | `COMPLUS_GCHeapHardLimitPOHPercent` | 十六进制值 | .NET 5.0 |
+
+> [!TIP]
+> 如果要将选项设置为一个环境变量，请指定一个十六进制值。 例如，要将堆使用量限制为 30%，则值为 0x1E 或 1E。
 
 ### <a name="systemgcretainvmcomplus_gcretainvm"></a>System.GC.RetainVM/COMPlus_GCRetainVM
 

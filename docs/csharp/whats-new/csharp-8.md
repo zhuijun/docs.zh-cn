@@ -2,12 +2,12 @@
 title: C# 8.0 中的新增功能 - C# 指南
 description: 简要介绍 C# 8.0 中提供的新功能。
 ms.date: 04/07/2020
-ms.openlocfilehash: b4a9a1be0b0b60b0abda0b1f031dc648d831b46a
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 14df381e17fe89bd862f97522c7efd814857e71e
+ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174726"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86309399"
 ---
 # <a name="whats-new-in-c-80"></a>C# 8.0 中的新增功能
 
@@ -398,7 +398,7 @@ await foreach (var number in GenerateSequence())
 
 ## <a name="asynchronous-disposable"></a>异步可释放
 
-从 C# 8.0 开始，语言支持实现 <xref:System.IAsyncDisposable?displayProperty=nameWithType> 接口的异步可释放类型。 `using` 表达式的操作数可以实现 <xref:System.IDisposable> 或 <xref:System.IAsyncDisposable>。 如果为 `IAsyncDisposable`，编译器将生成代码，以 `await` 从 <xref:System.IAsyncDisposable.DisposeAsync%2A?displayProperty=nameWithType> 返回的 <xref:System.Threading.Tasks.Task>。 有关详细信息，请参阅 [`using` 语句](../language-reference/keywords/using-statement.md)。
+从 C# 8.0 开始，语言支持实现 <xref:System.IAsyncDisposable?displayProperty=nameWithType> 接口的异步可释放类型。 可使用 `await using` 语句来处理异步可释放对象。 有关详细信息，请参阅[实现 DisposeAsync 方法](../../standard/garbage-collection/implementing-disposeasync.md)。
 
 ## <a name="indices-and-ranges"></a>索引和范围
 

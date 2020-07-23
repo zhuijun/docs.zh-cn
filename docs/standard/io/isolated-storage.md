@@ -19,38 +19,19 @@ helpviewer_keywords:
 - data storage using isolated storage, options
 - isolation
 ms.assetid: aff939d7-9e49-46f2-a8cd-938d3020e94e
-ms.openlocfilehash: b9915faff2593cc51868c20e1a83a05ffca9f548
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 0de0c7e9843ca8a97392733a68367b1dae8de232
+ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325933"
+ms.lasthandoff: 07/16/2020
+ms.locfileid: "86416381"
 ---
 # <a name="isolated-storage"></a>独立存储
-<a name="top"></a> 对于桌面应用，独立存储是一种数据存储机制，它在代码与保存的数据之间定义了标准化的关联方式，从而提供隔离性和安全性。 同时，标准化也提供了其他好处。 管理员可以使用旨在操作独立存储的工具来配置文件存储空间、设置安全策略及删除未使用的数据。 通过独立存储，代码不再需要使用唯一的路径来指定文件系统中的安全位置，同时可以保护数据免遭只具有独立存储访问权限的其他应用程序的损坏。 不再需要指示应用程序的存储区域位置的硬编码信息。
+
+对于桌面应用，独立存储是一种数据存储机制，它定义了将代码与保存的数据关联的标准化方式，从而提供隔离性和安全性。 同时，标准化也提供了其他好处。 管理员可以使用旨在操作独立存储的工具来配置文件存储空间、设置安全策略及删除未使用的数据。 通过独立存储，代码不再需要使用唯一的路径来指定文件系统中的安全位置，同时可以保护数据免遭只具有独立存储访问权限的其他应用程序的损坏。 不再需要指示应用程序的存储区域位置的硬编码信息。
 
 > [!IMPORTANT]
 > 独立存储不适用于 Windows 8.x 应用商店应用。 请改用 Windows 运行时 API 包含的 `Windows.Storage` 命名空间中的应用程序数据类来存储本地数据和文件。 有关详细信息，请参阅 Windows 开发人员中心的 [应用程序数据](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) 。
-
-本主题包含以下各节：
-
-- [数据隔离舱和存储区](#data_compartments_and_stores)
-
-- [独立存储的配额](#quotas)
-
-- [安全访问](#secure_access)
-
-- [允许的用法和安全风险](#allowed_usage)
-
-- [独立存储位置](#isolated_storage_locations)
-
-- [创建、枚举和删除独立存储](#isolated_storage_tasks)
-
-- [独立存储的情况](#scenarios_for_isolated_storage)
-
-- [相关主题](#related_topics)
-
-- [参考](#reference)
 
 <a name="data_compartments_and_stores"></a>
 
@@ -114,11 +95,11 @@ __本节适用于以下框架：__
 - .NET Core 2.1+
 - .NET 5.0+
 
-.NET Framework 和 .NET Core 提供[独立存储](/dotnet/standard/io/isolated-storage)作为一种为用户、应用程序或组件保留数据的机制。 这是一个旧组件，主要用于现已弃用的代码访问安全性方案。
+.NET Framework 和 .NET Core 提供独立存储作为一种为用户、应用程序或组件保留数据的机制。 这是一个旧组件，主要用于现已弃用的代码访问安全性方案。
 
 各种独立存储 API 和工具可用于跨信任边界读取数据。 例如，从计算机范围的作用域中读取数据会从计算机上其他可能不太受信任的用户帐户聚合数据。 从计算机范围的独立存储作用域读取的组件或应用程序应了解读取此数据的后果。
 
-### <a name="security-sensitive-apis-which-can-read-from-the-machine-wide-scope"></a>可从计算机范围作用域读取的安全敏感 API
+### <a name="security-sensitive-apis-that-can-read-from-the-machine-wide-scope"></a>可从计算机范围作用域读取的安全敏感 API
 
 调用以下任意 API 的组件或应用程序从计算机范围的作用域中读取：
 
@@ -129,7 +110,7 @@ __本节适用于以下框架：__
 * [IsolatedStorageFile.GetStore](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.getstore)，传递包含 IsolatedStorageScope.Machine 标志的作用域
 * [IsolatedStorageFile.Remove](/dotnet/api/system.io.isolatedstorage.isolatedstoragefile.remove)，传递包含 `IsolatedStorageScope.Machine` 标志的作用域
 
-如果通过 `/machine` 开关调用，则会影响[独立存储工具](/dotnet/framework/tools/storeadm-exe-isolated-storage-tool) `storeadm.exe`，如以下代码所示：
+如果通过 `/machine` 开关调用，则会影响[独立存储工具](../../framework/tools/storeadm-exe-isolated-storage-tool.md) `storeadm.exe`，如以下代码所示：
 
 ```txt
 storeadm.exe /machine [any-other-switches]
@@ -252,7 +233,7 @@ __重要提示：__ 如果你的环境具有多个相互不受信任的用户，
 
 <a name="related_topics"></a>
 
-## <a name="related-topics"></a>相关主题
+## <a name="related-articles"></a>相关文章
 
 |Title|描述|
 |-----------|-----------------|

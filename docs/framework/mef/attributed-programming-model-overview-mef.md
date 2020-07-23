@@ -1,5 +1,6 @@
 ---
 title: 特性化编程模型概述 (MEF)
+description: 开始使用特性化编程模型，该模型是 .NET 中 Managed Extensibility Framework (MEF) 的默认编程模型。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - MEF, attributed programming model
 - attributed programming model [MEF]
 ms.assetid: 49b787ff-2741-4836-ad51-c3017dc592d4
-ms.openlocfilehash: c6b1093d2e821a55cc5513b077a270748a780b71
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: aea3a19ffe6f177901e5c0839b618bb36f573beb
+ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347627"
+ms.lasthandoff: 07/13/2020
+ms.locfileid: "86281363"
 ---
 # <a name="attributed-programming-model-overview-mef"></a>特性化编程模型概述 (MEF)
 
@@ -464,7 +465,7 @@ public class DataThree
 
 ## <a name="metadata-and-metadata-views"></a>元数据和元数据视图
 
-导出可提供有关自身的附加信息（称为“元数据”  ）。 元数据可用于将导出的对象的属性传递到导入部件。 导入部件可以使用此数据来决定要使用哪些导出，或收集有关导出的信息而不必构造导出。 因此，导入必须为延迟导入才能使用元数据。
+导出可提供有关自身的附加信息（称为“元数据” ）。 元数据可用于将导出的对象的属性传递到导入部件。 导入部件可以使用此数据来决定要使用哪些导出，或收集有关导出的信息而不必构造导出。 因此，导入必须为延迟导入才能使用元数据。
 
 为了使用元数据，你通常会声明一个称为 *元数据视图*的接口，该接口声明哪些元数据将可用。 元数据视图接口必须只有属性，并且这些属性必须具有 `get` 访问器。 下面的接口是一个示例元数据视图。
 

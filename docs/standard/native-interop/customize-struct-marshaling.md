@@ -5,14 +5,14 @@ ms.date: 01/18/2019
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: 8248ca589f41967a9112ba61c09599b337814de7
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: c82e0099c44b8033cad241d69bdd284243711a50
+ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84003888"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86374528"
 ---
-# <a name="customizing-structure-marshaling"></a>自定义结构封送
+# <a name="customize-structure-marshaling"></a>自定义结构封送
 
 有时，结构的默认封送规则无法完全满足要求。 .NET 运行时提供了几个扩展点以自定义结构的布局和字段的封送方式。
 
@@ -264,7 +264,7 @@ struct BString
 };
 ```
 
-使用基于 WinRT 的 API 时，可能需要将字符串作为 `HSTRING` 进行封送。  使用 <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType> 值可以将字符串作为 `HSTRING` 进行封送。
+使用基于 WinRT 的 API 时，可能需要将字符串作为 `HSTRING` 进行封送。 使用 <xref:System.Runtime.InteropServices.UnmanagedType.HString?displayProperty=nameWithType> 值可以将字符串作为 `HSTRING` 进行封送。
 
 ```csharp
 public struct HString
@@ -317,7 +317,7 @@ struct DefaultString
 
 ## <a name="customizing-decimal-field-marshaling"></a>自定义十进制字段封送
 
-如果在 Windows 上操作，则可能会遇到一些使用本机 [`CY` 或 `CURRENCY`](/windows/win32/api/wtypes/ns-wtypes-cy~r1) 结构的 API。 默认情况下，.NET `decimal` 类型会封送到本机 [`DECIMAL`](/windows/win32/api/wtypes/ns-wtypes-decimal~r1) 结构。 但是，可以使用包含 <xref:System.Runtime.InteropServices.UnmanagedType.Currency?displayProperty=nameWithType> 值的 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 来指示封送处理程序将 `decimal` 值转换为本机 `CY` 值。
+如果在 Windows 上操作，则可能会遇到一些使用本机 [`CY` 或 `CURRENCY`](/windows/win32/api/wtypes/ns-wtypes-cy-r1) 结构的 API。 默认情况下，.NET `decimal` 类型会封送到本机 [`DECIMAL`](/windows/win32/api/wtypes/ns-wtypes-decimal-r1) 结构。 但是，可以使用包含 <xref:System.Runtime.InteropServices.UnmanagedType.Currency?displayProperty=nameWithType> 值的 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 来指示封送处理程序将 `decimal` 值转换为本机 `CY` 值。
 
 ```csharp
 public struct Currency
@@ -334,7 +334,7 @@ struct Currency
 };
 ```
 
-## <a name="marshaling-systemobjects"></a>封送 `System.Object`
+## <a name="marshal-systemobject"></a>封送 `System.Object`
 
 在 Windows 上，可以将类型为 `object` 的字段封送到本机代码。 可以将这些字段封送到以下三个类型之一：
 
