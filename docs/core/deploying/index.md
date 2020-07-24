@@ -2,20 +2,20 @@
 title: 应用程序发布
 description: 了解如何发布 .NET Core 应用程序。 .NET Core 可以发布特定于平台或跨平台的应用。 可将应用发布为独立应用或依赖于运行时的应用。 每个模式都会影响用户运行应用的方式。
 ms.date: 04/01/2020
-ms.openlocfilehash: a4e5f9fe048d40c751f582bd49732cb903202db4
-ms.sourcegitcommit: 45cced471d59d5dac3f0c92abc9d4849716098a2
+ms.openlocfilehash: 201363ad314373ec3be44eb8496f92a8e0c8e418
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/04/2020
-ms.locfileid: "80665543"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164938"
 ---
 # <a name="net-core-application-publishing-overview"></a>.NET Core 应用程序发布概述
 
 可在两种模式下发布使用 .NET Core 创建的应用程序，模式会影响用户运行应用的方式。
 
-将应用作为独立应用，生成的应用程序将包含 .NET Core 运行时和库，以及该应用程序及其依赖项。  应用程序的用户可以在未安装 .NET Core 运行时的计算机上运行该应用程序。
+将应用作为独立应用，生成的应用程序将包含 .NET Core 运行时和库，以及该应用程序及其依赖项。 应用程序的用户可以在未安装 .NET Core 运行时的计算机上运行该应用程序。
 
-若将应用发布为依赖于运行时（以前称为“依赖于框架”），则生成的应用程序仅包含该应用程序本身及其依赖项。   应用程序的用户必须单独安装 .NET Core 运行时。
+若将应用发布为依赖于运行时（以前称为“依赖于框架”），则生成的应用程序仅包含该应用程序本身及其依赖项。 应用程序的用户必须单独安装 .NET Core 运行时。
 
 默认情况下，这两种发布模式都会生成特定于平台的可执行文件。 不使用可执行文件也可以创建依赖于运行时的应用程序，这些应用程序是跨平台的。
 
@@ -46,7 +46,7 @@ ms.locfileid: "80665543"
 
 ## <a name="produce-a-cross-platform-binary"></a>生成跨平台二进制文件
 
-以 dll  文件的形式将应用发布为[依赖于运行时的应用](#publish-runtime-dependent)时，将创建跨平台二进制文件。 dll 文件将与项目同名。  例如，如果有名为 word_reader 的应用，则会创建名为 word_reader.dll 的文件。   以这种方式发布的应用可通过 `dotnet <filename.dll>` 命令运行，并且可在任意平台上运行。
+以 dll  文件的形式将应用发布为[依赖于运行时的应用](#publish-runtime-dependent)时，将创建跨平台二进制文件。 dll 文件将与项目同名。 例如，如果有名为 word_reader 的应用，则会创建名为 word_reader.dll 的文件。 以这种方式发布的应用可通过 `dotnet <filename.dll>` 命令运行，并且可在任意平台上运行。
 
 只要安装了目标 .NET Core 运行时，就可以在任何操作系统上运行跨平台二进制文件。 如果未安装目标 .NET Core 运行时，如果将应用配置为前滚，则它可以使用较新的运行时运行。 有关详细信息，请参阅[依赖于运行时的应用前滚](../versions/selection.md#framework-dependent-apps-roll-forward)。
 
@@ -60,7 +60,7 @@ ms.locfileid: "80665543"
 
 如果将应用发布为依赖于运行时的应用，则该应用是跨平台的，且不包含 .NET Core 运行时。 应用的用户需要安装 .NET Core 运行时。
 
-将应用发布为依赖于运行时的应用，会以 *dll* 文件的形式生成一个 [跨平台二进制文件](#produce-a-cross-platform-binary)，还会生成面向当前平台的[特定于平台的可执行文件](#produce-an-executable)。 dll 是跨平台的，而可执行文件不是。  例如，如果发布名为 word_reader 的应用且面向 Windows，则将创建 word_reader.exe 和 word_reader.dll。    面向 Linux 或 macOS 时，将创建 word_reader 可执行文件和 word_reader.dll。   有关 RID 的详细信息，请参阅 [.NET Core RID 目录](../rid-catalog.md)。
+将应用发布为依赖于运行时的应用，会以 *dll* 文件的形式生成一个 [跨平台二进制文件](#produce-a-cross-platform-binary)，还会生成面向当前平台的[特定于平台的可执行文件](#produce-an-executable)。 dll 是跨平台的，而可执行文件不是。 例如，如果发布名为 word_reader 的应用且面向 Windows，则将创建 word_reader.exe 和 word_reader.dll。 面向 Linux 或 macOS 时，将创建 word_reader 可执行文件和 word_reader.dll。 有关 RID 的详细信息，请参阅 [.NET Core RID 目录](../rid-catalog.md)。
 
 > [!IMPORTANT]
 > 发布依赖于运行时的应用时，.NET Core SDK 2.1 不会生成特定于平台的可执行文件。
@@ -111,7 +111,7 @@ dotnet publish -r linux-x64 --self-contained false
 
 将应用发布为独立应用，将生成特定于平台的可执行文件。 输出发布文件夹包含应用的所有组件，包括 .NET Core 库和目标运行时。 应用独立于其他 .NET Core 应用，且不使用本地安装的共享运行时。 应用的用户无需下载和安装 .NET Core。
 
-针对指定的目标平台生成可执行二进制文件。 例如，如果你有一个名为 word_reader 的应用，并发布适用于 Windows 的独立可执行文件，则将创建 word_reader.exe 文件。   针对 Linux 或 macOS 发布时，将创建 word_reader  文件。 用 [`dotnet publish`](../tools/dotnet-publish.md) 命令的 `-r <RID>` 参数指定目标平台和体系结构。 有关 RID 的详细信息，请参阅 [.NET Core RID 目录](../rid-catalog.md)。
+针对指定的目标平台生成可执行二进制文件。 例如，如果你有一个名为 word_reader 的应用，并发布适用于 Windows 的独立可执行文件，则将创建 word_reader.exe 文件。 针对 Linux 或 macOS 发布时，将创建 word_reader  文件。 用 [`dotnet publish`](../tools/dotnet-publish.md) 命令的 `-r <RID>` 参数指定目标平台和体系结构。 有关 RID 的详细信息，请参阅 [.NET Core RID 目录](../rid-catalog.md)。
 
 如果应用具有特定于平台的依赖项（例如包含特定于平台的依赖项的 NuGet 包），这些依赖项将与应用一起复制到发布文件夹。
 
@@ -152,6 +152,5 @@ dotnet publish -r win-x64
 
 - [使用 .NET Core CLI 部署 .NET Core 应用。](deploy-with-cli.md)
 - [使用 Visual Studio 部署 .NET Core 应用。](deploy-with-vs.md)
-- [包、元包和框架。](../packages.md)
 - [.NET Core 运行时标识符 (RID) 目录。](../rid-catalog.md)
 - [选择要使用的 .NET Core 版本。](../versions/selection.md)
