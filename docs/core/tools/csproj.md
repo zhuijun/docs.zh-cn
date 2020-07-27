@@ -2,12 +2,12 @@
 title: .NET Core 的 csproj 格式的新增内容
 description: 了解现有文件和 .NET Core csproj 文件之间的区别
 ms.date: 04/08/2019
-ms.openlocfilehash: fadc6de43f522129970e48bc72914cf187fe3f82
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 619f6121d9d476726c3d422e50737ff3d622f444
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607701"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164924"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>.NET Core 的 csproj 格式的新增内容
 
@@ -15,7 +15,7 @@ ms.locfileid: "81607701"
 
 ## <a name="implicit-package-references"></a>隐式包引用
 
-基于项目文件的 `<TargetFramework>` 或 `<TargetFrameworks>` 属性中指定的目标框架对元包进行隐式引用。 如果指定了 `<TargetFramework>`，则忽略 `<TargetFrameworks>`，而与顺序无关。 有关详细信息，请参阅[包、元包和框架](../packages.md)。
+基于项目文件的 `<TargetFramework>` 或 `<TargetFrameworks>` 属性中指定的目标框架对元包进行隐式引用。 如果指定了 `<TargetFramework>`，则忽略 `<TargetFrameworks>`，而与顺序无关。
 
 ```xml
  <PropertyGroup>

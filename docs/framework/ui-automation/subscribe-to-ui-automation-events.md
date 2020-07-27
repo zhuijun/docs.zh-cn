@@ -1,5 +1,6 @@
 ---
 title: 订阅 UI 自动化事件
+description: 请参阅如何订阅由 UI 自动化提供程序引发的事件。 示例代码将注册控件时引发的事件的事件处理程序。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - events, subscribing to
 - listening for events
 ms.assetid: b688effa-b3e8-4b05-944d-05ed89a245aa
-ms.openlocfilehash: a5effd1d7a3cfaba5e068087b3008903e58b6739
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8f456702657c70837c6137e3e60335110361bcd9
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432992"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163533"
 ---
 # <a name="subscribe-to-ui-automation-events"></a>订阅 UI 自动化事件
 > [!NOTE]
@@ -24,7 +25,7 @@ ms.locfileid: "74432992"
  本主题演示如何订阅 UI 自动化提供程序引发的事件。  
   
 ## <a name="example"></a>示例  
- 下面的代码示例为调用控件（如按钮）时引发的事件注册事件处理程序，并在应用程序窗体关闭时删除该事件处理程序。 事件由作为参数传递到 <xref:System.Windows.Automation.AutomationEvent> 的 <xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A> 标识。  
+ 下面的代码示例为调用控件（如按钮）时引发的事件注册事件处理程序，并在应用程序窗体关闭时删除该事件处理程序。 事件由作为参数传递到 <xref:System.Windows.Automation.Automation.AddAutomationEventHandler%2A> 的 <xref:System.Windows.Automation.AutomationEvent> 标识。  
   
  [!code-csharp[UIAClient_snip#101](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#101)]
  [!code-vb[UIAClient_snip#101](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#101)]  

@@ -1,17 +1,18 @@
 ---
 title: 实现 UI 自动化 Selection 控件模式
+description: 查看在 UI 自动化中实现 "选择" 控件模式的准则和约定。 请参阅 Iselectionprovider 必需接口的必需成员。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Selection control pattern
 - UI Automation, Selection control pattern
 - control patterns, Selection
 ms.assetid: 449c3068-a5d6-4f66-84c6-1bcc7dd4d209
-ms.openlocfilehash: 083a4bb56fe76c1d65015ffabf741d7e1953d2ff
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d3854a401ae6179be4e4e75d86964108d83b0ccf
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180123"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163585"
 ---
 # <a name="implementing-the-ui-automation-selection-control-pattern"></a>实现 UI 自动化 Selection 控件模式
 > [!NOTE]
@@ -29,21 +30,21 @@ ms.locfileid: "79180123"
   
 - 具有最小、最大和连续范围的控件（如“卷” **** 滑块控件）应实现 <xref:System.Windows.Automation.Provider.IRangeValueProvider> 而不是 <xref:System.Windows.Automation.Provider.ISelectionProvider>。  
   
-- 管理实现<xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>的子控件的单个选择控件，如 **"显示属性"** 对话框中的 **"屏幕分辨率**"滑块或 Microsoft Word**中的"颜色选取器**选择"控件（如下<xref:System.Windows.Automation.Provider.ISelectionProvider>图所示），应实现 ;他们的孩子应该同时<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>执行和<xref:System.Windows.Automation.Provider.ISelectionItemProvider>。  
+- 管理实现的子控件的单选控件（ <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot> 如 "**显示属性**" 对话框中的 "**屏幕分辨率**" 滑块或 Microsoft Word 中的 "**颜色选取器**" 选择控件（如下所示））应实现 <xref:System.Windows.Automation.Provider.ISelectionProvider> ; 其子级应实现 <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> 和 <xref:System.Windows.Automation.Provider.ISelectionItemProvider> 。  
   
  ![突出显示黄色的颜色选取器。](./media/uia-valuepattern-colorpicker.png "UIA_ValuePattern_ColorPicker")  
 颜色样本字符串映射的示例  
   
-- 菜单不支持 <xref:System.Windows.Automation.SelectionPattern>。 如果您正在使用包含图形和文本的菜单项（如 Microsoft Outlook 中的 **"视图"** 菜单中的<xref:System.Windows.Automation.Provider.IToggleProvider>**"预览窗格**"项），并且需要传达状态，则应实现 。  
+- 菜单不支持 <xref:System.Windows.Automation.SelectionPattern>。 如果要使用同时包含图形和文本的菜单项（例如 Microsoft Outlook 的 "**视图**" 菜单中的 "**预览窗格**" 项）并需要传达状态，则应实现 <xref:System.Windows.Automation.Provider.IToggleProvider> 。  
   
 <a name="Required_Members_for_ISelectionProvider"></a>
 ## <a name="required-members-for-iselectionprovider"></a>ISelectionProvider 必需的成员  
  以下属性、方法和事件都是 <xref:System.Windows.Automation.Provider.ISelectionProvider> 接口所必需的。  
   
-|必需的成员|类型|说明|  
+|必需的成员|类型|注释|  
 |----------------------|----------|-----------|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|properties|应支持使用 <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A> 和 <xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A>的属性更改事件。|  
-|<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>|properties|应支持使用 <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A> 和 <xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A>的属性更改事件。|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider.CanSelectMultiple%2A>|属性|应支持使用 <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A> 和 <xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A>的属性更改事件。|  
+|<xref:System.Windows.Automation.Provider.ISelectionProvider.IsSelectionRequired%2A>|属性|应支持使用 <xref:System.Windows.Automation.Automation.AddAutomationPropertyChangedEventHandler%2A> 和 <xref:System.Windows.Automation.Automation.RemoveAutomationPropertyChangedEventHandler%2A>的属性更改事件。|  
 |<xref:System.Windows.Automation.Provider.ISelectionProvider.GetSelection%2A>|方法|无|  
 |<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|事件|在容器中的选项发生重大更改并需要发送多于 <xref:System.Windows.Automation.Provider.AutomationInteropProvider.InvalidateLimit> 常量所允许的添加和移除事件时引发。|  
   

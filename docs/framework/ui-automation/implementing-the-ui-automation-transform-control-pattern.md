@@ -1,17 +1,18 @@
 ---
 title: 实现 UI 自动化 Transform 控件模式
+description: 在 UI 自动化中查看实现 "转换" 控件模式的准则和约定。 了解 Itransformprovider 必需接口的必需成员。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, Transform
 - Transform control pattern
 - UI Automation, Transform control pattern
 ms.assetid: 5f49d843-5845-4800-9d9c-56ce0d146844
-ms.openlocfilehash: 5643bc85972ea33cc31b1a83ecf7615dbb275bc2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: da11ce4cf9da10c0ebb990f9439b0bbe3621c561
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180055"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168209"
 ---
 # <a name="implementing-the-ui-automation-transform-control-pattern"></a>实现 UI 自动化 Transform 控件模式
 > [!NOTE]
@@ -39,9 +40,9 @@ ms.locfileid: "79180055"
   
 |必需的成员|成员类型|说明|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.CanMove%2A>|properties|无|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.CanResize%2A>|properties|无|  
-|<xref:System.Windows.Automation.Provider.ITransformProvider.CanRotate%2A>|properties|无|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.CanMove%2A>|属性|无|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.CanResize%2A>|属性|无|  
+|<xref:System.Windows.Automation.Provider.ITransformProvider.CanRotate%2A>|属性|无|  
 |<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A>|方法|无|  
 |<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A>|方法|无|  
 |<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A>|方法|无|  
@@ -54,9 +55,9 @@ ms.locfileid: "79180055"
   
 |异常类型|条件|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A><br /><br /> -如果<xref:System.Windows.Automation.TransformPatternIdentifiers.CanMoveProperty>为 false。|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A><br /><br /> -如果<xref:System.Windows.Automation.TransformPatternIdentifiers.CanResizeProperty>为 false。|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A><br /><br /> -如果<xref:System.Windows.Automation.TransformPatternIdentifiers.CanRotateProperty>为 false。|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Move%2A><br /><br /> -如果 <xref:System.Windows.Automation.TransformPatternIdentifiers.CanMoveProperty> 为 false。|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Resize%2A><br /><br /> -如果 <xref:System.Windows.Automation.TransformPatternIdentifiers.CanResizeProperty> 为 false。|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.ITransformProvider.Rotate%2A><br /><br /> -如果 <xref:System.Windows.Automation.TransformPatternIdentifiers.CanRotateProperty> 为 false。|  
   
 ## <a name="see-also"></a>另请参阅
 

@@ -1,17 +1,18 @@
 ---
 title: 实现 UI 自动化 Toggle 控件模式
+description: 查看准则和约定，以在 UI 自动化中实现切换控件模式。 了解 Itoggleprovider 必需接口的必需成员。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Toggle control pattern
 - control patterns, Toggle
 - UI Automation, Toggle control pattern
 ms.assetid: 3cfe875f-b0c0-413d-9703-5f14e6a1a30e
-ms.openlocfilehash: 5f64842d31d46af3d648b9b570d1cfb210e2910a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f9ae850a560101582b5f1a461de19f260ef59798
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180066"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168029"
 ---
 # <a name="implementing-the-ui-automation-toggle-control-pattern"></a>实现 UI 自动化 Toggle 控件模式
 > [!NOTE]
@@ -40,7 +41,7 @@ ms.locfileid: "79180066"
 |必需的成员|成员类型|说明|  
 |---------------------|-----------------|-----------|  
 |<xref:System.Windows.Automation.TogglePattern.Toggle%2A>|方法|无|  
-|<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty>|properties|无|  
+|<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty>|属性|无|  
   
  没有与此控件模式关联的事件。  
   

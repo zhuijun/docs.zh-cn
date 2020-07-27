@@ -1,23 +1,24 @@
 ---
 title: UI 自动化安全性概述
+description: 阅读有关 Microsoft UI 自动化安全模型的概述。 了解用户帐户控制、需要更高特权的任务和清单文件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, security model
 - security model, UI Automation
 ms.assetid: 1d853695-973c-48ae-b382-4132ae702805
-ms.openlocfilehash: 70d24c3dcc531abcec6d4dce75b5f0b31757e0c0
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d483f282db8ce8e5653d6d83361fa44df05f63f5
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448770"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163147"
 ---
 # <a name="ui-automation-security-overview"></a>UI 自动化安全性概述
 
 > [!NOTE]
 > 本文档适用于想要使用 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 命名空间中定义的托管 <xref:System.Windows.Automation> 类的 .NET Framework 开发人员。 有关 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]的最新信息，请参阅 [Windows 自动化 API：UI 自动化](/windows/win32/winauto/entry-uiauto-win32)。
 
-本概述介绍了 Windows Vista 中 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] 的安全模式。
+本概述介绍了 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] Windows Vista 中的安全模式。
 
 <a name="User_Account_Control"></a>
 
@@ -41,7 +42,7 @@ UI 自动化客户端必须与其他进程通信，其中某些进程可能正�
 
 ## <a name="manifest-files"></a>清单文件
 
-若要获取对受保护的系统 UI 的访问权限，必须使用包含 `requestedExecutionLevel` 标记中的 `uiAccess` 属性的清单文件生成应用程序，如下所示：
+若要获取对受保护的系统 UI 的访问权限，必须使用包含标记中属性的清单文件生成应用程序 `uiAccess` `requestedExecutionLevel` ，如下所示：
 
 ```xml
 <trustInfo xmlns="urn:schemas-microsoft-com:asm.v3">
@@ -57,4 +58,4 @@ UI 自动化客户端必须与其他进程通信，其中某些进程可能正�
 
 此代码中的 `level` 属性值只是一个示例。
 
-默认情况下，`uiAccess` 为 "false";也就是说，如果省略该属性，或如果没有程序集清单，则应用程序将无法访问受保护的 UI。
+`uiAccess`默认为 "false";也就是说，如果省略该属性，或如果没有程序集清单，则应用程序将无法访问受保护的 UI。

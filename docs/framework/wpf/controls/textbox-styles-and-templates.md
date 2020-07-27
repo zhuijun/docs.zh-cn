@@ -1,5 +1,6 @@
 ---
 title: TextBox 样式和模板
+description: 了解 Windows Presentation Foundation TextBox 控件的样式和模板。 修改 System.windows.controls.controltemplate>，为控件指定独特的外观。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ControlTemplate [WPF], TextBox
@@ -9,40 +10,40 @@ helpviewer_keywords:
 - templates [WPF], TextBox
 - TextBox [WPF], styles and templates
 ms.assetid: aa99130c-43a1-450f-9b46-c40ae0db0cca
-ms.openlocfilehash: 41e390c261836909240cc146a48729d48c4a410e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0e15fd40f5590ee46da49cc6c0d5fb30e051f7e4
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283699"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164735"
 ---
 # <a name="textbox-styles-and-templates"></a>TextBox 样式和模板
-本主题介绍 <xref:System.Windows.Controls.TextBox> 控件的样式和模板。 您可以修改默认 <xref:System.Windows.Controls.ControlTemplate> 以使控件具有独特的外观。 有关详细信息，请参阅为[控件创建模板](../../../desktop-wpf/themes/how-to-create-apply-template.md)。  
+本主题描述控件的样式和模板 <xref:System.Windows.Controls.TextBox> 。 您可以修改默认值 <xref:System.Windows.Controls.ControlTemplate> ，为控件指定独特的外观。 有关详细信息，请参阅为[控件创建模板](../../../desktop-wpf/themes/how-to-create-apply-template.md)。  
   
 ## <a name="textbox-parts"></a>TextBox 部分  
- 下表列出了 <xref:System.Windows.Controls.TextBox> 控件的已命名部分。  
+ 下表列出了控件的已命名部件 <xref:System.Windows.Controls.TextBox> 。  
   
-|部件|类型|说明|  
+|组成部分|类型|说明|  
 |-|-|-|  
-|PART_ContentHost|<xref:System.Windows.FrameworkElement>|可包含 <xref:System.Windows.FrameworkElement>的可视元素。 <xref:System.Windows.Controls.TextBox> 的文本显示在此元素中。|  
+|PART_ContentHost|<xref:System.Windows.FrameworkElement>|一个可包含的可视元素 <xref:System.Windows.FrameworkElement> 。 的文本 <xref:System.Windows.Controls.TextBox> 显示在此元素中。|  
   
 ## <a name="textbox-states"></a>TextBox 状态  
- 下表列出了 <xref:System.Windows.Controls.TextBox> 控件的可视状态。  
+ 下表列出了控件的可视状态 <xref:System.Windows.Controls.TextBox> 。  
   
-|VisualState 名称|VisualStateGroup 名称|说明|  
+|VisualState 名称|VisualStateGroup 名称|描述|  
 |----------------------|---------------------------|-----------------|  
-|正常|CommonStates|默认状态。|  
-|MouseOver|CommonStates|鼠标指针悬停在控件上。|  
+|普通|CommonStates|默认状态。|  
+|MouseOver|CommonStates|鼠标指针悬停在控件上方。|  
 |已禁用|CommonStates|已禁用控件。|  
-|ReadOnly|CommonStates|用户无法更改 <xref:System.Windows.Controls.TextBox>中的文本。|  
-|Focused|FocusStates|控件有焦点。|  
+|ReadOnly|CommonStates|用户不能更改中的文本 <xref:System.Windows.Controls.TextBox> 。|  
+|已设定焦点|FocusStates|控件有焦点。|  
 |失去焦点|FocusStates|控件没有焦点。|  
-|有效|ValidationStates|控件使用 <xref:System.Windows.Controls.Validation> 类，并且 <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 附加属性是 `false`。|  
-|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 附加属性是控件具有焦点 `true`。|  
-|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 附加属性是 `true` 控件没有焦点。|  
+|有效|ValidationStates|控件使用 <xref:System.Windows.Controls.Validation> 类， <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> 附加属性为 `false` 。|  
+|InvalidFocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>附加属性是 `true` 控件具有焦点。|  
+|InvalidUnfocused|ValidationStates|<xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType>附加属性是 `true` 控件没有焦点。|  
   
 ## <a name="textbox-controltemplate-example"></a>TextBox System.windows.controls.controltemplate> 示例  
- 下面的示例演示如何为 <xref:System.Windows.Controls.TextBox> 控件定义 <xref:System.Windows.Controls.ControlTemplate>。  
+ 下面的示例演示如何为控件定义 <xref:System.Windows.Controls.ControlTemplate> <xref:System.Windows.Controls.TextBox> 。  
   
  [!code-xaml[ControlTemplateExamples#TextBox](~/samples/snippets/csharp/VS_Snippets_Wpf/ControlTemplateExamples/CS/resources/textbox.xaml#textbox)]  
   
@@ -56,7 +57,7 @@ ms.locfileid: "74283699"
 
 - <xref:System.Windows.FrameworkElement.Style%2A>
 - <xref:System.Windows.Controls.ControlTemplate>
-- [控件样式和模板](control-styles-and-templates.md)
+- [Control 样式和模板](control-styles-and-templates.md)
 - [控件自定义](control-customization.md)
 - [样式设置和模板化](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [为控件创建模板](../../../desktop-wpf/themes/how-to-create-apply-template.md)
+- [创建控件模板](../../../desktop-wpf/themes/how-to-create-apply-template.md)

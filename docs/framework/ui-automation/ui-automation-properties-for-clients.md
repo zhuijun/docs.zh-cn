@@ -1,5 +1,6 @@
 ---
 title: 客户端的 UI 自动化属性
+description: 阅读有关 UI 自动化属性的概述，因为这些属性公开给 UI 自动化客户端应用程序。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - properties, UI Automation clients
 - UI Automation, client properties
 ms.assetid: 255905af-0b17-485c-93d4-8a2db2a6524b
-ms.openlocfilehash: 3ef1e7c6e21f30c5bdea096003f192c38059ab2e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fe78d7da154d79a5f66ee6c190b199065675841f
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441360"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163127"
 ---
 # <a name="ui-automation-properties-for-clients"></a>客户端的 UI 自动化属性
 > [!NOTE]
@@ -30,12 +31,12 @@ ms.locfileid: "74441360"
  若要提高性能，则当检索 <xref:System.Windows.Automation.AutomationElement> 对象时可以缓存控件和控件模式的属性值。 有关详细信息，请参阅[UI 自动化客户端中的缓存](caching-in-ui-automation-clients.md)。  
   
 ## <a name="property-ids"></a>属性 ID  
- 属性标识符（Id）是 <xref:System.Windows.Automation.AutomationProperty> 对象中封装的唯一常量值。 UI 自动化客户端应用程序从 <xref:System.Windows.Automation.AutomationElement> 类或从相应的控件模式类（如 <xref:System.Windows.Automation.ScrollPattern>）获取这些 Id。 UI 自动化提供程序从 <xref:System.Windows.Automation.AutomationElementIdentifiers> 或从其中一个控件模式标识符类（如 <xref:System.Windows.Automation.ScrollPatternIdentifiers>）获取它们。  
+ 属性标识符（Id）是封装在对象中的唯一常量值 <xref:System.Windows.Automation.AutomationProperty> 。 UI 自动化客户端应用程序从 <xref:System.Windows.Automation.AutomationElement> 类或从相应的控件模式类（如）获取这些 id <xref:System.Windows.Automation.ScrollPattern> 。 UI 自动化提供程序从 <xref:System.Windows.Automation.AutomationElementIdentifiers> 或从其中一个控件模式标识符类（如 <xref:System.Windows.Automation.ScrollPatternIdentifiers>）获取它们。  
   
  <xref:System.Windows.Automation.AutomationIdentifier.Id%2A> 的数值 <xref:System.Windows.Automation.AutomationProperty> 被提供程序用于标识正在 <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A?displayProperty=nameWithType> 方法中进行查询的属性。 通常情况下，客户端应用程序不需要检查 <xref:System.Windows.Automation.AutomationIdentifier.Id%2A>。 <xref:System.Windows.Automation.AutomationIdentifier.ProgrammaticName%2A> 仅用于调试和诊断目的。  
   
 ## <a name="property-conditions"></a>属性条件  
- 属性 Id 用于构造用于查找 <xref:System.Windows.Automation.AutomationElement> 对象的 <xref:System.Windows.Automation.PropertyCondition> 对象。 例如，你可能希望查找具有特定名称的 <xref:System.Windows.Automation.AutomationElement> 或已启用的所有控件。 每个 <xref:System.Windows.Automation.PropertyCondition> 指定 <xref:System.Windows.Automation.AutomationProperty> 标识符和属性必须匹配的值。  
+ 属性 Id 用于构造 <xref:System.Windows.Automation.PropertyCondition> 用于查找对象的对象 <xref:System.Windows.Automation.AutomationElement> 。 例如，你可能希望查找具有特定名称的 <xref:System.Windows.Automation.AutomationElement> 或已启用的所有控件。 每个 <xref:System.Windows.Automation.PropertyCondition> 指定 <xref:System.Windows.Automation.AutomationProperty> 标识符和属性必须匹配的值。  
   
  有关详细信息，请参阅以下参考主题：  
   
@@ -99,6 +100,6 @@ ms.locfileid: "74441360"
   
 ## <a name="see-also"></a>另请参阅
 
-- [Caching in UI Automation Clients](caching-in-ui-automation-clients.md)
-- [服务器端 UI 自动化提供程序实现](server-side-ui-automation-provider-implementation.md)
+- [在 UI 自动化客户端中缓存](caching-in-ui-automation-clients.md)
+- [服务器端 UI 自动化提供程序的实现](server-side-ui-automation-provider-implementation.md)
 - [订阅 UI 自动化事件](subscribe-to-ui-automation-events.md)

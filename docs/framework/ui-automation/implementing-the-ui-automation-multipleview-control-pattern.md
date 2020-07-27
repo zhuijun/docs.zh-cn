@@ -1,17 +1,18 @@
 ---
 title: 实现 UI 自动化 MultipleView 控件模式
+description: 在 UI 自动化中查看实现 MultipleView 控件模式的准则和约定。 请参阅 IMultipleViewProvider 接口的必需成员。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, MultipleView control pattern
 - MultipleView control pattern
 - control patterns, MultipleView
 ms.assetid: 5bf1b248-ffee-48c8-9613-0b134bbe9f6a
-ms.openlocfilehash: 9decb617e30a340d3e73e911f7848110de5599e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0d65d57637891fcb1307f5ee83a417941ff323fb
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180167"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168227"
 ---
 # <a name="implementing-the-ui-automation-multipleview-control-pattern"></a>实现 UI 自动化 MultipleView 控件模式
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79180167"
   
  <xref:System.Windows.Automation.MultipleViewPattern> 控件模式用于支持那些提供并能够在同组信息或子控件的多个表示形式间进行切换的控件。  
   
- 可以显示多个视图的控件示例包括列表视图（可以将其内容显示为缩略图、磁贴、图标或详细信息）、Microsoft Excel 图表（饼图、行、条形图、带公式的单元格值）、Microsoft Word 文档（普通、Web 布局、打印）布局、阅读布局、大纲）、微软 Outlook 日历（年、月、周、日）和微软 Windows 媒体播放器外观。 支持的视图由控件开发人员确定，并特定于每个控件。  
+ 可显示多个视图的控件示例包括列表视图（可将其内容显示为缩略图）磁贴、图标或详细信息）、Microsoft Excel 图表（饼图、折线图、条形图、带有公式的单元值）、Microsoft Word 文档（常规、Web 版式、打印布局、阅读版式、大纲）、Microsoft Outlook 日历（年、月、周、天）和 Microsoft Windows Media Player 的外观。 支持的视图由控件开发人员确定，并特定于每个控件。  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>
 ## <a name="implementation-guidelines-and-conventions"></a>实现准则和约定  
@@ -41,7 +42,7 @@ ms.locfileid: "79180167"
   
 |必需的成员|成员类型|说明|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|properties|无|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|属性|无|  
 |<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|方法|无|  
 |<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A>|方法|无|  
 |<xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A>|方法|无|  
@@ -52,7 +53,7 @@ ms.locfileid: "79180167"
 ## <a name="exceptions"></a>例外  
  提供程序必须引发以下异常。  
   
-|异常类型|条件|  
+|例外类型|条件|  
 |--------------------|---------------|  
 |<xref:System.ArgumentException>|当 <xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A> 或 <xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A> 与不是受支持视图集合成员的参数一同被调用时。|  
   

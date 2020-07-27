@@ -1,17 +1,18 @@
 ---
 title: UI 自动化对 Separator 控件类型的支持
+description: 获取有关对 Separator 控件类型的 UI 自动化支持的信息。 了解必需的树结构、属性、控件模式和事件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, Separator control type
 - Separator control type
 - control types, Separator
 ms.assetid: 89f42247-c699-4afa-91e1-2baaf0d86c9d
-ms.openlocfilehash: 79f428cafda85fec6987fa55887247d70e4021a0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9e5ebfa693bf638a96b8ea6768ecc9553976ce45
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179588"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166926"
 ---
 # <a name="ui-automation-support-for-the-separator-control-type"></a>UI 自动化对 Separator 控件类型的支持
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79179588"
   
  Separator 控件用于直观地将一个空间划分为两个区域。 例如，分隔符控件可以是一个条形图，在窗口中定义两个窗格。 如果可以移动该分隔符，则应将该控件公开为控件类型中的 Thumb。  
   
- 以下几节定义了 Separator 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 这些要求[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]适用于所有列表控件，无论是[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]Win32 还是 Windows 窗体。  
+ 以下几节定义了 Separator 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]要求适用于所有列表控件，无论控件是 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] Win32 还是 Windows 窗体。  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>必需的 UI 自动化树结构  
@@ -29,13 +30,13 @@ ms.locfileid: "79179588"
   
 |控件视图|内容视图|  
 |------------------|------------------|  
-|分隔符|- 分离器控件永远不会包含内容。|  
+|Separator|-Separator 控件绝不包含内容。|  
   
 <a name="Required_UI_Automation_Properties"></a>
 ## <a name="required-ui-automation-properties"></a>必需的 UI 自动化属性  
- 下表列出了 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性，这些属性的值或定义与 Separator 控件尤其相关。 有关[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]属性的详细信息，请参阅[客户端的 UI 自动化属性](ui-automation-properties-for-clients.md)。  
+ 下表列出了 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性，这些属性的值或定义与 Separator 控件尤其相关。 有关属性的详细信息 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ，请参阅[客户端的 UI 自动化属性](ui-automation-properties-for-clients.md)。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|说明|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|注释|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|请参阅说明|此属性的值在应用程序的所有控件中都必须保持唯一。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|请参阅说明|包含整个控件的最外层矩形。|  
@@ -43,7 +44,7 @@ ms.locfileid: "79179588"
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty>|请参阅说明|如果该控件可以接收键盘焦点，则它必须支持此属性。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|""|Separator 控件不需要 NameProperty。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LabeledByProperty>|`null`|Separator 控件没有静态标签。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|分隔符|此值对于所有 UI 框架均相同。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|Separator|此值对于所有 UI 框架均相同。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.LocalizedControlTypeProperty>|“分隔符”|与 Separator 控件类型相对应的已本地化字符串。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|False|Separator 控件不包含内容。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|Separator 控件必须始终是一个控件。|  
@@ -58,11 +59,11 @@ ms.locfileid: "79179588"
   
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件|支持|说明|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必选|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必须|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必须|无|  
   
 ## <a name="see-also"></a>另请参阅
 

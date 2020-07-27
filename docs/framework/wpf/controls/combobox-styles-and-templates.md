@@ -1,5 +1,6 @@
 ---
 title: ComboBox 样式和模板
+description: 了解 Windows Presentation Foundation ComboBox 控件的样式和模板。 修改 System.windows.controls.controltemplate>，为控件指定独特的外观。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ComboBox [WPF], styles and templates
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - templates [WPF], ComboBox
 - parts [WPF], ComboBox
 ms.assetid: b0662fa1-16d7-4320-b26b-c1804e565a44
-ms.openlocfilehash: af7f8a544af5e9892a8f3f059048bbfd113d2491
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 5e929bafeaf849b4b5682a17ca51cb0aab963613
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865354"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165912"
 ---
 # <a name="combobox-styles-and-templates"></a>ComboBox 样式和模板
 本主题描述控件的样式和模板 <xref:System.Windows.Controls.ComboBox> 。 您可以修改默认值 <xref:System.Windows.Controls.ControlTemplate> ，为控件指定独特的外观。 有关详细信息，请参阅为[控件创建模板](../../../desktop-wpf/themes/how-to-create-apply-template.md)。  

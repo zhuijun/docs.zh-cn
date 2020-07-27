@@ -1,5 +1,6 @@
 ---
 title: 命令概述
+description: 了解如何在 Windows Presentation Foundation 中提供输入机制，该机制提供比设备输入更具语义级别的输入处理。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - commanding [WPF]
 - CommandManager [WPF]
 ms.assetid: bc208dfe-367d-426a-99de-52b7e7511e81
-ms.openlocfilehash: 3477e6a9eda40edeadaab9cd6d3de2f016250fc8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4f7d12fbf0de9b1546f15061ab7eb1318378bbbb
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79186216"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168127"
 ---
 # <a name="commanding-overview"></a>命令概述
 <a name="introduction"></a>命令是 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 中的一种输出机制，与设备输出相比，其提供的输出处理更侧重于语义级别。 示例命令如许多应用程序均具有的“复制”****、“剪切”**** 和“粘贴”**** 操作。  
@@ -173,9 +174,9 @@ ms.locfileid: "79186216"
 ## <a name="command-library"></a>命令库  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 提供一组预定义命令。  命令库包括以下类：<xref:System.Windows.Input.ApplicationCommands>、<xref:System.Windows.Input.NavigationCommands>、<xref:System.Windows.Input.MediaCommands>、<xref:System.Windows.Documents.EditingCommands> 和 <xref:System.Windows.Input.ComponentCommands>。  这些类提供诸如 <xref:System.Windows.Input.ApplicationCommands.Cut%2A>、<xref:System.Windows.Input.NavigationCommands.BrowseBack%2A>、<xref:System.Windows.Input.NavigationCommands.BrowseForward%2A>、<xref:System.Windows.Input.MediaCommands.Play%2A>、<xref:System.Windows.Input.MediaCommands.Stop%2A> 和 <xref:System.Windows.Input.MediaCommands.Pause%2A> 的命令。  
   
- 许多这些命令都包含一组默认输入绑定。  例如，如果指定应用程序处理复制命令，则会自动获取键盘绑定"CTRL+C"，还可以获取其他输入设备的绑定，例如 Tablet PC 笔手势和语音信息。  
+ 许多这些命令都包含一组默认输入绑定。  例如，如果指定应用程序处理 "复制" 命令，则会自动获取键盘绑定 "CTRL + C"。还会获取其他输入设备的绑定，如 Tablet PC 笔笔势和语音信息。  
   
- 使用 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 引用各个命令库中的命令时，通常可省略公开静态命令属性的库类的类名。 一般来说，命令名称是明确作为字符串的，且存在所属类型来提供命令的逻辑分组，不过对于消除二义性这并不必要。 例如，可指定 `Command="Cut"` 而不是更为冗长的 `Command="ApplicationCommands.Cut"`。 这是一种为命令[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)][!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]内置到处理器中的便利机制（更确切地说，<xref:System.Windows.Input.ICommand>它是[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)][!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]处理器在加载时引用的类型转换器行为）。  
+ 使用 [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 引用各个命令库中的命令时，通常可省略公开静态命令属性的库类的类名。 一般来说，命令名称是明确作为字符串的，且存在所属类型来提供命令的逻辑分组，不过对于消除二义性这并不必要。 例如，可指定 `Command="Cut"` 而不是更为冗长的 `Command="ApplicationCommands.Cut"`。 这是一个方便的机制，内置于 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 命令处理器中（更准确地说，它是 <xref:System.Windows.Input.ICommand> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] 处理器在加载时引用的类型转换器行为）。  
   
 <a name="creating_commands"></a>
 ## <a name="creating-custom-commands"></a>创建自定义命令  

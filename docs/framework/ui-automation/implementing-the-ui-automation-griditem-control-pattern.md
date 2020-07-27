@@ -1,17 +1,18 @@
 ---
 title: 实现 UI 自动化 GridItem 控件模式
+description: 了解在 UI 自动化中为网格项实现 GridItemPattern 控件模式的准则和约定。 请参阅 IGridItemProvider 的必需成员。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, GridItem
 - UI Automation GridItem control pattern
 - GridItem control pattern
 ms.assetid: bffbae08-fe2a-42fd-ab84-f37187518916
-ms.openlocfilehash: d561587e6bb98ba857b27ba89b4c1a45ba964ffd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e0a0c616f3f0cf9bc091e4fbb496d71ab8550bd3
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180188"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165826"
 ---
 # <a name="implementing-the-ui-automation-griditem-control-pattern"></a>实现 UI 自动化 GridItem 控件模式
 > [!NOTE]
@@ -39,11 +40,11 @@ ms.locfileid: "79180188"
   
 |必需的成员|成员类型|说明|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider.Row%2A>|properties|无|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider.Column%2A>|properties|无|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider.RowSpan%2A>|properties|无|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider.ColumnSpan%2A>|properties|无|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A>|properties|无|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider.Row%2A>|属性|无|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider.Column%2A>|属性|无|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider.RowSpan%2A>|属性|无|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider.ColumnSpan%2A>|属性|无|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider.ContainingGrid%2A>|属性|无|  
   
  没有与此控件模式关联的方法或事件。  
   

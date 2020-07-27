@@ -1,17 +1,18 @@
 ---
 title: UI 自动化对 MenuBar 控件类型的支持
+description: 获取有关 UI 自动化对 MenuBar 控件类型的支持的信息。 了解必需的树结构、属性、控件模式和事件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, Menu Bar control type
 - control types, Menu Bar
 - Menu Bar control type
 ms.assetid: c1202b21-c1f0-4560-853c-7b99bd73ad97
-ms.openlocfilehash: c50c5abb450ae44fcc08507354ea73f3a780afdf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 923f8d9dc62a7175b2bcfe2b0839b1435bf83132
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179641"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166034"
 ---
 # <a name="ui-automation-support-for-the-menubar-control-type"></a>UI 自动化对 MenuBar 控件类型的支持
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79179641"
   
  菜单栏控件是实现 MenuBar 控件类型的控件示例。 菜单栏为用户提供了一种激活应用程序中包含的命令和选项的方法。  
   
- 以下几节定义了 MenuBar 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 这些要求[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]适用于所有列表控件，无论是[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]Win32 还是 Windows 窗体。  
+ 以下几节定义了 MenuBar 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]要求适用于所有列表控件，无论控件是 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] Win32 还是 Windows 窗体。  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>必需的 UI 自动化树结构  
@@ -29,15 +30,15 @@ ms.locfileid: "79179641"
   
 |控件视图|内容视图|  
 |------------------|------------------|  
-|MenuBar<br /><br /> - 菜单项目（1 个或更多）<br />- 其他控件（0 或多个）|MenuBar<br /><br /> - 菜单项目（1 个或更多）<br />- 其他控件（0 或多个）|  
+|MenuBar<br /><br /> -MenuItem （1个或多个）<br />-其他控件（0个或多个）|MenuBar<br /><br /> -MenuItem （1个或多个）<br />-其他控件（0个或多个）|  
   
  菜单栏控件可以在其结构中包含其他控件，如编辑控件和组合框。 这些附加控件与上面的控件和内容视图中列出的“其他控件”相对应。  
   
 <a name="Required_UI_Automation_Properties"></a>
 ## <a name="required-ui-automation-properties"></a>必需的 UI 自动化属性  
- 下表列出了值或定义与菜单栏控件密切相关的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性。 有关[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]属性的详细信息，请参阅[客户端的 UI 自动化属性](ui-automation-properties-for-clients.md)。  
+ 下表列出了值或定义与菜单栏控件密切相关的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性。 有关属性的详细信息 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ，请参阅[客户端的 UI 自动化属性](ui-automation-properties-for-clients.md)。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|说明|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|注释|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|请参阅注释。|此属性公开的值必须包括它所包含的所有控件。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|请参阅注释。|菜单栏控件不需要名称，除非在一个应用程序中具有多个菜单栏。 如果应用程序中有多个菜单栏，则此属性应该用于公开不同的名称，如“格式设置”或“大纲显示”。|  
@@ -67,14 +68,14 @@ ms.locfileid: "79179641"
 ## <a name="required-ui-automation-events"></a>必需的 UI 自动化事件  
  下表列出了需要由所有菜单栏控件支持的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件。 有关事件的详细信息，请参阅 [F:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty](ui-automation-events-overview.md)。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件|支持/值|说明|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件|支持/值|注释|  
 |---------------------------------------------------------------------------------|--------------------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件。|必选|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件。|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件。|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> 属性更改事件。|依赖的对象|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必选|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必须|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必须|无|  
   
 ## <a name="see-also"></a>另请参阅
 

@@ -1,5 +1,6 @@
 ---
 title: 获取受支持的 UI 自动化控件模式
+description: 阅读演示如何从 UI 自动化元素检索支持的控件模式对象的示例。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - UI Automation, getting control patterns
 - getting, control patterns
 ms.assetid: 006c54c9-50bf-48d9-a855-9d62eb95603a
-ms.openlocfilehash: b1da13cf5eb39a61f40848a5f199cfd39b16d7c7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f2905b81a1af2f86c78b082f0241e2181c384d25
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435648"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164155"
 ---
 # <a name="get-supported-ui-automation-control-patterns"></a>获取受支持的 UI 自动化控件模式
 > [!NOTE]
@@ -45,4 +46,4 @@ ms.locfileid: "74435648"
   
 ## <a name="see-also"></a>另请参阅
 
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
+- [客户端的 UI 自动化控件模式](ui-automation-control-patterns-for-clients.md)

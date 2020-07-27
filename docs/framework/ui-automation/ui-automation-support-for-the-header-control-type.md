@@ -1,17 +1,18 @@
 ---
 title: UI 自动化对 Header 控件类型的支持
+description: 获取有关对 Header 控件类型的 UI 自动化支持的信息。 了解必需的树结构、属性、控件模式和事件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, Header control type
 - Header control type
 - control types, Header
 ms.assetid: d2e48891-2dbe-409e-8655-2f753908e29b
-ms.openlocfilehash: be812fd9063674cc82d62a8c0207e27f3543be3a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4e4744ee6f8c9dbccb36c7ffac6b75561402b3a0
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179766"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167908"
 ---
 # <a name="ui-automation-support-for-the-header-control-type"></a>UI 自动化对 Header 控件类型的支持
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79179766"
   
  标头控件提供用于信息的行或列的标签的可视容器。  
   
- 以下几节定义了标头控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 这些要求[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]适用于所有标头控件，无论是[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]Win32 还是 Windows 窗体。  
+ 以下几节定义了标头控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]要求适用于所有标头控件，无论是 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] 、Win32 还是 Windows 窗体。  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>必需的 UI 自动化树结构  
@@ -29,7 +30,7 @@ ms.locfileid: "79179766"
   
 |控件视图|内容视图|  
 |------------------|------------------|  
-|标头<br /><br /> - 标题项目（1 个或更多）|无|  
+|标头<br /><br /> -HeaderItem （1个或多个）|无|  
   
  标头控件始终具有 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的控件视图中的 1 个或多个子级。  
   
@@ -39,7 +40,7 @@ ms.locfileid: "79179766"
 ## <a name="required-ui-automation-properties"></a>必需的 UI 自动化属性  
  下表列出 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性，这些属性的值或定义与标头控件尤其相关。 有关 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性的详细信息，请参阅 [UI Automation Properties for Clients](ui-automation-properties-for-clients.md)。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|说明|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|注释|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|请参阅注释。|此属性的值在应用程序的所有控件中都必须保持唯一。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|请参阅注释。|包含整个控件的最外层矩形。|  
@@ -67,11 +68,11 @@ ms.locfileid: "79179766"
   
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件|支持|说明|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>|必选|无|  
-|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|必选|无|  
+|<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty> 属性更改事件。|必需|无|  
+|<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty> 属性更改事件。|必需|无|  
+|<xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> 属性更改事件。|必需|无|  
+|<xref:System.Windows.Automation.AutomationElement.AutomationFocusChangedEvent>|必须|无|  
+|<xref:System.Windows.Automation.AutomationElement.StructureChangedEvent>|必须|无|  
   
 ## <a name="see-also"></a>另请参阅
 

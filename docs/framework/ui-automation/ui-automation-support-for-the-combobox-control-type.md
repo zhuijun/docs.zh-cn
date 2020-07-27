@@ -1,17 +1,18 @@
 ---
 title: UI 自动化对 ComboBox 控件类型的支持
+description: 获取有关对 ComboBox 控件类型的 UI 自动化支持的信息。 了解必需的树结构、属性、控件模式和事件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control types, Combo Box
 - UI Automation, Combo Box control type
 - ComboBox controls
 ms.assetid: bb321126-4770-41da-983a-67b7b89d45dd
-ms.openlocfilehash: 2b1629adcc9e23294daa0512070089cc72ab5810
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c708de791056969e281ad1bc223e2a2233fa170b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179783"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166100"
 ---
 # <a name="ui-automation-support-for-the-combobox-control-type"></a>UI 自动化对 ComboBox 控件类型的支持
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79179783"
   
  组合框是与静态控件或编辑控件组合在一起的列表框，静态控件或编辑控件在组合框的列表框部分中显示了当前选定的项目。 控件的列表框部分要么将始终显示出来，要么只有当用户选择控件旁边的下拉箭头（下压按钮）时才会出现。 如果选择字段是一个编辑控件，则用户可以输入列表外的信息；否则，用户只能选择列表中的项目。  
   
- 以下几节定义了 ComboBox 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 这些要求[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]适用于所有组合框控件，无论是[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]Win32 还是 Windows 窗体。  
+ 以下几节定义了 ComboBox 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]要求适用于所有组合框控件，无论控件是 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] 、Win32 还是 Windows 窗体。  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>必需的 UI 自动化树结构  
@@ -29,7 +30,7 @@ ms.locfileid: "79179783"
   
 |控件视图|内容视图|  
 |------------------|------------------|  
-|ComboBox<br /><br /> - 编辑 （0 或 1）<br />- 列表 （1）<br />- 列表项（列表子项;0 到多个）<br />- 按钮 （1）|ComboBox<br /><br /> - 列表项（0 到多个）|  
+|组合框<br /><br /> -Edit （0个或1个）<br />-List （1）<br />-列表项（列表的子级，0到多个）<br />-Button （1）|组合框<br /><br /> -列表项（0到多个）|  
   
  只有在能够编辑组合框以接纳任何输入的情况下，组合框控件视图中的编辑控件才是必需的，“运行”对话框中的组合框也是如此。  
   
@@ -37,12 +38,12 @@ ms.locfileid: "79179783"
 ## <a name="required-ui-automation-properties"></a>必需的 UI 自动化属性  
  下表列出了值或定义与组合框控件密切相关的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性。 有关 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性的详细信息，请参阅 [UI Automation Properties for Clients](ui-automation-properties-for-clients.md)。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|说明|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|注释|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|请参阅注释。|此属性的值在应用程序的所有控件中都必须保持唯一。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|请参阅注释。|包含整个控件的最外层矩形。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ClickablePointProperty>|请参阅注释。|如果存在边界矩形，则受支持。 如果边界矩形中存在无法单击的点，而你要执行专门的命中测试，则重写并提供可单击的点。|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|ComboBox|此值对于所有 [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 框架均相同。|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.ControlTypeProperty>|组合框|此值对于所有 [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 框架均相同。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.HelpTextProperty>|请参阅注释。|组合框控件的帮助文本应解释为什么要求用户从组合框中选择一个选项。 文本与通过工具提示呈现的信息类似。 例如，“选择一个项来为你的监视器设置显示分辨率。”|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsContentElementProperty>|True|组合框控件始终包括在 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的内容视图中。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsControlElementProperty>|True|组合框控件始终包括在 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的控件视图中。|  
@@ -66,14 +67,14 @@ ms.locfileid: "79179783"
 ## <a name="required-events"></a>必需事件  
  下表列出了需要由所有组合框控件支持的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件。 有关事件的详细信息，请参阅 [F:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty](ui-automation-events-overview.md)。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件|支持|说明|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件|支持|注释|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必选|无|  
-|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> 属性更改事件。|必选|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件。|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件。|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件。|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必须|无|  
+|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> 属性更改事件。|依赖的对象|如果控件支持 Value 模式，则它必须支持此事件。|  
   
 ## <a name="see-also"></a>另请参阅

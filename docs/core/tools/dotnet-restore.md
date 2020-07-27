@@ -2,12 +2,12 @@
 title: dotnet restore 命令
 description: 了解如何使用 dotnet-restore 命令还原依赖项和特定于项目的工具。
 ms.date: 02/27/2020
-ms.openlocfilehash: 276fad896a6a8a647ed05a9de8c582d463d9ab8f
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 7b456e28505a07c03936c9006c8631848fd4672c
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84005307"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925471"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -164,7 +164,7 @@ dotnet restore -h|--help
 - 还原在给定路径中找到的 `app1` 项目的依赖项和工具：
 
   ```dotnetcli
-  dotnet restore ~/projects/app1/app1.csproj
+  dotnet restore ./projects/app1/app1.csproj
   ```
 
 - 通过将提供的文件路径用作源，在当前目录中还原项目的依赖项和工具：

@@ -1,5 +1,6 @@
 ---
 title: 使用 UI 自动化公开表的内容
+description: 请参阅如何使用 UI 自动化公开表的内容。 表格控件内每个单元格的内容和内部属性都是公开的。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,21 +10,21 @@ helpviewer_keywords:
 - UI Automation, exposing content of tables
 - exposing content of tables using UI Automation
 ms.assetid: ac3c5eaa-49c7-4653-b83e-532e2a2604a2
-ms.openlocfilehash: e1c1d43073ce47a45a78bcbeb1d4da368988ca3a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c6ceb05421547a7e84f612ed6da2bd7002bf095b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433634"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168466"
 ---
 # <a name="expose-the-content-of-a-table-using-ui-automation"></a>使用 UI 自动化公开表的内容
 > [!NOTE]
 > 本文档适用于想要使用 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 命名空间中定义的托管 <xref:System.Windows.Automation> 类的 .NET Framework 开发人员。 有关 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]的最新信息，请参阅 [Windows 自动化 API：UI 自动化](/windows/win32/winauto/entry-uiauto-win32)。  
   
- 本主题说明如何使用 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] 公开表格控件内每个单元格的内容和内部属性。  
+ 本主题演示如何 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] 使用来公开表格控件内每个单元格的内容和内部属性。  
   
 ## <a name="example"></a>示例  
- 下面的代码示例演示如何获取表示表格单元内容的 <xref:System.Windows.Automation.AutomationElement>;还获得行和列索引、行和列范围以及行和列标题信息等单元属性。 此示例使用焦点更改事件处理程序来模拟实现 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]的表格控件的键盘遍历。 针对每个表项的信息将在焦点更改事件上公开。  
+ 下面的代码示例演示如何获取一个 <xref:System.Windows.Automation.AutomationElement> 表示表格单元格内容的，还可以获得行和列索引、行和列范围等单元格的属性。 此示例使用焦点更改事件处理程序来模拟实现的表格控件的键盘遍历 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 。 针对每个表项的信息将在焦点更改事件上公开。  
   
 > [!NOTE]
 > 由于焦点更改是全局桌面事件，因此应筛选表之外的焦点更改事件。 有关相关的实现，请参阅[TrackFocus 示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771428(v=vs.90))。  
@@ -44,7 +45,7 @@ ms.locfileid: "74433634"
 ## <a name="see-also"></a>另请参阅
 
 - [UI 自动化控件模式概述](ui-automation-control-patterns-overview.md)
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
+- [客户端的 UI 自动化控件模式](ui-automation-control-patterns-for-clients.md)
 - [实现 UI 自动化 Table 控件模式](implementing-the-ui-automation-table-control-pattern.md)
 - [实现 UI 自动化 TableItem 控件模式](implementing-the-ui-automation-tableitem-control-pattern.md)
 - [实现 UI 自动化 Grid 控件模式](implementing-the-ui-automation-grid-control-pattern.md)

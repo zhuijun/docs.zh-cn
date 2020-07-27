@@ -1,17 +1,18 @@
 ---
 title: 实现 UI 自动化 TableItem 控件模式
+description: 在 UI 自动化中查看实现 TableItem 控件模式的准则和约定。 了解 ITableItemProvider 接口的必需成员。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, Table Item
 - UI Automation, Table Item control pattern
 - TableItem control pattern
 ms.assetid: ac178408-1485-436f-8d3e-eee3bf80cb24
-ms.openlocfilehash: f35b491c31e8725eac0025dfd6815079d0ea9b79
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3d6d31fe0e041fbba147df14d290a775188755f2
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180080"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163520"
 ---
 # <a name="implementing-the-ui-automation-tableitem-control-pattern"></a>实现 UI 自动化 TableItem 控件模式
 > [!NOTE]
@@ -24,7 +25,7 @@ ms.locfileid: "79180080"
 <a name="Implementation_Guidelines_and_Conventions"></a>
 ## <a name="implementation-guidelines-and-conventions"></a>实现准则和约定  
   
-- 有关相关的网格项功能，请参阅[实现 UI 自动化网格项控制模式](implementing-the-ui-automation-griditem-control-pattern.md)。  
+- 有关相关的网格项功能，请参阅[实现 UI 自动化 GridItem 控件模式](implementing-the-ui-automation-griditem-control-pattern.md)。  
   
 <a name="Required_Members_for_ITableItemProvider"></a>
 ## <a name="required-members-for-itableitemprovider"></a>ITableItemProvider 必需的成员  

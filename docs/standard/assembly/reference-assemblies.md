@@ -4,12 +4,12 @@ description: 了解引用程序集，这是 .NET 中一种特殊类型的程序�
 author: MSDN-WhiteKnight
 ms.date: 09/12/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 938942caf81c54a8aa9207dbe87559438ffb252e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 43a9dab037f4d0f1926ff67f8f38eaa6734a6d67
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79141063"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164519"
 ---
 # <a name="reference-assemblies"></a>引用程序集
 
@@ -25,9 +25,9 @@ ms.locfileid: "79141063"
 
 若要使用项目中的某些 API，必须添加对其程序集的引用。 可以将引用添加到实现程序集，也可以将其添加到引用程序集。 建议在引用程序集可用时使用它。 这样做可确保仅使用目标版本中受支持的 API 成员，即供 API 设计人员使用。 使用引用程序集可确保不依赖于实现详细信息。
 
-.NET Framework 库的引用程序集与目标包一起分发。 可以通过下载独立安装程序或在 Visual Studio 安装程序中选择组件来获取它们。 有关详细信息，请参阅[安装面向开发人员的 .NET Framework](../../framework/install/guide-for-developers.md)。 对于 .NET Core 和 .NET Standard，引用程序集将在必要时（通过 NuGet）进行自动下载和引用。 对于 .NET Core 3.0 和更高版本，核心框架的引用程序集位于 [Microsoft.NETCore.App.Ref](https://www.nuget.org/packages/Microsoft.NETCore.App.Ref) 包中（使用 [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) 包代替 3.0 之前的版本）。 有关详细信息，请参阅“.NET Core 指南”中的[包、元包和框架](../../core/packages.md)。
+.NET Framework 库的引用程序集与目标包一起分发。 可以通过下载独立安装程序或在 Visual Studio 安装程序中选择组件来获取它们。 有关详细信息，请参阅[安装面向开发人员的 .NET Framework](../../framework/install/guide-for-developers.md)。 对于 .NET Core 和 .NET Standard，引用程序集将在必要时（通过 NuGet）进行自动下载和引用。 对于 .NET Core 3.0 和更高版本，核心框架的引用程序集位于 [Microsoft.NETCore.App.Ref](https://www.nuget.org/packages/Microsoft.NETCore.App.Ref) 包中（使用 [Microsoft.NETCore.App](https://www.nuget.org/packages/Microsoft.NETCore.App) 包代替 3.0 之前的版本）。
 
-使用“添加引用”  对话框在 Visual Studio 中添加对 .NET Framework 程序集的引用时，可以从列表中选择一个程序集，Visual Studio 会自动查找对应于项目中选择的目标框架版本的引用程序集。 这同样适用于使用 [Reference](/visualstudio/msbuild/common-msbuild-project-items#reference) 项目项直接在 MSBuild 项目中添加引用的情形：只需指定程序集名称，无需指定完整的文件路径。 使用 `-reference` 编译器选项（在 [C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) 和 [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) 中），或者使用 Roslyn API 中的 <xref:Microsoft.CodeAnalysis.Compilation.AddReferences%2A?displayProperty=nameWithType> 方法在命令行中添加对这些程序集的引用时，必须为正确的目标平台版本手动指定引用程序集文件。 .NET Framework 引用程序集文件位于 %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework  目录中。 对于 .NET Core，可以通过将 `PreserveCompilationContext` 项目属性设置为 `true` 强制发布操作，以便将目标平台的引用程序集复制到输出目录的 publish/refs  子目录。 然后，可以将这些引用程序集文件传递给编译器。 使用 [Microsoft.Extensions.DependencyModel](https://www.nuget.org/packages/Microsoft.Extensions.DependencyModel/) 包中的 `DependencyContext` 有助于找到其路径。
+使用“添加引用”对话框在 Visual Studio 中添加对 .NET Framework 程序集的引用时，可以从列表中选择一个程序集，Visual Studio 会自动查找对应于项目中选择的目标框架版本的引用程序集。 这同样适用于使用 [Reference](/visualstudio/msbuild/common-msbuild-project-items#reference) 项目项直接在 MSBuild 项目中添加引用的情形：只需指定程序集名称，无需指定完整的文件路径。 使用 `-reference` 编译器选项（在 [C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) 和 [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) 中），或者使用 Roslyn API 中的 <xref:Microsoft.CodeAnalysis.Compilation.AddReferences%2A?displayProperty=nameWithType> 方法在命令行中添加对这些程序集的引用时，必须为正确的目标平台版本手动指定引用程序集文件。 .NET Framework 引用程序集文件位于 %ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework 目录中。 对于 .NET Core，可以通过将 `PreserveCompilationContext` 项目属性设置为 `true` 强制发布操作，以便将目标平台的引用程序集复制到输出目录的 publish/refs 子目录。 然后，可以将这些引用程序集文件传递给编译器。 使用 [Microsoft.Extensions.DependencyModel](https://www.nuget.org/packages/Microsoft.Extensions.DependencyModel/) 包中的 `DependencyContext` 有助于找到其路径。
 
 由于它们不包含任何实现，因此无法加载引用程序集用于执行。 如果尝试这样做，则会导致 <xref:System.BadImageFormatException?displayProperty=nameWithType>。 如果要检查引用程序集的内容，你可将其加载到 .NET Framework 中的仅反射上下文中（使用 <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType> 方法），或者加载到 .NET Core 中的 <xref:System.Reflection.MetadataLoadContext>。
 
@@ -43,11 +43,11 @@ IDE 和生成工具还可以利用引用程序集来减少由多个类库组成�
 - 从命令行编译程序时，方法是指定 `-refonly` ([C#](../../csharp/language-reference/compiler-options/refonly-compiler-option.md) / [Visual Basic](../../visual-basic/reference/command-line-compiler/refonly-compiler-option.md)) 和 `-refout` ([C#](../../csharp/language-reference/compiler-options/refout-compiler-option.md) / [Visual Basic](../../visual-basic/reference/command-line-compiler/refout-compiler-option.md)) 编译器选项。
 - 使用 Roslyn API 时，通过在传递到 <xref:Microsoft.CodeAnalysis.Compilation.Emit%2A?displayProperty=nameWithType> 方法的对象中将 <xref:Microsoft.CodeAnalysis.Emit.EmitOptions.EmitMetadataOnly?displayProperty=nameWithType> 设置为 `true`，并将 <xref:Microsoft.CodeAnalysis.Emit.EmitOptions.IncludePrivateMembers?displayProperty=nameWithType> 设置为 `false` 来生成。
 
-如果要将引用程序集与 NuGet 包一起分发，必须将它们包含在包目录下的 ref\\  子目录中（而不是用于实现程序集的 lib\\  子目录中）。
+如果要将引用程序集与 NuGet 包一起分发，必须将它们包含在包目录下的 ref\\ 子目录中（而不是用于实现程序集的 lib\\ 子目录中）。
 
 ## <a name="reference-assemblies-structure"></a>引用程序集结构
 
-引用程序集是对相关概念“仅元数据程序集”  的扩展。 仅包含元数据的程序集会将方法主体替换为一个 `throw null` 主体，但包括除匿名类型以外的所有成员。 使用 `throw null` 主体（而非不使用主体）的原因在于，这样做可以运行和传递 PEVerify（从而验证元数据的完整性）  。
+引用程序集是对相关概念“仅元数据程序集”的扩展。 仅包含元数据的程序集会将方法主体替换为一个 `throw null` 主体，但包括除匿名类型以外的所有成员。 使用 `throw null` 主体（而非不使用主体）的原因在于，这样做可以运行和传递 PEVerify（从而验证元数据的完整性）。
 
 引用程序集进一步从仅包含元数据的程序集中删除元数据（私有成员）：
 

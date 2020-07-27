@@ -1,17 +1,18 @@
 ---
 title: UI 自动化对 StatusBar 控件类型的支持
+description: 获取有关对状态栏控件类型的 UI 自动化支持的信息。 了解必需的树结构、属性、控件模式和事件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - StatusBar control type
 - UI Automation, Status Bar control type
 - control types, Status Bar
 ms.assetid: 48dee94a-5119-4939-a4c7-ffeaf794c732
-ms.openlocfilehash: 0251eac3dff5f4b5a1ce0f7211c65fd0248b8891
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b199193ff4ee0fb9e22457cf19b15db189702e05
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179567"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163799"
 ---
 # <a name="ui-automation-support-for-the-statusbar-control-type"></a>UI 自动化对 StatusBar 控件类型的支持
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79179567"
   
  状态栏控件显示有关将在应用程序窗口中查看的对象和对象组件的信息，或应用程序内与该对象的操作相关的上下文信息。  
   
- 以下几节定义状态栏控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 这些要求[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]适用于所有状态栏控件，无论是[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]Win32 还是 Windows 窗体。  
+ 以下几节定义状态栏控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]要求适用于所有状态栏控件，无论是 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] 、Win32 还是 Windows 窗体。  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>必需的 UI 自动化树结构  
@@ -29,13 +30,13 @@ ms.locfileid: "79179567"
   
 |控件视图|内容视图|  
 |------------------|------------------|  
-|StatusBar<br /><br /> - 编辑（0 或更多）<br />- 进度条（0 或多个）<br />- 图像（0 或多个）<br />- 按钮（0 或多个）|StatusBar<br /><br /> - 编辑（0 或更多）<br />- 进度条（0 或多个）<br />- 图像（0 或多个）<br />- 按钮（0 或多个）|  
+|StatusBar<br /><br /> -Edit （0个或多个）<br />-进度栏（0个或多个）<br />-Image （0个或多个）<br />-Button （0个或多个）|StatusBar<br /><br /> -Edit （0个或多个）<br />-ProgressBar （0个或多个）<br />-Image （0个或多个）<br />-Button （0个或多个）|  
   
 <a name="Required_UI_Automation_Properties"></a>
 ## <a name="required-ui-automation-properties"></a>必需的 UI 自动化属性  
  下表列出了 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性，这些属性的值或定义与进度栏控件尤其相关。 有关 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性的详细信息，请参阅 [UI Automation Properties for Clients](ui-automation-properties-for-clients.md)。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|说明|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|注释|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|请参阅注释。|此属性的值在应用程序的所有控件中都必须保持唯一。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|请参阅注释。|状态栏的边界矩形必须包含其中包含的所有控件。|  
@@ -66,11 +67,11 @@ ms.locfileid: "79179567"
   
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件|支持|说明|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必选|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件。|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件。|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件。|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必须|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必须|无|  
   
 ## <a name="see-also"></a>另请参阅
 

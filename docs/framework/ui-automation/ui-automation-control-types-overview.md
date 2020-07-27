@@ -1,16 +1,17 @@
 ---
 title: UI 自动化控件类型概述
+description: 阅读 UI 自动化控件类型的概述，这些控件类型是已知的标识符，可用于指示元素所表示的控件类型。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, control types
 - control types, UI Automation
 ms.assetid: 75159ef8-bd43-4d13-acb7-1f1fe9253160
-ms.openlocfilehash: 643c89e8f6c5e34aa1fb3c5c7c6c750c72046277
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 204e950fca74c4f7bd2c13dc8a8891152954c071
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179933"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166134"
 ---
 # <a name="ui-automation-control-types-overview"></a>UI 自动化控件类型概述
 > [!NOTE]

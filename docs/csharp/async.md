@@ -5,12 +5,12 @@ author: cartermp
 ms.date: 05/20/2020
 ms.technology: csharp-async
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.openlocfilehash: bcea584ded6985a0ef166ab8e24672a19e27b0a3
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 35ba90f978b1993f80451a28a4cd08129afddd85
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415973"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864496"
 ---
 # <a name="asynchronous-programming"></a>异步编程
 
@@ -213,7 +213,7 @@ public static async Task<User[]> GetUsersAsync(IEnumerable<int> userIds)
 
 对于异步编程，应记住一些可避免意外行为的要点。
 
-* `async` 方法需要在主体中有 `await` 关键字，否则它们将永不暂停！ 
+* `async` 方法需要在主体中有 `await` 关键字，否则它们将永不暂停！
 
   这一点需牢记在心。 如果 `await` 未用在 `async` 方法的主体中，C# 编译器将生成一个警告，但此代码将会以类似普通方法的方式进行编译和运行。 这种方式非常低效，因为由 C# 编译器为异步方法生成的状态机将不会完成任何任务。
 

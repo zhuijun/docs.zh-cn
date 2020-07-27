@@ -1,19 +1,20 @@
 ---
-title: 对 Document 控件类型的 UI 自动化支持
+title: UI 自动化对 Document 控件类型的支持
+description: 获取有关 UI 自动化对 Document 控件类型的支持的信息。 了解必需的树结构、属性、控件模式和事件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control types, Document
 - Document control type
 - UI Automation, Document control type
 ms.assetid: a79d594b-1ca0-4543-8dac-afd2c645201d
-ms.openlocfilehash: 0bac338ad06b3ddf76b2374ea2a3d954abb3cbc7
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 5cf43cf38d73c5996cb81ac249f1763ccb48c331
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789521"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167931"
 ---
-# <a name="ui-automation-support-for-the-document-control-type"></a>对 Document 控件类型的 UI 自动化支持
+# <a name="ui-automation-support-for-the-document-control-type"></a>UI 自动化对 Document 控件类型的支持
 > [!NOTE]
 > 本文档适用于想要使用 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 命名空间中定义的托管 <xref:System.Windows.Automation> 类的 .NET Framework 开发人员。 有关 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]的最新信息，请参阅 [Windows 自动化 API：UI 自动化](/windows/win32/winauto/entry-uiauto-win32)。  
   
@@ -21,7 +22,7 @@ ms.locfileid: "76789521"
   
  文档控件使用户能够查看和处理多页文本。 与仅支持单行无格式文本的编辑控件不同，文档控件可以托管具有丰富样式和格式的文本。  
   
- 以下几节定义了 Document 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 要求适用于所有文档控件，无论 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、Win32 还是 Windows 窗体。  
+ 以下几节定义了 Document 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]要求适用于所有文档控件，无论控件是 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] Win32 还是 Windows 窗体。  
   
 ## <a name="required-ui-automation-tree-structure"></a>必需的 UI 自动化树结构  
  下表描述了与文档控件有关的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的控件视图和内容视图，以及每个视图中可包含的内容。 有关 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的详细信息，请参阅 [UI Automation Tree Overview](ui-automation-tree-overview.md)。  
@@ -31,9 +32,9 @@ ms.locfileid: "76789521"
 |文档<br /><br /> -可变|文档<br /><br /> -可变|  
   
 ## <a name="required-ui-automation-properties"></a>必需的 UI 自动化属性  
- 下表列出了值或定义与文档控件密切相关的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性。 有关 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性的详细信息，请参阅[客户端的 UI 自动化属性](ui-automation-properties-for-clients.md)。  
+ 下表列出了值或定义与文档控件密切相关的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性。 有关属性的详细信息 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ，请参阅[客户端的 UI 自动化属性](ui-automation-properties-for-clients.md)。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|{2&gt;值&lt;2}|注释|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|注释|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|请参阅注释。|此属性的值在应用程序的所有控件中都必须保持唯一。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|请参阅注释。|包含整个控件的最外层矩形。|  
@@ -49,11 +50,11 @@ ms.locfileid: "76789521"
 ## <a name="required-ui-automation-control-patterns"></a>必需的 UI 自动化控件模式  
  下表列出了需要由文档控件支持的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 控件模式。 有关控件模式的详细信息，请参阅 [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md)。  
   
-|控件模式|支持|注释|  
+|控件模式|支持|说明|  
 |---------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IScrollProvider>|视情况而定|文档控件可以跨越比视区更大的范围。 如果内容是可滚动的，则控件应支持 Scroll 控件模式。|  
+|<xref:System.Windows.Automation.Provider.IScrollProvider>|依赖的对象|文档控件可以跨越比视区更大的范围。 如果内容是可滚动的，则控件应支持 Scroll 控件模式。|  
 |<xref:System.Windows.Automation.Provider.ITextProvider>|必需|文档控件可以跨越比视区更大的范围。 如果内容是可滚动的，则控件应支持 Scroll 控件模式。|  
-|<xref:System.Windows.Automation.Provider.IValueProvider>|Never|文档控件不支持此控件模式，因为控件的内容通常跨越多页。 UI 自动化客户端应使用 <xref:System.Windows.Automation.TextPattern> 来获取有关文档的文本信息。|  
+|<xref:System.Windows.Automation.Provider.IValueProvider>|从不|文档控件不支持此控件模式，因为控件的内容通常跨越多页。 UI 自动化客户端应使用 <xref:System.Windows.Automation.TextPattern> 来获取有关文档的文本信息。|  
   
 ## <a name="required-ui-automation-events"></a>必需的 UI 自动化事件  
  下表列出了需要由所有文档控件支持的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件。 有关事件的详细信息，请参阅 [UI Automation Events Overview](ui-automation-events-overview.md)。  
@@ -64,17 +65,17 @@ ms.locfileid: "76789521"
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件。|必需|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必须|无|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontallyScrollableProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalScrollPercentProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.HorizontalViewSizeProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalScrollPercentProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticallyScrollableProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.ScrollPatternIdentifiers.VerticalViewSizeProperty> 属性更改事件。|必需|无|  
-|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|视情况而定|如果控件支持 Selection 控件模式，则它必须支持此事件。|  
+|<xref:System.Windows.Automation.SelectionPatternIdentifiers.InvalidatedEvent>|依赖的对象|如果控件支持 Selection 控件模式，则它必须支持此事件。|  
 |<xref:System.Windows.Automation.TextPatternIdentifiers.TextSelectionChangedEvent>|必需|无|  
-|<xref:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent>|必需|无|  
-|<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> 属性更改事件。|Never|无|  
+|<xref:System.Windows.Automation.TextPatternIdentifiers.TextChangedEvent>|必须|无|  
+|<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> 属性更改事件。|从不|无|  
   
 ## <a name="see-also"></a>另请参阅
 

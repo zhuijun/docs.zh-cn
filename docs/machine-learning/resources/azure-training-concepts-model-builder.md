@@ -5,12 +5,12 @@ ms.topic: reference
 ms.date: 06/01/2020
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: d9eb5560ef33f8f80dbe53e17087c606a8697378
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 8622b580b7925adfd7895317815021f57960e9ee
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289468"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924573"
 ---
 # <a name="model-builder-azure-training-resources"></a>模型生成器 Azure 培训资源
 
@@ -56,7 +56,7 @@ Azure 机器学习计算是基于云的 Linux VM，用于训练。
 
 ## <a name="training"></a>训练
 
-在 Azure 上训练仅适用于模型生成器图像分类方案。 用于训练这些模型的算法是基于 ResNet50 体系结构的深度神经网络。 训练过程需要一定的时间，并且根据所选计算的大小和数据量，所需时间可能会有所不同。 第一次对模型进行训练时，由于必须预配资源，训练时间可能稍长。 可以在 Visual Studio 中选择“监视 Azure 门户中的当前运行”链接以跟踪运行进度。
+在 Azure 上训练仅适用于模型生成器图像分类方案。 用于训练这些模型的算法是基于 ResNet50 体系结构的深度神经网络。 训练过程需要一定的时间，并且根据所选计算的大小和数据量，所需时间可能会有所不同。 可以在 Visual Studio 中选择“监视 Azure 门户中的当前运行”链接以跟踪运行进度。
 
 ## <a name="results"></a>结果
 

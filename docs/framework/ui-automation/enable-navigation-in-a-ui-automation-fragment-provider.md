@@ -1,5 +1,6 @@
 ---
 title: 在 UI 自动化片段提供程序中启用导航
+description: 阅读一个示例，该示例演示如何在 UI 自动化提供程序中为片段中的元素启用导航。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - UI Automation, enabling navigation in provider
 - navigation, enabling in UI Automation provider
 ms.assetid: 3cb6092a-58c9-4ca0-84a5-0e54d5d00a0d
-ms.openlocfilehash: 264a24646f7a3c3b5b20e94fa0ed98a1341f8273
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: bf9e43e9d70b9191fba93e5efa4eae544196c735
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435761"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168489"
 ---
 # <a name="enable-navigation-in-a-ui-automation-fragment-provider"></a>在 UI 自动化片段提供程序中启用导航
 > [!NOTE]
@@ -30,4 +31,4 @@ ms.locfileid: "74435761"
 ## <a name="see-also"></a>另请参阅
 
 - [UI 自动化提供程序概述](ui-automation-providers-overview.md)
-- [服务器端 UI 自动化提供程序实现](server-side-ui-automation-provider-implementation.md)
+- [服务器端 UI 自动化提供程序的实现](server-side-ui-automation-provider-implementation.md)

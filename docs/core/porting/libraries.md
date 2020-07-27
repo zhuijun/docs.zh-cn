@@ -3,18 +3,18 @@ title: 将库移植到 .NET Core
 description: 了解如何将 .NET Framework 中的库项目移植到 .NET Core。
 author: cartermp
 ms.date: 12/07/2018
-ms.openlocfilehash: 68fe36e543d949dc76bdb0c19ef3482936ad9e79
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac9da2f850bf1e4e36367ad2154849a0c7efd535
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79397907"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164294"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>将 .NET Framework 库移植到 .NET Core
 
 了解如何将 .NET Framework 库代码移植到 .NET Core，它在其中跨平台运行并扩展使用它的应用的范围。
 
-## <a name="prerequisites"></a>系统必备
+## <a name="prerequisites"></a>先决条件
 
 本文假定你：
 
@@ -27,14 +27,11 @@ ms.locfileid: "79397907"
 [.NET Standard](../../standard/net-standard.md)\
 本文介绍了适用于所有 .NET 实现代码的 .NET API 正式规范。
 
-[包、元包和框架](../packages.md)\
-这篇文章介绍了 .NET Core 如何定义和使用包，以及包如何支持多个 .NET 实现代码。
-
 [使用跨平台工具开发库](../tutorials/libraries.md)\
 本文介绍如何使用 .NET Core CLI 编写库。
 
-[.NET Core 的 csproj  格式的新增内容](../tools/csproj.md)\
-本文概述了作为从移动到 csproj  和 MSBuild 的一部分，添加到项目文件的更改。
+[.NET Core 的 csproj 格式的新增内容](../tools/csproj.md)\
+本文概述了作为从移动到 csproj 和 MSBuild 的一部分，添加到项目文件的更改。
 
 [移植到 .NET Core - 分析第三方依赖项](third-party-deps.md)\
 本文介绍了第三方依赖项的可移植性及 NuGet 包依赖项无法在 .NET Core 上运行时要执行的操作。
@@ -45,8 +42,8 @@ ms.locfileid: "79397907"
 
 对于每个想要移植的项目，请在 Visual Studio 中执行以下操作：
 
-1. 右键单击该项目，然后选择“属性”  。
-1. 在“目标框架”  下拉列表中，选择“.NET Framework 4.7.2”  。
+1. 右键单击该项目，然后选择“属性”。
+1. 在“目标框架”下拉列表中，选择“.NET Framework 4.7.2”。
 1. 重新编译该项目。
 
 因为项目现在面向 .NET Framework 4.7.2，因此可使用该版本的 .NET Framework 作为移植代码的基准。
@@ -120,11 +117,11 @@ ms.locfileid: "79397907"
 
 ## <a name="recommended-approach"></a>推荐的方法
 
-从根本上讲，移植工作在很大程度上取决于生成 .NET Framework 代码的方式。 移植代码的一个好方法是从库的基项  开始，这是代码的基础组件。 这可能是数据模型或某些其他内容直接或间接使用的基本类和方法。
+从根本上讲，移植工作在很大程度上取决于生成 .NET Framework 代码的方式。 移植代码的一个好方法是从库的基项开始，这是代码的基础组件。 这可能是数据模型或某些其他内容直接或间接使用的基本类和方法。
 
 1. 移植测试项目，该项目测试当前正在移植的库层。
 1. 将库中的基项复制到新的 .NET Core 项目，然后选择想要支持的 .NET Standard 版本。
-1. 进行任何所需的更改，使代码进行编译。 大部分内容可能会要求将 NuGet 包依赖项添加到 csproj  文件。
+1. 进行任何所需的更改，使代码进行编译。 大部分内容可能会要求将 NuGet 包依赖项添加到 csproj 文件。
 1. 运行测试并进行任何所需调整。
 1. 选择下一层代码进行移植，并重复前面的步骤。
 

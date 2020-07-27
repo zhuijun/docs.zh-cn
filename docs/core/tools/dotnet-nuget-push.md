@@ -3,12 +3,12 @@ title: dotnet nuget push 命令
 description: dotnet nuget push 命令可将包推送到服务器并发布。
 author: karann-msft
 ms.date: 02/14/2020
-ms.openlocfilehash: 1e7831de4c041591b3602e405418f89f1d1d27d1
-ms.sourcegitcommit: 957c49696eaf048c284ef8f9f8ffeb562357ad95
+ms.openlocfilehash: 608cd05d94dd6b5cdc53d582cfaa0407f011ff37
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/07/2020
-ms.locfileid: "82895454"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925509"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
@@ -22,7 +22,7 @@ ms.locfileid: "82895454"
 
 ```dotnetcli
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output]
-    [--interactive] [-k|--api-key <API_KEY>] [-n|--no-symbols]
+    [--interactive] [-k|--api-key <API_KEY>] [-n|--no-symbols true]
     [--no-service-endpoint] [-s|--source <SOURCE>] [--skip-duplicate]
     [-sk|--symbol-api-key <API_KEY>] [-ss|--symbol-source <SOURCE>]
     [-t|--timeout <TIMEOUT>]
@@ -64,7 +64,7 @@ dotnet nuget push -h|--help
 
   服务器的 API 密钥。
 
-- **`-n|--no-symbols`**
+- **`-n|--no-symbols true`**
 
   不推送符号（即使存在）。
 

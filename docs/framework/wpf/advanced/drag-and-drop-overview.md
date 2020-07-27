@@ -1,5 +1,6 @@
 ---
 title: 拖放概述
+description: 了解 Windows Presentation Foundation 应用程序中的拖放支持，它们允许用户将对象拖到用户界面中的某个区域。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - drag-and-drop [WPF], events
 - drop targets [WPF], drag-and-drop
 ms.assetid: 1a5b27b0-0ac5-4cdf-86c0-86ac0271fa64
-ms.openlocfilehash: dd42af77300a7a93bbcbfa4c8f1fc365fc3f5da1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 63384e79d8a198e4cc9507ca3266c484c0506e2c
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79185987"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168073"
 ---
 # <a name="drag-and-drop-overview"></a>拖放概述
 本主题概述 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 应用程序中的拖放支持。 拖放通常指一种数据传输方法：使用鼠标（或一些其他指针设备）选择一个或多个对象，将其拖至 [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] 中的某些所需拖放目标之上并放置。  
@@ -28,9 +29,9 @@ ms.locfileid: "79185987"
   
  可借助拖放操纵的对象的类型和数量是完全任意的。 例如，文件、文件夹和内容选择是利用拖放操作操纵的一些常见对象。  
   
- 拖放操作期间执行的特定操作特定于应用程序，并且通常由上下文而定。  例如，将文件选择从同一存储设备上的一个文件夹拖动到另一个文件夹，默认情况下会移动文件，而将文件从通用命名约定 （UNC） 共享拖动到本地文件夹，默认情况下复制文件。  
+ 拖放操作期间执行的特定操作特定于应用程序，并且通常由上下文而定。  例如，默认情况下，在同一存储设备上将选择的文件从一个文件夹拖动到另一个文件夹会移动文件。默认情况下，将文件从通用命名约定（UNC）共享拖到本地文件夹会复制这些文件。  
   
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 提供的拖放设施拥有高度的灵活性并可自定义，以便支持各种拖放方案。  拖放支持在单个应用程序内或不同应用程序之间操作对象。 还完全支持在应用程序和其他[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]Windows 应用程序之间进行拖放。  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 提供的拖放设施拥有高度的灵活性并可自定义，以便支持各种拖放方案。  拖放支持在单个应用程序内或不同应用程序之间操作对象。 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]也完全支持应用程序和其他 Windows 应用程序之间的拖放。  
   
  在 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 中，任何 <xref:System.Windows.UIElement> 或 <xref:System.Windows.ContentElement> 都可以参与拖放。 拖放操作所需的事件和方法是在 <xref:System.Windows.DragDrop> 类中定义的。 <xref:System.Windows.UIElement> 和 <xref:System.Windows.ContentElement> 类包含 <xref:System.Windows.DragDrop> 附加事件的别名，从而在 <xref:System.Windows.UIElement> 或 <xref:System.Windows.ContentElement> 作为基元素继承时，这些事件出现在类成员列表中。 附加到这些事件的事件处理程序会附加到基础 <xref:System.Windows.DragDrop> 附加事件，并接收相同的事件数据实例。 有关详细信息，请参阅 <xref:System.Windows.UIElement.Drop?displayProperty=nameWithType> 事件。  
   
@@ -218,6 +219,6 @@ ms.locfileid: "79185987"
 ## <a name="see-also"></a>另请参阅
 
 - <xref:System.Windows.Clipboard>
-- [演练：对用户控件启用拖放功能](walkthrough-enabling-drag-and-drop-on-a-user-control.md)
-- [如何使用主题](drag-and-drop-how-to-topics.md)
+- [演练：在用户控件上启用拖放功能](walkthrough-enabling-drag-and-drop-on-a-user-control.md)
+- [操作指南主题](drag-and-drop-how-to-topics.md)
 - [拖放](drag-and-drop.md)

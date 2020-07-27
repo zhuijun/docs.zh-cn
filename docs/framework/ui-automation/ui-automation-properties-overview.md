@@ -1,16 +1,17 @@
 ---
 title: UI 自动化属性概述
+description: 请参阅 Microsoft UI 自动化属性的广泛概述。 了解属性标识符、按类别、本地化和属性和事件列出的属性。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, properties
 - properties, UI Automation
 ms.assetid: a6c31d7b-b33e-49b3-b5c1-31a345f9b7c8
-ms.openlocfilehash: 8a44fd89017002ae51d9b15a22bac97668d0ff90
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 17d780c059530be8c91890302ea4066de2d4aa73
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179873"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163208"
 ---
 # <a name="ui-automation-properties-overview"></a>UI 自动化属性概述
 > [!NOTE]
@@ -22,15 +23,15 @@ ms.locfileid: "79179873"
   
 - [客户端的 UI 自动化属性](ui-automation-properties-for-clients.md)  
   
-- [服务器端 UI 自动化提供程序实现](server-side-ui-automation-provider-implementation.md)  
+- [服务器端 UI 自动化提供程序的实现](server-side-ui-automation-provider-implementation.md)  
   
 <a name="Property_Identifiers"></a>
 ## <a name="property-identifiers"></a>属性标识符  
- 每个属性都由一个数字和名称标识。 属性的名称仅用于调试和诊断。 提供程序使用数字 ID 来标识传入的属性请求。 但是，客户端应用程序只使用封装了数字和名称的 <xref:System.Windows.Automation.AutomationProperty>来标识它们希望检索的属性。  
+ 每个属性都由一个数字和名称标识。 属性的名称仅用于调试和诊断。 提供程序使用数字 Id 来标识传入的属性请求。 但是，客户端应用程序只使用封装了数字和名称的 <xref:System.Windows.Automation.AutomationProperty>来标识它们希望检索的属性。  
   
  表示特定属性的<xref:System.Windows.Automation.AutomationProperty> 对象在各个类中以字段的形式提供。 出于安全原因，UI 自动化提供程序将从 Uiautomationtypes.dll 中包含的一组单独的类中获取这些对象。  
   
- 下表按包含指示的<xref:System.Windows.Automation.AutomationProperty>类对属性进行分类。  
+ 下表按包含 id 的类对属性进行分类 <xref:System.Windows.Automation.AutomationProperty> 。  
   
 |属性的种类|客户端从中获取 ID|提供程序从中获取 ID|  
 |-------------------------|--------------------------|----------------------------|  
@@ -53,7 +54,7 @@ ms.locfileid: "79179873"
   
 <a name="Properties_by_Category"></a>
 ## <a name="properties-by-category"></a>按类别排列的属性  
- 下表对 在 和<xref:System.Windows.Automation.AutomationElement><xref:System.Windows.Automation.AutomationElementIdentifiers>中找到其指示的属性进行分类。 这些属性是所有控件共有的。 很少一些属性在提供程序应用程序的生存期内可能是静态的；大多数动态属性都与控件模式关联。  
+ 下表对其 Id 在和中找到的属性进行分类 <xref:System.Windows.Automation.AutomationElement> <xref:System.Windows.Automation.AutomationElementIdentifiers> 。 这些属性是所有控件共有的。 很少一些属性在提供程序应用程序的生存期内可能是静态的；大多数动态属性都与控件模式关联。  
   
  除 **和** 之外， <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A><xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>“属性访问”列还列出了每个属性的任何其他访问器。 有关在客户端应用程序中获取属性的详细信息，请参阅 [UI Automation Properties for Clients](ui-automation-properties-for-clients.md)。  
   
@@ -163,7 +164,7 @@ ms.locfileid: "79179873"
 
 - [在 UI 自动化客户端中缓存](caching-in-ui-automation-clients.md)
 - [客户端的 UI 自动化属性](ui-automation-properties-for-clients.md)
-- [服务器端 UI 自动化提供程序实现](server-side-ui-automation-provider-implementation.md)
+- [服务器端 UI 自动化提供程序的实现](server-side-ui-automation-provider-implementation.md)
 - [基于属性条件查找 UI 自动化元素](find-a-ui-automation-element-based-on-a-property-condition.md)
-- [Return Properties from a UI Automation Provider](return-properties-from-a-ui-automation-provider.md)
+- [从 UI 自动化提供程序返回属性](return-properties-from-a-ui-automation-provider.md)
 - [从 UI 自动化提供程序中引发事件](raise-events-from-a-ui-automation-provider.md)

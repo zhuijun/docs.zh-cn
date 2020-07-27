@@ -9,12 +9,12 @@ helpviewer_keywords:
 - threads and fibers [.NET]
 - managed threading
 ms.assetid: 4fb6452f-c071-420d-9e71-da16dee7a1eb
-ms.openlocfilehash: 6ab0cc7c1ec2f7bbc633ac966dd18ab3ea7a395b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: de823297540d5ce3740a26614dbb9a82881decf3
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73127545"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924378"
 ---
 # <a name="managed-and-unmanaged-threading-in-windows"></a>Windows 中的托管和非托管线程处理
 
@@ -23,9 +23,6 @@ ms.locfileid: "73127545"
  当非托管线程进入运行时（如通过 COM 可调用包装）时，系统将检查该线程的线程本地存储区以查找内部托管 <xref:System.Threading.Thread> 对象。 若找到一个对象，运行时就会注意到该线程。 但如果一个也找不到，则运行时将生成新的 <xref:System.Threading.Thread> 对象并将其安装在该线程的线程本地存储区中。  
   
  在托管线程处理中， <xref:System.Threading.Thread.GetHashCode%2A?displayProperty=nameWithType> 是稳定的托管线程标识。 在线程的生存期内，它不会与来自其他任何线程的值相冲突，不管你是从哪个应用程序域获取该值。  
-  
-> [!NOTE]
-> 因为非托管宿主可以控制托管线程和非托管线程之间的关系，所以操作系统 **ThreadId** 与托管线程之间没有固定的关系。 具体而言，一个复杂的主机可以使用 Fiber API 针对同一操作系统线程调度多个托管线程，或在不同的操作系统线程之间移动托管线程。  
   
 ## <a name="mapping-from-win32-threading-to-managed-threading"></a>从 Win32 线程处理到托管线程处理的映射
 
@@ -71,7 +68,7 @@ ms.locfileid: "73127545"
 
 .NET 线程处理模型不支持[纤程](/windows/desktop/procthread/fibers)。 不得调用通过使用纤程实现的任何非托管函数。 此类调用可能会导致 .NET 运行时崩溃。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Threading.Thread.ApartmentState%2A?displayProperty=nameWithType>
 - <xref:System.Threading.ThreadState>

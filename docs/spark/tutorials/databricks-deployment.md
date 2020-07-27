@@ -4,12 +4,12 @@ description: 了解如何将 .NET for Apache Spark 应用程序部署到 Databri
 ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 9e0b99b6706bf51adaa6e3795d1c81179e14cb7a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 66a5493f0084f5fa86c3eb928d2e4a4b4999e764
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618332"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924586"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>教程：将 .NET for Apache Spark 应用程序部署到 Databricks
 
@@ -154,7 +154,7 @@ Databricks CLI 安装完毕之后，接下来需要设置身份验证详细信�
    ```console
    databricks fs cp db-init.sh dbfs:/spark-dotnet/db-init.sh
    databricks fs cp install-worker.sh dbfs:/spark-dotnet/install-worker.sh
-   databricks fs cp Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-0.6.0.tar.gz dbfs:/spark-dotnet/   Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz
+   databricks fs cp Microsoft.Spark.Worker.netcoreapp3.1.linux-x64-0.6.0.tar.gz dbfs:/spark-dotnet/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz
    ```
 
 2. 运行以下命令以上传群集运行应用所需的其余文件：已压缩的发布文件夹、input.txt 和 microsoft-spark-2.4.x-0.3.1.jar 。
@@ -164,7 +164,7 @@ Databricks CLI 安装完毕之后，接下来需要设置身份验证详细信�
    databricks fs cp input.txt dbfs:/input.txt
 
    cd mySparkApp\bin\Release\netcoreapp3.1\ubuntu.16.04-x64 directory
-   databricks fs cp mySparkApp.zip dbfs:/spark-dotnet/publish.zip
+   databricks fs cp publish.zip dbfs:/spark-dotnet/publish.zip
    databricks fs cp microsoft-spark-2.4.x-0.6.0.jar dbfs:/spark-dotnet/microsoft-spark-2.4.x-0.6.0.jar
    ```
 

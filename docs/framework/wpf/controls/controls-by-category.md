@@ -1,20 +1,21 @@
 ---
 title: 按类别分类的控件
+description: 查看分组到类别中 Windows Presentation Foundation 的控件，这些控件可帮助您通过比较类似控件来选择适当的控件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [WPF], listed by category
 ms.assetid: f8a1f78e-d9fa-4367-9ec6-f084577e83bb
-ms.openlocfilehash: 5958793015d409678b67cdc7eedcb4289f5e885c
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 226e037dc26f817b96a5aa869565f08ee6ff6574
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636206"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166290"
 ---
 # <a name="controls-by-category"></a>按类别分类的控件
 Windows Presentation Foundation （WPF）控件可以逻辑分组为多个类别。 可以使用这些类别来为方案选择适当的控件，从而有助于查看具有相同用法模式或功能的控件。  
   
-## <a name="layout"></a>布局  
+## <a name="layout"></a>Layout  
  布局控件用于管理子元素的大小、尺寸、位置和排列。  
   
 - <xref:System.Windows.Controls.Border>  
@@ -56,7 +57,7 @@ Windows Presentation Foundation （WPF）控件可以逻辑分组为多个类别
 - <xref:System.Windows.Controls.WrapPanel>  
   
 ## <a name="buttons"></a>按钮  
- 按钮是最基本的用户界面控件之一。 当用户单击应用程序时，应用程序通常会在 <xref:System.Windows.Controls.Primitives.ButtonBase.Click> 事件中执行一些任务。  
+ 按钮是最基本的用户界面控件之一。 当用户单击应用程序时，这些应用程序通常会在 <xref:System.Windows.Controls.Primitives.ButtonBase.Click> 发生事件时执行一些任务。  
   
 - <xref:System.Windows.Controls.Button>  
   

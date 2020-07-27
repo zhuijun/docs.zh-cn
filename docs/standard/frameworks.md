@@ -4,12 +4,12 @@ description: 了解用于 .NET Core 应用和库的目标框架。
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: 33beb5606cbf857cc41b739f256482b0298f1fb1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c1fd3a6fe07526d9f6828851c591ed0155c79a19
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79398795"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164304"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>SDK 样式项目中的目标框架
 
@@ -129,7 +129,6 @@ public class MyClass
 
 ## <a name="see-also"></a>另请参阅
 
-- [包、元包和框架](../core/packages.md)
 - [使用跨平台工具开发库](../core/tutorials/libraries.md)
 - [.NET Standard](net-standard.md)
 - [.NET Core 版本控制](../core/versions/index.md)

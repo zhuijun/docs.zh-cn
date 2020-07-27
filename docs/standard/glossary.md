@@ -3,12 +3,12 @@ title: .NET 术语表
 description: 了解 .NET 文档中所用的选定术语的含义。
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 11ab0de4757a23c940ae04418a5a82ea79f71761
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 529b1d9142ddf7982a6712c355c10666f0414d73
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287449"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163115"
 ---
 # <a name="net-glossary"></a>.NET 术语表
 
@@ -139,8 +139,6 @@ C# 等较高级的 .NET 语言编译为称为中间语言 (IL) 的硬件无关�
 ## <a name="metapackage"></a>元包
 
 一个 NuGet 包，没有自己的库，而只是一个依赖项列表。 所含包可选择建立目标框架的 API。
-
-请参阅[包、元包和框架](../core/packages.md)
 
 ## <a name="mono"></a>Mono
 

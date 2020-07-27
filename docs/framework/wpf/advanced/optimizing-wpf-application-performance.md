@@ -1,5 +1,6 @@
 ---
-title: 优化应用性能
+title: 优化应用程序性能
+description: 使用这些资源提高 Windows Presentation Foundation 应用程序的性能，例如规划性能和充分利用硬件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application rendering [WPF], performance
@@ -7,18 +8,18 @@ helpviewer_keywords:
 - applications [WPF], optimizing
 - WPF application [WPF], optimizing
 ms.assetid: ac8c6aa3-3c68-4a24-9827-3b6c829c1ebf
-ms.openlocfilehash: 54d69e87ef2a9c5318e394422e3bcfcabcc76210
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 165caaf102a66988db0254839a947b8e262a386d
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81646247"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166333"
 ---
 # <a name="optimizing-wpf-application-performance"></a>优化 WPF 应用程序性能
-本节旨在为[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)]寻求提高应用程序性能的应用程序开发人员提供参考。 如果您是 Microsoft .NET 框架的开发人员，[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]并且 应首先熟悉这两个平台。 本节假定两者的工作知识，并编写给已经了解到足以启动和运行其应用程序的程序员。  
+本部分旨在作为 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] 正在寻找提高应用程序性能的方法的应用程序开发人员的参考。 如果你是 Microsoft .NET 框架的新手的开发人员 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ，则应首先熟悉这两个平台。 本部分假设同时了解这两种情况，并为已知道足以启动并运行应用程序的程序员编写这些内容。  
   
 > [!NOTE]
-> 本节中提供的性能数据基于[!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]在具有 512 RAM 的 2.8 GHz PC 和 ATI Radeon 9700 显卡上运行的应用程序。  
+> 本部分中提供的性能数据基于 [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] 2.8 GHZ 电脑上运行的应用程序，其中包含 512 RAM 和 ATI Radeon 9700 图形卡。  
   
 ## <a name="in-this-section"></a>本节内容  
  [规划应用程序性能](planning-for-application-performance.md)  
@@ -37,7 +38,7 @@ ms.locfileid: "81646247"
   
  [数据绑定](optimizing-performance-data-binding.md)  
   
- [控件](optimizing-performance-controls.md)  
+ [控制](optimizing-performance-controls.md)  
   
  [其他性能建议](optimizing-performance-other-recommendations.md)  
   

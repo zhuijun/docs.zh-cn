@@ -2,12 +2,12 @@
 title: dotnet-trace 工具 - .NET Core
 description: 安装和使用 dotnet-trace 命令行工具。
 ms.date: 11/21/2019
-ms.openlocfilehash: 6880c3721e4cab12677bd02c82ca944cc9812670
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: 6dd968dc49522229dca02c0dc6f3de898026dd82
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888080"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924846"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>dotnet-trace 性能分析实用工具
 
@@ -48,12 +48,12 @@ dotnet-trace [-h, --help] [--version] <command>
 
 ## <a name="commands"></a>命令
 
-| 命令                                                     |
-| ----------------------------------------------------------- |
-| [dotnet-trace collect](#dotnet-trace-collect)               |
-| [dotnet-trace convert](#dotnet-trace-convert)               |
-| [dotnet-trace ps](#dotnet-trace-ps) |
-| [dotnet-trace list-profiles](#dotnet-trace-list-profiles)   |
+| 命令                                                   |
+|-----------------------------------------------------------|
+| [dotnet-trace collect](#dotnet-trace-collect)             |
+| [dotnet-trace convert](#dotnet-trace-convert)             |
+| [dotnet-trace ps](#dotnet-trace-ps)                       |
+| [dotnet-trace list-profiles](#dotnet-trace-list-profiles) |
 
 ## <a name="dotnet-trace-collect"></a>dotnet-trace collect
 

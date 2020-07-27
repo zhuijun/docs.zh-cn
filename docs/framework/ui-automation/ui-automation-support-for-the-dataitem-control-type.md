@@ -1,19 +1,20 @@
 ---
-title: 对 DataItem 控件类型的 UI 自动化支持
+title: UI 自动化对 DataItem 控件类型的支持
+description: 获取有关 UI 自动化对 DataItem 控件类型的支持的信息。 了解必需的树结构、属性、控件模式和事件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, Data Item control type
 - Data Item control type
 - control types, Data Item
 ms.assetid: 181708fd-2595-4c43-9abd-75811627d64c
-ms.openlocfilehash: d950783b91252f1bcbb1ff818aff5cf8472218b7
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: c1b149e1033303e98bd150e62c6344b60eec1f93
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789532"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167977"
 ---
-# <a name="ui-automation-support-for-the-dataitem-control-type"></a>对 DataItem 控件类型的 UI 自动化支持
+# <a name="ui-automation-support-for-the-dataitem-control-type"></a>UI 自动化对 DataItem 控件类型的支持
 > [!NOTE]
 > 本文档适用于想要使用 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 命名空间中定义的托管 <xref:System.Windows.Automation> 类的 .NET Framework 开发人员。 有关 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]的最新信息，请参阅 [Windows 自动化 API：UI 自动化](/windows/win32/winauto/entry-uiauto-win32)。  
   
@@ -21,7 +22,7 @@ ms.locfileid: "76789532"
   
  联系人列表中的条目是数据项控件的一个示例。 数据项控件包含最终用户感兴趣的信息。 它比简单列表项更复杂，因为它包含更丰富的信息。  
   
- 以下几节定义了 DataItem 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 要求适用于所有数据项控件，无论 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]、Win32 还是 Windows 窗体。  
+ 以下几节定义了 DataItem 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]要求适用于所有数据项控件，无论控件是 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] Win32 还是 Windows 窗体。  
   
 ## <a name="required-ui-automation-tree-structure"></a>必需的 UI 自动化树结构  
  下表描述了与数据项控件有关的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的控件视图和内容视图，以及每个视图中可包含的内容。 有关 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的详细信息，请参阅 [UI Automation Tree Overview](ui-automation-tree-overview.md)。  
@@ -35,7 +36,7 @@ ms.locfileid: "76789532"
 ## <a name="required-ui-automation-properties"></a>必需的 UI 自动化属性  
  下表列出其值或定义与数据项控件尤其相关的属性。 有关 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性的详细信息，请参阅 [UI Automation Properties for Clients](ui-automation-properties-for-clients.md)。  
   
-|Property|{2&gt;值&lt;2}|注释|  
+|属性|值|注释|  
 |--------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|请参阅注释。|此属性的值在应用程序的所有控件中都必须保持唯一。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|请参阅注释。|包含整个控件的最外层矩形。|  
@@ -53,50 +54,50 @@ ms.locfileid: "76789532"
 ## <a name="required-ui-automation-control-patterns"></a>必需的 UI 自动化控件模式  
  下表列出需要由所有数据项控件支持的 [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] 控件模式。 有关控件模式的详细信息，请参阅 [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md)。  
   
-|控件模式|支持|注释|  
+|控件模式|支持|说明|  
 |---------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|视情况而定|如果可以展开或折叠数据项以显示和隐藏信息，则必须支持展开/折叠模式。|  
-|<xref:System.Windows.Automation.Provider.IGridItemProvider>|视情况而定|当数据项的集合在空间上可以逐项导航的容器内可用时，数据项将支持网格项模式。|  
-|<xref:System.Windows.Automation.Provider.IScrollItemProvider>|视情况而定|所有数据项在其数据容器内的项比适合屏幕的项多时，支持滚动到视图的功能。|  
+|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|依赖的对象|如果可以展开或折叠数据项以显示和隐藏信息，则必须支持展开/折叠模式。|  
+|<xref:System.Windows.Automation.Provider.IGridItemProvider>|依赖的对象|当数据项的集合在空间上可以逐项导航的容器内可用时，数据项将支持网格项模式。|  
+|<xref:System.Windows.Automation.Provider.IScrollItemProvider>|依赖的对象|所有数据项在其数据容器内的项比适合屏幕的项多时，支持滚动到视图的功能。|  
 |<xref:System.Windows.Automation.Provider.ISelectionItemProvider>|是|所有数据项必须支持选择项模式以指示何时选定项。|  
-|<xref:System.Windows.Automation.Provider.ITableItemProvider>|视情况而定|如果数据项包含在数据网格控件类型内，则它将支持此模式。|  
-|<xref:System.Windows.Automation.Provider.IToggleProvider>|视情况而定|如果数据项包含可以重复循环的状态。|  
-|<xref:System.Windows.Automation.Provider.IValueProvider>|视情况而定|如果数据项的主文本是可编辑的，则必须支持 Value 模式。|  
+|<xref:System.Windows.Automation.Provider.ITableItemProvider>|依赖的对象|如果数据项包含在数据网格控件类型内，则它将支持此模式。|  
+|<xref:System.Windows.Automation.Provider.IToggleProvider>|依赖的对象|如果数据项包含可以重复循环的状态。|  
+|<xref:System.Windows.Automation.Provider.IValueProvider>|依赖的对象|如果数据项的主文本是可编辑的，则必须支持 Value 模式。|  
   
 ## <a name="working-with-data-items-in-large-lists"></a>使用大型列表中的数据项  
  大型列表通常是 [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] 框架内帮助提高性能的已虚拟化数据。 因此，UI 自动化客户端不能使用 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 查询功能以在其他项容器中的方式来擦除完整树的内容。 客户端应该将项滚动到视图（或展开控件以显示所有有价值的选项），然后才从数据项访问完整的信息。  
   
- 当对数据项的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 元素调用 `SetFocus` 时，Microsoft Windows 资源管理器事例将成功返回，并将焦点设置为数据项子树内的编辑。  
+ 当 `SetFocus` 对数据项调用 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 元素时，Microsoft Windows 资源管理器用例将成功返回，并将焦点设置为数据项子树内的 "编辑"。  
   
 ## <a name="required-ui-automation-events"></a>必需的 UI 自动化事件  
  下表列出需要由所有数据项控件支持的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件。 有关事件的详细信息，请参阅 [UI Automation Events Overview](ui-automation-events-overview.md)。  
   
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件|支持|注释|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必需|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必须|无|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件。|必需|无|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> 属性更改事件。|必需|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必需|无|  
-|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|视情况而定|无|  
-|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> 属性更改事件。|视情况而定|无|  
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|必需|无|  
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|必需|无|  
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|必需|无|  
-|<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> 属性更改事件。|视情况而定|无|  
-|<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> 属性更改事件。|视情况而定|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必须|无|  
+|<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|依赖的对象|无|  
+|<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> 属性更改事件。|依赖的对象|无|  
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|必须|无|  
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|必须|无|  
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|必须|无|  
+|<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> 属性更改事件。|依赖的对象|无|  
+|<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> 属性更改事件。|依赖的对象|无|  
   
 ## <a name="dataitem-control-type-example"></a>DataItem 控件类型示例  
  下图说明了列表视图控件中的 DataItem 控件类型，其支持丰富的列表信息。  
   
- ![包含两个数据项的列表视图控件图形](./media/uiauto-data-grid-detailed.GIF "uiauto_data_grid_detailed")  
+ ![具有两个数据项的 List View 控件图](./media/uiauto-data-grid-detailed.GIF "uiauto_data_grid_detailed")  
   
  与数据项控件相关的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的控件视图和内容视图如下所示。 每个自动化元素的控件模式均显示在括号中。 “Contoso”组也是数据网格宿主控件的网格的一部分。  
   
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树 - 控件视图|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树 - 内容视图|  
 |------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|  
-|-Group "Contoso" （表、网格）<br />-DataItem "Accounts 应收 .doc" （TableItem、GridItem、SelectionItem、Invoke）<br />-"应收帐款 .doc" 图像<br />-Edit "Name" （TableItem，GridItem，Value "Accounts 应收"）<br />-Edit "修改日期" （TableItem，GridItem，Value "8/25/2006 3:29 PM"）<br />-Edit "Size" （GridItem，TableItem，Value "11.0 KB）<br />-DataItem "Accounts Accounts" （TableItem，GridItem，SelectionItem，Invoke）<br />-   ...|-Group "Contoso" （表、网格）<br />-DataItem "Accounts 应收 .doc" （TableItem、GridItem、SelectionItem、Invoke）<br />-"应收帐款 .doc" 图像<br />-Edit "Name" （TableItem，GridItem，Value "Accounts 应收"）<br />-Edit "修改日期" （TableItem，GridItem，Value "8/25/2006 3:29 PM"）<br />-Edit "Size" （GridItem，TableItem，Value "11.0 KB）<br />-DataItem "Accounts Accounts" （TableItem，GridItem，SelectionItem，Invoke）<br />-   …|  
+|-Group "Contoso" （表、网格）<br />-DataItem "Accounts Receivable.doc" （TableItem、GridItem、SelectionItem、Invoke）<br />-Image "Accounts Receivable.doc"<br />-Edit "Name" （TableItem，GridItem，Value "Accounts Receivable.doc"）<br />-Edit "修改日期" （TableItem，GridItem，Value "8/25/2006 3:29 PM"）<br />-Edit "Size" （GridItem，TableItem，Value "11.0 KB）<br />-DataItem "Accounts Payable.doc" （TableItem、GridItem、SelectionItem、Invoke）<br />-   ...|-Group "Contoso" （表、网格）<br />-DataItem "Accounts Receivable.doc" （TableItem、GridItem、SelectionItem、Invoke）<br />-Image "Accounts Receivable.doc"<br />-Edit "Name" （TableItem，GridItem，Value "Accounts Receivable.doc"）<br />-Edit "修改日期" （TableItem，GridItem，Value "8/25/2006 3:29 PM"）<br />-Edit "Size" （GridItem，TableItem，Value "11.0 KB）<br />-DataItem "Accounts Payable.doc" （TableItem、GridItem、SelectionItem、Invoke）<br />-   …|  
   
  如果一个网格表示可选择项的列表，则可以使用 ListItem 控件类型而不是 DataItem 控件类型公开相应的 UI 元素。 在前面的示例中，可以通过将组（“Contoso”）下的 DataItem 元素（“Accounts Receivable.doc”和“Accounts Payable.doc”）作为 ListItem 控件类型公开来对其进行改进，因为该类型已支持 SelectionItem 控件模式。  
   

@@ -1,5 +1,6 @@
 ---
 title: 在客户端应用程序中实现 UI 自动化提供程序
+description: 请参阅如何在应用程序中实现客户端 UI 自动化提供程序的示例。 请注意，这种情况并不常见。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - client-side UI Automation provider, implementation within applications
 - UI Automation, implementing client-side provider within application
 ms.assetid: f325f0d8-1715-41ea-85ca-45b82ffea8bc
-ms.openlocfilehash: 09b33b78ef8f0b62ef4f1e24c56faae783f1e8dc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c604b68021886abdf06360bfb8afefe3640c12fe
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435481"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164118"
 ---
 # <a name="implement-ui-automation-providers-in-a-client-application"></a>在客户端应用程序中实现 UI 自动化提供程序
 > [!NOTE]

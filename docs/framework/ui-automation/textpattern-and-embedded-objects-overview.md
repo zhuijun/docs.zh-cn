@@ -1,5 +1,6 @@
 ---
 title: TextPattern 和嵌入式对象概述
+description: 阅读有关 UI 自动化如何在文本文档或容器中使用 TextPattern 和 TextPatternRange 公开嵌入对象或子元素的概述。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, TextPattern class
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - accessing embedded objects
 - embedded objects, UI Automation
 ms.assetid: 93fdfbb9-0025-4b72-8ca0-0714adbb70d5
-ms.openlocfilehash: 7a3338a08d06320acdc2acb0647bc91541448d7d
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 0a06fb72b280fc61faeb12f6f2c3a05d957ec7b9
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201070"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87163561"
 ---
 # <a name="textpattern-and-embedded-objects-overview"></a>TextPattern 和嵌入式对象概述
 > [!NOTE]
@@ -148,7 +149,7 @@ ms.locfileid: "84201070"
 |具有参数 (1,1) 的<xref:System.Windows.Automation.GridPattern.GetItem%2A> 。|返回表示表格单元格内容的 <xref:System.Windows.Automation.AutomationElement> 。在本例中，该元素是文本控件。|  
 |<xref:System.Windows.Automation.TextPattern.RangeFromChild%2A> ，其中 <xref:System.Windows.Automation.AutomationElement> 是由上一个 `GetItem` 方法返回的对象。|返回“Y”。|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - <xref:System.Windows.Automation.TextPattern>
 - <xref:System.Windows.Automation.Text.TextPatternRange>

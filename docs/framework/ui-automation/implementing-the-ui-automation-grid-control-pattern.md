@@ -1,17 +1,18 @@
 ---
 title: 实现 UI 自动化 Grid 控件模式
+description: 了解在 UI 自动化中实现 GridPattern grid 控件模式的准则和约定。 了解如何实现 IGridProvider 接口。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, grid
 - grid control pattern
 - UI Automation, grid control pattern
 ms.assetid: 234d11a0-7ce7-4309-8989-2f4720e02f78
-ms.openlocfilehash: 04f3ee1e01054df6a13ab2391e14a6a7f7274bb9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c7aae8e8070c989c4b36e0581aa5f48f51416f97
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180219"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165874"
 ---
 # <a name="implementing-the-ui-automation-grid-control-pattern"></a>实现 UI 自动化 Grid 控件模式
 > [!NOTE]
@@ -46,10 +47,10 @@ ms.locfileid: "79180219"
 ## <a name="required-members-for-igridprovider"></a>IGridProvider 必需的成员  
  实现 IGridProvider 接口需要以下属性和方法。  
   
-|必需的成员|类型|说明|  
+|必需的成员|类型|注释|  
 |----------------------|----------|-----------|  
-|<xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A>|properties|无|  
-|<xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>|properties|无|  
+|<xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A>|属性|无|  
+|<xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>|属性|无|  
 |<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A>|方法|无|  
   
  没有与此控件模式关联的事件。  
@@ -58,10 +59,10 @@ ms.locfileid: "79180219"
 ## <a name="exceptions"></a>例外  
  提供程序必须引发以下异常。  
   
-|异常类型|条件|  
+|例外类型|条件|  
 |--------------------|---------------|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> - 如果请求的行坐标大于<xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A>或列坐标大于 。 <xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A>|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> - 如果请求的行坐标或列坐标中的任何一个小于零。|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> -如果请求的行坐标大于 <xref:System.Windows.Automation.Provider.IGridProvider.RowCount%2A> 或列坐标大于，则为 <xref:System.Windows.Automation.Provider.IGridProvider.ColumnCount%2A> 。|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IGridProvider.GetItem%2A><br /><br /> -如果请求的行坐标或列坐标都小于零。|  
   
 ## <a name="see-also"></a>另请参阅
 

@@ -1,17 +1,18 @@
 ---
 title: 实现 UI 自动化 RangeValue 控件模式
+description: 查看在 UI 自动化中实现 RangeValue 控件模式的准则和约定。 请参阅 Irangevalueprovider 必需接口的必需成员。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, Range Value
 - Range Value control pattern
 - UI Automation, Range Value control pattern
 ms.assetid: 225feaa4-918e-418b-938e-7389338d0a69
-ms.openlocfilehash: 847a8aae3fd0c3d6965c910d19a4cec11cd2a3b7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ccb6aeb5f8451975d7e2e9649bbb82c0c3ae23d5
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180185"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164077"
 ---
 # <a name="implementing-the-ui-automation-rangevalue-control-pattern"></a>实现 UI 自动化 RangeValue 控件模式
 > [!NOTE]
@@ -37,12 +38,12 @@ ms.locfileid: "79180185"
   
 |必需的成员|成员类型|说明|  
 |---------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty>|properties|无|  
-|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty>|properties|无|  
-|<xref:System.Windows.Automation.RangeValuePattern.LargeChangeProperty>|properties|无|  
-|<xref:System.Windows.Automation.RangeValuePattern.SmallChangeProperty>|properties|无|  
-|<xref:System.Windows.Automation.RangeValuePattern.MaximumProperty>|properties|无|  
-|<xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>|properties|无|  
+|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty>|属性|无|  
+|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty>|属性|无|  
+|<xref:System.Windows.Automation.RangeValuePattern.LargeChangeProperty>|属性|无|  
+|<xref:System.Windows.Automation.RangeValuePattern.SmallChangeProperty>|属性|无|  
+|<xref:System.Windows.Automation.RangeValuePattern.MaximumProperty>|属性|无|  
+|<xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>|属性|无|  
 |<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A>|方法|无|  
   
  没有与此控件模式关联的事件。  
@@ -51,7 +52,7 @@ ms.locfileid: "79180185"
 ## <a name="exceptions"></a>例外  
  提供程序必须引发以下异常。  
   
-|异常类型|条件|  
+|例外类型|条件|  
 |--------------------|---------------|  
 |<xref:System.ArgumentOutOfRangeException>|使用一个大于<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A> 或小于 <xref:System.Windows.Automation.RangeValuePattern.MaximumProperty> 的值调用 <xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>。|  
   

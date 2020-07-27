@@ -1,5 +1,6 @@
 ---
 title: 注册客户端提供程序程序集
+description: 查看一个示例，该示例演示如何注册包含客户端 UI 自动化提供程序的 DLL。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - UI Automation, registering provider assemblies
 - provider assemblies, registering
 ms.assetid: a03af4d9-2771-43cc-b07b-d468dca23190
-ms.openlocfilehash: 72e1349eee90bbe5078fec037b5f29c51c84b8ec
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 034a109bb69c08883c0943b7b6ef69a397a8e7e1
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438446"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168138"
 ---
 # <a name="register-a-client-side-provider-assembly"></a>注册客户端提供程序程序集
 > [!NOTE]

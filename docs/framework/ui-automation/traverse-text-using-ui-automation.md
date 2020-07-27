@@ -1,5 +1,6 @@
 ---
 title: 使用 UI 自动化遍历文本
+description: 请参阅 Textunit.word 中的示例，了解如何使用 Microsoft UI 自动化遍历文档的文本内容。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - text, traversing
 - traversing text
 ms.assetid: 3ddb3b7b-1d6b-4dba-8678-5a68e868aadb
-ms.openlocfilehash: 71df7c8f9dde388ffc4445389e105a4ad686539f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0b4269d043fd6cd0cc5da9825714aab4ead701f9
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441872"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168082"
 ---
 # <a name="traverse-text-using-ui-automation"></a>使用 UI 自动化遍历文本
 > [!NOTE]
@@ -43,4 +44,4 @@ ms.locfileid: "74441872"
 - [使用 UI 自动化向文本框添加内容](add-content-to-a-text-box-using-ui-automation.md)
 - [使用 UI 自动化查找和突出显示文本](find-and-highlight-text-using-ui-automation.md)
 - [UI 自动化控件模式概述](ui-automation-control-patterns-overview.md)
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
+- [客户端的 UI 自动化控件模式](ui-automation-control-patterns-for-clients.md)

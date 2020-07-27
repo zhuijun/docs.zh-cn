@@ -1,5 +1,6 @@
 ---
 title: 使用 UI 自动化获取文本特性
+description: 了解如何使用 UI 自动化获取文本特性。 请参阅从文本范围获取文本特性的代码示例。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - UI Automation, getting text attributes
 - text attributes, getting
 ms.assetid: fdefc6c3-b836-4cfe-8dec-1484bfdc5551
-ms.openlocfilehash: c338f858f1715d23cad96919db4a21a6ba49710f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b48f773e27088ba4b33ad01b299d77a0992a9159
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446911"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168008"
 ---
 # <a name="obtain-text-attributes-using-ui-automation"></a>使用 UI 自动化获取文本特性
 > [!NOTE]
@@ -40,5 +41,5 @@ ms.locfileid: "74446911"
 - [使用 UI 自动化向文本框添加内容](add-content-to-a-text-box-using-ui-automation.md)
 - [使用 UI 自动化查找和突出显示文本](find-and-highlight-text-using-ui-automation.md)
 - [UI 自动化控件模式概述](ui-automation-control-patterns-overview.md)
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
+- [客户端的 UI 自动化控件模式](ui-automation-control-patterns-for-clients.md)
 - [使用 UI 自动化获取混合文本特性的详细信息](obtain-mixed-text-attribute-details-using-ui-automation.md)
