@@ -1,17 +1,18 @@
 ---
 title: 实现 UI 自动化 Dock 控件模式
+description: 了解如何实现 UI 自动化 dock 控件模式。 使用 DockPattern 控件模式公开控件的停靠属性。 实现 IDockProvider。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control patterns, dock
 - dock control pattern
 - UI Automation, dock control pattern
 ms.assetid: ea3d2212-7c8e-4dd7-bf08-73141ca2d4fb
-ms.openlocfilehash: b1213791609245209fa37e3cdcb0876c963bfeb0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8080d78c7bded3cb884f92948eb1259cda5544dc
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79180207"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165902"
 ---
 # <a name="implementing-the-ui-automation-dock-control-pattern"></a>实现 UI 自动化 Dock 控件模式
 > [!NOTE]
@@ -42,7 +43,7 @@ Visual Studio 中的停靠示例，其中“类视图”窗口为 DockPosition.R
   
 |必需的成员|成员类型|说明|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IDockProvider.DockPosition%2A>|properties|无|  
+|<xref:System.Windows.Automation.Provider.IDockProvider.DockPosition%2A>|Property|无|  
 |<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A>|方法|无|  
   
  没有与此控件模式关联的事件。  
@@ -51,11 +52,11 @@ Visual Studio 中的停靠示例，其中“类视图”窗口为 DockPosition.R
 ## <a name="exceptions"></a>例外  
  提供程序必须引发以下异常。  
   
-|异常类型|条件|  
+|例外类型|条件|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A><br /><br /> - 当控件无法执行请求的停靠样式时。|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A><br /><br /> -当控件无法执行请求的停靠样式时。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [UI 自动化控件模式概述](ui-automation-control-patterns-overview.md)
 - [在 UI 自动化提供程序中支持控件模式](support-control-patterns-in-a-ui-automation-provider.md)

@@ -1,5 +1,6 @@
 ---
 title: 演练：在 DataGrid 控件中显示 SQL Server 数据库中的数据
+description: 了解如何使用本演练从 SQL Server 数据库中获取数据，并将其显示在 Windows Presentation Foundation DataGrid 控件中。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,18 +9,18 @@ helpviewer_keywords:
 - DataGrid [WPF], displaying data from SQL Server
 - controls [WPF], DataGrid
 ms.assetid: 6810b048-0a23-4f86-bfa5-97f92b3cfab4
-ms.openlocfilehash: 1398d8408a0b85d6603d638312e92ba35c5e77d3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cc41979c869021c9c363f3f68ce590d4702e068c
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591028"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167548"
 ---
 # <a name="walkthrough-display-data-from-a-sql-server-database-in-a-datagrid-control"></a>演练：在 DataGrid 控件中显示 SQL Server 数据库中的数据
 
 在本演练中，您将从 SQL Server 数据库中检索数据，并在控件中显示这些数据 <xref:System.Windows.Controls.DataGrid> 。 使用 ADO.NET 实体框架创建表示数据的实体类，并使用 LINQ 编写从实体类中检索指定数据的查询。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
 您需要满足以下条件才能完成本演练：
 
@@ -47,7 +48,7 @@ ms.locfileid: "84591028"
 
 6. 在 "选择你的数据连接" 屏幕中，提供与 AdventureWorksLT2008 数据库的连接。 有关详细信息，请参阅 "[选择您的数据连接" 对话框](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399244(v=vs.100))。
 
-    请确保 "名称" 为 `AdventureWorksLT2008Entities` ，并选中 "将 app.config**中的实体连接设置另存为**" 复选框，然后单击 "**下一步**"。
+    请确保已选中 "名称" `AdventureWorksLT2008Entities` 和 "**将 App.Config 中的存储实体连接设置**" 复选框，然后单击 "**下一步**"。
 
 7. 在 "选择数据库对象" 屏幕上，展开 "表" 节点，然后选择 " **Product** " 和 " **ProductCategory** " 表。
 
@@ -97,6 +98,6 @@ ms.locfileid: "84591028"
 
      ![带有来自 SQL 数据库的数据的 DataGrid](./media/datagrid-sql-ef-step7.png "DataGrid_SQL_EF_Step7")
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Windows.Controls.DataGrid>

@@ -1,5 +1,6 @@
 ---
 title: UI 自动化和 Microsoft Active Accessibility
+description: 了解 UI 自动化和 Microsoft Active Accessibility 之间的差异，这是使应用程序可访问的早期解决方案。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Active Accessibility
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - UI Automation, Microsoft Active Accessibility
 - Active Accessibility, UI Automation compared to
 ms.assetid: 87bee662-0a3e-4232-a421-20e7a5968321
-ms.openlocfilehash: 9aa975cf3c6e60fbcc759adbf5a991930bff36d6
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0685a3f89a6578433641aaf78717f4ff377ff2f9
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144781"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164065"
 ---
 # <a name="ui-automation-and-microsoft-active-accessibility"></a>UI 自动化和 Microsoft Active Accessibility
 > [!NOTE]
@@ -70,7 +71,7 @@ Active Accessibility 基于组件对象模型（COM），支持双重接口，�
   
 |Active Accessibility 角色|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 控件类型|  
 |----------------------------------------------------------------------|----------------------------------------------------------------------------------------|  
-|ROLE_SYSTEM_PUSHBUTTON|按钮|  
+|ROLE_SYSTEM_PUSHBUTTON|Button|  
 |ROLE_SYSTEM_CLIENT|日历|  
 |ROLE_SYSTEM_CHECKBUTTON|复选框|  
 |ROLE_SYSTEM_COMBOBOX|组合框|  
@@ -79,18 +80,18 @@ Active Accessibility 基于组件对象模型（COM），支持双重接口，�
 |ROLE_SYSTEM_LISTITEM|数据项|  
 |ROLE_SYSTEM_DOCUMENT|文档|  
 |ROLE_SYSTEM_TEXT|编辑|  
-|ROLE_SYSTEM_GROUPING|组|  
-|ROLE_SYSTEM_LIST|Header|  
+|ROLE_SYSTEM_GROUPING|Group|  
+|ROLE_SYSTEM_LIST|标头|  
 |ROLE_SYSTEM_COLUMNHEADER|标头项|  
 |ROLE_SYSTEM_LINK|Hyperlink|  
 |ROLE_SYSTEM_GRAPHIC|映像|  
-|ROLE_SYSTEM_LIST|列表|  
+|ROLE_SYSTEM_LIST|列出|  
 |ROLE_SYSTEM_LISTITEM|列表项|  
 |ROLE_SYSTEM_MENUPOPUP|菜单|  
 |ROLE_SYSTEM_MENUBAR|菜单栏|  
 |ROLE_SYSTEM_MENUITEM|Menu item|  
 |ROLE_SYSTEM_PANE|窗格|  
-|ROLE_SYSTEM_PROGRESSBAR|进度栏|  
+|ROLE_SYSTEM_PROGRESSBAR|进度条|  
 |ROLE_SYSTEM_RADIOBUTTON|单选按钮|  
 |ROLE_SYSTEM_SCROLLBAR|滚动条|  
 |ROLE_SYSTEM_SEPARATOR|Separator|  
@@ -249,6 +250,6 @@ Active Accessibility 基于组件对象模型（COM），支持双重接口，�
   
  [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 模型使提供程序不再需要通过其他提供程序代码调用。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 核心服务将进行所有必要的聚合。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [UI 自动化基础知识](index.md)

@@ -1,17 +1,18 @@
 ---
 title: 实现 UI 自动化 ExpandCollapse 控件模式
+description: 了解 UI 自动化中 ExpandCollapse 控件模式的实现准则和约定。 知道如何实现 Iexpandcollapseprovider 必需。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, ExpandCollapse control pattern
 - ExpandCollapse control pattern
 - control patterns, ExpandCollapse
 ms.assetid: 1dbabb8c-0d68-47c1-a35e-1c01cb01af26
-ms.openlocfilehash: 073ff0727fc6aab1189f73a254aa95da60820cc3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 525b57816071ba2d879036676201a0506d1a29db
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447148"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165858"
 ---
 # <a name="implementing-the-ui-automation-expandcollapse-control-pattern"></a>实现 UI 自动化 ExpandCollapse 控件模式
 
@@ -53,28 +54,28 @@ ms.locfileid: "74447148"
 
 实现 <xref:System.Windows.Automation.Provider.IExpandCollapseProvider>需要以下属性和方法。
 
-|必需的成员|成员类型|注意|
+|必需的成员|成员类型|说明|
 |----------------------|-----------------|-----------|
-|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A>|属性|无|
+|<xref:System.Windows.Automation.Provider.IExpandCollapseProvider.ExpandCollapseState%2A>|Property|无|
 |<xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A>|方法|无|
 |<xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A>|方法|无|
 |<xref:System.Windows.Automation.AutomationPropertyChangedEventHandler>|事件|此控件没有关联的事件；请使用此泛型委托。|
 
 <a name="Exceptions"></a>
 
-## <a name="exceptions"></a>异常
+## <a name="exceptions"></a>例外
 
 提供程序必须引发以下异常。
 
-|例外狀況類型|条件|
+|例外类型|条件|
 |--------------------|---------------|
 |<xref:System.InvalidOperationException>|当 <xref:System.Windows.Automation.ExpandCollapsePattern.Expand%2A> 或 <xref:System.Windows.Automation.ExpandCollapsePattern.Collapse%2A> 时，将调用 <xref:System.Windows.Automation.ExpandCollapseState> = <xref:System.Windows.Automation.ExpandCollapseState.LeafNode>。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [UI 自动化控件模式概述](ui-automation-control-patterns-overview.md)
 - [在 UI 自动化提供程序中支持控件模式](support-control-patterns-in-a-ui-automation-provider.md)
-- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
+- [客户端的 UI 自动化控件模式](ui-automation-control-patterns-for-clients.md)
 - [使用 TreeWalker 在 UI 自动化元素之间导航](navigate-among-ui-automation-elements-with-treewalker.md)
 - [UI 自动化树概述](ui-automation-tree-overview.md)
 - [在 UI 自动化中使用缓存](use-caching-in-ui-automation.md)

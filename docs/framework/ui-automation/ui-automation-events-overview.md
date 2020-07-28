@@ -1,5 +1,6 @@
 ---
 title: UI 自动化事件概述
+description: 请参阅 Microsoft UI 自动化事件通知概述。 查看事件类型、UI 自动化事件标识符和 UI 自动化事件参数。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - UI Automation, providers
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - providers, UI Automation
 - UI Automation, clients
 ms.assetid: 69eebd8b-39ed-40e7-93cc-4457c4caf746
-ms.openlocfilehash: 495e7d29c814164f4235d18569477b856cb09045
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4f51a31a433986822a9dba22bf8f17ade00bbb76
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179897"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87168102"
 ---
 # <a name="ui-automation-events-overview"></a>UI 自动化事件概述
 > [!NOTE]
@@ -81,8 +82,8 @@ ms.locfileid: "79179897"
   
  有关事件标识符的列表，请参阅 [UI Automation Events for Clients](ui-automation-events-for-clients.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [客户端的 UI 自动化事件](ui-automation-events-for-clients.md)
-- [服务器端 UI 自动化提供程序实现](server-side-ui-automation-provider-implementation.md)
+- [服务器端 UI 自动化提供程序的实现](server-side-ui-automation-provider-implementation.md)
 - [订阅 UI 自动化事件](subscribe-to-ui-automation-events.md)

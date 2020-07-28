@@ -1,17 +1,18 @@
 ---
 title: UI 自动化对 ListItem 控件类型的支持
+description: 获取有关对有类型的控件类型的 UI 自动化支持的信息。 了解必需的树结构、属性、控件模式和事件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - control types, List
 - List Item control type
 - UI Automation, List Item control type
 ms.assetid: 34f533bf-fc14-4e78-8fee-fb7107345fab
-ms.openlocfilehash: 245f9030897d54a2f1c95d5ce6369b67d23cb319
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bf1690b094e9d472fd4213f7fa3df545dca6ebac
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79179703"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166061"
 ---
 # <a name="ui-automation-support-for-the-listitem-control-type"></a>UI 自动化对 ListItem 控件类型的支持
 > [!NOTE]
@@ -21,7 +22,7 @@ ms.locfileid: "79179703"
   
  列表项控件是实现 ListItem 控件类型的控件示例。  
   
- 以下几节定义了 ListItem 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 这些要求[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]适用于所有列表控件，无论是[!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)]Win32 还是 Windows 窗体。  
+ 以下几节定义了 ListItem 控件类型必需的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树结构、属性、控件模式和事件。 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]要求适用于所有列表控件，无论控件是 [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] Win32 还是 Windows 窗体。  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>
 ## <a name="required-ui-automation-tree-structure"></a>必需的 UI 自动化树结构  
@@ -29,15 +30,15 @@ ms.locfileid: "79179703"
   
 |控件视图|内容视图|  
 |------------------|------------------|  
-|ListItem<br /><br /> - 图像（0 或更多）<br />- 文本（0 或更多）<br />- 编辑（0 或更多）|ListItem|  
+|ListItem<br /><br /> -Image （0个或多个）<br />-Text （0个或多个）<br />-Edit （0个或多个）|ListItem|  
   
- [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的内容视图中的列表项控件的子级必须始终为“0”。 如果控件的结构使其他项包含在列表项的下方，则它应遵循[树项目控件类型控件类型的 UI 自动化支持](ui-automation-support-for-the-treeitem-control-type.md)要求。  
+ [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 树的内容视图中的列表项控件的子级必须始终为“0”。 如果该控件的结构为其他项包含在列表项之下，则它应遵循对 TreeItem 控件类型控件类型的[UI 自动化支持](ui-automation-support-for-the-treeitem-control-type.md)的要求。  
   
 <a name="Required_UI_Automation_Properties"></a>
 ## <a name="required-ui-automation-properties"></a>必需的 UI 自动化属性  
- 下表列出 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性，这些属性的值或定义与列表项控件密切相关。 有关[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]属性的详细信息，请参阅[客户端的 UI 自动化属性](ui-automation-properties-for-clients.md)。  
+ 下表列出 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性，这些属性的值或定义与列表项控件密切相关。 有关属性的详细信息 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] ，请参阅[客户端的 UI 自动化属性](ui-automation-properties-for-clients.md)。  
   
-|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|值|说明|  
+|[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 属性|Value|注释|  
 |------------------------------------------------------------------------------------|-----------|-----------|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationIdProperty>|请参阅注释。|此属性的值在应用程序的所有控件中都必须保持唯一。|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty>|请参阅注释。|此属性的此值应包括图像的区域和列表项的文本内容。|  
@@ -65,7 +66,7 @@ ms.locfileid: "79179703"
 |<xref:System.Windows.Automation.Provider.IExpandCollapseProvider>|依赖的对象|如果可以操作项以显示或隐藏信息，则必须实现此控件模式。|  
 |<xref:System.Windows.Automation.Provider.IValueProvider>|依赖的对象|如果可以编辑项，则必须实现此控件模式。 更改列表项控件将导致对 <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>和 <xref:System.Windows.Automation.Provider.IValueProvider.Value%2A>的值进行更改。|  
 |<xref:System.Windows.Automation.Provider.IGridItemProvider>|依赖的对象|如果在列表容器内支持项之间的空间导航，并且容器按行和列排列，则必须实现 Grid Item 控件模式。|  
-|<xref:System.Windows.Automation.Provider.IInvokeProvider>|依赖的对象|如果项具有可以对其执行的命令（独立于所选内容），则必须实现此模式。 这通常是与双击列表项控件相关联的操作。 例如，从 Microsoft Windows 资源管理器启动文档，或在 Microsoft Windows 媒体播放器中播放音乐文件。|  
+|<xref:System.Windows.Automation.Provider.IInvokeProvider>|依赖的对象|如果项具有可以对其执行的命令（独立于所选内容），则必须实现此模式。 这通常是与双击列表项控件相关联的操作。 示例将从 Microsoft Windows 资源管理器中启动文档，或者在 Microsoft Windows Media Player 中播放音乐文件。|  
   
 <a name="Required_UI_Automation_Events"></a>
 ## <a name="required-ui-automation-events"></a>必需的 UI 自动化事件  
@@ -74,21 +75,21 @@ ms.locfileid: "79179703"
 |[!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 事件|支持|说明|  
 |---------------------------------------------------------------------------------|-------------|-----------|  
 |<xref:System.Windows.Automation.InvokePatternIdentifiers.InvokedEvent>|依赖的对象|无|  
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|必选|无|  
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|必选|无|  
-|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件。|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|必选|无|  
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementAddedToSelectionEvent>|必须|无|  
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementRemovedFromSelectionEvent>|必须|无|  
+|<xref:System.Windows.Automation.SelectionItemPatternIdentifiers.ElementSelectedEvent>|必须|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.BoundingRectangleProperty> 属性更改事件。|必须|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsOffscreenProperty> 属性更改事件。|必须|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.IsEnabledProperty> 属性更改事件。|必须|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty>|必须|无|  
 |<xref:System.Windows.Automation.AutomationElementIdentifiers.ItemStatusProperty> 属性更改事件。|依赖的对象|无|  
 |<xref:System.Windows.Automation.ExpandCollapsePatternIdentifiers.ExpandCollapseStateProperty> 属性更改事件。|依赖的对象|无|  
 |<xref:System.Windows.Automation.ValuePatternIdentifiers.ValueProperty> 属性更改事件。|依赖的对象|无|  
 |<xref:System.Windows.Automation.TogglePatternIdentifiers.ToggleStateProperty> 属性更改事件。|依赖的对象|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必选|无|  
-|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必选|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.AutomationFocusChangedEvent>|必须|无|  
+|<xref:System.Windows.Automation.AutomationElementIdentifiers.StructureChangedEvent>|必须|无|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Windows.Automation.ControlType.ListItem>
 - [UI 自动化控件类型概述](ui-automation-control-types-overview.md)
