@@ -1,13 +1,14 @@
 ---
 title: 协变和逆变 (C#)
+description: 了解协变和逆变，查看它们如何影响赋值兼容性。 查看展示两者区别的代码示例。
 ms.date: 07/20/2015
 ms.assetid: 066d9a3c-aab7-4ea6-826d-0b1a85399c74
-ms.openlocfilehash: 23633675059b9c295dda7ddf3d78754c0223f5f8
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 65c75029c27b6c9a5ddc96f01622b520e8698f55
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241365"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105693"
 ---
 # <a name="covariance-and-contravariance-c"></a>协变和逆变 (C#)
 在 C# 中，协变和逆变能够实现数组类型、委托类型和泛型类型参数的隐式引用转换。 协变保留分配兼容性，逆变则与之相反。  

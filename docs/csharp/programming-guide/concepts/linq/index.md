@@ -1,13 +1,14 @@
 ---
 title: 语言集成查询 (LINQ) (C#)
+description: 了解语言集成查询 (LINQ)，查看完整查询操作的示例。
 ms.date: 02/02/2017
 ms.assetid: 19dd1782-905b-4a9d-a3e9-618453037fa2
-ms.openlocfilehash: a2e53d6c7f4d24fd57b1f91c1428b8341386b6f9
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 6c8844c387177ce858b63a52b1f5c7246b570beb
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463899"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103422"
 ---
 # <a name="language-integrated-query-linq"></a>语言集成查询 (LINQ)
 
