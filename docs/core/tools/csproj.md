@@ -2,12 +2,12 @@
 title: .NET Core 的 csproj 格式的新增内容
 description: 了解现有文件和 .NET Core csproj 文件之间的区别
 ms.date: 04/08/2019
-ms.openlocfilehash: 619f6121d9d476726c3d422e50737ff3d622f444
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: ea57b66d9a2e5cb69fe82e9a4bcf68625af546fd
+ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164924"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87251200"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>.NET Core 的 csproj 格式的新增内容
 
@@ -180,7 +180,7 @@ ms.locfileid: "87164924"
 <DotNetCliToolReference Include="<package-id>" Version="" />
 ```
 
-请注意，`DotNetCliToolReference` [现已弃用](https://github.com/dotnet/announcements/issues/107)，以支持 [.NET Core 本地工具](https://aka.ms/local-tools)。
+请注意，`DotNetCliToolReference` [现已弃用](https://github.com/dotnet/announcements/issues/107)，以支持 [.NET Core 本地工具](./global-tools.md#install-a-local-tool)。
 
 #### <a name="version"></a>Version
 
