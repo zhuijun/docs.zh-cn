@@ -1,15 +1,17 @@
 ---
 title: Protected Friend
 ms.date: 05/10/2018
+f1_keywords:
+- vb.ProtectedFriend
 helpviewer_keywords:
 - Protected Friend keyword [Visual Basic]
 - Protected Friend keyword [Visual Basic], syntax
-ms.openlocfilehash: 202d4f4a3a05a64ab1d74621268f28f6b55e8952
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 27fc993ca0b94d406261d5e6275de8cd619eb6a8
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404831"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303447"
 ---
 # <a name="protected-friend-visual-basic"></a>受保护的朋友（Visual Basic）
 
@@ -22,12 +24,12 @@ ms.locfileid: "84404831"
 
 **声明上下文。** `Protected Friend`只能在类级别使用。 这意味着元素的声明上下文 `Protected` 必须是类，且不能是源文件、命名空间、接口、模块、结构或过程。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [公共](public.md)
 - [避免](protected.md)
 - [友好](friend.md)
-- 专用 
+- 专用
 - [私有受保护](./private-protected.md)
 - [Visual Basic 中的访问级别](../../programming-guide/language-features/declared-elements/access-levels.md)
 - [过程](../../programming-guide/language-features/procedures/index.md)

@@ -3,12 +3,12 @@ title: 定义云本机
 description: 了解提供适用于云原生系统成为的基础支柱
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: e8b07fe7758d90f6ba97b81d0efa9d2fb5058d49
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: f50c144d99fae0c4702965342fd76ec22e8bd8c8
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614159"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87427029"
 ---
 # <a name="defining-cloud-native"></a>定义云本机
 
@@ -30,11 +30,11 @@ ms.locfileid: "83614159"
 
 下面是一些已实现这些技术的公司。 请考虑其实现速度、灵活性和可伸缩性。
 
-| Company | 体验 |
+| 公司 | 体验 |
 | :-------- | :-------- |
 | [Netflix](https://www.infoq.com/news/2013/06/netflix/) | 在生产环境中有600多项服务。 每天部署数百次。 |
 | [Uber](https://eng.uber.com/micro-deploy/) | 在生产环境中具有1000个以上的服务。 每周部署几千次。 |
-| [微信](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | 生产中包含300多个服务。 一天部署1000次。 |
+| [微信](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | 生产中有3000多项服务。 一天部署1000次。 |
 
 如您所见，Netflix、Uber 和 WeChat 公开了由数百个独立微服务组成的系统。 这种体系结构样式使其能够快速响应市场状况。 它们可即时更新实时、复杂应用程序的小区域，并根据需要单独缩放这些区域。
 
@@ -173,7 +173,7 @@ Azure 云平台支持这种类型的高度弹性基础结构，具有自动缩�
 
 Microsoft .NET 核心平台是一种很好的选择。 免费和开源，它具有许多内置功能，可简化微服务开发。 .NET Core 是跨平台的。 应用程序可以在 Windows、macOS 和 Linux 的大多数风格上生成和运行。
 
-.NET Core 具有高性能，与 node.js 和其他竞争性平台相比，其评分非常好。 有趣的是， [TechEmpower](https://www.techempower.com/)对许多 web 应用程序平台和框架执行了一组全面的[性能基准](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext)。 .NET Core 在顶级的十大平台和其他竞争性平台上评分。
+.NET Core 具有高性能，并与 Node.js 和其他竞争性平台进行了比较。 有趣的是， [TechEmpower](https://www.techempower.com/)对许多 web 应用程序平台和框架执行了一组全面的[性能基准](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext)。 在上面10个 Node.js 及其他竞争性平台上评分的 .NET Core。
 
 .NET Core 由 Microsoft 和 GitHub 上的 .NET 社区维护。
 
@@ -331,7 +331,7 @@ Azure Pipelines 是一种云服务，它将持续集成（CI）和持续交付�
 在 YAML 文件的代码中，将管道定义为应用的其余代码。
 
 - 该管道通过您的代码进行版本控制，并遵循相同的分支结构。
-- 可以通过拉取请求和分支生成策略中的代码评审来验证所做的更改。
+- 可通过拉取请求和分支生成策略中的代码评审来验证更改。
 - 你使用的每个分支都可以通过修改 azure-pipelines. docker-compose.override.yml 文件来自定义生成策略。
 - 管道文件签入到版本控制中，如果出现问题，则可以进行调查。
 
