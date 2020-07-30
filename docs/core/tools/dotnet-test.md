@@ -2,16 +2,16 @@
 title: dotnet test 命令
 description: dotnet test 命令可用于在给定项目中执行单元测试。
 ms.date: 04/29/2020
-ms.openlocfilehash: 911d10917c2262c0bd32ef30d48da0f85ac39a39
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: 9b1e190579902dda71547b01f31dd5adcc22fe9c
+ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84803158"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87251187"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
-**** 本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
+本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
 
 ## <a name="name"></a>“属性”
 
@@ -21,14 +21,17 @@ ms.locfileid: "84803158"
 
 ```dotnetcli
 dotnet test [<PROJECT> | <SOLUTION> | <DIRECTORY> | <DLL>]
-    [-a|--test-adapter-path <PATH_TO_ADAPTER>] [--blame]
+    [-a|--test-adapter-path <ADAPTER_PATH>] [--blame] [--blame-crash]
+    [--blame-crash-dump-type <DUMP_TYPE>] [--blame-crash-collect-always]
+    [--blame-hang] [--blame-hang-dump-type <DUMP_TYPE>]
+    [--blame-hang-timeout <TIMESPAN>]
     [-c|--configuration <CONFIGURATION>]
-    [--collect <DATA_COLLECTOR_FRIENDLY_NAME>]
-    [-d|--diag <PATH_TO_DIAGNOSTICS_FILE>] [-f|--framework <FRAMEWORK>]
+    [--collect <DATA_COLLECTOR_NAME>]
+    [-d|--diag <LOG_FILE>] [-f|--framework <FRAMEWORK>]
     [--filter <EXPRESSION>] [--interactive]
-    [-l|--logger <LOGGER_URI/FRIENDLY_NAME>] [--no-build]
+    [-l|--logger <LOGGER>] [--no-build]
     [--nologo] [--no-restore] [-o|--output <OUTPUT_DIRECTORY>]
-    [-r|--results-directory <PATH>] [--runtime <RUNTIME_IDENTIFIER>]
+    [-r|--results-directory <RESULTS_DIR>] [--runtime <RUNTIME_IDENTIFIER>]
     [-s|--settings <SETTINGS_FILE>] [-t|--list-tests]
     [-v|--verbosity <LEVEL>] [[--] <RunSettings arguments>]
 
@@ -58,39 +61,70 @@ dotnet test -h|--help
   - 指向测试项目的路径。
   - 解决方案的路径。
   - 包含项目或解决方案的目录的路径。
-  - 测试项目 .dll** 文件的路径。
+  - 测试项目 .dll 文件的路径。
 
   如果未指定，则会在当前目录中搜索项目或解决方案。
 
 ## <a name="options"></a>选项
 
-- **`-a|--test-adapter-path <PATH_TO_ADAPTER>`**
+- **`-a|--test-adapter-path <ADAPTER_PATH>`**
 
-  要在其中搜索其他测试适配器的目录的路径。 只检查后缀为 `.TestAdapter.dll` 的 .dll** 文件。 如果未指定，则会搜索测试 .dll** 的目录。
+  要在其中搜索其他测试适配器的目录的路径。 只检查后缀为 `.TestAdapter.dll` 的 .dll 文件。 如果未指定，则会搜索测试 .dll 的目录。
 
 - **`--blame`**
 
   在意见模式中运行测试。 此选项有助于隔离导致测试主机出现故障的有问题的测试。 检测到故障时，它会在 `TestResults/<Guid>/<Guid>_Sequence.xml` 中创建一个序列文件，用于捕获在出现故障之前运行的测试的顺序。
 
+- **`--blame-crash`** （自 .NET 5.0 预览版 SDK 起可用）
+
+  在追责模式下运行测试，并在测试主机意外退出时收集故障转储。 此选项仅可用于 Windows。 包含 procdump.exe 和 procdump64.exe 的目录必须位于 PATH 或 PROCDUMP_PATH 环境变量中。 [下载工具](https://docs.microsoft.com/sysinternals/downloads/procdump)。 意味着 `--blame`。
+
+- **`--blame-crash-dump-type <DUMP_TYPE>`** （自 .NET 5.0 预览版 SDK 起可用）
+
+  要收集的故障转储的类型。 意味着 `--blame-crash`。
+
+- **`--blame-crash-collect-always`** （自 .NET 5.0 预览版 SDK 起可用）
+
+  在预期和意外的测试主机退出时收集故障转储。
+
+- **`--blame-hang`** （自 .NET 5.0 预览版 SDK 起可用）
+
+  在追责模式下运行测试，并在测试超过给定超时时长时收集挂起转储。
+
+- **`--blame-hang-dump-type <DUMP_TYPE>`** （自 .NET 5.0 预览版 SDK 起可用）
+
+  要收集的故障转储的类型。 它应为 `full`、`mini` 或 `none`。 指定 `none` 时，测试主机将在超时时终止，但不会收集任何转储。 意味着 `--blame-hang`。
+
+- **`--blame-hang-timeout <TIMESPAN>`** （自 .NET 5.0 预览版 SDK 起可用）
+
+  每测试超时时间，在此时间后，将触发挂起转储并终止测试宿主进程。 超时值是采用以下格式之一指定的：
+  
+  - 1.5 h
+  - 90 m
+  - 5400 s
+  - 5400000 ms
+
+  如果未使用单位（例如，5400000），则假定该值以毫秒为单位。 与数据驱动的测试一起使用时，超时行为取决于所使用的测试适配器。 对于 xUnit 和 NUnit，会在每个测试用例后更新超时。 对于 MSTest，超时用于所有测试用例。 此选项在使用 netcoreapp 2.1 和更高版本的 Windows 上以及在使用 netcoreapp 3.1 和更高版本的 Linux 上受支持。 不支持 macOS。
+
 - **`-c|--configuration <CONFIGURATION>`**
 
   定义生成配置。 默认值为 `Debug`，但项目配置可以替代此默认 SDK 设置。
 
-- **`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`**
+- **`--collect <DATA_COLLECTOR_NAME>`**
 
   为测试运行启用数据收集器。 有关详细信息，请参阅[监视和分析测试运行](https://aka.ms/vstest-collect)。
   
   若要在 .NET Core 支持的任何平台上收集代码覆盖率，请安装 [Coverlet](https://github.com/coverlet-coverage/coverlet/blob/master/README.md) 并使用 `--collect:"XPlat Code Coverage"` 选项。
 
-  在 Windows 上，可以使用 `--collect "Code Coverage"` 选项收集代码覆盖率。 此选项将生成“.coverage”文件，该文件可在 Visual Studio 2019 Enterprise 中打开**。 有关详细信息，请参阅[使用代码覆盖率](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)和[自定义代码覆盖率分析](/visualstudio/test/customizing-code-coverage-analysis)。
+  在 Windows 上，可以使用 `--collect "Code Coverage"` 选项收集代码覆盖率。 此选项将生成“.coverage”文件，该文件可在 Visual Studio 2019 Enterprise 中打开。 有关详细信息，请参阅[使用代码覆盖率](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)和[自定义代码覆盖率分析](/visualstudio/test/customizing-code-coverage-analysis)。
 
-- **`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
+- **`-d|--diag <LOG_FILE>`**
 
   启用测试平台的诊断模式，并将诊断消息写入到指定文件及其旁边的文件。 正在记录消息的进程可确定创建了哪些文件，如测试主机日志的 `*.host_<date>.txt`，以及数据收集器日志的 `*.datacollector_<date>.txt`。
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  强制将 `dotnet` 或 .NET Framework 测试主机用于测试二进制文件。 此选项只确定要使用哪种类型的主机。 要使用的实际框架版本由测试项目的 runtimeconfig.json** 决定。 如果未指定，则 [TargetFramework 程序集特性](/dotnet/api/system.runtime.versioning.targetframeworkattribute)用于确定主机的类型。 如果已从 .dll** 中去除此特性，则使用的是 .NET Framework 主机。
+  强制将 `dotnet` 或 .NET Framework 测试主机用于测试二进制文件。 此选项只确定要使用哪种类型的主机。 要使用的实际框架版本由测试项目的 runtimeconfig.json 决定。 如果未指定，则 [TargetFramework 程序集特性](/dotnet/api/system.runtime.versioning.targetframeworkattribute)用于确定主机的类型。 如果已从 .dll 中去除此特性，则使用的是 .NET Framework 主机。
 
 - **`--filter <EXPRESSION>`**
 
@@ -104,7 +138,7 @@ dotnet test -h|--help
 
   允许命令停止并等待用户输入或操作。 例如，完成身份验证。 自 .NET Core 3.0 SDK 起可用。
 
-- **`-l|--logger <LOGGER_URI/FRIENDLY_NAME>`**
+- **`-l|--logger <LOGGER>`**
 
   指定测试结果记录器。 与 MSBuild 不同，dotnet 测试不接受缩写，应使用 `-l "console;verbosity=detailed"`，而不使用 `-l "console;v=d"`。
 
@@ -124,7 +158,7 @@ dotnet test -h|--help
 
   查找要运行的二进制文件的目录。 如果未指定，则默认路径为 `./bin/<configuration>/<framework>/`。  对于具有多个目标框架的项目（通过 `TargetFrameworks` 属性），在指定此选项时还需要定义 `--framework`。 `dotnet test` 始终从输出目录运行测试。 可以使用 <xref:System.AppDomain.BaseDirectory%2A?displayProperty=nameWithType> 以使用输出目录中的测试资产。
 
-- **`-r|--results-directory <PATH>`**
+- **`-r|--results-directory <RESULTS_DIR>`**
 
   用于放置测试结果的目录。 如果指定的目录不存在，则会创建该目录。 默认值为包含项目文件的目录中的 `TestResults`。
 
@@ -134,20 +168,20 @@ dotnet test -h|--help
 
 - **`-s|--settings <SETTINGS_FILE>`**
 
-  `.runsettings` 文件用于运行测试。 `TargetPlatform` 元素 (x86|x64) 对 `dotnet test` 不起作用。 若要运行面向 x86 的测试，请安装 .NET Core 的 x86 版本。 路径上 dotnet.exe 的位数是用于运行测试的内容**。 有关更多信息，请参见以下资源：
+  `.runsettings` 文件用于运行测试。 `TargetPlatform` 元素 (x86|x64) 对 `dotnet test` 不起作用。 若要运行面向 x86 的测试，请安装 .NET Core 的 x86 版本。 路径上 dotnet.exe 的位数是用于运行测试的内容。 有关更多信息，请参见以下资源：
 
   - [使用 `.runsettings` 文件配置单元测试。](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
   - [配置测试运行](https://github.com/Microsoft/vstest-docs/blob/master/docs/configure.md)
 
 - **`-t|--list-tests`**
 
-  列出当前项目中发现的所有测试。
+  列出已发现的测试，而不是运行测试。
 
 - **`-v|--verbosity <LEVEL>`**
 
   设置命令的详细级别。 允许使用的值为 `q[uiet]`、`m[inimal]`、`n[ormal]`、`d[etailed]` 和 `diag[nostic]`。 默认值为 `minimal`。 有关详细信息，请参阅 <xref:Microsoft.Build.Framework.LoggerVerbosity>。
 
-- `RunSettings`**** 参数
+- `RunSettings` 参数
 
  内联的 `RunSettings` 作为“-- ”（请注意 -- 后面有空格）后的最后一个命令行参数传递。 内联的 `RunSettings` 被指定为 `[name]=[value]` 对。 空格用于分隔多个 `[name]=[value]` 对。
 

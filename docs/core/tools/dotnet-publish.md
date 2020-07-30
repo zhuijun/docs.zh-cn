@@ -2,12 +2,12 @@
 title: dotnet publish 命令
 description: dotnet publish 命令可将 .NET Core 项目或解决方案发布到目录。
 ms.date: 02/24/2020
-ms.openlocfilehash: 61cfcf06586f3ac66526de69a17b8aef3cf0c795
-ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
+ms.openlocfilehash: 59fdbfa875dad13963ae198acc6a31b537279dfe
+ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85365578"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87251174"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -54,8 +54,10 @@ dotnet publish -h|--help
 `dotnet publish` 命令接受 MSBuild 选项，如用来设置属性的 `-p` 和用来定义记录器的 `-l`。 例如，可以使用以下格式设置 MSBuild 属性：`-p:<NAME>=<VALUE>`。 还可以通过引用 .pubxml 文件来设置与发布相关的属性，例如：
 
 ```dotnetcli
-dotnet publish -p:PublishProfile=Properties\PublishProfiles\FolderProfile.pubxml
+dotnet publish -p:PublishProfile=FolderProfile
 ```
+
+前面的示例使用 \<project_folder>/Properties/PublishProfiles 文件夹中的 FolderProfile.pubxml 文件。 如果在设置 `PublishProfile` 属性时指定路径和文件扩展名，则它们会被忽略。 默认情况下，MSBuild 会在 Properties/PublishProfiles 文件夹中查找，并假定 .pubxml 文件扩展名。 若要指定包含扩展名的路径和文件名，请设置 `PublishProfileFullPath` 属性，而不是 `PublishProfile` 属性。
 
 有关更多信息，请参见以下资源：
 

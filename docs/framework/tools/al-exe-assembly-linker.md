@@ -1,5 +1,6 @@
 ---
 title: Al.exe（程序集链接器）
+description: 使用 AI.exe（程序集链接器工具）。 此工具从一个或多个文件（这些文件可以是模块或资源文件）生成一个具有程序集清单的文件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Al.exe
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - modules, Assembly Linker
 - assembly manifest, Assembly Linker
 ms.assetid: b5382965-0053-47cf-b92f-862860275a01
-ms.openlocfilehash: b7081f00e31dfa8ac46909e61c7d389ba7954878
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 66408b11f4e82776058ac19b8454bf50906b4b86
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83611401"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167361"
 ---
 # <a name="alexe-assembly-linker"></a>Al.exe（程序集链接器）
 
@@ -39,7 +40,7 @@ al sources options
 | ------ | ----------- |
 |`file`[,`target`]|将 `file`（模块）的内容复制到 `target` 指定的文件名。 复制后，Al.exe 将 `target` 编译为程序集。|
 |**/embed[resource]:** `file`[,`name`[,`private`]]|将 `file` 指定的资源嵌入到包含程序集清单的映像中；Al.exe 将 `file` 的内容复制到可移植的可执行 (PE) 映像中。<br /><br /> `name` 参数是资源的内部标识符。 默认情况下，资源在程序集中是公共的（对于其他程序集可见）。 指定 `private` 会使该资源对于其他程序集不可见。<br /><br /> 例如，如果 `file` 是由[资源文件生成器 (Resgen.exe)](resgen-exe-resource-file-generator.md) 创建的或在开发环境中创建的 .NET Framework 资源文件，则可使用 <xref:System.Resources> 中的成员来访问它。 有关详细信息，请参阅 <xref:System.Resources.ResourceManager>。 对于所有其他资源，请使用 <xref:System.Reflection.Assembly> 中的 `GetManifestResource*` 方法在运行时访问此资源。<br /><br /> 如果只将资源文件传递给 Al.exe，则输出文件为附属资源程序集。|
-|**/link[resource]:** `file`[,`name`[,`target`[,`private`]]]|将资源文件链接到程序集。 `file` 指定的资源成为程序集的组成部分；不复制该文件。 `file` 参数可以是任何文件格式。 例如，可以指定本机 DLL 作为 `file` 参数。 这将使本机 DLL 成为此程序集的组成部分，从而可将它安装到全局程序集缓存中，并且可从该程序集中的托管代码访问它。 也可以通过使用 **/linkresource** 编译器选项实现该目的。 有关详细信息，请参阅 [-linkresource（C# 编译器选项）](../../csharp/language-reference/compiler-options/linkresource-compiler-option.md)。<br /><br /> `name` 参数是资源的内部标识符。 `target` 参数指定 Al.exe 将 `file` 复制到其中的路径和文件名。  复制后，Al.exe 将 `target` 编译为程序集。 默认情况下，资源在程序集中是公共的（对于其他程序集可见）。 指定 `private` 会使该资源对于其他程序集不可见。<br /><br /> 例如，如果 `file` 是由资源文件生成器 (Resgen.exe) 创建的或在开发环境中创建的 .NET Framework 资源文件，则可使用 <xref:System.Resources> 命名空间中的成员来访问它。 有关详细信息，请参阅 <xref:System.Resources.ResourceManager>。 对于所有其他资源，请使用 <xref:System.Reflection.Assembly> 类中的 `GetManifestResource*` 方法在运行时访问资源。<br /><br /> 如果只将资源文件传递给 Al.exe，则输出文件为附属资源程序集。|
+|**/link[resource]:** `file`[,`name`[,`target`[,`private`]]]|将资源文件链接到程序集。 `file` 指定的资源成为程序集的组成部分；不复制该文件。 `file` 参数可以是任何文件格式。 例如，可以指定本机 DLL 作为 `file` 参数。 这将使本机 DLL 成为此程序集的组成部分，从而可将它安装到全局程序集缓存中，并且可从该程序集中的托管代码访问它。 也可以通过使用 **/linkresource** 编译器选项实现该目的。 有关详细信息，请参阅 [-linkresource（C# 编译器选项）](../../csharp/language-reference/compiler-options/linkresource-compiler-option.md)。<br /><br /> `name` 参数是资源的内部标识符。 `target` 参数指定 Al.exe 将 `file` 复制到其中的路径和文件名。 复制后，Al.exe 将 `target` 编译为程序集。 默认情况下，资源在程序集中是公共的（对于其他程序集可见）。 指定 `private` 会使该资源对于其他程序集不可见。<br /><br /> 例如，如果 `file` 是由资源文件生成器 (Resgen.exe) 创建的或在开发环境中创建的 .NET Framework 资源文件，则可使用 <xref:System.Resources> 命名空间中的成员来访问它。 有关详细信息，请参阅 <xref:System.Resources.ResourceManager>。 对于所有其他资源，请使用 <xref:System.Reflection.Assembly> 类中的 `GetManifestResource*` 方法在运行时访问资源。<br /><br /> 如果只将资源文件传递给 Al.exe，则输出文件为附属资源程序集。|
 
 可以指定以下 `options`；必须指定 **/out**。
 
@@ -155,7 +156,7 @@ al sources options
 |al1067|“filename”是二进制文件而非文本文件<br /><br /> 该文件是二进制格式，而不是文本格式。|
 |al1068|已在此程序集中定义了模块“ModuleName”。 每个链接的资源和模块必须具有唯一的文件名。<br /><br /> 该模块在此程序集中不止出现一次。|
 |al1069|当已存在具有相同短文件名的长文件名时，无法创建短文件名“filename”<br /><br /> 当前文件的名称为已存在的文件的名称的较短形式。 例如，编译 LongFileName.cs，然后使用名称 LongFi~1.cs 重新编译将导致类似于此的编译器错误。 如果已删除了具有长名称的编译器输出文件，但依然存在类似的链接器文件，则可能会出现此错误。|
-|al1070|不可知的程序集不能具有特定于处理器的模块“Module Name”<br /><br /> 如果正在使用 /platform:agnostic（或没有指定 /platform）进行构建，此时若尝试添加一个并非是不可知的模块（使用 /addmodule），将生成错误。   这就像尝试将 i386 obj 文件链接到 ia64 obj。<br /><br /> 非不可知模块的主要来源是 C++。 如果正在使用 **/addmodule** 与 C++ 模块，可能需要修改生成脚本以指定合适的 **/platform** 设置。|
+|al1070|不可知的程序集不能具有特定于处理器的模块“Module Name”<br /><br /> 如果正在使用 /platform:agnostic（或没有指定 /platform）进行构建，此时若尝试添加一个并非是不可知的模块（使用 /addmodule），将生成错误。 这就像尝试将 i386 obj 文件链接到 ia64 obj。<br /><br /> 非不可知模块的主要来源是 C++。 如果正在使用 **/addmodule** 与 C++ 模块，可能需要修改生成脚本以指定合适的 **/platform** 设置。|
 |al1072|程序集和模块“Module Name”不能以不同处理器为目标<br /><br /> 不能链接针对不同处理器的程序集和模块，因为必须在单个处理器上运行结果。|
 |al1073|引用的程序集“assembly”面向的是另一个处理器<br /><br /> 不能链接针对不同处理器的程序集，因为必须在单个处理器上运行结果。|
 |al1074|存储在“File Name”中的模块名称“Module Name”必须与其文件名匹配<br /><br /> 这是链接器所必需的。 若要解决此问题，请使两个名称匹配。|

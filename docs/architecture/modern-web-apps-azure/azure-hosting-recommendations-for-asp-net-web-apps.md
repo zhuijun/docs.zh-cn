@@ -4,12 +4,12 @@ description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序 | 关�
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/06/2019
-ms.openlocfilehash: 5587b8b20da8a6801d77b722e9c3326f6e695574
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 547654e77812481daffc9a03ccd28d3d2f6b5f09
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73416718"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164437"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>关于 ASP.NET Core Web 应用的 Azure 托管建议
 
@@ -118,7 +118,7 @@ Azure 提供多种数据存储选择，以便应用程序可使用恰当的数�
 
 非结构化 JSON 数据可用多种方式进行存储，包括 SQL 数据库列、Blob、Azure 存储中的表，以及 Azure Cosmos DB。 其中，Azure Cosmos DB 可提供最佳的查询功能，建议用于必须支持查询的大量基于 JSON 的文档。
 
-暂时命令或者用于安排应用程序行为的基于事件的数据可使用 Azure 服务总线或 Azure 存储队列。 Azure 存储总线具有更强的灵活性，建议将该服务用于处理应用程序内和应用程序间的非普通消息传递。
+暂时命令或者用于安排应用程序行为的基于事件的数据可使用 Azure 服务总线或 Azure 存储队列。 Azure 服务总线具有更强的灵活性，建议将该服务用于处理应用程序内和应用程序间的非普通消息传递。
 
 ## <a name="architecture-recommendations"></a>体系结构建议
 

@@ -1,13 +1,14 @@
 ---
 title: 混合声明性代码-命令性代码的问题 (LINQ to XML) (C#)
+description: LINQ to XML 方法可以直接修改 XML 树。 在修改 XML 树期间循环访问其中一个轴可能会引发奇怪的 bug。
 ms.date: 07/20/2015
 ms.assetid: fada62d0-0680-4e73-945a-2b00d7a507af
-ms.openlocfilehash: 76a9bb5abf6ce2700a2a0698ebc109f65e2b7eb1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4eaed10f0a2e64abeb7725dcd70816d75d8a0423
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168344"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165289"
 ---
 # <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-c"></a>混合声明性代码/命令性代码的问题 (LINQ to XML) (C#)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 包含各种不同的方法，使您能够直接修改 XML 树。 您可以添加元素、删除元素、更改元素的内容、添加属性等等。 在[修改 XML 树 (LINQ to XML) (C#)](./in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md) 中详细介绍了此编程接口。 如果循环访问一个轴，例如 <xref:System.Xml.Linq.XContainer.Elements%2A>，而在循环访问该轴时正在修改 XML 树，那么可能会发生一些异常问题。  
@@ -15,9 +16,9 @@ ms.locfileid: "79168344"
  此问题有时称为“万圣节问题”。  
   
 ## <a name="definition-of-the-problem"></a>问题的定义  
- 如果你使用 LINQ 编写循环访问集合的代码，那么你是以声明性风格在编写代码。 这种风格更像是描述要实现的内容  ，而不是描述所需要的实现方式  。 如果你编写的代码要执行以下操作：1) 获取第一个元素；2) 测试该元素是否符合某种条件；3) 修改该元素；4) 将该元素放回列表中。那么，此代码就是命令性代码。 你是在告诉计算机希望以何种方式  完成任务。  
+ 如果你使用 LINQ 编写循环访问集合的代码，那么你是以声明性风格在编写代码。 这种风格更像是描述要实现的内容，而不是描述所需要的实现方式。 如果你编写的代码要执行以下操作：1) 获取第一个元素；2) 测试该元素是否符合某种条件；3) 修改该元素；4) 将该元素放回列表中。那么，此代码就是命令性代码。 你是在告诉计算机希望以何种方式完成任务。  
   
- 在同一操作中混合这些代码风格正是导致问题的原因。 请考虑下列各项：  
+ 在同一操作中混合这些代码风格正是导致问题的原因。 考虑以下情况：  
   
  假设您有一个链接列表，其中有三个项（a、b 和 c）：  
   

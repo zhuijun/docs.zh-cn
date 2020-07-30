@@ -1,13 +1,14 @@
 ---
 title: LINQ to XML 事件 (C#)
+description: 使用 C# 将 LINQ to XML 事件添加到任意 XObject 实例中。 修改该 XObject 的 XML 树时，事件处理程序将收到事件。
 ms.date: 07/20/2015
 ms.assetid: ce7de951-cba7-4870-9962-733eb01cd680
-ms.openlocfilehash: 8e0cb4519dd0fc2bed443d9a62b9a2545d10e161
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 576b0a5d0472bddd66e01d3bef8f3affa1c9458b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253179"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165416"
 ---
 # <a name="linq-to-xml-events-c"></a>LINQ to XML 事件 (C#)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 事件使你可以在 XML 树发生改变时得到通知。  
@@ -19,14 +20,14 @@ ms.locfileid: "70253179"
 ## <a name="types-and-events"></a>类型和事件  
  在处理事件时使用下面的类型：  
   
-|类型|说明|  
+|类型|描述|  
 |----------|-----------------|  
 |<xref:System.Xml.Linq.XObjectChange>|当 <xref:System.Xml.Linq.XObject> 发生事件时指定事件类型。|  
 |<xref:System.Xml.Linq.XObjectChangeEventArgs>|提供有关 <xref:System.Xml.Linq.XObject.Changing> 和 <xref:System.Xml.Linq.XObject.Changed> 事件的数据。|  
   
  修改 XML 树时将引发以下事件：  
   
-|ㄆン|说明|  
+|事件|描述|  
 |-----------|-----------------|  
 |<xref:System.Xml.Linq.XObject.Changing>|在此 <xref:System.Xml.Linq.XObject> 或它的任何子代即将发生更改之前发生。|  
 |<xref:System.Xml.Linq.XObject.Changed>|在 <xref:System.Xml.Linq.XObject> 或它的任何子代已经更改时发生。|  

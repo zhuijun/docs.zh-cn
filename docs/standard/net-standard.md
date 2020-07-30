@@ -5,12 +5,12 @@ ms.date: 02/13/2020
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: 34074b420547cff802f1835656540be7b8eb58b4
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: b52d69756d85e3e422b798c3ac7d53de3b538b8d
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607475"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167411"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -76,11 +76,11 @@ ms.locfileid: "81607475"
 标准库提供派生项目以方便读取，并实现某些开发人员方案（例如，使用编译器）。
 
 - [Markdown 中的 API 列表](https://github.com/dotnet/standard/tree/master/docs/versions)
-- 引用程序集，以 [NuGet 包](../core/packages.md)的形式分发，由 [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) 元包引用。
+- 引用程序集，以 NuGet 包的形式分发，由 [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/) 元包引用。
 
 ### <a name="package-representation"></a>包表示形式
 
-.NET Standard 引用程序集的主要分发载体是 [NuGet 包](../core/packages.md)。 实现会以适用于每个 .NET 实现的各种方式提供。
+.NET Standard 引用程序集的主要分发载体是 NuGet 包。 实现会以适用于每个 .NET 实现的各种方式提供。
 
 NuGet 包面向一个或多个[框架](frameworks.md)。 .NET Standard 包定位“.NET Standard”框架。 可以使用 `netstandard` [精简 TFM](frameworks.md)（例如 `netstandard1.4`）来设定 .NET Standard 框架作为目标。 如果构建的库将用于在多个运行时上运行，就应将此框架作为目标。 对于最广泛的 API 集，将 `netstandard2.0` 设定为目标，因为 .NET Standard 2.0 的可用 API 数量比 .NET Standard 1.6 的两倍还多。
 
@@ -102,7 +102,7 @@ NuGet 包面向一个或多个[框架](frameworks.md)。 .NET Standard 包定位
 
 ## <a name="target-net-standard"></a>定位 .NET Standard
 
-可以结合使用 `netstandard` 框架和 NETStandard.Library 元包来[构建.NET Standard 库](../core/tutorials/libraries.md)。 可以查看[使用 .NET Core 工具定位 .NET Standard](../core/packages.md) 的示例。
+可以结合使用 `netstandard` 框架和 NETStandard.Library 元包来[构建.NET Standard 库](../core/tutorials/libraries.md)。
 
 ## <a name="net-framework-compatibility-mode"></a>.NET Framework 兼容性模式
 

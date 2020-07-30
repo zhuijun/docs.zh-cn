@@ -3,12 +3,12 @@ title: Microsoft.NET.Sdk 的 MSBuild 属性
 description: .NET Core SDK 可以理解的 MSBuild 属性和项的引用。
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: cda56b3e23592a341d9fe672fc1f1530adcdab49
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 115c4f32e856dee64abe0c607b8ee595a65692e6
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83206112"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164373"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>.NET Core SDK 项目的 MSBuild 引用
 
@@ -25,7 +25,7 @@ ms.locfileid: "83206112"
 
 ### <a name="targetframework"></a>TargetFramework
 
-`TargetFramework` 属性指定应用的目标框架版本，该版本隐式引用[元包](../packages.md#metapackages)。 有关有效的目标框架名字对象的列表，请参阅 [SDK 样式项目中的目标框架](../../standard/frameworks.md#supported-target-framework-versions)。
+`TargetFramework` 属性指定应用的目标框架版本。 有关有效的目标框架名字对象的列表，请参阅 [SDK 样式项目中的目标框架](../../standard/frameworks.md#supported-target-framework-versions)。
 
 ```xml
 <PropertyGroup>
@@ -55,7 +55,7 @@ ms.locfileid: "83206112"
 > [!NOTE]
 > 此属性仅适用于使用 `netstandard1.x` 的项目。 它不适用于使用 `netstandard2.x` 的项目。
 
-如果要指定低于[元包](../packages.md#metapackages)版本的框架版本，请使用 `NetStandardImplicitPackageVersion` 属性。 以下示例中的项目文件以 `netstandard1.3` 为目标，但使用 `NETStandard.Library` 的 1.6.0 版本。
+如果要指定低于元包版本的框架版本，请使用 `NetStandardImplicitPackageVersion` 属性。 以下示例中的项目文件以 `netstandard1.3` 为目标，但使用 `NETStandard.Library` 的 1.6.0 版本。
 
 ```xml
 <PropertyGroup>
@@ -292,7 +292,7 @@ ms.locfileid: "83206112"
 
 ### <a name="packagereference"></a>PackageReference
 
-`PackageReference` 项定义了对 NuGet 包的引用。 例如，你可能想要引用单个包而不是[元包](../packages.md#metapackages)。
+`PackageReference` 项定义了对 NuGet 包的引用。
 
 `Include` 属性指定包 ID。 `Version` 特性指定版本或版本范围。 若要了解如何指定最低版本、最高版本、范围或完全匹配，请参阅[版本范围](/nuget/concepts/package-versioning#version-ranges)。 还可以将下面的元数据添加到项目引用中：`IncludeAssets`、`ExcludeAssets` 和 `PrivateAssets`。
 
