@@ -1,29 +1,30 @@
 ---
 title: 如何为枚举创建新方法 - C# 编程指南
+description: 了解如何使用 C# 中的扩展方法将功能添加到枚举。 此示例演示用于名为“等级分”的枚举的名为“合格”的扩展方法。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - enumerations [C#]
 - extension methods [C#], for enums
 - enum extensibility [C#]
 ms.assetid: 100106f9-1e54-462c-8ebe-3892fe23b6eb
-ms.openlocfilehash: 0d8e562342239c8ac3c53e05086ede9c234d0b63
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6c01a73476e98e8344a7a8dc35a5fd80384fc7a2
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705647"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864483"
 ---
-# <a name="how-to-create-a-new-method-for-an-enumeration-c-programming-guide"></a><span data-ttu-id="5045e-102">如何为枚举创建新方法（C# 编程指南）</span><span class="sxs-lookup"><span data-stu-id="5045e-102">How to create a new method for an enumeration (C# Programming Guide)</span></span>
-<span data-ttu-id="5045e-103">可使用扩展方法添加特定于某个特定枚举类型的功能。</span><span class="sxs-lookup"><span data-stu-id="5045e-103">You can use extension methods to add functionality specific to a particular enum type.</span></span>  
+# <a name="how-to-create-a-new-method-for-an-enumeration-c-programming-guide"></a><span data-ttu-id="26fbb-104">如何为枚举创建新方法（C# 编程指南）</span><span class="sxs-lookup"><span data-stu-id="26fbb-104">How to create a new method for an enumeration (C# Programming Guide)</span></span>
+<span data-ttu-id="26fbb-105">可使用扩展方法添加特定于某个特定枚举类型的功能。</span><span class="sxs-lookup"><span data-stu-id="26fbb-105">You can use extension methods to add functionality specific to a particular enum type.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="5045e-104">示例</span><span class="sxs-lookup"><span data-stu-id="5045e-104">Example</span></span>  
- <span data-ttu-id="5045e-105">在下面的示例中，`Grades` 枚举表示学生可能在班里收到的字母等级分。</span><span class="sxs-lookup"><span data-stu-id="5045e-105">In the following example, the `Grades` enumeration represents the possible letter grades that a student may receive in a class.</span></span> <span data-ttu-id="5045e-106">该示例将一个名为 `Passing` 的扩展方法添加到 `Grades` 类型中，以便该类型的每个实例现在都“知道”它是否表示合格的等级分。</span><span class="sxs-lookup"><span data-stu-id="5045e-106">An extension method named `Passing` is added to the `Grades` type so that each instance of that type now "knows" whether it represents a passing grade or not.</span></span>  
+## <a name="example"></a><span data-ttu-id="26fbb-106">示例</span><span class="sxs-lookup"><span data-stu-id="26fbb-106">Example</span></span>  
+ <span data-ttu-id="26fbb-107">在下面的示例中，`Grades` 枚举表示学生可能在班里收到的字母等级分。</span><span class="sxs-lookup"><span data-stu-id="26fbb-107">In the following example, the `Grades` enumeration represents the possible letter grades that a student may receive in a class.</span></span> <span data-ttu-id="26fbb-108">该示例将一个名为 `Passing` 的扩展方法添加到 `Grades` 类型中，以便该类型的每个实例现在都“知道”它是否表示合格的等级分。</span><span class="sxs-lookup"><span data-stu-id="26fbb-108">An extension method named `Passing` is added to the `Grades` type so that each instance of that type now "knows" whether it represents a passing grade or not.</span></span>  
   
  [!code-csharp[csProgGuideExtensionMethods#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExtensionMethods/cs/extensionmethods.cs#2)]  
   
- <span data-ttu-id="5045e-107">请注意，`Extensions` 类还包含一个动态更新的静态变量，并且扩展方法的返回值反映了该变量的当前值。</span><span class="sxs-lookup"><span data-stu-id="5045e-107">Note that the `Extensions` class also contains a static variable that is updated dynamically and that the return value of the extension method reflects the current value of that variable.</span></span> <span data-ttu-id="5045e-108">这表明在幕后，将在定义扩展方法的静态类上直接调用这些方法。</span><span class="sxs-lookup"><span data-stu-id="5045e-108">This demonstrates that, behind the scenes, extension methods are invoked directly on the static class in which they are defined.</span></span>  
+ <span data-ttu-id="26fbb-109">请注意，`Extensions` 类还包含一个动态更新的静态变量，并且扩展方法的返回值反映了该变量的当前值。</span><span class="sxs-lookup"><span data-stu-id="26fbb-109">Note that the `Extensions` class also contains a static variable that is updated dynamically and that the return value of the extension method reflects the current value of that variable.</span></span> <span data-ttu-id="26fbb-110">这表明在幕后，将在定义扩展方法的静态类上直接调用这些方法。</span><span class="sxs-lookup"><span data-stu-id="26fbb-110">This demonstrates that, behind the scenes, extension methods are invoked directly on the static class in which they are defined.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5045e-109">另请参阅</span><span class="sxs-lookup"><span data-stu-id="5045e-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="26fbb-111">请参阅</span><span class="sxs-lookup"><span data-stu-id="26fbb-111">See also</span></span>
 
-- [<span data-ttu-id="5045e-110">C# 编程指南</span><span class="sxs-lookup"><span data-stu-id="5045e-110">C# Programming Guide</span></span>](../index.md)
-- [<span data-ttu-id="5045e-111">扩展方法</span><span class="sxs-lookup"><span data-stu-id="5045e-111">Extension Methods</span></span>](./extension-methods.md)
+- [<span data-ttu-id="26fbb-112">C# 编程指南</span><span class="sxs-lookup"><span data-stu-id="26fbb-112">C# Programming Guide</span></span>](../index.md)
+- [<span data-ttu-id="26fbb-113">扩展方法</span><span class="sxs-lookup"><span data-stu-id="26fbb-113">Extension Methods</span></span>](./extension-methods.md)

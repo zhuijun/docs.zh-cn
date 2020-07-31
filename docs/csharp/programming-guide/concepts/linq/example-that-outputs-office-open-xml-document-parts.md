@@ -1,21 +1,22 @@
 ---
 title: 输出 Office Open XML 文档部件的示例 (C#)
+description: 了解如何打开 Office Open XML 文档并使用 C# 中的 LINQ 访问其中的部分。 此示例将输出文档部分和文档的样式部分。
 ms.date: 07/20/2015
 ms.assetid: 6cd37055-89b4-42e8-bf27-5a29717e35f3
-ms.openlocfilehash: be4c0ba2ce2a007fa6e19a65d7d86854d85851c4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5755ad8e8772195c056b0c1c896c914b1a63a55
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66486007"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103920"
 ---
-# <a name="example-that-outputs-office-open-xml-document-parts-c"></a><span data-ttu-id="b39df-102">输出 Office Open XML 文档部件的示例 (C#)</span><span class="sxs-lookup"><span data-stu-id="b39df-102">Example that Outputs Office Open XML Document Parts (C#)</span></span>
-<span data-ttu-id="b39df-103">本主题演示如何打开 Office Open XML 文档并访问其中的部分。</span><span class="sxs-lookup"><span data-stu-id="b39df-103">This topic shows how to open an Office Open XML document and access parts within it.</span></span>  
+# <a name="example-that-outputs-office-open-xml-document-parts-c"></a><span data-ttu-id="83a22-104">输出 Office Open XML 文档部件的示例 (C#)</span><span class="sxs-lookup"><span data-stu-id="83a22-104">Example that Outputs Office Open XML Document Parts (C#)</span></span>
+<span data-ttu-id="83a22-105">本主题演示如何打开 Office Open XML 文档并访问其中的部分。</span><span class="sxs-lookup"><span data-stu-id="83a22-105">This topic shows how to open an Office Open XML document and access parts within it.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="b39df-104">示例</span><span class="sxs-lookup"><span data-stu-id="b39df-104">Example</span></span>  
- <span data-ttu-id="b39df-105">下面的示例打开 Office Open XML 文档，并将文档部分和样式部分输出到控制台。</span><span class="sxs-lookup"><span data-stu-id="b39df-105">The following example opens an Office Open XML document, and prints the document part and the style part to the console.</span></span>  
+## <a name="example"></a><span data-ttu-id="83a22-106">示例</span><span class="sxs-lookup"><span data-stu-id="83a22-106">Example</span></span>  
+ <span data-ttu-id="83a22-107">下面的示例打开 Office Open XML 文档，并将文档部分和样式部分输出到控制台。</span><span class="sxs-lookup"><span data-stu-id="83a22-107">The following example opens an Office Open XML document, and prints the document part and the style part to the console.</span></span>  
   
- <span data-ttu-id="b39df-106">本示例使用 WindowsBase 程序集中的类。</span><span class="sxs-lookup"><span data-stu-id="b39df-106">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="b39df-107">它使用 <xref:System.IO.Packaging?displayProperty=nameWithType> 命名空间中的类型。</span><span class="sxs-lookup"><span data-stu-id="b39df-107">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
+ <span data-ttu-id="83a22-108">本示例使用 WindowsBase 程序集中的类。</span><span class="sxs-lookup"><span data-stu-id="83a22-108">This example uses classes from the WindowsBase assembly.</span></span> <span data-ttu-id="83a22-109">它使用 <xref:System.IO.Packaging?displayProperty=nameWithType> 命名空间中的类型。</span><span class="sxs-lookup"><span data-stu-id="83a22-109">It uses types in the <xref:System.IO.Packaging?displayProperty=nameWithType> namespace.</span></span>  
   
 ```csharp  
 const string fileName = "SampleDoc.docx";  

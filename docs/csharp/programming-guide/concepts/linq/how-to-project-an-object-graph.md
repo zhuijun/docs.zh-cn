@@ -1,19 +1,20 @@
 ---
 title: 如何投影对象图 (C#)
+description: 了解如何使用 C# 中的 XML 投影或填充对象图。 示例代码使用示例 XML 文件中的类来填充对象图。
 ms.date: 07/20/2015
 ms.assetid: 293d15d5-3eaf-48de-9a02-3e13cb117b5b
-ms.openlocfilehash: eafb3d9064159c43fc98e0b241f0045465fca824
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5c2ea0e06d9a46a1b19236eae021a2a153fea1d4
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168955"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104614"
 ---
-# <a name="how-to-project-an-object-graph-c"></a><span data-ttu-id="0d1d6-102">如何投影对象图 (C#)</span><span class="sxs-lookup"><span data-stu-id="0d1d6-102">How to project an object graph (C#)</span></span>
-<span data-ttu-id="0d1d6-103">本主题演示如何从 XML 投影或填充对象图。</span><span class="sxs-lookup"><span data-stu-id="0d1d6-103">This topic illustrates how to project, or populate, an object graph from XML.</span></span>  
+# <a name="how-to-project-an-object-graph-c"></a><span data-ttu-id="c9ac0-104">如何投影对象图 (C#)</span><span class="sxs-lookup"><span data-stu-id="c9ac0-104">How to project an object graph (C#)</span></span>
+<span data-ttu-id="c9ac0-105">本主题演示如何从 XML 投影或填充对象图。</span><span class="sxs-lookup"><span data-stu-id="c9ac0-105">This topic illustrates how to project, or populate, an object graph from XML.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="0d1d6-104">示例</span><span class="sxs-lookup"><span data-stu-id="0d1d6-104">Example</span></span>  
- <span data-ttu-id="0d1d6-105">下面的代码用[示例 XML 文件：典型采购订单 (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md) XML 文档中的 `Address`、`PurchaseOrder` 和 `PurchaseOrderItem` 类填充对象图。</span><span class="sxs-lookup"><span data-stu-id="0d1d6-105">The following code populates an object graph with the `Address`, `PurchaseOrder`, and `PurchaseOrderItem` classes from the [Sample XML File: Typical Purchase Order (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md) XML document.</span></span>  
+## <a name="example"></a><span data-ttu-id="c9ac0-106">示例</span><span class="sxs-lookup"><span data-stu-id="c9ac0-106">Example</span></span>  
+ <span data-ttu-id="c9ac0-107">下面的代码用[示例 XML 文件：典型采购订单 (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md) XML 文档中的 `Address`、`PurchaseOrder` 和 `PurchaseOrderItem` 类填充对象图。</span><span class="sxs-lookup"><span data-stu-id="c9ac0-107">The following code populates an object graph with the `Address`, `PurchaseOrder`, and `PurchaseOrderItem` classes from the [Sample XML File: Typical Purchase Order (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md) XML document.</span></span>  
   
 ```csharp  
 class Address  
@@ -214,9 +215,9 @@ class Program {
 }  
 ```  
   
- <span data-ttu-id="0d1d6-106">在此示例中，LINQ 查询的结果以 `PurchaseOrderItem` 的 <xref:System.Collections.Generic.IEnumerable%601> 形式返回。</span><span class="sxs-lookup"><span data-stu-id="0d1d6-106">In this example, the result of the LINQ query is returned as an <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="0d1d6-107">`PurchaseOrder` 类中各项的类型都是 <xref:System.Collections.Generic.IEnumerable%601> 的 `PurchaseOrderItem`。</span><span class="sxs-lookup"><span data-stu-id="0d1d6-107">The items in the `PurchaseOrder` class are of type <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="0d1d6-108">该代码使用 <xref:System.Linq.Enumerable.ToList%2A> 扩展方法，根据查询结果来创建 <xref:System.Collections.Generic.List%601> 集合。</span><span class="sxs-lookup"><span data-stu-id="0d1d6-108">The code uses the <xref:System.Linq.Enumerable.ToList%2A> extension method to create a <xref:System.Collections.Generic.List%601> collection from the results of the query.</span></span>  
+ <span data-ttu-id="c9ac0-108">在此示例中，LINQ 查询的结果以 `PurchaseOrderItem` 的 <xref:System.Collections.Generic.IEnumerable%601> 形式返回。</span><span class="sxs-lookup"><span data-stu-id="c9ac0-108">In this example, the result of the LINQ query is returned as an <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="c9ac0-109">`PurchaseOrder` 类中各项的类型都是 <xref:System.Collections.Generic.IEnumerable%601> 的 `PurchaseOrderItem`。</span><span class="sxs-lookup"><span data-stu-id="c9ac0-109">The items in the `PurchaseOrder` class are of type <xref:System.Collections.Generic.IEnumerable%601> of `PurchaseOrderItem`.</span></span> <span data-ttu-id="c9ac0-110">该代码使用 <xref:System.Linq.Enumerable.ToList%2A> 扩展方法，根据查询结果来创建 <xref:System.Collections.Generic.List%601> 集合。</span><span class="sxs-lookup"><span data-stu-id="c9ac0-110">The code uses the <xref:System.Linq.Enumerable.ToList%2A> extension method to create a <xref:System.Collections.Generic.List%601> collection from the results of the query.</span></span>  
   
- <span data-ttu-id="0d1d6-109">此示例产生以下输出：</span><span class="sxs-lookup"><span data-stu-id="0d1d6-109">The example produces the following output:</span></span>  
+ <span data-ttu-id="c9ac0-111">此示例产生以下输出：</span><span class="sxs-lookup"><span data-stu-id="c9ac0-111">The example produces the following output:</span></span>  
   
 ```output  
 PurchaseOrderNumber: 99503  
@@ -255,7 +256,7 @@ USPrice: 39.98
 ShipDate: 5/21/1999  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="0d1d6-110">另请参阅</span><span class="sxs-lookup"><span data-stu-id="0d1d6-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c9ac0-112">另请参阅</span><span class="sxs-lookup"><span data-stu-id="c9ac0-112">See also</span></span>
 
 - <xref:System.Linq.Enumerable.Select%2A>
 - <xref:System.Linq.Enumerable.ToList%2A>

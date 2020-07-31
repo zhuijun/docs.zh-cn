@@ -1,29 +1,30 @@
 ---
 title: 如何比较两个文件夹的内容 (LINQ) (C#)
+description: 此示例演示了使用 C# 中的 LINQ 查询来比较文件列表的三种方法。 使用这些方法来比较任何类型的对象序列。
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
-ms.openlocfilehash: 44dc97d6d48bed5e8b4d0376838e4dada2e8300c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3cdac57d3d746aa2290c51d1263a7d42dc3463e0
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169397"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105333"
 ---
-# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a><span data-ttu-id="9056e-102">如何比较两个文件夹的内容 (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="9056e-102">How to compare the contents of two folders (LINQ) (C#)</span></span>
-<span data-ttu-id="9056e-103">此示例演示了比较两个文件列表的 3 种方法：</span><span class="sxs-lookup"><span data-stu-id="9056e-103">This example demonstrates three ways to compare two file listings:</span></span>  
+# <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a><span data-ttu-id="fda2d-104">如何比较两个文件夹的内容 (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="fda2d-104">How to compare the contents of two folders (LINQ) (C#)</span></span>
+<span data-ttu-id="fda2d-105">此示例演示了比较两个文件列表的 3 种方法：</span><span class="sxs-lookup"><span data-stu-id="fda2d-105">This example demonstrates three ways to compare two file listings:</span></span>  
   
-- <span data-ttu-id="9056e-104">通过查询布尔值指定两个文件列表是否相同。</span><span class="sxs-lookup"><span data-stu-id="9056e-104">By querying for a Boolean value that specifies whether the two file lists are identical.</span></span>  
+- <span data-ttu-id="fda2d-106">通过查询布尔值指定两个文件列表是否相同。</span><span class="sxs-lookup"><span data-stu-id="fda2d-106">By querying for a Boolean value that specifies whether the two file lists are identical.</span></span>  
   
-- <span data-ttu-id="9056e-105">通过查询交集检索同时存在于两个文件夹中的文件。</span><span class="sxs-lookup"><span data-stu-id="9056e-105">By querying for the intersection to retrieve the files that are in both folders.</span></span>  
+- <span data-ttu-id="fda2d-107">通过查询交集检索同时存在于两个文件夹中的文件。</span><span class="sxs-lookup"><span data-stu-id="fda2d-107">By querying for the intersection to retrieve the files that are in both folders.</span></span>  
   
-- <span data-ttu-id="9056e-106">通过查询差集检索仅存在于一个文件夹中的文件。</span><span class="sxs-lookup"><span data-stu-id="9056e-106">By querying for the set difference to retrieve the files that are in one folder but not the other.</span></span>  
+- <span data-ttu-id="fda2d-108">通过查询差集检索仅存在于一个文件夹中的文件。</span><span class="sxs-lookup"><span data-stu-id="fda2d-108">By querying for the set difference to retrieve the files that are in one folder but not the other.</span></span>  
   
     > [!NOTE]
-    > <span data-ttu-id="9056e-107">此处的方法适用于比较任何类型的对象序列。</span><span class="sxs-lookup"><span data-stu-id="9056e-107">The techniques shown here can be adapted to compare sequences of objects of any type.</span></span>  
+    > <span data-ttu-id="fda2d-109">此处的方法适用于比较任何类型的对象序列。</span><span class="sxs-lookup"><span data-stu-id="fda2d-109">The techniques shown here can be adapted to compare sequences of objects of any type.</span></span>  
   
- <span data-ttu-id="9056e-108">此处的 `FileComparer` 类演示如何将自定义比较器类与标准查询运算符结合使用。</span><span class="sxs-lookup"><span data-stu-id="9056e-108">The `FileComparer` class shown here demonstrates how to use a custom comparer class together with the Standard Query Operators.</span></span> <span data-ttu-id="9056e-109">此类不适合在实际方案中使用。</span><span class="sxs-lookup"><span data-stu-id="9056e-109">The class is not intended for use in real-world scenarios.</span></span> <span data-ttu-id="9056e-110">它仅使用每个文件的名称和字节长度来确定每个文件夹的内容是否相同。</span><span class="sxs-lookup"><span data-stu-id="9056e-110">It just uses the name and length in bytes of each file to determine whether the contents of each folder are identical or not.</span></span> <span data-ttu-id="9056e-111">在实际方案中，应修改此比较器以执行更严格的等同性检查。</span><span class="sxs-lookup"><span data-stu-id="9056e-111">In a real-world scenario, you should modify this comparer to perform a more rigorous equality check.</span></span>  
+ <span data-ttu-id="fda2d-110">此处的 `FileComparer` 类演示如何将自定义比较器类与标准查询运算符结合使用。</span><span class="sxs-lookup"><span data-stu-id="fda2d-110">The `FileComparer` class shown here demonstrates how to use a custom comparer class together with the Standard Query Operators.</span></span> <span data-ttu-id="fda2d-111">此类不适合在实际方案中使用。</span><span class="sxs-lookup"><span data-stu-id="fda2d-111">The class is not intended for use in real-world scenarios.</span></span> <span data-ttu-id="fda2d-112">它仅使用每个文件的名称和字节长度来确定每个文件夹的内容是否相同。</span><span class="sxs-lookup"><span data-stu-id="fda2d-112">It just uses the name and length in bytes of each file to determine whether the contents of each folder are identical or not.</span></span> <span data-ttu-id="fda2d-113">在实际方案中，应修改此比较器以执行更严格的等同性检查。</span><span class="sxs-lookup"><span data-stu-id="fda2d-113">In a real-world scenario, you should modify this comparer to perform a more rigorous equality check.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="9056e-112">示例</span><span class="sxs-lookup"><span data-stu-id="9056e-112">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="fda2d-114">示例</span><span class="sxs-lookup"><span data-stu-id="fda2d-114">Example</span></span>  
   
 ```csharp  
 namespace QueryCompareTwoDirs  
@@ -125,10 +126,10 @@ namespace QueryCompareTwoDirs
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="9056e-113">编译代码</span><span class="sxs-lookup"><span data-stu-id="9056e-113">Compiling the Code</span></span>  
- <span data-ttu-id="9056e-114">使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。</span><span class="sxs-lookup"><span data-stu-id="9056e-114">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+## <a name="compiling-the-code"></a><span data-ttu-id="fda2d-115">编译代码</span><span class="sxs-lookup"><span data-stu-id="fda2d-115">Compiling the Code</span></span>  
+ <span data-ttu-id="fda2d-116">使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。</span><span class="sxs-lookup"><span data-stu-id="fda2d-116">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="9056e-115">另请参阅</span><span class="sxs-lookup"><span data-stu-id="9056e-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fda2d-117">请参阅</span><span class="sxs-lookup"><span data-stu-id="fda2d-117">See also</span></span>
 
-- [<span data-ttu-id="9056e-116">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="9056e-116">LINQ to Objects (C#)</span></span>](./linq-to-objects.md)
-- [<span data-ttu-id="9056e-117">LINQ 和文件目录 (C#)</span><span class="sxs-lookup"><span data-stu-id="9056e-117">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
+- [<span data-ttu-id="fda2d-118">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="fda2d-118">LINQ to Objects (C#)</span></span>](./linq-to-objects.md)
+- [<span data-ttu-id="fda2d-119">LINQ 和文件目录 (C#)</span><span class="sxs-lookup"><span data-stu-id="fda2d-119">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)

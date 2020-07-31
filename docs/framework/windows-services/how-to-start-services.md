@@ -1,85 +1,86 @@
 ---
 title: 如何：启动服务
+description: 了解启动服务的多种方式。 安装服务后，必须启动它。 开始调用服务类上的 OnStart 方法。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, starting
 - services, starting
 ms.assetid: 9ea77955-2d96-4c3d-913c-14db7604cdad
 author: ghogen
-ms.openlocfilehash: 75fd3aba88bdffbe536ad5dab14996913d0a9d22
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4a2f9b291e60b12b1465fbb6bbbd1604572359a7
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053569"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925717"
 ---
-# <a name="how-to-start-services"></a><span data-ttu-id="f4da4-102">如何：启动服务</span><span class="sxs-lookup"><span data-stu-id="f4da4-102">How to: Start Services</span></span>
+# <a name="how-to-start-services"></a><span data-ttu-id="fb3c2-105">如何：启动服务</span><span class="sxs-lookup"><span data-stu-id="fb3c2-105">How to: Start Services</span></span>
 
-<span data-ttu-id="f4da4-103">安装服务后，必须启动它。</span><span class="sxs-lookup"><span data-stu-id="f4da4-103">After a service is installed, it must be started.</span></span> <span data-ttu-id="f4da4-104">开始调用服务类上的 <xref:System.ServiceProcess.ServiceBase.OnStart%2A> 方法。</span><span class="sxs-lookup"><span data-stu-id="f4da4-104">Starting calls the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method on the service class.</span></span> <span data-ttu-id="f4da4-105"><xref:System.ServiceProcess.ServiceBase.OnStart%2A> 方法通常定义服务将执行的有用工作。</span><span class="sxs-lookup"><span data-stu-id="f4da4-105">Usually, the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method defines the useful work the service will perform.</span></span> <span data-ttu-id="f4da4-106">服务启动后，在手动暂停或停止它前，该服务将保持活动状态。</span><span class="sxs-lookup"><span data-stu-id="f4da4-106">After a service starts, it remains active until it is manually paused or stopped.</span></span>
+<span data-ttu-id="fb3c2-106">安装服务后，必须启动它。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-106">After a service is installed, it must be started.</span></span> <span data-ttu-id="fb3c2-107">开始调用服务类上的 <xref:System.ServiceProcess.ServiceBase.OnStart%2A> 方法。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-107">Starting calls the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method on the service class.</span></span> <span data-ttu-id="fb3c2-108"><xref:System.ServiceProcess.ServiceBase.OnStart%2A> 方法通常定义服务将执行的有用工作。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-108">Usually, the <xref:System.ServiceProcess.ServiceBase.OnStart%2A> method defines the useful work the service will perform.</span></span> <span data-ttu-id="fb3c2-109">服务启动后，在手动暂停或停止它前，该服务将保持活动状态。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-109">After a service starts, it remains active until it is manually paused or stopped.</span></span>
 
-<span data-ttu-id="f4da4-107">服务可以设置为自动或手动启动。</span><span class="sxs-lookup"><span data-stu-id="f4da4-107">Services can be set up to start automatically or manually.</span></span> <span data-ttu-id="f4da4-108">自动启动的服务将在安装它的计算机重启或首次打开时启动。</span><span class="sxs-lookup"><span data-stu-id="f4da4-108">A service that starts automatically will be started when the computer on which it is installed is rebooted or first turned on.</span></span> <span data-ttu-id="f4da4-109">用户必须启动手动启动的服务。</span><span class="sxs-lookup"><span data-stu-id="f4da4-109">A user must start a service that starts manually.</span></span>
+<span data-ttu-id="fb3c2-110">服务可以设置为自动或手动启动。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-110">Services can be set up to start automatically or manually.</span></span> <span data-ttu-id="fb3c2-111">自动启动的服务将在安装它的计算机重启或首次打开时启动。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-111">A service that starts automatically will be started when the computer on which it is installed is rebooted or first turned on.</span></span> <span data-ttu-id="fb3c2-112">用户必须启动手动启动的服务。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-112">A user must start a service that starts manually.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="f4da4-110">默认情况下，使用 Visual Studio 创建的服务设置为手动启动。</span><span class="sxs-lookup"><span data-stu-id="f4da4-110">By default, services created with Visual Studio are set to start manually.</span></span>
+> <span data-ttu-id="fb3c2-113">默认情况下，使用 Visual Studio 创建的服务设置为手动启动。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-113">By default, services created with Visual Studio are set to start manually.</span></span>
 
-<span data-ttu-id="f4da4-111">可以通过多种方式手动启动服务 — 从“服务器资源管理器”  、“服务控制管理器”  ，或从使用名为 <xref:System.ServiceProcess.ServiceController> 的组件的代码均可启动。</span><span class="sxs-lookup"><span data-stu-id="f4da4-111">There are several ways you can manually start a service — from **Server Explorer**, from the **Services Control Manager**, or from code using a component called the <xref:System.ServiceProcess.ServiceController>.</span></span>
+<span data-ttu-id="fb3c2-114">可以通过多种方式手动启动服务 — 从“服务器资源管理器”  、“服务控制管理器”  ，或从使用名为 <xref:System.ServiceProcess.ServiceController> 的组件的代码均可启动。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-114">There are several ways you can manually start a service — from **Server Explorer**, from the **Services Control Manager**, or from code using a component called the <xref:System.ServiceProcess.ServiceController>.</span></span>
 
-<span data-ttu-id="f4da4-112">可以在 <xref:System.ServiceProcess.ServiceInstaller> 类中设置 <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> 属性，以确定是应该手动还是自动启动服务。</span><span class="sxs-lookup"><span data-stu-id="f4da4-112">You set the <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> property on the <xref:System.ServiceProcess.ServiceInstaller> class to determine whether a service should be started manually or automatically.</span></span>
+<span data-ttu-id="fb3c2-115">可以在 <xref:System.ServiceProcess.ServiceInstaller> 类中设置 <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> 属性，以确定是应该手动还是自动启动服务。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-115">You set the <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> property on the <xref:System.ServiceProcess.ServiceInstaller> class to determine whether a service should be started manually or automatically.</span></span>
 
-### <a name="to-specify-how-a-service-should-start"></a><span data-ttu-id="f4da4-113">指定服务的启动方式</span><span class="sxs-lookup"><span data-stu-id="f4da4-113">To specify how a service should start</span></span>
+### <a name="to-specify-how-a-service-should-start"></a><span data-ttu-id="fb3c2-116">指定服务的启动方式</span><span class="sxs-lookup"><span data-stu-id="fb3c2-116">To specify how a service should start</span></span>
 
-1. <span data-ttu-id="f4da4-114">在创建服务后为其添加必要的安装程序。</span><span class="sxs-lookup"><span data-stu-id="f4da4-114">After creating your service, add the necessary installers for it.</span></span> <span data-ttu-id="f4da4-115">有关详细信息，请参阅[如何：将安装程序添加到服务应用程序](how-to-add-installers-to-your-service-application.md)。</span><span class="sxs-lookup"><span data-stu-id="f4da4-115">For more information, see [How to: Add Installers to Your Service Application](how-to-add-installers-to-your-service-application.md).</span></span>
+1. <span data-ttu-id="fb3c2-117">在创建服务后为其添加必要的安装程序。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-117">After creating your service, add the necessary installers for it.</span></span> <span data-ttu-id="fb3c2-118">有关详细信息，请参阅[如何：将安装程序添加到服务应用程序](how-to-add-installers-to-your-service-application.md)。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-118">For more information, see [How to: Add Installers to Your Service Application](how-to-add-installers-to-your-service-application.md).</span></span>
 
-2. <span data-ttu-id="f4da4-116">在设计器中，单击正在使用的服务的服务安装程序。</span><span class="sxs-lookup"><span data-stu-id="f4da4-116">In the designer, click the service installer for the service you are working with.</span></span>
+2. <span data-ttu-id="fb3c2-119">在设计器中，单击正在使用的服务的服务安装程序。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-119">In the designer, click the service installer for the service you are working with.</span></span>
 
-3. <span data-ttu-id="f4da4-117">在“属性”  窗口中，将 <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> 属性设置为以下之一：</span><span class="sxs-lookup"><span data-stu-id="f4da4-117">In the **Properties** window, set the <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> property to one of the following:</span></span>
+3. <span data-ttu-id="fb3c2-120">在“属性”  窗口中，将 <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> 属性设置为以下之一：</span><span class="sxs-lookup"><span data-stu-id="fb3c2-120">In the **Properties** window, set the <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> property to one of the following:</span></span>
 
-    |<span data-ttu-id="f4da4-118">安装服务</span><span class="sxs-lookup"><span data-stu-id="f4da4-118">To have your service install</span></span>|<span data-ttu-id="f4da4-119">设置此值</span><span class="sxs-lookup"><span data-stu-id="f4da4-119">Set this value</span></span>|
+    |<span data-ttu-id="fb3c2-121">安装服务</span><span class="sxs-lookup"><span data-stu-id="fb3c2-121">To have your service install</span></span>|<span data-ttu-id="fb3c2-122">设置此值</span><span class="sxs-lookup"><span data-stu-id="fb3c2-122">Set this value</span></span>|
     |----------------------------------|--------------------|
-    |<span data-ttu-id="f4da4-120">计算机重启时</span><span class="sxs-lookup"><span data-stu-id="f4da4-120">When the computer is restarted</span></span>|<span data-ttu-id="f4da4-121">**自动**</span><span class="sxs-lookup"><span data-stu-id="f4da4-121">**Automatic**</span></span>|
-    |<span data-ttu-id="f4da4-122">显式用户动作启动服务时</span><span class="sxs-lookup"><span data-stu-id="f4da4-122">When an explicit user action starts the service</span></span>|<span data-ttu-id="f4da4-123">手动 </span><span class="sxs-lookup"><span data-stu-id="f4da4-123">**Manual**</span></span>|
+    |<span data-ttu-id="fb3c2-123">计算机重启时</span><span class="sxs-lookup"><span data-stu-id="fb3c2-123">When the computer is restarted</span></span>|<span data-ttu-id="fb3c2-124">**自动**</span><span class="sxs-lookup"><span data-stu-id="fb3c2-124">**Automatic**</span></span>|
+    |<span data-ttu-id="fb3c2-125">显式用户动作启动服务时</span><span class="sxs-lookup"><span data-stu-id="fb3c2-125">When an explicit user action starts the service</span></span>|<span data-ttu-id="fb3c2-126">手动</span><span class="sxs-lookup"><span data-stu-id="fb3c2-126">**Manual**</span></span>|
 
     > [!TIP]
-    > <span data-ttu-id="f4da4-124">为防止服务完全启动，可以将 <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> 属性设置为“禁用”  。</span><span class="sxs-lookup"><span data-stu-id="f4da4-124">To prevent your service from being started at all, you can set the <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> property to **Disabled**.</span></span> <span data-ttu-id="f4da4-125">如果要多次重启服务器并希望通过阻止在服务器启动时通常会启动的服务来节省时间，则可以执行此操作。</span><span class="sxs-lookup"><span data-stu-id="f4da4-125">You might do this if you are going to reboot a server several times and want to save time by preventing the services that would normally start from starting up.</span></span>
+    > <span data-ttu-id="fb3c2-127">为防止服务完全启动，可以将 <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> 属性设置为“禁用”  。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-127">To prevent your service from being started at all, you can set the <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> property to **Disabled**.</span></span> <span data-ttu-id="fb3c2-128">如果要多次重启服务器并希望通过阻止在服务器启动时通常会启动的服务来节省时间，则可以执行此操作。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-128">You might do this if you are going to reboot a server several times and want to save time by preventing the services that would normally start from starting up.</span></span>
 
     > [!NOTE]
-    > <span data-ttu-id="f4da4-126">安装服务后，可以更改这些属性和其他属性。</span><span class="sxs-lookup"><span data-stu-id="f4da4-126">These and other properties can be changed after your service is installed.</span></span>
+    > <span data-ttu-id="fb3c2-129">安装服务后，可以更改这些属性和其他属性。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-129">These and other properties can be changed after your service is installed.</span></span>
 
-    <span data-ttu-id="f4da4-127">可以通过多种方式启动将其 <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> 进程设置为“手动”  的服务 — 从“服务器资源管理器”、   “Windows 服务控制管理器”，或从代码均可启动。</span><span class="sxs-lookup"><span data-stu-id="f4da4-127">There are several ways you can start a service that has its <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> process set to **Manual** — from **Server Explorer**, from the **Windows Services Control Manager**, or from code.</span></span> <span data-ttu-id="f4da4-128">请务必注意，实际上，并非所有这些方法都在服务控制管理器  的上下文中启动服务；  服务器资源管理器和启动服务的编程方法实际上会操纵控制器。</span><span class="sxs-lookup"><span data-stu-id="f4da4-128">It is important to note that not all of these methods actually start the service in the context of the **Services Control Manager**; **Server Explorer** and programmatic methods of starting the service actually manipulate the controller.</span></span>
+    <span data-ttu-id="fb3c2-130">可以通过多种方式启动将其 <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> 进程设置为“手动”  的服务 — 从“服务器资源管理器”、   “Windows 服务控制管理器”，或从代码均可启动。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-130">There are several ways you can start a service that has its <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> process set to **Manual** — from **Server Explorer**, from the **Windows Services Control Manager**, or from code.</span></span> <span data-ttu-id="fb3c2-131">请务必注意，实际上，并非所有这些方法都在服务控制管理器  的上下文中启动服务；  服务器资源管理器和启动服务的编程方法实际上会操纵控制器。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-131">It is important to note that not all of these methods actually start the service in the context of the **Services Control Manager**; **Server Explorer** and programmatic methods of starting the service actually manipulate the controller.</span></span>
 
-### <a name="to-manually-start-a-service-from-server-explorer"></a><span data-ttu-id="f4da4-129">从“服务器资源管理器”手动启动服务</span><span class="sxs-lookup"><span data-stu-id="f4da4-129">To manually start a service from Server Explorer</span></span>
+### <a name="to-manually-start-a-service-from-server-explorer"></a><span data-ttu-id="fb3c2-132">从“服务器资源管理器”手动启动服务</span><span class="sxs-lookup"><span data-stu-id="fb3c2-132">To manually start a service from Server Explorer</span></span>
 
-1. <span data-ttu-id="f4da4-130">在“服务器资源管理器”  中，添加所需的服务器（如果尚未列出）。</span><span class="sxs-lookup"><span data-stu-id="f4da4-130">In **Server Explorer**, add the server you want if it is not already listed.</span></span> <span data-ttu-id="f4da4-131">有关详细信息，请参阅“操作说明：访问和初始化服务器资源管理器/数据库资源管理器。</span><span class="sxs-lookup"><span data-stu-id="f4da4-131">For more information, see How to: Access and Initialize Server Explorer-Database Explorer.</span></span>
+1. <span data-ttu-id="fb3c2-133">在“服务器资源管理器”  中，添加所需的服务器（如果尚未列出）。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-133">In **Server Explorer**, add the server you want if it is not already listed.</span></span> <span data-ttu-id="fb3c2-134">有关详细信息，请参阅“操作说明：访问和初始化服务器资源管理器/数据库资源管理器。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-134">For more information, see How to: Access and Initialize Server Explorer-Database Explorer.</span></span>
 
-2. <span data-ttu-id="f4da4-132">展开“服务”  节点，然后找到要启动的服务。</span><span class="sxs-lookup"><span data-stu-id="f4da4-132">Expand the **Services** node, and then locate the service you want to start.</span></span>
+2. <span data-ttu-id="fb3c2-135">展开“服务”  节点，然后找到要启动的服务。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-135">Expand the **Services** node, and then locate the service you want to start.</span></span>
 
-3. <span data-ttu-id="f4da4-133">右键单击该服务的名称，然后单击“启动”  。</span><span class="sxs-lookup"><span data-stu-id="f4da4-133">Right-click the name of the service, and click **Start**.</span></span>
+3. <span data-ttu-id="fb3c2-136">右键单击该服务的名称，然后单击“启动”  。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-136">Right-click the name of the service, and click **Start**.</span></span>
 
-### <a name="to-manually-start-a-service-from-services-control-manager"></a><span data-ttu-id="f4da4-134">从“服务控制管理器”手动启动服务</span><span class="sxs-lookup"><span data-stu-id="f4da4-134">To manually start a service from Services Control Manager</span></span>
+### <a name="to-manually-start-a-service-from-services-control-manager"></a><span data-ttu-id="fb3c2-137">从“服务控制管理器”手动启动服务</span><span class="sxs-lookup"><span data-stu-id="fb3c2-137">To manually start a service from Services Control Manager</span></span>
 
-1. <span data-ttu-id="f4da4-135">执行以下操作之一，打开“服务控制管理器”  ：</span><span class="sxs-lookup"><span data-stu-id="f4da4-135">Open the **Services Control Manager** by doing one of the following:</span></span>
+1. <span data-ttu-id="fb3c2-138">执行以下操作之一，打开“服务控制管理器”  ：</span><span class="sxs-lookup"><span data-stu-id="fb3c2-138">Open the **Services Control Manager** by doing one of the following:</span></span>
 
-    - <span data-ttu-id="f4da4-136">在 Windows XP 和 2000 Professional 中，右键单击桌面上的“我的电脑”  ，然后单击“管理”  。</span><span class="sxs-lookup"><span data-stu-id="f4da4-136">In Windows XP and 2000 Professional, right-click **My Computer** on the desktop, and then click **Manage**.</span></span> <span data-ttu-id="f4da4-137">在出现的对话框中，展开“服务和应用程序”  节点。</span><span class="sxs-lookup"><span data-stu-id="f4da4-137">In the dialog box that appears, expand the **Services and Applications** node.</span></span>
+    - <span data-ttu-id="fb3c2-139">在 Windows XP 和 2000 Professional 中，右键单击桌面上的“我的电脑”  ，然后单击“管理”  。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-139">In Windows XP and 2000 Professional, right-click **My Computer** on the desktop, and then click **Manage**.</span></span> <span data-ttu-id="fb3c2-140">在出现的对话框中，展开“服务和应用程序”  节点。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-140">In the dialog box that appears, expand the **Services and Applications** node.</span></span>
 
-      <span data-ttu-id="f4da4-138">\- 或 -</span><span class="sxs-lookup"><span data-stu-id="f4da4-138">\- or -</span></span>
+      <span data-ttu-id="fb3c2-141">\- 或 -</span><span class="sxs-lookup"><span data-stu-id="fb3c2-141">\- or -</span></span>
 
-    - <span data-ttu-id="f4da4-139">在 Windows Server 2003 和 Windows 2000 Server 中，单击“开始”  ，指向“程序”  ，单击“管理工具”  ，然后单击“服务”  。</span><span class="sxs-lookup"><span data-stu-id="f4da4-139">In Windows Server 2003 and Windows 2000 Server, click **Start**, point to **Programs**, click **Administrative Tools**, and then click **Services**.</span></span>
+    - <span data-ttu-id="fb3c2-142">在 Windows Server 2003 和 Windows 2000 Server 中，单击“开始”  ，指向“程序”  ，单击“管理工具”  ，然后单击“服务”  。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-142">In Windows Server 2003 and Windows 2000 Server, click **Start**, point to **Programs**, click **Administrative Tools**, and then click **Services**.</span></span>
 
       > [!NOTE]
-      > <span data-ttu-id="f4da4-140">在 Windows NT 4.0 版中，可以从“控制面板”  打开此对话框。</span><span class="sxs-lookup"><span data-stu-id="f4da4-140">In Windows NT version 4.0, you can open this dialog box from **Control Panel**.</span></span>
+      > <span data-ttu-id="fb3c2-143">在 Windows NT 4.0 版中，可以从“控制面板”  打开此对话框。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-143">In Windows NT version 4.0, you can open this dialog box from **Control Panel**.</span></span>
 
-    <span data-ttu-id="f4da4-141">现在应该可看到在窗口的“服务”  部分列出的服务。</span><span class="sxs-lookup"><span data-stu-id="f4da4-141">You should now see your service listed in the **Services** section of the window.</span></span>
+    <span data-ttu-id="fb3c2-144">现在应该可看到在窗口的“服务”  部分列出的服务。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-144">You should now see your service listed in the **Services** section of the window.</span></span>
 
-2. <span data-ttu-id="f4da4-142">从列表中选择你的服务，右键单击该服务，然后单击“启动”  。</span><span class="sxs-lookup"><span data-stu-id="f4da4-142">Select your service in the list, right-click it, and then click **Start**.</span></span>
+2. <span data-ttu-id="fb3c2-145">从列表中选择你的服务，右键单击该服务，然后单击“启动”  。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-145">Select your service in the list, right-click it, and then click **Start**.</span></span>
 
-### <a name="to-manually-start-a-service-from-code"></a><span data-ttu-id="f4da4-143">从代码手动启动服务</span><span class="sxs-lookup"><span data-stu-id="f4da4-143">To manually start a service from code</span></span>
+### <a name="to-manually-start-a-service-from-code"></a><span data-ttu-id="fb3c2-146">从代码手动启动服务</span><span class="sxs-lookup"><span data-stu-id="fb3c2-146">To manually start a service from code</span></span>
 
-1. <span data-ttu-id="f4da4-144">创建 <xref:System.ServiceProcess.ServiceController> 类的实例，并将其配置为与要管理的服务进行交互。</span><span class="sxs-lookup"><span data-stu-id="f4da4-144">Create an instance of the <xref:System.ServiceProcess.ServiceController> class, and configure it to interact with the service you want to administer.</span></span>
+1. <span data-ttu-id="fb3c2-147">创建 <xref:System.ServiceProcess.ServiceController> 类的实例，并将其配置为与要管理的服务进行交互。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-147">Create an instance of the <xref:System.ServiceProcess.ServiceController> class, and configure it to interact with the service you want to administer.</span></span>
 
-2. <span data-ttu-id="f4da4-145">调用 <xref:System.ServiceProcess.ServiceController.Start%2A> 方法以启动该服务。</span><span class="sxs-lookup"><span data-stu-id="f4da4-145">Call the <xref:System.ServiceProcess.ServiceController.Start%2A> method to start the service.</span></span>
+2. <span data-ttu-id="fb3c2-148">调用 <xref:System.ServiceProcess.ServiceController.Start%2A> 方法以启动该服务。</span><span class="sxs-lookup"><span data-stu-id="fb3c2-148">Call the <xref:System.ServiceProcess.ServiceController.Start%2A> method to start the service.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="f4da4-146">请参阅</span><span class="sxs-lookup"><span data-stu-id="f4da4-146">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="fb3c2-149">请参阅</span><span class="sxs-lookup"><span data-stu-id="fb3c2-149">See also</span></span>
 
-- [<span data-ttu-id="f4da4-147">Windows 服务应用程序介绍</span><span class="sxs-lookup"><span data-stu-id="f4da4-147">Introduction to Windows Service Applications</span></span>](introduction-to-windows-service-applications.md)
-- [<span data-ttu-id="f4da4-148">如何：创建 Windows 服务</span><span class="sxs-lookup"><span data-stu-id="f4da4-148">How to: Create Windows Services</span></span>](how-to-create-windows-services.md)
-- [<span data-ttu-id="f4da4-149">如何：将安装程序添加到服务应用程序</span><span class="sxs-lookup"><span data-stu-id="f4da4-149">How to: Add Installers to Your Service Application</span></span>](how-to-add-installers-to-your-service-application.md)
+- [<span data-ttu-id="fb3c2-150">Windows 服务应用程序介绍</span><span class="sxs-lookup"><span data-stu-id="fb3c2-150">Introduction to Windows Service Applications</span></span>](introduction-to-windows-service-applications.md)
+- [<span data-ttu-id="fb3c2-151">如何：创建 Windows 服务</span><span class="sxs-lookup"><span data-stu-id="fb3c2-151">How to: Create Windows Services</span></span>](how-to-create-windows-services.md)
+- [<span data-ttu-id="fb3c2-152">如何：将安装程序添加到服务应用程序</span><span class="sxs-lookup"><span data-stu-id="fb3c2-152">How to: Add Installers to Your Service Application</span></span>](how-to-add-installers-to-your-service-application.md)

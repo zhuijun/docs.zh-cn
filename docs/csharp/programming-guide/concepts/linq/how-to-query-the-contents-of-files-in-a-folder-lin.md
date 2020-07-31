@@ -1,18 +1,19 @@
 ---
 title: 如何查询文件夹中文本文件的内容 (LINQ) (C#)
+description: 了解如何使用 C# 中的 LINQ 查询目录树中的所有文件，打开每个文件并检查其内容。
 ms.date: 07/20/2015
 ms.assetid: f5b4dce7-1a34-4eb4-9bf1-60d5bdda264c
-ms.openlocfilehash: 998fddd3f59ee64df9adcee1acc720d82861c3d9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 216edc2ee6fc43fd06a3c89b1b6b73f693f752f8
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168734"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104265"
 ---
-# <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a><span data-ttu-id="f0388-102">如何查询文件夹中文本文件的内容 (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="f0388-102">How to query the contents of text files in a folder (LINQ) (C#)</span></span>
-<span data-ttu-id="f0388-103">此示例演示如何查询指定目录树中的所有文件、打开每个文件并检查其内容。</span><span class="sxs-lookup"><span data-stu-id="f0388-103">This example shows how to query over all the files in a specified directory tree, open each file, and inspect its contents.</span></span> <span data-ttu-id="f0388-104">此类技术可用于对目录树的内容创建索引或反向索引。</span><span class="sxs-lookup"><span data-stu-id="f0388-104">This type of technique could be used to create indexes or reverse indexes of the contents of a directory tree.</span></span> <span data-ttu-id="f0388-105">此示例中执行的是简单的字符串搜索。</span><span class="sxs-lookup"><span data-stu-id="f0388-105">A simple string search is performed in this example.</span></span> <span data-ttu-id="f0388-106">但是，可使用正则表达式执行类型更复杂的模式匹配。</span><span class="sxs-lookup"><span data-stu-id="f0388-106">However, more complex types of pattern matching can be performed with a regular expression.</span></span> <span data-ttu-id="f0388-107">有关详细信息，请参阅[如何将 LINQ 查询与正则表达式合并 (C#)](./how-to-combine-linq-queries-with-regular-expressions.md)。</span><span class="sxs-lookup"><span data-stu-id="f0388-107">For more information, see [How to combine LINQ queries with regular expressions (C#)](./how-to-combine-linq-queries-with-regular-expressions.md).</span></span>  
+# <a name="how-to-query-the-contents-of-text-files-in-a-folder-linq-c"></a><span data-ttu-id="67a65-103">如何查询文件夹中文本文件的内容 (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="67a65-103">How to query the contents of text files in a folder (LINQ) (C#)</span></span>
+<span data-ttu-id="67a65-104">此示例演示如何查询指定目录树中的所有文件、打开每个文件并检查其内容。</span><span class="sxs-lookup"><span data-stu-id="67a65-104">This example shows how to query over all the files in a specified directory tree, open each file, and inspect its contents.</span></span> <span data-ttu-id="67a65-105">此类技术可用于对目录树的内容创建索引或反向索引。</span><span class="sxs-lookup"><span data-stu-id="67a65-105">This type of technique could be used to create indexes or reverse indexes of the contents of a directory tree.</span></span> <span data-ttu-id="67a65-106">此示例中执行的是简单的字符串搜索。</span><span class="sxs-lookup"><span data-stu-id="67a65-106">A simple string search is performed in this example.</span></span> <span data-ttu-id="67a65-107">但是，可使用正则表达式执行类型更复杂的模式匹配。</span><span class="sxs-lookup"><span data-stu-id="67a65-107">However, more complex types of pattern matching can be performed with a regular expression.</span></span> <span data-ttu-id="67a65-108">有关详细信息，请参阅[如何将 LINQ 查询与正则表达式合并 (C#)](./how-to-combine-linq-queries-with-regular-expressions.md)。</span><span class="sxs-lookup"><span data-stu-id="67a65-108">For more information, see [How to combine LINQ queries with regular expressions (C#)](./how-to-combine-linq-queries-with-regular-expressions.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="f0388-108">示例</span><span class="sxs-lookup"><span data-stu-id="f0388-108">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="67a65-109">示例</span><span class="sxs-lookup"><span data-stu-id="67a65-109">Example</span></span>  
   
 ```csharp  
 class QueryContents  
@@ -70,10 +71,10 @@ class QueryContents
 }  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="f0388-109">编译代码</span><span class="sxs-lookup"><span data-stu-id="f0388-109">Compiling the Code</span></span>  
-<span data-ttu-id="f0388-110">使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。</span><span class="sxs-lookup"><span data-stu-id="f0388-110">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="67a65-110">编译代码</span><span class="sxs-lookup"><span data-stu-id="67a65-110">Compiling the Code</span></span>  
+<span data-ttu-id="67a65-111">使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。</span><span class="sxs-lookup"><span data-stu-id="67a65-111">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>
   
-## <a name="see-also"></a><span data-ttu-id="f0388-111">另请参阅</span><span class="sxs-lookup"><span data-stu-id="f0388-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="67a65-112">请参阅</span><span class="sxs-lookup"><span data-stu-id="67a65-112">See also</span></span>
 
-- [<span data-ttu-id="f0388-112">LINQ 和文件目录 (C#)</span><span class="sxs-lookup"><span data-stu-id="f0388-112">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
-- [<span data-ttu-id="f0388-113">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="f0388-113">LINQ to Objects (C#)</span></span>](./linq-to-objects.md)
+- [<span data-ttu-id="67a65-113">LINQ 和文件目录 (C#)</span><span class="sxs-lookup"><span data-stu-id="67a65-113">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
+- [<span data-ttu-id="67a65-114">LINQ to Objects (C#)</span><span class="sxs-lookup"><span data-stu-id="67a65-114">LINQ to Objects (C#)</span></span>](./linq-to-objects.md)

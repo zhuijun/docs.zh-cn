@@ -2,25 +2,26 @@
 title: dotnet list package 命令
 description: 使用“dotnet list package”命令，可以方便地列出项目或解决方案的包引用。
 ms.date: 02/14/2020
-ms.openlocfilehash: 12d64600d178ea8cf490a0d6917e67bd3d8c6d21
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 7157e56860936d10aa322854a589ae89e2bc0826
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463661"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164754"
 ---
-# <a name="dotnet-list-package"></a><span data-ttu-id="276c7-103">dotnet list package</span><span class="sxs-lookup"><span data-stu-id="276c7-103">dotnet list package</span></span>
+# <a name="dotnet-list-package"></a><span data-ttu-id="773da-103">dotnet list package</span><span class="sxs-lookup"><span data-stu-id="773da-103">dotnet list package</span></span>
 
-<span data-ttu-id="276c7-104">本文适用于： ✔️ .NET Core 2.2 SDK 及更高版本</span><span class="sxs-lookup"><span data-stu-id="276c7-104">**This article applies to:** ✔️ .NET Core 2.2 SDK and later versions</span></span>
+<span data-ttu-id="773da-104">本文适用于： ✔️ .NET Core 2.2 SDK 及更高版本</span><span class="sxs-lookup"><span data-stu-id="773da-104">**This article applies to:** ✔️ .NET Core 2.2 SDK and later versions</span></span>
 
-## <a name="name"></a><span data-ttu-id="276c7-105">“属性”</span><span class="sxs-lookup"><span data-stu-id="276c7-105">Name</span></span>
+## <a name="name"></a><span data-ttu-id="773da-105">“属性”</span><span class="sxs-lookup"><span data-stu-id="773da-105">Name</span></span>
 
-<span data-ttu-id="276c7-106">`dotnet list package` - 列出项目或解决方案的包引用。</span><span class="sxs-lookup"><span data-stu-id="276c7-106">`dotnet list package` - Lists the package references for a project or solution.</span></span>
+<span data-ttu-id="773da-106">`dotnet list package` - 列出项目或解决方案的包引用。</span><span class="sxs-lookup"><span data-stu-id="773da-106">`dotnet list package` - Lists the package references for a project or solution.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="276c7-107">摘要</span><span class="sxs-lookup"><span data-stu-id="276c7-107">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="773da-107">摘要</span><span class="sxs-lookup"><span data-stu-id="773da-107">Synopsis</span></span>
 
 ```dotnetcli
 dotnet list [<PROJECT>|<SOLUTION>] package [--config <SOURCE>]
+    [--deprecated]
     [--framework <FRAMEWORK>] [--highest-minor] [--highest-patch]
     [--include-prerelease] [--include-transitive] [--interactive]
     [--outdated] [--source <SOURCE>]
@@ -28,9 +29,9 @@ dotnet list [<PROJECT>|<SOLUTION>] package [--config <SOURCE>]
 dotnet list package -h|--help
 ```
 
-## <a name="description"></a><span data-ttu-id="276c7-108">描述</span><span class="sxs-lookup"><span data-stu-id="276c7-108">Description</span></span>
+## <a name="description"></a><span data-ttu-id="773da-108">描述</span><span class="sxs-lookup"><span data-stu-id="773da-108">Description</span></span>
 
-<span data-ttu-id="276c7-109">使用 `dotnet list package` 命令，可以方便地列出特定项目或解决方案的所有 NuGet 包引用。</span><span class="sxs-lookup"><span data-stu-id="276c7-109">The `dotnet list package` command provides a convenient option to list all NuGet package references for a specific project or a solution.</span></span> <span data-ttu-id="276c7-110">首先，需要生成项目，以提供必需资产以供此命令处理。</span><span class="sxs-lookup"><span data-stu-id="276c7-110">You first need to build the project in order to have the assets needed for this command to process.</span></span> <span data-ttu-id="276c7-111">下面的示例展示了 [SentimentAnalysis](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) 项目的 `dotnet list package` 命令输出：</span><span class="sxs-lookup"><span data-stu-id="276c7-111">The following example shows the output of the `dotnet list package` command for the [SentimentAnalysis](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) project:</span></span>
+<span data-ttu-id="773da-109">使用 `dotnet list package` 命令，可以方便地列出特定项目或解决方案的所有 NuGet 包引用。</span><span class="sxs-lookup"><span data-stu-id="773da-109">The `dotnet list package` command provides a convenient option to list all NuGet package references for a specific project or a solution.</span></span> <span data-ttu-id="773da-110">首先，需要生成项目，以提供必需资产以供此命令处理。</span><span class="sxs-lookup"><span data-stu-id="773da-110">You first need to build the project in order to have the assets needed for this command to process.</span></span> <span data-ttu-id="773da-111">下面的示例展示了 [SentimentAnalysis](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) 项目的 `dotnet list package` 命令输出：</span><span class="sxs-lookup"><span data-stu-id="773da-111">The following example shows the output of the `dotnet list package` command for the [SentimentAnalysis](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/SentimentAnalysis) project:</span></span>
 
 ```output
 Project 'SentimentAnalysis' has the following package references
@@ -42,9 +43,9 @@ Project 'SentimentAnalysis' has the following package references
 (A) : Auto-referenced package.
 ```
 
-<span data-ttu-id="276c7-112">“已请求”列是指项目文件中指定的包版本，可以是一个范围。</span><span class="sxs-lookup"><span data-stu-id="276c7-112">The **Requested** column refers to the package version specified in the project file and can be a range.</span></span> <span data-ttu-id="276c7-113">“已解析”列列出了项目当前使用的版本，始终都是一个值。</span><span class="sxs-lookup"><span data-stu-id="276c7-113">The **Resolved** column lists the version that the project is currently using and is always a single value.</span></span> <span data-ttu-id="276c7-114">紧靠名称旁边显示 `(A)` 的包表示从项目设置（`Sdk` 类型、`<TargetFramework>` 或 `<TargetFrameworks>` 属性等）推断出的[隐式包引用](csproj.md#implicit-package-references)。</span><span class="sxs-lookup"><span data-stu-id="276c7-114">The packages displaying an `(A)` right next to their names represent [implicit package references](csproj.md#implicit-package-references) that are inferred from your project settings (`Sdk` type, `<TargetFramework>` or `<TargetFrameworks>` property, etc.)</span></span>
+<span data-ttu-id="773da-112">“已请求”列是指项目文件中指定的包版本，可以是一个范围。</span><span class="sxs-lookup"><span data-stu-id="773da-112">The **Requested** column refers to the package version specified in the project file and can be a range.</span></span> <span data-ttu-id="773da-113">“已解析”列列出了项目当前使用的版本，始终都是一个值。</span><span class="sxs-lookup"><span data-stu-id="773da-113">The **Resolved** column lists the version that the project is currently using and is always a single value.</span></span> <span data-ttu-id="773da-114">紧靠名称旁边显示 `(A)` 的包表示从项目设置（`Sdk` 类型、`<TargetFramework>` 或 `<TargetFrameworks>` 属性等）推断出的[隐式包引用](csproj.md#implicit-package-references)。</span><span class="sxs-lookup"><span data-stu-id="773da-114">The packages displaying an `(A)` right next to their names represent [implicit package references](csproj.md#implicit-package-references) that are inferred from your project settings (`Sdk` type, `<TargetFramework>` or `<TargetFrameworks>` property, etc.)</span></span>
 
-<span data-ttu-id="276c7-115">使用 `--outdated` 选项，可以确定项目中正在使用的包是否有更高版本。</span><span class="sxs-lookup"><span data-stu-id="276c7-115">Use the `--outdated` option to find out if there are newer versions available of the packages you're using in your projects.</span></span> <span data-ttu-id="276c7-116">默认情况下，`--outdated` 列出最新稳定包，除非已解析版本也是预发行版本。</span><span class="sxs-lookup"><span data-stu-id="276c7-116">By default, `--outdated` lists the latest stable packages unless the resolved version is also a prerelease version.</span></span> <span data-ttu-id="276c7-117">若要在列出更高版本时包含预发行版本，还请指定 `--include-prerelease` 选项。</span><span class="sxs-lookup"><span data-stu-id="276c7-117">To include prerelease versions when listing newer versions, also specify the `--include-prerelease` option.</span></span> <span data-ttu-id="276c7-118">下面的示例展示了上一个示例中相同项目的 `dotnet list package --outdated --include-prerelease` 命令输出：</span><span class="sxs-lookup"><span data-stu-id="276c7-118">The following examples shows the output of the `dotnet list package --outdated --include-prerelease` command for the same project as the previous example:</span></span>
+<span data-ttu-id="773da-115">使用 `--outdated` 选项，可以确定项目中正在使用的包是否有更高版本。</span><span class="sxs-lookup"><span data-stu-id="773da-115">Use the `--outdated` option to find out if there are newer versions available of the packages you're using in your projects.</span></span> <span data-ttu-id="773da-116">默认情况下，`--outdated` 列出最新稳定包，除非已解析版本也是预发行版本。</span><span class="sxs-lookup"><span data-stu-id="773da-116">By default, `--outdated` lists the latest stable packages unless the resolved version is also a prerelease version.</span></span> <span data-ttu-id="773da-117">若要在列出更高版本时包含预发行版本，还请指定 `--include-prerelease` 选项。</span><span class="sxs-lookup"><span data-stu-id="773da-117">To include prerelease versions when listing newer versions, also specify the `--include-prerelease` option.</span></span> <span data-ttu-id="773da-118">下面的示例展示了上一个示例中相同项目的 `dotnet list package --outdated --include-prerelease` 命令输出：</span><span class="sxs-lookup"><span data-stu-id="773da-118">The following examples shows the output of the `dotnet list package --outdated --include-prerelease` command for the same project as the previous example:</span></span>
 
 ```output
 The following sources were used:
@@ -57,7 +58,7 @@ Project `SentimentAnalysis` has the following updates to its packages
    > Microsoft.ML         1.4.0       1.4.0      1.5.0-preview
 ```
 
-<span data-ttu-id="276c7-119">如果需要确定项目是否有可传递依赖关系，请使用 `--include-transitive` 选项。</span><span class="sxs-lookup"><span data-stu-id="276c7-119">If you need to find out whether your project has transitive dependencies, use the `--include-transitive` option.</span></span> <span data-ttu-id="276c7-120">如果在项目中添加包，它转而又依赖另一个包，就会出现可传递依赖关系。</span><span class="sxs-lookup"><span data-stu-id="276c7-120">Transitive dependencies occur when you add a package to your project that in turn relies on another package.</span></span> <span data-ttu-id="276c7-121">下面的示例展示了 [HelloPlugin](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin/HelloPlugin) 项目的 `dotnet list package --include-transitive` 命令运行输出，其中显示顶级包及其依赖的包：</span><span class="sxs-lookup"><span data-stu-id="276c7-121">The following example shows the output from running the `dotnet list package --include-transitive` command for the [HelloPlugin](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin/HelloPlugin) project, which displays top-level packages and the packages they depend on:</span></span>
+<span data-ttu-id="773da-119">如果需要确定项目是否有可传递依赖关系，请使用 `--include-transitive` 选项。</span><span class="sxs-lookup"><span data-stu-id="773da-119">If you need to find out whether your project has transitive dependencies, use the `--include-transitive` option.</span></span> <span data-ttu-id="773da-120">如果在项目中添加包，它转而又依赖另一个包，就会出现可传递依赖关系。</span><span class="sxs-lookup"><span data-stu-id="773da-120">Transitive dependencies occur when you add a package to your project that in turn relies on another package.</span></span> <span data-ttu-id="773da-121">下面的示例展示了 [HelloPlugin](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin/HelloPlugin) 项目的 `dotnet list package --include-transitive` 命令运行输出，其中显示顶级包及其依赖的包：</span><span class="sxs-lookup"><span data-stu-id="773da-121">The following example shows the output from running the `dotnet list package --include-transitive` command for the [HelloPlugin](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin/HelloPlugin) project, which displays top-level packages and the packages they depend on:</span></span>
 
 ```output
 Project 'HelloPlugin' has the following package references
@@ -66,69 +67,73 @@ Project 'HelloPlugin' has the following package references
    > PluginBase            1.0.0
 ```
 
-## <a name="arguments"></a><span data-ttu-id="276c7-122">自变量</span><span class="sxs-lookup"><span data-stu-id="276c7-122">Arguments</span></span>
+## <a name="arguments"></a><span data-ttu-id="773da-122">自变量</span><span class="sxs-lookup"><span data-stu-id="773da-122">Arguments</span></span>
 
 `PROJECT | SOLUTION`
 
-<span data-ttu-id="276c7-123">要对其运行命令的项目或解决方案文件。</span><span class="sxs-lookup"><span data-stu-id="276c7-123">The project or solution file to operate on.</span></span> <span data-ttu-id="276c7-124">如果未指定，此命令会搜索当前目录来获取一个项目文件。</span><span class="sxs-lookup"><span data-stu-id="276c7-124">If not specified, the command searches the current directory for one.</span></span> <span data-ttu-id="276c7-125">如果找到多个解决方案或项目，便会抛出错误。</span><span class="sxs-lookup"><span data-stu-id="276c7-125">If more than one solution or project is found, an error is thrown.</span></span>
+<span data-ttu-id="773da-123">要对其运行命令的项目或解决方案文件。</span><span class="sxs-lookup"><span data-stu-id="773da-123">The project or solution file to operate on.</span></span> <span data-ttu-id="773da-124">如果未指定，此命令会搜索当前目录来获取一个项目文件。</span><span class="sxs-lookup"><span data-stu-id="773da-124">If not specified, the command searches the current directory for one.</span></span> <span data-ttu-id="773da-125">如果找到多个解决方案或项目，便会抛出错误。</span><span class="sxs-lookup"><span data-stu-id="773da-125">If more than one solution or project is found, an error is thrown.</span></span>
 
-## <a name="options"></a><span data-ttu-id="276c7-126">选项</span><span class="sxs-lookup"><span data-stu-id="276c7-126">Options</span></span>
+## <a name="options"></a><span data-ttu-id="773da-126">选项</span><span class="sxs-lookup"><span data-stu-id="773da-126">Options</span></span>
 
 - **`--config <SOURCE>`**
 
-  <span data-ttu-id="276c7-127">在搜索版本更高的包时，要使用的 NuGet 源。</span><span class="sxs-lookup"><span data-stu-id="276c7-127">The NuGet sources to use when searching for newer packages.</span></span> <span data-ttu-id="276c7-128">需要使用 `--outdated` 选项。</span><span class="sxs-lookup"><span data-stu-id="276c7-128">Requires the `--outdated` option.</span></span>
+  <span data-ttu-id="773da-127">在搜索版本更高的包时，要使用的 NuGet 源。</span><span class="sxs-lookup"><span data-stu-id="773da-127">The NuGet sources to use when searching for newer packages.</span></span> <span data-ttu-id="773da-128">需要使用 `--outdated` 选项。</span><span class="sxs-lookup"><span data-stu-id="773da-128">Requires the `--outdated` option.</span></span>
+
+- **`--deprecated`**
+
+  <span data-ttu-id="773da-129">显示已弃用的包。</span><span class="sxs-lookup"><span data-stu-id="773da-129">Displays packages that have been deprecated.</span></span>
 
 - **`--framework <FRAMEWORK>`**
 
-  <span data-ttu-id="276c7-129">只显示适用于指定[目标框架](../../standard/frameworks.md)的包。</span><span class="sxs-lookup"><span data-stu-id="276c7-129">Displays only the packages applicable for the specified [target framework](../../standard/frameworks.md).</span></span> <span data-ttu-id="276c7-130">若要指定多个框架，请多次重复此选项。</span><span class="sxs-lookup"><span data-stu-id="276c7-130">To specify multiple frameworks, repeat the option multiple times.</span></span> <span data-ttu-id="276c7-131">例如：`--framework netcoreapp2.2 --framework netstandard2.0`。</span><span class="sxs-lookup"><span data-stu-id="276c7-131">For example: `--framework netcoreapp2.2 --framework netstandard2.0`.</span></span>
+  <span data-ttu-id="773da-130">只显示适用于指定[目标框架](../../standard/frameworks.md)的包。</span><span class="sxs-lookup"><span data-stu-id="773da-130">Displays only the packages applicable for the specified [target framework](../../standard/frameworks.md).</span></span> <span data-ttu-id="773da-131">若要指定多个框架，请多次重复此选项。</span><span class="sxs-lookup"><span data-stu-id="773da-131">To specify multiple frameworks, repeat the option multiple times.</span></span> <span data-ttu-id="773da-132">例如：`--framework netcoreapp2.2 --framework netstandard2.0`。</span><span class="sxs-lookup"><span data-stu-id="773da-132">For example: `--framework netcoreapp2.2 --framework netstandard2.0`.</span></span>
 
 - **`-h|--help`**
 
-  <span data-ttu-id="276c7-132">打印出有关命令的简短帮助。</span><span class="sxs-lookup"><span data-stu-id="276c7-132">Prints out a short help for the command.</span></span>
+  <span data-ttu-id="773da-133">打印出有关命令的简短帮助。</span><span class="sxs-lookup"><span data-stu-id="773da-133">Prints out a short help for the command.</span></span>
 
 - **`--highest-minor`**
 
-  <span data-ttu-id="276c7-133">在搜索版本更高的包时，仅考虑有匹配的主版本号的包。</span><span class="sxs-lookup"><span data-stu-id="276c7-133">Considers only the packages with a matching major version number when searching for newer packages.</span></span> <span data-ttu-id="276c7-134">需要使用 `--outdated` 选项。</span><span class="sxs-lookup"><span data-stu-id="276c7-134">Requires the `--outdated` option.</span></span>
+  <span data-ttu-id="773da-134">在搜索版本更高的包时，仅考虑有匹配的主版本号的包。</span><span class="sxs-lookup"><span data-stu-id="773da-134">Considers only the packages with a matching major version number when searching for newer packages.</span></span> <span data-ttu-id="773da-135">需要使用 `--outdated` 或 `--deprecated` 选项。</span><span class="sxs-lookup"><span data-stu-id="773da-135">Requires the `--outdated` or `--deprecated` option.</span></span>
 
 - **`--highest-patch`**
 
-  <span data-ttu-id="276c7-135">在搜索版本更高的包时，仅考虑有匹配的主版本号和次要版本号的包。</span><span class="sxs-lookup"><span data-stu-id="276c7-135">Considers only the packages with a matching major and minor version numbers when searching for newer packages.</span></span> <span data-ttu-id="276c7-136">需要使用 `--outdated` 选项。</span><span class="sxs-lookup"><span data-stu-id="276c7-136">Requires the `--outdated` option.</span></span>
+  <span data-ttu-id="773da-136">在搜索版本更高的包时，仅考虑有匹配的主版本号和次要版本号的包。</span><span class="sxs-lookup"><span data-stu-id="773da-136">Considers only the packages with a matching major and minor version numbers when searching for newer packages.</span></span> <span data-ttu-id="773da-137">需要使用 `--outdated` 或 `--deprecated` 选项。</span><span class="sxs-lookup"><span data-stu-id="773da-137">Requires the `--outdated` or `--deprecated` option.</span></span>
 
 - **`--include-prerelease`**
 
-  <span data-ttu-id="276c7-137">在搜索版本更高的包时，考虑有预发行版本的包。</span><span class="sxs-lookup"><span data-stu-id="276c7-137">Considers packages with prerelease versions when searching for newer packages.</span></span> <span data-ttu-id="276c7-138">需要使用 `--outdated` 选项。</span><span class="sxs-lookup"><span data-stu-id="276c7-138">Requires the `--outdated` option.</span></span>
+  <span data-ttu-id="773da-138">在搜索版本更高的包时，考虑有预发行版本的包。</span><span class="sxs-lookup"><span data-stu-id="773da-138">Considers packages with prerelease versions when searching for newer packages.</span></span> <span data-ttu-id="773da-139">需要使用 `--outdated` 或 `--deprecated` 选项。</span><span class="sxs-lookup"><span data-stu-id="773da-139">Requires the `--outdated` or `--deprecated` option.</span></span>
 
 - **`--include-transitive`**
 
-  <span data-ttu-id="276c7-139">除了顶级包之外，还列出可传递包。</span><span class="sxs-lookup"><span data-stu-id="276c7-139">Lists transitive packages, in addition to the top-level packages.</span></span> <span data-ttu-id="276c7-140">如果指定此选项，可以获取顶级包所依赖的包列表。</span><span class="sxs-lookup"><span data-stu-id="276c7-140">When specifying this option, you get a list of packages that the top-level packages depend on.</span></span>
+  <span data-ttu-id="773da-140">除了顶级包之外，还列出可传递包。</span><span class="sxs-lookup"><span data-stu-id="773da-140">Lists transitive packages, in addition to the top-level packages.</span></span> <span data-ttu-id="773da-141">如果指定此选项，可以获取顶级包所依赖的包列表。</span><span class="sxs-lookup"><span data-stu-id="773da-141">When specifying this option, you get a list of packages that the top-level packages depend on.</span></span>
 
 - **`--interactive`**
 
-  <span data-ttu-id="276c7-141">允许命令停止并等待用户输入或操作。</span><span class="sxs-lookup"><span data-stu-id="276c7-141">Allows the command to stop and wait for user input or action.</span></span> <span data-ttu-id="276c7-142">例如，完成身份验证。</span><span class="sxs-lookup"><span data-stu-id="276c7-142">For example, to complete authentication.</span></span> <span data-ttu-id="276c7-143">自 .NET Core 3.0 SDK 起可用。</span><span class="sxs-lookup"><span data-stu-id="276c7-143">Available since .NET Core 3.0 SDK.</span></span>
+  <span data-ttu-id="773da-142">允许命令停止并等待用户输入或操作。</span><span class="sxs-lookup"><span data-stu-id="773da-142">Allows the command to stop and wait for user input or action.</span></span> <span data-ttu-id="773da-143">例如，完成身份验证。</span><span class="sxs-lookup"><span data-stu-id="773da-143">For example, to complete authentication.</span></span> <span data-ttu-id="773da-144">自 .NET Core 3.0 SDK 起可用。</span><span class="sxs-lookup"><span data-stu-id="773da-144">Available since .NET Core 3.0 SDK.</span></span>
 
 - **`--outdated`**
 
-  <span data-ttu-id="276c7-144">列出版本更高的包。</span><span class="sxs-lookup"><span data-stu-id="276c7-144">Lists packages that have newer versions available.</span></span>
+  <span data-ttu-id="773da-145">列出版本更高的包。</span><span class="sxs-lookup"><span data-stu-id="773da-145">Lists packages that have newer versions available.</span></span>
 
 - **`-s|--source <SOURCE>`**
 
-  <span data-ttu-id="276c7-145">在搜索版本更高的包时，要使用的 NuGet 源。</span><span class="sxs-lookup"><span data-stu-id="276c7-145">The NuGet sources to use when searching for newer packages.</span></span> <span data-ttu-id="276c7-146">需要使用 `--outdated` 选项。</span><span class="sxs-lookup"><span data-stu-id="276c7-146">Requires the `--outdated` option.</span></span>
+  <span data-ttu-id="773da-146">在搜索版本更高的包时，要使用的 NuGet 源。</span><span class="sxs-lookup"><span data-stu-id="773da-146">The NuGet sources to use when searching for newer packages.</span></span> <span data-ttu-id="773da-147">需要使用 `--outdated` 或 `--deprecated` 选项。</span><span class="sxs-lookup"><span data-stu-id="773da-147">Requires the `--outdated` or `--deprecated` option.</span></span>
 
-## <a name="examples"></a><span data-ttu-id="276c7-147">示例</span><span class="sxs-lookup"><span data-stu-id="276c7-147">Examples</span></span>
+## <a name="examples"></a><span data-ttu-id="773da-148">示例</span><span class="sxs-lookup"><span data-stu-id="773da-148">Examples</span></span>
 
-- <span data-ttu-id="276c7-148">列出特定项目的包引用：</span><span class="sxs-lookup"><span data-stu-id="276c7-148">List package references of a specific project:</span></span>
+- <span data-ttu-id="773da-149">列出特定项目的包引用：</span><span class="sxs-lookup"><span data-stu-id="773da-149">List package references of a specific project:</span></span>
 
   ```dotnetcli
   dotnet list SentimentAnalysis.csproj package
   ```
 
-- <span data-ttu-id="276c7-149">列出有更高版本（包括预发行版本）的包引用：</span><span class="sxs-lookup"><span data-stu-id="276c7-149">List package references that have newer versions available, including prerelease versions:</span></span>
+- <span data-ttu-id="773da-150">列出有更高版本（包括预发行版本）的包引用：</span><span class="sxs-lookup"><span data-stu-id="773da-150">List package references that have newer versions available, including prerelease versions:</span></span>
 
   ```dotnetcli
   dotnet list package --outdated --include-prerelease
   ```
 
-- <span data-ttu-id="276c7-150">列出特定目标框架的包引用：</span><span class="sxs-lookup"><span data-stu-id="276c7-150">List package references for a specific target framework:</span></span>
+- <span data-ttu-id="773da-151">列出特定目标框架的包引用：</span><span class="sxs-lookup"><span data-stu-id="773da-151">List package references for a specific target framework:</span></span>
 
   ```dotnetcli
   dotnet list package --framework netcoreapp3.0
