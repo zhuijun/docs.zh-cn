@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: ef9c62b0378e1064d8cfd90a8c59aed74ea312b2
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 69259b1d47a8e30945c578db10c6d697c81fa261
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84701560"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164410"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>教程：在 Visual Studio 中创建 .NET Standard 库
 
@@ -111,7 +111,7 @@ ms.locfileid: "84701560"
 
    ![Visual Studio 中用于设置启动项目的项目上下文菜单](media/library-with-visual-studio/set-startup-project-context-menu.png)
 
-1. 按 <kbd>Shift</kbd>+<kbd>F5</kbd> 编译并运行程序，而不进行调试。
+1. 按 Ctrl+F5 编译并运行程序，而不进行调试<kbd></kbd><kbd></kbd>。
 
    ![Visual Studio 中显示“调试”按钮的项目工具栏](media/library-with-visual-studio/visual-studio-project-toolbar.png)
 

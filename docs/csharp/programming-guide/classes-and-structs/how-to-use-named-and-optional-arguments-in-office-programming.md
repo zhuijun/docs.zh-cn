@@ -1,17 +1,18 @@
 ---
 title: 如何在 Office 编程中使用命名实参和可选实参（C# 编程指南）
+description: 了解如何使用命名参数和可选参数来帮助访问 COM 接口，如 Microsoft Office 自动化 API。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - named and optional arguments [C#], Office programming
 - optional arguments [C#], Office programming
 - named arguments [C#], Office programming
 ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
-ms.openlocfilehash: 36b5c8b49404606c8240d24953c3677d5612d30e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7e24331d37e8fdbe2bc66a2d9f73a5f6a7242af9
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75714876"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864340"
 ---
 # <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>如何在 Office 编程中使用命名实参和可选实参（C# 编程指南）
 
@@ -29,29 +30,29 @@ ms.locfileid: "75714876"
 
 2. 在 **“文件”** 菜单上，指向 **“新建”** ，然后单击 **“项目”** 。
 
-3. 在“模板类别”  窗格中，展开“Visual C#”  ，然后单击“Windows”  。
+3. 在“模板类别”窗格中，展开“Visual C#”，然后单击“Windows”。
 
-4. 查看“模板”  窗格的顶部，确保“.NET Framework 4”  出现在“目标框架”  框中。
+4. 查看“模板”窗格的顶部，确保“.NET Framework 4”出现在“目标框架”框中。
 
-5. 在“模板”  窗格中，单击“控制台应用程序”  。
+5. 在“模板”窗格中，单击“控制台应用程序”。
 
-6. 在“名称”  字段中键入项目的名称。
+6. 在“名称”字段中键入项目的名称。
 
-7. 单击“确定”。 
+7. 单击 **“确定”** 。
 
-     新项目将出现在“解决方案资源管理器”  中。
+     新项目将出现在“解决方案资源管理器”中。
 
 ## <a name="to-add-a-reference"></a>添加引用
 
-1. 在“解决方案资源管理器”  中，右键单击你的项目名称，然后单击“添加引用”  。 此时会显示“添加引用”  对话框。
+1. 在“解决方案资源管理器”中，右键单击你的项目名称，然后单击“添加引用”。 此时会显示“添加引用”对话框。
 
-2. 在“.NET”页上的“组件名称”列表中，选择“Microsoft.Office.Interop.Word”    。
+2. 在“.NET”页上的“组件名称”列表中，选择“Microsoft.Office.Interop.Word”  。
 
-3. 单击“确定”。 
+3. 单击 **“确定”** 。
 
 ## <a name="to-add-necessary-using-directives"></a>添加必要的 using 指令
 
-1. 在“解决方案资源管理器”  中，右键单击“Program.cs”  文件，然后单击“查看代码”  。
+1. 在“解决方案资源管理器”中，右键单击“Program.cs”文件，然后单击“查看代码”。
 
 2. 将以下 `using` 指令添加到代码文件的顶部：
 
@@ -59,7 +60,7 @@ ms.locfileid: "75714876"
 
 ## <a name="to-display-text-in-a-word-document"></a>在 Word 文档中显示文本
 
-1. 在“Program.cs”的 `Program` 类中，添加以下方法以创建 Word 应用程序和 Word 文档  。 [Add](<xref:Microsoft.Office.Interop.Word.Documents.Add%2A>) 方法具有四个可选参数。 此示例使用这些参数的默认值。 因此，调用语句中不必有参数。
+1. 在“Program.cs”的 `Program` 类中，添加以下方法以创建 Word 应用程序和 Word 文档。 [Add](<xref:Microsoft.Office.Interop.Word.Documents.Add%2A>) 方法具有四个可选参数。 此示例使用这些参数的默认值。 因此，调用语句中不必有参数。
 
      [!code-csharp[csProgGuideNamedAndOptional#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#6)]
 
@@ -107,6 +108,6 @@ ms.locfileid: "75714876"
 
  [!code-csharp[csProgGuideNamedAndOptional#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#12)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [命名参数和可选参数](./named-and-optional-arguments.md)

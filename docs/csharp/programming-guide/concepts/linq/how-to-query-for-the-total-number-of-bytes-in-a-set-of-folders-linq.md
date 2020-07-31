@@ -1,13 +1,14 @@
 ---
 title: 如何查询一组文件夹中的总字节数 (LINQ) (C#)
+description: 了解如何使用 C# 中的 LINQ 来查找由指定文件夹及其所有子文件夹中的所有文件使用的字节总数。
 ms.date: 07/20/2015
 ms.assetid: a01bd1d4-133c-4ca2-aa4e-e93e81d6076c
-ms.openlocfilehash: c6bfe6bb6d76e7ce8ea8887eef85cd64f2a025df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 964d92a55599d60388f7add937c7f7338f697817
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75344820"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104296"
 ---
 # <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-c"></a>如何查询一组文件夹中的总字节数 (LINQ) (C#)
 此示例演示如何检索由指定文件夹及其所有子文件夹中的所有文件使用的字节总数。  
@@ -76,7 +77,7 @@ class QuerySize
 ## <a name="compiling-the-code"></a>编译代码  
 使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to Objects (C#)](./linq-to-objects.md)
 - [LINQ 和文件目录 (C#)](./linq-and-file-directories.md)

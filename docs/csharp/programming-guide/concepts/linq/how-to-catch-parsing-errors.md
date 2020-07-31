@@ -1,13 +1,14 @@
 ---
 title: 如何捕捉分析错误 (C#)
+description: 此示例使用 C# 中的 LINQ to XML 检测格式不正确或无效的 XML。 LINQ to XML 使用 XmlReader，这会引发格式不正确或无效的 XML 异常。
 ms.date: 07/20/2015
 ms.assetid: bfb612d4-5605-48ef-8c93-915cf9d5dcfb
-ms.openlocfilehash: 1a05037892061dec85e7837472e8ec13e076724b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0a891097322ef6acce062ea927692b01cc425e6c
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141481"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105405"
 ---
 # <a name="how-to-catch-parsing-errors-c"></a>如何捕捉分析错误 (C#)
 本主题演示如何检测格式不正确或无效的 XML。  

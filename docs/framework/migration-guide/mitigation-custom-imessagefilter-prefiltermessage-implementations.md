@@ -1,13 +1,14 @@
 ---
 title: 缓解：自定义 IMessageFilter.PreFilterMessage 实现
+description: 了解面向 .NET Framework 4.6.1 及更高版本的 Windows 窗体应用中包含的自定义 IMessageFilter.PreFilterMessage 实现。
 ms.date: 03/30/2017
 ms.assetid: 9cf47c5b-0bb2-45df-9437-61cd7e7c2f4d
-ms.openlocfilehash: 7757e8d1fd0258ab2d972b7321082e4afa37f710
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5fe7500d3ed6ff293514495df150a747e7946dda
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79398645"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475250"
 ---
 # <a name="mitigation-custom-imessagefilterprefiltermessage-implementations"></a>缓解：自定义 IMessageFilter.PreFilterMessage 实现
 
@@ -19,7 +20,7 @@ ms.locfileid: "79398645"
 
   - 通过调用 <xref:System.Windows.Forms.Application.RemoveMessageFilter%2A> 方法，删除消息筛选器。 方法。
 
--  以及通过调用 <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType> 方法抽取消息。
+- 以及通过调用 <xref:System.Windows.Forms.Application.DoEvents%2A?displayProperty=nameWithType> 方法抽取消息。
 
 ## <a name="impact"></a>影响
 
@@ -27,9 +28,9 @@ ms.locfileid: "79398645"
 
 对于面向以前版本的 .NET framework 的 Windows 窗体应用程序，在调用 <xref:System.Windows.Forms.Application.FilterMessage%2A?displayProperty=nameWithType> 方法时，此类实现在某些情况下会引发 <xref:System.IndexOutOfRangeException> 异常
 
-## <a name="mitigation"></a>缓解操作
+## <a name="mitigation"></a>缓解
 
-如果无需进行此更改，面向 .NET Framework 4.6.1 或更高版本的应用可通过将以下配置设置添加到应用配置文件的 [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) 部分来选择放弃更改：
+如果此更改不可取，面向 .NET Framework 4.6.1 或更高版本的应用可通过将以下配置设置添加到应用配置文件的 [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) 部分，来选择放弃更改：
 
 ```xml
 <runtime>
@@ -45,6 +46,6 @@ ms.locfileid: "79398645"
 </runtime>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [应用程序兼容性](application-compatibility.md)

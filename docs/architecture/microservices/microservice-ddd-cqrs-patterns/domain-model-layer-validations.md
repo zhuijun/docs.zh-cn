@@ -2,12 +2,12 @@
 title: 在域模型层中设计验证
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解域模型验证的关键概念。
 ms.date: 10/08/2018
-ms.openlocfilehash: 94df2d6441581fbbae479da2524d6ffce2037d68
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: f1e2d7430c642ad47f79cdd34d3a65e2cc70e239
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100907"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164280"
 ---
 # <a name="design-validations-in-the-domain-model-layer"></a>在域模型层中设计验证
 
@@ -15,9 +15,9 @@ ms.locfileid: "86100907"
 
 域实体应始终为有效的实体。 应始终为 true 的对象存在一定数量的不变量。 例如，订单项对象始终得有一个必须为正整数的数量，以及项目名称和价格。 因此，执行不变量是域实体（尤其是聚合根）的职责，而实体对象应不能在无效的情况下存在。 不变量规则只需表达为协定，当它们遭违反时会引发异常或通知。
 
-这背后的原因是，很多 bug 因对象处于它们不应处于的状态而发生。 下面是来自 Greg Young 在[联机讨论](https://jeffreypalermo.com/2009/05/the-fallacy-of-the-always-valid-entity/)中的很好的解释：
+这背后的原因是，很多 bug 因对象处于它们不应处于的状态而发生。 来自 Greg Young 的[联机讨论](http://codebetter.com/gregyoung/2009/05/22/always-valid/)给出了很好的解释。
 
-比如说，我们现在有一个采用 UserProfile 的 SendUserCreationEmailService...我们可以如何理性解释该服务中其名称不为 null？ 是不是要再次检查？ 或者更有可能...不需要花精力检查而是“期待更好的发生”- 希望其他人在将其发送给你之前花时间进行了验证。 当然，使用 TDD 时，我们首先应该编写的一个测试是，我是否向客户发送了会引发错误的 null 名称。 但是，一旦我们开始反复编写这些类型的测试，我们认识到...“等一下，如果我们从不允许名称成为 null，我们就不会有所有这些测试”
+比如说，我们现在有一个采用 UserProfile 的 SendUserCreationEmailService...我们可以如何理性解释该服务中其名称不为 null？ 是不是要再次检查？ 或者更有可能...不需要花精力检查而是“期待更好的发生”- 希望其他人在将其发送给你之前花时间进行了验证。 当然，使用 TDD 时，我们首先应该编写的一个测试是，我是否向客户发送了会引发错误的 null 名称。 但是，一旦我们开始反复编写这些类型的测试，我们就会认识到...“等一下，如果我们从不允许名称成为 null，我们就不会有所有这些测试”。
 
 ## <a name="implement-validations-in-the-domain-model-layer"></a>在域模型层中实现验证
 

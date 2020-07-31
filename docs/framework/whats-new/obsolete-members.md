@@ -1,5 +1,6 @@
 ---
 title: 过时成员 - .NET Framework
+description: 请参阅 .NET 4.5 和更高版本中已过时的类型成员的列表。 类型成员由程序集分组。 此处排除过时类型的成员。
 ms.custom: updateeachrelease
 ms.date: 10/17/2017
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - members, obsolete in .NET Framework
 - obsolete members [.NET Framework]
 ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
-ms.openlocfilehash: 64bbcd099016dd3d11fea2eaba81ae4559ba6762
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: c0e320b8499fec0c56d2e3560bf6f64194f73dad
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243071"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925821"
 ---
 # <a name="obsolete-members-in-net-framework"></a>.NET Framework 中的已过时成员
 

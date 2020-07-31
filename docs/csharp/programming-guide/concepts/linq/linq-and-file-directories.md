@@ -1,13 +1,14 @@
 ---
 title: LINQ 和文件目录 (C#)
+description: 这些用于文件系统操作的 C# LINQ 资源不可用于更改文件或文件夹的内容。
 ms.date: 07/20/2015
 ms.assetid: b66c55e4-0f72-44e5-b086-519f9962335c
-ms.openlocfilehash: fe503584e7d14e8d1dd281eb644f0723782feb4a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ac00e29f90ee1c04ab9978b6ada3ae5f28991a1c
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75714629"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165665"
 ---
 # <a name="linq-and-file-directories-c"></a>LINQ 和文件目录 (C#)
 
@@ -41,6 +42,6 @@ ms.locfileid: "75714629"
 ## <a name="comments"></a>注释  
  创建准确表示文件系统的内容并适当处理异常的数据源，存在一定难度。 本部分中的示例创建 <xref:System.IO.FileInfo> 对象的快照集合，该集合表示指定的根文件夹及其所有子文件夹下的所有文件。 每个 <xref:System.IO.FileInfo> 的实际状态可能会在开始和结束执行查询期间发生更改。 例如，可以创建 <xref:System.IO.FileInfo> 对象的列表来用作数据源。 如果尝试通过查询访问 `Length` 属性，则 <xref:System.IO.FileInfo> 对象会尝试访问文件系统来更新 `Length` 的值。 如果该文件不再存在，则你会在查询中获得 <xref:System.IO.FileNotFoundException>，即使未直接查询文件系统也是如此。 本部分中的一些查询使用不同的方法，在某些情况下使用该方法不会出现这些特定异常。 另一种方法是使用 <xref:System.IO.FileSystemWatcher> 保持数据源动态更新。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to Objects (C#)](./linq-to-objects.md)

@@ -1,13 +1,14 @@
 ---
 title: 如何比较两个文件夹的内容 (LINQ) (C#)
+description: 此示例演示了使用 C# 中的 LINQ 查询来比较文件列表的三种方法。 使用这些方法来比较任何类型的对象序列。
 ms.date: 07/20/2015
 ms.assetid: c7c4870e-c500-4de3-afa4-2c8e07f510e6
-ms.openlocfilehash: 44dc97d6d48bed5e8b4d0376838e4dada2e8300c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3cdac57d3d746aa2290c51d1263a7d42dc3463e0
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169397"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105333"
 ---
 # <a name="how-to-compare-the-contents-of-two-folders-linq-c"></a>如何比较两个文件夹的内容 (LINQ) (C#)
 此示例演示了比较两个文件列表的 3 种方法：  
@@ -128,7 +129,7 @@ namespace QueryCompareTwoDirs
 ## <a name="compiling-the-code"></a>编译代码  
  使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to Objects (C#)](./linq-to-objects.md)
 - [LINQ 和文件目录 (C#)](./linq-and-file-directories.md)

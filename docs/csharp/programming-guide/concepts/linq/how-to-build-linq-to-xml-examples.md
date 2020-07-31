@@ -1,13 +1,14 @@
 ---
 title: 如何生成 LINQ to XML 示例 (C#)
+description: 提供编译 C# 所需的适当 using 指令以运行提供的代码段和 LINQ to XML 的示例。
 ms.date: 07/20/2015
 ms.assetid: e5d18fa1-2704-48fe-a44b-1564f97c9e9c
-ms.openlocfilehash: 289a13daed7e3c871156bf50c6fa04c113c0cd13
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f54944dcb68e1fd7d00f37c9c5381f345efc820e
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141465"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103588"
 ---
 # <a name="how-to-build-linq-to-xml-examples-c"></a>如何生成 LINQ to XML 示例 (C#)
 本文档中的各代码段和示例使用多个命名空间中的类和类型。 在编译 C# 代码时，您需要提供相应的 `using` 指令。  
@@ -34,6 +35,6 @@ using System.Reflection;
 using System.IO.Packaging;  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to XML 编程概述 (C#)](./linq-to-xml-overview.md)

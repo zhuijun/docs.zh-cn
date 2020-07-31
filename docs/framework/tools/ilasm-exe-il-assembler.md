@@ -1,5 +1,6 @@
 ---
 title: Ilasm.exe（IL 汇编程序）
+description: 开始使用 Ilasm.exe（IL 汇编程序）。 此工具从中间语言 (IL) 生成可移植可执行 (PE) 文件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - MSIL generators
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - Ilasm.exe
 - verifying MSIL performance
 ms.assetid: 4ca3a4f0-4400-47ce-8936-8e219961c76f
-ms.openlocfilehash: cb995e78e534048043886070536ef0dd0a45c057
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1a85b3bf9509ffba6c2331d14196a6bef2bfa080
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73105090"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166985"
 ---
 # <a name="ilasmexe-il-assembler"></a>Ilasm.exe（IL 汇编程序）
 
@@ -34,7 +35,7 @@ ilasm [options] filename [[options]filename...]
 
 ## <a name="parameters"></a>参数
 
-| 参数 | 描述 |
+| 参数 | 说明 |
 | -------- | ----------- |
 |`filename`|.il 源文件的名称。 该文件包含元数据声明指令和符号化 IL 指令。 可以提供多个源文件参数，以便用 Ilasm.exe 生成单个 PE 文件。 **注意：** 确保 .il 源文件中的最后一行代码具有尾随空格或行尾字符。|
 
@@ -42,7 +43,7 @@ ilasm [options] filename [[options]filename...]
 | ------ | ----------- |
 |**/32bitpreferred**|创建 32 位首选映像 (PE32+)。|
 |/alignment: `integer`|将 FileAlignment 设置为由 NT Optional 标头中的 `integer` 指定的值。 如果在文件中指定了 .alignment IL 指令，则此选项将重写它。|
-|**/appcontainer**|生成在 Windows 应用容器中运行的 .dll 或 .exe 文件作为输出。|
+|**/appcontainer**|生成在 Windows 应用容器中运行的 .dll 或 .exe 文件作为输出 。|
 |**/arm**|指定高级 RISC 计算机 (ARM) 作为目标处理器。<br /><br /> 如果未指定映像位数，则默认值为 **/32bitpreferred**。|
 |/base: `integer`|将 ImageBase 设置为由 NT Optional 标头中的 `integer` 指定的值。 如果在文件指定了 .imagebase IL 指令，则此选项将重写它。|
 |**/clock**|为指定的 .il 源文件测量并报告下列编译时间（以毫秒为单位）：<br /><br /> 总运行时间：执行后面的所有特定操作所花费的总时间。<br /><br /> 启动：加载并打开文件。<br /><br /> 发出 MD：发出元数据。<br /><br /> 定义引用解析：解析对文件中的定义的引用。<br /><br /> CEE 文件生成：在内存中生成文件映像。<br /><br /> PE 文件写入：将映像写入 PE 文件。|
@@ -56,19 +57,19 @@ ilasm [options] filename [[options]filename...]
 |/include: `includePath`|设置要在其中搜索 `#include`包含的文件的路径。|
 |**/itanium**|指定 Intel 的 Itanium 作为目标处理器。<br /><br /> 如果未指定映像位数，则默认值为 **/pe64**。|
 |/key: `keyFile`|使用 `keyFile` 中包含的私钥编译具有强签名的 `filename`。|
-|**/key:** @`keySource`|使用 `keySource` 中生成的私钥编译具有强签名的 `filename`。|
+|**/key:**  @`keySource`|使用 `keySource` 中生成的私钥编译具有强签名的 `filename`。|
 |**/listing**|在标准输出上生成列表文件。 如果省略此选项，则不生成列表文件。<br /><br /> 此参数在 .NET Framework 2.0 或更高版本中不受支持。|
 |/mdv: `versionString`|设置元数据版本字符串。|
 |/msv: `major`.`minor`|设置元数据流版本，其中 `major` 和 `minor` 是整数。|
 |**/noautoinherit**|当未指定基类时，禁用从 <xref:System.Object> 的默认继承。|
 |**/nocorstub**|取消生成 CORExeMain 存根。|
 |**/nologo**|取消显示 Microsoft 启动版权标志。|
-|/output: `file.ext`|指定输出文件名和扩展名。 默认情况下，输出文件名与第一个源文件的名称相同。 默认扩展名为 .exe。 如果指定 /dll 选项，则默认扩展名为 .dll。 **注意：** 指定 /output:myfile.dll 并不会设置 /dll 选项。 如果不指定 /dll，结果将会是名为 myfile.dll 的可执行文件。|
+|/output: `file.ext`|指定输出文件名和扩展名。 默认情况下，输出文件名与第一个源文件的名称相同。 默认扩展名为 .exe。 如果指定 /dll 选项，则默认扩展名为 .dll。 **注意：** 指定 /output:myfile.dll 并不会设置 /dll 选项 。 如果不指定 /dll，结果将会是名为 myfile.dll 的可执行文件。|
 |**/optimize**|将长指令优化为短指令。 例如，将 `br` 优化为 `br.s`。|
 |**/pe64**|创建 64 位映像 (PE32+)。<br /><br /> 如果未指定目标处理器，则默认值为 `/itanium`。|
 |**/pdb**|创建 PDB 文件但不启用调试信息跟踪。|
 |**/quiet**|指定安静模式；不报告程序集进度。|
-|/resource: `file.res`|在生成的 .exe 或 .dll 文件中包括 \*.res 格式的指定资源文件。 使用 **/resource** 选项只能指定一个 .res 文件。|
+|/resource: `file.res`|在生成的 .exe 或 .dll 文件中包括 \*.res 格式的指定资源文件 。 使用 **/resource** 选项只能指定一个 .res 文件。|
 |/ssver: `int`.`int`|在 NT Optional 标头中设置子系统版本号。 对于 **/appcontainer** 和 **/arm** ，最低版本号为 6.02。|
 |/stack: `stackSize`|将 NT Optional 标头中的 SizeOfStackReserve 值设置为 `stackSize`。|
 |**/stripreloc**|指定不需要基重定位。|
@@ -77,7 +78,7 @@ ilasm [options] filename [[options]filename...]
 |**/?**|显示该工具的命令语法和选项。|
 
 > [!NOTE]
-> Ilasm.exe 的所有选项都不区分大小写，并且根据前三个字母识别。 例如， /lis 等效于 /listing，/res:myresfile.res 等效于 /resource:myresfile.res。指定参数的选项既可以用冒号 (:) 也可以用等号 (=) 作为选项和参数之间的分隔符。 例如，/output:file.ext 等效于 /output=file.ext。
+> Ilasm.exe 的所有选项都不区分大小写，并且根据前三个字母识别。 例如， /lis 等效于 /listing，/res:myresfile.res 等效于 /resource:myresfile.res   。指定参数的选项既可以用冒号 (:) 也可以用等号 (=) 作为选项和参数之间的分隔符。 例如，/output:file.ext 等效于 /output=file.ext。
 
 ## <a name="remarks"></a>备注
 
@@ -90,14 +91,14 @@ IL 汇编程序可以展现以运行时为目标的编程语言的所有现有�
 > [!NOTE]
 > 如果 .il 源文件中的最后一行代码不具有尾随空格或行尾字符，则编译可能会失败。
 
-可以将 Ilasm.exe 与它的配套工具 [Ildasm.exe](ildasm-exe-il-disassembler.md)一起使用。 Ildasm.exe 利用包含 IL 代码的 PE 文件，创建适合输入到 Ilasm.exe 的文本文件。 这很有用，例如在编译用并非支持所有运行时元数据特性的编程语言编写的代码时。 通过 Ildasm.exe 编译该代码并运行输出后，可以手动编辑生成的 IL 文本文件以添加缺少的属性。 然后可通过 Ilasm.exe 运行此文本文件，生成最终的可执行文件。
+可以将 Ilasm.exe 与它的配套工具 [Ildasm.exe](ildasm-exe-il-disassembler.md)一起使用 。 Ildasm.exe 利用包含 IL 代码的 PE 文件，创建适合输入到 Ilasm.exe 的文本文件 。 这很有用，例如在编译用并非支持所有运行时元数据特性的编程语言编写的代码时。 通过 Ildasm.exe 编译该代码并运行输出后，可以手动编辑生成的 IL 文本文件以添加缺少的属性。 然后可通过 Ilasm.exe 运行此文本文件，生成最终的可执行文件。
 
 也可以使用此方法从最初由不同的编译器生成的数个 PE 文件生成一个 PE 文件。
 
 > [!NOTE]
 > 目前，无法对包含嵌入的本机代码的 PE 文件（例如，由 Visual C++ 生成的 PE 文件）使用此技术。
 
-为尽可能准确地使用 Ildasm.exe 和 Ilasm.exe 的这种组合，默认情况下汇编程序不会将可能已在 IL 源中写入（或可能由其他编译程序发出）的长编码替换为短编码。 请尽可能使用 **/optimize** 选项替代为短编码。
+为尽可能准确地使用 Ildasm.exe 和 Ilasm.exe 的这种组合，默认情况下汇编程序不会将可能已在 IL 源中写入（或可能由其他编译程序发出）的长编码替换为短编码 。 请尽可能使用 **/optimize** 选项替代为短编码。
 
 > [!NOTE]
 > Ildasm.exe 只对磁盘上的文件进行操作。 它不对安装在全局程序集缓存中的文件进行操作。
@@ -139,19 +140,19 @@ IL 汇编程序可以展现以运行时为目标的编程语言的所有现有�
 
 ## <a name="examples"></a>示例
 
-下面的命令对 IL 文件 myTestFile.il 进行汇编并生成可执行文件 myTestFile.exe。
+下面的命令对 IL 文件 myTestFile.il 进行汇编并生成可执行文件 myTestFile.exe 。
 
 ```console
 ilasm myTestFile
 ```
 
-下面的命令对 IL 文件 myTestFile.il 进行汇编并生成 .dll 文件 myTestFile.dll。
+下面的命令对 IL 文件 myTestFile.il 进行汇编并生成 .dll 文件 myTestFile.dll  。
 
 ```console
 ilasm myTestFile /dll
 ```
 
-下面的命令对 IL 文件 myTestFile.il 进行汇编并生成 .dll 文件 myNewTestFile.dll。
+下面的命令对 IL 文件 myTestFile.il 进行汇编并生成 .dll 文件 myNewTestFile.dll  。
 
 ```console
 ilasm myTestFile /dll /output:myNewTestFile.dll

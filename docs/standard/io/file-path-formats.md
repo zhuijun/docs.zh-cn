@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 2d3ede97b372dd8922a10a377f69155a12f88bda
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5eb9d5127dffd2e80349352ad7a4b57f8848d56b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447129"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165802"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Windows 系统中的文件路径格式
 
@@ -124,7 +124,7 @@ DOS 设备路径通过定义进行完全限定。 不允许使用相对目录段
 
 这种规范化隐式进行，若想显式进行规范化，可以调用 <xref:System.IO.Path.GetFullPath%2A?displayProperty=nameWithType> 方法，这会包装对 [GetFullPathName() 函数](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea)的调用。 还可以使用 P/Invoke 直接调用 Windows [GetFullPathName() 函数](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea)。
 
-### <a name="identifying-the-path"></a>识别路径
+### <a name="identify-the-path"></a>标识路径
 
 路径规范化的第一步就是识别路径类型。 路径归为以下几个类别之一：
 
@@ -138,13 +138,13 @@ DOS 设备路径通过定义进行完全限定。 不允许使用相对目录段
 
 路径的类型决定是否以某种方式应用当前目录。 还决定该路径的“根”是什么。
 
-### <a name="handling-legacy-devices"></a>处理旧设备
+### <a name="handle-legacy-devices"></a>处理旧设备
 
 如果路径是旧版 DOS 设备（例如 `CON`、`COM1` 或 `LPT1`），则会转换为设备路径（方法是在其前面追加 `\\.\`）并返回。
 
 开头为旧设备名的路径始终被 <xref:System.IO.Path.GetFullPath(System.String)?displayProperty=nameWithType> 方法解释为旧设备。 例如，`CON.TXT` 的 DOS 设备路径为 `\\.\CON`，而 `COM1.TXT\file1.txt` 的 DOS 设备路径为 `\\.\COM1`。
 
-### <a name="applying-the-current-directory"></a>应用当前目录
+### <a name="apply-the-current-directory"></a>应用当前目录
 
 如果路径非完全限定，Windows 会向其应用当前目录。 不会向 UNC 和设备路径应用当前目录。 带有分隔符 C:\\ 的完整驱动器也不会。
 
@@ -157,11 +157,11 @@ DOS 设备路径通过定义进行完全限定。 不允许使用相对目录段
 > [!IMPORTANT]
 > 相对路径在多线程应用程序（也就是大多数应用程序）中很危险，因为当前目录是分进程的设置。 任何线程都能在任何时候更改当前目录。 从 .NET Core 2.1 开始，可以调用 <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> 方法，从想要据此解析绝对路径的相对路径和基础路径（当前目录）获取绝对路径。
 
-### <a name="canonicalizing-separators"></a>规范化分隔符
+### <a name="canonicalize-separators"></a>规范化分隔符
 
 将所有正斜杠 (`/`) 转换为标准的 Windows 分隔符，也就是反斜杠 (`\`)。 如果存在斜杠，前两个斜杠后面的一系列斜杠都将折叠为一个斜杠。
 
-### <a name="evaluating-relative-components"></a>评估相对组件
+### <a name="evaluate-relative-components"></a>评估相对组件
 
 处理路径时，会评估所有由一个或两个句点（`.` 或 `..`）组成的组件或分段：
 
@@ -171,7 +171,7 @@ DOS 设备路径通过定义进行完全限定。 不允许使用相对目录段
 
    仅当父级目录未越过路径的根时，才删除父级目录。 路径的根取决于路径的类型。 对于 DOS 路径，根是驱动器 (`C:\`)；对于UNC，根是服务器/共享 (`\\Server\Share`)；对于设备路径，则为设备路径前缀（`\\?\` 或 `\\.\`）。
 
-### <a name="trimming-characters"></a>剪裁字符
+### <a name="trim-characters"></a>剪裁字符
 
 随着分隔符的运行和相对段先遭删除，一些其他字符在规范化过程中也删除了：
 
@@ -184,7 +184,7 @@ DOS 设备路径通过定义进行完全限定。 不允许使用相对目录段
    > [!IMPORTANT]
    > 请勿创建以空格结尾的目录名或文件名。 如果以空格结尾，则可能难以或者无法访问目录，并且应用程序在尝试处理这样的目录或文件时通常会操作失败。
 
-## <a name="skipping-normalization"></a>跳过规范化
+## <a name="skip-normalization"></a>跳过规范化过程
 
 一般来说，任何传递到 Windows API 的路径都会（有效地）传递到 [GetFullPathName 函数](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea)并进行规范化。 但是有一种很重要的例外情况：以问号（而不是句点）开头的设备路径。 除非路径确切地以 `\\?\` 开头（注意使用的是规范的反斜杠），否则会对它进行规范化。
 
@@ -222,4 +222,4 @@ Directory.Create("TeStDiReCtOrY")
 [!code-csharp[case-and-renaming](~/samples/snippets/standard/io/file-names/cs/rename.cs)]
 [!code-vb[case-and-renaming](~/samples/snippets/standard/io/file-names/vb/rename.vb)]
 
-但是比较目录名和文件名时不区分大小写。 如果搜索名为“test.txt”的文件，.NET 文件系统 API 会在比较时忽略大小写问题。 Test.txt、TEST.TXT、test.TXT 和其他任何大写和小写的字母组合都会成为“test.txt”的匹配项。
+但是比较目录名和文件名时不区分大小写。 如果搜索名为“test.txt”的文件，.NET 文件系统 API 会在比较时忽略大小写问题。 “Test.txt”、“TEST.TXT”、“test.TXT”和其他任何大写和小写的字母组合都会成为“test.txt”的匹配项。

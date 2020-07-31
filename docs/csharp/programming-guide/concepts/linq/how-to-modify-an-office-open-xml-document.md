@@ -1,13 +1,14 @@
 ---
 title: 如何修改 Office Open XML 文档 (C#)
+description: 了解如何打开、修改和保存 Office Open XML 文档。 本 C# 示例使用 WindowsBase 程序集中的类。
 ms.date: 07/20/2015
 ms.assetid: 467d489c-2b1b-453b-a757-8ac180e82a96
-ms.openlocfilehash: 620530b14513356dc9bb5d942e8db7691a03880d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1155851696a0a6ed651c5f84290a3879e73276db
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345844"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104822"
 ---
 # <a name="how-to-modify-an-office-open-xml-document-c"></a>如何修改 Office Open XML 文档 (C#)
 本主题显演示一个打开、修改和保存 Office Open XML 文档的示例。  

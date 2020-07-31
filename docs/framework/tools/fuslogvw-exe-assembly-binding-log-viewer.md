@@ -1,5 +1,6 @@
 ---
 title: Fuslogvw.exe（程序集绑定日志查看器）
+description: 使用 Fuslogvw.exe（程序集绑定日志查看器）。 此查看器显示程序集绑定的详细信息，这有助于诊断 .NET 无法在运行时找到程序集的原因。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - failed assembly binds
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - locating assemblies
 - Assembly Binding Log Viewer
 ms.assetid: e32fa443-0778-4cc3-bf36-5c8ea297d296
-ms.openlocfilehash: 2f0018dca6e5add2c5bc531103a4078307a8c8c6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 949f9cf98d5eb4e100be9837be120038f085cc40
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73129844"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167127"
 ---
 # <a name="fuslogvwexe-assembly-binding-log-viewer"></a>Fuslogvw.exe（程序集绑定日志查看器）
 
@@ -35,9 +36,9 @@ fuslogvw
 
 ### <a name="to-change-the-log-location-view"></a>更改日志位置视图
 
-1. 选择“默认”选项按钮以查看所有应用程序类型的绑定失败  。 默认情况下，日志条目存储在磁盘上 wininet 缓存中基于用户的目录中。
+1. 选择“默认”选项按钮以查看所有应用程序类型的绑定失败。 默认情况下，日志条目存储在磁盘上 wininet 缓存中基于用户的目录中。
 
-2. 选择“自定义”选项按钮以查看指定的自定义目录中的绑定失败  。 必须指定希望运行时存储日志的自定义位置，方法是在“日志设置”对话框中将自定义日志位置设置为有效的目录名  。 此目录应是干净的，并且仅包含运行时所生成的文件。 如果该目录中包含了一个生成要记录下来的失败的可执行文件，则将不会记录该失败，因为此工具会尝试创建一个与该可执行文件同名的目录。 此外，从日志位置运行可执行文件的尝试也将失败。
+2. 选择“自定义”选项按钮以查看指定的自定义目录中的绑定失败。 必须指定希望运行时存储日志的自定义位置，方法是在“日志设置”对话框中将自定义日志位置设置为有效的目录名。 此目录应是干净的，并且仅包含运行时所生成的文件。 如果该目录中包含了一个生成要记录下来的失败的可执行文件，则将不会记录该失败，因为此工具会尝试创建一个与该可执行文件同名的目录。 此外，从日志位置运行可执行文件的尝试也将失败。
 
     > [!NOTE]
     > 默认的绑定位置优于自定义绑定位置。 运行时将默认绑定位置存储在 wininet 缓存中，因而可以自动清除该位置。如果你指定了自定义绑定位置，则需负责将其清除。
@@ -46,7 +47,7 @@ fuslogvw
 
 1. 在查看器中选择所需条目的应用程序名称。
 
-2. 单击“查看日志”按钮  。 或者，你可以双击所选条目。
+2. 单击“查看日志”按钮。 或者，你可以双击所选条目。
 
     该工具将显示以下有关所选绑定失败的详细信息：
 
@@ -100,23 +101,23 @@ LOG: All probing URLs attempted and failed.
 
 1. 在查看器中选择一个条目。
 
-2. 单击“删除条目”按钮  。
+2. 单击“删除条目”按钮。
 
 ### <a name="to-delete-all-entries-from-the-log"></a>从日志中删除所有条目
 
-- 单击“全部删除”按钮  。
+- 单击“全部删除”按钮。
 
 ### <a name="to-refresh-the-user-interface"></a>刷新用户界面
 
-- 单击“刷新”按钮  。 查看器在其运行时不会自动检测新的日志条目。 必须使用“刷新”按钮来显示它们  。
+- 单击“刷新”按钮。 查看器在其运行时不会自动检测新的日志条目。 必须使用“刷新”按钮来显示它们。
 
 ### <a name="to-change-the-log-settings"></a>更改日志设置
 
-- 单击“设置”按钮以打开“日志设置”对话框   。
+- 单击“设置”按钮以打开“日志设置”对话框 。
 
 ### <a name="to-view-the-about-dialog"></a>查看“关于”对话框
 
-- 单击“关于”按钮  。
+- 单击“关于”按钮。
 
 ## <a name="binding-logs-for-native-images"></a>本机映像的绑定日志
 
@@ -124,7 +125,7 @@ LOG: All probing URLs attempted and failed.
 
 #### <a name="to-log-assembly-binds-for-native-images"></a>记录本机映像的程序集绑定
 
-- 在“日志类别”组中，选择“本机映像”选项按钮   。
+- 在“日志类别”组中，选择“本机映像”选项按钮 。
 
 下面的日志显示了一个由于在为应用程序创建本机映像时不存在的依赖项引起的失败。 如果运行时的依赖项不同于运行 Ngen.exe 时的依赖项，则不允许绑定至本机映像。
 
@@ -182,27 +183,27 @@ Discarding native image.
 
 ## <a name="the-log-settings-dialog"></a>“日志设置”对话框
 
-可以使用“日志设置”对话框执行下列操作  。
+可以使用“日志设置”对话框执行下列操作。
 
 #### <a name="to-disable-logging"></a>禁用日志记录
 
-- 选择“已禁用日志”选项按钮  。  注意，默认情况下此选项处于选中状态。
+- 选择“已禁用日志”选项按钮。  注意，默认情况下此选项处于选中状态。
 
 #### <a name="to-log-assembly-binds-in-exceptions"></a>记录程序集绑定异常
 
-- 选择“记录异常文本”选项按钮  。 仅在异常文本中记录最低详细程度的合成日志信息。 若要查看完整信息，请使用其他设置之一。
+- 选择“记录异常文本”选项按钮。 仅在异常文本中记录最低详细程度的合成日志信息。 若要查看完整信息，请使用其他设置之一。
 
   请参见有关以非特定域方式加载的程序集的“重要事项”说明。
 
 #### <a name="to-log-assembly-bind-failures"></a>记录程序集绑定失败
 
-- 选择“记录失败绑定到磁盘”选项按钮  。
+- 选择“记录失败绑定到磁盘”选项按钮。
 
   请参见有关以非特定域方式加载的程序集的“重要事项”说明。
 
 #### <a name="to-log-all-assembly-binds"></a>记录所有程序集绑定
 
-- 选择“记录所有绑定到磁盘”选项按钮  。
+- 选择“记录所有绑定到磁盘”选项按钮。
 
   请参见有关以非特定域方式加载的程序集的“重要事项”说明。
 
@@ -211,9 +212,9 @@ Discarding native image.
 
 #### <a name="to-enable-a-custom-log-path"></a>启用自定义日志路径
 
-1. 选择“启用自定义日志路径”选项按钮  。
+1. 选择“启用自定义日志路径”选项按钮。
 
-2. 在“自定义日志路径”文本框中输入路径  。
+2. 在“自定义日志路径”文本框中输入路径。
 
 > [!NOTE]
 > [程序集绑定日志查看器 (Fuslogvw.exe)](fuslogvw-exe-assembly-binding-log-viewer.md) 使用 Internet Explorer (IE) 缓存来存储其绑定日志。 由于 IE 缓存中偶尔会出现损坏，因此[程序集绑定日志查看器 (Fuslogvw.exe)](fuslogvw-exe-assembly-binding-log-viewer.md) 有时会停止在查看窗口中显示新的绑定日志。 受此损坏的影响，.NET 绑定基础结构（合成）将无法写入或读取绑定日志。 （如果使用自定义日志路径，则不会遇到此问题。）若要修复损坏并允许合成再次显示绑定日志，请通过在 IE 的“Internet 选项”对话框中删除临时的 Internet 文件来清除 IE 缓存。
@@ -224,7 +225,7 @@ Discarding native image.
 
 1. 启用自定义日志路径，如上一过程所述。 默认情况下，在 Windows 应用程序容器中运行的应用程序对硬盘具有有限的访问权限。 你指定的目录将对应用程序容器中的所有应用程序具有读/写权限。
 
-2. 选中“启用沉浸式日志记录”复选框  。
+2. 选中“启用沉浸式日志记录”复选框。
 
     > [!NOTE]
     > 此框只能在 Windows 8 或更高版本上启用。

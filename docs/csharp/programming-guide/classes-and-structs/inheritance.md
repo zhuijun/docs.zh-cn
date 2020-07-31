@@ -1,5 +1,6 @@
 ---
 title: 继承 - C# 编程指南
+description: 通过 C# 中的继承，可以创建新类，以便重用、扩展和修改在其他类中定义的行为。
 ms.date: 02/07/2020
 helpviewer_keywords:
 - abstract methods [C#]
@@ -9,16 +10,16 @@ helpviewer_keywords:
 - virtual methods [C#]
 - C# language, inheritance
 ms.assetid: 81d64ee4-50f9-4d6c-a8dc-257c348d2eea
-ms.openlocfilehash: 448b1695a4afc50f4afa20383e5fda280b9f12e9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6b94f58801af188655474f9c7de76b79381e721d
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77626654"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864250"
 ---
 # <a name="inheritance-c-programming-guide"></a>继承（C# 编程指南）
 
-继承（以及封装和多态性）是面向对象的编程的三个主要特征之一。 通过继承，可以创建新类，以便重用、扩展和修改在其他类中定义的行为。 其成员被继承的类称为“基类”  ，继承这些成员的类称为“派生类”  。 派生类只能有一个直接基类。 但是，继承是可传递的。 如果 `ClassC` 派生自 `ClassB`，并且 `ClassB` 派生自 `ClassA`，则 `ClassC` 将继承在 `ClassB` 和 `ClassA` 中声明的成员。
+继承（以及封装和多态性）是面向对象的编程的三个主要特征之一。 通过继承，可以创建新类，以便重用、扩展和修改在其他类中定义的行为。 其成员被继承的类称为“基类”，继承这些成员的类称为“派生类”。 派生类只能有一个直接基类。 但是，继承是可传递的。 如果 `ClassC` 派生自 `ClassB`，并且 `ClassB` 派生自 `ClassA`，则 `ClassC` 将继承在 `ClassB` 和 `ClassA` 中声明的成员。
 
 > [!NOTE]
 > 结构不支持继承，但它们可以实现接口。 有关详细信息，请参阅[接口](../interfaces/index.md)。
@@ -47,11 +48,11 @@ ms.locfileid: "77626654"
 
 ## <a name="abstract-base-classes"></a>抽象基类
 
-如果要通过使用 [new](../../language-reference/operators/new-operator.md) 运算符来防止直接实例化，则可以将类声明为[抽象](../../language-reference/keywords/abstract.md)。 只有当一个新类派生自该类时，才能使用抽象类。 抽象类可以包含一个或多个本身声明为抽象的方法签名。 这些签名指定参数和返回值，但没有任何实现（方法体）。 抽象类不必包含抽象成员；但是，如果类包含抽象成员，则类本身必须声明为抽象。 本身不抽象的派生类必须为来自抽象基类的任何抽象方法提供实现。 有关详细信息，请参阅[抽象类、密封类和类成员](abstract-and-sealed-classes-and-class-members.md)。
+如果要通过使用 [new](../../language-reference/operators/new-operator.md) 运算符来防止直接实例化，则可以将类声明为[抽象](../../language-reference/keywords/abstract.md)。 只有当一个新类派生自该类时，才能使用抽象类。 抽象类可以包含一个或多个本身声明为抽象的方法签名。 这些签名指定参数和返回值，但没有任何实现（方法体）。 抽象类不必包含抽象成员；但是，如果类包含抽象成员，则类本身必须声明为抽象。 本身不抽象的派生类必须为来自抽象基类的任何抽象方法提供实现。 有关详细信息，请参阅[抽象类、密封类及类成员](abstract-and-sealed-classes-and-class-members.md)。
 
 ## <a name="interfaces"></a>接口
 
-接口是定义一组成员的引用类型  。 实现该接口的所有类和结构都必须实现这组成员。 接口可以为其中任何成员或全部成员定义默认实现。 类可以实现多个接口，即使它只能派生自单个直接基类。
+接口是定义一组成员的引用类型。 实现该接口的所有类和结构都必须实现这组成员。 接口可以为其中任何成员或全部成员定义默认实现。 类可以实现多个接口，即使它只能派生自单个直接基类。
 
 接口用于为类定义特定功能，这些功能不一定具有“is a (是)”关系。 例如，<xref:System.IEquatable%601?displayProperty=nameWithType> 接口可由任何类或结构实现，以确定该类型的两个对象是否等效（但是由该类型定义等效性）。 <xref:System.IEquatable%601> 不表示基类和派生类之间存在的同一种“是”关系（例如，`Mammal` 是 `Animal`）。 有关详细信息，请参阅[接口](../interfaces/index.md)。
 

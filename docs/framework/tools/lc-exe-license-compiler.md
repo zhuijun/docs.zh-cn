@@ -1,5 +1,6 @@
 ---
 title: Lc.exe（许可证编译器）
+description: 使用 Lc.exe（许可证编译器）。 此工具读取包含授权信息的文本文件，并生成一个二进制文件作为资源嵌入到 CLR 可执行文件中。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Lc.exe
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - Windows Forms, control licenses
 - licensed controls [Windows Forms]
 ms.assetid: 2de803b8-495e-4982-b209-19a72aba0460
-ms.openlocfilehash: 464514a241cc35fc821049ba0c29bec108d88253
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 45a80ba7c3e24c0f419758315b2d2daafd3890f4
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180401"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164251"
 ---
 # <a name="lcexe-license-compiler"></a>Lc.exe（许可证编译器）
 许可证编译器读取包含授权信息的文本文件，并产生一个可作为资源嵌入到公共语言运行时可执行文件中的二进制文件。  
@@ -38,16 +39,16 @@ targetPE /complist:filename [-outdir:path]
 /i:modules [/nologo] [/v]  
 ```  
   
-|选项|描述|  
+|选项|说明|  
 |------------|-----------------|  
-|/complist: filename  |指定包含授权组件列表的文件名，这些授权组件要包含在 .licenses 文件中。 每个组件用它的全名引用，并且每行只有一个组件。<br /><br /> 命令行用户可为项目中的每个窗体指定一个单独的文件。 Lc.exe 接受多个输入文件并产生一个 .licenses 文件。|  
+|/complist: filename|指定包含授权组件列表的文件名，这些授权组件要包含在 .licenses 文件中。 每个组件用它的全名引用，并且每行只有一个组件。<br /><br /> 命令行用户可为项目中的每个窗体指定一个单独的文件。 Lc.exe 接受多个输入文件并产生一个 .licenses 文件。|  
 |**/h**[**elp**]|显示该工具的命令语法和选项。|  
-|/i: module  |指定模块，这些模块包含 **/complist** 文件中列出的组件。 若要指定多个模块，请使用多个 **/i** 标志。|  
+|/i: module|指定模块，这些模块包含 **/complist** 文件中列出的组件。 若要指定多个模块，请使用多个 **/i** 标志。|  
 |**/nologo**|取消显示 Microsoft 启动版权标志。|  
-|/outdir: path  |指定用来放置输出 .licenses 文件的目录。|  
-|/target: targetPE  |指定为其生成 .licenses 文件的可执行文件。|  
+|/outdir: path|指定用来放置输出 .licenses 文件的目录。|  
+|/target: targetPE|指定为其生成 .licenses 文件的可执行文件。|  
 |**/v**|指定详细模式；显示编译进度信息。|  
-|@ file  |指定响应 (.rsp) 文件。|  
+|@ file |指定响应 (.rsp) 文件。|  
 |**/?**|显示该工具的命令语法和选项。|  
   
 ## <a name="example"></a>示例  

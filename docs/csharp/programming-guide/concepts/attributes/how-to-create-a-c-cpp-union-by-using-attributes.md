@@ -1,13 +1,14 @@
 ---
 title: 如何使用特性创建 C/C++ 联合 (C#)
+description: 了解如何使用 C# 中的属性自定义结构在内存中的布局方式。 此示例实现来自 C/C++ 的 union 的等效项。
 ms.date: 07/20/2015
 ms.assetid: 85f35e56-26e0-4d31-9f3a-89bd4005e71a
-ms.openlocfilehash: ff8ce560444581a28b257820573224f89a274cd9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 766a070105441630dfd8fecf7b9f68fa6818fe50
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141571"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925067"
 ---
 # <a name="how-to-create-a-cc-union-by-using-attributes-c"></a>如何使用特性创建 C/C++ 联合 (C#)
 
@@ -69,7 +70,7 @@ struct TestExplicit
 
 两个整数字段 `i1` 和 `i2` 共享与 `lg` 相同的内存位置。 使用平台调用时，这种对结构布局的控制很有用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>

@@ -1,17 +1,18 @@
 ---
 title: 创建变体泛型接口 (C#)
+description: 了解如何使用协变或逆变泛型类型参数创建变体泛型接口。
 ms.date: 07/20/2015
 ms.assetid: 30330ec4-9df2-4838-a535-6c406d0ed4df
-ms.openlocfilehash: a8e3e010c0e5d5490aee35603cad4fd6c1dc29e0
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 38b32784b681e748cd508c3d431fd4b18ec2c81a
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990055"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105721"
 ---
 # <a name="creating-variant-generic-interfaces-c"></a>创建变体泛型接口 (C#)
 
-接口中的泛型类型参数可以声明为协变或逆变。 协变** 允许接口方法具有与泛型类型参数定义的返回类型相比，派生程度更大的返回类型。 逆变** 允许接口方法具有与泛型形参指定的实参类型相比，派生程度更小的实参类型。 具有协变或逆变泛型类型参数的泛型接口称为“变体”**。
+接口中的泛型类型参数可以声明为协变或逆变。 协变允许接口方法具有与泛型类型参数定义的返回类型相比，派生程度更大的返回类型。 逆变允许接口方法具有与泛型形参指定的实参类型相比，派生程度更小的实参类型。 具有协变或逆变泛型类型参数的泛型接口称为“变体”。
 
 > [!NOTE]
 > .NET Framework 4 引入了对多个现有泛型接口的变体支持。 有关 .NET 中变体接口的列表，请参阅[泛型接口中的变体 (C#)](./variance-in-generic-interfaces.md)。

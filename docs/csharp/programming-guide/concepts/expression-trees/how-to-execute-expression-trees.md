@@ -1,13 +1,14 @@
 ---
 title: 如何执行表达式树 (C#)
+description: 了解如何执行表达式树以返回值或执行类似于调用方法的操作。
 ms.date: 07/20/2015
 ms.assetid: b8c40db5-2464-4bb9-9001-8c2bc7f006c5
-ms.openlocfilehash: e7d408ea154572dc8b45d2e67bca3f05837868d2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9e306da545ba6c6275f36b8f6dd4e98bb91ed54e
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73969878"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105624"
 ---
 # <a name="how-to-execute-expression-trees-c"></a>如何执行表达式树 (C#)
 本主题演示如何执行表达式树。 执行表达式树可能返回一个值，或者它可能只是执行操作，例如调用方法。  
@@ -46,7 +47,7 @@ Console.WriteLine(result);
   
 - 包括 System.Linq.Expressions 命名空间。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [表达式树 (C#)](./index.md)
 - [如何修改表达式树 (C#)](./how-to-modify-expression-trees.md)

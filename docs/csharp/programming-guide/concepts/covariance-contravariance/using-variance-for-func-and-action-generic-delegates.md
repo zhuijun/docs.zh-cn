@@ -1,13 +1,14 @@
 ---
 title: 对 Func 和 Action 泛型委托使用变体 (C#)
+description: 了解如何在 Func 和 Action 泛型委托中使用协变和逆变，以便为代码提供更多的灵活性。
 ms.date: 07/20/2015
 ms.assetid: 1826774f-2b7a-470f-b110-17cfdd6abdae
-ms.openlocfilehash: 17f55d594ad4364fd29c8f6e41bd6ad2445b0986
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d7174b0f734d10ab69d0936cb5ca4aa2f4fafdf7
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169787"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105712"
 ---
 # <a name="using-variance-for-func-and-action-generic-delegates-c"></a>对 Func 和 Action 泛型委托使用变体 (C#)
 这些示例演示如何使用 `Func` 和 `Action` 泛型委托中的协变和逆变来启用重用方法并为代码中提供更多的灵活性。  
@@ -81,7 +82,7 @@ class Program
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [协变和逆变 (C#)](./index.md)
 - [泛型](../../../../standard/generics/index.md)

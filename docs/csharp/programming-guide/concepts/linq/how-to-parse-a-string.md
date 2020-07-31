@@ -1,13 +1,14 @@
 ---
 title: 如何分析字符串 (C#)
+description: 了解如何分析字符串，以使用 C# 创建 XML 树。 了解如何访问已分析 XML 中的特定数据。
 ms.date: 07/20/2015
 ms.assetid: 81e5686c-9658-42d8-a7e3-b11be0a2c98b
-ms.openlocfilehash: 79821eb9e5cd7187ac3c2a93f85eaae45c5c48ac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a4664e090b6a44c52c519e61b66ccdc5d59a71f1
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345810"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104815"
 ---
 # <a name="how-to-parse-a-string-c"></a>如何分析字符串 (C#)
 
@@ -54,6 +55,6 @@ List<XElement> contactNodes = contacts.Elements("Contact").ToList();
 Console.WriteLine(contactNodes[0]);
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何查找具有特定属性的元素 (C#)](how-to-find-an-element-with-a-specific-attribute.md)

@@ -1,17 +1,18 @@
 ---
 title: 如何：启动服务
+description: 了解启动服务的多种方式。 安装服务后，必须启动它。 开始调用服务类上的 OnStart 方法。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, starting
 - services, starting
 ms.assetid: 9ea77955-2d96-4c3d-913c-14db7604cdad
 author: ghogen
-ms.openlocfilehash: 75fd3aba88bdffbe536ad5dab14996913d0a9d22
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4a2f9b291e60b12b1465fbb6bbbd1604572359a7
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053569"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925717"
 ---
 # <a name="how-to-start-services"></a>如何：启动服务
 
@@ -37,7 +38,7 @@ ms.locfileid: "71053569"
     |安装服务|设置此值|
     |----------------------------------|--------------------|
     |计算机重启时|**自动**|
-    |显式用户动作启动服务时|手动 |
+    |显式用户动作启动服务时|手动|
 
     > [!TIP]
     > 为防止服务完全启动，可以将 <xref:System.ServiceProcess.ServiceInstaller.StartType%2A> 属性设置为“禁用”  。 如果要多次重启服务器并希望通过阻止在服务器启动时通常会启动的服务来节省时间，则可以执行此操作。

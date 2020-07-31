@@ -1,17 +1,18 @@
 ---
 title: 构造函数 - C# 编程指南
+description: 创建类或结构时，将会调用 C# 中的构造函数。 使用构造函数可设置默认值，限制实例化以及编写灵活易读的代码。
 ms.date: 05/05/2017
 helpviewer_keywords:
 - constructors [C#]
 - classes [C#], constructors
 - C# language, constructors
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
-ms.openlocfilehash: 8eedfaed111f01cc2ec55a2f42df66d4588bd42f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4a731e648143f5e0ecf8860625962d8baa29fe26
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398399"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474899"
 ---
 # <a name="constructors-c-programming-guide"></a>构造函数（C# 编程指南）
 
@@ -19,7 +20,7 @@ ms.locfileid: "79398399"
 
 ## <a name="parameterless-constructors"></a>无参数构造函数
   
-如果没有为类提供构造函数，则 C# 将默认创建一个构造函数，该函数会实例化对象并将成员变量设置为默认值，如 [C# 类型的默认值](../../language-reference/builtin-types/default-values.md)中所列。 如果没有为结构提供构造函数，C# 将依赖于隐式无参数构造函数，自动将每个字段初始化为其默认值  。 有关详细信息和示例，请参阅[实例构造函数](instance-constructors.md)。  
+如果没有为类提供构造函数，则 C# 将默认创建一个构造函数，该函数会实例化对象并将成员变量设置为默认值，如 [C# 类型的默认值](../../language-reference/builtin-types/default-values.md)中所列。 如果没有为结构提供构造函数，C# 将依赖于隐式无参数构造函数，自动将每个字段初始化为其默认值。 有关详细信息和示例，请参阅[实例构造函数](instance-constructors.md)。  
 
 ## <a name="constructor-syntax"></a>构造函数语法
 
@@ -27,7 +28,7 @@ ms.locfileid: "79398399"
 
 [!code-csharp[constructors](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/constructors1.cs#1)]  
 
-如果某个构造函数可以作为单个语句实现，则可以使用[表达式主体定义](../statements-expressions-operators/expression-bodied-members.md)。 以下示例定义 `Location` 类，其构造函数具有一个名为“name”  的字符串参数。 表达式主体定义给 `locationName` 字段分配参数。
+如果某个构造函数可以作为单个语句实现，则可以使用[表达式主体定义](../statements-expressions-operators/expression-bodied-members.md)。 以下示例定义 `Location` 类，其构造函数具有一个名为“name”的字符串参数。 表达式主体定义给 `locationName` 字段分配参数。
 
 [!code-csharp[expression-bodied-constructor](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-ctor.cs#1)]  
 

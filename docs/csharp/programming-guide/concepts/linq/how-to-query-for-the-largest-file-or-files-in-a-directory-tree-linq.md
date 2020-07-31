@@ -1,13 +1,14 @@
 ---
 title: 如何查询目录树中的一个或多个最大的文件 (LINQ) (C#)
+description: 此 C# 示例演示与文件大小（以字节为单位）相关的五个 LINQ 查询。 你可以修改它们以查询 FileInfo 对象的其他某个属性。
 ms.date: 07/20/2015
 ms.assetid: 20c8a917-0552-4514-b489-0b8b6a4c3b4c
-ms.openlocfilehash: ed7d610bd292be4062db89f3c94af280e851141f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c06c6017d6fd1efd6412729c5df63a2b819908a6
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168760"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104376"
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>如何查询目录树中的一个或多个最大的文件 (LINQ) (C#)
 此示例演示与文件大小（以字节为单位）相关的五个查询：  
@@ -145,7 +146,7 @@ class QueryBySize
 ## <a name="compiling-the-code"></a>编译代码  
 使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to Objects (C#)](./linq-to-objects.md)
 - [LINQ 和文件目录 (C#)](./linq-and-file-directories.md)

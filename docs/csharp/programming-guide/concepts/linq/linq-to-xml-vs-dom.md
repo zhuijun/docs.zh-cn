@@ -1,13 +1,14 @@
 ---
 title: LINQ to XML 与DOM (C#)
+description: 了解 LINQ to XML 和 W3C 文档对象模型 (DOM) XML 编程 API 之间的一些主要区别。
 ms.date: 07/20/2015
 ms.assetid: 51c0e3d2-c047-4e6a-a423-d61a882400b7
-ms.openlocfilehash: 92d0da494829d57517d52fe93a3cbcf1398fdbe4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f5fc3fd7869079d47d7c9031e3668afeed7a117b
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168384"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165347"
 ---
 # <a name="linq-to-xml-vs-dom-c"></a>LINQ to XML 与DOM (C#)
 本节说明 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 和当前主导 XML 编程 API（W3C 文档对象模型 (DOM)）之间的主要区别。  
@@ -50,7 +51,7 @@ contacts.AppendChild(contact);
 doc.AppendChild(contacts);  
 ```  
   
- 这种编码方式不会提供很多有关 XML 树结构的可视信息。 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 支持用此方法创建 XML 树，但也支持另一种方法，即函数构造  。 函数构造使用 <xref:System.Xml.Linq.XElement> 和 <xref:System.Xml.Linq.XAttribute> 构造函数生成 XML 树。  
+ 这种编码方式不会提供很多有关 XML 树结构的可视信息。 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 支持用此方法创建 XML 树，但也支持另一种方法，即函数构造。 函数构造使用 <xref:System.Xml.Linq.XElement> 和 <xref:System.Xml.Linq.XAttribute> 构造函数生成 XML 树。  
   
  下面演示如何通过使用 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 功能性构造法构造相同的 XML 树：  
   

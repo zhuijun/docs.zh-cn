@@ -1,13 +1,14 @@
 ---
 title: 如何使用命名空间创建文档 (C#) (LINQ to XML)
+description: 了解如何使用 XNamespace 对象将命名空间与本地名称组合，从而在 C# 中的 LINQ to XML 中使用命名空间创建文档。
 ms.date: 07/20/2015
 ms.assetid: 37e63c57-f86d-47ac-88a7-2c2d107def30
-ms.openlocfilehash: 429b0b0b41f2201b983f931e469b25ff406b91ac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6472baefc73285af1c6dca0bfe7d874003940fc4
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141333"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103393"
 ---
 # <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a>如何使用命名空间创建文档 (C#) (LINQ to XML)
 本主题演示如何创建包含命名空间的文档。  
@@ -142,6 +143,6 @@ Console.WriteLine(root);
 </aw:Root>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [命名空间概述(LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md)

@@ -2,16 +2,16 @@
 title: dotnet tool list 命令
 description: dotnet 工具列表命令列出计算机上安装的 .NET Core 工具。
 ms.date: 02/14/2020
-ms.openlocfilehash: 7ca894ab0f5daf0118ff92fb39e0118b952b3d83
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 4035c5be233232e53c6d7150485f737108c1e18d
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768269"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925457"
 ---
 # <a name="dotnet-tool-list"></a>dotnet tool list
 
-**** 本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
+本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
 
 ## <a name="name"></a>“属性”
 
@@ -37,7 +37,7 @@ dotnet tool list -h|--help
 
 * 若要列出在默认位置安装的全局工具，请使用 `--global` 选项
 * 若要列出在自定义位置安装的全局工具，请使用 `--tool-path` 选项。
-* 若要列出多个本地工具或单个本地工具， 请使用 `--local` 选项或省略 `--global`、`--tool-path` 和 `--local` 选项。
+* 若要列出本地工具，请使用 `--local` 选项或省略 `--global`、`--tool-path` 和 `--local` 选项。
 
 **本地工具从 .NET Core SDK 3.0 开始可用。**
 

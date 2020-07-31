@@ -1,5 +1,6 @@
 ---
 title: 动态加载和使用类型
+description: .NET 中的动态加载和使用类型。 使用反射提供语言编译器为实现隐式后期绑定而使用的基础结构。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - implicit late binding
 - reflection, dynamically using types
 ms.assetid: db985bec-5942-40ec-b13a-771ae98623dc
-ms.openlocfilehash: 940f334ec6a42c4d8da461d634051ff979b8f98d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 39a4a9a2ff77cb900db7f39a55dc17a5b8c62cf3
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130264"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475081"
 ---
 # <a name="dynamically-loading-and-using-types"></a>动态加载和使用类型
 反射提供语言编译器为实现隐式后期绑定而使用的基础结构。 声明与唯一指定的类型相对应，绑定是查找声明（即实现）的过程。 运行时（而非编译时）发生此进程就称为后期绑定。 Visual Basic 允许在代码中使用隐式后期绑定；Visual Basic 编译器会调用使用反射来获取对象类型的帮助程序方法。 传递给帮助程序方法的参数会导致在运行时调用相应方法。 这些参数是在其上调用方法的实例（对象）、被调用方法的名称（字符串）和传递给被调用方法的参数（对象数组）。  

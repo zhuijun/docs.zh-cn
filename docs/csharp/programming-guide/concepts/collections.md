@@ -1,13 +1,14 @@
 ---
 title: 集合 (C#)
+description: 了解 C# 中的集合，这些集合用于处理对象组。 集合可随着应用程序更改的需要动态地放大和缩小。
 ms.date: 07/20/2015
 ms.assetid: 317d7dc3-8587-4873-8b3e-556f86497939
-ms.openlocfilehash: ecab30d50be58f810246e58e637b331d492e4a47
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 2375980e2915d4daa5a221a94eee2aea41959852
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241391"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924924"
 ---
 # <a name="collections-c"></a>集合 (C#)
 
@@ -200,7 +201,7 @@ public class Galaxy
 
 下表列出了 <xref:System.Collections.Generic?displayProperty=nameWithType> 命名空间中的一些常用类：
 
-|类|描述|
+|类|说明|
 |---|---|
 |<xref:System.Collections.Generic.Dictionary%602>|表示基于键进行组织的键/值对的集合。|
 |<xref:System.Collections.Generic.List%601>|表示可按索引访问的对象的列表。 提供用于对列表进行搜索、排序和修改的方法。|

@@ -1,16 +1,17 @@
 ---
 title: Clrver.exe（CLR 版本工具）
+description: 查看 Clrver.exe（CLR 版本工具）。 此工具报告计算机上公共语言运行时 (CLR) 的所有已安装版本。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Clrver.exe
 - CLR Version tool
 ms.assetid: cbc2ee86-bdc8-4a65-a8f1-ba23bce3a699
-ms.openlocfilehash: bfc612ef5455e1b4a03d15fd99a8a1873d2c7c08
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e914034819418df00438c454e209e6c86779ba3c
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75715802"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167276"
 ---
 # <a name="clrverexe-clr-version-tool"></a>Clrver.exe（CLR 版本工具）
 CLR 版本工具 (Clrver.exe) 报告计算机上的公共语言运行时 (CLR) 的所有已安装版本。  
@@ -30,7 +31,7 @@ clrver [option]
 |选项|说明|  
 |------------|-----------------|  
 |`-all`|显示正在使用的 CLR 的计算机上的所有进程。|  
-|pid |显示具有指定的进程 ID (PID) 的进程所使用的 CLR 版本。|  
+|pid|显示具有指定的进程 ID (PID) 的进程所使用的 CLR 版本。|  
 |`-?`|显示该工具的命令语法和选项。|  
   
 ## <a name="remarks"></a>备注  
@@ -54,7 +55,7 @@ clrver [option]
   
  `Clrver -all`  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [工具](index.md)
 - [命令提示](developer-command-prompt-for-vs.md)

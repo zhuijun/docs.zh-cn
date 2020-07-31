@@ -1,16 +1,17 @@
 ---
 title: 多维数组 - C# 编程指南
+description: C# 中的数组可具有多个维度。 此示例声明创建一个具有四行两列的二维数组。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#], multidimensional
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
-ms.openlocfilehash: ee5fae36ff844fadad7e1b6a766020319b67a83c
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: a2f204c0866672b317569fbc620aa8af60829ffd
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021755"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475003"
 ---
 # <a name="multidimensional-arrays-c-programming-guide"></a>多维数组（C# 编程指南）
 

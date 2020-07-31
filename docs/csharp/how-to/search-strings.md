@@ -1,17 +1,18 @@
 ---
 title: 如何搜索字符串（C# 指南）
+description: 了解有关使用 C# 在字符串中搜索文本的两种策略。 字符串类方法搜索特定文本。 正则表达式搜索文本中的模式。
 ms.date: 02/21/2018
 helpviewer_keywords:
 - searching strings [C#]
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: 34f9f2df11f9b7c51fcec2f8475a50ccf4c5e220
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 17bf6e080542242d30791b70ffbf00b05f03a7b0
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324127"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86473989"
 ---
 # <a name="how-to-search-strings"></a>如何搜索字符串
 

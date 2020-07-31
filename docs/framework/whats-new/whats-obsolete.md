@@ -1,5 +1,6 @@
 ---
 title: .NET Framework 中的过时功能
+description: 了解 .NET 类库如何将成员标记为已过时。 了解 ObsoleteAttribute 属性，并了解如何处理过时的类型和成员等。
 ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - what's obsolete [.NET Framework]
 - deprecated [.NET Framework]
 ms.assetid: d356a43a-73df-4ae2-a457-b9628074c7cd
-ms.openlocfilehash: 7cfebfde859a95495e9d2d5e42bd034ad5d55e61
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2f39f5ec614b669f3a0f63677cb6f8a6f9ed11cf
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79143130"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925795"
 ---
 # <a name="whats-obsolete-in-the-net-framework-class-library"></a>.NET Framework 类库中过时的内容
 
@@ -21,7 +22,7 @@ ms.locfileid: "79143130"
 .NET Framework 和公共语言运行时会努力支持向后兼容（允许使用一个版本的 .NET Framework 开发的应用程序在下一版本的 .NET Framework 上运行）。 这便难以仅仅删除类型或类型成员。 相反，.NET 通过将类型或类型成员标记为已过时或已弃用，来指示应不再使用它。 弃用某个类型或成员涉及对它进行标记，以便开发人员知道它将消失，从而有时间来响应其删除。 但是，使用该类型或成员的现有代码会继续在新版本的 .NET 中运行。
 
 > [!NOTE]
-> 术语“已过时”  和“已弃用”  在应用于 .NET 类型和成员时含义相同。
+> 术语“已过时”和“已弃用”在应用于 .NET 类型和成员时含义相同。
 
 ## <a name="the-obsoleteattribute-attribute"></a>ObsoleteAttribute 特性
 
@@ -37,13 +38,13 @@ ms.locfileid: "79143130"
 
 - 通过删除该类型或成员的使用（如果可能）来更改代码。
 
-     或
+     \- 或 -
 
 - 查看有关此技术领域的文档，以确定如何响应弃用情况。
 
 可以选择不针对更高版本的 .NET Framework 重新编译现有代码。 相反，可以指定针对其运行现有已编译代码的 .NET Framework 版本。 例如，假设你有一个名为 app1.exe 并且针对 .NET Framework 3.5 进行了编译的应用程序，但是希望针对 .NET Framework 4.5 运行该应用程序。 这需要执行以下步骤：
 
-1. 为主可执行文件创建一个配置文件并将它命名为 *appName*.exe.config，其中 *appName* 是应用程序可执行文件的名称。 对于我们示例中名为 app1.exe  的应用程序，会创建一个名为 app1.exe.config  的配置文件。
+1. 为主可执行文件创建一个配置文件并将它命名为 *appName*.exe.config，其中 *appName* 是应用程序可执行文件的名称。 对于我们示例中名为 app1.exe 的应用程序，会创建一个名为 app1.exe.config 的配置文件。
 
 2. 向该配置文件添加以下内容：
 
@@ -81,6 +82,6 @@ ms.locfileid: "79143130"
 - [.NET Framework 3.5 过时列表](https://docs.microsoft.com/previous-versions/cc835481(v=msdn.10))
 - [.NET Framework 2.0 过时列表](https://docs.microsoft.com/previous-versions/aa497286(v=msdn.10))
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [\<supportedRuntime> 元素](../configure-apps/file-schema/startup/supportedruntime-element.md)

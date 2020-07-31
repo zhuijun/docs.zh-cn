@@ -1,17 +1,18 @@
 ---
 title: 运行时和重定向更改 - .NET Framework
+description: 了解 .NET Framework 中的应用程序兼容性，以及迁移到其他版本时运行时和重定目标更改对应用程序兼容性的影响。
 ms.date: 10/29/2019
 helpviewer_keywords:
 - application compatibility
 - .NET Framework application compatibility
 - .NET Framework changes
 ms.assetid: c4ba3ff2-fe59-4c5d-9e0b-86bba3cd865c
-ms.openlocfilehash: c46f781d495b87a4f24e77935df7c4814c8567ae
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 26f36dd34c6c5ecae8fc5ab373ff60d9e56f8245
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73196695"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475484"
 ---
 # <a name="application-compatibility-in-the-net-framework"></a>.NET Framework 中的应用程序兼容性
 
@@ -30,7 +31,7 @@ ms.locfileid: "73196695"
 
 ## <a name="runtime-changes"></a>运行时更改
 
-运行时问题是指当新的运行时出现在计算机上并且应用的行为更改时出现的问题。 如果应用在比目标 .NET 版本更高的版本上运行，.NET Framework 会通过怪异的行为来模拟旧版目标版本。  应用在较高的版本中运行，但其行为方式如同运行于较低版本中一样。 .NET Framework 各版本之间的许多兼容性问题都是通过这种怪异的模型进行缓解。 例如，如果编译了用于 .NET Framework 4.0 的二进制文件，但在安装了 .NET Framework 4.5 或更高版本的计算机上运行它，它就会采用 .NET Framework 4.0 兼容模式运行。 这意味着，较高版本中的许多更改不影响此二进制文件。
+运行时问题是指当新的运行时出现在计算机上并且应用的行为更改时出现的问题。 如果应用在比目标 .NET 版本更高的版本上运行，.NET Framework 会通过怪异的行为来模拟旧版目标版本。 应用在较高的版本中运行，但其行为方式如同运行于较低版本中一样。 .NET Framework 各版本之间的许多兼容性问题都是通过这种怪异的模型进行缓解。 例如，如果编译了用于 .NET Framework 4.0 的二进制文件，但在安装了 .NET Framework 4.5 或更高版本的计算机上运行它，它就会采用 .NET Framework 4.0 兼容模式运行。 这意味着，较高版本中的许多更改不影响此二进制文件。
 
 应用程序面向的 .NET Framework 版本取决于运行代码的应用程序域的输入程序集的目标版本。 该应用程序域中加载的所有附加程序集都面向此版本。 例如，如果是可执行文件，则该可执行文件面向的版本就是一个兼容模式，应用程序域中的所有程序集都在这个兼容模式下运行。
 
@@ -62,7 +63,7 @@ ms.locfileid: "73196695"
 **透明**\
 对应用的开发人员或用户没有明显影响的更改。 不需要由于此更改而修改应用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [版本和依赖关系](versions-and-dependencies.md)
 - [新增功能](../whats-new/index.md)

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: fe370b34d311816a815f3b2d419751ac7871f013
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 78a47b01cc8fba4cb45a686adad901784552c1c1
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "83703581"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865328"
 ---
 # <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>如何从 Newtonsoft.Json 迁移到 System.Text.Json
 
@@ -318,11 +318,27 @@ The JSON value could not be converted to System.String.
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecastRequiredPropertyConverter.cs)]
 
-通过[对 POCO 类使用特性](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type)或是通过向 <xref:System.Text.Json.JsonSerializerOptions.Converters> 集合[添加转换器](system-text-json-converters-how-to.md#registration-sample---converters-collection)来注册此自定义转换器。
+通过向 <xref:System.Text.Json.JsonSerializerOptions.Converters?displayProperty=nameWithType> 集合[添加转换器](system-text-json-converters-how-to.md#registration-sample---converters-collection)来注册此自定义转换器。
 
-如果遵循此模式，请不要在递归调用 <xref:System.Text.Json.JsonSerializer.Serialize%2A> 或 <xref:System.Text.Json.JsonSerializer.Deserialize%2A> 时传入选项对象。 选项对象包含 <xref:System.Text.Json.JsonSerializerOptions.Converters%2A> 集合。 如果将它传递给 `Serialize` 或 `Deserialize`，则自定义转换器会调入其自身，从而产生导致堆栈溢出异常的无限循环。 如果默认选项不可行，请使用所需设置创建选项的新实例。 此方法会速度较慢，因为每个新实例都会独立缓存。
+这种以递归方式调用转换器的模式要求使用 <xref:System.Text.Json.JsonSerializerOptions> 而不是使用属性注册转换器。 如果使用属性注册转换器，则自定义转换器将以递归方式调入其自身。 结果是一个以堆栈溢出异常结尾的无限循环。
 
-前面的转换器代码是简化示例。 如果需要处理特性（例如 [[JsonIgnore]](xref:System.Text.Json.Serialization.JsonIgnoreAttribute)）或不同选项（如自定义编码器），则需要其他逻辑。 此外，示例代码不处理在构造函数中为其设置了默认值的属性。 而且此方法不区分以下情况：
+使用选项对象注册转换器时，请通过在以递归方式调用 <xref:System.Text.Json.JsonSerializer.Serialize%2A> 或 <xref:System.Text.Json.JsonSerializer.Deserialize%2A> 时不传入选项对象来避免无限循环。 选项对象包含 <xref:System.Text.Json.JsonSerializerOptions.Converters%2A> 集合。 如果将它传递给 `Serialize` 或 `Deserialize`，则自定义转换器会调入其自身，从而产生导致堆栈溢出异常的无限循环。 如果默认选项不可行，请使用所需设置创建选项的新实例。 此方法会速度较慢，因为每个新实例都会独立缓存。
+
+有一种替代模式，可在要转换的类上使用 `JsonConverterAttribute` 注册。 在此方法中，转换器代码对派生自要转换的类的类调用 `Serialize` 或 `Deserialize`。 派生类没有应用 `JsonConverterAttribute`。 在此替代的以下示例中：
+
+* `WeatherForecastWithRequiredPropertyConverterAttribute` 是要进行反序列化并应用 `JsonConverterAttribute` 的类。
+* `WeatherForecastWithoutRequiredPropertyConverterAttribute` 是不具有转换器属性的派生类。
+* 转换器中的代码调用 `WeatherForecastWithoutRequiredPropertyConverterAttribute` 上的 `Serialize`和 `Deserialize` 以避免无限循环。 此方法对于序列化是一种性能开销，因为需要实例化额外的对象和复制属性值。
+
+`WeatherForecast*` 类型如下：
+
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecast.cs?name=SnippetWFWithReqPptyConverterAttr)]
+
+下面是转换器：
+
+[!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecastRequiredPropertyConverterForAttributeRegistration.cs)]
+
+如果需要处理特性（例如 [[JsonIgnore]](xref:System.Text.Json.Serialization.JsonIgnoreAttribute)）或不同选项（如自定义编码器），必需的属性转换器需要其他逻辑。 此外，示例代码不处理在构造函数中为其设置了默认值的属性。 而且此方法不区分以下情况：
 
 * JSON 中缺少属性。
 * JSON 中存在不可为 null 的类型的属性，但值是该类型的默认值，如 `int` 的值为零。
@@ -391,7 +407,7 @@ The JSON value could not be converted to System.String.
 如果使用遵循前面示例的自定义转换器：
 
 * `OnDeserializing` 代码无权访问新 POCO 实例。 若要在反序列化开始时操作新 POCO 实例，请将该代码放入 POCO 构造函数中。
-* 当递归调用 `Serialize` 或 `Deserialize` 时，请不要传入选项对象。 选项对象包含 `Converters` 集合。 如果将它传递给 `Serialize` 或 `Deserialize`，则会使用转换器，从而产生导致堆栈溢出异常的无限循环。
+* 通过在选项对象中注册转换器而在以递归方式调用 `Serialize` 或 `Deserialize` 时不传入选项对象，避免无限循环。 有关详细信息，请参阅本文前面介绍的 [必需的属性](#required-properties)部分。
 
 ### <a name="public-and-non-public-fields"></a>公共和非公共字段
 

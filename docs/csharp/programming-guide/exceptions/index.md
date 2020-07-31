@@ -1,17 +1,18 @@
 ---
 title: 异常和异常处理 - C# 编程指南
+description: 了解异常和异常处理情况。 这些 C# 功能可帮助处理程序在运行时出现的意外或异常情况。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exception handling [C#]
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: 0ba123fa9f9aacd0876f07bdf3ae7bb9159a6834
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 4be327be4e183d60e440358254aeb9c68fcf25ca
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241703"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303382"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>异常和异常处理（C# 编程指南）
 

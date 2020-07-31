@@ -1,13 +1,14 @@
 ---
 title: 如何从 CSV 文件生成 XML (C#)
+description: 了解如何使用 C# 中的 LINQ 和 LINQ to XML 从 .csv 文件生成 XML。 查询使用 let 子句将字符串拆分为字段数组。
 ms.date: 07/20/2015
 ms.assetid: 57b9ccde-f983-4a21-ae61-70ecede30307
-ms.openlocfilehash: 643c05cb440165c4461c3e9c80e69701241ab8d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2fc9954a51fc1f2979c6cce13805ed15cdb88741
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635803"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105178"
 ---
 # <a name="how-to-generate-xml-from-csv-files-c"></a>如何从 CSV 文件生成 XML (C#)
 本示例演示如何使用语言集成查询 (LINQ) 和 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 从逗号分隔值 (CSV) 文件生成 XML 文件。  

@@ -1,16 +1,17 @@
 ---
 title: 缓解：XML 架构验证
+description: 如果在 .NET Framework 4.6 中使用复合键且有一个键为空，则 XSD 架构验证将检测是否违反唯一约束。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b73dd4f4-f2dc-47a2-9425-3896e92321fb
-ms.openlocfilehash: 99cc1eae08697909d89e5c1e46cd604c7da543bc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0672361ca5c0bc7cb6ec166f59278b93555e0947
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73457750"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475302"
 ---
 # <a name="mitigation-xml-schema-validation"></a>缓解：XML 架构验证
 在 .NET Framework 4.6 中，如果使用复合键且有一个键为空，则 XSD 架构验证将检测是否违反唯一约束。  
@@ -18,7 +19,7 @@ ms.locfileid: "73457750"
 ## <a name="impact"></a>影响  
  此更改的影响应该很小：根据架构规范，如果因使用具有空键的复合键违反了 `xsd:unique`，则会出现架构验证错误。  
   
-## <a name="mitigation"></a>缓解操作  
+## <a name="mitigation"></a>缓解  
  是否在复合键具有一个空键的情况下检测架构验证错误是一项可配置的功能：  
   
 - 从面向 .NET Framework 4.6 的应用开始，默认情况下会启用架构验证错误的检测；但可以选择退出此行为，这样将不会检测架构验证错误。  
@@ -35,6 +36,6 @@ ms.locfileid: "73457750"
  [!code-csharp[AppCompat.IgnoreEmptyKeySequences#2](../../../samples/snippets/csharp/VS_Snippets_CLR/appcompat.ignoreemptykeysequences/cs/program.cs#2)]
  [!code-vb[AppCompat.IgnoreEmptyKeySequences#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/appcompat.ignoreemptykeysequences/vb/module1.vb#2)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [应用程序兼容性](application-compatibility.md)

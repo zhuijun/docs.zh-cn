@@ -1,17 +1,18 @@
 ---
 title: LINQ 和泛型类型 (C#)
+description: 了解 C# 中支持查询的泛型类型的基本概念。  LINQ 查询基于泛型类型。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], generic types
 - generic types [LINQ]
 - generics [LINQ]
 ms.assetid: 660e3799-25ca-462c-8c4a-8bce04fbb031
-ms.openlocfilehash: 2cbff0b31cac091a57ea35cbd01535b7d0c4b78a
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 98054a4a21704293faa1194dac342bc48aef138d
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241755"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165643"
 ---
 # <a name="linq-and-generic-types-c"></a>LINQ 和泛型类型 (C#)
 LINQ 查询基于 .NET Framework 版本 2.0 中引入的泛型类型。 无需深入了解泛型即可开始编写查询。 但是，可能需要了解 2 个基本概念：  

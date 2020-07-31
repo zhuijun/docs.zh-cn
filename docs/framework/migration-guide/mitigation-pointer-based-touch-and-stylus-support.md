@@ -1,5 +1,6 @@
 ---
 title: 缓解：基于指针的触控和触笔支持
+description: 了解为面向 .NET Framework 4.7 的 WPF 应用启用可选 WPF 触控/触笔堆栈的影响。
 ms.date: 04/07/2017
 helpviewer_keywords:
 - retargeting changes
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - WPF retargeting changes
 - WPF pointer-based touch and stylus stack
 ms.assetid: f99126b5-c396-48f9-8233-8f36b4c9e717
-ms.openlocfilehash: 023c38f66611bd0022699d3f62d90c3923585012
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d0c0effeaa727c615dddc3b92cdd34aafde65705
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77094470"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475419"
 ---
 # <a name="mitigation-pointer-based-touch-and-stylus-support"></a>缓解：基于指针的触控和触笔支持
 
@@ -40,7 +41,7 @@ ms.locfileid: "77094470"
 
 ## <a name="opting-in-to-wm_pointer-based-touchstylus-support"></a>选择启用基于 WM_POINTER 的触控/触笔支持
 
-要启用此堆栈的开发者可以在应用程序的 app.config 文件中添加下面的代码。 
+要启用此堆栈的开发者可以在应用程序的 app.config 文件中添加下面的代码。
 
 ```xml
 <configuration>
@@ -52,6 +53,6 @@ ms.locfileid: "77094470"
 
 删除此条目或将其值设置为 `false` 可以禁用此可选堆栈。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [应用程序兼容性](application-compatibility.md)

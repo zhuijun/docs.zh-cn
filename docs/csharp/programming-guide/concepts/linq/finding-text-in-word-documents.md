@@ -1,13 +1,14 @@
 ---
 title: 查找 Word 文档中的文本 (C#)
+description: 了解如何使用 C# 中的 LINQ 处理 WordprocessingML 文档。 此示例查找文档中出现的所有字符串。
 ms.date: 07/20/2015
 ms.assetid: 82f86677-560b-49dc-a089-610409939b2a
-ms.openlocfilehash: 173472b9dbd669476c3e5529655d111b88b0dba2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1efcbef6185b718287f1222ecc086f4c675f02ab
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70205395"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105394"
 ---
 # <a name="finding-text-in-word-documents-c"></a>查找 Word 文档中的文本 (C#)
 本主题扩展了以前的查询，以执行一些有用的任务：在文档中查找一个字符串的所有匹配项。  
@@ -327,7 +328,7 @@ StyleName:Code ><
   
 - [Office Open XML WordprocessingML 文档的详细信息 (C#)](./wordprocessingml-document-with-styles.md)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [教程：操作 WordprocessingML 文档中的内容 (C#)](./shape-of-wordprocessingml-documents.md)
 - [使用纯函数重构 (C#)](./refactoring-using-a-pure-function.md)

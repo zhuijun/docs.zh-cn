@@ -1,13 +1,14 @@
 ---
 title: 如何从多个源填充对象集合 (LINQ) (C#)
+description: 了解如何使用 C# 中的 LINQ 将来自不同源的数据合并到一系列新的类型。 这些示例同时使用匿名和命名类型。
 ms.date: 06/12/2018
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
-ms.openlocfilehash: 3d841e5ca25afde94674af0fedc9a824c382be5b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9dc9f98ae09e0fe3437b5d2ccab32b3dbcd93714
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345758"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104717"
 ---
 # <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>如何从多个源填充对象集合 (LINQ) (C#)
 
@@ -139,7 +140,7 @@ foreach (var student in queryNamesScores2)
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ 和字符串 (C#)](./linq-and-strings.md)
 - [对象和集合初始值设定项](../../classes-and-structs/object-and-collection-initializers.md)

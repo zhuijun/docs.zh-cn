@@ -1,5 +1,6 @@
 ---
 title: LINQ 查询简介 (C#)
+description: LINQ 为跨各种数据源和格式的数据查询提供了一种一致的模型。 在 LINQ 查询中，始终会用到对象。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - deferred execution [LINQ]
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - LINQ, deferred execution
 - queries [LINQ], about LINQ queries
 ms.assetid: 37895c02-268c-41d5-be39-f7d936fa88a8
-ms.openlocfilehash: 5a9d97ff14f087ddfc55986bf77f18492cbf8a04
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: ce878dc255d2502f0594626b294393c399c932e5
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389583"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165833"
 ---
 # <a name="introduction-to-linq-queries-c"></a>LINQ 查询简介 (C#)
 *查询*是一种从数据源检索数据的表达式。 查询通常用专门的查询语言来表示。 随着时间的推移，人们已经为各种数据源开发了不同的语言；例如，用于关系数据库的 SQL 和用于 XML 的 XQuery。 因此，开发人员对于他们必须支持的每种数据源或数据格式，都不得不学习一种新的查询语言。 LINQ 通过提供处理各种数据源和数据格式的数据的一致模型，简化了这一情况。 在 LINQ 查询中，始终会用到对象。 可以使用相同的基本编码模式来查询和转换 XML 文档、SQL 数据库、ADO.NET 数据集、.NET 集合中的数据以及 LINQ 提供程序可用的任何其他格式的数据。  

@@ -1,5 +1,6 @@
 ---
 title: 命名参数和可选参数 - C# 编程指南
+description: C# 中的命名参数按名称而不是位置指定参数。 可以省略可选元素。
 ms.date: 07/20/2015
 f1_keywords:
 - namedParameter_CSharpKeyword
@@ -13,12 +14,12 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: 15b685248730c1f742035612a201d97d180bbc41
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 46b9dc23644e68aea2767f2b990fe7f243a4f357
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398417"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864977"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>命名实参和可选实参（C# 编程指南）
 C# 4 介绍命名实参和可选实参。 通过*命名实参*，你可以为特定形参指定实参，方法是将实参与该形参的名称关联，而不是与形参在形参列表中的位置关联。 通过*可选参数*，你可以为某些形参省略实参。 这两种技术都可与方法、索引器、构造函数和委托一起使用。  
@@ -46,7 +47,7 @@ C# 4 介绍命名实参和可选实参。 通过*命名实参*，你可以为特
 
  `PrintOrderDetails("Gift Shop", 31, productName: "Red Mug");`
 
-- 以 C# 7.2 开头，则它们就有效并用在正确位置  。 在以下示例中，形参 `orderNum` 位于正确的位置，但未显式命名。
+- 以 C# 7.2 开头，则它们就有效并用在正确位置。 在以下示例中，形参 `orderNum` 位于正确的位置，但未显式命名。
 
  `PrintOrderDetails(sellerName: "Gift Shop", 31, productName: "Red Mug");`
   
@@ -126,7 +127,7 @@ C# 4 介绍命名实参和可选实参。 通过*命名实参*，你可以为特
 ## <a name="c-language-specification"></a>C# 语言规范  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何在 Office 编程中使用命名参数和可选参数](./how-to-use-named-and-optional-arguments-in-office-programming.md)
 - [使用类型 dynamic](../types/using-type-dynamic.md)

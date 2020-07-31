@@ -1,20 +1,21 @@
 ---
 title: 终结器 - C# 编程指南
+description: C# 中的终结器（也称为析构函数）在垃圾回收器收集类实例时执行任何必要的最终清理操作。
 ms.date: 10/08/2018
 helpviewer_keywords:
 - ~ [C#], in finalizers
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: 62fc531a8064a8a5cb144a89aa9975b3199db976
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 392b69633e596f0682fdfb4a5875f46755203ff7
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990113"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474886"
 ---
 # <a name="finalizers-c-programming-guide"></a>终结器（C# 编程指南）
-终结器（也称为**** 析构函数）用于在垃圾回收器收集类实例时执行任何必要的最终清理操作。  
+终结器（也称为析构函数）用于在垃圾回收器收集类实例时执行任何必要的最终清理操作。  
   
 ## <a name="remarks"></a>备注  
   

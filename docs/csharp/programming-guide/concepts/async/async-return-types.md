@@ -1,13 +1,14 @@
 ---
 title: 异步返回类型 (C#)
+description: 了解在 C# 中异步方法可以具有的返回类型，以及每种类型的代码示例和其他资源。
 ms.date: 04/14/2020
 ms.assetid: ddb2539c-c898-48c1-ad92-245e4a996df8
-ms.openlocfilehash: c2584f1e285a7ab76eb43f9a211a8d2a51c2c55e
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: 954e449356819595a3a974a6dece5349e53ec88a
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761871"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925379"
 ---
 # <a name="async-return-types-c"></a>异步返回类型 (C#)
 

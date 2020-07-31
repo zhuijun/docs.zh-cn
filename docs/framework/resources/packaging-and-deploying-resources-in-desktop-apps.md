@@ -1,5 +1,6 @@
 ---
 title: 打包和部署 .NET 应用中的资源
+description: 使用主程序集（中枢）和附属程序集（轮辐）在 .NET 应用中打包和部署资源。 轮辐包含本地化资源，但不包含代码。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -26,12 +27,12 @@ helpviewer_keywords:
 - localizing resources
 - neutral cultures
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
-ms.openlocfilehash: d64e3b5201e34541fdafa5724b0c7e8c3f6c0c0d
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 7b06ca4444b75f0a7002323b32732dd4f855f692
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243045"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166182"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>打包和部署 .NET 应用中的资源
 
@@ -71,7 +72,7 @@ ms.locfileid: "81243045"
 .NET Framework 资源回退进程包含以下步骤：
 
 > [!TIP]
-> 还可以使用 [\<relativeBindForResources >](../configure-apps/file-schema/runtime/relativebindforresources-element.md) 配置元素来优化资源回退过程和运行时针对资源程序集探测所依据的。 有关详细信息，请参阅 [优化资源回退进程](packaging-and-deploying-resources-in-desktop-apps.md#Optimizing)一节。
+> 可以使用 [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) 配置元素来优化资源回退过程和运行时针对资源程序集探测所依据的过程。 有关详细信息，请参阅 [优化资源回退进程](packaging-and-deploying-resources-in-desktop-apps.md#Optimizing)一节。
 
 1. 运行时首先检查[全局程序集缓存](../app-domains/gac.md)，找到与为应用程序请求的区域性匹配的程序集。
 
@@ -126,7 +127,7 @@ ms.locfileid: "81243045"
 </configuration>
 ```
 
-优化的附属程序集探测是选择加入功能。 也就是说，运行时遵循[资源回退进程](packaging-and-deploying-resources-in-desktop-apps.md#cpconpackagingdeployingresourcesanchor1)中记录的步骤，除非 [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) 元素位于应用程序的配置文件中，并且其 `enabled` 属性已设为 `true`。 如果出现这种情况，附属程序集探测过程将进行如下修改：
+优化的附属程序集探测是选择加入功能。 也就是说，运行时遵循[资源回退过程](packaging-and-deploying-resources-in-desktop-apps.md#cpconpackagingdeployingresourcesanchor1)中记录的步骤，除非 [\<relativeBindForResources>](../configure-apps/file-schema/runtime/relativebindforresources-element.md) 元素位于应用程序的配置文件中，并且其 `enabled` 属性已设为 `true`。 如果出现这种情况，附属程序集探测过程将进行如下修改：
 
 - 运行时使用父代码程序集位置来探测附属程序集。 如果父程序集安装在全局程序集缓存中，则运行时在缓存，而不是在应用程序的目录中探测。 如果父程序集安装在应用程序目录中，则运行时在应用程序目录，而不是在全局程序集缓存中探测。
 
@@ -186,19 +187,19 @@ Greeting=Добрый день
 
 从命令行运行[资源文件生成器 (Resgen.exe)](../tools/resgen-exe-resource-file-generator.md) 可将这两个文件编译为 .resources 文件。 对于法语资源，命令为：
 
-resgen.exe resources.fr.txt 
+resgen.exe resources.fr.txt
 
 对于俄语资源，命令为：
 
-resgen.exe resources.ru.txt 
+resgen.exe resources.ru.txt
 
 对于法语资源，从命令行运行[程序集连接器 (Al.exe)](../tools/al-exe-assembly-linker.md)，将 .resources 文件嵌入动态链接库，如下所示：
 
-al /t:lib /embed:resources.fr.resources /culture:fr /out:fr\Example1.resources.dll 
+al /t:lib /embed:resources.fr.resources /culture:fr /out:fr\Example1.resources.dll
 
 而对于俄语资源，则为如下所示：
 
-al /t:lib /embed:resources.ru.resources /culture:ru /out:ru\Example1.resources.dll 
+al /t:lib /embed:resources.ru.resources /culture:ru /out:ru\Example1.resources.dll
 
 应用程序源代码位于名为 Example1.cs 或 Example1.vb 的文件中。 它包括 <xref:System.Resources.NeutralResourcesLanguageAttribute> 属性，以指示默认应用程序资源位于 fr 子目录中。 它可实例化 Resource Manager，检索 `Greeting` 资源的值，并将其显示到控制台。
 

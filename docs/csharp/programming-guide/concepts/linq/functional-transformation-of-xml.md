@@ -1,13 +1,14 @@
 ---
 title: XML 的功能转换 (C#)
+description: 了解如何使用 C# 中的纯函数转换方法修改 XML 文档，以及该方法与过程方法有何不同。
 ms.date: 07/20/2015
 ms.assetid: 0ccb9251-38d7-44e3-9b84-1b5fe25e4b59
-ms.openlocfilehash: 83ecd97f9319027dc50f346abf7a9888b5c23862
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4ccc6859f3663eb3760c7faeaf115a5e88a2278a
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75336800"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103673"
 ---
 # <a name="functional-transformation-of-xml-c"></a>XML 的功能转换 (C#)
 本主题讨论用于修改 XML 文档的纯函数转换方法，并将该方法与过程方法进行比较。  
@@ -26,7 +27,7 @@ ms.locfileid: "75336800"
 ### <a name="xml-functional-transformational-technologies"></a>XML 函数转换技术  
  Microsoft 提供两种用于 XML 文档的功能转换技术：XSLT 和 LINQ to XML。 在 <xref:System.Xml.Xsl> 托管命名空间和 MSXML 的本机 COM 实现中都支持 XSLT。 尽管 XSLT 是操作 XML 文档的可靠技术，但它要求专门领域的专业知识，即 XSLT 语言和支持它的 API。  
   
- LINQ to XML 提供了必要的工具，使用这些工具可以在 C# 或 Visual Basic 代码中以富于表现力而又强有力的方式编写纯函数转换。 例如，LINQ to XML 文档中的很多示例都使用纯函数方法。 此外，在[教程：操作 WordprocessingML 文档中的内容 (C#)](./shape-of-wordprocessingml-documents.md) 教程中，我们在函数方法中使用 LINQ to XML 操作 Microsoft Word 文档中的信息。  
+ LINQ to XML 提供了必要的工具，使用这些工具可以在 C# 或 Visual Basic 代码中以富于表现力而又强有力的方式编写纯函数转换。 例如，LINQ to XML 文档中的很多示例都使用纯函数方法。 此外，在[教程：在 WordprocessingML 文档中处理内容 (C#)](./shape-of-wordprocessingml-documents.md) 教程中，我们在函数方法中使用 LINQ to XML 处理 Microsoft Word 文档中的信息。  
   
  有关 LINQ to XML 与其他 Microsoft XML 技术的更全面比较，请参见 [LINQ to XML 和其他 XML 技术](./linq-to-xml-vs-other-xml-technologies.md)。  
   

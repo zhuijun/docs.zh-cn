@@ -1,5 +1,6 @@
 ---
 title: 使用 CodeDom
+description: 使用代码文档对象模型 (CodeDOM) 来组合对象图，该模型提供表示多种常见源代码元素的类型。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -20,12 +21,12 @@ helpviewer_keywords:
 - code generators
 - CodeDOM, graphs
 ms.assetid: 0444ddf3-c3f6-44ed-a999-f710d9c3e0cf
-ms.openlocfilehash: c4cab79976acae236de5a8eaad5a42cdba7d04f9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 476d8c18f386f889855c664147b1ee20995dc6f9
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129998"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865211"
 ---
 # <a name="using-the-codedom"></a>使用 CodeDom
 CodeDOM 提供表示多种常见源代码元素的类型。 可以设计一个程序，它使用 CodeDOM 元素生成源代码模型来组合对象图。 对于支持的编程语言，可使用 CodeDOM 代码生成器将此对象图呈现为源代码。 还可使用 CodeDOM 将源代码编译为二进制程序集。  

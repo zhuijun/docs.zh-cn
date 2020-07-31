@@ -1,13 +1,14 @@
 ---
 title: 缓解：WPF 布局
+description: 了解如何缓解由 WPF 控件布局的更改导致的问题（例如，将对象移动到一个像素的位置）。
 ms.date: 03/30/2017
 ms.assetid: 805ffd7f-8d1e-427e-a648-601ca8ec37a5
-ms.openlocfilehash: 7a074698fd203d0c5f9b799bfee8a6a9cb40800e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e4e4612f7b39eefbf0e76ac86c8eb644c257ba75
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73457783"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475341"
 ---
 # <a name="mitigation-wpf-layout"></a>缓解：WPF 布局
 WPF 控件的布局可能稍有变化。  
@@ -23,7 +24,7 @@ WPF 控件的布局可能稍有变化。
   
  默认情况下，仅对面向 .NET Framework 4.6 的应用启用此新布局。  
   
-## <a name="mitigation"></a>缓解操作  
+## <a name="mitigation"></a>缓解  
  由于这种修改往往会消除高 DPI 处 WPF 控件的右侧或底部剪辑，因此面向早期版本的 .NET framework 但在.NET Framework 4.6 上运行的应用可以通过将下面的行添加到 app.config 文件的 `<runtime>` 部分来选择加入此新行为：  
   
 ```xml  
@@ -36,6 +37,6 @@ WPF 控件的布局可能稍有变化。
 <AppContextSwitchOverrides value="Switch.MS.Internal.DoNotApplyLayoutRoundingToMarginsAndBorderThickness=true" />  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [应用程序兼容性](application-compatibility.md)

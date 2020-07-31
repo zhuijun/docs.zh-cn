@@ -1,5 +1,6 @@
 ---
 title: 以编程方式使用 .resx 文件
+description: 使用 .NET 类库的 System.Resources 命名空间中的类型和成员以编程方式从 XML 资源 (.resx) 文件中创建或检索数据。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - resource files, .resx files
 - .resx files
 ms.assetid: 168f941a-2b84-43f8-933f-cf4a8548d824
-ms.openlocfilehash: 3b84d77e4ac9b9889d1bc2f08e5ead6b81deecb0
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 519ca099b65710b6eb4251e1a9419e965ee69f93
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243032"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87166156"
 ---
 # <a name="work-with-resx-files-programmatically"></a>以编程方式使用 .resx 文件
 

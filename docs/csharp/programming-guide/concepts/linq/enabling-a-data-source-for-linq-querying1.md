@@ -1,13 +1,14 @@
 ---
 title: 启用数据源以进行 LINQ 查询
+description: 了解如何扩展 C# 中的 LINQ，使其能够在 LINQ 模式中查询任何数据源，从而使客户端可以轻松查询数据源。
 ms.date: 07/20/2015
 ms.assetid: d2ef04a5-31a6-45cb-af9a-a5ce7732662c
-ms.openlocfilehash: 9a143f0da74d4e91ef697f468d7fda225e75245b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a3a03aa3c67ef80507de4607e21eee4d247d622d
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635764"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103942"
 ---
 # <a name="enabling-a-data-source-for-linq-querying"></a>启用数据源以进行 LINQ 查询
 可通过多种方式来扩展 LINQ，以便能够在 LINQ 模式中查询任何数据源。 数据源可以是数据结构、Web 服务、文件系统或数据库等。 LINQ 模式使客户端可以轻松地查询能够进行 LINQ 查询的数据源，因为查询的语法和模式没有更改。 可通过以下方式将 LINQ 扩展到这些数据源：  
@@ -39,7 +40,7 @@ ms.locfileid: "75635764"
   
  复杂的 `IQueryable` 提供程序（如 [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] 提供程序）可将完整的 LINQ 查询转换为可表达查询语言（如 SQL）。 与复杂性较低的提供程序相比，复杂的提供程序更为全面，因为它能在查询中处理各种各样的问题。 它还具有开放的类型系统，因而必须包含广泛的基础结构来映射用户定义的类型。 开发复杂的提供程序需要耗费大量的精力。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Linq.IQueryable%601>
 - <xref:System.Collections.Generic.IEnumerable%601>

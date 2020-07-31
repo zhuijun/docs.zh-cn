@@ -1,13 +1,14 @@
 ---
 title: 如何使用 XPath 查询 LINQ to XML (C#)
+description: 你可通过 C# 中的扩展方法，使用 XPath 查询 XML 树。 通常，我们不建议将 XPath 与 LINQ to XML 一起使用。
 ms.date: 07/20/2015
 ms.assetid: ee5af263-4ab1-45e5-b792-33a3221b426d
-ms.openlocfilehash: 61878febd9b4880872b7bc58e4de04b37cff96f8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fff45a93380b5af85aa640fc690783cc95e6298b
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75344813"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104348"
 ---
 # <a name="how-to-query-linq-to-xml-using-xpath-c"></a>如何使用 XPath 查询 LINQ to XML (C#)
 本主题介绍一些扩展方法，通过这些扩展方法可以使用 XPath 查询 XML 树。 有关使用这些扩展方法的详细信息，请参见 <xref:System.Xml.XPath.Extensions?displayProperty=nameWithType>。  

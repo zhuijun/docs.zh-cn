@@ -1,17 +1,18 @@
 ---
 title: 分部类和方法 - C# 编程指南
+description: C# 中的分部类和方法拆分一个类、一个结构、一个接口或一个方法的定义到两个或更多的源文件中。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - partial methods [C#]
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 50b192d5a7416a982f41d0c3ac13e9c1bfe3397c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 792159786131654d6ee0363f7ab7b87ac50d32bb
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398423"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864743"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>分部类和方法（C# 编程指南）
 
@@ -94,7 +95,7 @@ ms.locfileid: "79398423"
 
   - [private](../../language-reference/keywords/private.md)
 
-  - [protected](../../language-reference/keywords/protected.md)
+  - [受保护](../../language-reference/keywords/protected.md)
 
   - [internal](../../language-reference/keywords/internal.md)
 

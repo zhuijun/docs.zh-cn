@@ -1,13 +1,14 @@
 ---
 title: 循环访问 C# 中的集合
+description: 了解如何使用迭代器来逐步迭代集合，例如列表和数组。 通过 foreach 语句或 LINQ 查询从客户端代码中使用迭代器。
 ms.date: 08/14/2018
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
-ms.openlocfilehash: 15b77fd11c0ff606119425ec7aae8e7127315e82
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 310fff68a242812620357517c212ddd5f053775c
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84240689"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104251"
 ---
 # <a name="iterators-c"></a>迭代器 (C#)
 

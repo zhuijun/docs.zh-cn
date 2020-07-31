@@ -3,16 +3,16 @@ title: 调试内存泄漏教程
 description: 了解如何调试 .NET Core 中的内存泄漏。
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: d47992bab9dab64cf7f88ff679eef407dd891b5a
-ms.sourcegitcommit: 348bb052d5cef109a61a3d5253faa5d7167d55ac
+ms.openlocfilehash: ff684f9b9402cb8b7b648e792a1d37ddcc96b399
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "82021355"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86924885"
 ---
-# <a name="tutorial-debug-a-memory-leak-in-net-core"></a>教程：调试 .NET Core 中的内存泄漏
+# <a name="debug-a-memory-leak-in-net-core"></a>调试 .NET Core 中的内存泄漏
 
- 本文适用于： ✔️ .NET Core 3.0 SDK 及更高版本
+**本文适用于：** ✔️ .NET Core 3.1 SDK 及更高版本
 
 本教程演示用于分析 .NET Core 内存泄漏的工具。
 
@@ -30,7 +30,7 @@ ms.locfileid: "82021355"
 
 本教程使用：
 
-- [.NET Core 3.0 SDK](https://dotnet.microsoft.com/download/dotnet-core) 或更高版本。
+- [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) 或更高版本。
 - [dotnet-trace](dotnet-trace.md) 列出进程。
 - [dotnet-counters](dotnet-counters.md) 检查托管内存的使用情况。
 - [dotnet-dump](dotnet-dump.md) 收集和分析转储文件。
@@ -102,7 +102,7 @@ Press p to pause, r to resume, q to quit.
 
 启动后，可以看到托管堆内存为 4 MB。
 
-现在，点击 URL `http://localhost:5000/api/diagscenario/memleak/20000`。
+现在，点击 URL `https://localhost:5001/api/diagscenario/memleak/20000`。
 
 请注意，内存使用量已增加到 30 MB。
 
@@ -133,7 +133,7 @@ Complete
 
 收集转储后，你应该有足够的信息来诊断失败的进程。 如果失败的进程在生产服务器上运行，现在是通过重新启动进程进行短期修正的理想时机。
 
-在本教程中，你已经完成了[示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/)，现在可以将其关闭。 导航到启动服务器的终端并按 `Control-C`。
+在本教程中，你已经完成了[示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/)，现在可以将其关闭。 导航到启动服务器的终端并按 <kbd>Ctrl+C</kbd>。
 
 ### <a name="analyze-the-core-dump"></a>分析核心转储
 
@@ -232,14 +232,14 @@ Found 2 roots.
 
 还可以删除已创建的转储文件。
 
+## <a name="see-also"></a>请参阅
+
+- 用于列出进程的 [dotnet-trace](dotnet-trace.md)
+- 用于检查托管内存使用情况的 [dotnet-counters](dotnet-counters.md)
+- 用于收集和分析转储文件的 [dotnet-dump](dotnet-dump.md)
+- [dotnet/diagnostics](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)
+
 ## <a name="next-steps"></a>后续步骤
 
-恭喜你完成本教程。
-
-我们还在发布更多诊断教程。 可以在 [dotnet/diagnostics](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial) 存储库上阅读草稿版本。
-
-本教程介绍了重要的 .NET 诊断工具的基础知识。 有关高级用法，请参阅以下参考文档：
-
-* [dotnet-trace](dotnet-trace.md) 列出进程。
-* [dotnet-counters](dotnet-counters.md) 检查托管内存的使用情况。
-* [dotnet-dump](dotnet-dump.md) 收集和分析转储文件。
+> [!div class="nextstepaction"]
+> [调试 .NET Core 中的高 CPU](debug-highcpu.md)

@@ -1,13 +1,14 @@
 ---
 title: LINQ to XML 类概述 (C#)
+description: 本文总结了 System.Xml.Linq 命名空间的 C# 中的 LINQ to XML 类，并对每个类进行了简短说明。
 ms.date: 07/20/2015
 ms.assetid: bf666100-5392-4968-97f4-f6b9d3287d7b
-ms.openlocfilehash: 55be666fc0db0becb12ec8b525e7fc443536e1df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 34508f86792cdc7589569b8f12584ffc4379a5fb
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69591888"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165428"
 ---
 # <a name="linq-to-xml-classes-overview-c"></a>LINQ to XML 类概述 (C#)
 本主题提供 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 命名空间中 <xref:System.Xml.Linq> 类的列表及每个类的简短说明。  
@@ -86,6 +87,6 @@ ms.locfileid: "69591888"
 ### <a name="xtext-class"></a>XText 类  
  <xref:System.Xml.Linq.XText> 表示一个文本节点。 多数情况下都不必使用此类。 此类主要用于混合内容。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to XML 编程概述 (C#)](./linq-to-xml-overview.md)

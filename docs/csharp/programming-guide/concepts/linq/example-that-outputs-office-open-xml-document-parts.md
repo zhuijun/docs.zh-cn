@@ -1,13 +1,14 @@
 ---
 title: 输出 Office Open XML 文档部件的示例 (C#)
+description: 了解如何打开 Office Open XML 文档并使用 C# 中的 LINQ 访问其中的部分。 此示例将输出文档部分和文档的样式部分。
 ms.date: 07/20/2015
 ms.assetid: 6cd37055-89b4-42e8-bf27-5a29717e35f3
-ms.openlocfilehash: be4c0ba2ce2a007fa6e19a65d7d86854d85851c4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c5755ad8e8772195c056b0c1c896c914b1a63a55
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66486007"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103920"
 ---
 # <a name="example-that-outputs-office-open-xml-document-parts-c"></a>输出 Office Open XML 文档部件的示例 (C#)
 本主题演示如何打开 Office Open XML 文档并访问其中的部分。  

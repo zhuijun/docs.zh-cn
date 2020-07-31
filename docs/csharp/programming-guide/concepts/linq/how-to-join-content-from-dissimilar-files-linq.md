@@ -1,13 +1,14 @@
 ---
 title: 如何联接不同文件的内容 (LINQ) (C#)
+description: 了解如何使用 C# 中的 LINQ 联接两个逗号分隔文件中的数据。 该数据共享一个用作匹配键的公共值。
 ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: efe11c31873f21841c28bd393b295eea117d1e46
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 136d10ff5c0bf5f4f18998b50eb7bbee218b00a9
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79169085"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104971"
 ---
 # <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>如何联接不同文件的内容 (LINQ) (C#)
 
@@ -15,7 +16,7 @@ ms.locfileid: "79169085"
   
 ## <a name="to-create-the-data-files"></a>创建数据文件
   
-1. 将以下行复制到名为 scores.csv 的文件，并将文件保存到项目文件夹  。 此文件表示电子表格数据。 第 1 列是学生的 ID，第 2 至 5 列是测验分数。  
+1. 将以下行复制到名为 scores.csv 的文件，并将文件保存到项目文件夹。 此文件表示电子表格数据。 第 1 列是学生的 ID，第 2 至 5 列是测验分数。  
   
     ```csv  
     111, 97, 92, 81, 60  
@@ -32,7 +33,7 @@ ms.locfileid: "79169085"
     122, 94, 92, 91, 91  
     ```  
   
-2. 将以下行复制到名为 names.csv 的文件，并将文件保存到项目文件夹  。 此文件表示电子表格，其中包含学生的姓氏、名字和学生 ID。  
+2. 将以下行复制到名为 names.csv 的文件，并将文件保存到项目文件夹。 此文件表示电子表格，其中包含学生的姓氏、名字和学生 ID。  
   
     ```csv  
     Omelchenko,Svetlana,111  

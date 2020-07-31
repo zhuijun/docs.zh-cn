@@ -1,16 +1,17 @@
 ---
 title: 如何定义抽象属性（C# 编程指南）
+description: 了解如何定义 C# 中的 abstract 属性。 声明抽象属性意味着类支持属性。 派生类实现访问器。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], abstract
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
-ms.openlocfilehash: c46f36133b68a550a17cf882844fd2481eee8851
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4db71721495857c634e8090b986704d8a592b4e2
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705608"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864392"
 ---
 # <a name="how-to-define-abstract-properties-c-programming-guide"></a>如何定义抽象属性（C# 编程指南）
 以下示例演示如何定义[抽象](../../language-reference/keywords/abstract.md)属性。 抽象属性声明不提供属性访问器的实现，它声明该类支持属性，而将访问器实现留给派生类。 以下示例演示如何实现从基类继承抽象属性。  

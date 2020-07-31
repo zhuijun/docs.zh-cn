@@ -1,16 +1,17 @@
 ---
 title: 自动实现的属性 - C# 编程指南
+description: 对于 C# 中自动实现的属性，编译器将创建仅通过属性的 get 和 set 访问器访问的专用、匿名支持字段。
 ms.date: 01/31/2020
 helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: aa55fa97-ccec-431f-b5e9-5ac789fd32b7
-ms.openlocfilehash: 791455c1eaef752da2b551e20187d390ca6c65e6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f58f9a23f26bde7e80d834528d94e38af1231e7b
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170320"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474470"
 ---
 # <a name="auto-implemented-properties-c-programming-guide"></a>自动实现的属性（C# 编程指南）
 

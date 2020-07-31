@@ -6,12 +6,12 @@ helpviewer_keywords:
 - strong-named assemblies, about strong-named assemblies
 - assemblies [.NET Framework], strong-named
 ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
-ms.openlocfilehash: a2db0efcb57226a757796c311309ce8f749a398b
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 069e42af6f8d49363d0264c0f6167b4afa3acd61
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378600"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925652"
 ---
 # <a name="strong-named-assemblies"></a>具有强名称的程序集
 
@@ -30,9 +30,7 @@ ms.locfileid: "83378600"
 
 ## <a name="why-strong-name-your-assemblies"></a>为何强命名程序集？
 
-在引用具有强名称的程序集时，你应该可以从中获得某些益处，例如版本控制和命名保护。 在 .NET Framework 中，强名称程序集可安装在需要启用一些方案的全局程序集缓存中。
-
-强名称程序集在以下方案中有用：
+对于 .NET Framework，强名称程序集在以下场景中有用：
 
 - 你希望启用强名称程序集将引用的程序集，或希望允许其他强名称程序集 `friend` 访问你的程序集。
 
@@ -42,7 +40,9 @@ ms.locfileid: "83378600"
 
 - 建议通过应用发布服务器策略来集中应用程序的服务，这意味着程序集必须安装在全局程序集缓存中。
 
-如果你是开放源代码开发人员且希望利用强命名程序集的标识优势，不妨签入与源代码管理系统内程序集相关联的私钥。
+对于 .NET Core，强名称程序集不会带来实质性的好处。
+
+如果你是开放源代码开发人员且希望利用强命名程序集的标识优势以便与 .NET Framework 更好地兼容，请考虑签入与源代码管理系统内程序集相关联的私钥。
 
 ## <a name="see-also"></a>请参阅
 

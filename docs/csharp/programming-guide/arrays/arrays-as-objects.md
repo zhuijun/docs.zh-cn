@@ -1,15 +1,16 @@
 ---
 title: 作为对象的数组 - C# 编程指南
+description: C# 中的数组是抽象基类型数组的对象。 可以使用数组的属性和其他类成员（例如 Length 属性）。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#], as objects
 ms.assetid: f76d4403-bd0a-42a0-9bc8-694c55b2c926
-ms.openlocfilehash: d8b929eccf9be259874d03dd93f49a49798bb349
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 984def3ef74b07d7099fae6cae6d6f8ce7e03e12
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715091"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474717"
 ---
 # <a name="arrays-as-objects-c-programming-guide"></a>作为对象的数组（C# 编程指南）
 
@@ -25,7 +26,7 @@ ms.locfileid: "75715091"
 
 [!code-csharp[csProgGuideArrays#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#2)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [数组](./index.md)

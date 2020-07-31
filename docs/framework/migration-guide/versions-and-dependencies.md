@@ -1,16 +1,17 @@
 ---
 title: .NET Framework 和 Windows OS 版本
+description: 了解 .NET Framework 每个版本中的关键功能，以及基础 CLR 版本和 Windows 操作系统安装的版本。
 ms.custom: updateeachrelease
 ms.date: 01/17/2020
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: 486b320ca30323684d301630ad29f8f4615764ee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: df44786dfd0a384ae2498a94d14b029612450fee
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77504057"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475471"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework 版本和依赖关系
 
@@ -42,7 +43,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 
 ### <a name="net-framework-48"></a>.NET Framework 4.8
 
-- [新功能](../whats-new/index.md#whats-new-in-net-framework-48)
+- [新增功能](../whats-new/index.md#whats-new-in-net-framework-48)
 - [辅助功能的新增功能](../whats-new/whats-new-in-accessibility.md#whats-new-in-accessibility-in-net-framework-48)
 - [发行说明](https://github.com/Microsoft/dotnet/tree/master/releases/net48/README.md)
 
@@ -55,7 +56,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 
 ### <a name="net-framework-472"></a>.NET Framework 4.7.2
 
-- [新功能](../whats-new/index.md#whats-new-in-net-framework-472)
+- [新增功能](../whats-new/index.md#whats-new-in-net-framework-472)
 - [辅助功能的新增功能](../whats-new/whats-new-in-accessibility.md#whats-new-in-accessibility-in-net-framework-472)
 - [发行说明](https://github.com/Microsoft/dotnet/tree/master/releases/net472/README.md)
 
@@ -67,11 +68,11 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 |**Windows Server 版本**|✔️ Windows Server 2019<br/>✔️ Windows Server 版本 1809<br/>✔️ Windows Server 版本 1803<br/>➕ Windows Server 版本 1709<br/>➕ 2016<br/>➕ 2012 R2<br/>➕ 2012<br/>➕ 2008 R2 SP1|
 |**确定已安装的 .NET 版本**|使用 `Release` DWORD：<br/>- 461814（Windows 10 2018 年 10 月更新）<br/>- 461808（Windows 10 2018 年 4 月更新和 Windows Server 版本 1803）<br/>- 461814（所有其他操作系统版本）<br/>（请参阅[说明](how-to-determine-which-versions-are-installed.md)）|
 
-<sup>1</sup> 需要安装“.NET 桌面开发”、“ASP.NET 和 Web 开发”、“Azure 开发”、“Office/SharePoint 开发”、“使用 .NET 的移动开发”或“.NET Core 跨平台开发”工作负荷       。
+<sup>1</sup> 需要安装“.NET 桌面开发”、“ASP.NET 和 Web 开发”、“Azure 开发”、“Office/SharePoint 开发”、“使用 .NET 的移动开发”或“.NET Core 跨平台开发”工作负荷     。
 
 ### <a name="net-framework-471"></a>.NET Framework 4.7.1
 
-- [新功能](../whats-new/index.md#whats-new-in-net-framework-471)
+- [新增功能](../whats-new/index.md#whats-new-in-net-framework-471)
 - [辅助功能的新增功能](../whats-new/whats-new-in-accessibility.md#whats-new-in-accessibility-in-net-framework-471)
 - [发行说明](https://github.com/Microsoft/dotnet/tree/master/releases/net471/README.md)
 
@@ -84,7 +85,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 
 ### <a name="net-framework-47"></a>.NET Framework 4.7
 
-- [新功能](../whats-new/index.md#whats-new-in-net-framework-47)
+- [新增功能](../whats-new/index.md#whats-new-in-net-framework-47)
 - [发行说明](https://github.com/Microsoft/dotnet/tree/master/releases/net47/README.md)
 
 |||
@@ -96,7 +97,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 
 ### <a name="net-framework-462"></a>.NET Framework 4.6.2
 
-- [新功能](../whats-new/index.md#whats-new-in-net-framework-462)
+- [新增功能](../whats-new/index.md#whats-new-in-net-framework-462)
 - [发行说明](https://github.com/Microsoft/dotnet/tree/master/releases/net462/README.md)
 
 |||
@@ -108,7 +109,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 
 ### <a name="net-framework-461"></a>.NET Framework 4.6.1
 
-- [新功能](../whats-new/index.md#whats-new-in-net-framework-461)
+- [新增功能](../whats-new/index.md#whats-new-in-net-framework-461)
 - [发行说明](https://github.com/Microsoft/dotnet/tree/master/releases/net461/README.md)
 
 |||
@@ -119,11 +120,11 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 |**Windows Server 版本**|➕ 2012 R2<br />➕ 2012<br />➕ 2008 R2 SP1|
 |**确定已安装的 .NET 版本**|使用 `Release` DWORD：<br /><br/>- 394254（Windows 10 十一月更新）<br />- 394271（所有其他操作系统版本）<br /><br/>（请参阅[说明](how-to-determine-which-versions-are-installed.md)）|
 
-<sup>1</sup> 需要安装“.NET 桌面开发”、“ASP.NET 和 Web 开发”、“Azure 开发”、“Office/SharePoint 开发”、“使用 .NET 的移动开发”或“.NET Core 跨平台开发”工作负荷       。
+<sup>1</sup> 需要安装“.NET 桌面开发”、“ASP.NET 和 Web 开发”、“Azure 开发”、“Office/SharePoint 开发”、“使用 .NET 的移动开发”或“.NET Core 跨平台开发”工作负荷     。
 
 ### <a name="net-framework-46"></a>.NET Framework 4.6
 
-- [新功能](../whats-new/index.md#whats-new-in-net-2015)
+- [新增功能](../whats-new/index.md#whats-new-in-net-2015)
 - [发行说明](https://github.com/Microsoft/dotnet/tree/master/releases/net46/README.md)
 
 |||
@@ -136,7 +137,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 
 ### <a name="net-framework-452"></a>.NET Framework 4.5.2
 
-- [新功能](../whats-new/index.md#whats-new-in-net-framework-452)
+- [新增功能](../whats-new/index.md#whats-new-in-net-framework-452)
 - [发行说明](https://github.com/Microsoft/dotnet/tree/master/releases/net452/README.md)
 
 |||
@@ -148,7 +149,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 
 ### <a name="net-framework-451"></a>.NET Framework 4.5.1
 
-- [新功能](../whats-new/index.md#whats-new-in-net-framework-451)
+- [新增功能](../whats-new/index.md#whats-new-in-net-framework-451)
 - [发行说明](https://github.com/Microsoft/dotnet/tree/master/releases/net451/README.md)
 
 |||
@@ -161,7 +162,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 
 ### <a name="net-framework-45"></a>.NET Framework 4.5
 
-- [新功能](../whats-new/index.md#whats-new-in-net-framework-45)
+- [新增功能](../whats-new/index.md#whats-new-in-net-framework-45)
 - [发行说明](https://github.com/Microsoft/dotnet/tree/master/releases/net45/README.md)
 
 |||
@@ -174,7 +175,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 
 ### <a name="net-framework-4"></a>.NET Framework 4
 
-[新功能](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms171868(v=vs.100))
+[新增功能](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms171868(v=vs.100))
 
 |||
 |-|-|
@@ -236,7 +237,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 |-|-|
 |**CLR 版本**|2.0|
 |**包含在 Visual Studio 版本中**|2005|
-|**Windows 版本**|空值|
+|**Windows 版本**|不可用|
 |**Windows Server 版本**|✔️ 2008 R2 SP1<br />✔️ 2008 SP2<br />✔️ 2003|
 |**确定已安装的 .NET 版本**|请参阅[说明](how-to-determine-which-versions-are-installed.md)|
 
@@ -252,7 +253,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 |-|-|
 |**CLR 版本**|1.1|
 |**包含在 Visual Studio 版本中**|2003|
-|**Windows 版本**|空值|
+|**Windows 版本**|不可用|
 |**Windows Server 版本**|✔️ 2003|
 |**确定已安装的 .NET 版本**|请参阅[说明](how-to-determine-which-versions-are-installed.md)|
 
@@ -262,8 +263,8 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 |-|-|
 |**CLR 版本**|1.0|
 |**包含在 Visual Studio 版本中**|Visual Studio .NET|
-|**Windows 版本**|空值|
-|**Windows Server 版本**|空值|
+|**Windows 版本**|不可用|
+|**Windows Server 版本**|不可用|
 |**确定已安装的 .NET 版本**|请参阅[说明](how-to-determine-which-versions-are-installed.md)|
 
 > [!NOTE]
@@ -302,7 +303,7 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 
 - 有关确定计算机上安装了哪些版本或更新的信息，请参阅[如何：确定安装了哪些 .NET Framework 版本](how-to-determine-which-versions-are-installed.md)和[如何：确定安装了哪些 .NET Framework 更新](how-to-determine-which-net-framework-updates-are-installed.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [版本兼容性](version-compatibility.md)
 | [.NET Framework 官方支持策略](https://dotnet.microsoft.com/platform/support/policy/dotnet-framework)

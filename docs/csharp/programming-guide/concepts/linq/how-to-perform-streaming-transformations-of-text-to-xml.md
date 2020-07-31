@@ -1,13 +1,14 @@
 ---
 title: 如何执行文本到 XML 的流式转换 (C#)
+description: 了解如何使用 C# 执行文本到 XML 的流式转换，在这种情况下，你可以一次流式处理一行文本文件，并使用 LINQ 查询来处理文本文件。
 ms.date: 07/20/2015
 ms.assetid: 9b3bd941-d0ff-4f2d-ae41-7c3b81d8fae6
-ms.openlocfilehash: 496535b7f868095a62be2b72b1eea2b082e00a44
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f933064be70d39b59cf7dbe51b4ee92e5226647a
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75345796"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104751"
 ---
 # <a name="how-to-perform-streaming-transformations-of-text-to-xml-c"></a>如何执行文本到 XML 的流式转换 (C#)
 
@@ -88,6 +89,6 @@ class Program
 </Root>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.Linq.XStreamingElement>

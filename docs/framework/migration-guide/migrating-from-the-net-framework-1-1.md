@@ -1,16 +1,17 @@
 ---
 title: 从 .NET Framework 1.1 迁移
+description: 了解在 Windows 7 及更高版本上运行使用 .NET Framework 1.1 编译的应用程序时需要执行的步骤。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework 4.5, migrating from 1.1
 - .NET Framework 1.1, migrating to .NET Framework 4.5
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
-ms.openlocfilehash: 11fe9ba36d32a4c9fe363b48f76a8bb2b24f073b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f2b0e21ff5dbeab3395335f52799629859fb2d90
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73974970"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475263"
 ---
 # <a name="migrate-from-the-net-framework-11"></a>从 .NET Framework 1.1 迁移
 
@@ -30,7 +31,7 @@ Windows 7 及更高版本的 Windows 操作系统不支持 .NET Framework 1.1。
     </configuration>
     ```
 
-- 可以使用面向 .NET Framework 4 及更高版本的编译器重新编译应用程序。 如果你最初使用 Visual Studio 2003 开发和编译解决方案，则可在 Visual Studio 2010（也可能是更高版本）中打开它，然后使用“项目兼容性”  对话框将该解决方案和项目文件从 Visual Studio 2003 使用的格式转换为 Microsoft 生成引擎 (MSBuild) 格式。
+- 可以使用面向 .NET Framework 4 及更高版本的编译器重新编译应用程序。 如果你最初使用 Visual Studio 2003 开发和编译解决方案，则可在 Visual Studio 2010（也可能是更高版本）中打开它，然后使用“项目兼容性”对话框将该解决方案和项目文件从 Visual Studio 2003 使用的格式转换为 Microsoft 生成引擎 (MSBuild) 格式。
 
 无论您是想重新编译应用程序还是重定应用程序的目标，都必须确定应用程序是否会受更高版本的 .NET Framework 中引入的任何更改的影响。 这些更改分为两类：
 
@@ -64,6 +65,6 @@ Windows 7 及更高版本的 Windows 操作系统不支持 .NET Framework 1.1。
 
 ## <a name="obsolete-types-and-members"></a>已过时的类型和成员
 
-弃用的类型和成员对重定目标的应用程序和重新编译的应用程序产生的影响略有不同。 使用已过时的类型和成员将不会影响重定目标的应用程序，除非已从其程序集中物理删除这些过时的类型或成员。 重新编译使用过时的类型或成员的应用程序通常会产生编译器警告而不是编译器错误。 但某些情况下会产生编译器错误，且无法成功编译使用过时的类型或成员的代码。 在此情况下，您必须先重新编写调用过时的类型或成员的源代码，然后再重新编译应用程序。 若要详细了解已过时类型和成员，请参阅[类库中过时的内容](../whats-new/whats-obsolete.md)。
+弃用的类型和成员对重定目标的应用程序和重新编译的应用程序产生的影响略有不同。 使用已过时的类型和成员将不会影响重定目标的应用程序，除非已从其程序集中物理删除这些过时的类型或成员。 重新编译使用过时的类型或成员的应用程序通常会产生编译器警告而不是编译器错误。 但某些情况下会产生编译器错误，且无法成功编译使用过时的类型或成员的代码。 在此情况下，你必须先重新编写调用过时的类型或成员的源代码，然后再重新编译应用程序。 若要详细了解已过时类型和成员，请参阅[类库中过时的内容](../whats-new/whats-obsolete.md)。
 
 若要评估自发布 .NET Framework 2.0 SP1 后弃用的类型和成员的影响，请参阅[类库中过时的内容](../whats-new/whats-obsolete.md)。 请查看 .NET Framework 2.0 SP1、.NET Framework 3.5 和 .NET Framework 4 的过时类型和成员列表。

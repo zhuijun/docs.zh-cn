@@ -1,16 +1,17 @@
 ---
 title: 如何在 C# 中定义常量
+description: 了解如何定义 C# 中的常量，这些常量是在编译时设置其值的字段。 使用常量可以为特殊值提供有意义的名称。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 43f511be-346c-4b8a-995e-aded94542ece
-ms.openlocfilehash: 15526655de8af6fed464376db1ac761468215210
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: afa2799cf76f976e332f91b631dc90e2799a0aa0
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75337657"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864639"
 ---
 # <a name="how-to-define-constants-in-c"></a>如何在 C\# 中定义常量
 常量是在编译时设置其值并且永远不能更改其值的字段。 使用常量可以为特殊值提供有意义的名称，而不是数字文本（“幻数”）。  
@@ -27,6 +28,6 @@ ms.locfileid: "75337657"
   
  使用类名限定符有助于确保你和使用该常量的其他人了解它是常量并且不能修改。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [类和结构](./index.md)

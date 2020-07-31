@@ -1,16 +1,17 @@
 ---
 title: 缓解：TLS 协议
+description: 了解从 .NET Framework 4.6 开始的 TLS 协议更改的影响和缓解。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 33f97d13-3022-43da-8b18-cdb5c88df9c2
-ms.openlocfilehash: 45225d73ac60564d3e22c73270faab6b4e04d697
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bb5aab3361663d7b5401d7e68688265fbc65b36f
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73457835"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475354"
 ---
 # <a name="mitigation-tls-protocols"></a>缓解：TLS 协议
 从 .NET Framework 4.6 开始，<xref:System.Net.ServicePointManager?displayProperty=nameWithType> 和 <xref:System.Net.Security.SslStream?displayProperty=nameWithType> 类可以使用以下三种协议之一：Tls1.0、Tls1.1 或 Tls 1.2。 不支持 SSL3.0 协议和 RC4 密码。  
@@ -22,8 +23,8 @@ ms.locfileid: "73457835"
   
 - 不能升级以支持 Tls1.0、Tls1.1 或 Tls 1.2 的任意服务器端应用。  
   
-## <a name="mitigation"></a>缓解操作  
- 建议的缓解是将服务器端应用升级到 Tls1.0、Tls1.1 或 Tls 1.2。 如果这不可行或者如果客户端应用被中断，则可以使用 <xref:System.AppContext> 类并采用如两种方式中的一种来选择退出此功能：  
+## <a name="mitigation"></a>缓解  
+ 建议的缓解操作是将服务器端应用升级到 Tls1.0、Tls1.1 或 Tls 1.2。 如果这不可行或者如果客户端应用被中断，则可以使用 <xref:System.AppContext> 类并采用如两种方式中的一种来选择退出此功能：  
   
 - 以编程方式使用如下代码段：  
   
@@ -32,7 +33,7 @@ ms.locfileid: "73457835"
   
      由于 <xref:System.Net.ServicePointManager> 对象仅初始化一次，因此定义这些兼容性设置必须是应用程序执行的第一件事。  
   
-- 在 app.config 文件的 [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) 部分中添加下面的代码行：  
+- 将下面的行添加到 app.config 文件的 [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) 部分：  
   
     ```xml  
     <AppContextSwitchOverrides value="Switch.System.Net.DontEnableSchUseStrongCrypto=true"/>  
@@ -40,6 +41,6 @@ ms.locfileid: "73457835"
   
  但请注意，不建议选择退出默认行为，因为这会导致应用程序不太安全。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [应用程序兼容性](application-compatibility.md)

@@ -1,5 +1,6 @@
 ---
 title: 缓解：ZipArchiveEntry.FullName 路径分隔符
+description: 了解 ZipArchiveEntry.FullName 属性的路径分隔符自面向 .NET Framework 4.6.1 的应用起有何变化。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application compatibility
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - .NET Framework 4.6.1 retargeting changes
 - retargeting changes
 ms.assetid: 8d575722-4fb6-49a2-8a06-f72d62dc3766
-ms.openlocfilehash: 3f6c7f258fd5dbf01db4d79b73b88ddd7484f9b2
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 8cd6362038ce0548681f3d3b44724f3ef9ff62cb
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102614"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475289"
 ---
 # <a name="mitigation-ziparchiveentryfullname-path-separator"></a>缓解：ZipArchiveEntry.FullName 路径分隔符
 
@@ -27,7 +28,7 @@ ms.locfileid: "82102614"
  对于在 Windows 操作系统上由 .NET Framework<xref:System.IO> 命名空间中的 API 解压缩的 .ZIP 文件，此更改造成的影响应该是最小的，因为这些 API 可以无缝地将正斜杠（“/”） 或反斜杠（“\\”）处理为路径分隔符。  
   
 ## <a name="mitigation"></a>缓解  
- 如果不需要此行为，可以在应用程序配置文件的 [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) 部分中添加配置设置，从而选择禁用此行为。 下面展示了 `<runtime>` 部分和选择禁用此行为的开关。  
+ 如果此行为不可取，可以在应用程序配置文件的 [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) 部分中添加配置设置，从而选择禁用此行为。 下面展示了 `<runtime>` 部分和选择禁用此行为的开关。  
   
 ```xml  
 <runtime>  

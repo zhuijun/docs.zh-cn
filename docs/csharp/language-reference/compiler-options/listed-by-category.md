@@ -6,12 +6,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: 1e78b920eb6a1eae870a425b91711ac9d87b6530
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: f216534140b6e207ac110bb54b3e4f93a8ac6b70
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84811681"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474015"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>按类别列出的 C# 编译器选项
 
@@ -37,7 +37,7 @@ ms.locfileid: "84811681"
 |[/preferreduilang](preferreduilang-compiler-option.md)|指定编译器输出的语言。|
 |[/refout](refout-compiler-option.md)|除主程序集之外，还生成引用程序集。|
 |[/refonly](refonly-compiler-option.md)|生成引用程序集，而不生成主程序集。|
-|[-target](target-compiler-option.md)|使用下列五个选项之一指定输出文件的格式：[-target:appcontainerexe](target-appcontainerexe-compiler-option.md)、[-target:exe](target-exe-compiler-option.md)、[-target:library](target-library-compiler-option.md)、[-target:module](target-module-compiler-option.md)、[-target:winexe](target-winexe-compiler-option.md) 或 [-target:winmdobj](target-winmdobj-compiler-option.md)。|
+|[-target](target-compiler-option.md)|使用下列选项之一指定输出文件的格式：[-target:appcontainerexe](target-appcontainerexe-compiler-option.md)、[-target:exe](target-exe-compiler-option.md)、[-target:library](target-library-compiler-option.md)、[-target:module](target-module-compiler-option.md)、[-target:winexe](target-winexe-compiler-option.md) 或 [-target:winmdobj](target-winmdobj-compiler-option.md)。|
 |-modulename：\<string>|指定源模块的名称|
 
 ## <a name="net-framework-assemblies"></a>.NET Framework 程序集

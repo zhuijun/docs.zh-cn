@@ -1,5 +1,6 @@
 ---
 title: 基本 LINQ 查询操作 (C#)
+description: 介绍一下 LINQ 查询表达式以及在查询中可能执行的一些操作。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - orderby clause [LINQ in C#]
@@ -17,12 +18,12 @@ helpviewer_keywords:
 - join clause [LINQ in C#]
 - group clause [LINQ in C#]
 ms.assetid: a7ea3421-1cf4-4df7-832a-aa22fe6379e9
-ms.openlocfilehash: 91c038303c1ad7c2530964d3102aae49090c4c2a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d9653be8b67ef4d971c157b8dd8d82b2ae3c2287
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635933"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87105524"
 ---
 # <a name="basic-linq-query-operations-c"></a>基本 LINQ 查询操作 (C#)
 本主题简要介绍了 LINQ 查询表达式和一些在查询中执行的典型操作。 下面各主题中提供了更具体的信息：  
@@ -46,7 +47,7 @@ ms.locfileid: "75635933"
 > [!NOTE]
 > 对于非泛型数据源（例如 <xref:System.Collections.ArrayList>），必须显式键入范围变量。 有关详细信息，请参阅[如何使用 LINQ (C#)](./how-to-query-an-arraylist-with-linq.md) 和 [From 子句](../../../language-reference/keywords/from-clause.md)查询 ArrayList。  
   
-## <a name="filtering"></a>Filtering  
+## <a name="filtering"></a>筛选  
  或许，最常见的查询操作是以布尔表达式的形式应用筛选器。 筛选器使查询仅返回表达式为 true 的元素。 将通过使用 `where` 子句生成结果。 筛选器实际指定要从源序列排除哪些元素。 在下列示例中，仅返回地址位于“London”的 `customers`。  
   
  [!code-csharp[csLINQGettingStarted#24](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#24)]  
@@ -61,7 +62,7 @@ ms.locfileid: "75635933"
   
  有关详细信息，请参阅 [where 子句](../../../language-reference/keywords/where-clause.md)。  
   
-## <a name="ordering"></a>订购  
+## <a name="ordering"></a>中间件排序  
  对返回的数据进行排序通常很方便。 `orderby` 子句根据要排序类型的默认比较器，对返回序列中的元素排序。 例如，基于 `Name` 属性，可将下列查询扩展为对结果排序。 由于 `Name` 是字符串，默认比较器将按字母顺序从 A 到 Z 进行排序。  
   
  [!code-csharp[csLINQGettingStarted#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#27)]  
@@ -97,9 +98,9 @@ from order in Customer.Orders...
  有关详细信息，请参阅 [join 子句](../../../language-reference/keywords/join-clause.md)。  
   
 ## <a name="selecting-projections"></a>选择（投影）  
- `select` 子句生成查询结果并指定每个返回的元素的“形状”或类型。 例如，可以指定结果包含的是整个 `Customer` 对象、仅一个成员、成员的子集，还是某个基于计算或新对象创建的完全不同的结果类型。 当 `select` 子句生成除源元素副本以外的内容时，该操作称为投影  。 使用投影转换数据是 LINQ 查询表达式的一种强大功能。 有关详细信息，请参阅[使用 LINQ (C#)](./data-transformations-with-linq.md) 和 [select 子句](../../../language-reference/keywords/select-clause.md)进行数据转换。  
+ `select` 子句生成查询结果并指定每个返回的元素的“形状”或类型。 例如，可以指定结果包含的是整个 `Customer` 对象、仅一个成员、成员的子集，还是某个基于计算或新对象创建的完全不同的结果类型。 当 `select` 子句生成除源元素副本以外的内容时，该操作称为投影。 使用投影转换数据是 LINQ 查询表达式的一种强大功能。 有关详细信息，请参阅[使用 LINQ (C#)](./data-transformations-with-linq.md) 和 [select 子句](../../../language-reference/keywords/select-clause.md)进行数据转换。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ 查询表达式](../../../linq/index.md)
 - [演练：用 C# 编写查询](./walkthrough-writing-queries-linq.md)

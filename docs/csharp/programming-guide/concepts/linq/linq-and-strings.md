@@ -1,13 +1,14 @@
 ---
 title: LINQ 和字符串 (C#)
+description: LINQ 可以查询和转换字符串和字符串集合。 可以将 LINQ 查询与 C# 字符串函数和正则表达式结合起来。
 ms.date: 07/20/2015
 ms.assetid: dbe2d657-b3f3-487e-b645-21fb2d71cd7b
-ms.openlocfilehash: b805bc7318b8c5fe70ab1c060d1058a6bbc4f177
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c515a0c56ad6473f93c6339540e4ed0245bb5bd2
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635530"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87165613"
 ---
 # <a name="linq-and-strings-c"></a>LINQ 和字符串 (C#)
 
@@ -72,7 +73,7 @@ LINQ 可用于查询和转换字符串和字符串集合。 这在处理文本�
   
   演示如何在 .csv 文件中对文本数据执行数学计算。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [语言集成查询 (LINQ) (C#)](index.md)
 - [如何从 CSV 文件生成 XML](how-to-generate-xml-from-csv-files.md)

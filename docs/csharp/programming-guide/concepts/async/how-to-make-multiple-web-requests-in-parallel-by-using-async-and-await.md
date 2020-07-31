@@ -1,13 +1,14 @@
 ---
 title: 如何使用 Async 和 Await 并行发出多个 Web 请求 (C#)
+description: 了解如何将创建任务与使用 C# 中的 Await 运算符分开，而不是在创建任务时应用它。
 ms.date: 07/20/2015
 ms.assetid: 19745899-f97a-4499-a7c7-e813d1447580
-ms.openlocfilehash: 0cfc1d6d1d59dc74fcf5990abb0a9d980a83d7b0
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 899dfd9165d199a67a5178bb351081ee544b231f
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241794"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925158"
 ---
 # <a name="how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await-c"></a>如何使用 Async 和 Await 并行发出多个 Web 请求 (C#)
 在异步方法中，任务在创建后即启动。 在任务完成前处理无法继续的方法中将 [await](../../../language-reference/operators/await.md) 运算符应用于任务。 通常任务被创建后即等待，如下面的示例所示。  

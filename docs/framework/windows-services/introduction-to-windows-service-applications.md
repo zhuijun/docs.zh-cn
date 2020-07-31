@@ -1,5 +1,6 @@
 ---
 title: Windows 服务应用程序介绍
+description: 查看 Windows 服务应用程序简介。 使用服务，你可以创建能在自身 Windows 会话中长时间运行的可执行应用程序。
 ms.date: 03/30/2017
 f1_keywords:
 - ServiceController
@@ -22,12 +23,12 @@ helpviewer_keywords:
 - Windows Service applications, lifetime
 ms.assetid: 1b1b5e67-3ff3-40c0-8154-322cfd6ef0ae
 author: ghogen
-ms.openlocfilehash: 8ff1adaa025dc11417c3dcfdaf42ea203828be57
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 13bd1f42776ac76a43a83667465ac0ca277e3452
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053523"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925665"
 ---
 # <a name="introduction-to-windows-service-applications"></a>Windows 服务应用程序介绍
 Microsoft Windows 服务（过去称为 NT 服务）允许用户创建可在其自身的 Windows 会话中长时间运行的可执行应用程序。 这些服务可在计算机启动时自动启动，可以暂停和重启，并且不显示任何用户界面。 这些功能使服务非常适合在服务器上使用，或者需要长时间运行的功能（不会影响在同一台计算机上工作的其他用户）的情况。 还可以在与登录用户或默认计算机帐户不同的特定用户帐户的安全性上下文中运行服务。 有关服务和 Windows 会话的详细信息，请参阅 Windows SDK 文档。  
@@ -56,7 +57,7 @@ Microsoft Windows 服务（过去称为 NT 服务）允许用户创建可在其�
 - Windows 服务应用程序在其自己的安全上下文中运行，并在用户登录安装这些应用程序的 Windows 计算机之前启动。 应仔细规划要在哪个用户帐户中运行服务；在系统帐户下运行的服务具有比用户帐户更多的权限和特权。  
   
 ## <a name="service-lifetime"></a>服务生存期  
- 一项服务在其生存期内会经历几个内部状态。 首先，服务会安装到它将在其上运行的系统上。 此过程执行服务项目的安装程序，并将该服务加载到该计算机的服务控制管理器  中。  服务控制管理器是 Windows 提供的用于管理服务的中央实用程序。  
+ 一项服务在其生存期内会经历几个内部状态。 首先，服务会安装到它将在其上运行的系统上。 此过程执行服务项目的安装程序，并将该服务加载到该计算机的服务控制管理器  中。 服务控制管理器是 Windows 提供的用于管理服务的中央实用程序。  
   
  必须在服务加载完成后启动它。 启动该服务以允许它开始运行。 可以从服务“服务控制管理器”  、“服务器资源管理器”  ，或从通过调用 <xref:System.ServiceProcess.ServiceController.Start%2A> 方法的代码来启动服务。 <xref:System.ServiceProcess.ServiceController.Start%2A> 方法将处理进程传递给应用程序的 <xref:System.ServiceProcess.ServiceBase.OnStart%2A> 方法，并处理在那里定义的任何代码。  
   

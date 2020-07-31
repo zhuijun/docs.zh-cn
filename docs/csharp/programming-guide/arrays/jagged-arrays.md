@@ -1,16 +1,17 @@
 ---
 title: 交错数组 - C# 编程指南
+description: C# 中的交错数组是一个数组，其元素为不同维度和大小的数组。 了解如何声明、初始化和访问交错数组。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - jagged arrays [C#]
 - arrays [C#], jagged
 ms.assetid: 537c65a6-0e0a-4a00-a2b8-086f38519c70
-ms.openlocfilehash: 56013f0143d5efcb31a476909cb6e92504ff0dbc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 40da9fbda34aef4e69ebf2ae20485e883b79f871
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705699"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474678"
 ---
 # <a name="jagged-arrays-c-programming-guide"></a>交错数组（C# 编程指南）
 
@@ -26,7 +27,7 @@ ms.locfileid: "75705699"
   
  每个元素都是一维整数数组。 第一个元素是由 5 个整数组成的数组，第二个是由 4 个整数组成的数组，而第三个是由 2 个整数组成的数组。  
   
- 也可使用初始化表达式通过值来填充数组元素，这种情况下不需要数组大小。 例如:  
+ 也可使用初始化表达式通过值来填充数组元素，这种情况下不需要数组大小。 例如：  
   
  [!code-csharp[csProgGuideArrays#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#21)]  
   
@@ -64,7 +65,7 @@ ms.locfileid: "75705699"
   
  [!code-csharp[csProgGuideArrays#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#18)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Array>
 - [C# 编程指南](../index.md)

@@ -1,17 +1,18 @@
 ---
 title: 如何：创建 Windows 服务
+description: 使用 Windows 服务项目模板创建服务。 设置 ServiceName 属性，创建安装程序并重写 OnStart 和 OnStop 方法。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Service applications, creating
 - templates, Windows Service
 ms.assetid: 0f5e2cbb-d95d-477c-b2b5-4b990e6b86ff
 author: ghogen
-ms.openlocfilehash: 514675b3c3ce1f6701dff571361df672fb520c6a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 6918225e39c15a52710fd0d56342aae869b42325
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053656"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925769"
 ---
 # <a name="how-to-create-windows-services"></a>如何：创建 Windows 服务
 创建服务时，可使用名为“Windows 服务”  的 Visual Studio 项目模板。 通过引用适当的类和命名空间、为服务设置来自基类的继承和替代你可能想要替代的几个方法，此模板自动为你完成了许多工作。  

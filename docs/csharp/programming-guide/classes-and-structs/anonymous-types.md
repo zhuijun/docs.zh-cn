@@ -1,16 +1,17 @@
 ---
 title: 匿名类型 - C# 编程指南
+description: C# 中的匿名类型将一组只读属性封装到一个对象中，而无需显式定义一个类型。 编译器会生成名称。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-ms.openlocfilehash: 63bc5560ba19ff36764465a6b89b81c13beec97a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ccdee1a86ab0c292721e69346cb7cedb03d4c28b
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170333"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474496"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>匿名类型（C# 编程指南）
 
@@ -32,9 +33,9 @@ Console.WriteLine(v.Amount + v.Message);
   
  匿名类型包含一个或多个公共只读属性。 包含其他种类的类成员（如方法或事件）为无效。 用来初始化属性的表达式不能为 `null`、匿名函数或指针类型。  
   
- 最常见的方案是用其他类型的属性初始化匿名类型。 在下面的示例中，假定名为 `Product`{2}`Product` 的类存在。 类 `Product` 包括 `Color` 和 `Price` 属性，以及你不感兴趣的其他属性。 变量 `products``Product``products` 是 {3}{4}{3} 对象的集合。 匿名类型声明以 `new`{2}`new` 关键字开始。 声明初始化了一个只使用 `Product`{2}`Product` 的两个属性的新类型。 这将导致在查询中返回较少数量的数据。  
+ 最常见的方案是用其他类型的属性初始化匿名类型。 在下面的示例中，假定名为 `Product` 的类存在。 类 `Product` 包括 `Color` 和 `Price` 属性，以及你不感兴趣的其他属性。 变量 `Product``products` 是  对象的集合。 匿名类型声明以 `new` 关键字开始。 声明初始化了一个只使用 `Product` 的两个属性的新类型。 这将导致在查询中返回较少数量的数据。  
   
- 如果你没有在匿名类型中指定成员名称，编译器会为匿名类型成员指定与用于初始化这些成员的属性相同的名称。 必须为使用表达式初始化的属性提供名称，如下面的示例所示。 在下面示例中，匿名类型的属性名称都为 `Color``Price``Color` 和 {3}{4}{3}。  
+ 如果你没有在匿名类型中指定成员名称，编译器会为匿名类型成员指定与用于初始化这些成员的属性相同的名称。 必须为使用表达式初始化的属性提供名称，如下面的示例所示。 在下面示例中，匿名类型的属性名称都为 `Price``Color` 和 。  
   
  [!code-csharp[csRef30Features#81](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csRef30Features/CS/csref30.cs#81)]  
   
@@ -55,7 +56,7 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
   
  由于匿名类型上的 <xref:System.Object.Equals%2A> 和 <xref:System.Object.GetHashCode%2A> 方法是根据方法属性的 `Equals` 和 `GetHashCode` 定义的，因此仅当同一匿名类型的两个实例的所有属性都相等时，这两个实例才相等。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [对象和集合初始值设定项](./object-and-collection-initializers.md)

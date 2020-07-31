@@ -1,5 +1,6 @@
 ---
 title: 属性 - C# 编程指南
+description: C# 中的属性是一种成员，它使用访问器方法来读、写或计算私有字段的值，就像它是公共数据成员一样。
 ms.date: 03/10/2017
 f1_keywords:
 - cs.properties
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - properties [C#]
 - C# language, properties
 ms.assetid: e295a8a2-b357-4ee7-a12e-385a44146fa8
-ms.openlocfilehash: ee530e981e0c85302b2b11cc739d6c51d6650ddd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 231e8e6a11f2655ccdea5489f054910a1ecf2586
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170099"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86863937"
 ---
 # <a name="properties-c-programming-guide"></a>属性（C# 编程指南）
 
@@ -73,7 +74,7 @@ ms.locfileid: "79170099"
 
 有关详细信息，请参阅 [C# 语言规范](/dotnet/csharp/language-reference/language-specification/introduction)中的[属性](~/_csharplang/spec/classes.md#properties)。 该语言规范是 C# 语法和用法的权威资料。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [使用属性](./using-properties.md)

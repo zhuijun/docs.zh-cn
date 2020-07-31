@@ -1,13 +1,14 @@
 ---
 title: 异步程序中的控制流 (C#)
+description: 了解简单异步 C# 程序中的控制流，以了解如何使用 async 和 await 关键字编写和维护异步程序。
 ms.date: 07/20/2015
 ms.assetid: fc92b08b-fe1d-4d07-84ab-5192fafe06bb
-ms.openlocfilehash: 99f80a86f14179c5f270064a9f96e35f8611ef13
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3946db958466a9f9914a5fa7b37c0db3a64d4b3d
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70204443"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925366"
 ---
 # <a name="control-flow-in-async-programs-c"></a>异步程序中的控制流 (C#)
 
@@ -125,9 +126,9 @@ Length of the downloaded string: 33946.
 
 5. 在 Visual Studio 代码编辑器中，选择 **“MainWindow.xaml”** 选项卡。
 
-     如果此选项卡不可见，则在“解决方案资源管理器”中，打开 MainWindow.xaml 的快捷菜单，然后选择“查看代码”。
+     如果此选项卡不可见，则在“解决方案资源管理器”  中，打开 MainWindow.xaml 的快捷菜单，然后选择“查看代码”  。
 
-6. 在 MainWindow.xaml 的“XAML”视图中，将代码替换为以下代码。
+6. 在 MainWindow.xaml 的“XAML”  视图中，将代码替换为以下代码。
 
     ```csharp
     <Window

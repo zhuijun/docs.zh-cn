@@ -1,16 +1,17 @@
 ---
 title: 成员 - C# 编程指南
+description: C# 中的类和结构具有表示数据和行为的成员，包括在类中声明和在其继承层次结构中声明的成员。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - types [C#], nested types
 - C# language, type members
 ms.assetid: 4a30a4ab-d690-4936-9124-92ce9448665a
-ms.openlocfilehash: 09802431d0a5954b67687e9878f572541eeaac79
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: aa4981ea20d86994bfae92d5db8c9abfa7c8f906
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705504"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86864587"
 ---
 # <a name="members-c-programming-guide"></a>成员（C# 编程指南）
 

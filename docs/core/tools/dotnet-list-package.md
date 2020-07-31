@@ -2,12 +2,12 @@
 title: dotnet list package 命令
 description: 使用“dotnet list package”命令，可以方便地列出项目或解决方案的包引用。
 ms.date: 02/14/2020
-ms.openlocfilehash: 12d64600d178ea8cf490a0d6917e67bd3d8c6d21
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: 7157e56860936d10aa322854a589ae89e2bc0826
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463661"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87164754"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
@@ -21,6 +21,7 @@ ms.locfileid: "81463661"
 
 ```dotnetcli
 dotnet list [<PROJECT>|<SOLUTION>] package [--config <SOURCE>]
+    [--deprecated]
     [--framework <FRAMEWORK>] [--highest-minor] [--highest-patch]
     [--include-prerelease] [--include-transitive] [--interactive]
     [--outdated] [--source <SOURCE>]
@@ -78,6 +79,10 @@ Project 'HelloPlugin' has the following package references
 
   在搜索版本更高的包时，要使用的 NuGet 源。 需要使用 `--outdated` 选项。
 
+- **`--deprecated`**
+
+  显示已弃用的包。
+
 - **`--framework <FRAMEWORK>`**
 
   只显示适用于指定[目标框架](../../standard/frameworks.md)的包。 若要指定多个框架，请多次重复此选项。 例如：`--framework netcoreapp2.2 --framework netstandard2.0`。
@@ -88,15 +93,15 @@ Project 'HelloPlugin' has the following package references
 
 - **`--highest-minor`**
 
-  在搜索版本更高的包时，仅考虑有匹配的主版本号的包。 需要使用 `--outdated` 选项。
+  在搜索版本更高的包时，仅考虑有匹配的主版本号的包。 需要使用 `--outdated` 或 `--deprecated` 选项。
 
 - **`--highest-patch`**
 
-  在搜索版本更高的包时，仅考虑有匹配的主版本号和次要版本号的包。 需要使用 `--outdated` 选项。
+  在搜索版本更高的包时，仅考虑有匹配的主版本号和次要版本号的包。 需要使用 `--outdated` 或 `--deprecated` 选项。
 
 - **`--include-prerelease`**
 
-  在搜索版本更高的包时，考虑有预发行版本的包。 需要使用 `--outdated` 选项。
+  在搜索版本更高的包时，考虑有预发行版本的包。 需要使用 `--outdated` 或 `--deprecated` 选项。
 
 - **`--include-transitive`**
 
@@ -112,7 +117,7 @@ Project 'HelloPlugin' has the following package references
 
 - **`-s|--source <SOURCE>`**
 
-  在搜索版本更高的包时，要使用的 NuGet 源。 需要使用 `--outdated` 选项。
+  在搜索版本更高的包时，要使用的 NuGet 源。 需要使用 `--outdated` 或 `--deprecated` 选项。
 
 ## <a name="examples"></a>示例
 

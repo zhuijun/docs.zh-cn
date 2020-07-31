@@ -2,15 +2,15 @@
 title: ASP.NET Core 中断性变更
 titleSuffix: ''
 description: 列出 ASP.NET Core 中的中断性变更。
-ms.date: 07/15/2020
+ms.date: 07/17/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: cea6771afdc05edc525e7d35f530f42e7b3bc1fa
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: 7a07df5194d5dc220b61d55a4457d90881ac9ddf
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86441942"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86474821"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core 中断性变更
 
@@ -60,6 +60,7 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 - [Kestrel：默认支持的 TLS 协议版本已更改](#kestrel-default-supported-tls-protocol-versions-changed)
 - [Kestrel：已删除空 HTTPS 程序集](#kestrel-empty-https-assembly-removed)
 - [Kestrel：在不兼容的 Windows 版本上通过 TLS 禁用 HTTP/2](#kestrel-http2-disabled-over-tls-on-incompatible-windows-versions)
+- [Kestrel：Libuv 传输标记为已过时](#kestrel-libuv-transport-marked-as-obsolete)
 - [Kestrel：请求尾部标头已移到新集合](#kestrel-request-trailer-headers-moved-to-new-collection)
 - [Kestrel：传输抽象层更改](#kestrel-transport-abstractions-removed-and-made-public)
 - [本地化：API 已标记为已过时](#localization-resourcemanagerwithculturestringlocalizer-and-withculture-marked-obsolete)
@@ -137,6 +138,10 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 ***
 
 [!INCLUDE[Kestrel: HTTP/2 disabled over TLS on incompatible Windows versions](~/includes/core-changes/aspnetcore/5.0/kestrel-disables-http2-over-tls.md)]
+
+***
+
+[!INCLUDE[Kestrel: Libuv transport marked as obsolete](~/includes/core-changes/aspnetcore/5.0/kestrel-libuv-transport-obsolete.md)]
 
 ***
 

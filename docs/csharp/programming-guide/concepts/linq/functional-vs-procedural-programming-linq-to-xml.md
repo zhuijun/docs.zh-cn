@@ -1,13 +1,14 @@
 ---
 title: 函数编程与过程编程 (LINQ to XML) (C#)
+description: 对于 XML 的处理，LINQ to XML 既支持过程式内存中 XML 树修改，也支持使用声明性方法的函数构造。
 ms.date: 07/20/2015
 ms.assetid: fc64e39c-a487-4882-9169-da4de97917d9
-ms.openlocfilehash: e87114d2edcda4b2df14eb2d84f62ebe9638b5eb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e19f9311c56f4fe2c5e7e5f228aca6c03c6fe04d
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69594249"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87103652"
 ---
 # <a name="functional-vs-procedural-programming-linq-to-xml-c"></a>函数编程与过程编程 (LINQ to XML) (C#)
 XML 应用程序有多种类型：  

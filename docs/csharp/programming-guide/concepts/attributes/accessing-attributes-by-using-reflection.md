@@ -1,13 +1,14 @@
 ---
 title: 使用反射访问特性 (C#)
+description: 通过使用 GetCustomAttributes 方法，使用反射获取 C# 中使用自定义特性定义的信息。
 ms.date: 07/20/2015
 ms.assetid: dce3a696-4ceb-489a-b5e4-322a83052f18
-ms.openlocfilehash: 990b6487e50bfb2d123c3871e5f85da063711d9e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9425141d64fd061d0c1f628228693cce02f7bfa0
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69595504"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925093"
 ---
 # <a name="accessing-attributes-by-using-reflection-c"></a>使用反射访问特性 (C#)
 你可以定义自定义特性并将其放入源代码中这一事实，在没有检索该信息并对其进行操作的方法的情况下将没有任何价值。 通过使用反射，可以检索通过自定义特性定义的信息。 主要方法是 `GetCustomAttributes`，它返回对象数组，这些对象在运行时等效于源代码特性。 此方法有多个重载版本。 有关详细信息，请参阅 <xref:System.Attribute>。  
@@ -113,7 +114,7 @@ class TestAuthorAttribute
 */  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Reflection>
 - <xref:System.Attribute>

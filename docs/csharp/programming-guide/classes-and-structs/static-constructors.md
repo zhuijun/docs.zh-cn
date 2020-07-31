@@ -1,16 +1,17 @@
 ---
 title: 静态构造函数 - C# 编程指南
+description: C# 中的静态构造函数在创建第一个实例或引用静态成员之前，只需初始化一次静态数据或执行一次操作。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: 744bcacbc38299c0ef7d16e814c415ec5caf95dd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e324b2aa968ff5fdf9c268fa3891f67e8530ff87
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79170112"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86863977"
 ---
 # <a name="static-constructors-c-programming-guide"></a>静态构造函数（C# 编程指南）
 静态构造函数用于初始化任何[静态](../../language-reference/keywords/static.md)数据，或执行仅需执行一次的特定操作。 将在创建第一个实例或引用任何静态成员之前自动调用静态构造函数。  

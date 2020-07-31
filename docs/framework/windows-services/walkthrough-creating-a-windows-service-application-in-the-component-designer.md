@@ -1,5 +1,6 @@
 ---
 title: 教程：创建 Windows 服务应用
+description: 本教程在 Visual Studio 中创建可向事件日志中写入消息的 Windows 服务应用程序。 添加功能，设置状态，添加安装程序等。
 ms.date: 03/27/2019
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: e5ff40d8413acf64e7a8a129a7b268f58780d591
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 487a974af2280a02b83fe685324c9464df705585
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053483"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925626"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>教程：创建 Windows 服务应用
 
@@ -45,7 +46,7 @@ ms.locfileid: "71053483"
 
 将服务从 **Service1** 重命名为 **MyNewService**。
 
-1. 在“解决方案资源管理器”中，选择“Service1.cs”或“Service1.vb”，然后从快捷菜单中选择“重命名”     。 将文件重命名为“MyNewService.cs”或“MyNewService.vb”，然后按 Enter   
+1. 在“解决方案资源管理器”中，选择“Service1.cs”或“Service1.vb”，然后从快捷菜单中选择“重命名”     。 将文件重命名为“MyNewService.cs”或“MyNewService.vb”，然后按 Enter
 
     随即将出现一个弹出窗口，询问是否要重命名对代码元素 Service1 的所有引用  。
 
@@ -57,7 +58,7 @@ ms.locfileid: "71053483"
 
     ![服务属性](./media/windows-service-properties.png "Windows 服务属性")
 
-4. 从“文件”菜单中选择“全部保存”   。
+4. 从“文件”菜单中选择“全部保存” 。
 
 ## <a name="add-features-to-the-service"></a>向服务添加功能
 
@@ -65,7 +66,7 @@ ms.locfileid: "71053483"
 
 ### <a name="add-custom-event-log-functionality"></a>添加自定义事件日志功能
 
-1. 在“解决方案资源管理器”中，从“MyNewService.cs”或“MyNewService.vb”的快捷菜单中，选择“查看设计器”     。
+1. 在“解决方案资源管理器”中，从“MyNewService.cs”或“MyNewService.vb”的快捷菜单中，选择“查看设计器”   。
 
 2. 在“工具箱”中，展开“组件”，然后将“EventLog”组件拖到“Service1.cs [Design]”或“Service1.vb [Design]”标签      。
 
@@ -124,7 +125,7 @@ ms.locfileid: "71053483"
    timer.Start()
    ```
 
-2. 将 `using` 语句添加到“MyNewService.cs”，或者，对于 <xref:System.Timers?displayProperty=nameWithType> 命名空间，将 `Imports` 语句添加到“MyNewService.vb”   ：
+2. 将 `using` 语句添加到“MyNewService.cs”，或者，对于 <xref:System.Timers?displayProperty=nameWithType> 命名空间，将 `Imports` 语句添加到“MyNewService.vb” ：
 
    ```csharp
    using System.Timers;

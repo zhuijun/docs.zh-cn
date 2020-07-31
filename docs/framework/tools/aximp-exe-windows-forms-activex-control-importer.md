@@ -1,5 +1,6 @@
 ---
 title: Aximp.exe（Windows 窗体 ActiveX 控件导入程序）
+description: 了解 Aximp.exe（Windows 窗体 ActiveX 控件导入程序）。 此工具将 ActiveX 的 COM 类型库中的类型定义转换为 Windows 窗体。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ActiveX controls, hosting in Windows Forms
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - Aximp.exe
 - Windows Forms ActiveX Control Importer
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
-ms.openlocfilehash: 6d58d1df81780c3033eab7c1ac3e860adeb374b1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d4fd6762195078963b43392178996a61f90feb94
+ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180430"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87167338"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe（Windows 窗体 ActiveX 控件导入程序）
 ActiveX 控件导入程序将 ActiveX 控件的 COM 类型库中的类型定义转换为 Windows 窗体控件。  
@@ -36,17 +37,17 @@ aximp [options]{file.dll | file.ocx}
   
 |参数|说明|  
 |--------------|-----------------|  
-|*file*|包含要转换的 ActiveX 控件的源文件的名称。 文件参数中必须具有扩展名 .dll 或 .ocx。|  
+|文件|包含要转换的 ActiveX 控件的源文件的名称。 文件参数中必须具有扩展名 .dll 或 .ocx。|  
   
-|选项|说明|  
+|选项|描述|  
 |------------|-----------------|  
 |`/delaysign`|指定 Aximp.exe 使用延迟的签名对生成的控件进行签名。 必须使用 `/keycontainer:`、`/keyfile:` 或 `/publickey:` 选项指定此选项。 有关延迟签名过程的更多信息，请参见[延迟为程序集签名](../../standard/assembly/delay-sign.md)。|  
 |`/help`|显示该工具的命令语法和选项。|  
-|`/keycontainer:` *containerName*|使用在 containerName 指定的密钥容器中找到的公钥/私钥对，对生成的控件进行强名称签名  。|  
-|`/keyfile:` *filename*|使用在 filename 中找到的发行者的正式公钥/私钥对，对生成的控件进行强名称签名  。|  
+|`/keycontainer:` *containerName*|使用在 containerName 指定的密钥容器中找到的公钥/私钥对，对生成的控件进行强名称签名。|  
+|`/keyfile:` *filename*|使用在 filename 中找到的发行者的正式公钥/私钥对，对生成的控件进行强名称签名。|  
 |`/nologo`|取消显示 Microsoft 启动版权标志。|  
 |`/out:` *filename*|指定要创建的程序集的名称。|  
-|`/publickey:` *filename*|使用在 filename 指定的文件中找到的公钥，对生成的控件进行强名称签名  。|  
+|`/publickey:` *filename*|使用在 filename 指定的文件中找到的公钥，对生成的控件进行强名称签名。|  
 |`/rcw:` *filename*|使用指定的运行时可调用包装器，而不用生成新的包装器。 你可以指定多个实例。 当前目录用于相对路径。 有关详细信息，请参阅[运行时可调用包装器](../../standard/native-interop/runtime-callable-wrapper.md)。|  
 |`/silent`|取消显示成功消息。|  
 |`/source`|生成 Windows 窗体包装器的 C# 源代码。|  
@@ -55,9 +56,9 @@ aximp [options]{file.dll | file.ocx}
   
  Aximp.exe 一次转换整个 ActiveX 控件类型库，并生成一组程序集，这些程序集包含在原始类型库中定义的类型的公共语言运行时元数据和控件实现。 生成的文件按照下面的模式命名：  
   
- COM 类型的公共语言运行时代理：progid.dll   
+ COM 类型的公共语言运行时代理：progid.dll  
   
- ActiveX 控件的 Windows 窗体代理（其中 Ax 表示 ActiveX）：Axprogid.dll   
+ ActiveX 控件的 Windows 窗体代理（其中 Ax 表示 ActiveX）：Axprogid.dll  
   
 > [!NOTE]
 > 如果 ActiveX 控件的成员名称与 .NET Framework 中定义的名称匹配，则 Aximp.exe 在创建 AxHost 派生类时，将在成员名称前加上前缀“Ctl”。 例如，如果 ActiveX 控件有一个名为“Layout”的成员，由于在 .NET Framework 中定义了 Layout 事件，因此该成员在 AxHost 派生类中将重命名为“CtlLayout”。  
@@ -68,7 +69,7 @@ aximp [options]{file.dll | file.ocx}
   
  在对 shdocvw.dll 运行 Aximp.exe 时，该工具始终会在运行它的目录中创建另一个名为 shdocvw.dll 的文件。 如果将此生成文件放在 Documents and Settings 目录下，则会导致 Microsoft Internet Explorer 和 Windows 资源管理器出现问题。 重启计算机时，Windows 会先在 Documents and Settings 目录查找 shdocvw.dll 的副本，然后再在 system32 目录查找。 它将使用在 Documents and Settings 目录中找到的副本，并尝试加载托管的包装器。 由于 Internet Explorer 和 Windows 资源管理器依赖于 system32 目录中的 shdocvw.dll 版本中的呈现引擎，因此它们将无法正常工作。 如果出现此问题，请在 Documents and Settings 目录中删除 shdocvw.dll 的副本，然后重启计算机。  
   
- 通过对 shdocvw.dll 使用 Aximp.exe 来创建用于应用程序开发的 .NET 程序集也会导致问题。 在这种情况下，应用程序将同时加载 shdocvw.dll 的系统版本和生成版本，并可能为系统版本赋予更高的优先级。 此时，如果尝试在 WebBrowser ActiveX 控件内加载网页，用户可能会收到打开/保存对话框提示。 用户单击“打开”后，将在 Internet Explorer 中打开该网页  。 此情况只出现在运行 Internet Explorer 版本 6 或更早版本的计算机上。 若要防止出现此问题，请使用托管的 <xref:System.Windows.Forms.WebBrowser> 控件或使用 Visual Studio 生成托管的 shdocvw.dll，如[如何：添加对类型库的引用](../interop/how-to-add-references-to-type-libraries.md)中所述。  
+ 通过对 shdocvw.dll 使用 Aximp.exe 来创建用于应用程序开发的 .NET 程序集也会导致问题。 在这种情况下，应用程序将同时加载 shdocvw.dll 的系统版本和生成版本，并可能为系统版本赋予更高的优先级。 此时，如果尝试在 WebBrowser ActiveX 控件内加载网页，用户可能会收到打开/保存对话框提示。 用户单击“打开”后，将在 Internet Explorer 中打开该网页。 此情况只出现在运行 Internet Explorer 版本 6 或更早版本的计算机上。 若要防止出现此问题，请使用托管的 <xref:System.Windows.Forms.WebBrowser> 控件或使用 Visual Studio 生成托管的 shdocvw.dll，如[如何：添加对类型库的引用](../interop/how-to-add-references-to-type-libraries.md)中所述。  
   
 ## <a name="example"></a>示例  
  下面的命令为媒体播放器控件 `msdxm.ocx` 生成 MediaPlayer.dll 和 AxMediaPlayer.dll。  
@@ -77,7 +78,7 @@ aximp [options]{file.dll | file.ocx}
 aximp c:\systemroot\system32\msdxm.ocx  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [工具](index.md)
 - [Ildasm.exe（IL 反汇编程序）](ildasm-exe-il-disassembler.md)

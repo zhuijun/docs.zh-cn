@@ -1,17 +1,18 @@
 ---
-title: .NET Framework 中的过时类型
+title: .NET Framework 中的已过时类型
+description: 请参阅 .NET Framework 4.5 和 .NET Framework 4.6 中由程序集组织的已过时的类型列表。 建议的替代项也已列出。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework 4.5, obsolete types
 - types, obsolete in .NET Framework 4.5
 - obsolete types [.NET Framework]
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
-ms.openlocfilehash: b7932a553f39e1f1da2a3946878d6224099da8da
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 29df80fcefc2565850b026bebd30802dc77e1896
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74802682"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925808"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>.NET Framework 中的过时类型
 
@@ -86,7 +87,7 @@ ms.locfileid: "74802682"
 |<xref:System.Collections.IHashCodeProvider?displayProperty=nameWithType>|请改用 <xref:System.Collections.IEqualityComparer?displayProperty=nameWithType>。|
 |<xref:System.Configuration.Assemblies.AssemblyHash?displayProperty=nameWithType>|<xref:System.Configuration.Assemblies.AssemblyHash> 类已弃用。|
 |<xref:System.Diagnostics.Contracts.Internal.ContractHelper?displayProperty=nameWithType>|在 .NET Framework 4.5 中首次被废弃。 请改用 System.Runtime.CompilerServices 命名空间中的 <xref:System.Runtime.CompilerServices.ContractHelper?displayProperty=nameWithType> 类。|
-|<xref:System.Reflection.Emit.UnmanagedMarshal?displayProperty=nameWithType>|备用 API 可用：改为发出 <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> 自定义特性。|
+|<xref:System.Reflection.Emit.UnmanagedMarshal?displayProperty=nameWithType>|有一个可用的备用 API：发出 <xref:System.Runtime.InteropServices.MarshalAsAttribute?displayProperty=nameWithType> 自定义特性。|
 |<xref:System.Runtime.InteropServices.BIND_OPTS?displayProperty=nameWithType>|请改用 <xref:System.Runtime.InteropServices.ComTypes.BIND_OPTS?displayProperty=nameWithType>。|
 |<xref:System.Runtime.InteropServices.BINDPTR?displayProperty=nameWithType>|请改用 <xref:System.Runtime.InteropServices.ComTypes.BINDPTR?displayProperty=nameWithType>。|
 |<xref:System.Runtime.InteropServices.CALLCONV?displayProperty=nameWithType>|请改用 <xref:System.Runtime.InteropServices.ComTypes.CALLCONV?displayProperty=nameWithType>。|
@@ -806,7 +807,7 @@ IEHost.dll 和 IEExec.exe 程序集已从 .NET Framework 中删除。 其所有�
 |<xref:Microsoft.VisualC.NeedsCopyConstructorModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll 是已过时的程序集，仅出于向后兼容目的而存在。|
 |<xref:Microsoft.VisualC.NoSignSpecifiedModifier?displayProperty=nameWithType>|Microsoft.VisualC.dll 是已过时的程序集，仅出于向后兼容目的而存在。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [类库中过时的内容](whats-obsolete.md)
 - [过时成员](obsolete-members.md)

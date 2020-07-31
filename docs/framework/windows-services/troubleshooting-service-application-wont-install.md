@@ -1,5 +1,6 @@
 ---
 title: 疑难解答：服务应用程序无法安装
+description: 如果无法安装服务应用程序，请进行故障排除。 请确保已正确设置服务类的 ServiceName 属性。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - troubleshooting service applications
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - Windows Service applications, troubleshooting
 ms.assetid: 45c48e2e-b97d-44bc-8896-14f328e0ce33
 author: ghogen
-ms.openlocfilehash: c45ab03ec4577d88953b0e43531082a46c29e8fd
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 4a57fb6975a6ded48abf7c8fd7eacec16e4f94d8
+ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053538"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86925522"
 ---
 # <a name="troubleshooting-service-application-wont-install"></a>疑难解答：服务应用程序无法安装
 如果服务应用程序无法正确安装，请检查以确保服务类的 <xref:System.ServiceProcess.ServiceBase.ServiceName%2A> 属性设置为与该服务安装程序中显示的值相同的值。 两个实例中的值必须相同才能正确安装服务。  

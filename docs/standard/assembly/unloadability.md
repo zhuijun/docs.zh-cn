@@ -4,12 +4,12 @@ description: 了解如何使用可回收的 AssemblyLoadContext 来加载和卸�
 author: janvorli
 ms.author: janvorli
 ms.date: 02/05/2019
-ms.openlocfilehash: 267c2209556b66ab3541c9c79c99d7eceb2024da
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9d1f604816dcbd7a84a3692b3cfd24481532789a
+ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159736"
+ms.lasthandoff: 07/21/2020
+ms.locfileid: "86865341"
 ---
 # <a name="how-to-use-and-debug-assembly-unloadability-in-net-core"></a>如何在 .NET Core 中使用和调试程序集可卸载性
 
@@ -30,7 +30,7 @@ ms.locfileid: "78159736"
 
 ### <a name="create-a-collectible-assemblyloadcontext"></a>创建可回收的 AssemblyLoadContext
 
-需要从 <xref:System.Runtime.Loader.AssemblyLoadContext> 派生类，并重载其 <xref:System.Runtime.Loader.AssemblyLoadContext.Load%2A?displayProperty=nameWithType> 方法。 该方法解析对所有程序集的引用，这些程序集是加载到该 `AssemblyLoadContext` 中的程序集的依赖项。
+需要从 <xref:System.Runtime.Loader.AssemblyLoadContext> 派生类，并替代其 <xref:System.Runtime.Loader.AssemblyLoadContext.Load%2A?displayProperty=nameWithType> 方法。 该方法解析对所有程序集的引用，这些程序集是加载到该 `AssemblyLoadContext` 中的程序集的依赖项。
 
 以下代码是最简单的自定义 `AssemblyLoadContext` 示例：
 

@@ -1,5 +1,6 @@
 ---
 title: 动态语言运行时概述 | Microsoft Docs
+description: 阅读 .NET 中的动态语言运行时 (DLR) 概述。 DLR 是一种运行时环境，可以将一组动态语言服务添加到 CLR。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - dynamic language runtime
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - DLR
 - IronRuby
 ms.assetid: f769a271-8aff-4bea-bfab-6160217ce23d
-ms.openlocfilehash: a38ed15769d1186ef78733d68d9d8b51b3eb262d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2272bc60af35e3cdec3e1a71bbc6516565b4ec6e
+ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446904"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86475146"
 ---
 # <a name="dynamic-language-runtime-overview"></a>动态语言运行时概述
 

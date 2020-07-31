@@ -1,13 +1,14 @@
 ---
 title: 如何使用反射查询程序集的元数据 (LINQ) (C#)
+description: 了解如何在 C# 中将 LINQ 与 .NET 反射 API 配合使用来检索与搜索条件匹配的方法的特定元数据。
 ms.date: 07/20/2015
 ms.assetid: c4cdce49-b1c8-4420-b12a-9ff7e6671368
-ms.openlocfilehash: 092cb386af0c3f2e2241c2c2ac8e50eab74cc43b
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: dc5352e9cb90e9ad2808fb027823174d07d69da6
+ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241534"
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "87104588"
 ---
 # <a name="how-to-query-an-assemblys-metadata-with-reflection-linq-c"></a>如何使用反射查询程序集的元数据 (LINQ) (C#)
 
