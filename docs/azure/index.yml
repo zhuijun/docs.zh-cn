@@ -7,13 +7,13 @@ metadata:
   description: 关于 Azure 上 .NET 的示例、教程和培训内容
   ms.topic: hub-page
   ms.prod: azure-dotnet
-  ms.date: 03/04/2020
-  ms.openlocfilehash: c92263407ab15bd78ec323bb417d2d9f37dd77bc
-  ms.sourcegitcommit: d4f7ba08f2a45a9dbef53be597eed6d4a9410f29
+  ms.date: 07/31/2020
+  ms.openlocfilehash: c5326128836f83b7153336619061f5943f8c6aa4
+  ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/15/2020
-  ms.locfileid: "86401953"
+  ms.lasthandoff: 07/30/2020
+  ms.locfileid: "87426983"
 highlightedContent:
   items:
   - itemType: overview
@@ -41,6 +41,8 @@ highlightedContent:
     title: Azure 基础
     url: https://docs.microsoft.com/learn/paths/azure-fundamentals/
 conceptualContent:
+  title: 特别推荐的内容
+  summary: 学习开发利用各种 Azure 服务的 .NET 应用。
   items:
   - title: 创建 Web 应用
     links:
@@ -255,7 +257,7 @@ additionalContent:
         url: https://channel9.msdn.com/Shows/The-Cloud-Native-Show
       - text: On .NET
         url: https://channel9.msdn.com/Shows/On-NET
-      - text: ASP.NET 社区会议
+      - text: .NET Community Standup
         url: https://dotnet.microsoft.com/platform/community/standup
       - text: .NET 文档显示
         url: https://dotnetdocs.dev
@@ -267,4 +269,4 @@ additionalContent:
         url: https://github.com/AzureAD/microsoft-identity-web
       - text: .NET 平台
         url: https://github.com/dotnet/
-  footer: Contribute to .NET docs. Read our [contributor guide](/contribute/dotnet/dotnet-contribute).
+  footer: 参与 .NET 文档的编写。请参阅我们的[参与者指南](/contribute/dotnet/dotnet-contribute)。
