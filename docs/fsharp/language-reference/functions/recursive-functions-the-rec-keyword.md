@@ -2,12 +2,12 @@
 title: 递归函数：rec 关键字
 description: '了解如何使用 F # "rec" 关键字来定义递归函数。'
 ms.date: 05/16/2016
-ms.openlocfilehash: c9a3b7dc27f4ed86948a08b7783d7e8e8b60e57f
-ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
+ms.openlocfilehash: c2374f90b4585327c6f5208a3d6bca75a23d0cbb
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87426971"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455653"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>递归函数：rec 关键字
 
@@ -43,7 +43,7 @@ function2-body
 
 ## <a name="tail-recursion"></a>结尾递归
 
-对于某些递归函数，必须将更多 "纯" 定义重构为[尾递归](https://cs.stackexchange.com/questions/6230/what-is-tail-recursion)。 这可以防止不必要 recomputations。 例如，可以按如下所示重写上一个波那契数字生成器：
+对于某些递归函数，必须将更多 "纯" 定义重构为[尾递归](https://cs.stackexchange.com/questions/6230/what-is-tail-recursion)。 这可以防止不必要的 recomputations。 例如，可以按如下所示重写上一个波那契数字生成器：
 
 ```fsharp
 let fib n =
