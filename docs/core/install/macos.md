@@ -4,12 +4,12 @@ description: 了解可在其上安装 .NET Core 的 macOS 版本。
 author: adegeo
 ms.author: adegeo
 ms.date: 06/25/2020
-ms.openlocfilehash: 2900d98dbd30c51f689cdce37ea273ccc4f598b5
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 951e9b6a64d55274729e233b4a2d7728c75d05d4
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308918"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302927"
 ---
 # <a name="install-net-core-on-macos"></a>在 macOS 上安装 .NET Core
 
@@ -200,7 +200,7 @@ Microsoft 提供适合特定场景的映像。 例如，[ASP.NET Core 存储库]
 
 - [如何检查是否已安装 .NET Core](how-to-detect-installed-versions.md?pivots=os-macos)。
 - [处理 macOS Catalina 公证](macos-notarization-issues.md)。
-- [教程：开始使用 macOS](../tutorials/using-on-mac-vs.md)。
+- [教程：开始使用 macOS](../tutorials/with-visual-studio-mac.md)。
 - [教程：使用 Visual Studio Code 创建一个新应用](../tutorials/with-visual-studio-code.md)。
 - [教程：使 .NET Core 应用容器化](../docker/build-container.md)。
 

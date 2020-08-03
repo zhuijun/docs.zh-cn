@@ -1,13 +1,15 @@
 ---
 title: protected internal - C# 参考
 ms.date: 11/15/2017
+f1_keywords:
+- protectedinternal_CSharpKeyword
 author: sputier
-ms.openlocfilehash: 877df74b51fb859043171619f5687ecddb8409d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4067da93bcceba0fa3e4a14aa58b4cde812412f3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713191"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301783"
 ---
 # <a name="protected-internal-c-reference"></a>受保护的内部成员（C# 参考）
 

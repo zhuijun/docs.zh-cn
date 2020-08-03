@@ -1,13 +1,14 @@
 ---
 title: 面向对象的编程 (C#)
+description: C# 提供针对面向对象的编程（包括抽象、封装、继承和多态性）的完整支持。
 ms.date: 05/13/2020
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 83140a9dbd16f60f04f50ba18c71099cdd862f15
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: 0c5495aefad73a2916ad6e2bd2bf3701d0868f24
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226629"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302810"
 ---
 # <a name="object-oriented-programming-c"></a>面向对象的编程 (C#)
 
@@ -224,7 +225,7 @@ var sampleObject = new SampleClass
 };
 ```
 
-有关详情，请参阅：
+有关详细信息，请参见:
 
 - [new 运算符](../../language-reference/operators/new-operator.md)
 - [对象和集合初始值设定项](../classes-and-structs/object-and-collection-initializers.md)
@@ -361,7 +362,7 @@ var sampleObject = new SampleGeneric<string>();
 sampleObject.Field = "Sample string";
 ```
 
-有关详情，请参阅：
+有关详细信息，请参见:
 
 - [.NET 中的泛型](../../../standard/generics/index.md)
 - [泛型 - C# 编程指南](../generics/index.md)

@@ -2,12 +2,12 @@
 title: dotnet tool restore 命令
 description: dotnet tool restore 命令在计算机上安装当前目录范围内的 .NET Core 本地工具。
 ms.date: 02/14/2020
-ms.openlocfilehash: a518c2d45bbe9522bddfed4bbef61b30f1ad634b
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: ceef3274ec9d337f8c51009d5a8c27e808b14035
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463334"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302667"
 ---
 # <a name="dotnet-tool-restore"></a>dotnet tool restore
 
@@ -20,7 +20,7 @@ ms.locfileid: "81463334"
 ## <a name="synopsis"></a>摘要
 
 ```dotnetcli
-dotnet tool restore <PACKAGE_NAME>
+dotnet tool restore
     [--configfile <FILE>] [--add-source <SOURCE>]
     [tool-manifest <PATH_TO_MANIFEST_FILE>] [--disable-parallel]
     [--ignore-failed-sources] [--no-cache] [--interactive]
@@ -32,12 +32,6 @@ dotnet tool restore -h|--help
 ## <a name="description"></a>描述
 
 `dotnet tool restore` 命令查找当前目录范围内的工具清单文件，并安装其中列出的工具。 有关清单文件的信息，请参阅[安装本地工具](global-tools.md#install-a-local-tool)和[调用本地工具](global-tools.md#invoke-a-local-tool)。
-
-## <a name="arguments"></a>自变量
-
-- **`PACKAGE_NAME`**
-
-包含要安装的 .NET Core 工具的 NuGet 包的名称/ID。
 
 ## <a name="options"></a>选项
 
