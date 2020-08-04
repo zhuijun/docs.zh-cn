@@ -1,5 +1,6 @@
 ---
 title: XML 文档注释 - C# 编程指南
+description: 了解 XML 文档注释。 可以通过在特殊注释字段中包含 XML 元素来为代码创建文档。
 ms.date: 07/20/2015
 f1_keywords:
 - cs.xml
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - C# language, XML code comments
 - XML documentation comments [C#]
 ms.assetid: 803b7f7b-7428-4725-b5db-9a6cff273199
-ms.openlocfilehash: f5a507bc35b0cc0a679fd055bfc255bb3cb9a090
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fbdeb53331d9fc63d24a3322ea13863d7c0a3630
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76789782"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381874"
 ---
 # <a name="xml-documentation-comments-c-programming-guide"></a>XML 文档注释（C# 编程指南）
 
@@ -48,7 +49,7 @@ public class MyClass {}
 
 ## <a name="related-sections"></a>相关章节
 
-有关详情，请参阅：
+有关详细信息，请参见:
 
 - [-doc （处理文档注释）](../../language-reference/compiler-options/doc-compiler-option.md)
 
@@ -56,6 +57,6 @@ public class MyClass {}
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)

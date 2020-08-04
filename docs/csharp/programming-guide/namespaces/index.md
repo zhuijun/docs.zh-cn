@@ -1,16 +1,17 @@
 ---
 title: 命名空间 - C# 编程指南
+description: 了解 C# 编程中的命名空间。 请参阅命名空间属性概述，并查看其他资源。
 ms.date: 08/21/2018
 helpviewer_keywords:
 - C# language, namespaces
 - namespaces [C#]
 ms.assetid: b1c4ab46-3fad-4ffa-9deb-dd50a2d8c65a
-ms.openlocfilehash: 21452e259596c9ab10b3d653ec1d8fb90fad131d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fca2c641520bd9cd19a48bff2119a6f09c3713ea
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75937613"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382095"
 ---
 # <a name="namespaces-c-programming-guide"></a>命名空间（C# 编程指南）
 
@@ -45,11 +46,11 @@ ms.locfileid: "75937613"
 
 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的[命名空间](~/_csharplang/spec/namespaces.md)部分。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [使用命名空间](using-namespaces.md)
 - [如何使用 My 命名空间](how-to-use-the-my-namespace.md)
 - [标识符名称](../inside-a-program/identifier-names.md)
 - [using 指令](../../language-reference/keywords/using-directive.md)
-- [:: 运算符](../../language-reference/operators/namespace-alias-qualifier.md)
+- [::运算符](../../language-reference/operators/namespace-alias-qualifier.md)

@@ -1,5 +1,6 @@
 ---
 title: 索引器 - C# 编程指南
+description: C# 中的索引器支持类或结构实例像数组一样编制索引。 可以设置或获取索引值，而无需指定类型或实例成员。
 ms.date: 03/10/2017
 f1_keywords:
 - cs.indexers
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - indexers [C#]
 - C# language, indexers
 ms.assetid: 022cd27d-d5e0-4cfe-8b97-dc018cc3355d
-ms.openlocfilehash: 539b2861e975c0c758c43c8a5d4cca86e3d2bb2c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 07e0ae4294373817e10bb79920c73ec1e275d169
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79167529"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303109"
 ---
 # <a name="indexers-c-programming-guide"></a>索引器（C# 编程指南）
 
@@ -53,7 +54,7 @@ ms.locfileid: "79167529"
   
 - 索引器可以有多个形参，例如当访问二维数组时。  
   
-## <a name="BKMK_RelatedSections"></a>相关部分  
+## <a name="related-sections"></a><a name="BKMK_RelatedSections"></a>相关部分  
   
 - [使用索引器](./using-indexers.md)  
   

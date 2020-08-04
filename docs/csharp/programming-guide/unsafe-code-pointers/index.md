@@ -1,5 +1,6 @@
 ---
 title: 不安全代码和指针 - C# 编程指南
+Description: 了解不安全代码和指针。 C# 不支持指针，但你可以定义一个不安全的上下文，在该上下文中你可以将指针与“不安全”关键字一起使用。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - security [C#], type safety
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - C# language, pointers
 - pointers [C#], about pointers
 ms.assetid: b0fcca10-a92d-4f2a-835b-b0ccae6739ee
-ms.openlocfilehash: 013af4e55c8fc396bbc92058d7fb454484f3263e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5684a97ed6f7b6632d8fe3d52747d9187c4b8cbc
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75711826"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381770"
 ---
 # <a name="unsafe-code-and-pointers-c-programming-guide"></a>不安全代码和指针（C# 编程指南）
 
@@ -40,7 +41,7 @@ ms.locfileid: "75711826"
   
 ## <a name="related-sections"></a>相关章节
 
-有关详情，请参阅：
+有关详细信息，请参见:
 
 - [指针类型](pointer-types.md)
 
@@ -50,7 +51,7 @@ ms.locfileid: "75711826"
 
 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的[不安全代码](~/_csharplang/spec/unsafe-code.md)主题。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [unsafe](../../language-reference/keywords/unsafe.md)

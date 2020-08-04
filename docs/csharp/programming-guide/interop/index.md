@@ -1,5 +1,6 @@
 ---
 title: 互操作性 - C# 编程指南
+description: 除了在公共语言运行时下运行的代码之外，互操作性还支持非托管代码。 使用这些资源来了解互操作选项。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - COM interop
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - platform invoke, accessing APIs with C#
 - C# language, interoperability
 ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
-ms.openlocfilehash: e53465066cf27a5f46c66ac73ee242370be23395
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: d85eb51107d50e023270fcbe1ef6e08a7788ae78
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84242002"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302966"
 ---
 # <a name="interoperability-c-programming-guide"></a>互操作性（C# 编程指南）
 

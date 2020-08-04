@@ -1,5 +1,6 @@
 ---
 title: Main() 和命令行参数 - C# 编程指南
+description: 了解 Main() 和命令行参数。 “Main”方法是可执行程序的入口点。
 ms.date: 08/02/2017
 f1_keywords:
 - CS5001
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - command line [C#], arguments
 - command-line arguments [C#], Main method
 ms.assetid: 73a17231-cf96-44ea-aa8a-54807c6fb1f4
-ms.openlocfilehash: 723884dd448232777ae2cfeac5bfcf5ea24363b0
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 95ec9d3dfebe4721d4b1822939f925aa37b9e9c4
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84007736"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382069"
 ---
 # <a name="main-and-command-line-arguments-c-programming-guide"></a>Main() 和命令行参数（C# 编程指南）
 
