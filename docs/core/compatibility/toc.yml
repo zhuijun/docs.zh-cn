@@ -44,6 +44,8 @@
       href: msbuild.md
     - name: 网络
       href: networking.md
+    - name: 序列化
+      href: serialization.md
     - name: Visual Basic
       href: visualbasic.md
     - name: Windows 窗体
