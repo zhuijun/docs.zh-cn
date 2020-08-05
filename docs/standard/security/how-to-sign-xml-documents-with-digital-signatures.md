@@ -1,7 +1,7 @@
 ---
 title: 如何：使用数字签名为 XML 文档签名
-description: 了解如何用数字签名对 XML 文档进行签名。 使用 .NET 中的 System.web 命名空间中的类。
-ms.date: 03/30/2017
+description: 了解如何用数字签名对 XML 文档进行签名。 使用 .NET 中的 System.Security.Cryptography.Xml 命名空间中的类。
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -10,24 +10,28 @@ helpviewer_keywords:
 - signatures, XML signing
 - System.Security.Cryptography.SignedXml class
 - digital signatures, XML signing
-- System.Security.Cryptography.RSACryptoServiceProvider class
+- System.Security.Cryptography.RSA class
 - XML digital signatures
 - XML signing
 - signing XML
 ms.assetid: 99692ac1-d8c9-42d7-b1bf-2737b01037e4
-ms.openlocfilehash: 97bd23182ed54b899b76dbf43e179fe0c94b011d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e1457fd659ab63489bd4cfafd7731a4b098a2791
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84598562"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557068"
 ---
 # <a name="how-to-sign-xml-documents-with-digital-signatures"></a>如何：使用数字签名为 XML 文档签名
-可以使用 <xref:System.Security.Cryptography.Xml> 命名空间中的类通过数字签名对 XML 文档或部分 XML 文档进行签名。  使用 XML 数字签名 (XMLDSIG)，你可以验证签名后的数据没有被更改。  有关 XMLDSIG 标准的详细信息，请参阅万维网联合会（W3C）建议[XML 签名语法和处理](https://www.w3.org/TR/xmldsig-core/)。  
+
+可以使用 <xref:System.Security.Cryptography.Xml> 命名空间中的类通过数字签名对 XML 文档或部分 XML 文档进行签名。  使用 XML 数字签名 (XMLDSIG)，你可以验证签名后的数据没有被更改。  有关 XMLDSIG 标准的详细信息，请参阅万维网联合会 (W3C) 推荐[XML 签名语法和处理](https://www.w3.org/TR/xmldsig-core/)。  
   
- 此过程中的代码示例演示了如何对整个 XML 文档进行数字签名，以及如何将签名附加到 <> 元素中的文档 `Signature` 。  该示例创建一个 RSA 签名密钥，并将该密钥添加到安全密钥容器，然后使用该密钥对 XML 文档进行数字签名。  然后可以检索该密码来验证 XML 数字签名，或使用它对另一个 XML 文档进行签名。  
+> [!NOTE]
+> 本文中的代码适用于 Windows。
+
+此过程中的代码示例演示了如何对整个 XML 文档进行数字签名，以及如何将签名附加到 <> 元素中的文档 `Signature` 。  该示例创建一个 RSA 签名密钥，并将该密钥添加到安全密钥容器，然后使用该密钥对 XML 文档进行数字签名。  然后可以检索该密码来验证 XML 数字签名，或使用它对另一个 XML 文档进行签名。  
   
- 有关如何验证使用此过程创建的 XML 数字签名的信息，请参阅[如何：验证 Xml 文档的数字签名](how-to-verify-the-digital-signatures-of-xml-documents.md)。  
+有关如何验证使用此过程创建的 XML 数字签名的信息，请参阅[如何：验证 Xml 文档的数字签名](how-to-verify-the-digital-signatures-of-xml-documents.md)。  
   
 ### <a name="to-digitally-sign-an-xml-document"></a>对 XML 文档进行数字签名  
   
@@ -76,7 +80,7 @@ ms.locfileid: "84598562"
      [!code-csharp[HowToSignXMLDocumentRSA#10](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#10)]
      [!code-vb[HowToSignXMLDocumentRSA#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#10)]  
   
-10. 检索签名（<> 元素）的 XML 表示形式 `Signature` ，并将其保存到新的 <xref:System.Xml.XmlElement> 对象。  
+10. 检索 (<>) 元素的签名的 XML 表示形式 `Signature` ，并将其保存到新的 <xref:System.Xml.XmlElement> 对象。  
   
      [!code-csharp[HowToSignXMLDocumentRSA#11](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToSignXMLDocumentRSA/cs/sample.cs#11)]
      [!code-vb[HowToSignXMLDocumentRSA#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToSignXMLDocumentRSA/vb/sample.vb#11)]  
@@ -108,16 +112,23 @@ ms.locfileid: "84598562"
   
 ## <a name="compiling-the-code"></a>编译代码  
   
-- 若要编译此示例，需要包含对 `System.Security.dll` 的引用。  
+- 在面向 .NET Framework 的项目中，包含对的引用 `System.Security.dll` 。
+
+- 在面向 .NET Core 或 .NET 5 的项目中，安装 NuGet 包[System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml)。
   
 - 包括以下命名空间：<xref:System.Xml>、<xref:System.Security.Cryptography> 和 <xref:System.Security.Cryptography.Xml>。  
   
-## <a name="net-framework-security"></a>.NET Framework 安全性  
- 切勿用纯文本存储或传输非对称密钥对的私钥。  有关对称和非对称加密密钥的详细信息，请参阅[生成加密和解密密钥](generating-keys-for-encryption-and-decryption.md)。  
-  
- 切勿将私钥直接嵌入到源代码中。  使用[Ildasm （IL 拆装器）](../../framework/tools/ildasm-exe-il-disassembler.md)或在文本编辑器（例如记事本）中打开程序集，可以轻松地从程序集中读取嵌入的密钥。  
-  
-## <a name="see-also"></a>另请参阅
+## <a name="net-security"></a>.NET 安全性
 
+切勿用纯文本存储或传输非对称密钥对的私钥。  有关对称和非对称加密密钥的详细信息，请参阅[生成加密和解密密钥](generating-keys-for-encryption-and-decryption.md)。  
+  
+切勿将私钥直接嵌入到源代码中。  [Ildasm.exe 使用 (IL 拆装器) ](../../framework/tools/ildasm-exe-il-disassembler.md)或通过在文本编辑器（例如记事本）中打开程序集，可以轻松地从程序集中读取嵌入的密钥。  
+  
+## <a name="see-also"></a>请参阅
+
+- [加密模型](cryptography-model.md)
+- [加密服务](cryptographic-services.md)
+- [跨平台加密](cross-platform-cryptography.md)
 - <xref:System.Security.Cryptography.Xml>
 - [如何：验证 XML 文档的数字签名](how-to-verify-the-digital-signatures-of-xml-documents.md)
+- [ASP.NET Core 数据保护](/aspnet/core/security/data-protection/introduction)

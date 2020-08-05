@@ -1,6 +1,6 @@
 ---
 title: 如何：访问硬件加密设备
-ms.date: 03/30/2017
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -13,17 +13,21 @@ helpviewer_keywords:
 - hardware encryption
 - CspParameters
 ms.assetid: b0e734df-6eb4-4b16-b48c-6f0fe82d5f17
-ms.openlocfilehash: d6ee22fd9fb0c11e22ac01ff83b3269e37e37763
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 7cd3aab80a8388c1d4ce08e4ae94aae84cfff239
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706170"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557133"
 ---
 # <a name="how-to-access-hardware-encryption-devices"></a>如何：访问硬件加密设备
+
+> [!NOTE]
+> 本文适用于 Windows。
+
 可使用 <xref:System.Security.Cryptography.CspParameters> 类来访问硬件加密设备。 例如，可以使用此类将你的应用程序与智能卡、硬件随机数字生成器或特定加密算法的硬件实现进行集成。  
-  
- <xref:System.Security.Cryptography.CspParameters> 类会创建一个加密服务提供程序 (CSP)，该程序可访问正确安装的硬件加密设备。  你可以通过使用注册表编辑器 (Regedit.exe) 检查下列注册表项来验证 CSP 的可用性：HKEY_LOCAL_MACHINE\Software\Microsoft\Cryptography\Defaults\Provider。  
+
+<xref:System.Security.Cryptography.CspParameters> 类会创建一个加密服务提供程序 (CSP)，该程序可访问正确安装的硬件加密设备。  你可以通过使用注册表编辑器 (Regedit.exe) 检查下列注册表项来验证 CSP 的可用性：HKEY_LOCAL_MACHINE\Software\Microsoft\Cryptography\Defaults\Provider。  
   
 ### <a name="to-sign-data-using-a-key-card"></a>使用密钥卡对数据进行签名  
   
@@ -43,12 +47,15 @@ ms.locfileid: "75706170"
   
 3. 使用 <xref:System.Security.Cryptography.RNGCryptoServiceProvider.GetBytes%2A> 或 <xref:System.Security.Cryptography.RNGCryptoServiceProvider.GetNonZeroBytes%2A> 方法创建一个随机值。  
   
-## <a name="example"></a>示例  
- 下列代码示例演示如何使用智能卡对数据进行签名。  此代码示例创建一个公开智能卡的 <xref:System.Security.Cryptography.CspParameters> 对象，然后使用 CSP 初始化 <xref:System.Security.Cryptography.RSACryptoServiceProvider> 对象。  然后此代码示例会对某些数据进行签名和验证。  
+## <a name="example"></a>示例
+
+下列代码示例演示如何使用智能卡对数据进行签名。  此代码示例创建一个公开智能卡的 <xref:System.Security.Cryptography.CspParameters> 对象，然后使用 CSP 初始化 <xref:System.Security.Cryptography.RSACryptoServiceProvider> 对象。  然后此代码示例会对某些数据进行签名和验证。  
+
+由于 SHA1 出现冲突，我们建议 SHA256 或更好。
   
- [!code-cpp[Cryptography.SmartCardCSP#1](../../../samples/snippets/cpp/VS_Snippets_CLR/Cryptography.SmartCardCSP/CPP/Cryptography.SmartCardCSP.cpp#1)]
- [!code-csharp[Cryptography.SmartCardCSP#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Cryptography.SmartCardCSP/CS/example.cs#1)]
- [!code-vb[Cryptography.SmartCardCSP#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.SmartCardCSP/VB/example.vb#1)]  
+[!code-cpp[Cryptography.SmartCardCSP#1](../../../samples/snippets/cpp/VS_Snippets_CLR/Cryptography.SmartCardCSP/CPP/Cryptography.SmartCardCSP.cpp#1)]
+[!code-csharp[Cryptography.SmartCardCSP#1](../../../samples/snippets/csharp/VS_Snippets_CLR/Cryptography.SmartCardCSP/CS/example.cs#1)]
+[!code-vb[Cryptography.SmartCardCSP#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Cryptography.SmartCardCSP/VB/example.vb#1)]  
   
 ## <a name="compiling-the-code"></a>编译代码  
   
@@ -57,3 +64,10 @@ ms.locfileid: "75706170"
 - 计算机上必须安装有智能卡读卡器和驱动程序。  
   
 - 必须使用特定于读卡器的信息来初始化 <xref:System.Security.Cryptography.CspParameters> 对象。  有关详细信息，请参阅读卡器的文档。
+
+## <a name="see-also"></a>请参阅
+
+- [加密模型](cryptography-model.md)
+- [加密服务](cryptographic-services.md)
+- [跨平台加密](cross-platform-cryptography.md)
+- [ASP.NET Core 数据保护](/aspnet/core/security/data-protection/introduction)

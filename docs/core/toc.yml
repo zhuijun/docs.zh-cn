@@ -479,7 +479,5 @@ items:
     href: native-interop/expose-components-to-com.md
   - name: 从本机代码承载 .NET Core
     href: tutorials/netcore-hosting.md
-  - name: 包、元包和框架
-    href: packages.md
   - name: 持续集成
     href: tools/using-ci-with-cli.md

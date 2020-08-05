@@ -1,6 +1,6 @@
 ---
 title: 如何：创建 GenericPrincipal 和 GenericIdentity 对象
-ms.date: 03/30/2017
+ms.date: 07/15/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -11,14 +11,19 @@ helpviewer_keywords:
 - Creating GenericPrincipal Objects
 - GenericIdentity Objects
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
-ms.openlocfilehash: 10a71185db3359cda1c3bf7a12f5698929c98296
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 903d636938c47850951330d7936d95470441607e
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290858"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557211"
 ---
 # <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>如何：创建 GenericPrincipal 和 GenericIdentity 对象
+
+> [!NOTE]
+> 本文适用于 Windows。
+>
+> 有关 ASP.NET Core 的信息，请参阅[ASP.NET Core 安全性概述](https://docs.microsoft.com/aspnet/core/security/)。
 
 你可以将 <xref:System.Security.Principal.GenericIdentity> 类与类结合使用 <xref:System.Security.Principal.GenericPrincipal> ，以创建独立于 Windows 域的授权方案。
 
@@ -139,7 +144,7 @@ The IsAuthenticated is: True
 Is this a Manager? True
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Security.Principal.GenericIdentity>
 - <xref:System.Security.Principal.GenericPrincipal>

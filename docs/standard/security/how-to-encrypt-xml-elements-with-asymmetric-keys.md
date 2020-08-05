@@ -1,39 +1,39 @@
 ---
 title: 如何：用非对称密钥对 XML 元素进行加密
-ms.date: 03/30/2017
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
-- cryptography [.NET Framework], asymmetric keys
+- cryptography [.NET], asymmetric keys
 - AES algorithm
-- System.Security.Cryptography.RSACryptoServiceProvider class
-- asymmetric keys [.NET Framework]
+- System.Security.Cryptography.RSA class
+- asymmetric keys [.NET]
 - System.Security.Cryptography.EncryptedXml class
 - XML encryption
 - key containers
 - Advanced Encryption Standard algorithm
-- Rijndael
-- encryption [.NET Framework], asymmetric keys
+- encryption [.NET], asymmetric keys
 ms.assetid: a164ba4f-e596-4bbe-a9ca-f214fe89ed48
-ms.openlocfilehash: 475446f6206676e93ea72d16e01bcf1067c24e86
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 1c824b00a1df920108cfcd8c4590b680020cdf3e
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277370"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555782"
 ---
 # <a name="how-to-encrypt-xml-elements-with-asymmetric-keys"></a>如何：用非对称密钥对 XML 元素进行加密
-可以使用 <xref:System.Security.Cryptography.Xml> 命名空间中的类加密 XML 文档内的元素。  XML 加密是交换或存储加密的 XML 数据的一种标准方式，使用后就无需担心数据被轻易读取。  有关 XML 加密标准的详细信息，请参阅位于的 XML 加密的万维网联合会（W3C）规范 <https://www.w3.org/TR/xmldsig-core/> 。  
+
+可以使用 <xref:System.Security.Cryptography.Xml> 命名空间中的类加密 XML 文档内的元素。  XML 加密是交换或存储加密的 XML 数据的一种标准方式，使用后就无需担心数据被轻易读取。  有关 XML 加密标准的详细信息，请参阅位于万维网联合会 (W3C) 规范 for XML Encryption <https://www.w3.org/TR/xmldsig-core/> 。  
   
  可以使用 XML 加密将任何 XML 元素或文档替换为包含加密 XML 数据的 <`EncryptedData`> 元素。  <`EncryptedData`> 元素还可以包含子元素，这些子元素包含有关加密期间使用的密钥和进程的信息。  XML 加密允许文档包含多个加密元素，并允许对一个元素进行多次加密。  此过程中的代码示例演示如何创建一个 <`EncryptedData`> 元素以及其他一些子元素，这些子元素可在稍后解密过程中使用。  
   
- 此示例使用两个密钥对 XML 元素进行加密。  它生成 RSA 公钥/私钥对，并将密钥对保存到安全的密钥容器中。  然后，此示例使用高级加密标准 (AES) 算法（也称为 Rijndael 算法）创建单独的会话密钥。  使用 AES 会话密钥对 XML 文档进行加密，再使用 RSA 公钥对 AES 会话密钥进行加密。  最后，该示例会将加密的 AES 会话密钥和加密的 XML 数据保存到新的 <> 元素中的 XML 文档 `EncryptedData` 。  
+ 此示例使用两个密钥对 XML 元素进行加密。  它生成 RSA 公钥/私钥对，并将密钥对保存到安全的密钥容器中。  然后，该示例使用高级加密标准 (AES) 算法创建一个单独的会话密钥。  使用 AES 会话密钥对 XML 文档进行加密，再使用 RSA 公钥对 AES 会话密钥进行加密。  最后，该示例会将加密的 AES 会话密钥和加密的 XML 数据保存到新的 <> 元素中的 XML 文档 `EncryptedData` 。  
   
  若要解密 XML 元素，可检索密钥容器中的 RSA 私钥，用其来解密会话密钥，然后使用会话密钥来解密文档。  有关如何解密使用此过程加密的 XML 元素的详细信息，请参阅[如何：使用非对称密钥对 Xml 元素进行解密](how-to-decrypt-xml-elements-with-asymmetric-keys.md)。  
   
- 此示例适用于以下情况：多个应用程序需要共享加密数据，或应用程序需要保存它各次运行之间的加密数据。  
+ 此示例适用于以下情况：多个应用程序需要共享加密数据，或应用程序需要保存它各次运行之间的加密数据。
   
 ### <a name="to-encrypt-an-xml-element-with-an-asymmetric-key"></a>使用非对称密钥加密 XML 元素  
   
@@ -57,7 +57,7 @@ ms.locfileid: "84277370"
      [!code-csharp[HowToEncryptXMLElementAsymmetric#5](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#5)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#5)]  
   
-5. 使用 <xref:System.Security.Cryptography.RijndaelManaged> 类创建新的会话密钥。  此密钥将加密 XML 元素，然后其自身将被加密并被放置在 XML 文档中。  
+5. 使用 <xref:System.Security.Cryptography.Aes> 类创建新的会话密钥。  此密钥将加密 XML 元素，然后其自身将被加密并被放置在 XML 文档中。  
   
      [!code-csharp[HowToEncryptXMLElementAsymmetric#6](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/cs/sample.cs#6)]
      [!code-vb[HowToEncryptXMLElementAsymmetric#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementAsymmetric/vb/sample.vb#6)]  
@@ -129,18 +129,24 @@ ms.locfileid: "84277370"
   
 ## <a name="compiling-the-code"></a>编译代码  
   
-- 若要编译此示例，需要包含对 `System.Security.dll` 的引用。  
+- 在面向 .NET Framework 的项目中，包含对的引用 `System.Security.dll` 。
+
+- 在面向 .NET Core 或 .NET 5 的项目中，安装 NuGet 包[System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml)。
   
 - 包括以下命名空间：<xref:System.Xml>、<xref:System.Security.Cryptography> 和 <xref:System.Security.Cryptography.Xml>。  
   
-## <a name="net-framework-security"></a>.NET Framework 安全性  
- 永远不要以纯文本形式存储对称加密密钥，也不要以纯文本形式在计算机之间传输对称密钥。  此外，绝不存储或传输纯文本形式的非对称密钥的私钥。  有关对称和非对称加密密钥的详细信息，请参阅[生成加密和解密密钥](generating-keys-for-encryption-and-decryption.md)。  
-  
- 绝不将密钥直接嵌入源代码。  使用[Ildasm （IL 拆装器）](../../framework/tools/ildasm-exe-il-disassembler.md)或在文本编辑器（例如记事本）中打开程序集，可以轻松地从程序集中读取嵌入的密钥。  
-  
- 当你使用加密密钥执行操作后，通过将每个字节设置为零或通过调用托管加密类的 <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> 方法来将它从内存中清除。  加密密钥有时可从内存由调试器读取，或从硬盘读取（如果内存位置分页到磁盘）。  
-  
-## <a name="see-also"></a>另请参阅
+## <a name="net-security"></a>.NET 安全性
 
-- <xref:System.Security.Cryptography.Xml>
+永远不要以纯文本形式存储对称加密密钥，也不要以纯文本形式在计算机之间传输对称密钥。  此外，绝不存储或传输纯文本形式的非对称密钥的私钥。  有关对称和非对称加密密钥的详细信息，请参阅[生成加密和解密密钥](generating-keys-for-encryption-and-decryption.md)。  
+  
+绝不将密钥直接嵌入源代码。  [Ildasm.exe 使用 (IL 拆装器) ](../../framework/tools/ildasm-exe-il-disassembler.md)或通过在文本编辑器（例如记事本）中打开程序集，可以轻松地从程序集中读取嵌入的密钥。  
+  
+当你使用加密密钥执行操作后，通过将每个字节设置为零或通过调用托管加密类的 <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> 方法来将它从内存中清除。  加密密钥有时可从内存由调试器读取，或从硬盘读取（如果内存位置分页到磁盘）。  
+  
+## <a name="see-also"></a>请参阅
+
+- [加密模型](cryptography-model.md)
+- [加密服务](cryptographic-services.md)
+- [跨平台加密](cross-platform-cryptography.md)- <xref:System.Security.Cryptography.Xml>
 - [如何：用非对称密钥对 XML 元素进行解密](how-to-decrypt-xml-elements-with-asymmetric-keys.md)
+- [ASP.NET Core 数据保护](/aspnet/core/security/data-protection/introduction)

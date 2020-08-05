@@ -70,7 +70,7 @@
       href: tutorials/attributes.md
 - name: C# 教程
   items:
-    - name: 介绍
+    - name: 简介
       href: tour-of-csharp/index.md
     - name: 程序结构
       href: tour-of-csharp/program-structure.md
@@ -88,7 +88,7 @@
       href: tour-of-csharp/interfaces.md
     - name: 委托
       href: tour-of-csharp/delegates.md
-    - name: 特性
+    - name: 属性
       href: tour-of-csharp/attributes.md
 - name: C# 中的新增功能
   items:
@@ -233,7 +233,7 @@
       href: programming-guide/interop/index.md
     - name: 记录代码
       href: codedoc.md
-    - name: 版本管理
+    - name: 版本控制
       href: versioning.md
 - name: 操作指南 C# 文章
   items:
@@ -346,7 +346,7 @@
               href: programming-guide/concepts/async/handling-reentrancy-in-async-apps.md
             - name: 使用 Async 以进行文件访问
               href: programming-guide/concepts/async/using-async-for-file-access.md
-        - name: 特性
+        - name: 属性
           items:
             - name: 概述
               displayName: attributes
@@ -876,8 +876,6 @@
           href: programming-guide/statements-expressions-operators/index.md
         - name: 语句
           href: programming-guide/statements-expressions-operators/statements.md
-        - name: 表达式
-          href: programming-guide/statements-expressions-operators/expressions.md
         - name: Expression-Bodied 成员
           href: programming-guide/statements-expressions-operators/expression-bodied-members.md
         - name: 匿名函数
@@ -925,7 +923,7 @@
           href: programming-guide/classes-and-structs/objects.md
         - name: 继承
           href: programming-guide/classes-and-structs/inheritance.md
-        - name: 多态性
+        - name: 多形性
           items:
             - name: 概述
               displayName: polymorphism
@@ -1353,7 +1351,7 @@
                   href: language-reference/keywords/accessibility-domain.md
                 - name: 可访问性级别的使用限制
                   href: language-reference/keywords/restrictions-on-using-accessibility-levels.md
-                - name: internal
+                - name: 内部
                   href: language-reference/keywords/internal.md
                 - name: private
                   href: language-reference/keywords/private.md
@@ -1463,7 +1461,7 @@
               href: language-reference/keywords/out-parameter-modifier.md
         - name: 命名空间关键字
           items:
-            - name: namespace
+            - name: 命名空间
               href: language-reference/keywords/namespace.md
             - name: using
               items:
@@ -1495,7 +1493,7 @@
               href: language-reference/keywords/this.md
         - name: 文字关键字
           items:
-            - name: 'null'
+            - name: 'Null'
               href: language-reference/keywords/null.md
             - name: true 和 false
               href: language-reference/builtin-types/bool.md
@@ -1537,7 +1535,7 @@
               href: language-reference/keywords/select-clause.md
             - name: group 子句
               href: language-reference/keywords/group-clause.md
-            - name: into
+            - name: 更改为
               href: language-reference/keywords/into.md
             - name: orderby 子句
               href: language-reference/keywords/orderby-clause.md
@@ -1561,7 +1559,7 @@
       items:
         - name: 概述
           href: language-reference/operators/index.md
-          displayName: 'operator precedence, operator associativity'
+          displayName: 'operator precedence, operator associativity, expressions'
         - name: 算术运算符
           href: language-reference/operators/arithmetic-operators.md
           displayName: '++, --, +, -, *, /, %, +=, -=, *=, /=, %=, checked, unchecked'

@@ -1,27 +1,33 @@
 ---
 title: 如何：创建 WindowsPrincipal 对象
-ms.date: 03/30/2017
+ms.date: 07/15/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - WindowsPrincipal objects, creating
-- security [.NET Framework], creating a WindowsPrincipal object
-- security [.NET Framework], principals
+- security [.NET], creating a WindowsPrincipal object
+- security [.NET], principals
 - principal objects, creating
 ms.assetid: 56eb10ca-e61d-4ed2-af7a-555fc4c25a25
-ms.openlocfilehash: 6064c98c4e1e5153f4e0de4849de196228972a89
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d99d63dc766f37e7cc30888d2e77657595f909af
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84284424"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557029"
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>如何：创建 WindowsPrincipal 对象
+
+> [!NOTE]
+> 本文适用于 Windows。
+>
+> 有关 ASP.NET Core 的信息，请参阅[ASP.NET Core 安全性](/aspnet/core/security/)。
+
 有两种方法来创建 <xref:System.Security.Principal.WindowsPrincipal> 对象，具体取决于代码必须重复执行基于角色的验证还是必须只能执行一次。  
   
- 如果代码必须重复执行基于角色的验证，则下列过程的第一个将生成更少的开销。 当代码只需要进行一次基于角色的验证时，你可以使用以下过程的第二个来创建 <xref:System.Security.Principal.WindowsPrincipal> 对象。  
+如果代码必须重复执行基于角色的验证，则下列过程的第一个将生成更少的开销。 当代码只需要进行一次基于角色的验证时，你可以使用以下过程的第二个来创建 <xref:System.Security.Principal.WindowsPrincipal> 对象。  
   
 ### <a name="to-create-a-windowsprincipal-object-for-repeated-validation"></a>若要创建 WindowsPrincipal 对象用于重复验证  
   
@@ -75,6 +81,7 @@ ms.locfileid: "84284424"
   
 3. 创建主体对象后，你可以使用若干方法中的一种对其进行验证。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [主体和标识对象](principal-and-identity-objects.md)
+- [ASP.NET Core 安全性](https://docs.microsoft.com/aspnet/core/security/)

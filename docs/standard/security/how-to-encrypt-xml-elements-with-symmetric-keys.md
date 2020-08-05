@@ -1,30 +1,30 @@
 ---
 title: 如何：用对称密钥对 XML 元素进行加密
-ms.date: 03/30/2017
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
 helpviewer_keywords:
 - AES algorithm
-- cryptography [.NET Framework], symmetric keys
-- encryption [.NET Framework], symmetric keys
+- cryptography [.NET], symmetric keys
+- encryption [.NET], symmetric keys
 - symmetric keys
 - System.Security.Cryptography.EncryptedXml class
-- System.Security.Cryptography.RijndaelManaged class
+- System.Security.Cryptography.Aes class
 - XML encryption
 - Advanced Encryption Standard algorithm
-- Rijndael
 ms.assetid: d8461a44-aa2c-4ef4-b3e4-ab7cbaaee1b5
-ms.openlocfilehash: 1ad75b7f36130a9f3acad97f724406650a7fdb68
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: dd69ec6a5317f7f6f800cd225d920a1934c77a0c
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84277318"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555808"
 ---
 # <a name="how-to-encrypt-xml-elements-with-symmetric-keys"></a>如何：用对称密钥对 XML 元素进行加密
-可以使用 <xref:System.Security.Cryptography.Xml> 命名空间中的类加密 XML 文档内的元素。  XML 加密可用于存储或传输敏感 XML，而无需担心数据被轻易读取。  此过程使用高级加密标准（AES）算法（也称为 Rijndael）对 XML 元素进行加密。  
+
+可以使用 <xref:System.Security.Cryptography.Xml> 命名空间中的类加密 XML 文档内的元素。  XML 加密可用于存储或传输敏感 XML，而无需担心数据被轻易读取。  此过程使用高级加密标准 (AES) 算法对 XML 元素进行加密。  
   
  有关如何解密使用此过程加密的 XML 元素的信息，请参阅[如何：使用对称密钥对 Xml 元素进行解密](how-to-decrypt-xml-elements-with-symmetric-keys.md)。  
   
@@ -34,7 +34,7 @@ ms.locfileid: "84277318"
   
 ### <a name="to-encrypt-an-xml-element-with-a-symmetric-key"></a>使用对称密钥加密 XML 元素  
   
-1. 使用 <xref:System.Security.Cryptography.RijndaelManaged> 类生成对称密钥。  此密钥将用于加密 XML 元素。  
+1. 使用 <xref:System.Security.Cryptography.Aes> 类生成对称密钥。  此密钥将用于加密 XML 元素。  
   
      [!code-csharp[HowToEncryptXMLElementSymmetric#2](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/cs/sample.cs#2)]
      [!code-vb[HowToEncryptXMLElementSymmetric#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/HowToEncryptXMLElementSymmetric/vb/sample.vb#2)]  
@@ -90,16 +90,23 @@ ms.locfileid: "84277318"
   
 ## <a name="compiling-the-code"></a>编译代码  
   
-- 若要编译此示例，需要包含对 `System.Security.dll` 的引用。  
+- 在面向 .NET Framework 的项目中，包含对的引用 `System.Security.dll` 。
+
+- 在面向 .NET Core 或 .NET 5 的项目中，安装 NuGet 包[System.Security.Cryptography.Xml](https://www.nuget.org/packages/System.Security.Cryptography.Xml)。
   
 - 包括以下命名空间：<xref:System.Xml>、<xref:System.Security.Cryptography> 和 <xref:System.Security.Cryptography.Xml>。  
   
-## <a name="net-framework-security"></a>.NET Framework 安全性  
- 永远不要以纯文本形式存储加密密钥，也不要以纯文本形式在计算机之间传输密钥。  请转而使用安全的密钥容器来存储加密密钥。  
-  
- 当你使用加密密钥执行操作后，通过将每个字节设置为零或通过调用托管加密类的 <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> 方法来将它从内存中清除。  
-  
-## <a name="see-also"></a>另请参阅
+## <a name="net-security"></a>.NET 安全性
 
+永远不要以纯文本形式存储加密密钥，也不要以纯文本形式在计算机之间传输密钥。  请转而使用安全的密钥容器来存储加密密钥。  
+  
+当你使用加密密钥执行操作后，通过将每个字节设置为零或通过调用托管加密类的 <xref:System.Security.Cryptography.SymmetricAlgorithm.Clear%2A> 方法来将它从内存中清除。  
+  
+## <a name="see-also"></a>请参阅
+
+- [加密模型](cryptography-model.md)-介绍如何在基类库中实现加密。
+- [加密服务](cryptographic-services.md)
+- [跨平台加密](cross-platform-cryptography.md)
 - <xref:System.Security.Cryptography.Xml>
 - [如何：用对称密钥对 XML 元素进行解密](how-to-decrypt-xml-elements-with-symmetric-keys.md)
+- [ASP.NET Core 数据保护](/aspnet/core/security/data-protection/introduction)

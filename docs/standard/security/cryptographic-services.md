@@ -1,46 +1,44 @@
 ---
 title: 加密服务
-description: 阅读有关 .NET 支持的加密方法和实践的概述，例如 ClickOnce 清单、Suite B、& 下一代加密技术（CNG）支持。
-ms.date: 03/30/2017
+description: .NET 支持的加密方法和实践的概述。
+ms.date: 07/14/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- cryptography [.NET Framework]
+- cryptography [.NET]
 - pattern of derived class inheritance
 - digital signatures
 - asymmetric cryptographic algorithms
 - digital signatures, public-key systems
 - public keys
-- decryption [.NET Framework]
+- decryption [.NET]
 - private keys
 - MAC algorithms
 - cryptographic algorithms
 - private keys, overview
-- encryption [.NET Framework]
-- security [.NET Framework], encryption
+- encryption [.NET]
+- security [.NET], encryption
 - cryptographic services
 - symmetric cryptographic algorithms
 - hash
 - message authentication codes
 - derived class inheritance
-- cryptography [.NET Framework], about
+- cryptography [.NET], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-ms.openlocfilehash: 701dce82669395743c884a613512bfadc06c91b3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4cd4e493e0e7d159b2749dac78b9a560e20fd75c
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596327"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557016"
 ---
 # <a name="cryptographic-services"></a>加密服务
 
 公共网络（如 Internet）不提供实体之间安全通信的方式。 此类网络上的通信易被读取或甚至被未经授权的第三方修改。 加密有助于防止数据被查看，提供检测数据是否已修改的方法，并帮助提供一种跨不安全通道安全通信的方式。 例如，数据可通过使用加密算法进行加密、以加密状态进行传输并在稍后由预期方进行解密。 如果某个第三方截获了加密数据，将很难解密此数据。
 
-在 .NET Framework 中， <xref:System.Security.Cryptography?displayProperty=nameWithType> 命名空间中的类将为你管理很多有关加密的详细信息。 一些类是非托管的 Microsoft 加密 API (CryptoAPI) 的包装，而其他类则是纯托管实现。 无需是加密方面的专家，即可使用这些类。 在创建其中一个加密算法类的新实例时，为易于使用，将自动生成密钥，并且默认属性将尽可能地安全可靠。
+在 .NET 中，命名空间中的类 <xref:System.Security.Cryptography> 可管理很多有关加密的详细信息。 有些是操作系统实现的包装器，而另一些则是纯托管实现。 无需是加密方面的专家，即可使用这些类。 在创建其中一个加密算法类的新实例时，为易于使用，将自动生成密钥，并且默认属性将尽可能地安全可靠。
 
-本概述提供 .NET Framework 支持的加密方法和实践的概要，包括 .NET Framework 3.5 中引入的 ClickOnce 清单、Suite B 和加密下一代加密技术（CNG）支持。
-
-有关加密以及允许向应用程序添加加密安全的 Microsoft 服务、组件和工具的其他信息，请参阅本文档的“Win32 和 COM 开发、安全”部分。
+本概述提供 .NET 支持的加密方法和惯例的概要，包括 ClickOnce 清单。
 
 ## <a name="cryptographic-primitives"></a>加密基元
 
@@ -58,7 +56,7 @@ ms.locfileid: "84596327"
 
 若要实现这些目标，可以使用称为加密基元的算法和惯例的组合来创建加密方案。 下表列出了加密基元以及其用途。
 
-|加密基元|用途|
+|加密基元|使用|
 |-----------------------------|---------|
 |私钥加密（对称加密）|在数据上执行转换，以防止其被第三方读取。 此类型的加密使用单个共享的密钥来加密和解密数据。|
 |公钥加密（非对称加密）|在数据上执行转换，以防止其被第三方读取。 此类型的加密使用公钥/私钥对来加密和解密数据。|
@@ -83,21 +81,13 @@ ms.locfileid: "84596327"
 
 密钥加密的缺点是它假定双方已商定密钥和 IV，并互相传达了密钥和 IV 的值。 IV 不被视为机密，并可以以纯文本的形式通过消息传输。 但是，密钥必须对未经授权的用户保密。 由于存在这些问题，密钥加密通常与公钥加密一起使用，以秘密地传达密钥和 IV 的值。
 
-假定 Alice 和 Bob 是想通过非安全通道进行通信的双方，则他们可能按如下所示使用密钥加密：Alice 和 Bob 同意使用某种具有特定密钥和 IV 的特定算法（例如 AES）。 Alice 撰写一条消息，并创建要在其上发送消息的网络流（可能为命名管道或网络电子邮件）。 接下来，她使用密钥和 IV 对文本进行加密，然后通过 intranet 向 Bob 发送加密的消息和 IV。 Bob 收到加密文本并使用 IV 和之前商定的密钥对其进行解密。 如果传输被截获，侦听器无法恢复原始消息，因为它们不知道密钥。 在此方案中，只有密钥必须保持机密。 在实际方案中，Alice 和 Bob 都可以生成密钥并使用公钥（非对称）加密将密钥（对称）传递给另一方。 有关公钥加密的详细信息，请参阅下一节。
+假定 Alice 和 Bob 是想通过非安全通道进行通信的双方，则他们可能按如下所示使用密钥加密：Alice 和 Bob 同意使用某种具有特定密钥和 IV 的特定算法（例如 AES）。 Alice 撰写了一条消息，并创建了一个网络流， (可能要在其上发送消息的命名管道或网络电子邮件) 。 接下来，她使用密钥和 IV 对文本进行加密，然后通过 intranet 向 Bob 发送加密的消息和 IV。 Bob 收到加密文本并使用 IV 和之前商定的密钥对其进行解密。 如果传输被截获，侦听器无法恢复原始消息，因为它们不知道密钥。 在此方案中，只有密钥必须保持机密。 在实际方案中，Alice 和 Bob 都可以生成密钥并使用公钥（非对称）加密将密钥（对称）传递给另一方。 有关公钥加密的详细信息，请参阅下一节。
 
-.NET Framework 提供以下实现密钥加密算法的类：
+.NET 提供以下实现密钥加密算法的类：
 
-- <xref:System.Security.Cryptography.AesManaged>（在 .NET Framework 3.5）中引入。
+- <xref:System.Security.Cryptography.Aes>
 
-- <xref:System.Security.Cryptography.DESCryptoServiceProvider>.
-
-- <xref:System.Security.Cryptography.HMACSHA1> （从技术上讲，这是一种密钥算法，因为它代表使用与密钥结合的加密哈希函数计算的消息验证代码。 请参阅本主题之后的 [哈希值](#hash-values)。）
-
-- <xref:System.Security.Cryptography.RC2CryptoServiceProvider>.
-
-- <xref:System.Security.Cryptography.RijndaelManaged>.
-
-- <xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>.
+- <xref:System.Security.Cryptography.HMACSHA256>、<xref:System.Security.Cryptography.HMACSHA384> 和 <xref:System.Security.Cryptography.HMACSHA512>。  (这些是技术上的机密密钥算法，因为它们表示消息身份验证代码，这些代码是通过将加密哈希函数与密钥结合使用来计算的。 请参阅本文后面部分的[哈希值](#hash-values)) 
 
 ## <a name="public-key-encryption"></a>公钥加密
 
@@ -123,23 +113,17 @@ ms.locfileid: "84596327"
 
 - 公钥算法与密钥算法相比非常慢，且其设计目的不是用于加密大量数据。 公钥算法仅对传输极少量的数据很有用。 通常情况下，公钥加密用于加密密钥算法要使用的密钥和 IV。 在密钥和 IV 传输完成后，密钥加密将用于对会话的其余部分加密。
 
-.NET Framework 提供了以下实现公钥加密算法的类：
+.NET 提供了以下实现公钥算法的类：
 
-- <xref:System.Security.Cryptography.DSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.RSA>
 
-- <xref:System.Security.Cryptography.RSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.ECDsa>
 
-- <xref:System.Security.Cryptography.ECDiffieHellman> （基类）
+- <xref:System.Security.Cryptography.ECDiffieHellman>
 
-- <xref:System.Security.Cryptography.ECDiffieHellmanCng>
+- <xref:System.Security.Cryptography.DSA>
 
-- <xref:System.Security.Cryptography.ECDiffieHellmanCngPublicKey> （基类）
-
-- <xref:System.Security.Cryptography.ECDiffieHellmanKeyDerivationFunction> （基类）
-
-- <xref:System.Security.Cryptography.ECDsaCng>
-
-RSA 允许加密和签名，但 DSA 仅可用于签名，而 Diffie-Hellman 仅可用于生成密钥。 一般情况下，公钥算法的使用比私钥算法的更受限制。
+RSA 允许加密和签名，但 DSA 仅可用于签名。 DSA 不如 RSA 那么安全，我们建议 RSA。 Diffie-hellman 仅可用于生成密钥。 一般情况下，公钥算法的使用比私钥算法的更受限制。
 
 ## <a name="digital-signatures"></a>数字签名
 
@@ -150,15 +134,13 @@ RSA 允许加密和签名，但 DSA 仅可用于签名，而 Diffie-Hellman 仅�
 > [!NOTE]
 > 任何人都可以验证签名，因为发件人的公钥众所周知，并且通常包含在数字签名格式中。 此方法不会保留消息的秘密性；对于机密消息，它也必须加密。
 
-.NET Framework 提供以下实现数字签名算法的类：
+.NET 提供以下实现数字签名算法的类：
 
-- <xref:System.Security.Cryptography.DSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.RSA>
 
-- <xref:System.Security.Cryptography.RSACryptoServiceProvider>
+- <xref:System.Security.Cryptography.ECDsa>
 
-- <xref:System.Security.Cryptography.ECDsa> （基类）
-
-- <xref:System.Security.Cryptography.ECDsaCng>
+- <xref:System.Security.Cryptography.DSA>
 
 ## <a name="hash-values"></a>哈希值
 
@@ -168,7 +150,7 @@ RSA 允许加密和签名，但 DSA 仅可用于签名，而 Diffie-Hellman 仅�
 
 - Alice 向 Bob 发送纯文本消息和经过哈希处理的消息（数字签名）。 Bob 接收消息并进行哈希处理，然后将其哈希值与从 Alice 处接收到的哈希值进行比较。 如果哈希值相同，则消息未更改。 如果值不同，则消息在 Alice 编写后遭到更改。
 
-  遗憾的是，此方法不会确定发件人的真伪。 任何人都可以模仿 Alice 并向 Bob 发送消息。 他们可以使用相同的哈希算法来签署消息，而 Bob 可确定的只是消息与它的签名相匹配。 这是中间人攻击的一种形式。 有关详细信息，请参阅[下一代加密技术（CNG）安全通信示例](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100))。
+  遗憾的是，此方法不会确定发件人的真伪。 任何人都可以模仿 Alice 并向 Bob 发送消息。 他们可以使用相同的哈希算法来签署消息，而 Bob 可确定的只是消息与它的签名相匹配。 这是中间人攻击的一种形式。 有关详细信息，请参阅[下一代加密 (CNG) 安全通信示例](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100))。
 
 - Alice 通过非安全的公共通道向 Bob 发送纯文本消息。 Alice 通过安全的专用通道向 Bob 发送经过哈希处理的消息。 Bob 接收纯文本消息，对其进行哈希处理并将此哈希值与私下交换的哈希值进行比较。 如果哈希值匹配，则 Bob 知道两件事：
 
@@ -184,38 +166,21 @@ RSA 允许加密和签名，但 DSA 仅可用于签名，而 Diffie-Hellman 仅�
 
 之前的方法都无法防止他人读取 Alice 的消息，因为消息是以纯文本的形式传输的。 完整安全模式通常要求数字签名（消息签名）和加密。
 
-.NET Framework 提供了以下实现哈希算法的类：
+.NET 提供了以下实现哈希算法的类：
 
-- <xref:System.Security.Cryptography.HMACSHA1>.
+- <xref:System.Security.Cryptography.SHA256>.
 
-- <xref:System.Security.Cryptography.MACTripleDES>.
+- <xref:System.Security.Cryptography.SHA384>.
 
-- <xref:System.Security.Cryptography.MD5CryptoServiceProvider>.
+- <xref:System.Security.Cryptography.SHA512>.
 
-- <xref:System.Security.Cryptography.RIPEMD160>.
-
-- <xref:System.Security.Cryptography.SHA1Managed>.
-
-- <xref:System.Security.Cryptography.SHA256Managed>.
-
-- <xref:System.Security.Cryptography.SHA384Managed>.
-
-- <xref:System.Security.Cryptography.SHA512Managed>.
-
-- 所有安全哈希算法 (SHA)、消息摘要 5 (MD5) 和 ripemd-160 算法的 HMAC 变体。
-
-- 所有 SHA 算法的 CryptoServiceProvider 实现（托管的代码包装）。
-
-- 所有 MD5 和 SHA 算法的下一代加密技术 (CNG) 实现。
-
-> [!NOTE]
-> MD5 的设计缺陷发现于 1996 年，并建议改用 SHA-1。 在 2004 年，发现了其他缺陷，MD5 算法被认为不再安全。 Sha-1 算法也发现不安全，现在建议改用 SHA-2。
+.NET 还提供了 <xref:System.Security.Cryptography.MD5> 和 <xref:System.Security.Cryptography.SHA1> 。 但是，MD5 和 SHA-1 算法已发现不安全，现在建议改用 SHA-1。 SHA-1 包含 SHA256、SHA384 和 SHA512。
 
 ## <a name="random-number-generation"></a>随机数生成
 
 随机数生成是很多加密操作的必要组成部分。 例如，加密密钥需要尽可能的随机，以便使其很难再现。 加密随机数生成器必须生成在计算上预测的可能性不可大于 50% 的输出。 因此，预测下一个输出位的任何方法均不能比随机推测执行地更好。 .NET Framework 中的类使用随机数生成器来生成加密密钥。
 
-<xref:System.Security.Cryptography.RNGCryptoServiceProvider> 类是随机数生成器算法的一个实现。
+<xref:System.Security.Cryptography.RandomNumberGenerator> 类是随机数生成器算法的一个实现。
 
 ## <a name="clickonce-manifests"></a>ClickOnce 清单
 
@@ -237,25 +202,9 @@ RSA 允许加密和签名，但 DSA 仅可用于签名，而 Diffie-Hellman 仅�
 
 - <xref:System.Security.Cryptography.X509Certificates.TrustStatus> 提供了一个检查验证码签名是否可信的简单方法。
 
-## <a name="suite-b-support"></a>Suite B 支持
-
-.NET Framework 3.5 支持国家安全局（NSA）发布的 Suite B 一组加密算法。 有关 Suite B 的详细信息，请参阅 [NSA Suite B 加密一览表](https://www.nsa.gov/what-we-do/information-assurance/)。
-
-包括以下算法：
-
-- 用于加密的密钥大小为 128、192 和 256 位的高级加密标准 (AES) 算法。
-
-- 用于哈希处理的安全哈希算法 SHA-1、SHA-256、SHA-384 和 SHA-512。 （最后三个通常分在一组，称为 SHA-2。）
-
-- 使用 256 位、384 位和 521 位素数模数曲线进行签名的椭圆曲线数字签名算法 (ECDSA)。 NSA 文档具体定义了这些曲线并将其称为 P-256、P-384 和 P-521。 此算法由 <xref:System.Security.Cryptography.ECDsaCng> 类提供。 它允许你使用私钥进行签名并使用的公钥对签名进行验证。
-
-- 使用 256 位、384 位和 521 位素数模数曲线进行密钥交换和机密协议的椭圆曲线 Diffie-Hellman (ECDH) 算法。 此算法由 <xref:System.Security.Cryptography.ECDiffieHellmanCng> 类提供。
-
-美国联邦信息处理标准 (FIPS) 认证实现的 AES、SHA-256、SHA-384 和 SHA-512 实现的托管代码包装在新的 <xref:System.Security.Cryptography.AesCryptoServiceProvider>、 <xref:System.Security.Cryptography.SHA256CryptoServiceProvider>、 <xref:System.Security.Cryptography.SHA384CryptoServiceProvider>和 <xref:System.Security.Cryptography.SHA512CryptoServiceProvider> 类中可用。
-
 ## <a name="cryptography-next-generation-cng-classes"></a>下一代加密技术 (CNG) 类
 
-下一代加密技术 (CNG) 类提供了围绕本机 CNG 函数的托管包装。 （CNG 是 CryptoAPI 的替代。）这些类的名称中包含 "Cng"。 “中心到 CNG”包装类是 <xref:System.Security.Cryptography.CngKey> 密钥容器类，它将提取 CNG 密钥的存储和用法。 此类允许安全地存储密钥对或公钥并使用简单的字符串名称对其进行引用。 基于椭圆曲线的 <xref:System.Security.Cryptography.ECDsaCng> 签名类和 <xref:System.Security.Cryptography.ECDiffieHellmanCng> 加密类可以使用 <xref:System.Security.Cryptography.CngKey> 对象。
+在 .NET Framework 3.5 及更高版本中，下一代加密技术 (CNG) 类提供了围绕本机 CNG 函数的托管包装。  (CNG 是 CryptoAPI 的替代。 ) 这些类的名称包含 "Cng"。 “中心到 CNG”包装类是 <xref:System.Security.Cryptography.CngKey> 密钥容器类，它将提取 CNG 密钥的存储和用法。 此类允许安全地存储密钥对或公钥并使用简单的字符串名称对其进行引用。 基于椭圆曲线的 <xref:System.Security.Cryptography.ECDsaCng> 签名类和 <xref:System.Security.Cryptography.ECDiffieHellmanCng> 加密类可以使用 <xref:System.Security.Cryptography.CngKey> 对象。
 
 <xref:System.Security.Cryptography.CngKey> 类用于各种其他操作，包括打开、创建、删除和导出密钥。 在直接调用本机函数时，它还提供对要使用的基础密钥句柄的访问。
 
@@ -267,10 +216,9 @@ RSA 允许加密和签名，但 DSA 仅可用于签名，而 Diffie-Hellman 仅�
 
 - <xref:System.Security.Cryptography.CngProperty> 维护经常使用的密钥属性。
 
-## <a name="related-topics"></a>相关主题
+## <a name="see-also"></a>请参阅
 
-|Title|描述|
-|-----------|-----------------|
-|[加密模型](cryptography-model.md)|介绍如何在基类库中实现加密。|
-|[演练：创建加密应用程序](walkthrough-creating-a-cryptographic-application.md)|演示基本加密和解密任务。|
-|[配置加密类](../../framework/configure-apps/configure-cryptography-classes.md)|介绍如何将算法名称映射到加密类，以及如何将对象标识符映射到加密算法。|
+- [加密模型](cryptography-model.md)-介绍如何在基类库中实现加密。
+- [跨平台加密](cross-platform-cryptography.md)
+- [使用填充对 CBC 模式对称解密的漏洞进行计时](vulnerabilities-cbc-mode.md)
+- [ASP.NET Core 数据保护](/aspnet/core/security/data-protection/introduction)

@@ -1,20 +1,20 @@
 ---
 title: 安全性和用户输入
 description: 你的代码可能会将用户输入的数据作为参数传递给其他代码，这可能会影响安全性。 可以执行范围检查以拒绝出现问题的输入。
-ms.date: 03/30/2017
+ms.date: 07/15/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
-- security [.NET Framework], user input
+- security [.NET], user input
 - user input, security
 - secure coding, user input
 - code security, user input
 ms.assetid: 9141076a-96c9-4b01-93de-366bb1d858bc
-ms.openlocfilehash: 995af30385790a88718193e7abad1db7bc4b56c3
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e46bf8e653567637b4e6236849981fdb32df447c
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84275940"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555937"
 ---
 # <a name="security-and-user-input"></a>安全性和用户输入
 
@@ -58,6 +58,7 @@ ms.locfileid: "84275940"
 
 - 请注意，用户名可能不止有一种规范格式。 例如，经常可以使用 MYDOMAIN\\*username* 形式或 *username*@mydomain.example.com 形式。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [代码安全维护指南](secure-coding-guidelines.md)
+- [ASP.NET Core 安全性](/aspnet/core/security/)

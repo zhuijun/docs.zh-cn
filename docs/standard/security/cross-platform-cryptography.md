@@ -6,16 +6,16 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - cryptography, cross-platform
 - encryption, cross-platform
-ms.openlocfilehash: 793a9bc55e5bd660374abd2ae81899e63ce3f36a
-ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
+ms.openlocfilehash: 61fd49e53761deac278b770003eb97241b6c2be9
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85854022"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87557146"
 ---
 # <a name="cross-platform-cryptography-in-net-core-and-net-5"></a>.NET Core 和 .NET 5 中的跨平台加密
 
-.NET Core 和 .NET 5 中的加密操作由操作系统（OS）库完成。 此依赖项具有以下优势：
+.NET Core 和 .NET 5 中的加密操作由操作系统 (操作系统) 库完成。 此依赖项具有以下优势：
 
 * .NET 应用从操作系统可靠性中获益。 为操作系统供应商提供了高优先级的安全加密库，使其免受漏洞的侵害。 为此，它们提供了系统管理员应应用的更新。
 * 如果 OS 库是 FIPS 验证的，则 .NET 应用有权访问经过 FIPS 验证的算法。
@@ -26,7 +26,7 @@ ms.locfileid: "85854022"
 
 ## <a name="hash-algorithms"></a>哈希算法
 
-所有哈希算法和基于哈希的消息身份验证（HMAC）类（包括类）都 `*Managed` 遵从操作系统库。 尽管各种 OS 库的性能有所不同，但它们应该是兼容的。
+所有哈希算法和基于哈希的消息身份验证 (HMAC) 类（包括 `*Managed` 类）遵从操作系统库。 尽管各种 OS 库的性能有所不同，但它们应该是兼容的。
 
 ## <a name="symmetric-encryption"></a>对称加密
 
@@ -43,13 +43,13 @@ ms.locfileid: "85854022"
 
 ## <a name="authenticated-encryption"></a>经过身份验证的加密
 
-经过身份验证的加密（AE）支持通过和类提供给 AES-CCM 和 <xref:System.Security.Cryptography.AesCcm?displayProperty=fullName> aes <xref:System.Security.Cryptography.AesGcm?displayProperty=fullName> 。
+经过身份验证的加密 (通过和类为 AES-CCM 和 AES 提供) 支持 <xref:System.Security.Cryptography.AesCcm?displayProperty=fullName> <xref:System.Security.Cryptography.AesGcm?displayProperty=fullName> 。
 
 在 Windows 和 Linux 上，由 OS 库提供 AES-CCM 和 AES GCM 的实现。
 
 ### <a name="aes-ccm-and-aes-gcm-on-macos"></a>MacOS 上的 AES-CCM 和 AES-GCM
 
-在 macOS 上，系统库不支持第三方代码的 AES-CCM 或 AES-GCM，因此 <xref:System.Security.Cryptography.AesCcm> 和 <xref:System.Security.Cryptography.AesGcm> 类使用 OpenSSL 来提供支持。 MacOS 上的用户需要获取 OpenSSL （libcrypto）的相应副本，这些类型才能正常工作，并且它必须位于系统默认加载库的路径中。 建议从包管理器（例如 Homebrew）安装 OpenSSL。
+在 macOS 上，系统库不支持第三方代码的 AES-CCM 或 AES-GCM，因此 <xref:System.Security.Cryptography.AesCcm> 和 <xref:System.Security.Cryptography.AesGcm> 类使用 OpenSSL 来提供支持。 MacOS 上的用户需要获取 OpenSSL (libcrypto) 的相应副本，这些类型才能正常工作，并且它必须位于系统默认加载库的路径中。 建议从包管理器（例如 Homebrew）安装 OpenSSL。
 
 `libcrypto.0.9.7.dylib` `libcrypto.0.9.8.dylib` MacOS 中包含的和库来自早期版本的 OpenSSL，不会使用。 `libcrypto.35.dylib`、 `libcrypto.41.dylib` 和 `libcrypto.42.dylib` 库来自 LibreSSL，不会使用。
 
@@ -61,11 +61,11 @@ ms.locfileid: "85854022"
 
 * Nonce 大小
 
-  <xref:System.Security.Cryptography.AesCcm>类支持56、64、72、80、88、96和104（7、8、9、10、11、12和13字节）的 nonce。
+  <xref:System.Security.Cryptography.AesCcm>类支持56、64、72、80、88、96和 104 (7、8、9、10、11、12和13字节) nonce。
 
 * 标记大小
 
-  <xref:System.Security.Cryptography.AesCcm>类支持创建或处理32、48、64、80、96、112和 128-bit （4、8、10、12、14和16字节）标记。
+  <xref:System.Security.Cryptography.AesCcm>类支持创建或处理32、48、64、80、96、112和 128 (4、8、10、12、14和16字节) 标记。
 
 ### <a name="aes-gcm-keys-nonces-and-tags"></a>AES-GCM 密钥、nonce 和标记
 
@@ -75,11 +75,11 @@ ms.locfileid: "85854022"
 
 * Nonce 大小
 
-  <xref:System.Security.Cryptography.AesGcm>类仅支持96位（12字节） nonce。
+  <xref:System.Security.Cryptography.AesGcm>类仅支持96位 (12 字节的) nonce。
 
 * 标记大小
 
-  <xref:System.Security.Cryptography.AesGcm>类支持创建或处理96、104、112、120和128（12、13、14、15和16字节）标记。
+  <xref:System.Security.Cryptography.AesGcm>类支持创建或处理96、104、112、120和 128 (12、13、14、15和16字节的) 标记。
 
 ## <a name="asymmetric-cryptography"></a>非对称加密
 
@@ -92,29 +92,29 @@ ms.locfileid: "85854022"
 
 ### <a name="rsa"></a>RSA
 
-RSA （Rivest – Rivest-shamir-adleman – Rivest-shamir-adleman）密钥生成由 OS 库执行，并受其大小限制和性能特征的限制。
+RSA (Rivest – Rivest-shamir-adleman – Rivest-shamir-adleman) 密钥生成由 OS 库执行，并受其大小限制和性能特征的限制。
 
 RSA 密钥操作由 OS 库执行，可以加载的密钥类型受操作系统要求的限制。
 
-.NET 不公开 "原始" （未填充） RSA 操作。
+.NET 不会 (未填充) RSA 操作公开 "原始"。
 
 OS 库用于加密和解密填充。 并非所有平台都支持相同的填充选项：
 
-| 填充模式                          | Windows （CNG） | Linux （OpenSSL） | macOS | Windows （CAPI） |
+| 填充模式                          | Windows (CNG)  | Linux (OpenSSL)  | macOS | Windows (CAPI)  |
 |---------------------------------------|---------------|-----------------|-------|----------------|
 | PKCS1 加密                      | ✔️           | ✔️              | ✔️   | ✔️             |
 | OAEP-SHA-1                          | ✔️           | ✔️              | ✔️   | ✔️             |
-| OAEP-SHA-1 （SHA256、SHA384、SHA512） | ✔️           | ✔️              | ✔️   | ❌             |
-| PKCS1 签名（MD5，SHA-1）          | ✔️           | ✔️              | ✔️   | ✔️             |
-| PKCS1 签名（SHA-1）               | ✔️           | ✔️              | ✔️   | ⚠️\*           |
+| OAEP-SHA-1 (SHA256、SHA384、SHA512)  | ✔️           | ✔️              | ✔️   | ❌             |
+| PKCS1 签名 (MD5，SHA-1)           | ✔️           | ✔️              | ✔️   | ✔️             |
+| PKCS1 签名 (SHA-1)                | ✔️           | ✔️              | ✔️   | ⚠️\*           |
 | PSS                                   | ✔️           | ✔️              | ✔️   | ❌             |
 
-\*Windows CryptoAPI （CAPI）能够 PKCS1 具有 SHA-1 算法的签名。 但可能会在不支持单个 RSA 对象的加密服务提供程序（CSP）中加载该对象。
+\*Windows CryptoAPI (CAPI) 能够具有 SHA-1 算法的 PKCS1 签名。 但可以在加密服务提供程序中加载单个 RSA 对象 (CSP) 不支持该对象。
 
 #### <a name="rsa-on-windows"></a>Windows 上的 RSA
 
-* 使用时，将使用 Windows CryptoAPI （CAPI） [`new RSACryptoServiceProvider()`](xref:System.Security.Cryptography.RSACryptoServiceProvider) 。
-* 使用时，将使用 Windows 加密 API 下一代（CNG） [`new RSACng()`](xref:System.Security.Cryptography.RSACng) 。
+* 使用时，将使用 Windows CryptoAPI (CAPI) [`new RSACryptoServiceProvider()`](xref:System.Security.Cryptography.RSACryptoServiceProvider) 。
+* 使用时，Windows 加密 API 下一代 (CNG) 使用 [`new RSACng()`](xref:System.Security.Cryptography.RSACng) 。
 * 返回的对象由 <xref:System.Security.Cryptography.RSA.Create%2A?displayProperty=nameWithType> WINDOWS CNG 在内部提供支持。 Windows CNG 的这种用法是实现详细信息，可能会有所更改。
 * 的 <xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPublicKey%2A> 扩展方法 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> 返回 <xref:System.Security.Cryptography.RSACng> 实例。 的这种用法 <xref:System.Security.Cryptography.RSACng> 是实现详细信息，可能会有所更改。
 * <xref:System.Security.Cryptography.X509Certificates.RSACertificateExtensions.GetRSAPrivateKey%2A> <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> 当前首选实例的扩展方法 <xref:System.Security.Cryptography.RSACng> ，但如果 <xref:System.Security.Cryptography.RSACng> 无法打开密钥，则 <xref:System.Security.Cryptography.RSACryptoServiceProvider> 会尝试。 首选提供程序是实现详细信息，可能会发生更改。
@@ -135,16 +135,16 @@ OS 库用于加密和解密填充。 并非所有平台都支持相同的填充�
 
 ### <a name="ecdsa"></a>ECDSA
 
-ECDSA （椭圆曲线数字签名算法）密钥生成由 OS 库完成，并受其大小限制和性能特征的限制。
+ECDSA (椭圆曲线数字签名算法) 密钥生成由 OS 库完成，并受其大小限制和性能特征的限制。
 
 ECDSA 关键曲线由 OS 库定义，并受其限制的限制。
 
 | 椭圆曲线                     | Windows 10    | Windows 7-8。1 | Linux         | macOS         |
 |------------------------------------|---------------|-----------------|---------------|---------------|
-| NIST P-256 （secp256r1）             | ✔️           | ✔️              | ✔️           | ✔️            |
-| NIST P-384 （secp384r1）             | ✔️           | ✔️              | ✔️           | ✔️            |
-| NIST P-521 （secp521r1）             | ✔️           | ✔️              | ✔️           | ✔️            |
-| Brainpool 曲线（作为命名曲线） | ✔️           | ❌              | ⚠️<sup>1</sup>| ❌           |
+| NIST P-256 (secp256r1)              | ✔️           | ✔️              | ✔️           | ✔️            |
+| NIST P-384 (secp384r1)              | ✔️           | ✔️              | ✔️           | ✔️            |
+| NIST P-521 (secp521r1)              | ✔️           | ✔️              | ✔️           | ✔️            |
+| Brainpool 曲线 (命名曲线)  | ✔️           | ❌              | ⚠️<sup>1</sup>| ❌           |
 | 其他命名曲线                 | ⚠️<sup>pps-2</sup>| ❌             | ⚠️<sup>1</sup>| ❌           |
 | 显式曲线                    | ✔️           | ❌              | ✔️           | ❌            |
 | 作为显式导出或导入       | ✔️           | ❌<sup>三维空间</sup>  | ✔️           | ❌<sup>三维空间</sup>|
@@ -168,26 +168,26 @@ ECDSA 关键曲线由 OS 库定义，并受其限制的限制。
 
 ### <a name="ecdh"></a>ECDH
 
-ECDH （椭圆曲线 Diffie-hellman）密钥生成由 OS 库完成，并受其大小限制和性能特征的限制。
+ECDH (椭圆曲线 Diffie-hellman) 密钥生成由 OS 库完成，并受其大小限制和性能特征的限制。
 
 <xref:System.Security.Cryptography.ECDiffieHellman>类不返回 ECDH 计算的 "原始" 值。 所有返回的数据都是从密钥派生函数中进行的：
 
-* 哈希（Z）
-* 哈希（预置 | |Z | |附加
-* HMAC （键，Z）
-* HMAC （键，预置 | |Z | |附加
-* HMAC （Z，Z）
-* HMAC （Z，预置 | |Z | |附加
-* Tls11Prf （标签，种子）
+*  (Z) 哈希
+* 哈希 (预置 | |Z | |追加) 
+* HMAC (键，Z) 
+* HMAC (键，预置 | |Z | |追加) 
+* HMAC (Z，Z) 
+* HMAC (Z，预置 | |Z | |追加) 
+* Tls11Prf (标签，种子) 
 
 ECDH 关键曲线由 OS 库定义，并受其限制的限制。
 
 | 椭圆曲线                     | Windows 10    | Windows 7-8。1 | Linux         | macOS         |
 |------------------------------------|---------------|-----------------|---------------|---------------|
-| NIST P-256 （secp256r1）             | ✔️           | ✔️              | ✔️           | ✔️            |
-| NIST P-384 （secp384r1）             | ✔️           | ✔️              | ✔️           | ✔️            |
-| NIST P-521 （secp521r1）             | ✔️           | ✔️              | ✔️           | ✔️            |
-| brainpool 曲线（作为命名曲线） | ✔️           | ❌              | ⚠️<sup>1</sup>| ❌           |
+| NIST P-256 (secp256r1)              | ✔️           | ✔️              | ✔️           | ✔️            |
+| NIST P-384 (secp384r1)              | ✔️           | ✔️              | ✔️           | ✔️            |
+| NIST P-521 (secp521r1)              | ✔️           | ✔️              | ✔️           | ✔️            |
+| brainpool 曲线 (命名曲线)  | ✔️           | ❌              | ⚠️<sup>1</sup>| ❌           |
 | 其他命名曲线                 | ⚠️<sup>pps-2</sup>| ❌             | ⚠️<sup>1</sup>| ❌           |
 | 显式曲线                    | ✔️           | ❌              | ✔️           | ❌            |
 | 作为显式导出或导入       | ✔️           | ❌<sup>三维空间</sup>  | ✔️           | ❌<sup>三维空间</sup>|
@@ -211,23 +211,23 @@ ECDH 关键曲线由 OS 库定义，并受其限制的限制。
 
 ### <a name="dsa"></a>DSA
 
-DSA （数字签名算法）密钥生成由系统库执行，并受其大小限制和性能特征的限制。
+DSA (数字签名算法) 密钥生成由系统库执行，并受其大小限制和性能特征的限制。
 
 | 函数                      | Windows CNG | Linux | macOS         | Windows CAPI |
 |-------------------------------|-------------|-------|---------------|--------------|
-| 密钥创建（<= 1024 位）   | ✔️         | ✔️    | ❌            | ✔️           |
-| 密钥创建（> 1024 位）    | ✔️         | ✔️    | ❌            | ❌            |
-| 加载密钥（<= 1024 位）   | ✔️         | ✔️    | ✔️            | ✔️           |
-| 加载密钥（> 1024 位）    | ✔️         | ✔️    | ⚠️\*          | ❌            |
+| 密钥创建 ( # B0 = 1024 位)    | ✔️         | ✔️    | ❌            | ✔️           |
+| 密钥创建 ( # A0 1024 位)     | ✔️         | ✔️    | ❌            | ❌            |
+|  ( # B0 = 1024 bits 加载密钥)    | ✔️         | ✔️    | ✔️            | ✔️           |
+| 加载密钥 ( # A0 1024 位)     | ✔️         | ✔️    | ⚠️\*          | ❌            |
 | FIPS 186-2                    | ✔️         | ✔️    | ✔️            | ✔️           |
-| FIPS 186-3 （SHA-1 签名） | ✔️         | ✔️    | ❌            | ❌            |
+| FIPS 186-3 (SHA-1 签名)  | ✔️         | ✔️    | ❌            | ❌            |
 
 \*macOS 加载大于1024位的 DSA 密钥，但这些密钥的行为未定义。 它们不会按照 FIPS 186-3 的方式运行。
 
 #### <a name="dsa-on-windows"></a>Windows 上的 DSA
 
-* 使用时，将使用 Windows CryptoAPI （CAPI） [`new DSACryptoServiceProvider()`](xref:System.Security.Cryptography.DSACryptoServiceProvider) 。
-* 使用时，将使用 Windows 加密 API 下一代（CNG） [`new DSACng()`](xref:System.Security.Cryptography.DSACng) 。
+* 使用时，将使用 Windows CryptoAPI (CAPI) [`new DSACryptoServiceProvider()`](xref:System.Security.Cryptography.DSACryptoServiceProvider) 。
+* 使用时，Windows 加密 API 下一代 (CNG) 使用 [`new DSACng()`](xref:System.Security.Cryptography.DSACng) 。
 * 返回的对象由 <xref:System.Security.Cryptography.DSA.Create%2A?displayProperty=nameWithType> WINDOWS CNG 在内部提供支持。 Windows CNG 的这种用法是实现详细信息，可能会有所更改。
 * 的 <xref:System.Security.Cryptography.X509Certificates.DSACertificateExtensions.GetDSAPublicKey%2A> 扩展方法用于 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> 返回 <xref:System.Security.Cryptography.DSACng> 实例。 的这种用法 <xref:System.Security.Cryptography.DSACng> 是实现详细信息，可能会有所更改。
 * <xref:System.Security.Cryptography.X509Certificates.DSACertificateExtensions.GetDSAPrivateKey%2A>用于 <xref:System.Security.Cryptography.X509Certificates.X509Certificate2> 首选实例的扩展方法 <xref:System.Security.Cryptography.DSACng> ，但如果 <xref:System.Security.Cryptography.DSACng> 不能打开该密钥，则 <xref:System.Security.Cryptography.DSACryptoServiceProvider> 会尝试。  首选提供程序是实现详细信息，可能会发生更改。
@@ -287,19 +287,19 @@ Windows 和 Linux 都发出 DER 编码的 PKCS7 blob。 macOS 发出无限长度
 
 在 Windows 上， <xref:System.Security.Cryptography.X509Certificates.X509Store> 类是 Windows 证书存储区 api 的表示形式。 这些 Api 在 .NET Core 和 .NET 5 中的工作方式与在 .NET Framework 中的工作方式相同。
 
-在 Linux 上， <xref:System.Security.Cryptography.X509Certificates.X509Store> 类是系统信任决策（只读）、用户信任决策（读写）和用户密钥存储（读写）的投影。
+在 Linux 上， <xref:System.Security.Cryptography.X509Certificates.X509Store> 类是系统信任决策的预测 (只读) 、用户信任决策 (读写) ，以及用户密钥存储 (读写) 。
 
-在 macOS 上， <xref:System.Security.Cryptography.X509Certificates.X509Store> 类是系统信任决策（只读）、用户信任决策（只读）和用户密钥存储（读写）的投影。
+在 macOS 上， <xref:System.Security.Cryptography.X509Certificates.X509Store> 类是系统信任决策的投影 (只读) 、用户信任决策 (只读) ，以及用户密钥存储 (读写) 。
 
-下表显示了每个平台支持的方案。 对于不支持的方案（ ❌ 在表中）， <xref:System.Security.Cryptography.CryptographicException> 将引发。
+下表显示了每个平台支持的方案。 对于表)  (不受支持 ❌ 的方案， <xref:System.Security.Cryptography.CryptographicException> 将引发。
 
 #### <a name="the-my-store"></a>我的应用商店
 
 | 方案                                         | Windows | Linux | macOS |
 |--------------------------------------------------|---------|-------|-------|
-| 打开 CurrentUser\My （ReadOnly）                   | ✔️     | ✔️    | ✔️   |
-| Open CurrentUser\My （ReadWrite）                  | ✔️     | ✔️    | ✔️   |
-| 打开 CurrentUser\My （ExistingOnly）               | ✔️     | ⚠️    | ✔️   |
+| 打开 CurrentUser\My (ReadOnly)                    | ✔️     | ✔️    | ✔️   |
+| 打开 CurrentUser\My (ReadWrite)                   | ✔️     | ✔️    | ✔️   |
+| 打开 CurrentUser\My (ExistingOnly)                | ✔️     | ⚠️    | ✔️   |
 | 打开 LocalMachine\My                             | ✔️     | ❌    | ✔️   |
 
 在 Linux 上，存储是在首次写入时创建的，默认情况下不存在用户存储区，因此打开 `CurrentUser\My` 时 `ExistingOnly` 可能会失败。
@@ -310,12 +310,12 @@ Windows 和 Linux 都发出 DER 编码的 PKCS7 blob。 macOS 发出无限长度
 
 | 方案                              | Windows | Linux | macOS           |
 |---------------------------------------|---------|-------|-----------------|
-| 打开 CurrentUser\Root （ReadOnly）      | ✔️     | ✔️    | ✔️             |
-| Open CurrentUser\Root （ReadWrite）     | ✔️     | ✔️    | ❌              |
-| 打开 CurrentUser\Root （ExistingOnly）  | ✔️     | ⚠️    | ✔️（如果为 ReadOnly） |
-| 打开 LocalMachine\Root （ReadOnly）     | ✔️     | ✔️    | ✔️             |
-| Open LocalMachine\Root （ReadWrite）    | ✔️     | ❌    | ❌              |
-| 打开 LocalMachine\Root （ExistingOnly） | ✔️     | ⚠️    | ✔️（如果为 ReadOnly） |
+| 打开 CurrentUser\Root (ReadOnly)       | ✔️     | ✔️    | ✔️             |
+| 打开 CurrentUser\Root (ReadWrite)      | ✔️     | ✔️    | ❌              |
+| 打开 CurrentUser\Root (ExistingOnly)   | ✔️     | ⚠️    | 如果为 ReadOnly，则✔️ ()  |
+| 打开 LocalMachine\Root (ReadOnly)      | ✔️     | ✔️    | ✔️             |
+| 打开 LocalMachine\Root (ReadWrite)     | ✔️     | ❌    | ❌              |
+| 打开 LocalMachine\Root (ExistingOnly)  | ✔️     | ⚠️    | 如果为 ReadOnly，则✔️ ()  |
 
 在 Linux 上， `LocalMachine\Root` 存储是 OpenSSL 的默认路径中的 CA 捆绑包的解释。
 
@@ -325,12 +325,12 @@ Windows 和 Linux 都发出 DER 编码的 PKCS7 blob。 macOS 发出无限长度
 
 | 方案                                      | Windows | Linux | macOS           |
 |-----------------------------------------------|---------|-------|-----------------|
-| 打开 CurrentUser\Intermediate （ReadOnly）      | ✔️     | ✔️    | ✔️             |
-| Open CurrentUser\Intermediate （ReadWrite）     | ✔️     | ✔️    | ❌              |
-| 打开 CurrentUser\Intermediate （ExistingOnly）  | ✔️     | ⚠️    | ✔️（如果为 ReadOnly） |
-| 打开 LocalMachine\Intermediate （ReadOnly）     | ✔️     | ✔️    | ✔️             |
-| Open LocalMachine\Intermediate （ReadWrite）    | ✔️     | ❌    | ❌              |
-| 打开 LocalMachine\Intermediate （ExistingOnly） | ✔️     | ⚠️    | ✔️（如果为 ReadOnly） |
+| 打开 CurrentUser\Intermediate (ReadOnly)       | ✔️     | ✔️    | ✔️             |
+| 打开 CurrentUser\Intermediate (ReadWrite)      | ✔️     | ✔️    | ❌              |
+| 打开 CurrentUser\Intermediate (ExistingOnly)   | ✔️     | ⚠️    | 如果为 ReadOnly，则✔️ ()  |
+| 打开 LocalMachine\Intermediate (ReadOnly)      | ✔️     | ✔️    | ✔️             |
+| 打开 LocalMachine\Intermediate (ReadWrite)     | ✔️     | ❌    | ❌              |
+| 打开 LocalMachine\Intermediate (ExistingOnly)  | ✔️     | ⚠️    | 如果为 ReadOnly，则✔️ ()  |
 
 在 Linux 上， `CurrentUser\Intermediate` 当通过其授权信息访问记录在成功的 X509Chain 生成时，将存储用作缓存。 该 `LocalMachine\Intermediate` 存储是 OpenSSL 的默认路径中的 CA 捆绑包的解释。
 
@@ -338,12 +338,12 @@ Windows 和 Linux 都发出 DER 编码的 PKCS7 blob。 macOS 发出无限长度
 
 | 方案                                    | Windows | Linux | macOS           |
 |---------------------------------------------|---------|-------|-----------------|
-| 打开 CurrentUser\Disallowed （ReadOnly）      | ✔️     | ⚠️    | ✔️             |
-| Open CurrentUser\Disallowed （ReadWrite）     | ✔️     | ⚠️    | ❌              |
-| 打开 CurrentUser\Disallowed （ExistingOnly）  | ✔️     | ⚠️    | ✔️（如果为 ReadOnly） |
-| 打开 LocalMachine\Disallowed （ReadOnly）     | ✔️     | ❌    | ✔️             |
-| Open LocalMachine\Disallowed （ReadWrite）    | ✔️     | ❌    | ❌              |
-| 打开 LocalMachine\Disallowed （ExistingOnly） | ✔️     | ❌    | ✔️（如果为 ReadOnly） |
+| 打开 CurrentUser\Disallowed (ReadOnly)       | ✔️     | ⚠️    | ✔️             |
+| 打开 CurrentUser\Disallowed (ReadWrite)      | ✔️     | ⚠️    | ❌              |
+| 打开 CurrentUser\Disallowed (ExistingOnly)   | ✔️     | ⚠️    | 如果为 ReadOnly，则✔️ ()  |
+| 打开 LocalMachine\Disallowed (ReadOnly)      | ✔️     | ❌    | ✔️             |
+| 打开 LocalMachine\Disallowed (ReadWrite)     | ✔️     | ❌    | ❌              |
+| 打开 LocalMachine\Disallowed (ExistingOnly)  | ✔️     | ❌    | 如果为 ReadOnly，则✔️ ()  |
 
 在 Linux 上， `Disallowed` 不在链生成中使用该存储区，尝试向其添加内容会导致 <xref:System.Security.Cryptography.CryptographicException> 。 <xref:System.Security.Cryptography.CryptographicException> `Disallowed` 如果存储区已经获取内容，则会引发。
 
@@ -353,19 +353,21 @@ Windows 和 Linux 都发出 DER 编码的 PKCS7 blob。 macOS 发出无限长度
 
 | 方案                                         | Windows | Linux | macOS |
 |--------------------------------------------------|---------|-------|-------|
-| 打开不存在的存储（ExistingOnly）           | ❌     | ❌     | ❌    |
-| 打开 CurrentUser 不存在的存储（ReadWrite）  | ✔️     | ✔️     | ⚠️   |
-| 打开 LocalMachine 不存在的存储（ReadWrite） | ✔️     | ❌     | ❌    |
+| 打开不存在的存储 (ExistingOnly)            | ❌     | ❌     | ❌    |
+|  (ReadWrite 打开 CurrentUser 不存在的存储)   | ✔️     | ✔️     | ⚠️   |
+| 打开 LocalMachine 不存在的存储 (ReadWrite)  | ✔️     | ❌     | ❌    |
 
-在 macOS 上，只支持在位置创建具有 X509Store API 的自定义存储 `CurrentUser` 。 它将在用户的密钥链目录（*~/Library/Keychains*）中创建一个不带密码的新密钥链。 若要创建具有密码的密钥链，可以使用 P/Invoke `SecKeychainCreate` 。 同样，可 `SecKeychainOpen` 用于在不同位置打开密钥链。 `IntPtr`可以将生成的传递给 [`new X509Store(IntPtr)`](xref:System.Security.Cryptography.X509Certificates.X509Store.%23ctor(System.IntPtr)) ，以获取支持读写存储，受限于当前用户的权限。
+在 macOS 上，只支持在位置创建具有 X509Store API 的自定义存储 `CurrentUser` 。 它将创建一个新的密钥链，在用户的密钥链目录中没有密码 (*~/Library/Keychains*) 。 若要创建具有密码的密钥链，可以使用 P/Invoke `SecKeychainCreate` 。 同样，可 `SecKeychainOpen` 用于在不同位置打开密钥链。 `IntPtr`可以将生成的传递给 [`new X509Store(IntPtr)`](xref:System.Security.Cryptography.X509Certificates.X509Store.%23ctor(System.IntPtr)) ，以获取支持读写存储，受限于当前用户的权限。
 
 ### <a name="x509chain"></a>X509Chain
 
 macOS 不支持脱机 CRL 使用率，因此 `X509RevocationMode.Offline` 将被视为 `X509RevocationMode.Online` 。
 
-macOS 不支持用户启动的 CRL （证书吊销列表）/OCSP （联机证书状态协议）/AIA （授权信息访问）下载超时，因此会被 `X509ChainPolicy.UrlRetrievalTimeout` 忽略。
+macOS 不支持 CRL 上用户启动的超时 (证书吊销列表) /OCSP (联机证书状态协议) /AIA (授权信息访问) 下载，因此 `X509ChainPolicy.UrlRetrievalTimeout` 会被忽略。
 
 ## <a name="additional-resources"></a>其他资源
 
 * [.NET 加密模型](cryptography-model.md)
 * [.NET 加密服务](cryptographic-services.md)
+* [使用填充对 CBC 模式对称解密的漏洞进行计时](vulnerabilities-cbc-mode.md)
+* [ASP.NET Core 数据保护](/aspnet/core/security/data-protection/introduction)
