@@ -1,18 +1,19 @@
 ---
 title: 示例 XML 文件：典型采购订单 (LINQ to XML)
+description: 此 XML 文件用在 LINQ to XML 文档的很多示例中。 此文件是典型的采购单。
 ms.date: 07/20/2015
 ms.assetid: dcbfb859-24fc-4758-b01c-51d1b6f644e6
-ms.openlocfilehash: c647bb61daed50cda8ae38af03357ec6f91268f9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 41a43bb74f152584f65ed28f467691032654689a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66487165"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302433"
 ---
-# <a name="sample-xml-file-typical-purchase-order-linq-to-xml"></a><span data-ttu-id="a3408-102">示例 XML 文件：典型采购订单 (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="a3408-102">Sample XML File: Typical Purchase Order (LINQ to XML)</span></span>
-<span data-ttu-id="a3408-103">下面的 XML 文件用在 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 文档的很多示例中。</span><span class="sxs-lookup"><span data-stu-id="a3408-103">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="a3408-104">此文件是典型的采购单。</span><span class="sxs-lookup"><span data-stu-id="a3408-104">This file is a typical purchase order.</span></span>  
+# <a name="sample-xml-file-typical-purchase-order-linq-to-xml"></a><span data-ttu-id="e06f3-104">示例 XML 文件：典型采购订单 (LINQ to XML)</span><span class="sxs-lookup"><span data-stu-id="e06f3-104">Sample XML File: Typical Purchase Order (LINQ to XML)</span></span>
+<span data-ttu-id="e06f3-105">下面的 XML 文件用在 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 文档的很多示例中。</span><span class="sxs-lookup"><span data-stu-id="e06f3-105">The following XML file is used in various examples in the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] documentation.</span></span> <span data-ttu-id="e06f3-106">此文件是典型的采购单。</span><span class="sxs-lookup"><span data-stu-id="e06f3-106">This file is a typical purchase order.</span></span>  
   
-## <a name="purchaseorderxml"></a><span data-ttu-id="a3408-105">PurchaseOrder.xml</span><span class="sxs-lookup"><span data-stu-id="a3408-105">PurchaseOrder.xml</span></span>  
+## <a name="purchaseorderxml"></a><span data-ttu-id="e06f3-107">PurchaseOrder.xml</span><span class="sxs-lookup"><span data-stu-id="e06f3-107">PurchaseOrder.xml</span></span>  
   
 ```xml  
 <?xml version="1.0"?>  

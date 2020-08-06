@@ -1,23 +1,24 @@
 ---
 title: 如何对多个键上的元素进行排序 (C#)
+description: 了解如何对多个键上的元素进行排序。 参阅示例，了解如何使用示例 XML 文档对元素进行排序。
 ms.date: 07/20/2015
 ms.assetid: 3b2760b6-d607-4ac7-b784-5c6524e2a0e0
-ms.openlocfilehash: ddfeab4bf9b67231296ca90df1244a3b8a441440
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 486aac38a27cf064553894a548722a54c58c21b6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347385"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301497"
 ---
-# <a name="how-to-sort-elements-on-multiple-keys-c"></a><span data-ttu-id="8391f-102">如何对多个键上的元素进行排序 (C#)</span><span class="sxs-lookup"><span data-stu-id="8391f-102">How to sort elements on multiple keys (C#)</span></span>
+# <a name="how-to-sort-elements-on-multiple-keys-c"></a><span data-ttu-id="98609-104">如何对多个键上的元素进行排序 (C#)</span><span class="sxs-lookup"><span data-stu-id="98609-104">How to sort elements on multiple keys (C#)</span></span>
 
-<span data-ttu-id="8391f-103">本主题演示如何对多个键进行排序。</span><span class="sxs-lookup"><span data-stu-id="8391f-103">This topic shows how to sort on multiple keys.</span></span>
+<span data-ttu-id="98609-105">本主题演示如何对多个键进行排序。</span><span class="sxs-lookup"><span data-stu-id="98609-105">This topic shows how to sort on multiple keys.</span></span>
 
-## <a name="example"></a><span data-ttu-id="8391f-104">示例</span><span class="sxs-lookup"><span data-stu-id="8391f-104">Example</span></span>
+## <a name="example"></a><span data-ttu-id="98609-106">示例</span><span class="sxs-lookup"><span data-stu-id="98609-106">Example</span></span>
 
-<span data-ttu-id="8391f-105">在本示例中，首先按运输邮政编码，然后再按订单日期对结果进行排序。</span><span class="sxs-lookup"><span data-stu-id="8391f-105">In this example, the results are ordered first by the shipping postal code, then by the order date.</span></span>
+<span data-ttu-id="98609-107">在本示例中，首先按运输邮政编码，然后再按订单日期对结果进行排序。</span><span class="sxs-lookup"><span data-stu-id="98609-107">In this example, the results are ordered first by the shipping postal code, then by the order date.</span></span>
 
-<span data-ttu-id="8391f-106">本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md)。</span><span class="sxs-lookup"><span data-stu-id="8391f-106">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>
+<span data-ttu-id="98609-108">本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md) 的架构定义。</span><span class="sxs-lookup"><span data-stu-id="98609-108">This example uses the following XML document: [Sample XML File: Customers and Orders (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md).</span></span>
 
 ```csharp
 XElement co = XElement.Load("CustomersOrders.xml");
@@ -36,7 +37,7 @@ foreach (var r in sortedElements)
         r.CustomerID, r.EmployeeID, r.ShipPostalCode, r.OrderDate);
 ```
 
-<span data-ttu-id="8391f-107">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="8391f-107">This code produces the following output:</span></span>
+<span data-ttu-id="98609-109">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="98609-109">This code produces the following output:</span></span>
 
 ```output
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997
@@ -63,11 +64,11 @@ CustomerID:LAZYK EmployeeID:1 ShipPostalCode:99362 OrderDate:3/21/1997
 CustomerID:LAZYK EmployeeID:8 ShipPostalCode:99362 OrderDate:5/22/1997
 ```
 
-## <a name="example"></a><span data-ttu-id="8391f-108">示例</span><span class="sxs-lookup"><span data-stu-id="8391f-108">Example</span></span>
+## <a name="example"></a><span data-ttu-id="98609-110">示例</span><span class="sxs-lookup"><span data-stu-id="98609-110">Example</span></span>
 
-<span data-ttu-id="8391f-109">下面的示例演示如何对命名空间中的 XML 进行同样的查询。</span><span class="sxs-lookup"><span data-stu-id="8391f-109">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="8391f-110">有关详细信息，请参阅[命名空间概述(LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md)。</span><span class="sxs-lookup"><span data-stu-id="8391f-110">For more information, see [Namespaces Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).</span></span>
+<span data-ttu-id="98609-111">下面的示例演示如何对命名空间中的 XML 进行同样的查询。</span><span class="sxs-lookup"><span data-stu-id="98609-111">The following example shows the same query for XML that is in a namespace.</span></span> <span data-ttu-id="98609-112">有关详细信息，请参阅[命名空间概述(LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md)。</span><span class="sxs-lookup"><span data-stu-id="98609-112">For more information, see [Namespaces Overview (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).</span></span>
 
-<span data-ttu-id="8391f-111">本示例使用下面的 XML 文档：[示例 XML 文件：命名空间中的客户和订单](./sample-xml-file-customers-and-orders-in-a-namespace.md)。</span><span class="sxs-lookup"><span data-stu-id="8391f-111">This example uses the following XML document: [Sample XML File: Customers and Orders in a Namespace](./sample-xml-file-customers-and-orders-in-a-namespace.md).</span></span>
+<span data-ttu-id="98609-113">本示例使用下面的 XML 文档：[示例 XML 文件：命名空间中的客户和订单](./sample-xml-file-customers-and-orders-in-a-namespace.md)。</span><span class="sxs-lookup"><span data-stu-id="98609-113">This example uses the following XML document: [Sample XML File: Customers and Orders in a Namespace](./sample-xml-file-customers-and-orders-in-a-namespace.md).</span></span>
 
 ```csharp
 XElement co = XElement.Load("CustomersOrdersInNamespace.xml");
@@ -88,7 +89,7 @@ foreach (var r in sortedElements)
         r.CustomerID, r.EmployeeID, r.ShipPostalCode, r.OrderDate);
 ```
 
-<span data-ttu-id="8391f-112">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="8391f-112">This code produces the following output:</span></span>
+<span data-ttu-id="98609-114">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="98609-114">This code produces the following output:</span></span>
 
 ```output
 CustomerID:LETSS EmployeeID:1 ShipPostalCode:94117 OrderDate:6/25/1997

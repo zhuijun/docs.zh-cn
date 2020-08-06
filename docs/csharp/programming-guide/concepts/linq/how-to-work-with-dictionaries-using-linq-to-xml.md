@@ -1,19 +1,20 @@
 ---
 title: 如何通过 LINQ to XML 使用字典 (C#)
+description: 了解如何通过 LINQ to XML 使用字典。 查看将字典转换为 XML 并将 XML 转换回其他数据结构的示例。
 ms.date: 07/20/2015
 ms.assetid: 57bcefe3-8433-4d3b-935a-511c9bcbdfa8
-ms.openlocfilehash: 1a98293f208e80e969362fca27014ecd2e5c4183
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bdba7a2b3dfc16fab1e239ac804c317dfefb7d9e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347225"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302615"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a><span data-ttu-id="4177c-102">如何通过 LINQ to XML 使用字典 (C#)</span><span class="sxs-lookup"><span data-stu-id="4177c-102">How to work with dictionaries using LINQ to XML (C#)</span></span>
-<span data-ttu-id="4177c-103">通常需要将各种数据结构转换为 XML 和将 XML 转换回其他数据结构。</span><span class="sxs-lookup"><span data-stu-id="4177c-103">It is often convenient to convert varieties of data structures to XML, and XML back to other data structures.</span></span> <span data-ttu-id="4177c-104">本主题通过 <xref:System.Collections.Generic.Dictionary%602> 和 XML 的相互转换演示这一常规方法的具体实现。</span><span class="sxs-lookup"><span data-stu-id="4177c-104">This topic shows a specific implementation of this general approach by converting a <xref:System.Collections.Generic.Dictionary%602> to XML and back.</span></span>  
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a><span data-ttu-id="1108b-104">如何通过 LINQ to XML 使用字典 (C#)</span><span class="sxs-lookup"><span data-stu-id="1108b-104">How to work with dictionaries using LINQ to XML (C#)</span></span>
+<span data-ttu-id="1108b-105">通常需要将各种数据结构转换为 XML 和将 XML 转换回其他数据结构。</span><span class="sxs-lookup"><span data-stu-id="1108b-105">It is often convenient to convert varieties of data structures to XML, and XML back to other data structures.</span></span> <span data-ttu-id="1108b-106">本主题通过 <xref:System.Collections.Generic.Dictionary%602> 和 XML 的相互转换演示这一常规方法的具体实现。</span><span class="sxs-lookup"><span data-stu-id="1108b-106">This topic shows a specific implementation of this general approach by converting a <xref:System.Collections.Generic.Dictionary%602> to XML and back.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="4177c-105">示例</span><span class="sxs-lookup"><span data-stu-id="4177c-105">Example</span></span>  
- <span data-ttu-id="4177c-106">本示例使用函数构造形式：查询投影新 <xref:System.Xml.Linq.XElement> 对象，生成的集合作为自变量传递给根 <xref:System.Xml.Linq.XElement> 对象的构造函数。</span><span class="sxs-lookup"><span data-stu-id="4177c-106">This example uses a form of functional construction in which a query projects new <xref:System.Xml.Linq.XElement> objects, and the resulting collection is passed as an argument to the constructor of the Root <xref:System.Xml.Linq.XElement> object.</span></span>  
+## <a name="example"></a><span data-ttu-id="1108b-107">示例</span><span class="sxs-lookup"><span data-stu-id="1108b-107">Example</span></span>  
+ <span data-ttu-id="1108b-108">本示例使用函数构造形式：查询投影新 <xref:System.Xml.Linq.XElement> 对象，生成的集合作为自变量传递给根 <xref:System.Xml.Linq.XElement> 对象的构造函数。</span><span class="sxs-lookup"><span data-stu-id="1108b-108">This example uses a form of functional construction in which a query projects new <xref:System.Xml.Linq.XElement> objects, and the resulting collection is passed as an argument to the constructor of the Root <xref:System.Xml.Linq.XElement> object.</span></span>  
   
 ```csharp  
 Dictionary<string, string> dict = new Dictionary<string, string>();  
@@ -28,7 +29,7 @@ XElement root = new XElement("Root",
 Console.WriteLine(root);  
 ```  
   
- <span data-ttu-id="4177c-107">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="4177c-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="1108b-109">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="1108b-109">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
@@ -39,8 +40,8 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
-## <a name="example"></a><span data-ttu-id="4177c-108">示例</span><span class="sxs-lookup"><span data-stu-id="4177c-108">Example</span></span>  
- <span data-ttu-id="4177c-109">下面的代码从 XML 创建一个字典。</span><span class="sxs-lookup"><span data-stu-id="4177c-109">The following code creates a dictionary from XML.</span></span>  
+## <a name="example"></a><span data-ttu-id="1108b-110">示例</span><span class="sxs-lookup"><span data-stu-id="1108b-110">Example</span></span>  
+ <span data-ttu-id="1108b-111">下面的代码从 XML 创建一个字典。</span><span class="sxs-lookup"><span data-stu-id="1108b-111">The following code creates a dictionary from XML.</span></span>  
   
 ```csharp  
 XElement root = new XElement("Root",  
@@ -57,7 +58,7 @@ foreach (string str in dict.Keys)
     Console.WriteLine("{0}:{1}", str, dict[str]);  
 ```  
   
- <span data-ttu-id="4177c-110">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="4177c-110">This code produces the following output:</span></span>  
+ <span data-ttu-id="1108b-112">此代码生成以下输出：</span><span class="sxs-lookup"><span data-stu-id="1108b-112">This code produces the following output:</span></span>  
   
 ```output  
 Child1:Value1  
