@@ -678,3 +678,39 @@
           href: whats-new/obsolete-types.md
         - name: 过时成员
           href: whats-new/obsolete-members.md
+- name: 代码访问安全性
+  items:
+    - name: 概述
+      href: misc/code-access-security.md
+    - name: 代码访问安全性基础知识
+      href: misc/code-access-security-basics.md
+    - name: 代码访问安全策略兼容性和迁移
+      href: misc/code-access-security-policy-compatibility-and-migration.md
+    - name: 危险权限和策略管理
+      href: misc/dangerous-permissions-and-policy-administration.md
+    - name: 如何在沙盒中运行部分信任的代码
+      href: misc/how-to-run-partially-trusted-code-in-a-sandbox.md
+    - name: 链接需求
+      href: misc/link-demands.md
+    - name: 保护异常处理
+      href: misc/securing-exception-handling.md
+    - name: 保护方法访问
+      href: misc/securing-method-access.md
+    - name: 保护包装代码
+      href: misc/securing-wrapper-code.md
+    - name: 安全和公共只读数组字段
+      href: misc/security-and-public-read-only-array-fields.md
+    - name: 安全性和远程处理注意事项
+      href: misc/security-and-remoting-considerations.md
+    - name: 安全和序列化
+      href: misc/security-and-serialization.md
+    - name: 安全透明的代码，级别 1
+      href: misc/security-transparent-code-level-1.md
+    - name: 安全透明的代码，级别 2
+      href: misc/security-transparent-code-level-2.md
+    - name: 安全透明的代码
+      href: misc/security-transparent-code.md
+    - name: 通过部分受信任的代码使用库
+      href: misc/using-libraries-from-partially-trusted-code.md
+    - name: 使用 Assert 方法
+      href: misc/using-the-assert-method.md
