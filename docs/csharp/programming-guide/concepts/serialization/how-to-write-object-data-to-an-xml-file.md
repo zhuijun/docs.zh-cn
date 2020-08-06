@@ -1,13 +1,14 @@
 ---
 title: 如何将对象数据写入 XML 文件 (C#)
+description: 此 C# 示例使用 XmlSerializer 类从某个类将对象写入 XML 文件。 了解如何编译代码。
 ms.date: 07/20/2015
 ms.assetid: 7681eb98-703d-4005-a369-26a7bca0f894
-ms.openlocfilehash: 6f18ae194d2ed70f633665a29772622319ea9493
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: c88a85f8bc65a195f404dab6aa39675bac7e4f84
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241989"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303122"
 ---
 # <a name="how-to-write-object-data-to-an-xml-file-c"></a>如何将对象数据写入 XML 文件 (C#)
 本示例使用 <xref:System.Xml.Serialization.XmlSerializer> 类从某个类将对象写入 XML 文件。  

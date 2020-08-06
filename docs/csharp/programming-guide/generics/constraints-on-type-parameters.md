@@ -1,17 +1,18 @@
 ---
 title: 类型参数约束 - C# 编程指南
+description: 了解类型参数约束。 约束告知编译器类型参数必须具备的功能。
 ms.date: 04/12/2018
 helpviewer_keywords:
 - generics [C#], type constraints
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 4c4554c808ab15776f3217c257e0a60119ea2338
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 91807fa05ce49b8507ee6913ff2620452fcbfab5
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84368356"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301939"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>类型参数的约束（C# 编程指南）
 

@@ -1,5 +1,6 @@
 ---
 title: Regsvcs.exe（.NET 服务安装工具）
+description: 使用 Regsvcs.exe（.NET 服务安装工具）。 加载和注册程序集，配置以编程方式添加到类的服务等。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Regsvcs.exe
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - type libraries
 - registering assemblies
 ms.assetid: 5220fe58-5aaf-4e8e-8bc3-b78c63025804
-ms.openlocfilehash: aecd2f6894558b45898c7f22dd333617d9e2e327
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6d0090eda764113407e35a3bcec139f1c7cfb050
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180366"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517238"
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe（.NET 服务安装工具）
 .NET 服务安装工具执行下列操作：  
@@ -39,7 +40,7 @@ ms.locfileid: "79180366"
   
 ## <a name="parameters"></a>参数  
   
-|参数|描述|  
+|参数|说明|  
 |--------------|-----------------|  
 |assemblyFile.dll|源程序集文件。 此程序集必须用强名称进行签名。 有关详细信息，请参阅[使用强名称为程序集签名](../../standard/assembly/sign-strong-name.md)。|  
   

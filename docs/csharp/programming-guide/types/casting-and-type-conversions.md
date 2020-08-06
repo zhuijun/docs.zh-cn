@@ -1,5 +1,6 @@
 ---
 title: 强制转换和类型转换 - C# 编程指南
+description: 了解强制转换和类型转换，例如隐式、显式（强制转换）和用户定义的转换。
 ms.date: 07/06/2020
 helpviewer_keywords:
 - type conversion [C#]
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - casting [C#]
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
-ms.openlocfilehash: 9860b4ca44504bbe7c0bafd0c744f0b9d9ca389c
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: 040b5679b1e6666a7f0308e5990781a2ef86c530
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100790"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381952"
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>强制转换和类型转换（C# 编程指南）
 

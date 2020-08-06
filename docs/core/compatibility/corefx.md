@@ -1,13 +1,13 @@
 ---
 title: 基类库的重大更改
 description: 列出核心 .NET 库中的重大更改。
-ms.date: 09/20/2019
-ms.openlocfilehash: 64510809a1cf69ea0e4c4816eb2df54233e8eceb
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.date: 07/27/2020
+ms.openlocfilehash: 558aa1d76831cd15e2028c17d2b0b2e82f64ef9a
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281289"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517317"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>核心 .NET 库重大更改
 
@@ -17,6 +17,9 @@ ms.locfileid: "86281289"
 
 | 重大更改 | 引入的版本 |
 | - | :-: |
+| [BinaryFormatter 序列化方法已过时，并且已在 ASP.NET 应用中禁用](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps) | 5.0 |
+| [UTF-7 代码路径已过时](#utf-7-code-paths-are-obsolete) | 5.0 |
+| [对于不支持的类型，Vector\<T> 始终引发 NotSupportedException](#vectort-always-throws-notsupportedexception-for-unsupported-types) | 5.0 |
 | [默认 ActivityIdFormat 为 W3C](#default-activityidformat-is-w3c) | 5.0 |
 | [Vector2.Lerp 和 Vector4.Lerp 的行为变更](#behavior-change-for-vector2lerp-and-vector4lerp) | 5.0 |
 | [SSE 和 SSE2 CompareGreaterThan 方法正确处理 NaN 输入](#sse-and-sse2-comparegreaterthan-methods-properly-handle-nan-inputs) | 5.0 |
@@ -30,7 +33,6 @@ ms.locfileid: "86281289"
 | [替换格式错误的 UTF-8 字节序列将遵循 Unicode 准则](#replacing-ill-formed-utf-8-byte-sequences-follows-unicode-guidelines) | 3.0 |
 | [TypeDescriptionProviderAttribute 已移到另一个程序集](#typedescriptionproviderattribute-moved-to-another-assembly) | 3.0 |
 | [ZipArchiveEntry 不再处理条目大小不一致的存档](#ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes) | 3.0 |
-| [JSON 序列化程序异常类型已从 JsonException 更改为 NotSupportedException](#json-serializer-exception-type-changed-from-jsonexception-to-notsupportedexception) | 3.0 |
 | [Utf8JsonWriter 中的 (string)null 语义更改](#change-in-semantics-of-stringnull-in-utf8jsonwriter) | 3.0 |
 | [JsonEncodedText.Encode 方法具有附加的 JavaScriptEncoder 参数](#jsonencodedtextencode-methods-have-an-additional-javascriptencoder-argument) | 3.0 |
 | [已更改 JsonFactoryConverter.CreateConverter 签名](#jsonfactoryconvertercreateconverter-signature-changed) | 3.0 |
@@ -45,6 +47,18 @@ ms.locfileid: "86281289"
 | [Process.StartInfo 对未启动的进程引发 InvalidOperationException](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE [binaryformatter-serialization-obsolete](../../../includes/core-changes/corefx/5.0/binaryformatter-serialization-obsolete.md)]
+
+***
+
+[!INCLUDE [utf-7-code-paths-obsolete](../../../includes/core-changes/corefx/5.0/utf-7-code-paths-obsolete.md)]
+
+***
+
+[!INCLUDE [vectort-throws-notsupportedexception](../../../includes/core-changes/corefx/5.0/vectort-throws-notsupportedexception.md)]
+
+***
 
 [!INCLUDE [default-activityidformat-changed](../../../includes/core-changes/corefx/5.0/default-activityidformat-changed.md)]
 
@@ -97,10 +111,6 @@ ms.locfileid: "86281289"
 ***
 
 [!INCLUDE[ZipArchiveEntry no longer handles archives with inconsistent entry sizes](~/includes/core-changes/corefx/3.0/ziparchiveentry-and-inconsistent-entry-sizes.md)]
-
-***
-
-[!INCLUDE[JSON serializer exception type changed from JsonException to NotSupportedException](~/includes/core-changes/corefx/3.0/serializer-throws-notsupportedexception.md)]
 
 ***
 

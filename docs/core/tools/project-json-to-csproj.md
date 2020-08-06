@@ -3,12 +3,12 @@ title: 比较 project.json 和 csproj
 description: 查看 project.json 和 csproj 元素之间的映射。
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: a997b48f645ed58d15610a68aee7c67411f9763f
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: c8638bc30ba09d8e8d464159aded60dcde4b8dc0
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83205834"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87427016"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>project.json 和 csproj 属性之间的映射
 
@@ -475,7 +475,7 @@ csproj 中没有等效项。
   <!-- summary is not migrated from project.json, but you can use the <Description> property for that if needed. -->
   <PackageTags>machine learning;framework</PackageTags>
   <PackageReleaseNotes>Version 0.9.12-beta</PackageReleaseNotes>
-  <PackageIconUrl>http://numl.net/images/ico.png</PackageIconUrl>
+  <PackageIcon>ico.png</PackageIcon>
   <PackageProjectUrl>http://numl.net</PackageProjectUrl>
   <PackageLicenseUrl>https://raw.githubusercontent.com/sethjuarez/numl/master/LICENSE.md</PackageLicenseUrl>
   <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -485,7 +485,7 @@ csproj 中没有等效项。
 </PropertyGroup>
 ```
 
-MSBuild 中没有 `owners` 元素的等效项。 对于 `summary`，可以使用 MSBuild `<Description>` 属性。 `summary` 的值未自动迁移到该属性，因为该属性已映射到 [`description`](#other-common-root-level-options) 元素。
+MSBuild 中没有 `owners` 元素的等效项。 对于 `summary`，可以使用 MSBuild `<Description>` 属性。 `summary` 的值未自动迁移到该属性，因为该属性已映射到 [`description`](#other-common-root-level-options) 元素。  [PackageIconUrl 已被弃用](/nuget/reference/msbuild-targets#packageiconurl)，被 PackageIcon 取代。
 
 ## <a name="scripts"></a>脚本
 

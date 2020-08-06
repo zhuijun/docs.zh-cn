@@ -1,15 +1,16 @@
 ---
 title: C++ 模板与 C# 泛型的区别 - C# 编程指南
+description: 了解 C++ 模板和 C# 泛型之间的区别。 这两者都是支持参数化类型的语言功能。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], vs. C++ templates
 ms.assetid: 1da6beeb-d4a4-4da0-87b7-0cfbe04920b7
-ms.openlocfilehash: e44f67353410c58c406620109270972df17f9f86
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f405e2d4bef730317703b3b8470edef5b89f0bed
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75703528"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301926"
 ---
 # <a name="differences-between-c-templates-and-c-generics-c-programming-guide"></a>C++ 模板和 C# 泛型之间的区别（C# 编程指南）
 C# 泛型和 C++ 模板均是支持参数化类型的语言功能。 但是，两者之间存在很多不同。 在语法层次，C# 泛型是参数化类型的一个更简单的方法，而不具有 C++ 模板的复杂性。 此外，C# 不试图提供  C++ 模板所具有的所有功能。 在实现层次，主要区别在于 C# 泛型类型的替换在运行时执行，从而为实例化对象保留了泛型类型信息。 有关详细信息，请参阅[运行时中的泛型](./generics-in-the-run-time.md)。  

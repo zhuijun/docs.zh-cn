@@ -1,13 +1,14 @@
 ---
 title: 如何从 XML 文件读取对象数据 (C#)
+description: 本 C# 示例使用 XmlSerializer 类读取之前写入 XML 文件的对象数据。
 ms.date: 07/20/2015
 ms.assetid: 6ad60d96-a4d9-48e6-a8b0-d7f6f803cafa
-ms.openlocfilehash: e2365d1260d3f6e239f294b2af3399c2fb659575
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 525a93812279756b3802d43d85bb5e61d8f7415e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241872"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302784"
 ---
 # <a name="how-to-read-object-data-from-an-xml-file-c"></a>如何从 XML 文件读取对象数据 (C#)
 本示例使用 <xref:System.Xml.Serialization.XmlSerializer> 类读取之前写入 XML 文件的对象数据。  

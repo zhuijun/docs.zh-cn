@@ -1,15 +1,16 @@
 ---
 title: 指针类型 - C# 编程指南
+description: 了解指针类型。 参阅不同指针的示例、代码示例，并查看其他可用资源。
 ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 492b37460c05ffbc82e020facb354be22706f8d3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9c62a31f9a4a090fe56fb10ac45fe2f93f1b036e
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396254"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382030"
 ---
 # <a name="pointer-types-c-programming-guide"></a>指针类型（C# 编程指南）
 

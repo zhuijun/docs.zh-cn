@@ -1,16 +1,17 @@
 ---
 title: 显式接口实现 - C# 编程指南
+description: 类可以在 C# 中实现包含具有相同签名的成员的接口。 显式实现创建特定于一个接口的类成员。
 ms.date: 01/24/2020
 helpviewer_keywords:
 - explicit interfaces [C#]
 - interfaces [C#], explicit
 ms.assetid: 181c901f-0d4c-4f29-97fc-895079617bf2
-ms.openlocfilehash: ea32a279b7c464174a7fada5ef93ccf62ef39884
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a6ec328c08d1da84a11431d9400a094df8c72223
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167668"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303082"
 ---
 # <a name="explicit-interface-implementation-c-programming-guide"></a>显式接口实现（C# 编程指南）
 
@@ -44,7 +45,7 @@ ms.locfileid: "79167668"
 
 任何实现 `IControl` 接口的类都可以重写默认的 `Paint` 方法，作为公共方法或作为显式接口实现。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 编程指南](../index.md)
 - [类和结构](../classes-and-structs/index.md)

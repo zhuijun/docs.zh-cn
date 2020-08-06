@@ -1,13 +1,14 @@
 ---
 title: XDocument 类概述 (C#)
+description: C# 中的 XDocument 类包含有效的 XML 文档所需的信息，其中包括 XML 声明、处理指令和注释。
 ms.date: 07/20/2015
 ms.assetid: 63305603-ab54-49fc-84e4-f76eecc59549
-ms.openlocfilehash: de49dc071d22dd77dddea29ca114663261e3edda
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 6d522cef25e99e4a5ea54e644855c8dfa7a05f4a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69590842"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302186"
 ---
 # <a name="xdocument-class-overview-c"></a>XDocument 类概述 (C#)
 本主题介绍 <xref:System.Xml.Linq.XDocument> 类。  
@@ -86,6 +87,6 @@ d.Save("test.xml");
 <!--This is another comment.-->  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to XML 编程概述 (C#)](./linq-to-xml-overview.md)

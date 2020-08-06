@@ -1,15 +1,16 @@
 ---
 title: 泛型方法 - C# 编程指南
+description: 了解通过类型参数声明的方法（泛型方法）。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], methods
 ms.assetid: 673eeea2-4b48-4faa-9c4e-2e89449221b9
-ms.openlocfilehash: 5f066ca39c97b70554886e423c37c4ee47d49158
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 77b81de26961a8b59644643bf043ed723dbf374f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712190"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301874"
 ---
 # <a name="generic-methods-c-programming-guide"></a>泛型方法（C# 编程指南）
 泛型方法是通过类型参数声明的方法，如下所示：  
@@ -45,7 +46,7 @@ ms.locfileid: "75712190"
 ## <a name="c-language-specification"></a>C# 语言规范  
  有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/classes.md#methods)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Collections.Generic>
 - [C# 编程指南](../index.md)

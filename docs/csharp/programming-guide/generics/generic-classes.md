@@ -1,16 +1,17 @@
 ---
 title: 泛型类 - C# 编程指南
+description: 了解在集合中使用的泛型类，如链接列表、哈希表、堆栈、队列和树。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: 1fdfaa833ad32428d341b6f3a61cc7f638036183
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 308f4328540e1001018942738d931be3d8be53ed
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937509"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301913"
 ---
 # <a name="generic-classes-c-programming-guide"></a>泛型类（C# 编程指南）
 泛型类封装不特定于特定数据类型的操作。 泛型类最常见用法是用于链接列表、哈希表、堆栈、队列和树等集合。 无论存储数据的类型如何，添加项和从集合删除项等操作的执行方式基本相同。  

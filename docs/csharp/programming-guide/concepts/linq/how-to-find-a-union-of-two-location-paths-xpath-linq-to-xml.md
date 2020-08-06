@@ -1,13 +1,14 @@
 ---
 title: 如何查找两个位置路径的并集 (XPath-LINQ to XML) (C#)
+description: 了解如何使用 XPath 表达式查找两个 XPath 位置路径的并集。 查看使用示例 XML 文件的代码示例。
 ms.date: 07/20/2015
 ms.assetid: 069622d3-2b58-4919-8903-710a564c0788
-ms.openlocfilehash: 17a3310f367cb68b3b80b1a3f30af40428f6d2c7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 65b20fe25a0990fd82ce3bd08c3433499e728512
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141206"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303317"
 ---
 # <a name="how-to-find-a-union-of-two-location-paths-xpath-linq-to-xml-c"></a>如何查找两个位置路径的并集 (XPath-LINQ to XML) (C#)
 使用 XPath 可以查找两个 XPath 位置路径结果的联合。  

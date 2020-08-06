@@ -1,5 +1,6 @@
 ---
 title: <permission> - C# 编程指南
+description: 了解 XML <permission> 标记。 此标记可用于记录成员访问权限，而 PermissionSet 类可用于指定对成员的访问权限。
 ms.date: 07/20/2015
 f1_keywords:
 - permission
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <permission> C# XML tag
 - permission C# XML tag
 ms.assetid: 769e93fe-8404-443f-bf99-577aa42b6a49
-ms.openlocfilehash: bb7172042f0b472d03c3fa2d9dbd0d4d4265076b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 38c87505b8b2973875e474ffd296dc02b7fb9de6
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287267"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381718"
 ---
 # <a name="permission-c-programming-guide"></a>\<permission>（C# 编程指南）
 

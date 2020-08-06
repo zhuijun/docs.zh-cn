@@ -1,5 +1,6 @@
 ---
 title: <code> - C# programming guide
+description: 了解 XML <code> tag. This tag is used to indicate multiple lines of code, while <c> marks single-line text in a description as code.
 ms.date: 07/20/2015
 f1_keywords:
 - code
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - code XML tag
 - <code> C# XML tag
 ms.assetid: f235e3bc-a709-43cf-8a9f-bd57cabdf6da
-ms.openlocfilehash: 52d4b6caa0ea9e1a2d0212398f86374bc8af0402
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: f1f4cd930a876c8eca13de5f015e2b42b928d6f1
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287436"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382004"
 ---
 # <a name="code-c-programming-guide"></a>\<code>（C# 编程指南）
 

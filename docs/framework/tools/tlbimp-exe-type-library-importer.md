@@ -1,5 +1,6 @@
 ---
 title: Tlbimp.exe（类型库导入程序）
+description: 使用 Tlbimp.exe（类型库导入程序）。 此工具将在 COM 类型库中找到的类型定义转换为 CLR 程序集中的等效定义。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - type libraries [.NET Framework], importing
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - type libraries
 - converting type definitions
 ms.assetid: ec0a8d63-11b3-4acd-b398-da1e37e97382
-ms.openlocfilehash: d942378888b06049022188c75456f438d4b187e3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f1e50336e6c159ae56b393098868e4b8f5310b49
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180250"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87516991"
 ---
 # <a name="tlbimpexe-type-library-importer"></a>Tlbimp.exe（类型库导入程序）
 类型库导入程序将 COM 类型库中的类型定义转换为公共语言运行时程序集中的等效定义。 Tlbimp.exe 的输出是一个二进制文件（程序集），其中包含在原始类型库中定义的类型的运行时元数据。 可以使用 [Ildasm.exe](ildasm-exe-il-disassembler.md) 这样的工具检查此文件。  
@@ -32,7 +33,7 @@ tlbimp tlbFile [options]
   
 ## <a name="parameters"></a>参数  
   
-|参数|描述|  
+|参数|说明|  
 |--------------|-----------------|  
 |*tlbFile*|任何包含 COM 类型库的文件的名称。|  
   
@@ -41,7 +42,7 @@ tlbimp tlbFile [options]
 |/asmversion: versionnumber|指定要生成的程序集的版本号。 以 *major.minor.build.revision* 格式指定 *versionnumber*。|  
 |/company: `companyinformation`|将公司信息添加到输出程序集。|  
 |/copyright: `copyrightinformation`|将版权信息添加到输出程序集。 此信息可在程序集的“文件属性”对话框中查看。|  
-|**/delaysign**|指定 Tlbimp.exe 使用延迟签名对通过结果程序集进行强名称签名。 此选项必须与 **/keycontainer:**、**/keyfile:** 或 **/publickey:** 选项一起指定。 有关延迟签名过程的更多信息，请参见[延迟为程序集签名](../../standard/assembly/delay-sign.md)。|  
+|**/delaysign**|指定 Tlbimp.exe 使用延迟签名对通过结果程序集进行强名称签名。 此选项必须与 **/keycontainer:** 、 **/keyfile:** 或 **/publickey:** 选项一起指定。 有关延迟签名过程的更多信息，请参见[延迟为程序集签名](../../standard/assembly/delay-sign.md)。|  
 |**/help**|显示该工具的命令语法和选项。|  
 |/keycontainer: containername|使用在 *containername* 指定的密钥容器中找到的公钥/私钥对，对结果程序集进行强名称签名。|  
 |/keyfile: filename|使用在 *filename*中找到的发行者的正式公钥/私钥对，对结果程序集进行强名称签名。|  
@@ -53,11 +54,11 @@ tlbimp tlbFile [options]
 |**/primary**|生成指定类型库的主互操作程序集。 将在程序集中添加相关信息以指示类型库的发行者已生成程序集。 通过指定主互操作程序集，可以将发布者的程序集与使用 Tlbimp.exe 从类型库创建的任何其他程序集区分开来。 如果你是用 Tlbimp.exe 导入的类型库的发布者，则应只使用 **/primary** 选项。 请注意，你必须使用[强名称](../../standard/assembly/strong-named.md)对主互操作程序集进行签名。 有关详细信息，请参阅[主互操作程序集](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100))。|  
 |/product: `productinformation`|将产品信息添加到输出程序集。 此信息可在程序集的“文件属性”对话框中查看。|  
 |/productversion: `productversioninformation`|将产品版本信息添加到输出程序集。 没有格式限制。 此信息可在程序集的“文件属性”对话框中查看。|  
-|/publickey: filename|指定包含用来对结果程序集签名的公钥的文件。 如果指定 **/keyfile:** 或 **/keycontainer:** 选项而非 **/publickey:**，则 Tlbimp.exe 将根据随 **/keyfile:** 或 **/keycontainer:** 一起提供的公钥/私钥对来生成公钥。 **/publickey:** 选项支持测试键和延迟签名方案。 文件的格式为 Sn.exe 生成的格式。 有关详细信息，请参阅[强名称工具 (Sn.exe)](sn-exe-strong-name-tool.md) 中的 Sn.exe 的 **-p** 选项。|  
+|/publickey: filename|指定包含用来对结果程序集签名的公钥的文件。 如果指定 **/keyfile:** 或 **/keycontainer:** 选项而非 **/publickey:** ，则 Tlbimp.exe 将根据随 **/keyfile:** 或 **/keycontainer:** 一起提供的公钥/私钥对来生成公钥。 **/publickey:** 选项支持测试键和延迟签名方案。 文件的格式为 Sn.exe 生成的格式。 有关详细信息，请参阅[强名称工具 (Sn.exe)](sn-exe-strong-name-tool.md) 中的 Sn.exe 的 **-p** 选项。|  
 |/reference: filename|指定用来解析对在当前类型库外定义的类型的引用的程序集文件。 如果没有指定 **/reference** 选项，则 Tlbimp.exe 将自动以递归方式导入任何由导入的类型库引用的外部类型库。 如果指定了 **/reference** 选项，则在导入其他类型库之前，该工具将尝试解析被引用程序集中的外部类型。|  
 |/silence: `warningnumber`|禁止显示指定的警告。 此选项不能与 **/silent** 一起使用。|  
 |**/Silent**|取消显示成功消息。 此选项不能与 **/silence** 一起使用。|  
-|**/strictref**|如果该工具不能解析当前程序集、**/reference** 选项指定的程序集或已注册的主互操作程序集 (PIA) 内的所有引用，则不要导入类型库。|  
+|**/strictref**|如果该工具不能解析当前程序集、 **/reference** 选项指定的程序集或已注册的主互操作程序集 (PIA) 内的所有引用，则不要导入类型库。|  
 |**/strictref:nopia**|与 **/strictref** 相同，但忽略 PIA。|  
 |**/sysarray**|指定该工具导入 COM 样式 SafeArray 作为托管 <xref:System.Array> 类型。|  
 |/tlbreference: filename|指定用来在不参考注册表的情况下解析类型库引用的类型库文件。<br /><br /> 请注意，此选项将不加载某些较早的类型库格式。  但是，你仍可以通过注册表或当前目录隐式加载较早的类型库格式。|  

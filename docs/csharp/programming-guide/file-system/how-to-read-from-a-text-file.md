@@ -1,5 +1,6 @@
 ---
 title: 如何读取文本文件中的内容 - C# 编程指南
+description: 了解如何使用 File 类中的静态方法读取文本文件中的内容。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 f1_keywords:
 - StreamReader.ReadToEnd
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - reading data, text files
 - text files, reading
 ms.assetid: 92246c5b-e819-4eea-9370-1a9460e12de3
-ms.openlocfilehash: 8f79d22a86390ca931b05262e50865d852c154c7
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 80ac6f8412f456b23d05ee87882dca8e16a132c3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241742"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301653"
 ---
 # <a name="how-to-read-from-a-text-file-c-programming-guide"></a>如何读取文本文件中的内容（C# 编程指南）
 此示例通过使用 <xref:System.IO.File?displayProperty=nameWithType> 类的 <xref:System.IO.File.ReadAllText%2A> 和 <xref:System.IO.File.ReadAllLines%2A> 静态方法来确定文本文件的内容。  

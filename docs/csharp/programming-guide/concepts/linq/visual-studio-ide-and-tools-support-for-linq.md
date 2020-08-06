@@ -1,13 +1,14 @@
 ---
 title: 对 LINQ 的 Visual Studio IDE 和工具支持 (C#)
+description: 了解支持 LINQ 开发的 Visual Studio 功能，例如对象关系设计器、SQLMetal 工具、LINQ 感知代码编辑器和调试器。
 ms.date: 07/20/2015
 ms.assetid: c1f6cfdf-c96f-417f-acc8-4a049772ead3
-ms.openlocfilehash: a42d6711e34564f03aaf07c295bc682965513619
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cd0c936624b4d5329cb2eb0f1cdd5215bbc96f23
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69590915"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302238"
 ---
 # <a name="visual-studio-ide-and-tools-support-for-linq-c"></a>对 LINQ 的 Visual Studio IDE 和工具支持 (C#)
 Visual Studio 集成开发环境 (IDE) 提供支持 LINQ 应用程序开发的以下功能：  
@@ -24,6 +25,6 @@ Visual Studio 集成开发环境 (IDE) 提供支持 LINQ 应用程序开发的�
 ## <a name="visual-studio-debugger-support"></a>Visual Studio 调试器支持  
  Visual Studio 调试器支持查询表达式的调试。 有关详细信息，请参阅 [Debugging LINQ](/visualstudio/debugger/debugging-linq)（调试 LINQ）。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [语言集成查询 (LINQ) (C#)](./index.md)

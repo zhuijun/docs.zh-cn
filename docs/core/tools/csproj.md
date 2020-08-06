@@ -2,12 +2,12 @@
 title: .NET Core 的 csproj 格式的新增内容
 description: 了解现有文件和 .NET Core csproj 文件之间的区别
 ms.date: 04/08/2019
-ms.openlocfilehash: ea57b66d9a2e5cb69fe82e9a4bcf68625af546fd
-ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
+ms.openlocfilehash: a0cbead27e52af3114d9c44fd19c966e665a2850
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251200"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87427003"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>.NET Core 的 csproj 格式的新增内容
 
@@ -342,9 +342,9 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 适用于包的许可证的 URL。 （自 Visual Studio 15.9.4、.NET SDK 2.1.502 和 2.2.101 起已弃用  ）
 
-### <a name="packageiconurl"></a>PackageIconUrl
+### <a name="packageicon"></a>PackageIcon
 
-64x64 透明背景图像的 URL，用作 UI 显示中包的图标。
+包中要用作包图标的图像的路径。 详细了解 [`icon` 元数据](/nuget/reference/nuspec#icon)。 [PackageIconUrl 已被弃用](/nuget/reference/msbuild-targets#packageiconurl)，被 PackageIcon 取代。
 
 ### <a name="packagereleasenotes"></a>PackageReleaseNotes
 

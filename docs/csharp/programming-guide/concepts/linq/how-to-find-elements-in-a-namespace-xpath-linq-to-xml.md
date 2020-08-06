@@ -1,13 +1,14 @@
 ---
 title: 如何查找命名空间中的元素 (XPath-LINQ to XML) (C#)
+description: 了解如何使用 XPath 表达式查找命名空间中的元素。 查看读取包含两个命名空间的 XML 树的示例。
 ms.date: 07/20/2015
 ms.assetid: cae1c4ac-6cd5-46cf-9b1c-bd85bc9b7ea9
-ms.openlocfilehash: da9d819be5234a2429b6eab276f89bd0d877d4a7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3bf15c4183e3ca339fa7090c21baff83526e37d3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141067"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303226"
 ---
 # <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-c"></a>如何查找命名空间中的元素 (XPath-LINQ to XML) (C#)
 

@@ -1,5 +1,6 @@
 ---
 title: <typeparam> - C# 编程指南
+description: 了解 XML <typeparam> 标记。 在泛型类型或方法声明的注释中使用了此标记来描述类型参数。
 ms.date: 07/20/2015
 f1_keywords:
 - typeparam
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - <typeparam> C# XML tag
 - typeparam C# XML tag
 ms.assetid: 9b99d400-e911-4e55-99c6-64367c96aa4f
-ms.openlocfilehash: 867ecacf58f95533395ded203a8f17bc92558ccf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5e5333e384e8c77b500f74ab7c6038146df6e2c0
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76793367"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87380782"
 ---
 # <a name="typeparam-c-programming-guide"></a>\<typeparam>（C# 编程指南）
 
@@ -22,7 +23,7 @@ ms.locfileid: "76793367"
 <typeparam name="name">description</typeparam>
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>parameters
 
 - `name`
 
@@ -46,7 +47,7 @@ ms.locfileid: "76793367"
 
 [!code-csharp[csProgGuideDocComments#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#13)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../../language-reference/index.md)
 - [C# 编程指南](../index.md)

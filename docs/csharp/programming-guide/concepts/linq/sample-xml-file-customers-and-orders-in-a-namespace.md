@@ -1,13 +1,14 @@
 ---
-title: 示例 XML 文件：命名空间 2 中的客户和订单
+title: 示例 XML 文件：命名空间中的客户和订单
+description: 此 XML 文件用在 LINQ to XML 文档的很多示例中。 此文件包含客户和订单。 该 XML 在某个命名空间中。
 ms.date: 07/20/2015
 ms.assetid: 2da1c474-f658-4dca-a457-c35ef5ba4aff
-ms.openlocfilehash: 80bc052ecc62dfbd78f1dfdffac1925f8a03f31a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 467e00df01d85f1d42b91645cfc6379afac65fc9
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66483805"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302537"
 ---
 # <a name="sample-xml-file-customers-and-orders-in-a-namespace"></a>示例 XML 文件：命名空间中的客户和订单
 下面的 XML 文件用在 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 文档的很多示例中。 此文件包含客户和订单。 该 XML 在某个命名空间中。  

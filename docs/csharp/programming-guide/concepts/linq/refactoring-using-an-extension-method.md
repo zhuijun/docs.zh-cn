@@ -1,13 +1,14 @@
 ---
 title: 使用扩展方法重构 (C#)
+description: 了解如何使用扩展方法重构代码。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 ms.assetid: c5fc123d-af10-4a2f-b8e4-db921efb2639
-ms.openlocfilehash: 8546c2cb834107cf2e099af40f9a7df4d5858b4b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e786f0e1514156535fd6a6033e37ed8879e99709
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253100"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381939"
 ---
 # <a name="refactoring-using-an-extension-method-c"></a>使用扩展方法重构 (C#)
 本示例建立在前面示例（[检索段落的文本 (C#)](./retrieving-the-text-of-the-paragraphs.md)）的基础之上，具体方法是使用作为扩展方法实现的一个纯函数来重构字符串的串联。  
@@ -244,9 +245,9 @@ StyleName:Code >Hello World<
 ## <a name="next-steps"></a>后续步骤  
  下一示例演示如何使用纯函数以其他方式重构此代码：  
   
-- [使用纯函数重构 (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-using-a-pure-function.md)  
+- [使用纯函数重构 (C#)](./refactoring-using-a-pure-function.md)
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [教程：操作 WordprocessingML 文档中的内容 (C#)](./shape-of-wordprocessingml-documents.md)
 - [重构为纯函数 (C#)](./refactoring-into-pure-functions.md)

@@ -1,15 +1,16 @@
 ---
 title: 如何使用 My 命名空间 - C# 编程指南
+description: 了解如何使用“My”命名空间。 “My”命名空间使访问多个 .NET 类变得轻松直观。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, My namespace access
 ms.assetid: e7152414-0ea5-4c8e-bf02-c8d5bbe45ff4
-ms.openlocfilehash: 268543980ba891b0b30f393ee8982f2863ba9a71
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 7abd5049a979d5a15d123052cba0cfdb35bf3fb7
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241937"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381705"
 ---
 # <a name="how-to-use-the-my-namespace-c-programming-guide"></a>如何使用 My 命名空间（C# 编程指南）
 

@@ -1,16 +1,17 @@
 ---
 title: 泛型接口 - C# 编程指南
+description: 了解如何通过 C# 使用泛型接口。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, generic interfaces
 - generics [C#], interfaces
 ms.assetid: a8fa49a1-6e78-4a09-87e5-84a0b9f5ffbe
-ms.openlocfilehash: 4cce23da7579e30ecff80b3afb92a5a58795c1bd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 43817a236e95b3ab8fd0ba94da98457eeec2396c
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712203"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301887"
 ---
 # <a name="generic-interfaces-c-programming-guide"></a>泛型接口（C# 编程指南）
 为泛型集合类或表示集合中的项的泛型类定义接口通常很有用处。 为避免对值类型的装箱和取消装箱操作，泛型类的首选项使用泛型接口，例如 <xref:System.IComparable%601>而不是 <xref:System.IComparable>。 .NET Framework 类库定义多个泛型接口，以将其用于 <xref:System.Collections.Generic> 命名空间中的集合类。  
@@ -47,5 +48,5 @@ ms.locfileid: "75712203"
 
 - [C# 编程指南](../index.md)
 - [泛型介绍](./index.md)
-- [接口](../../language-reference/keywords/interface.md)
+- [interface](../../language-reference/keywords/interface.md)
 - [泛型](../../../standard/generics/index.md)

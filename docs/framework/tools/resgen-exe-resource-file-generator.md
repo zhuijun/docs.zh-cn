@@ -1,5 +1,6 @@
 ---
 title: Resgen.exe（资源文件生成器）
+description: 使用 Resgen.exe（资源文件生成器）。 将文本（.txt、.restext）和 XML 资源格式 (.resx) 文件转换为可嵌入的 CLR 运行时二进制文件 (.resources)。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - resource files, .resources files
@@ -15,12 +16,12 @@ helpviewer_keywords:
 - binary resources files
 - embedding files in runtime binary executable
 ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
-ms.openlocfilehash: b9be030689ecf78b3482743e486e32012e9ca5d4
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: f51ee6c8537abafc82017f3cc29d734e939a254f
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84201108"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517225"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe（资源文件生成器）
 资源文件生成器 (Resgen.exe) 将文本（.txt 或 .restext）文件和基于 XML 的资源格式 (.resx) 文件转换为公共语言运行时二进制 (.resources) 文件，后者可嵌入到运行时二进制可执行文件或附属程序集中。 （请参阅[创建资源文件](../resources/creating-resource-files-for-desktop-apps.md)。）  
@@ -71,7 +72,7 @@ resgen filename.extension [outputDirectory]
   
 |参数或开关|描述|  
 |-------------------------|-----------------|  
-|`/define:` symbol1[, symbol2,...] |从 .NET Framework 4.5 开始，支持基于文本（.txt 或 .restext）的资源文件中的条件编译。 如果 symbol 对应于 `#ifdef` 构造中的输入文本文件中包含的符号，则关联的字符串资源将包含在 .resources 文件中。 如果输入文本文件包含带符号（此符号未由 `#if !` 开关定义）的 `/define` 语句，则关联的字符串资源将包含在资源文件中。<br /><br /> 如果将 `/define` 与非文本文件一起使用，则它将被忽略。 符号是区分大小写的。<br /><br /> 有关此选项的更多信息，请参阅本主题后面的[条件编译资源](#Conditional)。|  
+|`/define:` symbol1[, symbol2,...]|从 .NET Framework 4.5 开始，支持基于文本（.txt 或 .restext）的资源文件中的条件编译。 如果 symbol 对应于 `#ifdef` 构造中的输入文本文件中包含的符号，则关联的字符串资源将包含在 .resources 文件中。 如果输入文本文件包含带符号（此符号未由 `#if !` 开关定义）的 `/define` 语句，则关联的字符串资源将包含在资源文件中。<br /><br /> 如果将 `/define` 与非文本文件一起使用，则它将被忽略。 符号是区分大小写的。<br /><br /> 有关此选项的更多信息，请参阅本主题后面的[条件编译资源](#Conditional)。|  
 |`useSourcePath`|指定输入文件的当前目录将用于解析相对文件路径。|  
 |`/compile`|使你能够在单个批量操作中指定要转换为多个 .resources 文件的多个 .resx 文件或文本文件。 如果不指定此选项，则只能指定一个输入文件自变量。 输出文件将命名为 filename.resources。<br /><br /> 此选项不能与 `/str:` 选项一起使用。<br /><br /> 有关此选项的更多信息，请参阅本主题后面的[编译或转换多个文件](#Multiple)。|  
 |`/r:` `assembly`|从指定的程序集引用元数据。 当转换 .resx 文件并允许 Resgen.exe 序列化或反序列化对象资源时使用此选项。 这类似于 C# 和 Visual Basic 编译器的 `/reference:` 或 `/r:` 选项。|  

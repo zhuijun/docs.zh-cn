@@ -1,15 +1,16 @@
 ---
 title: 示例 XML 文件：合并的采购订单 2
+description: 此 XML 文件用在 LINQ to XML 文档的很多示例中。 此文件包含来自多家公司、具有不同形状的采购订单。
 ms.date: 07/20/2015
 ms.assetid: 9d9698a5-95f2-4564-813b-ba536cdf3bfb
-ms.openlocfilehash: abd9a8f49cbd1308dfb1c043f310601decf64336
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 99cb9e09f9ea14420908aa7cd28f70ff6329baeb
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66483792"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302563"
 ---
-# <a name="sample-xml-file-consolidated-purchase-orders"></a>示例 XML 文件：合并的采购订单
+# <a name="sample-xml-file-consolidated-purchase-orders"></a>示例 XML 文件：合并采购订单
 下面的 XML 文件用在 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 文档的很多示例中。 此文件是一组来自多家公司、具有不同形状的采购订单。 每家公司的采购订单位于单独的命名空间中。  
   
 ## <a name="consolidatedpurchaseordersxml"></a>ConsolidatedPurchaseOrders.xml  

@@ -1,16 +1,17 @@
 ---
 title: LINQ 中的查询语法和方法语法 (C#)
+description: 了解 LINQ 中的查询语法和方法语法。 包括标准查询运算符扩展方法和 Lambda 表达式。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - LINQ [C#], query syntax vs. method syntax
 - queries [LINQ in C#], syntax comparisons
 ms.assetid: eedd6dd9-fec2-428c-9581-5b8783810ded
-ms.openlocfilehash: 17280daaf98010245bbd019652a2a46d7f66ab59
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1765a15347aeedb9cc5fa6784abdfad6fafe4016
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635491"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87300756"
 ---
 # <a name="query-syntax-and-method-syntax-in-linq-c"></a>LINQ 中的查询语法和方法语法 (C#)
 介绍性的语言集成查询 (LINQ) 文档中的大多数查询是使用 LINQ 声明性查询语法编写的。 但是在编译代码时，查询语法必须转换为针对 .NET 公共语言运行时 (CLR) 的方法调用。 这些方法调用会调用标准查询运算符（名称为 `Where`、`Select`、`GroupBy`、`Join`、`Max` 和 `Average` 等）。 可以使用方法语法（而不查询语法）来直接调用它们。  
@@ -18,7 +19,7 @@ ms.locfileid: "75635491"
  查询语法和方法语法在语义上是相同的，但是许多人发现查询语法更简单且更易于阅读。 某些查询必须表示为方法调用。 例如，必须使用方法调用表示检索与指定条件匹配的元素数的查询。 还必须对检索源序列中具有最大值的元素的查询使用方法调用。 <xref:System.Linq> 命名空间中的标准查询运算符的参考文档通常使用方法语法。 因此，即使在开始编写 LINQ 查询时，熟悉如何在查询和查询表达式本身中使用方法语法也十分有用。  
   
 ## <a name="standard-query-operator-extension-methods"></a>标准查询运算符扩展方法  
- 下面的示例演示一个简单查询表达式  以及编写为基于方法的查询  的语义上等效的查询。  
+ 下面的示例演示一个简单查询表达式以及编写为基于方法的查询的语义上等效的查询。  
   
  [!code-csharp[csLINQGettingStarted#22](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#22)]  
   
@@ -28,7 +29,7 @@ ms.locfileid: "75635491"
   
  ![显示 Intellisense 中的所有标准查询运算符的屏幕截图。](./media/query-syntax-and-method-syntax-in-linq/standard-query-operators.png)  
   
- 虽然看起来似乎 <xref:System.Collections.Generic.IEnumerable%601> 进行了重新定义以包括这些其他方法，不过实际上情况并非如此。 标准查询运算符作为一种新类型的方法（称为扩展方法  ）来实现。 扩展方法可“扩展”现有类型；它们可以如同类型上的实例方法一样进行调用。 标准查询运算符扩展了 <xref:System.Collections.Generic.IEnumerable%601>，因此可以写入 `numbers.Where(...)`。  
+ 虽然看起来似乎 <xref:System.Collections.Generic.IEnumerable%601> 进行了重新定义以包括这些其他方法，不过实际上情况并非如此。 标准查询运算符作为一种新类型的方法（称为扩展方法）来实现。 扩展方法可“扩展”现有类型；它们可以如同类型上的实例方法一样进行调用。 标准查询运算符扩展了 <xref:System.Collections.Generic.IEnumerable%601>，因此可以写入 `numbers.Where(...)`。  
   
  若要开始使用 LINQ，你在扩展方法方面实际需要了解的所有内容是如何使用正确的 `using` 指令将它们引入应用程序的范围。 从应用程序的角度来看，扩展方法与常规实例方法是相同的。  
   

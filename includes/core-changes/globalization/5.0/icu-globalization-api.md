@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 49041ce906ab0bb8b9482b79c44302465c4ca788
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 74c3d3247912dcd638a9379d54e682967c5e400b
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702312"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302696"
 ---
 ### <a name="globalization-apis-use-icu-libraries-on-windows"></a>全球化 API 在 Windows 上使用 ICU 库
 
@@ -27,7 +27,7 @@ ms.locfileid: "83702312"
 
 #### <a name="recommended-action"></a>建议操作
 
-开发人员一方不需要执行任何操作。 但是，如果你想要继续使用 NLS 全球化 API，则可以将[运行时开关](../../../../docs/core/run-time-config/globalization.md#nls)设置为还原到该行为。
+开发人员一方不需要执行任何操作。 但是，如果你想要继续使用 NLS 全球化 API，则可以将[运行时开关](../../../../docs/core/run-time-config/globalization.md#nls)设置为还原到该行为。 有关可用开关的详细信息，请参阅 [.NET 全球化和 ICU](/dotnet/standard/globalization-localization/globalization-icu) 一文。
 
 #### <a name="category"></a>类别
 
@@ -43,7 +43,7 @@ ms.locfileid: "83702312"
 
 #### Affected APIs
 
-- `T:System.Span%601`
+- ``T:System.Span`1``
 - `T:System.String`
 - `N:System.Globalization`
 

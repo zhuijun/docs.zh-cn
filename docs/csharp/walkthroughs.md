@@ -1,17 +1,18 @@
 ---
 title: C# 演练
+description: 查看常见方案的分步说明。 这些 C# 演练是着手学习产品或特定功能区域的理想地点。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - walkthroughs [C#]
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: f563e5ed1b14831f9fea6575ced0f7a95d9157fc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 746fe35e6d6d4a75f363ccb82ae8dc6106854d8d
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77626355"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381887"
 ---
 # <a name="c-walkthroughs"></a>C# 演练
 
@@ -71,7 +72,7 @@ ms.locfileid: "77626355"
 - [部署示例和演练](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)\
   提供常见部署方案的分步示例。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 编程指南](./programming-guide/index.md)
 - [Visual Studio 示例](/visualstudio/ide/visual-studio-ide)

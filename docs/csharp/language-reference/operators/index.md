@@ -1,6 +1,7 @@
 ---
-title: C# 运算符 - C# 参考
-ms.date: 04/28/2020
+title: C# 运算符和表达式 - C# 参考
+description: 了解 C# 运算符和表达式、运算符优先级和运算符结合性
+ms.date: 08/04/2020
 f1_keywords:
 - cs.operators
 helpviewer_keywords:
@@ -9,18 +10,52 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 96bb97690f8954cce2cc75cad921e21985972798
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 19b5683a7cd334e1203c57fa90d275b659eac873
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301770"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556548"
 ---
-# <a name="c-operators-c-reference"></a>C# 运算符（C# 参考）
+# <a name="c-operators-and-expressions-c-reference"></a>C# 运算符和表达式（C# 参考）
 
-C# 提供了许多由内置类型支持的运算符。 例如，[算术运算符](arithmetic-operators.md)使用数值操作数执行算术运算，[布尔逻辑运算符](boolean-logical-operators.md)使用 [bool](../builtin-types/bool.md) 操作数执行逻辑运算。 特定的运算符可[重载](operator-overloading.md)。 使用运算符重载，可以为用户定义类型的操作数指定运算符行为。
+C# 提供了许多运算符。 其中许多都受到[内置类型](../builtin-types/built-in-types.md)的支持，可用于对这些类型的值执行基本操作。 这些运算符包括以下组：
 
-在[表达式](../../programming-guide/statements-expressions-operators/expressions.md)中，运算符优先级和结合性决定了操作的执行顺序。 可以使用括号更改由运算符优先级和结合性决定的计算顺序。
+- [算术运算符](arithmetic-operators.md)，将对数值操作数执行算术运算
+- [比较运算符](comparison-operators.md)，将比较数值操作数
+- [布尔逻辑运算符](boolean-logical-operators.md)，将对 [`bool`](../builtin-types/bool.md) 操作数执行逻辑运算
+- [位运算符和移位运算符](bitwise-and-shift-operators.md)，将对整数类型的操作数执行位运算或移位运算
+- [相等运算符](equality-operators.md)，将检查其操作数是否相等
+
+通常可以[重载](operator-overloading.md)这些运算符，也就是说，可以为用户定义类型的操作数指定运算符行为。
+
+最简单的 C# 表达式是文本（例如[整数](../builtin-types/integral-numeric-types.md#integer-literals)和[实数](../builtin-types/floating-point-numeric-types.md#real-literals)）和变量名称。 可以使用运算符将它们组合成复杂的表达式。 运算符[优先级](#operator-precedence)和[结合性](#operator-associativity)决定了表达式中操作的执行顺序。 可以使用括号更改由运算符优先级和结合性决定的计算顺序。
+
+在下面的代码中，表达式的示例位于赋值的右侧：
+
+[!code-csharp[expression examples](snippets/Overview.cs#Expressions)]
+
+通常情况下，表达式会生成结果，并可包含在其他表达式中。 [`void`](../builtin-types/void.md) 方法调用是不生成结果的表达式的示例。 它只能用作[语句](../../programming-guide/statements-expressions-operators/statements.md)，如下面的示例所示：
+
+```csharp
+Console.WriteLine("Hello, world!");
+```
+
+下面是 C# 提供的一些其他类型的表达式：
+
+- [内插字符串表达式](../tokens/interpolated.md)，提供创建格式化字符串的便利语法：
+
+  [!code-csharp-interactive[interpolated string](snippets/Overview.cs#InterpolatedString)]
+
+- [Lambda 表达式](../../programming-guide/statements-expressions-operators/lambda-expressions.md)，可用于创建匿名函数：
+
+  [!code-csharp-interactive[lambda expression](snippets/Overview.cs#Lambda)]
+
+- [查询表达式](../keywords/query-keywords.md)，可用于直接以 C# 使用查询功能：
+
+  [!code-csharp-interactive[query expression](snippets/Overview.cs#Query)]
+
+可使用[表达式主体定义](../../programming-guide/statements-expressions-operators/expression-bodied-members.md)为方法、构造函数、属性、索引器或终结器提供简洁的定义。
 
 ## <a name="operator-precedence"></a>运算符优先级
 
@@ -90,9 +125,13 @@ Console.WriteLine($"a = {a}, b = {b}");  // output: a = 1, b = 6
 
 ## <a name="c-language-specification"></a>C# 语言规范
 
-有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的[运算符](~/_csharplang/spec/expressions.md#operators)部分。
+有关更多信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)的以下部分：
+
+- [表达式](~/_csharplang/spec/expressions.md)
+- [运算符](~/_csharplang/spec/expressions.md#operators)
 
 ## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
-- [表达式](../../programming-guide/statements-expressions-operators/expressions.md)
+- [运算符重载](operator-overloading.md)
+- [表达式树](../../programming-guide/concepts/expression-trees/index.md)

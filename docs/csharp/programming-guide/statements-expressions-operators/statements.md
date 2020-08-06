@@ -1,16 +1,17 @@
 ---
 title: 语句 - C# 编程指南
+description: 了解 C# 编程中的语句。 查看语句类型的列表，并查看代码示例和其他资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: d50b50bb291d0d087015ea5bd075ae90ced66ff5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b941e46f959167f78f1366a3863aca4240810013
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75711930"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381757"
 ---
 # <a name="statements-c-programming-guide"></a>语句（C# 编程指南）
 

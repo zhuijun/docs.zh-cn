@@ -8,12 +8,12 @@ helpviewer_keywords:
 - aliases [C#], extern keyword
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
-ms.openlocfilehash: 86202333484933d7449b0c4d8c5a3f1a63cd7775
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 891e56b064f8a327abe28293223a85b9d95e8fd3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713550"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301809"
 ---
 # <a name="extern-alias-c-reference"></a>外部别名（C# 参考）
 有时你可能不得不引用具有相同的完全限定类型名称的程序集的两个版本。 例如，可能需要在同一应用程序中使用某程序集的两个或多个版本。 通过使用外部程序集别名，可在别名命名的根级别命名空间内包装每个程序集的命名空间，使其能够在同一文件中使用。  
@@ -37,13 +37,35 @@ ms.locfileid: "75713550"
   
  在上一示例中，`GridV1::Grid` 是 `grid.dll` 中的网格控件，`GridV2::Grid` 是 `grid20.dll` 中的网格控件。  
   
+## <a name="using-visual-studio"></a>使用 Visual Studio
+
+如果你使用的是 Visual Studio，可以按类似方式提供别名。
+
+在 Visual Studio 中向项目添加 grid.dll 和 grid20.dll 的引用。 打开“属性”选项卡，并将别名从“全局”分别更改为“GridV1”和“GridV2”。
+
+按上述方式使用这些别名
+
+```csharp
+ extern alias GridV1;  
+  
+ extern alias GridV2;  
+```
+
+现在，可以通过使用别名指令为命名空间或类型创建别名。 有关详细信息，请参阅 [using 指令](using-directive.md)。
+
+```csharp
+using Class1V1 = GridV1::Namespace.Class1;
+
+using Class1V2 = GridV2::Namespace.Class1;
+```
+
 ## <a name="c-language-specification"></a>C# 语言规范  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)
 - [C# 关键字](./index.md)
-- [:: 运算符](../operators/namespace-alias-qualifier.md)
+- [::运算符](../operators/namespace-alias-qualifier.md)
 - [-reference（C# 编译器选项）](../compiler-options/reference-compiler-option.md)

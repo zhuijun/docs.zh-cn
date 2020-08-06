@@ -1,17 +1,18 @@
 ---
 title: C# 编码约定 - C# 编程指南
+description: 了解 C# 编码约定。 编码约定为代码创建一致的外观，并简化代码的复制、更改和维护过程。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - coding conventions, C#
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: 77b173a420f26834855e0bdca3c8d04406ac65d4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 772aebff0b8c7aebe7c7d5c7634cd2931f4570b1
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398375"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301848"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>C# 编码约定（C# 编程指南）
 
@@ -116,7 +117,7 @@ Microsoft 根据本文中的准则来开发样本和文档。
   
 通常，使用 `int` 而非无符号类型。 `int` 的使用在整个 C# 中都很常见，并且当你使用 `int` 时，更易于与其他库交互。  
   
-### <a name="arrays"></a>阵列  
+### <a name="arrays"></a>数组  
   
 当在声明行上初始化数组时，请使用简洁的语法。  
   
@@ -170,7 +171,7 @@ Microsoft 根据本文中的准则来开发样本和文档。
   
 ### <a name="static-members"></a>静态成员  
   
-通过使用类名称调用[静态](../../language-reference/keywords/static.md)成员：ClassName.StaticMember。  这种做法通过明确静态访问使代码更易于阅读。  请勿使用派生类的名称限定基类中定义的静态成员。  编译该代码时，代码可读性具有误导性，如果向派生类添加具有相同名称的静态成员，代码可能会被破坏。  
+使用类名调用 [static](../../language-reference/keywords/static.md) 成员：ClassName.StaticMember。 这种做法通过明确静态访问使代码更易于阅读。  请勿使用派生类的名称限定基类中定义的静态成员。  编译该代码时，代码可读性具有误导性，如果向派生类添加具有相同名称的静态成员，代码可能会被破坏。  
   
 ### <a name="linq-queries"></a>LINQ 查询  
   
@@ -200,11 +201,11 @@ Microsoft 根据本文中的准则来开发样本和文档。
   
      [!code-csharp[csProgGuideCodingConventions#30](../../../../samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidecodingconventions/cs/program.cs#30)]  
   
-## <a name="security"></a>安全  
+## <a name="security"></a>安全性  
 
 请遵循[安全编码准则](../../../standard/security/secure-coding-guidelines.md)中的准则。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Visual Basic 编码约定](../../../visual-basic/programming-guide/program-structure/coding-conventions.md)
 - [安全编码准则](../../../standard/security/secure-coding-guidelines.md)

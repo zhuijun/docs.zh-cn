@@ -1,20 +1,21 @@
 ---
-title: 如何显示命令行自变量 - C# 编程指南
+title: 如何显示命令行参数 - C# 编程指南
+description: 了解如何显示命令行参数。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#], displaying
 ms.assetid: b8479f2d-9e05-4d38-82da-2e61246e5437
-ms.openlocfilehash: 210dad71220572535a0325fac925b0453b0d4e03
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1ac5dc5a5f4e974c9202d2ce23f61071494e1977
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712021"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381809"
 ---
-# <a name="how-to-display-command-line-arguments-c-programming-guide"></a>如何显示命令行自变量（C# 编程指南）
+# <a name="how-to-display-command-line-arguments-c-programming-guide"></a>如何显示命令行参数（C# 编程指南）
 可通过 `Main` 的可选参数来访问在命令行处提供给可执行文件的参数。 参数以字符串数组的形式提供。 数组的每个元素都包含 1 个参数。 删除参数之间的空格。 例如，下面是对虚构可执行文件的命令行调用：  
   
-|命令行输入|传递给 Main 的字符串数组|  
+|命令行上的输入|传递给 Main 的字符串数组|  
 |----------------------------|-------------------------------------|  
 |**executable.exe a b c**|"a"<br /><br /> "b"<br /><br /> “c”|  
 |**executable.exe one two**|"one"<br /><br /> "two"|  

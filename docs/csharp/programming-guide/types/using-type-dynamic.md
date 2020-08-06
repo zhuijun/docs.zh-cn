@@ -1,16 +1,17 @@
 ---
 title: 使用类型 dynamic - C# 编程指南
+description: 了解如何使用动态类型。 动态类型是一种静态类型，但动态对象会跳过静态类型检查。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - dynamic [C#], about dynamic type
 - dynamic type [C#]
 ms.assetid: 3828989d-c967-4a51-b948-857ebc8fdf26
-ms.openlocfilehash: 24d48605e560038d70f1818611f339a94ecc2bba
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 9904f0452feca388704067b1fd5432f74d0df86b
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241963"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381575"
 ---
 # <a name="using-type-dynamic-c-programming-guide"></a>使用类型 dynamic（C# 编程指南）
 

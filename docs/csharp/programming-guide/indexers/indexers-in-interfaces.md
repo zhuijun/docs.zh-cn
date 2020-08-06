@@ -1,16 +1,17 @@
 ---
 title: 接口中的索引器 - C# 编程指南
+description: 可以在 C# 中的接口上声明索引器。 了解接口索引器的访问器与类索引器的访问器有何差异。
 ms.date: 02/08/2020
 helpviewer_keywords:
 - indexers [C#], in interfaces
 - accessors [C#], indexers
 ms.assetid: e16b54bd-4a83-4f52-bd75-65819fca79e8
-ms.openlocfilehash: 9ce6e4f0e0533c2880c6241f44409435248a336a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: ec77843bdf3181a543bd6c02cfb034b21ded1ae7
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287475"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303096"
 ---
 # <a name="indexers-in-interfaces-c-programming-guide"></a>接口中的索引器（C# 编程指南）
 

@@ -1,16 +1,17 @@
 ---
 title: 带有命名方法的委托与匿名方法 - C# 编程指南
+description: 了解通过命名或匿名方法进行的委托。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], with named vs. anonymous methods
 - methods [C#], in delegates
 ms.assetid: 98fa8c61-66b6-4146-986c-3236c4045733
-ms.openlocfilehash: 1ec366999ca6457471b705fa83f06fcde4293f4e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 940363b87e17b34feeffaff38ed498d6fcf6850a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712372"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302745"
 ---
 # <a name="delegates-with-named-vs-anonymous-methods-c-programming-guide"></a>带有命名方法的委托与匿名方法（C# 编程指南）
 [委托](../../language-reference/builtin-types/reference-types.md)可以与命名方法相关联。 使用命名方法实例化委托时，该方法作为参数传递，例如：  
@@ -36,7 +37,7 @@ ms.locfileid: "75712372"
   
  [!code-csharp[csProgGuideDelegates#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#3)]  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 编程指南](../index.md)
 - [委托](./index.md)

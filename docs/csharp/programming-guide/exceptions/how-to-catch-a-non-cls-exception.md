@@ -1,18 +1,19 @@
 ---
 title: 如何捕捉非 CLS 异常
+description: 了解如何捕捉非 CLS 异常。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exceptions [C#], non-CLS
 ms.assetid: db4630b3-5240-471a-b3a7-c7ff6ab31e8d
-ms.openlocfilehash: 635cf0a9142f56dea4b2722fbf3f3eda505d85ee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 255de4cab9a72491eb3b9624d968539d432e0442
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75346274"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302004"
 ---
 # <a name="how-to-catch-a-non-cls-exception"></a>如何捕捉非 CLS 异常
-包括 C++/CLI 在内的某些 .NET 语言允许对象引发并非派生自 <xref:System.Exception> 的异常。 这类异常被称为非 CLS 异常或非异常。   无法在 C# 中引发非 CLS 异常，但有两种方式可以捕获它们：  
+包括 C++/CLI 在内的某些 .NET 语言允许对象引发并非派生自 <xref:System.Exception> 的异常。 这类异常被称为非 CLS 异常或非异常。  无法在 C# 中引发非 CLS 异常，但有两种方式可以捕获它们：  
   
 - 在 `catch (RuntimeWrappedException e)` 块内捕获。
   
@@ -49,7 +50,7 @@ catch (RuntimeWrappedException e)
 }
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.CompilerServices.RuntimeWrappedException>
 - [异常和异常处理](./index.md)

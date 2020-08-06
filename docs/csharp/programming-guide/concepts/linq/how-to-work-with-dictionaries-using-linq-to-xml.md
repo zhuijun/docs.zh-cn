@@ -1,13 +1,14 @@
 ---
 title: 如何通过 LINQ to XML 使用字典 (C#)
+description: 了解如何通过 LINQ to XML 使用字典。 查看将字典转换为 XML 并将 XML 转换回其他数据结构的示例。
 ms.date: 07/20/2015
 ms.assetid: 57bcefe3-8433-4d3b-935a-511c9bcbdfa8
-ms.openlocfilehash: 1a98293f208e80e969362fca27014ecd2e5c4183
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bdba7a2b3dfc16fab1e239ac804c317dfefb7d9e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347225"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302615"
 ---
 # <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>如何通过 LINQ to XML 使用字典 (C#)
 通常需要将各种数据结构转换为 XML 和将 XML 转换回其他数据结构。 本主题通过 <xref:System.Collections.Generic.Dictionary%602> 和 XML 的相互转换演示这一常规方法的具体实现。  

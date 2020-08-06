@@ -1,5 +1,6 @@
 ---
 title: 装箱和取消装箱 - C# 编程指南
+description: 了解 C# 编程中的装箱和取消装箱。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 f1_keywords:
 - cs.boxing
@@ -9,18 +10,18 @@ helpviewer_keywords:
 - unboxing [C#]
 - boxing [C#]
 ms.assetid: 8da9bbf4-bce9-4b08-b2e5-f64c11c56514
-ms.openlocfilehash: 62df08bf4ae3580e9b8d5b3aab0697d396674ca1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5a5bfcc79de8ba3ff66ca8aab9d86d69d89f9221
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76745417"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87380691"
 ---
 # <a name="boxing-and-unboxing-c-programming-guide"></a>装箱和取消装箱（C# 编程指南）
 
 装箱是将[值类型](../../language-reference/builtin-types/value-types.md)转换为 `object` 类型或由此值类型实现的任何接口类型的过程。 常见语言运行时 (CLR) 对值类型进行装箱时，会将值包装在 <xref:System.Object?displayProperty=nameWithType> 实例中并将其存储在托管堆中。 取消装箱将从对象中提取值类型。 装箱是隐式的；取消装箱是显式的。 装箱和取消装箱的概念是类型系统 C# 统一视图的基础，其中任一类型的值都被视为一个对象。
 
-下例将整型变量 `i` 进行了装箱  并分配给对象 `o`。
+下例将整型变量 `i` 进行了装箱并分配给对象 `o`。
 
 [!code-csharp[csProgGuideTypes#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#14)]
 
@@ -56,7 +57,7 @@ ms.locfileid: "76745417"
 
 [!code-csharp[csProgGuideTypes#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#19)]
 
-## <a name="description"></a>说明
+## <a name="description"></a>描述
 
 此示例使用装箱将整型变量 `i` 转换为对象 `o`。 这样一来，存储在变量 `i` 中的值就从 `123` 更改为 `456`。 该示例表明原始值类型和装箱的对象使用不同的内存位置，因此能够存储不同的值。
 
@@ -112,7 +113,7 @@ int j = (int) o;
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [引用类型](../../language-reference/keywords/reference-types.md)

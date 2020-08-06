@@ -1,17 +1,18 @@
 ---
 title: 如何订阅和取消订阅事件 - C# 编程指南
+description: 了解如何订阅和取消订阅事件。 以编程方式使用 Visual Studio IDE 订阅事件，或使用匿名方法订阅。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - event handlers [C#], creating
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: d917ea097cf9253a65c1907efdca71a640df9497
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: f228cc2e4fd719f4d79c56d65aa45b2a3031cba7
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84240663"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302082"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>如何订阅和取消订阅事件（C# 编程指南）
 如果想编写引发事件时调用的自定义代码，则可以订阅由其他类发布的事件。 例如，可以订阅某个按钮的 `click` 事件，以使应用程序在用户单击该按钮时执行一些有用的操作。  

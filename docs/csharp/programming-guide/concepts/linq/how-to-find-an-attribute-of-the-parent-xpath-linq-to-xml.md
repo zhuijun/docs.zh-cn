@@ -1,13 +1,14 @@
 ---
 title: 如何查找父级的属性 (XPath-LINQ to XML) (C#)
+description: 了解如何查找父元素的特性。 查看使用示例 XML 文档的代码示例。
 ms.date: 07/20/2015
 ms.assetid: dbef9d89-a5c4-431f-80cc-7a2ebf323f86
-ms.openlocfilehash: bfe7554a5c767adde5e7170c8e1ea0537155f6df
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 03344bb66f617970d9598c91366eb7d69514397a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141174"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303291"
 ---
 # <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-c"></a>如何查找父级的属性 (XPath-LINQ to XML) (C#)
 
@@ -21,7 +22,7 @@ XPath 表达式为：
 
 此示例首先查找 `Author` 元素。 然后，查找父元素的 `id` 属性。
 
-本示例使用以下 XML 文档：[示例 XML 文件：图书 (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md)。
+本示例使用下面的 XML 文档：[示例 XML 文件：图书 (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md)。
 
 ```csharp
 XDocument books = XDocument.Load("Books.xml");

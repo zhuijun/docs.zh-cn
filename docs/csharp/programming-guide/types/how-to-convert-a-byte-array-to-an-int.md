@@ -1,16 +1,17 @@
 ---
 title: 如何将字节数组转换为 int - C# 编程指南
+description: 了解如何将字节数组转换为 int。查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - conversions [C#], byte array to int
 - byte arrays [C#], converting to int
 ms.assetid: d6ac20e2-448e-4aea-99b9-faf04c6f1e79
-ms.openlocfilehash: 9f477649dba1b42d7a10d521c010977707daf3ec
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 24037a5e212326cf5e670214a6774eff52bd8faf
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75698750"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381562"
 ---
 # <a name="how-to-convert-a-byte-array-to-an-int-c-programming-guide"></a>如何将字节数组转换为 int（C# 编程指南）
 
@@ -47,7 +48,7 @@ ms.locfileid: "75698750"
 
 [!code-csharp[csProgGuideTypes#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#23)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.BitConverter>
 - <xref:System.BitConverter.IsLittleEndian>

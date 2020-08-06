@@ -1,15 +1,16 @@
 ---
 title: 示例 XML 文件：测试命名空间中的配置
+description: 此 XML 文件用在 LINQ to XML 文档的很多示例中。 此文件是一个测试配置文件。 该 XML 在某个命名空间中。
 ms.date: 07/20/2015
 ms.assetid: e75ad1bc-5636-4623-9a34-a286a8c485d6
-ms.openlocfilehash: ed25a8608977070e0db5f4cdee8a44a3c347cc8e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e08bc476eda39b6e9ff3e2958a49a0d9e5dc303a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167997"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302472"
 ---
-# <a name="sample-xml-file-test-configuration-in-a-namespace"></a>示例 XML 文件：测试命名空间中的配置
+# <a name="sample-xml-file-test-configuration-in-a-namespace"></a>示例 XML 文件：命名空间中的测试配置
 下面的 XML 文件用在 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 文档的很多示例中。 这是一个测试配置文件。 该 XML 在某个命名空间中。  
   
 ## <a name="testconfiginnamespacexml"></a>TestConfigInNamespace.xml  

@@ -1,13 +1,14 @@
 ---
 title: 如何使用 DataContractSerializer 进行序列化 (C#)
+description: 了解如何使用 DataContractSerializer 序列化对象。 参阅示例，该示例创建一些对象，然后将它们序列化为文本文件，接着对它们进行反序列化。
 ms.date: 07/20/2015
 ms.assetid: 3320ecbf-cdbe-480e-979c-2c14bbef9988
-ms.openlocfilehash: 0b6d35a2f73ac512f05341f5aaffa61484657576
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b713f36cde594f7cd7011073345d33c6f46585e0
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168695"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301523"
 ---
 # <a name="how-to-serialize-using-datacontractserializer-c"></a>如何使用 DataContractSerializer 进行序列化 (C#)
 本主题显示一个使用 <xref:System.Runtime.Serialization.DataContractSerializer> 进行序列化和反序列化的示例。  

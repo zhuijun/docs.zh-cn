@@ -1,15 +1,16 @@
 ---
 title: 如何声明、实例化和使用委托 - C# 编程指南
+description: 了解如何声明、实例化和使用委托。 参阅涉及 C# 1.0、2.0 和 3.0 及更高版本的示例。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-ms.openlocfilehash: 7ac1d736e19c4dcf1c8408db944505c399762778
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8d4c8424b07a9bccc9112ca9e635a78b9e1a3366
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712359"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87300210"
 ---
 # <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>如何声明、实例化和使用委托（C# 编程指南）
 在 C# 1.0 和更高版本中，可以如下面的示例所示声明委托。  

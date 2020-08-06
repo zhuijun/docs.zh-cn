@@ -1,13 +1,14 @@
 ---
 title: 对不同形状的 XML 进行投影 (C#)
+description: 了解如何对形状不同于源 XML 的 XML 进行投影。 查看使用 WindowsBase 程序集中的类的代码示例。
 ms.date: 07/20/2015
 ms.assetid: 4cb6b14a-32dc-4a2a-813e-bf9368fa8d86
-ms.openlocfilehash: 1377df1ce7f54bc9a0f58836d7df5e5b7b54a69a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 492c0671b6a81f7e6b8d5f93698f84b88b14bd23
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69591532"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299092"
 ---
 # <a name="projecting-xml-in-a-different-shape-c"></a>对不同形状的 XML 进行投影 (C#)
 本主题演示对形状不同于源 XML 的 XML 进行投影的示例。  

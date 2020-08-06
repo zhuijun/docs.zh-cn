@@ -1,5 +1,6 @@
 ---
 title: <remarks> - C# 编程指南
+description: 了解 XML <remarks> 标记。 此标记用于添加有关某个类型的信息，从而补充由以下指定的信息： <summary>.
 ms.date: 07/20/2015
 f1_keywords:
 - remarks
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - remarks C# XML tag
 - <remarks> C# XML tag
 ms.assetid: f8641391-31f3-4735-af7a-c502a5b6a251
-ms.openlocfilehash: 739027786e02e559d86f990bf614e261b497c76f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d38905d100e24158e7a1412f6be9f01a7ced2382
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287280"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381497"
 ---
 # <a name="remarks-c-programming-guide"></a>\<remarks>（C# 编程指南）
 
@@ -39,7 +40,7 @@ ms.locfileid: "84287280"
 
 [!code-csharp[csProgGuideDocComments#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#9)]
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 编程指南](../index.md)
 - [建议的文档注释标记](./recommended-tags-for-documentation-comments.md)

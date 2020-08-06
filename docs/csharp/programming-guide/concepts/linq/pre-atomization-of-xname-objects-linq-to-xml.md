@@ -1,13 +1,14 @@
 ---
 title: XName 对象的预原子化 (LINQ to XML) (C#)
+description: 了解 XName 对象的预原子化。 当创建重复出现特定名称的大型 XML 树时，预原子化对象可以提高性能。
 ms.date: 07/20/2015
 ms.assetid: e84fbbe7-f072-4771-bfbb-059d18e1ad15
-ms.openlocfilehash: 2fd754a352bd2988e52ec9c67a9915a8e587b107
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4d217f6c78dc5d83ce424fb3ba95785f2dac0b73
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69591494"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302823"
 ---
 # <a name="pre-atomization-of-xname-objects-linq-to-xml-c"></a>XName 对象的预原子化 (LINQ to XML) (C#)
 提高 LINQ to XML 中的性能的一种方法是预原子化 <xref:System.Xml.Linq.XName> 对象。 预原子化是指在通过使用 <xref:System.Xml.Linq.XName> 和 <xref:System.Xml.Linq.XElement> 类的构造函数创建 XML 树之前，先将字符串分配给 <xref:System.Xml.Linq.XAttribute> 对象。 然后传递初始化的 <xref:System.Xml.Linq.XName> 对象，而不是将字符串传递给构造函数（此过程将使用从字符串到 <xref:System.Xml.Linq.XName> 的隐式转换）。  
@@ -117,6 +118,6 @@ DateTime t2 = DateTime.Now;
 Console.WriteLine("Time to construct:{0}", t2 - t1);  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [原子化的 XName 和 XNamespace 对象 (LINQ to XML) (C#)](./atomized-xname-and-xnamespace-objects-linq-to-xml.md)

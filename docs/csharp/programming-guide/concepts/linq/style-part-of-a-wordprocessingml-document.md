@@ -1,13 +1,14 @@
 ---
 title: WordprocessingML 文档的样式部件
+description: 了解 Office Open XML WordprocessingML 文档的样式部分。 使用默认样式标识符来标识具有默认样式的段落。
 ms.date: 07/20/2015
 ms.assetid: 5458bccf-3898-4661-904b-7d280c9239a9
-ms.openlocfilehash: 56726a7ea7594bfd1c68e5b1f8e45f585138eac6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b2b0b30643a1e8582bc5a7ea8d22c002b78689e6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68868630"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302290"
 ---
 # <a name="style-part-of-a-wordprocessingml-document"></a>WordprocessingML 文档的样式部件
 本主题演示 Office Open XML WordprocessingML 文档的样式部分的示例。  

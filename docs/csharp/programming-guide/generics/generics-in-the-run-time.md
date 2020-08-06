@@ -1,15 +1,16 @@
 ---
 title: 运行时中的泛型 - C# 编程指南
+description: 了解运行时中的泛型类型。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], at run time
 ms.assetid: 119df7e6-9ceb-49df-af36-24f8f8c0747f
-ms.openlocfilehash: a53a21d3028e588f5c4d5ce7bf35fad8d3720a08
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8e072e7aa53177929dda0be931beb85863b6a12e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75702982"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299222"
 ---
 # <a name="generics-in-the-run-time-c-programming-guide"></a>运行时中的泛型（C# 编程指南）
 泛型类型或方法编译为 Microsoft 中间语言 (MSIL) 时，它包含将其标识为具有类型参数的元数据。 如何使用泛型类型的 MSIL 根据所提供的类型参数是值类型还是引用类型而有所不同。  

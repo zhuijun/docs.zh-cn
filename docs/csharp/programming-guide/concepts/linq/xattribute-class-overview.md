@@ -1,13 +1,14 @@
 ---
 title: XAttribute 类概述 (C#)
+description: 属性是与元素关联的名称/值对。 XAttribute 表示 XML 属性。 了解如何使用 C# 在 LINQ to XML 中使用属性。
 ms.date: 07/20/2015
 ms.assetid: 5a630f24-f9ad-400e-831e-c14ebfc9e142
-ms.openlocfilehash: 7a806314664c6319fc45cff0dddedbe38027059d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8a19de601041bbb20241c959e909483b97bcf797
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635660"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302225"
 ---
 # <a name="xattribute-class-overview-c"></a>XAttribute 类概述 (C#)
 属性是与元素关联的名称/值对。 <xref:System.Xml.Linq.XAttribute> 类表示 XML 属性。  
@@ -79,6 +80,6 @@ Console.WriteLine(c);
   
  这一区别仅对编写在节点级使用 XML 树的代码的开发人员特别重要。 许多开发人员不会关心这种区别。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to XML 编程概述 (C#)](./linq-to-xml-overview.md)

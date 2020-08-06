@@ -1,13 +1,14 @@
 ---
 title: 如何从 XmlReader 流式处理 XML 片段 (C#)
+description: 了解如何从 XmlReader 流式处理 XML 片段。 此方法用于处理较大的 XML 文件。
 ms.date: 07/20/2015
 ms.assetid: 4a8f0e45-768a-42e2-bc5f-68bdf0e0a726
-ms.openlocfilehash: f7914d33622518f983a685dd2e844a25fd3ca15f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e35322724712816180d48c1957719cf87079aedd
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75714657"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301016"
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>如何从 XmlReader 流式处理 XML 片段 (C#)
 

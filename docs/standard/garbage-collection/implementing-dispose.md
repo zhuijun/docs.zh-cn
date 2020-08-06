@@ -10,16 +10,16 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: c8b4b9a79577776bc049ef77e222d63374178708
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4f0cc9b88947d60638057ca83adb7f2e141c5d14
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447168"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455730"
 ---
 # <a name="implement-a-dispose-method"></a>实现 Dispose 方法
 
-实现 <xref:System.IDisposable.Dispose%2A> 方法主要用于释放代码使用的非托管资源。 处理 <xref:System.IDisposable> 实现的实例成员时，通常会级联 <xref:System.IDisposable.Dispose%2A> 调用。 实现 <xref:System.IDisposable.Dispose%2A> 还有其他原因，如撤消之前执行的操作。 例如，释放已分配的内存，从已添加的集合中删除项，以及通知释放获取的锁等等。
+实现 <xref:System.IDisposable.Dispose%2A> 方法主要用于释放非托管资源。 处理 <xref:System.IDisposable> 实现的实例成员时，通常会级联 <xref:System.IDisposable.Dispose%2A> 调用。 实现 <xref:System.IDisposable.Dispose%2A> 有其他原因，例如，为了释放已分配的内存、删除已添加到集合中的项，或发出释放已获取的锁的信号。
 
 [.NET 垃圾回收器](index.md)不会分配或释放非托管内存。 对象释放模式（称为“释放模式”）会对对象生存期强制施加顺序。 释放模式用于实现 <xref:System.IDisposable> 接口的对象，在与文件和管道句柄、注册表句柄、等待句柄或指向非托管内存块的指针交互时较为常见。 这是因为垃圾回收器无法回收非托管对象。
 

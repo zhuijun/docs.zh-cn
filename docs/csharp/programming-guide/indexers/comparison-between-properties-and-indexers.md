@@ -1,16 +1,17 @@
 ---
 title: 比较属性和索引器 - C# 编程指南
+description: 比较 C# 中的索引器与属性的相似之处。 除一些差别外，对属性访问器定义的所有规则同样适用于索引器访问器。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], vs. indexers
 - indexers [C#], vs. properties
 ms.assetid: 3358a89f-44a0-4a4d-bf8c-07237a90af39
-ms.openlocfilehash: 330d222083ce599719698c023803196dfe88da84
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b83ce3db3d4b53fb7bcc5f3b3cd603a375d5d473
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712125"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299170"
 ---
 # <a name="comparison-between-properties-and-indexers-c-programming-guide"></a>属性和索引器之间的比较（C# 编程指南）
 索引器与属性相似。 除下表所示的差别外，对属性访问器定义的所有规则也适用于索引器访问器。  
@@ -24,7 +25,7 @@ ms.locfileid: "75712125"
 |属性的 [set](../../language-reference/keywords/set.md) 访问器包含隐式 `value` 参数。|索引器的 `set` 访问器具有与索引器相同的形参列表，[value](../../language-reference/keywords/value.md) 参数也是如此。|  
 |通过[自动实现的属性](../classes-and-structs/auto-implemented-properties.md)支持简短语法。|支持仅使用索引器的 expression-bodied 成员。|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 编程指南](../index.md)
 - [索引器](./index.md)

@@ -11,14 +11,14 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 78a47b01cc8fba4cb45a686adad901784552c1c1
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: fbd3c8062892f106ec17d0fef86d5ad7f1207d20
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865328"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303473"
 ---
-# <a name="how-to-migrate-from-newtonsoftjson-to-systemtextjson"></a>如何从 Newtonsoft.Json 迁移到 System.Text.Json
+# <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>如何从 Newtonsoft.Json 迁移到 System.Text.Json
 
 本文演示如何从 [Newtonsoft.Json](https://www.newtonsoft.com/json) 迁移到 <xref:System.Text.Json>。
 
@@ -34,7 +34,7 @@ ms.locfileid: "86865328"
 
 本文的大部分内容介绍如何使用 <xref:System.Text.Json.JsonSerializer> API，不过也包含有关如何使用 <xref:System.Text.Json.JsonDocument>（表示文档对象模型或 DOM）、<xref:System.Text.Json.Utf8JsonReader> 和 <xref:System.Text.Json.Utf8JsonWriter> 类型的指导。
 
-## <a name="table-of-differences-between-newtonsoftjson-and-systemtextjson"></a>介绍 Newtonsoft.Json 与 System.Text.Json 之间差异的表格
+## <a name="table-of-differences-between-no-locnewtonsoftjson-and-no-locsystemtextjson"></a>介绍 Newtonsoft.Json 与 System.Text.Json 之间差异的表格
 
 下表列出 `Newtonsoft.Json` 功能和 `System.Text.Json` 等效功能。 这些等效功能分为以下类别：
 
@@ -83,7 +83,7 @@ ms.locfileid: "86865328"
 
 这不是 `Newtonsoft.Json` 功能的详尽列表。 此列表包含在 [GitHub 问题](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json)或 [StackOverflow](https://stackoverflow.com/questions/tagged/system.text.json) 文章中请求的许多方案。 如果对此处所列且当前没有示例代码的一个方案实现了解决方法，并且如果要共享解决方案，请在本页底部的“反馈”部分选择“此页面”。 这会在本文档的 GitHub 存储库中创建一个问题，并将它也列在此页面上的“反馈”部分中。
 
-## <a name="differences-in-default-jsonserializer-behavior-compared-to-newtonsoftjson"></a>默认 JsonSerializer 行为相较于 Newtonsoft.Json 的差异
+## <a name="differences-in-default-jsonserializer-behavior-compared-to-no-locnewtonsoftjson"></a>默认 JsonSerializer 行为相较于 Newtonsoft.Json 的差异
 
 <xref:System.Text.Json> 在默认情况下十分严格，避免代表调用方进行任何猜测或解释，强调确定性行为。 该库是为了实现性能和安全性而特意这样设计的。 `Newtonsoft.Json` 默认情况下十分灵活。 设计中的这种根本差异是默认行为中以下许多特定差异的背后原因。
 
@@ -402,12 +402,14 @@ The JSON value could not be converted to System.String.
 
 [!code-csharp[](snippets/system-text-json-how-to/csharp/WeatherForecastCallbacksConverter.cs)]
 
-通过[对类使用特性](system-text-json-converters-how-to.md#registration-sample---jsonconverter-on-a-type)或是通过向 <xref:System.Text.Json.JsonSerializerOptions.Converters> 集合[添加转换器](system-text-json-converters-how-to.md#registration-sample---converters-collection)来注册此自定义转换器。
+通过向 <xref:System.Text.Json.JsonSerializerOptions.Converters> 集合[添加转换器](system-text-json-converters-how-to.md#registration-sample---converters-collection)来注册此自定义转换器。
 
 如果使用遵循前面示例的自定义转换器：
 
 * `OnDeserializing` 代码无权访问新 POCO 实例。 若要在反序列化开始时操作新 POCO 实例，请将该代码放入 POCO 构造函数中。
-* 通过在选项对象中注册转换器而在以递归方式调用 `Serialize` 或 `Deserialize` 时不传入选项对象，避免无限循环。 有关详细信息，请参阅本文前面介绍的 [必需的属性](#required-properties)部分。
+* 通过在选项对象中注册转换器而在以递归方式调用 `Serialize` 或 `Deserialize` 时不传入选项对象，避免无限循环。
+
+若要详细了解递归调用 `Serialize` 或 `Deserialize` 的自定义转换器，请参阅本文前面的[必需属性](#required-properties)部分。
 
 ### <a name="public-and-non-public-fields"></a>公共和非公共字段
 

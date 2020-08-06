@@ -7,19 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - when keyword [C#]
 ms.assetid: dd543335-ae37-48ac-9560-bd5f047b9aea
-ms.openlocfilehash: 6a61c42ba2d01e84ffae376bf95c99877437be85
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2b041ca3a821f45dd63ce3f6bee7a920eb495651
+ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712827"
+ms.lasthandoff: 07/30/2020
+ms.locfileid: "87426990"
 ---
 # <a name="when-c-reference"></a>when（C# 参考）
 
-在以下两个上下文中，可以使用上下文关键字 `when` 指定筛选条件：
+可以使用上下文关键字 `when` 在以下上下文中指定筛选条件：
 
 - 在 [try/catch](try-catch.md) 或 [try/catch/finally](try-catch-finally.md) 块的 `catch` 语句中。
 - 在 [switch](switch.md) 语句的 `case` 标签中。
+- 在 [`switch` 表达式](../operators/switch-expression.md)中。
 
 ## <a name="when-in-a-catch-statement"></a>`catch` 语句中的 `when`
 
@@ -49,7 +50,7 @@ case (expr) when (when-condition):
 
 [!code-csharp[when-with-case#1](~/samples/snippets/csharp/language-reference/keywords/when/when.cs#1)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [switch 语句](switch.md)
 - [try/catch 语句](try-catch.md)

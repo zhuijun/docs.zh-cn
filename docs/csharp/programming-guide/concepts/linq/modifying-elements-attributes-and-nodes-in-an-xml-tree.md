@@ -1,13 +1,14 @@
 ---
-title: 修改 XML 树3 中的元素、特性和节点
+title: 修改 XML 树中的元素、特性和节点
+description: 了解修改元素、元素的子节点或元素属性时可以使用的方法和属性。
 ms.date: 07/20/2015
 ms.assetid: 0ed22e4e-4c6b-4eb1-b0eb-06685efd8c33
-ms.openlocfilehash: 93a4d67129e22d0bbeef464c1d4d8758439edb7b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bfff882dc57a4f6f4b228563ac923122097d88d0
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66484231"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303161"
 ---
 # <a name="modifying-elements-attributes-and-nodes-in-an-xml-tree"></a>修改 XML 树中的元素、特性和节点
 下表汇总了修改元素、元素的子元素或元素属性 (Attribute) 时可以使用的方法和属性 (Property)。  

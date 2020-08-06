@@ -2,16 +2,16 @@
 title: dotnet-trace 工具 - .NET Core
 description: 安装和使用 dotnet-trace 命令行工具。
 ms.date: 11/21/2019
-ms.openlocfilehash: 6dd968dc49522229dca02c0dc6f3de898026dd82
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 25178a0e59ce9edb69d15ee761c1b9e56aa5eb3a
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924846"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517303"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>dotnet-trace 性能分析实用工具
 
- 本文适用于： ✔️ .NET Core 3.0 SDK 及更高版本
+本文适用于： ✔️ .NET Core 3.0 SDK 及更高版本
 
 ## <a name="install-dotnet-trace"></a>安装 dotnet-trace
 
@@ -38,13 +38,13 @@ dotnet-trace [-h, --help] [--version] <command>
 
 ## <a name="options"></a>选项
 
-- **`--version`**
-
-  显示 dotnet-dump 实用工具的版本。
-
 - **`-h|--help`**
 
   显示命令行帮助。
+
+- **`--version`**
+
+  显示 dotnet-dump 实用工具的版本。
 
 ## <a name="commands"></a>命令
 
@@ -62,23 +62,45 @@ dotnet-trace [-h, --help] [--version] <command>
 ### <a name="synopsis"></a>摘要
 
 ```console
-dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--output]
-    [--providers] [--profile <profile-name>] [--format]
+dotnet-trace collect [--buffersize <size>] [--clreventlevel <clreventlevel>] [--clrevents <clrevents>]
+    [--format <Chromium|NetTrace|Speedscope>] [-h|--help]
+    [-n, --name <name>]  [-o|--output <trace-file-path>] [-p|--process-id <pid>]
+    [--profile <profile-name>] [--providers <list-of-comma-separated-providers>]
 ```
 
 ### <a name="options"></a>选项
-
-- **`-p|--process-id <PID>`**
-
-  从中收集跟踪的进程。
 
 - **`--buffersize <size>`**
 
   设置内存中循环缓冲区的大小（以 MB 表示）。 默认值为 256 MB。
 
+- **`--clreventlevel <clreventlevel>`**
+
+  要发出的 CLR 事件的详细级别。
+
+- **`--clrevents <clrevents>`**
+
+  要发出的 CLR 运行时事件的列表。
+
+- **`--format {Chromium|NetTrace|Speedscope}`**
+
+  设置跟踪文件转换的输出格式。 默认值为 `NetTrace`。
+
+- **`-n, --name <name>`**
+
+  从中收集跟踪的进程的名称。
+
 - **`-o|--output <trace-file-path>`**
 
   收集的跟踪数据的输出路径。 如果未指定，则默认为 `trace.nettrace`。
+
+- **`-p|--process-id <PID>`**
+
+  从中收集跟踪的进程 ID。
+
+- **`--profile <profile-name>`**
+
+  一组命名的预定义提供程序配置，允许简明地指定常见跟踪方案。
 
 - **`--providers <list-of-comma-separated-providers>`**
 
@@ -90,14 +112,6 @@ dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--o
   - `Provider` 的格式为：`KnownProviderName[:Flags[:Level][:KeyValueArgs]]`。
   - `KeyValueArgs` 的格式为：`[key1=value1][;key2=value2]`。
 
-- **`--profile <profile-name>`**
-
-  一组命名的预定义提供程序配置，允许简明地指定常见跟踪方案。
-
-- **`--format {NetTrace|Speedscope}`**
-
-  设置跟踪文件转换的输出格式。 默认值为 `NetTrace`。
-
 ## <a name="dotnet-trace-convert"></a>dotnet-trace convert
 
 将 `nettrace` 跟踪转换为备用格式，以便用于备用跟踪分析工具。
@@ -105,7 +119,7 @@ dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--o
 ### <a name="synopsis"></a>摘要
 
 ```console
-dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
+dotnet-trace convert [<input-filename>] [--format <Chromium|NetTrace|Speedscope>] [-h|--help] [-o|--output <output-filename>]
 ```
 
 ### <a name="arguments"></a>自变量
@@ -116,7 +130,7 @@ dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
 
 ### <a name="options"></a>选项
 
-- **`--format <NetTrace|Speedscope>`**
+- **`--format <Chromium|NetTrace|Speedscope>`**
 
   设置跟踪文件转换的输出格式。
 
@@ -126,7 +140,7 @@ dotnet-trace convert [<input-filename>] [-h|--help] [--format] [-o|--output]
 
 ## <a name="dotnet-trace-ps"></a>dotnet-trace ps
 
-列出可附加到的 dotnet 进程。
+ 列出可从中收集跟踪的 dotnet 进程。
 
 ### <a name="synopsis"></a>摘要
 

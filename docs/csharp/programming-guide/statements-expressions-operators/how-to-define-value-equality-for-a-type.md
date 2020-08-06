@@ -1,5 +1,6 @@
 ---
 title: 如何为类型定义值相等性 - C# 编程指南
+description: 了解如何为类型定义值相等性。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - overriding Equals method [C#]
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - value equality [C#]
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
-ms.openlocfilehash: 140be18698a40be8f394b31fcd42b97d6685cb98
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cf4449618c2b57f21855354f2250d41a403b4d57
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79157086"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381640"
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>如何为类型定义值相等性（C# 编程指南）
 
@@ -37,9 +38,9 @@ ms.locfileid: "79157086"
   
 1. 替代[虚拟](../../language-reference/keywords/virtual.md) <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> 方法。 大多数情况下，`bool Equals( object obj )` 实现应只调入作为 <xref:System.IEquatable%601?displayProperty=nameWithType> 接口的实现的类型特定 `Equals` 方法。 （请参阅步骤 2。）  
   
-2. 通过提供类型特定的 `Equals` 方法实现 <xref:System.IEquatable%601?displayProperty=nameWithType> 接口。 实际的等效性比较将在此接口中执行。 例如，可能决定通过仅比较类型中的一两个字段来定义相等性。 不会从 `Equals`引发异常。 仅适用于类：此方法应仅检查类中声明的字段。 它应调用 `base.Equals` 来检查基类中的字段。 （如果类型直接从 <xref:System.Object> 中继承，则不要这样做，因为 <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> 的 <xref:System.Object> 实现会执行引用相等性检查。）  
+2. 通过提供类型特定的 `Equals` 方法实现 <xref:System.IEquatable%601?displayProperty=nameWithType> 接口。 实际的等效性比较将在此接口中执行。 例如，可能决定通过仅比较类型中的一两个字段来定义相等性。 不会从 `Equals` 引发异常。 仅对于类：此方法应仅检查类中声明的字段。 它应调用 `base.Equals` 来检查基类中的字段。 （如果类型直接从 <xref:System.Object> 中继承，则不要这样做，因为 <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> 的 <xref:System.Object> 实现会执行引用相等性检查。）  
   
-3. 可选，但建议这样做：重载 [==](../../language-reference/operators/equality-operators.md#equality-operator-) 和 [!=](../../language-reference/operators/equality-operators.md#inequality-operator-) 运算符。  
+3. 可选但建议这样做：重载 [==](../../language-reference/operators/equality-operators.md#equality-operator-) 和 [!=](../../language-reference/operators/equality-operators.md#inequality-operator-) 运算符。  
   
 4. 替代 <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType>，以便具有值相等性的两个对象生成相同的哈希代码。  
   
@@ -67,7 +68,7 @@ ms.locfileid: "79157086"
   
  除非结构显式重载了 [==](../../language-reference/operators/equality-operators.md#equality-operator-) 和 [!=](../../language-reference/operators/equality-operators.md#inequality-operator-) 运算符，否则这些运算符无法对结构进行运算。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [相等性比较](equality-comparisons.md)
 - [C# 编程指南](../index.md)

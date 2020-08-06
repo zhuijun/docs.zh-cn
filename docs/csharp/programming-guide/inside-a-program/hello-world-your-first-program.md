@@ -1,5 +1,6 @@
 ---
 title: Hello World - 你在 Windows 或 Mac 上使用 Visual Studio 的第一个程序 - C# 编程指南
+description: Visual Studio 是一个专业的开发环境，具有适用于 .NET 开发的许多功能。 使用 Visual Studio 创建 C# 版本的 Hello World！
 ms.date: 09/12/2019
 f1_keywords:
 - cs.program
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: 6d78ec83fec72b30f5cee398af1816d0cac35886
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: b78937b8ba1c7d4718bfb6252dac705945336d2a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241859"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301822"
 ---
 # <a name="hello-world----your-first-program"></a>Hello World -- 你的第一个程序
 

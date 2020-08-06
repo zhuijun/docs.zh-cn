@@ -1,18 +1,19 @@
 ---
 title: 示例 XML 文件：命名空间 3 中的数值数据
+description: 此 XML 文件用在 LINQ to XML 文档的很多示例中。 它包含用于求和、求平均值和分组的数据。 该 XML 在某个命名空间中。
 ms.date: 07/20/2015
 ms.assetid: 51750cab-3c66-4511-90fb-b9d211308d31
-ms.openlocfilehash: 02788b73a7af9922b5a50237f2d2e401cba8abe2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fe467604840851c2af2533a620f9b7e32367fbb3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66483699"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302498"
 ---
 # <a name="sample-xml-file-numerical-data-in-a-namespace"></a>示例 XML 文件：命名空间中的数值数据
 下面的 XML 文件用在 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 文档的很多示例中。 此文件包含数值数据，用于求和、求平均值和分组。 该 XML 在某个命名空间中。  
   
-## <a name="data"></a>data  
+## <a name="data"></a>数据  
   
 ```xml  
 <Root xmlns='http://www.adatum.com'>  

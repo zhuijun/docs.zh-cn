@@ -1,15 +1,16 @@
 ---
 title: 如何复制、删除和移动文件和文件夹 - C# 编程指南
+description: 了解如何使用 File、Directory、FileInfo 和 DirectoryInfo 类复制、删除和移动文件和文件夹。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - I/O [C#]
 ms.assetid: 62e52cd7-9597-4e4a-acf9-1315f5cdbf05
-ms.openlocfilehash: 662f0ab3b9e69aa8bfb0085f42f577b850029e4d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 208502651080f4fd614e34d1bf5b088dfb1207a6
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712268"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303356"
 ---
 # <a name="how-to-copy-delete-and-move-files-and-folders-c-programming-guide"></a>如何复制、删除和移动文件和文件夹（C# 编程指南）
 以下示例演示如何从 <xref:System.IO?displayProperty=nameWithType> 命名空间使用 <xref:System.IO.File?displayProperty=nameWithType>、<xref:System.IO.Directory?displayProperty=nameWithType>、<xref:System.IO.FileInfo?displayProperty=nameWithType> 和 <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> 类以同步方式复制、移动和删除文件与文件夹。 这些示例未提供进度栏或其他任何用户界面。 如果希望提供一个标准进度对话框，请参阅[如何提供文件操作进度对话框](how-to-provide-a-progress-dialog-box-for-file-operations.md)。  

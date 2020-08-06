@@ -1,13 +1,14 @@
 ---
 title: 在序列化3时保留空格
+description: 了解如何在使用 XElement 和 XDocument 类中的方法序列化 XML 树时控制空白。
 ms.date: 07/20/2015
 ms.assetid: 0c4f8b98-483b-4cf8-86be-fa146eef90dc
-ms.openlocfilehash: 6d357d40c13a66a152b3c8bb5f61e3a3374c4055
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 01e68671e2fde1a2b5b1d0bc429841077ba0205f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "66484072"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303408"
 ---
 # <a name="preserving-white-space-while-serializing"></a>在序列化时保留空白
 本主题描述在序列化 XML 树时如何控制空白。  

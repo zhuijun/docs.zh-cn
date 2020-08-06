@@ -3,12 +3,12 @@ title: 教程：编写第一个分析器和代码修补程序
 description: 本教程提供了有关使用 .NET 编译器 SDK (Roslyn API) 生成分析器和代码修补程序的分步说明。
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: c70fcacc6cb30969e5c69ffd0954ac52e637a915
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: e79907f364939462b7d0d5814c4752be23bcfdf3
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100933"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381588"
 ---
 # <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>教程：编写第一个分析器和代码修补程序
 
@@ -21,10 +21,10 @@ ms.locfileid: "86100933"
 > [!NOTE]
 > 当前 Visual Studio“随附代码修补程序的分析器(.NET Standard)”模板有一个已知 bug，应在 Visual Studio 2019 版本 16.7 中修复。 除非进行了以下更改，否则模板中的项目将不会编译：
 >
-> 1. 选择“工具” > “选项” > “NuGet 包管理器” > “包源”   
+> 1. 选择“工具” > “选项” > “NuGet 包管理器” > “包源”
 >    - 选择加号按钮来添加新源：
->    - 将“源”设置为 `https://dotnet.myget.org/F/roslyn-analyzers/api/v3/index.json`，并选择“更新” 
-> 1. 在“解决方案资源管理器”中，右键单击“MakeConst.Vsix”项目，然后选择“编辑项目文件”  
+>    - 将“源”设置为 `https://dotnet.myget.org/F/roslyn-analyzers/api/v3/index.json`，并选择“更新”
+> 1. 在“解决方案资源管理器”中，右键单击“MakeConst.Vsix”项目，然后选择“编辑项目文件”
 >    - 更新 `<AssemblyName>` 节点以添加 `.Visx` 后缀：
 >      - `<AssemblyName>MakeConst.Vsix</AssemblyName>`
 >    - 更新第 41 行上的 `<ProjectReference>` 节点以更改 `TargetFramework` 值：
@@ -504,7 +504,7 @@ else if (variableType.IsReferenceType && constantValue.Value != null)
 }
 ```
 
-必须在代码修复提供程序中编写更多代码中以将 var 关键字替换为正确类型名称。 返回到 CodeFixProvider.cs。 要添加的代码将执行以下步骤：
+必须在代码修复提供程序中编写更多代码以将 `var` 关键字替换为正确类型名称。 返回到 CodeFixProvider.cs。 要添加的代码将执行以下步骤：
 
 - 检查声明是否为 `var` 声明，如果它是：
 - 创建新类型的推断类型。
@@ -522,12 +522,12 @@ else if (variableType.IsReferenceType && constantValue.Value != null)
 using Microsoft.CodeAnalysis.Simplification;
 ```
 
-运行测试，它们应全部通过。 通过运行已完成的分析器自行庆祝。 按 <kbd>Ctrl+F5</kbd> 在加载了 Roslyn Preview 扩展的第二个 Visual Studio 实例中运行分析器项目。
+运行测试，它们应全部通过。 通过运行已完成的分析器自行庆祝。 按 <kbd>Ctrl</kbd>+<kbd>F5</kbd> 在加载了 Roslyn Preview 扩展的第二个 Visual Studio 实例中运行分析器项目。
 
 - 在第二个 Visual Studio 实例，创建一个新的 C# 控制台应用程序项目并将 `int x = "abc";` 添加到 Main 方法。 由于第一个 bug 已修复，应不会报告针对此局部变量声明的警告（尽管像预期那样出现了编译器错误）。
 - 接下来，将 `object s = "abc";` 添加到 Main 方法。 由于第二个 bug 已修复，应不会报告任何警告。
 - 最后，添加另一个使用 `var` 关键字的局部变量。 你将看到一个警告和显示在左下方的一个建议。
-- 将编辑器插入点移到波浪下划线，然后按 <kbd>Ctrl+</kbd>。 显示建议的代码修补程序。 选择代码修补程序，请注意，var 关键字现已正确处理。
+- 将编辑器插入点移到波浪下划线，然后按 <kbd>Ctrl</kbd>+<kbd>。</kbd> 显示建议的代码修补程序。 选择代码修补程序，请注意，`var` 关键字现已正确处理。
 
 最后，添加以下代码：
 

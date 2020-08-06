@@ -1,13 +1,14 @@
 ---
 title: 检索段落及其样式 (C#)
+description: 了解如何编写可检索段落，然后标识每个段落的样式的查询。
 ms.date: 07/20/2015
 ms.assetid: c2f767f8-57b1-4b4b-af04-89ffb1f7067d
-ms.openlocfilehash: 47127b6f1d6bfaa0d8d93333882a0d0b59f1bae6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 94d01a13485f70bc9d9cef55b5f390c3b30d7f14
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79168292"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303395"
 ---
 # <a name="retrieving-the-paragraphs-and-their-styles-c"></a>检索段落及其样式 (C#)
 在本示例中，我们编写一个从 WordprocessingML 文档检索段落节点的查询。 它还标识每个段落的样式。  
@@ -132,6 +133,6 @@ StyleName:Code
 ## <a name="next-steps"></a>后续步骤  
  在下一主题[检索段落的文本 (C#)](./retrieving-the-text-of-the-paragraphs.md) 中，将创建一个查询来检索段落的文本。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [教程：操作 WordprocessingML 文档中的内容 (C#)](./shape-of-wordprocessingml-documents.md)

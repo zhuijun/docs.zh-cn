@@ -1,5 +1,6 @@
 ---
 title: Mpgo.exe（按托管配置文件优化工具）
+description: 使用 Mpgo.exe（按托管配置文件优化工具）。 使用此工具，可以优化本机映像生成器 (Ngen.exe) 创建的本机映像程序集。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Mpgo.exe
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - Ngen.exe
 - Ngen.exe, profilers and native images
 ms.assetid: f6976502-a000-4fbe-aaf5-a7aab9ce4ec2
-ms.openlocfilehash: 0052475697dae2c3ad891db18d300b5ec08a7e62
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 18a379447e1d5ba97090eca299c59cc161c7be71
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180351"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517277"
 ---
 # <a name="mpgoexe-managed-profile-guided-optimization-tool"></a>Mpgo.exe（按托管配置文件优化工具）
 
@@ -39,7 +40,7 @@ mpgo –Scenario <command> [-Import <directory>] –AssemblyList <assembly1>  <a
 mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>  
 ```  
   
-## <a name="parameters"></a>参数  
+## <a name="parameters"></a>parameters  
  Mpgo.exe 的所有自变量都区分大小写。 命令前加上短划线。  
   
 > [!NOTE]
@@ -47,19 +48,19 @@ mpgo –Scenario <packageName> -AppID <appId> -Timeout <seconds>
 
 |必选参数|描述|
 |------------------------|-----------------|
-|`-Scenario` \<command  ><br /><br /> \- 或 -<br /><br /> `-Scenario` \<packageName  ><br /><br /> \- 或 -<br /><br /> `-Import` \<directory  >|对于桌面应用，使用 `–Scenario` 指定命令来运行你要优化的应用程序，包括任何命令行参数。 如果 command 指定的路径包含空格，则应使用三组双引号将其引起来。例如：`mpgo.exe -scenario """C:\My App\myapp.exe""" -assemblylist """C:\My App\myapp.exe""" -outdir "C:\optimized files"`  。 请勿使用双引号；如果 command 包含空格，使用双引号将不能正确发挥作用  。<br /><br /> \- 或 -<br /><br /> 对于 Windows 8.x 应用商店 应用，使用 `–Scenario` 指定你要为其生成配置文件信息的包。 如果指定包显示名称或包系列名称而不是完整的包名称，则 Mpgo.exe 将选择与你提供的名称匹配的包（如果只有一个匹配项）。 如果多个包与指定的名称匹配，则 Mpgo.exe 将提示你选择一个包。<br /><br /> \- 或 -<br /><br /> 使用 `-Import` 指定应使用之前优化的程序集中的优化数据来优化 `-AssemblyList` 中的程序集。 directory 指定包含之前优化的文件的目录。  在 `–AssemblyList` 或 `–AssemblyListFile` 中指定的程序集是要使用导入文件中的数据进行优化的程序集的新版本。 通过使用早期版本的程序集中的优化数据，你可以优化较新版本的程序集，而无需重新运行该方案。  但是，如果导入的程序集和目标程序集包含明显不同的代码，则优化数据将无效。 在 `–AssemblyList` 或 `–AssemblyListFile` 中指定的程序集名称必须存在于 `–Import` directory 指定的目录中。  如果 directory 指定的路径包含空格，则应使用三组双引号将其引起来。 <br /><br /> 你必须指定 `–Scenario` 或 `–Import`，但是不能同时指定这两个参数。|
-|`-OutDir` \<directory  >|用于放置优化过的程序集的目录。 如果某个程序集已经位于输出目录文件夹中，则将创建新副本并且向其名称追加索引号；例如：assemblyname-1.exe。  如果 directory 指定的路径包含空格，则使用双引号将其引起来。 |
-|`-AssemblyList` \<assembly1 assembly2 ...  ><br /><br /> \- 或 -<br /><br /> `-AssemblyListFile` \<file  >|你希望收集与其有关的配置文件信息的程序集（包括 .exe 和 .dll 文件）的列表，各程序集之用空格隔开。 你可以指定 `C:\Dir\*.dll` 或 `*.dll` 来选择指定工作目录或当前工作目录中的所有程序集。 有关详细信息，请参阅备注部分。<br /><br /> \- 或 -<br /><br /> 一个文本文件，其中包含你希望收集与其有关的配置文件信息的程序集的列表，每个程序集在单独的行上列出。 如果程序集名称以连字符 (-) 开始，则使用程序集文件列表或重命名程序集。|
-|`-AppID` \<appId  >|指定包中的应用程序的 ID。 如果使用通配符 (\*)，则 Mpgo.exe 将尝试枚举包中的 AppID，如果失败，则将回退到 \<package_family_name>!App。  如果指定前缀为感叹号 (!) 的字符串，则 Mpgo.exe 会将包系列名称与提供的自变量连接。|
-|`-Timeout` \<seconds  >|允许 Windows 8.x 应用商店应用在此应用退出前运行的时间。|
+|`-Scenario` \<*command*><br /><br /> \- 或 -<br /><br /> `-Scenario` \<*packageName*><br /><br /> \- 或 -<br /><br /> `-Import` \<*directory*>|对于桌面应用，使用 `–Scenario` 指定命令来运行你要优化的应用程序，包括任何命令行参数。 如果 command 指定的路径包含空格，则应使用三组双引号将其引起来。例如：`mpgo.exe -scenario """C:\My App\myapp.exe""" -assemblylist """C:\My App\myapp.exe""" -outdir "C:\optimized files"`。 请勿使用双引号；如果 command 包含空格，使用双引号将不能正确发挥作用。<br /><br /> \- 或 -<br /><br /> 对于 Windows 8.x 应用商店 应用，使用 `–Scenario` 指定你要为其生成配置文件信息的包。 如果指定包显示名称或包系列名称而不是完整的包名称，则 Mpgo.exe 将选择与你提供的名称匹配的包（如果只有一个匹配项）。 如果多个包与指定的名称匹配，则 Mpgo.exe 将提示你选择一个包。<br /><br /> \- 或 -<br /><br /> 使用 `-Import` 指定应使用之前优化的程序集中的优化数据来优化 `-AssemblyList` 中的程序集。 directory 指定包含之前优化的文件的目录。 在 `–AssemblyList` 或 `–AssemblyListFile` 中指定的程序集是要使用导入文件中的数据进行优化的程序集的新版本。 通过使用早期版本的程序集中的优化数据，你可以优化较新版本的程序集，而无需重新运行该方案。  但是，如果导入的程序集和目标程序集包含明显不同的代码，则优化数据将无效。 在 `–AssemblyList` 或 `–AssemblyListFile` 中指定的程序集名称必须存在于 `–Import` directory 指定的目录中。 如果 directory 指定的路径包含空格，则应使用三组双引号将其引起来。<br /><br /> 你必须指定 `–Scenario` 或 `–Import`，但是不能同时指定这两个参数。|
+|`-OutDir` \<*directory*>|用于放置优化过的程序集的目录。 如果某个程序集已经位于输出目录文件夹中，则将创建新副本并且向其名称追加索引号；例如：assemblyname-1.exe。 如果 directory 指定的路径包含空格，则使用双引号将其引起来。|
+|`-AssemblyList` \<*assembly1 assembly2 ...*><br /><br /> \- 或 -<br /><br /> `-AssemblyListFile` \<*file*>|你希望收集与其有关的配置文件信息的程序集（包括 .exe 和 .dll 文件）的列表，各程序集之用空格隔开。 你可以指定 `C:\Dir\*.dll` 或 `*.dll` 来选择指定工作目录或当前工作目录中的所有程序集。 有关详细信息，请参阅备注部分。<br /><br /> \- 或 -<br /><br /> 一个文本文件，其中包含你希望收集与其有关的配置文件信息的程序集的列表，每个程序集在单独的行上列出。 如果程序集名称以连字符 (-) 开始，则使用程序集文件列表或重命名程序集。|
+|`-AppID` \<*appId*>|指定包中的应用程序的 ID。 如果使用通配符 (\*)，则 Mpgo.exe 将尝试枚举包中的 AppID，如果失败，则将回退到 \<*package_family_name*>!App。 如果指定前缀为感叹号 (!) 的字符串，则 Mpgo.exe 会将包系列名称与提供的自变量连接。|
+|`-Timeout` \<*seconds*>|允许 Windows 8.x 应用商店应用在此应用退出前运行的时间。|
 
 |可选参数|描述|
 |------------------------|-----------------|
 |`-64bit`|为 64 位系统检测程序集。  你必须为 64 位程序集指定此参数，即使你的程序集声明为 64 位也是如此。|
-|`-ExeConfig` \<filename  >|指定你的方案用于提供版本和加载程序信息的配置文件。|
+|`-ExeConfig` \<*filename*>|指定你的方案用于提供版本和加载程序信息的配置文件。|
 |`-f`|强制在二进制程序集中包含配置文件数据，即使它已签名也是如此。  如果已对程序集签名，则必须对程序集重新签名；否则，程序集将无法加载并运行。|
 |`-Reset`|重置环境以确保中止的分析会话不会影响你的程序集，然后退出。 默认情况下将在分析会话前后重置环境。|
-|`-Timeout` \<time in seconds  >|指定分析持续时间（以秒为单位）。 使用稍高于你观察到的 GUI 应用程序启动时间的值。 在超时期间的最后，尽管应用程序将继续运行，但将记录配置文件数据。 如果未设置此选项，则分析将继续，直到应用程序关闭，此时将记录数据。|
+|`-Timeout` \<*time in seconds*>|指定分析持续时间（以秒为单位）。 使用稍高于你观察到的 GUI 应用程序启动时间的值。 在超时期间的最后，尽管应用程序将继续运行，但将记录配置文件数据。 如果未设置此选项，则分析将继续，直到应用程序关闭，此时将记录数据。|
 |`-LeaveNativeImages`|指定在运行方案后不应删除检测到的本机映像。 此选项主要在你获取为方案运行指定的应用程序时使用。 它将防止在后续运行 Mpgo.exe 时重新创建本机映像。 完成应用程序的运行后，如果指定此选项，则缓存中可能有孤立的本机映像。 在这种情况下，请用同样的方案和程序集列表运行 Mpgo.exe，并使用 `–RemoveNativeImages` 参数来删除这些本机映像。|
 |`-RemoveNativeImages`|通过指定了 `–LeaveNativeImages` 的运行进行清理。 如果指定 `-RemoveNativeImages`，则 Mpgo.exe 将忽略除 `-64bit` 和 `–AssemblyList` 之外的所有参数，然后在删除检测到的所有本机映像后退出。|
 

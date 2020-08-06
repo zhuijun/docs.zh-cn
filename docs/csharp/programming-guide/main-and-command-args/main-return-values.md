@@ -1,15 +1,16 @@
 ---
 title: Main() 返回值 - C# 编程指南
+description: 了解 Main() 返回值。 查看代码示例、编译器生成的代码和其他可用资源。
 ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: a3e29903448c3eb5e0b7dda027677d1785a445e7
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 4458f3cd7c8259c5725cfe5e853f826fe2ef61cc
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416293"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382056"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Main() 返回值（C# 编程指南）
 

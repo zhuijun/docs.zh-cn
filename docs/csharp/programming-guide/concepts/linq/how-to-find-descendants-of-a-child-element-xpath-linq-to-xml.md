@@ -1,13 +1,14 @@
 ---
 title: 如何查找子元素的后代 (XPath-LINQ to XML) (C#)
+description: 了解如何使用 XPath 表达式查找具有特定名称的子元素的后代元素。
 ms.date: 07/20/2015
 ms.assetid: 505b7512-bb8b-4f85-abbf-491f039c961e
-ms.openlocfilehash: fb3e20ce21c1f6d2a71f2f71b8acec7cecf0f3ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b8e110abc2e0df99c3fdf6d2846c7cbbc4736c1a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141092"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303252"
 ---
 # <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-c"></a>如何查找子元素的后代 (XPath-LINQ to XML) (C#)
 本主题演示如何获取具有特定名称的子元素的后代元素。  

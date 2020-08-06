@@ -1,16 +1,17 @@
 ---
 title: 如何循环访问目录树 - C# 编程指南
+description: 了解如何循环访问目录树。 访问指定根文件夹下每个嵌套子目录中的每个文件。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - iterating through folders [C#]
 - file iteration [C#]
 ms.assetid: c4be4a75-6b1b-46a7-9d38-bab353091ed7
-ms.openlocfilehash: 24a6225527becb0b896017616e2661ab8247c74c
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: c49a9d1eaea9d4d8967b105d753f2a611d80e795
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241599"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301978"
 ---
 # <a name="how-to-iterate-through-a-directory-tree-c-programming-guide"></a>如何循环访问目录树（C# 编程指南）
 短语“循环访问目录树”的意思是访问特定根文件夹下的每个嵌套子目录中的每个文件，可以是任意深度。 不需要打开每个文件。 可以以 `string` 的形式只检索文件或子目录的名称，也可以以 <xref:System.IO.FileInfo?displayProperty=nameWithType> 或 <xref:System.IO.DirectoryInfo?displayProperty=nameWithType> 对象的形式检索其他信息。  
@@ -33,7 +34,7 @@ root.GetDirectories("*.*", System.IO.SearchOption.AllDirectories);
  如果需要对文件和文件夹执行各种操作，则可以模块化这些示例，方法是将操作重构为可使用单个委托进行调用的单独的函数。  
   
 > [!NOTE]
-> NTFS 文件系统可以包含交接点、符号链接和硬链接等形式的重解析点。    诸如 <xref:System.IO.DirectoryInfo.GetFiles%2A> 和 <xref:System.IO.DirectoryInfo.GetDirectories%2A> 等 .NET 方法不会返回重分析点下的任何子目录。 当两个重解析点相互引用时，此行为可防止进入无限循环。 通常，处理重解析点时应格外小心，以确保不会无意中修改或删除文件。 如果需要精确控制重解析点，请使用平台调用或本机代码直接调用相应的 Win32 文件系统方法。  
+> NTFS 文件系统可以包含交接点、符号链接和硬链接等形式的重解析点。 诸如 <xref:System.IO.DirectoryInfo.GetFiles%2A> 和 <xref:System.IO.DirectoryInfo.GetDirectories%2A> 等 .NET 方法不会返回重分析点下的任何子目录。 当两个重解析点相互引用时，此行为可防止进入无限循环。 通常，处理重解析点时应格外小心，以确保不会无意中修改或删除文件。 如果需要精确控制重解析点，请使用平台调用或本机代码直接调用相应的 Win32 文件系统方法。  
   
 ## <a name="example"></a>示例  
  下面的示例演示如何以递归方式遍历目录树。 递归方法是一种很好的方法，但是如果目录树较大且嵌套深度较深，则可能引起堆栈溢出异常。  

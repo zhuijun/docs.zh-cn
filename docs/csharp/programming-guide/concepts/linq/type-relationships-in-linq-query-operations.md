@@ -1,5 +1,6 @@
 ---
 title: LINQ 查询操作中的类型关系 (C#)
+description: 了解 LINQ 查询中的变量类型如何相互关联。 LINQ 查询操作在数据源、查询及执行中是强类型的。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - inferring type information [LINQ in C#]
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - data transformations [LINQ in C#]
 - LINQ [C#], type relationships
 ms.assetid: 99118938-d47c-4d7e-bb22-2657a9f95268
-ms.openlocfilehash: 41853e6858fae9e8d449aeed95a6a84f343d5874
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 20f0b37a156e3b3f9c63f14cb83d678d26f685ee
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75635608"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302277"
 ---
 # <a name="type-relationships-in-linq-query-operations-c"></a>LINQ 查询操作中的类型关系 (C#)
 若要有效编写查询，应了解完整的查询操作中的变量类型是如何全部彼此关联的。 如果了解这些关系，就能够更容易地理解文档中的 LINQ 示例和代码示例。 另外，还能了解在使用 `var` 隐式对变量进行类型化时的后台操作。  

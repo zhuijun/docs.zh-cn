@@ -1,15 +1,16 @@
 ---
 title: 如何在派生类中引发基类事件 - C# 编程指南
+description: 了解如何在派生类中引发基类事件。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - events [C#], in derived classes
 ms.assetid: 2d20556a-0aad-46fc-845e-f85d86ea617a
-ms.openlocfilehash: e2d2dfc2809a4de1756bfc362880eebc79076b94
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: b0b0a16a1fd165e437fc79ccacb20d406f5cff63
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84240623"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302095"
 ---
 # <a name="how-to-raise-base-class-events-in-derived-classes-c-programming-guide"></a>如何在派生类中引发基类事件（C# 编程指南）
 下面的简单示例演示用于在基类中声明事件，以便也可以从派生类引发它们的标准方法。 此模式广泛用于 .NET 类库中的 Windows 窗体类。  
@@ -22,7 +23,7 @@ ms.locfileid: "84240623"
 ## <a name="example"></a>示例  
  [!code-csharp[csProgGuideEvents#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEvents/CS/Events.cs#1)]  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 编程指南](../index.md)
 - [事件](./index.md)

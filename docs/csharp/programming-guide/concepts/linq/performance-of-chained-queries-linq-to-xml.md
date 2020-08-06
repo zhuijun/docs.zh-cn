@@ -1,13 +1,14 @@
 ---
 title: 链接的查询的性能 (LINQ to XML) (C#)
+description: 了解链接的查询的性能。 链接查询是一种将另一个查询作为其源的查询。
 ms.date: 07/20/2015
 ms.assetid: b2f1d715-8946-4dc0-8d56-fb3d1bba54a6
-ms.openlocfilehash: 7deff9205e6535877efabd85257baa5b3906f41a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 1e9173e85845dd085f4d7bf6deec7eb498acd7f3
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253123"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302849"
 ---
 # <a name="performance-of-chained-queries-linq-to-xml-c"></a>链接的查询的性能 (LINQ to XML) (C#)
 

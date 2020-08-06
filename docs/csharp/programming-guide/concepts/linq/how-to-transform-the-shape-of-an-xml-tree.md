@@ -1,13 +1,14 @@
 ---
 title: 如何转换 XML 树的形状 (C#)
+description: 了解如何转换 XML 树的形状。 XML 树的形状是指它的元素名称、属性名称以及它的层次结构的特征。
 ms.date: 07/20/2015
 ms.assetid: 93c5d426-dea2-4709-a991-60204de42e8f
-ms.openlocfilehash: 91f91ed6fea5371fae2ce67a413f4825f37af6c3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4fa3cc18f235d061ae1778c177c4ac9b626f4b71
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347309"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302641"
 ---
 # <a name="how-to-transform-the-shape-of-an-xml-tree-c"></a>如何转换 XML 树的形状 (C#)
 XML 文档的*形状*是指它的元素名称、属性名称以及它的层次结构的特征。  
@@ -23,7 +24,7 @@ XML 文档的*形状*是指它的元素名称、属性名称以及它的层次�
   
  本示例中的源 XML 文档在 `Customers` 元素（它包含所有客户）下包含一个 `Root` 元素。 此外，在 `Orders` 元素（包含所有订单）下包含一个 `Root` 元素。 本示例创建一个新的 XML 树，在该树中，每个客户的订单都包含在 `Orders` 元素内的 `Customer` 元素中。 原始文档还在 `CustomerID` 元素中包含一个 `Order` 元素；此元素将从重新变形的文档中移除。  
   
- 本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md)。  
+ 本示例使用下面的 XML 文档：[示例 XML 文件：客户和订单 (LINQ to XML)](./sample-xml-file-customers-and-orders-linq-to-xml-2.md) 的架构定义。  
   
 ```csharp  
 XElement co = XElement.Load("CustomersOrders.xml");  
@@ -90,7 +91,7 @@ Console.WriteLine(newCustOrd);
   
  代码调用 `ConvertAddress`，它返回一个 <xref:System.Xml.Linq.XElement> 对象列表。 此方法的参数是一个查询，该查询确定 `Address` 属性值为 `Type` 的 `"Shipping"` 复杂元素。  
   
- 本示例使用以下 XML 文档：[示例 XML 文件：典型采购订单 (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md)。  
+ 本示例使用下面的 XML 文档：[示例 XML 文件：典型采购订单 (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md)。  
   
 ```csharp  
 static IEnumerable<XElement> ConvertAddress(XElement add)  

@@ -1,5 +1,6 @@
 ---
 title: 如何访问 Office 互操作对象 - C# 编程指南
+description: 了解可简化对 Office API 对象的访问的 C# 功能。 利用这些新功能来编写创建并显示 Excel 工作表的代码。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - optional parameters [C#], Office programming
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: b5d2da011ec6318c8b07f1eb4d383a4d56488239
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bc4b5755bf56a013a0deb4efdb821df18db5a18e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75700830"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303018"
 ---
 # <a name="how-to-access-office-interop-objects-c-programming-guide"></a>如何访问 Office 互操作对象（C# 编程指南）
 
@@ -30,31 +31,31 @@ C# 具有一些功能，可简化对 Office API 对象的访问。 这些新功�
 
 1. 启动 Visual Studio。
 
-2. 在 **“文件”** 菜单上，指向 **“新建”** ，然后单击 **“项目”** 。 此时将出现“新建项目”  对话框。
+2. 在 **“文件”** 菜单上，指向 **“新建”** ，然后单击 **“项目”** 。 此时将出现“新建项目”对话框。
 
-3. 在“已安装的模板”  窗格中，展开“Visual C#”  ，然后单击“Windows”  。
+3. 在“已安装的模板”窗格中，展开“Visual C#”，然后单击“Windows”。
 
-4. 查看“新建项目”  对话框的顶部，确保“.NET Framework 4”  （或更高版本）选为目标框架。
+4. 查看“新建项目”对话框的顶部，确保“.NET Framework 4”（或更高版本）选为目标框架。
 
-5. 在“模板”  窗格中，单击“控制台应用程序”  。
+5. 在“模板”窗格中，单击“控制台应用程序”。
 
-6. 在“名称”  字段中键入项目的名称。
+6. 在“名称”字段中键入项目的名称。
 
 7. 单击 **“确定”** 。
 
-     新项目将出现在“解决方案资源管理器”  中。
+     新项目将出现在“解决方案资源管理器”中。
 
 ## <a name="to-add-references"></a>添加引用
 
-1. 在“解决方案资源管理器”  中，右键单击你的项目名称，然后单击“添加引用”  。 此时会显示“添加引用”  对话框。
+1. 在“解决方案资源管理器”中，右键单击你的项目名称，然后单击“添加引用”。 此时会显示“添加引用”对话框。
 
-2. 在“程序集”  页上，在“组件名称”  列表中选择“Microsoft.Office.Interop.Word”  ，然后按住 Ctrl 键并选择“Microsoft.Office.Interop.Excel”  。  如果未看到程序集，你可能需要确保安装并将其显示出来。 请参阅[如何：安装 Office 主互操作程序集](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)。
+2. 在“程序集”页上，在“组件名称”列表中选择“Microsoft.Office.Interop.Word”，然后按住 Ctrl 键并选择“Microsoft.Office.Interop.Excel”。  如果未看到程序集，你可能需要确保安装并将其显示出来。 请参阅[如何：安装 Office 主互操作程序集](/visualstudio/vsto/how-to-install-office-primary-interop-assemblies)。
 
 3. 单击 **“确定”** 。
 
 ## <a name="to-add-necessary-using-directives"></a>添加必要的 using 指令
 
-1. 在“解决方案资源管理器”  中，右键单击“Program.cs”  文件，然后单击“查看代码”  。
+1. 在“解决方案资源管理器”中，右键单击“Program.cs”文件，然后单击“查看代码”。
 
 2. 将以下 `using` 指令添加到代码文件的顶部：
 
@@ -62,7 +63,7 @@ C# 具有一些功能，可简化对 Office API 对象的访问。 这些新功�
 
 ## <a name="to-create-a-list-of-bank-accounts"></a>创建银行帐户列表
 
-1. 将以下类定义粘贴到“Program.cs”  中的 `Program` 类下。
+1. 将以下类定义粘贴到“Program.cs”中的 `Program` 类下。
 
      [!code-csharp[csProgGuideOfficeHowTo#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#2)]
 
@@ -94,7 +95,7 @@ C# 具有一些功能，可简化对 Office API 对象的访问。 这些新功�
 
      [!code-csharp[csProgGuideOfficeHowTo#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#14)]
 
-     C# 4 及更高版本自动将返回的 `Object` 转换为 `dynamic`，前提是程序集由 [-link](../../language-reference/compiler-options/link-compiler-option.md) 编译器选项引用，或 Excel 的“嵌入互操作类型”  属性设置为 true。 True 是此属性的默认值。
+     C# 4 及更高版本自动将返回的 `Object` 转换为 `dynamic`，前提是程序集由 [-link](../../language-reference/compiler-options/link-compiler-option.md) 编译器选项引用，或 Excel 的“嵌入互操作类型”属性设置为 true。 True 是此属性的默认值。
 
 ## <a name="to-run-the-project"></a>运行项目
 
@@ -144,11 +145,11 @@ C# 具有一些功能，可简化对 Office API 对象的访问。 这些新功�
 
      [!code-csharp[csProgGuideOfficeHowTo#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#14)]
 
-2. 若要更改默认行为并使用 PIA 代替嵌入类型信息，请展开“解决方案资源管理器”  中的“引用”  节点，然后选择“Microsoft.Office.Interop.Excel”  或“Microsoft.Office.Interop.Word”  。
+2. 若要更改默认行为并使用 PIA 代替嵌入类型信息，请展开“解决方案资源管理器”中的“引用”节点，然后选择“Microsoft.Office.Interop.Excel”或“Microsoft.Office.Interop.Word”。
 
-3. 如果看不到“属性”  窗口，请按“F4”  。
+3. 如果看不到“属性”窗口，请按“F4”。
 
-4. 在属性列表中找到“嵌入互操作类型”  ，将其值更改为“False”  。 同样地，还可以通过在命令提示符下使用 [-reference](../../language-reference/compiler-options/reference-compiler-option.md) 编译器选项代替 [-link](../../language-reference/compiler-options/link-compiler-option.md) 进行编译。
+4. 在属性列表中找到“嵌入互操作类型”，将其值更改为“False”。 同样地，还可以通过在命令提示符下使用 [-reference](../../language-reference/compiler-options/reference-compiler-option.md) 编译器选项代替 [-link](../../language-reference/compiler-options/link-compiler-option.md) 进行编译。
 
 ## <a name="to-add-additional-formatting-to-the-table"></a>将其他格式添加到表格
 

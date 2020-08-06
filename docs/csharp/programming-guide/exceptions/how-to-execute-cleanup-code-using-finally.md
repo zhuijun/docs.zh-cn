@@ -1,17 +1,18 @@
 ---
 title: 如何使用 finally 执行清理代码 - C# 编程指南
+description: 了解如何使用“finally”语句执行清理代码。 Finally 语句可确保立即进行对象的任何必要清理。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - try/finally blocks [C#]
 - exceptions [C#], try/finally block
 - exception handling [C#], try/finally block
 ms.assetid: 1b1e5aef-3f32-4a88-9d39-b5fffb33bdaf
-ms.openlocfilehash: d1ba761e64053d656ad4cd004133fc455a57c6f6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 148c1f9fba67659a07c667bb15619d6f3f7c3b2f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75705270"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302017"
 ---
 # <a name="how-to-execute-cleanup-code-using-finally-c-programming-guide"></a>如何使用 finally 执行清理代码（C# 编程指南）
 `finally` 语句的用途是确保立即进行对象（通常是容纳外部资源的对象）的必要清理（即使引发异常）。 这类清理的一个示例是在使用之后立即对 <xref:System.IO.FileStream> 调用 <xref:System.IO.Stream.Close%2A>（而不是等待公共语言运行时对对象进行垃圾回收），如下所示：  

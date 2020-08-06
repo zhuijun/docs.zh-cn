@@ -1,5 +1,6 @@
 ---
 title: <typeparamref> - C# 编程指南
+description: 了解 XML <typeparamref> 标记。 通过此标记，文档文件的使用者可显著设置字体格式，例如采用斜体。
 ms.date: 07/20/2015
 f1_keywords:
 - typeparamref
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - typeparamref C# XML tag
 - <typeparamref> C# XML tag
 ms.assetid: 6d8ffc58-12c5-4688-8db6-833a7ded5886
-ms.openlocfilehash: 266eadad322fd3c4167c7a911cb57ef1e1333012
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a39e896f1242452c7bcc94faa1e7ef3086ae2149
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76789661"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87380717"
 ---
 # <a name="typeparamref-c-programming-guide"></a>\<typeparamref>（C# 编程指南）
 
@@ -22,7 +23,7 @@ ms.locfileid: "76789661"
 <typeparamref name="name"/>
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>parameters
 
 - `name`
 
@@ -40,7 +41,7 @@ ms.locfileid: "76789661"
 
 [!code-csharp[csProgGuideDocComments#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#13)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编程指南](../index.md)
 - [建议的文档注释标记](./recommended-tags-for-documentation-comments.md)

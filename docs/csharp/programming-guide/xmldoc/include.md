@@ -1,5 +1,6 @@
 ---
 title: <include> - C# 编程指南
+description: 了解 XML <include> 标记。 通过此标记，可在其他文件中引用描述源代码中类型和成员的注释。
 ms.date: 07/20/2015
 f1_keywords:
 - include
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <include> C# XML tag
 - include C# XML tag
 ms.assetid: a8a70302-6196-4643-bd09-ef33f411f18f
-ms.openlocfilehash: bf41019c775fed25afe4bdb9453a8e52f44856b5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 15a99444d464594cc91a7c8805c564c703c3b608
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287345"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381900"
 ---
 # <a name="include-c-programming-guide"></a>\<include>（C# 编程指南）
 
@@ -75,7 +76,7 @@ The summary for this other type.
 
 ## <a name="program-output"></a>程序输出
 
-使用以下命令行编译 Test 和 Test2 类时，便会生成下面的输出：`-doc:DocFileName.xml.`。在 Visual Studio 的项目设计器的“生成”窗格中，指定 XML 文档注释选项。 当 C# 编译器发现 `<include>` 标记时，它将在 xml_include_tag.doc（而不是当前源文件）中搜索文档注释。 然后编译器生成 DocFileName.xml，这是由文档工具（如 [DocFX](https://dotnet.github.io/docfx/) 和 [Sandcastle](https://github.com/EWSoftware/SHFB)）所使用的文件，用于生成最终文档。  
+使用以下命令行编译 Test 和 Test2 类时，便会生成下面的输出：`-doc:DocFileName.xml.`。在 Visual Studio 的项目设计器的“生成”窗格中，指定 XML 文档注释选项。 当 C# 编译器发现 `<include>` 标记时，它将在 xml_include_tag.doc（而不是当前源文件）中搜索文档注释。 然后编译器生成 *DocFileName.xml*，这是由文档工具（如 [Sandcastle](https://github.com/EWSoftware/SHFB)）所使用的文件，用于生成最终文档。  
   
 ```xml
 <?xml version="1.0"?>
@@ -98,7 +99,7 @@ The summary for this other type.
 </doc>
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 编程指南](../index.md)
 - [建议的文档注释标记](./recommended-tags-for-documentation-comments.md)

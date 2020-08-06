@@ -1,5 +1,6 @@
 ---
 title: <returns> - C# 编程指南
+description: 了解 XML <returns> 标记。 在方法声明的注释中使用了此标记来描述返回值。
 ms.date: 07/20/2015
 f1_keywords:
 - returns
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - <returns> C# XML tag
 - returns C# XML tag
 ms.assetid: bb2d9958-62fc-47c7-9511-6311171f119f
-ms.openlocfilehash: 7bc950a8d89a3ac2b5c3b7a68e05c7778e97f85c
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: e461d46df619a351048ae7942e59847d39e490f9
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287228"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381393"
 ---
 # <a name="returns-c-programming-guide"></a>\<returns>（C# 编程指南）
 

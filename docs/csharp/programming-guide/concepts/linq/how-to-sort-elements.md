@@ -1,13 +1,14 @@
 ---
 title: 如何对元素进行排序 (C#)
+description: 了解如何对元素进行排序。 参阅示例，了解如何编写对 XML 文档中的结果进行排序的查询。
 ms.date: 07/20/2015
 ms.assetid: aee6fbbc-81fd-4b3e-b40f-6ed7b3bd3fee
-ms.openlocfilehash: 7fad9fcb43905072c88a5704c56672917bfc377c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 669d9cf583e6ab70c93be39ad271eaf104f88718
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347367"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301432"
 ---
 # <a name="how-to-sort-elements-c"></a>如何对元素进行排序 (C#)
 本示例演示如何编写对查询结果进行排序的查询。  

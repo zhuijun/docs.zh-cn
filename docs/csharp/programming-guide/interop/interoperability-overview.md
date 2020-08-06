@@ -1,5 +1,6 @@
 ---
 title: 互操作性概述 - C# 编程指南
+description: 了解 C# 和非托管代码之间的互操作性，包括平台调用、C++ 互操作、向 C# 公开 COM 组件，以及向 COM 公开 C#。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - COM interop
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: 6546a379d6d851aafbced0931221dc19ca022a72
-ms.sourcegitcommit: a241301495a84cc8c64fe972330d16edd619868b
+ms.openlocfilehash: 6b1dec96dfb3fc354c614983ed1dafab66c5b007
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/01/2020
-ms.locfileid: "84241729"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302953"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>互操作性概述（C# 编程指南）
 本主题描述在 C# 托管代码和非托管代码之间实现互操作性的方法。  

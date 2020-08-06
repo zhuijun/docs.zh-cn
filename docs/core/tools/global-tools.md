@@ -3,16 +3,16 @@ title: .NET Core 工具
 description: 如何安装、使用、更新和删除 .NET Core 工具。 包括全局工具、工具路径工具和本地工具。
 author: KathleenDollard
 ms.date: 02/12/2020
-ms.openlocfilehash: 583dbb461543d1efb7328d55f6ecce4a99afcaca
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: 75bdedcbc3ebe9c23477795415076d160ab9a642
+ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226603"
+ms.lasthandoff: 07/31/2020
+ms.locfileid: "87455720"
 ---
 # <a name="how-to-manage-net-core-tools"></a>如何管理 .NET Core 工具
 
- 本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
+本文适用于： ✔️ .NET Core 2.1 SDK 及更高版本
 
 .NET Core 工具是一种特殊的 NuGet 包，其中包含控制台应用程序。 可以通过以下方式在计算机上安装该工具：
 
@@ -37,11 +37,11 @@ ms.locfileid: "86226603"
 
 目前，.NET Core 没有工具搜索功能。 以下是查找工具的一些方法：
 
+* 使用“.NET 工具”包类型筛选器搜索 [NuGet](https://www.nuget.org) 网站。 有关详细信息，请参阅[查找和选择包](/nuget/consume-packages/finding-and-choosing-packages)。
 * 请参阅 [natemcmaster/dotnet-tools](https://github.com/natemcmaster/dotnet-tools) GitHub 存储库中的工具列表。
 * 使用 [ToolGet](https://www.toolget.net/) 搜索 .NET 工具。
 * 在 [dotnet/aspnetcore GitHub 存储库的工具目录](https://github.com/dotnet/aspnetcore/tree/master/src/Tools)中查看 ASP.NET Core 团队创建的工具的源代码。
 * 在 [.NET Core dotnet 诊断工具](../diagnostics/index.md#net-core-dotnet-diagnostic-global-tools)中了解诊断工具。
-* 搜索 [NuGet](https://www.nuget.org) 网站。 但是，NuGet 网站尚无可用于仅搜索工具包的功能。
 
 ## <a name="check-the-author-and-statistics"></a>查看作者和统计信息
 

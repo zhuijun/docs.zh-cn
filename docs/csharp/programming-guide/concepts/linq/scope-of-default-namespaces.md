@@ -1,13 +1,14 @@
 ---
 title: C# 中默认命名空间的范围
+description: 了解如何在 C# 的 LINQ to XML 中查询默认 XML 命名空间。 使用 XNamespace 变量和本地名称来创建查询的限定名称。
 ms.date: 07/20/2015
 ms.assetid: fe826236-830f-457a-9027-7ad62c909fae
-ms.openlocfilehash: 7615351f6e5f8b18bd6466a83d54aa65a6c99b50
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 912e47099f89daa9b80ac58b422d39d598509ac9
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253040"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302394"
 ---
 # <a name="scope-of-default-namespaces-in-c"></a>C\# 中默认命名空间的范围
 XML 树中表示的默认命名空间不在查询范围内。 如果您的 XML 在默认命名空间内，仍须声明一个 <xref:System.Xml.Linq.XNamespace> 变量，并将该变量与本地名称组合在一起，生成一个限定名，在查询中使用。  
@@ -88,6 +89,6 @@ Result set follows:
 End of result set  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [命名空间概述(LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md)

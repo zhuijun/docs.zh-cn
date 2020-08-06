@@ -1,16 +1,17 @@
 ---
 title: 泛型委托 - C# 编程指南
+description: 了解如何通过 C# 使用泛型委托。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], delegates
 - delegates [C#], generic
 ms.assetid: bdea509c-44c1-4309-aaa9-15c7aee009df
-ms.openlocfilehash: 4e57256328fc81a485670b47fcf8fd1c38e26fac
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d99271ca9f12e95743d633caac16aaa4151e9c41
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712216"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301900"
 ---
 # <a name="generic-delegates-c-programming-guide"></a>泛型委托（C# 编程指南）
 [委托](../../language-reference/builtin-types/reference-types.md)可以定义它自己的类型参数。 引用泛型委托的代码可以指定类型参数以创建封闭式构造类型，就像实例化泛型类或调用泛型方法一样，如以下示例中所示：  

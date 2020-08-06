@@ -2,12 +2,12 @@
 title: NuGet 和 .NET 库
 description: 使用 .NET 库的 NuGet 打包的最佳实践建议。
 ms.date: 01/15/2019
-ms.openlocfilehash: f1e8d39fe2988f11ce7fd351a4d6bee6d322f2b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d9f8d7cc4402a87e1429791b57a0306b318dfbe4
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79398531"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87382108"
 ---
 # <a name="nuget"></a>NuGet
 
@@ -44,7 +44,7 @@ NuGet 包 (`*.nupkg`) 是一个 zip 文件，其中包含 .NET 程序集和关�
 
 NuGet 包支持多个[元数据属性](/nuget/reference/nuspec)。 下表包含 NuGet.org 上的每个包应提供的核心元数据：
 
-| MSBuild 属性名称              | Nuspec 名称              | 说明  |
+| MSBuild 属性名称              | Nuspec 名称              | 描述  |
 | ---------------------------------- | ------------------------ | ------------ |
 | `PackageId`                        | `id`                       | 包标识符。 如果标识符的前缀满足[条件](/nuget/reference/id-prefix-reservation)，则可以保留该前缀。 |
 | `PackageVersion`                   | `version`                  | NuGet 包版本。 有关详细信息，请参阅 [NuGet 包版本](./versioning.md#nuget-package-version)。             |
@@ -52,7 +52,7 @@ NuGet 包支持多个[元数据属性](/nuget/reference/nuspec)。 下表包含 
 | `Description`                      | `description`              | UI 中显示的包的详细说明。             |
 | `Authors`                          | `authors`                  | 包创建者的逗号分隔列表，与 nuget.org 上的配置文件名称一致。             |
 | `PackageTags`                      | `tags`                     | 描述包的标记和关键字的空格分隔列表。 搜索包时使用标记。             |
-| `PackageIconUrl`                   | `iconUrl`                  | 要用作包的图标的图像 URL。 URL 应为 HTTPS，图像应为 64x64 并具有透明背景。             |
+| `PackageIcon`                   | `icon`                  | 包中要用作包图标的图像的路径。 详细了解 [`icon` 元数据](/nuget/reference/nuspec#icon)。 |
 | `PackageProjectUrl`                | `projectUrl`               | 项目主页或源存储库的 URL。             |
 | `PackageLicenseExpression`         | `license`                  | 项目许可证的 [SPDX 标识符](https://spdx.org/licenses/)。 只有获得 OSI 和 FSF 批准的许可证才能使用标识符。 其他许可证应使用 `PackageLicenseFile`。 详细了解 [`license` 元数据](/nuget/reference/nuspec#license)。 |
 

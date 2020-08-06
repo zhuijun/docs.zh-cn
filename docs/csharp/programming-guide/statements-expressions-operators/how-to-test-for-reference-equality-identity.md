@@ -1,21 +1,22 @@
 ---
 title: 如何测试引用相等性（标识）- C# 编程指南
+description: 了解如何测试引用相等性（标识）。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - object identity [C#]
 - reference equality [C#]
 ms.assetid: 91307fda-267b-4fd2-a338-2aada39ee791
-ms.openlocfilehash: 77ce2ef0ccf47d619134c120101ba2aa04f485e6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: fece0fbc0179f5707e7f3fcd62371b8dde84eb6a
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75699049"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381380"
 ---
 # <a name="how-to-test-for-reference-equality-identity-c-programming-guide"></a>如何测试引用相等性（标识）（C# 编程指南）
 无需实现任何自定义逻辑，即可支持类型中的引用相等性比较。 此功能由静态 <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> 方法向所有类型提供。  
   
- 以下示例演示如何确定两个变量是否具有引用相等性，即它们引用内存中的同一对象  。  
+ 以下示例演示如何确定两个变量是否具有引用相等性，即它们引用内存中的同一对象。  
   
  该示例还演示 <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> 为何始终为值类型返回 `false`，以及您为何不应使用 <xref:System.Object.ReferenceEquals%2A> 来确定字符串相等性。  
   
@@ -26,6 +27,6 @@ ms.locfileid: "75699049"
   
  运行时始终暂存同一程序集内的常量字符串。 也就是说，仅维护每个唯一文本字符串的一个实例。 但是，运行时不能保证会暂存在运行时创建的字符串，也不保证会暂存不同程序集中两个相等的常量字符串。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [相等比较](./equality-comparisons.md)

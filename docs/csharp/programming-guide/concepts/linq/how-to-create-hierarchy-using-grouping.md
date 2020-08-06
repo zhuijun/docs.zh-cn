@@ -1,13 +1,14 @@
 ---
 title: 如何使用分组创建层次结构 (C#)
+description: 了解如何对数据进行分组，然后生成 XML 层次结构反映分组的新 XML 文件。
 ms.date: 07/20/2015
 ms.assetid: 0213d59e-5f76-438c-9cab-4bf11f7b971d
-ms.openlocfilehash: c5a96b02595446b2efa01868cc88377c3a5151c9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d9470ce9b9b7702cf9b835cb2143b6a36f3a254f
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141300"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302914"
 ---
 # <a name="how-to-create-hierarchy-using-grouping-c"></a>如何使用分组创建层次结构 (C#)
 本示例演示如何将数据分组，再基于分组生成 XML。  

@@ -1,13 +1,14 @@
 ---
 title: 如何根据属性进行筛选 (XPath-LINQ to XML) (C#)
+description: 了解如何使用 XPath-LINQ to XML 的指定名称和属性值筛选子代元素。
 ms.date: 07/20/2015
 ms.assetid: 208d6256-1bd7-4237-b2c9-909f26dfd0e2
-ms.openlocfilehash: ab2cd439f4dd1454de4fa565658ef5dac14b8c22
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 80c43b8485314c6a711b574b5d6c23b56533833d
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141273"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302888"
 ---
 # <a name="how-to-filter-on-an-attribute-xpath-linq-to-xml-c"></a>如何根据属性进行筛选 (XPath-LINQ to XML) (C#)
 本主题演示如何获取具有指定名称、并具有一个带指定值的属性的子代元素。  
@@ -19,7 +20,7 @@ ms.locfileid: "74141273"
 ## <a name="example"></a>示例  
  本示例查找名称为 `Address`，`Type`、并具有一个带“Shipping”值的属性的子代元素。  
   
- 本示例使用以下 XML 文档：[示例 XML 文件：多个采购订单 (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md)。  
+ 本示例使用下面的 XML 文档：[示例 XML 文件：多个采购订单 (LINQ to XML)](./sample-xml-file-multiple-purchase-orders-linq-to-xml.md)。  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  

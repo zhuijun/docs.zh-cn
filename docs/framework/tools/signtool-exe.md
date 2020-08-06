@@ -1,16 +1,17 @@
 ---
 title: SignTool.exe（签名工具）
+description: 了解 SignTool.exe（签名工具）。 此命令行工具用于对文件进行数字签名，验证文件中的签名，以及将时间戳应用于文件。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Sign tool
 - SignTool.exe
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
-ms.openlocfilehash: 8ce31b1399700906d6d6e2a369dcfc4b61fe9646
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f1254f345a8b3bb796217442cbad36d2e942b403
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79180323"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517199"
 ---
 # <a name="signtoolexe-sign-tool"></a>SignTool.exe（签名工具）
 签名工具是一个命令行工具，用于对文件进行数字签名，以及验证文件和时间戳文件中的签名。  
@@ -27,7 +28,7 @@ signtool [command] [options] [file_name | ...]
   
 ## <a name="parameters"></a>参数  
   
-|参数|描述|  
+|参数|说明|  
 |--------------|-----------------|  
 |`command`|指定要对文件执行的操作的四个命令（`catdb`、`sign`、`Timestamp` 或 `Verify`）之一。 有关每个命令的说明，请参见下一个表。|  
 |`options`|用于修改命令的选项。 除全局 `/q` 和 `/v` 选项之外，每个命令均支持一组唯一选项。|  
@@ -35,7 +36,7 @@ signtool [command] [options] [file_name | ...]
   
  签名工具支持下列命令。 每个命令均与不同的选项集结合使用，这些选项集已在其各自的节中列出。  
   
-|命令|描述|  
+|Command|说明|  
 |-------------|-----------------|  
 |`catdb`|在目录数据库中添加或移除目录文件。 目录数据库用于自动查找目录文件，并由 GUID 标识。 有关 `catdb` 命令支持的选项列表，请参阅 [catdb 命令选项](signtool-exe.md#catdb)。|  
 |`sign`|对文件进行数字签名。 数字签名可以阻止文件被篡改，并且使用户能够基于签名证书验证签名者。 有关 `sign` 命令支持的选项列表，请参阅 [sign 命令选项](signtool-exe.md#sign)。|  
@@ -81,9 +82,9 @@ signtool [command] [options] [file_name | ...]
 |`/n`  SubjectName|指定签名证书的主题的名称。 该值可以是整个主题名称的子字符串。|  
 |`/nph`|如果支持，则取消可执行文件的页面哈希。 默认值由 SIGNTOOL_PAGE_HASHES 环境变量和 wintrust.dll 版本决定。 对于非 PE 文件，忽略此选项。|  
 |`/p`  Password|指定打开 PFX 文件时要使用的密码。 （使用 `/f` 选项指定 PFX 文件。）|  
-|`/p7` *路径*|指定为每个指定的内容文件生成的公钥加密标准 (PKCS) #7 文件。 PKCS #7 文件命名为 path\\filename.p7。|  
+|`/p7` *路径*|指定为每个指定的内容文件生成的公钥加密标准 (PKCS) #7 文件。 PKCS #7 文件命名为 path\\filename.p7 。|  
 |`/p7ce` Value|为已签名的 PKCS #7 内容指定选项。 将 Value 设置为“嵌入的”，可将已签名内容嵌入到 PKCS #7 文件中；如果设置为“DetachedSignedData”，则可生成分离的 PKCS #7 文件的已签名数据部分。 如果未使用 `/p7ce` 选项，默认情况下将嵌入已签名的内容。|  
-|`/p7co` \<OID>|指定标识已签名的 PKCS #7 内容的对象标识符 (OID)。|  
+|`/p7co` *\<OID>*|指定标识已签名的 PKCS #7 内容的对象标识符 (OID)。|  
 |`/ph`|如果支持，则生成可执行文件的页面哈希。|  
 |`/r`  RootSubjectName|指定签名证书必须链接到的根证书的主题名称。 该值可以是根证书的整个主题名称的子字符串。|  
 |`/s`  StoreName|指定要在搜索证书时打开的存储。 如果未指定该选项，则打开 `My` 存储。|  
@@ -127,7 +128,7 @@ signtool [command] [options] [file_name | ...]
 |`/hash` (`SHA1`&#124;`SHA256`)|指定在目录中搜索文件时要使用的可选哈希算法。|  
 |`/kp`|指定应使用内核模式驱动程序签名策略执行验证。|  
 |`/ms`|使用多个验证语义。 这是 Windows 8 和更高版本上的 [WinVerifyTrust](/windows/desktop/api/wintrust/nf-wintrust-winverifytrust) 调用的默认行为。|  
-|`/o` Version|按操作系统版本验证文件。 版本具有以下格式：PlatformID：VerMajor.VerMinor.BuildNumber。 PlatformID 表示 <xref:System.PlatformID> 枚举成员的基础值。 **重要提示：** 建议使用 `/o` 开关。 如果未指定 `/o`，SignTool.exe 可能会返回意外的结果。 例如，如果你未将 `/o` 开关包含在内，则能在旧版操作系统上正确验证的系统目录可能在新版操作系统上无法正确验证。|  
+|`/o` Version|按操作系统版本验证文件。 版本具有以下格式：PlatformID：VerMajor.VerMinor.BuildNumber   。 PlatformID 表示 <xref:System.PlatformID> 枚举成员的基础值。 **重要提示：** 建议使用 `/o` 开关。 如果未指定 `/o`，SignTool.exe 可能会返回意外的结果。 例如，如果你未将 `/o` 开关包含在内，则能在旧版操作系统上正确验证的系统目录可能在新版操作系统上无法正确验证。|  
 |`/p7`|验证 PKCS #7 文件。 无现有策略用于 PKCS #7 验证。 该签名处于选中状态，并为签名证书生成了链。|  
 |`/pa`|指定应使用默认认证码验证策略。 如果未指定 `/pa` 选项，签名工具将使用 Windows 驱动程序验证策略。 此选项不能与 `catdb` 选项一起使用。|  
 |`/pg` PolicyGUID|通过 GUID 指定验证策略。 PolicyGUID 相当于验证策略的 ActionID。 此选项不能与 `catdb` 选项一起使用。|  
@@ -140,7 +141,7 @@ signtool [command] [options] [file_name | ...]
 ## <a name="return-value"></a>返回值  
  当其终止时，签名工具将返回下列退出代码之一。  
   
-|退出代码|描述|  
+|退出代码|说明|  
 |---------------|-----------------|  
 |0|执行成功。|  
 |1|执行失败。|  

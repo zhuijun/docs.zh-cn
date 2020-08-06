@@ -1,13 +1,14 @@
 ---
 title: 如何检索特性的值 (LINQ to XML) (C#)
+description: 了解如何获取属性的值。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 ms.assetid: 817bbe89-5979-4234-bf0c-46f63692ac8c
-ms.openlocfilehash: 212ad3bb3097e7e2c76da8f165011b181f329d4c
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 5ee6995a54829b6d992e2982e6a6effcabf76470
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249189"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301549"
 ---
 # <a name="how-to-retrieve-the-value-of-an-attribute-linq-to-xml-c"></a>如何检索特性的值 (LINQ to XML) (C#)
 本主题说明如何获取属性的值。 主要有两种方法：可以将 <xref:System.Xml.Linq.XAttribute> 强制转换为所需的类型；然后，显式转换运算符将元素或属性的内容转换为指定的类型。 此外，还可以使用 <xref:System.Xml.Linq.XAttribute.Value%2A> 属性。 但是，强制转换通常是更好的方法。 在检索不一定存在的属性的值时，如果将属性强制转换为可以为 null 的值类型，则代码会更易于编写。 有关此技术的示例，请参阅[如何检索元素的值 (LINQ to XML) (C#)](./how-to-retrieve-the-value-of-an-element-linq-to-xml.md)。  

@@ -1,13 +1,14 @@
 ---
 title: 反射 (C#)
+description: 反射提供描述 C# 中的程序集、模块和类型的对象。 如果代码包括特性，可以利用反射来访问它们。
 ms.date: 07/20/2015
 ms.assetid: f80a2362-953b-4e8e-9759-cd5f334190d4
-ms.openlocfilehash: a56fb24b63e4d80dbb67b079466b67cd11672023
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4d4f4c082dd2d58e212bae53524e5dd4fd06fb75
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74711664"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302797"
 ---
 # <a name="reflection-c"></a>反射 (C#)
 
@@ -16,7 +17,7 @@ ms.locfileid: "74711664"
 下面一个简单的反射示例，使用方法 <xref:System.Object.GetType>（被 `Object` 基类的所有类型继承）以获取变量类型：
 
 > [!NOTE]
-> 请确保在 .cs 文件顶部添加 `using System;` 和 `using System.Reflection;`  。
+> 请确保在 .cs 文件顶部添加 `using System;` 和 `using System.Reflection;`。
 
 ```csharp
 // Using GetType to obtain type information:
@@ -38,7 +39,7 @@ Console.WriteLine(info);
 输出为：`System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e`。
 
 > [!NOTE]
-> C# 关键字 `protected` 和 `internal` 在 IL 中没有任何意义，且不会用于反射 API 中。 在 IL 中对应的术语为“系列”  和“程序集”  。 若要标识 `internal` 使用反射的方法，请使用 <xref:System.Reflection.MethodBase.IsAssembly%2A> 属性。 若要标识 `protected internal` 方法，请使用 <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>。
+> C# 关键字 `protected` 和 `internal` 在 IL 中没有任何意义，且不会用于反射 API 中。 在 IL 中对应的术语为“系列”和“程序集”。 若要标识 `internal` 使用反射的方法，请使用 <xref:System.Reflection.MethodBase.IsAssembly%2A> 属性。 若要标识 `protected internal` 方法，请使用 <xref:System.Reflection.MethodBase.IsFamilyOrAssembly%2A>。
 
 ## <a name="reflection-overview"></a>反射概述
 

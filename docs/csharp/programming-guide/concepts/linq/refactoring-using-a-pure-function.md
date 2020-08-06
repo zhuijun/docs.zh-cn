@@ -1,16 +1,17 @@
 ---
 title: 使用纯函数重构 (C#)
+description: 了解如何使用纯函数重构代码。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 ms.assetid: a3416a45-9e12-4e4a-9747-897f06eef510
-ms.openlocfilehash: f264a0028ed265a5a4fbe1dc32f430c648724c20
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a3f0084d9de27f3f215cc3ba527ada93f7a3d61a
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70253082"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87300106"
 ---
 # <a name="refactoring-using-a-pure-function-c"></a>使用纯函数重构 (C#)
-下面的示例使用一个纯函数对前面的示例[使用扩展方法重构 (C#)](./refactoring-using-an-extension-method.md) 进行重构。在本示例中，查找段落文本的代码将移至纯静态方法 `ParagraphText` 中。  
+下面的示例重构上一个示例（[使用扩展方法重构(C#)](./refactoring-using-an-extension-method.md)）来使用纯函数。 在本示例中，用于查找段落文本的代码将被移到纯静态方法 `ParagraphText`。  
   
 ## <a name="example"></a>示例  
  本示例处理一个 WordprocessingML 文档，它从 WordprocessingML 文档中检索段落节点。 它还标识每个段落的样式。 本示例以本教程中前面的一些示例为基础构建。 下面代码中的注释标识出了重构的代码。  
@@ -179,7 +180,7 @@ StyleName:Code >Hello World<
   
 - [对不同形状的 XML 进行投影 (C#)](./projecting-xml-in-a-different-shape.md)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [教程：操作 WordprocessingML 文档中的内容 (C#)](./shape-of-wordprocessingml-documents.md)
 - [使用扩展方法重构 (C#)](./refactoring-using-an-extension-method.md)

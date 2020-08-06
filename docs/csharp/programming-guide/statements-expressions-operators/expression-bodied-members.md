@@ -1,15 +1,16 @@
 ---
 title: 表达式主体定义的成员 - C# 编程指南
+description: 了解 expression-bodied 成员。 查看使用属性、构造函数、终结器等的表达式主体定义的代码示例。
 ms.date: 02/06/2019
 helpviewer_keywords:
 - expression-bodied members[C#]
 - C# language, expresion-bodied members
-ms.openlocfilehash: f212bb707d3dd2d4a7cc917d335a83cff01ed0cf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e68e96e4aa3ff6a64590459a7197da1833e1a275
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75711982"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381653"
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>Expression-bodied 成员（C# 编程指南）
 
@@ -19,7 +20,7 @@ ms.locfileid: "75711982"
 member => expression;
 ```
 
-其中“expression”  是有效的表达式。
+其中“expression”是有效的表达式。
 
 C# 6 中引入了针对方法和只读属性的表达式主体定义支持，并在 C# 7.0 中进行了扩展。 表达式主体定义可用于下表列出的类型成员：
 
@@ -30,7 +31,7 @@ C# 6 中引入了针对方法和只读属性的表达式主体定义支持，并
 |[Property](#properties)  |C# 7.0 |
 |[构造函数](#constructors)   |C# 7.0 |
 |[终结器](#finalizers)     |C# 7.0 |
-|[Indexer](#indexers)       |C# 7.0 |
+|[索引器](#indexers)       |C# 7.0 |
 
 ## <a name="methods"></a>方法
 
@@ -68,7 +69,7 @@ PropertyType PropertyName => expression;
 
 构造函数的表达式主体定义通常包含单个赋值表达式或一个方法调用，该方法调用可处理构造函数的参数，也可初始化实例状态。
 
-以下示例定义 `Location` 类，其构造函数具有一个名为“name”  的字符串参数。 表达式主体定义向 `Name` 属性分配参数。
+以下示例定义 `Location` 类，其构造函数具有一个名为“name”的字符串参数。 表达式主体定义向 `Name` 属性分配参数。
 
 [!code-csharp[expression-bodied-constructor](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-ctor.cs#1)]  
 

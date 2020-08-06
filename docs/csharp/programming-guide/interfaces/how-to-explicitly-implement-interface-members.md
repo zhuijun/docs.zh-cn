@@ -1,15 +1,16 @@
 ---
 title: 如何显式实现接口成员 - C# 编程指南
+description: 了解如何在此 C# 示例中显式实现接口成员。 通过接口实例访问这些成员。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - interfaces [C#], explicitly implementing
 ms.assetid: 514cde76-f981-474e-8b40-9493619f899c
-ms.openlocfilehash: dff094aca237ed6146bd9b52813c40549bc99b9b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 35b512ff6cbee1dd942f5b3476db660481808297
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77627780"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303070"
 ---
 # <a name="how-to-explicitly-implement-interface-members-c-programming-guide"></a>如何显式实现接口成员（C# 编程指南）
 本示例声明一个[接口](../../language-reference/keywords/interface.md)`IDimensions` 和一个类 `Box`，显式实现了接口成员 `GetLength` 和 `GetWidth`。 通过接口实例 `dimensions` 访问这些成员。  

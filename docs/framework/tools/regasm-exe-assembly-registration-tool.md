@@ -1,5 +1,6 @@
 ---
 title: Regasm.exe（程序集注册工具）
+description: 使用 Regasm.exe（程序集注册工具）。 读取程序集元数据，并将所需项添加到注册表中，允许 COM 客户端创建 .NET 类。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Assembly Registration tool
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - Regasm.exe
 - registering assemblies
 ms.assetid: e190e342-36ef-4651-a0b4-0e8c2c0281cb
-ms.openlocfilehash: 5eeed43f3d60bd5e443226a16963557546d81e7c
-ms.sourcegitcommit: 1c1a1f9ec0bd1efb3040d86a79f7ee94e207cca5
+ms.openlocfilehash: a3af6a0fbc7c9c695e18448da285977f04fd72ef
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/03/2020
-ms.locfileid: "80635405"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517251"
 ---
 # <a name="regasmexe-assembly-registration-tool"></a>Regasm.exe（程序集注册工具）
 
@@ -28,24 +29,24 @@ ms.locfileid: "80635405"
 regasm assemblyFile [options]
 ```
 
-## <a name="parameters"></a>参数
+## <a name="parameters"></a>parameters
 
-|参数|描述|
+|参数|说明|
 |---------------|-----------------|
-|assemblyFile |要向 COM 注册的程序集。|
+|assemblyFile|要向 COM 注册的程序集。|
 
 |选项|描述|
 |------------|-----------------|
-|/codebase |在注册表中创建一个 Codebase 项。 Codebase 项指定未安装到全局程序集缓存中的程序集的文件路径。 如果随后将安装要注册到全局程序集缓存中的程序集，请勿指定此选项。 用 /codebase 选项指定的 assemblyFile 参数必须是[具有强名称的程序集](../../standard/assembly/strong-named.md)   。|
-|/registered |指定此工具将仅引用已经注册的类型库。|
-|/asmpath:directory |指定包含程序集引用的目录。 必须与 /regfile 选项一起使用  。|
+|/codebase|在注册表中创建一个 Codebase 项。 Codebase 项指定未安装到全局程序集缓存中的程序集的文件路径。 如果随后将安装要注册到全局程序集缓存中的程序集，请勿指定此选项。 用 /codebase 选项指定的 assemblyFile 参数必须是[具有强名称的程序集](../../standard/assembly/strong-named.md)   。|
+|/registered|指定此工具将仅引用已经注册的类型库。|
+|/asmpath:directory|指定包含程序集引用的目录。 必须与 /regfile 选项一起使用  。|
 |**/nologo**|取消显示 Microsoft 启动版权标志。|
-|/regfile [: regFile]   |为程序集生成指定的 .reg 文件，其中包含所需的注册表项。 指定此选项将不会更改注册表。 此选项不能与 /u 或 /tlb 选项一起使用   。|
-|/silent 或 /s  |取消显示成功消息。|
-|/tlb [: typeLibFile]   |从指定的程序集生成类型库，该类型库包含在程序集中定义的可访问类型的定义。|
-|/unregister 或 /u  |注销在 assemblyFile 中找到的可创建类  。 省略此选项将使 Regasm.exe 注册程序集中的可创建类。|
+|/regfile [: regFile]|为程序集生成指定的 .reg 文件，其中包含所需的注册表项。 指定此选项将不会更改注册表。 此选项不能与 /u 或 /tlb 选项一起使用   。|
+|/silent 或 /s|取消显示成功消息。|
+|/tlb [: typeLibFile]|从指定的程序集生成类型库，该类型库包含在程序集中定义的可访问类型的定义。|
+|/unregister 或 /u|注销在 assemblyFile 中找到的可创建类  。 省略此选项将使 Regasm.exe 注册程序集中的可创建类。|
 |**/verbose**|指定详细模式；当与 /tlb 选项一起指定时，将显示所有需要为其生成类型库的引用程序集的列表  。|
-|**/?** 或 /help |显示该工具的命令语法和选项。|
+|**/?** 或 /help|显示该工具的命令语法和选项。|
 
 > [!NOTE]
 > Regasm.exe 命令行选不区分大小写。 只需提供足以唯一地进行标识的选项部分。 例如，/n 等效于 /nologo，而 /t: outfile.tlb 等效于 /tlb: outfile.tlb       。

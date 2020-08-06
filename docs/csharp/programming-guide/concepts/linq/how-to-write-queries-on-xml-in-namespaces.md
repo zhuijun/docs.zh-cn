@@ -1,13 +1,14 @@
 ---
 title: 如何针对命名空间中的 XML 编写查询 (C#)
+description: 了解如何针对命名空间中的 XML 编写查询。 对于这些查询，必须使用具有正确命名空间的 XName 对象。
 ms.date: 07/20/2015
 ms.assetid: 7c54df81-15e4-4091-8c81-a87637029130
-ms.openlocfilehash: a8b8d55daaad1ae00e43fed897080ed7a62fafab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 64eb9df1cde3b434a11e2e5410aab96993dc0fa1
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75337376"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87303174"
 ---
 # <a name="how-to-write-queries-on-xml-in-namespaces-c"></a>如何针对命名空间中的 XML 编写查询 (C#)
 若要针对命名空间中的 XML 编写查询，必须使用具有正确命名空间的 <xref:System.Xml.Linq.XName> 对象。  
@@ -76,6 +77,6 @@ foreach (XElement el in c1)
 3  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [命名空间概述(LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md)

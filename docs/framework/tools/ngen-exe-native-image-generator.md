@@ -1,5 +1,6 @@
 ---
 title: Ngen.exe（本机映像生成器）
+description: 查看 Ngen.exe（本机映像生成器）。 通过创建本机映像并将其安装到本地本机映像缓存中来提高托管应用程序性能。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -18,12 +19,12 @@ helpviewer_keywords:
 - BypassNGenAttribute
 - System.Runtime.BypassNGenAttribute
 ms.assetid: 44bf97aa-a9a4-4eba-9a0d-cfaa6fc53a66
-ms.openlocfilehash: 297bc3f9182e76523eda4d4be3112f4d1d7e3fee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ae86aed773a9a13f102b1ad111cac5a3ee563508
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75741789"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517264"
 ---
 # <a name="ngenexe-native-image-generator"></a>Ngen.exe（本机映像生成器）
 
@@ -86,9 +87,9 @@ ngen /? | /help
 
 <a name="ArgumentTable"></a>
 
-## <a name="arguments"></a>自变量
+## <a name="arguments"></a>参数
 
-|参数|描述|
+|参数|说明|
 |--------------|-----------------|
 |`assemblyName`|程序集的完整显示名称。 例如 `"myAssembly, Version=2.0.0.0, Culture=neutral, PublicKeyToken=0038abc9deabfle5"`。 **注意：** 可以为 `myAssembly` 和 `display` 操作提供部分程序集名称（如 `uninstall`）。 <br /><br /> 每个 Ngen.exe 命令行只能指定一个程序集。|
 |`assemblyPath`|程序集的显式路径。 可指定完整路径或相对路径。<br /><br /> 如果指定文件名而不指定路径，则程序集必须位于当前目录中。<br /><br /> 每个 Ngen.exe 命令行只能指定一个程序集。|
@@ -117,7 +118,7 @@ ngen /? | /help
 
 ## <a name="config"></a>配置
 
-|Configuration|描述|
+|配置|说明|
 |-------------------|-----------------|
 |`/ExeConfig:` `exePath`|使用指定的可执行程序集的配置。<br /><br /> 绑定到依赖项时，Ngen.exe 需要做出与加载程序相同的决策。 如果在运行时使用 <xref:System.Reflection.Assembly.Load%2A> 方法加载共享组件，则应用程序的配置文件将决定为该共享组件加载的依赖项 - 例如，所加载依赖项的版本。 `/ExeConfig` 开关就运行时将加载哪些依赖项为 Ngen.exe 提供了指导。|
 |`/AppBase:` `directoryPath`|查找依赖项时，使用指定目录作为应用程序基础。|
@@ -131,7 +132,7 @@ ngen /? | /help
 |`/nologo`|禁止显示 Microsoft 启动版权标志。|
 |`/silent`|禁止显示成功消息。|
 |`/verbose`|显示详细的调试信息。 **注意：** 由于操作系统限制，此选项显示的附加信息比在 Windows 98 和 Windows Millennium Edition 上显示的少。|
-|`/help`，`/?`|显示当前版本的命令语法和选项。|
+|`/help`, `/?`|显示当前版本的命令语法和选项。|
 
 ## <a name="remarks"></a>备注
 
@@ -402,7 +403,7 @@ Ngen.exe 在生成本机映像时记录这些信息。 当你执行程序集时�
 
 ### <a name="assembly-binding-log-viewer"></a>程序集绑定日志查看器
 
-若要确认应用程序正在使用本机映像，可使用 [Fuslogvw.exe（程序集绑定日志查看器）](fuslogvw-exe-assembly-binding-log-viewer.md)。 在绑定日志查看器窗口上，选择“日志类别”  框中的“本机映像”  。 Fuslogvw.exe 提供了有关本机映像被拒绝的原因的信息。
+若要确认应用程序正在使用本机映像，可使用 [Fuslogvw.exe（程序集绑定日志查看器）](fuslogvw-exe-assembly-binding-log-viewer.md)。 在绑定日志查看器窗口上，选择“日志类别”框中的“本机映像”。 Fuslogvw.exe 提供了有关本机映像被拒绝的原因的信息。
 
 <a name="MDA"></a>
 
@@ -566,7 +567,7 @@ ngen uninstall "ClientApp, Version=1.0.0.0, Culture=neutral,
 
 |任务名称|32 位计算机|64 位计算机|
 |---------------|----------------------|----------------------|
-|NET Framework NGEN v4.0.30319|是|是|
+|NET Framework NGEN v4.0.30319|是|“是”|
 |NET Framework NGEN v4.0.30319 64|否|是|
 
 在运行 Windows 8 或更高版本时，本机映像任务在 .NET Framework 4.5 和更高版本中可用。 在 Windows 早期版本中，.NET Framework 使用 [本机映像服务](#native-image-service)。

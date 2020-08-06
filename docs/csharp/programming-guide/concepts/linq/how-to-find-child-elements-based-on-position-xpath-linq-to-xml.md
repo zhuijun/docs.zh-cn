@@ -1,13 +1,14 @@
 ---
 title: 如何基于位置查找子元素 (XPath-LINQ to XML) (C#)
+description: 了解如何使用 XPath 表达式基于位置查找子元素。 查看使用示例 XML 文件的代码示例。
 ms.date: 07/20/2015
 ms.assetid: e35bb269-ec86-4c96-8321-12491a0eb2c3
-ms.openlocfilehash: cc0ff5639345d36ebb0423a12b66de8f1a70ade1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2603d3ac94ace645bde1ce85a43a43af7321014e
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74141122"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301666"
 ---
 # <a name="how-to-find-child-elements-based-on-position-xpath-linq-to-xml-c"></a>如何基于位置查找子元素 (XPath-LINQ to XML) (C#)
 有时需要根据元素的位置查找元素。 您可能想查找第二个元素，或者查找第三到第五个元素。  
@@ -21,7 +22,7 @@ ms.locfileid: "74141122"
 ## <a name="example"></a>示例  
  本示例查找第二到第四个 `Test` 元素。 结果是一个元素集合。  
   
- 本示例使用以下 XML 文档：[示例 XML 文件：测试配置 (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md)。  
+ 本示例使用下面的 XML 文档：[示例 XML 文件：测试配置 (LINQ to XML)](./sample-xml-file-test-configuration-linq-to-xml.md)。  
   
 ```csharp  
 XElement testCfg = XElement.Load("TestConfig.xml");  

@@ -1,5 +1,6 @@
 ---
 title: 演练：创建并使用动态对象（C# 和 Visual Basic）
+description: 在本演练中，了解如何创建和使用动态对象。 创建自定义动态对象和使用“IronPython”库的项目。
 ms.date: 07/20/2015
 dev_langs:
 - csharp
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - dynamic objects
 - dynamic objects [C#]
 ms.assetid: 568f1645-1305-4906-8625-5d77af81e04f
-ms.openlocfilehash: 3b5a92948a3e692a734f3ddee3c7238d5d27588f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 144651d3b14f6f6093ab07f1df7be10e6d05ae89
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79157047"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381250"
 ---
 # <a name="walkthrough-creating-and-using-dynamic-objects-c-and-visual-basic"></a>演练：创建并使用动态对象（C# 和 Visual Basic）
 
@@ -48,9 +49,9 @@ ms.locfileid: "79157047"
   
 2. 在 **“文件”** 菜单上指向 **“新建”** ，然后单击 **“项目”** 。  
   
-3. 在“新建项目”  对话框的“项目类型”  窗格中，确保选中“Windows”  。 在“模板”  窗格中，选择“控制台应用程序”  。 在“名称”  框中，键入 `DynamicSample`，然后单击“确定”  。 新项目创建完成。  
+3. 在“新建项目”对话框的“项目类型”窗格中，确保选中“Windows”。 在“模板”窗格中，选择“控制台应用程序”。 在“名称”框中，键入 `DynamicSample`，然后单击“确定”。 新项目创建完成。  
   
-4. 右键单击 DynamicSample 项目，指向“添加”  ，然后单击“类”  。 在“名称”  框中，键入 `ReadOnlyFile`，然后单击“确定”  。 这将添加一个包含 ReadOnlyFile 类的新文件。  
+4. 右键单击 DynamicSample 项目，指向“添加”，然后单击“类”。 在“名称”框中，键入 `ReadOnlyFile`，然后单击“确定”。 这将添加一个包含 ReadOnlyFile 类的新文件。  
   
 5. 在 ReadOnlyFile.cs 或 ReadOnlyFile.vb 文件的顶部，添加以下代码以导入 <xref:System.IO?displayProperty=nameWithType> 和 <xref:System.Dynamic?displayProperty=nameWithType> 命名空间。  
 
@@ -93,7 +94,7 @@ ms.locfileid: "79157047"
   
 #### <a name="to-create-a-sample-text-file"></a>创建示例文本文件  
   
-1. 右键单击 DynamicSample 项目，指向“添加”  ，然后单击“新建项”  。 在“已安装的模板”  窗格中，选择“常规”  ，然后选择“文本文件”  模板。 在“名称”  框中保留默认名称 TextFile1.txt，然后单击“添加”  。 这会将一个新的文本文件添加到项目中。  
+1. 右键单击 DynamicSample 项目，指向“添加”，然后单击“新建项”。 在“已安装的模板”窗格中，选择“常规”，然后选择“文本文件”模板。 在“名称”框中保留默认名称 TextFile1.txt，然后单击“添加”。 这会将一个新的文本文件添加到项目中。  
   
 2. 将以下文本复制到 TextFile1.txt 文件。  
   
@@ -116,7 +117,7 @@ ms.locfileid: "79157047"
   
 #### <a name="to-create-a-sample-application-that-uses-the-custom-dynamic-object"></a>创建一个使用自定义动态对象的示例应用程序  
   
-1. 在“解决方案资源管理器”  中，双击 Module1.vb 文件（如果使用的是 Visual Basic）或 Program.cs 文件（如果使用的是 Visual C#）。  
+1. 在“解决方案资源管理器”中，双击 Module1.vb 文件（如果使用的是 Visual Basic）或 Program.cs 文件（如果使用的是 Visual C#）。  
   
 2. 将以下代码添加到 Main 过程，为 TextFile1.txt 文件创建一个 `ReadOnlyFile` 类的实例。 代码将使用晚期绑定来调用动态成员，并检索包含字符串“Customer”的文本行。  
   
@@ -131,13 +132,13 @@ ms.locfileid: "79157047"
   
 ### <a name="to-create-a-custom-dynamic-class"></a>创建自定义动态类
   
-1. 在 Visual Studio 中的“文件”  菜单上，指向“新建”  ，然后单击“项目”  。  
+1. 在 Visual Studio 中的“文件”菜单上，指向“新建”，然后单击“项目”。  
   
-2. 在“新建项目”  对话框的“项目类型”  窗格中，确保选中“Windows”  。 在“模板”  窗格中，选择“控制台应用程序”  。 在“名称”  框中，键入 `DynamicIronPythonSample`，然后单击“确定”  。 新项目创建完成。  
+2. 在“新建项目”对话框的“项目类型”窗格中，确保选中“Windows”。 在“模板”窗格中，选择“控制台应用程序”。 在“名称”框中，键入 `DynamicIronPythonSample`，然后单击“确定”。 新项目创建完成。  
   
-3. 如果使用的是 Visual Basic，请右击 DynamicIronPythonSample 项目，然后单击“属性”  。 单击“引用”  选项卡。单击“添加”  按钮。 如果使用的是 Visual C#，请在“解决方案资源管理器”  中，右键单击“引用”  文件夹，然后单击“添加引用”  。  
+3. 如果使用的是 Visual Basic，请右击 DynamicIronPythonSample 项目，然后单击“属性”。 单击“引用”选项卡。单击“添加”按钮。 如果使用的是 Visual C#，请在“解决方案资源管理器”中，右键单击“引用”文件夹，然后单击“添加引用”。  
   
-4. 在“浏览”  选项卡上，浏览到安装 IronPython 库的文件夹。 例如，C:\Program Files\IronPython 2.6 for .NET 4.0。 选择“IronPython.dll”  、“IronPython.Modules.dll”  、“Microsoft.Scripting.dll”  和“Microsoft.Dynamic.dll”  库。 单击 **“确定”** 。  
+4. 在“浏览”选项卡上，浏览到安装 IronPython 库的文件夹。 例如，C:\Program Files\IronPython 2.6 for .NET 4.0。 选择“IronPython.dll”、“IronPython.Modules.dll”、“Microsoft.Scripting.dll”和“Microsoft.Dynamic.dll”库。 单击 **“确定”** 。  
   
 5. 如果使用的是 Visual Basic，请编辑 Module1.vb 文件。 如果使用的是 Visual C#，请编辑 Program.cs 文件。  
   

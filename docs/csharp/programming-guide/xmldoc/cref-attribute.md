@@ -1,15 +1,16 @@
 ---
 title: cref 属性 - C# 编程指南
+description: 了解 cref 属性。 cref 属性表示“代码引用”，指定标记的内部文本是一个代码元素。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - cref [C#]
 ms.assetid: 66a6b0e5-b961-4504-a461-3a4cf481fc8b
-ms.openlocfilehash: b06d0c9d447124dec7d8cf3c0cbbfd0daca78fe3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 31fa1a3f182d7b72a1dfbe1ce47386f87fbbff75
+ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79157008"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87381991"
 ---
 # <a name="cref-attribute-c-programming-guide"></a>cref 属性（C# 编程指南）
 
@@ -82,7 +83,7 @@ XML 文档标记中的 `cref` 属性是指“代码引用”。 它指定标记�
 </doc>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [XML 文档注释](./index.md)
 - [建议的文档注释标记](./recommended-tags-for-documentation-comments.md)

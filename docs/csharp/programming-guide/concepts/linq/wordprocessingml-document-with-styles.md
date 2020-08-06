@@ -1,13 +1,14 @@
 ---
-title: 具有样式3 的 WordprocessingML 文档
+title: 具有样式的 WordprocessingML 文档
+description: 此示例 WordprocessingML 文档具有使用样式格式的段落。 了解适用于样式的文档部件。
 ms.date: 07/20/2015
 ms.assetid: 40e35de6-ac93-4bba-88ab-a018cbe93873
-ms.openlocfilehash: 10697744680276a40fb7a175e4c04920c9e3c243
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b799c1bee95d7d638e6a3210b4876ff036e088eb
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79167863"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302199"
 ---
 # <a name="wordprocessingml-document-with-styles"></a>具有样式的 WordprocessingML 文档
 较为复杂的 WordprocessingML 文档具有使用样式格式的段落。  
@@ -17,7 +18,7 @@ ms.locfileid: "79167863"
  访问包时，重要的是通过部分之间的关系来访问包，而不是使用任意路径来访问包。 此问题超出了在 WordprocessingML 文档教程中使用内容的范围，但是本教程包含的示例程序演示了正确的方法。  
   
 ## <a name="a-document-that-uses-styles"></a>使用样式的文档  
- [WordprocessingML 文档的形状 (C#)](./shape-of-wordprocessingml-documents.md) 主题中提供的 WordML 示例是非常简单的文档。 下面的文档则更为复杂：它具有使用样式格式的段落。 查看构成 Office Open XML 文档的 XML 的最简单方法是，运行[输出 Office Open XML 文档部件的示例 (C#)](./example-that-outputs-office-open-xml-document-parts.md)。  
+ [WordprocessingML 文档的形状 (C#)](./shape-of-wordprocessingml-documents.md) 主题中提供的 WordML 示例是非常简单的文档。 以下文档更复杂：它具有使用样式格式的段落。 查看构成 Office Open XML 文档的 XML 的最简单方法是，运行[输出 Office Open XML 文档部件的示例 (C#)](./example-that-outputs-office-open-xml-document-parts.md)。  
   
  在下面的文档中，第一段具有 `Heading1` 样式。 很多段落具有默认样式。 还有一些段落具有 `Code` 样式。 由于这种相对复杂性，这个文档更值得使用 LINQ to XML 来解析。  
   

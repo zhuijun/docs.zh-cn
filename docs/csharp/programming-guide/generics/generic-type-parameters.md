@@ -1,16 +1,17 @@
 ---
 title: 泛型类型参数 - C# 编程指南
+description: 了解 C# 泛型类型定义，其中，类型参数是客户端指定用于泛型类型的实例的某个类型的占位符。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], type parameters
 - type parameters [C#]
 ms.assetid: a03b0ab2-0606-4b41-b7bf-e64d5bb4d18f
-ms.openlocfilehash: 8412980d35989c445d2e0a44c0b9f35e6087bb8d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: dc37029378ac1e9ec194d95b561787761d69a9fd
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712177"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87299248"
 ---
 # <a name="generic-type-parameters-c-programming-guide"></a>泛型类型参数 -（C# 编程指南）
 
@@ -22,19 +23,19 @@ ms.locfileid: "75712177"
   
 ## <a name="type-parameter-naming-guidelines"></a>类型参数命名指南  
   
-- 请使用描述性名称命名泛型类型参数  ，除非单个字母名称完全具有自我说明性且描述性名称不会增加任何作用。  
+- 请使用描述性名称命名泛型类型参数，除非单个字母名称完全具有自我说明性且描述性名称不会增加任何作用。  
   
    [!code-csharp[csProgGuideGenerics#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#8)]  
   
-- 对具有单个字母类型参数的类型，考虑使用 T 作为类型参数名称  。  
+- 对具有单个字母类型参数的类型，考虑使用 T 作为类型参数名称。  
   
    [!code-csharp[csProgGuideGenerics#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#9)]  
   
-- 在类型参数描述性名称前添加前缀 "T"  。  
+- 在类型参数描述性名称前添加前缀 "T"。  
   
    [!code-csharp[csProgGuideGenerics#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#10)]  
   
-- 请考虑在参数名称中指示出类型参数的约束  。 例如，约束为 `ISession` 的参数可命名为 `TSession`。
+- 请考虑在参数名称中指示出类型参数的约束。 例如，约束为 `ISession` 的参数可命名为 `TSession`。
 
 可以使用代码分析规则 [CA1715](/visualstudio/code-quality/ca1715) 确保恰当地命名类型参数。
   

@@ -1,13 +1,14 @@
 ---
 title: 如何检索元素的浅表值 (C#)
+description: 了解如何获取元素的浅表值。 浅表值仅适用于特定的元素。
 ms.date: 07/20/2015
 ms.assetid: 924a2699-72f6-4be1-aaa6-de62f8ec73b9
-ms.openlocfilehash: b9b69b5a18106f82d13cb54208c2362f8239711e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 597859e5b66606aa0cff9c1a475e79e6b66c39fc
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75347452"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87301575"
 ---
 # <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>如何检索元素的浅表值 (C#)
 本主题说明如何获取元素的浅值。 浅值只是特定元素的值，与深值相反，包括串联成一个单一字符串的所有子元素的值。  
@@ -79,6 +80,6 @@ Column  Name="CustomerId"   =Customer.CustomerId
 Column  Name="Name"         =Customer.Name  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to XML 轴 (C#)](./linq-to-xml-axes-overview.md)

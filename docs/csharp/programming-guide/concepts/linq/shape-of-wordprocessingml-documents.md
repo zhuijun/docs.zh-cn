@@ -1,13 +1,14 @@
 ---
 title: WordprocessingML 文档的形状 (C#)
+description: 了解 WordprocessingML 文档的格式。 几个 C# 示例使用 WordprocessingML 文档。
 ms.date: 07/20/2015
 ms.assetid: 3791b5e0-c502-469b-bb75-a7bf6fdd0a94
-ms.openlocfilehash: 58c028fed465f45fdcf8f63f2119eb8e8b201e32
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4a7716d775a634c5ad3719714be68fce67d5cbfe
+ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76732676"
+ms.lasthandoff: 07/28/2020
+ms.locfileid: "87302342"
 ---
 # <a name="shape-of-wordprocessingml-documents-c"></a>WordprocessingML 文档的形状 (C#)
 本主题介绍 WordprocessingML 文档的 XML 形状。  
@@ -94,6 +95,6 @@ using (Package wdPackage = Package.Open("SampleDoc.docx", FileMode.Open, FileAcc
 - [WordProcessingML 文件剖析](http://officeopenxml.com/anatomyofOOXML.php)
 - [WordprocessingML 简介](https://ericwhite.com/blog/introduction-to-wordprocessingml-series/)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [教程：操作 WordprocessingML 文档中的内容 (C#)](./shape-of-wordprocessingml-documents.md)
