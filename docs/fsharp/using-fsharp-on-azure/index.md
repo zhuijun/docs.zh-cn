@@ -3,12 +3,12 @@ title: 在 Azure 上使用 F#
 description: 有关结合使用 F# 和 Azure 服务的指南
 author: sylvanc
 ms.date: 07/29/2020
-ms.openlocfilehash: ebf94d724db2c503f27581bf1352bf4fa90f5e2a
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.openlocfilehash: 24ef3fd14a4d0173935fac3e67aadf86110fa6d8
+ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455705"
+ms.lasthandoff: 08/03/2020
+ms.locfileid: "87517368"
 ---
 # <a name="using-f-on-azure"></a>在 Azure 上使用 F#
 
