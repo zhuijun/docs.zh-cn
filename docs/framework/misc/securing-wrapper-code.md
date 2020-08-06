@@ -8,14 +8,15 @@ helpviewer_keywords:
 - secure coding, wrapper code
 - code security, wrapper code
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
-ms.openlocfilehash: 4338b3d0ab306501ea252407f386bdf89d191d6d
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: f448cbf55f3ad992ba9dcc53d5be70b364038744
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309373"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855746"
 ---
 # <a name="securing-wrapper-code"></a>保护包装代码
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  包装代码，特别是在包装的信任级别比使用它的代码的信任级别更高时，可以打开一组唯一的安全漏洞。 代表调用方完成的任何操作都是被利用的潜在漏洞，其中进行适当安全检查时不包括调用方的有限权限。  
@@ -72,7 +73,7 @@ ms.locfileid: "86309373"
   
 - <xref:System.Security.Permissions.SecurityAction.Demand> 指示代码访问安全堆栈审核。 堆栈上的所有调用方必须具有特定权限或标识才能通过。 每次调用都会发生**需求**，因为堆栈可能包含不同的调用方。 如果重复调用一种方法，则每次都会执行安全检查。 **需求**是应对引诱攻击的良好保护;检测到未经授权的代码。  
   
-- [LinkDemand](link-demands.md)在实时（JIT）编译时间发生，并仅检查直接调用方。 这种安全检查不会检查调用方的调用方。 一旦此项检查成功，无论调用方调用的次数为多少，都无需任何其他安全性开销。 但是，这种方法没有对引诱攻击提供保护。 使用**LinkDemand**，通过允许恶意代码使用授权代码调用，通过测试并可以引用代码的任何代码都可能会破坏安全性。 因此，请不要使用**LinkDemand** ，除非可以彻底避免所有可能的漏洞。  
+- [LinkDemand](link-demands.md)在实时 (JIT) 编译时间发生，并仅检查直接调用方。 这种安全检查不会检查调用方的调用方。 一旦此项检查成功，无论调用方调用的次数为多少，都无需任何其他安全性开销。 但是，这种方法没有对引诱攻击提供保护。 使用**LinkDemand**，通过允许恶意代码使用授权代码调用，通过测试并可以引用代码的任何代码都可能会破坏安全性。 因此，请不要使用**LinkDemand** ，除非可以彻底避免所有可能的漏洞。  
   
     > [!NOTE]
     > 在 .NET Framework 4 中，已将链接要求替换为 <xref:System.Security.SecurityCriticalAttribute> <xref:System.Security.SecurityRuleSet.Level2> 程序集中的特性。 <xref:System.Security.SecurityCriticalAttribute>等效于完全信任的链接要求; 但是，它也会影响继承规则。 有关此更改的详细信息，请参阅[安全透明代码，级别 2](security-transparent-code-level-2.md)。  
@@ -81,7 +82,7 @@ ms.locfileid: "86309373"
   
 - 限制调用代码对类或程序集的访问权限。  
   
-- 对显示在将被调用的代码上的调用代码施行相同的安全检查并负责让其调用方也执行这种检查。 例如，如果你编写的代码调用的方法使用的是具有指定标志**LinkDemand**的的 linkdemand <xref:System.Security.Permissions.SecurityPermission> ，则 <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> 你的方法还应为此权限创建一个具有更**Demand**强的**linkdemand** 。 例外情况是，如果你的代码以有限的方式使用了受**LinkDemand**保护的方法，则在代码中考虑到其他安全保护机制（如需求）。 对于这种例外情况，调用方需对削弱基础代码的安全性保护负责。  
+- 对显示在将被调用的代码上的调用代码施行相同的安全检查并负责让其调用方也执行这种检查。 例如，如果你编写的代码调用的方法使用的是具有指定标志**LinkDemand**的的 linkdemand <xref:System.Security.Permissions.SecurityPermission> ，则 <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> 你的方法还应为该权限更**LinkDemand**强的)  (或**要求**。 这种情况的例外是，如果你的代码以有限的方式使用受**LinkDemand**保护的方法，则在考虑到其他安全保护机制 (例如，在代码中) 需求。 对于这种例外情况，调用方需对削弱基础代码的安全性保护负责。  
   
 - 确保你的代码调用方无法欺骗你的代码代表自己调用受保护的代码。 换言之，调用方不能强制授权代码向受保护的代码传递特定参数，或从受保护的代码中得到返回结果。  
   
@@ -102,4 +103,4 @@ ms.locfileid: "86309373"
   
 ## <a name="see-also"></a>另请参阅
 
-- [代码安全维护指南](../../standard/security/secure-coding-guidelines.md)
+- [安全编码准则](../../standard/security/secure-coding-guidelines.md)

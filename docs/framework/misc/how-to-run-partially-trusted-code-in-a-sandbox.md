@@ -9,14 +9,15 @@ helpviewer_keywords:
 - restricted security environment
 - code security, sandboxing
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
-ms.openlocfilehash: e02b5d679fb1f5947373399ac1226732623ef96d
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 415a42f7c4f4866bb72f19bdd6f02bfdb5158bf8
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309230"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855798"
 ---
 # <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>如何：运行沙盒中部分受信任的代码
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  沙盒处理是在受限制的安全环境中运行代码的做法，从而限制授予代码的访问权限。 例如，如果你有来自不完全信任的源的托管库，则不应将其作为完全受信任运行。 相反，应将代码放在将权限限制为预计需要的权限（例如 <xref:System.Security.Permissions.SecurityPermissionFlag.Execution> 权限）的沙盒中。  
@@ -115,7 +116,7 @@ AppDomain.CreateDomain( string friendlyName,
   
     - 可以使用指向不包含你的程序集的位置的基本代码。  
   
-    - 可以在完全信任 (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>) 的 <xref:System.Security.CodeAccessPermission.Assert%2A> 下进行创建，这样就可以创建关键类的一个实例。 （只要程序集没有透明标记，并加载为完全受信任，就会发生这种情况。）因此，你必须小心地仅创建与此函数信任的代码，我们建议你仅在新应用程序域中创建完全受信任的类的实例。  
+    - 可以在完全信任 (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>) 的 <xref:System.Security.CodeAccessPermission.Assert%2A> 下进行创建，这样就可以创建关键类的一个实例。  (如果程序集没有透明标记并加载为完全受信任，则会发生这种情况。 ) 因此，你必须小心地仅创建你信任的具有此函数的代码，我们建议你仅在新应用程序域中创建完全受信任的类的实例。  
   
     ```csharp
     ObjectHandle handle = Activator.CreateInstanceFrom(  
@@ -274,4 +275,4 @@ class Sandboxer : MarshalByRefObject
   
 ## <a name="see-also"></a>另请参阅
 
-- [代码安全维护指南](../../standard/security/secure-coding-guidelines.md)
+- [安全编码准则](../../standard/security/secure-coding-guidelines.md)

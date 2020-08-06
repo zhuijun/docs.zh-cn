@@ -8,14 +8,17 @@ helpviewer_keywords:
 - security [.NET Framework], remoting
 - secure coding, remoting
 ms.assetid: 125d2ab8-55a4-4e5f-af36-a7d401a37ab0
-ms.openlocfilehash: 019773b19eaca2e4364fb79c40fdb923093d4e7e
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 3a272b2a8f164aad07413a069e68a2146d0df6a7
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309360"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855707"
 ---
 # <a name="security-and-remoting-considerations"></a>安全性和远程处理注意事项
+
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
+
 利用远程处理，你可以在应用程序域、进程或计算机之间设置透明的调用。 但是，代码访问安全堆栈审核不能跨越进程边界或计算机边界（它确实应用于同一进程的不同应用程序域之间）。  
   
  任何可远程处理的类（从 <xref:System.MarshalByRefObject> 类派生）都需要对安全负责。 要么只将代码用于封闭式安全环境中，在这种环境中可以隐式信任调用代码；要么相应地设计远程处理调用，以免这些调用会让受保护代码受到可能会被恶意使用的外部侵入的影响。  
@@ -38,4 +41,4 @@ ms.locfileid: "86309360"
   
 ## <a name="see-also"></a>另请参阅
 
-- [代码安全维护指南](../../standard/security/secure-coding-guidelines.md)
+- [安全编码准则](../../standard/security/secure-coding-guidelines.md)

@@ -10,14 +10,17 @@ helpviewer_keywords:
 - secure coding, exception handling
 - exception handling, security
 ms.assetid: 1f3da743-9742-47ff-96e6-d0dd1e9e1c19
-ms.openlocfilehash: 73597f83d7236cd48a18a891c987b4f5d7e1723d
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: c7643bb34da0cbcbd267fc90e6294bc0b565985e
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309035"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855772"
 ---
 # <a name="securing-exception-handling"></a>保护异常处理
+
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
+
 在 Visual C++ 和 Visual Basic 中，堆栈中的一个筛选器表达式将在任何语句之前运行 `finally` 。 与该筛选器相关联的**catch**块在 `finally` 语句之后运行。 有关详细信息，请参阅[使用用户筛选的异常](../../standard/exceptions/using-user-filtered-exception-handlers.md)。 本部分将介绍此顺序的安全隐患。 请考虑以下伪代码示例，其中阐释了筛选语句和 `finally` 语句的运行顺序。  
   
 ```cpp  
@@ -161,4 +164,4 @@ YourObject.YourMethod()
   
 ## <a name="see-also"></a>另请参阅
 
-- [代码安全维护指南](../../standard/security/secure-coding-guidelines.md)
+- [安全编码准则](../../standard/security/secure-coding-guidelines.md)

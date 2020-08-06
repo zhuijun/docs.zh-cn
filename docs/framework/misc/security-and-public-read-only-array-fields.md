@@ -5,17 +5,20 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [.NET Framework], public read-only array fields
 ms.assetid: 3df28dee-2a9f-40ff-9852-bfdbe59c27f3
-ms.openlocfilehash: 0a6a82c2c88fe61bd34c0accb831f018cf8702fc
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: 5e499f8052306cd1ad063c9f44a2a0f1d0b365ef
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281428"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855733"
 ---
 # <a name="security-and-public-read-only-array-fields"></a>安全和公共只读数组字段
+
+[!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]
+
 永远不要使用托管库中的只读公共数组字段来定义应用程序的边界行为或安全性，因为可以修改只读公共数组字段。  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
 
 某些 .NET 类包含包含特定于平台的边界参数的只读公共字段。 例如， <xref:System.IO.Path.InvalidPathChars> 字段是描述文件路径字符串中不允许使用的字符的数组。 许多类似的字段在 .NET 中都存在。  
   
@@ -27,4 +30,4 @@ ms.locfileid: "86281428"
   
 ## <a name="see-also"></a>另请参阅
 
-- [代码安全维护指南](../../standard/security/secure-coding-guidelines.md)
+- [安全编码准则](../../standard/security/secure-coding-guidelines.md)

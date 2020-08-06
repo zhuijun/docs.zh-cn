@@ -1,6 +1,6 @@
 ---
 title: 链接需求
-description: 阅读有关链接要求的信息，这会导致在实时（JIT）编译期间进行安全检查，并仅检查代码的直接调用程序集。
+description: 阅读有关链接要求的信息，这会导致实时 (JIT) 编译期间进行安全检查，并仅检查代码的直接调用程序集。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -15,14 +15,15 @@ helpviewer_keywords:
 - caller security checks
 - link demands
 ms.assetid: a33fd5f9-2de9-4653-a4f0-d9df25082c4d
-ms.openlocfilehash: eaf9ee1bb5cd10c724240bacac014503685a0c8c
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 7f5475d5bfff8cc3c500f95b05d54daacc9b253e
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309087"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855785"
 ---
 # <a name="link-demands"></a>链接需求
+
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  链接要求导致在实时编译过程中进行安全检查，并且只检查代码的直接调用程序集。 当代码绑定到类型引用（包括函数指针引用和方法调用）时发生链接。 如果调用程序集的权限不足以链接到代码，则加载并运行代码时将不允许该链接且将引发运行时异常。 可在继承自代码的类中重写链接要求。  
