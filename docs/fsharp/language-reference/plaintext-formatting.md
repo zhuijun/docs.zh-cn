@@ -2,12 +2,12 @@
 title: 纯文本格式
 description: '了解如何在 F # 应用程序和脚本中使用 printf 和其他纯文本格式。'
 ms.date: 07/22/2020
-ms.openlocfilehash: a0f2c52431be894c4f74dd2940345a518f620589
-ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+ms.openlocfilehash: 6b14633e074961757d0f0cd258d1b1667f5fd8ee
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795755"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87854914"
 ---
 # <a name="plain-text-formatting"></a>纯文本格式
 
@@ -81,15 +81,15 @@ stdin(3,25): error FS0001: The type 'string' does not match the type 'int'
 | `%f`               | 基本浮点类型 | 格式化为具有形式的带符号值 `[-]dddd.dddd` ，其中 `dddd` 是一个或多个十进制数字。 小数点前的数字位数取决于数字的度量值，小数点后的数字位数取决于所需精度。 |
 | `%g`, `%G` | 基本浮点类型 |  使用作为或格式打印的带符号值进行格式化 `%f` `%e` ，以更紧凑的给定值和精度为准。 |
 | `%M` | 一个 `System.Decimal` 值  |    使用 `"G"` 格式说明符的格式设置`System.Decimal.ToString(format)` |
-| `%O` | 任何值  |   通过装箱对象并 valling 其方法设置格式 `System.Object.ToString()` |
+| `%O` | 任何值  |   通过装箱对象并调用其方法设置格式 `System.Object.ToString()` |
 | `%A` | 任何值  |   使用默认布局设置以[结构化纯文本格式](plaintext-formatting.md)设置格式 |
-| `%a` | 任何值  |   需要两个参数-一种格式函数，接受上下文参数和值以及要打印的特定值 |
-| `%t` | 任何值  |   需要一个自变量，格式设置函数接受输出或返回适当文本的上下文参数 |
+| `%a` | 任何值  |   需要两个参数：一个格式设置函数，接受上下文参数和值以及要打印的特定值 |
+| `%t` | 任何值  |   需要一个参数：一个格式设置函数，它接受输出或返回适当文本的上下文参数 |
 
 基本整数类型 `byte` (`System.Byte`) ， `sbyte` (`System.SByte`)  () `int16` () `System.Int16` `uint16` `System.UInt16` () `int32` `System.Int32` `uint32` `System.UInt32` `int64` `System.Int64` `uint64` `System.UInt64` `nativeint` `System.IntPtr` `unativeint` `System.UIntPtr` ()  ()  ()  ()  () 。
 基本浮点类型 `float` (`System.Double`) 并 `float32` (`System.Single`) 。
 
-可选宽度是指示结果的最小宽度的整数。 例如， `%6d` 打印一个整数，用空格作为前缀，以填充至少6个字符。 如果 width 为 `*` ，则使用额外的整数参数来指定相应的宽度。
+可选宽度是指示结果的最小宽度的整数。 例如， `%6d` 打印一个整数，用空格作为前缀，以至少填写六个字符。 如果 width 为 `*` ，则使用额外的整数参数来指定相应的宽度。
 
 有效标志为：
 
@@ -200,12 +200,12 @@ printfn "%50A" [| for i in 1 .. 5 -> (i, i*i) |]
 [|(1, 1); (2, 4); (3, 9); (4, 16); (5, 25)|]
 ```
 
-如果将打印宽度指定为0，则不会使用打印宽度。 将产生单行文本，只不过输出中嵌入的字符串本身包含换行符。  例如
+如果将打印宽度指定为0，则不会使用打印宽度。 将产生单行文本，只不过输出中嵌入的字符串包含分行符。  例如
 
 ```fsharp
 printfn "%0A" [| for i in 1 .. 5 -> (i, i*i) |]
 
-printfn "%0A" [| for i in 1 .. 5 -> "abc\ndef |]
+printfn "%0A" [| for i in 1 .. 5 -> "abc\ndef" |]
 ```
 
 得到
@@ -318,7 +318,7 @@ printfn "%A" r
 
 如果尚未计算该值，则迟缓值将打印为 `Value is not created` 或等效文本。
 
-`null`如果将值的静态类型确定为联合类型（其中 `null` 是允许的表示形式），则将输出 Null 值。
+空值将输出为， `null` 除非将值的静态类型确定为联合类型，其中 `null` 是允许的表示形式。
 
 F # 函数值打印为其内部生成的结束名称，例如 `<fun:it@43-7>` 。
 
