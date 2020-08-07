@@ -1,6 +1,8 @@
 ---
 title: C# 参考
 ms.date: 02/14/2017
+f1_keywords:
+- _CSharpKeyword
 helpviewer_keywords:
 - Visual C#, language reference
 - language reference [C#]
@@ -8,12 +10,12 @@ helpviewer_keywords:
 - C# language, reference
 - reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
-ms.openlocfilehash: 4875e53327e24c4b5983a4a3b79b5beced368725
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bed8f430793a8d8544cf0bbb5ea765490945bfc0
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74428614"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855330"
 ---
 # <a name="c-reference"></a>C# 参考
 
