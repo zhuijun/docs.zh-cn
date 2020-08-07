@@ -2,19 +2,18 @@
 title: 查询表达式
 description: '了解 F # 编程语言中对 LINQ 的查询表达式支持。'
 ms.date: 05/16/2016
-ms.openlocfilehash: bbd15352aa89bd1891b409177921a675784a0227
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: c6f33a58bc959745a5f83bdcfe378a4dbbe577c5
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419182"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855031"
 ---
 # <a name="query-expressions"></a>查询表达式
 
-> [!NOTE]
-> 本文中的 API 参考链接将转至 MSDN。  Docs.microsoft.com API 参考尚未完成。
-
 利用查询表达式，您可以查询数据源并将数据置于所需的窗体中。 查询表达式为 F # 中的 LINQ 提供支持。
+> [!NOTE]
+> F # 的 docs.microsoft.com API 参考未完成。 如果遇到任何断开的链接，请参阅[F # 核心库文档](https://fsharp.github.io/fsharp-core-docs/)。
 
 ## <a name="syntax"></a>语法
 
@@ -56,7 +55,7 @@ query1
 
 查询表达式中只允许使用可以转换为 SQL 的表达式。 例如，使用查询运算符时，表达式中不允许使用函数调用 `where` 。
 
-表1显示了可用的查询运算符。 此外，请参阅 Table2，这将比较 SQL 查询和本主题后面的等效 F # 查询表达式。 某些类型提供程序不支持某些查询运算符。 特别是，由于 OData 的限制，OData 类型提供程序在支持的查询运算符中受到限制。 有关详细信息，请参阅[ODataService 类型提供程序（F #）](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e)。
+表1显示了可用的查询运算符。 此外，请参阅 Table2，这将比较 SQL 查询和本主题后面的等效 F # 查询表达式。 某些类型提供程序不支持某些查询运算符。 特别是，由于 OData 的限制，OData 类型提供程序在支持的查询运算符中受到限制。 有关详细信息，请参阅[ODataService 类型提供程序 (F # ) ](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e)。
 
 此表假定数据库采用以下格式：
 
@@ -84,7 +83,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 <table style="width:100%">
   <tr>
     <th>运算符</th>
-    <th>说明</th>
+    <th>描述</th>
   </tr>
   <tr>
   <td><code>contains</code></td>
@@ -506,8 +505,8 @@ let data = [ 1; 5; 7; 11; 18; 21]
 
 <table style="width:100%">
   <tr>
-    <th>Transact-sql （不区分大小写）</th>
-    <th>F # 查询表达式（区分大小写）</th>
+    <th>Transact-sql (不区分大小写) </th>
+    <th>F # 查询表达式 (区分大小写) </th>
   </tr>
 <tr><td>
 从表中选择所有字段。<br>
@@ -2439,6 +2438,6 @@ end
 
 ## <a name="see-also"></a>另请参阅
 
-- [F # 语言参考](index.md)
+- [F# 语言参考](index.md)
 - [QueryBuilder 类](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
 - [计算表达式](Computation-Expressions.md)

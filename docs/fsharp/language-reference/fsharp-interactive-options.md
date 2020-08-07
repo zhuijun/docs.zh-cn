@@ -2,12 +2,12 @@
 title: 交互式选项
 description: 了解 F# 交互窗口、fsi.exe 支持的命令行选项。
 ms.date: 07/22/2020
-ms.openlocfilehash: f9932cac24fad187c332306968fb13981912e80a
-ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+ms.openlocfilehash: abddd1fd990be18ede139ab26ffe80513ba6e0dd
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795458"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87855343"
 ---
 # <a name="f-interactive-options"></a>F# 交互窗口选项
 
@@ -25,11 +25,11 @@ F # 脚本文件的文件扩展名为 `.fsx` 。
 
 ## <a name="table-of-f-interactive-options"></a>F# 交互窗口选项的表
 
-下表总结了 F# 交互窗口支持的选项。 可以在命令行上或通过 Visual Studio IDE 设置这些选项。 若要在 Visual Studio IDE 中设置这些选项，请打开 "**工具**" 菜单，选择 "**选项 ...**"，然后展开 " **F # 工具**" 节点，然后选择 " **F# 交互窗口**"。
+下表总结了 F# 交互窗口支持的选项。 可以在命令行上或通过 Visual Studio IDE 设置这些选项。 若要在 Visual Studio IDE 中设置这些选项，请打开 "**工具**" 菜单，选择 "**选项**"，展开 " **F # 工具**" 节点，然后选择 " **F# 交互窗口**"。
 
 其中列表显示在 F# 交互窗口选项参数中，列表元素由分号分隔 (`;`) 。
 
-|选项|说明|
+|选项|描述|
 |------|-----------|
 |**--**|用于指示 F# 交互窗口将剩余的参数作为命令行参数处理 F # 程序或脚本，您可以使用**Fsi.exe my.application.commandlineargs**的代码访问这些参数。|
 |**--checked**[ **+**&#124;**-** ]|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
@@ -56,7 +56,7 @@ F # 脚本文件的文件扩展名为 `.fsx` 。
 |**--readline**[ **+**&#124;**-** ]|启用或禁用交互模式下的 tab 自动补全。|
 |**--reference： &lt; filename&gt;**<br /><br />**-r： &lt; filename&gt;**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
 |**--tailcalls**[ **+**&#124;**-** ]|启用或禁用 tail IL 指令，这将导致为尾递归函数重用堆栈帧。 默认情况下会启用此选项。|
-|**--targetprofile： &lt; string&gt;**|指定此程序集的目标框架配置文件。 有效值为 mscorlib、netcore 或 netstandard。  默认值为 mscorlib。|
+|**--targetprofile： &lt; string&gt;**|指定此程序集的目标框架配置文件。 有效值为 `mscorlib`、`netcore` 或 `netstandard`。 默认值为 `mscorlib`。|
 |**--use： &lt; filename&gt;**|通知解释器在启动时使用给定文件作为初始输入。|
 |**--utf8output**|与 fsc.exe 编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
 |**--warning： &lt; 警告级别&gt;**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
@@ -163,6 +163,6 @@ val y : string = ["quack"; "quack"; "quack"]
 
 ## <a name="related-topics"></a>相关主题
 
-|Title|说明|
+|Title|描述|
 |-----|-----------|
 |[编译器选项](compiler-options.md)|介绍可用于 F # 编译器的命令行选项**fsc.exe**。|
