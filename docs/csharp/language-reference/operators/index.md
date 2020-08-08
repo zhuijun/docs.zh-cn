@@ -10,12 +10,12 @@ helpviewer_keywords:
 - operator associativity [C#]
 - expressions [C#]
 ms.assetid: 0301e31f-22ad-49af-ac3c-d5eae7f0ac43
-ms.openlocfilehash: 19b5683a7cd334e1203c57fa90d275b659eac873
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 9ada39a2144e5565a76a25df0f83424710ad939f
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556548"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916813"
 ---
 # <a name="c-operators-and-expressions-c-reference"></a>C# 运算符和表达式（C# 参考）
 
@@ -33,7 +33,7 @@ C# 提供了许多运算符。 其中许多都受到[内置类型](../builtin-ty
 
 在下面的代码中，表达式的示例位于赋值的右侧：
 
-[!code-csharp[expression examples](snippets/Overview.cs#Expressions)]
+[!code-csharp[expression examples](snippets/shared/Overview.cs#Expressions)]
 
 通常情况下，表达式会生成结果，并可包含在其他表达式中。 [`void`](../builtin-types/void.md) 方法调用是不生成结果的表达式的示例。 它只能用作[语句](../../programming-guide/statements-expressions-operators/statements.md)，如下面的示例所示：
 
@@ -45,15 +45,15 @@ Console.WriteLine("Hello, world!");
 
 - [内插字符串表达式](../tokens/interpolated.md)，提供创建格式化字符串的便利语法：
 
-  [!code-csharp-interactive[interpolated string](snippets/Overview.cs#InterpolatedString)]
+  [!code-csharp-interactive[interpolated string](snippets/shared/Overview.cs#InterpolatedString)]
 
 - [Lambda 表达式](../../programming-guide/statements-expressions-operators/lambda-expressions.md)，可用于创建匿名函数：
 
-  [!code-csharp-interactive[lambda expression](snippets/Overview.cs#Lambda)]
+  [!code-csharp-interactive[lambda expression](snippets/shared/Overview.cs#Lambda)]
 
 - [查询表达式](../keywords/query-keywords.md)，可用于直接以 C# 使用查询功能：
 
-  [!code-csharp-interactive[query expression](snippets/Overview.cs#Query)]
+  [!code-csharp-interactive[query expression](snippets/shared/Overview.cs#Query)]
 
 可使用[表达式主体定义](../../programming-guide/statements-expressions-operators/expression-bodied-members.md)为方法、构造函数、属性、索引器或终结器提供简洁的定义。
 

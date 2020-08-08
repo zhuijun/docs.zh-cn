@@ -8,12 +8,12 @@ metadata:
   ms.topic: hub-page
   ms.prod: azure-dotnet
   ms.date: 07/31/2020
-  ms.openlocfilehash: c5326128836f83b7153336619061f5943f8c6aa4
-  ms.sourcegitcommit: 32f0d6f4c01ddc6ca78767c3a30e3305f8cd032c
+  ms.openlocfilehash: 114f12dd33a565ec8332f24c965a74b083bd32c7
+  ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/30/2020
-  ms.locfileid: "87426983"
+  ms.lasthandoff: 08/07/2020
+  ms.locfileid: "87916275"
 highlightedContent:
   items:
   - itemType: overview
@@ -222,8 +222,8 @@ conceptualContent:
   - title: 用于 .NET 的 Azure SDK
     links:
     - itemType: download
-      text: 发布
-      url: https://azure.github.io/azure-sdk/releases/latest/index.html#net
+      text: 包
+      url: packages.md
     - itemType: concept
       text: 应用的身份验证
       url: authentication.md

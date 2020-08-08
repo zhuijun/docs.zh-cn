@@ -11,6 +11,8 @@
       href: authentication.md
     - name: Logging
       href: logging.md
+    - name: package
+      href: packages.md
     - name: SDK 示例
       href: /samples/dotnet/samples/azure-identity-resource-management-storage/
 - name: 迁移到 Azure

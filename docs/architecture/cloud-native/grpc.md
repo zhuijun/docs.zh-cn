@@ -6,12 +6,12 @@ no-loc:
 - Blazor
 - Blazor WebAssembly
 ms.date: 05/13/2020
-ms.openlocfilehash: 6b41363008405032f4233448f134a8a602dbd26a
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 4a0c88472d2b19efb2ff0f58395003b1b6409131
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173154"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87914892"
 ---
 # <a name="grpc"></a>gRPC
 
@@ -31,10 +31,11 @@ gRPC 提供跨最常见开发堆栈（包括 Java、JavaScript、c #、中转、
 
 gRPC 对其传输协议使用 HTTP/2。 与 HTTP 1.1 兼容，HTTP/2 功能很多高级功能：
 
-- 用于数据传输的二进制协议-不同于 HTTP 1.1，后者以明文形式发送数据。
+- 用于数据传输的二进制组帧协议-与基于文本的 HTTP 1.1 不同。
 - 多路复用支持通过同一连接发送多个并行请求-HTTP 1.1 限制处理一次请求/响应消息。
 - 同时发送客户端请求和服务器响应的双向全双工通信。
 - 内置流式处理可对大型数据集进行异步流式处理的请求和响应。
+- 减少网络使用量的标头压缩。
 
 gRPC 是轻型且高性能的。 与 JSON 序列化相比，与 JSON 序列化相比，它的最高速率为60-80%。 在 Microsoft [Windows Communication Foundation (WCF) ](https://docs.microsoft.com/dotnet/framework/wcf/whats-wcf)行话，gRPC 性能超出了高度优化的[wcf-nettcp 绑定](https://docs.microsoft.com/dotnet/api/system.servicemodel.nettcpbinding?view=netframework-4.8)的速度和效率。 不同于 Microsoft stack 的 Wcf-nettcp，gRPC 是跨平台的。
 
@@ -84,7 +85,7 @@ SDK 包括用于终结点路由、内置 IoC 和日志记录的工具。 开源 
 - 点到点实时通信-gRPC 可以实时推送消息而无需轮询，并对双向流式处理提供了极佳支持。
 - 网络约束环境–二进制 gRPC 消息始终小于等效的基于文本的 JSON 消息。
 
-在撰写本文时，gRPC 主要用于后端服务。 大多数新式浏览器不能提供支持前端 gRPC 客户端所需的 HTTP/2 控制级别。 这就是，这是一项[早期的计划](https://devblogs.microsoft.com/aspnet/grpc-web-experiment/)，可让你从使用 JavaScript 或技术生成的基于浏览器的应用 gRPC 通信 Blazor WebAssembly 。 [GRPC for .net](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md)允许 ASP.NET Core gRPC 应用在浏览器应用中支持 gRPC 功能：
+在撰写本文时，gRPC 主要用于后端服务。 新式浏览器无法提供支持前端 gRPC 客户端所需的 HTTP/2 控制级别。 这就是，有了支持[gRPC 的 .net](https://devblogs.microsoft.com/aspnet/grpc-web-for-net-now-available/) ，它支持通过 JavaScript 或技术生成的基于浏览器的应用的 gRPC 通信 Blazor WebAssembly 。 [gRPC](https://github.com/grpc/grpc/blob/master/doc/PROTOCOL-WEB.md)使 ASP.NET Core gRPC 应用支持浏览器应用中的 gRPC 功能：
 
 - 强类型的代码生成客户端
 - Compact Protobuf 消息
