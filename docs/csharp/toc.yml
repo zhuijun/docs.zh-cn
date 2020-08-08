@@ -1277,68 +1277,68 @@
       href: language-reference/index.md
     - name: 配置语言版本
       href: language-reference/configure-language-version.md
-    - name: C# 关键字
+    - name: 类型
+      items:
+        - name: 值类型
+          items:
+            - name: 概述
+              href: language-reference/builtin-types/value-types.md
+              displayName: 'value types, simple types'
+            - name: 整型数值类型
+              href: language-reference/builtin-types/integral-numeric-types.md
+              displayName: 'sbyte, byte, short, ushort, int, uint, long, ulong, integer, literal'
+            - name: 浮点型数值类型
+              href: language-reference/builtin-types/floating-point-numeric-types.md
+              displayName: 'float, decimal, double, rational, real, literal'
+            - name: 内置数值转换
+              href: language-reference/builtin-types/numeric-conversions.md
+            - name: bool
+              href: language-reference/builtin-types/bool.md
+              displayName: 'Boolean, true, false'
+            - name: char
+              href: language-reference/builtin-types/char.md
+              displayName: 'Unicode, character, UTF-16'
+            - name: 枚举类型
+              href: language-reference/builtin-types/enum.md
+              displayName: 'enum, bit flags, bit field'
+            - name: 结构类型
+              href: language-reference/builtin-types/struct.md
+              displayName: 'struct type, readonly struct, ref struct, readonly ref struct'
+            - name: 元组类型
+              href: language-reference/builtin-types/value-tuples.md
+              displayName: 'value tuples, ValueTuple'
+            - name: 可以为 null 的值类型
+              href: language-reference/builtin-types/nullable-value-types.md
+              displayName: '? token, ? symbol'
+        - name: 引用类型
+          items:
+            - name: 引用类型的功能
+              href: language-reference/keywords/reference-types.md
+            - name: 内置引用类型
+              displayName: 'object, delegate, dynamic, string'
+              href: language-reference/builtin-types/reference-types.md
+            - name: class
+              href: language-reference/keywords/class.md
+            - name: interface
+              href: language-reference/keywords/interface.md
+            - name: 可为空引用类型
+              href: language-reference/builtin-types/nullable-reference-types.md
+              displayName: '? token, ? symbol'
+        - name: void
+          href: language-reference/builtin-types/void.md
+        - name: var
+          href: language-reference/keywords/var.md
+        - name: 内置类型
+          href: language-reference/builtin-types/built-in-types.md
+        - name: 非托管类型
+          href: language-reference/builtin-types/unmanaged-types.md
+        - name: 默认值
+          href: language-reference/builtin-types/default-values.md
+    - name: 关键字
       items:
         - name: 概述
           displayName: keywords
           href: language-reference/keywords/index.md
-        - name: 类型
-          items:
-            - name: 值类型
-              items:
-                - name: 概述
-                  href: language-reference/builtin-types/value-types.md
-                  displayName: 'value types, simple types'
-                - name: 整型数值类型
-                  href: language-reference/builtin-types/integral-numeric-types.md
-                  displayName: 'sbyte, byte, short, ushort, int, uint, long, ulong, integer, literal'
-                - name: 浮点型数值类型
-                  href: language-reference/builtin-types/floating-point-numeric-types.md
-                  displayName: 'float, decimal, double, rational, real, literal'
-                - name: 内置数值转换
-                  href: language-reference/builtin-types/numeric-conversions.md
-                - name: bool
-                  href: language-reference/builtin-types/bool.md
-                  displayName: 'Boolean, true, false'
-                - name: char
-                  href: language-reference/builtin-types/char.md
-                  displayName: 'Unicode, character, UTF-16'
-                - name: 枚举类型
-                  href: language-reference/builtin-types/enum.md
-                  displayName: 'enum, bit flags, bit field'
-                - name: 结构类型
-                  href: language-reference/builtin-types/struct.md
-                  displayName: 'struct type, readonly struct, ref struct, readonly ref struct'
-                - name: 元组类型
-                  href: language-reference/builtin-types/value-tuples.md
-                  displayName: 'value tuples, ValueTuple'
-                - name: 可以为 null 的值类型
-                  href: language-reference/builtin-types/nullable-value-types.md
-                  displayName: '? token, ? symbol'
-            - name: 引用类型
-              items:
-                - name: 引用类型的功能
-                  href: language-reference/keywords/reference-types.md
-                - name: 内置引用类型
-                  displayName: 'object, delegate, dynamic, string'
-                  href: language-reference/builtin-types/reference-types.md
-                - name: class
-                  href: language-reference/keywords/class.md
-                - name: interface
-                  href: language-reference/keywords/interface.md
-                - name: 可为空引用类型
-                  href: language-reference/builtin-types/nullable-reference-types.md
-                  displayName: '? token, ? symbol'
-            - name: void
-              href: language-reference/builtin-types/void.md
-            - name: var
-              href: language-reference/keywords/var.md
-            - name: 内置类型
-              href: language-reference/builtin-types/built-in-types.md
-            - name: 非托管类型
-              href: language-reference/builtin-types/unmanaged-types.md
-            - name: 默认值
-              href: language-reference/builtin-types/default-values.md
         - name: 修饰符
           items:
             - name: 访问修饰符
@@ -1461,7 +1461,7 @@
               href: language-reference/keywords/out-parameter-modifier.md
         - name: 命名空间关键字
           items:
-            - name: 命名空间
+            - name: namespace
               href: language-reference/keywords/namespace.md
             - name: using
               items:
@@ -1493,7 +1493,7 @@
               href: language-reference/keywords/this.md
         - name: 文字关键字
           items:
-            - name: 'Null'
+            - name: 'null'
               href: language-reference/keywords/null.md
             - name: true 和 false
               href: language-reference/builtin-types/bool.md
@@ -1555,7 +1555,7 @@
               href: language-reference/keywords/by.md
             - name: in
               href: language-reference/keywords/in.md
-    - name: C# 运算符和表达式
+    - name: 运算符和表达式
       items:
         - name: 概述
           href: language-reference/operators/index.md
@@ -1638,7 +1638,7 @@
           href: language-reference/operators/true-false-operators.md
         - name: 运算符重载
           href: language-reference/operators/operator-overloading.md
-    - name: C# 特殊字符
+    - name: 特殊字符
       items:
         - name: 概述
           displayName: special characters
@@ -1661,7 +1661,7 @@
         - name: 可为空的静态分析
           displayName: 'AllowNull, DisallowNull, MaybeNull, NotNull, MaybeNullWhen, NotNullWhen, NotNullIfNotNull, DoesNotReturn, DoesNotReturnIf'
           href: language-reference/attributes/nullable-analysis.md
-    - name: C# 预处理器指令
+    - name: 预处理器指令
       items:
         - name: 概述
           displayName: preprocessor directives
@@ -1694,7 +1694,7 @@
           href: language-reference/preprocessor-directives/preprocessor-pragma-warning.md
         - name: '#pragma checksum'
           href: language-reference/preprocessor-directives/preprocessor-pragma-checksum.md
-    - name: C# 编译器选项
+    - name: 编译器选项
       items:
         - name: 概述
           displayName: compiler options
@@ -1825,7 +1825,7 @@
               href: language-reference/compiler-options/win32manifest-compiler-option.md
             - name: '-win32res'
               href: language-reference/compiler-options/win32res-compiler-option.md
-    - name: C# 编译器错误
+    - name: 编译器错误
       href: language-reference/compiler-messages/index.md
     - name: C# 6.0 草稿规范
       href: language-reference/specification/
