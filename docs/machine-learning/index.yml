@@ -10,12 +10,12 @@ metadata:
   author: natke
   ms.author: nakersha
   ms.date: 10/30/2019
-  ms.openlocfilehash: 05d357af2088321524841bfc05f94f816f1bc306
-  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+  ms.openlocfilehash: da93d48dc36123f8821be37c8c0546b84ab29712
+  ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 03/15/2020
-  ms.locfileid: "73423942"
+  ms.lasthandoff: 08/05/2020
+  ms.locfileid: "87795484"
 landingContent:
 - title: ML.NET 基础知识
   linkLists:
@@ -37,11 +37,11 @@ landingContent:
   linkLists:
   - linkListType: quickstart
     links:
-    - text: 在 Visual Studio 中设置模型生成器
-      url: how-to-guides/install-model-builder.md
-    - text: ML.NET API 入门
+    - text: ML.NET API 入门（代码优先）
       url: https://dotnet.microsoft.com/learn/ml-dotnet/get-started-tutorial/intro
-    - text: 在 Mac OS、Windows 或 Linux 上安装 CLI
+    - text: 在 Visual Studio 中设置 Model Builder（低代码）
+      url: how-to-guides/install-model-builder.md
+    - text: 在 macOS、Windows 或 Linux 上安装 CLI（低代码）
       url: how-to-guides/install-ml-net-cli.md
 - title: 教程
   linkLists:
@@ -83,7 +83,7 @@ landingContent:
       url: how-to-guides/save-load-machine-learning-models-ml-net.md
     - text: 重新训练模型
       url: how-to-guides/retrain-model-ml-net.md
-- title: 引用
+- title: 参考
   linkLists:
   - linkListType: reference
     links:
