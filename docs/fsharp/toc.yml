@@ -1,21 +1,21 @@
-- name: 'F# 文档'
+- name: F# 文档
   href: index.yml
-- name: '什么是 F#'
+- name: 什么是 F#
   href: what-is-fsharp.md
 - name: 入门
   href: get-started/index.md
   items:
-    - name: '安装 F#'
+    - name: 安装 F#
       href: get-started/install-fsharp.md
-    - name: 'Visual Studio 中的 F#'
+    - name: Visual Studio 中的 F#
       href: get-started/get-started-visual-studio.md
-    - name: 'Visual Studio Code 中的 F#'
+    - name: Visual Studio Code 中的 F#
       href: get-started/get-started-vscode.md
-    - name: '具有 .NET Core CLI 的 F#'
+    - name: 具有 .NET Core CLI 的 F#
       href: get-started/get-started-command-line.md
-    - name: 'Visual Studio for Mac 中的 F#'
+    - name: Visual Studio for Mac 中的 F#
       href: get-started/get-started-with-visual-studio-for-mac.md
-- name: 'F# 教程'
+- name: F# 教程
   href: tour.md
 - name: 教程
   items:
@@ -37,17 +37,17 @@
           href: tutorials/type-providers/type-provider-security.md
         - name: 类型提供程序疑难解答
           href: tutorials/type-providers/troubleshooting-type-providers.md
-    - name: 'F# Interactive'
+    - name: F# Interactive
       href: tutorials/fsharp-interactive/index.md
-- name: 'F# 中的新增内容'
+- name: F# 中的新增内容
   items:
-    - name: 'F# 4.7'
+    - name: F# 4.7
       href: whats-new/fsharp-47.md
-    - name: 'F# 4.6'
+    - name: F# 4.6
       href: whats-new/fsharp-46.md
-    - name: 'F# 4.5'
+    - name: F# 4.5
       href: whats-new/fsharp-45.md
-- name: 'F# 语言参考'
+- name: F# 语言参考
   href: language-reference/index.md
   items:
     - name: 关键字参考
@@ -87,7 +87,7 @@
           href: language-reference/values/null-values.md
     - name: 文本
       href: language-reference/literals.md
-    - name: 'F# 类型'
+    - name: F# 类型
       href: language-reference/fsharp-types.md
     - name: 类型推断
       href: language-reference/type-inference.md
@@ -99,7 +99,7 @@
       href: language-reference/strings.md
     - name: 元组
       href: language-reference/tuples.md
-    - name: 'F# 集合类型'
+    - name: F# 集合类型
       href: language-reference/fsharp-collection-types.md
     - name: 列表
       href: language-reference/lists.md
@@ -226,6 +226,8 @@
       href: language-reference/signature-files.md
     - name: 度量单位
       href: language-reference/units-of-measure.md
+    - name: 纯文本格式
+      href: language-reference/plaintext-formatting.md
     - name: XML 文档
       href: language-reference/xml-documentation.md
     - name: 延迟表达式
@@ -248,7 +250,7 @@
       href: language-reference/compiler-directives.md
     - name: 编译器选项
       href: language-reference/compiler-options.md
-    - name: 'F# Interactive 选项'
+    - name: F# Interactive 选项
       href: language-reference/fsharp-interactive-options.md
     - name: 源代码行标识符、文件标识符和路径标识符
       href: language-reference/source-line-file-path-identifiers.md
@@ -258,25 +260,25 @@
       href: language-reference/verbose-syntax.md
     - name: 编译器错误和警告
       href: language-reference/compiler-messages/index.md
-- name: 'F# 样式指南'
+- name: F# 样式指南
   href: style-guide/index.md
   items:
-    - name: 'F# 代码格式设置准则'
+    - name: F# 代码格式设置准则
       href: style-guide/formatting.md
-    - name: 'F# 编码约定'
+    - name: F# 编码约定
       href: style-guide/conventions.md
-    - name: 'F# 组件设计准则'
+    - name: F# 组件设计准则
       href: style-guide/component-design-guidelines.md
-- name: '在 Azure 上使用 F#'
+- name: 在 Azure 上使用 F#
   href: using-fsharp-on-azure/index.md
   items:
-    - name: '通过 F# 实现 Azure Blob 入门'
+    - name: 通过 F# 实现 Azure Blob 入门
       href: using-fsharp-on-azure/blob-storage.md
-    - name: '通过 F# 实现 Azure 文件存储入门'
+    - name: 通过 F# 实现 Azure 文件存储入门
       href: using-fsharp-on-azure/file-storage.md
-    - name: '通过 F# 实现 Azure 队列存储入门'
+    - name: 通过 F# 实现 Azure 队列存储入门
       href: using-fsharp-on-azure/queue-storage.md
-    - name: '通过 F# 实现 Azure 表格存储入门'
+    - name: 通过 F# 实现 Azure 表格存储入门
       href: using-fsharp-on-azure/table-storage.md
-    - name: 'F# Azure 依赖项的包管理'
+    - name: F# Azure 依赖项的包管理
       href: using-fsharp-on-azure/package-management.md
