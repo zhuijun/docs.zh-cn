@@ -1,31 +1,89 @@
 ---
-title: 容器和 Docker 简介
-description: 简要了解使用 Docker 所带来的主要优势。
-ms.date: 02/15/2019
-ms.openlocfilehash: 9ac08a64cd2465b4b88a266c1ec0925f37680bf9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+title: 使用 Microsoft 平台和工具的容器化 Docker 应用程序的生命周期
+description: 在基本层面概要了解使用 Docker 和 Microsoft 平台及工具开发和部署容器化应用程序的过程。
+ms.date: 07/30/2020
+ms.openlocfilehash: d8055315b25f73d7b0b355026ab6b2c4767f9d89
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73738129"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915158"
 ---
-# <a name="introduction-to-containers-and-docker"></a><span data-ttu-id="7423e-103">容器和 Docker 简介</span><span class="sxs-lookup"><span data-stu-id="7423e-103">Introduction to containers and Docker</span></span>
+# <a name="containerized-docker-application-lifecycle-with-microsoft-platform-and-tools"></a><span data-ttu-id="b55bc-103">使用 Microsoft 平台和工具的容器化 Docker 应用程序的生命周期</span><span class="sxs-lookup"><span data-stu-id="b55bc-103">Containerized Docker Application Lifecycle with Microsoft Platform and Tools</span></span>
 
-<span data-ttu-id="7423e-104">*容器化是软件开发的一种方法，通过它可将应用程序或服务、其依赖项及其配置（抽象化为部署清单文件）一起打包为容器映像。然后，可将容器化应用程序作为单元进行测试，并将其作为容器映像实例部署到主机操作系统 (OS)。*</span><span class="sxs-lookup"><span data-stu-id="7423e-104">*Containerization is an approach to software development in which an application or service, its dependencies, and its configuration (abstracted as deployment manifest files) are packaged together as a container image. You then can test the containerized application as a unit and deploy it as a container image instance to the host operating system (OS).*</span></span>
+![封面](./media/devops-book-cover-large-we.png)
 
-<span data-ttu-id="7423e-105">就像船只、火车或卡车运输集装箱而不论其内部的货物一样，软件容器充当软件部署的标准单元，其中可以包含不同的代码和依赖项。</span><span class="sxs-lookup"><span data-stu-id="7423e-105">Just as shipping containers allow goods to be transported by ship, train, or truck regardless of the cargo inside, software containers act as a standard unit of software deployment that can contain different code and dependencies.</span></span> <span data-ttu-id="7423e-106">按照这种方式容器化软件，开发人员和 IT 专业人员只需进行极少修改或不修改，即可将其部署到不同的环境。</span><span class="sxs-lookup"><span data-stu-id="7423e-106">Containerizing software this way enables developers and IT professionals to deploy them across environments with little or no modification.</span></span>
+<span data-ttu-id="b55bc-105">**版本 v3.1** - 已更新到 ASP.NET Core v3.1</span><span class="sxs-lookup"><span data-stu-id="b55bc-105">**EDITION v3.1** - Updated to ASP.NET Core 3.1</span></span>
 
-<span data-ttu-id="7423e-107">容器还会在共享 OS 上将应用程序彼此隔离开。</span><span class="sxs-lookup"><span data-stu-id="7423e-107">Containers also isolate applications from each other on a shared OS.</span></span> <span data-ttu-id="7423e-108">容器化应用程序在容器主机上运行，而容器主机在 OS（Linux 或 Windows）上运行。</span><span class="sxs-lookup"><span data-stu-id="7423e-108">Containerized applications run on top of a container host that in turn runs on the OS (Linux or Windows).</span></span> <span data-ttu-id="7423e-109">因此，容器的占用比虚拟机 (VM) 映像小得多。</span><span class="sxs-lookup"><span data-stu-id="7423e-109">Containers therefore have a much smaller footprint than virtual machine (VM) images.</span></span>
+<span data-ttu-id="b55bc-106">本指南在整体上概述了使用 Microsoft 平台和工具通过 Docker 开发和部署容器化的 ASP.NET Core 应用程序。</span><span class="sxs-lookup"><span data-stu-id="b55bc-106">This guide is a general overview for developing and deploying containerized ASP.NET Core applications with Docker, using the Microsoft platform and tools.</span></span> <span data-ttu-id="b55bc-107">本指南大致介绍了 Azure DevOps（用于实现 CI/CD 管道）以及 Azure 容器注册表 (ACR) 和 Azure Kubernetes 服务 AKS（用于部署）。</span><span class="sxs-lookup"><span data-stu-id="b55bc-107">The guide includes a high-level introduction to Azure DevOps, for implementing CI/CD pipelines, as well as Azure Container Registry (ACR), and Azure Kubernetes Services AKS for deployment.</span></span>
 
-<span data-ttu-id="7423e-110">每个容器都可运行整个 Web 应用或服务，如图 1-1 所示。</span><span class="sxs-lookup"><span data-stu-id="7423e-110">Each container can run a whole web application or a service, as shown in Figure 1-1.</span></span> <span data-ttu-id="7423e-111">在本例中，Docker 主机是容器主机，App1、App2、Svc1 和 Svc2 是容器化的应用程序或服务。</span><span class="sxs-lookup"><span data-stu-id="7423e-111">In this example, Docker host is a container host, and App1, App2, Svc1, and Svc2 are containerized applications or services.</span></span>
+<span data-ttu-id="b55bc-108">关于开发的大致详细信息，可参阅 [.NET 微服务：适用于容器化 .NET 应用程序的体系结构](https://docs.microsoft.com/dotnet/architecture/microservices/) 及其相关的参考应用程序 [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers)。</span><span class="sxs-lookup"><span data-stu-id="b55bc-108">For low-level, development-related details you can see the [.NET Microservices: Architecture for Containerized .NET Applications](https://docs.microsoft.com/dotnet/architecture/microservices/) guide and it related reference application [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers).</span></span>
 
-![显示 VM 或服务器中运行的四个容器的关系图。](./media/index/multiple-containers-single-host.png)
+## <a name="send-us-your-feedback"></a><span data-ttu-id="b55bc-109">向我们发送反馈！</span><span class="sxs-lookup"><span data-stu-id="b55bc-109">Send us your feedback!</span></span>
 
-<span data-ttu-id="7423e-113">**图 1-1**。</span><span class="sxs-lookup"><span data-stu-id="7423e-113">**Figure 1-1**.</span></span> <span data-ttu-id="7423e-114">在一个容器主机上运行多个容器</span><span class="sxs-lookup"><span data-stu-id="7423e-114">Multiple containers running on a container host</span></span>
+<span data-ttu-id="b55bc-110">本指南旨在帮助用户了解 .NET 中容器化应用程序和微服务的体系结构。</span><span class="sxs-lookup"><span data-stu-id="b55bc-110">We wrote this guide to help you understand the architecture of containerized applications and microservices in .NET.</span></span> <span data-ttu-id="b55bc-111">本指南和相关的参考应用程序会不断更新，欢迎你提供宝贵意见！</span><span class="sxs-lookup"><span data-stu-id="b55bc-111">The guide and related reference application will be evolving, so we welcome your feedback!</span></span> <span data-ttu-id="b55bc-112">如有关于本指南的改进建议，请在 <https://aka.ms/ebookfeedback> 提交反馈。</span><span class="sxs-lookup"><span data-stu-id="b55bc-112">If you have comments about how this guide can be improved, submit feedback at <https://aka.ms/ebookfeedback>.</span></span>
 
-<span data-ttu-id="7423e-115">可从容器化获得的另一个优势是可伸缩性。</span><span class="sxs-lookup"><span data-stu-id="7423e-115">Another benefit you can derive from containerization is scalability.</span></span> <span data-ttu-id="7423e-116">通过为短期任务创建新容器，可以快速扩大。</span><span class="sxs-lookup"><span data-stu-id="7423e-116">You can scale out quickly by creating new containers for short-term tasks.</span></span> <span data-ttu-id="7423e-117">从应用程序的角度来看，实例化映像（创建容器）类似于实例化 服务或 Web 应用等进程。</span><span class="sxs-lookup"><span data-stu-id="7423e-117">From an application point of view, instantiating an image (creating a container) is similar to instantiating a process like a service or web app.</span></span> <span data-ttu-id="7423e-118">但出于可靠性考虑，在多个主机服务器上运行同一映像的多个实例时，通常要使每个容器（映像实例）在不同容错域中的不同主机服务器或 VM 中运行。</span><span class="sxs-lookup"><span data-stu-id="7423e-118">For reliability, however, when you run multiple instances of the same image across multiple host servers, you typically want each container (image instance) to run in a different host server or VM in different fault domains.</span></span>
+## <a name="credits"></a><span data-ttu-id="b55bc-113">信用</span><span class="sxs-lookup"><span data-stu-id="b55bc-113">Credits</span></span>
 
-<span data-ttu-id="7423e-119">总而言之，容器在整个应用程序生命周期工作流中提供了隔离性、可移植性、灵活性、可伸缩性和可控性等诸多优点。</span><span class="sxs-lookup"><span data-stu-id="7423e-119">In short, containers offer the benefits of isolation, portability, agility, scalability, and control across the entire application lifecycle workflow.</span></span> <span data-ttu-id="7423e-120">最重要的优点是可在开发和运营之间实现环境隔离。</span><span class="sxs-lookup"><span data-stu-id="7423e-120">The most important benefit is the environment isolation provided between Dev and Ops.</span></span>
+<span data-ttu-id="b55bc-114">作者:</span><span class="sxs-lookup"><span data-stu-id="b55bc-114">Author:</span></span>
+
+> <span data-ttu-id="b55bc-115">**Cesar de la Torre**，Microsoft Corp .NET 产品团队的高级项目经理。</span><span class="sxs-lookup"><span data-stu-id="b55bc-115">**Cesar de la Torre**, Sr. PM, .NET product team, Microsoft Corp.</span></span>
+
+<span data-ttu-id="b55bc-116">策划编辑：</span><span class="sxs-lookup"><span data-stu-id="b55bc-116">Acquisitions Editor:</span></span>
+
+> <span data-ttu-id="b55bc-117">Janine Patrick</span><span class="sxs-lookup"><span data-stu-id="b55bc-117">**Janine Patrick**</span></span>
+
+<span data-ttu-id="b55bc-118">开发编辑：</span><span class="sxs-lookup"><span data-stu-id="b55bc-118">Developmental Editor:</span></span>
+
+> <span data-ttu-id="b55bc-119">Bob Russell，Microsoft 的解决方案专业人员</span><span class="sxs-lookup"><span data-stu-id="b55bc-119">**Bob Russell**, Solutions Professional at Microsoft</span></span>
+>
+> [<span data-ttu-id="b55bc-120">Octal Publishing, Inc.</span><span class="sxs-lookup"><span data-stu-id="b55bc-120">**Octal Publishing, Inc.**</span></span>](http://www.octalpub.com/)
+
+<span data-ttu-id="b55bc-121">生产编辑：</span><span class="sxs-lookup"><span data-stu-id="b55bc-121">Editorial Production:</span></span>
+
+> [<span data-ttu-id="b55bc-122">Dianne Russell</span><span class="sxs-lookup"><span data-stu-id="b55bc-122">Dianne Russell</span></span>](http://www.octalpub.com/)
+>
+> <span data-ttu-id="b55bc-123">Octal Publishing, Inc.</span><span class="sxs-lookup"><span data-stu-id="b55bc-123">**Octal Publishing, Inc.**</span></span>
+
+<span data-ttu-id="b55bc-124">文字加工编辑：</span><span class="sxs-lookup"><span data-stu-id="b55bc-124">Copyeditor:</span></span>
+
+> <span data-ttu-id="b55bc-125">Bob Russell，Microsoft 的解决方案专业人员</span><span class="sxs-lookup"><span data-stu-id="b55bc-125">**Bob Russell**, Solutions Professional at Microsoft</span></span>
+
+<span data-ttu-id="b55bc-126">参与者和审阅者：</span><span class="sxs-lookup"><span data-stu-id="b55bc-126">Participants and reviewers:</span></span>
+
+> <span data-ttu-id="b55bc-127">Microsoft .NET 团队高级项目经理 Nish Anil </span><span class="sxs-lookup"><span data-stu-id="b55bc-127">**Nish Anil**, Sr. Program Manager, .NET team, Microsoft</span></span>
+>
+> <span data-ttu-id="b55bc-128">**Miguel Veloso**，Plain Concepts 的软件开发工程师</span><span class="sxs-lookup"><span data-stu-id="b55bc-128">**Miguel Veloso**, Software Development Engineer at Plain Concepts</span></span>
+>
+> <span data-ttu-id="b55bc-129">Sumit Ghosh，Neudesic 的首席顾问</span><span class="sxs-lookup"><span data-stu-id="b55bc-129">**Sumit Ghosh**, Principal Consultant at Neudesic</span></span>
+
+## <a name="copyright"></a><span data-ttu-id="b55bc-130">Copyright</span><span class="sxs-lookup"><span data-stu-id="b55bc-130">Copyright</span></span>
+
+<span data-ttu-id="b55bc-131">发布者</span><span class="sxs-lookup"><span data-stu-id="b55bc-131">PUBLISHED BY</span></span>
+
+<span data-ttu-id="b55bc-132">Microsoft 开发人员部门、.NET 和 Visual Studio 产品团队</span><span class="sxs-lookup"><span data-stu-id="b55bc-132">Microsoft Developer Division, .NET and Visual Studio product teams</span></span>
+
+<span data-ttu-id="b55bc-133">Microsoft Corporation 的一个部门</span><span class="sxs-lookup"><span data-stu-id="b55bc-133">A division of Microsoft Corporation</span></span>
+
+<span data-ttu-id="b55bc-134">One Microsoft Way</span><span class="sxs-lookup"><span data-stu-id="b55bc-134">One Microsoft Way</span></span>
+
+<span data-ttu-id="b55bc-135">Redmond, Washington 98052-6399</span><span class="sxs-lookup"><span data-stu-id="b55bc-135">Redmond, Washington 98052-6399</span></span>
+
+<span data-ttu-id="b55bc-136">版权所有 &copy; 2020 Microsoft Corporation</span><span class="sxs-lookup"><span data-stu-id="b55bc-136">Copyright &copy; 2020 by Microsoft Corporation</span></span>
+
+<span data-ttu-id="b55bc-137">保留所有权利。</span><span class="sxs-lookup"><span data-stu-id="b55bc-137">All rights reserved.</span></span> <span data-ttu-id="b55bc-138">未经发布者书面许可，不得以任何形式或任何方式复制或传播本书中的任何内容。</span><span class="sxs-lookup"><span data-stu-id="b55bc-138">No part of the contents of this book may be reproduced or transmitted in any form or by any means without the written permission of the publisher.</span></span>
+
+<span data-ttu-id="b55bc-139">本书“按原样”提供，表达作者的观点和看法。</span><span class="sxs-lookup"><span data-stu-id="b55bc-139">This book is provided "as-is" and expresses the author's views and opinions.</span></span> <span data-ttu-id="b55bc-140">本书中表达的观点、看法和信息（包括 URL 和其他 Internet 网站引用）如有更改，恕不另行通知。</span><span class="sxs-lookup"><span data-stu-id="b55bc-140">The views, opinions and information expressed in this book, including URL and other Internet website references, may change without notice.</span></span>
+
+<span data-ttu-id="b55bc-141">本书中提及的一些示例仅用于说明，纯属虚构。</span><span class="sxs-lookup"><span data-stu-id="b55bc-141">Some examples depicted herein are provided for illustration only and are fictitious.</span></span> <span data-ttu-id="b55bc-142">不存在任何实际关联或联系，请勿妄加推断。</span><span class="sxs-lookup"><span data-stu-id="b55bc-142">No real association or connection is intended or should be inferred.</span></span>
+
+<span data-ttu-id="b55bc-143">Microsoft 和 <https://www.microsoft.com> 上“商标”网页列出的商标是 Microsoft 集团公司的商标。</span><span class="sxs-lookup"><span data-stu-id="b55bc-143">Microsoft and the trademarks listed at <https://www.microsoft.com> on the "Trademarks" webpage are trademarks of the Microsoft group of companies.</span></span>
+
+<span data-ttu-id="b55bc-144">Mac 和 macOS 是 Apple Inc. 的商标</span><span class="sxs-lookup"><span data-stu-id="b55bc-144">Mac and macOS are trademarks of Apple Inc.</span></span>
+
+<span data-ttu-id="b55bc-145">Docker 的鲸鱼徽标是 Docker Inc. 的注册商标经许可方可使用。</span><span class="sxs-lookup"><span data-stu-id="b55bc-145">The Docker whale logo is a registered trademark of Docker, Inc. Used by permission.</span></span>
+
+<span data-ttu-id="b55bc-146">所有其他标记和徽标均为其各自所有者的财产。</span><span class="sxs-lookup"><span data-stu-id="b55bc-146">All other marks and logos are property of their respective owners.</span></span>
 
 >[!div class="step-by-step"]
->[<span data-ttu-id="7423e-121">下一页</span><span class="sxs-lookup"><span data-stu-id="7423e-121">Next</span></span>](what-is-docker.md)
+>[<span data-ttu-id="b55bc-147">下一页</span><span class="sxs-lookup"><span data-stu-id="b55bc-147">Next</span></span>](introduction-to-containers-and-docker.md)

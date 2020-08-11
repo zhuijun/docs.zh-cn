@@ -290,6 +290,8 @@ items:
         href: diagnostics/index.md
       - name: 托管调试器
         href: diagnostics/managed-debuggers.md
+      - name: EventCounters
+        href: diagnostics/event-counters.md
       - name: 日志记录和跟踪
         href: diagnostics/logging-tracing.md
       - name: .NET Core CLI 全局工具
@@ -302,6 +304,8 @@ items:
             href: diagnostics/dotnet-trace.md
       - name: .NET Core 诊断教程
         items:
+          - name: 通过 EventCounters 获取 perf 指标
+            href: diagnostics/event-counter-perf.md
           - name: 调试内存泄露
             href: diagnostics/debug-memory-leak.md
           - name: 调试高 CPU 使用率

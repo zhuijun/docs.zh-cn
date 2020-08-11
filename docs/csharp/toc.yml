@@ -1829,7 +1829,7 @@
       href: language-reference/compiler-messages/index.md
     - name: C# 6.0 草稿规范
       href: language-reference/specification/
-    - name: C# 7.0 - 8.0 建议
+    - name: C# 7.0 - 9.0 建议
       href: language-reference/proposals/
 - name: 演练
   href: walkthroughs.md

@@ -1,14 +1,17 @@
 - name: 使用 Microsoft 平台和工具的容器化 Docker 应用程序的生命周期
   href: index.md
   items:
-    - name: 什么是 Docker？
-      href: what-is-docker.md
-    - name: Docker 术语
-      href: docker-terminology.md
-    - name: Docker 容器、映像和注册表
-      href: docker-containers-images-and-registries.md
-    - name: 基于容器的新式应用程序之路
-      href: road-to-modern-applications-based-on-containers.md
+    - name: 容器和 Docker 简介
+      href: introduction-to-containers-and-docker.md
+      items:
+        - name: 什么是 Docker？
+          href: what-is-docker.md
+        - name: Docker 术语
+          href: docker-terminology.md
+        - name: Docker 容器、映像和注册表
+          href: docker-containers-images-and-registries.md
+        - name: 基于容器的新式应用程序之路
+          href: road-to-modern-applications-based-on-containers.md
     - name: Docker 应用程序生命周期简介
       href: Docker-application-lifecycle/index.md
       items:
@@ -41,14 +44,14 @@
           href: design-develop-containerized-apps/visual-studio-tools-for-docker.md
         - name: 使用 DockerFile 中的 Windows PowerShell 命令来设置 Windows 容器（基于 Docker 标准）
           href: design-develop-containerized-apps/set-up-windows-containers-with-powershell.md
-        - name: 构建作为 Linux 容器部署到 AKS/Kubernetes 业务流程协调程序中的 ASP.NET Core 2.0 应用程序
+        - name: 构建作为 Linux 容器部署到 AKS/Kubernetes 业务流程协调程序中的 ASP.NET Core 应用程序
           href: design-develop-containerized-apps/build-aspnet-core-applications-linux-containers-aks-kubernetes.md
     - name: 使用 Microsoft 工具的 Docker 应用程序 DevOps 工作流
       href: docker-devops-workflow/index.md
       items:
         - name: Docker 应用程序的外部循环 DevOps 工作流步骤
           href: docker-devops-workflow/docker-application-outer-loop-devops-workflow.md
-        - name: 在 Azure DevOps Services 中为容器中的 .NET Core 2.0 应用程序创建 CI/CD 管道并部署到 Kubernetes 群集
+        - name: 在 Azure DevOps Services 中为容器中的 ASP.NET Core 应用程序创建 CI/CD 管道并部署到 Kubernetes 群集
           href: docker-devops-workflow/create-ci-cd-pipelines-azure-devops-services-aspnetcore-kubernetes.md
     - name: 运行、管理和监视 Docker 生产环境
       href: run-manage-monitor-docker-environments/index.md

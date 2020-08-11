@@ -82,3 +82,35 @@
           href: ../../../../_csharplang/proposals/csharp-8.0/readonly-instance-members.md
         - name: 嵌套 stackalloc
           href: ../../../../_csharplang/proposals/csharp-8.0/nested-stackalloc.md
+    - name: C# 9.0 规范建议
+      items:
+        - name: 记录
+          href: ../../../../_csharplang/proposals/csharp-9.0/records.md
+        - name: 顶级语句
+          href: ../../../../_csharplang/proposals/csharp-9.0/top-level-statements.md
+        - name: 模式匹配增强功能
+          href: ../../../../_csharplang/proposals/csharp-9.0/patterns3.md
+        - name: 仅限 Init 的资源库
+          href: ../../../../_csharplang/proposals/csharp-9.0/init.md
+        - name: 目标类型的新表达式
+          href: ../../../../_csharplang/proposals/csharp-9.0/target-typed-new.md
+        - name: 模块初始值设定项
+          href: ../../../../_csharplang/proposals/csharp-9.0/module-initializers.md
+        - name: 扩展分部方法
+          href: ../../../../_csharplang/proposals/csharp-9.0/extending-partial-methods.md
+        - name: 静态匿名函数
+          href: ../../../../_csharplang/proposals/csharp-9.0/static-anonymous-functions.md
+        - name: 目标类型的条件表达式
+          href: ../../../../_csharplang/proposals/csharp-9.0/target-typed-conditional-expression.md
+        - name: 协变返回类型
+          href: ../../../../_csharplang/proposals/csharp-9.0/covariant-returns.md
+        - name: Lambda 弃元参数
+          href: ../../../../_csharplang/proposals/csharp-9.0/lambda-discard-parameters.md
+        - name: 本地函数的属性
+          href: ../../../../_csharplang/proposals/csharp-9.0/local-function-attributes.md
+        - name: 本机大小的整数
+          href: ../../../../_csharplang/proposals/csharp-9.0/native-integers.md
+        - name: 函数指针
+          href: ../../../../_csharplang/proposals/csharp-9.0/function-pointers.md
+        - name: 发出 localsinit 标志的 Surpress
+          href: ../../../../_csharplang/proposals/csharp-9.0/skip-localsinit.md
