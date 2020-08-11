@@ -1,13 +1,13 @@
 ---
 title: 监视容器化应用程序服务
 description: 了解监控容器体系结构的一些关键方面
-ms.date: 02/15/2019
-ms.openlocfilehash: e41df53ad94784436442c3cf7defed3fab510455
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.date: 08/06/2020
+ms.openlocfilehash: 5fcb5065d02018ab3c2d3ad71cf507bd43b53446
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374437"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87914948"
 ---
 # <a name="monitor-containerized-application-services"></a>监视容器化应用程序服务
 

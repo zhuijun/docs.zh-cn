@@ -11,12 +11,12 @@ helpviewer_keywords:
 - garbage collection, workstation
 - garbage collection, managed heap
 ms.assetid: 67c5a20d-1be1-4ea7-8a9a-92b0b08658d2
-ms.openlocfilehash: 438188b6d694bdeab772c43ef92e5621c68facff
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 322e079a1be556efb536b24e216e480c1950bd8c
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990224"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917029"
 ---
 # <a name="fundamentals-of-garbage-collection"></a>垃圾回收的基本知识
 
@@ -186,7 +186,7 @@ GC 算法基于几个注意事项：
   通常，由于复制大型对象会造成性能代偿，因此不会压缩大型对象堆 (LOH)。 但是，在 .NET Core 和 .NET Framework 4.5.1 及更高版本中，可以根据需要使用 <xref:System.Runtime.GCSettings.LargeObjectHeapCompactionMode%2A?displayProperty=nameWithType> 属性按需压缩大型对象堆。 此外，当通过指定以下任一项设置硬限制时，将自动压缩 LOH：
 
   - 针对容器的内存限制。
-  - [GCHeapHardLimit](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitcomplus_gcheaphardlimit) 或 [GCHeapHardLimitPercent](../../core/run-time-config/garbage-collector.md#systemgcheaphardlimitpercentcomplus_gcheaphardlimitpercent) 运行时配置选项。
+  - [GCHeapHardLimit](../../core/run-time-config/garbage-collector.md#heap-limit) 或 [GCHeapHardLimitPercent](../../core/run-time-config/garbage-collector.md#heap-limit-percent) 运行时配置选项。
 
 垃圾回收器使用以下信息来确定对象是否为活动对象：
 

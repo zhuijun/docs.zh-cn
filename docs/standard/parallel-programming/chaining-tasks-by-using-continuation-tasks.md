@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: 53457f7f99d96c288b002f58c9db36f431ba863a
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 132518b9d8d22efecfcf3ed14e8b5969aa768cd4
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381302"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024584"
 ---
 # <a name="chaining-tasks-using-continuation-tasks"></a>使用延续任务来链接任务
 
@@ -145,7 +145,7 @@ ms.locfileid: "87381302"
 下面的示例展示如何使用包装附加任务返回函数的延续。 每个延续都可以进行解包，并公开已包装的内部任务。
 
 :::code language="csharp" source="snippets/cs/unwrap.cs":::
-:::code language="csharp" source="snippets/vb/unwrap.vb":::
+:::code language="vb" source="snippets/vb/unwrap.vb":::
 
 有关使用 <xref:System.Threading.Tasks.TaskExtensions.Unwrap%2A> 的详细信息，请参阅[如何：展开嵌套任务](how-to-unwrap-a-nested-task.md)。
 

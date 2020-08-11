@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - sizeof keyword [C#]
 ms.assetid: c548592c-677c-4f40-a4ce-e613f7529141
-ms.openlocfilehash: a9e80ecb3288479a2ca81b43c9d088809ed5f2f0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 327183ccdf79cb8e15cd15aa3cffb044120808f8
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78847282"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916704"
 ---
 # <a name="sizeof-operator-c-reference"></a>sizeof 运算符（C# 参考）
 
@@ -40,7 +40,7 @@ ms.locfileid: "78847282"
 
 下面的示例演示 `sizeof` 运算符的用法：
 
-[!code-csharp[sizeof examples](snippets/SizeOfOperator.cs)]
+[!code-csharp[sizeof examples](snippets/shared/SizeOfOperator.cs)]
 
 `sizeof` 运算符返回公共语言运行时将在托管内存中分配的字节数。 对于[结构](../builtin-types/struct.md)类型，该值包括了填充（如有），如前例所示。 `sizeof` 运算符的结果可能异于 <xref:System.Runtime.InteropServices.Marshal.SizeOf%2A?displayProperty=nameWithType> 方法的结果，该方法返回某个类型在*非托管*内存中的大小。
 
@@ -51,7 +51,7 @@ ms.locfileid: "78847282"
 ## <a name="see-also"></a>另请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)
 - [指针相关的运算符](pointer-related-operators.md)
 - [指针类型](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [内存和跨度相关类型](../../../standard/memory-and-spans/index.md)

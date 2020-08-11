@@ -4,15 +4,16 @@ description: 了解如何重载 C# 运算符以及哪些运算符可重载。
 ms.date: 07/05/2019
 f1_keywords:
 - operator_CSharpKeyword
+- operator
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: 1324a4a3610b96f7258a856609dc4090b9751e52
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 4fde25cac21b2cb32efc9282578f32102a0f607f
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301757"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916722"
 ---
 # <a name="operator-overloading-c-reference"></a>运算符重载（C# 引用）
 
@@ -25,7 +26,7 @@ ms.locfileid: "87301757"
 
 下面的示例定义了一个表示有理数的简单结构。 该结构会重载一些[算术运算符](arithmetic-operators.md)：
 
-[!code-csharp[fraction example](snippets/OperatorOverloading.cs)]
+[!code-csharp[fraction example](snippets/shared/OperatorOverloading.cs)]
 
 可以通过[定义从 `int` 到 `Fraction` 的隐式转换](user-defined-conversion-operators.md)来扩展前面的示例。 然后，重载运算符将支持这两种类型的参数。 也就是说，可以将一个整数添加到一个分数中，得到一个分数结果。
 
@@ -62,7 +63,7 @@ ms.locfileid: "87301757"
 ## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)
 - [用户定义转换运算符](user-defined-conversion-operators.md)
 - [设计准则 - 运算符重载](../../../standard/design-guidelines/operator-overloads.md)
 - [设计准则 - 相等运算符](../../../standard/design-guidelines/equality-operators.md)

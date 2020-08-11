@@ -1,13 +1,13 @@
 ---
 title: Docker 应用程序中的状态和数据
 description: 了解在容器化应用程序中用于保存状态的可用选项。
-ms.date: 02/15/2019
-ms.openlocfilehash: b2368efb0eff2bdce48b77b2addcc4de89822c74
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 08/06/2020
+ms.openlocfilehash: dc9a1a3eccb77e9fd67e69fd3295f3db1edf5e66
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72394647"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915324"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Docker 应用程序中的状态和数据
 

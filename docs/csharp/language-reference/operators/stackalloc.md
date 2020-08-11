@@ -5,12 +5,12 @@ f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc expression [C#]
-ms.openlocfilehash: 2e99ce8b1e44dfa040c1acac799a3a55b375bd91
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: 4f20f3262b77cc2fe16480e53d13960e68d230b5
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79546596"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916667"
 ---
 # <a name="stackalloc-expression-c-reference"></a>stackalloc 表达式（C# 参考）
 
@@ -20,24 +20,24 @@ ms.locfileid: "79546596"
 
 - 从 C# 7.2 开始，<xref:System.Span%601?displayProperty=nameWithType> 或 <xref:System.ReadOnlySpan%601?displayProperty=nameWithType> 将如下例所示：
 
-  [!code-csharp[stackalloc span](snippets/StackallocOperator.cs#AssignToSpan)]
+  [!code-csharp[stackalloc span](snippets/shared/StackallocOperator.cs#AssignToSpan)]
 
   将堆栈中分配的内存块分配给 <xref:System.Span%601> 或 <xref:System.ReadOnlySpan%601> 变量时，不必使用 [unsafe](../keywords/unsafe.md) 上下文。
 
   使用这些类型时，可以在[条件表达式](conditional-operator.md)或赋值表达式中使用 `stackalloc` 表达式，如以下示例所示：
 
-  [!code-csharp[stackalloc expression](snippets/StackallocOperator.cs#AsExpression)]
+  [!code-csharp[stackalloc expression](snippets/shared/StackallocOperator.cs#AsExpression)]
 
   从 C#8.0 开始，只要允许使用 <xref:System.Span%601> 或 <xref:System.ReadOnlySpan%601> 变量，就可以在其他表达式中使用 `stackalloc` 表达式，如下例所示：
 
-  [!code-csharp[stackalloc in nested expressions](snippets/StackallocOperator.cs#Nested)]
+  [!code-csharp[stackalloc in nested expressions](snippets/shared/StackallocOperator.cs#Nested)]
 
   > [!NOTE]
   > 建议尽可能使用 <xref:System.Span%601> 或 <xref:System.ReadOnlySpan%601> 类型来处理堆栈中分配的内存。
 
 - [指针类型](../../programming-guide/unsafe-code-pointers/pointer-types.md)，如以下示例所示：
 
-  [!code-csharp[stackalloc pointer](snippets/StackallocOperator.cs#AssignToPointer)]
+  [!code-csharp[stackalloc pointer](snippets/shared/StackallocOperator.cs#AssignToPointer)]
 
   如前面的示例所示，在使用指针类型时必须使用 `unsafe` 上下文。
 
@@ -47,7 +47,7 @@ ms.locfileid: "79546596"
 
 - 限制使用 `stackalloc` 分配的内存量：
 
-  [!code-csharp[limit stackalloc](snippets/StackallocOperator.cs#LimitStackalloc)]
+  [!code-csharp[limit stackalloc](snippets/shared/StackallocOperator.cs#LimitStackalloc)]
 
   由于堆栈上可用的内存量取决于执行代码的环境，因此在定义实际限值时请持保守态度。
 
@@ -57,7 +57,7 @@ ms.locfileid: "79546596"
 
 从 C# 7.3 开始，可以使用数组初始值设定项语法来定义新分配内存的内容。 下面的示例演示执行此操作的各种方法：
 
-[!code-csharp[stackalloc initialization](snippets/StackallocOperator.cs#StackallocInit)]
+[!code-csharp[stackalloc initialization](snippets/shared/StackallocOperator.cs#StackallocInit)]
 
 在表达式 `stackalloc T[E]` 中，`T` 必须是[非托管类型](../builtin-types/unmanaged-types.md)，并且 `E` 的计算结果必须为非负 [int](../builtin-types/integral-numeric-types.md) 值。
 
@@ -72,7 +72,7 @@ ms.locfileid: "79546596"
 ## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)
 - [指针相关的运算符](pointer-related-operators.md)
 - [指针类型](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [内存和跨度相关类型](../../../standard/memory-and-spans/index.md)

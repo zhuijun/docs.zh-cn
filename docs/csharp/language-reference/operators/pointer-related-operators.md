@@ -20,12 +20,12 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 7eb6666d10c44c342f69c7cfc763feb1b7b98c9d
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 3728778b31a4b4adc51933e8fdc6287f28e03d83
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738605"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916713"
 ---
 # <a name="pointer-related-operators-c-reference"></a>指针相关运算符（C# 参考）
 
@@ -46,11 +46,11 @@ ms.locfileid: "81738605"
 
 一元 `&` 运算符返回其操作数的地址：
 
-[!code-csharp[address of local](snippets/PointerOperators.cs#AddressOf)]
+[!code-csharp[address of local](snippets/shared/PointerOperators.cs#AddressOf)]
 
 `&` 运算符的操作数必须是固定变量。 固定变量是驻留在不受[垃圾回收器](../../../standard/garbage-collection/index.md)操作影响的存储位置的变量  。 在上述示例中，局部变量 `number` 是固定变量，因为它驻留在堆栈上。 驻留在可能受垃圾回收器影响的存储位置的变量（如重定位）称为可移动变量  。 对象字段和数组元素是可移动变量的示例。 如果使用 [`fixed` 语句](../keywords/fixed-statement.md)“固定”，则可以获取可移动变量的地址。 获取的地址仅在 `fixed` 语句块中有效。 以下示例显示如何使用 `fixed` 语句和 `&` 运算符：
 
-[!code-csharp[address of fixed](snippets/PointerOperators.cs#AddressOfFixed)]
+[!code-csharp[address of fixed](snippets/shared/PointerOperators.cs#AddressOfFixed)]
 
 你也无法获取常量或值的地址。
 
@@ -62,7 +62,7 @@ ms.locfileid: "81738605"
 
 一元指针间接运算符 `*` 获取其操作数指向的变量。 它也称为取消引用运算符。 `*` 运算符的操作数必须是指针类型。
 
-[!code-csharp[pointer indirection](snippets/PointerOperators.cs#PointerIndirection)]
+[!code-csharp[pointer indirection](snippets/shared/PointerOperators.cs#PointerIndirection)]
 
 不能将 `*` 运算符应用于类型 `void*` 的表达式。
 
@@ -84,7 +84,7 @@ x->y
 
 下面的示例演示 `->` 运算符的用法：
 
-[!code-csharp[pointer member access](snippets/PointerOperators.cs#MemberAccess)]
+[!code-csharp[pointer member access](snippets/shared/PointerOperators.cs#MemberAccess)]
 
 不能将 `->` 运算符应用于类型 `void*` 的表达式。
 
@@ -94,7 +94,7 @@ x->y
 
 以下示例演示如何使用指针和 `[]` 运算符访问数组元素：
 
-[!code-csharp[pointer element access](snippets/PointerOperators.cs#ElementAccess)]
+[!code-csharp[pointer element access](snippets/shared/PointerOperators.cs#ElementAccess)]
 
 在前面的示例中，[`stackalloc` 表达式](stackalloc.md) 在堆栈上分配内存块。
 
@@ -128,7 +128,7 @@ x->y
 
 以下示例演示了 `+` 运算符与指针的用法：
 
-[!code-csharp[pointer addition](snippets/PointerOperators.cs#AddNumber)]
+[!code-csharp[pointer addition](snippets/shared/PointerOperators.cs#AddNumber)]
 
 ### <a name="pointer-subtraction"></a>指针减法
 
@@ -136,7 +136,7 @@ x->y
 
 以下示例演示了指针减法：
 
-[!code-csharp[pointer subtraction](snippets/PointerOperators.cs#SubtractPointers)]
+[!code-csharp[pointer subtraction](snippets/shared/PointerOperators.cs#SubtractPointers)]
 
 ### <a name="pointer-increment-and-decrement"></a>指针增量和减量
 
@@ -146,7 +146,7 @@ x->y
 
 以下示例演示了后缀和前缀增量运算符的行为：
 
-[!code-csharp[pointer increment](snippets/PointerOperators.cs#Increment)]
+[!code-csharp[pointer increment](snippets/shared/PointerOperators.cs#Increment)]
 
 ## <a name="pointer-comparison-operators"></a>指针比较运算符
 
@@ -188,7 +188,7 @@ x->y
 ## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)
 - [指针类型](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [unsafe 关键字](../keywords/unsafe.md)
 - [fixed 关键字](../keywords/fixed-statement.md)

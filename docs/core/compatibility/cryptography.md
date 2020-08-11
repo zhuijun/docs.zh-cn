@@ -2,12 +2,12 @@
 title: 加密中断性变更
 description: 列出 .NET Core 中与加密相关的中断性变更。
 ms.date: 04/22/2020
-ms.openlocfilehash: 66049473083d87b4c84408f35a04193a4563c2b3
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 34098027c4cbe5e5fb31a22d981af706e07cb7da
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135591"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556016"
 ---
 # <a name="cryptography-breaking-changes"></a>加密中断性变更
 
@@ -19,7 +19,6 @@ ms.locfileid: "82135591"
 | [EnvelopedCms 默认为 AES-256 加密](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
 | [RSAOpenSsl 密钥生成的最小大小已增加](#minimum-size-for-rsaopenssl-key-generation-has-increased) | 3.0 |
 | [.NET Core 3.0 倾向于使用 OpenSSL 1.1.x 而不是 OpenSSL 1.0.x](#net-core-30-prefers-openssl-11x-to-openssl-10x) | 3.0 |
-| [Pkcs8PrivateKeyInfo 构造函数中更好的参数验证](#better-argument-validation-in-the-pkcs8privatekeyinfo-constructor) | 3.0 |
 | [已考虑 SignedCms.ComputeSignature 的布尔参数](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
 
 ## <a name="net-core-30"></a>.NET Core 3.0
@@ -37,10 +36,6 @@ ms.locfileid: "82135591"
 ***
 
 [!INCLUDE[.NET Core 3.0 prefers OpenSSL 1.1.x to OpenSSL 1.0.x](~/includes/core-changes/cryptography/3.0/net-core-3-0-prefers-openssl-1-1-x.md)]
-
-***
-
-[!INCLUDE[Better argument validation in the Pkcs8PrivateKeyInfo constructor](~/includes/core-changes/cryptography/3.0/better-argument-validation-in-pkcs8privatekeyinfo-ctor.md)]
 
 ***
 

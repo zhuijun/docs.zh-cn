@@ -7,12 +7,12 @@ f1_keywords:
 - default
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: 2adfd8d24066e9dad50c3c18407d3ade71b4b68e
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: f03971efa87bf03967c79512e44d22134dd80c17
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507173"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916869"
 ---
 # <a name="default-value-expressions-c-reference"></a>default value 表达式（C# 参考）
 
@@ -24,7 +24,7 @@ default value 表达式生成类型的[默认值](../builtin-types/default-value
 
 `default` 运算符的实参必须是类型或类型形参的名称，如以下示例所示：
 
-[!code-csharp-interactive[default of T](snippets/DefaultOperator.cs#WithOperand)]
+[!code-csharp-interactive[default of T](snippets/shared/DefaultOperator.cs#WithOperand)]
 
 ## <a name="default-literal"></a>default 文本
 
@@ -37,7 +37,7 @@ default value 表达式生成类型的[默认值](../builtin-types/default-value
 
 下面的示例演示 `default` 文本的用法：
 
-[!code-csharp-interactive[default literal](snippets/DefaultOperator.cs#DefaultLiteral)]
+[!code-csharp-interactive[default literal](snippets/shared/DefaultOperator.cs#DefaultLiteral)]
 
 ## <a name="c-language-specification"></a>C# 语言规范
 
@@ -48,6 +48,6 @@ default value 表达式生成类型的[默认值](../builtin-types/default-value
 ## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)
 - [C# 类型的默认值](../builtin-types/default-values.md)
 - [.NET 中的泛型](../../../standard/generics/index.md)

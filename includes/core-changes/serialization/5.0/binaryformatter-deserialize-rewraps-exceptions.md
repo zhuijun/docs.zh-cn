@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4aef35502fc93cbf0399e3c8d0932338829d6c07
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 2e9267b35c9389da017927aca2346190348265c9
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517343"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87919338"
 ---
 ### <a name="binaryformatterdeserialize-rewraps-some-exceptions-in-serializationexception"></a>BinaryFormatter.Deserialize 重新包装 SerializationException 中的一些异常
 
@@ -36,16 +36,9 @@ catch (MyException myEx)
 {
     // Handle 'myEx' here in case it was thrown directly.
 }
-catch (SerializationException serEx)
+catch (SerializationException serEx) when (serEx.InnerException is MyException myEx)
 {
-    if (serEx.InnerException is MyException myEx)
-    {
-        // Handle 'myEx' here in case it was wrapped in SerializationException.
-    }
-    else
-    {
-        throw;
-    }
+    // Handle 'myEx' here in case it was wrapped in SerializationException.
 }
 ```
 

@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: 59e01b17d78032714803629d503a92ba86a20fdc
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 688a1fcff84a6e8f2fa31533a2bc459bf8c8717a
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394644"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916784"
 ---
 # <a name="member-access-operators-and-expressions-c-reference"></a>成员访问运算符和表达式（C# 参考）
 
@@ -56,17 +56,17 @@ ms.locfileid: "83394644"
 
 - 使用 `.` 访问命名空间内的嵌套命名空间，如以下 [`using` directive](../keywords/using-directive.md) 的示例所示：
 
-  [!code-csharp[nested namespaces](snippets/MemberAccessOperators.cs#NestedNamespace)]
+  [!code-csharp[nested namespaces](snippets/shared/MemberAccessOperators.cs#NestedNamespace)]
 
 - 使用 `.` 构成限定名称以访问命名空间中的类型，如下面的代码所示：
 
-  [!code-csharp[qualified name](snippets/MemberAccessOperators.cs#QualifiedName)]
+  [!code-csharp[qualified name](snippets/shared/MemberAccessOperators.cs#QualifiedName)]
 
   使用 [`using` 指令](../keywords/using-directive.md)来使用可选的限定名称。
 
 - 使用 `.` 访问[类型成员](../../programming-guide/classes-and-structs/index.md#members)（静态和非静态），如下面的代码所示：
 
-  [!code-csharp-interactive[type members](snippets/MemberAccessOperators.cs#TypeMemberAccess)]
+  [!code-csharp-interactive[type members](snippets/shared/MemberAccessOperators.cs#TypeMemberAccess)]
 
 还可以使用 `.` 访问[扩展方法](../../programming-guide/classes-and-structs/extension-methods.md)。
 
@@ -78,7 +78,7 @@ ms.locfileid: "83394644"
 
 下面的示例演示如何访问数组元素：
 
-[!code-csharp-interactive[array access](snippets/MemberAccessOperators.cs#Arrays)]
+[!code-csharp-interactive[array access](snippets/shared/MemberAccessOperators.cs#Arrays)]
 
 如果数组索引超出数组相应维度的边界，将引发 <xref:System.IndexOutOfRangeException>。
 
@@ -90,7 +90,7 @@ ms.locfileid: "83394644"
 
 下面的示例使用 .NET <xref:System.Collections.Generic.Dictionary%602> 类型来演示索引器访问：
 
-[!code-csharp-interactive[indexer access](snippets/MemberAccessOperators.cs#Indexers)]
+[!code-csharp-interactive[indexer access](snippets/shared/MemberAccessOperators.cs#Indexers)]
 
 使用索引器，可通过类似于编制数组索引的方式对用户定义类型的实例编制索引。 与必须是整数的数组索引不同，可以将索引器参数声明为任何类型。
 
@@ -126,13 +126,13 @@ A?.B?[C];
 
 以下示例演示了 `?.` 和 `?[]` 运算符的用法：
 
-[!code-csharp-interactive[null-conditional operators](snippets/MemberAccessOperators.cs#NullConditional)]
+[!code-csharp-interactive[null-conditional operators](snippets/shared/MemberAccessOperators.cs#NullConditional)]
 
 前面的示例还使用 [Null 合并运算符 `??`](null-coalescing-operator.md) 来指定替代表达式，以便在 null 条件运算的结果为 `null` 时用于计算。
 
 如果 `a.x` 或 `a[x]` 是不可为 null 的值类型 `T`，则 `a?.x` 或 `a?[x]` 属于对应的[可为 null 的值类型](../builtin-types/nullable-value-types.md) `T?`。 如果需要 `T` 类型的表达式，请将 Null 合并操作符 `??` 应用于 null 条件表达式，如下面的示例所示：
 
-[!code-csharp-interactive[null-conditional with null-coalescing](snippets/MemberAccessOperators.cs#NullConditionalWithNullCoalescing)]
+[!code-csharp-interactive[null-conditional with null-coalescing](snippets/shared/MemberAccessOperators.cs#NullConditionalWithNullCoalescing)]
 
 在前面的示例中，如果不使用 `??` 运算符，则在 `numbers` 为 `null` 时，`numbers?.Length < 2` 的计算结果为 `false`。
 
@@ -167,7 +167,7 @@ if (handler != null)
 
 以下示例演示如何在使用或不使用参数的情况下调用方法，以及调用委托：
 
-[!code-csharp-interactive[invocation with ()](snippets/MemberAccessOperators.cs#Invocation)]
+[!code-csharp-interactive[invocation with ()](snippets/shared/MemberAccessOperators.cs#Invocation)]
 
 在调用带 [`new`](new-operator.md) 运算符的[构造函数](../../programming-guide/classes-and-structs/constructors.md)时，还可以使用括号。
 
@@ -181,7 +181,7 @@ if (handler != null)
 
 `^` 运算符在 C# 8.0 和更高版本中提供，指示序列末尾的元素位置。 对于长度为 `length` 的序列，`^n` 指向与序列开头偏移 `length - n` 的元素。 例如，`^1` 指向序列的最后一个元素，`^length` 指向序列的第一个元素。
 
-[!code-csharp[index from end](snippets/MemberAccessOperators.cs#IndexFromEnd)]
+[!code-csharp[index from end](snippets/shared/MemberAccessOperators.cs#IndexFromEnd)]
 
 如前面的示例所示，表达式 `^e` 属于 <xref:System.Index?displayProperty=nameWithType> 类型。 在表达式 `^e` 中，`e` 的结果必须隐式转换为 `int`。
 
@@ -191,7 +191,7 @@ if (handler != null)
 
 `..` 运算符在 C# 8.0 和更高版本中提供，指定索引范围的开头和末尾作为其操作数。 左侧操作数是范围的包含性开头。 右侧操作数是范围的包含性末尾。 任一操作数都可以是序列开头或末尾的索引，如以下示例所示：
 
-[!code-csharp[range examples](snippets/MemberAccessOperators.cs#Ranges)]
+[!code-csharp[range examples](snippets/shared/MemberAccessOperators.cs#Ranges)]
 
 如前面的示例所示，表达式 `a..b` 属于 <xref:System.Range?displayProperty=nameWithType> 类型。 在表达式 `a..b` 中，`a` 和 `b` 的结果必须隐式转换为 `int` 或 <xref:System.Index>。
 
@@ -201,7 +201,7 @@ if (handler != null)
 - `..b` 等效于 `0..b`
 - `..` 等效于 `0..^0`
 
-[!code-csharp[ranges with omitted operands](snippets/MemberAccessOperators.cs#RangesOptional)]
+[!code-csharp[ranges with omitted operands](snippets/shared/MemberAccessOperators.cs#RangesOptional)]
 
 有关详细信息，请参阅[索引和范围](../../tutorials/ranges-indexes.md)。
 
@@ -223,6 +223,6 @@ if (handler != null)
 ## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)
 - [??（空合运算符）](null-coalescing-operator.md)
 - [:: 运算符](namespace-alias-qualifier.md)

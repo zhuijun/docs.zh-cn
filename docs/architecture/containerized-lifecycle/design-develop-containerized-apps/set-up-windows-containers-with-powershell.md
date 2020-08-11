@@ -1,13 +1,13 @@
 ---
 title: 使用 DockerFile 中的 Windows PowerShell 命令来设置 Windows 容器（基于 Docker 标准）
 description: 了解在 Windows 容器中使用 Docker 时如何使用 PowerShell
-ms.date: 02/15/2019
-ms.openlocfilehash: e91d278aef1365a111e8d67ff04092dfc6a44185
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 08/06/2020
+ms.openlocfilehash: 4e7b9e7fedf11b97b3f468aef541bf72a4e88ebc
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68673574"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915393"
 ---
 # <a name="using-windows-powershell-commands-in-a-dockerfile-to-set-up-windows-containers-docker-standard-based"></a>使用 DockerFile 中的 Windows PowerShell 命令来设置 Windows 容器（基于 Docker 标准）
 

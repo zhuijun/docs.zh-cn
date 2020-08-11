@@ -2,12 +2,12 @@
 title: Windows 窗体重大更改
 description: 列出适用于 .NET Core 的 Windows 窗体中的中断性变更。
 ms.date: 01/08/2020
-ms.openlocfilehash: bd87e438ecf9930bfcd5377f9a3799d5f3693f49
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: beb9a42e4b5007f03480cd74f57bbfbbfc3f48b1
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84702463"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556138"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Windows 窗体中的中断性变更
 
@@ -34,8 +34,6 @@ ms.locfileid: "84702463"
 | [不支持 EnableVisualStyleValidation 兼容性开关](#enablevisualstylevalidation-compatibility-switch-not-supported) | 3.0 |
 | [不支持 UseLegacyContextMenuStripSourceControlValue 兼容性开关](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported) | 3.0 |
 | [不支持 UseLegacyImages 兼容性开关](#uselegacyimages-compatibility-switch-not-supported) | 3.0 |
-| [更改 AccessibleObject.RuntimeIDFirstItem 的访问权限](#change-of-access-for-accessibleobjectruntimeidfirstitem) | 3.0 |
-| [已 Windows 窗体中删除重复的 API](#duplicated-apis-removed-from-windows-forms) | 3.0 |
 
 ## <a name="net-50"></a>.NET 5.0
 
@@ -108,14 +106,6 @@ ms.locfileid: "84702463"
 ***
 
 [!INCLUDE[Switch.System.Windows.Forms.UseLegacyImages compatibility switch not supported](~/includes/core-changes/windowsforms/3.0/deprecate-uselegacyimages.md)]
-
-***
-
-[!INCLUDE[Change of access for AccessibleObject.RuntimeIDFirstItem](~/includes/core-changes/windowsforms/3.0/changed-access-for-runtimeidfirstitem.md)]
-
-***
-
-[!INCLUDE[Duplicated APIs removed from Windows Forms](~/includes/core-changes/windowsforms/3.0/remove-duplicated-apis.md)]
 
 ***
 

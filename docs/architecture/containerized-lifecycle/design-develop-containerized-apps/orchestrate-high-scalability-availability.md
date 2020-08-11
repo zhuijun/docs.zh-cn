@@ -1,13 +1,13 @@
 ---
 title: 协调安排微服务和多容器应用程序，实现高可伸缩性和高可用性
 description: 必须使用处理所有容器的运行状况、工作负载和生命周期的业务流程协调程序来部署和管理实际的生产应用程序。
-ms.date: 02/15/2019
-ms.openlocfilehash: 459a445258a8d66834814f7b084fd969d005ff45
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.date: 08/06/2020
+ms.openlocfilehash: 61c66e1f3835df543cbc9ba23d9c098ad52c90cd
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374476"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915476"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>协调安排微服务和多容器应用程序，实现高可伸缩性和高可用性
 
@@ -62,7 +62,7 @@ Azure Kubernetes 服务优化了专门针对 Azure 的常用 Docker 群集开源
 
 ## <a name="development-environment-for-kubernetes"></a>Kubernetes 的开发环境
 
-此外，在 [2018 年 7 月宣布的 Docker](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/) 开发环境中，只需安装 [Docker 桌面版](https://www.docker.com/community-edition)，Kubernetes 便可在单个开发计算机（Windows 10 或 macOS）中运行。 可以在以后部署到云 (AKS) 进行进一步集成测试，如图 4-8 所示。
+此外，在 [2018 年 7 月宣布的 Docker](https://blog.docker.com/2018/07/kubernetes-is-now-available-in-docker-desktop-stable-channel/) 开发环境中，只需安装 [Docker 桌面版](https://www.docker.com/products/docker-desktop)，Kubernetes 便可在单个开发计算机（Windows 10 或 macOS）中运行。 可以在以后部署到云 (AKS) 进行进一步集成测试，如图 4-8 所示。
 
 ![显示开发计算机上的 Kubernetes 随后部署到 AKS 的示意图。](./media/orchestrate-high-scalability-availability/kubernetes-development-environment.png)
 

@@ -13,12 +13,12 @@ helpviewer_keywords:
 - event subscription [C#]
 - += operator [C#]
 ms.assetid: 93e56486-bb42-43c1-bd43-60af11e64e67
-ms.openlocfilehash: 18364d80b8117fd4074c2c4231eac07c76829bb3
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: f1db0054ad2411bfe23f10b64bc2727a71ad7463
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135732"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916951"
 ---
 # <a name="-and--operators-c-reference"></a>+ 和 += 运算符（C# 参考）
 
@@ -30,17 +30,17 @@ ms.locfileid: "82135732"
 
 当其中的一个操作数是[字符串](../builtin-types/reference-types.md#the-string-type)类型或两个操作数都是字符串类型时，`+` 运算符将其操作数的字符串表示形式（`null` 的字符串表示形式）串联在一起：
 
-[!code-csharp-interactive[string concatenation](snippets/AdditionOperator.cs#AddStrings)]
+[!code-csharp-interactive[string concatenation](snippets/shared/AdditionOperator.cs#AddStrings)]
 
 从 C# 6 开始，[字符串内插](../tokens/interpolated.md)提供了格式化字符串更为便捷的方式：
 
-[!code-csharp-interactive[string interpolation](snippets/AdditionOperator.cs#UseStringInterpolation)]
+[!code-csharp-interactive[string interpolation](snippets/shared/AdditionOperator.cs#UseStringInterpolation)]
 
 ## <a name="delegate-combination"></a>委托组合
 
 对于[委托](../builtin-types/reference-types.md#the-delegate-type)类型相同的操作数，`+` 运算符在调用时返回新的委托实例，调用左侧的操作数，然后调用右侧的操作数。 如果任何操作数均为 `null`，则 `+` 运算符将返回另一个操作数（也可能是 `null`）的值。 下面的示例演示如何组合使用委托和 `+` 运算符：
 
-[!code-csharp-interactive[delegate combination](snippets/AdditionOperator.cs#AddDelegates)]
+[!code-csharp-interactive[delegate combination](snippets/shared/AdditionOperator.cs#AddDelegates)]
 
 若要执行委托删除，请使用 [`-` 运算符](subtraction-operator.md#delegate-removal)。
 
@@ -64,7 +64,7 @@ x = x + y
 
 下面的示例演示 `+=` 运算符的用法：
 
-[!code-csharp-interactive[+= examples](snippets/AdditionOperator.cs#AddAndAssign)]
+[!code-csharp-interactive[+= examples](snippets/shared/AdditionOperator.cs#AddAndAssign)]
 
 在订阅[事件](../keywords/event.md)时，还可以使用 `+=` 运算符来指定事件处理程序方法。 有关详细信息，请参阅[如何：订阅和取消订阅事件](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)。
 
@@ -79,7 +79,7 @@ x = x + y
 ## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)
 - [如何连接多个字符串](../../how-to/concatenate-multiple-strings.md)
 - [事件](../../programming-guide/events/index.md)
 - [算术运算符](arithmetic-operators.md)

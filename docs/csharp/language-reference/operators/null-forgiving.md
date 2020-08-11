@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - null-forgiving operator [C#]
 - '! operator [C#]'
-ms.openlocfilehash: 2a8db2882968dbcbe6a8868ab6fe1c128c94a41f
-ms.sourcegitcommit: e09dbff13f0b21b569a101f3b3c5efa174aec204
+ms.openlocfilehash: 5d8dcba5eb794d4d64f58e23a3ad952ef8055aeb
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82624873"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916745"
 ---
 # <a name="-null-forgiving-operator-c-reference"></a>! （null 包容）运算符（C# 参考）
 
@@ -28,23 +28,23 @@ null 包容运算符在运行时不起作用。 它仅通过更改表达式的 n
 
 null 包容运算符的一个用例是测试参数验证逻辑。 例如，请考虑以下类：
 
-[!code-csharp[Person class](snippets/NullForgivingOperator.cs#PersonClass)]
+[!code-csharp[Person class](snippets/shared/NullForgivingOperator.cs#PersonClass)]
 
 使用 [ 测试框架](../../../core/testing/unit-testing-with-mstest.md)，可以在构造函数中为验证逻辑创建以下测试：
 
-[!code-csharp[Person test](snippets/NullForgivingOperator.cs#TestPerson)]
+[!code-csharp[Person test](snippets/shared/NullForgivingOperator.cs#TestPerson)]
 
 如果不使用 null 包容运算符，编译器将为前面的代码生成以下警告：`Warning CS8625: Cannot convert null literal to non-nullable reference type`。 通过使用 null 包容运算符，可以告知编译器传递 `null` 是预期行为，不应发出警告。
 
 如果你明确知道某个表达式不能为 `null`，但编译器无法识别它，也可以使用 null 包容运算符。 在下面的示例中，如果 `IsValid` 方法返回 `true`，则其参数不是 `null`，可以放心取消对它的引用：
 
-[!code-csharp[Use null-forgiving operator](snippets/NullForgivingOperator.cs#UseNullForgiving)]
+[!code-csharp[Use null-forgiving operator](snippets/shared/NullForgivingOperator.cs#UseNullForgiving)]
 
 如果没有 null 包容运算符，编译器将为 `p.Name` 代码生成以下警告：`Warning CS8602: Dereference of a possibly null reference`。
 
 如果可以修改 `IsValid` 方法，则可使用 [NotNullWhen](xref:System.Diagnostics.CodeAnalysis.NotNullWhenAttribute) 属性告知编译器，当方法返回 `true` 时，`IsValid` 方法的参数不能是 `null`：
 
-[!code-csharp[Use an attribute](snippets/NullForgivingOperator.cs#UseAttribute)]
+[!code-csharp[Use an attribute](snippets/shared/NullForgivingOperator.cs#UseAttribute)]
 
 在前面的例子中，不需要使用 null 包容运算符，因为编译器有足够的信息来发现 `p` 不能是 `if` 语句中的 `null`。 如需深入了解允许你提供有关变量 null 状态的其他信息的属性，请参阅[使用属性升级 API 以定义 null 期望值](../attributes/nullable-analysis.md)。
 
@@ -55,5 +55,5 @@ null 包容运算符的一个用例是测试参数验证逻辑。 例如，请�
 ## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)
 - [教程：使用可为空引用类型进行设计](../../tutorials/nullable-reference-types.md)

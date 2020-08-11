@@ -1,15 +1,17 @@
 ---
 title: new 运算符 - C# 参考
 ms.date: 06/25/2019
+f1_keywords:
+- new_CSharpKeyword
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: ed18c42cd28412a967c94a65c2a92b0b75097b52
-ms.sourcegitcommit: 5988e9a29cedb8757320817deda3c08c6f44a6aa
+ms.openlocfilehash: 42128cf23fe2410bf33bb40131843325939646de
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2020
-ms.locfileid: "82199724"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916761"
 ---
 # <a name="new-operator-c-reference"></a>new 运算符（C# 参考）
 
@@ -21,21 +23,21 @@ ms.locfileid: "82199724"
 
 要创建类型的新实例，通常使用 `new` 运算符调用该类型的某个[构造函数](../../programming-guide/classes-and-structs/constructors.md)：
 
-[!code-csharp-interactive[invoke constructor](snippets/NewOperator.cs#Constructor)]
+[!code-csharp-interactive[invoke constructor](snippets/shared/NewOperator.cs#Constructor)]
 
 可以使用带有 `new` 运算符的[对象或集合初始值设定项](../../programming-guide/classes-and-structs/object-and-collection-initializers.md)实例化和初始化一个语句中的对象，如下例所示：
 
-[!code-csharp-interactive[constructor with initializer](snippets/NewOperator.cs#ConstructorWithInitializer)]
+[!code-csharp-interactive[constructor with initializer](snippets/shared/NewOperator.cs#ConstructorWithInitializer)]
 
 ## <a name="array-creation"></a>数组创建
 
 还可以使用 `new` 运算符创建数组实例，如下例所示：
 
-[!code-csharp-interactive[create array](snippets/NewOperator.cs#Array)]
+[!code-csharp-interactive[create array](snippets/shared/NewOperator.cs#Array)]
 
 使用数组初始化语法创建数组实例，并在一个语句中使用元素填充该实例。 以下示例显示可以执行该操作的各种方法：
 
-[!code-csharp-interactive[initialize array](snippets/NewOperator.cs#ArrayInitialization)]
+[!code-csharp-interactive[initialize array](snippets/shared/NewOperator.cs#ArrayInitialization)]
 
 有关数组的详细信息，请参阅[数组](../../programming-guide/arrays/index.md)。
 
@@ -43,7 +45,7 @@ ms.locfileid: "82199724"
 
 要创建[匿名类型](../../programming-guide/classes-and-structs/anonymous-types.md)的实例，请使用 `new` 运算符和对象初始值设定项语法：
 
-[!code-csharp-interactive[anonymous type](snippets/NewOperator.cs#AnonymousType)]
+[!code-csharp-interactive[anonymous type](snippets/shared/NewOperator.cs#AnonymousType)]
 
 ## <a name="destruction-of-type-instances"></a>类型实例的析构
 
@@ -62,5 +64,5 @@ ms.locfileid: "82199724"
 ## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)
 - [对象和集合初始值设定项](../../programming-guide/classes-and-structs/object-and-collection-initializers.md)

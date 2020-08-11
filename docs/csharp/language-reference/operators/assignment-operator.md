@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 420b41f586a6980d40cf1171eef00dad37bf5abf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7b4f3b3f4d6b697903461f08435552f2df36bfe4
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398057"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916933"
 ---
 # <a name="assignment-operators-c-reference"></a>赋值运算符（C# 参考）
 
@@ -31,13 +31,13 @@ a = (b = c)
 
 以下示例演示使用局部变量、属性和索引器元素作为其左操作数的赋值运算符的用法：
 
-[!code-csharp-interactive[simple assignment](snippets/AssignmentOperator.cs#Simple)]
+[!code-csharp-interactive[simple assignment](snippets/shared/AssignmentOperator.cs#Simple)]
 
 ## <a name="ref-assignment-operator"></a>ref 赋值运算符
 
 从 C# 7.3 开始，可以使用 ref 赋值运算符 `= ref` 重新分配 [ref local](../keywords/ref.md#ref-locals) 或 [ref readonly local](../keywords/ref.md#ref-readonly-locals) 变量。 下面的示例演示 ref 赋值运算符的用法：
 
-[!code-csharp[ref assignment operator](snippets/AssignmentOperator.cs#RefAssignment)]
+[!code-csharp[ref assignment operator](snippets/shared/AssignmentOperator.cs#RefAssignment)]
 
 对于 ref 赋值运算符，其两个操作数的类型必须相同。
 
@@ -78,5 +78,5 @@ x = x op y
 ## <a name="see-also"></a>另请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)
 - [ref 关键字](../keywords/ref.md)

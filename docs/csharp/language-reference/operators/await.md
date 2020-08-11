@@ -7,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 76c6b24c1cd061585c7a6964d30bc81cc5fc5975
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 20fc492e45b2d248602de59682e752026d421e06
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308840"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916920"
 ---
 # <a name="await-operator-c-reference"></a>await 运算符（C# 参考）
 
@@ -20,7 +20,7 @@ ms.locfileid: "86308840"
 
 在下面的示例中，<xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A?displayProperty=nameWithType> 方法返回 `Task<byte[]>` 实例，该实例表示在完成时生成字节数组的异步操作。 在操作完成之前，`await` 运算符将暂停 `DownloadDocsMainPageAsync` 方法。 当 `DownloadDocsMainPageAsync` 暂停时，控件将返回到 `Main` 方法，该方法是 `DownloadDocsMainPageAsync` 的调用方。 `Main` 方法将执行，直至它需要 `DownloadDocsMainPageAsync` 方法执行的异步操作的结果。 当 <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> 获取所有字节时，将计算 `DownloadDocsMainPageAsync` 方法的其余部分。 之后，将计算 `Main` 方法的其余部分。
 
-[!code-csharp[await example](snippets/AwaitOperator.cs)]
+[!code-csharp[await example](snippets/shared/AwaitOperator.cs)]
 
 上一个示例使用[异步 `Main` 方法](../../programming-guide/main-and-command-args/index.md)，该方法从 C# 7.1 开始可用。 有关详细信息，请参阅 [Main 方法中的 await 运算符](#await-operator-in-the-main-method)部分。
 
@@ -54,7 +54,7 @@ ms.locfileid: "86308840"
 ## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)
 - [async](../keywords/async.md)
 - [任务异步编程模型](../../programming-guide/concepts/async/task-asynchronous-programming-model.md)
 - [异步编程](../../async.md)

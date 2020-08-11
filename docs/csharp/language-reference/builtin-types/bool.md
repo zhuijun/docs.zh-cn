@@ -4,16 +4,20 @@ ms.date: 11/26/2019
 f1_keywords:
 - bool
 - bool_CSharpKeyword
+- "true"
+- "false"
+- true_CSharpKeyword
+- false_CSharpKeyword
 helpviewer_keywords:
 - bool data type [C#]
 - Boolean [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
-ms.openlocfilehash: 2ba2e54a6b0f24402fc3728dfe19b548a2368830
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4623dc7d6c8c6c437c78aee45f0eeee8a92e3200
+ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846440"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87854875"
 ---
 # <a name="bool-c-reference"></a>bool（C# 参考）
 
@@ -43,7 +47,7 @@ C# 仅提供了两个涉及 `bool` 类型的转换。 它们是对相应的可�
 
 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的 [bool 类型](~/_csharplang/spec/types.md#the-bool-type)部分。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [值类型](value-types.md)

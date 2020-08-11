@@ -7,12 +7,12 @@ helpviewer_keywords:
 - garbage collection, server
 - workstation garbage collection
 - server garbage collection
-ms.openlocfilehash: 5ff2b1fe2f997913e071f35ec5abb167ed757608
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 640b5f42c1f841c2537284e4721e827248e3d300
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306690"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87917016"
 ---
 # <a name="workstation-and-server-garbage-collection"></a>工作站和服务器垃圾回收
 
@@ -40,7 +40,7 @@ ms.locfileid: "84306690"
 
 - 回收发生在触发垃圾回收的用户线程上，并保留相同优先级。 因为用户线程通常以普通优先级运行，所以垃圾回收器（在普通优先级线程上运行）必须与其他线程竞争 CPU 时间。 （运行本机代码的线程不会由于服务器或工作站垃圾回收而挂起。）
 
-- 工作站垃圾回收始终用于只有一个处理器的计算机，无论[配置设置](../../core/run-time-config/garbage-collector.md#systemgcservercomplus_gcserver)如何。
+- 工作站垃圾回收始终用于只有一个处理器的计算机，无论[配置设置](../../core/run-time-config/garbage-collector.md#workstation-vs-server)如何。
 
 ### <a name="server-gc"></a>服务器 GC
 

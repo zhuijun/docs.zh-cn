@@ -6,12 +6,12 @@ helpviewer_keywords:
 - statements [C#], about statements
 - C# language, statements
 ms.assetid: 901bcde7-87de-4e15-833c-f9cfd40c8ce3
-ms.openlocfilehash: b941e46f959167f78f1366a3863aca4240810013
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 3f8ac88525c44f9572f4f647145ad251537aba57
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381757"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556743"
 ---
 # <a name="statements-c-programming-guide"></a>语句（C# 编程指南）
 
@@ -28,7 +28,7 @@ ms.locfileid: "87381757"
 |类别|C# 关键字/说明|
 |--------------|---------------------------|
 |[声明语句](#declaration-statements)|声明语句引入新的变量或常量。 变量声明可以选择为变量赋值。 在常量声明中必须赋值。|
-|[表达式语句](expressions.md)|用于计算值的表达式语句必须在变量中存储该值。 有关详细信息，请参阅[表达式语句](#expression-statements)。|
+|[表达式语句](#expression-statements)|用于计算值的表达式语句必须在变量中存储该值。|
 |选择语句|选择语句用于根据一个或多个指定条件分支到不同的代码段。 有关详细信息，请参阅下列主题： <ul><li>[if](../../language-reference/keywords/if-else.md)</li><li>[else](../../language-reference/keywords/if-else.md)</li><li>[switch](../../language-reference/keywords/switch.md)</li><li>[case](../../language-reference/keywords/switch.md)</li></ul>|
 |迭代语句|迭代语句用于遍历集合（如数组），或重复执行同一组语句直到满足指定的条件。 有关详细信息，请参阅下列主题： <ul><li>[do](../../language-reference/keywords/do.md)</li><li>[for](../../language-reference/keywords/for.md)</li><li>[foreach](../../language-reference/keywords/foreach-in.md)</li><li>[in](../../language-reference/keywords/foreach-in.md)</li><li>[while](../../language-reference/keywords/while.md)</li></ul>|
 |跳转语句|跳转语句将控制转移给另一代码段。 有关详细信息，请参阅下列主题： <ul><li>[break](../../language-reference/keywords/break.md)</li><li>[continue](../../language-reference/keywords/continue.md)</li><li>[default](../../language-reference/keywords/switch.md)</li><li>[goto](../../language-reference/keywords/goto.md)</li><li>[return](../../language-reference/keywords/return.md)</li><li>[yield](../../language-reference/keywords/yield.md)</li></ul>|
@@ -92,5 +92,5 @@ ms.locfileid: "87381757"
 ## <a name="see-also"></a>另请参阅
 
 - [C# 编程指南](../index.md)
-- [语句关键字](../../language-reference/keywords/statement-keywords.md)  
-- [表达式](expressions.md)  
+- [语句关键字](../../language-reference/keywords/statement-keywords.md)
+- [C# 运算符和表达式](../../language-reference/operators/index.md)

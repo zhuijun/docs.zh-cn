@@ -2,12 +2,12 @@
 title: 重大更改
 description: 了解 .NET Core 每个版本的中断性变更。
 ms.date: 11/27/2019
-ms.openlocfilehash: bc7faae3b00d412aa8d50fe181a26873232a0939
-ms.sourcegitcommit: a2c8b19e813a52b91facbb5d7e3c062c7188b457
+ms.openlocfilehash: 550553ef14cd0635fbe4a5346c457a41264a4b82
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/26/2020
-ms.locfileid: "85415727"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916270"
 ---
 # <a name="breaking-change-selectors"></a>中断性变更选择器
 
@@ -17,13 +17,31 @@ ms.locfileid: "85415727"
 
 选择当前面向的 .NET 版本，然后选择想迁移到的 .NET Core 版本：
 
-[!INCLUDE[versionselector](~/includes/core-changes/versionselector.md)]
+> [!div class="op_multi_selector" title1="从目标版本" title2="到迁移后的版本"]
+>
+> - [(3.1 | 5.0)](3.1-5.0.md)
+> - [(3.0 | 3.1)](3.0-3.1.md)
+> - [(2.2 | 3.1)](2.2-3.1.md)
+> - [(2.2 | 3.0)](2.2-3.0.md)
+> - [(2.0 | 2.1)](2.0-2.1.md)
+> - [(.NET Framework | .NET Core)](fx-core.md)
 
 ## <a name="by-technology-area"></a>按技术范围
 
 选择你感兴趣的 .NET Core 技术领域。 单个更改按 .NET Core 版本进行排序。
 
-[!INCLUDE[categoryselector](~/includes/core-changes/categoryselector.md)]
+> [!div class="op_single_selector"]
+>
+> - [ASP.NET Core](aspnetcore.md)
+> - [Core .NET 库](corefx.md)
+> - [加密](cryptography.md)
+> - [EF Core](/ef/core/what-is-new/ef-core-3.0/breaking-changes)
+> - [全球化](globalization.md)
+> - [Interop](interop.md)
+> - [网络连接](networking.md)
+> - [序列化](serialization.md)
+> - [Visual Basic](visualbasic.md)
+> - [Windows 窗体](winforms.md)
 
 ## <a name="github-issues-and-announcements"></a>GitHub 问题和公告
 
