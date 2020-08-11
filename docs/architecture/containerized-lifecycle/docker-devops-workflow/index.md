@@ -1,13 +1,13 @@
 ---
 title: 使用 Microsoft 工具的 Docker 应用程序 DevOps 工作流
 description: 通过 Microsoft 工具和 Microsoft 平台及工具 DevOps 工作流实现容器化的 Docker 应用程序生命周期
-ms.date: 02/15/2019
-ms.openlocfilehash: 6b138301a7e6794ce0a7b15957684b3b73e9f89f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 08/06/2020
+ms.openlocfilehash: 30c5066fa90d8792d8eef8f760dc63c00ce32130
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "70295071"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915201"
 ---
 # <a name="docker-application-devops-workflow-with-microsoft-tools"></a>使用 Microsoft 工具的 Docker 应用程序 DevOps 工作流
 

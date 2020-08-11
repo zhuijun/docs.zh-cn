@@ -1,31 +1,89 @@
 ---
-title: 容器和 Docker 简介
-description: 简要了解使用 Docker 所带来的主要优势。
-ms.date: 02/15/2019
-ms.openlocfilehash: 9ac08a64cd2465b4b88a266c1ec0925f37680bf9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+title: 使用 Microsoft 平台和工具的容器化 Docker 应用程序的生命周期
+description: 在基本层面概要了解使用 Docker 和 Microsoft 平台及工具开发和部署容器化应用程序的过程。
+ms.date: 07/30/2020
+ms.openlocfilehash: d8055315b25f73d7b0b355026ab6b2c4767f9d89
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73738129"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915158"
 ---
-# <a name="introduction-to-containers-and-docker"></a>容器和 Docker 简介
+# <a name="containerized-docker-application-lifecycle-with-microsoft-platform-and-tools"></a>使用 Microsoft 平台和工具的容器化 Docker 应用程序的生命周期
 
-*容器化是软件开发的一种方法，通过它可将应用程序或服务、其依赖项及其配置（抽象化为部署清单文件）一起打包为容器映像。然后，可将容器化应用程序作为单元进行测试，并将其作为容器映像实例部署到主机操作系统 (OS)。*
+![封面](./media/devops-book-cover-large-we.png)
 
-就像船只、火车或卡车运输集装箱而不论其内部的货物一样，软件容器充当软件部署的标准单元，其中可以包含不同的代码和依赖项。 按照这种方式容器化软件，开发人员和 IT 专业人员只需进行极少修改或不修改，即可将其部署到不同的环境。
+**版本 v3.1** - 已更新到 ASP.NET Core v3.1
 
-容器还会在共享 OS 上将应用程序彼此隔离开。 容器化应用程序在容器主机上运行，而容器主机在 OS（Linux 或 Windows）上运行。 因此，容器的占用比虚拟机 (VM) 映像小得多。
+本指南在整体上概述了使用 Microsoft 平台和工具通过 Docker 开发和部署容器化的 ASP.NET Core 应用程序。 本指南大致介绍了 Azure DevOps（用于实现 CI/CD 管道）以及 Azure 容器注册表 (ACR) 和 Azure Kubernetes 服务 AKS（用于部署）。
 
-每个容器都可运行整个 Web 应用或服务，如图 1-1 所示。 在本例中，Docker 主机是容器主机，App1、App2、Svc1 和 Svc2 是容器化的应用程序或服务。
+关于开发的大致详细信息，可参阅 [.NET 微服务：适用于容器化 .NET 应用程序的体系结构](https://docs.microsoft.com/dotnet/architecture/microservices/) 及其相关的参考应用程序 [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers)。
 
-![显示 VM 或服务器中运行的四个容器的关系图。](./media/index/multiple-containers-single-host.png)
+## <a name="send-us-your-feedback"></a>向我们发送反馈！
 
-**图 1-1**。 在一个容器主机上运行多个容器
+本指南旨在帮助用户了解 .NET 中容器化应用程序和微服务的体系结构。 本指南和相关的参考应用程序会不断更新，欢迎你提供宝贵意见！ 如有关于本指南的改进建议，请在 <https://aka.ms/ebookfeedback> 提交反馈。
 
-可从容器化获得的另一个优势是可伸缩性。 通过为短期任务创建新容器，可以快速扩大。 从应用程序的角度来看，实例化映像（创建容器）类似于实例化 服务或 Web 应用等进程。 但出于可靠性考虑，在多个主机服务器上运行同一映像的多个实例时，通常要使每个容器（映像实例）在不同容错域中的不同主机服务器或 VM 中运行。
+## <a name="credits"></a>信用
 
-总而言之，容器在整个应用程序生命周期工作流中提供了隔离性、可移植性、灵活性、可伸缩性和可控性等诸多优点。 最重要的优点是可在开发和运营之间实现环境隔离。
+作者:
+
+> **Cesar de la Torre**，Microsoft Corp .NET 产品团队的高级项目经理。
+
+策划编辑：
+
+> Janine Patrick
+
+开发编辑：
+
+> Bob Russell，Microsoft 的解决方案专业人员
+>
+> [Octal Publishing, Inc.](http://www.octalpub.com/)
+
+生产编辑：
+
+> [Dianne Russell](http://www.octalpub.com/)
+>
+> Octal Publishing, Inc.
+
+文字加工编辑：
+
+> Bob Russell，Microsoft 的解决方案专业人员
+
+参与者和审阅者：
+
+> Microsoft .NET 团队高级项目经理 Nish Anil 
+>
+> **Miguel Veloso**，Plain Concepts 的软件开发工程师
+>
+> Sumit Ghosh，Neudesic 的首席顾问
+
+## <a name="copyright"></a>Copyright
+
+发布者
+
+Microsoft 开发人员部门、.NET 和 Visual Studio 产品团队
+
+Microsoft Corporation 的一个部门
+
+One Microsoft Way
+
+Redmond, Washington 98052-6399
+
+版权所有 &copy; 2020 Microsoft Corporation
+
+保留所有权利。 未经发布者书面许可，不得以任何形式或任何方式复制或传播本书中的任何内容。
+
+本书“按原样”提供，表达作者的观点和看法。 本书中表达的观点、看法和信息（包括 URL 和其他 Internet 网站引用）如有更改，恕不另行通知。
+
+本书中提及的一些示例仅用于说明，纯属虚构。 不存在任何实际关联或联系，请勿妄加推断。
+
+Microsoft 和 <https://www.microsoft.com> 上“商标”网页列出的商标是 Microsoft 集团公司的商标。
+
+Mac 和 macOS 是 Apple Inc. 的商标
+
+Docker 的鲸鱼徽标是 Docker Inc. 的注册商标经许可方可使用。
+
+所有其他标记和徽标均为其各自所有者的财产。
 
 >[!div class="step-by-step"]
->[下一页](what-is-docker.md)
+>[下一页](introduction-to-containers-and-docker.md)

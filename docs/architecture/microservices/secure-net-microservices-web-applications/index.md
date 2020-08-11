@@ -2,17 +2,17 @@
 title: 保护 .NET 微服务和 Web 应用程序
 description: .NET 微服务和 Web 应用中的安全性 - 了解 ASP.NET Core Web 应用中的身份验证选项。
 author: mjrousos
-ms.date: 01/30/2020
-ms.openlocfilehash: 2b503b326d1869ae095f9b177c04389bda9fe46c
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.date: 08/07/2020
+ms.openlocfilehash: 9ce62039374f2256cd9adbddbb850aa4135af9f4
+ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100777"
+ms.lasthandoff: 08/08/2020
+ms.locfileid: "88024610"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>确保 .NET 微服务和 Web 应用的安全性
 
-微服务和 Web 应用的安全性具有许多方面，该主题可能需要许多本此类书籍才能描述完，因此在本部分中，我们将重点介绍身份验证、授权和应用程序密钥。
+微服务和 Web 应用的安全性具有许多方面，该主题可能需要许多本此类书籍才能描述完，因此在本部分中，你将重点了解身份验证、授权和应用程序密钥。
 
 ## <a name="implement-authentication-in-net-microservices-and-web-applications"></a>在 .NET 微服务和 Web 应用中实施身份验证
 
@@ -174,7 +174,7 @@ public void ConfigureServices(IServiceCollection services)
 {
     var identityUrl = Configuration.GetValue<string>("IdentityUrl");
     var callBackUrl = Configuration.GetValue<string>("CallBackUrl");
-    var sessionCookieLifetime = configuration.GetValue("SessionCookieLifetimeMinutes", 60);
+    var sessionCookieLifetime = Configuration.GetValue("SessionCookieLifetimeMinutes", 60);
 
     // Add Authentication services
 
