@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 8b1c9ab25299fcbafca6aba7b13217713a941ce8
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 4a9f5d50ad78b2b0bef0ece3c4fce47d2925aca5
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475185"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063752"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>编写大型的响应式 .NET Framework 应用
 
@@ -197,7 +197,7 @@ private bool TrimmedStringStartsWith(string text, int start, string prefix) {
 // etc...
 ```  
   
- `WriteFormattedDocComment()` 的第一个版本分配了一个数组、多个子字符串、一个修整的子字符串和一个空 `params` 数组。 它还检查 "///"。 修改后的代码仅使用索引且不执行分配。 它查找第一个非空白字符，然后按字符检查字符，以查看字符串是否以 "///" 开头。 新代码使用 `IndexOfFirstNonWhiteSpaceChar` 而不是 <xref:System.String.TrimStart%2A> 来返回非空白字符出现的第一个索引（在指定的开始索引之后）。 修复并不完整，但你可以看到如何为完整解决方案应用类似的修复。 通过在整个代码中应用此方法，你可以删除 `WriteFormattedDocComment()` 中的所有分配。
+ `WriteFormattedDocComment()` 的第一个版本分配了一个数组、多个子字符串、一个修整的子字符串和一个空 `params` 数组。 它还检查 "///"。 修改后的代码仅使用索引且不执行分配。 它查找第一个非空白字符，然后按字符检查字符，以查看字符串是否以 "///" 开头。 新代码使用 `IndexOfFirstNonWhiteSpaceChar` 而不是 <xref:System.String.TrimStart%2A> 来返回指定开始索引后的第一个索引 () 出现非空白字符。 修复并不完整，但你可以看到如何为完整解决方案应用类似的修复。 通过在整个代码中应用此方法，你可以删除 `WriteFormattedDocComment()` 中的所有分配。
   
  **示例 4：StringBuilder**  
   
@@ -278,7 +278,7 @@ private static string GetStringAndReleaseBuilder(StringBuilder sb)
  这个简单的缓存策略符合良好的缓存设计要求，因为它具有大小上限。 然而，现在存在比原来更多的代码，这意味着更多的维护成本。 仅当你发现了性能问题时，并且 PerfView 已显示 <xref:System.Text.StringBuilder> 分配是一个重要的参与者，才应采用该缓存策略。
   
 ### <a name="linq-and-lambdas"></a>LINQ 和 lambda  
-结合使用语言集成查询（LINQ）和 lambda 表达式，这是一个工作效率功能的示例。 但是，它的使用可能会对性能产生很大的影响，并且可能会发现需要重写代码。
+ (LINQ) 的语言集成查询与 lambda 表达式结合使用，是一个工作效率功能的示例。 但是，它的使用可能会对性能产生很大的影响，并且可能会发现需要重写代码。
   
  **示例5： Lambda、List \<T> 和 IEnumerable\<T>**  
   
@@ -306,7 +306,7 @@ Func<Symbol, bool> predicate = s => s.Name == name;
      return symbols.FirstOrDefault(predicate);  
 ```  
   
- 第一行中，[Lambda 表达式](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md) `s => s.Name == name` [封盖](https://docs.microsoft.com/archive/blogs/ericlippert/what-are-closures)本地变量 `name`。 这意味着除了针对 `predicate` 所保存的 [委托](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type)分配对象以外，该代码分配了静态类以保存捕获 `name` 的值的环境。 编译器生成的代码如下所示：  
+ 第一行中，[Lambda 表达式](../../csharp/language-reference/operators/lambda-expressions.md) `s => s.Name == name` [封盖](https://docs.microsoft.com/archive/blogs/ericlippert/what-are-closures)本地变量 `name`。 这意味着除了针对 `predicate` 所保存的 [委托](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type)分配对象以外，该代码分配了静态类以保存捕获 `name` 的值的环境。 编译器生成的代码如下所示：  
   
 ```csharp  
 // Compiler-generated class to hold environment state for lambda  

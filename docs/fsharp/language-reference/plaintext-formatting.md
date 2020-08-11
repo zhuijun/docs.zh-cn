@@ -2,12 +2,12 @@
 title: 纯文本格式
 description: '了解如何在 F # 应用程序和脚本中使用 printf 和其他纯文本格式。'
 ms.date: 07/22/2020
-ms.openlocfilehash: 6b14633e074961757d0f0cd258d1b1667f5fd8ee
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 90a861736dae69dfbc199a19e24f587c42404737
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854914"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063778"
 ---
 # <a name="plain-text-formatting"></a>纯文本格式
 
@@ -70,8 +70,8 @@ stdin(3,25): error FS0001: The type 'string' does not match the type 'int'
 
 | 格式说明符   | 键入 (s)         | 备注                      |
 |:-------------------|:---------------|:-----------------------------|
-| `%b`               | 布尔      | 格式为 `true` 或`false`                |
-| `%s`               | 字符串    | 格式化为未转义的内容         |
+| `%b`               | bool      | 格式为 `true` 或`false`                |
+| `%s`               | string    | 格式化为未转义的内容         |
 | `%c`               | char      | 格式化为字符文本  |
 | `%d`, `%i`         | 基本整数类型 | 格式化为十进制整数，如果基本整数类型已签名，则对其进行签名 |
 | `%u`               | 基本整数类型 | 格式化为无符号的十进制整数   |
@@ -85,6 +85,7 @@ stdin(3,25): error FS0001: The type 'string' does not match the type 'int'
 | `%A` | 任何值  |   使用默认布局设置以[结构化纯文本格式](plaintext-formatting.md)设置格式 |
 | `%a` | 任何值  |   需要两个参数：一个格式设置函数，接受上下文参数和值以及要打印的特定值 |
 | `%t` | 任何值  |   需要一个参数：一个格式设置函数，它接受输出或返回适当文本的上下文参数 |
+| `%%` | （无）  |   不需要任何参数，也不需要打印普通百分号：`%` |
 
 基本整数类型 `byte` (`System.Byte`) ， `sbyte` (`System.SByte`)  () `int16` () `System.Int16` `uint16` `System.UInt16` () `int32` `System.Int32` `uint32` `System.UInt32` `int64` `System.Int64` `uint64` `System.UInt64` `nativeint` `System.IntPtr` `unativeint` `System.UIntPtr` ()  ()  ()  ()  () 。
 基本浮点类型 `float` (`System.Double`) 并 `float32` (`System.Single`) 。
@@ -419,4 +420,4 @@ F # 纯文本格式中会忽略这些属性，但在调试 F # 类型时，实�
 - [字符串](strings.md)
 - [记录](records.md)
 - [可区分联合](discriminated-unions.md)
-- [F# 交互窗口](fsharp-interactive-options.md)
+- [F# Interactive](fsharp-interactive-options.md)

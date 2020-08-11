@@ -3,12 +3,12 @@ title: 使用命令性代码创作工作流、活动和表达式
 description: Workflow Foundation 工作流定义是已配置活动对象的树。 使用代码创建工作流定义、活动和表达式。
 ms.date: 03/30/2017
 ms.assetid: cefc9cfc-2882-4eb9-8c94-7a6da957f2b2
-ms.openlocfilehash: d8b4cb8b85d3ea3759d58e15df823a72146772e8
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: d169049c47c154858a2e653b5f286fa6b66ba44d
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421548"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063791"
 ---
 # <a name="authoring-workflows-activities-and-expressions-using-imperative-code"></a>使用命令性代码创作工作流、活动和表达式
 工作流定义是已配置活动对象的树。 这种活动树有多种定义方法，包括手动编辑 XAML 或使用工作流设计器来生成 XAML。 但是，并非必须使用 XAML。 工作流定义也可以通过编程方式来创建。 本主题概述如何通过使用代码创建工作流定义、活动和表达式。 有关使用代码处理 XAML 工作流的示例，请参阅在[xaml 中序列化工作流和活动](serializing-workflows-and-activities-to-and-from-xaml.md)。  
@@ -30,7 +30,7 @@ ms.locfileid: "83421548"
   
  [!code-csharp[CFX_WorkflowApplicationExample#49](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#49)]  
   
- 有关对象初始值设定项的详细信息，请参阅[如何：在不调用构造函数的情况下初始化对象（c # 编程指南）](../../csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md)和[如何：使用对象初始值设定项声明对象](../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)。  
+ 有关对象初始值设定项的详细信息，请参阅如何：使用对象初始值设定项[在不调用构造函数的情况下初始化对象 (c # 编程指南) ](../../csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md)和[如何：使用对象初始值设定项声明对象](../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md)。  
   
 ### <a name="working-with-variables-literal-values-and-expressions"></a>使用变量、文本值和表达式  
  使用代码创建工作流定义时，请注意哪些代码是作为创建工作流定义的一部分来执行，哪些代码是作为该工作流实例执行的一部分来执行。 例如，以下工作流将生成一个随机数，并将其写入控制台。  
@@ -62,7 +62,7 @@ new Assign<int>
   
  [!code-csharp[CFX_WorkflowApplicationExample#52](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#52)]  
   
- 有关 lambda 表达式的详细信息，请参阅[Lambda 表达式（c # 编程指南）](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)或[lambda 表达式（Visual Basic）](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)。  
+ 有关 lambda 表达式的详细信息，请参阅[ (c # reference) ](../../csharp/language-reference/operators/lambda-expressions.md)或[Lambda 表达式的 lambda 表达式 (Visual Basic) ](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)。  
   
  Lambda 表达式不可序列化为 XAML 格式。 如果尝试用 lambda 表达式序列化工作流，会引发 <xref:System.Activities.Expressions.LambdaSerializationException>，并带有消息：“此工作流包含以代码形式指定的 lambda 表达式。 这些表达式不可序列化为 XAML。 若要使工作流可序列化为 XAML，请使用 VisualBasicValue/VisualBasicReference 或 ExpressionServices.Convert(lambda)。 这会将 lambda 表达式转换为表达式活动。” 若要使此表达式与 XAML 相兼容，请使用 <xref:System.Activities.Expressions.ExpressionServices> 和 <xref:System.Activities.Expressions.ExpressionServices.Convert%2A>，如下例所示。  
   
