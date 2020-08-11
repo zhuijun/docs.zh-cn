@@ -1,7 +1,7 @@
 ---
 title: 其他类库和 API
-description: 探索 .NET 中的其他类库和 Api，包括带外（OOB）项目、平台特定的库和私有 Api。
-ms.date: 06/12/2020
+description: 探索 .NET 中的其他类库和 Api，包括带外 (OOB) 项目、平台特定的库和私有 Api。
+ms.date: 08/11/2020
 helpviewer_keywords:
 - Additional class libraries
 - Additional managed libraries
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - out-of-band releases
 ms.assetid: cf2d9006-b631-4e5d-81cd-20aab78c60f1
 ms.topic: conceptual
-ms.openlocfilehash: 0b888d2f0e80685ba993682b2f3067cf8aee15bc
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: c6404df5d4f0be381bc0a9c1924fcf82cf078306
+ms.sourcegitcommit: 70d6a7e4f7187cbfa332f0f8be76566f7828cfcd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84989736"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88075470"
 ---
 # <a name="additional-class-libraries-and-apis"></a>其他类库和 API
 
@@ -22,9 +22,9 @@ ms.locfileid: "84989736"
 
 ## <a name="oob-projects"></a>OOB 项目
 
-为了改善跨平台开发并及早引入新功能，一些 .NET Framework 功能是以带外（OOB）发布的。
+为了改善跨平台开发并及早引入新功能，一些 .NET Framework 功能已在 (OOB) 中发布。
 
-| Project | 说明 |  
+| 项目 | 说明 |  
 | ------- | ----------- |  
 | <xref:System.Collections.Immutable> | 提供的集合数是线程安全的，并且保证决不会更改该集合的内容。 |
 | <xref:System.Net.Http.WinHttpHandler> | 基于 Windows 的 WinHTTP 接口为 <xref:System.Net.Http.HttpClient> 提供消息处理程序。 |
@@ -35,7 +35,7 @@ ms.locfileid: "84989736"
 
 某些库面向特定的平台。 例如， <xref:System.Text.CodePagesEncodingProvider> 类使代码页编码可用于使用 .NET Framework 开发的 UWP 应用。
   
-| Project | 说明 |  
+| 项目 | 说明 |  
 | ------- | ----------- |  
 | <xref:System.Text.CodePagesEncodingProvider> | 扩展 <xref:System.Text.EncodingProvider> 类，使代码页编码可用于面向通用 Windows 平台的应用程序。 |  
   
@@ -87,6 +87,7 @@ ms.locfileid: "84989736"
 * [设置了 webheadercollection. AddInternal 方法](system.net.webheadercollection.addinternal.md)
 * [System.servicemodel. BodyToString 方法](system.servicemodel.channels.message.bodytostring.md)
 * [System.servicemodel. WriteStartHeaders 方法](system.servicemodel.channels.message.writestartheaders.md)
+* [ControlBuilderInterceptor 类。](controlbuilderinterceptor-class.md)
 * [VisualDiagnostics. s \_ isDebuggerCheckDisabledForTestPurposes 字段](s-isdebuggercheckdisabledfortestpurposes-field.md)
 * ["DataMemberFieldEditor" 类](datamemberfieldeditor-class.md)
 * ["DataMemberListEditor" 类](datamemberlisteditor-class.md)
