@@ -3,12 +3,12 @@ title: 表达式树 (C#)
 description: 了解表达式树。 了解如何编译和运行这些数据结构表示的代码，其中每个代码都是一个表达式。
 ms.date: 07/20/2015
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-ms.openlocfilehash: 2fa8577dd945650edebf84459de10c0c3bd04225
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: a5c84673f0b45b92be18b955a6d1e7268bb73c26
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105580"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063310"
 ---
 # <a name="expression-trees-c"></a>表达式树 (C#)
 表达式树以树形数据结构表示代码，其中每一个节点都是一种表达式，比如方法调用和 `x < y` 这样的二元运算等。  
@@ -22,7 +22,7 @@ ms.locfileid: "87105580"
 ## <a name="creating-expression-trees-from-lambda-expressions"></a>根据 Lambda 表达式创建表达式树  
  若 lambda 表达式被分配给 <xref:System.Linq.Expressions.Expression%601> 类型的变量，则编译器可以发射代码以创建表示该 lambda 表达式的表达式树。  
   
- C# 编译器只能从表达式 Lambda（或单行 Lambda）生成表达式树。 它无法解析语句 lambda （或多行 lambda）。 有关 C# 中 Lambda 表达式的详细信息，请参阅 [Lambda 表达式](../../statements-expressions-operators/lambda-expressions.md)。  
+ C# 编译器只能从表达式 Lambda（或单行 Lambda）生成表达式树。 它无法解析语句 lambda （或多行 lambda）。 有关 C# 中 Lambda 表达式的详细信息，请参阅 [Lambda 表达式](../../../language-reference/operators/lambda-expressions.md)。  
   
  下列代码示例展示如何通过 C# 编译器创建表示 Lambda 表达式 `num => num < 5` 的表达式树。  
   
@@ -153,6 +153,6 @@ Console.WriteLine(expr.Compile()(4));
 - <xref:System.Linq.Expressions>
 - [如何执行表达式树 (C#)](./how-to-execute-expression-trees.md)
 - [如何修改表达式树 (C#)](./how-to-modify-expression-trees.md)
-- [Lambda 表达式](../../statements-expressions-operators/lambda-expressions.md)
+- [Lambda 表达式](../../../language-reference/operators/lambda-expressions.md)
 - [动态语言运行时概述](../../../../framework/reflection-and-codedom/dynamic-language-runtime-overview.md)
 - [编程概念 (C#)](../index.md)

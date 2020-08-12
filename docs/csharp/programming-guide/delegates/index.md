@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, delegates
 - delegates [C#]
 ms.assetid: 97de039b-c76b-4b9c-a27d-8c1e1c8d93da
-ms.openlocfilehash: 94e7c130bd5d8e136d03ccdbaed643bc1a47d112
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 2c1be56b67528c17a6cf1d8d8517817ff93b2aa5
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302160"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063633"
 ---
 # <a name="delegates-c-programming-guide"></a>委托（C# 编程指南）
 [委托](../../language-reference/builtin-types/reference-types.md)是一种引用类型，表示对具有特定参数列表和返回类型的方法的引用。 在实例化委托时，你可以将其实例与任何具有兼容签名和返回类型的方法相关联。 你可以通过委托实例调用方法。  
@@ -40,7 +40,7 @@ ms.locfileid: "87302160"
   
 - 方法不必与委托类型完全匹配。 有关详细信息，请参阅[使用委托中的变体](../concepts/covariance-contravariance/using-variance-in-delegates.md)。  
   
-- C# 2.0 版引入了[匿名方法](../../language-reference/operators/delegate-operator.md)的概念，可以将代码块作为参数（而不是单独定义的方法）进行传递。 C# 3.0 引入了 Lambda 表达式，利用它们可以更简练地编写内联代码块。 匿名方法和 Lambda 表达式（在某些上下文中）都可编译为委托类型。 这些功能现在统称为匿名函数。 若要详细了解 lambda 表达式，请参阅 [lambda 表达式](../statements-expressions-operators/lambda-expressions.md)。
+- C# 2.0 版引入了[匿名方法](../../language-reference/operators/delegate-operator.md)的概念，可以将代码块作为参数（而不是单独定义的方法）进行传递。 C# 3.0 引入了 Lambda 表达式，利用它们可以更简练地编写内联代码块。 匿名方法和 Lambda 表达式（在某些上下文中）都可编译为委托类型。 这些功能现在统称为匿名函数。 若要详细了解 lambda 表达式，请参阅 [lambda 表达式](../../language-reference/operators/lambda-expressions.md)。
   
 ## <a name="in-this-section"></a>本节内容  
   

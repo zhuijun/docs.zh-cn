@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Visual C#, programming concepts
 - C# language, concepts
 ms.assetid: ac0f23a2-6bf3-4077-be99-538ae5fd3bc5
-ms.openlocfilehash: e2127b91efb5a77497ce22e0f2934fab98f015af
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 6db16a86e949fb50254c301f5e5ac0904a6072a4
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473872"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063594"
 ---
 # <a name="c-programming-guide"></a>C# 编程指南
 
@@ -58,8 +58,6 @@ ms.locfileid: "86473872"
  [迭代器](./concepts/iterators.md)
   
  [LINQ 查询表达式](../linq/index.md)  
-  
- [Lambda 表达式](./statements-expressions-operators/lambda-expressions.md)  
   
  [命名空间](./namespaces/index.md)  
   
