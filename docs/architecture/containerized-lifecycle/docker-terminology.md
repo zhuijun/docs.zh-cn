@@ -1,13 +1,13 @@
 ---
 title: Docker 术语
 description: 了解使用 Docker 时常用的一些基本术语。
-ms.date: 04/16/2020
-ms.openlocfilehash: 34e50596eca21ec5b5505493414056814455d745
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.date: 08/06/2020
+ms.openlocfilehash: b47639a2995c3a0a30ea7111c16bbea21f1048ba
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507320"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915191"
 ---
 # <a name="docker-terminology"></a>Docker 术语
 
@@ -29,7 +29,7 @@ docker build
 
 **标记**：可以应用于映像的标记或标签，以便可以识别同一映像的不同映像或版本（具体取决于版本号或目标环境）。
 
-**多阶段生成**：Docker 17.05 或更高版本的一个功能，可帮助减小最终映像的大小。 概括来说，借助多阶段生成，可以使用一个包含 SDK 的大型基础映像（以此为例）编译和发布应用程序，然后使用发布文件夹和一个小型仅运行时基础映像生成一个更小的最终映像。
+**多阶段生成**：Docker 17.05 或更高版本的一个功能，可帮助减小最终映像的大小。 例如，包含 SDK 的大型基础映像可用于编译和发布，仅小型运行时基础映像可用于托管应用程序。
 
 **存储库 (repo)** ：相关的 Docker 映像集合，带有指示映像版本的标记。 某些存储库包含特定映像的多个变量，例如包含 SDK（较重）的映像，包含唯一运行时（较轻）的映像，等等。这些变量可以使用标记进行标记。 单个存储库中可包含平台变量，如 Linux 映像和 Windows 映像。
 
@@ -41,7 +41,7 @@ docker build
 
 **Azure 容器注册表**：用于在 Azure 中使用 Docker 映像及其组件的公共资源。 这提供了与 Azure 中的部署接近的注册表，使你可以控制访问权限，从而可以使用 Azure Active Directory 组和权限。
 
-**Docker 受信任注册表 (DTR)** ：Docker 注册表服务（来自 Docker），可以安装在本地，因此它存在于组织的数据中心和网络中。 这对于应该在企业内部管理的私有映像来说很方便。 Docker 受信任注册表是 Docker 数据中心产品的一部分。 有关详细信息，请参阅 [Docker 受信任注册表 (DTR)](https://docs.docker.com/docker-trusted-registry/overview/)。
+**Docker 受信任注册表 (DTR)** ：Docker 注册表服务（来自 Docker），可以安装在本地，因此它存在于组织的数据中心和网络中。 这对于应该在企业内部管理的私有映像来说很方便。 Docker 受信任注册表是 Docker 数据中心产品的一部分。 有关详细信息，请参阅 [Docker 受信任注册表 (DTR)](https://www.docker.com/sites/default/files/Docker%20Trusted%20Registry.pdf)。
 
 **Docker 社区版 (CE)** ：适用于 Windows 和 macOS、用于在本地生成、运行和测试容器的开发工具。 适用于 Windows 的 Docker CE 为 Linux 和 Windows 容器提供了开发环境。 Windows 上的 Linux Docker 主机基于 [Hyper-V](https://www.microsoft.com/cloud-platform/server-virtualization) 虚拟机。 适用于 Windows 容器的主机直接基于 Windows。 适用于 Mac 的 Docker CE 基于 Apple 虚拟机监控程序框架和 [xhyve 虚拟机监控程序](https://github.com/mist64/xhyve)，在 Mac OS X 上提供了 Linux Docker 主机虚拟机。适用于 Windows 和 Mac 的 Docker CE 替换了 Docker 工具箱，后者基于 Oracle VirtualBox。
 

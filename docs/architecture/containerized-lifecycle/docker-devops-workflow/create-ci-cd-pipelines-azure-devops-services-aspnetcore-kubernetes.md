@@ -1,15 +1,15 @@
 ---
 title: Docker 应用程序的外部循环 DevOps 工作流步骤
 description: 使用 Microsoft 平台和工具的容器化 Docker 应用程序的生命周期
-ms.date: 02/15/2019
-ms.openlocfilehash: 9fdc5acfd375e4f2266859f061ef1c854286b914
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 08/06/2020
+ms.openlocfilehash: 1a973407d59484899f99fb6e326b8d7c8e97079b
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68673774"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87915220"
 ---
-# <a name="creating-cicd-pipelines-in-azure-devops-services-for-a-net-core-20-application-on-containers-and-deploying-to-a-kubernetes-cluster"></a>在 Azure DevOps Services 中为容器中的 .NET Core 2.0 应用程序创建 CI/CD 管道并部署到 Kubernetes 群集
+# <a name="creating-cicd-pipelines-in-azure-devops-services-for-a-net-core-application-on-containers-and-deploying-to-a-kubernetes-cluster"></a>在 Azure DevOps Services 中为容器中的 .NET Core 应用程序创建 CI/CD 管道并将其部署到 Kubernetes 群集
 
 在图 5-12 中，可以看到端到端 DevOps 场景，包括代码管理、代码编译、Docker 映像生成、Docker 映像推送到 Docker 注册表并最后部署到 Azure 中的 Kubernetes 群集。
 

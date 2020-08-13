@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: fbd3c8062892f106ec17d0fef86d5ad7f1207d20
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 4390f46492ada4b15d187be4c43a4f7865f64a80
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87303473"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916968"
 ---
 # <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>如何从 Newtonsoft.Json 迁移到 System.Text.Json
 
@@ -91,7 +91,7 @@ ms.locfileid: "87303473"
 
 在反序列化过程中，默认情况下 `Newtonsoft.Json` 进行不区分大小写的属性名称匹配。 <xref:System.Text.Json> 默认值区分大小写，这可提供更好的性能，因为它执行精确匹配。 有关如何执行不区分大小写的匹配的信息，请参阅[不区分大小写的属性匹配](system-text-json-how-to.md#case-insensitive-property-matching)。
 
-如果使用 ASP.NET Core 间接使用 `System.Text.Json`，则无需执行任何操作即可获得类似于 `Newtonsoft.Json` 的行为。 ASP.NET Core 在使用 `System.Text.Json` 时，会为 [camel 大小写属性名称](system-text-json-how-to.md#use-camel-case-for-all-json-property-names)和不区分大小写的匹配指定设置。
+如果使用 ASP.NET Core 间接使用 `System.Text.Json`，则无需执行任何操作即可获得类似于 `Newtonsoft.Json` 的行为。 ASP.NET Core 在使用 `System.Text.Json` 时，会为 [camel 大小写属性名称](system-text-json-how-to.md#use-camel-case-for-all-json-property-names)和不区分大小写的匹配指定设置。 默认值在 [JsonOptions 类](https://github.com/dotnet/aspnetcore/blob/1f56888ea03f6a113587a6c4ac4d8b2ded326ffa/src/Mvc/Mvc.Core/src/JsonOptions.cs#L22-L28)中设置。
 
 ### <a name="minimal-character-escaping"></a>最小字符转义
 
@@ -128,6 +128,8 @@ ms.locfileid: "87303473"
 ### <a name="maximum-depth"></a>最大深度
 
 `Newtonsoft.Json` 默认情况下没有最大深度限制。 对于 <xref:System.Text.Json>，默认限制为 64，可通过设置 <xref:System.Text.Json.JsonSerializerOptions.MaxDepth?displayProperty=nameWithType> 进行配置。
+
+如果使用 ASP.NET Core 时间接使用 `System.Text.Json`，则默认的最大深度限制为 32。 默认值与模型绑定的默认值相同，并且在 [JsonOptions 类](https://github.com/dotnet/aspnetcore/blob/1f56888ea03f6a113587a6c4ac4d8b2ded326ffa/src/Mvc/Mvc.Core/src/JsonOptions.cs#L17-L20)中设置。
 
 ### <a name="json-strings-property-names-and-string-values"></a>JSON 字符串（属性名称和字符串值）
 

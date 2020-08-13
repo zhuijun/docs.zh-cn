@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 3c8fc7c4702b786c05e14397dc36d994c77e114d
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: fbe0b3491260e787c08b98b320b19408f2c897eb
+ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84811656"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87795380"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio"></a>教程：使用 Visual Studio 创建 .NET Core 控制台应用程序
 
@@ -79,7 +79,7 @@ End Module
 
 ## <a name="run-the-app"></a>运行应用
 
-1. 按 <kbd>Shift</kbd>+<kbd>F5</kbd> 运行程序而不进行调试。
+1. 按 <kbd>Ctrl</kbd>+<kbd>F5</kbd> 运行程序而不进行调试。
 
    此时将打开在屏幕上显示文本“Hello World!” 并附带一些 Visual Studio 调试信息的控制台窗口。
 
@@ -102,7 +102,7 @@ End Module
 
    字符串前面的美元符号 (`$`) 使你可以将表达式（如变量名称）放入字符串中的大括号内。 表达式值将代替表达式插入到字符串中。 此语法称为[内插字符串](../../csharp/language-reference/tokens/interpolated.md)。
 
-1. 按 <kbd>Shift</kbd>+<kbd>F5</kbd> 运行程序而不进行调试。
+1. 按 <kbd>Ctrl</kbd>+<kbd>F5</kbd> 运行程序而不进行调试。
 
 1. 出现提示时，输入名称并按 Enter<kbd></kbd> 键。
 

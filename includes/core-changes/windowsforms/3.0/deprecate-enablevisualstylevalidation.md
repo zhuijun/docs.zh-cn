@@ -1,24 +1,24 @@
 ---
-ms.openlocfilehash: 97e38685777c7c418c0ccd91f4c433501ecf3aaa
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 196a26bd235e5e2556baa7fac979b3316ff81e1f
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721081"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556130"
 ---
 ### <a name="enablevisualstylevalidation-compatibility-switch-not-supported"></a>不支持 EnableVisualStyleValidation 兼容性开关
 
-.NET Core 3.0 上的 Windows 窗体不支持 `Switch.System.Windows.Forms.EnableVisualStyleValidation` 兼容性开关。
+.NET Core 或 .NET 5.0 及更高版本上的 Windows 窗体不支持 `Switch.System.Windows.Forms.EnableVisualStyleValidation` 兼容性开关。
 
 #### <a name="change-description"></a>更改描述
 
 在 .NET Framework 中，`Switch.System.Windows.Forms.EnableVisualStyleValidation` 兼容性开关使得应用程序可选择不验证以数值格式提供的视觉样式。
 
-.NET Core 中尚不支持 `Switch.System.Windows.Forms.EnableVisualStyleValidation` 开关。
+.NET Core 和 .NET 5.0 及更高版本中尚不支持 `Switch.System.Windows.Forms.EnableVisualStyleValidation` 开关。
 
 #### <a name="version-introduced"></a>引入的版本
 
-3.0 预览版 9
+3.0
 
 #### <a name="recommended-action"></a>建议操作
 

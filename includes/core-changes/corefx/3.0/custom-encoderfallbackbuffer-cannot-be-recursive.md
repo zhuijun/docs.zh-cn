@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 00c32c10f77995284264e795d386f699082dcb84
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 54ef49755dc0b9d1b821ae7999ab218626d455e1
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721607"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556317"
 ---
 ### <a name="custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively"></a>自定义 EncoderFallbackBuffer 实例无法递归回退
 
@@ -16,7 +16,7 @@ ms.locfileid: "83721607"
 
 然后，运行时尝试将这些替换字符转码为目标编码。 如果此操作成功，则运行时继续从原始输入字符串中的中断位置进行转码。
 
-在 .NET Core 预览版 7 和更早版本中，<xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> 的自定义实现可以返回无法转换为目标编码的字符序列。 如果替换字符无法转码为目标编码，则运行时将使用替换字符再调用一次 <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> 方法，并要求 <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> 方法返回新的替换序列。 此过程将一直继续，直到运行时最终看到格式正确的、可转换的替换，或直到达到最大递归计数。
+之前，<xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> 的自定义实现可以返回无法转换为目标编码的字符序列。 如果替换字符无法转码为目标编码，则运行时将使用替换字符再调用一次 <xref:System.Text.EncoderFallbackBuffer.Fallback%2A?displayProperty=nameWithType> 方法，并要求 <xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> 方法返回新的替换序列。 此过程将一直继续，直到运行时最终看到格式正确的、可转换的替换，或直到达到最大递归计数。
 
 从 .NET Core 3.0 开始，<xref:System.Text.EncoderFallbackBuffer.GetNextChar?displayProperty=nameWithType> 的自定义实现必须返回可转换为目标编码的字符序列。 如果替换字符无法转码为目标编码，则引发 <xref:System.ArgumentException>。 运行时将不再对 <xref:System.Text.EncoderFallbackBuffer> 实例进行递归调用。
 

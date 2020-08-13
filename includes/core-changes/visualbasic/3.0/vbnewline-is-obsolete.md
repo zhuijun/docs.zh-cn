@@ -1,22 +1,22 @@
 ---
-ms.openlocfilehash: 535a73c6b748166a1e4a4661a6bab0671c653278
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: 072ed716910e2e1f1f98dbddc56d5bd097b75acc
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721759"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555900"
 ---
 ### <a name="microsoftvisualbasicconstantsvbnewline-is-obsolete"></a>Microsoft.VisualBasic.Constants.vbNewLine 已过时
 
-自 .NET Core 3.0 预览版 8 起，<xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName> 常量标记为[\[已过时\]](xref:System.ObsoleteAttribute)。
+自 .NET Core 3.0 起，<xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName> 常量标记为[\[已过时\]](xref:System.ObsoleteAttribute)。
 
 #### <a name="version-introduced"></a>引入的版本
 
-3.0 预览版 8
+3.0
 
 #### <a name="change-description"></a>更改描述
 
-自 .NET Core 3.0 预览版 8 起，已向 <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName> 常量应用 [Obsolete](xref:System.ObsoleteAttribute) 属性。 使用常量会引发编辑器警告。 在 .NET Framework 和之前的 .NET Core 版本中，它未被标记为已过时。
+自 .NET Core 3.0 起，已向 <xref:Microsoft.VisualBasic.Constants.vbNewLine?displayProperty=fullName> 常量应用 [Obsolete](xref:System.ObsoleteAttribute) 属性。 使用常量会引发编辑器警告。 在 .NET Framework 和之前的 .NET Core 版本中，它未被标记为已过时。
 
 此项更改旨在支持将 Visual Basic 用作多平台开发的一种语言。 <xref:Microsoft.VisualBasic.Constants.vbNewLine> 常量与 Windows 上的换行符序列 `\r\n` 等效。 在基于 Unix 的系统上，换行符为 `\n`。
 

@@ -4,12 +4,12 @@ description: 了解 Apache Spark 和大数据方案。
 ms.date: 10/15/2019
 ms.topic: conceptual
 ms.custom: mvc
-ms.openlocfilehash: 653f355d09a045feabb3dee0f5737cb691cf2dc4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cde66c4084b7c86e1b78d89c2bad94402dbd7d60
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73458179"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87555989"
 ---
 # <a name="what-is-apache-spark"></a>什么是 Apache Spark？
 
@@ -82,7 +82,7 @@ Apache Spark 支持以下编程语言：
 * Java
 * SQL
 * R
-* .NET
+* .NET 语言 (C#/F#)
 
 ## <a name="spark-apis"></a>Spark API
 

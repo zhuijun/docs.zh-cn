@@ -3,18 +3,18 @@ title: 理解使用用于 .NET 的 Azure 库进行身份验证
 description: 介绍使用用于 .NET 的 Azure SDK 进行身份验证的不同方法。
 ms.date: 06/19/2020
 ms.custom: azure-sdk-dotnet
-ms.openlocfilehash: 727842b34faa37558220a3035ac5228fae196201
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: e588499a789fc5e7da7eb51009f97090ca75e562
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301614"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916606"
 ---
 # <a name="authenticate-with-the-azure-sdk-for-net"></a>使用用于 .NET 的 Azure SDK 进行身份验证
 
 ## <a name="recommended-azureidentity"></a>建议：Azure.Identity
 
-用于 .NET 的 Azure SDK 中最新的包使用常用的身份验证包进行身份验证，即 `Azure.Identity`。 建议使用 `Azure.Identity`，而不是本文档稍后将介绍的其他身份验证机制。 支持 `Azure.Identity` 提供的凭据的包具有开头为 Azure 的包标识符。 [有关详细信息，请参阅用于 .NET 的 Azure SDK 的最新版本](https://azure.github.io/azure-sdk/releases/latest/index.html#net)。
+用于 .NET 的 Azure SDK 中最新的包使用常用的身份验证包进行身份验证，即 `Azure.Identity`。 建议使用 `Azure.Identity`，而不是本文档稍后将介绍的其他身份验证机制。 支持 `Azure.Identity` 提供的凭据的包在 `Azure.Core` 的基础之上构建，并且具有开头为 Azure 的包标识符。 有关使用 `Azure.Core` 的包的清单，请参阅[包列表](packages.md)。
 
 若要查看有关在项目中使用 `Azure.Identity` 的完整说明，请参阅[用于 .NET 的 Azure 标识客户端](/dotnet/api/overview/azure/identity-readme)的文档。
 

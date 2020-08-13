@@ -7,12 +7,12 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: 15c02e11610866f359e3e3a7e2751ded918154b7
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b72b058c1709e7a643a70233cc3289d5d9165ca4
+ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78846243"
+ms.lasthandoff: 08/07/2020
+ms.locfileid: "87916800"
 ---
 # <a name="-operator-c-reference"></a>=> 运算符（C# 参考）
 
@@ -24,15 +24,15 @@ ms.locfileid: "78846243"
 
 以下示例使用带有方法语法的 [LINQ](../../programming-guide/concepts/linq/index.md) 功能来演示 lambda 表达式的用法：
 
-[!code-csharp-interactive[infer types of input variables](snippets/LambdaOperator.cs#InferredTypes)]
+[!code-csharp-interactive[infer types of input variables](snippets/shared/LambdaOperator.cs#InferredTypes)]
 
 lambda 表达式的输入参数在编译时是强类型。 当编译器可以推断输入参数的类型时，如前面的示例所示，可以省略类型声明。 如果需要指定输入参数的类型，则必须对每个参数执行类型声明，如以下示例所示：
 
-[!code-csharp-interactive[specify types of input variables](snippets/LambdaOperator.cs#ExplicitTypes)]
+[!code-csharp-interactive[specify types of input variables](snippets/shared/LambdaOperator.cs#ExplicitTypes)]
 
 以下示例显示如何在没有输入参数的情况下定义 lambda 表达式：
 
-[!code-csharp-interactive[without input variables](snippets/LambdaOperator.cs#WithoutInput)]
+[!code-csharp-interactive[without input variables](snippets/shared/LambdaOperator.cs#WithoutInput)]
 
 有关详细信息，请参阅 [Lambda 表达式](../../programming-guide/statements-expressions-operators/lambda-expressions.md)。
 
@@ -44,7 +44,7 @@ lambda 表达式的输入参数在编译时是强类型。 当编译器可以推
 member => expression;
 ```
 
-其中 `expression` 是有效的表达式。 `expression` 的返回类型必须可隐式转换为成员的返回类型。 如果成员的返回类型是 `void`，或者如果成员是构造函数、终结器或属性 `set` 访问器，则 `expression` 必须是[语句表达式](~/_csharplang/spec/statements.md#expression-statements)，其可以是任意类型。
+其中 `expression` 是有效的表达式。 `expression` 的返回类型必须可隐式转换为成员的返回类型。 如果成员的返回类型为 `void`，或者如果成员是构造函数、终结器、属性或索引器 `set` 访问器，则 `expression` 必须为[语句表达式](~/_csharplang/spec/statements.md#expression-statements)。 由于表达式的结果被丢弃，该表达式的返回类型可以是任何类型。
 
 以下示例演示了用于 `Person.ToString` 方法的表达式主体定义：
 
@@ -73,7 +73,7 @@ public override string ToString()
 
 有关 lambda 运算符的详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的[匿名函数表达式](~/_csharplang/spec/expressions.md#anonymous-function-expressions)部分。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
-- [C# 运算符](index.md)
+- [C# 运算符和表达式](index.md)

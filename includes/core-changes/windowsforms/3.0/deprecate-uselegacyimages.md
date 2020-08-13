@@ -1,24 +1,24 @@
 ---
-ms.openlocfilehash: c980b0c0be9f4d6a529baa0743dec9ac16ca0d7f
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: d69f619522c7abc3171f1c089e53cc2754899f93
+ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83721575"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87556131"
 ---
 ### <a name="uselegacyimages-compatibility-switch-not-supported"></a>不支持 UseLegacyImages 兼容性开关
 
-已在 .NET Framework 4.8 中引入 `Switch.System.Windows.Forms.UseLegacyImages` 兼容性开关，但它在 .NET Core 3.0 上的 Windows 窗体中尚不受支持。
+已在 .NET Framework 4.8 中引入 `Switch.System.Windows.Forms.UseLegacyImages` 兼容性开关，但它在 .NET Core 或 .NET 5.0 及更高版本上的 Windows 窗体中尚不受支持。
 
 #### <a name="change-description"></a>更改描述
 
 自 .NET Framework 4.8 起，`Switch.System.Windows.Forms.UseLegacyImages` 兼容性开关会处理高 DPI 环境中 ClickOnce 方案内可能出现的图像缩放问题。 如果设置为 `true`，则用户可通过此开关在缩放比例设置为大于 100% 的高 DPI 显示器上还原旧的图像缩放行为。 有关详细信息，请参阅 GitHub 上的 [.NET Framework 4.8 发行说明](https://github.com/microsoft/dotnet/blob/master/releases/net48/dotnet48-changes.md#clickonce)。
 
-.NET Core 中尚不支持 `Switch.System.Windows.Forms.UseLegacyImages` 开关。
+.NET Core 和 .NET 5.0 及更高版本中尚不支持 `Switch.System.Windows.Forms.UseLegacyImages` 开关。
 
 #### <a name="version-introduced"></a>引入的版本
 
-3.0 预览版 9
+3.0
 
 #### <a name="recommended-action"></a>建议操作
 
