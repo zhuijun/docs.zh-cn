@@ -9,12 +9,12 @@ api_type:
 - Assembly
 topic_type:
 - apiref
-ms.openlocfilehash: 312d977f832d262b1bebc6638280b67b133babdf
-ms.sourcegitcommit: 70d6a7e4f7187cbfa332f0f8be76566f7828cfcd
+ms.openlocfilehash: 0cd7409deb9cb84783cfa70600999fa4b2a2d2e2
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88084404"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187991"
 ---
 # <a name="controlbuilderinterceptor-class"></a>ControlBuilderInterceptor 类
 
@@ -33,7 +33,7 @@ internal class ControlBuilderInterceptor
 
 ## <a name="remarks"></a>备注
 
-在 .NET Framework 2.0 和 .NET Framework 3.5 中， [8 月 2020](https://portal.msrc.microsoft.com/security-guidance/releasenotedetail/2020-Aug)更新添加了对使用侦听器类型自定义或控制编译过程的支持。 您可以使用检查是否存在该类型来确定是否存在此支持 <xref:System.Type.GetType?displayProperty=nameWithType> `ControlBuilderInterceptor` ，如以下代码所示。
+在 .NET Framework 2.0 和 .NET Framework 3.5 中， [8 月 2020](https://portal.msrc.microsoft.com/security-guidance/releasenotedetail/2020-Aug) 更新添加了对使用侦听器类型自定义或控制编译过程的支持。 您可以使用检查是否存在该类型来确定是否存在此支持 <xref:System.Type.GetType?displayProperty=nameWithType> `ControlBuilderInterceptor` ，如以下代码所示。
 
 ```csharp
 Type type = Type.GetType("System.Web.Compilation.ControlBuilderInterceptor, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a");
@@ -46,7 +46,7 @@ Type type = Type.GetType("System.Web.Compilation.ControlBuilderInterceptor, Syst
 * 具有一个公共的无参数构造函数。
 * 具有与 `PreControlBuilderInit` `OnProcessGeneratedCode` 和方法相同的、具有与和方法相同的签名和语义的公共非静态方法 <xref:System.Web.Compilation.ControlBuilderInterceptor.PreControlBuilderInit(System.Web.UI.ControlBuilder,System.Web.UI.TemplateParser,System.Web.UI.ControlBuilder,System.Type,System.String,System.String,System.Collections.IDictionary,System.Collections.IDictionary)> <xref:System.Web.Compilation.ControlBuilderInterceptor.OnProcessGeneratedCode(System.Web.UI.ControlBuilder,System.CodeDom.CodeCompileUnit,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeTypeDeclaration,System.CodeDom.CodeMemberMethod,System.CodeDom.CodeMemberMethod,System.Collections.IDictionary)> ，这些方法存在于 .NET Framework 的更高版本中。
 
-使用 `aspnet:20ControlBuilderInterceptor` ASP.NET 应用程序设置 () 中的密钥注册侦听器类型 `<appSettings>` 。 此应用程序设置必须在您的计算机或应用程序*web.config*文件中列出。 使用程序集限定的类型名称指定侦听器类型。 下面的示例演示如何注册名为的侦听器类型 `Fabrikam.Interceptor` 。
+使用 `aspnet:20ControlBuilderInterceptor` ASP.NET 应用程序设置 () 中的密钥注册侦听器类型 `<appSettings>` 。 此应用程序设置必须在您的计算机或应用程序 *web.config* 文件中列出。 使用程序集限定的类型名称指定侦听器类型。 下面的示例演示如何注册名为的侦听器类型 `Fabrikam.Interceptor` 。
 
 ```xml
 <configuration>
@@ -57,8 +57,9 @@ Type type = Type.GetType("System.Web.Compilation.ControlBuilderInterceptor, Syst
          value="Fabrikam.Interceptor, Fabrikam, Version=1.0.0.0, Culture=neutral, PublicKeyToken=2b3831f2f2b744f7" />
   </appSettings>
 </configuration>
+```
 
-To retrieve the assembly-qualified name of a type, use the <xref:System.Type.AssemblyQualifiedName?displayProperty=nameWithType> property, as demonstrated in the following code.
+若要检索某个类型的程序集限定名称，请使用 <xref:System.Type.AssemblyQualifiedName?displayProperty=nameWithType> 属性，如下面的代码所示。
 
 ```csharp
 string assemblyQualifiedName = typeof(Fabrikam.Interceptor).AssemblyQualifiedName;
