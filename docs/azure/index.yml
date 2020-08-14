@@ -7,21 +7,21 @@ metadata:
   description: 关于 Azure 上 .NET 的示例、教程和培训内容
   ms.topic: hub-page
   ms.prod: azure-dotnet
-  ms.date: 07/31/2020
-  ms.openlocfilehash: 114f12dd33a565ec8332f24c965a74b083bd32c7
-  ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+  ms.date: 08/12/2020
+  ms.openlocfilehash: 041b2124dde5ea5a1d6c04947fe14b1f72f6dacc
+  ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/07/2020
-  ms.locfileid: "87916275"
+  ms.lasthandoff: 08/13/2020
+  ms.locfileid: "88187938"
 highlightedContent:
   items:
   - itemType: overview
     title: Azure 和 .NET 简介
     url: intro.md
   - itemType: quickstart
-    title: 部署 ASP.NET Web 应用
-    url: https://docs.microsoft.com/azure/app-service/app-service-web-get-started-dotnet
+    title: 在 Azure 中创建 ASP.NET Core Web 应用
+    url: /azure/app-service/quickstart-dotnetcore
   - itemType: quickstart
     title: 生成无服务器函数
     url: /azure/azure-functions/functions-create-your-first-function-visual-studio
@@ -30,16 +30,16 @@ highlightedContent:
     url: /visualstudio/containers/container-tools?view=vs-2019
   - itemType: deploy
     title: 使用 Azure DevOps 部署 .NET 应用
-    url: https://docs.microsoft.com/en-us/azure/devops/pipelines/ecosystems/dotnet-core?view=azure-devops
+    url: /azure/devops/pipelines/ecosystems/dotnet-core?view=azure-devops
   - itemType: tutorial
     title: 应用服务中的端到端身份验证
-    url: https://docs.microsoft.com/azure/app-service/app-service-web-tutorial-auth-aad
+    url: /azure/app-service/app-service-web-tutorial-auth-aad
   - itemType: learn
     title: 使用 Microsoft 标识保护自定义 API
-    url: https://docs.microsoft.com/learn/modules/identity-secure-custom-api/
+    url: /learn/modules/identity-secure-custom-api/
   - itemType: learn
     title: Azure 基础
-    url: https://docs.microsoft.com/learn/paths/azure-fundamentals/
+    url: /learn/paths/azure-fundamentals/
 conceptualContent:
   title: 特别推荐的内容
   summary: 学习开发利用各种 Azure 服务的 .NET 应用。
