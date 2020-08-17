@@ -6,22 +6,20 @@ ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 09/19/2019
-ms.openlocfilehash: fc1f6f9420c7149b6e67123f2f68bef75667aa0c
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 714ba0be7c2014895a75250a47e6ce448863eb6c
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173102"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267784"
 ---
 # <a name="pages-routing-and-layouts"></a>页面、路由和布局
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
+ASP.NET Web 窗体应用由 *.aspx* 文件中定义的页面组成。 每个页面的地址基于其在项目中的物理文件路径。 当浏览器向页面发出请求时，将在服务器上动态呈现该页的内容。 页的 HTML 标记及其服务器控件的呈现帐户。
 
-ASP.NET Web 窗体应用由 *.aspx*文件中定义的页面组成。 每个页面的地址基于其在项目中的物理文件路径。 当浏览器向页面发出请求时，将在服务器上动态呈现该页的内容。 页的 HTML 标记及其服务器控件的呈现帐户。
+在中 Blazor ，应用中的每个页面都是一个组件，通常在 *razor* 文件中定义，具有一个或多个指定路由。 路由大多数发生在客户端，而不涉及特定的服务器请求。 浏览器首先发出对应用程序根地址的请求。 `Router`然后，应用中的根组件会 Blazor 处理截获导航请求，并将它们处理到正确的组件。
 
-在中 Blazor ，应用中的每个页面都是一个组件，通常在*razor*文件中定义，具有一个或多个指定路由。 路由大多数发生在客户端，而不涉及特定的服务器请求。 浏览器首先发出对应用程序根地址的请求。 `Router`然后，应用中的根组件会 Blazor 处理截获导航请求，并将它们处理到正确的组件。
-
-Blazor还支持*深层链接*。 当浏览器向特定路由发出请求而不是应用的根时，将发生深层链接。 发送到服务器的深层链接的请求会路由到 Blazor 应用程序，该应用程序会将请求客户端路由到正确的组件。
+Blazor 还支持 *深层链接*。 当浏览器向特定路由发出请求而不是应用的根时，将发生深层链接。 发送到服务器的深层链接的请求会路由到 Blazor 应用程序，该应用程序会将请求客户端路由到正确的组件。
 
 ASP.NET Web 窗体中的简单页面可能包含以下标记：
 
@@ -92,9 +90,9 @@ public partial class Name : System.Web.UI.Page
 @page "/counter"
 ```
 
-路由模板参数是必需的。 与 ASP.NET Web 窗体不同，指向组件的路由 Blazor *不*会从其文件位置推断出来 (但这可能是将来) 中添加的功能。
+路由模板参数是必需的。 与 ASP.NET Web 窗体不同，指向组件的路由 Blazor *不* 会从其文件位置推断出来 (但这可能是将来) 中添加的功能。
 
-路由模板语法是用于在 ASP.NET Web 窗体中进行路由的基本语法。 使用大括号在模板中指定路由参数。 Blazor会将路由值绑定到同名)  (区分大小写的组件参数。
+路由模板语法是用于在 ASP.NET Web 窗体中进行路由的基本语法。 使用大括号在模板中指定路由参数。 Blazor 会将路由值绑定到同名)  (区分大小写的组件参数。
 
 ```razor
 @page "/product/{id}"
@@ -120,7 +118,7 @@ public partial class Name : System.Web.UI.Page
 }
 ```
 
-有关支持的路由约束的完整列表 Blazor ，请参阅[路由约束](/aspnet/core/blazor/routing#route-constraints)。
+有关支持的路由约束的完整列表 Blazor ，请参阅 [路由约束](/aspnet/core/blazor/routing#route-constraints)。
 
 ## <a name="router-component"></a>路由器组件
 
@@ -156,9 +154,9 @@ protected void NavigateButton_Click(object sender, EventArgs e)
 }
 ```
 
-通常不能返回重定向响应 Blazor 。 Blazor不使用请求-答复模式。 不过，您可以与 JavaScript 一起直接触发浏览器导航。
+通常不能返回重定向响应 Blazor 。 Blazor 不使用请求-答复模式。 不过，您可以与 JavaScript 一起直接触发浏览器导航。
 
-Blazor提供 `NavigationManager` 可用于的服务：
+Blazor 提供 `NavigationManager` 可用于的服务：
 
 - 获取当前浏览器地址
 - 获取基址
@@ -180,7 +178,7 @@ Blazor提供 `NavigationManager` 可用于的服务：
 }
 ```
 
-有关所有成员的说明 `NavigationManager` ，请参阅[URI 和导航状态帮助](/aspnet/core/blazor/routing#uri-and-navigation-state-helpers)程序。
+有关所有成员的说明 `NavigationManager` ，请参阅 [URI 和导航状态帮助](/aspnet/core/blazor/routing#uri-and-navigation-state-helpers)程序。
 
 ## <a name="base-urls"></a>基 URL
 
@@ -192,7 +190,7 @@ Blazor提供 `NavigationManager` 可用于的服务：
 
 ## <a name="page-layout"></a>页面布局
 
-ASP.NET Web 窗体中的页面布局由母版页处理。 母版页定义一个模板，其中包含一个或多个内容占位符，然后可以由各个页面提供。 母版页在 *.master*文件中定义，并以 `<%@ Master %>` 指令开头。 *文件内容的编码*方式与 *.aspx*页面的编码方式相同，但添加了 `<asp:ContentPlaceHolder>` 控件来标记页面可以提供内容的位置。
+ASP.NET Web 窗体中的页面布局由母版页处理。 母版页定义一个模板，其中包含一个或多个内容占位符，然后可以由各个页面提供。 母版页在 *.master* 文件中定义，并以 `<%@ Master %>` 指令开头。 *文件内容的编码*方式与 *.aspx*页面的编码方式相同，但添加了 `<asp:ContentPlaceHolder>` 控件来标记页面可以提供内容的位置。
 
 *Site.master*
 
@@ -242,7 +240,7 @@ ASP.NET Web 窗体中的页面布局由母版页处理。 母版页定义一个�
 @layout MainLayout
 ```
 
-你可以使用 *_Imports razor*文件指定文件夹和子文件夹中的所有组件的布局。 你还可以使用[路由器组件](#router-component)指定所有页面的默认布局。
+你可以使用 *_Imports razor* 文件指定文件夹和子文件夹中的所有组件的布局。 你还可以使用 [路由器组件](#router-component)指定所有页面的默认布局。
 
 母版页可以定义多个内容占位符，但中的布局 Blazor 只具有一个 `Body` 属性。 Blazor在未来的版本中，可能会解决布局组件的这一限制。
 

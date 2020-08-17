@@ -7,22 +7,20 @@ no-loc:
 - Blazor
 - Blazor WebAssembly
 ms.date: 09/19/2019
-ms.openlocfilehash: 1a99719f59415872510aef051d1f3c73daf53e15
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: d2dce23996e996a736b04c9cdd1ccf3b549ff3ff
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173271"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267550"
 ---
 # <a name="forms-and-validation"></a>窗体和验证
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
 ASP.NET Web 窗体框架包含一组验证服务器控件，这些控件处理)  (、、等输入到窗体中的验证用户输入 `RequiredFieldValidator` `CompareValidator` `RangeValidator` 。 ASP.NET Web 窗体框架还支持模型绑定，并基于)  (、、等数据批注验证模型 `[Required]` `[StringLength]` `[Range]` 。 使用基于 JavaScript 的非强制验证，可以在服务器和客户端上强制实施验证逻辑。 `ValidationSummary`服务器控件用于向用户显示验证错误的摘要。
 
-Blazor支持在客户端和服务器之间共享验证逻辑。 ASP.NET 提供了许多常见服务器验证的预构建 JavaScript 实现。 在许多情况下，开发人员仍需编写 JavaScript 来完全实现应用程序特定的验证逻辑。 可以在服务器和客户端上使用相同的模型类型、数据注释和验证逻辑。
+Blazor 支持在客户端和服务器之间共享验证逻辑。 ASP.NET 提供了许多常见服务器验证的预构建 JavaScript 实现。 在许多情况下，开发人员仍需编写 JavaScript 来完全实现应用程序特定的验证逻辑。 可以在服务器和客户端上使用相同的模型类型、数据注释和验证逻辑。
 
-Blazor提供一组输入组件。 输入组件会将绑定字段数据处理到模型，并在提交窗体时验证用户输入。
+Blazor 提供一组输入组件。 输入组件会将绑定字段数据处理到模型，并在提交窗体时验证用户输入。
 
 |输入组件|呈现的 HTML 元素    |
 |---------------|-------------------------|
@@ -126,11 +124,11 @@ public class Starship
 }
 ```
 
-提交窗体后，不会将模型绑定的数据保存到任何数据存储，如数据库。 在 Blazor WebAssembly 应用程序中，必须将数据发送到服务器。 例如，使用 HTTP POST 请求。 在 Blazor 服务器应用中，数据已在服务器上，但必须持久保存。 处理应用程序中的数据访问 Blazor 是处理[数据](data.md)部分的主题。
+提交窗体后，不会将模型绑定的数据保存到任何数据存储，如数据库。 在 Blazor WebAssembly 应用程序中，必须将数据发送到服务器。 例如，使用 HTTP POST 请求。 在 Blazor 服务器应用中，数据已在服务器上，但必须持久保存。 处理应用程序中的数据访问 Blazor 是处理 [数据](data.md) 部分的主题。
 
 ## <a name="additional-resources"></a>其他资源
 
-有关应用中[表单和验证](/aspnet/core/blazor/forms-validation)的详细信息 Blazor ，请参阅 Blazor 文档。
+有关应用中 [表单和验证](/aspnet/core/blazor/forms-validation) 的详细信息 Blazor ，请参阅 Blazor 文档。
 
 >[!div class="step-by-step"]
 >[上一页](state-management.md)

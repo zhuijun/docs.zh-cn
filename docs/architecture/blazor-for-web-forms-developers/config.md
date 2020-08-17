@@ -6,25 +6,23 @@ ms.author: jefritz
 no-loc:
 - Blazor
 ms.date: 04/01/2020
-ms.openlocfilehash: a13f663c2c6908ba906e42cb939c3b8707b8cccd
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 6154b4f8c7a5bff42e603b12d5ef85468b80224e
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173297"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267498"
 ---
 # <a name="app-configuration"></a>应用配置
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-在 Web 窗体中加载应用程序配置的主要方法是在服务器上使用*web.config*文件中的条目， &mdash; 或者*web.config*引用相关的配置文件。您可以使用静态 `ConfigurationManager` 对象与应用程序设置、数据存储库连接字符串以及添加到应用中的其他扩展配置提供程序进行交互。 通常，查看与应用配置的交互，如以下代码所示：
+在 Web 窗体中加载应用程序配置的主要方法是在服务器上使用 *web.config* 文件中的条目， &mdash; 或者 *web.config*引用相关的配置文件。您可以使用静态 `ConfigurationManager` 对象与应用程序设置、数据存储库连接字符串以及添加到应用中的其他扩展配置提供程序进行交互。 通常，查看与应用配置的交互，如以下代码所示：
 
 ```csharp
 var configurationValue = ConfigurationManager.AppSettings["ConfigurationSettingName"];
 var connectionString = ConfigurationManager.ConnectionStrings["MyDatabaseConnectionName"].ConnectionString;
 ```
 
-Blazor如果你的应用程序托管在 WINDOWS IIS 服务器上，则使用 ASP.NET Core 和服务器端时，可能会出现*web.config*文件。 但是， `ConfigurationManager` 与此配置并无交互，你可以从其他来源接收更多结构化应用配置。 让我们看看如何收集配置，以及你仍可以如何从*web.config*文件访问配置信息。
+Blazor如果你的应用程序托管在 WINDOWS IIS 服务器上，则使用 ASP.NET Core 和服务器端时，可能会出现*web.config*文件。 但是， `ConfigurationManager` 与此配置并无交互，你可以从其他来源接收更多结构化应用配置。 让我们看看如何收集配置，以及你仍可以如何从 *web.config* 文件访问配置信息。
 
 ## <a name="configuration-sources"></a>配置源
 
@@ -34,15 +32,15 @@ ASP.NET Core 被设计为能够识别云，并使运营商和开发人员更容�
 
 应用可根据环境名称从多个源触发并添加配置。 默认情况下，按列出的顺序从以下资源加载配置：
 
-1. *appsettings.js*文件（如果存在）
-1. *appsettings。{ENVIRONMENT_NAME} json*文件（如果存在）
+1. *appsettings.js* 文件（如果存在）
+1. *appsettings。{ENVIRONMENT_NAME} json* 文件（如果存在）
 1. 磁盘上的用户机密文件（如果存在）
 1. 环境变量
 1. 命令行参数
 
 ## <a name="appsettingsjson-format-and-access"></a>格式和访问 appsettings.js
 
-文件*上的appsettings.js*可以通过结构化的值进行分层，如以下 JSON：
+文件 * 上的appsettings.js* 可以通过结构化的值进行分层，如以下 JSON：
 
 ```json
 {
@@ -82,7 +80,7 @@ dotnet user-secrets set "Parent:ApiKey" "12345"
 
 上述命令使 `Parent:ApiKey` 使用值的开发人员工作站上的配置密钥可用 `12345` 。
 
-有关创建、存储和管理用户机密的详细信息，请参阅 ASP.NET Core 文档中的开发中的[应用机密的安全存储](/aspnet/core/security/app-secrets)。
+有关创建、存储和管理用户机密的详细信息，请参阅 ASP.NET Core 文档中的开发中的 [应用机密的安全存储](/aspnet/core/security/app-secrets) 。
 
 ## <a name="environment-variables"></a>环境变量
 
@@ -100,7 +98,7 @@ dotnet run Parent:ApiKey=67890
 
 ## <a name="the-return-of-webconfig"></a>返回 web.config
 
-如果已将应用程序部署到 IIS 上的 Windows，则*web.config*文件仍会将 IIS 配置为管理你的应用程序。 默认情况下，IIS 会将对 ASP.NET Core 模块的引用添加 (ANCM) 。 ANCM 是一个本机 IIS 模块，它托管你的应用程序来代替 Kestrel web 服务器。 此*web.config*部分类似于下面的 XML 标记：
+如果已将应用程序部署到 IIS 上的 Windows，则 *web.config* 文件仍会将 IIS 配置为管理你的应用程序。 默认情况下，IIS 会将对 ASP.NET Core 模块的引用添加 (ANCM) 。 ANCM 是一个本机 IIS 模块，它托管你的应用程序来代替 Kestrel web 服务器。 此 *web.config* 部分类似于下面的 XML 标记：
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -136,7 +134,7 @@ dotnet run Parent:ApiKey=67890
 
 ## <a name="read-configuration-in-the-app"></a>在应用中读取配置
 
-ASP.NET Core 提供通过接口的应用配置 <xref:Microsoft.Extensions.Configuration.IConfiguration> 。 此配置接口应由 Blazor 组件、 Blazor 页面以及需要访问配置的任何其他 ASP.NET Core 托管类请求。 ASP.NET Core 框架将用先前配置的解析配置自动填充此接口。 在 Blazor 页或组件的 Razor 标记上，可以将对象注入到 `IConfiguration` `@inject` *Razor*文件顶部的指令，如下所示：
+ASP.NET Core 提供通过接口的应用配置 <xref:Microsoft.Extensions.Configuration.IConfiguration> 。 此配置接口应由 Blazor 组件、 Blazor 页面以及需要访问配置的任何其他 ASP.NET Core 托管类请求。 ASP.NET Core 框架将用先前配置的解析配置自动填充此接口。 在 Blazor 页或组件的 Razor 标记上，可以将对象注入到 `IConfiguration` `@inject` *Razor* 文件顶部的指令，如下所示：
 
 ```razor
 @inject IConfiguration Configuration
@@ -161,7 +159,7 @@ var mySetting = Configuration["section1:key0"];
 * 不需要从父类继承。
 * 应包括 `public` 与你要捕获的配置结构的属性和类型引用相匹配的属性。
 
-对于前面*appsettings.js*的示例，可以定义以下类来捕获值：
+对于前面 *appsettings.js* 的示例，可以定义以下类来捕获值：
 
 ```csharp
 public class MyConfig
@@ -195,7 +193,7 @@ services.Configure<MyConfig>(Configuration);
 }
 ```
 
-有关选项功能的详细信息，请参阅 ASP.NET Core 文档的[选项模式](/aspnet/core/fundamentals/configuration/options#options-interfaces)。
+有关选项功能的详细信息，请参阅 ASP.NET Core 文档的 [选项模式](/aspnet/core/fundamentals/configuration/options#options-interfaces) 。
 
 >[!div class="step-by-step"]
 >[上一页](middleware.md)
