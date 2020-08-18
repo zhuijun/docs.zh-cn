@@ -7,16 +7,17 @@ metadata:
   level: Beginner
   ms.custom: mvc
   ms.date: 08/24/2018
+  ms.topic: interactive-tutorial
   displayType: two-column
   interactive: csharp
   nextTutorialHref: list-collection.yml
   nextTutorialTitle: 列表集合
-  ms.openlocfilehash: e7679c511cf67eed55687c5815bcf7faf4e1e624
-  ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+  ms.openlocfilehash: 596dfeca6e8910bd954b63364af958b7bef1580a
+  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/14/2020
-  ms.locfileid: "83396848"
+  ms.lasthandoff: 08/17/2020
+  ms.locfileid: "88267537"
 items:
 - durationInMinutes: 1
   content: >
