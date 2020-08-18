@@ -113,18 +113,18 @@ public interface IRepository<T> where T : IAggregateRoot
 - **Edward Hieatt 和 Rob Mee.Repository pattern**（存储库模式）。 \
   <https://martinfowler.com/eaaCatalog/repository.html>
 
-- **The Repository pattern** \（存储库模式）\
+- **The Repository pattern**（存储库模式） \
   <https://docs.microsoft.com/previous-versions/msp-n-p/ff649690(v=pandp.10)>
 
-- **Eric Evans。域驱动设计：Tackling Complexity in the Heart of Software.** （域驱动设计：软件核心复杂性应对之道）\ （书；包含对存储库模式的讨论）\
+- **Eric Evans。域驱动设计：Tackling Complexity in the Heart of Software.** （域驱动设计：软件核心复杂性应对之道） （书；包含对存储库模式的讨论）\
   <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
 ### <a name="unit-of-work-pattern"></a>工作单元模式
 
-- **Martin Fowler。Unit of Work pattern**（工作单元模式）。\ \
+- **Martin Fowler。Unit of Work pattern**（工作单元模式）。 \
   <https://martinfowler.com/eaaCatalog/unitOfWork.html>
 
-- **Implementing the Repository and Unit of Work Patterns in an ASP.NET MVC Application** \（在 ASP.NET MVC 应用程序中实现存储库模式和工作单元模式）\
+- **Implementing the Repository and Unit of Work Patterns in an ASP.NET MVC Application**（在 ASP.NET MVC 应用程序中实现存储库模式和工作单元模式） \
   <https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application>
 
 >[!div class="step-by-step"]
