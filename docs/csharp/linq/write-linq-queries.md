@@ -3,12 +3,12 @@ title: 在 C# 中编写 LINQ 查询
 description: 了解如何在 C# 中编写 LINQ 查询。
 ms.date: 12/01/2016
 ms.assetid: 30703f79-cf3a-4d02-b892-c95d58a1d9ed
-ms.openlocfilehash: ed32543b0422e0664a8577f2c27f7c7c00a719a1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bd7da81f2873c6a25570cab32fafecc66fd98be4
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "65632877"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063440"
 ---
 # <a name="write-linq-queries-in-c"></a>在 C\# 中编写 LINQ 查询
 
@@ -43,7 +43,7 @@ ms.locfileid: "65632877"
 
 [!code-csharp[csProgGuideLINQ#6](~/samples/snippets/csharp/concepts/linq/how-to-write-linq-queries_2.cs)]
 
-如果方法具有 Action 或 Func 参数，则这些参数以 [lambda](../programming-guide/statements-expressions-operators/lambda-expressions.md) 表达式的形式提供，如下面的示例所示：
+如果方法具有 Action 或 Func 参数，则这些参数以 [lambda](../language-reference/operators/lambda-expressions.md) 表达式的形式提供，如下面的示例所示：
 
 [!code-csharp[csProgGuideLINQ#7](~/samples/snippets/csharp/concepts/linq/how-to-write-linq-queries_3.cs)]
 

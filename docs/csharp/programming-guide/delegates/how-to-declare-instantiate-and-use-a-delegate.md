@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-ms.openlocfilehash: 8d4c8424b07a9bccc9112ca9e635a78b9e1a3366
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: b741b3bc9c03faaa5fa2c01bd8f70d4be9b099c2
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87300210"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063661"
 ---
 # <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>如何声明、实例化和使用委托（C# 编程指南）
 在 C# 1.0 和更高版本中，可以如下面的示例所示声明委托。  
@@ -31,7 +31,7 @@ ms.locfileid: "87300210"
   
  [!code-csharp[csProgGuideDelegates#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#31)]  
   
- 有关详细信息，请参阅 [Lambda 表达式](../statements-expressions-operators/lambda-expressions.md)。  
+ 有关详细信息，请参阅 [Lambda 表达式](../../language-reference/operators/lambda-expressions.md)。  
   
  下面的示例演示如何声明、实例化和使用委托。 `BookDB` 类封装用来维护书籍数据库的书店数据库。 它公开一个方法 `ProcessPaperbackBooks`，用于在数据库中查找所有平装书并为每本书调用委托。 使用的 `delegate` 类型名为 `ProcessBookDelegate`。 `Test` 类使用此类打印平装书的书名和平均价格。  
   

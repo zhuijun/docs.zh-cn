@@ -7,18 +7,18 @@ helpviewer_keywords:
 - anonymous functions [C#]
 - anonymous methods [C#]
 ms.assetid: 6ce3f04d-0c71-4728-9127-634c7e9a8365
-ms.openlocfilehash: ae8bda3c68542637b1430587ca4a537980c028bc
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: 1fde7d535054f09d55018a010468776622ebfba7
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381666"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063258"
 ---
 # <a name="anonymous-functions-c-programming-guide"></a>匿名函数 -（C# 编程指南）
 
 匿名函数是一个“内联”语句或表达式，可在需要委托类型的任何地方使用。 可以使用匿名函数来初始化命名委托，或传递命名委托（而不是命名委托类型）作为方法参数。
 
-可以使用 [lambda 表达式](lambda-expressions.md)或[匿名方法](../../language-reference/operators/delegate-operator.md)来创建匿名函数。 建议使用 lambda 表达式，因为它们提供了更简洁和富有表现力的方式来编写内联代码。 与匿名方法不同，某些类型的 lambda 表达式可以转换为表达式树类型。
+可以使用 [lambda 表达式](../../language-reference/operators/lambda-expressions.md)或[匿名方法](../../language-reference/operators/delegate-operator.md)来创建匿名函数。 建议使用 lambda 表达式，因为它们提供了更简洁和富有表现力的方式来编写内联代码。 与匿名方法不同，某些类型的 lambda 表达式可以转换为表达式树类型。
 
 ## <a name="the-evolution-of-delegates-in-c"></a>C\# 中委托的演变
 
@@ -35,6 +35,6 @@ ms.locfileid: "87381666"
 ## <a name="see-also"></a>请参阅
 
 - [语句、表达式和运算符](./index.md)
-- [Lambda 表达式](./lambda-expressions.md)
+- [Lambda 表达式](../../language-reference/operators/lambda-expressions.md)
 - [委托](../delegates/index.md)
 - [表达式树 (C#)](../concepts/expression-trees/index.md)

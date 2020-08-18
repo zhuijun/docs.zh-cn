@@ -10,19 +10,19 @@ helpviewer_keywords:
 - Action delegate, creating with lambda expression
 - lambda expressions, with Action and Func
 ms.assetid: 645b2c17-29d0-4ffa-8684-430743cc2f2d
-ms.openlocfilehash: 3d985a003fe613699c89e38583f84be9e21b383d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 469c164630e1dab84b3d54c16c43d031ebf560ed
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290663"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063765"
 ---
 # <a name="lambda-expressions-in-plinq-and-tpl"></a>PLINQ 和 TPL 中的 Lambda 表达式
 
 任务并行库 (TPL) 包含许多方法，需要使用 <xref:System.Func%601?displayProperty=nameWithType> 或 <xref:System.Action?displayProperty=nameWithType> 系列委托之一作为输入参数。 使用这些委托将自定义程序逻辑传入到并行循环、任务或查询中。 TPL 以及 PLINQ 的代码示例使用 lambda 表达式以内联代码块的形式创建这些委托的实例。 本主题简要介绍 Func 和 Action，并演示如何在任务并行库和 PLINQ 中使用 lambda 表达式。
 
 > [!NOTE]
-> 有关委托的更多常规信息，请参阅[委托](../../csharp/programming-guide/delegates/index.md)和[委托](../../visual-basic/programming-guide/language-features/delegates/index.md)。 有关 C# 和 Visual Basic 中的 lambda 表达式的详细信息，请参阅 [Lambda 表达式](../../csharp/programming-guide/statements-expressions-operators/lambda-expressions.md)和 [Lambda 表达式](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)。
+> 有关委托的更多常规信息，请参阅[委托](../../csharp/programming-guide/delegates/index.md)和[委托](../../visual-basic/programming-guide/language-features/delegates/index.md)。 有关 C# 和 Visual Basic 中的 lambda 表达式的详细信息，请参阅 [Lambda 表达式](../../csharp/language-reference/operators/lambda-expressions.md)和 [Lambda 表达式](../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)。
 
 ## <a name="func-delegate"></a>Func 委托
 

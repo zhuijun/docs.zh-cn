@@ -8,16 +8,16 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: 89133339a75c70e3ac86d627065e78d555bff71d
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: 279ea2f9875681401c9c7acab922d9e4424e6827
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507199"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062530"
 ---
 # <a name="async-c-reference"></a>async（C# 参考）
 
-使用 `async` 修饰符可将方法、[lambda 表达式](../../programming-guide/statements-expressions-operators/lambda-expressions.md)或[匿名方法](../operators/delegate-operator.md)指定为异步。 如果对方法或表达式使用此修饰符，则其称为异步方法  。 如下示例定义了一个名为 `ExampleMethodAsync` 的异步方法：
+使用 `async` 修饰符可将方法、[lambda 表达式](../operators/lambda-expressions.md)或[匿名方法](../operators/delegate-operator.md)指定为异步。 如果对方法或表达式使用此修饰符，则其称为异步方法  。 如下示例定义了一个名为 `ExampleMethodAsync` 的异步方法：
   
 ```csharp  
 public async Task<int> ExampleMethodAsync()  

@@ -4,12 +4,12 @@ description: 详细介绍 .NET 中支持委托的类以及这些类映射到“d
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: f3742fda-13c2-4283-8966-9e21c2674393
-ms.openlocfilehash: 87fdf19c4ea810c5ac4409fe16c3cba9d5fc6574
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9df8ad68f6bfa62863ee047875b6419fc81ad779
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146276"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062458"
 ---
 # <a name="systemdelegate-and-the-delegate-keyword"></a>System.Delegate 和 `delegate` 关键字
 
@@ -100,7 +100,7 @@ Comparison<string> comparer = CompareLength;
 phrases.Sort(comparer);
 ```
 
-在用作委托目标的方法是小型方法的用法中，经常使用 [lambda 表达式](./programming-guide/statements-expressions-operators/lambda-expressions.md)语法来执行分配：
+在用作委托目标的方法是小型方法的用法中，经常使用 [lambda 表达式](language-reference/operators/lambda-expressions.md)语法来执行分配：
 
 ```csharp
 Comparison<string> comparer = (left, right) => left.Length.CompareTo(right.Length);

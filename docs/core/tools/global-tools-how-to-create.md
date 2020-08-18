@@ -1,13 +1,14 @@
 ---
 title: 教程：创建 .NET Core 工具
 description: 了解如何创建 .NET Core 工具。 工具是一个通过使用 .NET Core CLI 安装的控制台应用程序。
+ms.topic: tutorial
 ms.date: 02/12/2020
-ms.openlocfilehash: 88cc3be7b149834ace0c5f3ba8ac8c039199908f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c1c17368d8efdece73f5312899553bacf884cfb3
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156720"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062777"
 ---
 # <a name="tutorial-create-a-net-core-tool-using-the-net-core-cli"></a>教程：使用 .NET Core CLI 创建 .NET Core 工具
 

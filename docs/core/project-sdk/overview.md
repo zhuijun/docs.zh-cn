@@ -4,12 +4,12 @@ titleSuffix: ''
 description: 了解 .NET Core 项目 SDK。
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: 9db62ab7774e3dd71412fa346d78ae0c62a2f81f
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 873c06007307c5892c4828f987486b4dd98dc9ae
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803036"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187915"
 ---
 # <a name="net-core-project-sdks"></a>.NET Core 项目 SDK
 
@@ -22,7 +22,7 @@ ms.locfileid: "85803036"
 | Id | 描述 | 存储库|
 | - | - | - |
 | `Microsoft.NET.Sdk` | .NET Core SDK | <https://github.com/dotnet/sdk> |
-| `Microsoft.NET.Sdk.Web` | .NET Core [Web SDK](/aspnet/core/razor-pages/web-sdk) | <https://github.com/aspnet/websdk> |
+| `Microsoft.NET.Sdk.Web` | .NET Core [Web SDK](/aspnet/core/razor-pages/web-sdk) | <https://github.com/dotnet/sdk> |
 | `Microsoft.NET.Sdk.Razor` | .NET Core [Razor SDK](/aspnet/core/razor-pages/sdk) |
 | `Microsoft.NET.Sdk.Worker` | .NET Core 辅助角色服务 SDK |
 | `Microsoft.NET.Sdk.WindowsDesktop` | .NET Core WinForms 和 WPF SDK |

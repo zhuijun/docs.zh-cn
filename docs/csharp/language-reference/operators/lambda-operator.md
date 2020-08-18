@@ -7,12 +7,12 @@ helpviewer_keywords:
 - lambda operator [C#]
 - => operator [C#]
 - lambda expressions [C#], => operator
-ms.openlocfilehash: b72b058c1709e7a643a70233cc3289d5d9165ca4
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 30e1a3546f83a0a1ba5b1363238878868e94ab93
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916800"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063128"
 ---
 # <a name="-operator-c-reference"></a>=> 运算符（C# 参考）
 
@@ -20,7 +20,7 @@ ms.locfileid: "87916800"
 
 ## <a name="lambda-operator"></a>lambda 运算符
 
-在 [lambda 表达式](../../programming-guide/statements-expressions-operators/lambda-expressions.md)中，lambda 运算符 `=>` 将左侧的输入参数与右侧的 lambda 主体分开。
+在 [lambda 表达式](lambda-expressions.md)中，lambda 运算符 `=>` 将左侧的输入参数与右侧的 lambda 主体分开。
 
 以下示例使用带有方法语法的 [LINQ](../../programming-guide/concepts/linq/index.md) 功能来演示 lambda 表达式的用法：
 
@@ -34,7 +34,7 @@ lambda 表达式的输入参数在编译时是强类型。 当编译器可以推
 
 [!code-csharp-interactive[without input variables](snippets/shared/LambdaOperator.cs#WithoutInput)]
 
-有关详细信息，请参阅 [Lambda 表达式](../../programming-guide/statements-expressions-operators/lambda-expressions.md)。
+有关详细信息，请参阅 [Lambda 表达式](lambda-expressions.md)。
 
 ## <a name="expression-body-definition"></a>表达式主体定义
 

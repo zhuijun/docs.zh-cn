@@ -4,12 +4,12 @@ description: 了解如何使用内置 C# 迭代器以及如何创建自己的自
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 5cf36f45-f91a-4fca-a0b7-87f233e108e9
-ms.openlocfilehash: efa755c2243c18fb51b653abccb2bfc702bbc055
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.openlocfilehash: c2a1dfe38b6a65e382e140541c71e94bb0fc76aa
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507372"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062478"
 ---
 # <a name="iterators"></a>迭代器
 
@@ -195,7 +195,7 @@ while (enumerator.MoveNext())
 }
 ```
 
-此范围更改的原因在于：较早行为可能导致难以诊断出有关 Lambda 表达式的 bug。 若要详细了解 lambda 表达式，请参阅 [lambda 表达式](./programming-guide/statements-expressions-operators/lambda-expressions.md)。
+此范围更改的原因在于：较早行为可能导致难以诊断出有关 Lambda 表达式的 bug。 若要详细了解 lambda 表达式，请参阅 [lambda 表达式](language-reference/operators/lambda-expressions.md)。
 
 编译器生成的确切代码更复杂一些，用于处理 `GetEnumerator()` 返回的对象实现 `IDisposable` 的情况。 完整扩展生成的代码更类似如下：
 

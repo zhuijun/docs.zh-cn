@@ -4,12 +4,12 @@ description: C# 中的本地函数是嵌套在另一成员中并且可以从其�
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: 9987d6d5ad57c1dceb3a4bffbae22a81c240c794
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 854ec7ab4a4cc637c0a5ad03e0344d2f1f7679d2
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864522"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063297"
 ---
 # <a name="local-functions-c-programming-guide"></a>本地函数（C# 编程指南）
 
@@ -78,7 +78,7 @@ ms.locfileid: "86864522"
 
 ## <a name="local-functions-vs-lambda-expressions"></a>本地函数与 Lambda 表达式
 
-乍看之下，本地函数和 [lambda 表达式](../statements-expressions-operators/lambda-expressions.md)非常相似。 在许多情况下，选择使用 Lambda 表达式还是本地函数是风格和个人偏好的问题。 但是，应该注意，从两者中选用一种的时机和条件其实是存在差别的。
+乍看之下，本地函数和 [lambda 表达式](../../language-reference/operators/lambda-expressions.md)非常相似。 在许多情况下，选择使用 Lambda 表达式还是本地函数是风格和个人偏好的问题。 但是，应该注意，从两者中选用一种的时机和条件其实是存在差别的。
 
 让我们检查一下阶乘算法的本地函数实现和 lambda 表达式实现之间的差异。 首先使用本地函数的版本：
 

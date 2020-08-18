@@ -3,12 +3,12 @@ title: 概念和术语（函数转换）(C#)
 description: 函数编程功能降低了转换 XML 的难度。 了解 C# 中纯函数转换的概念和术语。
 ms.date: 07/20/2015
 ms.assetid: 03defb3a-7e17-4ab1-8efa-4dd66621e860
-ms.openlocfilehash: ee972b376f0d0898b7681049b9641b43780ed353
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: ca05a914f6156730e773d1effebfc72626b16507
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103977"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063271"
 ---
 # <a name="concepts-and-terminology-functional-transformation-c"></a>概念和术语（函数转换）(C#)
 
@@ -55,7 +55,7 @@ ms.locfileid: "87103977"
 Lambda 表达式\
 实质上是一个匿名的内联函数，可用在任何需要委托类型的地方。 这是对 lambda 表达式的一个简化的定义，但足以满足本教程的需要。
 
-有关 Lambda 表达式的详细信息，请参阅 [Lambda 表达式](../../statements-expressions-operators/lambda-expressions.md)。
+有关 Lambda 表达式的详细信息，请参阅 [Lambda 表达式](../../../language-reference/operators/lambda-expressions.md)。
 
 集合\
 结构化的一组数据，通常具有统一的类型。 若要与 LINQ 兼容，集合必须实现 <xref:System.Collections.IEnumerable> 接口或 <xref:System.Linq.IQueryable> 接口（或它们对应的泛型接口 <xref:System.Collections.Generic.IEnumerator%601> 或 <xref:System.Linq.IQueryable%601> 之一）。

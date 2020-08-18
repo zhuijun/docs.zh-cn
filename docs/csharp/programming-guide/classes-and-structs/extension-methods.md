@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: e57447c89749451862bbb80047ed74135a0eb752
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 116087ac1aab57f2869b05f436801c7861c56eca
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474808"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063700"
 ---
 # <a name="extension-methods-c-programming-guide"></a>扩展方法（C# 编程指南）
 
@@ -22,7 +22,7 @@ ms.locfileid: "86474808"
 
 ### <a name="orderby-example"></a>OrderBy 示例
 
-下面的示例演示如何对一个整数数组调用标准查询运算符 `OrderBy` 方法。 括号里面的表达式是一个 lambda 表达式。 很多标准查询运算符采用 Lambda 表达式作为参数，但这不是扩展方法的必要条件。 有关详细信息，请参阅 [Lambda 表达式](../statements-expressions-operators/lambda-expressions.md)。
+下面的示例演示如何对一个整数数组调用标准查询运算符 `OrderBy` 方法。 括号里面的表达式是一个 lambda 表达式。 很多标准查询运算符采用 Lambda 表达式作为参数，但这不是扩展方法的必要条件。 有关详细信息，请参阅 [Lambda 表达式](../../language-reference/operators/lambda-expressions.md)。
 
 [!code-csharp[csProgGuideExtensionMethods#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExtensionMethods/cs/extensionmethods.cs#3)]
 
@@ -121,7 +121,7 @@ static class DomainEntityExtensions
 
 - [C# 编程指南](../index.md)
 - [并行编程示例（这些示例包括许多示例扩展方法）](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)
-- [Lambda 表达式](../statements-expressions-operators/lambda-expressions.md)
+- [Lambda 表达式](../../language-reference/operators/lambda-expressions.md)
 - [标准查询运算符概述](../concepts/linq/standard-query-operators-overview.md)
 - [Conversion rules for Instance parameters and their impact](https://docs.microsoft.com/archive/blogs/sreekarc/conversion-rules-for-instance-parameters-and-their-impact)（实例参数及其影响的转换规则）
 - [Extension methods Interoperability between languages](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-interoperability-between-languages)（语言间扩展方法的互操作性）

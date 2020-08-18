@@ -8,12 +8,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: dbe9b47625589de834b7a8021640885ca0920b96
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 515b8d9adc1359581625f0d822e254d2c1df3b58
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "82021276"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062491"
 ---
 # <a name="structure-types-c-reference"></a>结构类型（C# 参考）
 
@@ -111,7 +111,7 @@ ms.locfileid: "82021276"
 - `ref` 结构不能实现接口。
 - `ref` 结构不能被装箱为 <xref:System.ValueType?displayProperty=nameWithType> 或 <xref:System.Object?displayProperty=nameWithType>。
 - `ref` 结构不能是类型参数。
-- `ref` 结构变量不能由 [lambda 表达式](../../programming-guide/statements-expressions-operators/lambda-expressions.md)或[本地函数](../../programming-guide/classes-and-structs/local-functions.md)捕获。
+- `ref` 结构变量不能由 [lambda 表达式](../operators/lambda-expressions.md)或[本地函数](../../programming-guide/classes-and-structs/local-functions.md)捕获。
 - `ref` 结构变量不能在 [`async`](../keywords/async.md) 方法中使用。 但是，可以在同步方法中使用 `ref` 结构变量，例如，在返回 <xref:System.Threading.Tasks.Task> 或 <xref:System.Threading.Tasks.Task%601> 的方法中。
 - `ref` 结构变量不能在[迭代器](../../iterators.md)中使用。
 

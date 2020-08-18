@@ -4,16 +4,16 @@ description: 介绍 .NET Core 中的表达式树，以及如何用它们将代�
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: aceb4719-0d5a-4b19-b01f-b51063bcc54f
-ms.openlocfilehash: e1026ef70860da519b688a9d67181b88d03f6f0b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 62f5b93097ee8ad2177fc0bb484c656408f91f30
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79145834"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062504"
 ---
 # <a name="expression-trees"></a>表达式树
 
-如果你使用过 LINQ，则会有丰富库（其中 `Func` 类型是 API 集的一部分）的经验。 （如果尚不熟悉 LINQ，建议阅读 [LINQ 教程](linq/index.md)，以及本文前面有关 [lambda 表达式](./programming-guide/statements-expressions-operators/lambda-expressions.md)的文章。）表达式树  提供与作为函数的参数的更丰富的交互。
+如果你使用过 LINQ，则会有丰富库（其中 `Func` 类型是 API 集的一部分）的经验。 （如果尚不熟悉 LINQ，建议阅读 [LINQ 教程](linq/index.md)，以及本文前面有关 [lambda 表达式](language-reference/operators/lambda-expressions.md)的文章。）表达式树  提供与作为函数的参数的更丰富的交互。
 
 在创建 LINQ 查询时，通常使用 Lambda 表达式编写函数参数。 在典型的 LINQ 查询中，这些函数参数会被转换为编译器创建的委托。
 

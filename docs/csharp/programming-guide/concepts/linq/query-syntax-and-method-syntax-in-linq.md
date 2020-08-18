@@ -6,12 +6,12 @@ helpviewer_keywords:
 - LINQ [C#], query syntax vs. method syntax
 - queries [LINQ in C#], syntax comparisons
 ms.assetid: eedd6dd9-fec2-428c-9581-5b8783810ded
-ms.openlocfilehash: 1765a15347aeedb9cc5fa6784abdfad6fafe4016
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 46b0e44182d22158aa5fa54a0f44bae70aa8ddd9
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87300756"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063037"
 ---
 # <a name="query-syntax-and-method-syntax-in-linq-c"></a>LINQ 中的查询语法和方法语法 (C#)
 介绍性的语言集成查询 (LINQ) 文档中的大多数查询是使用 LINQ 声明性查询语法编写的。 但是在编译代码时，查询语法必须转换为针对 .NET 公共语言运行时 (CLR) 的方法调用。 这些方法调用会调用标准查询运算符（名称为 `Where`、`Select`、`GroupBy`、`Join`、`Max` 和 `Average` 等）。 可以使用方法语法（而不查询语法）来直接调用它们。  
@@ -38,7 +38,7 @@ ms.locfileid: "87300756"
 ## <a name="lambda-expressions"></a>Lambda 表达式  
  在上面的示例中，请注意，条件表达式 (`num % 2 == 0`) 作为内联参数传递给 `Where` 方法：`Where(num => num % 2 == 0).` 此内联表达式称为 lambda 表达式。 可采用匿名方法、泛型委托或表达式树的形式编写原本必须以更繁琐的形式编写的代码，这是一种便利的方式。 在 C# 中，`=>` 是 lambda 运算符（读为“转到”）。 运算符左侧的 `num` 是输入变量，它与查询表达式中的 `num` 对应。 编译器可以推断出 `num` 的类型，因为它知道 `numbers` 是泛型 <xref:System.Collections.Generic.IEnumerable%601> 类型。 Lambda 的主体与查询语法中或任何其他 C# 表达式或语句中的表达式完全相同；它可以包含方法调用和其他复杂逻辑。 “返回值”就是表达式结果。  
   
- 若要开始使用 LINQ，不必大量使用 lambda。 但是，某些查询只能采用方法语法进行表示，而其中一些查询需要 lambda 表达式。 进一步熟悉 lambda 之后，你会发现它们是 LINQ 工具箱中一种强大而灵活的工具。 有关详细信息，请参阅 [Lambda 表达式](../../statements-expressions-operators/lambda-expressions.md)。  
+ 若要开始使用 LINQ，不必大量使用 lambda。 但是，某些查询只能采用方法语法进行表示，而其中一些查询需要 lambda 表达式。 进一步熟悉 lambda 之后，你会发现它们是 LINQ 工具箱中一种强大而灵活的工具。 有关详细信息，请参阅 [Lambda 表达式](../../../language-reference/operators/lambda-expressions.md)。  
   
 ## <a name="composability-of-queries"></a>查询的可组合性  
  在前面的代码示例中，请注意，`OrderBy` 方法通过对 `Where` 调用使用点运算符来调用。 `Where` 会生成经过筛选的序列，然后 `Orderby` 通过进行排序来对该序列进行操作。 由于查询返回 `IEnumerable`，因此可通过将方法调用链接在一起在方法语法中撰写查询。 这是当你使用查询语法编写查询时，编译器在幕后进行的工作。 因为查询变量不存储查询的结果，所以可以随时修改它或将它用作新查询的基础（即使在执行过它之后）。  

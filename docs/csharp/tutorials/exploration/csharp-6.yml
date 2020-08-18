@@ -6,14 +6,15 @@ metadata:
   audience: Developer
   level: intermediate
   ms.date: 12/11/2018
+  ms.topic: interactive-tutorial
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 45f76b4d0df32436e5ae8e252cae80c7a63d5e36
-  ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+  ms.openlocfilehash: 1dfd9dba60f21cf80e53ac1e9735859cb567797d
+  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/17/2020
-  ms.locfileid: "81607449"
+  ms.lasthandoff: 08/17/2020
+  ms.locfileid: "88268096"
 items:
 - durationInMinutes: 1
   content: >

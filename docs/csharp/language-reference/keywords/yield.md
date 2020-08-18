@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
-ms.openlocfilehash: d3fe4cf92ca17457bd541f092f5d146ba6c1c095
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: ec1058d1590d64fa8d8786b3118ecf9733c55d6f
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794411"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063141"
 ---
 # <a name="yield-c-reference"></a>yield（C# 参考）
 
@@ -47,7 +47,7 @@ yield break;
 
 以下情形中不能包含 `yield return` 或 `yield break` 语句：
 
-- [Lambda 表达式](../../programming-guide/statements-expressions-operators/lambda-expressions.md)和[匿名方法](../operators/delegate-operator.md)。
+- [Lambda 表达式](../operators/lambda-expressions.md)和[匿名方法](../operators/delegate-operator.md)。
 
 - 包含不安全的块的方法。 有关详细信息，请参阅 [unsafe](unsafe.md)。
 

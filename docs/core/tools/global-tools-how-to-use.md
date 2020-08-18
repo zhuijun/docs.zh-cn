@@ -1,13 +1,14 @@
 ---
 title: 教程：安装和使用 .NET Core 全局工具
 description: 了解如何安装和使用 .NET 工具作为全局工具。
+ms.topic: tutorial
 ms.date: 02/12/2020
-ms.openlocfilehash: 9f8378e50fd2544eedbbaaeffb89d67800ec6880
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 28e34a4e5a0344e314c5d23228c1af5839db991c
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78156733"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062764"
 ---
 # <a name="tutorial-install-and-use-a-net-core-global-tool-using-the-net-core-cli"></a>教程：使用 .NET Core CLI 安装和使用 .NET Core 全局工具
 

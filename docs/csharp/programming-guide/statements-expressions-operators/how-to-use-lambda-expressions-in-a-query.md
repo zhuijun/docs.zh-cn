@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - lambda expressions [C#], in LINQ
 ms.assetid: 3cac4d25-d11f-4abd-9e7c-0f02e97ae06d
-ms.openlocfilehash: 501e67011707e2d165a3b9c1ff9f206db7f55448
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: ef8a7e3b4cd5302d6c928ad7ad81811797777b4a
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381627"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063245"
 ---
 # <a name="how-to-use-lambda-expressions-in-a-query-c-programming-guide"></a>如何在查询中使用 Lambda 表达式（C# 编程指南）
 不会直接在查询语法中使用 lambda 表达式，而是在方法调用中使用它们，并且查询表达式可以包含方法调用。 事实上，一些查询操作只能采用方法语法进行表示。 有关查询语法与方法语法之间的差异的详细信息，请参阅 [LINQ 中的查询语法和方法语法](../concepts/linq/query-syntax-and-method-syntax-in-linq.md)。  
@@ -32,5 +32,5 @@ ms.locfileid: "87381627"
   
 ## <a name="see-also"></a>请参阅
 
-- [Lambda 表达式](./lambda-expressions.md)
+- [Lambda 表达式](../../language-reference/operators/lambda-expressions.md)
 - [表达式树 (C#)](../concepts/expression-trees/index.md)

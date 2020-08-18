@@ -7,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 20fc492e45b2d248602de59682e752026d421e06
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 1941174d7e8d1676d11a13fa3ee6c7b84fe3952c
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916920"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063232"
 ---
 # <a name="await-operator-c-reference"></a>await 运算符（C# 参考）
 
@@ -27,7 +27,7 @@ ms.locfileid: "87916920"
 > [!NOTE]
 > 有关异步编程的介绍，请参阅[使用 async 和 await 的异步编程](../../programming-guide/concepts/async/index.md)。 利用 `async` 和 `await` 的异步编程遵循[基于任务的异步模式](../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)。
 
-只能在通过 [async](../keywords/async.md) 关键字修改的方法、[lambda 表达式](../../programming-guide/statements-expressions-operators/lambda-expressions.md)或[匿名方法](delegate-operator.md)中使用 `await` 运算符。 在异步方法中，不能在同步函数的主体、[lock 语句](../keywords/lock-statement.md)块内以及[不安全](../keywords/unsafe.md)的上下文中使用 `await` 运算符。
+只能在通过 [async](../keywords/async.md) 关键字修改的方法、[lambda 表达式](lambda-expressions.md)或[匿名方法](delegate-operator.md)中使用 `await` 运算符。 在异步方法中，不能在同步函数的主体、[lock 语句](../keywords/lock-statement.md)块内以及[不安全](../keywords/unsafe.md)的上下文中使用 `await` 运算符。
 
 `await` 运算符的操作数通常是以下其中一个 .NET 类型：<xref:System.Threading.Tasks.Task>、<xref:System.Threading.Tasks.Task%601>、<xref:System.Threading.Tasks.ValueTask> 或 <xref:System.Threading.Tasks.ValueTask%601>。 但是，任何可等待表达式都可以是 `await` 运算符的操作数。 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的[可等待表达式](~/_csharplang/spec/expressions.md#awaitable-expressions)部分。
 

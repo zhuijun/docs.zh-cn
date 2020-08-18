@@ -2,13 +2,14 @@
 title: .NET Core 工具
 description: 如何安装、使用、更新和删除 .NET Core 工具。 包括全局工具、工具路径工具和本地工具。
 author: KathleenDollard
+ms.topic: how-to
 ms.date: 02/12/2020
-ms.openlocfilehash: 75bdedcbc3ebe9c23477795415076d160ab9a642
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.openlocfilehash: 00c0317fcfc4da0e7205c23faa7b355c20882ec9
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455720"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062725"
 ---
 # <a name="how-to-manage-net-core-tools"></a>如何管理 .NET Core 工具
 
