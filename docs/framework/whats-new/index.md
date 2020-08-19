@@ -1,7 +1,6 @@
 ---
 title: .NET Framework 中的新增功能
 description: 了解不同版本 .NET Framework 中的新变化。 阅读每个版本的主要新功能和改进的摘要。
-ms.custom: updateeachrelease
 ms.date: 04/18/2019
 dev_langs:
 - csharp
@@ -9,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 42f872bba87a88fc92a37879e815ee7068407cf7
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 3eba676a4134415f0e2981d5094c0b0f6a1651be
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925587"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559019"
 ---
 # <a name="whats-new-in-net-framework"></a>.NET Framework 中的新增功能
 

@@ -1,18 +1,17 @@
 ---
 title: .NET Framework 入门
 description: 介绍 .NET 入门知识，它是管理应用的运行时执行环境。 它包含公共语言运行时 (CLR) 和全面的类库。
-ms.custom: updateeachrelease
 ms.date: 04/02/2019
 helpviewer_keywords:
 - .NET Framework, getting started
 - getting started [.NET Framework]
 ms.assetid: c693fd34-88fe-4d90-b332-19eeadf3b7e7
-ms.openlocfilehash: b6ad74d2984443a3b8345c2261996e7ab30acdff
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1d6b1fccd9751180ee096531a34b2afb60547072
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621647"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557316"
 ---
 # <a name="get-started-with-net-framework"></a>.NET Framework 入门
 
