@@ -1,26 +1,23 @@
 ---
-title: 文字
+title: 文本
 description: '了解 F # 编程语言中的文本类型。'
-ms.date: 06/28/2019
-ms.openlocfilehash: 98d609a1cf0beb00c0dd4d45ea343aaa2280b62e
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: 15f73db3c36f7c60ab1eeba96c63a28ebc6d7f01
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855018"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559149"
 ---
-# <a name="literals"></a>文字
+# <a name="literals"></a>文本
 
 本文提供了一个表，其中显示了如何指定 F # 中的文本类型。
-
-> [!NOTE]
-> F # 的 docs.microsoft.com API 参考未完成。 如果遇到任何断开的链接，请参阅[F # 核心库文档](https://fsharp.github.io/fsharp-core-docs/)。
 
 ## <a name="literal-types"></a>文本类型
 
 下表显示 F # 中的文本类型。 用十六进制表示法表示数字的字符不区分大小写;标识该类型的字符区分大小写。
 
-|类型|描述|后缀或前缀|示例|
+|类型|说明|后缀或前缀|示例|
 |----|-----------|----------------|--------|
 |sbyte|8位有符号整数|y|`86y`<br /><br />`0b00000101y`|
 |字节|无符号8位自然数|uy|`86uy`<br /><br />`0b00000101uy`|
@@ -39,14 +36,14 @@ ms.locfileid: "87855018"
 |bigint|不限于64位表示形式的整数|I|`9999999999999999999999999999I`|
 |Decimal|表示为固定点或有理数的小数|M 或 m|`0.7833M` 或 `0.7833m`|
 |Char|Unicode 字符|无|`'a'` 或 `'\u0061'`|
-|String|Unicode 字符串|无|`"text\n"`<br /><br />或<br /><br />`@"c:\filename"`<br /><br />或<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />或<br /><br />`"string1" + "string2"`<br /><br />另请参阅[字符串](Strings.md)。|
+|String|Unicode 字符串|无|`"text\n"`<br /><br />或<br /><br />`@"c:\filename"`<br /><br />或<br /><br />`"""<book title="Paradise Lost">"""`<br /><br />或<br /><br />`"string1" + "string2"`<br /><br />另请参阅 [字符串](Strings.md)。|
 |字节|ASCII 字符|B|`'a'B`|
 |byte[]|ASCII 字符串|B|`"text"B`|
 |String 或 byte []|原义字符串|@ prefix|`@"\\server\share"` (Unicode) <br /><br />`@"\\server\share"B` (ASCII) |
 
 ## <a name="named-literals"></a>命名文本
 
-应为常量的值可以用[文本](https://msdn.microsoft.com/library/465f36ce-d146-41c0-b425-679c509cd285)属性进行标记。 此属性的作用是使值编译为常量。
+应为常量的值可以用 [文本](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-literalattribute.html) 属性进行标记。 此属性的作用是使值编译为常量。
 
 在模式匹配表达式中，以小写字符开头的标识符始终被视为要绑定的变量而不是文本，因此在定义文本时通常应使用首字母大写。
 
@@ -67,7 +64,7 @@ let Literal2 = 1 ||| 64
 let Literal3 = System.IO.FileAccess.Read ||| System.IO.FileAccess.Write
 ```
 
-## <a name="remarks"></a>备注
+## <a name="remarks"></a>注解
 
 Unicode 字符串可以包含可使用指定的显式编码， `\u` 后跟16位十六进制代码 (0000-FFFF) 或32编码，可以通过使用 `\U` 后跟表示任何 Unicode 码位的32位十六进制代码 (00000000-0010ffff 之间) 。
 
@@ -93,7 +90,3 @@ let valueAsBits = 0b1101_1110_1010_1101_1011_1110_1110_1111
 
 let exampleSSN = 123_456_7890
 ```
-
-## <a name="see-also"></a>另请参阅
-
-- [LiteralAttribute 类](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.literalattribute-class-%5bfsharp%5d)

@@ -1,20 +1,17 @@
 ---
 title: 事件
 description: '了解 F # 事件如何使你能够将函数调用与用户操作关联，这在 GUI 编程中非常重要。'
-ms.date: 05/16/2016
-ms.openlocfilehash: 682686ba58d0f7a56e7da2585e6507ccd0156a44
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: 42783255412d56c6ff6729694c31d0868ed99633
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854927"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559188"
 ---
 # <a name="events"></a>事件
 
 事件允许您将函数调用与用户操作关联，并且是 GUI 编程的关键所在。 事件也可以由应用程序或操作系统触发。
-
-> [!NOTE]
-> F # 的 docs.microsoft.com API 参考未完成。 如果遇到任何断开的链接，请参阅[F # 核心库文档](https://fsharp.github.io/fsharp-core-docs/)。
 
 ## <a name="handling-events"></a>处理事件
 
@@ -28,9 +25,9 @@ ms.locfileid: "87854927"
 
 ## <a name="creating-custom-events"></a>创建自定义事件
 
-F # 事件由 F #[事件类](https://msdn.microsoft.com/library/f3b47c8a-4ee5-4ce8-9a72-ad305a17c4b9)表示，此类实现[IEvent](https://msdn.microsoft.com/library/8dbca0df-f8a1-40bd-8d50-aa26f6a8b862)接口。 `IEvent`本身是一个接口，它合并了两个其他接口（ `System.IObservable<'T>` 和[IDelegateEvent](https://msdn.microsoft.com/library/3d849465-6b8e-4fc5-b36c-2941d734268a)）的功能。 因此，在其他语言中，`Event` 具有委托的同等功能，以及来自 `IObservable` 的附加功能，这意味着 F# 事件支持事件筛选并使用 F# 第一类函数和 lambda 表达式作为事件处理程序。 此功能在[事件模块](https://msdn.microsoft.com/library/8b883baa-a460-4840-9baa-de8260351bc7)中提供。
+F # 事件由 F # [事件](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpevent-1.html) 类型表示，该类型实现 [IEvent](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-ievent-1.html) 接口。 `IEvent` 本身是一个接口，它合并了两个其他接口（ `System.IObservable<'T>` 和 [IDelegateEvent](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-idelegateevent-1.html)）的功能。 因此，在其他语言中，`Event` 具有委托的同等功能，以及来自 `IObservable` 的附加功能，这意味着 F# 事件支持事件筛选并使用 F# 第一类函数和 lambda 表达式作为事件处理程序。 此功能在 [事件模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-eventmodule.html)中提供。
 
-若要像任何其他 .NET Framework 事件一样为某个类创建事件，请向该类添加一个 `let` 绑定，用于将 `Event` 定义为类中的字段。 您可以将所需的事件参数类型指定为类型参数，或将其保留为空，让编译器推断出相应的类型。 还必须定义一个将事件公开为 CLI 事件的事件成员。 此成员应具有[CLIEvent](https://msdn.microsoft.com/library/d359f1dd-ffa5-42fb-8808-b4c8131a0333)属性。 它的声明方式与属性类似，其实现只是对事件的[发布](https://msdn.microsoft.com/library/b0fdaad5-25e5-43d0-9c0c-ce37c4aeb68e)属性的调用。 类用户可使用已发布事件的 `Add` 方法来添加处理程序。 `Add` 方法的参数可以为 lambda 表达式。 你可以使用事件的 `Trigger` 属性来引发事件，并将自变量传递给处理程序函数。 下面的代码示例阐释了这一点。 在此示例中，事件的推断类型参数是一个元组，它表示 lambda 表达式的参数。
+若要像任何其他 .NET Framework 事件一样为某个类创建事件，请向该类添加一个 `let` 绑定，用于将 `Event` 定义为类中的字段。 您可以将所需的事件参数类型指定为类型参数，或将其保留为空，让编译器推断出相应的类型。 还必须定义一个将事件公开为 CLI 事件的事件成员。 此成员应具有 [CLIEvent](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-clieventattribute.html) 属性。 它的声明方式与属性类似，其实现只是对事件的 [发布](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpevent-1.html#Publish) 属性的调用。 类用户可使用已发布事件的 `Add` 方法来添加处理程序。 `Add` 方法的参数可以为 lambda 表达式。 你可以使用事件的 `Trigger` 属性来引发事件，并将自变量传递给处理程序函数。 下面的代码示例阐释了这一点。 在此示例中，事件的推断类型参数是一个元组，它表示 lambda 表达式的参数。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3605.fs)]
 
@@ -53,13 +50,13 @@ Given a value: Event occurred.
 
 ## <a name="processing-event-streams"></a>处理事件流
 
-您可以使用模块中的函数[Event.add](https://msdn.microsoft.com/library/10670d3b-8d47-4f6e-b8df-ebc6f64ef4fd) `Event` 以高度自定义的方式来处理事件流，而不是仅通过使用 event 函数为事件添加事件处理程序。 为此，可以使用前向管道 (`|>`) 以及事件作为一系列函数调用中的第一个值，并使用 `Event` 模块函数作为后续的函数调用。
+您可以使用模块中的函数[Event.add](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-eventmodule.html#add) `Event` 以高度自定义的方式来处理事件流，而不是仅通过使用 event 函数为事件添加事件处理程序。 为此，可以使用前向管道 (`|>`) 以及事件作为一系列函数调用中的第一个值，并使用 `Event` 模块函数作为后续的函数调用。
 
 下面的代码示例显示如何设置仅在某些情况下才会为其调用事件处理程序的事件。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet3604.fs)]
 
-可[观察模块](https://msdn.microsoft.com/library/16b8610b-b30a-4df7-aa99-d9d352276227)包含可在可观察对象上操作的类似函数。 可观测对象与事件类似，但只有在其本身被订阅时才会主动订阅事件。
+可 [观察模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-observablemodule.html) 包含可在可观察对象上操作的类似函数。 可观测对象与事件类似，但只有在其本身被订阅时才会主动订阅事件。
 
 ## <a name="implementing-an-interface-event"></a>实现 Interface 事件
 
@@ -179,6 +176,3 @@ Application.Run(appForm)
 - [成员](index.md)
 - [处理和引发事件](../../../standard/events/index.md)
 - [Lambda 表达式： `fun` 关键字](../functions/lambda-expressions-the-fun-keyword.md)
-- [控件。事件模块](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event-module-%5bfsharp%5d)
-- [控件。事件&#60; 不&#62; 类](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27t%5d-class-%5bfsharp%5d)
-- [Control. Event&#60; "Delegate，" Args&#62; 类](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.event%5b%27delegate%2c%27args%5d-class-%5bfsharp%5d)

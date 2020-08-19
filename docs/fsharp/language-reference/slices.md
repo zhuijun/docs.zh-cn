@@ -1,25 +1,25 @@
 ---
 title: 切片
-description: 了解如何使用现有F#数据类型的切片，以及如何为其他数据类型定义自己的切片。
+description: '了解如何使用现有 F # 数据类型的切片，以及如何为其他数据类型定义自己的切片。'
 ms.date: 12/23/2019
-ms.openlocfilehash: 928005f2c63ffe099bb64e11ed29bb625e0a54c6
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: d3ddb2c247c36a85842f565f051372c5f2c9a9e9
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980374"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559006"
 ---
 # <a name="slices"></a>切片
 
-在F#中，切片是在其定义或范围内[类型扩展](type-extensions.md)中具有 `GetSlice` 方法的任何数据类型的子集。 它最常用于F#数组和列表。 本文介绍如何从现有F#类型获取切片，以及如何定义自己的切片。
+在 F # 中，切片是 `GetSlice` 在其定义或范围内 [类型扩展](type-extensions.md)中具有方法的任何数据类型的子集。 它最常用于 F # 数组和列表。 本文介绍如何从现有的 F # 类型中获取切片，以及如何定义自己的切片。
 
-切片与[索引器](./members/indexed-properties.md)相似，但它不是从基础数据结构产生单个值，而是生成多个值。
+切片与 [索引器](./members/indexed-properties.md)相似，但它不是从基础数据结构产生单个值，而是生成多个值。
 
-F#目前对切片字符串、列表、数组和二维数组的内部支持。
+F # 目前对切片字符串、列表、数组和二维数组具有内部支持。
 
-## <a name="basic-slicing-with-f-lists-and-arrays"></a>具有列表和F#数组的基本切片
+## <a name="basic-slicing-with-f-lists-and-arrays"></a>带有 F # 列表和数组的基本切片
 
-切片最常见的数据类型为F# "列表" 和 "数组"。 下面的示例演示如何通过列表执行此操作：
+切片最常见的数据类型是 F # 列表和数组。 下面的示例演示如何通过列表执行此操作：
 
 ```fsharp
 // Generate a list of 100 integers
@@ -59,7 +59,7 @@ printfn "Unbounded end slice: %A" unboundedEnd
 
 ## <a name="slicing-multidimensional-arrays"></a>切片多维数组
 
-F#支持F#核心库中的多维数组。 与一维数组一样，多维数组的切片也很有用。 但是，附加维度的引入要求使用略微不同的语法，以便能够获取特定行和列的切片。
+F # 支持 F # 核心库中的多维数组。 与一维数组一样，多维数组的切片也很有用。 但是，附加维度的引入要求使用略微不同的语法，以便能够获取特定行和列的切片。
 
 下面的示例演示如何切分二维数组：
 
@@ -89,13 +89,13 @@ let twoByTwo = A.[0..1,0..1]
 printfn "%A" twoByTwo
 ```
 
-F#核心库当前没有为三维数组定义 `GetSlice`。 如果要对三维数组或其他维度的其他数组进行切片，请自行定义 `GetSlice` 成员。
+F # core 库当前没有 `GetSlice` 为三维数组定义。 如果要对三维数组或其他维度的其他数组进行切片，请 `GetSlice` 自行定义成员。
 
 ## <a name="defining-slices-for-other-data-structures"></a>为其他数据结构定义切片
 
-F#核心库定义了有限类型集的切片。 如果要定义更多数据类型的切片，可以在类型定义本身或类型扩展中执行此操作。
+F # 核心库定义了有限类型集的切片。 如果要定义更多数据类型的切片，可以在类型定义本身或类型扩展中执行此操作。
 
-例如，下面介绍了如何为 <xref:System.ArraySegment%601> 类定义切片，以便方便地进行数据操作：
+例如，下面介绍了如何为类定义切片， <xref:System.ArraySegment%601> 以方便进行数据操作：
 
 ```fsharp
 open System
@@ -110,23 +110,19 @@ let arr = ArraySegment [| 1 .. 10 |]
 let slice = arr.[2..5] //[ 3; 4; 5]
 ```
 
-### <a name="use-inlining-to-avoid-boxing-if-it-is-necessary"></a>如果需要，请使用内联来避免装箱
-
-如果要为实际为结构的类型定义切片，我们建议您 `inline` `GetSlice` 成员。 F#编译器消除了可选参数，避免了切片的任何分配。 对于无法在堆上分配的切片构造（如 <xref:System.Span%601>），这一点非常重要。
+使用和类型的另一个示例 <xref:System.Span%601> <xref:System.ReadOnlySpan%601> ：
 
 ```fsharp
 open System
 
 type ReadOnlySpan<'T> with
-    // Note the 'inline' in the member definition
-    member inline sp.GetSlice(startIdx, endIdx) =
+    member sp.GetSlice(startIdx, endIdx) =
         let s = defaultArg startIdx 0
         let e = defaultArg endIdx sp.Length
         sp.Slice(s, e - s)
 
 type Span<'T> with
-    // Note the 'inline' in the member definition
-    member inline sp.GetSlice(startIdx, endIdx) =
+    member sp.GetSlice(startIdx, endIdx) =
         let s = defaultArg startIdx 0
         let e = defaultArg endIdx sp.Length
         sp.Slice(s, e - s)
@@ -142,9 +138,9 @@ printSpan sp.[0..3] // [|1; 2; 3|]
 printSpan sp.[1..3] // |2; 3|]
 ```
 
-## <a name="built-in-f-slices-are-end-inclusive"></a>内置F#切片包含结尾
+## <a name="built-in-f-slices-are-end-inclusive"></a>内置 F # 切片包含结尾
 
-中F#的所有内部切片都是结尾的;也就是说，切片中包括上限。 对于具有起始索引 `x` 和结束索引 `y`的给定切片，生成的切片将包含*yth*值。
+F # 中的所有内部切片都是结尾的;也就是说，切片中包括上限。 对于具有起始索引 `x` 和结束索引的给定切片 `y` ，生成的切片将包含 *yth* 值。
 
 ```fsharp
 // Define a new list

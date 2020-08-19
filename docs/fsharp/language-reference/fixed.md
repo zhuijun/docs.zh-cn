@@ -1,17 +1,17 @@
 ---
-title: Fixed 的关键字
-description: 了解如何将 pin 到堆栈上的本地，以防止具有集合F#固定关键字。
-ms.date: 04/24/2017
-ms.openlocfilehash: 7fdf66560f3e2ab7584b00c7e4584d7f6c161858
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+title: Fixed 关键字
+description: '了解如何在堆栈上 "固定" 本地以防止使用 F # "fixed" 关键字收集。'
+ms.date: 08/15/2020
+ms.openlocfilehash: 786ffd706c243fc83f8fb3afc2201d2a34536372
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61772653"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559175"
 ---
-# <a name="the-fixed-keyword"></a>Fixed 的关键字
+# <a name="the-fixed-keyword"></a>Fixed 关键字
 
-F#4.1 中引入了`fixed`关键字，以便您可以"固定"到堆栈上的本地，以防止其被收集或在垃圾回收期间移动。  它用于低级别的编程方案。
+`fixed`关键字允许你将本地固定到堆栈上，以防止在垃圾回收过程中收集或移动该堆栈。  它用于低级编程方案。
 
 ## <a name="syntax"></a>语法
 
@@ -21,13 +21,13 @@ use ptr = fixed expression
 
 ## <a name="remarks"></a>备注
 
-这将扩展表达式，以允许提取一个指针，并将其绑定到会阻止正在收集或在垃圾回收期间移动名称的语法。  
+这将扩展表达式的语法，以允许提取指针，并将其绑定到在垃圾回收期间阻止收集或移动的名称。  
 
-通过固定的表达式中的指针`fixed`关键字将绑定到通过标识符`use`关键字。  此语义是类似于通过资源管理`use`关键字。  指针被固定在范围内，而超出范围后，它不再被固定。  `fixed` 不能使用上下文的外部`use`绑定。  必须为具有名称绑定指针`use`。
+通过将关键字通过关键字绑定到标识符，可以通过将表达式中的指针固定 `fixed` `use` 。  此的语义类似于通过关键字进行的资源管理 `use` 。  如果指针在范围内，则将其固定，一旦超出范围，它就不再是固定的。  `fixed` 不能在绑定的上下文之外使用 `use` 。  必须使用将指针绑定到名称 `use` 。
 
-使用`fixed`必须在函数或方法中的表达式中执行。  它不能在脚本级别或模块级别范围内使用。
+的使用 `fixed` 必须出现在函数或方法的表达式中。  它不能在脚本级或模块级范围内使用。
 
-如所有指针代码，这是不安全的功能，将发出警告时使用。
+与所有指针代码一样，这是一项不安全的功能，在使用时将发出警告。
 
 ## <a name="example"></a>示例
 
@@ -61,6 +61,6 @@ let doPointerWork() =
 doPointerWork()
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [NativePtr 模块](https://msdn.microsoft.com/visualfsharpdocs/conceptual/nativeinterop.nativeptr-module-%5Bfsharp%5D)
+- [NativePtr 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-nativeinterop-nativeptrmodule.html)
