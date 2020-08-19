@@ -6,12 +6,12 @@ ms.date: 01/17/2020
 helpviewer_keywords:
 - versions, .NET Framework
 ms.assetid: f75a72de-e2f2-4a7a-9574-3f278684ea90
-ms.openlocfilehash: df44786dfd0a384ae2498a94d14b029612450fee
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: df7acc788943e9655dbbb03ffaaa88ff22b81ad2
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475471"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187903"
 ---
 # <a name="net-framework-versions-and-dependencies"></a>.NET Framework 版本和依赖关系
 
@@ -31,8 +31,9 @@ CLR 由其自己的版本号标识。 .NET Framework 版本号在每次发布时
 
 下表总结了 .NET Framework 版本历史，并将每个版本与 Visual Studio、Windows 和 Windows Server 相关联。 Visual Studio 支持多目标功能，因此你将不会限于仅使用列出的 .NET Framework 版本。
 
-- 复选标记图标 ✔️ 表示安装了 .NET Framework 的操作系统版本，但必须通过[控制面板](../install/dotnet-35-windows-10.md)（适用于 Windows）或服务器管理器（适用于 Windows Server）启用。
+- 复选标记图标 ✔️ 表示默认安装 .NET Framework 的操作系统版本。
 - 加号图标 ➕ 表示 .NET Framework 未安装但可以安装的操作系统版本。
+- 星号 \* 表示必须[在控制面板中](../install/dotnet-35-windows-10.md)（如果是 Windows Server，则通过服务器管理器）启用 .NET Framework（无论是否预安装）的操作系统版本。
 
 | | |
 | - | - |

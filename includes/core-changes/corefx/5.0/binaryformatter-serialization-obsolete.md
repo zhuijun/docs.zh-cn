@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c5204e8c80cb737338b053c39083c0cc43786447
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 7cb146d19486618a4cee9976abe2220ea4b72790
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517318"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88203925"
 ---
 ### <a name="binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps"></a>BinaryFormatter 序列化方法已过时，并且已在 ASP.NET 应用中禁用
 
@@ -12,7 +12,7 @@ ms.locfileid: "87517318"
 
 #### <a name="change-description"></a>更改描述
 
-由于 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 存在[安全漏洞](../../../../docs/standard/serialization/binaryformatter-security-guide.md#binaryformatter-security-vulnerabilities)，因此，以下方法现已过时。 此外，在 ASP.NET 5.0 及更高版本的应用中，它们会引发 <xref:System.NotSupportedException>，除非 Web 应用已重新启用 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 功能。
+由于 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 存在[安全漏洞](../../../../docs/standard/serialization/binaryformatter-security-guide.md#binaryformatter-security-vulnerabilities)，因此，以下方法现已过时。 此外，在 ASP.NET Core 5.0 及更高版本的应用中，除非 Web 应用已重新启用 <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter> 功能，否则它们会引发 <xref:System.NotSupportedException>。
 
 - <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Serialize%2A?displayProperty=nameWithType>
 - <xref:System.Runtime.Serialization.Formatters.Binary.BinaryFormatter.Deserialize%2A?displayProperty=nameWithType>

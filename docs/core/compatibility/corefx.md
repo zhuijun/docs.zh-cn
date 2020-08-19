@@ -2,12 +2,12 @@
 title: 基类库的重大更改
 description: 列出核心 .NET 库中的重大更改。
 ms.date: 07/27/2020
-ms.openlocfilehash: 0667d975ce5bba5692fe5d179341235bd3c61790
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: c8eb5ec7d2bb1879a38a18337463230c7b731d29
+ms.sourcegitcommit: d3c09791297f0edc468a4849a5f11ef62e0e90fd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024690"
+ms.lasthandoff: 08/12/2020
+ms.locfileid: "88137492"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>核心 .NET 库重大更改
 
@@ -17,6 +17,7 @@ ms.locfileid: "88024690"
 
 | 重大更改 | 引入的版本 |
 | - | :-: |
+| [增加了 LINQ OrderBy.First{OrDefault} 的复杂度](#complexity-of-linq-orderbyfirstordefault-increased) | 5.0 |
 | [IntPtr 和 UIntPtr 实现 IFormattable](#intptr-and-uintptr-implement-iformattable) | 5.0 |
 | [PrincipalPermissionAttribute 已过时，报告为错误](#principalpermissionattribute-is-obsolete-as-error) | 5.0 |
 | [BinaryFormatter 序列化方法已过时，并且已在 ASP.NET 应用中禁用](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps) | 5.0 |
@@ -45,6 +46,10 @@ ms.locfileid: "88024690"
 | [Process.StartInfo 对未启动的进程引发 InvalidOperationException](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE [orderby-firstordefault-complexity-increase](../../../includes/core-changes/corefx/5.0/orderby-firstordefault-complexity-increase.md)]
+
+***
 
 [!INCLUDE [intptr-uintptr-implement-iformattable](../../../includes/core-changes/corefx/5.0/intptr-uintptr-implement-iformattable.md)]
 

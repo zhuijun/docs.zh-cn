@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - tasks, continuations
 ms.assetid: 0b45e9a2-de28-46ce-8212-1817280ed42d
-ms.openlocfilehash: 132518b9d8d22efecfcf3ed14e8b5969aa768cd4
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: d42d244e644bf3ee1f45b25a71d60bbb2ef8e590
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024584"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063830"
 ---
 # <a name="chaining-tasks-using-continuation-tasks"></a>使用延续任务来链接任务
 
@@ -52,7 +52,7 @@ ms.locfileid: "88024584"
 
 还可以创建一个将在一组任务中的任意或全部任务完成时运行的延续任务。 若要在所有前面的任务都完成后执行延续，则可以调用静态（在 Visual Basic 中为`Shared` ） <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> 方法或实例 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAll%2A?displayProperty=nameWithType> 方法。 若要在多个前面的任务中的任意任务完成时执行延续，则可以调用静态（在 Visual Basic 中为`Shared` ） <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> 方法或实例 <xref:System.Threading.Tasks.TaskFactory.ContinueWhenAny%2A?displayProperty=nameWithType> 方法。
 
-请注意，调用 <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> 重载不会阻止调用线程。 不过，通常调用除 <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType> 方法外的其他所有方法来检索返回的 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 属性，这样不会阻止调用线程。
+调用 <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> 重载不会阻止调用线程。 不过，通常调用除 <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> 和 <xref:System.Threading.Tasks.Task.WhenAll%28System.Threading.Tasks.Task%5B%5D%29?displayProperty=nameWithType> 方法外的其他所有方法来检索返回的 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 属性，这样不会阻止调用线程。
 
 下面的示例调用 <xref:System.Threading.Tasks.Task.WhenAll%28System.Collections.Generic.IEnumerable%7BSystem.Threading.Tasks.Task%7D%29?displayProperty=nameWithType> 方法来创建反映其 10 个前面的任务的结果的延续任务。 每个前面的任务计算从 1 到 10 的索引值的平方值。 如果前面的任务成功完成（其 <xref:System.Threading.Tasks.Task.Status%2A?displayProperty=nameWithType> 属性为 <xref:System.Threading.Tasks.TaskStatus.RanToCompletion?displayProperty=nameWithType>），则延续任务的 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 属性为由每个前面的任务返回的 <xref:System.Threading.Tasks.Task%601.Result%2A?displayProperty=nameWithType> 值组成的数组。 该示例计算它们的总和，得出 1 到 10 之间的所有数字的平方和。
 
