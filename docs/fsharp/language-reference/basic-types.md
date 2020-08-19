@@ -1,42 +1,41 @@
 ---
 title: 基本类型
-description: 发现的基础的基本类型中使用F#语言。
-ms.date: 07/09/2018
-ms.openlocfilehash: fb9f275490cb402ff36e959774cd65450de77115
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+description: '了解 F # 语言中使用的基本基本类型。'
+ms.date: 08/15/2020
+ms.openlocfilehash: 659ac8424c62985affcca1741e1b2a74c9c3ee8d
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645593"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557693"
 ---
 # <a name="basic-types"></a>基本类型
 
-本主题列出了在中定义的基本类型F#语言。 这些类型是最基本中F#，从而形成的几乎每个基础F#程序。 它们是.NET 基元类型的一个超集。
+本主题列出了在 F # 语言中定义的基本类型。 这些类型在 F # 中是最基本的，构成了几乎每个 F # 程序的基础。 它们是 .NET 基元类型的超集。
 
-|类型|.NET 类型|描述|
-|----|---------|-----------|
-|`bool`|<xref:System.Boolean>|可能的值为 `true` 和 `false`。|
-|`byte`|<xref:System.Byte>|从 0 到 255 之间的值。|
-|`sbyte`|<xref:System.SByte>|从-128 到 127 之间的值。|
-|`int16`|<xref:System.Int16>|从-32768 到 32767 之间的值。|
-|`uint16`|<xref:System.UInt16>|值的范围是从 0 到 65535。|
-|`int`|<xref:System.Int32>|从-2147483648 到 2147483647 的值。|
-|`uint32`|<xref:System.UInt32>|从 0 到 4294967295 之间的值。|
-|`int64`|<xref:System.Int64>|从-9223372036854775808 到 9,223,372,036,854,775,807 的值。|
-|`uint64`|<xref:System.UInt64>|从 0 到 18446744073709551615 之间的值。|
-|`nativeint`|<xref:System.IntPtr>|一个有符号整数形式的本机指针。|
-|`unativeint`|<xref:System.UIntPtr>|无符号整数形式的本机指针。|
-|`char`|<xref:System.Char>|Unicode 字符值。|
-|`string`|<xref:System.String>|Unicode 文本。|
-|`decimal`|<xref:System.Decimal>|一个浮点数据类型的至少 28 个有效位。|
-|`unit`|不适用|表示实际值不的存在。 该类型具有只有一个正式的值，该值表示`()`。 单元值， `()`，通常用作其中需要的值，但没有实际值是可用或者有意义的占位符。|
-|`void`|<xref:System.Void>|指示没有类型或值。|
-|`float32`， `single`|<xref:System.Single>|32 位浮点类型。|
-|`float`， `double`|<xref:System.Double>|64 位浮点类型。|
+|类型|.NET 类型|说明|示例|
+|----|---------|-----------|-------|
+|`bool`|<xref:System.Boolean>|可能值为 `true` 和 `false`。|`true`/`false`|
+|`byte`|<xref:System.Byte>|介于0到255之间的值。|`1uy`|
+|`sbyte`|<xref:System.SByte>|值从-128 到127。|`1y`|
+|`int16`|<xref:System.Int16>|值从-32768 到32767。|`1s`|
+|`uint16`|<xref:System.UInt16>|介于0到65535之间的值。|`1us`|
+|`int`|<xref:System.Int32>|值从-2147483648 到2147483647。|`1`|
+|`uint`|<xref:System.UInt32>|介于0到4294967295之间的值。|`1u`|
+|`int64`|<xref:System.Int64>|值介于-9223372036854775808 到9223372036854775807之间。|`1L`|
+|`uint64`|<xref:System.UInt64>|介于0到18446744073709551615之间的值。|`1UL`|
+|`nativeint`|<xref:System.IntPtr>|作为带符号整数的本机指针。|`nativeint 1`|
+|`unativeint`|<xref:System.UIntPtr>|作为无符号整数的本机指针。|`unativeint 1`|
+|`decimal`|<xref:System.Decimal>|至少具有28个有效数字的浮点数据类型。|`1.0`|
+|`float`, `double`|<xref:System.Double>|64位浮点类型。|`1.0`|
+|`float32`, `single`|<xref:System.Single>|32位浮点类型。|`1.0f`|
+|`char`|<xref:System.Char>|Unicode 字符值。|`'c'`|
+|`string`|<xref:System.String>|Unicode 文本。|`"str"`|
+|`unit`|不适用|指示缺少实际值。 该类型仅有一个表示的形式值 `()` 。 Unit 值通常用作 `()` 占位符，其中需要值，但没有实际值可用或有意义。|`()`|
 
 > [!NOTE]
-> 通过执行 64 位整数类型具有整数太大的计算[bigint](https://msdn.microsoft.com/library/dc8be18d-4042-46c4-b136-2f21a84f6efa)类型。 `bigint` 不被视为一种基本类型;是的缩写`System.Numerics.BigInteger`。
+> 可以使用 [bigint](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-bigint.html) 类型对64位整数类型的整数进行太大的计算。 `bigint` 不被视为基本类型;它是的缩写 `System.Numerics.BigInteger` 。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [F# 语言参考](index.md)

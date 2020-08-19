@@ -1,19 +1,17 @@
 ---
 title: 查询表达式
 description: '了解 F # 编程语言中对 LINQ 的查询表达式支持。'
-ms.date: 05/16/2016
-ms.openlocfilehash: c6f33a58bc959745a5f83bdcfe378a4dbbe577c5
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: afcc6e92818b1648a210ad9cfc3f1dcfa46037b5
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855031"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559058"
 ---
 # <a name="query-expressions"></a>查询表达式
 
 利用查询表达式，您可以查询数据源并将数据置于所需的窗体中。 查询表达式为 F # 中的 LINQ 提供支持。
-> [!NOTE]
-> F # 的 docs.microsoft.com API 参考未完成。 如果遇到任何断开的链接，请参阅[F # 核心库文档](https://fsharp.github.io/fsharp-core-docs/)。
 
 ## <a name="syntax"></a>语法
 
@@ -45,9 +43,9 @@ query1
 |> Seq.iter (fun customer -> printfn "Company: %s Contact: %s" customer.CompanyName customer.ContactName)
 ```
 
-在上面的代码示例中，查询表达式位于大括号中。 表达式中的代码含义为，返回查询结果中数据库的 Customers 表中的每个客户。 查询表达式返回实现和的类型 <xref:System.Linq.IQueryable%601> ， <xref:System.Collections.Generic.IEnumerable%601> 因此可以使用[Seq 模块](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)（如示例所示）来循环访问。
+在上面的代码示例中，查询表达式位于大括号中。 表达式中的代码含义为，返回查询结果中数据库的 Customers 表中的每个客户。 查询表达式返回实现和的类型 <xref:System.Linq.IQueryable%601> ， <xref:System.Collections.Generic.IEnumerable%601> 因此可以使用 [Seq 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html) （如示例所示）来循环访问。
 
-每个计算表达式类型都是从生成器类生成的。 查询计算表达式的生成器类为 `QueryBuilder` 。 有关详细信息，请参阅[计算表达式](computation-expressions.md)和[QueryBuilder 类](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)。
+每个计算表达式类型都是从生成器类生成的。 查询计算表达式的生成器类为 `QueryBuilder` 。 有关详细信息，请参阅 [计算表达式](computation-expressions.md) 和 [QueryBuilder 类](hhttps://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html)。
 
 ## <a name="query-operators"></a>查询运算符
 
@@ -55,7 +53,7 @@ query1
 
 查询表达式中只允许使用可以转换为 SQL 的表达式。 例如，使用查询运算符时，表达式中不允许使用函数调用 `where` 。
 
-表1显示了可用的查询运算符。 此外，请参阅 Table2，这将比较 SQL 查询和本主题后面的等效 F # 查询表达式。 某些类型提供程序不支持某些查询运算符。 特别是，由于 OData 的限制，OData 类型提供程序在支持的查询运算符中受到限制。 有关详细信息，请参阅[ODataService 类型提供程序 (F # ) ](https://msdn.microsoft.com/library/bac609dd-9d12-4bf9-a662-24bdf4faa43e)。
+表1显示了可用的查询运算符。 此外，请参阅 Table2，这将比较 SQL 查询和本主题后面的等效 F # 查询表达式。 某些类型提供程序不支持某些查询运算符。 特别是，由于 OData 的限制，OData 类型提供程序在支持的查询运算符中受到限制。
 
 此表假定数据库采用以下格式：
 
@@ -83,7 +81,7 @@ let data = [ 1; 5; 7; 11; 18; 21]
 <table style="width:100%">
   <tr>
     <th>运算符</th>
-    <th>描述</th>
+    <th>说明</th>
   </tr>
   <tr>
   <td><code>contains</code></td>
@@ -682,7 +680,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>IN</code>一组指定值<br/>
+<code>IN</code> 一组指定值<br/>
 
 <pre><code class="lang-sql">SELECT *
 FROM Student
@@ -723,7 +721,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>具有模式匹配集。<br/>
+<code>LIKE</code> 具有模式匹配集。<br/>
 
 <pre><code class="lang-sql">-- '[abc]%' matches strings where the first character is
 -- 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -740,7 +738,7 @@ WHERE Student.Name LIKE '[abc]%'
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>带有 set 排除模式的。<br/>
+<code>LIKE</code> 带有 set 排除模式的。<br/>
 
 <pre><code class="lang-sql">-- '[^abc]%' matches strings where the first character is
 -- not 'a', 'b', 'c', 'A', 'B', or 'C'
@@ -759,7 +757,7 @@ query {
 </code></pre>
 
 </td></tr><tr><td>
-<code>LIKE</code>，但要选择不同的字段。<br/>
+<code>LIKE</code> ，但要选择不同的字段。<br/>
 
 <pre><code class="lang-sql">SELECT StudentID AS ID FROM Student
 WHERE Student.Name LIKE '[^abc]%'
@@ -809,7 +807,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>LEFT JOIN</code>具有两个表。<br/>
+</td></tr><tr><td><code>LEFT JOIN</code> 具有两个表。<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 LEFT JOIN CourseSelection
@@ -911,7 +909,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>OR</code>排序<br/>
+</td></tr><tr><td><code>OR</code> 排序<br/>
 
 <pre><code class="lang-sql">SELECT * FROM Student
 WHERE Student.Age = 12 OR Student.Age = 13
@@ -951,7 +949,7 @@ query {
 }
 </code></pre>
 
-</td></tr><tr><td><code>UNION</code>的两个查询。<br/>
+</td></tr><tr><td><code>UNION</code> 的两个查询。<br/>
 
 <!-- markdownlint-capture -->
 <!-- markdownlint-disable no-space-in-emphasis -->
@@ -1006,7 +1004,7 @@ let query2 =
 query1.Intersect(query2)
 </code></pre>
 
-</td></tr><tr><td><code>CASE</code>状态.<br/>
+</td></tr><tr><td><code>CASE</code> 状态.<br/>
 
 <pre><code class="lang-sql">SELECT student.StudentID,
 CASE Student.Age
@@ -2439,5 +2437,5 @@ end
 ## <a name="see-also"></a>另请参阅
 
 - [F# 语言参考](index.md)
-- [QueryBuilder 类](https://msdn.microsoft.com/visualfsharpdocs/conceptual/linq.querybuilder-class-%5bfsharp%5d)
+- [QueryBuilder 类](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html)
 - [计算表达式](Computation-Expressions.md)

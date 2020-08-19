@@ -1,13 +1,13 @@
 ---
 title: 交互式选项
 description: 了解 F# 交互窗口、fsi.exe 支持的命令行选项。
-ms.date: 07/22/2020
-ms.openlocfilehash: abddd1fd990be18ede139ab26ffe80513ba6e0dd
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: da2251c1d2e57090ed926e501cebf3c53ac58052
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855343"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558603"
 ---
 # <a name="f-interactive-options"></a>F# 交互窗口选项
 
@@ -25,47 +25,47 @@ F # 脚本文件的文件扩展名为 `.fsx` 。
 
 ## <a name="table-of-f-interactive-options"></a>F# 交互窗口选项的表
 
-下表总结了 F# 交互窗口支持的选项。 可以在命令行上或通过 Visual Studio IDE 设置这些选项。 若要在 Visual Studio IDE 中设置这些选项，请打开 "**工具**" 菜单，选择 "**选项**"，展开 " **F # 工具**" 节点，然后选择 " **F# 交互窗口**"。
+下表总结了 F# 交互窗口支持的选项。 可以在命令行上或通过 Visual Studio IDE 设置这些选项。 若要在 Visual Studio IDE 中设置这些选项，请打开 " **工具** " 菜单，选择 " **选项**"，展开 " **F # 工具** " 节点，然后选择 " **F# 交互窗口**"。
 
 其中列表显示在 F# 交互窗口选项参数中，列表元素由分号分隔 (`;`) 。
 
-|选项|描述|
+|选项|说明|
 |------|-----------|
-|**--**|用于指示 F# 交互窗口将剩余的参数作为命令行参数处理 F # 程序或脚本，您可以使用**Fsi.exe my.application.commandlineargs**的代码访问这些参数。|
-|**--checked**[ **+**&#124;**-** ]|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
-|**--代码页： &lt; int&gt;**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
+|**--**|用于指示 F# 交互窗口将剩余的参数作为命令行参数处理 F # 程序或脚本，您可以使用 **Fsi.exe my.application.commandlineargs**的代码访问这些参数。|
+|**--checked**[ **+**&#124;**-** ]|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
+|**--代码页： &lt; int&gt;**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
 |**--consolecolors**[ **+**&#124;**-** ]|输出警告和错误消息的颜色。|
 |**--crossoptimize**[ **+**&#124;**-** ]|启用或禁用跨模块优化。|
-|**--debug**[ **+**&#124;**-** ]<br /><br />**--debug：**[**full**&#124;**pdbonly**&#124;**可移植**&#124;**嵌入**]<br /><br />**-g**[ **+**&#124;**-** ]<br /><br />**-g：**[**full**&#124;**pdbonly**&#124;**可移植**&#124;**嵌入**]|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
-|**--define： &lt; string&gt;**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
+|**--debug**[ **+**&#124;**-** ]<br /><br />**--debug：**[**full**&#124;**pdbonly**&#124;**可移植**&#124;**嵌入**]<br /><br />**-g**[ **+**&#124;**-** ]<br /><br />**-g：**[**full**&#124;**pdbonly**&#124;**可移植**&#124;**嵌入**]|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
+|**--define： &lt; string&gt;**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
 |**--确定性**[ **+**&#124;**-** ]|生成一个确定性程序集 (包括模块版本 GUID 和时间戳) 。|
 |**--exec**|指示 F # interactive 在加载文件或运行命令行上给定的脚本文件后退出。|
-|**--fullpaths**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
+|**--fullpaths**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
 |**--gui**[ **+**&#124;**-** ]|启用或禁用 Windows 窗体事件循环。 默认是启用的。|
 |**--帮助**<br /><br />**-?**|用于显示命令行语法和每个选项的简短说明。|
-|**--lib： &lt; 文件夹-列表&gt;**<br /><br />**-I： &lt; 文件夹列表&gt;**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
-|**--load： &lt; filename&gt;**|在启动时编译给定的源代码，并将已编译的 F # 构造加载到会话中。 如果目标源包含脚本指令（如 **#use**或 **#load**），则必须使用 **--use**或 **#use** ，而不是 **--load**或 **#load**。|
-|**--mlcompatibility**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
-|**--noframework**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)|
-|**--nologo**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
-|**--nowarn： &lt; warning-list&gt;**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
-|**--optimize**[ **+**&#124;**-** ]|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
+|**--lib： &lt; 文件夹-列表&gt;**<br /><br />**-I： &lt; 文件夹列表&gt;**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
+|**--load： &lt; filename&gt;**|在启动时编译给定的源代码，并将已编译的 F # 构造加载到会话中。|
+|**--mlcompatibility**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
+|**--noframework**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)|
+|**--nologo**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
+|**--nowarn： &lt; warning-list&gt;**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
+|**--optimize**[ **+**&#124;**-** ]|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
 |**--preferreduilang： &lt; lang&gt;**| 指定首选输出语言区域性名称 (例如，es，ja-jp) 。 |
-|**--quiet**|抑制 F# 交互窗口输出到**stdout**流。|
-|**--引用-调试**|指定应为从 F # 引号文本和反射定义派生的表达式发出额外的调试信息。 调试信息将添加到 F # 表达式树节点的自定义属性中。 请参阅[代码引用](code-quotations.md)和[CustomAttributes](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3)。|
+|**--quiet**|抑制 F# 交互窗口输出到 **stdout** 流。|
+|**--引用-调试**|指定应为从 F # 引号文本和反射定义派生的表达式发出额外的调试信息。 调试信息将添加到 F # 表达式树节点的自定义属性中。 请参阅 [代码引用](code-quotations.md) 和 [CustomAttributes](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3)。|
 |**--readline**[ **+**&#124;**-** ]|启用或禁用交互模式下的 tab 自动补全。|
-|**--reference： &lt; filename&gt;**<br /><br />**-r： &lt; filename&gt;**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
+|**--reference： &lt; filename&gt;**<br /><br />**-r： &lt; filename&gt;**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
 |**--tailcalls**[ **+**&#124;**-** ]|启用或禁用 tail IL 指令，这将导致为尾递归函数重用堆栈帧。 默认情况下会启用此选项。|
 |**--targetprofile： &lt; string&gt;**|指定此程序集的目标框架配置文件。 有效值为 `mscorlib`、`netcore` 或 `netstandard`。 默认值为 `mscorlib`。|
 |**--use： &lt; filename&gt;**|通知解释器在启动时使用给定文件作为初始输入。|
-|**--utf8output**|与 fsc.exe 编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
-|**--warning： &lt; 警告级别&gt;**|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
-|**--warnaserror**[ **+**&#124;**-** ]|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
-|**--warnaserror**[ **+**&#124;**-** ]：** &lt; int-list &gt; **|与**fsc.exe**编译器选项相同。 有关详细信息，请参阅[编译器选项](compiler-options.md)。|
+|**--utf8output**|与 fsc.exe 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
+|**--warning： &lt; 警告级别&gt;**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
+|**--warnaserror**[ **+**&#124;**-** ]|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
+|**--warnaserror**[ **+**&#124;**-** ]：** &lt; int-list &gt; **|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
 
 ## <a name="f-interactive-structured-printing"></a>F# 交互窗口结构化打印
 
-F# 交互窗口 (`dotnet fsi`) 使用[结构化纯文本格式](plaintext-formatting.md)的扩展版本来报告值。
+F# 交互窗口 (`dotnet fsi`) 使用 [结构化纯文本格式](plaintext-formatting.md) 的扩展版本来报告值。
 
 1. `%A`支持纯文本格式的所有功能，一些功能还可自定义。
 
@@ -97,7 +97,7 @@ fsi.ShowIEnumerable <- false // Control whether sequence values are expanded by 
 fsi.ShowDeclarationValues <- false // Control whether values are shown for declaration outputs
 ```
 
-### <a name="customize-with-addprinter-and-addprinttransformer"></a>自定义 `AddPrinter` 和`AddPrintTransformer`
+### <a name="customize-with-addprinter-and-addprinttransformer"></a>自定义 `AddPrinter` 和 `AddPrintTransformer`
 
 可以使用和自定义打印 F# 交互窗口输出 `fsi.AddPrinter` `fsi.AddPrintTransformer` 。
 第一个函数提供文本来替换对象打印。 第二个函数返回要改为显示的代理项对象。 例如，请考虑以下 F # 代码：
@@ -126,7 +126,7 @@ val newYearsDay1999 : DateAndLabel = { Date = 1999-01-01T00:00:00
                                        Label = "New Year" }
 ```
 
-`fsi.AddPrintTransformer`可用于为打印提供代理项对象：
+`fsi.AddPrintTransformer` 可用于为打印提供代理项对象：
 
 ```fsharp
 type MyList(values: int list) =
@@ -165,4 +165,4 @@ val y : string = ["quack"; "quack"; "quack"]
 
 |Title|描述|
 |-----|-----------|
-|[编译器选项](compiler-options.md)|介绍可用于 F # 编译器的命令行选项**fsc.exe**。|
+|[编译器选项](compiler-options.md)|介绍可用于 F # 编译器的命令行选项 **fsc.exe**。|

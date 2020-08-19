@@ -1,13 +1,13 @@
 ---
 title: 递归函数：rec 关键字
 description: '了解如何使用 F # "rec" 关键字来定义递归函数。'
-ms.date: 05/16/2016
-ms.openlocfilehash: c2374f90b4585327c6f5208a3d6bca75a23d0cbb
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.date: 08/12/2020
+ms.openlocfilehash: 389357bd13cef39b1d07972c1a3167320b61612b
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455653"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558707"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>递归函数：rec 关键字
 
@@ -18,32 +18,48 @@ ms.locfileid: "87455653"
 ```fsharp
 // Recursive function:
 let rec function-nameparameter-list =
-function-body
+    function-body
 
 // Mutually recursive functions:
 let rec function1-nameparameter-list =
-function1-body
+    function1-body
+
 and function2-nameparameter-list =
-function2-body
+    function2-body
 ...
 ```
 
 ## <a name="remarks"></a>备注
 
-递归函数（调用自身的函数）在 F # 语言中显式标识。 这会使正在定义的标识符在函数作用域内可用。
+递归函数-调用自身的函数-在 F # 语言中显式标识为 `rec` 关键字。 `rec`关键字可使绑定的名称 `let` 在其主体中可用。
 
-下面的代码演示了一个使用数学定义计算*n*<sup>第</sup>n 个斐波那契数的递归函数。
+下面的示例演示一个使用数学定义计算第*n*<sup>th</sup>个斐波那契数的递归函数。
 
-[!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4001.fs)]
+```fsharp
+let fib n =
+    match n with
+    | 0 | 1 -> 1
+    | n -> fib (n-1) + fib (n-2)
+```
 
 > [!NOTE]
 > 实际上，与上一示例类似的代码并不理想，因为它 unecessarily 已计算的重新计算值。 这是因为它不是尾递归，本文对此进行了进一步说明。
 
-方法在类型内隐式递归;无需添加 `rec` 关键字。 类中的 Let 绑定不隐式递归。
+方法在定义它们的类型内隐式递归，这意味着无需添加 `rec` 关键字。 例如：
+
+```fsharp
+type MyClass() =
+    member this.Fib(n) =
+        match n with
+        | 0 | 1 -> 1
+        | n -> this.Fib(n-1) + this.Fib(n-2)
+```
+
+不过，类中的 Let 绑定不隐式递归。 所有 `let` 绑定函数都需要 `rec` 关键字。
 
 ## <a name="tail-recursion"></a>结尾递归
 
-对于某些递归函数，必须将更多 "纯" 定义重构为[尾递归](https://cs.stackexchange.com/questions/6230/what-is-tail-recursion)。 这可以防止不必要的 recomputations。 例如，可以按如下所示重写上一个波那契数字生成器：
+对于某些递归函数，必须将更多 "纯" 定义重构为 [尾递归](https://cs.stackexchange.com/questions/6230/what-is-tail-recursion)。 这可以防止不必要的 recomputations。 例如，可以按如下所示重写上一个波那契数字生成器：
 
 ```fsharp
 let fib n =
@@ -70,11 +86,19 @@ let fib n =
 
 ## <a name="mutually-recursive-functions"></a>相互递归函数
 
-有时，函数是*相互递归*的，这意味着，调用会形成一个圆圈，其中一个函数调用另一个函数，而后者又调用第一个，并在之间进行任意数量的调用。 必须在一个绑定中一起定义此类函数 `let` ，使用 `and` 关键字将它们链接在一起。
+有时，函数是 *相互递归*的，这意味着，调用会形成一个圆圈，其中一个函数调用另一个函数，而后者又调用第一个，并在之间进行任意数量的调用。 必须在一个绑定中一起定义此类函数 `let` ，使用 `and` 关键字将它们链接在一起。
 
 下面的示例演示两个相互递归函数。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet4002.fs)]
+
+## <a name="recursive-values"></a>递归值
+
+你还可以将 `let` 绑定值定义为 recursive。 这对于日志记录有时是如此。 通过 F # 5 和 `nameof` 函数，你可以执行以下操作：
+
+```fsharp
+let rec nameDoubles = nameof nameDoubles + nameof nameDoubles
+```
 
 ## <a name="see-also"></a>请参阅
 

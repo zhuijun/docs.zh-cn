@@ -2,12 +2,12 @@
 title: F# 代码格式设置准则
 description: '了解设置 F # 代码格式的准则。'
 ms.date: 11/04/2019
-ms.openlocfilehash: a65600a6c685929aef8582e49caded6340fb09e2
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: fe8da6070e1c92bb5205e9cb408b8ac75372b061
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309698"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558304"
 ---
 # <a name="f-code-formatting-guidelines"></a>F# 代码格式设置准则
 
@@ -29,7 +29,7 @@ F # 默认使用有效空白。 以下准则旨在提供有关如何调整一些
 
 **建议每个缩进包含四个空格。**
 
-也就是说，程序的缩进是一种主观上的事。 变体正常，但应遵循的第一条规则是*缩进的一致性*。 选择一种普遍接受的缩进样式，并在代码库中系统地使用它。
+也就是说，程序的缩进是一种主观上的事。 变体正常，但应遵循的第一条规则是 *缩进的一致性*。 选择一种普遍接受的缩进样式，并在代码库中系统地使用它。
 
 ## <a name="formatting-white-space"></a>设置空格的格式
 
@@ -100,37 +100,51 @@ let myFun (a: decimal) b c = a + b + c
 let myFunBad (a:decimal)(b)c = a + b + c
 ```
 
-### <a name="place-parameters-on-a-new-line-for-long-member-definitions"></a>为长成员定义将参数放在新行上
+### <a name="place-parameters-on-a-new-line-for-long-definitions"></a>为长定义将参数放在新行上
 
-如果有非常长的成员定义，请将参数置于新行上，并缩进它们以匹配后续参数的缩进级别。
+如果函数定义非常长，请将参数放在新行上，并缩进这些参数以匹配后续参数的缩进级别。
 
 ```fsharp
-type C() =
-    member _.LongMethodWithLotsOfParameters(aVeryLongType: AVeryLongTypeThatYouNeedToUse,
-                                            aSecondVeryLongType: AVeryLongTypeThatYouNeedToUse,
-                                            aThirdVeryLongType: AVeryLongTypeThatYouNeedToUse) =
+module M =
+    let LongFunctionWithLotsOfParameters(aVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                        (aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                        (aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                        =
         // ... the body of the method follows
 ```
 
-这也适用于构造函数：
+这同样适用于使用元组的成员、构造函数和参数：
 
 ```fsharp
-type C(aVeryLongType: AVeryLongTypeThatYouNeedToUse,
-       aSecondVeryLongType: AVeryLongTypeThatYouNeedToUse,
-       aThirdVeryLongType: AVeryLongTypeThatYouNeedToUse) =
+type TM() =
+    member _.LongMethodWithLotsOfParameters(aVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+                                            aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+                                            aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse) =
+        // ... the body of the method
+
+type TC(aVeryLongCtorParam: AVeryLongTypeThatYouNeedToUse,
+        aSecondVeryLongCtorParam: AVeryLongTypeThatYouNeedToUse,
+        aThirdVeryLongCtorParam: AVeryLongTypeThatYouNeedToUse) =
     // ... the body of the class follows
 ```
 
-如果有显式返回类型批注，则它可以位于的末尾、 `)` 前面 `=` 或新行。 如果返回类型还具有一个长名称，则可以使用后者。
+如果参数为 currified 或有显式返回类型批注，则最好将该 `=` 字符放在新行上：
 
 ```fsharp
 type C() =
-    member _.LongMethodWithLotsOfParameters(aVeryLongType: AVeryLongTypeThatYouNeedToUse,
-                                            aSecondVeryLongType: AVeryLongTypeThatYouNeedToUse,
-                                            aThirdVeryLongType: AVeryLongTypeThatYouNeedToUse)
-                                            : AVeryLongReturnType =
-        // ... the body of the method follows
+    member _.LongMethodWithLotsOfParameters(aVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+                                            aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse,
+                                            aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                            : AReturnType =
+        // ... the body of the method
+    member _.LongMethodWithLotsOfCurrifiedParams(aVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                                (aSecondVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                                (aThirdVeryLongParam: AVeryLongTypeThatYouNeedToUse)
+                                                =
+        // ... the body of the method
 ```
+
+这是一种避免太长的行 (的方法，如果返回类型可能有长的名称) 并且在添加参数时具有更少的行损坏。
 
 ### <a name="type-annotations"></a>类型批注
 
@@ -148,7 +162,7 @@ let complexFunctionBad (a :int) (b :int) (c:int) = a + b + c
 
 #### <a name="surround-return-type-annotations-with-white-space"></a>带有空格的环绕返回类型批注
 
-在 let 绑定函数或值类型批注（在函数的情况下为返回类型）中，使用符号前后的空格 `:` ：
+在允许绑定函数或值类型批注中 (在函数) 情况下返回类型时，请使用符号前后的空格 `:` ：
 
 ```fsharp
 // OK
@@ -164,7 +178,7 @@ let myFunBad (a: decimal) b c:decimal = a + b + c
 
 * 用两个空行分隔顶级函数和类定义。
 * 类中的方法定义由一个空行分隔。
-* 可以使用额外的空白行来分隔相关函数组。 可能会在一组相关的 liners （例如，一组虚拟实现）之间省略空行。
+* 可以 (慎用额外的空白行) 分离相关函数组。 可能会在一组相关的 liners (（例如，一组虚拟实现) ）之间省略空行。
 * 在函数中，应慎用空白行以指示逻辑部分。
 
 ## <a name="formatting-comments"></a>设置注释格式
@@ -256,7 +270,7 @@ type MyClass() =
 
 ### <a name="use-pascalcase-for-modules"></a>将 PascalCase 用于模块
 
-所有模块（顶级、内部、私有、嵌套）都应使用 PascalCase。
+所有模块 (顶级、内部、私有、嵌套) 应使用 PascalCase。
 
 ```fsharp
 module MyTopLevelModule
@@ -320,9 +334,9 @@ x &&& y // Bitwise and, also for working with “flags” enumeration
 x ^^^ y // Bitwise xor, also for working with “flags” enumeration
 ```
 
-### <a name="use-prefix-syntax-for-generics-foot-in-preference-to-postfix-syntax-t-foo"></a>优先使用泛型（）的前缀语法作为 `Foo<T>` 后缀语法（ `T Foo` ）
+### <a name="use-prefix-syntax-for-generics-foot-in-preference-to-postfix-syntax-t-foo"></a>对泛型 (使用前缀语法 `Foo<T>`) 优先使用后缀语法 (`T Foo`) 
 
-F # 继承命名泛型类型的后缀 ML 样式（例如， `int list` ）以及前缀 .net 样式（例如 `list<int>` ）。 除了五个特定类型外，更喜欢 .NET 样式：
+F # 同时继承命名泛型类型的后缀 ML 形式 (例如， `int list`) 以及前缀 .net 样式 (例如 `list<int>`) 。 除了五个特定类型外，更喜欢 .NET 样式：
 
 1. 对于 F # 列表，请使用后缀形式： `int list` 而不是 `list<int>` 。
 2. 对于 F # 选项，请使用后缀形式： `int option` 而不是 `option<int>` 。
@@ -536,7 +550,7 @@ let newState =
 
 ## <a name="formatting-lists-and-arrays"></a>设置列表和数组的格式
 
-`x :: l`在运算符周围写入空格 `::` （ `::` 是中缀运算符，因此由空格括起来）。
+`x :: l`运算符周围的空格写入 `::` (`::` 是内缀运算符，因此由空格括起来) 。
 
 在单个行中声明的列表和数组应该在左方括号后面和右括号之前有一个空格：
 
@@ -869,7 +883,7 @@ let makeStreamReader x = new System.IO.StreamReader(path = x)
 
 ## <a name="formatting-attributes"></a>格式设置特性
 
-[特性](../language-reference/attributes.md)位于构造之上：
+[特性](../language-reference/attributes.md) 位于构造之上：
 
 ```fsharp
 [<SomeAttribute>]

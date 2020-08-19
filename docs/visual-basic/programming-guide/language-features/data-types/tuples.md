@@ -4,14 +4,14 @@ ms.date: 04/23/2017
 helpviewer_keywords:
 - tuples [Visual Basic]
 ms.assetid: 3e66cd1b-3432-4e1d-8c37-5ebacae8f53f
-ms.openlocfilehash: 378ee4e7d3a3b106b719e5da819b09f336ff218e
-ms.sourcegitcommit: 67cf756b033c6173a1bbd1cbd5aef1fccac99e34
+ms.openlocfilehash: b169a1c13b3f20d7b5e2a1386cfb28a9cc093dcd
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86226655"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559084"
 ---
-# <a name="tuples-visual-basic"></a>元组 (Visual Basic) 
+# <a name="tuples-visual-basic"></a>元组 (Visual Basic)
 
 从 Visual Basic 2017 开始，Visual Basic 语言为元组提供内置支持，使创建元组和访问元组的元素变得更加容易。 元组是一种轻量级数据结构，它具有特定数量和值序列。 实例化元组时，可以定义每个值的数量和数据类型 (或元素) 。 例如，2元组 (或对) 具有两个元素。 第一个可能是一个 `Boolean` 值，而第二个是 `String` 。 因为元组可以轻松地将多个值存储在一个对象中，所以它们通常用作从方法返回多个值的一种简便方法。
 
@@ -34,7 +34,7 @@ Visual Basic 元组的字段是读写的;实例化元组后，可以修改其值
 
 ## <a name="instantiating-and-using-a-named-tuple"></a>实例化和使用命名元组
 
-您可以通过将您自己的名称分配给元组的元素，来实例化*命名元组*，而不是使用元组字段的默认名称。 然后，可以通过其分配的名称*或*默认名称访问元组的字段。 下面的示例实例化与之前相同的3元组，只不过它显式命名第一个字段 `EventDate` 、第二个字段和第三个字段 `Name` `IsHoliday` 。 然后，它将显示字段值并对其进行修改，并再次显示字段值。
+您可以通过将您自己的名称分配给元组的元素，来实例化 *命名元组* ，而不是使用元组字段的默认名称。 然后，可以通过其分配的名称 *或* 默认名称访问元组的字段。 下面的示例实例化与之前相同的3元组，只不过它显式命名第一个字段 `EventDate` 、第二个字段和第三个字段 `Name` `IsHoliday` 。 然后，它将显示字段值并对其进行修改，并再次显示字段值。
 
 [!code-vb[Instantiate](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple1.vb#4)]
 
@@ -60,7 +60,7 @@ Visual Basic 元组的字段是读写的;实例化元组后，可以修改其值
 
 版本号可以是从15.3 开始的 Visual Basic 编译器的任何版本。 您还可以将 "最新版本" 指定为 `LangVersion` 使用您的系统上安装的 Visual Basic 编译器的最新版本，而不是对特定编译器版本进行硬编码。
 
-有关详细信息，请参阅[设置 Visual Basic 语言版本](../../../language-reference/configure-language-version.md)。
+有关详细信息，请参阅 [设置 Visual Basic 语言版本](../../../language-reference/configure-language-version.md)。
 
 在某些情况下，Visual Basic 编译器无法从候选名称推断元组元素名称，并且只能使用其默认名称（如、等）来引用元组字段 `Item1` `Item2` 。其中包括：
 
@@ -72,7 +72,7 @@ Visual Basic 元组的字段是读写的;实例化元组后，可以修改其值
 
 ## <a name="tuples-versus-structures"></a>元组与结构
 
-Visual Basic 元组是一个值类型，它是**ValueTuple**泛型类型之一的实例。 例如， `holiday` 在上一个示例中定义的元组是结构的实例 <xref:System.ValueTuple%603> 。 它设计为数据的轻型容器。 由于元组旨在使创建包含多个数据项的对象变得更加容易，因此它缺少自定义结构可能具有的某些功能。 其中包括：
+Visual Basic 元组是一个值类型，它是 **ValueTuple** 泛型类型之一的实例。 例如， `holiday` 在上一个示例中定义的元组是结构的实例 <xref:System.ValueTuple%603> 。 它设计为数据的轻型容器。 由于元组旨在使创建包含多个数据项的对象变得更加容易，因此它缺少自定义结构可能具有的某些功能。 其中包括：
 
 - 自定义成员。 不能为元组定义自己的属性、方法或事件。
 
@@ -80,18 +80,18 @@ Visual Basic 元组是一个值类型，它是**ValueTuple**泛型类型之一�
 
 - 不可变性. Visual Basic 元组是可变的。 与此相反，自定义结构允许您控制实例是可变的还是不可变的。
 
-如果自定义成员、属性和字段验证或不可变性非常重要，则应使用 Visual Basic[结构](../../../language-reference/statements/structure-statement.md)语句来定义自定义值类型。
+如果自定义成员、属性和字段验证或不可变性非常重要，则应使用 Visual Basic [结构](../../../language-reference/statements/structure-statement.md) 语句来定义自定义值类型。
 
-Visual Basic 元组将继承其**ValueTuple**类型的成员。 除了其字段外，其中包括以下方法：
+Visual Basic 元组将继承其 **ValueTuple** 类型的成员。 除了其字段外，其中包括以下方法：
 
-| 成员 | 描述 |
+| 方法 | 说明 |
 | ---|---|
 | CompareTo | 将当前元组与具有相同数量的元素的另一个元组进行比较。 |
 | 等于 | 确定当前元组是否等于另一个元组或对象。 |
 | GetHashCode | 计算当前实例的哈希代码。 |
 | ToString | 返回此元组的字符串表示形式，它采用格式 `(Item1, Item2...)` ，其中 `Item1` 和 `Item2` 表示元组字段的值。 |
 
-此外， **ValueTuple**类型实现 <xref:System.Collections.IStructuralComparable> 和 <xref:System.Collections.IStructuralEquatable> 接口，这允许您定义客户比较器。
+此外， **ValueTuple** 类型实现 <xref:System.Collections.IStructuralComparable> 和 <xref:System.Collections.IStructuralEquatable> 接口，这允许您定义自定义比较器。
 
 ## <a name="assignment-and-tuples"></a>赋值和元组
 
@@ -101,7 +101,7 @@ Visual Basic 支持在具有相同数量的字段的元组类型之间进行分�
 
 - 定义了源类型到目标类型的扩大 (或隐式) 转换。
 
-- `Option Strict`为 `On` ，并且定义了从源类型到目标类型的收缩 (或显式) 转换。 如果源值超出了目标类型的范围，则此转换可能会引发异常。
+- `Option Strict` 为 `On` ，并且定义了从源类型到目标类型的收缩 (或显式) 转换。 如果源值超出了目标类型的范围，则此转换可能会引发异常。
 
 对于其他转换，不考虑进行赋值。 让我们看一下元组类型之间允许的赋值类型。
 
@@ -141,7 +141,7 @@ named = differentShape
 
 - 可以使用元组，该元组提供用于检索多个返回值的轻型解决方案。
 
-例如，.NET 中的**TryParse**方法返回一个 `Boolean` 值，该值指示分析操作是否成功。 分析操作的结果在通过引用传递给方法的变量中返回。 通常，对分析方法的调用如下所 <xref:System.Int32.TryParse%2A?displayProperty=nameWithType> 示：
+例如，.NET 中的 **TryParse** 方法返回一个 `Boolean` 值，该值指示分析操作是否成功。 分析操作的结果在通过引用传递给方法的变量中返回。 通常，对分析方法的调用如下所 <xref:System.Int32.TryParse%2A?displayProperty=nameWithType> 示：
 
 [!code-vb[Return](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple-returns.vb#1)]
 
@@ -155,19 +155,19 @@ named = differentShape
 
 ## <a name="visual-basic-tuples-and-tuples-in-the-net-framework"></a>.NET Framework 中的 Visual Basic 元组和元组
 
-Visual Basic 元组是 .NET Framework 4.7 中引入的 ValueTuple 泛型类型之一的实例 **。** .NET Framework 还包括一组通用的**系统元组**类。 不过，这些类与 Visual Basic 元组和**ValueTuple**泛型类型的不同之处在于：
+Visual Basic 元组是 .NET Framework 4.7 中引入的 ValueTuple 泛型类型之一的实例 **。** .NET Framework 还包括一组通用的 **系统元组** 类。 不过，这些类与 Visual Basic 元组和 **ValueTuple** 泛型类型的不同之处在于：
 
-- **元组**类的元素是名为 `Item1` 、等的属性 `Item2` 。 在 Visual Basic 元组和**ValueTuple**类型中，元组元素是字段。
+- **元组**类的元素是名为 `Item1` 、等的属性 `Item2` 。 在 Visual Basic 元组和 **ValueTuple** 类型中，元组元素是字段。
 
-- 不能为**元组**实例或**ValueTuple**实例的元素分配有意义的名称。 Visual Basic 允许您分配用于传达字段含义的名称。
+- 不能为 **元组** 实例或 **ValueTuple** 实例的元素分配有意义的名称。 Visual Basic 允许您分配用于传达字段含义的名称。
 
-- **元组**实例的属性是只读的;元组是不可变的。 在 Visual Basic 元组和**ValueTuple**类型中，元组字段是读写的;元组是可变的。
+- **元组**实例的属性是只读的;元组是不可变的。 在 Visual Basic 元组和 **ValueTuple** 类型中，元组字段是读写的;元组是可变的。
 
-- 泛型**元组**类型为引用类型。 使用这些**元组**类型意味着分配对象。 在热路径中，这可能会对应用程序性能产生明显的影响。 Visual Basic 元组和**ValueTuple**类型为值类型。
+- 泛型 **元组** 类型为引用类型。 使用这些 **元组** 类型意味着分配对象。 在热路径中，这可能会对应用程序性能产生明显的影响。 Visual Basic 元组和 **ValueTuple** 类型为值类型。
 
-类中的扩展方法可以轻松地在 <xref:System.TupleExtensions> Visual Basic 元组和 .Net**元组**对象之间进行转换。 **ToTuple**方法将 Visual Basic 元组转换为 .Net**元组**对象， **ToValueTuple**方法将 .net**元组**对象转换为 Visual Basic 元组。
+类中的扩展方法可以轻松地在 <xref:System.TupleExtensions> Visual Basic 元组和 .Net **元组** 对象之间进行转换。 **ToTuple**方法将 Visual Basic 元组转换为 .Net**元组**对象， **ToValueTuple**方法将 .net**元组**对象转换为 Visual Basic 元组。
 
-下面的示例创建一个元组，将其转换为 .NET**元组**对象，然后将其转换回 Visual Basic 元组。 然后，该示例将此元组与原始元组进行比较以确保它们相等。
+下面的示例创建一个元组，将其转换为 .NET **元组** 对象，然后将其转换回 Visual Basic 元组。 然后，该示例将此元组与原始元组进行比较以确保它们相等。
 
 [!code-vb[Convert](../../../../../samples/snippets/visualbasic/programming-guide/language-features/data-types/tuple2.vb#1)]
 

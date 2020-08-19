@@ -1,13 +1,13 @@
 ---
 title: 记录
-description: 了解记录F#如何表示命名值的简单聚合，还可以选择包含成员。
-ms.date: 06/09/2019
-ms.openlocfilehash: 874c5fa30a36f2778f7a43266316deb8c59d1d72
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+description: '了解 F # 记录如何表示命名值的简单聚合，还可以选择包含成员。'
+ms.date: 08/15/2020
+ms.openlocfilehash: 182b2e83c3940c866197052af102787a96e49c54
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216789"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559045"
 ---
 # <a name="records"></a>记录
 
@@ -26,7 +26,7 @@ type [accessibility-modifier] typename =
 
 ## <a name="remarks"></a>备注
 
-在前面的语法中， *typename*是记录类型的名称， *label1*和*label2*是值的名称（称为*标签*）， *type1*和*type2*是这些值的类型。 *成员列表*是此类型的成员的可选列表。  您可以使用`[<Struct>]`属性来创建结构记录，而不是引用类型的记录。
+在前面的语法中， *typename* 是记录类型的名称， *label1* 和 *label2* 是值的名称（称为 *标签*）， *type1* 和 *type2* 是这些值的类型。 *成员列表* 是此类型的成员的可选列表。  您可以使用 `[<Struct>]` 属性来创建结构记录，而不是引用类型的记录。
 
 下面是一些示例。
 
@@ -34,7 +34,7 @@ type [accessibility-modifier] typename =
 
 每个标签都在单独的行上时，分号是可选的。
 
-您可以在称为*记录表达式*的表达式中设置值。 编译器从使用的标签推断类型（如果标签与其他记录类型的标签完全不同）。 大括号（{}）将记录表达式括起来。 下面的代码演示了一个记录表达式，该表达式使用带有标签`x`、 `y`和`z`的三个 float 元素初始化记录。
+您可以在称为 *记录表达式*的表达式中设置值。 如果标签与其他记录类型) 的 (完全不同，则编译器将从使用的标签推断类型。 大括号 ( {} ) 将记录表达式括起来。 下面的代码演示了一个记录表达式，该表达式使用带有标签、和的三个 float 元素初始化记录 `x` `y` `z` 。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1907.fs)]
 
@@ -42,7 +42,7 @@ type [accessibility-modifier] typename =
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1903.fs)]
 
-最近声明的类型的标签优先于以前声明的类型的标签，因此在前面的示例中， `mypoint3D`将推断`Point3D`为。 可以显式指定记录类型，如下面的代码所示。
+最近声明的类型的标签优先于以前声明的类型的标签，因此在前面的示例中， `mypoint3D` 将推断为 `Point3D` 。 可以显式指定记录类型，如下面的代码所示。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1908.fs)]
 
@@ -50,7 +50,7 @@ type [accessibility-modifier] typename =
 
 ## <a name="creating-records-by-using-record-expressions"></a>使用记录表达式创建记录
 
-您可以通过使用记录中定义的标签来初始化记录。 这样做的表达式称为 "*记录表达式*"。 使用大括号将记录表达式括起来，并使用分号作为分隔符。
+您可以通过使用记录中定义的标签来初始化记录。 这样做的表达式称为 " *记录表达式*"。 使用大括号将记录表达式括起来，并使用分号作为分隔符。
 
 下面的示例演示如何创建记录。
 
@@ -60,7 +60,7 @@ type [accessibility-modifier] typename =
 
 创建记录时，必须为每个字段提供值。 不能引用任何字段的初始化表达式中其他字段的值。
 
-在下面的代码中，的类型`myRecord2`是从字段的名称推断出来的。 还可以选择显式指定类型名称。
+在下面的代码中，的类型 `myRecord2` 是从字段的名称推断出来的。 还可以选择显式指定类型名称。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1905.fs)]
 
@@ -68,7 +68,7 @@ type [accessibility-modifier] typename =
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet1906.fs)]
 
-这种形式的记录表达式称为 "*复制和更新记录表达式*"。
+这种形式的记录表达式称为 " *复制和更新记录表达式*"。
 
 记录在默认情况下是不可变的;不过，您可以使用复制和更新表达式轻松创建修改后的记录。 还可以显式指定可变字段。
 
@@ -94,9 +94,9 @@ let rr3 = { defaultRecord1 with Field2 = 42 }
 
 在创建记录时，可能需要让它依赖于以后要定义的另一种类型。 这是一种编译错误，除非你将记录类型定义为 "互相递归"。
 
-定义相互递归的记录是通过`and`关键字来完成的。 这使你可以将两个或更多个记录类型链接在一起。
+定义相互递归的记录是通过关键字来完成的 `and` 。 这使你可以将两个或更多个记录类型链接在一起。
 
-例如，下面的代码将`Person`和`Address`类型定义为互相递归：
+例如，下面的代码将 `Person` 和类型定义 `Address` 为互相递归：
 
 ```fsharp
 // Create a Person type and use the Address type that is not defined
@@ -112,7 +112,7 @@ and Address =
     Occupant: Person }
 ```
 
-如果要定义前面的示例而不包含`and`关键字，则不会进行编译。 对于`and`相互递归定义，关键字是必需的。
+如果要定义前面的示例而不包含 `and` 关键字，则不会进行编译。 `and`对于相互递归定义，关键字是必需的。
 
 ## <a name="pattern-matching-with-records"></a>与记录匹配的模式
 
@@ -126,6 +126,39 @@ and Address =
 Point is at the origin.
 Point is on the x-axis. Value is 100.000000.
 Point is at (10.000000, 0.000000, -1.000000).
+```
+
+## <a name="records-and-members"></a>记录和成员
+
+您可以在记录上指定成员，这一点与类的处理方式相同。 不支持字段。 常见的方法是定义一个 `Default` 静态成员以便于构建简单的记录：
+
+```fsharp
+type Person =
+  { Name: string
+    Age: int
+    Address: string }
+
+    static member Default =
+        { Name = "Phillip"
+          Age = 12
+          Address = "123 happy fun street" }
+
+let defaultPerson = Person.Default
+```
+
+如果使用自我标识符，则该标识符引用其成员被调用的记录的实例：
+
+```fsharp
+type Person =
+  { Name: string
+    Age: int
+    Address: string }
+
+    member this.WeirdToString() =
+        this.Name + this.Address + string this.Age
+
+let p = { Name = "a"; Age = 12; Address = "abc123 }
+let weirdString = p.WeirdToString()
 ```
 
 ## <a name="differences-between-records-and-classes"></a>记录和类之间的差异
@@ -142,11 +175,11 @@ Point is at (10.000000, 0.000000, -1.000000).
 The records are equal.
 ```
 
-如果你用类编写相同的代码，则两个类对象将不相等，因为这两个值将表示堆上的两个对象，并且仅比较地址（除非类类型重`System.Object.Equals`写方法）。
+如果你用类编写相同的代码，则两个类对象将不相等，因为这两个值将表示堆上的两个对象，并且仅 (比较地址，除非类类型重写 `System.Object.Equals`) 的方法。
 
-如果需要记录的引用相等性，请在记录`[<ReferenceEquality>]`上方添加属性。
+如果需要记录的引用相等性，请在 `[<ReferenceEquality>]` 记录上方添加属性。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [F# 类型](fsharp-types.md)
 - [类](classes.md)

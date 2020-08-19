@@ -7,12 +7,12 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/19/2019
-ms.openlocfilehash: ca3d8747b02602c89aec187ea0826e658fb0cbc4
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: ba6dbfdf9a4fa9973dfe84cf5d58f1300f5d0cb4
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267797"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557537"
 ---
 # <a name="migrate-from-aspnet-web-forms-to-no-locblazor"></a>从 ASP.NET Web 窗体迁移到 Blazor
 
@@ -559,10 +559,6 @@ namespace eShopLegacyWebForms.Catalog
 ```
 
 `EditForm`上下文包括验证支持，可在输入前后环绕。 数据批注是添加验证的常用方法。 可以通过组件添加此类验证支持 `DataAnnotationsValidator` 。 有关此机制的详细信息，请参阅 [ASP.NET Core Blazor 窗体和验证](/aspnet/core/blazor/forms-validation)。
-
-## <a name="migrate-built-in-web-forms-controls"></a>迁移内置 Web 窗体控件
-
-*即将推出此内容。*
 
 ## <a name="migrate-configuration"></a>迁移配置
 

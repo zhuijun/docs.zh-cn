@@ -2,12 +2,12 @@
 title: 适用于云原生应用的 Azure 安全性
 description: 构建适用于 Azure 的云本机 .NET 应用 |适用于云原生应用的 Azure 安全性
 ms.date: 05/13/2020
-ms.openlocfilehash: 223d9e77aca611697958981bf2ee3a630fb9fffb
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: 996c7075b252466a3b3374f1e75e64315fdd6fc7
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374489"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557641"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>适用于云原生应用的 Azure 安全性
 
@@ -24,23 +24,23 @@ ms.locfileid: "86374489"
 - 谁有权访问此数据？
 - 开发和发布过程是否有审核策略？
 
-所有这些问题都是名为 "[威胁建模](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool)" 的过程的一部分。 此过程将尝试回答系统面临的威胁的问题、威胁的可能性以及潜在的损害。
+所有这些问题都是名为 " [威胁建模](https://docs.microsoft.com/azure/security/azure-security-threat-modeling-tool)" 的过程的一部分。 此过程将尝试回答系统面临的威胁的问题、威胁的可能性以及潜在的损害。
 
-一旦建立了威胁列表，就需要决定是否值得缓解这些威胁。 有时，对威胁的规划不太可能和昂贵，因为这样做并不值得花费大量精力。 例如，某些状态级别执行组件可能会将更改注入到数百万设备使用的进程设计中。 现在，此代码不会在[环 3](https://en.wikipedia.org/wiki/Protection_ring)中运行某个代码段，而是在环0中运行。 这使得攻击者能够绕过虚拟机监控程序并在裸机计算机上运行攻击代码，从而允许在该硬件上运行的所有虚拟机上进行攻击。
+一旦建立了威胁列表，就需要决定是否值得缓解这些威胁。 有时，对威胁的规划不太可能和昂贵，因为这样做并不值得花费大量精力。 例如，某些状态级别执行组件可能会将更改注入到数百万设备使用的进程设计中。 现在，此代码不会在 [环 3](https://en.wikipedia.org/wiki/Protection_ring)中运行某个代码段，而是在环0中运行。 这使得攻击者能够绕过虚拟机监控程序并在裸机计算机上运行攻击代码，从而允许在该硬件上运行的所有虚拟机上进行攻击。
 
 在没有 microscope 的情况下，更改的处理器很难检测到该处理器的芯片设计的高级知识。 这种情况不太可能发生，并且缓解起来很昂贵，因此可能没有威胁模型为它构建利用保护。
 
-更有可能的威胁，例如允许增加攻击的损坏的访问控制 `Id` （ `Id=2` `Id=3` 在 URL 中替换为）或 SQL 注入，更具吸引力。 这些威胁的缓解措施非常合理，可以构建和阻止污点公司信誉的尴尬安全漏洞。
+更有可能的威胁（如允许 `Id` (替换 `Id=2` 为 URL 中的增量攻击 `Id=3`) 或 SQL 注入）的威胁更具吸引力，更具吸引力。 这些威胁的缓解措施非常合理，可以构建和阻止污点公司信誉的尴尬安全漏洞。
 
 ## <a name="principle-of-least-privilege"></a>最低权限原则
 
-计算机安全的一项初步理念是最小特权原则（POLP）。 它实际上是一个基本概念，其中的大多数形式都是数字或物理。 简而言之，原则是，任何用户或进程都应具有执行其任务所需的最少权限。
+计算机安全的一项初步理念是 (POLP) 的最小特权原则。 它实际上是一个基本概念，其中的大多数形式都是数字或物理。 简而言之，原则是，任何用户或进程都应具有执行其任务所需的最少权限。
 
 例如，在银行 tellers：访问 safe 是一种不常见的活动。 因此，平均出纳不能打开安全的。 若要获取访问权限，他们需要通过银行经理来升级其请求，该管理人员执行额外的安全检查。
 
 在计算机系统中，有一个极好的示例是用户连接到数据库的权限。 在许多情况下，只需使用单个用户帐户即可生成数据库结构并运行应用程序。 除极端情况外，运行应用程序的帐户不需要更新架构信息的能力。 应该有多个帐户提供不同级别的权限。 应用程序应仅使用授予对表中数据的读取和写入访问权限的权限级别。 这种保护将消除旨在丢弃数据库表或引入恶意触发器的攻击。
 
-构建云本机应用程序的几乎每个部分都可以从记住最低权限原则中获益。 在基于角色的访问控制（RBAC）中设置防火墙、网络安全组、角色和作用域时，可以找到它。
+构建云本机应用程序的几乎每个部分都可以从记住最低权限原则中获益。 在基于角色的访问控制中设置防火墙、网络安全组、角色和作用域时，可以在 (RBAC) 中找到它。
 
 ## <a name="penetration-testing"></a>渗透测试
 
@@ -48,7 +48,7 @@ ms.locfileid: "86374489"
 
 渗透测试或 "笔测试" 涉及引入外部参与者来尝试攻击系统。 这些攻击者可能是外部咨询公司或其他开发人员，他们可以从业务的其他部分获得良好的安全知识。 他们将获得全权，尝试破坏系统。 通常，它们会发现需要修补的大量安全漏洞。 有时，攻击向量将是完全意外的内容，例如对 CEO 的网络钓鱼攻击。
 
-Azure 本身在[Microsoft 内部](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/)不断遭受黑客的攻击。 多年来，他们一直在寻找数十个潜在灾难性攻击媒介，在外部利用它们之前将它们关闭。 目标越诱人，永久的执行组件就越有可能尝试利用它，并且在世界上有一些目标比 Azure 更具吸引力。
+Azure 本身在 [Microsoft 内部](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/)不断遭受黑客的攻击。 多年来，他们一直在寻找数十个潜在灾难性攻击媒介，在外部利用它们之前将它们关闭。 目标越诱人，永久的执行组件就越有可能尝试利用它，并且在世界上有一些目标比 Azure 更具吸引力。
 
 ## <a name="monitoring"></a>监视
 
@@ -64,17 +64,17 @@ Azure 本身在[Microsoft 内部](https://azure.microsoft.com/resources/videos/r
 
 ## <a name="building-secure-code"></a>构建安全代码
 
-.NET Framework 已是一个非常安全的框架。 它避免了某些非托管代码的缺陷，如遍历数组的结尾。 工作正在进行，以便在发现安全漏洞时进行修复。 甚至还有一个[bug 奖励程序](https://www.microsoft.com/msrc/bounty)，它可以向研究人员提供框架中的问题并进行报告，而不是利用这些问题。
+.NET Framework 已是一个非常安全的框架。 它避免了某些非托管代码的缺陷，如遍历数组的结尾。 工作正在进行，以便在发现安全漏洞时进行修复。 甚至还有一个 [bug 奖励程序](https://www.microsoft.com/msrc/bounty) ，它可以向研究人员提供框架中的问题并进行报告，而不是利用这些问题。
 
-有多种方法可以使 .NET 代码更安全。 遵循适用于 .NET 的[安全编码准则](../../standard/security/secure-coding-guidelines.md)这类准则是确保代码完全安全的合理步骤。 [OWASP top 10](https://owasp.org/www-project-top-ten/)是另一个可用于构建安全代码的重要指南。
+有多种方法可以使 .NET 代码更安全。 遵循适用于 .NET 的 [安全编码准则](../../standard/security/secure-coding-guidelines.md) 这类准则是确保代码完全安全的合理步骤。 [OWASP top 10](https://owasp.org/www-project-top-ten/)是另一个可用于构建安全代码的重要指南。
 
 在生成过程中，可以使用生成过程来检测源代码中的问题，然后再将其投入生产。 大多数项目都具有其他某些包的依赖关系。 可以扫描过期包的工具将会在夜间生成中捕获问题。 即使在构建 Docker 映像时，检查并确保基本映像没有已知的漏洞也是非常有用的。 要检查的另一件事是没有人无意中签入凭据。
 
 ## <a name="built-in-security"></a>内置安全性
 
-Azure 旨在平衡大多数用户的可用性和安全性。 不同的用户会有不同的安全要求，因此他们需要对云安全方法进行微调。 Microsoft 在[信任中心](https://azure.microsoft.com/support/trust-center/)发布了大量安全信息。 对于那些想要了解内置攻击缓解技术如何工作的专业人员，此资源应是第一站。
+Azure 旨在平衡大多数用户的可用性和安全性。 不同的用户会有不同的安全要求，因此他们需要对云安全方法进行微调。 Microsoft 在 [信任中心](https://azure.microsoft.com/support/trust-center/)发布了大量安全信息。 对于那些想要了解内置攻击缓解技术如何工作的专业人员，此资源应是第一站。
 
-在 Azure 门户中， [Azure 顾问](https://azure.microsoft.com/services/advisor/)是一种持续扫描环境并提出建议的系统。 其中的某些建议旨在节省用户资金，但其他建议用于标识可能不安全的配置，例如，将存储容器打开到世界，不受虚拟网络保护。
+在 Azure 门户中， [Azure 顾问](https://azure.microsoft.com/services/advisor/) 是一种持续扫描环境并提出建议的系统。 其中的某些建议旨在节省用户资金，但其他建议用于标识可能不安全的配置，例如，将存储容器打开到世界，不受虚拟网络保护。
 
 ## <a name="azure-network-infrastructure"></a>Azure 网络基础结构
 
@@ -92,13 +92,13 @@ Azure 旨在平衡大多数用户的可用性和安全性。 不同的用户会�
 
 建立网络后，可以将存储帐户等内部资源设置为仅允许虚拟网络中的资源访问。 此防火墙提供额外的安全级别，如果该存储帐户的密钥泄漏，攻击者将无法连接到该存储帐户以利用泄露的密钥。 这是最低权限原则的另一个示例。
 
-Azure Kubernetes 群集中的节点可以加入虚拟网络，就像其他更适用于 Azure 的资源一样。 此功能称为[Azure 容器网络接口](https://github.com/Azure/azure-container-networking/blob/master/docs/cni.md)。 实际上，它会在虚拟网络中分配虚拟机和容器映像的子网。
+Azure Kubernetes 群集中的节点可以加入虚拟网络，就像其他更适用于 Azure 的资源一样。 此功能称为 [Azure 容器网络接口](https://github.com/Azure/azure-container-networking/blob/master/docs/cni.md)。 实际上，它会在虚拟网络中分配虚拟机和容器映像的子网。
 
-继续说明最小特权原则，而不是虚拟网络中的每个资源都需要与其他每个资源进行通信。 例如，在通过存储帐户和 SQL 数据库提供 web API 的应用程序中，数据库和存储帐户不太可能需要彼此通信。 它们之间共享的任何数据都将通过 web 应用程序。 因此，可以使用[网络安全组（NSG）](https://docs.microsoft.com/azure/virtual-network/security-overview)拒绝这两个服务之间的流量。
+继续说明最小特权原则，而不是虚拟网络中的每个资源都需要与其他每个资源进行通信。 例如，在通过存储帐户和 SQL 数据库提供 web API 的应用程序中，数据库和存储帐户不太可能需要彼此通信。 它们之间共享的任何数据都将通过 web 应用程序。 因此， [ (NSG) 的网络安全组 ](https://docs.microsoft.com/azure/virtual-network/security-overview) 可用于拒绝这两个服务之间的流量。
 
-拒绝资源之间的通信的策略可能会令人讨厌，尤其是从使用 Azure 的后台，而不受流量限制。 在其他云上，网络安全组的概念更为普遍。 例如，AWS 上的默认策略是在由 NSG 中的规则启用之前，资源不能相互通信。 虽然开发的速度较慢，但更严格的环境却提供了更安全的默认值。 使用适当的 DevOps 做法，尤其是使用[Azure 资源管理器或 Terraform](infrastructure-as-code.md)管理权限时，可以更轻松地控制规则。
+拒绝资源之间的通信的策略可能会令人讨厌，尤其是从使用 Azure 的后台，而不受流量限制。 在其他云上，网络安全组的概念更为普遍。 例如，AWS 上的默认策略是在由 NSG 中的规则启用之前，资源不能相互通信。 虽然开发的速度较慢，但更严格的环境却提供了更安全的默认值。 使用适当的 DevOps 做法，尤其是使用 [Azure 资源管理器或 Terraform](infrastructure-as-code.md) 管理权限时，可以更轻松地控制规则。
 
-设置本地资源与云资源之间的通信时，虚拟网络也非常有用。 虚拟专用网络可用于无缝地将两个网络连接在一起。 这允许在所有用户都位于现场的情况下，在没有任何网关的情况下运行虚拟网络。 可使用多种技术来建立此网络。 最简单的是使用可在多个路由器和 Azure 之间建立的[站点到站点 VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#s2smulti) 。 流量通过 Internet 进行加密和隧道连接，其成本与任何其他流量相同。 如果需要更多的带宽或更高的安全性，Azure 提供名为[Express Route](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#ExpressRoute)的服务，该服务使用本地网络和 Azure 之间的专用线路。 建立成本更高且难以建立，并且更安全。
+设置本地资源与云资源之间的通信时，虚拟网络也非常有用。 虚拟专用网络可用于无缝地将两个网络连接在一起。 这允许在所有用户都位于现场的情况下，在没有任何网关的情况下运行虚拟网络。 可使用多种技术来建立此网络。 最简单的是使用可在多个路由器和 Azure 之间建立的 [站点到站点 VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#s2smulti) 。 流量通过 Internet 进行加密和隧道连接，其成本与任何其他流量相同。 如果需要更多的带宽或更高的安全性，Azure 提供名为 [Express Route](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways?toc=%2fazure%2fvirtual-network%2ftoc.json#ExpressRoute) 的服务，该服务使用本地网络和 Azure 之间的专用线路。 建立成本更高且难以建立，并且更安全。
 
 ## <a name="role-based-access-control-for-restricting-access-to-azure-resources"></a>基于角色的访问控制，用于限制对 Azure 资源的访问
 
@@ -129,7 +129,7 @@ RBAC 中的第一个组件是一个安全主体。 安全主体可以是用户�
 
 内置于 Azure 中也是许多高级角色，如所有者、参与者、读者和用户帐户管理员。 使用 "所有者" 角色，安全主体可以访问所有资源，并将权限分配给其他资源。 参与者对所有资源具有相同级别的访问权限，但无法分配权限。 读者只能查看现有的 Azure 资源，用户帐户管理员可以管理对 Azure 资源的访问权限。
 
-更精细的内置角色（如[DNS 区域参与者](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#dns-zone-contributor)）具有限制为单个服务的权限。 安全主体可以拥有任意数量的角色。
+更精细的内置角色（如 [DNS 区域参与者](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#dns-zone-contributor) ）具有限制为单个服务的权限。 安全主体可以拥有任意数量的角色。
 
 ## <a name="scopes"></a>作用域
 
@@ -139,7 +139,7 @@ RBAC 中的第一个组件是一个安全主体。 安全主体可以是用户�
 
 在测试安全主体是否具有特定权限时，会考虑角色和作用域的组合。 这种组合提供了一种强大的授权机制。
 
-## <a name="deny"></a>Deny
+## <a name="deny"></a>拒绝
 
 以前，RBAC 只允许使用 "允许" 规则。 此行为使某些范围的生成变得复杂。 例如，允许安全主体访问所有存储帐户，其中一个权限要求向可能会无穷的存储帐户列表授予显式权限。 每次创建新的存储帐户时，都必须将其添加到此帐户列表中。 这就增加了当然不需要的管理开销。
 
@@ -157,7 +157,7 @@ RBAC 中的第一个组件是一个安全主体。 安全主体可以是用户�
 
 密码和证书是攻击者的常见攻击媒介。 密码破解硬件可以执行暴力攻击，尝试每秒猜测数十亿密码。 因此，用于访问资源的密码是强的，其中包含大量字符，这一点很重要。 这些密码与几乎不可能记住的密码种类完全相同。 幸运的是，Azure 中的密码实际上不需要由任何人知道。
 
-许多安全[专家建议](https://www.troyhunt.com/password-managers-dont-have-to-be-perfect-they-just-have-to-be-better-than-not-having-one/)使用密码管理器来保留自己的密码，这是最佳方法。 尽管它在一个位置集中了密码，但它还允许使用非常复杂的密码，并确保它们对于每个帐户都是唯一的。 Azure 中存在相同的系统：机密的中心存储。
+许多安全 [专家建议](https://www.troyhunt.com/password-managers-dont-have-to-be-perfect-they-just-have-to-be-better-than-not-having-one/) 使用密码管理器来保留自己的密码，这是最佳方法。 尽管它在一个位置集中了密码，但它还允许使用非常复杂的密码，并确保它们对于每个帐户都是唯一的。 Azure 中存在相同的系统：机密的中心存储。
 
 ## <a name="azure-key-vault"></a>Azure Key Vault
 
@@ -199,9 +199,9 @@ data:
 kubectl apply -f ./secret.yaml
 ```
 
-然后，可以将这些机密装载到卷中，或通过环境变量向容器进程公开。 用于生成应用程序的[十二因素应用](https://12factor.net/)程序建议使用最低的公共分母将设置传输到应用程序。 环境变量是最小的常用分母，因为无论操作系统或应用程序是什么，它们都是受支持的。
+然后，可以将这些机密装载到卷中，或通过环境变量向容器进程公开。 用于生成应用程序的 [十二因素应用](https://12factor.net/) 程序建议使用最低的公共分母将设置传输到应用程序。 环境变量是最小的常用分母，因为无论操作系统或应用程序是什么，它们都是受支持的。
 
-使用内置 Kubernetes 机密的替代方法是从 Kubernetes 内访问 Azure Key Vault 中的机密。 要执行此操作，最简单的方法是将 RBAC 角色分配给想要加载机密的容器。 然后，应用程序可以使用 Azure Key Vault Api 来访问机密。 但是，这种方法需要修改代码，而不是使用环境变量的模式。 相反，可以通过使用[Azure Key Vault 注入器](https://mrdevops.io/introducing-azure-key-vault-to-kubernetes-931f82364354)将值注入到容器中。 此方法实际上比使用 Kubernetes 机密更为安全，因为它们可由群集上的用户进行访问。
+使用内置 Kubernetes 机密的替代方法是从 Kubernetes 内访问 Azure Key Vault 中的机密。 要执行此操作，最简单的方法是将 RBAC 角色分配给想要加载机密的容器。 然后，应用程序可以使用 Azure Key Vault Api 来访问机密。 但是，这种方法需要修改代码，而不是使用环境变量的模式。 相反，可以将值注入到容器中。 此方法实际上比使用 Kubernetes 机密更为安全，因为它们可由群集上的用户进行访问。
 
 ## <a name="encryption-in-transit-and-at-rest"></a>传输和静态加密
 
@@ -209,7 +209,7 @@ kubectl apply -f ./secret.yaml
 
 ### <a name="in-transit"></a>传输中
 
-可以通过多种方式在 Azure 中的网络上加密流量。 通常通过使用传输层安全性（TLS）的连接来访问 Azure 服务。 例如，与 Azure Api 建立的所有连接都需要 TLS 连接。 同样，与 Azure 存储空间中的终结点的连接可以限制为仅使用 TLS 加密的连接。
+可以通过多种方式在 Azure 中的网络上加密流量。 通常通过连接使用传输层安全性 (TLS) 对 Azure 服务进行访问。 例如，与 Azure Api 建立的所有连接都需要 TLS 连接。 同样，与 Azure 存储空间中的终结点的连接可以限制为仅使用 TLS 加密的连接。
 
 TLS 是一种复杂的协议，只是知道连接使用 TLS 并不能确保安全性。 例如，TLS 1.0 是长期的不安全的，TLS 1.1 并不是更好。 即使在 TLS 的版本中，也可以通过各种设置来更轻松地对连接进行解密。 最佳的操作过程是检查服务器连接是否正在使用最新且配置良好的协议。
 
@@ -233,17 +233,17 @@ TLS 是一种复杂的协议，只是知道连接使用 TLS 并不能确保安�
 
 如果 Azure 存储已进行了很好的加密，则它为其他所有其他内容提供了一个基础。 Azure 存储是通过符合[FIPS 140-2](https://en.wikipedia.org/wiki/FIPS_140)的[256 位 AES](https://en.wikipedia.org/wiki/Advanced_Encryption_Standard)[进行加密](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)的。 这是一种很好的加密技术，在过去的20年或几年中，我们一直在进行丰富的学术审查。 目前，没有任何已知的实际攻击会使不知道密钥的人了解通过 AES 加密的数据。
 
-默认情况下，用于加密 Azure 存储的密钥由 Microsoft 管理。 提供了广泛的保护措施，以确保防止恶意访问这些密钥。 但是，具有特定加密要求的用户还可以[提供自己的存储密钥](https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-powershell)，这些密钥在 Azure Key Vault 管理。 这些密钥可以随时撤消，这会使存储帐户的内容无法访问。
+默认情况下，用于加密 Azure 存储的密钥由 Microsoft 管理。 提供了广泛的保护措施，以确保防止恶意访问这些密钥。 但是，具有特定加密要求的用户还可以 [提供自己的存储密钥](https://docs.microsoft.com/azure/storage/common/storage-encryption-keys-powershell) ，这些密钥在 Azure Key Vault 管理。 这些密钥可以随时撤消，这会使存储帐户的内容无法访问。
 
 虚拟机使用加密存储，但通过使用 Windows 上的 BitLocker 或 Linux 上的 Dm-crypt，可以提供另一层的加密。 这些技术意味着，即使磁盘映像是从存储中泄露的，也仍然无法读取。
 
 ### <a name="azure-sql"></a>Azure SQL
 
-托管在 Azure SQL 中的数据库使用称为[透明数据加密（TDE）](/sql/relational-databases/security/encryption/transparent-data-encryption)的技术来确保数据保持加密。 默认情况下，它在所有新创建的 SQL 数据库上都处于启用状态，但必须为旧数据库手动启用。 TDE 不仅执行数据库的实时加密和解密，而且还执行备份和事务日志。
+托管在 Azure SQL 中的数据库使用称为 [透明数据加密 (TDE) ](/sql/relational-databases/security/encryption/transparent-data-encryption) 的技术来确保数据保持加密。 默认情况下，它在所有新创建的 SQL 数据库上都处于启用状态，但必须为旧数据库手动启用。 TDE 不仅执行数据库的实时加密和解密，而且还执行备份和事务日志。
 
 加密参数存储在数据库中， `master` 并在启动时读取到内存中以供剩余操作。 这意味着 `master` 数据库必须保持未加密状态。 实际密钥由 Microsoft 管理。 但是，具有严格安全要求的用户可能会在 Key Vault 中提供自己的密钥，这一点与对 Azure 存储的处理方式几乎相同。 Key Vault 提供密钥轮换和吊销等服务。
 
-TDS 的 "透明" 部分的事实是，不需要对客户端进行任何更改即可使用加密的数据库。 虽然这种方法提供了良好的安全性，但泄漏数据库密码足以使用户能够对数据进行解密。 还有另一种方法可加密数据库中的单个列或多个表。 [Always Encrypted](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault)确保在数据库内以纯文本形式显示加密的数据。
+TDS 的 "透明" 部分的事实是，不需要对客户端进行任何更改即可使用加密的数据库。 虽然这种方法提供了良好的安全性，但泄漏数据库密码足以使用户能够对数据进行解密。 还有另一种方法可加密数据库中的单个列或多个表。 [Always Encrypted](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault) 确保在数据库内以纯文本形式显示加密的数据。
 
 设置此加密层需要在 SQL Server Management Studio 中通过向导运行，以选择加密的类型以及在 Key Vault 中存储关联密钥的位置。
 
@@ -267,7 +267,7 @@ Cosmos DB 是 Microsoft 在 Azure 中提供的最新数据库。 它已从头开
 
 ## <a name="keeping-secure"></a>保持安全
 
-Azure 提供了发布高度安全的产品所需的所有工具。 但是，链的优点只是其最弱的链接。 如果部署在 Azure 之上的应用程序未使用适当的安全思维和良好的安全审核来开发，则它们将成为链中的弱链接。 可以使用很多极佳的静态分析工具、加密库和安全做法，以确保在 Azure 上安装的软件与 Azure 本身的安全性相同。 示例包括[静态分析工具](https://www.whitesourcesoftware.com/)、[加密库](https://www.libressl.org/)和[安全实践](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/)。
+Azure 提供了发布高度安全的产品所需的所有工具。 但是，链的优点只是其最弱的链接。 如果部署在 Azure 之上的应用程序未使用适当的安全思维和良好的安全审核来开发，则它们将成为链中的弱链接。 可以使用很多极佳的静态分析工具、加密库和安全做法，以确保在 Azure 上安装的软件与 Azure 本身的安全性相同。 示例包括 [静态分析工具](https://www.whitesourcesoftware.com/)、 [加密库](https://www.libressl.org/)和 [安全实践](https://azure.microsoft.com/resources/videos/red-vs-blue-internal-security-penetration-testing-of-microsoft-azure/)。
 
 >[!div class="step-by-step"]
 >[上一页](security.md)
