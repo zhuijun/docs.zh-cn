@@ -7,12 +7,12 @@ metadata:
   ms.topic: landing-page
   ms.date: 08/13/2020
   ms.custom: contperfq1
-  ms.openlocfilehash: 507ee5cfc579a75231bf49b1db0d28ec32927ecd
-  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+  ms.openlocfilehash: dff262ba8646427baa0021dbe4b3f859d22459cd
+  ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/17/2020
-  ms.locfileid: "88268148"
+  ms.lasthandoff: 08/18/2020
+  ms.locfileid: "88559201"
 landingContent:
 - title: 入门
   linkLists:
@@ -22,15 +22,15 @@ landingContent:
       url: https://dotnet.microsoft.com/download
   - linkListType: get-started
     links:
-    - text: 生成“Hello World”应用
-      url: ../core/tutorials/vb-with-visual-studio.md
-    - text: 生成类库
-      url: ../core/tutorials/vb-library-with-visual-studio.md
+    - text: 使用 Visual Studio 创建 .NET Core 控制台应用程序
+      url: ../core/tutorials/with-visual-studio.md
+    - text: 在 Visual Studio 中创建 .NET Standard 库
+      url: ../core/tutorials/library-with-visual-studio.md
     - text: 演练
       url: walkthroughs.md
     - text: 其他资源
       url: getting-started/additional-resources.md
-- title: 基础
+- title: 基础知识
   linkLists:
   - linkListType: overview
     links:
