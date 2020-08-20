@@ -7,18 +7,16 @@ no-loc:
 - Blazor
 - WebAssembly
 ms.date: 09/11/2019
-ms.openlocfilehash: 779eb47d9796c61df9939d0e7de287443870576e
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 1c869cce6ab8a0ab7c4b83817fe1afc3d6a4a7fd
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173245"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267460"
 ---
-# <a name="blazor-for-aspnet-web-forms-developers"></a>面向 Web Forms ASP.NET Web Forms 开发人员的 Blazor
+# <a name="no-locblazor-for-aspnet-web-forms-developers"></a>面向 Web Forms ASP.NET Web Forms 开发人员的 Blazor
 
-[!INCLUDE [book-preview](../../../includes/book-preview.md)]
-
-![显示无服务器应用电子书封面的屏幕截图。](./media/index/blazor-for-web-forms-developers-cover.png)
+![显示无服务器应用电子书封面的屏幕截图。](./media/index/blazor-for-aspnet-web-forms-developers.png)
 
 > 下载地址：<https://aka.ms/blazor-ebook>
 
@@ -32,7 +30,7 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-版权所有 © 2019 Microsoft Corporation
+版权所有 © 2020 Microsoft Corporation
 
 保留所有权利。 未经发布者书面许可，不得以任何形式或任何方式复制或传播本书中的任何内容。
 
@@ -55,6 +53,8 @@ Mac 和 macOS 是 Apple Inc. 的商标
 > [Taylor Southwick](https://github.com/twsouthwick)，Microsoft Corp 资深软件工程师。
 
 > [Scott Addie](https://github.com/scottaddie)，Microsoft Corp 资深内容开发人员。
+
+> [Steve "ardalis" Smith](https://ardalis.com)，Ardalis Services LLC 软件设计师及培训师
 
 ## <a name="introduction"></a>介绍
 
