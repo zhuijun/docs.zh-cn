@@ -1,17 +1,17 @@
 ---
 title: 结果
-description: 了解如何使用F# "结果" 类型来帮助你编写容错代码。
-ms.date: 04/24/2017
-ms.openlocfilehash: 187aa26ccbaac7e0ec998756377bb7b0489eb1ab
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+description: '了解如何使用 F # "Result" 类型来帮助你编写容错代码。'
+ms.date: 08/13/2020
+ms.openlocfilehash: d69e6ddc37bcf5cb5fc28644d59a11a822b83faa
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424855"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656913"
 ---
 # <a name="results"></a>结果
 
-从F# 4.1 开始，可以使用 `Result<'T,'TFailure>` 类型来编写可以撰写的错误容错代码。
+`Result<'T,'TFailure>`类型允许你编写可以撰写的错误容错代码。
 
 ## <a name="syntax"></a>语法
 
@@ -27,9 +27,11 @@ type Result<'T,'TError> =
 
 ## <a name="remarks"></a>备注
 
-请注意，结果类型是[结构可区分联合](discriminated-unions.md#struct-discriminated-unions)，这是4.1 中F#引入的另一项功能。  在此处应用结构相等性语义。
+请参阅的 [`Result`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-resultmodule.html) 内置组合器模块 `Result` 。 的参数。
 
-`Result` 类型通常用于一元错误处理，这在F#社区中通常称为[面向铁路的编程](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html)。  以下简单示例演示了这种方法。
+请注意，结果类型是 [结构可区分联合](discriminated-unions.md#struct-discriminated-unions)。 在此处应用结构相等性语义。
+
+`Result`类型通常用于一元错误处理，这在 F # 社区中通常称为[面向铁路的编程](https://swlaschin.gitbooks.io/fsharpforfunandprofit/content/posts/recipe-part2.html)。  以下简单示例演示了这种方法。
 
 ```fsharp
 // Define a simple type which has fields that can be validated
@@ -80,9 +82,9 @@ let test() =
 test()
 ```
 
-正如您所看到的，如果强制所有验证函数都返回 `Result`，则可以很容易地将各种验证函数链接在一起。  这使你可以将此类功能分解为小部分，它们可根据你的需要进行组合。  这也增加了在一轮验证的末尾*强制*使用[模式匹配](pattern-matching.md)的值，进而强制实施更高程度的程序正确性。
+正如您所看到的，如果强制所有的验证函数都返回，则可以很容易地将它们链接在一起 `Result` 。  这使你可以将此类功能分解为小部分，它们可根据你的需要进行组合。  这也增加了在一轮验证的末尾 *强制* 使用 [模式匹配](pattern-matching.md) 的值，进而强制实施更高程度的程序正确性。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [可区分联合](discriminated-unions.md)
 - [模式匹配](pattern-matching.md)
