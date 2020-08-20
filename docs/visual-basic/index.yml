@@ -1,17 +1,18 @@
 ### YamlMime:Landing
 title: Visual Basic 文档
-summary: Visual Basic 旨在帮助用户高效地生成类型安全且面向对象的应用。 Visual Basic 是用于创建 .NET 应用的一种便捷方法。
+summary: Visual Basic 是 Microsoft 开发的一种面向对象的编程语言。 使用 Visual Basic 即可快速、轻松地创建类型安全的 .NET 应用。
 metadata:
   title: Visual Basic 文档 - 入门、教程、参考。
   description: 了解 .NET 中的 Visual Basic 编程 - 面向新手开发人员、刚开始接触 Visual Basic 的开发人员、以及经验丰富的 Visual Basic 开发人员
   ms.topic: landing-page
-  ms.date: 04/22/2020
-  ms.openlocfilehash: 0dba96b4d42085680a8e0aa25456ec756e8c9b42
-  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+  ms.date: 08/13/2020
+  ms.custom: contperfq1
+  ms.openlocfilehash: 507ee5cfc579a75231bf49b1db0d28ec32927ecd
+  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "82135784"
+  ms.lasthandoff: 08/17/2020
+  ms.locfileid: "88268148"
 landingContent:
 - title: 入门
   linkLists:
@@ -21,53 +22,47 @@ landingContent:
       url: https://dotnet.microsoft.com/download
   - linkListType: get-started
     links:
-    - text: 使用 .NET Core 生成“Hello World”应用
+    - text: 生成“Hello World”应用
       url: ../core/tutorials/vb-with-visual-studio.md
-    - text: 使用 .NET Standard 生成类库
+    - text: 生成类库
       url: ../core/tutorials/vb-library-with-visual-studio.md
-    - text: 其他资源
-      url: getting-started/additional-resources.md
     - text: 演练
       url: walkthroughs.md
-- title: Visual Basic 基础知识
+    - text: 其他资源
+      url: getting-started/additional-resources.md
+- title: 基础
   linkLists:
   - linkListType: overview
     links:
     - text: 编程概念
       url: programming-guide/concepts/index.md
+  - linkListType: whats-new
+    links:
+    - text: Visual Basic 中的新增功能
+      url: getting-started/whats-new.md
   - linkListType: concept
     links:
-    - text: 程序结构和代码约定
-      url: programming-guide/program-structure/program-structure-and-code-conventions.md
-    - text: 使用 Visual Basic 开发应用
-      url: developing-apps/index.md
-    - text: 程序结构和代码约定
-      url: programming-guide/program-structure/program-structure-and-code-conventions.md
+    - text: Visual Basic 应用的结构
+      url: programming-guide/program-structure/structure-of-a-visual-basic-program.md
     - text: 语言功能
       url: programming-guide/language-features/index.md
-    - text: COM 互操作
-      url: programming-guide/com-interop/index.md
-- title: 热门方案
-  linkLists:
-  - linkListType: how-to-guide
-    links:
-    - text: Windows 窗体自定义委托和事件
-      url: https://social.technet.microsoft.com/wiki/contents/articles/53470.vb-net-windows-forms-custom-delegates-and-events.aspx
-    - text: 通过 WPF DataGrid 编辑数据库表值
-      url: https://social.msdn.microsoft.com/Forums/vstudio/10a3dd61-7dcc-48f3-a6e0-f7386d06f9f1/edit-database-table-values-via-wpf-datagrid-visual-basic?forum=wpf
-    - text: Windows 窗体 ListView：检查 SQL Server 的详细信息视图
-      url: https://social.technet.microsoft.com/wiki/contents/articles/53356.windows-forms-listview-examining-detail-view-with-sql-server.aspx
-    - text: 如何通过 OleDbConnection 打开 Excel 2016 工作簿
-      url: https://social.msdn.microsoft.com/Forums/vstudio/70a45808-9aaf-4320-a5fc-04cbbabf6e4d/how-to-open-excel-2016-workbook-through-oledbconnection?forum=vbgeneral
-- title: Visual Basic 语言参考
+    - text: 使用 Visual Basic 开发应用
+      url: developing-apps/index.md
+    - text: Windows 窗体应用
+      url: developing-apps/windows-forms/index.md
+- title: 语言参考
   linkLists:
   - linkListType: reference
     links:
-    - text: 语言参考
+    - text: 索引
       url: language-reference/index.md
     - text: 关键字
       url: language-reference/keywords/index.md
     - text: 运算符
       url: language-reference/operators/index.md
+    - text: 数据类型
+      url: language-reference/keywords/data-types-summary.md
+    - text: 字符串函数
+      url: language-reference/functions/string-functions.md
     - text: 语言规范
       url: reference/language-specification/index.md
