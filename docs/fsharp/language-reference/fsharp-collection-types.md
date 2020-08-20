@@ -2,12 +2,12 @@
 title: 集合类型
 description: '了解 F # 集合类型以及它们与集合类型 .NET 有何不同。'
 ms.date: 08/14/2020
-ms.openlocfilehash: 197ba754d632051b5a0bf9c8364d45a1fb932f48
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 394f6bbaf58e7e8607abc3a0c20bbc2b1c9c3c8d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267277"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656900"
 ---
 # <a name="f-collection-types"></a>F# 集合类型
 
@@ -19,19 +19,19 @@ ms.locfileid: "88267277"
 
 下表显示 F # 集合类型。
 
-|类型|说明|相关链接|
+|类型|描述|相关链接|
 |----|-----------|-------------|
-|[列表](https://msdn.microsoft.com/library/c627b668-477b-4409-91ed-06d7f1b3e4a7)|同一类型的有序、不可变的元素系列。 作为链接列表实现。|[列表](lists.md)<br /><br />[List 模块](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)|
-|[数组](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)|固定大小的、从零开始的可变连续数据元素集合，这些元素属于同一类型。|[数组](arrays.md)<br /><br />[Array 模块](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)<br /><br />[Array2D 模块](https://msdn.microsoft.com/library/ae1a9746-7817-4430-bcdb-a79c2411bbd3)<br /><br />[Array3D 模块](https://msdn.microsoft.com/library/c8355e2d-add8-48a4-8aa6-1c57ae74c560)|
-|[序列](https://msdn.microsoft.com/library/2f0c87c6-8a0d-4d33-92a6-10d1d037ce75)|全部为一种类型的元素的逻辑系列。 如果有大量的有序数据集合，但不一定要使用所有元素，则序列会特别有用。 单个序列元素仅在需要时进行计算，因此，如果不是所有元素都使用，则序列可以比列表更好。 序列由 `seq<'T>` 类型表示，该类型是的别名 `IEnumerable<T>` 。 因此，实现的任何 .NET Framework 类型 `System.Collections.Generic.IEnumerable<'T>` 都可用作序列。|[序列](sequences.md)<br /><br />[Seq 模块](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)|
-|[Map](https://msdn.microsoft.com/library/975316ea-55e3-4987-9994-90897ad45664)|元素的不可变字典。 通过键访问元素。|[地图模块](https://msdn.microsoft.com/library/bfe61ead-f16c-416f-af98-56dbcbe23e4f)|
-|[设置](https://msdn.microsoft.com/library/50cebdce-0cd7-4c5c-8ebc-f3a9e90b38d8)|基于二进制树的不可变集，其中，比较是 F # 结构比较函数，这可能会 `System.IComparable` 对键值使用接口的实现。|[设置模块](https://msdn.microsoft.com/library/61efa732-d55d-4c32-993f-628e2f98e6a0)|
+|[列表](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharplist-1.html)|同一类型的有序、不可变的元素系列。 作为链接列表实现。|[列表](lists.md)<br /><br />[List 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html)|
+|[数组](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html)|固定大小的、从零开始的可变连续数据元素集合，这些元素属于同一类型。|[数组](arrays.md)<br /><br />[Array 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html)<br /><br />[Array2D 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html)<br /><br />[Array3D 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array3dmodule.html)|
+|[序列](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html)|全部为一种类型的元素的逻辑系列。 如果有大量的有序数据集合，但不一定要使用所有元素，则序列会特别有用。 单个序列元素仅在需要时进行计算，因此，如果不是所有元素都使用，则序列可以比列表更好。 序列由 `seq<'T>` 类型表示，该类型是的别名 `IEnumerable<T>` 。 因此，实现的任何 .NET Framework 类型 `System.Collections.Generic.IEnumerable<'T>` 都可用作序列。|[序列](sequences.md)<br /><br />[Seq 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html)|
+|[Map](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html)|元素的不可变字典。 通过键访问元素。|[地图模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-mapmodule.html)|
+|[设置](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html)|基于二进制树的不可变集，其中，比较是 F # 结构比较函数，这可能会 `System.IComparable` 对键值使用接口的实现。|[设置模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-setmodule.html)|
 
 ### <a name="table-of-functions"></a>函数表
 
 本节比较 F # 集合类型上可用的函数。 给定函数的计算复杂性，其中 N 是第一个集合的大小，M 是第二个集合的大小（如果有）。 短划线 (-) 指示此函数在集合上不可用。 由于序列被延迟计算，因此函数（如 Seq）可能是 O (1) 的，因为它在枚举时仍会影响序列的性能。
 
-|函数|Array|列出|序列|映射|设置|说明|
+|函数|Array|列出|序列|映射|设置|描述|
 |--------|-----|----|--------|---|---|-----------|
 |append|O (N) |O (N) |O (N) |-|-|返回一个新集合，其中包含第一个集合的元素，后跟第二个集合的元素。|
 |add|-|-|-|O (日志 (N) # A3|O (日志 (N) # A3|返回添加了元素的新集合。|
@@ -90,10 +90,10 @@ ms.locfileid: "88267277"
 |list.map3|-|O (N) |-|-|-|生成一个集合，其元素是将给定函数同时应用于三个集合的对应元素的结果。|
 |mapi|O (N) |O (N) |O (N) |-|-|生成一个数组，其元素是将给定函数应用于数组的每个元素的结果。 传递给函数的整数索引指示所转换的元素的索引。|
 |list.mapi2|O (N) |O (N) |-|-|-|生成一个集合，其元素是将给定函数应用于两个集合的对应元素的结果，同时传递元素的索引。 两个输入数组的长度必须相同。|
-|max|O (N) |O (N) |O (N) |-|-|使用 [max](https://msdn.microsoft.com/library/9a988328-00e9-467b-8dfa-e7a6990f6cce) 运算符，返回集合中的最大元素。|
+|最大值|O (N) |O (N) |O (N) |-|-|使用 [max](https://msdn.microsoft.com/library/9a988328-00e9-467b-8dfa-e7a6990f6cce) 运算符，返回集合中的最大元素。|
 |maxBy|O (N) |O (N) |O (N) |-|-|返回集合中的最大元素，并将 [max](https://msdn.microsoft.com/library/9a988328-00e9-467b-8dfa-e7a6990f6cce) 与函数结果一起使用。|
 |Set.maxelement|-|-|-|-|O (日志 (N) # A3|根据用于集的排序返回集合中的最大元素。|
-|min|O (N) |O (N) |O (N) |-|-|使用 [min](https://msdn.microsoft.com/library/adea4fd7-bfad-4834-989c-7878aca81fed) 运算符，返回集合中的最小元素。|
+|最小值|O (N) |O (N) |O (N) |-|-|使用 [min](https://msdn.microsoft.com/library/adea4fd7-bfad-4834-989c-7878aca81fed) 运算符，返回集合中的最小元素。|
 |minBy|O (N) |O (N) |O (N) |-|-|通过对函数结果使用 [min](https://msdn.microsoft.com/library/adea4fd7-bfad-4834-989c-7878aca81fed) 运算符，返回集合中的最小元素。|
 |Set.minelement|-|-|-|-|O (日志 (N) # A3|根据用于集的排序返回集合中的最小元素。|
 |List.ofarray|-|O (N) |O(1)|O (N) |O (N) |创建一个集合，该集合包含与给定数组相同的元素。|
