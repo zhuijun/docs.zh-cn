@@ -57,7 +57,7 @@ items:
         href: whats-new/dotnet-core-2-1.md
       - name: .NET Core 2.0 的新增功能
         href: whats-new/dotnet-core-2-0.md
-  - name: 重大更改
+  - name: 中断性变更
     displayName: app compatibility
     href: compatibility/
   - name: 教程
@@ -300,6 +300,8 @@ items:
             href: diagnostics/dotnet-counters.md
           - name: dotnet-dump
             href: diagnostics/dotnet-dump.md
+          - name: dotnet-gcdump
+            href: diagnostics/dotnet-gcdump.md
           - name: dotnet-trace
             href: diagnostics/dotnet-trace.md
       - name: .NET Core 诊断教程
