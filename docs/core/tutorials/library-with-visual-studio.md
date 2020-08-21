@@ -1,29 +1,29 @@
 ---
 title: 在 Visual Studio 中创建 .NET Standard 类库
 description: 了解如何使用 Visual Studio 创建 .NET Standard 类库。
-ms.date: 06/08/2020
+ms.date: 08/07/2020
 dev_langs:
 - csharp
 - vb
-ms.custom: vs-dotnet
-ms.openlocfilehash: 69259b1d47a8e30945c578db10c6d697c81fa261
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.custom: vs-dotnet,contperfq1
+ms.openlocfilehash: 595e93d8d8d22478c6770ddd4f70a0214653f5b9
+ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164410"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88187947"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>教程：在 Visual Studio 中创建 .NET Standard 库
 
-在本教程中，将创建包含一个字符串处理方法的简单实用工具库。 我们把它作为[扩展方法](../../csharp/programming-guide/classes-and-structs/extension-methods.md)进行实现，这样就可以把它作为 <xref:System.String> 类成员进行调用。
+在本教程中，将创建包含一个字符串处理方法的简单类库。
 
-类库定义的是可以由应用程序调用的类型和方法。 借助面向 .NET Standard 2.0 的类库，任何支持相应 .NET Standard 版本的 .NET 实现都可以调用库。 完成类库后，可以将其作为第三方组件进行分发，也可以作为与一个或多个应用程序捆绑在一起的组件进行分发。
+类库定义的是可以由应用程序调用的类型和方法。 借助面向 .NET Standard 2.0 的类库，任何支持相应 .NET Standard 版本的 .NET 实现都可以调用库。
+
+完成类库后，可将其作为 NuGet 包或作为与使用该类库的应用程序捆绑在一起的组件进行分发。
 
 ## <a name="prerequisites"></a>先决条件
 
 - 安装了具有“.NET Core 跨平台开发”工作负载的 [Visual Studio 2019 版本 16.6 或更高版本](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)。 选择此工作负载时，将自动安装 .NET Core 3.1 SDK。
-
-  有关详细信息，请参阅[安装 .NET Core SDK](../install/sdk.md?pivots=os-windows) 一文中的[在 Visual Studio 中安装](../install/sdk.md?pivots=os-windows#install-with-visual-studio)部分。
 
 ## <a name="create-a-solution"></a>创建解决方案
 
@@ -67,6 +67,8 @@ ms.locfileid: "87164410"
    :::code language="vb" source="./snippets/library-with-visual-studio/vb/StringLibrary/Class1.vb":::
 
    类库 `UtilityLibraries.StringLibrary`包含一个名为 `StartsWithUpper` 的方法。 此方法会返回 <xref:System.Boolean> 值，以指明当前字符串实例是否以大写字符开头。 Unicode 标准会区分大小写字符。 如果为大写字符，<xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType> 方法返回 `true`。
+
+   `StartsWithUpper` 以[扩展方法](../../csharp/programming-guide/classes-and-structs/extension-methods.md)的形式进行实现，这样就可以将其作为 <xref:System.String> 类成员进行调用。
 
 1. 在菜单栏上，选择“生成” > “生成解决方案”以验证项目是否正确编译 。
 
@@ -126,7 +128,17 @@ ms.locfileid: "87164410"
 
 ## <a name="next-steps"></a>后续步骤
 
-在本教程中，你创建了一个解决方案，添加了一个库项目，并添加了一个使用该库的控制台应用项目。 在下一教程中，将向解决方案中添加单元测试项目。
+在本教程中，你创建了一个类库。 在下一教程中，你将了解如何对类库进行单元测试。
 
 > [!div class="nextstepaction"]
-> [在 Visual Studio 中使用 .NET Core 测试 .NET Standard 库](testing-library-with-visual-studio.md)
+> [使用 Visual Studio 对 .NET Standard 库进行单元测试](testing-library-with-visual-studio.md)
+
+或者，你可以跳过自动单元测试，并了解如何通过创建 NuGet 包来共享库：
+
+> [!div class="nextstepaction"]
+> [使用 Visual Studio 创建和发布包](/nuget/quickstart/create-and-publish-a-package-using-visual-studio)
+
+同时，还可以了解如何发布控制台应用。 如果从本教程中创建的解决方案发布控制台应用，类库将以 .dll 文件的形式随附。
+
+> [!div class="nextstepaction"]
+> [使用 Visual Studio 发布 .NET Core 控制台应用程序](publishing-with-visual-studio.md)

@@ -4,12 +4,12 @@ description: 概述了可安装的支持和扩展 .NET Core 功能的其他工�
 author: mlacouture
 ms.date: 02/13/2020
 ms.custom: mvc
-ms.openlocfilehash: c0224a1cc6cbb9ae6fa88e5f869c47a1e84289e0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f7bfa660f7521adf4950d5bbdd59628bb88cca4d
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "77451520"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557927"
 ---
 # <a name="net-core-additional-tools-overview"></a>.NET Core 附加工具概述
 
@@ -25,6 +25,8 @@ ms.locfileid: "77451520"
 
 通过 [dotnet-dump](../diagnostics/dotnet-dump.md)，可在不使用本机调试器的情况下收集和分析 Windows 和 Linux 核心转储。
 
+[dotnet-gcdump](../diagnostics/dotnet-gcdump.md) 提供为活动 .NET 进程收集 GC（垃圾回收器）转储的方式。
+
 [dotnet-trace](../diagnostics/dotnet-trace.md) 会从你的应用收集分析数据，这些数据可帮助你了解应用运行速度缓慢的原因。
 
 ## <a name="wcf-web-service-reference-tool"></a>WCF Web Service Reference 工具
@@ -35,7 +37,7 @@ WCF (Windows Communication Foundation) [Web ervice Reference 工具](wcf-web-ser
 
 WCF [dotnet-svcutil 工具](dotnet-svcutil-guide.md)是一个 .NET 工具，可从网络位置上的 Web 服务中或从 WSDL 文件中检索元数据。 还可生成与 .NET Core 兼容的源文件并使用可用于访问 Web 服务操作的方法定义 WCF 代理类。
 
-dotnet-svcutil 工具是 [WCF Web Service Reference](wcf-web-service-reference-guide.md) Visual Studio 连接服务提供程序（随 Visual Studio 2017 版本 15.5 首次推出）的替代产品 。 dotnet-svcutil  工具作为一种 .NET 工具，可用于 Linux、macOS 和 Windows。
+dotnet-svcutil 工具是 [WCF Web Service Reference](wcf-web-service-reference-guide.md) Visual Studio 连接服务提供程序（随 Visual Studio 2017 版本 15.5 首次推出）的替代产品********。 dotnet-svcutil**** 工具作为一种 .NET 工具，可用于 Linux、macOS 和 Windows。
 
 ## <a name="wcf-dotnet-svcutilxmlserializer-tool"></a>WCF dotnet-svcutil.xmlserializer 工具
 

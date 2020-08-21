@@ -15,12 +15,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: 2fc47a834f8f5b18021aa4f321345b8d7e4e8459
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 3ffdd481ac001b4e1bd229c6f5fa0bf285b508b2
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662883"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88063804"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>正则表达式中的限定符
 限定符指定输入中必须存在字符、组或字符类的多少实例才能找到匹配项。  下表列出了 .NET 支持的限定符。  
@@ -48,7 +48,7 @@ ms.locfileid: "84662883"
 ### <a name="match-zero-or-more-times-"></a>匹配零次或多次：*  
  `*` 限定符与前面的元素匹配零次或多次。 它相当于 `{0,}` 量符。 `*` 是贪婪量符，相当的惰性量符是 `*?`。  
   
- 下面的示例说明此正则表达式。 在输入字符串中的九个数字中，五个与模式匹配，四个（`95`、`929`、`9219` 和 `9919`）不匹配。  
+ 下面的示例说明此正则表达式。 在输入字符串中的九个数字组中，五个与模式匹配，四个（`95`、`929`、`9219` 和 `9919`）不匹配。  
   
  [!code-csharp[RegularExpressions.Quantifiers#1](../../../samples/snippets/csharp/VS_Snippets_CLR/RegularExpressions.Quantifiers/cs/Quantifiers1.cs#1)]
  [!code-vb[RegularExpressions.Quantifiers#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/RegularExpressions.Quantifiers/vb/Quantifiers1.vb#1)]  

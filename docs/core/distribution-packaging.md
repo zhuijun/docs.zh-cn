@@ -3,12 +3,12 @@ title: .NET Core 分发打包
 description: 了解如何为 .NET Core 打包、命名并进行版本控制以进行分发。
 author: tmds
 ms.date: 10/09/2019
-ms.openlocfilehash: a345aeded29b3058c6c56abbff439ea26cbc7afb
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 3324a6a151fc6dc46a8f13ea17c89da99d108d82
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "81386638"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062881"
 ---
 # <a name="net-core-distribution-packaging"></a>.NET Core 分发打包
 
@@ -67,19 +67,19 @@ ms.locfileid: "81386638"
 
 主机只有一个，不过大部分的其他组件都在带有版本的目录中（2、3、5 和 6）。 这意味着系统上可存在多个版本，因为它们是并排安装的。
 
-- (2) **host/fxr/\<fxr version>** 包含了主机所使用的框架解析逻辑。 主机采用已安装的最新 hostfxr。 在执行 .NET Core 应用程序时，hostfxr 负责选择合适的运行时。 例如，为 .NET Core 2.0.0 生成的应用程序会使用 2.0.5 运行时（如果可用）。 同样，hostfxr 在开发期间也会选择适当的 SDK。
+- (2) host/fxr/\<fxr version> 包含了主机所使用的框架解析逻辑。 主机采用已安装的最新 hostfxr。 在执行 .NET Core 应用程序时，hostfxr 负责选择合适的运行时。 例如，为 .NET Core 2.0.0 生成的应用程序会使用 2.0.5 运行时（如果可用）。 同样，hostfxr 在开发期间也会选择适当的 SDK。
 
-- (3) **sdk/\<sdk version>** SDK（也称为“工具”）是一组托管工具，可用于编写和生成 .NET Core 库和应用程序。 SDK 包括 .NET Core CLI、托管的语言编译器、MSBuild 及相关生成任务和目标、NuGet、新项目模板等。
+- (3) sdk/\<sdk version> SDK（也称为“工具”）是一组托管工具，可用于编写和生成 .NET Core 库和应用程序。 SDK 包括 .NET Core CLI、托管的语言编译器、MSBuild 及相关生成任务和目标、NuGet、新项目模板等。
 
 - (4) **sdk/NuGetFallbackFolder** 包含 SDK 在还原操作期间使用的 NuGet 包的缓存，例如在运行 `dotnet restore` 或 `dotnet build` 时。 此文件夹仅在 .NET Core 3.0 之前使用。 不能从源生成它，因为它包含来自 `nuget.org` 的预构建二进制资产。
 
-shared **** 文件夹包含框架。共享框架在中心位置提供一组库，使得不同的应用程序可以使用它们。
+“共享”  文件夹包含框架。 共享框架提供一组位于中心位置的库，从而让不同的应用程序使用。
 
-- (5) **shared/Microsoft.NETCore.App/\<runtime version>** 此框架包含.NET Core 运行时和支持托管库。
+- (5) shared/Microsoft.NETCore.App/\<runtime version> 此框架包含.NET Core 运行时和支持托管库。
 
-- (6) **shared/Microsoft.AspNetCore.{App,All}/\<aspnetcore version>** 包含 ASP.NET Core 库。 已开发且支持 `Microsoft.AspNetCore.App` 下的库（作为 .NET Core 项目的一部分）。 `Microsoft.AspNetCore.All` 下的库是一个超集，其中还包含第三方库。
+- (6) shared/Microsoft.AspNetCore.{App,All}/\<aspnetcore version> 包含 ASP.NET Core 库。 已开发且支持 `Microsoft.AspNetCore.App` 下的库（作为 .NET Core 项目的一部分）。 `Microsoft.AspNetCore.All` 下的库是一个超集，其中还包含第三方库。
 
-- (7) **shared/Microsoft.Desktop.App/\<desktop app version>** 包含 Windows 桌面库。 在非 Windows 平台上不包含此项。
+- (7) shared/Microsoft.Desktop.App/\<desktop app version> 包含 Windows 桌面库。 在非 Windows 平台上不包含此项。
 
 - (8) **LICENSE.txt,ThirdPartyNotices.txt** 分别是 .NET Core 许可证和 .NET Core 中使用的第三方库的许可证。
 
@@ -87,7 +87,7 @@ shared **** 文件夹包含框架。共享框架在中心位置提供一组库�
 
 - (11,12) **Microsoft.NETCore.App.Ref,Microsoft.AspNetCore.App.Ref** 分别描述了 `x.y` 版本 .NET Core 和 ASP.NET Core 的 API。 针对这些目标版本进行编译时，将使用这些包。
 
-- (13) **Microsoft.NETCore.App.Host.\<rid>** 包含平台 `rid` 的本机二进制文件。 将 .NET Core 应用程序编译为适用于该平台的本机二进制文件时，将使用此二进制文件作为模板。
+- (13) Microsoft.NETCore.App.Host.\<rid> 包含平台 `rid` 的原生二进制文件。 将 .NET Core 应用程序编译为适用于该平台的本机二进制文件时，将使用此二进制文件作为模板。
 
 - (14) **Microsoft.WindowsDesktop.App.Ref** 介绍 Windows 桌面应用程序 `x.y` 版本的 API。 在针对该目标进行编译时，将使用这些文件。 在非 Windows 平台上不提供此项。
 
@@ -111,57 +111,57 @@ SDK 版本采用相同的 `[major].[minor]`，并有一个独立的 `[patch]`，
 下面列出了推荐的包：
 
 - `dotnet-sdk-[major].[minor]` - 安装特定运行时的最新 SDK
-  - **版本：** \<运行时版本>
+  - **版本：** \<sdk version>
   - **示例：** dotnet-sdk-2.1
   - **包含：** (3),(4)
   - **依赖项：** `dotnet-runtime-[major].[minor]`、`aspnetcore-runtime-[major].[minor]`、`dotnet-targeting-pack-[major].[minor]`、`aspnetcore-targeting-pack-[major].[minor]`、`netstandard-targeting-pack-[netstandard_major].[netstandard_minor]`、`dotnet-apphost-pack-[major].[minor]`、`dotnet-templates-[major].[minor]`
 
 - `aspnetcore-runtime-[major].[minor]` - 安装特定 ASP.NET Core 运行时
-  - **版本：** \<aspnetcore 运行时版本>
+  - **版本：** \<aspnetcore runtime version>
   - **示例：** aspnetcore-runtime-2.1
   - **包含：** (6)
   - **依赖项：** `dotnet-runtime-[major].[minor]`
 
 - `dotnet-runtime-deps-[major].[minor]` _（可选）_ - 安装运行自包含应用程序的依赖项
-  - **版本：** \<运行时版本>
+  - **版本：** \<runtime version>
   - **示例：** dotnet-runtime-deps-2.1
   - **依赖项：** _特定于分发的依赖项_
 
 - `dotnet-runtime-[major].[minor]` - 安装特定运行时
-  - **版本：** \<运行时版本>
+  - **版本：** \<runtime version>
   - **示例：** dotnet-runtime-2.1
   - **包含：** (5)
   - **依赖项：** `dotnet-hostfxr-[major].[minor]`、`dotnet-runtime-deps-[major].[minor]`
 
 - `dotnet-hostfxr-[major].[minor]` - 依赖项
-  - **版本：** \<运行时版本>
+  - **版本：** \<runtime version>
   - **示例：** dotnet-hostfxr-3.0
   - **包含：** (2)
   - **依赖项：** `dotnet-host`
 
 - `dotnet-host` - 依赖项
-  - **版本：** \<运行时版本>
+  - **版本：** \<runtime version>
   - **示例：** dotnet-host
   - **包含：** (1),(8),(9),(10),(16)
 
 - `dotnet-apphost-pack-[major].[minor]` - 依赖项
-  - **版本：** \<运行时版本>
+  - **版本：** \<runtime version>
   - **包含：** (13)
 
 - `dotnet-targeting-pack-[major].[minor]` - 允许面向非最新的运行时
-  - **版本：** \<运行时版本>
+  - **版本：** \<runtime version>
   - **包含：** (12)
 
 - `aspnetcore-targeting-pack-[major].[minor]` - 允许面向非最新的运行时
-  - **版本：** \<aspnetcore 运行时版本>
+  - **版本：** \<aspnetcore runtime version>
   - **包含：** (11)
 
 - `netstandard-targeting-pack-[netstandard_major].[netstandard_minor]` - 允许面向 netstandard 版本
-  - **版本：** \<sdk 版本>
+  - **版本：** \<sdk version>
   - **包含：** (15)
 
 - `dotnet-templates-[major].[minor]`
-  - **版本：** \<sdk 版本>
+  - **版本：** \<sdk version>
   - **包含：** (15)
 
 `dotnet-runtime-deps-[major].[minor]` 需要了解发行版特定依赖项  。 因为发行版生成系统可能能够自动派生包，所以包是可选的，如果选择，会将这些依赖项直接添加到 `dotnet-runtime-[major].[minor]` 包中。

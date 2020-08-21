@@ -2,12 +2,12 @@
 title: C# 介绍 - C# 指南
 description: 刚开始接触 C#？ 了解 C# 语言的基础知识。
 ms.date: 08/06/2020
-ms.openlocfilehash: 42c4ff59a520a1b99bbb2fb01d79d8902e16bdd5
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 9fa292e8e85832d831f36cf0f21512aa0cf32580
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063544"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656223"
 ---
 # <a name="a-tour-of-the-c-language"></a>C# 语言介绍
 
@@ -15,7 +15,7 @@ C#（读作“See Sharp”）是一种新式编程语言，不仅面向对象，
 
 C# 是面向对象的、面向组件的编程语言。 C# 提供了语言构造来直接支持这些概念，让 C# 成为一种非常自然的语言，可用于创建和使用软件组件。 自诞生之日起，C# 就添加了支持新工作负载和新兴软件设计实践的功能。
 
-多项 C# 功能有助于构造可靠耐用的应用程序。 [垃圾回收](../../standard/garbage-collection/index.md)会自动回收无法访问的未使用对象所占用的内存。 [异常处理](../programming-guide/exceptions/index.md)提供了一种结构化且可扩展的方法来进行错误检测和恢复。 [Lambda 表达式](../programming-guide/statements-expressions-operators/lambda-expressions.md)支持函数编程技术。 [查询语法](../linq/index.md)创建一个公共模式，用于处理来自任何源的数据。 [异步操作](../programming-guide/concepts/async/index.md)语言支持提供用于构建分布式系统的语法。 [模式匹配](..//pattern-matching.md)提供语法，可轻松地将数据从新式分布式系统中的算法中分离出来。 C# 采用[统一的类型系统](../programming-guide/types/index.md)。 所有 C# 类型（包括 `int` 和 `double` 等基元类型）均继承自一个根 `object` 类型。 所有类型共用一组通用运算。 任何类型的值都可以一致地进行存储、传输和处理。 此外，C# 还支持用户定义的引用类型和值类型。 C# 允许动态分配轻型结构的对象和内嵌存储。
+多项 C# 功能有助于构造可靠耐用的应用程序。 [垃圾回收](../../standard/garbage-collection/index.md)会自动回收无法访问的未使用对象所占用的内存。 [异常处理](../programming-guide/exceptions/index.md)提供了一种结构化且可扩展的方法来进行错误检测和恢复。 [Lambda 表达式](../language-reference/operators/lambda-expressions.md)支持函数编程技术。 [查询语法](../linq/index.md)创建一个公共模式，用于处理来自任何源的数据。 [异步操作](../programming-guide/concepts/async/index.md)语言支持提供用于构建分布式系统的语法。 [模式匹配](..//pattern-matching.md)提供语法，可轻松地将数据从新式分布式系统中的算法中分离出来。 C# 采用[统一的类型系统](../programming-guide/types/index.md)。 所有 C# 类型（包括 `int` 和 `double` 等基元类型）均继承自一个根 `object` 类型。 所有类型共用一组通用运算。 任何类型的值都可以一致地进行存储、传输和处理。 此外，C# 还支持用户定义的引用类型和值类型。 C# 允许动态分配轻型结构的对象和内嵌存储。
 
 C# 强调版本控制，以确保程序和库以兼容方式随时间推移而变化。 C# 设计中受版本控制加强直接影响的方面包括：单独的 `virtual` 和 `override` 修饰符，关于方法重载决策的规则，以及对显式接口成员声明的支持。
 
@@ -45,7 +45,7 @@ C# 值类型又细分为简单类型、枚举类型、结构类型和可以为 n
   - [简单类型](../language-reference/builtin-types/value-types.md#built-in-value-types)
     - [有符号整型](../language-reference/builtin-types/integral-numeric-types.md)：`sbyte`、`short`、`int`、`long`
     - [无符号整型](../language-reference/builtin-types/integral-numeric-types.md)：`byte`、`ushort`、`uint`、`ulong`
-    - [Unicode 字符](/dotnet/standard/base-types/character-encoding-introduction)：`char`，表示 UTF-16 代码单元
+    - [Unicode 字符](../../standard/base-types/character-encoding-introduction.md)：`char`，表示 UTF-16 代码单元
     - [IEEE 二进制浮点](../language-reference/builtin-types/floating-point-numeric-types.md)：`float`、`double`
     - [高精度十进制浮点数](../language-reference/builtin-types/floating-point-numeric-types.md)：`decimal`
     - 布尔值：`bool`，表示布尔值（`true` 或 `false`）
@@ -55,18 +55,18 @@ C# 值类型又细分为简单类型、枚举类型、结构类型和可以为 n
     - 格式为 `struct S {...}` 的用户定义类型
   - [可以为 null 的值类型](../language-reference/builtin-types/nullable-value-types.md)
     - 值为 `null` 的其他所有值类型的扩展
-  - [元组值类型](../tuples.md)
+  - [元组值类型](../language-reference/builtin-types/value-tuples.md)
     - 格式为 `(T1, T2, ...)` 的用户定义类型
 - [引用类型](../language-reference/keywords/reference-types.md)
   - [类类型](../language-reference/keywords/class.md)
     - 其他所有类型的最终基类：`object`
-    - [Unicode 字符串](/dotnet/standard/base-types/character-encoding-introduction)：`string`，表示 UTF-16 代码单元序列
+    - [Unicode 字符串](../../standard/base-types/character-encoding-introduction.md)：`string`，表示 UTF-16 代码单元序列
     - 格式为 `class C {...}` 的用户定义类型
   - [接口类型](../language-reference/keywords/interface.md)
     - 格式为 `interface I {...}` 的用户定义类型
   - [数组类型](../programming-guide/arrays/index.md)
     - 一维和多维以及交错维度，例如 `int[]`、`int[,]` 和 `int[][]`
-  - [委托类型](../language-reference/keywords/delegate.md)
+  - [委托类型](../language-reference/builtin-types/reference-types.md#the-delegate-type)
     - 格式为 `delegate int D(...)` 的用户定义类型
 
 C# 程序使用*类型声明*创建新类型。 类型声明指定新类型的名称和成员。 用户可定义以下五种 C# 类型：类类型、结构类型、接口类型、枚举类型和委托类型。

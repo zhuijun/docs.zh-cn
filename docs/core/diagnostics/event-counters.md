@@ -2,12 +2,12 @@
 title: .NET Core 中的 EventCounters
 description: 本文将介绍什么是 EventCounters，如何实现它们，以及如何使用它们。
 ms.date: 08/07/2020
-ms.openlocfilehash: 68868ff8b4e1393fc3b23af2bc8eef239ac56975
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: fc2f945e3de732a81b9ce3fd82eff10e455cae87
+ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024955"
+ms.lasthandoff: 08/11/2020
+ms.locfileid: "88062959"
 ---
 # <a name="eventcounters-in-net-core"></a>.NET Core 中的 EventCounters
 
@@ -177,7 +177,9 @@ EventCounters 可由 Azure Monitor 使用，特别是 Azure Application Insights
 
 #### <a name="dotnet-monitor"></a>dotnet-monitor
 
-`dotnet-monitor` 是一个实验性工具，通过它可以更轻松地访问 .NET 进程中的诊断信息。 有关详细信息，请参阅[实验性工具 dotnet-monitor 简介](https://devblogs.microsoft.com/dotnet/introducing-dotnet-monitor)。
+`dotnet-monitor` 工具是一个实验性工具，通过它可以更轻松地访问 .NET 进程中的诊断信息。 该工具用作所有诊断工具的超集。 除跟踪外，它还可以监视指标、收集内存转储和收集 GC 转储。 它以 CLI 工具和 docker 映像的形式发布。 它公开了 REST API，以及通过 REST 调用发生的诊断项目集合。
+
+有关详细信息，请参阅[实验性工具 dotnet-monitor 简介](https://devblogs.microsoft.com/dotnet/introducing-dotnet-monitor)。
 
 ### <a name="consume-in-proc"></a>进程内使用
 

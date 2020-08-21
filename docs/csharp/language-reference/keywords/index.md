@@ -8,13 +8,14 @@ helpviewer_keywords:
 - C# language, keywords
 - Visual C#, keywords
 - '@ keyword'
+ms.custom: updateeachrelease
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 251046a8bd825a90d817965f9f747d08d4492197
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 51e3802ba7b78dab4c3f96365c51af83098c05c7
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102029"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656119"
 ---
 # <a name="c-keywords"></a>C# 关键字
 

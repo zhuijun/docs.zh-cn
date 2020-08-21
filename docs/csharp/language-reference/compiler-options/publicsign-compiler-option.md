@@ -7,12 +7,12 @@ helpviewer_keywords:
 - -publicsign compiler option [C#]
 - publicsign compiler option [C#]
 - /publicsign compiler option [C#]
-ms.openlocfilehash: de7d9c98b0f279b52bc93711c5b986a2b2e57215
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2655e0216a412053e052ab2ec2fcc8c68ea4f968
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "61662525"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88268044"
 ---
 # <a name="-publicsign-c-compiler-options"></a>-publicsign（C# 编译器选项）
 
@@ -36,10 +36,13 @@ ms.locfileid: "61662525"
 
 公共签名有时称为“假签名”或“OSS 签名”，它包括输出程序集中的公钥并设置“已签名”标记，但实际上并未使用私钥对程序集进行签名。 这对开放源代码项目非常有用，人们希望生成与已发布的“完全签名”程序集兼容的程序集，但无权访问用于对程序集进行签名的私钥。 由于几乎没有使用者实际需要检查程序集是否完全签名，因此这些公开生成的程序集几乎适用于每个使用完全签名程序集的方案。
 
-### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>在 Visual Studio 开发环境中设置此编译器选项
+### <a name="to-set-this-compiler-option-in-a-csproj-file"></a>在 csproj 文件中设置此编译器选项
 
-1. 打开项目的“属性”  页。
-1. 修改“仅延迟签名”  属性。
+打开项目的 csproj 文件，并添加以下元素：
+
+```xml
+<PublicSign>true</PublicSign>
+```
 
 ## <a name="see-also"></a>另请参阅
 

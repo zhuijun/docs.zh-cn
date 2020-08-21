@@ -1,13 +1,13 @@
 ---
 title: 创建简单的数据驱动 CRUD 微服务
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解如何在微服务应用程序的上下文中创建简单的 CRUD（数据驱动）微服务。
-ms.date: 01/30/2020
-ms.openlocfilehash: b72d7defed81e57e2971c5e2b53df2d86b2dc947
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 08/14/2020
+ms.openlocfilehash: 4d475ba42cb0f86b57b2467549635556cab1136d
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77502359"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267953"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>创建简单的数据驱动 CRUD 微服务
 
@@ -57,7 +57,7 @@ Entity Framework (EF) Core 是轻量化、可扩展和跨平台版的常用 Enti
 
 #### <a name="the-data-model"></a>数据模型
 
-使用 EF Core 时，数据访问是通过使用模型来执行的。 模型由（域模型）实体类和表示与数据库的会话的派生上下文 (DbContext) 组成，用于查询和保存数据。 可从现有数据库生成模型，手动编码模型使之与数据库相匹配，或采用代码优先方法（通过此方法可在模型随时间推移发生更改后轻松地对于数据库进行相应改进），使用 EF 迁移基于模型创建数据库。 对于目录微服务，使用后一种方法。 可在以下代码示例中看到 CatalogItem 实体类的示例，这是一个简单的普通旧 CLR 对象 ([POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)) 实体类。
+使用 EF Core 时，数据访问是通过使用模型来执行的。 模型由（域模型）实体类和表示与数据库的会话的派生上下文 (DbContext) 组成，用于查询和保存数据。 可从现有数据库生成模型，手动编码模型使之与数据库相匹配，或采用代码优先方法（通过此方法可在模型随时间推移发生更改后轻松地对于数据库进行相应改进），使用 EF 迁移技术基于模型创建数据库。 对于目录微服务，已使用后一种方法。 可在以下代码示例中看到 CatalogItem 实体类的示例，这是一个简单的普通旧 CLR 对象 ([POCO](https://en.wikipedia.org/wiki/Plain_Old_CLR_Object)) 实体类。
 
 ```csharp
 public class CatalogItem
@@ -185,15 +185,14 @@ _context.SaveChanges();
 
 在 ASP.NET Core 中可非常方便地使用依赖关系注入 (DI)。 无需设置第三方控制反转 (IoC) 容器，但如果愿意，可将喜欢的 IoC 容器插入 ASP.NET Core 基础结构。 在本例中，这意味着可通过控制器构造函数直接插入所需的 EF DBContext 或其他存储库。
 
-在上面的 `CatalogController` 类的示例中，是通过 `CatalogController()` 构造函数注入 `CatalogContext` 类型的对象和其他对象。
+在前面提到的 `CatalogController` 类中，`CatalogContext`（继承自 `DbContext`）类型与 `CatalogController()` 构造函数中的其他必需对象一起注入。
 
-需在 Web API 项目中设置一个重要配置，即向服务的 IoC 容器注册 DbContext 类。 通常在 `Startup` 类中执行此操作，方法是在 `ConfigureServices()` 方法中调用 `services.AddDbContext<DbContext>()` 方法，如以下简化的示例中所示  ：
+需在 Web API 项目中设置一个重要配置，即向服务的 IoC 容器注册 DbContext 类。 通常在 `Startup` 类中执行此操作，方法是在 `ConfigureServices()` 方法中调用 `services.AddDbContext<CatalogContext>()` 方法，如以下简化的示例中所示  ：
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
 {
     // Additional code...
-
     services.AddDbContext<CatalogContext>(options =>
     {
         options.UseSqlServer(Configuration["ConnectionString"],

@@ -1,17 +1,17 @@
 ---
 title: 使用 IHostedService 和 BackgroundService 类在微服务中实现后台任务
 description: 用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解使用 IHostedService 和 BackgroundService 在微服务 .NET Core 中实现后台任务的新选项。
-ms.date: 01/30/2020
-ms.openlocfilehash: fd26d0444312d3525ad95b2273f28a6ceaa27911
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.date: 08/14/2020
+ms.openlocfilehash: 4ab215f2196cd2e66b116465c3a582a9846c8066
+ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988331"
+ms.lasthandoff: 08/17/2020
+ms.locfileid: "88267992"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>使用 IHostedService 和 BackgroundService 类在微服务中实现后台任务
 
-后台任务和计划任务最终可能需要在基于微服务的应用程序或任何类型的应用程序中实现。 使用微服务体系结构的区别在于，可以实现一个微服务进程/容器来托管这些后台任务，以便根据需要对其进行减少/增加，或者甚至可以确保它运行该微服务进程/容器的单个实例。
+任何应用程序中都可能需要使用后台任务和计划作业，无论应用程序是否遵循微服务体系结构模式均是如此。 使用微服务体系结构的区别在于，你可以在一个单独的用于托管的进程/容器中实现后台任务，以便根据需要对其纵向缩减/扩展。
 
 一般在 .NET Core 中，我们将这些类型的任务称为托管服务  ，因为它们是托管在主机/应用程序/微服务中的服务/逻辑。 请注意，在这种情况下，托管服务仅表示具有后台任务逻辑的类。
 
@@ -68,29 +68,7 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
 
 ## <a name="the-ihostedservice-interface"></a>IHostedService 接口
 
-当注册 `IHostedService` 时，.NET Core 会在应用程序启动和停止期间分别调用 `IHostedService` 类型的 `StartAsync()` 和 `StopAsync()` 方法。 具体而言，即在服务器已启动并已触发 `IApplicationLifetime.ApplicationStarted` 后调用 start。
-
-在 .NET Core 中定义的 `IHostedService` 如下所示。
-
-```csharp
-namespace Microsoft.Extensions.Hosting
-{
-    //
-    // Summary:
-    //     Defines methods for objects that are managed by the host.
-    public interface IHostedService
-    {
-        //
-        // Summary:
-        // Triggered when the application host is ready to start the service.
-        Task StartAsync(CancellationToken cancellationToken);
-        //
-        // Summary:
-        // Triggered when the application host is performing a graceful shutdown.
-        Task StopAsync(CancellationToken cancellationToken);
-    }
-}
-```
+当注册 `IHostedService` 时，.NET Core 会在应用程序启动和停止期间分别调用 `IHostedService` 类型的 `StartAsync()` 和 `StopAsync()` 方法。 有关详细信息，请参阅 [IHostedService 接口](https://docs.microsoft.com/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-3.1&tabs=visual-studio#ihostedservice-interface)
 
 如你所想，可以创建 IHostedService 的多个实现，并在 `ConfigureService()` 方法中将它们注册到 DI 容器中，如前所示。 所有这些托管服务将随应用程序/微服务一起启动和停止。
 

@@ -1,17 +1,21 @@
 ---
 title: 语言参考
 description: 从这个对语言标记、概念、类型、表达式和编译器支持的构造主题的引用中查找 F# 语言功能信息。
-ms.date: 05/16/2016
-ms.openlocfilehash: 43272c6684c8fc763e8f99611901f35695f48981
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/13/2020
+ms.openlocfilehash: 02711489c214c1fcdb2da80f30bff63d67769c17
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854953"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558148"
 ---
 # <a name="f-language-reference"></a>F# 语言参考
 
 本部分是 F# 语言的一个参考，F# 语言是面向 .NET 的多范例编程语言。 F# 语言支持函数式、命令式、面向对象的编程模式。
+
+## <a name="f-core-library-api-reference"></a>F# 核心库 API 参考
+
+[F# 核心库 (FSharp.Core) API 参考](https://fsharp.github.io/fsharp-core-docs/)是所有 F# 核心库命名空间、模块、类型和函数的参考。
 
 ## <a name="f-tokens"></a>F# 标记
 
