@@ -75,6 +75,8 @@
           href: how-to-guides/load-data-model-builder.md
         - name: 安装模型生成器
           href: how-to-guides/install-model-builder.md
+        - name: 在 Model Builder 中安装 GPU
+          href: how-to-guides/install-gpu-model-builder.md
         - name: 安装 CLI
           href: how-to-guides/install-ml-net-cli.md
         - name: 使用自动化 ML API
