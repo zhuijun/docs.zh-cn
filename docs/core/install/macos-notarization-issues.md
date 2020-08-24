@@ -4,12 +4,12 @@ description: 本文介绍在安装 .NET core 运行时、SDK 以及使用 .NET C
 author: adegeo
 ms.author: adegeo
 ms.date: 02/14/2020
-ms.openlocfilehash: 905a8b8a4a17836823b1c6574828acb08110d224
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: a7741727ad46216ebd9936515d8af29b6d7049c2
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415952"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656522"
 ---
 # <a name="macos-catalina-notarization-and-the-impact-on-net-core-downloads-and-projects"></a>macOS Catalina 公证以及对 .NET Core 下载和项目的影响
 
@@ -92,5 +92,5 @@ ms.locfileid: "86415952"
 
 ## <a name="next-steps"></a>后续步骤
 
-- [.NET Core 依赖项和要求](dependencies.md)。
+- [.NET Core 依赖项和要求](macos.md#dependencies)。
 - [安装 .NET Core 运行时和 SDK](macos.md)。

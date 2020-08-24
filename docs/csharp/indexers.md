@@ -4,12 +4,12 @@ description: 了解 C# 索引器以及它们如何实现索引属性，这些属
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0e9496da-e766-45a9-b92b-91820d4a350e
-ms.openlocfilehash: e9b1cb18157982f068f1c1e4546e637f2bd707cb
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: 1369740404c500d8b44b4706959bf4640c26aa2d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83394698"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656106"
 ---
 # <a name="indexers"></a>索引器
 
@@ -46,7 +46,7 @@ public int this[string key]
 如果类型的 API 对集合进行建模，并且为集合定义了参数，则需要在此类型中定义索引器。 索引器可能直接映射到属于 .NET Core 框架一部分的集合类型，也可能不。 除了对集合进行建模，类型还有其他职责。
 通过索引器可提供与类型的抽象化匹配的 API，而无需公开如何存储或计算此抽象化的值的内部细节。
 
-让我们演练一些使用索引器的常见场景。 可以访问[索引器的示例文件夹](https://github.com/dotnet/samples/tree/master/csharp/indexers)。 有关下载说明，请参阅[示例和教程](../samples-and-tutorials/index.md#viewing-and-downloading-samples)。
+让我们演练一些使用索引器的常见场景。 可以访问[索引器的示例文件夹](https://github.com/dotnet/samples/tree/master/csharp/indexers)。 有关下载说明，请参阅[示例和教程](../samples-and-tutorials/index.md#view-and-download-samples)。
 
 ### <a name="arrays-and-vectors"></a>数组和矢量
 

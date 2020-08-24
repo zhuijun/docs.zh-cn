@@ -7,13 +7,14 @@ helpviewer_keywords:
 - /langversion compiler option [C#]
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
+ms.custom: updateeachrelease
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: 408b2fb1f19f872db675321601ebc1b0c921044b
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: fd05802008a20267fea54f14bae4c8deb0e21c65
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83802954"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656199"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion（C# 编译器选项）
 

@@ -4,12 +4,12 @@ description: 此教程将介绍 .NET Core 和 C# 语言的许多功能。
 ms.date: 03/06/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: 06affa01b67edeea09088834cf131adb55650bbb
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: dbe64fe0a01ddab9e7a3ad0a9118b3fe59fba8aa
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794658"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656978"
 ---
 # <a name="console-app"></a>控制台应用
 
@@ -55,7 +55,7 @@ namespace TeleprompterConsole
 
 ## <a name="reading-and-echoing-the-file"></a>读取和回显文件
 
-要添加的第一项功能是读取文本文件，然后在控制台中显示全部文本。 首先，让我们来添加文本文件。 将此[示例](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter)的 GitHub 存储库中的 [sampleQuotes.txt](https://github.com/dotnet/samples/raw/master/csharp/getting-started/console-teleprompter/sampleQuotes.txt) 文件复制到项目目录中。 这将用作应用程序脚本。 如果需要有关如何下载本主题示例应用的信息，请参阅[示例和教程](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)主题中的说明。
+要添加的第一项功能是读取文本文件，然后在控制台中显示全部文本。 首先，让我们来添加文本文件。 将此[示例](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-teleprompter)的 GitHub 存储库中的 [sampleQuotes.txt](https://github.com/dotnet/samples/raw/master/csharp/getting-started/console-teleprompter/sampleQuotes.txt) 文件复制到项目目录中。 这将用作应用程序脚本。 如果需要有关如何下载本主题示例应用的信息，请参阅[示例和教程](../../samples-and-tutorials/index.md#view-and-download-samples)主题中的说明。
 
 接下来，在 `Program` 类中添加以下方法（即 `Main` 方法的下方）：
 

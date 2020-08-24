@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: e2eae276d644413dcfff10c109ad10291fbb1386
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 3dd793ec000999935bff6b54b1b00e49211bd5ec
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068455"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558356"
 ---
 # <a name="lambda-expressions-c-reference"></a>Lambda 表达式（C# 引用）
 
@@ -234,4 +234,3 @@ lambda 可以引用外部变量。 这些变量是在定义 lambda 表达式的�
 - [表达式树](../../programming-guide/concepts/expression-trees/index.md)
 - [本地函数与 Lambda 表达式](../../programming-guide/classes-and-structs/local-functions.md#local-functions-vs-lambda-expressions)
 - [Visual Studio 2008 C# 示例（请参阅 LINQ 示例查询文件和 XQuery 程序）](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)
-- [递归 lambda 表达式](https://docs.microsoft.com/archive/blogs/madst/recursive-lambda-expressions)

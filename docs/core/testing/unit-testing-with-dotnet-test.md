@@ -4,16 +4,16 @@ description: 通过使用 dotnet test 和 xUnit 分步生成示例解决方案�
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: d8cf0e29c8a482b39bd7e99bcde1fd60301f046f
-ms.sourcegitcommit: 0926684d8d34f4c6b5acce58d2193db093cb9cf2
+ms.openlocfilehash: feff4cabbd10064ef4acca12d4f960f2a40a2b12
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83702945"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656379"
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>使用 dotnet test 和 xUnit 在 .NET Core 中进行 C# 单元测试
 
-本教程演示如何生成包含单元测试项目和源代码项目的解决方案。 若要使用预构建解决方案学习本教程，请[查看或下载示例代码](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/)。 有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)。
+本教程演示如何生成包含单元测试项目和源代码项目的解决方案。 若要使用预构建解决方案学习本教程，请[查看或下载示例代码](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/)。 有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#view-and-download-samples)。
 
 ## <a name="create-the-solution"></a>创建解决方案
 

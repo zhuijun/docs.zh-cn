@@ -5,17 +5,16 @@ ms.date: 02/03/2020
 dev_langs:
 - csharp
 - vb
-ms.custom: updateeachrelease
 helpviewer_keywords:
 - versions, determining for .NET Framework
 - .NET Framework, determining version
 ms.assetid: 40a67826-e4df-4f59-a651-d9eb0fdc755d
-ms.openlocfilehash: 122441e9238fd91199aed255b0125f69081c0a8c
-ms.sourcegitcommit: 45c8eed045779b70a47b23169897459d0323dc89
+ms.openlocfilehash: 1591aacf5496852609ae571a52aaea2d5c09a15b
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/18/2020
-ms.locfileid: "84990137"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558551"
 ---
 # <a name="how-to-determine-which-net-framework-versions-are-installed"></a>如何：确定已安装的 .NET Framework 版本
 

@@ -1,13 +1,14 @@
 ---
 title: C# 语言版本控制 - C# 指南
 description: 了解如何根据项目确定 C# 语言版本，以及背后的原因。 了解如何手动重写默认值。
+ms.custom: updateeachrelease
 ms.date: 05/20/2020
-ms.openlocfilehash: bbe5b12e378cf47b7c9b2c8576088e949e526a9a
-ms.sourcegitcommit: d223616e7e6fe2139079052e6fcbe25413fb9900
+ms.openlocfilehash: a27f3210f399f1bed190c18d778cf3824772d576
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83803009"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656844"
 ---
 # <a name="c-language-versioning"></a>C# 语言版本控制
 

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-ms.openlocfilehash: dd42dcd62bb46898c20f14cdc893b8f5801894f2
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 1252e214be03f8a180fadb7667ee59f36a862040
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474977"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558421"
 ---
 # <a name="constants-c-programming-guide"></a>常量（C# 编程指南）
 常量是不可变的值，在编译时是已知的，在程序的生命周期内不会改变。 常量使用 [const](../../language-reference/keywords/const.md) 修饰符声明。 仅 C# [内置类型](../../language-reference/builtin-types/built-in-types.md)（不包括 <xref:System.Object?displayProperty=nameWithType>）可声明为 `const`。 用户定义的类型（包括类、结构和数组）不能为 `const`。 使用 [readonly](../../language-reference/keywords/readonly.md) 修饰符创建在运行时一次性（例如在构造函数中）初始化的类、结构或数组，此后不能更改。  
@@ -24,7 +24,7 @@ ms.locfileid: "86474977"
   
  [!code-csharp[csProgGuideObjects#64](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#64)]  
   
- 在此示例中，常量 `months` 始终为 12，即使类本身也无法更改它。 实际上，当编译器遇到 C# 源代码中的常量标识符（例如，`months`）时，它直接将文本值替换到它生成的中间语言 (IL) 代码中。 因为运行时没有与常量相关联的变量地址，所以 `const` 字段不能通过引用传递，并且不能在表达式中显示为左值。  
+ 在此示例中，常量 `Months` 始终为 12，即使类本身也无法更改它。 实际上，当编译器遇到 C# 源代码中的常量标识符（例如，`Months`）时，它直接将文本值替换到它生成的中间语言 (IL) 代码中。 因为运行时没有与常量相关联的变量地址，所以 `const` 字段不能通过引用传递，并且不能在表达式中显示为左值。  
   
 > [!NOTE]
 > 引用其他代码（如 DLL）中定义的常量值时要格外小心。 如果新版本的 DLL 定义了新的常量值，则程序仍将保留旧的文本值，直到根据新版本重新编译。  

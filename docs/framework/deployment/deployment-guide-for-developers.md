@@ -1,17 +1,17 @@
 ---
 title: .NET Framework 部署指南（针对开发人员）
 description: 阅读面向开发人员的 .NET 部署指南。 如果想要随应用一起安装任何版本的 .NET（从版本 4.5 到 4.8），请使用此信息。
-ms.custom: updateeachrelease
 ms.date: 01/17/2020
 helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 95c2cacc062bbe05ce0bc5c3e832bfe3006cf412
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 47946121334fe45132a7469894f30081045e3a68
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622661"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558824"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>.NET Framework 部署指南（针对开发人员）
 本主题为想要随自己的应用一起安装任何 .NET Framework 版本（从 .NET Framework 4.5 到 [!INCLUDE[net_current](../../../includes/net-current-version.md)]）的开发人员提供了相关信息。

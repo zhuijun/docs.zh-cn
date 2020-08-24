@@ -3,12 +3,12 @@ title: 调试死锁 - .NET Core
 description: 本教程演示如何调试 .NET Core 中的锁定问题。
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 247521176297254180d794d4d4fc850f30e343b0
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 6f060e1ae801eb4eacbbd1fb67110f827c37f597
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86926353"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557875"
 ---
 # <a name="debug-a-deadlock-in-net-core"></a>调试 .NET Core 中的死锁
 
@@ -51,7 +51,7 @@ dotnet-trace ps
 
 注意命令输出中的进程 ID。 我们的进程 ID 是 `4807`，你的进程 ID 将不同。 导航到以下 URL，该 URL 是示例站点上的 API 终结点：
 
-[https://localhost:5001/api/diagscenario/deadlock](https://localhost:5001/api/diagscenario/deadlock)
+`https://localhost:5001/api/diagscenario/deadlock`
 
 向站点发出的 API 请求将挂起并且不会响应。 让请求运行大约 10-15 秒。 然后使用以下命令创建核心转储：
 

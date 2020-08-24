@@ -4,12 +4,12 @@ description: 此教程将介绍如何使用 LINQ 生成序列、编写用于 LIN
 ms.date: 10/29/2018
 ms.technology: csharp-linq
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: ece001e82c0aa44a91999bea78d2fd695ff9362b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9bc17700e22ea29b1861945a220e397a90b9a7c1
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240010"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656991"
 ---
 # <a name="work-with-language-integrated-query-linq"></a>使用语言集成查询 (LINQ)
 
@@ -27,7 +27,7 @@ ms.locfileid: "78240010"
 
 考虑到你的目的，数据序列控制起来就会非常轻松。 生成的应用程序会构造一副纸牌，然后执行一系列洗牌操作，每次都会输出序列。 还可以将更新后的顺序与原始顺序进行比较。
 
-在此教程中，将执行多步操作。 执行每步操作后，都可以运行应用程序，并查看进度。 还可参阅 dotnet/samples GitHub 存储库中的[完整示例](https://github.com/dotnet/samples/blob/master/csharp/getting-started/console-linq)。 有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)。
+在此教程中，将执行多步操作。 执行每步操作后，都可以运行应用程序，并查看进度。 还可参阅 dotnet/samples GitHub 存储库中的[完整示例](https://github.com/dotnet/samples/blob/master/csharp/getting-started/console-linq)。 有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#view-and-download-samples)。
 
 ## <a name="prerequisites"></a>系统必备
 

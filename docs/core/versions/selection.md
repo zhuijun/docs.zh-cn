@@ -4,11 +4,12 @@ description: 了解 .NET Core 如何自动查找和选择适用于程序的运�
 author: adegeo
 ms.author: adegeo
 ms.date: 03/24/2020
-ms.openlocfilehash: faaa638905bb3c8e9cd4c09af83979d90698df3d
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 82b5522601b0ed5d3f4faf6e6c6c970ba285b11f
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803113"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608204"
 ---
 # <a name="select-the-net-core-version-to-use"></a>选择要使用的 .NET Core 版本
 
@@ -77,7 +78,7 @@ SDK 命令包括 `dotnet new` 和 `dotnet run`。 .NET Core CLI 必须为每个 
 
 ## <a name="framework-dependent-apps-roll-forward"></a>依赖于框架的应用会前滚
 
-在使用 [`dotnet run`](../tools/dotnet-run.md) 从源运行应用程序时，在使用 [`dotnet myapp.dll`](../tools/dotnet.md#description) 从[框架相关部署](../deploying/index.md#publish-runtime-dependent)运行应用程序时，或使用 `myapp.exe` 从[框架相关可执行文件](../deploying/index.md#publish-runtime-dependent)运行应用程序时，`dotnet` 可执行文件是应用程序的主机。
+在使用 [`dotnet run`](../tools/dotnet-run.md) 从源运行应用程序时，在使用 [`dotnet myapp.dll`](../tools/dotnet.md#description) 从[框架相关部署](../deploying/index.md#publish-framework-dependent)运行应用程序时，或使用 `myapp.exe` 从[框架相关可执行文件](../deploying/index.md#publish-framework-dependent)运行应用程序时，`dotnet` 可执行文件是应用程序的主机。
 
 该主机选择计算机上安装的最新修补程序版本。 例如，如果在项目文件中指定 `netcoreapp3.0`，并且 `3.0.2` 是安装的最新 .NET 运行时，则使用 `3.0.2` 运行时。
 

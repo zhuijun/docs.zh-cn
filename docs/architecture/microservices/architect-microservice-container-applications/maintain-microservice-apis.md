@@ -2,18 +2,18 @@
 title: 创建、改进微服务 API 及协定并进行版本控制
 description: 在考虑演变和版本控制的情况下创建微服务 API 和协定，因为需要改变。
 ms.date: 09/20/2018
-ms.openlocfilehash: 1972d02d8bf7935c71bfd383707ae19ea2baded9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 9164bfd12df18a88ac187c8962f0afc80b702881
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "68672894"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557667"
 ---
 # <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>创建、改进微服务 API 及协定并进行版本控制
 
 微服务 API 是服务及其客户端之间的协定。 用户将能够独立改进微服务，前提是不破坏其 API 协定，这正是协定之所以重要的原因。 如果更改协定，会影响客户端应用程序或 API 网关。
 
-API 定义的本质取决于所使用的协议。 例如，如果使用的是消息传送（如 [AMQP](https://www.amqp.org/)）协议，则 API 由消息类型构成。 如果使用的是 HTTP 和 RESTful 服务，则 API 由 URL、请求和响应 JSON 格式构成。
+API 定义的本质取决于所使用的协议。 例如，如果使用的是消息传送（如 [AMQP](http://www.amqp.org/)）协议，则 API 由消息类型构成。 如果使用的是 HTTP 和 RESTful 服务，则 API 由 URL、请求和响应 JSON 格式构成。
 
 但是，即使关注的是初始协定，服务 API 仍需随时间推移而改变。 如果发生这种情况 — 尤其是如果 API 是一个供多个客户端应用程序使用的公共 API，通常不能强制所有客户端升级到新的 API 协定。 通常需要逐渐增加对新版服务的部署，并且同时运行旧版和新版的服务协定。 因此，有必要制定服务版本控制策略。
 

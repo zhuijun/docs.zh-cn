@@ -3,12 +3,12 @@ title: 使用 .NET Core 创建 REST 客户端
 description: 此教程将介绍 .NET Core 和 C# 语言的许多功能。
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 1d1d1bec8c6602e4fe34fa3ce243423290412736
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 8db87440bb6e0995b1cc2c97b0d28995170ada8c
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004850"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656939"
 ---
 # <a name="rest-client"></a>REST 客户端
 
@@ -25,7 +25,7 @@ ms.locfileid: "84004850"
 
 此教程中介绍了多项功能。 我们将逐个生成这些功能。
 
-如果想要按照针对本主题的[最终示例](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient)操作，可以下载它。 有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)。
+如果想要按照针对本主题的[最终示例](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient)操作，可以下载它。 有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#view-and-download-samples)。
 
 ## <a name="prerequisites"></a>先决条件
 

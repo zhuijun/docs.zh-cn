@@ -5,12 +5,12 @@ description: 列出 ASP.NET Core 中的中断性变更。
 ms.date: 07/17/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 7a07df5194d5dc220b61d55a4457d90881ac9ddf
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 1506e0aa27778d44497252231028689259f48896
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474821"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720236"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core 中断性变更
 
@@ -28,6 +28,7 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 - [授权：IAuthorizationPolicyProvider 实现需要新方法](#authorization-iauthorizationpolicyprovider-implementations-require-new-method)
 - [授权：终结点路由中的资源为 HttpContext](#authorization-resource-in-endpoint-routing-is-httpcontext)
 - [Azure:Microsoft 预先指定的 Azure 集成包已删除](#azure-microsoft-prefixed-azure-integration-packages-removed)
+- [BinaryFormatter 序列化方法已过时，并且已在 ASP.NET 应用中禁用](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps)
 - [Blazor：在编译时从组件中剪裁掉无意义的空白](#blazor-insignificant-whitespace-trimmed-from-components-at-compile-time)
 - [Blazor：NuGet 包的目标框架已更改](#blazor-target-framework-of-nuget-packages-changed)
 - [缓存：已删除 CompactOnMemoryPressure 属性](#caching-compactonmemorypressure-property-removed)
@@ -99,6 +100,10 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 ***
 
 [!INCLUDE[Azure: Microsoft-prefixed Azure integration packages removed](~/includes/core-changes/aspnetcore/5.0/azure-integration-packages-removed.md)]
+
+***
+
+[!INCLUDE [binaryformatter-serialization-obsolete](../../../includes/core-changes/corefx/5.0/binaryformatter-serialization-obsolete.md)]
 
 ***
 

@@ -3,16 +3,16 @@ title: 使用 dotnet test 和 NUnit 对 .NET Core 中的 Visual Basic 进行单�
 description: 使用 NUnit 分步构建一个 Visual Basic 示例解决方案，在此交互式体验中学习 .NET Core 中的单元测试概念。
 author: rprouse
 ms.date: 10/04/2018
-ms.openlocfilehash: a33447457344b241b4c2376d777b0deb7f556874
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4b807463d29f271d1a707b6254b7b5e66f745319
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240917"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656405"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>使用 dotnet test 和 NUnit 进行 Visual Basic .NET Core 库的单元测试
 
-本教程介绍分步构建示例解决方案的交互式体验，以了解单元测试概念。 如果希望使用预构建解决方案学习本教程，请在开始前[查看或下载示例代码](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-nunit/)。 有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)。
+本教程介绍分步构建示例解决方案的交互式体验，以了解单元测试概念。 如果希望使用预构建解决方案学习本教程，请在开始前[查看或下载示例代码](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-vb-nunit/)。 有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#view-and-download-samples)。
 
 [!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 

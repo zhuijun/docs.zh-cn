@@ -24,12 +24,12 @@ helpviewer_keywords:
 - compiling satellite assemblies
 - re-signing assemblies
 ms.assetid: 8d5c6044-2919-41d2-8321-274706b295ac
-ms.openlocfilehash: be6603f3a593d9756d55204024214660b2220af3
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 3e515028919518cb93cdbec3417eef061a512832
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166210"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558408"
 ---
 # <a name="creating-satellite-assemblies-for-desktop-apps"></a>创建桌面应用程序的附属程序集
 
@@ -95,8 +95,13 @@ al -target:lib -embed:strings.de.resources -culture:de -out:Example.resources.dl
 
 2. 为指示英语 (en) 是该应用程序的默认区域性，请将以下 <xref:System.Resources.NeutralResourcesLanguageAttribute?displayProperty=nameWithType> 属性添加到应用程序的 AssemblyInfo 文件或主源代码文件中，该文件之后会编译到应用程序的主程序集中。
 
-    [!code-csharp[Conceptual.Resources.Locating#2](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.resources.locating/cs/assemblyinfo.cs#2)]
-    [!code-vb[Conceptual.Resources.Locating#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.resources.locating/vb/assemblyinfo.vb#2)]  
+    ```csharp
+    [assembly: NeutralResourcesLanguageAttribute("en")]
+    ```
+
+    ```vb
+    <Assembly: NeutralResourcesLanguageAttribute("en")>
+    ```
   
 3. 向应用程序添加对其他区域性的支持（en-US、fr-FR 和 ru-RU），如下所示：  
   

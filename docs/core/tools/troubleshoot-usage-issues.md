@@ -4,12 +4,12 @@ description: 发现运行 .NET Core 工具出现的常见问题及可能的解�
 author: kdollard
 ms.topic: troubleshooting
 ms.date: 02/14/2020
-ms.openlocfilehash: b98b2735770c8259c2daf94575fc087b91bb61fd
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: db88958e1605fef589c5dbcb12065a6318183705
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062631"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608317"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>排查 .NET Core 工具使用问题
 
@@ -74,7 +74,7 @@ Possible reasons for this include:
 
 ### <a name="runtime-not-found"></a>找不到运行时
 
-.NET Core 工具是[依赖框架的应用程序](../deploying/index.md#publish-runtime-dependent)，也就是说它们依赖于计算机上安装的 .NET Core 运行时。 如果找不到所需的运行时，则遵循常规的 .NET Core 运行时前滚规则，例如：
+.NET Core 工具是[依赖框架的应用程序](../deploying/index.md#publish-framework-dependent)，也就是说它们依赖于计算机上安装的 .NET Core 运行时。 如果找不到所需的运行时，则遵循常规的 .NET Core 运行时前滚规则，例如：
 
 * 应用程序前滚至指定的主要版本和次要版本的最高修补程序版本。
 * 如果主要版本号和次要版本号没有匹配的运行时，则使用下一个较高的次要版本。

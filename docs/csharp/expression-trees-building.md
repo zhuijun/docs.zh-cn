@@ -4,12 +4,12 @@ description: 了解生成表达式树的方法。
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: 542754a9-7f40-4293-b299-b9f80241902c
-ms.openlocfilehash: c93eb16ebf2ff66dc0162afb6841f2cadfce174e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: c153ca2c75738571c81057364390f489d2decb05
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146042"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656145"
 ---
 # <a name="building-expression-trees"></a>生成表达式树
 
@@ -164,7 +164,7 @@ BlockExpression body = Expression.Block(
 
 用于生成阶乘函数的表达式树的代码相对更长、更复杂，它充满了标签和 break 语句以及我们在日常编码任务中想要避免的其他元素。
 
-在本部分中，我还更新了用于访问此表达式树中所有节点的访客代码，并编写了在此示例中创建的节点的相关信息。 可以在 dotnet/docs GitHub 存储库[查看或下载示例代码](https://github.com/dotnet/samples/tree/master/csharp/expression-trees)。 生成并运行这些示例，自行动手试验。 有关下载说明，请参阅[示例和教程](../samples-and-tutorials/index.md#viewing-and-downloading-samples)。
+在本部分中，我还更新了用于访问此表达式树中所有节点的访客代码，并编写了在此示例中创建的节点的相关信息。 可以在 dotnet/docs GitHub 存储库[查看或下载示例代码](https://github.com/dotnet/samples/tree/master/csharp/expression-trees)。 生成并运行这些示例，自行动手试验。 有关下载说明，请参阅[示例和教程](../samples-and-tutorials/index.md#view-and-download-samples)。
 
 ## <a name="examining-the-apis"></a>检查 API
 

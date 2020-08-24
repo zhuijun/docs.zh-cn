@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 12/04/2018
-ms.openlocfilehash: 64cb561acd72ff5d4a11fcae7ce59eaad750f74e
-ms.sourcegitcommit: 62285ec11fa8e8424bab00511a90760c60e63c95
+ms.openlocfilehash: 656ef9aa2745c935c37b69ae5a54b8d126700e55
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/20/2020
-ms.locfileid: "81644361"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608298"
 ---
 # <a name="whats-new-in-net-core-22"></a>.NET Core 2.2 的新增功能
 
@@ -18,7 +18,7 @@ ms.locfileid: "81644361"
 
 ## <a name="new-deployment-mode"></a>新部署模式
 
-从 .NET Core 2.2 开始，可以部署[依赖于框架的可执行文件](../deploying/index.md#publish-runtime-dependent)，这是“.exe”  文件而不是“.dll”  文件。 与依赖框架的部署在功能上类似，依赖框架的可执行文件 (FDE) 仍然依赖于存在的 .NET Core 的共享系统级版本来运行。 应用程序只包含代码和任何第三方依赖项。 与依赖框架的部署不同，FDE 特定于平台。
+从 .NET Core 2.2 开始，可以部署[依赖于框架的可执行文件](../deploying/index.md#publish-framework-dependent)，这是“.exe”  文件而不是“.dll”  文件。 与依赖框架的部署在功能上类似，依赖框架的可执行文件 (FDE) 仍然依赖于存在的 .NET Core 的共享系统级版本来运行。 应用程序只包含代码和任何第三方依赖项。 与依赖框架的部署不同，FDE 特定于平台。
 
 这种新的部署模式在构建可执行文件（而不是库）方面具有独特优势，这意味着你可以直接运行应用程序，而无需首先调用 `dotnet`。
 

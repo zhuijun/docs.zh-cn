@@ -3,17 +3,17 @@ title: .NET 示例和教程
 description: 有关可帮助了解 .NET 的 .NET Core、ASP.NET Core 和 C# 语言的示例和教程信息。
 author: BillWagner
 ms.author: wiwagn
-ms.date: 04/11/2017
-ms.openlocfilehash: 367b2cbea24ac0da634051bf815c319f3679f79b
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.date: 08/19/2020
+ms.openlocfilehash: 587365aae1c2069c3e94ad0452da9c31dc6e89f0
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86417326"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656952"
 ---
 # <a name="net-samples-and-tutorials"></a>.NET 示例和教程
 
-.NET 文档包含指导用户如何使用 .NET 的一系列示例和教程。 本主题介绍如何查找、查看和下载 .NET Core、ASP.NET Core 和 C# 示例和教程。 可在 [F# 基础站点](https://fsharp.org/learn.html)找到学习 F# 编程语言的资源。 如果想要使用联机代码编辑器来探索 C#，请先查看[此交互式教程](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1)然后再继续学习 [C# 交互式教程](../csharp/tutorials/intro-to-csharp/index.md)。 有关如何查看和下载示例代码的说明，请参阅[查看和下载示例](#viewing-and-downloading-samples)部分。
+.NET 文档包含指导用户如何使用 .NET 的一系列示例和教程。 本文介绍如何查找、查看和下载 .NET Core、ASP.NET Core 和 C# 示例和教程。 可在 [F# 基础站点](https://fsharp.org/learn/)找到学习 F# 编程语言的资源。 如果想要使用联机代码编辑器来探索 C#，请先查看[此交互式教程](https://dotnet.microsoft.com/learn/dotnet/in-browser-tutorial/1)然后再继续学习 [C# 交互式教程](../csharp/tutorials/intro-to-csharp/index.md)。 有关如何查看和下载示例代码的说明，请参阅[查看和下载示例](#view-and-download-samples)部分。
 
 ## <a name="net-core"></a>.NET Core
 
@@ -25,9 +25,9 @@ ms.locfileid: "86417326"
 
 ### <a name="tutorials"></a>教程
 
-**[使用 .NET Core CLI 编写 .NET Core 控制台应用：分步指南](../core/tutorials/cli-create-console-app.md)**
+**[教程：使用 Visual Studio Code 创建 .NET Core 控制台应用程序](../core/tutorials/with-visual-studio-code.md)**
 
-本指南介绍如何使用 .NET Core CLI 工具生成跨平台控制台应用。 将从基本的控制台应用开始介绍，最终涵盖包括测试在内的多个项目。 逐步添加功能，不断地增长知识。 可在 GitHub 上的 dotnet/samples 存储库中找到[完整示例](https://github.com/dotnet/samples/tree/master/core/console-apps)。
+本教程演示如何使用 Visual Studio Code 和 .NET Core CLI 创建并运行 .NET Core 控制台应用程序。 项目任务（例如创建、编译和运行项目）通过使用 .NET Core CLI 来完成。
 
 **[使用跨平台工具编写库](../core/tutorials/libraries.md)**
 
@@ -83,7 +83,7 @@ ms.locfileid: "86417326"
 
 本教程演示许多 LINQ 功能和支持 LINQ 的语言元素。 可在 GitHub 上的 dotnet/samples 存储库中找到[完整示例](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-linq)。
 
-**[借助 Visual Studio for Mac 在 macOS 上开始使用 .NET Core](../core/tutorials/using-on-mac-vs.md)**
+**[教程：使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序](../core/tutorials/with-visual-studio-mac.md)**
 
 本教程演示了如何使用 Visual Studio for Mac 生成简单的 .NET Core 控制台应用。
 
@@ -101,13 +101,13 @@ ms.locfileid: "86417326"
 
 本教程演示如何在 Windows Docker 容器中部署现有 ASP.NET MVC 应用。 可在 GitHub 上的 dotnet/samples 存储库中找到[完整示例](https://github.com/dotnet/samples/tree/master/framework/docker/MVCRandomAnswerGenerator)。
 
-## <a name="viewing-and-downloading-samples"></a>查看和下载示例
+## <a name="view-and-download-samples"></a>查看和下载示例
 
 许多主题显示了可从 GitHub 查看或下载的源代码和示例。 要查看示例，只需点击示例链接即可。 要下载代码，请按照以下说明进行操作：
 
 1. 执行以下过程之一，下载包含示例代码的存储库：
    * 将 ZIP 格式的存储库下载到本地系统。 解压缩压缩存档文件。
-   * [分叉](https://help.github.com/articles/fork-a-repo/)存储库并将分叉点[克隆](https://help.github.com/articles/cloning-a-repository/)到你的本地系统。 分叉和克隆允许通过对分叉点进行更改，然后为官方文档存储库创建提取请求的方式参与文档创作。 有关详细信息，请参阅 [.NET 文档参与指南](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute)和 [ 文档参与指南](https://github.com/aspnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md)。
+   * [分叉](https://help.github.com/articles/fork-a-repo/)存储库并将分叉点[克隆](https://help.github.com/articles/cloning-a-repository/)到你的本地系统。 分叉和克隆允许通过对分叉点进行更改，然后为官方文档存储库创建提取请求的方式参与文档创作。 有关详细信息，请参阅 [.NET 文档参与指南](https://docs.microsoft.com/contribute/dotnet/dotnet-contribute)和 [ 文档参与指南](https://github.com/dotnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md)。
    * 以本地方式克隆存储库。 如果你将文档存储库直接克隆到本地系统，则无法直接提交到官方存储库，因此稍后将无法参与文档创作。 如果你希望保留以后参与文档创作的机会，请使用之前介绍的分叉和克隆过程。
 1. 在存储库的文件夹中导航到示例的位置。 当你点击示例链接时，示例位置的相对路径将显示在浏览器的地址栏中。
 1. 要运行示例，你有多个选择：

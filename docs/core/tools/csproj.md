@@ -3,12 +3,12 @@ title: .NET Core 的 csproj 格式的新增内容
 description: 了解现有文件和 .NET Core csproj 文件之间的区别
 ms.topic: reference
 ms.date: 04/08/2019
-ms.openlocfilehash: 4f45362fbb3df053b95156b8e633903f011a85ad
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 82174b2976abda2337a4a9b5a5a5e1f60a1094fb
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062868"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608328"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>.NET Core 的 csproj 格式的新增内容
 
@@ -56,7 +56,7 @@ ms.locfileid: "88062868"
 
 > 已知问题：.NET Core 2.1 SDK 只在项目还使用 Microsoft.NET.Sdk.Web 时才支持这种语法。 .NET Core 2.2 SDK 中解决了此问题。
 
-这些对 ASP.NET Core 元包的引用行为与大多数普通 NuGet 包略有不同。 使用这些元包的应用的[框架依赖部署](../deploying/index.md#publish-runtime-dependent)自动使用 ASP.NET Core 共享框架。 使用元包时，引用的 ASP.NET Core NuGet 包中的任何资产都不会  与应用一起部署。也就是说，ASP.NET Core 共享框架包含这些资产。 共享框架中的资产更适合目标平台，旨在缩短应用启动时间。 若要详细了解共享框架，请参阅 [.NET Core 分发打包](../distribution-packaging.md)。
+这些对 ASP.NET Core 元包的引用行为与大多数普通 NuGet 包略有不同。 使用这些元包的应用的[框架依赖部署](../deploying/index.md#publish-framework-dependent)自动使用 ASP.NET Core 共享框架。 使用元包时，引用的 ASP.NET Core NuGet 包中的任何资产都不会  与应用一起部署。也就是说，ASP.NET Core 共享框架包含这些资产。 共享框架中的资产更适合目标平台，旨在缩短应用启动时间。 若要详细了解共享框架，请参阅 [.NET Core 分发打包](../distribution-packaging.md)。
 
 如果指定  版本，这会被视为框架依赖部署的 ASP.NET Core 共享框架的最低  版本，并被视为独立式部署的确切  版本。 这可能会导致以下后果：
 

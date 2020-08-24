@@ -10,12 +10,12 @@ dev_langs:
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 91ace1932e8bb751e8e1d85e00b3e239a01aa9ea
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 0f6370d37703509681dd9fb818af8e7e2f3a1085
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309815"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608076"
 ---
 # <a name="implement-a-disposeasync-method"></a>实现 DisposeAsync 方法
 
@@ -48,7 +48,7 @@ public async ValueTask DisposeAsync()
     // Perform async cleanup.
     await DisposeAsyncCore();
 
-    // Dispose of managed resources.
+    // Dispose of unmanaged resources.
     Dispose(false);
     // Suppress finalization.
     GC.SuppressFinalize(this);

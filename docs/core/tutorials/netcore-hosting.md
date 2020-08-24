@@ -4,12 +4,12 @@ description: 了解从本机代码托管 .NET Core 运行时，以支持需要�
 author: mjrousos
 ms.topic: how-to
 ms.date: 12/21/2018
-ms.openlocfilehash: 2324b61bcffb686a455fcfd154284a2b78aa746b
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 3b24ade694e25040d77e411bead3f454e9d5cdef
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84283489"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656171"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>编写自定义 .NET Core 主机以从本机代码控制 .NET 运行时
 
@@ -34,7 +34,7 @@ ms.locfileid: "84283489"
 
 ## <a name="sample-hosts"></a>示例主机
 
-有关展示在下面的教程中所述步骤的[示例主机](https://github.com/dotnet/samples/tree/master/core/hosting)，请访问 dotnet/samples GitHub 存储库。 该示例中的注释清楚地将这些教程中已编号的步骤与它们在示例中的执行位置关联。 有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#viewing-and-downloading-samples)。
+有关展示在下面的教程中所述步骤的[示例主机](https://github.com/dotnet/samples/tree/master/core/hosting)，请访问 dotnet/samples GitHub 存储库。 该示例中的注释清楚地将这些教程中已编号的步骤与它们在示例中的执行位置关联。 有关下载说明，请参阅[示例和教程](../../samples-and-tutorials/index.md#view-and-download-samples)。
 
 请记住，示例主机的用途在于提供学习指导，在纠错方面不甚严谨，其重在可读性而非效率。
 
