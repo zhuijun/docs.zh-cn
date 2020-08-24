@@ -3,65 +3,65 @@ title: 调试死锁 - .NET Core
 description: 本教程演示如何调试 .NET Core 中的锁定问题。
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 247521176297254180d794d4d4fc850f30e343b0
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 6f060e1ae801eb4eacbbd1fb67110f827c37f597
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86926353"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557875"
 ---
-# <a name="debug-a-deadlock-in-net-core"></a><span data-ttu-id="f3da1-103">调试 .NET Core 中的死锁</span><span class="sxs-lookup"><span data-stu-id="f3da1-103">Debug a deadlock in .NET Core</span></span>
+# <a name="debug-a-deadlock-in-net-core"></a><span data-ttu-id="6a956-103">调试 .NET Core 中的死锁</span><span class="sxs-lookup"><span data-stu-id="6a956-103">Debug a deadlock in .NET Core</span></span>
 
-<span data-ttu-id="f3da1-104">**本文适用于：** ✔️ .NET Core 3.1 SDK 及更高版本</span><span class="sxs-lookup"><span data-stu-id="f3da1-104">**This article applies to: ✔️** .NET Core 3.1 SDK and later versions</span></span>
+<span data-ttu-id="6a956-104">**本文适用于：** ✔️ .NET Core 3.1 SDK 及更高版本</span><span class="sxs-lookup"><span data-stu-id="6a956-104">**This article applies to: ✔️** .NET Core 3.1 SDK and later versions</span></span>
 
-<span data-ttu-id="f3da1-105">本教程将介绍如何调试死锁情况。</span><span class="sxs-lookup"><span data-stu-id="f3da1-105">In this tutorial, you'll learn how to debug a deadlock scenario.</span></span> <span data-ttu-id="f3da1-106">使用提供的示例 [ASP.NET Core Web 应用](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) 源代码存储库，可以故意造成死锁。</span><span class="sxs-lookup"><span data-stu-id="f3da1-106">Using the provided example [ASP.NET Core web app](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) source code repository, you can cause a deadlock intentionally.</span></span> <span data-ttu-id="f3da1-107">终结点将遇到线程挂起和线程累积。</span><span class="sxs-lookup"><span data-stu-id="f3da1-107">The endpoint will experience a hang and thread accumulation.</span></span> <span data-ttu-id="f3da1-108">你将了解如何使用各种工具来分析问题，例如核心转储、核心转储分析和进程跟踪。</span><span class="sxs-lookup"><span data-stu-id="f3da1-108">You'll learn how you can use various tools to analyze the problem, such as core dumps, core dump analysis, and process tracing.</span></span>
+<span data-ttu-id="6a956-105">本教程将介绍如何调试死锁情况。</span><span class="sxs-lookup"><span data-stu-id="6a956-105">In this tutorial, you'll learn how to debug a deadlock scenario.</span></span> <span data-ttu-id="6a956-106">使用提供的示例 [ASP.NET Core Web 应用](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) 源代码存储库，可以故意造成死锁。</span><span class="sxs-lookup"><span data-stu-id="6a956-106">Using the provided example [ASP.NET Core web app](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) source code repository, you can cause a deadlock intentionally.</span></span> <span data-ttu-id="6a956-107">终结点将遇到线程挂起和线程累积。</span><span class="sxs-lookup"><span data-stu-id="6a956-107">The endpoint will experience a hang and thread accumulation.</span></span> <span data-ttu-id="6a956-108">你将了解如何使用各种工具来分析问题，例如核心转储、核心转储分析和进程跟踪。</span><span class="sxs-lookup"><span data-stu-id="6a956-108">You'll learn how you can use various tools to analyze the problem, such as core dumps, core dump analysis, and process tracing.</span></span>
 
-<span data-ttu-id="f3da1-109">在本教程中，你将：</span><span class="sxs-lookup"><span data-stu-id="f3da1-109">In this tutorial, you will:</span></span>
+<span data-ttu-id="6a956-109">在本教程中，你将：</span><span class="sxs-lookup"><span data-stu-id="6a956-109">In this tutorial, you will:</span></span>
 
 > [!div class="checklist"]
 >
-> - <span data-ttu-id="f3da1-110">调查应用挂起</span><span class="sxs-lookup"><span data-stu-id="f3da1-110">Investigate an app hang</span></span>
-> - <span data-ttu-id="f3da1-111">生成核心转储文件</span><span class="sxs-lookup"><span data-stu-id="f3da1-111">Generate a core dump file</span></span>
-> - <span data-ttu-id="f3da1-112">分析转储文件中的进程线程</span><span class="sxs-lookup"><span data-stu-id="f3da1-112">Analyze process threads in the dump file</span></span>
-> - <span data-ttu-id="f3da1-113">分析调用堆栈和同步块</span><span class="sxs-lookup"><span data-stu-id="f3da1-113">Analyze callstacks and sync blocks</span></span>
-> - <span data-ttu-id="f3da1-114">诊断并解决死锁</span><span class="sxs-lookup"><span data-stu-id="f3da1-114">Diagnose and solve a deadlock</span></span>
+> - <span data-ttu-id="6a956-110">调查应用挂起</span><span class="sxs-lookup"><span data-stu-id="6a956-110">Investigate an app hang</span></span>
+> - <span data-ttu-id="6a956-111">生成核心转储文件</span><span class="sxs-lookup"><span data-stu-id="6a956-111">Generate a core dump file</span></span>
+> - <span data-ttu-id="6a956-112">分析转储文件中的进程线程</span><span class="sxs-lookup"><span data-stu-id="6a956-112">Analyze process threads in the dump file</span></span>
+> - <span data-ttu-id="6a956-113">分析调用堆栈和同步块</span><span class="sxs-lookup"><span data-stu-id="6a956-113">Analyze callstacks and sync blocks</span></span>
+> - <span data-ttu-id="6a956-114">诊断并解决死锁</span><span class="sxs-lookup"><span data-stu-id="6a956-114">Diagnose and solve a deadlock</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="f3da1-115">先决条件</span><span class="sxs-lookup"><span data-stu-id="f3da1-115">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="6a956-115">先决条件</span><span class="sxs-lookup"><span data-stu-id="6a956-115">Prerequisites</span></span>
 
-<span data-ttu-id="f3da1-116">本教程使用：</span><span class="sxs-lookup"><span data-stu-id="f3da1-116">The tutorial uses:</span></span>
+<span data-ttu-id="6a956-116">本教程使用：</span><span class="sxs-lookup"><span data-stu-id="6a956-116">The tutorial uses:</span></span>
 
-- <span data-ttu-id="f3da1-117">[.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) 或更高版本</span><span class="sxs-lookup"><span data-stu-id="f3da1-117">[.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) or a later version</span></span>
-- <span data-ttu-id="f3da1-118">用于触发场景的[示例调试目标 - Web 应用](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)</span><span class="sxs-lookup"><span data-stu-id="f3da1-118">[Sample debug target - web app](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) to trigger the scenario</span></span>
-- <span data-ttu-id="f3da1-119">用于列出进程的 [dotnet-trace](dotnet-trace.md)</span><span class="sxs-lookup"><span data-stu-id="f3da1-119">[dotnet-trace](dotnet-trace.md) to list processes</span></span>
-- <span data-ttu-id="f3da1-120">收集和分析转储文件的 [dotnet-dump](dotnet-dump.md)</span><span class="sxs-lookup"><span data-stu-id="f3da1-120">[dotnet-dump](dotnet-dump.md) to collect, and analyze a dump file</span></span>
+- <span data-ttu-id="6a956-117">[.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) 或更高版本</span><span class="sxs-lookup"><span data-stu-id="6a956-117">[.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) or a later version</span></span>
+- <span data-ttu-id="6a956-118">用于触发场景的[示例调试目标 - Web 应用](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)</span><span class="sxs-lookup"><span data-stu-id="6a956-118">[Sample debug target - web app](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) to trigger the scenario</span></span>
+- <span data-ttu-id="6a956-119">用于列出进程的 [dotnet-trace](dotnet-trace.md)</span><span class="sxs-lookup"><span data-stu-id="6a956-119">[dotnet-trace](dotnet-trace.md) to list processes</span></span>
+- <span data-ttu-id="6a956-120">收集和分析转储文件的 [dotnet-dump](dotnet-dump.md)</span><span class="sxs-lookup"><span data-stu-id="6a956-120">[dotnet-dump](dotnet-dump.md) to collect, and analyze a dump file</span></span>
 
-## <a name="core-dump-generation"></a><span data-ttu-id="f3da1-121">核心转储生成</span><span class="sxs-lookup"><span data-stu-id="f3da1-121">Core dump generation</span></span>
+## <a name="core-dump-generation"></a><span data-ttu-id="6a956-121">核心转储生成</span><span class="sxs-lookup"><span data-stu-id="6a956-121">Core dump generation</span></span>
 
-<span data-ttu-id="f3da1-122">为了调查应用程序无响应问题，核心转储或内存转储允许你检查其线程的状态以及任何可能存在争用问题的锁定状态。</span><span class="sxs-lookup"><span data-stu-id="f3da1-122">To investigate application unresponsiveness, a core dump or memory dump allows you to inspect the state of its threads and any possible locks that may have contention issues.</span></span> <span data-ttu-id="f3da1-123">使用以下命令从示例根目录运行[示例调试](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)应用程序：</span><span class="sxs-lookup"><span data-stu-id="f3da1-123">Run the [sample debug](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) application using the following command from the sample root directory:</span></span>
+<span data-ttu-id="6a956-122">为了调查应用程序无响应问题，核心转储或内存转储允许你检查其线程的状态以及任何可能存在争用问题的锁定状态。</span><span class="sxs-lookup"><span data-stu-id="6a956-122">To investigate application unresponsiveness, a core dump or memory dump allows you to inspect the state of its threads and any possible locks that may have contention issues.</span></span> <span data-ttu-id="6a956-123">使用以下命令从示例根目录运行[示例调试](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)应用程序：</span><span class="sxs-lookup"><span data-stu-id="6a956-123">Run the [sample debug](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) application using the following command from the sample root directory:</span></span>
 
 ```dotnetcli
 dotnet run
 ```
 
-<span data-ttu-id="f3da1-124">若要查找进程 ID，请使用以下命令：</span><span class="sxs-lookup"><span data-stu-id="f3da1-124">To find the process ID, use the following command:</span></span>
+<span data-ttu-id="6a956-124">若要查找进程 ID，请使用以下命令：</span><span class="sxs-lookup"><span data-stu-id="6a956-124">To find the process ID, use the following command:</span></span>
 
 ```dotnetcli
 dotnet-trace ps
 ```
 
-<span data-ttu-id="f3da1-125">注意命令输出中的进程 ID。</span><span class="sxs-lookup"><span data-stu-id="f3da1-125">Take note of the process ID from your command output.</span></span> <span data-ttu-id="f3da1-126">我们的进程 ID 是 `4807`，你的进程 ID 将不同。</span><span class="sxs-lookup"><span data-stu-id="f3da1-126">Our process ID was `4807`, but yours will be different.</span></span> <span data-ttu-id="f3da1-127">导航到以下 URL，该 URL 是示例站点上的 API 终结点：</span><span class="sxs-lookup"><span data-stu-id="f3da1-127">Navigate to the following URL, which is an API endpoint on the sample site:</span></span>
+<span data-ttu-id="6a956-125">注意命令输出中的进程 ID。</span><span class="sxs-lookup"><span data-stu-id="6a956-125">Take note of the process ID from your command output.</span></span> <span data-ttu-id="6a956-126">我们的进程 ID 是 `4807`，你的进程 ID 将不同。</span><span class="sxs-lookup"><span data-stu-id="6a956-126">Our process ID was `4807`, but yours will be different.</span></span> <span data-ttu-id="6a956-127">导航到以下 URL，该 URL 是示例站点上的 API 终结点：</span><span class="sxs-lookup"><span data-stu-id="6a956-127">Navigate to the following URL, which is an API endpoint on the sample site:</span></span>
 
-[https://localhost:5001/api/diagscenario/deadlock](https://localhost:5001/api/diagscenario/deadlock)
+`https://localhost:5001/api/diagscenario/deadlock`
 
-<span data-ttu-id="f3da1-128">向站点发出的 API 请求将挂起并且不会响应。</span><span class="sxs-lookup"><span data-stu-id="f3da1-128">The API request to the site will hang and not respond.</span></span> <span data-ttu-id="f3da1-129">让请求运行大约 10-15 秒。</span><span class="sxs-lookup"><span data-stu-id="f3da1-129">Let the request run for about 10-15 seconds.</span></span> <span data-ttu-id="f3da1-130">然后使用以下命令创建核心转储：</span><span class="sxs-lookup"><span data-stu-id="f3da1-130">Then create the core dump using the following command:</span></span>
+<span data-ttu-id="6a956-128">向站点发出的 API 请求将挂起并且不会响应。</span><span class="sxs-lookup"><span data-stu-id="6a956-128">The API request to the site will hang and not respond.</span></span> <span data-ttu-id="6a956-129">让请求运行大约 10-15 秒。</span><span class="sxs-lookup"><span data-stu-id="6a956-129">Let the request run for about 10-15 seconds.</span></span> <span data-ttu-id="6a956-130">然后使用以下命令创建核心转储：</span><span class="sxs-lookup"><span data-stu-id="6a956-130">Then create the core dump using the following command:</span></span>
 
-### <a name="linux"></a>[<span data-ttu-id="f3da1-131">Linux</span><span class="sxs-lookup"><span data-stu-id="f3da1-131">Linux</span></span>](#tab/linux)
+### <a name="linux"></a>[<span data-ttu-id="6a956-131">Linux</span><span class="sxs-lookup"><span data-stu-id="6a956-131">Linux</span></span>](#tab/linux)
 
 ```bash
 sudo dotnet-dump collect -p 4807
 ```
 
-### <a name="windows"></a>[<span data-ttu-id="f3da1-132">Windows</span><span class="sxs-lookup"><span data-stu-id="f3da1-132">Windows</span></span>](#tab/windows)
+### <a name="windows"></a>[<span data-ttu-id="6a956-132">Windows</span><span class="sxs-lookup"><span data-stu-id="6a956-132">Windows</span></span>](#tab/windows)
 
 ```console
 dotnet-dump collect -p 4807
@@ -69,15 +69,15 @@ dotnet-dump collect -p 4807
 
 ---
 
-## <a name="analyze-the-core-dump"></a><span data-ttu-id="f3da1-133">分析核心转储</span><span class="sxs-lookup"><span data-stu-id="f3da1-133">Analyze the core dump</span></span>
+## <a name="analyze-the-core-dump"></a><span data-ttu-id="6a956-133">分析核心转储</span><span class="sxs-lookup"><span data-stu-id="6a956-133">Analyze the core dump</span></span>
 
-<span data-ttu-id="f3da1-134">若要启动核心转储分析，请使用以下 `dotnet-dump analyze` 命令打开核心转储。</span><span class="sxs-lookup"><span data-stu-id="f3da1-134">To start the core dump analysis, open the core dump using the following `dotnet-dump analyze` command.</span></span> <span data-ttu-id="f3da1-135">参数是先前收集的核心转储文件的路径。</span><span class="sxs-lookup"><span data-stu-id="f3da1-135">The argument is the path to the core dump file that was collected earlier.</span></span>
+<span data-ttu-id="6a956-134">若要启动核心转储分析，请使用以下 `dotnet-dump analyze` 命令打开核心转储。</span><span class="sxs-lookup"><span data-stu-id="6a956-134">To start the core dump analysis, open the core dump using the following `dotnet-dump analyze` command.</span></span> <span data-ttu-id="6a956-135">参数是先前收集的核心转储文件的路径。</span><span class="sxs-lookup"><span data-stu-id="6a956-135">The argument is the path to the core dump file that was collected earlier.</span></span>
 
 ```dotnetcli
 dotnet-dump analyze  ~/.dotnet/tools/core_20190513_143916
 ```
 
-<span data-ttu-id="f3da1-136">由于要查看潜在的挂起，因此需要对进程中的线程活动有一个总体了解。</span><span class="sxs-lookup"><span data-stu-id="f3da1-136">Since you're looking at a potential hang, you want an overall feel for the thread activity in the process.</span></span> <span data-ttu-id="f3da1-137">可以按如下所示使用 `threads` 命令：</span><span class="sxs-lookup"><span data-stu-id="f3da1-137">You can use the `threads` command as shown below:</span></span>
+<span data-ttu-id="6a956-136">由于要查看潜在的挂起，因此需要对进程中的线程活动有一个总体了解。</span><span class="sxs-lookup"><span data-stu-id="6a956-136">Since you're looking at a potential hang, you want an overall feel for the thread activity in the process.</span></span> <span data-ttu-id="6a956-137">可以按如下所示使用 `threads` 命令：</span><span class="sxs-lookup"><span data-stu-id="6a956-137">You can use the `threads` command as shown below:</span></span>
 
 ```console
 > threads
@@ -117,15 +117,15 @@ dotnet-dump analyze  ~/.dotnet/tools/core_20190513_143916
  321 0x1DD4C (122188)
  ```
 
-<span data-ttu-id="f3da1-138">该输出显示进程中当前运行的所有线程及其关联的调试器线程 ID 和操作系统线程 ID。</span><span class="sxs-lookup"><span data-stu-id="f3da1-138">The output shows all the threads currently running in the process with their associated debugger thread ID and operating system thread ID.</span></span> <span data-ttu-id="f3da1-139">基于输出，有超过 300 个线程。</span><span class="sxs-lookup"><span data-stu-id="f3da1-139">Based on the output, there are over 300 threads.</span></span>
+<span data-ttu-id="6a956-138">该输出显示进程中当前运行的所有线程及其关联的调试器线程 ID 和操作系统线程 ID。</span><span class="sxs-lookup"><span data-stu-id="6a956-138">The output shows all the threads currently running in the process with their associated debugger thread ID and operating system thread ID.</span></span> <span data-ttu-id="6a956-139">基于输出，有超过 300 个线程。</span><span class="sxs-lookup"><span data-stu-id="6a956-139">Based on the output, there are over 300 threads.</span></span>
 
-<span data-ttu-id="f3da1-140">下一步是通过获取每个线程的调用堆栈来更好地了解线程当前正在执行的操作。</span><span class="sxs-lookup"><span data-stu-id="f3da1-140">The next step is to get a better understanding of what the threads are currently doing by getting each thread's callstack.</span></span> <span data-ttu-id="f3da1-141">`clrstack` 命令可用于输出调用堆栈。</span><span class="sxs-lookup"><span data-stu-id="f3da1-141">The `clrstack` command can be used to output callstacks.</span></span> <span data-ttu-id="f3da1-142">它既可以输出单个调用堆栈，也可以输出所有调用堆栈。</span><span class="sxs-lookup"><span data-stu-id="f3da1-142">It can either output a single callstack or all the callstacks.</span></span> <span data-ttu-id="f3da1-143">使用以下命令输出进程中所有线程的所有调用堆栈：</span><span class="sxs-lookup"><span data-stu-id="f3da1-143">Use the following command to output all the callstacks for all the threads in the process:</span></span>
+<span data-ttu-id="6a956-140">下一步是通过获取每个线程的调用堆栈来更好地了解线程当前正在执行的操作。</span><span class="sxs-lookup"><span data-stu-id="6a956-140">The next step is to get a better understanding of what the threads are currently doing by getting each thread's callstack.</span></span> <span data-ttu-id="6a956-141">`clrstack` 命令可用于输出调用堆栈。</span><span class="sxs-lookup"><span data-stu-id="6a956-141">The `clrstack` command can be used to output callstacks.</span></span> <span data-ttu-id="6a956-142">它既可以输出单个调用堆栈，也可以输出所有调用堆栈。</span><span class="sxs-lookup"><span data-stu-id="6a956-142">It can either output a single callstack or all the callstacks.</span></span> <span data-ttu-id="6a956-143">使用以下命令输出进程中所有线程的所有调用堆栈：</span><span class="sxs-lookup"><span data-stu-id="6a956-143">Use the following command to output all the callstacks for all the threads in the process:</span></span>
 
 ```console
 clrstack -all
 ```
 
-<span data-ttu-id="f3da1-144">输出的典型部分如下所示：</span><span class="sxs-lookup"><span data-stu-id="f3da1-144">A representative portion of the output looks like:</span></span>
+<span data-ttu-id="6a956-144">输出的典型部分如下所示：</span><span class="sxs-lookup"><span data-stu-id="6a956-144">A representative portion of the output looks like:</span></span>
 
 ```console
   ...
@@ -206,7 +206,7 @@ OS Thread Id: 0x1dc88
 ...
 ```
 
-<span data-ttu-id="f3da1-145">观察所有 300 多个线程的调用堆栈可以发现一个模式，其中大多数线程共享一个公共调用堆栈：</span><span class="sxs-lookup"><span data-stu-id="f3da1-145">Observing the callstacks for all 300+ threads shows a pattern where a majority of the threads share a common callstack:</span></span>
+<span data-ttu-id="6a956-145">观察所有 300 多个线程的调用堆栈可以发现一个模式，其中大多数线程共享一个公共调用堆栈：</span><span class="sxs-lookup"><span data-stu-id="6a956-145">Observing the callstacks for all 300+ threads shows a pattern where a majority of the threads share a common callstack:</span></span>
 
 ```console
 OS Thread Id: 0x1dc88
@@ -220,9 +220,9 @@ OS Thread Id: 0x1dc88
 00007F2ADFFAED70 00007f30593044af [DebuggerU2MCatchHandlerFrame: 00007f2adffaed70]
 ```
 
-<span data-ttu-id="f3da1-146">该调用堆栈似乎显示请求传入了死锁方法，而死锁方法继而又调用了 `Monitor.ReliableEnter`。</span><span class="sxs-lookup"><span data-stu-id="f3da1-146">The callstack seems to show that the request arrived in our deadlock method that in turn makes a call to `Monitor.ReliableEnter`.</span></span> <span data-ttu-id="f3da1-147">此方法表示这些线程正试图进入监视器锁定。</span><span class="sxs-lookup"><span data-stu-id="f3da1-147">This method indicates that the threads are trying to enter a monitor lock.</span></span> <span data-ttu-id="f3da1-148">它们正在等待该锁定的可用性。</span><span class="sxs-lookup"><span data-stu-id="f3da1-148">They're waiting on the availability of the lock.</span></span> <span data-ttu-id="f3da1-149">它可能已被其他线程锁定。</span><span class="sxs-lookup"><span data-stu-id="f3da1-149">It's likely locked by a different thread.</span></span>
+<span data-ttu-id="6a956-146">该调用堆栈似乎显示请求传入了死锁方法，而死锁方法继而又调用了 `Monitor.ReliableEnter`。</span><span class="sxs-lookup"><span data-stu-id="6a956-146">The callstack seems to show that the request arrived in our deadlock method that in turn makes a call to `Monitor.ReliableEnter`.</span></span> <span data-ttu-id="6a956-147">此方法表示这些线程正试图进入监视器锁定。</span><span class="sxs-lookup"><span data-stu-id="6a956-147">This method indicates that the threads are trying to enter a monitor lock.</span></span> <span data-ttu-id="6a956-148">它们正在等待该锁定的可用性。</span><span class="sxs-lookup"><span data-stu-id="6a956-148">They're waiting on the availability of the lock.</span></span> <span data-ttu-id="6a956-149">它可能已被其他线程锁定。</span><span class="sxs-lookup"><span data-stu-id="6a956-149">It's likely locked by a different thread.</span></span>
 
-<span data-ttu-id="f3da1-150">下一步是找出实际持有监视器锁定的线程。</span><span class="sxs-lookup"><span data-stu-id="f3da1-150">The next step then is to find out which thread is actually holding the monitor lock.</span></span> <span data-ttu-id="f3da1-151">由于监视器通常将锁定信息存储在同步块表中，因此我们可以使用 `syncblk` 命令来获取更多信息：</span><span class="sxs-lookup"><span data-stu-id="f3da1-151">Since monitors typically store lock information in the sync block table, we can use the `syncblk` command to get more information:</span></span>
+<span data-ttu-id="6a956-150">下一步是找出实际持有监视器锁定的线程。</span><span class="sxs-lookup"><span data-stu-id="6a956-150">The next step then is to find out which thread is actually holding the monitor lock.</span></span> <span data-ttu-id="6a956-151">由于监视器通常将锁定信息存储在同步块表中，因此我们可以使用 `syncblk` 命令来获取更多信息：</span><span class="sxs-lookup"><span data-stu-id="6a956-151">Since monitors typically store lock information in the sync block table, we can use the `syncblk` command to get more information:</span></span>
 
 ```console
 > syncblk
@@ -237,11 +237,11 @@ ComClassFactory 0
 Free            0
 ```
 
-<span data-ttu-id="f3da1-152">两个有趣的列是“MonitorHeld”和“Owning Thread Info” 。</span><span class="sxs-lookup"><span data-stu-id="f3da1-152">The two interesting columns are **MonitorHeld** and **Owning Thread Info**.</span></span> <span data-ttu-id="f3da1-153">“MonitorHeld”列显示线程是否获取了监视器锁定以及正在等待的线程的数量。</span><span class="sxs-lookup"><span data-stu-id="f3da1-153">The **MonitorHeld** column shows whether a monitor lock is acquired by a thread and the number of waiting threads.</span></span> <span data-ttu-id="f3da1-154">“Owning Thread Info”列显示当前拥有监视器锁定的线程。</span><span class="sxs-lookup"><span data-stu-id="f3da1-154">The **Owning Thread Info** column shows which thread currently owns the monitor lock.</span></span> <span data-ttu-id="f3da1-155">线程信息有三个不同的子列。</span><span class="sxs-lookup"><span data-stu-id="f3da1-155">The thread info has three different subcolumns.</span></span> <span data-ttu-id="f3da1-156">第二个子列显示操作系统线程 ID。</span><span class="sxs-lookup"><span data-stu-id="f3da1-156">The second subcolumn shows operating system thread ID.</span></span>
+<span data-ttu-id="6a956-152">两个有趣的列是“MonitorHeld”和“Owning Thread Info” 。</span><span class="sxs-lookup"><span data-stu-id="6a956-152">The two interesting columns are **MonitorHeld** and **Owning Thread Info**.</span></span> <span data-ttu-id="6a956-153">“MonitorHeld”列显示线程是否获取了监视器锁定以及正在等待的线程的数量。</span><span class="sxs-lookup"><span data-stu-id="6a956-153">The **MonitorHeld** column shows whether a monitor lock is acquired by a thread and the number of waiting threads.</span></span> <span data-ttu-id="6a956-154">“Owning Thread Info”列显示当前拥有监视器锁定的线程。</span><span class="sxs-lookup"><span data-stu-id="6a956-154">The **Owning Thread Info** column shows which thread currently owns the monitor lock.</span></span> <span data-ttu-id="6a956-155">线程信息有三个不同的子列。</span><span class="sxs-lookup"><span data-stu-id="6a956-155">The thread info has three different subcolumns.</span></span> <span data-ttu-id="6a956-156">第二个子列显示操作系统线程 ID。</span><span class="sxs-lookup"><span data-stu-id="6a956-156">The second subcolumn shows operating system thread ID.</span></span>
 
-<span data-ttu-id="f3da1-157">此时，我们知道两个不同的线程（0x5634 和 0x51d4）持有监视器锁定。</span><span class="sxs-lookup"><span data-stu-id="f3da1-157">At this point, we know two different threads (0x5634 and 0x51d4) hold a monitor lock.</span></span> <span data-ttu-id="f3da1-158">下一步是查看这些线程正在执行的操作。</span><span class="sxs-lookup"><span data-stu-id="f3da1-158">The next step is to take a look at what those threads are doing.</span></span> <span data-ttu-id="f3da1-159">我们需要检查它们是否无限期陷入持有锁定。</span><span class="sxs-lookup"><span data-stu-id="f3da1-159">We need to check if they're stuck indefinitely holding the lock.</span></span> <span data-ttu-id="f3da1-160">让我们使用 `setthread` 和 `clrstack` 命令切换到每个线程并显示调用堆栈。</span><span class="sxs-lookup"><span data-stu-id="f3da1-160">Let's use the `setthread` and `clrstack` commands to switch to each of the threads and display the callstacks.</span></span>
+<span data-ttu-id="6a956-157">此时，我们知道两个不同的线程（0x5634 和 0x51d4）持有监视器锁定。</span><span class="sxs-lookup"><span data-stu-id="6a956-157">At this point, we know two different threads (0x5634 and 0x51d4) hold a monitor lock.</span></span> <span data-ttu-id="6a956-158">下一步是查看这些线程正在执行的操作。</span><span class="sxs-lookup"><span data-stu-id="6a956-158">The next step is to take a look at what those threads are doing.</span></span> <span data-ttu-id="6a956-159">我们需要检查它们是否无限期陷入持有锁定。</span><span class="sxs-lookup"><span data-stu-id="6a956-159">We need to check if they're stuck indefinitely holding the lock.</span></span> <span data-ttu-id="6a956-160">让我们使用 `setthread` 和 `clrstack` 命令切换到每个线程并显示调用堆栈。</span><span class="sxs-lookup"><span data-stu-id="6a956-160">Let's use the `setthread` and `clrstack` commands to switch to each of the threads and display the callstacks.</span></span>
 
-<span data-ttu-id="f3da1-161">若要查看第一个线程，请运行 `setthread` 命令，并找到 0x5634 线程的索引（我们的索引是 28）。</span><span class="sxs-lookup"><span data-stu-id="f3da1-161">To look at the first thread, run the `setthread` command, and find the index of the 0x5634 thread (our index was 28).</span></span> <span data-ttu-id="f3da1-162">死锁函数正在等待获取某个锁定，但它已拥有该锁定。</span><span class="sxs-lookup"><span data-stu-id="f3da1-162">The deadlock function is waiting to acquire a lock, but it already owns the lock.</span></span> <span data-ttu-id="f3da1-163">该函数处于正在等待它已经持有的锁定的死锁状态。</span><span class="sxs-lookup"><span data-stu-id="f3da1-163">It's in deadlock waiting for the lock it already holds.</span></span>
+<span data-ttu-id="6a956-161">若要查看第一个线程，请运行 `setthread` 命令，并找到 0x5634 线程的索引（我们的索引是 28）。</span><span class="sxs-lookup"><span data-stu-id="6a956-161">To look at the first thread, run the `setthread` command, and find the index of the 0x5634 thread (our index was 28).</span></span> <span data-ttu-id="6a956-162">死锁函数正在等待获取某个锁定，但它已拥有该锁定。</span><span class="sxs-lookup"><span data-stu-id="6a956-162">The deadlock function is waiting to acquire a lock, but it already owns the lock.</span></span> <span data-ttu-id="6a956-163">该函数处于正在等待它已经持有的锁定的死锁状态。</span><span class="sxs-lookup"><span data-stu-id="6a956-163">It's in deadlock waiting for the lock it already holds.</span></span>
 
 ```console
 > setthread 28
@@ -260,16 +260,16 @@ OS Thread Id: 0x5634 (28)
 0000004E46AFF3A0 00007ffebdcc6b63 [DebuggerU2MCatchHandlerFrame: 0000004e46aff3a0]
 ```
 
-<span data-ttu-id="f3da1-164">第二个线程类似。</span><span class="sxs-lookup"><span data-stu-id="f3da1-164">The second thread is similar.</span></span> <span data-ttu-id="f3da1-165">它还尝试获取已拥有的锁定。</span><span class="sxs-lookup"><span data-stu-id="f3da1-165">It's also trying to acquire a lock that it already owns.</span></span> <span data-ttu-id="f3da1-166">其余 300 多个正在等待的线程很可能也在等待导致死锁的锁定之一。</span><span class="sxs-lookup"><span data-stu-id="f3da1-166">The remaining 300+ threads that are all waiting are most likely also waiting on one of the locks that caused the deadlock.</span></span>
+<span data-ttu-id="6a956-164">第二个线程类似。</span><span class="sxs-lookup"><span data-stu-id="6a956-164">The second thread is similar.</span></span> <span data-ttu-id="6a956-165">它还尝试获取已拥有的锁定。</span><span class="sxs-lookup"><span data-stu-id="6a956-165">It's also trying to acquire a lock that it already owns.</span></span> <span data-ttu-id="6a956-166">其余 300 多个正在等待的线程很可能也在等待导致死锁的锁定之一。</span><span class="sxs-lookup"><span data-stu-id="6a956-166">The remaining 300+ threads that are all waiting are most likely also waiting on one of the locks that caused the deadlock.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="f3da1-167">请参阅</span><span class="sxs-lookup"><span data-stu-id="f3da1-167">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6a956-167">请参阅</span><span class="sxs-lookup"><span data-stu-id="6a956-167">See also</span></span>
 
-- <span data-ttu-id="f3da1-168">用于列出进程的 [dotnet-trace](dotnet-trace.md)</span><span class="sxs-lookup"><span data-stu-id="f3da1-168">[dotnet-trace](dotnet-trace.md) to list processes</span></span>
-- <span data-ttu-id="f3da1-169">用于检查托管内存使用情况的 [dotnet-counters](dotnet-counters.md)</span><span class="sxs-lookup"><span data-stu-id="f3da1-169">[dotnet-counters](dotnet-counters.md) to check managed memory usage</span></span>
-- <span data-ttu-id="f3da1-170">用于收集和分析转储文件的 [dotnet-dump](dotnet-dump.md)</span><span class="sxs-lookup"><span data-stu-id="f3da1-170">[dotnet-dump](dotnet-dump.md) to collect and analyze a dump file</span></span>
-- [<span data-ttu-id="f3da1-171">dotnet/diagnostics</span><span class="sxs-lookup"><span data-stu-id="f3da1-171">dotnet/diagnostics</span></span>](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)
+- <span data-ttu-id="6a956-168">用于列出进程的 [dotnet-trace](dotnet-trace.md)</span><span class="sxs-lookup"><span data-stu-id="6a956-168">[dotnet-trace](dotnet-trace.md) to list processes</span></span>
+- <span data-ttu-id="6a956-169">用于检查托管内存使用情况的 [dotnet-counters](dotnet-counters.md)</span><span class="sxs-lookup"><span data-stu-id="6a956-169">[dotnet-counters](dotnet-counters.md) to check managed memory usage</span></span>
+- <span data-ttu-id="6a956-170">用于收集和分析转储文件的 [dotnet-dump](dotnet-dump.md)</span><span class="sxs-lookup"><span data-stu-id="6a956-170">[dotnet-dump](dotnet-dump.md) to collect and analyze a dump file</span></span>
+- [<span data-ttu-id="6a956-171">dotnet/diagnostics</span><span class="sxs-lookup"><span data-stu-id="6a956-171">dotnet/diagnostics</span></span>](https://github.com/dotnet/diagnostics/tree/master/documentation/tutorial)
 
-## <a name="next-steps"></a><span data-ttu-id="f3da1-172">后续步骤</span><span class="sxs-lookup"><span data-stu-id="f3da1-172">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="6a956-172">后续步骤</span><span class="sxs-lookup"><span data-stu-id="6a956-172">Next steps</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="f3da1-173">.NET Core 中提供哪些诊断工具</span><span class="sxs-lookup"><span data-stu-id="f3da1-173">What diagnostic tools are available in .NET Core</span></span>](index.md)
+> [<span data-ttu-id="6a956-173">.NET Core 中提供哪些诊断工具</span><span class="sxs-lookup"><span data-stu-id="6a956-173">What diagnostic tools are available in .NET Core</span></span>](index.md)
