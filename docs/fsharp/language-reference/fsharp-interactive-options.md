@@ -2,12 +2,12 @@
 title: 交互式选项
 description: 了解 F# 交互窗口、fsi.exe 支持的命令行选项。
 ms.date: 08/15/2020
-ms.openlocfilehash: da2251c1d2e57090ed926e501cebf3c53ac58052
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: adc8dc86f14366720e1acbf35115d4e318a76aef
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558603"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810525"
 ---
 # <a name="f-interactive-options"></a>F# 交互窗口选项
 
@@ -52,11 +52,11 @@ F # 脚本文件的文件扩展名为 `.fsx` 。
 |**--optimize**[ **+**&#124;**-** ]|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
 |**--preferreduilang： &lt; lang&gt;**| 指定首选输出语言区域性名称 (例如，es，ja-jp) 。 |
 |**--quiet**|抑制 F# 交互窗口输出到 **stdout** 流。|
-|**--引用-调试**|指定应为从 F # 引号文本和反射定义派生的表达式发出额外的调试信息。 调试信息将添加到 F # 表达式树节点的自定义属性中。 请参阅 [代码引用](code-quotations.md) 和 [CustomAttributes](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3)。|
+|**--引用-调试**|指定应为从 F # 引号文本和反射定义派生的表达式发出额外的调试信息。 调试信息将添加到 F # 表达式树节点的自定义属性中。 请参阅 [代码引用](code-quotations.md) 和 [CustomAttributes](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html#CustomAttributes)。|
 |**--readline**[ **+**&#124;**-** ]|启用或禁用交互模式下的 tab 自动补全。|
 |**--reference： &lt; filename&gt;**<br /><br />**-r： &lt; filename&gt;**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
 |**--tailcalls**[ **+**&#124;**-** ]|启用或禁用 tail IL 指令，这将导致为尾递归函数重用堆栈帧。 默认情况下会启用此选项。|
-|**--targetprofile： &lt; string&gt;**|指定此程序集的目标框架配置文件。 有效值为 `mscorlib`、`netcore` 或 `netstandard`。 默认值为 `mscorlib`。|
+|**--targetprofile： &lt; string&gt;**|指定此程序集的目标框架配置文件。 有效值为 `mscorlib`、`netcore` 或 `netstandard`。 默认为 `mscorlib`。|
 |**--use： &lt; filename&gt;**|通知解释器在启动时使用给定文件作为初始输入。|
 |**--utf8output**|与 fsc.exe 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|
 |**--warning： &lt; 警告级别&gt;**|与 **fsc.exe** 编译器选项相同。 有关详细信息，请参阅 [编译器选项](compiler-options.md)。|

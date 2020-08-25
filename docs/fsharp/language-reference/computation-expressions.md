@@ -1,19 +1,19 @@
 ---
 title: 计算表达式
 description: '了解如何创建方便的语法，以便在 F # 中编写可使用控制流构造和绑定进行序列化和组合的计算。'
-ms.date: 11/04/2019
+ms.date: 08/15/2020
 f1_keywords:
 - let!_FS
-ms.openlocfilehash: 32638e9493fb2c6b7aae30d044a0cda2a97f2178
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 1649d8c57ea9e025d40ef6d39d92b96795964150
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855356"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812154"
 ---
 # <a name="computation-expressions"></a>计算表达式
 
-F # 中的计算表达式提供了一种方便的语法，用于写入可使用控制流结构和绑定进行序列化和组合的计算。 根据计算表达式的类型，可以将其视为表示 monad、monoids、monad 转换器和 applicative 函子的一种方法。 但与其他语言不同 (如 Haskell) 中*的 notation* ，它们不与单个抽象相关，也不依赖于宏或其他形式的元编程来实现方便且上下文相关的语法。
+F # 中的计算表达式提供了一种方便的语法，用于写入可使用控制流结构和绑定进行序列化和组合的计算。 根据计算表达式的类型，可以将其视为表示 monad、monoids、monad 转换器和 applicative 函子的一种方法。 但与其他语言不同 (如 Haskell) 中 *的 notation* ，它们不与单个抽象相关，也不依赖于宏或其他形式的元编程来实现方便且上下文相关的语法。
 
 ## <a name="overview"></a>概述
 
@@ -24,11 +24,11 @@ F # 中的计算表达式提供了一种方便的语法，用于写入可使用�
 - Effectful 计算
 - 生成计算
 
-通常，在应用程序的某些部分，您必须执行*上下文相关*的计算。 编写上下文相关的代码可能会很难，因为在没有抽象的情况下，可以轻松地在给定上下文之外 "泄漏" 计算，以防您这样做。 这些抽象通常很难自行编写，这就是 F # 有一种通用的方法来执行所谓的**计算表达式**。
+通常，在应用程序的某些部分，您必须执行 *上下文相关* 的计算。 编写上下文相关的代码可能会很难，因为在没有抽象的情况下，可以轻松地在给定上下文之外 "泄漏" 计算，以防您这样做。 这些抽象通常很难自行编写，这就是 F # 有一种通用的方法来执行所谓的 **计算表达式**。
 
 计算表达式为区分上下文的计算提供统一的语法和抽象模型。
 
-每个计算表达式都是由*生成器*类型支持的。 生成器类型定义可用于计算表达式的操作。 请参阅[创建新类型的计算表达式](computation-expressions.md#creating-a-new-type-of-computation-expression)，其中显示了如何创建自定义计算表达式。
+每个计算表达式都是由 *生成器* 类型支持的。 生成器类型定义可用于计算表达式的操作。 请参阅 [创建新类型的计算表达式](computation-expressions.md#creating-a-new-type-of-computation-expression)，其中显示了如何创建自定义计算表达式。
 
 ### <a name="syntax-overview"></a>语法概述
 
@@ -79,9 +79,9 @@ let doThingsAsync url =
     }
 ```
 
-如果将对的计算表达式的调用绑定到 `let` ，则不会获得计算表达式的结果。 而是将未*实现*的调用的值绑定到该计算表达式。 使用 `let!` 绑定到结果。
+如果将对的计算表达式的调用绑定到 `let` ，则不会获得计算表达式的结果。 而是将未 *实现* 的调用的值绑定到该计算表达式。 使用 `let!` 绑定到结果。
 
-`let!`由 `Bind(x, f)` 生成器类型上的成员定义。
+`let!` 由 `Bind(x, f)` 生成器类型上的成员定义。
 
 ### `do!`
 
@@ -95,9 +95,9 @@ let doThingsAsync data url =
     }
 ```
 
-对于[异步工作流](asynchronous-workflows.md)，此类型为 `Async<unit>` 。 对于其他计算表达式，类型可能是 `CExpType<unit>` 。
+对于 [异步工作流](asynchronous-workflows.md)，此类型为 `Async<unit>` 。 对于其他计算表达式，类型可能是 `CExpType<unit>` 。
 
-`do!`由 `Bind(x, f)` 生成器类型上的成员定义，其中 `f` 生成 `unit` 。
+`do!` 由 `Bind(x, f)` 生成器类型上的成员定义，其中 `f` 生成 `unit` 。
 
 ### `yield`
 
@@ -142,9 +142,9 @@ let weekdays includeWeekend =
     }
 ```
 
-与[c # 中的 yield 关键字](../../csharp/language-reference/keywords/yield.md)一样，计算表达式中的每个元素都是在迭代时重新生成的。
+与 [c # 中的 yield 关键字](../../csharp/language-reference/keywords/yield.md)一样，计算表达式中的每个元素都是在迭代时重新生成的。
 
-`yield`由 `Yield(x)` 生成器类型上的成员定义，其中 `x` 是要返回的项。
+`yield` 由 `Yield(x)` 生成器类型上的成员定义，其中 `x` 是要返回的项。
 
 ### `yield!`
 
@@ -172,7 +172,7 @@ printfn "%A" squaresAndCubes // Prints - 1; 4; 9; 1; 8; 27
 
 当计算时，由调用的计算表达式 `yield!` 将每次生成一个项，从而平展结果。
 
-`yield!`由 `YieldFrom(x)` 生成器类型上的成员定义，其中 `x` 是值的集合。
+`yield!` 由 `YieldFrom(x)` 生成器类型上的成员定义，其中 `x` 是值的集合。
 
 与不同 `yield` ， `yield!` 必须显式指定。 它的行为在计算表达式中是隐式的。
 
@@ -191,7 +191,7 @@ let req = // 'req' is of type is 'Async<data>'
 let result = Async.RunSynchronously req
 ```
 
-`return`由 `Return(x)` 生成器类型上的成员定义，其中 `x` 是要包装的项。
+`return` 由 `Return(x)` 生成器类型上的成员定义，其中 `x` 是要包装的项。
 
 ### `return!`
 
@@ -207,7 +207,7 @@ let req = // 'req' is of type is 'Async<data>'
 let result = Async.RunSynchronously req
 ```
 
-`return!`由 `ReturnFrom(x)` 生成器类型上的成员定义，其中 `x` 是另一个计算表达式。
+`return!` 由 `ReturnFrom(x)` 生成器类型上的成员定义，其中 `x` 是另一个计算表达式。
 
 ### `match!`
 
@@ -222,11 +222,11 @@ let doThingsAsync url =
     }
 ```
 
-当使用调用计算表达式时 `match!` ，它将实现调用的结果，如 `let!` 。 这通常在调用计算表达式（其中的结果是[可选](options.md)的）时使用。
+当使用调用计算表达式时 `match!` ，它将实现调用的结果，如 `let!` 。 这通常在调用计算表达式（其中的结果是 [可选](options.md)的）时使用。
 
 ## <a name="built-in-computation-expressions"></a>内置计算表达式
 
-F # 核心库定义了三个内置计算表达式：[序列表达式](sequences.md)、[异步工作流](asynchronous-workflows.md)和[查询表达式](query-expressions.md)。
+F # 核心库定义了三个内置计算表达式： [序列表达式](sequences.md)、 [异步工作流](asynchronous-workflows.md)和 [查询表达式](query-expressions.md)。
 
 ## <a name="creating-a-new-type-of-computation-expression"></a>创建新类型的计算表达式
 
@@ -262,7 +262,7 @@ builder.Run(builder.Delay(fun () -> {| cexpr |}))
 
 在上面的代码中， `Run` `Delay` 如果未在计算表达式生成器类中定义，则将忽略对和的调用。 下面的表中所述的翻译将计算表达式的主体（此处表示为 `{| cexpr |}` ）转换为涉及生成器类方法的调用。 `{| cexpr |}`根据这些转换以递归方式定义计算表达式，其中 `expr` 是 F # 表达式， `cexpr` 是计算表达式。
 
-|表达式|翻译|
+|Expression|翻译|
 |----------|-----------|
 |<code>{ let binding in cexpr }</code>|<code>let binding in {&#124; cexpr &#124;}</code>|
 |<code>{ let! pattern = expr in cexpr }</code>|<code>builder.Bind(expr, (fun pattern -> {&#124; cexpr &#124;}))</code>|
@@ -410,20 +410,20 @@ comp |> step |> step
 comp |> step |> step |> step |> step
 ```
 
-计算表达式具有表达式返回的基础类型。 基础类型可能表示可以执行的计算结果或延迟计算，或者它可能提供一种方法来循环访问某些类型的集合。 在上面的示例中，基础类型**最终**是。 对于序列表达式，基础类型是 <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> 。 对于查询表达式，基础类型是 <xref:System.Linq.IQueryable?displayProperty=nameWithType> 。 对于异步工作流，基础类型是 [`Async`](https://msdn.microsoft.com/library/03eb4d12-a01a-4565-a077-5e83f17cf6f7) 。 `Async`对象表示要执行的工作来计算结果。 例如，调用 [`Async.RunSynchronously`](https://msdn.microsoft.com/library/0a6663a9-50f2-4d38-8bf3-cefd1a51fd6b) 以执行计算并返回结果。
+计算表达式具有表达式返回的基础类型。 基础类型可能表示可以执行的计算结果或延迟计算，或者它可能提供一种方法来循环访问某些类型的集合。 在上面的示例中，基础类型 **最终**是。 对于序列表达式，基础类型是 <xref:System.Collections.Generic.IEnumerable%601?displayProperty=nameWithType> 。 对于查询表达式，基础类型是 <xref:System.Linq.IQueryable?displayProperty=nameWithType> 。 对于异步工作流，基础类型是 [`Async`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync-1.html) 。 `Async`对象表示要执行的工作来计算结果。 例如，调用 [`Async.RunSynchronously`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync.html#RunSynchronously) 以执行计算并返回结果。
 
 ## <a name="custom-operations"></a>自定义操作
 
-可以在计算表达式中定义自定义操作，并使用自定义操作作为计算表达式中的运算符。 例如，可以在查询表达式中包含查询运算符。 定义自定义操作时，必须在计算表达式中定义 Yield 和方法。 若要定义自定义操作，请将其放在计算表达式的 builder 类中，然后应用 [`CustomOperationAttribute`](https://msdn.microsoft.com/library/199f3927-79df-484b-ba66-85f58cc49b19) 。 此属性采用字符串作为参数，该参数是要在自定义操作中使用的名称。 此名称将出现在计算表达式的左大括号开头的范围内。 因此，不应使用与此块中的自定义操作名称相同的标识符。 例如，避免在 `all` 查询表达式中使用标识符（如或） `last` 。
+可以在计算表达式中定义自定义操作，并使用自定义操作作为计算表达式中的运算符。 例如，可以在查询表达式中包含查询运算符。 定义自定义操作时，必须在计算表达式中定义 Yield 和方法。 若要定义自定义操作，请将其放在计算表达式的 builder 类中，然后应用 [`CustomOperationAttribute`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-customoperationattribute.html) 。 此属性采用字符串作为参数，该参数是要在自定义操作中使用的名称。 此名称将出现在计算表达式的左大括号开头的范围内。 因此，不应使用与此块中的自定义操作名称相同的标识符。 例如，避免在 `all` 查询表达式中使用标识符（如或） `last` 。
 
 ### <a name="extending-existing-builders-with-new-custom-operations"></a>利用新的自定义操作扩展现有生成器
 
 如果已经有一个生成器类，则可以从该生成器类的外部扩展其自定义操作。 扩展必须在模块中声明。 命名空间不能包含在定义该类型的同一文件和相同的命名空间声明组中的扩展成员。
 
-下面的示例演示了现有类的扩展 `Microsoft.FSharp.Linq.QueryBuilder` 。
+下面的示例演示了现有类的扩展 `FSharp.Linq.QueryBuilder` 。
 
 ```fsharp
-type Microsoft.FSharp.Linq.QueryBuilder with
+type FSharp.Linq.QueryBuilder with
 
     [<CustomOperation("existsNot")>]
     member _.ExistsNot (source: QuerySource<'T, 'Q>, predicate) =
@@ -434,5 +434,5 @@ type Microsoft.FSharp.Linq.QueryBuilder with
 
 - [F# 语言参考](index.md)
 - [异步工作流](asynchronous-workflows.md)
-- [序列](https://msdn.microsoft.com/library/6b773b6b-9c9a-4af8-bd9e-d96585c166db)
+- [序列](sequences.md)
 - [查询表达式](query-expressions.md)

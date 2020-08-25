@@ -2,18 +2,18 @@
 title: <baseAddressPrefixFilters>
 ms.date: 03/30/2017
 ms.assetid: 8cab2a9a-c51f-4283-bb60-2ad0c274fd46
-ms.openlocfilehash: 0673507b72690c3a5c7dcc35442c05e378dba43c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 635e4f02f4d286b63c4f4845563ba1953d23592a
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153030"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811894"
 ---
 # \<baseAddressPrefixFilters>
-表示配置元素的集合，这些元素指定通过筛选器，这些筛选器提供一种机制，用于在 IIS 中承载 Windows Communication Foundation （WCF）应用程序时选择适当的 Internet Information Services （IIS）绑定。  
+表示配置元素的集合，这些元素指定通过筛选器，这些筛选器提供一种机制，用于在 IIS 中承载 Windows Communication Foundation (WCF) 应用程序时选择适当的 Internet Information Services (IIS) 绑定。  
   
 > [!WARNING]
-> \<baseAddressPrefixFilters>不识别 "localhost";改为使用完全限定的计算机名称。  
+> \<baseAddressPrefixFilters> 不识别 "localhost";改为使用完全限定的计算机名称。  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
@@ -57,7 +57,7 @@ ms.locfileid: "79153030"
   
  例如，你的站点可包含以下基址：
   
-```
+```http
 http://testl.fabrikam.com/Service.svc  
 http://test2.fabrikam.com/Service.svc  
 ```  

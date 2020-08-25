@@ -3,12 +3,12 @@ title: 数据集和 DataTable 安全指南
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: f0fa43c467cc7866e69115acb5f807e6487fda7a
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 24c8a830f8638bc2d9dd20c2384c8230a682d817
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608523"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812232"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>数据集和 DataTable 安全指南
 
@@ -34,7 +34,14 @@ ms.locfileid: "88608523"
 
 如果传入的 XML 数据包含其类型不在此列表中的对象：
 
-* 此时引发异常。
+* 使用以下消息和堆栈跟踪引发异常。  
+错误消息：  
+\<Type Name\>此处不允许使用 InvalidOperationException： Type '、Version =、 \<n.n.n.n\> Culture = \<culture\> 、PublicKeyToken = \<token value\> '。 [https://go.microsoft.com/fwlink/?linkid=2132227](https://go.microsoft.com/fwlink/?linkid=2132227)有关更多详细信息，请参阅。  
+堆栈跟踪：  
+在 TypeLimiter. EnsureTypeIsAllowed (Type type，TypeLimiter capturedLimiter)   
+在 UpdateColumnType (类型类型，StorageType typeCode)   
+在 set_DataType (类型值)   
+
 * 反序列化操作失败。
 
 将 XML 加载到现有的 `DataSet` 或 `DataTable` 实例时，也会考虑现有的列定义。 如果表已包含自定义类型的列定义，则在 XML 反序列化操作期间，该类型暂时添加到允许列表中。

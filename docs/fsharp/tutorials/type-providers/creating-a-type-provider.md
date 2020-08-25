@@ -2,26 +2,26 @@
 title: 教程：创建类型提供程序
 description: '了解如何在 F # 3.0 中创建自己的 F # 类型提供程序，具体方法是检查几个简单的类型提供程序来说明基本概念。'
 ms.date: 11/04/2019
-ms.openlocfilehash: 67ebd91007ff814370573ebc1a65b2c7a8399f7d
-ms.sourcegitcommit: 71b8f5a2108a0f1a4ef1d8d75c5b3e129ec5ca1e
+ms.openlocfilehash: 71225614ed983a76d35c214faa87bbad0fbb7d24
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/29/2020
-ms.locfileid: "84202135"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810867"
 ---
 # <a name="tutorial-create-a-type-provider"></a>教程：创建类型提供程序
 
-F # 中的类型提供程序机制是其对信息丰富编程支持的重要组成部分。 本教程介绍了如何创建自己的类型提供程序，逐步讲解如何开发几个简单的类型提供程序来说明基本概念。 有关 F # 中的类型提供程序机制的详细信息，请参阅[类型提供程序](index.md)。
+F # 中的类型提供程序机制是其对信息丰富编程支持的重要组成部分。 本教程介绍了如何创建自己的类型提供程序，逐步讲解如何开发几个简单的类型提供程序来说明基本概念。 有关 F # 中的类型提供程序机制的详细信息，请参阅 [类型提供程序](index.md)。
 
 F # 生态系统包含一系列常用的 Internet 和企业数据服务的类型提供程序。 例如：
 
-- [Fsharp.core](https://fsharp.github.io/FSharp.Data/)包含 JSON、XML、CSV 和 HTML 文档格式的类型提供程序。
+- [Fsharp.core](https://fsharp.github.io/FSharp.Data/) 包含 JSON、XML、CSV 和 HTML 文档格式的类型提供程序。
 
-- [SQLProvider](https://fsprojects.github.io/SQLProvider/)通过对象映射以及针对这些数据源的 F # LINQ 查询，提供对 SQL 数据库的强类型访问。
+- [SQLProvider](https://fsprojects.github.io/SQLProvider/) 通过对象映射以及针对这些数据源的 F # LINQ 查询，提供对 SQL 数据库的强类型访问。
 
-- [Fsharp.core](https://fsprojects.github.io/FSharp.Data.SqlClient/)包含一组用于编译时的类型提供程序，用于在 F # 中嵌入 t-sql。
+- [FSharp.Data.SqlClient](https://fsprojects.github.io/FSharp.Data.SqlClient/) 包含一组类型提供程序，用于在 F# 中对 T-SQL 进行编译时检查。
 
-- [Fsharp.core](https://fsprojects.github.io/FSharp.Data.TypeProviders/)是一组较旧的类型提供程序，仅用于访问 SQL、实体框架、ODATA 和 WSDL 数据服务 .NET Framework 编程。
+- [Fsharp.core](https://fsprojects.github.io/FSharp.Data.TypeProviders/) 是一组较旧的类型提供程序，仅用于访问 SQL、实体框架、ODATA 和 WSDL 数据服务 .NET Framework 编程。
 
 必要时，可以创建自定义类型提供程序，也可以引用其他人创建的类型提供程序。 例如，你的组织可能有一个数据服务，该服务提供了数量不断增长的命名数据集，每个数据集都有其自己的稳定数据架构。 您可以创建一个类型提供程序，用于读取架构并以强类型方式向程序员显示当前数据集。
 
@@ -31,13 +31,13 @@ F # 生态系统包含一系列常用的 Internet 和企业数据服务的类型
 
 此机制不能用于注入其架构在程序执行过程中发生更改的信息空间，这种方式与程序逻辑相关。 此外，该机制不是针对语言内的元编程而设计的，即使该域包含一些有效的用途。 只有在必要时才应使用此机制，而在何处开发类型提供程序会产生非常高的值。
 
-你应避免在架构不可用的情况下编写类型提供程序。 同样，您应该避免编写一个类型提供程序，在这种情况下，一般（甚至是现有的） .NET 库即可满足需要。
+你应避免在架构不可用的情况下编写类型提供程序。 同样，您应该避免编写一种类型提供程序，在这种情况下，普通 (甚至现有) .NET 库都能满足需要。
 
 在开始之前，您可能会提出以下问题：
 
 - 你的信息源是否有架构？ 如果是这样，什么是 F # 和 .NET 类型系统的映射？
 
-- 能否使用现有的（动态类型的） API 作为实现的起始点？
+- 能否使用现有 (动态类型化) API 作为实现的起始点？
 
 - 你和你的组织是否有足够的类型提供商的使用来使写入它有价值？ 正常的 .NET 库是否能满足您的需要？
 
@@ -53,7 +53,7 @@ F # 生态系统包含一系列常用的 Internet 和企业数据服务的类型
 
 ## <a name="a-simple-type-provider"></a>简单类型提供程序
 
-此示例为 HelloWorldTypeProvider，类似于 `examples` [F # 类型提供程序 SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK/)的目录中的示例。 提供程序提供了一个包含100个已擦除类型的 "类型空间"，如以下代码通过使用 F # 签名语法和省略除之外的详细信息中所示 `Type1` 。 有关已擦除的类型的详细信息，请参阅本主题后面的有关已擦除的所[提供类型的详细](#details-about-erased-provided-types)信息。
+此示例为 HelloWorldTypeProvider，类似于 `examples` [F # 类型提供程序 SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK/)的目录中的示例。 提供程序提供了一个包含100个已擦除类型的 "类型空间"，如以下代码通过使用 F # 签名语法和省略除之外的详细信息中所示 `Type1` 。 有关已擦除的类型的详细信息，请参阅本主题后面的有关已擦除的所 [提供类型的详细](#details-about-erased-provided-types) 信息。
 
 ```fsharp
 namespace Samples.HelloWorldTypeProvider
@@ -162,9 +162,9 @@ fsc.exe -r:bin\Debug\HelloWorldTypeProvider.dll script.fsx
 devenv.exe /debugexe fsc.exe -r:bin\Debug\HelloWorldTypeProvider.dll script.fsx
 ```
 
-作为替代方法，请打开 Visual Studio，打开 "调试" 菜单，选择 `Debug/Attach to process…` 并附加到 `devenv` 正在编辑脚本的其他进程。 通过使用此方法，您可以通过以交互方式将表达式键入到第二个实例（使用完整的 IntelliSense 和其他功能），更轻松地定位类型提供程序中的特定逻辑。
+作为替代方法，请打开 Visual Studio，打开 "调试" 菜单，选择 `Debug/Attach to process…` 并附加到 `devenv` 正在编辑脚本的其他进程。 通过使用此方法，你可以更轻松地以类型提供程序中的特定逻辑为目标，方法是使用完整的 IntelliSense 和) 的其他功能以交互方式将表达式键入到第二个实例 (。
 
-可以禁用仅我的代码调试，以便更好地识别生成的代码中的错误。 有关如何启用或禁用此功能的信息，请参阅[使用调试器在代码中导航](/visualstudio/debugger/navigating-through-code-with-the-debugger)。 此外，还可以通过打开 `Debug` 菜单，然后选择 `Exceptions` "Ctrl + Alt + E 键" 打开对话框，来设置第一次异常捕获 `Exceptions` 。 在该对话框的 "" 下 `Common Language Runtime Exceptions` ，选中相应的 `Thrown` 复选框。
+可以禁用仅我的代码调试，以便更好地识别生成的代码中的错误。 有关如何启用或禁用此功能的信息，请参阅 [使用调试器在代码中导航](/visualstudio/debugger/navigating-through-code-with-the-debugger)。 此外，还可以通过打开 `Debug` 菜单，然后选择 `Exceptions` "Ctrl + Alt + E 键" 打开对话框，来设置第一次异常捕获 `Exceptions` 。 在该对话框的 "" 下 `Common Language Runtime Exceptions` ，选中相应的 `Thrown` 复选框。
 
 ### <a name="implementation-of-the-type-provider"></a>类型提供程序的实现
 
@@ -175,9 +175,9 @@ devenv.exe /debugexe fsc.exe -r:bin\Debug\HelloWorldTypeProvider.dll script.fsx
 type SampleTypeProvider(config: TypeProviderConfig) as this =
 ```
 
-此类型必须是公共的，并且必须使用[TypeProvider](https://msdn.microsoft.com/library/bdf7b036-7490-4ace-b79f-c5f1b1b37947)属性进行标记，以便编译器在单独的 F # 项目引用包含该类型的程序集时识别该类型提供程序。 *Config*参数是可选的，如果存在，则包含 F # 编译器创建的类型提供程序实例的上下文配置信息。
+此类型必须是公共的，并且必须使用 [TypeProvider](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderattribute.html) 属性进行标记，以便编译器在单独的 F # 项目引用包含该类型的程序集时识别该类型提供程序。 *Config*参数是可选的，如果存在，则包含 F # 编译器创建的类型提供程序实例的上下文配置信息。
 
-接下来，实现[ITypeProvider](https://msdn.microsoft.com/library/2c2b0571-843d-4a7d-95d4-0a7510ed5e2f)接口。 在这种情况下，将 `TypeProviderForNamespaces` API 中的类型用作 `ProvidedTypes` 基类型。 此帮助器类型可以提供积极提供的命名空间的有限集合，其中每个命名空间都直接包含有限数量的固定、积极提供的类型。 在此上下文中，提供程序*积极*将生成类型，即使它们不需要或不使用也是如此。
+接下来，实现 [ITypeProvider](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-itypeprovider.html) 接口。 在这种情况下，将 `TypeProviderForNamespaces` API 中的类型用作 `ProvidedTypes` 基类型。 此帮助器类型可以提供积极提供的命名空间的有限集合，其中每个命名空间都直接包含有限数量的固定、积极提供的类型。 在此上下文中，提供程序 *积极* 将生成类型，即使它们不需要或不使用也是如此。
 
 ```fsharp
 inherit TypeProviderForNamespaces(config)
@@ -224,7 +224,7 @@ let makeOneProvidedType (n:int) =
 …
 ```
 
-此步骤说明了此函数的实现。 首先，创建提供的类型（例如，Type1，当 n = 1 或 Type57 时，n = 57）。
+此步骤说明了此函数的实现。 首先，在 n = 57) 时，创建提供的类型 (例如，Type1、n = 1 或 Type57。
 
 ```fsharp
 // This is the provided type. It is an erased provided type and, in compiled code,
@@ -236,7 +236,7 @@ let t = ProvidedTypeDefinition(thisAssembly, namespaceName,
 
 您应注意以下几点：
 
-- 此提供的类型会被清除。  由于您指示基类型为，因此 `obj` ，实例将在编译的代码中显示为类型为[obj](https://msdn.microsoft.com/library/dcf2430f-702b-40e5-a0a1-97518bf137f7)的值。
+- 此提供的类型会被清除。  由于您指示基类型为，因此 `obj` ，实例将在编译的代码中显示为类型为 [obj](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html) 的值。
 
 - 指定非嵌套类型时，必须指定程序集和命名空间。 对于已擦除的类型，程序集应为类型提供程序程序集本身。
 
@@ -255,7 +255,7 @@ let staticProp = ProvidedProperty(propertyName = "StaticProperty",
                                   getterCode = (fun args -> <@@ "Hello!" @@>))
 ```
 
-获取此属性的计算结果将始终为字符串 "Hello！"。 属性的可 `GetterCode` 使用 F # 引号，表示宿主编译器为获取属性而生成的代码。 有关报价的详细信息，请参阅[代码引用（F #）](https://msdn.microsoft.com/library/6f055397-a1f0-4f9a-927c-f0d7c6951155)。
+获取此属性的计算结果将始终为字符串 "Hello！"。 属性的可 `GetterCode` 使用 F # 引号，表示宿主编译器为获取属性而生成的代码。 有关报价的详细信息，请参阅 [代码引用 (F # ) ](../../language-reference/code-quotations.md)。
 
 将 XML 文档添加到属性。
 
@@ -282,7 +282,7 @@ let ctor = ProvidedConstructor(parameters = [ ],
 new Type10()
 ```
 
-将使用基础数据 "对象数据" 创建所提供类型的实例。 带引号的代码包含到[obj](https://msdn.microsoft.com/library/dcf2430f-702b-40e5-a0a1-97518bf137f7)的转换，因为该类型是所提供的类型的擦除（在声明所提供的类型时指定的类型）。
+将使用基础数据 "对象数据" 创建所提供类型的实例。 带引号的代码包含到 [obj](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-obj.html) 的转换，因为该类型是将所提供的类型的擦除 (你在声明提供的类型时指定的) 。
 
 向构造函数添加 XML 文档，并将提供的构造函数添加到提供的类型中：
 
@@ -364,7 +364,7 @@ t.AddMembersDelayed(fun () ->
 
 ### <a name="details-about-erased-provided-types"></a>已清除的提供的类型的详细信息
 
-本部分中的示例仅提供已*清除的提供的类型*，这些类型在下列情况下特别有用：
+本部分中的示例仅提供已 *清除的提供的类型*，这些类型在下列情况下特别有用：
 
 - 当你为仅包含数据和方法的信息空间编写提供程序时。
 
@@ -390,7 +390,7 @@ t.AddMembersDelayed(fun () ->
 
 - 已清除的提供的类型的可能的对象集称为其表示形式。 在本文档的示例中，所有已清除的提供的类型的表示形式 `Type1..Type100` 始终为字符串对象。
 
-提供的类型的所有表示形式都必须与提供的类型的擦除兼容。 （否则，F # 编译器将在使用类型提供程序时提供错误，否则将生成无效的 .NET 代码。 如果类型提供程序返回的代码给出无效的表示形式，则该类型提供程序无效。）
+提供的类型的所有表示形式都必须与提供的类型的擦除兼容。  (否则，F # 编译器将在使用类型提供程序时提供错误，否则将生成无效的 .NET 代码。 如果类型提供程序返回的代码给出无效的表示形式，则该类型提供程序无效。）
 
 您可以使用下列方法之一为所提供的对象选择表示形式，这两种方法都非常常见：
 
@@ -420,7 +420,7 @@ ProvidedConstructor(parameters = [],
     invokeCode= (fun args -> <@@ (new DataObject()) :> obj @@>))
 ```
 
-在这种情况下，可以（可选）通过在构造时将此类型指定为，将此类型用作类型擦除 `baseType` `ProvidedTypeDefinition` ：
+在这种情况下，你可以通过在构造时将此类型指定为， (（可选）) 将此类型用作类型擦除 `baseType` `ProvidedTypeDefinition` ：
 
 ```fsharp
 ProvidedTypeDefinition(…, baseType = Some typeof<DataObject> )
@@ -471,7 +471,7 @@ let r = reg.Match("425-123-2345").Groups.["AreaCode"].Value //r equals "425"
 
 - 每个命名组都生成提供的属性，而访问属性会导致在匹配的集合上使用索引器 `Groups` 。
 
-下面的代码是实现此类提供程序的逻辑的核心，此示例省略了向所提供类型添加所有成员的情况。 有关每个已添加成员的信息，请参阅本主题后面的相应部分。 有关完整的代码，请从 CodePlex 网站上的[F # 3.0 示例包](https://archive.codeplex.com/?p=fsharp3sample)下载该示例。
+下面的代码是实现此类提供程序的逻辑的核心，此示例省略了向所提供类型添加所有成员的情况。 有关每个已添加成员的信息，请参阅本主题后面的相应部分。 有关完整的代码，请从 CodePlex 网站上的 [F # 3.0 示例包](https://archive.codeplex.com/?p=fsharp3sample) 下载该示例。
 
 ```fsharp
 namespace Samples.FSharp.RegexTypeProvider
@@ -529,7 +529,7 @@ do ()
 
 请注意以下几点：
 
-- 该类型提供程序采用两个静态参数： `pattern` （必需）和（ `options` 这是可选的，因为提供了默认值）。
+- 该类型提供程序采用两个静态参数： `pattern` 是必需的，而是 `options` 可选 (因为) 提供默认值。
 
 - 提供静态参数后，可以创建正则表达式的实例。 如果正则表达式格式不正确，此实例将引发异常，并向用户报告此错误。
 
@@ -556,7 +556,7 @@ isMatch.AddXmlDoc "Indicates whether the regular expression finds a match in the
 ty.AddMember isMatch
 ```
 
-前面的代码定义了一个方法 `IsMatch` ，该方法采用字符串作为输入并返回 `bool` 。 唯一难用的部分是 `args` 定义中的参数 `InvokeCode` 。 在此示例中， `args` 是表示此方法的参数的引号列表。 如果该方法是实例方法，则第一个参数表示 `this` 参数。 但对于静态方法，参数只是方法的显式参数。 请注意，带引号的值的类型应与指定的返回类型（在本例中为 `bool` ）匹配。 另请注意，此代码使用 `AddXmlDoc` 方法来确保所提供的方法也具有可通过 IntelliSense 提供的有用文档。
+前面的代码定义了一个方法 `IsMatch` ，该方法采用字符串作为输入并返回 `bool` 。 唯一难用的部分是 `args` 定义中的参数 `InvokeCode` 。 在此示例中， `args` 是表示此方法的参数的引号列表。 如果该方法是实例方法，则第一个参数表示 `this` 参数。 但对于静态方法，参数只是方法的显式参数。 请注意，在这种情况下，带引号的值的类型应与指定的返回类型 (， `bool`) 。 另请注意，此代码使用 `AddXmlDoc` 方法来确保所提供的方法也具有可通过 IntelliSense 提供的有用文档。
 
 接下来，添加实例 Match 方法。 但是，此方法应返回提供的类型的值， `Match` 以便能够以强类型方式访问组。 因此，首先声明 `Match` 类型。 由于此类型依赖于以静态参数形式提供的模式，因此，此类型必须嵌套在参数化类型定义中：
 
@@ -738,9 +738,9 @@ do ()
 
 ### <a name="simple-csv-file-provider"></a>简单 CSV 文件提供程序
 
-作为一个简单的示例，请考虑用逗号分隔值（CSV）格式访问科学数据的类型提供程序。 本部分假定 CSV 文件包含标题行，后跟浮点数据，如下表所示：
+作为一个简单的示例，请考虑一种类型提供程序，用于以逗号分隔的值（ (CSV) 格式）访问科学数据。 本部分假定 CSV 文件包含标题行，后跟浮点数据，如下表所示：
 
-|距离（计量）|时间（秒）|
+|计量 (计量) |时间 (秒) |
 |----------------|-------------|
 |50.0|3.7|
 |100.0|5.2|
@@ -748,11 +748,11 @@ do ()
 
 本部分说明如何提供可用于获取具有 `Distance` 类型的属性的行 `float<meter>` 和 `Time` 类型的属性的类型 `float<second>` 。 为简单起见，进行了以下假设：
 
-- 标头名称要么不小于单位，要么格式为 "Name （unit）" 且不包含逗号。
+- 标头名称要么不小于单位，要么格式为 "Name (unit) " 且不包含逗号。
 
-- 单元是所有系统国际（SI）单位，因为[Fsharp.core 模块（F #）](https://msdn.microsoft.com/library/3cb43485-11f5-4aa7-a779-558f19d4013b)模块定义。
+- 单位为所有系统国际 (SI) 单元， [ (F # ) ](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-data-unitsystems-si-unitnames.html) 模块定义的 unitnames.ohm 模块。
 
-- 单元是简单的（例如计量），而不是复合（例如，计量/秒）。
+- 单位为简单 (例如，计量) ，而不是复合 (，例如计量/秒) 。
 
 - 所有列都包含浮点数据。
 
@@ -877,7 +877,7 @@ type public MiniCsvProvider(cfg:TypeProviderConfig) as this =
 
 - 重载的构造函数允许读取原始文件或具有相同架构的文件。 当你为本地或远程数据源编写类型提供程序时，此模式很常见，并且此模式允许将本地文件用作远程数据的模板。
 
-- 您可以使用传入到类型提供程序构造函数的[TypeProviderConfig](https://msdn.microsoft.com/library/1cda7b9a-3d07-475d-9315-d65e1c97eb44)值来解析相对文件名。
+- 您可以使用传入到类型提供程序构造函数的 [TypeProviderConfig](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-compilerservices-typeproviderconfig.html) 值来解析相对文件名。
 
 - 您可以使用 `AddDefinitionLocation` 方法来定义所提供属性的位置。 因此，如果在 `Go To Definition` 提供的属性上使用，则将在 Visual Studio 中打开 CSV 文件。
 
@@ -901,7 +901,7 @@ let function1 () =
     obj1.InstanceProperty
 ```
 
-下面是通过使用 ildasm 生成的代码反编译的图像：
+下面是通过使用 ildasm.exe 生成的代码反编译的图像：
 
 ```il
 .class public abstract auto ansi sealed Module1
@@ -935,7 +935,7 @@ IL_0017:  ret
 
 在创作类型提供程序时，请遵循以下约定。
 
-**连接协议的提供程序**通常，数据和服务连接协议的大多数提供程序 Dll 的名称（如 OData 或 SQL 连接）应以或结尾 `TypeProvider` `TypeProviders` 。 例如，使用类似于以下字符串的 DLL 名称：
+**连接协议的提供程序** 通常，数据和服务连接协议的大多数提供程序 Dll 的名称（如 OData 或 SQL 连接）应以或结尾 `TypeProvider` `TypeProviders` 。 例如，使用类似于以下字符串的 DLL 名称：
 
 `Fabrikam.Management.BasicTypeProviders.dll`
 
@@ -976,7 +976,7 @@ let data = Fabrikam.Data.Freebase.Astronomy.Asteroids
 
 #### <a name="the-getconnection-design-pattern"></a>GetConnection 设计模式
 
-大多数类型提供程序应编写为使用 `GetConnection` fsharp.core 中的类型提供程序使用的模式，如以下示例所示：
+大多数类型提供程序应编写为使用 `GetConnection` FSharp.Data.TypeProviders.dll 中的类型提供程序使用的模式，如下面的示例所示：
 
 ```fsharp
 #r "Fabrikam.Data.WebDataStore.dll"
@@ -1024,10 +1024,10 @@ ProvidedType API 具有延迟版本的 AddMember。
 
 ### <a name="providing-array-types-and-generic-type-instantiations"></a>提供数组类型和泛型类型实例化
 
-通过在任何实例上使用 normal、和，可使提供的成员（其签名包括数组类型、byref 类型和泛型类型的实例化） `MakeArrayType` `MakePointerType` `MakeGenericType` <xref:System.Type> ，其中包括 `ProvidedTypeDefinitions` 。
+通过在任何实例上使用 normal、和，使提供的成员 (其签名包括数组类型、byref 类型和泛型类型的实例化) `MakeArrayType` `MakePointerType` `MakeGenericType` <xref:System.Type> ，包括 `ProvidedTypeDefinitions` 。
 
 > [!NOTE]
-> 在某些情况下，您可能必须使用中的帮助器 `ProvidedTypeBuilder.MakeGenericType` 。  有关更多详细信息，请参阅[类型提供程序 SDK 文档](https://github.com/fsprojects/FSharp.TypeProviders.SDK/blob/master/README.md#explicit-construction-of-code-makegenerictype-makegenericmethod-and-uncheckedquotations)。
+> 在某些情况下，您可能必须使用中的帮助器 `ProvidedTypeBuilder.MakeGenericType` 。  有关更多详细信息，请参阅 [类型提供程序 SDK 文档](https://github.com/fsprojects/FSharp.TypeProviders.SDK/blob/master/README.md#explicit-construction-of-code-makegenerictype-makegenericmethod-and-uncheckedquotations) 。
 
 ### <a name="providing-unit-of-measure-annotations"></a>提供度量单位批注
 
@@ -1050,11 +1050,11 @@ ProvidedTypes API 提供了提供度量值注释的帮助器。 例如，若要�
 
 ### <a name="accessing-project-local-or-script-local-resources"></a>访问项目本地资源或脚本本地资源
 
-在构造过程中，可以为类型提供程序的每个实例指定一个 `TypeProviderConfig` 值。 此值包含提供程序的 "解析文件夹" （即，编译的项目文件夹或包含脚本的目录）、被引用程序集的列表和其他信息。
+在构造过程中，可以为类型提供程序的每个实例指定一个 `TypeProviderConfig` 值。 此值包含提供程序的 "解析文件夹" (即，编译的项目文件夹或包含脚本) 的目录、所引用程序集的列表和其他信息。
 
 ### <a name="invalidation"></a>失效
 
-提供程序可以引发无效信号，以通知 F # 语言服务，架构假设可能已发生更改。 当发生失效时，如果提供程序承载于 Visual Studio 中，将重做 typecheck。 当提供程序托管在 F# 交互窗口或由 F # 编译器（fsc.exe）承载时，将忽略此信号。
+提供程序可以引发无效信号，以通知 F # 语言服务，架构假设可能已发生更改。 当发生失效时，如果提供程序承载于 Visual Studio 中，将重做 typecheck。 当提供程序托管在 F# 交互窗口或 F # 编译器 ( # A0) 中时，将忽略此信号。
 
 ### <a name="caching-schema-information"></a>缓存架构信息
 
@@ -1062,7 +1062,7 @@ ProvidedTypes API 提供了提供度量值注释的帮助器。 例如，若要�
 
 ### <a name="backing-assembly"></a>支持程序集
 
-在编译 `.dll` 或文件时 `.exe` ，生成的类型的支持 .dll 文件将静态链接到生成的程序集中。 通过将中间语言（IL）类型定义和任何托管资源从支持程序集复制到最终程序集来创建此链接。 使用 F# 交互窗口时，不会复制后备 .dll 文件，而是直接加载到 F# 交互窗口进程。
+在编译 `.dll` 或文件时 `.exe` ，生成的类型的支持 .dll 文件将静态链接到生成的程序集中。 通过将中间语言 (IL) 类型定义和支持程序集中的任何托管资源复制到最终程序集来创建此链接。 使用 F# 交互窗口时，不会复制后备 .dll 文件，而是直接加载到 F# 交互窗口进程。
 
 ### <a name="exceptions-and-diagnostics-from-type-providers"></a>类型提供程序中的异常和诊断
 
@@ -1100,7 +1100,7 @@ F # 3.0 发行版中的 ProvidedTypes-0.2 helper 代码仅对提供生成的类�
 
 应可从非嵌套类型访问所有提供的类型。 非嵌套类型是在对 `TypeProviderForNamespaces` 构造函数的调用或对的调用中提供的 `AddNamespace` 。 例如，如果提供程序提供类型 `StaticClass.P : T` ，则必须确保 T 为非嵌套类型或嵌套在一个类型下。
 
-例如，某些提供程序有一个 `DataTypes` 包含这些类型的静态类，例如 `T1, T2, T3, ...` 。 否则，此错误表明找到了对程序集 A 中的类型 T 的引用，但无法在该程序集中找到该类型。 如果出现此错误，请验证是否可以从提供程序类型中访问所有子类型。 注意：这些 `T1, T2, T3...` 类型称为 "*即时*类型"。 请记住将其放在可访问的命名空间或父类型中。
+例如，某些提供程序有一个 `DataTypes` 包含这些类型的静态类，例如 `T1, T2, T3, ...` 。 否则，此错误表明找到了对程序集 A 中的类型 T 的引用，但无法在该程序集中找到该类型。 如果出现此错误，请验证是否可以从提供程序类型中访问所有子类型。 注意：这些 `T1, T2, T3...` 类型称为 " *即时* 类型"。 请记住将其放在可访问的命名空间或父类型中。
 
 ### <a name="limitations-of-the-type-provider-mechanism"></a>类型提供程序机制的限制
 
@@ -1122,13 +1122,13 @@ F # 中的类型提供程序机制具有以下限制：
 
 您可以使用以下工具调用类型提供程序：
 
-- fsc.exe （F # 命令行编译器）
+- F # 命令行编译器 (fsc.exe) 
 
-- fsi.exe （F# 交互窗口编译器）
+- F# 交互窗口编译器 (fsi.exe) 
 
-- devenv （Visual Studio）
+- devenv.exe (Visual Studio) 
 
-通常可以使用 fsc.exe 在测试脚本文件（例如 .fsx）上最轻松地调试类型提供程序。 你可以从命令提示符处启动调试器。
+通常可以通过对测试脚本文件使用 fsc.exe 来最轻松地调试类型提供程序 (例如 .fsx) 。 你可以从命令提示符处启动调试器。
 
 ```console
 devenv /debugexe fsc.exe script.fsx
@@ -1136,7 +1136,7 @@ devenv /debugexe fsc.exe script.fsx
 
   您可以使用打印到 stdout 的日志记录。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [类型提供程序](index.md)
 - [类型提供程序 SDK](https://github.com/fsprojects/FSharp.TypeProviders.SDK)

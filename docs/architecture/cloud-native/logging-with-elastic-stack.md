@@ -2,12 +2,12 @@
 title: 使用弹性堆栈进行日志记录
 description: 使用弹性堆栈、Logstash 和 Kibana 进行日志记录
 ms.date: 05/13/2020
-ms.openlocfilehash: e886141fa691b75b882b5d67eae4ceb242e8089f
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 32d9d0dae175d8d45d48b56d17f133b4cc432363
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613845"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811166"
 ---
 # <a name="logging-with-elastic-stack"></a>使用弹性堆栈进行日志记录
 
@@ -17,7 +17,7 @@ ms.locfileid: "83613845"
 
 ## <a name="elastic-stack"></a>弹性堆栈
 
-弹性堆栈是一个功能强大的选项，可用于从 Kubernetes 群集中收集信息。 Kubernetes 支持将日志发送到 Elasticsearch 终结点，而在[大多数情况](https://kubernetes.io/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/)下，你只需设置环境变量，如图7-5 所示：
+弹性堆栈是一个功能强大的选项，可用于从 Kubernetes 群集中收集信息。 Kubernetes 支持将日志发送到 Elasticsearch 终结点，而在 [大多数情况](https://kubernetes.io/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/)下，你只需设置环境变量，如图7-5 所示：
 
 ```kubernetes
 KUBE_LOGGING_DESTINATION=elasticsearch
@@ -37,7 +37,7 @@ KUBE_ENABLE_NODE_LOGGING=true
 
 ## <a name="logstash"></a>Logstash
 
-第一个组件为[Logstash](https://www.elastic.co/products/logstash)。 此工具用于从大量不同的源收集日志信息。 例如，Logstash 可以从磁盘读取日志，还可以从日志记录库（如[Serilog](https://serilog.net/)）接收消息。 Logstash 可以在日志到达时对其执行一些基本筛选和扩展。 例如，如果日志包含 IP 地址，则可以将 Logstash 配置为执行地理查找，并获取该邮件的国家/地区或甚至是源城市。
+第一个组件为 [Logstash](https://www.elastic.co/products/logstash)。 此工具用于从大量不同的源收集日志信息。 例如，Logstash 可以从磁盘读取日志，还可以从日志记录库（如 [Serilog](https://serilog.net/)）接收消息。 Logstash 可以在日志到达时对其执行一些基本筛选和扩展。 例如，如果日志包含 IP 地址，则可以将 Logstash 配置为执行地理查找，并获取该邮件的国家/地区或甚至是源城市。
 
 Serilog 是用于 .NET 语言的日志记录库，用于实现参数化日志记录。 参数不会生成嵌入字段的文本日志消息，而是将参数保持独立。 这允许更智能的筛选和搜索。 图7-7 显示了用于写入 Logstash 的示例 Serilog 配置。
 
@@ -69,7 +69,7 @@ output {
 
 **图 7-8**。 使用 Serilog 中的日志的 Logstash 配置
 
-对于不需要进行大量的日志操作的情况，有一种替代方法 Logstash 称为[节拍](https://www.elastic.co/products/beats)。 节拍是一系列工具，可以将各种数据从日志收集到网络数据和正常运行时间信息。 许多应用程序将同时使用 Logstash 和节拍。
+对于不需要进行大量的日志操作的情况，有一种替代方法 Logstash 称为 [节拍](https://www.elastic.co/products/beats)。 节拍是一系列工具，可以将各种数据从日志收集到网络数据和正常运行时间信息。 许多应用程序将同时使用 Logstash 和节拍。
 
 Logstash 收集了日志后，需要将其放在某个位置。 尽管 Logstash 支持多个不同的输出，但其中一个比较激动人心的输出是弹性搜索。
 
@@ -81,7 +81,7 @@ Logstash 收集了日志后，需要将其放在某个位置。 尽管 Logstash 
 
 `jill@example.com`在图7-9 中将会搜索访问的前10页的查询。
 
-```
+```json
 "query": {
     "match": {
       "user": "jill@example.com"
@@ -105,13 +105,13 @@ Logstash 收集了日志后，需要将其放在某个位置。 尽管 Logstash 
 
 ## <a name="installing-elastic-stack-on-azure"></a>在 Azure 上安装弹性堆栈
 
-可以通过多种方式在 Azure 上安装弹性堆栈。 与往常一样，可以[预配虚拟机并直接在其上安装弹性堆栈](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)。 此选项由一些经验丰富的用户首选，因为它提供了最高的可定制性。 在基础结构上部署为服务会带来巨大的管理开销，迫使那些采用该路径的用户获得与基础结构相关的所有任务的所有权（例如，保护计算机并随时保持修补程序的最新）。
+可以通过多种方式在 Azure 上安装弹性堆栈。 与往常一样，可以 [预配虚拟机并直接在其上安装弹性堆栈](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)。 此选项由一些经验丰富的用户首选，因为它提供了最高的可定制性。 在基础结构上部署为服务会带来巨大的管理开销，迫使那些采用该路径的用户获得与基础结构相关的所有任务的所有权（例如，保护计算机并随时保持修补程序的最新）。
 
 开销较少的选项是使用已在其上配置弹性堆栈的众多 Docker 容器之一。 这些容器可以放入现有的 Kubernetes 群集，并与应用程序代码一起运行。 [Sebp/elk](https://elk-docker.readthedocs.io/)容器是一种记录完善且经过测试的弹性堆栈容器。
 
-另一种方法是[最近发布的 ELK 产品/服务](https://devops.com/logz-io-unveils-azure-open-source-elk-monitoring-solution/)。
+另一种方法是 [最近发布的 ELK 产品/服务](https://devops.com/logz-io-unveils-azure-open-source-elk-monitoring-solution/)。
 
-## <a name="references"></a>参考
+## <a name="references"></a>引用
 
 - [在 Azure 上安装弹性堆栈](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
 

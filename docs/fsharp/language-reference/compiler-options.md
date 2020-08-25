@@ -2,12 +2,12 @@
 title: 编译器选项
 description: '使用 F # 编译器命令行选项可以控制 F # 应用和库的编译。'
 ms.date: 08/15/2020
-ms.openlocfilehash: 7f7b7dac2060213cd7d783669cb4de2b96a88968
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: c10808e97d31bd3bdb469fc2a8e57a4650170dec
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557355"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812141"
 ---
 # <a name="compiler-options"></a>编译器选项
 
@@ -52,7 +52,7 @@ ms.locfileid: "88557355"
 |`--pdb:pdb-filename`|将输出调试 PDB (程序数据库命名为) 文件。 此选项仅在启用时才适用 `--debug` 。<br /><br />此编译器选项等效于同名的 c # 编译器选项。 有关详细信息，请参阅 [&#47;pdb &#40;C&#35; 编译器选项&#41;](../../csharp/language-reference/compiler-options/pdb-compiler-option.md)。|
 |`--platform:platform-name`|指定生成的代码将仅在指定的平台上运行 (`x86` 、 `Itanium` 或 `x64`) ，或者，如果选择了平台名称 `anycpu` ，则指定生成的代码可以在任何平台上运行。<br /><br />此编译器选项等效于同名的 c # 编译器选项。 有关详细信息，请参阅 [&#47;平台 &#40;C&#35; 编译器选项&#41;](../../csharp/language-reference/compiler-options/platform-compiler-option.md)。|
 |`--preferreduilang:lang`| 指定首选输出语言区域性名称 (例如，  `es-ES` `ja-JP`) 。 |
-|`--quotations-debug`|指定应为从 F # 引号文本和反射定义派生的表达式发出额外的调试信息。 调试信息将添加到 F # 表达式树节点的自定义属性中。 请参阅 [代码引用](code-quotations.md) 和 [CustomAttributes](https://msdn.microsoft.com/visualfsharpdocs/conceptual/expr.customattributes-property-%5bfsharp%5d)。|
+|`--quotations-debug`|指定应为从 F # 引号文本和反射定义派生的表达式发出额外的调试信息。 调试信息将添加到 F # 表达式树节点的自定义属性中。 请参阅 [代码引用](code-quotations.md) 和 [CustomAttributes](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-quotations-fsharpexpr.html#CustomAttributes)。|
 |`--reference:assembly-filename`<br /><br />`-r:assembly-filename`|使 F # 或 .NET Framework 程序集中的代码可供正在编译的代码使用。<br /><br />此编译器选项等效于同名的 c # 编译器选项。 有关详细信息，请参阅 [&#41;&#47;引用 &#40;C&#35; 编译器选项 ](../../csharp/language-reference/compiler-options/reference-compiler-option.md)。|
 |`--resource:resource-filename`|将托管资源文件嵌入到生成的程序集中。<br /><br />此编译器选项等效于同名的 c # 编译器选项。 有关详细信息，请参阅 [&#47;资源 &#40;C&#35; 编译器选项&#41;](../../csharp/language-reference/compiler-options/resource-compiler-option.md)。|
 |`--sig:signature-filename`|基于生成的程序集生成签名文件。 有关签名文件的详细信息，请参阅 [签名](signature-files.md)。|

@@ -2,12 +2,12 @@
 title: 记录
 description: '了解 F # 记录如何表示命名值的简单聚合，还可以选择包含成员。'
 ms.date: 08/15/2020
-ms.openlocfilehash: 182b2e83c3940c866197052af102787a96e49c54
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: a72c0f15b58407e7d759e2fb5a1b35a7fc0d29e3
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559045"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812349"
 ---
 # <a name="records"></a>记录
 
@@ -184,5 +184,5 @@ The records are equal.
 - [F# 类型](fsharp-types.md)
 - [类](classes.md)
 - [F# 语言参考](index.md)
-- [引用相等](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.referenceequalityattribute-class-%5bfsharp%5d)
+- [引用相等](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-referenceequalityattribute.html)
 - [模式匹配](pattern-matching.md)

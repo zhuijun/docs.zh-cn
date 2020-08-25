@@ -1,24 +1,21 @@
 ---
 title: 字符串
 description: '了解 F # "string" 类型如何将不可变文本表示为 Unicode 字符序列。'
-ms.date: 07/05/2019
-ms.openlocfilehash: 67a6506b4b8c479da1022c069a7f53402f904b4d
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.date: 08/15/2020
+ms.openlocfilehash: f6ec36feeb197bf785c702e7b626cf5cf80696ab
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855408"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812206"
 ---
 # <a name="strings"></a>字符串
 
 `string`类型将不可变文本表示为 Unicode 字符序列。 `string` 是 `System.String` 在 .NET 中的别名。
 
-> [!NOTE]
-> F # 的 docs.microsoft.com API 参考未完成。 如果遇到任何断开的链接，请参阅[F # 核心库文档](https://fsharp.github.io/fsharp-core-docs/)。
+## <a name="remarks"></a>注解
 
-## <a name="remarks"></a>备注
-
-字符串文本由引号 ( ") 字符分隔。 反斜杠字符 ( \\ ) 用于对某些特殊字符进行编码。 反斜杠和下一个字符共同称为*转义序列*。 下表显示了 F # 字符串文本中支持的转义序列。
+字符串文本由引号 ( ") 字符分隔。 反斜杠字符 ( \\ ) 用于对某些特殊字符进行编码。 反斜杠和下一个字符共同称为 *转义序列*。 下表显示了 F # 字符串文本中支持的转义序列。
 
 |字符|转义序列|
 |---------|---------------|
@@ -41,7 +38,7 @@ ms.locfileid: "87855408"
 > `\DDD`转义序列是十进制符号，而不是八进制表示法，这与大多数其他语言类似。 因此，数字 `8` 和 `9` 都是有效的，序列 `\032` 表示 (U + 0020) 的空间，而八进制表示法中的码位就是 `\040` 。
 
 > [!NOTE]
-> 由于被限制为 0-255 (0xFF) 的范围， `\DDD` 且和 `\x` 转义序列实际上是[ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1#Code_page_layout)字符集，因为它匹配第一个 256 Unicode 码位。
+> 由于被限制为 0-255 (0xFF) 的范围， `\DDD` 且和 `\x` 转义序列实际上是 [ISO-8859-1](https://en.wikipedia.org/wiki/ISO/IEC_8859-1#Code_page_layout) 字符集，因为它匹配第一个 256 Unicode 码位。
 
 ## <a name="verbatim-strings"></a>原义字符串
 
@@ -102,7 +99,7 @@ def
 
 ## <a name="string-module"></a>字符串模块
 
-命名空间中的模块包含了用于字符串处理的其他功能 `String` `FSharp.Core` 。 有关详细信息，请参阅[Core 模块](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.string-module-%5bfsharp%5d)。
+命名空间中的模块包含了用于字符串处理的其他功能 `String` `FSharp.Core` 。 有关详细信息，请参阅 [字符串模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-stringmodule.html)。
 
 ## <a name="see-also"></a>另请参阅
 

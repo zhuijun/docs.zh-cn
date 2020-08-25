@@ -2,15 +2,15 @@
 title: <add> 的 <baseAddressPrefixFilter>
 ms.date: 03/30/2017
 ms.assetid: b226bede-8459-4de9-b2ac-3d39604ce2bc
-ms.openlocfilehash: 8fdae02b558708a9b3f4535123752dce12dd5cf5
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2572a6ee6763ae26fe5c56669e10f8c9aef8a280
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153135"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811790"
 ---
 # <a name="add-of-baseaddressprefixfilter"></a>\<add> 的 \<baseAddressPrefixFilter>
-表示一个配置元素，该元素指定传递筛选器，该筛选器提供一种机制，用于在 IIS 中承载 Windows Communication Foundation （WCF）应用程序时选择适当的 Internet Information Services （IIS）绑定。  
+表示一个配置元素，该元素指定传递筛选器，该筛选器提供一种机制，用于在 IIS 中承载 Windows Communication Foundation (WCF) 应用程序时，选择适当的 Internet Information Services (IIS) 绑定。  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
@@ -33,7 +33,7 @@ ms.locfileid: "79153135"
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|特性|说明|  
 |---------------|-----------------|  
 |前缀|用于与基址的一部分进行匹配的 URI。|  
   
@@ -42,9 +42,9 @@ ms.locfileid: "79153135"
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
-|[\<baseAddressPrefixFilters>](baseaddressprefixfilters.md)|指定传递筛选器的配置元素的集合，这些筛选器提供一种机制，用于在 IIS 中承载 Windows Communication Foundation （WCF）应用程序时选取适当的 IIS 绑定。|  
+|[\<baseAddressPrefixFilters>](baseaddressprefixfilters.md)|用于指定传递筛选器的配置元素的集合，这些筛选器提供一种机制，用于在 IIS 中承载 Windows Communication Foundation (WCF) 应用程序时选取适当的 IIS 绑定。|  
   
 ## <a name="remarks"></a>注解  
  前缀筛选器为共享的宿主提供程序提供一种指定服务要使用的 URI 的方法。 它使得共享主机可以在同一站点上通过同一方案的不同基址承载多个应用程序。  
@@ -55,7 +55,7 @@ ms.locfileid: "79153135"
   
  例如，你的站点可包含以下基址：
   
-```
+```http
 http://testl.fabrikam.com/Service.svc  
 http://test2.fabrikam.com/Service.svc  
 ```  

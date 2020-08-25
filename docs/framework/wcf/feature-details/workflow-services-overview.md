@@ -2,16 +2,16 @@
 title: 工作流服务概述
 ms.date: 03/30/2017
 ms.assetid: e536dda3-e286-441e-99a7-49ddc004b646
-ms.openlocfilehash: f752eca621f9d30f38d85d7e71228fdfe1343c32
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7055ea6e6b6d6a5d7bef8d5ff465d2eb0c838bf6
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84594863"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812180"
 ---
 # <a name="workflow-services-overview"></a>工作流服务概述
 
-工作流服务是使用工作流实现的基于 WCF 的服务。 工作流服务是使用消息传递活动发送和接收 Windows Communication Foundation （WCF）消息的工作流。 .NET Framework 4.5 引入了多个消息传递活动，可用于从工作流中发送和接收消息。 有关消息传递活动以及如何使用消息传递活动来实现不同消息交换模式的详细信息，请参阅[消息传递活动](messaging-activities.md)。
+工作流服务是使用工作流实现的基于 WCF 的服务。 工作流服务是使用消息传递活动发送和接收 Windows Communication Foundation (WCF) 消息的工作流。 .NET Framework 4.5 引入了多个消息传递活动，可用于从工作流中发送和接收消息。 有关消息传递活动以及如何使用消息传递活动来实现不同消息交换模式的详细信息，请参阅 [消息传递活动](messaging-activities.md)。
 
 ## <a name="benefits-of-using-workflow-services"></a>使用工作流服务的好处
 
@@ -58,9 +58,9 @@ WCF 定义了两个基于 MSMQ 的绑定：<xref:System.ServiceModel.NetMsmqBind
 
 托管 .NET Framework 应用程序或托管的 Windows 服务中承载的工作流服务创建类的实例 <xref:System.ServiceModel.Activities.WorkflowServiceHost> ，并向其传递 <xref:System.ServiceModel.Activities.WorkflowService> 包含属性内的工作流定义的实例 <xref:System.ServiceModel.Activities.WorkflowService.Body%2A> 。 包含消息传递活动的工作流定义公开为工作流服务。
 
-若要在 IIS 或 WAS 中承载工作流服务，请将包含工作流服务定义的 .xamlx 文件放置到虚拟目录中。 系统会自动创建一个默认终结点（使用 <xref:System.ServiceModel.BasicHttpBinding> ），有关详细信息，请参阅[简化配置](../simplified-configuration.md)。 也可以在虚拟目录中放置 Web.config 文件以指定你自己的终结点。 如果您的工作流定义位于程序集中，则可以在虚拟目录中放置一个 .svc 文件，并在 App_Code 目录中放置该工作流程序集。 该 .svc 文件必须指定服务主机工厂以及实现该工作流服务的类。 下面的示例演示如何指定服务主机工厂以及实现该工作流服务的类。
+若要在 IIS 或 WAS 中承载工作流服务，请将包含工作流服务定义的 .xamlx 文件放置到虚拟目录中。 将自动创建 (使用) 的默认终结点 <xref:System.ServiceModel.BasicHttpBinding> 。有关详细信息，请参阅 [简化配置](../simplified-configuration.md)。 也可以在虚拟目录中放置 Web.config 文件以指定你自己的终结点。 如果您的工作流定义位于程序集中，则可以在虚拟目录中放置一个 .svc 文件，并在 App_Code 目录中放置该工作流程序集。 该 .svc 文件必须指定服务主机工厂以及实现该工作流服务的类。 下面的示例演示如何指定服务主机工厂以及实现该工作流服务的类。
 
-```
-<%@ServiceHost Factory=" System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory
+```aspx-csharp
+<%@ServiceHost Factory="System.ServiceModel.Activities.Activation.WorkflowServiceHostFactory"
 Service="EchoService"%>
 ```
