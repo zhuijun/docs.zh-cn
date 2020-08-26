@@ -77,38 +77,17 @@
               href: sqlclient-for-ef-types.md
             - name: SqlClient 中的已知问题（实体框架）
               href: known-issues-in-sqlclient-for-entity-framework.md
-    - name: 编写实体框架数据提供程序
-      href: writing-an-ef-data-provider.md
+    - name: 开发和部署注意事项
+      href: development-and-deployment-considerations.md
       items:
-        - name: SQL 生成
-          href: sql-generation.md
-          items:
-            - name: 命令目录树的形状
-              href: the-shape-of-the-command-trees.md
-            - name: 从命令目录树生成 SQL - 最佳做法
-              href: generating-sql-from-command-trees-best-practices.md
-            - name: 示例提供程序中的 SQL 生成
-              href: sql-generation-in-the-sample-provider.md
-              items:
-                - name: 体系结构和设计
-                  href: architecture-and-design.md
-                - name: 演练：SQL 生成
-                  href: walkthrough-sql-generation.md
-        - name: 修改 SQL 生成
-          href: modification-sql-generation.md
-        - name: 提供程序清单规范
-          href: provider-manifest-specification.md
-- name: 开发和部署注意事项
-  href: development-and-deployment-considerations.md
-  items:
-    - name: 安全注意事项
-      href: security-considerations.md
-    - name: 性能注意事项
-      href: performance-considerations.md
-    - name: 迁移注意事项
-      href: migration-considerations.md
-    - name: 部署注意事项
-      href: deployment-considerations.md
+        - name: 安全注意事项
+          href: security-considerations.md
+        - name: 性能注意事项
+          href: performance-considerations.md
+        - name: 迁移注意事项
+          href: migration-considerations.md
+        - name: 部署注意事项
+          href: deployment-considerations.md
 - name: 实体框架资源
   href: resources.md
 - name: 实体框架术语
