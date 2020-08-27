@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d85fb8df7afdc5f4c3faecebcd24d11677798bc9
-ms.sourcegitcommit: 63bb83322814f5e5e5c5b69939b14a3139a6ca7e
+ms.openlocfilehash: a635e2ed6a735b5234c92fd8f5ffa1685fe9373e
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/25/2020
-ms.locfileid: "85365605"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558163"
 ---
 ### <a name="microsoftdotnetplatformabstractions-package-removed"></a>Microsoft.DotNet.PlatformAbstractions 包已删除
 
@@ -39,7 +39,7 @@ ms.locfileid: "85365605"
   | `RuntimeEnvironment.OperatingSystemVersion` | <xref:System.Runtime.InteropServices.RuntimeInformation.OSDescription?displayProperty=nameWithType> 和 <xref:System.Environment.OSVersion?displayProperty=nameWithType> |
 
   > [!NOTE]
-  > `RuntimeEnvironment.OperatingSystem` 和 `RuntimeEnvironment.OperatingSystemVersion` 的大多数用例都用于显示目的，例如，向用户、日志记录和遥测显示。 不建议根据操作系统 (OS) 版本做出运行时决策。 现在，<xref:System.Environment.OSVersion?displayProperty=nameWithType> 返回适用于 Windows 和 macOS 操作系统的正确版本。 但是，对于大多数 Unix 发行版，所谓的“OS 版本”并不是那么简单。 例如，它可以是 Linux 内核版本，也可以是发行版本。 对于大多数 Unix 平台，<xref:System.Environment.OSVersion?displayProperty=nameWithType> 和 <xref:System.Runtime.InteropServices.RuntimeInformation.OSDescription?displayProperty=nameWithType> 返回 `uname` 返回的版本。 要获取 Linux 发行版的名称和版本信息，建议的方法是读取 /etc/os-release 文件。
+  > `RuntimeEnvironment.OperatingSystem` 和 `RuntimeEnvironment.OperatingSystemVersion` 的大多数用例都用于显示目的，例如，向用户、日志记录和遥测显示。 不建议根据操作系统 (OS) 版本做出运行时决策。 现在，<xref:System.Environment.OSVersion?displayProperty=nameWithType> 返回适用于 Windows 和 macOS 操作系统的[正确版本](../../../../docs/core/compatibility/corefx.md#environmentosversion-returns-the-correct-operating-system-version)。 但是，对于大多数 Unix 发行版，所谓的“OS 版本”并不是那么简单。 例如，它可以是 Linux 内核版本，也可以是发行版本。 对于大多数 Unix 平台，<xref:System.Environment.OSVersion?displayProperty=nameWithType> 和 <xref:System.Runtime.InteropServices.RuntimeInformation.OSDescription?displayProperty=nameWithType> 返回 `uname` 返回的版本。 要获取 Linux 发行版的名称和版本信息，建议的方法是读取 /etc/os-release 文件。
 
 #### <a name="category"></a>类别
 

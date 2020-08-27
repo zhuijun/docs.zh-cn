@@ -2,17 +2,16 @@
 title: 安装和卸载 .NET Framework 受阻疑难解答
 description: 解决遇到的 .NET Framework 安装受阻问题。 有关解决问题的信息，请参阅状态消息。
 ms.date: 04/18/2019
-ms.custom: updateeachrelease
 helpviewer_keywords:
 - .NET Framework, troubleshooting blocked installations
 - blocked .NET Framework installations, troubleshooting
 ms.assetid: c3fdfbc1-ed99-4202-a2b0-8c4f1646385d
-ms.openlocfilehash: 70cefb53d29c7a895a3e242776bae39b7636fd65
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: e6f5dbce6bd10ae68b2033a135660d1e31aceff9
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79506952"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88558447"
 ---
 # <a name="troubleshoot-blocked-net-framework-installations-and-uninstallations"></a>安装和卸载 .NET Framework 受阻疑难解答
 
@@ -36,7 +35,7 @@ ms.locfileid: "79506952"
 |无法使用此包卸载 .NET Framework 4.5.x/4.6.x/4.7.x/4.8。 若要从计算机中卸载 .NET Framework 4.5.x/4.6.x/4.7.x/4.8，请转到“控制面板”，然后依次选择“程序和功能”、“查看已安装的更新”、“Microsoft Windows (KB2828152) 的更新”和“卸载”     。|你正在安装的程序包不会卸载 .NET Framework 的预览版或 RC 版。<br /><br /> 从“控制面板”卸载预览版或 RC 版。|  
 |无法卸载 .NET Framework 4.5.x/4.6.x/4.7.x/4.8。 计算机上的其他应用程序依赖于此程序。|通常，你不应该从计算机卸载 .NET Framework 的任何版本，因为你使用的应用程序可能基于 .NET Framework 的特定版本。 有关详细信息，请参阅*入门*指南中的[面向用户的 .NET Framework](../get-started/index.md#ForUsers)。|  
 |.NET Framework 4.5.x/4.6.x/4.7.x/4.8 可再发行组件不适用于此操作系统。 请从 .NET Framework 下载页下载适用于自己的操作系统的 .NET Framework 4.5.x/4.6.x/4.7.x/4.8。|可能是因为尝试在不受支持的平台上安装 .NET Framework 4.5.1、4.5.2、4.6、4.6.1、4.6.2、4.7、4.7.1、4.7.2 或 4.8，也可能是因为已选择的安装程序包不包含适用于所有受支持操作系统的组件。 使用适用于 [4.7.1](https://go.microsoft.com/fwlink/p/?LinkId=852090)、[4.7.2](https://dotnet.microsoft.com/download/dotnet-framework/net472) 或 [4.8](https://dotnet.microsoft.com/download/dotnet-framework/net48) 的脱机安装程序（[适用于 4.5.1](https://go.microsoft.com/fwlink/p/?LinkId=309493)、[4.5.2](https://dotnet.microsoft.com/download/dotnet-framework/net452)、[4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46)、[4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)、[4.6.2](https://go.microsoft.com/fwlink/p/?LinkId=780604)、[4.7](https://go.microsoft.com/fwlink/p/?LinkId=825306)）再次运行安装。 有关详细信息，请参阅适用于受支持操作系统的[安装指南](guide-for-developers.md)和[系统需求](../get-started/system-requirements.md)。|  
-|安装本产品之前需要先安装 KB\<*编号*> 所对应的更新。|.NET Framework 安装需要在安装 .NET Framework 之前先安装 KB 更新。 安装此更新，然后再次开始 .NET Framework 安装。<br /><br /> 例如，在 Windows 8.1、Windows RT 8.1 和 Windows Server 2012 R2 上安装更新版本的 .NET Framework 需要先安装 [KB 2919355](https://support.microsoft.com/kb/2919355) 所对应的更新。|  
+|安装本产品之前需要先安装 KB\<*number*> 所对应的更新。|.NET Framework 安装需要在安装 .NET Framework 之前先安装 KB 更新。 安装此更新，然后再次开始 .NET Framework 安装。<br /><br /> 例如，在 Windows 8.1、Windows RT 8.1 和 Windows Server 2012 R2 上安装更新版本的 .NET Framework 需要先安装 [KB 2919355](https://support.microsoft.com/kb/2919355) 所对应的更新。|  
 |你的计算机当前正在运行 Windows Server 2008 操作系统的服务器核心安装。 .NET Framework 4.5.x 需要使用更高版本的操作系统。 请安装 Windows Server 2008 R2 SP1 或更高版本并重新运行 .NET Framework 4.5.x 安装程序。|.NET Framework 4.5.1 和 4.5.2 在带有 Windows Server 2008 R2 SP1 或更高版本的服务器核心角色中受支持。 请参阅[系统需求](../get-started/system-requirements.md)。|  
 |你没有足够的权限为此计算机的所有用户完成此操作。 以管理员身份登录并重新运行“安装程序”  。|若要安装 .NET Framework，你必须是计算机的管理员。|  
 |先前的安装要求重新启动计算机，所以安装程序无法继续。 请重新启动计算机，然后重新运行安装程序。|有时需要重新启动以完全完成安装。 根据说明重新启动计算机并重新运行安装程序。<br /><br /> 在极少数情况下，如果 Windows 检测到缺少一些更新并需要重新启动来安装队列中的下一个更新，则可能要求不止一次重新启动系统。|  

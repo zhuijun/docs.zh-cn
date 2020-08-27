@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 2373b21e92c6ca68aac33684a9bd0912a2e642b3
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 42d4f7e8800bf2d13d584084f8a41bad2ada534f
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85324269"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608119"
 ---
 # <a name="whats-new-in-net-core-31"></a>.NET Core 3.1 的新增功能
 
@@ -45,7 +45,7 @@ Visual Studio for Mac 也支持 .NET Core 3.1，并且 Visual Studio for Mac 8.4
 
 启用 appHost 设置后，.NET Core 在生成或发布时将生成本机 Mach-O 可执行文件。 如果使用 `dotnet run` 命令从源代码中运行应用，或通过启动 Mach-O 可执行文件直接运行应用，则应用会在 appHost 的上下文中运行。
 
-如果没有 appHost，用户就只能使用 `dotnet <filename.dll>` 命令启动[依赖于运行时](../deploying/index.md#publish-runtime-dependent)的应用。 发布[独立](../deploying/index.md#publish-self-contained)应用时，始终会创建 appHost。
+如果没有 appHost，用户就只能使用 `dotnet <filename.dll>` 命令启动[依赖框架](../deploying/index.md#publish-framework-dependent)的应用。 发布[独立](../deploying/index.md#publish-self-contained)应用时，始终会创建 appHost。
 
 可以在项目级别配置 appHost，或通过 `-p:UseAppHost` 参数切换特定 `dotnet` 命令的 appHost：
 

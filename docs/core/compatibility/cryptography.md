@@ -2,12 +2,12 @@
 title: 加密中断性变更
 description: 列出 .NET Core 中与加密相关的中断性变更。
 ms.date: 04/22/2020
-ms.openlocfilehash: 34098027c4cbe5e5fb31a22d981af706e07cb7da
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: f7d580938fb7620728b8ff7f67412c9f5bbbb6c3
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556016"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557993"
 ---
 # <a name="cryptography-breaking-changes"></a>加密中断性变更
 
@@ -15,11 +15,18 @@ ms.locfileid: "87556016"
 
 | 重大更改 | 引入的版本 |
 | - | :-: |
+| [System.Security.Cryptography.Oid 在功能上仅用于初始化](#systemsecuritycryptographyoid-is-functionally-init-only) | 5.0 |
 | [Linux 不再支持 BEGIN TRUSTED CERTIFICATE 语法](#begin-trusted-certificate-syntax-no-longer-supported-for-root-certificates-on-linux) | 3.0 |
 | [EnvelopedCms 默认为 AES-256 加密](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
 | [RSAOpenSsl 密钥生成的最小大小已增加](#minimum-size-for-rsaopenssl-key-generation-has-increased) | 3.0 |
 | [.NET Core 3.0 倾向于使用 OpenSSL 1.1.x 而不是 OpenSSL 1.0.x](#net-core-30-prefers-openssl-11x-to-openssl-10x) | 3.0 |
 | [已考虑 SignedCms.ComputeSignature 的布尔参数](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
+
+## <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE [cryptography-oid-init-only](../../../includes/core-changes/cryptography/5.0/cryptography-oid-init-only.md)]
+
+***
 
 ## <a name="net-core-30"></a>.NET Core 3.0
 

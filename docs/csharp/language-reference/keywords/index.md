@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '@ keyword'
 ms.custom: updateeachrelease
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 51e3802ba7b78dab4c3f96365c51af83098c05c7
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 3392b92cbd77e5b3f895af99a71f33d2ab43fa15
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656119"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812310"
 ---
 # <a name="c-keywords"></a>C# 关键字
 
@@ -57,12 +57,12 @@ ms.locfileid: "88656119"
 |[descending](descending.md)|[dynamic](../builtin-types/reference-types.md)|[equals](equals.md)|
 |[from](from-clause.md)|[get](get.md)|[global](../operators/namespace-alias-qualifier.md)|
 |[group](group-clause.md)|[into](into.md)|[join](join-clause.md)|
-|[let](let-clause.md)|[nameof](../operators/nameof.md)|[on](on.md)|
-|[orderby](orderby-clause.md)|[partial（类型）](partial-type.md)|[partial（方法）](partial-method.md)|
-|[remove](remove.md)|[select](select-clause.md)|[set](set.md)|
-|[unmanaged（泛型类型约束）](where-generic-type-constraint.md)|[value](value.md)|[var](var.md)|
-|[when（筛选条件）](when.md)|[where（泛型类型约束）](where-generic-type-constraint.md)|[where（查询子句）](where-clause.md)|
-|[yield](yield.md)| | |
+|[let](let-clause.md)|[nameof](../operators/nameof.md)|[notnull](../../programming-guide/generics/constraints-on-type-parameters.md#notnull-constraint)|
+|[on](on.md)|[orderby](orderby-clause.md)|[partial（类型）](partial-type.md)|
+|[partial（方法）](partial-method.md)|[remove](remove.md)|[select](select-clause.md)|
+|[set](set.md)|[unmanaged（泛型类型约束）](where-generic-type-constraint.md)|[value](value.md)|
+|[var](var.md)|[when（筛选条件）](when.md)|[where（泛型类型约束）](where-generic-type-constraint.md)|
+|[where（查询子句）](where-clause.md)|[yield](yield.md)| |
   
 ## <a name="see-also"></a>请参阅
 

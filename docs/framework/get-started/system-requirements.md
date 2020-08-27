@@ -1,7 +1,6 @@
 ---
 title: .NET Framework 系统要求
 description: 了解安装 .NET Framework 4.5 及更高版本对硬件、操作系统和软件的要求。
-ms.custom: updateeachrelease
 ms.date: 04/18/2019
 helpviewer_keywords:
 - software requirements
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - operating systems supported
 - hardware requirements
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
-ms.openlocfilehash: 571075f7d0f330cf88ac9618376876b4f72e75ed
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 92cc95f80d18251314db8d953520732841b0274c
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389475"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557329"
 ---
 # <a name="net-framework-system-requirements"></a>.NET Framework 系统要求
 
@@ -54,6 +53,8 @@ ms.locfileid: "81389475"
 
 | 操作系统 | 支持的版本 | 随 OS 预安装 | 可单独安装 |
 | ---------------- | ------------------ | ------------------------ | ---------------------- |
+| Windows 10 2020 年 5 月更新<br/> （版本 2004） | 32 位和 64 位 | .NET Framework 4.8 | -- |
+| Windows 10 2019 年 11 月更新<br/> （版本 1909） | 32 位和 64 位 | .NET Framework 4.8 | -- |
 | Windows 10 2019 年 5 月更新<br/> （版本 1903） | 32 位和 64 位 | .NET Framework 4.8 | -- |
 | Windows 10 2018 年 10 月更新<br/> （版本 1809） | 32 位和 64 位 | .NET Framework 4.7.2 | .NET Framework 4.8 |
 | Windows 10 2018 年 4 月更新<br/> （版本 1803） | 32 位和 64 位 | .NET Framework 4.7.2 |.NET Framework 4.8|

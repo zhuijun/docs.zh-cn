@@ -1,6 +1,6 @@
 ---
-title: .NET 中的字符编码简介
-description: 了解 .NET 中的字符编码和解码。
+title: .NET 中的 character 编码简介
+description: 了解 .NET 中的 character 编码和解码。
 ms.date: 03/09/2020
 no-loc:
 - Rune
@@ -10,20 +10,20 @@ dev_langs:
 - csharp
 helpviewer_keywords:
 - encoding, understanding
-ms.openlocfilehash: 85349e1e1c4eca4dd3ef7980f48350a4145fca24
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a5d838176bf4437a295ebe6c2cea8b1fe0eeeb61
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599862"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656288"
 ---
 # <a name="character-encoding-in-net"></a>.NET 中的字符编码
 
-本文介绍 .NET 使用的字符编码系统。 具体说明如何将 <xref:System.String>、<xref:System.Char>、<xref:System.Text.Rune>和 <xref:System.Globalization.StringInfo> 类型用于 Unicode、UTF-16 和 UTF-8。
+本文介绍 .NET 使用的 character 编码系统。 具体说明如何将 <xref:System.String>、<xref:System.Char>、<xref:System.Text.Rune>和 <xref:System.Globalization.StringInfo> 类型用于 Unicode、UTF-16 和 UTF-8。
 
-本文中使用的术语“字符”从读者的角度通常是指单个显示元素 。 常见的示例是字母“a”、“@”和表情符号 🐂。 有时，一个字符实际上由多个独立的显示元素组成，具体可以参考介绍[字形群集](#grapheme-clusters)的小节。
+本文中使用的术语“character”从读者的角度通常是指单个显示元素 。 常见的示例是字母“a”、“@”和表情符号 🐂。 有时，一个 character 实际上由多个独立的显示元素组成，具体可以参考介绍[字形群集](#grapheme-clusters)的部分。
 
-## <a name="the-string-and-char-types"></a>string 和 char 类型
+## <a name="the-no-locstring-and-no-locchar-types"></a>string 和 char 类型
 
 [string](xref:System.String) 类的实例表示一些文本。 `string` 在逻辑上是一个 16 位值的序列，其中每个值都是 [char](xref:System.Char) 结构的实例。 [string.Length](xref:System.String.Length) 属性返回 `string` 实例中 `char` 实例的数目。
 
@@ -46,7 +46,7 @@ s[3] = 'l' ('\u006c')
 s[4] = 'o' ('\u006f')
 ```
 
-每个字符由一个 `char` 值表示。 这种模式适用于世界上大多数语言。 例如，下面是两个中文字符的输出，听起来像“nǐ hǎo”，它们表示“Hello”：
+每个 character 由一个 `char` 值表示。 这种模式适用于世界上大多数语言。 例如，下面是两个中文 character 的输出，听起来像“nǐ hǎo”，它们表示“Hello” ：
 
 ```csharp
 PrintChars("你好");
@@ -58,7 +58,7 @@ s[0] = '你' ('\u4f60')
 s[1] = '好' ('\u597d')
 ```
 
-但是，对于某些语言以及某些符号和表情符号，需要两个 `char` 实例来表示一个字符。 例如，比较奥塞治文中表示 Osage 的单词中的字符和 `char` 实例：
+但是，对于某些语言以及某些符号和表情符号，需要两个 `char` 实例来表示一个 character。 例如，比较奥塞治文中表示 Osage 的单词中的 character 和 `char` 实例：
 
 ```csharp
 PrintChars("𐓏𐓘𐓻𐓘𐓻𐓟 𐒻𐓟");
@@ -85,7 +85,7 @@ s[15] = '�' ('\ud801')
 s[16] = '�' ('\udcdf')
 ```
 
-在前面的示例中，除空格以外的每个字符都由两个 `char` 实例表示。
+在前面的示例中，除空格以外的每个 character 都由两个 `char` 实例表示。
 
 单个 Unicode 表情符号也由两个 `char` 表示，如以下示例中所示的 ox 表情符号：
 
@@ -95,17 +95,17 @@ s[0] = '�' ('\ud83d')
 s[1] = '�' ('\udc02')
 ```
 
-这些示例表明，`string.Length` 的值表示 `char` 实例的数量，不一定表示显示的字符数。 一个 `char` 实例本身不一定表示一个字符。
+这些示例表明，`string.Length` 的值表示 `char` 实例的数量，不一定表示显示的 character 数。 一个 `char` 实例本身不一定表示一个 character。
 
-映射到单个字符的 `char` 对称为“代理项对”。 若要了解它们的工作原理，需要了解 Unicode 和 UTF-16 编码。
+映射到单个 character 的 `char` 对称为“代理项对”。 若要了解它们的工作原理，需要了解 Unicode 和 UTF-16 编码。
 
 ## <a name="unicode-code-points"></a>Unicode 码位
 
 Unicode 是一种国际编码标准，可用于各种平台以及各种语言和脚本。
 
-Unicode 标准定义了超过 110 万个[码位](https://www.unicode.org/glossary/#code_point)。 码位是一个整数值，范围从 0 到 `U+10FFFF`（十进制 1,114,111）。 一些码位被分配给字母、符号或表情符号。 其他码位分配给控制文本或字符显示方式的操作，例如换行。 很多码位尚未经分配。
+Unicode 标准定义了超过 110 万个[码位](https://www.unicode.org/glossary/#code_point)。 码位是一个整数值，范围从 0 到 `U+10FFFF`（十进制 1,114,111）。 一些码位被分配给字母、符号或表情符号。 其他码位分配给控制文本或 character 显示方式的操作，例如换行。 很多码位尚未经分配。
 
-下面是码位分配的一些示例，其中包含指向它们所在的 Unicode 图表的链接：
+下面是码位分配的一些示例，其中包含指向它们所在的 Unicode chart 的链接：
 
 |十进制|Hex       |示例|描述|
 |------:|----------|-------|-----------|
@@ -124,11 +124,11 @@ Unicode 标准定义了超过 110 万个[码位](https://www.unicode.org/glossar
 
 下图说明了 BMP 与补充码位之间的关系。
 
-:::image type="content" source="media/character-encoding-introduction/bmp-and-supplementary.svg" alt-text="BMP 与补充码位":::
+:::image type="content" source="media/character-encoding-introduction/bmp-and-supplementary.svg" alt-text="BMP and supplementary code points":::
 
 ## <a name="utf-16-code-units"></a>UTF-16 代码单位
 
-16 位 Unicode 转换格式 ([UTF-16](https://www.unicode.org/faq/utf_bom.html#UTF16)) 是一种字符编码系统，它使用 16 位代码单位来表示 Unicode 码位。 .NET 使用 UTF-16 对 `string` 中的文本进行编码。 `char` 实例表示一个 16 位代码单位。
+16 位 Unicode 转换格式 ([UTF-16](https://www.unicode.org/faq/utf_bom.html#UTF16)) 是一种 character 编码系统，它使用 16 位代码单位来表示 Unicode 码位。 .NET 使用 UTF-16 对 `string` 中的文本进行编码。 `char` 实例表示一个 16 位代码单位。
 
 单个 16 位代码单位可以表示基本多语言平面的 16 位范围内的任何码位。 但对于补充范围内的码位，需要两个 `char` 实例。
 
@@ -138,7 +138,7 @@ Unicode 标准定义了超过 110 万个[码位](https://www.unicode.org/glossar
 
 下图说明了 BMP 与代理项码位之间的关系。
 
-:::image type="content" source="media/character-encoding-introduction/bmp-and-surrogate.svg" alt-text="BMP 与代理项码位":::
+:::image type="content" source="media/character-encoding-introduction/bmp-and-surrogate.svg" alt-text="BMP and surrogate code points":::
 
 如果高代理项码位 (`U+D800..U+DBFF`) 后紧跟低代理项码位 (`U+DC00..U+DFFF`)，则通过使用以下公式，此代理项对将解释为补充码位：
 
@@ -180,13 +180,13 @@ actual =  65,536 + ((55,356 - 55,296) * 1,024) + (57,145 - 56320)
 
 ## <a name="unicode-scalar-values"></a>Unicode 标量值
 
-术语“[Unicode 标量值](https://www.unicode.org/glossary/#unicode_scalar_value)”是指除代理项码位之外的所有码位。 换句话说，标量值是分配有字符或将来可以为其分配字符的任何码位。 此处的“字符”是指可以分配给码位的任何内容，其中包括控制文本或字符显示方式的操作。
+术语“[Unicode 标量值](https://www.unicode.org/glossary/#unicode_scalar_value)”是指除代理项码位之外的所有码位。 换句话说，标量值是分配有 character 或将来可以为其分配 character 的任何码位。 此处的“字符”是指可以分配给码位的任何内容，其中包括控制文本或 character 显示方式的操作。
 
 下图演示了标量值码位。
 
-:::image type="content" source="media/character-encoding-introduction/scalar-values.svg" alt-text="标量值":::
+:::image type="content" source="media/character-encoding-introduction/scalar-values.svg" alt-text="Scalar values":::
 
-### <a name="the-rune-type-as-a-scalar-value"></a>作为标量值的 Rune 类型
+### <a name="the-no-locrune-type-as-a-scalar-value"></a>作为标量值的 Rune 类型
 
 从 .NET Core 3.0 开始，<xref:System.Text.Rune?displayProperty=fullName> 类型表示 Unicode 标量值。 `Rune` 在 .NET Core 2.x 或 .NET Framework 4.x 中不可用。
 
@@ -202,7 +202,7 @@ actual =  65,536 + ((55,356 - 55,296) * 1,024) + (57,145 - 56320)
 
 :::code language="csharp" source="snippets/character-encoding-introduction/csharp/InstantiateRunes.cs" id="SnippetInvalidHigh":::
 
-### <a name="rune-usage-example-changing-letter-case"></a>Rune 用法示例：更改字母大小写
+### <a name="no-locrune-usage-example-changing-letter-case"></a>Rune 用法示例：更改字母大小写
 
 如果 `char` 来自代理项对，则采用 `char` 并假设正在使用作为标量值的码位的 API 将无法正常工作。 例如，来看看以下方法，此方法对字符串 (string 中的每个 char 调用 <xref:System.Char.ToUpperInvariant%2A?displayProperty=nameWithType>：
 
@@ -217,7 +217,7 @@ actual =  65,536 + ((55,356 - 55,296) * 1,024) + (57,145 - 56320)
 
   :::code language="csharp" source="snippets/character-encoding-introduction/csharp/ConvertToUpper.cs" id="SnippetGoodExample":::
 
-### <a name="other-rune-apis"></a>其他 Rune API
+### <a name="other-no-locrune-apis"></a>其他 Rune API
 
 `Rune` 类型公开了许多 `char` API 的类似 API。 例如，以下方法在 `char` 类型上镜像静态 API：
 
@@ -236,9 +236,9 @@ actual =  65,536 + ((55,356 - 55,296) * 1,024) + (57,145 - 56320)
 
 ## <a name="grapheme-clusters"></a>字形群集
 
-看起来像字符的内容可能由多个码位组合而成，因此，相比“字符”，“[字形群集](https://www.unicode.org/glossary/#grapheme_cluster)”术语的表述通常更贴合。 在 .NET 中使用“[文本元素](xref:System.Globalization.StringInfo.GetTextElementEnumerator%2A)”术语表示相同的内容。
+看起来像一个 character 的内容可能由多个码位组合而成，因此，相比“character”，“[字形群集](https://www.unicode.org/glossary/#grapheme_cluster)”术语的表述通常更贴合。 在 .NET 中使用“[文本元素](xref:System.Globalization.StringInfo.GetTextElementEnumerator%2A)”术语表示相同的内容。
 
-比如，`string` 实例“a”、“×”。 “á”和“`👩🏽‍🚒`”。 如果你的操作系统按照 Unicode 标准指定的方式来处理，则这些 `string` 实例中的每个实例都将显示为单个文本元素或字形群集。 但最后两个实例用多个标量值码位表示。
+比如，`string` 实例“a”、“á”、“á”和“`👩🏽‍🚒`”。 如果你的操作系统按照 Unicode 标准指定的方式来处理，则这些 `string` 实例中的每个实例都将显示为单个文本元素或字形群集。 但最后两个实例用多个标量值码位表示。
 
 * 字符串 (string)“a”由一个标量值表示，并包含一个 `char` 实例。
 
@@ -260,11 +260,11 @@ actual =  65,536 + ((55,356 - 55,296) * 1,024) + (57,145 - 56320)
   * `U+200D ZERO WIDTH JOINER`
   * `U+1F692 FIRE ENGINE`（补充范围，需要一个代理项对）
 
-在前面的一些示例中（例如组合的重音修饰符或肤色修饰符），码位不会在屏幕上显示为独立元素。 相反，它用于修改之前出现的文本元素的外观。 这些示例表明，可能需要采用多个标量值来构成我们认为的单个“字符”或“字形群集”。
+在前面的一些示例中（例如组合的重音修饰符或肤色修饰符），码位不会在屏幕上显示为独立元素。 相反，它用于修改之前出现的文本元素的外观。 这些示例表明，可能需要采用多个标量值来构成我们认为的单个“character”或“字形群集”。
 
 若要枚举 `string` 的字形群集，请使用 <xref:System.Globalization.StringInfo> 类，如下面的示例中所示。 如果你熟悉 Swift，那么 .NET `StringInfo` 类型在概念上类似于 [Swift `character` 类型](https://developer.apple.com/documentation/swift/character)。
 
-### <a name="example-count-char-rune-and-text-element-instances"></a>示例：char、Rune 和文本元素实例计数
+### <a name="example-count-no-locchar-no-locrune-and-text-element-instances"></a>示例：char、Rune 和文本元素实例计数
 
 在 .NET API 中，字形群集称为“文本元素”。 下面的方法演示 `string`中 `char`、`Rune` 和文本元素实例之间的差异：
 
@@ -274,9 +274,9 @@ actual =  65,536 + ((55,356 - 55,296) * 1,024) + (57,145 - 56320)
 
 如果在 .NET Framework 或 .NET Core 3.1 或更早版本中运行此代码，表情符号的文本元素计数将显示 `4`。 这是由于 `StringInfo` 类中的 bug 所致（已在 .NET 5 中修复）。
 
-### <a name="example-splitting-string-instances"></a>示例：拆分 string 实例
+### <a name="example-splitting-no-locstring-instances"></a>示例：拆分 string 实例
 
-拆分 `string` 实例时，请避免拆分代理项对和字形群集。 下面的示例展示不正确的代码，此代码的目的是在 string 中每隔 10 个字符插入一个换行符：
+拆分 `string` 实例时，请避免拆分代理项对和字形群集。 下面的示例展示不正确的代码，此代码的目的是在 string 中每隔 10 个 character 插入一个换行符：
 
 :::code language="csharp" source="snippets/character-encoding-introduction/csharp/InsertNewlines.cs" id="SnippetBadExample":::
 
@@ -365,16 +365,16 @@ await outputStream.WriteAsync(stringAsUtf8Bytes, 0, stringAsUtf8Bytes.Length);
   const string s = "\ud800";
   ```
 
-* 拆分代理对的子字符串：
+* 拆分代理项对的 substring：
 
   ```csharp
   string x = "\ud83e\udd70"; // "🥰"
   string y = x.Substring(1, 1); // "\udd70" standalone low surrogate
   ```
 
-像 [`Encoding.UTF8.GetString`](xref:System.Text.UTF8Encoding.GetString%2A) 这样的 API 永远不会返回格式错误的 `string` 实例。 `Encoding.GetString` 和 `Encoding.GetBytes` 方法检测输入中格式错误的序列，并在生成输出时执行字符替换。 例如，如果 [`Encoding.ASCII.GetString(byte[])`](xref:System.Text.ASCIIEncoding.GetString%2A) 在输入中发现非 ASCII 字节（超出 U+0000..U+007F 的范围），它会在返回的 `string` 实例中插入一个“?”。 [`Encoding.UTF8.GetString(byte[])`](xref:System.Text.UTF8Encoding.GetString%2A) 在返回的 `string` 实例中将格式错误的 UTF-8 序列替换为 `U+FFFD REPLACEMENT CHARACTER ('�')`。 有关详细信息，请参阅 5.22 和 3.9 小节中的 [Unicode 标准](https://www.unicode.org/versions/latest/)。
+像 [`Encoding.UTF8.GetString`](xref:System.Text.UTF8Encoding.GetString%2A) 这样的 API 永远不会返回格式错误的 `string` 实例。 `Encoding.GetString` 和 `Encoding.GetBytes` 方法检测输入中格式错误的序列，并在生成输出时执行 character 替换。 例如，如果 [`Encoding.ASCII.GetString(byte[])`](xref:System.Text.ASCIIEncoding.GetString%2A) 在输入中发现非 ASCII 字节（超出 U+0000..U+007F 的范围），它会在返回的 `string` 实例中插入一个“?”。 [`Encoding.UTF8.GetString(byte[])`](xref:System.Text.UTF8Encoding.GetString%2A) 在返回的 `string` 实例中将格式错误的 UTF-8 序列替换为 `U+FFFD REPLACEMENT CHARACTER ('�')`。 有关详细信息，请参阅 5.22 和 3.9 小节中的 [Unicode 标准](https://www.unicode.org/versions/latest/)。
 
-在出现格式错误的序列时，也可以将内置 `Encoding` 类配置为引发异常，而不是执行字符替换。 在可能无法接受字符替换的安全敏感的应用程序中，通常可以使用这种方法。
+在出现格式错误的序列时，也可以将内置 `Encoding` 类配置为引发异常，而不是执行 character 替换。 在可能无法接受 character 替换的安全敏感的应用程序中，通常可以使用这种方法。
 
 ```csharp
 byte[] utf8Bytes = ReadFromNetwork();
@@ -382,7 +382,7 @@ UTF8Encoding encoding = new UTF8Encoding(encoderShouldEmitUTF8Identifier: false,
 string asString = encoding.GetString(utf8Bytes); // will throw if 'utf8Bytes' is ill-formed
 ```
 
-要了解如何使用内置 `Encoding` 类，请参阅[如何在 .NET 中使用字符编码类](character-encoding.md)。
+要了解如何使用内置 `Encoding` 类，请参阅[如何在 .NET 中使用 character 编码类](character-encoding.md)。
 
 ## <a name="see-also"></a>请参阅
 

@@ -5,24 +5,24 @@ author: adegeo
 ms.author: adegeo
 ms.date: 12/03/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: ddbee0764897b511cac0c4142354ba995d94a2b6
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 56eebc0fc5bad6f57d93358cbbef389d6355d66b
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416051"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656685"
 ---
 # <a name="get-started-with-net-core"></a>.NET Core 入门
 
 本文提供 .NET Core 入门的相关信息。 可在 Windows、Linux 和 macOS 上安装 .NET Core。 你可在最喜欢的文本编辑器中编写代码并生成跨平台的库和应用程序。
 
-如果不确定 .NET Core 是什么或其与其他 .NET 技术的关系，请首先参阅 [What is .NET](https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet)（.NET 是什么）概述。 简单地说，.NET Core 是一个跨平台的开放源代码 .NET 实现。
+如果不确定 .NET Core 是什么或其与其他 .NET 技术的关系，请首先参阅[什么是 .NET](https://dotnet.microsoft.com/learn/dotnet/what-is-dotnet) 概述。 简单地说，.NET Core 是一个跨平台的开放源代码 .NET 实现。
 
 ## <a name="create-an-application"></a>创建应用程序
 
 首先，在计算机上下载并安装 [.NET Core SDK](https://dotnet.microsoft.com/download)。
 
-然后，打开某一终端，如 PowerShell、命令提示符或 Bash  。 键入以下 `dotnet` 命令以创建并运行 C# 应用程序：
+然后，打开某一终端，如 PowerShell、命令提示符或 Bash  。 输入以下 `dotnet` 命令，创建并运行 C# 应用程序：
 
 ```dotnetcli
 dotnet new console --output sample1
@@ -35,7 +35,7 @@ dotnet run --project sample1
 Hello World!
 ```
 
-祝贺你！ 现已创建了一个简单的 .NET Core 应用程序。 还可以使用 [Visual Studio Code](./tutorials/with-visual-studio-code.md)、[Visual Studio](./tutorials/with-visual-studio.md)（仅限 Windows）或 [Visual Studio for Mac](./tutorials/using-on-mac-vs.md)（仅限 macOS）来创建 .NET Core 应用程序。
+祝贺你！ 现已创建了一个简单的 .NET Core 应用程序。 还可以使用 [Visual Studio Code](./tutorials/with-visual-studio-code.md)、[Visual Studio](./tutorials/with-visual-studio.md)（仅限 Windows）或 [Visual Studio for Mac](tutorials/with-visual-studio-mac.md)（仅限 macOS）来创建 .NET Core 应用程序。
 
 ## <a name="tutorials"></a>教程
 
@@ -47,7 +47,7 @@ Hello World!
 
 - [在 Visual Studio 2019 中创建第一个 .NET Core 控制台应用程序](./tutorials/with-visual-studio.md)
 - [在 Visual Studio 中使用 .NET Standard 生成类库](./tutorials/library-with-visual-studio.md)
-- [使用 .NET Core CLI 实现 .NET Core 入门](./tutorials/cli-create-console-app.md)
+- [教程：使用 Visual Studio Code 创建 .NET Core 控制台应用](tutorials/with-visual-studio-code.md)
 
 |   |   |
 |---|---|
@@ -60,7 +60,7 @@ Hello World!
 
 通过以下分步教程着手开发 .NET Core 应用程序：
 
-- [使用命令行实现 .NET Core 入门](./tutorials/cli-create-console-app.md)
+- [教程：使用 Visual Studio Code 创建 .NET Core 控制台应用](tutorials/with-visual-studio-code.md)
 
 |   |   |
 |---|---|
@@ -72,9 +72,8 @@ Hello World!
 
 通过以下分步教程着手开发 .NET Core 应用程序：
 
-- [借助 Visual Studio Code 在 macOS 上开始使用 .NET Core](./tutorials/using-on-macos.md)
-- [使用命令行实现 .NET Core 入门](./tutorials/cli-create-console-app.md)
-- [借助 Visual Studio for Mac 在 macOS 上开始使用 .NET Core](./tutorials/using-on-mac-vs.md)
+- [教程：使用 Visual Studio Code 创建 .NET Core 控制台应用程序](tutorials/with-visual-studio-code.md)
+- [教程：使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序](tutorials/with-visual-studio-mac.md)
 - [使用 Visual Studio for Mac 在 macOS 上生成 .NET Standard 库](tutorials/library-with-visual-studio-mac.md)
 
 |   |   |

@@ -4,12 +4,12 @@ description: 本文介绍了 BinaryFormatter 类型中固有的安全风险，�
 ms.date: 07/11/2020
 ms.author: levib
 author: GrabYourPitchforks
-ms.openlocfilehash: f6a54b34bbf1e19212fe37aadb448a1722fe9ff0
-ms.sourcegitcommit: 2543a78be6e246aa010a01decf58889de53d1636
+ms.openlocfilehash: 2c76a81650e5b83677f6c4df64770bd1ef5f775e
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/17/2020
-ms.locfileid: "86444747"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88607927"
 ---
 # <a name="binaryformatter-security-guide"></a>BinaryFormatter 安全指南
 
@@ -87,7 +87,6 @@ ms.locfileid: "86444747"
 ## <a name="further-resources"></a>其他资源
 
 * [YSoSerial.Net](https://github.com/pwntester/ysoserial.net)，提供有关攻击者如何使用 `BinaryFormatter` 来攻击应用的研究。
-* [威胁建模](/securityengineering/sdl/threatmodeling)，提供有关威胁建模应用和服务的信息。
 * 反序列化漏洞的一般背景：
   * [10 项最严重的 OWASP 风险 - A8:2017 不安全的反序列化](https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A8-Insecure_Deserialization)
   * [CWE-502：不受信任的数据的反序列化](https://cwe.mitre.org/data/definitions/502.html)

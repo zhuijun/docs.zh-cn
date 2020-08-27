@@ -9,12 +9,12 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 17d85b9e9734fae0bb69f94da8c08669216ab0ae
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: 346776ebae3a6077fd39f26d5bd19d599d163db2
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81242863"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608348"
 ---
 # <a name="exposing-net-core-components-to-com"></a>向 COM 公开 .NET Core 组件
 
@@ -93,6 +93,6 @@ GitHub 上的 dotnet/samples 存储库中有一个正常运行的 [COM 服务器
 
 与 .NET Framework 不同，.NET Core 不支持从 .NET Core 程序集生成 COM 类型库 (TLB)。 本指南旨在说明如何为 COM 接口的本机声明手动编写 IDL 文件或 C/C++ 标头。
 
-不支持 COM 组件的[自包含部署](../deploying/index.md#publish-self-contained)。 仅支持 COM 组件的[依赖于运行时的部署](../deploying/index.md#publish-runtime-dependent)。
+不支持 COM 组件的[自包含部署](../deploying/index.md#publish-self-contained)。 仅支持 COM 组件的[依赖框架的部署](../deploying/index.md#publish-framework-dependent)。
 
 此外，将 .NET Framework 和 .NET Core 同时加载到同一进程具有诊断限制。 主要限制是调试托管组件，因为不能同时调试 .NET Framework 和 .NET Core。 此外，这两个运行时实例不共享托管程序集。 这意味着无法在两个运行时之间共享实际的 .NET 类型，所有交互必须仅限于公开的 COM 接口协定。

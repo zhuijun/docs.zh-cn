@@ -3,12 +3,12 @@ title: 调试高 CPU 使用率 - .NET Core
 description: 本教程将演示如何调试 .NETCore 中的高 CPU 使用率。
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: e69585d0eb6f04bf37d0c023a1956be62c2a1cf3
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 93076bbce3baf3a219b25c927d2aba3d2d57456f
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86926352"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88557797"
 ---
 # <a name="debug-high-cpu-usage-in-net-core"></a>调试 .NET Core 中的高 CPU 使用率
 
@@ -85,7 +85,7 @@ Press p to pause, r to resume, q to quit.
 
 在 Web 应用运行的情况下，CPU 根本不会在启动后就立即被消耗，且会在 `0%` 进行报告。 使用 `60000` 作为路由参数导航到 `api/diagscenario/highcpu` 路由：
 
-[https://localhost:5001/api/diagscenario/highcpu/60000](https://localhost:5001/api/diagscenario/highcpu/60000)
+`https://localhost:5001/api/diagscenario/highcpu/60000`
 
 现在，重新运行 [dotnet-counters](dotnet-counters.md) 命令。 若要只监视 `cpu-usage`，请在命令中指定 `System.Runtime[cpu-usage]`。
 
@@ -127,7 +127,7 @@ export COMPlus_PerfMapEnabled=1
 dotnet run
 ```
 
-再次使用高 CPU API (<https://localhost:5001/api/diagscenario/highcpu/60000>) 终结点。 当它在 1 分钟请求内运行时，对进程 ID 运行 `perf` 命令：
+再次使用高 CPU API (`https://localhost:5001/api/diagscenario/highcpu/60000`) 终结点。 当它在 1 分钟请求内运行时，对进程 ID 运行 `perf` 命令：
 
 ```bash
 sudo perf record -p 2266 -g
@@ -152,7 +152,7 @@ sudo perf script | FlameGraph/stackcollapse-perf.pl | FlameGraph/flamegraph.pl >
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-在 Windows 上，可以使用 [dotnet-trace](dotnet-trace.md) 工具作为探查器。 使用之前的 [示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)，再次使用高 CPU(<https://localhost:5001/api/diagscenario/highcpu/60000>) 终结点。 当它在 1 分钟请求内运行时，使用 `collect` 命令，如下所示：
+在 Windows 上，可以使用 [dotnet-trace](dotnet-trace.md) 工具作为探查器。 使用之前的[示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)，再次使用高 CPU (`https://localhost:5001/api/diagscenario/highcpu/60000`) 终结点。 当它在 1 分钟请求内运行时，使用 `collect` 命令，如下所示：
 
 ```dotnetcli
 dotnet-trace collect -p 22884 --providers Microsoft-DotNETCore-SampleProfiler

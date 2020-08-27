@@ -2,12 +2,12 @@
 title: 定义类型及其成员 - C# 教程
 description: 程序的构建基块是类型。 了解如何使用 C# 创建类、结构、接口等。
 ms.date: 08/06/2020
-ms.openlocfilehash: 69d6f0fe1e11f287fb5e385761fc210a61929d10
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: efd353fe8c1e6a57952bcb2586a05ad38ecd52b9
+ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068459"
+ms.lasthandoff: 08/18/2020
+ms.locfileid: "88559110"
 ---
 # <a name="types-and-members"></a>类型和成员
 
@@ -97,7 +97,7 @@ ms.locfileid: "88068459"
 
 ## <a name="nullable-types"></a>可为 null 的类型
 
-任何类型的变量都可以声明为“不可为 null”或“可为 null”。 可为 null 的变量包含一个额外的 `null` 值，表示没有值。 可为 null 的值类型（结构或枚举）由 <xref:System.Nullable%601?displayProperty=nameWithType> 表示。 不可为 null 和可为 null 的引用类型都由基础引用类型表示。 这种区别由编译器和某些库读取的元数据体现。 当可为 null 的引用在没有先对照 `null` 检查其值的情况下取消引用时，编译器会发出警告。 当不可为 null 的引用分配给可能为 `null` 的值时，编译器也会发出警告。 以下示例声明了“可为 null 的 int”，并将其初始化为 `null`。 然后将值设置为 `5`。 该例通过“可为 null 的字符串”演示了同一概念。 有关详细信息，请参阅[可为 null 的值类型](../language-reference/builtin-types/nullable-value-types.md)和[可为 null 的引用类型](../nullable-references.md)。
+任何类型的变量都可以声明为“不可为 null”或“可为 null”。 可为 null 的变量包含一个额外的 `null` 值，表示没有值。 可为 null 的值类型（结构或枚举）由 <xref:System.Nullable%601?displayProperty=nameWithType> 表示。 不可为 null 和可为 null 的引用类型都由基础引用类型表示。 这种区别由编译器和某些库读取的元数据体现。 当可为 null 的引用在没有先对照 `null` 检查其值的情况下取消引用时，编译器会发出警告。 当对不可为 null 的引用分配了可能为 `null` 的值时，编译器也会发出警告。 以下示例声明了“可为 null 的 int”，并将其初始化为 `null`。 然后将值设置为 `5`。 该例通过“可为 null 的字符串”演示了同一概念。 有关详细信息，请参阅[可为 null 的值类型](../language-reference/builtin-types/nullable-value-types.md)和[可为 null 的引用类型](../nullable-references.md)。
 
 :::code language="csharp" source="./snippets/shared/Types.cs" ID="DeclareNullable":::
 

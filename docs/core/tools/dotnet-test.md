@@ -2,12 +2,12 @@
 title: dotnet test 命令
 description: dotnet test 命令可用于在给定项目中执行单元测试。
 ms.date: 04/29/2020
-ms.openlocfilehash: 9b1e190579902dda71547b01f31dd5adcc22fe9c
-ms.sourcegitcommit: c8c3e1c63a00b7d27f76f5e50ee6469e6bdc8987
+ms.openlocfilehash: d67521084330b206afca89baf59228b99ca799a1
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87251187"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656750"
 ---
 # <a name="dotnet-test"></a>dotnet test
 

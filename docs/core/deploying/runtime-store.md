@@ -2,12 +2,12 @@
 title: 运行时包存储区
 description: 了解如何使用 .NET Core 使用的运行时包存储以面向清单。
 ms.date: 08/12/2017
-ms.openlocfilehash: 4395370c3bb2d97511d549a63813022fb8cac4b7
-ms.sourcegitcommit: c2c1269a81ffdcfc8675bcd9a8505b1a11ffb271
+ms.openlocfilehash: e9e27ef535dbd9e7197c323f7e49a9960aeff0f9
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/25/2020
-ms.locfileid: "82158279"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608352"
 ---
 # <a name="runtime-package-store"></a>运行时包存储区
 
@@ -114,7 +114,7 @@ dotnet publish --manifest manifest.xml
 
 ## <a name="specifying-target-manifests-in-the-project-file"></a>在项目文件中指定目标清单
 
-除了使用 [`dotnet publish`](../tools/dotnet-publish.md) 命令指定目标清单之外，还可以在项目文件中将目标清单指定为 \<TargetManifestFiles>  标记下的路径分号分隔列表。
+除了使用 [`dotnet publish`](../tools/dotnet-publish.md) 命令指定目标清单，还可以在项目文件中将目标清单指定为 \<TargetManifestFiles> 标记下的路径分号分隔列表。
 
 ```xml
 <PropertyGroup>
@@ -128,11 +128,11 @@ dotnet publish --manifest manifest.xml
 
 ASP.NET Core 隐式存储仅适用于 ASP.NET Core 2.0。 我们强烈建议应用程序使用 ASP.NET Core 2.1 及更高版本，这些版本不使用隐式存储  。 ASP.NET Core 2.1 及更高版本使用共享框架。
 
-对于 .NET Core 2.0，当 ASP.NET Core 应用部署为[依赖于运行时的部署](index.md#publish-runtime-dependent)应用时，该应用会隐式使用运行时包存储区功能。 [`Microsoft.NET.Sdk.Web`](https://github.com/aspnet/websdk) 中的目标包括引用目标系统上的隐式包存储区的清单。 另外，如果依赖于运行时的应用依赖 `Microsoft.AspNetCore.All` 包，则会生成仅包含应用及其资产的已发布应用，而不是 `Microsoft.AspNetCore.All` 元包中列出的包。 假定这些包都位于目标系统上。
+对于 .NET Core 2.0，当 ASP.NET Core 应用部署为[依赖框架的部署](index.md#publish-framework-dependent)应用时，该应用会隐式使用运行时包存储区功能。 [`Microsoft.NET.Sdk.Web`](https://github.com/aspnet/websdk) 中的目标包括引用目标系统上的隐式包存储区的清单。 另外，如果依赖框架的应用依赖 `Microsoft.AspNetCore.All` 包，则会生成仅包含应用及其资产的已发布应用，而不是 `Microsoft.AspNetCore.All` 元包中列出的包。 假定这些包都位于目标系统上。
 
 安装 .NET Core SDK 后，便会在主机上安装运行时包存储区。 其他安装程序可能会提供运行时包存储区，包括 .NET Core SDK 的 Zip/tarball 安装、`apt-get`、Red Hat Yum、.NET Core Windows Server Hosting 捆绑包和手动运行时包存储区安装。
 
-部署[依赖于运行时的部署](index.md#publish-runtime-dependent)应用时，请确保目标环境中已安装 .NET Core SDK。 如果应用程序部署环境中未安装 ASP.NET Core，可以在项目文件中指定将 \<PublishWithAspNetCoreTargetManifest>  设置为 `false`，从而选择退出隐式存储区，如以下示例所示：
+部署[从属框架部署](index.md#publish-framework-dependent)应用时，请确保目标环境中已安装 .NET Core SDK。 如果应用部署环境中未安装 ASP.NET Core，可以在项目文件中指定将 \<PublishWithAspNetCoreTargetManifest> 设置为 `false`，从而选择退出隐式存储区，如以下示例所示：
 
 ```xml
 <PropertyGroup>
@@ -141,7 +141,7 @@ ASP.NET Core 隐式存储仅适用于 ASP.NET Core 2.0。 我们强烈建议应�
 ```
 
 > [!NOTE]
-> 对于[独立部署](index.md#publish-self-contained)应用，假定目标系统不一定包含所需的清单包。 因此，对于独立应用，不能将 \<PublishWithAspNetCoreTargetManifest>  设置为 `true`。
+> 对于[独立部署](index.md#publish-self-contained)应用，假定目标系统不一定包含所需的清单包。 因此，对于自包含应用，不能将 \<PublishWithAspNetCoreTargetManifest> 设置为 `true`。
 
 ## <a name="see-also"></a>请参阅
 

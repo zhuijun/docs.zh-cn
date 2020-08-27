@@ -2,12 +2,12 @@
 title: 基类库的重大更改
 description: 列出核心 .NET 库中的重大更改。
 ms.date: 07/27/2020
-ms.openlocfilehash: c8eb5ec7d2bb1879a38a18337463230c7b731d29
-ms.sourcegitcommit: d3c09791297f0edc468a4849a5f11ef62e0e90fd
+ms.openlocfilehash: e0ebc054e0abccfe934b505a727060653fe313cd
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/12/2020
-ms.locfileid: "88137492"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720177"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>核心 .NET 库重大更改
 
@@ -17,6 +17,10 @@ ms.locfileid: "88137492"
 
 | 重大更改 | 引入的版本 |
 | - | :-: |
+| [引用程序集中的参数名称已更改](#parameter-names-changed-in-reference-assemblies) | 5.0 |
+| [在 Unix 上正确分析包含非 ASCII 字符的 URI 路径](#uri-paths-with-non-ascii-characters-parse-correctly-on-unix) | 5.0 |
+| [Unix 上 UNC 路径的 URI 识别](#uri-recognition-of-unc-paths-on-unix) | 5.0 |
+| [Environment.OSVersion 返回正确的操作系统版本](#environmentosversion-returns-the-correct-operating-system-version) | 5.0 |
 | [增加了 LINQ OrderBy.First{OrDefault} 的复杂度](#complexity-of-linq-orderbyfirstordefault-increased) | 5.0 |
 | [IntPtr 和 UIntPtr 实现 IFormattable](#intptr-and-uintptr-implement-iformattable) | 5.0 |
 | [PrincipalPermissionAttribute 已过时，报告为错误](#principalpermissionattribute-is-obsolete-as-error) | 5.0 |
@@ -46,6 +50,22 @@ ms.locfileid: "88137492"
 | [Process.StartInfo 对未启动的进程引发 InvalidOperationException](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE [reference-assembly-parameter-names](../../../includes/core-changes/corefx/5.0/reference-assembly-parameter-names.md)]
+
+***
+
+[!INCLUDE [non-ascii-chars-in-uri-parsed-correctly](../../../includes/core-changes/corefx/5.0/non-ascii-chars-in-uri-parsed-correctly.md)]
+
+***
+
+[!INCLUDE [unc-path-recognition-unix](../../../includes/core-changes/corefx/5.0/unc-path-recognition-unix.md)]
+
+***
+
+[!INCLUDE [environment-osversion-returns-correct-version](../../../includes/core-changes/corefx/5.0/environment-osversion-returns-correct-version.md)]
+
+***
 
 [!INCLUDE [orderby-firstordefault-complexity-increase](../../../includes/core-changes/corefx/5.0/orderby-firstordefault-complexity-increase.md)]
 

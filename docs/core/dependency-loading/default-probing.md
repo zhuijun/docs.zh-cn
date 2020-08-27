@@ -4,12 +4,12 @@ description: 用于定位依赖项的 .NET Core 的 System.Runtime.Loader.Assemb
 ms.date: 08/09/2019
 author: sdmaclea
 ms.author: stmaclea
-ms.openlocfilehash: 1e347c716c2d739a1bd03be056b57fdbda6c678f
-ms.sourcegitcommit: d9c7ac5d06735a01c1fafe34efe9486734841a72
+ms.openlocfilehash: 13ce4c7de5f6ce1b76b2e61db810c0f19717540f
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/06/2020
-ms.locfileid: "82859509"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608419"
 ---
 # <a name="default-probing"></a>默认探测
 
@@ -31,16 +31,18 @@ ms.locfileid: "82859509"
 
 ### <a name="how-are-the-properties-populated"></a>如何填充属性？
 
-填充属性有两个主要方案，具体取决于 \<myapp>.deps.json 文件是否存在  。
+填充属性有两个主要方案，具体取决于 \<myapp>.deps.json 文件是否存在。
 
 - 当 \*.deps.json 文件存在时，将对其进行分析以填充探测属性  。
 - 如果 \*.deps.json  文件不存在，则假定应用程序的目录以包含所有依赖项。 目录的内容用于填充探测属性。
 
 此外，也会对任何引用框架的 \*.deps.json  文件进行类似的分析。
 
-最后，可使用环境变量 `ADDITIONAL_DEPS` 添加其他依赖项。
+最后，可使用环境变量 `ADDITIONAL_DEPS` 添加其他依赖项。  `dotnet.exe` 还包含一个 `--additional-deps` 可选参数，用于在应用程序启动时设置此值。
 
 默认不会填充 `APP_PATHS` 和 `APP_NI_PATHS` 属性，大多数应用程序都省略了它们。
+
+可以通过 `System.AppContext.GetData("APP_CONTEXT_DEPS_FILES")` 访问应用程序使用的所有 \*.deps.json 文件的列表。
 
 ### <a name="how-do-i-see-the-probing-properties-from-managed-code"></a>如何查看托管代码中的探测属性？
 

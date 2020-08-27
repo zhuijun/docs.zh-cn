@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - parallelism, task
 ms.assetid: 458b5e69-5210-45e5-bc44-3888f86abd6f
-ms.openlocfilehash: f7cb42c8982cb6a704b39730a4f7aa0ce781d506
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 968da880fc7e0e811f5e8712ccb43726426a019e
+ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446374"
+ms.lasthandoff: 08/21/2020
+ms.locfileid: "88720158"
 ---
 # <a name="task-based-asynchronous-programming"></a>基于任务的异步编程
 

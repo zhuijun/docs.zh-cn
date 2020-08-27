@@ -2,12 +2,12 @@
 title: dotnet publish 命令
 description: dotnet publish 命令可将 .NET Core 项目或解决方案发布到目录。
 ms.date: 02/24/2020
-ms.openlocfilehash: 4ff49452e4d941b3e06ad511507b1dc429ab459f
-ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+ms.openlocfilehash: 45bf8504fd882286041794d27ecb56464fc8d13d
+ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88187977"
+ms.lasthandoff: 08/20/2020
+ms.locfileid: "88656660"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -123,7 +123,7 @@ dotnet publish -p:PublishProfile=FolderProfile
 
   指定输出目录的路径。
   
-  如果未指定，则默认为依赖于运行时的可执行文件和跨平台二进制文件的路径 [project_file_folder]./bin/[configuration]/[framework]/publish/。 默认为独立的可执行文件路径 [project_file_folder]/bin/[configuration]/[framework]/[runtime]/publish/。
+  如果未指定，则默认为依赖框架的可执行文件和跨平台二进制文件的路径 [project_file_folder]./bin/[configuration]/[framework]/publish/。 默认为独立的可执行文件路径 [project_file_folder]/bin/[configuration]/[framework]/[runtime]/publish/。
 
   在 Web 项目中，如果输出文件夹位于项目文件夹，则连续的 `dotnet publish` 命令将产生嵌套的输出文件夹。 例如，如果项目文件夹是“myproject”，发布输出文件夹是“myproject/publish”，并且运行 `dotnet publish` 两次，则第二次运行会将“.config”和“.json”等内容文件放入“myproject/publish/publish”    。 若要避免嵌套发布文件夹，请指定一个不在项目文件夹正下方的发布文件夹，或从项目中排除发布文件夹。 若要排除名为“publishoutput”的发布文件夹，请将以下元素添加到“.csproj”文件中的 `PropertyGroup` 元素中 ：
 
@@ -159,7 +159,7 @@ dotnet publish -p:PublishProfile=FolderProfile
 
 - **`-p:PublishTrimmed=true`**
 
-  在发布自包含的可执行文件时，剪裁未使用的库以减小应用的部署大小。 有关详细信息，请参阅[剪裁自包含部署和可执行文件](../deploying/trim-self-contained.md)。 自 .NET Core 3.0 SDK 起可用。
+  在发布自包含的可执行文件时，剪裁未使用的库以减小应用的部署大小。 有关详细信息，请参阅[剪裁自包含部署和可执行文件](../deploying/trim-self-contained.md)。 从 .NET Core 3.0 开始，SDK 作为预览功能提供。
 
   建议在发布配置文件中而不是在命令行中指定此选项。 有关详细信息，请参阅 [MSBuild](#msbuild)。
 
@@ -187,13 +187,13 @@ dotnet publish -p:PublishProfile=FolderProfile
 
 ## <a name="examples"></a>示例
 
-- 为当前目录中的项目创建一个 [依赖于运行时的跨平台二进制文件](../deploying/index.md#produce-a-cross-platform-binary)：
+- 为当前目录中的项目创建一个[依赖框架的跨平台二进制文件](../deploying/index.md#produce-a-cross-platform-binary)：
 
   ```dotnetcli
   dotnet publish
   ```
 
-  自 .NET Core 3.0 SDK 起，此示例还为当前平台创建[依赖于运行时的可执行文件](../deploying/index.md#publish-runtime-dependent)。
+  自 .NET Core 3.0 SDK 起，此示例还为当前平台创建[依赖框架的可执行文件](../deploying/index.md#publish-framework-dependent)。
 
 - 针对特定运行时，为当前目录中的项目创建[独立可执行文件](../deploying/index.md#publish-self-contained)：
 
@@ -203,7 +203,7 @@ dotnet publish -p:PublishProfile=FolderProfile
 
   项目文件中必须包含 RID。
 
-- 针对特定平台，为当前目录中的项目创建[依赖于运行时的可执行文件](../deploying/index.md#publish-runtime-dependent)：
+- 针对特定平台，为当前目录中的项目创建[依赖框架的可执行文件](../deploying/index.md#publish-framework-dependent)：
 
   ```dotnetcli
   dotnet publish --runtime osx.10.11-x64 --self-contained false

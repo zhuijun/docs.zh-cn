@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 9f553e9af16be0891f208832c5daa444a1b736e2
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: bf712e88d96a5c2c80c3ff50283d44e9c7717abb
+ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281506"
+ms.lasthandoff: 08/19/2020
+ms.locfileid: "88608218"
 ---
 # <a name="whats-new-in-net-core-30"></a>.NET Core 3.0 的新增功能
 
@@ -54,7 +54,7 @@ C# 8.0 也是该发布的一部分，包含[可为空引用类型](../../csharp/
 
 ### <a name="default-executables"></a>默认可执行文件
 
-.NET Core 现在默认生成[依赖于运行时的可执行文件](../deploying/index.md#publish-runtime-dependent)。 对于使用全局安装的 .NET Core 版本的应用程序而言，这是一种新行为。 以前，仅[独立部署](../deploying/index.md#publish-self-contained)会生成可执行文件。
+.NET Core 现在默认生成[依赖于框架的可执行文件](../deploying/index.md#publish-framework-dependent)。 对于使用全局安装的 .NET Core 版本的应用程序而言，这是一种新行为。 以前，仅[独立部署](../deploying/index.md#publish-self-contained)会生成可执行文件。
 
 在 `dotnet build` 或 `dotnet publish` 期间，将创建一个与你使用的 SDK 的环境和平台相匹配的可执行文件（即 appHost）。 和其他本机可执行文件一样，可以使用这些可执行文件执行相同操作，例如：
 
@@ -69,7 +69,7 @@ C# 8.0 也是该发布的一部分，包含[可为空引用类型](../../csharp/
 
 启用 appHost 设置后，.NET Core 在生成或发布时将生成本机 Mach-O 可执行文件。 如果使用 `dotnet run` 命令从源代码中运行应用，或通过启动 Mach-O 可执行文件直接运行应用，则应用会在 appHost 的上下文中运行。
 
-如果没有 appHost，用户就只能使用 `dotnet <filename.dll>` 命令启动[依赖于运行时](../deploying/index.md#publish-runtime-dependent)的应用。 发布[独立](../deploying/index.md#publish-self-contained)应用时，始终会创建 appHost。
+如果没有 appHost，用户就只能使用 `dotnet <filename.dll>` 命令启动[依赖框架](../deploying/index.md#publish-framework-dependent)的应用。 发布[独立](../deploying/index.md#publish-self-contained)应用时，始终会创建 appHost。
 
 可以在项目级别配置 appHost，或通过 `-p:UseAppHost` 参数切换特定 `dotnet` 命令的 appHost：
 
