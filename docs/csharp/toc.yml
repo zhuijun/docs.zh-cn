@@ -299,38 +299,25 @@
         - name: 概述
           displayName: programming concepts
           href: programming-guide/concepts/index.md
-        - name: 使用 Async 和 Await 的异步编程
+        - name: 异步编程
+          displayName: 'async, await, asynchronous programming, task, cancellation'
           items:
             - name: 概述
               displayName: asynchronous programming
               href: programming-guide/concepts/async/index.md
             - name: 异步编程模型
               href: programming-guide/concepts/async/task-asynchronous-programming-model.md
-            - name: 演练：使用 Async 和 Await 访问 Web
-              href: programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md
-            - name: 如何使用 Task.WhenAll 扩展异步演练
-              href: programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md
-            - name: 如何使用 Async 和 Await 并行发起多个 Web 请求
-              href: programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md
             - name: 异步返回类型
               href: programming-guide/concepts/async/async-return-types.md
-            - name: 异步程序中的控制流
-              href: programming-guide/concepts/async/control-flow-in-async-programs.md
-            - name: 取消任务和处理已完成任务
+            - name: 取消任务
               items:
-                - name: 概述
-                  href: programming-guide/concepts/async/fine-tuning-your-async-application.md
-                - name: 取消一个异步任务或一组任务
+                - name: 取消任务列表
                   href: programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md
-                - name: 一段时间后取消异步任务
+                - name: 在一段时间后取消任务
                   href: programming-guide/concepts/async/cancel-async-tasks-after-a-period-of-time.md
-                - name: 在完成一个异步任务后取消剩余任务
-                  href: programming-guide/concepts/async/cancel-remaining-async-tasks-after-one-is-complete.md
-                - name: 启动多个异步任务并在其完成时进行处理
-                  href: programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md
-            - name: 处理异步应用程序中的可重入性
-              href: programming-guide/concepts/async/handling-reentrancy-in-async-apps.md
-            - name: 使用 Async 以进行文件访问
+            - name: 在异步任务完成时对其进行处理
+              href: programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md
+            - name: 异步文件访问
               href: programming-guide/concepts/async/using-async-for-file-access.md
         - name: 属性
           items:
@@ -1341,7 +1328,7 @@
                   href: language-reference/keywords/private.md
                 - name: protected
                   href: language-reference/keywords/protected.md
-                - name: public
+                - name: 公共
                   href: language-reference/keywords/public.md
                 - name: 受保护的内部
                   href: language-reference/keywords/protected-internal.md
@@ -1477,7 +1464,7 @@
               href: language-reference/keywords/this.md
         - name: 文字关键字
           items:
-            - name: 'null'
+            - name: 'Null'
               href: language-reference/keywords/null.md
             - name: true 和 false
               href: language-reference/builtin-types/bool.md
