@@ -1,30 +1,21 @@
 ---
-title: F# Interactive (fsi.exe) 参考
-description: 了解如何使用 F# Interactive (fsi.exe) 在控制台以交互方式运行 F# 代码，或执行 F# 脚本。
-ms.date: 05/16/2016
+title: F# 交互窗口 (dotnet) 引用
+description: 了解如何使用 F# 交互窗口 (dotnet fsi) 在控制台以交互方式运行 F# 代码，或执行 F# 脚本。
+ms.date: 08/20/2020
 f1_keywords:
 - VS.ToolsOptionsPages.F#_Tools.F#_Interactive
-ms.openlocfilehash: 8bb1563ad34e65101fb9f09d6e347278e4b0de78
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 760b096c8a3ee0d495b893ab66fa6f9007cdbbf9
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87854940"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867615"
 ---
 # <a name="interactive-programming-with-f"></a>使用 F\# 进行交互式编程
 
-> [!NOTE]
-> 本文目前仅介绍适用于 Windows 的体验。
+使用 F# 交互窗口 (dotnet fsi) 在控制台以交互方式运行 F# 代码，或执行 F# 脚本。 换句话说，F# Interactive 对 F# 语言执行 REPL（读取、计算、打印循环）。
 
-F# Interactive (fsi.exe) 用于在控制台以交互方式运行 F# 代码，或执行 F# 脚本。 换句话说，F# Interactive 对 F# 语言执行 REPL（读取、计算、打印循环）。
-
-若要从控制台运行 F# Interactive，请运行 fsi.exe。 fsi.exe 按以下方式运行：
-
-```console
-C:\Program Files (x86)\Microsoft Visual Studio\2019\<sku>\Common7\IDE\CommonExtensions\Microsoft\FSharp
-```
-
-其中，`sku` 为 `Community`、`Professional` 或 `Enterprise`。
+若要从控制台运行 F# 交互窗口，请运行 `dotnet fsi`。 你将在任何 .NET SDK 中找到 `dotnet fsi`。
 
 有关可用命令行选项的信息，请参阅 [F# Interactive 选项](../../language-reference/fsharp-interactive-options.md)。
 
@@ -44,7 +35,7 @@ F# Interactive 试图编译代码，如果成功，它将执行代码并打印�
 
 ## <a name="scripting-with-f"></a>使用 F 编写脚本\#
 
-脚本使用 **.fsx** 或 **.fsscript** 文件扩展名。 可以不编译源代码再运行编译的程序集，而仅运行 **fsi.exe** 并指定 F# 源代码脚本的文件名，F# Interactive 会实时读取并执行代码。
+脚本使用 **.fsx** 或 **.fsscript** 文件扩展名。 可以不编译源代码再运行编译的程序集，仅运行 dotnet fsi 并指定 F# 源代码脚本的文件名，F# 交互窗口会实时读取并执行代码。
 
 ## <a name="differences-between-the-interactive-scripting-and-compiled-environments"></a>交互式、脚本编写和编译环境之间的差异
 
@@ -92,6 +83,36 @@ Command line arguments:
 file1.fsx
 test
 90
+```
+
+## <a name="package-management-in-f-interactive"></a>F# 交互窗口中的包管理
+
+[!NOTE] 包管理可作为 `3.1.300` 和更高版本的 .NET SDK 随附的 `dotnet fsi` 版本以及所有 `5.*` 版本 .NET SDK 中的预览功能。 若要在此预览版本中启用它，请使用 `--langversion:preview` 参数运行 `dotnet fsi`。
+
+用于在 F# 交互窗口中引用 DLL 的 `#r` 语法还可通过以下语法用于引用 nuget 包：
+
+```fsharp
+#r "nuget: <package name>
+```
+
+例如，要引用 `FSharp.Data` 包，请使用以下 `#r` 引用：
+
+```fsharp
+#r "nuget: FSharp.Data"
+```
+
+执行此行后，最新版本的 `FSharp.Data` 包将下载到 nuget 缓存并在当前 F# 交互窗口会话中引用。
+
+除了包名称外，还可以通过短语法引用包的特定版本：
+
+```fsharp
+#r "nuget: FSharp.Data, 3.3.2"
+```
+
+或者以更明确的方式引用：
+
+```fsharp
+#r "nuget: FSharp.Data, Version=3.3.2"
 ```
 
 ## <a name="related-articles"></a>相关文章
