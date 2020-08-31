@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: abda23ea538c2c0da6ada4f359ce745602dca45d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e0b769d7bb6b336d226cd48de1932524c4d7e74d
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84279758"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811062"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>如何在 .NET 中编写用于 JSON 序列化（封送）的自定义转换器
 
@@ -93,7 +93,7 @@ ms.locfileid: "84279758"
 
 如果需要在错误处理代码中引发异常，请考虑在不使用消息的情况下引发 <xref:System.Text.Json.JsonException>。 此异常类型会自动创建消息，其中包括导致错误的 JSON 部分的路径。 例如，语句 `throw new JsonException();` 会生成如以下示例的错误消息：
 
-```
+```output
 Unhandled exception. System.Text.Json.JsonException:
 The JSON value could not be converted to System.Object.
 Path: $.Date | LineNumber: 1 | BytePositionInLine: 37.

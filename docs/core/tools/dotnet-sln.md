@@ -2,12 +2,12 @@
 title: dotnet sln 命令
 description: 使用 dotnet-sln 命令，可以便捷地在解决方案文件中添加、删除和列出项目。
 ms.date: 02/14/2020
-ms.openlocfilehash: 231287477d986f9ec4a5404cc5278e76c297faa4
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: efe52f64a29c8825070bae9ee96b430b32176ffa
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463401"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053026"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
@@ -180,7 +180,7 @@ dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
 - 使用 globbing 模式（仅限 Windows PowerShell）将多个 C# 项目添加到解决方案中：
 
   ```dotnetcli
-  dotnet sln todo.sln add (ls **/*.csproj)
+  dotnet sln todo.sln add (ls -r **/*.csproj)
   ```
 
 - 使用 glob 模式（仅限 Unix/Linux）将多个 C# 项目从解决方案中删除：
@@ -192,5 +192,5 @@ dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
 - 使用 globbing 模式（仅限 Windows PowerShell）将多个 C# 项目从解决方案中删除：
 
   ```dotnetcli
-  dotnet sln todo.sln remove (ls **/*.csproj)
+  dotnet sln todo.sln remove (ls -r **/*.csproj)
   ```

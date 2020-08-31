@@ -1,15 +1,16 @@
 ---
+description: in（泛型修饰符） - C# 参考
 title: in（泛型修饰符） - C# 参考
 ms.date: 07/20/2015
 helpviewer_keywords:
 - contravariance, in keyword [C#]
 - in keyword [C#]
-ms.openlocfilehash: 57da13f6dc6719166b9051afeb2532ba5fbeff3a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: feae17be7bdf29f6bc90e8c85b3878d4714699f4
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713477"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118450"
 ---
 # <a name="in-generic-modifier-c-reference"></a>in（泛型修饰符）（C# 参考）
 
@@ -41,7 +42,7 @@ ms.locfileid: "75713477"
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [out](out-generic-modifier.md)
 - [协变和逆变](../../programming-guide/concepts/covariance-contravariance/index.md)

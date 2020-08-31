@@ -1,4 +1,5 @@
 ---
+description: if-else - C# 参考
 title: if-else - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - else keyword [C#]
 - if keyword [C#]
 ms.assetid: d9a1d562-8cf5-4bd4-9ba7-8ad970cd25b2
-ms.openlocfilehash: 61b60674d3b5de4649a52d2a165265ae0a27e0be
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: e2de84807a049bd47ea277db9fb010d0c2e4857d
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81738855"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118502"
 ---
 # <a name="if-else-c-reference"></a>if-else（C# 参考）
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 44d33fb28e66e590e4604c6dd2c73616e4c5e943
-ms.sourcegitcommit: 7370aa8203b6036cea1520021b5511d0fd994574
+ms.openlocfilehash: 47f42305f4106f5e05e555a859f13c41bb950519
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/02/2020
-ms.locfileid: "82728297"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811250"
 ---
 ### <a name="http-httpclient-instances-created-by-ihttpclientfactory-log-integer-status-codes"></a>HTTP：IHttpClientFactory 创建的 HttpClient 实例记录整数状态代码
 
@@ -18,7 +18,7 @@ ms.locfileid: "82728297"
 
 日志记录使用 HTTP 状态代码的文本说明。 考虑以下日志消息：
 
-```
+```output
 Received HTTP response after 56.0044ms - OK
 End processing HTTP request after 70.0862ms - OK
 ```
@@ -27,7 +27,7 @@ End processing HTTP request after 70.0862ms - OK
 
 日志记录使用 HTTP 状态代码的整数值。 考虑以下日志消息：
 
-```
+```output
 Received HTTP response after 56.0044ms - 200
 End processing HTTP request after 70.0862ms - 200
 ```

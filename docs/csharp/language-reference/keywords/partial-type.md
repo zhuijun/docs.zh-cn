@@ -1,4 +1,5 @@
 ---
+description: 分部类型 - C# 参考
 title: 分部类型 - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,22 +8,22 @@ f1_keywords:
 helpviewer_keywords:
 - partial types [C#]
 ms.assetid: 27320743-a22e-4c7b-b0b3-53afe3607334
-ms.openlocfilehash: 551145b9cdf5fa24f3ae365665e8ff06cf5e9307
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8ae98805eea7231e3a15cb74e636313e796796a2
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715212"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89117982"
 ---
 # <a name="partial-type-c-reference"></a>分部类型（C# 参考）
 
 通过分部类型可以定义要拆分到多个文件中的类、结构或接口。
 
-在 File1.cs 中  ：
+在 File1.cs 中：
 
 [!code-csharp[csrefKeywordsContextual#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#3)]  
 
-在 File2.cs 中  ，声明：
+在 File2.cs 中，声明：
 
 [!code-csharp[csrefKeywordsContextual#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#4)]  
 
@@ -34,7 +35,7 @@ ms.locfileid: "75715212"
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)

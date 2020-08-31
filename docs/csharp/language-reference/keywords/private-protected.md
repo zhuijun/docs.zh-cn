@@ -1,15 +1,16 @@
 ---
+description: private protected - C# 参考
 title: private protected - C# 参考
 ms.date: 11/15/2017
 f1_keywords:
 - privateprotected_CSharpKeyword
 author: sputier
-ms.openlocfilehash: 94ef55d7e13841f81b036f52659b215e22a3a0d7
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: d83fd2a570b735a029bd2a79ad24e30d235dc5fb
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301796"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89117956"
 ---
 # <a name="private-protected-c-reference"></a>private protected（C# 参考）
 

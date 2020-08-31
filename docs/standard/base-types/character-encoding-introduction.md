@@ -10,12 +10,12 @@ dev_langs:
 - csharp
 helpviewer_keywords:
 - encoding, understanding
-ms.openlocfilehash: a5d838176bf4437a295ebe6c2cea8b1fe0eeeb61
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: d1f9878c7e7c07944a943c0b05e557ceaa5d1b2f
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656288"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812115"
 ---
 # <a name="character-encoding-in-net"></a>.NET 中的字符编码
 
@@ -89,7 +89,7 @@ s[16] = '�' ('\udcdf')
 
 单个 Unicode 表情符号也由两个 `char` 表示，如以下示例中所示的 ox 表情符号：
 
-```
+```output
 "🐂".Length = 2
 s[0] = '�' ('\ud83d')
 s[1] = '�' ('\udc02')

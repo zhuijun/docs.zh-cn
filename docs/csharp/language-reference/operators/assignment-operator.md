@@ -1,4 +1,5 @@
 ---
+description: 赋值运算符 - C# 参考
 title: 赋值运算符 - C# 参考
 ms.date: 09/10/2019
 f1_keywords:
@@ -6,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 7b4f3b3f4d6b697903461f08435552f2df36bfe4
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 3df118143b692cc8655de31cce23af41f7da125c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916933"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89117878"
 ---
 # <a name="assignment-operators-c-reference"></a>赋值运算符（C# 参考）
 

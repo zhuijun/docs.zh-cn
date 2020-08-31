@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 4390f46492ada4b15d187be4c43a4f7865f64a80
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 11de13a6674411bbad52678b59879ed26366e0f1
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916968"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811049"
 ---
 # <a name="how-to-migrate-from-no-locnewtonsoftjson-to-no-locsystemtextjson"></a>如何从 Newtonsoft.Json 迁移到 System.Text.Json
 
@@ -147,7 +147,7 @@ ms.locfileid: "87916968"
 
 用单引号括起来的值会导致 [JsonException](xref:System.Text.Json.JsonException)，并出现以下消息：
 
-```
+```output
 ''' is an invalid start of a value.
 ```
 
@@ -174,7 +174,7 @@ public class ExampleClass
 
 `System.Text.Json` 不将非字符串值反序列化为字符串属性。 字符串字段接收的非字符串值会导致 [JsonException](xref:System.Text.Json.JsonException)，并出现以下消息：
 
-```
+```output
 The JSON value could not be converted to System.String.
 ```
 

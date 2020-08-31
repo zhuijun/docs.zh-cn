@@ -1,15 +1,16 @@
 ---
+description: in 参数修饰符 - C# 参考
 title: in 参数修饰符 - C# 参考
 ms.date: 03/19/2020
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-ms.openlocfilehash: 20956f9e25b6830a8876824a4c9dad1dbc4c4f3e
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 613be9248e6ce9b974bcab1b59abd30469e9e180
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80249365"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118399"
 ---
 # <a name="in-parameter-modifier-c-reference"></a>in 参数修饰符（C# 参考）
 

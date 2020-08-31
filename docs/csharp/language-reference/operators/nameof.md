@@ -1,4 +1,5 @@
 ---
+description: nameof 表达式 - C# 参考
 title: nameof 表达式 - C# 参考
 ms.date: 04/23/2020
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - nameof expression [C#]
 ms.assetid: 33601bf3-cc2c-4496-846d-f9679bccf2a7
-ms.openlocfilehash: b00c5f6f97d27290fb3773dcbb422bf9fb4c425b
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 04109cde2a1f9146bf9bb44f301272808797ded0
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916772"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118307"
 ---
 # <a name="nameof-expression-c-reference"></a>nameof 表达式（C# 参考）
 
