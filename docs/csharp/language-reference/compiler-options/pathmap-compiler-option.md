@@ -1,4 +1,5 @@
 ---
+description: -pathmap（C# 编译器选项）
 title: -pathmap（C# 编译器选项）
 ms.date: 05/16/2018
 f1_keywords:
@@ -7,16 +8,16 @@ helpviewer_keywords:
 - -pathmap compiler option [C#]
 - pathmap compiler option [C#]
 - /pathmap compiler option [C#]
-ms.openlocfilehash: 48e96d2ec2ccbea83d573c0eb3630b1591c407a9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 707a37c6946cfcaf429552f0aeece6b87f3ad71d
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606625"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125002"
 ---
 # <a name="-pathmap-c-compiler-options"></a>-pathmap（C# 编译器选项）
 
- -pathmap 编译器选项指定如何将物理路径映射到编译器输出的源路径名称。
+****-pathmap 编译器选项指定如何将物理路径映射到编译器输出的源路径名称。
 
 ## <a name="syntax"></a>语法
 
@@ -24,7 +25,7 @@ ms.locfileid: "69606625"
 -pathmap:path1=sourcePath1,path2=sourcePath2
 ```
 
-## <a name="arguments"></a>参数
+## <a name="arguments"></a>自变量
 
  `path1` 当前环境中源文件的完整路径
 
@@ -44,7 +45,7 @@ ms.locfileid: "69606625"
 
 ## <a name="example"></a>示例
 
-在目录 C:\\work\\tests 中编译 `t.cs` 并将该目录映射到输出中的 \publish：
+在目录 C:\\work\\tests**** 中编译 `t.cs` 并将该目录映射到输出中的 \publish****：
 
 ```console
 csc -pathmap:C:\work\tests=\publish t.cs

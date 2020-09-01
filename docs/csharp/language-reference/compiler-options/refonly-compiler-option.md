@@ -1,4 +1,5 @@
 ---
+description: -refonly（C# 编译器选项）
 title: -refonly（C# 编译器选项）
 ms.date: 07/08/2017
 f1_keywords:
@@ -7,16 +8,16 @@ helpviewer_keywords:
 - /refonly compiler option [C#]
 - -refonly compiler option [C#]
 - refonly compiler option [C#]
-ms.openlocfilehash: 856b65d3b2217dbe5d53ecda00723b47247d80a4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f9a92462203bedff93a4a711ca8742465b7a561c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72773855"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89124742"
 ---
 # <a name="-refonly-c-compiler-options"></a>-refonly（C# 编译器选项）
 
--refonly 选项表示应输出引用程序集（而不是实现程序集）作为主输出  。 `-refonly` 参数以无提示方式禁用输出 PDB，因为无法执行引用程序集。 此选项对应于 MSBuild 的 [ProduceOnlyReferenceAssembly](/visualstudio/msbuild/common-msbuild-project-properties) 项目属性。
+-refonly 选项表示应输出引用程序集（而不是实现程序集）作为主输出****。 `-refonly` 参数以无提示方式禁用输出 PDB，因为无法执行引用程序集。 此选项对应于 MSBuild 的 [ProduceOnlyReferenceAssembly](/visualstudio/msbuild/common-msbuild-project-properties) 项目属性。
 
 ## <a name="syntax"></a>语法
 
@@ -30,7 +31,7 @@ ms.locfileid: "72773855"
 
 `-refonly` 和 [`-refout`](refout-compiler-option.md) 选项互斥。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编译器选项](./index.md)
 - [管理项目和解决方案属性](/visualstudio/ide/managing-project-and-solution-properties)

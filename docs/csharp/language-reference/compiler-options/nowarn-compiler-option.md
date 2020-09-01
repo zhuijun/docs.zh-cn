@@ -1,4 +1,5 @@
 ---
+description: -nowarn（C# 编译器选项）
 title: -nowarn（C# 编译器选项）
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - /nowarn compiler option [C#]
 - -nowarn compiler option [C#]
 ms.assetid: 6dcbc5e8-ae67-4566-9df3-f63cfdd9c4e4
-ms.openlocfilehash: fa3079bf1431ba1a16b5a2eef0dd5500fe95909c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ab906912bc4bfab40e459c92a823b915240b8d55
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606614"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125080"
 ---
 # <a name="-nowarn-c-compiler-options"></a>-nowarn（C# 编译器选项）
-使用 -nowarn 选项可以禁止编译器显示一个或多个警告  。 使用逗号分隔多个警告编号。  
+使用 -nowarn 选项可以禁止编译器显示一个或多个警告。 使用逗号分隔多个警告编号。  
   
 ## <a name="syntax"></a>语法  
   
@@ -24,8 +25,8 @@ ms.locfileid: "69606614"
 -nowarn:number1[,number2,...]  
 ```  
   
-## <a name="arguments"></a>参数  
- `number1`， `number2`  
+## <a name="arguments"></a>自变量  
+ `number1`, `number2`  
  希望编译器禁止显示的警告编号。  
   
 ## <a name="remarks"></a>备注  
@@ -43,11 +44,11 @@ ms.locfileid: "69606614"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>在 Visual Studio 开发环境中设置此编译器选项  
   
-1. 打开项目的“属性”  页。 有关详细信息，请参阅[“项目设计器”->“生成”页 (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)。  
+1. 打开项目的“属性” **** 页。 有关详细信息，请参阅[“项目设计器”->“生成”页 (C#)](/visualstudio/ide/reference/build-page-project-designer-csharp)。  
   
-2. 单击“生成”  属性页。  
+2. 单击“生成”**** 属性页。  
   
-3. 修改“禁止显示警告”  属性。  
+3. 修改“禁止显示警告”**** 属性。  
   
  有关如何以编程方式设置此编译器选项的信息，请参阅 <xref:VSLangProj80.ProjectProperties3.DelaySign%2A>。  
   

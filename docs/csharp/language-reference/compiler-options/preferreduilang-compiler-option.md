@@ -1,4 +1,5 @@
 ---
+description: -preferreduilang（C# 编译器选项）
 title: -preferreduilang（C# 编译器选项）
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - /preferreduilang compiler option [C#]
 - -preferreduilang compiler option [C#]
 ms.assetid: 68b2462f-6778-48d7-8052-62805fe8e02c
-ms.openlocfilehash: 7ebafcf446c9033c93e0c5fa5e11ea2930bd2e1e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f68652e910651ab5c4184376d9eb7729303382d9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69602555"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89124846"
 ---
 # <a name="-preferreduilang-c-compiler-options"></a>-preferreduilang（C# 编译器选项）
 通过使用 `-preferreduilang` 编译器选项，可指定 C# 编译器显示输出的语言，如错误消息。  
@@ -24,7 +25,7 @@ ms.locfileid: "69602555"
 -preferreduilang: language  
 ```  
   
-## <a name="arguments"></a>参数  
+## <a name="arguments"></a>自变量  
  `language`  
  用于编译器输出的语言的[语言名称](/windows/desktop/Intl/language-names)。  
   

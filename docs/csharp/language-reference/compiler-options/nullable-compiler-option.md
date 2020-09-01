@@ -1,4 +1,5 @@
 ---
+description: -nullable（C# 编译器选项）
 title: -nullable（C# 编译器选项）
 author: IEvangelist
 ms.author: dapine
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - nullable compiler option [C#]
 - /nullable compiler option [C#]
 - -nullable compiler option [C#]
-ms.openlocfilehash: f1aba7e08f472411640d42f51d78ca6f7e5cc900
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: f9c6c204d2563865f741c6ddb4644eb56f956c12
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100881"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125041"
 ---
 # <a name="-nullable-c-compiler-options"></a>-nullable（C# 编译器选项）
 
