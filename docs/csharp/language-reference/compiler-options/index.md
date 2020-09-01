@@ -1,4 +1,5 @@
 ---
+description: C# 编译器选项
 title: C# 编译器选项
 ms.date: 07/20/2015
 f1_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - Visual C# compiler
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
-ms.openlocfilehash: 787f9c5fff79eb67e2d74043782532c1fc4034b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bcb246055ecb553bbefad2a0d5c95bf6a083ee6f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73972753"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125522"
 ---
 # <a name="c-compiler-options"></a>C# 编译器选项
 
@@ -23,13 +24,13 @@ ms.locfileid: "73972753"
 
 每个编译器选项均有两种形式： **-option** 和 **/option**。 此文档仅介绍 **-option** 形式。
 
-在 Visual Studio 中，可在 web.config 文件中设置编译器选项。  有关详细信息，请参阅 [\<compiler> 元素](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)。
+在 Visual Studio 中，可在 web.config 文件中设置编译器选项。 有关详细信息，请参阅 [\<compiler> 元素](../../../framework/configure-apps/file-schema/compiler/compiler-element.md)。
 
-## <a name="in-this-section"></a>本节内容
+## <a name="in-this-section"></a>在本节中
 
 - [使用 csc.exe 的命令行生成](command-line-building-with-csc-exe.md) 有关从命令行生成 Visual C# 应用程序的信息。
 
-- [如何为 Visual Studio 命令行设置环境变量](how-to-set-environment-variables-for-the-visual-studio-command-line.md) 提供运行 vsvars32.bat  以启用命令行生成的步骤。
+- [如何为 Visual Studio 命令行设置环境变量](how-to-set-environment-variables-for-the-visual-studio-command-line.md) 提供运行 vsvars32.bat** 以启用命令行生成的步骤。
 
 - [按类别列出的 C# 编译器选项](listed-by-category.md) 编译器选项的分类列表。
 

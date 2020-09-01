@@ -1,4 +1,5 @@
 ---
+description: -highentropyva（C# 编译器选项）
 title: -highentropyva（C# 编译器选项）
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - -highentropyva compiler option [C#]
 - highentropyva compiler option [C#]
 ms.assetid: eaf409b3-384e-49dd-9417-62453658f421
-ms.openlocfilehash: b710bb829f6a7591159d2f2e6bacc670d21c42d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2c2e2780693a89072c4bb55b318be94089bf3ced
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606849"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125652"
 ---
 # <a name="-highentropyva-c-compiler-options"></a>-highentropyva（C# 编译器选项）
--highentropyva 编译器选项可向 Windows 内核提供下列信息：特定的可执行文件是否支持高熵地址空间布局随机化 (ASLR)  。  
+-highentropyva 编译器选项可向 Windows 内核提供下列信息：特定的可执行文件是否支持高熵地址空间布局随机化 (ASLR)****。  
   
 ## <a name="syntax"></a>语法  
   
@@ -24,11 +25,11 @@ ms.locfileid: "69606849"
 -highentropyva[+ | -]  
 ```  
   
-## <a name="arguments"></a>参数  
+## <a name="arguments"></a>自变量  
  `+` &#124; `-`  
- 此选项指定 64 位可执行文件或由 [-platform:anycpu](./platform-compiler-option.md) 编译器选项标记的可执行文件支持高熵虚拟地址空间。 默认情况下，此选项处于禁用状态。 通过 -highentropyva+ 或 -highentropyva 启用它   。  
+ 此选项指定 64 位可执行文件或由 [-platform:anycpu](./platform-compiler-option.md) 编译器选项标记的可执行文件支持高熵虚拟地址空间。 默认情况下，此选项处于禁用状态。 通过 -highentropyva+ 或 -highentropyva 启用它********。  
   
 ## <a name="remarks"></a>备注  
- 当随机化进程的地址空间布局包含在 ASLR 中时，-highentropyva 选项允许 Windows 内核的兼容版本使用更高程度的熵  。 使用更高程度的熵意味着，可向内存区域（例如堆栈或堆）分配更多的地址。 因此，猜测特定内存区域的位置会更加困难。  
+ 当随机化进程的地址空间布局包含在 ASLR 中时，-highentropyva 选项允许 Windows 内核的兼容版本使用更高程度的熵****。 使用更高程度的熵意味着，可向内存区域（例如堆栈或堆）分配更多的地址。 因此，猜测特定内存区域的位置会更加困难。  
   
- 指定 -highentropyva 编译器选项时，目标可执行文件及其依赖的任何模块在作为 64 位进程运行时，必须能够处理大于 4 GB 的指针值  。
+ 指定 -highentropyva 编译器选项时，目标可执行文件及其依赖的任何模块在作为 64 位进程运行时，必须能够处理大于 4 GB 的指针值****。

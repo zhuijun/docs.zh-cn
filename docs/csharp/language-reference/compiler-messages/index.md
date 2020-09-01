@@ -1,4 +1,5 @@
 ---
+description: C# 编译器错误
 title: C# 编译器错误
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -6,12 +7,12 @@ helpviewer_keywords:
 - Visual C# compiler, errors
 - errors [C#]
 ms.assetid: 57262ab1-6c50-4f9c-81ad-9fba48477416
-ms.openlocfilehash: af1ec49e6c7eb94c4e324b947e8ead8149d0a997
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a7c0290c799a7ae4a371578396d2d2d747d00d28
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "72771880"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89126237"
 ---
 # <a name="c-compiler-errors"></a>C# 编译器错误
 
@@ -19,9 +20,9 @@ ms.locfileid: "72771880"
   
 - 在[输出窗口](/visualstudio/ide/reference/output-window)中找到错误号（如 CS0029），然后在 Microsoft Docs 中搜索该错误号。  
   
-- 在[“输出窗口”](/visualstudio/ide/reference/output-window)中选择错误号（例如 CS0029），然后按 F1 键。  
+- 在“输出窗口”[](/visualstudio/ide/reference/output-window)中选择错误号（例如 CS0029），然后按 F1 键。  
   
-- 在“索引”的“查找”  框中输入错误号。  
+- 在“索引”的“查找”**** 框中输入错误号。  
   
  如果通过这些步骤无法找到有关错误的信息，请转到此页末尾，然后发送包含错误号或文本的反馈。  
   
@@ -29,7 +30,7 @@ ms.locfileid: "72771880"
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编译器选项](../compiler-options/index.md)
 - [很抱歉，我们没有关于此 C# 错误的具体信息](../../misc/sorry-we-don-t-have-specifics-on-this-csharp-error.md)

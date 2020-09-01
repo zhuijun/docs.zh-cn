@@ -1,4 +1,5 @@
 ---
+description: 按类别列出的 C# 编译器选项
 title: 按类别列出的 C# 编译器选项
 ms.date: 06/04/2020
 helpviewer_keywords:
@@ -6,12 +7,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: f216534140b6e207ac110bb54b3e4f93a8ac6b70
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 27445b6685f48f7acf646c16de3201e68767da69
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474015"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125288"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>按类别列出的 C# 编译器选项
 

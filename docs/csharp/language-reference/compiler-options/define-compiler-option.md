@@ -1,4 +1,5 @@
 ---
+description: -define（C# 编译器选项）
 title: -define（C# 编译器选项）
 ms.date: 07/20/2015
 f1_keywords:
@@ -11,15 +12,15 @@ helpviewer_keywords:
 - /d compiler option [C#]
 - d compiler option [C#]
 ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
-ms.openlocfilehash: 4a3622b6acc8ebe9c590b01b67074ae59396fc34
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3b7a1c6e92d2c60ce289f29044774c3aa42ca84f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173739"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125873"
 ---
 # <a name="-define-c-compiler-options"></a>-define（C# 编译器选项）
--define 选项将 `name` 定义为程序中所有源代码文件的符号。  
+-define 选项将 `name` 定义为程序中所有源代码文件的符号****。  
   
 ## <a name="syntax"></a>语法  
   
@@ -28,17 +29,17 @@ ms.locfileid: "79173739"
 ```  
   
 ## <a name="arguments"></a>自变量  
- `name`，`name2`  
+ `name`, `name2`  
  一个或多个要定义的符号的名称。  
   
 ## <a name="remarks"></a>备注  
- -define 选项具有与使用 [#define](../preprocessor-directives/preprocessor-define.md) 预处理器指令相同的效果，但编译器选项对项目中的所有文件都有效。 符号在源文件中保持已定义状态，直到源文件中的 [#undef](../preprocessor-directives/preprocessor-undef.md) 指令删除该定义。 使用 -define 选项时，一个文件中的 `#undef` 指令不影响项目中其他的源代码文件。  
+ -define 选项具有与使用 [#define](../preprocessor-directives/preprocessor-define.md) 预处理器指令相同的效果，但编译器选项对项目中的所有文件都有效****。 符号在源文件中保持已定义状态，直到源文件中的 [#undef](../preprocessor-directives/preprocessor-undef.md) 指令删除该定义。 使用 -define 选项时，一个文件中的 `#undef` 指令不影响项目中其他的源代码文件。  
   
  可以将由此选项创建的符号同 [#if](../preprocessor-directives/preprocessor-if.md)、[#else](../preprocessor-directives/preprocessor-else.md)、[#elif](../preprocessor-directives/preprocessor-elif.md) 和 [#endif](../preprocessor-directives/preprocessor-endif.md) 一起使用，对源文件进行条件编译。  
   
- -d 是 -define 的缩写形式   。  
+ -d 是 -define 的缩写形式********。  
   
- 通过使用分号或逗号分隔符号名称，可用 -define 定义多个符号  。 例如：  
+ 通过使用分号或逗号分隔符号名称，可用 -define 定义多个符号****。 例如：  
   
 ```console  
 -define:DEBUG;TUESDAY  
@@ -51,9 +52,9 @@ ms.locfileid: "79173739"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>在 Visual Studio 开发环境中设置此编译器选项  
   
-1. 打开项目的“属性”  页。  
+1. 打开项目的“属性”页。  
   
-2. 在“生成”选项卡上，键入要在“条件编译符号”框中定义的符号   。 例如，如果使用以下代码示例，只需在文本框中键入 `xx`。  
+2. 在“生成”选项卡上，键入要在“条件编译符号”框中定义的符号********。 例如，如果使用以下代码示例，只需在文本框中键入 `xx`。  
   
  有关如何以编程方式设置此编译器选项的信息，请参阅 <xref:VSLangProj80.CSharpProjectConfigurationProperties3.DefineConstants%2A>。  
   
@@ -78,7 +79,7 @@ public class Test
 }  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 编译器选项](./index.md)
 - [管理项目和解决方案属性](/visualstudio/ide/managing-project-and-solution-properties)

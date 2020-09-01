@@ -1,4 +1,5 @@
 ---
+description: -link（C# 编译器选项）
 title: -link（C# 编译器选项）
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -11,12 +12,12 @@ helpviewer_keywords:
 - -link compiler option [C#]
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
-ms.openlocfilehash: d5684298bbd736cae2d9c13381431036806aab17
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0f6927fd240f3f8535478d163be615fc74dad8d2
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144456"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125392"
 ---
 # <a name="-link-c-compiler-options"></a>-link（C# 编译器选项）
 使编译器让指定程序集中的 COM 类型信息可供当前正在编译的项目使用。
@@ -29,7 +30,7 @@ ms.locfileid: "84144456"
 -l:fileList
 ```
 
-## <a name="arguments"></a>参数
+## <a name="arguments"></a>自变量
  `fileList`  
  必需。 程序集文件名的逗号分隔列表。 如果文件名包含空格，则将名称括在引号内。
 

@@ -1,4 +1,5 @@
 ---
+description: -addmodule（C# 编译器选项）
 title: -addmodule（C# 编译器选项）
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - -addmodule compiler option [C#]
 - addmodule compiler option [C#]
 ms.assetid: ed604546-0dc2-4bd4-9a3e-610a8d973e58
-ms.openlocfilehash: 148a63c37cfbc4c60448adccde10947e91e22bb9
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: bcc615d52aec0a09ebf3913b3ece71f2cbfcbda9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70970178"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89126120"
 ---
 # <a name="-addmodule-c-compiler-options"></a>-addmodule（C# 编译器选项）
 此选项将添加一个模块，该模块通过将 target: module 切换到当前编译进行创建。  
@@ -25,13 +26,13 @@ ms.locfileid: "70970178"
 ```  
   
 ## <a name="arguments"></a>自变量  
- `file`，`file2`  
+ `file`, `file2`  
  包含元数据的输出文件。 该文件不能包含程序集清单。 若要导入多个文件，请用逗号或分号将文件名隔开。  
   
 ## <a name="remarks"></a>备注  
- 通过 -addmodule 添加的所有模块在运行时必须位于与输出文件相同的目录中  。 也就是说，在编译时可在任何目录中指定模块，但在运行时该模块必须位于应用程序目录中。 如果在运行时该模块不位于应用程序目录中，则将出现 <xref:System.TypeLoadException>。  
+ 通过 -addmodule 添加的所有模块在运行时必须位于与输出文件相同的目录中。 也就是说，在编译时可在任何目录中指定模块，但在运行时该模块必须位于应用程序目录中。 如果在运行时该模块不位于应用程序目录中，则将出现 <xref:System.TypeLoadException>。  
   
- `file` 不能包含程序集。 例如，如果输出文件使用 [-target:module](./target-module-compiler-option.md) 创建，其元数据可通过 -addmodule 导入  。  
+ `file` 不能包含程序集。 例如，如果输出文件使用 [-target:module](./target-module-compiler-option.md) 创建，其元数据可通过 -addmodule 导入。  
   
  如果输出文件通过使用 -target 选项而不是 -target:module 创建，则其元数据不能通过 -addmodule 导入，但可以通过 [-reference](./reference-compiler-option.md) 导入  。  
   
@@ -44,9 +45,9 @@ ms.locfileid: "70970178"
 csc -addmodule:metad1.netmodule;metad2.netmodule -out:out.exe input.cs  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 编译器选项](./index.md)
 - [管理项目和解决方案属性](/visualstudio/ide/managing-project-and-solution-properties)
 - [多文件程序集](../../../framework/app-domains/multifile-assemblies.md)
-- [如何：生成多文件程序集](../../../framework/app-domains/build-multifile-assembly.md)
+- [如何：生成单文件程序集](../../../framework/app-domains/build-multifile-assembly.md)

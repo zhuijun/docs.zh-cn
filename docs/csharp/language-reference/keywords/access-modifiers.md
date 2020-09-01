@@ -1,15 +1,16 @@
 ---
+description: 访问修饰符 - C# 参考
 title: 访问修饰符 - C# 参考
 ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#]
 ms.assetid: 61c3fa51-c00f-48cb-9b49-c805dedd62d7
-ms.openlocfilehash: 754949e42771de30cc2dce7e4e610f70ada6dfd4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2ea7a65c23b6a1edee572f6f6ff6c52d14358408
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713845"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89127147"
 ---
 # <a name="access-modifiers-c-reference"></a>访问修饰符（C# 参考）
 访问修饰符是关键字，用于指定成员或类型已声明的可访问性。 本部分介绍四个访问修饰符：  
@@ -29,9 +30,9 @@ ms.locfileid: "75713845"
   
 - [`protected internal`](protected-internal.md)：访问限于当前程序集或派生自包含类的类型。  
   
-- [`private`](private.md)：访问限于包含类型。  
+- [`private`](private.md)：访问限于包含类。  
 
-- [`private protected`](private-protected.md)：访问限于包含类或派生自当前程序集中包含类的类型。  
+- [`private protected`](private-protected.md)：访问限于包含类或当前程序集中派生自包含类的类型。  
   
  本部分还介绍以下内容：  
   
@@ -41,7 +42,7 @@ ms.locfileid: "75713845"
   
 - [对使用可访问性级别的限制](./restrictions-on-using-accessibility-levels.md)：概括对使用已声明的可访问性级别的限制。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)

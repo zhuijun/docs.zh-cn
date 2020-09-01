@@ -1,4 +1,5 @@
 ---
+description: abstract - C# 参考
 title: abstract - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - abstract keyword [C#]
 ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
-ms.openlocfilehash: 96e8bbce2e67c316d5cd1cd78e3e2506dabead25
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 095c4dea838aff4f14833d78fb10a2f831cf5173
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713853"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89127199"
 ---
 # <a name="abstract-c-reference"></a>abstract（C# 参考）
 `abstract` 修饰符指示被修改内容的实现已丢失或不完整。 abstract 修饰符可用于类、方法、属性、索引和事件。 在类声明中使用 `abstract` 修饰符来指示某个类仅用作其他类的基类，而不用于自行进行实例化。 标记为抽象的成员必须由派生自抽象类的非抽象类来实现。
@@ -40,7 +41,7 @@ ms.locfileid: "75713853"
   
 - 只有抽象类中才允许抽象方法声明。  
   
-- 由于抽象方法声明不提供实际的实现，因此没有方法主体；方法声明仅以分号结尾，且签名后没有大括号 ({ })。 例如:  
+- 由于抽象方法声明不提供实际的实现，因此没有方法主体；方法声明仅以分号结尾，且签名后没有大括号 ({ })。 例如：  
   
     ```csharp  
     public abstract void MyMethod();  
@@ -60,7 +61,7 @@ ms.locfileid: "75713853"
   
  抽象类必须为所有接口成员提供实现。  
   
- 实现接口的抽象类有可能将接口方法映射到抽象方法上。 例如:  
+ 实现接口的抽象类有可能将接口方法映射到抽象方法上。 例如：  
   
 [!code-csharp[csrefKeywordsModifiers#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#2)]
   
@@ -80,7 +81,7 @@ BaseClass bc = new BaseClass();   // Error
 ## <a name="c-language-specification"></a>C# 语言规范  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)

@@ -1,16 +1,17 @@
 ---
+description: 可访问性级别 - C# 参考
 title: 可访问性级别 - C# 参考
 ms.date: 12/06/2017
 helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-ms.openlocfilehash: 26fbc2a6d86aead537465c304146630f8bcd3ad4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 26b8f78595b1406deb371113cf491b80ad7c1474
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713816"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89127017"
 ---
 # <a name="accessibility-levels-c-reference"></a>可访问性级别（C# 参考）
 
@@ -47,16 +48,16 @@ ms.locfileid: "75713816"
 ## <a name="c-language-specification"></a>C# 语言规范  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)
 - [C# 关键字](./index.md)
 - [访问修饰符](./access-modifiers.md)
-- [可访问域](./accessibility-domain.md)
-- [对使用可访问性级别的限制](./restrictions-on-using-accessibility-levels.md)
+- [可访问性域](./accessibility-domain.md)
+- [可访问性级别的使用限制](./restrictions-on-using-accessibility-levels.md)
 - [访问修饰符](../../programming-guide/classes-and-structs/access-modifiers.md)
 - [public](./public.md)
 - [private](./private.md)
-- [protected](./protected.md)
+- [受保护](./protected.md)
 - [internal](./internal.md)

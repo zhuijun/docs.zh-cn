@@ -1,4 +1,5 @@
 ---
+description: -langversion（C# 编译器选项）
 title: -langversion（C# 编译器选项）
 ms.date: 05/20/2020
 f1_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - langversion compiler option [C#]
 ms.custom: updateeachrelease
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: fd05802008a20267fea54f14bae4c8deb0e21c65
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: b0e966bcc87303c0a7c2199fbfac743b22481424
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656199"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125470"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion（C# 编译器选项）
 

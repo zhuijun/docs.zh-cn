@@ -1,4 +1,5 @@
 ---
+description: -keyfile（C# 编译器选项）
 title: -keyfile（C# 编译器选项）
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - -keyfile compiler option [C#]
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
-ms.openlocfilehash: bf271cc6b6887e930911071d4603b51daed55e61
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a97fc00201be1cf8043fc353b20ef447468a06bf
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70970263"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125483"
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile（C# 编译器选项）
 指定包含加密密钥的文件名。  
@@ -45,15 +46,15 @@ ms.locfileid: "70970263"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>在 Visual Studio 开发环境中设置此编译器选项  
   
-1. 打开项目的“属性”  页。  
+1. 打开项目的“属性” **** 页。  
   
-2. 单击“签名”  属性页。  
+2. 单击“签名”**** 属性页。  
   
-3. 修改“选择强名称密钥文件”  属性。  
+3. 修改“选择强名称密钥文件”**** 属性。  
   
  可通过 <xref:VSLangProj.ProjectProperties.AssemblyOriginatorKeyFile%2A> 以编程方式访问此编译器选项。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 编译器选项](./index.md)
 - [管理项目和解决方案属性](/visualstudio/ide/managing-project-and-solution-properties)

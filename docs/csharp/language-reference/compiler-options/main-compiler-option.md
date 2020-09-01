@@ -1,4 +1,5 @@
 ---
+description: -main（C# 编译器选项）
 title: -main（C# 编译器选项）
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - main compiler option [C#]
 - /main compiler option [C#]
 ms.assetid: 975cf4d5-36ac-4530-826c-4aad0c7f2049
-ms.openlocfilehash: 1de3d51953b632e3881db76202b63d3f287b39fe
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 61e63de8082a335b448ffee1ae35170d3a1cf6b4
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051865"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125262"
 ---
 # <a name="-main-c-compiler-options"></a>-main（C# 编译器选项）
 

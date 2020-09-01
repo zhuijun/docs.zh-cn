@@ -1,15 +1,16 @@
 ---
+description: 可访问性域 - C# 参考
 title: 可访问性域 - C# 参考
 ms.date: 07/20/2015
 helpviewer_keywords:
 - accessibility domain [C#]
 ms.assetid: 8af779c1-275b-44be-a864-9edfbca71bcc
-ms.openlocfilehash: 4a4319b03f3e0d7f9ec721e611b78c124a8a8ee5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2cfc4cc72a79b33276b7d822a2b31eb518dcf784
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713837"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89127056"
 ---
 # <a name="accessibility-domain-c-reference"></a>可访问域（C# 参考）
 成员的可访问域可指定成员可以引用哪些程序分区。 如果成员嵌套于其他类型中，则该成员的可访问域是由该成员的[可访问性级别](./accessibility-levels.md)和直接包含类型的可访问域这二者共同确定的。  
@@ -31,9 +32,9 @@ ms.locfileid: "75713837"
 - [C# 关键字](./index.md)
 - [访问修饰符](./access-modifiers.md)
 - [可访问性级别](./accessibility-levels.md)
-- [对使用可访问性级别的限制](./restrictions-on-using-accessibility-levels.md)
+- [可访问性级别的使用限制](./restrictions-on-using-accessibility-levels.md)
 - [访问修饰符](../../programming-guide/classes-and-structs/access-modifiers.md)
 - [public](./public.md)
 - [private](./private.md)
-- [protected](./protected.md)
+- [受保护](./protected.md)
 - [internal](./internal.md)

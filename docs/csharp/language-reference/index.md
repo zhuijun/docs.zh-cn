@@ -1,4 +1,5 @@
 ---
+description: C# 参考
 title: C# 参考
 ms.date: 02/14/2017
 f1_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - C# language, reference
 - reference, C# language
 ms.assetid: 06de3167-c16c-4e1a-b3c5-c27841d4569a
-ms.openlocfilehash: bed8f430793a8d8544cf0bbb5ea765490945bfc0
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 317f375c46eee3bb9c719afb68993cd4720e54fe
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855330"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89127186"
 ---
 # <a name="c-reference"></a>C# 参考
 

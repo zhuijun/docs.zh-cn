@@ -1,4 +1,5 @@
 ---
+description: 按字母顺序列出的 C# 编译器选项
 title: 按字母顺序列出的 C# 编译器选项
 ms.date: 06/04/2020
 helpviewer_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - Visual C# compiler, options listed alphabetically
 - Visual C#, compiler options listed alphabetically
 ms.assetid: 43535ea0-ca47-4a15-b528-615087a86092
-ms.openlocfilehash: eb3a591ba7b58e187eb03e65a3da6dfb47c9475c
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 6e1351eb9989abeaadebcb755ea9268fcff40a11
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473976"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125327"
 ---
 # <a name="c-compiler-options-listed-alphabetically"></a>按字母顺序列出的 C# 编译器选项
 

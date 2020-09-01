@@ -1,4 +1,5 @@
 ---
+description: -bugreport（C# 编译器选项）
 title: -bugreport（C# 编译器选项）
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - -bugreport compiler option [C#]
 - bugreport compiler option [C#]
 ms.assetid: f39665e3-4f6f-4357-88a2-3274c7bec0c1
-ms.openlocfilehash: 0989678be070910c410d71717fe66679e1b70557
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2c358b2dda400f6077ffb5ba1dfc8e6e1127fa52
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69603082"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89125990"
 ---
 # <a name="-bugreport-c-compiler-options"></a>-bugreport（C# 编译器选项）
 指定应使调试信息置于文件中供以后分析。  
@@ -24,7 +25,7 @@ ms.locfileid: "69603082"
 -bugreport:file  
 ```  
   
-## <a name="arguments"></a>参数  
+## <a name="arguments"></a>自变量  
  `file`  
  要包含 Bug 报告的文件的名称。  
   
@@ -45,7 +46,7 @@ ms.locfileid: "69603082"
   
 - 有关你认为应如何修复问题的说明（系统会提示你提供此信息）。  
   
- 如果此选项与 -errorreport: prompt 或 -errorreport:send 一起使用，文件中的信息将发送到 Microsoft Corporation   。  
+ 如果此选项与 -errorreport: prompt 或 -errorreport:send 一起使用，文件中的信息将发送到 Microsoft Corporation********。  
   
  所有源代码文件的副本将放入 `file`，因此你可能希望在尽可能短小的程序中重现可疑代码缺陷。  
   
