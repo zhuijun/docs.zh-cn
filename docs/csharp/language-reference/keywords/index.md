@@ -1,4 +1,5 @@
 ---
+description: C# 关键字
 title: C# 关键字
 ms.date: 03/07/2017
 f1_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - '@ keyword'
 ms.custom: updateeachrelease
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 3392b92cbd77e5b3f895af99a71f33d2ab43fa15
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: a6658fe7bb97309d35ca2a9177a90a2443f1a3ca
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812310"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134609"
 ---
 # <a name="c-keywords"></a>C# 关键字
 

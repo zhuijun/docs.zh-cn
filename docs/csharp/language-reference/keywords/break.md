@@ -1,4 +1,5 @@
 ---
+description: break 语句 - C# 参考
 title: break 语句 - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - break keyword [C#]
 ms.assetid: be2571ed-efb0-4965-b122-81e5b09db0b9
-ms.openlocfilehash: ef276fd9e8da0ea25695c5afdf06a300bbd2a123
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7fd05889f684f7a2282de8222e1195898dead5b9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713756"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134739"
 ---
 # <a name="break-c-reference"></a>break（C# 参考）
 
@@ -39,7 +40,7 @@ Sorry, invalid selection.
 
 ## <a name="example"></a>示例
 
-在此示例中，`break` 语句用于中断内层嵌套循环，并将控制权返回给外层循环。 控件在嵌套循环中仅向上返回一级  。
+在此示例中，`break` 语句用于中断内层嵌套循环，并将控制权返回给外层循环。 控件在嵌套循环中仅向上返回一级__。
 
 [!code-csharp[csrefKeywordsJump#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsJump/CS/csrefKeywordsJump.cs#7)]
 
@@ -53,7 +54,7 @@ Sorry, invalid selection.
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)

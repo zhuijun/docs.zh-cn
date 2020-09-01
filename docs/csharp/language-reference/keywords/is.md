@@ -1,4 +1,5 @@
 ---
+description: is - C# 参考
 title: is - C# 参考
 ms.date: 06/21/2019
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: e64b690482419963a92764b2c97a42dbb231fbfc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3508f08857f88fd34478f968a71bae0121d54d1c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398303"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134505"
 ---
 # <a name="is-c-reference"></a>is（C# 参考）
 
@@ -36,19 +37,19 @@ ms.locfileid: "79398303"
    expr is type varname
 ```
 
-其中 expr 是计算结果为某个类型的实例的表达式，type 是 expr 结果要转换到的类型的名称，varname 是 expr 结果要转换到的对象（如果 `is` 测试为 `true`）。
+其中 expr 是计算结果为某个类型的实例的表达式，type 是 expr 结果要转换到的类型的名称，varname 是 expr 结果要转换到的对象（如果 `is` 测试为 `true`）    。
 
-如果 expr 不为 `null` 且以下任意内容为 true，那么 `is` 表达式为 `true`：
+如果 expr** 不为 `null` 且以下任意内容为 true，那么 `is` 表达式为 `true`：
 
 - *expr* 是与 *type* 具有相同类型的一个实例。
 
 - *expr* 是派生自 *type* 的类型的一个实例。 换言之，*expr* 结果可以向上转换为 *type* 的一个实例。
 
-- *expr* 具有属于 *type* 的一个基类的编译时类型，*expr* 还具有属于 *type* 或派生自 *type* 的运行时类型。 变量的编译时类型是其声明中定义的变量类型。 变量的运行时类型是分配给该变量的实例类型。
+- *expr* 具有属于 *type* 的一个基类的编译时类型，*expr* 还具有属于 *type* 或派生自 *type* 的运行时类型。 变量的编译时类型** 是其声明中定义的变量类型。 变量的运行时类型是分配给该变量的实例类型。
 
 - *expr* 是实现 *type* 接口的类型的一个实例。
 
-自 C# 7.1 起，expr 可能有泛型类型参数及其约束定义的编译时类型。
+自 C# 7.1 起，expr** 可能有泛型类型参数及其约束定义的编译时类型。
 
 如果 *expr* 为 `true` 且 `is` 与 `if` 语句配合使用，则仅在 `if` 语句内分配 *varname*。 *varname* 的使用范围：从 `is` 表达式到封闭 `if` 语句的块的末尾。 在任何其他位置使用 *varname* 都会因使用尚未分配的变量而生成编译时错误。
 
@@ -70,7 +71,7 @@ ms.locfileid: "79398303"
 
 ### <a name="constant-pattern"></a>常量模式
 
-使用常量模式执行模式匹配时，`is` 会测试表达式结果是否等于指定常量。 在 C# 6 和更低版本中，[switch](switch.md) 语句支持常量模式。 自 C# 7.0 起，`is` 语句也支持它。 语法为：
+使用常量模式执行模式匹配时，`is` 会测试表达式结果是否等于指定常量。 在 C# 6 和更低版本中，[switch](switch.md) 语句支持常量模式。 自 C# 7.0 起，`is` 语句也支持它。 其语法为：
 
 ```csharp
    expr is constant
@@ -78,7 +79,7 @@ ms.locfileid: "79398303"
 
 其中 *expr* 是要计算的表达式，*constant* 是要测试的值。 *constant* 可以是以下任何常数表达式：
 
-- 一个文本值。
+- 文字值。
 
 - 已声明 `const` 变量的名称。
 
@@ -88,13 +89,13 @@ ms.locfileid: "79398303"
 
 - 如果 *expr* 和 *constant* 均为整型类型，则 C# 相等运算符确定表示式是否返回 `true`（即，是否为 `expr == constant`）。
 
-- 否则，由对静态 [Object.Equals(expr, constant)](xref:System.Object.Equals(System.Object,System.Object)) 方法的调用来确定表达式的值。  
+- 否则，由对静态 [Object.Equals(expr, constant)](xref:System.Object.Equals(System.Object,System.Object)) 方法的调用确定表达式的值。  
 
 下例同时使用了类型模式和常量模式来测试对象是否为 `Dice` 实例，如果是，则确定骰子的值是否为 6。
 
 [!code-csharp[is#7](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern7.cs#7)]
 
-可以使用常量模式执行 `null` 检查。 `is` 语句支持 `null` 关键字。 语法为：
+可以使用常量模式执行 `null` 检查。 `is` 语句支持 `null` 关键字。 其语法为：
 
 ```csharp
    expr is null
@@ -106,15 +107,15 @@ ms.locfileid: "79398303"
 
 ### <a name="var-pattern"></a>var 模式
 
-具有 `var` 模式的模式匹配始终成功。 语法为：
+具有 `var` 模式的模式匹配始终成功。 其语法为：
 
 ```csharp
    expr is var varname
 ```
 
-其中，expr 的值始终分配给名为 varname 的局部变量。 varname 变量的类型与 expr 的编译时类型相同。
+其中，expr 的值始终分配给名为 varname 的局部变量 。 varname 变量的类型与 expr 的编译时类型相同 。
 
-如果 expr 的计算结果为 `null`，则 `is` 表达式将生成 `true` 并将 `null` 分配给 varname。 var 模式是 `is` 对 `null` 值生成 `true` 的少数用途之一。
+如果 expr 的计算结果为 `null`，则 `is` 表达式将生成 `true` 并将 `null` 分配给 varname 。 var 模式是 `is` 对 `null` 值生成 `true` 的少数用途之一。
 
 可以使用 `var` 模式在布尔表达式中创建临时变量，如下例所示：
 
@@ -129,7 +130,7 @@ ms.locfileid: "79398303"
 - [模式匹配](~/_csharplang/proposals/csharp-7.0/pattern-matching.md)
 - [使用泛型的模式匹配](~/_csharplang/proposals/csharp-7.1/generics-pattern-match.md)
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 参考](../index.md)
 - [C# 关键字](index.md)

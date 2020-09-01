@@ -1,4 +1,5 @@
 ---
+description: into - C# 参考
 title: into - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,16 +8,16 @@ f1_keywords:
 helpviewer_keywords:
 - into keyword [C#]
 ms.assetid: 81ec62c1-f0b1-4755-8a31-959876e77f65
-ms.openlocfilehash: f0f5ff1e56a65e83385f814df2fadd957f53561e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4712a6906195c5d8bc09c7b734dba0df4d2b08c8
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713629"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134518"
 ---
 # <a name="into-c-reference"></a>into（C# 参考）
 
-可使用 `into` 上下文关键字创建临时标识符，将 [group](group-clause.md)、[join](join-clause.md) 或 [select](select-clause.md) 子句的结果存储至新标识符。 此标识符本身可以是附加查询命令的生成器。 有时称在 `group` 或 `select` 子句中使用新标识符为“延续”  。
+可使用 `into` 上下文关键字创建临时标识符，将 [group](group-clause.md)、[join](join-clause.md) 或 [select](select-clause.md) 子句的结果存储至新标识符。 此标识符本身可以是附加查询命令的生成器。 有时称在 `group` 或 `select` 子句中使用新标识符为“延续”**。
 
 ## <a name="example"></a>示例
 

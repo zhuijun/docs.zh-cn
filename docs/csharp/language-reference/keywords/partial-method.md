@@ -1,4 +1,5 @@
 ---
+description: 分部方法 - C# 参考
 title: 分部方法 - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -6,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - partial methods [C#]
 ms.assetid: 43f40242-17e0-4452-8573-090503ad3137
-ms.openlocfilehash: 62efd8b47fb565316b417a65e1b0fe37e40786c8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d6c433fd30f6ec51355bdefee90d815783487c1b
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713217"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134375"
 ---
 # <a name="partial-method-c-reference"></a>分部方法（C# 参考）
 
@@ -29,7 +30,7 @@ ms.locfileid: "75713217"
 
 有关详细信息，请参阅[分部类和方法](../../programming-guide/classes-and-structs/partial-classes-and-methods.md)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [分部类型](partial-type.md)

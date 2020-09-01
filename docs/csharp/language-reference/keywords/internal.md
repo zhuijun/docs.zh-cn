@@ -1,4 +1,5 @@
 ---
+description: internal - C# 参考
 title: internal - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-ms.openlocfilehash: e5a5ca18828b689241abbb6d80c5adc51efb073c
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 14722d66a65eb5f96118acf017dc877e657b2dd9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173596"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89134570"
 ---
 # <a name="internal-c-reference"></a>internal（C# 参考）
 `internal` 关键字是类型和类型成员的[访问修饰符](./access-modifiers.md)。
@@ -90,7 +91,7 @@ public class TestAccess
 
 有关详细信息，请参阅 [C# 语言规范](/dotnet/csharp/language-reference/language-specification/introduction)中的[声明的可访问性](~/_csharplang/spec/basic-concepts.md#declared-accessibility)。 该语言规范是 C# 语法和用法的权威资料。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)
@@ -100,4 +101,4 @@ public class TestAccess
 - [修饰符](index.md)
 - [public](./public.md)
 - [private](./private.md)
-- [受保护](./protected.md)
+- [protected](./protected.md)
