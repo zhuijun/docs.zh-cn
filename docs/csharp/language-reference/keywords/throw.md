@@ -1,4 +1,5 @@
 ---
+description: throw - C# 参考
 title: throw - C# 参考
 ms.date: 03/02/2015
 f1_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - throw expression [C#]
 - throw keyword [C#]
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
-ms.openlocfilehash: 7ed84e04dae54283e4b5f03be0600c4dbf95b4b4
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 4cad4810b89f976f92ce576917feb2398acce636
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063115"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142032"
 ---
 # <a name="throw-c-reference"></a>throw（C# 参考）
 
@@ -65,10 +66,10 @@ throw [e];
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)
 - [try-catch](try-catch.md)
 - [C# 关键字](index.md)
-- [如何：显式引发异常](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
+- [如何：显式抛出异常](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

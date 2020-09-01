@@ -1,15 +1,16 @@
 ---
+description: using 静态指令 - C# 参考
 title: using 静态指令 - C# 参考
 ms.date: 03/10/2017
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
-ms.openlocfilehash: bffbc026e8f7937db91d42b7a06a5b7bba3bc2f8
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: a10c315a05c28bce9b5ddb65af67dde6446d031d
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396156"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141915"
 ---
 # <a name="using-static-directive-c-reference"></a>using 静态指令（C# 参考）
 

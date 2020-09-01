@@ -1,4 +1,5 @@
 ---
+description: null 关键字 - C# 参考
 title: null 关键字 - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - null keyword [C#]
 ms.assetid: fecb1c60-6232-4efe-87f7-9a86ba2e9119
-ms.openlocfilehash: 17e7386571e8c74d411204ade0d56ffe8a710ee8
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 26cafb4ab25a0fc9514559e968cbb262fef3d0a9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76741993"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142370"
 ---
 # <a name="null-c-reference"></a>null（C# 参考）
 
@@ -26,7 +27,7 @@ ms.locfileid: "76741993"
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 关键字](index.md)

@@ -1,4 +1,5 @@
 ---
+description: switch（C# 参考）
 title: C# switch 语句
 ms.date: 04/09/2019
 f1_keywords:
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 9335399be2d4909a02fecbf2959c6f5608664732
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 20c1d9786eaa184088500cf1b37d33afc421b5e7
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493664"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142019"
 ---
 # <a name="switch-c-reference"></a>switch（C# 参考）
 

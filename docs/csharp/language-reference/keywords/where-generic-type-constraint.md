@@ -1,4 +1,5 @@
 ---
+description: where（泛型类型约束）- C# 参考
 title: where（泛型类型约束）- C# 参考
 ms.date: 04/15/2020
 f1_keywords:
@@ -6,12 +7,12 @@ f1_keywords:
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.openlocfilehash: 406c710cd884363c32b98336717732a09b3d1fc1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 78f784135c6bf01ea9724fcf92be234e6b86ff07
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401870"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141902"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where（泛型类型约束）（C# 参考）
 

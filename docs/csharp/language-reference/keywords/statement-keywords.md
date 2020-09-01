@@ -1,16 +1,17 @@
 ---
+description: 语句关键字 - C# 参考
 title: 语句关键字 - C# 参考
 ms.date: 07/20/2015
 helpviewer_keywords:
 - keywords [C#], statements
 - statements [C#]
 ms.assetid: fad0c004-e282-4ec8-a127-bca7fd7a0b6f
-ms.openlocfilehash: c829414cc197b18ad0dbd9c2cf401a05f6f2fbc6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 02c6ba7095c30fb8349e4b810d296e92ecd6e416
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715146"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142045"
 ---
 # <a name="statement-keywords-c-reference"></a>语句关键字（C# 参考）
 
@@ -26,7 +27,7 @@ ms.locfileid: "75715146"
 [fixed 语句](fixed-statement.md)|[fixed](fixed-statement.md)|
 |[lock 语句](lock-statement.md)|[lock](lock-statement.md)|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [语句](../../programming-guide/statements-expressions-operators/statements.md)

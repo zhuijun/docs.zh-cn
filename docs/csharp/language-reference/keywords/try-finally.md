@@ -1,4 +1,5 @@
 ---
+description: try-finally - C# 参考
 title: try-finally - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - finally keyword [C#]
 - try-finally statement [C#]
 ms.assetid: c27623fb-7261-4464-862c-7a369d3c8f0a
-ms.openlocfilehash: 2c4c69b1e104aed968bc24bac690de83026643a0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 621c5bf1607136361b72f978681607ec2aec150f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713009"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141967"
 ---
 # <a name="try-finally-c-reference"></a>try-finally（C# 参考）
 
@@ -41,7 +42,7 @@ C# 还包含 [using 语句](using-statement.md)，它以简便语法为 <xref:Sy
 
 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的 [try 语句](~/_csharplang/spec/statements.md#the-try-statement)部分。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)
@@ -49,4 +50,4 @@ C# 还包含 [using 语句](using-statement.md)，它以简便语法为 <xref:Sy
 - [try、throw 和 catch 语句 (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)
 - [throw](throw.md)
 - [try-catch](try-catch.md)
-- [如何：显式引发异常](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
+- [如何：显式抛出异常](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

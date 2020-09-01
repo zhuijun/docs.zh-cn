@@ -1,15 +1,16 @@
 ---
+description: using 指令 - C# 参考
 title: using 指令 - C# 参考
 ms.date: 07/20/2015
 helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
-ms.openlocfilehash: 4f7ddad8c3dc12391ef6bf345a73ebb384400b38
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f22a67348b19b8c97513ca685b2b10b34b1fd6fd
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77093144"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141941"
 ---
 # <a name="using-directive-c-reference"></a>using 指令（C# 参考）
 
@@ -35,7 +36,7 @@ ms.locfileid: "77093144"
     using Project = PC.MyCompany.Project;
     ```
 
-`using` 关键字还用于创建 using 语句，此类语句有助于确保正确处理 <xref:System.IDisposable> 对象（如文件和字体）。 有关详细信息，请参阅 [using 语句](using-statement.md)。
+`using` 关键字还用于创建 using 语句，此类语句有助于确保正确处理 <xref:System.IDisposable> 对象（如文件和字体）**。 有关详细信息，请参阅 [using 语句](using-statement.md)。
 
 ## <a name="using-static-type"></a>Using 静态类型
 
@@ -93,7 +94,7 @@ using 别名指令的右侧不能有开放式泛型类型。 例如，不能为 
 
 有关详细信息，请参阅 [C# 语言规范](/dotnet/csharp/language-reference/language-specification/introduction)中的[ Using 指令](~/_csharplang/spec/namespaces.md#using-directives)。 该语言规范是 C# 语法和用法的权威资料。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)

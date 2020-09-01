@@ -1,4 +1,5 @@
 ---
+description: static 修饰符 - C# 参考
 title: static 修饰符 - C# 参考
 ms.date: 04/22/2020
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
-ms.openlocfilehash: 771bcfdac4c4bf27c15da4bc374d804405317a78
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: f42636d1bbdf4342297f46f50ec6dfc2a70eacad
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102055"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89142058"
 ---
 # <a name="static-c-reference"></a>static（C# 参考）
 

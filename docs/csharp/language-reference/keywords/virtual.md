@@ -1,4 +1,5 @@
 ---
+description: virtual - C# 参考
 title: virtual - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
-ms.openlocfilehash: 883e0a7f833c15d2c1cce6b3d52d16aad01a5cd0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 67bdfcf27bb108ca85e94ba7fdce208e4cd83b80
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173453"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141720"
 ---
 # <a name="virtual-c-reference"></a>virtual（C# 参考）
 
@@ -33,7 +34,7 @@ public virtual double Area()
 
 默认情况下，方法是非虚拟的。 不能替代非虚方法。
 
-`virtual` 修饰符不能与 `static`、`abstract`、`private` 或 `override` 修饰符一起使用。 以下示例显示了虚拟属性：
+`virtual` 修饰符不能与 `static`、`abstract``private` 或 `override` 修饰符一起使用。 以下示例显示了虚拟属性：
 
 [!code-csharp[csrefKeywordsModifiers#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#26)]
 
@@ -61,7 +62,7 @@ public Cylinder(double r, double h): base(r, h) {}
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [多态性](../../programming-guide/classes-and-structs/polymorphism.md)
 - [abstract](abstract.md)
