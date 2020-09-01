@@ -3,28 +3,28 @@ title: 云本机应用程序中的 Elasticsearch
 description: 了解如何将弹性搜索功能添加到云本机应用程序。
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: e956f28877d88ce5279944964a877efc324918b6
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 70d1925d6b8c7bbe515ee4f178513dc61212ebce
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614079"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271797"
 ---
 # <a name="elasticsearch-in-a-cloud-native-app"></a>云本机应用中的 Elasticsearch
 
 Elasticsearch 是一种分布式搜索和分析系统，可跨不同类型的数据实现复杂的搜索功能。 它是开源的，广泛流行。 考虑以下公司如何将 Elasticsearch 集成到其应用程序中：
 
-- 用于全文和增量（键入时搜索）的[维基百科](https://blog.wikimedia.org/2014/01/06/wikimedia-moving-to-elasticsearch/)。
-- [GitHub](https://www.elastic.co/customers/github)用于索引和公开超过8000000的代码存储库。  
+- 当你键入) 搜索时，适用于全文和增量 (搜索的[维基百科](https://blog.wikimedia.org/2014/01/06/wikimedia-moving-to-elasticsearch/)。
+- [GitHub](https://www.elastic.co/customers/github) 用于索引和公开超过8000000的代码存储库。  
 - 用于使容器库可发现的[Docker](https://www.elastic.co/customers/docker) 。
 
-Elasticsearch 基于[Apache Lucene](https://lucene.apache.org/core/)全文搜索引擎。 Lucene 提供高性能的文档索引和查询。 它使用反转索引方案对数据进行索引，而不是将页映射到关键字，而是将关键字映射到页面，就像本书末尾的术语表。 Lucene 具有强大的查询语法功能，可以通过以下方式查询数据：
+Elasticsearch 基于 [Apache Lucene](https://lucene.apache.org/core/) 全文搜索引擎。 Lucene 提供高性能的文档索引和查询。 它使用反转索引方案对数据进行索引，而不是将页映射到关键字，而是将关键字映射到页面，就像本书末尾的术语表。 Lucene 具有强大的查询语法功能，可以通过以下方式查询数据：
 
-- 字词（完整单词）
-- 前缀（开头-带有 word）
-- 通配符（使用 " \* " 或 "？" 筛选器）
-- 短语（文档中的文本序列）
-- 布尔值（复杂搜索合并查询）
+- 术语 (完整的单词) 
+- 前缀 (开始-带有 word) 
+- 使用 " \* " 或 "？" 筛选器) 通配符 (
+- 短语 (文档中的一系列文本) 
+- 布尔值 (复杂搜索合并查询) 
 
 虽然 Lucene 为搜索提供低级别的管道，但 Elasticsearch 提供了位于 Lucene 顶层的服务器。 Elasticsearch 添加了更高级别的功能以简化工作 Lucene，其中包括用于访问 Lucene 的索引和搜索功能的 RESTful API。 它还提供了一个能够提供巨大的可伸缩性、容错和高可用性的分布式基础结构。
 
@@ -32,7 +32,7 @@ Elasticsearch 基于[Apache Lucene](https://lucene.apache.org/core/)全文搜索
 
 在 Microsoft Azure 市场中，开发人员可以使用生成的预配置模板在 Azure 上快速部署 Elasticsearch 群集。 使用 Azure 托管产品，最多可部署50个数据节点、20个协调节点和三个专用主节点。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>总结
 
 本章详细介绍了云本机系统中的数据。 我们在云本机系统中的数据存储模式与整体应用程序中的数据存储进行了对比。 我们查看了在云本机系统中实现的数据模式，其中包括跨服务查询、分布式事务和用于处理大容量系统的模式。 我们将 SQL 与 NoSQL 数据相对应。 我们查看了 Azure 中的可用数据存储选项，其中包括 Microsoft 中心和开源选项。 最后，我们在云本机应用程序中讨论了缓存和 Elasticsearch。
 
@@ -74,7 +74,7 @@ Elasticsearch 基于[Apache Lucene](https://lucene.apache.org/core/)全文搜索
 
 - [Vitess](https://vitess.io/)
 
-- [Elasticsearch：权威指南](http://shop.oreilly.com/product/0636920028505.do)
+- [Elasticsearch：权威指南](https://shop.oreilly.com/product/0636920028505.do)
   
 - [Apache Lucene 简介](https://www.baeldung.com/lucene)
 
