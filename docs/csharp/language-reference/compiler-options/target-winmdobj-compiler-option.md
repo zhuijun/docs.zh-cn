@@ -1,16 +1,17 @@
 ---
+description: -target:winmdobj（C# 编译器选项）
 title: -target:winmdobj（C# 编译器选项）
 ms.date: 07/20/2015
 ms.assetid: 1819a045-659d-498a-9457-c466e902986f
-ms.openlocfilehash: 85ae9a3f5e9b038c0c56935ec5af2b9b09d19f20
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 66a4bddb34832705ad4779829e561afd9442be8f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74204494"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139081"
 ---
 # <a name="-targetwinmdobj-c-compiler-options"></a>-target:winmdobj（C# 编译器选项）
-如果使用 -target:winmdobj 编译器选项，则编译器会创建一个中间 .winmdobj 文件，你可以将这个文件转换为 Windows 运行时二进制 (.winmd) 文件  。 之后，除了托管语言程序外，JavaScript 和 C++ 程序也可以使用该 .winmd 文件。  
+如果使用 -target:winmdobj 编译器选项，则编译器会创建一个中间 .winmdobj 文件，你可以将这个文件转换为 Windows 运行时二进制 (.winmd) 文件。 之后，除了托管语言程序外，JavaScript 和 C++ 程序也可以使用该 .winmd 文件。  
   
 ## <a name="syntax"></a>语法  
   
@@ -21,7 +22,7 @@ ms.locfileid: "74204494"
 ## <a name="remarks"></a>备注  
  **winmdobj** 设置会向编译器发出信号，表示需要中间模块。 作为响应，Visual Studio 会将 C# 类库编译为 .winmdobj 文件。 随后，.winmdobj 文件可作为可作为 <xref:Microsoft.Build.Tasks.WinMDExp> 导出工具的输入，生成 Windows 元数据 (.winmd) 文件。 .winmd 文件既包含原始库的代码，也包括 JavaScript（或 C++）以及 Windows 运行时使用的 WinMD 元数据的代码。  
   
- 使用 -target:winmdobj 编译器选项所编译的文件，只能用作 WimMDExp 导出工具的输入；不能直接引用 .winmdobj 文件自身  。  
+ 使用 -target:winmdobj 编译器选项所编译的文件，只能用作 WimMDExp 导出工具的输入；不能直接引用 .winmdobj 文件自身。  
   
  除非使用 [-out](./out-compiler-option.md) 选项，否则输出文件的名称采用第一个输入文件的名称。 不需要使用 [Main](../../programming-guide/main-and-command-args/index.md) 方法。  
   
@@ -31,11 +32,11 @@ ms.locfileid: "74204494"
   
 1. 在“解决方案资源管理器”  中，打开项目的快捷菜单，然后选择“属性”  。  
   
-2. 选择“应用程序”  选项卡。  
+2. 选择“应用程序”**** 选项卡。  
   
-3. 在“输出类型”  列表中，选择“WinMD 文件”  。  
+3. 在“输出类型”**** 列表中，选择“WinMD 文件”****。  
   
-     此“WinMD 文件”选项仅可用于 Windows 8.x 应用商店应用模板  。  
+     此“WinMD 文件”选项仅可用于 Windows 8.x 应用商店应用模板****。  
   
  有关如何以编程方式设置此编译器选项的信息，请参阅 <xref:VSLangProj80.ProjectProperties3.OutputType%2A>。  
   
@@ -46,7 +47,7 @@ ms.locfileid: "74204494"
 csc -target:winmdobj filename.cs  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [-target（C# 编译器选项）](./target-compiler-option.md)
 - [C# 编译器选项](./index.md)

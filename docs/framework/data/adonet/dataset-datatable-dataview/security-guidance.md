@@ -3,12 +3,12 @@ title: 数据集和 DataTable 安全指南
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: 24c8a830f8638bc2d9dd20c2384c8230a682d817
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 4fe8a062c762cc70d33243e3443aa9bf55635f98
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812232"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137612"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>数据集和 DataTable 安全指南
 
@@ -45,6 +45,9 @@ ms.locfileid: "88812232"
 * 反序列化操作失败。
 
 将 XML 加载到现有的 `DataSet` 或 `DataTable` 实例时，也会考虑现有的列定义。 如果表已包含自定义类型的列定义，则在 XML 反序列化操作期间，该类型暂时添加到允许列表中。
+
+> [!NOTE]
+> 向添加列后 `DataTable` ， `ReadXml` 将不会从 XML 读取架构，如果架构不匹配，也不会读取记录，因此，你需要自行添加所有列以使用此方法。
 
 ```cs
 XmlReader xmlReader = GetXmlReader();

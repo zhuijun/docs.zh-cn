@@ -1,4 +1,5 @@
 ---
+description: -win32icon（C# 编译器选项）
 title: -win32icon（C# 编译器选项）
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,15 +9,15 @@ helpviewer_keywords:
 - /win32icon compiler option [C#]
 - -win32icon compiler option [C#]
 ms.assetid: 756d9b6d-ab07-41b7-ba58-5bd88f711138
-ms.openlocfilehash: f3df92d8d0b0135eac1a055afafffa0015fecc2b
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 76a54f9011371492bdc15f15c3e40d51082deed3
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69606275"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138405"
 ---
 # <a name="-win32icon-c-compiler-options"></a>-win32icon（C# 编译器选项）
--win32icon 选项在输出文件中插入 .ico 文件，为输出文件赋予其在文件资源管理器中所需的外观  。  
+-win32icon 选项在输出文件中插入 .ico 文件，为输出文件赋予其在文件资源管理器中所需的外观****。  
   
 ## <a name="syntax"></a>语法  
   
@@ -24,7 +25,7 @@ ms.locfileid: "69606275"
 -win32icon:filename  
 ```  
   
-## <a name="arguments"></a>参数  
+## <a name="arguments"></a>自变量  
  `filename`  
  想向输出文件添加的 .ico 文件。  
   
@@ -35,11 +36,11 @@ ms.locfileid: "69606275"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>在 Visual Studio 开发环境中设置此编译器选项  
   
-1. 打开项目的“属性”页  。  
+1. 打开项目的“属性”页****。  
   
-2. 单击“应用程序”  属性页。  
+2. 单击“应用程序”属性页。  
   
-3. 修改“应用程序图标”属性  。  
+3. 修改“应用程序图标”属性****。  
   
  有关如何以编程方式设置此编译器选项的信息，请参阅 <xref:VSLangProj80.ProjectProperties3.ApplicationIcon%2A>。  
   

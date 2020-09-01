@@ -1,4 +1,5 @@
 ---
+description: '#undef - C# 参考'
 title: '#undef - C# 参考'
 ms.date: 06/30/2018
 f1_keywords:
@@ -6,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#undef directive [C#]'
 ms.assetid: 686c92d2-7194-4be4-b2f4-80091712d513
-ms.openlocfilehash: 21923412aa178c3b86e94a54bd911130e48e4deb
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 97f99ab4230585e61fed0e057552b78c7a4c2bb5
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75712437"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137859"
 ---
 # <a name="undef-c-reference"></a>#undef（C# 参考）
 `#undef` 允许你定义一个符号，这样一来，通过将该符号用作 [#if](./preprocessor-if.md) 指令中的表达式，表达式将计算为 `false`。  
@@ -38,9 +39,9 @@ class MyClass
 }  
 ```
 
-未定义 DEBUG 
+未定义 DEBUG****
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)

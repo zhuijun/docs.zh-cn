@@ -1,4 +1,5 @@
 ---
+description: Checked 和 Unchecked - C# 参考
 title: Checked 和 Unchecked - C# 参考
 ms.date: 05/15/2018
 helpviewer_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - unchecked statement [C#]
 - statements [C#], checked and unchecked
 ms.assetid: a84bc877-2c7f-4396-8735-1ce97c42f35e
-ms.openlocfilehash: 8ee4c481a30dce30029fbe8cc26f4798b523a7ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a8d6a26e28062da682689bf64a9e38ea5fd158b2
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173635"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138262"
 ---
 # <a name="checked-and-unchecked-c-reference"></a>Checked 和 Unchecked（C# 参考）
 C# 语句既可以在已检查的上下文中执行，也可以在未检查的上下文中执行。 在已检查的上下文中，算法溢出引发异常。 在未选中的上下文中忽略算术溢出并将结果截断，方法是：丢弃任何不适应目标类型的高序位。  
@@ -35,7 +36,7 @@ C# 语句既可以在已检查的上下文中执行，也可以在未检查的�
 
  对于常量表达式（可在编译时完全计算的表达式），将始终选中默认上下文。 除非在未选中的上下文中显式放置常量表达式，否则在编译时间计算表达式过程中出现的溢出将导致编译时错误。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)

@@ -1,4 +1,5 @@
 ---
+description: '@ - C# 参考'
 title: '@ - C# 参考'
 ms.date: 02/09/2017
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - '@ special character [C#]'
 - '@ language element [C#]'
 ms.assetid: 89bc7e53-85f5-478a-866d-1cca003c4e8c
-ms.openlocfilehash: b37f77273e767a5e5292e7707933892f57811d2a
-ms.sourcegitcommit: e48a54ebe62e874500a7043f6ee0b77a744d55b4
+ms.openlocfilehash: 7d78b28479ed6128321207073dc94976710f10b6
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/26/2020
-ms.locfileid: "80291766"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138899"
 ---
 # <a name="-c-reference"></a>@（C# 参考）
 

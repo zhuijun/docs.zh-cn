@@ -1,4 +1,5 @@
 ---
+description: '#warning - C# 参考'
 title: '#warning - C# 参考'
 ms.date: 07/20/2015
 f1_keywords:
@@ -6,15 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - '#warning directive [C#]'
 ms.assetid: e6fb496d-bb8b-4018-baf6-5b60a0c8902b
-ms.openlocfilehash: 38c3807a696599390667060d3bf374c68845fed0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ab2cc5120492fc2a4b94296eb85e563c0a1d5ad3
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715073"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137833"
 ---
 # <a name="warning-c-reference"></a>#warning（C# 参考）
-`#warning` 允许你从代码中的特定位置生成 [ CS1030](../../misc/cs1030.md) 第一级编译器警告。 例如:  
+`#warning` 允许你从代码中的特定位置生成 [ CS1030](../../misc/cs1030.md) 第一级编译器警告。 例如：  
   
 ```csharp
 #warning Deprecated code in this method.  
@@ -40,7 +41,7 @@ class MainClass
 }  
 ```  
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)

@@ -1,4 +1,5 @@
 ---
+description: '#if 预处理器指令 - C# 参考'
 title: '#if 预处理器指令 - C# 参考'
 ms.date: 10/27/2019
 f1_keywords:
@@ -6,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
-ms.openlocfilehash: d047b88f202341a795834809d0b601706c30fcb4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f01db9d7801d4b6f4c273a9cf82806acbb4828bb
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75899857"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138132"
 ---
 # <a name="if-c-reference"></a>#if（C# 参考）
 
-如果 C# 编译器遇到 `#if` 指令，最终是 [#endif](preprocessor-endif.md) 指令，则仅当定义指定的符号时，它才编译这些指令之间的代码。 与 C 和 C++ 不同，你不能为符号分配数字值。 C# 中的 `#if` 语句是布尔值，且仅测试是否已定义该符号。 例如:
+如果 C# 编译器遇到 `#if` 指令，最终是 [#endif](preprocessor-endif.md) 指令，则仅当定义指定的符号时，它才编译这些指令之间的代码。 与 C 和 C++ 不同，你不能为符号分配数字值。 C# 中的 `#if` 语句是布尔值，且仅测试是否已定义该符号。 例如：
 
 ```csharp
 #if DEBUG
@@ -89,9 +90,9 @@ public class MyClass
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)
 - [C# 预处理器指令](index.md)
-- [如何：使用跟踪和调试进行条件编译](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
+- [如何：使用跟踪和调试执行有条件编译](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)

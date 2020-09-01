@@ -1,4 +1,5 @@
 ---
+description: event - C# 参考
 title: event - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -9,12 +10,12 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
-ms.openlocfilehash: eb1805ed55921497fea88e6b39989c876ef003d1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 5e75fec12390cb694126c5bec684c40caa378915
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713560"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139094"
 ---
 # <a name="event-c-reference"></a>event (C# 参考)
 
@@ -34,7 +35,7 @@ ms.locfileid: "75713560"
 
 下列关键字应用于事件。
 
-|关键字|说明|更多相关信息|
+|关键字|说明|更多信息|
 |-------------|-----------------|--------------------------|
 |[static](./static.md)|使事件可供调用方在任何时候进行调用，即使不存在类的实例。|[静态类和静态类成员](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md)|
 |[virtual](./virtual.md)|允许派生类使用[重写](./override.md)关键字重写事件行为。|[继承](../../programming-guide/classes-and-structs/inheritance.md)|
@@ -49,7 +50,7 @@ ms.locfileid: "75713560"
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)
