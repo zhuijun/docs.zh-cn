@@ -1,16 +1,17 @@
 ---
+description: true 和 false 运算符 - C# 参考
 title: true 和 false 运算符 - C# 参考
 ms.date: 12/10/2018
 helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: 15342c3d9cd66195639e38265875a7ed4008dd51
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: f20f71e31c77c035c48702f01208c5b29c90109c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916617"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132373"
 ---
 # <a name="true-and-false-operators-c-reference"></a>true 和 false 运算符（C# 参考）
 
