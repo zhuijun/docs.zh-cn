@@ -1,4 +1,5 @@
 ---
+description: -unsafe（C# 编译器选项）
 title: -unsafe（C# 编译器选项）
 ms.date: 04/25/2018
 f1_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - -unsafe compiler option [C#]
 - unsafe compiler option [C#]
 - /unsafe compiler option [C#]
-ms.openlocfilehash: 146299fda103567b111c66400c17edf36addd843
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0f6d94dd25a020d96430746c4b5e7aefd0f679da
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "65877993"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89140836"
 ---
 # <a name="-unsafe-c-compiler-options"></a>-unsafe（C# 编译器选项）
 
@@ -30,11 +31,11 @@ ms.locfileid: "65877993"
   
 ### <a name="to-set-this-compiler-option-in-the-visual-studio-development-environment"></a>在 Visual Studio 开发环境中设置此编译器选项  
   
-1. 打开项目的“属性”  页。  
+1. 打开项目的“属性”页。  
   
-2. 单击“生成”  属性页。  
+2. 单击“生成”**** 属性页。  
   
-3. 选中“允许不安全代码”复选框  。  
+3. 选中“允许不安全代码”复选框****。  
   
 ### <a name="to-add-this-option-in-a-csproj-file"></a>向 csproj 文件添加此选项
 
@@ -56,7 +57,7 @@ ms.locfileid: "65877993"
 csc -unsafe in.cs  
 ```  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [C# 编译器选项](index.md)
 - [管理项目和解决方案属性](/visualstudio/ide/managing-project-and-solution-properties)

@@ -1,4 +1,5 @@
 ---
+description: namespace 关键字 - C# 参考
 title: namespace 关键字 - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - namespace keyword [C#]
 - scope [C#]
 ms.assetid: 0a788423-9110-42e0-97d9-bda41ca4870f
-ms.openlocfilehash: b35f0a2a5cc0b2895b491d4ee24f89955f4b8fed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a6cfd1c3d37cbdef1f0dd72ddca85ce91f2e183b
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77625795"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139575"
 ---
 # <a name="namespace-c-reference"></a>命名空间（C# 参考）
 
@@ -29,7 +30,7 @@ ms.locfileid: "77625795"
 
 - [class](class.md)
 
-- [接口](interface.md)
+- [interface](interface.md)
 
 - [struct](../builtin-types/struct.md)
 
@@ -55,7 +56,7 @@ ms.locfileid: "77625795"
 
 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的[命名空间](~/_csharplang/spec/namespaces.md)部分。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 关键字](index.md)

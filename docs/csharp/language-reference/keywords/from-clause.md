@@ -1,4 +1,5 @@
 ---
+description: from 子句 - C# 参考
 title: from 子句 - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - from clause [C#]
 - from keyword [C#]
 ms.assetid: 1aefd18c-1314-47f8-99ec-9bcefb09e699
-ms.openlocfilehash: 388b9c0245b112d619fc173f6019b3f7dbf59940
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 474b22f5a9d8f12c8a4365159817f878761b563c
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75715295"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89140784"
 ---
 # <a name="from-clause-c-reference"></a>from 子句（C# 参考）
 
@@ -21,7 +22,7 @@ ms.locfileid: "75715295"
 
 - 将在其上运行查询或子查询的数据源。
 
-- 表示源序列中每个元素的本地范围变量  。
+- 表示源序列中每个元素的本地范围变量**。
 
 范围变量和数据源已强类型化。 `from` 子句中引用的数据源必须具有 <xref:System.Collections.IEnumerable>、<xref:System.Collections.Generic.IEnumerable%601> 类型之一，或 <xref:System.Linq.IQueryable%601> 等派生类型。
 

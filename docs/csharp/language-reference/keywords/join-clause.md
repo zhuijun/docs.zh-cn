@@ -1,4 +1,5 @@
 ---
+description: join 子句 - C# 参考
 title: join 子句 - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - join clause [C#]
 - join keyword [C#]
 ms.assetid: 76e9df84-092c-41a6-9537-c3f1cbd7f0fb
-ms.openlocfilehash: 8e52e9db241392b67818b7316767dd97bd38432a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 44b35bd1243e4715f81513eef9968f30a8f315a3
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713410"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89139744"
 ---
 # <a name="join-clause-c-reference"></a>join 子句（C# 参考）
 
@@ -99,5 +100,5 @@ ms.locfileid: "75713410"
 - [执行内部联接](../../linq/perform-inner-joins.md)
 - [执行分组联接](../../linq/perform-grouped-joins.md)
 - [对 Join 子句的结果进行排序](../../linq/order-the-results-of-a-join-clause.md)
-- [使用复合键进行联接](../../linq/join-by-using-composite-keys.md)
+- [使用组合键进行联接](../../linq/join-by-using-composite-keys.md)
 - [适用于 Visual Studio 的兼容数据库系统](/visualstudio/data-tools/installing-database-systems-tools-and-samples)
