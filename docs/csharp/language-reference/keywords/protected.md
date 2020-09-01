@@ -1,4 +1,5 @@
 ---
+description: protected 关键字 - C# 参考
 title: protected 关键字 - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - protected keyword [C#]
 ms.assetid: 05ce3794-6675-4025-bddb-eaaa0ec22892
-ms.openlocfilehash: bec619d4f49bd26daa742c18c830909c14948adf
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4c18d1f2f45a0a154dccd42736a01874dd1af853
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713178"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89122376"
 ---
 # <a name="protected-c-reference"></a>protected（C# 参考）
 
@@ -50,7 +51,7 @@ ms.locfileid: "75713178"
 
 有关详细信息，请参阅 [C# 语言规范](/dotnet/csharp/language-reference/language-specification/introduction)中的[声明的可访问性](~/_csharplang/spec/basic-concepts.md#declared-accessibility)。 该语言规范是 C# 语法和用法的权威资料。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)
@@ -60,5 +61,5 @@ ms.locfileid: "75713178"
 - [修饰符](index.md)
 - [public](public.md)
 - [private](private.md)
-- [内部](internal.md)
+- [internal](internal.md)
 - [Internal Virtual 关键字的安全问题](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

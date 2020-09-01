@@ -1,4 +1,5 @@
 ---
+description: '?: 运算符 - C# 参考'
 title: '?: 运算符 - C# 参考'
 ms.date: 03/06/2020
 f1_keywords:
@@ -9,12 +10,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: fcde0476935108122d7f7e825d701e48952873f6
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 0efa6de2b537fd3af76807938ac2b50a2716561f
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916849"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89122350"
 ---
 # <a name="-operator-c-reference"></a>?: 运算符（C# 参考）
 
