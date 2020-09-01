@@ -1,4 +1,5 @@
 ---
+description: Checked 和 Unchecked - C# 参考
 title: Checked 和 Unchecked - C# 参考
 ms.date: 05/15/2018
 helpviewer_keywords:
@@ -9,35 +10,35 @@ helpviewer_keywords:
 - unchecked statement [C#]
 - statements [C#], checked and unchecked
 ms.assetid: a84bc877-2c7f-4396-8735-1ce97c42f35e
-ms.openlocfilehash: 8ee4c481a30dce30029fbe8cc26f4798b523a7ed
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a8d6a26e28062da682689bf64a9e38ea5fd158b2
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173635"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89138262"
 ---
-# <a name="checked-and-unchecked-c-reference"></a><span data-ttu-id="aaf49-102">Checked 和 Unchecked（C# 参考）</span><span class="sxs-lookup"><span data-stu-id="aaf49-102">Checked and Unchecked (C# Reference)</span></span>
-<span data-ttu-id="aaf49-103">C# 语句既可以在已检查的上下文中执行，也可以在未检查的上下文中执行。</span><span class="sxs-lookup"><span data-stu-id="aaf49-103">C# statements can execute in either checked or unchecked context.</span></span> <span data-ttu-id="aaf49-104">在已检查的上下文中，算法溢出引发异常。</span><span class="sxs-lookup"><span data-stu-id="aaf49-104">In a checked context, arithmetic overflow raises an exception.</span></span> <span data-ttu-id="aaf49-105">在未选中的上下文中忽略算术溢出并将结果截断，方法是：丢弃任何不适应目标类型的高序位。</span><span class="sxs-lookup"><span data-stu-id="aaf49-105">In an unchecked context, arithmetic overflow is ignored and the result is truncated by discarding any high-order bits that don't fit in the destination type.</span></span>  
+# <a name="checked-and-unchecked-c-reference"></a><span data-ttu-id="80a94-103">Checked 和 Unchecked（C# 参考）</span><span class="sxs-lookup"><span data-stu-id="80a94-103">Checked and Unchecked (C# Reference)</span></span>
+<span data-ttu-id="80a94-104">C# 语句既可以在已检查的上下文中执行，也可以在未检查的上下文中执行。</span><span class="sxs-lookup"><span data-stu-id="80a94-104">C# statements can execute in either checked or unchecked context.</span></span> <span data-ttu-id="80a94-105">在已检查的上下文中，算法溢出引发异常。</span><span class="sxs-lookup"><span data-stu-id="80a94-105">In a checked context, arithmetic overflow raises an exception.</span></span> <span data-ttu-id="80a94-106">在未选中的上下文中忽略算术溢出并将结果截断，方法是：丢弃任何不适应目标类型的高序位。</span><span class="sxs-lookup"><span data-stu-id="80a94-106">In an unchecked context, arithmetic overflow is ignored and the result is truncated by discarding any high-order bits that don't fit in the destination type.</span></span>  
   
-- <span data-ttu-id="aaf49-106">[checked](checked.md) 指定已检查的上下文。</span><span class="sxs-lookup"><span data-stu-id="aaf49-106">[checked](checked.md) Specify checked context.</span></span>  
+- <span data-ttu-id="80a94-107">[checked](checked.md) 指定已检查的上下文。</span><span class="sxs-lookup"><span data-stu-id="80a94-107">[checked](checked.md) Specify checked context.</span></span>  
   
-- <span data-ttu-id="aaf49-107">[unchecked](unchecked.md) 指定未检查的上下文。</span><span class="sxs-lookup"><span data-stu-id="aaf49-107">[unchecked](unchecked.md) Specify unchecked context.</span></span>  
+- <span data-ttu-id="80a94-108">[unchecked](unchecked.md) 指定未检查的上下文。</span><span class="sxs-lookup"><span data-stu-id="80a94-108">[unchecked](unchecked.md) Specify unchecked context.</span></span>  
   
- <span data-ttu-id="aaf49-108">下列操作受溢出检查的影响：</span><span class="sxs-lookup"><span data-stu-id="aaf49-108">The following operations are affected by the overflow checking:</span></span>  
+ <span data-ttu-id="80a94-109">下列操作受溢出检查的影响：</span><span class="sxs-lookup"><span data-stu-id="80a94-109">The following operations are affected by the overflow checking:</span></span>  
   
-- <span data-ttu-id="aaf49-109">表达式在整型上使用下列预定义运算符：</span><span class="sxs-lookup"><span data-stu-id="aaf49-109">Expressions using the following predefined operators on integral types:</span></span>  
+- <span data-ttu-id="80a94-110">表达式在整型上使用下列预定义运算符：</span><span class="sxs-lookup"><span data-stu-id="80a94-110">Expressions using the following predefined operators on integral types:</span></span>  
   
-     <span data-ttu-id="aaf49-110">`++`，`--`，一元 `-`，`+`，`-`，`*`，`/`</span><span class="sxs-lookup"><span data-stu-id="aaf49-110">`++`, `--`, unary `-`, `+`, `-`, `*`, `/`</span></span>  
+     <span data-ttu-id="80a94-111">`++`，`--`，一元 `-`，`+`，`-`，`*`，`/`</span><span class="sxs-lookup"><span data-stu-id="80a94-111">`++`, `--`, unary `-`, `+`, `-`, `*`, `/`</span></span>  
   
-- <span data-ttu-id="aaf49-111">整型类型之间或从 `float` 或 `double` 到整型类型的显式数字转换。</span><span class="sxs-lookup"><span data-stu-id="aaf49-111">Explicit numeric conversions between integral types, or from `float` or `double` to an integral type.</span></span>  
+- <span data-ttu-id="80a94-112">整型类型之间或从 `float` 或 `double` 到整型类型的显式数字转换。</span><span class="sxs-lookup"><span data-stu-id="80a94-112">Explicit numeric conversions between integral types, or from `float` or `double` to an integral type.</span></span>  
   
- <span data-ttu-id="aaf49-112">如果既未指定 `checked`，也未指定 `unchecked`，则非常量表达式（在运行时计算的表达式）的默认上下文将由 [-checked](../compiler-options/checked-compiler-option.md) 编译器选项的值定义。</span><span class="sxs-lookup"><span data-stu-id="aaf49-112">If neither `checked` nor `unchecked` is specified, the default context for non-constant expressions (expressions that are evaluated at run time) is defined by the value of the [-checked](../compiler-options/checked-compiler-option.md) compiler option.</span></span> <span data-ttu-id="aaf49-113">默认情况下，该选项的值未设置，且算术运算在未选中的上下文中执行。</span><span class="sxs-lookup"><span data-stu-id="aaf49-113">By default the value of that option is unset and arithmetic operations are executed in an unchecked context.</span></span>
+ <span data-ttu-id="80a94-113">如果既未指定 `checked`，也未指定 `unchecked`，则非常量表达式（在运行时计算的表达式）的默认上下文将由 [-checked](../compiler-options/checked-compiler-option.md) 编译器选项的值定义。</span><span class="sxs-lookup"><span data-stu-id="80a94-113">If neither `checked` nor `unchecked` is specified, the default context for non-constant expressions (expressions that are evaluated at run time) is defined by the value of the [-checked](../compiler-options/checked-compiler-option.md) compiler option.</span></span> <span data-ttu-id="80a94-114">默认情况下，该选项的值未设置，且算术运算在未选中的上下文中执行。</span><span class="sxs-lookup"><span data-stu-id="80a94-114">By default the value of that option is unset and arithmetic operations are executed in an unchecked context.</span></span>
 
- <span data-ttu-id="aaf49-114">对于常量表达式（可在编译时完全计算的表达式），将始终选中默认上下文。</span><span class="sxs-lookup"><span data-stu-id="aaf49-114">For constant expressions (expressions that can be fully evaluated at compile time), the default context is always checked.</span></span> <span data-ttu-id="aaf49-115">除非在未选中的上下文中显式放置常量表达式，否则在编译时间计算表达式过程中出现的溢出将导致编译时错误。</span><span class="sxs-lookup"><span data-stu-id="aaf49-115">Unless a constant expression is explicitly placed in an unchecked context, overflows that occur during the compile-time evaluation of the expression cause compile-time errors.</span></span>
+ <span data-ttu-id="80a94-115">对于常量表达式（可在编译时完全计算的表达式），将始终选中默认上下文。</span><span class="sxs-lookup"><span data-stu-id="80a94-115">For constant expressions (expressions that can be fully evaluated at compile time), the default context is always checked.</span></span> <span data-ttu-id="80a94-116">除非在未选中的上下文中显式放置常量表达式，否则在编译时间计算表达式过程中出现的溢出将导致编译时错误。</span><span class="sxs-lookup"><span data-stu-id="80a94-116">Unless a constant expression is explicitly placed in an unchecked context, overflows that occur during the compile-time evaluation of the expression cause compile-time errors.</span></span>
   
-## <a name="see-also"></a><span data-ttu-id="aaf49-116">另请参阅</span><span class="sxs-lookup"><span data-stu-id="aaf49-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="80a94-117">请参阅</span><span class="sxs-lookup"><span data-stu-id="80a94-117">See also</span></span>
 
-- [<span data-ttu-id="aaf49-117">C# 参考</span><span class="sxs-lookup"><span data-stu-id="aaf49-117">C# Reference</span></span>](../index.md)
-- [<span data-ttu-id="aaf49-118">C# 编程指南</span><span class="sxs-lookup"><span data-stu-id="aaf49-118">C# Programming Guide</span></span>](../../programming-guide/index.md)
-- [<span data-ttu-id="aaf49-119">C# 关键字</span><span class="sxs-lookup"><span data-stu-id="aaf49-119">C# Keywords</span></span>](index.md)
-- [<span data-ttu-id="aaf49-120">语句关键字</span><span class="sxs-lookup"><span data-stu-id="aaf49-120">Statement Keywords</span></span>](statement-keywords.md)
+- [<span data-ttu-id="80a94-118">C# 参考</span><span class="sxs-lookup"><span data-stu-id="80a94-118">C# Reference</span></span>](../index.md)
+- [<span data-ttu-id="80a94-119">C# 编程指南</span><span class="sxs-lookup"><span data-stu-id="80a94-119">C# Programming Guide</span></span>](../../programming-guide/index.md)
+- [<span data-ttu-id="80a94-120">C# 关键字</span><span class="sxs-lookup"><span data-stu-id="80a94-120">C# Keywords</span></span>](index.md)
+- [<span data-ttu-id="80a94-121">语句关键字</span><span class="sxs-lookup"><span data-stu-id="80a94-121">Statement Keywords</span></span>](statement-keywords.md)
