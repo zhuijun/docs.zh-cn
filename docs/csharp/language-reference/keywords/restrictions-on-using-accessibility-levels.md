@@ -1,15 +1,16 @@
 ---
+description: 可访问性级别的使用限制 - C# 参考
 title: 可访问性级别的使用限制 - C# 参考
 ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#], accessibility level restrictions
 ms.assetid: 987e2f22-46bf-4fea-80ee-270b9cd01045
-ms.openlocfilehash: 8082dbd7398b6634b68f1dd2887cd55d6798a5d9
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 542e463e41c70f2e8aed5c20dc1294e296a88518
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795152"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136989"
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>可访问性级别的使用限制（C# 参考）
 
@@ -113,10 +114,10 @@ public class A
 - [C# 编程指南](../../programming-guide/index.md)
 - [C# 关键字](index.md)
 - [访问修饰符](access-modifiers.md)
-- [可访问域](accessibility-domain.md)
+- [可访问性域](accessibility-domain.md)
 - [可访问性级别](accessibility-levels.md)
 - [访问修饰符](../../programming-guide/classes-and-structs/access-modifiers.md)
 - [public](public.md)
-- [专用](private.md)
+- [private](private.md)
 - [受保护](protected.md)
 - [internal](internal.md)

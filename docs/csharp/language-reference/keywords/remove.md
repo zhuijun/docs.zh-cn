@@ -1,4 +1,5 @@
 ---
+description: remove 上下文关键字 - C# 参考
 title: remove 上下文关键字 - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -6,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - remove event accessor [C#]
 ms.assetid: c8223426-c17b-4fe2-8406-01564cf1dd2b
-ms.openlocfilehash: 8ea3ea1910e28c03b2a894c64415cb2ccff942d0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a5514e72a04daa1232dbdf9a37813f09de791590
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713139"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136949"
 ---
 # <a name="remove-c-reference"></a>remove（C# 参考）
 
@@ -25,6 +26,6 @@ ms.locfileid: "75713139"
 
 通常不需要提供自己的自定义事件访问器。 大多数情况下，使用声明事件时由编译器自动生成的访问器就足够了。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [事件](../../programming-guide/events/index.md)

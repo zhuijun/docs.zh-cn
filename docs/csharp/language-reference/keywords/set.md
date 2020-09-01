@@ -1,4 +1,5 @@
 ---
+description: set 关键字 - C# 参考
 title: set 关键字 - C# 参考
 ms.date: 03/10/2017
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - set keyword [C#]
 ms.assetid: 30d7e4e5-cc2e-4635-a597-14a724879619
-ms.openlocfilehash: cdd84c824cc4dc93f4433f07e9978d22cba3f245
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: ff0c99e5d4d6271351783befd6650d9a77f39886
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795061"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136910"
 ---
 # <a name="set-c-reference"></a>set（C# 参考）
 

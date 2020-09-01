@@ -1,16 +1,17 @@
 ---
+description: 查询关键字 - C# 参考
 title: 查询关键字 - C# 参考
 ms.date: 07/20/2015
 helpviewer_keywords:
 - query keywords [C#]
 - LINQ [C#], query keywords
 ms.assetid: 6c9bec16-dbd7-4a7c-a060-fe4600b2021f
-ms.openlocfilehash: 01134eda540c5141afbd11b2c89ff779da495a9a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0beea8634d13222aa18f14d79fdbd95a35cc832e
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79173518"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137131"
 ---
 # <a name="query-keywords-c-reference"></a>查询关键字（C# 参考）
 
@@ -35,7 +36,7 @@ ms.locfileid: "79173518"
 |[ascending](ascending.md)|[orderby](orderby-clause.md) 子句中的上下文关键字。|
 |[descending](descending.md)|[orderby](orderby-clause.md) 子句中的上下文关键字。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 关键字](index.md)
 - [LINQ（语言集成查询）](../../programming-guide/concepts/linq/index.md)

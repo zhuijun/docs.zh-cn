@@ -1,4 +1,5 @@
 ---
+description: ref 关键字 - C# 参考
 title: ref 关键字 - C# 参考
 ms.date: 04/21/2020
 f1_keywords:
@@ -7,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: 07e1b49605c83908f7b9af25e0cb2599a97257c5
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 58a4ce30e11ca023b50e5e53b1f1554a30d44390
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102068"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89137079"
 ---
 # <a name="ref-c-reference"></a>ref（C# 参考）
 

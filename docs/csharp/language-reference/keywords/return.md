@@ -1,4 +1,5 @@
 ---
+description: return 语句 - C# 参考
 title: return 语句 - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - return statement [C#]
 - return keyword [C#]
 ms.assetid: 6da6e152-5b58-4448-8f3f-470dd0617ecd
-ms.openlocfilehash: 116bad7a1f9f61311d287c575b52547d63c9e1c0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 486db846304c0972942ff58f3d5b276083681abe
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713126"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89136991"
 ---
 # <a name="return-c-reference"></a>return（C# 参考）
 
@@ -31,7 +32,7 @@ ms.locfileid: "75713126"
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)
