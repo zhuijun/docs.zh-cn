@@ -1,4 +1,5 @@
 ---
+description: -target:module（C# 编译器选项）
 title: -target:module（C# 编译器选项）
 ms.date: 07/20/2015
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - target compiler options [C#], /target:module
 - /target compiler options [C#], /target:module
 ms.assetid: 9af1e4fa-c749-44e7-ae58-90a3d05d4e72
-ms.openlocfilehash: 25421df2e9306071ce3506aaf7affd1b259d1c32
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2c592d2fe001bb0908a06a6eb3287a39040b8715
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69602441"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128447"
 ---
 # <a name="-targetmodule-c-compiler-options"></a>-target:module（C# 编译器选项）
 此选项会导致编译器不生成程序集清单。  
@@ -29,7 +30,7 @@ ms.locfileid: "69602441"
   
  .NET Framework 公共语言运行时无法加载不含程序集清单的文件。 但是，此类文件可以通过 [-addmodule](./addmodule-compiler-option.md) 合并到程序集的程序集清单中。  
   
- 如果在一次编译中创建了多个模块，某个模块中的[内部](../keywords/internal.md)类型将适用于编译中的其他模块。 如果一个模块中的代码引用另一模块中的 `internal` 类型，则两个模块必须通过 -addmodule 合并到一个程序集清单中  。  
+ 如果在一次编译中创建了多个模块，某个模块中的[内部](../keywords/internal.md)类型将适用于编译中的其他模块。 如果一个模块中的代码引用另一模块中的 `internal` 类型，则两个模块必须通过 -addmodule 合并到一个程序集清单中****。  
   
  Visual Studio 开发环境中不支持创建模块。  
   

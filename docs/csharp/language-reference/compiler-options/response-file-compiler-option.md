@@ -1,4 +1,5 @@
 ---
+description: '@（C# 编译器选项）'
 title: '@（C# 编译器选项）'
 ms.date: 07/20/2015
 f1_keywords:
@@ -7,12 +8,12 @@ helpviewer_keywords:
 - response files, specifying for compilation [C#]
 - '@ compiler option'
 ms.assetid: dda4fa9f-a02c-400f-8b6a-d58834e13d7f
-ms.openlocfilehash: d8e5c0ec148754c3e4cebfa32ad9f44a0bb0119e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 89a057cba6e0d23c15fc9b652e5bfbc89b6ecbaa
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "70202906"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128642"
 ---
 # <a name="-c-compiler-options"></a>@（C# 编译器选项）
 通过 @ 选项，可以指定包含编译器选项和要编译的源代码文件的文件。  
@@ -23,14 +24,14 @@ ms.locfileid: "70202906"
 @response_file  
 ```  
   
-## <a name="arguments"></a>参数  
+## <a name="arguments"></a>自变量  
  `response_file`  
  列出了编译器选项或要编译的源代码文件的文件。  
   
 ## <a name="remarks"></a>备注  
  编译器选项和源代码文件将由编译器处理，如同在命令行被指定一样。  
   
- 若要在一次编译中指定多个响应文件，请指定多个响应文件选项。 例如:  
+ 若要在一次编译中指定多个响应文件，请指定多个响应文件选项。 例如：  
   
 ```console  
 @file1.rsp @file2.rsp  

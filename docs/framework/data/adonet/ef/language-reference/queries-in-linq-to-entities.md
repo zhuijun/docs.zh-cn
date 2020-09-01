@@ -3,12 +3,12 @@ title: LINQ to Entities 中的查询
 description: 了解 LINQ 如何为使用编程对象跨各种类型的数据源和格式处理数据提供简单、一致的模型。
 ms.date: 03/30/2017
 ms.assetid: c015a609-29eb-4e95-abb1-2ca721c6e2ad
-ms.openlocfilehash: eaf44cf6c995be335c6127f42d7aaec0dd98527c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 908a4a601c075e0845ba6d1eeeaa0f4dbaa3b53d
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063726"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89129135"
 ---
 # <a name="queries-in-linq-to-entities"></a>LINQ to Entities 中的查询
 查询是一种从数据源检索数据的表达式。 查询通常用专用查询语言表示，如用于关系数据库的 SQL 和用于 XML 的 XQuery。 因此，开发人员对于他们查询的每种类型的数据源或数据格式，都不得不学习一种新的查询语言。 语言集成查询 (LINQ) 为跨各种数据源和格式处理数据提供了一种更简单的、一致的模型。 在 LINQ 查询中，您始终可以使用编程对象。  
@@ -20,10 +20,10 @@ ms.locfileid: "88063726"
  在查询中，您可以确切指定要从数据源检索哪些信息。 查询也可以指定返回信息之前信息的排序、分组和表现方式。 在 LINQ 中，查询存储在变量中。 如果查询返回一系列值，则查询变量本身必须为可查询的类型。 此查询变量不执行任何操作，也不返回任何数据；它只存储查询信息。 创建查询后必须执行该查询以检索任何数据。  
   
 ## <a name="query-syntax"></a>查询语法  
- 可以通过两种语法编写 LINQ to Entities 查询：查询表达式语法和基于方法的查询语法。 查询表达式语法是 C# 3.0 和 Visual Basic 9.0 中的新增功能，它由一组用类似于 Transact-SQL 或 XQuery 的声明性语法所编写的子句组成。 但 .NET Framework 公共语言运行时 (CLR) 不能读取查询表达式语法本身。 因此，在编译时，查询表达式将转换为 CLR 能理解的形式，即方法调用。 这些方法称为 "*标准查询运算符*"。 作为开发人员，您可以选择使用方法语法而不使用查询语法直接调用这些方法。 有关详细信息，请参阅 [LINQ 中的查询语法和方法语法](../../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)。  
+ 可以通过两种语法编写 LINQ to Entities 查询：查询表达式语法和基于方法的查询语法。 查询表达式语法是 C# 3.0 和 Visual Basic 9.0 中的新增功能，它由一组用类似于 Transact-SQL 或 XQuery 的声明性语法所编写的子句组成。 但 .NET Framework 公共语言运行时 (CLR) 不能读取查询表达式语法本身。 因此，在编译时，查询表达式将转换为 CLR 能理解的形式，即方法调用。 这些方法称为 " *标准查询运算符*"。 作为开发人员，您可以选择使用方法语法而不使用查询语法直接调用这些方法。 有关详细信息，请参阅 [LINQ 中的查询语法和方法语法](../../../../../csharp/programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)。  
   
 ### <a name="query-expression-syntax"></a>查询表达式语法  
- 查询表达式是一种声明性查询语法。 通过这一语法，开发人员可以使用类似于 Transact-SQL 的高级语言格式编写查询。 通过使用查询表达式语法，你可以用最少的代码对数据源执行复杂的筛选、排序和分组操作。 有关详细信息，请[ (Visual Basic) 的基本查询操作](../../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)。 有关演示如何使用查询表达式语法的示例，请参见以下主题：  
+ 查询表达式是一种声明性查询语法。 通过这一语法，开发人员可以使用类似于 Transact-SQL 的高级语言格式编写查询。 通过使用查询表达式语法，你可以用最少的代码对数据源执行复杂的筛选、排序和分组操作。 有关详细信息，请参阅 [Visual Basic) 的基本查询操作 (](../../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md)。 有关演示如何使用查询表达式语法的示例，请参见以下主题：  
   
 - [查询表达式语法示例：投影](query-expression-syntax-examples-projection.md)  
   

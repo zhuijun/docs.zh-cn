@@ -1,13 +1,14 @@
 ---
+description: -subsystemversion（C# 编译器选项）
 title: -subsystemversion（C# 编译器选项）
 ms.date: 07/20/2015
 ms.assetid: a99fce81-9d92-4813-9874-bee777041445
-ms.openlocfilehash: d76c9424340b4b6f3c211c849b466be55eb79d1e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: e8001d8db214123e75fec4e1d1117ef90a9df606
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74802043"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128590"
 ---
 # <a name="-subsystemversion-c-compiler-options"></a>-subsystemversion（C# 编译器选项）
 
@@ -64,6 +65,6 @@ ms.locfileid: "74802043"
 
 若要在 Visual Studio 中设置 -subsystemversion 编译器选项，必须打开 .csproj 文件，并在 MSBuild XML 中为 `SubsystemVersion` 属性指定一个值。 不能在 Visual Studio IDE 中设置此选项。 有关详细信息，请参阅本主题前面的“默认值”或[常用的 MSBuild 项目属性](/visualstudio/msbuild/common-msbuild-project-properties)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 编译器选项](./index.md)

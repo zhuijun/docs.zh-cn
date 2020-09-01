@@ -1,16 +1,17 @@
 ---
+description: -target:appcontainerexe（C# 编译器选项）
 title: -target:appcontainerexe（C# 编译器选项）
 ms.date: 07/20/2015
 ms.assetid: e7e62229-23ea-4e53-bef5-380d951bf95f
-ms.openlocfilehash: 64661e72f9efe190606cadd93558678cb849e8cc
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8c3b85c2f5a20788bd311e9bf3b300c32967da77
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "74204522"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128577"
 ---
 # <a name="-targetappcontainerexe-c-compiler-options"></a>-target:appcontainerexe（C# 编译器选项）
-如果使用 -target:appcontainerexe 编译器选项，则编译器会创建一个 Windows 可执行 (.exe) 文件，该文件必须在应用容器中运行  。 此选项与 [-target:winexe](./target-winexe-compiler-option.md) 等效，但专门用于 Windows 8.x 应用商店应用。  
+如果使用 -target:appcontainerexe 编译器选项，则编译器会创建一个 Windows 可执行 (.exe) 文件，该文件必须在应用容器中运行****。 此选项与 [-target:winexe](./target-winexe-compiler-option.md) 等效，但专门用于 Windows 8.x 应用商店应用。  
   
 ## <a name="syntax"></a>语法  
   
@@ -23,13 +24,13 @@ ms.locfileid: "74204522"
   
  除非使用 [-out](./out-compiler-option.md) 选项，否则输出文件名采用包含 [Main](../../programming-guide/main-and-command-args/index.md) 方法的输入文件的名称。  
   
- 如果在命令提示符处指定此选项，则在下一个 -out 或 -target 选项之前，会使用所有文件来创建可执行文件   。  
+ 如果在命令提示符处指定此选项，则在下一个 -out 或 -target 选项之前，会使用所有文件来创建可执行文件********。  
   
 ### <a name="to-set-this-compiler-option-in-the-ide"></a>在 IDE 中设置此编译器选项  
   
 1. 在“解决方案资源管理器”  中，打开项目的快捷菜单，然后选择“属性”  。  
   
-2. 在“应用程序”  选项卡上，在“输出类型”  列表中选择“Windows 应用商店应用”  。  
+2. 在“应用程序”**** 选项卡上，在“输出类型”**** 列表中选择“Windows 应用商店应用”****。  
   
      此选项仅可用于 Windows 8.x 应用商店应用模板。  
   

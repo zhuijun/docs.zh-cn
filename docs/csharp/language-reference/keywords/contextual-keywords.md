@@ -1,19 +1,20 @@
 ---
+description: 上下文关键字 - C# 参考
 title: 上下文关键字 - C# 参考
 ms.date: 03/07/2017
 helpviewer_keywords:
 - contextual keywords [C#]
 ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
-ms.openlocfilehash: 1de8fbccfa9485a546689233ea8a601a8bd697a5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ccd9bcfe2702083573cef979b40ff4d7167e8041
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75713647"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89128396"
 ---
 # <a name="contextual-keywords-c-reference"></a>上下文关键字（C# 参考）
 
-上下文关键字用于在代码中提供特定含义，但不是 C# 中的保留字。 本部分介绍下面这些上下文关键字：  
+上下文关键字用于在代码中提供特定含义，但它不是 C# 中的保留字。 本部分介绍下面这些上下文关键字：  
   
 |关键字|说明|  
 |-------------|-----------------|  
@@ -34,7 +35,7 @@ ms.locfileid: "75713647"
   
  C# 3.0 中引入的所有查询关键字也都是上下文相关的。 有关详细信息，请参阅[查询关键字 (LINQ)](./query-keywords.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [C# 参考](../index.md)
 - [C# 编程指南](../../programming-guide/index.md)
