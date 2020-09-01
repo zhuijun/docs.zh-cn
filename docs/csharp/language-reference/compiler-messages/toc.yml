@@ -1,4 +1,4 @@
-- name: 'C# 编译器错误'
+- name: C# 编译器消息
   href: index.md
   items:
     - name: 编译器错误 CS0001
@@ -273,3 +273,5 @@
       href: cs1591.md
     - name: 编译器警告（等级 4）CS1610
       href: cs1610.md
+    - name: 编译器警告（等级 5）CS8892
+      href: cs8892.md
