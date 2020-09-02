@@ -11,12 +11,12 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 07/10/2020
-  ms.openlocfilehash: aa4090f5de075015aae7fdbd85905ec5ace2e757
-  ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+  ms.openlocfilehash: 6ad79d52f26dd3c18a36a7f4ed2a3c5e68a5f6d5
+  ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/13/2020
-  ms.locfileid: "86281649"
+  ms.lasthandoff: 09/01/2020
+  ms.locfileid: "89271966"
 highlightedContent:
   items:
   - title: 下载 .NET
@@ -206,7 +206,7 @@ additionalContent:
         text: 利用 Visual Studio 开发游戏
       - url: https://docs.cryengine.com/display/CEPROG/C%23+Programming
         text: 了解如何使用 CRYENGINE 和 C# 开发游戏
-      - url: http://www.monogame.net/documentation/?page=main
+      - url: https://docs.monogame.net/?page=main
         text: 使用 MonoGame 库和 C# 开发游戏
       - url: https://docs.unity3d.com/Manual/index.html
         text: 了解如何使用 Unity 和 C# 开发 2D 和 3D 游戏
