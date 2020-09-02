@@ -2,12 +2,12 @@
 title: 适用于云原生应用的 Azure 安全性
 description: 构建适用于 Azure 的云本机 .NET 应用 |适用于云原生应用的 Azure 安全性
 ms.date: 05/13/2020
-ms.openlocfilehash: 996c7075b252466a3b3374f1e75e64315fdd6fc7
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 7780b005d84124f202049deeb5be876364e6c5fa
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557641"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358968"
 ---
 # <a name="azure-security-for-cloud-native-apps"></a>适用于云原生应用的 Azure 安全性
 
@@ -139,7 +139,7 @@ RBAC 中的第一个组件是一个安全主体。 安全主体可以是用户�
 
 在测试安全主体是否具有特定权限时，会考虑角色和作用域的组合。 这种组合提供了一种强大的授权机制。
 
-## <a name="deny"></a>拒绝
+## <a name="deny"></a>Deny
 
 以前，RBAC 只允许使用 "允许" 规则。 此行为使某些范围的生成变得复杂。 例如，允许安全主体访问所有存储帐户，其中一个权限要求向可能会无穷的存储帐户列表授予显式权限。 每次创建新的存储帐户时，都必须将其添加到此帐户列表中。 这就增加了当然不需要的管理开销。
 
@@ -147,7 +147,7 @@ RBAC 中的第一个组件是一个安全主体。 安全主体可以是用户�
 
 ## <a name="checking-access"></a>检查访问权限
 
-正如您所想象的那样，拥有大量的角色和作用域会使服务主体的有效权限变得非常困难。 堆积上的拒绝规则仅用于提高复杂性。 幸运的是，有一个权限计算器可以显示任何服务主体的有效权限。 它通常位于门户中的 "IAM" 选项卡下，如图10-3 所示。
+正如您所想象的那样，拥有大量的角色和作用域会使服务主体的有效权限变得非常困难。 堆积上的拒绝规则仅用于提高复杂性。 幸运的是，有一个 [权限计算器](https://docs.microsoft.com/azure/role-based-access-control/check-access) 可以显示任何服务主体的有效权限。 它通常位于门户中的 "IAM" 选项卡下，如图10-3 所示。
 
 ![图9-4 应用服务的权限计算器](./media/check-rbac.png)
 
