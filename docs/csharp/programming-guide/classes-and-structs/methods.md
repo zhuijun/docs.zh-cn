@@ -6,12 +6,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: db35b48d4d7e70a54b38342e79fa2881b3857bd7
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 7b411283822360f3057b0d4f4e60ebade4fe45bc
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864145"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810932"
 ---
 # <a name="methods-c-programming-guide"></a>方法（C# 编程指南）
 
@@ -24,7 +24,7 @@ ms.locfileid: "86864145"
 
 通过指定访问级别（如 `public` 或 `private`）、可选修饰符（如 `abstract` 或 `sealed`）、返回值、方法的名称以及任何方法参数，在[类](../../language-reference/keywords/class.md)、[结构](../../language-reference/builtin-types/struct.md)或[接口](../interfaces/index.md)中声明方法。 这些部件一起构成方法的签名。
 
-> [!NOTE]
+> [!IMPORTANT]
 > 出于方法重载的目的，方法的返回类型不是方法签名的一部分。 但是在确定委托和它所指向的方法之间的兼容性时，它是方法签名的一部分。
 
 方法参数在括号内，并且用逗号分隔。 空括号指示方法不需要任何参数。 此类包含四种方法：
@@ -129,13 +129,13 @@ public static void FillMatrix(int[,] matrix)
 
 在以下示例中， `DelayAsync` 是具有 <xref:System.Threading.Tasks.Task%601>返回类型的异步方法。 `DelayAsync` 具有返回整数的 `return` 语句。 因此， `DelayAsync` 的方法声明必须具有 `Task<int>`的返回类型。 因为返回类型是 `Task<int>`， `await` 中 `DoSomethingAsync` 表达式的计算如以下语句所示得出整数： `int result = await delayTask`。
 
-`startButton_Click` 方法是具有 void 返回类型的异步方法的示例。 因为 `DoSomethingAsync` 是异步方法，调用 `DoSomethingAsync` 的任务必须等待，如以下语句所示： `await DoSomethingAsync();`。 `startButton_Click` 方法必须使用 `async` 修饰符进行定义，因为该方法具有 `await` 表达式。
+`Main` 方法就是一个具有 <xref:System.Threading.Tasks.Task> 返回类型的异步方法示例。 它会转到 `DoSomethingAsync` 方法，因为它使用单个行进行表示，所以可省略 `async` 和 `await` 关键字。 因为 `DoSomethingAsync` 是异步方法，调用 `DoSomethingAsync` 的任务必须等待，如以下语句所示： `await DoSomethingAsync();`。
 
-[!code-csharp[csAsyncMethod#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csasyncmethod/cs/mainwindow.xaml.cs#2)]
+:::code language="csharp" source="snippets/classes-and-structs/methods/Program.cs":::
 
 异步方法不能声明任何 [ref](../../language-reference/keywords/ref.md) 或 [out](../../language-reference/keywords/out-parameter-modifier.md) 参数，但是可以调用具有这类参数的方法。
 
-有关异步方法的详细信息，请参阅[使用 async 和 await 的异步编程](../concepts/async/index.md)、[异步程序中的控制流](../concepts/async/control-flow-in-async-programs.md)和[异步返回类型](../concepts/async/async-return-types.md)。
+有关异步方法的详细信息，请参阅[使用 Async 和 Await 的异步编程](../concepts/async/index.md)和[异步返回类型](../concepts/async/async-return-types.md)。
 
 ## <a name="expression-body-definitions"></a>表达式主体定义
 

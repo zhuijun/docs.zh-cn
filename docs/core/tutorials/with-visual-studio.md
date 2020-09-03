@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: fbe0b3491260e787c08b98b320b19408f2c897eb
-ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+ms.openlocfilehash: 4cd18aca4396f902268d59867760424d65ddcf6d
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87795380"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867628"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio"></a>教程：使用 Visual Studio 创建 .NET Core 控制台应用程序
 
@@ -96,7 +96,7 @@ End Module
    :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
    :::code language="vb" source="./snippets/with-visual-studio/vb/Program.vb" id="MainMethod":::
 
-   此代码在控制台中显示“What is your name?”， 然后等待用户输入字符串并按 Enter<kbd></kbd>。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量（Visual Basic 中为 `currentDate`）。 最后，它会在控制台窗口中显示这些值。
+   此代码会在控制台窗口中显示一条提示，然后等待用户输入字符串并按 <kbd>Enter</kbd>。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量（Visual Basic 中为 `currentDate`）。 同时会在控制台窗口中显示这些值。 最后会在控制台窗口中显示一条提示，并调用 <xref:System.Console.ReadKey(System.Boolean)?displayProperty=nameWithType> 方法来等待用户输入。
 
    `\n`（Visual Basic 中为 `vbCrLf`）表示换行符。
 
@@ -115,4 +115,4 @@ End Module
 在本教程中，你创建了一个 .NET Core 控制台应用程序。 在下一教程中，你将调试该应用。
 
 > [!div class="nextstepaction"]
-> [在 Visual Studio 中调试 .NET Core 控制台应用程序](debugging-with-visual-studio.md)
+> [使用 Visual Studio 调试 .NET Core 控制台应用程序](debugging-with-visual-studio.md)

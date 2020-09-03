@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 743603cb037406948190c7090ca3527bfc40db18
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 4e408d5bd0976d88f368615860ac373142d0fe1e
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84702062"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957220"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio"></a>教程：使用 Visual Studio 调试 .NET Core 控制台应用程序
 
@@ -19,7 +19,7 @@ ms.locfileid: "84702062"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 本教程适用于[在 Visual Studio 2019 中创建 .NET Core 控制台应用程序](with-visual-studio.md)中创建的控制台应用。
+- 本教程适用于在[使用 Visual Studio 创建 .NET Core 控制台应用程序](with-visual-studio.md)中创建的控制台应用。
 
 ## <a name="use-debug-build-configuration"></a>使用“调试”生成配置
 
@@ -27,11 +27,11 @@ ms.locfileid: "84702062"
 
 在“调试”配置中，程序使用完整符号调试信息编译，且不进行优化。 优化会使调试复杂化，因为源代码和生成的指令之间的关系更加复杂。 程序的发布配置进行了完全优化，且不包含任何符号调试信息。
 
- 默认情况下，Visual Studio Code 使用“调试”生成配置，因此不需要在调试之前对其进行更改。
+ 默认情况下，Visual Studio 使用“调试”生成配置，因此不需要在调试之前对其进行更改。
 
 1. 启动 Visual Studio。
 
-1. 打开按照[在 Visual Studio 2019 中创建 .NET Core 控制台应用程序](with-visual-studio.md)创建的项目。
+1. 打开在[使用 Visual Studio 创建 .NET Core 控制台应用程序](with-visual-studio.md)中创建的项目。
 
    当前的生成配置显示在工具栏上。 下面的工具栏图像显示 Visual Studio 配置为编译应用的“调试”版本：
 
@@ -41,7 +41,7 @@ ms.locfileid: "84702062"
 
 断点会在执行包含断点的代码行之前暂时中断执行应用程序。
 
-1. 单击该行代码窗口的左边缘，在显示名称、日期和时间的行上设置断点。 左边缘在行号的左侧。  设置断点的另一种方法是通过将光标置于代码行中，然后从菜单栏中选择“调试”“切换断点”来进行设置 > 。
+1. 单击该行代码窗口的左边缘，在显示名称、日期和时间的行上设置断点。 左边缘在行号的左侧。  设置断点的其他方法是，通过将光标置于代码行中，然后按 <kbd>F9</kbd> 或从菜单栏中选择“调试” > “切换断点”来进行设置 。
 
    如下图所示，Visual Studio 通过突出显示此代码行并在左边缘显示红点来指示设置了断点的行。
 
@@ -127,7 +127,7 @@ ms.locfileid: "84702062"
 
 1. 按任意键，关闭控制台窗口并停止调试。
 
-1. 单击代码窗口左边缘上的点，清除断点。 清除断点的另一种方法是在选中代码行时选择“调试”>“切换断点”。
+1. 单击代码窗口左边缘上的点，清除断点。 清除断点的其他方法是在选中代码行时按 <kbd>F9</kbd> 或选择“调试”>“切换断点”。
 
 ## <a name="step-through-a-program"></a>单步执行程序
 

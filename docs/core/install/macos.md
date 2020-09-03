@@ -4,12 +4,12 @@ description: 了解可在其上安装 .NET Core 的 macOS 版本。
 author: adegeo
 ms.author: adegeo
 ms.date: 06/25/2020
-ms.openlocfilehash: 951e9b6a64d55274729e233b4a2d7728c75d05d4
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 19d5ca77b0308533c8f228be70c61daf1b7f82d9
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302927"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132750"
 ---
 # <a name="install-net-core-on-macos"></a>在 macOS 上安装 .NET Core
 
@@ -159,7 +159,7 @@ export PATH=$PATH:$HOME/dotnet
 
 ## <a name="install-with-visual-studio-for-mac"></a>使用 Visual Studio for Mac 安装
 
-在选定“.NET Core”工作负载时，使用 Visual Studio for Mac 安装 .NET Core SDK。 若要开始在 macOS 上进行 .NET Core 开发，请参阅[安装 Visual Studio 2019 for Mac](/visualstudio/mac/installation)。 对于最新的版本 .NET Core 3.1，则必须使用 Visual Studio for Mac 8.4 预览版。
+在选定“.NET Core”工作负载时，使用 Visual Studio for Mac 安装 .NET Core SDK。 若要开始在 macOS 上进行 .NET Core 开发，请参阅[安装 Visual Studio 2019 for Mac](/visualstudio/mac/installation)。 对于最新版本 .NET Core 3.1，则必须使用 Visual Studio for Mac 8.4。
 
 [![具有 .NET Core 工作负载功能的 macOS Visual Studio 2019 for Mac](media/install-sdk/mac-install-selection.png)](media/install-sdk/mac-install-selection.png#lightbox)
 

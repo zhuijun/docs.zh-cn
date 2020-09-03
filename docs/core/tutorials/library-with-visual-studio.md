@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet,contperfq1
-ms.openlocfilehash: 595e93d8d8d22478c6770ddd4f70a0214653f5b9
-ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+ms.openlocfilehash: 45a44dcd73e1abcc8dfd75cd54da5a2310f027c4
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88187947"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118255"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio"></a>教程：在 Visual Studio 中创建 .NET Standard 库
 
@@ -70,7 +70,7 @@ ms.locfileid: "88187947"
 
    `StartsWithUpper` 以[扩展方法](../../csharp/programming-guide/classes-and-structs/extension-methods.md)的形式进行实现，这样就可以将其作为 <xref:System.String> 类成员进行调用。
 
-1. 在菜单栏上，选择“生成” > “生成解决方案”以验证项目是否正确编译 。
+1. 在菜单栏上，选择“生成” > “生成解决方案”或按 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>B</kbd>，验证项目是否编译正确 。
 
 ## <a name="add-a-console-app-to-the-solution"></a>向解决方案添加控制台应用
 

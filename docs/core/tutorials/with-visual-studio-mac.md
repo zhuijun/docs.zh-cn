@@ -2,12 +2,12 @@
 title: 使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序
 description: 了解如何使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序。
 ms.date: 06/02/2020
-ms.openlocfilehash: 9cab838eaab2c59d8a0270267514f57acb7c60fb
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: 8ffcb05ad85f53180ca1aaefbd2dfc7496946142
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84811671"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867654"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-for-mac"></a>教程：使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序
 
@@ -86,7 +86,7 @@ namespace HelloWorld
 
    :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
 
-   此代码在控制台中显示“What is your name?”， 然后等待用户输入字符串并按 <kbd>Enter</kbd> 键。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量。 最后，它会在控制台窗口中显示这些值。
+   此代码会在控制台窗口中显示一条提示，然后等待用户输入字符串并按 <kbd>Enter</kbd>。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量。 同时会在控制台窗口中显示这些值。 最后会在控制台窗口中显示一条提示，并调用 <xref:System.Console.ReadKey(System.Boolean)?displayProperty=nameWithType> 方法来等待用户输入。
 
    `\n` 表示一个换行符。
 
@@ -105,4 +105,4 @@ namespace HelloWorld
 在本教程中，你创建了一个 .NET Core 控制台应用程序。 在下一教程中，你将调试该应用。
 
 > [!div class="nextstepaction"]
-> [在 Visual Studio 中调试 .NET Core 控制台应用程序](debugging-with-visual-studio-mac.md)
+> [使用 Visual Studio for Mac 调试 .NET Core 控制台应用程序](debugging-with-visual-studio-mac.md)

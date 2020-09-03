@@ -1,13 +1,13 @@
 ---
 title: 实现值对象
 description: 适用于容器化的 .NET 应用程序的 .NET 微服务体系结构 | 深入了解有关使用新实体框架功能实现值对象的详细信息和选项。
-ms.date: 01/30/2020
-ms.openlocfilehash: 4a8a92a8dabcf09654ecd0e5dea2a7df25d7abf7
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.date: 08/21/2020
+ms.openlocfilehash: 02eed7baaa364c62aa2df599f1d8b0e700dd215f
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805735"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811114"
 ---
 # <a name="implement-value-objects"></a>实现值对象
 
@@ -37,7 +37,7 @@ ms.locfileid: "80805735"
 
 ## <a name="value-object-implementation-in-c"></a>C\# 中的值对象实现
 
-就实现而言，你可以拥有值对象基类，它具有基于所有特性（因值对象不得基于标识）和其他基本特征间的对比的基本实用工具方法，如相等。 下面的示例演示用于 eShopOnContainers 订购微服务中的值对象基类。
+就实现而言，你可以拥有值对象基类，它具有基于所有特性（因为值对象不得基于标识）和其他基本特征间的对比的基本实用工具方法，如相等。 下面的示例演示用于 eShopOnContainers 订购微服务中的值对象基类。
 
 ```csharp
 public abstract class ValueObject
@@ -56,7 +56,7 @@ public abstract class ValueObject
         return !(EqualOperator(left, right));
     }
 
-    protected abstract IEnumerable<object> GetAtomicValues();
+    protected abstract IEnumerable<object> GetEqualityComponents();
 
     public override bool Equals(object obj)
     {
@@ -65,31 +65,16 @@ public abstract class ValueObject
             return false;
         }
 
-        ValueObject other = (ValueObject)obj;
-        IEnumerator<object> thisValues = GetAtomicValues().GetEnumerator();
-        IEnumerator<object> otherValues = other.GetAtomicValues().GetEnumerator();
-        while (thisValues.MoveNext() && otherValues.MoveNext())
-        {
-            if (ReferenceEquals(thisValues.Current, null) ^
-                ReferenceEquals(otherValues.Current, null))
-            {
-                return false;
-            }
+        var other = (ValueObject)obj;
 
-            if (thisValues.Current != null &&
-                !thisValues.Current.Equals(otherValues.Current))
-            {
-                return false;
-            }
-        }
-        return !thisValues.MoveNext() && !otherValues.MoveNext();
+        return this.GetEqualityComponents().SequenceEqual(other.GetEqualityComponents());
     }
 
     public override int GetHashCode()
     {
-        return GetAtomicValues()
-         .Select(x => x != null ? x.GetHashCode() : 0)
-         .Aggregate((x, y) => x ^ y);
+        return GetEqualityComponents()
+            .Select(x => x != null ? x.GetHashCode() : 0)
+            .Aggregate((x, y) => x ^ y);
     }
     // Other utility methods
 }
@@ -106,7 +91,7 @@ public class Address : ValueObject
     public String Country { get; private set; }
     public String ZipCode { get; private set; }
 
-    private Address() { }
+    public Address() { }
 
     public Address(string street, string city, string state, string country, string zipcode)
     {
@@ -117,7 +102,7 @@ public class Address : ValueObject
         ZipCode = zipcode;
     }
 
-    protected override IEnumerable<object> GetAtomicValues()
+    protected override IEnumerable<object> GetEqualityComponents()
     {
         // Using a yield return statement to return each element one at a time
         yield return Street;
@@ -133,7 +118,7 @@ public class Address : ValueObject
 
 在 EF Core 2.0 之前，实体框架 (EF) 使用的类中是不能没有 ID 字段的，EF Core 2.0 在实现不具有 ID 的更好值对象方面发挥了很大的作用。 下一节内容将对此进行详细介绍。
 
-也许有人会争辩说，由于值对象是不可变的，所以应该是只读的（即具有“只获取”属性），这是事实没错。 但是，值对象通常会被执行序列化和反序列化操作以遍历消息队列，并且由于是只读的，这阻止了反序列化器分配值，从而只将其保留为 `private set`，且其只读程度让此机制成为可能。
+也许有人会争辩说，由于值对象是不可变的，所以应该是只读的（即具有“只获取”属性），这是事实没错。 但是，值对象通常会被执行序列化和反序列化操作以遍历消息队列，并且由于是只读的，这阻止了反序列化器分配值，因此只需将其保留为 `private set`，且其只读程度让此机制成为可能。
 
 ## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20-and-later"></a>如何通过 EF Core 2.0 及更高版本在数据库中持久保存值对象
 
@@ -170,7 +155,7 @@ void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration)
 
 固有实体类型允许在任何实体内映射具有以下特征的类型：用作属性且不具有在域模型中显式定义的自己的标识，如值对象。 从属实体类型与其他实体类型共享相同的 CLR 类型（也就是说，它是常规类）。 包含定义性导航的实体是所有者实体。 查询所有者时，固有类型将默认包含在内。
 
-查看一下域模型，从属类型看上去似乎没有任何标识。 但是事实上，固有类型确有标识，但所有者导航属性为此标识的一部分。
+查看一下域模型，从属类型看上去似乎没有任何标识。 但是事实上，固有类型的确有标识，但所有者导航属性为此标识的一部分。
 
 拥有类型的实例的标识并非完全属于他们自己。 它由三个部分组成：
 
@@ -180,7 +165,7 @@ void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration)
 
 - 对于固有类型的集合，一个独立的组成部分（在 EF Core 2.2 及更高版本中受支持）。
 
-例如，在 eShopOnContainers 的订购域模型中，作为 Order 实体的一部分，Address 值对象在所有者实体（即 Order 实体）内作为固有实体类型实现。 Address 是域模型中定义的没有标识属性的类型。 它用作 Order 类型的属性来指定特定订单的发货地址。
+例如，在 eShopOnContainers 的订购域模型中，作为 Order 实体的一部分，Address 值对象在所有者实体（即 Order 实体）内作为固有实体类型实现。 `Address` 类型在域模型中没有定义标识属性。 它用作 Order 类型的属性来指定特定订单的发货地址。
 
 依照约定，将为固有类型创建一个阴影主键，并通过表拆分将其映射到与所有者相同的表。 这样就可以通过类似于传统 .NET Framework 的 EF6 中复杂类型的用法来使用固有类型。
 

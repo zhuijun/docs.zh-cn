@@ -1,4 +1,5 @@
 ---
+description: try-catch - C# 参考
 title: try-catch - C# 参考
 ms.date: 07/20/2015
 f1_keywords:
@@ -10,12 +11,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: 4715a27a94ac86c5e4955c0e8be95c6ee4a28507
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: e3154da2103029f704abd6873d16d372f1ae19ac
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619697"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89141993"
 ---
 # <a name="try-catch-c-reference"></a>try-catch（C# 参考）
 
@@ -131,9 +132,9 @@ static void Main()
 
 异步方法由 [async](async.md) 修饰符标记，通常包含一个或多个 await 表达式或语句。 await 表达式将 [await](../operators/await.md) 运算符应用于 <xref:System.Threading.Tasks.Task> 或 <xref:System.Threading.Tasks.Task%601>。
 
-当控件到达异步方法中的 `await` 时，将挂起方法中的进度，直到所等待的任务完成。 任务完成后，可以在方法中恢复执行。 有关详细信息，请参阅[使用 async 和 await 的异步编程](../../programming-guide/concepts/async/index.md)和[异步程序中的控制流](../../programming-guide/concepts/async/control-flow-in-async-programs.md)。
+当控件到达异步方法中的 `await` 时，将挂起方法中的进度，直到所等待的任务完成。 任务完成后，可以在方法中恢复执行。 有关详细信息，请参阅[使用 Async 和 Await 的异步编程](../../programming-guide/concepts/async/index.md)。
 
-应用了 `await` 的完成任务可能由于返回此任务的方法中存在未处理的异常而处于错误状态。 等待该任务引发异常。 如果取消了返回任务的异步进程，此任务最后也可能为已取消状态。 等待已取消的任务引发 `OperationCanceledException`。 有关如何取消异步进程的详细信息，请参阅[微调异步应用程序](../../programming-guide/concepts/async/fine-tuning-your-async-application.md)。
+应用了 `await` 的完成任务可能由于返回此任务的方法中存在未处理的异常而处于错误状态。 等待该任务引发异常。 如果取消了返回任务的异步进程，此任务最后也可能为已取消状态。 等待已取消的任务时将引发 `OperationCanceledException`。
 
 若要捕获异常，请在 `try` 块中等待任务并在关联的 `catch` 块中捕获异常。 有关示例，请参阅[异步方法示例](#async-method-example)部分。
 

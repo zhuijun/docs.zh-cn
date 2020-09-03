@@ -10,12 +10,12 @@ metadata:
   level: Beginner
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 9618b3f931b8290d7ce696007c3c9603cc30ef6e
-  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+  ms.openlocfilehash: 278f2c9b3dc8b00313213508bbd9057e6a0ad3b9
+  ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/17/2020
-  ms.locfileid: "88268109"
+  ms.lasthandoff: 08/25/2020
+  ms.locfileid: "88812167"
 items:
 - durationInMinutes: 1
   content: >
@@ -121,7 +121,7 @@ items:
     ```
 
 
-    可能无法确定列表是否包含某项，因此，应始终检查 <xref:System.Collections.Generic.List%601.IndexOf%2A> 返回的索引。 如果索引为 -1，表明找不到相应项。
+    可能无法确定列表是否包含某项，因此，应始终检查 <xref:System.Collections.Generic.List%601.IndexOf%2A> 返回的索引。 如果索引为 `-1`，则找不到相应项。
 
 
     还可以对列表中的项进行排序。 <xref:System.Collections.Generic.List%601.Sort%2A> 方法按正常顺序（如果是字符串则按字母顺序）对列表中的所有项进行排序。 添加以下代码，再试运行看看：

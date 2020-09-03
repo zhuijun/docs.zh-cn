@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 发布 .NET Core 控制台应用程序
 description: 发布应用程序会创建运行 .NET Core 应用程序所需的一组文件。
 ms.date: 07/04/2020
-ms.openlocfilehash: 8fd9975e8a88704b9dea45b40127c8dc03f7d09f
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: a84e66126806e2ab45c14527df1b931fa9980468
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86051878"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867641"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-code"></a>教程：使用 Visual Studio Code 发布 .NET Core 控制台应用程序
 
@@ -17,13 +17,13 @@ ms.locfileid: "86051878"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 本教程适用于[在 Visual Studio Code 中创建 .NET Core 控制台应用程序](with-visual-studio-code.md)中创建的控制台应用。
+- 本教程适用于在[使用 Visual Studio Code 创建 .NET Core 控制台应用程序](with-visual-studio-code.md)中创建的控制台应用。
 
 ## <a name="publish-the-app"></a>发布应用
 
 1. 启动 Visual Studio Code。
 
-1. 打开在[在 Visual Studio Code 中创建 .NET Core 控制台应用程序](with-visual-studio-code.md)中创建的 HelloWorld 项目文件夹。
+1. 打开在[使用 Visual Studio Code 创建 .NET Core 控制台应用程序](with-visual-studio-code.md)中创建的 HelloWorld 项目文件夹。
 
 1. 从主菜单中选择“视图” > “终端” 。
 
@@ -39,7 +39,7 @@ ms.locfileid: "86051878"
 
    该命令的输出类似于以下示例：
 
-   ```
+   ```output
    Microsoft (R) Build Engine version 16.6.0+5ff7b0c9e for .NET Core
    Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -112,4 +112,4 @@ ms.locfileid: "86051878"
 在本教程中，你发布了一个控制台应用。 在下一教程中，你将创建类库。
 
 > [!div class="nextstepaction"]
-> [在 Visual Studio Code 中创建 .NET Standard 库](library-with-visual-studio-code.md)
+> [使用 Visual Studio Code 创建 .NET Standard 库](library-with-visual-studio-code.md)

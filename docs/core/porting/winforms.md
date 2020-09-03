@@ -4,12 +4,12 @@ description: 了解如何将 .NET Framework Windows 窗体应用程序移植到 
 author: Thraka
 ms.author: adegeo
 ms.date: 01/24/2020
-ms.openlocfilehash: efa73428c816eddc00c62c2275d3457c92284388
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 71bd5740e1ea380fdde86328a5aed71fded64765
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83206137"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118541"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>如何将 Windows 窗体桌面应用程序移植到 .NET Core
 
@@ -26,7 +26,7 @@ ms.locfileid: "83206137"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 适用于要执行的任何设计器工作的 [Visual Studio 2019 16.5 预览版 1](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&ch=pre&rel=16) 或更高版本。 建议更新到最新的 [Visual Studio 预览版](https://visualstudio.microsoft.com/vs/preview/)。
+- 适用于要执行的任何设计器工作的 [Visual Studio 2019 版本 16.5 或更高版本](https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=community&rel=16)。 建议更新到[最新的 Visual Studio 版本](https://visualstudio.microsoft.com/vs/)。
 
   安装以下 Visual Studio 工作负载：
   
@@ -37,7 +37,7 @@ ms.locfileid: "83206137"
 - 用 C# 编码的项目。
 
 > [!NOTE]
-> 仅在 Visual Studio 2019 或更高版本中支持 .NET Core 3.0 项目。 从 Visual Studio 2019 版本 16.5 预览版 1 开始，还支持 .NET Core Windows 窗体设计器。
+> Visual Studio 2019 及更高版本支持 .NET Core Windows 窗体项目。 从 Visual Studio 2019 版本 16.5 开始，还支持 .NET Core Windows 窗体设计器。
 >
 > 若要启用该设计器，请转到“工具” > “选项” > “环境” > “预览功能”，然后选择“将预览版 Windows 窗体设计器用于 .NET Core 应用”选项。
 

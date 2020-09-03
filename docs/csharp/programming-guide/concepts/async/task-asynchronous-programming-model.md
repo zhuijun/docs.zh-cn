@@ -1,14 +1,14 @@
 ---
-title: 使用 Async和 Await 的任务异步编程模型 (TAP) (C#)
+title: 使用 Async和 Await 的任务异步编程 (TAP) 模型 (C#)
 description: 了解何时以及如何使用基于任务的异步编程，这是一种使用 C# 进行异步编程的简化方法。
-ms.date: 05/22/2017
+ms.date: 08/19/2020
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: ddda97e9c77473120ed32b0e224b07d7c4d71b1e
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 5e85b99025b31e205c66468d4bd886701cbaea17
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925132"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88812078"
 ---
 # <a name="task-asynchronous-programming-model"></a>异步编程模型
 
@@ -24,12 +24,12 @@ ms.locfileid: "86925132"
 
 下表显示了异步编程提高响应能力的典型区域。 列出的 .NET 和 Windows 运行时 API 包含支持异步编程的方法。
 
-| 应用程序区域    | 包含异步方法的 .NET 类型     | 包含异步方法的 Windows 运行时类型  |
-|---------------------|-----------------------------------|-------------------------------------------|
-|Web 访问|<xref:System.Net.Http.HttpClient>|<xref:Windows.Web.Syndication.SyndicationClient>|
-|使用文件|<xref:System.IO.StreamWriter>, <xref:System.IO.StreamReader>, <xref:System.Xml.XmlReader>|<xref:Windows.Storage.StorageFile>|
-|使用图像||<xref:Windows.Media.Capture.MediaCapture>, <xref:Windows.Graphics.Imaging.BitmapEncoder>, <xref:Windows.Graphics.Imaging.BitmapDecoder>|
-|WCF 编程|[同步和异步操作](../../../../framework/wcf/synchronous-and-asynchronous-operations.md)||
+| 应用程序区域 | 包含异步方法的 .NET 类型 | 包含异步方法的 Windows 运行时类型 |
+|--|--|--|
+| Web 访问 | <xref:System.Net.Http.HttpClient> | <xref:Windows.Web.Http.HttpClient?displayProperty=nameWithType> <br> <xref:Windows.Web.Syndication.SyndicationClient> |
+| 使用文件 | <xref:System.Text.Json.JsonSerializer> <br> <xref:System.IO.StreamReader> <br> <xref:System.IO.StreamWriter> <br> <xref:System.Xml.XmlReader> <br> <xref:System.Xml.XmlWriter> | <xref:Windows.Storage.StorageFile> |
+| 使用图像 |  | <xref:Windows.Media.Capture.MediaCapture> <br> <xref:Windows.Graphics.Imaging.BitmapEncoder> <br> <xref:Windows.Graphics.Imaging.BitmapDecoder> |
+| WCF 编程 | [同步和异步操作](../../../../framework/wcf/synchronous-and-asynchronous-operations.md) |  |
 
 由于所有与用户界面相关的活动通常共享一个线程，因此，异步对访问 UI 线程的应用程序来说尤为重要。 如果任何进程在同步应用程序中受阻，则所有进程都将受阻。 你的应用程序停止响应，因此，你可能在其等待过程中认为它已经失败。
 
@@ -37,55 +37,31 @@ ms.locfileid: "86925132"
 
 当设计异步操作时，该基于异步的方法将自动传输的等效对象添加到可从中选择的选项列表中。 开发人员只需要投入较少的工作量即可使你获取传统异步编程的所有优点。
 
-## <a name="async-methods-are-easier-to-write"></a><a name="BKMK_HowtoWriteanAsyncMethod"></a> 异步方法更容易编写
+## <a name="async-methods-are-easy-to-write"></a><a name="BKMK_HowtoWriteanAsyncMethod"></a> 异步方法易于编写
 
 C# 中的 [Async](../../../language-reference/keywords/async.md) 和 [Await](../../../language-reference/operators/await.md) 关键字是异步编程的核心。 通过这两个关键字，可以使用 .NET Framework、.NET Core 或 Windows 运行时中的资源，轻松创建异步方法（几乎与创建同步方法一样轻松）。 使用 `async` 关键字定义的异步方法简称为“异步方法”。
 
 下面的示例演示了一种异步方法。 你应对代码中的几乎所有内容都很熟悉。
 
-本主题的末尾提供完整的 Windows Presentation Foundation (WPF) 示例文件，可以从[异步示例：“使用 Async 和 Await 的异步编程”示例](https://docs.microsoft.com/samples/dotnet/samples/async-and-await-cs/)下载此示例。
+可从 [C# 中使用 Async 和 Await 的异步编程](https://docs.microsoft.com/samples/dotnet/samples/async-and-await-cs)中找到可供下载的完整 Windows Presentation Foundation (WPF) 示例。
 
-```csharp
-async Task<int> AccessTheWebAsync()
-{
-    // You need to add a reference to System.Net.Http to declare client.
-    var client = new HttpClient();
+:::code language="csharp" source="snippets/access-web/Program.cs" id="ControlFlow":::
 
-    // GetStringAsync returns a Task<string>. That means that when you await the
-    // task you'll get a string (urlContents).
-    Task<string> getStringTask = client.GetStringAsync("https://docs.microsoft.com/dotnet");
+可以从前面的示例中了解几种做法。 从方法签名开始。 它包含 `async` 修饰符。 返回类型为 `Task<int>`（有关更多选项，请参阅“返回类型”部分）。 方法名称以 `Async` 结尾。 在方法的主体中，`GetStringAsync` 返回 `Task<string>`。 这意味着在 `await` 任务时，将获得 `string` (`contents`)。 在等待任务之前，可以通过 `GetStringAsync` 执行不依赖于 `string` 的工作。
 
-    // You can do work here that doesn't rely on the string from GetStringAsync.
-    DoIndependentWork();
+密切注意 `await` 运算符。 它会暂停 `GetUrlContentLengthAsync`：
 
-    // The await operator suspends AccessTheWebAsync.
-    //  - AccessTheWebAsync can't continue until getStringTask is complete.
-    //  - Meanwhile, control returns to the caller of AccessTheWebAsync.
-    //  - Control resumes here when getStringTask is complete.
-    //  - The await operator then retrieves the string result from getStringTask.
-    string urlContents = await getStringTask;
-
-    // The return statement specifies an integer result.
-    // Any methods that are awaiting AccessTheWebAsync retrieve the length value.
-    return urlContents.Length;
-}
-```
-
-可以从前面的示例中了解几种做法。 从方法签名开始。 它包含 `async` 修饰符。 返回类型为 `Task<int>`（有关更多选项，请参阅“返回类型”部分）。 方法名称以 `Async` 结尾。 在方法的主体中，`GetStringAsync` 返回 `Task<string>`。 这意味着在 `await` 任务时，将获得 `string` (`urlContents`)。  在等待任务之前，可以通过 `GetStringAsync` 执行不依赖于 `string` 的工作。
-
-密切注意 `await` 运算符。 它将暂停 `AccessTheWebAsync`；
-
-- 在 `getStringTask` 完成之前，`AccessTheWebAsync` 无法继续。
-- 同时，控件返回至 `AccessTheWebAsync` 的调用方。
+- 在 `getStringTask` 完成之前，`GetUrlContentLengthAsync` 无法继续。
+- 同时，控件返回至 `GetUrlContentLengthAsync` 的调用方。
 - 当 `getStringTask` 完成时，控件将在此处继续。
 - 然后，`await` 运算符会从 `getStringTask` 检索 `string` 结果。
 
-return 语句指定整数结果。 任何等待 `AccessTheWebAsync` 的方法都会检索长度值。
+return 语句指定整数结果。 任何等待 `GetUrlContentLengthAsync` 的方法都会检索长度值。
 
-如果 `AccessTheWebAsync` 在调用 `GetStringAsync` 和等待其完成期间不能进行任何工作，则你可以通过在下面的单个语句中调用和等待来简化代码。
+如果 `GetUrlContentLengthAsync` 在调用 `GetStringAsync` 和等待其完成期间不能进行任何工作，则你可以通过在下面的单个语句中调用和等待来简化代码。
 
 ```csharp
-string urlContents = await client.GetStringAsync("https://docs.microsoft.com/dotnet");
+string contents = await client.GetStringAsync("https://docs.microsoft.com/dotnet");
 ```
 
 以下特征总结了使上一个示例成为异步方法的原因：
@@ -111,37 +87,35 @@ string urlContents = await client.GetStringAsync("https://docs.microsoft.com/dot
 
 异步编程中最需弄清的是控制流是如何从方法移动到方法的。 下图可引导你完成此过程：
 
-![跟踪异步程序](./media/task-asynchronous-programming-model/navigation-trace-async-program.png "NavigationTrace")
+:::image type="content" source="media/task-asynchronous-programming-model/navigation-trace-async-program.png" alt-text="异步控制流的跟踪导航" lightbox="media/task-asynchronous-programming-model/navigation-trace-async-program.png":::
 
-关系图中的数字对应于以下步骤，在用户单击“开始”按钮时启动。
+关系图中的数字对应于以下步骤，在调用方法调用异步方法时启动。
 
-1. 事件处理程序调用并等待 `AccessTheWebAsync` 异步方法。
+1. 调用方法调用并等待 `GetUrlContentLengthAsync` 异步方法。
 
-2. `AccessTheWebAsync` 可创建 <xref:System.Net.Http.HttpClient> 实例并调用 <xref:System.Net.Http.HttpClient.GetStringAsync%2A> 异步方法以下载网站内容作为字符串。
+1. `GetUrlContentLengthAsync` 可创建 <xref:System.Net.Http.HttpClient> 实例并调用 <xref:System.Net.Http.HttpClient.GetStringAsync%2A> 异步方法以下载网站内容作为字符串。
 
-3. `GetStringAsync` 中发生了某种情况，该情况挂起了它的进程。 可能必须等待网站下载或一些其他阻止活动。 为避免阻止资源，`GetStringAsync` 会将控制权出让给其调用方 `AccessTheWebAsync`。
+1. `GetStringAsync` 中发生了某种情况，该情况挂起了它的进程。 可能必须等待网站下载或一些其他阻止活动。 为避免阻止资源，`GetStringAsync` 会将控制权出让给其调用方 `GetUrlContentLengthAsync`。
 
-     `GetStringAsync` 返回 <xref:System.Threading.Tasks.Task%601>，其中 `TResult` 为字符串，并且 `AccessTheWebAsync` 将任务分配给 `getStringTask` 变量。 该任务表示调用 `GetStringAsync` 的正在进行的进程，其中承诺当工作完成时产生实际字符串值。
+     `GetStringAsync` 返回 <xref:System.Threading.Tasks.Task%601>，其中 `TResult` 为字符串，并且 `GetUrlContentLengthAsync` 将任务分配给 `getStringTask` 变量。 该任务表示调用 `GetStringAsync` 的正在进行的进程，其中承诺当工作完成时产生实际字符串值。
 
-4. 由于尚未等待 `getStringTask`，因此，`AccessTheWebAsync` 可以继续执行不依赖于 `GetStringAsync` 得出的最终结果的其他工作。 该任务由对同步方法 `DoIndependentWork` 的调用表示。
+1. 由于尚未等待 `getStringTask`，因此，`GetUrlContentLengthAsync` 可以继续执行不依赖于 `GetStringAsync` 得出的最终结果的其他工作。 该任务由对同步方法 `DoIndependentWork` 的调用表示。
 
-5. `DoIndependentWork` 是完成其工作并返回其调用方的同步方法。
+1. `DoIndependentWork` 是完成其工作并返回其调用方的同步方法。
 
-6. `AccessTheWebAsync` 已运行完毕，可以不受 `getStringTask` 的结果影响。 接下来，`AccessTheWebAsync` 需要计算并返回已下载的字符串的长度，但该方法只有在获得字符串的情况下才能计算该值。
+1. `GetUrlContentLengthAsync` 已运行完毕，可以不受 `getStringTask` 的结果影响。 接下来，`GetUrlContentLengthAsync` 需要计算并返回已下载的字符串的长度，但该方法只有在获得字符串的情况下才能计算该值。
 
-     因此，`AccessTheWebAsync` 使用一个 await 运算符来挂起其进度，并把控制权交给调用 `AccessTheWebAsync` 的方法。 `AccessTheWebAsync` 将 `Task<int>` 返回给调用方。 该任务表示对产生下载字符串长度的整数结果的一个承诺。
+    因此，`GetUrlContentLengthAsync` 使用一个 await 运算符来挂起其进度，并把控制权交给调用 `GetUrlContentLengthAsync` 的方法。 `GetUrlContentLengthAsync` 将 `Task<int>` 返回给调用方。 该任务表示对产生下载字符串长度的整数结果的一个承诺。
 
     > [!NOTE]
-    > 如果 `GetStringAsync`（因此 `getStringTask`）在 `AccessTheWebAsync` 等待前完成，则控制会保留在 `AccessTheWebAsync` 中。 如果异步调用过程 (`getStringTask`) 已完成，并且 `AccessTheWebAsync` 不必等待最终结果，则挂起然后返回到 `AccessTheWebAsync` 将造成成本浪费。
+    > 如果 `GetStringAsync`（因此 `getStringTask`）在 `GetUrlContentLengthAsync` 等待前完成，则控制会保留在 `GetUrlContentLengthAsync` 中。 如果异步调用过程 `getStringTask` 已完成，并且 `GetUrlContentLengthAsync` 不必等待最终结果，则挂起然后返回到 `GetUrlContentLengthAsync` 将造成成本浪费。
 
-     在调用方内部（此示例中的事件处理程序），处理模式将继续。 在等待结果前，调用方可以开展不依赖于 `AccessTheWebAsync` 结果的其他工作，否则就需等待片刻。   事件处理程序等待 `AccessTheWebAsync`，而 `AccessTheWebAsync` 等待 `GetStringAsync`。
+    在调用方法中，处理模式会继续。 在等待结果前，调用方可以开展不依赖于 `GetUrlContentLengthAsync` 结果的其他工作，否则就需等待片刻。 调用方法等待 `GetUrlContentLengthAsync`，而 `GetUrlContentLengthAsync` 等待 `GetStringAsync`。
 
-7. `GetStringAsync` 完成并生成一个字符串结果。 字符串结果不是通过按你预期的方式调用 `GetStringAsync` 所返回的。 （记住，该方法已返回步骤 3 中的一个任务）。相反，字符串结果存储在表示 `getStringTask` 方法完成的任务中。 await 运算符从 `getStringTask` 中检索结果。 赋值语句将检索到的结果赋给 `urlContents`。
+1. `GetStringAsync` 完成并生成一个字符串结果。 字符串结果不是通过按你预期的方式调用 `GetStringAsync` 所返回的。 （记住，该方法已返回步骤 3 中的一个任务）。相反，字符串结果存储在表示 `getStringTask` 方法完成的任务中。 await 运算符从 `getStringTask` 中检索结果。 赋值语句将检索到的结果赋给 `contents`。
 
-8. 当 `AccessTheWebAsync` 具有字符串结果时，该方法可以计算字符串长度。 然后，`AccessTheWebAsync` 工作也将完成，并且等待事件处理程序可继续使用。 在此主题结尾处的完整示例中，可确认事件处理程序检索并打印长度结果的值。
+1. 当 `GetUrlContentLengthAsync` 具有字符串结果时，该方法可以计算字符串长度。 然后，`GetUrlContentLengthAsync` 工作也将完成，并且等待事件处理程序可继续使用。 在此主题结尾处的完整示例中，可确认事件处理程序检索并打印长度结果的值。
 如果你不熟悉异步编程，请花 1 分钟时间考虑同步行为和异步行为之间的差异。 当其工作完成时（第 5 步）会返回一个同步方法，但当其工作挂起时（第 3 步和第 6 步），异步方法会返回一个任务值。 在异步方法最终完成其工作时，任务会标记为已完成，而结果（如果有）将存储在任务中。
-
-若要详细了解控制流，请参阅[异步程序中的控制流 (C#)](control-flow-in-async-programs.md)。
 
 ## <a name="api-async-methods"></a><a name="BKMK_APIAsyncMethods"></a> API 异步方法
 
@@ -187,32 +161,29 @@ Windows 运行时也包含许多可以在 Windows 应用中与 `async` 和 `awai
 下面的示例演示如何声明并调用可返回 <xref:System.Threading.Tasks.Task%601> 或 <xref:System.Threading.Tasks.Task> 的方法：
 
 ```csharp
-// Signature specifies Task<TResult>
 async Task<int> GetTaskOfTResultAsync()
 {
     int hours = 0;
     await Task.Delay(0);
-    // Return statement specifies an integer result.
+
     return hours;
 }
 
-// Calls to GetTaskOfTResultAsync
+
 Task<int> returnedTaskTResult = GetTaskOfTResultAsync();
 int intResult = await returnedTaskTResult;
-// or, in a single statement
-int intResult = await GetTaskOfTResultAsync();
+// Single line
+// int intResult = await GetTaskOfTResultAsync();
 
-// Signature specifies Task
 async Task GetTaskAsync()
 {
     await Task.Delay(0);
-    // The method has no return statement.
+    // No return statement needed
 }
 
-// Calls to GetTaskAsync
 Task returnedTask = GetTaskAsync();
 await returnedTask;
-// or, in a single statement
+// Single line
 await GetTaskAsync();
 ```
 
@@ -224,7 +195,7 @@ await GetTaskAsync();
 
 异步方法无法声明 [in](../../../language-reference/keywords/in-parameter-modifier.md)、[ref](../../../language-reference/keywords/ref.md) 或 [out](../../../language-reference/keywords/out-parameter-modifier.md) 参数，但可以调用包含此类参数的方法。 同样，异步方法无法通过引用返回值，但可以调用包含 ref 返回值的方法。
 
-有关详细信息和示例，请参阅[异步返回类型 (C#)](./async-return-types.md)。 若要详细了解如何在异步方法中捕获异常，请参阅 [try-catch](../../../language-reference/keywords/try-catch.md)。
+有关详细信息和示例，请参阅[异步返回类型 (C#)](async-return-types.md)。 若要详细了解如何在异步方法中捕获异常，请参阅 [try-catch](../../../language-reference/keywords/try-catch.md)。
 
 Windows 运行时编程中的异步 API 具有下列返回类型之一（类似于任务）：
 
@@ -237,30 +208,18 @@ Windows 运行时编程中的异步 API 具有下列返回类型之一（类似�
 
 按照约定，返回常规可等待类型的方法（例如 `Task`、`Task<T>`、`ValueTask` 和 `ValueTask<T>`）应具有以“Async”结束的名称。 启动异步操作但不返回可等待类型的方法不得具有以“Async”结尾的名称，但其开头可以为“Begin”、“Start”或其他表明此方法不返回或引发操作结果的动词。
 
-如果某一约定中的事件、基类或接口协定建议其他名称，则可以忽略此约定。 例如，你不应重命名常用事件处理程序，例如 `Button1_Click`。
+如果某一约定中的事件、基类或接口协定建议其他名称，则可以忽略此约定。 例如，你不应重命名常用事件处理程序，例如 `OnButtonClick`。
 
 ## <a name="related-topics-and-samples-visual-studio"></a><a name="BKMK_RelatedTopics"></a> 相关主题和示例 (Visual Studio)
 
-|Title|描述|示例|
-|-----------|-----------------|------------|
-|[演练：使用 Async 和 Await 访问 Web (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)|演示如何将一个同步 WPF 解决方案转换成一个异步 WPF 解决方案。 应用程序下载一系列网站。|[异步示例：“访问 Web”演练](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)|
-|[如何使用 Task.WhenAll 扩展异步演练 (C#)](./how-to-extend-the-async-walkthrough-by-using-task-whenall.md)|将 <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType> 添加到上一个演练。 使用 `WhenAll` 同时启动所有下载。||
-|[如何使用 Async 和 Await 并行发出多个 Web 请求 (C#)](./how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)|演示如何同时开始几个任务。|[异步示例：并行发出多个 Web 请求](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e)|
-|[异步返回类型 (C#)](./async-return-types.md)|描述异步方法可返回的类型，并解释每种类型适用于的情况。||
-|[异步程序中的控制流 (C#)](./control-flow-in-async-programs.md)|通过异步程序中的一系列 await 表达式来详细跟踪控制流。|[异步示例：异步程序中的控制流](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)|
-|[微调异步应用程序 (C#)](./fine-tuning-your-async-application.md)|演示如何将以下功能添加到异步解决方案：<br /><br /> - [取消一个异步任务或一组任务(C#)](./cancel-an-async-task-or-a-list-of-tasks.md)<br />- [在一段时间后取消异步任务 (C#)](./cancel-async-tasks-after-a-period-of-time.md)<br />- [在完成一个异步任务后取消剩余任务 (C#)](./cancel-remaining-async-tasks-after-one-is-complete.md)<br />- [启动多个异步任务并在其完成时进行处理 (C#)](./start-multiple-async-tasks-and-process-them-as-they-complete.md)|[异步示例：微调应用程序](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)|
-|[在异步应用程序中处理重入 (C#)](./handling-reentrancy-in-async-apps.md)|演示如何处理有效的异步操作在运行时重启的情况。||
-|[WhenAny：综合运用 .NET Framework 和 Windows 运行时](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/jj635140(v=vs.120))|展示了如何在 .NET Framework 与 Windows 运行时中的 IAsyncOperations 之间桥接任务类型，以便可以将 <xref:System.Threading.Tasks.Task.WhenAny%2A> 与 Windows 运行时方法结合使用。|[异步示例：综合运用 .NET 和 Windows 运行时（AsTask 和 WhenAny）](https://code.msdn.microsoft.com/Async-Sample-Bridging-d6a2f739)|
-|异步取消：综合运用 .NET Framework 和 Windows 运行时|展示了如何在 .NET Framework 与 Windows 运行时中的 IAsyncOperations 之间桥接任务类型，以便可以将 <xref:System.Threading.CancellationTokenSource> 与 Windows 运行时方法结合使用。|[异步示例：综合运用 .NET 和 Windows 运行时（AsTask 和 Cancellation）](https://code.msdn.microsoft.com/Async-Sample-Bridging-9479eca3)|
-|[使用 Async 进行文件访问 (C#)](./using-async-for-file-access.md)|列出并演示使用 async 和 await 访问文件的好处。||
-|[基于任务的异步模式 (TAP)](../../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md)|描述 .NET Framework 中异步的新模式。 该模式基于 <xref:System.Threading.Tasks.Task> 和 <xref:System.Threading.Tasks.Task%601> 类型。||
-|[Channel 9 上的异步相关视频](https://channel9.msdn.com/search?term=async%20&type=All#pubDate=year&ch9Search&lang-en=en)|提供指向有关异步编程的各种视频的链接。||
-
-## <a name="complete-example"></a><a name="BKMK_CompleteExample"></a> 完整示例
-
-下面的代码来自于本文介绍的 WPF 应用程序的“MainWindow.xaml.cs”文件。 可以从[异步示例：“使用 Async 和 Await 的异步编程”示例](https://docs.microsoft.com/samples/dotnet/samples/async-and-await-cs/)下载此示例。
-
-[!code-csharp[async](~/samples/snippets/standard/async/async-and-await/cs/MainWindow.xaml.cs)]
+| Title | 描述 | 示例 |
+|--|--|--|
+| [如何使用 Async 和 Await 并行发出多个 Web 请求 (C#)](how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) | 演示如何同时开始几个任务。 | [异步示例：并行发出多个 Web 请求](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e) |
+| [异步返回类型 (C#)](async-return-types.md) | 描述异步方法可返回的类型，并解释每种类型适用于的情况。 |  |
+| 使用取消令牌作为信号机制来取消任务。 | 演示如何将以下功能添加到异步解决方案：<br><br> - [取消任务列表 (C#)](cancel-an-async-task-or-a-list-of-tasks.md)<br>- [在一段时间后取消任务 (C#)](cancel-async-tasks-after-a-period-of-time.md)<br>- [在异步任务完成时对其进行处理 (C#)](start-multiple-async-tasks-and-process-them-as-they-complete.md) |  |
+| [使用 Async 进行文件访问 (C#)](using-async-for-file-access.md) | 列出并演示使用 async 和 await 访问文件的好处。 |  |
+| [基于任务的异步模式 (TAP)](../../../../standard/asynchronous-programming-patterns/task-based-asynchronous-pattern-tap.md) | 描述异步模式，该模式基于 <xref:System.Threading.Tasks.Task> 和 <xref:System.Threading.Tasks.Task%601> 类型。 |  |
+| [Channel 9 上的异步相关视频](https://channel9.msdn.com/search?term=async%20&type=All#pubDate=year&ch9Search&lang-en=en) | 提供指向有关异步编程的各种视频的链接。 |  |
 
 ## <a name="see-also"></a>请参阅
 

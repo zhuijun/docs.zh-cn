@@ -1,13 +1,13 @@
 ---
-ms.openlocfilehash: 7d398df060c031ae891218b82a2712d74f4c33b7
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9d4c031eda291b0a8832c824789efdffe4084926
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602746"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132934"
 ---
 
-如果收到类似于“找不到包 {netcore-package}”的错误消息，请运行以下命令。
+如果收到类似于“找不到包 {netcore-package}”或“无法安装某些包”的错误消息，请运行以下命令 。
 
 以下命令组中有两个占位符。
 
@@ -17,12 +17,11 @@ ms.locfileid: "84602746"
 - `{os-version}`\
 此项表示你所使用的 Linux 版本。 此项在以下 `wget` 命令中使用。
 
-尝试清除包列表：
+首先，尝试清除包列表：
 
 ```bash
 sudo dpkg --purge packages-microsoft-prod && sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
-sudo apt-get install {dotnet-package}
 ```
 
-如果这不起作用，可使用以下命令运行手动安装：
+然后，再次尝试安装 .NET Core。 如果这不起作用，可使用以下命令运行手动安装：

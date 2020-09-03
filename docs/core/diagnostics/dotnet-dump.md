@@ -2,21 +2,21 @@
 title: dotnet-dump - .NET Core
 description: 安装和使用 dotnet-dump 命令行工具。
 ms.date: 10/14/2019
-ms.openlocfilehash: c78ddb6447021f61f2452c075733b7d33e051ca0
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: 5489011538a4a11d60b333f0230a718c88722c97
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888197"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89140927"
 ---
-# <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>转储收集和分析实用工具 (`dotnet-dump`)
+# <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>转储收集和分析实用工具 (dotnet-dump)
 
  本文适用于： ✔️ .NET Core 3.0 SDK 及更高版本
 
 > [!NOTE]
 > macOS 上不支持 `dotnet-dump`。
 
-## <a name="installing-dotnet-dump"></a>安装 `dotnet-dump`
+## <a name="install-dotnet-dump"></a>安装 dotnet-dump
 
 若要安装最新版 `dotnet-dump` [NuGet 包](https://www.nuget.org/packages/dotnet-dump)，请使用 [dotnet tool install](../tools/dotnet-tool-install.md) 命令：
 
@@ -223,3 +223,8 @@ HResult: 80131604
 > 未经处理的异常：System.DllNotFoundException:无法加载共享库“libdl.so”或其依赖项之一的异常。
 
 若要解决此问题，请安装“libc6-dev”包。
+
+## <a name="see-also"></a>另请参阅
+
+- [收集和分析内存转储博客](https://devblogs.microsoft.com/dotnet/collecting-and-analyzing-memory-dumps/)
+- [堆分析工具 (dotnet-gcdump)](dotnet-gcdump.md)

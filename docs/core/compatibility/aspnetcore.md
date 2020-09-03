@@ -2,21 +2,27 @@
 title: ASP.NET Core 中断性变更
 titleSuffix: ''
 description: 列出 ASP.NET Core 中的中断性变更。
-ms.date: 07/17/2020
+ms.date: 08/25/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 1506e0aa27778d44497252231028689259f48896
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: 443494291f4ec58aecd7c8d8ed42cb4086e64095
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720236"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957725"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core 中断性变更
 
 ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 
-本页记录了以下中断性变更：
+选择以下链接之一，了解特定版本中的中断性变更：
+
+* [ASP.NET Core 5.0](#aspnet-core-50)
+* [ASP.NET Core 3.1](#aspnet-core-31)
+* [ASP.NET Core 3.0](#aspnet-core-30)
+
+本页记录了 ASP.NET Core 3.0、3.1 和 5.0 中的以下中断性变更：
 
 - [已删除过时防伪、CORS、诊断、MVC 和路由 API](#obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed)
 - [身份验证：Google+ 弃用](#authentication-google-deprecated-and-replaced)
@@ -69,11 +75,13 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 - [本地化：请求本地化中间件中删除了已过时的构造函数](#localization-obsolete-constructor-removed-in-request-localization-middleware)
 - [本地化：ResourceManagerWithCultureStringLocalizer 类和 WithCulture 接口成员已删除](#localization-resourcemanagerwithculturestringlocalizer-class-and-withculture-interface-member-removed)
 - [日志记录：已将 DebugLogger 类设为内部类](#logging-debuglogger-class-made-internal)
+- [中间件：数据库错误页标记为已过时](#middleware-database-error-page-marked-as-obsolete)
 - [MVC：已删除控制器操作 Async 后缀](#mvc-async-suffix-trimmed-from-controller-action-names)
 - [MVC：JsonResult 已移至 Microsoft.AspNetCore.Mvc.Core](#mvc-jsonresult-moved-to-microsoftaspnetcoremvccore)
 - [MVC：已弃用预编译工具](#mvc-precompilation-tool-deprecated)
 - [MVC：类型已更改为内部](#mvc-pubternal-types-changed-to-internal)
 - [MVC：已删除 Web API 兼容性填充码](#mvc-web-api-compatibility-shim-removed)
+- [Razor：已删除 RazorTemplateEngine API](#razor-razortemplateengine-api-removed)
 - [Razor：运行时编译已移到包](#razor-runtime-compilation-moved-to-a-package)
 - [安全性：Cookie 名称编码已删除](#security-cookie-name-encoding-removed)
 - [安全性：IdentityModel NuGet 包版本已更新](#security-identitymodel-nuget-package-versions-updated)
@@ -159,6 +167,10 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 ***
 
 [!INCLUDE[Localization: ResourceManagerWithCultureStringLocalizer class and WithCulture interface member removed](~/includes/core-changes/aspnetcore/5.0/localization-members-removed.md)]
+
+***
+
+[!INCLUDE[Middleware: Database error page marked as obsolete](~/includes/core-changes/aspnetcore/5.0/middleware-database-error-page-obsolete.md)]
 
 ***
 
@@ -343,6 +355,10 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 ***
 
 [!INCLUDE[MVC: Web API compatibility shim removed](~/includes/core-changes/aspnetcore/3.0/mvc-webapi-compat-shim-removed.md)]
+
+***
+
+[!INCLUDE[Razor: RazorTemplatEengine API removed](~/includes/core-changes/aspnetcore/3.0/razor-razortemplateengine-api-removed.md)]
 
 ***
 

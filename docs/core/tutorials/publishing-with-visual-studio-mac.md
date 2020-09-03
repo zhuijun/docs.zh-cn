@@ -2,12 +2,12 @@
 title: 使用 Visual Studio for Mac 发布 .NET Core 控制台应用程序
 description: 发布应用程序会创建运行 .NET Core 应用程序所需的一组文件。
 ms.date: 06/08/2020
-ms.openlocfilehash: 67762481d3a56b8473e643f71b8df909b6e54fc6
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: ec6b867f145ffdea491187de3745149f2cebd8dd
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84713351"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867537"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio-for-mac"></a>教程：使用 Visual Studio for Mac 发布 .NET Core 控制台应用程序
 
@@ -15,13 +15,13 @@ ms.locfileid: "84713351"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 本教程适用于按照[在 Visual Studio for Mac 中创建 .NET Core 控制台应用程序](with-visual-studio-mac.md)创建的控制台应用。
+- 本教程适用于在[使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序](with-visual-studio-mac.md)中创建的控制台应用。
 
 ## <a name="publish-the-app"></a>发布应用
 
 1. 启动 Visual Studio for Mac。
 
-1. 打开按照[在 Visual Studio for Mac 中创建 .NET Core 控制台应用程序](with-visual-studio-mac.md)创建的 HelloWorld 项目。
+1. 打开在[使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序](with-visual-studio-mac.md)中创建的 HelloWorld 项目。
 
 1. 请确保 Visual Studio 生成的是应用程序的发布版本。 必要时，将工具栏上的生成配置设置从“调试”更改为“发布”。
 
@@ -69,7 +69,7 @@ ms.locfileid: "84713351"
 
 1. 打开终端并导航到发布文件夹。 为此，请输入 `cd`，然后粘贴前面复制的路径。 例如：
 
-   ```
+   ```console
    cd ~/Projects/HelloWorld/HelloWorld/bin/Release/netcoreapp3.1/publish/
    ```
 
@@ -88,4 +88,4 @@ ms.locfileid: "84713351"
 在本教程中，你发布了一个控制台应用。 在下一教程中，你将创建类库。
 
 > [!div class="nextstepaction"]
-> [在 Visual Studio for Mac 中创建 .NET Standard 库](library-with-visual-studio-mac.md)
+> [使用 Visual Studio for Mac 创建 .NET Standard 库](library-with-visual-studio-mac.md)

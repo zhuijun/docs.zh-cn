@@ -3,12 +3,13 @@ title: Microsoft.NET.Sdk 的 MSBuild 属性
 description: .NET Core SDK 可以理解的 MSBuild 属性和项的引用。
 ms.date: 02/14/2020
 ms.topic: reference
-ms.openlocfilehash: 7980369b87d606d3876fe043e929a65da1d0d92b
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.custom: updateeachrelease
+ms.openlocfilehash: 39cbd18121d2b8659b2f5270f39624798f4ebbdc
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916251"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810516"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>.NET Core SDK 项目的 MSBuild 引用
 
@@ -165,6 +166,50 @@ ms.locfileid: "87916251"
 ```
 
 有关详细信息，请参阅 [C# 语言版本控制](../../csharp/language-reference/configure-language-version.md#override-a-default)。
+
+## <a name="code-analysis-properties"></a>代码分析属性
+
+### <a name="analysislevel"></a>AnalysisLevel
+
+`AnalysisLevel` 属性可指定代码分析级别。 例如，如果要访问预览代码分析器，请将 `AnalysisLevel` 设置为 `preview`。 默认值为 `latest`。
+
+```xml
+<PropertyGroup>
+  <AnalysisLevel>preview</AnalysisLevel>
+</PropertyGroup>
+```
+
+下表显示可用的选项。
+
+| 值 | 含义 |
+|-|-|
+| `latest` | 使用已发布的最新版代码分析器。 这是默认值。 |
+| `preview` | 使用最新的代码分析器（即使它们处于预览状态）。 |
+| `5.0` | 即使有较新的规则可用，也会使用为 .NET 5.0 版本启用的规则集。 |
+| `5` | 即使有较新的规则可用，也会使用为 .NET 5.0 版本启用的规则集。 |
+
+### <a name="codeanalysistreatwarningsaserrors"></a>CodeAnalysisTreatWarningsAsErrors
+
+`CodeAnalysisTreatWarningsAsErrors` 属性可配置是否应将代码分析警告视为警告并中断生成。 如果在生成项目时使用 `-warnaserror` 标志，则 [.NET 代码分析](../../fundamentals/productivity/code-analysis.md)警告也会被视为错误。 如果只想将编译器警告视为错误，则可在项目文件中将 `CodeAnalysisTreatWarningsAsErrors` MSBuild 属性设置为 `false`。
+
+```xml
+<PropertyGroup>
+  <CodeAnalysisTreatWarningsAsErrors>false</CodeAnalysisTreatWarningsAsErrors>
+</PropertyGroup>
+```
+
+### <a name="enablenetanalyzers"></a>EnableNETAnalyzers
+
+默认情况下，为面向 .NET 5.0 或更高版本的项目启用 [.NET 代码分析](../../fundamentals/productivity/code-analysis.md)。 可通过将 `EnableNETAnalyzers` 属性设置为 true，来为面向 .NET 早期版本的项目启用 .NET 代码分析。 若要禁用任何项目中的代码分析，可将此属性设置为 `false`。
+
+```xml
+<PropertyGroup>
+  <EnableNETAnalyzers>true</EnableNETAnalyzers>
+</PropertyGroup>
+```
+
+> [!TIP]
+> 有关面向 .NET 5.0 之前的 .NET 版本的项目，启用 .NET 代码分析的另一种方法是将 [AnalysisLevel](#analysislevel) 属性设置为 `latest`。
 
 ## <a name="run-time-configuration-properties"></a>运行时配置属性
 

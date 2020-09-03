@@ -1,27 +1,27 @@
 ---
 title: 实现 DisposeAsync 方法
-description: ''
+description: 了解如何实现 DisposeAsync 和 DisposeAsyncCore 方法来执行异步资源清理。
 author: IEvangelist
 ms.author: dapine
-ms.date: 06/02/2020
+ms.date: 08/25/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 0f6370d37703509681dd9fb818af8e7e2f3a1085
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 268cea7584040ad92e2da75e5e03112480cda93c
+ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608076"
+ms.lasthandoff: 08/28/2020
+ms.locfileid: "89053173"
 ---
 # <a name="implement-a-disposeasync-method"></a>实现 DisposeAsync 方法
 
 已将 <xref:System.IAsyncDisposable?displayProperty=nameWithType> 接口作为 C# 8.0 的一部分引入。 需要执行资源清理时，可以实现 <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> 方法，就像[实现 Dispose 方法](implementing-dispose.md)一样。 但是，其中一个主要区别是，此实现允许异步清理操作。 <xref:System.IAsyncDisposable.DisposeAsync> 返回表示异步释放操作的 <xref:System.Threading.Tasks.ValueTask>。
 
-通常，当实现 <xref:System.IAsyncDisposable> 接口时，类还将实现 <xref:System.IDisposable> 接口。 <xref:System.IAsyncDisposable> 接口的一种良好实现模式是为同步或异步释放做好准备。 用于实现释放模式的所有指南都适用于异步实现。 本文假设你已熟悉如何[实现 Dispose 方法](implementing-dispose.md)。
+通常，当实现 <xref:System.IAsyncDisposable> 接口时，类还将实现 <xref:System.IDisposable> 接口。 <xref:System.IAsyncDisposable> 接口的一种良好实现模式是为同步或异步释放做好准备。 用于实现释放模式的所有指南也适用于异步实现。 本文假设你已熟悉如何[实现 Dispose 方法](implementing-dispose.md)。
 
 ## <a name="disposeasync-and-disposeasynccore"></a>DisposeAsync() 和 DisposeAsyncCore()
 
@@ -30,13 +30,11 @@ ms.locfileid: "88608076"
 - 没有参数的 `public` <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> 实现。
 - 一个 `protected virtual ValueTask DisposeAsyncCore()` 方法，其签名为：
 
-```csharp
-protected virtual ValueTask DisposeAsyncCore()
-{
-}
-```
-
-`DisposeAsyncCore()` 方法是 `virtual`，以便派生类可以在其重写中定义其他清理。
+  ```csharp
+  protected virtual ValueTask DisposeAsyncCore()
+  {
+  }
+  ```
 
 ### <a name="the-disposeasync-method"></a>DisposeAsync() 方法
 
@@ -57,6 +55,13 @@ public async ValueTask DisposeAsync()
 
 > [!NOTE]
 > 与释放模式相比，异步释放模式的主要差异在于，从 <xref:System.IAsyncDisposable.DisposeAsync> 到 `Dispose(bool)` 重载方法的调用被赋予 `false` 作为参数。 但实现 <xref:System.IDisposable.Dispose?displayProperty=nameWithType> 方法时，改为传递 `true`。 这有助于确保与同步释放模式的功能等效性，并进一步确保仍调用终结器代码路径。 换句话说，`DisposeAsyncCore()` 方法将异步释放托管资源，因此不希望也同步释放这些资源。 因此，调用 `Dispose(false)` 而非 `Dispose(true)`。
+
+### <a name="the-disposeasynccore-method"></a>DisposeAsyncCore() 方法
+
+`DisposeAsyncCore()` 方法旨在执行受管理资源的异步清理，或对 `DisposeAsync()` 执行级联调用。 当子类继承作为 <xref:System.IAsyncDisposable> 的实现的基类时，它会封装常见的异步清理操作。 `DisposeAsyncCore()` 方法是 `virtual`，以便派生类可以在其重写中定义其他清理。
+
+> [!TIP]
+> 如果 <xref:System.IAsyncDisposable> 的实现是 `sealed`，则不需要 `DisposeAsyncCore()` 方法，异步清理可直接在 <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> 方法中执行。
 
 ## <a name="implement-the-async-dispose-pattern"></a>实现异步释放模式
 

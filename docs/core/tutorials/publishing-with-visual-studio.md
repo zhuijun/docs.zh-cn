@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 44646a307d230db395b55b9dec5acfd168605940
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: e0033d52ab54259ce5e4ccf2a25bf4e3d4f244de
+ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84701279"
+ms.lasthandoff: 08/26/2020
+ms.locfileid: "88867550"
 ---
 # <a name="tutorial-publish-a-net-core-console-application-using-visual-studio"></a>教程：使用 Visual Studio 发布 .NET Core 控制台应用程序
 
@@ -19,13 +19,13 @@ ms.locfileid: "84701279"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 本教程适用于[在 Visual Studio 2019 中创建 .NET Core 控制台应用程序](with-visual-studio.md)中创建的控制台应用。
+- 本教程适用于在[使用 Visual Studio 创建 .NET Core 控制台应用程序](with-visual-studio.md)中创建的控制台应用。
 
 ## <a name="publish-the-app"></a>发布应用
 
 1. 启动 Visual Studio。
 
-1. 打开按照[在 Visual Studio 中创建 .NET Core 控制台应用程序](with-visual-studio.md)创建的 HelloWorld 项目。
+1. 打开在[使用 Visual Studio 创建 .NET Core 控制台应用程序](with-visual-studio.md)中创建的 HelloWorld 项目。
 
 1. 请确保 Visual Studio 正在使用“发布”生成配置。 必要时，将工具栏上的生成配置设置从“调试”更改为“发布”。
 
@@ -87,7 +87,7 @@ ms.locfileid: "84701279"
 
 1. 打开命令提示符，然后导航到“发布”文件夹。 为此，请输入 `cd`，然后粘贴完整路径。 例如：
 
-   ```
+   ```console
    cd C:\Projects\HelloWorld\bin\Release\netcoreapp3.1\publish\
    ```
 

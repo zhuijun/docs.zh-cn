@@ -1,14 +1,15 @@
 ---
+description: 了解 C# 中的非托管类型
 title: 非托管类型 - C# 参考
 ms.date: 09/06/2019
 helpviewer_keywords:
 - unmanaged type [C#]
-ms.openlocfilehash: 9dd2ab4e044b8a86bfe72a6fcf2481b8e1e80bf4
-ms.sourcegitcommit: 2514f4e3655081dcfe1b22470c0c28500f952c42
+ms.openlocfilehash: b5a689ca3ade36ef77da958549894f76e074986e
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/18/2020
-ms.locfileid: "79507225"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89143527"
 ---
 # <a name="unmanaged-types-c-reference"></a>非托管类型（C# 参考）
 

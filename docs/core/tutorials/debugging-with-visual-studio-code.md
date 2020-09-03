@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 调试 .NET Core 控制台应用程序
 description: 了解如何使用 Visual Studio Code 调试 .NET Core 控制台应用。
 ms.date: 05/26/2020
-ms.openlocfilehash: 40e9b114df1bd12fb05bfb773781d6009d087a06
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 8e84747256551b633a5bf74b72723ba8d2840d52
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84702122"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89118294"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-code"></a>教程：使用 Visual Studio Code 调试 .NET Core 控制台应用程序
 
@@ -15,7 +15,7 @@ ms.locfileid: "84702122"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 本教程适用于[在 Visual Studio Code 中创建 .NET Core 控制台应用程序](with-visual-studio-code.md)中创建的控制台应用。
+- 本教程适用于在[使用 Visual Studio Code 创建 .NET Core 控制台应用程序](with-visual-studio-code.md)中创建的控制台应用。
 
 ## <a name="use-debug-build-configuration"></a>使用“调试”生成配置
 
@@ -27,7 +27,7 @@ ms.locfileid: "84702122"
 
 1. 启动 Visual Studio Code。
 
-1. 打开按照[在 Visual Studio Code 中创建 .NET Core 控制台应用程序](with-visual-studio-code.md)创建的项目的文件夹。
+1. 打开在[使用 Visual Studio Code 中创建 .NET Core 控制台应用程序](with-visual-studio-code.md)中创建的项目的文件夹。
 
 ## <a name="set-a-breakpoint"></a>设置断点
 
@@ -51,13 +51,13 @@ ms.locfileid: "84702122"
 
    发件人：
 
-   ```
+   ```json
    "console": "internalConsole",
    ```
 
    到:
 
-   ```
+   ```json
    "console": "integratedTerminal",
    ```
 
@@ -69,7 +69,7 @@ ms.locfileid: "84702122"
 
    :::image type="content" source="media/debugging-with-visual-studio-code/select-debug-pane.png" alt-text="在 Visual Studio Code 中打开“调试”选项卡":::
 
-1. 选择窗格顶部 .NET Core Launch（控制台）旁边的绿色箭头。 在调试模式下启动程序的另一种方法是从菜单中选择“运行” > “开始调试”。
+1. 选择窗格顶部 .NET Core Launch（控制台）旁边的绿色箭头。 在调试模式下启动程序的其他方法是，按 <kbd>F5</kbd> 或从菜单中选择“运行” > “启动调试” 。
 
    :::image type="content" source="media/debugging-with-visual-studio-code/start-debugging.png" alt-text="开始调试":::
 

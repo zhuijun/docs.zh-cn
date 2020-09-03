@@ -4,12 +4,12 @@ description: 演示在 Ubuntu 上安装 .NET Core SDK 和 .NET Core 运行时的
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: c590bd89b718a5cd31dae9f83049eac910cb4049
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 9694dac719024264edee849044f048970b63b7b7
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86863886"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132933"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-ubuntu"></a>在 Ubuntu 上安装 .NET Core SDK 或 .NET Core 运行时
 
@@ -173,7 +173,7 @@ sudo apt-get upgrade
 
 本部分提供有关使用 APT 安装 .NET Core 时可能会遇到的常见错误的信息。
 
-### <a name="unable-to-locate"></a>无法定位
+### <a name="unable-to-locate--some-packages-could-not-be-installed"></a>找不到 \\ 无法安装某些包
 
 [!INCLUDE [package-manager-failed-to-find-deb](includes/package-manager-failed-to-find-deb.md)]
 

@@ -2,12 +2,12 @@
 title: 使用 Visual Studio for Mac 调试 .NET Core 控制台应用程序
 description: 了解如何使用 Visual Studio for Mac 调试 .NET Core 控制台应用。
 ms.date: 06/08/2020
-ms.openlocfilehash: 7e2a25266fab40b5ef1d0a38b8bbf06a6843746b
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 011647a6e3e676909880befa3b770205eb9616d6
+ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86416011"
+ms.lasthandoff: 08/27/2020
+ms.locfileid: "88957520"
 ---
 # <a name="tutorial-debug-a-net-core-console-application-using-visual-studio-for-mac"></a>教程：使用 Visual Studio for Mac 调试 .NET Core 控制台应用程序
 
@@ -15,7 +15,7 @@ ms.locfileid: "86416011"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 本教程适用于按照[在 Visual Studio for Mac 中创建 .NET Core 控制台应用程序](with-visual-studio-mac.md)创建的控制台应用。
+- 本教程适用于在[使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序](with-visual-studio-mac.md)中创建的控制台应用。
 
 ## <a name="use-debug-build-configuration"></a>使用“调试”生成配置
 
@@ -23,11 +23,11 @@ ms.locfileid: "86416011"
 
 在“调试”配置中，程序使用完整符号调试信息编译，且不进行优化。 优化会使调试复杂化，因为源代码和生成的指令之间的关系更加复杂。 程序的发布配置进行了完全优化，且不包含任何符号调试信息。
 
-默认情况下，Visual Studio 使用“调试”生成配置，因此不需要在调试之前对其进行更改。
+默认情况下，Visual Studio for Mac 使用“调试”生成配置，因此不需要在调试之前对其进行更改。
 
 1. 启动 Visual Studio for Mac。
 
-1. 打开按照[在 Visual Studio for Mac 中创建 .NET Core 控制台应用程序](with-visual-studio-mac.md)创建的项目。
+1. 打开在[使用 Visual Studio for Mac 创建 .NET Core 控制台应用程序](with-visual-studio-mac.md)中创建的项目。
 
    当前的生成配置显示在工具栏上。 下面的工具栏图像显示 Visual Studio 配置为编译应用的“调试”版本：
 

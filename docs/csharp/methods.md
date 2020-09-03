@@ -4,14 +4,14 @@ description: 有关方法、方法参数和方法返回值的概述
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 09a287b3d74e1b8dbdaf4a53cb207dfe1fad8a0c
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 8c33bcb9dd4052589222c2cb1b375d94d6792ba2
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063349"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88810568"
 ---
-# <a name="methods"></a>方法
+# <a name="methods-in-c"></a>(C#) 中的方法
 
 方法是包含一系列语句的代码块。 程序通过调用该方法并指定任何所需的方法参数使语句得以执行。 在 C# 中，每个执行的指令均在方法的上下文中执行。 `Main` 方法是每个 C# 应用程序的入口点，并在启动程序时由公共语言运行时 (CLR) 调用。
 
@@ -32,7 +32,7 @@ ms.locfileid: "88063349"
 
 这些部分一同构成方法签名。
 
-> [!NOTE]
+> [!IMPORTANT]
 > 出于方法重载的目的，方法的返回类型不是方法签名的一部分。 但是在确定委托和它所指向的方法之间的兼容性时，它是方法签名的一部分。
 
 以下实例定义了一个包含五种方法的名为 `Motorcycle` 的类：
@@ -249,11 +249,11 @@ Console.WriteLine("{person.FName} {person.LName}: age = {person.Age}");
 
 在下面的示例中，`DelayAsync` 是一个异步方法，包含返回整数的 return 语句。 由于它是异步方法，其方法声明必须具有返回类型 `Task<int>`。 因为返回类型是 `Task<int>`，`DoSomethingAsync` 中 `await` 表达式的计算将如以下 `int result = await delayTask` 语句所示得出整数。
 
-[!code-csharp[csSnippets.Methods#102](../../samples/snippets/csharp/concepts/methods/async1.cs#102)]
+:::code language="csharp" source="programming-guide/classes-and-structs/snippets/classes-and-structs/methods/Program.cs":::
 
 异步方法不能声明任何 [in](language-reference/keywords/in-parameter-modifier.md)、[ref](language-reference/keywords/ref.md) 或 [out](language-reference/keywords/out-parameter-modifier.md) 参数，但是可以调用具有这类参数的方法。
 
- 有关异步方法的详细信息，请参阅[使用 Async 和 Await 的异步编程](async.md)、[异步程序中的控制流](programming-guide/concepts/async/control-flow-in-async-programs.md)和[异步返回类型](programming-guide/concepts/async/async-return-types.md)。
+ 有关异步方法的详细信息，请参阅[使用 Async 和 Await 的异步编程](async.md)和[异步返回类型](programming-guide/concepts/async/async-return-types.md)。
 
 <a name="expr"></a>
 

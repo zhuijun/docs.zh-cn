@@ -2,12 +2,12 @@
 title: 使用 Visual Studio Code 创建 .NET Core 控制台应用程序
 description: 了解如何使用 Visual Studio Code 和 .NET Core CLI 创建 .NET Core 控制台应用程序。
 ms.date: 05/22/2020
-ms.openlocfilehash: 466a1353b574711a73570428569b58eab7ad8135
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: e936c23d8525e42a9d2781cc680067c9da2ce42f
+ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84811688"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88811921"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio-code"></a>教程：使用 Visual Studio Code 创建 .NET Core 控制台应用程序
 
@@ -40,7 +40,7 @@ ms.locfileid: "84811688"
    dotnet new console
    ```
 
-用于创建简单的“Hello World”应用程序的模板。 它会调用 <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> 方法来显示“Hello World!” 显示文本字符串“Hello World!”。
+用于创建简单的“Hello World”应用程序的模板。 调用 <xref:System.Console.WriteLine(System.String)?displayProperty=nameWithType> 方法以在控制台窗口中显示“:::no-loc text="Hello World!":::”。
 
 模板代码将定义类 `Program`，其中包含一个需要将 <xref:System.String> 数组用作参数的方法 `Main`：
 
@@ -91,7 +91,7 @@ dotnet run
 
    :::code language="csharp" source="./snippets/with-visual-studio/csharp/Program.cs" id="MainMethod":::
 
-   此代码在控制台中显示“What is your name?”， 然后等待用户输入字符串并按 Enter<kbd></kbd>。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量。 最后，它会在控制台窗口中显示这些值。
+   此代码会在控制台窗口中显示一条提示，然后等待用户输入字符串并按 <kbd>Enter</kbd>。 它会将此字符串存储到名为 `name` 的变量中。 它还会检索 <xref:System.DateTime.Now?displayProperty=nameWithType> 属性的值（其中包含当前的本地时间），并将此值赋给 `date` 变量。 同时会在控制台窗口中显示这些值。 最后会在控制台窗口中显示一条提示，并调用 <xref:System.Console.ReadKey(System.Boolean)?displayProperty=nameWithType> 方法来等待用户输入。
 
    `\n` 表示一个换行符。
 

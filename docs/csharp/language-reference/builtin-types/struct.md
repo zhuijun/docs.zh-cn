@@ -1,4 +1,5 @@
 ---
+description: 了解 C# 中的结构类型
 title: 结构类型 - C# 参考
 ms.date: 04/21/2020
 f1_keywords:
@@ -8,12 +9,12 @@ helpviewer_keywords:
 - struct type [C#]
 - structure type [C#]
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 515b8d9adc1359581625f0d822e254d2c1df3b58
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 7f3940ce487b9e382150234f317cf1dba34bb060
+ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062491"
+ms.lasthandoff: 08/30/2020
+ms.locfileid: "89132724"
 ---
 # <a name="structure-types-c-reference"></a>结构类型（C# 参考）
 
@@ -38,14 +39,14 @@ ms.locfileid: "88062491"
 - 任何字段声明都必须具有 [`readonly` 修饰符](../keywords/readonly.md)
 - 任何属性（包括自动实现的属性）都必须是只读的
 
-这样可以保证 `readonly` 结构的成员不会修改该结构的状态。
+这样可以保证 `readonly` 结构的成员不会修改该结构的状态。 在 C# 8.0 及更高版本中，这意味着除构造函数外的其他实例成员是隐式 [`readonly`](#readonly-instance-members)。
 
 > [!NOTE]
 > 在 `readonly` 结构中，可变引用类型的数据成员仍可改变其自身的状态。 例如，不能替换 <xref:System.Collections.Generic.List%601> 实例，但可以向其中添加新元素。
 
 ## <a name="readonly-instance-members"></a>`readonly` 实例成员
 
-从 C#8.0 开始，还可以使用 `readonly` 修饰符声明实例成员不会修改结构的状态。 如果不能将整个结构类型声明为 `readonly`，可使用 `readonly` 修饰符标记不会修改结构状态的实例成员。 在 `readonly` 结构中，每个实例成员都是隐式的 `readonly`。
+从 C#8.0 开始，还可以使用 `readonly` 修饰符声明实例成员不会修改结构的状态。 如果不能将整个结构类型声明为 `readonly`，可使用 `readonly` 修饰符标记不会修改结构状态的实例成员。
 
 在 `readonly` 实例成员内，不能分配到结构的实例字段。 但是，`readonly` 成员可以调用非 `readonly` 成员。 在这种情况下，编译器将创建结构实例的副本，并调用该副本上的非 `readonly` 成员。 因此，不会修改原始结构实例。
 
