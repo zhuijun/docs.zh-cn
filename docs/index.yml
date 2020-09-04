@@ -11,12 +11,12 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 07/10/2020
-  ms.openlocfilehash: 6ad79d52f26dd3c18a36a7f4ed2a3c5e68a5f6d5
-  ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+  ms.openlocfilehash: c49a11621858378d6741fd6c02506e03064d761a
+  ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/01/2020
-  ms.locfileid: "89271966"
+  ms.lasthandoff: 09/03/2020
+  ms.locfileid: "89414808"
 highlightedContent:
   items:
   - title: 下载 .NET
@@ -44,7 +44,7 @@ conceptualContent:
   - title: 开放源代码 .NET
     summary: 了解 .NET Core
     links:
-    - url: core/index.yml
+    - url: core/introduction.md
       itemType: overview
       text: .NET Core 概述
     - url: core/whats-new/dotnet-core-3-1.md
@@ -74,7 +74,7 @@ conceptualContent:
     - url: https://channel9.msdn.com/Series/NET-Core-101/What-is-NET
       itemType: video
       text: 什么是 .NET？
-    - url: standard/index.yml
+    - url: standard/tour.md
       itemType: overview
       text: .NET 概述
     - url: standard/net-standard.md

@@ -2,12 +2,12 @@
 title: C# 教程
 description: 查看这些 C# 教程，了解生成 C# 程序的方式以及 C# 语言功能。
 ms.date: 10/25/2018
-ms.openlocfilehash: 57d2471ef8ad06eb821a1d1d88210dfbb8dc732e
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 9542f4919c9b1f0363fb8bc27136eb9a7e074913
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345097"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414809"
 ---
 # <a name="c-tutorials"></a>C# 教程
 
@@ -56,7 +56,7 @@ ms.locfileid: "80345097"
 
 ## <a name="general-tutorials"></a>常规教程
 
-下面各教程介绍了如何使用 [.NET Core](../../core/index.yml) 生成 C# 程序：
+下面各教程介绍了如何使用 [.NET Core](../../core/introduction.md) 生成 C# 程序：
 
 * [控制台应用程序](console-teleprompter.md)：介绍了控制台 I/O、控制台应用程序的结构，以及基于任务的异步编程模型的基础知识。
 * [REST 客户端](console-webapiclient.md)：介绍了 Web 通信、JSON 序列化和面向对象的 C# 语言功能。
