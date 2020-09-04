@@ -11,12 +11,12 @@ metadata:
   helpviewer_keywords:
   - .NET Framework guide
   ms.date: 04/22/2020
-  ms.openlocfilehash: 67e1549395ab5657a5d609b186fc1816211c5af3
-  ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+  ms.openlocfilehash: 47781bbc5b1b1a2f4c0bc44929c5bb29fe3e7978
+  ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/24/2020
-  ms.locfileid: "82135901"
+  ms.lasthandoff: 09/02/2020
+  ms.locfileid: "89379169"
 landingContent:
 - title: 了解 .NET Framework
   linkLists:
@@ -74,24 +74,16 @@ landingContent:
     links:
     - text: 安装和卸载 Windows 服务
       url: windows-services/how-to-install-and-uninstall-services.md
-- title: 创建 Windows 窗体应用
+- title: 创建桌面应用
   linkLists:
   - linkListType: overview
     links:
-    - text: Windows 窗体概述
-      url: winforms/index.md
-  - linkListType: tutorial
-    links:
-    - text: Windows 窗体设计器入门
-      url: /visualstudio/designers/walkthrough-windows-forms-designer
-    - text: 通过命令行创建 Windows 窗体应用
-      url: winforms/how-to-create-a-windows-forms-application-from-the-command-line.md
-  - linkListType: how-to-guide
-    links:
-    - text: 通过 ComboBox 控件、ListBox 控件和 CheckedListBox 控件添加和删除项目
-      url: winforms/controls/add-and-remove-items-from-a-wf-combobox.md
-    - text: 对控件进行线程安全的调用
-      url: winforms/controls/how-to-make-thread-safe-calls-to-windows-forms-controls.md
+    - text: 桌面指南简介
+      url: /dotnet/desktop/
+    - text: .NET Framework WPF
+      url: wpf/index.md
+    - text: .NET Framework Windows 窗体
+      url: /dotnet/desktop/winforms/?view=netframework-4-8
 - title: 创建 WPF 应用
   linkLists:
   - linkListType: overview

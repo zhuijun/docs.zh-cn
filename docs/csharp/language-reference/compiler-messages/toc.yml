@@ -217,6 +217,16 @@
       href: cs2032.md
     - name: 编译器错误 CS7003
       href: cs7003.md
+    - name: 编译器错误 CS8400
+      href: cs8400.md
+    - name: 编译器错误 CS8401
+      href: cs8401.md
+    - name: 编译器错误 CS8403
+      href: cs8403.md
+    - name: 编译器错误 CS8410
+      href: cs8410.md
+    - name: 编译器错误 CS8411
+      href: cs8411.md
     - name: 编译器警告（等级 1）CS0420
       href: cs0420.md
     - name: 编译器警告（等级 1）CS0465
