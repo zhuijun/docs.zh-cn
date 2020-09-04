@@ -1,22 +1,19 @@
 ---
 title: 符号和运算符参考
 description: 了解 F# 编程语言中使用的符号和运算符。
-ms.date: 02/11/2019
+ms.date: 08/15/2020
 fl_keywords:
 - '|>_FS'
-ms.openlocfilehash: 4c3af80e8f5a686535b7c09579d29bb3da8591a3
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: 5943352f0a1710ba7a666a79b7871b7269c75a6b
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855383"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359085"
 ---
 # <a name="symbol-and-operator-reference"></a>符号和运算符参考
 
 本文提供 F# 语言中使用的符号和运算符表。
-
-> [!NOTE]
-> F# 的 docs.microsoft.com API 参考尚未完成。 如果遇到任何断开的链接，请参考 [F# 核心库文档](https://fsharp.github.io/fsharp-core-docs/)。
 
 ## <a name="table-of-symbols-and-operators"></a>符号和运算符表
 
@@ -76,9 +73,12 @@ ms.locfileid: "87855383"
 |`<>?`|[可以为 null 的运算符](nullable-operators.md)|<ul><li>当右侧是可以为 null 的类型时，计算“不等于”运算。<br /></li></ul>|
 |`<=`|[算术运算符](arithmetic-operators.md)|<ul><li>如果左侧小于或等于右侧，则返回 `true`；否则返回 `false`。<br /></li></ul>|
 |`<=?`|[可以为 null 的运算符](nullable-operators.md)|<ul><li>当右侧是可以为 null 的类型时，计算“小于或等于”运算。<br /></li></ul>|
+|<code>&#124;></code>|[函数](../functions/index.md)|<ul><li>将左侧表达式的结果传递给右侧的函数（前置竖线运算符）。<br /></li></ul>|
+|<code>&#124;&#124;></code>|[&#40; &#124;&#124;&#62; &#41;&#60;'T1,'T2,'U&#62; 函数](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#(%20%7C%7C%3E%20))|<ul><li>将左侧两个自变量的元组传递给右侧的函数。<br /></li></ul>|
+|<code>&#124;&#124;&#124;></code>|[&#40; &#124;&#124;&#124;&#62; &#41;&#60;'T1,'T2,'T3,'U&#62; 函数](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#(%20%7C%7C%7C%3E%20))|<ul><li>将左侧三个自变量的元组传递给右侧的函数。<br /></li></ul>|
 |<code>&lt;&#124;</code>|[函数](../functions/index.md)|<ul><li>将左侧表达式的结果传递给右侧的函数（后置竖线运算符）。<br /></li></ul>|
-|<code>&lt;&#124;&#124;</code>|[Operators.&#40; &#60;&#124;&#124; &#41;&#60;'T1,'T2,'U&#62; 函数](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-%5bhh-%5d%5b%27t1%2c%27t2%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>将右侧两个自变量的元组传递给左侧的函数。<br /></li></ul>|
-|<code>&lt;&#124;&#124;&#124;</code>|[Operators.&#40; &#60;&#124;&#124;&#124; &#41;&#60;'T1,'T2,'T3,'U&#62; 函数](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-%5bhhh-%5d%5b%27t1%2c%27t2%2c%27t3%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>将右侧三个自变量的元组传递给左侧的函数。<br /></li></ul>|
+|<code>&lt;&#124;&#124;</code>|[&#40; &#60;&#124;&#124; &#41;&#60;'T1,'T2,'U&#62; 函数](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#(%20%3C%7C%7C%20))|<ul><li>将右侧两个自变量的元组传递给左侧的函数。<br /></li></ul>|
+|<code>&lt;&#124;&#124;&#124;</code>|[&#40; &#60;&#124;&#124;&#124; &#41;&#60;'T1,'T2,'T3,'U&#62; 函数](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#(%20%3C%7C%7C%7C%20))|<ul><li>将右侧三个自变量的元组传递给左侧的函数。<br /></li></ul>|
 |`<@...@>`|[代码引用](../code-quotations.md)|<ul><li>分隔类型化代码引号。<br /></li></ul>|
 |`<@@...@@>`|[代码引用](../code-quotations.md)|<ul><li>分隔非类型化代码引号。<br /></li></ul>|
 |`=`|[算术运算符](arithmetic-operators.md)|<ul><li>如果左侧等于右侧，则返回 `true`；否则返回 `false`。<br /></li></ul>|
@@ -108,9 +108,6 @@ ms.locfileid: "87855383"
 |<code>&#124;</code>|[Match 表达式](../match-expressions.md)|<ul><li>分隔单个匹配用例、单个可区分联合用例和枚举值。<br /></li></ul>|
 |<code>&#124;&#124;</code>|[布尔运算符](boolean-operators.md)|<ul><li>计算“布尔或”运算。<br /></li></ul>|
 |<code>&#124;&#124;&#124;</code>|[位运算符](bitwise-operators.md)|<ul><li>计算“位或”运算。<br /></li></ul>|
-|<code>&#124;></code>|[函数](../functions/index.md)|<ul><li>将左侧表达式的结果传递给右侧的函数（前置竖线运算符）。<br /></li></ul>|
-|<code>&#124;&#124;></code>|[Operators.&#40; &#124;&#124;&#62; &#41;&#60;'T1,'T2,'U&#62; 函数](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-hh%5d-%5d%5b%27t1%2c%27t2%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>将左侧两个自变量的元组传递给右侧的函数。<br /></li></ul>|
-|<code>&#124;&#124;&#124;></code>|[Operators.&#40; &#124;&#124;&#124;&#62; &#41;&#60;'T1,'T2,'T3,'U&#62; 函数](https://msdn.microsoft.com/visualfsharpdocs/conceptual/operators.%5b-hhh%5d-%5d%5b%27t1%2c%27t2%2c%27t3%2c%27u%5d-function-%5bfsharp%5d)|<ul><li>将左侧三个自变量的元组传递给右侧的函数。<br /></li></ul>|
 |`~~`|[运算符重载](../operator-overloading.md)|<ul><li>用于声明一元求反运算符的重载。<br /></li></ul>|
 |`~~~`|[位运算符](bitwise-operators.md)|<ul><li>计算“位非”运算。<br /></li></ul>|
 |`~-`|[运算符重载](../operator-overloading.md)|<ul><li>用于声明一元减运算符的重载。<br /></li></ul>|
