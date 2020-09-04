@@ -230,8 +230,6 @@
       href: how-to/parse-strings-using-split.md
     - name: 连接字符串
       href: how-to/concatenate-multiple-strings.md
-    - name: 将字符串转换为 DateTime
-      href: ../standard/base-types/parsing-datetime.md
     - name: 搜索字符串
       href: how-to/search-strings.md
     - name: 修改字符串内容
@@ -1432,7 +1430,7 @@
               href: language-reference/keywords/out-parameter-modifier.md
         - name: 命名空间关键字
           items:
-            - name: namespace
+            - name: 命名空间
               href: language-reference/keywords/namespace.md
             - name: using
               items:
