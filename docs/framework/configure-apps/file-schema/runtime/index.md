@@ -6,12 +6,12 @@ helpviewer_keywords:
 - configuration schema [.NET Framework], runtime settings
 - runtime settings schema
 ms.assetid: f04816ab-110d-4e28-9283-845d6d9a4a68
-ms.openlocfilehash: d5af9f3299b48d431b43566c11610d745167b60b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1797afe3e6347da1aef916d13be7678b7b8d4acf
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74431058"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495168"
 ---
 # <a name="run-time-settings-schema"></a>运行时设置架构
 
@@ -45,7 +45,7 @@ ms.locfileid: "74431058"
 &nbsp;&nbsp;&nbsp;&nbsp;[\<enforceFIPSPolicy>](enforcefipspolicy-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[\<etwEnable>](etwenable-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[\<forcePerformanceCounterUniqueSharedMemoryReads>](forceperformancecounteruniquesharedmemoryreads-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[\<gcAllowVeryLargeObjects>](gcconcurrent-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;[\<gcAllowVeryLargeObjects>](gcallowverylargeobjects-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[\<gcConcurrent>](gcconcurrent-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[\<GCCpuGroup>](gccpugroup-element.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;[\<GCHeapAffinitizeMask>](gcheapaffinitizemask-element.md)\
@@ -107,7 +107,7 @@ ms.locfileid: "74431058"
 |[\<GCCpuGroup>](gccpugroup-element.md)|指定垃圾回收是否支持多个 CPU 组。|
 |[\<GCHeapAffinitizeMask>](gcheapaffinitizemask-element.md)|定义 GC 堆和单个处理器之间的关联。|
 |[\<GCHeapCount>](gcheapcount-element.md)|指定用于服务器垃圾回收的堆/线程数。  |
-|[\<GCLOHThreshold>](gclohthreshold-element.md)|指定使对象在大型对象堆（LOH）上的阈值大小。|
+|[\<GCLOHThreshold>](gclohthreshold-element.md)|指定导致对象在大型对象堆上 (LOH) 的阈值大小。|
 |[\<GCNoAffinitize>](gcnoaffinitize-element.md)|指定是否关联服务器 GC 线程与 Cpu。|
 |[\<gcServer>](gcserver-element.md)|指定公共语言运行时是否运行服务器垃圾回收。|
 |[\<generatePublisherEvidence>](generatepublisherevidence-element.md)|指定运行时是否使用代码访问安全性 (CAS) 发布服务器策略。|
