@@ -1,7 +1,9 @@
 - name: Visual Basic 指南
   href: index.yml
 - name: Visual Basic 的新增功能
-  href: getting-started/whats-new.md
+  href: whats-new/index.md
+- name: 编译器中的重大更改
+  href: whats-new/breaking-changes.md
 - name: 开始操作
   href: getting-started/index.md
   items:
@@ -535,7 +537,7 @@
               href: language-reference/operators/addition-operator.md
             - name: += 运算符
               href: language-reference/operators/addition-assignment-operator.md
-            - name: = 运算符
+            - name: '= 运算符'
               href: language-reference/operators/assignment-operator.md
             - name: '- 运算符'
               href: language-reference/operators/subtraction-operator.md
@@ -875,9 +877,9 @@
     - name: 错误消息
       href: language-reference/error-messages/index.md
       items:
-        - name: '“#ElseIf”前面必须是匹配的“#If”或“#ElseIf”'
+        - name: “#ElseIf”前面必须是匹配的“#If”或“#ElseIf”
           href: language-reference/error-messages/elseif-must-be-preceded-by-a-matching-if-or-elseif.md
-        - name: '“#Region”和“#End Region”语句在方法体/多行 lambda 内无效'
+        - name: “#Region”和“#End Region”语句在方法体/多行 lambda 内无效
           href: language-reference/error-messages/region-and-end-region-are-not-valid-within-method-bodies-multiline-lambdas.md
         - name: GUID“<attribute>”的格式不正确，因此无法应用“<number>”
           href: language-reference/error-messages/attribute-cannot-be-applied-because-the-format-of-the-guid-is-not-correct.md
