@@ -5,12 +5,12 @@ helpviewer_keywords:
 - get started, Visual Basic
 - Visual Basic, get started
 ms.assetid: 6685467b-28fa-4cde-9516-f0e00ad08911
-ms.openlocfilehash: f52432bde84ab7c1ec30ff4033ce95c80606636e
-ms.sourcegitcommit: 7980a91f90ae5eca859db7e6bfa03e23e76a1a50
+ms.openlocfilehash: a56532a33bc0ef0aae73de7f80e533038212c5ec
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/13/2020
-ms.locfileid: "81243188"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495481"
 ---
 # <a name="get-started-with-visual-basic"></a>Visual Basic 入门
 
@@ -24,7 +24,7 @@ ms.locfileid: "81243188"
 
 ## <a name="additional-information"></a>其他信息
 
-- [Visual Basic 新增功能](whats-new.md) 列出 Visual Basic .NET 各版本中的新功能。
+- [Visual Basic 新增功能](../whats-new/index.md) 列出 Visual Basic .NET 各版本中的新功能。
 
 - [为 Visual Basic 程序员提供的附加资源](additional-resources.md) 提供网站和新闻组列表，它们能够帮助你找到常见问题的答案。
 

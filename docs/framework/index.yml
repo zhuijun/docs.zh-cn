@@ -11,12 +11,12 @@ metadata:
   helpviewer_keywords:
   - .NET Framework guide
   ms.date: 04/22/2020
-  ms.openlocfilehash: 47781bbc5b1b1a2f4c0bc44929c5bb29fe3e7978
-  ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
+  ms.openlocfilehash: da7d48173b17692e5139eb69586fa4d9705d4d12
+  ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/02/2020
-  ms.locfileid: "89379169"
+  ms.lasthandoff: 09/05/2020
+  ms.locfileid: "89495442"
 landingContent:
 - title: 了解 .NET Framework
   linkLists:
@@ -81,19 +81,19 @@ landingContent:
     - text: 桌面指南简介
       url: /dotnet/desktop/
     - text: .NET Framework WPF
-      url: wpf/index.md
+      url: /dotnet/desktop/wpf/?view=netframeworkdesktop-4.8
     - text: .NET Framework Windows 窗体
-      url: /dotnet/desktop/winforms/?view=netframework-4-8
+      url: /dotnet/desktop/winforms/?view=netframeworkdesktop-4.8
 - title: 创建 WPF 应用
   linkLists:
   - linkListType: overview
     links:
     - text: WPF 概述
-      url: wpf/index.md
+      url: /dotnet/desktop/wpf/?view=netframeworkdesktop-4.8
   - linkListType: tutorial
     links:
     - text: 在 Visual Studio 中创建第一个 WPF 应用
-      url: wpf/getting-started/walkthrough-my-first-wpf-desktop-application.md
+      url: /dotnet/desktop/wpf/getting-started/walkthrough-my-first-wpf-desktop-application/?view=netframeworkdesktop-4.8
 - title: 使用 ADO.NET 处理数据
   linkLists:
   - linkListType: overview
