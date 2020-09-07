@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 08a9292c5a41e7b9b7c1bcc18ec96460de19863f
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 3c32d2e13447f8fd9aa6b185b5fc7e60f9e1bb61
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621046"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496781"
 ---
 ### <a name="support-special-relative-uri-notation-when-unicode-is-present"></a>存在 Unicode 时支持特殊的相对 URI 表示法
 
@@ -20,8 +20,20 @@ ms.locfileid: "85621046"
 |:--------|:------------|
 | 范围   |边缘|
 |Version|4.7.2|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Uri.TryCreate(System.Uri,System.Uri,System.Uri@)?displayProperty=nameWithType></li><li><xref:System.Uri.TryCreate(System.String,System.UriKind,System.Uri@)?displayProperty=nameWithType></li><li><xref:System.Uri.TryCreate(System.Uri,System.String,System.Uri@)?displayProperty=nameWithType></li></ul>|
+- <xref:System.Uri.TryCreate(System.Uri,System.Uri,System.Uri@)?displayProperty=nameWithType>
+- <xref:System.Uri.TryCreate(System.String,System.UriKind,System.Uri@)?displayProperty=nameWithType>
+- <xref:System.Uri.TryCreate(System.Uri,System.String,System.Uri@)?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Uri.TryCreate(System.Uri,System.Uri,System.Uri@)`
+- `M:System.Uri.TryCreate(System.String,System.UriKind,System.Uri@)`
+- `M:System.Uri.TryCreate(System.Uri,System.String,System.Uri@)`
+
+-->

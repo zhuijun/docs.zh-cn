@@ -2,12 +2,12 @@
 title: C# 教程 - 主要语言区域
 description: 刚开始接触 C#？ 了解 C# 语言的基础知识。
 ms.date: 08/06/2020
-ms.openlocfilehash: f0e9bff144cc3c853a82f2ee6b400049df60683d
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: e1e533982757c10085f0444197ff97ee7487391f
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88068456"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414898"
 ---
 # <a name="major-language-areas"></a>主要语言区域
 
@@ -60,7 +60,7 @@ C# [字符串内插](../language-reference/tokens/interpolated.md)使你能够�
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="StringInterpolation":::
 
-内插字符串通过 `$` 标记来声明。 字符串插内插计算 `{` 和 `}` 之间的表达式，然后将结果转换为 `string`，并将括号内的文本替换为表达式的字符串结果。 第一个表达式 (`{weatherData.Data:MM-DD-YYYY}`) 中的 `:` 指定格式字符串。 在前一个示例中，这指定日期应以“MM-DD-YYYY”格式显示。
+内插字符串通过 `$` 标记来声明。 字符串插内插计算 `{` 和 `}` 之间的表达式，然后将结果转换为 `string`，并将括号内的文本替换为表达式的字符串结果。 第一个表达式 (`{weatherData.Date:MM-DD-YYYY}`) 中的 `:` 指定格式字符串。 在前一个示例中，这指定日期应以“MM-DD-YYYY”格式显示。
 
 ## <a name="pattern-matching"></a>模式匹配
 

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 150b94b55fa8f2a29f1da7cf7ac7bf6dd06b9666
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 65fa5d8629ce8e426cf1623590a056e5cad0b91f
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621929"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497433"
 ---
 ### <a name="net-interop-will-now-queryinterface-for-iagileobject-a-winrt-interface"></a>.NET Interop 现将为 IAgileObject 的 QueryInterface（WinRT 接口）
 
@@ -21,3 +21,15 @@ ms.locfileid: "85621929"
 | 范围   |边缘|
 |Version|4.8|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: fc6066fd0b23d299158114cb397934041b99ba47
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: a806107456a65a4919592da9535a2617f677cfe0
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619893"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496651"
 ---
 ### <a name="wpf-dispatchersynchronizationcontextcreatecopy-now-returns-a-new-copy-instead-of-the-current-instance"></a>WPF DispatcherSynchronizationContext.CreateCopy 现在返回新副本，而非当前实例
 
@@ -20,8 +20,16 @@ ms.locfileid: "85619893"
 |:--------|:------------|
 | 范围   |次要|
 |Version|4.5|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Windows.Threading.DispatcherSynchronizationContext.CreateCopy?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.Threading.DispatcherSynchronizationContext.CreateCopy?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Windows.Threading.DispatcherSynchronizationContext.CreateCopy`
+
+-->

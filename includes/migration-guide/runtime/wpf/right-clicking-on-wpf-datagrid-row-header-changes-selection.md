@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 6d804dd335cb18d5febc2ca5f794af92963bece1
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: e1faee846627b22b88eb888d6241d47d8ea6ea06
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619902"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497210"
 ---
 ### <a name="right-clicking-on-a-wpf-datagrid-row-header-changes-the-datagrid-selection"></a>右键单击 WPF DataGrid 行标题更改 DataGrid 选择
 
@@ -20,8 +20,16 @@ ms.locfileid: "85619902"
 |:--------|:------------|
 | 范围   |边缘|
 |Version|4.5|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Windows.Controls.DataGrid.%23ctor></li></ul>|
+- <xref:System.Windows.Controls.DataGrid.%23ctor>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Windows.Controls.DataGrid.#ctor`
+
+-->

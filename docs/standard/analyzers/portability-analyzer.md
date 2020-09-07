@@ -4,12 +4,12 @@ description: 了解如何使用 .NET 可移植性分析器工具，评估代码�
 ms.date: 09/13/2019
 ms.technology: dotnet-standard
 ms.assetid: 0375250f-5704-4993-a6d5-e21c499cea1e
-ms.openlocfilehash: d8b5fcf8b6c3230e41585261de747edb9105aa31
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: d61dd9ebe744686885dad41ef700caaea9853f85
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811803"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414794"
 ---
 # <a name="the-net-portability-analyzer"></a>.NET 可移植性分析器
 
@@ -19,7 +19,7 @@ ms.locfileid: "88811803"
 
 ## <a name="common-targets"></a>常用对象
 
-- [.NET Core](../../core/index.yml)：采用模块化设计，支持并行安装，面向跨平台方案。 可并行安装意味着无需破坏其他应用即可采用新的 .NET Core 版本。 如果目标是将应用移植到 .NET Core 以支持多个平台，则建议使用此对象。
+- [.NET Core](../../core/introduction.md)：采用模块化设计，支持并行安装，面向跨平台方案。 可并行安装意味着无需破坏其他应用即可采用新的 .NET Core 版本。 如果目标是将应用移植到 .NET Core 以支持多个平台，则建议使用此对象。
 - .[NET Standard](../net-standard.md)：包括所有 .NET 实现上提供的 .NET Standard API。 如果目标是使自己的库能够在所有 .NET 支持的平台上运行，则建议使用此对象。
 - [ASP.NET Core](/aspnet/core)：在 .NET Core 基础上构建的现代 Web 框架。 如果目标是将 Web 应用移植到 .NET Core 以支持多个平台，则建议使用此对象。
 - .NET Core + [平台扩展](../../core/porting/windows-compat-pack.md)：除 Windows 兼容包之外，还包括 .NET Core API，后者提供了许多可用的 .NET Framework 技术。 这是推荐的对象，用于将 Windows 上的应用从 .NET Framework 移植到 .NET Core。

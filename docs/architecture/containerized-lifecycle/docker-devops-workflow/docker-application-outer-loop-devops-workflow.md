@@ -2,12 +2,12 @@
 title: Docker 应用程序的外部循环 DevOps 工作流步骤
 description: 了解 DevOps 工作流的“外部循环”步骤
 ms.date: 08/06/2020
-ms.openlocfilehash: 5515c204b09cecba323540572c6769c65c6c93ab
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 82a45c8669812580623811e18cc55f55f45cb6d3
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915272"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271902"
 ---
 # <a name="steps-in-the-outer-loop-devops-workflow-for-a-docker-application"></a>Docker 应用程序的外部循环 DevOps 工作流步骤
 
@@ -94,7 +94,7 @@ Visual Studio Azure DevOps Services 包含可在 CI/CD 管道中使用的生成�
 >   <https://docs.microsoft.com/archive/blogs/stevelasker/building-net-core-linux-docker-images-with-visual-studio-team-services>
 >
 > - 使用 Docker 支持生成基于 Linux 的 Visual Studio Team Service 生成计算机：\
->   <http://donovanbrown.com/post/2016/06/03/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
+>   <https://www.donovanbrown.com/post/Building-a-Linux-Based-Visual-Studio-Team-Service-Build-Machine-with-Docker-Support>
 
 ### <a name="integrate-test-and-validate-multi-container-docker-applications"></a>集成、测试和验证多容器 Docker 应用程序
 

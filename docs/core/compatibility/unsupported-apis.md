@@ -3,12 +3,12 @@ title: .NET Core 上不支持的 API
 titleSuffix: ''
 description: 了解 .NET Framework 中始终在 .NET Core 上引发异常的 API。
 ms.date: 12/23/2019
-ms.openlocfilehash: 941e9149c7679afe4a888149108d0a9a28e5e7ab
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 94f334d7e4b7daf407f489ba274172ced9eefa81
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794593"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414430"
 ---
 # <a name="apis-that-always-throw-exceptions-on-net-core"></a>始终在 .NET Core 上引发异常的 API
 
@@ -267,7 +267,6 @@ ms.locfileid: "82794593"
 | 成员 | 引发异常的平台 |
 | - | - |
 | <xref:System.Security.Cryptography.Pkcs.CmsSigner.%23ctor(System.Security.Cryptography.CspParameters)> | All |
-| <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType> | All |
 | <xref:System.Security.Cryptography.Pkcs.SignerInfo.ComputeCounterSignature?displayProperty=nameWithType> | All |
 
 ## <a name="systemsecuritycryptographyx509certificates"></a>System.Security.Cryptography.X509Certificates

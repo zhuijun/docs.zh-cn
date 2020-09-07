@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 87013a04f7ff975e40a3c49c41c1c5acc2374066
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 06424c4fa40343a881356c20003300f65e93efbb
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619874"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496680"
 ---
 ### <a name="wf-serializes-expressionsliterallttgt-datetimes-differently-now-breaks-custom-xaml-parsers"></a>WF 现在采用不同方式序列化 Expressions.Literal&lt;T&gt; DateTimes（中断自定义 XAML 分析器）
 
@@ -21,3 +21,15 @@ ms.locfileid: "85619874"
 | 范围   |边缘|
 |Version|4.5|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

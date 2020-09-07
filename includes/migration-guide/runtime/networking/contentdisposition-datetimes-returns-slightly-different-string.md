@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c103dff320ae30d02c12ea5c585a47b589da8237
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: eb5c032a020799fa19cc0a8cfaabb56e01417ff4
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621134"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496387"
 ---
 ### <a name="contentdisposition-datetimes-returns-slightly-different-string"></a>ContentDisposition DateTimes 返回稍微不同的字符串
 
@@ -16,12 +16,22 @@ ms.locfileid: "85621134"
 
 不要期望不同 .NET Framework 版本的 ContentDispositions 的字符串表示形式相互进行正确比较。 如果可以，请在执行比较前将字符串转换回 ContentDispositions。
 
-| “属性”    | 值       |
+| 名称    | 值       |
 |:--------|:------------|
 | 范围   |次要|
 |Version|4.6|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Net.Mime.ContentDisposition.ToString?displayProperty=nameWithType></li><li><xref:System.Net.Mime.ContentDisposition.GetHashCode?displayProperty=nameWithType></li></ul>|
+- <xref:System.Net.Mime.ContentDisposition.ToString?displayProperty=nameWithType>
+- <xref:System.Net.Mime.ContentDisposition.GetHashCode?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Net.Mime.ContentDisposition.ToString`
+- `M:System.Net.Mime.ContentDisposition.GetHashCode`
+
+-->

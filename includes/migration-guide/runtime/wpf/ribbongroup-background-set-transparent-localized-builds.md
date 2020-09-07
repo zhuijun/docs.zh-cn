@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a3ba42868577ac20ea2e082f90fc4973a1bfe108
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: d6405573e476ce18513938b500041adefbeeef1b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622339"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497087"
 ---
 ### <a name="ribbongroup-background-is-set-to-transparent-in-localized-builds"></a>本地化版本中的 RibbonGroup 背景设置为透明
 
@@ -21,3 +21,15 @@ ms.locfileid: "85622339"
 | 范围   |边缘|
 |Version|4.6.2|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

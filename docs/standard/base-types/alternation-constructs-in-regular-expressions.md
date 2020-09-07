@@ -15,12 +15,12 @@ helpviewer_keywords:
 - constructs, alternation
 - .NET Framework regular expressions, alternation constructs
 ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
-ms.openlocfilehash: 02664bd2812f89649ec933483161263bae530a75
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 506c1cdeb577452628d67ab00df20dd30881f406
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159684"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495429"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>正则表达式中的替换构造
 
@@ -60,7 +60,7 @@ ms.locfileid: "78159684"
 |-------------|-----------------|  
 |`\b`|在单词边界处开始。|  
 |<code>(\d{2}-\d{7}&#124;\d{3}-\d{2}-\d{4})</code>|匹配以下其中一个内容：连字符连接的两个十进制数字和七个十进制数字；或三个十进制数字后接连字符，后接两个十进制数字，后接另一个连字符，然后再接四个十进制数字。|  
-|`\d`|在单词边界处结束匹配。|  
+|`\b`|在单词边界处结束匹配。|  
   
 <a name="Conditional_Expr"></a>
 ## <a name="conditional-matching-with-an-expression"></a>条件匹配的表达式

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 5e2e8d1ec5d698d1c1649c2a0a1b4b77dbdf4022
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: e42bce91afab68e509cb35a8992fa3ca2f096872
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621117"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497939"
 ---
 ### <a name="wpf-printing-stack-update"></a>WPF 打印堆栈更新
 
@@ -16,8 +16,20 @@ WPF 打印 API 现在使用 <xref:System.Printing.PrintQueue?displayProperty=ful
 
 若要在 Windows 10 创意者更新中使用旧堆栈，请将 <code>HKEY_CURRENT_USER\Software\Microsoft\.NETFramework\Windows Presentation Foundation\Printing</code> 注册表项的 <code>UseXpsOMPrinting</code> REG_DWORD 值设置为 <code>1</code>。
 
-| “属性”    | 值       |
+| 名称    | 值       |
 |:--------|:------------|
 | 范围   |边缘|
 |Version|4.7|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

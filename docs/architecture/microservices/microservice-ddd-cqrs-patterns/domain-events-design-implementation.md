@@ -2,12 +2,12 @@
 title: 域事件。 设计和实现
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 深入了解域事件（在聚合之间建立通信的一个关键概念）。
 ms.date: 10/08/2018
-ms.openlocfilehash: 630bd0a0b060431e565df98faa77f452e2045fa2
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 0cc2072408e110d94b47bd47a9c337a604d4c1a3
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144300"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271771"
 ---
 # <a name="domain-events-design-and-implementation"></a>域事件：设计和实现
 
@@ -130,7 +130,7 @@ public class OrderStartedDomainEvent : INotification
 
 下一个问题是如何引发域事件，使其到达相关的事件处理程序。 可使用多个方法。
 
-Udi Dahan 最初建议（例如在 [Domain Events – Take 2](http://udidahan.com/2008/08/25/domain-events-take-2/)（域事件 – Take 2）等一系列文章中）将静态类用于管理和引发事件。 这可能包括名为 DomainEvents 的静态类，该类会在调用时，使用 `DomainEvents.Raise(Event myEvent)` 等语法立即引发域事件。 Jimmy Bogard 写了过一篇博客文章（[强化你的域：域事件](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)），其中建议了类似的方法。
+Udi Dahan 最初建议（例如在 [Domain Events – Take 2](https://udidahan.com/2008/08/25/domain-events-take-2/)（域事件 – Take 2）等一系列文章中）将静态类用于管理和引发事件。 这可能包括名为 DomainEvents 的静态类，该类会在调用时，使用 `DomainEvents.Raise(Event myEvent)` 等语法立即引发域事件。 Jimmy Bogard 写了过一篇博客文章（[强化你的域：域事件](https://lostechies.com/jimmybogard/2010/04/08/strengthening-your-domain-domain-events/)），其中建议了类似的方法。
 
 但是，如果域事件类是静态的，它也会立即调度给处理程序。 这使得测试和调试更加困难，因为会在引发事件后立即执行具有副作用逻辑的事件处理程序。 测试和调试时，你希望专注于当前聚合类发生的事件；不希望突然重定向到其他事件处理程序，处理与其他聚合或应用程序逻辑相关的副作用。 因此，其他方法应运而生，下一节将进行介绍。
 

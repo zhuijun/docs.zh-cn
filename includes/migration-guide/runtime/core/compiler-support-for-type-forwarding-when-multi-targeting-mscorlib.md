@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f123f37d3f1be7d5b6805ac58529c1872a81f20b
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 151f88f1214e3abedf491761144ffc1a89d29e43
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619829"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496105"
 ---
 ### <a name="compiler-support-for-type-forwarding-when-multi-targeting-mscorlib"></a>编译器支持多定向 mscorlib 时的类型转发
 
@@ -17,3 +17,15 @@ ms.locfileid: "85619829"
 | 范围   |边缘|
 |Version|4.5|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

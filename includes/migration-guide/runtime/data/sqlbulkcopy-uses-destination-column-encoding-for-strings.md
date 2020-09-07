@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1329a86db4227f75dfba7c50bbbdc2fc23099528
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: fd9f4f3de8f7be39242d4ff6924d480f20a1a06b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619844"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497745"
 ---
 ### <a name="sqlbulkcopy-uses-destination-column-encoding-for-strings"></a>SqlBulkCopy 对字符串使用目标列编码
 
@@ -20,8 +20,18 @@ ms.locfileid: "85619844"
 |:--------|:------------|
 | 范围   |边缘|
 |Version|4.5|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlBulkCopy.%23ctor(System.Data.SqlClient.SqlConnection)></li></ul>|
+- <xref:System.Data.SqlClient.SqlBulkCopy?displayProperty=nameWithType>
+- <xref:System.Data.SqlClient.SqlBulkCopy.%23ctor(System.Data.SqlClient.SqlConnection)>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Data.SqlClient.SqlBulkCopy`
+- `M:System.Data.SqlClient.SqlBulkCopy.#ctor(System.Data.SqlClient.SqlConnection)`
+
+-->

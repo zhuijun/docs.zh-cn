@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 86169b5c9a20678647153c951550e590a5bce588
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8dc1b4d94d01813a8124d1340b50fa78a9b157f8
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622226"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496099"
 ---
 ### <a name="resizing-a-grid-can-hang"></a>调整网格可能会挂起
 
@@ -16,8 +16,20 @@ ms.locfileid: "85622226"
 
 升级到 .NET Framework 4.7.1。  或者，如果不需要 4.7 分配算法，也可以使用以下配置设置：<pre><code class="lang-xml">&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Windows.Controls.Grid.StarDefinitionsCanExceedAvailableSpace=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;</code></pre>
 
-| “属性”    | 值       |
+| 名称    | 值       |
 |:--------|:------------|
 | 范围   |边缘|
 |Version|4.7|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

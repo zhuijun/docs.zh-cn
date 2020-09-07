@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b2fcacdb02c411c4dcb12051bf0c6759faccdea2
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: fccf349517133245ec85ae3c25cedbfb27a7dd8b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619866"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497680"
 ---
 ### <a name="the-replace-method-in-odata-urls-is-disabled-by-default"></a>默认情况下，禁用 OData URL 中的 Replace 方法
 
@@ -20,8 +20,16 @@ ms.locfileid: "85619866"
 |:--------|:------------|
 | 范围   |边缘|
 |Version|4.5|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Data.Services.DataService%601?displayProperty=nameWithType></li></ul>|
+- <xref:System.Data.Services.DataService%601?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- ``T:System.Data.Services.DataService`1``
+
+-->

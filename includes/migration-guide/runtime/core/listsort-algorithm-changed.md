@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9dada93c3330331064b7a944d97d61edb4dea299
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 09bd2c6312493f8b6369d05d8f1c4e88e4c05ece
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619838"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496484"
 ---
 ### <a name="listsort-algorithm-changed"></a>List.Sort 算法已更改
 
@@ -20,8 +20,22 @@ ms.locfileid: "85619838"
 |:--------|:------------|
 | 范围   |透明|
 |Version|4.5|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Collections.Generic.List%601.Sort?displayProperty=nameWithType></li><li><xref:System.Collections.Generic.List%601.Sort(System.Collections.Generic.IComparer{%600})?displayProperty=nameWithType></li><li><xref:System.Collections.Generic.List%601.Sort(System.Comparison{%600})?displayProperty=nameWithType></li><li><xref:System.Collections.Generic.List%601.Sort(System.Int32,System.Int32,System.Collections.Generic.IComparer{%600})?displayProperty=nameWithType></li></ul>|
+- <xref:System.Collections.Generic.List%601.Sort?displayProperty=nameWithType>
+- <xref:System.Collections.Generic.List%601.Sort(System.Collections.Generic.IComparer{%600})?displayProperty=nameWithType>
+- <xref:System.Collections.Generic.List%601.Sort(System.Comparison{%600})?displayProperty=nameWithType>
+- <xref:System.Collections.Generic.List%601.Sort(System.Int32,System.Int32,System.Collections.Generic.IComparer{%600})?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- ``M:System.Collections.Generic.List`1.Sort``
+- ``M:System.Collections.Generic.List`1.Sort(System.Collections.Generic.IComparer{`0})``
+- ``M:System.Collections.Generic.List`1.Sort(System.Comparison{`0})``
+- ``M:System.Collections.Generic.List`1.Sort(System.Int32,System.Int32,System.Collections.Generic.IComparer{`0})``
+
+-->

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ae557ce57557d027dba35b7da213c08aee85f2c7
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 55a26f1ab27792cbedf3f31b797f37d3f768d51a
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621928"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497779"
 ---
 ### <a name="aspnet-fix-handling-of-inputattributes-and-labelattributes-for-webforms-checkbox-control"></a>ASP.NET 修复了处理 WebForms CheckBox 控件的 InputAttributes 和 LabelAttributes 的问题
 
@@ -20,8 +20,16 @@ ms.locfileid: "85621928"
 |:--------|:------------|
 | 范围   |未知|
 |Version|4.8|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Web.UI.WebControls.CheckBox?displayProperty=nameWithType></li></ul>|
+- <xref:System.Web.UI.WebControls.CheckBox?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Web.UI.WebControls.CheckBox`
+
+-->

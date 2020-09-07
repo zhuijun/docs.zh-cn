@@ -3,12 +3,12 @@ title: 如何查询包含一组指定词语的句子 (LINQ) (C#)
 description: 了解如何使用 C# 中的 LINQ 在包含一组词语的每个匹配项的文本文件中查找句子，这些词语可在运行时进行填充。
 ms.date: 07/20/2015
 ms.assetid: 0724b429-4b87-4d26-a7b1-409358f3fc20
-ms.openlocfilehash: c334c7948f19fb857709ff04a83e1dae56fc69da
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: daf86d6641b82fb77ca237e8a190b4f60b9dea4d
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104524"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465645"
 ---
 # <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-c"></a>如何查询包含一组指定词语的句子 (LINQ) (C#)
 此示例演示如何在包含一组指定的词语的每个匹配项的文本文件中查找句子。 尽管此示例中的搜索词数组采用硬编码形式，但它也可在运行时以动态方式进行填充。 在此示例中，查询将返回包含单词“Historically,”、“data,”和“integrated”的句子。  
@@ -23,7 +23,7 @@ class FindSentences
         string text = @"Historically, the world of data and the world of objects " +  
         @"have not been well integrated. Programmers work in C# or Visual Basic " +  
         @"and also in SQL or XQuery. On the one side are concepts such as classes, " +  
-        @"objects, fields, inheritance, and .NET Framework APIs. On the other side " +  
+        @"objects, fields, inheritance, and .NET APIs. On the other side " +  
         @"are tables, columns, rows, nodes, and separate languages for dealing with " +  
         @"them. Data types often require translation between the two worlds; there are " +  
         @"different standard functions. Because the object world has no notion of query, a " +  

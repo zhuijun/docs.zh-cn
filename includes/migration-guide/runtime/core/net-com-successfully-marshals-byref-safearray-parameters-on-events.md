@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 77e9d28d79a92cf1523e4ef5779d78394b00ae80
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1907c9b82c9685899d328f67da8001c0fa4fb697
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621930"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497860"
 ---
 ### <a name="net-com-successfully-marshals-byref-safearray-parameters-on-events"></a>.NET COM 成功封送事件上的 ByRef SafeArray 参数
 
@@ -21,3 +21,15 @@ ms.locfileid: "85621930"
 | 范围   |次要|
 |Version|4.8|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2e13268d4983af5d2fdd6d12b4d9e67d61d07f3d
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: c679cb2603d39f580203d9373d76481e904e6c1d
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621939"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496214"
 ---
 ### <a name="profiling-aspnet-mvc4-apps-can-lead-to-fatal-execution-engine-error"></a>分析 ASP.Net MVC4 应用可能导致严重的执行引擎错误
 
@@ -21,3 +21,15 @@ ms.locfileid: "85621939"
 | 范围   |边缘|
 |Version|4.5|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

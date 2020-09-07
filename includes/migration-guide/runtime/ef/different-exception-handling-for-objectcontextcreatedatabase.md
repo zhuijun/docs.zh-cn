@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 687118157020ede200f97a0125c4740a06bf4b5e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8c593fa6490451c6236f0d4390f09d4e9e4f0cbb
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619849"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497095"
 ---
 ### <a name="different-exception-handling-for-objectcontextcreatedatabase-and-dbproviderservicescreatedatabase-methods"></a>ObjectContext.CreateDatabase 和 DbProviderServices.CreateDatabase 方法处理异常的方式不同
 
@@ -20,8 +20,18 @@ ms.locfileid: "85619849"
 |:--------|:------------|
 | 范围   |次要|
 |Version|4.5|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Data.Objects.ObjectContext.CreateDatabase?displayProperty=nameWithType></li><li><xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)?displayProperty=nameWithType></li></ul>|
+- <xref:System.Data.Objects.ObjectContext.CreateDatabase?displayProperty=nameWithType>
+- <xref:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Data.Objects.ObjectContext.CreateDatabase`
+- `M:System.Data.Common.DbProviderServices.CreateDatabase(System.Data.Common.DbConnection,System.Nullable{System.Int32},System.Data.Metadata.Edm.StoreItemCollection)`
+
+-->

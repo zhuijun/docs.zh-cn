@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3aafb14b65f7c0f9e5d77927809547f9d4b96e1c
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 26facb645de175d7ef0432394fc2b84f59e8437d
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619862"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497872"
 ---
 ### <a name="error-codes-for-maxrequestlength-or-maxreceivedmessagesize-are-different"></a>maxRequestLength 或 maxReceivedMessageSize 的错误代码是不同的
 
@@ -21,3 +21,15 @@ Internet Information Services (IIS) 或 ASP.NET 开发服务器承载的 WCF Web
 | 范围   |边缘|
 |Version|4.5|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

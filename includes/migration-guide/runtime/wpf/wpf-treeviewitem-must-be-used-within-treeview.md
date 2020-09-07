@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: af8cb9435be078351e3430dc8ded3f7cac377948
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: e9f769af6d85403c2a6f085cbc3462cf549adae9
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619905"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496898"
 ---
 ### <a name="wpf-treeviewitem-must-be-used-within-a-treeview"></a>WPF TreeViewItem 必须在 TreeView 内使用
 
@@ -21,3 +21,15 @@ ms.locfileid: "85619905"
 | 范围   |次要|
 |Version|4.5|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

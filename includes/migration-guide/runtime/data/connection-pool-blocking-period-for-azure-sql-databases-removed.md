@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d7a18a0b457c2a38f40c1da3b2f0bfc578259475
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: c27c63e5bbd4a144b9482a0b1cb74250ae78d91c
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621045"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496452"
 ---
 ### <a name="connection-pool-blocking-period-for-azure-sql-databases-is-removed"></a>已删除 Azure SQL 数据库的连接池锁定期
 
@@ -16,12 +16,24 @@ ms.locfileid: "85621045"
 
 如果不需要此行为，可以通过设置 .NET Framework 4.6.2 中引入的 <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod?displayProperty=fullName> 属性配置连接池锁定期。 该属性的值属于 <xref:System.Data.SqlClient.PoolBlockingPeriod?displayProperty=fullName> 枚举，可采用以下三个值中的任意一个：<ul><li><xref:System.Data.SqlClient.PoolBlockingPeriod.AlwaysBlock></li><li><xref:System.Data.SqlClient.PoolBlockingPeriod.Auto></li><li><xref:System.Data.SqlClient.PoolBlockingPeriod.NeverBlock></li></ul>可以通过将 <xref:System.Data.SqlClient.SqlConnectionStringBuilder.PoolBlockingPeriod?displayProperty=fullName> 属性设置为 <xref:System.Data.SqlClient.PoolBlockingPeriod.AlwaysBlock> 来还原以前的行为。
 
-| “属性”    | 值       |
+| 名称    | 值       |
 |:--------|:------------|
 | 范围   |次要|
 |Version|4.6.2|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Data.Common.DbConnection.OpenAsync?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnection.Open?displayProperty=nameWithType></li><li><xref:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)?displayProperty=nameWithType></li></ul>|
+- <xref:System.Data.Common.DbConnection.OpenAsync?displayProperty=nameWithType>
+- <xref:System.Data.SqlClient.SqlConnection.Open?displayProperty=nameWithType>
+- <xref:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Data.Common.DbConnection.OpenAsync`
+- `M:System.Data.SqlClient.SqlConnection.Open`
+- `M:System.Data.SqlClient.SqlConnection.OpenAsync(System.Threading.CancellationToken)`
+
+-->

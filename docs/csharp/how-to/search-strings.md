@@ -7,12 +7,12 @@ helpviewer_keywords:
 - strings [C#], searching with String methods
 - strings [C#], searching with regular expressions
 ms.assetid: fb1d9a6d-598d-4a35-bd5f-b86012edcb2b
-ms.openlocfilehash: 17bf6e080542242d30791b70ffbf00b05f03a7b0
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: b6a2ab25efa64b2bbf33ea234dba07cdf9582e66
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86473989"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465125"
 ---
 # <a name="how-to-search-strings"></a>如何搜索字符串
 
@@ -79,6 +79,6 @@ ms.locfileid: "86473989"
 - [字符串](../programming-guide/strings/index.md)
 - [LINQ 和字符串](../programming-guide/concepts/linq/linq-and-strings.md)
 - <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType>
-- [.NET Framework 正则表达式](../../standard/base-types/regular-expressions.md)
+- [.NET 正则表达式](../../standard/base-types/regular-expressions.md)
 - [正则表达式语言 - 快速参考](../../standard/base-types/regular-expression-language-quick-reference.md)
 - [有关使用 .NET 中字符串的最佳做法](../../standard/base-types/best-practices-strings.md)

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7ac0cac53ab2fa7657d0ae58f11d9e777631acc9
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1487e32ffca7b4bbebb5edac7efc8961ac05723b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619885"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497541"
 ---
 ### <a name="accessing-a-wpf-datagrids-selected-items-from-a-handler-of-the-datagrids-unloadingrow-event-can-cause-a-nullreferenceexception"></a>从 DataGrid 的 UnloadingRow 事件的处理程序访问 WPF DataGrid 的选定项可能会导致 NullReferenceException
 
@@ -20,8 +20,18 @@ ms.locfileid: "85619885"
 |:--------|:------------|
 | 范围   |次要|
 |Version|4.5|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Windows.Controls.DataGrid.UnloadingRow?displayProperty=nameWithType></li><li><xref:System.Windows.Controls.DataGrid.UnloadingRowDetails?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.Controls.DataGrid.UnloadingRow?displayProperty=nameWithType>
+- <xref:System.Windows.Controls.DataGrid.UnloadingRowDetails?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `E:System.Windows.Controls.DataGrid.UnloadingRow`
+- `E:System.Windows.Controls.DataGrid.UnloadingRowDetails`
+
+-->

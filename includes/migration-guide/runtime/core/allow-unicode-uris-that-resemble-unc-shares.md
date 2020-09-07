@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3e8601ba76dfb05e3d70b3af7440bd7e228768d0
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1047f4028697a73741470d1aac8b3aeed37be217
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621044"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496591"
 ---
 ### <a name="allow-unicode-in-uris-that-resemble-unc-shares"></a>允许在类似于 UNC 共享的 URI 中使用 Unicode
 
@@ -20,8 +20,16 @@ ms.locfileid: "85621044"
 |:--------|:------------|
 | 范围   |边缘|
 |Version|4.7.2|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Uri?displayProperty=nameWithType></li></ul>|
+- <xref:System.Uri?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Uri`
+
+-->

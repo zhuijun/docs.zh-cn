@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3eab96149be1e40d528cfd552bbe05ca766cf4e8
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 58dbb54d42d89b450134758072e3133ae4e6b13d
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619842"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497950"
 ---
 ### <a name="systemthreadingtaskstask-no-longer-throw-objectdisposedexception-after-object-is-disposed"></a>释放对象后，System.Threading.Tasks.Task 不再引发 ObjectDisposedException
 
@@ -21,3 +21,15 @@ ms.locfileid: "85619842"
 | 范围   |次要|
 |Version|4.5|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

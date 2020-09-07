@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 5d5423d18091545ad9d50325900f5a9a4fff6dd9
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 7637c2d96aef93b4cf8f2314c1dd1edba51d553c
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621936"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497151"
 ---
 ### <a name="fixed-a-hang-when-listbox-contains-duplicate-value-types"></a>修复了 ListBox 包含重复值类型时的挂起问题
 
@@ -17,3 +17,15 @@ ms.locfileid: "85621936"
 | 范围   |主要|
 |Version|4.8|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

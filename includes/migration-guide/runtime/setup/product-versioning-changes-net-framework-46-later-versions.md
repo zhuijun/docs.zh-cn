@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: a5c6dda0c1d68468cd95f67716709dd059948c80
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 6a79f04af44f78313c4d5bb5c37dfad252d3024b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621147"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496654"
 ---
 ### <a name="product-versioning-changes-in-the-net-framework-46-and-later-versions"></a>.NET Framework 4.6 和更高版本中产品版本控制的更改
 
@@ -16,8 +16,20 @@ ms.locfileid: "85621147"
 
 一般情况下，应用程序应依赖于用于检测诸如 .NET Framework 的运行时版本和安装目录等内容的推荐技术：<ul><li>若要检测 .NET Framework 的运行时版本，请参阅[如何：确定安装了哪些 .NET Framework 版本](~/docs/framework/migration-guide/how-to-determine-which-versions-are-installed.md)。</li><li>若要确定 .NET Framework 的安装路径，请使用 <code>HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full</code> 密钥中的 <code>InstallPath</code> 条目的值。</li></ul> <blockquote> [!IMPORTANT] 子项名称是 <code>NET Framework Setup</code>，而不是 <code>.NET Framework Setup</code>。</blockquote> <ul><li>若要确定.NET Framework 公共语言运行时的目录路径，请调用 <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory?displayProperty=nameWithType> 方法。</li><li>若要获取 CLR 版本，请调用 <xref:System.Runtime.InteropServices.RuntimeEnvironment.GetSystemVersion?displayProperty=nameWithType> 方法。 对于 .NET Framework 4 及其子版本（.NET Framework 4.5、4.5.1、4.5.2 以及 .NET Framework 4.6、4.6.1、4.6.2、4.7 和 4.7.1），它将返回字符串 v4.0.30319。</li></ul>
 
-| “属性”    | 值       |
+| 名称    | 值       |
 |:--------|:------------|
 | 范围   |次要|
 |Version|4.6|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

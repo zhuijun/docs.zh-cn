@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: b92dc8a1c48e83846c3d9a1d86e66629f31b7722
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: bca76daca6e9c424377a80aa56e1a5ff191be5ca
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621937"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496779"
 ---
 ### <a name="intermittently-unable-to-scroll-to-bottom-item-in-itemscontrols-like-listbox-and-datagrid-when-using-custom-datatemplates"></a>使用自定义 DataTemplates 时，在 ItemsControls（例如 ListBox 和 DataGrid）内间歇性无法滚动到底部项目
 
@@ -21,3 +21,15 @@ ms.locfileid: "85621937"
 | 范围   |次要|
 |Version|4.5|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 83d3f24680531d1e447f047151a28c98ce0da04b
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 26539011f0650c7a3bac9e1c41847561905fff58
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619870"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496101"
 ---
 ### <a name="managed-browser-hosting-controls-from-the-net-framework-11-and-20-are-blocked"></a>锁定承载来自 .NET Framework 1.1 和 2.0 的控件的托管浏览器
 
@@ -21,3 +21,15 @@ Internet Explorer 将无法启动使用用于承载控件的托管浏览器的�
 | 范围   |次要|
 |Version|4.5|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

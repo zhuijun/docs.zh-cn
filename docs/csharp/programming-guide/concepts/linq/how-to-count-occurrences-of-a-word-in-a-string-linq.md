@@ -3,12 +3,12 @@ title: 如何对某个词在字符串中出现的次数进行计数 (LINQ) (C#)
 description: 此示例演示如何使用 C# 中的 LINQ 查询对指定词在字符串中出现的次数进行计数。 首先，它使用拆分方法来创建字符数组。
 ms.date: 07/20/2015
 ms.assetid: f8e6f546-7c14-4aa1-8a75-e8d09f3b8ccd
-ms.openlocfilehash: 1621e776510e366aa779f1d45468be34b3dec373
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: e0ac7b338706c3f363fb21284e895bd1c7c48b6c
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103369"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466113"
 ---
 # <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-c"></a>如何对某个词在字符串中出现的次数进行计数 (LINQ) (C#)
 此示例演示如何使用 LINQ 查询对指定词在字符串中出现的次数进行计数。 请注意，若要执行计数，首先需调用 <xref:System.String.Split%2A> 方法来创建词数组。 <xref:System.String.Split%2A> 方法存在性能开销。 如果只需要统计字符串的字数，则应考虑改用 <xref:System.Text.RegularExpressions.Regex.Matches%2A> 或 <xref:System.String.IndexOf%2A> 方法。 但是，如果性能不是关键问题，或者已拆分句子以对其执行其他类型的查询，则使用 LINQ 来计数词或短语同样有意义。  
@@ -23,7 +23,7 @@ class CountWords
         string text = @"Historically, the world of data and the world of objects" +  
           @" have not been well integrated. Programmers work in C# or Visual Basic" +  
           @" and also in SQL or XQuery. On the one side are concepts such as classes," +  
-          @" objects, fields, inheritance, and .NET Framework APIs. On the other side" +  
+          @" objects, fields, inheritance, and .NET APIs. On the other side" +  
           @" are tables, columns, rows, nodes, and separate languages for dealing with" +  
           @" them. Data types often require translation between the two worlds; there are" +  
           @" different standard functions. Because the object world has no notion of query, a" +  

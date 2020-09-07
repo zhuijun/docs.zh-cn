@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 26a001ec2009a1a66dd9038b9bd3a42d7bcefb73
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 49740d3b1890d72935e6e329a4f4be836ed70b25
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619839"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496944"
 ---
 ### <a name="missing-target-framework-moniker-results-in-40-behavior"></a>在 4.0 行为中缺少了目标框架名字对象结果
 
@@ -21,3 +21,15 @@ ms.locfileid: "85619839"
 | 范围   |主要|
 |Version|4.5|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

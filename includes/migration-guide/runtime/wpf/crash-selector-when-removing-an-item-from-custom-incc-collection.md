@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 6da589057cebfbf3f67a46b8d49d3a61f037c4c7
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: f50022d9a7bacd7be40fe3050ced26e7c25cf7aa
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622227"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497222"
 ---
 ### <a name="crash-in-selector-when-removing-an-item-from-a-custom-incc-collection"></a>从自定义 INCC 集合删除项时选择器出现故障
 
@@ -16,8 +16,20 @@ ms.locfileid: "85622227"
 
 升级到 .NET Framework 4.7.1。
 
-| “属性”    | 值       |
+| 名称    | 值       |
 |:--------|:------------|
 | 范围   |次要|
 |Version|4.7|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

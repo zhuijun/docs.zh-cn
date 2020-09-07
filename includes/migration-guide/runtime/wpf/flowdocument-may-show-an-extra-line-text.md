@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0470cefc05fb5da6a6195ee0a96f04feef01fd10
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: a61005e317020c47a283dae292236624ec6057ce
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619882"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496986"
 ---
 ### <a name="flowdocument-may-show-an-extra-line-of-text"></a>FlowDocument 可能显示额外的文本行
 
@@ -20,8 +20,24 @@ ms.locfileid: "85619882"
 |:--------|:------------|
 | 范围   |边缘|
 |Version|4.5|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Windows.Documents.FlowDocument.%23ctor></li><li><xref:System.Windows.Documents.FlowDocument.%23ctor(System.Windows.Documents.Block)></li><li><xref:System.Windows.Controls.FlowDocumentReader.%23ctor></li><li><xref:System.Windows.Controls.FlowDocumentPageViewer.%23ctor></li><li><xref:System.Windows.Controls.Primitives.DocumentPageView.%23ctor></li></ul>|
+- <xref:System.Windows.Documents.FlowDocument.%23ctor>
+- <xref:System.Windows.Documents.FlowDocument.%23ctor(System.Windows.Documents.Block)>
+- <xref:System.Windows.Controls.FlowDocumentReader.%23ctor>
+- <xref:System.Windows.Controls.FlowDocumentPageViewer.%23ctor>
+- <xref:System.Windows.Controls.Primitives.DocumentPageView.%23ctor>
+
+<!--
+
+#### Affected APIs
+
+- `M:System.Windows.Documents.FlowDocument.#ctor`
+- `M:System.Windows.Documents.FlowDocument.#ctor(System.Windows.Documents.Block)`
+- `M:System.Windows.Controls.FlowDocumentReader.#ctor`
+- `M:System.Windows.Controls.FlowDocumentPageViewer.#ctor`
+- `M:System.Windows.Controls.Primitives.DocumentPageView.#ctor`
+
+-->

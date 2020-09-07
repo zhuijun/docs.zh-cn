@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: beb869208e8d48d762d94b5989a558fa2f1aaf29
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8964cd2f69e95e4078001997ad5a5d126ce42d7b
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621935"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497918"
 ---
 ### <a name="data-binding-improvement-for-keyedcollection"></a>KeyedCollection 的数据绑定改进
 
@@ -21,3 +21,15 @@ ms.locfileid: "85621935"
 | 范围   |主要|
 |Version|4.8|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->

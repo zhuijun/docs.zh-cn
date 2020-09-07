@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 0fe07ac21effacffc56d37ccb46a121f443acd20
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 76425ca03c98cd6a23b8366257f9e0d53b486edb
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619824"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497009"
 ---
 ### <a name="sharing-session-state-with-aspnet-stateserver-requires-all-servers-in-the-web-farm-to-use-the-same-net-framework-version"></a>与 Asp.Net StateServer 共享会话状态需要 Web 场中的所有服务器使用相同版本的 .NET Framework
 
@@ -24,4 +24,12 @@ ms.locfileid: "85619824"
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Web.SessionState.SessionStateMode.StateServer?displayProperty=nameWithType></li></ul>|
+- <xref:System.Web.SessionState.SessionStateMode.StateServer?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `F:System.Web.SessionState.SessionStateMode.StateServer`
+
+-->

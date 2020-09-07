@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 14585b6de3ce02884f8be789930fc8610f73ba7d
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 2ae17e0823ec2fa064c948d9ea7bd19cbd34cb6a
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621111"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497632"
 ---
 ### <a name="horizontal-scrolling-and-virtualization"></a>水平滚动和虚拟化
 
@@ -16,12 +16,20 @@ ms.locfileid: "85621111"
 
 应将使用 <xref:System.Windows.Controls.Primitives.IScrollInfo.HorizontalOffset?displayProperty=fullName> 预测值的应用更改为：在由于反虚拟化而可能更改 <xref:System.Windows.Controls.Primitives.IScrollInfo.ExtentWidth?displayProperty=fullName> 的任何水平滚动发生后提取实际值（和 <xref:System.Windows.Controls.Primitives.IScrollInfo.ExtentWidth?displayProperty=fullName> 值）。
 
-| “属性”    | 值       |
+| 名称    | 值       |
 |:--------|:------------|
 | 范围   |次要|
 |Version|4.6.2|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Windows.Controls.Primitives.IScrollInfo?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.Controls.Primitives.IScrollInfo?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `T:System.Windows.Controls.Primitives.IScrollInfo`
+
+-->

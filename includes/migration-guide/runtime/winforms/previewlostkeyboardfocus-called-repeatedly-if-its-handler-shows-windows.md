@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 2aa6603e2ed77ffa94fbc6325cd5db50985bda6a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: c4a3d903894027a01d32ca132d1233da9d9c3ee5
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619877"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89497353"
 ---
 ### <a name="previewlostkeyboardfocus-is-called-repeatedly-if-its-handler-shows-a-windows-forms-message-box"></a>如果 PreviewLostKeyboardFocus 的处理程序显示 Windows 窗体消息框，将重复调用它
 
@@ -20,8 +20,22 @@ ms.locfileid: "85619877"
 |:--------|:------------|
 | 范围   |边缘|
 |Version|4.5|
-|类型|运行时
+|类型|运行时|
 
 #### <a name="affected-apis"></a>受影响的 API
 
--<xref:System.Windows.ContentElement.PreviewLostKeyboardFocus?displayProperty=nameWithType></li><li><xref:System.Windows.IInputElement.PreviewLostKeyboardFocus?displayProperty=nameWithType></li><li><xref:System.Windows.UIElement.PreviewLostKeyboardFocus?displayProperty=nameWithType></li><li><xref:System.Windows.UIElement3D.PreviewLostKeyboardFocus?displayProperty=nameWithType></li></ul>|
+- <xref:System.Windows.ContentElement.PreviewLostKeyboardFocus?displayProperty=nameWithType>
+- <xref:System.Windows.IInputElement.PreviewLostKeyboardFocus?displayProperty=nameWithType>
+- <xref:System.Windows.UIElement.PreviewLostKeyboardFocus?displayProperty=nameWithType>
+- <xref:System.Windows.UIElement3D.PreviewLostKeyboardFocus?displayProperty=nameWithType>
+
+<!--
+
+#### Affected APIs
+
+- `E:System.Windows.ContentElement.PreviewLostKeyboardFocus`
+- `E:System.Windows.IInputElement.PreviewLostKeyboardFocus`
+- `E:System.Windows.UIElement.PreviewLostKeyboardFocus`
+- `E:System.Windows.UIElement3D.PreviewLostKeyboardFocus`
+
+-->

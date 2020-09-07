@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 4cd06fd02fadbaa9f74e40f850e688ee883454ed
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 68b0c4bb032b9744ef585eaef3d68e31afebee24
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619886"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89496737"
 ---
 ### <a name="winforms-checkforoverflowunderflow-property-is-now-true-for-systemdrawing"></a>对于 System.Drawing，WinForm 的 CheckForOverflowUnderflow 属性现在为 true
 
@@ -21,3 +21,15 @@ System.Drawing.dll 程序集的 CheckForOverflowUnderflow 设置为 true。
 | 范围   |边缘|
 |Version|4.5|
 |类型|运行时|
+
+#### <a name="affected-apis"></a>受影响的 API
+
+无法通过 API 分析检测到。
+
+<!--
+
+#### Affected APIs
+
+Not detectable via API analysis.
+
+-->
