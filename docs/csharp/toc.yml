@@ -5,7 +5,7 @@
     - name: 概述
       displayName: get started
       href: getting-started/index.md
-    - name: C# 语言和 .NET Framework 介绍
+    - name: C# 语言和 .NET 简介
       href: getting-started/introduction-to-the-csharp-language-and-the-net-framework.md
 - name: 教程
   items:
@@ -80,8 +80,10 @@
       href: tour-of-csharp/features.md
 - name: C# 中的新增功能
   items:
-    - name: C# 8.0
+    - name: C# 9.0
       displayName: what's new
+      href: whats-new/csharp-9.md
+    - name: C# 8.0
       href: whats-new/csharp-8.md
     - name: C# 7.3
       href: whats-new/csharp-7-3.md
@@ -1066,7 +1068,7 @@
           href: programming-guide/events/index.md
         - name: 如何订阅和取消订阅事件
           href: programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md
-        - name: 如何发布符合 .NET Framework 准则的事件
+        - name: 如何发布符合 .NET 准则的事件
           href: programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md
         - name: 如何在派生类中引发基类事件
           href: programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md

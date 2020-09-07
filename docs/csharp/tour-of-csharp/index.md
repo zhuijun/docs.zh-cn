@@ -2,12 +2,12 @@
 title: C# 介绍 - C# 指南
 description: 刚开始接触 C#？ 了解 C# 语言的基础知识。
 ms.date: 08/06/2020
-ms.openlocfilehash: 9fa292e8e85832d831f36cf0f21512aa0cf32580
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 84775a436deb0958d3c05ec7d0207e76be28f27c
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656223"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89464995"
 ---
 # <a name="a-tour-of-the-c-language"></a>C# 语言介绍
 
@@ -37,7 +37,7 @@ C# 有两种类型：*值类型*和*引用类型*。 值类型的变量直接包
 
 标识符为变量名称。 标识符是不包含任何空格的 unicode 字符序列。 如果标识符的前缀为 `@`，则该标识符可以是 C# 保留字。 这在与其他语言交互时非常有用。
 
-C# 值类型又细分为简单类型、枚举类型、结构类型和可以为 null 的值类型。     C# 引用类型又细分为类类型、接口类型、数组类型和委托类型。    
+C# 值类型又细分为简单类型、枚举类型、结构类型、可以为 null 的值类型和元组值类型。 C# 引用类型又细分为类类型、接口类型、数组类型和委托类型。    
 
 以下大纲概述了 C# 的类型系统。
 
@@ -65,11 +65,11 @@ C# 值类型又细分为简单类型、枚举类型、结构类型和可以为 n
   - [接口类型](../language-reference/keywords/interface.md)
     - 格式为 `interface I {...}` 的用户定义类型
   - [数组类型](../programming-guide/arrays/index.md)
-    - 一维和多维以及交错维度，例如 `int[]`、`int[,]` 和 `int[][]`
+    - 一维、多维和交错。 例如：`int[]`、`int[,]` 和 `int[][]`
   - [委托类型](../language-reference/builtin-types/reference-types.md#the-delegate-type)
     - 格式为 `delegate int D(...)` 的用户定义类型
 
-C# 程序使用*类型声明*创建新类型。 类型声明指定新类型的名称和成员。 用户可定义以下五种 C# 类型：类类型、结构类型、接口类型、枚举类型和委托类型。
+C# 程序使用*类型声明*创建新类型。 类型声明指定新类型的名称和成员。 用户可定义以下六种 C# 类型：类类型、结构类型、接口类型、枚举类型、委托类型和元组值类型。
 
 - `class` 类型定义包含数据成员（字段）和函数成员（方法、属性及其他）的数据结构。 类类型支持单一继承和多形性，即派生类可以扩展和专门针对基类的机制。
 - `struct` 类型定义包含数据成员和函数成员的结构，这一点与类类型相似。 不过，与类不同的是，结构是值类型，通常不需要进行堆分配。 结构类型不支持用户指定的继承，并且所有结构类型均隐式继承自类型 `object`。

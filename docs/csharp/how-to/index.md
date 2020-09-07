@@ -2,12 +2,12 @@
 title: 操作指南（C# 指南）
 description: 快速提示及重点短代码示例集合
 ms.date: 12/20/2017
-ms.openlocfilehash: 81ef8106add757cf3c83aa7dc130f5474b936461
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 9dd069ff767d65002b78c18b398b700a1f26ebfa
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82794697"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465151"
 ---
 # <a name="how-to-c"></a>操作指南 (C#)
 
@@ -94,7 +94,7 @@ ms.locfileid: "82794697"
 
 - [订阅和取消订阅事件](../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)。
 - [实现接口中声明的事件](../programming-guide/events/how-to-implement-interface-events.md)。
-- [代码发布事件时，遵循 .NET Framework 准则](../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)。
+- [代码发布事件时，遵循 .NET 准则](../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)。
 - [从派生类中引发在基类中定义的事件](../programming-guide/events/how-to-raise-base-class-events-in-derived-classes.md)。
 - [实现自定义事件访问器](../programming-guide/events/how-to-implement-custom-event-accessors.md)。
 
