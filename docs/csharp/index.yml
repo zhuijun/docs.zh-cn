@@ -6,12 +6,12 @@ metadata:
   description: 了解 C# 编程 - 面向新手开发人员、刚开始接触 C# 的开发人员、以及经验丰富的 C# / .NET 开发人员
   ms.topic: landing-page
   ms.date: 11/19/2019
-  ms.openlocfilehash: a0de519e518cac70bac831cf689042e104cd1389
-  ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+  ms.openlocfilehash: fd9a641d588ffd410ed2a6163505a81c69dae867
+  ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 04/23/2020
-  ms.locfileid: "82102718"
+  ms.lasthandoff: 09/05/2020
+  ms.locfileid: "89495312"
 landingContent:
 - title: 了解如何使用 C# 编程
   linkLists:
@@ -63,6 +63,12 @@ landingContent:
       url: tutorials/string-interpolation.md
     - text: 浏览所有教程
       url: tutorials/index.md
+- title: C# 9.0 中的新增功能
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: C# 9.0 中的新增功能
+      url: whats-new/csharp-9.md
 - title: C# 8.0 中的新增功能
   linkLists:
   - linkListType: whats-new
