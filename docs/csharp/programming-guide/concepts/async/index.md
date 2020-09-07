@@ -2,12 +2,12 @@
 title: C# 中的异步编程
 description: 对使用 async、await、Task 和 Task<T> 的异步编程的 C# 语言支持的概述
 ms.date: 06/04/2020
-ms.openlocfilehash: 992ccd3a015653ea9ee13dfc309d47711ad0fca4
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 853019c39880b1f4ef6536aed5841ecab53d7304
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619710"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414976"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>使用 Async 和 Await 的异步编程
 
@@ -45,7 +45,7 @@ ms.locfileid: "85619710"
 
 这些问题对即将编写的程序而言至关重要。 编写客户端程序时，你希望 UI 能够响应用户输入。 从 Web 下载数据时，你的应用程序不应让手机出现卡顿。 编写服务器程序时，你不希望线程受到阻塞。 这些线程可以用于处理其他请求。 存在异步替代项的情况下使用同步代码会增加你进行扩展的成本。 你需要为这些受阻线程付费。
 
-成功的现代应用程序需要异步代码。 在没有语言支持的情况下，编写异步代码需要回调、完成事件，或其他掩盖代码原始意图的方法。 同步代码的优点在于易于理解。 分布操作使其易于查看和理解。 传统的异步模型迫使你侧重于代码的异步性质，而不是代码的基本操作。
+成功的现代应用程序需要异步代码。 在没有语言支持的情况下，编写异步代码需要回调、完成事件，或其他掩盖代码原始意图的方法。 同步代码的优点是，它是循序渐进的操作，从而易于扫描和理解。 传统的异步模型迫使你侧重于代码的异步性质，而不是代码的基本操作。
 
 ## <a name="dont-block-await-instead"></a>不要阻塞，而要 await
 
