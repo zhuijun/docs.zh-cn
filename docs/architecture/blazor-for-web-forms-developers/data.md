@@ -5,13 +5,13 @@ author: csharpfritz
 ms.author: jefritz
 no-loc:
 - Blazor
-ms.date: 04/26/2020
-ms.openlocfilehash: 8bd326e6952708b2099c3a575d6811990335df17
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.date: 09/08/2020
+ms.openlocfilehash: 84e12f9890351fa46cd7ed0ee31db449f3c55e59
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267589"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515847"
 ---
 # <a name="work-with-data"></a>处理数据
 
@@ -19,7 +19,7 @@ ms.locfileid: "88267589"
 
 - “数据源”
 - ADO.NET
-- 实体框架
+- Entity Framework
 
 数据源是您可以放置在 Web 窗体页上的控件，并配置为与其他控件一样。 Visual Studio 提供了一组友好对话框，可用于配置控件并将控件绑定到 Web 窗体页。 在首次发布 Web 窗体时，喜欢 "低代码" 或 "无代码" 方法首选此方法的开发人员。
 
@@ -27,7 +27,7 @@ ms.locfileid: "88267589"
 
 ADO.NET 是与数据库交互的低级别方法。 您的应用程序可以使用命令、记录集和用于交互的数据集创建与数据库的连接。 然后，可以将结果绑定到屏幕上的字段，而无需太多代码。 此方法的缺点是， (、和) 的每一组 ADO.NET 对象都 `Connection` `Command` `Recordset` 绑定到数据库供应商提供的库。 使用这些组件将使代码变得非常复杂且难以迁移到其他数据库。
 
-## <a name="entity-framework"></a>实体框架
+## <a name="entity-framework"></a>Entity Framework
 
 实体框架 (EF) 是由 .NET Foundation 维护的开源对象关系映射框架。 最初通过 .NET Framework 发布，EF 允许为数据库连接、存储架构和交互生成代码。 通过此抽象，你可以专注于应用的业务规则，并允许受信任的数据库管理员管理数据库。 在 .NET Core 中，可以使用名为 EF Core 的 EF 的更新版本。 EF Core 有助于使用可供你使用命令行工具的一系列命令，生成和维护你的代码和数据库之间的交互 `dotnet ef` 。 让我们看几个示例来帮助你使用数据库。
 
@@ -128,7 +128,7 @@ services.AddHttpClient("github", client =>
         var client = factory.CreateClient("github");
         var response = await client.GetAsync("repos/dotnet/docs/issues");
         response.EnsureStatusCode();
-        var content = async response.Content.ReadAsStringAsync();
+        var content = await response.Content.ReadAsStringAsync();
     }
 }
 ```
