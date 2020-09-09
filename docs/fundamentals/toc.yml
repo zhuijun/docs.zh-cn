@@ -703,7 +703,7 @@ items:
   - name: 数据访问
     items:
       - name: LINQ
-        href: ../standard/using-linq.md
+        href: ../standard/linq/
       - name: XML 文档和数据
         href: ../standard/data/xml/
       - name: Microsoft.Data.Sqlite

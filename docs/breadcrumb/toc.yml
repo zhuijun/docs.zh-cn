@@ -76,6 +76,9 @@ items:
               - name: 全球化和本地化
                 tocHref: /dotnet/standard/globalization-localization/
                 topicHref: /dotnet/standard/globalization-localization/index
+              - name: LINQ
+                tocHref: /dotnet/standard/linq/
+                topicHref: /dotnet/standard/linq/index
               - name: .NET 中的安全性
                 tocHref: /dotnet/standard/security/
                 topicHref: /dotnet/standard/security/index
