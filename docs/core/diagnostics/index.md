@@ -3,12 +3,12 @@ title: 诊断工具概述 - .NET Core
 description: 概述用于 .NET Core 应用程序的工具和技术。
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: ae3b9a1961f331c9cdea786bd5fe06b7bfa10927
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 568f237e131cde18dad7c87ddff2fdd3d4bc5b8b
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558109"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89597976"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>.NET Core 中提供哪些诊断工具？
 
@@ -28,7 +28,11 @@ ms.locfileid: "88558109"
 
 [单元测试](../testing/index.md)是持续集成和部署高质量软件的关键组件。 单元测试的目的在于，在用户操作导致系统出现问题时提前向其发出警告。
 
-## <a name="net-core-dotnet-diagnostic-global-tools"></a>.NET Core dotnet 诊断全局工具
+## <a name="debug-linux-dumps"></a>调试 Linux 转储
+
+[调试 Linux 转储](debug-linux-dumps.md)说明了如何收集和分析 Linux 上的转储。
+
+## <a name="net-core-diagnostic-global-tools"></a>.NET Core 诊断全局工具
 
 ### <a name="dotnet-counters"></a>dotnet-counters
 
@@ -45,6 +49,14 @@ ms.locfileid: "88558109"
 ### <a name="dotnet-trace"></a>dotnet-trace
 
 分析数据通过 .NET Core 中的 `EventPipe` 公开。 通过 [dotnet-trace](dotnet-trace.md) 工具，可以使用来自应用的有意思的分析数据，这些数据可帮助你分析应用运行缓慢的根本原因。
+
+### <a name="dotnet-symbol"></a>dotnet-symbol
+
+[dotnet-symbol](dotnet-symbol.md) 用于下载打开核心转储或小型转储所需的文件（符号、DAC/DBI、主机文件等）。 如果需要使用符号和模块来调试在其他计算机上捕获的转储文件，请使用此工具。
+
+### <a name="dotnet-sos"></a>dotnet-sos
+
+[dotnet-sos](dotnet-sos.md) 用于在 Linux 或 MacOS 上安装 [SOS 调试扩展](https://docs.microsoft.com/dotnet/framework/tools/sos-dll-sos-debugging-extension)（如果使用较旧的调试工具，则在 Windows 上进行安装）。
 
 ## <a name="net-core-diagnostics-tutorials"></a>.NET Core 诊断教程
 
