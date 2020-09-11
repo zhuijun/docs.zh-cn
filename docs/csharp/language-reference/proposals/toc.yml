@@ -104,6 +104,8 @@
           href: ../../../../_csharplang/proposals/csharp-9.0/target-typed-conditional-expression.md
         - name: 协变返回类型
           href: ../../../../_csharplang/proposals/csharp-9.0/covariant-returns.md
+        - name: Foreach 循环中的扩展 GetEnumerator
+          href: ../../../../_csharplang/proposals/csharp-9.0/extension-getenumerator.md
         - name: Lambda 弃元参数
           href: ../../../../_csharplang/proposals/csharp-9.0/lambda-discard-parameters.md
         - name: 本地函数的属性
