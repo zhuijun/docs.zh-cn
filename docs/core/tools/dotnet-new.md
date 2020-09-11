@@ -4,13 +4,13 @@ description: dotnet new 命令可根据指定模板新建 .NET Core 项目。
 no-loc:
 - Blazor
 - WebAssembly
-ms.date: 04/10/2020
-ms.openlocfilehash: ec41b3b79ed5eded7c9124d3e4d95c658ee39580
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.date: 09/01/2020
+ms.openlocfilehash: 70297cfe15732716b9ceacae091abe3c8957fb61
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173115"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495468"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
@@ -62,15 +62,15 @@ dotnet new -h|--help
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
 | 控制台应用程序                          | [控制台](#console)             | [C#]、F#、VB | 常用/控制台                        | 1.0        |
 | 类库                                | [classlib](#classlib)           | [C#]、F#、VB | 常用/库                        | 1.0        |
-| WPF 应用程序                              | [wpf](#wpf)                     | [C#]         | 常用/WPF                            | 3.0        |
-| WPF 类库                            | [wpflib](#wpf)                  | [C#]         | 常用/WPF                            | 3.0        |
-| WPF 自定义控件库                   | [wpfcustomcontrollib](#wpf)     | [C#]         | 常用/WPF                            | 3.0        |
-| WPF 用户控件库                     | [wpfusercontrollib](#wpf)       | [C#]         | 常用/WPF                            | 3.0        |
-| Windows 窗体 (WinForms) 应用程序         | [winforms](#winforms)           | [C#]         | 常用/WinForms                       | 3.0        |
-| Windows 窗体 (WinForms) 类库       | [winformslib](#winforms)        | [C#]         | 常用/WinForms                       | 3.0        |
+| WPF 应用程序                              | [wpf](#wpf)                     | [C#]、VB     | 常用/WPF                            | 3.0（对于 VB，则为 5.0）|
+| WPF 类库                            | [wpflib](#wpf)                  | [C#]、VB     | 常用/WPF                            | 3.0（对于 VB，则为 5.0）|
+| WPF 自定义控件库                   | [wpfcustomcontrollib](#wpf)     | [C#]、VB     | 常用/WPF                            | 3.0（对于 VB，则为 5.0）|
+| WPF 用户控件库                     | [wpfusercontrollib](#wpf)       | [C#]、VB     | 常用/WPF                            | 3.0（对于 VB，则为 5.0）|
+| Windows 窗体 (WinForms) 应用程序         | [winforms](#winforms)           | [C#]、VB     | 常用/WinForms                       | 3.0（对于 VB，则为 5.0）|
+| Windows 窗体 (WinForms) 类库       | [winformslib](#winforms)        | [C#]、VB     | 常用/WinForms                       | 3.0（对于 VB，则为 5.0）|
 | Worker Service                               | [worker](#web-others)           | [C#]         | 常用/Worker/Web                     | 3.0        |
 | 单元测试项目                            | [mstest](#test)                 | [C#]、F#、VB | 测试/MSTest                           | 1.0        |
-| NUnit 3 测试项目                         | [nunit](#nunit)                  | [C#]、F#、VB | 测试/NUnit                            | 2.1.400    |
+| NUnit 3 测试项目                         | [nunit](#nunit)                 | [C#]、F#、VB | 测试/NUnit                            | 2.1.400    |
 | NUnit 3 测试项                            | `nunit-test`                    | [C#]、F#、VB | 测试/NUnit                            | 2.2        |
 | xUnit 测试项目                           | [xunit](#test)                  | [C#]、F#、VB | 测试/xUnit                            | 1.0        |
 | Razor 组件                              | `razorcomponent`                | [C#]         | Web/ASP.NET                           | 3.0        |
@@ -78,7 +78,7 @@ dotnet new -h|--help
 | MVC ViewImports                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2.0        |
 | MVC ViewStart                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2.0        |
 | Blazor 服务器应用                            | [blazorserver](#blazorserver)   | [C#]         | Web/Blazor                            | 3.0        |
-| Blazor WebAssembly 应用                       | `blazorwasm`                    | [C#]         | Web/Blazor/WebAssembly                            | 3.1.300    |
+| Blazor WebAssembly 应用                       | `blazorwasm`                    | [C#]         | Web/Blazor/WebAssembly                | 3.1.300    |
 | ASP.NET Core 空                           | [web](#web)                     | [C#]，F#     | Web/空                             | 1.0        |
 | ASP.NET Core Web 应用程序 (Model-View-Controller) | [mvc](#web-options)             | [C#]，F#     | Web/MVC                               | 1.0        |
 | ASP.NET Core Web 应用程序                         | [webapp、razor](#web-options)   | [C#]         | Web/MVC/Razor Pages                   | 2.2、2.0   |

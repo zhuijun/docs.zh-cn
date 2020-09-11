@@ -4,12 +4,12 @@ description: 有关方法、方法参数和方法返回值的概述
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 8c33bcb9dd4052589222c2cb1b375d94d6792ba2
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 879c553f8df560a3e2f3dccdbbf0d7e8a05c50cd
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810568"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495533"
 ---
 # <a name="methods-in-c"></a>(C#) 中的方法
 
@@ -61,7 +61,7 @@ ms.locfileid: "88810568"
 
 [!code-csharp[csSnippets.Methods#45](../../samples/snippets/csharp/concepts/methods/named1.cs#45)]
 
-可以同时使用位置自变量和命名的自变量调用方法。 但是，位置自变量不能位于命名的自变量之后。 下面的示例使用一个位置自变量和一个命名的自变量从上一个示例中调用 `TestMotorcycle.Drive` 方法。
+可以同时使用位置自变量和命名的自变量调用方法。 但是，只有当命名参数位于正确位置时，才能在命名自变量后面放置位置参数。 下面的示例使用一个位置自变量和一个命名的自变量从上一个示例中调用 `TestMotorcycle.Drive` 方法。
 
 [!code-csharp[csSnippets.Methods#46](../../samples/snippets/csharp/concepts/methods/named2.cs#46)]
 

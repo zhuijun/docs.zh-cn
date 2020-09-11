@@ -1,13 +1,13 @@
 ---
 title: 使用 IHttpClientFactory 实现复原 HTTP 请求
 description: 了解如何使用自 .NET Core 2.1 起可用的 IHttpClientFactory 来创建 `HttpClient` 实例，使其更轻松地在应用程序中使用。
-ms.date: 03/03/2020
-ms.openlocfilehash: ade26208a931faa456c8e267def2caef7a3f32de
-ms.sourcegitcommit: 1cb64b53eb1f253e6a3f53ca9510ef0be1fd06fe
+ms.date: 08/31/2020
+ms.openlocfilehash: 1df5432f215371b60722212cf706c28a4a5bb5f6
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82507294"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271823"
 ---
 # <a name="use-ihttpclientfactory-to-implement-resilient-http-requests"></a>使用 IHttpClientFactory 实现复原 HTTP 请求
 
@@ -17,11 +17,11 @@ ms.locfileid: "82507294"
 
 常见的原始 <xref:System.Net.Http.HttpClient> 类非常易于使用，但在某些情况下，许多开发人员却并未正确使用该类。
 
-虽然此类实现 `IDisposable`，但并不是首选在 `using` 语句中声明和实例化它，因为释放 `HttpClient` 对象时，基础套接字不会立即释放，这可能会导致“套接字耗尽”问题  。 有关此问题的详细信息，请参阅[你正在以错误方式使用 HttpClient，这将导致软件受损](https://aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong/)的博客文章。
+虽然此类实现 `IDisposable`，但在 `using` 语句中声明和实例化它并非首选操作，因为释放 `HttpClient` 对象时，基础套接字不会立即释放，这可能会导致套接字耗尽问题。 有关此问题的详细信息，请参阅[你正在以错误方式使用 HttpClient，这将导致软件受损](https://aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong/)的博客文章。
 
 因此，`HttpClient` 应进行一次实例化并在应用程序的生命周期中重复使用。 在负载较重的情况下，实例化每个请求的 `HttpClient` 类将耗尽可用的套接字数。 该问题会导致 `SocketException` 错误。 要解决此问题，可能的方法是将 `HttpClient` 对象创建为单一对象或静态对象，请参阅[关于 HttpClient 用法的 Microsoft 文章](../../../csharp/tutorials/console-webapiclient.md)中的说明。 对于生存期较短的控制台应用或一天运行几次的类似应用，这可能是一个不错的解决方案。
 
-在长期运行的进程中使用 `HttpClient` 的共享实例时，开发人员遇到的另一个问题。 在将 HttpClient 实例化为单一实例或静态对象的情况下，它无法处理 DNS 更改，如 dotnet/runtime GitHub 存储库的此[问题](https://github.com/dotnet/runtime/issues/18348)中所述。
+在长期运行的进程中使用 `HttpClient` 的共享实例时，开发人员会遇到另一个问题。 在将 HttpClient 实例化为单一实例或静态对象的情况下，它无法处理 DNS 更改，如 dotnet/runtime GitHub 存储库的此[问题](https://github.com/dotnet/runtime/issues/18348)中所述。
 
 但是，问题实际上不是 `HttpClient` 本身，而是 [HttpClient 的默认构造函数](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient.-ctor?view=netcore-3.1#System_Net_Http_HttpClient__ctor)，因为它创建了一个新的实际 <xref:System.Net.Http.HttpMessageHandler> 实例，该实例具有上面提到的“套接字耗尽”和 DNS 更改问题  。
 
@@ -151,13 +151,13 @@ public class CatalogService : ICatalogService
 }
 ```
 
-类型化客户端（示例中的 `CatalogService`）由 DI（依赖项注入）激活，这意味着除 `HttpClient` 外，它还可以接受其构造函数中的任何注册服务。
+Typed Client（在本例中为 `CatalogService`）由 DI（依赖项注入）激活，这意味着除 `HttpClient` 外，它还可接受其构造函数中的任何注册服务。
 
-类型化客户端实际上是一个暂时对象，这意味着每次需要实例时都将创建新实例，并且它将在其每次被构造时接收一个新 `HttpClient` 实例。 但是，池中的 `HttpMessageHandler` 对象是由多个 `HttpClient` 实例重复使用的对象。
+Typed Client 实际上是一个临时对象，这意味着每当需要实例时，就会创建一个新的实例。 它会在每次构造时接收一个新的 `HttpClient` 实例。 但是，池中的 `HttpMessageHandler` 对象是由多个 `HttpClient` 实例重复使用的对象。
 
 ### <a name="use-your-typed-client-classes"></a>使用类型化客户端类
 
-最后，实现了类型化类并在 `AddHttpClient()` 中注册并配置了它们，你便可在任何可通过 DI 注入服务的位置使用它们。 例如，在 Razor 页面代码或 MVC Web 应用的控制器中，如 eShopOnContainers 的以下代码中：
+最后，在实现了类型化类后，可使用 `AddHttpClient()` 来注册和配置它们。 之后，可在 DI 注入服务的任何位置使用它们。 例如，在 Razor 页面代码或 MVC Web 应用的控制器中，如 eShopOnContainers 的以下代码中：
 
 ```csharp
 namespace Microsoft.eShopOnContainers.WebMVC.Controllers
@@ -186,7 +186,7 @@ namespace Microsoft.eShopOnContainers.WebMVC.Controllers
 }
 ```
 
-此时，所示代码仅执行常规 Http 请求，但后续部分将展示真正的“神奇”之处 - 只需向已注册的类型化客户端添加策略和委派处理程序，将由 `HttpClient` 完成的所有 HTTP 请求在执行时都将考虑帐户复原策略，例如使用指数退避算法实现的重试、断路器或用于实现额外安全功能（如使用身份验证令牌或任何其他自定义功能）的任何其他自定义委托处理程序。
+到目前为止，以上代码段只显示了执行常规 HTTP 请求的示例。 但以下部分会展示“神奇之处”，它将介绍由 `HttpClient` 发出的所有 HTTP 请求如何具有可复原策略，例如带指数退避的重试、断路器、使用身份验证令牌的安全功能，甚至其他任何自定义功能。 所有这些都可通过向已注册的 Typed Client 添加策略和委派处理程序来完成。
 
 ## <a name="additional-resources"></a>其他资源
 

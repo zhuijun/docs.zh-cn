@@ -2,12 +2,12 @@
 title: 通过 Ocelot 实现 API 网关
 description: 了解如何通过 Ocelot 实现 API 网关以及如何在基于容器的环境中使用 Ocelot。
 ms.date: 03/02/2020
-ms.openlocfilehash: f103c1e394a3f829489b61fd17af749798b02f70
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 3611ffa7a163ff632ca854fafb910fcd3e228306
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864093"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358981"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>通过 Ocelot 实现 API 网关
 
@@ -15,6 +15,7 @@ ms.locfileid: "86864093"
 > 引用微服务应用程序 [ eShopOnContainers ](https://github.com/dotnet-architecture/eShopOnContainers) 当前正在使用 [Envoy](https://www.envoyproxy.io/) 提供的功能来实现 API 网关，而不是之前引用的 [Ocelot](https://github.com/ThreeMammals/Ocelot)。
 > 我们之所以选择这种设计，是因为 Envoy 对 WebSocket 协议的内置支持，这是 eShopOnContainers 中实现的新 gRPC 服务间通信所必需的。
 > 但是，我们在指南中保留了此部分，因此，你可以将 Ocelot 视为适用于生产级方案的简单且功能强大的轻型 API 网关。
+> 此外，最新的 Ocelot 版本在其 JSON 架构中包含中断性变更。 请考虑使用版本低于 v16.0.0 的 Ocelot 或使用密钥路由，而不使用重新路由。
 
 ## <a name="architect-and-design-your-api-gateways"></a>构建和设计 API 网关
 

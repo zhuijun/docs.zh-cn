@@ -2,12 +2,12 @@
 title: 在 Visual Studio Code 中创建 .NET Standard 类库
 description: 了解如何使用 Visual Studio Code 创建 .NET Standard 类库。
 ms.date: 06/08/2020
-ms.openlocfilehash: 146dfd49e448494cce0c844282bc0394a8739ac9
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 966b9b0b48f67809e82d9133c523995cd97b6015
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810854"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495507"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-code"></a>教程：在 Visual Studio Code 中创建 .NET Standard 库
 
@@ -56,6 +56,8 @@ ms.locfileid: "88810854"
    dotnet new classlib -o StringLibrary
    ```
 
+   `-o` 或 `--output` 命令指定用于放置生成的输出的位置。
+
    终端输出如以下示例所示：
 
    ```output
@@ -63,7 +65,7 @@ ms.locfileid: "88810854"
    Processing post-creation actions...
    Running 'dotnet restore' on StringLibrary\StringLibrary.csproj...
      Determining projects to restore...
-     Restore completed in 328.13 ms for C:\Projects\ClassLibraryProjects\StringLibrary\StringLibrary.csproj.
+     Restored C:\Projects\ClassLibraryProjects\StringLibrary\StringLibrary.csproj (in 328 ms).
    Restore succeeded.
    ```
 
@@ -110,11 +112,10 @@ ms.locfileid: "88810854"
    终端输出如以下示例所示：
 
    ```output
-   Microsoft (R) Build Engine version 16.6.0 for .NET Core
+   Microsoft (R) Build Engine version 16.7.0+b89cb5fde for .NET
    Copyright (C) Microsoft Corporation. All rights reserved.
      Determining projects to restore...
      All projects are up-to-date for restore.
-     You are using a preview version of .NET Core. See: https://aka.ms/dotnet-core-preview
      StringLibrary -> C:\Projects\ClassLibraryProjects\StringLibrary\bin\Debug\netstandard2.0\StringLibrary.dll
    Build succeeded.
        0 Warning(s)
@@ -139,7 +140,7 @@ ms.locfileid: "88810854"
    Processing post-creation actions...
    Running 'dotnet restore' on ShowCase\ShowCase.csproj...  
      Determining projects to restore...
-     Restore completed in 210.78 ms for C:\Projects\ClassLibraryProjects\ShowCase\ShowCase.csproj.
+     Restored C:\Projects\ClassLibraryProjects\ShowCase\ShowCase.csproj (in 210 ms).
    Restore succeeded.
    ```
 
@@ -200,9 +201,9 @@ ms.locfileid: "88810854"
    Input: A string that starts with an uppercase letter
    Begins with uppercase? : Yes
 
-   A string that starts with a lowercase letter
-   Input: A string that starts with a lowercase letter
-   Begins with uppercase? : Yes
+   a string that starts with a lowercase letter
+   Input: a string that starts with a lowercase letter
+   Begins with uppercase? : No
    ```
 
 ## <a name="additional-resources"></a>其他资源

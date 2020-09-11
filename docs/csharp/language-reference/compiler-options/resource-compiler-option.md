@@ -12,12 +12,12 @@ helpviewer_keywords:
 - res compiler option [C#]
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
-ms.openlocfilehash: 963004820f56272b4f1b1d92ccc4d0a60493a4a0
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 1e2de095b460b684fb06faf46731283a1304906e
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128694"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465684"
 ---
 # <a name="-resource-c-compiler-options"></a>-resource（C# 编译器选项）
 将指定资源嵌入输出文件。  
@@ -30,7 +30,7 @@ ms.locfileid: "89128694"
   
 ## <a name="arguments"></a>自变量  
  `filename`  
- 要嵌入到输出文件的 .NET Framework 资源文件。  
+ 要嵌入到输出文件的 .NET 资源文件。  
   
  `identifier`（可选）  
  资源的逻辑名称；用于加载资源的名称。 默认值是文件名的名称。  
@@ -43,7 +43,7 @@ ms.locfileid: "89128694"
   
  默认情况下，如果使用 C# 编译器创建资源，则这些资源在程序集中是公有的。 若要使资源变为私有，请将 `private` 指定为可访问性修饰符。 不允许使用 `public` 或 `private` 以外的任何其他可访问性。  
   
- 例如，如果 `filename` 是由 [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) 创建的或在开发环境中创建的 .NET Framework 资源文件，则可使用 <xref:System.Resources> 命名空间中的成员来访问它。 有关详细信息，请参阅 <xref:System.Resources.ResourceManager?displayProperty=nameWithType>。 对于所有其他资源，请使用 <xref:System.Reflection.Assembly> 类中的 `GetManifestResource` 方法在运行时访问资源。  
+ 例如，如果 `filename` 是由 [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) 创建的或在开发环境中创建的 .NET 资源文件，则可使用 <xref:System.Resources> 命名空间中的成员来访问它。 有关详细信息，请参阅 <xref:System.Resources.ResourceManager?displayProperty=nameWithType>。 对于所有其他资源，请使用 <xref:System.Reflection.Assembly> 类中的 `GetManifestResource` 方法在运行时访问资源。  
   
  /res 是 /resource 的缩写形式********。  
   

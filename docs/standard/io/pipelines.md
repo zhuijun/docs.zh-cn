@@ -1,7 +1,7 @@
 ---
 title: I/O 管道 - .NET
 description: 了解如何在 .NET 中有效地使用 I/O 管道，并避免在代码中出现问题。
-ms.date: 10/01/2019
+ms.date: 08/27/2020
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - Pipelines
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O [.NET], Pipelines
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: 8822e731ae805e83d4072c5bd78dff3fcf9a31a1
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: a24d7f5c22c936cd3fd3fdc51f0f3ace56386574
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81462513"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271979"
 ---
 # <a name="systemiopipelines-in-net"></a>.NET 中的 System.IO.Pipelines
 
@@ -64,7 +64,7 @@ async Task ProcessLinesAsync(NetworkStream stream)
 * 请考虑使用缓冲池来避免重复分配内存。
 * 下面的代码解决了其中一些问题：
 
-[!code-csharp[](~/samples/snippets/csharp/pipelines/ProcessLinesAsync.cs?name=snippet)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/ProcessLinesAsync.cs" id="snippet":::
 
 前面的代码很复杂，不能解决所识别的所有问题。 高性能网络通常意味着编写非常复杂的代码以使性能最大化。 `System.IO.Pipelines` 的设计目的是使编写此类代码更容易。
 
@@ -74,13 +74,13 @@ async Task ProcessLinesAsync(NetworkStream stream)
 
 <xref:System.IO.Pipelines.Pipe> 类可用于创建 `PipeWriter/PipeReader` 对。 写入 `PipeWriter` 的所有数据都可用于 `PipeReader`：
 
-[!code-csharp[](~/samples/snippets/csharp/pipelines/Pipe.cs?name=snippet2)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/Pipe.cs" id="snippet2":::
 
 <a name="pbu"></a>
 
 ### <a name="pipe-basic-usage"></a>管道基本用法
 
-[!code-csharp[](~/samples/snippets/csharp/pipelines/Pipe.cs?name=snippet)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/Pipe.cs" id="snippet":::
 
 有两个循环：
 
@@ -128,7 +128,7 @@ async Task ProcessLinesAsync(NetworkStream stream)
 * <xref:System.IO.Pipelines.PipeOptions.PauseWriterThreshold>：确定在调用 <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A> 暂停之前应缓冲多少数据。
 * <xref:System.IO.Pipelines.PipeOptions.ResumeWriterThreshold>：确定在恢复对 `PipeWriter.FlushAsync` 的调用之前，读取器必须观察多少数据。
 
-![具有 ResumeWriterThreshold 和 PauseWriterThreshold 的图](./media/pipelines/resume-pause.png)
+![具有 ResumeWriterThreshold 和 PauseWriterThreshold 的图](media/pipelines/resume-pause.png)
 
 <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A?displayProperty=nameWithType>：
 
@@ -155,7 +155,7 @@ var pipe = new Pipe(options);
 * 使用当前的 <xref:System.Threading.SynchronizationContext>。
 * 如果没有 `SynchronizationContext`，它将使用线程池运行回调。
 
-[!code-csharp[](~/samples/snippets/csharp/pipelines/Program.cs?name=snippet)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/Program.cs" id="snippet":::
 
 [PipeScheduler.ThreadPool](xref:System.IO.Pipelines.PipeScheduler.ThreadPool) 是 <xref:System.IO.Pipelines.PipeScheduler> 实现，用于对线程池的回调进行排队。 `PipeScheduler.ThreadPool` 是默认选项，通常也是最佳选项。 [PipeScheduler.Inline](xref:System.IO.Pipelines.PipeScheduler.Inline) 可能会导致意外后果，如死锁。
 
@@ -191,7 +191,7 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 
 下面的代码从 `PipeReader` 读取一条消息并将其返回给调用方。
 
-[!code-csharp[ReadSingleMsg](~/samples/snippets/csharp/pipelines/ReadSingleMsg.cs?name=snippet)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/ReadSingleMsg.cs" id="snippet":::
 
 前面的代码：
 
@@ -209,7 +209,7 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 
 以下代码从 `PipeReader` 读取所有消息，并在每条消息上调用 `ProcessMessageAsync`。
 
-[!code-csharp[MyConnection1](~/samples/snippets/csharp/pipelines/MyConnection1.cs?name=snippet)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/MyConnection1.cs" id="snippet":::
 
 ### <a name="cancellation"></a>取消
 
@@ -219,7 +219,7 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 * 如果在读取挂起期间取消了 `CancellationToken`，则会引发 <xref:System.OperationCanceledException>。
 * 支持通过 <xref:System.IO.Pipelines.PipeReader.CancelPendingRead%2A?displayProperty=nameWithType> 取消当前读取操作的方法，这样可以避免引发异常。 调用 `PipeReader.CancelPendingRead` 将导致对 `PipeReader.ReadAsync` 的当前或下次调用返回 <xref:System.IO.Pipelines.ReadResult>，并将 `IsCanceled` 设置为 `true`。 这对于以非破坏性和非异常的方式停止现有的读取循环非常有用。
 
-[!code-csharp[MyConnection](~/samples/snippets/csharp/pipelines/MyConnection.cs?name=snippet)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/MyConnection.cs" id="snippet":::
 
 <a name="gotchas"></a>
 
@@ -245,7 +245,7 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 
 [!INCLUDE [pipelines-do-not-use-1](../../../includes/pipelines-do-not-use-1.md)]
 
-[!code-csharp[DoNotUse#1](~/samples/snippets/csharp/pipelines/DoNotUse.cs?name=snippet)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/DoNotUse.cs" id="snippet":::
 
 [!INCLUDE [pipelines-do-not-use-2](../../../includes/pipelines-do-not-use-2.md)]
 
@@ -255,7 +255,7 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 
 [!INCLUDE [pipelines-do-not-use-1](../../../includes/pipelines-do-not-use-1.md)]
 
-[!code-csharp[DoNotUse#2](~/samples/snippets/csharp/pipelines/DoNotUse.cs?name=snippet2)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/DoNotUse.cs" id="snippet2":::
 
 [!INCLUDE [pipelines-do-not-use-2](../../../includes/pipelines-do-not-use-2.md)]
 
@@ -263,7 +263,7 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 
 [!INCLUDE [pipelines-do-not-use-1](../../../includes/pipelines-do-not-use-1.md)]
 
-[!code-csharp[DoNotUse#3](~/samples/snippets/csharp/pipelines/DoNotUse.cs?name=snippet3)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/DoNotUse.cs" id="snippet3":::
 
 [!INCLUDE [pipelines-do-not-use-2](../../../includes/pipelines-do-not-use-2.md)]
 
@@ -276,7 +276,7 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 
 [!INCLUDE [pipelines-do-not-use-1](../../../includes/pipelines-do-not-use-1.md)]
 
-[!code-csharp[DoNotUse#4](~/samples/snippets/csharp/pipelines/DoNotUse.cs?name=snippet4)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/DoNotUse.cs" id="snippet4":::
 
 [!INCLUDE [pipelines-do-not-use-2](../../../includes/pipelines-do-not-use-2.md)]
 
@@ -289,7 +289,7 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 
 [!INCLUDE [pipelines-do-not-use-1](../../../includes/pipelines-do-not-use-1.md)]
 
-[!code-csharp[DoNotUse#5](~/samples/snippets/csharp/pipelines/DoNotUse.cs?name=snippet5)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/DoNotUse.cs" id="snippet5":::
 
 [!INCLUDE [pipelines-do-not-use-2](../../../includes/pipelines-do-not-use-2.md)]
 
@@ -299,9 +299,9 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 
 [!INCLUDE [pipelines-do-not-use-1](../../../includes/pipelines-do-not-use-1.md)]
 
-[!code-csharp[DoNotUse#Message](~/samples/snippets/csharp/pipelines/DoNotUse.cs?name=snippetMessage)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/DoNotUse.cs" id="snippetMessage":::
 
-[!code-csharp[DoNotUse#6](~/samples/snippets/csharp/pipelines/DoNotUse.cs?name=snippet6)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/DoNotUse.cs" id="snippet6":::
 
 [!INCLUDE [pipelines-do-not-use-2](../../../includes/pipelines-do-not-use-2.md)]
 
@@ -309,7 +309,7 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 
 <xref:System.IO.Pipelines.PipeWriter> 管理用于代表调用方写入的缓冲区。 `PipeWriter` 实现[`IBufferWriter<byte>`](xref:System.Buffers.IBufferWriter%601)。 `IBufferWriter<byte>` 使得无需额外的缓冲区副本就可以访问缓冲区来执行写入操作。
 
-[!code-csharp[MyPipeWriter](~/samples/snippets/csharp/pipelines/MyPipeWriter.cs?name=snippet)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/MyPipeWriter.cs" id="snippet":::
 
 之前的代码：
 
@@ -323,7 +323,7 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 * 将现有缓冲区复制到 `PipeWriter`。
 * 根据需要调用 `GetSpan``Advance`，然后调用 <xref:System.IO.Pipelines.PipeWriter.FlushAsync%2A>。
 
-[!code-csharp[MyPipeWriter#2](~/samples/snippets/csharp/pipelines/MyPipeWriter.cs?name=snippet2)]
+:::code language="csharp" source="~/samples/snippets/csharp/pipelines/MyPipeWriter.cs" id="snippet2":::
 
 ### <a name="cancellation"></a>取消
 
@@ -343,8 +343,34 @@ bool TryParseMessage(ref ReadOnlySequence<byte> buffer, out Message message);
 
 <xref:System.IO.Pipelines.IDuplexPipe> 是支持读写的类型的协定。 例如，网络连接将由 `IDuplexPipe` 表示。
 
- 与包含 `PipeReader` 和 `PipeWriter` 的 `Pipe` 不同，`IDuplexPipe` 代表全双工连接的单侧。 这意味着写入 `PipeWriter` 的内容不会从 `PipeReader` 中读取。
+ 与包含 `PipeReader` 和 `PipeWriter` 的 `Pipe` 不同，`IDuplexPipe` 表示全双工连接的一侧。 这意味着写入 `PipeWriter` 的内容不会从 `PipeReader` 中读取。
 
 ## <a name="streams"></a>流
 
-在读取或写入流数据时，通常使用反序列化程序读取数据，并使用序列化程序写入数据。 大多数读取和写入流 API 都有一个 `Stream` 参数。 为了更轻松地与这些现有 API 集成，`PipeReader` 和 `PipeWriter` 公开了一个 <xref:System.IO.Pipelines.PipeReader.AsStream%2A>。  <xref:System.IO.Pipelines.PipeWriter.AsStream%2A> 返回围绕 `PipeReader` 或 `PipeWriter` 的 `Stream` 实现。
+在读取或写入流数据时，通常使用反序列化程序读取数据，并使用序列化程序写入数据。 大多数读取和写入流 API 都有一个 `Stream` 参数。 为了更轻松地与这些现有 API 集成，`PipeReader` 和 `PipeWriter` 公开了一个 <xref:System.IO.Pipelines.PipeReader.AsStream%2A> 方法。 <xref:System.IO.Pipelines.PipeWriter.AsStream%2A> 返回围绕 `PipeReader` 或 `PipeWriter` 的 `Stream` 实现。
+
+### <a name="stream-example"></a>流示例
+
+可使用给定了 <xref:System.IO.Stream> 对象和可选的相应创建选项的静态 `Create` 方法创建 `PipeReader` 和 `PipeWriter` 实例。
+
+<xref:System.IO.Pipelines.StreamPipeReaderOptions> 允许使用以下参数控制 `PipeReader` 实例的创建：
+
+- <xref:System.IO.Pipelines.StreamPipeReaderOptions.BufferSize?displayProperty=nameWithType> 是从池中租用内存时使用的最小缓冲区大小（以字节为单位），默认值为 `4096`。
+- <xref:System.IO.Pipelines.StreamPipeReaderOptions.LeaveOpen?displayProperty=nameWithType> 标志确定在 `PipeReader` 完成之后基础流是否保持打开状态，默认值为 `false`。
+- <xref:System.IO.Pipelines.StreamPipeReaderOptions.MinimumReadSize?displayProperty=nameWithType> 表示分配新缓冲区之前缓冲区中剩余字节的阈值，默认值为 `1024`。
+- <xref:System.IO.Pipelines.StreamPipeReaderOptions.Pool?displayProperty=nameWithType> 是分配内存时使用的 `MemoryPool<byte>`，默认值为 `null`。
+
+<xref:System.IO.Pipelines.StreamPipeWriterOptions> 允许使用以下参数控制 `PipeWriter` 实例的创建：
+
+- <xref:System.IO.Pipelines.StreamPipeWriterOptions.LeaveOpen?displayProperty=nameWithType> 标志确定在 `PipeWriter` 完成之后基础流是否保持打开状态，默认值为 `false`。
+- <xref:System.IO.Pipelines.StreamPipeWriterOptions.MinimumBufferSize?displayProperty=nameWithType> 表示从 <xref:System.IO.Pipelines.StreamPipeWriterOptions.Pool> 租用内存时要使用的最小缓冲区大小，默认值为 `4096`。
+- <xref:System.IO.Pipelines.StreamPipeWriterOptions.Pool?displayProperty=nameWithType> 是分配内存时使用的 `MemoryPool<byte>`，默认值为 `null`。
+
+> [!IMPORTANT]
+> 使用 `Create` 方法创建 `PipeReader` 和 `PipeWriter` 实例时，需要考虑 `Stream` 对象的生存期。 如果在读取器或编写器使用该方法完成操作后，你需要访问流，则需要在创建选项上将 `LeaveOpen` 标志设置为 `true`。 否则，流将关闭。
+
+以下代码演示了使用 `Create` 方法从流中创建 `PipeReader` 和 `PipeWriter` 实例。
+
+:::code language="csharp" source="snippets/pipelines/Program.cs":::
+
+应用程序使用 <xref:System.IO.StreamReader> 将 lorem-ipsum.txt 文件作为流进行读取。 <xref:System.IO.FileStream> 传递给 <xref:System.IO.Pipelines.PipeReader.Create%2A?displayProperty=nameWithType>，后者实例化 `PipeReader` 对象。 然后，控制台应用程序使用 <xref:System.Console.OpenStandardOutput?displayProperty=nameWithType> 将其标准输出流传递到 <xref:System.IO.Pipelines.PipeWriter.Create%2A?displayProperty=nameWithType>。 示例支持[取消](#cancellation)。

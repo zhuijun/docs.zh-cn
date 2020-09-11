@@ -2,12 +2,12 @@
 title: 何时为 Docker 容器选择 .NET Framework
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 何时为 Docker 容器选择 .NET Framework
 ms.date: 01/30/2020
-ms.openlocfilehash: 2697ae56eda104a0ee8e7bfcd79d3972943d1f79
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 116ba02878a60487f1af3c2b2e084307fad29618
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80344995"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414417"
 ---
 # <a name="when-to-choose-net-framework-for-docker-containers"></a>何时为 Docker 容器选择 .NET Framework
 
@@ -49,8 +49,8 @@ ms.locfileid: "80344995"
 
 ### <a name="additional-resources"></a>其他资源
 
-- **.NET Core 指南** \
-  [https://docs.microsoft.com/dotnet/core/index](../../../core/index.yml)
+- **.NET 基础知识** \
+  [https://docs.microsoft.com/dotnet/fundamentals](../../../fundamentals/index.yml)
 
 - **从 .NET Framework 移植到 .NET Core** \
   [https://docs.microsoft.com/dotnet/core/porting/index](../../../core/porting/index.md)

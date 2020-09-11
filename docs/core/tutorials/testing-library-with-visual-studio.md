@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: f20b089fd22794d5aaeff34502e960fe41a565e1
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: 049f0636b1c2c2df33461714aea5a11810ef00ad
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84700964"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359189"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>教程：在 Visual Studio 中使用 .NET Core 测试 .NET Standard 类库
 
@@ -19,7 +19,7 @@ ms.locfileid: "84700964"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 本教程适用于[在 Visual Studio 中创建 .NET Standard 库](library-with-visual-studio.md)中创建的解决方案。
+- 本教程适用于在[使用 Visual Studio 创建 .NET Standard 库](library-with-visual-studio.md)中创建的解决方案。
 
 ## <a name="create-a-unit-test-project"></a>创建单元测试项目
 
@@ -27,7 +27,7 @@ ms.locfileid: "84700964"
 
 1. 启动 Visual Studio。
 
-1. 打开[在 Visual Studio 中创建 .NET Standard 库](library-with-visual-studio.md)中创建的 `ClassLibraryProjects` 解决方案。
+1. 打开在[使用 Visual Studio 创建 .NET Standard 库](library-with-visual-studio.md)中创建的 `ClassLibraryProjects` 解决方案。
 
 1. 将名为“StringLibraryTest”的新单元测试项目添加到解决方案。
 

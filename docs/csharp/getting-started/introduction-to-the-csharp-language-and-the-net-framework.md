@@ -1,21 +1,21 @@
 ---
-title: C# 语言和 .NET Framework 介绍
+title: C# 语言和 .NET 简介
 description: 了解 C# 和 .NET 的基础知识。 概述了 C# 语言和 .NET 生态系统。
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, about C# language
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
-ms.openlocfilehash: 55b90d10a1d8ac8534ba98e1cc5af906d69822a6
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: 9e84726a8f6056c5beeedae9081a68980150efdd
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100829"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465164"
 ---
-# <a name="introduction-to-the-c-language-and-the-net-framework"></a>C# 语言和 .NET Framework 简介
+# <a name="introduction-to-the-c-language-and-net"></a>C# 语言和 .NET 简介
 
-C# 是类型安全的面向对象的精妙语言，可帮助开发者生成在 .NET 生态系统中运行的各种安全可靠的应用程序。 .NET 生态系统由 .NET 的所有实现组成，其中包括但不限于 [.NET Core](../../core/index.yml) 和 [.NET Framework](../../framework/index.yml)。 本文重点介绍了 .NET Framework。 C# 可用于创建 Windows 客户端应用程序、XML Web service、分布式组件、客户端服务器应用程序、数据库应用程序等。
+C# 是类型安全的面向对象的精妙语言，可帮助开发者生成在 .NET 生态系统中运行的各种安全可靠的应用程序。 .NET 生态系统由 .NET 的所有实现组成，其中包括但不限于 [.NET Core](../../core/introduction.md) 和 [.NET Framework](../../framework/index.yml)。 本文重点介绍了 .NET Framework。 C# 可用于创建 Windows 客户端应用程序、XML Web service、分布式组件、客户端服务器应用程序、数据库应用程序等。
 
 > [!NOTE]
 > 阅读 Visual C# 文档的前提是，你已了解基本的编程概念。 如果是完完全全的初学者，不妨探索 Visual C# 速成版（可从 Web 获取）。 还可以利用介绍 C# 的书籍和 Web 资源来学习实用的编程技巧。
@@ -44,19 +44,19 @@ C# 生成过程比 C 和 C++ 更简单，比 Java 更灵活。 没有单独的�
 - 有关 C# 语言特定方面的详细信息，请参阅 [C# 参考](../language-reference/index.md)。
 - 有关 LINQ 的详细信息，请参阅 [LINQ（语言集成查询）](../programming-guide/concepts/linq/index.md)。
 
-## <a name="net-framework-platform-architecture"></a>.NET Framework 平台体系结构
+## <a name="net-platform-architecture"></a>.NET 平台体系结构
 
-C# 程序在 .NET Framework 上运行，这是 Windows 不可或缺的一部分，包括名为“公共语言运行时 (CLR)”的虚执行系统和一组统一的类库。 CLR 是由 Microsoft 执行的公共语言基础结构 (CLI) 的商业实现，CLI 是作为执行和开发环境（语言和库在其中无缝协作）创建依据的国际标准。
+C# 程序在 .NET 上运行，后者是 Windows 不可或缺的一部分，其中包括名为“公共语言运行时 (CLR)”的虚执行系统和一组统一的类库。 CLR 是由 Microsoft 执行的公共语言基础结构 (CLI) 的商业实现，CLI 是作为执行和开发环境（语言和库在其中无缝协作）创建依据的国际标准。
 
 用 C# 编写的源代码被编译成符合 CLI 规范的[中间语言 (IL)](../../standard/managed-code.md)。 IL 代码和资源（如位图和字符串）存储在磁盘上名为“程序集”的可执行文件（扩展名通常为 .exe 或 .dll）中。 程序集包含一个介绍程序集的类型、版本、区域性和安全要求的清单。
 
-当 C# 程序执行时，程序集会加载到 CLR 中，可能根据清单中的信息执行各种操作。 然后，如果满足安全要求，CLR 会直接执行实时 (JIT) 编译，将 IL 代码转换成本机指令。 CLR 还提供其他与自动垃圾回收、异常处理和资源管理相关的服务。 CLR 执行的代码有时称为“托管代码”（而不是“非托管代码”），被编译成面向特定系统的本机语言。 下图展示了 C# 源代码文件、.NET Framework 类库、程序集和 CLR 的编译时和运行时关系。
+当 C# 程序执行时，程序集会加载到 CLR 中，可能根据清单中的信息执行各种操作。 然后，如果满足安全要求，CLR 会直接执行实时 (JIT) 编译，将 IL 代码转换成本机指令。 CLR 还提供其他与自动垃圾回收、异常处理和资源管理相关的服务。 CLR 执行的代码有时称为“托管代码”（而不是“非托管代码”），被编译成面向特定系统的本机语言。 下图展示了 C# 源代码文件、.NET 类库、程序集和 CLR 的编译时和运行时关系。
 
 ![从 C# 源代码到计算机执行](./media/introduction-to-the-csharp-language-and-the-net-framework/net-architecture-relationships.png)
 
-语言互操作性是 .NET Framework 的一项重要功能。 由于 C# 编译器生成的 IL 代码符合公共类型规范 (CTS)，因此 C# 生成的 IL 代码可以与 .NET 版本 Visual Basic、Visual C++ 或其他任何符合 CTS 的超过 20 种语言生成的代码进行交互。 一个程序集可能包含多个用不同 .NET 语言编写的模块，且类型可以相互引用，就像是用同一种语言编写的一样。
+语言互操作性是 .NET 的一项重要功能。 由于 C# 编译器生成的 IL 代码符合公共类型规范 (CTS)，因此 C# 生成的 IL 代码可以与 .NET 版本 Visual Basic、Visual C++ 或其他任何符合 CTS 的超过 20 种语言生成的代码进行交互。 一个程序集可能包含多个用不同 .NET 语言编写的模块，且类型可以相互引用，就像是用同一种语言编写的一样。
 
-除了运行时服务之外，.NET Framework 还包括一个由 4000 多个已整理到命名空间中的类构成的扩展库，这些类提供各种实用功能，包括文件输入输出、字符串控制、XML 分析和 Windows 窗体控件。 典型的 C# 应用程序广泛使用 .NET Framework 类库来处理常见的“管道”零碎工作。
+除了运行时服务之外，.NET 还包括一个由 4000 多个已整理到命名空间中的类构成的扩展库，这些类提供各种实用功能，包括文件输入输出、字符串控制、XML 分析和 Windows 窗体控件。 典型的 C# 应用程序广泛使用 .NET 类库来处理常见的“管道”零碎工作。
 
 有关 .NET Framework 的详细信息，请参阅 [Microsoft.NET Framework 概述](../../framework/get-started/overview.md)。
 

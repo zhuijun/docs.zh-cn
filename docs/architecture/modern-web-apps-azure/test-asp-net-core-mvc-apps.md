@@ -4,12 +4,12 @@ description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序 | 测�
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 947a3bc7da0949781ae89ed74a87edb2637daf73
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 1883662f736361a947cbad440aeefda839265251
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89126510"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465632"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>测试 ASP.NET Core MVC 应用
 
@@ -106,7 +106,7 @@ Martin Fowler 提出了测试金字塔概念，如图 9-1 所示。
 
 ## <a name="unit-testing-aspnet-core-apps"></a>对 ASP.NET Core 应用执行单元测试
 
-在具有出色设计的 ASP.NET Core 应用程序中，大多数复杂性和业务逻辑会封装在业务实体以及各种服务中。 ASP.NET Core MVC 应用本身及其控制器、筛选器、视图模型和视图需要的单元测试极少。 特定操作的很多功能体现在该操作方法之外。 单元测试不能有效测试路由是否正常运行或测试全局错误。 同样，无法使用针对控制器的操作方法的测试对任何筛选器（包括模型验证筛选器以及身份验证和授权筛选器）执行单元测试。 如果没有这些行为源，大多数操作方法应非常小，这会将其大量工作委托至服务（可独立于使用这些服务的控制器对这些服务执行测试）。
+在具有出色设计的 ASP.NET Core 应用程序中，大多数复杂性和业务逻辑会封装在业务实体以及各种服务中。 ASP.NET Core MVC 应用本身及其控制器、筛选器、视图模型和视图需要的单元测试极少。 特定操作的很多功能体现在该操作方法之外。 使用单元测试无法有效地测试路由或全局错误处理是否正常工作。 同样，无法使用针对控制器的操作方法的测试对任何筛选器（包括模型验证筛选器以及身份验证和授权筛选器）执行单元测试。 如果没有这些行为源，大多数操作方法应非常小，这会将其大量工作委托至服务（可独立于使用这些服务的控制器对这些服务执行测试）。
 
 有时为对代码执行单元测试，需要重构代码。 通常，这涉及到确定抽象以及使用依赖项注入来访问待测试代码中的抽象，而不是直接针对基础结构编码。 例如，请思考以下用于显示图像的简单操作方法：
 
@@ -121,7 +121,7 @@ public IActionResult GetImage(int id)
 }
 ```
 
-通过 `System.IO.File` 上的直接依赖项难以对此方法执行单元测试。 可测试此行为以确保其按预期方式运行，但对实际文件执行此操作属于集成测试。 请注意，无法单元测试该方法的路由。稍后我们将了解如何通过功能测试快速执行此操作。
+通过 `System.IO.File` 上的直接依赖项难以对此方法执行单元测试。 可测试此行为以确保其按预期方式运行，但对实际文件执行此操作属于集成测试。 值得注意的是，无法对此方法的路由进行单元测试，我们很快将讲解如何通过功能测试来进行此操作。
 
 如果无法直接对文件系统行为执行单元测试，且无法测试路由，还能测试什么呢？ 通过重构确保单元测试的可行性后，可能会发现一些测试用例以及缺失行为，例如错误处理。 如未找到文件，此方法会执行什么操作？ 它应执行什么操作？ 本示例中，重构方法如下：
 
@@ -155,9 +155,9 @@ ASP.NET Core 应用中的大多数集成测试应该是测试基础结构项目�
 
 对于 ASP.NET Core 应用程序，`TestServer` 类让功能测试非常易于编写。 可以直接使用 `WebHostBuilder`（或 `HostBuilder`）（针对应用程序的一般操作）或使用 `WebApplicationFactory` 类型（自 2.1 版开始提供）来配置 `TestServer`。 尝试将测试主机与生产主机进行尽可能密切的匹配，以便让测试执行与应用将在生产中进行的行为类似的行为。 `WebApplicationFactory` 类有助于配置 TestServer 的 ContentRoot，该 ContentRoot 由 ASP.NET Core 用于定位静态资源（例如视图）。
 
-可以通过创建实现 IClassFixture\<WebApplicationFactory\<TEntry>>（其中 TEntry 为 Web 应用的 Startup 类）的测试类来创建简单的功能测试。 创建完成后，测试固定例程可使用中心的 CreateClient 方法来创建客户端：
+可通过创建实现 `IClassFixture\<WebApplicationFactory\<TEntry>>`（其中 `TEntry` 为 Web 应用程序的 `Startup` 类）的测试类来创建简单的功能测试。 创建完成后，测试固定例程可使用工厂的 `CreateClient` 方法来创建客户端：
 
-```cs
+```csharp
 public class BasicWebTests : IClassFixture<WebApplicationFactory<Startup>>
 {
     protected readonly HttpClient _client;
@@ -171,9 +171,9 @@ public class BasicWebTests : IClassFixture<WebApplicationFactory<Startup>>
 }
 ```
 
-用户常常想要在运行每个测试之前对站点执行一些其他配置，例如将应用程序配置为使用内存中数据存储，然后将测试数据植入应用程序。 若要执行此操作，应创建自己的 WebApplicationFactory\<TEntry> 子类并重写其 ConfigureWebHost 方法。 以下示例来自 eShopOnWeb FunctionalTests 项目，并用作主要 Web 应用上的测试的一部分。
+用户常常想要在运行每个测试之前对站点执行一些其他配置，例如将应用程序配置为使用内存中数据存储，然后将测试数据植入应用程序。 为此，请创建你自己的 `WebApplicationFactory\<TEntry>` 的子类并替代其 `ConfigureWebHost` 方法。 以下示例来自 eShopOnWeb FunctionalTests 项目，并用作主要 Web 应用上的测试的一部分。
 
-```cs
+```csharp
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -290,7 +290,7 @@ namespace Microsoft.eShopWeb.FunctionalTests.WebRazorPages
 }
 ```
 
-该功能测试执行完整的 ASP.NET Core MVC/Razor Pages 应用程序堆栈，包括所有中间件、筛选器、绑定器等。 它验证给定的路由 ("/") 是否返回预期的成功状态代码和 HTML 输出。 它无需设置实际 Web 服务器即可实现该操作，因此可避免使用实际 Web 服务器进行测试可能遇到的许多问题（例如防火墙设置问题）。 虽然针对 TestServer 运行的功能测试通常比集成测试和单元测试更慢，但是比测试 Web 服务器的网络上运行的测试速度更快。 使用功能测试来确保应用程序的前端堆栈按预期运行。 当在控制器或页面中发现了重复内容并通过添加筛选器找到了这些重复内容时，这些测试将尤为有用。 理想情况下，此重构不会改变应用程序的行为，并且将有一套功能测试来验证确实如此。
+此功能测试会演练完整的 ASP.NET Core MVC/Razor Pages 应用程序堆栈，包括准备就绪的所有中间件、筛选器和绑定器等。 它验证给定的路由 ("/") 是否返回预期的成功状态代码和 HTML 输出。 它无需设置实际的 Web 服务器即可实现该操作，并且可以避免使用实际 Web 服务器进行测试可能遇到的许多问题（例如防火墙设置问题）。 虽然针对 TestServer 运行的功能测试通常比集成测试和单元测试更慢，但是比测试 Web 服务器的网络上运行的测试速度更快。 使用功能测试来确保应用程序的前端堆栈按预期运行。 当在控制器或页面中发现了重复内容并通过添加筛选器找到了这些重复内容时，这些测试将尤为有用。 理想情况下，此重构不会改变应用程序的行为，并且将有一套功能测试来验证确实如此。
 
 > ### <a name="references--test-aspnet-core-mvc-apps"></a>参考 - 测试 ASP.NET Core MVC 应用
 >

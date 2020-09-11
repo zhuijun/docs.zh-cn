@@ -3,12 +3,12 @@ title: 属性
 description: 了解 C# 属性，包括验证功能、计算值、迟缓计算及属性更改通知。
 ms.technology: csharp-fundamentals
 ms.date: 04/25/2018
-ms.openlocfilehash: bda8a4f58f71b57248296dd4ba9f9bf4cbed40d4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 28050a77e1f7b0ac148bba6112aa79ef4d46b710
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79398687"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358903"
 ---
 # <a name="properties"></a>属性
 
@@ -39,7 +39,7 @@ ms.locfileid: "79398687"
 
 [!code-csharp[Person class with properties and backing field](../../samples/snippets/csharp/properties/Person.cs#4)]
 
-属性实现是单个表达式时，可为 getter 或 setter 使用 expression-bodied 成员  ：
+属性实现是单个表达式时，可为 getter 或 setter 使用 expression-bodied 成员**：
 
 [!code-csharp[Person class with properties and expression bodied getters and setters](../../samples/snippets/csharp/properties/Person.cs#5)]
 
@@ -107,15 +107,15 @@ public class Measurements
 
 上面的示例使用[字符串内插](./language-reference/tokens/interpolated.md)功能来创建全名的格式化字符串。
 
-也可以使用 expression-bodied 成员，以更简洁的方式来创建 `FullName` 计算属性：
+也可以使用 expression-bodied 成员，以更简洁的方式来创建 `FullName` 计算属性**：
 
 [!code-csharp[A computed property using an expression bodied member](../../samples/snippets/csharp/properties/Person.cs#11)]
 
-expression-bodied 成员使用 lambda 表达式语法来定义包含单个表达式的方法   。 在这里，该表达式返回 person 对象的全名。
+expression-bodied 成员使用 lambda 表达式语法来定义包含单个表达式的方法****。 在这里，该表达式返回 person 对象的全名。
 
 ### <a name="cached-evaluated-properties"></a>缓存的计算属性
 
-可以将计算属性和存储的概念混合起来，创建“缓存的计算属性”  。  例如，可以更新 `FullName` 属性，以便仅在第一次访问该属性时进行字符串格式设置：
+可以将计算属性和存储的概念混合起来，创建“缓存的计算属性”**。  例如，可以更新 `FullName` 属性，以便仅在第一次访问该属性时进行字符串格式设置：
 
 [!code-csharp[Caching the value of a computed property](../../samples/snippets/csharp/properties/Person.cs#12)]
 

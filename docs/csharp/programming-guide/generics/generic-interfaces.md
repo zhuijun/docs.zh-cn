@@ -6,15 +6,15 @@ helpviewer_keywords:
 - C# language, generic interfaces
 - generics [C#], interfaces
 ms.assetid: a8fa49a1-6e78-4a09-87e5-84a0b9f5ffbe
-ms.openlocfilehash: 43817a236e95b3ab8fd0ba94da98457eeec2396c
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: b7225e295268a3e46e4e9bd446372ae87bbbbb10
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301887"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466139"
 ---
 # <a name="generic-interfaces-c-programming-guide"></a>泛型接口（C# 编程指南）
-为泛型集合类或表示集合中的项的泛型类定义接口通常很有用处。 为避免对值类型的装箱和取消装箱操作，泛型类的首选项使用泛型接口，例如 <xref:System.IComparable%601>而不是 <xref:System.IComparable>。 .NET Framework 类库定义多个泛型接口，以将其用于 <xref:System.Collections.Generic> 命名空间中的集合类。  
+为泛型集合类或表示集合中的项的泛型类定义接口通常很有用处。 为避免对值类型的装箱和取消装箱操作，泛型类的首选项使用泛型接口，例如 <xref:System.IComparable%601>而不是 <xref:System.IComparable>。 .NET 类库定义多个泛型接口，以便用于 <xref:System.Collections.Generic> 命名空间中的集合类。  
   
  接口被指定为类型参数上的约束时，仅可使用实现接口的类型。 如下代码示例演示一个派生自 `GenericList<T>` 类的 `SortedList<T>` 类。 有关详细信息，请参阅[泛型介绍](./index.md)。 `SortedList<T>` 添加约束 `where T : IComparable<T>`。 这可使 `SortedList<T>` 中的 `BubbleSort` 方法在列表元素上使用泛型 <xref:System.IComparable%601.CompareTo%2A> 方法。 在此示例中，列表元素是一个实现 `IComparable<Person>` 的简单类 `Person`。  
   
@@ -32,7 +32,7 @@ ms.locfileid: "87301887"
   
  [!code-csharp[csProgGuideGenerics#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideGenerics/CS/Generics.cs#32)]  
   
- 泛型接口如为逆变（即，仅使用自身的类型参数作为返回值），则可继承自非泛型接口。 在 .NET Framework 类库中，<xref:System.Collections.Generic.IEnumerable%601> 继承自 <xref:System.Collections.IEnumerable>，因为 <xref:System.Collections.Generic.IEnumerable%601> 在 <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> 的返回值和 <xref:System.Collections.Generic.IEnumerator%601.Current%2A> 属性 Getter 中仅使用 `T`。  
+ 泛型接口如为逆变（即，仅使用自身的类型参数作为返回值），则可继承自非泛型接口。 在 .NET 类库中，<xref:System.Collections.Generic.IEnumerable%601> 继承自 <xref:System.Collections.IEnumerable>，因为 <xref:System.Collections.Generic.IEnumerable%601> 在 <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> 的返回值和 <xref:System.Collections.Generic.IEnumerator%601.Current%2A> 属性 Getter 中仅使用 `T`。  
   
  具体类可实现封闭式构造接口，如下所示：  
   

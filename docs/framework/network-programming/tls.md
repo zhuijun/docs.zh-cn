@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Internet, security
 - security [.NET Framework], Internet
 - permissions [.NET Framework], Internet
-ms.openlocfilehash: d1218e5db2ee4fc0ec044c6e0aa16187390708b0
-ms.sourcegitcommit: 07123a475af89b6da5bb6cc51ea40ab1e8a488f0
+ms.openlocfilehash: 8de15dc033ecda3137f5f3ea37b9e35ac9df7e13
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/24/2020
-ms.locfileid: "80134390"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359293"
 ---
 # <a name="transport-layer-security-tls-best-practices-with-the-net-framework"></a>.NET Framework 中的传输层安全性 (TLS) 最佳做法
 
@@ -236,7 +236,7 @@ Windows Registry Editor Version 5.00
 
 可以使用注册表细化控制你的客户端和/或服务器应用协商的协议。 你的应用的网络将遍历 Schannel（它是[安全通道](/windows/desktop/SecAuthN/secure-channel)的另一个名称）。 通过配置 `Schannel`，可以配置你的应用的行为。
 
-从 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols` 注册表项开始。 在该注册表项下，可以在集 `SSL 2.0`、`SSL 3.0`、`TLS 1.0`、`TLS 1.1` 和 `TLS 1.2` 中创建任何子项。 在每个子项下，可以创建子项 `Client` 和/或 `Server`。 在 `Client` 和 `Server` 下，可以创建 DWORD 值 `DisabledByDefault`（0 或 1）和 `Enabled`（0 或 0xFFFFFFFF）。
+从 `HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols` 注册表项开始。 在该注册表项下，可以在集 `SSL 2.0`、`SSL 3.0`、`TLS 1.0`、`TLS 1.1` 和 `TLS 1.2` 中创建任何子项。 在每个子项下，可以创建子项 `Client` 和/或 `Server`。 在 `Client` 和 `Server` 下，可创建 DWORD 值 `DisabledByDefault`（0 或 1）和 `Enabled`（0 或 1）。
 
 ## <a name="the-sch_use_strong_crypto-flag"></a><a name="the-sch_use_strong_crypto-flag"></a>SCH_USE_STRONG_CRYPTO 标志
 

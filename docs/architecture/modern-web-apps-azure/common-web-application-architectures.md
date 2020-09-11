@@ -4,12 +4,12 @@ description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序 | 了�
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: c9a8e9450d81ac2e63a8c8ea54592ed81e646e05
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: de90db9061d0b7bd15141b277ae4272b5208f76b
+ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988123"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89379156"
 ---
 # <a name="common-web-application-architectures"></a>常用 Web 应用程序体系结构
 
@@ -145,28 +145,34 @@ eShopOnWeb 参考应用程序使用“干净体系结构”方法将其代码组
 
 在干净体系结构解决方案中，每个项目都有明确的职责。 在这种情况下，某些类型将属于每个项目，你会经常在相应的项目中找到与这些类型相应的文件夹。
 
+#### <a name="application-core"></a>应用程序核心
+
 应用程序内核包含业务模型，后者包括实体、服务和接口。 这些接口包括使用基础结构执行的操作（如数据访问、文件系统访问和网络调用等）的抽象。有时，在此层定义的服务或接口需要使用与 UI 或基础结构没有任何依赖关系的非实体类型。 这些类型可定义为简单的数据传输对象 (DTO)。
 
-### <a name="application-core-types"></a>应用程序内核类型
+##### <a name="application-core-types"></a>应用程序内核类型
 
 - 实体（保存的业务模型类）
 - 接口
 - Services
 - DTO
 
+#### <a name="infrastructure"></a>基础结构
+
 基础结构项目通常包括数据访问实现。 在典型的 ASP.NET Core Web 应用程序中，这些实现包括 Entity Framework (EF) DbContext、任何已定义的 EF Core `Migration` 对象以及数据访问实现类。 提取数据访问实现代码最常用的方式是通过使用[存储库设计模式](https://deviq.com/repository-pattern/)。
 
 除数据访问实现外，基础结构项目还应包含必须与基础结构问题交互的服务的实现。 这些服务应实现应用程序内核中定义的接口，因此基础结构应包含对应用程序内核项目的引用。
 
-### <a name="infrastructure-types"></a>基础结构类型
+##### <a name="infrastructure-types"></a>基础结构类型
 
 - EF Core 类型（`DbContext`、`Migration`）
 - 数据访问实现类型（存储库）
 - 特定于基础结构的服务（如 `FileLogger` 或 `SmtpNotifier`）
 
+#### <a name="ui-layer"></a>UI 层
+
 ASP.NET Core MVC 应用程序中的用户界面层是应用程序的入口点。 此项目应引用应用程序内核项目，且其类型应严格通过应用程序内核中定义的接口与基础结构进行交互。 UI 层中不允许基础结构层类型的直接实例化（或静态调用）。
 
-### <a name="ui-layer-types"></a>UI 层类型
+##### <a name="ui-layer-types"></a>UI 层类型
 
 - Controllers
 - 筛选器

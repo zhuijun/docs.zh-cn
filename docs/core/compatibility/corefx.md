@@ -2,12 +2,12 @@
 title: 基类库的重大更改
 description: 列出核心 .NET 库中的重大更改。
 ms.date: 07/27/2020
-ms.openlocfilehash: e0ebc054e0abccfe934b505a727060653fe313cd
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: d8d886785ff71f22a3b2da65e973d899cf0371f6
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720177"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465874"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>核心 .NET 库重大更改
 
@@ -17,6 +17,8 @@ ms.locfileid: "88720177"
 
 | 重大更改 | 引入的版本 |
 | - | :-: |
+| [ConsoleLoggerOptions 上已过时的属性](#obsolete-properties-on-consoleloggeroptions) | 5.0 |
+| [嵌套类型的硬件内部 IsSupported 检查可能有所不同](#hardware-intrinsic-issupported-checks-may-differ-for-nested-types) | 5.0 |
 | [引用程序集中的参数名称已更改](#parameter-names-changed-in-reference-assemblies) | 5.0 |
 | [在 Unix 上正确分析包含非 ASCII 字符的 URI 路径](#uri-paths-with-non-ascii-characters-parse-correctly-on-unix) | 5.0 |
 | [Unix 上 UNC 路径的 URI 识别](#uri-recognition-of-unc-paths-on-unix) | 5.0 |
@@ -50,6 +52,14 @@ ms.locfileid: "88720177"
 | [Process.StartInfo 对未启动的进程引发 InvalidOperationException](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE [obsolete-consoleloggeroptions-properties](../../../includes/core-changes/corefx/5.0/obsolete-consoleloggeroptions-properties.md)]
+
+***
+
+[!INCLUDE [hardware-instrinsics-issupported-checks](../../../includes/core-changes/corefx/5.0/hardware-instrinsics-issupported-checks.md)]
+
+***
 
 [!INCLUDE [reference-assembly-parameter-names](../../../includes/core-changes/corefx/5.0/reference-assembly-parameter-names.md)]
 

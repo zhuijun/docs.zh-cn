@@ -2,12 +2,12 @@
 title: .NET Core 运行时标识符 (RID) 目录
 description: 了解运行时标识符 (RID) 及如何在 .NET Core 中使用 RID。
 ms.date: 02/22/2019
-ms.openlocfilehash: 903dd9c619008c9e3c6149a471ba814bdc9c97cc
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: 719c84248b955ec05d7cd9b361c7e5ebea6aa37b
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84903280"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414560"
 ---
 # <a name="net-core-rid-catalog"></a>.NET Core RID 目录
 
@@ -72,7 +72,7 @@ NuGet 还原包时，它将尝试找到指定运行时的完全匹配项。
 
 使用 RID 时，必须牢记以下几个注意事项：
 
-- RID 是不透明字符串****，应将其视为黑盒。
+- 请勿尝试分析 RID 来检索组件部分。
 - 请勿以编程方式生成 RID。
 - 使用已为平台定义的 RID。
 - RID 必须具有特定性，因此请勿通过实际的 RID 值假定任何情况。

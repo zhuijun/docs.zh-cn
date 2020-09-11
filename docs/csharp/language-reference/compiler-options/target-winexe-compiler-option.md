@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -target compiler options [C#], /target:winexe
 - target compiler options [C#], /target:winexe
 ms.assetid: b5a0619c-8caa-46a5-a743-1cf68408ad7a
-ms.openlocfilehash: 8a1be07455b54b375106fef1fb480d7abd2f1ca4
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 5f8717115464ec3d9798228d7d50a8f08b2db300
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89124716"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466087"
 ---
 # <a name="-targetwinexe-c-compiler-options"></a>-target:winexe（C# 编译器选项）
 -target:winexe 选项使编译器创建可执行文件 (EXE) 和 Windows 程序****。  
@@ -26,7 +26,7 @@ ms.locfileid: "89124716"
 ```  
   
 ## <a name="remarks"></a>备注  
- 将创建扩展名为 .exe 的可执行文件。 Windows 程序从 .NET Framework 库或使用 Windows API 提供用户界面。  
+ 将创建扩展名为 .exe 的可执行文件。 Windows 程序是通过 .NET 库或 Windows API 提供用户界面的程序。  
   
  使用 [-target:exe](./target-exe-compiler-option.md) 创建控制台应用程序。  
   

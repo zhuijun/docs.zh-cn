@@ -4,12 +4,12 @@ description: 描述 .NET 体系结构组件，例如 .NET Standard、.NET 实现
 author: cartermp
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: 027fdb4cec47550f88f6930a4bbdff4ab5cdfb36
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 2fc8bcea59cd2ba652b88644677f077d62994ca4
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80344170"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414729"
 ---
 # <a name="net-architectural-components"></a>.NET 体系结构组件
 
@@ -38,7 +38,7 @@ Microsoft 积极开发和维护的主要 .NET 实现有 4 个：.NET Core、.NET
 
 .NET Core 是 .NET 的跨平台实现，专用于处理大规模的服务器和云工作负荷。 可在 Windows、macOS 和 Linux 上运行。 它实现 .NET Standard，因此面向 .NET Standard 的代码都可在 .NET Core 上运行。 [ASP.NET Core](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core)、[Windows 窗体](../framework/winforms/windows-forms-overview.md)和 [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) 都在 .NET Core 上运行。
 
-要了解有关 .NET Core 的详细信息，请参阅 [.NET Core 指南](../core/index.yml)和[为服务器应用选择 .NET Core 或 .NET Framework](choosing-core-framework-server.md)。
+要了解有关 .NET Core 的详细信息，请参阅 [.NET Core 简介](../core/introduction.md)和[为服务器应用选择 .NET Core 或 .NET Framework](choosing-core-framework-server.md)。
 
 ### <a name="net-framework"></a>.NET Framework
 
@@ -106,8 +106,8 @@ C# 语言和公共语言基础结构 (CLI) 规范通过 [Ecma International&reg;
 ## <a name="see-also"></a>请参阅
 
 - [为服务器应用选择 .NET Core 或 .NET Framework](choosing-core-framework-server.md)
-- [.NET Standard](net-standard.md)
-- [.NET Core 指南](../core/index.yml)
+- [.NET Standard 简介](net-standard.md)
+- [.NET Core 简介](../core/introduction.md)
 - [.NET Framework 指南](../framework/index.yml)
 - [C# 指南](../csharp/index.yml)
 - [F# 指南](../fsharp/index.yml)

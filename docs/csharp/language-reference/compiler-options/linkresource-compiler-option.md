@@ -12,15 +12,15 @@ helpviewer_keywords:
 - -linkresource compiler option [C#]
 - linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
-ms.openlocfilehash: 162baad57397b6d992dcf8f03f0b3661e0105cb8
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: cd1150f3fa0dd0eca4e9352ce3809e73a15126c7
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125340"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466100"
 ---
 # <a name="-linkresource-c-compiler-options"></a>-linkresource (C# 编译器选项)
-在输出文件中创建指向 .NET Framework 资源的链接。 不会在输出文件中添加资源文件。 这不同于会在输出文件中嵌入资源文件的 [-resource](./resource-compiler-option.md) 选项。  
+在输出文件中创建指向 .NET 资源的链接。 不会在输出文件中添加资源文件。 这不同于会在输出文件中嵌入资源文件的 [-resource](./resource-compiler-option.md) 选项。  
   
 ## <a name="syntax"></a>语法  
   
@@ -30,7 +30,7 @@ ms.locfileid: "89125340"
   
 ## <a name="arguments"></a>自变量  
  `filename`  
- 希望从程序集链接到的 .NET Framework 资源文件。  
+ 希望从程序集链接到的 .NET 资源文件。  
   
  `identifier`（可选）  
  资源的逻辑名称；用于加载资源的名称。 默认值是文件的名称。  
@@ -43,7 +43,7 @@ ms.locfileid: "89125340"
   
  -linkresource 需要某个 [-target](./target-compiler-option.md) 选项（-target:module 除外）********。  
   
- 例如，如果 `filename` 是由 [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) 创建的或在开发环境中创建的 .NET Framework 资源文件，则可使用 <xref:System.Resources> 命名空间中的成员来访问它。 有关详细信息，请参阅 <xref:System.Resources.ResourceManager?displayProperty=nameWithType>。 对于所有其他资源，请使用 <xref:System.Reflection.Assembly> 类中的 `GetManifestResource` 方法在运行时访问资源。  
+ 例如，如果 `filename` 是由 [Resgen.exe](../../../framework/tools/resgen-exe-resource-file-generator.md) 创建的或在开发环境中创建的 .NET 资源文件，则可使用 <xref:System.Resources> 命名空间中的成员来访问它。 有关详细信息，请参阅 <xref:System.Resources.ResourceManager?displayProperty=nameWithType>。 对于所有其他资源，请使用 <xref:System.Reflection.Assembly> 类中的 `GetManifestResource` 方法在运行时访问资源。  
   
  `filename` 中指定的文件可为任何格式。 例如，你可能希望生成程序集的本机 DLL 部分，从而可将它安装到全局程序集缓存中，并且可从该程序集中的托管代码访问它。 以下示例中的第二个示例演示了如何执行此操作。 可在程序集链接器中执行相同的操作。 以下示例中的第三个示例演示了如何执行此操作。 有关详细信息，请参阅 [Al.exe（程序集链接器）](../../../framework/tools/al-exe-assembly-linker.md)和[使用程序集和全局程序集缓存](../../../framework/app-domains/working-with-assemblies-and-the-gac.md)。  
   

@@ -1,19 +1,19 @@
 ---
 title: .NET for Apache Spark 入门
-description: 了解如何在 Windows、MacOS 和 Ubuntu 上使用 .NET Core 运行 .NET for Apache Spark 应用。
+description: 了解如何在 Windows、macOS 和 Ubuntu 上使用 .NET Core 运行 .NET for Apache Spark 应用。
 ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: be150bcef0029f69136e21c35791c863220af244
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: d7297b11a2b5b21420fcb2f0f9ae823cb29b88d1
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617647"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358994"
 ---
 # <a name="tutorial-get-started-with-net-for-apache-spark"></a>教程：.NET for Apache Spark 入门
 
-本教程介绍如何在 Windows、MacOS 和 Ubuntu 上使用 .NET Core 运行 .NET for Apache Spark 应用。
+本教程介绍如何在 Windows、macOS 和 Ubuntu 上使用 .NET Core 运行 .NET for Apache Spark 应用。
 
 在本教程中，你将了解：
 
@@ -41,9 +41,9 @@ ms.locfileid: "85617647"
 
 ### <a name="2-install-java"></a>2.安装 Java
 
-安装适用于 Windows 和 MacOS 的 [Java 8.1](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，或适用于 Ubuntu 的 [OpenJDK 8](https://openjdk.java.net/install/)。
+安装适用于 Windows 和 macOS 的 [Java 8.1](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)，或适用于 Ubuntu 的 [OpenJDK 8](https://openjdk.java.net/install/)。
 
-选择适用于操作系统的合适版本。 例如，为 Windows x64 计算机选择 jdk-8u201-windows-x64.exe（如下所示），或为 MacOS 计算机选择 jdk-8u231-macosx-x64.dmg。 然后，使用命令 `java` 来验证安装。
+选择适用于操作系统的合适版本。 例如，为 Windows x64 计算机选择 jdk-8u201-windows-x64.exe（如下所示），或为 macOS 计算机选择 jdk-8u231-macosx-x64.dmg 。 然后，使用命令 `java` 来验证安装。
 
 ![Java 下载](https://dotnet.microsoft.com/static/images/java-jdk-downloads-windows.png?v=6BbJHoNyDO-PyYVciImr5wzh2AW_YHNcyb3p093AwPA)
 
@@ -80,7 +80,7 @@ setx HADOOP_HOME C:\bin\spark-2.4.1-bin-hadoop2.7\
 setx SPARK_HOME C:\bin\spark-2.4.1-bin-hadoop2.7\
 ```
 
-运行以下命令，以设置用于在 MacOS 和 Ubuntu 上查找 Apache Spark 的环境变量：
+运行以下命令，设置用于在 macOS 和 Ubuntu 上查找 Apache Spark 的环境变量 ：
 
 ```bash
 export SPARK_HOME=~/bin/spark-2.4.1-bin-hadoop2.7/
@@ -123,7 +123,7 @@ source ~/.bashrc
 
 在 Windows 上创建[新环境变量](https://www.java.com/en/download/help/path.xml) `DOTNET_WORKER_DIR`，并将其设置为下载和提取 Microsoft.Spark.Worker 时使用的目录（例如，`C:\bin\Microsoft.Spark.Worker\`）。
 
-在 MacOS 上使用 `export DOTNET_WORKER_DIR <your_path>` 创建新环境变量，并将其设置为下载和提取 Microsoft.Spark.Worker 时使用的目录（例如，~/bin/Microsoft.Spark.Worker/）。
+在 macOS 上使用 `export DOTNET_WORKER_DIR <your_path>` 创建新环境变量，并将其设置为下载和提取 Microsoft.Spark.Worker 时使用的目录（例如 ~/bin/Microsoft.Spark.Worker/）。
 
 在 Ubuntu 上创建[新环境变量](https://help.ubuntu.com/community/EnvironmentVariables) `DOTNET_WORKER_DIR`，并将其设置为下载和提取 Microsoft.Spark.Worker 时使用的目录（例如，~/bin/Microsoft.Spark.Worker）。
 

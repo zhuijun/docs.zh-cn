@@ -4,12 +4,12 @@ description: 了解委托和事件的区别，以及何时使用 .NET Core 的�
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.openlocfilehash: 51d982c9b5b16a5fc28ede5f0318bc100bb33b68
-ms.sourcegitcommit: f87ad41b8e62622da126aa928f7640108c4eff98
+ms.openlocfilehash: 193a9b0fe0e0c36deb6552449c92135057412225
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "80805765"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414664"
 ---
 # <a name="distinguishing-delegates-and-events"></a>区别委托和事件
 
@@ -23,7 +23,7 @@ ms.locfileid: "80805765"
 
 ## <a name="listening-to-events-is-optional"></a>侦听事件是可选的
 
-在确定要使用的语言功能时，最重要的考虑因素为是否必须具有附加的订阅服务器。 如果你的代码必须调用由订阅服务器提供的代码，则应使用基于委托的设计。 如果你的代码在不调用任何订阅服务器的情况下可完成其所有工作，则应使用基于事件的设计。
+在确定要使用的语言功能时，最重要的考虑因素为是否必须具有附加的订阅服务器。 如果代码必须调用订阅服务器提供的代码，则在需要实现回调时，应使用基于委托的设计。 如果你的代码在不调用任何订阅服务器的情况下可完成其所有工作，则应使用基于事件的设计。
 
 请考虑本部分中生成的示例。 必须为使用 `List.Sort()` 生成的代码提供 comparer 函数，以便对元素进行正确排序。 必须与委托一起提供 LINQ 查询，以便确定要返回的元素。 二者均使用与委托一起生成的设计。
 

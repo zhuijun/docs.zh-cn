@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: 5c15cfb8050bc93e055dbde53308f9460ff90bc8
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 636e032ac22b48ebc471780ffa85148bf952cdd2
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89126380"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465086"
 ---
 # <a name="char-c-reference"></a>char（C# 参考）
 

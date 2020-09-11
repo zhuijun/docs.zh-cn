@@ -7,12 +7,12 @@ ms.author: adegeo
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 829c93e97990b87e6e568614236de9708ef080d9
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 3c9615d7d79b5da1c180bb505f5f37b99aeae775
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85325748"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271992"
 ---
 # <a name="data-binding-overview-in-wpf"></a>WPF 中的数据绑定概述
 
@@ -173,12 +173,12 @@ WPF 中的数据绑定功能与传统模型相比具有几个优点，包括本�
 
 在介绍数据绑定的其他功能和用法前，先介绍一下 <xref:System.Windows.Data.BindingExpression> 类会很有用。 如前面部分所述，<xref:System.Windows.Data.Binding> 类是用于绑定声明的高级类；该类提供许多供用户指定绑定特征的属性。 相关类 <xref:System.Windows.Data.BindingExpression> 是维持源与目标之间连接的基础对象。 一个绑定包含了可以在多个绑定表达式之间共享的所有信息。 <xref:System.Windows.Data.BindingExpression> 是无法共享的实例表达式，并包含 <xref:System.Windows.Data.Binding> 的所有实例信息。
 
-举例来说，假设 `myDataObject` 是 `MyData` 类的实例，`myBinding` 是源 <xref:System.Windows.Data.Binding> 对象，而 `MyData` 是包含名为 `MyDataProperty` 的字符串属性的定义类。 此示例将 <xref:System.Windows.Controls.TextBlock> 的实例 `myText` 的文本内容绑定到 `MyDataProperty`。
+举例来说，假设 `myDataObject` 是 `MyData` 类的实例，`myBinding` 是源 <xref:System.Windows.Data.Binding> 对象，而 `MyData` 是包含名为 `ColorName` 的字符串属性的定义类。 此示例将 <xref:System.Windows.Controls.TextBlock> 的实例 `myText` 的文本内容绑定到 `ColorName`。
 
 [!code-csharp[CodeOnlyBinding](~/samples/snippets/desktop-guide/wpf/data-binding-overview/csharp/ManualBinding.cs#CodeOnlyBinding)]
 [!code-vb[CodeOnlyBinding](~/samples/snippets/desktop-guide/wpf/data-binding-overview/vb/ManualBinding.vb#CodeOnlyBinding)]
 
-可以使用同一 *myBinding* 对象来创建其他绑定。 例如，可以使用 *myBinding* 对象将复选框的文本内容绑定到 *MyDataProperty*。 在该方案中，将有两个 <xref:System.Windows.Data.BindingExpression> 实例共享 *myBinding* 对象。
+可以使用同一 *myBinding* 对象来创建其他绑定。 例如，可使用 myBinding 对象将复选框的文本内容绑定到 ColorName 。 在该方案中，将有两个 <xref:System.Windows.Data.BindingExpression> 实例共享 *myBinding* 对象。
 
 通过对数据绑定对象调用 <xref:System.Windows.Data.BindingOperations.GetBindingExpression%2A> 来返回 <xref:System.Windows.Data.BindingExpression> 对象。 以下文章演示了 <xref:System.Windows.Data.BindingExpression> 类的一些用法：
 

@@ -12,12 +12,12 @@ helpviewer_keywords:
 - -link compiler option [C#]
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
-ms.openlocfilehash: 0f6927fd240f3f8535478d163be615fc74dad8d2
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 6fd291c49c282713ea56ca20d8d58616d38ec752
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125392"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465710"
 ---
 # <a name="-link-c-compiler-options"></a>-link（C# 编译器选项）
 使编译器让指定程序集中的 COM 类型信息可供当前正在编译的项目使用。
@@ -52,7 +52,7 @@ ms.locfileid: "89125392"
 
 - 调用具有程序集 B 中的返回类型或参数类型的字段、属性、事件或方法。
 
- 与 [-reference](./reference-compiler-option.md) 编译器选项类似，`-link` 编译器选项使用引用常用 .NET Framework 程序集的 Csc.rsp 响应文件。 如果不希望编译器使用 Csc.rsp 文件，则使用 [-noconfig](./noconfig-compiler-option.md) 编译器选项。
+ 与 [-reference](./reference-compiler-option.md) 编译器选项一样，`-link` 编译器选项使用 Csc.rsp 响应文件，该文件引用常用的 .NET 程序集。 如果不希望编译器使用 Csc.rsp 文件，则使用 [-noconfig](./noconfig-compiler-option.md) 编译器选项。
 
  `-link` 的缩写形式是 `-l`。
 

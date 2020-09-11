@@ -3,12 +3,12 @@ title: 事件介绍
 description: 本概述中介绍 .NET Core 中的事件和事件的语言设计目标。
 ms.date: 06/20/2016
 ms.assetid: 9b8d2a00-1584-4a5b-8994-5003d54d8e0c
-ms.openlocfilehash: 4e660f85eecfd5668919baf21a0d26f858faf5a6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4da44c151244e8b5de34f550040c271131d9598c
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146109"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465229"
 ---
 # <a name="introduction-to-events"></a>事件介绍
 
@@ -77,7 +77,7 @@ fileLister.Progress += onProgress;
 fileLister.Progress -= onProgress;
 ```
 
-请务必注意，我为表示事件处理程序的表达式声明了一个局部变量。 这将确保取消订阅删除该处理程序。
+请务必为表示事件处理程序的表达式声明局部变量。 这将确保取消订阅删除该处理程序。
 如果使用的是 lambda 表达式的主体，则将尝试删除从未附加过的处理程序，此操作为无效操作。
 
 下一篇文章将介绍有关典型事件模式及此示例的不同变体的详细信息。

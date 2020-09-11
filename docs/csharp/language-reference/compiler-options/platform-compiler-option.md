@@ -9,12 +9,12 @@ helpviewer_keywords:
 - -platform compiler option [C#]
 - /platform compiler option [C#]
 ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
-ms.openlocfilehash: e2e4fc37418243ff6998d19165250b895c0a4fa1
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 3fdb030dfc141b011f5faa827a4e4bb45ae38d19
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89124859"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466009"
 ---
 # <a name="-platform-c-compiler-options"></a>-platform（C# 编译器选项）
 
@@ -35,7 +35,7 @@ anycpu（默认值）、anycpu32bitpreferred、ARM、x64、x86 或 Itanium。
 
 - anycpu（默认值）将程序集编译成可在任意平台上运行****。 您的应用程序将尽可能作为 64 位进程运行；当只有 32 位模式可用时，才会回退到 32 位。
 
-- anycpu32bitpreferred 将程序集编译成可在任意平台上运行****。 在同时支持 64 位和 32 位应用程序的系统上，您的应用程序将以32 位模式运行。 可以仅为针对 .NET Framework 4.5 的项目指定此选项。
+- anycpu32bitpreferred 将程序集编译成可在任意平台上运行****。 在同时支持 64 位和 32 位应用程序的系统上，您的应用程序将以32 位模式运行。 只能为面向 .NET Framework 4.5 或更高版本的项目指定此选项。
 
 - ARM 将程序集编译成可以在具有高级 RISC 计算机 (ARM) 处理器的计算机上运行****。
 
@@ -57,7 +57,7 @@ anycpu（默认值）、anycpu32bitpreferred、ARM、x64、x86 或 Itanium。
 
 - 用 -platform:anycpu32bitpreferred 编译的可执行文件将在 32 位 CLR 上执行****。
 
-anycpu32bitpreferred 设置只对可执行 (.exe) 文件有效，并且需要 .NET Framework 4.5****。
+anycpu32bitpreferred 设置只对可执行文件 (.EXE) 有效，并且需要 .NET Framework 4.5 或更高版本。
 
 有关开发 Windows 64 位操作系统上运行的应用程序的详细信息，请参阅 [64 位应用程序](../../../framework/64-bit-apps.md)。
 
@@ -67,7 +67,7 @@ anycpu32bitpreferred 设置只对可执行 (.exe) 文件有效，并且需要 .N
 
 2. 单击“生成”**** 属性页。
 
-3. 修改“目标平台”属性，对于针对 .NET Framework 4.5 的项目，选择或清除“首选 32 位”复选框********。
+3. 修改“平台目标”属性，对于面向 .NET Framework 4.5 或更高版本的项目，选择或清除“首选 32 位”复选框 。
 
 > [!NOTE]
 > `-platform` 在 Visual C# Express 的开发环境中不可用。

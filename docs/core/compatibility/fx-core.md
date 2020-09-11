@@ -3,12 +3,12 @@ title: 从 .NET Framework 到 .NET Core 的中断性变更
 titleSuffix: ''
 description: 列出了从 .NET Framework 到 .NET Core 的中断性变更。
 ms.date: 05/05/2020
-ms.openlocfilehash: 5f7424fdd959044b729dfb04f4f0147fbc946bfd
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: e9fa37dba89bbd6c4829614c27cb66206069fa9b
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556301"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414445"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>从 .NET Framework 迁移到 .NET Core 的中断性变更
 
@@ -72,10 +72,17 @@ ms.locfileid: "87556301"
 ## <a name="networking"></a>网络
 
 - [WebClient.CancelAsync 并不总是立即取消](#webclientcancelasync-doesnt-always-cancel-immediately)
+- [Cookie 路径处理现在符合 RFC 6265](#cookie-path-handling-now-conforms-to-rfc-6265)
 
 ### <a name="net-core-20"></a>.NET Core 2.0
 
 [!INCLUDE [behavior-change-webclient-cancelasync](../../../includes/core-changes/networking/2.0/behavior-change-webclient-cancelasync.md)]
+
+***
+
+### <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE [cookie-path-conforms-to-rfc6265](../../../includes/core-changes/networking/5.0/cookie-path-conforms-to-rfc6265.md)]
 
 ***
 

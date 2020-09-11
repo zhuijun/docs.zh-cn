@@ -4,12 +4,12 @@ description: 了解如何剪裁独立应用以减小其大小。 .NET Core 将�
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 7a4731e2cbaa3835e6aa6ba558dfa8cd03828e01
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 9c2994c98a2ebe6f45b056256c2bda28db017fbf
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053102"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465476"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>剪裁独立部署和可执行文件
 
@@ -19,7 +19,7 @@ ms.locfileid: "89053102"
 
 但是，由于无法可靠地分析各种有问题的代码模式（主要集中在反射使用），应用程序的生成时间分析可能会导致运行时失败。 由于无法保证可靠性，此部署模型仅作为预览功能提供。
 
-生成时间分析引擎针对有问题的代码模式向开发人员发出警告，以检测所需的其他代码。 可使用属性批注代码，以告知裁边器要包含的其他内容。 使用[源生成器](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md)可将许多反射模式替换为生成时代码生成。
+生成时间分析引擎针对有问题的代码模式向开发人员发出警告，提醒检测所需的其他代码。 可使用属性批注代码，以告知裁边器要包含的其他内容。 使用[源生成器](https://github.com/dotnet/roslyn/blob/master/docs/features/source-generators.md)可将许多反射模式替换为生成时代码生成。
 
 使用 `TrimMode` 设置来配置应用程序的剪裁模式。 默认值为 `copyused`，并在应用程序中捆绑引用的程序集。 `link` 值与 Blazor WebAssembly 应用程序一起使用，并剪裁程序集内未使用的代码。 如果无法进行完整的依赖项分析，剪裁分析警告会提供代码模式信息。 这些警告默认会被取消，可以通过将标志 `SuppressTrimAnalysisWarnings` 设置为 `false` 来启用。 有关可用选项的详细信息，请参阅[剪裁选项](trimming-options.md)。
 

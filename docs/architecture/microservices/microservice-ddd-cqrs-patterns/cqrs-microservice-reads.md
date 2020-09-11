@@ -2,12 +2,12 @@
 title: 在 CQRS 微服务中实现读取/查询
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解如何使用 Dapper 在 eShopOnContainers 中的订购微服务上实现 CQRS 查询端。
 ms.date: 10/08/2018
-ms.openlocfilehash: 71db95e6fc17475693183be9c6854884cd331ce1
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 41932122326cf4c49b9c9e2c344d2ac17da7466b
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614404"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358890"
 ---
 # <a name="implement-readsqueries-in-a-cqrs-microservice"></a>在 CQRS 微服务中实现读取/查询
 
@@ -33,7 +33,7 @@ ms.locfileid: "83614404"
 
 返回数据 (ViewModel) 可以是来自数据库中多个实体或表的联接数据结果，或者是事务区域域模型中定义的多个聚合中的联接数据结果。 在这种情况下，因为正在创建独立于域模型的查询，所以忽略了聚合边界和约束，因此可随意查询可能需要的任何表和列。 这种方法极大地提高了开发人员创建或更新查询的效率和灵活性。
 
-Viewmodel 可以是定义在类中的静态类型。 或者可以根据执行的查询对其进行动态创建（如订单微服务中所实现的），开发人员可灵活处理。
+ViewModel 可以是在类中定义的静态类型（如在排序微服务中实现的那样）。 或者可根据执行的查询动态创建它们，开发人员可灵活处理。
 
 ## <a name="use-dapper-as-a-micro-orm-to-perform-queries"></a>使用 Dapper 作为微型 ORM 以执行查询
 

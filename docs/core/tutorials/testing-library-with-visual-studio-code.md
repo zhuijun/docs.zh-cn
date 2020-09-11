@@ -2,12 +2,12 @@
 title: 在 Visual Studio Code 中使用 .NET Core 测试 .NET Standard 类库
 description: 为 .NET Core 类库创建单元测试项目。 验证 .NET Core 类库能否正确地进行单元测试。
 ms.date: 06/08/2020
-ms.openlocfilehash: b5f394b5dea2bf0b4af6e8b119df3fa0ec113dd3
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: f49974e1b918424ae5b5d7f3969f52c371e37154
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811712"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359163"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio-code"></a>教程：在 Visual Studio Code 中使用 .NET Core 测试 .NET Standard 类库
 
@@ -15,7 +15,7 @@ ms.locfileid: "88811712"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 本教程适用于在[在 Visual Studio Code 中创建 .NET Standard 库](library-with-visual-studio-code.md)中创建的解决方案。
+- 本教程适用于在[使用 Visual Studio Code 创建 .NET Standard 库](library-with-visual-studio-code.md)中创建的解决方案。
 
 ## <a name="create-a-unit-test-project"></a>创建单元测试项目
 
@@ -23,7 +23,7 @@ ms.locfileid: "88811712"
 
 1. 启动 Visual Studio Code。
 
-1. 打开[在 Visual Studio 中创建 .NET Standard 库](library-with-visual-studio.md)中创建的 `ClassLibraryProjects` 解决方案。
+1. 打开在[使用 Visual Studio Code 创建 .NET Standard 库](library-with-visual-studio-code.md)中创建的 `ClassLibraryProjects` 解决方案。
 
 1. 创建名为“StringLibraryTest”的单元测试项目。
 

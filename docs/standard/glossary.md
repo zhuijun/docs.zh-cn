@@ -3,12 +3,12 @@ title: .NET 术语表
 description: 了解 .NET 文档中所用的选定术语的含义。
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 59e338de99510759e3e7acfd782915ed6dc5d988
-ms.sourcegitcommit: 60dc0a11ebdd77f969f41891d5cca06335cda6a7
+ms.openlocfilehash: b79580baa12cc8081346678f06d49a9d0455375c
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "88957568"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89415003"
 ---
 # <a name="net-glossary"></a>.NET 术语表
 
@@ -161,7 +161,7 @@ Mono 通常与[实时编译器](#jit)一起使用，但它也提供在 iOS 之�
 
 当 [.NET5](#net-5-and-later-versions)（当前处于预览状态）发布时，它将是所有新 .NET 开发的建议 .NET 实现，因此在某些上下文中，“.NET”将表示“.NET 5 及更高版本”。
 
-请参阅 [.NET 指南](index.yml)
+请参阅 [.NET 基础知识](../fundamentals/index.yml)
 
 ## <a name="net-5-and-later-versions"></a>.NET 5 及更高版本
 
@@ -169,7 +169,7 @@ Mono 通常与[实时编译器](#jit)一起使用，但它也提供在 iOS 之�
 
 此 .NET 实现的早期版本称为 .NET Core。 .Net 5.0 是继 .NET Core 3.1 之后的下一版本。 跳过了版本 4，以避免将此较新的 .NET 实现与称为 [.NET Framework](#net-framework) 的旧实现混淆。 .NET Core 的当前版本为版本 4.8。
 
-请参阅 [.NET](../core/index.yml)。
+请参阅 [.NET 基础知识](../fundamentals/index.yml)。
 
 ## <a name="net-cli"></a>.NET CLI
 
@@ -294,8 +294,7 @@ NuGet 包 &mdash; 或只是一个包 &mdash; 是一个 .zip 文件，其中具�
 
 ## <a name="see-also"></a>请参阅
 
-- [.NET 指南](index.yml)
+- [.NET 基础知识](../fundamentals/index.yml)
 - [.NET Framework 指南](../framework/index.yml)
-- [.NET Core](../core/index.yml)
 - [ASP.NET 概述](/aspnet/index#pivot=aspnet)
 - [ 概述](/aspnet/index#pivot=core)

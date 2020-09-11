@@ -10,12 +10,12 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
-ms.openlocfilehash: 5e75fec12390cb694126c5bec684c40caa378915
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: dff93496dfeceaf67777abe0b02ee2d620b3a5ca
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89139094"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466035"
 ---
 # <a name="event-c-reference"></a>event (C# 参考)
 
@@ -23,7 +23,7 @@ ms.locfileid: "89139094"
 
 ## <a name="example"></a>示例
 
-下面的示例演示如何声明和引发使用 <xref:System.EventHandler> 作为基础委托类型的事件。 有关演示如何使用泛型 <xref:System.EventHandler%601> 委托类型以及如何订阅事件并创建事件处理程序方法的完整的代码示例，请参阅[如何发布符合 .NET Framework 准则的事件](../../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)。
+下面的示例演示如何声明和引发使用 <xref:System.EventHandler> 作为基础委托类型的事件。 要查看完整代码示例了解如何使用泛型 <xref:System.EventHandler%601> 委托类型以及如何订阅事件并创建事件处理程序方法，请参阅[如何发布符合 .NET 准则的事件](../../programming-guide/events/how-to-publish-events-that-conform-to-net-framework-guidelines.md)。
 
 [!code-csharp[csrefKeywordsModifiers#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#7)]
 

@@ -5,12 +5,12 @@ ms.date: 02/13/2020
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: b52d69756d85e3e422b798c3ac7d53de3b538b8d
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: e96a03ca55682d3e30bc13fb20a8e443105301fc
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87167411"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359306"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -92,7 +92,7 @@ NuGet 包面向一个或多个[框架](frameworks.md)。 .NET Standard 包定位
 
 .NET Standard 并不特定于任何一种 .NET 实现，也不与其中任一运行时的版本控制方案匹配。
 
-添加到任何实现（例如 .NET Framework、.NET Core 和 Mono）的 API 可被视为适合添加到规范中的候选项，尤其是本质上非常重要的 API。 [.NET Standard 的新版本](https://github.com/dotnet/standard/blob/master/docs/versions.md)根据 .NET 实现版本进行创建，以便可以定位 .NET Standard PCL 中的新 API。 [.NET Core 版本控制](../core/versions/index.md)中更详细介绍了版本控制机制。
+添加到任何 .NET 实现（例如 .NET Framework、.NET Core 和 Mono）的 API 可被视为适合添加到规范中的候选项，尤其是本质上非常重要的 API。 [.NET Standard 的新版本](https://github.com/dotnet/standard/blob/master/docs/versions.md)根据 .NET 实现版本进行创建，使你能够面向 .NET Standard 可移植类库 (PCL) 中的新 API。 [.NET Core 版本控制](../core/versions/index.md)中更详细介绍了版本控制机制。
 
 .NET Standard 版本控制对于库的使用至关重要。 在 .NET Standard 版本既定的情况下，可以使用定位相同或更低版本的库。 下面的做法介绍了使用 .NET Standard PCL（专用于 .NET Standard 定位）的工作流。
 

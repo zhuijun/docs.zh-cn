@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 593897b31c86e79db2376dde94f3e5c87fdf8289
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: a2ebad329f583d35f110c5db053eebfa80ace6e2
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89052818"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359319"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>教程：通过 ML.NET 图像分类 API 使用迁移学习自动进行肉眼检查
 
@@ -32,7 +32,7 @@ ms.locfileid: "89052818"
 
 ## <a name="image-classification-transfer-learning-sample-overview"></a>图像分类迁移学习示例概述
 
-此示例是一个 C# .NET Core 控制台应用程序，它使用预先训练的深度学习 TensorFlow 模型对图像进行分类。 此示例的代码可以在 GitHub 上的 [dotnet/machinelearning-samples 存储库](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary)找到。
+此示例是一个 C# .NET Core 控制台应用程序，它使用预先训练的深度学习 TensorFlow 模型对图像进行分类。 可在[示例浏览器](/samples/dotnet/machinelearning-samples/mlnet-image-classification-transfer-learning/)上找到此示例的代码。
 
 ## <a name="understand-the-problem"></a>了解问题
 

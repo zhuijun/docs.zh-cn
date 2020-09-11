@@ -3,12 +3,12 @@ title: 使用集合 - C# 教程简介
 description: 在本教程中通过探索列表集合了解 C#。
 ms.date: 10/13/2017
 ms.custom: mvc
-ms.openlocfilehash: c99f5582702120db238de1206de42d964837cdbd
-ms.sourcegitcommit: 046a9c22487551360e20ec39fc21eef99820a254
+ms.openlocfilehash: e2282df21420630634911e07f4fb3b94f34a792b
+ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83396896"
+ms.lasthandoff: 09/03/2020
+ms.locfileid: "89414678"
 ---
 # <a name="learn-to-manage-data-collections-using-the-generic-list-type"></a>了解如何使用泛型列表类型管理数据集合
 
@@ -230,4 +230,4 @@ foreach (var item in fibonacciNumbers)
 
 恭喜！已完成“列表集合”教程。 可以在自己的开发环境中继续学习[类简介](introduction-to-classes.md)教程。
 
-若要详细了解如何使用 `List` 类型，可以参阅有关[集合](../../../standard/collections/index.md)的 [.NET 指南](../../../standard/index.yml)文章。 还可以了解其他许多集合类型。
+若要详细了解如何使用 `List` 类型，可参阅有关[集合](../../../standard/collections/index.md)的 .NET 基础知识文章。 还可以了解其他许多集合类型。

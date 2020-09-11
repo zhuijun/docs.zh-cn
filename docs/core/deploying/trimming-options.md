@@ -4,12 +4,12 @@ description: 了解如何控制自包含应用的剪裁。
 author: sbomer
 ms.author: svbomer
 ms.date: 08/25/2020
-ms.openlocfilehash: 5597d4cdb9e8e96dcec6545e039d43295ca991bd
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 42e98f9ede004f06221d2df5ecd076500061e37d
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89142253"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89465411"
 ---
 # <a name="trimming-options"></a>剪裁选项
 
@@ -25,11 +25,11 @@ ms.locfileid: "89142253"
 
 ## <a name="trimming-granularity"></a>剪裁粒度
 
-以下粒度设置控制如何丢弃未充分利用的 IL。 这可设置为属性，也可设置为[单个程序集](#Trimmed-assemblies)的元数据。
+以下粒度设置控制如何丢弃未充分利用的 IL。 这可设置为属性，也可设置为[单个程序集](#trimmed-assemblies)的元数据。
 
 - `<TrimMode>copyused</TrimMode>`
 
-   启用程序集级剪裁，如果使用程序集的任何部分（以静态理解的方式），则将保留整个程序集。
+   启用程序集级剪裁；如果使用程序集的任何部分（以静态理解的方式），则将保留整个程序集。
 
 - `<TrimMode>link</TrimMode>`
 
@@ -39,7 +39,7 @@ ms.locfileid: "89142253"
 
 ## <a name="trimmed-assemblies"></a>剪裁后的程序集
 
-发布剪裁后的应用时，SDK 将计算名为 `ManagedAssemblyToLink` 的 `ItemGroup`，这表示要进行剪裁处理的文件集。 `ManagedAssemblyToLink` 可能具有控制每个程序集剪裁行为的元数据。 若要设置此元数据，请在内置的 `PrepareForILLink` 目标运行之前创建一个目标。 此示例演示如何启用 `MyAssembly` 的剪裁：
+发布剪裁后的应用时，SDK 将计算名为 `ManagedAssemblyToLink` 的 `ItemGroup`，这表示要进行剪裁处理的文件集。 `ManagedAssemblyToLink` 可能具有控制每个程序集剪裁行为的元数据。 若要设置此元数据，请在内置的 `PrepareForILLink` 目标运行之前创建一个目标。 下面的示例演示如何启用 `MyAssembly` 的剪裁。
 
 ```xml
 <Target Name="ConfigureTrimming"
@@ -60,7 +60,7 @@ ms.locfileid: "89142253"
 
 - `<TrimMode>copyused</TrimMode>` 或 `<TrimMode>link</TrimMode>`
 
-  控制此程序集的[剪裁粒度](#Trimming-granularity)。 这优先于全局 `TrimMode`。 在程序集上设置 `TrimMode` 意味着 `<IsTrimmable>true</IsTrimmable>`。
+  控制此程序集的[剪裁粒度](#trimming-granularity)。 这优先于全局 `TrimMode`。 在程序集上设置 `TrimMode` 意味着 `<IsTrimmable>true</IsTrimmable>`。
 
 ## <a name="root-assemblies"></a>根程序集
 
@@ -106,7 +106,7 @@ ms.locfileid: "89142253"
 
 ## <a name="warning-versions"></a>警告版本
 
-剪裁分析使用的 [`AnalysisLevel`](../project-sdk/msbuild-props.md#AnalysisLevel) 属性可跨 SDK 控制分析警告版本。 还有一个可独立控制剪裁分析警告版本的属性（类似于编译器 `WarningLevel`）：
+剪裁分析使用的 [`AnalysisLevel`](../project-sdk/msbuild-props.md#analysislevel) 属性可跨 SDK 控制分析警告版本。 还有一个可独立控制剪裁分析警告版本的属性（类似于编译器 `WarningLevel`）：
 
 - `<ILLinkWarningLevel>5</ILLinkWarningLevel>`
 

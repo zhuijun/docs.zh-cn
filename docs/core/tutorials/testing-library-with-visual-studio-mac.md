@@ -2,12 +2,12 @@
 title: 在 Visual Studio for Mac 中使用 .NET Core 测试 .NET Standard 类库
 description: 为 .NET Core 类库创建单元测试项目。 验证 .NET Core 类库能否正确地进行单元测试。
 ms.date: 06/08/2020
-ms.openlocfilehash: a183049623df44cbb8c4abd47ce6e78d91adae12
-ms.sourcegitcommit: 1cbd77da54405ea7dba343ac0334fb03237d25d2
+ms.openlocfilehash: d3c8a5e01d16047949e977f3af6a429970d996d0
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/11/2020
-ms.locfileid: "84713303"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89359215"
 ---
 # <a name="test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>在 Visual Studio 中使用 .NET Core 测试 .NET Standard 类库
 
@@ -15,7 +15,7 @@ ms.locfileid: "84713303"
 
 ## <a name="prerequisites"></a>先决条件
 
-- 本教程适用于根据[在 Visual Studio for Mac 中创建 .NET Standard 库](library-with-visual-studio-mac.md)创建的解决方案。
+- 本教程适用于在[使用 Visual Studio for Mac 创建 .NET Standard 库](library-with-visual-studio-mac.md)中创建的解决方案。
 
 ## <a name="create-a-unit-test-project"></a>创建单元测试项目
 
@@ -23,7 +23,7 @@ ms.locfileid: "84713303"
 
 1. 启动 Visual Studio for Mac。
 
-1. 打开[在 Visual Studio for Mac 中创建 .NET Standard 库](library-with-visual-studio-mac.md)中创建的 `ClassLibraryProjects` 解决方案。
+1. 打开在[使用 Visual Studio for Mac 创建 .NET Standard 库](library-with-visual-studio-mac.md)中创建的 `ClassLibraryProjects` 解决方案。
 
 1. 在“解决方案”边栏中，按住 <kbd>Ctrl</kbd> 并单击 `ClassLibraryProjects` 解决方案，然后选择“添加” > “新建项目”。
 

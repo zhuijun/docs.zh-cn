@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 5eb9d5127dffd2e80349352ad7a4b57f8848d56b
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 8cbb687b0c7cfb69d3f3807c083f1c25e9d39594
+ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87165802"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89271784"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Windows 系统中的文件路径格式
 
@@ -33,19 +33,19 @@ ms.locfileid: "87165802"
 
 |路径  |描述  |
 | -- | -- |
-| `C:\Documents\Newsletters\Summer2018.pdf` | C: 盘根路径上的绝对文件路径。 |
+| `C:\Documents\Newsletters\Summer2018.pdf` | `C:` 驱动器的根目录中的绝对文件路径。 |
 | `\Program Files\Custom Utilities\StringFinder.exe` | 当前驱动器根路径上的绝对路径。 |
 | `2018\January.xlsx` | 指向当前目录的子目录中的文件的相对路径。 |
 | `..\Publications\TravelBrochure.pdf` | 指向当前目录的同级目录中的文件的相对路径。 |
-| `C:\Projects\apilibrary\apilibrary.sln` | 指向 C: 盘根路径中的文件的绝对路径。 |
-| `C:Projects\apilibrary\apilibrary.sln` | C: 盘当前目录上的相对路径。 |
+| `C:\Projects\apilibrary\apilibrary.sln` | `C:` 驱动器的根目录中的文件的绝对路径。 |
+| `C:Projects\apilibrary\apilibrary.sln` | `C:` 驱动器的当前目录中的相对路径。 |
 
 > [!IMPORTANT]
-> 请注意最后两个路径之间的差异。 两者都指定了可选的卷说明符（均为“C:”），但前者以所指定卷的根开头，而后者不是。 结果，前者表示 C: 盘根目录上的绝对路径，而后者表示 C: 盘当前目录上的相对路径。 应使用前者时使用了后者是涉及 Windows 文件路径的 bug 的常见原因。
+> 请注意最后两个路径之间的差异。 两者都指定了可选的卷说明符（均为 `C:`），但前者以指定的卷的根目录开头，而后者不是。 因此，前者表示 `C:` 驱动器的根目录中的绝对路径，而后者表示 `C:` 驱动器的当前目录中的相对路径。 应使用前者时使用了后者是涉及 Windows 文件路径的 bug 的常见原因。
 
 可以通过调用 <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWthType> 方法来确定文件路径是否完全限定（即是说，该路径独立于当前目录，且在当前目录更改时不发生变化）。 请注意，如果解析的路径始终指向同样的位置，那么此类路径可以包括相对目录段（`.` 和 `..`），而同时依然是完全限定的。
 
-以下示例演示绝对路径和相对路径之间的差异。 假定存在目录 D:\FY2018\，且在运行该示例之前还没有通过命令提示符为 D:\ 设置任何当前目录。
+以下示例演示绝对路径和相对路径之间的差异。 假定存在目录 `D:\FY2018\`，且在运行该示例之前还没有通过命令提示符为 `D:\` 设置任何当前目录。
 
 [!code-csharp[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/cs/paths.cs)]
 [!code-vb[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/vb/paths.vb)]
@@ -56,8 +56,8 @@ ms.locfileid: "87165802"
 
 通用命名约定 (UNC) 路径，用于访问网络资源，具有以下格式：
 
-- 一个以 \\\\ 开头的服务器名或主机名。 服务器名称可以为 NetBIOS 计算机名称或者 IP/FQDN 地址（支持 IPv4 和 IPv6）。
-- 共享名，使用 \\ 将其与主机名分隔开。 服务器名和共享名共同组成了卷。
+- 一个以 `\\` 开头的服务器名或主机名。 服务器名称可以为 NetBIOS 计算机名称或者 IP/FQDN 地址（支持 IPv4 和 IPv6）。
+- 共享名，使用 `\` 将其与主机名分隔开。 服务器名和共享名共同组成了卷。
 - 目录名称。 [目录分隔符](<xref:System.IO.Path.DirectorySeparatorChar>)用来分隔嵌套目录层次结构中的子目录。
 - 可选的文件名。 [目录分隔符](<xref:System.IO.Path.DirectorySeparatorChar>)用来分隔文件路径和文件名。
 
@@ -65,8 +65,8 @@ ms.locfileid: "87165802"
 
 |路径  |描述  |
 | -- | -- |
-| `\\system07\C$\` | `system07` 上 C: 盘的根目录。 |
-| `\\Server2\Share\Test\Foo.txt` | \\\\Server2\\Share 卷的测试目录中的 Foo.txt 文件。|
+| `\\system07\C$\` | `system07` 上 `C:` 驱动器的根目录。 |
+| `\\Server2\Share\Test\Foo.txt` | `\\Server2\Share` 卷的测试目录中的 `Foo.txt` 文件。|
 
 UNC 路径必须始终是完全限定的。 它们可以包括相对目录段（`.` 和 `..`），但是这些目录段必须是完全限定的路径的一部分。 只能通过将 UNC 路径映射至驱动器号来使用相对路径。
 
@@ -101,7 +101,7 @@ DOS 设备路径由以下部分组成：
   `\\.\UNC\Server\Share\Test\Foo.txt`
   `\\?\UNC\Server\Share\Test\Foo.txt`
 
-    对于设备 UNC，服务器/共享部分构成了卷。 例如，在 `\\?\server1\e:\utilities\\filecomparer\` 中，服务器/共享部分是 server1\utilities。 使用相对目录段调用 <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> 等方法时，这一点非常重要；决不可能越过卷。
+    对于设备 UNC，服务器/共享部分构成了卷。 例如在 `\\?\server1\e:\utilities\\filecomparer\` 中，服务器/共享部分是 `server1\utilities`。 使用相对目录段调用 <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> 等方法时，这一点非常重要；决不可能越过卷。
 
 DOS 设备路径通过定义进行完全限定。 不允许使用相对目录段（`.` 和 `..`）。 也不会包含当前目录。
 
@@ -146,7 +146,7 @@ DOS 设备路径通过定义进行完全限定。 不允许使用相对目录段
 
 ### <a name="apply-the-current-directory"></a>应用当前目录
 
-如果路径非完全限定，Windows 会向其应用当前目录。 不会向 UNC 和设备路径应用当前目录。 带有分隔符 C:\\ 的完整驱动器也不会。
+如果路径非完全限定，Windows 会向其应用当前目录。 不会向 UNC 和设备路径应用当前目录。 带有分隔符的 `C:\` 完整驱动器也不会应用当前目录。
 
 如果路径的开头是单个组件分隔符，则会应用当前目录中的驱动器。 例如，如果文件路径是 `\utilities` 且当前目录为 `C:\temp\`，规范化后路径则为 `C:\utilities`。
 

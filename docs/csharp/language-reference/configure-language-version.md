@@ -2,26 +2,28 @@
 title: C# 语言版本控制 - C# 指南
 description: 了解如何根据项目确定 C# 语言版本，以及背后的原因。 了解如何手动重写默认值。
 ms.custom: updateeachrelease
-ms.date: 05/20/2020
-ms.openlocfilehash: 24797c564890b034683d2989010bc694aabc423c
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.date: 08/11/2020
+ms.openlocfilehash: 327a98da37b97830ac7f752a3621a92d8cb161e0
+ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811946"
+ms.lasthandoff: 09/05/2020
+ms.locfileid: "89495455"
 ---
 # <a name="c-language-versioning"></a>C# 语言版本控制
 
 最新的 C# 编译器根据项目的一个或多个目标框架确定默认语言版本。 Visual Studio 不提供用于更改值的 UI，但可以通过编辑 .csproj 文件来更改值。 此默认选择可确保使用与目标框架兼容的最新语言版本。 你将从访问与项目目标兼容的最新语言功能中受益。 此默认选择还可确保不会使用需要类型或运行时行为在目标框架中不可用的语言。 选择比默认版本更高的语言版本可能导致难以诊断编译时和运行时错误。
 
-本文中的规则适用于随 Visual Studio 2019 或 .NET Core 3.0 SDK 一起提供的编译器。 默认情况下，Visual Studio 2017 安装或早期 .NET Core SDK 版本中包含的 C# 编译器以 C# 7.0 为目标。
+本文中的规则适用于随 Visual Studio 2019 或 .NET SDK 一起提供的编译器。 默认情况下，Visual Studio 2017 安装或早期 .NET Core SDK 版本中包含的 C# 编译器以 C# 7.0 为目标。
 
-C# 8.0（和更高版本）仅在 .NET Core 3.x 和更高版本上受支持。 许多最新功能需要 .NET Core 3.x 中引入的库和运行时功能：
+C# 8.0 仅在 .NET Core 3.x 及更高版本上受支持。 许多最新功能需要 .NET Core 3.x 中引入的库和运行时功能：
 
 - [默认接口实现](../whats-new/csharp-8.md#default-interface-methods)需要使用 .NET Core 3.0 CLR 中的新功能。
 - [异步流](../whats-new/csharp-8.md#asynchronous-streams)需要使用新类型 <xref:System.IAsyncDisposable?displayProperty=nameWithType>、<xref:System.Collections.Generic.IAsyncEnumerable%601?displayProperty=nameWithType> 和 <xref:System.Collections.Generic.IAsyncEnumerator%601?displayProperty=nameWithType>。
 - [索引和范围](../whats-new/csharp-8.md#indices-and-ranges)需要使用新类型 <xref:System.Index?displayProperty=nameWithType> 和 <xref:System.Range?displayProperty=nameWithType>。
 - [可为 null 的引用类型](../whats-new/csharp-8.md#nullable-reference-types)利用几个[特性](attributes/nullable-analysis.md)来提供更准确的警告。 这些特性是在 .NET Core 3.0 中添加的。 其他目标框架并未使用这些特性中的任何一种进行批注。 这意味着可为 null 的警告可能无法准确反映潜在问题。
+
+C# 9.0 仅在 .NET 5 及更高版本上受支持。
 
 ## <a name="defaults"></a>默认值
 
@@ -29,6 +31,7 @@ C# 8.0（和更高版本）仅在 .NET Core 3.x 和更高版本上受支持。 �
 
 | 目标框架 | version | C# 语言版本的默认值 |
 |------------------|---------|-----------------------------|
+| .NET             | 5.x     | C# 9.0                      |
 | .NET Core        | 3.x     | C# 8.0                      |
 | .NET Core        | 2.x     | C# 7.3                      |
 | .NET Standard    | 2.1     | C# 8.0                      |

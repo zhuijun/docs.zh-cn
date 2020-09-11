@@ -7,12 +7,12 @@ helpviewer_keywords:
 - compiler options [C#], listed by category
 - Visual C#, compiler options listed by category
 ms.assetid: 96437ecc-6502-4cd3-b070-e9386a298e83
-ms.openlocfilehash: 27445b6685f48f7acf646c16de3201e68767da69
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: a1b65db6efb60d27ab82ab47854c0399b9476729
+ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125288"
+ms.lasthandoff: 09/04/2020
+ms.locfileid: "89466074"
 ---
 # <a name="c-compiler-options-listed-by-category"></a>按类别列出的 C# 编译器选项
 
@@ -41,7 +41,7 @@ ms.locfileid: "89125288"
 |[-target](target-compiler-option.md)|使用下列选项之一指定输出文件的格式：[-target:appcontainerexe](target-appcontainerexe-compiler-option.md)、[-target:exe](target-exe-compiler-option.md)、[-target:library](target-library-compiler-option.md)、[-target:module](target-module-compiler-option.md)、[-target:winexe](target-winexe-compiler-option.md) 或 [-target:winmdobj](target-winmdobj-compiler-option.md)。|
 |-modulename：\<string>|指定源模块的名称|
 
-## <a name="net-framework-assemblies"></a>.NET Framework 程序集
+## <a name="net-assemblies"></a>.NET 程序集
 
 |选项|目标|
 |------------|-------------|
@@ -85,7 +85,7 @@ ms.locfileid: "89125288"
 |------------|-------------|
 |[-link](link-compiler-option.md)|使指定程序集中的 COM 类型信息对项目可用。|
 |[-linkresource](linkresource-compiler-option.md)|创建指向托管资源的链接。|
-|[-resource](resource-compiler-option.md)|将 .NET Framework 资源嵌入到输出文件。|
+|[-resource](resource-compiler-option.md)|将 .NET 资源嵌入到输出文件中。|
 |[-win32icon](win32icon-compiler-option.md)|指定要插入到输出文件的 .ico 文件。|
 |[/win32res:](win32res-compiler-option.md)|指定要插入到输出文件的 Win32 资源。|
 

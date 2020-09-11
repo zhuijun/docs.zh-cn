@@ -2,12 +2,12 @@
 title: C# 程序的构建基块
 description: 了解 C# 成员、表达式和语句。 类型包含你编写的成员。 这些成员是根据语句和表达式生成的。
 ms.date: 08/06/2020
-ms.openlocfilehash: 142fe7b5a3424a8925638bfb4e4437392347f4c6
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 3bdc6a4da6ae76148c7d1d5cb8ccb65d91fda61a
+ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88268135"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "89358812"
 ---
 # <a name="program-building-blocks"></a>程序构建基块
 
@@ -192,8 +192,6 @@ C# 支持实例和静态构造函数。 *实例构造函数*是实现初始化�
 属性的声明方式与字段相似，区别是属性声明以在分隔符 `{` 和 `}` 之间写入的 get 访问器或 set 访问器结束，而不是以分号结束。 同时包含 get 访问器和 set 访问器的属性是*读写属性*，仅包含 get 访问器的属性是*只读属性*，仅包含 set 访问器的属性是*只写属性*。
 
 get 访问器对应于包含属性类型的返回值的无参数方法。 set 访问器对应于包含一个名为 value 的参数但不含返回类型的方法。 get 访问器会计算属性的值。 set 访问器会为属性提供新值。 当属性是赋值的目标，或者是 `++` 或 `--` 的操作数时，会调用 set 访问器。 在引用了属性的其他情况下，会调用 get 访问器。
-
- 如果将属性引用为赋值目标或 ++/-- 的操作数，将调用 set 访问器（由自变量提供新值）。
 
 `MyList<T>` 类声明以下两个属性：`Count` 和 `Capacity`（分别为只读和读写）。 以下示例代码展示了如何使用这些属性：
 
