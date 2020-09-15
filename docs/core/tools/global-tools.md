@@ -4,12 +4,12 @@ description: 如何安装、使用、更新和删除 .NET Core 工具。 包括�
 author: KathleenDollard
 ms.topic: how-to
 ms.date: 02/12/2020
-ms.openlocfilehash: 00c0317fcfc4da0e7205c23faa7b355c20882ec9
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 08277ed791036201d1dfa30c21799db1c21a924e
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062725"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598126"
 ---
 # <a name="how-to-manage-net-core-tools"></a>如何管理 .NET Core 工具
 
@@ -42,7 +42,7 @@ ms.locfileid: "88062725"
 * 请参阅 [natemcmaster/dotnet-tools](https://github.com/natemcmaster/dotnet-tools) GitHub 存储库中的工具列表。
 * 使用 [ToolGet](https://www.toolget.net/) 搜索 .NET 工具。
 * 在 [dotnet/aspnetcore GitHub 存储库的工具目录](https://github.com/dotnet/aspnetcore/tree/master/src/Tools)中查看 ASP.NET Core 团队创建的工具的源代码。
-* 在 [.NET Core dotnet 诊断工具](../diagnostics/index.md#net-core-dotnet-diagnostic-global-tools)中了解诊断工具。
+* 在 [.NET Core dotnet 诊断工具](../diagnostics/index.md#net-core-diagnostic-global-tools)中了解诊断工具。
 
 ## <a name="check-the-author-and-statistics"></a>查看作者和统计信息
 

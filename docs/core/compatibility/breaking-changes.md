@@ -2,12 +2,12 @@
 title: 重大更改
 description: 了解 .NET Core 每个版本的中断性变更。
 ms.date: 11/27/2019
-ms.openlocfilehash: 73c1576aa92f0e236ead0ca1a12ac26efcbf3cbe
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: eea6542acb9fa659af764bfd3a2af00fd9740191
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810893"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656270"
 ---
 # <a name="breaking-change-selectors"></a>中断性变更选择器
 
@@ -43,6 +43,7 @@ ms.locfileid: "88810893"
 > - [序列化](serialization.md)
 > - [Visual Basic](visualbasic.md)
 > - [Windows 窗体](winforms.md)
+> - [WPF](wpf.md)
 
 ## <a name="github-issues-and-announcements"></a>GitHub 问题和公告
 

@@ -2,12 +2,12 @@
 title: 演练和技术入门概述
 description: 通过 Azure 云和 Windows 容器现代化现有 .NET 应用程序 | 演练和技术入门概述
 ms.date: 04/28/2018
-ms.openlocfilehash: cff418d9b6e931a3082d8a2f8b818e7275139578
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 4db6d449d27dcd4316d61305c8c2a8c2aa0bc65b
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80987864"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89516120"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>演练和技术入门概述
 
@@ -212,7 +212,7 @@ eShopModernizing GitHub 存储库 wiki 中提供了完整的技术演练：
 
 主要结论是，使用 Azure 容器实例是适用于开发/测试方案和 CI/CD 管道的最终选择。
 
-## <a name="next-steps"></a>后续步骤
+### <a name="next-steps"></a>后续步骤
 
 在 GitHub wiki 上更深入了解此内容：
 
@@ -274,7 +274,7 @@ Azure 容器服务优化了专门针对 Azure 的常用开源工具和技术。 
 
 - 应用程序运行状况检查
 
-## <a name="next-steps"></a>后续步骤
+### <a name="next-steps"></a>后续步骤
 
 在 GitHub wiki 上更深入了解此内容：<https://github.com/dotnet-architecture/eShopModernizing/wiki/04.-How-to-deploy-your-Windows-Containers-based-apps-into-Kubernetes-in-Azure-Container-Service-(Including-CI-CD)>
 
@@ -302,7 +302,7 @@ eShopModernizing GitHub 存储库 wiki 中提供了完整的技术演练：
 
 部署到用于容器的 Azure 应用服务提供的容器优点与 Azure 应用服务的 PaaS 优点配对。 应用服务可以轻松地在垂直和水平方向上缩放，并且可以配置为自动缩放以满足不断变化的需求。 可以在零停机的情况下执行更新，也可以轻松地配置注册表中的持续部署。
 
-## <a name="next-steps"></a>后续步骤
+### <a name="next-steps"></a>后续步骤
 
 在 GitHub wiki 上更深入了解此内容：<https://github.com/dotnet-architecture/eShopModernizing/wiki/Deploy-Windows-Container-to-Azure-App-Service>
 

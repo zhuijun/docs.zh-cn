@@ -2,12 +2,12 @@
 title: C# 保留的特性：可为空的静态分析
 ms.date: 04/14/2020
 description: 编译器会解释这些属性，以便为可为 null 和不可为 null 的引用类型提供更好的静态分析。
-ms.openlocfilehash: 33521133a6a01196e6e1ab9c3cdc191a24f1ecf3
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: d2405162ece3df209111de65fdef54f70cc86d45
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102705"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656298"
 ---
 # <a name="reserved-attributes-contribute-to-the-compilers-null-state-static-analysis"></a>保留的特性有助于编译器的 null 状态静态分析
 
@@ -57,10 +57,10 @@ API 的规则可能更复杂，正如你在 `TryGetValue` API 方案中看到的
 ```csharp
 public string ScreenName
 {
-   get => screenName;
-   set => screenName = value ?? GenerateRandomScreenName();
+   get => _screenName;
+   set => _screenName = value ?? GenerateRandomScreenName();
 }
-private string screenName;
+private string _screenName;
 ```
 
 当你在忽略可为 null 的上下文中编译前面的代码时，一切都是正常的。 启用可为 null 的引用类型后，`ScreenName` 属性将成为不可为 null 的引用。 这对于 `get` 访问器是正确的：它从不返回 `null`。 调用方不需要检查返回的 `null` 属性。 但现在将属性设置为 `null` 将生成警告。 为了继续支持这种类型的代码，请将 <xref:System.Diagnostics.CodeAnalysis.AllowNullAttribute?displayProperty=nameWithType> 特性添加到该属性，如以下代码所示：
@@ -69,10 +69,10 @@ private string screenName;
 [AllowNull]
 public string ScreenName
 {
-   get => screenName;
-   set => screenName = value ?? GenerateRandomScreenName();
+   get => _screenName;
+   set => _screenName = value ?? GenerateRandomScreenName();
 }
-private string screenName = GenerateRandomScreenName();
+private string _screenName = GenerateRandomScreenName();
 ```
 
 可能需要为 <xref:System.Diagnostics.CodeAnalysis> 添加一个 `using` 指令才能使用本文中讨论的特性和其他特性。 特性应用于属性，而不是 `set` 访问器。 `AllowNull` 特性指定前置条件，并且仅适用于输入  。 `get` 访问器有一个返回值，但没有输入参数。 因此，`AllowNull` 特性只适用于 `set` 访问器。
@@ -132,14 +132,14 @@ public Customer FindCustomer(string lastName, string firstName)
 基于[泛型定义和为 null 性](../../nullable-migration-strategies.md#generic-definitions-and-nullability)中所述的原因，该技术不适用于泛型方法。 你可能具有遵循类似模式的泛型方法：
 
 ```csharp
-public T Find<T>(IEnumerable<T> sequence, Func<T, bool> match)
+public T Find<T>(IEnumerable<T> sequence, Func<T, bool> predicate)
 ```
 
 不能指定返回值为 `T?`。 当找不到所需项时，此方法返回 `null`。 由于无法声明 `T?` 返回类型，因此需要将 `MaybeNull` 注释添加到方法返回：
 
 ```csharp
 [return: MaybeNull]
-public T Find<T>(IEnumerable<T> sequence, Func<T, bool> match)
+public T Find<T>(IEnumerable<T> sequence, Func<T, bool> predicate)
 ```
 
 前面的代码通知调用方，协定暗示了一个不可为 null 的类型，但是返回值可能实际上为 null  。  当 API 应为不可为 null 的类型（通常是泛型类型参数）时，请使用 `MaybeNull` 特性，但可能会有返回 `null` 的情况。
@@ -162,7 +162,7 @@ EnsureCapacity<string>(messages, 50);
 启用 null 引用类型后，需要确保前面的代码在编译时没有警告。 当方法返回时，`storage` 参数保证不为 null。 但是，可以使用 null 引用调用 `EnsureCapacity`。 可以将 `storage` 设为可为 null 的引用类型，并将 `NotNull` 后置条件添加到参数声明中：
 
 ```csharp
-public void EnsureCapacity<T>([NotNull]ref T[]? storage, int size)
+public void EnsureCapacity<T>([NotNull] ref T[]? storage, int size)
 ```
 
 前面的代码清楚地表达了现有协定：调用方可以传递具有 `null` 值的变量，但返回值保证永远不为 null。 `NotNull` 特性对于 `ref` 和 `out` 参数最有用，其中 `null` 可以作为参数传递，但当方法返回时，该参数保证不为 null。
@@ -177,7 +177,7 @@ public void EnsureCapacity<T>([NotNull]ref T[]? storage, int size)
 你可能很熟悉 `string` 方法 <xref:System.String.IsNullOrEmpty(System.String)?DisplayProperty=nameWithType>。 当参数为 null 或为空字符串时，此方法返回 `true`。 这是一种 null 检查格式：如果方法返回 `false`，调用方不需要 null 检查参数。 若要使这样的方法可识别为 null，需要将参数设置为可为 null 的引用类型，并添加 `NotNullWhen` 特性：
 
 ```csharp
-bool IsNullOrEmpty([NotNullWhen(false)]string? value);
+bool IsNullOrEmpty([NotNullWhen(false)] string? value);
 ```
 
 该特性通知编译器返回值为 `false` 的任何代码都不需要进行 null 检查。 添加特性通知编译器的静态分析，`IsNullOrEmpty` 执行必要的 null 检查：当它返回 `false` 时，输入参数不是 `null`。
@@ -246,38 +246,44 @@ string? GetTopLevelDomainFromFullUrl(string? url);
 [DoesNotReturn]
 private void FailFast()
 {
-   throw new InvalidOperationException();
+    throw new InvalidOperationException();
 }
 
 public void SetState(object containedField)
 {
-   if (!isInitialized)
-      FailFast();
+    if (!isInitialized)
+    {
+        FailFast();
+    }
 
-   // unreachable code:
-   this.field = containedField;
+    // unreachable code:
+    _field = containedField;
 }
 ```
 
 在第二种情况下，需将 `DoesNotReturnIf` 特性添加到方法的布尔参数中。 你可以修改前面的示例，如下所示：
 
 ```csharp
-private void FailFast([DoesNotReturnIf(false)]bool isValid)
+private void FailFast([DoesNotReturnIf(false)] bool isValid)
 {
-   if (!isValid)
-       throw new InvalidOperationException();
+    if (!isValid)
+    {
+        throw new InvalidOperationException();
+    }
 }
 
 public void SetState(object containedField)
 {
-   FailFast(isInitialized);
+    FailFast(isInitialized);
 
-   // unreachable code when "isInitialized" is false:
-   this.field = containedField;
+    // unreachable code when "isInitialized" is false:
+    _field = containedField;
 }
 ```
 
 ## <a name="summary"></a>总结
+
+[!INCLUDE [C# version alert](../../includes/csharp-version-alert.md)]
 
 添加可为 null 的引用类型提供了一个初始词汇表，用于描述 API 对可能为 `null` 的变量的期望。 其他特性使用更丰富的词汇表来描述变量作为前置条件和后置条件的 null 状态。 这些特性更清楚地描述了你的期望，并为使用 API 的开发人员提供了更好的体验。
 
