@@ -6,23 +6,23 @@ ms.contentlocale: zh-CN
 ms.lasthandoff: 07/01/2020
 ms.locfileid: "85615616"
 ---
-### <a name="xmlwriter-throws-on-invalid-surrogate-pairs"></a><span data-ttu-id="9dcc9-101">XmlWriter 引发无效的代理项对</span><span class="sxs-lookup"><span data-stu-id="9dcc9-101">XmlWriter throws on invalid surrogate pairs</span></span>
+### <a name="xmlwriter-throws-on-invalid-surrogate-pairs"></a><span data-ttu-id="19df1-101">XmlWriter 引发无效的代理项对</span><span class="sxs-lookup"><span data-stu-id="19df1-101">XmlWriter throws on invalid surrogate pairs</span></span>
 
-#### <a name="details"></a><span data-ttu-id="9dcc9-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="9dcc9-102">Details</span></span>
+#### <a name="details"></a><span data-ttu-id="19df1-102">详细信息</span><span class="sxs-lookup"><span data-stu-id="19df1-102">Details</span></span>
 
-<span data-ttu-id="9dcc9-103">对于面向 .NET Framework 4.5.2 或以前的版本的应用程序，使用异常回退处理编写无效的代理项对并不会总是引发异常。</span><span class="sxs-lookup"><span data-stu-id="9dcc9-103">For apps that target the .NET Framework 4.5.2 or previous versions, writing an invalid surrogate pair using exception fallback handling does not always throw an exception.</span></span> <span data-ttu-id="9dcc9-104">对于面向 .NET Framework 4.6 的应用，尝试编写无效的代理项对会引发 <xref:System.ArgumentException?displayProperty=fullName>。</span><span class="sxs-lookup"><span data-stu-id="9dcc9-104">For apps that target the .NET Framework 4.6, attempting to write an invalid surrogate pair throws an <xref:System.ArgumentException?displayProperty=fullName>.</span></span>
+<span data-ttu-id="19df1-103">对于面向 .NET Framework 4.5.2 或以前的版本的应用程序，使用异常回退处理编写无效的代理项对并不会总是引发异常。</span><span class="sxs-lookup"><span data-stu-id="19df1-103">For apps that target the .NET Framework 4.5.2 or previous versions, writing an invalid surrogate pair using exception fallback handling does not always throw an exception.</span></span> <span data-ttu-id="19df1-104">对于面向 .NET Framework 4.6 的应用，尝试编写无效的代理项对会引发 <xref:System.ArgumentException?displayProperty=fullName>。</span><span class="sxs-lookup"><span data-stu-id="19df1-104">For apps that target the .NET Framework 4.6, attempting to write an invalid surrogate pair throws an <xref:System.ArgumentException?displayProperty=fullName>.</span></span>
 
-#### <a name="suggestion"></a><span data-ttu-id="9dcc9-105">建议</span><span class="sxs-lookup"><span data-stu-id="9dcc9-105">Suggestion</span></span>
+#### <a name="suggestion"></a><span data-ttu-id="19df1-105">建议</span><span class="sxs-lookup"><span data-stu-id="19df1-105">Suggestion</span></span>
 
-<span data-ttu-id="9dcc9-106">如有必要，可通过面向 .NET Framework 4.5.2 或更早版本来避免此中断。</span><span class="sxs-lookup"><span data-stu-id="9dcc9-106">If necessary, this break can be avoided by targeting the .NET Framework 4.5.2 or earlier.</span></span> <span data-ttu-id="9dcc9-107">或者，可在编写无效的代理项对前将其预处理为有效的 XML。</span><span class="sxs-lookup"><span data-stu-id="9dcc9-107">Alternatively, invalid surrogate pairs can be pre-processed into valid xml prior to writing them.</span></span>
+<span data-ttu-id="19df1-106">如有必要，可通过面向 .NET Framework 4.5.2 或更早版本来避免此中断。</span><span class="sxs-lookup"><span data-stu-id="19df1-106">If necessary, this break can be avoided by targeting the .NET Framework 4.5.2 or earlier.</span></span> <span data-ttu-id="19df1-107">或者，可在编写无效的代理项对前将其预处理为有效的 XML。</span><span class="sxs-lookup"><span data-stu-id="19df1-107">Alternatively, invalid surrogate pairs can be pre-processed into valid xml prior to writing them.</span></span>
 
-| <span data-ttu-id="9dcc9-108">名称</span><span class="sxs-lookup"><span data-stu-id="9dcc9-108">Name</span></span>    | <span data-ttu-id="9dcc9-109">“值”</span><span class="sxs-lookup"><span data-stu-id="9dcc9-109">Value</span></span>       |
+| <span data-ttu-id="19df1-108">“属性”</span><span class="sxs-lookup"><span data-stu-id="19df1-108">Name</span></span>    | <span data-ttu-id="19df1-109">“值”</span><span class="sxs-lookup"><span data-stu-id="19df1-109">Value</span></span>       |
 |:--------|:------------|
-| <span data-ttu-id="9dcc9-110">范围</span><span class="sxs-lookup"><span data-stu-id="9dcc9-110">Scope</span></span>   | <span data-ttu-id="9dcc9-111">边缘</span><span class="sxs-lookup"><span data-stu-id="9dcc9-111">Edge</span></span>        |
-| <span data-ttu-id="9dcc9-112">Version</span><span class="sxs-lookup"><span data-stu-id="9dcc9-112">Version</span></span> | <span data-ttu-id="9dcc9-113">4.6</span><span class="sxs-lookup"><span data-stu-id="9dcc9-113">4.6</span></span>         |
-| <span data-ttu-id="9dcc9-114">类型</span><span class="sxs-lookup"><span data-stu-id="9dcc9-114">Type</span></span>    | <span data-ttu-id="9dcc9-115">重定目标</span><span class="sxs-lookup"><span data-stu-id="9dcc9-115">Retargeting</span></span> |
+| <span data-ttu-id="19df1-110">范围</span><span class="sxs-lookup"><span data-stu-id="19df1-110">Scope</span></span>   | <span data-ttu-id="19df1-111">边缘</span><span class="sxs-lookup"><span data-stu-id="19df1-111">Edge</span></span>        |
+| <span data-ttu-id="19df1-112">Version</span><span class="sxs-lookup"><span data-stu-id="19df1-112">Version</span></span> | <span data-ttu-id="19df1-113">4.6</span><span class="sxs-lookup"><span data-stu-id="19df1-113">4.6</span></span>         |
+| <span data-ttu-id="19df1-114">类型</span><span class="sxs-lookup"><span data-stu-id="19df1-114">Type</span></span>    | <span data-ttu-id="19df1-115">重定目标</span><span class="sxs-lookup"><span data-stu-id="19df1-115">Retargeting</span></span> |
 
-#### <a name="affected-apis"></a><span data-ttu-id="9dcc9-116">受影响的 API</span><span class="sxs-lookup"><span data-stu-id="9dcc9-116">Affected APIs</span></span>
+#### <a name="affected-apis"></a><span data-ttu-id="19df1-116">受影响的 API</span><span class="sxs-lookup"><span data-stu-id="19df1-116">Affected APIs</span></span>
 
 - <xref:System.Xml.XmlWriter.WriteAttributeString(System.String,System.String)?displayProperty=nameWithType>
 - <xref:System.Xml.XmlWriter.WriteAttributeString(System.String,System.String,System.String)?displayProperty=nameWithType>
