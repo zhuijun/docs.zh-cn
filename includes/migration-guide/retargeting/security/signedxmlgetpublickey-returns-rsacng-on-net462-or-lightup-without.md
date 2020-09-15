@@ -20,7 +20,7 @@ ms.locfileid: "85616026"
 <AppContextSwitchOverrides value="Switch.System.Security.Cryptography.Xml.SignedXmlUseLegacyCertificatePrivateKey=true" />
 ```
 
-| “属性”    | 值       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 边缘        |
 | Version | 4.6.2       |

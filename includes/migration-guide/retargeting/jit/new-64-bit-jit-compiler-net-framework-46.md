@@ -44,7 +44,7 @@ ms.locfileid: "85615606"
 - 对于每台计算机，可以将名为 `useLegacyJit` 的 `REG_DWORD` 值添加到注册表的 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\.NETFramework` 密钥中。 如果值为 `1`，可以启用旧版 64 位 JIT 编译器；如果值为 `0`，可以禁用旧版编译器，启用新版 64 位 JIT 编译器。
 还可以在 [Microsoft Connect](https://connect.microsoft.com/VisualStudio) 上报告 bug，告诉我们你遇到的问题。
 
-| “属性”    | 值       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 边缘        |
 | Version | 4.6         |

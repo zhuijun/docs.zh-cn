@@ -26,7 +26,7 @@ ms.locfileid: "85614370"
 <AppContextSwitchOverrides value="Switch.System.ServiceProcess.DontThrowExceptionsOnStart=false" />
 ```
 
-| “属性”    | 值       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 次要       |
 | Version | 4.7.1       |

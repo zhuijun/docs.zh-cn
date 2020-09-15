@@ -23,7 +23,7 @@ ms.locfileid: "85615610"
 <AppContextSwitchOverrides value="Switch.System.Net.DontEnableSchUseStrongCrypto=true"/>
 ```
 
-| “属性”    | 值       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 次要       |
 | Version | 4.6         |

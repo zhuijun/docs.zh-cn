@@ -30,7 +30,7 @@ System.AppContext.SetSwitch("Switch.System.Activities.UseMD5ForWFDebugger", true
 </configuration>
 ```
 
-| “属性”    | 值       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 次要       |
 | Version | 4.7         |

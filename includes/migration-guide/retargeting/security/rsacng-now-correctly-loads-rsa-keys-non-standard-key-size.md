@@ -16,7 +16,7 @@ ms.locfileid: "85614327"
 
 如果处理依赖于先前行为的逻辑时有任何异常 - 使用非标准密钥大小时引发 <xref:System.Security.Cryptography.CryptographicException?displayProperty=fullName>，请考虑删除该逻辑。
 
-| “属性”    | 值       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 边缘        |
 | Version | 4.6.2       |

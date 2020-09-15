@@ -27,7 +27,7 @@ ms.locfileid: "85615614"
 
 <pre><code class="lang-xml">&lt;AppContextSwitchOverrides value=&quot;Switch.MS.Internal.DoNotApplyLayoutRoundingToMarginsAndBorderThickness=true&quot; /&gt;&#39;.&#13;&#10;</code></pre>
 
-| 名称    | “值”       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 次要       |
 | Version | 4.6         |

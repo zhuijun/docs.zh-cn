@@ -19,7 +19,7 @@ ms.locfileid: "85617520"
 - 如果应用程序是在 .NET Framework 4.6.2 上运行，请处理 `T:System.NullReferenceException`。
 - 升级到 .NET Framework 4.7，这将还原以前的行为并引发 `T:System.ArgumentNullException`。
 
-| “属性”    | 值       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 边缘        |
 | Version | 4.6.2       |

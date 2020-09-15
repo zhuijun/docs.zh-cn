@@ -22,7 +22,7 @@ ms.locfileid: "85617788"
 
 <pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.Workflow.ComponentModel.UseLegacyHashForXomlFileChecksum=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
 
-| 名称    | “值”       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 次要       |
 | Version | 4.8         |

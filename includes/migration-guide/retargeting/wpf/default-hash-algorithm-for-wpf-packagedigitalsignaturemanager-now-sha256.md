@@ -16,7 +16,7 @@ ms.locfileid: "85614407"
 
 面向 .NET Framework 4.7.1 以下框架版本并需要利用此更改的开发人员或者面向 .NET Framework 4.7.1 或更高版本并需要之前功能的开发人员可以正确设置以下 AppContext 标记。  值为 true 将导致 SHA1 作为默认算法使用；而 false 则导致 SHA256 作为默认算法使用。<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.MS.Internal.UseSha1AsDefaultHashAlgorithmForDigitalSignatures=true&quot;/&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
 
-| 名称    | “值”       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 边缘        |
 | Version | 4.7.1       |

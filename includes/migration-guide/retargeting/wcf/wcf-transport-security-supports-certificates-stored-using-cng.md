@@ -37,7 +37,7 @@ AppContext.SetSwitch(disableCngCertificates, False)
 
 请注意，鉴于有此更改，将不再执行任何依赖无法尝试使用 CNG 证书启动安全通信的异常处理代码。
 
-| “属性”    | 值       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 次要       |
 | Version | 4.6.2       |

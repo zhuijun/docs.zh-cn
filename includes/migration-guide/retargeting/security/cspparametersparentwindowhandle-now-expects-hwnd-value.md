@@ -39,7 +39,7 @@ cspParameters.ParentWindowHandle = form.Handle;
 
 相反，如果用户希望在旧版 .NET Framework 中加载应用程序时选择启用 .NET Framework 4.7 运行时上的新行为，则可将 AppContext 开关设置为 `false`。
 
-| “属性”    | 值       |
+| “属性”    | “值”       |
 |:--------|:------------|
 | 范围   | 次要       |
 | Version | 4.7         |
