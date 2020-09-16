@@ -2,15 +2,15 @@
 title: 受信任的外观服务
 ms.date: 03/30/2017
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-ms.openlocfilehash: e7aa5e96fb8104c8140a8cebc6be45d2000821aa
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e9459b4cc26ef85adcc59c308d92491fd2d3acba
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591288"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544175"
 ---
 # <a name="trusted-facade-service"></a>受信任的外观服务
-本方案示例演示如何使用 Windows Communication Foundation （WCF）安全基础结构将调用方的标识信息从一个服务流到另一个服务。  
+本方案示例演示如何使用 Windows Communication Foundation (WCF) 安全基础结构将调用方的标识信息从一个服务流到另一个服务。  
   
  使用外观服务向公共网络公开由服务提供的功能是一种常见设计模式。 外观服务通常驻留在周边网络（也称为 DMZ、外围安全区域和被筛选的子网）中，可与实现业务逻辑的后端服务通信和访问内部数据。 外观服务和后端服务之间的通信通道通过防火墙并通常仅限用于单一目的。  
   
@@ -260,7 +260,7 @@ Press <ENTER> to terminate client.
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对 [Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
 2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。  
   
@@ -276,7 +276,7 @@ Press <ENTER> to terminate client.
   
 5. 启动 \client\bin 中的 Client.exe。 客户端活动将显示在客户端控制台应用程序上。  
   
-6. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+6. 如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 #### <a name="to-clean-up-after-the-sample"></a>运行示例后进行清理  
   
@@ -287,6 +287,6 @@ Press <ENTER> to terminate client.
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[Windows Communication Foundation (wcf) ，并 Windows Workflow Foundation (的 WF](https://www.microsoft.com/download/details.aspx?id=21459)) .NET Framework Windows Communication Foundation ([!INCLUDE[wf1](../../../../includes/wf1-md.md)] 此示例位于以下目录：  
 >
-> `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\TrustedFacade`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\TrustedFacade`

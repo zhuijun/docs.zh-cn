@@ -22,18 +22,18 @@ helpviewer_keywords:
 - Sub Dispose destructor
 - garbage collection [Visual Basic], Visual Basic
 ms.assetid: f1ee8458-b156-44e0-9a8a-5dd171648cd8
-ms.openlocfilehash: e81e131933e0997756ed4185a3ceb12ad19b78de
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a32a5d075b5b1d02632c80216e7c2c12920bf4a2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84392878"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544136"
 ---
 # <a name="object-lifetime-how-objects-are-created-and-destroyed-visual-basic"></a>对象生存期：如何创建和销毁对象 (Visual Basic)
 
-使用 `New` 关键字创建类的实例（即对象）。 通常，初始化任务必须在使用之前在新对象上执行。 常见的初始化任务包括打开文件、连接到数据库以及读取注册表项的值。 Visual Basic 使用称为*构造函数*（允许控制初始化的特殊方法）的过程来控制新对象的初始化。
+使用 `New` 关键字创建类的实例（即对象）。 通常，初始化任务必须在使用之前在新对象上执行。 常见的初始化任务包括打开文件、连接到数据库以及读取注册表项的值。 Visual Basic 使用称为 " *构造函数* " 的过程来控制新对象的初始化， (允许控制初始化) 的特殊方法。
 
-对象离开范围之后，由公共语言运行时 (CLR) 进行释放。 Visual Basic 使用称为*析构函数*的过程控制系统资源的发行。 同时，构造函数和析构函数支持强大、可预测的类库的创建。
+对象离开范围之后，由公共语言运行时 (CLR) 进行释放。 Visual Basic 使用称为 *析构函数*的过程控制系统资源的发行。 同时，构造函数和析构函数支持强大、可预测的类库的创建。
 
 ## <a name="using-constructors-and-destructors"></a>使用构造函数和析构函数
 
@@ -60,7 +60,7 @@ ms.locfileid: "84392878"
 释放对象之前，CLR 为定义 `Finalize` 过程的对象自动调用 `Sub Finalize` 方法。 `Finalize` 方法可包含恰在销毁对象之前需执行的代码，如关闭文件并保存状态消息的代码。 执行 `Sub Finalize` 会导致性能略微下降，所以应仅在需要显式释放对象时才定义 `Sub Finalize` 方法。
 
 > [!NOTE]
-> CLR 中的垃圾回收器不会（并且不能）处置*非托管对象*，即操作系统直接在 CLR 环境外部执行的对象。 这是因为不同的非托管对象必须以不同的方式释放。 此信息不与非托管对象直接关联；必须存在于此对象的相应文档。 使用非托管对象的类必须在其 `Finalize` 方法中释放它们。
+> CLR 中的垃圾回收器不会 (，也不能) 处置 *非托管对象*，即操作系统直接在 CLR 环境之外执行的对象。 这是因为不同的非托管对象必须以不同的方式释放。 此信息不与非托管对象直接关联；必须存在于此对象的相应文档。 使用非托管对象的类必须在其 `Finalize` 方法中释放它们。
 
 `Finalize` 析构函数是一种仅可从其所属的类或派生类中调用的受保护方法。 系统在对象被销毁时自动调用 `Finalize`，所以你不应从派生类的 `Finalize` 实现的外部显式调用 `Finalize`。
 
@@ -149,16 +149,16 @@ End Sub
 
 ## <a name="garbage-collection-and-the-finalize-destructor"></a>垃圾回收和 Finalize 析构函数
 
-.NET Framework 使用*引用跟踪垃圾回收*系统定期释放未使用的资源。 Visual Basic 6.0 及更早版本使用称为 "*引用计数*" 的不同系统来管理资源。 尽管两个系统自动执行同一功能，但还是有一些重要的区别。
+.NET Framework 使用 *引用跟踪垃圾回收* 系统定期释放未使用的资源。 Visual Basic 6.0 及更早版本使用称为 " *引用计数* " 的不同系统来管理资源。 尽管两个系统自动执行同一功能，但还是有一些重要的区别。
 
-当系统确定不再需要这些对象时，CLR 将定期对其进行销毁。 系统资源短缺时对象释放得更快，而非短缺时释放频率更低。 对象失去范围到 CLR 释放它之间出现延迟，这意味着与 Visual Basic 6.0 及更低版本不同，你无法确定销毁对象的确切时间。 在这种情况下，认为对象具有*不确定性的生存期*。 在大多数情况下，非确定性生存期不会更改你编写应用程序的方式，只要你记住`Finalize` 析构函数可能不会在对象失去范围时立即执行。
+当系统确定不再需要这些对象时，CLR 将定期对其进行销毁。 系统资源短缺时对象释放得更快，而非短缺时释放频率更低。 对象失去范围到 CLR 释放它之间出现延迟，这意味着与 Visual Basic 6.0 及更低版本不同，你无法确定销毁对象的确切时间。 在这种情况下，认为对象具有 *不确定性的生存期*。 在大多数情况下，非确定性生存期不会更改你编写应用程序的方式，只要你记住`Finalize` 析构函数可能不会在对象失去范围时立即执行。
 
 垃圾回收系统间的另一个区别涉及到 `Nothing` 的使用。 为了在 Visual Basic 6.0 及更低版本中利用引用计数，程序员有时将 `Nothing` 分配到对象变量以释放这些变量持有的引用。 如果变量持有对对象的最后引用，则会立即释放该对象的资源。 在 Visual Basic 的更高版本中，虽然可能存在此过程仍有用的情况，但执行此过程不会使引用的对象立即释放其资源。 若要立即释放资源，请使用对象的 <xref:System.IDisposable.Dispose%2A> 方法（如果可用）。 只有当变量的生存期相对于垃圾回收器用于检测孤立对象的时间来说很长时，你才应该将变量设置为 `Nothing`。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.IDisposable.Dispose%2A>
-- [组件的初始化和终止](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ws9dc6t6(v=vs.120))
+- [组件的初始化和终止](/previous-versions/visualstudio/visual-studio-2013/ws9dc6t6(v=vs.120))
 - [New 运算符](../../../language-reference/operators/new-operator.md)
-- [清理非托管资源](../../../../standard/garbage-collection/unmanaged.md)
-- [Nothing](../../../language-reference/nothing.md)
+- [清理未托管资源](../../../../standard/garbage-collection/unmanaged.md)（清理未托管资源）
+- [没](../../../language-reference/nothing.md)

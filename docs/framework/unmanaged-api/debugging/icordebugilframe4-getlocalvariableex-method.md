@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 0c8676f8-ca0d-4998-b64d-fefac7e38912
 topic_type:
 - apiref
-ms.openlocfilehash: 8d6ef550309ea7f8bae616a5f7e5c41b4f07374a
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: 7c43c32e10d8e10b0f843795bbc3f0f3bc20529c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83213720"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544240"
 ---
 # <a name="icordebugilframe4getlocalvariableex-method"></a>ICorDebugILFrame4::GetLocalVariableEx 方法
 [仅在 .NET Framework 4.5.2 及更高版本中受支持]  
@@ -36,7 +36,7 @@ HRESULT GetLocalVariableEx(
   
 ## <a name="parameters"></a>参数  
  `flags`  
- 中一个[ILCodeKind](ilcodekind-enumeration.md)枚举成员，用于指定在探查器 ReJIT 检测中添加的变量是否包含在帧中。  
+ 中一个 [ILCodeKind](ilcodekind-enumeration.md) 枚举成员，用于指定在探查器 ReJIT 检测中添加的变量是否包含在帧中。  
   
  `dwIndex`  
  [in] IL 堆栈帧中局部变量的索引。  
@@ -45,7 +45,7 @@ HRESULT GetLocalVariableEx(
  弄指向表示检索到的值的 "ICorDebugValue" 对象地址的指针。  
   
 ## <a name="remarks"></a>备注  
- 此方法类似于[GetLocalVariable](icordebugilframe-getlocalvariable-method.md)方法，不同之处在于它还可以访问在探查器 ReJIT 检测中添加的变量。 使用的值调用此方法 `flags` `ILCODE_ORIGINAL_IL` 等效于调用[GetLocalVariable](icordebugilframe-getlocalvariable-method.md); 如果使用附加的局部变量检测方法，则不能访问这些变量。 `ILCODE_REJIT_IL` 使调试器能够访问在探查器 ReJIT 检测中添加的局部变量。 如果未检测到 IL，则此方法将返回 `E_INVALIDARG`。  
+ 此方法类似于 [GetLocalVariable](icordebugilframe-getlocalvariable-method.md) 方法，不同之处在于它还可以访问在探查器 ReJIT 检测中添加的变量。 使用的值调用此方法 `flags` `ILCODE_ORIGINAL_IL` 等效于调用 [GetLocalVariable](icordebugilframe-getlocalvariable-method.md); 如果使用附加的局部变量检测方法，则不能访问这些变量。 `ILCODE_REJIT_IL` 使调试器能够访问在探查器 ReJIT 检测中添加的局部变量。 如果未检测到 IL，则此方法将返回 `E_INVALIDARG`。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
@@ -60,4 +60,4 @@ HRESULT GetLocalVariableEx(
 
 - [ICorDebugILFrame4 接口](icordebugilframe4-interface.md)
 - [调试接口](debugging-interfaces.md)
-- [ReJIT：操作方法指南](https://docs.microsoft.com/archive/blogs/davbr/rejit-a-how-to-guide)
+- [ReJIT：操作方法指南](/archive/blogs/davbr/rejit-a-how-to-guide)

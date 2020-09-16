@@ -5,17 +5,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6c804e4d-f348-4afd-9f63-d3f0f24bc6a9
-ms.openlocfilehash: 33f26896dd0d4ff08beb4a011fa6bd468cba7207
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 38c43fa509b5259aa94ca416aadb51b405fc5dc7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70250758"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542393"
 ---
 # <a name="how-to-call-model-defined-functions-in-queries"></a>如何：在查询中调用模型定义的函数
 本主题介绍如何从 LINQ to Entities 查询中调用在概念模型中定义的函数。  
   
- 下面的过程提供了从 LINQ to Entities 查询中调用模型定义函数的高级大纲。 后面的示例提供了有关该过程中各个步骤的更多详细信息。 这些过程假定您在概念模型中定义了一个函数。 有关详细信息，请参阅[如何：在概念模型](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456812(v=vs.100))中定义自定义函数。  
+ 下面的过程提供了从 LINQ to Entities 查询中调用模型定义函数的高级大纲。 后面的示例提供了有关该过程中各个步骤的更多详细信息。 这些过程假定您在概念模型中定义了一个函数。 有关详细信息，请参阅 [如何：在概念模型中定义自定义函数](/previous-versions/dotnet/netframework-4.0/dd456812(v=vs.100))。  
   
 ### <a name="to-call-a-function-defined-in-the-conceptual-model"></a>调用在概念模型中定义的函数  
   
@@ -24,9 +24,9 @@ ms.locfileid: "70250758"
 2. 在 LINQ to Entities 查询中调用该函数。  
   
 ## <a name="example"></a>示例  
- 下面的示例演示如何从 LINQ to Entities 查询中调用在概念模型中定义的函数。 本示例使用 School 模型。 有关 School 模型的信息，请参阅[创建 School 示例数据库](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100))和[生成 school .edmx 文件](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399739(v=vs.100))。  
+ 下面的示例演示如何从 LINQ to Entities 查询中调用在概念模型中定义的函数。 本示例使用 School 模型。 有关 School 模型的信息，请参阅 [创建 School 示例数据库](/previous-versions/dotnet/netframework-4.0/bb399731(v=vs.100)) 和 [生成 school .edmx 文件](/previous-versions/dotnet/netframework-4.0/bb399739(v=vs.100))。  
   
- 以下概念模型函数返回教师已聘用的年数。 有关向概念模型添加函数的信息，请参阅[如何：在概念模型](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd456812(v=vs.100))中定义自定义函数。）  
+ 以下概念模型函数返回教师已聘用的年数。 有关向概念模型添加函数的信息，请参阅 [如何：在概念模型中定义自定义函数](/previous-versions/dotnet/netframework-4.0/dd456812(v=vs.100))。 )   
   
  [!code-xml[DP ConceptualModelFunctions#1](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp conceptualmodelfunctions/xml/school.edmx#1)]
   
@@ -44,7 +44,7 @@ ms.locfileid: "70250758"
   
 ## <a name="see-also"></a>请参阅
 
-- [.edmx 文件概述](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
+- [.edmx 文件概述](/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))
 - [LINQ to Entities 中的查询](queries-in-linq-to-entities.md)
 - [在 LINQ to Entities 查询中调用函数](calling-functions-in-linq-to-entities-queries.md)
 - [如何：调用模型定义的函数作为对象方法](how-to-call-model-defined-functions-as-object-methods.md)
