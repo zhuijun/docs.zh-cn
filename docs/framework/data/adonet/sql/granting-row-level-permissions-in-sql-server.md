@@ -2,12 +2,12 @@
 title: 在 SQL Server 中授予行级权限
 ms.date: 03/30/2017
 ms.assetid: a55aaa12-34ab-41cd-9dec-fd255b29258c
-ms.openlocfilehash: df5fcb4a6c73e12bec2ab17501fdfb02cf672324
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0b34eaee4b66a2be82049816f0a98b9f53012303
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782362"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554848"
 ---
 # <a name="granting-row-level-permissions-in-sql-server"></a>在 SQL Server 中授予行级权限
 
@@ -23,7 +23,7 @@ ms.locfileid: "70782362"
 
 - 启用行级筛选：
 
-  - 如果你使用的是 SQL Server 2016 或更高版本，或使用的是 [Azure SQL 数据库](https://docs.microsoft.com/azure/sql-database/)，则创建在表格中添加谓词的安全策略，该表格将返回的行限制为符合当前数据库用户（使用 CURRENT_USER() 内置函数）或当前登录名（使用 SUSER_SNAME() 内置函数）的行：
+  - 如果你使用的是 SQL Server 2016 或更高版本，或使用的是 [Azure SQL 数据库](/azure/sql-database/)，则创建在表格中添加谓词的安全策略，该表格将返回的行限制为符合当前数据库用户（使用 CURRENT_USER() 内置函数）或当前登录名（使用 SUSER_SNAME() 内置函数）的行：
 
       ```sql
       CREATE SCHEMA Security
@@ -63,10 +63,10 @@ ms.locfileid: "70782362"
 
 ## <a name="see-also"></a>请参阅
 
-- [行级别安全性](/sql/relational-databases/security/row-level-security)
+- [行级安全性](/sql/relational-databases/security/row-level-security)
 - [保证 ADO.NET 应用程序的安全](../securing-ado-net-applications.md)
 - [SQL Server 安全性概述](overview-of-sql-server-security.md)
-- [SQL Server 中的应用程序安全性方案](application-security-scenarios-in-sql-server.md)
+- [SQL Server 中的应用程序安全方案](application-security-scenarios-in-sql-server.md)
 - [在 SQL Server 中使用存储过程管理权限](managing-permissions-with-stored-procedures-in-sql-server.md)
-- [在 SQL Server 中编写安全的动态 SQL](writing-secure-dynamic-sql-in-sql-server.md)
+- [在 SQL Server 中编写安全动态 SQL](writing-secure-dynamic-sql-in-sql-server.md)
 - [ADO.NET 概述](../ado-net-overview.md)

@@ -2,12 +2,12 @@
 title: 保证应用程序的安全
 ms.date: 03/30/2017
 ms.assetid: 005a1d43-6ee5-471e-ad98-1d30a44d49d5
-ms.openlocfilehash: 1e08bb2386dff5d824d46aba652609ec5a373008
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: af184f64b43c2d3dc39f8c0add08940d3b002c24
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374515"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550750"
 ---
 # <a name="securing-adonet-applications"></a>保护 ADO.NET 应用程序
 
@@ -48,16 +48,16 @@ ms.locfileid: "86374515"
  [安全性](../../../standard/security/index.md)  
  包含一些链接，这些链接指向介绍 .NET 中的所有安全方面的文章。  
   
- [安全性工具](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/7w3fd0wb(v=vs.90))  
+ [安全性工具](/previous-versions/visualstudio/visual-studio-2008/7w3fd0wb(v=vs.90))  
  用于保证安全策略的安全和对其进行管理的 .NET Framework 工具。  
   
- [创建安全应用程序的资源](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms165101(v=vs.100))  
+ [创建安全应用程序的资源](/previous-versions/visualstudio/visual-studio-2010/ms165101(v=vs.100))  
  提供指向用于创建安全应用程序的文章的链接。  
   
  [安全参考书目](/visualstudio/ide/securing-applications)  
  提供联机和印刷资料中提供的外部资源的链接。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [ADO.NET](index.md)
 - [ADO.NET 概述](ado-net-overview.md)

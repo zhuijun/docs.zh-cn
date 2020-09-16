@@ -6,16 +6,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
-ms.openlocfilehash: 739cb6971209792724a2e939ca4f4821d5879c8c
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: f6e95ce58e055f0c745b781c664309e4ef91ffc6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247786"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554008"
 ---
 # <a name="create-the-data-service"></a>创建数据服务
 
-在本主题中，您将创建一个示例数据服务，该服务使用 WCF 数据服务公开基于 Northwind 示例数据库的 Open Data Protocol （OData）源。 此任务涉及以下几个基本步骤：
+在本主题中，你将创建一个示例数据服务，该服务使用 WCF 数据服务公开基于 Northwind 示例数据库的 Open Data Protocol (OData) 源。 此任务涉及以下几个基本步骤：
 
 1. 创建 ASP.NET Web 应用程序。
 
@@ -29,31 +29,31 @@ ms.locfileid: "85247786"
 
 1. 在 Visual Studio 的“文件”菜单中，依次选择“新建” > “项目”    。
 
-1. 在 "**新建项目**" 对话框中，在 "Visual Basic" 或 "Visual c #" 下选择 " **web** " 类别，然后选择 " **ASP.NET web 应用程序**"。
+1. 在 " **新建项目** " 对话框中，在 "Visual Basic" 或 "Visual c #" 下选择 " **web** " 类别，然后选择 " **ASP.NET web 应用程序**"。
 
 1. 输入 `NorthwindService` 作为项目名称，然后选择 **"确定"**。
 
-1. 在 "**新建 ASP.NET Web 应用程序**" 对话框中，选择 "**空**"，然后选择 **"确定"**。
+1. 在 " **新建 ASP.NET Web 应用程序** " 对话框中，选择 " **空** "，然后选择 **"确定"**。
 
 1. （可选）为 Web 应用程序指定一个特定的端口号。 注意： `12345` 此系列快速入门主题中使用了端口号。
 
-    1. 在**解决方案资源管理器**中，右键单击刚创建的 ASP.NET 项目，然后选择 "**属性**"。
+    1. 在 **解决方案资源管理器**中，右键单击刚创建的 ASP.NET 项目，然后选择 " **属性**"。
 
-    2. 选择 " **Web** " 选项卡，并将 "**特定端口**" 文本框的值设置为 `12345` 。
+    2. 选择 " **Web** " 选项卡，并将 " **特定端口** " 文本框的值设置为 `12345` 。
 
 ## <a name="define-the-data-model"></a>定义数据模型
 
 1. 在**解决方案资源管理器**中，右键单击 ASP.NET 项目的名称，然后单击 "**添加**  >  **新项**"。
 
-2. 在 "**添加新项**" 对话框中，选择 "**数据**" 类别，然后选择 " **ADO.NET 实体数据模型**"。
+2. 在 " **添加新项** " 对话框中，选择 " **数据** " 类别，然后选择 " **ADO.NET 实体数据模型**"。
 
 3. 对于数据模型的名称，请输入 `Northwind.edmx` 。
 
-4. 在**实体数据模型向导**中，选择 "**数据库中的 EF 设计器**"，然后单击 "**下一步**"。
+4. 在 **实体数据模型向导**中，选择 " **数据库中的 EF 设计器**"，然后单击 " **下一步**"。
 
-5. 执行以下步骤之一，将数据模型连接到数据库，然后单击 "**下一步**"：
+5. 执行以下步骤之一，将数据模型连接到数据库，然后单击 " **下一步**"：
 
-    - 如果尚未配置数据库连接，请单击 "**新建连接**" 并创建一个新连接。 有关详细信息，请参阅 [How to: Create Connections to SQL Server Databases](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90))。 此 SQL Server 实例必须附加了 Northwind 示例数据库。
+    - 如果尚未配置数据库连接，请单击 " **新建连接** " 并创建一个新连接。 有关详细信息，请参阅 [How to: Create Connections to SQL Server Databases](/previous-versions/visualstudio/visual-studio-2008/s4yys16a(v=vs.90))。 此 SQL Server 实例必须附加了 Northwind 示例数据库。
 
          \- 或 -
 
@@ -61,7 +61,7 @@ ms.locfileid: "85247786"
 
 6. 在向导的最后一页中，选中数据库中所有表对应的复选框，并清除视图和存储过程对应的复选框。
 
-7. 单击 **“完成”** 关闭向导。
+7. 单击 " **完成** " 关闭向导。
 
 ## <a name="create-the-wcf-data-service"></a>创建 WCF 数据服务
 
@@ -76,7 +76,7 @@ ms.locfileid: "85247786"
 
 3. 对于服务的名称，请键入 `Northwind` 。
 
-     Visual Studio 将为新服务创建 XML 标记和代码文件。 默认情况下，代码编辑器窗口将打开。 在**解决方案资源管理器**中，该服务的名称为 Northwind，扩展名为*svc.cs*或 *.svc*。
+     Visual Studio 将为新服务创建 XML 标记和代码文件。 默认情况下，代码编辑器窗口将打开。 在 **解决方案资源管理器**中，该服务的名称为 Northwind，扩展名为 *svc.cs* 或 *.svc*。
 
 4. 在数据服务的代码中，用数据模型的实体容器的类型（在此示例中为 `/* TODO: put your data source class name here */`）替换定义数据服务的类定义中的注释 `NorthwindEntities`。 该类定义应如下所示：
 
@@ -104,4 +104,4 @@ ms.locfileid: "85247786"
 
 ## <a name="see-also"></a>请参阅
 
-- [ADO.NET 实体数据模型工具](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))
+- [ADO.NET 实体数据模型工具](/previous-versions/dotnet/netframework-4.0/bb399249(v=vs.100))

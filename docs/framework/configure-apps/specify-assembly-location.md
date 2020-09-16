@@ -7,12 +7,12 @@ helpviewer_keywords:
 - application configuration [.NET Framework]
 - assemblies [.NET Framework], specifying location
 ms.assetid: 1cb92bd7-6bab-44cf-8fd3-36303ce84fea
-ms.openlocfilehash: e14bdc12598d0aa6cdd2789b09a04ab8ed134169
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 3b24ff99eee9027d507ef89ca855162f221f826a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141699"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555115"
 ---
 # <a name="specifying-an-assemblys-location"></a>指定程序集的位置
 可以通过两种方法来指定程序集的位置：  
@@ -21,10 +21,10 @@ ms.locfileid: "85141699"
   
 - 使用 [\<probing>](./file-schema/runtime/probing-element.md) 元素。  
   
- 你还可以使用[.NET Framework 配置工具（mscorcfg.msc）](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100))来指定程序集位置或指定公共语言运行时用于探测程序集的位置。  
+ 你还可以使用 [.NET Framework 配置工具 (mscorcfg.msc) ](/previous-versions/dotnet/netframework-4.0/2bc0cxhc(v=vs.100)) 指定程序集位置，或指定公共语言运行时用于探测程序集的位置。  
   
 ## <a name="using-the-codebase-element"></a>使用 \<codeBase> 元素  
- **\<codeBase>** 只能在计算机配置或同时重定向程序集版本的发行者策略文件中使用元素。 当运行时确定要使用的程序集版本时，它将从确定版本的文件应用基本代码设置。 如果未指定任何代码库，则运行时以正常方式探测程序集。 有关详细信息，请参阅[运行时如何定位程序集](../deployment/how-the-runtime-locates-assemblies.md)。  
+ **\<codeBase>** 只能在计算机配置或同时重定向程序集版本的发行者策略文件中使用元素。 当运行时确定要使用的程序集版本时，它将从确定版本的文件应用基本代码设置。 如果未指定任何代码库，则运行时以正常方式探测程序集。 有关详细信息，请参阅 [运行时如何定位程序集](../deployment/how-the-runtime-locates-assemblies.md)。  
   
  下面的示例演示如何指定程序集的位置。  
   
@@ -44,13 +44,13 @@ ms.locfileid: "85141699"
 </configuration>  
 ```  
   
- 对于所有具有强名称的程序集， **version**特性都是必需的，但对于不具有强名称的程序集，应忽略该特性。 **\<codeBase>** 元素需要**href**特性。 不能在元素中指定版本范围 **\<codeBase>** 。  
+ 对于所有具有强名称的程序集， **version** 特性都是必需的，但对于不具有强名称的程序集，应忽略该特性。 **\<codeBase>** 元素需要**href**特性。 不能在元素中指定版本范围 **\<codeBase>** 。  
   
 > [!NOTE]
 > 如果要为不具有强名称的程序集提供基本代码提示，则提示必须指向应用程序基目录或应用程序基目录的子目录。  
   
 ## <a name="using-the-probing-element"></a>使用 \<probing> 元素  
- 运行时通过探测来查找没有代码库的程序集。 有关探测的详细信息，请参阅[运行时如何定位程序集](../deployment/how-the-runtime-locates-assemblies.md)。  
+ 运行时通过探测来查找没有代码库的程序集。 有关探测的详细信息，请参阅 [运行时如何定位程序集](../deployment/how-the-runtime-locates-assemblies.md)。  
   
  您可以使用 [\<probing>](./file-schema/runtime/probing-element.md) 应用程序配置文件中的元素指定运行时在查找程序集时应搜索的子目录。 下面的示例演示如何指定运行时应搜索的目录。  
   
@@ -64,7 +64,7 @@ ms.locfileid: "85141699"
 </configuration>  
 ```  
   
- **PrivatePath**属性包含运行时应搜索程序集的目录。 如果应用程序位于 C:\Program Files\MyApp，则运行时将查找未在 C:\Program Files\MyApp\Bin、C:\Program Files\MyApp\Bin2\Subbin 和 C:\Program Files\MyApp\Bin3. 中指定基本代码的程序集。 在**privatePath**中指定的目录必须是应用程序基目录的子目录。  
+ **PrivatePath**属性包含运行时应搜索程序集的目录。 如果应用程序位于 C:\Program Files\MyApp，则运行时将查找未在 C:\Program Files\MyApp\Bin、C:\Program Files\MyApp\Bin2\Subbin 和 C:\Program Files\MyApp\Bin3. 中指定基本代码的程序集。 在 **privatePath** 中指定的目录必须是应用程序基目录的子目录。  
   
 ## <a name="see-also"></a>请参阅
 

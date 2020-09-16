@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security-transparent code
 - security-critical code
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
-ms.openlocfilehash: 3b87a48ac3f9925fd868be9e58d5904014ca6c09
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: bbff7b53bacd50746de56c8dba85cdc9e4b1ad9b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309204"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556403"
 ---
 # <a name="security-transparent-code-level-2"></a>安全透明的代码，级别 2
 
@@ -43,7 +43,7 @@ ms.locfileid: "86309204"
 
 ## <a name="usage-examples-and-behaviors"></a>用法示例和行为
 
-若要指定 .NET Framework 4 规则（2级透明度），请对程序集使用以下批注：
+若要指定 .NET Framework 4 个规则 (2 级透明度) ，请对程序集使用以下批注：
 
 ```csharp
 [assembly: SecurityRules(SecurityRuleSet.Level2)]
@@ -166,7 +166,7 @@ ms.locfileid: "86309204"
 以下属性已添加到 <xref:System.Reflection> 命名空间，以确定类型、方法或字段是否为 `SecurityCritical``SecuritySafeCritical` 或 `SecurityTransparent`：<xref:System.Type.IsSecurityCritical%2A>、<xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A> 和 <xref:System.Reflection.MethodBase.IsSecurityTransparent%2A>。 使用这些属性可通过反射而非检查特性是否存在确定透明度。 透明度规则比较复杂，检查特性可能不够充分。
 
 > [!NOTE]
-> `SafeCritical`方法 `true` 对于和都是返回的 <xref:System.Type.IsSecurityCritical%2A> <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A> ，因为 `SafeCritical` 确实是关键的（它具有与关键代码相同的功能，但可以从透明代码调用）。
+> `SafeCritical`方法 `true` 对于和都是返回的 <xref:System.Type.IsSecurityCritical%2A> <xref:System.Reflection.MethodBase.IsSecuritySafeCritical%2A> ，因为 `SafeCritical` 确实是关键的 (它具有与关键代码相同的功能，但可以从透明代码) 调用它。
 
 动态方法继承其附加到的模块的透明度；他们不继承类型的透明度（如果它们附加到一个类型）。
 
@@ -178,7 +178,7 @@ ms.locfileid: "86309204"
 
 <xref:System.Security.SecurityRulesAttribute.SkipVerificationInFullTrust%2A> 属性默认为 `false`，因此该属性必须设置为 `true` 才能跳过验证。 只能出于优化目的跳过验证。 应使用 `transparent` [peverify.exe 工具](../tools/peverify-exe-peverify-tool.md)中的选项确保程序集中的透明代码是可验证的。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [安全透明代码，级别1](security-transparent-code-level-1.md)
-- [安全更改](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)
+- [安全透明的代码，级别 1](security-transparent-code-level-1.md)
+- [安全更改](/previous-versions/dotnet/framework/security/security-changes)

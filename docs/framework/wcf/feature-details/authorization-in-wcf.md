@@ -5,15 +5,15 @@ helpviewer_keywords:
 - authorization [WCF]
 - security [WCF], authorization
 ms.assetid: 8ea0b552-af65-45b0-a157-c6c111b8ce5e
-ms.openlocfilehash: d67d64dcf0003de28775ac947f8b5f72d7c2ba2a
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c86a07b96b15963af9f078b52bc0d28e9a38187a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597626"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556253"
 ---
 # <a name="authorization-in-wcf"></a>WCF 中的授权
-授权是控制对资源（例如服务或文件）的访问和权限的过程。 本节中的主题介绍如何以各种方式在 Windows Communication Foundation （WCF）中执行此基本任务。  
+授权是控制对资源（例如服务或文件）的访问和权限的过程。 本部分中的主题介绍如何以各种方式在 Windows Communication Foundation (WCF) 中执行此基本任务。  
   
 ## <a name="in-this-section"></a>本节内容  
  [访问控制机制](access-control-mechanisms.md)  
@@ -46,7 +46,7 @@ ms.locfileid: "84597626"
 ## <a name="related-sections"></a>相关章节  
  [身份验证](authentication-in-wcf.md)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

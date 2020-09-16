@@ -2,12 +2,12 @@
 title: 集合
 ms.date: 07/20/2015
 ms.assetid: 5f7749f3-aaf2-4319-b63c-bfa72e1e2b7a
-ms.openlocfilehash: f264a0f9ee15707daf4bece5651b9f5f07ebbc39
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 91c6048caf622f21a02032bac31cb2ba5565c54c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400650"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551062"
 ---
 # <a name="collections-visual-basic"></a>集合 (Visual Basic)
 
@@ -30,7 +30,7 @@ ms.locfileid: "84400650"
 
 本部分中的示例使用泛型 <xref:System.Collections.Generic.List%601> 类，通过此类可使用对象的强类型列表。
 
-下面的示例创建一个字符串列表，然后使用[For Each .。。下一](../../language-reference/statements/for-each-next-statement.md)语句。
+下面的示例创建一个字符串列表，然后使用 [For Each .。。下一](../../language-reference/statements/for-each-next-statement.md) 语句。
 
 ```vb
 ' Create a list of strings.
@@ -63,7 +63,7 @@ Next
 'Output: chinook coho pink sockeye
 ```
 
-你可以使用[For .。。Next](../../language-reference/statements/for-next-statement.md)语句，而不是 `For Each` 语句来循环访问集合。 通过按索引位置访问集合元素实现此目的。 元素的索引开始于 0，结束于元素计数减 1。
+你可以使用 [For .。。Next](../../language-reference/statements/for-next-statement.md) 语句，而不是 `For Each` 语句来循环访问集合。 通过按索引位置访问集合元素实现此目的。 元素的索引开始于 0，结束于元素计数减 1。
 
 以下示例通过使用 `For…Next` 而不是 `For Each` 循环访问集合中的元素。
 
@@ -95,7 +95,7 @@ Next
 'Output: chinook pink sockeye
 ```
 
-以下示例从一个泛型列表中删除元素。 而不是 `For Each` 语句， [For .。。使用下一个](../../language-reference/statements/for-next-statement.md)循环访问顺序的语句。 这是因为 <xref:System.Collections.Generic.List%601.RemoveAt%2A> 方法将导致已移除的元素后的元素的索引值减小。
+以下示例从一个泛型列表中删除元素。 而不是 `For Each` 语句， [For .。。使用下一个](../../language-reference/statements/for-next-statement.md) 循环访问顺序的语句。 这是因为 <xref:System.Collections.Generic.List%601.RemoveAt%2A> 方法将导致已移除的元素后的元素的索引值减小。
 
 ```vb
 Dim numbers As New List(Of Integer) From
@@ -330,7 +330,7 @@ End Sub
 
 ## <a name="using-linq-to-access-a-collection"></a>使用 LINQ 访问集合
 
-可以使用 LINQ（语言集成查询）来访问集合。 LINQ 查询提供筛选、排序和分组功能。 有关详细信息，请参阅[Visual Basic 中的入门 LINQ](linq/getting-started-with-linq.md)。
+可以使用 LINQ（语言集成查询）来访问集合。 LINQ 查询提供筛选、排序和分组功能。 有关详细信息，请参阅 [Visual Basic 中的入门 LINQ](linq/getting-started-with-linq.md)。
 
 以下示例运行一个对泛型 `List` 的 LINQ 查询。 LINQ 查询返回一个包含结果的不同集合。
 
@@ -458,7 +458,7 @@ End Class
 
 ## <a name="defining-a-custom-collection"></a>定义自定义集合
 
-可以通过实现 <xref:System.Collections.Generic.IEnumerable%601> 或 <xref:System.Collections.IEnumerable> 接口来定义集合。 有关其他信息，请参阅[枚举集合](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100))。
+可以通过实现 <xref:System.Collections.Generic.IEnumerable%601> 或 <xref:System.Collections.IEnumerable> 接口来定义集合。 有关其他信息，请参阅 [枚举集合](/previous-versions/dotnet/netframework-4.0/hwyysy67(v=vs.100))。
 
 尽管可以定义自定义集合，但通常最好使用包含在 .NET Framework 中的集合，这在本主题前面的[集合类型](#kinds-of-collections)中进行了介绍。
 
@@ -538,13 +538,13 @@ End Class
 
 ## <a name="iterators"></a>迭代器
 
-迭代器用于对集合执行自定义迭代。 迭代器可以是一种方法，或是一个 `get` 访问器。 迭代器使用[Yield](../../language-reference/statements/yield-statement.md)语句每次返回集合中的每个元素。
+迭代器用于对集合执行自定义迭代。 迭代器可以是一种方法，或是一个 `get` 访问器。 迭代器使用 [Yield](../../language-reference/statements/yield-statement.md) 语句每次返回集合中的每个元素。
 
-您可以通过[对每个 .。。下一](../../language-reference/statements/for-each-next-statement.md)语句。 `For Each` 循环的每次迭代都会调用迭代器。 迭代器中到达 `Yield` 语句时，会返回一个表达式，并保留当前在代码中的位置。 下次调用迭代器时，将从该位置重新开始执行。
+您可以通过 [对每个 .。。下一](../../language-reference/statements/for-each-next-statement.md) 语句。 `For Each` 循环的每次迭代都会调用迭代器。 迭代器中到达 `Yield` 语句时，会返回一个表达式，并保留当前在代码中的位置。 下次调用迭代器时，将从该位置重新开始执行。
 
-有关详细信息，请参阅[迭代器（Visual Basic）](iterators.md)。
+有关详细信息，请参阅 [迭代器 (Visual Basic) ](iterators.md)。
 
-下面的示例使用迭代器方法。 迭代器方法的 `Yield` 语句位于[For .。。下一个](../../language-reference/statements/for-next-statement.md)循环。 在 `ListEvenNumbers` 方法中，`For Each` 语句体的每次迭代都会创建对迭代器方法的调用，并将继续到下一个 `Yield` 语句。
+下面的示例使用迭代器方法。 迭代器方法的 `Yield` 语句位于 [For .。。下一个](../../language-reference/statements/for-next-statement.md) 循环。 在 `ListEvenNumbers` 方法中，`For Each` 语句体的每次迭代都会创建对迭代器方法的调用，并将继续到下一个 `Yield` 语句。
 
 ```vb
 Public Sub ListEvenNumbers()
@@ -571,7 +571,7 @@ End Function
 ## <a name="see-also"></a>请参阅
 
 - [集合初始值设定项](../language-features/collection-initializers/index.md)
-- [编程概念（Visual Basic）](index.md)
+- [Visual Basic 的编程概念 () ](index.md)
 - [Option Strict 语句](../../language-reference/statements/option-strict-statement.md)
 - [LINQ to Objects (Visual Basic)](linq/linq-to-objects.md)
 - [并行 LINQ (PLINQ)](../../../standard/parallel-programming/introduction-to-plinq.md)

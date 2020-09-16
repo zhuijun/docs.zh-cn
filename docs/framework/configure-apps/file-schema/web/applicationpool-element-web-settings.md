@@ -5,12 +5,12 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: 6feaa801610fa0ffbbf47575f25aff29fa46a66c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ca474cdcaeaac7b1c32efa5c58f4b5bb5b7f7895
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152849"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557237"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool> 元素（网络设置）
 指定 ASP.NET 在 IIS 7.0 或更高版本的集成模式下运行时，用于管理进程范围行为的配置设置。  
@@ -48,26 +48,26 @@ ms.locfileid: "79152849"
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<system.web>](system-web-element-web-settings.md)|包含有关 ASP.NET 如何与宿主应用程序进行交互的信息。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
 
 在集成模式下运行 IIS 7.0 或更高版本时，此元素组合可让你配置当应用程序托管在 IIS 应用程序池中时，ASP.NET 如何管理线程和队列请求。 如果运行 IIS 6 或在经典模式下或在 ISAPI 模式下运行 IIS 7.0，则将忽略这些设置。  
   
-这些 `applicationPool` 设置适用于在 .NET Framework 的特定版本上运行的所有应用程序池。 这些设置包含在 aspnet .config 文件中。 此文件的版本2.0 和 4.0 .NET Framework。 （版本3.0 和 3.5 .NET Framework 共享包含版本2.0 的 aspnet .config 文件。）  
+这些 `applicationPool` 设置适用于在 .NET Framework 的特定版本上运行的所有应用程序池。 这些设置包含在 aspnet.config 文件中。 此文件的版本2.0 和 4.0 .NET Framework。 .NET Framework 的 (版本3.0 和3.5 与2.0 版本的 aspnet.config 文件共享。 )   
   
 > [!IMPORTANT]
-> 如果在 Windows 7 上运行 IIS 7.0，则可以为每个应用程序池分别配置一个 aspnet .config 文件。 这使你可以为每个应用程序池定制线程性能。  
+> 如果在 Windows 7 上运行 IIS 7.0，则可以为每个应用程序池配置单独的 aspnet.config 文件。 这使你可以为每个应用程序池定制线程性能。  
   
 对于 `maxConcurrentRequestsPerCPU` 设置，.NET Framework 4 中 "5000" 的默认设置有效地关闭了由 ASP.NET 控制的请求阻止，除非你实际每个 CPU 有5000或更多请求。 默认设置依赖于 CLR 线程池来自动管理每个 CPU 的并发。 对于大量使用异步请求处理的应用程序，或在网络 i/o 上阻塞多个长时间运行的请求的应用程序，将从 .NET Framework 4 中增加的默认限制中受益。 如果设置 `maxConcurrentRequestsPerCPU` 为零，则不会使用托管线程处理 ASP.NET 请求。 当应用程序在 IIS 应用程序池中运行时，请求将保留在 IIS i/o 线程上，因此并发会受到 IIS 线程设置的限制。  
   
-此 `requestQueueLimit` 设置与 processModel 元素的属性的工作方式相同 `requestQueueLimit` ，后者是在 ASP.NET 应用程序的 web.config 文件中设置的。 [processModel](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100)) 但是， `requestQueueLimit` aspnet 文件中的设置会覆盖 `requestQueueLimit` web.config 文件中的设置。 换句话说，如果同时设置了这两个属性（默认情况下为 true），则 `requestQueueLimit` aspnet .config 文件中的设置优先。  
+此 `requestQueueLimit` 设置与 processModel 元素的属性的工作方式相同 `requestQueueLimit` ，该元素在 ASP.NET 应用程序的 Web.config 文件中设置。 [processModel](/previous-versions/dotnet/netframework-4.0/7w2sway1(v=vs.100)) 但 `requestQueueLimit` aspnet.config 文件中的设置将覆盖 `requestQueueLimit` Web.config 文件中的设置。 换句话说，如果在默认情况下 (设置这两个属性，则) ，则 `requestQueueLimit` aspnet.config 文件中的设置优先。  
   
 ## <a name="example"></a>示例  
 
-下面的示例演示如何在以下情况下配置 ASP.NET 中的进程范围行为：  
+下面的示例演示如何在以下情况下在 aspnet.config 文件中配置 ASP.NET 进程范围内的行为：  
   
 - 该应用程序托管在 IIS 7.0 应用程序池中。  
   
@@ -97,6 +97,6 @@ ms.locfileid: "79152849"
 |验证文件||  
 |可以为空||  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [\<system.web>元素（Web 设置）](system-web-element-web-settings.md)
+- [\<system.web> 元素 (Web 设置) ](system-web-element-web-settings.md)

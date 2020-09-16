@@ -8,20 +8,20 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: eb3274b98234324bd47aa456feb4845da5a7f3a9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 7a896b12f9e877c00688ade176c1e0c730d9591b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599277"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557601"
 ---
 # <a name="debug-windows-authentication-errors"></a>调试 Windows 身份验证错误
 
-使用 Windows 验证身份作为安全机制时，安全支持提供程序接口 (SSPI) 将处理安全进程。 当 SSPI 层发生安全错误时，它们将由 Windows Communication Foundation （WCF）呈现。 本主题提供一组问题以帮助诊断这些错误。  
+使用 Windows 验证身份作为安全机制时，安全支持提供程序接口 (SSPI) 将处理安全进程。 当 SSPI 层发生安全错误时，它们将被 Windows Communication Foundation (WCF) 出现。 本主题提供一组问题以帮助诊断这些错误。  
   
- 有关 Kerberos 协议的概述，请参阅[Kerberos 说明](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742516(v=technet.10));有关 SSPI 的概述，请参阅[sspi](/windows/win32/secauthn/sspi)。  
+ 有关 Kerberos 协议的概述，请参阅 [Kerberos 说明](/previous-versions/windows/it-pro/windows-2000-server/bb742516(v=technet.10));有关 SSPI 的概述，请参阅 [sspi](/windows/win32/secauthn/sspi)。  
   
- 对于 Windows 身份验证，WCF 通常使用*Negotiate*安全支持提供程序（SSP），该提供程序在客户端和服务之间执行 Kerberos 相互身份验证。 如果 Kerberos 协议不可用，则默认情况下，WCF 将回退到 NT LAN Manager （NTLM）。 但是，你可以将 WCF 配置为仅使用 Kerberos 协议（如果 Kerberos 不可用，则会引发异常）。 你还可以将 WCF 配置为使用受限形式的 Kerberos 协议。  
+ 对于 Windows 身份验证，WCF 通常使用 (SSP) 的 *Negotiate* 安全支持提供程序，该提供程序在客户端和服务之间执行 Kerberos 相互身份验证。 如果 Kerberos 协议不可用，则默认情况下，WCF 将回退到 NT LAN Manager (NTLM) 。 但是，你可以将 WCF 配置为仅使用 Kerberos 协议 (并在 Kerberos 不可用时引发异常) 。 你还可以将 WCF 配置为使用受限形式的 Kerberos 协议。  
   
 ## <a name="debugging-methodology"></a>调试方法  
  基本方法如下所述：  
@@ -63,11 +63,11 @@ ms.locfileid: "84599277"
 ### <a name="kerberos-protocol"></a>Kerberos 协议  
   
 #### <a name="spnupn-problems-with-the-kerberos-protocol"></a>Kerberos 协议的 SPN/UPN 问题  
- 在使用 Windows 身份验证并且 SSPI 使用或协商 Kerberos 协议时，客户端终结点使用的 URL 必须包括服务主机在服务 URL 中的完全限定域名。 此处假定在其下运行服务的帐户可以访问将该计算机添加到 Active Directory 域中时所创建的计算机（默认）服务主体名称 (SPN) 密钥，这通常可以通过在“网络服务”帐户下运行该服务来实现。 如果服务不能访问计算机 SPN 密钥，则必须在客户端的终结点标识中提供在其下运行该服务的帐户的正确 SPN 或用户主体名称 (UPN)。 有关 WCF 如何与 SPN 和 UPN 一起使用的详细信息，请参阅[服务标识和身份验证](service-identity-and-authentication.md)。  
+ 在使用 Windows 身份验证并且 SSPI 使用或协商 Kerberos 协议时，客户端终结点使用的 URL 必须包括服务主机在服务 URL 中的完全限定域名。 此处假定在其下运行服务的帐户可以访问将该计算机添加到 Active Directory 域中时所创建的计算机（默认）服务主体名称 (SPN) 密钥，这通常可以通过在“网络服务”帐户下运行该服务来实现。 如果服务不能访问计算机 SPN 密钥，则必须在客户端的终结点标识中提供在其下运行该服务的帐户的正确 SPN 或用户主体名称 (UPN)。 有关 WCF 如何与 SPN 和 UPN 一起使用的详细信息，请参阅 [服务标识和身份验证](service-identity-and-authentication.md)。  
   
  在负载平衡方案（如网络场或网络园）中，常见的做法是为每个应用程序定义唯一帐户，为该帐户分配 SPN，并确保应用程序的所有服务都使用该帐户来运行。  
   
- 为了获取服务帐户的 SPN，需要具有 Active Directory 域管理员的身份。 有关详细信息，请参阅[适用于 Windows 的 Kerberos 技术补充](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10))。  
+ 为了获取服务帐户的 SPN，需要具有 Active Directory 域管理员的身份。 有关详细信息，请参阅 [适用于 Windows 的 Kerberos 技术补充](/previous-versions/msp-n-p/ff649429(v=pandp.10))。  
   
 #### <a name="kerberos-protocol-direct-requires-the-service-to-run-under-a-domain-machine-account"></a>Kerberos 协议定向要求在域计算机帐户下运行服务  
  当 `ClientCredentialType` 属性设置为 `Windows` 且 <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> 属性设置为 `false` 时，会发生这种情况，如下面的代码所示。  
@@ -99,7 +99,7 @@ ms.locfileid: "84599277"
 ### <a name="ntlm-protocol"></a>NTLM 协议  
   
 #### <a name="negotiate-ssp-falls-back-to-ntlm-but-ntlm-is-disabled"></a>协商 SSP 回退到 NTLM，但 NTLM 已被禁用  
- <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A>属性设置为 `false` ，这将导致 WINDOWS COMMUNICATION FOUNDATION （WCF）在使用 NTLM 时尽力引发异常。 将此属性设置为 `false` 可能不会阻止通过网络发送 NTLM 凭据。  
+ <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A>属性设置为 `false` ，这将导致 WINDOWS COMMUNICATION FOUNDATION (WCF) ，以便在使用 NTLM 时尽力引发异常。 将此属性设置为 `false` 可能不会阻止通过网络发送 NTLM 凭据。  
   
  下面演示了如何禁用回退到 NTLM。  
   
@@ -122,7 +122,7 @@ ms.locfileid: "84599277"
  [!code-csharp[C_DebuggingWindowsAuth#6](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_debuggingwindowsauth/cs/source.cs#6)]
  [!code-vb[C_DebuggingWindowsAuth#6](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_debuggingwindowsauth/vb/source.vb#6)]  
   
- 有关模拟的详细信息，请参阅[委派和模拟](delegation-and-impersonation-with-wcf.md)。  
+ 有关模拟的详细信息，请参阅 [委派和模拟](delegation-and-impersonation-with-wcf.md)。  
   
  或者，客户端正在使用内置帐户 SYSTEM 作为 Windows 服务运行。  
   
@@ -145,7 +145,7 @@ ms.locfileid: "84599277"
 #### <a name="developing-and-deploying-with-different-identities"></a>使用不同的标识开发和部署  
  如果在一台计算机上开发应用程序，并在另一台计算机上部署它，然后在每台计算机上使用不同的帐户类型进行身份验证，则可能遇到不同的行为。 例如，假定使用 `SSPI Negotiated` 身份验证模式，在 Windows XP Pro 计算机上开发应用程序。 如果使用本地用户帐户进行身份验证，则会使用 NTLM 协议。 在开发应用程序后，将服务部署到使用域帐户运行它的 Windows Server 2003 计算机。 此时，客户端将无法对服务进行身份验证，因为它将使用 Kerberos 和域控制器。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Security.WindowsClientCredential>
 - <xref:System.ServiceModel.Security.WindowsServiceCredential>

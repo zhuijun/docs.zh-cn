@@ -2,12 +2,12 @@
 title: 聚合查询
 ms.date: 03/30/2017
 ms.assetid: 13ec5580-05ce-4a1f-9d3d-8660be7891a2
-ms.openlocfilehash: 8defefb39974bea150fed84b0e7404b43882c41c
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 2085808d631d1d9f97573c557e9e66e07113df52
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634737"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554216"
 ---
 # <a name="aggregate-queries"></a>聚合查询
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 支持 `Average`、`Count`、`Max`、`Min` 和 `Sum` 聚合运算符。 请注意 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 中聚合运算符的以下特征：  
@@ -18,11 +18,11 @@ ms.locfileid: "75634737"
   
 - 聚合查询通常返回一个数字，而非一个集合。  
   
-     有关详细信息，请参阅[聚合运算](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/bb546138(v=vs.120))。  
+     有关详细信息，请参阅 [聚合运算](/previous-versions/visualstudio/visual-studio-2013/bb546138(v=vs.120))。  
   
 - 不能对匿名类型调用聚合。  
   
- 以下主题中的示例来自 Northwind 示例数据库。 有关详细信息，请参阅[下载示例数据库](downloading-sample-databases.md)。  
+ 以下主题中的示例来自 Northwind 示例数据库。 有关详细信息，请参阅 [下载示例数据库](downloading-sample-databases.md)。  
   
 ## <a name="in-this-section"></a>本节内容  
  [从数值序列中返回平均值](return-the-average-value-from-a-numeric-sequence.md)  
@@ -45,7 +45,7 @@ ms.locfileid: "75634737"
  提供指向 Visual Basic 和 C# 中 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 查询的链接。  
   
  [查询概念](query-concepts.md)  
- 提供指向一些主题的链接，这些主题说明如何在 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]中设计 LINQ 查询。  
+ 提供指向一些主题的链接，这些主题说明如何在中设计 LINQ 查询 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 。  
   
  [LINQ 查询简介 (C#)](../../../../../csharp/programming-guide/concepts/linq/introduction-to-linq-queries.md)  
  说明查询在 LINQ 中的工作方式。

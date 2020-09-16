@@ -7,12 +7,12 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: ea1b5e668e29d854233d4dde4c0e6152d591da97
-ms.sourcegitcommit: 3824ff187947572b274b9715b60c11269335c181
+ms.openlocfilehash: ee9fe5b3180abcc9ecbc4515e0af1e1c4b2e8b87
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/17/2020
-ms.locfileid: "84903891"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555427"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>服务器端 UI 自动化提供程序的实现
 
@@ -21,7 +21,7 @@ ms.locfileid: "84903891"
 
 本部分将介绍如何实现自定义控件的服务器端 UI 自动化提供程序。
 
-Windows Presentation Foundation （WPF）元素和非 WPF 元素（例如为 Windows 窗体设计的元素）的实现在本质上是不同的。 WPF 元素通过从派生的类提供对的支持 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] <xref:System.Windows.Automation.Peers.AutomationPeer> 。 非 WPF 元素通过提供程序接口的实现提供支持。
+Windows Presentation Foundation (WPF) 元素和非 WPF Windows 窗体 (元素的实现在本质上是不同的。 WPF 元素通过从派生的类提供对的支持 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] <xref:System.Windows.Automation.Peers.AutomationPeer> 。 非 WPF 元素通过提供程序接口的实现提供支持。
 
 <a name="Security_Considerations"></a>
 
@@ -35,13 +35,13 @@ Windows Presentation Foundation （WPF）元素和非 WPF 元素（例如为 Win
 
 ## <a name="provider-implementation-by-windows-presentation-foundation-elements"></a>通过 Windows Presentation Foundation 元素实现的提供程序实现
 
-有关本主题的详细信息，请参阅 [WPF 自定义控件的 UI 自动化](../wpf/controls/ui-automation-of-a-wpf-custom-control.md)。
+有关本主题的详细信息，请参阅 [WPF 自定义控件的 UI 自动化](/dotnet/desktop/wpf/controls/ui-automation-of-a-wpf-custom-control)。
 
 <a name="Provider_Implementation_by_non_WPF_Elements"></a>
 
 ## <a name="provider-implementation-by-non-wpf-elements"></a>通过非 WPF 元素实现的提供程序实现
 
-不属于 WPF 框架但以托管代码（大多数情况下为 Windows 窗体控件）编写的自定义控件， [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 通过实现接口为提供支持。 每个元素必须实现至少一个下一部分中第一个表中列出的接口。 此外，如果该元素支持一个或多个控件模式，它必须实现每个控件模式的相应接口。
+不属于 WPF 框架但以托管代码编写的自定义控件 (最常见的是 Windows 窗体控件) ， [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 通过实现接口为提供支持。 每个元素必须实现至少一个下一部分中第一个表中列出的接口。 此外，如果该元素支持一个或多个控件模式，它必须实现每个控件模式的相应接口。
 
 你的 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 提供程序项目必须引用以下程序集：
 
@@ -190,7 +190,7 @@ Windows Presentation Foundation （WPF）元素和非 WPF 元素（例如为 Win
 
 为此，rebar 的片段根提供程序公开表示带区的子级集。 每个带区包含可能会公开属性和模式的单个提供程序。 在其实现 <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.HostRawElementProvider%2A>的过程中，带区提供程序将返回控件 HWND的默认窗口提供程序，它通过调用 <xref:System.Windows.Automation.Provider.AutomationInteropProvider.HostProviderFromHandle%2A>获取此提供程序，并传入控件的窗口句柄。 最后，rebar 的片段根提供程序将实现 <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride> 接口，并在其实现 <xref:System.Windows.Automation.Provider.IRawElementProviderHwndOverride.GetOverrideProviderForHwnd%2A> 的过程中返回包含在指定 HWND 中的控件的相应带区提供程序。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [UI 自动化提供程序概述](ui-automation-providers-overview.md)
 - [公开服务器端 UI 自动化提供程序](expose-a-server-side-ui-automation-provider.md)

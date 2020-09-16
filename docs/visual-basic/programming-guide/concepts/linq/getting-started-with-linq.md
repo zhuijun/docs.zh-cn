@@ -8,15 +8,15 @@ helpviewer_keywords:
 - LINQ [Visual Basic]
 - LINQ, Visual Basic
 ms.assetid: 53c66373-ff43-431f-b4bb-f98362830279
-ms.openlocfilehash: 97db059c33e8c5603c2bf54bbcf128612a0d028f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cea6a5973104d34c058a51c404c13d26dd1aab14
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398391"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554379"
 ---
 # <a name="getting-started-with-linq-in-visual-basic"></a>Visual Basic 中的 LINQ 入门
-本部分包含可帮助您了解和使用 Visual Basic 和语言集成查询（LINQ）的概述、示例和背景信息。  
+本部分包含可帮助您了解和使用 (LINQ) Visual Basic 和语言集成查询的概述、示例和背景信息。  
   
 ## <a name="in-this-section"></a>本节内容  
  [编写第一个 LINQ 查询](writing-your-first-linq-query.md)  
@@ -53,7 +53,7 @@ ms.locfileid: "84398391"
  [LINQ to Objects (Visual Basic)](linq-to-objects.md)  
  包括一系列有关将 LINQ 用于内存中集合的操作指南主题。  
   
- [LINQ to XML (Visual Basic)](linq-to-xml.md)  
+ [LINQ to XML (Visual Basic)](../../../../standard/linq/linq-xml-overview.md)  
  包含指向说明如何使用 LINQ to XML 的主题的链接，此功能可提供文档对象模型 (DOM) 的内存中文档修改功能，并且支持 LINQ 查询表达式。  
   
  [语言集成查询 (LINQ) (Visual Basic)](index.md)  

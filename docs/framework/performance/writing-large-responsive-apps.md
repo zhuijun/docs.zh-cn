@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 ms.assetid: 123457ac-4223-4273-bb58-3bc0e4957e9d
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 4a9f5d50ad78b2b0bef0ece3c4fce47d2925aca5
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: d74c7b8d80f02283cd681ed0118257ed926bdc83
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063752"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555245"
 ---
 # <a name="writing-large-responsive-net-framework-apps"></a>编写大型的响应式 .NET Framework 应用
 
@@ -25,7 +25,7 @@ ms.locfileid: "88063752"
   
  当你的最终用户与你的应用交互时，他们期望应用能够响应。 永远不应阻止键入或命令处理。 帮助应该迅速弹出，如果用户继续键入则帮助应中止。 你的应用应该避免通过使应用感觉迟钝的长计算阻止 UI 线程。
   
- 有关 Roslyn 编译器的详细信息，请参阅[.NET COMPILER PLATFORM SDK](../../csharp/roslyn-sdk/index.md)。
+ 有关 Roslyn 编译器的详细信息，请参阅 [.NET COMPILER PLATFORM SDK](../../csharp/roslyn-sdk/index.md)。
   
 ## <a name="just-the-facts"></a>事实小结  
  在优化性能和创建响应性 .NET Framework 应用时，请考虑以下事实。
@@ -39,7 +39,7 @@ ms.locfileid: "88063752"
  你应该为应用中的关键客户体验或方案设定性能目标，并编写测试来测量性能。 应用科学的方法调查失败的测试：使用配置文件来指导你、假设有可能是什么问题，并用利用试验或代码更改来测试你的假设。 使用定期测试建立一段时间内的基线性能测量，以便你可以隔离导致性能衰退的更改。 通过以严格的方式处理性能工作，你可以避免将时间浪费在不需要的代码更新上。
   
 ### <a name="fact-3-good-tools-make-all-the-difference"></a>事实 3：好的工具将使一切大不相同  
- 好的工具可以让你快速深入地了解最大的性能问题（CPU、内存或磁盘）并帮助你找到导致那些瓶颈的代码。 Microsoft 提供多种性能工具，如[Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling)和[PerfView](https://www.microsoft.com/download/details.aspx?id=28567)。
+ 好的工具可以让你快速深入地了解最大的性能问题（CPU、内存或磁盘）并帮助你找到导致那些瓶颈的代码。 Microsoft 提供多种性能工具，如 [Visual Studio Profiler](/visualstudio/profiling/beginners-guide-to-performance-profiling) 和 [PerfView](https://www.microsoft.com/download/details.aspx?id=28567)。
   
  PerfView 是一个免费且功能极为强大的工具，它可以帮助你专注于深层问题，如磁盘 I/O、GC 事件和内存。 可以捕获与性能相关的 [Windows 事件跟踪](../wcf/samples/etw-tracing.md) (ETW) 事件，并很轻松地查看每个应用、每个进程、每个堆栈和每个线程信息。 PerfView 向你显示应用分配了多少内存以及分配了何种内存，并显示哪些函数或调用堆栈提供了内存分配以及他们提供了多少。 有关详细信息，请参见丰富的帮助主题、演示以及工具随附的视频（如第 9 频道上的 [PerfView 教程](https://channel9.msdn.com/Series/PerfView-Tutorial)）。
   
@@ -282,7 +282,7 @@ private static string GetStringAndReleaseBuilder(StringBuilder sb)
   
  **示例5： Lambda、List \<T> 和 IEnumerable\<T>**  
   
- 此示例使用 [LINQ 和功能性代码](https://docs.microsoft.com/archive/blogs/charlie/anders-hejlsberg-on-linq-and-functional-programming)在编译器模型中查找符号，给定的名称字符串为：  
+ 此示例使用 [LINQ 和功能性代码](/archive/blogs/charlie/anders-hejlsberg-on-linq-and-functional-programming)在编译器模型中查找符号，给定的名称字符串为：  
   
 ```csharp  
 class Symbol {  
@@ -306,7 +306,7 @@ Func<Symbol, bool> predicate = s => s.Name == name;
      return symbols.FirstOrDefault(predicate);  
 ```  
   
- 第一行中，[Lambda 表达式](../../csharp/language-reference/operators/lambda-expressions.md) `s => s.Name == name` [封盖](https://docs.microsoft.com/archive/blogs/ericlippert/what-are-closures)本地变量 `name`。 这意味着除了针对 `predicate` 所保存的 [委托](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type)分配对象以外，该代码分配了静态类以保存捕获 `name` 的值的环境。 编译器生成的代码如下所示：  
+ 第一行中，[Lambda 表达式](../../csharp/language-reference/operators/lambda-expressions.md) `s => s.Name == name` [封盖](/archive/blogs/ericlippert/what-are-closures)本地变量 `name`。 这意味着除了针对 `predicate` 所保存的 [委托](../../csharp/language-reference/builtin-types/reference-types.md#the-delegate-type)分配对象以外，该代码分配了静态类以保存捕获 `name` 的值的环境。 编译器生成的代码如下所示：  
   
 ```csharp  
 // Compiler-generated class to hold environment state for lambda  
@@ -463,12 +463,12 @@ class Compilation { /*...*/
   
 - 一切皆与分配有关 – 这就是编译器平台团队花大部分时间改进新编译器性能的原因所在。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [此主题的演示视频](https://channel9.msdn.com/Events/TechEd/NorthAmerica/2013/DEV-B333)
 - [性能分析初学者指南](/visualstudio/profiling/beginners-guide-to-performance-profiling)
-- [性能](index.md)
-- [.NET 性能提示](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973839(v%3dmsdn.10))
+- [“性能”](index.md)
+- [.NET 性能提示](/previous-versions/dotnet/articles/ms973839(v=msdn.10))
 - [第 9 频道 PerfView 教程](https://channel9.msdn.com/Series/PerfView-Tutorial)
 - [.NET Compiler Platform SDK](../../csharp/roslyn-sdk/index.md)
 - [GitHub 上的 dotnet/roslyn 存储库](https://github.com/dotnet/roslyn)

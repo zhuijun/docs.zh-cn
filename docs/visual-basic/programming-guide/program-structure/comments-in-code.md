@@ -14,15 +14,15 @@ helpviewer_keywords:
 - comments
 - code comments
 ms.assetid: 90136fba-22eb-49f9-ba81-63db629b4a47
-ms.openlocfilehash: b50e76b8f832c3a214ca54f97bab8b0b6789ac25
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9f9174896181e427c73936a1bb91fa13235e70be
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403312"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550984"
 ---
 # <a name="comments-in-code-visual-basic"></a>代码中的注释 (Visual Basic)
-阅读代码示例时，经常会遇到注释符号 (`'`)。 此符号指示 Visual Basic 编译器忽略它后面的文本或*注释*。 注释是为了方便阅读而为代码添加的简短的解释性说明。  
+阅读代码示例时，经常会遇到注释符号 (`'`)。 此符号指示 Visual Basic 编译器忽略它后面的文本或 *注释*。 注释是为了方便阅读而为代码添加的简短的解释性说明。  
   
  在所有过程的开头加入一段说明过程功能特征（过程的作用）的简短注释是一个很好的编程做法。 这对你自己和检查代码的任何其他人都有好处。 应该把实现的详细信息（过程实现的方式）与描述功能特征的注释分开。 若给说明加入了实现的详细信息，切记在更新函数时对这些详细信息进行更新。  
   
@@ -40,7 +40,7 @@ ms.locfileid: "84403312"
 |||  
 |---|---|  
 |注释类型|注释说明|  
-|用途|描述过程的用途（而不是其实现方式）|  
+|目的|描述过程的用途（而不是其实现方式）|  
 |假设|列举每个外部变量、控件、打开的文件或过程访问的其他元素|  
 |效果|列举每个受影响的外部变量、控件、文件以及它的作用（仅在作用不明显时列举）|  
 |输入|指定自变量的用途|  
@@ -54,14 +54,14 @@ ms.locfileid: "84403312"
   
 - 注释不能与行继续符同行。  
   
- 通过选择一行或多行代码并选择**注释**（ ![ visual studio 中的 Visual Basic 注释按钮 ](./media/comments-in-code/visual-basic-comment-button.gif) ）和**取消注释**（Visual studio 中的 ![ "Visual Basic 取消注释" 按钮 ](./media/comments-in-code/visual-basic-uncomment-button.gif) ） **Edit** ，可以添加或移除代码块的注释符号。  
+ 您可以通过在 Visual Studio 中选择一个或多个代码行，然后选择 " **注释** " ("Visual Basic 注释" 按钮，为代码块添加或删除注释符号 ![ 。 ](./media/comments-in-code/visual-basic-comment-button.gif)) 和 **取消注释** (![ visual studio 中的 Visual Basic 取消注释按钮。 ](./media/comments-in-code/visual-basic-uncomment-button.gif) **编辑** 工具栏上的) 按钮。  
   
 > [!NOTE]
 > 也可以用在文本前加关键字 `REM` 的方式给代码添加注释。 但是， `'` 符号和注释的**Comment** / **取消**注释按钮更易于使用，并且需要的空间和内存更少。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [基本直觉-通过 XML 注释记录代码](https://docs.microsoft.com/archive/msdn-magazine/2009/may/documenting-your-code-with-xml-comments)
+- [基本直觉-通过 XML 注释记录代码](/archive/msdn-magazine/2009/may/documenting-your-code-with-xml-comments)
 - [如何：创建 XML 文档](how-to-create-xml-documentation.md)
 - [XML 注释标记](../../language-reference/xmldoc/index.md)
 - [程序结构和代码约定](program-structure-and-code-conventions.md)

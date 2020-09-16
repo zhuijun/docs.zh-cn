@@ -2,12 +2,12 @@
 title: 为工作流配置跟踪
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
-ms.openlocfilehash: 5ec94d6b8e58012d0c5c8ca8593c3cef81cd9ec3
-ms.sourcegitcommit: 99b153b93bf94d0fecf7c7bcecb58ac424dfa47c
+ms.openlocfilehash: 098b295be00b1b8283e26e79ea14e78634fdb504
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/25/2020
-ms.locfileid: "80248207"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557549"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a>为工作流配置跟踪
 
@@ -50,9 +50,9 @@ instance.Extensions.Add(trackingParticipant);
 
 ### <a name="configuring-workflow-service-tracking"></a>配置工作流服务跟踪
 
-当托管在服务主机中时，<xref:System.ServiceModel.Activities.WorkflowServiceHost>可以将工作流公开为 WCF 服务。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> 是基于工作流的服务的指定 .NET ServiceHost 实现。 本节介绍如何为在 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] 中运行的 <xref:System.ServiceModel.Activities.WorkflowServiceHost> 工作流服务配置跟踪。 通过在 Web.config 文件（对于 Web 承载的服务）或 App.config 文件（对于在独立的应用程序中承载的服务，例如在控制台应用程序中承载的服务）中指定服务行为，或通过使用代码向服务宿主的 <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> 集合中添加与跟踪相关的行为，可以完成上述配置。
+在服务主机中承载工作流时，该工作流可以作为 WCF 服务公开 <xref:System.ServiceModel.Activities.WorkflowServiceHost> 。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> 是基于工作流的服务的指定 .NET ServiceHost 实现。 本节介绍如何为在 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] 中运行的 <xref:System.ServiceModel.Activities.WorkflowServiceHost> 工作流服务配置跟踪。 通过在 Web.config 文件（对于 Web 承载的服务）或 App.config 文件（对于在独立的应用程序中承载的服务，例如在控制台应用程序中承载的服务）中指定服务行为，或通过使用代码向服务宿主的 <xref:System.ServiceModel.Description.ServiceDescription.Behaviors%2A> 集合中添加与跟踪相关的行为，可以完成上述配置。
 
-对于 托管在 中的<xref:System.ServiceModel.WorkflowServiceHost>工作流服务，可以在配置文件<xref:System.Activities.Tracking.EtwTrackingParticipant>中添加使用`behavior`<>元素，如以下示例所示。
+对于中承载的工作流服务 <xref:System.ServiceModel.WorkflowServiceHost> ，可以 <xref:System.Activities.Tracking.EtwTrackingParticipant> 使用 `behavior` 配置文件中的 <> 元素添加，如下面的示例中所示。
 
 ```xml
 <behaviors>
@@ -67,7 +67,7 @@ instance.Extensions.Add(trackingParticipant);
 此外，对于 <xref:System.ServiceModel.WorkflowServiceHost> 中承载的工作流服务，你可以通过代码添加 <xref:System.Activities.Tracking.EtwTrackingParticipant> 行为扩展。 若要添加自定义跟踪参与者，请创建一个新的行为扩展并将其添加到 <xref:System.ServiceModel.ServiceHost> 中，如以下代码示例中所示。
 
 > [!NOTE]
-> 如果要查看演示如何创建添加自定义跟踪参与者的自定义行为元素的示例代码，请参阅[跟踪](./samples/tracking.md)示例。
+> 若要查看演示如何创建添加自定义跟踪参与者的自定义行为元素的示例代码，请参阅 [跟踪](./samples/tracking.md) 示例。
 
 ```csharp
 ServiceHost svcHost = new ServiceHost(typeof(WorkflowService), new
@@ -134,11 +134,11 @@ if (null != workflowServiceHost)
 ```
 
 > [!NOTE]
-> 有关跟踪配置文件的详细信息，请参阅[跟踪配置文件](tracking-profiles.md)。
+> 有关跟踪配置文件的详细信息，请参阅 [跟踪配置文件](tracking-profiles.md)。
 
 ### <a name="configuring-tracking-using-workflowinvoker"></a>配置使用 WorkflowInvoker 的跟踪
 
-若要对使用 <xref:System.Activities.WorkflowInvoker> 执行的工作流配置跟踪，请添加跟踪提供程序作为 <xref:System.Activities.WorkflowInvoker> 实例的扩展。 以下代码示例来自[自定义跟踪](./samples/custom-tracking.md)示例。
+若要对使用 <xref:System.Activities.WorkflowInvoker> 执行的工作流配置跟踪，请添加跟踪提供程序作为 <xref:System.Activities.WorkflowInvoker> 实例的扩展。 下面的代码示例来自 [自定义跟踪](./samples/custom-tracking.md) 示例。
 
 ```csharp
 WorkflowInvoker invoker = new WorkflowInvoker(BuildSampleWorkflow());
@@ -148,41 +148,41 @@ invoker.Invoke();
 
 ### <a name="viewing-tracking-records-in-event-viewer"></a>在事件查看器中查看跟踪记录
 
-在跟踪 WF 执行时有两种特殊的事件查看器日志可供查看 - 分析日志和调试日志。 两者都驻留在 Microsoft&#124;Windows&#124;应用程序应用程序节点下。 此部分内的日志包含来自单一应用程序的事件，而不包含对整个系统范围产生影响的事件。
+在跟踪 WF 执行时有两种特殊的事件查看器日志可供查看 - 分析日志和调试日志。 两者都位于 "Microsoft&#124;Windows&#124;应用程序服务器-应用程序" 节点下。 此部分内的日志包含来自单一应用程序的事件，而不包含对整个系统范围产生影响的事件。
 
 调试跟踪事件将写入调试日志。 若要收集事件查看器中的 WF 调试跟踪事件，请启用调试日志。
 
-1. 要打开事件查看器，请单击"**开始"，** 然后单击"**运行"。** 在"运行"对话框中`eventvwr`，键入 。
+1. 若要打开事件查看器，请单击 " **开始**"，然后单击 " **运行"。** 在 "运行" 对话框中，键入 `eventvwr` 。
 
-2. 在"事件查看器"对话框中，展开**应用程序和服务日志**节点。
+2. 在 "事件查看器" 对话框中，展开 " **应用程序和服务日志** " 节点。
 
-3. 展开**微软****、Windows**和**应用程序应用程序**节点。
+3. 展开 " **Microsoft**"、" **Windows**" 和 " **应用程序服务器** " 节点。
 
-4. 右键单击**应用程序服务器应用程序**节点下的**调试**节点，然后选择**启用日志**。
+4. 右键单击 "**应用程序服务器-应用程序**" 节点下的 "**调试**" 节点，然后选择 "**启用日志**"。
 
 5. 执行启用跟踪的应用程序以生成跟踪事件。
 
-6. 右键单击**调试**节点并选择 **"刷新"。** 跟踪事件应显示在中心窗格中。
+6. 右键单击 " **调试** " 节点，然后选择 " **刷新"。** 跟踪事件应显示在中心窗格中。
 
 WF 4 提供跟踪参与者，可将跟踪记录写入 ETW（Windows 事件跟踪）会话。 ETW 跟踪参与者通过跟踪配置文件配置为订阅跟踪记录。 当启用跟踪时，向 ETW 发出错误跟踪记录。 与 ETW 跟踪参与者发出的跟踪事件相对应的 ETW 跟踪事件（范围介于 100 到 113 之间）将写入分析日志。 
 
 若要查看跟踪记录，请按照以下步骤操作。
 
-1. 要打开事件查看器，请单击"**开始"，** 然后单击"**运行"。** 在"运行"对话框中`eventvwr`，键入 。
+1. 若要打开事件查看器，请单击 " **开始**"，然后单击 " **运行"。** 在 "运行" 对话框中，键入 `eventvwr` 。
 
-2. 在"事件查看器"对话框中，展开**应用程序和服务日志**节点。
+2. 在 "事件查看器" 对话框中，展开 " **应用程序和服务日志** " 节点。
 
-3. 展开**微软****、Windows**和**应用程序应用程序**节点。
+3. 展开 " **Microsoft**"、" **Windows**" 和 " **应用程序服务器** " 节点。
 
-4. 右键单击**应用程序服务器应用程序**节点下的**分析**节点，然后选择**启用日志**。
+4. 右键单击 "**应用程序服务器-应用程序**" 节点下的 "**分析**" 节点，然后选择 "**启用日志**"。
 
 5. 执行启用跟踪的应用程序以生成跟踪记录。
 
-6. 右键单击**分析**节点并选择 **"刷新"。** 跟踪记录应会显示在中心窗格中。
+6. 右键单击 " **分析** " 节点，然后选择 " **刷新"。** 跟踪记录应会显示在中心窗格中。
 
 下图显示了事件查看器中的跟踪事件：
 
-![显示跟踪记录的事件查看器的屏幕截图。](./media/configuring-tracking-for-a-workflow/tracking-event-viewer.png)
+![显示跟踪记录的事件查看器屏幕截图。](./media/configuring-tracking-for-a-workflow/tracking-event-viewer.png)
 
 ### <a name="registering-an-application-specific-provider-id"></a>注册应用程序特定的提供程序 ID
 
@@ -196,7 +196,7 @@ WF 4 提供跟踪参与者，可将跟踪记录写入 ETW（Windows 事件跟踪
     </system.serviceModel>
     ```
 
-2. 从 %windir%_Microsoft.NET_Framework\\\<最新版本的[!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]>_Microsoft.Windows.应用程序服务器.应用程序.man 复制到临时位置，并将其重命名为 Microsoft.Windows.应用程序服务器.Applications_Provider1.man
+2. 将清单文件从%windir%\Microsoft.NET\Framework \\ \<latest version of [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)]> \microsoft.windows.applicationserver.applications.man 复制复制到临时位置，并将其重命名为 ApplicationServer Applications_Provider1。
 
 3. 将清单文件中的 GUID 更改为新的 GUID。
 
@@ -222,7 +222,7 @@ WF 4 提供跟踪参与者，可将跟踪记录写入 ETW（Windows 事件跟踪
 
 6. 按照以下这些步骤生成资源 DLL。
 
-    1. 安装 Windows SDK。 Windows SDK 包括消息编译器[（mc.exe](/windows/win32/wes/message-compiler--mc-exe-)） 和资源编译器 （[rc.exe](/windows/win32/menurc/using-rc-the-rc-command-line-)）.
+    1. 安装 Windows SDK。 Windows SDK 包括消息编译器 ([mc.exe](/windows/win32/wes/message-compiler--mc-exe-)) 和资源[编译器 (rc.exe) 。](/windows/win32/menurc/using-rc-the-rc-command-line-)
 
     2. 在 Windows SDK 命令提示中，对新清单文件运行 mc.exe。
 
@@ -244,13 +244,13 @@ WF 4 提供跟踪参与者，可将跟踪记录写入 ETW（Windows 事件跟踪
         csc /target:library /win32res:Microsoft.Windows.ApplicationServer.Applications_Provider1.res NewProviderReg.cs /out:Microsoft.Windows.ApplicationServer.Applications_Provider1.dll
         ```
 
-    6. 将清单文件中的资源和消息 dll 名称从`Microsoft.Windows.ApplicationServer.Applications.Provider1.man`更改为新的 dll 名称。
+    6. 将清单文件中的资源和消息 dll 名称从更改 `Microsoft.Windows.ApplicationServer.Applications.Provider1.man` 为新的 dll 名称。
 
         ```xml
         <provider name="Microsoft-Windows-Application Server-Applications_Provider1" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}" symbol="Microsoft_Windows_ApplicationServer_ApplicationEvents" resourceFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll" messageFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll" />
         ```
 
-    7. 使用[wevtutil](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732848(v=ws.10))注册清单。
+    7. 使用 [wevtutil](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732848(v=ws.10)) 注册清单。
 
         ```console
         wevtutil im Microsoft.Windows.ApplicationServer.Applications_Provider1.man
@@ -258,5 +258,5 @@ WF 4 提供跟踪参与者，可将跟踪记录写入 ETW（Windows 事件跟踪
 
 ## <a name="see-also"></a>请参阅
 
-- [Windows 服务器应用结构监视](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
-- [使用应用交换矩阵监视应用程序](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))
+- [Windows Server App Fabric 监视](/previous-versions/appfabric/ee677251(v=azure.10))
+- [用 App Fabric 监视应用程序](/previous-versions/appfabric/ee677276(v=azure.10))

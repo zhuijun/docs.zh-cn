@@ -2,12 +2,12 @@
 title: 安全概述
 ms.date: 03/30/2017
 ms.assetid: 33e09965-61d5-48cc-9e8c-3b047cc4f194
-ms.openlocfilehash: 8a036a40d2b1728f39037018c3672551b8b67bd9
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: 4222dd36fe2f693bb16216e01d5e06a8176a7801
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75545021"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550685"
 ---
 # <a name="security-overview"></a>安全概述
 
@@ -19,17 +19,17 @@ ms.locfileid: "75545021"
  最新的安全实现会导致更多的 bug，因为软件会在新的限制下中断，或者必须重新编写才能容纳意想不到的功能。 每行修订的代码都可能引入新 Bug。 因此，您在开发过程的初始阶段就应考虑安全性，使得安全性可与新功能的开发同步进行。
 
 ### <a name="threat-modeling"></a>威胁建模
- 您只有了解系统可能会受到的所有攻击，才能使系统免受这些攻击。 若要确定 ADO.NET 应用程序中安全漏洞的可能性和后果，需要评估安全威胁（称为 "*威胁建模*"）的过程。
+ 您只有了解系统可能会受到的所有攻击，才能使系统免受这些攻击。 若要确定 ADO.NET 应用程序中安全漏洞的可能性和后果，需要评估安全威胁（称为 " *威胁建模*"）的过程。
 
  威胁建模由三个高级步骤组成：了解攻击者的目的、辨别系统安全性和确定威胁。
 
  威胁建模是一种迭代方法，用于评估应用程序中的漏洞，以找到可公开敏感数据的最危险的漏洞。 一旦确定了漏洞，您就可以按安全性对其进行排列，并创建一组按优先顺序排列的措施以应对威胁。
 
-有关更多信息，请参见以下资源：
+有关详细信息，请参阅以下资源：
 
-|资源|描述|
+|资源|说明|
 |--------------|-----------------|
-|安全工程门户上的[威胁建模](https://www.microsoft.com/securityengineering/sdl/threatmodeling)站点|此页上的资源将帮助您了解威胁建模的过程，并帮助您创建可以用于保护自己的应用程序的威胁模型|
+|安全工程门户上的 [威胁建模](https://www.microsoft.com/securityengineering/sdl/threatmodeling) 站点|此页上的资源将帮助您了解威胁建模的过程，并帮助您创建可以用于保护自己的应用程序的威胁模型|
 
 ## <a name="the-principle-of-least-privilege"></a>最低特权原则
  当设计、构建及部署应用程序时，您必须假定您的应用程序将受到攻击。 通常，这些攻击来自使用运行此代码的用户的权限执行的恶意代码， 其他攻击可能源自被攻击者利用的善意代码。 在规划安全性时，始终假设将出现最糟糕的情况。
@@ -40,7 +40,7 @@ ms.locfileid: "75545021"
 
 有关保护应用程序的详细信息，请参阅以下资源：
 
-|资源|描述|
+|资源|说明|
 |--------------|-----------------|
 |[保护应用程序](/visualstudio/ide/securing-applications)|包含一般安全性主题的链接， 还包含保护分布式应用程序、Web 应用程序、移动应用程序和桌面应用程序的主题的链接。|
 
@@ -64,9 +64,9 @@ ms.locfileid: "75545021"
 
 若要将因攻击成功而导致的损害降到最低，请为你的代码选择安全上下文，以便只向资源授予其完成工作所必需的访问权限。
 
-有关更多信息，请参见以下资源：
+有关详细信息，请参阅以下资源：
 
-|资源|描述|
+|资源|说明|
 |--------------|-----------------|
 |[代码访问安全性和 ADO.NET](code-access-security.md)|从 ADO.NET 应用程序角度描述代码访问安全性、基于角色安全性以及部分受信任环境之间的交互。|
 |[代码访问安全性](../../misc/code-access-security.md)|包含描述 .NET Framework 中 CAS 的主题的链接。|
@@ -87,25 +87,25 @@ ms.locfileid: "75545021"
 
 - 为您使用的数据库启用安全审核和记录，以便违反任何安全性时得到警报。
 
-有关更多信息，请参见以下资源：
+有关详细信息，请参阅以下资源：
 
-|资源|描述|
+|资源|说明|
 |--------------|-----------------|
 |[SQL Server 安全性](./sql/sql-server-security.md)|提供 SQL Server 安全性和应用方案的概述，这些应用方案提供用于创建针对 SQL Server 的安全 ADO.NET 应用程序的指南。|
-|[数据访问策略的建议](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|提供用于访问数据和执行数据库操作的建议。|
+|[数据访问策略的建议](/previous-versions/visualstudio/visual-studio-2008/8fxztkff(v=vs.90))|提供用于访问数据和执行数据库操作的建议。|
 
 ## <a name="security-policy-and-administration"></a>安全策略和管理
 
 不正确管理代码访问安全性 (CAS) 策略可能会导致安全漏洞。 应用程序一旦部署，就应使用监视安全性的技术，因为将出现评估为新威胁的风险。
 
-有关更多信息，请参见以下资源：
+有关详细信息，请参阅以下资源：
 
-|资源|描述|
+|资源|说明|
 |--------------|-----------------|
-|[安全策略管理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))|提供有关创建和管理安全策略的信息。|
-|[安全策略最佳实践](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100))|提供描述如何管理安全策略的链接。|
+|[安全策略管理](/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))|提供有关创建和管理安全策略的信息。|
+|[安全策略最佳实践](/previous-versions/dotnet/netframework-4.0/sa4se9bc(v=vs.100))|提供描述如何管理安全策略的链接。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [保证 ADO.NET 应用程序的安全](securing-ado-net-applications.md)
 - [.NET 中的安全性](../../../standard/security/index.md)

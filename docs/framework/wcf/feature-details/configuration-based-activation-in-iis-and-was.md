@@ -2,16 +2,16 @@
 title: IIS 和 WAS 中的基于配置的激活
 ms.date: 03/30/2017
 ms.assetid: 6a927e1f-b905-4ee5-ad0f-78265da38238
-ms.openlocfilehash: 5e1672f4dd67950178c95d3e043e16072fcd0ef4
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f947a64acdf602d12fcd2319a1b994912ecb331e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84593576"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556624"
 ---
 # <a name="configuration-based-activation-in-iis-and-was"></a>IIS 和 WAS 中的基于配置的激活
 
-通常，在 Internet Information Services （IIS）或 Windows 进程激活服务（WAS）下承载 Windows Communication Foundation （WCF）服务时，必须提供 .svc 文件。 .svc 文件包含该服务的名称以及可选的自定义服务主机工厂。 此附加文件将增加可管理性开销。 基于配置的激活功能不要求具有 .svc 文件，因此不会有相关开销。
+通常，当宿主 Windows Communication Foundation (WCF) 服务下 Internet Information Services (IIS) 或 Windows 进程激活服务 () 时，必须提供 .svc 文件。 .svc 文件包含该服务的名称以及可选的自定义服务主机工厂。 此附加文件将增加可管理性开销。 基于配置的激活功能不要求具有 .svc 文件，因此不会有相关开销。
 
 ## <a name="configuration-based-activation"></a>基于配置的激活
 
@@ -40,10 +40,10 @@ ms.locfileid: "84593576"
 > - 配置文件中的注册优先于 .svc、.xamlx、.xoml 或其他文件中的设置。
 > - 发送到 IIS/WAS 的 URI 中的所有“\”（反斜杠）都会自动转换为“/”（正斜杠）。 如果添加的相对地址中含有“\”并且您向 IIS 发送的 URI 使用该相对地址，则反斜杠会转换为正斜杠，并且 IIS 无法将其与相对地址进行匹配。 IIS 会发出跟踪信息，指示未找到任何匹配项。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection.ServiceActivations%2A>
 - [承载服务](../hosting-services.md)
 - [承载工作流服务概述](hosting-workflow-services-overview.md)
 - [\<serviceHostingEnvironment>](../../configure-apps/file-schema/wcf/servicehostingenvironment.md)
-- [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Windows Server App Fabric 承载功能](/previous-versions/appfabric/ee677189(v=azure.10))

@@ -2,32 +2,32 @@
 title: 如何：创建支持凭据
 ms.date: 03/30/2017
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-ms.openlocfilehash: b8e7ddcd6118c77e14e090a0b1fa8d65aeb8e3df
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b181ac72c9f197e9e404f7aa0f04e254abac10da
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597145"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557393"
 ---
 # <a name="how-to-create-a-supporting-credential"></a>如何：创建支持凭据
-自定义安全方案可能要求提供多个凭据。 例如，某个服务可能要求客户端不仅提供用户名和密码，还要提供能够证明客户端用户已满 18 岁的凭据。 第二个凭据是*支持凭据*。 本主题说明如何在 Windows Communication Foundation （WCF）客户端中实现此类凭据。  
+自定义安全方案可能要求提供多个凭据。 例如，某个服务可能要求客户端不仅提供用户名和密码，还要提供能够证明客户端用户已满 18 岁的凭据。 第二个凭据是 *支持凭据*。 本主题说明如何在 Windows Communication Foundation (WCF) 客户端中实现此类凭据。  
   
 > [!NOTE]
-> 支持凭据的规范是 WS-SecurityPolicy 规范的一部分。 有关详细信息，请参阅[Web Services 安全性规范](https://docs.microsoft.com/previous-versions/dotnet/articles/ms951273(v=msdn.10))。  
+> 支持凭据的规范是 WS-SecurityPolicy 规范的一部分。 有关详细信息，请参阅 [Web Services 安全性规范](/previous-versions/dotnet/articles/ms951273(v=msdn.10))。  
   
 ## <a name="supporting-tokens"></a>支持令牌  
- 简而言之，使用消息安全性时，始终使用*主凭据*来保护消息（例如，x.509 证书或 Kerberos 票证）。  
+ 简而言之，使用消息安全性时，始终使用 *主凭据* 来保护消息 (例如，x.509 证书或 Kerberos 票证) 。  
   
- 根据规范的定义，安全绑定使用*令牌*来保护消息交换。 *令牌*是安全凭据的表示形式。  
+ 根据规范的定义，安全绑定使用 *令牌* 来保护消息交换。 *令牌*是安全凭据的表示形式。  
   
- 安全绑定使用在安全绑定策略中标识的主令牌来创建签名。 此签名称为*消息签名*。  
+ 安全绑定使用在安全绑定策略中标识的主令牌来创建签名。 此签名称为 *消息签名*。  
   
  还可以指定其他令牌，以扩充与消息签名相关联的令牌所提供的声明。  
   
 ## <a name="endorsing-signing-and-encrypting"></a>认可、签名和加密  
- 支持凭据会导致在消息内传输*支持令牌*。 WS-SecurityPolicy 规范定义了四种将支持令牌附加到消息的方法，如下表所述。  
+ 支持凭据会导致在消息内传输 *支持令牌* 。 WS-SecurityPolicy 规范定义了四种将支持令牌附加到消息的方法，如下表所述。  
   
-|目的|描述|  
+|目的|说明|  
 |-------------|-----------------|  
 |有符号|支持令牌包含在安全标头中，并由消息签名进行签名。|  
 |认可|*认可令牌*对消息签名进行签名。|  
@@ -35,7 +35,7 @@ ms.locfileid: "84597145"
 |签名和加密|签名的加密支持令牌是在 `wsse:SecurityHeader` 中出现时还进行加密的签名支持令牌。|  
   
 ## <a name="programming-supporting-credentials"></a>对支持凭据进行编程  
- 若要创建使用支持令牌的服务，必须创建 [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) 。 （有关详细信息，请参阅[如何：使用 SecurityBindingElement 创建自定义绑定](how-to-create-a-custom-binding-using-the-securitybindingelement.md)。）  
+ 若要创建使用支持令牌的服务，必须创建 [\<customBinding>](../../configure-apps/file-schema/wcf/custombinding.md) 。  (有关详细信息，请参阅 [如何：使用 SecurityBindingElement 创建自定义绑定](how-to-create-a-custom-binding-using-the-securitybindingelement.md)。 )   
   
  创建自定义绑定的第一步是创建一个安全绑定元素，该元素可以是以下三种类型之一：  
   
@@ -74,12 +74,12 @@ ms.locfileid: "84597145"
   
 ## <a name="example"></a>示例  
   
-### <a name="description"></a>描述  
+### <a name="description"></a>说明  
  下面的示例创建 <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> 的一个实例，并将 <xref:System.ServiceModel.Security.Tokens.KerberosSecurityTokenParameters> 类的一个实例添加到 Endorsing 属性返回的集合中。  
   
 ### <a name="code"></a>代码  
  [!code-csharp[c_SupportingCredential#1](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_supportingcredential/cs/source.cs#1)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：使用 SecurityBindingElement 创建自定义绑定](how-to-create-a-custom-binding-using-the-securitybindingelement.md)

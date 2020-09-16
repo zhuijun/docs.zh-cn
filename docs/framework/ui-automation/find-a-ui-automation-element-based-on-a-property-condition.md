@@ -9,12 +9,12 @@ helpviewer_keywords:
 - elements, finding by property conditions
 - UI Automation, finding elements by property conditions
 ms.assetid: 3acaee5a-6ce8-4c3e-81c8-67e59eb74477
-ms.openlocfilehash: 5e5fa4fde9049bd87b2722fa9b7d084d96ff6f42
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 112f38d6bef726f92dbf13da70b88732929175dd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87168440"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557679"
 ---
 # <a name="find-a-ui-automation-element-based-on-a-property-condition"></a>基于属性条件查找 UI 自动化元素
 > [!NOTE]
@@ -23,7 +23,7 @@ ms.locfileid: "87168440"
  本主题包含示例代码，该代码演示如何 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 基于特定属性在树中查找元素。  
   
 ## <a name="example"></a>示例  
- 在下面的示例中，指定了一组属性条件，这些条件标识树中感兴趣的某个元素（或元素） <xref:System.Windows.Automation.AutomationElement> 。 然后，将使用合并一系列布尔操作的方法对所有匹配元素执行搜索， <xref:System.Windows.Automation.AutomationElement.FindAll%2A> <xref:System.Windows.Automation.AndCondition> 以限制匹配元素的数目。  
+ 在下面的示例中，指定了一组属性条件，这些条件标识某个元素 (或树中的相关) 元素 <xref:System.Windows.Automation.AutomationElement> 。 然后，将使用合并一系列布尔操作的方法对所有匹配元素执行搜索， <xref:System.Windows.Automation.AutomationElement.FindAll%2A> <xref:System.Windows.Automation.AndCondition> 以限制匹配元素的数目。  
   
 > [!NOTE]
 > 在从中搜索时 <xref:System.Windows.Automation.AutomationElement.RootElement%2A> ，应尝试仅获取直接子级。 对后代的搜索可能循环访问数百个甚至数千个元素，这可能导致堆栈溢出。 如果尝试在较低级别上获取特定元素，应该从应用程序窗口或者从较低级别的容器中开始搜索。  
@@ -31,8 +31,8 @@ ms.locfileid: "87168440"
  [!code-csharp[InvokePatternApp#1100](../../../samples/snippets/csharp/VS_Snippets_Wpf/InvokePatternApp/CSharp/InvokePatternApp.cs#1100)]
  [!code-vb[InvokePatternApp#1100](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/InvokePatternApp/VisualBasic/Client.vb#1100)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [InvokePattern 和 ExpandCollapsePattern 菜单项示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771636(v=vs.90))
+- [InvokePattern 和 ExpandCollapsePattern 菜单项示例](/previous-versions/dotnet/netframework-3.5/ms771636(v=vs.90))
 - [获取 UI 自动化元素](obtaining-ui-automation-elements.md)
 - [使用 AutomationID 属性](use-the-automationid-property.md)

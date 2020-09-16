@@ -3,12 +3,12 @@ title: ICorProfilerInfo9 接口
 ms.date: 08/06/2019
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 431a546fb4a3b92b379e273553f0caf540ba1473
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: f38195b1a7983e23c7f5c20055ea8c2a8bfcb7d8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449723"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556845"
 ---
 # <a name="icorprofilerinfo9-interface"></a>ICorProfilerInfo9 接口
 
@@ -23,10 +23,10 @@ ms.locfileid: "77449723"
 |[GetCodeInfo4 方法](icorprofilerinfo9-getcodeinfo4-method.md)| 给定本机代码起始地址，返回存储此代码的虚拟内存块。 |
 
 ## <a name="requirements"></a>要求  
-**平台：** 请参阅[支持 .Net Core 的操作系统](../../../core/install/dependencies.md?pivots=os-windows)。  
+**平台：** 请参阅 [支持 .Net Core 的操作系统](../../../core/install/windows.md?pivots=os-windows)。  
 **头文件：** CorProf.idl、CorProf.h  
-**.Net 版本：** [!INCLUDE[net_core](../../../../includes/net-core-22-md.md)]  
+**.Net 版本：**[!INCLUDE[net_core](../../../../includes/net-core-22-md.md)]  
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [Profiling 接口](profiling-interfaces.md)
+- [分析接口](profiling-interfaces.md)

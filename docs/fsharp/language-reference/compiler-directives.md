@@ -4,12 +4,12 @@ description: '了解 F # 语言预处理器指令、条件编译指令、行指�
 ms.date: 12/10/2018
 f1_keywords:
 - '#endif_FS'
-ms.openlocfilehash: aee307eb7bccc8d91b5162f3f43db3b806b761d0
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: c3e1a07e0e09b5ae090c550368f8a9f8ee575bfb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855369"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557315"
 ---
 # <a name="compiler-directives"></a>编译器指令
 
@@ -26,7 +26,7 @@ ms.locfileid: "87855369"
 |`#if`*符号*|支持条件编译。 如果定义了符号，则包括之后的部分中的代码 `#if` 。 *symbol* 还可以对符号求反 `!` 。|
 |`#else`|支持条件编译。 如果未定义与前面的 `#if` 一起使用的符号，则将一段代码标记为包含在内。|
 |`#endif`|支持条件编译。 标记条件代码段的末尾。|
-|`#`内嵌*int*、<br/>`#`内嵌*int* *字符串*、<br/>`#`内嵌*int* *原义字符串*|指示原始源代码行和文件名以用于调试。 此功能是为生成 F# 源代码的工具而提供的。|
+|`#`内嵌 *int*、<br/>`#`内嵌 *int* *字符串*、<br/>`#`内嵌 *int* *原义字符串*|指示原始源代码行和文件名以用于调试。 此功能是为生成 F# 源代码的工具而提供的。|
 |`#nowarn`*warningcode*|禁用编译器警告。 若要禁用警告，请在编译器输出中查找其编号，然后将它包含在引号内。 省略“FS”前缀。 若要禁用同一行上的多个警告编号，请将每个编号用引号引起来，并使用空格分隔每个字符串。 例如：
 
 `#nowarn "9" "40"`
@@ -40,7 +40,7 @@ ms.locfileid: "87855369"
 > [!NOTE]
 > 条件编译指令的行为与它在其他语言中的行为不同。 例如，不能使用涉及符号的布尔表达式，并且 `true` 和 `false` 没有特殊含义。 在 `if` 指令中使用的符号必须通过命令行或在项目设置中定义；没有 `define` 预处理器指令。
 
-以下代码演示了 `#if`、`#else` 和 `#endif` 指令的用法。 在此示例中，代码包含两个版本的 `function1` 定义。 当 `VERSION1` 使用[-define 编译器选项](https://msdn.microsoft.com/library/434394ae-0d4a-459c-a684-bffede519a04)定义时，将 `#if` 激活指令和指令之间的代码 `#else` 。 否则，会激活 `#else` 与 `#endif` 之间的代码。
+以下代码演示了 `#if`、`#else` 和 `#endif` 指令的用法。 在此示例中，代码包含两个版本的 `function1` 定义。 当 `VERSION1` 使用 [-define 编译器选项](./compiler-options.md)定义时，将 `#if` 激活指令和指令之间的代码 `#else` 。 否则，会激活 `#else` 与 `#endif` 之间的代码。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-2/snippet7301.fs)]
 
@@ -48,7 +48,7 @@ F# 中没有 `#define` 预处理器指令。 必须使用编译器选项或项�
 
 条件编译指令可以进行嵌套。 缩进对于预处理器指令并不重要。
 
-你还可以使用对符号求反 `!` 。 在此示例中，仅当_不_调试时，字符串的值才是：
+你还可以使用对符号求反 `!` 。 在此示例中，仅当 _不_ 调试时，字符串的值才是：
 
 ```fsharp
 #if !DEBUG
@@ -76,9 +76,9 @@ let str = "Debugging!"
 
 |指令|描述|
 |---------|-----------|
-|`#light`["on" &#124; "off"]|启用或禁用轻量语法，以便与其他版本的 ML 兼容。 默认情况下，轻量语法处于启用状态。 详细语法始终处于启用状态。 因此，可以同时使用轻量语法和详细语法。 指令 `#light` 本身等效于 `#light "on"`。 如果指定 `#light "off"`，则必须对所有语言构造使用详细语法。 F# 文档中展示的语法基于使用轻量语法这一假设。 有关详细信息，请参阅[详细语法](verbose-syntax.md)。|
+|`#light` ["on" &#124; "off"]|启用或禁用轻量语法，以便与其他版本的 ML 兼容。 默认情况下，轻量语法处于启用状态。 详细语法始终处于启用状态。 因此，可以同时使用轻量语法和详细语法。 指令 `#light` 本身等效于 `#light "on"`。 如果指定 `#light "off"`，则必须对所有语言构造使用详细语法。 F# 文档中展示的语法基于使用轻量语法这一假设。 有关详细信息，请参阅 [详细语法](verbose-syntax.md)。|
 
-对于解释器 ( # A0) 指令，请参阅[与 F # 交互编程](../tutorials/fsharp-interactive/index.md)。
+对于解释器 ( # A0) 指令，请参阅 [与 F # 交互编程](../tutorials/fsharp-interactive/index.md)。
 
 ## <a name="see-also"></a>另请参阅
 

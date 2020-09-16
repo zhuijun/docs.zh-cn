@@ -5,28 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99770573-c815-4428-a38c-e4335c8bd7ce
-ms.openlocfilehash: 2b2717bc68da9f07cd38e10a5d75b2a7df9add45
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6221f253746ac304115fe844966e2cf552263d04
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602630"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551140"
 ---
 # <a name="message-security-with-a-certificate-client"></a>使用证书客户端的消息安全
-下面的方案演示使用消息安全模式保护 Windows Communication Foundation （WCF）客户端和服务。 使用证书对客户端和服务进行身份验证。 有关详细信息，请参阅[分布式应用程序安全性](distributed-application-security.md)。
+下面的方案演示使用消息安全模式保护 (WCF) 客户端和服务的 Windows Communication Foundation。 使用证书对客户端和服务进行身份验证。 有关详细信息，请参阅 [分布式应用程序安全性](distributed-application-security.md)。
 
  ![显示具有证书的客户端的屏幕截图。](./media/message-security-with-a-certificate-client/client-with-certificate.gif)  
   
- 有关示例应用程序，请参阅[消息安全证书](../samples/message-security-certificate.md)。  
+ 有关示例应用程序，请参阅 [消息安全证书](../samples/message-security-certificate.md)。  
 
-|特征|描述|  
+|特征|说明|  
 |--------------------|-----------------|  
 |安全模式|Message|  
 |互操作性|仅 WCF|  
 |身份验证（服务器）|使用服务证书|  
 |身份验证（客户端）|使用客户端证书|  
 |完整性|是|  
-|机密性|是|  
+|保密性|是|  
 |Transport|HTTP|  
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|  
   
@@ -101,7 +101,7 @@ ms.locfileid: "84602630"
  [!code-vb[C_SecurityScenarios#17](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#17)]  
   
 ### <a name="configuration"></a>Configuration  
- 下面的配置使用终结点行为指定客户端证书。 有关证书的详细信息，请参阅[使用证书](working-with-certificates.md)。 此代码还使用 <`identity`> 元素来指定预期服务器标识的域名系统（DNS）。 有关标识的详细信息，请参阅[服务标识和身份验证](service-identity-and-authentication.md)。  
+ 下面的配置使用终结点行为指定客户端证书。 有关证书的详细信息，请参阅[使用证书](working-with-certificates.md)。 此代码还使用 <`identity`> 元素来指定域名系统 (DNS) 所需的服务器标识。 有关标识的详细信息，请参阅 [服务标识和身份验证](service-identity-and-authentication.md)。  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -143,9 +143,9 @@ ms.locfileid: "84602630"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
 - [服务标识和身份验证](service-identity-and-authentication.md)
 - [使用证书](working-with-certificates.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

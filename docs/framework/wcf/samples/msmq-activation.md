@@ -2,16 +2,16 @@
 title: MSMQ 激活
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: 0dbd24a612d56c0fe88066f625be2a8369b7df5b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 349eadb8f517993c343e81656204ad25e62ed931
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602529"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555232"
 ---
 # <a name="msmq-activation"></a>MSMQ 激活
 
-本示例演示如何在 Windows 进程激活服务 (WAS) 中承载从消息队列读取的应用程序。 此示例使用 `netMsmqBinding` 和基于[双向通信](two-way-communication.md)示例。 本示例中的服务是一个 Web 承载的应用程序，而客户端是自承载的，并输出到控制台以观察提交的采购订单的状态。
+本示例演示如何在 Windows 进程激活服务 (WAS) 中承载从消息队列读取的应用程序。 此示例使用 `netMsmqBinding` 和基于 [双向通信](two-way-communication.md) 示例。 本示例中的服务是一个 Web 承载的应用程序，而客户端是自承载的，并输出到控制台以观察提交的采购订单的状态。
 
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。
@@ -21,11 +21,11 @@ ms.locfileid: "84602529"
 >
 > \<InstallDrive>： \ WF_WCF_Samples
 >
-> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （WCF）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WCF 和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：
+> 如果此目录不存在，请跳到 [Windows Communication Foundation (WCF) ，并 Windows Workflow Foundation (的 WF) 示例](https://www.microsoft.com/download/details.aspx?id=21459) ，.NET Framework 4 下载所有 WCF 和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：
 >
 > \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
 
-Windows 进程激活服务（WAS）是 Windows Server 2008 的新进程激活机制，它提供了类似 IIS 的功能，这些功能以前仅对使用非 HTTP 协议的应用程序可用。 Windows Communication Foundation （WCF）使用侦听器适配器接口传递通过 WCF 支持的非 HTTP 协议（如 TCP、命名管道和 MSMQ）接收的激活请求。 用于通过非 HTTP 协议接收请求的功能由 SMSvcHost.exe 中运行的托管 Windows 服务承载。
+Windows 进程激活服务 (已) ，用于 Windows Server 2008 的新进程激活机制提供了类似 IIS 的功能，这些功能以前仅对使用非 HTTP 协议的应用程序可用的基于 HTTP 的应用程序可用。 Windows Communication Foundation (WCF) 使用侦听器适配器接口传递通过 WCF 支持的非 HTTP 协议（如 TCP、命名管道和 MSMQ）接收的激活请求。 用于通过非 HTTP 协议接收请求的功能由 SMSvcHost.exe 中运行的托管 Windows 服务承载。
 
 Net.Msmq Listener Adapter 服务 (NetMsmqActivator) 根据队列中的消息激活排队的应用程序。
 
@@ -214,17 +214,17 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
 1. 确保安装了 IIS 7.0，因为 WAS 激活所必需的。
 
-2. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。 此外，还必须安装 WCF 非 HTTP 激活组件：
+2. 确保已对 [Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。 此外，还必须安装 WCF 非 HTTP 激活组件：
 
     1. 从“开始”菜单中，选择“控制面板” 。
 
-    2. 选择 "**程序和功能**"。
+    2. 选择 " **程序和功能**"。
 
     3. 单击 **"打开或关闭 Windows 功能"**。
 
-    4. 在 "**功能摘要**" 下，单击 "**添加功能**"。
+    4. 在 " **功能摘要**" 下，单击 " **添加功能**"。
 
-    5. 展开**Microsoft .NET Framework 3.0**节点并检查**Windows Communication Foundation 非 HTTP 激活**功能。
+    5. 展开 **Microsoft .NET Framework 3.0** 节点并检查 **Windows Communication Foundation 非 HTTP 激活** 功能。
 
 3. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。
 
@@ -232,15 +232,15 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
 5. 在默认情况下 MSMQ 激活服务将作为网络服务运行。 因此，用于激活应用程序的队列必须具有对网络服务的接收和查看权限。 可以通过使用消息队列 MMC 来添加这些权限：
 
-    1. 从 "**开始**" 菜单中，单击 "**运行**"，然后键入 `Compmgmt.msc` 并按 enter。
+    1. 从 " **开始** " 菜单中，单击 " **运行**"，然后键入 `Compmgmt.msc` 并按 enter。
 
-    2. 在 "**服务和应用程序**" 下，展开 "**消息队列**"。
+    2. 在 " **服务和应用程序**" 下，展开 " **消息队列**"。
 
-    3. 单击 "**专用队列**"。
+    3. 单击 " **专用队列**"。
 
-    4. 右键单击队列（servicemodelsamples/服务），然后选择 "**属性**"。
+    4. 右键单击队列 (servicemodelsamples/node.js) 并选择 " **属性**"。
 
-    5. 在 "**安全**" 选项卡上，单击 "**添加**" 并向网络服务授予 "查看" 和 "接收" 权限。
+    5. 在 " **安全** " 选项卡上，单击 " **添加** " 并向网络服务授予 "查看" 和 "接收" 权限。
 
 6. 将 Windows 进程激活服务 (WAS) 配置为支持 MSMQ 激活。
 
@@ -269,9 +269,9 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
         此命令允许使用和访问/servicemodelsamples 应用程序 `http://localhost/servicemodelsamples` `net.msmq://localhost/servicemodelsamples` 。
 
-7. 如果您以前没有进行此操作，应确保启用 MSMQ 激活服务。 从 "**开始**" 菜单中，单击 "**运行**"，然后键入 `Services.msc` 。 在服务列表中搜索**Net.tcp 侦听器适配器**。 右键单击并选择 **“属性”**。 将 "**启动类型**" 设置为 "**自动**"，单击 "**应用**"，然后单击 "**开始**" 按钮。 此步骤只能在第一次使用 Net.Msmq Listener Adapter 服务之前操作一次。
+7. 如果您以前没有进行此操作，应确保启用 MSMQ 激活服务。 从 " **开始** " 菜单中，单击 " **运行**"，然后键入 `Services.msc` 。 在服务列表中搜索 **Net.tcp 侦听器适配器**。 右键单击并选择 **“属性”**。 将 " **启动类型** " 设置为 " **自动**"，单击 " **应用** "，然后单击 " **开始** " 按钮。 此步骤只能在第一次使用 Net.Msmq Listener Adapter 服务之前操作一次。
 
-8. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。 此外，在客户端上更改用于提交采购订单的代码，使其在提交采购订单时在队列的 URI 中反映计算机名。 使用以下代码：
+8. 若要以单机配置或跨计算机配置来运行示例，请按照 [运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。 此外，在客户端上更改用于提交采购订单的代码，使其在提交采购订单时在队列的 URI 中反映计算机名。 使用以下代码：
 
     ```csharp
     client.SubmitPurchaseOrder(po, "net.msmq://localhost/private/ServiceModelSamples/OrderStatus");
@@ -329,7 +329,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
     1. 运行 Inetmgr.exe。
 
-    2. 在 "**应用程序池**" 下，右键单击**AppPool** （通常为**DefaultAppPool**），然后选择 "**设置应用程序池默认值 ...**"。
+    2. 在 " **应用程序池**" 下，右键 **单击 ") ** **DefaultAppPool** "，然后选择 " **设置应用程序池默认值 ...**" (。
 
     3. 更改标识属性以使用特定用户帐户。
 
@@ -337,9 +337,9 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
     1. 运行 Services.msc。
 
-    2. 右键单击**Listener 适配器**，然后选择 "**属性**"。
+    2. 右键单击 **Listener 适配器**，然后选择 " **属性**"。
 
-4. 更改 "**登录**" 选项卡中的帐户。
+4. 更改 " **登录** " 选项卡中的帐户。
 
 5. 在工作组中，服务还必须使用不受限制的令牌来运行。 为此，请在命令窗口中运行下面的命令：
 
@@ -347,6 +347,6 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
     sc sidtype netmsmqactivator unrestricted
     ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [AppFabric 承载和持久性示例](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))
+- [AppFabric 承载和持久性示例](/previous-versions/appfabric/ff383418(v=azure.10))

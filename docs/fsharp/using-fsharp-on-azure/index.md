@@ -3,12 +3,12 @@ title: 在 Azure 上使用 F#
 description: 有关结合使用 F# 和 Azure 服务的指南
 author: sylvanc
 ms.date: 07/29/2020
-ms.openlocfilehash: 24ef3fd14a4d0173935fac3e67aadf86110fa6d8
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 0f516b8a3b4fd60eea8facad83a440e33ffd521c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517368"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548418"
 ---
 # <a name="using-f-on-azure"></a>在 Azure 上使用 F#
 
@@ -57,7 +57,7 @@ Azure 存储还可以通过声明性配置（而非显式 API 调用）与 Azure
 
 ## <a name="using-apache-spark-with-f-on-azure-hdinsight-or-azure-databricks"></a>在 Azure HDInsight 或 Azure Databricks 上将 Apache Spark 与 F# 结合使用
 
-[Apache Spark for Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-overview) 是一个开放源代码处理框架，用于运行大型数据分析应用程序。 [Azure Databricks](https://docs.microsoft.com/azure/databricks/scenarios/what-is-azure-databricks) 是基于 Apache Spark 的分析平台，已针对 Microsoft Azure 云服务平台进行优化。 Azure 使 Apache Spark 的部署简单且经济实惠。 使用 [.NET for Apache Spark](../../spark/what-is-apache-spark-dotnet.md)（一组用于 Apache Spark 的 .NET 绑定）在 F# 中开发 Spark 应用程序。
+[Apache Spark for Azure HDInsight](/azure/hdinsight/spark/apache-spark-overview) 是一个开放源代码处理框架，用于运行大型数据分析应用程序。 [Azure Databricks](/azure/databricks/scenarios/what-is-azure-databricks) 是基于 Apache Spark 的分析平台，已针对 Microsoft Azure 云服务平台进行优化。 Azure 使 Apache Spark 的部署简单且经济实惠。 使用 [.NET for Apache Spark](../../spark/what-is-apache-spark-dotnet.md)（一组用于 Apache Spark 的 .NET 绑定）在 F# 中开发 Spark 应用程序。
 
 * [.NET for Apache Spark F# 示例](https://github.com/dotnet/spark/tree/master/examples/Microsoft.Spark.FSharp.Examples)
 * [在 Azure HDInsight 中安装 .NET Interactive Jupyter 笔记本](../../spark/how-to-guides/hdinsight-notebook-installation.md)
@@ -89,7 +89,7 @@ Azure 存储还可以通过声明性配置（而非显式 API 调用）与 Azure
 可采用两种方式结合使用 Azure 通知中心与 F#：
 
 1. 通过创建向通知中心发送结果的 F# Azure Functions。 请参阅 [Azure Functions 通知中心输出触发器](/azure/azure-functions/functions-bindings-notification-hubs)，或
-2. 通过使用[适用于 Azure 的 .NET SDK](https://docs.microsoft.com/archive/blogs/azuremobile/push-notifications-using-notification-hub-and-net-backend)。 请注意，这些示例使用的是 C#。
+2. 通过使用[适用于 Azure 的 .NET SDK](/archive/blogs/azuremobile/push-notifications-using-notification-hub-and-net-backend)。 请注意，这些示例使用的是 C#。
 
 ## <a name="implementing-webhooks-on-azure-with-f"></a>通过 F\# 在 Azure 上实现 Webhook
 
@@ -111,7 +111,7 @@ Webhook 可采用 F# 实现，并通过 [Azure Function in F# with a Webhook Bin
 
 ## <a name="deploying-and-managing-azure-resources-with-f-scripts"></a>使用 F# 脚本部署和管理 Azure 资源
 
-可使用 Microsoft.Azure.Management 包和 API，以编程方式通过 F# 脚本部署和管理 Azure VM。 有关示例，请参阅 [.NET 管理库入门](https://msdn.microsoft.com/library/dn722415.aspx)和[使用 Azure 资源管理器](/azure/azure-resource-manager/resource-manager-deployment-model)。
+可使用 Microsoft.Azure.Management 包和 API，以编程方式通过 F# 脚本部署和管理 Azure VM。 有关示例，请参阅 [.NET 管理库入门](/previous-versions/azure/dn722415(v=azure.100))和[使用 Azure 资源管理器](/azure/azure-resource-manager/resource-manager-deployment-model)。
 
 同样，其他 Azure 资源也可用相同的组件通过 F# 脚本进行部署和管理。 例如，可通过 F# 脚本以编程方式创建存储帐户、部署 Azure 云服务、创建 Azure Cosmos DB 实例以及管理 Azure 通知中心。
 
