@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 37df2641-661e-407a-a3fb-7bf9540f01e8
-ms.openlocfilehash: 572c5be1bd639e8d4b38935f5be49782f0b0316e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2148aa984f8289b82b8efcee2404f08cab25c797
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287033"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556546"
 ---
 # <a name="connection-strings-and-configuration-files"></a>连接字符串和配置文件
 
@@ -66,13 +66,13 @@ ms.locfileid: "84287033"
  .NET Framework 2.0 在 <xref:System.Configuration> 命名空间中引入了新类，以简化在运行时从配置文件检索连接字符串的操作。 您可以以编程方式按名称或提供程序名称检索连接字符串。  
   
 > [!NOTE]
-> machine.config 文件还包含 connectionStrings 节，此节包含 Visual Studio 使用的连接字符串********。 在从 Windows 应用程序中的**app.config**文件中检索按提供程序名称的连接字符串时，将先加载**machine.config**中的连接字符串，然后加载**app.config**中的条目。如果在**connectionStrings**元素后立即添加**clear** ，则会从内存中的数据结构中删除所有继承的引用，以便只考虑本地**app.config**文件中定义的连接字符串。  
+> machine.config 文件还包含 connectionStrings 节，此节包含 Visual Studio 使用的连接字符串********。 在从 Windows 应用程序中的**app.config**文件检索按提供程序名称的连接字符串时，将首先加载**machine.config**中的连接字符串，然后加载**app.config**中的条目。如果在**connectionStrings**元素后立即添加**clear** ，则会从内存中的数据结构中删除所有继承的引用，以便只考虑本地**app.config**文件中定义的连接字符串。  
   
 ### <a name="working-with-the-configuration-classes"></a>使用配置类  
  从 .NET Framework 2.0 开始，当使用本地计算机上的配置文件时，将使用 <xref:System.Configuration.ConfigurationManager>，从而替换已不推荐使用的 <xref:System.Configuration.ConfigurationSettings>。 <xref:System.Web.Configuration.WebConfigurationManager> 与 ASP.NET 配置文件一起使用。 该管理器可以使用 Web 服务器上的配置文件，并允许以编程方式访问配置文件节（如 system.web）****。  
   
 > [!NOTE]
-> 在运行时访问配置文件需要对调用方授予权限，根据应用程序类型、配置文件和位置确定所需的权限。 有关详细信息，请参阅[使用配置类](https://docs.microsoft.com/previous-versions/aspnet/ms228063(v=vs.100))和 <xref:System.Web.Configuration.WebConfigurationManager>（对于 ASP.NET 应用程序），以及 <xref:System.Configuration.ConfigurationManager>（对于 Windows 应用程序）。  
+> 在运行时访问配置文件需要对调用方授予权限，根据应用程序类型、配置文件和位置确定所需的权限。 有关详细信息，请参阅[使用配置类](/previous-versions/aspnet/ms228063(v=vs.100))和 <xref:System.Web.Configuration.WebConfigurationManager>（对于 ASP.NET 应用程序），以及 <xref:System.Configuration.ConfigurationManager>（对于 Windows 应用程序）。  
   
  您可以使用 <xref:System.Configuration.ConnectionStringSettingsCollection> 从应用程序配置文件中检索连接字符串。 它包含 <xref:System.Configuration.ConnectionStringSettings> 对象的集合，每个对象表示 connectionStrings 节中的一项****。 它的属性 (Property) 映射为连接字符串属性 (Attribute)，从而允许您通过指定名称或提供程序名称来检索连接字符串。  
   
@@ -104,7 +104,7 @@ ms.locfileid: "84287033"
  [!code-vb[DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringSettings.RetrieveFromConfigByProvider/VB/source.vb#1)]  
   
 ## <a name="encrypting-configuration-file-sections-using-protected-configuration"></a>使用受保护配置加密配置文件节  
- ASP.NET 2.0 引入了一个称为“受保护配置”的新功能，可以通过此功能来加密配置文件中的敏感信息**。 虽然受保护配置主要是为 ASP.NET 应用程序设计的，但它也可以用于加密 Windows 应用程序中的配置文件节。 有关受保护配置功能的详细说明，请参阅[使用受保护的配置加密配置信息](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100))。  
+ ASP.NET 2.0 引入了一个称为“受保护配置”的新功能，可以通过此功能来加密配置文件中的敏感信息**。 虽然受保护配置主要是为 ASP.NET 应用程序设计的，但它也可以用于加密 Windows 应用程序中的配置文件节。 有关受保护配置功能的详细说明，请参阅[使用受保护的配置加密配置信息](/previous-versions/aspnet/53tyfkaw(v=vs.100))。  
   
  下面的配置文件片段演示加密后的 connectionStrings 节****。 configProtectionProvider 可指定用于加密和解密连接字符串的受保护配置提供程序****。 EncryptedData 节包含密文****。  
   
@@ -138,16 +138,16 @@ ms.locfileid: "84287033"
   
 |提供程序|描述|  
 |--------------|-----------------|  
-|<xref:System.Configuration.RsaProtectedConfigurationProvider>|使用 RSA 加密算法来加密和解密数据。 RSA 算法既可用于公钥加密，也可用于数字签名。 它还称为“公共密钥”或非对称加密，因为它使用两个不同的密钥。 可以使用 [ASP.NET IIS 注册工具 (Aspnet_regiis.exe)](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/k6h9cz8h(v=vs.90)) 来加密 Web.config 文件中的节和管理加密密钥。 ASP.NET 在处理配置文件时解密该文件。 ASP.NET 应用程序的标识必须对用于加密和解密各加密节的加密密钥具有读取权限。|  
+|<xref:System.Configuration.RsaProtectedConfigurationProvider>|使用 RSA 加密算法来加密和解密数据。 RSA 算法既可用于公钥加密，也可用于数字签名。 它还称为“公共密钥”或非对称加密，因为它使用两个不同的密钥。 可以使用 [ASP.NET IIS 注册工具 (Aspnet_regiis.exe)](/previous-versions/dotnet/netframework-3.5/k6h9cz8h(v=vs.90)) 来加密 Web.config 文件中的节和管理加密密钥。 ASP.NET 在处理配置文件时解密该文件。 ASP.NET 应用程序的标识必须对用于加密和解密各加密节的加密密钥具有读取权限。|  
 |<xref:System.Configuration.DpapiProtectedConfigurationProvider>|使用 Windows Data Protection API (DPAPI) 来加密配置节。 它使用 Windows 内置加密服务，并可为计算机特定或用户帐户特定保护进行配置。 对于同一服务器上需要共享信息的多个应用程序来说，计算机特定保护非常有用。 用户帐户特定保护可与以特定用户标识运行的服务（如共享宿主环境）一起使用。 每个应用程序以单独的标识运行，这样就限制了对文件和数据库等资源的访问。|  
   
- 这两种提供程序都可以对数据进行强加密。 但是，如果计划在多台服务器（如网络场）上使用相同的加密配置文件，则只有通过 <xref:System.Configuration.RsaProtectedConfigurationProvider> 才能导出用于加密数据的加密密钥，并将其导入其他服务器。 有关详细信息，请参阅[导入和导出受保护配置的 RSA 密钥容器](https://docs.microsoft.com/previous-versions/aspnet/yxw286t2(v=vs.100))。  
+ 这两种提供程序都可以对数据进行强加密。 但是，如果计划在多台服务器（如网络场）上使用相同的加密配置文件，则只有通过 <xref:System.Configuration.RsaProtectedConfigurationProvider> 才能导出用于加密数据的加密密钥，并将其导入其他服务器。 有关详细信息，请参阅[导入和导出受保护配置的 RSA 密钥容器](/previous-versions/aspnet/yxw286t2(v=vs.100))。  
   
 ### <a name="using-the-configuration-classes"></a>使用配置类  
  <xref:System.Configuration> 命名空间提供以编程方式使用配置设置的类。 <xref:System.Configuration.ConfigurationManager> 类可提供对计算机、应用程序和用户配置文件的访问。 如果创建的是 ASP.NET 应用程序，则可以使用 <xref:System.Web.Configuration.WebConfigurationManager> 类，该类提供相同的功能，同时还允许访问 ASP.NET 应用程序特有的设置，如中所述的设置 **\<system.web>** 。  
   
 > [!NOTE]
-> <xref:System.Security.Cryptography> 命名空间包含提供用于加密和解密数据的其他选项的类。 如果需要采用在使用受保护配置时不可用的加密服务，请使用这些类。 一些类是非托管 Microsoft CryptoAPI 的包装类，而其他类则是纯托管实现。 有关更多信息，请参阅[加密服务](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/93bskf9z(v=vs.90))。  
+> <xref:System.Security.Cryptography> 命名空间包含提供用于加密和解密数据的其他选项的类。 如果需要采用在使用受保护配置时不可用的加密服务，请使用这些类。 一些类是非托管 Microsoft CryptoAPI 的包装类，而其他类则是纯托管实现。 有关更多信息，请参阅[加密服务](/previous-versions/visualstudio/visual-studio-2008/93bskf9z(v=vs.90))。  
   
 ### <a name="appconfig-example"></a>App.config 示例  
  此示例演示如何对 Windows 应用程序的 app.config 文件中的 connectionStrings 节的加密进行切换********。 在此示例中，该过程将应用程序的名称（例如“MyApplication.exe”）作为一个参数。 然后，将对 app.config 文件进行加密，并采用名称“MyApplication.exe.config”将其复制到包含可执行文件的文件夹中****。  
@@ -169,13 +169,13 @@ ms.locfileid: "84287033"
  [!code-csharp[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/CS/source.cs#1)]
  [!code-vb[DataWorks ConnectionStringsWeb.Encrypt#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks ConnectionStringsWeb.Encrypt/VB/source.vb#1)]  
   
- 有关保护 ASP.NET 应用程序安全的详细信息，请参阅[保护 ASP.NET 网站的安全](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100))。  
+ 有关保护 ASP.NET 应用程序安全的详细信息，请参阅 [保护 ASP.NET 网站的安全](/previous-versions/aspnet/91f66yxt(v=vs.100))。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [连接字符串生成器](connection-string-builders.md)
 - [保护连接信息](protecting-connection-information.md)
-- [使用配置类](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/ms228063(v=vs.90))
+- [使用配置类](/previous-versions/visualstudio/visual-studio-2008/ms228063(v=vs.90))
 - [配置应用程序](../../configure-apps/index.md)
-- [ASP.NET 网站管理](https://docs.microsoft.com/previous-versions/aspnet/6hy1xzbw(v=vs.100))
+- [ASP.NET 网站管理](/previous-versions/aspnet/6hy1xzbw(v=vs.100))
 - [ADO.NET 概述](ado-net-overview.md)

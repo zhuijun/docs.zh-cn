@@ -3,18 +3,18 @@ title: 数据集、数据表和数据视图
 description: 了解使用 ADO.NET 数据集（提供一致的关系编程模型的数据的内存驻留表示形式）的几种方法。
 ms.date: 03/30/2017
 ms.assetid: 6d4c4b69-8919-4224-8a65-6cca1c61b48f
-ms.openlocfilehash: 53e12f701b9be1938d62f46bbeb6e63d95c03386
-ms.sourcegitcommit: e7748001b1cee80ced691d8a76ca814c0b02dd9b
+ms.openlocfilehash: 4e1c0ea5f1de1715ad8e862e6a3ed7370b53c6ce
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86374502"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555859"
 ---
 # <a name="datasets-datatables-and-dataviews"></a>数据集、数据表和数据视图
 
 ADO.NET <xref:System.Data.DataSet> 是数据的一种内存驻留表示形式，无论它包含的数据来自什么数据源，都会提供一致的关系编程模型。 <xref:System.Data.DataSet> 表示整个数据集，其中包含对数据进行包含、排序和约束的表以及表间的关系。  
   
-使用 <xref:System.Data.DataSet> 的方法有若干种，这些方法可以单独应用，也可以结合应用。 可以：  
+使用 <xref:System.Data.DataSet> 的方法有若干种，这些方法可以单独应用，也可以结合应用。 你可以：  
   
 - 以编程方式在 <xref:System.Data.DataTable> 中创建 <xref:System.Data.DataRelation>、<xref:System.Data.Constraint> 和 <xref:System.Data.DataSet>，并使用数据填充表。  
   
@@ -22,7 +22,7 @@ ADO.NET <xref:System.Data.DataSet> 是数据的一种内存驻留表示形式，
   
 - 使用 XML 加载和保持 <xref:System.Data.DataSet> 内容。 有关详细信息，请参阅[在数据集中使用 XML](using-xml-in-a-dataset.md)。  
   
-强类型化的 <xref:System.Data.DataSet> 也可以使用 XML Web services 来进行传输。 <xref:System.Data.DataSet> 的设计使其成为使用 XML Web services 传输数据的理想选择。 有关 XML Web service 的概述，请参阅 [XML Web service 概述](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w9fdtx28(v=vs.100))。 有关通过 XML Web service 使用 <xref:System.Data.DataSet> 的示例，请参阅[通过 XML Web service 使用数据集](consuming-a-dataset-from-an-xml-web-service.md)。  
+强类型化的 <xref:System.Data.DataSet> 也可以使用 XML Web services 来进行传输。 <xref:System.Data.DataSet> 的设计使其成为使用 XML Web services 传输数据的理想选择。 有关 XML Web service 的概述，请参阅 [XML Web service 概述](/previous-versions/dotnet/netframework-4.0/w9fdtx28(v=vs.100))。 有关通过 XML Web service 使用 <xref:System.Data.DataSet> 的示例，请参阅[通过 XML Web service 使用数据集](consuming-a-dataset-from-an-xml-web-service.md)。  
   
 ## <a name="in-this-section"></a>在本节中
 
@@ -85,7 +85,7 @@ ADO.NET <xref:System.Data.DataSet> 是数据的一种内存驻留表示形式，
  [将现有约束添加到数据集](../adding-existing-constraints-to-a-dataset.md)  
  描述如何使用数据源中的主键信息填充**数据集**。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [ADO.NET](../index.md)
 - [ADO.NET 概述](../ado-net-overview.md)

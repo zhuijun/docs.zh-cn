@@ -5,17 +5,17 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - hosting services [WCF], WAS
 ms.assetid: d2b9d226-15b7-41fc-8c9a-cb651ac20ecd
-ms.openlocfilehash: 6b0b23c21762009341fd62c029431824dd26d6c3
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 860806fb6406b8ada075b449616f84a360e9ef3a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247255"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555817"
 ---
 # <a name="hosting-in-windows-process-activation-service"></a>在 Windows 进程激活服务中承载
 Windows 进程激活服务 (WAS) 管理辅助进程的激活和生命周期，这些进程包含托管 Windows Communication Foundation (WCF) 服务的应用程序。 WAS 进程模型通过删除对 HTTP 的依赖，将 HTTP 服务器的 IIS 6.0 进程模型通用化。 这使 WCF 服务可以在支持基于消息的激活的宿主环境中同时使用 HTTP 和非 HTTP 协议（例如 Net.tcp），并提供在给定计算机上托管大量应用程序的功能。  
   
- 有关生成在 WAS 宿主环境中运行的 WCF 服务的详细信息，请参阅[如何：在 was 中承载 Wcf 服务](how-to-host-a-wcf-service-in-was.md)。  
+ 有关生成在 WAS 宿主环境中运行的 WCF 服务的详细信息，请参阅 [如何：在 was 中承载 Wcf 服务](how-to-host-a-wcf-service-in-was.md)。  
   
  WAS 进程模型提供了一些功能，可以以一种更为可靠、更易管理并有效地使用资源的方式承载应用程序：  
   
@@ -26,16 +26,16 @@ Windows 进程激活服务 (WAS) 管理辅助进程的激活和生命周期，�
 - 集中的应用程序配置和管理。  
   
 - 允许应用程序利用 IIS 进程模型，而无需完全 IIS 安装的部署需求量。  
-[Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10))使用 IIS 7.0 和 Windows 进程激活服务（WAS）为 NET4 WCF 和 WF 服务提供丰富的应用程序宿主环境。 这些优点包括进程生命周期管理、进程回收、共享承载、快速失败保护、进程孤立、按需激活和运行状况监视。 有关详细信息，请参阅[Appfabric 托管功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))和[appfabric 托管概念](https://docs.microsoft.com/previous-versions/appfabric/ee677371(v=azure.10))。  
+[Windows Server AppFabric](/previous-versions/appfabric/ff384253(v=azure.10)) 使用 IIS 7.0 和 Windows 进程激活服务 () 为 NET4 WCF 和 WF 服务提供丰富的应用程序宿主环境。 这些优点包括进程生命周期管理、进程回收、共享承载、快速失败保护、进程孤立、按需激活和运行状况监视。 有关详细信息，请参阅 [Appfabric 托管功能](/previous-versions/appfabric/ee677189(v=azure.10)) 和 [appfabric 托管概念](/previous-versions/appfabric/ee677371(v=azure.10))。  
   
 ## <a name="elements-of-the-was-addressing-model"></a>WAS 寻址模型的元素  
- 应用程序具有统一资源标识符 (URI) 地址，这些地址是一些代码单元，其生存期和执行环境由服务器管理。 一个 WAS 服务器实例可以承载多个不同的应用程序。 服务器将应用程序组织到称为*站点*的组。 在网站中，应用程序是以分层的方式排列的，这种方式反映了充当其外部地址的 URI 的结构。  
+ 应用程序具有统一资源标识符 (URI) 地址，这些地址是一些代码单元，其生存期和执行环境由服务器管理。 一个 WAS 服务器实例可以承载多个不同的应用程序。 服务器将应用程序组织到称为 *站点*的组。 在网站中，应用程序是以分层的方式排列的，这种方式反映了充当其外部地址的 URI 的结构。  
   
- 应用程序地址分为两个部分：基本 URI 前缀和应用程序特定的相对地址（路径）。这两个部分结合在一起时可提供应用程序的外部地址。 基本 URI 前缀从网站绑定构造的，并且适用于网站中的所有应用程序。 然后，将使用应用程序特定的路径段（例如 "/applicationOne"）来构造应用程序地址，并将其追加到基 URI 前缀（例如 "net.tcp：//localhost"）以到达完整的应用程序 URI。  
+ 应用程序地址分为两个部分：基本 URI 前缀和应用程序特定的相对地址（路径）。这两个部分结合在一起时可提供应用程序的外部地址。 基本 URI 前缀从网站绑定构造的，并且适用于网站中的所有应用程序。 然后，将使用应用程序特定的路径 (片段来构造应用程序地址，如 "/applicationOne" ) 并将它们追加到基本 URI 前缀 (例如，"net.tcp：//localhost" ) 到达完整的应用程序 URI。  
   
  下表演示了使用 HTTP 和非 HTTP 网站绑定的 WAS 网站的几个可能的寻址方案。  
   
-|场景|网站绑定|应用程序路径|基应用程序 URI|  
+|方案|网站绑定|应用程序路径|基应用程序 URI|  
 |--------------|-------------------|----------------------|---------------------------|  
 |仅 HTTP|http： *：80：\*|/appTwo|`http://localhost/appTwo/`|  
 |HTTP 和非 HTTP|http： *：80：\*<br /><br /> net.tcp：808：\*|/appTwo|`http://localhost/appTwo/`<br />`net.tcp://localhost/appTwo/`|  
@@ -55,4 +55,4 @@ Windows 进程激活服务 (WAS) 管理辅助进程的激活和生命周期，�
 - [配置 WAS 以用于 WCF](configuring-the-wpa--service-for-use-with-wcf.md)
 - [如何：安装和配置 WCF 激活组件](how-to-install-and-configure-wcf-activation-components.md)
 - [如何：在 WAS 中承载 WCF 服务](how-to-host-a-wcf-service-in-was.md)
-- [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Windows Server App Fabric 承载功能](/previous-versions/appfabric/ee677189(v=azure.10))

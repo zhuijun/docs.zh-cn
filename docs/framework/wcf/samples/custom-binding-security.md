@@ -2,12 +2,12 @@
 title: 自定义绑定安全性
 ms.date: 03/30/2017
 ms.assetid: a6383dff-4308-46d2-bc6d-acd4e18b4b8d
-ms.openlocfilehash: eb575594cec9ea714578bc104344acc14b00e9df
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ce4cd76a053b9b3611751fe081d0ca710240049d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84592458"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555700"
 ---
 # <a name="custom-binding-security"></a>自定义绑定安全性
 
@@ -24,7 +24,7 @@ ms.locfileid: "84592458"
 
 - Windows 消息安全。
 
-自定义绑定配置通过同时启用消息级安全性来启用安全传输。 在定义自定义绑定时，绑定元素的排序非常重要，因为每个元素都表示通道堆栈中的一个层（请参阅[自定义绑定](../extending/custom-bindings.md)）。 自定义绑定在服务和客户端配置文件中进行定义，如下面的示例配置所示。
+自定义绑定配置通过同时启用消息级安全性来启用安全传输。 在定义自定义绑定时，绑定元素的排序非常重要，因为每个元素都表示通道堆栈中的一个层 (请参阅 [自定义绑定](../extending/custom-bindings.md)) 。 自定义绑定在服务和客户端配置文件中进行定义，如下面的示例配置所示。
 
 ```xml
 <bindings>
@@ -106,24 +106,24 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对 [Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
 2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。
 
-3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
+3. 若要以单机配置或跨计算机配置来运行示例，请按照 [运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>在同一计算机上运行示例
 
-1. 使用管理员权限打开 Visual Studio 窗口的开发人员命令提示，并从示例安装文件夹中运行安装程序。 这将安装运行示例所需的所有证书。
+1. 使用管理员权限打开 Visual Studio 窗口的开发人员命令提示，并从示例安装文件夹中运行 Setup.bat。 这将安装运行示例所需的所有证书。
 
     > [!NOTE]
-    > 设置 bat 批处理文件设计为在 Visual Studio 2012 命令提示符下运行。 在 Visual Studio 2012 命令提示符中设置的 PATH 环境变量指向包含安装程序 bat 脚本所需的可执行文件的目录。
+    > Setup.bat 批处理文件设计为在 Visual Studio 2012 命令提示符下运行。 在 Visual Studio 2012 命令提示符下设置的 PATH 环境变量指向包含 Setup.bat 脚本所需的可执行文件的目录。
 
 2. 启动 \service\bin 中的 Service.exe。
 
 3. 启动 \client\bin 中的 Client.exe。 客户端活动将显示在客户端控制台应用程序上。
 
-4. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。
+4. 如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。
 
 ### <a name="to-run-the-sample-across-computers"></a>跨计算机运行示例
 
@@ -140,7 +140,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
         > [!NOTE]
         > Setup.bat 批处理文件设计为通过 Visual Studio 2010 命令提示运行。 这要求路径环境变量指向 SDK 的安装目录。 将在 Visual Studio 2010 命令提示中自动设置此环境变量。
 
-    5. 更改 [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) setup.exe .config 文件中的，以反映在上一步中生成的证书的使用者名称。
+    5. 更改 [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) Service.exe.config 文件中的，以反映在上一步中生成的证书的使用者名称。
 
     6. 在命令提示符下运行 Service.exe。
 
@@ -150,7 +150,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
     2. 运行 Cleanup.bat 以移除先前示例中使用的所有旧证书。
 
-    3. 通过使用管理特权打开 Visual Studio 的开发人员命令提示，并在服务计算机上运行以下命令（用 `%SERVER_NAME%` 运行服务的计算机的完全限定名称替换）来导出服务的证书：
+    3. 通过使用管理特权打开 Visual Studio 的开发人员命令提示，并在服务计算机上运行以下命令来导出服务的证书 (替换 `%SERVER_NAME%` 为运行服务的计算机的完全限定名称) ：
 
         ```console
         certmgr -put -r LocalMachine -s My -c -n %SERVER_NAME% %SERVER_NAME%.cer
@@ -158,7 +158,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
 
     4. 将 %SERVER_NAME%.cer 复制到客户端计算机（用运行服务的计算机的完全限定名称替换 %SERVER_NAME%）。
 
-    5. 通过使用管理特权打开 Visual Studio 的开发人员命令提示，然后在客户端计算机上运行以下命令来导入服务的证书（用运行服务的计算机的完全限定名称替换% SERVER_NAME%）：
+    5. 通过使用管理特权打开 Visual Studio 的开发人员命令提示，然后在客户端计算机上运行以下命令来导入服务的证书 (使用运行该服务的计算机的完全限定名称替换% SERVER_NAME%) ：
 
         ```console
         certmgr.exe -add -c %SERVER_NAME%.cer -s -r CurrentUser TrustedPeople
@@ -179,7 +179,7 @@ Equation(0 + 100 - 50 * 17.65 / 2 = 441.25)
         </client>
         ```
 
-    7. 如果在域环境中 NetworkService 或 LocalSystem 以外的帐户下运行服务，则可能需要修改客户端的 App.config 文件中服务终结点的终结点标识，以便基于用于运行服务的帐户来设置相应的 UPN 或 SPN。 有关终结点标识的详细信息，请参阅[服务标识和身份验证](../feature-details/service-identity-and-authentication.md)主题。
+    7. 如果在域环境中 NetworkService 或 LocalSystem 以外的帐户下运行服务，则可能需要修改客户端的 App.config 文件中服务终结点的终结点标识，以便基于用于运行服务的帐户来设置相应的 UPN 或 SPN。 有关终结点标识的详细信息，请参阅 [服务标识和身份验证](../feature-details/service-identity-and-authentication.md) 主题。
 
     8. 在命令提示符下运行 Client.exe。
 

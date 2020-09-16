@@ -7,12 +7,12 @@ helpviewer_keywords:
 - strings [Visual Basic], validating
 - validation [Visual Basic], strings
 ms.assetid: 9a1acf9b-7e2c-40cb-bba4-656ee2bc2ed0
-ms.openlocfilehash: 58ca052f4a03d99ab62e651f5c15e45c94b8d483
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 585f7acc8ab46ad7f5711fca7805b63b316f1970
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363673"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555726"
 ---
 # <a name="validating-strings-in-visual-basic"></a>验证字符串 (Visual Basic)
 本部分讨论如何在 Visual Basic 中验证字符串。  
@@ -30,7 +30,7 @@ ms.locfileid: "84363673"
  [演练：验证密码是否复杂](walkthrough-validating-that-passwords-are-complex.md)  
  如何确定字符串是否具有强密码的特征。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [字符串](index.md)
-- [MaskedTextBox 控件](../../../../framework/winforms/controls/maskedtextbox-control-windows-forms.md)
+- [MaskedTextBox 控件](/dotnet/desktop/winforms/controls/maskedtextbox-control-windows-forms)

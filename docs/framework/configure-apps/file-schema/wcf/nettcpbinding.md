@@ -5,12 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - netTcpBinding Element
 ms.assetid: 5c5104a7-8754-4335-8233-46a45322503e
-ms.openlocfilehash: 95c2c691bf328050f3d189c790d111d2fdeb1bb0
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: a366b26d87c8796822e4fbbb2001823c116f2629
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85243992"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556123"
 ---
 # \<netTcpBinding>
 
@@ -84,21 +84,21 @@ ms.locfileid: "85243992"
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<security>](security-of-nettcpbinding.md)|定义绑定的安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>。|  
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
-|[\<reliableSession>](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90))|指定是否在通道终结点之间建立可靠会话。|  
+|[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
+|[\<reliableSession>](/previous-versions/ms731375(v=vs.90))|指定是否在通道终结点之间建立可靠会话。|  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<bindings>](bindings.md)|此元素包含标准绑定和自定义绑定的集合。|  
   
-## <a name="remarks"></a>注解
+## <a name="remarks"></a>备注
 
-默认情况下，此绑定会生成一个运行时通信堆栈，该堆栈使用传输安全、用于消息传递的 TCP 和二进制消息编码机制。 此绑定是适当的 Windows Communication Foundation （WCF）系统提供的选择，用于通过 Intranet 进行通信。  
+默认情况下，此绑定会生成一个运行时通信堆栈，该堆栈使用传输安全、用于消息传递的 TCP 和二进制消息编码机制。 此绑定是一个适当的 Windows Communication Foundation， (WCF) 系统提供的选择，用于通过 Intranet 进行通信。  
   
  的默认配置 `netTcpBinding` 比提供的配置更快 `wsHttpBinding` ，但它仅适用于 WCF 通信。 可以使用可选的 `securityMode` 属性配置安全行为。 使用可选的 `reliableSessionEnabled` 属性可以配置 WS-ReliableMessaging 的用法。 但是在默认情况下可靠消息传递为关闭状态。 一般来说，HTTP 系统提供的绑定（如 `wsHttpBinding` 和 `basicHttpBinding`）是默认配置为打开事项，而 `netTcpBinding` 绑定是默认配置为关闭事项，因此，你必须选择性加入所需事项才能获取支持，例如获取对一种 WS-* 规范的支持。 这意味着在终结点之间交换消息时，TCP 的默认配置比 HTTP 绑定的默认配置更快。  
   

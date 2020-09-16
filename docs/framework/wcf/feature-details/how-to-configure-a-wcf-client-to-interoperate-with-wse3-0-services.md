@@ -5,27 +5,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3dadd7f1-d207-4ea5-a73b-3e8aa44407f8
-ms.openlocfilehash: 7dd50fcc07c6c090042cf87acb4aa5d2b5321a68
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1ebc4e145528c3025b0299ea7e421c248c28cdc0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579574"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556364"
 ---
 # <a name="how-to-configure-a-wcf-client-to-interoperate-with-wse30-services"></a>如何：配置 WCF 客户端以与 WSE3.0 服务进行互操作
-当 WCF 客户端配置为使用8月2004版的 WS-ADDRESSING 规范时，Windows Communication Foundation （WCF）客户端与 Web 服务增强 Microsoft .NET 3.0 （WSE）服务的线路级别兼容。  
+将 WCF 客户端配置为使用 WS-ADDRESSING 规范的8月2004版本时，Windows Communication Foundation (WCF) 客户端与 Web 服务增强 3.0 (Microsoft .NET 的线路级别兼容。  
   
 ### <a name="to-configure-a-wcf-client-to-interoperate-with-a-wse-30-web-service"></a>配置 WCF 客户端以与 WSE 3.0 Web 服务进行互操作  
   
-1. 运行 " [svcutil.exe" 元数据实用工具（）](../servicemodel-metadata-utility-tool-svcutil-exe.md) ，为 WSE 3.0 Web 服务创建 WCF 客户端。  
+1. 运行 "工作网络 [元数据实用工具" 工具 ( # A0) ](../servicemodel-metadata-utility-tool-svcutil-exe.md) 为 WSE 3.0 Web 服务创建 WCF 客户端。  
   
      对于 WSE Web 服务，将创建 WCF 客户端类。  
   
-     有关创建 WCF 客户端的详细信息，请参阅[如何：创建客户端](../how-to-create-a-wcf-client.md)。  
+     有关创建 WCF 客户端的详细信息，请参阅 [如何：创建客户端](../how-to-create-a-wcf-client.md)。  
   
 2. 创建一个类，表示可与 WSE 3.0 Web 服务进行通信的绑定。  
   
-     下面的类是[与 WSE 示例互](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29)操作的一部分。  
+     下面的类是 [与 WSE 示例互](/previous-versions/dotnet/netframework-3.5/ms752257(v=vs.90)) 操作的一部分。  
   
     1. 创建一个从 <xref:System.ServiceModel.Channels.Binding> 类派生的类。  
   
@@ -61,7 +61,7 @@ ms.locfileid: "84579574"
 [!code-csharp[c_WCFClientToWSEService#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_wcfclienttowseservice/cs/client.cs#0)]
 [!code-vb[c_WCFClientToWSEService#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_wcfclienttowseservice/vb/client.vb#0)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Channels.Binding>
-- [与 WSE 互操作](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms752257%28v=vs.90%29)
+- [与 WSE 互操作](/previous-versions/dotnet/netframework-3.5/ms752257(v=vs.90))

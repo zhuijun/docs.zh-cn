@@ -10,20 +10,20 @@ helpviewer_keywords:
 - WCF, security mode
 - WCF, security
 ms.assetid: b8abcc8e-a5f5-4317-aca5-01e3c40ab24d
-ms.openlocfilehash: 0eccdf916dae7b886cbc4e6563e6dfe17039c321
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 619a893e0973f6691e32446d75f101201a0b6799
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247177"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556377"
 ---
 # <a name="how-to-configure-a-port-with-an-ssl-certificate"></a>如何：使用 SSL 证书配置端口
 
-当使用使用传输安全的类创建自承载 Windows Communication Foundation （WCF）服务时 <xref:System.ServiceModel.WSHttpBinding> ，还必须使用 x.509 证书配置端口。 如果不是在创建自承载服务，可以在 Internet 信息服务 (IIS) 上承载服务。 有关详细信息，请参阅[HTTP 传输安全](http-transport-security.md)。  
+当使用使用传输安全的类创建自承载 Windows Communication Foundation (WCF) 服务时 <xref:System.ServiceModel.WSHttpBinding> ，还必须使用 x.509 证书配置端口。 如果不是在创建自承载服务，可以在 Internet 信息服务 (IIS) 上承载服务。 有关详细信息，请参阅 [HTTP 传输安全](http-transport-security.md)。  
   
  若要配置端口，使用的工具取决于计算机运行的操作系统。  
   
- 如果运行的是 Windows Server 2003，请使用 HttpCfg.exe 工具。 在 Windows Server 2003 上，此工具已安装。 有关详细信息，请参阅[Httpcfg.exe 概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10))。 [Windows 支持工具文档](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10))说明了 Httpcfg.exe 工具的语法。  
+ 如果运行的是 Windows Server 2003，请使用 HttpCfg.exe 工具。 在 Windows Server 2003 上，此工具已安装。 有关详细信息，请参阅 [Httpcfg.exe 概述](/previous-versions/windows/it-pro/windows-server-2003/cc787508(v=ws.10))。 [Windows 支持工具文档](/previous-versions/windows/it-pro/windows-server-2003/cc781601(v=ws.10))说明了 Httpcfg.exe 工具的语法。  
   
  如果运行的是 Windows Vista，请使用已安装的 Netsh.exe 工具。
   
@@ -32,7 +32,7 @@ ms.locfileid: "85247177"
   
 ## <a name="determine-how-ports-are-configured"></a>确定如何配置端口  
   
-1. 在 Windows Server 2003 或 Windows XP 中，使用 HttpCfg.exe 工具来查看当前端口配置，使用**查询**和**ssl**开关，如以下示例中所示。  
+1. 在 Windows Server 2003 或 Windows XP 中，使用 HttpCfg.exe 工具来查看当前端口配置，使用 **查询** 和 **ssl** 开关，如以下示例中所示。  
   
     ```console
     httpcfg query ssl  
@@ -56,7 +56,7 @@ ms.locfileid: "85247177"
   
 ## <a name="bind-an-ssl-certificate-to-a-port-number"></a>将 SSL 证书绑定到端口号  
   
-1. 在 Windows Server 2003 或 Windows XP 中，使用安全套接字层（SSL）存储上 "设置" 模式下的 HttpCfg.exe 工具将证书绑定到端口号。 该工具使用指纹识别证书，如下面的示例所示。  
+1. 在 Windows Server 2003 或 Windows XP 中，使用安全套接字层 (SSL) 存储上 "设置" 模式下的 HttpCfg.exe 工具将证书绑定到端口号。 该工具使用指纹识别证书，如下面的示例所示。  
   
     ```console  
     httpcfg set ssl -i 0.0.0.0:8012 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6  
@@ -102,7 +102,7 @@ ms.locfileid: "85247177"
     httpcfg query ssl>myMachinePorts.txt  
     ```
   
-2. 在 Windows Server 2003 或 Windows XP 中，将 HttpCfg.exe 工具与**delete**和**ssl**关键字一起使用。 使用 **-i**开关指定 `IP` ： `port` number，并使用 **-h**开关指定指纹。  
+2. 在 Windows Server 2003 或 Windows XP 中，将 HttpCfg.exe 工具与 **delete** 和 **ssl** 关键字一起使用。 使用 **-i** 开关指定 `IP` ： `port` number，并使用 **-h** 开关指定指纹。  
   
     ```console  
     httpcfg delete ssl -i 0.0.0.0:8005 -h 0000000000003ed9cd0c315bbb6dc1c08da5e6  

@@ -5,7 +5,7 @@
     - name: 概述
       href: overview/index.md
     - name: 创建 WPF 应用程序
-      href: 'https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json'
+      href: /visualstudio/get-started/csharp/tutorial-wpf?bc=%252fdotnet%252fbreadcrumb%252ftoc.json&toc=%252fdotnet%252fdesktop-wpf%252ftoc.json
 - name: 迁移
   items:
     - name: 与 .NET Framework 的差异

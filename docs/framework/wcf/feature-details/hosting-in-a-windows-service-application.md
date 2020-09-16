@@ -2,19 +2,19 @@
 title: 在 Windows 服务应用程序中承载
 ms.date: 03/30/2017
 ms.assetid: f4199998-27f3-4dd9-aee4-0a4addfa9f24
-ms.openlocfilehash: ba49d123508ceb8da677d1e9c67721e4f86aa7c3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cb952cfcd670a790033fbec70de00a4db2541237
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597327"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555843"
 ---
 # <a name="hosting-in-a-windows-service-application"></a>在 Windows 服务应用程序中承载
-Windows 服务（以前称为 Windows NT 服务）提供了一种尤其适合于下面这样的应用程序的进程模型：必须在长时间运行的可执行程序中生存，并且不显示任何形式的用户界面。 Windows 服务应用程序的进程生存期由服务控制管理器 (SCM) 管理，您可以通过该管理器启动、停止和暂停 Windows 服务应用程序。 你可以将 Windows 服务进程配置为在计算机启动时自动启动，使其成为适用于 "alwayson" 应用程序的合适宿主环境。 有关 Windows 服务应用程序的详细信息，请参阅[Windows 服务应用程序](https://go.microsoft.com/fwlink/?LinkId=89450)。  
+Windows 服务（以前称为 Windows NT 服务）提供了一种尤其适合于下面这样的应用程序的进程模型：必须在长时间运行的可执行程序中生存，并且不显示任何形式的用户界面。 Windows 服务应用程序的进程生存期由服务控制管理器 (SCM) 管理，您可以通过该管理器启动、停止和暂停 Windows 服务应用程序。 你可以将 Windows 服务进程配置为在计算机启动时自动启动，使其成为适用于 "alwayson" 应用程序的合适宿主环境。 有关 Windows 服务应用程序的详细信息，请参阅 [Windows 服务应用程序](https://go.microsoft.com/fwlink/?LinkId=89450)。  
   
- 承载长时间运行的 Windows Communication Foundation （WCF）服务的应用程序与 Windows 服务共享许多特性。 特别是，WCF 服务是长时间运行的服务器可执行文件，这些可执行文件不会直接与用户交互，因此不实现任何形式的用户界面。 同样，在 Windows 服务应用程序中托管 WCF 服务是一种用于生成可靠、长时间运行的 WCF 应用程序的选项。  
+ 承载长时间运行 Windows Communication Foundation 的应用程序 (WCF) 服务与 Windows 服务共享许多特性。 特别是，WCF 服务是长时间运行的服务器可执行文件，这些可执行文件不会直接与用户交互，因此不实现任何形式的用户界面。 同样，在 Windows 服务应用程序中托管 WCF 服务是一种用于生成可靠、长时间运行的 WCF 应用程序的选项。  
   
- 通常，WCF 开发人员必须决定是在 Windows 服务应用程序内部还是在 Internet Information Services （IIS）或 Windows 进程激活服务（WAS）宿主环境内承载其 WCF 应用程序。 在下列条件下，应考虑使用 Windows 服务应用程序：  
+ 通常情况下，WCF 开发人员必须决定是在 Windows 服务应用程序内还是宿主 Internet Information Services (IIS) 或 Windows 进程激活服务 (是) 宿主环境。 在下列条件下，应考虑使用 Windows 服务应用程序：  
   
 - 应用程序要求显式激活。 例如，在服务器启动时应用程序必须自动启动（而不是动态启动以响应第一个传入消息）的条件下，应使用 Windows 服务。  
   
@@ -36,11 +36,11 @@ Windows 服务（以前称为 Windows NT 服务）提供了一种尤其适合于
   
      部署和管理承载 WCF 服务的 windows 服务应用程序的方式与未使用 WCF 的 Windows 服务应用程序相同。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceProcess>
 - [演练：在组件设计器中创建 Windows 服务应用程序](https://go.microsoft.com/fwlink/?LinkId=94875)
 - [如何：在托管 Windows 服务中承载 WCF 服务](how-to-host-a-wcf-service-in-a-managed-windows-service.md)
 - [Windows 服务主机](../samples/windows-service-host.md)
 - [服务应用程序编程体系结构](https://go.microsoft.com/fwlink/?LinkId=94876)
-- [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Windows Server App Fabric 承载功能](/previous-versions/appfabric/ee677189(v=azure.10))

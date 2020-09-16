@@ -2,16 +2,16 @@
 title: 承载工作流服务
 ms.date: 03/30/2017
 ms.assetid: 2d55217e-8697-4113-94ce-10b60863342e
-ms.openlocfilehash: 908ef7ebb9bfb1e2c49d96e41c0df1d843c0454d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 95d8d8b8ea15ef543471afb19462ccb424e8e39b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597275"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555804"
 ---
 # <a name="hosting-workflow-services"></a>承载工作流服务
 
-工作流服务在承载后才能对传入消息做出响应。 工作流服务使用的是 WCF 消息传递基础结构，因此承载的方式也类似。 与 WCF 服务类似，工作流服务可以承载于任何托管应用程序、Internet Information Services （IIS）或 Windows 进程激活服务（WAS）下。 此外，可以在 Windows Server App Fabric 下承载工作流服务。 有关 Windows Server App Fabric 的详细信息，请参阅[Windows Server App fabric 文档](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10))、 [appfabric 托管功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))和[appfabric 托管概念](https://docs.microsoft.com/previous-versions/appfabric/ee677371(v=azure.10))。 有关承载 WCF 服务的各种方式的详细信息，请参阅[托管服务](../hosting-services.md)。
+工作流服务在承载后才能对传入消息做出响应。 工作流服务使用的是 WCF 消息传递基础结构，因此承载的方式也类似。 与 WCF 服务类似，工作流服务可承载于任何托管应用程序、Internet Information Services (IIS) 下，或在) 的 Windows 进程激活服务 (下。 此外，可以在 Windows Server App Fabric 下承载工作流服务。 有关 Windows Server App Fabric 的详细信息，请参阅 [Windows Server App fabric 文档](/previous-versions/appfabric/ff384253(v=azure.10))、 [appfabric 托管功能](/previous-versions/appfabric/ee677189(v=azure.10))和 [appfabric 托管概念](/previous-versions/appfabric/ee677371(v=azure.10))。 有关承载 WCF 服务的各种方式的详细信息，请参阅 [托管服务](../hosting-services.md)。
 
 ## <a name="hosting-in-a-managed-application"></a>在托管应用程序中承载
  若要在托管应用程序中承载工作流服务，请使用 <xref:System.ServiceModel.Activities.WorkflowServiceHost> 类。 <xref:System.ServiceModel.Activities.WorkflowServiceHost> 构造函数可用于指定单一工作流服务实例、工作流服务定义或使用工作流消息传递活动的活动。 调用 <xref:System.ServiceModel.Channels.CommunicationObject.Open%2A> 将导致服务开始侦听传入消息。
@@ -52,9 +52,9 @@ ms.locfileid: "84597275"
  必须将对自定义活动的引用添加到 `Assemblies` <> 下的 <> 部分， `System.Web.Compilation` 以便将这些引用加载到应用程序域中，并且 XAML 反序列化程序能够查找类型。 可以在应用程序级别进行这些设置；如果要将这些设置应用于计算机上的所有应用程序，则可在根 Web.config 中进行这些设置。
 
 ## <a name="deployment"></a>部署
- 系统中已经创建 Web 部署工具，以方便部署作业。 通过使用该工具，可以在 IIS 6.0 和 IIS 7.0 之间迁移应用程序，同步服务器场，并打包、存档和部署 Web 应用程序。 有关详细信息，请参阅[MS 部署工具](https://go.microsoft.com/fwlink/?LinkId=178690)。
+ 系统中已经创建 Web 部署工具，以方便部署作业。 通过使用该工具，可以在 IIS 6.0 和 IIS 7.0 之间迁移应用程序，同步服务器场，并打包、存档和部署 Web 应用程序。 有关详细信息，请参阅 [MS 部署工具](https://go.microsoft.com/fwlink/?LinkId=178690)。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [工作流服务主机内部机制](workflow-service-host-internals.md)
 - [配置 WorkflowServiceHost](configuring-workflowservicehost.md)

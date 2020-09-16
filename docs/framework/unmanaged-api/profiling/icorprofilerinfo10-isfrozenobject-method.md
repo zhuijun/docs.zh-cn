@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 21f9cb415f913a9c865a487f6e80523344db811e
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 3755260b885768de6b5b2d6342c0ad590a95caff
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452183"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548665"
 ---
 # <a name="icorprofilerinfo10isfrozenobject-method"></a>ICorProfilerInfo10：： IsFrozenObject 方法
 
@@ -33,22 +33,22 @@ HRESULT IsFrozenObject( [in]  ObjectID objectId,
 
 - `objectId`
 
-  \[中] 要检查的对象。
+  \[in] 要检查的对象。
 
 - `pbFrozen`
 
-  \[out] 一个 `BOOL`，该值指示对象是否位于只读段中。
+  \[out] 一个 `BOOL` 值，该值指示对象是否位于只读段中。
 
 ## <a name="requirements"></a>要求
 
-**平台：** 请参阅[支持 .Net Core 的操作系统](../../../core/install/dependencies.md?pivots=os-windows)。
+**平台：** 请参阅 [支持 .Net Core 的操作系统](../../../core/install/windows.md?pivots=os-windows)。
 
 **头文件：** CorProf.idl、CorProf.h
 
 **库：** CorGuids.lib
 
-**.Net 版本：** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
+**.Net 版本：**[!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [ICorProfilerInfo10 接口](icorprofilerinfo10-interface.md)

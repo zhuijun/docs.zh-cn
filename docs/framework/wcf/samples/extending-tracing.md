@@ -2,18 +2,18 @@
 title: 扩展跟踪
 ms.date: 03/30/2017
 ms.assetid: 2b971a99-16ec-4949-ad2e-b0c8731a873f
-ms.openlocfilehash: 59bdfeea41bac812840ffe166895050a6cd1ad2d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: f2b9deb346077609193ec08c2c01b10a3ad9357b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600511"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556507"
 ---
 # <a name="extend-tracing"></a>扩展跟踪
 
-此示例演示如何通过在客户端和服务代码中编写用户定义的活动跟踪来扩展 Windows Communication Foundation （WCF）跟踪功能。 通过编写用户定义的活动跟踪，用户可以创建跟踪活动，并将跟踪分组为逻辑工作单元。 还可以通过传输（在同一个终结点内）和传播（在终结点之间）来关联活动。 在此示例中，同时为客户端和服务启用了跟踪。 有关如何在客户端和服务配置文件中启用跟踪的详细信息，请参阅[跟踪和消息日志记录](tracing-and-message-logging.md)。  
+此示例演示如何通过在客户端和服务代码中编写用户定义的活动跟踪来扩展 Windows Communication Foundation (WCF) 跟踪功能。 通过编写用户定义的活动跟踪，用户可以创建跟踪活动，并将跟踪分组为逻辑工作单元。 还可以通过传输（在同一个终结点内）和传播（在终结点之间）来关联活动。 在此示例中，同时为客户端和服务启用了跟踪。 有关如何在客户端和服务配置文件中启用跟踪的详细信息，请参阅 [跟踪和消息日志记录](tracing-and-message-logging.md)。  
   
- 此示例基于[入门](getting-started-sample.md)。  
+ 此示例基于 [入门](getting-started-sample.md)。  
   
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。  
@@ -23,15 +23,15 @@ ms.locfileid: "84600511"
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[Windows Communication Foundation (wcf) ，并 Windows Workflow Foundation (的 WF](https://www.microsoft.com/download/details.aspx?id=21459)) .NET Framework Windows Communication Foundation ([!INCLUDE[wf1](../../../../includes/wf1-md.md)] 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ExtendingTracing`  
   
 ## <a name="tracing-and-activity-propagation"></a>跟踪和活动传播  
- 用户定义的活动跟踪允许用户创建自己的跟踪活动，以便将跟踪分组为逻辑工作单元，通过传输和传播关联活动，并降低 WCF 跟踪的性能成本（例如，日志文件的磁盘空间成本）。  
+ 用户定义的活动跟踪允许用户创建自己的跟踪活动，以便将跟踪分组为逻辑工作单元，通过传输和传播关联活动，并降低 WCF 跟踪的性能成本 (例如，日志文件的磁盘空间成本) 。  
   
 ### <a name="add-custom-sources"></a>添加自定义源  
- 用户定义的跟踪既可以添加到客户端代码中，又可以添加到服务代码中。 将跟踪源添加到客户端或服务配置文件后，可以记录这些自定义跟踪并将其显示在[服务跟踪查看器工具（svctraceviewer.exe）](../service-trace-viewer-tool-svctraceviewer-exe.md)中。 下面的代码演示如何在配置文件中添加一个名为 `ServerCalculatorTraceSource` 的用户定义的跟踪源。  
+ 用户定义的跟踪既可以添加到客户端代码中，又可以添加到服务代码中。 将跟踪源添加到客户端或服务配置文件后，便可以记录这些自定义跟踪并将其显示在 [服务跟踪查看器工具中 ( # A0) ](../service-trace-viewer-tool-svctraceviewer-exe.md)。 下面的代码演示如何在配置文件中添加一个名为 `ServerCalculatorTraceSource` 的用户定义的跟踪源。  
   
 ```xml  
 <system.diagnostics>  
@@ -91,12 +91,12 @@ ms.locfileid: "84600511"
   
 ## <a name="set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对 [Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
 2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。  
   
-3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
+3. 若要以单机配置或跨计算机配置来运行示例，请按照 [运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [AppFabric 监视示例](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [AppFabric 监视示例](/previous-versions/appfabric/ff383407(v=azure.10))

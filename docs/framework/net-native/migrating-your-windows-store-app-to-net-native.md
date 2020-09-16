@@ -2,16 +2,16 @@
 title: 将 Windows 应用商店应用迁移到 .NET Native
 ms.date: 03/30/2017
 ms.assetid: 4153aa18-6f56-4a0a-865b-d3da743a1d05
-ms.openlocfilehash: 5e5c655d0e8d6f1730f27d35525692e110b3c80c
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: cef985200efaf2ed7488d5e99394a5f01cc38594
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309191"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556923"
 ---
 # <a name="migrate-your-windows-store-app-to-net-native"></a>将 Windows 应用商店应用迁移到 .NET Native
 
-.NET Native 提供 Windows 应用商店中或开发人员计算机上的应用的静态编译。 这不同于及时生成 (JIT) 编译器或 [本地映像生成器 (Ngen.exe)](../tools/ngen-exe-native-image-generator.md) 在该设备上为 Windows 应用商店应用执行的动态编译。 尽管存在差异，但 .NET Native 会尝试保持与[.net For Windows 应用商店应用](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29)的兼容性。 大多数情况下，适用于 Windows 应用商店应用的 .NET 上的功能也适用于 .NET Native。  然而，在某些情况下，你可能会遇到行为变更。 本文档讨论了 Windows 应用商店应用的标准 .NET 与以下几个方面的 .NET Native 之间的差异：
+.NET Native 提供 Windows 应用商店中或开发人员计算机上的应用的静态编译。 这不同于及时生成 (JIT) 编译器或 [本地映像生成器 (Ngen.exe)](../tools/ngen-exe-native-image-generator.md) 在该设备上为 Windows 应用商店应用执行的动态编译。 尽管存在差异，但 .NET Native 会尝试保持与 [.net For Windows 应用商店应用](/previous-versions/windows/apps/br230302(v=vs.140))的兼容性。 大多数情况下，适用于 Windows 应用商店应用的 .NET 上的功能也适用于 .NET Native。  然而，在某些情况下，你可能会遇到行为变更。 本文档讨论了 Windows 应用商店应用的标准 .NET 与以下几个方面的 .NET Native 之间的差异：
 
 - [常规运行时差异](#Runtime)
 
@@ -27,7 +27,7 @@ ms.locfileid: "86309191"
 
 ## <a name="general-runtime-differences"></a>常规运行时差异
 
-- <xref:System.TypeLoadException>当应用程序在公共语言运行时（CLR）上运行时，由 JIT 编译器引发的异常通常会导致编译时错误，.NET Native 处理时。
+- <xref:System.TypeLoadException>当应用程序在公共语言运行时 (CLR) 上运行时，由 JIT 编译器引发的异常（如）通常会导致 .NET Native 处理时出现编译时错误。
 
 - 请勿从一个应用的 UI 线程调用 <xref:System.GC.WaitForPendingFinalizers%2A?displayProperty=nameWithType> 方法。 这可能会导致 .NET Native 死锁。
 
@@ -58,7 +58,7 @@ ms.locfileid: "86309191"
 > [!NOTE]
 > 在将应用程序移植到 .NET Native 时，应彻底测试所有动态代码路径。
 
-.NET Native 的默认配置对于大多数开发人员来说已经足够，但某些开发人员可能希望通过使用运行时指令（.rd.xml）文件来微调其配置。 此外，在某些情况下，.NET Native 编译器无法确定哪些元数据必须可用于反射，并依赖于提示，尤其是在以下情况下：
+.NET Native 的默认配置对于大多数开发人员来说已经足够，但某些开发人员可能希望通过使用运行时指令 ( # A0) 文件来微调其配置。 此外，在某些情况下，.NET Native 编译器无法确定哪些元数据必须可用于反射，并依赖于提示，尤其是在以下情况下：
 
 - <xref:System.Type.MakeGenericType%2A?displayProperty=nameWithType> 和 <xref:System.Reflection.MethodInfo.MakeGenericMethod%2A?displayProperty=nameWithType> 等一些构造无法静态确定。
 
@@ -79,13 +79,13 @@ ms.locfileid: "86309191"
 
 - 反射到 .NET Framework 类库中的类型和成员的私有反射不受支持。 然而，你可以反射到自己的私有类型和成员以及第三方库的类型和成员。
 
-- <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType> 属性为表示返回值的 `false` 对象正确返回 <xref:System.Reflection.ParameterInfo> 。 在 Windows 应用商店应用的 .NET 中，它返回 `true`。 中间语言（IL）不直接支持这种情况，而解释会留给语言。
+- <xref:System.Reflection.ParameterInfo.HasDefaultValue%2A?displayProperty=nameWithType> 属性为表示返回值的 `false` 对象正确返回 <xref:System.Reflection.ParameterInfo> 。 在 Windows 应用商店应用的 .NET 中，它返回 `true`。 中间语言 (IL) 不能直接支持此，而是将解释留给语言。
 
 - 位于 <xref:System.RuntimeFieldHandle> 和 <xref:System.RuntimeMethodHandle> 结构上的公共成员不受支持。 这些受到支持的类型仅用于 LINQ、表达式树和静态阵列初始化。
 
 - <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeProperties%2A?displayProperty=nameWithType> 和 <xref:System.Reflection.RuntimeReflectionExtensions.GetRuntimeEvents%2A?displayProperty=nameWithType> 在基类中包含隐藏成员，因此可能会在没有显示重写的情况下遭到重写。 这也适用于其他 [RuntimeReflectionExtensions.GetRuntime*](xref:System.Reflection.RuntimeReflectionExtensions) 方法。
 
-- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType><xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType>如果尝试创建某些组合（例如，对象的数组），则不会失败 `byref` 。
+- <xref:System.Type.MakeArrayType%2A?displayProperty=nameWithType><xref:System.Type.MakeByRefType%2A?displayProperty=nameWithType>如果尝试创建某些组合 (例如，) 对象的数组，则不会失败 `byref` 。
 
 - 你无法使用反射来调用具有指针参数的成员。
 
@@ -119,7 +119,7 @@ ms.locfileid: "86309191"
 
 - 不支持大于 1 mb 的值类型。
 
-- 在 .NET Native 中，值类型不能有无参数的构造函数。 （C # 和 Visual Basic 在值类型上禁止无参数的构造函数。 然而，这些可以在 IL 中进行创建。）
+- 在 .NET Native 中，值类型不能有无参数的构造函数。  (c # 和 Visual Basic 在值类型上禁止无参数的构造函数。 然而，这些可以在 IL 中进行创建。）
 
 **数组**
 
@@ -167,7 +167,7 @@ ms.locfileid: "86309191"
 
 ### <a name="httpclient-differences"></a>HttpClient 差异
 
-在 .NET Native 中， <xref:System.Net.Http.HttpClientHandler> 类在内部使用 WinINet （通过 <xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter> 类），而不是使用 <xref:System.Net.WebRequest> <xref:System.Net.WebResponse> 标准 .Net for Windows 应用商店应用中使用的和类。  WinINet 并不支持 <xref:System.Net.Http.HttpClientHandler> 类支持的所有配置选项。  因此：
+在 .NET Native 中， <xref:System.Net.Http.HttpClientHandler> 类在内部使用 WinINet)  (， <xref:Windows.Web.Http.Filters.HttpBaseProtocolFilter> 而不是使用 <xref:System.Net.WebRequest> <xref:System.Net.WebResponse> 标准 .Net for Windows 应用商店应用中使用的和类。  WinINet 并不支持 <xref:System.Net.Http.HttpClientHandler> 类支持的所有配置选项。  因此：
 
 - 的某些功能属性在 <xref:System.Net.Http.HttpClientHandler> .NET Native 上返回 `false` ，而它们 `true` 在 Windows 应用商店应用的标准 .net 中返回。
 
@@ -225,9 +225,9 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 - <xref:System.Runtime.InteropServices.UnmanagedType.SafeArray?displayProperty=nameWithType>
 - <xref:System.Runtime.InteropServices.VarEnum?displayProperty=nameWithType>
 
- <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType>支持，但在某些情况下会引发异常，如与[IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch)或 variant 一起使用时 `byref` 。
+ <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> 支持，但在某些情况下会引发异常，如与 [IDispatch](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) 或 variant 一起使用时 `byref` 。
 
- 适用于[IDispatch](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch)支持的不推荐使用的 api 包括：
+ 适用于 [IDispatch](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) 支持的不推荐使用的 api 包括：
 
 - <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDispatch?displayProperty=fullName>
 - <xref:System.Runtime.InteropServices.ClassInterfaceType.AutoDual?displayProperty=fullName>
@@ -278,7 +278,7 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 - 委托
 
-- 字符串（Unicode、ANSI 和 HSTRING）
+- String (Unicode、ANSI 和 HSTRING) 
 
 - 结构（`byref` 和 `byval`）
 
@@ -324,7 +324,7 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 - 在托管类型上实施 <xref:System.Runtime.InteropServices.ICustomQueryInterface?displayProperty=nameWithType> 接口
 
-- 通过 [属性，在托管类型上实现](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) IDispatch <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> 接口。 但是，你无法通过调用 COM 对象 `IDispatch` ，而且你的托管对象无法实现 `IDispatch` 。
+- 通过 [属性，在托管类型上实现](/previous-versions/windows/desktop/api/oaidl/nn-oaidl-idispatch) IDispatch <xref:System.Runtime.InteropServices.ComDefaultInterfaceAttribute?displayProperty=nameWithType> 接口。 但是，你无法通过调用 COM 对象 `IDispatch` ，而且你的托管对象无法实现 `IDispatch` 。
 
 使用反射来调用平台调用方法不受支持。 你可以巧妙绕过这种限制，具体做法是将方法调用包装在另一种方法中，并使用反射调用包装方法。
 
@@ -332,7 +332,7 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 ### <a name="other-differences-from-net-apis-for-windows-store-apps"></a>与 Windows 应用商店应用 .NET API 的其他差异
 
-本部分列出了 .NET Native 不支持的其余 Api。 不受支持的最大 Api 集是 Windows Communication Foundation （WCF） Api。
+本部分列出了 .NET Native 不支持的其余 Api。 不受支持的最大 Api 集是 Windows Communication Foundation (WCF) Api。
 
 **DataAnnotations (System.ComponentModel.DataAnnotations)**
 
@@ -396,7 +396,7 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 **Windows Communication Foundation (WCF) (System.ServiceModel.\*)**
 
-.NET Native 中不支持[system.servicemodel. * 命名空间](xref:System.ServiceModel)中的类型。 这包括以下类型：
+.NET Native 中不支持 [system.servicemodel. * 命名空间](xref:System.ServiceModel) 中的类型。 这包括以下类型：
 
 - <xref:System.ServiceModel.ActionNotSupportedException?displayProperty=nameWithType>
 - <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType>
@@ -661,9 +661,9 @@ Cookie 处理由 <xref:System.Net.Http.HttpClient> 和 WinINet 同时执行。  
 
 不支持在 Windows 应用商店应用项目的单元测试库上启用 .NET Native，并导致项目未能生成。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [入门](getting-started-with-net-native.md)
 - [运行时指令 (rd.xml) 配置文件引用](runtime-directives-rd-xml-configuration-file-reference.md)
-- [适用于 Windows 应用商店应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302%28v=vs.140%29)
-- [.NET Framework 对 Windows 应用商店应用程序和 Windows 运行时的支持情况](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)
+- [适用于 Windows 应用商店应用的 .NET 概述](/previous-versions/windows/apps/br230302(v=vs.140))
+- [.NET Framework 对 Windows 应用商店应用和 Windows 运行时的支持情况](../../standard/cross-platform/support-for-windows-store-apps-and-windows-runtime.md)

@@ -5,28 +5,28 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 36335cb9-76b8-4443-92c7-44f081eabb21
-ms.openlocfilehash: 9447487012cae370d35880e5b780465f9434051b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9bcac0e45d44270d27a4cf04677e967a80e94b90
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602617"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550197"
 ---
 # <a name="message-security-with-a-user-name-client"></a>用户名客户端的消息安全
-下图显示了使用消息级安全性保护 Windows Communication Foundation （WCF）服务和客户端。 服务使用 X.509 证书进行身份验证。 客户端使用用户名和密码进行身份验证。  
+下图显示了使用消息级安全性来保护 Windows Communication Foundation (WCF) 服务和客户端。 服务使用 X.509 证书进行身份验证。 客户端使用用户名和密码进行身份验证。  
   
- 有关示例应用程序，请参阅[消息安全用户名](../samples/message-security-user-name.md)。  
+ 有关示例应用程序，请参阅 [消息安全用户名](../samples/message-security-user-name.md)。  
   
  ![使用用户名身份验证的消息安全](media/1fb10a61-7e1d-42f5-b1af-195bfee5b3c6.gif "1fb10a61-7e1d-42f5-b1af-195bfee5b3c6")  
   
-|特征|描述|  
+|特征|说明|  
 |--------------------|-----------------|  
 |安全模式|Message|  
-|互操作性|仅 Windows Communication Foundation （WCF）|  
+|互操作性|仅 Windows Communication Foundation (WCF) |  
 |身份验证（服务器）|初始协商需要服务器身份验证|  
 |身份验证（客户端）|用户名/密码|  
 |完整性|是，使用共享安全上下文|  
-|机密性|是，使用共享安全上下文|  
+|保密性|是，使用共享安全上下文|  
 |Transport|HTTP|  
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|  
   
@@ -125,10 +125,10 @@ ms.locfileid: "84602617"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
 - [用户名消息安全](../samples/message-security-user-name.md)
 - [服务标识和身份验证](service-identity-and-authentication.md)
 - [\<identity>](../../configure-apps/file-schema/wcf/identity.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

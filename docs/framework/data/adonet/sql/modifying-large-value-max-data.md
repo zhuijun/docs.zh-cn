@@ -1,16 +1,16 @@
 ---
-title: 修改大值（最大）数据
+title: 修改大值 (max) 数据
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 8aca5f00-d80e-4320-81b3-016d0466f7ee
-ms.openlocfilehash: 00a4ae83270bb74e9703faebfc93e26b5c069478
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8a077c56f4de5a88e9c2a6f932c9a8b5ffc6b974
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174272"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556962"
 ---
 # <a name="modifying-large-value-max-data-in-adonet"></a>在 ADO.NET 中修改大值 (max) 数据
 大型对象 (LOB) 数据类型是指那些超过 8 KB 最大行大小的数据类型。 SQL Server 为 `varchar`、`nvarchar` 和 `varbinary` 数据类型引入了 `max` 说明符，以允许存储最长可达 2^32 个字节的值。 表列和 Transact-SQL 变量可以指定 `varchar(max)`、`nvarchar(max)` 或 `varbinary(max)` 数据类型。 在 ADO.NET 中，`max` 数据类型可通过 `DataReader` 来提取，并可指定为输入和输出参数值而无需任何特殊处理。 对于大型 `varchar` 数据类型，可以增量地检索和更新数据。  
@@ -19,9 +19,9 @@ ms.locfileid: "79174272"
   
  下表提供指向 SQL Server 联机丛书中的文档的链接。  
   
- **SQL 服务器文档**  
+ **SQL Server 文档**  
   
-1. [使用大值数据类型](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms178158(v=sql.100))  
+1. [使用大值数据类型](/previous-versions/sql/sql-server-2008/ms178158(v=sql.100))  
   
 ## <a name="large-value-type-restrictions"></a>大值类型限制  
  以下限制适用于对于较小数据类型不存在的 `max` 数据类型：  
@@ -57,15 +57,15 @@ FROM OPENROWSET
   
  UPDATE  
   
- [*\<对象>* ]  
+ { *\<object>* }  
   
  SET  
   
- [ *column_name* ]写入*expression*（表达式@Offset @Length ， ， ） *  
+ { *column_name* = {。写入 ( *表达式* ， @Offset @Length ) }  
   
  WRITE 方法指定将修改 column_name 值的某个部分**。 表达式是将复制到 column_name 的值，`@Offset` 是将写入表达式的开始点，`@Length` 自变量是列中该部分的长度**。  
   
-|如果|则|  
+|如果|Then|  
 |--------|----------|  
 |表达式设置为 NULL|忽略 `@Length`，并在指定的 `@Offset` 处截断 column_name 中的值**。|  
 |`@Offset` 为 NULL|更新操作将表达式追加到现有 column_name 值的末尾并忽略 `@Length`**。|  
@@ -249,9 +249,9 @@ WHERE   DocumentID=@DocumentID
  [!code-csharp[DataWorks LargeValueType.Param#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks LargeValueType.Param/CS/source.cs#1)]
  [!code-vb[DataWorks LargeValueType.Param#1](../../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks LargeValueType.Param/VB/source.vb#1)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [SQL 服务器二进制和大值数据](sql-server-binary-and-large-value-data.md)
+- [SQL Server 二进制和大值数据](sql-server-binary-and-large-value-data.md)
 - [SQL Server 数据类型映射](../sql-server-data-type-mappings.md)
-- [ADO.NET中的 SQL 服务器数据操作](sql-server-data-operations.md)
+- [ADO.NET 中的 SQL Server 数据操作](sql-server-data-operations.md)
 - [ADO.NET 概述](../ado-net-overview.md)

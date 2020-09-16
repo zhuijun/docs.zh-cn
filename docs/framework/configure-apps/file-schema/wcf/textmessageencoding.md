@@ -2,12 +2,12 @@
 title: <textMessageEncoding>
 ms.date: 03/30/2017
 ms.assetid: e6d834d0-356e-45eb-b530-bbefbb9ec3f0
-ms.openlocfilehash: d67d623736f3cbf50568356132a74d2b234fdfd9
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c5cd8e9e2002f44fd9feebdc6bb7ede023de459a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736215"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556442"
 ---
 # \<textMessageEncoding>
 指定用于基于文本的 XML 消息的字符编码和消息版本控制。  
@@ -42,17 +42,17 @@ ms.locfileid: "73736215"
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
+|[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|定义自定义绑定的所有绑定功能。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
  编码是将消息转换为一个字节序列的过程。 解码是反向过程。 Windows Communication Foundation (WCF) 包含三种类型的 SOAP 消息编码：文本、二进制和消息传输优化机制 (MTOM)。  
   
  由 `textMessageEncoding` 元素表示的文本编码互操作性最强，但却是效率最低的 XML 消息编码器。  文本编码器在网络上创建基于文本的消息。 此编码器产生的消息适合于基于 WS-* 的互操作性。 Web 服务或 Web 服务客户端通常可以理解文本 XML。 但是，对于 XML 消息编码来说，以文本形式传输较大的二进制数据块是最低效的方法。  
@@ -66,7 +66,7 @@ ms.locfileid: "73736215"
                      textEncoding="utf-8" />
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.TextMessageEncodingElement>
 - <xref:System.ServiceModel.Channels.CustomBinding>

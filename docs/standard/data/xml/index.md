@@ -3,12 +3,12 @@ title: XML 文档和数据
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
-ms.openlocfilehash: a752d634141a56df1caa61eb5d375dd2a402832f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 6d2a52567a1fc8bdbbb1d039ac583c889d77d4af
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287683"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540129"
 ---
 # <a name="xml-documents-and-data"></a>XML 文档和数据
 
@@ -24,7 +24,7 @@ ms.locfileid: "84287683"
 
 - <xref:System.Xml.Linq>
 
-若要查看完整的列表，请在 [.NET API 浏览器](https://docs.microsoft.com/dotnet/api/?term=system.xml)上搜索“System.Xml”。
+若要查看完整的列表，请在 [.NET API 浏览器](../../../../api/index.md?term=system.xml)上搜索“System.Xml”。
 
 这些命名空间中的类支持万维网联合会 (W3C) 建议。 例如：
 
@@ -38,7 +38,7 @@ ms.locfileid: "84287683"
 
 .NET Framework 中的 XML 类具有以下优点：
 
-- **高效率。** 通过 [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) 和 [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)，能够更轻松地使用 XML 编程，并且能够得到与 SQL 类似的查询体验。
+- **高效率。** 通过 [LINQ to XML (C#)](../../linq/linq-xml-overview.md) 和 [LINQ to XML (Visual Basic)](../../linq/linq-xml-overview.md)，能够更轻松地使用 XML 编程，并且能够得到与 SQL 类似的查询体验。
 
 - **扩展性。** .NET Framework 中的 XML 类可使用抽象基类和虚拟方法进行扩展。 例如，您可以创建 <xref:System.Xml.XmlUrlResolver> 类的一个派生类，用以将缓存流存储到本地磁盘。
 
@@ -60,7 +60,7 @@ ms.locfileid: "84287683"
 
 [XML 处理选项](xml-processing-options.md) 讨论用于处理 XML 数据的选项。
 
-[处理内存中 XML 数据](processing-xml-data-in-memory.md) 讨论用于处理内存中 XML 数据的三种模型：[LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) 和 [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)、<xref:System.Xml.XmlDocument> 类（基于 W3C 文档对象模型）以及 <xref:System.Xml.XPath.XPathDocument> 类（基于 XPath 数据模型）。
+[处理内存中 XML 数据](processing-xml-data-in-memory.md) 讨论用于处理内存中 XML 数据的三种模型：[LINQ to XML (C#)](../../linq/linq-xml-overview.md) 和 [LINQ to XML (Visual Basic)](../../linq/linq-xml-overview.md)、<xref:System.Xml.XmlDocument> 类（基于 W3C 文档对象模型）以及 <xref:System.Xml.XPath.XPathDocument> 类（基于 XPath 数据模型）。
 
 [XSLT 转换](xslt-transformations.md)\
 描述如何使用 XSLT 处理器。

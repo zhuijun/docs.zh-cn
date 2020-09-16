@@ -3,30 +3,30 @@ title: 通过 F# 实现 Azure Blob 入门
 description: 通过 Azure Blob 存储将非结构化数据存储在云中。
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 79f6a559ac603b0544916764126a988d3f3f43d7
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 0dda2e04f0052823e9ea35051855d677cd19ea92
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77092624"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548470"
 ---
-# <a name="get-started-with-azure-blob-storage-using-f"></a>使用 F\# 开始使用 Azure Blob 存储
+# <a name="get-started-with-azure-blob-storage-using-f"></a>使用 F 开始使用 Azure Blob 存储\#
 
 Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中的服务。 Blob 存储可以存储任何类型的文本或二进制数据，例如文档、媒体文件或应用程序安装程序。 Blob 存储也称为对象存储。
 
-本文介绍如何使用 Blob 存储执行常见任务。 示例是使用用于 .NET F#的 Azure 存储客户端库编写的。 涉及的任务包括如何上传、列出、下载和删除 blob。
+本文介绍如何使用 Blob 存储执行常见任务。 使用用于 .NET 的 Azure 存储客户端库的 F # 编写示例。 涉及的任务包括如何上传、列出、下载和删除 blob。
 
-有关 blob 存储的概念性概述，请参阅[blob 存储的 .net 指南](/azure/storage/blobs/storage-quickstart-blobs-dotnet)。
+有关 blob 存储的概念性概述，请参阅 [blob 存储的 .net 指南](/azure/storage/blobs/storage-quickstart-blobs-dotnet)。
 
-## <a name="prerequisites"></a>必备条件
+## <a name="prerequisites"></a>先决条件
 
-若要使用本指南，必须先[创建 Azure 存储帐户](/azure/storage/common/storage-account-create)。 还需要此帐户的存储访问密钥。
+若要使用本指南，必须先 [创建 Azure 存储帐户](/azure/storage/common/storage-account-create)。 还需要此帐户的存储访问密钥。
 
-## <a name="create-an-f-script-and-start-f-interactive"></a>创建F#脚本并开始F#交互式
+## <a name="create-an-f-script-and-start-f-interactive"></a>创建 F # 脚本并开始 F# 交互窗口
 
-本文中的示例可用于F#应用程序或F#脚本。 若要创建F#脚本，请在F#开发环境中创建一个具有 `.fsx` 扩展名的文件，例如 `blobs.fsx`。
+本文中的示例可用于 F # 应用程序或 F # 脚本。 若要创建 F # 脚本，请创建 `.fsx` 扩展名为的文件，例如 `blobs.fsx` f # 开发环境中的文件。
 
-接下来，使用[程序包管理器](package-management.md)（如[Paket](https://fsprojects.github.io/Paket/)或[NuGet](https://www.nuget.org/) ）安装 `WindowsAzure.Storage` 和 `Microsoft.WindowsAzure.ConfigurationManager` 包，并使用 `#r` 指令在脚本中引用 `WindowsAzure.Storage.dll` 和 `Microsoft.WindowsAzure.Configuration.dll`。
+接下来，使用 [包管理器](package-management.md) （如 [Paket](https://fsprojects.github.io/Paket/) 或 [NuGet](https://www.nuget.org/) ）在 `WindowsAzure.Storage` 你的 `Microsoft.WindowsAzure.ConfigurationManager` `WindowsAzure.Storage.dll` `Microsoft.WindowsAzure.Configuration.dll` 脚本中使用指令安装和包和引用 `#r` 。
 
 ### <a name="add-namespace-declarations"></a>添加命名空间声明
 
@@ -36,13 +36,13 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 ### <a name="get-your-connection-string"></a>获取连接字符串
 
-对于本教程，你需要一个 Azure 存储连接字符串。 有关连接字符串的详细信息，请参阅[配置存储连接字符串](/azure/storage/storage-configure-connection-string)。
+对于本教程，你需要一个 Azure 存储连接字符串。 有关连接字符串的详细信息，请参阅 [配置存储连接字符串](/azure/storage/storage-configure-connection-string)。
 
 对于本教程，请在脚本中输入连接字符串，如下所示：
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L11-L11)]
 
-但对于实际项目，**不建议这样做**。 存储帐户密钥类似于存储帐户的根密码。 始终要小心保护存储帐户密钥。 避免将其分发给其他用户、对其进行硬编码或将其保存在其他人可以访问的纯文本文件中。 如果你认为密钥可能已泄漏，你可以使用 Azure 门户重新生成密钥。
+但对于实际项目， **不建议这样做** 。 存储帐户密钥类似于存储帐户的根密码。 始终要小心保护存储帐户密钥。 避免将其分发给其他用户、对其进行硬编码或将其保存在其他人可以访问的纯文本文件中。 如果你认为密钥可能已泄漏，你可以使用 Azure 门户重新生成密钥。
 
 对于实际应用程序，维护存储连接字符串的最佳方式是在配置文件中。 若要从配置文件中提取连接字符串，可以执行以下操作：
 
@@ -56,7 +56,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L21-L22)]
 
-这会返回 `CloudStorageAccount`。
+这会返回一个 `CloudStorageAccount` 。
 
 ### <a name="create-some-local-dummy-data"></a>创建一些本地虚拟数据
 
@@ -66,7 +66,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 ### <a name="create-the-blob-service-client"></a>创建 Blob 服务客户端
 
-`CloudBlobClient` 类型使你能够检索存储在 Blob 存储中的容器和 blob。 下面是创建服务客户端的一种方法：
+`CloudBlobClient`类型使你能够检索存储在 Blob 存储中的容器和 blob。 下面是创建服务客户端的一种方法：
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L36-L36)]
 
@@ -88,13 +88,13 @@ Internet 中的所有人都可以查看公共容器中的 blob，但是，仅在
 
 Azure Blob 存储支持块 Blob 和页 Blob。 在大多数情况下，建议使用块 blob。
 
-要将文件上传到块 Blob，请获取容器引用，并使用它获取块 Blob 引用。 拥有 blob 引用后，可以通过调用 `UploadFromFile` 方法，将任何数据流上载到该 blob。 此操作将创建 blob （如果该 blob 不存在），或者覆盖它（如果该 blob 存在）。
+要将文件上传到块 Blob，请获取容器引用，并使用它获取块 Blob 引用。 拥有 blob 引用后，可以通过调用方法，将任何数据流上载到该 blob `UploadFromFile` 。 此操作将创建 blob （如果该 blob 不存在），或者覆盖它（如果该 blob 存在）。
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L55-L59)]
 
-## <a name="list-the-blobs-in-a-container"></a>列出容器中的 Blob
+## <a name="list-the-blobs-in-a-container"></a>列出容器中的 blob
 
-若要列出容器中的 Blob，首先需要获取容器引用。 然后，可以使用容器的 `ListBlobs` 方法检索其中的 blob 和/或目录。 若要访问返回 `IListBlobItem`的一组丰富的属性和方法，必须将其转换为 `CloudBlockBlob`、`CloudPageBlob`或 `CloudBlobDirectory` 对象。 如果类型未知，可以使用类型检查来确定要将其转换为哪种类型。 以下代码演示了如何检索和输出 `mydata` 容器中每一项的 URI：
+若要列出容器中的 Blob，首先需要获取容器引用。 然后，可以使用容器的 `ListBlobs` 方法检索其中的 blob 和/或目录。 若要访问返回的的丰富属性和方法集 `IListBlobItem` ，必须将其强制转换为 `CloudBlockBlob` 、 `CloudPageBlob` 或 `CloudBlobDirectory` 对象。 如果类型未知，可以使用类型检查来确定要将其转换为哪种类型。 以下代码演示了如何检索和输出 `mydata` 容器中每一项的 URI：
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L67-L80)]
 
@@ -102,16 +102,16 @@ Azure Blob 存储支持块 Blob 和页 Blob。 在大多数情况下，建议使
 
 例如，考虑名为 `photos`的容器中包含的下面一组块 Blob：
 
-*photo1*\
-*2015/体系结构/description .txt*\
-*2015/体系结构/photo3*\
-*2015/体系结构/photo4*\
-*2016/体系结构/photo5*\
-*2016/体系结构/photo6*\
-*2016/体系结构/description .txt*\
-*2016/photo7*\
+*photo1.jpg*\
+*2015/体系结构/description.txt*\
+*2015/体系结构/photo3.jpg*\
+*2015/体系结构/photo4.jpg*\
+*2016/体系结构/photo5.jpg*\
+*2016/体系结构/photo6.jpg*\
+*2016/体系结构/description.txt*\
+*2016/photo7.jpg*\
 
-调用容器上的 `ListBlobs` 时（如上面的示例所示），将返回一个层次结构列表。 如果它同时包含 `CloudBlobDirectory` 和 `CloudBlockBlob` 对象，分别表示容器中的目录和 blob，则生成的输出如下所示：
+当你在 `ListBlobs` 容器上调用时 (如以上示例) 中所示，将返回一个层次结构列表。 如果它包含 `CloudBlobDirectory` 和 `CloudBlockBlob` 对象，分别表示容器中的目录和 blob，则生成的输出如下所示：
 
 ```console
 Directory: https://<accountname>.blob.core.windows.net/photos/2015/
@@ -119,7 +119,7 @@ Directory: https://<accountname>.blob.core.windows.net/photos/2016/
 Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/photo1.jpg
 ```
 
-还可以选择将 `ListBlobs` 方法的 `UseFlatBlobListing` 参数设置为 "`true`"。 在这种情况下，容器中的每个 blob 都作为 `CloudBlockBlob` 对象返回。 对 `ListBlobs` 的调用返回一个平面列表，如下所示：
+还可以选择将方法的 `UseFlatBlobListing` 参数设置 `ListBlobs` 为 `true` 。 在这种情况下，容器中的每个 blob 都作为 `CloudBlockBlob` 对象返回。 对的调用 `ListBlobs` 将返回一个平面列表，如下所示：
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L82-L89)]
 
@@ -148,7 +148,7 @@ Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/
 
 ## <a name="delete-blobs"></a>删除 Blob
 
-若要删除 blob，首先要获取 blob 引用，然后对其调用 `Delete` 方法。
+若要删除 blob，首先要获取 blob 引用，然后对 `Delete` 其调用方法。
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L112-L116)]
 
@@ -156,17 +156,17 @@ Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/
 
 如果要列出大量 Blob，或需要控制一个列表操作中返回的结果数，则可以结果页的方式列出 Blob。 此示例显示如何以页面形式异步返回结果，这样就不会在等待返回大型结果集时阻止操作的执行。
 
-此示例演示平面 blob 列表，但你也可以执行层次结构列表，方法是将 `ListBlobsSegmentedAsync` 方法的 `useFlatBlobListing` 参数设置为 "`false`"。
+此示例演示平面 blob 列表，但你也可以通过将 `useFlatBlobListing` 方法的参数设置为来执行层次结构列表 `ListBlobsSegmentedAsync` `false` 。
 
-该示例使用 `async` 块定义了一个异步方法。 ``let!`` 关键字挂起示例方法的执行，直至列表任务完成。
+该示例使用块定义了一个异步方法 `async` 。 ``let!``关键字将挂起示例方法的执行，直至列表任务完成。
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L122-L160)]
 
-现在，我们可以按如下所示使用此异步例程。 首先，上载一些虚拟数据（使用本教程前面部分创建的本地文件）。
+现在，我们可以按如下所示使用此异步例程。 首先，使用在本教程) 之前创建的本地文件上传一些虚拟数据 (。
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L162-L166)]
 
-现在，调用例程。 您可以使用 `Async.RunSynchronously` 来强制执行异步操作。
+现在，调用例程。 使用 `Async.RunSynchronously` 强制执行异步操作。
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L168-L168)]
 
@@ -180,7 +180,7 @@ Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L174-L203)]
 
-请参阅 [了解块 Blob、页 Blob 和追加 Blob](https://msdn.microsoft.com/library/azure/ee691964.aspx) ，就有关三种 Blob 之间的差异了解详细信息。
+请参阅 [了解块 Blob、页 Blob 和追加 Blob](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs) ，就有关三种 Blob 之间的差异了解详细信息。
 
 ## <a name="concurrent-access"></a>并发访问
 
@@ -190,7 +190,7 @@ Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/
 
 - **租约** - 用于在某个时段内获取对 Blob 的独占式、可续订写入或删除访问
 
-有关详细信息，请参阅[Microsoft Azure 存储中的 "管理并发](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/)"。
+有关详细信息，请参阅 [Microsoft Azure 存储中的 "管理并发](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/)"。
 
 ## <a name="naming-containers"></a>命名容器
 
@@ -226,24 +226,24 @@ Azure 存储支持在客户端和服务器上加密 blob 数据。
 
 ### <a name="tools"></a>工具
 
-- [ F# AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/)\
-一F#种类型提供程序，可用于浏览 Blob、表和队列的 Azure 存储资产，并可以轻松地对其应用 CRUD 操作。
+- [F # AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/)\
+F # 类型提供程序，可用于浏览 Blob、表和队列的 Azure 存储资产，并可以轻松地对其应用 CRUD 操作。
 
 - [Fsharp.core](https://github.com/fsprojects/FSharp.Azure.Storage)\
-使用F# Microsoft Azure 表存储服务的 API
+使用 Microsoft Azure 表存储服务的 F # API
 
-- [Microsoft Azure 存储资源管理器（MASE）](/azure/vs-azure-tools-storage-manage-with-storage-explorer)\
+- [Microsoft Azure 存储资源管理器 (MASE) ](/azure/vs-azure-tools-storage-manage-with-storage-explorer)\
 Microsoft 提供的免费独立应用，可用于在 Windows、OS X 和 Linux 上以可视方式处理 Azure 存储数据。
 
 ### <a name="blob-storage-reference"></a>Blob 存储参考
 
-- [适用于 .NET 的 Azure 存储 Api](/dotnet/api/overview/azure/storage)
+- [用于 .NET 的 Azure 存储 API](/dotnet/api/overview/azure/storage)
 - [Azure 存储服务 REST API 参考](/rest/api/storageservices/)
 
 ### <a name="related-guides"></a>相关指南
 
-- [适用于 .NET 的 Azure Blob 存储示例](https://docs.microsoft.com/samples/azure-samples/storage-blob-dotnet-getting-started/storage-blob-dotnet-getting-started/)
+- [适用于 .NET 的 Azure Blob 存储示例](/samples/azure-samples/storage-blob-dotnet-getting-started/storage-blob-dotnet-getting-started/)
 - [AzCopy 入门](/azure/storage/common/storage-use-azcopy-v10)
 - [Configure Azure Storage connection strings](/azure/storage/common/storage-configure-connection-string)（配置 Azure 存储连接字符串）
-- [Azure 存储团队博客](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
+- [Azure 存储团队博客](/archive/blogs/windowsazurestorage/)
 - [快速入门：使用 .NET 在对象存储中创建 blob](/azure/storage/blobs/storage-quickstart-blobs-dotnet)

@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99d7a528-7ae4-4d39-a0f9-3066ea237de0
-ms.openlocfilehash: 44d06762bf66950ea0cc06986c61ecd548ae2e0c
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: bbe99b133e7edda191d17e9fe8a1dea89d3f0eb7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84576403"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556520"
 ---
 # <a name="message-security-with-mutual-certificates"></a>使用相互证书的消息安全
-下面的方案演示 Windows Communication Foundation （WCF）服务和使用消息安全模式保护的客户端。 使用证书对客户端和服务进行身份验证。  
+下面的方案演示使用消息安全模式 Windows Communication Foundation (WCF) 服务和客户端。 使用证书对客户端和服务进行身份验证。  
   
  本方案是可互操作的，因为它使用具有 X.509 证书令牌配置文件的 WS-Security。  
   
@@ -22,13 +22,13 @@ ms.locfileid: "84576403"
   
  ![具有相互证书的消息安全](media/f4157312-b17c-416c-a5ee-fa7b54db211b.gif "f4157312-b17c-416c-a5ee-fa7b54db211b")  
   
-|特征|描述|  
+|特征|说明|  
 |--------------------|-----------------|  
 |安全模式|Message|  
 |互操作性|是，使用 WS-Security 和 X.509 证书令牌配置文件兼容的客户端和服务。|  
 |身份验证|服务器和客户端的相互身份验证。|  
 |完整性|是|  
-|机密性|是|  
+|保密性|是|  
 |Transport|HTTP|  
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|  
   
@@ -158,8 +158,8 @@ ms.locfileid: "84576403"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
-- [如何：在 WCF 中创建和安装用于传输安全的临时证书](https://docs.microsoft.com/previous-versions/msp-n-p/ff648498(v=pandp.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))
+- [如何：在 WCF 中创建和安装用于传输安全的临时证书](/previous-versions/msp-n-p/ff648498(v=pandp.10))

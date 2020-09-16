@@ -3,12 +3,12 @@ title: 诊断工具概述 - .NET Core
 description: 概述用于 .NET Core 应用程序的工具和技术。
 ms.date: 07/16/2020
 ms.topic: overview
-ms.openlocfilehash: 568f237e131cde18dad7c87ddff2fdd3d4bc5b8b
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: e97acccbe3bdd577ee600cefb9f1f0528d3c1ac0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89597976"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538522"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>.NET Core 中提供哪些诊断工具？
 
@@ -56,7 +56,7 @@ ms.locfileid: "89597976"
 
 ### <a name="dotnet-sos"></a>dotnet-sos
 
-[dotnet-sos](dotnet-sos.md) 用于在 Linux 或 MacOS 上安装 [SOS 调试扩展](https://docs.microsoft.com/dotnet/framework/tools/sos-dll-sos-debugging-extension)（如果使用较旧的调试工具，则在 Windows 上进行安装）。
+[dotnet-sos](dotnet-sos.md) 用于在 Linux 或 MacOS 上安装 [SOS 调试扩展](../../framework/tools/sos-dll-sos-debugging-extension.md)（如果使用较旧的调试工具，则在 Windows 上进行安装）。
 
 ## <a name="net-core-diagnostics-tutorials"></a>.NET Core 诊断教程
 

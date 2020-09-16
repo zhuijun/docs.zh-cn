@@ -6,31 +6,31 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 056653a5-384e-4a02-ae3c-1b0157d2ccb4
-ms.openlocfilehash: 08cfb8c1a5581f17a251224430018764bed80b0f
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 5e8bcab4cdd8f27e9ea27e66fe4c848ccd35e99c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245006"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556806"
 ---
 # <a name="transport-security-with-an-anonymous-client"></a>匿名客户端的传输安全
 
-此 Windows Communication Foundation （WCF）方案使用传输安全（HTTPS）来确保机密性和完整性。 必须使用安全套接字层 (SSL) 证书对服务器进行身份验证，并且客户端必须信任服务器的证书。 客户端不通过任何机制进行身份验证，因此是匿名的。
+此 Windows Communication Foundation (WCF) 方案使用传输安全 (HTTPS) 来确保机密性和完整性。 必须使用安全套接字层 (SSL) 证书对服务器进行身份验证，并且客户端必须信任服务器的证书。 客户端不通过任何机制进行身份验证，因此是匿名的。
 
-有关示例应用程序，请参阅[WS 传输安全性](../samples/ws-transport-security.md)。 有关传输安全的详细信息，请参阅[传输安全概述](transport-security-overview.md)。
+有关示例应用程序，请参阅 [WS 传输安全性](../samples/ws-transport-security.md)。 有关传输安全的详细信息，请参阅 [传输安全概述](transport-security-overview.md)。
 
-有关将证书用于服务的详细信息，请参阅使用[证书](working-with-certificates.md)和[如何：使用 SSL 证书配置端口](how-to-configure-a-port-with-an-ssl-certificate.md)。
+有关将证书用于服务的详细信息，请参阅使用 [证书](working-with-certificates.md) 和 [如何：使用 SSL 证书配置端口](how-to-configure-a-port-with-an-ssl-certificate.md)。
 
 ![对匿名客户端使用传输安全性](./media/8fa2e931-0cfb-4aaa-9272-91d652b85d8d.gif)
 
 |特征|说明|
 |--------------------|-----------------|
-|安全模式|传输|
+|安全模式|Transport|
 |互操作性|与现有 Web 服务和客户端|
-|身份验证（服务器）<br /><br /> 身份验证（客户端）|是<br /><br /> 应用程序级别（无 WCF 支持）|
+|身份验证（服务器）<br /><br /> 身份验证（客户端）|是<br /><br /> 应用程序级别 (无 WCF 支持) |
 |完整性|是|
-|机密性|是|
-|传输|HTTPS|
+|保密性|是|
+|Transport|HTTPS|
 |绑定|<xref:System.ServiceModel.WSHttpBinding>|
 
 ## <a name="service"></a>服务
@@ -79,7 +79,7 @@ ms.locfileid: "85245006"
 </configuration>
 ```
 
-## <a name="client"></a>Client
+## <a name="client"></a>客户端
 
 下面的代码和配置应独立运行。 执行下列操作之一：
 
@@ -127,4 +127,4 @@ ms.locfileid: "85245006"
 - [安全性概述](security-overview.md)
 - [WS 传输安全](../samples/ws-transport-security.md)
 - [传输安全概述](transport-security-overview.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))
