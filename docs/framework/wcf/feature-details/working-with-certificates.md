@@ -8,18 +8,18 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: 8090e84b33e2a6f442d387c7012e6ccdc2900dd1
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: a12e723c763cdc3b9cf2105df9d0ee601f8bda1a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246397"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559013"
 ---
 # <a name="working-with-certificates"></a>使用证书
 
 对 Windows Communication Foundation (WCF) 安全性进行编程时，通常使用 X.509 数字证书对客户端和服务器进行身份验证，以及对消息进行加密和数字签名。 本主题将简要说明 X.509 数字证书的功能以及如何在 WCF 中使用它们，并提供一些主题的链接，这些主题对这些概念进行了深入说明，或揭示了如何使用 WCF 和证书来完成常见任务。
 
-简言之，数字证书是公钥基础结构 (PKI) 的一部分，而公钥基础结构是数字证书、证书颁发机构和其他注册机构的系统，它使用公钥加密对电子事务所涉及的每一方的有效性进行确认和身份验证**。 证书颁发机构颁发证书，每个证书都具有一组包含数据的字段，例如“使用者”（向其颁发证书的实体）、有效日期（证书的有效日期）、证书颁发者（颁发证书的实体）和公钥**。 在 WCF 中，这些属性中的每一个都作为 <xref:System.IdentityModel.Claims.Claim> 进行处理，而每个声明又进一步分为两种类型：标识和权限。 有关 X.509 证书的详细信息，请参阅 [X.509 公钥证书](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates)。 有关 WCF 中的声明和授权的详细信息，请参阅[使用标识模型管理声明和授权](managing-claims-and-authorization-with-the-identity-model.md)。 有关实现 PKI 的详细信息，请参阅[企业 PKI 和 Windows Server 2012 R2 Active Directory 证书服务](https://docs.microsoft.com/archive/blogs/yungchou/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2)。
+简言之，数字证书是公钥基础结构 (PKI) 的一部分，而公钥基础结构是数字证书、证书颁发机构和其他注册机构的系统，它使用公钥加密对电子事务所涉及的每一方的有效性进行确认和身份验证**。 证书颁发机构颁发证书，每个证书都具有一组包含数据的字段，例如“使用者”（向其颁发证书的实体）、有效日期（证书的有效日期）、证书颁发者（颁发证书的实体）和公钥**。 在 WCF 中，这些属性中的每一个都作为 <xref:System.IdentityModel.Claims.Claim> 进行处理，而每个声明又进一步分为两种类型：标识和权限。 有关 X.509 证书的详细信息，请参阅 [X.509 公钥证书](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates)。 有关 WCF 中的声明和授权的详细信息，请参阅[使用标识模型管理声明和授权](managing-claims-and-authorization-with-the-identity-model.md)。 有关实现 PKI 的详细信息，请参阅 [企业 PKI 和 Windows Server 2012 R2 Active Directory 证书服务](/archive/blogs/yungchou/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2)。
 
 证书的主要功能是向其他各方验证证书所有者的身份。 证书包含所有者的公钥，所有者保留着私钥**。 公钥可用来对发送给证书所有者的消息进行加密。 只有所有者才能访问私钥，因此，只有所有者才能解密这些消息。
 
@@ -58,13 +58,13 @@ ms.locfileid: "85246397"
 
 ### <a name="accessing-stores"></a>访问存储区
 
-与计算机上的文件夹一样，存储区也受访问控制列表 (ACL) 保护。 创建由 Internet Information Services （IIS）承载的服务时，ASP.NET 进程将在 ASP.NET 帐户下运行。 该帐户必须有权访问包含服务所用证书的存储区。 每个主要存储区都由一个默认访问列表保护，但这些列表是可以修改的。 如果创建一个单独的角色访问存储区，则必须向该角色授予访问权限。 要了解如何使用 WinHttpCertConfig.exe 工具修改访问列表，请参阅[如何：创建开发期间使用的临时证书](how-to-create-temporary-certificates-for-use-during-development.md)。
+与计算机上的文件夹一样，存储区也受访问控制列表 (ACL) 保护。 创建由 Internet Information Services (IIS) 承载的服务时，ASP.NET 进程将在 ASP.NET 帐户下运行。 该帐户必须有权访问包含服务所用证书的存储区。 每个主要存储区都由一个默认访问列表保护，但这些列表是可以修改的。 如果创建一个单独的角色访问存储区，则必须向该角色授予访问权限。 要了解如何使用 WinHttpCertConfig.exe 工具修改访问列表，请参阅[如何：创建开发期间使用的临时证书](how-to-create-temporary-certificates-for-use-during-development.md)。
 
 ## <a name="chain-trust-and-certificate-authorities"></a>链信任和证书颁发机构
 
 证书是在某种层次结构中创建的，其中每个证书都链接到颁发该证书的 CA。 该链接指向 CA 的证书。 然后，CA 的证书链接到颁发了原始 CA 证书的 CA。 这一过程不断重复，直至到达根 CA 的证书。 根 CA 的证书将以继承方式受到信任。
 
-使用数字证书对实体进行身份验证时就依赖这一层次结构，它也称为信任链**。 通过双击任何证书，然后单击 "**证书路径**" 选项卡，可以使用 MMC 管理单元查看任何证书链。有关导入证书颁发机构的证书链的详细信息，请参阅[如何：指定用于验证签名的证书颁发机构证书链](specify-the-certificate-authority-chain-verify-signatures-wcf.md)。
+使用数字证书对实体进行身份验证时就依赖这一层次结构，它也称为信任链**。 通过双击任何证书，然后单击 " **证书路径** " 选项卡，可以使用 MMC 管理单元查看任何证书链。有关导入证书颁发机构的证书链的详细信息，请参阅 [如何：指定用于验证签名的证书颁发机构证书链](specify-the-certificate-authority-chain-verify-signatures-wcf.md)。
 
 > [!NOTE]
 > 通过将颁发机构的证书放入受信任的根颁发机构证书存储区中，可以向任何颁发机构指定受信任的根颁发机构。
@@ -100,7 +100,7 @@ PowerShell New-selfsignedcertificate cmdlet 创建 x.509 证书和私钥/公钥�
 
 #### <a name="to-build-a-chain-of-trust-with-the-new-selfsignedcertificate-cmdlet"></a>使用 New-selfsignedcertificate cmdlet 构建信任链
 
-1. 使用 New-selfsignedcertificate cmdlet 创建临时根证书颁发机构（自签名）证书。 将私钥保存到磁盘上。
+1. 使用 New-selfsignedcertificate cmdlet 创建 (自签名) 证书的临时根证书颁发机构。 将私钥保存到磁盘上。
 
 2. 使用此新证书颁发另一个包含公钥的证书。
 
@@ -114,7 +114,7 @@ PowerShell New-selfsignedcertificate cmdlet 创建 x.509 证书和私钥/公钥�
 
 ### <a name="service-certificates"></a>服务证书
 
-服务证书的主要任务是向客户端验证服务器的身份。 客户端对服务器进行身份验证时所进行的初始检查之一是将“使用者”字段的值与用来联系服务的统一资源标识符 (URI) 进行比较：二者的 DNS 必须匹配****。 例如，如果服务的 URI 为，则 `http://www.contoso.com/endpoint/` "**使用者**" 字段还必须包含值 `www.contoso.com` 。
+服务证书的主要任务是向客户端验证服务器的身份。 客户端对服务器进行身份验证时所进行的初始检查之一是将“使用者”字段的值与用来联系服务的统一资源标识符 (URI) 进行比较：二者的 DNS 必须匹配****。 例如，如果服务的 URI 为，则 `http://www.contoso.com/endpoint/` " **使用者** " 字段还必须包含值 `www.contoso.com` 。
 
 请注意，该字段可以包含多个值，每个值都以一个起始值前缀来指示其值。 最常见的情况是，初始化为公用名 "CN"，例如 `CN = www.contoso.com` 。 “使用者”字段还可能为空白，这种情况下，“使用者可选名称”字段可以包含“DNS 名称”值************。
 
@@ -136,7 +136,7 @@ PowerShell New-selfsignedcertificate cmdlet 创建 x.509 证书和私钥/公钥�
 
 如果证书吊销，则从被吊销证书继承的任何链都将无效，在身份验证过程中也不受信任。 为了查看吊销了哪些证书，每个证书颁发者都发布一个加盖了时间戳和日期戳的证书吊销列表 (CRL)**。 可以使用联机吊销或脱机吊销来查看此列表，方法是将以下类的 `RevocationMode` 或 `DefaultRevocationMode` 属性设置为 <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> 枚举值之一：<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>、<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>、<xref:System.ServiceModel.Security.X509ServiceCertificateAuthentication> 和 <xref:System.ServiceModel.Security.IssuedTokenServiceCredential> 类。 所有属性的默认值都是 `Online`。
 
-你还可以使用 `revocationMode` 的属性 [\<authentication>](../../configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) （ [\<serviceBehaviors>](../../configure-apps/file-schema/wcf/servicebehaviors.md) ）和 [\<authentication>](../../configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) （的 [\<endpointBehaviors>](../../configure-apps/file-schema/wcf/endpointbehaviors.md) ）在配置中设置模式。
+你还可以使用 `revocationMode`) 的 (的属性 [\<authentication>](../../configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) [\<serviceBehaviors>](../../configure-apps/file-schema/wcf/servicebehaviors.md) 和) 的 [\<authentication>](../../configure-apps/file-schema/wcf/authentication-of-clientcertificate-element.md) ([\<endpointBehaviors>](../../configure-apps/file-schema/wcf/endpointbehaviors.md) 设置配置模式。
 
 ## <a name="the-setcertificate-method"></a>SetCertificate 方法
 
@@ -165,9 +165,9 @@ PowerShell New-selfsignedcertificate cmdlet 创建 x.509 证书和私钥/公钥�
 
 ## <a name="mapping-a-certificate-to-a-user-account"></a>将证书映射到用户帐户
 
-IIS 和 Active Directory 的一个功能是将证书映射到 Windows 用户帐户。 有关此功能的详细信息，请参阅 [Map certificates to user accounts](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736706(v=ws.10))（将证书映射到用户帐户）。
+IIS 和 Active Directory 的一个功能是将证书映射到 Windows 用户帐户。 有关此功能的详细信息，请参阅 [Map certificates to user accounts](/previous-versions/windows/it-pro/windows-server-2003/cc736706(v=ws.10))（将证书映射到用户帐户）。
 
-有关使用 Active Directory 映射的详细信息，请参阅 [Mapping Client Certificates with Directory Service Mapping](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc758484(v=ws.10))（使用目录服务映射来映射客户端证书）。
+有关使用 Active Directory 映射的详细信息，请参阅 [Mapping Client Certificates with Directory Service Mapping](/previous-versions/windows/it-pro/windows-server-2003/cc758484(v=ws.10))（使用目录服务映射来映射客户端证书）。
 
 如果启用了这一功能，则可以将 <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> 类的 <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> 属性设置为 `true`。 在 "配置" 中，可以将 `mapClientCertificateToWindowsAccount` 元素的属性设置 [\<authentication>](../../configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) 为 `true` ，如下面的代码所示。
 

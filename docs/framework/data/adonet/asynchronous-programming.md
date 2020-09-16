@@ -3,16 +3,16 @@ title: 异步编程
 description: 了解适用于 SQL Server 的 .NET Framework 数据提供程序中的异步编程，包括 .NET Framework 4.5 中引入的增强功能。
 ms.date: 10/18/2018
 ms.assetid: 85da7447-7125-426e-aa5f-438a290d1f77
-ms.openlocfilehash: 2e5f48b0818ab9cfabc75ba47c95c8198e0fe7fa
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b8f718e0def2ab0b6953ed121eb916f282562d32
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287098"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558467"
 ---
 # <a name="asynchronous-programming"></a>异步编程
 
-本主题讨论对 SQL Server （SqlClient）的 .NET Framework 数据提供程序中的异步编程的支持，包括为支持 .NET Framework 4.5 中引入的异步编程功能所做的增强。
+本主题讨论对 SQL Server (SqlClient 的 .NET Framework 数据提供程序中的异步编程的支持) 包括为支持 .NET Framework 4.5 中引入的异步编程功能所做的增强。
 
 ## <a name="legacy-asynchronous-programming"></a>旧版异步编程
 
@@ -39,9 +39,9 @@ ms.locfileid: "84287098"
 
 - [使用 Async 和 Await 的异步编程 (Visual Basic)](../../../visual-basic/programming-guide/concepts/async/index.md)
 
-- [在 .NET 4.5 中使用 SqlDataReader 的新异步方法（第1部分）](https://docs.microsoft.com/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5)
+- [在 .NET 4.5 (第1部分中使用 SqlDataReader 的新异步方法) ](/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5)
 
-- [在 .NET 4.5 中使用 SqlDataReader 的新异步方法（第2部分）](https://docs.microsoft.com/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples)
+- [在 .NET 4.5 (第2部分中使用 SqlDataReader 的新异步方法) ](/archive/blogs/adonet/using-sqldatareaders-new-async-methods-in-net-4-5-part-2-examples)
 
 当用户接口无响应或服务器无法扩展时，很可能需要使代码异步程度更高。 以前，编写异步代码涉及安装回调（也称为延续）来表示异步操作完成后发生的逻辑。 这将增加异步代码结构的复杂性（与同步代码相比）。
 
@@ -90,7 +90,7 @@ ms.locfileid: "84287098"
 
 - <xref:System.Data.SqlClient.SqlBulkCopy.WriteToServerAsync%2A?displayProperty=nameWithType>
 
- 添加了其他异步成员以支持[SqlClient 流式处理支持](sqlclient-streaming-support.md)。
+ 添加了其他异步成员以支持 [SqlClient 流式处理支持](sqlclient-streaming-support.md)。
 
 > [!TIP]
 > 新的异步方法不会 `Asynchronous Processing=true` 在连接字符串中需要。
@@ -182,7 +182,7 @@ class A {
 
 您可能需要创建一个能够连接到不同数据库并执行查询的工具。 您可以使用基本提供程序模型和新的异步功能。
 
-必须在服务器上启用 Microsoft 分布式事务处理控制器 (MSDTC) 以使用分布式事务。 有关如何启用 MSDTC 的信息，请参阅[如何在 Web 服务器上启用 MSDTC](https://docs.microsoft.com/previous-versions/commerce-server/dd327979(v=cs.90))。
+必须在服务器上启用 Microsoft 分布式事务处理控制器 (MSDTC) 以使用分布式事务。 有关如何启用 MSDTC 的信息，请参阅 [如何在 Web 服务器上启用 MSDTC](/previous-versions/commerce-server/dd327979(v=cs.90))。
 
 ```csharp
 using System;
@@ -827,6 +827,6 @@ class Program {
 }
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [在 ADO.NET 中检索和修改数据](retrieving-and-modifying-data.md)

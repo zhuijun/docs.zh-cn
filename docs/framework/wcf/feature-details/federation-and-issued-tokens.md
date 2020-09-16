@@ -6,15 +6,15 @@ helpviewer_keywords:
 - issued tokens [WCF]
 - federation [WCF], issued tokens
 ms.assetid: 4c31ee7d-a820-4067-8b84-a83049021bb6
-ms.openlocfilehash: aeffc1e2a7b61dfd9406b9f06678064533ea61ec
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: dffba51c1bf1aaffbed8725aafc96fd747cb31c6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595500"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559247"
 ---
 # <a name="federation-and-issued-tokens"></a>联合令牌与颁发的令牌
-通过 Windows Communication Foundation （WCF），可以创建与实现 WS 联合身份验证和 WS-TRUST 规范的服务安全通信的客户端。 这些规范使用 XML、SOAP 和 Web 服务描述语言 (WSDL) 来提供用来跨不同的信任领域进行身份验证和授权的机制。  
+利用 Windows Communication Foundation (WCF) ，可以创建与实现 WS 联合身份验证和 WS-TRUST 规范的服务安全通信的客户端。 这些规范使用 XML、SOAP 和 Web 服务描述语言 (WSDL) 来提供用来跨不同的信任领域进行身份验证和授权的机制。  
   
 ## <a name="in-this-section"></a>本节内容  
  [联合](federation.md)  
@@ -65,4 +65,4 @@ ms.locfileid: "84595500"
 
 - [授权](authorization-in-wcf.md)
 - [自定义令牌](../extending/custom-tokens.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

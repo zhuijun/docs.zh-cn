@@ -7,12 +7,12 @@ helpviewer_keywords:
 - native API reference [.NET Framework]
 - unmanaged API reference [.NET Framework]
 ms.assetid: 9aa000ee-c04c-492c-ae4f-83ecdf4fdbbe
-ms.openlocfilehash: 9b8671f2bd278e9e6153476d742f43150a4f6e3e
-ms.sourcegitcommit: de7f589de07a9979b6ac28f54c3e534a617d9425
+ms.openlocfilehash: 0153279608e2359747f1be6b9542d6906c1b3995
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "82795607"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559299"
 ---
 # <a name="unmanaged-api-reference"></a>非托管 API 参考
 本节包括有关可由与托管代码相关的应用程序（例如运行时主机、编译器、反汇编程序、模糊处理程序、调试器和探查器）使用的非托管 API 的信息。  
@@ -30,7 +30,7 @@ ms.locfileid: "82795607"
  [常量](constants-unmanaged-api-reference.md)  
  描述在 CorSym.idl 中定义的常量。  
   
- [自定义接口特性](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms231946(v=vs.100))  
+ [自定义接口特性](/previous-versions/dotnet/netframework-4.0/ms231946(v=vs.100))  
  描述组件对象模型 (COM) 的自定义接口特性。  
   
  [调试](./debugging/index.md)  
@@ -61,4 +61,4 @@ ms.locfileid: "82795607"
  描述类型库导出程序 (Tlbexp.exe) 在从程序集到类型库的转换过程中使用的两个 Helper 函数和接口。  
   
 ## <a name="related-sections"></a>相关章节  
- [开发指南](../development-guide.md)  
+ [开发指南](../development-guide.md)

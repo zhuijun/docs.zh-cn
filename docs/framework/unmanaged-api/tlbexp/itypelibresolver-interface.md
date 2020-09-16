@@ -14,19 +14,19 @@ helpviewer_keywords:
 ms.assetid: edaaed1d-0d26-40f0-83f1-48efc0ded1c6
 topic_type:
 - apiref
-ms.openlocfilehash: 28a750846407a2b035e42533765eb83a87bfce3c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7c8c21a589554bac81ebfce3505917869ef8de27
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104111"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553592"
 ---
 # <a name="itypelibresolver-interface"></a>ITypeLibResolver 接口
-提供[ResolveTypeLib 方法](resolvetypelib-method.md)，该方法解析类型库的文件路径。  
+提供 [ResolveTypeLib 方法](resolvetypelib-method.md)，该方法解析类型库的文件路径。  
   
 ## <a name="methods"></a>方法  
   
-|方法|描述|  
+|方法|说明|  
 |------------|-----------------|  
 |[ResolveTypeLib 方法](resolvetypelib-method.md)|通过返回类型库的完全限定路径来解析该类型库的简单名称。|  
   
@@ -37,9 +37,9 @@ ms.locfileid: "73104111"
   
  **库：** TlbRef  
   
- **.NET Framework 版本：** 4、3.5、3.0、2.0  
+ **.NET Framework 版本：** 4、3.5、3.0、2。0  
   
 ## <a name="see-also"></a>请参阅
 
 - [Tlbexp Helper 函数](index.md)
-- [LoadTypeLibEx 函数](https://docs.microsoft.com/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)
+- [LoadTypeLibEx 函数](/previous-versions/windows/desktop/api/oleauto/nf-oleauto-loadtypelibex)

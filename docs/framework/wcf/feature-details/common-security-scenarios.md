@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], scenarios
 ms.assetid: 201923b5-5162-4a8a-8d4c-e7bd242748d5
-ms.openlocfilehash: f36ebdb5ea248ec8134c688f89eb5d0be38dfe38
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cfd29f8cae8ac362a5fa1709864dce4ae11b5af6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579731"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558883"
 ---
 # <a name="common-security-scenarios"></a>常用安全方案
 本节中的主题对众多可能的客户端和服务安全配置进行分类。 配置会随多种因素而变化。 例如，服务或客户端是否位于 Intranet 上，或者安全性是由 Windows 提供还是由传输（如 HTTPS）提供。  
@@ -19,7 +19,7 @@ ms.locfileid: "84579731"
  一个公共的、不安全的客户端和服务的示例。  
   
  [不安全的 Intranet 客户端和服务](intranet-unsecured-client-and-service.md)  
- 一种基本 Windows Communication Foundation （WCF）服务，用于为 WCF 应用程序提供有关安全的专用网络的信息。  
+ 基本 Windows Communication Foundation (WCF) 服务，旨在为 WCF 应用程序提供有关安全的专用网络的信息。  
   
  [通过基本身份验证确保的传输安全](transport-security-with-basic-authentication.md)  
  应用程序允许客户端使用自定义身份验证进行登录。  
@@ -79,7 +79,7 @@ ms.locfileid: "84579731"
   
  [审核](auditing-security-events.md)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全指导和最佳做法](security-guidance-and-best-practices.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

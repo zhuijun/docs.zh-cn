@@ -8,28 +8,28 @@ helpviewer_keywords:
 - Windows Communication Foundation, security
 - bindings [WCF]
 ms.assetid: 4de03dd3-968a-4e65-af43-516e903d7f95
-ms.openlocfilehash: e012ec9ad340c74f5bc776cfc6d8b88326210fec
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 86b9a1d7b0c772a308b9f059bb31c1f489635300
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85245322"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559397"
 ---
 # <a name="bindings-and-security"></a>绑定与安全
 
-随 Windows Communication Foundation （WCF）提供的系统提供的绑定提供了对 WCF 应用程序进行编程的一种快速方法。 但有一个例外，就是所有绑定都启用了默认的安全方案。 本主题将帮助你根据安全需要来选择正确的绑定。
+Windows Communication Foundation (WCF) 提供系统提供的绑定，它提供了编程 WCF 应用程序的快速方法。 但有一个例外，就是所有绑定都启用了默认的安全方案。 本主题将帮助你根据安全需要来选择正确的绑定。
 
-有关 WCF 安全性的概述，请参阅[安全性概述](security-overview.md)。 有关使用绑定对 WCF 编程的详细信息，请参阅对[Wcf 安全编程](programming-wcf-security.md)。
+有关 WCF 安全性的概述，请参阅 [安全性概述](security-overview.md)。 有关使用绑定对 WCF 编程的详细信息，请参阅对 [Wcf 安全编程](programming-wcf-security.md)。
 
-如果你已经选择了一个绑定，可以在[安全行为](security-behaviors-in-wcf.md)中了解有关与安全性相关联的运行时行为的详细信息。
+如果你已经选择了一个绑定，可以在 [安全行为](security-behaviors-in-wcf.md)中了解有关与安全性相关联的运行时行为的详细信息。
 
-部分安全性功能无法用系统提供的绑定进行编程。 有关使用自定义绑定的更多控制，请参阅[使用自定义绑定的安全功能](security-capabilities-with-custom-bindings.md)。
+部分安全性功能无法用系统提供的绑定进行编程。 有关使用自定义绑定的更多控制，请参阅 [使用自定义绑定的安全功能](security-capabilities-with-custom-bindings.md)。
 
 ## <a name="security-functions-of-bindings"></a>绑定的安全功能
 
-WCF 包含多个系统提供的绑定，这些绑定可满足大多数需求。 如果某个特定绑定不能满足要求，您还可以创建自定义绑定。 有关系统提供的绑定的列表，请参阅[系统提供的绑定](../system-provided-bindings.md)。 有关自定义绑定的详细信息，请参阅[自定义绑定](../extending/custom-bindings.md)。
+WCF 包含多个系统提供的绑定，这些绑定可满足大多数需求。 如果某个特定绑定不能满足要求，您还可以创建自定义绑定。 有关系统提供的绑定的列表，请参阅 [系统提供的绑定](../system-provided-bindings.md)。 有关自定义绑定的详细信息，请参阅 [自定义绑定](../extending/custom-bindings.md)。
 
-WCF 中的每个绑定都有两种形式：作为 API，以及在配置文件中使用的 XML 元素。 例如， `WSHttpBinding` （API）在中有一个对应的 [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) 。
+WCF 中的每个绑定都有两种形式：作为 API，以及在配置文件中使用的 XML 元素。 例如， `WSHttpBinding` (API) 在中有一个对应的 [\<wsHttpBinding>](../../configure-apps/file-schema/wcf/wshttpbinding.md) 。
 
 下一节列出了每个绑定的两种形式，并概括了安全功能。
 
@@ -43,11 +43,11 @@ WCF 中的每个绑定都有两种形式：作为 API，以及在配置文件中
 
 - Web Service Enhancements (WSE) 应用程序。
 
-- Web 服务互操作性（WS-I）规范（）中定义的基本配置文件 <https://go.microsoft.com/fwlink/?LinkId=38955> 。
+- 基本配置文件，在 Web 服务互操作性 (WS-I) 规范 () 中定义 <https://go.microsoft.com/fwlink/?LinkId=38955> 。
 
 - WS-I 中定义的基本安全配置文件。
 
-默认情况下，此绑定是不安全的。 它的目的是与 ASMX 服务进行互操作。 启用安全性后，此绑定可以与 Internet 信息服务 (IIS) 安全机制（例如基本身份验证、摘要和 Windows 集成安全性）进行无缝的互操作。 有关详细信息，请参阅[传输安全概述](transport-security-overview.md)。 此绑定支持以下功能：
+默认情况下，此绑定是不安全的。 它的目的是与 ASMX 服务进行互操作。 启用安全性后，此绑定可以与 Internet 信息服务 (IIS) 安全机制（例如基本身份验证、摘要和 Windows 集成安全性）进行无缝的互操作。 有关详细信息，请参阅 [传输安全概述](transport-security-overview.md)。 此绑定支持以下功能：
 
 - HTTPS 传输安全。
 
@@ -145,7 +145,7 @@ WCF 中的每个绑定都有两种形式：作为 API，以及在配置文件中
 
 在代码中，使用 <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> 类; 在配置中，使用 [\<msmqIntegrationBinding>](../../configure-apps/file-schema/wcf/msmqintegrationbinding.md) 。
 
-此绑定经过优化，可用于创建与非 WCF Microsoft 消息队列（MSMQ）终结点互操作的 WCF 客户端和服务。
+此绑定经过优化，可用于创建 WCF 客户端和服务，这些客户端和服务与非 WCF Microsoft 消息队列交互 (MSMQ) 终结点。
 
 默认情况下，此绑定使用传输安全性并提供下列安全特征：
 
@@ -183,11 +183,11 @@ WCF 中的每个绑定都有两种形式：作为 API，以及在配置文件中
 
 默认情况下，此绑定使用 WS-Security（消息层安全性）。
 
-有关详细信息，请参阅[联合](federation.md)、 <xref:System.ServiceModel.WSFederationHttpSecurity> 和 <xref:System.ServiceModel.WSFederationHttpSecurityMode> 。
+有关详细信息，请参阅 [联合](federation.md)、 <xref:System.ServiceModel.WSFederationHttpSecurity> 和 <xref:System.ServiceModel.WSFederationHttpSecurityMode> 。
 
 ## <a name="custom-bindings"></a>自定义绑定
 
-如果系统提供的绑定都不能满足您的需求，则可以使用自定义安全绑定元素来创建自定义绑定。 有关详细信息，请参阅[具有自定义绑定的安全功能](security-capabilities-with-custom-bindings.md)。
+如果系统提供的绑定都不能满足您的需求，则可以使用自定义安全绑定元素来创建自定义绑定。 有关详细信息，请参阅 [具有自定义绑定的安全功能](security-capabilities-with-custom-bindings.md)。
 
 ## <a name="binding-choices"></a>绑定选择
 
@@ -195,8 +195,8 @@ WCF 中的每个绑定都有两种形式：作为 API，以及在配置文件中
 
 |设置|功能|
 |-------------|--------------|
-|传输|服务器身份验证<br /><br /> 客户端身份验证<br /><br /> 点对点安全性<br /><br /> 互操作性<br /><br /> 硬件加速<br /><br /> 高吞吐量<br /><br /> 安全防火墙<br /><br /> 高延迟应用程序<br /><br /> 跨越多个跃点重新加密|
-|消息|服务器身份验证<br /><br /> 客户端身份验证<br /><br /> 端到端安全性<br /><br /> 互操作性<br /><br /> 丰富的声明<br /><br /> 联合<br /><br /> 多重身份验证<br /><br /> 自定义令牌<br /><br /> 公证人/时间戳服务<br /><br /> 高延迟应用程序<br /><br /> 消息签名的持久性|
+|Transport|服务器身份验证<br /><br /> 客户端身份验证<br /><br /> 点对点安全性<br /><br /> 互操作性<br /><br /> 硬件加速<br /><br /> 高吞吐量<br /><br /> 安全防火墙<br /><br /> 高延迟应用程序<br /><br /> 跨越多个跃点重新加密|
+|Message|服务器身份验证<br /><br /> 客户端身份验证<br /><br /> 端到端安全性<br /><br /> 互操作性<br /><br /> 丰富的声明<br /><br /> 联合<br /><br /> 多重身份验证<br /><br /> 自定义令牌<br /><br /> 公证人/时间戳服务<br /><br /> 高延迟应用程序<br /><br /> 消息签名的持久性|
 |TransportWithMessageCredential|服务器身份验证<br /><br /> 客户端身份验证<br /><br /> 点对点安全性<br /><br /> 互操作性<br /><br /> 硬件加速<br /><br /> 高吞吐量<br /><br /> 丰富的客户端声明<br /><br /> 联合<br /><br /> 多重身份验证<br /><br /> 自定义令牌<br /><br /> 安全防火墙<br /><br /> 高延迟应用程序<br /><br /> 跨越多个跃点重新加密|
 
 下表列出了支持各种模式设置的绑定。 请从该表中选择用来创建服务终结点的绑定。
@@ -205,11 +205,11 @@ WCF 中的每个绑定都有两种形式：作为 API，以及在配置文件中
 |-------------|----------------------------|--------------------------|--------------------------------------------|
 |`BasicHttpBinding`|是|是|是|
 |`WSHttpBinding`|是|是|是|
-|`WSDualHttpBinding`|No|是|No|
+|`WSDualHttpBinding`|否|是|否|
 |`NetTcpBinding`|是|是|是|
-|`NetNamedPipeBinding`|是|No|否|
-|`NetMsmqBinding`|是|是|No|
-|`MsmqIntegrationBinding`|是|No|否|
+|`NetNamedPipeBinding`|是|否|否|
+|`NetMsmqBinding`|是|是|否|
+|`MsmqIntegrationBinding`|是|否|否|
 |`wsFederationHttpBinding`|否|是|是|
 
 ## <a name="transport-credentials-in-bindings"></a>绑定中的传输凭据
@@ -224,7 +224,7 @@ WCF 中的每个绑定都有两种形式：作为 API，以及在配置文件中
 |NTLM|NT LAN Manager (NTLM) 身份验证。|
 |Windows|Windows 身份验证。|
 |证书|使用证书执行的身份验证。|
-|IssuedToken|允许服务要求使用由 security token service 或 CardSpace 颁发的令牌对客户端进行身份验证。 有关详细信息，请参阅[联合和颁发的令牌](federation-and-issued-tokens.md)。|
+|IssuedToken|允许服务要求使用由 security token service 或 CardSpace 颁发的令牌对客户端进行身份验证。 有关详细信息，请参阅 [联合和颁发的令牌](federation-and-issued-tokens.md)。|
 
 ### <a name="message-client-credentials-in-bindings"></a>绑定中的消息客户端凭据
 
@@ -245,4 +245,4 @@ WCF 中的每个绑定都有两种形式：作为 API，以及在配置文件中
 - [选择凭据类型](selecting-a-credential-type.md)
 - [使用自定义绑定的安全功能](security-capabilities-with-custom-bindings.md)
 - [安全行为](security-behaviors-in-wcf.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

@@ -5,17 +5,17 @@ helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-ms.openlocfilehash: 28360b8b5b07c7c532dd2406ca98604870b8335f
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: bab29d738c7562753a826b47c03867eeebac4372
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921077"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558974"
 ---
 # <a name="working-with-nats-and-firewalls"></a>使用 NAT 和防火墙
 网络连接的客户端和服务器通常不具有用于进行通信的直接和开放的路径。 数据包在终结点计算机和网络中的中间计算机上进行筛选、路由、分析和转换。 网络地址转换 (NAT) 和防火墙是可以参与网络通信的中间应用程序的常见示例。  
   
- Windows Communication Foundation （WCF）传输和消息交换模式（Mep）的响应方式与 Nat 和防火墙的状态不同。 本主题介绍 NAT 和防火墙在常见网络拓扑中是如何工作的。 给定 WCF 传输和 Mep 的特定组合的建议，可帮助使应用程序更可靠地用于网络上的 Nat 和防火墙。  
+ Windows Communication Foundation (WCF) 传输和消息交换模式 (Mep) 的响应方式与 Nat 和防火墙的状态不同。 本主题介绍 NAT 和防火墙在常见网络拓扑中是如何工作的。 给定 WCF 传输和 Mep 的特定组合的建议，可帮助使应用程序更可靠地用于网络上的 Nat 和防火墙。  
   
 ## <a name="how-nats-affect-communication"></a>NAT 如何影响通信  
  创建 NAT 的目的是使数台计算机能够共享单个外部 IP 地址。 端口重新映射 NAT 将连接的内部 IP 地址和端口映射到具有新端口号的外部 IP 地址。 新端口号使 NAT 可以将返回通信与原始通信相互关联。 很多家庭用户现在拥有只能以专用方式路由的 IP 地址，并且依赖于 NAT 来提供数据包的全局路由。  
@@ -33,7 +33,7 @@ ms.locfileid: "76921077"
   
 ## <a name="using-teredo"></a>使用 Teredo  
 
- Teredo 是一种 IPv6 过渡技术，可用来对位于 NAT 后面的计算机进行直接寻址。 Teredo 依靠使用可以公开和全局路由的服务器来公布潜在的连接。 Teredo 服务器为应用程序客户端和服务器提供了一个公用的接头地点，以便它们可以交换连接信息。 然后，这些计算机请求一个临时 Teredo 地址，并且通过现有网络对数据包进行隧道路由。 WCF 中的 Teredo 支持需要在操作系统中启用 IPv6 和 Teredo 支持。 Windows XP 和更高版本的操作系统支持 Teredo。 默认情况下，Windows Vista 和更高版本的操作系统支持 IPv6，并且仅要求用户启用 Teredo。 Windows XP SP2 和 Windows Server 2003 要求用户同时启用 IPv6 和 Teredo。 有关详细信息，请参阅[Teredo 概述](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-xp/bb457011(v%3dtechnet.10))。  
+ Teredo 是一种 IPv6 过渡技术，可用来对位于 NAT 后面的计算机进行直接寻址。 Teredo 依靠使用可以公开和全局路由的服务器来公布潜在的连接。 Teredo 服务器为应用程序客户端和服务器提供了一个公用的接头地点，以便它们可以交换连接信息。 然后，这些计算机请求一个临时 Teredo 地址，并且通过现有网络对数据包进行隧道路由。 WCF 中的 Teredo 支持需要在操作系统中启用 IPv6 和 Teredo 支持。 Windows XP 和更高版本的操作系统支持 Teredo。 默认情况下，Windows Vista 和更高版本的操作系统支持 IPv6，并且仅要求用户启用 Teredo。 Windows XP SP2 和 Windows Server 2003 要求用户同时启用 IPv6 和 Teredo。 有关详细信息，请参阅 [Teredo 概述](/previous-versions/windows/it-pro/windows-xp/bb457011(v=technet.10))。  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>选择传输协议和消息交换模式  
  选择传输协议和 MEP 的过程分为三步：  

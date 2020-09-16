@@ -11,12 +11,12 @@ helpviewer_keywords:
 - streams, I/O
 - data streams, I/O
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
-ms.openlocfilehash: 2761d17846009ba06a2ffb1fc58b430f3ec9a949
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 2f7da6bd967abce8c2fefdc54a0043b5505e22e3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662714"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558935"
 ---
 # <a name="file-and-stream-io"></a>文件和流 I/O
 
@@ -46,7 +46,7 @@ ms.locfileid: "84662714"
 
 除了使用这些类之外，Visual Basic 用户还可以对文件 I/O 使用 <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> 类提供的方法和属性。
 
-请参阅[如何：复制目录](how-to-copy-directories.md)、[如何：创建目录列表](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100))和[如何：枚举目录和文件](how-to-enumerate-directories-and-files.md)。
+请参阅[如何：复制目录](how-to-copy-directories.md)、[如何：创建目录列表](/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100))和[如何：枚举目录和文件](how-to-enumerate-directories-and-files.md)。
 
 ## <a name="streams"></a>流
 
@@ -128,7 +128,7 @@ ms.locfileid: "84662714"
 
 独立存储是一种数据存储机制，它在代码与保存的数据之间定义了标准化的关联方式，从而提供隔离性和安全性。 存储提供按用户、程序集和（可选）域隔离的虚拟文件系统。 当你的应用程序无权访问用户文件时，独立存储特别有用。 你可以通过一种由计算机的安全策略控制的方式保存应用程序的设置或文件。
 
-独立存储不可用于 Windows 8.x 应用商店应用；请改用 <xref:Windows.Storage?displayProperty=nameWithType> 命名空间中的应用程序数据类。 有关详细信息，请参阅[应用程序数据](https://docs.microsoft.com/previous-versions/windows/apps/hh464917%28v=win.10%29)。
+独立存储不可用于 Windows 8.x 应用商店应用；请改用 <xref:Windows.Storage?displayProperty=nameWithType> 命名空间中的应用程序数据类。 有关详细信息，请参阅[应用程序数据](/previous-versions/windows/apps/hh464917(v=win.10))。
 
 在实现独立存储时，经常使用以下类：
 
@@ -148,7 +148,7 @@ ms.locfileid: "84662714"
 
 - 专门与文件操作相关的类型（如 <xref:System.IO.File>、<xref:System.IO.FileInfo>、<xref:System.IO.Directory> 和 <xref:System.IO.DirectoryInfo>）未包含在适用于 Windows 8.x 应用商店应用的 .NET 中。 请改用 Windows 运行时的 <xref:Windows.Storage?displayProperty=nameWithType> 命名空间中的类型（如 <xref:Windows.Storage.StorageFile> 和 <xref:Windows.Storage.StorageFolder>）。
 
-- 独立存储不可用；请改用[应用程序数据](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10))。
+- 独立存储不可用；请改用[应用程序数据](/previous-versions/windows/apps/hh464917(v=win.10))。
 
 - 使用异步方法（如 <xref:System.IO.Stream.ReadAsync%2A> 和 <xref:System.IO.Stream.WriteAsync%2A>）可防止 UI 线程受阻。
 
@@ -156,13 +156,13 @@ ms.locfileid: "84662714"
 
 如果需要，你可以在 .NET Framework 流和 Windows 运行时流之间进行转换。 有关详细信息，请参阅[如何：在 .NET Framework 流和 Windows 运行时流之间进行转换](how-to-convert-between-dotnet-streams-and-winrt-streams.md)或 <xref:System.IO.WindowsRuntimeStreamExtensions>。
 
-要深入了解 Windows 8.x 应用商店应用中的 I/O 操作，请参阅[快速入门：对文件执行读取和写入操作](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10))。
+要深入了解 Windows 8.x 应用商店应用中的 I/O 操作，请参阅[快速入门：对文件执行读取和写入操作](/previous-versions/windows/apps/hh758325(v=win.10))。
 
 ## <a name="io-and-security"></a>I/O 和安全性
 
 在使用 <xref:System.IO?displayProperty=nameWithType> 命名空间中的类时，你必须遵循操作系统安全性要求（如访问控制列表 (ACL)）来控制对文件和目录的访问。 此要求是在所有 <xref:System.Security.Permissions.FileIOPermission> 要求之外的要求。 可以用编程方式管理 ACL。 有关详细信息，请参阅[如何：添加或删除访问控制列表条目](how-to-add-or-remove-access-control-list-entries.md)。
 
-默认安全策略将阻止 Internet 或 Intranet 应用程序访问用户计算机上的文件。 因此，在编写将通过 Internet 或 Intranet 下载的代码时，请不要使用需要物理文件路径的 I/O 类。 请转而将[独立存储](isolated-storage.md)用于传统 .NET Framework 应用程序，或将[应用程序数据](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10))用于 Windows 8.x 应用商店应用。
+默认安全策略将阻止 Internet 或 Intranet 应用程序访问用户计算机上的文件。 因此，在编写将通过 Internet 或 Intranet 下载的代码时，请不要使用需要物理文件路径的 I/O 类。 请转而将[独立存储](isolated-storage.md)用于传统 .NET Framework 应用程序，或将[应用程序数据](/previous-versions/windows/apps/hh464917(v=win.10))用于 Windows 8.x 应用商店应用。
 
 仅在构造流时执行安全性检查。 因此，请不要打开流并将其传递给受信程度较低的代码或应用程序域。
 

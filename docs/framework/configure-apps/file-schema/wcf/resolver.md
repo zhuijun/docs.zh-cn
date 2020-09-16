@@ -2,12 +2,12 @@
 title: <resolver>
 ms.date: 03/30/2017
 ms.assetid: 0c00200c-f135-4e5c-a024-76b72bcbc021
-ms.openlocfilehash: 0dc667f392595d895bd4f2773ab69777d7369446
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c6f5db96ded422493b819d4d75dda6abc9a1676e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738738"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558857"
 ---
 # \<resolver>
 指定对等解析程序，对等解析程序用于将对等网格 ID 解析为一组对等节点地址，这些地址表示参与网格的若干节点。  
@@ -39,20 +39,20 @@ ms.locfileid: "73738738"
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<headers>](headers.md)|指定自定义对等解析程序服务的设置。|  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|定义的所有绑定功能 [\<netPeerTcpBinding>](netpeertcpbinding.md) 。|  
   
-## <a name="remarks"></a>注解  
- 对等名解析程序是对等通道用于查找参与对等网格的对等节点的发现服务。 它还可以用于在对等网格中“注册”节点，即对等节点在对等网格中变为已知和可用的机制。 有关对等解析程序的详细信息，请参阅[对等解析](../../../wcf/feature-details/peer-resolvers.md)程序。  
+## <a name="remarks"></a>备注  
+ 对等名解析程序是对等通道用于查找参与对等网格的对等节点的发现服务。 它还可以用于在对等网格中“注册”节点，即对等节点在对等网格中变为已知和可用的机制。 有关对等解析程序的详细信息，请参阅 [对等解析](../../../wcf/feature-details/peer-resolvers.md)程序。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.PeerResolver>
 - <xref:System.ServiceModel.PeerResolvers.PeerResolverSettings>
@@ -60,4 +60,4 @@ ms.locfileid: "73738738"
 - <xref:System.ServiceModel.Configuration.NetPeerTcpBindingElement.Resolver%2A>
 - <xref:System.ServiceModel.Configuration.PeerResolverElement>
 - [对等解析程序](../../../wcf/feature-details/peer-resolvers.md)
-- [向对等通道应用程序添加自定义解析程序](https://docs.microsoft.com/previous-versions/ms730105(v=vs.90))
+- [向对等通道应用程序添加自定义解析程序](/previous-versions/ms730105(v=vs.90))

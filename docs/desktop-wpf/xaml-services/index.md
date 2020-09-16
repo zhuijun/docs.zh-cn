@@ -6,12 +6,12 @@ helpviewer_keywords:
 - XAML Services in WPF [XAML Services]
 - System.Xaml [XAML Services], conceptual documentation
 ms.assetid: 0e11f386-808c-4eae-9ba6-029ad7ba2211
-ms.openlocfilehash: bfb3efb479668bcd70a3ce87b80253a73c18bb51
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: 313cb46813d8c0cfa9f1f317a65d2e21298ecff9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "85840260"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552850"
 ---
 # <a name="xaml-services"></a>XAML 服务
 
@@ -35,7 +35,7 @@ ms.locfileid: "85840260"
 
 - 使用 `Lookup` 或 `Invoker` 技术来影响 XAML 类型系统和类型后备的评估方式。
 
-如果你需要 XAML 语言的介绍性材料，可以查看 [XAML 概述 (WPF)](../fundamentals/xaml.md)。 该主题面向不熟悉 Windows Presentation Foundation (WPF) 和不知道如何使用 XAML 标记及 XAML 语言功能的受众介绍 XAML。 另一个有用的文档是 [XAML 语言规范](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))中的介绍性材料。
+如果你需要 XAML 语言的介绍性材料，可以查看 [XAML 概述 (WPF)](../fundamentals/xaml.md)。 该主题面向不熟悉 Windows Presentation Foundation (WPF) 和不知道如何使用 XAML 标记及 XAML 语言功能的受众介绍 XAML。 另一个有用的文档是 [XAML 语言规范](/previous-versions/msp-n-p/ff650760(v=pandp.10))中的介绍性材料。
 
 ## <a name="net-xaml-services-and-systemxaml-in-the-net-architecture"></a>.NET 体系结构中的 .NET XAML 服务和 `System.Xaml`
 

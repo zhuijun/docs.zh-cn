@@ -7,22 +7,22 @@ helpviewer_keywords:
 - Windows Forms, application settings schema
 - configuration schema [.NET Framework], application settings
 ms.assetid: 5797fcff-6081-4e8c-bebf-63d9c70cf14b
-ms.openlocfilehash: 90d471888950347c041b4824b659ce33fda512d7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: fc9cd8ac3819c6a02019c871e7bd45ceb4c2cef7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81242824"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552305"
 ---
 # <a name="application-settings-schema"></a>应用程序设置架构
 
-应用程序设置允许 Windows 窗体或 ASP.NET 应用程序存储和检索应用程序范围的设置和用户范围的设置。 在此上下文中，*设置*是指特定于应用程序或特定于当前用户的任何信息，包括从数据库连接字符串到用户首选默认窗口大小的任何信息。
+应用程序设置允许 Windows 窗体或 ASP.NET 应用程序存储和检索应用程序范围的设置和用户范围的设置。 在此上下文中， *设置* 是指特定于应用程序或特定于当前用户的任何信息，包括从数据库连接字符串到用户首选默认窗口大小的任何信息。
 
-默认情况下，Windows 窗体应用程序中的应用程序设置使用 <xref:System.Configuration.LocalFileSettingsProvider> 类，该类使用 .net 配置系统将设置存储在 XML 配置文件中。 有关应用程序设置使用的文件的详细信息，请参阅[应用程序设置体系结构](../../winforms/advanced/application-settings-architecture.md)。
+默认情况下，Windows 窗体应用程序中的应用程序设置使用 <xref:System.Configuration.LocalFileSettingsProvider> 类，该类使用 .net 配置系统将设置存储在 XML 配置文件中。 有关应用程序设置使用的文件的详细信息，请参阅 [应用程序设置体系结构](/dotnet/desktop/winforms/advanced/application-settings-architecture)。
 
 应用程序设置将以下元素定义为它所使用的配置文件的一部分。
 
-| 元素                    | 描述                                                                           |
+| 元素                    | 说明                                                                           |
 | -------------------------- | ------------------------------------------------------------------------------------- |
 | **\<applicationSettings>** | 包含 **\<setting>** 应用程序特定的所有标记。                         |
 | **\<userSettings>**        | 包含 **\<setting>** 特定于当前用户的所有标记。                        |
@@ -41,9 +41,9 @@ ms.locfileid: "81242824"
 
 此元素定义一个设置。 它具有以下属性。
 
-| 属性        | 说明 |
+| Attribute        | 说明 |
 | ---------------- | ----------- |
-| **name**         | 必需。 设置的唯一 ID。 使用名称保存通过 Visual Studio 创建的设置 `ProjectName.Properties.Settings` 。 |
+| name         | 必需。 设置的唯一 ID。 使用名称保存通过 Visual Studio 创建的设置 `ProjectName.Properties.Settings` 。 |
 | **serializeAs** | 必需。 将值序列化为文本时要使用的格式。 有效值是：<br><br>- `string`. 该值使用来序列化为字符串 <xref:System.ComponentModel.TypeConverter> 。<br>- `xml`. 使用 XML 序列化对值进行序列化。<br>- `binary`. 使用二进制序列化将值作为文本编码的二进制序列化。<br />- `custom`. 设置提供程序具有此设置的固有知识，并对其进行序列化和反序列化。 |
 
 ## <a name="value-element"></a>\<value> 元素
@@ -88,7 +88,7 @@ ms.locfileid: "81242824"
 </configuration>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [应用程序设置概述](../../winforms/advanced/application-settings-overview.md)
-- [应用程序设置体系结构](../../winforms/advanced/application-settings-architecture.md)
+- [应用程序设置概述](/dotnet/desktop/winforms/advanced/application-settings-overview)
+- [应用程序设置体系结构](/dotnet/desktop/winforms/advanced/application-settings-architecture)

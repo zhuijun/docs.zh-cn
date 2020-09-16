@@ -2,16 +2,16 @@
 title: 授权策略
 ms.date: 03/30/2017
 ms.assetid: 1db325ec-85be-47d0-8b6e-3ba2fdf3dda0
-ms.openlocfilehash: 5b93f7e05261d9770650335160ddb56404aed94d
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a789faae1f6224512f9a8a9ab084c8a82e4a2b87
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84585501"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553657"
 ---
 # <a name="authorization-policy"></a>授权策略
 
-此示例演示如何实现一个自定义声明授权策略和一个关联的自定义服务授权管理器。 这在服务对服务操作进行基于声明的访问检查，并在进行访问检查之前授予调用方某些权限时很有用。 此示例演示添加声明的过程，以及对最终的声明集进行访问检查的过程。 客户端与服务器之间的所有应用程序消息均已进行签名和加密。 默认情况下，对于 `wsHttpBinding` 绑定，使用客户端提供的用户名和密码登录有效的 Windows NT 帐户。 此示例演示如何利用自定义 <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> 对客户端进行身份验证。 此外，此示例还演示使用 X.509 证书对服务进行客户端身份验证。 此示例演示了 <xref:System.IdentityModel.Policy.IAuthorizationPolicy> 和 <xref:System.ServiceModel.ServiceAuthorizationManager> 的实现，该实现在它们之间为特定用户授予对服务的特定方法的访问权限。 此示例基于[消息安全用户名](message-security-user-name.md)，但演示了如何在调用之前执行声明转换 <xref:System.ServiceModel.ServiceAuthorizationManager> 。
+此示例演示如何实现一个自定义声明授权策略和一个关联的自定义服务授权管理器。 这在服务对服务操作进行基于声明的访问检查，并在进行访问检查之前授予调用方某些权限时很有用。 此示例演示添加声明的过程，以及对最终的声明集进行访问检查的过程。 客户端与服务器之间的所有应用程序消息均已进行签名和加密。 默认情况下，对于 `wsHttpBinding` 绑定，使用客户端提供的用户名和密码登录有效的 Windows NT 帐户。 此示例演示如何利用自定义 <xref:System.IdentityModel.Selectors.UserNamePasswordValidator> 对客户端进行身份验证。 此外，此示例还演示使用 X.509 证书对服务进行客户端身份验证。 此示例演示了 <xref:System.IdentityModel.Policy.IAuthorizationPolicy> 和 <xref:System.ServiceModel.ServiceAuthorizationManager> 的实现，该实现在它们之间为特定用户授予对服务的特定方法的访问权限。 此示例基于 [消息安全用户名](message-security-user-name.md)，但演示了如何在调用之前执行声明转换 <xref:System.ServiceModel.ServiceAuthorizationManager> 。
 
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。
@@ -30,7 +30,7 @@ ms.locfileid: "84585501"
 
 - 如何实现 <xref:System.IdentityModel.Policy.IAuthorizationPolicy>。
 
-服务公开两个终结点，以便与使用配置文件 App.config 定义的服务进行通信。每个终结点由地址、绑定和协定组成。 其中一个绑定是使用标准 `wsHttpBinding` 绑定配置的，该标准绑定使用 WS-Security 和客户端用户名身份验证。 另一个绑定是使用标准 `wsHttpBinding` 绑定配置的，该标准绑定使用 WS-Security 和客户端证书身份验证。 [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)指定要用于服务身份验证的用户凭据。 服务器证书必须包含的 `SubjectName` 属性值与中的属性的值相同 `findValue` [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) 。
+服务公开两个终结点，用于与服务进行通信，并使用配置文件 App.config 定义。每个终结点由地址、绑定和协定组成。 其中一个绑定是使用标准 `wsHttpBinding` 绑定配置的，该标准绑定使用 WS-Security 和客户端用户名身份验证。 另一个绑定是使用标准 `wsHttpBinding` 绑定配置的，该标准绑定使用 WS-Security 和客户端证书身份验证。 [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md)指定要用于服务身份验证的用户凭据。 服务器证书必须包含的 `SubjectName` 属性值与中的属性的值相同 `findValue` [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) 。
 
 ```xml
 <system.serviceModel>
@@ -282,7 +282,7 @@ serviceHost.Credentials.UserNameAuthentication.CustomUserNamePasswordValidator =
 </behavior>
 ```
 
-Windows Communication Foundation （WCF）提供了丰富的基于声明的模型，用于执行访问检查。 <xref:System.ServiceModel.ServiceAuthorizationManager> 对象用于执行访问检查，并确定与客户端关联的声明是否满足访问服务方法的必需要求。
+Windows Communication Foundation (WCF) 提供了丰富的基于声明的模型用于执行访问检查。 <xref:System.ServiceModel.ServiceAuthorizationManager> 对象用于执行访问检查，并确定与客户端关联的声明是否满足访问服务方法的必需要求。
 
 出于演示的目的，此示例演示了实现方法的实现， <xref:System.ServiceModel.ServiceAuthorizationManager> <xref:System.ServiceModel.ServiceAuthorizationManager.CheckAccessCore%2A> 以允许用户基于类型的声明（ `http://example.com/claims/allowedoperation` 其值为允许调用的操作的操作 URI）来访问方法。
 
@@ -442,7 +442,7 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
 
 ### <a name="to-set-up-and-build-the-sample"></a>设置和生成示例
 
-1. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
+1. 若要生成解决方案，请按照 [生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
 
 2. 若要用单一计算机配置或跨计算机配置来运行示例，请按照下列说明进行操作。
 
@@ -451,22 +451,22 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>在同一计算机上运行示例
 
-1. 以管理员权限打开 Visual Studio 开发人员命令提示，并从示例安装文件夹中运行*安装程序。* 这将安装运行示例所需的所有证书。
+1. 以管理员权限打开 Visual Studio 开发人员命令提示，并从示例安装文件夹中运行 *Setup.bat* 。 这将安装运行示例所需的所有证书。
 
     > [!NOTE]
-    > 设置 bat 批处理文件设计为在 Visual Studio 开发人员命令提示中运行。 在 Visual Studio 开发人员命令提示中设置的 PATH 环境变量指向包含*bat*脚本所需的可执行文件的目录。
+    > Setup.bat 批处理文件设计为从 Visual Studio 的开发人员命令提示运行。 在 Visual Studio 开发人员命令提示中设置的 PATH 环境变量指向包含 *Setup.bat* 脚本所需的可执行文件的目录。
 
-1. 从*service\bin*启动 setup.exe。
+1. 从 *service\bin*启动 Service.exe。
 
-1. 从*\client\bin*启动客户端。 客户端活动将显示在客户端控制台应用程序上。
+1. 从 *\client\bin*启动 Client.exe。 客户端活动将显示在客户端控制台应用程序上。
 
-如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。
+如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。
 
 ### <a name="to-run-the-sample-across-computers"></a>跨计算机运行示例
 
 1. 在服务计算机上创建目录。
 
-2. 将*\service\bin*中的服务程序文件复制到服务计算机上的目录中。 另外，将 Setup.bat、Cleanup.bat、GetComputerName.vbs 和 ImportClientCert.bat 文件复制到服务计算机上。
+2. 将 *\service\bin* 中的服务程序文件复制到服务计算机上的目录中。 另外，将 Setup.bat、Cleanup.bat、GetComputerName.vbs 和 ImportClientCert.bat 文件复制到服务计算机上。
 
 3. 在客户端计算机上为这些客户端二进制文件创建一个目录。
 
@@ -476,35 +476,35 @@ public class MyAuthorizationPolicy : IAuthorizationPolicy
 
     `setup.bat`使用参数运行将 `service` 使用计算机的完全限定的域名创建一个服务证书，并将服务证书导出到名为 *.cer*的文件中。
 
-6. 编辑*setup.exe* ，以反映新的证书名称（在的属性中），该名称与 `findValue` [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) 计算机的完全限定域名相同。 还要将元素**computername**中的 computername \<service> / \<baseAddresses> 从 localhost 更改为你的服务计算机的完全限定名称。
+6. 编辑 *Service.exe.config* ，以反映) 的属性中 (新的证书名称，该名称与 `findValue` [\<serviceCertificate>](../../configure-apps/file-schema/wcf/servicecertificate-of-servicecredentials.md) 计算机的完全限定域名相同。 还要将元素**computername**中的 computername \<service> / \<baseAddresses> 从 localhost 更改为你的服务计算机的完全限定名称。
 
-7. 将服务目录中的*服务 .cer*文件复制到客户端计算机上的客户端目录。
+7. 将服务目录中的 *服务 .cer* 文件复制到客户端计算机上的客户端目录。
 
 8. 在客户端上，以 `setup.bat client` 管理员权限打开的 Visual Studio 开发人员命令提示中运行。
 
     `setup.bat`使用参数运行将 `client` 创建一个名为**test1**的客户端证书，并将客户端证书*Client.cer*导出到名为的文件。
 
-9. 在客户端计算机上的*setup.exe .config*文件中，更改终结点的地址值以与服务的新地址相匹配。 为此，请将**localhost**替换为服务器的完全限定的域名。
+9. 在客户端计算机上的 *Client.exe.config* 文件中，更改终结点的地址值以与服务的新地址相匹配。 为此，请将 **localhost** 替换为服务器的完全限定的域名。
 
 10. 将客户端目录中的 Client.cer 文件复制到服务器上的服务目录中。
 
-11. 在客户端上，在开发人员命令提示中运行*importservicecert.bat* ，并以管理员权限打开 Visual Studio。
+11. 在客户端上，以管理员权限打开 Visual Studio 开发人员命令提示中的 *ImportServiceCert.bat* 。
 
-    这会将服务证书从服务 .cer 文件导入到**TrustedPeople**存储区中。
+    这会将服务证书从服务 .cer 文件导入到 **TrustedPeople** 存储区中。
 
-12. 在服务器上，运行开发人员命令提示中的*importclientcert.bat* ，以管理员权限打开 Visual Studio。
+12. 在服务器上，在开发人员命令提示中运行 *ImportClientCert.bat* ，并以管理员权限打开 Visual Studio。
 
-    这会将客户端证书从客户端 .cer 文件导入到**TrustedPeople**存储区中。
+    这会将客户端证书从客户端 .cer 文件导入到 **TrustedPeople** 存储区中。
 
 13. 在服务器计算机上，从命令提示窗口中启动 Service.exe。
 
 14. 在客户端计算机上，从命令提示窗口中启动 Client.exe。
 
-    如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。
+    如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。
 
 ### <a name="clean-up-after-the-sample"></a>在示例后清理
 
-若要在示例完成后进行清理，请在运行完该示例后，在 samples 文件夹中运行 "*清除"。* 这将从证书存储区中移除服务器和客户端证书。
+若要在示例完成后进行清理，请在运行完该示例后，在 samples 文件夹中运行 *Cleanup.bat* 。 这将从证书存储区中移除服务器和客户端证书。
 
 > [!NOTE]
 > 此脚本不会在跨计算机运行此示例时移除客户端上的服务证书。 如果你已运行跨计算机使用证书的 WCF 示例，请确保清除已安装在 CurrentUser-TrustedPeople 存储中的服务证书。 为此，请使用以下命令：`certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`，例如：`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`。

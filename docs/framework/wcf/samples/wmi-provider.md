@@ -2,17 +2,17 @@
 title: WMI 提供程序
 ms.date: 03/30/2017
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-ms.openlocfilehash: a01b4b70d4c497d1efb93bb53a7339f5f7f29ef9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 3fc982bcec563d5e4b90ba3b25989859d7d86281
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84591041"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552872"
 ---
 # <a name="wmi-provider"></a>WMI 提供程序
-此示例演示如何使用 WCF 中内置的 Windows Management Instrumentation （WMI）提供程序在运行时从 Windows Communication Foundation （WCF）服务中收集数据。 另外，此示例还演示如何向服务添加用户定义的 WMI 对象。 该示例将激活[入门](getting-started-sample.md)的 WMI 提供程序，并演示如何 `ICalculator` 在运行时从服务中收集数据。  
+此示例演示如何使用内置于 WCF 中的 Windows Management Instrumentation (WMI) 提供程序，在运行时从 Windows Communication Foundation (WCF) 服务收集数据。 另外，此示例还演示如何向服务添加用户定义的 WMI 对象。 该示例将激活 [入门](getting-started-sample.md) 的 WMI 提供程序，并演示如何 `ICalculator` 在运行时从服务中收集数据。  
   
- WMI 是 Microsoft 基于 Web 的企业管理 (WBEM) 标准的实现。 有关 WMI SDK 的详细信息，请参阅[Windows Management Instrumentation](/windows/desktop/WmiSdk/wmi-start-page)。 WBEM 是有关应用程序如何向外部管理工具公开管理规范的行业标准。  
+ WMI 是 Microsoft 基于 Web 的企业管理 (WBEM) 标准的实现。 有关 WMI SDK 的详细信息，请参阅 [Windows Management Instrumentation](/windows/desktop/WmiSdk/wmi-start-page)。 WBEM 是有关应用程序如何向外部管理工具公开管理规范的行业标准。  
   
  WCF 实现一个 WMI 提供程序，该提供程序在运行时通过与 WBEM 兼容的接口公开检测。 管理工具可以在运行时通过接口连接至服务。 WCF 公开服务的属性，如地址、绑定、行为和侦听器。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "84591041"
   
 ## <a name="accessing-wmi-information"></a>访问 WMI 信息  
 
-可以采用多种不同方式访问 WMI 数据。 Microsoft 为脚本、Visual Basic 应用程序、c + + 应用程序和 .NET Framework 提供 WMI Api。 有关详细信息，请参阅[使用 WMI](/windows/desktop/wmisdk/using-wmi)。
+可以采用多种不同方式访问 WMI 数据。 Microsoft 为脚本、Visual Basic 应用程序、c + + 应用程序和 .NET Framework 提供 WMI Api。 有关详细信息，请参阅 [使用 WMI](/windows/desktop/wmisdk/using-wmi)。
   
  此示例使用两个 Java 脚本：一个脚本用于枚举在计算机上运行的服务及其某些属性，另一个脚本用于查看用户定义的 WMI 数据。 该脚本打开与 WMI 提供程序的连接、分析数据并显示所收集的数据。  
   
@@ -122,16 +122,16 @@ cscript EnumerateCustomObjects.js
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对 [Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
 2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。  
   
 3. 通过在宿主目录中的 service.dll 文件上运行 InstallUtil.exe（InstallUtil.exe 的默认位置是“%WINDIR%\Microsoft.NET\Framework\v4.0.30319”），可以将服务方案发布到 WMI。 只有在对 service.dll 文件进行了更改的情况下才需要执行此步骤。
   
-4. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
+4. 若要以单机配置或跨计算机配置来运行示例，请按照 [运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
   
     > [!NOTE]
-    > 如果在安装 ASP.NET 之后安装了 WCF，则可能需要运行 "% WINDIR% \Net\Framework\v3.0\Windows Communication Foundation\servicemodelreg.exe "-r-x，为 ASPNET 帐户授予发布 WMI 对象的权限。  
+    > 如果在安装 ASP.NET 之后安装了 WCF，则可能需要运行 "% WINDIR% \Net\Framework\v3.0\Windows 通信 Foundation\servicemodelreg.exe "-r-x，为 ASPNET 帐户授予发布 WMI 对象的权限。  
   
 5. 使用下面的命令可以查看通过 WMI 显示的示例：`cscript EnumerateServices.js` 或 `cscript EnumerateCustomObjects.js`。  
   
@@ -140,10 +140,10 @@ cscript EnumerateCustomObjects.js
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[Windows Communication Foundation (wcf) ，并 Windows Workflow Foundation (的 WF](https://www.microsoft.com/download/details.aspx?id=21459)) .NET Framework Windows Communication Foundation ([!INCLUDE[wf1](../../../../includes/wf1-md.md)] 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\WMIProvider`  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [AppFabric 监视示例](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [AppFabric 监视示例](/previous-versions/appfabric/ff383407(v=azure.10))

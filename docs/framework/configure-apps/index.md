@@ -25,12 +25,12 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 444d3700f36a2928b79f40dd5265d6166de762da
-ms.sourcegitcommit: 1c37a894c923bea021a3cc38ce7cba946357bbe1
+ms.openlocfilehash: 92ecc4a430aa3c238a7cd8705dc0cec5a9d0cb11
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/19/2020
-ms.locfileid: "85105371"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559286"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>使用配置文件配置应用
 .NET Framework 通过配置文件为开发人员和管理员提供了对应用程序运行方式的控制权和灵活性。 配置文件是可以按需要更改的 XML 文件。 管理员能够控制应用程序可以访问哪些受保护的资源，应用程序将使用哪些版本的程序集，以及远程应用程序和对象位于何处。 开发人员可以将设置置于配置文件中，从而没有必要在每次设置更改时重新编译应用程序。 本节说明可以对什么进行配置以及为什么对应用程序进行配置会有用。  
@@ -53,7 +53,7 @@ ms.locfileid: "85105371"
 ```  
   
 ## <a name="machine-configuration-files"></a>计算机配置文件  
- 计算机配置文件 Machine.config 包含应用于整个计算机的设置。 此文件位于 %*runtime install path*%\Config 目录中。 Machine.config 包含整个计算机范围内的程序集绑定、内置[远程处理信道](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100))和 ASP.NET 的配置设置。  
+ 计算机配置文件 Machine.config 包含应用于整个计算机的设置。 此文件位于 %*runtime install path*%\Config 目录中。 Machine.config 包含整个计算机范围内的程序集绑定、内置[远程处理信道](/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100))和 ASP.NET 的配置设置。  
   
  配置系统首先在计算机配置文件中查找[ **\<appSettings>** 元素](./file-schema/appsettings/index.md)和开发人员可能定义的其他配置节。 然后查看应用程序配置文件。 为使计算机配置文件可管理，最好将这些设置放在应用程序配置文件中。 但是，将这些设置放在计算机配置文件中可以使系统更易维护。 例如，如果有第三方组件，且客户端和服务器应用程序同时使用该组件，那么将该组件的设置放在一个位置更方便。 在这种情况下，计算机配置文件是存放设置的合适位置，这样就不会将相同的设置放在两个不同的文件中。  
   
@@ -77,7 +77,7 @@ ms.locfileid: "85105371"
   
 - ASP.NET 承载的应用。  
   
-     有关 ASP.NET 配置文件的详细信息，请参阅[ASP.NET 配置设置](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))。
+     有关 ASP.NET 配置文件的详细信息，请参阅 [ASP.NET 配置设置](/previous-versions/dotnet/netframework-4.0/b5ysx397(v=vs.100))。
   
 - Internet Explorer 承载的应用。  
   
@@ -125,7 +125,7 @@ ms.locfileid: "85105371"
 - [配置文件架构](./file-schema/index.md)
 - [指定程序集的位置](specify-assembly-location.md)
 - [重定向程序集版本](redirect-assembly-versions.md)
-- [ASP.NET 网站管理](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
-- [安全策略管理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
+- [ASP.NET 网站管理](/previous-versions/visualstudio/visual-studio-2008/6hy1xzbw(v=vs.90))
+- [安全策略管理](/previous-versions/dotnet/netframework-4.0/c1k0eed6(v=vs.100))
 - [Caspol.exe（代码访问安全策略工具）](../tools/caspol-exe-code-access-security-policy-tool.md)
 - [.NET 中的程序集](../../standard/assembly/index.md)

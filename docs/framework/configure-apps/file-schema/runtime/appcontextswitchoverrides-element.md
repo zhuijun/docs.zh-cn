@@ -7,12 +7,12 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-ms.openlocfilehash: 394523e81da96d596a00010a393b9a034c0d552f
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 0ead35559a17eb06304e6c251d2fe388ca178a30
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558746"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552279"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides> 元素
 
@@ -39,7 +39,7 @@ ms.locfileid: "88558746"
 
 ### <a name="value-attribute"></a>值特性
 
-|值|说明|
+|“值”|说明|
 |-----------|-----------------|
 |"名称 = 值"|预定义的开关名称及其值 (`true` 或 `false`) 。 多个开关名称/值对由分号分隔 ( ";") 。 有关 .NET Framework 支持的预定义开关名称的列表，请参阅 "备注" 部分。|
 
@@ -70,7 +70,7 @@ ms.locfileid: "88558746"
 |`Switch.System.Diagnostics.`<br/>`IgnorePortablePDBsInStackTraces`|控制在使用便携式 Pdb 时，堆栈跟踪是否获得，可以包括源文件和行信息。 `false` 包括源文件和行信息;否则为 `true` 。|.NET Framework 4.7.2|
 |`Switch.System.Drawing.`<br/>`DontSupportPngFramesInIcons`|控制 <xref:System.Drawing.Icon.ToBitmap%2A?displayProperty=nameWithType> 方法在 <xref:System.Drawing.Icon> 对象具有 PNG 帧时是否引发异常。 有关详细信息，请参阅[缓解：图标对象中的 PNG 帧](../../../migration-guide/mitigation-png-frames-in-icon-objects.md)。|.NET Framework 4.6|
 |`Switch.System.Drawing.Text.`<br/>`DoNotRemoveGdiFontsResourcesFromFontCollection`|确定 <xref:System.Drawing.Text.PrivateFontCollection?displayProperty=nameWithType> 通过方法将对象添加到集合时是否正确释放对象 <xref:System.Drawing.Text.PrivateFontCollection.AddFontFile(System.String)?displayProperty=nameWithType> 。 `true` 若要保留旧行为，则为;处理 `false` 所有专用字体对象。 |.NET Framework 4.7.2|
-|`Switch.System.Drawing.Printing.`<br>`OptimizePrintPreview`|控制是否为 <xref:System.Windows.Forms.PrintPreviewDialog> 网络打印机优化的性能。 有关详细信息，请参阅 [PrintPreviewDialog 控件概述](../../../winforms/controls/printpreviewdialog-control-overview-windows-forms.md)。|.NET Framework 4.6|
+|`Switch.System.Drawing.Printing.`<br>`OptimizePrintPreview`|控制是否为 <xref:System.Windows.Forms.PrintPreviewDialog> 网络打印机优化的性能。 有关详细信息，请参阅 [PrintPreviewDialog 控件概述](/dotnet/desktop/winforms/controls/printpreviewdialog-control-overview-windows-forms)。|.NET Framework 4.6|
 |`Switch.System.Globalization.EnforceJapaneseEraYearRanges`|控制是否强制执行日本历纪元的年份范围检查。 `true` 若要强制执行年份范围检查并 `false` 禁用它们 (默认行为) 。 有关详细信息，请参阅使用 [日历](../../../../standard/datetime/working-with-calendars.md)。|.NET Framework 4.6|
 |`Switch.System.Globalization.EnforceLegacyJapaneseDateParsing`|控制在分析操作中是否仅将 "1" 识别为日本历时代的第一年。 `true` 仅识别 "1"; `false` 若要识别 "1" 或 Gannen (默认行为) 。 有关详细信息，请参阅使用 [日历](../../../../standard/datetime/working-with-calendars.md)。|.NET Framework 4.6|
 |`Switch.System.Globalization.FormatJapaneseFirstYearAsANumber`|控制日本历时代的第一年在格式设置操作中是否表示为 "1" 或 Gannen。 `true` 将纪元的第一年的格式设置为 "1"; `false` 若要将其设置为 Gannen (默认行为) 。 有关详细信息，请参阅使用 [日历](../../../../standard/datetime/working-with-calendars.md)。|.NET Framework 4.6|
@@ -176,7 +176,7 @@ ms.locfileid: "88558746"
 </configuration>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [在 .NET Framework 4.6 和更高版本中缓解新行为](../../../migration-guide/mitigations.md)
 - <xref:System.AppContext?displayProperty=nameWithType>

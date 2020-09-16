@@ -3,26 +3,26 @@ title: Windows Workflow Foundation 4 性能
 description: 本文介绍 Windows Workflow Foundation 的主要修订版的性能特征，这是 .NET Framework 4 中的一部分。
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: 9b1b9e7c4fd7cdd122d425b2746859dde30ec209
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 1ad12d9fd69205bde726fe650a2ec28ba6c750ef
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83421561"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558337"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Windows Workflow Foundation 4 性能
 
- .NET Framework 4 包括 Windows Workflow Foundation （WF）的主要修订版，具有高性能投资。 这一新的修订版本引入了与 [!INCLUDE[wf1](../../../includes/wf1-md.md)] .NET Framework 3.0 和 .NET Framework 3.5 中随附的早期版本的设计更改。 新版本对编程模型内核、运行时和工具均重新进行了架构设计，从而极大地提升了性能和可用性。 本主题会展示这些修订版的重要性能特征，并将它们与之前的版本进行比较。
+ .NET Framework 4 包括 Windows Workflow Foundation 的主要修订版， (WF) ，并具有较高的性能投资。 这一新的修订版本引入了与 [!INCLUDE[wf1](../../../includes/wf1-md.md)] .NET Framework 3.0 和 .NET Framework 3.5 中随附的早期版本的设计更改。 新版本对编程模型内核、运行时和工具均重新进行了架构设计，从而极大地提升了性能和可用性。 本主题会展示这些修订版的重要性能特征，并将它们与之前的版本进行比较。
 
- 在 WF3 和 WF4 之间，单个工作流组件的性能也都得到了几个数量级的提升。  这使得手动编码 Windows Communication Foundation （WCF）服务和 WCF 工作流服务之间的差距非常小。  在 WF4 中，工作流延迟也得到了显著的降低。  暂留性能提高了 2.5 至 3.0 倍。  采用工作流跟踪方式的运行状况监视显著降低了开销。  这些就是迁移到或在应用程序中采用 WF4 的令人心动的原因。
+ 在 WF3 和 WF4 之间，单个工作流组件的性能也都得到了几个数量级的提升。  这会使 (WCF) 服务和 WCF 工作流服务之间的手动编码 Windows Communication Foundation 之间的差距非常小。  在 WF4 中，工作流延迟也得到了显著的降低。  暂留性能提高了 2.5 至 3.0 倍。  采用工作流跟踪方式的运行状况监视显著降低了开销。  这些就是迁移到或在应用程序中采用 WF4 的令人心动的原因。
 
 ## <a name="terminology"></a>术语
 
- [!INCLUDE[wf1](../../../includes/wf1-md.md)]在本主题的其余部分中，.NET Framework 4 中引入的版本将被称为 WF4。 [!INCLUDE[wf1](../../../includes/wf1-md.md)]是在 .NET Framework 3.0 中引入的，并且通过 .NET Framework 3.5 SP1 有一些次要修订版。 对于本主题的其余部分，Workflow Foundation 的 .NET Framework 3.5 版本将被称为 WF3。 WF3 随 WF4 一起提供 .NET Framework 4 并行提供。 有关将 WF3 项目迁移到 WF4 的详细信息，请参阅： [Windows Workflow Foundation 4 迁移指南](migration-guidance.md)。
+ [!INCLUDE[wf1](../../../includes/wf1-md.md)]在本主题的其余部分中，.NET Framework 4 中引入的版本将被称为 WF4。 [!INCLUDE[wf1](../../../includes/wf1-md.md)] 是在 .NET Framework 3.0 中引入的，并且通过 .NET Framework 3.5 SP1 有一些次要修订版。 对于本主题的其余部分，Workflow Foundation 的 .NET Framework 3.5 版本将被称为 WF3。 WF3 随 WF4 一起提供 .NET Framework 4 并行提供。 有关将 WF3 项目迁移到 WF4 的详细信息，请参阅： [Windows Workflow Foundation 4 迁移指南](migration-guidance.md)。
 
- Windows Communication Foundation （WCF）是 Microsoft 用于构建面向服务的应用程序的统一编程模型。 它最初是作为 .NET 3.0 的一部分引入的，它是 WF3 的一部分，现在是 .NET Framework 的关键组件之一。
+ Windows Communication Foundation (WCF) 是 Microsoft 用于构建面向服务的应用程序的统一编程模型。 它最初是作为 .NET 3.0 的一部分引入的，它是 WF3 的一部分，现在是 .NET Framework 的关键组件之一。
 
- Windows Server AppFabric 是一组集成技术。你可以利用这些技术更轻松地生成、缩放和管理在 IIS 上运行的 Web 应用程序和复合应用程序。 它提供用于监视和管理服务与工作流的工具。 有关详细信息，请参阅[Windows Server AppFabric 1.0](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10))。
+ Windows Server AppFabric 是一组集成技术。你可以利用这些技术更轻松地生成、缩放和管理在 IIS 上运行的 Web 应用程序和复合应用程序。 它提供用于监视和管理服务与工作流的工具。 有关详细信息，请参阅 [Windows Server AppFabric 1.0](/previous-versions/appfabric/ff384253(v=azure.10))。
 
 ## <a name="goals"></a>目标
  本主题的目标是使用为不同方案测得的数据显示 WF4 的性能特征。 本文还提供 WF4 与 WF3 之间的详细比较，从而展示在新修订版中所做的重大改进。 本文所展示的方案和数据量化了 WF4 和 WF3 在不同方面的基础成本。 这些数据有助于了解 WF4 的性能特征，并有助于规划从 WF3 到 WF4 的迁移或在应用程序开发中使用 WF4。 但是，应当关注根据本文展示的数据所得出的结论。 复合工作流应用程序的性能高度依赖于工作流的实现方式和不同组件的集成方式。 必须测量每个应用程序，才能确定该应用程序的性能特征。
@@ -36,7 +36,7 @@ ms.locfileid: "83421561"
  与 WF3 相比，WF4 运行时具有更有效的计划程序。 它利用用于 WCF 的同一个 i/o 线程池，这在执行批处理工作项时非常高效。 内部工作项计划程序队列已针对最常用的使用模式进行了优化。 WF4 运行时还可以使用最小的同步和事件处理逻辑以非常轻量的方式管理执行状态，而 WF3 则依赖于重负载事件注册和调用来执行状态转换的复杂同步。
 
 ### <a name="data-storage-and-flow"></a>数据存储和流动
- 在 WF3 中，与活动相关的数据通过 <xref:System.Windows.DependencyProperty> 类型实现的依赖属性进行建模。 Windows Presentation Foundation （WPF）中引入了依赖属性模式。 总体上，这种模式十分灵活，能够支持轻松的数据绑定和其他 UI 功能。 但是，这种模式需要将属性定义为工作流定义中的静态字段。 当 [!INCLUDE[wf1](../../../includes/wf1-md.md)] 运行时设置或获取属性值时，它会涉及重型的查找逻辑。
+ 在 WF3 中，与活动相关的数据通过 <xref:System.Windows.DependencyProperty> 类型实现的依赖属性进行建模。  (WPF) Windows Presentation Foundation 引入了依赖属性模式。 总体上，这种模式十分灵活，能够支持轻松的数据绑定和其他 UI 功能。 但是，这种模式需要将属性定义为工作流定义中的静态字段。 当 [!INCLUDE[wf1](../../../includes/wf1-md.md)] 运行时设置或获取属性值时，它会涉及重型的查找逻辑。
 
  WF4 使用清晰的数据范围逻辑，显著改进了在工作流中处理数据的方式。 它使用下面两种不同的概念将存储在活动中的数据与在活动边界之间流动的数据区分开来：变量和自变量。 通过对变量和 "In/Out/InOut" 参数使用清晰的分层范围，可以显著降低活动的数据使用复杂性，并自动确定数据生存期的范围。 活动具有由其自变量描述的定义完善的签名。 通过简单地检查活动，您可以确定它将会接收的数据，以及它执行后将会产生的数据。
 
@@ -53,10 +53,10 @@ ms.locfileid: "83421561"
 ### <a name="messaging"></a>消息传递
  最初，WF3 通过外部事件或 Web 服务调用提供相当有限的消息传送支持。 在 .NET 3.5 中，工作流可以作为 WCF 客户端实现，也可以通过和公开为 WCF 服务 <xref:System.Workflow.Activities.SendActivity> <xref:System.Workflow.Activities.ReceiveActivity> 。 在 WF4 中，基于工作流的消息传递编程的概念通过将 WCF 消息传递逻辑紧密集成到 WF 中，进一步增强了这一概念。
 
- .NET 4 的 WCF 中提供的统一消息处理管道可帮助 WF4 服务获得比 WF3 更好的性能和可伸缩性。 WF4 还提供了更丰富的消息传送编程支持，可以对复杂消息交换模式 (MEP) 进行建模。 开发人员可以使用类型化的服务协定实现简单的编程，也可以使用非类型化的服务协定获得更好的性能，而无需付出序列化成本。 WF4 中通过 <xref:System.ServiceModel.Activities.SendMessageChannelCache> 类提供的客户端通道缓存支持可帮助开发人员以最小的工作量构建快速应用程序。 有关详细信息，请参阅[更改发送活动的缓存共享级别](../wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)。
+ .NET 4 的 WCF 中提供的统一消息处理管道可帮助 WF4 服务获得比 WF3 更好的性能和可伸缩性。 WF4 还提供了更丰富的消息传送编程支持，可以对复杂消息交换模式 (MEP) 进行建模。 开发人员可以使用类型化的服务协定实现简单的编程，也可以使用非类型化的服务协定获得更好的性能，而无需付出序列化成本。 WF4 中通过 <xref:System.ServiceModel.Activities.SendMessageChannelCache> 类提供的客户端通道缓存支持可帮助开发人员以最小的工作量构建快速应用程序。 有关详细信息，请参阅 [更改发送活动的缓存共享级别](../wcf/feature-details/changing-the-cache-sharing-levels-for-send-activities.md)。
 
 ### <a name="declarative-programming"></a>声明性编程
- WF4 提供一个清楚、简单的声明性编程框架，用以对业务流程和服务进行建模。 无需任何其他代码，该编程模型支持完全声明性地编写活动，极大地简化了工作流的创作。 在 .NET Framework 4 中，基于 XAML 的声明性编程框架已统一到单个程序集 system.exception 中以支持 WPF 和 WF。
+ WF4 提供一个清楚、简单的声明性编程框架，用以对业务流程和服务进行建模。 无需任何其他代码，该编程模型支持完全声明性地编写活动，极大地简化了工作流的创作。 在 .NET Framework 4 中，基于 XAML 的声明性编程框架已统一到单个程序集 System.Xaml.dll 以支持 WPF 和 WF。
 
  在 WF4 中，在 XAML 提供真正的声明性经验，并允许用 XML 标记定义工作流的整个定义，并引用使用 .NET 构建的活动和类型。 这在使用 XOML 的 WF3 中则很难实现，因为这种格式没有自定义的代码隐藏逻辑。 .NET 4 中的新 XAML 堆栈在序列化/反序列化工作流项目时具有更好的性能，并使声明性编程更加引人注目和可靠。
 
@@ -232,7 +232,7 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
 #### <a name="test-setup"></a>测试设置
 ![相关吞吐量工作流测试](./media/performance/correlation-throughput-workflow.gif "相关吞吐量工作流测试设置")
 
- 上一个工作流与 "[持久性](#persistence)" 部分中使用的工作流相同。 对于没有持久性的相关测试，运行时中没有安装永久性提供程序。 相关发生在两个位置：CreateOrder 和 CompleteOrder。
+ 上一个工作流与 " [持久性](#persistence) " 部分中使用的工作流相同。 对于没有持久性的相关测试，运行时中没有安装永久性提供程序。 相关发生在两个位置：CreateOrder 和 CompleteOrder。
 
 #### <a name="test-results"></a>测试结果
 ![相关吞吐量](./media/performance/correlation-throughput-graph.gif "相关吞吐量图表")
@@ -286,7 +286,7 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
  即使是具有许多深度和大量活动的复杂工作流，性能结果仍与本文前面显示的吞吐量数字一致。  WF4 的吞吐量速度呈现几个数量级的增长，必须在对数刻度上进行比较。
 
 ### <a name="memory"></a>内存
- Windows Workflow Foundation 的内存开销从两个主要方面进行测量：工作流复杂程度和工作流定义数。  内存测量是在 Windows 7 64 位工作站上进行的。  可以通过多种方法来获取工作集大小的度量，如监视性能计数器、轮询环境工作集，或使用 VMMap 中提供的工具（例如[VMMap](/sysinternals/downloads/vmmap)）。 使用各种方法的组合来获得并验证每个测试的结果。
+ Windows Workflow Foundation 的内存开销从两个主要方面进行测量：工作流复杂程度和工作流定义数。  内存测量是在 Windows 7 64 位工作站上进行的。  可以通过多种方法来获取工作集大小的度量，如监视性能计数器、轮询环境工作集，或使用 VMMap 中提供的工具（例如 [VMMap](/sysinternals/downloads/vmmap)）。 使用各种方法的组合来获得并验证每个测试的结果。
 
 ### <a name="workflow-complexity-test"></a>工作流复杂程度测试
  工作流复杂程度测试根据工作流的复杂程度测试工作集的差异。  除了上一节中使用的复杂工作流外，还添加了新的变种以覆盖两种基本情况：单个活动工作流和包含 1000 个活动的序列。  对于这些测试，这些工作流在一分钟的时间里，在单个序列循环中初始化并执行完成。  每个测试变体都运行三次，记录的数据是这三次运行的平均值。
@@ -302,7 +302,7 @@ public sealed class CompensableActivityEmptyCompensation : CodeActivity
  需要注意此图形中一个明显的趋势，即在 WF3 和 WF4 中，嵌套对内存使用量的影响都相对较低。  最大的内存影响来自给定工作流中的活动数。  若采用序列 1000 的数据，复杂深度 5、序列 5，复杂深度 7、序列 1 这两个变体，如果活动数达到几千时，则内存使用量会出现明显的增长。  在有大约 29000 个活动的极端情况下（深度 7、序列 1），WF4 使用的内存几乎要比 WF3 少 79%。
 
 ### <a name="multiple-workflow-definitions-test"></a>多个工作流定义测试
- 测量每个工作流定义的内存分为两个不同的测试，原因是 WF3 和 WF4 中可用于承载工作流的选项有所不同。  这些测试与工作流复杂程度测试采用不同的运行方式，给定工作流对于每个定义只实例化和执行一次。  这是因为工作流定义和它的主机在 AppDomain 的生存期内会保留在内存中。  运行给定的工作流实例使用的内存应当在垃圾回收期间清理。  WF4 的迁移指南包含承载选项的更多详细信息。 有关详细信息，请参阅[WF 迁移手册：工作流托管](migration-guidance.md)。
+ 测量每个工作流定义的内存分为两个不同的测试，原因是 WF3 和 WF4 中可用于承载工作流的选项有所不同。  这些测试与工作流复杂程度测试采用不同的运行方式，给定工作流对于每个定义只实例化和执行一次。  这是因为工作流定义和它的主机在 AppDomain 的生存期内会保留在内存中。  运行给定的工作流实例使用的内存应当在垃圾回收期间清理。  WF4 的迁移指南包含承载选项的更多详细信息。 有关详细信息，请参阅 [WF 迁移手册：工作流托管](migration-guidance.md)。
 
  为工作流定义测试创建多个工作流定义，可以通过多种方式完成。  例如，可以使用代码生成创建一组除名称外完全相同的 1000 个工作流，并将这些工作流中的每一个都保存到单独的文件中。  对于控制台承载的测试采取了这种方法。  在 WF3 中，<xref:System.Workflow.Runtime.WorkflowRuntime>类用于运行工作流定义。  WF4 可使用 <xref:System.Activities.WorkflowApplication> 创建单个工作流实例，也可以直接使用 <xref:System.Activities.WorkflowInvoker> 运行活动，如同它是方法调用一样。  <xref:System.Activities.WorkflowApplication> 是单个工作流实例的主机，并与 <xref:System.Workflow.Runtime.WorkflowRuntime> 具有相近功能，所以在此测试中进行了使用。
 
@@ -350,7 +350,7 @@ public class Workflow1 : Activity
 }
 ```
 
- 还有许多其他因素可以影响内存消耗。 相同的建议也适用于所有托管的程序。  在 IIS 承载的环境中，为工作流定义创建的 <xref:System.ServiceModel.WorkflowServiceHost> 对象保留在内存中，直到应用程序池被回收。  编写扩展时应当记住这一点。  此外，最好避免 "全局" 变量（作用域为整个工作流的变量），并尽可能限制变量的范围。
+ 还有许多其他因素可以影响内存消耗。 相同的建议也适用于所有托管的程序。  在 IIS 承载的环境中，为工作流定义创建的 <xref:System.ServiceModel.WorkflowServiceHost> 对象保留在内存中，直到应用程序池被回收。  编写扩展时应当记住这一点。  此外，最好避免将 "global" 变量 () 整个工作流的变量，并尽可能限制变量的范围。
 
 ## <a name="workflow-runtime-services"></a>工作流运行时服务
 
@@ -421,7 +421,7 @@ public class Workflow1 : Activity
 
  虽然 WF4 没有 SQL 跟踪提供程序，但是 AppFabric 有。  AppFabric 的 SQL 跟踪方法是使用 Windows 服务订阅 ETW 事件，该服务将事件分批，并将它们写入专门用于快速插入的 SQL 表中。  另一个作业从此表中抽取数据，并将其转换为可以在 AppFabric 仪表板上查看的报表。  这意味着一批跟踪事件会与其来源的工作流分开处理，因此不用等待暂留点就可以进行记录。
 
- ETW 事件可以使用 logman 或 xperf 之类的工具进行记录。  可以使用 xperfview 之类的工具查看压缩的 ETL 文件，也可以使用 tracerpt 将其转换为更容易读取的格式，如 XML。  在 WF3 中，不使用 SQL 数据库而获得跟踪事件的唯一方法是创建自定义跟踪服务。 有关 ETW 的详细信息，请参阅[适用于 windows 的 WCF 服务和事件跟踪](../wcf/samples/wcf-services-and-event-tracing-for-windows.md)和[事件跟踪-windows 应用程序](/windows/desktop/etw/event-tracing-portal)。
+ ETW 事件可以使用 logman 或 xperf 之类的工具进行记录。  可以使用 xperfview 之类的工具查看压缩的 ETL 文件，也可以使用 tracerpt 将其转换为更容易读取的格式，如 XML。  在 WF3 中，不使用 SQL 数据库而获得跟踪事件的唯一方法是创建自定义跟踪服务。 有关 ETW 的详细信息，请参阅 [适用于 windows 的 WCF 服务和事件跟踪](../wcf/samples/wcf-services-and-event-tracing-for-windows.md) 和 [事件跟踪-windows 应用程序](/windows/desktop/etw/event-tracing-portal)。
 
  启用工作流跟踪将不同程度地影响性能。  下面的基准测试使用 logman 工具来使用 ETW 跟踪事件并将它们记录到 ETL 文件中。  AppFabric 中 SQL 跟踪的成本不在本文的讨论范围内。  基本跟踪配置文件（也会在 AppFabric 中使用）会在此基准测试中显示。  此外，还会包括只跟踪运行状况监视事件的成本。  这些事件有助于解决疑难问题和确定系统的平均吞吐量。
 
@@ -435,7 +435,7 @@ public class Workflow1 : Activity
  运行状况监视对吞吐量大约有 3% 的影响。  基本配置文件的成本大约为 8%。
 
 ## <a name="interop"></a>Interop
- WF4 几乎是对 [!INCLUDE[wf1](../../../includes/wf1-md.md)] 完全重写，因此 WF3 工作流和活动不能与 WF4 直接兼容。  采用 Windows Workflow Foundation 早期采用的许多客户将具有内部或第三方工作流定义和 WF3 的自定义活动。  为了简化向 WF4 的迁移，一种方法是使用 Interop 活动，这种活动可以从 WF4 工作流中执行 WF3 活动。  建议仅在必要时才使用 <xref:System.Activities.Statements.Interop> 活动。 有关迁移到 WF4 的详细信息，请查看[WF4 迁移指南](migration-guidance.md)。
+ WF4 几乎是对 [!INCLUDE[wf1](../../../includes/wf1-md.md)] 完全重写，因此 WF3 工作流和活动不能与 WF4 直接兼容。  采用 Windows Workflow Foundation 早期采用的许多客户将具有内部或第三方工作流定义和 WF3 的自定义活动。  为了简化向 WF4 的迁移，一种方法是使用 Interop 活动，这种活动可以从 WF4 工作流中执行 WF3 活动。  建议仅在必要时才使用 <xref:System.Activities.Statements.Interop> 活动。 有关迁移到 WF4 的详细信息，请查看 [WF4 迁移指南](migration-guidance.md)。
 
 ### <a name="environment-setup"></a>环境设置
  ![工作流性能测试的环境设置](./media/performance/performance-test-environment.gif)
@@ -452,5 +452,5 @@ public class Workflow1 : Activity
 
  可以注意到，使用 Interop 与直接使用 WF3 相比有显著的性能提升。  但是，与 WF4 活动比较后，增加则可以忽略不计。
 
-## <a name="summary"></a>摘要
+## <a name="summary"></a>“摘要”
  WF4 对性能的巨大投资在许多重要的方面得到了回报。  由于更接近 [!INCLUDE[wf1](../../../includes/wf1-md.md)] 运行时，所以 WF4 中单个工作流组件性能在某些情况下能比 WF3 快数百倍。  延迟数字也得到显著改善。  这意味着，使用 [!INCLUDE[wf1](../../../includes/wf1-md.md)] 而不是手动编码 WCF 业务流程服务的性能损失非常小，因为这样做的好处在于使用 [!INCLUDE[wf1](../../../includes/wf1-md.md)] 。  暂留性能提高了 2.5 至 3.0 倍。  采用工作流跟踪方式的运行状况监视目前的开销非常低。  我们为那些考虑从 WF3 迁移到 WF4 的用户提供了一套全面的迁集指南。  所有这些使 WF4 成为您编写复杂应用程序的必备之选。

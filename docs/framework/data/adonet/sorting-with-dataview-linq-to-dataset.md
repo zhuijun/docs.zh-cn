@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 885b3b7b-51c1-42b3-bb29-b925f4f69a6f
-ms.openlocfilehash: 2998de7dee34f9b5410bfe53988e0b7cfa797784
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 010da284268fb30763efd5a720dc80d50981d323
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634750"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552214"
 ---
 # <a name="sorting-with-dataview-linq-to-dataset"></a>使用 DataView 进行排序 (LINQ to DataSet)
-基于特定条件对数据进行排序，然后通过 UI 控件向客户端表示该数据的能力是数据绑定的一个重要特征。 <xref:System.Data.DataView> 提供多种方式对数据进行排序并返回按指定排序条件排序的数据行。 除了基于字符串的排序功能以外，<xref:System.Data.DataView> 还使您能够对排序条件使用语言集成查询（LINQ）表达式。 LINQ 表达式允许执行比基于字符串的排序更复杂而功能更强大的排序操作。 本主题介绍这两种使用 <xref:System.Data.DataView> 的排序方法。  
+基于特定条件对数据进行排序，然后通过 UI 控件向客户端表示该数据的能力是数据绑定的一个重要特征。 <xref:System.Data.DataView> 提供多种方式对数据进行排序并返回按指定排序条件排序的数据行。 除了基于字符串的排序功能以外， <xref:System.Data.DataView> 还使您能够将语言集成查询用于排序条件 (LINQ) 表达式。 LINQ 表达式允许执行比基于字符串的排序更复杂而功能更强大的排序操作。 本主题介绍这两种使用 <xref:System.Data.DataView> 的排序方法。  
   
 ## <a name="creating-dataview-from-a-query-with-sorting-information"></a>通过具有排序信息的查询创建 DataView  
- 可以从 LINQ to DataSet 查询创建 <xref:System.Data.DataView> 对象。 如果查询包含 <xref:System.Linq.Enumerable.OrderBy%2A>、<xref:System.Linq.Enumerable.OrderByDescending%2A>、<xref:System.Linq.Enumerable.ThenBy%2A> 或 <xref:System.Linq.Enumerable.ThenByDescending%2A> 子句，则这些子句中的表达式将用作对 <xref:System.Data.DataView> 中的数据进行排序的基础。 例如，如果查询包含 `Order By…` 和 `Then By…` 子句，则生成的 <xref:System.Data.DataView> 将按指定的两个列对数据进行排序。  
+ <xref:System.Data.DataView>可以通过 LINQ to DataSet 查询来创建对象。 如果查询包含 <xref:System.Linq.Enumerable.OrderBy%2A>、<xref:System.Linq.Enumerable.OrderByDescending%2A>、<xref:System.Linq.Enumerable.ThenBy%2A> 或 <xref:System.Linq.Enumerable.ThenByDescending%2A> 子句，则这些子句中的表达式将用作对 <xref:System.Data.DataView> 中的数据进行排序的基础。 例如，如果查询包含 `Order By…` 和 `Then By…` 子句，则生成的 <xref:System.Data.DataView> 将按指定的两个列对数据进行排序。  
   
  基于表达式的排序具有比基于字符串的简单排序更强大、更复杂的排序功能。 请注意，基于字符串和基于表达式的排序是互相排斥的。 如果在通过查询创建 <xref:System.Data.DataView.Sort%2A> 后设置基于字符串的 <xref:System.Data.DataView>，则会清除从查询推断的基于表达式的筛选，并且无法重置。  
   
- 创建 <xref:System.Data.DataView> 及修改任何排序或筛选信息时，均会生成 <xref:System.Data.DataView> 的索引。 通过在从其创建 <xref:System.Data.DataView> 的 LINQ to DataSet 查询中提供排序条件，并在以后不修改排序信息，可以获得最佳性能。 有关详细信息，请参阅[DataView 性能](dataview-performance.md)。  
+ 创建 <xref:System.Data.DataView> 及修改任何排序或筛选信息时，均会生成 <xref:System.Data.DataView> 的索引。 您可以通过在 LINQ to DataSet 查询中提供排序条件来获得最佳性能，该查询 <xref:System.Data.DataView> 是从创建的，而不是在以后修改排序信息。 有关详细信息，请参阅 [DataView 性能](dataview-performance.md)。  
   
 > [!NOTE]
 > 在大多数情况下，用于排序的表达式不应有副作用且必须是确定的。 另外，表达式不应包含依赖于固定执行次数的任何逻辑，因为排序操作可能会执行任意次。  
@@ -44,11 +44,11 @@ ms.locfileid: "75634750"
  [!code-vb[DP DataView Samples#CreateLDVFromQueryOrderByThenBy](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#createldvfromqueryorderbythenby)]  
   
 ## <a name="using-the-string-based-sort-property"></a>使用基于字符串的排序属性  
- <xref:System.Data.DataView> 的基于字符串的排序功能仍适用于 LINQ to DataSet。 从 LINQ to DataSet 查询创建 <xref:System.Data.DataView> 后，可以使用 <xref:System.Data.DataView.Sort%2A> 属性来设置对 <xref:System.Data.DataView>的排序。  
+ 基于字符串的排序功能 <xref:System.Data.DataView> 仍适用于 LINQ to DataSet。 <xref:System.Data.DataView>从 LINQ to DataSet 查询创建后，可以使用 <xref:System.Data.DataView.Sort%2A> 属性来设置对的排序 <xref:System.Data.DataView> 。  
   
  基于字符串和基于表达式的排序功能是互相排斥的。 设置 <xref:System.Data.DataView.Sort%2A> 属性将清除从创建 <xref:System.Data.DataView> 的查询中继承的基于表达式的排序。  
   
- 有关基于字符串的 <xref:System.Data.DataView.Sort%2A> 筛选的详细信息，请参阅对[数据进行排序和筛选](./dataset-datatable-dataview/sorting-and-filtering-data.md)。  
+ 有关基于字符串的筛选的详细信息 <xref:System.Data.DataView.Sort%2A> ，请参阅对 [数据进行排序和筛选](./dataset-datatable-dataview/sorting-and-filtering-data.md)。  
   
 ### <a name="example"></a>示例  
  下面的示例从 Contact 表创建 <xref:System.Data.DataView> 并先按姓氏以降序，然后按名字以升序对行进行排序：  
@@ -81,8 +81,8 @@ ms.locfileid: "75634750"
  [!code-csharp[DP DataView Samples#LDVClearSort2](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP DataView Samples/CS/Form1.cs#ldvclearsort2)]
  [!code-vb[DP DataView Samples#LDVClearSort2](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP DataView Samples/VB/Form1.vb#ldvclearsort2)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [数据绑定和 LINQ to DataSet](data-binding-and-linq-to-dataset.md)
 - [使用 DataView 进行筛选](filtering-with-dataview-linq-to-dataset.md)
-- [对数据进行排序](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/bb546145(v=vs.120))
+- [对数据进行排序](/previous-versions/visualstudio/visual-studio-2013/bb546145(v=vs.120))

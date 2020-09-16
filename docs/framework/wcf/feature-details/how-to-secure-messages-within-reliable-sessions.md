@@ -2,12 +2,12 @@
 title: 如何：在可靠会话内保护消息
 ms.date: 03/30/2017
 ms.assetid: aee33e50-936f-4486-9ca8-c1520c19a62d
-ms.openlocfilehash: 306d0f96b5163fe5c24d270b4b9a7c1d3f499e7e
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: cec9356467886be022d05ead55d5cb6ccddcd838
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596950"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558675"
 ---
 # <a name="how-to-secure-messages-within-reliable-sessions"></a>如何：在可靠会话内保护消息
 
@@ -21,9 +21,9 @@ ms.locfileid: "84596950"
 
 1. 指定客户端必须用来向服务进行身份验证的客户端凭据类型。
 
-在第一个任务中，终结点配置元素包含 `bindingConfiguration` 引用名为的绑定配置的特性（在本示例中为），这一点很重要 `MessageSecurity` 。 [**\<binding>**](../../configure-apps/file-schema/wcf/bindings.md)然后，配置元素引用此名称，通过将元素的属性设置 `enabled` [**\<reliableSession>**](https://docs.microsoft.com/previous-versions/ms731375(v=vs.90)) 为来启用可靠会话 `true` 。 通过将 `ordered` 属性设置为 `true`，可以要求可靠会话内的有序传送保证。
+在第一个任务中，终结点配置元素包含一个 `bindingConfiguration` 属性，该属性引用名为 (的绑定配置，在此示例中) `MessageSecurity` 。 [**\<binding>**](../../configure-apps/file-schema/wcf/bindings.md)然后，配置元素引用此名称，通过将元素的属性设置 `enabled` [**\<reliableSession>**](/previous-versions/ms731375(v=vs.90)) 为来启用可靠会话 `true` 。 通过将 `ordered` 属性设置为 `true`，可以要求可靠会话内的有序传送保证。
 
-对于此配置过程所基于的示例的源副本，请参阅[WS 可靠会话](../samples/ws-reliable-session.md)。
+对于此配置过程所基于的示例的源副本，请参阅 [WS 可靠会话](../samples/ws-reliable-session.md)。
 
 第二个任务的基本项是通过将 `mode` **\<security>** 客户端和服务的元素中包含的元素的属性设置 **\<binding>** 为来完成的 `Message` 。
 

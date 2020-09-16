@@ -2,21 +2,21 @@
 title: Entity SQL 语言
 ms.date: 03/30/2017
 ms.assetid: 9e7d8837-28c5-429d-a824-7bafb59724cf
-ms.openlocfilehash: a2e4b7245dbfccf7864481b52a0e868a85efbca6
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 2600b7626ebc5196c702f2d1e3159fd9549227f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251021"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553377"
 ---
 # <a name="entity-sql-language"></a>Entity SQL 语言
 Entity SQL 是类似于 SQL 的与存储无关的查询语言。 通过 Entity SQL，可以将实体数据作为对象或以表格形式进行查询。 在以下情况下，应考虑使用 Entity SQL：  
   
 - 当查询必须在运行时动态构造时。 在这种情况下，还应考虑使用 <xref:System.Data.Objects.ObjectQuery%601> 的查询生成器方法，而不是在运行时构造 Entity SQL 查询字符串。  
   
-- 当您要将查询定义为模型定义的一部分时。 在数据模型中只支持 Entity SQL。 有关详细信息，请参阅[QueryView 元素（MSL）](/ef/ef6/modeling/designer/advanced/edmx/msl-spec#queryview-element-msl)  
+- 当您要将查询定义为模型定义的一部分时。 在数据模型中只支持 Entity SQL。 有关详细信息，请参阅 [QueryView 元素 (MSL) ](/ef/ef6/modeling/designer/advanced/edmx/msl-spec#queryview-element-msl)  
   
-- 当使用 EntityClient，通过 <xref:System.Data.EntityClient.EntityDataReader> 将只读实体数据返回为行集时。 有关详细信息，请参阅[实体框架的 EntityClient Provider](../entityclient-provider-for-the-entity-framework.md)。  
+- 当使用 EntityClient，通过 <xref:System.Data.EntityClient.EntityDataReader> 将只读实体数据返回为行集时。 有关详细信息，请参阅 [用于 Entity Framework 的 EntityClient 提供程序](../entityclient-provider-for-the-entity-framework.md)。  
   
 - 如果您已经是基于 SQL 的查询语言的专家，Entity SQL 可能对您而言是最简单不过了。  
   
@@ -43,39 +43,39 @@ Entity SQL 是类似于 SQL 的与存储无关的查询语言。 通过 Entity S
   
  [如何：执行多态查询](../how-to-execute-a-polymorphic-query.md)  
   
- [如何：与导航运算符导航关系](../how-to-navigate-relationships-with-the-navigate-operator.md)  
+ [如何：使用导航运算符导航关系](../how-to-navigate-relationships-with-the-navigate-operator.md)  
   
 ## <a name="using-entity-sql-with-object-queries"></a>将 Entity SQL 与对象查询结合使用  
  如果您要将 Entity SQL 与对象查询结合使用，有关更多信息请参见下列主题：  
   
- [如何：执行返回实体类型对象的查询](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738694(v=vs.100))  
+ [如何：执行返回实体类型对象的查询](/previous-versions/dotnet/netframework-4.0/bb738694(v=vs.100))  
   
- [如何：执行参数化查询](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738521(v=vs.100))  
+ [如何：执行参数化查询](/previous-versions/dotnet/netframework-4.0/bb738521(v=vs.100))  
   
- [如何：使用导航属性导航关系](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896321(v=vs.100))  
+ [如何：使用导航属性导航关系](/previous-versions/dotnet/netframework-4.0/bb896321(v=vs.100))  
   
- [如何：调用用户定义函数](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100))  
+ [如何：调用用户定义的函数](/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100))  
   
- [如何：筛选数据](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716755(v=vs.100))  
+ [如何：筛选数据](/previous-versions/dotnet/netframework-4.0/cc716755(v=vs.100))  
   
- [如何：对数据排序](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716784(v=vs.100))  
+ [如何：对数据排序](/previous-versions/dotnet/netframework-4.0/cc716784(v=vs.100))  
   
- [如何：组数据](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896341(v=vs.100))  
+ [如何：对数据分组](/previous-versions/dotnet/netframework-4.0/bb896341(v=vs.100))  
   
- [如何：聚合数据](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716738(v=vs.100))  
+ [如何：聚合数据](/previous-versions/dotnet/netframework-4.0/cc716738(v=vs.100))  
   
- [如何：执行返回匿名类型对象的查询](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738512(v=vs.100))  
+ [如何：执行返回匿名类型对象的查询](/previous-versions/dotnet/netframework-4.0/bb738512(v=vs.100))  
   
- [如何：执行返回基元类型集合的查询](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738451(v=vs.100))  
+ [如何：执行返回基元类型集合的查询](/previous-versions/dotnet/netframework-4.0/bb738451(v=vs.100))  
   
- [如何：在 EntityCollection 中查询相关对象](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716708(v=vs.100))  
+ [如何：在 EntityCollection 中查询相关对象](/previous-versions/dotnet/netframework-4.0/cc716708(v=vs.100))  
   
- [如何：将两个查询的联合排序](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896299(v=vs.100))  
+ [如何：对两个查询的联合排序](/previous-versions/dotnet/netframework-4.0/bb896299(v=vs.100))  
   
- [如何：查看查询结果](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))  
+ [如何：按页查看查询结果](/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))  
   
 ## <a name="in-this-section"></a>本节内容  
- [实体 SQL 概述](entity-sql-overview.md)  
+ [Entity SQL 概述](entity-sql-overview.md)  
   
  [实体 SQL 引用](entity-sql-reference.md)  
   

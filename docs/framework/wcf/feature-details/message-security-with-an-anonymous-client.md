@@ -5,29 +5,29 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cad53e1a-b7c9-4064-bc87-508c3d1dce49
-ms.openlocfilehash: 058163c96bba036c3183695bf986b4d0424271ac
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: aed56be359f094db483ab1d012bd77a1096433b6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595214"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553761"
 ---
 # <a name="message-security-with-an-anonymous-client"></a>匿名客户端的消息安全
 
-下面的方案演示了 Windows Communication Foundation （WCF）消息安全性所保护的客户端和服务。 设计目标是使用消息安全而非传输安全，以便将来可支持更加丰富的基于声明的模型。 有关将丰富声明用于授权的详细信息，请参阅[使用标识模型管理声明和授权](managing-claims-and-authorization-with-the-identity-model.md)。
+下面的方案演示了 Windows Communication Foundation (WCF) 消息安全的客户端和服务。 设计目标是使用消息安全而非传输安全，以便将来可支持更加丰富的基于声明的模型。 有关将丰富声明用于授权的详细信息，请参阅 [使用标识模型管理声明和授权](managing-claims-and-authorization-with-the-identity-model.md)。
 
-有关示例应用程序，请参阅[消息安全匿名](../samples/message-security-anonymous.md)。
+有关示例应用程序，请参阅 [消息安全匿名](../samples/message-security-anonymous.md)。
 
 ![匿名客户端的消息安全性](media/b361a565-831c-4c10-90d7-66d8eeece0a1.gif "b361a565-831c-4c10-90d7-66d8eeece0a1")
 
-|特征|描述|
+|特征|说明|
 |--------------------|-----------------|
 |安全模式|Message|
 |互操作性|仅 WCF|
 |身份验证（服务器）|初始协商要求服务器身份验证，而不是客户端身份验证|
 |身份验证（客户端）|无|
 |完整性|是，使用共享安全上下文|
-|机密性|是，使用共享安全上下文|
+|保密性|是，使用共享安全上下文|
 |Transport|HTTP|
 
 ## <a name="service"></a>服务
@@ -138,10 +138,10 @@ ms.locfileid: "84595214"
 </configuration>
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
 - [分布式应用程序安全](distributed-application-security.md)
 - [匿名消息安全](../samples/message-security-anonymous.md)
 - [服务标识和身份验证](service-identity-and-authentication.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

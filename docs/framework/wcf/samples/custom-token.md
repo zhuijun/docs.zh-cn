@@ -2,16 +2,16 @@
 title: 自定义令牌
 ms.date: 03/30/2017
 ms.assetid: e7fd8b38-c370-454f-ba3e-19759019f03d
-ms.openlocfilehash: b073375325d2989a23624303f2c40b8f61a29d02
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 1a8c312248b0c15bb2e366a3d9925014556b6dd8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928658"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553156"
 ---
 # <a name="custom-token"></a>自定义令牌
 
-此示例演示如何将自定义令牌实现添加到 Windows Communication Foundation （WCF）应用程序中。 示例使用 `CreditCardToken` 将客户端的信用卡相关信息安全地传递到服务。 令牌在 WS-Security 消息头中传递，并连同消息正文和其他消息头一起使用对称安全绑定元素进行签名和加密。 当内置令牌不足时可以进行这样的操作。 本示例演示如何向服务提供自定义安全令牌而不必使用某个内置令牌。 该服务实现定义“请求-答复”通信模式的协定。
+此示例演示如何将自定义令牌实现添加到 Windows Communication Foundation (WCF) 应用程序。 示例使用 `CreditCardToken` 将客户端的信用卡相关信息安全地传递到服务。 令牌在 WS-Security 消息头中传递，并连同消息正文和其他消息头一起使用对称安全绑定元素进行签名和加密。 当内置令牌不足时可以进行这样的操作。 本示例演示如何向服务提供自定义安全令牌而不必使用某个内置令牌。 该服务实现定义“请求-答复”通信模式的协定。
 
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。
@@ -592,24 +592,24 @@ string GetCallerCreditCardNumber()
     ```
 
 > [!NOTE]
-> 设置 bat 批处理文件设计为在 Visual Studio 2012 命令提示符下运行。 在 Visual Studio 2012 命令提示符中设置的 PATH 环境变量指向包含安装程序 bat 脚本所需的可执行文件的目录。
+> Setup.bat 批处理文件设计为在 Visual Studio 2012 命令提示符下运行。 在 Visual Studio 2012 命令提示符下设置的 PATH 环境变量指向包含 Setup.bat 脚本所需的可执行文件的目录。
 
 #### <a name="to-set-up-and-build-the-sample"></a>设置和生成示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对 [Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-2. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
+2. 若要生成解决方案，请按照 [生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>在同一计算机上运行示例
 
-1. 使用管理员权限打开 Visual Studio 2012 命令提示符窗口，然后从示例安装文件夹中运行安装程序。 这将安装运行示例所需的所有证书。请确保路径包括 Makecert.exe 所在的文件夹。
+1. 使用管理员权限打开 Visual Studio 2012 命令提示符窗口，然后从示例安装文件夹中运行 Setup.bat。 这将安装运行示例所需的所有证书。请确保路径包括 Makecert.exe 所在的文件夹。
 
 > [!NOTE]
 > 确保在运行完该示例后运行 Cleanup.bat 移除证书。 其他安全示例使用相同的证书。  
   
 1. 从 client\bin 目录启动 Client.exe。 客户端活动将显示在客户端控制台应用程序上。  
   
-2. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+2. 如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 #### <a name="to-run-the-sample-across-computer"></a>跨计算机运行示例  
   
@@ -617,7 +617,7 @@ string GetCallerCreditCardNumber()
   
 2. 将服务程序文件复制到服务计算机上的服务目录。 不要忘记复制 CreditCardFile.txt，否则信用卡身份验证器将不能验证从客户端发送的信用卡信息。 另外，将 Setup.bat 和 Cleanup.bat 文件复制到服务计算机上。  
   
-3. 必须具有一个其主题名称中包含计算机的完全限定域名的服务器证书。 如果您将 `%SERVER_NAME%` 变量更改为承载服务的计算机的完全限定的名称，您可以使用 Setup.bat 来创建一个这样的证书。 请注意，必须在使用管理员特权打开的 Visual Studio 开发人员命令提示中运行 Setup.exe 文件。  
+3. 必须具有一个其主题名称中包含计算机的完全限定域名的服务器证书。 如果您将 `%SERVER_NAME%` 变量更改为承载服务的计算机的完全限定的名称，您可以使用 Setup.bat 来创建一个这样的证书。 请注意，Setup.bat 文件必须在以管理员权限打开的 Visual Studio 开发人员命令提示中运行。  
   
 4. 将服务器证书复制到客户端上的 CurrentUser-TrustedPeople 存储区中。 只有当服务器证书不是由受信任的颁发者颁发的情况下才需要执行此操作。  
   
@@ -631,8 +631,8 @@ string GetCallerCreditCardNumber()
   
 9. 在客户端计算机上，从命令提示窗口中启动 Client.exe。  
   
-10. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+10. 如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 #### <a name="to-clean-up-after-the-sample"></a>运行示例后进行清理  
   
-1. 运行完示例后运行示例文件夹中的 Cleanup.bat。  
+1. 运行完示例后运行示例文件夹中的 Cleanup.bat。

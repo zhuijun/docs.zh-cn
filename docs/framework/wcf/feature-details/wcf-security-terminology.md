@@ -6,32 +6,32 @@ helpviewer_keywords:
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-ms.openlocfilehash: a07d7c6da71f4195cb1641ae8ac7585b4158ed63
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 8941350e46680c4ecaeb9b89fe9e6910c5830bcb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600966"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553286"
 ---
 # <a name="wcf-security-terminology"></a>WCF 安全术语
 在讨论安全时使用的某些术语可能是您所不熟悉的。 本主题提供了一些安全术语的扼要解释，但并不试图提供每个术语的全面文档。  
   
- 有关 Windows Communication Foundation （WCF）文档中使用的术语的详细信息，请参阅[基本 Windows Communication Foundation 概念](../fundamental-concepts.md)。  
+ 有关 Windows Communication Foundation 中使用的术语 (WCF) 文档的详细信息，请参阅 [基本 Windows Communication Foundation 概念](../fundamental-concepts.md)。  
   
  Access Control List (ACL) — 访问控制列表 (ACL)  
- 适用于某个对象的安全保护的列表。 （对象可以是文件、进程、事件，也可以是具有安全描述符的任何其他内容。）ACL 中的项是访问控制项（ACE）。 有两种类型的 ACL：自由和系统。  
+ 适用于某个对象的安全保护的列表。  (对象可以是文件、进程、事件或具有安全描述符的任何其他内容。 ) ACL 中的条目是 (ACE) 的访问控制项。 有两种类型的 ACL：自由和系统。  
   
- authentication  
+ 身份验证  
  验证用户、计算机、服务或进程声称具有的身份是否属实的过程。  
   
  authorization  
  控制对资源的访问和权限的操作。 例如，允许一个组的成员读取某个文件，但是仅允许另一个组的成员更改该文件。  
   
  证书颁发机构 (CA) 证书  
- 标识 CA，CA 将服务器和客户端身份验证证书颁发给请求这些证书的服务器和客户端。 由于它包含在数字签名中使用的公钥，因此也称为*签名证书*。 如果 CA 是根证书颁发机构，则可以将 CA 证书称为*根证书*。 有时也称为*站点证书*。  
+ 标识 CA，CA 将服务器和客户端身份验证证书颁发给请求这些证书的服务器和客户端。 由于它包含在数字签名中使用的公钥，因此也称为 *签名证书*。 如果 CA 是根证书颁发机构，则可以将 CA 证书称为 *根证书*。 有时也称为 *站点证书*。  
   
  CA 层次结构  
- 一个 CA 层次结构包含多个 CA。 它经过组织，因此，每个 CA 都由层次结构中的另一个 CA 认证，直到达到层次结构（也称为*根颁发机构*）的顶部。  
+ 一个 CA 层次结构包含多个 CA。 它经过组织，因此，每个 CA 都由层次结构中的另一个 CA 认证，直到达到层次结构（也称为 *根颁发机构*）的顶部。  
   
  证书 (certificate)  
  一个经过数字签名的声明，该声明包含与某个实体以及该实体的公钥有关的信息，从而将这两部分信息绑定在一起。 证书由称为证书颁发机构的受信任组织（或实体）颁发，颁发时间是在该颁发机构已验证实体声称具有的身份属实之后。  
@@ -63,7 +63,7 @@ ms.locfileid: "84600966"
  一个公钥/私钥对，用于加密会话密钥，以便可以安全地存储以及与其他用户交换会话密钥。  
   
  hash  
- 一个固定大小的数值，通过将某个数学函数（请参见哈希算法）应用于任意数量的数据来获取。 数据通常包含随机数据，称为*nonce*。 服务和客户端都致力于交换 Nonce 以增加结果的复杂性。 结果也称为 "*消息摘要*"。 发送哈希值要比发送敏感数据（如密码）更加安全（即使密码经过加密）。 哈希发送方和接收方必须就哈希算法和 Nonce 达成一致，以便在接收到哈希后，可以对其进行验证。  
+ 一个固定大小的数值，通过将某个数学函数（请参见哈希算法）应用于任意数量的数据来获取。 数据通常包含随机数据，称为 *nonce*。 服务和客户端都致力于交换 Nonce 以增加结果的复杂性。 结果也称为 " *消息摘要*"。 发送哈希值要比发送敏感数据（如密码）更加安全（即使密码经过加密）。 哈希发送方和接收方必须就哈希算法和 Nonce 达成一致，以便在接收到哈希后，可以对其进行验证。  
   
  哈希算法  
  一种算法，用于生成某段数据（如消息或会话密钥）的哈希值。 典型的哈希算法包括 MD2、MD4、MD5 和 SHA-1。  
@@ -90,7 +90,7 @@ ms.locfileid: "84600966"
  加密消息语法标准。 可以对其应用加密算法（如数字签名和加密）的数据的通用语法。 它还提供了用于向消息传播证书或证书吊销列表以及其他消息属性（如时间戳）的语法。  
   
  明文  
- 一个未加密的消息。 纯文本消息有时称为*明文*消息。  
+ 一个未加密的消息。 纯文本消息有时称为 *明文* 消息。  
   
  特权  
  用户用于执行各种系统相关操作（如关闭系统、加载设备驱动程序或更改系统时间）的权限。 用户的访问令牌包含用户或用户所属组拥有的特权的列表。  
@@ -173,7 +173,7 @@ ms.locfileid: "84600966"
  决定是否信任给定文件的软件。 此决定基于与该文件相关联的证书。  
   
  用户主体名称 (UPN)  
- 用户帐户名（有时称为 "*用户登录名*"）和一个域名（标识用户帐户所在的域）。 这是登录到 Windows 域的标准用法。 格式为： someone@example.com （用于电子邮件地址）。  
+ 用户帐户名 (有时称为 " *用户登录名* ") 和一个域名（标识用户帐户所在的域）。 这是登录到 Windows 域的标准用法。 格式为： someone@example.com () 电子邮件地址。  
   
 > [!NOTE]
 > 除了标准 UPN 格式外，WCF 还在下层形式接受 Upn，例如 cohowinery. com\someone。  
@@ -181,8 +181,8 @@ ms.locfileid: "84600966"
  X.509  
  一种国际上认可的证书标准，用于定义证书的必需部分。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Windows Communication Foundation 基础概念](../fundamental-concepts.md)
-- [安全性概念](security-concepts.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [安全概念](security-concepts.md)
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))
