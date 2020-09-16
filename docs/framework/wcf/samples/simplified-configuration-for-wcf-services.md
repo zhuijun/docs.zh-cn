@@ -3,17 +3,17 @@ title: WCF 服务的简化配置
 description: 了解如何使用 WCF 实现和配置典型的服务和客户端。 服务通过使用配置文件中指定的终结点进行通信。
 ms.date: 03/30/2017
 ms.assetid: 1e39ec25-18a3-4fdc-b6a3-9dfafbd60112
-ms.openlocfilehash: 46a0c878b29de34219413a508799ddaddf507dd8
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: dd05754dcfe36cb2e9c28ce20a5927585f85478f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246211"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554262"
 ---
 # <a name="simplified-configuration-for-wcf-services"></a>WCF 服务的简化配置
-此示例演示如何使用 Windows Communication Foundation （WCF）实现和配置典型的服务和客户端。 此示例是所有其他基本技术示例的基础。  
+此示例演示如何使用 Windows Communication Foundation (WCF) 实现和配置典型的服务和客户端。 此示例是所有其他基本技术示例的基础。  
   
- 此服务公开用于与服务进行通信的终结点，并使用 .NET Framework 4 中的简化配置。 在 .NET Framework 4 之前，通常在配置文件（Web.config）中定义终结点，如下面的示例配置代码所示。  
+ 此服务公开用于与服务进行通信的终结点，并使用 .NET Framework 4 中的简化配置。 在 .NET Framework 4 之前，通常在配置文件中定义终结点 ( # A0) ，如下面的示例配置代码所示。  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -58,28 +58,28 @@ ms.locfileid: "85246211"
   
 ### <a name="to-use-this-sample"></a>使用此示例  
   
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对 [Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
-2. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。  
+2. 若要生成解决方案，请按照 [生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。  
   
 3. 按照以下步骤运行示例：  
   
-    1. 右键单击**服务**项目，选择 "**设为启动项目**"，然后按**Ctrl + F5**。  
+    1. 右键单击 **服务** 项目，选择 " **设为启动项目**"，然后按 **Ctrl + F5**。  
   
     2. 等待确认服务已准备好并且正在运行的控制台输出。  
   
-    3. 右键单击**客户端**项目，选择 "**设为启动项目**"，然后按**Ctrl + F5**。  
+    3. 右键单击 **客户端** 项目，选择 " **设为启动项目**"，然后按 **Ctrl + F5**。  
   
 > [!IMPORTANT]
 > 您的计算机上可能已安装这些示例。 在继续操作之前，请先检查以下（默认）目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[Windows Communication Foundation (wcf) ，并 Windows Workflow Foundation (的 WF](https://www.microsoft.com/download/details.aspx?id=21459)) .NET Framework Windows Communication Foundation ([!INCLUDE[wf1](../../../../includes/wf1-md.md)] 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\ConfigSimplificationIn40`  
   
 ## <a name="see-also"></a>请参阅
 
-- [AppFabric 管理示例](https://docs.microsoft.com/previous-versions/appfabric/ff383405(v=azure.10))
+- [AppFabric 管理示例](/previous-versions/appfabric/ff383405(v=azure.10))
 - [简化配置](../simplified-configuration.md)

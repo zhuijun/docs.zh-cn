@@ -10,12 +10,12 @@ helpviewer_keywords:
 ms.assetid: ae275793-857d-4102-9095-b4c2a02d57f4
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 2b3be8b42b5046e52074236de01ca312a0a9a361
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: c5e3f692c2bf754ccd35324019246ee905e8c591
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474262"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554640"
 ---
 # <a name="net-performance-tips"></a>.NET 性能提示
 术语“性能”通常指程序的执行速度。** 有时通过遵循源代码中的一些基本规则便可以提高执行速度。 在某些程序中，十分重要的一点是需要仔细检查代码并使用探查器确保程序尽可能快地运行。 而在其他程序中，由于代码在编写时便运行得足够快，因此不必执行此类优化。 本文列出了一些性能可能遭受影响的常见领域以及相关改进建议，并提供其他性能主题的链接。 有关规划和测量性能的详细信息，请参阅[性能](index.md)  
@@ -31,20 +31,20 @@ ms.locfileid: "86474262"
   
 ## <a name="other-resources"></a>其他资源  
   
-- [编写更快的托管代码：了解代价](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973852(v=msdn.10))  
+- [编写更快的托管代码：了解代价](/previous-versions/dotnet/articles/ms973852(v=msdn.10))  
   
-- [编写高性能的托管应用程序：入门](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973858(v=msdn.10))  
+- [编写高性能的托管应用程序：入门](/previous-versions/dotnet/articles/ms973858(v=msdn.10))  
   
-- [垃圾回收器基础知识和性能提示](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973837(v=msdn.10))  
+- [垃圾回收器基础知识和性能提示](/previous-versions/dotnet/articles/ms973837(v=msdn.10))  
   
-- [.NET 应用程序的性能提示和技巧](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973839(v=msdn.10))  
+- [.NET 应用程序的性能提示和技巧](/previous-versions/dotnet/articles/ms973839(v=msdn.10))  
 
-- [Rico Mariani 关于性能问题的见解](https://docs.microsoft.com/archive/blogs/ricom/)  
+- [Rico Mariani 关于性能问题的见解](/archive/blogs/ricom/)  
 
-- [Vance Morrison 的博客](https://docs.microsoft.com/archive/blogs/vancem/)
+- [Vance Morrison 的博客](/archive/blogs/vancem/)
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [性能](index.md)
+- [“性能”](index.md)
 - [Visual Basic 编程指南](../../visual-basic/programming-guide/index.md)
 - [C# 编程指南](../../csharp/programming-guide/index.md)

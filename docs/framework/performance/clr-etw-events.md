@@ -1,18 +1,18 @@
 ---
 title: CLR ETW 事件
-description: 请参阅有关 Windows 公共语言运行时（CLR）事件跟踪（ETW）事件的文章。 有两个事件提供程序：运行时提供程序和断开提供程序。
+description: 请参阅有关公共语言运行时的文章 (CLR) Windows (ETW) 事件的事件跟踪。 有两个事件提供程序：运行时提供程序和断开提供程序。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR ETW events
 - ETW, common language runtime
 - ETW, CLR events
 ms.assetid: ef2b31c3-7426-43e7-9924-92339b96556d
-ms.openlocfilehash: 22a2f027462d67d5a933972a7420c5f0e38353e5
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 4184b2b34c4503eaf4e9513a85e6c018f6de7366
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309828"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553813"
 ---
 # <a name="clr-etw-events"></a>CLR ETW 事件
 本部分的主题介绍 Windows (ETW) 事件的事件跟踪。 每个事件都有关联的关键字和级别，详见 [CLR ETW 关键字和级别](clr-etw-keywords-and-levels.md)主题。 CLR 有两个事件提供程序：  
@@ -60,9 +60,9 @@ ms.locfileid: "86309828"
  [堆栈事件](stack-etw-event.md)  
  捕获可用于其他事件以在引发事件后生成堆栈跟踪的信息。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [使用 ETW 改善调试和性能优化](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
+- [使用 ETW 改善调试和性能优化](/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
 - [控制 .NET Framework 日志记录](controlling-logging.md)
 - [CLR ETW 提供程序](clr-etw-providers.md)
 - [CLR ETW 关键字和级别](clr-etw-keywords-and-levels.md)

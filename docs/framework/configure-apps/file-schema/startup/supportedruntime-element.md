@@ -8,12 +8,12 @@ helpviewer_keywords:
 - supportedRuntime element
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
-ms.openlocfilehash: cc221c71b68c21b61b5fa27e0972b9e9156dbc3b
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 4517aab98235ec2172da355ad0e05d95ebee46c5
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558668"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554034"
 ---
 # <a name="supportedruntime-element"></a>\<supportedRuntime> 元素
 
@@ -47,7 +47,7 @@ ms.locfileid: "88558668"
   
 对于支持从 .NET Framework 1.1 到 3.5 的运行时版本的应用，支持多个运行时版本时，第一个元素应指定优先级最高的版本，最后一个元素应指定优先级最低的版本。 对于支持 .NET Framework 4.0 或更高版本的应用程序，该 `version` 属性指示 CLR 版本（对于 .NET Framework 4 及更高版本是通用的）， `sku` 属性指示应用面向的单一 .NET Framework 版本。
 
-如果 **\<supportedRuntime>** `sku` 配置文件中存在具有属性的元素，并且安装的 .NET Framework 版本低于指定的受支持版本，应用程序将无法运行，而是显示一条消息要求安装支持的版本。 否则，应用程序会尝试在任何已安装的版本上运行，但如果该版本与该版本不完全兼容，则它可能会发生意外行为。  (.NET Framework 版本之间的兼容性差异，请参阅 [.NET Framework 中的应用程序兼容性](https://docs.microsoft.com/dotnet/framework/migration-guide/application-compatibility)) 。因此，建议你在应用程序配置文件中包括此元素，以便更轻松地诊断错误。  (在创建新项目时由 Visual Studio 自动生成的配置文件。 ) 
+如果 **\<supportedRuntime>** `sku` 配置文件中存在具有属性的元素，并且安装的 .NET Framework 版本低于指定的受支持版本，应用程序将无法运行，而是显示一条消息要求安装支持的版本。 否则，应用程序会尝试在任何已安装的版本上运行，但如果该版本与该版本不完全兼容，则它可能会发生意外行为。  (.NET Framework 版本之间的兼容性差异，请参阅 [.NET Framework 中的应用程序兼容性](../../../migration-guide/application-compatibility.md)) 。因此，建议你在应用程序配置文件中包括此元素，以便更轻松地诊断错误。  (在创建新项目时由 Visual Studio 自动生成的配置文件。 ) 
   
 > [!NOTE]
 > 如果你的应用程序使用旧的激活路径（如 [CorBindToRuntimeEx 函数](../../../unmanaged-api/hosting/corbindtoruntimeex-function.md)），并且你希望这些路径激活 CLR 的版本4（而不是早期版本），或者如果你的应用程序是 .NET Framework 使用 .NET Framework 早期版本生成的混合模式程序集生成的，则在受支持的运行时列表中指定 .NET Framework 4 并不足够。 此外，在配置文件的[ \<startup> 元素](startup-element.md)中，你必须将 `useLegacyV2RuntimeActivationPolicy` 属性设置为 `true` 。 但是，将此特性设置为 `true` 意味着使用 .NET Framework 4 （而不是生成它们的运行时）运行使用 .NET Framework 的早期版本生成的所有组件。
@@ -108,7 +108,7 @@ ms.locfileid: "88558668"
 
 此元素可用于应用程序配置文件中。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [启动设置架构](index.md)
 - [配置文件架构](../index.md)

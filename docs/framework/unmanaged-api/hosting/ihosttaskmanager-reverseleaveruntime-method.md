@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4837d398-16a1-4e32-902c-022cd1aad3ca
 topic_type:
 - apiref
-ms.openlocfilehash: d328afcba9761f686dd38bdb2dd651994faaac2a
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: ea352b189d65e0be6a2bbc81c19a03d1edd8143d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83841849"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554796"
 ---
 # <a name="ihosttaskmanagerreverseleaveruntime-method"></a>IHostTaskManager::ReverseLeaveRuntime 方法
-通知宿主控件离开公共语言运行时（CLR），并输入从托管代码调用的非托管函数。  
+向宿主通知控制是否正在离开公共语言运行时 (CLR) 并输入从托管代码调用的非托管函数。  
   
 ## <a name="syntax"></a>语法  
   
@@ -35,7 +35,7 @@ HRESULT ReverseLeaveRuntime ();
   
 |HRESULT|说明|  
 |-------------|-----------------|  
-|S_OK|`ReverseLeaveRuntime`已成功返回。|  
+|S_OK|`ReverseLeaveRuntime` 已成功返回。|  
 |HOST_E_CLRNOTAVAILABLE|CLR 未加载到进程中，或 CLR 处于无法运行托管代码或成功处理调用的状态。|  
 |HOST_E_TIMEOUT|调用超时。|  
 |HOST_E_NOT_OWNER|调用方不拥有该锁。|  
@@ -44,18 +44,18 @@ HRESULT ReverseLeaveRuntime ();
 |E_OUTOFMEMORY|没有足够的内存可用来完成请求的资源分配。|  
   
 ## <a name="remarks"></a>备注  
- CLR 调用 `ReverseLeaveRuntime` 以通知宿主当前正在执行的任务正在将控制权返回给非托管函数，而该函数又通过平台调用从托管代码调用。 对的每个调用都 `ReverseLeaveRuntime` 匹配对[ReverseEnterRuntime](ihosttaskmanager-reverseenterruntime-method.md)的相应调用。  
+ CLR 调用 `ReverseLeaveRuntime` 以通知宿主当前正在执行的任务正在将控制权返回给非托管函数，而该函数又通过平台调用从托管代码调用。 对的每个调用都 `ReverseLeaveRuntime` 匹配对 [ReverseEnterRuntime](ihosttaskmanager-reverseenterruntime-method.md)的相应调用。  
   
 ## <a name="requirements"></a>要求  
  **平台：** 请参阅[系统要求](../../get-started/system-requirements.md)。  
   
  **标头：** Mscoree.dll  
   
- **库：** 作为资源包括在 Mscoree.dll 中  
+ **库：** 作为中的资源包含 MSCorEE.dll  
   
  **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [CallNeedsHostHook 方法](ihosttaskmanager-callneedshosthook-method.md)
 - [EnterRuntime 方法](ihosttaskmanager-enterruntime-method.md)
@@ -64,4 +64,4 @@ HRESULT ReverseLeaveRuntime ();
 - [IHostTask 接口](ihosttask-interface.md)
 - [IHostTaskManager 接口](ihosttaskmanager-interface.md)
 - [LeaveRuntime 方法](ihosttaskmanager-leaveruntime-method.md)
-- [更深入地了解平台调用](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0h9e9t7d(v=vs.100))
+- [平台调用详解](/previous-versions/dotnet/netframework-4.0/0h9e9t7d(v=vs.100))

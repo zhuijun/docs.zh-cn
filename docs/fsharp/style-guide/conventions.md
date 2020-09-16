@@ -2,12 +2,12 @@
 title: F# 编码约定
 description: '编写 F # 代码时，了解一般准则和惯例。'
 ms.date: 01/15/2020
-ms.openlocfilehash: 748a9c26794f46dcc67fdcfcf21f41847a462a19
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 8c7fedf429ecba6e01b26f37972ffa4eeba6d8af
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053006"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554021"
 ---
 # <a name="f-coding-conventions"></a>F# 编码约定
 
@@ -703,7 +703,7 @@ F # 对对象和面向对象的 (OO) 概念提供完全支持。 尽管许多 OO
 
 ## <a name="consider-type-abbreviations-to-shorten-signatures"></a>考虑键入缩写以缩短签名
 
-[类型缩写](../language-reference/type-abbreviations.md) 是将标签分配给其他类型的一种简便方法，例如函数签名或更复杂的类型。 例如，以下别名为使用 [CNTK](https://docs.microsoft.com/cognitive-toolkit/)（深度学习库）定义计算所需的内容分配一个标签：
+[类型缩写](../language-reference/type-abbreviations.md) 是将标签分配给其他类型的一种简便方法，例如函数签名或更复杂的类型。 例如，以下别名为使用 [CNTK](/cognitive-toolkit/)（深度学习库）定义计算所需的内容分配一个标签：
 
 ```fsharp
 open CNTK

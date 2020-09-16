@@ -7,16 +7,16 @@ helpviewer_keywords:
 - LINQ [Visual Basic], writing queries
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
-ms.openlocfilehash: 25905d7ac3ca4bb66a22ad1df421b400eaa6b08f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c2abca183f1241cff314a4367c7bd9f1b9f239ea
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413266"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554588"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>演练：用 Visual Basic 编写查询
 
-本演练演示如何使用 Visual Basic 语言功能编写语言集成查询（LINQ）查询表达式。 本演练演示如何对学生对象列表创建查询，如何运行查询，以及如何修改查询。 查询包含多个功能，包括对象初始值设定项、本地类型推理和匿名类型。
+本演练演示如何使用 Visual Basic 语言功能 (LINQ) 查询表达式编写语言集成查询。 本演练演示如何对学生对象列表创建查询，如何运行查询，以及如何修改查询。 查询包含多个功能，包括对象初始值设定项、本地类型推理和匿名类型。
 
 完成本演练后，你将准备好进入你感兴趣的特定 LINQ 提供程序的示例和文档。 LINQ 提供程序包括 [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] 、LINQ to DataSet 和 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 。
 
@@ -26,15 +26,15 @@ ms.locfileid: "84413266"
 
 1. 启动 Visual Studio。
 
-2. 在 **“文件”** 菜单上，指向 **“新建”**，再单击 **“项目”**。
+2. 在 **“文件”** 菜单上，指向 **“新建”** ，然后单击 **“项目”** 。
 
-3. 在 "**已安装的模板**" 列表中，单击**Visual Basic**。
+3. 在 " **已安装的模板** " 列表中，单击 **Visual Basic**。
 
-4. 在项目类型列表中，单击 "**控制台应用程序**"。 在 "**名称**" 框中，键入项目的名称，然后单击 **"确定"**。
+4. 在项目类型列表中，单击 " **控制台应用程序**"。 在 " **名称** " 框中，键入项目的名称，然后单击 **"确定"**。
 
-    创建一个项目。 默认情况下，它包含对 System.object 的引用。 此外，"引用" 页上的 "已**导入命名空间**" 列表[Visual Basic 中](/visualstudio/ide/reference/references-page-project-designer-visual-basic)包含 <xref:System.Linq?displayProperty=nameWithType> 命名空间。
+    创建一个项目。 默认情况下，它包含对 System.Core.dll 的引用。 此外，"引用" 页上的 "[项目设计器" (Visual Basic) ](/visualstudio/ide/reference/references-page-project-designer-visual-basic)的 "已**导入命名空间**" 列表包括 <xref:System.Linq?displayProperty=nameWithType> 命名空间。
 
-5. 在 "编译" 页上的 "[项目设计器" （Visual Basic）](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)上，确保 "**选项推断**" 设置为 **"开"**。
+5. 在 "编译" 页上的 " [项目设计器" (Visual Basic) ](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)上，确保 " **选项推断** " 设置为 **"开"**。
 
 ## <a name="add-an-in-memory-data-source"></a>添加内存中数据源
 
@@ -49,11 +49,11 @@ ms.locfileid: "84413266"
 
 ### <a name="to-add-a-new-student-to-the-students-list"></a>向学生列表中添加新的学生
 
-- 按照方法中的模式 `getStudents` 将类的另一个实例添加 `Student` 到列表。 添加学生将向你介绍对象初始值设定项。 有关详细信息，请参阅[对象初始值设定项：命名类型和匿名类型](../../language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)。
+- 按照方法中的模式 `getStudents` 将类的另一个实例添加 `Student` 到列表。 添加学生将向你介绍对象初始值设定项。 有关详细信息，请参阅 [对象初始值设定项：命名类型和匿名类型](../../language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)。
 
 ## <a name="create-a-query"></a>创建查询
 
-执行时，此部分中添加的查询将生成一个学生列表，其中的学生排名将其放在前十位。 由于查询 `Student` 每次都选择完整的对象，因此查询结果的类型为 `IEnumerable(Of Student)` 。 但是，查询的类型通常不在查询定义中指定。 相反，编译器将使用局部类型推理来确定类型。 有关详细信息，请参阅[局部类型推理](../../language-features/variables/local-type-inference.md)。 查询的范围变量用作对 `currentStudent` 源中每个实例的引用 `Student` `students` ，提供对中每个对象的属性的访问 `students` 。
+执行时，此部分中添加的查询将生成一个学生列表，其中的学生排名将其放在前十位。 由于查询 `Student` 每次都选择完整的对象，因此查询结果的类型为 `IEnumerable(Of Student)` 。 但是，查询的类型通常不在查询定义中指定。 相反，编译器将使用局部类型推理来确定类型。 有关详细信息，请参阅 [局部类型推理](../../language-features/variables/local-type-inference.md)。 查询的范围变量用作对 `currentStudent` 源中每个实例的引用 `Student` `students` ，提供对中每个对象的属性的访问 `students` 。
 
 ### <a name="to-create-a-simple-query"></a>创建简单查询
 
@@ -69,7 +69,7 @@ ms.locfileid: "84413266"
 
 ## <a name="run-the-query"></a>运行查询
 
-变量 `studentQuery` 包含查询的定义，而不是运行查询的结果。 用于运行查询的一种典型机制是 `For Each` 循环。 返回序列中的每个元素都通过循环迭代变量来访问。 有关查询执行的详细信息，请参阅[编写第一个 LINQ 查询](writing-your-first-linq-query.md)。
+变量 `studentQuery` 包含查询的定义，而不是运行查询的结果。 用于运行查询的一种典型机制是 `For Each` 循环。 返回序列中的每个元素都通过循环迭代变量来访问。 有关查询执行的详细信息，请参阅 [编写第一个 LINQ 查询](writing-your-first-linq-query.md)。
 
 ### <a name="to-run-the-query"></a>运行查询
 
@@ -123,7 +123,7 @@ ms.locfileid: "84413266"
 
 ### <a name="to-create-an-anonymous-type-in-the-select-clause"></a>在 Select 子句中创建匿名类型
 
-1. 添加此部分中的代码，以了解如何在查询中使用匿名类型。 如果要从数据源返回多个字段，而不是完整记录（ `currentStudent` 前面示例中的记录）或单个字段（ `First` 在上一节中），可以在查询中使用它们。 您可以在子句中指定字段，而不是定义一个新的命名类型（其中包含您想要包括在结果中的字段），而 `Select` 编译器会创建一个匿名类型，并将这些字段作为其属性。 有关详细信息，请参阅[匿名类型](../../language-features/objects-and-classes/anonymous-types.md)。
+1. 添加此部分中的代码，以了解如何在查询中使用匿名类型。 如果要从数据源返回多个字段，而不是 (前面 `currentStudent` 的示例中的记录) 或 (`First` 前面部分) 中的单个字段）返回多个字段，则可以在查询中使用这些字段。 您可以在子句中指定字段，而不是定义一个新的命名类型（其中包含您想要包括在结果中的字段），而 `Select` 编译器会创建一个匿名类型，并将这些字段作为其属性。 有关详细信息，请参阅[匿名类型](../../language-features/objects-and-classes/anonymous-types.md)。
 
     下面的示例创建一个查询，该查询返回学术排名介于1到10之间的发言的名称和排名，按学术排名排序。 在此示例中， `studentQuery4` 必须推断的类型 `Select` ，因为子句返回匿名类型的实例，而匿名类型没有可使用的名称。
 
@@ -145,11 +145,11 @@ ms.locfileid: "84413266"
 
 - [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)
 
-- [LINQ to XML](linq-to-xml.md)
+- [LINQ to XML](../../../../standard/linq/linq-xml-overview.md)
 
 - [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [语言集成查询 (LINQ) (Visual Basic)](index.md)
 - [Visual Basic 中的 LINQ 入门](getting-started-with-linq.md)

@@ -3,12 +3,12 @@ title: 数据集和 DataTable 安全指南
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: 4fe8a062c762cc70d33243e3443aa9bf55635f98
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 34fb95e35e169ca0b72735a16539ecfdec037f87
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89137612"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554536"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>数据集和 DataTable 安全指南
 
@@ -18,9 +18,9 @@ ms.locfileid: "89137612"
 * .NET Core 和更高版本
 * .NET 5.0 及更高版本
 
-[数据集](/dotnet/api/system.data.dataset)和[DataTable](/dotnet/api/system.data.datatable)类型是旧的 .net 组件，可将数据集表示为托管对象。 这些组件在 .NET 1.0 中作为原始 [ADO.NET 基础结构](/dotnet/framework/data/adonet/dataset-datatable-dataview/)的一部分引入。 其目标是通过关系数据集提供托管视图，并将数据的基础数据源抽象到 XML、SQL 或其他技术。
+[数据集](/dotnet/api/system.data.dataset)和[DataTable](/dotnet/api/system.data.datatable)类型是旧的 .net 组件，可将数据集表示为托管对象。 这些组件在 .NET 1.0 中作为原始 [ADO.NET 基础结构](./index.md)的一部分引入。 其目标是通过关系数据集提供托管视图，并将数据的基础数据源抽象到 XML、SQL 或其他技术。
 
-有关 ADO.NET 的详细信息，包括更多新式数据视图模式，请参阅 [ADO.NET 文档](/dotnet/framework/data/adonet/)。
+有关 ADO.NET 的详细信息，包括更多新式数据视图模式，请参阅 [ADO.NET 文档](../index.md)。
 
 ## <a name="default-restrictions-when-deserializing-a-dataset-or-datatable-from-xml"></a>从 XML 反序列化数据集或 DataTable 时的默认限制
 
@@ -49,7 +49,7 @@ ms.locfileid: "89137612"
 > [!NOTE]
 > 向添加列后 `DataTable` ， `ReadXml` 将不会从 XML 读取架构，如果架构不匹配，也不会读取记录，因此，你需要自行添加所有列以使用此方法。
 
-```cs
+```csharp
 XmlReader xmlReader = GetXmlReader();
 
 // Assume the XML blob contains data for type MyCustomClass.
@@ -105,7 +105,7 @@ _App.config_ 可用于扩展允许的类型列表。 扩展允许的类型列表
 
 若要检索某个类型的程序集限定名称，请使用 [AssemblyQualifiedName](/dotnet/api/system.type.assemblyqualifiedname) 属性，如以下代码所示。
 
-```cs
+```csharp
 string assemblyQualifiedName = typeof(Fabrikam.CustomType).AssemblyQualifiedName;
 ```
 
@@ -136,7 +136,7 @@ string assemblyQualifiedName = typeof(Fabrikam.CustomType).AssemblyQualifiedName
 
 还可以通过将[DataSetDefaultAllowedTypes 与众所周知的密钥](/dotnet/api/system.appdomain.setdata)_系统_一起使用，以编程方式扩展允许的类型列表，如下面的代码所示。
 
-```cs
+```csharp
 Type[] extraAllowedTypes = new Type[]
 {
     typeof(Fabrikam.CustomType),
@@ -260,11 +260,11 @@ AppDomain.CurrentDomain.SetData("System.Data.DataSetDefaultAllowedTypes", extraA
 }
 ```
 
-有关详细信息，请参阅 [".Net Core 运行时配置设置"](/dotnet/core/run-time-config/)。
+有关详细信息，请参阅 [".Net Core 运行时配置设置"](../../../../core/run-time-config/index.md)。
 
 `AllowArbitraryDataSetTypeInstantiation` 还可以通过 [AppContext](/dotnet/api/system.appcontext.setswitch) （而不是配置文件）以编程方式进行设置，如以下代码所示：
 
-```cs
+```csharp
 // Warning: setting the following switch can introduce a security problem.
 AppContext.SetSwitch("Switch.System.Data.AllowArbitraryDataSetTypeInstantiation", true);
 ```
@@ -308,13 +308,13 @@ AppContext.SetSwitch("Switch.System.Data.AllowArbitraryDataSetTypeInstantiation"
 
 `DataSet` `DataAdapter` 通过使用[ `DataAdapter.Fill` 方法](/dotnet/api/system.data.common.dataadapter.fill)，可以从中填充实例，如下面的示例中所示。
 
-```cs
-// Assumes that connection is a valid SqlConnection object.  
+```csharp
+// Assumes that connection is a valid SqlConnection object.
 string queryString =
-  "SELECT CustomerID, CompanyName FROM dbo.Customers";  
-SqlDataAdapter adapter = new SqlDataAdapter(queryString, connection);  
-  
-DataSet customers = new DataSet();  
+  "SELECT CustomerID, CompanyName FROM dbo.Customers";
+SqlDataAdapter adapter = new SqlDataAdapter(queryString, connection);
+
+DataSet customers = new DataSet();
 adapter.Fill(customers, "Customers");
 ```
 
@@ -355,7 +355,7 @@ adapter.Fill(customers, "Customers");
 
 可以接受 `DataSet` `DataTable` ASP.NET (SOAP) web 服务中的或实例，如以下代码所示：
 
-```cs
+```csharp
 using System.Data;
 using System.Web.Services;
 
@@ -372,7 +372,7 @@ public class MyService : WebService
 
 这种情况下的变体不接受 `DataSet` 或 `DataTable` 直接作为参数，而是将其作为整体 SOAP 序列化对象图的一部分接受，如以下代码所示：
 
-```cs
+```csharp
 using System.Data;
 using System.Web.Services;
 
@@ -396,7 +396,7 @@ public class MyClass
 
 或者，使用 WCF 而不是 ASP.NET web 服务：
 
-```cs
+```csharp
 using System.Data;
 using System.ServiceModel;
 
@@ -423,7 +423,7 @@ public class MyClass
 
 开发人员可以使用 `XmlSerializer` 反序列化 `DataSet` 和 `DataTable` 实例，如以下代码所示：
 
-```cs
+```csharp
 using System.Data;
 using System.IO;
 using System.Xml.Serialization;
@@ -452,7 +452,7 @@ public class MyClass
 
 常见的第三方 Newtonsoft.json 库 [JSON.NET](https://www.newtonsoft.com/json) 可用于反序列化 `DataSet` 和 `DataTable` 实例，如以下代码所示：
 
-```cs
+```csharp
 using System.Data;
 using Newtonsoft.Json;
 
@@ -497,27 +497,27 @@ public class MyClass
 * 引入 [了一种不同](/ef/core/providers/) 的数据库提供程序生态系统，使您可以轻松地通过实体框架对象模型来投影数据库查询。
 * 在反序列化来自不受信任源的数据时提供内置保护。
 
-对于使用 `.aspx` SOAP 终结点的应用，请考虑将这些终结点更改为使用 [WCF](/dotnet/framework/wcf/)。 WCF 是为 web 服务提供的更好的替代功能 `.asmx` 。 [可以通过 SOAP 公开](../../../wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md)WCF 终结点，以便与现有调用方兼容。
+对于使用 `.aspx` SOAP 终结点的应用，请考虑将这些终结点更改为使用 [WCF](../../../wcf/index.md)。 WCF 是为 web 服务提供的更好的替代功能 `.asmx` 。 [可以通过 SOAP 公开](../../../wcf/feature-details/how-to-expose-a-contract-to-soap-and-web-clients.md)WCF 终结点，以便与现有调用方兼容。
 
 ## <a name="code-analyzers"></a>代码分析器
 
 代码分析器安全规则在您的源代码编译后运行，可帮助找到与 c # 中的此安全问题和 Visual Basic 代码相关的漏洞。 CodeAnalysis. FxCopAnalyzers 是在 [nuget.org](https://www.nuget.org/)上分发的代码分析器 NuGet 包。
 
-有关代码分析器的概述，请参阅 [源代码分析器概述](https://docs.microsoft.com/visualstudio/code-quality/roslyn-analyzers-overview)。
+有关代码分析器的概述，请参阅 [源代码分析器概述](/visualstudio/code-quality/roslyn-analyzers-overview)。
 
 启用以下 CodeAnalysis FxCopAnalyzers 规则：
 
-- [CA2350](https://docs.microsoft.com/visualstudio/code-quality/ca2350)：不要使用 DataTable. ReadXml ( 包含不受信任数据的 # A1
-- [CA2351](https://docs.microsoft.com/visualstudio/code-quality/ca2351)：不要使用 ReadXml ( 包含不受信任数据的 # A1
-- [CA2352](https://docs.microsoft.com/visualstudio/code-quality/ca2352)：可序列化的类型中的不安全数据集或 DataTable 可能易受到远程代码执行攻击
-- [CA2353](https://docs.microsoft.com/visualstudio/code-quality/ca2353)：可序列化类型中的不安全数据集或 DataTable
-- [CA2354](https://docs.microsoft.com/visualstudio/code-quality/ca2354)：反序列化对象图中不安全的数据集或 DataTable 可能易受到远程代码执行攻击
-- [CA2355](https://docs.microsoft.com/visualstudio/code-quality/ca2355)：反序列化对象图中发现不安全的数据集或 DataTable 类型
-- [CA2356](https://docs.microsoft.com/visualstudio/code-quality/ca2356)： web 反序列化对象图中的不安全数据集或 DataTable 类型
-- [CA2361](https://docs.microsoft.com/visualstudio/code-quality/ca2361)：确保包含 DataSet 的自动生成的类。 ReadXml ( # A1 不与不受信任的数据一起使用
-- [CA2362](https://docs.microsoft.com/visualstudio/code-quality/ca2362)：自动生成序列化类型中的不安全数据集或 DataTable 可能易受到远程代码执行攻击
+- [CA2350](/visualstudio/code-quality/ca2350)：不要使用 DataTable. ReadXml ( 包含不受信任数据的 # A1
+- [CA2351](/visualstudio/code-quality/ca2351)：不要使用 ReadXml ( 包含不受信任数据的 # A1
+- [CA2352](/visualstudio/code-quality/ca2352)：可序列化的类型中的不安全数据集或 DataTable 可能易受到远程代码执行攻击
+- [CA2353](/visualstudio/code-quality/ca2353)：可序列化类型中的不安全数据集或 DataTable
+- [CA2354](/visualstudio/code-quality/ca2354)：反序列化对象图中不安全的数据集或 DataTable 可能易受到远程代码执行攻击
+- [CA2355](/visualstudio/code-quality/ca2355)：反序列化对象图中发现不安全的数据集或 DataTable 类型
+- [CA2356](/visualstudio/code-quality/ca2356)： web 反序列化对象图中的不安全数据集或 DataTable 类型
+- [CA2361](/visualstudio/code-quality/ca2361)：确保包含 DataSet 的自动生成的类。 ReadXml ( # A1 不与不受信任的数据一起使用
+- [CA2362](/visualstudio/code-quality/ca2362)：自动生成序列化类型中的不安全数据集或 DataTable 可能易受到远程代码执行攻击
 
-有关配置规则的详细信息，请参阅 [使用代码分析器](https://docs.microsoft.com/visualstudio/code-quality/use-roslyn-analyzers)。
+有关配置规则的详细信息，请参阅 [使用代码分析器](/visualstudio/code-quality/use-roslyn-analyzers)。
 
 以下 NuGet 包中提供了新的安全规则：
 

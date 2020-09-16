@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1aa7a4b1-636a-4f5e-b834-b406d72f7120
 topic_type:
 - apiref
-ms.openlocfilehash: b255a1d35aa32975c879aac00f7d4edb8ea88d3b
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 1591a055200618f3e4951b5f6cf860dd3e71b44b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83842031"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554340"
 ---
 # <a name="ihosttaskmanagerenterruntime-method"></a>IHostTaskManager::EnterRuntime 方法
-通知宿主对非托管方法的调用（如平台调用方法）正在将执行控制返回到公共语言运行时（CLR）。  
+通知宿主对非托管方法的调用（如平台调用方法）正在将执行控制返回到公共语言运行时 (CLR) 。  
   
 ## <a name="syntax"></a>语法  
   
@@ -35,7 +35,7 @@ HRESULT EnterRuntime ();
   
 |HRESULT|说明|  
 |-------------|-----------------|  
-|S_OK|`EnterRuntime`已成功返回。|  
+|S_OK|`EnterRuntime` 已成功返回。|  
 |HOST_E_CLRNOTAVAILABLE|CLR 未加载到进程中，或 CLR 处于无法运行托管代码或成功处理调用的状态。|  
 |HOST_E_TIMEOUT|调用超时。|  
 |HOST_E_NOT_OWNER|调用方不拥有该锁。|  
@@ -44,7 +44,7 @@ HRESULT EnterRuntime ();
 |E_OUTOFMEMORY|没有足够的内存可用来完成请求的分配。|  
   
 ## <a name="remarks"></a>备注  
- `EnterRuntime`调用以通知宿主某个非托管函数（对该函数进行了之前对[LeaveRuntime](ihosttaskmanager-leaveruntime-method.md)方法的调用）已完成执行，并将执行控制返回到运行时。  
+ `EnterRuntime` 调用以通知宿主某个非托管函数（对该函数进行了之前对 [LeaveRuntime](ihosttaskmanager-leaveruntime-method.md) 方法的调用）已完成执行，并将执行控制返回到运行时。  
   
 > [!NOTE]
 > 调用[ReverseEnterRuntime](ihosttaskmanager-reverseenterruntime-method.md)来通知主机，对其进行之前调用的非托管函数 `LeaveRuntime` 正在调用托管代码。  
@@ -54,13 +54,13 @@ HRESULT EnterRuntime ();
   
  **标头：** Mscoree.dll  
   
- **库：** 作为资源包括在 Mscoree.dll 中  
+ **库：** 作为中的资源包含 MSCorEE.dll  
   
  **.NET Framework 版本：**[!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>请参阅
 
-- [高级 COM 互操作性](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
+- [高级 COM 互操作性](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
 - [如何：使用 PInvoke 从托管代码调用本机 Dll](/cpp/dotnet/how-to-call-native-dlls-from-managed-code-using-pinvoke)
 - [ICLRTask 接口](iclrtask-interface.md)
 - [ICLRTaskManager 接口](iclrtaskmanager-interface.md)

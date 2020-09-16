@@ -15,18 +15,18 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: 8cf0ff323e9bf7305e3d9cbb6dabd8f685059e97
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 83799b0f4c6d6503825ce271fed4bffa7a9775b9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447103"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545698"
 ---
 # <a name="handling-and-raising-events"></a>处理和引发事件
 
 .NET 中的事件基于委托模型。 委托模型遵循[观察者设计模式](observer-design-pattern.md)，使订阅者能够向提供方注册并接收相关通知。 事件发送方推送事件发生的通知，事件接收器接收该通知并定义对它的响应。 本文介绍委托模型的主要组件、如何在应用程序中使用事件以及如何在你的代码中实现事件。  
   
- 有关在 Windows 8.x Store 应用中处理事件的信息，请参阅[事件和路由事件概述](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10))。  
+ 有关在 Windows 8.x Store 应用中处理事件的信息，请参阅[事件和路由事件概述](/previous-versions/windows/apps/hh758286(v=win.10))。  
   
 ## <a name="events"></a>事件
 

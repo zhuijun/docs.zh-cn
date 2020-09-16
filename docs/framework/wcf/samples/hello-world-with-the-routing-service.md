@@ -2,19 +2,19 @@
 title: 通过路由服务进行通信
 ms.date: 03/30/2017
 ms.assetid: 0f4b0d5b-6522-4ad5-9f3a-baa78316d7d1
-ms.openlocfilehash: 86a2981e8b861da9d5ccf0a34fe037f3ef419aab
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 63cfb32a5f5d0cae7635d39d5df594a5bb07e411
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79183638"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554783"
 ---
 # <a name="hello-world-with-the-routing-service"></a>通过路由服务进行通信
-此示例演示 Windows 通信基础 （WCF） 路由服务。 路由服务是一个 WCF 组件，便于在应用程序中包含基于内容的路由器。 此示例调整标准 WCF 计算器示例以使用路由服务进行通信。 在此示例中，计算器客户端配置为将消息发送到由路由器公开的一个终结点。 路由服务配置为接受发送给它的所有消息，然后将这些消息转发至与计算器服务对应的终结点。 因此，从客户端发送的消息将由路由器接收，并重新路由到实际的计算器服务。 来自计算器服务的消息将发回到路由器，后者又将这些消息传回到计算器客户端。
+此示例演示了 Windows Communication Foundation (WCF) 路由服务。 路由服务是一个 WCF 组件，使您可以轻松地在应用程序中包含基于内容的路由器。 此示例改编了标准 WCF 计算器示例，以使用路由服务进行通信。 在此示例中，计算器客户端配置为将消息发送到由路由器公开的一个终结点。 路由服务配置为接受发送给它的所有消息，然后将这些消息转发至与计算器服务对应的终结点。 因此，从客户端发送的消息将由路由器接收，并重新路由到实际的计算器服务。 来自计算器服务的消息将发回到路由器，后者又将这些消息传回到计算器客户端。
 
 ### <a name="to-use-this-sample"></a>使用此示例
 
-1. 使用 Visual Studio 2012，打开 HelloRoutingServiceService.sln。
+1. 使用 Visual Studio 2012，打开 HelloRoutingService。
 
 2. 按 F5 或 Ctrl+Shift+B。
 
@@ -27,7 +27,7 @@ ms.locfileid: "79183638"
 
 3. 按 Enter 启动客户端。
 
-     应该会看到以下输出：
+     应会看到以下输出：
 
     ```console
      Add(100,15.99) = 115.99
@@ -42,7 +42,7 @@ ms.locfileid: "79183638"
 ## <a name="configurable-via-code-or-appconfig"></a>可通过代码或 App.Config 进行配置
  所提供的示例配置为使用 App.config 文件来定义路由器行为。 也可将 App.config 文件的名称更改为无法识别的其他名称，并将对 ConfigureRouterViaCode() 的方法调用取消注释。 以上任一方法都可产生相同的路由器行为。
 
-### <a name="scenario"></a>场景
+### <a name="scenario"></a>方案
  此示例演示作为基本消息泵的路由器。 路由服务用作透明的代理节点，该节点配置为将消息直接传递到目标终结点的预配置集。
 
 ### <a name="real-world-scenario"></a>实际方案
@@ -53,10 +53,10 @@ ms.locfileid: "79183638"
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[Windows Communication Foundation (wcf) ，并 Windows Workflow Foundation (的 WF](https://www.microsoft.com/download/details.aspx?id=21459)) .NET Framework Windows Communication Foundation ([!INCLUDE[wf1](../../../../includes/wf1-md.md)] 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\RoutingServices\HelloRoutingService`  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [AppFabric 承载和持久性示例](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))
+- [AppFabric 承载和持久性示例](/previous-versions/appfabric/ff383418(v=azure.10))

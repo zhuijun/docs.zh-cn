@@ -8,12 +8,12 @@ ms.technology: dotnet-standard
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 2e8abef547d8cc06d80b8cbf865ec984eb91d330
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 65370a2bd21e2474af4cb070bb8d82a167f10070
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89551611"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554991"
 ---
 # <a name="linq-overview"></a>LINQ 概述
 
@@ -111,7 +111,7 @@ End Function
 
 为了执行此任务而编写代码来手动遍历 XML 文档会带来重重困难。
 
-LINQ 提供程序的作用不仅仅是与 XML 交互。 [Linq to SQL](../../framework/data/adonet/sql/linq/index.md) 是适用于 MSSQL Server 数据库的极其简练的对象关系映射器 (ORM)。 使用 [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) 库可以通过 LINQ 有效遍历 JSON 文档。 此外，如果没有哪个库可以解决你的需要，你还可以[编写自己的 LINQ 提供程序](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110))！
+LINQ 提供程序的作用不仅仅是与 XML 交互。 [Linq to SQL](../../framework/data/adonet/sql/linq/index.md) 是适用于 MSSQL Server 数据库的极其简练的对象关系映射器 (ORM)。 使用 [JSON.NET](https://www.newtonsoft.com/json/help/html/LINQtoJSON.htm) 库可以通过 LINQ 有效遍历 JSON 文档。 此外，如果没有哪个库可以解决你的需要，你还可以[编写自己的 LINQ 提供程序](/previous-versions/visualstudio/visual-studio-2012/bb546158(v=vs.110))！
 
 ## <a name="reasons-to-use-the-query-syntax"></a>使用查询语法的理由
 
@@ -159,7 +159,7 @@ Dim filteredItems = From item In myItems
 
 ## <a name="essential-linq"></a>基本 LINQ
 
-有关 LINQ 示例的完整列表，请访问 [101 个 LINQ 示例](https://docs.microsoft.com/samples/dotnet/try-samples/101-linq-samples/)。
+有关 LINQ 示例的完整列表，请访问 [101 个 LINQ 示例](/samples/dotnet/try-samples/101-linq-samples/)。
 
 以下示例简单演示了 LINQ 的一些重要片段。 没有办法演示完整的代码，因为 LINQ 提供的功能比此处演示的要多。
 
@@ -394,6 +394,6 @@ Public Shared GetAllFacebookUserLikesMessage(facebookUsers As IEnumerable(Of Fac
 
 ## <a name="more-resources"></a>更多资源
 
-* [101 LINQ 示例](https://docs.microsoft.com/samples/dotnet/try-samples/101-linq-samples/)
+* [101 LINQ 示例](/samples/dotnet/try-samples/101-linq-samples/)
 * [Linqpad](https://www.linqpad.net/)，适用于 C#/F#/Visual Basic 的演练环境和数据库查询引擎
 * [EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/)，帮助用户了解如何实现 LINQ 到对象的电子书

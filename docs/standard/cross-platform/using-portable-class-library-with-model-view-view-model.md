@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Portable Class Library [.NET Framework], and MVVM
 - MVVM, and Portable Class Library
 ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
-ms.openlocfilehash: ff34b295ba443088115d470d8ade0c986ac1d856
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2baa2aaa32c4138eee0932e5c46c2b52482007cd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288844"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547553"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>将可移植类库与模型-视图-视图模型配合使用
-您可以使用 .NET Framework[可移植类库](cross-platform-development-with-the-portable-class-library.md)来实现模型-视图-视图模型（MVVM）模式并跨多个平台共享程序集。
+您可以使用 .NET Framework [可移植类库](cross-platform-development-with-the-portable-class-library.md) 来实现模型-视图-视图模型 (MVVM) 模式并跨多个平台共享程序集。
 
 [!INCLUDE[standard](../../../includes/pcl-to-standard.md)]
 
@@ -25,7 +25,7 @@ ms.locfileid: "84288844"
 
  ![显示跨平台跨 MVVM 共享程序集的可移植类库。](./media/using-portable-class-library-with-model-view-view-model/mvvm-share-assemblies-across-platforms.png)
 
- 本主题不提供有关 MVVM 模式的一般信息。 它仅提供有关如何使用可移植类库实现 MVVM 的信息。 有关 MVVM 的详细信息，请参阅[使用适用于 WPF 的 Prism 库5.0 的 Mvvm 快速入门](https://docs.microsoft.com/previous-versions/msp-n-p/gg430857(v=pandp.40))。
+ 本主题不提供有关 MVVM 模式的一般信息。 它仅提供有关如何使用可移植类库实现 MVVM 的信息。 有关 MVVM 的详细信息，请参阅 [使用适用于 WPF 的 Prism 库5.0 的 Mvvm 快速入门](/previous-versions/msp-n-p/gg430857(v=pandp.40))。
 
 ## <a name="classes-that-support-mvvm"></a>支持 MVVM 的类
  如果面向可移植类库项目的 .NET Framework 4.5、适用于 Windows 8.x 应用商店应用的 .NET 或 Windows Phone 7.5，则可使用以下类实现 MVVM 模式：
@@ -57,13 +57,13 @@ ms.locfileid: "84288844"
 
  编译模型和视图模型项目后，在包含该视图的应用程序中引用这些程序集。 如果视图仅与视图模型交互，则只需引用包含该视图模型的程序集。
 
-### <a name="model"></a>型号
+### <a name="model"></a>建模
  下面的示例演示可在可移植类库项目中驻留的简化模型类。
 
  [!code-csharp[PortableClassLibraryMVVM#1](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/customer.cs#1)]
  [!code-vb[PortableClassLibraryMVVM#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customer.vb#1)]
 
- 下面的示例演示了一种简单的方法，用于填充、检索和更新可移植类库项目中的数据。 在实际应用中，你将从 Windows Communication Foundation （WCF）服务等源中检索数据。
+ 下面的示例演示了一种简单的方法，用于填充、检索和更新可移植类库项目中的数据。 在实际应用中，你将从源（如 Windows Communication Foundation (WCF) 服务）检索数据。
 
  [!code-csharp[PortableClassLibraryMVVM#2](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/customerrepository.cs#2)]
  [!code-vb[PortableClassLibraryMVVM#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerrepository.vb#2)]
@@ -84,11 +84,11 @@ ms.locfileid: "84288844"
  [!code-csharp[PortableClassLibraryMVVM#5](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainpageviewmodel.cs#5)]
  [!code-vb[PortableClassLibraryMVVM#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerviewmodel.vb#5)]  
   
-### <a name="view"></a>查看  
- 通过 .NET Framework 4.5 应用、Windows 8.x 应用商店应用、基于 Silverlight 的应用或 Windows Phone 7.5 应用，你可以引用包含模型和视图模型项目的程序集。  然后创建与视图模型交互的视图。 下面的示例演示了一个简化的 Windows Presentation Foundation （WPF）应用，该应用从视图模型检索和更新数据。 可以在 Silverlight、Windows Phone 或 Windows 8.x 应用商店应用中创建类似视图。  
+### <a name="view"></a>视图  
+ 通过 .NET Framework 4.5 应用、Windows 8.x 应用商店应用、基于 Silverlight 的应用或 Windows Phone 7.5 应用，你可以引用包含模型和视图模型项目的程序集。  然后创建与视图模型交互的视图。 下面的示例演示了一个 Windows Presentation Foundation (WPF) 应用程序，该应用程序从视图模型检索和更新数据。 可以在 Silverlight、Windows Phone 或 Windows 8.x 应用商店应用中创建类似视图。  
   
  [!code-xaml[PortableClassLibraryMVVM#6](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainwindow.xaml#6)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [可移植类库](cross-platform-development-with-the-portable-class-library.md)

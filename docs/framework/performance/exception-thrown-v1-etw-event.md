@@ -6,12 +6,12 @@ helpviewer_keywords:
 - ExceptionThrown_V1 event [.NET Framework]
 - ETW, ExceptionThrown_V1 event (CLR)
 ms.assetid: 0d3da389-6b7b-40f6-a877-fac546d6019c
-ms.openlocfilehash: f800a43d0ed2a82bc51a5e3a028b5fa1870df3fb
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: f4ae277b5dfb09d2676755fec2208b63906ead84
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86309451"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554666"
 ---
 # <a name="exception-thrown_v1-etw-event"></a>异常 Thrown_V1 ETW 事件
 该事件捕获有关引发的异常的信息。  
@@ -30,15 +30,15 @@ ms.locfileid: "86309451"
   
  下表显示了事件数据。  
   
-|字段名|数据类型|说明|  
+|字段名称|数据类型|说明|  
 |----------------|---------------|-----------------|  
 |异常类型|win:UnicodeString|异常的类型，例如，`System.NullReferenceException`。|  
 |异常消息|win:UnicodeString|实际的异常消息。|  
 |EIPCodeThrow|win:Pointer|指向异常发生位置的指令指针。|  
-|ExceptionHR|win:UInt32|异常 [HRESULT](https://docs.microsoft.com/openspecs/windows_protocols/ms-erref/0642cb2f-2075-4469-918c-4441e69c548a)。|  
-|ExceptionFlags|win:UInt16|0x01: HasInnerException（参阅 Visual Basic 文档中的 [CLR ETW 事件](clr-etw-events.md)）。<br /><br /> 0x02: IsNestedException。<br /><br /> 0x04: IsRethrownException。<br /><br /> 0x08： IsCorruptedStateException （指示进程状态已损坏; 请参阅[处理损坏状态异常](https://docs.microsoft.com/archive/msdn-magazine/2009/february/clr-inside-out-handling-corrupted-state-exceptions)）。<br /><br /> 0x10: IsCLSCompliant（从 <xref:System.Exception> 派生的异常符合 CLS，此外的其他异常均不符合 CLS）。|  
+|ExceptionHR|win:UInt32|异常 [HRESULT](/openspecs/windows_protocols/ms-erref/0642cb2f-2075-4469-918c-4441e69c548a)。|  
+|ExceptionFlags|win:UInt16|0x01: HasInnerException（参阅 Visual Basic 文档中的 [CLR ETW 事件](clr-etw-events.md)）。<br /><br /> 0x02: IsNestedException。<br /><br /> 0x04: IsRethrownException。<br /><br /> 0x08： IsCorruptedStateException (指示进程状态已损坏;请参阅 [处理损坏状态异常](/archive/msdn-magazine/2009/february/clr-inside-out-handling-corrupted-state-exceptions)) 。<br /><br /> 0x10: IsCLSCompliant（从 <xref:System.Exception> 派生的异常符合 CLS，此外的其他异常均不符合 CLS）。|  
 |ClrInstanceID|win:UInt16|CLR 或 CoreCLR 的实例的唯一 ID。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [CLR ETW 事件](clr-etw-events.md)

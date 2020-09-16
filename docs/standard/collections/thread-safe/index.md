@@ -6,18 +6,18 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, overview
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
-ms.openlocfilehash: 3a252124ade4c43961c06697367bbc4ca5d0c9cb
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 27b0e887d7dcff6a6c792cf2dfab6a449f59646f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768581"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547683"
 ---
 # <a name="thread-safe-collections"></a>线程安全集合
 .NET Framework 4 引入了 <xref:System.Collections.Concurrent?displayProperty=nameWithType> 命名空间，其中包含多个线程安全且可缩放的集合类。 多个线程可以安全高效地从这些集合添加或删除项，而无需在用户代码中进行其他同步。 编写新代码时，只要将多个线程同时写入到集合时，就使用并发集合类。 如果仅从共享集合进行读取，则可使用 <xref:System.Collections.Generic?displayProperty=nameWithType> 命名空间中的类。 建议不要使用 1.0 集合类，除非需要定位 .NET Framework 1.1 或更低版本运行时。  
   
 ## <a name="thread-synchronization-in-the-net-framework-10-and-20-collections"></a>.NET Framework 1.0 和 2.0 集合中的线程同步  
- .NET Framework 1.0 中引入的集合位于 <xref:System.Collections?displayProperty=nameWithType> 命名空间中。 这些集合（包括常用的 <xref:System.Collections.ArrayList> 和 <xref:System.Collections.Hashtable>）通过 `Synchronized` 属性（此属性围绕集合返回线程安全的包装器）提供一些线程安全性。 该包装器通过对每个添加或删除操作锁定整个集合进行工作。 因此，每个尝试访问集合的线程必须等待，直到轮到它获取锁定。 这不可缩放，并且可能导致大型集合的性能显著下降。 此外，这一设计并不能完全防止争用情况的出现。 有关详细信息，请参阅[泛型集合中的同步](https://docs.microsoft.com/archive/blogs/bclteam/synchronization-in-generic-collections-brian-grunkemeyer)。  
+ .NET Framework 1.0 中引入的集合位于 <xref:System.Collections?displayProperty=nameWithType> 命名空间中。 这些集合（包括常用的 <xref:System.Collections.ArrayList> 和 <xref:System.Collections.Hashtable>）通过 `Synchronized` 属性（此属性围绕集合返回线程安全的包装器）提供一些线程安全性。 该包装器通过对每个添加或删除操作锁定整个集合进行工作。 因此，每个尝试访问集合的线程必须等待，直到轮到它获取锁定。 这不可缩放，并且可能导致大型集合的性能显著下降。 此外，这一设计并不能完全防止争用情况的出现。 有关详细信息，请参阅[泛型集合中的同步](/archive/blogs/bclteam/synchronization-in-generic-collections-brian-grunkemeyer)。  
   
  .NET Framework 2.0 中引入的集合类位于 <xref:System.Collections.Generic?displayProperty=nameWithType> 命名空间中。 它们包括 <xref:System.Collections.Generic.List%601>、<xref:System.Collections.Generic.Dictionary%602> 等。 与 .NET Framework 1.0 类相比，这些类提升了类型安全性和性能。 不过，.NET Framework 2.0 集合类不提供任何线程同步；多线程同时添加或删除项时，用户代码必须提供所有同步。  
   

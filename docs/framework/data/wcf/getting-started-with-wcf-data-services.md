@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, getting started
 ms.assetid: c832fa5b-cf86-4690-be5a-a226c0e49530
-ms.openlocfilehash: d2cf693fb0656a835b3f32306bdbb26e03d371e8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b5cd3f447ff6121ca276878c163a382e598ce4a9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348088"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545815"
 ---
 # <a name="getting-started-with-wcf-data-services"></a>WCF 数据服务入门
-本节中的主题将帮助你快速了解 Open Data Protocol （OData）以及如何使用 WCF 数据服务通过说明基础技术来公开和使用 OData 源。 本部分包括概念内容和[快速入门](quickstart-wcf-data-services.md)教程。  
+本节中的主题可帮助你快速了解 Open Data Protocol (OData) ，以及如何通过说明基础技术来使用 WCF 数据服务来公开和使用 OData 源。 本部分包括概念内容和 [快速入门](quickstart-wcf-data-services.md) 教程。  
   
 ## <a name="in-this-section"></a>本节内容  
  以下主题介绍如何使用 WCF 数据服务创建数据服务。  
@@ -36,6 +36,6 @@ ms.locfileid: "75348088"
  提供指向 WCF 数据服务和 OData 资源的链接。  
   
 ## <a name="related-sections"></a>相关章节  
- [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))  
+ [WCF Data Services (Silverlight)](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))  
   
- [入门](../adonet/ef/getting-started.md)  
+ [入门](../adonet/ef/getting-started.md)

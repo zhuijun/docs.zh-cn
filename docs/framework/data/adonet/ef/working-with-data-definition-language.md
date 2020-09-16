@@ -5,15 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ec50083d-44f4-4093-9b23-5eacd601f96e
-ms.openlocfilehash: 83d6fc1294f6aa37389db9e517b02866ef000b50
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 040ecc1473a4674ab0bb26ad0081563f55a726ea
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854223"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553865"
 ---
 # <a name="working-with-data-definition-language"></a>使用数据定义语言
-从 .NET Framework 版本4开始，实体框架支持数据定义语言（DDL）。 这样，您将能够基于连接字符串和存储元数据 (SSDL) 模型创建或删除数据库实例。  
+从 .NET Framework 版本4开始，实体框架支持 (DDL) 的数据定义语言。 这样，您将能够基于连接字符串和存储元数据 (SSDL) 模型创建或删除数据库实例。  
   
  <xref:System.Data.Objects.ObjectContext> 的以下方法使用连接字符串和 SSDL 内容来完成以下操作：创建或删除数据库，检查数据库是否存在，以及查看生成的 DDL 脚本：  
   
@@ -40,11 +40,11 @@ ms.locfileid: "70854223"
   
 2. 向应用程序中添加现有模型。  
   
-    1. 添加一个名为`SchoolModel`的空模型。 若要创建空模型，请参阅[如何：创建新的 .edmx 文件](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100))主题。  
+    1. 添加一个名为的空模型 `SchoolModel` 。 若要创建空模型，请参阅 [如何：创建新的 .Edmx 文件](/previous-versions/dotnet/netframework-4.0/cc716703(v=vs.100)) 主题。  
   
      将 SchoolModel.edmx 文件添加到您的项目中。  
   
-    1. 从[School 模型](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100))主题复制 school 模型的概念、存储和映射内容。  
+    1. 从 [School 模型](/previous-versions/dotnet/netframework-4.0/bb896300(v=vs.100)) 主题复制 school 模型的概念、存储和映射内容。  
   
     2. 打开 SchoolModel.edmx 文件并将内容粘贴在 `edmx:Runtime` 标记中。  
   
