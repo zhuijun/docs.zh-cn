@@ -6,12 +6,12 @@ metadata:
   description: 了解 C# 编程 - 面向新手开发人员、刚开始接触 C# 的开发人员、以及经验丰富的 C# / .NET 开发人员
   ms.topic: landing-page
   ms.date: 11/19/2019
-  ms.openlocfilehash: fd9a641d588ffd410ed2a6163505a81c69dae867
-  ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+  ms.openlocfilehash: 7a9818ea24af237242ddd55afb53d691400ce008
+  ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/05/2020
-  ms.locfileid: "89495312"
+  ms.lasthandoff: 09/15/2020
+  ms.locfileid: "90537374"
 landingContent:
 - title: 了解如何使用 C# 编程
   linkLists:
@@ -24,7 +24,7 @@ landingContent:
     - text: 介绍性教程
       url: tutorials/intro-to-csharp/index.md
     - text: 使用 Visual Studio 创建 C# 应用
-      url: https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-console
+      url: /visualstudio/get-started/csharp/tutorial-console
   - linkListType: video
     links:
     - text: 什么是 C#？
