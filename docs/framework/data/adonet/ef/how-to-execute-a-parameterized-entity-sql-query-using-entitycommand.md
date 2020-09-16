@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e93fea43-7e03-4d7d-9fee-2517b8b88cba
-ms.openlocfilehash: aa750ef088ee045c8d1045b2509d8fc4bde014ce
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 24b24e4c35c85edb1f960ae18a58cbc5893690d0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854626"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536218"
 ---
 # <a name="how-to-execute-a-parameterized-entity-sql-query-using-entitycommand"></a>如何：使用 EntityCommand 执行参数化实体 SQL 查询
-本主题说明如何[!INCLUDE[esql](../../../../../includes/esql-md.md)] <xref:System.Data.EntityClient.EntityCommand>使用对象执行具有参数的查询。  
+本主题说明如何 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 使用对象执行具有参数的查询 <xref:System.Data.EntityClient.EntityCommand> 。  
   
 ### <a name="to-run-the-code-in-this-example"></a>运行本示例中的代码  
   
-1. 将[AdventureWorks 销售模型](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)添加到项目中，并将项目配置为使用实体框架。 有关详细信息，请参阅[如何：使用实体数据模型向导](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100))。  
+1. 将 [AdventureWorks 销售模型](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks) 添加到项目中，并将项目配置为使用实体框架。 有关详细信息，请参阅 [如何：使用实体数据模型向导](/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100))。  
   
 2. 在应用程序的代码页中，添加以下 `using` 语句（在 Visual Basic 中为 `Imports`）：  
   
@@ -32,5 +32,5 @@ ms.locfileid: "70854626"
   
 ## <a name="see-also"></a>请参阅
 
-- [如何：执行参数化查询](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738521(v=vs.100))
-- [实体 SQL 语言](./language-reference/entity-sql-language.md)
+- [如何：执行参数化查询](/previous-versions/dotnet/netframework-4.0/bb738521(v=vs.100))
+- [Entity SQL 语言](./language-reference/entity-sql-language.md)

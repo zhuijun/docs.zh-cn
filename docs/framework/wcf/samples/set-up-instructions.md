@@ -5,15 +5,15 @@ helpviewer_keywords:
 - WCF Samples [WCF], setup
 - Windows Communication Foundation Samples [WCF], setup
 ms.assetid: 0be7d232-485b-4f6d-9ed0-b4243c907376
-ms.openlocfilehash: 4a5a0558a26e938fb06a19f498e541f4d3611bf3
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 97308d97677ed9f791f54541e8c594873213c13e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84584150"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535490"
 ---
 # <a name="set-up-instructions"></a>设置说明
-这组主题介绍如何设置运行 Windows Communication Foundation （WCF）服务所需的服务。  
+这组主题介绍如何设置运行 Windows Communication Foundation (WCF) 服务所需的服务。  
   
 ## <a name="in-this-section"></a>本节内容  
  [Windows Communication Foundation 示例的一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)  
@@ -41,4 +41,4 @@ ms.locfileid: "84584150"
  概述安装消息队列的步骤。  
   
 ## <a name="related-sections"></a>相关章节  
- [WCF 示例的疑难解答提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))
+ [WCF 示例的疑难解答提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))
