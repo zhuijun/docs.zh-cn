@@ -114,9 +114,9 @@
 - name: 参考
   items:
     - name: ML.NET API 参考
-      href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet'
+      href: ../../api/index.md?view=ml-dotnet
     - name: ML.NET API 预览版 API 参考
-      href: 'https://docs.microsoft.com/dotnet/api/?view=ml-dotnet-preview'
+      href: ../../api/index.md?view=ml-dotnet-preview
     - name: CLI 引用
       href: reference/ml-net-cli-reference.md
 - name: 资源
