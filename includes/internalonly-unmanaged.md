@@ -7,4 +7,4 @@ ms.lasthandoff: 03/15/2020
 ms.locfileid: "72523790"
 ---
 > [!NOTE]
-> <span data-ttu-id="771bb-101">此 API 仅供内部使用。</span><span class="sxs-lookup"><span data-stu-id="771bb-101">This API is for internal use only.</span></span> <span data-ttu-id="771bb-102">不应从开发人员代码中使用。</span><span class="sxs-lookup"><span data-stu-id="771bb-102">It's not intended for use from developer code.</span></span>
+> <span data-ttu-id="04141-101">此 API 仅供内部使用。</span><span class="sxs-lookup"><span data-stu-id="04141-101">This API is for internal use only.</span></span> <span data-ttu-id="04141-102">不应从开发人员代码中使用。</span><span class="sxs-lookup"><span data-stu-id="04141-102">It's not intended for use from developer code.</span></span>
