@@ -2,15 +2,15 @@
 title: 安全注意事项（实体框架）
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: e2e1fc75049d41b50aa59092fe1aa21e8cdab659
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 90422ebd0f313bfa64b446159d27bcf44024f247
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452482"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552266"
 ---
 # <a name="security-considerations-entity-framework"></a>安全注意事项（实体框架）
-本主题介绍特定于开发、部署和运行实体框架应用程序的安全注意事项。 还应遵循创建安全 .NET Framework 应用程序的建议。 有关详细信息，请参阅[安全概述](../security-overview.md)。  
+本主题介绍特定于开发、部署和运行实体框架应用程序的安全注意事项。 还应遵循创建安全 .NET Framework 应用程序的建议。 有关详细信息，请参阅[安全性概述](../security-overview.md)。  
   
 ## <a name="general-security-considerations"></a>一般安全注意事项  
  以下安全注意事项适用于所有使用实体框架的应用程序。  
@@ -27,7 +27,7 @@ ms.locfileid: "77452482"
  在登录操作过程中，将通过基础数据源的网络库将基于用户密码的信息传递给服务器。 恶意提供程序可能窃取用户凭据，生成恶意查询或篡改结果集。  
   
 #### <a name="encrypt-your-connection-to-protect-sensitive-data"></a>对连接进行加密以保护敏感数据。  
- 实体框架不会直接处理数据加密。 如果用户通过公共网络访问数据，应用程序应建立到数据源的加密连接以提高安全性。 有关详细信息，请参见关于您所用数据源的安全性方面的文档。 有关 SQL Server 数据源，请参阅[加密到 SQL Server 的连接](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms189067(v=sql.105))。  
+ 实体框架不会直接处理数据加密。 如果用户通过公共网络访问数据，应用程序应建立到数据源的加密连接以提高安全性。 有关详细信息，请参见关于您所用数据源的安全性方面的文档。 有关 SQL Server 数据源，请参阅 [加密到 SQL Server 的连接](/previous-versions/sql/sql-server-2008-r2/ms189067(v=sql.105))。  
   
 #### <a name="secure-the-connection-string"></a>保护连接字符串。  
  保护应用程序时，最重要的目标之一是保护对数据源的访问。 不受保护或构造不当的连接字符串会构成潜在的安全漏洞。 如果以纯文本形式存储连接信息或者将其保留在内存中，则可能危及整个系统的安全。 建议采用以下方法保护连接字符串：  
@@ -38,7 +38,7 @@ ms.locfileid: "77452482"
   
 - 使用受保护的配置加密配置文件节。  
   
-     ASP.NET 提供了一项称为“受保护配置”的功能，您可以使用此功能对配置文件中的敏感信息进行加密。 虽然受保护配置主要是为 ASP.NET 设计的，但您也可以使用该功能对 Windows 应用程序中的配置文件节进行加密。 有关新的受保护配置功能的详细说明，请参阅[使用受保护的配置加密配置信息](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100))。  
+     ASP.NET 提供了一项称为“受保护配置”的功能，您可以使用此功能对配置文件中的敏感信息进行加密。 虽然受保护配置主要是为 ASP.NET 设计的，但您也可以使用该功能对 Windows 应用程序中的配置文件节进行加密。 有关新的受保护配置功能的详细说明，请参阅 [使用受保护的配置加密配置信息](/previous-versions/aspnet/53tyfkaw(v=vs.100))。  
   
 - 将连接字符串存储在受保护的配置文件中。  
   
@@ -46,9 +46,9 @@ ms.locfileid: "77452482"
   
 - 动态创建连接时使用连接字符串生成器。  
   
-     如果必须在运行时构造连接字符串，请使用 <xref:System.Data.EntityClient.EntityConnectionStringBuilder> 类。 此字符串生成器类可以验证并转义无效的输入信息，从而有助于防止连接字符串注入式攻击。 有关详细信息，请参阅[如何：生成 EntityConnection 连接字符串](how-to-build-an-entityconnection-connection-string.md)。 还应使用适当的字符串生成器类构造作为实体框架连接字符串一部分的数据源连接字符串。 有关 ADO.NET 提供程序的连接字符串生成器的信息，请参阅[连接字符串生成器](../connection-string-builders.md)。  
+     如果必须在运行时构造连接字符串，请使用 <xref:System.Data.EntityClient.EntityConnectionStringBuilder> 类。 此字符串生成器类可以验证并转义无效的输入信息，从而有助于防止连接字符串注入式攻击。 有关详细信息，请参阅 [如何：生成 EntityConnection 连接字符串](how-to-build-an-entityconnection-connection-string.md)。 还应使用适当的字符串生成器类构造作为实体框架连接字符串一部分的数据源连接字符串。 有关 ADO.NET 提供程序的连接字符串生成器的信息，请参阅 [连接字符串生成器](../connection-string-builders.md)。  
   
- 有关详细信息，请参阅[保护连接信息](../protecting-connection-information.md)。  
+ 有关详细信息，请参阅 [保护连接信息](../protecting-connection-information.md)。  
   
 #### <a name="do-not-expose-an-entityconnection-to-untrusted-users"></a>不要向不可信用户公开 EntityConnection。  
  <xref:System.Data.EntityClient.EntityConnection> 对象公开基础连接的连接字符串。 有权访问 <xref:System.Data.EntityClient.EntityConnection> 对象的用户也可以更改基础连接的 <xref:System.Data.ConnectionState>。 <xref:System.Data.EntityClient.EntityConnection> 类不是线程安全的。  
@@ -73,7 +73,7 @@ ms.locfileid: "77452482"
   
 - <xref:System.Security.Permissions.SecurityPermission>：使用 <xref:System.Security.Permissions.SecurityPermissionFlag.SerializationFormatter> 以通过 <xref:System.Runtime.Serialization.ISerializable> 接口对异常进行序列化。  
   
-- 打开数据库连接和对数据库执行命令的权限，如 SQL Server 数据库的 <xref:System.Data.SqlClient.SqlClientPermission>。  
+- 打开数据库连接和对数据库执行命令的权限，例如， <xref:System.Data.SqlClient.SqlClientPermission> 对于 SQL Server 数据库。  
   
  有关更多信息，请参见 [Code Access Security and ADO.NET](../code-access-security.md)。  
   
@@ -81,7 +81,7 @@ ms.locfileid: "77452482"
  实体框架不会强制实施任何安全权限，并将在进程中调用任何用户提供的数据对象代码，而不管它是否受信任。 确保数据存储和应用程序执行客户端身份验证和授权。  
   
 #### <a name="restrict-access-to-all-configuration-files"></a>限制对所有配置文件的访问。  
- 管理员必须限制对指定应用程序配置的所有文件的写访问权限，包括 enterprisesec、security .config、machine.config 和应用程序配置文件 \<*应用程序*>。  
+ 管理员必须限制对指定应用程序配置的所有文件的写访问权限，包括 enterprisesec.config、security.config、machine.config 和应用程序配置文件 \<*application*>.exe.config。  
   
  可在 app.config 中修改提供程序固定名称。客户端应用程序必须负责使用强名称通过标准提供程序工厂模型访问基础提供程序。  
   
@@ -92,13 +92,13 @@ ms.locfileid: "77452482"
  查询概念模型时需要考虑下列安全注意事项。 这些注意事项适用于使用 EntityClient 的 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 查询以及使用 LINQ、[!INCLUDE[esql](../../../../../includes/esql-md.md)] 和查询生成器方法的对象查询。  
   
 #### <a name="prevent-sql-injection-attacks"></a>防范 SQL 注入式攻击。  
- 应用程序经常接受外部输入（来自用户或其他外部代理），并根据该输入执行操作。 任何直接或间接从用户或外部代理派生的输入都可能包含使用目标语言的语法来执行未授权操作的内容。 如果目标语言是结构化查询语言（SQL）（如 Transact-sql），则此操作称为 SQL 注入攻击。 恶意用户可直接向查询中注入命令并删除数据库表、引起拒绝服务或者更改所执行操作的性质。  
+ 应用程序经常接受外部输入（来自用户或其他外部代理），并根据该输入执行操作。 任何直接或间接从用户或外部代理派生的输入都可能包含使用目标语言的语法来执行未授权操作的内容。 当目标语言是结构化查询语言 (SQL) ，例如 Transact-sql 时，此操作称为 SQL 注入攻击。 恶意用户可直接向查询中注入命令并删除数据库表、引起拒绝服务或者更改所执行操作的性质。  
   
 - [!INCLUDE[esql](../../../../../includes/esql-md.md)] 注入式攻击：  
   
      SQL 注入式攻击在 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 中的实施方法是向查询谓词和参数名称中使用的值提供恶意输入。 若要避免 SQL 注入风险，切勿组合用户输入与 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 命令文本。  
   
-     [!INCLUDE[esql](../../../../../includes/esql-md.md)] 查询可在任何接受文本的位置接受参数。 应使用参数化查询，而不是将来自外部代理的文本直接注入查询。 还应考虑使用[查询生成器方法](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896238(v=vs.100))安全地构造实体 SQL。  
+     [!INCLUDE[esql](../../../../../includes/esql-md.md)] 查询可在任何接受文本的位置接受参数。 应使用参数化查询，而不是将来自外部代理的文本直接注入查询。 还应考虑使用 [查询生成器方法](/previous-versions/dotnet/netframework-4.0/bb896238(v=vs.100)) 安全地构造实体 SQL。  
   
 - LINQ to Entities 注入攻击：  
   
@@ -113,7 +113,7 @@ ms.locfileid: "77452482"
   
 - 嵌套的 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 查询。  
   
- 如果接受用户输入，则必须确保输入内容不会导致结果集过大以致超出系统的处理能力。 你还可以使用中的 <xref:System.Linq.Queryable.Take%2A> 方法 LINQ to Entities 或 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 中的[limit](./language-reference/limit-entity-sql.md)运算符来限制结果集的大小。  
+ 如果接受用户输入，则必须确保输入内容不会导致结果集过大以致超出系统的处理能力。 你还可以使用 LINQ to Entities 中的 <xref:System.Linq.Queryable.Take%2A> 方法或中的 [LIMIT](./language-reference/limit-entity-sql.md) 运算符 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 来限制结果集的大小。  
   
 #### <a name="avoid-returning-iqueryable-results-when-exposing-methods-to-potentially-untrusted-callers"></a>避免在将方法公开给可能不受信任的调用方时返回 IQueryable 结果。  
  避免公开给可能不受信任的调用方的方法返回 <xref:System.Linq.IQueryable%601> 类型的原因如下：  
@@ -132,7 +132,7 @@ ms.locfileid: "77452482"
  生成和处理实体类型时应考虑下列安全注意事项。  
   
 #### <a name="do-not-share-an-objectcontext-across-application-domains"></a>不要在应用程序域之间共享 ObjectContext。  
- 在多个应用程序域之间共享 <xref:System.Data.Objects.ObjectContext> 可能会公开连接字符串中的信息。 正确的做法是将序列化的对象或对象图传递给其他应用程序域，并将这些对象附加到该应用程序域中的 <xref:System.Data.Objects.ObjectContext>。 有关详细信息，请参阅[序列化对象](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738446(v=vs.100))。  
+ 在多个应用程序域之间共享 <xref:System.Data.Objects.ObjectContext> 可能会公开连接字符串中的信息。 正确的做法是将序列化的对象或对象图传递给其他应用程序域，并将这些对象附加到该应用程序域中的 <xref:System.Data.Objects.ObjectContext>。 有关详细信息，请参阅 [序列化对象](/previous-versions/dotnet/netframework-4.0/bb738446(v=vs.100))。  
   
 #### <a name="prevent-type-safety-violations"></a>避免类型安全冲突。  
  如果违反类型安全，则实体框架无法保证对象中数据的完整性。 如果使用完全信任代码访问安全性运行不可信的应用程序，可能导致类型安全冲突。  
@@ -145,13 +145,13 @@ ms.locfileid: "77452482"
 在 ASP.NET 应用程序中使用路径时，应考虑以下事项。  
   
 #### <a name="verify-whether-your-host-performs-path-checks"></a>检验主机是否执行路径检查。  
- 当使用 `|DataDirectory|` （包含在管道符号中）替换字符串时，ADO.NET 将验证是否支持解析的路径。 例如，`DataDirectory` 后面不允许出现“..”。 用于解析 Web 应用程序根运算符（`~`）的相同检查由托管 ASP.NET 的进程执行。 IIS 执行此检查;但是，除 IIS 以外的主机不能验证是否支持解析的路径。 你应该知道要在其上部署实体框架应用程序的主机的行为。  
+ 当 `|DataDirectory|` 使用 (包含在管道符号) 替换字符串中时，ADO.NET 将验证是否支持解析的路径。 例如，`DataDirectory` 后面不允许出现“..”。 解决 Web 应用程序根运算符 (的相同检查 `~`) 由托管 ASP.NET 的进程执行。 IIS 执行此检查；但是非 IIS 的主机可能不检验是否支持解析的路径。 你应该知道要在其上部署实体框架应用程序的主机的行为。  
   
 #### <a name="do-not-make-assumptions-about-resolved-path-names"></a>不要对解析的路径名称做任何假定。  
- 尽管根运算符（`~`）和 `DataDirectory` 替换字符串解析的值在应用程序的运行时中应保持不变，但实体框架不会限制主机修改这些值。  
+ 尽管根运算符 () 的值 `~` 和 `DataDirectory` 替换字符串解析应在应用程序运行时保持不变，但实体框架不会限制主机修改这些值。  
   
 #### <a name="verify-the-path-length-before-deployment"></a>部署前检查路径长度。  
- 在部署实体框架应用程序之前，应确保根运算符（~）和 `DataDirectory` 替换字符串的值不超过操作系统中路径长度的限制。 ADO.NET 数据访问接口不确保路径长度超出有效限制。  
+ 在部署实体框架应用程序之前，应确保根运算符 (~) 和 `DataDirectory` 替换字符串的值不超过操作系统中路径长度的限制。 ADO.NET 数据访问接口不确保路径长度超出有效限制。  
   
 ## <a name="security-considerations-for-adonet-metadata"></a>有关 ADO.NET 元数据的安全注意事项  
  生成和处理模型和映射文件时应考虑下列安全注意事项。  
@@ -162,7 +162,7 @@ ADO.NET 元数据服务组件不记录任何专用信息。 如果由于访问�
 #### <a name="do-not-accept-metadataworkspace-objects-from-untrusted-sources"></a>不要接受来自不可信源的 MetadataWorkspace 对象。  
  应用程序不应接受来自不可信源的 <xref:System.Data.Metadata.Edm.MetadataWorkspace> 类的实例。 正确的做法是从这样的源显式构造并填充工作区。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [保证 ADO.NET 应用程序的安全](../securing-ado-net-applications.md)
 - [部署注意事项](deployment-considerations.md)
