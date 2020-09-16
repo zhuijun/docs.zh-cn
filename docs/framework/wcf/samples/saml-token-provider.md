@@ -2,15 +2,15 @@
 title: SAML 令牌提供程序
 ms.date: 03/30/2017
 ms.assetid: eb16e5e2-4c8d-4f61-a479-9c965fcec80c
-ms.openlocfilehash: db1307b0f440f8bd55f1728b6645aec706dfe442
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4e371d518d7ef25152aba83fa00d79893397b07f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84602409"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554418"
 ---
 # <a name="saml-token-provider"></a>SAML 令牌提供程序
-本示例演示如何实现一个自定义客户端 SAML 令牌提供程序。 Windows Communication Foundation （WCF）中的令牌提供程序用于向安全基础结构提供凭据。 令牌提供程序一般检查目标并颁发相应的凭据，以使安全基础结构能够确保消息的安全。 WCF 附带了默认的凭据管理器令牌提供程序。 WCF 还附带了一个 CardSpace 令牌提供程序。 自定义令牌提供程序在下列情况下有用：
+本示例演示如何实现一个自定义客户端 SAML 令牌提供程序。 Windows Communication Foundation 中的令牌提供程序 (WCF) 用于向安全基础结构提供凭据。 令牌提供程序一般检查目标并颁发相应的凭据，以使安全基础结构能够确保消息的安全。 WCF 附带了默认的凭据管理器令牌提供程序。 WCF 还附带了一个 CardSpace 令牌提供程序。 自定义令牌提供程序在下列情况下有用：
 
 - 存在不能由这些令牌提供程序操作的凭据存储。
 
@@ -30,7 +30,7 @@ ms.locfileid: "84602409"
 
 - 客户端如何使用服务器的 X.509 证书对服务器进行身份验证。
 
- 服务公开两个终结点，以便与使用配置文件 App.config 定义的服务进行通信。每个终结点由地址、绑定和协定组成。 绑定由使用消息安全的标准 `wsFederationHttpBinding` 进行配置。 一个终结点需要客户端用使用对称校验密钥的 SAML 令牌进行身份验证，而另一个终结点需要客户端用使用不对称校验密钥的 SAML 令牌进行身份验证。 服务还使用 `serviceCredentials` 行为来配置服务证书。 使用 `serviceCredentials` 行为可以配置服务证书。 客户端使用服务证书对服务进行身份验证并提供消息保护。 以下配置引用了在示例安装过程中安装的“localhost”证书，如本主题最后的安装说明所述。 使用 `serviceCredentials` 行为还可以配置受信任的证书以对 SAML 令牌进行签名。 下面的配置引用了在示例过程中安装的“Alice”证书。
+ 服务公开两个终结点，用于与服务进行通信，并使用配置文件 App.config 定义。每个终结点由地址、绑定和协定组成。 绑定由使用消息安全的标准 `wsFederationHttpBinding` 进行配置。 一个终结点需要客户端用使用对称校验密钥的 SAML 令牌进行身份验证，而另一个终结点需要客户端用使用不对称校验密钥的 SAML 令牌进行身份验证。 服务还使用 `serviceCredentials` 行为来配置服务证书。 使用 `serviceCredentials` 行为可以配置服务证书。 客户端使用服务证书对服务进行身份验证并提供消息保护。 以下配置引用了在示例安装过程中安装的“localhost”证书，如本主题最后的安装说明所述。 使用 `serviceCredentials` 行为还可以配置受信任的证书以对 SAML 令牌进行签名。 下面的配置引用了在示例过程中安装的“Alice”证书。
 
 ```xml
 <system.serviceModel>
@@ -352,25 +352,25 @@ ms.locfileid: "84602409"
 
 #### <a name="to-set-up-and-build-the-sample"></a>设置和生成示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对 [Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-2. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
+2. 若要生成解决方案，请按照 [生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
 
 > [!NOTE]
 > 如果使用 Svcutil.exe 为此示例重新生成配置，请确保在客户端配置中修改终结点名称以与客户端代码匹配。
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>在同一计算机上运行示例
 
-1. 在 Visual Studio 2012 命令提示符下，使用管理员权限运行安装程序 .bat。 这将安装运行示例所需的所有证书。
+1. 使用管理员权限运行 Visual Studio 2012 命令提示符下的示例安装文件夹中的 Setup.bat。 这将安装运行示例所需的所有证书。
 
     > [!NOTE]
-    > 设置 bat 批处理文件设计为在 Visual Studio 2012 命令提示符下运行。 在 Visual Studio 2012 命令提示符中设置的 PATH 环境变量指向包含安装程序 bat 脚本所需的可执行文件的目录。  
+    > Setup.bat 批处理文件设计为在 Visual Studio 2012 命令提示符下运行。 在 Visual Studio 2012 命令提示符下设置的 PATH 环境变量指向包含 Setup.bat 脚本所需的可执行文件的目录。  
   
 2. 启动 service\bin 中的 Service.exe。  
   
 3. 启动 \client\bin 中的 Client.exe。 客户端活动将显示在客户端控制台应用程序上。  
   
-4. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+4. 如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 #### <a name="to-run-the-sample-across-computers"></a>跨计算机运行示例  
   
@@ -378,7 +378,7 @@ ms.locfileid: "84602409"
   
 2. 将服务程序文件复制到服务计算机上的服务目录。 另外，将 Setup.bat 和 Cleanup.bat 文件复制到服务计算机上。  
   
-3. 必须具有一个其主题名称中包含计算机的完全限定域名的服务器证书。 必须更新 Service.exe.config 文件以反映此新证书名称。 可以通过修改 Setup.bat 批处理文件来创建服务器证书。 请注意，必须在使用管理员特权打开的 Visual Studio 窗口开发人员命令提示中运行 setup.exe 文件。 必须将 `%SERVER_NAME%` 变量设置为用于承载服务的计算机的完全限定的主机名。  
+3. 必须具有一个其主题名称中包含计算机的完全限定域名的服务器证书。 必须更新 Service.exe.config 文件以反映此新证书名称。 可以通过修改 Setup.bat 批处理文件来创建服务器证书。 请注意，setup.bat 文件必须在以管理员特权打开的 Visual Studio 窗口开发人员命令提示中运行。 必须将 `%SERVER_NAME%` 变量设置为用于承载服务的计算机的完全限定的主机名。  
   
 4. 将服务器证书复制到客户端的 CurrentUser-TrustedPeople 存储中。 如果服务器证书是由客户端受信任的颁发者颁发，则不需要执行此步骤。  
   
@@ -392,8 +392,8 @@ ms.locfileid: "84602409"
   
 9. 在客户端计算机上，从命令提示窗口中启动 `Client.exe`。  
   
-10. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+10. 如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 #### <a name="to-clean-up-after-the-sample"></a>运行示例后进行清理  
   
-1. 运行完示例后运行示例文件夹中的 Cleanup.bat。  
+1. 运行完示例后运行示例文件夹中的 Cleanup.bat。

@@ -2,12 +2,12 @@
 title: 如何：将 ASP.NET 授权管理器角色提供程序与服务一起使用
 ms.date: 03/30/2017
 ms.assetid: f21deb81-91ef-49ef-94d6-494785143271
-ms.openlocfilehash: 7c1076671512b33f115950cad684fba0b514abe9
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 4a92c9db000b703f4fdab7c34e5359de74b0228d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595331"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545599"
 ---
 # <a name="how-to-use-the-aspnet-authorization-manager-role-provider-with-a-service"></a>如何：将 ASP.NET 授权管理器角色提供程序与服务一起使用
 当 ASP.NET 托管 Web 服务时，可以将授权管理器集成到应用程序中，以向服务提供授权。 授权管理器允许应用程序开发人员定义各个操作，这些操作可组织在一起形成任务。 然后管理员可以授权角色执行特定任务或各个操作。 授权管理器提供管理工具，并将其作为 Microsoft 管理控制台 (MMC) 管理单元来管理角色、任务、操作和用户。 管理员在 XML 文件、Active Directory 或 Active Directory 应用程序模式 (ADAM) 存储区中配置授权管理器策略存储区。  
@@ -29,8 +29,8 @@ ms.locfileid: "84595331"
 </system.web>  
 ```  
   
- 有关将 ASP.NET 角色提供程序与 WCF 应用程序集成的详细信息，请参阅[如何：将 ASP.NET 角色提供程序用于服务](how-to-use-the-aspnet-role-provider-with-a-service.md)。 有关将授权管理器与 ASP.NET 配合使用的详细信息，请参阅[如何：将授权管理器（AzMan）与 ASP.NET 2.0 配合使用](https://docs.microsoft.com/previous-versions/msp-n-p/ff649313(v=pandp.10))。  
+ 有关将 ASP.NET 角色提供程序与 WCF 应用程序集成的详细信息，请参阅 [如何：将 ASP.NET 角色提供程序用于服务](how-to-use-the-aspnet-role-provider-with-a-service.md)。 有关将授权管理器与 ASP.NET 配合使用的详细信息，请参阅 [如何：将授权管理器 (AzMan) 与 ASP.NET 2.0 一起](/previous-versions/msp-n-p/ff649313(v=pandp.10))使用。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：将 ASP.NET 角色提供程序与服务一起使用](how-to-use-the-aspnet-role-provider-with-a-service.md)

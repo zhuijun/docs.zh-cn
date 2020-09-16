@@ -3,12 +3,12 @@ title: Windows Workflow Foundation 功能详细信息
 description: 本文介绍 .NET Framework 4 添加到 Windows Workflow Foundation 的新功能，以及这些功能可能有用的方案。
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: fb490b3dd368710bf2ed98f7c53b7b184fa15b0b
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: ae15f3ed536967cb15d1a5913f9ca1eab8a510d9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83419949"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554601"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Windows Workflow Foundation 功能详细信息
 
@@ -16,13 +16,13 @@ ms.locfileid: "83419949"
 
 ## <a name="messaging-activities"></a>消息传递活动
 
-消息传递活动（ <xref:System.ServiceModel.Activities.Receive> 、 <xref:System.ServiceModel.Activities.SendReply> 、 <xref:System.ServiceModel.Activities.Send> 、 <xref:System.ServiceModel.Activities.ReceiveReply> ）用于从工作流发送和接收 WCF 消息。 <xref:System.ServiceModel.Activities.Receive>和 <xref:System.ServiceModel.Activities.SendReply> 活动用于形成通过 WSDL 公开的 Windows Communication Foundation （WCF）服务操作，就像标准 WCF web 服务一样。 <xref:System.ServiceModel.Activities.Send>和 <xref:System.ServiceModel.Activities.ReceiveReply> 用于使用类似于 WCF 的 web 服务 <xref:System.ServiceModel.ChannelFactory> ; 对于生成预配置活动的 Workflow Foundation 也存在**添加服务引用**体验。
+消息传递活动 (<xref:System.ServiceModel.Activities.Receive> 、 <xref:System.ServiceModel.Activities.SendReply> 、 <xref:System.ServiceModel.Activities.Send> 、 <xref:System.ServiceModel.Activities.ReceiveReply>) 用于从工作流发送和接收 WCF 消息。 <xref:System.ServiceModel.Activities.Receive> 和 <xref:System.ServiceModel.Activities.SendReply> 活动用于形成通过 WSDL 公开的 Windows Communication Foundation (WCF) 服务操作，就像标准 WCF web 服务一样。 <xref:System.ServiceModel.Activities.Send> 和 <xref:System.ServiceModel.Activities.ReceiveReply> 用于使用类似于 WCF 的 web 服务 <xref:System.ServiceModel.ChannelFactory> ; 对于生成预配置活动的 Workflow Foundation 也存在 **添加服务引用** 体验。
 
 ### <a name="getting-started-with-messaging-activities"></a>消息传递活动入门
 
 - 在 Visual Studio 2012 中，创建一个 WCF 工作流服务应用程序项目。 <xref:System.ServiceModel.Activities.Receive> 和 <xref:System.ServiceModel.Activities.SendReply> 对将置于画布上。
 
-- 右键单击该项目，然后选择 "**添加服务引用**"。 指向现有 web 服务 WSDL，并单击 **"确定"**。 生成项目，以便在工具箱中显示生成的活动（使用 <xref:System.ServiceModel.Activities.Send> 和实现 <xref:System.ServiceModel.Activities.ReceiveReply> ）。
+- 右键单击该项目，然后选择 " **添加服务引用**"。 指向现有 web 服务 WSDL，并单击 **"确定"**。 生成项目以显示在 <xref:System.ServiceModel.Activities.Send> 工具箱中使用和) 实现的生成的活动 (<xref:System.ServiceModel.Activities.ReceiveReply> 。
 
 - [工作流服务文档](../wcf/feature-details/workflow-services.md)
 
@@ -32,7 +32,7 @@ ms.locfileid: "83419949"
 
 ## <a name="workflowservicehost"></a>WorkflowServiceHost
 
-<xref:System.ServiceModel.WorkflowServiceHost>是支持多个实例、配置和 WCF 消息传递的现成工作流主机（尽管工作流不需要使用消息传递即可进行承载）。 它还通过一组服务行为集成了持久性、跟踪和实例控件。 就像 WCF 的一样 <xref:System.ServiceModel.ServiceHost> ， <xref:System.ServiceModel.WorkflowServiceHost> 可以在控制台/WINFORMS/WPF 应用程序或 Windows 服务中自承载，也可以在 IIS 或 WAS 中以 web 方式承载（作为 .xamlx 文件）。
+<xref:System.ServiceModel.WorkflowServiceHost>是支持多个实例、配置和 WCF 消息传递 (的现成工作流主机，但工作流不需要使用消息传递) 承载。 它还通过一组服务行为集成了持久性、跟踪和实例控件。 就像 WCF 的一样 <xref:System.ServiceModel.ServiceHost> ， <xref:System.ServiceModel.WorkflowServiceHost> 可以在控制台/WINFORMS/WPF 应用程序或 Windows 服务中自承载，也可以在 IIS 或 WAS) 的 .xamlx 文件中自承载 (。
 
 ### <a name="getting-started-with-workflow-service-host"></a>工作流服务主机入门
 
@@ -46,7 +46,7 @@ ms.locfileid: "83419949"
 
   - [执行](./samples/execution.md)
 
-  - 应用程序：[挂起的实例管理](./samples/suspended-instance-management.md)
+  - 应用程序： [挂起的实例管理](./samples/suspended-instance-management.md)
 
 - [承载工作流服务概述](../wcf/feature-details/hosting-workflow-services-overview.md)
 
@@ -54,7 +54,7 @@ ms.locfileid: "83419949"
 
 BestPriceFinder 服务将调用多个航空公司服务来查找特定路线的最佳票证价格。 实现此方案需要您在中承载工作流 <xref:System.ServiceModel.WorkflowServiceHost> 。 它还将使用消息活动接收价格请求、从后端服务检索价格，并使用最大价格回复价格请求。
 
-## <a name="correlation"></a>Correlation
+## <a name="correlation"></a>相关性
 
 相关性具有以下两种含义：
 
@@ -86,7 +86,7 @@ BestPriceFinder 服务将调用多个航空公司服务来查找特定路线的�
 
 WCF 配置架构很复杂，并为用户提供很多难以查找功能的用户。 在中 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] ，我们致力于帮助 WCF 用户使用以下功能配置其服务：
 
-- 使用户不需要为每个服务进行显式配置。 如果未为服务配置任何 \< 服务> 元素，并且服务未以编程方式定义任何终结点，则会将一组终结点自动添加到服务、每个服务基址和服务实现的每个协定。
+- 使用户不需要为每个服务进行显式配置。 如果未为服务配置任何 \<service> 元素，并且服务未以编程方式定义任何终结点，则会将一组终结点自动添加到服务、每个服务基址和服务实现的每个协定。
 
 - 使用户能够为 WCF 绑定和行为定义默认值，这些默认值将应用于无显示配置的服务。
 
@@ -96,15 +96,15 @@ WCF 配置架构很复杂，并为用户提供很多难以查找功能的用户�
 
 ### <a name="getting-started"></a>入门
 
-- [WCF 4.0 开发人员指南](https://docs.microsoft.com/previous-versions/dotnet/articles/ee354381(v=msdn.10))
+- [WCF 4.0 开发人员指南](/previous-versions/dotnet/articles/ee354381(v=msdn.10))
 
 - [配置通道工厂](xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601)
 
 - [标准终结点元素](xref:System.ServiceModel.Configuration.StandardEndpointElement)
 
-- [.NET Framework 4 中的服务配置改进](https://docs.microsoft.com/archive/blogs/endpoint/service-configuration-improvements-in-net-4)
+- [.NET Framework 4 中的服务配置改进](/archive/blogs/endpoint/service-configuration-improvements-in-net-4)
 
-- [.NET 4 中的常见用户错误：WF/WCF 服务配置名称键入错误](https://docs.microsoft.com/archive/blogs/endpoint/common-user-mistake-in-net-4-mistyping-the-wfwcf-service-configuration-name)
+- [.NET 4 中的常见用户错误：WF/WCF 服务配置名称键入错误](/archive/blogs/endpoint/common-user-mistake-in-net-4-mistyping-the-wfwcf-service-configuration-name)
 
 ### <a name="simplified-configuration-scenarios"></a>简化配置方案
 
@@ -128,7 +128,7 @@ WCF 配置架构很复杂，并为用户提供很多难以查找功能的用户�
 
 - [数据协定解析程序 API 文档](xref:System.Runtime.Serialization.DataContractResolver)
 
-- [引入数据协定解析程序](https://docs.microsoft.com/archive/blogs/youssefm/configuring-known-types-dynamically-introducing-the-datacontractresolver)
+- [引入数据协定解析程序](/archive/blogs/youssefm/configuring-known-types-dynamically-introducing-the-datacontractresolver)
 
 - 示例：
 
@@ -174,7 +174,7 @@ WCF 配置架构很复杂，并为用户提供很多难以查找功能的用户�
 
 ### <a name="flowchart-scenarios"></a>流程图方案
 
-流程图活动可用于实现猜谜游戏。 猜谜游戏非常简单：计算机选择一个随机数，然后玩家必须猜出该数字。 当播放机提交每个猜测时，计算机会向其显示提示（即 "尝试较小的数字"）。 如果播放机在尝试次数少于7次时发现数字，则会从计算机接收特殊的表意。 可使用以下过程活动组合来实现此游戏：
+流程图活动可用于实现猜谜游戏。 猜谜游戏非常简单：计算机选择一个随机数，然后玩家必须猜出该数字。 当播放机提交每个猜测时，计算机将显示一个提示， (即 "尝试使用较小的数字" ) 。 如果播放机在尝试次数少于7次时发现数字，则会从计算机接收特殊的表意。 可使用以下过程活动组合来实现此游戏：
 
 - <xref:System.Activities.Statements.Sequence>
 
@@ -206,7 +206,7 @@ WCF 配置架构很复杂，并为用户提供很多难以查找功能的用户�
 
   - [Parallel 活动设计器](/visualstudio/workflow-designer/parallel-activity-designer)
 
-  - [ParallelForEach \< T> 活动设计器](/visualstudio/workflow-designer/parallelforeach-t-activity-designer)
+  - [ParallelForEach\<T> 活动设计器](/visualstudio/workflow-designer/parallelforeach-t-activity-designer)
 
 ### <a name="procedural-activity-scenarios"></a>过程活动方案
 
@@ -232,15 +232,15 @@ WCF 配置架构很复杂，并为用户提供很多难以查找功能的用户�
 
 ## <a name="error-handling-activities"></a>错误处理活动
 
-<xref:System.Activities.Statements.TryCatch>活动提供了一种机制，用于捕获在执行一组包含的活动的过程中发生的异常（类似于 c # 和 Visual Basic 中的 Try/Catch 构造）。 <xref:System.Activities.Statements.TryCatch> 提供了工作流级别的异常处理。 当引发未经处理的异常时，工作流将中止，并且不会执行 Finally 块。 此行为与 C# 一致。
+<xref:System.Activities.Statements.TryCatch>活动提供了一种机制，用于捕获在执行一组包含的活动的过程中发生的异常， (类似于 c # 中的 Try/Catch 构造和 Visual Basic) 。 <xref:System.Activities.Statements.TryCatch> 提供了工作流级别的异常处理。 当引发未经处理的异常时，工作流将中止，并且不会执行 Finally 块。 此行为与 C# 一致。
 
 ### <a name="getting-started"></a>入门
 
 - 在 Visual Studio 2012 中，创建工作流控制台应用程序。 在工作流设计器中添加 <xref:System.Activities.Statements.TryCatch> 活动。
 
-- 示例：[使用 TryCatch 在 Flowchart 活动中进行错误处理](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
+- 示例： [使用 TryCatch 在 Flowchart 活动中进行错误处理](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
 
-- 设计器文档：[错误处理活动设计器](/visualstudio/workflow-designer/error-handling-activity-designers)
+- 设计器文档： [错误处理活动设计器](/visualstudio/workflow-designer/error-handling-activity-designers)
 
 ### <a name="error-handling-scenarios"></a>错误处理方案
 
@@ -254,7 +254,7 @@ WCF 配置架构很复杂，并为用户提供很多难以查找功能的用户�
 
 - 在 Visual Studio 2012 中，创建工作流控制台应用程序。 在工作流设计器中添加 <xref:System.Activities.Statements.Pick> 活动。
 
-- 示例：[使用 Pick 活动](./samples/using-the-pick-activity.md)
+- 示例： [使用 Pick 活动](./samples/using-the-pick-activity.md)
 
 - 设计器文档： [Pick 活动设计器](/visualstudio/workflow-designer/pick-activity-designer)
 
@@ -276,7 +276,7 @@ WCF 配置架构很复杂，并为用户提供很多难以查找功能的用户�
 
 1. 基于内容的路由（<xref:System.ServiceModel.Dispatcher.MessageFilter> 对象会检查消息以确定其发送位置。）
 
-2. 协议桥接（传输 & 消息）
+2. 协议桥接 (传输 & 消息) 
 
 3. 错误处理（路由器将捕获通信异常并将故障转移到备份终结点）
 
@@ -284,11 +284,11 @@ WCF 配置架构很复杂，并为用户提供很多难以查找功能的用户�
 
 ### <a name="getting-started"></a>入门
 
-1. 文档：[路由](../wcf/feature-details/routing.md)
+1. 文档： [路由](../wcf/feature-details/routing.md)
 
-2. 示例：[路由服务 &#91;WCF 示例&#93;](../wcf/samples/routing-services.md)
+2. 示例： [路由服务 &#91;WCF 示例&#93;](../wcf/samples/routing-services.md)
 
-3. 博客：[路由规则！](https://docs.microsoft.com/archive/blogs/RoutingRules/)
+3. 博客： [路由规则！](/archive/blogs/RoutingRules/)
 
 ### <a name="routing-scenarios"></a>路由方案
 
@@ -320,7 +320,7 @@ WCF 发现是一种框架技术，可让你将发现机制纳入应用程序基�
 
 - 文档： [WCF 发现](../wcf/feature-details/wcf-discovery.md)
 
-- 示例：[发现（示例）](../wcf/samples/discovery-samples.md)
+- 示例： [发现 (示例) ](../wcf/samples/discovery-samples.md)
 
 ### <a name="discovery-scenarios"></a>Discovery 方案
 
@@ -328,7 +328,7 @@ WCF 发现是一种框架技术，可让你将发现机制纳入应用程序基�
 
 ## <a name="tracking"></a>跟踪
 
-工作流跟踪提供对工作流实例的执行的见解。 跟踪事件在工作流实例级别从工作流发出，并在工作流中执行活动时发出。 需要将工作流跟踪参与者添加到工作流主机中以订阅跟踪记录。 使用跟踪配置文件筛选跟踪记录。 .NET Framework 提供 ETW （Windows 事件跟踪）跟踪参与者，并在 machine.config 文件中安装基本配置文件。
+工作流跟踪提供对工作流实例的执行的见解。 跟踪事件在工作流实例级别从工作流发出，并在工作流中执行活动时发出。 需要将工作流跟踪参与者添加到工作流主机中以订阅跟踪记录。 使用跟踪配置文件筛选跟踪记录。 .NET Framework 为 Windows) 跟踪参与者提供 ETW (事件跟踪，并在 machine.config 文件中安装基本配置文件。
 
 ### <a name="getting-started"></a>入门
 
@@ -338,15 +338,15 @@ WCF 发现是一种框架技术，可让你将发现机制纳入应用程序基�
 
     1. 使用默认配置文件。
 
-    2. 打开事件查看器并在以下节点中启用分析通道：**事件查看器**、**应用程序和服务日志**、 **Microsoft**、 **Windows**、**应用程序服务器应用程序**。 右键单击 "**分析**"，然后选择 "**启用日志**"。
+    2. 打开事件查看器并在以下节点中启用分析通道： **事件查看器**、 **应用程序和服务日志**、 **Microsoft**、 **Windows**、 **应用程序服务器应用程序**。 右键单击 " **分析** "，然后选择 " **启用日志**"。
 
     3. 运行工作流服务。
 
     4. 在事件查看器中观察工作流跟踪事件。
 
-3. 示例：[跟踪](./samples/tracking.md)
+3. 示例： [跟踪](./samples/tracking.md)
 
-4. 概念文档：[工作流跟踪和跟踪](workflow-tracking-and-tracing.md)
+4. 概念文档： [工作流跟踪和跟踪](workflow-tracking-and-tracing.md)
 
 ## <a name="sql-workflow-instance-store"></a>SQL 工作流实例存储
 
@@ -356,6 +356,6 @@ WCF 发现是一种框架技术，可让你将发现机制纳入应用程序基�
 
 1. 在 Visual Studio 2012 中，创建包含隐式或显式活动的工作流 <xref:System.Activities.Statements.Persist> 。 将 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> 行为添加到工作流服务主机。 这可以在代码或应用程序配置文件中完成。
 
-2. 示例：[持久性](/previous-versions/dotnet/netframework-4.0/dd699769(v%3dvs.100))
+2. 示例： [持久性](/previous-versions/dotnet/netframework-4.0/dd699769(v%3dvs.100))
 
 3. 概念文档： [SQL 工作流实例存储区](sql-workflow-instance-store.md)。

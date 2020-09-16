@@ -16,12 +16,12 @@ helpviewer_keywords:
 - user authentication, code access security
 - code access security
 ms.assetid: 859af632-c80d-4736-8d6f-1e01b09ce127
-ms.openlocfilehash: 49d55ffde3dcb88720f47af6f9702013d8a7f1ee
-ms.sourcegitcommit: c37e8d4642fef647ebab0e1c618ecc29ddfe2a0f
+ms.openlocfilehash: b5c32afb26c7b4bf7f8585c43ac11e57ebb5d015
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/06/2020
-ms.locfileid: "87855863"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554861"
 ---
 # <a name="code-access-security"></a>代码访问安全性
 
@@ -34,9 +34,9 @@ ms.locfileid: "87855863"
  .NET Framework 提供了一种安全机制，称为代码访问安全性。该机制可帮助保护计算机系统免受恶意移动代码的侵害，允许来自未知源的代码在实施保护的情况下运行，并帮助防止受信任的代码免受有意或无意安全性折损影响。 代码访问安全性使代码可以根据它所来自的位置以及代码标识的其他方面，获得不同等级的受信度。 代码访问安全性还对代码强制实施不同的信任级别，从而最大程度地减少必须完全可信方能运行的代码数量。 使用代码访问安全性可以降低恶意或有错代码滥用代码的可能性。 它可以减少责任，因为你可以指定允许代码执行的操作。 代码访问安全性还可以最大程度地减少代码安全漏洞所产生的损害。  
   
 > [!NOTE]
-> 已对 .NET Framework 4 中的代码访问安全性进行了重大更改。 最值得注意的更改是[安全透明](security-transparent-code.md)的，但也有其他重大更改会影响代码访问安全性。 有关这些更改的信息，请参阅[安全更改](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)。  
+> 已对 .NET Framework 4 中的代码访问安全性进行了重大更改。 最值得注意的更改是 [安全透明](security-transparent-code.md)的，但也有其他重大更改会影响代码访问安全性。 有关这些更改的信息，请参阅 [安全更改](/previous-versions/dotnet/framework/security/security-changes)。  
   
- 代码访问安全性主要影响库代码和部分受信任的应用程序。 库开发人员必须防止部分受信任的应用程序在未经授权的情况下访问其代码。 部分受信任的应用程序是从外部源（如 Internet）中加载的应用程序。 台式机或本地局域网中安装的应用程序完全受信任并可运行。 完全信任的应用程序不受代码访问安全性的影响，除非它们被标记为[安全透明](security-transparent-code.md)，因为这些应用程序完全受信任。 完全受信任应用程序的唯一限制是，标记有 <xref:System.Security.SecurityTransparentAttribute> 特性的应用程序无法调用标记有 <xref:System.Security.SecurityCriticalAttribute> 特性的代码。 部分受信任的应用程序必须在沙盒（如 Internet Explorer）中运行，以确保应用代码访问安全性。 如果从 Internet 下载应用程序并尝试从桌面上运行该应用程序，将收到一 <xref:System.NotSupportedException> 条消息： "尝试从网络位置加载程序集，这会导致在以前版本的 .NET Framework 中对程序集进行沙盒处理。 此版本的 .NET Framework 默认不启用 CAS 策略，因此加载可能存在危险。” 如果你确定该应用程序可以信任，则可以通过使用[ \<loadFromRemoteSources> 元素](../configure-apps/file-schema/runtime/loadfromremotesources-element.md)使其运行为完全信任。 有关在沙盒中运行应用程序的信息，请参阅[如何：在沙盒中运行部分受信任的代码](how-to-run-partially-trusted-code-in-a-sandbox.md)。  
+ 代码访问安全性主要影响库代码和部分受信任的应用程序。 库开发人员必须防止部分受信任的应用程序在未经授权的情况下访问其代码。 部分受信任的应用程序是从外部源（如 Internet）中加载的应用程序。 台式机或本地局域网中安装的应用程序完全受信任并可运行。 完全信任的应用程序不受代码访问安全性的影响，除非它们被标记为 [安全透明](security-transparent-code.md)，因为这些应用程序完全受信任。 完全受信任应用程序的唯一限制是，标记有 <xref:System.Security.SecurityTransparentAttribute> 特性的应用程序无法调用标记有 <xref:System.Security.SecurityCriticalAttribute> 特性的代码。 部分受信任的应用程序必须在沙盒（如 Internet Explorer）中运行，以确保应用代码访问安全性。 如果从 Internet 下载应用程序并尝试从桌面上运行该应用程序，将收到一 <xref:System.NotSupportedException> 条消息： "尝试从网络位置加载程序集，这会导致在以前版本的 .NET Framework 中对程序集进行沙盒处理。 此版本的 .NET Framework 默认不启用 CAS 策略，因此加载可能存在危险。” 如果你确定该应用程序可以信任，则可以通过使用[ \<loadFromRemoteSources> 元素](../configure-apps/file-schema/runtime/loadfromremotesources-element.md)使其运行为完全信任。 有关在沙盒中运行应用程序的信息，请参阅 [如何：在沙盒中运行部分受信任的代码](how-to-run-partially-trusted-code-in-a-sandbox.md)。  
   
  面向公共语言运行时的所有托管代码都受益于代码访问安全性，即使该代码不调用单个代码访问安全性。 有关详细信息，请参阅 [Code Access Security Basics](code-access-security-basics.md)。  
   

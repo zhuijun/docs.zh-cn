@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 370c16d5-db7b-43e3-945b-ccaab35b739b
-ms.openlocfilehash: 7b1f0a6c416f660f06cea099197ba136f84407f9
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0d62c8d3c4669673d26f2d5535d7940fce702f66
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286192"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547442"
 ---
 # <a name="table-valued-parameters"></a>表值参数
 表值参数提供了一将多行数据从客户端应用程序封送到 SQL Server 的种简单方法，而无需进行多次往返或特殊的服务器端逻辑来处理数据。 可使用表值参数来封装客户端应用程序中的数据行，并以单个参数化命令将数据发送到服务器。 传入数据行存储在随后可使用 Transact-SQL 进行操作的表变量中。  
@@ -26,7 +26,7 @@ ms.locfileid: "84286192"
 |资源|说明|  
 |--------------|-----------------|  
 |[使用表值参数（数据库引擎）](/sql/relational-databases/tables/use-table-valued-parameters-database-engine)|介绍如何创建和使用表值参数。|  
-|[User-Defined Table Types](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/bb522526(v=sql.100))|说明用于声明表值参数的用户定义的表类型。|  
+|[User-Defined Table Types](/previous-versions/sql/sql-server-2008/bb522526(v=sql.100))|说明用于声明表值参数的用户定义的表类型。|  
   
 ## <a name="passing-multiple-rows-in-previous-versions-of-sql-server"></a>在 SQL Server 的早期版本中传递多行  
  在 SQL Server 2008 中引入表值参数之前，用于将多行数据传递到存储过程或参数化 SQL 命令的选项受到限制。 开发人员可以选择下面的一种方法，将多行传递到服务器：  
@@ -40,7 +40,7 @@ ms.locfileid: "84286192"
 - 使用 `bcp` 实用工具或 <xref:System.Data.SqlClient.SqlBulkCopy> 对象将多行数据加载到表中。 尽管这种技术非常高效，但它不支持服务器端处理，除非将数据加载到临时表或表变量中。  
   
 ## <a name="creating-table-valued-parameter-types"></a>创建表值参数类型  
- 表值参数基于使用 Transact-sql CREATE TYPE 语句定义的强类型表结构。 必须先在 SQL Server 中创建一个表类型并定义结构，才能在客户端应用程序中使用表值参数。 有关创建表类型的详细信息，请参阅[用户定义的表类型](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/bb522526(v=sql.100))。  
+ 表值参数基于使用 Transact-sql CREATE TYPE 语句定义的强类型表结构。 必须先在 SQL Server 中创建一个表类型并定义结构，才能在客户端应用程序中使用表值参数。 有关创建表类型的详细信息，请参阅 [用户定义的表类型](/previous-versions/sql/sql-server-2008/bb522526(v=sql.100))。  
   
  以下语句创建一个名为 CategoryTableType 的表类型，其中包含 CategoryID 列和 CategoryName 列：  
   
@@ -129,7 +129,7 @@ Dim tvpParam As SqlParameter = _
 tvpParam.SqlDbType = SqlDbType.Structured  
 ```  
   
-## <a name="passing-a-table-valued-parameter-to-a-stored-procedure"></a><a name="passing"></a>将表值参数传递给存储过程  
+## <a name="passing-a-table-valued-parameter-to-a-stored-procedure"></a><a name="passing"></a> 将表值参数传递给存储过程  
  此示例演示如何将表值参数数据传递到存储过程。 代码使用 <xref:System.Data.DataTable> 方法将添加的行提取到新的 <xref:System.Data.DataTable.GetChanges%2A> 中。 然后，该代码定义一个 <xref:System.Data.SqlClient.SqlCommand>，并将 <xref:System.Data.SqlClient.SqlCommand.CommandType%2A> 属性设置为 <xref:System.Data.CommandType.StoredProcedure>。 使用 <xref:System.Data.SqlClient.SqlParameter> 方法填充 <xref:System.Data.SqlClient.SqlParameterCollection.AddWithValue%2A>，并将 <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> 设置为 `Structured`。 然后，使用 <xref:System.Data.SqlClient.SqlCommand> 方法执行 <xref:System.Data.SqlClient.SqlCommand.ExecuteNonQuery%2A>。  
   
 ```csharp  
@@ -273,7 +273,7 @@ tvpParam.SqlDbType = SqlDbType.Structured
 insertCommand.ExecuteNonQuery()  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [配置参数和参数数据类型](../configuring-parameters-and-parameter-data-types.md)
 - [命令和参数](../commands-and-parameters.md)

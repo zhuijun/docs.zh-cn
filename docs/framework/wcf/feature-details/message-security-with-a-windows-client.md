@@ -5,26 +5,26 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 01e7d0b8-10f9-45c3-a4c5-53d44dc61eb8
-ms.openlocfilehash: dcb311523c6ec41b62f6e69fe6bc7635b9d49708
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c87583bec908c3465dedf7c542e30ce264cd7b47
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595227"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553774"
 ---
 # <a name="message-security-with-a-windows-client"></a>Windows 客户端的消息安全
-此方案显示 Windows Communication Foundation （WCF）客户端和由消息安全模式保护的服务器。 客户端和服务使用 Windows 凭据进行身份验证。  
+此方案显示 Windows Communication Foundation (WCF) 客户端和服务器安全模式保护的服务器。 客户端和服务使用 Windows 凭据进行身份验证。  
   
  ![Windows 客户端的消息安全性](media/1c8618d4-0005-4022-beb6-32fd087a8c3c.gif "1c8618d4-0005-4022-beb6-32fd087a8c3c")  
   
-|特征|描述|  
+|特征|说明|  
 |--------------------|-----------------|  
 |安全模式|Message|  
 |互操作性|仅 WCF|  
 |身份验证（服务器）|服务器和客户端的相互身份验证|  
 |身份验证（客户端）|服务器和客户端的相互身份验证|  
 |完整性|是，使用共享安全上下文|  
-|机密性|是，使用共享安全上下文|  
+|保密性|是，使用共享安全上下文|  
 |Transport|NET.TCP|  
 |绑定|<xref:System.ServiceModel.NetTcpBinding>|  
   
@@ -116,7 +116,7 @@ ms.locfileid: "84595227"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

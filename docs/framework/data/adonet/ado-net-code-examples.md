@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c119657a-9ce6-4940-91e4-ac1d5f0d9584
-ms.openlocfilehash: 54df0e253716c970cf23446434d96b104b8e9b03
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9d12c7c7dcbc3a24cf51ade5481f59715c4c4d88
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287163"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555102"
 ---
 # <a name="adonet-code-examples"></a>ADO.NET 代码示例
 
@@ -19,13 +19,13 @@ ms.locfileid: "84287163"
 
 - ADO.NET 数据提供程序：
 
-  - [SqlClient](#sqlclient) （ `System.Data.SqlClient` ）
+  - [SqlClient](#sqlclient) (`System.Data.SqlClient`) 
 
-  - [OleDb](#oledb) （ `System.Data.OleDb` ）
+  - [OleDb](#oledb) (`System.Data.OleDb`) 
 
-  - [Odbc](#odbc) （ `System.Data.Odbc` ）
+  - [Odbc](#odbc) (`System.Data.Odbc`) 
 
-  - [System.data.oracleclient](#oracleclient) （ `System.Data.OracleClient` ）
+  - [System.data.oracleclient](#oracleclient) (`System.Data.OracleClient`) 
 
 - ADO.NET 实体框架：
 
@@ -33,12 +33,12 @@ ms.locfileid: "84287163"
 
   - [类型化 ObjectQuery](#typed-objectquery)
 
-  - [EntityClient](#entityclient) （ `System.Data.EntityClient` ）
+  - [EntityClient](#entityclient) (`System.Data.EntityClient`) 
 
 - [LINQ to SQL](#linq-to-sql)
 
 ## <a name="adonet-data-provider-examples"></a>ADO.NET 数据提供程序示例
-以下代码列表演示如何使用 ADO.NET 数据提供程序从数据库中检索数据。 数据在一个 `DataReader` 中返回。 有关详细信息，请参阅[使用 DataReader 检索数据](retrieving-data-using-a-datareader.md)。
+以下代码列表演示如何使用 ADO.NET 数据提供程序从数据库中检索数据。 数据在一个 `DataReader` 中返回。 有关详细信息，请参阅 [使用 DataReader 检索数据](retrieving-data-using-a-datareader.md)。
 
 ### <a name="sqlclient"></a>SqlClient
 本示例中的代码假定您可以连接到 `Northwind` Microsoft SQL Server 上的示例数据库。 在此情形 5 中，示例代码创建一个 <xref:System.Data.SqlClient.SqlCommand> 以从 Products 表中选择行，并添加 <xref:System.Data.SqlClient.SqlParameter> 来将结果限制为其 UnitPrice 大于指定参数值的行。 在 <xref:System.Data.SqlClient.SqlConnection> 块中打开 `using` ，这可确保在代码退出时关闭并释放资源。 示例代码使用 <xref:System.Data.SqlClient.SqlDataReader> 执行命令，并在控制台窗口中显示结果。
@@ -65,10 +65,10 @@ ms.locfileid: "84287163"
  [!code-vb[DataWorks SampleApp.Oracle#1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DataWorks SampleApp.Oracle/VB/source.vb#1)]
 
 ## <a name="entity-framework-examples"></a>实体框架示例
-以下代码列表演示如何通过查询实体数据模型 (EDM) 中的实体来从数据源检索数据。 这些示例使用基于 Northwind 示例数据库的模型。 有关实体框架的详细信息，请参阅[实体框架概述](./ef/overview.md)。
+以下代码列表演示如何通过查询实体数据模型 (EDM) 中的实体来从数据源检索数据。 这些示例使用基于 Northwind 示例数据库的模型。 有关实体框架的详细信息，请参阅 [实体框架概述](./ef/overview.md)。
 
 ### <a name="linq-to-entities"></a>LINQ to Entities
-此示例中的代码使用 LINQ 查询以 Categories 对象的形式返回数据，这些对象将作为仅包含 CategoryID 和 CategoryName 属性的匿名类型提取。 有关详细信息，请参阅[LINQ to Entities 概述](./ef/language-reference/linq-to-entities.md)。
+此示例中的代码使用 LINQ 查询以 Categories 对象的形式返回数据，这些对象将作为仅包含 CategoryID 和 CategoryName 属性的匿名类型提取。 有关详细信息，请参阅 [LINQ to Entities 概述](./ef/language-reference/linq-to-entities.md)。
 
 ```csharp
 using System;
@@ -138,7 +138,7 @@ End Class
 ```
 
 ### <a name="typed-objectquery"></a>类型化 ObjectQuery
-此示例中的代码使用 <xref:System.Data.Objects.ObjectQuery%601> 以 Categories 对象的形式返回数据。 有关详细信息，请参阅[对象查询](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896241(v=vs.100))。
+此示例中的代码使用 <xref:System.Data.Objects.ObjectQuery%601> 以 Categories 对象的形式返回数据。 有关详细信息，请参阅 [对象查询](/previous-versions/dotnet/netframework-4.0/bb896241(v=vs.100))。
 
 ```csharp
 using System;
@@ -341,10 +341,10 @@ Class LinqSqlSample
 End Class
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [ADO.NET 概述](ado-net-overview.md)
 - [在 ADO.NET 中检索和修改数据](retrieving-and-modifying-data.md)
-- [创建数据应用程序](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/h0y4a0f6(v=vs.120))
-- [查询实体数据模型（实体框架任务）](https://docs.microsoft.com/previous-versions/bb738455(v=vs.90))
-- [如何：执行返回匿名类型对象的查询](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb738512(v=vs.100))
+- [创建数据应用程序](/previous-versions/visualstudio/visual-studio-2013/h0y4a0f6(v=vs.120))
+- [查询实体数据模型（实体框架任务）](/previous-versions/bb738455(v=vs.90))
+- [如何：执行返回匿名类型对象的查询](/previous-versions/dotnet/netframework-4.0/bb738512(v=vs.100))

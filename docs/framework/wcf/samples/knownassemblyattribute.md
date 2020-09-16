@@ -2,12 +2,12 @@
 title: KnownAssemblyAttribute
 ms.date: 03/30/2017
 ms.assetid: b3bc7f31-95ff-46e1-8308-d206ec426f6e
-ms.openlocfilehash: 3aacc7c73167771a632bb31164f2c551d60ce8f0
-ms.sourcegitcommit: 59e36e65ac81cdd094a5a84617625b2a0ff3506e
+ms.openlocfilehash: 12f28f44b408dde1ea04d6b84e663206cb4437df
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/27/2020
-ms.locfileid: "80345239"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555401"
 ---
 # <a name="knownassemblyattribute"></a>KnownAssemblyAttribute
 此示例演示如何使用 <xref:System.Runtime.Serialization.DataContractResolver> 类来自定义序列化和反序列化过程。 此示例演示如何在序列化和反序列化过程中动态添加已知类型。  
@@ -346,27 +346,27 @@ Lists combined:
   
 #### <a name="to-set-up-run-and-build-the-sample"></a>设置、运行和生成示例  
   
-1. 右键单击"**已知程序集属性"** 并选择**属性**。  
+1. 右键单击解决方案 **KnownAssemblyAttribute** ，然后选择 " **属性**"。  
   
-2. 在 **"通用属性**"中，选择**启动项目**，然后单击**多个启动项目**。  
+2. 在 " **通用属性**" 中，选择 " **启动项目**"，然后单击 " **多个启动项目**"。  
   
-3. 将 **"开始"** 操作添加到**服务和****客户端**项目。  
+3. 将 " **启动** " 操作添加到 **服务** 和 **客户端** 项目。  
   
-4. 单击 **"确定**"，然后按**F5**以运行示例。  
+4. 单击 **"确定"**，然后按 **F5** 运行示例。  
   
 5. 如果应用程序未正确运行，请按照以下步骤确保已正确设置了您的环境：  
   
-6. 确保已为 Windows[通信基础示例执行一次性设置过程](https://docs.microsoft.com/dotnet/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples)。  
+6. 确保已对 [Windows Communication Foundation 示例执行了一次性设置过程](./one-time-setup-procedure-for-the-wcf-samples.md)。  
   
-7. 要生成解决方案，请按照生成 Windows[通信基础示例](https://docs.microsoft.com/dotnet/framework/wcf/samples/building-the-samples)中的说明进行操作。  
+7. 若要生成解决方案，请按照 [生成 Windows Communication Foundation 示例](./building-the-samples.md)中的说明进行操作。  
   
-8. 要在单机或跨计算机配置中运行示例，请按照[运行 Windows 通信基础示例中的](https://docs.microsoft.com/dotnet/framework/wcf/samples/running-the-samples)说明操作。  
+8. 若要以单机配置或跨计算机配置来运行示例，请按照 [运行 Windows Communication Foundation 示例](./running-the-samples.md)中的说明进行操作。  
   
 > [!IMPORTANT]
 > 您的计算机上可能已安装这些示例。 在继续操作之前，请先检查以下（默认）目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请转到[Windows 通信基础 （WCF） 和 Windows 工作流基础 （WF） 示例 .NET 框架 4](https://www.microsoft.com/download/details.aspx?id=21459)以下载[!INCLUDE[wf1](../../../../includes/wf1-md.md)]所有 Windows 通信基础 （WCF） 和示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[Windows Communication Foundation (wcf) ，并 Windows Workflow Foundation (的 WF](https://www.microsoft.com/download/details.aspx?id=21459)) .NET Framework Windows Communication Foundation ([!INCLUDE[wf1](../../../../includes/wf1-md.md)] 此示例位于以下目录：  
 >
-> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownAssemblyAttribute`  
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownAssemblyAttribute`

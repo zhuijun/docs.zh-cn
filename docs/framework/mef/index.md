@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Managed Extensibility Framework, overview
 - MEF, overview
 ms.assetid: 6c61b4ec-c6df-4651-80f1-4854f8b14dde
-ms.openlocfilehash: 00ed48f2202d4c04039ac264b1fe71474a02432e
-ms.sourcegitcommit: 97ce5363efa88179dd76e09de0103a500ca9b659
+ms.openlocfilehash: b743a26dd401e7015c588be2a197551aa891a687
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/13/2020
-ms.locfileid: "86281246"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555570"
 ---
 # <a name="managed-extensibility-framework-mef"></a>Managed Extensibility Framework (MEF)
 
@@ -62,7 +62,7 @@ MEF 是 .NET Framework 4 的组成部分，适用于所有使用 .NET Framework 
 
 查看 MEF 能做什么最简单的方法就是构建一个简单的 MEF 应用程序。 在此示例中，你构建了一个叫作简单计算器的非常简单的计算器。 简单计算器旨在创建一个接受形式为“5+3”或“6-2”的基础运算命令然后返回正确答案的控制台应用程序。 使用 MEF，能够添加新的操作人员而无须更改应用程序代码。
 
-要下载此示例的完整代码，请参阅 [SimpleCalculator 示例 (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/simple-calculator-vb/)。
+要下载此示例的完整代码，请参阅 [SimpleCalculator 示例 (Visual Basic)](/samples/dotnet/samples/simple-calculator-vb/)。
 
 > [!NOTE]
 > 简单计算器旨在演示 MEF 的概念和语法而非必须为其使用提供现实情况。 许多将从 MEF 的功能受益最大的应用程序比简单计算器更加复杂。 有关更多扩展性示例，请参阅 GitHub 上的 [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef)。
@@ -484,6 +484,6 @@ public class Mod : SimpleCalculator.IOperation
 
 ## <a name="next-steps"></a>后续步骤
 
-要下载此示例的完整代码，请参阅 [SimpleCalculator 示例 (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/simple-calculator-vb/)。
+要下载此示例的完整代码，请参阅 [SimpleCalculator 示例 (Visual Basic)](/samples/dotnet/samples/simple-calculator-vb/)。
 
  有关详细信息和代码示例，请参阅 [Managed Extensibility Framework](https://github.com/MicrosoftArchive/mef)。 有关 MEF 类型的列表，请参阅 <xref:System.ComponentModel.Composition?displayProperty=nameWithType> 命名空间。

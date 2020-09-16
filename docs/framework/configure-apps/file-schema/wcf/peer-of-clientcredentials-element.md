@@ -1,15 +1,15 @@
 ---
-title: <peer>of <clientCredentials> 元素
+title: <peer> of <clientCredentials> 元素
 ms.date: 03/30/2017
 ms.assetid: 505bd987-0042-4622-b68e-94f439729d53
-ms.openlocfilehash: dce7ef64de1e3eb248e3553c97cbce8e9b205b4c
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a8144ca7bad5654bf8f77259ea1717442665fc81
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400101"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555453"
 ---
-# <a name="peer-of-clientcredentials-element"></a>\<peer>of \<clientCredentials> 元素
+# <a name="peer-of-clientcredentials-element"></a>\<peer> of \<clientCredentials> 元素
 指定在向对等客户端进行身份验证时使用的凭据。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -50,10 +50,10 @@ ms.locfileid: "70400101"
 |-------------|-----------------|  
 |[\<clientCredentials>](clientcredentials.md)|指定用于向服务验证客户端身份的凭据。|  
   
-## <a name="remarks"></a>注解  
- 此配置元素指定对等节点用于向网格中的其他节点证明它自己的身份的凭据，以及对等节点用于验证其他对等节点的身份的身份验证设置。 有关详细信息，请参阅[对等通道消息身份验证](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))和[保护对等通道应用程序](../../../wcf/feature-details/securing-peer-channel-applications.md)。  
+## <a name="remarks"></a>备注  
+ 此配置元素指定对等节点用于向网格中的其他节点证明它自己的身份的凭据，以及对等节点用于验证其他对等节点的身份的身份验证设置。 有关详细信息，请参阅 [对等通道消息身份验证](/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90)) 和 [保护对等通道应用程序](../../../wcf/feature-details/securing-peer-channel-applications.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
 - <xref:System.ServiceModel.Description.ClientCredentials>
@@ -64,7 +64,7 @@ ms.locfileid: "70400101"
 - <xref:System.ServiceModel.Security.PeerCredential>
 - [对等网络](../../../wcf/feature-details/peer-to-peer-networking.md)
 - [保证客户端的安全](../../../wcf/securing-clients.md)
-- [对等通道消息身份验证](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
-- [对等通道自定义身份验证](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
+- [对等通道消息身份验证](/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
+- [对等通道自定义身份验证](/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
 - [保护对等通道应用程序](../../../wcf/feature-details/securing-peer-channel-applications.md)
 - [保护服务和客户端的安全](../../../wcf/feature-details/securing-services-and-clients.md)

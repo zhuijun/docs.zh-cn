@@ -2,12 +2,12 @@
 title: 不能删除系统事件日志
 ms.date: 07/20/2015
 ms.assetid: 26ca8819-4ce5-49c6-98f3-27fe9e2e8e3d
-ms.openlocfilehash: 72f648751107db90449a085e1a49892927fcd29b
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: e00527300a77f6bc006555ee688e055e1a351056
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64620482"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554952"
 ---
 # <a name="system-event-log-cannot-be-deleted"></a>不能删除系统事件日志
 试图删除系统事件日志（该日志是不能被删除的）。 系统日志跟踪系统事件（如系统启动和硬件故障）。  
@@ -20,5 +20,5 @@ ms.locfileid: "64620482"
   
 ## <a name="see-also"></a>请参阅
 
-- [管理事件日志](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/4f69axw4(v=vs.90))
-- [如何：创建和删除自定义事件日志](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/49dwckkz(v=vs.90))
+- [管理事件日志](/previous-versions/visualstudio/visual-studio-2008/4f69axw4(v=vs.90))
+- [如何：创建和移除自定义事件日志](/previous-versions/visualstudio/visual-studio-2008/49dwckkz(v=vs.90))

@@ -2,12 +2,12 @@
 title: 操作指南（C# 指南）
 description: 快速提示及重点短代码示例集合
 ms.date: 12/20/2017
-ms.openlocfilehash: 9dd069ff767d65002b78c18b398b700a1f26ebfa
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 26d3931ff3b4ecfcc052c3ace25a09801f84c505
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465151"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537400"
 ---
 # <a name="how-to-c"></a>操作指南 (C#)
 
@@ -106,23 +106,23 @@ ms.locfileid: "89465151"
 - [在查询中使用 Lambda 表达式](../programming-guide/statements-expressions-operators/how-to-use-lambda-expressions-in-a-query.md)。
 - [在查询表达式中使用 `var`](../programming-guide/classes-and-structs/how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)。
 - [从查询返回元素属性的子集](../programming-guide/classes-and-structs/how-to-return-subsets-of-element-properties-in-a-query.md)。
-- [编写使用复杂筛选的查询](../programming-guide/concepts/linq/how-to-write-queries-with-complex-filtering.md)。
-- [对数据源的元素排序](../programming-guide/concepts/linq/how-to-sort-elements.md)。
-- [对多个键上的元素排序](../programming-guide/concepts/linq/how-to-sort-elements-on-multiple-keys.md)。
-- [控制投影的类型](../programming-guide/concepts/linq/how-to-control-the-type-of-a-projection.md)。
+- [编写使用复杂筛选的查询](../../standard/linq/write-queries-complex-filtering.md)。
+- [对数据源的元素排序](../../standard/linq/sort-elements.md)。
+- [对多个键上的元素排序](../../standard/linq/sort-elements-multiple-keys.md)。
+- [控制投影的类型](../../standard/linq/control-type-projection.md)。
 - [对某个值在源序列中出现的次数进行计数](../programming-guide/concepts/linq/how-to-count-occurrences-of-a-word-in-a-string-linq.md)。
-- [计算中间值](../programming-guide/concepts/linq/how-to-calculate-intermediate-values.md)。
+- [计算中间值](../../standard/linq/calculate-intermediate-values.md)。
 - [合并来自多个源的数据](../programming-guide/concepts/linq/how-to-populate-object-collections-from-multiple-sources-linq.md)。
 - [查找两个序列之间的差集](../programming-guide/concepts/linq/how-to-find-the-set-difference-between-two-lists-linq.md)。
-- [调试空查询结果](../programming-guide/concepts/linq/how-to-debug-empty-query-results-sets.md)。
+- [调试空查询结果](../../standard/linq/debug-empty-query-results-sets.md)。
 - [向 LINQ 查询添加自定义方法](../programming-guide/concepts/linq/how-to-add-custom-methods-for-linq-queries.md)。
 
 ## <a name="multiple-threads-and-async-processing"></a>多线程和异步处理
 
 新式程序常使用异步操作。 这些文章可帮助你了解如何使用这些方法。
 
-- [使用 `System.Threading.Tasks.Task.WhenAll` 提高异步性能](../programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)。
-- [使用 `async` 和 `await` 并行发出多个 Web 请求](../programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)。
+- [使用 `System.Threading.Tasks.Task.WhenAll` 提高异步性能](../programming-guide/concepts/async/index.md)。
+- [使用 `async` 和 `await` 并行发出多个 Web 请求](../programming-guide/concepts/async/index.md)。
 - [使用线程池](../../standard/threading/the-managed-thread-pool.md#using-the-thread-pool)。
 
 ## <a name="command-line-args-to-your-program"></a>程序的命令行参数
