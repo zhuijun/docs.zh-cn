@@ -201,7 +201,7 @@ docker-compose -f docker-compose-test.yml -f docker-compose-test.override.yml up
 - eShopOnContainers 上的单元和集成测试 \
     <https://github.com/dotnet-architecture/eShopOnContainers/wiki/Unit-and-integration-testing>
 
-- eShopOnContainers \ 上的负载测试
+- eShopOnContainers  上的负载测试 \
     <https://github.com/dotnet-architecture/eShopOnContainers/wiki/Load-testing>
 
 > [!div class="step-by-step"]
