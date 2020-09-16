@@ -15,12 +15,12 @@ helpviewer_keywords:
 - x:Single [XAML Services]
 - x:Int32 [XAML Services]
 ms.assetid: 11de2f08-5b95-4989-b5ec-5178eb968184
-ms.openlocfilehash: 3bd486ee66c5f9a32621416638bb7575025f7dee
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ec0e2a29a191d5057ce66a5f3272d00e92b01bd7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "81433054"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540024"
 ---
 # <a name="built-in-types-for-common-xaml-language-primitives"></a>常见 XAML 语言基元的内置类型
 
@@ -54,27 +54,27 @@ xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
 对于 CLR 支持， `x:Boolean` 基元对应于 <xref:System.Boolean>。
 
-XAML 分析 `x:Boolean` 的值时不区分大小写。 请注意， `x:Bool` 不是可接受的备选基元。 有关 XAML 语言规范定义，请参阅[\[\] MS-XAML 第 5.2.17 节和 5.4.11](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))节 。
+XAML 分析 `x:Boolean` 的值时不区分大小写。 请注意， `x:Bool` 不是可接受的备选基元。 有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.17 和第5.4.11 节的 MS xaml 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xchar"></a>x:Char
 
 对于 CLR 支持， `x:Char` 基元对应于 <xref:System.Char>。
 
-String 和 char 类型在 XML 级别与文件的整个编码进行交互。 有关 XAML 语言规范定义，请参阅[\[\] MS-XAML 第 5.2.7 节和 5.4.1](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))节 。
+String 和 char 类型在 XML 级别与文件的整个编码进行交互。 有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.7 和5.4.1 的 MS xaml 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xstring"></a>x:String
 
 对于 CLR 支持， `x:String` 基元对应于 <xref:System.String>。
 
-String 和 char 类型在 XML 级别与文件的整个编码进行交互。 有关 XAML 语言规范定义，请参阅[\[MS-XAML\]第 5.2.6 节](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))。
+String 和 char 类型在 XML 级别与文件的整个编码进行交互。 有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.6 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xdecimal"></a>x:Decimal
 
 对于 CLR 支持， `x:Decimal` 基元对应于 <xref:System.Decimal>。
 
-XAML 解析本质上是在区域性下`en-US`完成的。 在 `en-US` 区域性设置下，小数部分的正确分隔符始终为句点 (`.`)，而与开发环境的区域性设置或在运行时加载 XAML 的最终客户端目标的区域性设置无关。
+XAML 分析本质上在区域性下完成 `en-US` 。 在 `en-US` 区域性设置下，小数部分的正确分隔符始终为句点 (`.`)，而与开发环境的区域性设置或在运行时加载 XAML 的最终客户端目标的区域性设置无关。
 
-有关 XAML 语言规范定义，请参阅[\[\] MS-XAML 第 5.2.14 节和 5.4.8](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))节 。
+有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.14 和第5.4.8 节的 MS xaml 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xsingle"></a>x:Single
 
@@ -84,7 +84,7 @@ XAML 解析本质上是在区域性下`en-US`完成的。 在 `en-US` 区域性�
 
 `x:Single` 支持采用科学记数法格式的值，条件是文本语法中的第一个字符为 `e` 或 `E`。
 
-有关 XAML 语言规范定义，请参阅[\[\] MS-XAML 第 5.2.8 节和 5.4.2](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))节 。
+有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.8 和5.4.2 的 MS xaml 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xdouble"></a>x:Double
 
@@ -94,33 +94,33 @@ XAML 解析本质上是在区域性下`en-US`完成的。 在 `en-US` 区域性�
 
 `x:Double` 支持采用科学记数法格式的值。 使用字符 `e` 或 `E` 可引入指数部分。
 
-有关 XAML 语言规范定义，请参阅[\[\] MS-XAML 第 5.2.9 节和 5.4.3](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))节 。
+有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.9 和5.4.3 的 MS xaml 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xint16"></a>x:Int16
 
 对于 CLR 支持， `x:Int16` 基元对应于 <xref:System.Int16> ，并且 `x:Int16` 被视为带符号。 在 XAML 中，文本语法中没有加号 (`+`) 表示是一个带符号的正值。
 
-有关 XAML 语言规范定义，请参阅[\[\] MS-XAML 第 5.2.11 节和 5.4.5](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))节 。
+有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.11 和第5.4.5 节的 MS xaml 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xint32"></a>x:Int32
 
 对于 CLR 支持， `x:Int32` 基元对应于 <xref:System.Int32>。 `x:Int32` 被视为带符号。 在 XAML 中，文本语法中没有加号 (`+`) 表示是一个带符号的正值。
 
-有关 XAML 语言规范定义，请参阅[\[\] MS-XAML 第 5.2.12 节和 5.4.6](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))节 。
+有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.12 和第5.4.6 节的 MS xaml 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xint64"></a>x:Int64
 
 对于 CLR 支持， `x:Int64` 基元对应于 <xref:System.Int64>。 `x:Int64` 被视为带符号。 在 XAML 中，文本语法中没有加号 (`+`) 表示是一个带符号的正值。
 
-有关 XAML 语言规范定义，请参阅[\[\] MS-XAML 第 5.2.13 节和 5.4.7](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))节 。
+有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.13 和第5.4.7 节的 MS xaml 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xtimespan"></a>x:TimeSpan
 
 对于 CLR 支持， `x:TimeSpan` 基元对应于 <xref:System.TimeSpan>。
 
-时间日期格式的 XAML 解析本质上是在区域性下`en-US`完成的。
+时间日期格式的 XAML 分析本质上在区域性下完成 `en-US` 。
 
-有关 XAML 语言规范定义，请参阅[\[\] MS-XAML 第 5.2.16 节和 5.4.10](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))节 。
+有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.16 和第5.4.10 节的 MS xaml 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xuri"></a>x:Uri
 
@@ -128,13 +128,13 @@ XAML 解析本质上是在区域性下`en-US`完成的。 在 `en-US` 区域性�
 
 检查协议不是 `x:Uri`的 XAML 定义的一部分。
 
-有关 XAML 语言规范定义，请参阅[\[\] MS-XAML 第 5.2.15 节和 5.4.9](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))节 。
+有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.15 和第5.4.9 节的 MS xaml 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xbyte"></a>x:Byte
 
-对于 CLR 支持， `x:Byte` 基元对应于 <xref:System.Byte>。 <xref:System.Byte>  /  A`x:Byte`被视为未签名。
+对于 CLR 支持， `x:Byte` 基元对应于 <xref:System.Byte>。 <xref:System.Byte>  /  `x:Byte` 被视为无符号。
 
-有关 XAML 语言规范定义，请参阅[\[\] MS-XAML 第 5.2.10 节和 5.4.4](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))节 。
+有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.10 和5.4.4 的 MS xaml 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ### <a name="xarray"></a>x:Array
 
@@ -142,7 +142,7 @@ XAML 解析本质上是在区域性下`en-US`完成的。 在 `en-US` 区域性�
 
 可以在 XAML 2006 中使用标记扩展语法定义一个数组；而 XAML 2009 语法是语言定义的基元，不需要访问标记扩展。 有关 XAML 2006 支持的更多信息，请参阅 [x:Array Markup Extension](xarray-markup-extension.md)。
 
-有关 XAML 语言规范定义，请参阅[\[MS-XAML\]第 5.2.18 节](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))。
+有关 XAML 语言规范的定义，请参阅[ \[ \] 5.2.18 部分](/previous-versions/msp-n-p/ff650760(v=pandp.10))。
 
 ## <a name="wpf-support"></a>WPF 支持
 

@@ -2,12 +2,12 @@
 title: 使用 .NET Native 衡量启动改善
 ms.date: 03/30/2017
 ms.assetid: c4d25b24-9c1a-4b3e-9705-97ba0d6c0289
-ms.openlocfilehash: 41a693f18ffea0e5ce0ca742bc251d147e8e3784
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5d20fa77ee299065ced406bf8cd531b8c54b6c33
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79181002"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540883"
 ---
 # <a name="measuring-startup-improvement-with-net-native"></a>使用 .NET Native 衡量启动改善
 .NET Native 显著改善了应用的启动时间。 这一改善在便携式、低功耗设备上和在使用复杂应用时尤其明显。 该主题将帮助你初步了解衡量这个启动提升所需的基本检测。  
@@ -55,7 +55,7 @@ ms.locfileid: "79181002"
  PerfView 使用 ETW 事件帮助你在设备上进行各种性能研究。 它还包括一个配置 GUI，这允许你打开或关闭事件的不同类型的记录。 PerfView 是一个免费的工具，可从 [Microsoft Download Center](https://www.microsoft.com/download/details.aspx?id=28567) 下载。 有关详细信息，请观看 [PerfView 教程视频](https://channel9.msdn.com/Series/PerfView-Tutorial).  
   
 > [!NOTE]
-> PerfView 无法用于收集 ARM 系统上的事件。 有收集 ARM 系统上的事件，请使用 Windows 性能记录器 (WPR)。 有关详细信息，请参阅 [Vance Morrison 的博客文章](https://docs.microsoft.com/archive/blogs/vancem/collecting-etwperfview-data-on-an-windows-rt-winrt-arm-surface-device)。  
+> PerfView 无法用于收集 ARM 系统上的事件。 有收集 ARM 系统上的事件，请使用 Windows 性能记录器 (WPR)。 有关详细信息，请参阅 [Vance Morrison 的博客文章](/archive/blogs/vancem/collecting-etwperfview-data-on-an-windows-rt-winrt-arm-surface-device)。  
   
  你也可以从命令行调用 PerfView。 如仅要记录来自你的提供程序的事件，请打开“命令提示符”窗口并输入以下命令：  
   
@@ -93,8 +93,8 @@ perfview -KernelEvents:Process -OnlyProviders:*MyCompany-MyApp collect outputFil
   
  选中左窗格中列出的所有事件 (Ctrl-A) 并选择“Enter”键****。 现在你能够查看每个事件的时间戳了。 这些时间戳是从跟踪开始算起的，所以你必须用进程的开始时间减去每个事件的时间，才能确定启动花费的时间。 如果你使用“Ctrl+单击”选中了两个时间戳，你会在页面底部看到在状态栏中显示的他们之间的区别。 这使得要在显示中查看任何两个事件之间的时间间隔变得简单（包括进程开始）。 你可以打开快捷菜单试图并在一些有用的选项中进行选择，比如导出到 CSV 文件或打开 Microsoft Excel 保存或处理这些数据。  
   
- 通过对原始应用和使用 .NET Native 工具链生成的版本重复此过程，可以比较性能差异。   .NET Native 应用通常比 non-.NET 本机应用启动更快。 如果你有兴趣更深入了解，PerfView 也可以识别你的应用代码中花费时间最多的部分。 有关详细信息，请观看 [PerfView 教程](https://channel9.msdn.com/Series/PerfView-Tutorial)或读取 [Vance Morrison 的博客文章](https://docs.microsoft.com/archive/blogs/vancem/publication-of-the-perfview-performance-analysis-tool)。  
+ 通过对原始应用和使用 .NET Native 工具链生成的版本重复此过程，可以比较性能差异。   .NET Native 应用通常比 non-.NET 本机应用启动更快。 如果你有兴趣更深入了解，PerfView 也可以识别你的应用代码中花费时间最多的部分。 有关详细信息，请观看 [PerfView 教程](https://channel9.msdn.com/Series/PerfView-Tutorial)或读取 [Vance Morrison 的博客文章](/archive/blogs/vancem/publication-of-the-perfview-performance-analysis-tool)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Diagnostics.Tracing.EventSource>

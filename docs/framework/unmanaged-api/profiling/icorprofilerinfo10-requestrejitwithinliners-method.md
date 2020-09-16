@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 99b6893854c358720259095bf3c0270cb3676483
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: e3d5a09730cb8e477bd506749017a403acff1696
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77452170"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540551"
 ---
 # <a name="icorprofilerinfo10requestrejitwithinliners-method"></a>ICorProfilerInfo10：： RequestReJITWithInliners 方法
 
@@ -39,30 +39,30 @@ HRESULT RequestReJITWithInliners( [in]                       DWORD       dwRejit
 
 - `cFunctions`
 
-  \[] 要重新编译的函数的数目。
+  \[in] 要重新编译的函数的数目。
 
 - `moduleIds`
 
-  \[中的] 指定用于标识要重新编译的函数的（`module`，`methodDef`）对的 `moduleId` 部分。
+  \[in] 指定 `moduleId` (的部分 `module` ，) 对，用于 `methodDef` 标识要重新编译的函数。
 
 - `methodIds`
 
-  \[中的] 指定用于标识要重新编译的函数的（`module`，`methodDef`）对的 `methodId` 部分。
+  \[in] 指定 `methodId` (的部分 `module` ，) 对，用于 `methodDef` 标识要重新编译的函数。
 
 ## <a name="remarks"></a>备注
 
-[RequestReJIT](icorprofilerinfo4-requestrejit-method.md)不会对内联方法进行任何跟踪。 探查器应阻止内联或跟踪内联，并为所有 inliners 调用 `RequestReJIT`，以确保内联方法的每个实例都已 ReJITted。 这会在附加上出现 ReJIT 问题，因为探查器不会监视内联。 可以调用此方法来保证完整的 inliners 集也会 ReJITted。
+[RequestReJIT](icorprofilerinfo4-requestrejit-method.md) 不会对内联方法进行任何跟踪。 探查器应阻止内联或跟踪内联，并 `RequestReJIT` 为所有 inliners 调用以确保内联方法的每个实例都已 ReJITted。 这会在附加上出现 ReJIT 问题，因为探查器不会监视内联。 可以调用此方法来保证完整的 inliners 集也会 ReJITted。
 
 ## <a name="requirements"></a>要求
 
-**平台：** 请参阅[支持 .Net Core 的操作系统](../../../core/install/dependencies.md?pivots=os-windows)。
+**平台：** 请参阅 [支持 .Net Core 的操作系统](../../../core/install/windows.md?pivots=os-windows)。
 
 **头文件：** CorProf.idl、CorProf.h
 
 **库：** CorGuids.lib
 
-**.Net 版本：** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
+**.Net 版本：**[!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [ICorProfilerInfo10 接口](icorprofilerinfo10-interface.md)

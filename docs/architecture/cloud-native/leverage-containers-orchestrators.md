@@ -2,12 +2,12 @@
 title: 利用容器和协调器
 description: 利用 Azure 中的 Docker 容器和 Kubernetes 协调器
 ms.date: 05/31/2020
-ms.openlocfilehash: 25e981e0fb7957e7180be09a19a406eddfe4e51b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f9e8672b742217388bd719262ffdfee63618fd14
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446862"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540538"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>利用容器和协调器
 
@@ -45,7 +45,7 @@ ms.locfileid: "84446862"
 
 ## <a name="what-are-the-benefits-of-containers-and-orchestrators"></a>容器和协调器的好处是什么？
 
-第1章介绍了容器。 我们重点介绍了云本机计算基础（CNCF）如何将容器化作为其[云本机线索映射](https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png)指南的第一步，使企业开始实现云本机旅程。 在本部分中，我们将介绍容器的优点。
+第1章介绍了容器。 我们重点介绍了云本机计算基础 (CNCF 如何) 排名容器化，这是其 [云本机线索映射](https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png) 指南的第一步，企业始于云原生旅程。 在本部分中，我们将介绍容器的优点。
 
 Docker 是最常用的容器管理平台。 它可与 Linux 或 Windows 上的容器一起使用。 容器提供独立但可重复的应用程序环境，这些环境在任何系统上以相同的方式运行。 这一方面使它们完美地用于开发和托管云本机服务。 容器彼此隔离。 同一主机硬件上的两个容器可以具有不同版本的软件，而不会导致冲突。
 
@@ -70,15 +70,15 @@ Docker 是最常用的容器管理平台。 它可与 Linux 或 Windows 上的�
 
 容器协调器解决这些问题和其他问题。
 
-在云中，Kubernetes 已成为事实容器 orchestrator。 它是由云本机计算基础（CNCF）管理的开源平台。 Kubernetes 自动化了计算机群集上容器化工作负荷的部署、缩放和操作问题。 但是，安装和管理 Kubernetes 非常复杂。
+在云中，Kubernetes 已成为事实容器 orchestrator。 它是由云本机计算基础 (CNCF) 管理的开源平台。 Kubernetes 自动化了计算机群集上容器化工作负荷的部署、缩放和操作问题。 但是，安装和管理 Kubernetes 非常复杂。
 
-更好的方法是使用 Kubernetes 作为云供应商提供的托管服务。 Azure 云的功能是一个完全托管的 Kubernetes 平台，该平台名为[Azure Kubernetes Service （AKS）](https://azure.microsoft.com/services/kubernetes-service/)。 AKS 抽象了管理 Kubernetes 的复杂性和操作开销。 使用 Kubernetes 作为云服务;Microsoft 负责管理和支持它。 AKS 还与其他 Azure 服务和开发工具紧密集成。
+更好的方法是使用 Kubernetes 作为云供应商提供的托管服务。 Azure 云的功能是一个完全托管的 Kubernetes 平台，该平台名为 [Azure Kubernetes Service (AKS) ](https://azure.microsoft.com/services/kubernetes-service/)。 AKS 抽象了管理 Kubernetes 的复杂性和操作开销。 使用 Kubernetes 作为云服务;Microsoft 负责管理和支持它。 AKS 还与其他 Azure 服务和开发工具紧密集成。
 
 AKS 是一种基于群集的技术。 联合虚拟机或节点的池部署到 Azure 云。 它们共同构成了一个高度可用的环境或群集。 群集将作为无缝的单一实体出现到你的云本机应用程序。 在这种情况下，AKS 会按照均匀分布负载的预定义策略，在这些节点上部署容器化服务。
 
 ## <a name="what-are-the-scaling-benefits"></a>缩放的优点是什么？
 
-基于容器构建的服务可以利用 Kubernetes 等业务流程工具提供的缩放权益。 设计容器仅知道自己的情况。 如果有多个需要协同工作的容器，则应将其组织在更高的级别。 组织大量的容器及其共享依赖项（如网络配置）是业务流程工具在其中节省时间的地方！ Kubernetes 在一组容器上创建一个抽象层，然后将它们*组织到 pod*。 Pod 在称为*节点*的辅助角色计算机上运行。 此组织结构称为*群集*。 图3-3 显示了 Kubernetes 群集的不同组件。
+基于容器构建的服务可以利用 Kubernetes 等业务流程工具提供的缩放权益。 设计容器仅知道自己的情况。 如果有多个需要协同工作的容器，则应将其组织在更高的级别。 组织大量的容器及其共享依赖项（如网络配置）是业务流程工具在其中节省时间的地方！ Kubernetes 在一组容器上创建一个抽象层，然后将它们 *组织到 pod*。 Pod 在称为 *节点*的辅助角色计算机上运行。 此组织结构称为 *群集*。 图3-3 显示了 Kubernetes 群集的不同组件。
 
 ![Kubernetes 群集组件。 ](./media/kubernetes-cluster-components.png)
 **图 3-3**。 Kubernetes 群集组件。
@@ -143,7 +143,7 @@ status:
 
 ## <a name="development-resources"></a>开发资源
 
-本部分显示了可帮助你开始使用容器和协调器作为下一个应用程序的开发资源的简短列表。 如果正在寻找有关如何设计云本机微服务体系结构应用的指南，请阅读此书籍的随附 .net[微服务：容器化 .Net 应用程序的体系结构](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)。
+本部分显示了可帮助你开始使用容器和协调器作为下一个应用程序的开发资源的简短列表。 如果正在寻找有关如何设计云本机微服务体系结构应用的指南，请阅读此书籍的随附 .net [微服务：容器化 .Net 应用程序的体系结构](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook)。
 
 ### <a name="local-kubernetes-development"></a>本地 Kubernetes 开发
 
@@ -158,7 +158,7 @@ Kubernetes 部署在生产环境中提供了极大的价值，但也可以在开
 - ConfigMaps 和机密
 - 仪表板
 - 容器运行时： Docker、rkt、CRI 和 containerd
-- 启用容器网络接口（CNI）
+- 启用 (CNI 的容器网络接口) 
 - 流入量
 
 安装 Minikube 后，可以通过运行命令快速开始使用它 `minikube start` ，这会下载映像并启动本地 Kubernetes 群集。 启动群集后，你可以使用标准 Kubernetes 命令与它交互 `kubectl` 。
@@ -183,7 +183,7 @@ Visual Studio 支持基于 web 的应用程序的 Docker 开发。 创建新的 
 
 如果选择此选项，则会 `Dockerfile` 在其根中创建项目，该项目可用于在 Docker 容器中生成和托管应用。 图 3-6 中显示了一个示例 Dockerfile
 
-```docker
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
@@ -214,7 +214,7 @@ ENTRYPOINT ["dotnet", "eShopWeb.dll"]
 
 **图 3-7**。 Visual Studio Docker 运行选项
 
-除了本地开发外， [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/)为多个开发人员提供了一种方便的方法，以便在 Azure 中使用自己的 Kubernetes 配置。 如图3-7 所示，还可以在 Azure Dev Spaces 中运行该应用程序。
+除了本地开发外， [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/) 为多个开发人员提供了一种方便的方法，以便在 Azure 中使用自己的 Kubernetes 配置。 如图3-7 所示，还可以在 Azure Dev Spaces 中运行该应用程序。
 
 此外，随时可以向现有 ASP.NET Core 应用程序添加 Docker 支持。 在 Visual Studio 解决方案资源管理器中，右键单击项目并**添加**  >  **Docker 支持**，如图3-8 所示。
 
@@ -232,7 +232,7 @@ ENTRYPOINT ["dotnet", "eShopWeb.dll"]
 
 有许多可用于支持 Docker 开发的 Visual Studio Code 扩展。
 
-Microsoft[为 Visual Studio Code 扩展提供 Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)。 此扩展简化了向应用程序添加容器支持的过程。 它基架需要的文件，生成 Docker 映像，并使你能够在容器中调试应用程序。 扩展功能是一个可视化资源管理器，可让你轻松地对容器和映像执行操作，如启动、停止、检查、删除等。 扩展还支持 Docker Compose 使你能够将多个正在运行的容器作为一个单元进行管理。
+Microsoft [为 Visual Studio Code 扩展提供 Docker](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)。 此扩展简化了向应用程序添加容器支持的过程。 它基架需要的文件，生成 Docker 映像，并使你能够在容器中调试应用程序。 扩展功能是一个可视化资源管理器，可让你轻松地对容器和映像执行操作，如启动、停止、检查、删除等。 扩展还支持 Docker Compose 使你能够将多个正在运行的容器作为一个单元进行管理。
 
 >[!div class="step-by-step"]
 >[上一页](scale-applications.md)

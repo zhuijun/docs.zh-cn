@@ -10,12 +10,12 @@ helpviewer_keywords:
 - UI Automation, exposing content of tables
 - exposing content of tables using UI Automation
 ms.assetid: ac3c5eaa-49c7-4653-b83e-532e2a2604a2
-ms.openlocfilehash: c6ceb05421547a7e84f612ed6da2bd7002bf095b
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: e32ee52ca17120dbfef6f948711c468dd1d8a021
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87168466"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540805"
 ---
 # <a name="expose-the-content-of-a-table-using-ui-automation"></a>使用 UI 自动化公开表的内容
 > [!NOTE]
@@ -27,7 +27,7 @@ ms.locfileid: "87168466"
  下面的代码示例演示如何获取一个 <xref:System.Windows.Automation.AutomationElement> 表示表格单元格内容的，还可以获得行和列索引、行和列范围等单元格的属性。 此示例使用焦点更改事件处理程序来模拟实现的表格控件的键盘遍历 [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] 。 针对每个表项的信息将在焦点更改事件上公开。  
   
 > [!NOTE]
-> 由于焦点更改是全局桌面事件，因此应筛选表之外的焦点更改事件。 有关相关的实现，请参阅[TrackFocus 示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771428(v=vs.90))。  
+> 由于焦点更改是全局桌面事件，因此应筛选表之外的焦点更改事件。 有关相关的实现，请参阅 [TrackFocus 示例](/previous-versions/dotnet/netframework-3.5/ms771428(v=vs.90)) 。  
   
  [!code-csharp[UIATableItemPattern_snip#StartTarget](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATableItemPattern_snip/CSharp/UIATableItemPattern_snippets.cs#starttarget)]
  [!code-vb[UIATableItemPattern_snip#StartTarget](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIATableItemPattern_snip/VisualBasic/UIATableItemPattern_snippets.vb#starttarget)]  
@@ -42,7 +42,7 @@ ms.locfileid: "87168466"
 [!code-csharp[UIATableItemPattern_snip#103](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATableItemPattern_snip/CSharp/UIATableItemPattern_snippets.cs#103)]
 [!code-vb[UIATableItemPattern_snip#103](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIATableItemPattern_snip/VisualBasic/UIATableItemPattern_snippets.vb#103)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [UI 自动化控件模式概述](ui-automation-control-patterns-overview.md)
 - [客户端的 UI 自动化控件模式](ui-automation-control-patterns-for-clients.md)

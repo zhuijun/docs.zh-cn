@@ -1,18 +1,18 @@
 ---
-title: 特性标志
+title: 功能标志
 description: 利用 Azure 应用 Config 实现云本机应用程序中的功能标志
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 607bd14a415a25b382f550e697542cf749a21772
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: be4ab307069065975dc22d6bd984e12a2ea1457d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614066"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540460"
 ---
-# <a name="feature-flags"></a>特性标志
+# <a name="feature-flags"></a>功能标志
 
-第1章介绍了云本机的 affirmed，这就是速度和灵活性。 用户需要快速响应、创新的功能和零停机时间。 `Feature flags`是一种新式部署技术，有助于提高云本机应用程序的灵活性。 使用这些功能，您可以将新功能部署到生产环境中，但限制其可用性。 通过使用开关，你可以为特定用户激活一项新功能，而无需重新启动应用程序或部署新代码。 它们将新功能的发布与代码部署分离。
+第1章介绍了云本机的 affirmed，这就是速度和灵活性。 用户需要快速响应、创新的功能和零停机时间。 `Feature flags` 是一种新式部署技术，有助于提高云本机应用程序的灵活性。 使用这些功能，您可以将新功能部署到生产环境中，但限制其可用性。 通过使用开关，你可以为特定用户激活一项新功能，而无需重新启动应用程序或部署新代码。 它们将新功能的发布与代码部署分离。
 
 功能标志是基于条件逻辑构建的，它在运行时控制用户功能的可见性。 在现代的云本机系统中，通常会将新功能部署到生产环境中，但使用有限的受众进行测试。 随着置信度的增加，此功能可以以增量方式向更广泛的受众推出。
 
@@ -29,7 +29,7 @@ ms.locfileid: "83614066"
 
 功能标志的核心是一个简单的引用 `decision object` 。 它返回或的布尔状态 `on` `off` 。 该标志通常包装一个封装功能功能的代码块。 标志的状态确定是否为给定用户执行代码块。 图10-11 显示了实现。
 
-```c#
+```csharp
 if (featureFlag) {
     // Run this code block if the featureFlag value is true
 } else {
@@ -43,13 +43,13 @@ if (featureFlag) {
 
 第1章介绍了 `Twelve-Factor App` 。 建议在应用程序可执行代码中保留外部配置设置。 如果需要，可以从外部源中读取设置。 功能标志配置值还应独立于其基本代码。 通过在单独的存储库中外部化标记配置，可以更改标记状态，而无需修改和重新部署应用程序。
 
-[Azure 应用配置](https://docs.microsoft.com/azure/azure-app-configuration/overview)提供了一个用于功能标志的集中式存储库。 利用它，你可以定义不同种类的功能标志，并快速、自信地操作其状态。 将应用配置客户端库添加到应用程序以启用功能标志功能。 支持各种编程语言框架。
+[Azure 应用配置](https://docs.microsoft.com/azure/azure-app-configuration/overview) 提供了一个用于功能标志的集中式存储库。 利用它，你可以定义不同种类的功能标志，并快速、自信地操作其状态。 将应用配置客户端库添加到应用程序以启用功能标志功能。 支持各种编程语言框架。
 
-可以在[ASP.NET Core 服务](https://docs.microsoft.com/azure/azure-app-configuration/use-feature-flags-dotnet-core)中轻松实现功能标志。 安装 .NET 功能管理库和应用配置提供程序使您能够以声明方式向代码添加功能标志。 它们启用 `FeatureGate` 了属性，这样就无需在代码库中手动编写 if 语句。
+可以在 [ASP.NET Core 服务](https://docs.microsoft.com/azure/azure-app-configuration/use-feature-flags-dotnet-core)中轻松实现功能标志。 安装 .NET 功能管理库和应用配置提供程序使您能够以声明方式向代码添加功能标志。 它们启用 `FeatureGate` 了属性，这样就无需在代码库中手动编写 if 语句。
 
 在 Startup 类中配置后，可以在控制器、操作或中间件级别添加功能标志功能。 图10-12 提供控制器和操作实现：
 
-```c#
+```csharp
 [FeatureGate(MyFeatureFlags.FeatureA)]
 public class ProductController : Controller
 {
@@ -57,7 +57,7 @@ public class ProductController : Controller
 }
 ```
 
-```c#
+```csharp
 [FeatureGate(MyFeatureFlags.FeatureA)]
 public IActionResult UpdateProductStatus()
 {
@@ -67,11 +67,11 @@ public IActionResult UpdateProductStatus()
 
 **图 10-12** -控制器和操作中的功能标志实现。
 
-如果禁用功能标志，则用户将收到404（未找到）状态代码，并且不会显示任何响应正文。
+如果禁用功能标志，则在没有响应正文的状态代码) ，用户将收到 404 (找不到。
 
 功能标志还可以直接注入 c # 类中。 图10-13 显示了功能标志注入：
 
-```c#
+```csharp
 public class ProductController : Controller
 {
     private readonly IFeatureManager _featureManager;

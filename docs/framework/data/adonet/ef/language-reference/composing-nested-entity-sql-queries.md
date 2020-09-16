@@ -2,15 +2,15 @@
 title: 撰写嵌套的 Entity SQL 查询
 ms.date: 03/30/2017
 ms.assetid: 685d4cd3-2c1f-419f-bb46-c9d97a351eeb
-ms.openlocfilehash: 6b2fc9a32fc30d205b9c33257bf98781cfa07499
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b28c46ba9a89ffffe8cd95ad55eb502eb8ea48a6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150384"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541091"
 ---
 # <a name="composing-nested-entity-sql-queries"></a>撰写嵌套的 Entity SQL 查询
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 是一种功能丰富的语言。 的[!INCLUDE[esql](../../../../../../includes/esql-md.md)]构建基块是表达式。 与传统的 SQL[!INCLUDE[esql](../../../../../../includes/esql-md.md)]不同，它并不限于表格结果集：[!INCLUDE[esql](../../../../../../includes/esql-md.md)]支持编写可以具有文本、参数或嵌套表达式的复杂表达式。 表达式中的值可以参数化，或者也可以由其他表达式构成。  
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 是一种功能丰富的语言。 的构建基块 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 是一个表达式。 与传统的 SQL 不同， [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 并不局限于表格结果集： [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 支持组合可以具有文本、参数或嵌套表达式的复杂表达式。 表达式中的值可以参数化，或者也可以由其他表达式构成。  
   
 ## <a name="nested-expressions"></a>嵌套表达式  
  嵌套表达式可以放置在任何可接受其返回类型值的位置。 例如：  
@@ -46,10 +46,10 @@ UNION ALL
 FROM … );  
 ```  
   
- 下面的示例演示如何在[!INCLUDE[esql](../../../../../../includes/esql-md.md)]：[如何：命令两个查询的联盟](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896299(v=vs.100))中正确嵌套表达式。  
+ 下面的示例演示如何在中正确嵌套表达式 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] ： [如何：对两个查询的并集进行排序](/previous-versions/dotnet/netframework-4.0/bb896299(v=vs.100))。  
   
 ## <a name="nested-queries-in-projection"></a>投影中的嵌套查询  
- 投影子句中的嵌套查询可在服务器上转换为笛卡尔积查询。 在某些后端服务器（包括 SQL Server）中，这可能导致 TempDB 表变得非常大，从而对服务器性能产生负面影响。  
+ 投影子句中的嵌套查询可在服务器上转换为笛卡尔积查询。 在某些后端服务器（包括 SQL Server）中，这可能会导致 TempDB 表变得非常大，这可能会对服务器性能产生负面影响。  
   
  以下是这种查询的一个示例：  
   
@@ -75,6 +75,6 @@ SELECT C2.FirstName, C2.LastName
         ORDER BY C1.LastName) as C2  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Entity SQL 概述](entity-sql-overview.md)
