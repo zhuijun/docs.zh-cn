@@ -6,23 +6,23 @@ helpviewer_keywords:
 - security [WCF]
 - Windows Communication Foundation, security
 ms.assetid: 7ea87fcb-dcfb-4a4a-8b03-6b954575d45b
-ms.openlocfilehash: 327fb509a5186a0b3f428efc2ddd7f983bcfa978
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 9498358dd480487afcd3b746d14266e486c62d71
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595137"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546310"
 ---
 # <a name="windows-communication-foundation-security"></a>Windows Communication Foundation 安全性
-本节中的主题介绍 Windows Communication Foundation （WCF）安全功能以及如何使用它们来帮助保护消息。  
+本节中的主题介绍 Windows Communication Foundation (WCF) 安全功能以及如何使用它们来帮助保护消息。  
   
- 有关 Windows Server AppFabric 和 security 的详细信息，请参阅[Windows Server Appfabric 安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))  
+ 有关 Windows Server AppFabric 和 security 的详细信息，请参阅 [Windows Server Appfabric 安全模型](/previous-versions/appfabric/ee677202(v=azure.10))  
   
 ## <a name="in-this-section"></a>本节内容  
  [安全性概述](security-overview.md)  
  描述 WCF 中的安全功能。  
   
- [安全性概念](security-concepts.md)  
+ [安全概念](security-concepts.md)  
  描述 WCF 安全性中使用的基本术语和概念。  
   
  [常用安全方案](common-security-scenarios.md)  
@@ -69,6 +69,6 @@ ms.locfileid: "84595137"
   
  [概念性概述](../conceptual-overview.md)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [配置应用程序](../diagnostics/configuring-your-application.md)

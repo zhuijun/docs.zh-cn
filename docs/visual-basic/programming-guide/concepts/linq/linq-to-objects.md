@@ -2,15 +2,15 @@
 title: LINQ to Objects
 ms.date: 07/20/2015
 ms.assetid: dd4c30bc-1c9b-4781-a482-b5eada38deb2
-ms.openlocfilehash: 1dca449f12c312fd395be56ebcb426c3a63b64d0
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 004198f61569d50b608d002ab752e7381bf1368e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84369058"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549824"
 ---
 # <a name="linq-to-objects-visual-basic"></a>LINQ to Objects (Visual Basic)
-术语“LINQ to Objects”指直接将 LINQ 查询与任何 <xref:System.Collections.IEnumerable> 或 <xref:System.Collections.Generic.IEnumerable%601> 集合一起使用，而不使用中间 LINQ 提供程序或 API，例如 [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md) 或 [LINQ to XML](linq-to-xml.md)。 可以使用 LINQ 来查询任何可枚举的集合，例如 <xref:System.Collections.Generic.List%601>、<xref:System.Array> 或 <xref:System.Collections.Generic.Dictionary%602>。 该集合可以是用户定义的集合，也可以是由 .NET Framework API 返回的集合。  
+术语“LINQ to Objects”指直接将 LINQ 查询与任何 <xref:System.Collections.IEnumerable> 或 <xref:System.Collections.Generic.IEnumerable%601> 集合一起使用，而不使用中间 LINQ 提供程序或 API，例如 [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md) 或 [LINQ to XML](../../../../standard/linq/linq-xml-overview.md)。 可以使用 LINQ 来查询任何可枚举的集合，例如 <xref:System.Collections.Generic.List%601>、<xref:System.Array> 或 <xref:System.Collections.Generic.Dictionary%602>。 该集合可以是用户定义的集合，也可以是由 .NET Framework API 返回的集合。  
   
  从根本上说，“LINQ to Objects”表示一种新的处理集合的方法。 采用旧方法，必须编写指定如何从集合检索数据的复杂的 `For Each` 循环。 而采用 LINQ 方法，只需编写描述要检索的内容的声明性代码。  
   
@@ -30,16 +30,16 @@ ms.locfileid: "84369058"
  [LINQ 和字符串 (Visual Basic)](linq-and-strings.md)  
  阐释如何使用 LINQ 来查询和转换字符串和字符串集合。 还包括指向演示这些原则的主题的链接。  
   
- [LINQ 和反射（Visual Basic）](linq-and-reflection.md)  
+ [LINQ 和反射 (Visual Basic) ](linq-and-reflection.md)  
  指向演示 LINQ 如何使用反射的示例的链接。  
   
  [LINQ 和文件目录 (Visual Basic)](linq-and-file-directories.md)  
  阐释如何使用 LINQ 来与文件系统进行交互。 还包括指向演示这些概念的主题的链接。  
   
- [如何：使用 LINQ 查询 ArrayList （Visual Basic）](how-to-query-an-arraylist-with-linq.md)  
+ [如何：使用 LINQ (Visual Basic 查询 ArrayList) ](how-to-query-an-arraylist-with-linq.md)  
  演示如何使用 C# 查询 ArrayList。  
   
- [如何：为 LINQ 查询添加自定义方法（Visual Basic）](how-to-add-custom-methods-for-linq-queries.md)  
+ [如何：为 LINQ 查询添加自定义方法 (Visual Basic) ](how-to-add-custom-methods-for-linq-queries.md)  
  阐释如何通过向 <xref:System.Collections.Generic.IEnumerable%601> 接口中添加扩展方法来扩展可用于 LINQ 查询的方法集。  
   
  [语言集成查询 (LINQ) (Visual Basic)](index.md)  

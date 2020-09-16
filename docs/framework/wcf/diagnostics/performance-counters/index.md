@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - performance counters [WCF]
 ms.assetid: f559b2bd-ed83-4988-97a1-e88f06646609
-ms.openlocfilehash: 73bb02379308fbfe507137e61ac8d84e6b9760b4
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 7c8a134039526abf046136ac383fbaff3a5abbfe
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395900"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541208"
 ---
 # <a name="wcf-performance-counters"></a>WCF 性能计数器
-Windows Communication Foundation （WCF）包含大量性能计数器，可帮助你衡量应用程序的性能。  
+Windows Communication Foundation (WCF) 包含大量性能计数器，可帮助你衡量应用程序的性能。  
   
 ## <a name="enabling-performance-counters"></a>启用性能计数器  
- 可以通过 WCF 服务的 app.config 配置文件为 WCF 服务启用性能计数器，如下所示：  
+ 您可以通过 WCF 服务的 app.config 配置文件为 WCF 服务启用性能计数器，如下所示：  
   
 ```xml  
 <configuration>  
@@ -29,11 +29,11 @@ Windows Communication Foundation （WCF）包含大量性能计数器，可帮�
   
 - All：启用所有类别计数器（ServiceModelService、ServiceModelEndpoint 和 ServiceModelOperation）。  
   
-- ServiceOnly：仅启用 ServiceModelService 类别计数器。 此为默认值。  
+- ServiceOnly：仅启用 ServiceModelService 类别计数器。 这是默认值。  
   
 - Off：禁用 ServiceModel* 性能计数器。  
   
- 如果要为所有 WCF 应用程序启用性能计数器，则可以将配置设置置于 machine.config 文件中。  有关在计算机上为性能计数器配置足够内存的详细信息，请参阅下面的 "**增加性能计数器的内存大小**" 部分。  
+ 如果要为所有 WCF 应用程序启用性能计数器，则可以将配置设置置于 Machine.config 文件中。  有关在计算机上为性能计数器配置足够内存的详细信息，请参阅下面的 " **增加性能计数器的内存大小** " 部分。  
   
  如果你使用 WCF 扩展点（如自定义操作调用程序），则还应发出自己的性能计数器。 这是因为，如果实现扩展点，WCF 可能不再在默认路径中发出标准性能计数器数据。 如果未实现手动性能计数器支持，则可能看不到预期的性能计数器数据。  
   
@@ -51,7 +51,7 @@ config.Save();
 ```  
   
 ## <a name="viewing-performance-data"></a>查看性能数据  
- 若要查看性能计数器捕获的数据，则可以使用 Windows 附带的性能监视器 (Perfmon.exe)。 可以通过转到 "**开始**"，然后单击 "**运行**"，然后在对话框中键入 `perfmon.exe` 来启动此工具。  
+ 若要查看性能计数器捕获的数据，则可以使用 Windows 附带的性能监视器 (Perfmon.exe)。 您可以通过转到 " **开始**"，然后单击 " **运行** " 并 `perfmon.exe` 在对话框中键入来启动此工具。  
   
 > [!NOTE]
 > 性能计数器实例可能会在终结点调度程序处理最后一条消息之前被释放。 这可能导致不能为某些消息捕获性能数据。  
@@ -74,15 +74,15 @@ config.Save();
 ## <a name="types-of-performance-counters"></a>性能计数器的类型  
  性能计数器可分为三个不同级别：服务、终结点和操作。  
   
- 可以使用 WMI 检索性能计数器实例的名称。 例如，应用于对象的  
+ 可以使用 WMI 检索性能计数器实例的名称。 例如，  
   
-- 可以通过 WMI[服务](../wmi/service.md)实例的 "CounterInstanceName" 属性获取服务计数器实例名称。  
+- 可以通过 WMI [服务](../wmi/service.md) 实例的 "CounterInstanceName" 属性获取服务计数器实例名称。  
   
-- 可以通过 WMI[终结点](../wmi/endpoint.md)实例的 "CounterInstanceName" 属性获取终结点计数器实例名称。  
+- 可以通过 WMI [终结点](../wmi/endpoint.md) 实例的 "CounterInstanceName" 属性获取终结点计数器实例名称。  
   
-- 可以通过 WMI[终结点](../wmi/endpoint.md)实例的 "GetOperationCounterInstanceName" 方法获取操作计数器实例名称。  
+- 可以通过 WMI [终结点](../wmi/endpoint.md) 实例的 "GetOperationCounterInstanceName" 方法获取操作计数器实例名称。  
   
- 有关 WMI 的详细信息，请参阅[使用 Windows Management Instrumentation 诊断](../wmi/index.md)。  
+ 有关 WMI 的详细信息，请参阅 [使用 Windows Management Instrumentation 诊断](../wmi/index.md)。  
   
 ### <a name="service-performance-counters"></a>服务性能计数器  
  服务性能计数器将服务行为作为整体来进行衡量，可用于诊断服务整体性能。 如果使用性能监视器查看，可以在 `ServiceModelService 4.0.0.0` 性能对象下找到服务性能计数器。 使用以下模式命名计数器实例：  
@@ -127,7 +127,7 @@ SDK 安装文件夹中安装了几个文件，以便您可以通过编程方式�
 - *\_SMSvcHostPerfCounters. vrg*
 - *\_TransactionBridgePerfCounters. vrg*
   
-有关如何以编程方式访问计数器的详细信息，请参阅[性能计数器编程体系结构](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/5f9bkxzf(v=vs.90))。
+有关如何以编程方式访问计数器的详细信息，请参阅 [性能计数器编程体系结构](/previous-versions/visualstudio/visual-studio-2008/5f9bkxzf(v=vs.90))。
   
 ## <a name="see-also"></a>请参阅
 

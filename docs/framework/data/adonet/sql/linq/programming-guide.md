@@ -2,17 +2,17 @@
 title: 编程指南
 ms.date: 03/30/2017
 ms.assetid: ed1012d4-3ff2-4877-af27-93125c4180ea
-ms.openlocfilehash: 542567cf07e86b642a23a879fa6e5476253005b8
-ms.sourcegitcommit: 515469828d0f040e01bde01df6b8e4eb43630b06
+ms.openlocfilehash: 0746d14d7be0b67bc9966ae0c5a4af0a3226c1e9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78848933"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546557"
 ---
 # <a name="programming-guide"></a>编程指南
-本节包含有关如何创建和使用 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 对象模型的信息。 如果使用 Visual Studio，也可以使用对象关系设计器执行许多相同的任务。  
+本节包含有关如何创建和使用 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 对象模型的信息。 如果你使用的是 Visual Studio，还可以使用对象关系设计器来执行其中许多相同的任务。  
   
- 您还可以搜索 Microsoft 文档以查找特定问题，还可以参加[LINQ 论坛](https://social.msdn.microsoft.com/forums/home?forum=linqtosql)，与专家详细讨论更复杂的主题。 最后[，LINQ 到 SQL：.NET 语言集成查询关系数据](https://docs.microsoft.com/previous-versions/dotnet/articles/bb425822(v=msdn.10))白皮书详细介绍了[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]技术，并附有可视化基本和 C# 代码示例。  
+ 你还可以在 Microsoft Docs 中搜索特定问题，并且可以参与 [LINQ 论坛](https://social.msdn.microsoft.com/forums/home?forum=linqtosql)，其中你可以与专家详细讨论更复杂的主题。 最后， [LINQ to SQL：用于关系数据的 .Net 语言集成查询](/previous-versions/dotnet/articles/bb425822(v=msdn.10)) 白皮书详细信息 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 技术，已完成 Visual Basic 和 c # 代码示例。  
   
 ## <a name="in-this-section"></a>本节内容  
  [创建对象模型](creating-the-object-model.md)  
@@ -41,7 +41,7 @@ ms.locfileid: "78848933"
  包含指向一些主题的链接，这些主题演示了如何使用存储过程。  
   
  [LINQ 简介 (C#)](../../../../../csharp/programming-guide/concepts/linq/index.md)  
- 提供资源，帮助您开始了解使用 C# 的 LINQ 到 SQL。
+ 提供可帮助您开始了解使用 c # LINQ to SQL 的资源。
 
  [LINQ 简介 (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/introduction-to-linq.md)  
- 提供资源，帮助您开始了解使用可视化基础的 LINQ 到 SQL。
+ 提供有助于您开始了解使用 Visual Basic LINQ to SQL 的资源。

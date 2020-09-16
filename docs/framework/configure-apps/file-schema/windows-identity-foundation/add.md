@@ -3,12 +3,12 @@ title: <add>
 ms.date: 03/30/2017
 ms.assetid: 4712a888-f154-4395-8887-ef14a88a6497
 author: BrucePerlerMS
-ms.openlocfilehash: 83ba51cbbd5100bf7412f9914a270cac88f7faa1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7c2b6bdc62da63905d7ff33a9984808e7b7d114f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73973804"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544535"
 ---
 # \<add>
 将指定的安全令牌处理程序添加到令牌处理程序集合。  
@@ -41,11 +41,11 @@ ms.locfileid: "73973804"
   
 |属性|说明|  
 |---------------|-----------------|  
-|type|要添加的令牌处理程序的 CLR 类型名称。 有关如何指定属性的详细信息 `type` ，请参阅[自定义类型引用](https://docs.microsoft.com/previous-versions/windows-identity-foundation/gg638728(v=msdn.10)#custom-type-references)。|  
+|type|要添加的令牌处理程序的 CLR 类型名称。 有关如何指定属性的详细信息 `type` ，请参阅 [自定义类型引用](/previous-versions/windows-identity-foundation/gg638728(v=msdn.10)#custom-type-references)。|  
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<samlSecurityTokenRequirement>](samlsecuritytokenrequirement.md)|为 <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> 类、 <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> 类或其中任何一个类的派生类提供配置。|  
 |[\<sessionTokenRequirement>](sessiontokenrequirement.md)|提供 <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> 类或派生类的配置。|  
@@ -54,11 +54,11 @@ ms.locfileid: "73973804"
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<securityTokenHandlers>](securitytokenhandlers.md)|指定注册到终结点的安全令牌处理程序的集合。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
  `<add>`元素可以采用单个子元素，该元素指定标记处理程序的配置。 这取决于通过元素的属性引用的处理程序类是否 `type` `<add>` 为此功能提供支持。 提供此功能的令牌处理程序类必须公开采用对象的构造函数 <xref:System.Xml.XmlElement> 。  
 
 ```csharp  

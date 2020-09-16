@@ -5,19 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f450f5d4-3547-47ec-9320-2809e6a12634
-ms.openlocfilehash: 591f7db0f6b4e928a991961d3bc7c404f41028bf
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 1edbfe2d0d25ea9f2145f879673fc9f0a6ee7f96
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579275"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547188"
 ---
 # <a name="intranet-unsecured-client-and-service"></a>不安全的 Intranet 客户端和服务
-下图描绘了一个简单的 Windows Communication Foundation （WCF）服务，该服务是为在 WCF 应用程序中提供有关安全专用网络的信息而开发的。 安全不是必需的，因为数据重要性较低，网络本来就是安全的，或者是由 WCF 基础结构下面的层提供的。  
+下图描绘了一个简单的 Windows Communication Foundation (WCF) 服务，该服务开发用于向 WCF 应用程序提供安全的专用网络的信息。 安全不是必需的，因为数据重要性较低，网络本来就是安全的，或者是由 WCF 基础结构下面的层提供的。  
   
  ![Intranet 不安全的客户端和服务方案。](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
   
-|特征|描述|  
+|特征|说明|  
 |--------------------|-----------------|  
 |安全模式|无|  
 |Transport|TCP|  
@@ -25,7 +25,7 @@ ms.locfileid: "84579275"
 |互操作性|仅 WCF|  
 |身份验证|无|  
 |完整性|无|  
-|机密性|无|  
+|保密性|无|  
   
 ## <a name="service"></a>服务  
  下面的代码和配置应独立运行。 执行下列操作之一：  
@@ -112,8 +112,8 @@ ms.locfileid: "84579275"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.NetTcpBinding>
 - [安全性概述](security-overview.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

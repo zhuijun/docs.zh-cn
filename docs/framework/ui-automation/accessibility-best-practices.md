@@ -6,17 +6,17 @@ helpviewer_keywords:
 - best practices for accessibility
 - accessibility, best practices for
 ms.assetid: e6d5cd98-21a3-4b01-999c-fb953556d0e6
-ms.openlocfilehash: 2980881bbcd34ca82f6cca7723cf976e0890f463
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 1c01cfe8fdfb285ee5cbc586cc0c549365ef72ee
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557081"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543142"
 ---
 # <a name="accessibility-best-practices"></a>辅助功能最佳做法
 
 > [!NOTE]
-> 本文适用于想要使用命名空间中定义的托管 UI 自动化类的 .NET Framework 开发人员 <xref:System.Windows.Automation> 。 有关 UI 自动化的最新信息，请参阅[Windows 自动化 API： Ui 自动化](/windows/win32/winauto/entry-uiauto-win32)。  
+> 本文适用于想要使用命名空间中定义的托管 UI 自动化类的 .NET Framework 开发人员 <xref:System.Windows.Automation> 。 有关 UI 自动化的最新信息，请参阅 [Windows 自动化 API： Ui 自动化](/windows/win32/winauto/entry-uiauto-win32)。  
   
  在控件或应用程序中实现以下最佳做法将提高使用辅助技术设备的用户的可访问性。 其中许多最佳实践侧重于 (UI) 设计的良好用户界面。 每个最佳做法都包含 Windows Presentation Foundation (WPF) 控件或应用程序的实现信息。 在许多情况下，满足这些最佳做法的工作已包含在 WPF 控件中。  
   
@@ -135,5 +135,5 @@ ms.locfileid: "87557081"
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Windows.Automation.Peers>
-- [带有主题和 UI 自动化支持示例的 NumericUpDown 自定义控件](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771573(v=vs.90))
-- [键盘用户界面设计的准则](https://docs.microsoft.com/previous-versions/windows/desktop/dnacc/guidelines-for-keyboard-user-interface-design)
+- [带有主题和 UI 自动化支持示例的 NumericUpDown 自定义控件](/previous-versions/dotnet/netframework-3.5/ms771573(v=vs.90))
+- [键盘用户界面设计的准则](/previous-versions/windows/desktop/dnacc/guidelines-for-keyboard-user-interface-design)

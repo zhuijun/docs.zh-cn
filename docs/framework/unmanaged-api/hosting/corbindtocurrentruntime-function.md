@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 6105c13e-d9cd-44d2-a95a-924e042830c7
 topic_type:
 - apiref
-ms.openlocfilehash: 4c015d77deb4e6ed3d43074f2903e26b687de84f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 9c5d83b5f2ffb06c9fb14f715a3ea7ff12319086
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84493560"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547809"
 ---
 # <a name="corbindtocurrentruntime-function"></a>CorBindToCurrentRuntime 函数
-使用存储在 XML 文件中的版本信息将公共语言运行时（CLR）加载到进程中。 XML 文件的格式将建模为标准应用程序配置文件。 有关配置文件的详细信息，请参阅[配置文件架构](../../configure-apps/file-schema/index.md)。  
+通过使用存储在 XML 文件中的版本信息，将 (CLR) 中的公共语言运行时加载到进程中。 XML 文件的格式将建模为标准应用程序配置文件。 有关配置文件的详细信息，请参阅[配置文件架构](../../configure-apps/file-schema/index.md)。  
   
- 此函数已在 .NET Framework 4 中弃用。 请参阅将[公共语言运行时加载到进程中](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/01918c6x(v=vs.100))。  
+ 此函数已在 .NET Framework 4 中弃用。 请参阅将 [公共语言运行时加载到进程中](/previous-versions/dotnet/netframework-4.0/01918c6x(v=vs.100))。  
   
 ## <a name="syntax"></a>语法  
   
@@ -47,10 +47,10 @@ HRESULT CorBindToCurrentRuntime (
  如果未指定任何版本，或者如果 `<requiredRuntime>` 找不到该元素，则会加载计算机上安装的最新版本的 CLR。  
   
  `rclsid`  
- 中`CLSID`用于实现[ICorRuntimeHost](icorruntimehost-interface.md)或[ICLRRuntimeHost](iclrruntimehost-interface.md)接口的 coclass 的。 支持的值为 CLSID_CorRuntimeHost 或 CLSID_CLRRuntimeHost。  
+ 中 `CLSID` 用于实现 [ICorRuntimeHost](icorruntimehost-interface.md) 或 [ICLRRuntimeHost](iclrruntimehost-interface.md) 接口的 coclass 的。 支持的值为 CLSID_CorRuntimeHost 或 CLSID_CLRRuntimeHost。  
   
  `riid`  
- 中`IID`你请求的接口的。 支持的值为 IID_ICorRuntimeHost 或 IID_ICLRRuntimeHost。  
+ 中 `IID` 你请求的接口的。 支持的值为 IID_ICorRuntimeHost 或 IID_ICLRRuntimeHost。  
   
  `ppv`  
  弄返回的接口指针。  
@@ -60,11 +60,11 @@ HRESULT CorBindToCurrentRuntime (
   
  **标头：** Mscoree.dll  
   
- **库：** Mscoree.dll  
+ **库：** MSCorEE.dll  
   
  **.NET Framework 版本：**[!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [CorBindToRuntime 函数](corbindtoruntime-function.md)
 - [CorBindToRuntimeByCfg 函数](corbindtoruntimebycfg-function.md)

@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - configuration [WCF], interoperable services
 ms.assetid: 91b70a21-8f5c-4679-808c-2ed5fa6b2013
-ms.openlocfilehash: fd7828cccb1a19a17e899525d863021d3670fbdd
-ms.sourcegitcommit: c91110ef6ee3fedb591f3d628dc17739c4a7071e
+ms.openlocfilehash: 5fc29432bdd55daff2d60d641a4cea4925278032
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/15/2020
-ms.locfileid: "81389747"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543012"
 ---
 # <a name="creating-ws-i-basic-profile-11-interoperable-services"></a>创建 WS-I 基本配置文件 1.1 可互操作服务
-要将 WCF 服务终结点配置为与 ASP.NET Web 服务客户端互操作：：  
+将 WCF 服务终结点配置为可与 ASP.NET Web 服务客户端进行互操作：  
   
 - 将 <xref:System.ServiceModel.BasicHttpBinding?displayProperty=nameWithType> 类型用作服务终结点的绑定类型。  
   
@@ -29,18 +29,18 @@ ms.locfileid: "81389747"
   
 - 由 <xref:System.ServiceModel.BasicHttpBinding.Security%2A?displayProperty=nameWithType> 值控制的消息安全提供符合 WS-I 基本安全配置文件 1.0 的 WS-Security 支持。 将此属性保留为其默认值（即 <xref:System.ServiceModel.SecurityMode.Transport?displayProperty=nameWithType>）以便不使用 WS-Security。  
   
-要使 WCF 服务的元数据可供ASP.NET，请使用 Web 服务客户端生成工具[：Web 服务描述语言工具 （Wsdl.exe）](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7h3ystb6%28v=vs.100%29) [、Web 服务发现工具 （Disco.exe）](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/cy2a3ybs%28v=vs.100%29)和 Visual Studio 中的**添加 Web 引用**功能。 启用元数据发布。 有关详细信息，请参阅[发布元数据终结点](publishing-metadata-endpoints.md)。  
+若要使 WCF 服务的元数据可用于 ASP.NET，请使用 Web 服务客户端生成工具： [web 服务描述语言工具 ( # A0) ](/previous-versions/dotnet/netframework-4.0/7h3ystb6(v=vs.100))、 [Web 服务发现工具 ( # A1) ](/previous-versions/dotnet/netframework-4.0/cy2a3ybs(v=vs.100))以及 Visual Studio 中的 " **添加 Web 引用** " 功能。 启用元数据发布。 有关详细信息，请参阅 [发布元数据终结点](publishing-metadata-endpoints.md)。  
   
 ## <a name="example"></a>示例  
   
-### <a name="description"></a>描述  
- 以下示例代码演示如何在代码中添加与ASP.NET Web 服务客户端兼容的 WCF 终结点，或者在配置文件中添加。  
+### <a name="description"></a>说明  
+ 下面的代码示例演示如何在代码中添加与 ASP.NET Web 服务客户端兼容的 WCF 终结点，也可以在配置文件中添加。  
   
 ### <a name="code"></a>代码  
  [!code-csharp[C_HowTo-WCFServiceAndASMXClient#0](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/cs/program.cs#0)]
  [!code-vb[C_HowTo-WCFServiceAndASMXClient#0](../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/vb/program.vb#0)]  
  [!code-xml[C_HowTo-WCFServiceAndASMXClient#1](../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto-wcfserviceandasmxclient/common/app.config#1)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [与 ASP.NET Web 服务的互操作性](./feature-details/interop-with-aspnet-web-services.md)

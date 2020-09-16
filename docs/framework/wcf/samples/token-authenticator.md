@@ -2,15 +2,15 @@
 title: 令牌身份验证器
 ms.date: 03/30/2017
 ms.assetid: 84382f2c-f6b1-4c32-82fa-aebc8f6064db
-ms.openlocfilehash: f4b49edd3b5a2cecd203feed713c7694450f7497
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: a493ea48d9d339c0bc1a4b191b084374ad5f2dc4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84596547"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548587"
 ---
 # <a name="token-authenticator"></a>令牌身份验证器
-此示例演示如何实现一个自定义令牌身份验证器。 Windows Communication Foundation （WCF）中的令牌身份验证器用于验证消息所使用的令牌，验证该令牌是否是自我一致的，并且对与令牌关联的标识进行身份验证。
+此示例演示如何实现一个自定义令牌身份验证器。 Windows Communication Foundation 中的令牌身份验证器 (WCF) 用于验证消息所使用的令牌，验证该消息是否为自一致，并对与令牌关联的标识进行身份验证。
 
  自定义令牌身份验证器可用在各种场合，如：
 
@@ -324,22 +324,22 @@ static void DisplayIdentityInformation()
 
 #### <a name="to-set-up-and-build-the-sample"></a>设置和生成示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对 [Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
-2. 若要生成解决方案，请按照[生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
+2. 若要生成解决方案，请按照 [生成 Windows Communication Foundation 示例](building-the-samples.md)中的说明进行操作。
 
 #### <a name="to-run-the-sample-on-the-same-computer"></a>在同一计算机上运行示例
 
-1. 从使用管理员特权打开的 Visual Studio 2012 命令提示符下的示例安装文件夹中运行安装程序。 这将安装运行示例所需的所有证书。
+1. 在使用管理员特权打开的 Visual Studio 2012 命令提示符下，从示例安装文件夹中运行 Setup.bat。 这将安装运行示例所需的所有证书。
 
     > [!NOTE]
-    > 设置 bat 批处理文件设计为在 Visual Studio 2012 命令提示符下运行。 在 Visual Studio 2012 命令提示符中设置的 PATH 环境变量指向包含安装程序 bat 脚本所需的可执行文件的目录。  
+    > Setup.bat 批处理文件设计为在 Visual Studio 2012 命令提示符下运行。 在 Visual Studio 2012 命令提示符下设置的 PATH 环境变量指向包含 Setup.bat 脚本所需的可执行文件的目录。  
   
 2. 启动 service\bin 中的 service.exe。  
   
 3. 启动 \client\bin 中的 client.exe。 客户端活动将显示在客户端控制台应用程序上。  
   
-4. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+4. 如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 #### <a name="to-run-the-sample-across-computers"></a>跨计算机运行示例  
   
@@ -347,7 +347,7 @@ static void DisplayIdentityInformation()
   
 2. 将服务程序文件复制到服务计算机上的服务目录。 另外，将 Setup.bat 和 Cleanup.bat 文件复制到服务计算机上。  
   
-3. 必须具有一个其主题名称中包含计算机的完全限定域名的服务器证书。 必须更新服务的 App.config 文件才能反映这个新证书名称。 如果您将 `%SERVER_NAME%` 变量设置为将在其上运行服务的计算机的完全限定主机名，则可以使用 Setup.bat 来创建一个这样的证书。 请注意，必须使用管理员权限打开 Visual Studio 的开发人员命令提示中的 setup.exe 文件。  
+3. 必须具有一个其主题名称中包含计算机的完全限定域名的服务器证书。 必须更新服务的 App.config 文件才能反映这个新证书名称。 如果您将 `%SERVER_NAME%` 变量设置为将在其上运行服务的计算机的完全限定主机名，则可以使用 Setup.bat 来创建一个这样的证书。 请注意，必须使用管理员权限打开 Visual Studio 开发人员命令提示的 setup.bat 文件。  
   
 4. 将服务器证书复制到客户端的 CurrentUser-TrustedPeople 存储中。 除非服务器证书是由客户端的受信任颁发者颁发的，否则没有必要这样做。  
   
@@ -361,8 +361,8 @@ static void DisplayIdentityInformation()
   
 9. 在客户端计算机上，在命令提示符下启动 Client.exe。  
   
-10. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+10. 如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 #### <a name="to-clean-up-after-the-sample"></a>运行示例后进行清理  
   
-1. 运行完示例后运行示例文件夹中的 Cleanup.bat。  
+1. 运行完示例后运行示例文件夹中的 Cleanup.bat。

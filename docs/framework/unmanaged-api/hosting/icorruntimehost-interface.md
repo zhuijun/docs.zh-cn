@@ -14,17 +14,17 @@ helpviewer_keywords:
 ms.assetid: 4369533d-7834-4497-bc37-bfea0ad737b1
 topic_type:
 - apiref
-ms.openlocfilehash: 4b8018bb84dea08987d91f351b1ab0d9f3b48c56
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 420f22a242a20f8bdf5d5b84f47a297a2f503db0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84503895"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546016"
 ---
 # <a name="icorruntimehost-interface"></a>ICorRuntimeHost 接口
-提供使宿主能够显式启动和停止公共语言运行时（CLR）、创建和配置应用程序域、访问默认域以及枚举在进程中运行的所有域的方法。  
+提供一些方法，这些方法使宿主可以显式启动和停止公共语言运行时 (CLR) ，以创建和配置应用程序域、访问默认域以及枚举在进程中运行的所有域。  
   
- 在 .NET Framework 版本2.0 中，此接口由[ICLRRuntimeHost](iclrruntimehost-interface.md)取代。  
+ 在 .NET Framework 版本2.0 中，此接口由 [ICLRRuntimeHost](iclrruntimehost-interface.md)取代。  
   
 ## <a name="methods"></a>方法  
   
@@ -33,8 +33,8 @@ ms.locfileid: "84503895"
 |[CloseEnum 方法](icorruntimehost-closeenum-method.md)|将域枚举器重置回域列表的开头。|  
 |[CreateDomain 方法](icorruntimehost-createdomain-method.md)|创建应用程序域。 调用方接收类型为的实例的接口指针 <xref:System._AppDomain> <xref:System.AppDomain?displayProperty=nameWithType> 。|  
 |[CreateDomainEx 方法](icorruntimehost-createdomainex-method.md)|创建应用程序域。 此方法允许调用方传递 IAppDomainSetup 实例，以配置返回的实例的附加功能 <xref:System._AppDomain> 。|  
-|[CreateDomainSetup 方法](icorruntimehost-createdomainsetup-method.md)|获取实例的类型的接口指针 `IAppDomainSetup` <xref:System.AppDomainSetup> 。 `IAppDomainSetup`提供用于配置应用程序域在创建之前的各个方面的方法。|  
-|[CreateEvidence 方法](icorruntimehost-createevidence-method.md)|获取类型的接口指针 <xref:System.Security.Principal.IIdentity> ，该指针允许主机创建要传递给[CreateDomain](icorruntimehost-createdomain-method.md)或[CreateDomainEx](icorruntimehost-createdomainex-method.md)的安全证据。|  
+|[CreateDomainSetup 方法](icorruntimehost-createdomainsetup-method.md)|获取实例的类型的接口指针 `IAppDomainSetup` <xref:System.AppDomainSetup> 。 `IAppDomainSetup` 提供用于配置应用程序域在创建之前的各个方面的方法。|  
+|[CreateEvidence 方法](icorruntimehost-createevidence-method.md)|获取类型的接口指针 <xref:System.Security.Principal.IIdentity> ，该指针允许主机创建要传递给 [CreateDomain](icorruntimehost-createdomain-method.md) 或 [CreateDomainEx](icorruntimehost-createdomainex-method.md)的安全证据。|  
 |[CreateLogicalThreadState 方法](icorruntimehost-createlogicalthreadstate-method.md)|请勿使用。|  
 |[CurrentDomain 方法](icorruntimehost-currentdomain-method.md)|获取类型的接口指针 <xref:System._AppDomain> ，该指针表示当前线程上加载的域。|  
 |[DeleteLogicalThreadState 方法](icorruntimehost-deletelogicalthreadstate-method.md)|请勿使用。|  
@@ -55,15 +55,15 @@ ms.locfileid: "84503895"
   
  **标头：** Mscoree.dll  
   
- **库：** 作为资源包括在 Mscoree.dll 中  
+ **库：** 作为中的资源包含 MSCorEE.dll  
   
  **.NET Framework 版本：** 1.0、1。1  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.AppDomain>
 - [承载](index.md)
 - [ICLRRuntimeHost 接口](iclrruntimehost-interface.md)
-- [运行时主机](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))
+- [运行时主机](/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))
 - [承载接口](hosting-interfaces.md)
 - [CorRuntimeHost 组件类](corruntimehost-coclass.md)

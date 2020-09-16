@@ -2,12 +2,12 @@
 title: FUNCTION (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 0bb88992-37ed-4991-ace5-55be612a2c4d
-ms.openlocfilehash: fd7f484733e7135d2d6c8094b6527d672a988088
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a3cc843c7f16f667508aeaea65879de6842478bc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79150293"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544487"
 ---
 # <a name="function-entity-sql"></a>FUNCTION (Entity SQL)
 在 Entity SQL 查询命令的范围内定义函数。  
@@ -28,7 +28,7 @@ FUNCTION function-name
         }
 ```  
   
-## <a name="arguments"></a>参数  
+## <a name="arguments"></a>自变量  
  `function-name`  
  函数的名称。  
   
@@ -41,13 +41,13 @@ FUNCTION function-name
  `data_type`  
  受支持类型的名称。  
   
- 收藏 （`>` <type_definition ）  
+ 集合 ( <type_definition `>` )   
  一个表达式，返回受支持类型、行或引用的集合。  
   
- 参考 **（**`data_type`**）**  
+ 引用** (** `data_type` **) **  
  一个表达式，返回对实体类型的引用。  
   
- 行 **（**`row_expression`**）**  
+ 行** (** `row_expression` **) **  
  一个表达式，从一个或多个值返回结构上类型化的匿名记录。 有关更多信息，请参见 [ROW](row-entity-sql.md)。  
   
 ## <a name="remarks"></a>备注  
@@ -61,9 +61,9 @@ FUNCTION function-name
   
  `A()`  
   
- 有关详细信息，请参阅 [如何：调用用户定义的函数](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100))。  
+ 有关详细信息，请参阅 [如何：调用用户定义的函数](/previous-versions/dotnet/netframework-4.0/dd490951(v=vs.100))。  
   
- 还可以在模型本身中声明函数。 在模型中声明的函数的执行方式与在命令中内联声明的函数的执行方式相同。 有关详细信息，请参阅[用户定义的函数](user-defined-functions-entity-sql.md)。  
+ 还可以在模型本身中声明函数。 在模型中声明的函数的执行方式与在命令中内联声明的函数的执行方式相同。 有关详细信息，请参阅 [用户定义函数](user-defined-functions-entity-sql.md)。  
   
 ## <a name="example"></a>示例  
  下面的 Entity SQL 命令定义一个函数 `Products` ，该函数采用整数值来筛选返回的产品。  
@@ -75,7 +75,7 @@ FUNCTION function-name
   
  [!code-sql[DP EntityServices Concepts#FUNCTION2](~/samples/snippets/tsql/VS_Snippets_Data/dp entityservices concepts/tsql/entitysql.sql#function2)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [实体 SQL 引用](entity-sql-reference.md)
 - [Entity SQL 语言](entity-sql-language.md)

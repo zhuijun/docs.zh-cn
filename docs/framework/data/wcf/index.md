@@ -6,20 +6,20 @@ helpviewer_keywords:
 - Astoria
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-ms.openlocfilehash: ca6b196e8c910f97ead6d1df5b6c0dd6c49c68a4
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: c36967236c40efbf432d554c3f551aea22cfb148
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247748"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549674"
 ---
 # <a name="wcf-data-services-45"></a>WCF 数据服务 4.5
 
-WCF 数据服务（以前称为 "ADO.NET Data Services"）是 .NET Framework 的一个组件，它使你能够使用[具象状态传输（REST）](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)的语义创建使用 Open Data Protocol （OData）在 Web 或 intranet 上公开和使用数据的服务。 OData 将数据公开为可通过 URI 进行寻址的资源。 通过使用标准 HTTP 谓词 GET、PUT、POST 和 DELETE 访问和更改数据。 OData 使用[实体数据模型](../adonet/entity-data-model.md)的实体关系约定将资源公开为通过关联相关的实体集。
+WCF 数据服务 (以前称为 "ADO.NET Data Services" ) 是 .NET Framework 的一个组件，它使你能够通过使用 [具象状态传输 OPEN DATA PROTOCOL REST (](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)的语义，来创建使用)  (OData) 在 Web 或 intranet 上公开和使用数据的服务。 OData 将数据公开为可通过 URI 进行寻址的资源。 通过使用标准 HTTP 谓词 GET、PUT、POST 和 DELETE 访问和更改数据。 OData 使用 [实体数据模型](../adonet/entity-data-model.md) 的实体关系约定将资源公开为通过关联相关的实体集。
 
-WCF 数据服务使用 OData 协议对资源进行寻址和更新。 通过这种方式，你可以从支持 OData 的任何客户端访问这些服务。 OData 使你可以通过使用众所周知的传输格式请求数据并将数据写入资源： Atom，一组用于以 XML 格式交换和更新数据的标准，以及 JavaScript 对象表示法（JSON），这是在 AJAX 应用程序中广泛使用的基于文本的数据交换格式。
+WCF 数据服务使用 OData 协议对资源进行寻址和更新。 通过这种方式，你可以从支持 OData 的任何客户端访问这些服务。 OData 使你可以通过使用众所周知的传输格式请求数据并将数据写入资源： Atom，一组用于以 XML 格式交换和更新数据的标准，并 JavaScript 对象表示法 (JSON) ，这是在 AJAX 应用程序中广泛使用的基于文本的数据交换格式。
 
-WCF 数据服务可以将源自各种源的数据作为 OData 源公开。 Visual Studio 工具通过使用 ADO.NET 实体框架数据模型，使你可以更轻松地创建基于 OData 的服务。 还可以基于公共语言运行时（CLR）类，甚至是后期绑定或未类型化的数据来创建 OData 源。
+WCF 数据服务可以将源自各种源的数据作为 OData 源公开。 Visual Studio 工具通过使用 ADO.NET 实体框架数据模型，使你可以更轻松地创建基于 OData 的服务。 还可以基于公共语言运行时 (CLR) 类，甚至是后期绑定或未类型化的数据来创建 OData 源。
 
 WCF 数据服务还包括一组客户端库，一个用于一般 .NET Framework 客户端应用程序，另一个专用于基于 Silverlight 的应用程序。 在从 .NET Framework 和 Silverlight 之类的环境访问 OData 源时，这些客户端库提供了基于对象的编程模型。
 
@@ -76,7 +76,7 @@ WCF 数据服务还包括一组客户端库，一个用于一般 .NET Framework 
 
 我仍然需要了解更多信息 .。。
 
-- [WCF Data Services Team Blog](https://docs.microsoft.com/archive/blogs/astoriateam/)（WCF Data Services 团队博客）
+- [WCF Data Services Team Blog](/archive/blogs/astoriateam/)（WCF Data Services 团队博客）
 
 - [资源](wcf-data-services-resources.md)
 
@@ -86,7 +86,7 @@ WCF 数据服务还包括一组客户端库，一个用于一般 .NET Framework 
 
 概述 WCF 数据服务中可用的特性和功能。
 
-[WCF 数据服务5.0 的新增功能](https://docs.microsoft.com/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))
+[WCF 数据服务5.0 的新增功能](/previous-versions/dotnet/wcf-data-services/ee373845(v=vs.103))
 
 介绍 WCF 数据服务的新功能，并支持新的 OData 功能。
 

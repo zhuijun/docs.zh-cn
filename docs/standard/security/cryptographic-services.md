@@ -25,12 +25,12 @@ helpviewer_keywords:
 - cryptography [.NET], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-ms.openlocfilehash: 4cd4e493e0e7d159b2749dac78b9a560e20fd75c
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 651231dcc41926307e3a46b67c80ba3df1fb25e9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557016"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549975"
 ---
 # <a name="cryptographic-services"></a>加密服务
 
@@ -87,7 +87,7 @@ ms.locfileid: "87557016"
 
 - <xref:System.Security.Cryptography.Aes>
 
-- <xref:System.Security.Cryptography.HMACSHA256>、<xref:System.Security.Cryptography.HMACSHA384> 和 <xref:System.Security.Cryptography.HMACSHA512>。  (这些是技术上的机密密钥算法，因为它们表示消息身份验证代码，这些代码是通过将加密哈希函数与密钥结合使用来计算的。 请参阅本文后面部分的[哈希值](#hash-values)) 
+- <xref:System.Security.Cryptography.HMACSHA256>、<xref:System.Security.Cryptography.HMACSHA384> 和 <xref:System.Security.Cryptography.HMACSHA512>。  (这些是技术上的机密密钥算法，因为它们表示消息身份验证代码，这些代码是通过将加密哈希函数与密钥结合使用来计算的。 请参阅本文后面部分的 [哈希值](#hash-values)) 
 
 ## <a name="public-key-encryption"></a>公钥加密
 
@@ -150,7 +150,7 @@ RSA 允许加密和签名，但 DSA 仅可用于签名。 DSA 不如 RSA 那么�
 
 - Alice 向 Bob 发送纯文本消息和经过哈希处理的消息（数字签名）。 Bob 接收消息并进行哈希处理，然后将其哈希值与从 Alice 处接收到的哈希值进行比较。 如果哈希值相同，则消息未更改。 如果值不同，则消息在 Alice 编写后遭到更改。
 
-  遗憾的是，此方法不会确定发件人的真伪。 任何人都可以模仿 Alice 并向 Bob 发送消息。 他们可以使用相同的哈希算法来签署消息，而 Bob 可确定的只是消息与它的签名相匹配。 这是中间人攻击的一种形式。 有关详细信息，请参阅[下一代加密 (CNG) 安全通信示例](https://docs.microsoft.com/previous-versions/cc488018(v=vs.100))。
+  遗憾的是，此方法不会确定发件人的真伪。 任何人都可以模仿 Alice 并向 Bob 发送消息。 他们可以使用相同的哈希算法来签署消息，而 Bob 可确定的只是消息与它的签名相匹配。 这是中间人攻击的一种形式。 有关详细信息，请参阅 [下一代加密 (CNG) 安全通信示例](/previous-versions/cc488018(v=vs.100))。
 
 - Alice 通过非安全的公共通道向 Bob 发送纯文本消息。 Alice 通过安全的专用通道向 Bob 发送经过哈希处理的消息。 Bob 接收纯文本消息，对其进行哈希处理并将此哈希值与私下交换的哈希值进行比较。 如果哈希值匹配，则 Bob 知道两件事：
 
@@ -184,7 +184,7 @@ RSA 允许加密和签名，但 DSA 仅可用于签名。 DSA 不如 RSA 那么�
 
 ## <a name="clickonce-manifests"></a>ClickOnce 清单
 
-在 .NET Framework 3.5 中，以下加密类使你可以获取并验证有关使用[ClickOnce 技术](/visualstudio/deployment/clickonce-security-and-deployment)部署的应用程序的清单签名的信息：
+在 .NET Framework 3.5 中，以下加密类使你可以获取并验证有关使用 [ClickOnce 技术](/visualstudio/deployment/clickonce-security-and-deployment)部署的应用程序的清单签名的信息：
 
 - 当使用清单签名的 <xref:System.Security.Cryptography.ManifestSignatureInformation> 方法重载时， <xref:System.Security.Cryptography.ManifestSignatureInformation.VerifySignature%2A> 类将获取此清单签名的相关信息。
 
@@ -218,7 +218,7 @@ RSA 允许加密和签名，但 DSA 仅可用于签名。 DSA 不如 RSA 那么�
 
 ## <a name="see-also"></a>请参阅
 
-- [加密模型](cryptography-model.md)-介绍如何在基类库中实现加密。
+- [加密模型](cryptography-model.md) -介绍如何在基类库中实现加密。
 - [跨平台加密](cross-platform-cryptography.md)
 - [使用填充对 CBC 模式对称解密的漏洞进行计时](vulnerabilities-cbc-mode.md)
 - [ASP.NET Core 数据保护](/aspnet/core/security/data-protection/introduction)

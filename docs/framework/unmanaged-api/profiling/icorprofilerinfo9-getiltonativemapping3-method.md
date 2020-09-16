@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 22fe5608b0a3f86baf80abb3810a512077954ac3
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 14391a0fe046b44aedca1da2bc42c7d962e1a5e7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449746"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541273"
 ---
 # <a name="icorprofilerinfo9getiltonativemapping3-method"></a>ICorProfilerInfo9：： GetILToNativeMapping3 方法
 
@@ -35,11 +35,11 @@ HRESULT GetILToNativeMapping3( [in]  UINT_PTR pNativeCodeStartAddress,
 
 - `pNativeCodeStartAddress`
 
-  \[中的）指向本机函数开头的指针。
+  \[in] 指向本机函数开头的指针。
 
 - `cMap`
 
-  \[] `map` 数组的最大大小。
+  \[in] 数组的最大大小 `map` 。
 
 - `pcMap`
 
@@ -47,22 +47,22 @@ HRESULT GetILToNativeMapping3( [in]  UINT_PTR pNativeCodeStartAddress,
 
 - `map`
 
-  \[out] [COR_DEBUG_IL_TO_NATIVE_MAP](../debugging/cor-debug-il-to-native-map-structure.md)结构的数组，其中每个结构指定偏移量。 `GetILToNativeMapping3` 方法返回后，`map` 将包含部分或全部 `COR_DEBUG_IL_TO_NATIVE_MAP` 结构。
+  \[out] [COR_DEBUG_IL_TO_NATIVE_MAP](../debugging/cor-debug-il-to-native-map-structure.md) 结构的数组，其中每个结构都指定了偏移量。 `GetILToNativeMapping3` 方法返回后，`map` 将包含部分或全部 `COR_DEBUG_IL_TO_NATIVE_MAP` 结构。
 
 ## <a name="remarks"></a>备注
 
-当启用分层编译时，一个方法可能有多个本机代码体。 [ICorProfilerInfo9：： GetNativeCodeStartAddresses](icorprofilerinfo9-getnativecodestartaddresses-method.md)将返回所有本机代码正文的开始地址。
+当启用分层编译时，一个方法可能有多个本机代码体。 [ICorProfilerInfo9：： GetNativeCodeStartAddresses](icorprofilerinfo9-getnativecodestartaddresses-method.md) 将返回所有本机代码正文的开始地址。
 
 ## <a name="requirements"></a>要求
 
-**平台：** 请参阅[支持 .Net Core 的操作系统](../../../core/install/dependencies.md?pivots=os-windows)。
+**平台：** 请参阅 [支持 .Net Core 的操作系统](../../../core/install/windows.md?pivots=os-windows)。
 
 **头文件：** CorProf.idl、CorProf.h
 
 **库：** CorGuids.lib
 
-**.NET Framework 版本：** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
+**.NET Framework 版本：**[!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [ICorProfilerInfo9 接口](icorprofilerinfo9-interface.md)

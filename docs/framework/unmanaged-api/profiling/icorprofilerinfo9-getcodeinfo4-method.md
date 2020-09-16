@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: f65cebff912adeb7afc34434467cf7be72f9be32
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: ecaff179378eb417393c0a0d17d0a00d3b99e5a4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449759"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541293"
 ---
 # <a name="icorprofilerinfo9getcodeinfo4-method"></a>ICorProfilerInfo9：： GetCodeInfo4 方法
 
@@ -35,15 +35,15 @@ HRESULT GetCodeInfo4( [in]  UINT_PTR pNativeCodeStartAddress,
 
 - `pNativeCodeStartAddress`
 
-  \[中的）指向本机函数开头的指针。
+  \[in] 指向本机函数开头的指针。
 
 - `cCodeInfos`
 
-  \[） `codeInfos` 数组的大小。
+  \[in] 数组的大小 `codeInfos` 。
 
 - `pcCodeInfos`
 
-  \[out] 指向可用[COR_PRF_CODE_INFO](cor-prf-code-info-structure.md)结构总数的指针。
+  \[out] 指向可用 [COR_PRF_CODE_INFO](cor-prf-code-info-structure.md) 结构总数的指针。
 
 - `codeInfos`
 
@@ -51,27 +51,27 @@ HRESULT GetCodeInfo4( [in]  UINT_PTR pNativeCodeStartAddress,
 
 ## <a name="remarks"></a>备注
 
-`GetCodeInfo4` 方法类似于[GetCodeInfo3](icorprofilerinfo4-getcodeinfo3-method.md)，只不过它可以查找方法的不同本机版本的代码信息。
+`GetCodeInfo4`方法类似于[GetCodeInfo3](icorprofilerinfo4-getcodeinfo3-method.md)，只不过它可以查找方法的不同本机版本的代码信息。
 
 > [!NOTE]
 > `GetCodeInfo4` 可以触发垃圾回收。
 
 范围按公共中间语言 (CIL) 偏移递增的顺序进行排序。
 
-`GetCodeInfo4` 返回后，必须验证 `codeInfos` 缓冲区是否足够大，以便包含所有[COR_PRF_CODE_INFO](cor-prf-code-info-structure.md)结构。 为此，请将 `cCodeInfos` 的值和 `cchName` 参数的值进行比较。 如果 `cCodeInfos` 除以[COR_PRF_CODE_INFO](cor-prf-code-info-structure.md)结构的大小小于 `pcCodeInfos`，则分配一个较大的 `codeInfos` 缓冲区，使用新的、更大的大小更新 `cCodeInfos`，然后再次调用 `GetCodeInfo4`。
+`GetCodeInfo4`返回后，必须验证 `codeInfos` 缓冲区大小是否足以包含所有[COR_PRF_CODE_INFO](cor-prf-code-info-structure.md)的结构。 为此，请将 `cCodeInfos` 的值和 `cchName` 参数的值进行比较。 如果 `cCodeInfos` 除以 [COR_PRF_CODE_INFO](cor-prf-code-info-structure.md) 结构的大小小于 `pcCodeInfos` ，则分配更大的 `codeInfos` 缓冲区， `cCodeInfos` 用新的、更大的大小更新，然后再次调用 `GetCodeInfo4` 。
 
-或者，可以先用长度为零的 `GetCodeInfo4` 缓冲区调用 `codeInfos` 以获取正确的缓冲区大小。 然后，可以将 `codeInfos` 缓冲区大小设置为 `pcCodeInfos`中返回的值，再乘以[COR_PRF_CODE_INFO](cor-prf-code-info-structure.md)结构的大小，然后再次调用 `GetCodeInfo4`。
+或者，可以先用长度为零的 `codeInfos` 缓冲区调用 `GetCodeInfo4` 以获取正确的缓冲区大小。 然后，可以将 `codeInfos` 缓冲区大小设置为中返回的值 `pcCodeInfos` ，再乘以 [COR_PRF_CODE_INFO](cor-prf-code-info-structure.md) 结构的大小，然后 `GetCodeInfo4` 再次调用。
 
 ## <a name="requirements"></a>要求
 
-**平台：** 请参阅[支持 .Net Core 的操作系统](../../../core/install/dependencies.md?pivots=os-windows)。
+**平台：** 请参阅 [支持 .Net Core 的操作系统](../../../core/install/windows.md?pivots=os-windows)。
 
 **头文件：** CorProf.idl、CorProf.h
 
 **库：** CorGuids.lib
 
-**.Net 版本：** [!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
+**.Net 版本：**[!INCLUDE[net_core_22](../../../../includes/net-core-22-md.md)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [ICorProfilerInfo9 接口](ICorProfilerInfo9-interface.md)

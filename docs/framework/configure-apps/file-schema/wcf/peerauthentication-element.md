@@ -2,17 +2,17 @@
 title: <peerAuthentication> 元素
 ms.date: 03/30/2017
 ms.assetid: 09a8a9ff-e395-42f6-8ceb-9d44bdc1cbe1
-ms.openlocfilehash: 4c29c84a2cc56a890c8273e410ba31b5f3900732
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 093b0c4b6a7fbf54455ec523b52c1f3a9884cfa8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400084"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536010"
 ---
 # <a name="peerauthentication-element"></a>\<peerAuthentication> 元素
 指定用于对等客户端的身份验证选项。  
   
- 有关对等编程的详细信息，请参阅对等[网络](../../../wcf/feature-details/peer-to-peer-networking.md)。  
+ 有关对等编程的详细信息，请参阅对等 [网络](../../../wcf/feature-details/peer-to-peer-networking.md)。  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
@@ -35,49 +35,49 @@ ms.locfileid: "70400084"
 ## <a name="attributes-and-elements"></a>特性和元素  
  以下几节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>特性  
+### <a name="attributes"></a>属性  
   
 |属性|说明|  
 |---------------|-----------------|  
 |`customCertificateValidatorType`|可选的字符串。 一个用于验证自定义类型的类型和程序集。 当 `certificateValidationMode` 设置为 `Custom` 时，必须设置此属性。|  
-|`certificateValidationMode`|可选的枚举。 指定用来验证凭据的三种模式之一。 如果设置为 `Custom`，则还必须提供 `customCertificateValidator`。 默认为 `ChainTrust`。|  
-|`revocationMode`|可选的枚举。 用于检查吊销证书列表 (CRL) 的一种模式。 默认为 `Online`。|  
-|`trustedStoreLocation`|可选的枚举。 两个系统存储位置之一：`LocalMachine` 或 `CurrentUser`。 在向客户端协商服务证书时使用此值。 针对指定存储位置中的 "**受信任人**" 存储执行验证。 默认为 `CurrentUser`。|  
+|`certificateValidationMode`|可选的枚举。 指定用来验证凭据的三种模式之一。 如果设置为 `Custom`，则还必须提供 `customCertificateValidator`。 默认值为 `ChainTrust`。|  
+|`revocationMode`|可选的枚举。 用于检查吊销证书列表 (CRL) 的一种模式。 默认值为 `Online`。|  
+|`trustedStoreLocation`|可选的枚举。 两个系统存储位置之一：`LocalMachine` 或 `CurrentUser`。 在向客户端协商服务证书时使用此值。 针对指定存储位置中的 " **受信任人** " 存储执行验证。 默认值为 `CurrentUser`。|  
   
 ## <a name="customcertificatevalidatortype-attribute"></a>customCertificateValidatorType 属性  
   
-|值|说明|  
+|“值”|说明|  
 |-----------|-----------------|  
 |String|指定类型名称和程序集以及用于查找类型的其他数据。 至少需要命名空间和类型名称。 可选信息包括：程序集名称、版本号、区域性和公钥标记。|  
   
 ## <a name="certificatevalidationmode-attribute"></a>certificateValidationMode 属性  
   
-|值|说明|  
+|“值”|说明|  
 |-----------|-----------------|  
-|枚举|下列值之一：`None`、`PeerTrust`、`ChainTrust`、`PeerOrChainTrust` 和 `Custom`。 默认为 `ChainTrust`。<br /><br /> 有关详细信息，请参阅使用[证书](../../../wcf/feature-details/working-with-certificates.md)。|  
+|枚举|下列值之一：`None`、`PeerTrust`、`ChainTrust`、`PeerOrChainTrust` 和 `Custom`。 默认值为 `ChainTrust`。<br /><br /> 有关详细信息，请参阅使用 [证书](../../../wcf/feature-details/working-with-certificates.md)。|  
   
 ## <a name="revocationmode-attribute"></a>revocationMode 属性  
   
-|值|说明|  
+|“值”|说明|  
 |-----------|-----------------|  
-|枚举|下列值之一：`NoCheck`、`Online` 和 `Offline`。 默认为 `Online`。<br /><br /> 有关详细信息，请参阅使用[证书](../../../wcf/feature-details/working-with-certificates.md)。|  
+|枚举|下列值之一：`NoCheck`、`Online` 和 `Offline`。 默认值为 `Online`。<br /><br /> 有关详细信息，请参阅使用 [证书](../../../wcf/feature-details/working-with-certificates.md)。|  
   
 ## <a name="trustedstorelocation-attribute"></a>trustedStoreLocation 属性  
   
-|值|说明|  
+|“值”|说明|  
 |-----------|-----------------|  
-|枚举|以下值之一：`LocalMachine` 或 `CurrentUser`。 默认为 `CurrentUser`。 如果客户端应用程序在系统帐户下运行，则证书通常位于 `LocalMachine`。 如果客户端应用程序在用户帐户下运行，则证书通常位于 `CurrentUser`。|  
+|枚举|以下值之一：`LocalMachine` 或 `CurrentUser`。 默认值为 `CurrentUser`。 如果客户端应用程序在系统帐户下运行，则证书通常位于 `LocalMachine`。 如果客户端应用程序在用户帐户下运行，则证书通常位于 `CurrentUser`。|  
   
 ### <a name="child-elements"></a>子元素  
  无。  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<peer>](peer-of-clientcredentials-element.md)|指定一个用于向对等服务证明客户端身份的凭据。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
  `<authentication>` 元素与 <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication> 类相对应。 此元素指定一个验证程序，在网格中执行邻居对等身份验证的过程中将调用该验证程序。 当新对等方尝试建立邻居连接时，它会将自己的凭据传递到响应的对等方。 将调用响应方的验证程序来验证远程方的凭据。 每当在网格中建立对等连接时，对等方将会相互进行身份验证，这意味着会同时在两方调用验证程序。  
   
 ## <a name="example"></a>示例  
@@ -101,7 +101,7 @@ ms.locfileid: "70400084"
 </behaviors>
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.PeerCredentialElement>
 - <xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>
@@ -110,6 +110,6 @@ ms.locfileid: "70400084"
 - <xref:System.ServiceModel.Configuration.X509PeerCertificateAuthenticationElement>
 - [使用证书](../../../wcf/feature-details/working-with-certificates.md)
 - [对等网络](../../../wcf/feature-details/peer-to-peer-networking.md)
-- [对等通道消息身份验证](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
-- [对等通道自定义身份验证](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
+- [对等通道消息身份验证](/previous-versions/dotnet/netframework-3.5/aa967730(v=vs.90))
+- [对等通道自定义身份验证](/previous-versions/dotnet/netframework-3.5/ms751447(v=vs.90))
 - [保护对等通道应用程序](../../../wcf/feature-details/securing-peer-channel-applications.md)

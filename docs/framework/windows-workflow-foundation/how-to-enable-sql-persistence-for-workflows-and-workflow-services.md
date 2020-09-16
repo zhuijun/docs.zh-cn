@@ -2,18 +2,18 @@
 title: 如何：对工作流和工作流服务启用 SQL 持久性
 ms.date: 03/30/2017
 ms.assetid: ca7bf77f-3e5d-4b23-b17a-d0b60f46411d
-ms.openlocfilehash: bbbd2e6a5eb3babeb1a4d06976fdefd621581766
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 5bcd37a654db35ba6e8af1b15d6c132a090b0579
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837683"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547748"
 ---
 # <a name="how-to-enable-sql-persistence-for-workflows-and-workflow-services"></a>如何：对工作流和工作流服务启用 SQL 持久性
 
 本主题介绍如何通过编程方式以及使用配置文件来配置 SQL 工作流实例存储功能，以便为工作流和工作流服务启用持久性。
 
-Windows Server App Fabric 大大简化了配置持久性的过程。 有关详细信息，请参阅[应用构造持久性配置](https://docs.microsoft.com/previous-versions/appfabric/ee790848(v=azure.10))。
+Windows Server App Fabric 大大简化了配置持久性的过程。 有关详细信息，请参阅 [应用构造持久性配置](/previous-versions/appfabric/ee790848(v=azure.10))。
 
 使用 SQL 工作流实例存储功能之前，创建一个数据库以供该功能用来持久保存工作流实例。 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] 安装程序将与 SQL 工作流实例存储功能相关联的 SQL 脚本文件复制到 %WINDIR%\Microsoft.NET\Framework\v4.xxx\SQL\EN 文件夹。 针对您希望 SQL 工作流实例存储用于持久保存工作流实例的 SQL Server 2005 或 SQL Server 2008 数据库，运行这些脚本文件。 首先运行 SqlWorkflowInstanceStoreSchema.sql 文件，之后运行 SqlWorkflowInstanceStoreLogic.sql 文件。
 
@@ -28,7 +28,7 @@ Windows Server App Fabric 大大简化了配置持久性的过程。 有关详�
 >
 > System.Data.SqlClient.SqlException: 找不到存储过程“System.Activities.DurableInstancing.CreateLockOwner”
 
-下面介绍如何使用 SQL 工作流实例存储来为工作流与工作流服务启用持久性。 有关 SQL 工作流实例存储的属性的详细信息，请参阅[Sql 工作流实例存储的属性](properties-of-sql-workflow-instance-store.md)。
+下面介绍如何使用 SQL 工作流实例存储来为工作流与工作流服务启用持久性。 有关 SQL 工作流实例存储的属性的详细信息，请参阅 [Sql 工作流实例存储的属性](properties-of-sql-workflow-instance-store.md)。
 
 ## <a name="enabling-persistence-for-self-hosted-workflows-that-use-workflowapplication"></a>为使用 WorkflowApplication 的自承载工作流启用持久性
 
@@ -36,7 +36,7 @@ Windows Server App Fabric 大大简化了配置持久性的过程。 有关详�
 
 #### <a name="to-enable-persistence-for-self-hosted-workflows"></a>为自承载工作流启用持久性
 
-1. 添加对 DurableInstancing 的引用。
+1. 添加对 System.Activities.DurableInstancing.dll 的引用。
 
 2. 将以下语句添加到源文件顶部的现有“using”语句后面。
 
@@ -126,7 +126,7 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
 
 可使用配置文件为自承载或 Windows 进程激活服务 (WAS) 承载的工作流服务启用持久性。 WAS 承载的工作流服务与自承载工作流服务一样，都使用 WorkflowServiceHost。
 
-`SqlWorkflowInstanceStoreBehavior`是一种服务行为，它允许您通过 XML 配置方便地更改[SQL 工作流实例存储](sql-workflow-instance-store.md)属性。 对于 WAS 承载的工作流服务，请使用 Web.config 文件。 下面的配置示例演示如何使用配置文件中的 `sqlWorkflowInstanceStore` 行为元素来配置 SQL 工作流实例存储。
+`SqlWorkflowInstanceStoreBehavior`，一种服务行为，可用于通过 XML 配置方便地更改[SQL 工作流实例存储](sql-workflow-instance-store.md)属性。 对于 WAS 承载的工作流服务，请使用 Web.config 文件。 下面的配置示例演示如何使用配置文件中的 `sqlWorkflowInstanceStore` 行为元素来配置 SQL 工作流实例存储。
 
 ```xml
 <serviceBehaviors>
@@ -152,13 +152,13 @@ workflowServiceHost.DurableInstancingOptions.InstanceStore = sqlInstanceStoreObj
 ```
 
 > [!IMPORTANT]
-> 建议不要在 Web.config 文件中存储敏感信息，如用户名和密码。 如果在 Web.config 文件中存储了敏感信息，应使用文件系统访问控制列表 (ACL) 来确保安全访问 Web.config 文件。 此外，还可以在[使用受保护配置加密配置信息](https://docs.microsoft.com/previous-versions/aspnet/53tyfkaw(v=vs.100))中所述，保护配置文件中的配置值。
+> 建议不要在 Web.config 文件中存储敏感信息，如用户名和密码。 如果在 Web.config 文件中存储了敏感信息，应使用文件系统访问控制列表 (ACL) 来确保安全访问 Web.config 文件。 此外，还可以在 [使用受保护配置加密配置信息](/previous-versions/aspnet/53tyfkaw(v=vs.100))中所述，保护配置文件中的配置值。
 
 ### <a name="machineconfig-elements-related-to-the-sql-workflow-instance-store-feature"></a>与 SQL 工作流实例存储功能相关的 Machine.config 元素
 
 [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)] 安装将以下与 SQL 工作流实例存储功能相关的元素添加到 Machine.config 文件中：
 
-- 将以下行为扩展元素添加到 Machine.config 文件中，以便可以使用配置文件中的 \<sqlWorkflowInstanceStore > 服务行为元素来为服务配置持久性。
+- 将以下行为扩展元素添加到 Machine.config 文件中，以便可以使用 \<sqlWorkflowInstanceStore> 配置文件中的服务行为元素来为服务配置持久性。
 
     ```xml
     <configuration>

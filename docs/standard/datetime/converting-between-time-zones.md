@@ -13,12 +13,12 @@ helpviewer_keywords:
 - converting times
 - local time conversions
 ms.assetid: a51e1a3b-c983-4320-b31a-1f9fa3cf824a
-ms.openlocfilehash: 7d1984866c5eacdfe21834389b8f0be4caf78fb7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 156c3d8b360d62ba72f9a4447646fafe170ea658
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446836"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547325"
 ---
 # <a name="converting-times-between-time-zones"></a>在各时区之间转换时间
 
@@ -26,12 +26,12 @@ ms.locfileid: "84446836"
 
 ## <a name="converting-to-coordinated-universal-time"></a>转换为协调世界时
 
-协调世界时 (UTC) 是一项高精度的原子时标准。 世界的时区表示为相对于 UTC 的正/负偏移量。 因此，UTC 提供一种无时区或中间时区的时间。 如果日期和时间在计算机之间的可移植性非常重要，则建议使用 UTC 时间。 （有关使用日期和时间的详细信息和其他最佳做法，请参阅在[.NET Framework 中使用 DateTime 的编码最佳做法](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973825(v=msdn.10))。）将各个时区转换为 UTC 可简化时间比较。
+协调世界时 (UTC) 是一项高精度的原子时标准。 世界的时区表示为相对于 UTC 的正/负偏移量。 因此，UTC 提供一种无时区或中间时区的时间。 如果日期和时间在计算机之间的可移植性非常重要，则建议使用 UTC 时间。  (有关使用日期和时间的详细信息和其他最佳做法，请参阅在 [.NET Framework 中使用 DateTime 的编码最佳做法](/previous-versions/dotnet/articles/ms973825(v=msdn.10))。 ) 将各个时区转换为 UTC 可简化时间比较。
 
 > [!NOTE]
 > 您还可以 <xref:System.DateTimeOffset> 对结构进行序列化以明确表示单个时间点。 由于 <xref:System.DateTimeOffset> 对象会存储日期和时间值以及其相对于 utc 的偏移量，因此，它们始终表示与 utc 的关系中的特定时间点。
 
-将时间转换为 UTC 的最简单方法是调用 `static` （ `Shared` 在 Visual Basic） <xref:System.TimeZoneInfo.ConvertTimeToUtc%28System.DateTime%29?displayProperty=nameWithType> 方法。 方法所执行的确切转换取决于 `dateTime` 参数的属性的值，如下 <xref:System.DateTime.Kind%2A> 表所示。
+将时间转换为 UTC 的最简单方法是 `static` `Shared` 在 Visual Basic) 方法中调用 (<xref:System.TimeZoneInfo.ConvertTimeToUtc%28System.DateTime%29?displayProperty=nameWithType> 。 方法所执行的确切转换取决于 `dateTime` 参数的属性的值，如下 <xref:System.DateTime.Kind%2A> 表所示。
 
 | `DateTime.Kind`            | 转换                                                                     |
 | -------------------------- | ------------------------------------------------------------------------------ |
@@ -44,14 +44,14 @@ ms.locfileid: "84446836"
 [!code-csharp[System.TimeZone2.Concepts#6](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#6)]
 [!code-vb[System.TimeZone2.Concepts#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#6)]
 
-如果日期和时间值不表示本地时间或 UTC，则该 <xref:System.DateTime.ToUniversalTime%2A> 方法可能会返回错误的结果。 但是，您可以使用 <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A?displayProperty=nameWithType> 方法来转换指定时区的日期和时间。 （有关检索表示目标时区的对象的详细信息 <xref:System.TimeZoneInfo> ，请参阅[查找本地系统上定义的时区](finding-the-time-zones-on-local-system.md)。）下面的代码使用 <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A?displayProperty=nameWithType> 方法将东部标准时间转换为 UTC。
+如果日期和时间值不表示本地时间或 UTC，则该 <xref:System.DateTime.ToUniversalTime%2A> 方法可能会返回错误的结果。 但是，您可以使用 <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A?displayProperty=nameWithType> 方法来转换指定时区的日期和时间。  (有关检索表示目标时区的对象的详细信息 <xref:System.TimeZoneInfo> ，请参阅 [查找本地系统上定义的时区](finding-the-time-zones-on-local-system.md)。 ) 下面的代码使用 <xref:System.TimeZoneInfo.ConvertTimeToUtc%2A?displayProperty=nameWithType> 方法将东部标准时间转换为 UTC。
 
 [!code-csharp[System.TimeZone2.Concepts#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#7)]
 [!code-vb[System.TimeZone2.Concepts#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#7)]
 
 请注意， <xref:System.ArgumentException> 如果 <xref:System.DateTime> 对象的 <xref:System.DateTime.Kind%2A> 属性与时区不匹配，此方法将引发。 如果 <xref:System.DateTime.Kind%2A> 属性为 <xref:System.DateTimeKind.Local?displayProperty=nameWithType> <xref:System.TimeZoneInfo> ，但对象不表示本地时区，或者 <xref:System.DateTime.Kind%2A> 属性为 <xref:System.DateTimeKind.Utc?displayProperty=nameWithType> 但对象不 <xref:System.TimeZoneInfo> 相等， <xref:System.TimeZoneInfo.Utc?displayProperty=nameWithType> 则会发生不匹配。
 
-所有这些方法都 <xref:System.DateTime> 将值作为参数，并返回一个 <xref:System.DateTime> 值。 对于 <xref:System.DateTimeOffset> 值， <xref:System.DateTimeOffset> 结构具有 <xref:System.DateTimeOffset.ToUniversalTime%2A> 实例方法，该方法可将当前实例的日期和时间转换为 UTC。 下面的示例调用 <xref:System.DateTimeOffset.ToUniversalTime%2A> 方法，将本地时间和几个其他时间转换为协调世界时（UTC）。
+所有这些方法都 <xref:System.DateTime> 将值作为参数，并返回一个 <xref:System.DateTime> 值。 对于 <xref:System.DateTimeOffset> 值， <xref:System.DateTimeOffset> 结构具有 <xref:System.DateTimeOffset.ToUniversalTime%2A> 实例方法，该方法可将当前实例的日期和时间转换为 UTC。 下面的示例调用方法，将 <xref:System.DateTimeOffset.ToUniversalTime%2A> 本地时间和几个其他时间转换为协调世界时 (UTC) 。
 
 [!code-csharp[System.DateTimeOffset.Methods#16](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Methods/cs/Methods.cs#16)]
 [!code-vb[System.DateTimeOffset.Methods#16](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Methods/vb/Methods.vb#16)]
@@ -82,11 +82,11 @@ ms.locfileid: "84446836"
 > [!NOTE]
 > 此 <xref:System.TimeZone.ToLocalTime%2A?displayProperty=nameWithType> 方法的行为与 `DateTime.ToLocalTime` 方法相同。 它采用单个参数，即要转换的日期和时间值。
 
-你还可以使用 `static` （ `Shared` 在 Visual Basic）方法将任何指定时区中的时间转换为本地时间 <xref:System.TimeZoneInfo.ConvertTime%2A?displayProperty=nameWithType> 。 下一节将讨论此方法。
+还可以通过使用 `static` `Shared` Visual Basic) 方法中的 (，将任何指定时区中的时间转换为本地时间 <xref:System.TimeZoneInfo.ConvertTime%2A?displayProperty=nameWithType> 。 下一节将讨论此方法。
 
 ## <a name="converting-between-any-two-time-zones"></a>在任意两个时区之间转换
 
-您可以通过使用类的以下两个 `static` （ `Shared` 在 Visual Basic 中）方法之一在任意两个时区之间进行转换 <xref:System.TimeZoneInfo> ：
+您可以通过使用 `static` `Shared` 类的 Visual Basic) 方法中的以下两个 (之一在任意两个时区之间进行转换 <xref:System.TimeZoneInfo> ：
 
 - <xref:System.TimeZoneInfo.ConvertTime%2A>
 
@@ -119,7 +119,7 @@ ms.locfileid: "84446836"
 [!code-csharp[System.DateTimeOffset.Conceptual.OffsetConversions#2](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/cs/timeconversions2.cs#2)]
 [!code-vb[System.DateTimeOffset.Conceptual.OffsetConversions#2](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/vb/TimeConversions2.vb#2)]
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.TimeZoneInfo>
 - [日期、时间和时区](index.md)

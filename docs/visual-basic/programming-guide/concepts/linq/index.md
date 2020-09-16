@@ -2,12 +2,12 @@
 title: 语言集成查询 (LINQ)
 ms.date: 07/20/2015
 ms.assetid: a99371f7-097c-49a0-b62b-0e31c34aad0e
-ms.openlocfilehash: 62b07043bd6148d8ec9aeaaf45ee1adb108d2c6c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 53c4033c4626fd34c3cd8752e74af3f8e9b481c3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397592"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90549937"
 ---
 # <a name="language-integrated-query-linq-visual-basic"></a>语言集成查询 (LINQ) (Visual Basic)
 LINQ 是一组功能，扩展了针对 Visual Basic 语言语法的强大的查询功能。 LINQ 引入了标准易学的数据查询和更新模式，并且该方法可扩展用于支持任何类型的数据存储。  .NET Framework 包括 LINQ 提供程序程序集，后者支持将 LINQ 与 .NET Framework 集合、SQL Server 数据库、ADO.NET 数据集和 XML 文档结合使用。  
@@ -28,7 +28,7 @@ LINQ 是一组功能，扩展了针对 Visual Basic 语言语法的强大的查�
  [LINQ to Objects (Visual Basic)](linq-to-objects.md)  
  包含指向相关主题的链接，这些主题说明如何使用 LINQ to Objects 来访问内存中的数据结构。  
   
- [LINQ to XML (Visual Basic)](linq-to-xml.md)  
+ [LINQ to XML (Visual Basic)](../../../../standard/linq/linq-xml-overview.md)  
  包含指向说明如何使用 LINQ to XML 的主题的链接，此功能可提供文档对象模型 (DOM) 的内存中文档修改功能，并且支持 LINQ 查询表达式。  
   
  [LINQ to ADO.NET（门户网站页）](linq-to-adonet-portal-page.md)  

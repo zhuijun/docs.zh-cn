@@ -8,12 +8,12 @@ helpviewer_keywords:
 - .NET Native
 - C# and native compilation
 ms.assetid: 47cd5648-9469-4b1d-804c-43cc04384045
-ms.openlocfilehash: 1f176e81905fe68c6d740a13240fe814659a7a59
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7601a6d5e7f49b6d8fc434ef772e2e69740f02cf
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128378"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543928"
 ---
 # <a name="compiling-apps-with-net-native"></a>使用 .NET Native 编译引用
 
@@ -38,7 +38,7 @@ ms.locfileid: "73128378"
 - 优化的应用内存使用情况。
 
 > [!IMPORTANT]
-> 对于绝大多数应用和方案，与编译到 IL 或 NGEN 映像的应用相比，.NET Native 提供明显更快的启动时间和更高的性能。 但是，您的结果可能会有所不同。 若要确保你的应用程序已受益于 .NET Native 的性能增强，你应将其性能与应用程序的 non-.NET 本机版本的性能进行比较。 有关详细信息，请参阅[性能会话概述](https://docs.microsoft.com/visualstudio/profiling/performance-session-overview)。
+> 对于绝大多数应用和方案，与编译到 IL 或 NGEN 映像的应用相比，.NET Native 提供明显更快的启动时间和更高的性能。 但是，您的结果可能会有所不同。 若要确保你的应用程序已受益于 .NET Native 的性能增强，你应将其性能与应用程序的 non-.NET 本机版本的性能进行比较。 有关详细信息，请参阅 [性能会话概述](/visualstudio/profiling/performance-session-overview)。
 
 但 .NET Native 只涉及到本机代码的编译。 它会改变 .NET Framework 应用的创建和执行方式。 具体而言：
 

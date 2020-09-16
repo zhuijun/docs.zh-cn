@@ -6,15 +6,15 @@ helpviewer_keywords:
 - hosting interfaces [.NET Framework]
 - unmanaged interfaces [.NET Framework], hosting
 ms.assetid: cc64cb05-38da-418e-815a-daac8e8e26e5
-ms.openlocfilehash: d1668f52ff305ec36fb520c7828c822537da0d02
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b1459bf78276abe0daefd7a7ee814841f3c65dfb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83616094"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550659"
 ---
 # <a name="hosting-interfaces"></a>承载接口
-本节介绍非托管主机可用于将公共语言运行时（CLR）集成到其应用程序中的接口。  
+本部分介绍了非托管主机可用于将公共语言运行时 (CLR) 集成到其应用程序的接口。  
   
  .NET Framework 版本2.0 宿主接口取代了 .NET Framework 版本1.0 和1.1 接口。 两组接口之间存在重大差异。 混合它们可能会导致意外的行为，因此不建议这样做。  
   
@@ -33,7 +33,7 @@ ms.locfileid: "83616094"
  介绍 .NET Framework 4 中引入的托管接口。  
   
 ## <a name="related-sections"></a>相关章节  
- [承载 Coclass](hosting-coclasses.md)  
+ [承载组件类](hosting-coclasses.md)  
   
  [弃用的 CLR 承载函数](deprecated-clr-hosting-functions.md)  
   
@@ -43,4 +43,4 @@ ms.locfileid: "83616094"
   
  [承载](index.md)  
   
- [运行时主机](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))
+ [运行时主机](/previous-versions/dotnet/netframework-4.0/a51xd4ze(v=vs.100))

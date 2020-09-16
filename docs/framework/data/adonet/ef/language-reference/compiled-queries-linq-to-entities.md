@@ -5,20 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8025ba1d-29c7-4407-841b-d5a3bed40b7a
-ms.openlocfilehash: b4594932b6ed21de98faab57d80404a7b763067d
-ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+ms.openlocfilehash: f3270147f0cf38a646efac603f058173daa78547
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/12/2020
-ms.locfileid: "83207919"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541130"
 ---
-# <a name="compiled-queries--linq-to-entities"></a>已编译的查询（LINQ to Entities）
+# <a name="compiled-queries--linq-to-entities"></a>已编译查询 (LINQ to Entities) 
 
 如果应用程序需要在实体框架中多次执行结构类似的查询，通常可以通过仅编译查询一次并在每次执行时使用不同参数的方法来提高性能。 例如，某应用程序要检索特定城市的所有客户，而该城市是运行时由用户在窗体中指定的。 LINQ to Entities 支持将已编译的查询用于此目的。  
   
  从 .NET Framework 4.5 开始，将自动缓存 LINQ 查询。 但是，您仍可以使用已编译的 LINQ 查询来降低后续执行中的这一开销，编译的查询比自动缓存的 LINQ 查询效率更高。 `Enumerable.Contains`不自动缓存将运算符应用于内存中集合的 LINQ to Entities 查询。 此外，不允许在已编译的 LINQ 查询中参数化内存中集合。  
   
- <xref:System.Data.Objects.CompiledQuery> 类提供查询的编译和缓存以供重复使用。 从概念上讲，此类包含 <xref:System.Data.Objects.CompiledQuery> 的 `Compile` 方法以及若干重载。 调用 `Compile` 方法可以创建新的委托来表示已编译的查询。 给定 `Compile` 及其参数值，<xref:System.Data.Objects.ObjectContext> 方法将返回生成某个结果的委托（例如 <xref:System.Linq.IQueryable%601> 实例）。 只在第一次执行的过程中查询才编译一次。 编译时为查询设置的合并选项在以后无法更改。 编译查询后，只能提供基元类型的参数，但不能替换将更改生成的 SQL 的查询部分。 有关详细信息，请参阅[EF 合并选项和已编译的查询](https://docs.microsoft.com/archive/blogs/dsimmons/ef-merge-options-and-compiled-queries)。
+ <xref:System.Data.Objects.CompiledQuery> 类提供查询的编译和缓存以供重复使用。 从概念上讲，此类包含 <xref:System.Data.Objects.CompiledQuery> 的 `Compile` 方法以及若干重载。 调用 `Compile` 方法可以创建新的委托来表示已编译的查询。 给定 `Compile` 及其参数值，<xref:System.Data.Objects.ObjectContext> 方法将返回生成某个结果的委托（例如 <xref:System.Linq.IQueryable%601> 实例）。 只在第一次执行的过程中查询才编译一次。 编译时为查询设置的合并选项在以后无法更改。 编译查询后，只能提供基元类型的参数，但不能替换将更改生成的 SQL 的查询部分。 有关详细信息，请参阅 [EF 合并选项和已编译的查询](/archive/blogs/dsimmons/ef-merge-options-and-compiled-queries)。
   
  用于编译的方法的 LINQ to Entities 查询表达式由 <xref:System.Data.Objects.CompiledQuery> `Compile` 一个泛型委托（如）表示 `Func` <xref:System.Func%605> 。 查询表达式最多可以包装一个 `ObjectContext` 参数、一个返回参数和 16 个查询参数。 如果需要的查询参数不止 16 个，则可以创建一个结构并用其属性表示查询参数。 然后，该结构上的这些属性在经过设置之后就可以用于查询表达式中。  
   
@@ -73,4 +73,4 @@ ms.locfileid: "83207919"
 
 - [ADO.NET 实体框架](../index.md)
 - [LINQ to Entities](linq-to-entities.md)
-- [EF 合并选项和已编译的查询](https://docs.microsoft.com/archive/blogs/dsimmons/ef-merge-options-and-compiled-queries)
+- [EF 合并选项和已编译的查询](/archive/blogs/dsimmons/ef-merge-options-and-compiled-queries)

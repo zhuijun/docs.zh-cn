@@ -14,12 +14,12 @@ helpviewer_keywords:
 - data types [Visual Basic], numeric
 - unsigned types [Visual Basic], using
 ms.assetid: c2c0e712-8dc2-43b9-b4c6-345fbb02e7ce
-ms.openlocfilehash: f30b78a2f0c38f233796e18006c889438dce4c58
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5b78c808de4a16060d37844ad0f17e89fa6f6d84
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396825"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548073"
 ---
 # <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>如何：调用采用无符号类型的 Windows 函数 (Visual Basic)
 
@@ -27,7 +27,7 @@ ms.locfileid: "84396825"
 
 ## <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>调用采用无符号类型的 Windows 函数
 
-1. 使用[Declare 语句](../../language-reference/statements/declare-statement.md)来告知 Visual Basic 哪个库包含函数、其在库中的名称、调用顺序，以及如何在调用字符串时转换字符串。
+1. 使用 [Declare 语句](../../language-reference/statements/declare-statement.md) 来告知 Visual Basic 哪个库包含函数、其在库中的名称、调用顺序，以及如何在调用字符串时转换字符串。
 
 2. 在 `Declare` 语句中，将 `UInteger` 、 `ULong` 、 `UShort` 或 `Byte` 适当地用于具有无符号类型的每个参数。
 
@@ -70,15 +70,15 @@ ms.locfileid: "84396825"
     ```
 
     > [!CAUTION]
-    > `UInteger`、 `ULong` 、 `UShort` 和 `SByte` 数据类型不是[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md)（cls）的一部分，因此符合 CLS 的代码无法使用使用它们的组件。
+    > `UInteger`、 `ULong` 、 `UShort` 和 `SByte` 数据类型不是[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md) (CLS) 的一部分，因此符合 cls 的代码无法使用使用它们的组件。
 
     > [!IMPORTANT]
-    > 调用非托管代码（如 Windows 应用程序编程接口（API））会向你的代码带来潜在的安全风险。
+    > 调用非托管代码（如 (API) 的 Windows 应用程序编程接口）会使代码面临潜在的安全风险。
 
     > [!IMPORTANT]
-    > 调用 Windows API 需要非托管代码权限，这可能会影响在部分信任情况下的执行。 有关详细信息，请参阅 <xref:System.Security.Permissions.SecurityPermission> 和[代码访问权限](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h846e9b3(v=vs.100))。
+    > 调用 Windows API 需要非托管代码权限，这可能会影响在部分信任情况下的执行。 有关详细信息，请参阅 <xref:System.Security.Permissions.SecurityPermission> 和 [代码访问权限](/previous-versions/dotnet/netframework-4.0/h846e9b3(v=vs.100))。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [数据类型](../../language-reference/data-types/index.md)
 - [Integer 数据类型](../../language-reference/data-types/integer-data-type.md)

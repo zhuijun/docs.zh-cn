@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1f5ce46b-e259-4bc9-a0b9-89d06fc9341c
-ms.openlocfilehash: f90906b4c3fc1d1d76977451abfb238bb33fb581
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 29ac26616313ec8bd7661cb92c42f726ec051cd7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595110"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542882"
 ---
 # <a name="trusted-subsystem"></a>受信任的子系统
 客户端访问分布在网络上的一个或多个 Web 服务。 Web 服务的设计使对其他资源（比如数据库或其他 Web 服务）的访问包装在 Web 服务的企业逻辑中。 必须保护这些资源不受到未经授权的访问。 下图描述了一个受信任的子系统过程。  
@@ -29,16 +29,16 @@ ms.locfileid: "84595110"
   
 5. 受信任子系统处理响应并对客户端发出其自己的响应。  
   
-|特征|描述|  
+|特征|说明|  
 |--------------------|-----------------|  
 |安全模式|Message|  
-|互操作性|仅 Windows Communication Foundation （WCF）。|  
+|互操作性|仅 (WCF) Windows Communication Foundation。|  
 |身份验证（服务）|安全令牌服务对客户端进行身份验证和授权。|  
 |身份验证（客户端）|受信任子系统对客户端进行身份验证，资源对受信任子系统服务进行身份验证。|  
 |完整性|是|  
-|机密性|是|  
+|保密性|是|  
 |Transport|客户端和受信任子系统服务之间采用 HTTP。<br /><br /> 受信任子系统服务和资源（后端服务）之间采用 NET.TCP。|  
-|绑定|<xref:System.ServiceModel.WSHttpBinding>与<xref:System.ServiceModel.NetTcpBinding>[\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
+|绑定|<xref:System.ServiceModel.WSHttpBinding> 与 <xref:System.ServiceModel.NetTcpBinding>[\<wsFederationHttpBinding>](../../configure-apps/file-schema/wcf/wsfederationhttpbinding.md)|  
   
 ## <a name="resource-back-end-service"></a>资源（后端服务）  
   
@@ -210,7 +210,7 @@ ms.locfileid: "84595110"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

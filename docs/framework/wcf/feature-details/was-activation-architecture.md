@@ -2,12 +2,12 @@
 title: WAS 激活体系结构
 ms.date: 03/30/2017
 ms.assetid: 58aeffb0-8f3f-4b40-80c8-15f3f1652fd3
-ms.openlocfilehash: cfbfd91f9e7bc2e1b4f8485d5ae22c1fb2b5228b
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 77cebede5827016c5c9660663c0491614ba0ef19
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84600667"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545977"
 ---
 # <a name="was-activation-architecture"></a>WAS 激活体系结构
 本主题详细列举和讨论了 Windows 进程激活服务（也称为 WAS）的组件。  
@@ -30,7 +30,7 @@ ms.locfileid: "84600667"
  ![显示 WAS 体系结构的屏幕截图。](./media/was-activation-architecture/windows-process-application-service-architecture.gif)  
   
 ### <a name="listener-adapters"></a>侦听器适配器  
- 侦听器适配器是一些单独的 Windows 服务，这些服务可以实现用于通过其侦听的网络协议接收消息的网络通信逻辑。 下表列出了用于 Windows Communication Foundation （WCF）协议的侦听器适配器。  
+ 侦听器适配器是一些单独的 Windows 服务，这些服务可以实现用于通过其侦听的网络协议接收消息的网络通信逻辑。 下表列出了 Windows Communication Foundation (WCF) 协议的侦听器适配器。  
   
 |侦听器适配器服务名称|协议|说明|  
 |-----------------------------------|--------------|-----------|  
@@ -85,7 +85,7 @@ ms.locfileid: "84600667"
 </system.web>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [配置 WAS 以用于 WCF](configuring-the-wpa--service-for-use-with-wcf.md)
-- [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Windows Server App Fabric 承载功能](/previous-versions/appfabric/ee677189(v=azure.10))

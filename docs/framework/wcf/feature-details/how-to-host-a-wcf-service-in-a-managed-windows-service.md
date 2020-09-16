@@ -6,18 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8e37363b-4dad-4fb6-907f-73c30fac1d9a
-ms.openlocfilehash: 4e07aa7aac82fae5cfd1bfc759ef724cf87a873a
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 21d3dcb05e48154eb3f9f10d8308dc14bd046ae1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246931"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546336"
 ---
 # <a name="how-to-host-a-wcf-service-in-a-managed-windows-service"></a>如何：在托管 Windows 服务中承载 WCF 服务
 
-本主题概述了创建由 Windows 服务托管的 Windows Communication Foundation （WCF）服务所需的基本步骤。 此方案由托管 Windows 服务宿主选项启用，该选项是一项长时间运行的 WCF 服务，该服务在未激活消息的安全环境中作为 Internet Information Services （IIS）的宿主。 服务的生存期改由操作系统控制。 此宿主选项在 Windows 的所有版本中都是可用的。
+本主题概述了创建由 Windows 服务托管的 Windows Communication Foundation (WCF) 服务所需的基本步骤。 此方案由托管 Windows 服务宿主选项启用，该选项是一个长时间运行的 WCF 服务，该服务在未激活消息的安全环境中 Internet Information Services (IIS) 上托管。 服务的生存期改由操作系统控制。 此宿主选项在 Windows 的所有版本中都是可用的。
 
-可以使用 Microsoft 管理控制台 (MMC) 中的 Microsoft.ManagementConsole.SnapIn 管理 Windows 服务，并且可以将其配置为在系统启动时自动启动。 此宿主选项包括注册作为托管 Windows 服务承载 WCF 服务的应用程序域（AppDomain），以便服务的进程生存期由 Windows 服务的服务控制管理器（SCM）控制。
+可以使用 Microsoft 管理控制台 (MMC) 中的 Microsoft.ManagementConsole.SnapIn 管理 Windows 服务，并且可以将其配置为在系统启动时自动启动。 此宿主选项包括注册作为托管 Windows 服务承载 WCF 服务的应用程序域 (AppDomain) ，以便服务的进程生存期由 Windows 服务的服务控制管理器 (SCM) 控制。
 
 服务代码包括服务协定的服务实现、Windows 服务类和安装程序类。 服务实现类 `CalculatorService` 是 WCF 服务。 `CalculatorWindowsService` 是 Windows 服务。 要符合 Windows 服务的要求，该类继承自 `ServiceBase` 并实现 `OnStart` 和 `OnStop` 方法。 在 `OnStart` 中，将为 <xref:System.ServiceModel.ServiceHost> 类型创建 `CalculatorService` 并打开它。 在 `OnStop` 中，停止并释放服务。 主机还负责提供服务主机基址，该基址已在应用程序设置中进行设置。 安装程序类继承自 <xref:System.Configuration.Install.Installer>，允许程序通过 Installutil.exe 工具安装为 Windows 服务。
 
@@ -111,7 +111,7 @@ ms.locfileid: "85246931"
     </configuration>
     ```
 
-     右键单击**解决方案资源管理器**中的 App.config 文件，然后选择 "**属性**"。 在 "**复制到输出目录**" 下，选择 "**如果较新则复制**"
+     右键单击 **解决方案资源管理器** 中的 App.config 文件，然后选择 " **属性**"。 在 " **复制到输出目录** " 下，选择 " **如果较新则复制**"
 
      此示例显式指定配置文件中的终结点。 如果您不希望向服务添加任何终结点，则运行时为您添加默认终结点。 在此示例中，由于服务的 <xref:System.ServiceModel.Description.ServiceMetadataBehavior> 设置为 `true`，因此服务还启用了发布元数据。 有关默认终结点、绑定和行为的详细信息，请参阅[简化配置](../simplified-configuration.md)和 [WCF 服务的简化配置](../samples/simplified-configuration-for-wcf-services.md)。
 
@@ -121,9 +121,9 @@ ms.locfileid: "85246931"
 
 2. 打开 Visual Studio 开发人员命令提示，并导航到项目目录。 在命令提示符处键入 `installutil bin\service.exe` 来安装 Windows 服务。
 
-     在命令提示符处键入 `services.msc` 以访问服务控制管理器 (SCM)。 Windows 服务应作为“WCFWindowsServiceSample”出现在服务中。 如果 Windows 服务正在运行，WCF 服务只能响应客户端。 若要启动该服务，请在 SCM 中右键单击该服务并选择 "启动"，或在命令提示符下键入**net Start WCFWindowsServiceSample** 。
+     在命令提示符处键入 `services.msc` 以访问服务控制管理器 (SCM)。 Windows 服务应作为“WCFWindowsServiceSample”出现在服务中。 如果 Windows 服务正在运行，WCF 服务只能响应客户端。 若要启动该服务，请在 SCM 中右键单击该服务并选择 "启动"，或在命令提示符下键入 **net Start WCFWindowsServiceSample** 。
 
-3. 如果对服务进行更改，则必须首先停止并卸载服务。 若要停止该服务，请在 SCM 中右键单击该服务并选择 "停止"，或在命令提示符下**键入 net Stop WCFWindowsServiceSample** 。 请注意，如果停止 Windows 服务然后运行客户端，则在客户端尝试访问该服务时，会发生 <xref:System.ServiceModel.EndpointNotFoundException> 异常。 若要卸载 Windows 服务，请在命令提示符下键入**installutil.exe/u bin\service.exe** 。
+3. 如果对服务进行更改，则必须首先停止并卸载服务。 若要停止该服务，请在 SCM 中右键单击该服务并选择 "停止"，或在命令提示符下 **键入 net Stop WCFWindowsServiceSample** 。 请注意，如果停止 Windows 服务然后运行客户端，则在客户端尝试访问该服务时，会发生 <xref:System.ServiceModel.EndpointNotFoundException> 异常。 若要卸载 Windows 服务，请在命令提示符下键入 **installutil.exe/u bin\service.exe** 。
 
 ## <a name="example"></a>示例
 
@@ -139,4 +139,4 @@ ms.locfileid: "85246931"
 - [简化配置](../simplified-configuration.md)
 - [在托管应用程序中承载](hosting-in-a-managed-application.md)
 - [承载服务](../hosting-services.md)
-- [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Windows Server App Fabric 承载功能](/previous-versions/appfabric/ee677189(v=azure.10))

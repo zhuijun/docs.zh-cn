@@ -2,17 +2,17 @@
 title: 终结点：Security Validation and Authentication Failures Per Second（每秒安全验证和身份验证失败次数）
 ms.date: 03/30/2017
 ms.assetid: 89a70b90-d7e4-4b03-9b84-4dc88ce3d605
-ms.openlocfilehash: fb882c7cbfd86e1949798df9c0b7514182c1b8f6
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: 8573c35f16d03e2f86310c054703c25a3175200c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76163522"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541495"
 ---
 # <a name="endpoint-security-validation-and-authentication-failures-per-second"></a>终结点：Security Validation and Authentication Failures Per Second（每秒安全验证和身份验证失败次数）
 计数器名称：Security Validation and Authentication Failures Per Second（每秒安全验证和身份验证失败次数）  
   
-## <a name="description"></a>描述  
+## <a name="description"></a>说明  
  每当消息由于“Security Calls Not Authorized”（未授权的安全调用次数）计数器中未包括的安全问题而遭到拒绝时，此计数器即会递增。 此类问题包括：  
   
 - 无法从消息中读取客户端令牌。  
@@ -29,6 +29,6 @@ ms.locfileid: "76163522"
   
 - TLSNEGO/SPNEGO 握手过程中已发生错误。  
   
- 此计数器的性能计数器类型[PERF_COUNTER_COUNTER](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc740048(v=ws.10))，其值使用以下公式进行计算：  
+ 此计数器的性能计数器类型 [PERF_COUNTER_COUNTER](/previous-versions/windows/it-pro/windows-server-2003/cc740048(v=ws.10))，其值使用以下公式进行计算：  
   
  (N1-N0)/((D1-D0)/F)

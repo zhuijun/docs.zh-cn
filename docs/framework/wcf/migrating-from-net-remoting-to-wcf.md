@@ -3,12 +3,12 @@ title: 从 .NET 远程处理迁移到 WCF
 description: 了解如何迁移使用 .NET 远程处理的应用程序以使用 WCF。 可以在 WCF 中完成若干常见的远程处理方案。
 ms.date: 03/30/2017
 ms.assetid: 16902a42-ef80-40e9-8c4c-90e61ddfdfe5
-ms.openlocfilehash: f6f526db09806008314980b71233b208d25359fc
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 73bdac5d8f4d39694f038bb600828c79e527efb0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246150"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542845"
 ---
 # <a name="migrating-from-net-remoting-to-wcf"></a>从 .NET 远程处理迁移到 WCF
 本文介绍如何迁移借助 .NET 远程处理来使用 Windows Communication Foundation (WCF) 的应用程序。 本文对这些产品之间的相似概念进行比较，并介绍如何在 WCF 中完成若干常见的远程处理方案。  
@@ -56,7 +56,7 @@ Console.WriteLine("RemotingServer is running.  Press ENTER to terminate...");
 Console.ReadLine();  
 ```  
   
- 使远程处理类型作为服务器可用有多种方法，其中一种方法为使用配置文件。 这只是一个示例。  
+ 使远程处理类型作为服务器可用有多种方法，其中一种方法为使用配置文件。 这只是一个例子。  
   
 #### <a name="creating-a-server-in-wcf"></a>在 WCF 中创建服务器  
  WCF 中的等效步骤涉及创建两种类型 -- 公共“服务协定”类和具体实现。 第一种类型为接口类，标记为 [ServiceContract]。 客户端可用的方法都标有 [OperationContract]：  
@@ -100,7 +100,7 @@ using (ServiceHost serviceHost = new ServiceHost(typeof(WCFServer), baseAddress)
 > [!NOTE]
 > 这两个示例中的 TCP 用于使它们尽可能保持类似。 请参阅本主题稍后的使用 HTTP 的示例方案演练。  
   
- 有多种方法来配置和承载 WCF 服务。 这仅仅是举一个例子，例如称为“自承载”的方法。 有关详情，请参阅以下主题：  
+ 有多种方法来配置和承载 WCF 服务。 这仅仅是举一个例子，例如称为“自承载”的方法。 有关详细信息，请参阅下列主题：  
   
 - [如何：定义服务协定](how-to-define-a-wcf-service-contract.md)  
   
@@ -141,7 +141,7 @@ Customer customer = server.GetCustomer(42);
 Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received.");
 ```  
   
- 此示例演示通道级编程，因为它非常类似于远程处理示例。 此外，还提供了 Visual Studio 中的**添加服务引用**方法，该方法生成代码以简化客户端编程。 有关详情，请参阅以下主题：  
+ 此示例演示通道级编程，因为它非常类似于远程处理示例。 此外，还提供了 Visual Studio 中的 **添加服务引用** 方法，该方法生成代码以简化客户端编程。 有关详细信息，请参阅下列主题：  
   
 - [客户端通道级编程](./extending/client-channel-level-programming.md)  
   
@@ -159,9 +159,9 @@ Console.WriteLine($"  Customer {customer.FirstName} {customer.LastName} received
 #### <a name="serialization-in-net-remoting"></a>.NET 远程处理中的序列化  
  .NET 远程处理支持两种序列化和反序列化客户端和服务器之间的对象的方法：  
   
-- *按值*–对象的值将跨层边界序列化，并在另一层上创建该对象的新实例。 对该新实例的方法或属性的任何调用只是在本地执行，并不影响原始对象或层。  
+- *按值* –对象的值将跨层边界序列化，并在另一层上创建该对象的新实例。 对该新实例的方法或属性的任何调用只是在本地执行，并不影响原始对象或层。  
   
-- *按引用*–一种特殊的 "对象引用" 跨层边界序列化。 当一个层与该对象的方法或属性进行交互时，此层会传输回至原始层上的原始对象。 按引用对象可以在任一方向 – 服务器到客户端或客户端到服务器中流动。  
+- *按引用* –一种特殊的 "对象引用" 跨层边界序列化。 当一个层与该对象的方法或属性进行交互时，此层会传输回至原始层上的原始对象。 按引用对象可以在任一方向 – 服务器到客户端或客户端到服务器中流动。  
   
  远程处理中按值类型会标记为 [Serializable] 属性或实现 ISerializable，如下面示例所示：  
   
@@ -208,7 +208,7 @@ public class WCFCustomer
   
  [DataContract] 特性标识此类型为可在客户端和服务器之间进行序列化和反序列化。 [DataMember] 特性标识要序列化的单个属性或字段。  
   
- 当 WCF 跨多个层发送某个对象时，它仅序列化值并在另一个层上创建此对象的新实例。 与此对象的值进行的任何交互仅发生在本地 – 它们不能如 .NET 远程处理中的按引用对象一样与其他层进行通信。 有关详细信息，请参阅[序列化和反序列](./feature-details/serialization-and-deserialization.md)化。  
+ 当 WCF 跨多个层发送某个对象时，它仅序列化值并在另一个层上创建此对象的新实例。 与此对象的值进行的任何交互仅发生在本地 – 它们不能如 .NET 远程处理中的按引用对象一样与其他层进行通信。 有关详细信息，请参阅 [序列化和反序列](./feature-details/serialization-and-deserialization.md)化。  
   
 ### <a name="exception-handling-capabilities"></a>异常处理功能  
   
@@ -275,7 +275,7 @@ catch (FaultException<CustomerServiceFault> fault)
  某些 .NET 远程处理信道支持安全功能，比如通道层（IPC 和 TCP）中的身份验证和加密。 HTTP 通道依赖于身份验证和加密的 Internet Information Services (IIS)。 即使有这种支持，你仍应该将 .NET 远程处理认定为不安全的通信协议并只在完全信任的环境中使用。 永远不要将公共远程处理终结点公开到 Internet 或不受信任的客户端中。  
   
 #### <a name="security-in-wcf"></a>WCF 中的安全性  
- WCF 中对于安全性的设计是为了解决出现在 .NET 远程处理中各种的漏洞。 WCF 提供了传输和消息级别的安全性，并提供了多个用于身份验证、授权、加密等的选项。 有关详情，请参阅以下主题：  
+ WCF 中对于安全性的设计是为了解决出现在 .NET 远程处理中各种的漏洞。 WCF 提供了传输和消息级别的安全性，并提供了多个用于身份验证、授权、加密等的选项。 有关详细信息，请参阅下列主题：  
   
 - [安全性](./feature-details/security.md)  
   
@@ -285,7 +285,7 @@ catch (FaultException<CustomerServiceFault> fault)
   
 ### <a name="why-migrate-from-remoting-to-wcf"></a>为什么从远程处理迁移到 WCF？  
   
-- **.NET 远程处理是一项传统技术。** 如[.Net 远程处理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507%28v=vs.100%29)中所述，它被视为旧产品，不建议用于新的开发。 对于新的和现有的应用程序建议使用 WCF 或 ASP.NET Web API。  
+- **.NET 远程处理是一项传统技术。** 如 [.Net 远程处理](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))中所述，它被视为旧产品，不建议用于新的开发。 对于新的和现有的应用程序建议使用 WCF 或 ASP.NET Web API。  
   
 - **WCF 使用跨平台标准。** WCF 设计的跨平台互操作性支持许多行业标准（SOAP、Ws-security、Ws-trust 等。）。 除了运行 Windows 操作系统的客户端之外，WCF 服务还可以与运行其他操作系统的客户端进行互操作。 远程处理主要针对使用 Windows 操作系统上的 .NET Framework 运行服务器和客户端应用程序的环境。
   
@@ -300,7 +300,7 @@ catch (FaultException<CustomerServiceFault> fault)
   
 - **创建错误协定（可选）。** 遇到错误时，请创建将在服务器和客户端之间进行交换的类型。 将这些类型标记为 [DataContract] 和 [DataMember] 以使其可序列化。 对于标记为 [OperationContract] 的所有服务操作，还可将其标记为 [FaultContract]，以指示它们可能会返回哪些错误。  
   
-- **配置并托管该服务。** 完成创建服务协定后，下一步则是配置一个绑定以公开终结点中的服务。 有关详细信息，请参阅[终结点：地址、绑定和协定](./feature-details/endpoints-addresses-bindings-and-contracts.md)。  
+- **配置并托管该服务。** 完成创建服务协定后，下一步则是配置一个绑定以公开终结点中的服务。 有关详细信息，请参阅 [终结点：地址、绑定和协定](./feature-details/endpoints-addresses-bindings-and-contracts.md)。  
   
  将远程处理应用程序迁移到 WCF 后，删除 .NET 远程处理中的依赖仍然很重要。 这可确保删除应用程序中的任何远程处理漏洞。 这些步骤包括：  
   
@@ -418,9 +418,9 @@ public class RemotingServer : MarshalByRefObject
        customerServiceHost.Open();  
    ```  
   
-     当启动此 ServiceHost 时，它会使用 web.config 文件以建立适当的协定、绑定和终结点。 有关配置文件的详细信息，请参阅[使用配置文件配置服务](./configuring-services-using-configuration-files.md)。 这种启动服务器的样式称为自我托管。 若要了解有关承载 WCF 服务的其他选项的详细信息，请参阅[托管服务](./hosting-services.md)。  
+     当启动此 ServiceHost 时，它会使用 web.config 文件以建立适当的协定、绑定和终结点。 有关配置文件的详细信息，请参阅 [使用配置文件配置服务](./configuring-services-using-configuration-files.md)。 这种启动服务器的样式称为自我托管。 若要了解有关承载 WCF 服务的其他选项的详细信息，请参阅 [托管服务](./hosting-services.md)。  
   
-6. 客户端项目的 app.config 必须声明匹配服务终结点的绑定信息。 在 Visual Studio 中执行此操作的最简单方法是使用**添加服务引用**，这将自动更新 app.config 文件。 或者，可以手动添加这些相同的更改。  
+6. 客户端项目的 app.config 必须声明匹配服务终结点的绑定信息。 在 Visual Studio 中执行此操作的最简单方法是使用 **添加服务引用**，这将自动更新 app.config 文件。 或者，可以手动添加这些相同的更改。  
   
     ```xml  
     <configuration>  
@@ -435,7 +435,7 @@ public class RemotingServer : MarshalByRefObject
     </configuration>  
     ```  
   
-     有关使用**添加服务引用**的详细信息，请参阅[如何：添加、更新或删除服务引用](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)。  
+     有关使用 **添加服务引用**的详细信息，请参阅 [如何：添加、更新或删除服务引用](/visualstudio/data-tools/how-to-add-update-or-remove-a-wcf-data-service-reference)。  
   
 7. 现在可以从客户端中调用 WCF 服务。 可通过创建该服务的通道工厂、要求提供通道以及直接调用想要用在该通道中的方法实现此操作。 可进行此操作的原因是通道可实现服务接口，并为我们处理基础的请求/答复逻辑。 此方法调用的返回值是服务器响应的反序列化副本。  
   
@@ -657,7 +657,7 @@ public class RemotingServer : MarshalByRefObject
     > [!NOTE]
     > 此代码还说明了发送派生的类型 (PremiumCustomer)。 服务接口需要 Customer 对象，但 Customer 类上的 [KnownType] 属性指示也允许使用 PremiumCustomer。 WCF 通过此服务接口进行序列化或反序列化任何其他类型的尝试将失败。  
   
- 正常的 WCF 数据交换是按值进行的。 这可确保其中某个数据对象上的调用方法仅在本地执行 – 它将不会调用其他层上的代码。 尽管可以实现*从*服务器返回的类似于引用对象的内容，但客户端无法将按引用对象传递*到*服务器。 在 WCF 中使用双工服务可实现需要在客户端和服务器间来回会话的方案。 有关详细信息，请参阅[双工服务](./feature-details/duplex-services.md)。  
+ 正常的 WCF 数据交换是按值进行的。 这可确保其中某个数据对象上的调用方法仅在本地执行 – 它将不会调用其他层上的代码。 尽管可以实现 *从* 服务器返回的类似于引用对象的内容，但客户端无法将按引用对象传递 *到* 服务器。 在 WCF 中使用双工服务可实现需要在客户端和服务器间来回会话的方案。 有关详细信息，请参阅 [双工服务](./feature-details/duplex-services.md)。  
   
-## <a name="summary"></a>摘要  
+## <a name="summary"></a>“摘要”  
  .NET 远程处理是一种通信框架，仅用于完全信任的环境中。 它是一项传统技术，仅支持向后兼容性。 它不应用于生成新的应用程序。 相反，WCF 融入了安全性，并建议将其用于生成新的和现有的应用程序。 Microsoft 建议将现有的远程处理应用程序迁移到使用 WCF 或 ASP.NET Web API。

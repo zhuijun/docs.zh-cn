@@ -6,15 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 96dd26e2-46e7-4de0-9a29-4fcb05bf187b
-ms.openlocfilehash: b6134d4cbdff0c1adea704a7f3aaff7e40fd75ec
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 9b81f2f2fb6352af254146951ed35ad4fdca8caa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85244759"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90545202"
 ---
 # <a name="transport-security-with-windows-authentication"></a>通过 Windows 身份验证确保的传输安全
-下面的方案演示了 Windows 安全性所保护的 Windows Communication Foundation （WCF）客户端和服务。 有关编程的详细信息，请参阅[如何：使用 Windows 凭据保护服务](../how-to-secure-a-service-with-windows-credentials.md)。  
+下面的方案演示了 Windows 安全性所保护的 Windows Communication Foundation (WCF) 客户端和服务。 有关编程的详细信息，请参阅 [如何：使用 Windows 凭据保护服务](../how-to-secure-a-service-with-windows-credentials.md)。  
   
  Intranet Web 服务显示了人力资源信息。 客户端是 Windows 窗体应用程序。 该应用程序部署在具有 Kerberos 控制器保护的域中。  
   
@@ -22,12 +22,12 @@ ms.locfileid: "85244759"
   
 |特征|说明|  
 |--------------------|-----------------|  
-|安全模式|传输|  
+|安全模式|Transport|  
 |互操作性|仅 WCF|  
 |身份验证（服务器）<br /><br /> 身份验证（客户端）|是（使用 Windows 集成身份验证）<br /><br /> 是（使用 Windows 集成身份验证）|  
 |完整性|是|  
-|机密性|是|  
-|传输|NET.TCP|  
+|保密性|是|  
+|Transport|NET.TCP|  
 |绑定|<xref:System.ServiceModel.NetTcpBinding>|  
   
 ## <a name="service"></a>服务  
@@ -74,7 +74,7 @@ ms.locfileid: "85244759"
 </configuration>  
 ```  
   
-## <a name="client"></a>Client  
+## <a name="client"></a>客户端  
  下面的代码和配置应独立运行。 执行下列操作之一：  
   
 - 使用代码（和客户端代码）创建独立客户端。  
@@ -122,4 +122,4 @@ ms.locfileid: "85244759"
 
 - [安全性概述](security-overview.md)
 - [如何：使用 Windows 凭据保护服务的安全](../how-to-secure-a-service-with-windows-credentials.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))
