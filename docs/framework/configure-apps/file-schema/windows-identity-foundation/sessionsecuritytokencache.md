@@ -3,15 +3,15 @@ title: <sessionSecurityTokenCache>
 ms.date: 03/30/2017
 ms.assetid: d43e676c-0153-485c-ab31-0257a2db7507
 author: BrucePerlerMS
-ms.openlocfilehash: a0db10ceb75a470dbf799d717b2059355dd104bb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4169fe307e9ef7c391500a2292fcc247f435caa9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "81646064"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555882"
 ---
 # \<sessionSecurityTokenCache>
-<span data-ttu-id="1564d-101">使用服务或安全标记处理程序集合为会话令牌注册缓存。</span><span class="sxs-lookup"><span data-stu-id="1564d-101">Registers a cache for session tokens with a service or a security token handler collection.</span></span>  
+<span data-ttu-id="b012b-101">使用服务或安全标记处理程序集合为会话令牌注册缓存。</span><span class="sxs-lookup"><span data-stu-id="b012b-101">Registers a cache for session tokens with a service or a security token handler collection.</span></span>  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.identityModel>**](system-identitymodel.md)\
@@ -19,7 +19,7 @@ ms.locfileid: "81646064"
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[**\<caches>**](caches.md)\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**\<sessionSecurityTokenCache>**  
   
-## <a name="syntax"></a><span data-ttu-id="1564d-102">语法</span><span class="sxs-lookup"><span data-stu-id="1564d-102">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b012b-102">语法</span><span class="sxs-lookup"><span data-stu-id="b012b-102">Syntax</span></span>  
   
 ```xml  
 <system.identityModel>  
@@ -32,26 +32,26 @@ ms.locfileid: "81646064"
 </system.identityModel>  
 ```  
   
-## <a name="attributes-and-elements"></a><span data-ttu-id="1564d-103">特性和元素</span><span class="sxs-lookup"><span data-stu-id="1564d-103">Attributes and Elements</span></span>  
- <span data-ttu-id="1564d-104">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="1564d-104">The following sections describe attributes, child elements, and parent elements.</span></span>  
+## <a name="attributes-and-elements"></a><span data-ttu-id="b012b-103">特性和元素</span><span class="sxs-lookup"><span data-stu-id="b012b-103">Attributes and Elements</span></span>  
+ <span data-ttu-id="b012b-104">下列各节描述了特性、子元素和父元素。</span><span class="sxs-lookup"><span data-stu-id="b012b-104">The following sections describe attributes, child elements, and parent elements.</span></span>  
   
-### <a name="attributes"></a><span data-ttu-id="1564d-105">特性</span><span class="sxs-lookup"><span data-stu-id="1564d-105">Attributes</span></span>  
+### <a name="attributes"></a><span data-ttu-id="b012b-105">特性</span><span class="sxs-lookup"><span data-stu-id="b012b-105">Attributes</span></span>  
   
-|<span data-ttu-id="1564d-106">属性</span><span class="sxs-lookup"><span data-stu-id="1564d-106">Attribute</span></span>|<span data-ttu-id="1564d-107">说明</span><span class="sxs-lookup"><span data-stu-id="1564d-107">Description</span></span>|  
+|<span data-ttu-id="b012b-106">属性</span><span class="sxs-lookup"><span data-stu-id="b012b-106">Attribute</span></span>|<span data-ttu-id="b012b-107">说明</span><span class="sxs-lookup"><span data-stu-id="b012b-107">Description</span></span>|  
 |---------------|-----------------|  
-|<span data-ttu-id="1564d-108">type</span><span class="sxs-lookup"><span data-stu-id="1564d-108">type</span></span>|<span data-ttu-id="1564d-109">派生自类的类型 <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> 。</span><span class="sxs-lookup"><span data-stu-id="1564d-109">A type that derives from the <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> class.</span></span>|  
+|<span data-ttu-id="b012b-108">type</span><span class="sxs-lookup"><span data-stu-id="b012b-108">type</span></span>|<span data-ttu-id="b012b-109">派生自类的类型 <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> 。</span><span class="sxs-lookup"><span data-stu-id="b012b-109">A type that derives from the <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> class.</span></span>|  
   
-### <a name="child-elements"></a><span data-ttu-id="1564d-110">子元素</span><span class="sxs-lookup"><span data-stu-id="1564d-110">Child Elements</span></span>  
- <span data-ttu-id="1564d-111">无</span><span class="sxs-lookup"><span data-stu-id="1564d-111">None</span></span>  
+### <a name="child-elements"></a><span data-ttu-id="b012b-110">子元素</span><span class="sxs-lookup"><span data-stu-id="b012b-110">Child Elements</span></span>  
+ <span data-ttu-id="b012b-111">无</span><span class="sxs-lookup"><span data-stu-id="b012b-111">None</span></span>  
   
-### <a name="parent-elements"></a><span data-ttu-id="1564d-112">父元素</span><span class="sxs-lookup"><span data-stu-id="1564d-112">Parent Elements</span></span>  
+### <a name="parent-elements"></a><span data-ttu-id="b012b-112">父元素</span><span class="sxs-lookup"><span data-stu-id="b012b-112">Parent Elements</span></span>  
   
-|<span data-ttu-id="1564d-113">元素</span><span class="sxs-lookup"><span data-stu-id="1564d-113">Element</span></span>|<span data-ttu-id="1564d-114">描述</span><span class="sxs-lookup"><span data-stu-id="1564d-114">Description</span></span>|  
+|<span data-ttu-id="b012b-113">元素</span><span class="sxs-lookup"><span data-stu-id="b012b-113">Element</span></span>|<span data-ttu-id="b012b-114">说明</span><span class="sxs-lookup"><span data-stu-id="b012b-114">Description</span></span>|  
 |-------------|-----------------|  
-|[\<caches>](caches.md)|<span data-ttu-id="1564d-115">注册服务使用的缓存或安全标记处理程序集合。</span><span class="sxs-lookup"><span data-stu-id="1564d-115">Registers the caches used by a service or a security token handler collection.</span></span>|  
+|[\<caches>](caches.md)|<span data-ttu-id="b012b-115">注册服务使用的缓存或安全标记处理程序集合。</span><span class="sxs-lookup"><span data-stu-id="b012b-115">Registers the caches used by a service or a security token handler collection.</span></span>|  
   
-## <a name="example"></a><span data-ttu-id="1564d-116">示例</span><span class="sxs-lookup"><span data-stu-id="1564d-116">Example</span></span>  
- <span data-ttu-id="1564d-117">下面的 XML 演示了用于保存会话安全令牌（）的自定义缓存配置 <xref:System.IdentityModel.Tokens.SessionSecurityToken> 。</span><span class="sxs-lookup"><span data-stu-id="1564d-117">The following XML shows the configuration of a custom cache for holding session security tokens (<xref:System.IdentityModel.Tokens.SessionSecurityToken>).</span></span> <span data-ttu-id="1564d-118">此配置取自 `ClaimsAwareWebFarm` 示例。</span><span class="sxs-lookup"><span data-stu-id="1564d-118">The configuration is taken from the `ClaimsAwareWebFarm` sample.</span></span> <span data-ttu-id="1564d-119">有关此示例的详细信息，请参阅[WIF 代码示例索引](https://docs.microsoft.com/previous-versions/dotnet/framework/security/wif-code-sample-index)。</span><span class="sxs-lookup"><span data-stu-id="1564d-119">For more information about this sample, see [WIF Code Sample Index](https://docs.microsoft.com/previous-versions/dotnet/framework/security/wif-code-sample-index).</span></span>  
+## <a name="example"></a><span data-ttu-id="b012b-116">示例</span><span class="sxs-lookup"><span data-stu-id="b012b-116">Example</span></span>  
+ <span data-ttu-id="b012b-117">下面的 XML 演示了如何配置自定义缓存，用于保存)  (的会话安全令牌 <xref:System.IdentityModel.Tokens.SessionSecurityToken> 。</span><span class="sxs-lookup"><span data-stu-id="b012b-117">The following XML shows the configuration of a custom cache for holding session security tokens (<xref:System.IdentityModel.Tokens.SessionSecurityToken>).</span></span> <span data-ttu-id="b012b-118">此配置取自 `ClaimsAwareWebFarm` 示例。</span><span class="sxs-lookup"><span data-stu-id="b012b-118">The configuration is taken from the `ClaimsAwareWebFarm` sample.</span></span> <span data-ttu-id="b012b-119">有关此示例的详细信息，请参阅 [WIF 代码示例索引](/previous-versions/dotnet/framework/security/wif-code-sample-index)。</span><span class="sxs-lookup"><span data-stu-id="b012b-119">For more information about this sample, see [WIF Code Sample Index](/previous-versions/dotnet/framework/security/wif-code-sample-index).</span></span>  
   
 ```xml  
 <caches>  
@@ -62,6 +62,6 @@ ms.locfileid: "81646064"
 </caches>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="1564d-120">另请参阅</span><span class="sxs-lookup"><span data-stu-id="1564d-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b012b-120">请参阅</span><span class="sxs-lookup"><span data-stu-id="b012b-120">See also</span></span>
 
 - <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache>
