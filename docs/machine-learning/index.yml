@@ -10,12 +10,12 @@ metadata:
   author: natke
   ms.author: nakersha
   ms.date: 10/30/2019
-  ms.openlocfilehash: da93d48dc36123f8821be37c8c0546b84ab29712
-  ms.sourcegitcommit: 09bad6ec0cbf18be7cd7f62e77286d305a18b607
+  ms.openlocfilehash: 0e2b6370de5cd40f8cca5176fe1ecef1b6556a39
+  ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/05/2020
-  ms.locfileid: "87795484"
+  ms.lasthandoff: 09/15/2020
+  ms.locfileid: "90551694"
 landingContent:
 - title: ML.NET 基础知识
   linkLists:
@@ -88,6 +88,6 @@ landingContent:
   - linkListType: reference
     links:
     - text: ML.NET API 引用
-      url: https://docs.microsoft.com/dotnet/api/?view=ml-dotnet
+      url: ../../api/index.md?view=ml-dotnet
     - text: ML.NET 示例
       url: https://github.com/dotnet/machinelearning-samples

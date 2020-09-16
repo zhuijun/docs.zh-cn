@@ -6,12 +6,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - cryptography, cross-platform
 - encryption, cross-platform
-ms.openlocfilehash: 61fd49e53761deac278b770003eb97241b6c2be9
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 7269b32e509039fdd767446bd6e10202b089c094
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557146"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550014"
 ---
 # <a name="cross-platform-cryptography-in-net-core-and-net-5"></a>.NET Core 和 .NET 5 中的跨平台加密
 
@@ -22,7 +22,7 @@ ms.locfileid: "87557146"
 
 对 OS 库的依赖也意味着，.NET 应用只能使用操作系统支持的加密功能。 虽然所有平台都支持某些核心功能，但 .NET 支持的某些功能无法在某些平台上使用。 本文列出了每个平台支持的功能。
 
-本文假设你已熟悉如何在 .NET 中进行加密。 有关详细信息，请参阅[.Net 加密模型](cryptography-model.md)和[.net 加密服务](cryptographic-services.md)。
+本文假设你已熟悉如何在 .NET 中进行加密。 有关详细信息，请参阅 [.Net 加密模型](cryptography-model.md) 和 [.net 加密服务](cryptographic-services.md)。
 
 ## <a name="hash-algorithms"></a>哈希算法
 
@@ -109,7 +109,7 @@ OS 库用于加密和解密填充。 并非所有平台都支持相同的填充�
 | PKCS1 签名 (SHA-1)                | ✔️           | ✔️              | ✔️   | ⚠️\*           |
 | PSS                                   | ✔️           | ✔️              | ✔️   | ❌             |
 
-\*Windows CryptoAPI (CAPI) 能够具有 SHA-1 算法的 PKCS1 签名。 但可以在加密服务提供程序中加载单个 RSA 对象 (CSP) 不支持该对象。
+\* Windows CryptoAPI (CAPI) 能够具有 SHA-1 算法的 PKCS1 签名。 但可以在加密服务提供程序中加载单个 RSA 对象 (CSP) 不支持该对象。
 
 #### <a name="rsa-on-windows"></a>Windows 上的 RSA
 
@@ -129,9 +129,9 @@ OS 库用于加密和解密填充。 并非所有平台都支持相同的填充�
 | <xref:System.Security.Cryptography.RSACng>                   | ✔️     | ❌            | ❌            |
 | <xref:System.Security.Cryptography.RSAOpenSsl>               | ❌     | ✔️            | ⚠️<sup>pps-2</sup> |
 
-<sup>1</sup>在 MacOS 和 Linux 上， <xref:System.Security.Cryptography.RSACryptoServiceProvider> 可用于与现有程序的兼容性。 在这种情况下，任何需要 OS 互操作的方法（如打开已命名的密钥）都将引发 <xref:System.PlatformNotSupportedException> 。
+<sup>1</sup> 在 MacOS 和 Linux 上， <xref:System.Security.Cryptography.RSACryptoServiceProvider> 可用于与现有程序的兼容性。 在这种情况下，任何需要 OS 互操作的方法（如打开已命名的密钥）都将引发 <xref:System.PlatformNotSupportedException> 。
 
-<sup>2</sup>在 macOS 上， <xref:System.Security.Cryptography.RSAOpenSsl> 适用于是否安装了 OpenSSL，并可通过动态库加载找到合适的 libcrypto .dylib。 如果找不到合适的库，则会引发异常。
+<sup>2</sup> 在 macOS 上， <xref:System.Security.Cryptography.RSAOpenSsl> 适用于是否安装了 OpenSSL，并可通过动态库加载找到合适的 libcrypto .dylib。 如果找不到合适的库，则会引发异常。
 
 ### <a name="ecdsa"></a>ECDSA
 
@@ -151,9 +151,9 @@ ECDSA 关键曲线由 OS 库定义，并受其限制的限制。
 
 <sup>1</sup> Linux 分发版并不都支持相同的命名曲线。
 
-<sup>2</sup>向 windows 10 中的 windows CNG 添加了对命名曲线的支持。 有关详细信息，请参阅[CNG 命名椭圆曲线](https://msdn.microsoft.com/library/windows/desktop/mt632245(v=vs.85).aspx)。 命名曲线在 Windows 的早期版本中不可用，但 Windows 7 中的三条曲线除外。
+<sup>2</sup> 向 windows 10 中的 windows CNG 添加了对命名曲线的支持。 有关详细信息，请参阅 [CNG 命名椭圆曲线](/windows/win32/seccng/cng-named-elliptic-curves)。 命名曲线在 Windows 的早期版本中不可用，但 Windows 7 中的三条曲线除外。
 
-<sup>3</sup>使用显式曲线参数导出需要 OS 库支持，该支持在 macOS 或早期版本的 Windows 上不可用。
+<sup>3</sup> 使用显式曲线参数导出需要 OS 库支持，该支持在 macOS 或早期版本的 Windows 上不可用。
 
 #### <a name="ecdsa-native-interop"></a>ECDSA 本机互操作
 
@@ -164,7 +164,7 @@ ECDSA 关键曲线由 OS 库定义，并受其限制的限制。
 | <xref:System.Security.Cryptography.ECDsaCng>     | ✔️     | ❌    | ❌    |
 | <xref:System.Security.Cryptography.ECDsaOpenSsl> | ❌     | ✔️    | ⚠️\*  |
 
-\*在 macOS 上， <xref:System.Security.Cryptography.ECDsaOpenSsl> 如果在系统中安装了 OpenSSL 并且可以通过动态库加载找到合适的 libcrypto .dylib，则有效。 如果找不到合适的库，则会引发异常。
+\* 在 macOS 上， <xref:System.Security.Cryptography.ECDsaOpenSsl> 如果在系统中安装了 OpenSSL 并且可以通过动态库加载找到合适的 libcrypto .dylib，则有效。 如果找不到合适的库，则会引发异常。
 
 ### <a name="ecdh"></a>ECDH
 
@@ -194,9 +194,9 @@ ECDH 关键曲线由 OS 库定义，并受其限制的限制。
 
 <sup>1</sup> Linux 分发版并不都支持相同的命名曲线。
 
-<sup>2</sup>向 windows 10 中的 windows CNG 添加了对命名曲线的支持。 有关详细信息，请参阅[CNG 命名椭圆曲线](https://msdn.microsoft.com/library/windows/desktop/mt632245(v=vs.85).aspx)。 命名曲线在 Windows 的早期版本中不可用，但 Windows 7 中的三条曲线除外。
+<sup>2</sup> 向 windows 10 中的 windows CNG 添加了对命名曲线的支持。 有关详细信息，请参阅 [CNG 命名椭圆曲线](/windows/win32/seccng/cng-named-elliptic-curves)。 命名曲线在 Windows 的早期版本中不可用，但 Windows 7 中的三条曲线除外。
 
-<sup>3</sup>使用显式曲线参数导出需要 OS 库支持，该支持在 macOS 或早期版本的 Windows 上不可用。
+<sup>3</sup> 使用显式曲线参数导出需要 OS 库支持，该支持在 macOS 或早期版本的 Windows 上不可用。
 
 #### <a name="ecdh-native-interop"></a>ECDH 本机互操作
 
@@ -207,7 +207,7 @@ ECDH 关键曲线由 OS 库定义，并受其限制的限制。
 | <xref:System.Security.Cryptography.ECDiffieHellmanCng>     | ✔️     | ❌    | ❌   |
 | <xref:System.Security.Cryptography.ECDiffieHellmanOpenSsl> | ❌     | ✔️    | ⚠️\* |
 
-\*在 macOS 上， <xref:System.Security.Cryptography.ECDiffieHellmanOpenSsl> 如果已安装 OpenSSL 并可通过动态库加载找到合适的 libcrypto .dylib，则有效。 如果找不到合适的库，则会引发异常。
+\* 在 macOS 上， <xref:System.Security.Cryptography.ECDiffieHellmanOpenSsl> 如果已安装 OpenSSL 并可通过动态库加载找到合适的 libcrypto .dylib，则有效。 如果找不到合适的库，则会引发异常。
 
 ### <a name="dsa"></a>DSA
 
@@ -222,7 +222,7 @@ DSA (数字签名算法) 密钥生成由系统库执行，并受其大小限制�
 | FIPS 186-2                    | ✔️         | ✔️    | ✔️            | ✔️           |
 | FIPS 186-3 (SHA-1 签名)  | ✔️         | ✔️    | ❌            | ❌            |
 
-\*macOS 加载大于1024位的 DSA 密钥，但这些密钥的行为未定义。 它们不会按照 FIPS 186-3 的方式运行。
+\* macOS 加载大于1024位的 DSA 密钥，但这些密钥的行为未定义。 它们不会按照 FIPS 186-3 的方式运行。
 
 #### <a name="dsa-on-windows"></a>Windows 上的 DSA
 
@@ -242,9 +242,9 @@ DSA (数字签名算法) 密钥生成由系统库执行，并受其大小限制�
 | <xref:System.Security.Cryptography.DSACng>                   | ✔️     | ❌             | ❌            |
 | <xref:System.Security.Cryptography.DSAOpenSsl>               | ❌      | ✔️            | ⚠️<sup>pps-2</sup> |
 
-<sup>1</sup>在 MacOS 和 Linux 上， <xref:System.Security.Cryptography.DSACryptoServiceProvider> 可用于与现有程序的兼容性。 在这种情况下，任何需要系统互操作的方法（如打开已命名的密钥）都将引发 <xref:System.PlatformNotSupportedException> 。
+<sup>1</sup> 在 MacOS 和 Linux 上， <xref:System.Security.Cryptography.DSACryptoServiceProvider> 可用于与现有程序的兼容性。 在这种情况下，任何需要系统互操作的方法（如打开已命名的密钥）都将引发 <xref:System.PlatformNotSupportedException> 。
 
-<sup>2</sup>在 macOS 上， <xref:System.Security.Cryptography.DSAOpenSsl> 适用于是否安装了 OpenSSL，并可通过动态库加载找到合适的 libcrypto .dylib。 如果找不到合适的库，则会引发异常。
+<sup>2</sup> 在 macOS 上， <xref:System.Security.Cryptography.DSAOpenSsl> 适用于是否安装了 OpenSSL，并可通过动态库加载找到合适的 libcrypto .dylib。 如果找不到合适的库，则会引发异常。
 
 ## <a name="x509-certificates"></a>X.509 证书
 
@@ -261,7 +261,7 @@ DSA (数字签名算法) 密钥生成由系统库执行，并受其大小限制�
 | 多个证书，一个私钥       | ✔️     | ✔️    | ✔️   |
 | 多个证书，多个私钥 | ✔️     | ⚠️\*  | ✔️   |
 
-\*在 .NET 5 预览版本中可用。
+\* 在 .NET 5 预览版本中可用。
 
 ### <a name="write-a-pkcs12pfx"></a>编写 PKCS12/PFX
 
@@ -275,7 +275,7 @@ DSA (数字签名算法) 密钥生成由系统库执行，并受其大小限制�
 | 多个证书，多个私钥 | ✔️     | ⚠️\*  | ✔️   |
 | 暂时加载                            | ✔️     | ✔️    | ⚠️\* |
 
-\*在 .NET 5 预览版本中可用。
+\* 在 .NET 5 预览版本中可用。
 
 macOS 无法加载没有密钥链对象的证书私钥，这需要写入磁盘。 密钥链是自动创建的，用于 PFX 加载，在不再使用时被删除。 由于 <xref:System.Security.Cryptography.X509Certificates.X509KeyStorageFlags.EphemeralKeySet?displayProperty=nameWithType> 选项意味着不应将私钥写入磁盘，因此在 macOS 上断言该标志会导致 <xref:System.PlatformNotSupportedException> 。
 

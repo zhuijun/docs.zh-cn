@@ -11,19 +11,19 @@ helpviewer_keywords:
 - security [.NET], principals
 - principal objects, creating
 ms.assetid: 56eb10ca-e61d-4ed2-af7a-555fc4c25a25
-ms.openlocfilehash: d99d63dc766f37e7cc30888d2e77657595f909af
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+ms.openlocfilehash: 6cf7153250d2574783515ea53cf99709499d36f9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87557029"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556201"
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>如何：创建 WindowsPrincipal 对象
 
 > [!NOTE]
 > 本文适用于 Windows。
 >
-> 有关 ASP.NET Core 的信息，请参阅[ASP.NET Core 安全性](/aspnet/core/security/)。
+> 有关 ASP.NET Core 的信息，请参阅 [ASP.NET Core 安全性](/aspnet/core/security/)。
 
 有两种方法来创建 <xref:System.Security.Principal.WindowsPrincipal> 对象，具体取决于代码必须重复执行基于角色的验证还是必须只能执行一次。  
   
@@ -84,4 +84,4 @@ ms.locfileid: "87557029"
 ## <a name="see-also"></a>请参阅
 
 - [主体和标识对象](principal-and-identity-objects.md)
-- [ASP.NET Core 安全性](https://docs.microsoft.com/aspnet/core/security/)
+- [ASP.NET Core 安全性](/aspnet/core/security/)

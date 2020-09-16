@@ -11,19 +11,19 @@ metadata:
   author: mamccrea
   ms.author: mamccrea
   ms.date: 09/11/2019
-  ms.openlocfilehash: 5b477daf0f52d48a6f068fa8eafeb1b787d19c39
-  ms.sourcegitcommit: 488aced39b5f374bc0a139a4993616a54d15baf0
+  ms.openlocfilehash: 7be10c2f3f07f8caa4f180a0a21f20a7f20f7312
+  ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 05/12/2020
-  ms.locfileid: "83212222"
+  ms.lasthandoff: 09/15/2020
+  ms.locfileid: "90552175"
 landingContent:
 - title: .NET for Apache Spark 基础
   linkLists:
   - linkListType: whats-new
     links:
     - text: .NET 文档中的新增功能
-      url: /dotnet/whats-new/index
+      url: ../whats-new/index.yml
   - linkListType: overview
     links:
     - text: 什么是 .NET for Apache Spark？
@@ -31,7 +31,7 @@ landingContent:
   - linkListType: reference
     links:
     - text: API 参考
-      url: /dotnet/api/?view=spark-dotnet
+      url: ../../api/index.md?view=spark-dotnet
     - text: GitHub
       url: https://github.com/dotnet/spark
 - title: 10 分钟入门

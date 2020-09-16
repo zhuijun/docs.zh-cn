@@ -2,12 +2,12 @@
 title: <netNamedPipeBinding>
 ms.date: 03/30/2017
 ms.assetid: 00a8580b-face-47a4-838d-b9fed48e72df
-ms.openlocfilehash: f1aa68bcdda43fd77bee397c079695f7937faa52
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2364eb9d82fd17bd0b80b01070a0f1d789be3d90
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74139471"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556149"
 ---
 # \<netNamedPipeBinding>
 定义一个既安全又可靠且针对计算机上跨进程通信进行了优化的绑定。 默认情况下，此绑定生成一个运行时通信堆栈，该堆栈包含 WS-ReliableMessaging 以保证可靠性，包含传输安全机制以保证传递的安全性，包含命名管道以便进行消息传递，并且包含二进制消息编码机制。  
@@ -49,7 +49,7 @@ ms.locfileid: "74139471"
 ## <a name="attributes-and-elements"></a>特性和元素  
  以下几节描述了特性、子元素和父元素。  
   
-### <a name="attributes"></a>特性  
+### <a name="attributes"></a>属性  
   
 |属性|说明|  
 |---------------|-----------------|  
@@ -59,28 +59,28 @@ ms.locfileid: "74139471"
 |maxBufferSize|一个正整数，指定内存中用于存储消息的缓冲区的最大大小（字节）。 如果缓冲区已满，则多余的数据会保留在基础套接字中，直到缓冲区重新具有可用空间。 该值不能小于 `maxReceivedMessageSize` 属性。 默认值为 65536。 有关详细信息，请参阅 <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement.MaxBufferSize%2A>。|  
 |maxConnections|一个整数，指定服务将创建/接受的最大出站和入站连接数。 传入和传出连接分别根据此属性指定的限制进行计数。<br /><br /> 超出此限制的入站连接需要排队，直到连接数低于限制值。<br /><br /> 超出此限制的出站连接需要排队，直到连接数低于限制值。<br /><br /> 默认值为 10。|  
 |maxReceivedMessageSize|一个正整数，指定采用此绑定配置的通道上可以接收的最大消息大小（字节），包括消息头。 如果消息超出此限制，则发送方将收到 SOAP 错误。 接收方将删除该消息，并在跟踪日志中创建事件项。 默认值为 65536。|  
-|NAME|一个包含绑定的配置名称的字符串。 因为此值用作绑定的标识，所以它应该是唯一的。 从 .NET Framework 4 开始，绑定和行为不需要具有名称。 有关默认配置和无值绑定和行为的详细信息，请参阅[WCF 服务的](../../../wcf/samples/simplified-configuration-for-wcf-services.md)[简化配置](../../../wcf/simplified-configuration.md)和简化配置。|  
+|name|一个包含绑定的配置名称的字符串。 因为此值用作绑定的标识，所以它应该是唯一的。 从 .NET Framework 4 开始，绑定和行为不需要具有名称。 有关默认配置和无值绑定和行为的详细信息，请参阅[WCF 服务的](../../../wcf/samples/simplified-configuration-for-wcf-services.md)[简化配置](../../../wcf/simplified-configuration.md)和简化配置。|  
 |openTimeout|一个 <xref:System.TimeSpan> 值，指定为完成打开操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:01:00。|  
 |receiveTimeout|一个 <xref:System.TimeSpan> 值，指定为完成接收操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:10:00。|  
 |sendTimeout|一个 <xref:System.TimeSpan> 值，指定为完成发送操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:01:00。|  
-|transactionFlow|一个布尔值，指定绑定是否支持流动 WS-Transactions。 默认为 `false`。|  
+|transactionFlow|一个布尔值，指定绑定是否支持流动 WS-Transactions。 默认值为 `false`。|  
 |transactionProtocol|指定与此绑定一起使用的事务处理协议。 有效值为<br /><br /> -OleTransactions<br />-AtomicTransactionOctober2004<br /><br /> 默认值为 OleTransactions。 此属性的类型为 <xref:System.ServiceModel.TransactionProtocol>。|  
 |transferMode|一个 <xref:System.ServiceModel.TransferMode> 值，指定为请求或响应对消息进行缓冲处理还是流式处理。|  
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<security>](security-of-netnamedpipebinding.md)|定义绑定的安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement>。|  
-|[\<readerQuotas>](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
+|[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<bindings>](bindings.md)|此元素包含标准绑定和自定义绑定的集合。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
  默认情况下，`NetNamedPipeBinding` 会生成一个运行时通信堆栈，该堆栈可使用传输安全、用于消息传递的命名管道和二进制消息编码。 此绑定是 Windows Communication Foundation (WCF) 系统提供的一个相应选项，可用于计算机上的通信。 它还支持事务。  
   
  `NetNamedPipeBinding` 的默认配置与 `NetTcpBinding` 所提供的配置类似，但要简单一些，因为 WCF 实现仅计划在计算机上使用，因此公开的功能就更少。 其中最显著的差异在于 `securityMode` 设置只提供 `None` 和 `Transport` 选项。 不包括 SOAP 安全支持选项。 可以使用可选的 `securityMode` 属性配置安全行为。  
@@ -144,7 +144,7 @@ ms.locfileid: "74139471"
 </configuration>
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.NetNamedPipeBindingElement>
 - <xref:System.ServiceModel.NetNamedPipeBinding>

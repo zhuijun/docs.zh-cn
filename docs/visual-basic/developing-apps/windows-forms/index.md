@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Windows applications
 - Windows Forms, Visual Basic
 ms.assetid: 0b919d30-7fd6-42db-85c8-543d15312441
-ms.openlocfilehash: 11216186a28509e1f10bafa1b24a440bcedaeeb6
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9d061aeccb914cce80e02bb7df44dae2edf25412
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "85840272"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557014"
 ---
 # <a name="windows-forms-application-basics-visual-basic"></a>Windows 窗体应用程序基础知识 (Visual Basic)
 
@@ -20,9 +20,9 @@ Visual Basic 的重要功能之一是能够创建在用户计算机上本地运�
 
 可以通过 Visual Studio 创建 Windows 窗体应用程序和 Windows 服务应用程序。 有关详细信息，请参阅下列主题：
 
-- [Windows 窗体入门](../../../framework/winforms/getting-started-with-windows-forms.md) - 提供有关如何创建 Windows 窗体并对其编程的信息。
+- [Windows 窗体入门](/dotnet/desktop/winforms/getting-started-with-windows-forms) - 提供有关如何创建 Windows 窗体并对其编程的信息。
 
-- [Windows 窗体控件](../../../framework/winforms/controls/index.md) - 详细介绍如何使用 Windows 窗体控件的一系列主题。
+- [Windows 窗体控件](/dotnet/desktop/winforms/controls/) - 详细介绍如何使用 Windows 窗体控件的一系列主题。
 
 - [Windows 服务应用程序](../../../framework/windows-services/index.md) - 列出了解释如何创建 Windows 服务的主题。
 
@@ -34,11 +34,11 @@ Windows 窗体是 .NET Framework 的智能客户端组件，是一组支持读�
 
 ### <a name="events"></a>事件
 
-当用户对你的窗体或一个窗体控件执行了某个操作时，该操作将生成一个事件。 你的应用程序通过使用代码对这些事件做出反应，并在事件发生时对其进行处理。 有关详细信息，请参阅[在 Windows 窗体中创建事件处理程序](../../../framework/winforms/creating-event-handlers-in-windows-forms.md)。
+当用户对你的窗体或一个窗体控件执行了某个操作时，该操作将生成一个事件。 你的应用程序通过使用代码对这些事件做出反应，并在事件发生时对其进行处理。 有关详细信息，请参阅[在 Windows 窗体中创建事件处理程序](/dotnet/desktop/winforms/creating-event-handlers-in-windows-forms)。
 
 ### <a name="controls"></a>控件
 
-Windows 窗体包含各种可以放置在窗体上的控件：显示文本框、按钮、下拉框、单选按钮甚至网页的控件。 有关可在窗体上使用的所有控件的列表，请参阅[在 Windows 窗体上使用的控件](../../../framework/winforms/controls/controls-to-use-on-windows-forms.md)。 如果某个现有控件不满足你的需要，Windows 窗体还支持使用 <xref:System.Windows.Forms.UserControl> 类创建自己的自定义控件。
+Windows 窗体包含各种可以放置在窗体上的控件：显示文本框、按钮、下拉框、单选按钮甚至网页的控件。 有关可在窗体上使用的所有控件的列表，请参阅[在 Windows 窗体上使用的控件](/dotnet/desktop/winforms/controls/controls-to-use-on-windows-forms)。 如果某个现有控件不满足你的需要，Windows 窗体还支持使用 <xref:System.Windows.Forms.UserControl> 类创建自己的自定义控件。
 
 Windows 窗体具有丰富的 UI 控件，这些控件可模拟 Microsoft Office 等高端应用程序中的功能。 使用 <xref:System.Windows.Forms.ToolStrip> 和 <xref:System.Windows.Forms.MenuStrip> 控件时，可以创建包含文本和图像的工具栏和菜单、显示子菜单和托管其他控件（如文本框和组合框）。
 
@@ -53,9 +53,9 @@ Windows 窗体具有丰富的 UI 控件，这些控件可模拟 Microsoft Office
 |功能|查看|
 |--------|---------|
 |使用 Visual Studio 创建新的 Windows 窗体应用程序|[教程 1：创建图片查看器](/visualstudio/ide/tutorial-1-create-a-picture-viewer)|
-|在窗体上使用控件|[如何：向 Windows 窗体添加控件](../../../framework/winforms/controls/how-to-add-controls-to-windows-forms.md)|
-|使用 <xref:System.Drawing> 创建图形|[图形编程入门](../../../framework/winforms/advanced/getting-started-with-graphics-programming.md)|
-|创建自定义控件|[如何：从 UserControl 类继承](../../../framework/winforms/controls/how-to-inherit-from-the-usercontrol-class.md)|
+|在窗体上使用控件|[如何：向 Windows 窗体添加控件](/dotnet/desktop/winforms/controls/how-to-add-controls-to-windows-forms)|
+|使用 <xref:System.Drawing> 创建图形|[图形编程入门](/dotnet/desktop/winforms/advanced/getting-started-with-graphics-programming)|
+|创建自定义控件|[如何：从 UserControl 类继承](/dotnet/desktop/winforms/controls/how-to-inherit-from-the-usercontrol-class)|
 
 ## <a name="displaying-and-manipulating-data"></a>显示和操作数据
 
@@ -75,8 +75,8 @@ Windows 窗体具有丰富的 UI 控件，这些控件可模拟 Microsoft Office
 
 |功能|查看|
 |--------|---------|
-|使用 <xref:System.Windows.Forms.BindingSource> 组件|[如何：使用设计器将 Windows 窗体控件与 BindingSource 组件进行绑定](../../../framework/winforms/controls/bind-wf-controls-with-the-bindingsource.md)|
-|使用 ADO.NET 数据源|[如何：使用 Windows 窗体 BindingSource 组件对 ADO.NET 数据进行排序和筛选](../../../framework/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component.md)|
+|使用 <xref:System.Windows.Forms.BindingSource> 组件|[如何：使用设计器将 Windows 窗体控件与 BindingSource 组件进行绑定](/dotnet/desktop/winforms/controls/bind-wf-controls-with-the-bindingsource)|
+|使用 ADO.NET 数据源|[如何：使用 Windows 窗体 BindingSource 组件对 ADO.NET 数据进行排序和筛选](/dotnet/desktop/winforms/controls/sort-and-filter-ado-net-data-with-wf-bindingsource-component)|
 |使用“数据源”窗口|[演练：在 Windows 窗体上显示数据](/visualstudio/data-tools/accessing-data-in-visual-studio)|
 
 ## <a name="deploying-applications-to-client-computers"></a>将应用程序部署到客户端计算机
@@ -103,11 +103,11 @@ Windows 窗体中有许多其他功能，可帮助快速轻松地实现常见任
 
 |功能|查看|
 |--------|---------|
-|打印窗体内容|[如何：打印 Windows 窗体中的图形](../../../framework/winforms/advanced/how-to-print-graphics-in-windows-forms.md)<br /><br /> [如何：打印 Windows 窗体中的多页文本文件](../../../framework/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms.md)|
-|了解有关 Windows 窗体安全的详细信息|[Windows 窗体中的安全性概述](../../../framework/winforms/security-in-windows-forms-overview.md)|
+|打印窗体内容|[如何：打印 Windows 窗体中的图形](/dotnet/desktop/winforms/advanced/how-to-print-graphics-in-windows-forms)<br /><br /> [如何：打印 Windows 窗体中的多页文本文件](/dotnet/desktop/winforms/advanced/how-to-print-a-multi-page-text-file-in-windows-forms)|
+|了解有关 Windows 窗体安全的详细信息|[Windows 窗体中的安全性概述](/dotnet/desktop/winforms/security-in-windows-forms-overview)|
 
 ## <a name="see-also"></a>请参阅
 
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>
-- [Windows 窗体概述](../../../framework/winforms/windows-forms-overview.md)
+- [Windows 窗体概述](/dotnet/desktop/winforms/windows-forms-overview)
 - [My.Forms 对象](../../language-reference/objects/my-forms-object.md)

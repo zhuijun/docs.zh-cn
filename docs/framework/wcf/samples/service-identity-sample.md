@@ -2,15 +2,15 @@
 title: 服务标识示例
 ms.date: 03/30/2017
 ms.assetid: 79fa8c1c-85bb-4b67-bc67-bfaf721303f8
-ms.openlocfilehash: e4b5e739db04fbb3270c9870468433aec7787061
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: e3365b8e17d847e6e1dc42062dc7fd5c1e4de80d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599901"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558129"
 ---
 # <a name="service-identity-sample"></a>服务标识示例
-此服务标识示例演示如何为服务设置标识。 客户端可以在设计时使用服务的元数据来检索标识，然后在运行时对服务的标识进行身份验证。 服务标识的概念是允许客户端在调用服务的任何操作之前对服务进行身份验证，从而保护客户端，防止进行未经身份验证的调用。 在安全连接中，服务还在允许客户端访问其之前对客户端的凭据进行身份验证，但这不是此示例要介绍的重点。 请参阅[客户端](client.md)中显示服务器身份验证的示例。
+此服务标识示例演示如何为服务设置标识。 客户端可以在设计时使用服务的元数据来检索标识，然后在运行时对服务的标识进行身份验证。 服务标识的概念是允许客户端在调用服务的任何操作之前对服务进行身份验证，从而保护客户端，防止进行未经身份验证的调用。 在安全连接中，服务还在允许客户端访问其之前对客户端的凭据进行身份验证，但这不是此示例要介绍的重点。 请参阅 [客户端](client.md) 中显示服务器身份验证的示例。
 
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。
@@ -107,26 +107,26 @@ class CustomIdentityVerifier : IdentityVerifier
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>设置、生成和运行示例
 
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
+1. 确保已对 [Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。
 
 2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。
 
-3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
+3. 若要以单机配置或跨计算机配置来运行示例，请按照 [运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>在同一计算机上运行示例
 
-1. 在 Windows XP 或 Windows Vista 上，使用 MMC 管理单元工具将标识解决方案文件夹中的 Identity 证书文件导入到 LocalMachine/My （个人）证书存储区。 此文件受密码保护。 在导入过程中，将提示您输入密码。 `xyz`在 "密码" 框中键入。 有关详细信息，请参阅[如何：通过 MMC 管理单元查看证书](../feature-details/how-to-view-certificates-with-the-mmc-snap-in.md)主题。 完成此操作后，在 Visual Studio 的开发人员命令提示中，使用管理员权限运行 Setup.exe，此操作将此证书复制到 CurrentUser/受信任的人员存储区，以便在客户端上使用。
+1. 在 Windows XP 或 Windows Vista 上，使用 MMC 管理单元工具将标识解决方案文件夹中的 Identity 证书文件导入到 LocalMachine/My (个人) 证书存储区。 此文件受密码保护。 在导入过程中，将提示您输入密码。 `xyz`在 "密码" 框中键入。 有关详细信息，请参阅 [如何：通过 MMC 管理单元查看证书](../feature-details/how-to-view-certificates-with-the-mmc-snap-in.md) 主题。 完成此操作后，请使用管理员权限在 Visual Studio 开发人员命令提示中运行 Setup.bat，这会将此证书复制到 CurrentUser/受信任的人员存储区，以便在客户端上使用。
 
-2. 在 Windows Server 2003 上，使用管理员权限在 Visual Studio 2012 命令提示符下从示例安装文件夹运行安装程序。 这将安装运行示例所需的所有证书。
+2. 在 Windows Server 2003 上，使用管理员权限在 Visual Studio 2012 命令提示符下从示例安装文件夹运行 Setup.bat。 这将安装运行示例所需的所有证书。
 
     > [!NOTE]
-    > 设置 bat 批处理文件设计为在 Visual Studio 2012 命令提示符下运行。 在 Visual Studio 2012 命令提示符中设置的 PATH 环境变量指向包含安装程序 bat 脚本所需的可执行文件的目录。 请确保在运行完该示例后通过运行 Cleanup.bat 来移除证书。 其他安全示例使用相同的证书。  
+    > Setup.bat 批处理文件设计为在 Visual Studio 2012 命令提示符下运行。 在 Visual Studio 2012 命令提示符下设置的 PATH 环境变量指向包含 Setup.bat 脚本所需的可执行文件的目录。 请确保在运行完该示例后通过运行 Cleanup.bat 来移除证书。 其他安全示例使用相同的证书。  
   
 3. 启动 \service\bin 目录中的 Service.exe。 确保该服务指示它已准备就绪，并显示按 \<Enter> 以终止服务的提示。  
   
 4. 启动 \client\bin 目录中的 Client.exe，或在 Visual Studio 中按 F5 以生成并运行。 客户端活动将显示在客户端控制台应用程序上。  
   
-5. 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+5. 如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 ### <a name="to-run-the-sample-across-computers"></a>跨计算机运行示例  
   
@@ -146,15 +146,15 @@ class CustomIdentityVerifier : IdentityVerifier
   
 8. 在客户端计算机上的 Client.exe.config 文件中，更改终结点的地址值，使其与服务的新地址相匹配。 必须更改多个实例。  
   
-9. 在客户端上，在使用管理员特权打开的 Visual Studio 开发人员命令提示中运行 Importservicecert.bat。 这会将 Service.cer 文件中的服务证书导入 CurrentUser – TrustedPeople 存储区。  
+9. 在客户端上，在使用管理员特权打开的 Visual Studio 开发人员命令提示中运行 ImportServiceCert.bat。 这会将 Service.cer 文件中的服务证书导入 CurrentUser – TrustedPeople 存储区。  
   
 10. 在服务计算机上，在命令提示符下启动 Service.exe。  
   
-11. 在客户端计算机上，在命令提示符下启动 Client.exe。 如果客户端和服务无法进行通信，请参阅[WCF 示例的故障排除提示](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
+11. 在客户端计算机上，在命令提示符下启动 Client.exe。 如果客户端和服务无法进行通信，请参阅 [WCF 示例的故障排除提示](/previous-versions/dotnet/netframework-3.5/ms751511(v=vs.90))。  
   
 ### <a name="to-clean-up-after-the-sample"></a>运行示例后进行清理  
   
 - 运行完示例后运行示例文件夹中的 Cleanup.bat。  
   
     > [!NOTE]
-    > 此脚本不会在跨计算机运行此示例时移除客户端上的服务证书。 如果你已运行跨计算机使用证书 Windows Communication Foundation （WCF）示例，请确保清除已安装在 CurrentUser-TrustedPeople 存储中的服务证书。 为此，请使用以下命令：`certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`，例如：`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`。
+    > 此脚本不会在跨计算机运行此示例时移除客户端上的服务证书。 如果你已运行 Windows Communication Foundation 跨计算机使用证书 (WCF) 示例，请确保清除已安装在 CurrentUser-TrustedPeople 存储中的服务证书。 为此，请使用以下命令：`certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`，例如：`certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`。

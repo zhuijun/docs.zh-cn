@@ -2,16 +2,16 @@
 title: 不支持的方案
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: b643e6df8a877860ce36fc6ee34c4e4ca08ec748
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: a3ee91e5232926b4ea7db80db35d9a309ca8105b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921163"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557809"
 ---
 # <a name="unsupported-scenarios"></a>不支持的方案
 
-由于各种原因，Windows Communication Foundation （WCF）不支持某些特定的安全方案。 例如，Windows XP Home Edition 不实现 SSPI 或 Kerberos 身份验证协议，因此 WCF 不支持在该平台上使用 Windows 身份验证运行服务。 在 Windows XP Home Edition 下运行 WCF 时，支持其他身份验证机制，例如用户名/密码和 HTTP/HTTPS 集成身份验证。
+由于各种原因，Windows Communication Foundation (WCF) 不支持某些特定的安全方案。 例如，Windows XP Home Edition 不实现 SSPI 或 Kerberos 身份验证协议，因此 WCF 不支持在该平台上使用 Windows 身份验证运行服务。 在 Windows XP Home Edition 下运行 WCF 时，支持其他身份验证机制，例如用户名/密码和 HTTP/HTTPS 集成身份验证。
 
 ## <a name="impersonation-scenarios"></a>模拟方案
 
@@ -20,43 +20,43 @@ ms.locfileid: "76921163"
 
 ### <a name="windows-xp-and-secure-context-token-cookie-enabled"></a>已启用 Windows XP 和安全上下文令牌 cookie
 
-当存在以下情况时，WCF 不支持模拟，并引发 <xref:System.InvalidOperationException>：
+WCF 不支持模拟， <xref:System.InvalidOperationException> 当存在以下条件时，将引发：
 
 - 操作系统为 Windows XP。
 
 - 身份验证模式产生 Windows 标识。
 
-- <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> 的 <xref:System.ServiceModel.OperationBehaviorAttribute> 属性设置为 <xref:System.ServiceModel.ImpersonationOption.Required>。
+- <xref:System.ServiceModel.OperationBehaviorAttribute> 的 <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> 属性设置为 <xref:System.ServiceModel.ImpersonationOption.Required>。
 
 - 创建了基于状态的安全上下文令牌 (SCT)。默认情况下禁止创建此类令牌。
 
- 基于状态的 SCT 只能使用自定义绑定来创建。 有关详细信息，请参阅[如何：为安全会话创建安全上下文令牌](how-to-create-a-security-context-token-for-a-secure-session.md)。）在代码中，通过使用 <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> 或 <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> 方法创建安全绑定元素（<xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> 或 <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement>）并将 `requireCancellation` 参数设置为 `false`来启用标记。 该参数引用 SCT 的缓存。 若将该值设置为 `false`，则启用基于状态的 SCT 功能。
+ 基于状态的 SCT 只能使用自定义绑定来创建。 有关详细信息，请参阅 [如何：为安全会话创建安全上下文令牌](how-to-create-a-security-context-token-for-a-secure-session.md)。 ) 在代码中，通过使用或方法 (或) 创建安全绑定元素， <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> <xref:System.ServiceModel.Channels.AsymmetricSecurityBindingElement> <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSspiNegotiationBindingElement%28System.Boolean%29?displayProperty=nameWithType> <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateSecureConversationBindingElement%28System.ServiceModel.Channels.SecurityBindingElement%2CSystem.Boolean%29?displayProperty=nameWithType> 并将 `requireCancellation` 参数设置为 `false` ，可以启用令牌。 该参数引用 SCT 的缓存。 若将该值设置为 `false`，则启用基于状态的 SCT 功能。
 
- 或者，在配置中，通过创建一个 <`customBinding`>，然后添加 <`security`> 元素，并将 `authenticationMode` 特性设置为 Ws-secureconversation，并将 `requireSecurityContextCancellation` 特性设置为 `true`来启用该标记。
+ 或者，在配置中，通过创建一个 <`customBinding`>，然后添加一个 <`security`> 元素，并将属性设置为 ws-secureconversation，并将 `authenticationMode` 属性设置 `requireSecurityContextCancellation` 为来 `true` 启用该标记。
 
 > [!NOTE]
-> 上述要求是特定的。 例如，<xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> 创建一个产生 Windows 标识的绑定元素，但并不建立一个 SCT。 因此，你可以将其与 Windows XP 上的 `Required` 选项一起使用。
+> 上述要求是特定的。 例如，<xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> 创建一个产生 Windows 标识的绑定元素，但并不建立一个 SCT。 因此，你可以将其与 `Required` WINDOWS XP 上的选项一起使用。
 
 ### <a name="possible-aspnet-conflict"></a>可能的 ASP.NET 冲突
 
-WCF 和 ASP.NET 都可以启用或禁用模拟。 当 ASP.NET 承载 WCF 应用程序时，WCF 和 ASP.NET 配置设置之间可能存在冲突。 发生冲突时，WCF 设置优先，除非 <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> 属性设置为 <xref:System.ServiceModel.ImpersonationOption.NotAllowed>，在这种情况下，ASP.NET 模拟设置优先。
+WCF 和 ASP.NET 都可以启用或禁用模拟。 当 ASP.NET 承载 WCF 应用程序时，WCF 和 ASP.NET 配置设置之间可能存在冲突。 发生冲突时，除非将属性设置为，否则会优先使用 WCF 设置， <xref:System.ServiceModel.OperationBehaviorAttribute.Impersonation%2A> <xref:System.ServiceModel.ImpersonationOption.NotAllowed> 在这种情况下，ASP.NET 模拟设置优先。
 
 ### <a name="assembly-loads-may-fail-under-impersonation"></a>程序集加载可能在模拟后失败
 
 如果所模拟的上下文没有加载程序集的访问权限，并且这是公共语言运行库 (CLR) 第一次试图加载该 AppDomain 的程序集，则 <xref:System.AppDomain> 会缓存失败。 随后进行的加载该程序集（或多个程序集）的尝试仍将失败，即使撤消了模拟，并且恢复之后的上下文具有加载该程序集的访问权限。 这是因为 CLR 在用户上下文更改后不会重新尝试负载。 必须重新启动应用程序域才能从失败中恢复。
 
 > [!NOTE]
-> <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> 类的 <xref:System.ServiceModel.Security.WindowsClientCredential> 属性的默认值为 <xref:System.Security.Principal.TokenImpersonationLevel.Identification>。 大多数情况下，标识级模拟上下文不具有加载任何其他程序集的权限。 这是默认值，因此这是一个需要注意的非常常见的条件。 当模拟进程不具有 `SeImpersonate` 特权时，也会发生标识级模拟。 有关详细信息，请参阅[委派和模拟](delegation-and-impersonation-with-wcf.md)。
+> <xref:System.ServiceModel.Security.WindowsClientCredential.AllowedImpersonationLevel%2A> 类的 <xref:System.ServiceModel.Security.WindowsClientCredential> 属性的默认值为 <xref:System.Security.Principal.TokenImpersonationLevel.Identification>。 大多数情况下，标识级模拟上下文不具有加载任何其他程序集的权限。 这是默认值，因此这是一个需要注意的非常常见的条件。 当模拟进程不具有 `SeImpersonate` 特权时，也会发生标识级模拟。 有关详细信息，请参阅 [委派和模拟](delegation-and-impersonation-with-wcf.md)。
 
 ### <a name="delegation-requires-credential-negotiation"></a>委托需要凭据协商
 
-若要将 Kerberos 身份验证协议与委托联合使用，必须实现带有凭据协商的 Kerberos 协议（有时称作多段或多步 Kerberos）。 如果不用凭据协商来实现 Kerberos 协议（有时称作单稳或单路 Kerberos），则会引发异常。 有关如何实现凭据协商的详细信息，请参阅[调试 Windows 身份验证错误](debugging-windows-authentication-errors.md)。
+若要将 Kerberos 身份验证协议与委托联合使用，必须实现带有凭据协商的 Kerberos 协议（有时称作多段或多步 Kerberos）。 如果不用凭据协商来实现 Kerberos 协议（有时称作单稳或单路 Kerberos），则会引发异常。 有关如何实现凭据协商的详细信息，请参阅 [调试 Windows 身份验证错误](debugging-windows-authentication-errors.md)。
 
-## <a name="cryptography"></a>密码
+## <a name="cryptography"></a>加密
 
 ### <a name="sha-256-supported-only-for-symmetric-key-usages"></a>SHA-256 仅支持对称密钥用法
 
-WCF 支持多种加密和签名摘要创建算法，可以在系统提供的绑定中使用算法套件来指定。 为了提高安全性，WCF 支持安全哈希算法（SHA）2算法，特别是 SHA-256，用于创建签名摘要哈希。 此版本仅在使用对称密钥（例如，Kerberos 密钥）并且没有使用 X.509 证书对消息进行签名的情况下才支持 SHA-256。 由于当前不支持 WinFX 中的 RSA-SHA256，WCF 不支持使用 SHA-256 哈希的 RSA 签名（使用 x.509 证书）。
+WCF 支持多种加密和签名摘要创建算法，可以在系统提供的绑定中使用算法套件来指定。 为了提高安全性，WCF 支持安全哈希算法 (SHA) 2 算法，特别是 SHA-256，用于创建签名摘要哈希。 此版本仅在使用对称密钥（例如，Kerberos 密钥）并且没有使用 X.509 证书对消息进行签名的情况下才支持 SHA-256。 WCF 不支持 (在 x.509 证书中使用的 RSA 签名) 使用 SHA-256 哈希，因为目前缺乏对 WinFX 中 RSA-SHA256 的支持。
 
 ### <a name="fips-compliant-sha-256-hashes-not-supported"></a>不支持 FIPS 兼容的 SHA-256 哈希
 
@@ -72,7 +72,7 @@ WCF 不支持符合 SHA-256 FIPS 的哈希，因此在要求使用符合 FIPS �
 
 ### <a name="cngksp-certificates"></a>CNG/KSP 证书
 
-*加密 API：下一代（CNG）* 是 CryptoAPI 的长期替换。 此 API 在 Windows Vista、Windows Server 2008 和更高版本的 windows 版本上的非托管代码中提供。
+*加密 API：下一代 (CNG) * 是 CryptoAPI 的长期替换。 此 API 在 Windows Vista、Windows Server 2008 和更高版本的 windows 版本上的非托管代码中提供。
 
  .NET Framework 4.6.1 和更早版本不支持这些证书，因为它们使用旧 CryptoAPI 来处理 CNG/KSP 证书。 将这些证书用于 .NET Framework 4.6.1 和早期版本将导致异常。
 
@@ -80,19 +80,19 @@ WCF 不支持符合 SHA-256 FIPS 的哈希，因此在要求使用符合 FIPS �
 
 - 对 `p/invoke` 执行 `CertGetCertificateContextProperty`，并对返回的 `dwProvType` 检查 `CertGetCertificateContextProperty`。
 
-- 使用命令行中的 `certutil` 命令来查询证书。 有关详细信息，请参阅[用于排查证书问题的 Certutil 任务](https://docs.microsoft.com/previous-versions/orphan-topics/ws.10/cc772619(v=ws.10))。
+- 使用命令  `certutil` 行中的命令来查询证书。 有关详细信息，请参阅 [用于排查证书问题的 Certutil 任务](/previous-versions/orphan-topics/ws.10/cc772619(v=ws.10))。
 
 ## <a name="message-security-fails-if-using-aspnet-impersonation-and-aspnet-compatibility-is-required"></a>如果需要使用 ASP.NET 模拟和 ASP.NET 兼容性，消息安全将失败
 
 WCF 不支持以下设置组合，因为它们可能会阻止客户端身份验证发生：
 
-- ASP.NET 模拟已启用。 这是在 web.config 文件中完成的，方法是将 <`identity`> 元素的 `impersonate` 特性设置为 `true`。
+- ASP.NET 模拟已启用。 这是通过将 `impersonate` <> 元素的属性设置为来在 Web.config 文件中完成的 `identity` `true` 。
 
-- ASP.NET 兼容模式通过将[\<serviceHostingEnvironment >](../../configure-apps/file-schema/wcf/servicehostingenvironment.md)的 `aspNetCompatibilityEnabled` 属性设置为 `true`来启用。
+- 通过将 `aspNetCompatibilityEnabled` 的属性设置 [\<serviceHostingEnvironment>](../../configure-apps/file-schema/wcf/servicehostingenvironment.md) 为，可以启用 ASP.NET 兼容模式 `true` 。
 
 - 使用了消息模式安全。
 
-解决方法是关闭 ASP.NET 兼容性模式。 或者，如果 ASP.NET 兼容模式是必需的，则禁用 ASP.NET 模拟功能并改为使用 WCF 提供的模拟。 有关详细信息，请参阅[委派和模拟](delegation-and-impersonation-with-wcf.md)。
+解决方法是关闭 ASP.NET 兼容性模式。 或者，如果 ASP.NET 兼容模式是必需的，则禁用 ASP.NET 模拟功能并改为使用 WCF 提供的模拟。 有关详细信息，请参阅 [委派和模拟](delegation-and-impersonation-with-wcf.md)。
 
 ## <a name="ipv6-literal-address-failure"></a>IPv6 文本地址失败
 
@@ -106,11 +106,11 @@ WCF 不支持以下设置组合，因为它们可能会阻止客户端身份验�
 
  举例来说，若某个服务具有以下三个终结点地址，便可能出现此情况：
 
-- `http://localhost/CalculatorService/service` （服务）
+- `http://localhost/CalculatorService/service` (服务) 
 
-- `http://localhost/CalculatorService/issue_ticket` （STS）
+- `http://localhost/CalculatorService/issue_ticket` (STS) 
 
-- `http://localhost/CalculatorService/mex` （元数据终结点）
+- `http://localhost/CalculatorService/mex` (元数据终结点) 
 
  这将引发异常。
 
@@ -122,11 +122,11 @@ WCF 不支持以下设置组合，因为它们可能会阻止客户端身份验�
 
  解决方法是，导入完毕后直接在客户端上修改绑定。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全注意事项](security-considerations-in-wcf.md)
-- [信息泄漏](information-disclosure.md)
-- [特权提升](elevation-of-privilege.md)
+- [信息泄露](information-disclosure.md)
+- [权限提升](elevation-of-privilege.md)
 - [拒绝服务](denial-of-service.md)
 - [篡改](tampering.md)
-- [重放攻击](replay-attacks.md)
+- [重播攻击](replay-attacks.md)

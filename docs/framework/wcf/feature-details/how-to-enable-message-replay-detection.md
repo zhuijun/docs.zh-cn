@@ -10,23 +10,23 @@ helpviewer_keywords:
 - WCF, custom bindings
 - WCF, security
 ms.assetid: 8b847e91-69a3-49e1-9e5f-0c455e50d804
-ms.openlocfilehash: bf45b39f59e2fe38fec88d1fac23ab824c009546
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: c99500a3d4dc0bd8abe7062f23e064d395cadf36
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597080"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557874"
 ---
 # <a name="how-to-enable-message-replay-detection"></a>如何：启用消息重放检测
 当攻击者复制双方之间的消息流并将该消息流向一方或多方重播时，将发生重播攻击。 除非攻击程度降低，否则受到攻击的计算机会将该流处理为合法消息，从而导致产生大量不良结果，例如某项的冗余排序。  
   
- 有关消息重播检测的详细信息，请参阅[消息重播检测](https://docs.microsoft.com/previous-versions/msp-n-p/ff649371(v=pandp.10))。  
+ 有关消息重播检测的详细信息，请参阅 [消息重播检测](/previous-versions/msp-n-p/ff649371(v=pandp.10))。  
   
- 下面的过程演示可用于使用 Windows Communication Foundation （WCF）控制重播检测的各种属性。  
+ 下面的过程演示了各种属性，这些属性可用于使用 Windows Communication Foundation (WCF) 控制重播检测。  
   
 ### <a name="to-control-replay-detection-on-the-client-using-code"></a>使用代码在客户端上控制重播检测  
   
-1. 创建要在 <xref:System.ServiceModel.Channels.SecurityBindingElement> 中使用的 <xref:System.ServiceModel.Channels.CustomBinding>。 有关详细信息，请参阅[如何：使用 SecurityBindingElement 创建自定义绑定](how-to-create-a-custom-binding-using-the-securitybindingelement.md)。 下面的示例使用通过 <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> 类的 <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> 创建的 <xref:System.ServiceModel.Channels.SecurityBindingElement>。  
+1. 创建要在 <xref:System.ServiceModel.Channels.SecurityBindingElement> 中使用的 <xref:System.ServiceModel.Channels.CustomBinding>。 有关详细信息，请参阅 [如何：使用 SecurityBindingElement 创建自定义绑定](how-to-create-a-custom-binding-using-the-securitybindingelement.md)。 下面的示例使用通过 <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> 类的 <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> 创建的 <xref:System.ServiceModel.Channels.SecurityBindingElement>。  
   
 2. 使用 <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalClientSettings%2A> 属性返回对 <xref:System.ServiceModel.Channels.LocalClientSecuritySettings> 类的引用，并根据需要设置任何下列属性：  
   
@@ -102,7 +102,7 @@ ms.locfileid: "84597080"
   
 - <xref:System.ServiceModel.Channels>  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Channels.LocalClientSecuritySettings>
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings>

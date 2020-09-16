@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
-ms.openlocfilehash: b130ed57ba086535122c8c8795c42863348870d0
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 5ab10bcc58166d5a38768f988fb18f23088256cc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84597652"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558285"
 ---
 # <a name="auditing-security-events"></a>审核安全事件
-用 Windows Communication Foundation （WCF）创建的应用程序可以通过审核功能记录安全事件（成功和/或失败）。 这些事件被写入 Windows 系统事件日志，并且可以使用事件查看器进行检查。  
+利用 Windows Communication Foundation (WCF) 创建的应用程序可以通过审核功能，记录安全事件 (是成功、失败还是同时) 两者。 这些事件被写入 Windows 系统事件日志，并且可以使用事件查看器进行检查。  
   
  审核为管理员提供了一种检测已经发生或正在发生的攻击的方式。 此外，审核有助于开发人员调试与安全相关的问题。 例如，如果授权或检查策略配置中的错误意外拒绝授权用户进行访问，开发人员可以通过检查事件日志迅速发现并隔离此错误的原因。  
   
- 有关 WCF 安全的详细信息，请参阅[安全性概述](security-overview.md)。 有关编程 WCF 的详细信息，请参阅[基本 Wcf 编程](../basic-wcf-programming.md)。  
+ 有关 WCF 安全的详细信息，请参阅 [安全性概述](security-overview.md)。 有关编程 WCF 的详细信息，请参阅 [基本 Wcf 编程](../basic-wcf-programming.md)。  
   
 ## <a name="audit-level-and-behavior"></a>审核级别和行为  
  存在两个安全审核级别：  
@@ -25,7 +25,7 @@ ms.locfileid: "84597652"
   
 - 消息级别，WCF 检查消息有效性并对调用方进行身份验证。  
   
- 您可以检查审核级别的成功或失败情况，这称为*审核行为*。  
+ 您可以检查审核级别的成功或失败情况，这称为 *审核行为*。  
   
 ## <a name="audit-log-location"></a>审核日志位置  
  一旦确定审核级别和行为，您（或管理员）就可指定审核日志的位置。 有以下三种选择：Default、Application 和 Security。 当指定“默认值”时，实际日志取决于所使用的系统以及该系统是否支持写入安全日志。 有关详细信息，请参阅本主题后面的 "操作系统" 部分。  
@@ -43,7 +43,7 @@ ms.locfileid: "84597652"
 ### <a name="auditing-classes"></a>审核类  
  下表描述了用于对审核行为进行编程的类和属性。  
   
-|类|描述|  
+|类|说明|  
 |-----------|-----------------|  
 |<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>|将设置审核选项作为服务行为启用。|  
 |<xref:System.ServiceModel.AuditLogLocation>|枚举值，用于指定要写入的日志。 可能的值为 Default、Application 和 Security。 选择 Default 时，操作系统将确定实际日志位置。 请参见本主题后面的“Application 或 Security 事件日志选择”部分。|  
@@ -51,7 +51,7 @@ ms.locfileid: "84597652"
 |<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.ServiceAuthorizationAuditLevel%2A>|指定在服务级别审核哪些类型的服务授权事件。 选择包括 `None`、`Failure`、`Success` 和 `SuccessOrFailure`。|  
 |<xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A>|指定在审核失败时如何处理客户端请求。 例如，当服务尝试写入 Security 日志但不具有 `SeAuditPrivilege` 时。 默认值 `true` 指示忽略失败，因此将正常处理客户端请求。|  
   
- 有关设置应用程序以记录审核事件的示例，请参阅[如何：审核安全事件](how-to-audit-wcf-security-events.md)。  
+ 有关设置应用程序以记录审核事件的示例，请参阅 [如何：审核安全事件](how-to-audit-wcf-security-events.md)。  
   
 ### <a name="configuration"></a>Configuration  
  通过在下添加，还可以使用配置来指定审核行为 [\<serviceSecurityAudit>](../../configure-apps/file-schema/wcf/servicesecurityaudit.md) [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md) 。 必须在下添加元素 [\<behavior>](../../configure-apps/file-schema/wcf/behavior-of-endpointbehaviors.md) ，如下面的代码所示。  
@@ -93,12 +93,12 @@ ms.locfileid: "84597652"
 #### <a name="other-factors"></a>其他因素  
  除操作系统以外，下表描述了其他用于控制是否启用日志记录的设置。  
   
-|因素|应用程序日志|安全日志|  
+|因子|应用程序日志|安全日志|  
 |------------|---------------------|------------------|  
 |审核策略管理|不适用。|除配置以外，Security 日志还受到本地安全机构 (LSA) 策略的控制。 还必须启用“审核对象访问”类别。|  
 |默认用户体验|所有通过身份验证的用户都可以写入 Application 日志，因此对于应用程序进程，不需要执行其他权限步骤。|应用程序进程（上下文）必须具有 `SeAuditPrivilege`。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior>
 - <xref:System.ServiceModel.AuditLogLocation>
@@ -107,4 +107,4 @@ ms.locfileid: "84597652"
 - [如何：审核安全事件](how-to-audit-wcf-security-events.md)
 - [\<serviceSecurityAudit>](../../configure-apps/file-schema/wcf/servicesecurityaudit.md)
 - [\<behaviors>](../../configure-apps/file-schema/wcf/behaviors.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

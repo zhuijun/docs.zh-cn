@@ -1,28 +1,28 @@
 ---
 title: 如何：在 IIS 中承载 WCF 服务
-description: 了解如何创建在 Internet Information Services （IIS）中承载的 WCF 服务。 只可以将 IIS 宿主与 HTTP 传输协议一起使用。
+description: 了解如何创建 Internet Information Services (IIS) 中承载的 WCF 服务。 只可以将 IIS 宿主与 HTTP 传输协议一起使用。
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: b044b1c9-c1e5-4c9f-84d8-0f02f4537f8b
-ms.openlocfilehash: 2ba0ae7adedc3bf0e0ca0cb92b4205edc968a5d8
-ms.sourcegitcommit: 0edbeb66d71b8df10fcb374cfca4d731b58ccdb2
+ms.openlocfilehash: 30910d428ddace7a5d5fc10fc0def21ea14d39c9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "86052008"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555993"
 ---
 # <a name="how-to-host-a-wcf-service-in-iis"></a>如何：在 IIS 中承载 WCF 服务
-本主题概述了创建在 Internet Information Services （IIS）中承载的 Windows Communication Foundation （WCF）服务所需的基本步骤。 本主题假设您熟悉 IIS 且了解如何使用 IIS 管理工具创建和管理 IIS 应用程序。 有关 IIS 的详细信息，请参阅[Internet Information Services](https://www.iis.net/)。 在 IIS 环境中运行的 WCF 服务充分利用 IIS 功能，如进程回收、空闲关闭、进程运行状况监视和基于消息的激活。 此宿主选项要求正确配置 IIS，但不需要编写任何承载代码作为应用程序的一部分。 只可以将 IIS 宿主与 HTTP 传输协议一起使用。  
+本主题概述了在 Internet Information Services (IIS) 中创建 Windows Communication Foundation (WCF) 服务所需的基本步骤。 本主题假设您熟悉 IIS 且了解如何使用 IIS 管理工具创建和管理 IIS 应用程序。 有关 IIS 的详细信息，请参阅 [Internet Information Services](https://www.iis.net/)。 在 IIS 环境中运行的 WCF 服务充分利用 IIS 功能，如进程回收、空闲关闭、进程运行状况监视和基于消息的激活。 此宿主选项要求正确配置 IIS，但不需要编写任何承载代码作为应用程序的一部分。 只可以将 IIS 宿主与 HTTP 传输协议一起使用。  
   
- 有关 WCF 和 ASP.NET 如何交互的详细信息，请参阅[Wcf 服务和 ASP.NET](wcf-services-and-aspnet.md)。 有关配置安全的详细信息，请参阅[安全性](security.md)。  
+ 有关 WCF 和 ASP.NET 如何交互的详细信息，请参阅 [Wcf 服务和 ASP.NET](wcf-services-and-aspnet.md)。 有关配置安全的详细信息，请参阅 [安全性](security.md)。  
   
- 有关此示例的源副本，请参阅[使用内联代码的 IIS 承载](../samples/iis-hosting-using-inline-code.md)。  
+ 有关此示例的源副本，请参阅 [使用内联代码的 IIS 承载](../samples/iis-hosting-using-inline-code.md)。  
   
 ### <a name="to-create-a-service-hosted-by-iis"></a>创建由 IIS 承载的服务  
   
-1. 确认 IIS 已经安装并在计算机上运行。 有关安装和配置 IIS 的详细信息，请参阅[安装和配置 iis 7.0](https://docs.microsoft.com/iis/install/installing-iis-7/installing-necessary-iis-components-on-windows-vista)  
+1. 确认 IIS 已经安装并在计算机上运行。 有关安装和配置 IIS 的详细信息，请参阅 [安装和配置 iis 7.0](/iis/install/installing-iis-7/installing-necessary-iis-components-on-windows-vista)  
   
 2. 为应用程序文件创建一个名为 "IISHostedCalcService" 的新文件夹，确保 ASP.NET 有权访问该文件夹的内容，并使用 IIS 管理工具创建一个物理上位于此应用程序目录中的新 IIS 应用程序。 当为应用程序目录创建别名时，请使用“IISHostedCalc”。  
   
@@ -76,10 +76,10 @@ ms.locfileid: "86052008"
  [!code-vb[C_HowTo_HostInIIS#1](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_howto_hostiniis/vb/source.vb#1)]
  [!code-xml[c_HowTo_HostInIIS#100](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_howto_hostiniis/common/web.config#100)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [在 Internet 信息服务中承载](hosting-in-internet-information-services.md)
 - [承载服务](../hosting-services.md)
 - [WCF 服务和 ASP.NET](wcf-services-and-aspnet.md)
 - [安全性](security.md)
-- [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Windows Server App Fabric 承载功能](/previous-versions/appfabric/ee677189(v=azure.10))

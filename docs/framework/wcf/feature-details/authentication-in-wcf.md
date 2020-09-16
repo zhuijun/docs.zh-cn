@@ -6,15 +6,15 @@ helpviewer_keywords:
 - authentication [WCF]
 - security [WCF], authentication
 ms.assetid: 9254d873-843d-4c6e-bea4-8184ac3e44f4
-ms.openlocfilehash: 4c3348cfb84b8571dc1f24b774ffcd691aaa5001
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 414353b360992abea69d47de9efb22c3c77f4bf6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247515"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558272"
 ---
 # <a name="authentication-in-wcf"></a>WCF 中的身份验证
-以下主题介绍 Windows Communication Foundation （WCF）中的一些不同机制，这些机制提供身份验证，例如 Windows 身份验证、x.509 证书以及用户名和密码。  
+以下主题介绍了 Windows Communication Foundation (WCF) 提供身份验证的多种不同机制，这些机制提供身份验证，例如 Windows 身份验证、x.509 证书以及用户名和密码。  
   
 ## <a name="in-this-section"></a>本节内容  
  [如何：使用 ASP.NET 成员资格提供程序](how-to-use-the-aspnet-membership-provider.md)  
@@ -24,7 +24,7 @@ ms.locfileid: "85247515"
  演示如何集成自定义用户名/密码验证程序。  
   
  [服务标识和身份验证](service-identity-and-authentication.md)  
- 作为额外的安全措施，客户端可以通过指定服务的预期*标识*来对服务进行身份验证。 如果期望的标识与服务返回的标识不匹配，则身份验证失败。  
+ 作为额外的安全措施，客户端可以通过指定服务的预期 *标识* 来对服务进行身份验证。 如果期望的标识与服务返回的标识不匹配，则身份验证失败。  
   
  [安全协商和超时](security-negotiation-and-timeouts.md)  
  说明如何使用 <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.NegotiationTimeout%2A> 类的 <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> 属性。  
@@ -41,4 +41,4 @@ ms.locfileid: "85247515"
 ## <a name="see-also"></a>请参阅
 
 - [安全性概述](security-overview.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

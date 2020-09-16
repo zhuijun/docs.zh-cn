@@ -147,127 +147,125 @@ items:
         href: ../core/whats-new/dotnet-core-2-0.md
       - name: .NET Standard 中的新增功能
         href: ../standard/whats-new/whats-new-in-dotnet-standard.md
-  - name: 环境和运行时组件
+  - name: 工具和诊断
     items:
-      - name: 工具与工作效率
+      - name: .NET Core SDK 概述
+        href: ../core/sdk.md
+      - name: .NET Core CLI
         items:
-          - name: .NET Core SDK 概述
-            href: ../core/sdk.md
-          - name: .NET Core CLI
+          - name: 概述
+            href: ../core/tools/index.md
+          - name: 参考
             items:
-              - name: 概述
-                href: ../core/tools/index.md
-              - name: 参考
+              - name: dotnet
+                href: ../core/tools/dotnet.md
+              - name: dotnet build
+                href: ../core/tools/dotnet-build.md
+              - name: dotnet build-server
+                href: ../core/tools/dotnet-build-server.md
+              - name: dotnet clean
+                href: ../core/tools/dotnet-clean.md
+              - name: dotnet help
+                href: ../core/tools/dotnet-help.md
+              - name: dotnet migrate
+                href: ../core/tools/dotnet-migrate.md
+              - name: dotnet msbuild
+                href: ../core/tools/dotnet-msbuild.md
+              - name: dotnet new
+                href: ../core/tools/dotnet-new.md
+              - name: dotnet nuget
                 items:
-                  - name: dotnet
-                    href: ../core/tools/dotnet.md
-                  - name: dotnet build
-                    href: ../core/tools/dotnet-build.md
-                  - name: dotnet build-server
-                    href: ../core/tools/dotnet-build-server.md
-                  - name: dotnet clean
-                    href: ../core/tools/dotnet-clean.md
-                  - name: dotnet help
-                    href: ../core/tools/dotnet-help.md
-                  - name: dotnet migrate
-                    href: ../core/tools/dotnet-migrate.md
-                  - name: dotnet msbuild
-                    href: ../core/tools/dotnet-msbuild.md
-                  - name: dotnet new
-                    href: ../core/tools/dotnet-new.md
-                  - name: dotnet nuget
-                    items:
-                      - name: dotnet nuget delete
-                        href: ../core/tools/dotnet-nuget-delete.md
-                      - name: dotnet nuget locals
-                        href: ../core/tools/dotnet-nuget-locals.md
-                      - name: dotnet nuget push
-                        href: ../core/tools/dotnet-nuget-push.md
-                      - name: dotnet nuget add source
-                        href: ../core/tools/dotnet-nuget-add-source.md
-                      - name: dotnet nuget disable source
-                        href: ../core/tools/dotnet-nuget-disable-source.md
-                      - name: dotnet nuget enable source
-                        href: ../core/tools/dotnet-nuget-enable-source.md
-                      - name: dotnet nuget list source
-                        href: ../core/tools/dotnet-nuget-list-source.md
-                      - name: dotnet nuget remove source
-                        href: ../core/tools/dotnet-nuget-remove-source.md
-                      - name: dotnet nuget update source
-                        href: ../core/tools/dotnet-nuget-update-source.md
-                  - name: dotnet pack
-                    href: ../core/tools/dotnet-pack.md
-                  - name: dotnet publish
-                    href: ../core/tools/dotnet-publish.md
-                  - name: dotnet restore
-                    href: ../core/tools/dotnet-restore.md
-                  - name: dotnet run
-                    href: ../core/tools/dotnet-run.md
-                  - name: dotnet sln
-                    href: ../core/tools/dotnet-sln.md
-                  - name: dotnet store
-                    href: ../core/tools/dotnet-store.md
-                  - name: dotnet test
-                    href: ../core/tools/dotnet-test.md
-                  - name: dotnet tool
-                    items:
-                      - name: dotnet tool install
-                        href: ../core/tools/dotnet-tool-install.md
-                      - name: dotnet tool list
-                        href: ../core/tools/dotnet-tool-list.md
-                      - name: dotnet tool restore
-                        href: ../core/tools/dotnet-tool-restore.md
-                      - name: dotnet tool run
-                        href: ../core/tools/dotnet-tool-run.md
-                      - name: dotnet tool uninstall
-                        href: ../core/tools/dotnet-tool-uninstall.md
-                      - name: dotnet tool update
-                        href: ../core/tools/dotnet-tool-update.md
-                  - name: dotnet vstest
-                    href: ../core/tools/dotnet-vstest.md
-                  - name: dotnet-install 脚本
-                    href: ../core/tools/dotnet-install-script.md
-                  - name: 项目引用命令
-                    items:
-                      - name: dotnet add reference
-                        href: ../core/tools/dotnet-add-reference.md
-                      - name: dotnet list reference
-                        href: ../core/tools/dotnet-list-reference.md
-                      - name: dotnet remove reference
-                        href: ../core/tools/dotnet-remove-reference.md
-                  - name: 项目包命令
-                    items:
-                      - name: dotnet add package
-                        href: ../core/tools/dotnet-add-package.md
-                      - name: dotnet list package
-                        href: ../core/tools/dotnet-list-package.md
-                      - name: dotnet remove package
-                        href: ../core/tools/dotnet-remove-package.md
-              - name: 全局和本地工具
+                  - name: dotnet nuget delete
+                    href: ../core/tools/dotnet-nuget-delete.md
+                  - name: dotnet nuget locals
+                    href: ../core/tools/dotnet-nuget-locals.md
+                  - name: dotnet nuget push
+                    href: ../core/tools/dotnet-nuget-push.md
+                  - name: dotnet nuget add source
+                    href: ../core/tools/dotnet-nuget-add-source.md
+                  - name: dotnet nuget disable source
+                    href: ../core/tools/dotnet-nuget-disable-source.md
+                  - name: dotnet nuget enable source
+                    href: ../core/tools/dotnet-nuget-enable-source.md
+                  - name: dotnet nuget list source
+                    href: ../core/tools/dotnet-nuget-list-source.md
+                  - name: dotnet nuget remove source
+                    href: ../core/tools/dotnet-nuget-remove-source.md
+                  - name: dotnet nuget update source
+                    href: ../core/tools/dotnet-nuget-update-source.md
+              - name: dotnet pack
+                href: ../core/tools/dotnet-pack.md
+              - name: dotnet publish
+                href: ../core/tools/dotnet-publish.md
+              - name: dotnet restore
+                href: ../core/tools/dotnet-restore.md
+              - name: dotnet run
+                href: ../core/tools/dotnet-run.md
+              - name: dotnet sln
+                href: ../core/tools/dotnet-sln.md
+              - name: dotnet store
+                href: ../core/tools/dotnet-store.md
+              - name: dotnet test
+                href: ../core/tools/dotnet-test.md
+              - name: dotnet tool
                 items:
-                  - name: 管理工具
-                    href: ../core/tools/global-tools.md
-                  - name: 排查工具问题
-                    href: ../core/tools/troubleshoot-usage-issues.md
-                  - name: 为 CLI 创建工具
-                    items:
-                      - name: 1 - 创建工具
-                        displayName: 'tools, tutorials, cli'
-                        href: ../core/tools/global-tools-how-to-create.md
-                      - name: 2 - 使用全局工具
-                        displayName: 'tools, tutorials, cli'
-                        href: ../core/tools/global-tools-how-to-use.md
-                      - name: 3 - 使用本地工具
-                        href: ../core/tools/local-tools-how-to-use.md
-                        displayName: 'tools, tutorials, cli'
-              - name: global.json 概述
-                href: ../core/tools/global-json.md
-              - name: 遥测
-                href: ../core/tools/telemetry.md
-              - name: 提升的访问权限
-                href: ../core/tools/elevated-access.md
-              - name: 启用 Tab 自动补全
-                href: ../core/tools/enable-tab-autocomplete.md
+                  - name: dotnet tool install
+                    href: ../core/tools/dotnet-tool-install.md
+                  - name: dotnet tool list
+                    href: ../core/tools/dotnet-tool-list.md
+                  - name: dotnet tool restore
+                    href: ../core/tools/dotnet-tool-restore.md
+                  - name: dotnet tool run
+                    href: ../core/tools/dotnet-tool-run.md
+                  - name: dotnet tool uninstall
+                    href: ../core/tools/dotnet-tool-uninstall.md
+                  - name: dotnet tool update
+                    href: ../core/tools/dotnet-tool-update.md
+              - name: dotnet vstest
+                href: ../core/tools/dotnet-vstest.md
+              - name: dotnet-install 脚本
+                href: ../core/tools/dotnet-install-script.md
+              - name: 项目引用命令
+                items:
+                  - name: dotnet add reference
+                    href: ../core/tools/dotnet-add-reference.md
+                  - name: dotnet list reference
+                    href: ../core/tools/dotnet-list-reference.md
+                  - name: dotnet remove reference
+                    href: ../core/tools/dotnet-remove-reference.md
+              - name: 项目包命令
+                items:
+                  - name: dotnet add package
+                    href: ../core/tools/dotnet-add-package.md
+                  - name: dotnet list package
+                    href: ../core/tools/dotnet-list-package.md
+                  - name: dotnet remove package
+                    href: ../core/tools/dotnet-remove-package.md
+          - name: 全局和本地工具
+            items:
+              - name: 管理工具
+                href: ../core/tools/global-tools.md
+              - name: 排查工具问题
+                href: ../core/tools/troubleshoot-usage-issues.md
+              - name: 为 CLI 创建工具
+                items:
+                  - name: 1 - 创建工具
+                    displayName: 'tools, tutorials, cli'
+                    href: ../core/tools/global-tools-how-to-create.md
+                  - name: 2 - 使用全局工具
+                    displayName: 'tools, tutorials, cli'
+                    href: ../core/tools/global-tools-how-to-use.md
+                  - name: 3 - 使用本地工具
+                    href: ../core/tools/local-tools-how-to-use.md
+                    displayName: 'tools, tutorials, cli'
+          - name: global.json 概述
+            href: ../core/tools/global-json.md
+          - name: 遥测
+            href: ../core/tools/telemetry.md
+          - name: 提升的访问权限
+            href: ../core/tools/elevated-access.md
+          - name: 启用 Tab 自动补全
+            href: ../core/tools/enable-tab-autocomplete.md
           - name: 与 CLI 的持续集成
             href: ../core/tools/using-ci-with-cli.md
           - name: 使用 CLI 开发库
@@ -285,151 +283,6 @@ items:
               - name: 3 - 创建模板包
                 href: ../core/tutorials/cli-templates-create-template-pack.md
                 displayName: 'tutorials, cli'
-          - name: 其他 .NET Core 工具
-            items:
-              - name: 概述
-                href: ../core/additional-tools/index.md
-              - name: .NET Core 卸载工具
-                href: ../core/additional-tools/uninstall-tool.md
-              - name: WCF Web 服务引用提供程序
-                href: ../core/additional-tools/wcf-web-service-reference-guide.md
-              - name: dotnet-svcutil
-                href: ../core/additional-tools/dotnet-svcutil-guide.md
-              - name: dotnet-svcutil.xmlserializer
-                href: ../core/additional-tools/dotnet-svcutil.xmlserializer-guide.md
-              - name: XML 序列化程序生成器
-                href: ../core/additional-tools/xml-serializer-generator.md
-          - name: 诊断工具
-            items:
-              - name: 概述
-                href: ../core/diagnostics/index.md
-              - name: 托管调试器
-                href: ../core/diagnostics/managed-debuggers.md
-              - name: 调试 Linux 转储
-                href: ../core/diagnostics/debug-linux-dumps.md
-              - name: EventCounters
-                href: ../core/diagnostics/event-counters.md
-              - name: 日志记录和跟踪
-                href: ../core/diagnostics/logging-tracing.md
-              - name: .NET Core CLI 全局工具
-                items:
-                  - name: dotnet-counters
-                    href: ../core/diagnostics/dotnet-counters.md
-                  - name: dotnet-dump
-                    href: ../core/diagnostics/dotnet-dump.md
-                  - name: dotnet-gcdump
-                    href: ../core/diagnostics/dotnet-gcdump.md
-                  - name: dotnet-trace
-                    href: ../core/diagnostics/dotnet-trace.md
-                  - name: dotnet-symbol
-                    href: ../core/diagnostics/dotnet-symbol.md
-                  - name: dotnet-sos
-                    href: ../core/diagnostics/dotnet-sos.md
-              - name: .NET Core 诊断教程
-                items:
-                  - name: 通过 EventCounters 获取 perf 指标
-                    href: ../core/diagnostics/event-counter-perf.md
-                  - name: 调试内存泄露
-                    href: ../core/diagnostics/debug-memory-leak.md
-                  - name: 调试高 CPU 使用率
-                    href: ../core/diagnostics/debug-highcpu.md
-                  - name: 调试死锁
-                    href: ../core/diagnostics/debug-deadlock.md
-          - name: 代码分析
-            items:
-              - name: 概述
-                href: productivity/code-analysis.md
-                displayName: 'code analysis, analyzers'
-              - name: 配置规则
-                href: productivity/configure-code-analysis-rules.md
-              - name: API 分析器
-                href: ../standard/analyzers/api-analyzer.md
-              - name: 可移植性分析器
-                href: ../standard/analyzers/portability-analyzer.md
-      - name: 执行模型
-        items:
-          - name: 公共语言运行时 (CLR)
-            href: ../standard/clr.md
-          - name: 托管执行过程
-            href: ../standard/managed-execution-process.md
-          - name: .NET 中的程序集
-            href: ../standard/assembly/
-          - name: 元数据和自描述组件
-            href: ../standard/metadata-and-self-describing-components.md
-          - name: 依赖项加载
-            items:
-              - name: 依赖项加载
-                href: ../core/dependency-loading/overview.md
-              - name: 了解 AssemblyLoadContext
-                href: ../core/dependency-loading/understanding-assemblyloadcontext.md
-              - name: 依赖项加载详细信息
-                items:
-                  - name: 默认依赖项探测
-                    href: ../core/dependency-loading/default-probing.md
-                  - name: 加载托管程序集
-                    href: ../core/dependency-loading/loading-managed.md
-                  - name: 加载附属程序集
-                    href: ../core/dependency-loading/loading-resources.md
-                  - name: 加载非托管库
-                    href: ../core/dependency-loading/loading-unmanaged.md
-              - name: 教程
-                items:
-                  - name: 使用插件创建 .NET Core 应用程序
-                    href: ../core/tutorials/creating-app-with-plugin-support.md
-                  - name: 如何在 .NET Core 中使用和调试程序集可卸载性
-                    href: ../core/../standard/assembly/unloadability.md
-          - name: 版本控制
-            items:
-              - name: 概述
-                href: ../core/versions/index.md
-              - name: .NET Core 版本选择
-                href: ../core/versions/selection.md
-          - name: 运行时配置
-            items:
-              - name: 设置
-                href: ../core/run-time-config/index.md
-              - name: 编译设置
-                href: ../core/run-time-config/compilation.md
-              - name: 调试和分析设置
-                href: ../core/run-time-config/debugging-profiling.md
-              - name: 垃圾回收器设置
-                href: ../core/run-time-config/garbage-collector.md
-              - name: 全球化设置
-                href: ../core/run-time-config/globalization.md
-              - name: 网络设置
-                href: ../core/run-time-config/networking.md
-              - name: 线程设置
-                href: ../core/run-time-config/threading.md
-      - name: 部署模型
-        items:
-          - name: 概述
-            href: ../core/deploying/index.md
-          - name: 使用 Visual Studio 部署应用
-            href: ../core/deploying/deploy-with-vs.md
-          - name: 使用 CLI 发布应用
-            href: ../core/deploying/deploy-with-cli.md
-          - name: 使用 CLI 创建 NuGet 包
-            href: ../core/deploying/creating-nuget-packages.md
-          - name: 自包含部署运行时前滚
-            href: ../core/deploying/runtime-patch-selection.md
-          - name: 单个文件部署和可执行文件
-            href: ../core/deploying/single-file.md
-          - name: 裁剪自包含部署和可执行文件
-            href: ../core/deploying/trim-self-contained.md
-          - name: 运行时包存储区
-            href: ../core/deploying/runtime-store.md
-          - name: 运行时标识符 (RID) 目录
-            href: ../core/rid-catalog.md
-          - name: 资源清单名称
-            href: ../core/resources/manifest-file-names.md
-          - name: Docker
-            items:
-              - name: .NET 和 Docker 简介
-                href: ../core/docker/introduction.md
-              - name: 使 .NET Core 应用程序容器化
-                href: ../core/docker/build-container.md
-              - name: Visual Studio 中的容器工具
-                href: /visualstudio/containers/overview
       - name: MSBuild 和项目文件
         items:
           - name: 项目 SDK
@@ -450,6 +303,151 @@ items:
             href: ../core/tools/csproj.md
           - name: 依赖项管理
             href: ../core/tools/dependencies.md
+      - name: 其他 .NET Core 工具
+        items:
+          - name: 概述
+            href: ../core/additional-tools/index.md
+          - name: .NET Core 卸载工具
+            href: ../core/additional-tools/uninstall-tool.md
+          - name: WCF Web 服务引用提供程序
+            href: ../core/additional-tools/wcf-web-service-reference-guide.md
+          - name: dotnet-svcutil
+            href: ../core/additional-tools/dotnet-svcutil-guide.md
+          - name: dotnet-svcutil.xmlserializer
+            href: ../core/additional-tools/dotnet-svcutil.xmlserializer-guide.md
+          - name: XML 序列化程序生成器
+            href: ../core/additional-tools/xml-serializer-generator.md
+      - name: 诊断工具
+        items:
+          - name: 概述
+            href: ../core/diagnostics/index.md
+          - name: 托管调试器
+            href: ../core/diagnostics/managed-debuggers.md
+          - name: 调试 Linux 转储
+            href: ../core/diagnostics/debug-linux-dumps.md
+          - name: EventCounters
+            href: ../core/diagnostics/event-counters.md
+          - name: 日志记录和跟踪
+            href: ../core/diagnostics/logging-tracing.md
+          - name: .NET Core CLI 全局工具
+            items:
+              - name: dotnet-counters
+                href: ../core/diagnostics/dotnet-counters.md
+              - name: dotnet-dump
+                href: ../core/diagnostics/dotnet-dump.md
+              - name: dotnet-gcdump
+                href: ../core/diagnostics/dotnet-gcdump.md
+              - name: dotnet-trace
+                href: ../core/diagnostics/dotnet-trace.md
+              - name: dotnet-symbol
+                href: ../core/diagnostics/dotnet-symbol.md
+              - name: dotnet-sos
+                href: ../core/diagnostics/dotnet-sos.md
+          - name: .NET Core 诊断教程
+            items:
+              - name: 通过 EventCounters 获取 perf 指标
+                href: ../core/diagnostics/event-counter-perf.md
+              - name: 调试内存泄露
+                href: ../core/diagnostics/debug-memory-leak.md
+              - name: 调试高 CPU 使用率
+                href: ../core/diagnostics/debug-highcpu.md
+              - name: 调试死锁
+                href: ../core/diagnostics/debug-deadlock.md
+      - name: 代码分析
+        items:
+          - name: 概述
+            href: productivity/code-analysis.md
+            displayName: 'code analysis, analyzers'
+          - name: 配置规则
+            href: productivity/configure-code-analysis-rules.md
+          - name: API 分析器
+            href: ../standard/analyzers/api-analyzer.md
+          - name: 可移植性分析器
+            href: ../standard/analyzers/portability-analyzer.md
+  - name: 执行模型
+    items:
+      - name: 公共语言运行时 (CLR)
+        href: ../standard/clr.md
+      - name: 托管执行过程
+        href: ../standard/managed-execution-process.md
+      - name: .NET 中的程序集
+        href: ../standard/assembly/
+      - name: 元数据和自描述组件
+        href: ../standard/metadata-and-self-describing-components.md
+      - name: 依赖项加载
+        items:
+          - name: 依赖项加载
+            href: ../core/dependency-loading/overview.md
+          - name: 了解 AssemblyLoadContext
+            href: ../core/dependency-loading/understanding-assemblyloadcontext.md
+          - name: 依赖项加载详细信息
+            items:
+              - name: 默认依赖项探测
+                href: ../core/dependency-loading/default-probing.md
+              - name: 加载托管程序集
+                href: ../core/dependency-loading/loading-managed.md
+              - name: 加载附属程序集
+                href: ../core/dependency-loading/loading-resources.md
+              - name: 加载非托管库
+                href: ../core/dependency-loading/loading-unmanaged.md
+          - name: 教程
+            items:
+              - name: 使用插件创建 .NET Core 应用程序
+                href: ../core/tutorials/creating-app-with-plugin-support.md
+              - name: 如何在 .NET Core 中使用和调试程序集可卸载性
+                href: ../core/../standard/assembly/unloadability.md
+      - name: 版本控制
+        items:
+          - name: 概述
+            href: ../core/versions/index.md
+          - name: .NET Core 版本选择
+            href: ../core/versions/selection.md
+      - name: 运行时配置
+        items:
+          - name: 设置
+            href: ../core/run-time-config/index.md
+          - name: 编译设置
+            href: ../core/run-time-config/compilation.md
+          - name: 调试和分析设置
+            href: ../core/run-time-config/debugging-profiling.md
+          - name: 垃圾回收器设置
+            href: ../core/run-time-config/garbage-collector.md
+          - name: 全球化设置
+            href: ../core/run-time-config/globalization.md
+          - name: 网络设置
+            href: ../core/run-time-config/networking.md
+          - name: 线程设置
+            href: ../core/run-time-config/threading.md
+  - name: 部署模型
+    items:
+      - name: 概述
+        href: ../core/deploying/index.md
+      - name: 使用 Visual Studio 部署应用
+        href: ../core/deploying/deploy-with-vs.md
+      - name: 使用 CLI 发布应用
+        href: ../core/deploying/deploy-with-cli.md
+      - name: 使用 CLI 创建 NuGet 包
+        href: ../core/deploying/creating-nuget-packages.md
+      - name: 自包含部署运行时前滚
+        href: ../core/deploying/runtime-patch-selection.md
+      - name: 单个文件部署和可执行文件
+        href: ../core/deploying/single-file.md
+      - name: 裁剪自包含部署和可执行文件
+        href: ../core/deploying/trim-self-contained.md
+      - name: 运行时包存储区
+        href: ../core/deploying/runtime-store.md
+      - name: 运行时标识符 (RID) 目录
+        href: ../core/rid-catalog.md
+      - name: 资源清单名称
+        href: ../core/resources/manifest-file-names.md
+      - name: Docker
+        items:
+          - name: .NET 和 Docker 简介
+            href: ../core/docker/introduction.md
+          - name: 使 .NET Core 应用程序容器化
+            href: ../core/docker/build-container.md
+          - name: Visual Studio 中的容器工具
+            href: /visualstudio/containers/overview
   - name: 基本编码组件
     items:
       - name: 基类型概述

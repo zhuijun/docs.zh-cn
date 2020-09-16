@@ -3,15 +3,15 @@ title: LINQ to SQL
 description: LINQ to SQL 是 .NET Framework 的一个组件，它提供用于将关系数据作为对象进行管理的运行时基础结构。
 ms.date: 03/30/2017
 ms.assetid: 73d13345-eece-471a-af40-4cc7a2f11655
-ms.openlocfilehash: 13502bfee3ee24764d190dace1512bc958343973
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: d6fadecf17cae21527cec2180b6d6c5b5e85d0cc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286309"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551309"
 ---
 # <a name="linq-to-sql"></a>LINQ to SQL
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]是 .NET Framework 版本3.5 的一个组件，它提供用于将关系数据作为对象管理的运行时基础结构。  
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 是 .NET Framework 版本3.5 的一个组件，它提供用于将关系数据作为对象管理的运行时基础结构。  
   
 > [!NOTE]
 > 关系数据显示为由二维表（关系** 或平面文件**）组成的集合，其中公共列将表互相关联起来。 若要有效地使用 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]，您必须略为熟悉关系数据库的基本原理。  
@@ -20,7 +20,7 @@ ms.locfileid: "84286309"
   
  使用 Visual Studio 的开发人员通常使用对象关系设计器，后者提供了一个用于实现的许多功能的用户界面 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 。  
   
- 此版本的 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 附带的文档介绍了生成 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 应用程序所需的基本构造块、流程和技术。 你还可以在 Microsoft Docs 中搜索特定问题，并且可以参与[LINQ 论坛](https://social.msdn.microsoft.com/forums/home?forum=linqtosql)，其中你可以与专家详细讨论更复杂的主题。 最后， [LINQ to SQL：用于关系数据的 .Net 语言集成查询](https://docs.microsoft.com/previous-versions/dotnet/articles/bb425822(v=msdn.10))白皮书详细信息 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 技术，已完成 Visual Basic 和 c # 代码示例。  
+ 此版本的 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 附带的文档介绍了生成 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 应用程序所需的基本构造块、流程和技术。 你还可以在 Microsoft Docs 中搜索特定问题，并且可以参与 [LINQ 论坛](https://social.msdn.microsoft.com/forums/home?forum=linqtosql)，其中你可以与专家详细讨论更复杂的主题。 最后， [LINQ to SQL：用于关系数据的 .Net 语言集成查询](/previous-versions/dotnet/articles/bb425822(v=msdn.10)) 白皮书详细信息 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 技术，已完成 Visual Basic 和 c # 代码示例。  
   
 ## <a name="in-this-section"></a>本节内容  
  [入门](getting-started.md)  
@@ -36,7 +36,7 @@ ms.locfileid: "84286309"
  提供指向 Visual Basic 和 c # 示例的链接。  
   
 ## <a name="related-sections"></a>相关章节  
- [语言集成查询（LINQ）-C#](../../../../../csharp/programming-guide/concepts/linq/index.md)\
+ [ (LINQ) 的语言集成查询#](../../../../../csharp/programming-guide/concepts/linq/index.md)\
  概述 c # 中的 LINQ 技术。
 
  [语言集成查询 (LINQ) - Visual Basic](../../../../../visual-basic/programming-guide/concepts/linq/index.md)  
@@ -48,11 +48,11 @@ ms.locfileid: "84286309"
  [LINQ 和 ADO.NET](../../linq-and-ado-net.md)  
  指向 ADO.NET 门户的链接。  
   
- [LINQ to SQL 演练](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2008/bb386295(v=vs.90))  
+ [LINQ to SQL 演练](/previous-versions/visualstudio/visual-studio-2008/bb386295(v=vs.90))  
  列出可用于 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 的演练。  
   
  [下载示例数据库](downloading-sample-databases.md)  
  介绍如何下载文档中使用的示例数据库。  
   
- [LinqDataSource Web 服务器控件概述](https://docs.microsoft.com/previous-versions/aspnet/bb547113(v=vs.100))  
- 描述控件如何 <xref:System.Web.UI.WebControls.LinqDataSource> 通过 ASP.NET 数据源控件体系结构将语言集成查询（LINQ）公开给 Web 开发人员。
+ [LinqDataSource Web 服务器控件概述](/previous-versions/aspnet/bb547113(v=vs.100))  
+ 描述控件如何 <xref:System.Web.UI.WebControls.LinqDataSource> 通过 ASP.NET 数据源控件体系结构，将 LINQ)  (LINQ 公开到 Web 开发人员。

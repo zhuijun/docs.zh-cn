@@ -2,12 +2,12 @@
 title: <httpDigest> 元素
 ms.date: 03/30/2017
 ms.assetid: 3da4f276-dfd9-4247-8c07-01d83618727c
-ms.openlocfilehash: 328411a429cd42927a190c6805a1f5e2b3555ea1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 0ffaba218d31a77407c598f8b7fa0260daa4e39c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "77448447"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556897"
 ---
 # <a name="httpdigest-element"></a>\<httpDigest> 元素
 指定一个在向服务证明客户端身份时使用的摘要类型凭据。  
@@ -40,16 +40,16 @@ ms.locfileid: "77448447"
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[\<clientCredentials>](clientcredentials.md)|指定用于向服务验证客户端身份的凭据。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
  摘要是使用算法和一组输入确定的哈希。 身份验证器和被验证方一致同意某种算法并交换用作输入的数据。 客户端可以计算哈希并将其发送给服务。 服务也可以计算哈希并比较值。 如果匹配，则客户端将通过验证。  
   
- 必须使用 Windows 上的 Active Directory 和 Internet 信息服务 (IIS) 启用此功能。 有关详细信息，请参阅[IIS 6.0 中的摘要式身份验证](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10))。  
+ 必须使用 Windows 上的 Active Directory 和 Internet 信息服务 (IIS) 启用此功能。 有关详细信息，请参阅 [IIS 6.0 中的摘要式身份验证](/previous-versions/windows/it-pro/windows-server-2003/cc782661(v=ws.10))。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement>
 - <xref:System.ServiceModel.Configuration.ClientCredentialsElement.HttpDigest%2A>

@@ -37,7 +37,7 @@ ms.locfileid: "90555882"
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|特性|说明|  
 |---------------|-----------------|  
 |type|派生自类的类型 <xref:System.IdentityModel.Tokens.SessionSecurityTokenCache> 。|  
   

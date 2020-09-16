@@ -2,15 +2,15 @@
 title: 安全性概念
 ms.date: 03/30/2017
 ms.assetid: 944fa5ca-2c34-4268-8897-e005a61b470d
-ms.openlocfilehash: 3818a1a1449a4a8b6df548541c1aebce968a0b78
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b39db755ad33405e5dfcb22297f311bd3f6dbaae
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84595162"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558259"
 ---
 # <a name="security-concepts"></a>安全性概念
-本部分简要介绍与 Windows Communication Foundation （WCF）安全相关的概念。  
+本部分简要说明与 Windows Communication Foundation (WCF) 安全性相关的概念。  
   
 ## <a name="in-this-section"></a>本节内容  
  [WCF 中使用的安全概念](security-concepts-used-in-wcf.md)  
@@ -36,8 +36,8 @@ ms.locfileid: "84595162"
 ## <a name="related-sections"></a>相关章节  
  [扩展安全性](../extending/extending-security.md)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全性](security.md)
 - [安全性概述](security-overview.md)
-- [Windows Server App Fabric 的安全模型](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Windows Server App Fabric 的安全模型](/previous-versions/appfabric/ee677202(v=azure.10))

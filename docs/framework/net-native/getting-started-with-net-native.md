@@ -2,12 +2,12 @@
 title: .NET Native 入门
 ms.date: 03/30/2017
 ms.assetid: fc9e04e8-2d05-4870-8cd6-5bd276814afc
-ms.openlocfilehash: 1c0c25ddf379c31a9c7b4437d36e7e0cbf1bb2f3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b6cd4acaa377de7fc172fb12c9fb9ff1b832f88a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73128398"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551205"
 ---
 # <a name="getting-started-with-net-native"></a>.NET Native 入门
 
@@ -22,7 +22,7 @@ ms.locfileid: "73128398"
 4. [手动解决丢失的元数据](#Step4)，并重复[步骤 3](#Step3)，直到所有问题都得到解决为止。
 
 > [!NOTE]
-> 如果要将现有的 Windows 应用商店应用迁移到 .NET Native，请务必查看将[windows 应用商店应用迁移到 .NET Native](migrating-your-windows-store-app-to-net-native.md)。
+> 如果要将现有的 Windows 应用商店应用迁移到 .NET Native，请务必查看将 [windows 应用商店应用迁移到 .NET Native](migrating-your-windows-store-app-to-net-native.md)。
 
 <a name="Step1"></a>
 
@@ -34,7 +34,7 @@ ms.locfileid: "73128398"
 
 2. 请注意，使用 .NET Native 工具链和不使用它来编译 UWP 应用项目之间存在一些已知的兼容性问题。 有关更多信息，请参阅 [迁移指南](migrating-your-windows-store-app-to-net-native.md) 。
 
-你现在可以针对在本地系统上运行的（或在模拟器中）运行的 .NET Native surface 区域编写 c # 或 Visual Basic 代码。
+你现在可以针对在本地系统 (或模拟器) 中运行的 .NET Native 外围应用程序，编写 c # 或 Visual Basic 代码。
 
 > [!IMPORTANT]
 > 开发你的应用时，在代码中用任何序列化或反射时都应提起注意。
@@ -58,7 +58,7 @@ ms.locfileid: "73128398"
 
 - 非基于反射的序列化程序。 在 .NET Framework 类库中找到的序列化程序，比如 <xref:System.Runtime.Serialization.DataContractSerializer>\ <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>和 <xref:System.Xml.Serialization.XmlSerializer> 类，不依赖反射。 然而，它们需要在基于对象的基础生成的代码得到序列化或反序列化。  有关更多信息，请参阅 [Serialization and Metadata](serialization-and-metadata.md)中的“Microsoft 序列化程序”部分。
 
-- 第三方序列化程序。 第三方序列化库（最常见的是 Newtonsoft.json JSON 序列化程序）通常是基于反射的，并要求在 node.js 文件中输入， \* 以支持对象序列化和反序列化。 有关更多信息，请参阅 [Serialization and Metadata](serialization-and-metadata.md)中的“第三方序列化程序”部分。
+- 第三方序列化程序。 第三方序列化库（最常见的是 Newtonsoft.json JSON 序列化程序）通常基于反射，并要求.rd.xml 文件中的条目 \* 支持对象序列化和反序列化。 有关更多信息，请参阅 [Serialization and Metadata](serialization-and-metadata.md)中的“第三方序列化程序”部分。
 
 **依赖反射的方法**
 
@@ -79,17 +79,17 @@ ms.locfileid: "73128398"
 
 ## <a name="step-3-deploy-and-test-the-release-builds-of-your-app"></a>步骤 3：部署和测试应用的发布版本
 
-在更新运行时指令文件之后，你可以重新生成和部署应用的发布版本。 .NET Native 二进制文件放在项目的 "**属性**" 对话框的 "**生成输出路径**" 文本框中指定的目录的 ILC 子目录中。不在此文件夹中的二进制文件尚未 **.NET Native 编译。** 彻底测试你的应用，并在其各个目标平台上测试所有方案（包括失败方案）。
+在更新运行时指令文件之后，你可以重新生成和部署应用的发布版本。 .NET Native 二进制文件放置在项目 "**属性**" 对话框的 "**生成输出路径**"**文本框中指定**目录的 ILC 子目录中。未在此文件夹中的二进制文件尚未用 .NET Native 编译。 彻底测试你的应用，并在其各个目标平台上测试所有方案（包括失败方案）。
 
 如果应用无法正常工作（尤其是在运行时引发 [MissingMetadataException](missingmetadataexception-class-net-native.md) 或 [MissingInteropDataException](missinginteropdataexception-class-net-native.md) 异常的情况下），请按照下一部分的指令进行操作，即[步骤 4：手动解决丢失的元数据](#Step4)。 启用最可能的异常可能会帮助发现这些 bug。
 
-如果已测试并调试了应用的调试版本，并且确信已消除[MissingMetadataException](missingmetadataexception-class-net-native.md)和[MissingInteropDataException](missinginteropdataexception-class-net-native.md)异常，则应将应用作为优化 .NET Native 应用进行测试。 为此，请将活动项目配置从“调试”改为“发布”********。
+如果已测试并调试了应用的调试版本，并且确信已消除 [MissingMetadataException](missingmetadataexception-class-net-native.md) 和 [MissingInteropDataException](missinginteropdataexception-class-net-native.md) 异常，则应将应用作为优化 .NET Native 应用进行测试。 为此，请将活动项目配置从“调试”改为“发布”********。
 
 <a name="Step4"></a>
 
 ## <a name="step-4-manually-resolve-missing-metadata"></a>步骤 4：手动解决丢失的元数据
 
-在桌面上不会遇到的 .NET Native 最常见的失败是运行时[MissingMetadataException](missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](missinginteropdataexception-class-net-native.md)或[MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md)异常。 在某些情况下，元数据的丢失在不可预测的行为中或甚至在应用失败的情况下可以自行显露。 此部分讨论了你该如何通过将指令添加到运行时指令文件来调试和解决这些异常。 有关运行时指令的格式信息，请参阅[运行时指令 (rd.xml) 配置文件参考](runtime-directives-rd-xml-configuration-file-reference.md)。 添加运行时指令后，你应该再次 [部署并检测你的应用](#Step3) 并解决任何新的 [丢失元数据异常](missingmetadataexception-class-net-native.md)、 [丢失互操作数据异常](missinginteropdataexception-class-net-native.md)和  [丢失运行时项目异常](missingruntimeartifactexception-class-net-native.md) 异常，直到你停止遇到任何异常。
+在桌面上不会遇到的 .NET Native 最常见的失败是运行时 [MissingMetadataException](missingmetadataexception-class-net-native.md)、 [MissingInteropDataException](missinginteropdataexception-class-net-native.md)或 [MissingRuntimeArtifactException](missingruntimeartifactexception-class-net-native.md) 异常。 在某些情况下，元数据的丢失在不可预测的行为中或甚至在应用失败的情况下可以自行显露。 此部分讨论了你该如何通过将指令添加到运行时指令文件来调试和解决这些异常。 有关运行时指令的格式信息，请参阅[运行时指令 (rd.xml) 配置文件参考](runtime-directives-rd-xml-configuration-file-reference.md)。 添加运行时指令后，你应该再次 [部署并检测你的应用](#Step3) 并解决任何新的 [丢失元数据异常](missingmetadataexception-class-net-native.md)、 [丢失互操作数据异常](missinginteropdataexception-class-net-native.md)和  [丢失运行时项目异常](missingruntimeartifactexception-class-net-native.md) 异常，直到你停止遇到任何异常。
 
 > [!TIP]
 > 在更高级别上指定你的运行时指令，使你的应用能够适应代码变化。  我们推荐在命名空间和类型级别而不在成员级别添加运行时指令。 注意，你可能需要在弹性和编译时间较长的较大二进制代码之间做一个权衡。
@@ -111,7 +111,7 @@ ms.locfileid: "73128398"
   - 当有更好的选择时，代码是否调用了一个依赖反射的方法？
 
 > [!NOTE]
-> 有关如何处理因反射中的差异以及桌面应用和 .NET Native 中的元数据的可用性而造成的问题的其他信息，请参阅[依赖于反射的 api](apis-that-rely-on-reflection.md)。
+> 有关如何处理因反射中的差异以及桌面应用和 .NET Native 中的元数据的可用性而造成的问题的其他信息，请参阅 [依赖于反射的 api](apis-that-rely-on-reflection.md)。
 
 要了解处理在检测应用的过程中发生的异常和其他问题的特定实例，请参阅：
 
@@ -121,10 +121,10 @@ ms.locfileid: "73128398"
 
 - [.NET 本机应用中的运行时异常](runtime-exceptions-in-net-native-apps.md)
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [运行时指令 (rd.xml) 配置文件引用](runtime-directives-rd-xml-configuration-file-reference.md)
-- [.NET Native 安装和配置](https://docs.microsoft.com/previous-versions/dn600164(v=vs.110))
+- [.NET Native 安装和配置](/previous-versions/dn600164(v=vs.110))
 - [.NET Native 和编译](net-native-and-compilation.md)
 - [反射和 .NET Native](reflection-and-net-native.md)
 - [利用反射的 API](apis-that-rely-on-reflection.md)

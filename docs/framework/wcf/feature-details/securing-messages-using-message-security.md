@@ -2,18 +2,18 @@
 title: 使用消息安全保护消息
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: 70c645101033c31da01d79f624ab03ce328dd3a6
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: b5f7679d5e5ec82e63b588cebd90ce873c055088
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84589976"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558298"
 ---
 # <a name="securing-messages-using-message-security"></a>使用消息安全保护消息
 本部分介绍了使用时的 WCF 消息安全性 <xref:System.ServiceModel.NetMsmqBinding> 。  
   
 > [!NOTE]
-> 在阅读本主题之前，建议你阅读[安全概念](security-concepts.md)。  
+> 在阅读本主题之前，建议你阅读 [安全概念](security-concepts.md)。  
   
  下图提供了使用 WCF 进行排队通信的概念模型。 此图及术语用于说明  
   
@@ -21,7 +21,7 @@ ms.locfileid: "84589976"
   
  ![排队应用程序关系图](media/distributed-queue-figure.jpg "分布式队列图")  
   
- 当使用 WCF 发送排队消息时，WCF 消息将附加为消息队列（MSMQ）消息的正文。 传输安全保护整个 MSMQ 消息，而消息（或 SOAP）安全仅保护 MSMQ 消息正文。  
+ 使用 WCF 发送排队消息时，WCF 消息作为消息队列正文附加 (MSMQ) 消息。 传输安全保护整个 MSMQ 消息，而消息（或 SOAP）安全仅保护 MSMQ 消息正文。  
   
  传输安全用于在客户端保护目标队列的消息，与此不同，消息安全的关键概念在于客户端保护接收应用程序（服务）的消息。 因此，在使用消息安全保护 WCF 消息时，MSMQ 不起作用。  
   
@@ -41,7 +41,7 @@ ms.locfileid: "84589976"
   
  鉴于队列有断开连接的特性，客户端和服务可能不会同时联机。 这样，客户端和服务必须在带外交换证书。 尤其是，由于客户端在其受信任存储区中存有服务的证书（可以将该证书链接到证书颁发机构），因此必须信任它将与正确的服务进行通信。 至于对客户端进行身份验证，服务使用附有消息的 X.509 证书将该客户端与其存储中的证书进行匹配来验证客户端的真实性。 该证书必须再次链接到证书颁发机构。  
   
- 在运行 Windows 的计算机上，证书存放在多类存储区中。 有关不同存储的详细信息，请参阅[证书存储](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10))。  
+ 在运行 Windows 的计算机上，证书存放在多类存储区中。 有关不同存储的详细信息，请参阅 [证书存储](/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10))。  
   
 ### <a name="windows"></a>Windows  
  Windows 消息凭据类型使用 Kerberos 协议。  
@@ -63,9 +63,9 @@ ms.locfileid: "84589976"
 ## <a name="using-transport-and-message-security"></a>使用传输安全和消息安全  
  在既使用传输安全又使用消息安全时，用于在传输级别和 SOAP 消息级别保护消息的证书必须相同。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [使用传输安全保护消息](securing-messages-using-transport-security.md)
 - [基于消息队列的消息安全性](../samples/message-security-over-message-queuing.md)
-- [安全性概念](security-concepts.md)
+- [安全概念](security-concepts.md)
 - [保护服务和客户端的安全](securing-services-and-clients.md)
