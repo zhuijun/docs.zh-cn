@@ -6,23 +6,23 @@ helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: 0a21548386639a9f6a8c8572e5d7928ffdb270d6
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 0907f7f8a3767db9d83e5deaae1d86141fbee7b0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85247034"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557406"
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>如何：创建开发期间使用的临时证书
 
-使用 Windows Communication Foundation （WCF）开发安全服务或客户端时，通常需要提供要用作凭据的 x.509 证书。 该证书通常是证书链的一部分，在计算机的受信任的根证书颁发机构存储区中可找到根证书颁发机构。 拥有一个证书链，使您可以限定一组证书，其中根证书颁发机构通常来自于您的组织或业务单元。 若要在开发时模拟此情况，请创建两个证书以满足安全要求。 第一个证书是自签名证书，放置在受信任的根证书颁发机构存储区中；第二个证书是从第一个证书创建的，放置在本地计算机位置的个人存储区中或当前用户位置的个人存储区中。 本主题将指导完成使用 Powershell [new-selfsignedcertificate](/powershell/module/pkiclient/new-selfsignedcertificate) cmdlet 创建这两个证书的步骤。
+使用 Windows Communication Foundation (WCF) 开发安全服务或客户端时，通常需要提供要用作凭据的 x.509 证书。 该证书通常是证书链的一部分，在计算机的受信任的根证书颁发机构存储区中可找到根证书颁发机构。 拥有一个证书链，使您可以限定一组证书，其中根证书颁发机构通常来自于您的组织或业务单元。 若要在开发时模拟此情况，请创建两个证书以满足安全要求。 第一个证书是自签名证书，放置在受信任的根证书颁发机构存储区中；第二个证书是从第一个证书创建的，放置在本地计算机位置的个人存储区中或当前用户位置的个人存储区中。 本主题将指导完成使用 Powershell [new-selfsignedcertificate) ](/powershell/module/pkiclient/new-selfsignedcertificate) cmdlet 创建这两个证书的步骤。
 
 > [!IMPORTANT]
 > 新的 New-selfsignedcertificate cmdlet 生成的证书仅供测试之用。 部署服务或客户程序时，请确保使用证书颁发机构提供的适当证书。 这可能是来自组织或第三方的 Windows Server 证书服务器。
 >
 > 默认情况下， [new-selfsignedcertificate](/powershell/module/pkiclient/new-selfsignedcertificate) cmdlet 创建自签名证书，这些证书是不安全的。 将自签名证书放置在 "受信任的根证书颁发机构" 存储中使您能够创建更密切地模拟您的部署环境的开发环境。
 
- 有关创建和使用证书的详细信息，请参阅使用[证书](working-with-certificates.md)。 有关使用证书作为凭据的详细信息，请参阅[保护服务和客户端](securing-services-and-clients.md)。 有关使用 Microsoft Authenticode 技术的教程，请参阅 [Authenticode Overviews and Tutorials](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537360(v=vs.85))（Authenticode 概述和教程）。
+ 有关创建和使用证书的详细信息，请参阅使用 [证书](working-with-certificates.md)。 有关使用证书作为凭据的详细信息，请参阅 [保护服务和客户端](securing-services-and-clients.md)。 有关使用 Microsoft Authenticode 技术的教程，请参阅 [Authenticode Overviews and Tutorials](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537360(v=vs.85))（Authenticode 概述和教程）。
 
 ## <a name="to-create-a-self-signed-root-authority-certificate-and-export-the-private-key"></a>创建一个自签名根证书颁发机构证书并导出私钥
 
@@ -32,7 +32,7 @@ ms.locfileid: "85247034"
 $rootcert = New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -DnsName "RootCA" -TextExtension @("2.5.29.19={text}CA=true") -KeyUsage CertSign,CrlSign,DigitalSignature
 ```
 
-我们需要将该证书导出到 PFX 文件中，以便可以将其导入到后面的步骤中所需的位置。 导出带私钥的证书时，需要使用密码来保护密码。 我们将密码保存在中 `SecureString` ，并使用[get-pfxcertificate](/powershell/module/pkiclient/export-pfxcertificate) cmdlet 将具有关联私钥的证书导出到 PFX 文件。 我们还使用[导出证书](/powershell/module/pkiclient/export-certificate)cmdlet 将公共证书仅保存到 CRT 文件中。
+我们需要将该证书导出到 PFX 文件中，以便可以将其导入到后面的步骤中所需的位置。 导出带私钥的证书时，需要使用密码来保护密码。 我们将密码保存在中 `SecureString` ，并使用 [get-pfxcertificate](/powershell/module/pkiclient/export-pfxcertificate) cmdlet 将具有关联私钥的证书导出到 PFX 文件。 我们还使用 [导出证书](/powershell/module/pkiclient/export-certificate) cmdlet 将公共证书仅保存到 CRT 文件中。
 
 ```powershell
 [System.Security.SecureString]$rootcertPassword = ConvertTo-SecureString -String "password" -Force -AsPlainText

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - examples [Visual Basic], coding conventions
 - Visual Basic code, conventions
 ms.assetid: c1df130b-fec6-49a5-becf-0a7e494a1d0f
-ms.openlocfilehash: 36cd3a927d2fdf197e6b496d9308fc43a555d59b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b71c1eeaa136d01c701191f1bb145674efccbc56
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346156"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551036"
 ---
 # <a name="visual-basic-coding-conventions"></a>Visual Basic 编码约定
 Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相同的编码约定，可能会获得以下好处：  
@@ -26,9 +26,9 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
   
 ## <a name="naming-conventions"></a>命名约定  
   
-- 有关命名准则的信息，请参阅[命名准则](../../../standard/design-guidelines/naming-guidelines.md)主题。  
+- 有关命名准则的信息，请参阅 [命名准则](../../../standard/design-guidelines/naming-guidelines.md) 主题。  
   
-- 不要使用 "我的" 或 "我的" 作为变量名称的一部分。 这种做法与 `My` 对象混淆。  
+- 不要使用 "我的" 或 "我的" 作为变量名称的一部分。 这种做法会与 `My` 对象混淆。  
   
 - 不需要在自动生成的代码中更改对象的名称，使其符合指导原则。  
   
@@ -36,15 +36,15 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
   
 - 将制表符插入为空格，并使用具有四个空格缩进的智能缩进。  
   
-- 使用**非常列表（重新格式化）代码**在代码编辑器中重新设置代码的格式。 有关详细信息，请参阅[选项，文本编辑器，基本（Visual Basic）](/visualstudio/ide/reference/options-text-editor-basic-visual-basic)。  
+- 使用 **整齐的列表 (** 重新设置代码) 格式，以在代码编辑器中重新设置代码的格式。 有关详细信息，请参阅 [选项、文本编辑器、基本 (Visual Basic) ](/visualstudio/ide/reference/options-text-editor-basic-visual-basic)。  
   
-- 每行仅使用一条语句。 不要使用 Visual Basic 行分隔符（:)。  
+- 每行仅使用一条语句。 不要使用 Visual Basic 行分隔符 (： ) 。  
   
 - 在语言允许的任何位置，避免使用显式行继续符 "_" 来取代隐式行继续符。  
   
 - 每行仅使用一个声明。  
   
-- 如果在很多**情况下（重新格式化）代码**不会自动设置延续行的格式，则手动将连续行缩进一个制表位。 但是，始终左对齐列表中的项。  
+- 如果在很多情况下 ** (重新格式化) 的代码** 不会自动设置延续行的格式，则手动将连续行缩进一个制表位。 但是，始终左对齐列表中的项。  
   
     ```vb  
     a As Integer,  
@@ -59,7 +59,7 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
   
 - 以大写字母开始注释文本，并以句点结束注释文本。  
   
-- 在注释分隔符（'）与注释文本之间插入一个空格。  
+- 在注释分隔符 ( ") 与注释文本之间插入一个空格。  
   
      [!code-vb[VbVbalrGuidelines#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#2)]  
   
@@ -67,7 +67,7 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
   
 ## <a name="program-structure"></a>程序结构  
   
-- 使用 `Main` 方法时，为新的控制台应用程序使用默认构造，并将 `My` 用于命令行参数。  
+- 使用 `Main` 方法时，请为新的控制台应用程序使用默认构造，并使用 `My` 作为命令行参数。  
   
      [!code-vb[VbVbalrGuidelines#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#3)]  
   
@@ -75,7 +75,7 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
   
 ### <a name="string-data-type"></a>String 数据类型  
   
-- 使用[字符串内插](https://docs.microsoft.com/dotnet/visual-basic/programming-guide/language-features/strings/interpolated-strings)来连接短字符串，如下面的代码所示。
+- 使用[字符串内插](../language-features/strings/interpolated-strings.md)来连接短字符串，如下面的代码所示。
   
      ```vb
      MsgBox($"hello{vbCrLf}goodbye")
@@ -86,15 +86,15 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
      [!code-vb[VbVbalrGuidelines#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#5)]  
   
 ### <a name="relaxed-delegates-in-event-handlers"></a>事件处理程序中的宽松委托  
- 不要将参数（对象和 EventArgs）显式限定到事件处理程序。 如果未使用传递给事件的事件参数（例如，作为对象的发送方、e 作为 EventArgs），请使用宽松委托，并在代码中留下事件参数：  
+ 不要向事件处理程序 (对象和 EventArgs) 显式限定参数。 如果未使用传递给事件的事件参数 (例如，发送方为 Object，e 作为 EventArgs) ，请使用宽松委托，并在代码中留下事件参数：  
   
  [!code-vb[VbVbalrGuidelines#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#7)]  
   
 ### <a name="unsigned-data-type"></a>无符号数据类型  
   
-- 除非有必要，否则请使用 `Integer` 而不是无符号类型。  
+- 使用 `Integer` 而不是无符号类型，但它们是必需的。  
   
-### <a name="arrays"></a>阵列  
+### <a name="arrays"></a>数组  
   
 - 在声明行上初始化数组时，请使用短语法。 例如，使用以下语法。  
   
@@ -125,11 +125,11 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
   
  [!code-vb[VbVbalrGuidelines#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#15)]  
   
-### <a name="use-the-trycatch-and-using-statements-when-you-use-exception-handling"></a>使用 Try... 使用异常处理时捕获和使用语句  
+### <a name="use-the-trycatch-and-using-statements-when-you-use-exception-handling"></a>使用 Try .。。使用异常处理时捕获和使用语句  
  请勿使用 `On Error Goto`。  
   
 ### <a name="use-the-isnot-keyword"></a>使用 IsNot 关键字  
- 使用 `IsNot` 关键字而不是 `Not...Is Nothing`。  
+ 使用 `IsNot` 关键字而不是 `Not...Is Nothing` 。  
   
 ### <a name="new-keyword"></a>New 关键字  
   
@@ -147,11 +147,11 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
   
 ### <a name="event-handling"></a>事件处理  
   
-- 使用 `Handles` 而不是 `AddHandler`：  
+- 使用 `Handles` 而不是 `AddHandler` ：  
   
      [!code-vb[VbVbalrGuidelines#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#24)]  
   
-- 使用 `AddressOf`，而不显式实例化委托：  
+- 使用 `AddressOf` ，并且不显式实例化委托：  
   
      [!code-vb[VbVbalrGuidelines#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#25)]  
   
@@ -159,13 +159,13 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
   
      [!code-vb[VbVbalrGuidelines#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#26)]  
   
-- 在调用 `RaiseEvent` 方法之前，不要验证事件是否 `Nothing` （null）。 `RaiseEvent` 在引发事件之前检查 `Nothing`。  
+- 在调用方法之前，不要验证事件是否为 `Nothing` null)  (`RaiseEvent` 。 `RaiseEvent``Nothing`在引发事件之前进行检查。  
   
 ### <a name="using-shared-members"></a>使用共享成员  
- 使用类名称（而不是从实例变量）调用 `Shared` 成员。  
+ `Shared`使用类名称（而不是从实例变量）调用成员。  
   
 ### <a name="use-xml-literals"></a>使用 XML 文本  
- XML 文本简化了使用 XML 时所遇到的最常见任务（例如，加载、查询和转换）。 当你用 XML 开发时，请遵循以下准则：  
+ XML 文本简化了在处理 XML (时遇到的最常见任务，例如，加载、查询和转换) 。 当你用 XML 开发时，请遵循以下准则：  
   
 - 使用 XML 文本来创建 XML 文档和片段，而不是直接调用 XML Api。  
   
@@ -187,7 +187,7 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
   
      [!code-vb[VbVbalrGuidelines#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#29)]  
   
-- 如果结果中的属性名称模棱两可，请对属性重命名。 例如，如果你的查询返回客户名称和订单 ID，请将其重命名，而不是将其保留为 `Name` 并在结果中 `ID`：  
+- 如果结果中的属性名称模棱两可，请对属性重命名。 例如，如果你的查询返回客户名称和订单 ID，请将它们重命名，而不是 `Name` `ID` 在结果中保留它们：  
   
      [!code-vb[VbVbalrGuidelines#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#30)]  
   
@@ -195,11 +195,11 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
   
      [!code-vb[VbVbalrGuidelines#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#31)]  
   
-- 对齐 `From` 语句下的查询子句：  
+- 对齐语句下的查询子句 `From` ：  
   
      [!code-vb[VbVbalrGuidelines#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#32)]  
   
-- 在其他查询子句之前使用 `Where` 子句，以便后面的查询子句对筛选的数据集执行操作：  
+- 在 `Where` 其他查询子句之前使用子句，以便后面的查询子句对筛选的数据集执行操作：  
   
      [!code-vb[VbVbalrGuidelines#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#33)]  
   
@@ -207,6 +207,6 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
   
      [!code-vb[VbVbalrGuidelines#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#34)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [安全编码准则](../../../standard/security/secure-coding-guidelines.md)

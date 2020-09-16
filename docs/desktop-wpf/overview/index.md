@@ -3,12 +3,12 @@ title: Windows Presentation Foundation 简介
 description: 本文概述了与 .NET Core 相关的 Windows Presentation Foundation (WPF) 是什么以及它提供了哪些功能。
 ms.date: 07/18/2019
 ms.topic: overview
-ms.openlocfilehash: 63b2e431b5ab5fd3875887b8b574a77aa12018a6
-ms.sourcegitcommit: 961ec21c22d2f1d55c9cc8a7edf2ade1d1fd92e3
+ms.openlocfilehash: 37443b692ba840da847b2a21c3220f2c36025c12
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/02/2020
-ms.locfileid: "85840264"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551862"
 ---
 # <a name="what-is-windows-presentation-foundation"></a>Windows Presentation Foundation 简介
 
@@ -22,7 +22,7 @@ WPF 有两种实现：
 
 01. 受 Visual Studio 2019 和 Visual Studio 2017 支持的 .NET Framework 实现。
 
-本桌面指南适用于 .NET Core 3.0 和 WPF。 如需详细了解使用 .NET Framework 的 WPF 的现有文档，请参阅 [Framework Windows Presentation Foundation](../../framework/wpf/index.md)。
+本桌面指南适用于 .NET Core 3.0 和 WPF。 如需详细了解使用 .NET Framework 的 WPF 的现有文档，请参阅 [Framework Windows Presentation Foundation](/dotnet/desktop/wpf/)。
 
 ## <a name="xaml"></a>XAML
 
@@ -52,7 +52,7 @@ XAML 为标记扩展提供了语法。 标记扩展可用于以特性形式、�
 
 WPF 为 XAML 提供了不同的标记扩展，例如用于数据绑定的 `{Binding}`。
 
-有关详细信息，请参阅[标记扩展和 WPF XAML](../../framework/wpf/advanced/markup-extensions-and-wpf-xaml.md)。
+有关详细信息，请参阅[标记扩展和 WPF XAML](/dotnet/desktop/wpf/advanced/markup-extensions-and-wpf-xaml)。
 
 ## <a name="property-system"></a>属性系统
 
@@ -144,6 +144,6 @@ WPF 资源是可以在应用程序中的不同位置重复使用的对象。 资
 
 ## <a name="next-steps"></a>后续步骤
 
-- [创建 WPF 应用程序](https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json)。
+- [创建 WPF 应用程序](/visualstudio/get-started/csharp/tutorial-wpf?bc=%252fdotnet%252fbreadcrumb%252ftoc.json&toc=%252fdotnet%252fdesktop-wpf%252ftoc.json)。
 - [探索与 .NET Framework 的差异](../migration/differences-from-net-framework.md)。
 - [了解 XAML](../fundamentals/xaml.md)。

@@ -3,12 +3,12 @@ title: 数据集和 DataTable 安全指南
 ms.date: 07/14/2020
 dev_langs:
 - csharp
-ms.openlocfilehash: 34fb95e35e169ca0b72735a16539ecfdec037f87
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e9973df02ff478eedc932099fb8be0526a97b899
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554536"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679450"
 ---
 # <a name="dataset-and-datatable-security-guidance"></a>数据集和 DataTable 安全指南
 
@@ -457,11 +457,11 @@ using System.Data;
 using Newtonsoft.Json;
 
 public DataSet PerformDeserialization1(string json) {
-    return JsonConvert.DeserializeObect<DataSet>(data);
+    return JsonConvert.DeserializeObject<DataSet>(data);
 }
 
 public MyClass PerformDeserialization2(string json) {
-    return JsonConvert.DeserializeObect<MyClass>(data);
+    return JsonConvert.DeserializeObject<MyClass>(data);
 }
 
 public class MyClass

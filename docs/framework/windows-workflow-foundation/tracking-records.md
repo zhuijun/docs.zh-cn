@@ -2,12 +2,12 @@
 title: 跟踪记录
 ms.date: 03/30/2017
 ms.assetid: 51adbda3-bd8b-4892-a8ea-d343186472d2
-ms.openlocfilehash: d59db7e4c90b3cffe523c89de093f58f3e520bde
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 498d62fb1d3cc1386ea3bf57de431c57b18b7dda
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837605"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551296"
 ---
 # <a name="tracking-records"></a>跟踪记录
 检测工作流运行时的目的是为了发出跟踪记录，以便跟踪工作流实例的执行。  
@@ -15,7 +15,7 @@ ms.locfileid: "74837605"
 ## <a name="tracking-records"></a>跟踪记录  
  下表详细介绍工作流运行时发出的跟踪记录。  
   
-|跟踪记录|描述|  
+|跟踪记录|说明|  
 |---------------------|-----------------|  
 |工作流生命周期记录|在工作流实例生命周期的各个阶段中发出。 例如，当工作流启动或完成时发出一个记录。|  
 |活动生命周期记录|详细说明活动执行情况。 这些记录指示工作流活动的状态，例如，当安排活动时、活动完成时，或者发生错误时。|  
@@ -28,25 +28,25 @@ ms.locfileid: "74837605"
   
 - **WorkflowInstanceRecord** -此 <xref:System.Activities.Tracking.TrackingRecord> 描述工作流实例的生命周期。 例如，当工作流启动或完成时发出一个记录，该记录包含工作流实例的状态。 该记录的详细信息可以在 <xref:System.Activities.Tracking.WorkflowInstanceRecord> 中找到。  
   
-- **WorkflowInstanceAbortedRecord** -当工作流实例中止时，将发出此 <xref:System.Activities.Tracking.TrackingRecord>。 该记录包含中止工作流实例的原因。 该记录的详细信息可以在 <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord> 中找到。  
+- **WorkflowInstanceAbortedRecord** - <xref:System.Activities.Tracking.TrackingRecord> 在工作流实例中止时发出。 该记录包含中止工作流实例的原因。 该记录的详细信息可以在 <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord> 中找到。  
   
-- **WorkflowInstanceUnhandledExceptionRecord** -如果工作流实例中发生了异常，并且它未由任何活动处理，则会发出此 <xref:System.Activities.Tracking.TrackingRecord>。 该记录包含异常详细信息。 该记录的详细信息可以在 <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord> 中找到。  
+- **WorkflowInstanceUnhandledExceptionRecord** - <xref:System.Activities.Tracking.TrackingRecord> 如果工作流实例中发生异常，则会发出此操作，并且不会由任何活动处理。 该记录包含异常详细信息。 该记录的详细信息可以在 <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord> 中找到。  
   
-- **WorkflowInstanceSuspendedRecord** -每当挂起工作流实例时，都会发出此 <xref:System.Activities.Tracking.TrackingRecord>。 该记录包含挂起工作流实例的原因。 该记录的详细信息可以在 <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord> 中找到。  
+- **WorkflowInstanceSuspendedRecord** - <xref:System.Activities.Tracking.TrackingRecord> 每当挂起工作流实例时，都会发出此项。 该记录包含挂起工作流实例的原因。 该记录的详细信息可以在 <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord> 中找到。  
   
-- **WorkflowInstanceTerminatedRecord** -每当终止工作流实例时，都会发出此 <xref:System.Activities.Tracking.TrackingRecord>。 该记录包含终止工作流实例的原因。 该记录的详细信息可以在 <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord> 中找到。  
+- **WorkflowInstanceTerminatedRecord** - <xref:System.Activities.Tracking.TrackingRecord> 每当终止工作流实例时，都会发出此项。 该记录包含终止工作流实例的原因。 该记录的详细信息可以在 <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord> 中找到。  
   
-- **ActivityStateRecord** -当执行工作流中的活动时，将发出此 <xref:System.Activities.Tracking.TrackingRecord>。 这些记录指示工作流实例中的活动的状态。 该记录的详细信息可以在 <xref:System.Activities.Tracking.ActivityStateRecord> 中找到。  
+- **ActivityStateRecord** - <xref:System.Activities.Tracking.TrackingRecord> 当执行工作流中的活动时，将发出此事件。 这些记录指示工作流实例中的活动的状态。 该记录的详细信息可以在 <xref:System.Activities.Tracking.ActivityStateRecord> 中找到。  
   
-- **ActivityScheduledRecord** -当活动计划子活动时，将发出此 <xref:System.Activities.Tracking.TrackingRecord>。 该记录包含父活动（安排活动）和安排执行的子活动的详细信息。 该记录的详细信息可以在 <xref:System.Activities.Tracking.ActivityScheduledRecord> 中找到。  
+- **ActivityScheduledRecord** - <xref:System.Activities.Tracking.TrackingRecord> 当活动计划子活动时，将发出此事件。 该记录包含父活动（安排活动）和安排执行的子活动的详细信息。 该记录的详细信息可以在 <xref:System.Activities.Tracking.ActivityScheduledRecord> 中找到。  
   
-- **FaultPropagationRecord** -在处理记录之前，会为每个处理程序发出此 <xref:System.Activities.Tracking.TrackingRecord>。 它用于表示错误在工作流实例中的发生路径。 该记录的详细信息可以在 <xref:System.Activities.Tracking.FaultPropagationRecord> 中找到。  
+- **FaultPropagationRecord** -在 <xref:System.Activities.Tracking.TrackingRecord> 处理记录之前，会为每个处理程序发出此项。 它用于表示错误在工作流实例中的发生路径。 该记录的详细信息可以在 <xref:System.Activities.Tracking.FaultPropagationRecord> 中找到。  
   
-- **CancelRequestedRecord** -每当活动尝试取消子活动时，都会发出此 <xref:System.Activities.Tracking.TrackingRecord>。 该记录包含父活动和取消的子活动的详细信息。 该记录的详细信息可以在 <xref:System.Activities.Tracking.CancelRequestedRecord> 中找到。  
+- **CancelRequestedRecord** - <xref:System.Activities.Tracking.TrackingRecord> 每当活动尝试取消子活动时，都会发出此事件。 该记录包含父活动和取消的子活动的详细信息。 该记录的详细信息可以在 <xref:System.Activities.Tracking.CancelRequestedRecord> 中找到。  
   
-- **BookmarkResumptionRecord** -此 <xref:System.Activities.Tracking.TrackingRecord> 跟踪已成功恢复的任何书签。 该记录的详细信息可以在 <xref:System.Activities.Tracking.BookmarkResumptionRecord> 中找到。  
+- **BookmarkResumptionRecord** -此项 <xref:System.Activities.Tracking.TrackingRecord> 跟踪已成功恢复的任何书签。 该记录的详细信息可以在 <xref:System.Activities.Tracking.BookmarkResumptionRecord> 中找到。  
   
-- **CustomTrackingRecord** -此 <xref:System.Activities.Tracking.TrackingRecord> 由工作流作者在自定义工作流活动中创建和发出。 自定义跟踪记录可以用数据填充，这些数据将随记录一起发出。 该记录的详细信息可以在 <xref:System.Activities.Tracking.CustomTrackingRecord> 中找到。  
+- **CustomTrackingRecord** - <xref:System.Activities.Tracking.TrackingRecord> 由工作流作者在自定义工作流活动中创建和发出。 自定义跟踪记录可以用数据填充，这些数据将随记录一起发出。 该记录的详细信息可以在 <xref:System.Activities.Tracking.CustomTrackingRecord> 中找到。  
   
  例如，可能存在一个简单的 <xref:System.Activities.Statements.Sequence> 活动，该活动包含 <xref:System.Activities.Statements.WriteLine> 操作且按以下顺序发出跟踪记录：  
   
@@ -60,7 +60,7 @@ ms.locfileid: "74837605"
   
 5. <xref:System.Activities.Tracking.WorkflowInstanceRecord> 指示正在完成工作流。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [Windows Server App Fabric 监视](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
-- [用 App Fabric 监视应用程序](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))
+- [Windows Server App Fabric 监视](/previous-versions/appfabric/ee677251(v=azure.10))
+- [用 App Fabric 监视应用程序](/previous-versions/appfabric/ee677276(v=azure.10))

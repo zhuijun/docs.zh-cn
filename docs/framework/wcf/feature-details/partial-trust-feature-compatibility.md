@@ -2,15 +2,15 @@
 title: 部分信任功能兼容性
 ms.date: 03/30/2017
 ms.assetid: a36a540b-1606-4e63-88e0-b7c59e0e6ab7
-ms.openlocfilehash: 85e34e365d125fe4f00756549ba5bda4311b78f8
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 6d009482037efac8e0f90d255e198f10a1234187
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84579158"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551967"
 ---
 # <a name="partial-trust-feature-compatibility"></a>部分信任功能兼容性
-在部分受信任的环境中运行时，Windows Communication Foundation （WCF）支持有限的功能子集。 部分信任中支持的功能围绕 [Supported Deployment Scenarios](supported-deployment-scenarios.md) 主题中所述的一组特定的方案而设计。  
+在部分受信任的环境中运行时，Windows Communication Foundation (WCF) 支持有限的功能子集。 部分信任中支持的功能围绕 [Supported Deployment Scenarios](supported-deployment-scenarios.md) 主题中所述的一组特定的方案而设计。  
   
 ## <a name="minimum-permission-requirements"></a>最低权限要求  
  WCF 支持在以下任一标准命名权限集下运行的应用程序中的功能子集：  
@@ -63,7 +63,7 @@ ms.locfileid: "84579158"
   
 - 所有可序列化的 `[DataContract]` 类型必须为 `public`。  
   
-- `[DataMember]` 类型中的所有可序列化的 `[DataContract]` 字段或属性必须是公共字段或属性并且可以读取/写入。 在部分受信任的应用程序中运行 WCF 时，不支持[只读](https://go.microsoft.com/fwlink/?LinkID=98854)字段的序列化和反序列化。  
+- `[DataMember]` 类型中的所有可序列化的 `[DataContract]` 字段或属性必须是公共字段或属性并且可以读取/写入。 在部分受信任的应用程序中运行 WCF 时，不支持 [只读](https://go.microsoft.com/fwlink/?LinkID=98854) 字段的序列化和反序列化。  
   
 - 在部分信任环境中， `[Serializable]`/ISerializable 编程模型不受支持。  
   
@@ -86,16 +86,16 @@ ms.locfileid: "84579158"
  在部分信任环境中运行时，无法将代理项用于 <xref:System.Runtime.Serialization.NetDataContractSerializer> （使用 <xref:System.Runtime.Serialization.SurrogateSelector> 机制）。 请注意，此限制适用于使用代理项，而不适用于序列化代理项。  
   
 ## <a name="enabling-common-behaviors-to-run"></a>使常见行为能够运行  
- <xref:System.Security.AllowPartiallyTrustedCallersAttribute>当应用程序在部分信任环境中运行时，未用添加到配置文件的部分中的属性（APTCA）标记的服务或终结点行为 [\<commonBehaviors>](../../configure-apps/file-schema/wcf/commonbehaviors.md) 将不会运行，并且在发生这种情况时不会引发异常。 若要强制运行常见行为，必须执行下列选项之一：  
+ <xref:System.Security.AllowPartiallyTrustedCallersAttribute> [\<commonBehaviors>](../../configure-apps/file-schema/wcf/commonbehaviors.md) 当应用程序在部分信任环境中运行时，未使用特性标记的服务或终结点行为将不会运行，如果应用程序在部分信任环境中运行，则不会运行添加到配置文件的部分中的)  (属性，并且在发生这种情况时 若要强制运行常见行为，必须执行下列选项之一：  
   
 - 使用 <xref:System.Security.AllowPartiallyTrustedCallersAttribute> 属性标记常见行为，以使其在部署为部分信任应用程序时能够运行。 请注意，可以在计算机上设置注册表项，以防运行标有 APTCA 的程序集。 .  
   
-- 确保在将应用程序作为完全受信任的应用程序部署时，用户不能修改代码访问安全设置，从而无法在部分信任环境中运行该应用程序。 如果用户可以这样做，则不会运行该行为，且不引发任何异常。 若要确保这一点，请参阅使用 Caspol.exe 的**levelfinal**选项[（代码访问安全策略工具）](../../tools/caspol-exe-code-access-security-policy-tool.md)。  
+- 确保在将应用程序作为完全受信任的应用程序部署时，用户不能修改代码访问安全设置，从而无法在部分信任环境中运行该应用程序。 如果用户可以这样做，则不会运行该行为，且不引发任何异常。 若要确保这一点，请参阅使用[Caspol.exe (代码访问安全策略工具) ](../../tools/caspol-exe-code-access-security-policy-tool.md)中的**levelfinal**选项。  
   
- 有关常见行为的示例，请参阅[如何：锁定企业中的终结点](../extending/how-to-lock-down-endpoints-in-the-enterprise.md)。  
+ 有关常见行为的示例，请参阅 [如何：锁定企业中的终结点](../extending/how-to-lock-down-endpoints-in-the-enterprise.md)。  
   
 ## <a name="configuration"></a>Configuration  
- 有一个例外，部分受信任的代码只能加载本地文件中的 WCF 配置节 `app.config` 。 若要加载引用 machine.config 或根 web.config 文件中的 WCF 部分的 WCF 配置节，需要 ConfigurationPermission （无限制）。 如果没有此权限，则对本地配置文件之外的 WCF 配置节（行为、绑定）的引用会导致在加载配置时出现异常。  
+ 有一个例外，部分受信任的代码只能加载本地文件中的 WCF 配置节 `app.config` 。 若要加载引用 machine.config 或根 web.config 文件中的 WCF 部分的 WCF 配置节，需要 ConfigurationPermission (无限制的) 。 如果没有此权限，则在加载配置时，对 WCF 配置节 (行为、绑定) 在本地配置文件之外的绑定将导致异常。  
   
  一个例外情况是序列化的已知类型配置，如本主题中的“序列化”一节所述。  
   
@@ -119,7 +119,7 @@ ms.locfileid: "84579158"
   
 - <xref:System.Runtime.Serialization>  
   
-- <xref:System.IdentityModel.Claims>、 <xref:System.IdentityModel.Policy>、 <xref:System.IdentityModel.Selectors>和 <xref:System.IdentityModel.Tokens>。  
+- <xref:System.IdentityModel.Claims>、<xref:System.IdentityModel.Policy>、<xref:System.IdentityModel.Selectors> 和 <xref:System.IdentityModel.Tokens>。  
   
  不支持下面的跟踪源：  
   
@@ -127,7 +127,7 @@ ms.locfileid: "84579158"
   
 - <xref:System.IO.Log>  
 
-- [System.servicemodel. TransactionBridge](https://docs.microsoft.com/previous-versions/aa346556(v=vs.110))]
+- [System.servicemodel. TransactionBridge](/previous-versions/aa346556(v=vs.110))]
   
  不应指定下面的 <xref:System.Diagnostics.TraceOptions> 枚举成员：  
   
@@ -145,7 +145,7 @@ ms.locfileid: "84579158"
   
 ## <a name="other-limitations"></a>其他限制  
 
-  WCF 通常仅限于由宿主应用程序施加的安全注意事项。 例如，如果 WCF 承载于 XAML 浏览器应用程序（XBAP）中，则会受到 XBAP 限制，如[Windows Presentation Foundation 部分信任安全性](../../wpf/wpf-partial-trust-security.md)中所述。  
+  WCF 通常仅限于由宿主应用程序施加的安全注意事项。 例如，如果 WCF 承载于 XAML 浏览器应用程序 (XBAP) ，则会受到 XBAP 限制，如 [Windows Presentation Foundation 部分信任安全性](/dotnet/desktop/wpf/wpf-partial-trust-security)中所述。  
   
  在部分信任环境中运行 indigo2 时，不启用以下的其他功能：  
   
@@ -160,7 +160,7 @@ ms.locfileid: "84579158"
 ## <a name="unlisted-features"></a>未列出的功能  
  若要在部分信任环境中运行时发现不可用的信息或操作，最好的方法是尝试在 `try` 块的内部访问资源或执行操作，然后 `catch` 失败。 若要避免在出现重复错误时扩散跟踪文件，WCF 在第一次安全失败之后禁用资源或操作跟踪。 对于在第一次尝试访问资源或执行操作时出现的每个失败的资源访问，将会有一个异常跟踪。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Channels.HttpTransportBindingElement>
 - <xref:System.ServiceModel.Channels.HttpsTransportBindingElement>

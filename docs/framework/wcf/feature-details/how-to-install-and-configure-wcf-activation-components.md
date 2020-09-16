@@ -1,26 +1,26 @@
 ---
 title: 如何：安装和配置 WCF 激活组件
-description: 了解如何在 Windows Vista 上设置 Windows 进程激活服务（WAS），以托管无法通过 HTTP 进行通信的 WCF 服务。
+description: 了解如何在 Windows Vista 上设置 Windows 进程激活服务 () 来托管不能通过 HTTP 进行通信的 WCF 服务。
 ms.date: 03/30/2017
 helpviewer_keywords:
 - HTTP activation [WCF]
 ms.assetid: 33a7054a-73ec-464d-83e5-b203aeded658
-ms.openlocfilehash: 84a0dcc4fed28ebd7a536bdabfcdc389be6072d8
-ms.sourcegitcommit: 358a28048f36a8dca39a9fe6e6ac1f1913acadd5
+ms.openlocfilehash: 085a69421f0aa7b763bd2222820ced4b4a7e1c81
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85246878"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557861"
 ---
 # <a name="how-to-install-and-configure-wcf-activation-components"></a>如何：安装和配置 WCF 激活组件
 
-本主题介绍在 Windows Vista 上设置 Windows 进程激活服务（也称为 WAS）以承载不通过 HTTP 网络协议进行通信的 Windows Communication Foundation （WCF）服务所需的步骤。 下面的部分略述此配置的步骤：
+本主题介绍设置 Windows 进程激活服务所需的步骤，该服务在 Windows Vista 上 (也称为) ，以承载 Windows Communication Foundation (不通过 HTTP 网络协议进行通信的 WCF) 服务。 下面的部分略述此配置的步骤：
 
-- 安装（或确认安装） WCF 激活组件。
+- 安装 (或确认 WCF 激活组件) 的安装。
 
 - 配置 WAS 以支持非 HTTP 协议。 以下过程将 Windows Vista 配置为进行 TCP 激活。
 
-安装和配置 WAS 之后，请参阅[中的如何：在 WAS 中承载 Wcf 服务](how-to-host-a-wcf-service-in-was.md)，了解如何创建 wcf 服务，该服务公开了采用 WAS 的非 HTTP 终结点。
+安装和配置 WAS 之后，请参阅 [中的如何：在 WAS 中承载 Wcf 服务](how-to-host-a-wcf-service-in-was.md) ，了解如何创建 wcf 服务，该服务公开了采用 WAS 的非 HTTP 终结点。
 
 ## <a name="to-install-the-wcf-non-http-activation-components"></a>安装 WCF 非 HTTP 激活组件
 
@@ -28,11 +28,11 @@ ms.locfileid: "85246878"
 
 2. 单击“程序”****，然后单击“程序和功能”****。
 
-3. 在 "**任务**" 菜单上，单击 "**打开或关闭 Windows 功能**"。
+3. 在 " **任务** " 菜单上，单击 " **打开或关闭 Windows 功能**"。
 
 4. 找到 WinFX 节点，选择它，然后将其展开。
 
-5. 选择 " **WCF 非 Http 激活组件**" 框并保存设置。
+5. 选择 " **WCF 非 Http 激活组件** " 框并保存设置。
 
 ## <a name="to-configure-the-was-to-support-tcp-activation"></a>配置 WAS 以支持 TCP 激活
 
@@ -107,4 +107,4 @@ ms.locfileid: "85246878"
 - [TCP 激活](../samples/tcp-activation.md)
 - [MSMQ 激活](../samples/msmq-activation.md)
 - [NamedPipe 激活](../samples/namedpipe-activation.md)
-- [Windows Server App Fabric 承载功能](https://docs.microsoft.com/previous-versions/appfabric/ee677189(v=azure.10))
+- [Windows Server App Fabric 承载功能](/previous-versions/appfabric/ee677189(v=azure.10))

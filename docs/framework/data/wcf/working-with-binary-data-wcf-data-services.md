@@ -8,40 +8,40 @@ helpviewer_keywords:
 - WCF Data Services, binary data
 - WCF Data Services, streams
 ms.assetid: aeccc45c-d5c5-4671-ad63-a492ac8043ac
-ms.openlocfilehash: aa3e58d559121aaca401e7b851a4b4fd8e7753cd
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 3c391e641df52d9143630406a40e17c6bc853865
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900844"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551746"
 ---
 # <a name="working-with-binary-data-wcf-data-services"></a>处理二进制数据（WCF 数据服务）
 
-使用 WCF 数据服务的客户端库，可以通过以下方式之一从 Open Data Protocol （OData）源检索和更新二进制数据：
+WCF 数据服务客户端库可通过以下方式之一从 Open Data Protocol (OData) 源检索和更新二进制数据：
 
 - 作为实体的基元类型属性。 当使用可轻松加载到内存中的小型二进制数据对象时，建议使用此方法。 在这种情况下，二进制属性是数据模型公开的实体属性，而数据服务会在响应消息中将二进制数据序列化为 base-64 二进制编码的 XML。
 
 - 作为单独的二进制资源流。 当访问和更改可能表示照片、视频或其他任何类型的二进制编码数据的二进制大型对象 (BLOB) 数据时，建议使用此方法。
 
-WCF 数据服务使用 OData 中定义的 HTTP 来实现二进制数据流式处理。 在此机制中，二进制数据被视为独立于实体（称为媒体链接项）的媒体资源。 有关详细信息，请参阅[流式处理提供程序](streaming-provider-wcf-data-services.md)。
+WCF 数据服务使用 OData 中定义的 HTTP 来实现二进制数据流式处理。 在此机制中，二进制数据被视为独立于实体但又与实体相关的媒体资源，这称为媒体链接入口。 有关详细信息，请参阅 [流式处理提供程序](streaming-provider-wcf-data-services.md)。
 
 > [!TIP]
-> 有关如何创建 Windows Presentation Foundation （WPF）客户端应用程序（该应用程序从存储照片的 OData 服务下载二进制图像文件）的分步示例，请参阅文章[数据服务流提供程序系列-第2部分：从客户端访问媒体资源流](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client)。 若要下载博客文章中所述的流照片数据服务的示例代码，请参阅 GitHub 中的[流式处理照片数据服务示例](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample)。
+> 有关如何创建 Windows Presentation Foundation (WPF) 客户端应用程序（该应用程序从存储照片的 OData 服务下载二进制图像文件）的分步示例，请参阅文章 [数据服务流提供程序系列-第2部分：从客户端访问媒体资源流](/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client)。 若要下载博客文章中所述的流照片数据服务的示例代码，请参阅 GitHub 中的 [流式处理照片数据服务示例](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample) 。
 
 ## <a name="entity-metadata"></a>实体元数据
 
-具有相关媒体资源流的实体由应用于实体类型（媒体链接入口）的 `HasStream` 属性在数据服务元数据中表示。 在下面的示例中，`PhotoInfo` 实体是具有相关媒体资源的媒体链接项，由 `HasStream` 属性指示。
+具有相关媒体资源流的实体由应用于实体类型（媒体链接入口）的 `HasStream` 属性在数据服务元数据中表示。 在下面的示例中， `PhotoInfo` 实体是具有相关媒体资源的媒体链接项，由 `HasStream` 特性指示。
 
 [!code-xml[Astoria Photo Streaming Service#HasStream](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_photo_streaming_service/xml/photodata.edmx#hasstream)]
 
-本主题中的其余示例揭示了如何访问和更改媒体资源流。 有关如何使用 WCF 数据服务客户端库在 .NET Framework 客户端应用程序中使用媒体资源流的完整示例，请参阅[从客户端访问媒体资源流](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client)一文。
+本主题中的其余示例揭示了如何访问和更改媒体资源流。 有关如何使用 WCF 数据服务客户端库在 .NET Framework 客户端应用程序中使用媒体资源流的完整示例，请参阅 [从客户端访问媒体资源流](/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client)一文。
 
 ## <a name="accessing-the-binary-resource-stream"></a>访问二进制资源流
 
 WCF 数据服务客户端库提供了从基于 OData 的数据服务访问二进制资源流的方法。 下载媒体资源时，可以使用媒体资源的 URI，也可以获取一个包含媒体资源数据本身的二进制流。 还可以上载媒体资源数据作为一个二进制流。
 
 > [!TIP]
-> 有关如何创建 Windows Presentation Foundation （WPF）客户端应用程序（该应用程序从存储照片的 OData 服务下载二进制图像文件）的分步示例，请参阅文章[数据服务流提供程序系列-第2部分：从客户端访问媒体资源流](https://docs.microsoft.com/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client)。 若要下载博客文章中所述的流照片数据服务的示例代码，请参阅 GitHub 中的[流式处理照片数据服务示例](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample)。
+> 有关如何创建 Windows Presentation Foundation (WPF) 客户端应用程序（该应用程序从存储照片的 OData 服务下载二进制图像文件）的分步示例，请参阅文章 [数据服务流提供程序系列-第2部分：从客户端访问媒体资源流](/archive/blogs/astoriateam/data-services-streaming-provider-series-part-2-accessing-a-media-resource-stream-from-the-client)。 若要下载博客文章中所述的流照片数据服务的示例代码，请参阅 GitHub 中的 [流式处理照片数据服务示例](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/Streaming%20Photo%20OData%20Service%20Sample) 。
 
 ### <a name="getting-the-uri-of-the-binary-stream"></a>获取二进制流的 URI
 
@@ -72,7 +72,7 @@ WCF 数据服务客户端库提供了从基于 OData 的数据服务访问二进
 > [!NOTE]
 > 调用 <xref:System.Data.Services.Client.DataServiceContext.SetSaveStream%2A> 时，只有在调用 <xref:System.Data.Services.Client.DataServiceContext.SaveChanges%2A> 之后，才会将流发送到数据服务。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [WCF Data Services 客户端库](wcf-data-services-client-library.md)
+- [WCF 数据服务客户端库](wcf-data-services-client-library.md)
 - [将数据绑定到控件](binding-data-to-controls-wcf-data-services.md)

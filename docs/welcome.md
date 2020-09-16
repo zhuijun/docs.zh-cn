@@ -3,12 +3,12 @@ title: 欢迎使用 .NET
 description: .NET 系列技术入门。
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 7b1c5eceefd1e108eabf17d5cb6f7552af00e0d5
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 707f83e912b6bd6999423949412cffba852093a0
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495142"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558069"
 ---
 # <a name="welcome-to-net"></a>欢迎使用 .NET
 
@@ -35,7 +35,7 @@ ms.locfileid: "89495142"
 
 - [.NET Core 3.1 的新增功能](core/whats-new/dotnet-core-3-1.md)
 - [.NET Framework 的新增功能](framework/whats-new/index.md)
-- [C# 中的新增功能](csharp/whats-new/index.md)
+- [C# 中的新增功能](./csharp/whats-new/csharp-9.md)
 - [Visual Basic 的新增功能](visual-basic/whats-new/index.md)
 
 ## <a name="documentation"></a>文档
@@ -51,7 +51,7 @@ ms.locfileid: "89495142"
 - [.NET for Apache Spark](spark/index.yml)
 - [.NET 应用程序体系结构](architecture/index.yml)
 
-此外，还可以浏览 [.NET API 引用](/dotnet/api)。
+此外，还可以浏览 [.NET API 引用](../api/index.md)。
 
 ## <a name="videos"></a>视频
 

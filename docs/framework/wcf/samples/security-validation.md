@@ -2,15 +2,15 @@
 title: 安全性验证
 ms.date: 03/30/2017
 ms.assetid: 48dcd496-0c4f-48ce-8b9b-0e25b77ffa58
-ms.openlocfilehash: 70408976469b1cbcf9c4679bd91d81872ec74ae1
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: ec7b7f96c1f6489f677970164f74c176b301f55b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599966"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557380"
 ---
 # <a name="security-validation"></a>安全验证
-此示例演示如何使用自定义行为来验证计算机上的服务，以确保服务符合特定条件。 在此示例中，自定义行为通过以下方法验证服务：扫描服务上的每个终结点，并查看这些终结点是否包含安全的绑定元素。 此示例基于[入门](getting-started-sample.md)。  
+此示例演示如何使用自定义行为来验证计算机上的服务，以确保服务符合特定条件。 在此示例中，自定义行为通过以下方法验证服务：扫描服务上的每个终结点，并查看这些终结点是否包含安全的绑定元素。 此示例基于 [入门](getting-started-sample.md)。  
   
 > [!NOTE]
 > 本主题的最后介绍了此示例的设置过程和生成说明。  
@@ -82,31 +82,31 @@ public void Validate(ServiceDescription serviceDescription,
   
 ### <a name="view-failed-endpoint-validation-exception-messages-in-the-event-viewer"></a>查看事件查看器中失败的终结点验证异常消息  
   
-1. 单击 "**开始**" 菜单，然后选择 "**运行 ...**"。  
+1. 单击 " **开始** " 菜单，然后选择 " **运行 ...**"。  
   
-2. 键入 `eventvwr` ，然后单击 **“确定”**。  
+2. 键入 `eventvwr` ，然后单击 **“确定”** 。  
   
-3. 在事件查看器 "窗口中，单击"**应用程序**"。  
+3. 在事件查看器 "窗口中，单击" **应用程序**"。  
   
-4. 在**应用程序**窗口中的 "WebHost" 类别下双击最近添加的 "system.servicemodel 4.0.0.0" 事件，以查看不安全的终结点消息。  
+4. 在 **应用程序** 窗口中的 "WebHost" 类别下双击最近添加的 "system.servicemodel 4.0.0.0" 事件，以查看不安全的终结点消息。  
   
 ## <a name="set-up-build-and-run-the-sample"></a>设置、生成和运行示例  
   
-1. 确保已对[Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
+1. 确保已对 [Windows Communication Foundation 示例执行了一次性安装过程](one-time-setup-procedure-for-the-wcf-samples.md)。  
   
 2. 若要生成 C# 或 Visual Basic .NET 版本的解决方案，请按照 [Building the Windows Communication Foundation Samples](building-the-samples.md)中的说明进行操作。  
   
-3. 若要以单机配置或跨计算机配置来运行示例，请按照[运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
+3. 若要以单机配置或跨计算机配置来运行示例，请按照 [运行 Windows Communication Foundation 示例](running-the-samples.md)中的说明进行操作。  
   
 > [!IMPORTANT]
 > 您的计算机上可能已安装这些示例。 在继续操作之前，请先检查以下（默认）目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples`  
 >
-> 如果此目录不存在，请参阅[.NET Framework 4 的 Windows Communication Foundation （wcf）和 Windows Workflow Foundation （WF）示例](https://www.microsoft.com/download/details.aspx?id=21459)以下载所有 WINDOWS COMMUNICATION FOUNDATION （wcf）和 [!INCLUDE[wf1](../../../../includes/wf1-md.md)] 示例。 此示例位于以下目录：  
+> 如果此目录不存在，请参阅[Windows Communication Foundation (wcf) ，并 Windows Workflow Foundation (的 WF](https://www.microsoft.com/download/details.aspx?id=21459)) .NET Framework Windows Communication Foundation ([!INCLUDE[wf1](../../../../includes/wf1-md.md)] 此示例位于以下目录：  
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ServiceValidation`  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [AppFabric 监视示例](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))
+- [AppFabric 监视示例](/previous-versions/appfabric/ff383407(v=azure.10))

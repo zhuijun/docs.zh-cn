@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: 3eba676a4134415f0e2981d5094c0b0f6a1651be
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 15350f93ffabb10136af1b9a4d12d5301e661b29
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559019"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551707"
 ---
 # <a name="whats-new-in-net-framework"></a>.NET Framework 中的新增功能
 
@@ -389,9 +389,9 @@ Public GetOrAdd(Of TArg)(key As TKey, valueFactory As Func(Of TKey, TArg, TValue
 
 [依赖项注入 (DI)](/aspnet/core/fundamentals/dependency-injection#overview-of-dependency-injection) 分离对象和它们的依赖项，使得对象的代码不再仅因依赖项更改而需要进行更改。 在开发面向 .NET Framework 4.7.2 的 ASP.NET 应用程序时，可以：
 
-- 在[处理程序和模块](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100))、[页面实例](xref:System.Web.UI.Page)和 ASP.NET Web 应用程序项目的[用户控件](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100))中使用基于资源库、基于接口和基于构造函数的注入。
+- 在[处理程序和模块](/previous-versions/aspnet/bb398986(v=vs.100))、[页面实例](xref:System.Web.UI.Page)和 ASP.NET Web 应用程序项目的[用户控件](/previous-versions/aspnet/y6wb1a0e(v=vs.100))中使用基于资源库、基于接口和基于构造函数的注入。
 
-- 在[处理程序和模块](https://docs.microsoft.com/previous-versions/aspnet/bb398986(v=vs.100))、[页面实例](xref:System.Web.UI.Page)和 ASP.NET 网站项目的[用户控件](https://docs.microsoft.com/previous-versions/aspnet/y6wb1a0e(v=vs.100))中使用基于资源库和基于接口的注入。
+- 在[处理程序和模块](/previous-versions/aspnet/bb398986(v=vs.100))、[页面实例](xref:System.Web.UI.Page)和 ASP.NET 网站项目的[用户控件](/previous-versions/aspnet/y6wb1a0e(v=vs.100))中使用基于资源库和基于接口的注入。
 
 - 插入不同的依赖关系注入框架。
 
@@ -517,9 +517,9 @@ Dim dictionaries As IEnumerable(Of ResourceDictionary) = ResourceDictionaryDiagn
 
 **查找 ResourceDictionary 所有者**
 
-从 .NET Framework 4.7.2 开始，诊断助手可以找到给定 <xref:Windows.UI.Xaml.ResourceDictionary> 的所有者。 （此功能供诊断助手，而非生产应用程序使用。）每当对 <xref:Windows.UI.Xaml.ResourceDictionary> 做出更改时，WPF 会自动查找所有可能会受此更改影响的 [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) 引用。
+从 .NET Framework 4.7.2 开始，诊断助手可以找到给定 <xref:Windows.UI.Xaml.ResourceDictionary> 的所有者。 （此功能供诊断助手，而非生产应用程序使用。）每当对 <xref:Windows.UI.Xaml.ResourceDictionary> 做出更改时，WPF 会自动查找所有可能会受此更改影响的 [DynamicResource](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension) 引用。
 
-诊断助手（例如 Visual Studio 的“编辑并继续”）可能想对此进行扩展以处理 [StaticResource](../wpf/advanced/staticresource-markup-extension.md) 引用。 此过程的第一步是找到字典的所有者，也就是找到其 `Resources` 属性引用该字典（不管是直接引用，还是通过 <xref:System.Windows.ResourceDictionary.MergedDictionaries?displayProperty=nameWithType> 属性间接引用）的所有对象。 <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics?displayProperty=nameWithType> 类上实现的三个新的静态方法（每个对应具有 `Resources` 属性的基类型）支持此步骤：
+诊断助手（例如 Visual Studio 的“编辑并继续”）可能想对此进行扩展以处理 [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) 引用。 此过程的第一步是找到字典的所有者，也就是找到其 `Resources` 属性引用该字典（不管是直接引用，还是通过 <xref:System.Windows.ResourceDictionary.MergedDictionaries?displayProperty=nameWithType> 属性间接引用）的所有对象。 <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics?displayProperty=nameWithType> 类上实现的三个新的静态方法（每个对应具有 `Resources` 属性的基类型）支持此步骤：
 
 - [`public static IEnumerable<FrameworkElement> GetFrameworkElementOwners(ResourceDictionary dictionary);`](xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.GetFrameworkElementOwners%2A)
 
@@ -531,7 +531,7 @@ Dim dictionaries As IEnumerable(Of ResourceDictionary) = ResourceDictionaryDiagn
 
 **查找 StaticResource 引用**
 
-现在，每当一个 [StaticResource](../wpf/advanced/staticresource-markup-extension.md) 引用被解析时，诊断助手都能收到通知。 （此功能供诊断助手，而非生产应用程序使用。）诊断助手（例如 Visual Studio 的“编辑并继续”）可能想在 <xref:Windows.UI.Xaml.ResourceDictionary> 中某个资源的值发生更改时更新该资源的所有使用。 WPF 为 [DynamicResource](../wpf/advanced/dynamicresource-markup-extension.md) 引用自动完成此操作，但不会为 [StaticResource](../wpf/advanced/staticresource-markup-extension.md) 引用有意执行该操作。 从 .NET Framework 4.7.2 开始，诊断助手可以利用这些通知来查找静态资源的使用情况。
+现在，每当一个 [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) 引用被解析时，诊断助手都能收到通知。 （此功能供诊断助手，而非生产应用程序使用。）诊断助手（例如 Visual Studio 的“编辑并继续”）可能想在 <xref:Windows.UI.Xaml.ResourceDictionary> 中某个资源的值发生更改时更新该资源的所有使用。 WPF 为 [DynamicResource](/dotnet/desktop/wpf/advanced/dynamicresource-markup-extension) 引用自动完成此操作，但不会为 [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) 引用有意执行该操作。 从 .NET Framework 4.7.2 开始，诊断助手可以利用这些通知来查找静态资源的使用情况。
 
 该通知由新的 <xref:System.Windows.Diagnostics.ResourceDictionaryDiagnostics.StaticResourceResolved?displayProperty=nameWithType> 事件实现：
 
@@ -543,7 +543,7 @@ public static event EventHandler<StaticResourceResolvedEventArgs> StaticResource
 Public Shared Event StaticResourceResolved As EventHandler(Of StaticResourceResolvedEventArgs)
 ```
 
-每当运行时解析 [StaticResource](../wpf/advanced/staticresource-markup-extension.md) 引用时，都会引发此事件。 <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> 参数描述解析，并指示托管 [StaticResource](../wpf/advanced/staticresource-markup-extension.md) 引用的对象和属性及用于解析的  <xref:Windows.UI.Xaml.ResourceDictionary> 和密钥：
+每当运行时解析 [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) 引用时，都会引发此事件。 <xref:System.Windows.Diagnostics.StaticResourceResolvedEventArgs> 参数描述解析，并指示托管 [StaticResource](/dotnet/desktop/wpf/advanced/staticresource-markup-extension) 引用的对象和属性及用于解析的  <xref:Windows.UI.Xaml.ResourceDictionary> 和密钥：
 
 ```csharp
 public class StaticResourceResolvedEventArgs : EventArgs
@@ -758,7 +758,7 @@ WCF 包含大量代码更改，消除了争用条件，从而提升了序列化�
 
 自定位 .NET Framework 4.7 的应用程序起，.NET Framework 为 Windows 窗体应用程序提供高 DPI 和动态 DPI 支持。 高 DPI 支持改进了高 DPI 监视器上窗体和控件的布局和外观。 当用户更改正在运行的应用程序的 DPI 或显示比例系数时，动态 DPI 会更改窗体和控件的布局和外观。
 
-高 DPI 支持是一项选择启用功能，可通过在应用程序配置文件中定义 [\<System.Windows.Forms.ConfigurationSection>](../configure-apps/file-schema/winforms/index.md) 部分进行配置。 若要详细了解如何向 Windows 窗体应用程序添加高 DPI 支持和动态 DPI 支持，请参阅 [Windows 窗体中的高 DPI 支持](../winforms/high-dpi-support-in-windows-forms.md)。
+高 DPI 支持是一项选择启用功能，可通过在应用程序配置文件中定义 [\<System.Windows.Forms.ConfigurationSection>](../configure-apps/file-schema/winforms/index.md) 部分进行配置。 若要详细了解如何向 Windows 窗体应用程序添加高 DPI 支持和动态 DPI 支持，请参阅 [Windows 窗体中的高 DPI 支持](/dotnet/desktop/winforms/high-dpi-support-in-windows-forms)。
 
 <a name="WPF47"></a>
 
@@ -768,7 +768,7 @@ WCF 包含大量代码更改，消除了争用条件，从而提升了序列化�
 
 **支持基于 Windows WM_POINTER 消息的触控/触笔堆栈**
 
-现在可以视情况使用基于 [WM_POINTER 消息](https://docs.microsoft.com/previous-versions/windows/desktop/InputMsg/messages)的触控/触笔堆栈，而不使用 Windows Ink 服务平台 (WISP)。 这是 .NET Framework 中的一项可选择启用的功能。 有关详细信息，请参阅[应用程序兼容性](../migration-guide/application-compatibility.md)部分。
+现在可以视情况使用基于 [WM_POINTER 消息](/previous-versions/windows/desktop/InputMsg/messages)的触控/触笔堆栈，而不使用 Windows Ink 服务平台 (WISP)。 这是 .NET Framework 中的一项可选择启用的功能。 有关详细信息，请参阅[应用程序兼容性](../migration-guide/application-compatibility.md)部分。
 
 **WPF 打印 API 的新实现代码**
 
@@ -1196,7 +1196,7 @@ WCF 包含可以在客户端应用程序上设置以确保它们始终连接到�
 
 **在重新托管的 WF 设计器中支持 C# 表达式和 IntelliSense**
 
-自 .NET Framework 4.5 起，WF 支持在 Visual Studio 设计器和代码工作流中使用 C# 表达式。 重新托管的工作流设计器是 WF 的一项重要功能，允许工作流设计器位于 Visual Studio 外部的应用程序中（如 WPF 中）。  Windows Workflow Foundation 提供在重新托管的工作流设计器中支持 C# 表达式和 IntelliSense 的功能。 有关详细信息，请参阅 [Windows Workflow Foundation 博客](https://docs.microsoft.com/archive/blogs/workflowteam/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer)。
+自 .NET Framework 4.5 起，WF 支持在 Visual Studio 设计器和代码工作流中使用 C# 表达式。 重新托管的工作流设计器是 WF 的一项重要功能，允许工作流设计器位于 Visual Studio 外部的应用程序中（如 WPF 中）。  Windows Workflow Foundation 提供在重新托管的工作流设计器中支持 C# 表达式和 IntelliSense 的功能。 有关详细信息，请参阅 [Windows Workflow Foundation 博客](/archive/blogs/workflowteam/building-c-expressions-support-and-intellisense-in-the-rehosted-workflow-designer)。
 
 `Availability of IntelliSense when a customer rebuilds a workflow project from Visual Studio` 在低于 4.6.2 的 .NET Framework 版本中，客户从 Visual Studio 重新生成工作流项目时，WF 设计器 IntelliSense 会中断。 虽然项目生成成功，但在设计器中找不到该工作流类型，并且来自 IntelliSense 的缺少工作流类型的警告会出现在**错误列表**窗口中。 .NET Framework 4.6.2 解决了这个问题，并让 IntelliSense 可供使用。
 
@@ -1886,7 +1886,7 @@ Windows 窗体的改进包括：
 
 有关在 Visual Studio 2013 中调试 .NET Framework 应用程序的改进包括：
 
-- 返回 Visual Studio 调试器中的值。 在 Visual Studio 2013 中调试托管应用程序时，“自动”窗口会显示方法的返回类型和值。 此信息可用于桌面、Windows 应用商店和 Windows Phone 应用程序。 有关详细信息，请参阅[检查方法调用的返回值](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/dn323257(v=vs.120))。
+- 返回 Visual Studio 调试器中的值。 在 Visual Studio 2013 中调试托管应用程序时，“自动”窗口会显示方法的返回类型和值。 此信息可用于桌面、Windows 应用商店和 Windows Phone 应用程序。 有关详细信息，请参阅[检查方法调用的返回值](/previous-versions/visualstudio/visual-studio-2013/dn323257(v=vs.120))。
 
 - 针对 64 位应用程序的“编辑并继续”。 Visual Studio 2013 支持对桌面、Windows 应用商店和 Windows Phone 相关 64 位托管应用程序使用“编辑并继续”功能。 现有的限制对 32 位和 64 位应用仍然有效（请参阅[支持的代码更改 (C#)](/visualstudio/debugger/supported-code-changes-csharp) 文章的最后一节）。
 
@@ -1972,7 +1972,7 @@ Windows 窗体的改进包括：
 
 ASP.NET 4.5 和 4.5.1 为 Web 窗体、WebSocket 支持、异步处理程序、性能增强和许多其他功能添加了模型绑定。 有关更多信息，请参见以下资源：
 
-- [ASP.NET 4.5 和 Visual Studio 2012](https://docs.microsoft.com/previous-versions/aspnet/hh420390(v=vs.110))
+- [ASP.NET 4.5 和 Visual Studio 2012](/previous-versions/aspnet/hh420390(v=vs.110))
 
 - [适用于 Visual Studio 2013 的 ASP.NET 和 Web 工具发行说明](/aspnet/visual-studio/overview/2013/release-notes)
 
@@ -2066,7 +2066,7 @@ ASP.NET 4.5 和 4.5.1 为 Web 窗体、WebSocket 支持、异步处理程序、�
 
 在 .NET Framework 4.5 中，已向 Windows Workflow Foundation (WF) 添加多项新功能，包括：
 
-- 首次作为 .NET Framework 4.0.1（[.NET Framework 4 平台更新 1](https://docs.microsoft.com/archive/blogs/endpoint/microsoft-net-framework-4-platform-update-1)）的一部分引入的状态机工作流。 此更新包括可使开发人员创建状态机工作流的多个新类和活动。 这些类和活动已针对 .NET Framework 4.5 更新为包含：
+- 首次作为 .NET Framework 4.0.1（[.NET Framework 4 平台更新 1](/archive/blogs/endpoint/microsoft-net-framework-4-platform-update-1)）的一部分引入的状态机工作流。 此更新包括可使开发人员创建状态机工作流的多个新类和活动。 这些类和活动已针对 .NET Framework 4.5 更新为包含：
 
   - 对状态设置断点的能力。
 
@@ -2118,7 +2118,7 @@ ASP.NET 4.5 和 4.5.1 为 Web 窗体、WebSocket 支持、异步处理程序、�
 
 ### <a name="net-for-windows-8x-store-apps"></a>适用于 Windows 8.x 应用商店应用的 .NET
 
-Windows 8.x 应用商店应用专为特定外形规格而设计，并利用 Windows 操作系统的强大技术支持。 可以使用一部分 .NET Framework 4.5 或 4.5.1 生成用 C# 或 Visual Basic 编写的 Windows 相关 Windows 8.x 应用商店应用。 该部分被称作适用于 Windows 8.x 应用商店应用的 .NET，详见[概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))
+Windows 8.x 应用商店应用专为特定外形规格而设计，并利用 Windows 操作系统的强大技术支持。 可以使用一部分 .NET Framework 4.5 或 4.5.1 生成用 C# 或 Visual Basic 编写的 Windows 相关 Windows 8.x 应用商店应用。 该部分被称作适用于 Windows 8.x 应用商店应用的 .NET，详见[概述](/previous-versions/windows/apps/br230302(v=vs.140))
 
 ### <a name="portable-class-libraries"></a>可移植类库<a name="portable"></a>
 
