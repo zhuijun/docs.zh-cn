@@ -46,7 +46,7 @@
 - name: 参考
   items:
     - name: API 参考
-      href: 'https://docs.microsoft.com/dotnet/api/?view=spark-dotnet'
+      href: ../../api/index.md?view=spark-dotnet
 - name: 资源
   items:
     - name: 资源概述
