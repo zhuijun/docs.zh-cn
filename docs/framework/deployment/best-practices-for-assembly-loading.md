@@ -13,11 +13,12 @@ helpviewer_keywords:
 - LoadWithPartialName method
 - load-from context
 ms.assetid: 68d1c539-6a47-4614-ab59-4b071c9d4b4c
-ms.openlocfilehash: 8ee5243258ea1b853b4690b79ec032c46d1b3777
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 03d2cacea4d2c0e7452240df30350d93ce79282d
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803490"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656140"
 ---
 # <a name="best-practices-for-assembly-loading"></a>适用于程序集加载的最佳做法
 本文讨论避免类型标识问题的方法，从而避免发生 <xref:System.InvalidCastException>、<xref:System.MissingMethodException> 以及其他错误。 本文讨论以下建议：  
@@ -62,7 +63,7 @@ ms.locfileid: "85803490"
   
  使用 <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType> 方法或其他按路径加载的方法之一加载程序集具有以下缺点：  
   
-- 如果已加载一个具有相同标识的程序集，则即使指定了不同的路径，<xref:System.Reflection.Assembly.LoadFrom%2A> 仍返回已加载的程序集。  
+- 如果具有相同标识的程序集已加载到加载源上下文中，则即使指定了不同的路径，<xref:System.Reflection.Assembly.LoadFrom%2A> 也仍会返回已加载的程序集。  
   
 - 如果用 <xref:System.Reflection.Assembly.LoadFrom%2A> 加载一个程序集，随后默认加载上下文中的一个程序集尝试按显示名称加载同一程序集，则加载尝试将失败。 对程序集进行反序列化时，可能发生这种情况。  
   

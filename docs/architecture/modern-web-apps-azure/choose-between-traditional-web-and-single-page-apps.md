@@ -6,13 +6,13 @@ ms.author: wiwagn
 no-loc:
 - Blazor
 - WebAssembly
-ms.date: 12/04/2019
-ms.openlocfilehash: 4fe889fe86d96a5b2ffa5bd879d2ec1801a3cf20
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.date: 07/27/2020
+ms.openlocfilehash: f04de5c350dfead4dad8c37eece7f16c9a9e00bc
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174362"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515814"
 ---
 # <a name="choose-between-traditional-web-apps-and-single-page-apps-spas"></a>在传统 Web 应用和单页应用 (SPA) 之间选择
 
@@ -33,7 +33,7 @@ ms.locfileid: "86174362"
 
 - 应用程序必须公开具有许多功能的丰富用户界面。
 
-- 团队熟悉 JavaScript 和/或 TypeScript 开发。
+- 团队熟悉 JavaScript、TypeScript 或 Blazor WebAssembly 开发。
 
 - 应用程序已为其他（内部或公共）客户端公开 API。
 
@@ -43,17 +43,17 @@ ms.locfileid: "86174362"
 
 ## Blazor
 
-ASP.NET Core 3.0 引入了一种新模型，用于构建称为 Blazor 的丰富的、交互式且可组合的 UI。 Blazor 服务器端使开发人员能够在服务器上使用 C# 和 Razor 生成 UI，并使 UI 使用永久性 SignalR 连接以交互方式实时连接到浏览器。
+ASP.NET Core 包含一种新模型，用于构建称为 Blazor 的丰富的、交互式且可组合的用户界面。 Blazor 服务器端使开发人员能够在服务器上使用 C# 和 Razor 生成 UI，并使 UI 使用永久性 SignalR 连接以交互方式实时连接到浏览器。 Blazor WebAssembly 为 Blazor 应用引入了另一个选项，使这些应用能够使用 WebAssembly 在浏览器中运行。 由于它是在 WebAssembly 上运行的真实 .NET，因此你可以重复使用来自应用程序的服务器端部分的代码和库。
 
-Blazor WebAssembly 为 Blazor 应用引入了另一个选项，使这些应用能够使用 WebAssembly 在浏览器中运行。 由于它是在 WebAssembly 上运行的真实 .NET，因此你可以重复使用来自应用程序的服务器端部分的代码和库。
-
-Blazor 提供了一个全新的第三个选项，可用于评估是生成纯服务器呈现的 Web 应用程序还是 SPA。 可以使用 Blazor 生成类似于 SPA 的丰富客户端行为，而无需进行大量 JavaScript 开发。 Blazor 应用程序可以调用 API 来请求数据或执行服务器端操作。
+Blazor 提供了一个全新的第三个选项，可用于评估是生成纯服务器呈现的 Web 应用程序还是 SPA。 可以使用 Blazor 生成类似于 SPA 的丰富客户端行为，而无需进行大量 JavaScript 开发。 Blazor 应用程序可以调用 API 来请求数据或执行服务器端操作。 这些应用程序可以在必要时与 JavaScript 进行互操作，以利用 JavaScript 库和框架。
 
 在以下情况下考虑使用 Blazor 生成 Web 应用程序：
 
 - 应用程序必须公开丰富用户界面
 
 - 与使用 JavaScript 或 TypeScript 开发相比，团队更喜欢使用 .NET 开发
+
+如果正在考虑将现有的 Web Forms 应用程序迁移到 .NET Core，不妨参阅免费的电子书《[面向 Web Forms 开发人员的 Blazor](../blazor-for-web-forms-developers/index.md)》，以了解是否有必要将其迁移到 Blazor。
 
 有关 Blazor 的详细信息，请参阅 [Blazor 入门](https://blazor.net/docs/get-started.html)。
 
@@ -100,7 +100,7 @@ SPA 可支持丰富客户端功能，当用户执行操作或在应用的各区�
 
 如果已提供一个 Web API 供其他客户端使用，则相较于在服务器端窗体中复制逻辑，创建一个利用这些 API 的 SPA 实现更加容易。 用户与应用程序交互时，SPA 广泛使用 Web API 来查询和更新数据。
 
-## <a name="when-to-choose-blazor"></a>何时选择 Blazor
+## <a name="when-to-choose-no-locblazor"></a>何时选择 Blazor
 
 以下是有关何时为 Web 应用选择 Blazor 更加详细的说明。
 

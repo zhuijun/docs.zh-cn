@@ -1,7 +1,7 @@
 ---
 title: 实现 Dispose 方法
 description: 本文介绍如何实现 Dispose 方法，该方法用于释放 .NET 中的代码使用的非托管资源。
-ms.date: 05/27/2020
+ms.date: 09/08/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Dispose method
 - garbage collection, Dispose method
 ms.assetid: eb4e1af0-3b48-4fbc-ad4e-fc2f64138bf9
-ms.openlocfilehash: 4f0cc9b88947d60638057ca83adb7f2e141c5d14
-ms.sourcegitcommit: 7499bdb428d63ed0e19e97f54d3d576c41598659
+ms.openlocfilehash: 863f78daf13ae9d795c37c1c6f428d387b9a026b
+ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/31/2020
-ms.locfileid: "87455730"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90022917"
 ---
 # <a name="implement-a-dispose-method"></a>实现 Dispose 方法
 
@@ -77,7 +77,7 @@ ms.locfileid: "87455730"
 
   - **实现 <xref:System.IDisposable> 的托管对象。** 可用于调用其 <xref:System.IDisposable.Dispose%2A> 实现（级联释放）的条件块。 如果你已使用 <xref:System.Runtime.InteropServices.SafeHandle?displayProperty=nameWithType> 的派生类来包装非托管资源，则应在此处调用 <xref:System.Runtime.InteropServices.SafeHandle.Dispose?displayProperty=nameWithType> 实现。
 
-  - **占用大量内存或使用短缺资源的托管对象。** 将大型托管对象引用分配到 `null`，使它们更有可能无法访问。 相比以非确定性方式回收它们，这样做释放的速度更快。
+  - **占用大量内存或使用短缺资源的托管对象。** 将大型托管对象引用分配到 `null`，使它们更有可能无法访问。 相比以非确定性方式回收它们，这样做释放的速度更快，此操作通常在条件块之外完成。
 
 如果方法调用来自终结器，则应仅执行释放非托管资源的代码。 实施者负责确保假路径不会与可能已被回收的托管对象交互。 这一点很重要，因为垃圾回收器在终止期间销毁托管对象的顺序是不确定的。
 

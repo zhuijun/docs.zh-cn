@@ -2,12 +2,12 @@
 title: Docker 应用开发工作流
 description: 了解用于开发基于 Docker 的应用程序的工作流的详细信息。 分步深入了解有关优化 Dockerfile 的详细信息，最后了解使用 Visual Studio 时使用的简化工作流。
 ms.date: 01/30/2020
-ms.openlocfilehash: 421b1aaf3965bd3aa80c6e09da963404d2a46c09
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 98dc931e10d5e1a3265ebd6f4e1919a6416e9b27
+ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359070"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90022930"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Docker 应用开发工作流
 
@@ -252,7 +252,7 @@ COPY . .
 
 1. 仅在第一次时（以及如果文件发生更改，则在重新构建时）执行复制进程，而且复制进程会使用所有其他服务的缓存，并且
 
-2. 由于较大的映像发生在中间阶段，所以不会影响最终的映像大小。
+2. 由于较大的映像发生在中间阶段，因此不会影响最终的映像大小。
 
 下一个重要的优化涉及在第 17 行中执行的 `restore` 命令，其对于 eShopOnContainers 的每项服务也是不同的。 如果把该行更改为：
 

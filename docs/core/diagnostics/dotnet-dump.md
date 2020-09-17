@@ -2,12 +2,12 @@
 title: dotnet-dump - .NET Core
 description: 安装和使用 dotnet-dump 命令行工具。
 ms.date: 10/14/2019
-ms.openlocfilehash: 5489011538a4a11d60b333f0230a718c88722c97
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: e008dcfc734a8742c495ea32a7a149c9a55c54c6
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89140927"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598108"
 ---
 # <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>转储收集和分析实用工具 (dotnet-dump)
 
@@ -71,14 +71,15 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
   指定从中收集内存转储的进程的 ID 号。
 
-- **`--type <Heap|Mini>`**
+- **`--type <Full|Heap|Mini>`**
 
-  指定转储类型，它确定从进程收集的信息的类型。 分为两种类型：
+  指定转储类型，它确定从进程收集的信息的类型。 有三种类型：
 
+  - `Full` - 最大的转储，包含所有内存（包括模块映像）。
   - `Heap` - 大型且相对全面的转储，其中包含模块列表、线程列表、所有堆栈、异常信息、句柄信息和除映射图像以外的所有内存。
   - `Mini` - 小型转储，其中包含模块列表、线程列表、异常信息和所有堆栈。
 
-  如果未指定，则 `Heap` 为默认类型。
+  如果未指定，则 `Full` 为默认类型。
 
 - **`-o|--output <output_dump_path>`**
 

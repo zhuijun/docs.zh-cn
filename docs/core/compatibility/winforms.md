@@ -1,22 +1,24 @@
 ---
 title: Windows 窗体重大更改
-description: 列出适用于 .NET Core 的 Windows 窗体中的中断性变更。
-ms.date: 01/08/2020
-ms.openlocfilehash: beb9a42e4b5007f03480cd74f57bbfbbfc3f48b1
-ms.sourcegitcommit: b7a8b09828bab4e90f66af8d495ecd7024c45042
+description: 列出适用于 .NET Core 和 .NET 5 的 Windows 窗体中的中断性变更。
+ms.date: 09/08/2020
+ms.openlocfilehash: c3d2d23601d6a2d9d44761c4371fe34d3d5ed1f3
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87556138"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656324"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Windows 窗体中的中断性变更
 
-已在 .NET Core 的版本 3.0 中添加 Windows 窗体支持。 本文按引入中断性变更的 .NET Core 版本列出了 Windows 窗体的中断性变更。 如果要从 .NET Framework 或 .NET Core 的早期版本（3.0 或更高版本）升级 Windows 窗体应用，本文能为你提供帮助。
+已在 .NET Core 的版本 3.0 中添加 Windows 窗体支持。 本文按引入了中断性变更的 .NET 版本列出了 Windows 窗体的中断性变更。 如果要从 .NET Framework 或 .NET Core 的早期版本（3.0 或更高版本）升级 Windows 窗体应用，本文能为你提供帮助。
 
 本页记录了以下中断性变更：
 
 | 重大更改 | 引入的版本 |
 | - | :-: |
+| [与 DataGridView 相关的 API 现在引发 InvalidOperationException](#datagridview-related-apis-now-throw-invalidoperationexception) | 5.0 |
+| [WinForms 和 WPF 应用使用 Microsoft.NET.Sdk](#winforms-and-wpf-apps-use-microsoftnetsdk) | 5.0 |
 | [已删除的状态栏控件](#removed-status-bar-controls) | 5.0 |
 | [WinForms 方法现在会引发 ArgumentException](#winforms-methods-now-throw-argumentexception) | 5.0 |
 | [WinForms 方法现在会引发 ArgumentNullException](#winforms-methods-now-throw-argumentnullexception) | 5.0 |
@@ -36,6 +38,14 @@ ms.locfileid: "87556138"
 | [不支持 UseLegacyImages 兼容性开关](#uselegacyimages-compatibility-switch-not-supported) | 3.0 |
 
 ## <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE [null-owner-causes-invalidoperationexception](../../../includes/core-changes/windowsforms/5.0/null-owner-causes-invalidoperationexception.md)]
+
+***
+
+[!INCLUDE [sdk-and-target-framework-change](../../../includes/core-changes/windowsforms/5.0/sdk-and-target-framework-change.md)]
+
+***
 
 [!INCLUDE [winforms-deprecated-controls](../../../includes/core-changes/windowsforms/5.0/winforms-deprecated-controls.md)]
 

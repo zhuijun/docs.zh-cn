@@ -2,12 +2,12 @@
 title: C# 9.0 中的新增功能 - C# 指南
 description: 简要介绍 C# 9.0 中提供的新功能。
 ms.date: 09/04/2020
-ms.openlocfilehash: a863e544c0fcc8682994f49a464acccafc5ce92f
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 80d636db04655650c7448590cd1042cdb1b17de1
+ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495772"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90065027"
 ---
 # <a name="whats-new-in-c-90"></a>C# 9.0 中的新增功能
 
@@ -24,6 +24,7 @@ C# 9.0 向 C# 语言添加了以下功能和增强功能：
 - 静态匿名函数
 - 目标类型的条件表达式
 - 协变返回类型
+- 扩展 `GetEnumerator` 支持 `foreach` 循环
 - Lambda 弃元参数
 - 本地函数的属性
 - 模块初始值设定项
@@ -107,7 +108,7 @@ C# 9.0 引入了记录类型，这是一种引用类型，它提供合成方法�
 
 ## <a name="init-only-setters"></a>仅限 Init 的资源库
 
-仅限 init 的资源库提供一致的语法来初始化对象的成员。 属性初始化表达式可明确哪个值正在设置哪个属性。 缺点是这些属性必须是可设置的。 从 C# 9.0 开始，可为属性和索引器创建 `init` 访问器，而不是 `set` 访问器。 调用方可使用属性初始化表达式语法在创建表达式中设置这些值，但构造完成后，这些属性将变为只读。 仅限 init 的资源库提供了一个窗口用来更改状态。 构造阶段结束时，该窗口关闭。 在完成所有初始化（包括属性初始化表达式和 with 表达式）之后，构造阶段实际上就结束了。
+仅限 init 的资源库提供一致的语法来初始化对象的成员。 属性初始值设定项可明确哪个值正在设置哪个属性。 缺点是这些属性必须是可设置的。 从 C# 9.0 开始，可为属性和索引器创建 `init` 访问器，而不是 `set` 访问器。 调用方可使用属性初始化表达式语法在创建表达式中设置这些值，但构造完成后，这些属性将变为只读。 仅限 init 的资源库提供了一个窗口用来更改状态。 构造阶段结束时，该窗口关闭。 在完成所有初始化（包括属性初始化表达式和 with 表达式）之后，构造阶段实际上就结束了。
 
 上述位置记录示例演示了如何使用仅限 init 的资源库通过 with 表达式来设置属性。 可在编写的任何类型中声明仅限 init 的资源库。 例如，以下结构定义了天气观察结构：
 
@@ -121,7 +122,7 @@ C# 9.0 引入了记录类型，这是一种引用类型，它提供合成方法�
 
 ```csharp
 // Error! CS8852.
-now.TempetureInCelsius = 18;
+now.TemperatureInCelsius = 18;
 ```
 
 对于从派生类设置基类属性，仅限 init 的资源库很有用。 它们还可通过基类中的帮助程序来设置派生属性。 位置记录使用仅限 init 的资源库声明属性。 这些设置器可在 with 表达式中使用。 可为定义的任何 `class` 或 `struct` 声明仅限 init 的资源库。
@@ -217,7 +218,7 @@ if (e is not null)
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="TargetTypeNewArgument":::
 
-此功能还有一个不错的用途是，将其与仅限 init 的属性组合使用来初始化新对象。 `new` 中的括号是可选的：
+此功能还有一个不错的用途是，将其与仅限 init 的属性组合使用来初始化新对象：
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="InitWeatherStation":::
 
@@ -228,6 +229,8 @@ if (e is not null)
 从 C# 9.0 开始，可将 `static` 修饰符添加到 Lambda 表达式或匿名方法。 静态 Lambda 表达式类似于 `static` 局部函数：静态 Lambda 或匿名函数无法捕获局部变量或实例状态。 `static` 修饰符可防止意外捕获其他变量。
 
 协变返回类型为替代函数的返回类型提供了灵活性。 替代的虚函数可返回从基类方法中声明的返回类型派生的类型。 这对于记录和其他支持虚拟克隆或工厂方法的类型很有用。
+
+此外，`foreach` 循环将识别并使用扩展方法 `GetEnumerator`，否则将满足 `foreach` 模式。 此更改意味着 `foreach` 与其他基于模式的构造（例如异步模式和基于模式的析构）一致。 实际上，此更改意味着可以为任何类型添加 `foreach` 支持。 在设计中，应将其限制为在枚举对象有意义时使用。
 
 接下来，可使用弃元作为 Lambda 表达式的参数。 这样可免于为参数命名，并且编译器也可避免使用它。 可将 `_` 用于任何参数。
 

@@ -2,12 +2,12 @@
 title: 加密中断性变更
 description: 列出 .NET Core 中与加密相关的中断性变更。
 ms.date: 04/22/2020
-ms.openlocfilehash: f7d580938fb7620728b8ff7f67412c9f5bbbb6c3
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 621a3dad28b67ee33056dce3df0379efaeb90776
+ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557993"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90065094"
 ---
 # <a name="cryptography-breaking-changes"></a>加密中断性变更
 
@@ -20,6 +20,7 @@ ms.locfileid: "88557993"
 | [EnvelopedCms 默认为 AES-256 加密](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
 | [RSAOpenSsl 密钥生成的最小大小已增加](#minimum-size-for-rsaopenssl-key-generation-has-increased) | 3.0 |
 | [.NET Core 3.0 倾向于使用 OpenSSL 1.1.x 而不是 OpenSSL 1.0.x](#net-core-30-prefers-openssl-11x-to-openssl-10x) | 3.0 |
+| [CryptoStream.Dispose 仅在写入时转换最终块](#cryptostreamdispose-transforms-final-block-only-when-writing) | 3.0 |
 | [已考虑 SignedCms.ComputeSignature 的布尔参数](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
 
 ## <a name="net-50"></a>.NET 5.0
@@ -43,6 +44,10 @@ ms.locfileid: "88557993"
 ***
 
 [!INCLUDE[.NET Core 3.0 prefers OpenSSL 1.1.x to OpenSSL 1.0.x](~/includes/core-changes/cryptography/3.0/net-core-3-0-prefers-openssl-1-1-x.md)]
+
+***
+
+[!INCLUDE [CryptoStream.Dispose transforms final block only when writing](~/includes/core-changes/cryptography/3.0/cryptography-cryptostream-dispose-final-block-write.md)]
 
 ***
 

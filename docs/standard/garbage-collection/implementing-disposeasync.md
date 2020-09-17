@@ -3,19 +3,19 @@ title: 实现 DisposeAsync 方法
 description: 了解如何实现 DisposeAsync 和 DisposeAsyncCore 方法来执行异步资源清理。
 author: IEvangelist
 ms.author: dapine
-ms.date: 08/25/2020
+ms.date: 09/10/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 268cea7584040ad92e2da75e5e03112480cda93c
-ms.sourcegitcommit: 2560a355c76b0a04cba0d34da870df9ad94ceca3
+ms.openlocfilehash: 88adf9e484baa0e65e2ff093b4649cf35b8c86dc
+ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/28/2020
-ms.locfileid: "89053173"
+ms.lasthandoff: 09/11/2020
+ms.locfileid: "90022904"
 ---
 # <a name="implement-a-disposeasync-method"></a>实现 DisposeAsync 方法
 
@@ -70,6 +70,18 @@ public async ValueTask DisposeAsync()
 :::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/disposeasync.cs":::
 
 前面的示例使用 <xref:System.Text.Json.Utf8JsonWriter>。 有关 `System.Text.Json` 的详细信息，请参阅[如何从 Newtonsoft.Json 迁移到 System.Text.Json](../serialization/system-text-json-migrate-from-newtonsoft-how-to.md)。
+
+## <a name="implement-both-dispose-and-async-dispose-patterns"></a>同时实现释放模式和异步释放模式
+
+可能需要同时实现 <xref:System.IDisposable> 和 <xref:System.IAsyncDisposable> 接口，尤其是当类范围包含这些实现的实例时。 这样做可确保你可以正确地级联清理调用。 下面是一个示例类，它实现两个接口并演示清理的正确指导。
+
+:::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/dispose-and-disposeasync.cs":::
+
+<xref:System.IDisposable.Dispose?displayProperty=nameWithType> 和 <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> 实现都是简单的样板代码。 `Dispose(bool)` 和 `DisposeAsyncCore()` 方法首先检查 `_disposed` 是否为 `true`，以及是否仅在其为 `false` 时运行。
+
+在 `Dispose(bool)` 重载方法中，如果 <xref:System.IDisposable> 实例不为 `null`，则有条件地将其释放。 <xref:System.IAsyncDisposable> 实例被强制转换为 <xref:System.IDisposable>，如果该实例也不为 `null`，也将被释放。 然后，将这两个实例都分配给 `null`。
+
+使用 `DisposeAsyncCore()` 方法时，遵循相同的逻辑方法。 如果 <xref:System.IAsyncDisposable> 实例不为 `null`，则等待其对 `DisposeAsync().ConfigureAwait(false)` 的调用。 如果 <xref:System.IDisposable> 实例也是 <xref:System.IAsyncDisposable> 的实现，也将其异步释放。 然后，将这两个实例都分配给 `null`。
 
 ## <a name="using-async-disposable"></a>使用异步释放
 

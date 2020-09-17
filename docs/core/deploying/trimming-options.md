@@ -4,16 +4,16 @@ description: 了解如何控制自包含应用的剪裁。
 author: sbomer
 ms.author: svbomer
 ms.date: 08/25/2020
-ms.openlocfilehash: 42e98f9ede004f06221d2df5ecd076500061e37d
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 89bd195a97c2f1bbbba9199fea51c917c4e4836b
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465411"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515827"
 ---
 # <a name="trimming-options"></a>剪裁选项
 
-以下 MSBuild 属性和项会影响[剪裁的独立部署](trim-self-contained.md)行为。 一些选项提及 `ILLink`，这是实现剪裁的基础工具的名称。 有关 `ILLink` 命令行工具的详细信息，请参阅 [illink 选项](https://github.com/mono/linker/blob/master/docs/illink-options.md)。
+以下 MSBuild 属性和项会影响[剪裁的独立部署](trim-self-contained.md)行为。 一些选项提及 `ILLink`，这是实现剪裁的基础工具的名称。 有关基础工具的详细信息，请参阅[链接器文档](https://github.com/mono/linker/tree/master/docs)。
 
 ## <a name="enable-trimming"></a>启用剪裁
 
@@ -129,3 +129,37 @@ ms.locfileid: "89465411"
     删除剪裁后的应用程序中的符号，包括嵌入的 PDB 和单独的 PDB 文件。 这同时适用于应用程序代码以及符号附带的任何依赖项。
 
 SDK 还可使用属性 `DebuggerSupport` 来禁用调试器支持。 禁用调试器支持时，剪裁将自动删除符号（`TrimmerRemoveSymbols` 将默认为 true）。
+
+## <a name="trimming-framework-library-features"></a>剪裁框架库功能
+
+框架库的一些功能区域随附有链接器指令，这些链接器指令可以删除已禁用功能的代码。
+
+- `<DebuggerSupport>false</DebuggerSupport>`
+
+    删除代码可提供更佳的调试体验。 此操作也会[删除符号](#removing-symbols)。
+
+- `<EnableUnsafeBinaryFormatterSerialization>false</EnableUnsafeBinaryFormatterSerialization>`
+
+    删除 BinaryFormatter 序列化支持。 有关详细信息，请参阅 [BinaryFormatter 序列化方法已过时](../compatibility/corefx.md#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps)。
+
+- `<EnableUnsafeUTF7Encoding>false</EnableUnsafeUTF7Encoding>`
+
+    删除不安全的 UTF-7 编码代码。 有关详细信息，请参阅 [UTF-7 代码路径已过时](../compatibility/corefx.md#utf-7-code-paths-are-obsolete)。
+
+- `<EventSourceSupport>false</EventSourceSupport>`
+
+    删除与 EventSource 相关的代码或逻辑。
+
+- `<HttpActivityPropagationSupport>false</HttpActivityPropagationSupport>`
+
+    删除与 System.Net.Http 的诊断支持相关的代码。
+
+- `<InvariantGlobalization>true</InvariantGlobalization>`
+
+    删除全球化特定的代码和数据。 有关详细信息，请参阅[固定模式](../run-time-config/globalization.md#invariant-mode)。
+
+- `<UseSystemResourceKeys>true</UseSystemResourceKeys>`
+
+    删除 `System.*` 程序集的异常消息。 当 `System.*` 程序集中引发异常时，该消息将是简化的资源 ID，而不是完整的消息。
+
+ 这些属性将导致剪裁相关代码，同时还将通过 [runtimeconfig](../run-time-config/index.md) 文件禁用功能。 有关这些属性（包括相应的 runtimeconfig 选项）的详细信息，请参阅[功能切换](https://github.com/dotnet/runtime/blob/master/docs/workflow/trimming/feature-switches.md)。 某些 SDK 可能具有这些属性的默认值。

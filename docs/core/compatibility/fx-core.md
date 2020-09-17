@@ -1,18 +1,18 @@
 ---
 title: 从 .NET Framework 到 .NET Core 的中断性变更
 titleSuffix: ''
-description: 列出了从 .NET Framework 到 .NET Core 的中断性变更。
+description: 列出了从 .NET Framework 到 .NET Core 1.0 - 3.1 的中断性变更。
 ms.date: 05/05/2020
-ms.openlocfilehash: e9fa37dba89bbd6c4829614c27cb66206069fa9b
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 5904a359813b6d07bd2a27d882ade4395efe3256
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414445"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656361"
 ---
 # <a name="breaking-changes-for-migration-from-net-framework-to-net-core"></a>从 .NET Framework 迁移到 .NET Core 的中断性变更
 
-若要将应用从 .NET Framework 迁移到 .NET Core，本文中列出的中断性变更可能会影响你。 中断性变更按类别进行分组，并且在这些类别中按引入的 .NET Core 版本进行分组。
+若要将应用从 .NET Framework 迁移到 .NET Core 1.0 至 3.1，本文中列出的中断性变更可能会影响你。 中断性变更按类别进行分组，并且在这些类别中按引入的 .NET Core 版本进行分组。
 
 > [!NOTE]
 > 本文不是 .NET Framework 与 .NET Core 之间的中断性变更的完整列表。 在我们发现最重要的中断性变更时，会将其添加到此处。
@@ -72,17 +72,10 @@ ms.locfileid: "89414445"
 ## <a name="networking"></a>网络
 
 - [WebClient.CancelAsync 并不总是立即取消](#webclientcancelasync-doesnt-always-cancel-immediately)
-- [Cookie 路径处理现在符合 RFC 6265](#cookie-path-handling-now-conforms-to-rfc-6265)
 
 ### <a name="net-core-20"></a>.NET Core 2.0
 
 [!INCLUDE [behavior-change-webclient-cancelasync](../../../includes/core-changes/networking/2.0/behavior-change-webclient-cancelasync.md)]
-
-***
-
-### <a name="net-50"></a>.NET 5.0
-
-[!INCLUDE [cookie-path-conforms-to-rfc6265](../../../includes/core-changes/networking/5.0/cookie-path-conforms-to-rfc6265.md)]
 
 ***
 

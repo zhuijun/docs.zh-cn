@@ -4,12 +4,12 @@ description: .NET Core SDK 可以理解的 MSBuild 属性和项的引用。
 ms.date: 02/14/2020
 ms.topic: reference
 ms.custom: updateeachrelease
-ms.openlocfilehash: 39cbd18121d2b8659b2f5270f39624798f4ebbdc
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: c1093a0acd5b75ae6478767d690966a30fe84a31
+ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810516"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "89656257"
 ---
 # <a name="msbuild-reference-for-net-core-sdk-projects"></a>.NET Core SDK 项目的 MSBuild 引用
 
@@ -26,7 +26,7 @@ ms.locfileid: "88810516"
 
 ### <a name="targetframework"></a>TargetFramework
 
-`TargetFramework` 属性指定应用的目标框架版本。 有关有效的目标框架名字对象的列表，请参阅 [SDK 样式项目中的目标框架](../../standard/frameworks.md#supported-target-framework-versions)。
+`TargetFramework` 属性指定应用的目标框架版本。 有关有效的目标框架名字对象的列表，请参阅 [SDK 样式项目中的目标框架](../../standard/frameworks.md#supported-target-frameworks)。
 
 ```xml
 <PropertyGroup>
@@ -38,7 +38,7 @@ ms.locfileid: "88810516"
 
 ### <a name="targetframeworks"></a>TargetFrameworks
 
-如果希望应用面向多个平台，请使用 `TargetFrameworks` 属性。 有关有效的目标框架名字对象的列表，请参阅 [SDK 样式项目中的目标框架](../../standard/frameworks.md#supported-target-framework-versions)。
+如果希望应用面向多个平台，请使用 `TargetFrameworks` 属性。 有关有效的目标框架名字对象的列表，请参阅 [SDK 样式项目中的目标框架](../../standard/frameworks.md#supported-target-frameworks)。
 
 > [!NOTE]
 > 如果指定了 `TargetFramework`（单数），则忽略此属性。
@@ -188,9 +188,27 @@ ms.locfileid: "88810516"
 | `5.0` | 即使有较新的规则可用，也会使用为 .NET 5.0 版本启用的规则集。 |
 | `5` | 即使有较新的规则可用，也会使用为 .NET 5.0 版本启用的规则集。 |
 
+### <a name="analysismode"></a>AnalysisMode
+
+从 .NET 5.0 RC2 开始，.NET SDK 附带了所有[“CA”代码质量规则](/visualstudio/code-quality/code-analysis-for-managed-code-warnings)。 默认情况下，只有[一些规则作为生成警告启用](../../fundamentals/productivity/code-analysis.md#enabled-rules)。 `AnalysisMode` 属性允许自定义默认启用的一组规则。 可以切换到更主动的（选择退出）分析模式，也可以切换到更保守的（选择加入）分析模式。 例如，如果要作为生成警告默认启用所有规则，请将值设置为 `AllEnabledByDefault`。
+
+```xml
+<PropertyGroup>
+  <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+</PropertyGroup>
+```
+
+下表显示可用的选项。
+
+| 值 | 含义 |
+|-|-|
+| `Default` | 默认模式，其中某些规则作为生成警告启用，某些规则作为 Visual Studio IDE 建议启用，其余规则被禁用。 |
+| `AllEnabledByDefault` | 主动或选择退出模式，默认情况下所有规则都作为生成警告启用。 可以选择[选择退出](../../fundamentals/productivity/configure-code-analysis-rules.md)各条规则，以禁用它们。 |
+| `AllDisabledByDefault` | 保守或选择加入模式，默认情况下所有规则都处于禁用状态。 可以选择[选择加入](../../fundamentals/productivity/configure-code-analysis-rules.md)各条规则，以启用它们。 |
+
 ### <a name="codeanalysistreatwarningsaserrors"></a>CodeAnalysisTreatWarningsAsErrors
 
-`CodeAnalysisTreatWarningsAsErrors` 属性可配置是否应将代码分析警告视为警告并中断生成。 如果在生成项目时使用 `-warnaserror` 标志，则 [.NET 代码分析](../../fundamentals/productivity/code-analysis.md)警告也会被视为错误。 如果只想将编译器警告视为错误，则可在项目文件中将 `CodeAnalysisTreatWarningsAsErrors` MSBuild 属性设置为 `false`。
+`CodeAnalysisTreatWarningsAsErrors` 属性可配置是否应将代码质量分析警告 (CAxxxx) 视为警告并中断生成。 如果在生成项目时使用 `-warnaserror` 标志，则 [.NET 代码质量分析](../../fundamentals/productivity/code-analysis.md#code-quality-analysis)警告也会被视为错误。 如果不希望将代码质量分析警告视为错误，可以在项目文件中将 `CodeAnalysisTreatWarningsAsErrors` MSBuild 属性设置为 `false`。
 
 ```xml
 <PropertyGroup>
@@ -200,7 +218,7 @@ ms.locfileid: "88810516"
 
 ### <a name="enablenetanalyzers"></a>EnableNETAnalyzers
 
-默认情况下，为面向 .NET 5.0 或更高版本的项目启用 [.NET 代码分析](../../fundamentals/productivity/code-analysis.md)。 可通过将 `EnableNETAnalyzers` 属性设置为 true，来为面向 .NET 早期版本的项目启用 .NET 代码分析。 若要禁用任何项目中的代码分析，可将此属性设置为 `false`。
+默认情况下，为面向 .NET 5.0 或更高版本的项目启用 [.NET 代码质量分析](../../fundamentals/productivity/code-analysis.md#code-quality-analysis)。 可通过将 `EnableNETAnalyzers` 属性设置为 `true`，来为面向 .NET 早期版本的项目启用 .NET 代码分析。 若要禁用任何项目中的代码分析，可将此属性设置为 `false`。
 
 ```xml
 <PropertyGroup>
@@ -210,6 +228,18 @@ ms.locfileid: "88810516"
 
 > [!TIP]
 > 有关面向 .NET 5.0 之前的 .NET 版本的项目，启用 .NET 代码分析的另一种方法是将 [AnalysisLevel](#analysislevel) 属性设置为 `latest`。
+
+### <a name="enforcecodestyleinbuild"></a>EnforceCodeStyleInBuild
+
+对于所有 .NET 项目的版本，[.NET 代码样式分析](../../fundamentals/productivity/code-analysis.md#code-style-analysis)默认处于禁用状态。 通过将 `EnforceCodeStyleInBuild` 属性设置为 `true`，可以为 .NET 项目启用代码样式分析。
+
+```xml
+<PropertyGroup>
+  <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+</PropertyGroup>
+```
+
+生成和报告违规时将执行[配置](../../fundamentals/productivity/code-analysis.md#code-style-analysis)为警告或错误的所有代码样式规则。
 
 ## <a name="run-time-configuration-properties"></a>运行时配置属性
 
@@ -327,7 +357,7 @@ ms.locfileid: "88810516"
 
 使用 `AssetTargetFallback` 属性，可以为项目引用和 NuGet 包指定其他兼容的框架版本。 例如，如果使用 `PackageReference` 指定包依赖项，但该包不包含与项目的 `TargetFramework` 兼容的资源，则可使用 `AssetTargetFallback` 属性。 使用 `AssetTargetFallback` 中指定的每个目标框架重新检查引用包的兼容性。
 
-可以将 `AssetTargetFallback` 属性设置为一个或多个[目标框架版本](../../standard/frameworks.md#supported-target-framework-versions)。
+可以将 `AssetTargetFallback` 属性设置为一个或多个[目标框架版本](../../standard/frameworks.md#supported-target-frameworks)。
 
 ```xml
 <PropertyGroup>

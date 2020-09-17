@@ -4,12 +4,12 @@ description: 了解 .NET API 分析器如何有助于检测弃用的 API 和平�
 author: oliag
 ms.date: 02/20/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: e214c91f2beebc7f3b3324f4879deba9a5623f86
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8da4b2add206daa431124a7d24efc2676cbcaa69
+ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78156129"
+ms.lasthandoff: 09/09/2020
+ms.locfileid: "89598093"
 ---
 # <a name="net-api-analyzer"></a>.NET API 分析器
 
@@ -54,32 +54,32 @@ API 分析器使用 API 专用错误代码，这些代码以 DE（全称是“De
 
 如果代码使用了弃用的 API（如 <xref:System.Net.WebClient>），API 分析器便会使用绿色波浪线突出显示它。 如果将鼠标悬停在 API 调用之上，就会看到包含 API 弃用相关信息的灯泡，如下面的示例所示：
 
-![“显示绿色波浪线且左侧有灯泡的 WebClient API 屏幕截图”](media/api-analyzer/green-squiggle.jpg)
+![显示绿色波浪线且左侧有灯泡的 WebClient API 的屏幕截图。](media/api-analyzer/green-squiggle.jpg)
 
 弃用的 API 每出现一次，“错误列表”  窗口中都会显示具有唯一 ID 的警告，如下面的示例所示 (`DE004`)：
 
-![“显示警告 ID 和说明的‘错误列表’窗口屏幕截图”](media/api-analyzer/warnings-id-and-descriptions.jpg "包含警告的错误列表窗口。")
+![显示警告 ID 和说明的“错误列表”窗口的屏幕截图。](media/api-analyzer/warnings-id-and-descriptions.jpg "包含警告的错误列表窗口。")
 
 单击 ID 后，便会转到详细信息网页，其中说明了 API 遭弃用的原因，以及有关可用替换 API 的建议。
 
-可以禁止显示任何警告，具体方法是右键单击突出显示的成员，并选择“禁止 \<诊断 ID>”。 禁止显示警告的方法有两种：
+可以禁止显示任何警告，具体方法是右键单击突出显示的成员，然后选择“禁止\<diagnostic ID>”。 禁止显示警告的方法有两种：
 
 - [本地（在源中）](#suppress-warnings-locally)
 - [全局（在禁止文件中）](#suppress-warnings-globally)- 推荐方法
 
 ### <a name="suppress-warnings-locally"></a>在本地禁止显示警告
 
-若要在本地禁止显示警告，请右键单击要对其禁止显示警告的成员，再依次选择“快速操作和重构” > “禁止诊断 ID \<诊断 ID> > “在源中”。 此时，[#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) 警告预处理器指令会添加到源代码中定义的范围内：![“用 #pragma 警告禁用指令框定的代码屏幕截图”](media/api-analyzer/suppress-in-source.jpg)
+若要在本地禁止显示警告，请右键单击要对其禁止显示警告的成员，然后依次选择“快速操作和重构” > “禁止 诊断 ID \<diagnostic ID>” > “在源中”。 此时，[#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) 警告预处理器指令会添加到定义的范围内的源代码中：![用 #pragma warning disable 指令框定的代码的屏幕截图。](media/api-analyzer/suppress-in-source.jpg)
 
 ### <a name="suppress-warnings-globally"></a>在全局禁止显示警告
 
-若要在全局禁止显示警告，请右键单击要对其禁止显示警告的成员，再依次选择“快速操作和重构” > “禁止诊断 ID \<诊断 ID> > “在禁止文件中”。
+若要在全局禁止显示警告，请右键单击要对其禁止显示警告的成员，然后依次选择“快速操作和重构” > “禁止诊断 ID\<diagnostic ID>” > “在禁止文件中”。
 
-![“显示绿色波浪线且左侧有灯泡的 WebClient API 屏幕截图”](media/api-analyzer/suppress-in-sup-file.jpg)
+![右键单击菜单的屏幕截图，其中显示了用于在 Visual Studio 中禁止显示警告的选项。](media/api-analyzer/suppress-in-sup-file.jpg)
 
 首次禁止后，GlobalSuppressions.cs  文件会添加到项目中。 此时，新的全局禁止会追加到此文件中。
 
-![“显示绿色波浪线且左侧有灯泡的 WebClient API 屏幕截图”](media/api-analyzer/suppression-file.jpg)
+![解决方案资源管理器中 GlobalSuppressions.cs 文件的屏幕截图。](media/api-analyzer/suppression-file.jpg)
 
 全局禁止是推荐方法，可确保 API 使用跨项目保持一致。
 
@@ -103,7 +103,7 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 }
 ```
 
-可以每目标框架/操作系统进行有条件编译，但暂需要[手动](../frameworks.md#how-to-specify-target-frameworks)这样做。
+可以每目标框架/操作系统进行有条件编译，但暂需要[手动](../frameworks.md#how-to-specify-a-target-framework)这样做。
 
 ## <a name="supported-diagnostics"></a>支持的诊断
 
@@ -111,7 +111,7 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 
 - 使用抛出 <xref:System.PlatformNotSupportedException> 的 .NET Standard API (PC001)。
 - 使用 .NET Framework 4.6.1 不支持的 .NET Standard API (PC002)。
-- 使用 UWP 中不存在的本机 API (PC003)。
+- UWP (PC003) 中不存在的本机 API 的用法。
 - Delegate.BeginInvoke 和 EndInvoke APIs (PC004) 的用法。
 - 使用标记为弃用的 API (DEXXXX)。
 
@@ -123,7 +123,7 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 
 由用户确定应如何处理这些诊断，是生成警告、错误、建议，还是禁用诊断。 例如，作为架构师，可以确定应将兼容性问题处理为错误，对调用某些弃用的 API 生成警告，而对其他情况仅生成建议。 可以按诊断 ID 和按项目单独对此进行配置。 为此，请在“解决方案资源管理器”  中转到项目下的“依赖关系”  节点。 依次展开节点“依赖关系”   > “分析器”   > “Microsoft.DotNet.Analyzers.Compatibility”  。 右键单击诊断 ID，选择“设置规则集严重性”  ，并选中相应选项。
 
-![“显示诊断和‘设置规则集严重性’弹出对话框的解决方案资源管理器屏幕截图”](media/api-analyzer/disable-notifications.jpg)
+![“解决方案资源管理器”的屏幕截图，其中显示了诊断和带有规则集严重性的弹出对话框。](media/api-analyzer/disable-notifications.jpg)
 
 ## <a name="see-also"></a>另请参阅
 

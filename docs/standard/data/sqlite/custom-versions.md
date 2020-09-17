@@ -1,13 +1,13 @@
 ---
 title: 自定义 SQLite 版本
-ms.date: 05/14/2020
+ms.date: 09/04/2020
 description: 了解如何使用本机 SQLite 库的自定义版本。
-ms.openlocfilehash: 15db10db26bc7c5017313ca020a0e1e528ba207a
-ms.sourcegitcommit: 7b1497c1927cb449cefd313bc5126ae37df30746
+ms.openlocfilehash: fbf4b4cd33e6e890ce0c0cfe0b7688487b94b4a3
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/16/2020
-ms.locfileid: "83440832"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89516133"
 ---
 # <a name="custom-sqlite-versions"></a>自定义 SQLite 版本
 
@@ -22,6 +22,7 @@ ms.locfileid: "83440832"
 | [SQLitePCLRaw.bundle_e_sqlite3](https://www.nuget.org/packages/SQLitePCLRaw.bundle_e_sqlite3) | 在所有平台上提供一致版本的 SQLite。 包括 FTS4、FTS5、JSON1 和 R* 树扩展。 这是默认设置。 |
 | [SQLitePCLRaw.bundle_e_sqlcipher](https://www.nuget.org/packages/SQLitePCLRaw.bundle_e_sqlcipher) | 提供 `SQLCipher` 的非官方开放源代码内部版本。 |
 | [SQLitePCLRaw.bundle_green](https://www.nuget.org/packages/SQLitePCLRaw.bundle_green) | 与 `bundle_e_sqlite3` 相同，不同之处是在 iOS 上使用系统 SQLite 库。 |
+| [SQLitePCLRaw.bundle_sqlite3](https://www.nuget.org/packages/SQLitePCLRaw.bundle_sqlite3) | 使用系统 SQLite 库。 |
 | [SQLitePCLRaw.bundle_winsqlite3](https://www.nuget.org/packages/SQLitePCLRaw.bundle_winsqlite3) | 使用 `winsqlite3.dll`（Windows 10 上的系统 SQLite 库）。 |
 | [SQLitePCLRaw.bundle_zetetic](https://www.nuget.org/packages/SQLitePCLRaw.bundle_zetetic) | 使用 Zetetic 提供的官方 `SQLCipher` 内部版本（不包括在内）。 |
 

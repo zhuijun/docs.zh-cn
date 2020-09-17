@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
-ms.openlocfilehash: f01db9d7801d4b6f4c273a9cf82806acbb4828bb
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: dc3e235db49279691203a0db4d124239fb972c69
+ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89138132"
+ms.lasthandoff: 09/14/2020
+ms.locfileid: "90065224"
 ---
 # <a name="if-c-reference"></a>#if（C# 参考）
 
@@ -40,12 +40,12 @@ ms.locfileid: "89138132"
 
 使用 `#define` 创建的符号的作用域是在其中定义它的文件。
 
-此外，生成系统还会感知表示 SDK 样式项目中不同[目标框架](../../../standard/frameworks.md)的预定义预处理器符号。 在创建可以面向多个.NET 实现或版本的应用程序时，这些符号会很有用。
+此外，生成系统还会感知表示 SDK 样式项目中不同[目标框架](../../../standard/frameworks.md)的预定义预处理器符号。 在创建可以面向多个 .NET 版本的应用程序时，这些符号会很有用。
 
 [!INCLUDE [Preprocessor symbols](~/includes/preprocessor-symbols.md)]
 
 > [!NOTE]
-> 对于传统的 .NET Framework 项目，必须通过项目的属性页面在 Visual Studio 中为不同目标框架手动配置条件编译符号。
+> 对于传统的非 SDK 样式的项目，必须通过项目的属性页面在 Visual Studio 中为不同目标框架手动配置条件编译符号。
 
 其他预定义符号包括 DEBUG 和 TRACE 常量。 你可以使用 `#define` 替代项目的值集。 例如，会根据生成配置属性（“调试”或者“发布”模式）自动设置 DEBUG 符号。
 

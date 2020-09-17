@@ -3,13 +3,16 @@ title: 在 ASP.NET Core 应用中使用数据
 description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用 | 在 ASP.NET Core 应用中使用数据
 author: ardalis
 ms.author: wiwagn
-ms.date: 12/04/2019
-ms.openlocfilehash: b706332b28aec669a841f510046aa7b185be1373
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.date: 08/12/2020
+no-loc:
+- Blazor
+- WebAssembly
+ms.openlocfilehash: f2f2a4706ea4deba39465d8697f78be58506a09c
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80987837"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89515861"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>在 ASP.NET Core 应用中使用数据
 
@@ -55,7 +58,7 @@ public class CatalogContext : DbContext
 }
 ```
 
-DbContext 必须包含可接受 DbContextOptions 的构造函数，可将此参数传递给基础 DbContext 构造函数。 如果应用程序中只有一个 DbContext，可传递 DbContextOptions 的实例，但如果有多个 DbContext，则必须使用泛型 DbContextOptions\<T>，在 DbContext 类型中作为泛型参数传递。
+DbContext 必须包含可接受 DbContextOptions 的构造函数，可将此参数传递给基础 DbContext 构造函数。 如果应用程序中只有一个 DbContext，可传递 DbContextOptions 的实例，但如果有多个 DbContext，则必须使用泛型 DbContextOptions\<T> 类型，在 DbContext 类型中作为泛型参数传递。
 
 ### <a name="configuring-ef-core"></a>配置 EF Core
 
@@ -507,6 +510,52 @@ _cache.Get<CancellationTokenSource>("cts").Cancel();
 ```
 
 缓存可以显著提高从数据库重复请求相同值的网页的性能。 请确保在应用缓存前测量数据访问和页面性能，并且仅在发现需要改进性能时才应用缓存。 缓存使用 Web 服务器内存资源并增加应用程序的复杂性，因此，不要过早使用此技术进行优化。
+
+## <a name="getting-data-to-no-locblazor-no-locwebassembly-apps"></a>将数据获取到 Blazor WebAssembly 应用
+
+如果要构建使用 Blazor Server 的应用，则可以使用实体框架和其他直接数据访问技术，如本章前面的内容所述。 但是，如果要构建 Blazor WebAssembly 应用（例如其他 SPA 框架），则需要不同的数据访问策略。 通常，这些应用程序通过 Web API 终结点访问数据并与服务器交互。
+
+如果正在执行的数据或操作是敏感的，请务必查看[上一章](develop-asp-net-core-mvc-apps.md)中有关安全性的部分，并保护 API 免受未经授权的访问。
+
+可以在 BlazorAdmin 项目的 [eShopOnWeb 引用应用程序](https://github.com/dotnet-architecture/eShopOnWeb)中找到 Blazor WebAssembly 应用程序的示例。 该项目托管在 eShopOnWeb Web 项目中，并允许 Administrators 组中的用户管理商店中的产品。 可以在图 8-3 中看到该应用程序的屏幕截图。
+
+![eShopOnWeb 目录管理屏幕截图](./media/image8-3.jpg)
+
+图 8-3。 eShopOnWeb 目录管理屏幕截图。
+
+从 Blazor WebAssembly 应用中的 Web API 提取数据时，就像在任何 .NET 应用程序中操作一样，只需使用 `HttpClient` 的实例。 涉及的基本步骤包括创建要发送的请求（如果需要，通常是 POST 或 PUT 请求）、等待请求本身、验证状态代码，然后反序列化响应。 如果要对一组给定的 API 发出许多请求，最好封装 API 并集中配置 `HttpClient` 基址。 这样，如果需要在环境之间调整任何这些设置，只需在一个地方进行更改即可。 应在 `Program.Main` 中添加对此服务的支持：
+
+```csharp
+builder.Services.AddScoped(sp =>
+    new HttpClient
+    {
+        BaseAddress = new Uri(builder.HostEnvironment.BaseAddress)
+    });
+```
+
+如果需要安全地访问服务，则应访问安全令牌并配置 `HttpClient`，以在每次请求时将此令牌作为身份验证标头传递：
+
+```csharp
+_httpClient.DefaultRequestHeaders.Authorization =
+    new AuthenticationHeaderValue("Bearer", token);
+```
+
+只要没有在 `Transient` 的生命周期内将 `HttpClient` 添加到应用程序的服务中，就可以从注入了 `HttpClient` 的任何组件中完成此操作。 应用程序中对 `HttpClient` 的每个引用都引用相同的实例，因此只需在整个应用程序的一个组件流中对其进行更改。 共享组件（例如站点的主导航）是执行此身份验证检查（紧接着指定令牌）的理想位置。 如需详细了解此方法，请参阅 [eShopOnWeb 引用应用程序](https://github.com/dotnet-architecture/eShopOnWeb)的 `BlazorAdmin` 项目。
+
+与传统的 JavaScript SPA 相比，Blazor WebAssembly 的一个好处是不需要保持数据传输对象 (DTO) 的副本同步。 Blazor WebAssembly 项目和 Web API 项目可以在通用的共享项目中共享相同的 DTO。 这避免了开发 SPA 所涉及的一些麻烦。
+
+若要快速从 API 终结点获取数据，可以使用内置的帮助程序方法 `GetFromJsonAsync`。 也有用于 POST、PUT 等的类似方法。下面显示了如何使用 Blazor WebAssembly 应用中配置的 `HttpClient` 从 API 终结点获取 CatalogItem：
+
+```csharp
+var item = await _httpClient.GetFromJsonAsync<CatalogItem>($"catalog-items/{id}");
+```
+
+获得所需数据后，通常在本地跟踪更改。 如何希望更新后端数据存储，可调用其他 Web API，以实现此目的。
+
+**引用 - Blazor 数据**
+
+- 从 ASP.NET Core Blazor 调用 Web API
+  <https://docs.microsoft.com/aspnet/core/blazor/call-web-api>
 
 >[!div class="step-by-step"]
 >[上一页](develop-asp-net-core-mvc-apps.md)

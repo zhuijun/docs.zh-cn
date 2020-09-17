@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 61d4792b1f1b92dd59442ee38810da96c6cf63bd
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a44c3692dc9ed9b3de37955191edfb279403f152
+ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78241138"
+ms.lasthandoff: 09/08/2020
+ms.locfileid: "89516016"
 ---
 # <a name="tour-of-net"></a>.NET 教程
 
@@ -115,7 +115,7 @@ C#、Visual Basic 和 F# 支持本地*类型推理*。 类型推理是指编译�
 
 LINQ 是适用于 C# 和 Visual Basic 的强大功能集，可用于编写简单的声明性代码来处理数据。 数据可采用多种形式（例如，内存中对象、SQL 数据库或 XML 文档），但针对每个数据源编写的 LINQ 代码往往没有差别。
 
-若要了解详细信息并查看某部分示例，请参阅 [LINQ（语言集成查询）](using-linq.md)主题。
+若要了解详细信息并查看一些示例，请参阅 [LINQ（语言集成查询）概述](./linq/index.md)一文。
 
 ## <a name="native-interoperability"></a>本机互操作性
 
