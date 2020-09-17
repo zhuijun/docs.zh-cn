@@ -2,12 +2,12 @@
 title: 列表
 description: '了解 F # 列表，它是一个具有相同类型的有序、不可变的元素系列。'
 ms.date: 08/13/2020
-ms.openlocfilehash: 16d7195039d25cf63630f5cc3be6563b1bf45c44
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 567731eb57b77d60d3dd847630d5676e8d047d09
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559162"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720343"
 ---
 # <a name="lists"></a>列表
 
@@ -64,7 +64,7 @@ F # 中的列表实现为单独链接列表，这意味着仅访问列表头的�
 |[头](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Head)|`'T`|第一个元素。|
 |[Empty](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Empty)|`'T list`|返回适合类型的空列表的静态属性。|
 |[IsEmpty](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#IsEmpty)|`bool`|如果列表不包含任何元素，则为 `true`。|
-|[项目](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Item)|`'T`|位于指定索引处（从零开始）的元素。|
+|[Item](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Item)|`'T`|位于指定索引处（从零开始）的元素。|
 |[长度](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Length)|`int`|元素数量。|
 |[Tail](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-list-1.html#Tail)|`'T list`|不带第一个元素的列表。|
 
@@ -265,7 +265,7 @@ The first even value is at position 8.
 
 对应的解压缩版本（ [list.unzip3](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip3) [）采用](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip)元组的列表并返回元组中的列表，其中，第一个列表包含每个元组中的第一个元素，第二个列表包含每个元组的第二个元素，依此类推。
 
-下面的代码示例演示如何使用[列表。](https://msdn.microsoft.com/library/639db80c-41b5-45bb-a6b4-1eaa04d61d21)
+下面的代码示例演示如何使用[列表。](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip)
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet15.fs)]
 
@@ -276,7 +276,7 @@ The first even value is at position 8.
 [1; 3] [2; 4]
 ```
 
-下面的代码示例演示如何使用 [list.unzip3](https://msdn.microsoft.com/library/43078c77-32ec-4342-85b3-c31ccf984db4)。
+下面的代码示例演示如何使用 [list.unzip3](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html#unzip3)。
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lists/snippet16.fs)]
 

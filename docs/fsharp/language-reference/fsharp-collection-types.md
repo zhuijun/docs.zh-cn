@@ -2,36 +2,36 @@
 title: 集合类型
 description: '了解 F # 集合类型以及它们与集合类型 .NET 有何不同。'
 ms.date: 08/14/2020
-ms.openlocfilehash: 394f6bbaf58e7e8607abc3a0c20bbc2b1c9c3c8d
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 0b5be8f656d6728fe382b1944bda0a410a94d226
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656900"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720330"
 ---
-# <a name="f-collection-types"></a>F# 集合类型
+# <a name="f-collection-types"></a>F # 集合类型
 
 通过查看本主题，可以确定哪个 F # 集合类型最适合特定需求。 这些集合类型与 .NET 中的集合类型（如命名空间中的集合类型）不同，因为 `System.Collections.Generic` F # 集合类型是通过函数编程透视而不是面向对象的透视来设计的。 更具体地说，只有数组集合包含可变元素。 因此，在修改集合时，将创建已修改集合的实例，而不是更改原始集合。
 
 集合类型在存储对象的数据结构类型上也有所不同。 数据结构（如哈希表、链接列表和数组）具有不同的性能特征和一组不同的可用操作。
 
-## <a name="f-collection-types"></a>F# 集合类型
+## <a name="table-of-collection-types"></a>集合类型表
 
 下表显示 F # 集合类型。
 
-|类型|描述|相关链接|
+|类型|说明|相关链接|
 |----|-----------|-------------|
 |[列表](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharplist-1.html)|同一类型的有序、不可变的元素系列。 作为链接列表实现。|[列表](lists.md)<br /><br />[List 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-listmodule.html)|
-|[数组](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-array-1.html)|固定大小的、从零开始的可变连续数据元素集合，这些元素属于同一类型。|[数组](arrays.md)<br /><br />[Array 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html)<br /><br />[Array2D 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html)<br /><br />[Array3D 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array3dmodule.html)|
+|数组 |固定大小的、从零开始的可变连续数据元素集合，这些元素属于同一类型。|[数组](arrays.md)<br /><br />[Array 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-arraymodule.html)<br /><br />[Array2D 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array2dmodule.html)<br /><br />[Array3D 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-array3dmodule.html)|
 |[序列](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seq-1.html)|全部为一种类型的元素的逻辑系列。 如果有大量的有序数据集合，但不一定要使用所有元素，则序列会特别有用。 单个序列元素仅在需要时进行计算，因此，如果不是所有元素都使用，则序列可以比列表更好。 序列由 `seq<'T>` 类型表示，该类型是的别名 `IEnumerable<T>` 。 因此，实现的任何 .NET Framework 类型 `System.Collections.Generic.IEnumerable<'T>` 都可用作序列。|[序列](sequences.md)<br /><br />[Seq 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html)|
 |[Map](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpmap-2.html)|元素的不可变字典。 通过键访问元素。|[地图模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-mapmodule.html)|
 |[设置](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-fsharpset-1.html)|基于二进制树的不可变集，其中，比较是 F # 结构比较函数，这可能会 `System.IComparable` 对键值使用接口的实现。|[设置模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-setmodule.html)|
 
 ### <a name="table-of-functions"></a>函数表
 
-本节比较 F # 集合类型上可用的函数。 给定函数的计算复杂性，其中 N 是第一个集合的大小，M 是第二个集合的大小（如果有）。 短划线 (-) 指示此函数在集合上不可用。 由于序列被延迟计算，因此函数（如 Seq）可能是 O (1) 的，因为它在枚举时仍会影响序列的性能。
+本节比较 F # 集合类型上可用的函数。 给定函数的计算复杂性，其中 N 是第一个集合的大小，M 是第二个集合的大小（如果有）。 短划线 (-) 指示此函数在集合上不可用。 由于序列被延迟计算，因此函数（如） `Seq.distinct` 可能是 O (1) ，因为它仍会在枚举时影响序列性能。
 
-|函数|Array|列出|序列|映射|设置|描述|
+|函数|数组|列出|序列|映射|Set|说明|
 |--------|-----|----|--------|---|---|-----------|
 |append|O (N) |O (N) |O (N) |-|-|返回一个新集合，其中包含第一个集合的元素，后跟第二个集合的元素。|
 |add|-|-|-|O (日志 (N) # A3|O (日志 (N) # A3|返回添加了元素的新集合。|
@@ -90,11 +90,11 @@ ms.locfileid: "88656900"
 |list.map3|-|O (N) |-|-|-|生成一个集合，其元素是将给定函数同时应用于三个集合的对应元素的结果。|
 |mapi|O (N) |O (N) |O (N) |-|-|生成一个数组，其元素是将给定函数应用于数组的每个元素的结果。 传递给函数的整数索引指示所转换的元素的索引。|
 |list.mapi2|O (N) |O (N) |-|-|-|生成一个集合，其元素是将给定函数应用于两个集合的对应元素的结果，同时传递元素的索引。 两个输入数组的长度必须相同。|
-|最大值|O (N) |O (N) |O (N) |-|-|使用 [max](https://msdn.microsoft.com/library/9a988328-00e9-467b-8dfa-e7a6990f6cce) 运算符，返回集合中的最大元素。|
-|maxBy|O (N) |O (N) |O (N) |-|-|返回集合中的最大元素，并将 [max](https://msdn.microsoft.com/library/9a988328-00e9-467b-8dfa-e7a6990f6cce) 与函数结果一起使用。|
+|max|O (N) |O (N) |O (N) |-|-|使用 [max](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#max) 运算符，返回集合中的最大元素。|
+|maxBy|O (N) |O (N) |O (N) |-|-|返回集合中的最大元素，并将 [max](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#max) 与函数结果一起使用。|
 |Set.maxelement|-|-|-|-|O (日志 (N) # A3|根据用于集的排序返回集合中的最大元素。|
-|最小值|O (N) |O (N) |O (N) |-|-|使用 [min](https://msdn.microsoft.com/library/adea4fd7-bfad-4834-989c-7878aca81fed) 运算符，返回集合中的最小元素。|
-|minBy|O (N) |O (N) |O (N) |-|-|通过对函数结果使用 [min](https://msdn.microsoft.com/library/adea4fd7-bfad-4834-989c-7878aca81fed) 运算符，返回集合中的最小元素。|
+|分钟|O (N) |O (N) |O (N) |-|-|使用 [min](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#min) 运算符，返回集合中的最小元素。|
+|minBy|O (N) |O (N) |O (N) |-|-|通过对函数结果使用 [min](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#min) 运算符，返回集合中的最小元素。|
 |Set.minelement|-|-|-|-|O (日志 (N) # A3|根据用于集的排序返回集合中的最小元素。|
 |List.ofarray|-|O (N) |O(1)|O (N) |O (N) |创建一个集合，该集合包含与给定数组相同的元素。|
 |Array.oflist|O (N) |-|O(1)|O (N) |O (N) |创建一个集合，该集合包含与给定列表相同的元素。|
@@ -115,10 +115,10 @@ ms.locfileid: "88656900"
 |set|O(1)|-|-|-|-|将数组的元素设置为指定值。|
 |skip|-|-|O (N) |-|-|返回一个序列，该序列跳过基础序列的 N 个元素，然后生成序列的其余元素。|
 |skipWhile|-|-|O (N) |-|-|返回一个序列，该序列在循环访问时跳过基础序列的元素，同时给定谓词返回 `true` ，然后生成序列的其余元素。|
-|sort|O (N \* 日志 (n) # A3 average<br /><br />O (N ^ 2) 最坏情况|O (N \* 日志 (n) # A3|O (N \* 日志 (n) # A3|-|-|按元素值对集合进行排序。 使用 [compare](https://msdn.microsoft.com/library/295e1320-0955-4c3d-ac31-288fa80a658c)比较元素。|
-|sortBy|O (N \* 日志 (n) # A3 average<br /><br />O (N ^ 2) 最坏情况|O (N \* 日志 (n) # A3|O (N \* 日志 (n) # A3|-|-|使用给定的投影提供的键对给定列表进行排序。 使用 [compare](https://msdn.microsoft.com/library/295e1320-0955-4c3d-ac31-288fa80a658c)比较键。|
-|Array.sortinplace|O (N \* 日志 (n) # A3 average<br /><br />O (N ^ 2) 最坏情况|-|-|-|-|使用给定的比较函数就地改变数组的元素，从而对数组的元素进行排序。 使用 [compare](https://msdn.microsoft.com/library/295e1320-0955-4c3d-ac31-288fa80a658c)比较元素。|
-|Array.sortinplaceby|O (N \* 日志 (n) # A3 average<br /><br />O (N ^ 2) 最坏情况|-|-|-|-|通过就地改变数组的元素并对键使用给定的投影，对数组的元素进行排序。 使用 [compare](https://msdn.microsoft.com/library/295e1320-0955-4c3d-ac31-288fa80a658c)比较元素。|
+|sort|O (N \* 日志 (n) # A3 average<br /><br />O (N ^ 2) 最坏情况|O (N \* 日志 (n) # A3|O (N \* 日志 (n) # A3|-|-|按元素值对集合进行排序。 使用 [compare](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#compare)比较元素。|
+|sortBy|O (N \* 日志 (n) # A3 average<br /><br />O (N ^ 2) 最坏情况|O (N \* 日志 (n) # A3|O (N \* 日志 (n) # A3|-|-|使用给定的投影提供的键对给定列表进行排序。 使用 [compare](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#compare)比较键。|
+|Array.sortinplace|O (N \* 日志 (n) # A3 average<br /><br />O (N ^ 2) 最坏情况|-|-|-|-|使用给定的比较函数就地改变数组的元素，从而对数组的元素进行排序。 使用 [compare](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#compare)比较元素。|
+|Array.sortinplaceby|O (N \* 日志 (n) # A3 average<br /><br />O (N ^ 2) 最坏情况|-|-|-|-|通过就地改变数组的元素并对键使用给定的投影，对数组的元素进行排序。 使用 [compare](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-core-operators.html#compare)比较元素。|
 |Array.sortinplacewith|O (N \* 日志 (n) # A3 average<br /><br />O (N ^ 2) 最坏情况|-|-|-|-|通过就地改变数组的元素并使用给定的比较函数作为顺序对数组的元素进行排序。|
 |Array.sortwith|O (N \* 日志 (n) # A3 average<br /><br />O (N ^ 2) 最坏情况|O (N \* 日志 (n) # A3|-|-|-|使用给定的比较函数作为顺序并返回一个新集合，对集合中的元素进行排序。|
 |sub|O (N) |-|-|-|-|生成一个数组，该数组包含由起始索引和长度指定的给定子范围。|
@@ -144,7 +144,7 @@ ms.locfileid: "88656900"
 |zip|O (N) |O (N) |O (N) |-|-|将两个集合组合为一对的列表。 这两个列表的长度必须相等。|
 |list.zip3|O (N) |O (N) |O (N) |-|-|将这三个集合合并为一个三元组列表。 列表的长度必须相等。|
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [F# 类型](fsharp-types.md)
 - [F# 语言参考](index.md)

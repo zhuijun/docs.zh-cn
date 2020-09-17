@@ -2,16 +2,16 @@
 title: Web 服务协议互操作性指南
 ms.date: 03/30/2017
 ms.assetid: f2981678-ebdb-433d-899b-467f7df95fb2
-ms.openlocfilehash: 4169a796311c402a97358de5d52c52562b6ed357
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: f35ca629da65af749897d28d28808d06eced7aa8
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553169"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720109"
 ---
 # <a name="web-services-protocols-interoperability-guide"></a>Web 服务协议互操作性指南
 
-Windows Communication Foundation (WCF) 实现了许多 Web 服务协议。 这些协议中有许多都包含大量留给实施者来决定的选项和扩展点。 本主题提供 WCF 实现的 Web 服务协议的列表。 本节中的其他主题介绍每个受支持的协议的实现详细信息。
+Windows Communication Foundation (WCF) 实现了许多 Web 服务协议。 这些协议中有许多都包含大量留给实施者来决定的选项和扩展点。 本文提供 WCF 所实现的 Web 服务协议的列表。 本部分中的其他文章提供每个支持的协议的实现详细信息。
 
 ## <a name="web-services-protocols-implemented-by-wcf"></a>WCF 实现的 Web 服务协议
 
@@ -64,9 +64,9 @@ WCF 通过协定功能，通过通道和 Web 服务应用程序协议为 Web 服
 |WSS：X509 令牌配置文件 1.1|[Web Services Security X.509 Certificate Token Profile 1.1（Web 服务安全 X.509 证书令牌配置文件 1.1）](https://www.oasis-open.org/committees/download.php/16785/wss-v1.1-spec-os-x509TokenProfile.pdf)|
 |WSS：Kerberos 令牌配置文件 1.1|[Web Services Security Kerberos Token Profile 1.1（Web 服务安全 Kerberos 令牌配置文件 1.1）](https://www.oasis-open.org/committees/download.php/16788/wss-v1.1-spec-os-KerberosTokenProfile.pdf)|
 |WSS：SAML 1.1 令牌配置文件 1.1|[Web Services Security SAML Token Profile 1.1（Web 服务安全 SAML 令牌配置文件 1.1）](https://www.oasis-open.org/committees/download.php/16768/wss-v1.1-spec-os-SAMLTokenProfile.pdf)|
-|WS-Secure 对话|[Web 服务安全对话语言](https://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)|
+|WS-Secure 对话|[Web 服务安全对话语言](http://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)|
 |WS-Trust 1.4|[Web 服务信任语言（](https://docs.oasis-open.org/ws-sx/ws-trust/200802)|
-|WS-SecurityPolicy 2005/07|[Web 服务安全对话语言](https://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)<br /><br /> 已根据提交到 OASIS WS-SX 技术委员会的勘误表进行了修正。<br /><br /> [ws-sx 消息](https://lists.oasis-open.org/archives/ws-sx/200512/msg00017.html)|
+|WS-SecurityPolicy 2005/07|[Web 服务安全对话语言](http://specs.xmlsoap.org/ws/2005/02/sc/ws-secureconversation.pdf)<br /><br /> 已根据提交到 OASIS WS-SX 技术委员会的勘误表进行了修正。<br /><br /> [ws-sx 消息](https://lists.oasis-open.org/archives/ws-sx/200512/msg00017.html)|
 |WS-ReliableMessaging 1.1|[可靠消息传送协议版本 1.1](reliable-messaging-protocol-version-1-1.md)|
 
 <xref:System.ServiceModel.Channels.TransactionFlowBindingElement> 支持下表中的规范。
@@ -74,7 +74,7 @@ WCF 通过协定功能，通过通道和 Web 服务应用程序协议为 Web 服
 |规范/文档|链接|
 |-----------------------------|----------|
 |WS-Coordination|[Web Services Coordination（Web 服务协作）](/previous-versions/ms951231(v=msdn.10))|
-|WS-AtomicTransaction|[Web Services Atomic Transaction（Web 服务原子事务）](https://specs.xmlsoap.org/ws/2004/10/wsat/wsat.pdf)|
+|WS-AtomicTransaction|[Web Services Atomic Transaction（Web 服务原子事务）](http://specs.xmlsoap.org/ws/2004/10/wsat/wsat.pdf)|
 
 <xref:System.ServiceModel.Description.MetadataExporter>、<xref:System.ServiceModel.Description.MetadataImporter>、<xref:System.ServiceModel.Description.WsdlExporter>、<xref:System.ServiceModel.Description.WsdlImporter> 和 <xref:System.ServiceModel.Description.MetadataResolver> 类支持以下元数据规范：
 
@@ -90,7 +90,7 @@ WCF 通过协定功能，通过通道和 Web 服务应用程序协议为 Web 服
 
 - [WS-PolicyAttachment 1.2](https://www.w3.org/Submission/2006/SUBM-WS-PolicyAttachment-20060425/)
 
-- [WS-MetadataExchange 1.1](https://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange.pdf)
+- [WS-MetadataExchange 1.1](http://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange.pdf)
 
 - [WS-Transfer Get for metadata retrieval（面向元数据检索的 WS-Transfer Get）](https://www.w3.org/Submission/2006/SUBM-WS-Transfer-20060315/)
 

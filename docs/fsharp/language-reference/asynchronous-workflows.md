@@ -2,12 +2,12 @@
 title: 异步工作流
 description: '了解有关 F # 编程语言的支持，用于以异步方式执行计算，而无需阻塞其他工作的执行。'
 ms.date: 08/15/2020
-ms.openlocfilehash: ac727fc630f13db01da964131ab39dc242a12cd1
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 14146cc8a643f31831475075212cc06da5f8d6ff
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557706"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720265"
 ---
 # <a name="asynchronous-workflows"></a>异步工作流
 
@@ -44,7 +44,7 @@ let! (result2 : byte[])  = stream.AsyncRead(bufferSize)
 
 执行单个异步任务并返回结果的方法称为 *异步基元*，它们专用于与一起使用 `let!` 。 F # 核心库中定义了多个异步基元。 本模块中定义了两种 Web 应用程序方法 [`FSharp.Control.WebExtensions`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-webextensions.html) ： [`WebRequest.AsyncGetResponse`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-webextensions.html#AsyncGetResponse) 和 [`WebClient.AsyncDownloadString`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-webextensions.html#AsyncDownloadString) 。 在给定 URL 的情况下，这两个基元都从网页中下载数据。 `AsyncGetResponse` 生成一个 `System.Net.WebResponse` 对象，并 `AsyncDownloadString` 生成一个字符串，该字符串表示网页的 HTML。
 
-模块中包含了用于异步 i/o 操作的几个基元 [`FSharp.Control.CommonExtensions`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html) 。 类的这些扩展方法 `System.IO.Stream` 为 [`Stream.AsyncRead`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncRead) 和 [`Stream.AsyncWrite`](hhttps://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncWrite) 。
+模块中包含了用于异步 i/o 操作的几个基元 [`FSharp.Control.CommonExtensions`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html) 。 类的这些扩展方法 `System.IO.Stream` 为 [`Stream.AsyncRead`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncRead) 和 [`Stream.AsyncWrite`](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-commonextensions.html#AsyncWrite) 。
 
 还可以通过定义一个函数，该函数的完整体包含在异步块中来编写自己的异步基元。
 
@@ -66,4 +66,4 @@ let! (result2 : byte[])  = stream.AsyncRead(bufferSize)
 
 - [F# 语言参考](index.md)
 - [计算表达式](computation-expressions.md)
-- [Control Async 类](https://msdn.microsoft.com/visualfsharpdocs/conceptual/control.async-class-%5bfsharp%5d)
+- [Control Async 类](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-control-fsharpasync.html)

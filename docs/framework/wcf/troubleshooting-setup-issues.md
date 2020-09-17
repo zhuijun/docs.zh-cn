@@ -2,16 +2,16 @@
 title: 安装问题疑难解答
 ms.date: 03/30/2017
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-ms.openlocfilehash: 76d8752f8bcfcb94b77a60be60e13a66436e76b8
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: fb687e9975ab9ac763030f10d54c7744dc02c9e0
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90549648"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720447"
 ---
 # <a name="troubleshoot-setup-issues"></a>安装问题疑难解答
 
-本文介绍如何解决 Windows Communication Foundation (WCF) 设置问题。  
+本文介绍了如何对 Windows Communication Foundation (WCF) 安装问题进行故障排除。  
   
 ## <a name="some-windows-communication-foundation-registry-keys-are-not-repaired-by-performing-an-msi-repair-operation-on-the-net-framework-30"></a>有些 Windows Communication Foundation 注册表项无法通过在 .NET Framework 3.0 上执行 MSI 修复操作来修复  
  如果您删除下面的任何注册表项：  
@@ -28,8 +28,9 @@ ms.locfileid: "90549648"
   
  如果使用从**控制面板**中的 "**添加/删除程序**" 小程序启动的 .NET Framework 3.0 安装程序运行修复，则不会重新创建这些密钥。 若要重新正确创建这些项，用户必须卸载并重新安装 .NET Framework 3.0。  
   
-## <a name="wmi-service-corruption-blocks-installation-of-the-windows-communication-foundation-wmi-provider-during-installation-of-net-framework-30-package"></a>在安装 .NET Framework 3.0 软件包过程中 WMI Service Corruption 阻止 Windows Communication Foundation WMI 提供程序的安装  
- WMI Service Corruption 可能阻止 Windows Communication Foundation WMI 提供程序的安装。 在安装过程中，Windows Communication Foundation 安装程序无法使用 mofcomp.exe 组件注册 WCF .mof 文件。 下面列出了几个症状：  
+## <a name="wmi-service-corruption-blocks-installation-of-the-wmi-provider"></a>Wmi 服务损坏阻止安装 WMI 提供程序
+
+ 安装 .NET Framework 3.0 包时，WMI 服务损坏可能会阻止安装 Windows Communication Foundation WMI 提供程序。 在安装过程中，Windows Communication Foundation 安装程序无法使用*mofcomp.exe*组件注册该 WCF *。* 下面列出了几个症状：  
   
 1. .NET Framework 3.0 安装成功完成，但未注册 WCF WMI 提供程序。  
   
@@ -53,12 +54,13 @@ ms.locfileid: "90549648"
   
  若要解决前面说明的问题，必须按照以下步骤操作。  
   
-1. 运行 [WMI Diagnosis Utility](https://www.microsoft.com/download/details.aspx?id=7684) 以修复 WMI 服务。 有关使用此工具的详细信息，请参阅 [WMI Diagnosis Utility](/previous-versions/tn-archive/ff404265(v=msdn.10))。  
+1. 运行 WMI Diagnosis Utility 以修复 WMI 服务。 有关使用此工具的详细信息，请参阅 [WMI Diagnosis Utility](/previous-versions/tn-archive/ff404265(v%3dmsdn.10))。  
   
  使用**控制面板**中的 "**添加/删除程序**" 小程序修复 .NET Framework 3.0 安装，或卸载/重新安装 .NET Framework 3.0。  
   
-## <a name="repairing-net-framework-30-after-net-framework-35-installation-removes-configuration-elements-introduced-by-net-framework-35-in-machineconfig"></a>在安装 .NET Framework 3.5 后修复 .NET Framework 3.0 会移除 .NET Framework 3.5 在 machine.config 中引入的配置元素  
- 如果在安装 .NET Framework 3.5 后修复 .NET Framework 3.0，则会删除 machine.config 中 .NET Framework 3.5 引入的配置元素。 但是，web.config 保持不变。 解决方法是在此之后通过 ARP 修复 .NET Framework 3.5，或使用 [工作流服务注册工具 ( # A0) ](workflow-service-registration-tool-wfservicesreg-exe.md) 与交换机一起使用 `/c` 。  
+## <a name="repair-net-framework-30-after-net-framework-35-installation"></a>.NET Framework 3.5 安装后修复 .NET Framework 3。0
+
+ 如果在安装 .NET Framework 3.5 后修复 .NET Framework 3.0，则会删除 *machine.config* 中 .NET Framework 3.5 引入的配置元素。 但 *web.config* 文件将保持不变。 解决方法是在此之后通过 ARP 修复 .NET Framework 3.5，或使用 [工作流服务注册工具 ( # A0) ](workflow-service-registration-tool-wfservicesreg-exe.md) 与交换机一起使用 `/c` 。  
   
  [工作流服务注册工具 ( # A0) ](workflow-service-registration-tool-wfservicesreg-exe.md) 可在%Windir%\Microsoft.NET\framework\v3.5\ 或%windir%\microsoft.net\framework64\v3.5\ 中找到中找到  
   
@@ -67,8 +69,11 @@ ms.locfileid: "90549648"
   
  若要解决此问题，请使用 [工作流服务注册工具 ( 带有开关的 # A0) ](workflow-service-registration-tool-wfservicesreg-exe.md) `/c` 在计算机上正确配置 IIS 脚本映射。 [工作流服务注册工具 ( # A0) ](workflow-service-registration-tool-wfservicesreg-exe.md) 可在%Windir%\Microsoft.NET\framework\v3.5\ 或%windir%\microsoft.net\framework64\v3.5\ 中找到中找到  
   
-## <a name="could-not-load-type-systemservicemodelactivationhttpmodule-from-assembly-systemservicemodel-version-3000-cultureneutral-publickeytokenb77a5c561934e089"></a>未能从程序集 "System.servicemodel，Version 3.0.0.0，Culture = 中立，PublicKeyToken = b77a5c561934e089" 加载类型 "HttpModule"  
- 如果安装 .NET Framework 4 并启用 WCF HTTP 激活，则会发生此错误。 若要解决此问题，请从 Visual Studio 的开发人员命令提示中运行以下命令行：  
+## <a name="could-not-load-type-systemservicemodelactivationhttpmodule"></a>未能加载类型 "HttpModule"
+
+**未能从程序集 "System.servicemodel，Version 3.0.0.0，Culture = 中立，PublicKeyToken = b77a5c561934e089" 加载类型 "HttpModule"**
+
+ 如果安装 .NET Framework 4 并启用 WCF HTTP 激活，则会发生此错误。 若要解决此问题，请从 Visual Studio 的开发人员命令提示中运行以下命令：  
   
 ```console
 aspnet_regiis.exe -i -enable  

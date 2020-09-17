@@ -2,12 +2,12 @@
 title: 元组
 description: '了解 F # 元组，这是一组未命名但有序值，可能不同类型。'
 ms.date: 05/16/2016
-ms.openlocfilehash: 5d26fd5d7ec5b4939a895a6d2a6a0d7fc6c6c733
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 6f4adf7e10e22d8b7a8cf697baee15962adf3630
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86173284"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720356"
 ---
 # <a name="tuples"></a>元组
 
@@ -22,7 +22,7 @@ struct(element, ... ,element )
 
 ## <a name="remarks"></a>备注
 
-前面的语法中的每个*元素*可以是任何有效的 F # 表达式。
+前面的语法中的每个 *元素* 可以是任何有效的 F # 表达式。
 
 ## <a name="examples"></a>示例
 
@@ -36,7 +36,7 @@ struct(element, ... ,element )
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L27-L29)]
 
-还可以通过绑定，通过表达式外部的模式匹配析构元组 `match` `let` ：
+还可以通过绑定，通过表达式外部的模式匹配析构元组 `match`  `let` ：
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L34-L37)]
 
@@ -76,7 +76,7 @@ struct(element, ... ,element )
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/tuples/basic-examples.fsx#L90-L94)]
 
-使用元组作为参数将禁用 currying。 有关详细信息，请参阅[函数](./functions/index.md)中的 "参数的部分应用"。
+使用元组作为参数将禁用 currying。 有关详细信息，请参阅 [函数](./functions/index.md)中的 "参数的部分应用"。
 
 ## <a name="names-of-tuple-types"></a>元组类型的名称
 
@@ -126,11 +126,11 @@ let struct (newX, newY) = Example.AddOneToXAndY(struct (1, 2))
 
 本部分说明元组在编译时的形式。  除非目标 .NET Framework 3.5 或更低，否则此处不需要阅读此处的信息。
 
-元组将编译为多个泛型类型之一的对象，这些泛型类型都 `System.Tuple` 是在 arity 上重载的，或者是类型参数的数目。 当你从另一种语言（如 c # 或 Visual Basic）查看这些元组类型时，或者使用不能识别 F # 构造的工具时，该类型将显示在此窗体中。 `Tuple`类型是在 .NET Framework 4 中引入的。 如果以 .NET Framework 的早期版本为目标，则编译器将使用2.0 版本的 F # 核心库中的[系统版本。](https://msdn.microsoft.com/library/5ac7953d-acdc-4a58-bfb7-c1f6406c0fa3) 此库中的类型仅用于面向2.0、3.0 和3.5 版本的 .NET Framework 的应用程序。 类型转发用于确保 .NET Framework 2.0 和 .NET Framework 4 F # 组件之间的二进制兼容性。
+元组将编译为多个泛型类型之一的对象，这些泛型类型都 `System.Tuple` 是在 arity 上重载的，或者是类型参数的数目。 当你从另一种语言（如 c # 或 Visual Basic）查看这些元组类型时，或者使用不能识别 F # 构造的工具时，该类型将显示在此窗体中。 `Tuple`类型是在 .NET Framework 4 中引入的。 如果以 .NET Framework 的早期版本为目标，则编译器将使用 `System.Tuple` 2.0 版本的 F # 核心库中的版本。 此库中的类型仅用于面向2.0、3.0 和3.5 版本的 .NET Framework 的应用程序。 类型转发用于确保 .NET Framework 2.0 和 .NET Framework 4 F # 组件之间的二进制兼容性。
 
 ### <a name="compiled-form-of-struct-tuples"></a>结构元组的编译形式
 
- (例如) ，结构元组 `struct (x, y)` 在本质上不同于引用元组。  它们被编译到 <xref:System.ValueTuple> 类型中，由 arity 重载或类型参数的数目。  它们等效于[c # 7.0 元组](../../csharp/language-reference/builtin-types/value-tuples.md)和[Visual Basic 2017 元组](../../visual-basic/programming-guide/language-features/data-types/tuples.md)，并互操作双向。
+ (例如) ，结构元组 `struct (x, y)` 在本质上不同于引用元组。  它们被编译到 <xref:System.ValueTuple> 类型中，由 arity 重载或类型参数的数目。  它们等效于 [c # 7.0 元组](../../csharp/language-reference/builtin-types/value-tuples.md) 和 [Visual Basic 2017 元组](../../visual-basic/programming-guide/language-features/data-types/tuples.md)，并互操作双向。
 
 ## <a name="see-also"></a>另请参阅
 

@@ -2,12 +2,12 @@
 title: 查询表达式
 description: '了解 F # 编程语言中对 LINQ 的查询表达式支持。'
 ms.date: 08/15/2020
-ms.openlocfilehash: afcc6e92818b1648a210ad9cfc3f1dcfa46037b5
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: b2380bbc448aca06a40896582f3d4e7f701c6184
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88559058"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720473"
 ---
 # <a name="query-expressions"></a>查询表达式
 
@@ -45,7 +45,7 @@ query1
 
 在上面的代码示例中，查询表达式位于大括号中。 表达式中的代码含义为，返回查询结果中数据库的 Customers 表中的每个客户。 查询表达式返回实现和的类型 <xref:System.Linq.IQueryable%601> ， <xref:System.Collections.Generic.IEnumerable%601> 因此可以使用 [Seq 模块](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-collections-seqmodule.html) （如示例所示）来循环访问。
 
-每个计算表达式类型都是从生成器类生成的。 查询计算表达式的生成器类为 `QueryBuilder` 。 有关详细信息，请参阅 [计算表达式](computation-expressions.md) 和 [QueryBuilder 类](hhttps://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html)。
+每个计算表达式类型都是从生成器类生成的。 查询计算表达式的生成器类为 `QueryBuilder` 。 有关详细信息，请参阅 [计算表达式](computation-expressions.md) 和 [QueryBuilder 类](https://fsharp.github.io/fsharp-core-docs/reference/fsharp-linq-querybuilder.html)。
 
 ## <a name="query-operators"></a>查询运算符
 
