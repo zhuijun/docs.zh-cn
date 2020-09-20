@@ -30,6 +30,8 @@
   items:
     - name: ASP.NET Core
       href: aspnetcore.md
+    - name: 代码分析
+      href: code-analysis.md
     - name: Core .NET 库
       href: corefx.md
     - name: 密码

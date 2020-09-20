@@ -383,8 +383,6 @@ items:
         href: interop/
       - name: 非托管 API 参考
         href: unmanaged-api/
-      - name: XAML 服务
-        href: ../desktop-wpf/xaml-services/
   - name: 工具
     items:
       - name: 概述
