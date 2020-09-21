@@ -7,8 +7,8 @@ items:
     href: fundamentals/
   - name: .NET Framework 指南
     href: framework/
-  - name: .NET 桌面指南 - WPF
-    href: desktop-wpf/
+  - name: .NET 桌面指南
+    href: /dotnet/desktop/
   - name: C# 指南
     href: csharp/index.yml
   - name: F# 指南

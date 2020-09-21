@@ -696,11 +696,24 @@ items:
   - name: Microsoft 扩展
     items:
       - name: Configuration
-        href: /aspnet/core/fundamentals/configuration/
+        items:
+          - name: 概述
+            href: ../core/extensions/configuration.md
+            displayName: 'configuration,config,configuration sources,config sources'
+          - name: 配置提供程序
+            href: ../core/extensions/configuration-providers.md
+            displayName: 'configuration providers,config providers'
+          - name: 实现自定义配置提供程序
+            href: ../core/extensions/custom-configuration-provider.md
+            displayName: 'custom configuration,custom config,custom configuration provider,custom config provider'
       - name: 依赖关系注入
-        href: /aspnet/core/fundamentals/dependency-injection/
-      - name: 日志记录
-        href: /aspnet/core/fundamentals/logging/
+        href: /aspnet/core/fundamentals/dependency-injection
+      - name: 泛型主机
+        href: /aspnet/core/fundamentals/host/generic-host
+      - name: Logging
+        href: /aspnet/core/fundamentals/logging
+      - name: 选项模式
+        href: /aspnet/core/fundamentals/configuration/options
   - name: 数据访问
     items:
       - name: LINQ
