@@ -2,14 +2,17 @@
 title: NameOf 运算符
 description: 了解如何在 Visual Basic 中使用 NameOf 运算符
 ms.date: 10/27/2019
+f1_keywords:
+- NameOf
+- vb.NameOf
 helpviewer_keywords:
 - NameOf operator [Visual Basic]
-ms.openlocfilehash: e7dd55bfd98b34449b9f1a35375198598f57b46f
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 0e72c4cb0c10113e53067ea4a743ca5ee77bcc95
+ms.sourcegitcommit: 43ed174f085840ca18a791dc89fe833174da766d
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347022"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90828898"
 ---
 # <a name="nameof-operator---visual-basic"></a>NameOf 运算符-Visual Basic
 
@@ -48,9 +51,9 @@ Public Property Name As String
 End Property
 ```
 
-`NameOf` 运算符在 Visual Basic 14 及更高版本中可用。
+`NameOf`操作员 Visual Basic 14 及更高版本中可用。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Visual Basic 语言参考](../index.md)
-- [运算符（Visual Basic）](index.md)
+- [运算符 (Visual Basic)](index.md)
