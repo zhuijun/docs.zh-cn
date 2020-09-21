@@ -1,14 +1,14 @@
 ---
-ms.openlocfilehash: 2094da7ec94028c112d6683620ac1146a1544dab
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 62a5f56bb7fffc453623a2c3202f288a19110158
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84446962"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539444"
 ---
 ### <a name="localization-pubternal-apis-removed"></a>本地化：已删除“Pubternal”API
 
-为更好地维护 ASP.NET Core 的 public API 面，已删除部分 :::no-loc text="\"pubternal\""::: 本地化 API。 :::no-loc text="\"pubternal\""::: API 具有 `public` 访问修饰符，在指示 [internal](/dotnet/csharp/language-reference/keywords/internal) 意向的命名空间中定义。
+为更好地维护 ASP.NET Core 的 public API 面，已删除部分 :::no-loc text="\"pubternal\""::: 本地化 API。 :::no-loc text="\"pubternal\""::: API 具有 `public` 访问修饰符，在指示 [internal](../../../../docs/csharp/language-reference/keywords/internal.md) 意向的命名空间中定义。
 
 有关讨论，请参阅 [dotnet/aspnetcore#22291](https://github.com/dotnet/aspnetcore/issues/22291)。
 

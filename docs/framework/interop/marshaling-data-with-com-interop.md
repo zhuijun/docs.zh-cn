@@ -5,11 +5,12 @@ ms.date: 09/07/2017
 helpviewer_keywords:
 - COM interop, data marshaling
 - marshaling data, COM interop
-ms.openlocfilehash: eedfb60a75e2fe5fafdaa786dbb54adddf28400e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 94149e0c444cad7e32f959eaedd55bf14acb1ecb
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621504"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547839"
 ---
 # <a name="marshaling-data-with-com-interop"></a>用 COM 互操作对数据进行封送处理
 COM 互操作同时对在托管代码中使用 COM 对象和向 COM 公开托管对象提供支持。 对于将数据封送到 COM 和从 COM 中封送数据的支持是广泛的，并几乎总是提供正确的封送行为。  
@@ -29,23 +30,23 @@ COM 互操作同时对在托管代码中使用 COM 对象和向 COM 公开托管
  描述如何将托管 DCOM 代码迁移到 WCF，以得到最安全的解决方案。  
   
 ## <a name="related-sections"></a>相关章节  
- [COM 数据类型](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))  
+ [COM 数据类型](/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))  
  提供相应的托管和非托管数据类型。  
   
- [自定义 COM 可调用包装器](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3bwc828w(v=vs.100))  
+ [自定义 COM 可调用包装器](/previous-versions/dotnet/netframework-4.0/3bwc828w(v=vs.100))  
  描述如何在设计时使用 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性显式封送数据类型。  
   
- [自定义运行时可调用包装器](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))  
+ [自定义运行时可调用包装器](/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))  
  描述如何调整互操作程序集中类型的封送行为以及如何以手动方式定义 COM 类型。  
   
- [高级 COM 互操作性](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))  
+ [高级 COM 互操作性](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))  
  提供一些链接，指向关于将 COM 组件并入 .NET Framework 应用程序中的详细信息。  
   
- [有关从程序集转换到类型库的摘要](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))  
+ [有关从程序集转换到类型库的摘要](/previous-versions/dotnet/netframework-4.0/xk1120c3(v=vs.100))  
  描述从程序集到类型库的导出转换过程。  
   
- [有关从类型库转换到程序集的摘要](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))  
+ [有关从类型库转换到程序集的摘要](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))  
  描述从类型库到程序集的导入转换过程。  
   
- [使用泛型类型进行交互操作](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))  
+ [使用泛型类型进行交互操作](/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))  
  描述在使用用于 COM 互操作性的泛型类型时，哪些操作受支持。

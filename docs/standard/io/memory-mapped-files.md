@@ -10,15 +10,15 @@ helpviewer_keywords:
 - memory-mapped files
 - inter-process communication
 ms.assetid: a483d1b5-64aa-45b6-86ef-11b859f7f02e
-ms.openlocfilehash: db63c15357b0670c55b1174b91b02e2f49a0c4c1
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 74d821aff8308618f7c0efeb1b453db8214b877e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84661974"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555941"
 ---
 # <a name="memory-mapped-files"></a>内存映射文件
-内存映射文件包含虚拟内存中文件的内容。 借助文件和内存空间之间的这种映射，应用（包括多个进程）可以直接对内存执行读取和写入操作，从而修改文件。 从 .NET Framework 4 开始，可以使用托管代码访问内存映射文件，就像本机 Windows 函数访问内存映射文件（如[管理内存映射文件](https://docs.microsoft.com/previous-versions/ms810613(v=msdn.10))所述）一样。  
+内存映射文件包含虚拟内存中文件的内容。 借助文件和内存空间之间的这种映射，应用（包括多个进程）可以直接对内存执行读取和写入操作，从而修改文件。 从 .NET Framework 4 开始，可以使用托管代码访问内存映射文件，就像本机 Windows 函数访问内存映射文件（如[管理内存映射文件](/previous-versions/ms810613(v=msdn.10))所述）一样。  
   
  内存映射文件分为两种类型：  
   

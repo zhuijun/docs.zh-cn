@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 1fb39621-1738-49b1-a1b3-8587f109123f
-ms.openlocfilehash: 1252e214be03f8a180fadb7667ee59f36a862040
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: e4d7c96cdcfd7751e80703fe4c5a56e66f4c18c6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558421"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555349"
 ---
 # <a name="constants-c-programming-guide"></a>常量（C# 编程指南）
 常量是不可变的值，在编译时是已知的，在程序的生命周期内不会改变。 常量使用 [const](../../language-reference/keywords/const.md) 修饰符声明。 仅 C# [内置类型](../../language-reference/builtin-types/built-in-types.md)（不包括 <xref:System.Object?displayProperty=nameWithType>）可声明为 `const`。 用户定义的类型（包括类、结构和数组）不能为 `const`。 使用 [readonly](../../language-reference/keywords/readonly.md) 修饰符创建在运行时一次性（例如在构造函数中）初始化的类、结构或数组，此后不能更改。  
@@ -53,4 +53,4 @@ ms.locfileid: "88558421"
 - [属性](./properties.md)
 - [类型](../types/index.md)
 - [readonly](../../language-reference/keywords/readonly.md)
-- [C# 不可变性（第一部分）：不可变性种类](https://docs.microsoft.com/archive/blogs/ericlippert/immutability-in-c-part-one-kinds-of-immutability)
+- [C# 不可变性（第一部分）：不可变性种类](/archive/blogs/ericlippert/immutability-in-c-part-one-kinds-of-immutability)

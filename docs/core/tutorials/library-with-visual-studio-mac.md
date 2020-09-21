@@ -2,12 +2,12 @@
 title: 使用 Visual Studio for Mac 创建 .NET Standard 类库
 description: 了解如何使用 Visual Studio for Mac 创建 .NET Standard 类库。
 ms.date: 06/08/2020
-ms.openlocfilehash: 8e1e4ca3bc1b12d889b847d80318f3d6cd1bbe46
-ms.sourcegitcommit: 3492dafceb5d4183b6b0d2f3bdf4a1abc4d5ed8c
+ms.openlocfilehash: 433f6e0e2d784878c9a1616139b39ec56d695bcf
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/16/2020
-ms.locfileid: "86415998"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537634"
 ---
 # <a name="tutorial-create-a-net-standard-library-using-visual-studio-for-mac"></a>教程：使用 Visual Studio for Mac 创建 .NET Standard 库
 
@@ -26,7 +26,7 @@ ms.locfileid: "86415998"
 * [安装 Visual Studio for Mac 版本 8.6 或更高版本](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)。 选择用于安装 .NET Core 的选项。 安装 Xamarin 对于 .NET Core 开发而言是可选项。 有关更多信息，请参见以下资源：
 
   * [教程：安装 Visual Studio for Mac](/visualstudio/mac/installation)。
-  * [支持的 macOS 版本](../install/dependencies.md?pivots=os-macos)。
+  * [支持的 macOS 版本](../install/macos.md)。
   * [Visual Studio for Mac 支持的 .NET Core 版本](/visualstudio/mac/net-core-support)。
 
 ## <a name="create-a-solution-with-a-class-library-project"></a>创建包含类库项目的解决方案

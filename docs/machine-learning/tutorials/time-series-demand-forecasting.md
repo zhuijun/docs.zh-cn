@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: d93bdee8d5a057be0f405fe4334d7edbdc0649ec
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 51041f5a9076ad360a84cc39704aedb50b77d40a
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174401"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679385"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>教程：使用时序分析和 ML.NET 预测自行车租赁服务需求
 
@@ -73,7 +73,7 @@ ms.locfileid: "86174401"
 
 原始数据集映射到 SQL Server 数据库中具有以下架构的数据库表。
 
-```SQL
+```sql
 CREATE TABLE [Rentals] (
     [RentalDate] DATE NOT NULL,
     [Year] INT NOT NULL,
@@ -149,7 +149,7 @@ CREATE TABLE [Rentals] (
 
     [!code-csharp [LoadData](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L31)]
 
-1. 此数据集包含两年的重要数据。 第一年的数据仅用于培训，第二年的数据用于将实际值与模型生成的预测进行比较。 使用 [`FilterRowsByColumn`](xref:Microsoft.ML.DataOperationsCatalog.FilterRowsByColumn*) 转换筛选数据。
+1. 此数据集包含两年的重要数据。 第一年的数据仅用于培训，第二年的数据用于将实际值与模型生成的预测进行比较。 使用 [`FilterRowsByColumn`](xref:Microsoft.ML.DataOperationsCatalog.FilterRowsByColumn%2A) 转换筛选数据。
 
     [!code-csharp [SplitData](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L33-L34)]
 
@@ -163,7 +163,7 @@ CREATE TABLE [Rentals] (
 
     `forecastingPipeline` 在第一年数据中获取 365 个数据点，并按 `seriesLength` 参数指定的间隔从时序数据集采样或将其分为 30 天（每月）的间隔。 以一周或 7 天为一个时段分析各个样本。 确定下一个时段的预测值时，使用前面 7 天的值进行预测。 根据 `horizon` 参数的定义，该模型设置为预测将来的 7 个时段。 由于预测属于合理猜测，它不总是完全准确。 因此，最好了解上限和下限定义的最佳和最坏情况下的范围值。 在本案例中，设置的上下限可信度为 95%。 可信度可以相应地提高或降低。 值越高，上限和下限之间的范围越大，以便达到所需的可信度。
 
-1. 使用 [`Fit`](xref:Microsoft.ML.Transforms.TimeSeries.SsaForecastingEstimator.Fit*) 方法培训模型，使数据适用于前面定义的 `forecastingPipeline`。
+1. 使用 [`Fit`](xref:Microsoft.ML.Transforms.TimeSeries.SsaForecastingEstimator.Fit%2A) 方法培训模型，使数据适用于前面定义的 `forecastingPipeline`。
 
     [!code-csharp [TrainModel](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L47)]
 
@@ -180,15 +180,15 @@ CREATE TABLE [Rentals] (
     }
     ```
 
-1. 在 `Evaluate` 方法中，通过结合使用 [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) 方法和培训模型，预测第二年的数据。
+1. 在 `Evaluate` 方法中，通过结合使用 [`Transform`](xref:Microsoft.ML.ITransformer.Transform%2A) 方法和培训模型，预测第二年的数据。
 
     [!code-csharp [EvaluateForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L62)]
 
-1. 使用 [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) 方法，从数据中获取实际值。
+1. 使用 [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable%2A) 方法，从数据中获取实际值。
 
     [!code-csharp [GetActualRentals](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L65-L67)]
 
-1. 使用 [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable*) 方法获取预测值。
+1. 使用 [`CreateEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable%2A) 方法获取预测值。
 
     [!code-csharp [GetForecastRentals](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L70-L72)]
 
@@ -221,7 +221,7 @@ CREATE TABLE [Rentals] (
 
     [!code-csharp [CreateTimeSeriesEngine](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L51)]
 
-1. 将此模型保存到由先前定义的 `modelPath` 变量指定的名为 `MLModel.zip` 的文件。 使用 [`Checkpoint`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602.CheckPoint*) 方法保存模型。
+1. 将此模型保存到由先前定义的 `modelPath` 变量指定的名为 `MLModel.zip` 的文件。 使用 [`Checkpoint`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602.CheckPoint%2A) 方法保存模型。
 
     [!code-csharp [SaveModel](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L52)]
 
@@ -236,7 +236,7 @@ CREATE TABLE [Rentals] (
     }
     ```
 
-1. 在 `Forecast` 方法中，使用 [`Predict`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602.Predict*) 方法预测接下来的 7 天的租赁数量。
+1. 在 `Forecast` 方法中，使用 [`Predict`](xref:Microsoft.ML.Transforms.TimeSeries.TimeSeriesPredictionEngine%602.Predict%2A) 方法预测接下来的 7 天的租赁数量。
 
     [!code-csharp [SingleForecast](~/machinelearning-samples/samples/csharp/getting-started/Forecasting_BikeSharingDemand/BikeDemandForecasting/Program.cs#L91)]
 

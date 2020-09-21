@@ -8,12 +8,12 @@ helpviewer_keywords:
 - globalization [.NET Framework], best practices
 - international applications [.NET Framework], best practices
 ms.assetid: f08169c7-aad8-4ec3-9a21-9ebd3b89986c
-ms.openlocfilehash: f0e5ccf999b6aa96b6317b88e25f3cd9d9fbc899
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 9d9f6b3540bb04dd4af154fce2f91a3a7b6395ba
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84279875"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555531"
 ---
 # <a name="best-practices-for-developing-world-ready-applications"></a>开发全球通用应用程序的最佳做法
 
@@ -91,7 +91,7 @@ ms.locfileid: "84279875"
 
 4. 在 ASP.NET 应用程序中的以下三个位置指定 requestEncoding、responseEncoding、fileEncoding、culture 和 uiCulture 特性的值：
 
-    - 在 Web.config 文件的全球化一节中。 此文件是 ASP.NET 应用程序的外部文件。 有关详细信息，请参阅 [\<globalization> 元素](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100))。
+    - 在 Web.config 文件的全球化一节中。 此文件是 ASP.NET 应用程序的外部文件。 有关详细信息，请参阅 [\<globalization> 元素](/previous-versions/dotnet/netframework-4.0/hy4kkhe0(v=vs.100))。
 
     - 在页面指令中。 请注意，当应用程序在页面中时，文件已经被读取。 因此，指定 fileEncoding 和 requestEncoding 为时已晚。 只有 uiCulture、Culture 和 responseEncoding 可以在页面指令中指定。
 

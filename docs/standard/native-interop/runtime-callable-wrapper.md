@@ -9,12 +9,12 @@ helpviewer_keywords:
 - runtime callable wrappers
 - interoperation with unmanaged code, COM wrappers
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
-ms.openlocfilehash: 6868c79791d960dd1ae55ab09d4ac3b40ce52655
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: 9c218fe7a08bd7181d66aa849bcca4cac00dc6fa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420482"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535854"
 ---
 # <a name="runtime-callable-wrapper"></a>运行时可调用包装
 公共语言运行时通过名为运行时可调用包装 (RCW) 的代理公开 COM 对象。 尽管 RCW 似乎是 .NET 客户端的普通对象，但它的主要功能是封送处理 .NET 客户端和 COM 对象之间的调用。  
@@ -61,5 +61,5 @@ ms.locfileid: "83420482"
 
 - [COM 包装](com-wrappers.md)
 - [COM 可调用包装器](com-callable-wrapper.md)
-- [有关从类型库转换到程序集的摘要](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [有关从类型库转换到程序集的摘要](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [将类型库作为程序集导入](../../framework/interop/importing-a-type-library-as-an-assembly.md)

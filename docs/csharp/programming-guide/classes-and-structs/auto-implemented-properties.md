@@ -6,12 +6,12 @@ helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: aa55fa97-ccec-431f-b5e9-5ac789fd32b7
-ms.openlocfilehash: f58f9a23f26bde7e80d834528d94e38af1231e7b
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 72f774d84266292412be9b954fc206debc8ac55e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474470"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555895"
 ---
 # <a name="auto-implemented-properties-c-programming-guide"></a>自动实现的属性（C# 编程指南）
 
@@ -36,4 +36,4 @@ public string FirstName { get; set; } = "Jane";
 ## <a name="see-also"></a>请参阅
 
 - [属性](./properties.md)
-- [修饰符](/dotnet/csharp/language-reference/keywords)
+- [修饰符](../../language-reference/keywords/index.md)

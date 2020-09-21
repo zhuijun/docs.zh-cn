@@ -4,12 +4,12 @@ description: ML.NET 使你能够在联机或脱机场景中将机器学习添加
 ms.date: 11/5/2019
 ms.topic: overview
 ms.custom: mvc
-ms.openlocfilehash: 0929005e02ad9b43636213735f8c7232aa6d4f42
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: d9a218e57756ad8b95248193325e902c1798cc37
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607766"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679659"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>什么是 ML.NET 以及它如何工作？
 
@@ -262,7 +262,7 @@ ML.NET 机器学习管道的核心是 [DataView](xref:Microsoft.ML.IDataView) �
 
 可以在[机器学习任务](resources/tasks.md)指南中找到有关不同机器学习任务的输出列的详细信息。
 
-DataView 对象的一个​​重要属性是它们被**惰性**求值。 数据视图仅在模型训练和评估以及数据预测期间加载及运行。 在编写和测试 ML.NET 应用程序时，可以使用 Visual Studio 调试程序通过调用 [Preview](xref:Microsoft.ML.DebuggerExtensions.Preview*) 方法来浏览任何数据视图对象。
+DataView 对象的一个​​重要属性是它们被**惰性**求值。 数据视图仅在模型训练和评估以及数据预测期间加载及运行。 在编写和测试 ML.NET 应用程序时，可以使用 Visual Studio 调试程序通过调用 [Preview](xref:Microsoft.ML.DebuggerExtensions.Preview%2A) 方法来浏览任何数据视图对象。
 
 ```csharp
     var debug = testPriceDataView.Preview();
@@ -284,4 +284,4 @@ DataView 对象的一个​​重要属性是它们被**惰性**求值。 数据
 
 * 在[操作指南](./how-to-guides/index.md)中更深入地了解特定主题。
 
-* 如果非常感兴趣，可以直接阅读 [API 参考文档](https://docs.microsoft.com/dotnet/api/?view=ml-dotnet)。
+* 如果非常感兴趣，可以直接阅读 [API 参考文档](../../api/index.md?view=ml-dotnet)。

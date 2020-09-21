@@ -3,18 +3,18 @@ title: 调试高 CPU 使用率 - .NET Core
 description: 本教程将演示如何调试 .NETCore 中的高 CPU 使用率。
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 93076bbce3baf3a219b25c927d2aba3d2d57456f
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 71e0b98f7ad38836c6a20c3e0e75a878fb6525c7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557797"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538704"
 ---
 # <a name="debug-high-cpu-usage-in-net-core"></a>调试 .NET Core 中的高 CPU 使用率
 
 **本文适用于：** ✔️ .NET Core 3.1 SDK 及更高版本
 
-本教程将介绍如何调试 CPU 使用率过高的情况。 使用提供的示例 [ASP.NET Core Web 应用](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) 源代码存储库，可以故意造成死锁。 终结点将遇到线程挂起和线程累积。 你将了解如何使用各种工具，通过几条关键的诊断数据诊断此情况。
+本教程将介绍如何调试 CPU 使用率过高的情况。 使用提供的示例 [ASP.NET Core Web 应用](/samples/dotnet/samples/diagnostic-scenarios) 源代码存储库，可以故意造成死锁。 终结点将遇到线程挂起和线程累积。 你将了解如何使用各种工具，通过几条关键的诊断数据诊断此情况。
 
 在本教程中，你将：
 
@@ -31,13 +31,13 @@ ms.locfileid: "88557797"
 本教程使用：
 
 - [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) 或更高版本。
-- [示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)以触发场景。
+- [示例调试目标](/samples/dotnet/samples/diagnostic-scenarios)以触发场景。
 - [dotnet-trace](dotnet-trace.md) 以列出进程并生成配置文件。
 - [dotnet-counters](dotnet-counters.md) 以监视 CPU 使用率。
 
 ## <a name="cpu-counters"></a>CPU 计数器
 
-在尝试收集诊断数据之前，需要观察 CPU 状况是否过高。 使用以下命令从项目根目录运行[示例应用程序](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)。
+在尝试收集诊断数据之前，需要观察 CPU 状况是否过高。 使用以下命令从项目根目录运行[示例应用程序](/samples/dotnet/samples/diagnostic-scenarios)。
 
 ```dotnetcli
 dotnet run
@@ -116,11 +116,11 @@ Press p to pause, r to resume, q to quit.
 
 ### <a name="linux"></a>[Linux](#tab/linux)
 
-`perf` 工具可用于生成 .NET Core 应用配置文件。 退出[示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)的上一个实例。
+`perf` 工具可用于生成 .NET Core 应用配置文件。 退出[示例调试目标](/samples/dotnet/samples/diagnostic-scenarios)的上一个实例。
 
 设置 `COMPlus_PerfMapEnabled` 环境变量，使 .NET Core 应用在 `/tmp` 目录中创建 `map` 文件。 `perf` 使用此 `map` 文件按名称将 CPU 地址映射到 JIT 生成的函数。 有关详细信息，请参阅[写入 Perf 映射](../run-time-config/debugging-profiling.md#write-perf-map)。
 
-在同一终端会话中运行[示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)。
+在同一终端会话中运行[示例调试目标](/samples/dotnet/samples/diagnostic-scenarios)。
 
 ```dotnetcli
 export COMPlus_PerfMapEnabled=1
@@ -152,7 +152,7 @@ sudo perf script | FlameGraph/stackcollapse-perf.pl | FlameGraph/flamegraph.pl >
 
 ### <a name="windows"></a>[Windows](#tab/windows)
 
-在 Windows 上，可以使用 [dotnet-trace](dotnet-trace.md) 工具作为探查器。 使用之前的[示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)，再次使用高 CPU (`https://localhost:5001/api/diagscenario/highcpu/60000`) 终结点。 当它在 1 分钟请求内运行时，使用 `collect` 命令，如下所示：
+在 Windows 上，可以使用 [dotnet-trace](dotnet-trace.md) 工具作为探查器。 使用之前的[示例调试目标](/samples/dotnet/samples/diagnostic-scenarios)，再次使用高 CPU (`https://localhost:5001/api/diagscenario/highcpu/60000`) 终结点。 当它在 1 分钟请求内运行时，使用 `collect` 命令，如下所示：
 
 ```dotnetcli
 dotnet-trace collect -p 22884 --providers Microsoft-DotNETCore-SampleProfiler

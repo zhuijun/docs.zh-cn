@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 5c86be598ab6196ecf4da05451c7f22d2be52c12
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8aff4b1aa329d6fdfebf3b62e9279e9dfe5de0a4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614343"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606405"
 ---
 ### <a name="default-value-of-servicepointmanagersecurityprotocol-is-securityprotocoltypesystemdefault"></a>ServicePointManager.SecurityProtocol 的默认值为 SecurityProtocolType.System.Default
 
 #### <a name="details"></a>详细信息
 
-从面向 .NET Framework 4.7 的应用开始，<xref:System.Net.ServicePointManager.SecurityProtocol?displayProperty=nameWithType> 属性的默认值为 <xref:System.Net.SecurityProtocolType.SystemDefault?displayProperty=nameWithType>。 此更改允许基于 SslStream 的 .NET Framework 网络 API（例如 FTP、HTTPS 和 SMTP）从操作系统继承默认安全协议，而不是使用 .NET Framework 定义的硬编码值。 默认值因操作系统和系统管理员执行的任何自定义配置而异。 有关 Windows 操作系统各版本中默认 SChannel 协议的信息，请参阅 [Protocols in TLS/SSL (Schannel SSP)](https://docs.microsoft.com/windows/desktop/SecAuthN/protocols-in-tls-ssl--schannel-ssp-)（TLS/SSL (Schannel SSP) 中的协议）。</p>对于面向 .NET Framework 早期版本的应用程序，<xref:System.Net.ServicePointManager.SecurityProtocol?displayProperty=nameWithType> 属性的默认值取决于所面向的 .NET Framework 版本。 请参阅[“针对 .NET Framework 4.5.2 到 4.6 迁移的重定目标更改”中的“网络”部分](~/docs/framework/migration-guide/retargeting/4.5.2-4.6.md#networking)，了解详细信息。
+从面向 .NET Framework 4.7 的应用开始，<xref:System.Net.ServicePointManager.SecurityProtocol?displayProperty=nameWithType> 属性的默认值为 <xref:System.Net.SecurityProtocolType.SystemDefault?displayProperty=nameWithType>。 此更改允许基于 SslStream 的 .NET Framework 网络 API（例如 FTP、HTTPS 和 SMTP）从操作系统继承默认安全协议，而不是使用 .NET Framework 定义的硬编码值。 默认值因操作系统和系统管理员执行的任何自定义配置而异。 有关 Windows 操作系统各版本中默认 SChannel 协议的信息，请参阅 [Protocols in TLS/SSL (Schannel SSP)](/windows/desktop/SecAuthN/protocols-in-tls-ssl--schannel-ssp-)（TLS/SSL (Schannel SSP) 中的协议）。</p>对于面向 .NET Framework 早期版本的应用程序，<xref:System.Net.ServicePointManager.SecurityProtocol?displayProperty=nameWithType> 属性的默认值取决于所面向的 .NET Framework 版本。 请参阅[“针对 .NET Framework 4.5.2 到 4.6 迁移的重定目标更改”中的“网络”部分](~/docs/framework/migration-guide/retargeting/4.5.2-4.6.md#networking)，了解详细信息。
 
 #### <a name="suggestion"></a>建议
 

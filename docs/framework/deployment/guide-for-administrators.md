@@ -6,11 +6,12 @@ helpviewer_keywords:
 - administrator's guide, deploying .NET Framework
 - deployment [.NET Framework], administrator's guide
 ms.assetid: bee14036-0436-44e8-89f5-4bc61317977a
-ms.openlocfilehash: d58eac4f21e4f1069ac392aacb4e9818831e914c
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: b358f0909147e52293fd802bc98caa31b284d7b1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622648"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558714"
 ---
 # <a name="net-framework-deployment-guide-for-administrators"></a>.NET Framework 部署指南（针对管理员）
 
@@ -38,16 +39,16 @@ ms.locfileid: "85622648"
 
 在设置好支持基础结构之后，可以使用 Configuration Manager 将 .NET Framework 可再发行组件包部署到网络上的计算机。 构建基础结构涉及创建并定义 5 个主要区域：集合、软件的包和程序、分发点以及部署。
 
-- “集合”是将 .NET Framework 部署到的 Configuration Manager 资源（用户、用户组或计算机）组。 有关详细信息，请参阅 Configuration Manager 文档库中的 [Configuration Manager 中的集合简介](https://docs.microsoft.com/configmgr/core/clients/manage/collections/introduction-to-collections)。
+- “集合”是将 .NET Framework 部署到的 Configuration Manager 资源（用户、用户组或计算机）组。 有关详细信息，请参阅 Configuration Manager 文档库中的 [Configuration Manager 中的集合简介](/configmgr/core/clients/manage/collections/introduction-to-collections)。
 
-- “包和程序”通常表示要安装在客户端计算机上的软件应用程序，但它们还可能包含单个文件、更新，甚至是单个命令。 有关详细信息，请参阅 Configuration Manager 文档库中的 [Configuration Manager 中的包和程序](https://docs.microsoft.com/configmgr/apps/deploy-use/packages-and-programs)。
+- “包和程序”通常表示要安装在客户端计算机上的软件应用程序，但它们还可能包含单个文件、更新，甚至是单个命令。 有关详细信息，请参阅 Configuration Manager 文档库中的 [Configuration Manager 中的包和程序](/configmgr/apps/deploy-use/packages-and-programs)。
 
-- “分发点”是存储在客户端计算机上运行软件所需的文件的 Configuration Manager 站点系统角色。 在 Configuration Manager 客户端收到并处理软件部署时，该客户端会与分发点联系以下载与相应软件关联的内容并开始安装过程。 有关详细信息，请参阅 Configuration Manager 文档库中的 [Configuration Manager 中的内容管理基本概念](https://docs.microsoft.com/configmgr/core/plan-design/hierarchy/fundamental-concepts-for-content-management)。
+- “分发点”是存储在客户端计算机上运行软件所需的文件的 Configuration Manager 站点系统角色。 在 Configuration Manager 客户端收到并处理软件部署时，该客户端会与分发点联系以下载与相应软件关联的内容并开始安装过程。 有关详细信息，请参阅 Configuration Manager 文档库中的 [Configuration Manager 中的内容管理基本概念](/configmgr/core/plan-design/hierarchy/fundamental-concepts-for-content-management)。
 
 - “部署”指示指定目标集合的相应成员安装软件包。
 
 > [!IMPORTANT]
-> 本主题中的过程包含用于创建及部署包和程序的典型设置，可能不包含所有可能的设置。 有关其他 Configuration Manager 部署选项，请参阅 [Configuration Manager 文档库](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg682041%28v=technet.10%29)。
+> 本主题中的过程包含用于创建及部署包和程序的典型设置，可能不包含所有可能的设置。 有关其他 Configuration Manager 部署选项，请参阅 [Configuration Manager 文档库](/previous-versions/system-center/system-center-2012-R2/gg682041(v=technet.10))。
 
 <a name="deploying_in_a_test_environment"></a>
 
@@ -67,7 +68,7 @@ ms.locfileid: "85622648"
 
 ### <a name="create-a-collection"></a>创建集合
 
-在此步骤中，选择包和程序将部署到的计算机，并将这些计算机组合到一个设备集合中。 若要在 Configuration Manager 中创建集合，可使用直接成员身份规则（手动指定集合成员）或查询规则（Configuration Manager 根据你指定的条件确定集合成员）。 有关成员身份规则的更多信息，请参阅 Configuration Manager 文档库中的 [Configuration Manager 中的集合简介](https://docs.microsoft.com/configmgr/core/clients/manage/collections/introduction-to-collections)。
+在此步骤中，选择包和程序将部署到的计算机，并将这些计算机组合到一个设备集合中。 若要在 Configuration Manager 中创建集合，可使用直接成员身份规则（手动指定集合成员）或查询规则（Configuration Manager 根据你指定的条件确定集合成员）。 有关成员身份规则的更多信息，请参阅 Configuration Manager 文档库中的 [Configuration Manager 中的集合简介](/configmgr/core/clients/manage/collections/introduction-to-collections)。
 
 创建集合：
 
@@ -135,7 +136,7 @@ ms.locfileid: "85622648"
 |**/norestart**|防止安装程序自动重新启动。 如果你使用此选项，则 Configuration Manager 必须处理计算机重新启动。|
 |**/chainingpackage** *PackageName*|指定执行链接的包的名称。 该信息与注册了 Microsoft 客户体验改善计划 (CEIP) 的用户的其他安装会话信息一起报告。 如果包名称包含空格，则可以用双引号作为分隔符；例如：/chainingpackage "Chaining Product"。|
 
-这些步骤创建了一个名为“.NET Framework 4.5”的包。 程序将部署 .NET Framework 4.5 的无提示安装。 在无提示安装中，用户不与安装过程进行交互，并且链接应用程序必须捕获返回代码并处理重启操作；请参阅[从安装软件包获取进度信息](https://docs.microsoft.com/previous-versions/cc825975(v=vs.100))。
+这些步骤创建了一个名为“.NET Framework 4.5”的包。 程序将部署 .NET Framework 4.5 的无提示安装。 在无提示安装中，用户不与安装过程进行交互，并且链接应用程序必须捕获返回代码并处理重启操作；请参阅[从安装软件包获取进度信息](/previous-versions/cc825975(v=vs.100))。
 
 <a name="select_dist_point"></a>
 
@@ -161,7 +162,7 @@ ms.locfileid: "85622648"
 
 8. 完成向导。
 
-包现在包含无提示部署 .NET Framework 4.5 所需的所有信息。 在部署包和程序之前，请确认已将其安装在分发点上；请参阅 Configuration Manager 文档库中的[使用 Configuration Manager 监视分发的内容](https://docs.microsoft.com/configmgr/core/servers/deploy/configure/monitor-content-you-have-distributed)的“监视内容状态”一节。
+包现在包含无提示部署 .NET Framework 4.5 所需的所有信息。 在部署包和程序之前，请确认已将其安装在分发点上；请参阅 Configuration Manager 文档库中的[使用 Configuration Manager 监视分发的内容](/configmgr/core/servers/deploy/configure/monitor-content-you-have-distributed)的“监视内容状态”一节。
 
 <a name="deploying_package"></a>
 
@@ -188,7 +189,7 @@ ms.locfileid: "85622648"
 9. 在该向导的“用户体验”页上，使用默认值并选择“下一步”。
 
     > [!WARNING]
-    > 你的生产环境可能具有需要选择不同的部署计划的策略。 有关这些选项的信息，请参阅[播发名称属性：“计划”选项卡](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb694016%28v=technet.10%29)。
+    > 你的生产环境可能具有需要选择不同的部署计划的策略。 有关这些选项的信息，请参阅[播发名称属性：“计划”选项卡](/previous-versions/system-center/configuration-manager-2007/bb694016(v=technet.10))。
 
 10. 在该向导的“分发点”页上，使用默认值并选择“下一步”。
 
@@ -212,19 +213,19 @@ ms.locfileid: "85622648"
 
 **SQL Server 2008:**
 
-- [安装 SQL Server 2008（SQL Server 视频）](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/dd299415(v=sql.100))
+- [安装 SQL Server 2008（SQL Server 视频）](/previous-versions/sql/sql-server-2008/dd299415(v=sql.100))
 
 - [面向数据库管理员的 SQL Server 2008 安全概述](https://download.microsoft.com/download/a/c/d/acd8e043-d69b-4f09-bc9e-4168b65aaa71/SQL2008SecurityOverviewforAdmins.docx)
 
 System Center 2012 Configuration Manager（既充当管理点又充当分发点）：
 
-- [System Center 2012 Configuration Manager 的站点管理](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg681983%28v=technet.10%29)
+- [System Center 2012 Configuration Manager 的站点管理](/previous-versions/system-center/system-center-2012-R2/gg681983(v=technet.10))
 
-- [Configuration Manager 单站点计划和部署](https://docs.microsoft.com/previous-versions/system-center/configuration-manager-2007/bb680961%28v=technet.10%29)
+- [Configuration Manager 单站点计划和部署](/previous-versions/system-center/configuration-manager-2007/bb680961(v=technet.10))
 
 适用于 Windows 计算机的 System Center 2012 Configuration Manager 客户端：
 
-- [部署 System Center 2012 Configuration Manager 的客户端](https://docs.microsoft.com/previous-versions/system-center/system-center-2012-R2/gg699391%28v=technet.10%29)
+- [部署 System Center 2012 Configuration Manager 的客户端](/previous-versions/system-center/system-center-2012-R2/gg699391(v=technet.10))
 
 <a name="troubleshooting"></a>
 
@@ -266,7 +267,7 @@ System Center 2012 Configuration Manager（既充当管理点又充当分发点�
 
 - [后台智能传输服务 (BITS) 错误代码](/windows/desktop/Bits/bits-return-values)
 
-- [URL 名字对象错误代码](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775145%28v=vs.85%29)
+- [URL 名字对象错误代码](/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms775145(v=vs.85))
 
 - [WinHttp 错误代码](/windows/desktop/WinHttp/error-messages)
 
@@ -274,7 +275,7 @@ System Center 2012 Configuration Manager（既充当管理点又充当分发点�
 
 - [Windows Installer 错误代码](/windows/desktop/msi/error-codes)
 
-- [Windows 更新代理结果代码](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720442(v=ws.10))
+- [Windows 更新代理结果代码](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc720442(v=ws.10))
 
 ## <a name="see-also"></a>请参阅
 

@@ -3,12 +3,12 @@ title: 序列化概念
 description: 序列化可用于捕获对象的状态，以便可以创建副本或按值将对象从一个应用程序域发送到另一个应用程序域。
 ms.date: 08/07/2017
 ms.assetid: e1ff4740-20a1-4c76-a8ad-d857db307054
-ms.openlocfilehash: 35addd2dd2bed8ce878f2f159f1caefe89922d88
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a185855f4b6913c8e1d57bf36fc5c37411123e68
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84291313"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541195"
 ---
 # <a name="serialization-concepts"></a>序列化概念
 为什么要使用序列化？ 两个最重要的原因是将对象状态保存到存储媒体，以便可以在以后阶段重新创建精确副本；以及将对象按值从一个应用程序域发送至另一个应用程序域。 例如，序列化用于在 ASP.NET 中保存会话状态，并将对象复制到 Windows 窗体的剪贴板中。 它还可用于在远程处理中将对象按值从一个应用程序域传递至另一个应用程序域。
@@ -31,7 +31,7 @@ ms.locfileid: "84291313"
  [二进制序列化](binary-serialization.md)  
  描述随公共语言运行库一起提供的二进制序列化机制。  
   
- [.NET 远程处理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
+ [.NET 远程处理](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
  描述 .NET Framework 中为远程通信提供的多种通信方法。  
   
  [XML 和 SOAP 序列化](xml-and-soap-serialization.md)  

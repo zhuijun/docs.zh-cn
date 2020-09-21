@@ -8,12 +8,12 @@ helpviewer_keywords:
 - XML Schema Definition tool
 - serialization, XML Schema Definition tool
 ms.assetid: 3c03f855-f931-47ff-bbc6-50c0367a16e4
-ms.openlocfilehash: c88770403d4c2abfb5ce99f44ea1bec1f8337545
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6451f3b5f6e8ec2c1454e5cf7ffb95a96b620214
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84279771"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554978"
 ---
 # <a name="the-xml-schema-definition-tool-and-xml-serialization"></a>XML 架构定义工具和 XML 序列化
 
@@ -34,4 +34,4 @@ XML 架构定义工具（[XML 架构定义工具 (Xsd.exe)](xml-schema-definitio
 - [如何：序列化对象](how-to-serialize-an-object.md)
 - [如何：反序列化对象](how-to-deserialize-an-object.md)
 - [如何：使用 XML 架构定义工具生成类和 XML 架构文档](xml-schema-def-tool-gen.md)
-- [XML 架构绑定支持](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sh1e66zd(v=vs.100))
+- [XML 架构绑定支持](/previous-versions/dotnet/netframework-4.0/sh1e66zd(v=vs.100))

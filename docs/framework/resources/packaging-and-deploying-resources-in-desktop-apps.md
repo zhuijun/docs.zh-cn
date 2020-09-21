@@ -27,12 +27,12 @@ helpviewer_keywords:
 - localizing resources
 - neutral cultures
 ms.assetid: b224d7c0-35f8-4e82-a705-dd76795e8d16
-ms.openlocfilehash: 7b06ca4444b75f0a7002323b32732dd4f855f692
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 056569f86afcbdf124f9e617e4ad07b09a194681
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87166182"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553995"
 ---
 # <a name="packaging-and-deploying-resources-in-net-apps"></a>打包和部署 .NET 应用中的资源
 
@@ -51,7 +51,7 @@ ms.locfileid: "87166182"
 
 ## <a name="resource-naming-conventions"></a>资源命名约定
 
-在打包应用程序的资源时，必须使用公共语言运行时所要求的资源命名约定对其进行命名。 运行时可按其区域性名称标识资源。 每个区域性均被赋予唯一名称，通常是与语言相关的两个小写字母的区域性名称和必要情况下，与国家或地区相关的两个大写子母的区域性名称的组合。 子区域性名称跟在区域性名称后，以短划线 (-) 隔开。 例如：ja-JP 表示日本日语，en-US 表示美国英语，de-DE 表示德国德语，de-AT 表示奥地利德语。 请参阅 [Windows 支持的语言/区域名称列表](https://docs.microsoft.com/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c)中的“语言标记”  列。 列名遵循 [BCP 47](https://tools.ietf.org/html/bcp47) 定义的标准。
+在打包应用程序的资源时，必须使用公共语言运行时所要求的资源命名约定对其进行命名。 运行时可按其区域性名称标识资源。 每个区域性均被赋予唯一名称，通常是与语言相关的两个小写字母的区域性名称和必要情况下，与国家或地区相关的两个大写子母的区域性名称的组合。 子区域性名称跟在区域性名称后，以短划线 (-) 隔开。 例如：ja-JP 表示日本日语，en-US 表示美国英语，de-DE 表示德国德语，de-AT 表示奥地利德语。 请参阅 [Windows 支持的语言/区域名称列表](/openspecs/windows_protocols/ms-lcid/a9eac961-e77d-41a6-90a5-ce1a8b0cdb9c)中的“语言标记”  列。 列名遵循 [BCP 47](https://tools.ietf.org/html/bcp47) 定义的标准。
 
 > [!NOTE]
 > 两字母区域性名称有一些例外，如表示中文（简体）的 `zh-Hans`。

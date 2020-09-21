@@ -12,12 +12,12 @@ helpviewer_keywords:
 - resx files
 - .resx files
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
-ms.openlocfilehash: 8393eb44246ed1bbc0e4e6acc84ad7bd57041ec0
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 35d1324d5ea7a72ffd5ea594530d1312e717cd7c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87516900"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543220"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres.exe（Windows 资源本地化编辑器）
 
@@ -52,7 +52,7 @@ winres /?
 
 - 区域性资源文件可以另存为其他区域性资源文件。 例如，英语（美国）资源文件可以另存为波兰语资源文件。 通常，可以稍后对新文件进行编辑，以使其与新区域性兼容。
 
-另请参阅[用于本地化的资源的分层组织](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/756hydy4(v=vs.110))或[用于本地化的资源的分层组织](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/756hydy4(v=vs.120))。
+另请参阅[用于本地化的资源的分层组织](/previous-versions/visualstudio/visual-studio-2012/756hydy4(v=vs.110))或[用于本地化的资源的分层组织](/previous-versions/visualstudio/visual-studio-2013/756hydy4(v=vs.120))。
 
 Winres.exe 不能将 .resx 文件转换成相应的 .resources 文件；请改用 Resgen.exe 工具。 有关 Resgen.exe 的详细信息，请参阅 [Resgen.exe（资源文件生成器）](resgen-exe-resource-file-generator.md)。
 

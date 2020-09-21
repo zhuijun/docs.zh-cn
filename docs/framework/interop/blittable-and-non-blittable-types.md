@@ -6,11 +6,12 @@ helpviewer_keywords:
 - interop marshaling, blittable types
 - blittable types, interop marshaling
 ms.assetid: d03b050e-2916-49a0-99ba-f19316e5c1b3
-ms.openlocfilehash: 68f4197a2710b6825c83bbc51daaf8f6b5a2c81f
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8bbf9c72143033cec22b38cc26cbe8ceb44f790b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621530"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556266"
 ---
 # <a name="blittable-and-non-blittable-types"></a>可直接复制到本机结构中的类型和非直接复制到本机结构中的类型
 大多数数据类型在托管和非托管内存中具有共同的表示形式，而且不需要互操作封送处理程序进行特殊处理。 这些类型称为 blittable 类型，因为它们在托管和非托管代码之间传递时不需要进行转换。  
@@ -60,13 +61,13 @@ ms.locfileid: "85621530"
 |Non-blittable 类型|描述|  
 |-------------------------|-----------------|  
 |[System.Array](default-marshaling-for-arrays.md)|转换为 C 样式数组或 `SAFEARRAY`。|  
-|[System.Boolean](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/t2t3725f(v=vs.100))|转换为 1、2 或 4 字节的值，`true` 表示 1 或 -1。|  
-|[System.Char](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/6tyybbf2(v=vs.100))|转换为 Unicode 或 ANSI 字符。|  
-|[System.Class](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/s0968xy8(v=vs.100))|转换为类接口。|  
+|[System.Boolean](/previous-versions/dotnet/netframework-4.0/t2t3725f(v=vs.100))|转换为 1、2 或 4 字节的值，`true` 表示 1 或 -1。|  
+|[System.Char](/previous-versions/dotnet/netframework-4.0/6tyybbf2(v=vs.100))|转换为 Unicode 或 ANSI 字符。|  
+|[System.Class](/previous-versions/dotnet/netframework-4.0/s0968xy8(v=vs.100))|转换为类接口。|  
 |[System.Object](default-marshaling-for-objects.md)|转换为变量或接口。|  
 |[System.Mdarray](default-marshaling-for-arrays.md)|转换为 C 样式数组或 `SAFEARRAY`。|  
 |[System.String](default-marshaling-for-strings.md)|转换为空引用中的终止字符串或转换为 BSTR。|  
-|[System.Valuetype](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/0t2cwe11(v=vs.100))|转换为具有固定内存布局的结构。|  
+|[System.Valuetype](/previous-versions/dotnet/netframework-4.0/0t2cwe11(v=vs.100))|转换为具有固定内存布局的结构。|  
 |[System.Szarray](default-marshaling-for-arrays.md)|转换为 C 样式数组或 `SAFEARRAY`。|  
   
  类和对象类型仅受 COM 互操作支持。 有关 Visual Basic、C# 和 C++ 中的相应类型的信息，请参阅[类库概述](../../standard/class-library-overview.md)。  

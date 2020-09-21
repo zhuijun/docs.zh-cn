@@ -6,12 +6,12 @@ helpviewer_keywords:
 - SecAnnotate.exe
 - Security Annotator tool
 ms.assetid: 8104d208-7813-4a1d-8a75-58f9a7bcb8c9
-ms.openlocfilehash: 440ad39f1afb54ad517bc73f05d1e60748b7b520
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 408a3064b67cae2d75c80881f918c774e05866e6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517212"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558376"
 ---
 # <a name="secannotateexe-net-security-annotator-tool"></a>SecAnnotate.exe（.NET 安全批注器工具）
 .NET 安全性批注器工具 (SecAnnotate.exe) 是标识一个或多个程序集的 `SecurityCritical` 和 `SecuritySafeCritical` 部分的命令行应用程序。  
@@ -51,6 +51,6 @@ SecAnnotate.exe [parameters] [assemblies]
 ## <a name="remarks"></a>备注  
  参数和程序集也可能在命令行上指定的响应文件中提供，且带有前缀 at 符号 (@)。 响应文件中的每行应包含单个参数或程序集名称。  
   
- 有关 .NET 安全性批注器的详细信息，请参阅 .NET 安全性博客中的[使用 SecAnnotate 分析程序集中的透明度冲突](https://docs.microsoft.com/archive/blogs/shawnfa/using-secannotate-to-analyze-your-assemblies-for-transparency-violations-an-example)。  
+ 有关 .NET 安全性批注器的详细信息，请参阅 .NET 安全性博客中的[使用 SecAnnotate 分析程序集中的透明度冲突](/archive/blogs/shawnfa/using-secannotate-to-analyze-your-assemblies-for-transparency-violations-an-example)。  
   
 ## <a name="examples"></a>示例

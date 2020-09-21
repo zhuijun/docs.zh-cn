@@ -17,12 +17,12 @@ helpviewer_keywords:
 - formatting numbers [.NET Framework]
 - format specifiers, custom numeric format strings
 ms.assetid: 6f74fd32-6c6b-48ed-8241-3c2b86dea5f4
-ms.openlocfilehash: bd96766c7483a3de1a3c70d1efbe1aa91ea45fbc
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7cf61746e483fe5aa2ee5e3421219240e8700172
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447233"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541574"
 ---
 # <a name="custom-numeric-format-strings"></a>自定义数字格式字符串
 
@@ -31,7 +31,7 @@ ms.locfileid: "84447233"
 所有数字类型的 `ToString` 方法的某些重载支持自定义数字格式字符串。 例如，可将数字格式字符串提供给 <xref:System.Int32.ToString%28System.String%29> 类型的 <xref:System.Int32.ToString%28System.String%2CSystem.IFormatProvider%29> 方法和 <xref:System.Int32> 方法。 .NET [复合格式功能](composite-formatting.md)也支持自定义数字格式字符串，以供 <xref:System.Console> 和 <xref:System.IO.StreamWriter> 类的一些 `Write` 和 `WriteLine` 方法、<xref:System.String.Format%2A?displayProperty=nameWithType> 方法以及 <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType> 方法使用。 [字符串内插](../../csharp/language-reference/tokens/interpolated.md)功能还支持自定义数字格式字符串。
 
 > [!TIP]
-> 你可以下载格式设置实用工具，它属于一种 .NET Core Windows 窗体应用程序，通过该应用程序，你可将格式字符串应用于数值或日期和时间值并显示结果字符串。 源代码适用于 [C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) 和 [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)。
+> 你可以下载格式设置实用工具，它属于一种 .NET Core Windows 窗体应用程序，通过该应用程序，你可将格式字符串应用于数值或日期和时间值并显示结果字符串。 源代码适用于 [C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) 和 [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb)。
 
 <a name="table"></a> 下表描述自定义数字格式说明符并显示由每个格式说明符产生的示例输出。 有关使用自定义数字格式字符串的其他信息，请参见 [说明](#NotesCustomFormatting) 一节，有关使用方法的完整演示，请参见 [示例](#example) 一节。
 
@@ -292,5 +292,5 @@ ms.locfileid: "84447233"
 - [格式设置类型](formatting-types.md)
 - [标准数字格式字符串](standard-numeric-format-strings.md)
 - [如何：用前导零填充数字](how-to-pad-a-number-with-leading-zeros.md)
-- [示例：.NET Core WinForms 格式设置实用工具 (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
-- [示例：.NET Core WinForms 格式设置实用工具 (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)
+- [示例：.NET Core WinForms 格式设置实用工具 (C#)](/samples/dotnet/samples/windowsforms-formatting-utility-cs)
+- [示例：.NET Core WinForms 格式设置实用工具 (Visual Basic)](/samples/dotnet/samples/windowsforms-formatting-utility-vb)

@@ -16,19 +16,19 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: 48e1b40ddd4bc7fae7d65660adf216756d7c83f7
-ms.sourcegitcommit: 2987e241e2f76c9248d2146bf2761a33e2c7a882
+ms.openlocfilehash: b6197acf9ceee5862cf13eceab178df513eb91d7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/14/2020
-ms.locfileid: "88228739"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541664"
 ---
 # <a name="custom-date-and-time-format-strings"></a>自定义日期和时间格式字符串
 
 日期和时间格式字符串定义由格式设置操作生成的 <xref:System.DateTime> 或 <xref:System.DateTimeOffset> 值的文本表示形式。 它还可定义分析操作中需要的日期和时间值的表示形式，以便成功将字符串转换为日期和时间。 自定义格式字符串由一个或多个自定义日期和时间格式说明符组成。 任何不是[标准日期和时间格式字符串](standard-date-and-time-format-strings.md)的字符串都会解释为自定义日期和时间格式字符串。
 
 > [!TIP]
-> 你可以下载格式设置实用工具，它属于一种 .NET Core Windows 窗体应用程序，通过该应用程序，你可将格式字符串应用于数值或日期和时间值并显示结果字符串。 源代码适用于 [C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) 和 [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)。
+> 你可以下载格式设置实用工具，它属于一种 .NET Core Windows 窗体应用程序，通过该应用程序，你可将格式字符串应用于数值或日期和时间值并显示结果字符串。 源代码适用于 [C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) 和 [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb)。
 
 自定义日期和时间格式字符串可以与 <xref:System.DateTime> 和 <xref:System.DateTimeOffset> 值一起使用。
 
@@ -728,5 +728,5 @@ ms.locfileid: "88228739"
 - <xref:System.IFormatProvider?displayProperty=nameWithType>
 - [格式设置类型](formatting-types.md)
 - [标准日期和时间格式字符串](standard-date-and-time-format-strings.md)
-- [示例：.NET Core WinForms 格式设置实用工具 (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
-- [示例：.NET Core WinForms 格式设置实用工具 (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)
+- [示例：.NET Core WinForms 格式设置实用工具 (C#)](/samples/dotnet/samples/windowsforms-formatting-utility-cs)
+- [示例：.NET Core WinForms 格式设置实用工具 (Visual Basic)](/samples/dotnet/samples/windowsforms-formatting-utility-vb)

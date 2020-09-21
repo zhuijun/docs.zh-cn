@@ -21,12 +21,12 @@ helpviewer_keywords:
 - code generators
 - CodeDOM, graphs
 ms.assetid: 0444ddf3-c3f6-44ed-a999-f710d9c3e0cf
-ms.openlocfilehash: 476d8c18f386f889855c664147b1ee20995dc6f9
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 7a730a828488fd3ca04419588b3f32703dfda1c9
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865211"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541729"
 ---
 # <a name="using-the-codedom"></a>使用 CodeDom
 CodeDOM 提供表示多种常见源代码元素的类型。 可以设计一个程序，它使用 CodeDOM 元素生成源代码模型来组合对象图。 对于支持的编程语言，可使用 CodeDOM 代码生成器将此对象图呈现为源代码。 还可使用 CodeDOM 将源代码编译为二进制程序集。  
@@ -126,4 +126,4 @@ CodeDOM 提供表示多种常见源代码元素的类型。 可以设计一个�
   
  有关各种 CodeDOM 类型的文档，请参阅 <xref:System.CodeDom> 命名空间的参考文档。  
   
- 有关用于查找表示特定代码元素类型的 CodeDOM 元素的快速图表，请参阅 [CodeDOM 快速参考](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))。
+ 有关用于查找表示特定代码元素类型的 CodeDOM 元素的快速图表，请参阅 [CodeDOM 快速参考](/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))。

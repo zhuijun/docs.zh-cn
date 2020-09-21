@@ -38,12 +38,12 @@ helpviewer_keywords:
 - integer value type
 - base types, class library
 ms.assetid: 7e4c5921-955d-4b06-8709-101873acf157
-ms.openlocfilehash: 7eb9aa9714dcb920118a6422b9f6c78775bf1a5c
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: cf2137c2ebd2f4901401ed25746febaa440a08f5
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662922"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554757"
 ---
 # <a name="net-class-library-overview"></a>.NET 类库概述
 
@@ -107,7 +107,7 @@ ms.locfileid: "84662922"
   
  除了基本数据类型外，<xref:System> 命名空间还包含 100 多个类，范围从处理异常的类到处理核心运行时概念的类，如应用程序域和垃圾回收器。 <xref:System> 命名空间还包含许多二级命名空间。  
   
- 有关命名空间的详细信息，请使用 [.NET API 浏览器](https://docs.microsoft.com/dotnet/api)来浏览 .NET 类库。 API 参考文档提供了有关每个名称空间及其类型和每个成员的文档。  
+ 有关命名空间的详细信息，请使用 [.NET API 浏览器](../../api/index.md)来浏览 .NET 类库。 API 参考文档提供了有关每个名称空间及其类型和每个成员的文档。  
   
 ## <a name="see-also"></a>请参阅
 

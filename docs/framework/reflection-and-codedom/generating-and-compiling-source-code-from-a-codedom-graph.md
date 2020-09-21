@@ -27,12 +27,12 @@ helpviewer_keywords:
 - compiling source code, multiple languages
 - CodeDOM, graphs
 ms.assetid: 6c864c8e-6dd3-4a65-ace0-36879d9a9c42
-ms.openlocfilehash: 85654fe961f01ad7b8fb886d59a3de9ab0efe7aa
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 3aad7b2ff047a2d9ad12c23d16773e482a395c10
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474041"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551192"
 ---
 # <a name="generating-and-compiling-source-code-from-a-codedom-graph"></a>在 CodeDOM 图中生成和编译源代码
 <xref:System.CodeDom.Compiler> 命名空间提供了从 CodeDOM 对象图生成源代码和用受支持的编译器管理编译的接口。 代码提供程序可根据 CodeDOM 图，用某种编程语言生成源代码。 从 <xref:System.CodeDom.Compiler.CodeDomProvider> 派生的类通常可以提供一些方法，用于生成和编译提供程序支持的语言代码。  
@@ -97,4 +97,4 @@ ms.locfileid: "86474041"
 - <xref:System.CodeDom>
 - <xref:System.CodeDom.Compiler>
 - [动态源代码生成和编译](dynamic-source-code-generation-and-compilation.md)
-- [CodeDOM 快速参考](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))
+- [CodeDOM 快速参考](/previous-versions/dotnet/netframework-4.0/f1dfsbhc(v=vs.100))

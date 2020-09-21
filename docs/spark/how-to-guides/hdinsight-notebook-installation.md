@@ -4,12 +4,12 @@ description: 了解如何在 Azure HDInsight 的 Jupyter Notebook 中安装 .NET
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 14babf7a551192b286f309393e3bbff25d4745d5
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 8110b87991e2f0253257faf19f383dec6cbd3853
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617738"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557198"
 ---
 # <a name="install-net-for-apache-spark-on-jupyter-notebooks-on-azure-hdinsight-spark-clusters"></a>在 Azure HDInsight Spark 群集的 Jupyter Notebook 中安装 .NET for Apache Spark
 
@@ -17,7 +17,7 @@ ms.locfileid: "85617738"
 
 Azure HDInsight 群集已附带 Jupyter Notebook，因此只需将 Jupyter Notebook 配置为运行 .NET for Apache Spark。 若要在 Jupyter Notebook 中使用 .NET for Apache Spark，需要提供 C# REPL，以逐行执行 C# 代码并在必要时保留执行状态。 [Try .NET](https://github.com/dotnet/try) 已集成为官方 .NET REPL。
 
-若要通过 Jupyter Notebook 体验启用 .NET for Apache Spark，需要通过 [Ambari](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-manage-ambari) 完成一些手动步骤，然后从 HDInsight Spark 群集提交[脚本操作](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux)。
+若要通过 Jupyter Notebook 体验启用 .NET for Apache Spark，需要通过 [Ambari](/azure/hdinsight/hdinsight-hadoop-manage-ambari) 完成一些手动步骤，然后从 HDInsight Spark 群集提交[脚本操作](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux)。
 
 > [!NOTE]
 > 此功能是试验功能，HDInsight Spark 团队不支持它。 
@@ -26,7 +26,7 @@ Azure HDInsight 群集已附带 Jupyter Notebook，因此只需将 Jupyter Noteb
 
 ## <a name="prerequisites"></a>先决条件
 
-创建 [Azure HDInsight Spark](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-apache-spark-cluster-in-hdinsight) 群集（如果还没有此群集）。
+创建 [Azure HDInsight Spark](/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-apache-spark-cluster-in-hdinsight) 群集（如果还没有此群集）。
 
 1. 访问 [Azure 门户](https://portal.azure.com)并选择“+ 创建资源”。 
 
@@ -63,9 +63,9 @@ Azure HDInsight 群集已附带 Jupyter Notebook，因此只需将 Jupyter Noteb
 
    在本地计算机中新建名称为 install-interactive-notebook.sh 的文件，粘贴 [install-interactive-notebook.sh 内容](https://raw.githubusercontent.com/dotnet/spark/master/deployment/HDI-Spark/Notebooks/install-interactive-notebook.sh)中的内容。 
 
-   将此脚本上传到可从 HDInsight 群集访问的 [URI](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) 上。 例如 `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`。
+   将此脚本上传到可从 HDInsight 群集访问的 [URI](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) 上。 例如 `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`。
 
-2. 使用 [HDInsight 脚本操作](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux)运行群集上的 `install-interactive-notebook.sh`。
+2. 使用 [HDInsight 脚本操作](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux)运行群集上的 `install-interactive-notebook.sh`。
 
    返回到 Azure 门户中的 HDI 群集，从左侧的选项中选择“脚本操作”。  提交一个脚本操作，用于在 HDInsight Spark 群集上部署 .NET for Apache Spark REPL。 使用以下设置：
 
@@ -158,4 +158,4 @@ Azure HDInsight 群集已附带 Jupyter Notebook，因此只需将 Jupyter Noteb
 ## <a name="next-steps"></a>后续步骤
 
 * [将 .NET for Apache Spark 应用程序部署到 Azure HDInsight](../tutorials/hdinsight-deployment.md)
-* [HDInsight 文档](https://docs.microsoft.com/azure/hdinsight/)
+* [HDInsight 文档](/azure/hdinsight/)

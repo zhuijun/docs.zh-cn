@@ -7,12 +7,12 @@ helpviewer_keywords:
 - members, obsolete in .NET Framework
 - obsolete members [.NET Framework]
 ms.assetid: 0ee25062-4071-4d3c-a552-87a75d3ecd34
-ms.openlocfilehash: c3418675bf69ffaf60d6b16202fc6cb8a112ebab
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d5981a2ec1e8152e891a4480ea548200be45ecd1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558928"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558519"
 ---
 # <a name="obsolete-members-in-net-framework"></a>.NET Framework 中的已过时成员
 
@@ -421,8 +421,8 @@ ms.locfileid: "88558928"
 > |<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CodeDomProvider.CreateCompiler%2A>|调用方不应使用 <xref:System.CodeDom.Compiler.ICodeCompiler?displayProperty=nameWithType> 接口，并应改为直接在 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> 类上使用此方法。 从 <xref:System.CodeDom.Compiler.CodeDomProvider> 的继承必须还要实现此接口，并应该排除此警告，或淘汰此方法。|
 > |<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CodeDomProvider.CreateGenerator%2A>|调用方不应使用 <xref:System.CodeDom.Compiler.ICodeGenerator?displayProperty=nameWithType> 接口，并应改为直接在 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> 类上使用此方法。 从 <xref:System.CodeDom.Compiler.CodeDomProvider> 的继承必须还要实现此接口，并应该排除此警告，或淘汰此方法。|
 > |<xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CodeDomProvider.CreateParser%2A>|调用方不应使用 <xref:System.CodeDom.Compiler.ICodeParser?displayProperty=nameWithType> 接口，并应改为直接在 <xref:System.CodeDom.Compiler.CodeDomProvider?displayProperty=nameWithType> 类上使用此方法。 从 <xref:System.CodeDom.Compiler.CodeDomProvider> 的继承必须还要实现此接口，并应该排除此警告，或淘汰此方法。|
-> |<xref:System.CodeDom.Compiler.CompilerParameters?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CompilerParameters.Evidence%2A>|CAS 策略已过时，并将从 .NET Framework 的未来版本中移除。 有关详细信息，请参阅 [.NET Framework 4 中的安全性更改](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee191568%28v=vs.100%29)。|
-> |<xref:System.CodeDom.Compiler.CompilerResults?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CompilerResults.Evidence%2A>|CAS 策略已过时，并将从 .NET Framework 的未来版本中移除。 有关详细信息，请参阅 [.NET Framework 4 中的安全性更改](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ee191568%28v=vs.100%29)。|
+> |<xref:System.CodeDom.Compiler.CompilerParameters?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CompilerParameters.Evidence%2A>|CAS 策略已过时，并将从 .NET Framework 的未来版本中移除。 有关详细信息，请参阅 [.NET Framework 4 中的安全性更改](/previous-versions/dotnet/netframework-4.0/ee191568(v=vs.100))。|
+> |<xref:System.CodeDom.Compiler.CompilerResults?displayProperty=nameWithType>|<xref:System.CodeDom.Compiler.CompilerResults.Evidence%2A>|CAS 策略已过时，并将从 .NET Framework 的未来版本中移除。 有关详细信息，请参阅 [.NET Framework 4 中的安全性更改](/previous-versions/dotnet/netframework-4.0/ee191568(v=vs.100))。|
 > |<xref:System.Collections.Specialized.NameObjectCollectionBase?displayProperty=nameWithType>|<xref:System.Collections.Specialized.NameObjectCollectionBase.%23ctor%28System.Collections.IHashCodeProvider%2CSystem.Collections.IComparer%29>|请改用 <xref:System.Collections.Specialized.NameObjectCollectionBase.%23ctor%28System.Collections.IEqualityComparer%29>。|
 > |<xref:System.Collections.Specialized.NameObjectCollectionBase?displayProperty=nameWithType>|<xref:System.Collections.Specialized.NameObjectCollectionBase.%23ctor%28System.Int32%2CSystem.Collections.IHashCodeProvider%2CSystem.Collections.IComparer%29>|请改用 <xref:System.Collections.Specialized.NameObjectCollectionBase.%23ctor%28System.Int32%2CSystem.Collections.IEqualityComparer%29>。|
 > |<xref:System.Collections.Specialized.NameValueCollection?displayProperty=nameWithType>|<xref:System.Collections.Specialized.NameValueCollection.%23ctor%28System.Collections.IHashCodeProvider%2CSystem.Collections.IComparer%29>|请改用 <xref:System.Collections.Specialized.NameValueCollection.%23ctor%28System.Collections.IEqualityComparer%29>。|

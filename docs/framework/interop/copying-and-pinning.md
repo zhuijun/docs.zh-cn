@@ -8,11 +8,12 @@ helpviewer_keywords:
 - interop marshaling, copying
 - interop marshaling, pinning
 ms.assetid: 0059f576-e460-4e70-b257-668870e420b8
-ms.openlocfilehash: b7931813cd5254375eda81515f388c85c78fa284
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1f748da740ce76024495d6fe7968df3be3891e80
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618774"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557079"
 ---
 # <a name="copying-and-pinning"></a>复制和锁定
 
@@ -81,5 +82,5 @@ ms.locfileid: "85618774"
 ## <a name="see-also"></a>请参阅
 
 - [默认封送处理行为](default-marshaling-behavior.md)
-- [方向特性](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
+- [方向特性](/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))
 - [互操作封送处理](interop-marshaling.md)

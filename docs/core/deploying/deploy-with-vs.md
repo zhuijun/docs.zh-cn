@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 73eee58a3d11f2f898a6d57cb282ccf4e802cdca
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 1c9aba10e27609bdf8e95d844ead60fd0ec0bd2c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656594"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538718"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>使用 Visual Studio 部署 .NET Core 应用
 
@@ -24,7 +24,7 @@ ms.locfileid: "88656594"
 - 独立部署
 - 包含第三方依赖项的独立部署
 
-有关使用 Visual Studio 开发 .NET Core 应用程序的信息，请参阅 [.NET Core 依赖项和要求](../install/dependencies.md?pivots=os-windows)。
+有关使用 Visual Studio 开发 .NET Core 应用程序的信息，请参阅 [.NET Core 依赖项和要求](../install/windows.md)。
 
 ## <a name="framework-dependent-deployment"></a>依赖框架的部署
 

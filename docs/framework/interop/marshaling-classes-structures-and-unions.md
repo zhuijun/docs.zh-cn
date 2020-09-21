@@ -19,11 +19,12 @@ helpviewer_keywords:
 - data marshaling, platform invoke
 - marshaling, platform invoke
 ms.assetid: 027832a2-9b43-4fd9-9b45-7f4196261a4e
-ms.openlocfilehash: 5e616b5bb513939cadd8fe5c72675ba0b6e070a3
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 25de633faabb1424bcf5e618cc5ca129e61c5fca
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621517"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547865"
 ---
 # <a name="marshaling-classes-structures-and-unions"></a>封送类、结构和联合
 
@@ -35,7 +36,7 @@ ms.locfileid: "85621517"
 |----------|-----------------|------------|
 |按值传递类。|将具有整数成员的类传递为 In/Out 参数，与托管的情形相似。|[SysTime 示例](#systime-sample)|
 |按值传递结构。|将结构作为 In 参数传递。|[结构示例](#structures-sample)|
-|按引用传递结构。|将结构作为 In/Out 参数传递。|[OSInfo 示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|
+|按引用传递结构。|将结构作为 In/Out 参数传递。|[OSInfo 示例](/previous-versions/dotnet/netframework-4.0/795sy883(v=vs.100))|
 |具有内嵌结构（平展）的结构。|传递非托管函数中表示内嵌结构的结构的类。 此结构在托管的原型中将平展为一个大的结构。|[FindFile 示例](#findfile-sample)|
 |具有指向另一结构的指针的结构。|将包含指向第二结构的指针的结构作为成员传递。|[结构示例](#structures-sample)|
 |按值传递具有整数的结构数组。|将仅包含整数的结构数组作为 In/Out 参数进行传递。 可以更改数组的成员。|[数组示例](marshaling-different-types-of-arrays.md)|
@@ -43,7 +44,7 @@ ms.locfileid: "85621517"
 |具有值类型的联合。|传递具有值类型（整数和双精度）的联合。|[联合示例](#unions-sample)|
 |具有混合类型的联合。|传递具有混合类型（整数和字符串）的联合。|[联合示例](#unions-sample)|
 |具有特定于平台的布局的结构。|使用本机打包定义传递类型。|[平台示例](#platform-sample)|
-|结构中的 null 值。|传递空引用（Visual Basic 中为 Nothing），而不传递对值类型的引用。|[HandleRef 示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/hc662t8k(v=vs.85))|
+|结构中的 null 值。|传递空引用（Visual Basic 中为 Nothing），而不传递对值类型的引用。|[HandleRef 示例](/previous-versions/dotnet/netframework-3.0/hc662t8k(v=vs.85))|
 
 ## <a name="structures-sample"></a>结构示例
 
@@ -133,7 +134,7 @@ typedef struct _MYARRAYSTRUCT
 
 ## <a name="findfile-sample"></a>FindFile 示例
 
-此示例演示了如何将包含第二、嵌入结构的结构传递到非托管函数。 它还演示了如何使用 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性在结构中声明固定长度的数组。 在此示例中，嵌入的结构元素将添加到父结构。 有关未平展的嵌入结构的示例，请参阅[结构示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100))。
+此示例演示了如何将包含第二、嵌入结构的结构传递到非托管函数。 它还演示了如何使用 <xref:System.Runtime.InteropServices.MarshalAsAttribute> 属性在结构中声明固定长度的数组。 在此示例中，嵌入的结构元素将添加到父结构。 有关未平展的嵌入结构的示例，请参阅[结构示例](/previous-versions/dotnet/netframework-4.0/eadtsekz(v=vs.100))。
 
 FindFile 示例使用以下的非托管函数（与其原始函数声明一同显示）：
 
@@ -290,7 +291,7 @@ public struct STRRET_64
 
 下面的代码片段演示了如何在运行时，在 32 位和 64 位定义之间进行选择的示例。
 
-```CSharp
+```csharp
 if (IntPtr.Size == 8)
 {
     // Use the STRRET_64 definition
@@ -331,7 +332,7 @@ typedef struct _SYSTEMTIME {
 
 在此示例中，`SystemTime` 类包含原始结构中表示为类成员的元素。 设置 <xref:System.Runtime.InteropServices.StructLayoutAttribute> 特性，以确保成员在内存中按照它们出现的顺序进行排列。
 
-`NativeMethods` 类包含 `GetSystemTime` 方法的托管原型，此方法在默认情况下将 `SystemTime` 类作为 In/Out 参数传递。 此参数必须使用 <xref:System.Runtime.InteropServices.InAttribute> 和 <xref:System.Runtime.InteropServices.OutAttribute> 属性进行声明，因为作为引用类型的类默认传递为 In 参数。 为使调用方接收结果，这些[方向特性](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))必须显式应用。 `App` 类创建 `SystemTime` 类的新实例，并访问它的数据字段。
+`NativeMethods` 类包含 `GetSystemTime` 方法的托管原型，此方法在默认情况下将 `SystemTime` 类作为 In/Out 参数传递。 此参数必须使用 <xref:System.Runtime.InteropServices.InAttribute> 和 <xref:System.Runtime.InteropServices.OutAttribute> 属性进行声明，因为作为引用类型的类默认传递为 In 参数。 为使调用方接收结果，这些[方向特性](/previous-versions/dotnet/netframework-4.0/77e6taeh(v=vs.100))必须显式应用。 `App` 类创建 `SystemTime` 类的新实例，并访问它的数据字段。
 
 ### <a name="code-samples"></a>代码示例
 

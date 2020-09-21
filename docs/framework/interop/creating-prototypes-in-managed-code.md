@@ -18,11 +18,12 @@ helpviewer_keywords:
 - DLL functions
 - object fields in platform invoke
 ms.assetid: ecdcf25d-cae3-4f07-a2b6-8397ac6dc42d
-ms.openlocfilehash: 76b1a87c4513fdee21c5c3d5eba533b11e022e3a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: e83979e5843c52fc3a446a5b669ae8822b32ddad
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622154"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555583"
 ---
 # <a name="creating-prototypes-in-managed-code"></a>在托管代码中创建原型
 本主题介绍了如何访问非托管函数，并介绍了在托管代码中批注方法定义的若干属性字段。 有关演示如何构造要用于平台调用、基于 .NET 的声明的示例，请参阅[用平台调用封送数据](marshaling-data-with-platform-invoke.md)。  
@@ -235,7 +236,7 @@ interface IDemandStubsItf
 - [指定入口点](specifying-an-entry-point.md)
 - [指定字符集](specifying-a-character-set.md)
 - [平台调用示例](platform-invoke-examples.md)
-- [平台调用安全注意事项](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb397754(v=vs.100))
+- [平台调用安全注意事项](/previous-versions/dotnet/netframework-4.0/bb397754(v=vs.100))
 - [标识 DLL 中的函数](identifying-functions-in-dlls.md)
 - [创建用于容纳 DLL 函数的类](creating-a-class-to-hold-dll-functions.md)
 - [调用 DLL 函数](calling-a-dll-function.md)

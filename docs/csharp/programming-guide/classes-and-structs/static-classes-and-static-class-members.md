@@ -9,12 +9,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 4f187d772d2f2e4375fbe3cfdc8c48af691f1c7c
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 019b36a328d4e9fb01b112ec79d8d8e0548142f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86863872"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541872"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>静态类和静态类成员（C# 编程指南）
 
@@ -41,7 +41,7 @@ Console.WriteLine(Math.Round(Math.Abs(dub)));
  与所有类类型的情况一样，加载引用该类的程序时，.NET 运行时会加载静态类的类型信息。 程序无法确切指定类加载的时间。 但是，可保证进行加载，以及在程序中首次引用类之前初始化其字段并调用其静态构造函数。 静态构造函数只调用一次，在程序所驻留的应用程序域的生存期内，静态类会保留在内存中。  
   
 > [!NOTE]
-> 若要创建仅允许创建本身的一个实例的非静态类，请参阅[在 C# 中实现单一实例](https://docs.microsoft.com/previous-versions/msp-n-p/ff650316%28v=pandp.10%29)。  
+> 若要创建仅允许创建本身的一个实例的非静态类，请参阅[在 C# 中实现单一实例](/previous-versions/msp-n-p/ff650316(v=pandp.10))。  
   
  以下列表提供静态类的主要功能：  
   

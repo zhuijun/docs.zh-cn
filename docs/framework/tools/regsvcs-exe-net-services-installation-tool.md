@@ -10,12 +10,12 @@ helpviewer_keywords:
 - type libraries
 - registering assemblies
 ms.assetid: 5220fe58-5aaf-4e8e-8bc3-b78c63025804
-ms.openlocfilehash: 6d0090eda764113407e35a3bcec139f1c7cfb050
-ms.sourcegitcommit: b4f8849c47c1a7145eb26ce68bc9f9976e0dbec3
+ms.openlocfilehash: 474018b8bc39e4d5c36bd4bc6481072b218d6270
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "87517238"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558389"
 ---
 # <a name="regsvcsexe-net-services-installation-tool"></a>Regsvcs.exe（.NET 服务安装工具）
 .NET 服务安装工具执行下列操作：  
@@ -66,7 +66,7 @@ ms.locfileid: "87517238"
 ## <a name="remarks"></a>备注  
  Regsvcs.exe 需要由 assemblyFile.dll 指定的源程序集文件。 此程序集必须用强名称进行签名。 有关强名称签名的更多信息，请参阅[使用强名称为程序集签名](../../standard/assembly/sign-strong-name.md)。 目标应用程序的名称和类型库文件的名称都是可选的。 如果 applicationName 参数尚不存在，则该参数可从源程序集文件生成并且将由 Regsvcs.exe 创建。 typelibraryfile 参数可以指定类型库名称。 如果未指定类型库名称，默认情况下，Regsvcs.exe 将使用程序集名称。  
   
- 当 Regsvcs.exe 注册组件的方法时，它需要遵从那些方法的[要求](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/9kc0c6st(v=vs.100))和[链接要求](../misc/link-demands.md)。 因为该工具在完全受信任的环境中执行，所以大多数权限要求都会成功。 但是，如果组件中的方法受 <xref:System.Security.Permissions.StrongNameIdentityPermission> 或 <xref:System.Security.Permissions.PublisherIdentityPermission> 的要求或链接要求保护，则 Regsvcs.exe 无法注册这些组件。  
+ 当 Regsvcs.exe 注册组件的方法时，它需要遵从那些方法的[要求](/previous-versions/dotnet/netframework-4.0/9kc0c6st(v=vs.100))和[链接要求](../misc/link-demands.md)。 因为该工具在完全受信任的环境中执行，所以大多数权限要求都会成功。 但是，如果组件中的方法受 <xref:System.Security.Permissions.StrongNameIdentityPermission> 或 <xref:System.Security.Permissions.PublisherIdentityPermission> 的要求或链接要求保护，则 Regsvcs.exe 无法注册这些组件。  
   
  你必须在本地计算机上具有管理特权才能使用 Regsvcs.exe。  
   

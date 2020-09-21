@@ -18,12 +18,12 @@ helpviewer_keywords:
 - isolated storage, types
 - user authentication, isolated storage
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
-ms.openlocfilehash: 7802e4bc27195d1c8ecaccbd64121fb24328a4d8
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 244bd9c25040b39c9349d28f57981f29d7a32d0a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288532"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542029"
 ---
 # <a name="types-of-isolation"></a>隔离的类型
 独立存储始终仅限创建它的用户访问。 为了实现这种隔离，公共语言运行时使用操作系统识别的相同用户标识，即与存储打开时的代码运行进程相关联的标识。 虽然此标识是已验证用户标识，但模拟可能会导致当前用户的标识发生动态变化。  
@@ -51,7 +51,7 @@ ms.locfileid: "84288532"
  除漫游存储外，独立存储始终按计算机隐式隔离，因为它使用指定计算机的本地存储设备。  
   
 > [!IMPORTANT]
-> 独立存储不适用于 Windows 8.x 应用商店应用。 请改用 Windows 运行时 API 包含的 `Windows.Storage` 命名空间中的应用程序数据类来存储本地数据和文件。 有关详细信息，请参阅 Windows 开发人员中心的 [应用程序数据](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) 。  
+> 独立存储不适用于 Windows 8.x 应用商店应用。 请改用 Windows 运行时 API 包含的 `Windows.Storage` 命名空间中的应用程序数据类来存储本地数据和文件。 有关详细信息，请参阅 Windows 开发人员中心的 [应用程序数据](/previous-versions/windows/apps/hh464917(v=win.10)) 。  
   
 <a name="UserAssembly"></a>
 ## <a name="isolation-by-user-and-assembly"></a>按用户和程序集隔离  

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - namespaces [.NET Framework], types
 - types, about types
 ms.assetid: 53c57c96-83e1-4ee3-9543-9ac832671a89
-ms.openlocfilehash: db0ecd59f122228d33b74be6dec51371413d68b3
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 4e3fc4cb03a0b8fd63b41bd912374c29eef3a29a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84767827"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555154"
 ---
 # <a name="common-type-system"></a>通用类型系统
 
@@ -306,6 +306,6 @@ ms.locfileid: "84767827"
   
 ## <a name="see-also"></a>请参阅
 
-- [.NET API 浏览器](/dotnet/api)
+- [.NET API 浏览器](../../../api/index.md)
 - [公共语言运行时](../clr.md)
 - [.NET 中的类型转换](type-conversion.md)

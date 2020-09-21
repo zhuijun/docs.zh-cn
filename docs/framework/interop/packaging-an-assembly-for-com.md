@@ -17,11 +17,12 @@ helpviewer_keywords:
 - COM interop, exposing COM components
 - Reqasm.exe
 ms.assetid: 39dc55aa-f2a1-4093-87bb-f1c0edb6e761
-ms.openlocfilehash: 4963892419fd1caec4483123f820d62967a87dd6
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 5fde7f7f00aadf4d941d4ffe522453970b67e9e2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620828"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554125"
 ---
 # <a name="packaging-a-net-framework-assembly-for-com"></a>打包用于 COM 的 .NET Framework 程序集
 
@@ -59,7 +60,7 @@ COM 开发人员可从其计划纳入应用程序的托管类型相关信息中�
 
   无论选择的机制如何，生成的类型库中仅包含所提供程序集中定义的公共类型。
 
-有关说明，请参阅[如何：将类型库作为 Win32 资源嵌入基于 .NET 的应用程序](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))。
+有关说明，请参阅[如何：将类型库作为 Win32 资源嵌入基于 .NET 的应用程序](/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))。
 
 <a name="cpconpackagingassemblyforcomanchor1"></a>
 
@@ -97,4 +98,4 @@ TypeLibConverter 类实现 <xref:System.Runtime.InteropServices.ITypeLibConverte
 - [程序集安全注意事项](../../standard/assembly/security-considerations.md)
 - [Tlbexp.exe（类型库导出程序）](../tools/tlbexp-exe-type-library-exporter.md)
 - [向 COM 注册程序集](registering-assemblies-with-com.md)
-- [如何：将类型库作为 Win32 资源嵌入应用程序](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))
+- [如何：将类型库作为 Win32 资源嵌入应用程序](/previous-versions/dotnet/netframework-4.0/ww9a897z(v=vs.100))

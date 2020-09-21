@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3244a36808fb687663241e704d08775ea5c96720
-ms.sourcegitcommit: 1eae045421d9ea2bfc82aaccfa5b1ff1b8c9e0e4
+ms.openlocfilehash: 97870553d4ec66a569ba63cd945639b03bbbd6df
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/16/2020
-ms.locfileid: "84803257"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539442"
 ---
 ### <a name="kestrel-default-supported-tls-protocol-versions-changed"></a>Kestrel：默认支持的 TLS 协议版本已更改
 
@@ -39,7 +39,7 @@ Kestrel 允许操作系统选择要使用的最佳协议，并阻止不安全的
 
 若要禁用旧协议，请执行以下操作之一：
 
-* 参照 [Windows 说明](/dotnet/framework/network-programming/tls#configuring-schannel-protocols-in-the-windows-registry)，在系统范围禁用旧的协议（如 TLS 1.0）。 目前所有 Windows 版本上都默认启用该协议。
+* 参照 [Windows 说明](../../../../docs/framework/network-programming/tls.md#configuring-schannel-protocols-in-the-windows-registry)，在系统范围禁用旧的协议（如 TLS 1.0）。 目前所有 Windows 版本上都默认启用该协议。
 * 在代码中手动选择要支持的协议，如下所示：
 
     ```csharp

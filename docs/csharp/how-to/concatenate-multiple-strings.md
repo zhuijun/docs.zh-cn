@@ -7,12 +7,12 @@ helpviewer_keywords:
 - concatenating strings [C#]
 - strings [C#], concatenation
 ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
-ms.openlocfilehash: ef3d79c5b40d08cb76e58eba1c8831c468fd1fc0
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: f2aae14deac967a833fb3510acdb32e0971485b5
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84663013"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537478"
 ---
 # <a name="how-to-concatenate-multiple-strings-c-guide"></a>如何连接多个字符串（C# 指南）
 
@@ -41,7 +41,7 @@ ms.locfileid: "84663013"
 
 :::code language="csharp" interactive="try-dotnet-method" source="../../../samples/snippets/csharp/how-to/strings/Concatenate.cs" id="Snippet4":::
 
-有关详细信息，请阅读[选择字符串串联或 `StringBuilder` 类的原因](https://docs.microsoft.com/dotnet/api/system.text.stringbuilder#the-string-and-stringbuilder-types)。
+有关详细信息，请阅读[选择字符串串联或 `StringBuilder` 类的原因](/dotnet/api/system.text.stringbuilder#the-string-and-stringbuilder-types)。
 
 还可使用 <xref:System.String.Concat%2A?displayProperty=nameWithType> 方法联接集合中的字符串。 如果源字符串应使用分隔符分隔，请使用 <xref:System.String.Join%2A?displayProperty=nameWithType> 方法。 以下代码使用这两种方法合并单词数组：
 

@@ -3,12 +3,12 @@ title: 使用 LINQ to XML 处理 XML 数据
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 059d6b9d-63f7-4011-9ba8-8406f0bbae7d
-ms.openlocfilehash: f45c5c9dccd2c1e8bdd67000a8b2f22425822ac9
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 5afa9fc84b7f41023eceb5c0734b0667dc55514e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710461"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556494"
 ---
 # <a name="process-xml-data-using-linq-to-xml"></a>使用 LINQ to XML 处理 XML 数据
 LINQ to XML 是 .NET Framework 3.5 版中用于处理 XML 数据的新模型。 LINQ to XML 允许开发人员对 XML 数据执行任何需要的操作：查询、修改、创建、保存，和序列化 XML 文档。 真正的优势在于查询和创建功能。  
@@ -17,13 +17,13 @@ LINQ to XML 是 .NET Framework 3.5 版中用于处理 XML 数据的新模型。 
   
  LINQ to XML 利用 .NET Framework 3.5 版中的语言集成查询 (LINQ) 技术。 LINQ 扩展了 C# 和 Visual Basic 的语言语法，提供可以扩展到几乎任何数据存储区的强大的查询功能。  
   
- 有关其用法的详细讨论，请参阅 [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) 和 [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)。 有关 LINQ 框架的概述，请参阅[语言集成查询 (LINQ) - C#](../../../csharp/programming-guide/concepts/linq/index.md) 或[语言集成查询 (LINQ) - Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md)。  
+ 有关其用法的详细讨论，请参阅 [LINQ to XML (C#)](../../linq/linq-xml-overview.md) 和 [LINQ to XML (Visual Basic)](../../linq/linq-xml-overview.md)。 有关 LINQ 框架的概述，请参阅[语言集成查询 (LINQ) - C#](../../../csharp/programming-guide/concepts/linq/index.md) 或[语言集成查询 (LINQ) - Visual Basic](../../../visual-basic/programming-guide/concepts/linq/index.md)。  
   
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.Linq>
 - <xref:System.Linq>
-- [LINQ to XML 与DOM (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-dom.md)
-- [LINQ to XML 与DOM (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-dom.md)
-- [LINQ to XML 与其他 XML 技术 (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)
-- [LINQ to XML 与其他 XML 技术 (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-vs-other-xml-technologies.md)
+- [LINQ to XML 与DOM (C#)](../../linq/linq-xml-vs-dom.md)
+- [LINQ to XML 与DOM (Visual Basic)](../../linq/linq-xml-vs-dom.md)
+- [LINQ to XML 与其他 XML 技术 (C#)](../../linq/linq-xml-vs-xml-technologies.md)
+- [LINQ to XML 与其他 XML 技术 (Visual Basic)](../../linq/linq-xml-vs-xml-technologies.md)

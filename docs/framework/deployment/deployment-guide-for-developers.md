@@ -6,12 +6,12 @@ helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 47946121334fe45132a7469894f30081045e3a68
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 5b9d22062d273404c7451beb44e56d3fa5c4aa1d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558824"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558740"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>.NET Framework 部署指南（针对开发人员）
 本主题为想要随自己的应用一起安装任何 .NET Framework 版本（从 .NET Framework 4.5 到 [!INCLUDE[net_current](../../../includes/net-current-version.md)]）的开发人员提供了相关信息。
@@ -43,9 +43,9 @@ ms.locfileid: "88558824"
 
 - 从 .NET Framework 4.5 开始，你的用户可以在安装过程中查看运行中 .NET Framework 应用的列表并轻松关闭这些应用。 这可能有助于避免系统因安装 .NET Framework 而重新启动。 参见 [减少系统重新启动](reducing-system-restarts.md)。
 
-- 卸载 .NET Framework 4.5 或更高版本也会删除预先存在的 .NET Framework 4 文件。 若要返回到 .NET Framework 4，你必须重新安装它以及它的任何更新。 请参阅[安装 .NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5a4x27ek(v=vs.100))。
+- 卸载 .NET Framework 4.5 或更高版本也会删除预先存在的 .NET Framework 4 文件。 若要返回到 .NET Framework 4，你必须重新安装它以及它的任何更新。 请参阅[安装 .NET Framework 4](/previous-versions/dotnet/netframework-4.0/5a4x27ek(v=vs.100))。
 
-- .NET Framework 4.5 可再发行组件于 2012 年 10 月 9 日进行了更新，纠正了一个与数字证书中的错误时间戳相关的问题，此问题会导致 Microsoft 生成并签名的文件中的数字签名提前过期。 如果之前安装了日期为 2012 年 8 月 16 日的 .NET Framework 4.5 可再发行组件包，建议使用 [.NET Framework 下载页](https://dotnet.microsoft.com/download/dotnet-framework/net45)内的最新可再发行组件来更新副本。 有关此问题的更多信息，请参阅 [Microsoft 安全公告 2749655](https://docs.microsoft.com/security-updates/SecurityAdvisories/2012/2749655)。
+- .NET Framework 4.5 可再发行组件于 2012 年 10 月 9 日进行了更新，纠正了一个与数字证书中的错误时间戳相关的问题，此问题会导致 Microsoft 生成并签名的文件中的数字签名提前过期。 如果之前安装了日期为 2012 年 8 月 16 日的 .NET Framework 4.5 可再发行组件包，建议使用 [.NET Framework 下载页](https://dotnet.microsoft.com/download/dotnet-framework/net45)内的最新可再发行组件来更新副本。 有关此问题的更多信息，请参阅 [Microsoft 安全公告 2749655](/security-updates/SecurityAdvisories/2012/2749655)。
 
 有关系统管理员可如何在网络中部署 .NET Framework 及其系统依赖项的信息，请参见阅[适用于管理员的部署指南](guide-for-administrators.md)。
 
@@ -345,11 +345,11 @@ Windows Installer XML (WiX) 工具集通过 XML 源代码生成 Windows 安装�
 |选项|描述|
 |------------|-----------------|
 |**/CEIPConsent**|覆盖默认行为并向 Microsoft 发送匿名反馈以改善将来的部署体验。 仅当安装程序询问你是否同意安装并且用户授权向 Microsoft 发送匿名反馈时，才可以使用此选项。|
-|**/chainingpackage** `packageName`|指定执行链接的可执行文件的名称。 向 Microsoft 发送此信息作为匿名反馈以帮助改进将来的部署体验。<br /><br /> 如果包名称包含空格，则可以用双引号作为分隔符；例如： **/chainingpackage "Lucerne Publishing"** 。 有关链接包的示例，请参阅[从安装包获取进度信息](https://docs.microsoft.com/previous-versions/cc825975(v=vs.100))。|
+|**/chainingpackage** `packageName`|指定执行链接的可执行文件的名称。 向 Microsoft 发送此信息作为匿名反馈以帮助改进将来的部署体验。<br /><br /> 如果包名称包含空格，则可以用双引号作为分隔符；例如： **/chainingpackage "Lucerne Publishing"** 。 有关链接包的示例，请参阅[从安装包获取进度信息](/previous-versions/cc825975(v=vs.100))。|
 |**/LCID**  `LCID`<br /><br /> 其中 `LCID` 指定一个区域设置标识符（请参见 [支持的语言](#supported-languages)）|安装由 `LCID` 指定的语言包，并强制使用此语言显示 UI（除非设置为安静模式）。<br /><br /> 对于 Web 安装程序，此选项将从 Web 链接并安装语言包。 **注意：** 只能随 Web 安装程序一起使用此选项。|
 |**/log** `file` &#124; `folder`|指定日志文件的位置。 默认为过程的临时文件夹，默认文件名基于安装包。 如果文件扩展名为 .txt，则生成文本日志。 如果指定其他扩展名或不指定扩展名，则创建 HTML 日志。|
 |**/msioptions**|指定要为 .msi 和 .msp 项传递的选项；例如： `/msioptions "PROPERTY1='Value'"`。|
-|**/norestart**|防止安装程序自动重新启动。 如果使用此选项，则链接应用必须捕获返回代码并处理重新启动操作（请参阅[从安装包获取进度信息](https://docs.microsoft.com/previous-versions/cc825975(v=vs.100))）。|
+|**/norestart**|防止安装程序自动重新启动。 如果使用此选项，则链接应用必须捕获返回代码并处理重新启动操作（请参阅[从安装包获取进度信息](/previous-versions/cc825975(v=vs.100))）。|
 |**/passive**|设置被动模式。 显示用于指示安装正在进行的进度栏，但不向用户显示任何提示或错误消息。 在此模式下，当链接包被安装程序链接时，它必须处理 [返回代码](#return-codes)。|
 |**/pipe**|创建一个信道，使链接包可以获取进度。|
 |**/promptrestart**|仅在被动模式下，如果安装程序需要重新启动，则会提示用户。 如果需要重新启动，则此选项会要求用户进行交互。|

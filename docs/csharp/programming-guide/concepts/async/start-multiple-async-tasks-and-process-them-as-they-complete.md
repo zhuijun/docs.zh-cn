@@ -3,12 +3,12 @@ title: 在异步任务完成时对其进行处理
 description: 此示例演示如何使用 C# 中的 Task.WhenAny 启动多个任务并在完成时处理其结果，而不是按照它们的启动顺序进行处理。
 ms.date: 08/19/2020
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: c2fe66e865a2c88f4cae50b816f9326614fcbb89
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 520953eaf851dc82440e39b348aa4b246255e126
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812024"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557302"
 ---
 # <a name="process-asynchronous-tasks-as-they-complete-c"></a>在异步任务完成时对其进行处理 (C#)
 
@@ -117,7 +117,7 @@ IEnumerable<Task<int>> downloadTasksQuery =
     select ProcessUrlAsync(url, s_client);
 ```
 
-由于 LINQ 的[延迟执行](../linq/deferred-execution-example.md)，因此可调用 <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> 来启动每个任务。
+由于 LINQ 的[延迟执行](../../../../standard/linq/deferred-execution-example.md)，因此可调用 <xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> 来启动每个任务。
 
 ```csharp
 List<Task<int>> downloadTasks = downloadTasksQuery.ToList();

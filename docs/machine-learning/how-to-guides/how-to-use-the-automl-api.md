@@ -3,12 +3,12 @@ title: 如何使用 ML.NET 自动化 ML API
 description: ML.NET 自动化 ML API 可自动化模型生成过程并生成可供部署的模型。 了解可用于配置自动化机器学习任务的选项。
 ms.date: 12/18/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: b322c484282d025033d747d2093f7b5b4d216fde
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b1ef526301e01e1e75e71e0646f4d11e68215d69
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75636557"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90540727"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>如何使用 ML.NET 自动化机器学习 API
 
@@ -70,7 +70,7 @@ using Microsoft.ML.AutoML;
 
 ## <a name="configure-experiment-settings"></a>配置试验设置
 
-试验具有高度可配置性。 有关配置设置的完整列表，请参阅 [AutoML API 文档](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl?view=ml-dotnet-preview)。
+试验具有高度可配置性。 有关配置设置的完整列表，请参阅 [AutoML API 文档](/dotnet/api/microsoft.ml.automl?view=ml-dotnet-preview)。
 
 一些示例包括：
 

@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 4cd18aca4396f902268d59867760424d65ddcf6d
-ms.sourcegitcommit: b9122d1af21898eaba81e990c70fef46fef74a8d
+ms.openlocfilehash: d543a05eb00a59c5c08ada28fc8392875385aa8a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/26/2020
-ms.locfileid: "88867628"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537530"
 ---
 # <a name="tutorial-create-a-net-core-console-application-using-visual-studio"></a>教程：使用 Visual Studio 创建 .NET Core 控制台应用程序
 
@@ -21,7 +21,7 @@ ms.locfileid: "88867628"
 
 - 安装了具有“.NET Core 跨平台开发”工作负载的 [Visual Studio 2019 版本 16.6 或更高版本](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)。 选择此工作负载时，将自动安装 .NET Core 3.1 SDK。
 
-  有关详细信息，请参阅[在 Visual Studio 中安装 .NET Core SDK](../install/sdk.md?pivots=os-windows#install-with-visual-studio)。
+  有关详细信息，请参阅[在 Visual Studio 中安装 .NET Core SDK](../install/windows.md#install-with-visual-studio)。
 
 ## <a name="create-the-app"></a>创建应用
 

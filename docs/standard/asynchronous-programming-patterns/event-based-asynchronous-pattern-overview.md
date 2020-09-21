@@ -17,12 +17,12 @@ helpviewer_keywords:
 - AsyncOperation class
 - AsyncCompletedEventArgs class
 ms.assetid: 792aa8da-918b-458e-b154-9836b97735f3
-ms.openlocfilehash: 18fbdb29e5a1fb02601dea00964538144c07122c
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: f0d3e2e8f1d1f58c9df8026b38fc0264812b092a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768854"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555674"
 ---
 # <a name="event-based-asynchronous-pattern-overview"></a>基于事件的异步模式概述
 那些同时执行多项任务、但仍能响应用户交互的应用程序通常需要实施一种使用多线程的设计方案。 <xref:System.Threading> 命名空间提供了创建高性能多线程应用程序所必需的所有工具，但要想有效地使用这些工具，需要有丰富的使用多线程软件工程的经验。 对于相对简单的多线程应用程序，<xref:System.ComponentModel.BackgroundWorker> 组件提供了一个简单的解决方案。 对于更复杂的异步应用程序，请考虑实现一个符合基于事件的异步模式的类。  
@@ -138,8 +138,8 @@ public class AsyncExample
 - <xref:System.ComponentModel.BackgroundWorker>
 - <xref:System.ComponentModel.AsyncCompletedEventArgs>
 - [如何：使用支持基于事件的异步模式的组件](how-to-use-components-that-support-the-event-based-asynchronous-pattern.md)
-- [如何：在后台运行操作](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
-- [如何：实现使用后台操作的窗体](../../framework/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation.md)
+- [如何：在后台运行操作](/dotnet/desktop/winforms/controls/how-to-run-an-operation-in-the-background)
+- [如何：实现使用后台操作的窗体](/dotnet/desktop/winforms/controls/how-to-implement-a-form-that-uses-a-background-operation)
 - [基于事件的异步模式 (EAP)](event-based-asynchronous-pattern-eap.md)
 - [实现基于事件的异步模式的最佳做法](best-practices-for-implementing-the-event-based-asynchronous-pattern.md)
 - [确定何时实现基于事件的异步模式](deciding-when-to-implement-the-event-based-asynchronous-pattern.md)

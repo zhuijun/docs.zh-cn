@@ -4,16 +4,16 @@ description: 了解收集使用情况信息以供分析的 ML.NET CLI 遥测功�
 ms.topic: conceptual
 ms.date: 06/03/2020
 ms.custom: mlnet-tooling
-ms.openlocfilehash: 833ee2ae54cf3a52adaf070837a33e00267d25dc
-ms.sourcegitcommit: cdb295dd1db589ce5169ac9ff096f01fd0c2da9d
+ms.openlocfilehash: 753361abdac5a2e979873003f419232a069b2015
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/09/2020
-ms.locfileid: "84599826"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90546427"
 ---
 # <a name="telemetry-collection-by-the-mlnet-cli"></a>ML.NET CLI 遥测收集
 
-[ML.NET CLI](https://aka.ms/mlnet-cli) 包含遥测功能，可收集聚合后供 Microsoft 使用的匿名使用数据。
+[ML.NET CLI](../automate-training-with-cli.md) 包含遥测功能，可收集聚合后供 Microsoft 使用的匿名使用数据。
 
 ## <a name="how-microsoft-uses-the-data"></a>Microsoft 如何使用这些数据
 

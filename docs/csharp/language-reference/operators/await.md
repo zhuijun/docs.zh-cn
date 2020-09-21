@@ -8,12 +8,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 6531e696a6193bf1b1909c9f1be3f5beb4d7dd69
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 8dc85bfeaab12d17af4a3e045559e268b228f736
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89134362"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536465"
 ---
 # <a name="await-operator-c-reference"></a>await 运算符（C# 参考）
 
@@ -60,5 +60,5 @@ ms.locfileid: "89134362"
 - [任务异步编程模型](../../programming-guide/concepts/async/task-asynchronous-programming-model.md)
 - [异步编程](../../async.md)
 - [深入了解异步](../../../standard/async-in-depth.md)
-- [演练：使用 async 和 await 访问 Web](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [演练：使用 async 和 await 访问 Web](../../programming-guide/concepts/async/index.md)
 - [教程：使用 C# 8.0 和 .NET Core 3.0 生成和使用异步流](../../tutorials/generate-consume-asynchronous-stream.md)

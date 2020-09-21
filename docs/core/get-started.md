@@ -5,12 +5,12 @@ author: adegeo
 ms.author: adegeo
 ms.date: 12/03/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: 56eebc0fc5bad6f57d93358cbbef389d6355d66b
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 6106f66dfbbe382ee9f61eb8b7bda70ab9b72d0b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656685"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538543"
 ---
 # <a name="get-started-with-net-core"></a>.NET Core 入门
 
@@ -54,7 +54,7 @@ Hello World!
 | ![视频摄影机图标](./media/video-icon.png "观看视频") | 观看第 9 频道上的[如何安装和使用 Visual Studio Code 和 .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core/) 视频。 |
 | ![视频摄影机图标](./media/video-icon.png "观看视频") | 观看 YouTube 上的 [.NET Core 101](https://www.youtube.com/playlist?list=PLdo4fOcmZ0oWoazjhXQzBKMrFuArxpW80) 视频。 |
 
-请参阅 [.NET Core 依赖项和要求](install/dependencies.md?pivots=os-windows)一文，以获取支持的 Windows 版本列表。
+请参阅 [.NET Core 依赖项和要求](./install/windows.md)一文，以获取支持的 Windows 版本列表。
 
 # <a name="linux"></a>[Linux](#tab/linux)
 
@@ -66,7 +66,7 @@ Hello World!
 |---|---|
 | ![视频摄影机图标](./media/video-icon.png "观看视频") | 观看视频：[在 Ubuntu 上使用 C# 和 .NET Core 实现 Visual Studio Code 入门](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu)。 |
 
-请参阅 [ 依赖项和要求](install/dependencies.md?pivots=os-linux)一文，以获取支持的 Linux 发行版和版本列表。
+请参阅 [ 依赖项和要求](./install/linux.md)一文，以获取支持的 Linux 发行版和版本列表。
 
 # <a name="macos"></a>[macOS](#tab/macos)
 
@@ -80,6 +80,6 @@ Hello World!
 |---|---|
 | ![视频摄影机图标](media/video-icon.png "观看视频") | 观看视频：[在 macOS 上使用 C# 和 .NET Core 实现 Visual Studio Code 入门](https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-NET-Core-Mac)。 |
 
-请参阅 [ 依赖项和要求](install/dependencies.md?pivots=os-macos)一文，以获取支持的 OS X / macOS 版本列表。
+请参阅 [ 依赖项和要求](./install/macos.md)一文，以获取支持的 OS X / macOS 版本列表。
 
 ---

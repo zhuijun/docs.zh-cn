@@ -3,12 +3,12 @@ title: 网络配置设置
 description: 了解为 .NET Core 应用配置网络的运行时设置。
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: 6b5e03b127f95911b712b66c0be8a4f5a2929fc2
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: d43b68206cc82f4a41df02bd5998702b4f5d0590
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83761936"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538128"
 ---
 # <a name="run-time-configuration-options-for-networking"></a>用于网络的运行时配置选项
 
@@ -30,7 +30,7 @@ ms.locfileid: "83761936"
 - 配置 <xref:System.Net.Http.HttpClientHandler?displayProperty=nameWithType> 是使用 <xref:System.Net.Http.SocketsHttpHandler?displayProperty=nameWithType> 还是使用旧的 HTTP 协议堆栈（在 Windows 上为 <xref:System.Net.Http.WinHttpHandler>，在 Linux 上为基于 [libcurl](https://curl.haxx.se/libcurl/) 实现的内部类 `CurlHandler`。）
 
   > [!NOTE]
-  > 可使用高级别网络 API，而不是直接实例化 <xref:System.Net.Http.HttpClientHandler> 类。 此设置还会影响高级别网络 API 使用的 HTTP 协议堆栈类型，包括 <xref:System.Net.Http.HttpClient> 和 [HttpClientFactory](https://docs.microsoft.com/previous-versions/aspnet/hh995280(v%3dvs.118))。
+  > 可使用高级别网络 API，而不是直接实例化 <xref:System.Net.Http.HttpClientHandler> 类。 此设置还会影响高级别网络 API 使用的 HTTP 协议堆栈类型，包括 <xref:System.Net.Http.HttpClient> 和 [HttpClientFactory](/previous-versions/aspnet/hh995280(v=vs.118))。
 
 - 如果省略此设置，<xref:System.Net.Http.HttpClientHandler> 将使用 <xref:System.Net.Http.SocketsHttpHandler>。 它等效于将值设置为 `true`。
 

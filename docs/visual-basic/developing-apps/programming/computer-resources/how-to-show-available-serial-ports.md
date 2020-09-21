@@ -7,12 +7,12 @@ helpviewer_keywords:
 - My.Computer.Ports object
 - ports, serial port availability
 ms.assetid: eaf2ee5a-8103-4e10-a205-ed1d4db120ba
-ms.openlocfilehash: e7a9166f1879ed0850ca893bed307a0318298bbb
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b19bdd56311ab7029fb224256d138a0dc0dd8ddc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401818"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557341"
 ---
 # <a name="how-to-show-available-serial-ports-in-visual-basic"></a>如何：在 Visual Basic 中显示可用的串行端口
 
@@ -24,7 +24,7 @@ ms.locfileid: "84401818"
 
  此示例循环访问 `My.Computer.Ports.SerialPortNames` 属性返回的所有字符串。 这些字符串是计算机上的可用串行端口的名称。  
   
- 通常，用户从可用端口列表中选择应用程序应使用的串行端口。 在此示例中，串行端口名称存储在 <xref:System.Windows.Forms.ListBox> 控件中。 有关详细信息，请参阅 [ListBox 控件](../../../../framework/winforms/controls/listbox-control-windows-forms.md)。  
+ 通常，用户从可用端口列表中选择应用程序应使用的串行端口。 在此示例中，串行端口名称存储在 <xref:System.Windows.Forms.ListBox> 控件中。 有关详细信息，请参阅 [ListBox 控件](/dotnet/desktop/winforms/controls/listbox-control-windows-forms)。  
   
  [!code-vb[VbVbalrMyComputer#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyComputer/VB/Class2.vb#45)]  
   

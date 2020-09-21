@@ -3,12 +3,12 @@ title: Windows 上的 Visual Studio Tools for Docker
 description: 了解 Visual Studio 2017 15.7 版及更高版本中可用的 Docker 工具。
 ms.date: 08/06/2020
 ms.custom: vs-dotnet
-ms.openlocfilehash: 74cffaae5885a7079ec774b1e8c68241cddda99a
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: ae20ebf7c3c27d7f2ebe51c33719b82048f86241
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915359"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678922"
 ---
 # <a name="use-docker-tools-in-visual-studio-on-windows"></a>在 Windows 上的 Visual Studio 中使用 Docker 工具
 
@@ -84,9 +84,9 @@ ms.locfileid: "87915359"
 > [!TIP]
 > 有关服务实现以及 Visual Studio Tools for Docker 用法的更多详细信息，请阅读以下文章：
 >
-> 在本地 Docker 容器中调试应用：<https://docs.microsoft.com/azure/vs-azure-tools-docker-edit-and-refresh>
+> 在本地 Docker 容器中调试应用：<https://docs.microsoft.com/visualstudio/containers/edit-and-refresh>
 >
-> 使用 Visual Studio 将 ASP.NET 容器部署到容器注册表：<https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
+> 使用 Visual Studio 将 ASP.NET 容器部署到容器注册表：<https://docs.microsoft.com/visualstudio/containers/hosting-web-apps-in-docker>
 
 > [!div class="step-by-step"]
 > [上一页](docker-apps-inner-loop-workflow.md)

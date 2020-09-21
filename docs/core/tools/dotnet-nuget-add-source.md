@@ -2,12 +2,12 @@
 title: dotnet nuget add source 命令
 description: Dotnet nuget add source 命令将新的包源添加到 NuGet 配置文件中。
 ms.date: 03/20/2020
-ms.openlocfilehash: 319501e026f1c3102006b0be5357f127b8e366a7
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: b847d987de2d88cb3452d32d1bc84232a1e20b6e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463592"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537968"
 ---
 # <a name="dotnet-nuget-add-source"></a>dotnet nuget add source
 
@@ -41,7 +41,7 @@ dotnet nuget add source -h|--help
 
 - **`--configfile <FILE>`**
 
-  NuGet 配置文件。 如果指定，则只使用此文件中的设置。 如果不指定，将使用当前目录中的配置文件的层次结构。 有关详细信息，请参阅[常见的 NuGet 配置](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior)。
+  NuGet 配置文件。 如果指定，则只使用此文件中的设置。 如果不指定，将使用当前目录中的配置文件的层次结构。 有关详细信息，请参阅[常见的 NuGet 配置](/nuget/consume-packages/configuring-nuget-behavior)。
 
 - **`-n|--name <SOURCE_NAME>`**
 

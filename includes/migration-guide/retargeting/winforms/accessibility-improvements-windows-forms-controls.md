@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: c8e1c91f4fee8aa896b6617c815fe2a4b6d22f2a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: fa24c664e9f7cf6da78d0703c7ebb52c8ebbec20
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614402"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606364"
 ---
 ### <a name="accessibility-improvements-in-windows-forms-controls"></a>Windows 窗体控件中的辅助功能改进
 
@@ -40,7 +40,7 @@ Windows 窗体正在使用辅助功能技术改进工作方式，以更好地支
 </configuration>
 ```
 
-面向 .NET Framework 4.7.1 或更高版本并希望保留旧版辅助功能行为的应用程序，可通过将此 AppContext 开关显式设置为 `true` 来选择启用旧版辅助功能。<p/>有关 UI 自动化的概述，请参阅 [UI 自动化概述](~/docs/framework/ui-automation/ui-automation-overview.md)。<p/>**为 UI 自动化模式和属性添加的支持**<br/>辅助功能客户端可通过使用常用的公开描述调用模式来利用新的 WinForms 辅助功能。 这些模式并非特定于 WinForms。 例如，辅助功能客户端可以在 IAccessible 接口 (MAAS) 上调用 QueryInterface 方法，来获取 IServiceProvider 接口。 如果该接口可用，则客户端可以使用其 QueryService 方法来请求 IAccessibleEx 接口。 有关详细信息，请参阅[从客户端使用 IAccessibleEx](https://docs.microsoft.com/windows/desktop/WinAuto/using-iaccessibleex-from-a-client)。 从 .NET Framework 4.7.1 开始，IServiceProvider 和 [IAccessibleEx](https://docs.microsoft.com/windows/desktop/WinAuto/iaccessibleex)（在适用情况下）可用于 WinForms 辅助功能对象。<p/>.NET Framework 4.7.1 添加了对以下 UI 自动化模式和属性的支持：
+面向 .NET Framework 4.7.1 或更高版本并希望保留旧版辅助功能行为的应用程序，可通过将此 AppContext 开关显式设置为 `true` 来选择启用旧版辅助功能。<p/>有关 UI 自动化的概述，请参阅 [UI 自动化概述](~/docs/framework/ui-automation/ui-automation-overview.md)。<p/>**为 UI 自动化模式和属性添加的支持**<br/>辅助功能客户端可通过使用常用的公开描述调用模式来利用新的 WinForms 辅助功能。 这些模式并非特定于 WinForms。 例如，辅助功能客户端可以在 IAccessible 接口 (MAAS) 上调用 QueryInterface 方法，来获取 IServiceProvider 接口。 如果该接口可用，则客户端可以使用其 QueryService 方法来请求 IAccessibleEx 接口。 有关详细信息，请参阅[从客户端使用 IAccessibleEx](/windows/desktop/WinAuto/using-iaccessibleex-from-a-client)。 从 .NET Framework 4.7.1 开始，IServiceProvider 和 [IAccessibleEx](/windows/desktop/WinAuto/iaccessibleex)（在适用情况下）可用于 WinForms 辅助功能对象。<p/>.NET Framework 4.7.1 添加了对以下 UI 自动化模式和属性的支持：
 
 - <xref:System.Windows.Forms.ToolStripSplitButton> 和 <xref:System.Windows.Forms.ComboBox> 控件支持[展开/折叠模式](~/docs/framework/ui-automation/implementing-the-ui-automation-expandcollapse-control-pattern.md)。
 - <xref:System.Windows.Forms.ToolStripMenuItem> 控件具有 [ControlType](~/docs/framework/ui-automation/ui-automation-support-for-the-menubar-control-type.md) 属性值 <xref:System.Windows.Automation.ControlType.MenuItem?displayProperty=nameWithType>。

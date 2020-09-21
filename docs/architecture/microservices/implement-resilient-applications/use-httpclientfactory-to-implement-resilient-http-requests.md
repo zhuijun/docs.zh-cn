@@ -2,12 +2,12 @@
 title: 使用 IHttpClientFactory 实现复原 HTTP 请求
 description: 了解如何使用自 .NET Core 2.1 起可用的 IHttpClientFactory 来创建 `HttpClient` 实例，使其更轻松地在应用程序中使用。
 ms.date: 08/31/2020
-ms.openlocfilehash: 1df5432f215371b60722212cf706c28a4a5bb5f6
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: c54965a9bbb700cfb1f14150773c2df45d109c39
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271823"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678811"
 ---
 # <a name="use-ihttpclientfactory-to-implement-resilient-http-requests"></a>使用 IHttpClientFactory 实现复原 HTTP 请求
 
@@ -65,9 +65,9 @@ ms.locfileid: "89271823"
 
 **图 8-4**。 结合使用 `IHttpClientFactory` 和类型化客户端类。
 
-在上图中，`ClientService`（由控制器或客户端代码使用）使用由注册的 `IHttpClientFactory` 创建的 `HttpClient`。 此工厂将池的 `HttpMessageHandler` 分配给 `HttpClient`。 当使用扩展方法 <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient*> 在 DI 容器中注册 `IHttpClientFactory` 时，可以使用 Polly 策略配置 `HttpClient`。
+在上图中，`ClientService`（由控制器或客户端代码使用）使用由注册的 `IHttpClientFactory` 创建的 `HttpClient`。 此工厂将池的 `HttpMessageHandler` 分配给 `HttpClient`。 当使用扩展方法 <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient%2A> 在 DI 容器中注册 `IHttpClientFactory` 时，可以使用 Polly 策略配置 `HttpClient`。
 
-要配置上述结构，请通过安装包含 <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection> 的 <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient*> 扩展方法的 `Microsoft.Extensions.Http` NuGet 包，在应用程序中添加 <xref:System.Net.Http.IHttpClientFactory>。 此扩展方法用于注册内部 `DefaultHttpClientFactory` 类，后者用作接口 `IHttpClientFactory` 的单一实例。 它定义 <xref:Microsoft.Extensions.Http.HttpMessageHandlerBuilder> 的临时配置。 此消息处理程序（<xref:System.Net.Http.HttpMessageHandler> 对象）获取自池，可供从工厂返回的 `HttpClient` 使用。
+要配置上述结构，请通过安装包含 <xref:Microsoft.Extensions.DependencyInjection.IServiceCollection> 的 <xref:Microsoft.Extensions.DependencyInjection.HttpClientFactoryServiceCollectionExtensions.AddHttpClient%2A> 扩展方法的 `Microsoft.Extensions.Http` NuGet 包，在应用程序中添加 <xref:System.Net.Http.IHttpClientFactory>。 此扩展方法用于注册内部 `DefaultHttpClientFactory` 类，后者用作接口 `IHttpClientFactory` 的单一实例。 它定义 <xref:Microsoft.Extensions.Http.HttpMessageHandlerBuilder> 的临时配置。 此消息处理程序（<xref:System.Net.Http.HttpMessageHandler> 对象）获取自池，可供从工厂返回的 `HttpClient` 使用。
 
 在下一个代码中，可以看到如何使用 `AddHttpClient()` 注册需要使用 `HttpClient` 的类型化客户端（服务代理）。
 

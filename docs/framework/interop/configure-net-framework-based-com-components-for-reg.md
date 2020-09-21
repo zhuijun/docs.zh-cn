@@ -9,11 +9,12 @@ helpviewer_keywords:
 - registration-free COM interop, configuring .NET-based components
 - activation, registration-free
 ms.assetid: 32f8b7c6-3f73-455d-8e13-9846895bd43b
-ms.openlocfilehash: 5263e042bafdb886b313f05751c29de0f5715211
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: ad25a79add84e43ba0a8e71a0f48c5ddf65108bd
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622193"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554835"
 ---
 # <a name="how-to-configure-net-framework-based-com-components-for-registration-free-activation"></a>如何：配置基于 .NET Framework 的 COM 组件以进行免注册激活
 基于 .NET Framework 的组件的免注册激活略复杂于 COM 组件的免注册激活。 安装需要两个清单：  
@@ -175,6 +176,6 @@ ms.locfileid: "85622193"
 ## <a name="see-also"></a>请参阅
 
 - [免注册 COM 互操作](registration-free-com-interop.md)
-- [免注册 COM 互操作的需求](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
-- [将 COM 组件配置为免注册激活](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
-- [基于 .NET 组件的免注册激活：演练](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973915(v=msdn.10))
+- [免注册 COM 互操作的需求](/previous-versions/dotnet/netframework-4.0/f8h7012w(v=vs.100))
+- [将 COM 组件配置为免注册激活](/previous-versions/dotnet/netframework-4.0/x65a421a(v=vs.100))
+- [基于 .NET 组件的免注册激活：演练](/previous-versions/dotnet/articles/ms973915(v=msdn.10))

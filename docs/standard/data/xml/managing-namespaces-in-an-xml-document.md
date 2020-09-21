@@ -4,12 +4,12 @@ description: 了解如何管理 XML 文档中的命名空间。 XML 命名空间
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-ms.openlocfilehash: 3a3abd2e932b1afecab85e285b0e2c42eb1eb20f
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: 500c477eaa98b2858573e1012c62db4bc6c68137
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84769257"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548086"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>管理 XML 文档中的命名空间
 XML 命名空间将 XML 文档中的元素和属性名称与自定义和预定义的 URI 关联起来。 要创建这些关联，您应为命名空间 URI 定义前缀，并使用这些前缀来限定 XML 数据中的元素和属性名称。 命名空间可防止元素和属性名称冲突，并允许以不同方式处理和验证同名的元素和属性。  
@@ -65,7 +65,7 @@ XML 命名空间将 XML 文档中的元素和属性名称与自定义和预定�
  命名空间管理器对命名空间不执行任何验证，而是假定前缀和命名空间已经过验证并符合 [W3C 命名空间](https://www.w3.org/TR/REC-xml-names/)规范。  
   
 > [!NOTE]
-> [C#](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) 和 [Visual Basic](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) 中的 LINQ TO XML 不使用 <xref:System.Xml.XmlNamespaceManager> 来管理命名空间。 若要了解如何在使用 LINQ to XML 时管理命名空间，请参阅 LINQ 文档中的[使用 XML 命名空间 (C#)](../../../csharp/programming-guide/concepts/linq/namespaces-overview-linq-to-xml.md) 和[使用 XML 命名空间 (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/working-with-xml-namespaces.md)。  
+> [C#](../../linq/linq-xml-overview.md) 和 [Visual Basic](../../linq/linq-xml-overview.md) 中的 LINQ TO XML 不使用 <xref:System.Xml.XmlNamespaceManager> 来管理命名空间。 若要了解如何在使用 LINQ to XML 时管理命名空间，请参阅 LINQ 文档中的[使用 XML 命名空间 (C#)](../../linq/namespaces-overview.md) 和[使用 XML 命名空间 (Visual Basic)](../../linq/namespaces-overview.md)。  
   
  下面是可使用 <xref:System.Xml.XmlNamespaceManager> 类执行的一些管理和查找任务。 有关更多信息和示例，请遵循指向每个方法或属性的引用页的链接。  
   

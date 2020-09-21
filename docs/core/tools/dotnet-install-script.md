@@ -2,12 +2,12 @@
 title: dotnet-install 脚本
 description: 了解用于安装 .NET Core SDK 和共享运行时的 dotnet-install 脚本。
 ms.date: 04/30/2020
-ms.openlocfilehash: c3aa6549a0b521db7fc19c6ff44665e3c4ba0c5f
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: 8f27b8a7794e84e6e2b288d6cc2ec33ffcb7600f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024649"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538037"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet-install 脚本引用
 
@@ -131,7 +131,7 @@ bash 脚本也读取 PowerShell 开关。因此，可以在 Linux/macOS 系统�
 
 - **`-NoCdn|--no-cdn`**
 
-  禁止从 [Azure 内容分发网络 (CDN)](https://docs.microsoft.com/azure/cdn/cdn-overview) 进行下载，并直接使用未缓存源。
+  禁止从 [Azure 内容分发网络 (CDN)](/azure/cdn/cdn-overview) 进行下载，并直接使用未缓存源。
 
 - **`-NoPath|--no-path`**
 

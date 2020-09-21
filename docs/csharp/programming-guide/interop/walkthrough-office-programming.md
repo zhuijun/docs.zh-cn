@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: 76f0e2eccb5d1a59d9aaa3eed11b25dd2dd9cac3
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: eff414411c47ec83177ae6a09de4a96f47af6313
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062998"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558584"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>演练：Office 编程（C# 和 Visual Basic）
 
@@ -205,7 +205,7 @@ Visual Studio 在 C# 和 Visual Basic 中提供了改进 Microsoft Office 编程
 - [Lambda 表达式 (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
 - [Lambda 表达式 (C#)](../../language-reference/operators/lambda-expressions.md)
 - [如何在 COM 互操作编程中使用索引属性](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
-- [演练：在 Visual Studio 中嵌入 Microsoft Office 程序集中的类型信息](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ee317478(v%3dvs.120))
+- [演练：在 Visual Studio 中嵌入 Microsoft Office 程序集中的类型信息](/previous-versions/visualstudio/visual-studio-2013/ee317478(v=vs.120))
 - [演练：嵌入托管程序集中的类型](../../../standard/assembly/embed-types-visual-studio.md)
 - [演练：创建你的第一个 Excel VSTO 外接程序](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)
 - [COM 互操作](../../../visual-basic/programming-guide/com-interop/index.md)

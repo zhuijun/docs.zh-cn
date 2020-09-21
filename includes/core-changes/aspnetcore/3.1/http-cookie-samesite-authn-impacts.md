@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3cc07eef109b9096bc5a5fbcd1ea098a23b2155f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8b6d334677991382d235fd53cd3c98e3a77d650d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78968323"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539570"
 ---
 ### <a name="http-browser-samesite-changes-impact-authentication"></a>HTTP：浏览器的 SameSite 更改会影响身份验证
 
@@ -26,7 +26,7 @@ Google 提出了一项不向后兼容的新草案标准。 该标准将默认模
 
 已更新 ASP.NET Core 3.1 来实现新的 `SameSite` 行为。 该更新重新定义了 `SameSiteMode.None` 的行为以发出 `SameSite=None`，并添加了一个新值 `SameSiteMode.Unspecified` 以忽略 `SameSite` 属性。 现在，所有 Cookie API 都默认为 `Unspecified`，但某些使用 Cookie 的组件设置了更特定于其方案的值，例如 OpenID Connect 相关性和 nonce Cookie。
 
-有关此方面的其他最新更改，请参阅 [HTTP：某些 Cookie SameSite 默认值已更改为 None ](/dotnet/core/compatibility/2.2-3.0#http-some-cookie-samesite-defaults-changed-to-none)。 在 ASP.NET Core 3.0 中，大多数默认值已从 <xref:Microsoft.AspNetCore.Http.SameSiteMode.Lax?displayProperty=nameWithType> 更改为 <xref:Microsoft.AspNetCore.Http.SameSiteMode.None?displayProperty=nameWithType>（但仍使用之前的标准）。
+有关此方面的其他最新更改，请参阅 [HTTP：某些 Cookie SameSite 默认值已更改为 None ](../../../../docs/core/compatibility/2.2-3.0.md#http-some-cookie-samesite-defaults-changed-to-none)。 在 ASP.NET Core 3.0 中，大多数默认值已从 <xref:Microsoft.AspNetCore.Http.SameSiteMode.Lax?displayProperty=nameWithType> 更改为 <xref:Microsoft.AspNetCore.Http.SameSiteMode.None?displayProperty=nameWithType>（但仍使用之前的标准）。
 
 #### <a name="reason-for-change"></a>更改原因
 

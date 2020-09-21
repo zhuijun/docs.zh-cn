@@ -3,18 +3,18 @@ title: LINQ 和字符串 (C#)
 description: LINQ 可以查询和转换字符串和字符串集合。 可以将 LINQ 查询与 C# 字符串函数和正则表达式结合起来。
 ms.date: 07/20/2015
 ms.assetid: dbe2d657-b3f3-487e-b645-21fb2d71cd7b
-ms.openlocfilehash: c515a0c56ad6473f93c6339540e4ed0245bb5bd2
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 0500d821335659fa29dd4809513f38dac0a8b193
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87165613"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556715"
 ---
 # <a name="linq-and-strings-c"></a>LINQ 和字符串 (C#)
 
 LINQ 可用于查询和转换字符串和字符串集合。 这在处理文本文件中的半结构化数据时尤其有用。 LINQ 查询可以与传统的字符串函数和正则表达式合并。 例如，可以使用 <xref:System.String.Split%2A?displayProperty=nameWithType> 或 <xref:System.Text.RegularExpressions.Regex.Split%2A?displayProperty=nameWithType> 方法来创建可稍后使用 LINQ 查询或修改的字符串数组。 可以使用 LINQ 查询的 `where` 子句中的 <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> 方法。 并且可以使用 LINQ 查询或修改正则表达式返回的 <xref:System.Text.RegularExpressions.MatchCollection> 结果。
 
-还可以使用本节介绍的技术将半结构化的文本数据转换为 XML。 有关详细信息，请参阅[如何从 CSV 文件生成 XML](how-to-generate-xml-from-csv-files.md)。
+还可以使用本节介绍的技术将半结构化的文本数据转换为 XML。 有关详细信息，请参阅[如何从 CSV 文件生成 XML](../../../../standard/linq/generate-xml-csv-files.md)。
 
 本节中的示例分为两类：
 
@@ -76,4 +76,4 @@ LINQ 可用于查询和转换字符串和字符串集合。 这在处理文本�
 ## <a name="see-also"></a>请参阅
 
 - [语言集成查询 (LINQ) (C#)](index.md)
-- [如何从 CSV 文件生成 XML](how-to-generate-xml-from-csv-files.md)
+- [如何从 CSV 文件生成 XML](../../../../standard/linq/generate-xml-csv-files.md)

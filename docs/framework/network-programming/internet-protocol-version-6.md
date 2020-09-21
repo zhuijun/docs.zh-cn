@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Internet Protocol version 6, improvements
 - Internet Protocol version 6
 ms.assetid: e6fa8ebd-010a-4c48-a5ec-a5102c53c06f
-ms.openlocfilehash: dd8b0b26e449fba7479d2678aff25ed49e721a90
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: c2b23705ae309436344513e54d6258e206d69da4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84502387"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90551460"
 ---
 # <a name="internet-protocol-version-6"></a>Internet 协议版本 6
 Internet 协议版本 6 (IPv6) 是 Internet 的网络层的标准协议新套件。 IPv6 旨在解决当前版本的 Internet 协议套件（称作 IPv4）存在的许多问题，包括地址消耗、安全性、自动配置和扩展性等问题。 IPv6 扩展了 Internet 的功能以启用新型应用程序，包括对等和移动应用程序。 以下是当前 IPv4 协议的主要问题：  
@@ -56,10 +56,10 @@ Internet 协议版本 6 (IPv6) 是 Internet 的网络层的标准协议新套件
   
 - RFC 2374，IPv6 可聚合全局单播地址格式。  
   
- 还可以在 [IP 版本 6 (IPv6)](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379498%28v=ws.10%29) 中找到 IPv6 相关信息。  
+ 还可以在 [IP 版本 6 (IPv6)](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd379498(v=ws.10)) 中找到 IPv6 相关信息。  
   
 ## <a name="see-also"></a>请参阅
 
-- [IPv6 套接字示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.0/ms180981%28v=vs.85%29)
+- [IPv6 套接字示例](/previous-versions/dotnet/netframework-3.0/ms180981(v=vs.85))
 - [网络编程示例](network-programming-samples.md)
 - [套接字](sockets.md)

@@ -4,12 +4,12 @@ description: 了解如何使用 spark-submit 和 Set Jar 将 .NET for Apache Spa
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: bebd170a689d8ae56aa6c55486d70354da2437ea
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 88dc321a08f805ef8c3bf8d4d01d32dd890548d2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617764"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557172"
 ---
 # <a name="submit-a-net-for-apache-spark-job-to-databricks"></a>将 .NET for Apache Spark 作业提交到 Databricks
 
@@ -36,7 +36,7 @@ ms.locfileid: "85617764"
 
 ## <a name="deploy-using-set-jar"></a>使用 Set Jar 进行部署
 
-或者，可以在 Databricks 工作区中使用 [Set Jar](https://docs.microsoft.com/azure/databricks/jobs#--create-a-job) 将 .NET for Apache Spark 作业提交到 Databricks。 通过 Set Jar，可将作业提交到现有的有效群集。
+或者，可以在 Databricks 工作区中使用 [Set Jar](/azure/databricks/jobs#--create-a-job) 将 .NET for Apache Spark 作业提交到 Databricks。 通过 Set Jar，可将作业提交到现有的有效群集。
 
 ### <a name="one-time-setup"></a>一次性设置
 
@@ -57,7 +57,7 @@ ms.locfileid: "85617764"
 
 1. 请确保已发布应用，并且应用程序代码不使用 `SparkSession.Stop()`。
 
-2. 使用 [Databricks CLI](https://docs.microsoft.com/azure/databricks/dev-tools/databricks-cli) 将应用程序上传到 Databricks 群集。 例如，使用以下命令将已发布的应用上传到群集：
+2. 使用 [Databricks CLI](/azure/databricks/dev-tools/databricks-cli) 将应用程序上传到 Databricks 群集。 例如，使用以下命令将已发布的应用上传到群集：
 
     ```console
     cd <path-to-your-app-publish-directory>
@@ -86,4 +86,4 @@ ms.locfileid: "85617764"
 
 * [.NET for Apache Spark 入门](../tutorials/get-started.md)
 * [将 .NET for Apache Spark 应用程序部署到 Databricks](../tutorials/databricks-deployment.md)
-* [Azure Databricks 文档](https://docs.microsoft.com/azure/azure-databricks/)
+* [Azure Databricks 文档](/azure/azure-databricks/)

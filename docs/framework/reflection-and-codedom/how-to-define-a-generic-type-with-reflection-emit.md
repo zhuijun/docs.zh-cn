@@ -11,12 +11,12 @@ helpviewer_keywords:
 - generics [.NET Framework], dynamic types
 - reflection emit, generic types
 ms.assetid: 07d5f01a-7b5b-40ea-9b15-f21561098fe4
-ms.openlocfilehash: fe8fb731fd160ab87e5c65debf367a96bc0dea2a
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: bf308b07bf4b2a863b9825e7c8d9f412bdb6d1b8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865120"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559208"
 ---
 # <a name="how-to-define-a-generic-type-with-reflection-emit"></a>如何：使用反射发出定义泛型类型
 此主题说明如何创建具有两个参数的简单泛型类型、如何对类型参数应用类约束、接口约束和特殊约束，以及如何创建使用类的类型参数作为参数类型和返回类型的成员。  
@@ -129,5 +129,5 @@ ms.locfileid: "86865120"
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Reflection.Emit.GenericTypeParameterBuilder>
-- [使用反射发出](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
-- [反射发出动态程序集应用场景](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/tt9483fk(v=vs.100))
+- [使用反射发出](/previous-versions/dotnet/netframework-4.0/3y322t50(v=vs.100))
+- [反射发出动态程序集应用场景](/previous-versions/dotnet/netframework-4.0/tt9483fk(v=vs.100))

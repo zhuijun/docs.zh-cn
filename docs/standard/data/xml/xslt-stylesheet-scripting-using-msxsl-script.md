@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-ms.openlocfilehash: aef2471a375469f7cd4dff27084b305ef9394d5e
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b2fd5ac6f03c0c66c05117a882d53af37e3f8665
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291963"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555928"
 ---
 # <a name="xslt-stylesheet-scripting-using-msxslscript"></a>使用 \<msxsl:script> 编写 XSLT 样式表脚本
 <xref:System.Xml.Xsl.XslTransform> 类使用 `script` 元素支持嵌入的脚本。  
@@ -43,7 +43,7 @@ ms.locfileid: "84291963"
   
  若要从您的程序集中得到证据，请使用 `this.GetType().Assembly.Evidence`。 若要从统一资源标识符 (URI) 得到证据，请使用 `Evidence e = XmlSecureResolver.CreateEvidenceForUrl(stylesheetURI)`。  
   
- 如果使用接受 <xref:System.Xml.Xsl.XslTransform.Load%2A> 但没有 <xref:System.Xml.XmlResolver> 的 `Evidence` 方法，则程序集的安全区域默认为“完全信任”。 有关详细信息，请参阅 <xref:System.Security.SecurityZone> 和[命名权限集](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100))。  
+ 如果使用接受 <xref:System.Xml.Xsl.XslTransform.Load%2A> 但没有 <xref:System.Xml.XmlResolver> 的 `Evidence` 方法，则程序集的安全区域默认为“完全信任”。 有关详细信息，请参阅 <xref:System.Security.SecurityZone> 和[命名权限集](/previous-versions/dotnet/netframework-4.0/4652tyx7(v=vs.100))。  
   
  函数可以在 `msxsl:script` 元素内声明。 下表显示了默认情况下支持的命名空间。 可以在列出的命名空间的外部使用类。 然而，这些类必须是完全限定的。  
   

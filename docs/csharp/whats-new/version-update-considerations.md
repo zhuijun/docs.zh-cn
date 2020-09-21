@@ -3,12 +3,12 @@ title: 面向 C# 开发人员的版本和更新注意事项
 description: 在库中引入新语言功能可能会影响使用它的代码。
 ms.topic: reference
 ms.date: 09/19/2018
-ms.openlocfilehash: f7db7c79792d04bcf592bc1858e1f0f05cb34402
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 6de0e3ba33af34edba73819dcb9268f40f8a5ea4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88268122"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552422"
 ---
 # <a name="version-and-update-considerations-for-c-developers"></a>面向 C# 开发人员的版本和更新注意事项
 
@@ -63,4 +63,4 @@ public double CalculateSquare(double value) => value * value;
 public double CalculateSquare(in double value) => value * value;
 ```
 
-[新增功能](index.md)一文说明了引入会影响公共声明的功能是源兼容的更改还是二进制兼容的更改。
+[新增功能](./csharp-9.md)一文说明了引入会影响公共声明的功能是源兼容的更改还是二进制兼容的更改。

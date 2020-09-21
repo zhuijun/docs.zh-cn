@@ -14,19 +14,20 @@ helpviewer_keywords:
 - Visual C#, creating applications
 - client/server applications, Windows applications
 ms.assetid: 2dfb50b7-5af2-4e12-9bbb-c5ade0e39a68
-ms.openlocfilehash: 5920ecfae60274a8a504e4d300e531fd8b512901
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 33d0ca2918e4e3b00e2b09f7a47c538bbe903dba
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619385"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547904"
 ---
 # <a name="develop-client-applications-with-net-framework"></a>使用 .NET Framework 开发客户端应用程序
 
 可通过多种方法使用 .NET Framework 开发基于 Windows 的应用程序。 可使用以下任意工具和框架：
 
 - [通用 Windows 平台 (UWP)](/windows/uwp/)
-- [Windows Presentation Foundation (WPF)](./wpf/index.md)
-- [Windows 窗体](./winforms/index.md)
+- [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/)
+- [Windows 窗体](/dotnet/desktop/winforms/)
 
 本节包含的文章说明了如何使用 Windows Presentation Foundation 或 Windows 窗体创建基于 Windows 的应用程序。 但是，还可利用 .NET Framework 创建 Web 应用程序，以及创建可通过 Microsoft Store（UWP 应用）发布的面向计算机或设备的客户端应用程序。
 
@@ -35,7 +36,7 @@ ms.locfileid: "85619385"
 [通用 Windows 平台](/windows/uwp/)\
 介绍如何创建可以通过 Microsoft Store 向用户提供的 UWP 应用程序。
 
-[适用于 UWP 应用的 .NET API](/dotnet/api/index?view=dotnet-uwp-10.0)\
+[适用于 UWP 应用的 .NET API](../../api/index.md?view=dotnet-uwp-10.0)\
 支持 UWP 应用的 .NET 类型参考。
   
 [多平台开发](../standard/cross-platform/index.md)\
@@ -44,7 +45,7 @@ ms.locfileid: "85619385"
 [ASP.NET 网站入门](https://dotnet.microsoft.com/apps/aspnet/web-apps)\
 介绍使用 ASP.NET 开发 Web 应用的方法。
 
-[适用于 Windows Phone Silverlight 的 .NET API](https://docs.microsoft.com/previous-versions/windows/apps/jj207211\(v=vs.105\))\
+[适用于 Windows Phone Silverlight 的 .NET API](/previous-versions/windows/apps/jj207211\(v=vs.105\))\
 列出使用 Windows Phone Silverlight 构建应用时可使用的 .NET Framework API。
 
 ## <a name="see-also"></a>请参阅

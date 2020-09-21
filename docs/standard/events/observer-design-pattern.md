@@ -13,12 +13,12 @@ helpviewer_keywords:
 - IObservable(Of T) interface
 - observer design pattern [.NET Framework]
 ms.assetid: 3680171f-f522-453c-aa4a-54f755a78f88
-ms.openlocfilehash: 4edcd2645b28095f4bd18f4918b9afa5c893bd39
-ms.sourcegitcommit: 7137e12f54c4e83a94ae43ec320f8cf59c1772ea
+ms.openlocfilehash: 80dac36199dd13abeab295d4b53a52615e7ae625
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/10/2020
-ms.locfileid: "84662727"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559156"
 ---
 # <a name="observer-design-pattern"></a>观察者设计模式
 
@@ -47,7 +47,7 @@ ms.locfileid: "84662727"
 - 包含提供程序发送到其观察者的数据的对象。 此对象的类型对应 <xref:System.IObservable%601> 和 <xref:System.IObserver%601> 接口的泛型类型参数。 尽管此对象可与 <xref:System.IObservable%601> 实现相同，但通常情况下，它是一个单独的类型。
 
 > [!NOTE]
-> 除实现观察者设计模式外，你还可能对浏览使用 <xref:System.IObservable%601> 和 <xref:System.IObserver%601> 接口构建的库感兴趣。 例如，[Reactive Extensions for .NET (Rx)](https://docs.microsoft.com/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)) 包含一组支持异步编程的扩展方法和 LINQ 标准序列运算符。
+> 除实现观察者设计模式外，你还可能对浏览使用 <xref:System.IObservable%601> 和 <xref:System.IObserver%601> 接口构建的库感兴趣。 例如，[Reactive Extensions for .NET (Rx)](/previous-versions/dotnet/reactive-extensions/hh242985(v=vs.103)) 包含一组支持异步编程的扩展方法和 LINQ 标准序列运算符。
 
 ## <a name="implementing-the-pattern"></a>实现模式
 

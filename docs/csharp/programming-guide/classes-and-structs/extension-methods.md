@@ -7,12 +7,12 @@ helpviewer_keywords:
 - extension methods [C#]
 - methods [C#], extension
 ms.assetid: 175ce3ff-9bbf-4e64-8421-faeb81a0bb51
-ms.openlocfilehash: 116087ac1aab57f2869b05f436801c7861c56eca
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 88d6cfd1b5262d4a4fae96cf53271467b5042319
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063700"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90541937"
 ---
 # <a name="extension-methods-c-programming-guide"></a>扩展方法（C# 编程指南）
 
@@ -123,7 +123,7 @@ static class DomainEntityExtensions
 - [并行编程示例（这些示例包括许多示例扩展方法）](/samples/browse/?products=dotnet-core%2Cdotnet-standard&term=parallel)
 - [Lambda 表达式](../../language-reference/operators/lambda-expressions.md)
 - [标准查询运算符概述](../concepts/linq/standard-query-operators-overview.md)
-- [Conversion rules for Instance parameters and their impact](https://docs.microsoft.com/archive/blogs/sreekarc/conversion-rules-for-instance-parameters-and-their-impact)（实例参数及其影响的转换规则）
-- [Extension methods Interoperability between languages](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-interoperability-between-languages)（语言间扩展方法的互操作性）
-- [Extension methods and Curried Delegates](https://docs.microsoft.com/archive/blogs/sreekarc/extension-methods-and-curried-delegates)（扩展方法和扩充委托）
-- [Extension method Binding and Error reporting](https://docs.microsoft.com/archive/blogs/sreekarc/extension-method-binding-and-error-reporting)（扩展方法绑定和错误报告）
+- [Conversion rules for Instance parameters and their impact](/archive/blogs/sreekarc/conversion-rules-for-instance-parameters-and-their-impact)（实例参数及其影响的转换规则）
+- [Extension methods Interoperability between languages](/archive/blogs/sreekarc/extension-methods-interoperability-between-languages)（语言间扩展方法的互操作性）
+- [Extension methods and Curried Delegates](/archive/blogs/sreekarc/extension-methods-and-curried-delegates)（扩展方法和扩充委托）
+- [Extension method Binding and Error reporting](/archive/blogs/sreekarc/extension-method-binding-and-error-reporting)（扩展方法绑定和错误报告）

@@ -8,11 +8,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, registering assemblies
 - registering assemblies
 ms.assetid: 87925795-a3ae-4833-b138-125413478551
-ms.openlocfilehash: 1b73a79b8167e7f75b8c68f708179e88c575d66a
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 0adae4db393c4c01620ea896c4451c3279272fca
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85621894"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90559273"
 ---
 # <a name="registering-assemblies-with-com"></a>向 COM 注册程序集
 可运行名为[程序集注册工具 (Regasm.exe)](../tools/regasm-exe-assembly-registration-tool.md) 的命令行工具注册或取消注册与 COM 一起使用的程序集。 Regasm.exe 将关于类的信息添加到系统注册表，因此 COM 客户端可以透明地使用 .NET Framework 类。 <xref:System.Runtime.InteropServices.RegistrationServices> 类提供等效功能。  
@@ -45,5 +46,5 @@ ms.locfileid: "85621894"
 
 - [向 COM 公开 .NET Framework 组件](exposing-dotnet-components-to-com.md)
 - [如何：从 COM 引用 .NET 类型](how-to-reference-net-types-from-com.md)
-- [调用 .NET 对象](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
-- [为 COM 访问部署应用程序](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))
+- [调用 .NET 对象](/previous-versions/dotnet/netframework-4.0/8hw8h46b(v=vs.100))
+- [为 COM 访问部署应用程序](/previous-versions/dotnet/netframework-4.0/c2850st8(v=vs.100))

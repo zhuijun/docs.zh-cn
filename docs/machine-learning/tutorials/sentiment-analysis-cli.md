@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 06/03/2020
 ms.custom: mvc,mlnet-tooling
 ms.topic: tutorial
-ms.openlocfilehash: fcd325d518b276ccb042f3702db978e9189715b8
-ms.sourcegitcommit: dc2feef0794cf41dbac1451a13b8183258566c0e
+ms.openlocfilehash: 89fc5169eee539aa857a9be03c82bf084fe4b60d
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/24/2020
-ms.locfileid: "85326020"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554431"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>使用 ML.NET CLI 分析情绪
 
@@ -199,7 +199,7 @@ ML.NET CLI 是 ML.NET 的一部分，其主要目标是在学习 ML.NET 时为 .
 
 然而，事情已经变得比博客文章中解释的容易得多。 我们开发出一个更简单的方法，并创建了一个很不错的 **“.NET Core 集成包”** ，用户可通过在应用程序 DI 服务（依赖项注入服务）中注册它来轻松地在 ASP.NET Core 应用和服务中使用它，然后可通过代码直接使用它。 查看以下相关教程和示例：
 
-- [教程：在可缩放的 ASP.NET Core Web 应用和 WebAPI 上运行 ML.NET 模型](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [教程：在可缩放的 ASP.NET Core Web 应用和 WebAPI 上运行 ML.NET 模型](../how-to-guides/serve-model-web-api-ml-net.md)
 - [示例：ASP.NET Core WebAPI 上的可缩放 ML.NET 模型](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 
 ## <a name="explore-the-generated-c-code-that-was-used-to-train-the-best-quality-model"></a>探索生成用于训练“最佳质量”模型的的 C# 代码
@@ -226,7 +226,7 @@ ML.NET CLI 是 ML.NET 的一部分，其主要目标是在学习 ML.NET 时为 .
 ## <a name="see-also"></a>请参阅
 
 - [使用 ML.NET CLI 自动进行模型训练](../automate-training-with-cli.md)
-- [教程：在可缩放的 ASP.NET Core Web 应用和 WebAPI 上运行 ML.NET 模型](https://aka.ms/mlnet-tutorial-netcoreintegrationpkg)
+- [教程：在可缩放的 ASP.NET Core Web 应用和 WebAPI 上运行 ML.NET 模型](../how-to-guides/serve-model-web-api-ml-net.md)
 - [示例：ASP.NET Core WebAPI 上的可缩放 ML.NET 模型](https://aka.ms/mlnet-sample-netcoreintegrationpkg)
 - [ML.NET CLI auto-train 命令参考指南](../reference/ml-net-cli-reference.md)
 - [ML.NET CLI 中的遥测](../resources/ml-net-cli-telemetry.md)

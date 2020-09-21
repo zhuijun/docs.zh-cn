@@ -10,12 +10,12 @@ helpviewer_keywords:
 - casting [C#]
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
-ms.openlocfilehash: 040b5679b1e6666a7f0308e5990781a2ef86c530
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: cfe5376675808559f4bf9c9cd8b21180dcd0cc49
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87381952"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555323"
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>强制转换和类型转换（C# 编程指南）
 
@@ -99,5 +99,5 @@ Giraffe g2 = (Giraffe)a;
 - [类型](./index.md)
 - [强制转换表达式](../../language-reference/operators/type-testing-and-cast.md#cast-expression)
 - [用户定义转换运算符](../../language-reference/operators/user-defined-conversion-operators.md)
-- [通用类型转换](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/yy580hbd(v=vs.120))
+- [通用类型转换](/previous-versions/visualstudio/visual-studio-2013/yy580hbd(v=vs.120))
 - [如何将字符串转换为数字](./how-to-convert-a-string-to-a-number.md)

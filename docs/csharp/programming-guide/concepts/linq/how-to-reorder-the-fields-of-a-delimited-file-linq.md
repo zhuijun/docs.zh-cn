@@ -3,12 +3,12 @@ title: 如何重新排列带分隔符的文件的字段 (LINQ) (C#)
 description: 了解如何使用 C# 中的 LINQ 在 .csv 文件中重新排列字段。 此示例将更改列的顺序，合并到列并按列值对行进行排序。
 ms.date: 07/20/2015
 ms.assetid: 4e62d82c-61b7-4f18-b9a1-86723746d7d2
-ms.openlocfilehash: 3ebc56b418d2732a296896a19d770136a56e2fbb
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: a3bbc2690ded24629b313b24ee7a604bcacce850
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103413"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547292"
 ---
 # <a name="how-to-reorder-the-fields-of-a-delimited-file-linq-c"></a>如何重新排列带分隔符的文件的字段 (LINQ) (C#)
 逗号分隔值 (CSV) 文件是一种文本文件，通常用于存储电子表格数据或其他由行和列表示的表格数据。 通过使用 <xref:System.String.Split%2A> 方法分隔字段，可以非常轻松地使用 LINQ 来查询和操作 CSV 文件。 事实上，可以使用此技术来重新排列任何结构化文本行部分；此技术不局限于 CSV 文件。  
@@ -83,4 +83,4 @@ class CSVFiles
 
 - [LINQ 和字符串 (C#)](./linq-and-strings.md)
 - [LINQ 和文件目录 (C#)](./linq-and-file-directories.md)
-- [如何从 CSV 文件生成 XML (C#)](./how-to-generate-xml-from-csv-files.md)
+- [如何从 CSV 文件生成 XML (C#)](../../../../standard/linq/generate-xml-csv-files.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework 4.5, migrating from 1.1
 - .NET Framework 1.1, migrating to .NET Framework 4.5
 ms.assetid: 7ead0cb3-3b19-414a-8417-a1c1fa198d9e
-ms.openlocfilehash: f2b0e21ff5dbeab3395335f52799629859fb2d90
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 7312de7d812aa714447a60f5aa04cb48890e40e8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86475263"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90553722"
 ---
 # <a name="migrate-from-the-net-framework-11"></a>从 .NET Framework 1.1 迁移
 
@@ -57,9 +57,9 @@ Windows 7 及更高版本的 Windows 操作系统不支持 .NET Framework 1.1。
 
 若要评估重大更改对应用程序产生的影响，您必须查看以下更改列表：
 
-- [.NET Framework 2.0 中的重大更改](https://docs.microsoft.com/previous-versions/aa570326(v=msdn.10))记录了 .NET Framework 2.0 SP1 中会影响面向 .NET Framework 1.1 的应用程序的更改。
+- [.NET Framework 2.0 中的重大更改](/previous-versions/aa570326(v=msdn.10))记录了 .NET Framework 2.0 SP1 中会影响面向 .NET Framework 1.1 的应用程序的更改。
 
-- [.NET Framework 3.5 SP1 中的更改](https://docs.microsoft.com/previous-versions/dotnet/articles/dd310284(v=msdn.10))记录了 .NET Framework 3.5 和 .NET Framework 3.5 SP1 之间的更改。
+- [.NET Framework 3.5 SP1 中的更改](/previous-versions/dotnet/articles/dd310284(v=msdn.10))记录了 .NET Framework 3.5 和 .NET Framework 3.5 SP1 之间的更改。
 
 - [.NET Framework 4 迁移问题](net-framework-4-migration-issues.md)记录了 .NET Framework 3.5 SP1 和 .NET Framework 4 之间的更改。
 

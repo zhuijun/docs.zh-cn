@@ -5,11 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - wrappers, creating manually
 ms.assetid: cc2a70d8-6a58-4071-a8cf-ce28c018c09b
-ms.openlocfilehash: e562a7e963ff744bf9193821d54dd898db521464
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 0d696adbe1ee224e78f79a049ed2e41d50be1faa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619580"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554164"
 ---
 # <a name="how-to-create-wrappers-manually"></a>如何：手动创建包装器
 如果决定在托管源代码中手动声明 COM 类型，则最佳的着手点是现有的接口定义语言 (IDL) 文件或类型库。 不具备 IDL 文件或无法生成类型库文件时，可以通过创建托管的声明并将生成的程序集导出到类型库来模拟 COM 类型。  
@@ -26,11 +27,11 @@ ms.locfileid: "85619580"
   
 1. 假设你有一个 IDL 文件或类型库文件，请决定要在自定义 RCW 中包含哪些类和接口。 可以排除不打算在应用程序中直接或间接使用的任何类型。  
   
-2. 在符合 CLS 的语言中创建一个源文件，并声明类型。 有关导入转换过程的完整说明，请参阅[有关从类型库转换到程序集的摘要](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))。 实际上，创建自定义 RCW 时，需要手动执行由[类型库导入程序 (Tlbimp.exe)](../tools/tlbimp-exe-type-library-importer.md) 所提供的类型转换活动。 下一章节的示例显示 IDL 或类型库文件中的类型以及它们在 C# 代码中的对应类型。  
+2. 在符合 CLS 的语言中创建一个源文件，并声明类型。 有关导入转换过程的完整说明，请参阅[有关从类型库转换到程序集的摘要](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))。 实际上，创建自定义 RCW 时，需要手动执行由[类型库导入程序 (Tlbimp.exe)](../tools/tlbimp-exe-type-library-importer.md) 所提供的类型转换活动。 下一章节的示例显示 IDL 或类型库文件中的类型以及它们在 C# 代码中的对应类型。  
   
 3. 完成声明后，请像编译任何其他托管源代码一样编译此文件。  
   
-4. 与使用 Tlbimp.exe 导入的类型相同，某些类型需要其他信息，你可以将其直接添加到自己的代码中。 有关详细信息，请参阅[如何：编辑互操作程序集](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100))。  
+4. 与使用 Tlbimp.exe 导入的类型相同，某些类型需要其他信息，你可以将其直接添加到自己的代码中。 有关详细信息，请参阅[如何：编辑互操作程序集](/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100))。  
   
 ## <a name="example"></a>示例  
  以下代码演示了 IDL 中的 `ISATest` 接口和 `SATest` 类以及 C# 源代码中相应类型的示例。  
@@ -99,9 +100,9 @@ namespace SAServer
   
 ## <a name="see-also"></a>请参阅
 
-- [自定义运行时可调用包装器](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))
-- [COM 数据类型](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))
-- [如何：编辑互操作程序集](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100))
-- [有关从类型库转换到程序集的摘要](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [自定义运行时可调用包装器](/previous-versions/dotnet/netframework-4.0/e753eftz(v=vs.100))
+- [COM 数据类型](/previous-versions/dotnet/netframework-4.0/sak564ww(v=vs.100))
+- [如何：编辑互操作程序集](/previous-versions/dotnet/netframework-4.0/8zbc969t(v=vs.100))
+- [有关从类型库转换到程序集的摘要](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Tlbimp.exe（类型库导入程序）](../tools/tlbimp-exe-type-library-importer.md)
 - [Tlbexp.exe（类型库导出程序）](../tools/tlbexp-exe-type-library-exporter.md)

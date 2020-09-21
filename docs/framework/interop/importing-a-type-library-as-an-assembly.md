@@ -16,11 +16,12 @@ helpviewer_keywords:
 - COM interop, importing type library
 - COM interop, exposing COM components
 ms.assetid: d1898229-cd40-426e-a275-f3eb65fbc79f
-ms.openlocfilehash: e5187e3c2ce533f25a38e93bc3715dd3e2e47c11
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: bc1b921fea5aff086e21c046369f1d461f553bc7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622713"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554679"
 ---
 # <a name="importing-a-type-library-as-an-assembly"></a>将类型库当作程序集导入
 
@@ -30,7 +31,7 @@ COM 类型定义通常位于类型库中。 而符合 CLS 的编译器则在程�
 
 - 使用仅设计时互操作程序集：从 .NET Framework 4 开始，可以指示编译器将类型信息从互操作程序集嵌入到可执行文件中。 编译器只嵌入应用程序使用的类型信息。 无需将互操作程序集与应用程序一起部署。 这是推荐采用的方法。
 
-- 部署互操作程序集：创建对互操作程序集的标准引用。 这种情况下，互操作程序集必须与应用程序一起部署。 如果使用此方法且不使用专有 COM 组件，请始终引用由打算并入托管代码中的 COM 组件的创建者发布的主互操作程序集 (PIA)。 有关生成和使用主互操作程序集的详细信息，请参阅[主互操作程序集](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100))。
+- 部署互操作程序集：创建对互操作程序集的标准引用。 这种情况下，互操作程序集必须与应用程序一起部署。 如果使用此方法且不使用专有 COM 组件，请始终引用由打算并入托管代码中的 COM 组件的创建者发布的主互操作程序集 (PIA)。 有关生成和使用主互操作程序集的详细信息，请参阅[主互操作程序集](/previous-versions/dotnet/netframework-4.0/aax7sdch(v=vs.100))。
 
 使用仅设计时互操作程序集时，可以嵌入 COM 组件创建者发布的主互操作程序集中的类型信息。 但是，无需将主互操作程序集与应用程序一起部署。
 
@@ -66,18 +67,18 @@ COM 类型库可以是扩展名名 .tlb 的独立文件，例如 Loanlib.tlb。 
 
   - 有关类型库到程序集转换规则的知识。
 
-  编写自定义包装器是一项高级技术。 有关如何生成自定义包装器的其他信息，请参阅[自定义标准包装器](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))。
+  编写自定义包装器是一项高级技术。 有关如何生成自定义包装器的其他信息，请参阅[自定义标准包装器](/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))。
 
- 有关 COM 互操作导入过程的详细信息，请参阅[有关从类型库转换到程序集的摘要](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))。
+ 有关 COM 互操作导入过程的详细信息，请参阅[有关从类型库转换到程序集的摘要](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))。
 
 ## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.InteropServices.TypeLibConverter>
 - [向 .NET Framework 公开 COM 组件](exposing-com-components.md)
-- [有关从类型库转换到程序集的摘要](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
+- [有关从类型库转换到程序集的摘要](/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
 - [Tlbimp.exe（类型库导入程序）](../tools/tlbimp-exe-type-library-importer.md)
-- [自定义标准包装器](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
-- [在托管代码中使用 COM 类型](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
+- [自定义标准包装器](/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
+- [在托管代码中使用 COM 类型](/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [编译互操作项目](compiling-an-interop-project.md)
 - [部署互操作应用程序](deploying-an-interop-application.md)
 - [如何：添加对类型库的引用](how-to-add-references-to-type-libraries.md)

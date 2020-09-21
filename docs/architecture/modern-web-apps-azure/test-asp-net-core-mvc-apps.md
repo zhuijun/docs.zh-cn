@@ -4,12 +4,12 @@ description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序 | 测�
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 1883662f736361a947cbad440aeefda839265251
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 8497892b88c313cde0a604ad3967507300e5154a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465632"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539238"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>测试 ASP.NET Core MVC 应用
 
@@ -257,7 +257,7 @@ namespace Microsoft.eShopWeb.FunctionalTests.Web
 
 测试可以使用此自定义 WebApplicationFactory 来创建客户端，并使用此客户端实例向应用程序作出请求。 该应用程序将具备植入的数据，这些数据可用作测试断言的一部分。 以下测试验证 eShopOnWeb 应用程序的主页是否正确加载并包括已作为种子数据的一部分添加至应用程序的产品列表。
 
-```cs
+```csharp
 using Microsoft.eShopWeb.FunctionalTests.Web;
 using System.Net.Http;
 using System.Threading.Tasks;

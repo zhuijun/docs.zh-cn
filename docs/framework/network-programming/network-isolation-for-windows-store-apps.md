@@ -2,12 +2,12 @@
 title: Windows 应用商店应用的网络隔离
 ms.date: 03/30/2017
 ms.assetid: b064497c-d956-46b8-838d-7a0223c7e200
-ms.openlocfilehash: 390a0281f03b08322cc1bee469b601fd5a1547c4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0f9288b53b969838cac64c24d3c9861a0f841aca
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74802165"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558454"
 ---
 # <a name="network-isolation-for-windows-store-apps"></a>Windows 应用商店应用的网络隔离
 
@@ -25,13 +25,13 @@ ms.locfileid: "74802165"
   
 4. 部署并运行应用，使用为故障排除提供的网络隔离工具进行测试。  
   
-有关如何配置用于网络隔离故障排除的网络功能和隔离工具的详细信息，请参阅 Windows 8.x 应用商店开发人员文档中的[如何配置网络隔离功能](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))。
+有关如何配置用于网络隔离故障排除的网络功能和隔离工具的详细信息，请参阅 Windows 8.x 应用商店开发人员文档中的[如何配置网络隔离功能](/previous-versions/windows/apps/hh770532(v=win.10))。
   
 ## <a name="see-also"></a>另请参阅
 
-- [连接到 Web 服务](https://docs.microsoft.com/previous-versions/windows/apps/hh761504(v=win.10))
-- [网络隔离指南和核对清单](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10))
-- [快速入门：使用 HttpClient 进行连接](https://docs.microsoft.com/previous-versions/windows/apps/hh781239(v=win.10))
-- [如何使用 HttpClient 处理程序](https://docs.microsoft.com/previous-versions/windows/apps/hh781241(v=win.10))
-- [如何确保 HttpClient 连接安全](https://docs.microsoft.com/previous-versions/windows/apps/hh781240(v=win.10))
+- [连接到 Web 服务](/previous-versions/windows/apps/hh761504(v=win.10))
+- [网络隔离指南和核对清单](/previous-versions/windows/apps/hh770532(v=win.10))
+- [快速入门：使用 HttpClient 进行连接](/previous-versions/windows/apps/hh781239(v=win.10))
+- [如何使用 HttpClient 处理程序](/previous-versions/windows/apps/hh781241(v=win.10))
+- [如何确保 HttpClient 连接安全](/previous-versions/windows/apps/hh781240(v=win.10))
 - [HttpClient 示例](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664)

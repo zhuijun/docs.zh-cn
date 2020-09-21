@@ -18,12 +18,12 @@ helpviewer_keywords:
 - threading [Windows Forms], asynchronous features
 - AsyncCompletedEventArgs class
 ms.assetid: 61f676b5-936f-40f6-83ce-f22805ec9c2f
-ms.openlocfilehash: d635135e58c2fd86897b06b20a6aa0c251335e70
-ms.sourcegitcommit: b78018c850590dfc0348301e1748b779c28604cc
+ms.openlocfilehash: 8ea767976d82881d8f983c1b1e3cbf9475c73995
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89379117"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536036"
 ---
 # <a name="how-to-implement-a-component-that-supports-the-event-based-asynchronous-pattern"></a>如何：实现支持基于事件的异步模式的组件
 若要编写的类有一些可能会带来明显延迟的操作，请考虑按照[基于事件的异步模式概述](event-based-asynchronous-pattern-overview.md)中的步骤操作，为它实现异步功能。  
@@ -253,6 +253,6 @@ ms.locfileid: "89379117"
   
 ## <a name="see-also"></a>另请参阅
 
-- [如何：在后台运行操作](../../framework/winforms/controls/how-to-run-an-operation-in-the-background.md)
+- [如何：在后台运行操作](/dotnet/desktop/winforms/controls/how-to-run-an-operation-in-the-background)
 - [基于事件的异步模式概述](event-based-asynchronous-pattern-overview.md)
 - [基于事件的异步模式 (EAP)](event-based-asynchronous-pattern-eap.md)

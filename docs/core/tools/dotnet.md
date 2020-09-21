@@ -2,12 +2,12 @@
 title: dotnet 命令
 description: 了解 dotnet 命令（.NET Core CLI 的通用驱动程序）及其用法。
 ms.date: 02/13/2020
-ms.openlocfilehash: 88e92b3ff5e8f68b980015a817434dd2d67df93a
-ms.sourcegitcommit: d6bd7903d7d46698e9d89d3725f3bb4876891aa3
+ms.openlocfilehash: 4476dcf36455e0dc1b89712409818cf7e0352f2c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83378843"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537660"
 ---
 # <a name="dotnet-command"></a>dotnet 命令
 
@@ -258,7 +258,7 @@ dotnet myapp.dll
 
 ## <a name="environment-variables"></a>环境变量
 
-- `DOTNET_ROOT`，`DOTNET_ROOT(x86)`
+- `DOTNET_ROOT`, `DOTNET_ROOT(x86)`
 
   指定 .NET Core 运行时的位置（如果运行时未安装在默认位置）。 Windows 上的默认位置为 `C:\Program Files\dotnet`。 Linux 和 macOS 上的默认位置为 `/usr/share/dotnet`。 此环境变量仅在通过生成的可执行文件 (apphosts) 运行应用时使用。 在 64 位 OS 上运行 32 位可执行文件时，改用 `DOTNET_ROOT(x86)`。
 
@@ -300,7 +300,7 @@ dotnet myapp.dll
 
 - `DOTNET_CLI_UI_LANGUAGE`
 
-  使用区域设置值（如 `en-us`）设置 CLI UI 的语言。 支持的值与 Visual Studio 中的值相同。 有关详细信息，请参阅 [Visual Studio 安装文档](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2019)中有关更改安装程序语言一节。 .NET 资源管理器规则适用，因此你无需选取精确匹配项 &mdash; 你还可以在 `CultureInfo` 树中选取后代。 例如，如果将其设置为 `fr-CA`，CLI 将查找并使用 `fr` 翻译。 如果你将其设置为不受支持的语言，CLI 会退回到英语。
+  使用区域设置值（如 `en-us`）设置 CLI UI 的语言。 支持的值与 Visual Studio 中的值相同。 有关详细信息，请参阅 [Visual Studio 安装文档](/visualstudio/install/install-visual-studio?view=vs-2019)中有关更改安装程序语言一节。 .NET 资源管理器规则适用，因此你无需选取精确匹配项 &mdash; 你还可以在 `CultureInfo` 树中选取后代。 例如，如果将其设置为 `fr-CA`，CLI 将查找并使用 `fr` 翻译。 如果你将其设置为不受支持的语言，CLI 会退回到英语。
 
 - `DOTNET_DISABLE_GUI_ERRORS`
 

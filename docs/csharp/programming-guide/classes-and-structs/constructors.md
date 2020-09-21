@@ -7,12 +7,12 @@ helpviewer_keywords:
 - classes [C#], constructors
 - C# language, constructors
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
-ms.openlocfilehash: 4a731e648143f5e0ecf8860625962d8baa29fe26
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: e8758d7322d7fde45ccbd9eaf9248a3168980bd3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474899"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555336"
 ---
 # <a name="constructors-c-programming-guide"></a>构造函数（C# 编程指南）
 
@@ -63,4 +63,4 @@ ms.locfileid: "86474899"
 - [类和结构](./index.md)
 - [终结器](./destructors.md)
 - [static](../../language-reference/keywords/static.md)
-- [Why Do Initializers Run In The Opposite Order As Constructors?Part One](https://docs.microsoft.com/archive/blogs/ericlippert/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one)（为何初始值设定项作为构造函数以相反顺序运行？第一部分）
+- [Why Do Initializers Run In The Opposite Order As Constructors?Part One](/archive/blogs/ericlippert/why-do-initializers-run-in-the-opposite-order-as-constructors-part-one)（为何初始值设定项作为构造函数以相反顺序运行？第一部分）

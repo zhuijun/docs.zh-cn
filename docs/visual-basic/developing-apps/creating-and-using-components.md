@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - components [Visual Basic]
 ms.assetid: ee6a4156-73f7-4e9b-8e01-c74c4798b65c
-ms.openlocfilehash: 2fefdff9dc27915066e3d92efd8439adffed9fc5
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e4d4fa092363a5e76658f2770c0d655bb225f3f3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74330301"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544578"
 ---
 # <a name="creating-and-using-components-in-visual-basic"></a>创建和使用组件 (Visual Basic)
 
@@ -63,9 +63,9 @@ ms.locfileid: "74330301"
   
 ## <a name="related-sections"></a>相关章节  
 
- [控件和组件创作疑难解答](../../framework/winforms/controls/troubleshooting-control-and-component-authoring.md)  
+ [控件和组件创作疑难解答](/dotnet/desktop/winforms/controls/troubleshooting-control-and-component-authoring)  
  解释如何解决常见问题。  
   
 ## <a name="see-also"></a>请参阅
 
-- [如何：在 Windows 窗体中访问设计时支持](../../framework/winforms/controls/developing-windows-forms-controls-at-design-time.md)
+- [如何：在 Windows 窗体中访问设计时支持](/dotnet/desktop/winforms/controls/developing-windows-forms-controls-at-design-time)

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - standard numeric format strings
 - formatting numbers [.NET Framework]
 - format specifiers, standard numeric format strings
-ms.openlocfilehash: 605438a5f0e4b5bd9ade96c9db0416ee8611f311
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 857e8803d27ae634dec6e19c6d183943e1c4cc41
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84447116"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557367"
 ---
 # <a name="standard-numeric-format-strings"></a>标准数字格式字符串
 
@@ -48,7 +48,7 @@ ms.locfileid: "84447116"
 - C# 和 Visual Basic 中的[内插的字符串](../../csharp/language-reference/tokens/interpolated.md)，与复合格式字符串相比，语法更简化。
 
 > [!TIP]
-> 你可以下载格式设置实用工具，它属于一种 .NET Core Windows 窗体应用程序，通过该应用程序，你可将格式字符串应用于数值或日期和时间值并显示结果字符串。 源代码适用于 [C#](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs) 和 [Visual Basic](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)。
+> 你可以下载格式设置实用工具，它属于一种 .NET Core Windows 窗体应用程序，通过该应用程序，你可将格式字符串应用于数值或日期和时间值并显示结果字符串。 源代码适用于 [C#](/samples/dotnet/samples/windowsforms-formatting-utility-cs) 和 [Visual Basic](/samples/dotnet/samples/windowsforms-formatting-utility-vb)。
 
 <a name="table"></a>下表介绍标准数字格式说明符并显示每个格式说明符产生的示例输出。 有关使用标准数字格式字符串的其他信息，请参见[注释](#NotesStandardFormatting)一节；有关使用方法的完整演示，请参见[示例](#example)一节。
 
@@ -389,5 +389,5 @@ ms.locfileid: "84447116"
 - [格式设置类型](formatting-types.md)
 - [如何：用前导零填充数字](how-to-pad-a-number-with-leading-zeros.md)
 - [复合格式设置](composite-formatting.md)
-- [示例：.NET Core WinForms 格式设置实用工具 (C#)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-cs)
-- [示例：.NET Core WinForms 格式设置实用工具 (Visual Basic)](https://docs.microsoft.com/samples/dotnet/samples/windowsforms-formatting-utility-vb)
+- [示例：.NET Core WinForms 格式设置实用工具 (C#)](/samples/dotnet/samples/windowsforms-formatting-utility-cs)
+- [示例：.NET Core WinForms 格式设置实用工具 (Visual Basic)](/samples/dotnet/samples/windowsforms-formatting-utility-vb)
