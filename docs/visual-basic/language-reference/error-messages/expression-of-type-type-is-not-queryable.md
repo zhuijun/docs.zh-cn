@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC36593
 ms.assetid: 6f1f5860-bf97-4885-9ebb-bc87d028095c
-ms.openlocfilehash: e61b4dac109f714b5cf25226d1029237ca77032d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 78b47601bf0a013d079f638f6dac27511e01aec4
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409473"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874217"
 ---
 # <a name="expression-of-type-type-is-not-queryable"></a>类型 \<type> 的表达式不可查询
+
 类型的表达式 \<type> 不可查询。 请确保不缺少 LINQ 提供程序的程序集引用和/或命名空间导入。  
   
  可查询类型在 <xref:System.Linq> 、 <xref:System.Data.Linq> 和 <xref:System.Xml.Linq> 命名空间中定义。 必须导入一个或多个此类命名空间才能执行 LINQ 查询。  
@@ -29,7 +30,7 @@ ms.locfileid: "84409473"
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-1. 将 `Import` <xref:System.Linq> 、 <xref:System.Data.Linq> 或命名空间的语句添加 <xref:System.Xml.Linq> 到代码文件中。 你还可以通过使用 "项目设计器" （**"我的项目**"）的 "**引用**" 页来导入项目的命名空间。  
+1. 将 `Import` <xref:System.Linq> 、 <xref:System.Data.Linq> 或命名空间的语句添加 <xref:System.Xml.Linq> 到代码文件中。 你还可以使用 "项目设计器 **" ("项目设计**器" 的 "**引用**" 页) 导入项目的命名空间。  
   
 2. 确保已标识为查询源的类型是可查询类型。 即，实现或的类型 <xref:System.Collections.Generic.IEnumerable%601> <xref:System.Linq.IQueryable%601> 。  
   

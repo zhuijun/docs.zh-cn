@@ -7,17 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - BC40039
 ms.assetid: c5bd5914-ae71-416a-8bed-f76f644f78be
-ms.openlocfilehash: b03a50365122c17fa311a284bd6995d1af2631c3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4e29a27841021b0cf68af01f4535e60eeb38b9a8
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401532"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871522"
 ---
 # <a name="name-namespacename-in-the-root-namespace-fullnamespacename-is-not-cls-compliant"></a>根命名空间 \<namespacename> 中的名称 \<fullnamespacename> 不符合 CLS
-程序集标记为 `<CLSCompliant(True)>` ，但根命名空间名称的元素以下划线（ `_` ）开头。  
+
+程序集标记为 `<CLSCompliant(True)>` ，但根命名空间名称的元素以下划线 (`_`) 开头。  
   
- 编程元素可以包含一个或多个下划线，但要符合[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md)（CLS），它不能以下划线开头。 请参阅 [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md)。  
+ 编程元素可以包含一个或多个下划线，但要符合 [语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md) (CLS) ，它不能以下划线开头。 请参阅 [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md)。  
   
  当将 <xref:System.CLSCompliantAttribute> 应用到编程元素中时，需要将该特性的 `isCompliant` 参数设置为 `True` 或 `False` 来指示符合或不符合性。 此参数没有默认值，必须为其提供一个值。  
   

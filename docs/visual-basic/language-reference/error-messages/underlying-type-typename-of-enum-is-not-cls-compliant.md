@@ -7,15 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC40032
 ms.assetid: 32bf1949-fd73-456c-a323-bf1ffe1320ed
-ms.openlocfilehash: 79faf0038b2b313bdc21e12c8ae76854bcd6957f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8d27039c28cd3f680e441db9182dd415bd8e91ba
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406568"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870262"
 ---
 # <a name="underlying-type-typename-of-enum-is-not-cls-compliant"></a>枚举的基础类型 \<typename> 不符合 CLS
-为此枚举指定的数据类型不是[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md)（CLS）的一部分。 这不是你的组件中的错误，因为 .NET Framework 和 Visual Basic 支持此数据类型。 但是，以严格符合 CLS 的代码编写的另一个组件可能不支持此数据类型。 此类组件可能无法与组件成功交互。  
+
+为此枚举指定的数据类型不是 [语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md) (CLS) 的一部分。 这不是你的组件中的错误，因为 .NET Framework 和 Visual Basic 支持此数据类型。 但是，以严格符合 CLS 的代码编写的另一个组件可能不支持此数据类型。 此类组件可能无法与组件成功交互。  
   
  以下 Visual Basic 数据类型不符合 CLS：  
   

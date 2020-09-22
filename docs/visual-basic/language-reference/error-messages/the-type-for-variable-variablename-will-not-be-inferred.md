@@ -7,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC42110
 ms.assetid: ef4442eb-08d1-434f-a03b-4aa2ed4e4414
-ms.openlocfilehash: 98aeb5699fdd5e5e538a205acd37436019c3fc03
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 1ad7b9d0a610842dd6c50ee198f5bb5fa3eb68cf
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363041"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870477"
 ---
 # <a name="the-type-for-variable-variablename-will-not-be-inferred-because-it-is-bound-to-a-field-in-an-enclosing-scope"></a>无法推断出变量“\<variablename>”的类型，因为它绑定到封闭范围中的某个字段
 
-不会推断变量 "" 的类型， \<variablename> 因为它绑定到封闭范围中的某个字段。 请更改 "" 的名称 \<variablename> ，或使用完全限定的名称（例如，"variablename" 或 "variablename"）。
+不会推断变量 "" 的类型， \<variablename> 因为它绑定到封闭范围中的某个字段。 更改 "" 的名称 \<variablename> ，或使用完全限定名称 (例如 "variablename" 或 "variablename" ) 。
 
 代码中的循环控制变量与类的字段或其他封闭范围的名称相同。 因为在没有子句的情况下使用控制变量 `As` ，它将绑定到封闭范围中的字段，并且编译器不会为其创建新的变量，也不会推断其类型。
 
@@ -64,6 +64,7 @@ End Class
   ```
 
 ## <a name="example"></a>示例
+
  下面的代码显示了前面的示例，其中的第一个更正是就地的。
 
 ```vb

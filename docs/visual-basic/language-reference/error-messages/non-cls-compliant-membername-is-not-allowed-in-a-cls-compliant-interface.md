@@ -7,17 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - BC40033
 ms.assetid: 060c4b08-798e-40f1-94cf-c05c524f1b8a
-ms.openlocfilehash: e572189b958612bf9527c82ce702df3ab929a23f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d8394fb995bb7b009b4ee40dccc41e3435ae7309
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409395"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873697"
 ---
 # <a name="non-cls-compliant-membername-is-not-allowed-in-a-cls-compliant-interface"></a>在符合 CLS 的接口中不允许出现不符合 CLS 的 \<membername>
+
 接口中的属性、过程或事件被标记为 `<CLSCompliant(True)>` 当接口本身标记为 `<CLSCompliant(False)>` 或未标记时。  
   
- 为了使接口符合[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md)（CLS），其所有成员都必须符合。  
+ 为了使接口符合 [语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md) (CLS) ，它的所有成员都必须符合。  
   
  当将 <xref:System.CLSCompliantAttribute> 应用到编程元素中时，需要将该特性的 `isCompliant` 参数设置为 `True` 或 `False` 来指示符合或不符合性。 此参数没有默认值，必须为其提供一个值。  
   

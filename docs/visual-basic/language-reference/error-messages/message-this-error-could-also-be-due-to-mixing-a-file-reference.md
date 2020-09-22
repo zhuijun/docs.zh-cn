@@ -7,15 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC30971
 ms.assetid: 75d2e8b5-2fdc-4623-8b32-cba805dab7db
-ms.openlocfilehash: 263e30f992ef58b0053acb2fd749d0d9186ef6b8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cd2c00bda5b63abbd6bf7069ef28d0a812b22044
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397254"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873785"
 ---
 # <a name="message-this-error-could-also-be-due-to-mixing-a-file-reference-with-a-project-reference-to-assembly-assemblyname"></a>\<message>此错误也可能是由于将程序集“\<assemblyname>”的文件引用与项目引用混合使用所造成的
-\<message>此错误还可能是由于将文件引用与程序集 "的项目引用混合而造成的 \<assemblyname> 。 在这种情况下，尝试将项目 "" 中对 "" 的文件引用替换为 \<assemblyfilename> \<projectname1> 对 "" 的项目引用 \<projectname2> 。  
+
+\<message> 此错误还可能是由于将文件引用与程序集 "的项目引用混合而造成的 \<assemblyname> 。 在这种情况下，尝试将项目 "" 中对 "" 的文件引用替换为 \<assemblyfilename> \<projectname1> 对 "" 的项目引用 \<projectname2> 。  
   
  项目中的代码访问另一个项目的成员，但你的解决方案配置不允许 Visual Basic 编译器解析引用。  
   

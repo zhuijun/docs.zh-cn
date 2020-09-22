@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30712
 ms.assetid: c7ffbd6d-05c6-4261-b44b-1bcd521bb350
-ms.openlocfilehash: b3ef2aa5e25d61f005159e06852e23c2c036fd54
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 449bd34d5026dd4f9b9020123b99df81081f4331
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198182"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873512"
 ---
-# <a name="unable-to-load-information-for-class-classname"></a>无法加载类 "\<classname >" 的信息
+# <a name="unable-to-load-information-for-class-classname"></a>无法加载类“\<classname>”的信息
+
 对不提供的类进行了引用。  
   
  **错误 ID：** BC30712  

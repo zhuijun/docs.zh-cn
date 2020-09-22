@@ -6,14 +6,15 @@ helpviewer_keywords:
 - directories [Visual Basic], Visual Basic
 - files [Visual Basic], summary
 ms.assetid: 588b75fd-a09b-4381-822d-19868990c170
-ms.openlocfilehash: c4429d58d2f089b86f5c32c1f3ce8353b02880c4
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 84e5ac5276eeddf399003f72ef72e7117feb011b
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373872"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90868928"
 ---
 # <a name="directories-and-files-summary-visual-basic"></a>目录和文件摘要 (Visual Basic)
+
 Visual Basic 语言关键字和运行时库成员按用途和使用进行组织。  
   
  `My`与使用这些成员相比，使用此功能可为文件 i/o 操作提供更高的工作效率和性能。 有关详细信息，请参阅 <xref:Microsoft.VisualBasic.FileIO.FileSystem>。  

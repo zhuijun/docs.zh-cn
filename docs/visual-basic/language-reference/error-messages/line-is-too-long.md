@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30494
 ms.assetid: 27270ec3-82a4-4693-a948-dd4664a5f060
-ms.openlocfilehash: 39be6c90479becb32257bad5803ff1e2c5464f9d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2656d1095a14f54d53a84f75d1a93b058e21607b
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397306"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873818"
 ---
 # <a name="line-is-too-long"></a>行太长
+
 源文本行不能超过65535个字符。  
   
  **错误 ID：** BC30494  

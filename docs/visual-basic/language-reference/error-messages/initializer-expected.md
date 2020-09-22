@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30996
 ms.assetid: 6e183fe0-8888-43ed-a062-01571079455f
-ms.openlocfilehash: 13fa8917f228661fc44f5e0920d91c596e250c38
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2c5a65443dc16a600e25fcf6dfd11c4597b3a086
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402832"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873958"
 ---
 # <a name="initializer-expected"></a>应为初始值设定项
+
 您尝试使用对象初始值设定项声明类的实例，其中初始化列表为空，如下面的示例中所示。  
   
  `' Not valid.`  

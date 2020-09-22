@@ -7,19 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - BC42026
 ms.assetid: 4fde9db6-3bf3-48dc-8e05-981bf08969da
-ms.openlocfilehash: e3a9f4cf2f4105d2c449813bf0c593860df7d1f0
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c05a7d9b021192d53a30e49f52abc08d9b153156
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409499"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874251"
 ---
 # <a name="expression-recursively-calls-the-containing-property-propertyname"></a>表达式递归调用包含属性“\<propertyname>”
+
 属性定义过程中的语句将 `Set` 值存储到属性的名称中。  
   
  保存属性值的建议方法是在 `Private` 属性的容器中定义一个变量，并在和过程中使用它 `Get` `Set` 。 然后，该 `Set` 过程应将传入值存储在此 `Private` 变量中。  
   
- 此 `Get` 过程的行为类似于 `Function` 过程，因此它可以为属性名称赋值，并通过遇到语句来返回控件 `End Get` 。 不过，建议的方法是 `Private` 在[返回语句](../statements/return-statement.md)中包含变量作为值。  
+ 此 `Get` 过程的行为类似于 `Function` 过程，因此它可以为属性名称赋值，并通过遇到语句来返回控件 `End Get` 。 不过，建议的方法是 `Private` 在 [返回语句](../statements/return-statement.md)中包含变量作为值。  
   
  此 `Set` 过程的行为类似于 `Sub` 过程，该过程不返回值。 因此，过程或属性名称在过程中没有特殊含义 `Set` ，因此不能在其中存储值。  
   

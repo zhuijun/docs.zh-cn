@@ -7,15 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC30157
 ms.assetid: 70daaee1-14f9-45b7-9f30-53794310b95e
-ms.openlocfilehash: 149acc2baac0f45fa971a11f254d694526d140d7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c39339a49c4aad4ba643facc2372333e7379ffa7
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397319"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873849"
 ---
 # <a name="leading--or--can-only-appear-inside-a-with-statement"></a>前导“.”或“!”只能出现在“With”语句内
-不在块内部的句号（.）或惊叹号（！）在 `With` 左侧没有表达式。 成员访问（ `.` ）和字典成员访问（ `!` ）需要一个表达式，该表达式指定包含成员的元素。 这必须立即出现在访问器的左侧，或作为 `With` 包含成员访问的块的目标。  
+
+不在块内部的 ) 或惊叹号 (！ ) 的句点 ( 没有 `With` 左侧的表达式。 成员访问 (`.`) 和字典成员访问 (`!`) 要求一个表达式，该表达式指定包含成员的元素。 这必须立即出现在访问器的左侧，或作为 `With` 包含成员访问的块的目标。  
   
  **错误 ID：** BC30157  
   

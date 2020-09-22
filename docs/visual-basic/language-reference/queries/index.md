@@ -5,17 +5,19 @@ helpviewer_keywords:
 - queries [Visual Basic]
 - LINQ, queries
 ms.assetid: 8edc717c-4a24-4cbc-9c16-11f479c935db
-ms.openlocfilehash: 8fb245309170d4b9adf7458bb3bcfde3e28c0538
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 006a4b67094b258d440c2046fe3ae02274e1c337
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84359822"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90869901"
 ---
 # <a name="queries-visual-basic"></a>查询 (Visual Basic)
-Visual Basic 使你能够在代码中创建语言集成查询（LINQ）表达式。  
+
+Visual Basic 使你能够在代码中 (LINQ) 表达式创建语言集成查询。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [Aggregate Clause](aggregate-clause.md)  
  描述 `Aggregate` 子句，它将一个或多个聚合函数应用于集合。  
   

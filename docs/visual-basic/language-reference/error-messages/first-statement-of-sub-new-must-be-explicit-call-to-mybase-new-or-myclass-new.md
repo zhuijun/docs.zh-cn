@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30920
 ms.assetid: e47dc755-4294-4368-b813-2177b7677957
-ms.openlocfilehash: 33dd15e3f5f5538963597f2b00f4214895e1f47a
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4918ac2e11dfaf682b1c00275f30c171bf241fe3
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403000"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874126"
 ---
 # <a name="first-statement-of-this-sub-new-must-be-an-explicit-call-to-mybasenew-or-myclassnew-because-the-constructorname-in-the-base-class-baseclassname-of-derivedclassname-is-marked-obsolete-errormessage"></a>此“Sub New”的第一条语句必须是对“MyBase.New”或“MyClass.New”的显式调用，因为“\<constructorname>”的基类“\<baseclassname>”中的“\<derivedclassname>”被标记为已过时：“\<errormessage>”
+
 类构造函数不显式调用基类构造函数，并且隐式基类构造函数标有 <xref:System.ObsoleteAttribute> 特性和将其视为错误的指令。  
   
  当派生类构造函数不调用基类构造函数时，Visual Basic 会尝试生成对无参数基类构造函数的隐式调用。 如果基类中没有无需参数即可调用的可访问的构造函数，则 Visual Basic 无法生成隐式调用。 在这种情况下，所需的构造函数标记有 <xref:System.ObsoleteAttribute> 特性，因此 Visual Basic 不能调用它。  
