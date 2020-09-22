@@ -10,12 +10,12 @@ metadata:
   ms.technology: azure
   ms.service: multiple
   ms.prod: azure-dotnet
-  ms.openlocfilehash: a7b9b909e500979750d57cc6047153123cd192e5
-  ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+  ms.openlocfilehash: 8d1fb12e3edeb75db7e11316db1063c0bcd63a8e
+  ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 07/09/2020
-  ms.locfileid: "86174824"
+  ms.lasthandoff: 09/15/2020
+  ms.locfileid: "90539094"
 landingContent:
 - title: Azure 上的 .NET 入门
   linkLists:
@@ -214,10 +214,10 @@ landingContent:
   - linkListType: architecture
     links:
     - text: .NET 微服务：适用于容器化 .NET 应用的体系结构
-      url: /dotnet/architecture/microservices/
+      url: ../architecture/microservices/index.md
     - text: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序
-      url: /dotnet/architecture/modern-web-apps-azure/
+      url: ../architecture/modern-web-apps-azure/index.md
     - text: 使用 Microsoft 平台和工具对 Docker 应用程序生命周期进行容器化
-      url: /dotnet/architecture/containerized-lifecycle/
+      url: ../architecture/containerized-lifecycle/index.md
     - text: 通过 Azure 云和 Windows 容器实现现有 .NET 应用程序的现代化
       url: /dotnet/architecture/modernize-with-azure-containers/

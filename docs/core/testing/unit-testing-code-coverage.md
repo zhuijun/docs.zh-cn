@@ -4,35 +4,36 @@ description: 了解如何将代码覆盖率功能用于 .NET 单元测试。
 author: IEvangelist
 ms.author: dapine
 ms.date: 07/01/2020
-ms.openlocfilehash: af64116e86c3f46f37c8d5d079b9c86084095485
-ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
+ms.openlocfilehash: 4d2c8f3db26eaabcb973378a349ef57912e92bfa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853901"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538142"
 ---
-# <a name="use-code-coverage-for-unit-testing"></a><span data-ttu-id="8d83a-103">将代码覆盖率用于单元测试</span><span class="sxs-lookup"><span data-stu-id="8d83a-103">Use code coverage for unit testing</span></span>
+# <a name="use-code-coverage-for-unit-testing"></a><span data-ttu-id="716a5-103">将代码覆盖率用于单元测试</span><span class="sxs-lookup"><span data-stu-id="716a5-103">Use code coverage for unit testing</span></span>
 
-<span data-ttu-id="8d83a-104">单元测试有助于确保功能的正常运行，并为重构工作提供一种验证方法。</span><span class="sxs-lookup"><span data-stu-id="8d83a-104">Unit tests help to ensure functionality, and provide a means of verification for refactoring efforts.</span></span> <span data-ttu-id="8d83a-105">代码覆盖率是单元测试运行的代码量（行、分支或方法）的度量值。</span><span class="sxs-lookup"><span data-stu-id="8d83a-105">Code coverage is a measurement of the amount of code that is run by unit tests - either lines, branches, or methods.</span></span> <span data-ttu-id="8d83a-106">例如，如果你有一个简单的应用程序，其中只有两个条件分支（分支 a 和分支 b ），则验证条件分支 a 的单元测试将报告 50% 的分支代码覆盖率。</span><span class="sxs-lookup"><span data-stu-id="8d83a-106">As an example, if you have a simple application with only two conditional branches of code (_branch a_, and _branch b_), a unit test that verifies conditional _branch a_ will report branch code coverage of 50%.</span></span>
+<span data-ttu-id="716a5-104">单元测试有助于确保功能的正常运行，并为重构工作提供一种验证方法。</span><span class="sxs-lookup"><span data-stu-id="716a5-104">Unit tests help to ensure functionality, and provide a means of verification for refactoring efforts.</span></span> <span data-ttu-id="716a5-105">代码覆盖率是单元测试运行的代码量（行、分支或方法）的度量值。</span><span class="sxs-lookup"><span data-stu-id="716a5-105">Code coverage is a measurement of the amount of code that is run by unit tests - either lines, branches, or methods.</span></span> <span data-ttu-id="716a5-106">例如，如果你有一个简单的应用程序，其中只有两个条件分支（分支 a 和分支 b ），则验证条件分支 a 的单元测试将报告 50% 的分支代码覆盖率。</span><span class="sxs-lookup"><span data-stu-id="716a5-106">As an example, if you have a simple application with only two conditional branches of code (_branch a_, and _branch b_), a unit test that verifies conditional _branch a_ will report branch code coverage of 50%.</span></span>
 
-<span data-ttu-id="8d83a-107">本文介绍如何通过 Coverlet 在单元测试中使用代码覆盖率和使用 ReportGenerator 生成报表。</span><span class="sxs-lookup"><span data-stu-id="8d83a-107">This article discusses the usage of code coverage for unit testing with Coverlet and report generation using ReportGenerator.</span></span> <span data-ttu-id="8d83a-108">尽管本文重点介绍 C# 和 xUnit 作为测试框架，但 MSTest 和 NUnit 也适用。</span><span class="sxs-lookup"><span data-stu-id="8d83a-108">While this article focuses on C# and xUnit as the test framework, both MSTest and NUnit would also work.</span></span> <span data-ttu-id="8d83a-109">Coverlet 是 [GitHub 上的开源项目](https://github.com/coverlet-coverage/coverlet)，可为 C# 提供跨平台代码覆盖率框架。</span><span class="sxs-lookup"><span data-stu-id="8d83a-109">Coverlet is an [open source project on GitHub](https://github.com/coverlet-coverage/coverlet) that provides a cross platform code coverage framework for C#.</span></span> <span data-ttu-id="8d83a-110">[Coverlet](https://dotnetfoundation.org/projects/coverlet) 是 .NET Foundation 的一部分。</span><span class="sxs-lookup"><span data-stu-id="8d83a-110">[Coverlet](https://dotnetfoundation.org/projects/coverlet) is part of the .NET foundation.</span></span> <span data-ttu-id="8d83a-111">Coverlet 收集 Cobertura 覆盖率测试运行数据，用于生成报表。</span><span class="sxs-lookup"><span data-stu-id="8d83a-111">Coverlet collects Cobertura coverage test run data, which is used for report generation.</span></span>
+<span data-ttu-id="716a5-107">本文介绍如何通过 Coverlet 在单元测试中使用代码覆盖率和使用 ReportGenerator 生成报表。</span><span class="sxs-lookup"><span data-stu-id="716a5-107">This article discusses the usage of code coverage for unit testing with Coverlet and report generation using ReportGenerator.</span></span> <span data-ttu-id="716a5-108">尽管本文重点介绍 C# 和 xUnit 作为测试框架，但 MSTest 和 NUnit 也适用。</span><span class="sxs-lookup"><span data-stu-id="716a5-108">While this article focuses on C# and xUnit as the test framework, both MSTest and NUnit would also work.</span></span> <span data-ttu-id="716a5-109">Coverlet 是 [GitHub 上的开源项目](https://github.com/coverlet-coverage/coverlet)，可为 C# 提供跨平台代码覆盖率框架。</span><span class="sxs-lookup"><span data-stu-id="716a5-109">Coverlet is an [open source project on GitHub](https://github.com/coverlet-coverage/coverlet) that provides a cross platform code coverage framework for C#.</span></span> <span data-ttu-id="716a5-110">[Coverlet](https://dotnetfoundation.org/projects/coverlet) 是 .NET Foundation 的一部分。</span><span class="sxs-lookup"><span data-stu-id="716a5-110">[Coverlet](https://dotnetfoundation.org/projects/coverlet) is part of the .NET foundation.</span></span> <span data-ttu-id="716a5-111">Coverlet 收集 Cobertura 覆盖率测试运行数据，用于生成报表。</span><span class="sxs-lookup"><span data-stu-id="716a5-111">Coverlet collects Cobertura coverage test run data, which is used for report generation.</span></span>
 
-<span data-ttu-id="8d83a-112">此外，本文详细介绍如何使用从 Coverlet 测试运行收集的代码覆盖率信息来生成报表。</span><span class="sxs-lookup"><span data-stu-id="8d83a-112">Additionally, this article details how to use the code coverage information collected from a Coverlet test run to generate a report.</span></span> <span data-ttu-id="8d83a-113">可以使用另一个 [GitHub 上的开源项目 - ReportGenerator](https://github.com/danielpalme/ReportGenerator) 来生成报表。</span><span class="sxs-lookup"><span data-stu-id="8d83a-113">The report generation is possible using another [open source project on GitHub - ReportGenerator](https://github.com/danielpalme/ReportGenerator).</span></span> <span data-ttu-id="8d83a-114">ReportGenerator 将由 Cobertura 生成的覆盖率报表转换为各种格式的用户可读的报表。</span><span class="sxs-lookup"><span data-stu-id="8d83a-114">ReportGenerator converts coverage reports generated by Cobertura among many others, into human readable reports in various formats.</span></span>
+<span data-ttu-id="716a5-112">此外，本文详细介绍如何使用从 Coverlet 测试运行收集的代码覆盖率信息来生成报表。</span><span class="sxs-lookup"><span data-stu-id="716a5-112">Additionally, this article details how to use the code coverage information collected from a Coverlet test run to generate a report.</span></span> <span data-ttu-id="716a5-113">可以使用另一个 [GitHub 上的开源项目 - ReportGenerator](https://github.com/danielpalme/ReportGenerator) 来生成报表。</span><span class="sxs-lookup"><span data-stu-id="716a5-113">The report generation is possible using another [open source project on GitHub - ReportGenerator](https://github.com/danielpalme/ReportGenerator).</span></span> <span data-ttu-id="716a5-114">ReportGenerator 将由 Cobertura 生成的覆盖率报表转换为各种格式的用户可读的报表。</span><span class="sxs-lookup"><span data-stu-id="716a5-114">ReportGenerator converts coverage reports generated by Cobertura among many others, into human readable reports in various formats.</span></span>
 
-<span data-ttu-id="8d83a-115">本文基于示例浏览器中提供的[示例源代码项目](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs)。</span><span class="sxs-lookup"><span data-stu-id="8d83a-115">This article is based on the [sample source code project](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs), available on samples browser.</span></span>
+<span data-ttu-id="716a5-115">本文基于示例浏览器中提供的[示例源代码项目](/samples/dotnet/samples/unit-testing-code-coverage-cs)。</span><span class="sxs-lookup"><span data-stu-id="716a5-115">This article is based on the [sample source code project](/samples/dotnet/samples/unit-testing-code-coverage-cs), available on samples browser.</span></span>
 
-## <a name="system-under-test"></a><span data-ttu-id="8d83a-116">测试中的系统</span><span class="sxs-lookup"><span data-stu-id="8d83a-116">System under test</span></span>
+## <a name="system-under-test"></a><span data-ttu-id="716a5-116">测试中的系统</span><span class="sxs-lookup"><span data-stu-id="716a5-116">System under test</span></span>
 
-<span data-ttu-id="8d83a-117">“测试中的系统”指的是要对其编写单元测试的代码，这可能是对象、服务或其他任何公开可测试功能的内容。</span><span class="sxs-lookup"><span data-stu-id="8d83a-117">The "system under test" refers to the code that you're writing unit tests against, this could be an object, service, or anything else that exposes testable functionality.</span></span> <span data-ttu-id="8d83a-118">为了本文的目的，你将创建一个类库（它将成为测试中的系统），以及两个对应的单元测试项目。</span><span class="sxs-lookup"><span data-stu-id="8d83a-118">For the purpose of this article, you'll create a class library that will be the system under test, and two corresponding unit test projects.</span></span>
+<span data-ttu-id="716a5-117">“测试中的系统”指的是要对其编写单元测试的代码，这可能是对象、服务或其他任何公开可测试功能的内容。</span><span class="sxs-lookup"><span data-stu-id="716a5-117">The "system under test" refers to the code that you're writing unit tests against, this could be an object, service, or anything else that exposes testable functionality.</span></span> <span data-ttu-id="716a5-118">为了本文的目的，你将创建一个类库（它将成为测试中的系统），以及两个对应的单元测试项目。</span><span class="sxs-lookup"><span data-stu-id="716a5-118">For the purpose of this article, you'll create a class library that will be the system under test, and two corresponding unit test projects.</span></span>
 
-### <a name="create-a-class-library"></a><span data-ttu-id="8d83a-119">创建类库</span><span class="sxs-lookup"><span data-stu-id="8d83a-119">Create a class library</span></span>
+### <a name="create-a-class-library"></a><span data-ttu-id="716a5-119">创建类库</span><span class="sxs-lookup"><span data-stu-id="716a5-119">Create a class library</span></span>
 
-<span data-ttu-id="8d83a-120">在名为 `UnitTestingCodeCoverage` 的新目录中的命令提示符下，使用 [`dotnet new classlib`](../tools/dotnet-new.md#classlib) 命令创建新的 .NET 标准类库：</span><span class="sxs-lookup"><span data-stu-id="8d83a-120">From a command prompt in a new directory named `UnitTestingCodeCoverage`, create a new .NET standard class library using the [`dotnet new classlib`](../tools/dotnet-new.md#classlib) command:</span></span>
+<span data-ttu-id="716a5-120">在名为 `UnitTestingCodeCoverage` 的新目录中的命令提示符下，使用 [`dotnet new classlib`](../tools/dotnet-new.md#classlib) 命令创建新的 .NET 标准类库：</span><span class="sxs-lookup"><span data-stu-id="716a5-120">From a command prompt in a new directory named `UnitTestingCodeCoverage`, create a new .NET standard class library using the [`dotnet new classlib`](../tools/dotnet-new.md#classlib) command:</span></span>
 
 ```dotnetcli
 dotnet new classlib -n Numbers
 ```
 
-<span data-ttu-id="8d83a-121">下面的代码段定义了一个简单的 `PrimeService` 类，该类提供了用于检查数值是否为质数的功能。</span><span class="sxs-lookup"><span data-stu-id="8d83a-121">The snippet below defines a simple `PrimeService` class that provides functionality to check if a number is prime.</span></span> <span data-ttu-id="8d83a-122">复制下面的代码片段，并替换在“编号”目录中自动创建的“Class1.cs”文件的内容 。</span><span class="sxs-lookup"><span data-stu-id="8d83a-122">Copy the snippet below and replace the contents of the *Class1.cs* file that was automatically created in the *Numbers* directory.</span></span> <span data-ttu-id="8d83a-123">将“Class1.cs”文件重命名为“PrimeService.cs” 。</span><span class="sxs-lookup"><span data-stu-id="8d83a-123">Rename the *Class1.cs* file to *PrimeService.cs*.</span></span>
+<span data-ttu-id="716a5-121">下面的代码段定义了一个简单的 `PrimeService` 类，该类提供了用于检查数值是否为质数的功能。</span><span class="sxs-lookup"><span data-stu-id="716a5-121">The snippet below defines a simple `PrimeService` class that provides functionality to check if a number is prime.</span></span> <span data-ttu-id="716a5-122">复制下面的代码片段，并替换在“编号”目录中自动创建的“Class1.cs”文件的内容 。</span><span class="sxs-lookup"><span data-stu-id="716a5-122">Copy the snippet below and replace the contents of the *Class1.cs* file that was automatically created in the *Numbers* directory.</span></span> <span data-ttu-id="716a5-123">将“Class1.cs”文件重命名为“PrimeService.cs” 。</span><span class="sxs-lookup"><span data-stu-id="716a5-123">Rename the *Class1.cs* file to *PrimeService.cs*.</span></span>
 
 ```csharp
 namespace System.Numbers
@@ -60,11 +61,11 @@ namespace System.Numbers
 ```
 
 > [!TIP]
-> <span data-ttu-id="8d83a-124">值得一提的是，`Numbers` 类库是有意添加到 `System` 命名空间中的。</span><span class="sxs-lookup"><span data-stu-id="8d83a-124">It is worth mentioning the that `Numbers` class library was intentionally added to the `System` namespace.</span></span> <span data-ttu-id="8d83a-125">因此，无需 `using System;` 命名空间声明即可访问 <xref:System.Math?displayProperty=fullName>。</span><span class="sxs-lookup"><span data-stu-id="8d83a-125">This allows for <xref:System.Math?displayProperty=fullName> to be accessible without a `using System;` namespace declaration.</span></span> <span data-ttu-id="8d83a-126">有关详细信息，请参阅[命名空间（C# 参考）](../../csharp/language-reference/keywords/namespace.md)。</span><span class="sxs-lookup"><span data-stu-id="8d83a-126">For more information, see [namespace (C# Reference)](../../csharp/language-reference/keywords/namespace.md).</span></span>
+> <span data-ttu-id="716a5-124">值得一提的是，`Numbers` 类库是有意添加到 `System` 命名空间中的。</span><span class="sxs-lookup"><span data-stu-id="716a5-124">It is worth mentioning the that `Numbers` class library was intentionally added to the `System` namespace.</span></span> <span data-ttu-id="716a5-125">因此，无需 `using System;` 命名空间声明即可访问 <xref:System.Math?displayProperty=fullName>。</span><span class="sxs-lookup"><span data-stu-id="716a5-125">This allows for <xref:System.Math?displayProperty=fullName> to be accessible without a `using System;` namespace declaration.</span></span> <span data-ttu-id="716a5-126">有关详细信息，请参阅[命名空间（C# 参考）](../../csharp/language-reference/keywords/namespace.md)。</span><span class="sxs-lookup"><span data-stu-id="716a5-126">For more information, see [namespace (C# Reference)](../../csharp/language-reference/keywords/namespace.md).</span></span>
 
-### <a name="create-test-projects"></a><span data-ttu-id="8d83a-127">创建测试项目</span><span class="sxs-lookup"><span data-stu-id="8d83a-127">Create test projects</span></span>
+### <a name="create-test-projects"></a><span data-ttu-id="716a5-127">创建测试项目</span><span class="sxs-lookup"><span data-stu-id="716a5-127">Create test projects</span></span>
 
-<span data-ttu-id="8d83a-128">使用 [`dotnet new xunit`](../tools/dotnet-new.md#test) 命令，在同一命令提示符下创建两个新的“xUnit 测试项目(.NET Core)”模板：</span><span class="sxs-lookup"><span data-stu-id="8d83a-128">Create two new **xUnit Test Project (.NET Core)** templates from the same command prompt using the [`dotnet new xunit`](../tools/dotnet-new.md#test) command:</span></span>
+<span data-ttu-id="716a5-128">使用 [`dotnet new xunit`](../tools/dotnet-new.md#test) 命令，在同一命令提示符下创建两个新的“xUnit 测试项目(.NET Core)”模板：</span><span class="sxs-lookup"><span data-stu-id="716a5-128">Create two new **xUnit Test Project (.NET Core)** templates from the same command prompt using the [`dotnet new xunit`](../tools/dotnet-new.md#test) command:</span></span>
 
 ```dotnetcli
 dotnet new xunit -n XUnit.Coverlet.Collector
@@ -74,7 +75,7 @@ dotnet new xunit -n XUnit.Coverlet.Collector
 dotnet new xunit -n XUnit.Coverlet.MSBuild
 ```
 
-<span data-ttu-id="8d83a-129">这两个新创建的 xUnit 测试项目都需要添加 Numbers 类库的项目引用。</span><span class="sxs-lookup"><span data-stu-id="8d83a-129">Both of the newly created xUnit test projects need to add a project reference of the *Numbers* class library.</span></span> <span data-ttu-id="8d83a-130">这是为了使测试项目有权访问 PrimeService 以便进行测试。</span><span class="sxs-lookup"><span data-stu-id="8d83a-130">This is so that the test projects have access to the *PrimeService* for testing.</span></span> <span data-ttu-id="8d83a-131">在命令提示符下，使用 [`dotnet add`](../tools/dotnet-add-reference.md) 命令：</span><span class="sxs-lookup"><span data-stu-id="8d83a-131">From the command prompt, use the [`dotnet add`](../tools/dotnet-add-reference.md) command:</span></span>
+<span data-ttu-id="716a5-129">这两个新创建的 xUnit 测试项目都需要添加 Numbers 类库的项目引用。</span><span class="sxs-lookup"><span data-stu-id="716a5-129">Both of the newly created xUnit test projects need to add a project reference of the *Numbers* class library.</span></span> <span data-ttu-id="716a5-130">这是为了使测试项目有权访问 PrimeService 以便进行测试。</span><span class="sxs-lookup"><span data-stu-id="716a5-130">This is so that the test projects have access to the *PrimeService* for testing.</span></span> <span data-ttu-id="716a5-131">在命令提示符下，使用 [`dotnet add`](../tools/dotnet-add-reference.md) 命令：</span><span class="sxs-lookup"><span data-stu-id="716a5-131">From the command prompt, use the [`dotnet add`](../tools/dotnet-add-reference.md) command:</span></span>
 
 ```dotnetcli
 dotnet add XUnit.Coverlet.Collector\XUnit.Coverlet.Collector.csproj reference Numbers\Numbers.csproj
@@ -84,15 +85,15 @@ dotnet add XUnit.Coverlet.Collector\XUnit.Coverlet.Collector.csproj reference Nu
 dotnet add XUnit.Coverlet.MSBuild\XUnit.Coverlet.MSBuild.csproj reference Numbers\Numbers.csproj
 ```
 
-<span data-ttu-id="8d83a-132">MSBuild 项目命名正确，因为它依赖于 [coverlet.msbuild](https://www.nuget.org/packages/coverlet.msbuild) NuGet 包。</span><span class="sxs-lookup"><span data-stu-id="8d83a-132">The *MSBuild* project is named appropriately, as it will depend on the [coverlet.msbuild](https://www.nuget.org/packages/coverlet.msbuild) NuGet package.</span></span> <span data-ttu-id="8d83a-133">通过运行 [`dotnet add package`](../tools/dotnet-add-package.md) 命令添加此包依赖项：</span><span class="sxs-lookup"><span data-stu-id="8d83a-133">Add this package dependency by running the [`dotnet add package`](../tools/dotnet-add-package.md) command:</span></span>
+<span data-ttu-id="716a5-132">MSBuild 项目命名正确，因为它依赖于 [coverlet.msbuild](https://www.nuget.org/packages/coverlet.msbuild) NuGet 包。</span><span class="sxs-lookup"><span data-stu-id="716a5-132">The *MSBuild* project is named appropriately, as it will depend on the [coverlet.msbuild](https://www.nuget.org/packages/coverlet.msbuild) NuGet package.</span></span> <span data-ttu-id="716a5-133">通过运行 [`dotnet add package`](../tools/dotnet-add-package.md) 命令添加此包依赖项：</span><span class="sxs-lookup"><span data-stu-id="716a5-133">Add this package dependency by running the [`dotnet add package`](../tools/dotnet-add-package.md) command:</span></span>
 
 ```dotnetcli
 cd XUnit.Coverlet.MSBuild && dotnet add package coverlet.msbuild && cd ..
 ```
 
-<span data-ttu-id="8d83a-134">之前的命令更改了有效作用于 MSBuild 测试项目的目录，然后添加了 NuGet 包。</span><span class="sxs-lookup"><span data-stu-id="8d83a-134">The previous command changed directories effectively scoping to the *MSBuild* test project, then added the NuGet package.</span></span> <span data-ttu-id="8d83a-135">完成此操作后，它会更改目录，向上执行一个级别。</span><span class="sxs-lookup"><span data-stu-id="8d83a-135">When that was done, it then changed directories, stepping up one level.</span></span>
+<span data-ttu-id="716a5-134">之前的命令更改了有效作用于 MSBuild 测试项目的目录，然后添加了 NuGet 包。</span><span class="sxs-lookup"><span data-stu-id="716a5-134">The previous command changed directories effectively scoping to the *MSBuild* test project, then added the NuGet package.</span></span> <span data-ttu-id="716a5-135">完成此操作后，它会更改目录，向上执行一个级别。</span><span class="sxs-lookup"><span data-stu-id="716a5-135">When that was done, it then changed directories, stepping up one level.</span></span>
 
-<span data-ttu-id="8d83a-136">打开两个 UnitTest1.cs 文件，并将其内容替换为以下代码片段。</span><span class="sxs-lookup"><span data-stu-id="8d83a-136">Open both of the *UnitTest1.cs* files, and replace their contents with the following snippet.</span></span> <span data-ttu-id="8d83a-137">将 UnitTest1.cs 文件重命名为 PrimeServiceTests.cs 。</span><span class="sxs-lookup"><span data-stu-id="8d83a-137">Rename the *UnitTest1.cs* files to *PrimeServiceTests.cs*.</span></span>
+<span data-ttu-id="716a5-136">打开两个 UnitTest1.cs 文件，并将其内容替换为以下代码片段。</span><span class="sxs-lookup"><span data-stu-id="716a5-136">Open both of the *UnitTest1.cs* files, and replace their contents with the following snippet.</span></span> <span data-ttu-id="716a5-137">将 UnitTest1.cs 文件重命名为 PrimeServiceTests.cs 。</span><span class="sxs-lookup"><span data-stu-id="716a5-137">Rename the *UnitTest1.cs* files to *PrimeServiceTests.cs*.</span></span>
 
 ```csharp
 using System.Numbers;
@@ -130,23 +131,23 @@ namespace XUnit.Coverlet
 }
 ```
 
-### <a name="create-a-solution"></a><span data-ttu-id="8d83a-138">创建解决方案</span><span class="sxs-lookup"><span data-stu-id="8d83a-138">Create a solution</span></span>
+### <a name="create-a-solution"></a><span data-ttu-id="716a5-138">创建解决方案</span><span class="sxs-lookup"><span data-stu-id="716a5-138">Create a solution</span></span>
 
-<span data-ttu-id="8d83a-139">在命令提示符下，创建一个用于封装类库和两个测试项目的新解决方案。</span><span class="sxs-lookup"><span data-stu-id="8d83a-139">From the command prompt, create a new solution to encapsulate the class library and the two test projects.</span></span> <span data-ttu-id="8d83a-140">使用 [`dotnet sln`](../tools/dotnet-sln.md) 命令：</span><span class="sxs-lookup"><span data-stu-id="8d83a-140">Using the [`dotnet sln`](../tools/dotnet-sln.md) command:</span></span>
+<span data-ttu-id="716a5-139">在命令提示符下，创建一个用于封装类库和两个测试项目的新解决方案。</span><span class="sxs-lookup"><span data-stu-id="716a5-139">From the command prompt, create a new solution to encapsulate the class library and the two test projects.</span></span> <span data-ttu-id="716a5-140">使用 [`dotnet sln`](../tools/dotnet-sln.md) 命令：</span><span class="sxs-lookup"><span data-stu-id="716a5-140">Using the [`dotnet sln`](../tools/dotnet-sln.md) command:</span></span>
 
 ```dotnetcli
 dotnet new sln -n XUnit.Coverage
 ```
 
-<span data-ttu-id="8d83a-141">这会在 UnitTestingCodeCoverage 目录中创建新的解决方案文件名 `XUnit.Coverage` 。</span><span class="sxs-lookup"><span data-stu-id="8d83a-141">This will create a new solution file name `XUnit.Coverage` in the *UnitTestingCodeCoverage* directory.</span></span> <span data-ttu-id="8d83a-142">将项目添加到解决方案的根。</span><span class="sxs-lookup"><span data-stu-id="8d83a-142">Add the projects to the root of the solution.</span></span>
+<span data-ttu-id="716a5-141">这会在 UnitTestingCodeCoverage 目录中创建新的解决方案文件名 `XUnit.Coverage` 。</span><span class="sxs-lookup"><span data-stu-id="716a5-141">This will create a new solution file name `XUnit.Coverage` in the *UnitTestingCodeCoverage* directory.</span></span> <span data-ttu-id="716a5-142">将项目添加到解决方案的根。</span><span class="sxs-lookup"><span data-stu-id="716a5-142">Add the projects to the root of the solution.</span></span>
 
-## <a name="linux"></a>[<span data-ttu-id="8d83a-143">Linux</span><span class="sxs-lookup"><span data-stu-id="8d83a-143">Linux</span></span>](#tab/linux)
+## <a name="linux"></a>[<span data-ttu-id="716a5-143">Linux</span><span class="sxs-lookup"><span data-stu-id="716a5-143">Linux</span></span>](#tab/linux)
 
 ```dotnetcli
 dotnet sln XUnit.Coverage.sln add **/*.csproj --in-root
 ```
 
-## <a name="windows"></a>[<span data-ttu-id="8d83a-144">Windows</span><span class="sxs-lookup"><span data-stu-id="8d83a-144">Windows</span></span>](#tab/windows)
+## <a name="windows"></a>[<span data-ttu-id="716a5-144">Windows</span><span class="sxs-lookup"><span data-stu-id="716a5-144">Windows</span></span>](#tab/windows)
 
 ```dotnetcli
 dotnet sln XUnit.Coverage.sln add (ls **/*.csproj) --in-root
@@ -154,38 +155,38 @@ dotnet sln XUnit.Coverage.sln add (ls **/*.csproj) --in-root
 
 ---
 
-<span data-ttu-id="8d83a-145">使用 [`dotnet build`](../tools/dotnet-build.md) 命令生成解决方案：</span><span class="sxs-lookup"><span data-stu-id="8d83a-145">Build the solution using the [`dotnet build`](../tools/dotnet-build.md) command:</span></span>
+<span data-ttu-id="716a5-145">使用 [`dotnet build`](../tools/dotnet-build.md) 命令生成解决方案：</span><span class="sxs-lookup"><span data-stu-id="716a5-145">Build the solution using the [`dotnet build`](../tools/dotnet-build.md) command:</span></span>
 
 ```dotnetcli
 dotnet build
 ```
 
-<span data-ttu-id="8d83a-146">如果生成成功，则已创建了三个项目，正确引用了项目和包，并正确更新了源代码。</span><span class="sxs-lookup"><span data-stu-id="8d83a-146">If the build is successful, you've created the three projects, appropriately referenced projects and packages, and updated the source code correctly.</span></span> <span data-ttu-id="8d83a-147">做得不错！</span><span class="sxs-lookup"><span data-stu-id="8d83a-147">Well done!</span></span>
+<span data-ttu-id="716a5-146">如果生成成功，则已创建了三个项目，正确引用了项目和包，并正确更新了源代码。</span><span class="sxs-lookup"><span data-stu-id="716a5-146">If the build is successful, you've created the three projects, appropriately referenced projects and packages, and updated the source code correctly.</span></span> <span data-ttu-id="716a5-147">做得不错！</span><span class="sxs-lookup"><span data-stu-id="716a5-147">Well done!</span></span>
 
-## <a name="tooling"></a><span data-ttu-id="8d83a-148">工具</span><span class="sxs-lookup"><span data-stu-id="8d83a-148">Tooling</span></span>
+## <a name="tooling"></a><span data-ttu-id="716a5-148">工具</span><span class="sxs-lookup"><span data-stu-id="716a5-148">Tooling</span></span>
 
-<span data-ttu-id="8d83a-149">代码覆盖率工具有两种类型：</span><span class="sxs-lookup"><span data-stu-id="8d83a-149">There are two types of code coverage tools:</span></span>
+<span data-ttu-id="716a5-149">代码覆盖率工具有两种类型：</span><span class="sxs-lookup"><span data-stu-id="716a5-149">There are two types of code coverage tools:</span></span>
 
-- <span data-ttu-id="8d83a-150">**数据收集器：** 数据收集器监视测试执行并收集有关测试运行的信息。</span><span class="sxs-lookup"><span data-stu-id="8d83a-150">**DataCollectors:** DataCollectors monitor test execution and collect information about test runs.</span></span> <span data-ttu-id="8d83a-151">它们以各种输出格式（例如 XML 和 JSON）报告收集的信息。</span><span class="sxs-lookup"><span data-stu-id="8d83a-151">They report the collected information in various output formats, such as XML and JSON.</span></span> <span data-ttu-id="8d83a-152">有关详细信息，请参阅[第一个数据收集器](https://github.com/Microsoft/vstest-docs/blob/master/docs/extensions/datacollector.md)。</span><span class="sxs-lookup"><span data-stu-id="8d83a-152">For more information, see [your first DataCollector](https://github.com/Microsoft/vstest-docs/blob/master/docs/extensions/datacollector.md).</span></span>
-- <span data-ttu-id="8d83a-153">**报表生成器：** 使用从测试运行收集的数据生成报表，通常为带样式的 HTML。</span><span class="sxs-lookup"><span data-stu-id="8d83a-153">**Report generators:** Use data collected from test runs to generate reports, often as styled HTML.</span></span>
+- <span data-ttu-id="716a5-150">**数据收集器：** 数据收集器监视测试执行并收集有关测试运行的信息。</span><span class="sxs-lookup"><span data-stu-id="716a5-150">**DataCollectors:** DataCollectors monitor test execution and collect information about test runs.</span></span> <span data-ttu-id="716a5-151">它们以各种输出格式（例如 XML 和 JSON）报告收集的信息。</span><span class="sxs-lookup"><span data-stu-id="716a5-151">They report the collected information in various output formats, such as XML and JSON.</span></span> <span data-ttu-id="716a5-152">有关详细信息，请参阅[第一个数据收集器](https://github.com/Microsoft/vstest-docs/blob/master/docs/extensions/datacollector.md)。</span><span class="sxs-lookup"><span data-stu-id="716a5-152">For more information, see [your first DataCollector](https://github.com/Microsoft/vstest-docs/blob/master/docs/extensions/datacollector.md).</span></span>
+- <span data-ttu-id="716a5-153">**报表生成器：** 使用从测试运行收集的数据生成报表，通常为带样式的 HTML。</span><span class="sxs-lookup"><span data-stu-id="716a5-153">**Report generators:** Use data collected from test runs to generate reports, often as styled HTML.</span></span>
 
-<span data-ttu-id="8d83a-154">本部分重点介绍数据收集器工具。</span><span class="sxs-lookup"><span data-stu-id="8d83a-154">In this section, the focus is on data collector tools.</span></span> <span data-ttu-id="8d83a-155">若要通过 Coverlet 获得代码覆盖率，现有单元测试项目必须具有相应的包依赖项，或者依赖于 [.NET 全局工具](../tools/global-tools.md)和对应的 [coverlet.console](https://www.nuget.org/packages/coverlet.console) NuGet 包。</span><span class="sxs-lookup"><span data-stu-id="8d83a-155">To use Coverlet for code coverage, an existing unit test project must have the appropriate package dependencies, or alternatively rely on [.NET global tooling](../tools/global-tools.md) and the corresponding [coverlet.console](https://www.nuget.org/packages/coverlet.console) NuGet package.</span></span>
+<span data-ttu-id="716a5-154">本部分重点介绍数据收集器工具。</span><span class="sxs-lookup"><span data-stu-id="716a5-154">In this section, the focus is on data collector tools.</span></span> <span data-ttu-id="716a5-155">若要通过 Coverlet 获得代码覆盖率，现有单元测试项目必须具有相应的包依赖项，或者依赖于 [.NET 全局工具](../tools/global-tools.md)和对应的 [coverlet.console](https://www.nuget.org/packages/coverlet.console) NuGet 包。</span><span class="sxs-lookup"><span data-stu-id="716a5-155">To use Coverlet for code coverage, an existing unit test project must have the appropriate package dependencies, or alternatively rely on [.NET global tooling](../tools/global-tools.md) and the corresponding [coverlet.console](https://www.nuget.org/packages/coverlet.console) NuGet package.</span></span>
 
-## <a name="integrate-with-net-test"></a><span data-ttu-id="8d83a-156">与 .NET 测试集成</span><span class="sxs-lookup"><span data-stu-id="8d83a-156">Integrate with .NET test</span></span>
+## <a name="integrate-with-net-test"></a><span data-ttu-id="716a5-156">与 .NET 测试集成</span><span class="sxs-lookup"><span data-stu-id="716a5-156">Integrate with .NET test</span></span>
 
-<span data-ttu-id="8d83a-157">默认情况下，xUnit 测试项目模板已与 [coverlet.collector](https://www.nuget.org/packages/coverlet.collector) 集成。</span><span class="sxs-lookup"><span data-stu-id="8d83a-157">The xUnit test project template already integrates with [coverlet.collector](https://www.nuget.org/packages/coverlet.collector) by default.</span></span>
-<span data-ttu-id="8d83a-158">在命令提示符下，将目录更改为 XUnit.Coverlet.Collector 项目，并运行 [`dotnet test`](../tools/dotnet-test.md) 命令：</span><span class="sxs-lookup"><span data-stu-id="8d83a-158">From the command prompt, change directories to the *XUnit.Coverlet.Collector* project, and run the [`dotnet test`](../tools/dotnet-test.md) command:</span></span>
+<span data-ttu-id="716a5-157">默认情况下，xUnit 测试项目模板已与 [coverlet.collector](https://www.nuget.org/packages/coverlet.collector) 集成。</span><span class="sxs-lookup"><span data-stu-id="716a5-157">The xUnit test project template already integrates with [coverlet.collector](https://www.nuget.org/packages/coverlet.collector) by default.</span></span>
+<span data-ttu-id="716a5-158">在命令提示符下，将目录更改为 XUnit.Coverlet.Collector 项目，并运行 [`dotnet test`](../tools/dotnet-test.md) 命令：</span><span class="sxs-lookup"><span data-stu-id="716a5-158">From the command prompt, change directories to the *XUnit.Coverlet.Collector* project, and run the [`dotnet test`](../tools/dotnet-test.md) command:</span></span>
 
 ```dotnetcli
 cd XUnit.Coverlet.Collector && dotnet test --collect:"XPlat Code Coverage"
 ```
 
 > [!NOTE]
-> <span data-ttu-id="8d83a-159">`"XPlat Code Coverage"` 参数是与 Coverlet 中的数据收集器对应的易记名称。</span><span class="sxs-lookup"><span data-stu-id="8d83a-159">The `"XPlat Code Coverage"` argument is a friendly name that corresponds to the data collectors from Coverlet.</span></span> <span data-ttu-id="8d83a-160">此名称是必需的，但不区分大小写。</span><span class="sxs-lookup"><span data-stu-id="8d83a-160">This name is required but is case insensitive.</span></span>
+> <span data-ttu-id="716a5-159">`"XPlat Code Coverage"` 参数是与 Coverlet 中的数据收集器对应的易记名称。</span><span class="sxs-lookup"><span data-stu-id="716a5-159">The `"XPlat Code Coverage"` argument is a friendly name that corresponds to the data collectors from Coverlet.</span></span> <span data-ttu-id="716a5-160">此名称是必需的，但不区分大小写。</span><span class="sxs-lookup"><span data-stu-id="716a5-160">This name is required but is case insensitive.</span></span>
 
-<span data-ttu-id="8d83a-161">作为 `dotnet test` 运行的一部分，生成的 coverage.cobertura.xml 文件输出到 TestResults 目录 。</span><span class="sxs-lookup"><span data-stu-id="8d83a-161">As part of the `dotnet test` run, a resulting *coverage.cobertura.xml* file is output to the *TestResults* directory.</span></span> <span data-ttu-id="8d83a-162">该 XML 文件包含结果。</span><span class="sxs-lookup"><span data-stu-id="8d83a-162">The XML file contains the results.</span></span> <span data-ttu-id="8d83a-163">这是一个依赖于 .NET Core CLI 的跨平台选项，非常适用于不可使用 MSBuild 的生成系统。</span><span class="sxs-lookup"><span data-stu-id="8d83a-163">This is a cross platform option that relies on the .NET Core CLI, and it is great for build systems where MSBuild is not available.</span></span>
+<span data-ttu-id="716a5-161">作为 `dotnet test` 运行的一部分，生成的 coverage.cobertura.xml 文件输出到 TestResults 目录 。</span><span class="sxs-lookup"><span data-stu-id="716a5-161">As part of the `dotnet test` run, a resulting *coverage.cobertura.xml* file is output to the *TestResults* directory.</span></span> <span data-ttu-id="716a5-162">该 XML 文件包含结果。</span><span class="sxs-lookup"><span data-stu-id="716a5-162">The XML file contains the results.</span></span> <span data-ttu-id="716a5-163">这是一个依赖于 .NET Core CLI 的跨平台选项，非常适用于不可使用 MSBuild 的生成系统。</span><span class="sxs-lookup"><span data-stu-id="716a5-163">This is a cross platform option that relies on the .NET Core CLI, and it is great for build systems where MSBuild is not available.</span></span>
 
-<span data-ttu-id="8d83a-164">下面是 coverage.cobertura.xml 文件的示例 。</span><span class="sxs-lookup"><span data-stu-id="8d83a-164">Below is the example *coverage.cobertura.xml* file.</span></span>
+<span data-ttu-id="716a5-164">下面是 coverage.cobertura.xml 文件的示例 。</span><span class="sxs-lookup"><span data-stu-id="716a5-164">Below is the example *coverage.cobertura.xml* file.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -264,24 +265,24 @@ cd XUnit.Coverlet.Collector && dotnet test --collect:"XPlat Code Coverage"
 ```
 
 > [!TIP]
-> <span data-ttu-id="8d83a-165">有一种替代方法：如果生成系统已使用 MSBuild，则你可以使用 MSBuild 包。</span><span class="sxs-lookup"><span data-stu-id="8d83a-165">As an alternative, you could use the MSBuild package if your build system already makes use of MSBuild.</span></span> <span data-ttu-id="8d83a-166">在命令提示符下，将目录更改为 XUnit.Coverlet.MSBuild 项目，并运行 `dotnet test` 命令：</span><span class="sxs-lookup"><span data-stu-id="8d83a-166">From the command prompt, change directories to the *XUnit.Coverlet.MSBuild* project, and run the `dotnet test` command:</span></span>
+> <span data-ttu-id="716a5-165">有一种替代方法：如果生成系统已使用 MSBuild，则你可以使用 MSBuild 包。</span><span class="sxs-lookup"><span data-stu-id="716a5-165">As an alternative, you could use the MSBuild package if your build system already makes use of MSBuild.</span></span> <span data-ttu-id="716a5-166">在命令提示符下，将目录更改为 XUnit.Coverlet.MSBuild 项目，并运行 `dotnet test` 命令：</span><span class="sxs-lookup"><span data-stu-id="716a5-166">From the command prompt, change directories to the *XUnit.Coverlet.MSBuild* project, and run the `dotnet test` command:</span></span>
 >
 > ```dotnetcli
 > dotnet test /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura
 > ```
 >
-> <span data-ttu-id="8d83a-167">生成的 coverage.cobertura.xml 文件为输出。</span><span class="sxs-lookup"><span data-stu-id="8d83a-167">The resulting *coverage.cobertura.xml* file is output.</span></span>  
-> <span data-ttu-id="8d83a-168">可按照[此处](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/MSBuildIntegration.md)的 msbuild 集成指南操作</span><span class="sxs-lookup"><span data-stu-id="8d83a-168">You can follow msbuild integration guide [here](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/MSBuildIntegration.md)</span></span>
+> <span data-ttu-id="716a5-167">生成的 coverage.cobertura.xml 文件为输出。</span><span class="sxs-lookup"><span data-stu-id="716a5-167">The resulting *coverage.cobertura.xml* file is output.</span></span>  
+> <span data-ttu-id="716a5-168">可按照[此处](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/MSBuildIntegration.md)的 msbuild 集成指南操作</span><span class="sxs-lookup"><span data-stu-id="716a5-168">You can follow msbuild integration guide [here](https://github.com/coverlet-coverage/coverlet/blob/master/Documentation/MSBuildIntegration.md)</span></span>
 
-## <a name="generate-reports"></a><span data-ttu-id="8d83a-169">生成报告</span><span class="sxs-lookup"><span data-stu-id="8d83a-169">Generate reports</span></span>
+## <a name="generate-reports"></a><span data-ttu-id="716a5-169">生成报告</span><span class="sxs-lookup"><span data-stu-id="716a5-169">Generate reports</span></span>
 
-<span data-ttu-id="8d83a-170">现在，你既可从单元测试运行收集数据，就可以使用 [ReportGenerator](https://github.com/danielpalme/ReportGenerator) 来生成报表。</span><span class="sxs-lookup"><span data-stu-id="8d83a-170">Now that you're able to collect data from unit test runs, you can generate reports using [ReportGenerator](https://github.com/danielpalme/ReportGenerator).</span></span> <span data-ttu-id="8d83a-171">若要将 [ReportGenerator](https://www.nuget.org/packages/dotnet-reportgenerator-globaltool) NuGet 包安装为 [.NET 全局工具](../tools/global-tools.md)，请使用 [`dotnet tool install`](../tools/dotnet-tool-install.md) 命令：</span><span class="sxs-lookup"><span data-stu-id="8d83a-171">To install the [ReportGenerator](https://www.nuget.org/packages/dotnet-reportgenerator-globaltool) NuGet package as a [.NET global tool](../tools/global-tools.md), use the [`dotnet tool install`](../tools/dotnet-tool-install.md) command:</span></span>
+<span data-ttu-id="716a5-170">现在，你既可从单元测试运行收集数据，就可以使用 [ReportGenerator](https://github.com/danielpalme/ReportGenerator) 来生成报表。</span><span class="sxs-lookup"><span data-stu-id="716a5-170">Now that you're able to collect data from unit test runs, you can generate reports using [ReportGenerator](https://github.com/danielpalme/ReportGenerator).</span></span> <span data-ttu-id="716a5-171">若要将 [ReportGenerator](https://www.nuget.org/packages/dotnet-reportgenerator-globaltool) NuGet 包安装为 [.NET 全局工具](../tools/global-tools.md)，请使用 [`dotnet tool install`](../tools/dotnet-tool-install.md) 命令：</span><span class="sxs-lookup"><span data-stu-id="716a5-171">To install the [ReportGenerator](https://www.nuget.org/packages/dotnet-reportgenerator-globaltool) NuGet package as a [.NET global tool](../tools/global-tools.md), use the [`dotnet tool install`](../tools/dotnet-tool-install.md) command:</span></span>
 
 ```dotnetcli
 dotnet tool install -g dotnet-reportgenerator-globaltool
 ```
 
-<span data-ttu-id="8d83a-172">给定先前的测试运行得到的输出 coverage.cobertura.xml 文件，运行该工具并提供所需的选项。</span><span class="sxs-lookup"><span data-stu-id="8d83a-172">Run the tool and provide the desired options, given the output *coverage.cobertura.xml* file from the previous test run.</span></span>
+<span data-ttu-id="716a5-172">给定先前的测试运行得到的输出 coverage.cobertura.xml 文件，运行该工具并提供所需的选项。</span><span class="sxs-lookup"><span data-stu-id="716a5-172">Run the tool and provide the desired options, given the output *coverage.cobertura.xml* file from the previous test run.</span></span>
 
 ```console
 reportgenerator
@@ -290,20 +291,20 @@ reportgenerator
 -reporttypes:Html
 ```
 
-<span data-ttu-id="8d83a-173">运行此命令后，HTML 文件表示生成的报表。</span><span class="sxs-lookup"><span data-stu-id="8d83a-173">After running this command, an HTML file represents the generated report.</span></span>
+<span data-ttu-id="716a5-173">运行此命令后，HTML 文件表示生成的报表。</span><span class="sxs-lookup"><span data-stu-id="716a5-173">After running this command, an HTML file represents the generated report.</span></span>
 
 :::image type="content" source="media/test-report.png" lightbox="media/test-report.png" alt-text="单元测试生成的报表":::
 
-## <a name="see-also"></a><span data-ttu-id="8d83a-175">请参阅</span><span class="sxs-lookup"><span data-stu-id="8d83a-175">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="716a5-175">请参阅</span><span class="sxs-lookup"><span data-stu-id="716a5-175">See also</span></span>
 
-- [<span data-ttu-id="8d83a-176">Visual Studio 单元测试代码覆盖率</span><span class="sxs-lookup"><span data-stu-id="8d83a-176">Visual Studio unit test cover coverage</span></span>](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)
-- [<span data-ttu-id="8d83a-177">GitHub - Coverlet 存储库</span><span class="sxs-lookup"><span data-stu-id="8d83a-177">GitHub - Coverlet repository</span></span>](https://github.com/coverlet-coverage/coverlet)
-- [<span data-ttu-id="8d83a-178">GitHub - ReportGenerator 存储库</span><span class="sxs-lookup"><span data-stu-id="8d83a-178">GitHub - ReportGenerator repository</span></span>](https://github.com/danielpalme/ReportGenerator)
-- [<span data-ttu-id="8d83a-179">ReportGenerator 项目网站</span><span class="sxs-lookup"><span data-stu-id="8d83a-179">ReportGenerator project site</span></span>](https://danielpalme.github.io/ReportGenerator)
-- [<span data-ttu-id="8d83a-180">.NET Core CLI 测试命令</span><span class="sxs-lookup"><span data-stu-id="8d83a-180">.NET Core CLI test command</span></span>](../tools/dotnet-test.md)
-- [<span data-ttu-id="8d83a-181">示例源代码</span><span class="sxs-lookup"><span data-stu-id="8d83a-181">Sample source code</span></span>](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs)
+- [<span data-ttu-id="716a5-176">Visual Studio 单元测试代码覆盖率</span><span class="sxs-lookup"><span data-stu-id="716a5-176">Visual Studio unit test cover coverage</span></span>](/visualstudio/test/using-code-coverage-to-determine-how-much-code-is-being-tested)
+- [<span data-ttu-id="716a5-177">GitHub - Coverlet 存储库</span><span class="sxs-lookup"><span data-stu-id="716a5-177">GitHub - Coverlet repository</span></span>](https://github.com/coverlet-coverage/coverlet)
+- [<span data-ttu-id="716a5-178">GitHub - ReportGenerator 存储库</span><span class="sxs-lookup"><span data-stu-id="716a5-178">GitHub - ReportGenerator repository</span></span>](https://github.com/danielpalme/ReportGenerator)
+- [<span data-ttu-id="716a5-179">ReportGenerator 项目网站</span><span class="sxs-lookup"><span data-stu-id="716a5-179">ReportGenerator project site</span></span>](https://danielpalme.github.io/ReportGenerator)
+- [<span data-ttu-id="716a5-180">.NET Core CLI 测试命令</span><span class="sxs-lookup"><span data-stu-id="716a5-180">.NET Core CLI test command</span></span>](../tools/dotnet-test.md)
+- [<span data-ttu-id="716a5-181">示例源代码</span><span class="sxs-lookup"><span data-stu-id="716a5-181">Sample source code</span></span>](/samples/dotnet/samples/unit-testing-code-coverage-cs)
 
-## <a name="next-steps"></a><span data-ttu-id="8d83a-182">后续步骤</span><span class="sxs-lookup"><span data-stu-id="8d83a-182">Next Steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="716a5-182">后续步骤</span><span class="sxs-lookup"><span data-stu-id="716a5-182">Next Steps</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="8d83a-183">单元测试最佳做法</span><span class="sxs-lookup"><span data-stu-id="8d83a-183">Unit testing best practices</span></span>](unit-testing-best-practices.md)
+> [<span data-ttu-id="716a5-183">单元测试最佳做法</span><span class="sxs-lookup"><span data-stu-id="716a5-183">Unit testing best practices</span></span>](unit-testing-best-practices.md)
