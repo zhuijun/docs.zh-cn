@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC42033
 ms.assetid: 4575554d-3615-46e4-9c6a-18e9c338e4ed
-ms.openlocfilehash: 1ae4113505ca63df9b20e6e71aa0b418da4ef924
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 612f0b273bacab541e2d634612a104eff1f4a796
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197347"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875161"
 ---
 # <a name="bad-checksum-value-non-hex-digits-or-odd-number-of-hex-digits"></a>错误的校验和值、非十六进制数字或奇数个十六进制数字
+
 校验和值包含无效的十六进制数字，或数字个数为奇数。  
   
  当 ASP.NET 生成 Visual Basic 源文件（扩展名为 .vb）时，它将计算校验和，并将其放在一个由 `#externalchecksum` 标识的隐藏的源文件中。 生成 .vb 文件的用户也可以执行此操作，但最好将此过程保留为内部使用。  
@@ -31,7 +32,7 @@ ms.locfileid: "73197347"
   
 3. 如果警告仍然存在或者你没有使用 ASP.NET，请收集有关此情形的信息，并通知 Microsoft 产品支持服务。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [ASP.NET 概述](/aspnet/overview)
 - [与我们交流](/visualstudio/ide/feedback-options)

@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC40028
 ms.assetid: dfa1f6f9-bb88-44ad-b85f-149144363d41
-ms.openlocfilehash: edbcadf271c4ccafc11e5b64eb103a0290976179
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a4617d3550cfb48f32a19a4c70809141173c6147
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413009"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875121"
 ---
 # <a name="type-of-parameter-parametername-is-not-cls-compliant"></a>参数“\<parametername>”的类型不符合 CLS
+
 过程标记为 `<CLSCompliant(True)>` ，但声明的参数具有标记为的类型 `<CLSCompliant(False)>` ，未标记或不合格，因为它是不符合要求的类型。  
   
  一个过程要符合[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md) (CLS)，必须只使用符合 CLS 的类型。 这适用于参数的类型、返回类型及其所有本地变量的类型。  

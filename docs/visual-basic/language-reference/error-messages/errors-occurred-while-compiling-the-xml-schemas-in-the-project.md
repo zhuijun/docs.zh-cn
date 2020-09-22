@@ -7,25 +7,26 @@ f1_keywords:
 helpviewer_keywords:
 - BC36810
 ms.assetid: 9323b5d2-ba14-4e49-91f1-9ad647162144
-ms.openlocfilehash: 919c6873ba63addb776d756a58c44a3fe3f0ec3d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 17c31301e28c757954e72ba103254f038905671f
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409618"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874358"
 ---
 # <a name="errors-occurred-while-compiling-the-xml-schemas-in-the-project"></a>编译项目中的 XML 架构时发生错误
+
 编译项目中的 XML 架构时发生错误。 因此，XML IntelliSense 不可用。  
   
- 项目中包含的 XML 架构定义（XSD）架构中存在错误。 添加与项目的现有 XSD 架构集冲突的 XSD 架构（.xsd）文件时会发生此错误。  
+ XML 架构定义中存在一个错误， (项目中包含的 XSD) 架构。 如果添加的 XSD 架构 ( .xsd) 文件与项目的现有 XSD 架构集冲突，则会发生此错误。  
   
  **错误 ID：** BC36810  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-- 双击 "**错误列表**" 窗口中的警告。 Visual Basic 将转到 XSD 文件中作为警告源的位置。 更正 XSD 架构中的错误。  
+- 双击 " **错误列表** " 窗口中的警告。 Visual Basic 将转到 XSD 文件中作为警告源的位置。 更正 XSD 架构中的错误。  
   
-- 确保所有必需的 XSD 架构（.xsd）文件都包含在项目中。 可能需要在 "**项目**" 菜单上单击 "**显示所有文件**" 才能在**解决方案资源管理器**中查看 .xsd 文件。 右键单击 .xsd 文件，然后单击 "**包括在项目中**" 以在项目中包含该文件。  
+- 确保所有必需的 XSD 架构 ( .xsd) 文件包含在项目中。 可能需要在 "**项目**" 菜单上单击 "**显示所有文件**" 才能在**解决方案资源管理器**中查看 .xsd 文件。 右键单击 .xsd 文件，然后单击 " **包括在项目中** " 以在项目中包含该文件。  
   
 - 如果你使用的是 XML 到架构向导，则如果你从同一源推导多个架构，则可能会发生此错误。 在这种情况下，您可以从项目中删除现有的 XSD 架构文件，添加一个新的 XML 到架构项模板，然后提供项目的所有适用 XML 源的 XML 到架构向导。  
   

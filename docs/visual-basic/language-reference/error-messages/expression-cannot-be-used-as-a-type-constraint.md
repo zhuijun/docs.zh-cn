@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC32061
 ms.assetid: b17821b7-fa14-4397-a211-6e2a14079f09
-ms.openlocfilehash: e2ba411a5f0db21539a9cf99c7645b8c9309caab
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4f1db6bdbe6f25d0362b55acd95e716fbc2417ed
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409551"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874276"
 ---
 # <a name="expression-cannot-be-used-as-a-type-constraint"></a>“\<expression>”不能用作类型约束
+
 约束列表包含的表达式不表示对类型形参的有效约束。  
   
  约束列表对传递给类型形参的类型实参有一定要求。 你可以采用任意组合指定以下要求：  
@@ -41,7 +42,7 @@ ms.locfileid: "84409551"
   
 - 如果表达式不符合前面列出的要求，请从约束列表中将其删除。  
   
-- 如果表达式引用接口或类，请验证编译器是否有权访问该接口或类。 可能需要限定其名称，并可能需要添加一个项目引用。 有关详细信息，请参阅对已[声明元素的引用](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)中的 "项目引用"。  
+- 如果表达式引用接口或类，请验证编译器是否有权访问该接口或类。 可能需要限定其名称，并可能需要添加一个项目引用。 有关详细信息，请参阅对已 [声明元素的引用](../../programming-guide/language-features/declared-elements/references-to-declared-elements.md)中的 "项目引用"。  
   
 ## <a name="see-also"></a>另请参阅
 

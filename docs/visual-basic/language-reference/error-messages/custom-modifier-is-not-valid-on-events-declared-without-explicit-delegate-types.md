@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC31122
 ms.assetid: 6911f0d1-641a-473b-906d-8ee5681194be
-ms.openlocfilehash: 0c5a4188fedf9685afdd1cde4c1de93a0b43b919
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 88cdeccd7a3411b57a77116bde64d0a2cf8e537d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409773"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874540"
 ---
 # <a name="custom-modifier-is-not-valid-on-events-declared-without-explicit-delegate-types"></a>“Custom”修饰符在未用显式委托类型声明的事件上无效
+
 与非自定义事件不同， `Custom Event` 声明在 `As` 事件名称后需要一个子句，该事件名称显式指定事件的委托类型。  
   
  可使用 `As` 子句和显式委托类型定义非自定义事件，或使用紧跟在事件名称后面的参数列表定义。  
@@ -36,6 +37,7 @@ ms.locfileid: "84409773"
      [!code-vb[VbVbalrEventError#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEventError/VB/VbVbalrEventError.vb#19)]  
   
 ## <a name="example"></a>示例  
+
  此示例声明一个 `Custom Event` ，并指定 `As` 具有委托类型的必需子句。  
   
  [!code-vb[VbVbalrEventError#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEventError/VB/VbVbalrEventError.vb#2)]  

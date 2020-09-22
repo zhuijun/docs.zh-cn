@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - operators [Visual Basic]
 ms.assetid: d1fb027c-872b-4ccc-afc8-2380e3f65d4a
-ms.openlocfilehash: bf3b1e4bf60f91fa40d1d0bdb934150041c4b7db
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7eaf7390e0c6ba1c9e350a6aab903c0a794e4e80
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401428"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874770"
 ---
 # <a name="operators-listed-by-functionality-visual-basic"></a>按功能列出的运算符 (Visual Basic)
+
 请参阅下面列出的类别之一，或打开 "帮助" 目录的此部分以查看按字母顺序排列的 Visual Basic 运算符列表。  
   
 ## <a name="categories-of-operators"></a>运算符类别  

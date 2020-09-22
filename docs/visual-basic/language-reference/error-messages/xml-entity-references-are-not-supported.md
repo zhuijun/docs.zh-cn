@@ -7,15 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC31180
 ms.assetid: 2a393327-d8e2-4187-85b1-642b4f53b4ae
-ms.openlocfilehash: ae997d853a93999a3b29215ea1257da7a1d48c84
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 470e5577654ce8b6bbc2732a41c130a85ddc96e5
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406451"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874990"
 ---
 # <a name="xml-entity-references-are-not-supported"></a>不支持 XML 实体引用
-`©`Xml 1.0 规范中未定义的实体引用（例如，）作为 xml 文本值包含在内。 `&` `"` `<` `>` Xml 文本中仅支持、、、和 `'` xml 实体引用。  
+
+例如，在 `©` xml 1.0 规范中未定义的)  (实体引用包含为 xml 文本值。 `&` `"` `<` `>` Xml 文本中仅支持、、、和 `'` xml 实体引用。  
   
  **错误 ID：** BC31180  
   

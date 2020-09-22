@@ -7,22 +7,23 @@ f1_keywords:
 helpviewer_keywords:
 - BC31026
 ms.assetid: 5dd09785-bc10-4ae7-ba24-b795057aca31
-ms.openlocfilehash: df6de037cf7cd5b41ed417a8ebfa6f9586e4ebb4
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: db89f4cbaa7008e59f3698eec0f2603cfc06439e
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61764174"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873581"
 ---
-# <a name="unable-to-create-strong-named-assembly-from-key-file-filename-error"></a>无法从密钥文件创建强名称程序集 '\<文件名 >:\<错误 >
-无法从指定的密钥文件中创建的强名称程序集。  
+# <a name="unable-to-create-strong-named-assembly-from-key-file-filename-error"></a>无法从密钥文件“\<filename>”创建具有强名称的程序集：\<error>
+
+无法从指定的密钥文件创建具有强名称的程序集。  
   
- **错误 ID:** BC31026  
+ **错误 ID：** BC31026  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-1. 验证已指定正确的密钥文件，并且它未锁定由其他应用程序。  
+1. 验证是否指定了正确的密钥文件，并且该文件未被其他应用程序锁定。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [Sn.exe （强名称工具）](../../../framework/tools/sn-exe-strong-name-tool.md))
+- [Sn.exe（强名称工具）](../../../framework/tools/sn-exe-strong-name-tool.md)）

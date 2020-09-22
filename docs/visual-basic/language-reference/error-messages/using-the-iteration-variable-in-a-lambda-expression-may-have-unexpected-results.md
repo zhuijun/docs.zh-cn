@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC42324
 ms.assetid: b5c2c4bd-3b2a-4a73-aaeb-55728eb03b68
-ms.openlocfilehash: aa3e1d6281af22b301a4697b265ed3fbf23e3de4
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e7975dc767ae652359c904271d6610be34e4cb80
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373909"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870243"
 ---
 # <a name="using-the-iteration-variable-in-a-lambda-expression-may-have-unexpected-results"></a>在 lambda 表达式中使用迭代变量可能会产生意外的结果
+
 在 lambda 表达式中使用迭代变量可能会产生意外的结果。 改为在循环内创建一个局部变量，并为其分配迭代变量的值。  
   
  如果在循环中声明的 lambda 表达式中使用循环迭代变量，则会出现此警告。 例如，下面的示例将导致出现警告。  
@@ -83,6 +84,6 @@ Module Module1
 End Module  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Lambda 表达式](../../programming-guide/language-features/procedures/lambda-expressions.md)

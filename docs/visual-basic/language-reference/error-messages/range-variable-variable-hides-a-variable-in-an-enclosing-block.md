@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC36633
 ms.assetid: 5d5470e4-3de5-49c2-8831-1087625f4a77
-ms.openlocfilehash: 290ca81dea500558ed73956c91bdf7bfec312014
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d7399e7f51dc7c00ed903fa74647038009433ac0
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400391"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870927"
 ---
 # <a name="range-variable-variable-hides-a-variable-in-an-enclosing-block-a-previously-defined-range-variable-or-an-implicitly-declared-variable-in-a-query-expression"></a>范围变量 \<variable> 隐藏封闭块中的变量、以前定义的范围变量或在查询表达式中隐式声明的变量
+
 在、、或子句中指定的范围变量名称会 `Select` `From` `Aggregate` `Let` 复制以前在查询中指定的范围变量的名称，或查询隐式声明的变量的名称，例如字段名称或聚合函数的名称。  
   
  **错误 ID：** BC36633  

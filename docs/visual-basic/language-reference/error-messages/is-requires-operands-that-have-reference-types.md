@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30020
 ms.assetid: 228afebd-1203-4bd3-8d7a-c5c56f3cedc4
-ms.openlocfilehash: e5acc94a3738fca3a43740bdba727fc843132aa1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: daf9724fef81b4d7adb4f571ee950723aec09d8d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402806"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873918"
 ---
 # <a name="is-requires-operands-that-have-reference-types-but-this-operand-has-the-value-type-typename"></a>“Is”要求具有引用类型的操作数，但此操作数的值类型为“\<typename>”。
+
 `Is`比较运算符确定两个对象变量是否引用相同的实例。 没有为值类型定义此比较。  
   
  **错误 ID：** BC30020  

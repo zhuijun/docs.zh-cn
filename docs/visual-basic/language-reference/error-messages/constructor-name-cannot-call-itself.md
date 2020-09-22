@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30298
 ms.assetid: 2d77b7f4-0640-4f89-9c65-f101fd2847c0
-ms.openlocfilehash: 6abb6dde624e129b52fefecf8c51e6cde2567ae1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: dce98a4deef8fbb0e8bc024244b815e23d51c790
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409798"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874574"
 ---
 # <a name="constructor-name-cannot-call-itself"></a>构造函数“\<name>”不能调用自身
+
 `Sub New`类或结构中的过程调用自身。  
   
  构造函数的目的是在第一次创建类或结构时初始化该类或结构的实例。 类或结构可以有多个构造函数，前提是它们都具有不同的参数列表。 除了自身之外，还允许构造函数调用另一个构造函数来执行其功能。 但构造函数调用自身是毫无意义的，事实上，如果允许，它会导致无限递归。  

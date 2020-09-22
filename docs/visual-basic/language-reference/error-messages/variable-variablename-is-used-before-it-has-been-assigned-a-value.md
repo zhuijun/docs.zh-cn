@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC42104
 ms.assetid: 6909aa0b-b4a1-46f5-a18c-ba3e565c1dd8
-ms.openlocfilehash: 34718243172d3b1a238a813268e672d62c4eeb6c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a60afe0907e974dfb345d20d18762cb5f84127d9
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406529"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875030"
 ---
 # <a name="variable-variablename-is-used-before-it-has-been-assigned-a-value"></a>变量“\<variablename>”在赋值前被使用
+
 变量 " \<variablename> " 在赋值前被使用。 可能在运行时导致 null 引用异常。  
   
  应用程序在其代码上至少有一个可能的路径，该路径将在分配任何值之前读取该变量。  
@@ -29,7 +30,7 @@ ms.locfileid: "84406529"
   
 - 检查控制流逻辑，并确保在控制传递到读取它的任何语句之前，该变量具有一个有效的值。  
   
-- 保证变量始终具有有效值的一种方法是将其初始化为其声明的一部分。 请参阅[Dim 语句](../statements/dim-statement.md)中的 "初始化"。  
+- 保证变量始终具有有效值的一种方法是将其初始化为其声明的一部分。 请参阅 [Dim 语句](../statements/dim-statement.md)中的 "初始化"。  
   
 ## <a name="see-also"></a>另请参阅
 

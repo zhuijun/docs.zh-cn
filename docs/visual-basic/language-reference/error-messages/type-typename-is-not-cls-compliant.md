@@ -7,17 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - BC40041
 ms.assetid: 634132c2-5646-44aa-98c6-f773e2e63882
-ms.openlocfilehash: eacf5036ebc6fc31dfa0e8de39c4fb574c9072b3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 369516fb12b24981eaecfe467bf421dec279aa01
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84386953"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875101"
 ---
 # <a name="type-typename-is-not-cls-compliant"></a>类型 \<typename> 不符合 CLS
+
 使用不符合 CLS 的数据类型声明了变量、属性或函数返回。  
   
- 为了使应用程序符合[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md)（CLS），该应用程序必须只使用符合 CLS 的类型。  
+ 为了使应用程序符合 [语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md) (CLS) ，它必须只使用符合 CLS 的类型。  
   
  以下 Visual Basic 数据类型不符合 CLS：  
   

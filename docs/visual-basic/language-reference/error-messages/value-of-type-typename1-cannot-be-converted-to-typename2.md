@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30955
 ms.assetid: 966b61eb-441e-48b0-bedf-ca95384ecb8b
-ms.openlocfilehash: f6b35efbc445887c537b94dd299b317a28e5f689
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 67cb8ac602437474f35c89c9aecf66fbf40c91c9
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406555"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875047"
 ---
 # <a name="value-of-type-typename1-cannot-be-converted-to-typename2"></a>类型“\<typename1>”的值无法转换为“\<typename2>”
+
 类型 "" 的值 \<typename1> 无法转换为 " \<typename2> "。 类型不匹配可能是由于将文件引用与程序集 "" 的项目引用混合而造成的 \<assemblyname> 。 尝试将对项目 "" 中 "" 的文件引用替换为 \<filepath> \<projectname1> 对 "" 的项目引用 \<projectname2> 。  
   
  在项目同时进行项目引用和文件引用的情况下，编译器无法保证可以将一种类型转换为另一种类型。  
@@ -49,7 +50,7 @@ ms.locfileid: "84406555"
   
  项目 `P1` 通过项目进行间接项目引用 `P2` `P3` ，并对进行直接文件引用 `P3` 。 的声明 `commonObject` 使用对的文件引用 `P3` ，而对的调用 `P2.getCommonClass` 使用对的项目引用 `P3` 。  
   
- 出现这种情况的问题是，文件引用指定了（通常为 p3）的输出文件的文件路径和名称 `P3` ，而项目引用则按项目名称标识源项目（ `P3` ）。 因此，编译器无法 `P3.commonClass` 通过两个不同的引用来保证该类型来自相同的源代码。  
+ 出现这种情况的问题是，文件引用指定了 (的输出文件的文件路径和名称 `P3` （通常 p3.dll) ），而项目引用则 `P3` 按项目名称 () 标识源项目。 因此，编译器无法 `P3.commonClass` 通过两个不同的引用来保证该类型来自相同的源代码。  
   
  当项目引用和文件引用混合时，通常会发生这种情况。 在上图中，如果 `P1` 直接引用项目 `P3` 而不是文件引用，则不会出现此问题。  
   

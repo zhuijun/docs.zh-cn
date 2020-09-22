@@ -7,15 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC40025
 ms.assetid: adbd34bb-43d2-4266-90e7-cd1afaf49b4e
-ms.openlocfilehash: 030cb31b8f1ba0e8eaa82eeb8e37153411a53404
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 12155062f04b7619cae581540abfc4ce1a8ae34f
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400300"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875134"
 ---
 # <a name="type-of-member-membername-is-not-cls-compliant"></a>成员“\<membername>”的类型不符合 CLS
-为此成员指定的数据类型不是[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md)（CLS）的一部分。 这不是你的组件中的错误，因为 .NET Framework 和 Visual Basic 支持此数据类型。 但是，以严格符合 CLS 的代码编写的另一个组件可能不支持此数据类型。 此类组件可能无法与组件成功交互。  
+
+为此成员指定的数据类型不是 [语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md) (CLS) 的一部分。 这不是你的组件中的错误，因为 .NET Framework 和 Visual Basic 支持此数据类型。 但是，以严格符合 CLS 的代码编写的另一个组件可能不支持此数据类型。 此类组件可能无法与组件成功交互。  
   
  以下 Visual Basic 数据类型不符合 CLS：  
   

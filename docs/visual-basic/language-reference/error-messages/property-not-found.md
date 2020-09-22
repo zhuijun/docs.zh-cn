@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID422
 ms.assetid: 127e0f5f-0997-4ac5-b9af-2e6a2eb513a2
-ms.openlocfilehash: ddf08aa0bebb36acc781a243705cebbe78281c99
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: bb30e8e4d15f6425805f110caea76bb601b8b07d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400443"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871041"
 ---
 # <a name="property-not-found"></a>找不到属性
+
 此对象不支持指定的属性。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  

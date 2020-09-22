@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID52
 ms.assetid: d0e96aea-7621-48f6-a78b-5d37d18aaa4e
-ms.openlocfilehash: 11e866d9a8da7ad1ecc5f788fc31f6ac96d32f2c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d57a9e78e6ae179d3050e5a92399ca731fa16ba7
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409824"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874907"
 ---
 # <a name="bad-file-name-or-number"></a>错误的文件名或文件号
+
 尝试访问指定的文件时出错。 此错误的可能原因包括：  
   
 - 语句引用的文件具有未在语句中指定 `FileOpen` 或在语句中指定的、 `FileOpen` 但随后已关闭的文件。  

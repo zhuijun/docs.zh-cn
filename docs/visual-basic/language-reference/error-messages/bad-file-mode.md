@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID54
 ms.assetid: 74891e96-884b-4c8d-872d-cd11ae272372
-ms.openlocfilehash: 534ea2d8316dc29cace798c5ad9b7697a290026f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 99b84902ddf032f2ecb6e26400e200bea862dfdf
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409864"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875145"
 ---
 # <a name="bad-file-mode"></a>错误的文件模式
+
 用于操作文件内容的语句必须适合于打开该文件的模式。 可能的原因包括：  
   
 - `FilePutObject`或 `FileGetObject` 语句指定顺序文件。  

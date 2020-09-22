@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC32008
 ms.assetid: dc6abba0-a9ad-450f-8899-87265bc84abc
-ms.openlocfilehash: 7056bbf2b4de26feba3bfbe0e02b3239311271c9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4cc0a1221dcf65aa2a16fd7d82568c8544f27fdb
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84382167"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875087"
 ---
 # <a name="typename-is-a-delegate-type"></a>“\<typename>”是委托类型
+
 " \<typename> " 是委托类型。 委托构造仅允许将单个 AddressOf 表达式作为参数列表。 通常可以使用 AddressOf 表达式，而不是委托构造。  
   
  `New`创建委托类的实例的子句为委托构造函数提供了无效的参数列表。  

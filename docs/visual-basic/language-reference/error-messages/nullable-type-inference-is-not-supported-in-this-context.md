@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC36629
 ms.assetid: 0a1e2dbc-d9a4-433d-9306-c5540782b81d
-ms.openlocfilehash: 52e5391fbcf30a4dada4d64a0e810c900ea85806
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f2d3bcdaccfd993da1eebf81ae961f35eb22b294
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409382"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873676"
 ---
 # <a name="nullable-type-inference-is-not-supported-in-this-context"></a>该上下文中不支持可以为 null 的类型推理
+
 值类型和结构可以声明为 null。  
   
 ```vb  

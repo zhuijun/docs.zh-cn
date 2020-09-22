@@ -26,14 +26,15 @@ helpviewer_keywords:
 - declaration statements [Visual Basic]
 - scalar variables [Visual Basic]
 ms.assetid: ad1c5e07-dcd7-4ae1-a79e-ad3f2dcc2083
-ms.openlocfilehash: 82f19762865fdf3c3f32a0349e21e3b97bebd567
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 17bc806f2e92c61f1dd7425de40b1a68f926a583
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404273"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872023"
 ---
 # <a name="redim-statement-visual-basic"></a>ReDim 语句 (Visual Basic)
+
 为数组变量重新分配存储空间。  
   
 ## <a name="syntax"></a>语法  
@@ -51,6 +52,7 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
 |`boundlist`|必需。 列出重新定义的数组各个维度的边界。|  
   
 ## <a name="remarks"></a>备注  
+
  可以使用 `ReDim` 语句来更改某个已声明数组的一个或多个维度的大小。 如果数组较大，并且你不再需要它的某些元素，`ReDim`可通过减少数组大小来释放内存。 另一方面，如果数组需要更多元素，也可使用 `ReDim` 进行添加。  
   
  `ReDim` 语句仅供数组使用。 它对标量（仅包含单个值的变量）、集合或结构无效。 请注意，如果将变量声明为 `Array` 类型，则 `ReDim` 语句将没有足够的类型信息来创建新数组。  
@@ -79,13 +81,14 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 ## <a name="behavior"></a>行为  
   
-- **数组替换。** `ReDim`释放现有数组，并创建一个具有相同秩的新数组。 新数组将替换数组变量中已释放的数组。  
+- **数组替换。** `ReDim` 释放现有数组，并创建一个具有相同秩的新数组。 新数组将替换数组变量中已释放的数组。  
   
 - **在不使用 Preserve 的情况下初始化。** 如果不指定，则 `Preserve` `ReDim` 通过使用其数据类型的默认值来初始化新数组的元素。  
   
 - **使用 Preserve 初始化。** 如果指定 `Preserve` ，则 Visual Basic 会将元素从现有数组复制到新数组。  
   
 ## <a name="example"></a>示例  
+
  下面的示例将增加某个动态数组最后一个维度的大小（不会丢失数组中的任何现有数据），然后减小该大小（会有部分数据丢失）。 最后，它会将大小重新减小到其原始值，并重新初始化所有数组元素。  
   
  [!code-vb[VbVbalrStatements#52](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#52)]  
@@ -98,7 +101,7 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
  第三个 `ReDim` 创建另一个新数组，同时从每一层中每一行的末尾删除另外 5 列。 这一次它不会复制任何现有元素。 此语句将数组恢复为其原始大小。 由于该语句不包括 `Preserve` 修饰符，因此它将所有数组元素设置为其原始默认值。  
   
- 有关其他示例，请参阅[数组](../../programming-guide/language-features/arrays/index.md)。  
+ 有关其他示例，请参阅 [数组](../../programming-guide/language-features/arrays/index.md)。  
   
 ## <a name="see-also"></a>另请参阅
 
@@ -106,5 +109,5 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
 - [Const 语句](const-statement.md)
 - [Dim 语句](dim-statement.md)
 - [Erase 语句](erase-statement.md)
-- [Nothing](../nothing.md)
+- [没](../nothing.md)
 - [数组](../../programming-guide/language-features/arrays/index.md)

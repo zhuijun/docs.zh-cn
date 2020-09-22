@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30202
 ms.assetid: 6f75060c-2db4-4a79-b5d1-5780c09a74cd
-ms.openlocfilehash: 411e3248409ab0184666f4efefb4ec4becf7cab1
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e212939cf814a9ac632571b2203f2f256dea61ae
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409343"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873606"
 ---
 # <a name="optional-expected"></a>需要“Optional”
+
 过程声明中的可选参数后跟必需的参数。 可选参数后面的每个参数都必须是可选的。  
   
  **错误 ID：** BC30202  

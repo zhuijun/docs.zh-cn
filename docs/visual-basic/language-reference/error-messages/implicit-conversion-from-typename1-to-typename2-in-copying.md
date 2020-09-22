@@ -7,15 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - BC41999
 ms.assetid: ae48c738-dff8-4c0f-8931-bbb70b2c8b03
-ms.openlocfilehash: 4d0f9aac795f683cf58210ea38b3783e451ccfc3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: fced95fe24d42d4af2118706bcaf3337429fea91
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402857"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873994"
 ---
 # <a name="implicit-conversion-from-typename1-to-typename2-in-copying-the-value-of-byref-parameter-parametername-back-to-the-matching-argument"></a>将“ByRef”参数“\<typename1>”的值复制回匹配参数时，发生从“\<typename2>”到“\<parametername>”的隐式转换。
-使用与对应参数的类型不同的[ByRef](../modifiers/byref.md)参数调用过程。  
+
+使用与对应参数的类型不同的 [ByRef](../modifiers/byref.md) 参数调用过程。  
   
  如果传递参数 `ByRef` ，Visual Basic 有时会将参数值复制到过程的局部变量中，而不是传递引用。 在这种情况下，当过程返回时，Visual Basic 必须随后将局部变量值复制回调用代码中的参数。  
   

@@ -7,19 +7,20 @@ f1_keywords:
 helpviewer_keywords:
 - BC42017
 ms.assetid: 45f552c8-57c6-44c0-97d3-e510119b257a
-ms.openlocfilehash: f1dc656a09eee05080356892b280a79505f3b9cd
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 1c7b352c7bd61216ecce9901585945e740428ee3
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397345"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873858"
 ---
 # <a name="late-bound-resolution-runtime-errors-could-occur"></a>后期绑定解决方案；可能会发生运行时错误
-对象被分配给声明为[Object 数据类型](../data-types/object-data-type.md)的变量。  
+
+对象被分配给声明为 [Object 数据类型](../data-types/object-data-type.md)的变量。  
   
- 将变量声明为时 `Object` ，编译器必须执行*后期绑定*，这会导致在运行时产生额外的操作。 它还使应用程序易于发生潜在的运行时错误。 例如，如果将分配 <xref:System.Windows.Forms.Form> 到 `Object` 变量，然后尝试访问 <xref:System.Xml.XmlDocument.NameTable%2A?displayProperty=nameWithType> 属性，则运行时将引发， <xref:System.MemberAccessException> 因为该类不 <xref:System.Windows.Forms.Form> 公开 `NameTable` 属性。  
+ 将变量声明为时 `Object` ，编译器必须执行 *后期绑定*，这会导致在运行时产生额外的操作。 它还使应用程序易于发生潜在的运行时错误。 例如，如果将分配 <xref:System.Windows.Forms.Form> 到 `Object` 变量，然后尝试访问 <xref:System.Xml.XmlDocument.NameTable%2A?displayProperty=nameWithType> 属性，则运行时将引发， <xref:System.MemberAccessException> 因为该类不 <xref:System.Windows.Forms.Form> 公开 `NameTable` 属性。  
   
- 如果将变量声明为特定类型，编译器可以在编译时执行*早期绑定*。 这会提高性能、控制对特定类型的成员的访问，以及更好的代码可读性。  
+ 如果将变量声明为特定类型，编译器可以在编译时执行 *早期绑定* 。 这会提高性能、控制对特定类型的成员的访问，以及更好的代码可读性。  
   
  默认情况下，此消息是一个警告。 有关隐藏警告或将警告视为错误的信息，请参见 [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)。  
   

@@ -7,17 +7,18 @@ f1_keywords:
 helpviewer_keywords:
 - BC30205
 ms.assetid: 53c7f825-a737-4b76-a1fa-f67745b8bd40
-ms.openlocfilehash: 169f01b02df377ba6cc21ffad53c36f5d4537140
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9141400afc651629df381e0a655e2d7b9da2e45d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84409642"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874426"
 ---
 # <a name="end-of-statement-expected"></a>需要语句结束
+
 语句在语法上完成，但在完成该语句的元素后附加了一个编程元素。 每个语句的末尾都需要行结束符。
   
- 行结束符将 Visual Basic 源文件中的字符分为多行。 行结束符的示例包括 Unicode 回车符（&HD）、Unicode 换行符（&HA）和 Unicode 回车符（后跟 Unicode 换行符）。 有关行终止符的详细信息，请参阅[Visual Basic 语言规范](~/_vblang/spec/lexical-grammar.md#line-terminators)。
+ 行结束符将 Visual Basic 源文件中的字符分为多行。 行结束符的示例包括 Unicode 回车符 ( # B0 HD) ，Unicode 换行符 ( # B1 HA) ，Unicode 回车符后跟 Unicode 换行符。 有关行终止符的详细信息，请参阅 [Visual Basic 语言规范](~/_vblang/spec/lexical-grammar.md#line-terminators)。
   
  **错误 ID：** BC30205
   

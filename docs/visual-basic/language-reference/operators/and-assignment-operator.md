@@ -10,14 +10,15 @@ helpviewer_keywords:
 - '&= operator [Visual Basic]'
 - compound assignment statements [Visual Basic]
 ms.assetid: 0cf262fc-1a05-419a-a503-60013f111c8a
-ms.openlocfilehash: db42f7be7225b866eacf5b73066754e91cd1a0f7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9b77c44aa77afd59e36e1d21451205d3929ef527
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84371981"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874873"
 ---
-# <a name="amp-operator-visual-basic"></a>&amp;= 运算符（Visual Basic）
+# <a name="amp-operator-visual-basic"></a>&amp;= 运算符 (Visual Basic)
+
 将 `String` 表达式连接到 `String` 变量或属性，并将结果赋给变量或属性。  
   
 ## <a name="syntax"></a>语法  
@@ -27,6 +28,7 @@ variableorproperty &= expression
 ```  
   
 ## <a name="parts"></a>组成部分  
+
  `variableorproperty`  
  必需。 任何 `String` 变量或属性。  
   
@@ -34,12 +36,15 @@ variableorproperty &= expression
  必需。 任何 `String` 表达式。  
   
 ## <a name="remarks"></a>备注  
- 运算符左侧的元素 `&=` 可以是简单的标量变量、属性或数组的元素。 变量或属性不能是[只读](../modifiers/readonly.md)的。 `&=`运算符将 `String` 其右侧的表达式连接到左侧的 `String` 变量或属性，并将结果赋给其左侧的变量或属性。  
+
+ 运算符左侧的元素 `&=` 可以是简单的标量变量、属性或数组的元素。 变量或属性不能是 [只读](../modifiers/readonly.md)的。 `&=`运算符将 `String` 其右侧的表达式连接到左侧的 `String` 变量或属性，并将结果赋给其左侧的变量或属性。  
   
 ## <a name="overloading"></a>重载  
+
  可以*重载* [& 运算符](concatenation-operator.md)，这意味着当操作数具有该类或结构的类型时，该类或结构可以重新定义其行为。 重载 `&` 运算符会影响运算符的行为 `&=` 。 如果你的代码 `&=` 在重载的类或结构上使用 `&` ，请确保你了解其重新定义的行为。 有关详细信息，请参阅 [Operator Procedures](../../programming-guide/language-features/procedures/operator-procedures.md)。  
   
 ## <a name="example"></a>示例  
+
  下面的示例使用 `&=` 运算符将两个变量连接起来 `String` ，并将结果赋给第一个变量。  
   
  [!code-vb[VbVbalrOperators#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#3)]  
