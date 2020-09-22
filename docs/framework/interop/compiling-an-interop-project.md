@@ -10,11 +10,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing COM components
 - COM interop, exposing COM components
 ms.assetid: 6fcf6588-5e25-41af-b4ae-780974f2c3df
-ms.openlocfilehash: a8dfbeb88d0057eb3c9047b4435f021750ed86d2
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 1cf5bdbedd53227e812b0d2ed97778ab34a81444
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620854"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557092"
 ---
 # <a name="compiling-an-interop-project"></a>编译互操作项目
 
@@ -26,7 +27,7 @@ ms.locfileid: "85620854"
 
 - 部署互操作程序集：可通过这种方式创建对互操作程序集的标准引用。 这种情况下，互操作程序集必须与应用程序一起部署。
 
- 这两种方法之间的差异在[在托管代码中使用 COM 类型 ](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))中有更详细的讨论。
+ 这两种方法之间的差异在[在托管代码中使用 COM 类型 ](/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))中有更详细的讨论。
 
  有关如何使用 Visual Studio 嵌入互操作类型，请参阅[演练：在 Visual Studio 中嵌入托管程序集中的类型](../../standard/assembly/embed-types-visual-studio.md).
 
@@ -41,6 +42,6 @@ ms.locfileid: "85620854"
 
 - [向 .NET Framework 公开 COM 组件](exposing-com-components.md)
 - [语言独立性和与语言无关的组件](../../standard/language-independence-and-language-independent-components.md)
-- [在托管代码中使用 COM 类型](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
+- [在托管代码中使用 COM 类型](/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100))
 - [演练：在 Visual Studio 中嵌入托管程序集中的类型](../../standard/assembly/embed-types-visual-studio.md)
 - [将类型库作为程序集导入](importing-a-type-library-as-an-assembly.md)

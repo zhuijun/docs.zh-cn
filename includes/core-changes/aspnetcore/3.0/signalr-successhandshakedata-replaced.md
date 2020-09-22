@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 1d8bcaf68d44f27642048c1c207b52c55b604690
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 05aec429e28ef74515ef6988d5b064e6d16b7c1b
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75901783"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679993"
 ---
 ### <a name="signalr-handshakeprotocolsuccesshandshakedata-replaced"></a>SignalR：HandshakeProtocol.SuccessHandshakeData 已替换
 
@@ -36,7 +36,7 @@ ASP.NET Core
 
 #### <a name="affected-apis"></a>受影响的 API
 
-<xref:Microsoft.AspNetCore.SignalR.Protocol.HandshakeProtocol.SuccessHandshakeData?displayProperty=namewithType>
+<xref:Microsoft.AspNetCore.SignalR.Protocol.HandshakeProtocol.SuccessHandshakeData?displayProperty=nameWithType>
 
 <!--
 

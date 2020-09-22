@@ -3,12 +3,12 @@ title: 如何选择 ML.NET 算法
 description: 了解如何为机器学习模型选择 ML.NET 算法
 ms.topic: overview
 ms.date: 06/05/2019
-ms.openlocfilehash: 0fed33203c02303e37e47f548e08ec131eeb1c77
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 8af89800485f8f8ac35ee17df10a5e3c039da42d
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "75739991"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679633"
 ---
 # <a name="how-to-choose-an-mlnet-algorithm"></a>如何选择 ML.NET 算法
 
@@ -34,7 +34,7 @@ ms.locfileid: "75739991"
 
 一般而言，线性算法可缩放且速度快，训练和预测费用也很低。 它们按特征数量进行缩放，并按训练数据集的大小粗略进行缩放。
 
-线性算法对训练数据进行多次传递。 如果数据集适用于内存，则在追加训练程序之前向 ML.NET 管道添加[缓存检查点](xref:Microsoft.ML.LearningPipelineExtensions.AppendCacheCheckpoint*)将使训练运行速度加快。
+线性算法对训练数据进行多次传递。 如果数据集适用于内存，则在追加训练程序之前向 ML.NET 管道添加[缓存检查点](xref:Microsoft.ML.LearningPipelineExtensions.AppendCacheCheckpoint%2A)将使训练运行速度加快。
 
 **线性训练程序**
 

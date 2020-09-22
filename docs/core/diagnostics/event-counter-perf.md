@@ -3,12 +3,12 @@ title: 使用 .NET Core 中的 EventCounters 衡量性能
 description: 本教程将介绍如何使用 EventCounters 衡量性能。
 ms.date: 08/07/2020
 ms.topic: tutorial
-ms.openlocfilehash: 7b4940e17d01e7ec5a50d11e3c818ecdec2d48cf
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: db9a0889d46cc4db02baac60cbed6f6e0ba6856b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024956"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538561"
 ---
 # <a name="tutorial-measure-performance-using-eventcounters-in-net-core"></a>教程：使用 .NET Core 中的 EventCounters 衡量性能
 
@@ -29,11 +29,11 @@ ms.locfileid: "88024956"
 
 - [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) 或更高版本。
 - [dotnet-counters](dotnet-counters.md) 监视事件计数器。
-- 要诊断的[示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)应用。
+- 要诊断的[示例调试目标](/samples/dotnet/samples/diagnostic-scenarios)应用。
 
 ## <a name="get-the-source"></a>获取源
 
-示例应用程序将用作监视的基础。 示例浏览器中提供了[示例 ASP.NET Core 存储库](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)。 下载 zip 文件，下载后提取它，并在你喜欢的 IDE 中打开它。 生成并运行应用程序以确保它正常工作，然后停止应用程序。
+示例应用程序将用作监视的基础。 示例浏览器中提供了[示例 ASP.NET Core 存储库](/samples/dotnet/samples/diagnostic-scenarios)。 下载 zip 文件，下载后提取它，并在你喜欢的 IDE 中打开它。 生成并运行应用程序以确保它正常工作，然后停止应用程序。
 
 ## <a name="implement-an-eventsource"></a>实现 EventSource
 

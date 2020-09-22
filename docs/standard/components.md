@@ -4,12 +4,12 @@ description: 描述 .NET 体系结构组件，例如 .NET Standard、.NET 实现
 author: cartermp
 ms.date: 08/23/2017
 ms.technology: dotnet-standard
-ms.openlocfilehash: 2fc8bcea59cd2ba652b88644677f077d62994ca4
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: fc34cf35e82e3a401f32561aa239996c7697aa03
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414729"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547670"
 ---
 # <a name="net-architectural-components"></a>.NET 体系结构组件
 
@@ -29,14 +29,14 @@ ms.locfileid: "89414729"
 
 - 一个或多个运行时。 示例：CLR 用于 .NET Framework，CoreCLR 和 CoreRT 用于 .NET Core。
 - 实现 .NET Standard 并且可实现其他 API 的类库。 示例：.NET Framework 基类库、.NET Core 基类库。
-- 可选择包含一个或多个应用程序框架。 示例：[ASP.NET](https://www.asp.net/)、[Windows 窗体](../framework/winforms/windows-forms-overview.md)和 [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) 包含在 .NET Framework 和 .NET Core 中。
+- 可选择包含一个或多个应用程序框架。 示例：[ASP.NET](https://www.asp.net/)、[Windows 窗体](/dotnet/desktop/winforms/windows-forms-overview)和 [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) 包含在 .NET Framework 和 .NET Core 中。
 - 可包含开发工具。 某些开发工具在多个实现之间共享。
 
 Microsoft 积极开发和维护的主要 .NET 实现有 4 个：.NET Core、.NET Framework、Mono 和 UWP。
 
 ### <a name="net-core"></a>.NET Core
 
-.NET Core 是 .NET 的跨平台实现，专用于处理大规模的服务器和云工作负荷。 可在 Windows、macOS 和 Linux 上运行。 它实现 .NET Standard，因此面向 .NET Standard 的代码都可在 .NET Core 上运行。 [ASP.NET Core](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core)、[Windows 窗体](../framework/winforms/windows-forms-overview.md)和 [Windows Presentation Foundation (WPF)](../framework/wpf/index.md) 都在 .NET Core 上运行。
+.NET Core 是 .NET 的跨平台实现，专用于处理大规模的服务器和云工作负荷。 可在 Windows、macOS 和 Linux 上运行。 它实现 .NET Standard，因此面向 .NET Standard 的代码都可在 .NET Core 上运行。 [ASP.NET Core](https://dotnet.microsoft.com/learn/aspnet/what-is-aspnet-core)、[Windows 窗体](/dotnet/desktop/winforms/windows-forms-overview)和 [Windows Presentation Foundation (WPF)](/dotnet/desktop/wpf/) 都在 .NET Core 上运行。
 
 要了解有关 .NET Core 的详细信息，请参阅 [.NET Core 简介](../core/introduction.md)和[为服务器应用选择 .NET Core 或 .NET Framework](choosing-core-framework-server.md)。
 

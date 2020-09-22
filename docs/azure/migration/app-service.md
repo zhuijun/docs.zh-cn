@@ -3,12 +3,12 @@ title: 将 .NET Web 应用或服务迁移到 Azure 应用服务
 description: 了解如何将 .NET Web 应用或服务从本地迁移到 Azure 应用服务。
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: d208865942b49ae2d5437b8f2fcff294933af21b
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: a5e193b2dbaedb86ff0e24bc8b70043896bbeea3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174304"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539081"
 ---
 # <a name="migrate-your-net-web-app-or-service-to-azure-app-service"></a>将 .NET Web 应用或服务迁移到 Azure 应用服务
 
@@ -37,9 +37,9 @@ Azure 应用服务仅支持用于 HTTP 的端口 80 和用于 HTTPS 通信的端
 |--|--|
 | `BasicHttp` |  |
 | `WSHttp` |  |
-| `WSDualHttpBinding` | 必须启用 [Web 套接字支持](https://docs.microsoft.com/azure/app-service/web-sites-configure)。 | 必须启用 [Web 套接字支持](/azure/app-service/web-sites-configure)。 |
-| `NetHttpBinding` | 必须为双工协定启用 [Web 套接字支持](https://docs.microsoft.com/azure/app-service/web-sites-configure)。 | 必须为双工协定启用 [Web 套接字支持](/azure/app-service/web-sites-configure)。 |
-| `NetHttpsBinding` | 必须为双工协定启用 [Web 套接字支持](https://docs.microsoft.com/azure/app-service/web-sites-configure)。 | 必须为双工协定启用 [Web 套接字支持](/azure/app-service/web-sites-configure)。 |
+| `WSDualHttpBinding` | 必须启用 [Web 套接字支持](/azure/app-service/web-sites-configure)。 | 必须启用 [Web 套接字支持](/azure/app-service/web-sites-configure)。 |
+| `NetHttpBinding` | 必须为双工协定启用 [Web 套接字支持](/azure/app-service/web-sites-configure)。 | 必须为双工协定启用 [Web 套接字支持](/azure/app-service/web-sites-configure)。 |
+| `NetHttpsBinding` | 必须为双工协定启用 [Web 套接字支持](/azure/app-service/web-sites-configure)。 | 必须为双工协定启用 [Web 套接字支持](/azure/app-service/web-sites-configure)。 |
 | `BasicHttpContextBinding` |  |
 | `WebHttpBinding` |  |
 | `WSHttpContextBinding` |  |
@@ -62,7 +62,7 @@ Azure 应用服务默认支持匿名身份验证，并在需要时进行表单�
 
 #### <a name="iis7-schema-compliance"></a>IIS7+ 架构符合性
 
-Azure 应用服务 IIS 架构中未定义一些元素和属性。 如果遇到问题，请考虑使用 [XDT 转换](https://azure.microsoft.com/documentation/articles/web-sites-transform-extend/)。
+Azure 应用服务 IIS 架构中未定义一些元素和属性。 如果遇到问题，请考虑使用 [XDT 转换](/azure/app-service/configure-common)。
 
 #### <a name="single-application-pool-per-site"></a>每个站点的单个应用程序池
 

@@ -5,11 +5,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - .NET Framework, development guide
 ms.assetid: 26e3d285-24c3-435c-a797-9fe5affb8525
-ms.openlocfilehash: 6e0051e3181e03070436b8d53d30326e8d71d096
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 73b930efa893fd2b481c4c130754154a0d10d5b4
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85622570"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90547879"
 ---
 # <a name="net-framework-development-guide"></a>.NET Framework 开发指南
 
@@ -61,7 +62,7 @@ ms.locfileid: "85622570"
  提供有关缓存、延迟初始化、可靠性和 ETW 事件的信息。  
 
 ## <a name="reference"></a>参考  
- [.NET Framework 类库](/dotnet/api/?view=netframework-4.7)  
+ [.NET Framework 类库](../../api/index.md?view=netframework-4.7)  
  提供 .NET Framework 命名空间中包含的每一个类的语法、代码示例和使用信息。  
   
 ## <a name="related-sections"></a>相关章节  

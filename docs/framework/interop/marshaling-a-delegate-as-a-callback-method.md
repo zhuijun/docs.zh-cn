@@ -10,17 +10,18 @@ helpviewer_keywords:
 - data marshaling, Callback sample
 - marshaling, Callback sample
 ms.assetid: 6ddd7866-9804-4571-84de-83f5cc017a5a
-ms.openlocfilehash: bf9ef3b9d48c0869dcc96820c3a2fb6fb608479e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 5e63dc9b7142934c56fb70bce7b878a37a540faa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618943"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556019"
 ---
 # <a name="marshaling-a-delegate-as-a-callback-method"></a>将委托作为回调方法进行封送
 此示例演示如何将委托传递给需要函数指针的非托管函数。 委托是可以容纳方法引用的类，等效于类型安全函数指针或回调函数。
 
 > [!NOTE]
-> 在调用内使用委托时，公共语言运行时防止在该调用的持续时间内对委托执行垃圾回收。 但是，如果非托管函数存储了该委托，以便在调用完成后使用，则必须手动防止垃圾回收，直到非托管函数结束对该委托的使用为止。 有关详细信息，请参阅 [HandleRef 示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/hc662t8k(v=vs.100))和 [GCHandle 示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/44ey4b32(v=vs.100))。
+> 在调用内使用委托时，公共语言运行时防止在该调用的持续时间内对委托执行垃圾回收。 但是，如果非托管函数存储了该委托，以便在调用完成后使用，则必须手动防止垃圾回收，直到非托管函数结束对该委托的使用为止。 有关详细信息，请参阅 [HandleRef 示例](/previous-versions/dotnet/netframework-4.0/hc662t8k(v=vs.100))和 [GCHandle 示例](/previous-versions/dotnet/netframework-4.0/44ey4b32(v=vs.100))。
 
 回调示例使用以下非托管函数（与其原始函数声明一同显示）：
 
@@ -52,6 +53,6 @@ ms.locfileid: "85618943"
 
 ## <a name="see-also"></a>请参阅
 
-- [其他封送处理示例](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))
+- [其他封送处理示例](/previous-versions/dotnet/netframework-4.0/ss9sb93t(v=vs.100))
 - [平台调用数据类型](marshaling-data-with-platform-invoke.md#platform-invoke-data-types)
 - [在托管代码中创建原型](creating-prototypes-in-managed-code.md)

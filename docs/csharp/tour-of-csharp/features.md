@@ -2,12 +2,12 @@
 title: C# 教程 - 主要语言区域
 description: 刚开始接触 C#？ 了解 C# 语言的基础知识。
 ms.date: 08/06/2020
-ms.openlocfilehash: e1e533982757c10085f0444197ff97ee7487391f
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 9069bb194169a7743f12d998b2842186ed0ef404
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414898"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558170"
 ---
 # <a name="major-language-areas"></a>主要语言区域
 
@@ -86,7 +86,7 @@ C# 语言提供[模式匹配](../pattern-matching.md)表达式来查询对象的
 
 ## <a name="async--await"></a>async/await
 
-C# 支持含两个关键字的异步程序：`async` 和 `await`。 将 `async` 修饰符添加到方法声明中，以声明这是异步方法。 `await` 运算符通知编译器异步等待结果完成。 控件返回给调用方，该方法返回一个管理异步工作状态的结构。 结构通常是 <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>，但可以是任何支持 awaiter 模式的类型。 这些功能使你能够编写这样的代码：以其同步对应项的形式读取，但以异步方式执行。 例如，以下代码会下载 [Microsoft Docs](https://docs.microsoft.com) 的主页：
+C# 支持含两个关键字的异步程序：`async` 和 `await`。 将 `async` 修饰符添加到方法声明中，以声明这是异步方法。 `await` 运算符通知编译器异步等待结果完成。 控件返回给调用方，该方法返回一个管理异步工作状态的结构。 结构通常是 <xref:System.Threading.Tasks.Task%601?displayProperty=nameWithType>，但可以是任何支持 awaiter 模式的类型。 这些功能使你能够编写这样的代码：以其同步对应项的形式读取，但以异步方式执行。 例如，以下代码会下载 [Microsoft Docs](/) 的主页：
 
 :::code language="csharp" source="./snippets/shared/Features.cs" ID="AsyncExample":::
 

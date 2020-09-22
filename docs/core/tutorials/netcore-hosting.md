@@ -4,12 +4,12 @@ description: 了解从本机代码托管 .NET Core 运行时，以支持需要�
 author: mjrousos
 ms.topic: how-to
 ms.date: 12/21/2018
-ms.openlocfilehash: 3b24ade694e25040d77e411bead3f454e9d5cdef
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 9f45a75d7ec836c14a2285a1707649cc32c2a25c
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656171"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537543"
 ---
 # <a name="write-a-custom-net-core-host-to-control-the-net-runtime-from-your-native-code"></a>编写自定义 .NET Core 主机以从本机代码控制 .NET 运行时
 
@@ -144,7 +144,7 @@ CoreClrHost 有几个可用于承载 .NET Core 的重要方法：
 
 或者，可以使用 `coreclr_execute_assembly` 函数启动托管可执行文件。 此 API 采用程序集路径和实参数组作为输入形参。 它在该路径加载程序集并调用其主方法。
 
-```C++
+```c++
 int hr = executeAssembly(
         hostHandle,
         domainId,
@@ -197,7 +197,7 @@ CoreCLR 不支持重新初始化或卸载。 请勿重新调用 `coreclr_initial
 
 通过调用 `Start` 函数启动运行时。
 
-```C++
+```c++
 hr = runtimeHost->Start();
 ```
 
@@ -234,7 +234,7 @@ AppDomain 标志指定与安全性和互操作性相关的 AppDomain 行为。 �
 
 如果 `ExecuteAssembly` 不满足主机的需要，那么另一种方法是使用 `CreateDelegate` 创建指向静态托管方法的函数指针。 这要求主机知道要调用的方法的签名（以创建函数指针类型），但允许主机调用代码而不是程序集的入口点。 第二个参数中提供的程序集名称是要加载的库的[完全托管程序集名称](../../standard/assembly/names.md)。
 
-```C++
+```c++
 void *pfnDelegate = NULL;
 hr = runtimeHost->CreateDelegate(
     domainId,

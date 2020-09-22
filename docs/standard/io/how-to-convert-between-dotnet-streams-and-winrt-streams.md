@@ -6,16 +6,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 23a763ea-8348-4244-9f8c-a4280b870b47
-ms.openlocfilehash: 7413c3fae7d7189ec8dca43b0c77f6b56158f416
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 037ae0dff80c96d08d8778146b5683454b1f80b1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "78159463"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90543681"
 ---
 # <a name="how-to-convert-between-net-framework-and-windows-runtime-streams-windows-only"></a>如何：在 .NET Framework 和 Windows 运行时流之间进行转换（仅限 Windows）
 
-适用于 UWP 应用的 .NET Framework 是完整的 .NET Framework 的子集。 由于 UWP 应用的安全性和其他要求，你无法使用整套 .NET Framework API 来打开和读取文件。 有关详细信息，请参阅[适用于 UWP 应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))。 但是，你可能需要将 .NET Framework API 用于其他流处理操作。 若要操作这些流，可以在 .NET Framework 流类型（如 <xref:System.IO.MemoryStream> 或 <xref:System.IO.FileStream>）和 Windows 运行时流（如 <xref:Windows.Storage.Streams.IInputStream>、<xref:Windows.Storage.Streams.IOutputStream> 或 <xref:Windows.Storage.Streams.IRandomAccessStream>）之间进行转换。
+适用于 UWP 应用的 .NET Framework 是完整的 .NET Framework 的子集。 由于 UWP 应用的安全性和其他要求，你无法使用整套 .NET Framework API 来打开和读取文件。 有关详细信息，请参阅[适用于 UWP 应用的 .NET 概述](/previous-versions/windows/apps/br230302(v=vs.140))。 但是，你可能需要将 .NET Framework API 用于其他流处理操作。 若要操作这些流，可以在 .NET Framework 流类型（如 <xref:System.IO.MemoryStream> 或 <xref:System.IO.FileStream>）和 Windows 运行时流（如 <xref:Windows.Storage.Streams.IInputStream>、<xref:Windows.Storage.Streams.IOutputStream> 或 <xref:Windows.Storage.Streams.IRandomAccessStream>）之间进行转换。
 
 <xref:System.IO.WindowsRuntimeStreamExtensions?displayProperty=nameWithType> 类包含简化这些转换的方法。 但是，.NET Framework 与 Windows 运行时流之间存在一些基本差异，这将影响使用这些方法所获得的结果，如以下部分中所述：
 
@@ -69,6 +69,6 @@ Windows 运行时提供支持只读、只写或读写的流类型。 如果将 W
 
 ## <a name="see-also"></a>请参阅
 
-- [快速入门：读取和写入文件 (Windows)](https://docs.microsoft.com/previous-versions/windows/apps/hh464978(v=win.10))  
-- [适用于 Microsoft Store 应用的 .NET 概述](https://docs.microsoft.com/previous-versions/windows/apps/br230302(v=vs.140))  
-- [适用于 Windows 应用商店应用的 .NET API](https://docs.microsoft.com/previous-versions/br230232(v=vs.120))  
+- [快速入门：读取和写入文件 (Windows)](/previous-versions/windows/apps/hh464978(v=win.10))  
+- [适用于 Microsoft Store 应用的 .NET 概述](/previous-versions/windows/apps/br230302(v=vs.140))  
+- [适用于 Windows 应用商店应用的 .NET API](/previous-versions/br230232(v=vs.120))

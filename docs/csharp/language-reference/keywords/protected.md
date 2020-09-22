@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - protected keyword [C#]
 ms.assetid: 05ce3794-6675-4025-bddb-eaaa0ec22892
-ms.openlocfilehash: 4c18d1f2f45a0a154dccd42736a01874dd1af853
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: af0c7ab5ebb6980bb0381e46fd38e9470f3a2152
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89122376"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536751"
 ---
 # <a name="protected-c-reference"></a>protected（C# 参考）
 
@@ -62,4 +62,4 @@ ms.locfileid: "89122376"
 - [public](public.md)
 - [private](private.md)
 - [internal](internal.md)
-- [Internal Virtual 关键字的安全问题](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Internal Virtual 关键字的安全问题](/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

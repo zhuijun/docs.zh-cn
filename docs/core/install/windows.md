@@ -4,12 +4,12 @@ description: 了解可在其上安装 .NET Core 的 Windows 版本。
 author: adegeo
 ms.author: adegeo
 ms.date: 06/22/2020
-ms.openlocfilehash: 97f67d00b3eb4dafc55256aea51f4295bb0ef06a
-ms.sourcegitcommit: 0fa2b7b658bf137e813a7f4d09589d64c148ebf5
+ms.openlocfilehash: 12cffb78de803845a4b18adc70289993e67f64f1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/14/2020
-ms.locfileid: "86308944"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538284"
 ---
 # <a name="install-net-core-on-windows"></a>在 Windows 上安装 .NET Core
 
@@ -96,7 +96,7 @@ SDK 用于生成和发布 .NET Core 应用和库。 安装 SDK 会包含三个[�
 
 | (OS)                            | Version                        | 体系结构   |
 | ----------------------------- | ------------------------------ | --------------- |
-| Windows 客户端                | 8.1                            | x64、x86        |
+| Windows 客户端                | 7 SP1+、8.1                    | x64、x86        |
 | Windows 10 客户端             | 版本 1609+                  | x64、x86        |
 | Windows Server                | 2012 R2+                       | x64、x86        |
 | Nano Server                   | 版本 1803+                  | x64、ARM32      |
@@ -190,7 +190,7 @@ SDK 用于生成和发布 .NET Core 应用和库。 安装 SDK 会包含三个[�
 
 [dotnet-install 脚本](../tools/dotnet-install-script.md)用于运行时的 CI 自动化和非管理员安装。 可从 [dotnet-install 脚本引用页](../tools/dotnet-install-script.md)下载该脚本。
 
-此脚本默认安装最新的[长期支持 (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) 版本，即 .NET Core 3.1。 可通过指定 `Channel` 开关以选择特定版本。 包括 `Runtime` 开关以安装运行时。 否则，该脚本安装 [SDK](sdk.md)。
+此脚本默认安装最新的[长期支持 (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) 版本，即 .NET Core 3.1。 可通过指定 `Channel` 开关以选择特定版本。 包括 `Runtime` 开关以安装运行时。 否则，该脚本安装 SDK。
 
 ```powershell
 dotnet-install.ps1 -Channel 3.1 -Runtime aspnetcore

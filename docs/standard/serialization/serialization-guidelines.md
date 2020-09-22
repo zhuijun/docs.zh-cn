@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serialization, guidelines
 - binary serialization, guidelines
 ms.assetid: ebbeddff-179d-443f-bf08-9c373199a73a
-ms.openlocfilehash: eb11f0b8ddd34df7c6970c275d4b83cb95f59a53
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6a8fd644e6f9132bf93277ae9928788f236a7bd1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84287488"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558194"
 ---
 # <a name="serialization-guidelines"></a>序列化准则
 本文档列出了在设计要序列化的 API 时要考虑的准则。  
@@ -144,6 +144,6 @@ ms.locfileid: "84287488"
 - [数据协定序列化程序](../../framework/wcf/feature-details/data-contract-serializer.md)
 - [数据协定序列化程序支持的类型](../../framework/wcf/feature-details/types-supported-by-the-data-contract-serializer.md)
 - [二进制序列化](binary-serialization.md)
-- [.NET 远程处理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
+- [.NET 远程处理](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))
 - [XML 和 SOAP 序列化](xml-and-soap-serialization.md)
 - [安全性和序列化](../../framework/misc/security-and-serialization.md)

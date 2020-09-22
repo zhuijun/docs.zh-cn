@@ -10,12 +10,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 8cbb687b0c7cfb69d3f3807c083f1c25e9d39594
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: 36ecbe763ed47e95d9339d1d748b3faab100c15e
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271784"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679594"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Windows 系统中的文件路径格式
 
@@ -43,7 +43,7 @@ ms.locfileid: "89271784"
 > [!IMPORTANT]
 > 请注意最后两个路径之间的差异。 两者都指定了可选的卷说明符（均为 `C:`），但前者以指定的卷的根目录开头，而后者不是。 因此，前者表示 `C:` 驱动器的根目录中的绝对路径，而后者表示 `C:` 驱动器的当前目录中的相对路径。 应使用前者时使用了后者是涉及 Windows 文件路径的 bug 的常见原因。
 
-可以通过调用 <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWthType> 方法来确定文件路径是否完全限定（即是说，该路径独立于当前目录，且在当前目录更改时不发生变化）。 请注意，如果解析的路径始终指向同样的位置，那么此类路径可以包括相对目录段（`.` 和 `..`），而同时依然是完全限定的。
+可以通过调用 <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWithType> 方法来确定文件路径是否完全限定（即是说，该路径独立于当前目录，且在当前目录更改时不发生变化）。 请注意，如果解析的路径始终指向同样的位置，那么此类路径可以包括相对目录段（`.` 和 `..`），而同时依然是完全限定的。
 
 以下示例演示绝对路径和相对路径之间的差异。 假定存在目录 `D:\FY2018\`，且在运行该示例之前还没有通过命令提示符为 `D:\` 设置任何当前目录。
 

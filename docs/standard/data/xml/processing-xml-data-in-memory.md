@@ -3,21 +3,21 @@ title: 内存中 XML 数据处理
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 1bbb4d05-ead7-4bda-8ece-f86d35c57ad4
-ms.openlocfilehash: 06863d162a9f9fbf67f41cb12ea4fbb1935b424d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 0f64b53588e08520d38c05ec6060f9aef58bd7d6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84291274"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556481"
 ---
 # <a name="processing-xml-data-in-memory"></a>内存中 XML 数据处理
-Microsoft .NET Framework 包括三种用于处理 XML 数据的模型：<xref:System.Xml.XmlDocument> 类、<xref:System.Xml.XPath.XPathDocument> 类，以及 [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) 和 [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md)。  
+Microsoft .NET Framework 包括三种用于处理 XML 数据的模型：<xref:System.Xml.XmlDocument> 类、<xref:System.Xml.XPath.XPathDocument> 类，以及 [LINQ to XML (C#)](../../linq/linq-xml-overview.md) 和 [LINQ to XML (Visual Basic)](../../linq/linq-xml-overview.md)。  
   
  <xref:System.Xml.XmlDocument> 类实现 W3C 文档对象模型 (DOM) 级别 1 核心和 DOM 级别 2 核心建议。 DOM 是 XML 文档的内存中（缓存）树表示形式。 使用 <xref:System.Xml.XmlDocument> 及其相关的类，可以构造 XML 文档、加载和访问数据、修改数据以及保存更改。  
   
  <xref:System.Xml.XPath.XPathDocument> 类是基于 XPath 数据模型的只读的、内存中的数据存储区。 <xref:System.Xml.XPath.XPathNavigator> 类使用 XML 文档的游标模型提供多种编辑选项和浏览功能，该模型包含在只读的 <xref:System.Xml.XPath.XPathDocument> 类以及 <xref:System.Xml.XmlDocument> 类中。  
   
- [LINQ to XML](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) 是.NET Framework 3.5 版中引入的用于处理 XML 数据的模型。 这是利用[语言集成查询 (LINQ)](../../../csharp/programming-guide/concepts/linq/index.md) 的内存中模型。 LINQ 扩展 C# 和 Visual Basic 的语言语法以提供新的查询功能。  
+ [LINQ to XML](../../linq/linq-xml-overview.md) 是.NET Framework 3.5 版中引入的用于处理 XML 数据的模型。 这是利用[语言集成查询 (LINQ)](../../../csharp/programming-guide/concepts/linq/index.md) 的内存中模型。 LINQ 扩展 C# 和 Visual Basic 的语言语法以提供新的查询功能。  
   
 ## <a name="in-this-section"></a>本节内容  
  [使用 DOM 模型处理 XML 数据](process-xml-data-using-the-dom-model.md)  

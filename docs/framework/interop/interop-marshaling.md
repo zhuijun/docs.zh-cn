@@ -7,11 +7,12 @@ helpviewer_keywords:
 - interop marshaling
 - interop marshaling, about interop marshaling
 ms.assetid: 115f7a2f-d422-4605-ab36-13a8dd28142a
-ms.openlocfilehash: ca733d59abc4ca3d9d470b054ee9e34b5084ae38
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: bd618714a9bd27bc309b7933b656de6bd139cfe7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85618969"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554887"
 ---
 # <a name="interop-marshaling"></a>互操作封送处理
 
@@ -78,7 +79,7 @@ COM 也有一个在 COM 单元或不同的 COM 进程之间封送数据的封送
     > [!NOTE]
     > 将 C# 客户端的线程设置为 STA 后，对 MTA COM 组件的调用将需要跨单元封送。
 
-有关显式选择单元模型的说明， 请参阅 [托管和非托管线程处理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100))。
+有关显式选择单元模型的说明， 请参阅 [托管和非托管线程处理](/previous-versions/dotnet/netframework-4.0/5s8ee185(v=vs.100))。
 
 ## <a name="marshaling-remote-calls"></a>封送远程调用
 
@@ -124,10 +125,10 @@ COM 也有一个在 COM 单元或不同的 COM 进程之间封送数据的封送
 |[用 COM 互操作对数据进行封送处理](marshaling-data-with-com-interop.md)|描述如何自定义 COM 包装器以更改封送行为。|
 |[如何：将托管代码 DCOM 迁移到 WCF](how-to-migrate-managed-code-dcom-to-wcf.md)|描述如何从 DCOM 迁移到 WCF。|
 |[如何：映射 HRESULT 和异常](how-to-map-hresults-and-exceptions.md)|描述如何将自定义异常映射到 HRESULT，并提供从每个 HRESULT 到其在 .NET Framework 中的相似异常类的完整映射。|
-|[使用泛型类型进行交互操作](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))|描述在使用用于 COM 互操作性的泛型类型时，哪些操作受支持。|
+|[使用泛型类型进行交互操作](/previous-versions/dotnet/netframework-4.0/ms229590(v=vs.100))|描述在使用用于 COM 互操作性的泛型类型时，哪些操作受支持。|
 |[与非托管代码交互操作](index.md)|描述由公共语言运行时提供的互操作性服务。|
-|[高级 COM 互操作性](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|提供一些链接，指向关于将 COM 组件并入 .NET Framework 应用程序中的详细信息。|
-|[互操作的设计注意事项](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))|提供有关编写集成 COM 组件的提示。|
+|[高级 COM 互操作性](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))|提供一些链接，指向关于将 COM 组件并入 .NET Framework 应用程序中的详细信息。|
+|[互操作的设计注意事项](/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))|提供有关编写集成 COM 组件的提示。|
 
 ## <a name="reference"></a>参考
 

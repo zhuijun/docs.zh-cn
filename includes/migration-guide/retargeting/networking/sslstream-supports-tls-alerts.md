@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 0024b2a53444319788b8cdd312d537f994070b5e
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 5b566dd89801caff7a253abc2fb62c5fd79591f7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614363"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606890"
 ---
 ### <a name="sslstream-supports-tls-alerts"></a>SslStream 支持 TLS 警报
 
 #### <a name="details"></a>详细信息
 
-TLS 握手失败后，第一个 I/O 读取/写入操作将引发带有内部 <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> 异常的 <xref:System.IO.IOException?displayProperty=fullName>。 可以使用 [TLS 和 SSL 警报的 Schannel 错误代码](https://docs.microsoft.com/windows/desktop/SecAuthN/schannel-error-codes-for-tls-and-ssl-alerts)将 <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> 的 <xref:System.ComponentModel.Win32Exception.NativeErrorCode?displayProperty=fullName> 代码从远程参与方映射到 TLS 警报。有关详细信息，请参阅 [RFC 2246：第 7.2.2 节错误警报](https://tools.ietf.org/html/rfc2246#section-7.2.2)。 <br/>.NET Framework 4.6.2 及更早版本中的行为是：如果另一方握手失败然后立即拒绝连接，则传输通道（通常为 TCP 连接）将在写入或读取时超时。
+TLS 握手失败后，第一个 I/O 读取/写入操作将引发带有内部 <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> 异常的 <xref:System.IO.IOException?displayProperty=fullName>。 可以使用 [TLS 和 SSL 警报的 Schannel 错误代码](/windows/desktop/SecAuthN/schannel-error-codes-for-tls-and-ssl-alerts)将 <xref:System.ComponentModel.Win32Exception?displayProperty=fullName> 的 <xref:System.ComponentModel.Win32Exception.NativeErrorCode?displayProperty=fullName> 代码从远程参与方映射到 TLS 警报。有关详细信息，请参阅 [RFC 2246：第 7.2.2 节错误警报](https://tools.ietf.org/html/rfc2246#section-7.2.2)。 <br/>.NET Framework 4.6.2 及更早版本中的行为是：如果另一方握手失败然后立即拒绝连接，则传输通道（通常为 TCP 连接）将在写入或读取时超时。
 
 #### <a name="suggestion"></a>建议
 

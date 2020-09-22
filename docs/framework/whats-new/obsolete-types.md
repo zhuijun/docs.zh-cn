@@ -7,12 +7,12 @@ helpviewer_keywords:
 - types, obsolete in .NET Framework 4.5
 - obsolete types [.NET Framework]
 ms.assetid: e636d024-0fac-45eb-b721-25a8c0ceca8f
-ms.openlocfilehash: 29df80fcefc2565850b026bebd30802dc77e1896
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 795735b66c7568dada0196a6426a0a9aaf52398a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925808"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558532"
 ---
 # <a name="obsolete-types-in-the-net-framework"></a>.NET Framework 中的过时类型
 
@@ -658,7 +658,7 @@ IEHost.dll 和 IEExec.exe 程序集已从 .NET Framework 中删除。 其所有�
 
 ### <a name="assembly-microsoftvisualbasiccompatibilitydll"></a>程序集：Microsoft.VisualBasic.Compatibility.dll
 
-有关从 Visual Basic 6 迁移的信息，请参阅 [Visual Basic 6.0 资源中心](https://docs.microsoft.com/previous-versions/visualstudio/visual-basic-6/visual-basic-6.0-documentation)。
+有关从 Visual Basic 6 迁移的信息，请参阅 [Visual Basic 6.0 资源中心](/previous-versions/visualstudio/visual-basic-6/visual-basic-6.0-documentation)。
 
 |类型|消息|
 |----------|-------------|

@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - parallel loops, how to iterate directories
 ms.assetid: 555e9f48-f53d-4774-9bcf-3e965c732ec5
-ms.openlocfilehash: 5639f4bdb83906273b60ed20494c288286f32560
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b14191d798baf458bd860c00913683f53d0a1fd8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288194"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90555648"
 ---
 # <a name="how-to-iterate-file-directories-with-the-parallel-class"></a>如何：使用并行类循环访问文件目录
 在许多情况下，文件迭代是可以轻松并行执行的操作。 主题[如何：使用 PLINQ 循环访问文件目录](how-to-iterate-file-directories-with-plinq.md)介绍了如何在许多情况下以最简单的方式执行此任务。 不过，如果代码必须处理访问文件系统时可能会出现的多种异常，可能会带来麻烦。 下面的示例展示了一种解决此问题的方法。 它使用基于堆栈的迭代遍历指定目录下的所有文件和文件夹，并让代码能够捕获和处理各种异常。 当然，如何处理异常还是取决于自己的选择。  
@@ -28,7 +28,7 @@ ms.locfileid: "84288194"
   
  此示例使用局部 `fileCount` 变量维护已处理的总文件数的计数。 由于多个任务可能并发访问此变量，可以调用 <xref:System.Threading.Interlocked.Add%2A?displayProperty=nameWithType> 方法来同步对它的访问。  
   
- 请注意，如果主线程抛出异常，<xref:System.Threading.Tasks.Parallel.ForEach%2A> 方法启动的线程可能会继续运行。 若要停止这些线程，可以在异常处理程序中设置布尔变量，并在并行循环每次迭代时检查此变量的值。 如果此值指明异常已抛出，请使用 <xref:System.Threading.Tasks.ParallelLoopState> 变量停止或中断循环。 有关详细信息，请参阅[如何：停止或中断 Parallel.For 循环](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dd460721(v=vs.100))。  
+ 请注意，如果主线程抛出异常，<xref:System.Threading.Tasks.Parallel.ForEach%2A> 方法启动的线程可能会继续运行。 若要停止这些线程，可以在异常处理程序中设置布尔变量，并在并行循环每次迭代时检查此变量的值。 如果此值指明异常已抛出，请使用 <xref:System.Threading.Tasks.ParallelLoopState> 变量停止或中断循环。 有关详细信息，请参阅[如何：停止或中断 Parallel.For 循环](/previous-versions/dotnet/netframework-4.0/dd460721(v=vs.100))。  
   
 ## <a name="see-also"></a>另请参阅
 

@@ -4,12 +4,12 @@ description: 了解如何使用 spark-submit 和 Apache Livy 将 .NET for Apache
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 50611b1f62934a446e5b80a8c53698efe23cd1fc
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 560822783b57b2419595cb15efa097591db8d600
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617686"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557159"
 ---
 # <a name="submit-a-net-for-apache-spark-job-to-azure-hdinsight"></a>将 .NET for Apache Spark 作业提交到 Azure HDInsight
 
@@ -37,7 +37,7 @@ ms.locfileid: "85617686"
 
 ## <a name="deploy-using-apache-livy"></a>使用 Apache Livy 进行部署
 
-可以使用 [Apache Livy](https://livy.incubator.apache.org/)（即 Apache Spark REST API）将 .NET for Apache Spark 作业提交到 Azure HDInsight Spark 群集。 有关详细信息，请参阅[使用 Apache Livy 提交远程作业](https://docs.microsoft.com/azure/hdinsight/spark/apache-spark-livy-rest-interface)。
+可以使用 [Apache Livy](https://livy.incubator.apache.org/)（即 Apache Spark REST API）将 .NET for Apache Spark 作业提交到 Azure HDInsight Spark 群集。 有关详细信息，请参阅[使用 Apache Livy 提交远程作业](/azure/hdinsight/spark/apache-spark-livy-rest-interface)。
 
 可使用 `curl` 在 Linux 上运行以下命令：
 
@@ -60,4 +60,4 @@ EOF
 
 * [.NET for Apache Spark 入门](../tutorials/get-started.md)
 * [将 .NET for Apache Spark 应用程序部署到 Azure HDInsight](../tutorials/hdinsight-deployment.md)
-* [HDInsight 文档](https://docs.microsoft.com/azure/hdinsight/)
+* [HDInsight 文档](/azure/hdinsight/)

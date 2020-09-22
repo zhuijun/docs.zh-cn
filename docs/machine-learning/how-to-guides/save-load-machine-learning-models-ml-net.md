@@ -5,12 +5,12 @@ ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: e3cebe979b5c279ce8cb90db5510f8758c24c2b4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 681a35956a8959e2f1cbb5a7023e0ef29b67097e
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73976998"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679529"
 ---
 # <a name="save-and-load-trained-models"></a>保存和加载经过训练的模型
 
@@ -69,7 +69,7 @@ mlContext.Model.Save(trainedModel, data.Schema, "model.zip");
 1. 模型的 [`ITransformer`](xref:Microsoft.ML.ITransformer)。
 2. [`DataViewSchema`](xref:Microsoft.ML.DataViewSchema) 预期输入的 [`ITransformer`](xref:Microsoft.ML.ITransformer)。
 
-训练模型后，通过 [`Save`](xref:Microsoft.ML.ModelOperationsCatalog.Save*) 方法使用输入数据的 `DataViewSchema` 将经过训练的模型保存到名为 `model.zip` 的文件中。
+训练模型后，通过 [`Save`](xref:Microsoft.ML.ModelOperationsCatalog.Save%2A) 方法使用输入数据的 `DataViewSchema` 将经过训练的模型保存到名为 `model.zip` 的文件中。
 
 ```csharp
 // Save Trained Model
@@ -80,7 +80,7 @@ mlContext.Model.Save(trainedModel, data.Schema, "model.zip");
 
 本地存储的模型可用于其他进程或应用程序，如 `ASP.NET Core` 和 `Serverless Web Applications`。 若要了解详细信息，请参阅[在 Web API 中使用 ML.NET](./serve-model-web-api-ml-net.md) 和[部署 ML.NET 无服务器 Web 应用](./serve-model-serverless-azure-functions-ml-net.md)操作说明文章。
 
-在单独的应用程序或进程中，配合使用 [`Load`](xref:Microsoft.ML.ModelOperationsCatalog.Load*) 方法和文件路径将经过训练的模型载入应用程序。
+在单独的应用程序或进程中，配合使用 [`Load`](xref:Microsoft.ML.ModelOperationsCatalog.Load%2A) 方法和文件路径将经过训练的模型载入应用程序。
 
 ```csharp
 //Define DataViewSchema for data preparation pipeline and trained model
@@ -92,7 +92,7 @@ ITransformer trainedModel = mlContext.Model.Load("model.zip", out modelSchema);
 
 ## <a name="load-a-model-stored-remotely"></a>加载远程存储的模型
 
-若要将存储在远程位置的数据准备管道和模型加载到应用程序中，请使用 [`Stream`](xref:System.IO.Stream)，而不要使用 [`Load`](xref:Microsoft.ML.ModelOperationsCatalog.Load*) 方法中的文件路径。
+若要将存储在远程位置的数据准备管道和模型加载到应用程序中，请使用 [`Stream`](xref:System.IO.Stream)，而不要使用 [`Load`](xref:Microsoft.ML.ModelOperationsCatalog.Load%2A) 方法中的文件路径。
 
 ```csharp
 // Create MLContext

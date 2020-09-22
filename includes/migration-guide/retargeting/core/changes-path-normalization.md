@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 04c4fb4c8e9da8c58a5e26f78a7b13aa6a0df4a0
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 7c4b9faf25853c1c7a546f06c329f6f153eef904
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614339"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606750"
 ---
 ### <a name="changes-in-path-normalization"></a>路径规范化中的更改
 
@@ -17,7 +17,7 @@ ms.locfileid: "85614339"
 - 评估路径中的相对目录 (.) 或父目录 (..)。
 - 删减指定字符。
 从面向 .NET Framework 4.6.2 的应用开始，在路径规范化中默认启用以下更改：
-  - 运行时在规范化处理路径时以操作系统的 [GetFullPathName](https://docs.microsoft.com/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamew) 函数为准。
+  - 运行时在规范化处理路径时以操作系统的 [GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamew) 函数为准。
 - 路径规范化再也不用删减目录部分的末尾内容（如目录名称末尾的空格）。
 - 支持完全信任形式的设备路径语法，包括 `\\.\` 和 `\\?\`（对于 mscorlib.dll 中的文件 I/O API）。
 - 运行时不会验证设备语法路径。

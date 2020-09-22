@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: 83aaae2d2e75b3076841750bf5d505390a538bc0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: edcb1c4d00a09ba8404b08ddc3ca3447a52a81b6
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "74344757"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679581"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>从文件和其他源加载数据
 
@@ -66,7 +66,7 @@ ML.NET 通过列名称进行操作。 如果要将某个列的名称更改为该
 
 ## <a name="load-data-from-a-single-file"></a>从单个文件加载数据
 
-若要从文件加载数据，请使用 [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) 方法以及要加载的数据的数据模型。 由于 `separatorChar` 参数默认为制表符分隔，因此请根据需要为数据文件更改该参数。 如果文件有标头，请将 `hasHeader` 参数设置为 `true`，以忽略文件中的第一行并开始从第二行加载数据。
+若要从文件加载数据，请使用 [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%2A) 方法以及要加载的数据的数据模型。 由于 `separatorChar` 参数默认为制表符分隔，因此请根据需要为数据文件更改该参数。 如果文件有标头，请将 `hasHeader` 参数设置为 `true`，以忽略文件中的第一行并开始从第二行加载数据。
 
 ```csharp
 //Create MLContext
@@ -82,7 +82,7 @@ IDataView data = mlContext.Data.LoadFromTextFile<HousingData>("my-data-file.csv"
 
 ### <a name="load-from-files-in-a-single-directory"></a>从单个目录中的文件加载
 
-当所有数据文件位于同一目录中时，请在 [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile*) 方法中使用通配符。
+当所有数据文件位于同一目录中时，请在 [`LoadFromTextFile`](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%2A) 方法中使用通配符。
 
 ```csharp
 //Create MLContext
@@ -94,7 +94,7 @@ IDataView data = mlContext.Data.LoadFromTextFile<HousingData>("Data/*", separato
 
 ### <a name="load-from-files-in-multiple-directories"></a>从多个目录中的文件加载
 
-若要从多个目录加载数据，请使用 [`CreateTextLoader`](xref:Microsoft.ML.TextLoaderSaverCatalog.CreateTextLoader*) 方法创建 [`TextLoader`](xref:Microsoft.ML.Data.TextLoader)。 然后，使用 [`TextLoader.Load`](xref:Microsoft.ML.DataLoaderExtensions.Load*) 方法并指定单个文件路径（不能使用通配符）。
+若要从多个目录加载数据，请使用 [`CreateTextLoader`](xref:Microsoft.ML.TextLoaderSaverCatalog.CreateTextLoader%2A) 方法创建 [`TextLoader`](xref:Microsoft.ML.Data.TextLoader)。 然后，使用 [`TextLoader.Load`](xref:Microsoft.ML.DataLoaderExtensions.Load%2A) 方法并指定单个文件路径（不能使用通配符）。
 
 ```csharp
 //Create MLContext
@@ -116,7 +116,7 @@ ML.NET 支持从各种关系数据库中加载数据（包括 SQL Server、Azure
 
 指定具有名为 `House` 的表和以下架构的数据库：
 
-```SQL
+```sql
 CREATE TABLE [House] (
     [HouseId] INT NOT NULL IDENTITY,
     [Size] INT NOT NULL,
@@ -200,10 +200,10 @@ HousingData[] inMemoryCollection = new HousingData[]
 };
 ```
 
-使用 [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) 方法将内存中集合加载到 [`IDataView`](xref:Microsoft.ML.IDataView) 中：
+使用 [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable%2A) 方法将内存中集合加载到 [`IDataView`](xref:Microsoft.ML.IDataView) 中：
 
 > [!IMPORTANT]
-> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable*) 假定其所加载的 [`IEnumerable`](xref:System.Collections.IEnumerable) 是线程安全的。
+> [`LoadFromEnumerable`](xref:Microsoft.ML.DataOperationsCatalog.LoadFromEnumerable%2A) 假定其所加载的 [`IEnumerable`](xref:System.Collections.IEnumerable) 是线程安全的。
 
 ```csharp
 // Create MLContext

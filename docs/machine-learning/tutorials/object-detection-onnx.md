@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 06/30/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4759a661646b08ea6a93cab030a19af2cfeaca16
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 49817f9ad712e50669bab958296946c06d5c19eb
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85803399"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679411"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>教程：在 ML.NET 中使用 ONNX 检测对象
 
@@ -492,22 +492,22 @@ for (var j = i + 1; j < boxes.Count; j++)
 
     [!code-csharp [LoadModelLog](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L47-L49)]
 
-    ML.NET 管道需要知道在调用 [`Fit`](xref:Microsoft.ML.IEstimator%601.Fit*) 方法时要操作的数据架构。 在这种情况下，将使用类似于训练的过程。 但是，由于没有进行实际训练，因此可以使用空的 [`IDataView`](xref:Microsoft.ML.IDataView)。 使用空列表为管道创建新的 [`IDataView`](xref:Microsoft.ML.IDataView)。
+    ML.NET 管道需要知道在调用 [`Fit`](xref:Microsoft.ML.IEstimator%601.Fit%2A) 方法时要操作的数据架构。 在这种情况下，将使用类似于训练的过程。 但是，由于没有进行实际训练，因此可以使用空的 [`IDataView`](xref:Microsoft.ML.IDataView)。 使用空列表为管道创建新的 [`IDataView`](xref:Microsoft.ML.IDataView)。
 
     [!code-csharp [LoadEmptyIDV](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L52)]
 
     在此之后，定义管道。 管道将包含四个转换。
 
-    - [`LoadImages`](xref:Microsoft.ML.ImageEstimatorsCatalog.LoadImages*) 将图片作为位图加载。
-    - [`ResizeImages`](xref:Microsoft.ML.ImageEstimatorsCatalog.ResizeImages*) 将图片重新调整为指定的大小（在本例中为 `416 x 416`）。
-    - [`ExtractPixels`](xref:Microsoft.ML.ImageEstimatorsCatalog.ExtractPixels*) 将图像的像素表示形式从位图更改为数字向量。
-    - [`ApplyOnnxModel`](xref:Microsoft.ML.OnnxCatalog.ApplyOnnxModel*) 加载 ONNX 模型并使用它对提供的数据进行评分。
+    - [`LoadImages`](xref:Microsoft.ML.ImageEstimatorsCatalog.LoadImages%2A) 将图片作为位图加载。
+    - [`ResizeImages`](xref:Microsoft.ML.ImageEstimatorsCatalog.ResizeImages%2A) 将图片重新调整为指定的大小（在本例中为 `416 x 416`）。
+    - [`ExtractPixels`](xref:Microsoft.ML.ImageEstimatorsCatalog.ExtractPixels%2A) 将图像的像素表示形式从位图更改为数字向量。
+    - [`ApplyOnnxModel`](xref:Microsoft.ML.OnnxCatalog.ApplyOnnxModel%2A) 加载 ONNX 模型并使用它对提供的数据进行评分。
 
     在 `data` 变量下面的 `LoadModel` 方法中定义管道。
 
     [!code-csharp [ScoringPipeline](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L55-L58)]
 
-    现在，可以实例化模型以进行评分。 调用管道上的 [`Fit`](xref:Microsoft.ML.IEstimator%601.Fit*) 方法并将其返回以进行进一步处理。
+    现在，可以实例化模型以进行评分。 调用管道上的 [`Fit`](xref:Microsoft.ML.IEstimator%601.Fit%2A) 方法并将其返回以进行进一步处理。
 
     [!code-csharp [FitReturnModel](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L61-L63)]
 
@@ -524,7 +524,7 @@ private IEnumerable<float[]> PredictDataUsingModel(IDataView testData, ITransfor
 
 [!code-csharp [PredictDataLog](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L68-L71)]
 
-然后，使用 [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) 方法对数据进行评分。
+然后，使用 [`Transform`](xref:Microsoft.ML.ITransformer.Transform%2A) 方法对数据进行评分。
 
 [!code-csharp [ScoreImages](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/OnnxModelScorer.cs#L73)]
 
@@ -626,11 +626,11 @@ using (Graphics thumbnailGraphic = Graphics.FromImage(image))
 
 [!code-csharp [SetColorOptions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L106-L114)]
 
-使用 [`FillRectangle`](xref:System.Drawing.Graphics.FillRectangle*) 方法创建并填充边界框上方的矩形以包含文本。 这将有助于对比文本，提高可读性。
+使用 [`FillRectangle`](xref:System.Drawing.Graphics.FillRectangle%2A) 方法创建并填充边界框上方的矩形以包含文本。 这将有助于对比文本，提高可读性。
 
 [!code-csharp [DrawTextBackground](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L117)]
 
-然后，使用 [`DrawString`](xref:System.Drawing.Graphics.DrawString*) 和 [`DrawRectangle`](xref:System.Drawing.Graphics.DrawRectangle*) 方法在图像上绘制文本和边界框。
+然后，使用 [`DrawString`](xref:System.Drawing.Graphics.DrawString%2A) 和 [`DrawRectangle`](xref:System.Drawing.Graphics.DrawRectangle%2A) 方法在图像上绘制文本和边界框。
 
 [!code-csharp [DrawClassAndBBox](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/Program.cs#L118-L121)]
 

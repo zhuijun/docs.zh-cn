@@ -2,12 +2,12 @@
 title: 使用作为容器运行的数据库服务器
 description: 了解使用仅作为开发容器运行的数据库服务器的重要性。 从不用于生产。
 ms.date: 01/30/2020
-ms.openlocfilehash: 0cbc933003aac10970814378c27e88b5cb0ddbe5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 38f77e195b184d57dcad5904674a0025ef6c2bd8
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77628522"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539394"
 ---
 # <a name="use-a-database-server-running-as-a-container"></a>使用作为容器运行的数据库服务器
 
@@ -101,7 +101,7 @@ public static int Main(string[] args)
 
 在容器启动期间应用迁移并为数据库设定种子时，会出现一个重要警告。 由于数据库服务器可能因某种原因不可用，因此必须等待服务器可用时处理重试。 此重试逻辑由 `MigrateDbContext()` 扩展方法处理，如以下代码所示：
 
-```cs
+```csharp
 public static IWebHost MigrateDbContext<TContext>(
     this IWebHost host,
     Action<TContext,

@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: e528a41748d9353c96d443f68e15e7a98ee7f4ae
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 882c4c0455b7df538079ffe1b7d1d7ca8af1904a
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617789"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606583"
 ---
 ### <a name="accessibility-improvements-in-windows-forms-controls-for-net-48"></a>适用于 .NET 4.8 的 Windows 窗体控件中的辅助功能改进
 
@@ -21,7 +21,7 @@ Windows 窗体框架持续改进其与辅助功能技术的协作方式，以更
 **如何选择加入或选择退出这些更改** 为使应用程序从这些更改中获益，它必须在 .NET Framework 4.8 上运行。 应用程序可通过以下任一方式选择加入这些更改：
 
 - 重新编译为面向 .NET Framework 4.8。 对于面向 .NET Framework 4.8 的 Windows 窗体应用程序，这些辅助功能更改将默认启用。
-- 它面向 .NET Framework 4.7.2 或更低版本，通过向应用配置文件的 `<runtime>` 部分添加以下 [AppContext 开关](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element)并将其设置为 `false`，可选择弃用旧版辅助功能行为，如下例所示。
+- 它面向 .NET Framework 4.7.2 或更低版本，通过向应用配置文件的 `<runtime>` 部分添加以下 [AppContext 开关](../../../../docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md)并将其设置为 `false`，可选择弃用旧版辅助功能行为，如下例所示。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -72,7 +72,7 @@ Windows 窗体框架持续改进其与辅助功能技术的协作方式，以更
 **改进了 ProgressBar 辅助功能支持**
 
 - 为 <xref:System.Windows.Forms.ProgressBar> 控件启用了 UI 自动化支持，并且可以使用 UI 自动化通知和其他 UI 自动化功能。 开发人员现可使用 UI 自动化通知，讲述人可以通过这些通知来指示进度。
-有关 UI 自动化事件概述（包括 UI 自动化通知事件）的概述，请参阅 [UI 自动化事件概述](https://docs.microsoft.com/windows/desktop/WinAuto/uiauto-eventsoverview)。
+有关 UI 自动化事件概述（包括 UI 自动化通知事件）的概述，请参阅 [UI 自动化事件概述](/windows/desktop/WinAuto/uiauto-eventsoverview)。
 
 **改进了 PropertyGrid 辅助功能支持**
 
@@ -89,7 +89,7 @@ Windows 窗体框架持续改进其与辅助功能技术的协作方式，以更
 **改进了视觉提示**
 
 - 空的 <xref:System.Windows.Forms.CheckedListBox> 控件现在在接收焦点时显示焦点指示器。
-注意：在运行时为控件启用了 UI 自动化支持，但设计时未使用该支持。 有关 UI 自动化的概述，请参阅 [UI 自动化概述](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-overview)。
+注意：在运行时为控件启用了 UI 自动化支持，但设计时未使用该支持。 有关 UI 自动化的概述，请参阅 [UI 自动化概述](../../../../docs/framework/ui-automation/ui-automation-overview.md)。
 
 **通过键盘调用控件的工具提示**
 

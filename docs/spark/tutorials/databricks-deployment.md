@@ -4,12 +4,12 @@ description: 了解如何将 .NET for Apache Spark 应用程序部署到 Databri
 ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 66a5493f0084f5fa86c3eb928d2e4a4b4999e764
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 904aeea4fa8b134c8c36ebb83779dc044154e6f3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924586"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90552162"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>教程：将 .NET for Apache Spark 应用程序部署到 Databricks
 
@@ -38,7 +38,7 @@ ms.locfileid: "86924586"
 
 > [!Note]
 > 不能使用 Azure 免费试用订阅完成本教程。
-> 如果你有免费帐户，请转到个人资料并将订阅更改为“即用即付”。 有关详细信息，请参阅 [Azure 免费帐户](https://azure.microsoft.com/free/dotnet/)。 然后，[移除支出限制](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit)，并为你所在区域的 vCPU [请求增加配额](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request)。 创建 Azure Databricks 工作区时，可以选择“试用版(高级 - 14天免费 DBU)”定价层，让工作区访问免费的高级 Azure Databricks DBU 14 天。
+> 如果你有免费帐户，请转到个人资料并将订阅更改为“即用即付”。 有关详细信息，请参阅 [Azure 免费帐户](https://azure.microsoft.com/free/dotnet/)。 然后，[移除支出限制](/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit)，并为你所在区域的 vCPU [请求增加配额](/azure/azure-supportability/resource-manager-core-quotas-request)。 创建 Azure Databricks 工作区时，可以选择“试用版(高级 - 14天免费 DBU)”定价层，让工作区访问免费的高级 Azure Databricks DBU 14 天。
 
 在本部分，使用 Azure 门户创建 Azure Databricks 工作区。
 
@@ -52,7 +52,7 @@ ms.locfileid: "86924586"
     |---------|---------|
     |**工作区名称**     | 为 Databricks 工作区提供一个名称。        |
     |**订阅**     | 从下拉列表中选择自己的 Azure 订阅。        |
-    |**资源组**     | 指定是要创建新的资源组还是使用现有的资源组。 资源组是用于保存 Azure 解决方案相关资源的容器。 有关详细信息，请参阅 [Azure 资源组概述](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview)。 |
+    |**资源组**     | 指定是要创建新的资源组还是使用现有的资源组。 资源组是用于保存 Azure 解决方案相关资源的容器。 有关详细信息，请参阅 [Azure 资源组概述](/azure/azure-resource-manager/resource-group-overview)。 |
     |**位置**     | 选择首选区域。 有关可用区域的信息，请参阅[各区域推出的 Azure 服务](https://azure.microsoft.com/regions/services/)。        |
     |**定价层**     |  在“标准”、“高级”和“试用”之间进行选择。   有关这些层的详细信息，请参阅 [Databricks 价格页](https://azure.microsoft.com/pricing/details/databricks/)。       |
     |**虚拟网络**     |   否       |
@@ -219,4 +219,4 @@ Databricks CLI 安装完毕之后，接下来需要设置身份验证详细信�
 在本教程中，你已将 .NET for Apache Spark 应用程序部署到 Databricks。 要了解有关 Databricks 的详细信息，请继续阅读 Azure Databricks 文档。
 
 > [!div class="nextstepaction"]
-> [Azure Databricks 文档](https://docs.microsoft.com/azure/azure-databricks/)
+> [Azure Databricks 文档](/azure/azure-databricks/)

@@ -2,12 +2,12 @@
 title: Docker 应用的内部循环开发工作流
 description: 了解 Docker 应用程序的“内部循环”开发工作流。
 ms.date: 08/06/2020
-ms.openlocfilehash: bf837ab53fff2b53cf141b2e621d484cff9b6889
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: 071e16afede91f4cfd6cbe8662fa68814ffdcdd7
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916237"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539757"
 ---
 # <a name="inner-loop-development-workflow-for-docker-apps"></a>Docker 应用的内部循环开发工作流
 
@@ -118,7 +118,7 @@ VS Code 的 Docker 扩展提供以下功能：
 
 以下示例显示 .NET Core 容器的示例 DockerFile：
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
 WORKDIR /app
 EXPOSE 80

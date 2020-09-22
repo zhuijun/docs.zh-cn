@@ -5,12 +5,12 @@ ms.date: 09/18/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 182350cc5143155133385c6fd77986b271f6db91
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 2e8263db289bed50e7437b695134458b8c07e0e5
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73977044"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679568"
 ---
 # <a name="make-predictions-with-a-trained-model"></a>使用经过训练的模型进行预测
 
@@ -72,7 +72,7 @@ ITransformer predictionPipeline = mlContext.Model.Load("model.zip", out predicti
 PredictionEngine<HousingData, HousingPrediction> predictionEngine = mlContext.Model.CreatePredictionEngine<HousingData, HousingPrediction>(predictionPipeline);
 ```
 
-然后，使用 [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) 方法并将输入数据作为参数传入。 请注意，使用 [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict*) 方法不要求输入为 [`IDataView`](xref:Microsoft.ML.IDataView)。 这是因为它可以方便地内在化输入数据类型操作，以便能够传入输入数据类型的对象。 此外，由于 `CurrentPrice` 是尝试使用新数据进行预测的目标或标签，假设此时没有用于它的值。
+然后，使用 [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict%2A) 方法并将输入数据作为参数传入。 请注意，使用 [`Predict`](xref:Microsoft.ML.PredictionEngineBase%602.Predict%2A) 方法不要求输入为 [`IDataView`](xref:Microsoft.ML.IDataView)。 这是因为它可以方便地内在化输入数据类型操作，以便能够传入输入数据类型的对象。 此外，由于 `CurrentPrice` 是尝试使用新数据进行预测的目标或标签，假设此时没有用于它的值。
 
 ```csharp
 // Input Data
@@ -114,14 +114,14 @@ HousingData[] housingData = new HousingData[]
 };
 ```
 
-然后，使用 [`Transform`](xref:Microsoft.ML.ITransformer.Transform*) 方法应用数据转换并生成预测。
+然后，使用 [`Transform`](xref:Microsoft.ML.ITransformer.Transform%2A) 方法应用数据转换并生成预测。
 
 ```csharp
 // Predicted Data
 IDataView predictions = predictionPipeline.Transform(inputData);
 ```
 
-使用 [`GetColumn`](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn*) 方法检查预测值。
+使用 [`GetColumn`](xref:Microsoft.ML.Data.ColumnCursorExtensions.GetColumn%2A) 方法检查预测值。
 
 ```csharp
 // Get Predictions

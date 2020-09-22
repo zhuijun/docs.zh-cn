@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cc3c2c2be179842f87be8892d057a6c4138086cb
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: a21824862d6cad046b5d6186f9d6db9c20438304
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85614398"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90606347"
 ---
 ### <a name="accessibility-improvements-in-windows-forms-controls-for-net-472"></a>适用于 .NET 4.7.2 的 Windows 窗体控件中的辅助功能改进
 
@@ -21,7 +21,7 @@ Windows 窗体框架正在改进其辅助功能技术的工作方式，以更好
 **如何选择启用或选择弃用这些更改** 为使应用程序从这些更改获益，它必须在 .NET Framework 4.7.2 或更高版本上运行。 此应用程序可通过以下任何一种方式从这些更改中获益：
 
 - 重新编译为面向 .NET Framework 4.7.2。 对于面向 .NET Framework 4.7.2 或更高版本的 Windows 窗体 应用程序，这些辅助功能更改将默认启用。
-- 它面向 .NET Framework 4.7.1 或更早版本，通过向 app config 文件的 `<runtime>` 部分添加以下 [AppContext 开关](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element)并将其设置为 `false`，可选择弃用旧版辅助功能行为，如下例所示。
+- 它面向 .NET Framework 4.7.1 或更早版本，通过向 app config 文件的 `<runtime>` 部分添加以下 [AppContext 开关](../../../../docs/framework/configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md)并将其设置为 `false`，可选择弃用旧版辅助功能行为，如下例所示。
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -73,7 +73,7 @@ Windows 窗体框架正在改进其辅助功能技术的工作方式，以更好
 
 - 现在，仅在 PropertyGrid 元素启用时，<xref:System.Windows.Forms.PropertyGrid> 控件子元素才会为 <xref:System.Windows.Automation.ValuePattern.IsReadOnlyProperty> 属性返回 `true`。
 - 现在，仅在用户可更改 PropertyGrid 元素时，<xref:System.Windows.Forms.PropertyGrid> 控件子元素才会为 <xref:System.Windows.Automation.AutomationElement.IsEnabledProperty> 属性返回 `false`。
-有关 UI 自动化的概述，请参阅 [UI 自动化概述](https://docs.microsoft.com/dotnet/framework/ui-automation/ui-automation-overview)。</p>**改进了的键盘导航**
+有关 UI 自动化的概述，请参阅 [UI 自动化概述](../../../../docs/framework/ui-automation/ui-automation-overview.md)。</p>**改进了的键盘导航**
 
 - <xref:System.Windows.Forms.ToolStripButton> 包含在将 <xref:System.Windows.Forms.ToolStripPanel.TabStop> 属性设置为 `true` 的 <xref:System.Windows.Forms.ToolStripPanel> 中时，现在允许聚焦。
 

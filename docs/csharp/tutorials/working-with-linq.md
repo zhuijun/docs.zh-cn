@@ -4,12 +4,12 @@ description: 此教程将介绍如何使用 LINQ 生成序列、编写用于 LIN
 ms.date: 10/29/2018
 ms.technology: csharp-linq
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 9bc17700e22ea29b1861945a220e397a90b9a7c1
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 59e86d6412e16728fb03d05f7f4e221a26ec1bb1
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656991"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536231"
 ---
 # <a name="work-with-language-integrated-query-linq"></a>使用语言集成查询 (LINQ)
 
@@ -259,7 +259,7 @@ shuffle = shuffle.Skip(26).InterleaveSequenceWith(shuffle.Take(26));
 
 再次运行程序，你会发现需要进行 52 次迭代才能恢复一副纸牌的原始顺序。 随着程序的继续运行，你还会开始注意到一些非常严重的性能下降问题发生。
 
-导致这种情况出现的原因有很多。 可以解决导致性能下降的主要原因之一：[延迟计算  ](../programming-guide/concepts/linq/deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)的使用效率低下。
+导致这种情况出现的原因有很多。 可以解决导致性能下降的主要原因之一：[延迟计算  ](../../standard/linq/deferred-execution-lazy-evaluation.md)的使用效率低下。
 
 简单来说，延迟计算是指直至需要语句的值时才会执行语句计算。 LINQ 查询属于延迟计算的语句。 仅当有元素请求时才生成序列。 通常情况下，这是 LINQ 的主要优势所在。 不过，在诸如此程序之类的用例中，这就会导致执行时间指数式增长。
 

@@ -2,12 +2,12 @@
 title: dotnet add package 命令
 description: “dotnet add package”命令可便于添加对项目的 NuGet 包引用。
 ms.date: 02/14/2020
-ms.openlocfilehash: bc79fe8adf5f775ddce62f3877a8de945c6a18ab
-ms.sourcegitcommit: e5772b3ddcc114c80b4c9767ffdb3f6c7fad8f05
+ms.openlocfilehash: 1bdda241c1301b926ba2fd322f969407038b7b62
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/26/2020
-ms.locfileid: "83840892"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538063"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
@@ -87,7 +87,7 @@ info : PackageReference for package 'Newtonsoft.Json' version '12.0.1' added to 
 
 - **`--package-directory <PACKAGE_DIRECTORY>`**
 
-  要在其中还原包的目录。 Windows 上的默认包还原位置为 `%userprofile%\.nuget\packages`，macOS 和 Linux 上的默认包还原位置为 `~/.nuget/packages`。 有关详细信息，请参阅[在 NuGet 中管理全局包、缓存和临时文件夹](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders)。
+  要在其中还原包的目录。 Windows 上的默认包还原位置为 `%userprofile%\.nuget\packages`，macOS 和 Linux 上的默认包还原位置为 `~/.nuget/packages`。 有关详细信息，请参阅[在 NuGet 中管理全局包、缓存和临时文件夹](/nuget/consume-packages/managing-the-global-packages-and-cache-folders)。
 
 - **`-s|--source <SOURCE>`**
 
@@ -95,7 +95,7 @@ info : PackageReference for package 'Newtonsoft.Json' version '12.0.1' added to 
 
 - **`-v|--version <VERSION>`**
 
-  包的版本。 请参阅 [NuGet 包版本控制](https://docs.microsoft.com/nuget/reference/package-versioning)。
+  包的版本。 请参阅 [NuGet 包版本控制](/nuget/reference/package-versioning)。
 
 ## <a name="examples"></a>示例
 
@@ -119,5 +119,5 @@ info : PackageReference for package 'Newtonsoft.Json' version '12.0.1' added to 
 
 ## <a name="see-also"></a>请参阅
 
-- [在 NuGet 中管理全局包、缓存和临时文件夹](https://docs.microsoft.com/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
-- [NuGet 包版本控制](https://docs.microsoft.com/nuget/reference/package-versioning)
+- [在 NuGet 中管理全局包、缓存和临时文件夹](/nuget/consume-packages/managing-the-global-packages-and-cache-folders)
+- [NuGet 包版本控制](/nuget/reference/package-versioning)

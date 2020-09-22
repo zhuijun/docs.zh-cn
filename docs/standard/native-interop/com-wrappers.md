@@ -10,12 +10,12 @@ helpviewer_keywords:
 - interoperation with unmanaged code, COM wrappers
 - COM callable wrappers
 ms.assetid: e56c485b-6b67-4345-8e66-fd21835a6092
-ms.openlocfilehash: f1cf84b8f15de1e3bd19a391767f5573f01ff806
-ms.sourcegitcommit: 9a4488a3625866335e83a20da5e9c5286b1f034c
+ms.openlocfilehash: cde574be6d4fadb78805548cff1b42ee354bf36f
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/15/2020
-ms.locfileid: "83420508"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558948"
 ---
 # <a name="com-wrappers"></a>COM 包装
 COM 在以下几个重要方面与 .NET 运行时对象模型存在差别：  
@@ -34,8 +34,8 @@ COM 在以下几个重要方面与 .NET 运行时对象模型存在差别：
   
 ## <a name="see-also"></a>请参阅
 
-- [.NET Framework 中的高级 COM 互操作性](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
+- [.NET Framework 中的高级 COM 互操作性](/previous-versions/dotnet/netframework-4.0/bd9cdfyx(v=vs.100))
 - [运行时可调用包装器](runtime-callable-wrapper.md)
 - [COM 可调用包装器](com-callable-wrapper.md)
-- [自定义 .NET Framework 中的标准包装器](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
-- [如何：自定义 .NET Framework 中的运行时可调用包装器](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/56kh4hy7(v=vs.100))
+- [自定义 .NET Framework 中的标准包装器](/previous-versions/dotnet/netframework-4.0/h7hx9abd(v=vs.100))
+- [如何：自定义 .NET Framework 中的运行时可调用包装器](/previous-versions/dotnet/netframework-4.0/56kh4hy7(v=vs.100))

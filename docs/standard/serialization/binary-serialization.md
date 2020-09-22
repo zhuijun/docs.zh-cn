@@ -11,12 +11,12 @@ helpviewer_keywords:
 - serialization, cross-framework
 ms.assetid: 2b1ea3be-1152-4032-b2b3-07794054c405
 author: ViktorHofer
-ms.openlocfilehash: c735d30920fd3c8cd13243b4a5a29489ce05b262
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 2ede74dd8a48735a7ded450d1da6d9cda8fc5ae6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84289689"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554490"
 ---
 # <a name="binary-serialization"></a>二进制序列化
 
@@ -350,8 +350,8 @@ ms.locfileid: "84289689"
 - [安全和序列化](../../framework/misc/security-and-serialization.md)\
 描述写入执行序列化的代码时需要遵循的安全编码原则。
 
-- [.NET 远程处理](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
+- [.NET 远程处理](/previous-versions/dotnet/netframework-4.0/72x4h507(v=vs.100))\
 描述从 .NET Framework 开始提供的用于远程通信的多种方法。
 
-- [使用 ASP.NET 创建的 XML Web service 以及 XML Web service 客户端](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/7bkzywba(v=vs.100))\
+- [使用 ASP.NET 创建的 XML Web service 以及 XML Web service 客户端](/previous-versions/dotnet/netframework-4.0/7bkzywba(v=vs.100))\
 描述并解释如何对使用 ASP.NET 创建的 XML Web services 进行编程的文章。

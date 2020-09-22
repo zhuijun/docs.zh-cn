@@ -12,12 +12,12 @@ helpviewer_keywords:
 - implicit keyword [C#]
 - conversion operator [C#]
 - user-defined conversion [C#]
-ms.openlocfilehash: a0eb11d55ad9e9cccde1704ba4c5ae8acb609989
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: ab977408ed891bd7c996ce3644b22ea984425664
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916638"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536374"
 ---
 # <a name="user-defined-conversion-operators-c-reference"></a>用户定义转换运算符（C# 引用）
 
@@ -52,4 +52,4 @@ ms.locfileid: "87916638"
 - [类型测试和强制转换运算符](type-testing-and-cast.md)
 - [强制转换和类型转换](../../programming-guide/types/casting-and-type-conversions.md)
 - [设计准则 - 转换运算符](../../../standard/design-guidelines/operator-overloads.md#conversion-operators)
-- [Chained user-defined explicit conversions in C#](https://docs.microsoft.com/archive/blogs/ericlippert/chained-user-defined-explicit-conversions-in-c)（C# 中链接在一起的用户定义的显式转换）
+- [Chained user-defined explicit conversions in C#](/archive/blogs/ericlippert/chained-user-defined-explicit-conversions-in-c)（C# 中链接在一起的用户定义的显式转换）

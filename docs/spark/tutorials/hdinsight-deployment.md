@@ -4,12 +4,12 @@ description: 了解如何将 .NET for Apache Spark 应用程序部署到 HDInsig
 ms.date: 06/25/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: e6b2fdd1818250c47ce6cb64439ecab58ae99ad8
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 9a4ca80463de41a50d103c696b2108d0cef023fc
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617634"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90548372"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>教程：将 .NET for Apache Spark 应用程序部署到 Azure HDInsight
 
@@ -189,4 +189,4 @@ HDInsight 将数据保存在 Azure 存储中，因此可以在不使用群集时
 在本教程中，你已将 .NET for Apache Spark 应用程序部署到 Azure HDInsight。 要了解有关 HDInsight 的详细信息，请继续阅读 Azure HDInsight 文档。
 
 > [!div class="nextstepaction"]
-> [Azure HDInsight 文档](https://docs.microsoft.com/azure/hdinsight/)
+> [Azure HDInsight 文档](/azure/hdinsight/)

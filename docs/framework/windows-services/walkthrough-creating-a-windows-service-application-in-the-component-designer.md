@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
 author: ghogen
-ms.openlocfilehash: 487a974af2280a02b83fe685324c9464df705585
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 04f27729b5713c325a73cbdeb1c6c673fe749c00
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925626"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90544201"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>教程：创建 Windows 服务应用
 
@@ -471,7 +471,7 @@ Windows 服务可以接受命令行参数或启动参数。 将代码添加到�
 
 由于已经生成了 Windows 服务，你现在可以安装它。 要安装 Windows 服务，必须在安装它的计算机上拥有管理员凭据。
 
-1. 使用管理凭据打开[“Visual Studio 开发人员命令提示”](https://docs.microsoft.com/dotnet/framework/tools/developer-command-prompt-for-vs)。 从 Windows“开始”菜单中，在 Visual Studio 文件夹中选择“VS 2017 的开发人员命令提示”，然后从快捷菜单中选择“更多” > “以管理员身份运行”     。
+1. 使用管理凭据打开[“Visual Studio 开发人员命令提示”](../tools/developer-command-prompt-for-vs.md)。 从 Windows“开始”菜单中，在 Visual Studio 文件夹中选择“VS 2017 的开发人员命令提示”，然后从快捷菜单中选择“更多” > “以管理员身份运行”     。
 
 2. 在“Visual Studio 的开发人员命令提示”窗口中，导航到包含项目输出的文件夹（默认情况下，它是项目的 \bin\Debug 子目录）   。
 

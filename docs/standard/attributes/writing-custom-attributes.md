@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Inherited property
 - attribute classes, declaring
 ms.assetid: 97216f69-bde8-49fd-ac40-f18c500ef5dc
-ms.openlocfilehash: 3cae8de9b76aa9953b21ad2e23ad003e97555aa9
-ms.sourcegitcommit: 5fd4696a3e5791b2a8c449ccffda87f2cc2d4894
+ms.openlocfilehash: f047e18531b46f0c89be9a6feaa9aa50341205e3
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/15/2020
-ms.locfileid: "84768477"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90550920"
 ---
 # <a name="writing-custom-attributes"></a>编写自定义特性
 要设计你自己的自定义特性，无需掌握许多新的概念。 如果你熟悉面向对象的编程，并且知道如何设计类，那么你已经具备大部分所需知识。 自定义特性本质上是直接或间接派生自 <xref:System.Attribute?displayProperty=nameWithType>的传统类。 与传统类一样，自定义特性包含用于存储和检索数据的方法。  
@@ -117,7 +117,7 @@ ms.locfileid: "84768477"
  [!code-csharp[Conceptual.Attributes.Usage#15](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#15)]
  [!code-vb[Conceptual.Attributes.Usage#15](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#15)]  
   
- 可以重载此构造函数以适应值的各种组合。 如果你还为自定义特性类定义了 [属性](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)) ，则在初始化该特性时可以使用命名参数和定位参数的组合。 通常情况下，将所有必选的参数定义为定位参数，将所有可选的参数定义为命名参数。 在这种情况下，没有必选参数则无法初始化特性。 其他所有参数都是可选参数。 请注意，在 Visual Basic 中，特性类的构造函数不应使用 ParamArray 参数。  
+ 可以重载此构造函数以适应值的各种组合。 如果你还为自定义特性类定义了 [属性](/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)) ，则在初始化该特性时可以使用命名参数和定位参数的组合。 通常情况下，将所有必选的参数定义为定位参数，将所有可选的参数定义为命名参数。 在这种情况下，没有必选参数则无法初始化特性。 其他所有参数都是可选参数。 请注意，在 Visual Basic 中，特性类的构造函数不应使用 ParamArray 参数。  
   
  下面的代码示例显示如何使用可选和必选参数应用使用上例中的构造函数的特性。 该示例假定特性有一个必选的布尔值和一个可选的字符串属性。  
   
@@ -126,7 +126,7 @@ ms.locfileid: "84768477"
  [!code-vb[Conceptual.Attributes.Usage#17](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.attributes.usage/vb/source2.vb#17)]  
   
 ## <a name="declaring-properties"></a>声明属性  
- 如果你想要定义一个命名参数，或者提供一种简单的方法来返回由特性存储的值，请声明 [属性](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120))。 应将特性的属性声明为公共实体，此公告实体包含将返回的数据类型的描述。 定义将保存属性值的变量，并将此变量与 **get** 和 **set** 方法相关联。 下面的代码示例说明如何在特性中实现一个简单属性。  
+ 如果你想要定义一个命名参数，或者提供一种简单的方法来返回由特性存储的值，请声明 [属性](/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120))。 应将特性的属性声明为公共实体，此公告实体包含将返回的数据类型的描述。 定义将保存属性值的变量，并将此变量与 **get** 和 **set** 方法相关联。 下面的代码示例说明如何在特性中实现一个简单属性。  
   
  [!code-cpp[Conceptual.Attributes.Usage#16](../../../samples/snippets/cpp/VS_Snippets_CLR/conceptual.attributes.usage/cpp/source2.cpp#16)]
  [!code-csharp[Conceptual.Attributes.Usage#16](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.attributes.usage/cs/source2.cs#16)]

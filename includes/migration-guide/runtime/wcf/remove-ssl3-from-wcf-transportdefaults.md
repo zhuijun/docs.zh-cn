@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 23987c300ac4fbad401de180b63106cd234f8d27
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: a5f4047d70276a90c9d72918a2559fd795feb26e
+ms.sourcegitcommit: 261e0c98a111357692b3b63c596edf0cacf72991
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89497803"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90770908"
 ---
 ### <a name="remove-ssl3-from-the-wcf-transportdefaults"></a>从 WCF TransportDefaults 删除 Ssl3
 
@@ -14,13 +14,18 @@ ms.locfileid: "89497803"
 
 #### <a name="suggestion"></a>建议
 
-如果 Ssl3 必需，则使用以下配置机制之一将 Ssl3 添加到协商协议的列表。<ul><li><xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols></li><li><xref:System.ServiceModel.TcpTransportSecurity.SslProtocols></li><li>[<](~/docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)</li><li>[&lt;customBinding&gt; 的 &lt;sslStreamSecurity&gt; 部分]~/docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)</li></ul>
+如果 Ssl3 必需，则使用以下配置机制之一将 Ssl3 添加到协商协议的列表。
 
-| 名称    | 值       |
-|:--------|:------------|
-| 范围   |边缘|
-|Version|4.6.2|
-|类型|运行时|
+- <xref:System.ServiceModel.Channels.SslStreamSecurityBindingElement.SslProtocols>
+- <xref:System.ServiceModel.TcpTransportSecurity.SslProtocols>
+- [\<netTcpBinding> 的 \<transport>](../../../../docs/framework/configure-apps/file-schema/wcf/transport-of-nettcpbinding.md)
+- [\<sslStreamSecurity>](../../../../docs/framework/configure-apps/file-schema/wcf/sslstreamsecurity.md)
+
+| 名称    | 值   |
+|:--------|:--------|
+| 范围   | 边缘    |
+| Version | 4.6.2   |
+| 类型    | 运行时 |
 
 #### <a name="affected-apis"></a>受影响的 API
 

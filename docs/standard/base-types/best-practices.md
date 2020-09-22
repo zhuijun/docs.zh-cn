@@ -10,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: 30d4a8f6ddc4ae1f83f5c0802e872661cbe6c6f1
-ms.sourcegitcommit: c23d9666ec75b91741da43ee3d91c317d68c7327
+ms.openlocfilehash: 03eda8a419dc60c75576e15da9b3595274894c75
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85802919"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554575"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>.NET 中的正则表达式最佳做法
 
@@ -64,7 +64,7 @@ ms.locfileid: "85802919"
 .NET 正则表达式对象模型的核心是 <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> 类，表示正则表达式引擎。 通常，影响正则表达式性能的单个最大因素是 <xref:System.Text.RegularExpressions.Regex> 引擎的使用方式。 定义正则表达式需要将正则表达式引擎与正则表达式模式紧密耦合。 无论该耦合过程是需要通过向其构造函数传递正则表达式模式来实例化 <xref:System.Text.RegularExpressions.Regex> 还是通过向其传递正则表达式模式和要分析的字符串来调用静态方法，都必然会消耗大量资源。
 
 > [!NOTE]
-> 若要详细了解使用已解释和已编译正则表达式造成的性能影响，请参阅 BCL 团队博客中的 [Optimizing Regular Expression Performance, Part II:Taking Charge of Backtracking](https://docs.microsoft.com/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha)（优化正则表达式性能，第 II 部分：控制回溯）。
+> 若要详细了解使用已解释和已编译正则表达式造成的性能影响，请参阅 BCL 团队博客中的 [Optimizing Regular Expression Performance, Part II:Taking Charge of Backtracking](/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha)（优化正则表达式性能，第 II 部分：控制回溯）。
 
 可将正则表达式引擎与特定正则表达式模式耦合，然后使用该引擎以若干种方式匹配文本：
 
@@ -163,7 +163,7 @@ ms.locfileid: "85802919"
 通常，正则表达式引擎使用线性进度在输入字符串中移动并将其编译为正则表达式模式。 但是，当在正则表达式模式中使用不确定限定符（如 `*`、`+` 和 `?`）时，正则表达式引擎可能会放弃一部分成功的分部匹配，并返回以前保存的状态，以便为整个模式搜索成功匹配。 此过程称为回溯。
 
 > [!NOTE]
-> 若要详细了解回溯，请参阅[正则表达式行为的详细信息](details-of-regular-expression-behavior.md)和[回溯](backtracking-in-regular-expressions.md)。 若要详细了解回溯，请参阅 BCL 团队博客中的 [Optimizing Regular Expression Performance, Part II:Taking Charge of Backtracking](https://docs.microsoft.com/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha)（优化正则表达式性能，第 II 部分：控制回溯）。
+> 若要详细了解回溯，请参阅[正则表达式行为的详细信息](details-of-regular-expression-behavior.md)和[回溯](backtracking-in-regular-expressions.md)。 若要详细了解回溯，请参阅 BCL 团队博客中的 [Optimizing Regular Expression Performance, Part II:Taking Charge of Backtracking](/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha)（优化正则表达式性能，第 II 部分：控制回溯）。
 
 支持回溯可为正则表达式提供强大的功能和灵活性。 还可将控制正则表达式引擎操作的职责交给正则表达式开发人员来处理。 由于开发人员通常不了解此职责，因此其误用回溯或依赖过多回溯通常会显著降低正则表达式的性能。 在最糟糕的情况下，输入字符串中每增加一个字符，执行时间会加倍。 实际上，如果过多使用回溯，则在输入与正则表达式模式近似匹配时很容易创建无限循环的编程等效形式；正则表达式引擎可能需要几小时甚至几天来处理相对短的输入字符串。
 

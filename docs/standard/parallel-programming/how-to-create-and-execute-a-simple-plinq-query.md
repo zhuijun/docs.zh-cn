@@ -8,16 +8,16 @@ dev_langs:
 helpviewer_keywords:
 - PLINQ queries, how to create
 ms.assetid: 983b4213-bddd-4a44-9262-cbe59186df4c
-ms.openlocfilehash: a9c044254423d0f9d266539c728a6604f562e97d
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a5f6a26ada321bd351249c5179d050ee571b550c
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84290001"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679330"
 ---
 # <a name="how-to-create-and-execute-a-simple-plinq-query"></a>如何：创建并执行简单的 PLINQ 查询
 
-本文中的示例演示如何通过对源序列使用 <xref:System.Linq.ParallelEnumerable.AsParallel%2A?displayProperty=nameWithType> 扩展方法来创建一个简单的并行语言集成查询 (LINQ) 查询，并使用 <xref:System.Linq.ParallelEnumerable.ForAll%2A?displayProperty=nameWithTyp> 方法执行该查询。  
+本文中的示例演示如何通过对源序列使用 <xref:System.Linq.ParallelEnumerable.AsParallel%2A?displayProperty=nameWithType> 扩展方法来创建一个简单的并行语言集成查询 (LINQ) 查询，并使用 <xref:System.Linq.ParallelEnumerable.ForAll%2A?displayProperty=nameWithType> 方法执行该查询。  
   
 > [!NOTE]
 > 本文档使用 lambda 表达式在 PLINQ 中定义委托。 如果不熟悉 C# 或 Visual Basic 中的 lambda 表达式，请参阅 [PLINQ 和 TPL 中的 Lambda 表达式](lambda-expressions-in-plinq-and-tpl.md)。  

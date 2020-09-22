@@ -3,12 +3,12 @@ title: 什么是模型生成器，它的工作原理是怎样的？
 description: 如何使用 ML.NET 模型生成器自动训练机器学习模型
 ms.date: 06/01/2020
 ms.custom: overview, mlnet-tooling
-ms.openlocfilehash: 2ed4a0c3c94ae9f46bb1cf6ddb1e9774baf82367
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 80f5f5d064c4e0c4097dacc6022d4624c1516ab9
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84289494"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679672"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>什么是模型生成器，它的工作原理是怎样的？
 
@@ -111,7 +111,7 @@ ML.NET 模型生成器是一个直观的图形化 Visual Studio 扩展，用于�
 |-|-|-|-|-|
 |分类|预测销售异常|[产品销售数据](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|产品销售额|月份|
 ||预测网站评论的情绪|[网站评论数据](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|标签（负面情绪为 0，正面情绪为 1）|评论、年份|
-||预测信用卡欺诈交易|[信用卡数据](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|类（存在欺诈性为 1，否则为 0）|金额，V1-V28（匿名处理后的特征）|
+||预测信用卡欺诈交易|[信用卡数据](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CCFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|类（存在欺诈性为 1，否则为 0）|金额，V1-V28（匿名处理后的特征）|
 ||预测 GitHub 存储库中的问题类型|[GitHub 问题数据](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|区域|标题、描述|
 |值预测|预测出租车费用价格|[出租车费数据](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|车费|行程时间、距离|
 |图像分类|预测花卉的类别 |[花卉图像](http://download.tensorflow.org/example_images/flower_photos.tgz)|花卉类型：雏菊、蒲公英、玫瑰、向日葵、郁金香|图像数据本身|

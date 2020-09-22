@@ -4,11 +4,12 @@ description: 了解如何将代码覆盖率功能用于 .NET 单元测试。
 author: IEvangelist
 ms.author: dapine
 ms.date: 07/01/2020
-ms.openlocfilehash: af64116e86c3f46f37c8d5d079b9c86084095485
-ms.sourcegitcommit: b6a1869f97a37f11a68c90afde1a520a6887dcbc
+ms.openlocfilehash: 4d2c8f3db26eaabcb973378a349ef57912e92bfa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/02/2020
-ms.locfileid: "85853901"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538142"
 ---
 # <a name="use-code-coverage-for-unit-testing"></a>将代码覆盖率用于单元测试
 
@@ -18,7 +19,7 @@ ms.locfileid: "85853901"
 
 此外，本文详细介绍如何使用从 Coverlet 测试运行收集的代码覆盖率信息来生成报表。 可以使用另一个 [GitHub 上的开源项目 - ReportGenerator](https://github.com/danielpalme/ReportGenerator) 来生成报表。 ReportGenerator 将由 Cobertura 生成的覆盖率报表转换为各种格式的用户可读的报表。
 
-本文基于示例浏览器中提供的[示例源代码项目](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs)。
+本文基于示例浏览器中提供的[示例源代码项目](/samples/dotnet/samples/unit-testing-code-coverage-cs)。
 
 ## <a name="system-under-test"></a>测试中的系统
 
@@ -301,7 +302,7 @@ reportgenerator
 - [GitHub - ReportGenerator 存储库](https://github.com/danielpalme/ReportGenerator)
 - [ReportGenerator 项目网站](https://danielpalme.github.io/ReportGenerator)
 - [.NET Core CLI 测试命令](../tools/dotnet-test.md)
-- [示例源代码](https://docs.microsoft.com/samples/dotnet/samples/unit-testing-code-coverage-cs)
+- [示例源代码](/samples/dotnet/samples/unit-testing-code-coverage-cs)
 
 ## <a name="next-steps"></a>后续步骤
 

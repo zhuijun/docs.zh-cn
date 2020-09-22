@@ -5,12 +5,12 @@ ms.date: 11/15/2017
 f1_keywords:
 - protectedinternal_CSharpKeyword
 author: sputier
-ms.openlocfilehash: a7537fba93c0d7145f04c6236d15c11b70f8bf98
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: f22de104154df74f02c048b1209eeac754a03e64
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89139432"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90536792"
 ---
 # <a name="protected-internal-c-reference"></a>受保护的内部成员（C# 参考）
 
@@ -79,4 +79,4 @@ class DerivedClass : BaseClass
 - [public](public.md)
 - [private](private.md)
 - [internal](internal.md)
-- [Internal Virtual 关键字的安全问题](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))
+- [Internal Virtual 关键字的安全问题](/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

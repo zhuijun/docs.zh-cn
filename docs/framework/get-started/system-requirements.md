@@ -9,12 +9,12 @@ helpviewer_keywords:
 - operating systems supported
 - hardware requirements
 ms.assetid: 298275e2-da1d-4618-9f74-6a3567832350
-ms.openlocfilehash: 92cc95f80d18251314db8d953520732841b0274c
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 6c14c94c0a2f88f28ec327a3463a6b525ef80ff6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557329"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557744"
 ---
 # <a name="net-framework-system-requirements"></a>.NET Framework 系统要求
 
@@ -99,7 +99,7 @@ ms.locfileid: "88557329"
 
 - Windows Server 2012 包括 .NET Framework 4.5，因此，你不必单独安装它。 同样，Windows Server 2012 R2 包括 .NET Framework 4.5.1。
 
-- .NET Framework 对 Windows Server 2008 R2 SP1 或更高版本的服务器核心角色的支持有限。 有关不受支持的 API 列表，请参阅[服务器核心 .NET 功能](https://docs.microsoft.com/previous-versions//dd745015(v=vs.85))。
+- .NET Framework 对 Windows Server 2008 R2 SP1 或更高版本的服务器核心角色的支持有限。 有关不受支持的 API 列表，请参阅[服务器核心 .NET 功能](/previous-versions//dd745015(v=vs.85))。
 
 - 适用于基于 Itanium 的系统的 Windows Server 2008 R2 不支持 .NET Framework。
 

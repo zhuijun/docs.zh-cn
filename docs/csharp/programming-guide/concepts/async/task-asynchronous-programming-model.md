@@ -3,12 +3,12 @@ title: 使用 Async和 Await 的任务异步编程 (TAP) 模型 (C#)
 description: 了解何时以及如何使用基于任务的异步编程，这是一种使用 C# 进行异步编程的简化方法。
 ms.date: 08/19/2020
 ms.assetid: 9bcf896a-5826-4189-8c1a-3e35fa08243a
-ms.openlocfilehash: 5e85b99025b31e205c66468d4bd886701cbaea17
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 1014e38dcb3e2c4f56c8b3f3dade9bdbff3abd27
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812078"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556032"
 ---
 # <a name="task-asynchronous-programming-model"></a>异步编程模型
 
@@ -43,7 +43,7 @@ C# 中的 [Async](../../../language-reference/keywords/async.md) 和 [Await](../
 
 下面的示例演示了一种异步方法。 你应对代码中的几乎所有内容都很熟悉。
 
-可从 [C# 中使用 Async 和 Await 的异步编程](https://docs.microsoft.com/samples/dotnet/samples/async-and-await-cs)中找到可供下载的完整 Windows Presentation Foundation (WPF) 示例。
+可从 [C# 中使用 Async 和 Await 的异步编程](/samples/dotnet/samples/async-and-await-cs)中找到可供下载的完整 Windows Presentation Foundation (WPF) 示例。
 
 :::code language="csharp" source="snippets/access-web/Program.cs" id="ControlFlow":::
 
@@ -121,7 +121,7 @@ string contents = await client.GetStringAsync("https://docs.microsoft.com/dotnet
 
 你可能想知道从何处可以找到 `GetStringAsync` 等支持异步编程的方法。 .NET Framework 4.5 或更高版本以及 .NET Core 包含许多可与 `async` 和 `await` 结合使用的成员。 可以通过追加到成员名称的“Async”后缀和 <xref:System.Threading.Tasks.Task> 或 <xref:System.Threading.Tasks.Task%601> 的返回类型，识别这些成员。 例如，`System.IO.Stream` 类包含 <xref:System.IO.Stream.CopyToAsync%2A>、<xref:System.IO.Stream.ReadAsync%2A> 和 <xref:System.IO.Stream.WriteAsync%2A> 等方法，以及同步方法 <xref:System.IO.Stream.CopyTo%2A>、<xref:System.IO.Stream.Read%2A> 和 <xref:System.IO.Stream.Write%2A>。
 
-Windows 运行时也包含许多可以在 Windows 应用中与 `async` 和 `await` 结合使用的方法。 有关详细信息，请参阅[线程处理和异步编程](/windows/uwp/threading-async/)进行 UWP 开发；如果使用的是旧版 Windows 运行时，还请参阅[异步编程（Windows 应用商店应用）](https://docs.microsoft.com/previous-versions/windows/apps/hh464924(v=win.10))和[快速入门：在 C# 或 Visual Basic 中调用异步 API](https://docs.microsoft.com/previous-versions/windows/apps/hh452713(v=win.10))。
+Windows 运行时也包含许多可以在 Windows 应用中与 `async` 和 `await` 结合使用的方法。 有关详细信息，请参阅[线程处理和异步编程](/windows/uwp/threading-async/)进行 UWP 开发；如果使用的是旧版 Windows 运行时，还请参阅[异步编程（Windows 应用商店应用）](/previous-versions/windows/apps/hh464924(v=win.10))和[快速入门：在 C# 或 Visual Basic 中调用异步 API](/previous-versions/windows/apps/hh452713(v=win.10))。
 
 ## <a name="threads"></a><a name="BKMK_Threads"></a>线程
 
@@ -214,7 +214,7 @@ Windows 运行时编程中的异步 API 具有下列返回类型之一（类似�
 
 | Title | 描述 | 示例 |
 |--|--|--|
-| [如何使用 Async 和 Await 并行发出多个 Web 请求 (C#)](how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md) | 演示如何同时开始几个任务。 | [异步示例：并行发出多个 Web 请求](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e) |
+| [如何使用 Async 和 Await 并行发出多个 Web 请求 (C#)](./index.md) | 演示如何同时开始几个任务。 | [异步示例：并行发出多个 Web 请求](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e) |
 | [异步返回类型 (C#)](async-return-types.md) | 描述异步方法可返回的类型，并解释每种类型适用于的情况。 |  |
 | 使用取消令牌作为信号机制来取消任务。 | 演示如何将以下功能添加到异步解决方案：<br><br> - [取消任务列表 (C#)](cancel-an-async-task-or-a-list-of-tasks.md)<br>- [在一段时间后取消任务 (C#)](cancel-async-tasks-after-a-period-of-time.md)<br>- [在异步任务完成时对其进行处理 (C#)](start-multiple-async-tasks-and-process-them-as-they-complete.md) |  |
 | [使用 Async 进行文件访问 (C#)](using-async-for-file-access.md) | 列出并演示使用 async 和 await 访问文件的好处。 |  |

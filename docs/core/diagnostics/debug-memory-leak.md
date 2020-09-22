@@ -3,12 +3,12 @@ title: 调试内存泄漏教程
 description: 了解如何调试 .NET Core 中的内存泄漏。
 ms.topic: tutorial
 ms.date: 04/20/2020
-ms.openlocfilehash: ff684f9b9402cb8b7b648e792a1d37ddcc96b399
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 7fa87a411606e81ffe91348c3cbce5f258a6e4e2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924885"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538587"
 ---
 # <a name="debug-a-memory-leak-in-net-core"></a>调试 .NET Core 中的内存泄漏
 
@@ -34,7 +34,7 @@ ms.locfileid: "86924885"
 - [dotnet-trace](dotnet-trace.md) 列出进程。
 - [dotnet-counters](dotnet-counters.md) 检查托管内存的使用情况。
 - [dotnet-dump](dotnet-dump.md) 收集和分析转储文件。
-- 要诊断的[示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/)应用。
+- 要诊断的[示例调试目标](/samples/dotnet/samples/diagnostic-scenarios/)应用。
 
 本教程假设已安装示例和工具并可供使用。
 
@@ -42,7 +42,7 @@ ms.locfileid: "86924885"
 
 在开始收集诊断数据以帮助分析本案例的根本原因时，需要确保实际看到的是内存泄漏（内存增加）。 可以使用 [dotnet-counters](dotnet-counters.md) 工具进行确认。
 
-打开控制台窗口并导航到下载并解压缩[示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/)的目录。 运行目标：
+打开控制台窗口并导航到下载并解压缩[示例调试目标](/samples/dotnet/samples/diagnostic-scenarios/)的目录。 运行目标：
 
 ```dotnetcli
 dotnet run
@@ -116,7 +116,7 @@ Press p to pause, r to resume, q to quit.
 
 分析可能的内存泄漏时，需要访问应用的内存堆。 然后可以分析内存内容。 查看对象之间的关系，可以创建理论说明内存未释放的原因。 常见的诊断数据源是 Windows 上的内存转储或 Linux 上的等效核心转储。 若要生成 .NET Core 应用程序转储，可以使用 [dotnet-dump)](dotnet-dump.md) 工具。
 
-使用之前启动的[示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/)，运行以下命令以生成 Linux 核心转储：
+使用之前启动的[示例调试目标](/samples/dotnet/samples/diagnostic-scenarios/)，运行以下命令以生成 Linux 核心转储：
 
 ```dotnetcli
 dotnet-dump collect -p 4807
@@ -133,7 +133,7 @@ Complete
 
 收集转储后，你应该有足够的信息来诊断失败的进程。 如果失败的进程在生产服务器上运行，现在是通过重新启动进程进行短期修正的理想时机。
 
-在本教程中，你已经完成了[示例调试目标](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios/)，现在可以将其关闭。 导航到启动服务器的终端并按 <kbd>Ctrl+C</kbd>。
+在本教程中，你已经完成了[示例调试目标](/samples/dotnet/samples/diagnostic-scenarios/)，现在可以将其关闭。 导航到启动服务器的终端并按 <kbd>Ctrl+C</kbd>。
 
 ### <a name="analyze-the-core-dump"></a>分析核心转储
 
@@ -146,7 +146,7 @@ dotnet-dump analyze core_20190430_185145
 其中 `core_20190430_185145` 是要分析的核心转储的名称。
 
 > [!NOTE]
-> 如果你看到报错“找不到 libdl.so  ”，则可能需要安装 libc6-dev  包。 有关详细信息，请参阅 [Linux 上 .NET Core 的先决条件](../install/dependencies.md?pivots=os-linux)。
+> 如果你看到报错“找不到 libdl.so  ”，则可能需要安装 libc6-dev  包。 有关详细信息，请参阅 [Linux 上 .NET Core 的先决条件](../install/linux.md)。
 
 此时会显示一个提示，可在其中输入 SOS 命令。 通常，首先要查看的是托管堆的整体状态：
 

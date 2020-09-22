@@ -2,12 +2,12 @@
 title: 代码分析中断性变更
 description: 列出 .NET Core 源代码分析器中的中断性变更。
 ms.date: 09/02/2020
-ms.openlocfilehash: 20badd69b316e1d87700b3c5061a71d648b71c64
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: 3cbe2ecf5d08084db542db0c2da016f1f391452e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065130"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538913"
 ---
 # <a name="code-analysis-breaking-changes"></a>代码分析中断性变更
 
@@ -21,6 +21,7 @@ ms.locfileid: "90065130"
 | [CA2013:请勿将 ReferenceEquals 与值类型结合使用](#ca2013-do-not-use-referenceequals-with-value-types) | 5.0 |
 | [CA2014:请勿在循环中使用 stackalloc](#ca2014-do-not-use-stackalloc-in-loops) | 5.0 |
 | [CA2015：请勿为派生自 \<T> 的类型定义终结器](#ca2015-do-not-define-finalizers-for-types-derived-from-memorymanagert) | 5.0 |
+| [CA2200:再次引发以保留堆栈详细信息](#ca2200-rethrow-to-preserve-stack-details) | 5.0 |
 | [CA2247：TaskCompletionSource 构造函数的参数应为 TaskCreationOptions 值](#ca2247-argument-to-taskcompletionsource-constructor-should-be-taskcreationoptions-value) | 5.0 |
 
 ## <a name="net-50"></a>.NET 5.0
@@ -46,6 +47,10 @@ ms.locfileid: "90065130"
 ***
 
 [!INCLUDE [finalizers-for-memorymanager-types](../../../includes/core-changes/codeanalysis/5.0/ca2015-finalizers-for-memorymanager-types.md)]
+
+***
+
+[!INCLUDE [ca2200-rethrow-to-preserve-stack-details](../../../includes/core-changes/codeanalysis/5.0/ca2200-rethrow-to-preserve-stack-details.md)]
 
 ***
 

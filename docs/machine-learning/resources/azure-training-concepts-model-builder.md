@@ -5,12 +5,12 @@ ms.topic: reference
 ms.date: 06/01/2020
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: 8622b580b7925adfd7895317815021f57960e9ee
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 1321967cacdd373acc19923f992d30c5453ea869
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86924573"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90556214"
 ---
 # <a name="model-builder-azure-training-resources"></a>模型生成器 Azure 培训资源
 
@@ -48,7 +48,7 @@ Azure 机器学习计算是基于云的 Linux VM，用于训练。
     | Standard_NC12   | 12 | 112 | 680  | 2 | 24 | 48 | 2 |
     | Standard_NC24   | 24 | 224 | 1440 | 4 | 48 | 64 | 4 |
 
-    有关 GPU 优化计算类型的更多详细信息，请访问 [NC 系列 Linux VM 文档](https://docs.microsoft.com/azure/virtual-machines/nc-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json)。
+    有关 GPU 优化计算类型的更多详细信息，请访问 [NC 系列 Linux VM 文档](/azure/virtual-machines/nc-series?bc=%252fazure%252fvirtual-machines%252flinux%252fbreadcrumb%252ftoc.json&toc=%252fazure%252fvirtual-machines%252flinux%252ftoc.json)。
 - 计算优先级
 
   - 低优先级：适用于执行时间较短的任务。 可能会受到中断和缺乏可用性的影响。 通常成本较低，因为它充分利用了 Azure 中的过剩容量。

@@ -3,12 +3,12 @@ title: 执行分组联接（C# 中的 LINQ）
 description: 了解如何使用 C# 中的 LINQ 执行分组联接。
 ms.date: 04/22/2020
 ms.assetid: 9667daf9-a5fd-4b43-a5c4-a9c2b744000e
-ms.openlocfilehash: 740a861da7dfb9653a874d5baf67eeb2030555b4
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 6411479c5fe6cb0ee79a0cd3df6de2f4d42c26a2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135745"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542804"
 ---
 # <a name="perform-grouped-joins"></a>执行分组联接
 
@@ -20,7 +20,7 @@ ms.locfileid: "82135745"
 > 第一个集合的每个元素都会出现在分组联接的结果集中（无论是否在第二个集合中找到关联元素）。 在未找到任何相关元素的情况下，该元素的相关元素序列为空。 因此，结果选择器有权访问第一个集合的每个元素。 这与非分组联接中的结果选择器不同，后者无法访问第一个集合中在第二个集合中没有匹配项的元素。
 
 > [!WARNING]
-> <xref:System.Linq.Enumerable.GroupJoin%2A?displayProperty=nameWithType> 在传统关系数据库术语中没有直接等效项。 但是，此方法实现了内部联接和左外部联接的超集。 这两个操作都可以按照分组联接进行编写。 有关详细信息，请参阅[联接操作](../programming-guide/concepts/linq/join-operations.md)和 [Entity Framework Core，GroupJoin](https://docs.microsoft.com/ef/core/querying/complex-query-operators#groupjoin)。
+> <xref:System.Linq.Enumerable.GroupJoin%2A?displayProperty=nameWithType> 在传统关系数据库术语中没有直接等效项。 但是，此方法实现了内部联接和左外部联接的超集。 这两个操作都可以按照分组联接进行编写。 有关详细信息，请参阅[联接操作](../programming-guide/concepts/linq/join-operations.md)和 [Entity Framework Core，GroupJoin](/ef/core/querying/complex-query-operators#groupjoin)。
 
 本文的第一个示例演示如何执行分组联接。 第二个示例演示如何使用分组联接创建 XML 元素。
 

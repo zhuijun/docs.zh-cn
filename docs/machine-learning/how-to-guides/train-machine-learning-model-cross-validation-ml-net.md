@@ -5,12 +5,12 @@ ms.date: 08/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to,title-hack-0625
-ms.openlocfilehash: 87eae789478752423f3e682d4db6cead0391aa6e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 02cec3d22588d8f10d36216422bc19faafffe94b
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73976930"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679516"
 ---
 # <a name="train-a-machine-learning-model-using-cross-validation"></a>使用交叉验证来训练机器学习模型
 
@@ -50,9 +50,9 @@ public class HousingData
 
 ## <a name="prepare-the-data"></a>准备数据
 
-在使用数据生成机器学习模型之前预处理数据。 在此示例中，`Size` 和 `HistoricalPrices` 列合并为一个特征向量，其使用 [`Concatenate`](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate*) 方法输出到名为 `Features` 的新列。 除了将数据转换为 ML.NET 算法所期望的格式之外，连接列还通过对连接的列应用一次操作（而不是对每个单独的列应用操作），优化了管道中的后续操作。
+在使用数据生成机器学习模型之前预处理数据。 在此示例中，`Size` 和 `HistoricalPrices` 列合并为一个特征向量，其使用 [`Concatenate`](xref:Microsoft.ML.TransformExtensionsCatalog.Concatenate%2A) 方法输出到名为 `Features` 的新列。 除了将数据转换为 ML.NET 算法所期望的格式之外，连接列还通过对连接的列应用一次操作（而不是对每个单独的列应用操作），优化了管道中的后续操作。
 
-将列合并为单个向量后，[`NormalizeMinMax`](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax*) 将应用于 `Features` 列，以使 `Size` 和 `HistoricalPrices` 处于 0-1 之间的同一范围内。
+将列合并为单个向量后，[`NormalizeMinMax`](xref:Microsoft.ML.NormalizationCatalog.NormalizeMinMax%2A) 将应用于 `Features` 列，以使 `Size` 和 `HistoricalPrices` 处于 0-1 之间的同一范围内。
 
 ```csharp
 // Define data prep estimator
@@ -69,7 +69,7 @@ IDataView transformedData = dataPrepTransformer.Transform(data);
 
 ## <a name="train-model-with-cross-validation"></a>使用交叉验证训练模型
 
-预处理数据后，即可开始训练模型。 首先，选择最符合要执行的机器学习任务要求的算法。 因为预测值是数字连续值，所以任务是回归任务。 ML.NET 实现的其中一个回归算法是 [`StochasticDualCoordinateAscentCoordinator`](xref:Microsoft.ML.Trainers.SdcaRegressionTrainer) 算法。 若要使用交叉验证来训练模型，请使用 [`CrossValidate`](xref:Microsoft.ML.RegressionCatalog.CrossValidate*) 方法。
+预处理数据后，即可开始训练模型。 首先，选择最符合要执行的机器学习任务要求的算法。 因为预测值是数字连续值，所以任务是回归任务。 ML.NET 实现的其中一个回归算法是 [`StochasticDualCoordinateAscentCoordinator`](xref:Microsoft.ML.Trainers.SdcaRegressionTrainer) 算法。 若要使用交叉验证来训练模型，请使用 [`CrossValidate`](xref:Microsoft.ML.RegressionCatalog.CrossValidate%2A) 方法。
 
 > [!NOTE]
 > 尽管此示例使用线性回归模型，但 CrossValidate 适用于 ML.NET 中除异常情况检测之外的所有其他机器学习任务。
@@ -82,11 +82,11 @@ IEstimator<ITransformer> sdcaEstimator = mlContext.Regression.Trainers.Sdca();
 var cvResults = mlContext.Regression.CrossValidate(transformedData, sdcaEstimator, numberOfFolds: 5);
 ```
 
-[`CrossValidate`](xref:Microsoft.ML.RegressionCatalog.CrossValidate*) 执行以下操作：
+[`CrossValidate`](xref:Microsoft.ML.RegressionCatalog.CrossValidate%2A) 执行以下操作：
 
 1. 将数据分为多个分区，数量为 `numberOfFolds` 参数中指定的值。 每个分区的结果是一个 [`TrainTestData`](xref:Microsoft.ML.DataOperationsCatalog.TrainTestData) 对象。
 1. 使用训练数据集上的指定机器学习算法估算器在每个分区上训练模型。
-1. 每个模型的性能在测试数据集上使用 [`Evaluate`](xref:Microsoft.ML.RegressionCatalog.Evaluate*) 方法进行评估。
+1. 每个模型的性能在测试数据集上使用 [`Evaluate`](xref:Microsoft.ML.RegressionCatalog.Evaluate%2A) 方法进行评估。
 1. 为每个模型返回模型及其指标。
 
 `cvResults` 中存储的结果是 [`CrossValidationResult`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601) 对象的集合。 此对象包括经过训练的模型以及可分别从 [`Model`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Model) 和 [`Metrics`](xref:Microsoft.ML.TrainCatalogBase.CrossValidationResult%601.Metrics) 属性访问的指标。 在此示例中，`Model` 属性为 [`ITransformer`](xref:Microsoft.ML.ITransformer) 类型，`Metrics` 属性为 [`RegressionMetrics`](xref:Microsoft.ML.Data.RegressionMetrics) 类型。

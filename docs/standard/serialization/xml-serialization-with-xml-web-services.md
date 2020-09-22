@@ -18,18 +18,18 @@ helpviewer_keywords:
 - literal XML serialization
 - serialization, attributes
 ms.assetid: a416192f-8102-458e-bc0a-0b8f3f784da9
-ms.openlocfilehash: b03c25f745df9aa4afe44075506983cb14ed3da7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 8464122d4849271ba76edd6b3400ed09d7429821
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84288948"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90542002"
 ---
 # <a name="xml-serialization-with-xml-web-services"></a>使用 XML Web services 进行 XML 序列化
-XML 序列化是在 XML Web services 体系结构中使用的基础传输机制，由 <xref:System.Xml.Serialization.XmlSerializer> 类执行。 要控制由 XML Web service 生成的 XML，可以对用于创建 XML Web service (.asmx) 的文件的类、返回值、参数和字段应用 [控制 XML 序列化的特性](attributes-that-control-xml-serialization.md)和 [控制编码的 SOAP 序列化的特性](attributes-that-control-encoded-soap-serialization.md)中列出的特性。 有关创建 XML Web service 的更多信息，请参阅[使用 ASP.NET 的 XML Web service](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100))。  
+XML 序列化是在 XML Web services 体系结构中使用的基础传输机制，由 <xref:System.Xml.Serialization.XmlSerializer> 类执行。 要控制由 XML Web service 生成的 XML，可以对用于创建 XML Web service (.asmx) 的文件的类、返回值、参数和字段应用 [控制 XML 序列化的特性](attributes-that-control-xml-serialization.md)和 [控制编码的 SOAP 序列化的特性](attributes-that-control-encoded-soap-serialization.md)中列出的特性。 有关创建 XML Web service 的更多信息，请参阅[使用 ASP.NET 的 XML Web service](/previous-versions/dotnet/netframework-4.0/ba0z6a33(v=vs.100))。  
   
 ## <a name="literal-and-encoded-styles"></a>文本样式和编码样式  
- XML Web service 生成的 XML 可以用两种方式设置格式，一种是文本方式，另一种是编码方式，如[自定义 SOAP 消息格式设置](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100))中所述。 因此有两组控制 XML 序列化的属性。 [控制 XML 序列化的特性](attributes-that-control-xml-serialization.md)中列出的属性旨在控制文本样式的 XML。 [控制编码的 SOAP 序列化的特性](attributes-that-control-encoded-soap-serialization.md)中列出的特性控制编码样式。 通过有选择地应用这些属性，可以调整应用程序，使其返回两种样式或其中一种。 而且，这些特性可以根据需要应用于返回值和参数。  
+ XML Web service 生成的 XML 可以用两种方式设置格式，一种是文本方式，另一种是编码方式，如[自定义 SOAP 消息格式设置](/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100))中所述。 因此有两组控制 XML 序列化的属性。 [控制 XML 序列化的特性](attributes-that-control-xml-serialization.md)中列出的属性旨在控制文本样式的 XML。 [控制编码的 SOAP 序列化的特性](attributes-that-control-encoded-soap-serialization.md)中列出的特性控制编码样式。 通过有选择地应用这些属性，可以调整应用程序，使其返回两种样式或其中一种。 而且，这些特性可以根据需要应用于返回值和参数。  
   
 ### <a name="example-of-using-both-styles"></a>使用两种样式的示例  
  创建 XML Web services 时，可以对方法使用两组特性。 在下面的代码示例中，名为 `MyService` 的类包含两种 XML Web services 方法：`MyLiteralMethod` 和 `MyEncodedMethod`。 这两种方法执行相同的功能，即返回 `Order` 类的实例。 在 `Order` 类中，<xref:System.Xml.Serialization.XmlTypeAttribute> 和 <xref:System.Xml.Serialization.SoapTypeAttribute> 特性都应用于 `OrderID` 字段，且这两个特性的 `ElementName` 属性设置为不同的值。  

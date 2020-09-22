@@ -2,12 +2,12 @@
 title: dotnet test 命令
 description: dotnet test 命令可用于在给定项目中执行单元测试。
 ms.date: 04/29/2020
-ms.openlocfilehash: d67521084330b206afca89baf59228b99ca799a1
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 5ecfa24905537a663cd967142b765c258495fb22
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656750"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537727"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
@@ -77,7 +77,7 @@ dotnet test -h|--help
 
 - **`--blame-crash`** （自 .NET 5.0 预览版 SDK 起可用）
 
-  在追责模式下运行测试，并在测试主机意外退出时收集故障转储。 此选项仅可用于 Windows。 包含 procdump.exe 和 procdump64.exe 的目录必须位于 PATH 或 PROCDUMP_PATH 环境变量中。 [下载工具](https://docs.microsoft.com/sysinternals/downloads/procdump)。 意味着 `--blame`。
+  在追责模式下运行测试，并在测试主机意外退出时收集故障转储。 此选项仅可用于 Windows。 包含 procdump.exe 和 procdump64.exe 的目录必须位于 PATH 或 PROCDUMP_PATH 环境变量中。 [下载工具](/sysinternals/downloads/procdump)。 意味着 `--blame`。
 
 - **`--blame-crash-dump-type <DUMP_TYPE>`** （自 .NET 5.0 预览版 SDK 起可用）
 

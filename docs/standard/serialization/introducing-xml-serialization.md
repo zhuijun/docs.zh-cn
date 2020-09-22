@@ -13,12 +13,12 @@ helpviewer_keywords:
 - DataSet class, serializing
 - XML Schema, serializing
 ms.assetid: 8c63200d-db63-4a03-a93d-21641623df62
-ms.openlocfilehash: d9b71b7530debde7708ee107c990541e2b97cd44
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 334cb3fe40c310189018d924aef552ecd87e9a65
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84277955"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90535405"
 ---
 # <a name="xml-serialization"></a>XML 序列化
 
@@ -39,7 +39,7 @@ ms.locfileid: "84277955"
 
  XmlSerializer 类可以进一步序列化对象并生成编码的 SOAP XML 流。 生成的 XML 符合万维网联合会文档“简单对象访问协议 (SOAP) 1.1”(Simple Object Access Protocol (SOAP) 1.1) 的第 5 节。 有关此进程的详细信息，请参阅[如何：将对象序列化为 SOAP 编码的 XML 流](how-to-serialize-an-object-as-a-soap-encoded-xml-stream.md)。 有关可控制生成的 XML 的特性的表格，请参阅[控制编码的 SOAP 序列化的特性](attributes-that-control-encoded-soap-serialization.md)。
 
- XmlSerializer 类生成由 XML Web 服务创建并传递给 XML Web 服务的 SOAP 信息。 要控制 SOAP 消息，可以将特性应用于在 XML Web services 文件 (.asmx) 中找到的类、返回值、参数和字段。 由于 XML Web services 可以使用文本或编码的 SOAP 样式，因此既可以使用“用来控制 XML 序列化的特性”中列出的特性，也可以使用“用来控制编码的 SOAP 序列化的特性”中列出的特性。 有关使用特性来控制由 XML Web 服务生成的 XML 的详细信息，请参阅[使用 XML Web 服务进行 XML 序列化](xml-serialization-with-xml-web-services.md)。 有关 SOAP 和 XML Web 服务的详细信息，请参阅[自定义 SOAP 消息格式](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100))。
+ XmlSerializer 类生成由 XML Web 服务创建并传递给 XML Web 服务的 SOAP 信息。 要控制 SOAP 消息，可以将特性应用于在 XML Web services 文件 (.asmx) 中找到的类、返回值、参数和字段。 由于 XML Web services 可以使用文本或编码的 SOAP 样式，因此既可以使用“用来控制 XML 序列化的特性”中列出的特性，也可以使用“用来控制编码的 SOAP 序列化的特性”中列出的特性。 有关使用特性来控制由 XML Web 服务生成的 XML 的详细信息，请参阅[使用 XML Web 服务进行 XML 序列化](xml-serialization-with-xml-web-services.md)。 有关 SOAP 和 XML Web 服务的详细信息，请参阅[自定义 SOAP 消息格式](/previous-versions/dotnet/netframework-4.0/dkwy2d72(v=vs.100))。
 
 ## <a name="security-considerations-for-xmlserializer-applications"></a>XmlSerializer 应用程序的安全注意事项
 

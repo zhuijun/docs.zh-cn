@@ -7,14 +7,15 @@ helpviewer_keywords:
 - interoperation with unmanaged code, exposing COM components
 - COM interop, exposing COM components
 ms.assetid: e78b14f1-e487-43cd-9c6d-1a07483f1730
-ms.openlocfilehash: 459ba7ffed2e4f6c458f89a63b2baa37180d270d
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 34dda58d9513874169927164706fafdd95e8ed84
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620841"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90554177"
 ---
 # <a name="exposing-com-components-to-the-net-framework"></a>向 .NET Framework 公开 COM 组件
-本部分概述向托管代码公开现有 COM 组件所需的步骤。 有关编写与 .NET Framework 紧密集成的 COM 服务器的详细信息，请参阅[互操作的设计注意事项](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))。
+本部分概述向托管代码公开现有 COM 组件所需的步骤。 有关编写与 .NET Framework 紧密集成的 COM 服务器的详细信息，请参阅[互操作的设计注意事项](/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))。
   
  作为中间层业务应用程序或独立功能，现有 COM 组件是托管代码中的宝贵资源。 理想的组件具有主互操作程序集，且完全符合 COM 实施的编程标准。  
   
@@ -24,7 +25,7 @@ ms.locfileid: "85620841"
   
      公共语言运行时需要包括 COM 类型在内的所有类型的元数据。 有多种方法来获取包含 COM 类型（作为元数据导入）的程序集。  
   
-2. [在托管代码中使用 COM 类型](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100)).  
+2. [在托管代码中使用 COM 类型](/previous-versions/dotnet/netframework-4.0/3y76b69k(v=vs.100)).  
   
      可检查 COM 类型、激活实例，并采用在任何托管类型上进行调用的方式在 COM 对象上调用方法。  
   
@@ -39,7 +40,7 @@ ms.locfileid: "85620841"
 ## <a name="see-also"></a>请参阅
 
 - [与非托管代码交互操作](index.md)
-- [互操作的设计注意事项](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))
+- [互操作的设计注意事项](/previous-versions/dotnet/netframework-4.0/61aax4kh(v=vs.100))
 - [COM 互操作示例：.NET 客户端和 COM 服务器](com-interop-sample-net-client-and-com-server.md)
 - [语言独立性和与语言无关的组件](../../standard/language-independence-and-language-independent-components.md)
 - [Gacutil.exe（全局程序集缓存工具）](../tools/gacutil-exe-gac-tool.md)

@@ -3,18 +3,18 @@ title: 调试死锁 - .NET Core
 description: 本教程演示如何调试 .NET Core 中的锁定问题。
 ms.topic: tutorial
 ms.date: 07/20/2020
-ms.openlocfilehash: 6f060e1ae801eb4eacbbd1fb67110f827c37f597
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: d9a9328b376de5886d22ca7315f6d7d9d73fd2c2
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88557875"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90538691"
 ---
 # <a name="debug-a-deadlock-in-net-core"></a>调试 .NET Core 中的死锁
 
 **本文适用于：** ✔️ .NET Core 3.1 SDK 及更高版本
 
-本教程将介绍如何调试死锁情况。 使用提供的示例 [ASP.NET Core Web 应用](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios) 源代码存储库，可以故意造成死锁。 终结点将遇到线程挂起和线程累积。 你将了解如何使用各种工具来分析问题，例如核心转储、核心转储分析和进程跟踪。
+本教程将介绍如何调试死锁情况。 使用提供的示例 [ASP.NET Core Web 应用](/samples/dotnet/samples/diagnostic-scenarios) 源代码存储库，可以故意造成死锁。 终结点将遇到线程挂起和线程累积。 你将了解如何使用各种工具来分析问题，例如核心转储、核心转储分析和进程跟踪。
 
 在本教程中，你将：
 
@@ -31,13 +31,13 @@ ms.locfileid: "88557875"
 本教程使用：
 
 - [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core) 或更高版本
-- 用于触发场景的[示例调试目标 - Web 应用](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)
+- 用于触发场景的[示例调试目标 - Web 应用](/samples/dotnet/samples/diagnostic-scenarios)
 - 用于列出进程的 [dotnet-trace](dotnet-trace.md)
 - 收集和分析转储文件的 [dotnet-dump](dotnet-dump.md)
 
 ## <a name="core-dump-generation"></a>核心转储生成
 
-为了调查应用程序无响应问题，核心转储或内存转储允许你检查其线程的状态以及任何可能存在争用问题的锁定状态。 使用以下命令从示例根目录运行[示例调试](https://docs.microsoft.com/samples/dotnet/samples/diagnostic-scenarios)应用程序：
+为了调查应用程序无响应问题，核心转储或内存转储允许你检查其线程的状态以及任何可能存在争用问题的锁定状态。 使用以下命令从示例根目录运行[示例调试](/samples/dotnet/samples/diagnostic-scenarios)应用程序：
 
 ```dotnetcli
 dotnet run

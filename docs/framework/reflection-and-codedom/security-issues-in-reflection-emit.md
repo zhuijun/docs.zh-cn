@@ -12,12 +12,12 @@ helpviewer_keywords:
 - emitting dynamic assemblies,partial trust scenarios
 - dynamic assemblies, security
 ms.assetid: 0f8bf8fa-b993-478f-87ab-1a1a7976d298
-ms.openlocfilehash: d0ca26a1d0964c935137b0a30a5d7c78f93c597b
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 62bce7435887855f799d320736e6bce8f39e5999
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865237"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90558792"
 ---
 # <a name="security-issues-in-reflection-emit"></a>反射发出中的安全问题
 .NET Framework 提供了三种发出 Microsoft 中间语言 (MSIL) 的方式，每种方式都有其自身的安全问题：  
@@ -35,7 +35,7 @@ ms.locfileid: "86865237"
   
 <a name="Dynamic_Assemblies"></a>
 ## <a name="dynamic-assemblies"></a>动态程序集  
- 动态程序集是使用 <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType> 方法的重载创建的。 此方法的大多数重载在 .NET Framework 4 中已弃用，原因是取消了计算机范围的安全策略。 （请参阅[安全更改](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)。）其余的重载可由任意代码执行，而无论其信任级别如何。 这些重载分为两组：一组重载指定在创建动态程序集时要对该程序集应用的特性的列表，另一组重载则不会进行相应的指定。 如果没有通过在创建程序集时应用 <xref:System.Security.SecurityRulesAttribute> 属性来指定程序集的透明度模型，则从发出程序集继承透明度模型。  
+ 动态程序集是使用 <xref:System.AppDomain.DefineDynamicAssembly%2A?displayProperty=nameWithType> 方法的重载创建的。 此方法的大多数重载在 .NET Framework 4 中已弃用，原因是取消了计算机范围的安全策略。 （请参阅[安全更改](/previous-versions/dotnet/framework/security/security-changes)。）其余的重载可由任意代码执行，而无论其信任级别如何。 这些重载分为两组：一组重载指定在创建动态程序集时要对该程序集应用的特性的列表，另一组重载则不会进行相应的指定。 如果没有通过在创建程序集时应用 <xref:System.Security.SecurityRulesAttribute> 属性来指定程序集的透明度模型，则从发出程序集继承透明度模型。  
   
 > [!NOTE]
 > 对于在创建动态程序集之后通过使用 <xref:System.Reflection.Emit.AssemblyBuilder.SetCustomAttribute%2A> 方法对该程序集应用的特性，只有在将该程序集保存到磁盘并再次加载到内存中之后，这些特性才会起作用。  
@@ -138,7 +138,7 @@ ms.locfileid: "86865237"
   
 <a name="Version_Information"></a>
 ## <a name="version-information"></a>版本信息  
- 从 .NET Framework 4 开始，已取消计算机范围的安全策略，并且安全透明度已成为默认的强制机制。 请参阅[安全更改](https://docs.microsoft.com/previous-versions/dotnet/framework/security/security-changes)。  
+ 从 .NET Framework 4 开始，已取消计算机范围的安全策略，并且安全透明度已成为默认的强制机制。 请参阅[安全更改](/previous-versions/dotnet/framework/security/security-changes)。  
   
  从 .NET Framework 2.0 Service Pack 1 开始，在发出动态程序集和动态方法时不再需要带有 <xref:System.Security.Permissions.ReflectionPermissionFlag.ReflectionEmit?displayProperty=nameWithType> 标志的 <xref:System.Security.Permissions.ReflectionPermission>。 所有早期版本的 .NET Framework 都需要此标志。  
   

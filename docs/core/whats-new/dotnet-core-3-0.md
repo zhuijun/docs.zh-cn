@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: bf712e88d96a5c2c80c3ff50283d44e9c7717abb
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: ac2b4193849c56002c5bba35932f2882b987a0d6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608218"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537491"
 ---
 # <a name="whats-new-in-net-core-30"></a>.NET Core 3.0 的新增功能
 
@@ -136,7 +136,7 @@ dotnet publish -r <rid> -c Release
 
 最重要的是，剪裁后务必对应用进行测试。
 
-有关 IL 链接器工具的详细信息，请参阅[文档](https://aka.ms/dotnet-illink)，或访问 [mono/linker]( https://github.com/mono/linker) 存储库。
+有关 IL 链接器工具的详细信息，请参阅[文档](../deploying/trim-self-contained.md)，或访问 [mono/linker]( https://github.com/mono/linker) 存储库。
 
 ### <a name="tiered-compilation"></a>分层编译
 
@@ -329,9 +329,9 @@ Windows 提供丰富的本机 API，包括平面 C API、COM 和 WinRT 的形式
 
 ### <a name="msix-deployment"></a>MSIX 部署
 
-[MSIX](https://docs.microsoft.com/windows/msix/) 是新的 Windows 应用程序包格式。 可以使用它将 .NET Core 3.0 桌面应用程序部署到 Windows 10。
+[MSIX](/windows/msix/) 是新的 Windows 应用程序包格式。 可以使用它将 .NET Core 3.0 桌面应用程序部署到 Windows 10。
 
-使用 Visual Studio 2019 中的 [Windows 应用打包项目](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)，可以创建包含[独立式](../deploying/index.md#publish-self-contained) .NET Core 应用的 MSIX 包。
+使用 Visual Studio 2019 中的 [Windows 应用打包项目](/windows/uwp/porting/desktop-to-uwp-packaging-dot-net)，可以创建包含[独立式](../deploying/index.md#publish-self-contained) .NET Core 应用的 MSIX 包。
 
 .NET Core 项目文件必须在 `<RuntimeIdentifiers>` 属性中指定支持的运行时：
 

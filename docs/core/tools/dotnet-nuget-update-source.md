@@ -2,12 +2,12 @@
 title: dotnet nuget update source 命令
 description: dotnet nuget update source 命令在 NuGet 配置文件中更新现有源。
 ms.date: 03/20/2020
-ms.openlocfilehash: 42b1aec95cdd57e53f966400f6692a3d0150c16c
-ms.sourcegitcommit: 927b7ea6b2ea5a440c8f23e3e66503152eb85591
+ms.openlocfilehash: a8658c78c095ad4b9272d97200e1d6466cbe658b
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/16/2020
-ms.locfileid: "81463477"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90537849"
 ---
 # <a name="dotnet-nuget-update-source"></a>dotnet nuget update source
 
@@ -41,7 +41,7 @@ dotnet nuget update source -h|--help
 
 - **`--configfile <FILE>`**
 
-  NuGet 配置文件。 如果指定，则只使用此文件中的设置。 如果不指定，将使用当前目录中的配置文件的层次结构。 有关详细信息，请参阅[常见的 NuGet 配置](https://docs.microsoft.com/nuget/consume-packages/configuring-nuget-behavior)。
+  NuGet 配置文件。 如果指定，则只使用此文件中的设置。 如果不指定，将使用当前目录中的配置文件的层次结构。 有关详细信息，请参阅[常见的 NuGet 配置](/nuget/consume-packages/configuring-nuget-behavior)。
 
 - **`-p|--password <PASSWORD>`**
 
