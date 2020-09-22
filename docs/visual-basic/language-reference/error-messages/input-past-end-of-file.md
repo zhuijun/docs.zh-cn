@@ -4,23 +4,24 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID62
 ms.assetid: 65292704-6e7d-4622-9f50-eb655a59b016
-ms.openlocfilehash: 5da14c7a28ecdcd023fc6439cb6ed64444c1183b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c0cb0373fb0652e9600ac8651661708414561aca
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62013785"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873970"
 ---
-# <a name="input-past-end-of-file"></a><span data-ttu-id="769c3-102">输入超出文件尾</span><span class="sxs-lookup"><span data-stu-id="769c3-102">Input past end of file</span></span>
-<span data-ttu-id="769c3-103">任一`Input`语句正在读取的文件为空或其中的所有数据都使用，或者您都使用`EOF`函数和一个文件打开以进行二进制访问。</span><span class="sxs-lookup"><span data-stu-id="769c3-103">Either an `Input` statement is reading from a file that is empty or one in which all the data is used, or you used the `EOF` function with a file opened for binary access.</span></span>  
+# <a name="input-past-end-of-file"></a><span data-ttu-id="f02ff-102">输入超出文件尾</span><span class="sxs-lookup"><span data-stu-id="f02ff-102">Input past end of file</span></span>
+
+<span data-ttu-id="f02ff-103">`Input`语句读取的文件是空的，或者是使用所有数据的文件，或者使用的是以 `EOF` 二进制访问方式打开的文件。</span><span class="sxs-lookup"><span data-stu-id="f02ff-103">Either an `Input` statement is reading from a file that is empty or one in which all the data is used, or you used the `EOF` function with a file opened for binary access.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="769c3-104">更正此错误</span><span class="sxs-lookup"><span data-stu-id="769c3-104">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="f02ff-104">更正此错误</span><span class="sxs-lookup"><span data-stu-id="f02ff-104">To correct this error</span></span>  
   
-1. <span data-ttu-id="769c3-105">使用`EOF`函数之前`Input`语句，以检测到文件末尾。</span><span class="sxs-lookup"><span data-stu-id="769c3-105">Use the `EOF` function immediately before the `Input` statement to detect the end of the file.</span></span>  
+1. <span data-ttu-id="f02ff-105">在 `EOF` 语句前直接使用函数 `Input` 来检测文件的结尾。</span><span class="sxs-lookup"><span data-stu-id="f02ff-105">Use the `EOF` function immediately before the `Input` statement to detect the end of the file.</span></span>  
   
-2. <span data-ttu-id="769c3-106">如果为进行二进制访问打开该文件，则使用`Seek`和`Loc`。</span><span class="sxs-lookup"><span data-stu-id="769c3-106">If the file is opened for binary access, use `Seek` and `Loc`.</span></span>  
+2. <span data-ttu-id="f02ff-106">如果打开文件以进行二进制访问，请使用 `Seek` 和 `Loc` 。</span><span class="sxs-lookup"><span data-stu-id="f02ff-106">If the file is opened for binary access, use `Seek` and `Loc`.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="769c3-107">请参阅</span><span class="sxs-lookup"><span data-stu-id="769c3-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f02ff-107">另请参阅</span><span class="sxs-lookup"><span data-stu-id="f02ff-107">See also</span></span>
 
 - <xref:Microsoft.VisualBasic.FileSystem.Input%2A>
 - <xref:Microsoft.VisualBasic.FileSystem.EOF%2A>
