@@ -8,14 +8,15 @@ helpviewer_keywords:
 - XML processing instruction literal [Visual Basic]
 - processing instruction literal [Visual Basic]
 ms.assetid: cef4f7f8-0011-4f64-8602-795077ad4f15
-ms.openlocfilehash: 9bd1781e01bc4cbf1ce5da8c454ab2f5a679aead
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3d18e58cb643fa075f6eb08eb6fe909d27a6737b
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400171"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866413"
 ---
 # <a name="xml-processing-instruction-literal-visual-basic"></a>XML 处理指令文本 (Visual Basic)
+
 表示对象的文本 <xref:System.Xml.Linq.XProcessingInstruction> 。  
   
 ## <a name="syntax"></a>语法  
@@ -25,6 +26,7 @@ ms.locfileid: "84400171"
 ```  
   
 ## <a name="parts"></a>组成部分  
+
  `<?`  
  必需。 表示 XML 处理指令文本的开头。  
   
@@ -38,12 +40,14 @@ ms.locfileid: "84400171"
  必需。 表示处理指令的结束。  
   
 ## <a name="return-value"></a>返回值  
+
  一个 <xref:System.Xml.Linq.XProcessingInstruction> 对象。  
   
 ## <a name="remarks"></a>备注  
+
  XML 处理指令文本指示应用程序应如何处理 XML 文档。 当应用程序加载 XML 文档时，应用程序可以检查 XML 处理指令以确定如何处理文档。 应用程序解释和的含义 `piName` `piData` 。  
   
- XML 文档文本使用类似于 XML 处理指令的语法。 有关详细信息，请参阅[XML 文档文本](xml-document-literal.md)。  
+ XML 文档文本使用类似于 XML 处理指令的语法。 有关详细信息，请参阅 [XML 文档文本](xml-document-literal.md)。  
   
 > [!NOTE]
 > `piName`元素不能以字符串 "xml" 或 "xml" 开头，因为 xml 1.0 规范保留这些标识符。  
@@ -56,6 +60,7 @@ ms.locfileid: "84400171"
  Visual Basic 编译器将 XML 处理指令文本转换为对构造函数的调用 <xref:System.Xml.Linq.XProcessingInstruction.%23ctor%2A> 。  
   
 ## <a name="example"></a>示例  
+
  下面的示例创建一个处理指令，该指令标识 XML 文档的样式表。  
   
  [!code-vb[VbXMLSamples#28](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#28)]  

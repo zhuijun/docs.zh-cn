@@ -7,14 +7,15 @@ helpviewer_keywords:
 - GetType operator [Visual Basic]
 - GetType keyword [Visual Basic]
 ms.assetid: 4f733297-2503-4607-850c-15eba65fff90
-ms.openlocfilehash: 37644a9c37ffde084120c5f1e1ee8c87a04ffc3c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9ff207ea4f2b89ea30eb8f46a3e640ccf3789974
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84371150"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867009"
 ---
 # <a name="gettype-operator-visual-basic"></a>GetType 运算符 (Visual Basic)
+
 返回 <xref:System.Type> 指定类型的对象。 <xref:System.Type>对象提供有关类型的信息，如属性、方法和事件。  
   
 ## <a name="syntax"></a>语法  
@@ -25,12 +26,13 @@ GetType(typename)
   
 ## <a name="parameters"></a>参数  
   
-|参数|说明|  
+|参数|描述|  
 |---|---|  
 |`typename`|要获取其信息的类型的名称。|  
   
 ## <a name="remarks"></a>备注  
- `GetType`运算符返回 <xref:System.Type> 指定的对象 `typename` 。 可以在中传递任何已定义类型的名称 `typename` 。 其中包括：  
+
+ `GetType`运算符返回 <xref:System.Type> 指定的对象 `typename` 。 可以在中传递任何已定义类型的名称 `typename` 。 这包括：  
   
 - 任何 Visual Basic 数据类型，如 `Boolean` 或 `Date` 。  
   
@@ -53,6 +55,7 @@ GetType(typename)
 - 要比较两个对象引用，以确定它们是否引用相同类型的实例。 如果是，则 `GetType` 返回对同一对象的引用 <xref:System.Type> 。  
   
 ## <a name="example"></a>示例  
+
  以下示例显示 `GetType` 使用中的运算符。  
   
  [!code-vb[VbVbalrOperators#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#26)]  

@@ -4,25 +4,28 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Computer object
 ms.assetid: cc814d79-6f7f-4e54-8b9d-5ecfdd77a0b8
-ms.openlocfilehash: 25fd9d2fc52b27f34164b7ed95ed1ebce9919a33
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4e9019773c74aa570f52eb573677f687f2600419
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84372656"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867414"
 ---
 # <a name="mycomputer-object"></a>My.Computer 对象
+
 提供了用于操控计算机组件（如音频、时钟、键盘、文件系统等）的属性。  
   
 ## <a name="remarks"></a>备注  
+
  有关 `My.Computer` 对象所使用方法和属性的信息，请参阅 <xref:Microsoft.VisualBasic.Devices.Computer>。 基类 <xref:Microsoft.VisualBasic.Devices.ServerComputer> 提供所有项目中可用的成员。  
   
 ## <a name="requirements"></a>要求  
+
  **命名空间：** <xref:Microsoft.VisualBasic.Devices>  
   
- **类：** <xref:Microsoft.VisualBasic.Devices.Computer>（基类 <xref:Microsoft.VisualBasic.Devices.ServerComputer> 提供所有项目中可用的成员）。  
+ **类：** <xref:Microsoft.VisualBasic.Devices.Computer> 基类 (<xref:Microsoft.VisualBasic.Devices.ServerComputer> 提供) 的所有项目中可用的成员。  
   
- **程序集：** Visual Basic 运行时库（在 Microsoft. .dll 中）  
+ **程序集：** Microsoft.VisualBasic.dll) 中的 Visual Basic 运行时库 (  
   
 ## <a name="see-also"></a>另请参阅
 

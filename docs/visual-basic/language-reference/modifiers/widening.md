@@ -10,17 +10,19 @@ helpviewer_keywords:
 - Widening keyword [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: 646ae263-94d3-40a2-b0cc-64f619292f56
-ms.openlocfilehash: 69040bf48b44a54f7a231738b88db1cbc716ebb3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 14e0b026f4fc3b0bf202ea643a28d6f1a7df2b7c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84359898"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867651"
 ---
 # <a name="widening-visual-basic"></a>Widening (Visual Basic)
-指示转换运算符（ `CType` ）将类或结构转换为可以保存原始类或结构的所有可能值的类型。  
+
+指示转换运算符 (`CType`) 将类或结构转换为可以保存原始类或结构的所有可能值的类型。  
   
 ## <a name="converting-with-the-widening-keyword"></a>用扩大关键字转换  
+
  除了之外，转换过程必须指定 `Public Shared` `Widening` 。  
   
  扩大转换始终会在运行时成功，不会导致数据丢失。 示例包括 `Single` 对 `Double` `Char` `String` 其基类型的、向和派生的类型。 由于派生类型包含基类型的所有成员，因此是最新的转换，因此是基类型的实例。  
@@ -31,7 +33,7 @@ ms.locfileid: "84359898"
   
  [Operator Statement](../statements/operator-statement.md)  
   
- 有关扩展和收缩转换运算符的定义示例，请参阅[如何：定义转换运算符](../../programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)。  
+ 有关扩展和收缩转换运算符的定义示例，请参阅 [如何：定义转换运算符](../../programming-guide/language-features/procedures/how-to-define-a-conversion-operator.md)。  
   
 ## <a name="see-also"></a>另请参阅
 

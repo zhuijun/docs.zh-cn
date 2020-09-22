@@ -15,18 +15,20 @@ helpviewer_keywords:
 - MustOverride keyword [Visual Basic]
 - properties [Visual Basic], overriding
 ms.assetid: 6e9d9ad6-bb64-433f-b32b-3ef84293bf96
-ms.openlocfilehash: 1b20108a2d42e82c0af7598fde8d60a08fea28ec
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cf73f07b6e13d524281129e3c5d8dceceb90764c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396189"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867942"
 ---
 # <a name="mustoverride-visual-basic"></a>MustOverride (Visual Basic)
+
 指定在此类中未实现的属性或过程，并且在使用之前必须在派生类中重写该属性或过程。  
   
 ## <a name="remarks"></a>备注  
- `MustOverride`只能在属性或过程声明语句中使用。 指定的属性或过程 `MustOverride` 必须是类的成员，并且该类必须标记为[MustInherit](mustinherit.md)。  
+
+ `MustOverride`只能在属性或过程声明语句中使用。 指定的属性或过程 `MustOverride` 必须是类的成员，并且该类必须标记为 [MustInherit](mustinherit.md)。  
   
 ## <a name="rules"></a>规则  
   
@@ -34,9 +36,9 @@ ms.locfileid: "84396189"
   
 - **组合修饰符。** 不能 `MustOverride` `NotOverridable` `Overridable` `Shared` 在同一声明中同时指定、或。  
   
-- **隐藏和重写操作。** 隐藏和重写操作都可重新定义继承的元素，但这两种方法之间又具有很大的差异。 有关详细信息，请参阅[Visual Basic 中的隐藏](../../programming-guide/language-features/declared-elements/shadowing.md)。  
+- **隐藏和重写操作。** 隐藏和重写操作都可重新定义继承的元素，但这两种方法之间又具有很大的差异。 有关详细信息，请参阅 [Visual Basic 中的隐藏](../../programming-guide/language-features/declared-elements/shadowing.md)。  
   
-- **替代条款。** 除了在重写中外，不能使用的元素有时称为*纯虚拟*元素。  
+- **替代条款。** 除了在重写中外，不能使用的元素有时称为 *纯虚拟* 元素。  
   
  `MustOverride` 修饰符可用于下面的上下文中：  
   

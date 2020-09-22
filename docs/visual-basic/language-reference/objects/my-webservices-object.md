@@ -7,24 +7,27 @@ f1_keywords:
 helpviewer_keywords:
 - My.WebServices object
 ms.assetid: f188dc05-2c75-41b6-bb68-122d1c3110a2
-ms.openlocfilehash: a52f9f5f5b044273a45da5ef9478e2212def57a5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0b63b44c2cd9d55094fb83fed6c04e4de528a25c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84372357"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90867209"
 ---
 # <a name="mywebservices-object"></a>My.WebServices 对象
+
 提供用于创建和访问当前项目所引用的每个 XML Web service 的单个实例的属性。  
   
 ## <a name="remarks"></a>备注  
- `My.WebServices` 对象提供当前项目所引用的每个 Web 服务的实例。 按需实例化每个实例。 可以通过 `My.WebServices` 对象的属性访问这些 Web 服务。 该属性的名称与该属性所访问的 Web 服务的名称相同。 任何自 <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> 继承的类均为 Web 服务。 有关将 Web 服务添加到项目的信息，请参阅[访问应用程序 Web 服务](../../developing-apps/programming/accessing-application-web-services.md)。  
+
+ `My.WebServices` 对象提供当前项目所引用的每个 Web 服务的实例。 按需实例化每个实例。 可以通过 `My.WebServices` 对象的属性访问这些 Web 服务。 该属性的名称与该属性所访问的 Web 服务的名称相同。 任何自 <xref:System.Web.Services.Protocols.SoapHttpClientProtocol> 继承的类均为 Web 服务。 有关将 Web 服务添加到项目的信息，请参阅 [访问应用程序 Web 服务](../../developing-apps/programming/accessing-application-web-services.md)。  
   
- `My.WebServices`对象只公开与当前项目相关联的 Web 服务。 它不提供对引用 Dll 中声明的 Web 服务的访问权限。 若要访问 DLL 提供的 Web 服务，必须使用 Web 服务的限定名称，格式为*DllName*。*WebServiceName*。 有关详细信息，请参阅[访问应用程序 Web 服务](../../developing-apps/programming/accessing-application-web-services.md)。  
+ `My.WebServices`对象只公开与当前项目相关联的 Web 服务。 它不提供对引用 Dll 中声明的 Web 服务的访问权限。 若要访问 DLL 提供的 Web 服务，必须使用 Web 服务的限定名称，格式为 *DllName*。*WebServiceName*。 有关详细信息，请参阅 [访问应用程序 Web 服务](../../developing-apps/programming/accessing-application-web-services.md)。  
   
  对象及其属性不适用于 Web 应用程序。  
   
 ## <a name="properties"></a>属性  
+
  对象的每个属性都 `My.WebServices` 提供对当前项目所引用的 Web 服务的实例的访问。 属性的名称与属性所访问的 Web 服务的名称相同，属性类型与 Web 服务的类型相同。  
   
 > [!NOTE]
@@ -40,11 +43,12 @@ ms.locfileid: "84372357"
 > 通常， `Is` 或 `IsNot` 运算符必须读取属性的值才能执行比较。 但是，如果属性当前存储 `Nothing` ，则属性创建 Web 服务的新实例，然后返回该实例。 不过，Visual Basic 编译器会专门处理对象的属性 `My.WebServices` ，并允许 `Is` 或 `IsNot` 运算符检查属性的状态，而无需更改其值。  
   
 ## <a name="example"></a>示例  
+
  此示例调用 `FahrenheitToCelsius` XML Web service 的方法 `TemperatureConverter` ，并返回结果。  
   
  [!code-vb[VbVbalrMyWebService#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyWebService/VB/Form1.vb#1)]  
   
- 要使此示例正常运行，你的项目必须引用名为的 Web 服务 `Converter` ，并且该 web 服务必须公开 `ConvertTemperature` 方法。 有关详细信息，请参阅[访问应用程序 Web 服务](../../developing-apps/programming/accessing-application-web-services.md)。  
+ 要使此示例正常运行，你的项目必须引用名为的 Web 服务 `Converter` ，并且该 web 服务必须公开 `ConvertTemperature` 方法。 有关详细信息，请参阅 [访问应用程序 Web 服务](../../developing-apps/programming/accessing-application-web-services.md)。  
   
  此代码在 Web 应用程序项目中不起作用。  
   

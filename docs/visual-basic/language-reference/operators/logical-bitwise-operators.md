@@ -5,14 +5,15 @@ helpviewer_keywords:
 - operators [Visual Basic], logical
 - logical operators [Visual Basic], Visual Basic
 ms.assetid: 55de4889-7679-4859-8063-bee15abca53f
-ms.openlocfilehash: 281004809c7f5000f1c68ecb0db759aa30c78e39
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ec39b191f1a8374fd3b6c6d9a72841ec5510afe8
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401547"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866756"
 ---
 # <a name="logicalbitwise-operators-visual-basic"></a>逻辑/按位运算符 (Visual Basic)
+
 下面是 Visual Basic 中定义的逻辑/位运算符。  
   
  [And 运算符](and-operator.md)  

@@ -5,19 +5,20 @@ helpviewer_keywords:
 - operators [Visual Basic]
 - operators [Visual Basic], miscellaneous
 ms.assetid: 2423b3c5-fc3f-479c-bcd2-2c6ebe92814f
-ms.openlocfilehash: 3f352302ef875e66fe711187d891712fb32f219c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6aa6887b27f332e0c3084c70b3928cc3954266e0
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401519"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90866750"
 ---
-# <a name="miscellaneous-operators-visual-basic"></a>其他运算符（Visual Basic）
+# <a name="miscellaneous-operators-visual-basic"></a>其他操作员 (Visual Basic) 
+
 下面是 Visual Basic 中定义的其他运算符。  
   
 [?.null 条件运算符](null-conditional-operators.md)
 
-[?（） null-条件运算符](null-conditional-operators.md)
+[？ ( # A1 null-条件运算符](null-conditional-operators.md)
 
  [AddressOf 运算符](addressof-operator.md)  
   
