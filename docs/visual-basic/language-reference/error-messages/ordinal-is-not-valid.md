@@ -4,15 +4,16 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID452
 ms.assetid: 7459562b-cd4f-4590-95e0-6126ae3589a5
-ms.openlocfilehash: 7b9bd8435b56dd5e33d14eb35d76aacc7d60c8b5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 64f56b2ecace0ceafb310a175ea605e6959b7256
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84413047"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871384"
 ---
 # <a name="ordinal-is-not-valid"></a>序号无效
-对动态链接库（DLL）的调用会使用语法，指示使用数字而不是过程名称 `#num` 。 此错误具有以下可能的原因：  
+
+对动态链接库的调用 (DLL) 指示使用语法，而不是过程名称 `#num` 。 此错误具有以下可能的原因：  
   
 - 尝试将 `#num` 表达式转换为序号失败。  
   

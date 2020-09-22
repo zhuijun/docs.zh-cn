@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30001
 ms.assetid: 43c1b509-15f9-4e91-bcad-90bcb5f6f191
-ms.openlocfilehash: 5e83fda1a7e58cceb86bbd3e700a25b70be96587
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f1887e0cf71ee79f3fd0a991cd3038bcc910588c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400326"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870669"
 ---
 # <a name="statement-is-not-valid-in-a-namespace"></a>语句在命名空间中无效
+
 语句不能出现在命名空间级别。 命名空间级别唯一允许的声明为 module、interface、class、delegate、枚举和结构声明。  
   
  **错误 ID：** BC30001  

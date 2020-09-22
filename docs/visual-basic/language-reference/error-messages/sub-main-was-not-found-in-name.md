@@ -8,21 +8,22 @@ helpviewer_keywords:
 - BC30420
 - Sub Main error message
 ms.assetid: a006d57d-4dd3-46a7-9026-ca9a31470da7
-ms.openlocfilehash: 2ede68b20fb2066d98ad36ac14e8fcda97f49d88
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 17804ae5d2ed57ed2b270110e49dbaf73ce08d8b
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373935"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870548"
 ---
 # <a name="sub-main-was-not-found-in-name"></a>在“\<name>”中未找到“Sub Main”
+
 缺少 `Sub Main` 或为其指定了错误的位置。  
   
  **错误 ID：** BC30420  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-1. 提供缺少的 `Sub Main` 语句；如果它存在，则将其移动到代码中的适当位置。 有关的详细信息 `Sub Main` ，请参阅[Visual Basic 中的 Main 过程](../../programming-guide/program-structure/main-procedure.md)。  
+1. 提供缺少的 `Sub Main` 语句；如果它存在，则将其移动到代码中的适当位置。 有关的详细信息 `Sub Main` ，请参阅 [Visual Basic 中的 Main 过程](../../programming-guide/program-structure/main-procedure.md)。  
   
 2. 在**项目设计器**的**启动窗体**框中指定项目的启动对象的位置。  
   

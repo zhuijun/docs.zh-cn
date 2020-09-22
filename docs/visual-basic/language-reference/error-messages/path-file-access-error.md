@@ -4,19 +4,20 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID75
 ms.assetid: 6ce3a161-7316-46bd-a785-0d50e5414020
-ms.openlocfilehash: dfe96cd6eaa673438849fe8f799d46fa2617bfdd
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 70de8f9cb33ab3d889f4916ae3d5de48cd218092
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387252"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90871190"
 ---
 # <a name="pathfile-access-error"></a>路径/文件访问错误
+
 在文件访问或磁盘访问操作期间，操作系统无法在路径和文件名之间建立连接。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
-1. 请确保文件规范格式正确。 文件名可以包含完全限定的（绝对）或相对路径。 完全限定的路径以驱动器名称开头（如果路径位于另一个驱动器上），并列出从根到文件的显式路径。 未完全限定的任何路径都是相对于当前驱动器和目录的路径。  
+1. 请确保文件规范格式正确。 文件名可以包含完全限定的 (绝对) 或相对路径。 完全限定路径以驱动器名称开头 (如果路径位于另一个驱动器上) 并列出从根到文件的显式路径。 未完全限定的任何路径都是相对于当前驱动器和目录的路径。  
   
 2. 请确保未尝试保存将替换现有只读文件的文件。 如果是这种情况，请更改目标文件的只读属性，或使用不同的文件名保存该文件。  
   

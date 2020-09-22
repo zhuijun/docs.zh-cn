@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC31019
 ms.assetid: 0845b245-11bb-46fd-95ca-f6cef3c318ef
-ms.openlocfilehash: 087735722fcd4dd789e25aacf6eeefffb490dac5
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 73fce70c0740992e2e9159946d428d214576e163
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198194"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90870290"
 ---
-# <a name="unable-to-write-to-output-file-filename-error"></a>无法写入输出文件 "\<filename >"： \<错误 >
+# <a name="unable-to-write-to-output-file-filename-error"></a>无法写入输出文件“\<filename>”：\<error>
+
 创建文件时出现问题。  
   
  无法打开输出文件以进行写入。 文件（或包含该文件的文件夹）可能由另一个进程打开以供独占使用，或者可能设置了只读特性。  
@@ -45,18 +46,18 @@ ms.locfileid: "73198194"
   
 1. 打开你感兴趣的文件夹。  
   
-2. 单击 "**视图**" 图标，然后选择 "**详细信息**"。  
+2. 单击 " **视图** " 图标，然后选择 " **详细信息**"。  
   
-3. 右键单击列标题，然后从下拉列表中选择 "**属性**"。  
+3. 右键单击列标题，然后从下拉列表中选择 " **属性** "。  
   
 ### <a name="to-change-the-attributes-of-a-file-or-folder"></a>更改文件或文件夹的特性  
   
-1. 在**文件资源管理器**中，右键单击文件或文件夹，然后选择 "**属性**"。  
+1. 在 **文件资源管理器**中，右键单击文件或文件夹，然后选择 " **属性**"。  
   
 2. 在 "**常规**" 选项卡的 "**属性**" 部分中，清除 "**只读**" 复选框。  
   
-3. 按“确定”。  
+3. 按“确定”  。  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [与我们交流](/visualstudio/ide/feedback-options)
