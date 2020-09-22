@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - registry [Visual Basic]
 ms.assetid: 6e90eb8a-1a4e-4387-8a68-9287dc7875e8
-ms.openlocfilehash: 6a093a771933b278a3c43a60cf7640a3a4ee3cd6
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2f3b97396a6da199b07aee51d146ccb7ddf0abcb
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373247"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875555"
 ---
 # <a name="registry-summary-visual-basic"></a>注册表摘要 (Visual Basic)
+
 Visual Studio 语言关键字和运行时库成员按用途和使用进行组织。  
   
  `My`在注册表操作中，使用此功能可提供比这些元素更高的工作效率和性能。 有关详细信息，请参阅 <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>。  

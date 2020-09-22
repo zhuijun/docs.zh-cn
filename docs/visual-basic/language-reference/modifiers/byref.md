@@ -8,17 +8,19 @@ helpviewer_keywords:
 - ByRef keyword [Visual Basic]
 - ByRef keyword [Visual Basic], contexts
 ms.assetid: 4692e032-46f3-4e41-b0fa-3004364d9138
-ms.openlocfilehash: 0ad07aa206ec982e3120d5cededbb575a936e777
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e872c675d06290023ac697f1b129604c3c39d42c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373084"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875499"
 ---
 # <a name="byref-visual-basic"></a>ByRef (Visual Basic)
+
 指定以这样一种方式传递参数：被调用过程可以更改调用代码中参数的基础变量的值。  
   
 ## <a name="remarks"></a>备注  
+
  `ByRef` 修饰符可用于下面的上下文中：  
   
  [Declare Statement](../statements/declare-statement.md)  

@@ -2,24 +2,26 @@
 title: 修饰符
 ms.date: 07/20/2015
 ms.assetid: a49a0e51-d700-4705-9196-3e0eb582dda6
-ms.openlocfilehash: 80adc4521dcb1bb0c65981dae6f842168194eae7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6ee477e8d09ea7c8ea559ff8245784b2d0123141
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84372890"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875451"
 ---
 # <a name="modifiers-visual-basic"></a>修饰符 (Visual Basic)
+
 本节中的主题介绍 Visual Basic 运行时修饰符。  
   
 ## <a name="in-this-section"></a>本节内容  
- [Ansi](ansi.md)  
+
+ [适应](ansi.md)  
   
  [程序集](assembly.md)  
   
  [异步](async.md)  
   
- [自动](auto.md)  
+ [Auto](auto.md)  
   
  [RemoveHandler](byref.md)  
   
@@ -27,15 +29,15 @@ ms.locfileid: "84372890"
   
  [默认](default.md)  
   
- [友好](friend.md)  
+ [Friend](friend.md)  
   
- [在](in-generic-modifier.md)  
+ [位于](in-generic-modifier.md)  
   
  [迭代器](iterator.md)  
   
- [密钥](key.md)  
+ [Key](key.md)  
   
- [模块\<keyword>](module-keyword.md)  
+ [模块 \<keyword>](module-keyword.md)  
   
  [MustInherit](mustinherit.md)  
   
@@ -61,7 +63,7 @@ ms.locfileid: "84372890"
   
  [Partial](partial.md)  
   
- 专用   
+ [专用](private.md)  
   
  [私有受保护](private-protected.md)  
   
@@ -71,13 +73,13 @@ ms.locfileid: "84372890"
   
  [公共](public.md)  
   
- [只读](readonly.md)  
+ [ReadOnly](readonly.md)  
   
  [Shadows](shadows.md)  
   
  [共享](shared.md)  
   
- [静态](static.md)  
+ [Static](static.md)  
   
  [Unicode](unicode.md)  
   
@@ -88,4 +90,5 @@ ms.locfileid: "84372890"
  [WriteOnly](writeonly.md)  
   
 ## <a name="related-sections"></a>相关章节  
+
  [Visual Basic 语言参考](../index.md)  

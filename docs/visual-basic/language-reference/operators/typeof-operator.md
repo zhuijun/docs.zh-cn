@@ -12,14 +12,15 @@ helpviewer_keywords:
 - TypeOf operator [Visual Basic]
 - compatible data types [Visual Basic]
 ms.assetid: 33f65296-659a-4b9a-9a29-c2a91cff68b2
-ms.openlocfilehash: 0cce36073b53442bce63f966f3bd94bd5d70d2a8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0a01b49cf1e0bf9ad7b2ce541cee39cba83025ca
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84406319"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875304"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf 运算符 (Visual Basic)
+
 检查表达式的结果的运行时类型是否与指定的类型兼容。
   
 ## <a name="syntax"></a>语法  
@@ -33,6 +34,7 @@ result = TypeOf objectexpression IsNot typename
 ```  
   
 ## <a name="parts"></a>组成部分  
+
  `result`  
  返回。 一个 `Boolean` 值。  
   
@@ -43,6 +45,7 @@ result = TypeOf objectexpression IsNot typename
  必需。 任何数据类型名。  
   
 ## <a name="remarks"></a>备注  
+
  `TypeOf` 运算符确定 `objectexpression` 的运行时类型是否与 `typename` 兼容。 兼容性取决于 `typename` 的类型类别。 下表显示如何确定兼容性。  
   
 |`typename` 的类型类别|兼容性条件|  
@@ -56,6 +59,7 @@ result = TypeOf objectexpression IsNot typename
  `TypeOf` 始终与 `Is` 关键字一起使用来构造 `TypeOf`...`Is` 表达式，或与 `IsNot` 关键字一起使用来构造 `TypeOf`...`IsNot` 表达式。  
   
 ## <a name="example"></a>示例  
+
  下面的示例使用 `TypeOf`...`Is` 表达式测试具有不同数据类型的两个对象引用变量的类型兼容性。  
   
  [!code-vb[VbVbalrOperators#39](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#39)]  

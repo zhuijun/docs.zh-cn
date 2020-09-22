@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Inherits statement [Visual Basic]
 - Inherits statement [Visual Basic], syntax
 ms.assetid: 9e6fe042-9af3-4341-8093-fc3537770cf2
-ms.openlocfilehash: 5d88a01f90bc91a88229d19aa2368f8c71075b2f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: dd8fbc71fdc859bb127764951464278267c0984c
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404494"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875223"
 ---
 # <a name="inherits-statement"></a>Inherits Statement
+
 导致当前类或接口继承其他类或接口集的属性、变量、属性、过程和事件。  
   
 ## <a name="syntax"></a>语法  
@@ -28,9 +29,10 @@ Inherits basetypenames
   
 |术语|定义|  
 |---|---|  
-|`basetypenames`|必需。 此类派生自的类的名称。<br /><br /> \- 或 -<br /><br /> 此接口派生自的接口的名称。 使用逗号分隔多个名称。|  
+|`basetypenames`|必需。 此类派生自的类的名称。<br /><br /> - 或 -<br /><br /> 此接口派生自的接口的名称。 使用逗号分隔多个名称。|  
   
 ## <a name="remarks"></a>备注  
+
  如果使用，则 `Inherits` 语句必须是类或接口定义中的第一个非空白非注释行。 它应紧跟 `Class` 或 `Interface` 语句。  
   
  `Inherits`只能在类或接口中使用。 这意味着继承的声明上下文不能是源文件、命名空间、结构、模块、过程或块。  
@@ -52,11 +54,13 @@ Inherits basetypenames
  .NET Framework 中的接口继承示例是 <xref:System.Collections.ICollection> 从接口继承的接口 <xref:System.Collections.IEnumerable> 。 这会导致 <xref:System.Collections.ICollection> 继承遍历集合所需的枚举器的定义。  
   
 ## <a name="example"></a>示例  
+
  下面的示例使用 `Inherits` 语句来显示名为的类如何 `thisClass` 继承名为的基类的所有成员 `anotherClass` 。  
   
  [!code-vb[VbVbalrStatements#37](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#37)]  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示多个接口的继承。  
   
  [!code-vb[VbVbalrStatements#38](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#38)]  

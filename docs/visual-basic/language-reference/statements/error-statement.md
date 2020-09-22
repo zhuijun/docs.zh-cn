@@ -10,14 +10,15 @@ helpviewer_keywords:
 - run-time errors [Visual Basic], codes
 - errors [Visual Basic], simulating
 ms.assetid: 85cd5c59-5224-4f02-aaf5-fcfefab17a29
-ms.openlocfilehash: 35ba1f19654d1d23ac1ec73564bc36b0af4f6777
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f3f9f5ecb96686fe525e98cf64672d81a3145796
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404740"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90873272"
 ---
 # <a name="error-statement"></a>Error 语句
+
 模拟出现错误的情况。  
   
 ## <a name="syntax"></a>语法  
@@ -27,19 +28,21 @@ Error errornumber
 ```  
   
 ## <a name="parts"></a>组成部分  
+
  `errornumber`  
  必需。 可以是任何有效的错误号。  
   
 ## <a name="remarks"></a>备注  
+
  `Error`支持语句，以便向后兼容。 在新代码中，特别是在创建对象时，使用 `Err` 对象的 `Raise` 方法来生成运行时错误。  
   
  如果 `errornumber` 定义了，则在为 `Error` 对象的属性 `Err` 分配以下默认值之后，语句将调用错误处理程序：  
   
-|Property|“值”|  
+|属性|值|  
 |--------------|-----------|  
 |`Number`|指定为语句的参数的值 `Error` 。 可以是任何有效的错误号。|  
 |`Source`|当前 Visual Basic 项目的名称。|  
-|`Description`|对应于指定的函数的返回值的字符串表达式 `Error` `Number` （如果此字符串存在）。 如果该字符串不存在，则 `Description` 包含一个长度为零的字符串（""）。|  
+|`Description`|对应于指定的函数的返回值的字符串表达式 `Error` `Number` （如果此字符串存在）。 如果字符串不存在，则 `Description` 包含零长度字符串 ( "" ) 。|  
 |`HelpFile`|适当的 Visual Basic 帮助文件的完全限定驱动器、路径和文件名。|  
 |`HelpContext`|对应于属性的错误的相应 Visual Basic 帮助文件上下文 ID `Number` 。|  
 |`LastDLLError`|Zero。|  
@@ -50,6 +53,7 @@ Error errornumber
 > 某些 Visual Basic 主机应用程序无法创建对象。 请参阅宿主应用程序的文档，以确定它是否可以创建类和对象。  
   
 ## <a name="example"></a>示例  
+
  此示例使用 `Error` 语句生成错误号11。  
   
 ```vb  
@@ -58,9 +62,10 @@ Error 11   ' Simulate the "Division by zero" error.
 ```  
   
 ## <a name="requirements"></a>要求  
+
  **命名空间：** [Microsoft](../runtime-library-members.md)  
   
- **程序集：** Visual Basic 运行时库（在 Microsoft. .dll 中）  
+ **程序集：** Microsoft.VisualBasic.dll) 中的 Visual Basic 运行时库 (  
   
 ## <a name="see-also"></a>另请参阅
 

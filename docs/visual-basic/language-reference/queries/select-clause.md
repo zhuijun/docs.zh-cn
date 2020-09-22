@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Select clause [Visual Basic]
 - queries [Visual Basic], Select
 ms.assetid: 27a3f61c-5960-4692-9b91-4d0c4b6178fe
-ms.openlocfilehash: a909b1d79b10f82ece03bab788ae889c64b27124
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d96423efbee075a7ad257df72471c71e38e09b63
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84359689"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875745"
 ---
 # <a name="select-clause-visual-basic"></a>Select 子句 (Visual Basic)
+
 定义查询的结果。  
   
 ## <a name="syntax"></a>语法  
@@ -25,6 +26,7 @@ Select [ var1 = ] fieldName1 [, [ var2 = ] fieldName2 [...] ]
 ```  
   
 ## <a name="parts"></a>组成部分  
+
  `var1`  
  可选。 可用于引用列表达式的结果的别名。  
   
@@ -32,9 +34,10 @@ Select [ var1 = ] fieldName1 [, [ var2 = ] fieldName2 [...] ]
  必需。 要在查询结果中返回的字段的名称。  
   
 ## <a name="remarks"></a>备注  
+
  您可以使用 `Select` 子句来定义要从查询返回的结果。 这使您可以定义由查询创建的新匿名类型的成员，或指定查询所返回的命名类型的成员。 `Select`查询不需要子句。 如果未 `Select` 指定子句，则查询将基于为当前作用域标识的范围变量的所有成员返回一个类型。 有关详细信息，请参阅[匿名类型](../../programming-guide/language-features/objects-and-classes/anonymous-types.md)。 当查询创建命名类型时，它将返回类型为的结果， <xref:System.Collections.Generic.IEnumerable%601> 其中 `T` 是创建的类型。  
   
- `Select`子句可以引用当前范围内的任何变量。 这包括子句中标识的范围变量 `From` （或 `From` 子句）。 它还包括使用别名创建的任何新变量、、 `Aggregate` `Let` `Group By` 或 `Group Join` 子句，或者 `Select` 查询表达式中上一个子句中的变量。 `Select`子句还可以包括静态值。 例如，下面的代码示例演示一个查询表达式，其中子句将 `Select` 查询结果定义为具有四个成员的新匿名类型： `ProductName` 、 `Price` 、 `Discount` 和 `DiscountedPrice` 。 `ProductName`和 `Price` 成员值取自子句中定义的产品范围变量 `From` 。 `DiscountedPrice`成员值在子句中计算 `Let` 。 该 `Discount` 成员是一个静态值。  
+ `Select`子句可以引用当前范围内的任何变量。 这包括 `From` 子句中)  (或子句中标识的范围变量 `From` 。 它还包括使用别名创建的任何新变量、、 `Aggregate` `Let` `Group By` 或 `Group Join` 子句，或者 `Select` 查询表达式中上一个子句中的变量。 `Select`子句还可以包括静态值。 例如，下面的代码示例演示一个查询表达式，其中子句将 `Select` 查询结果定义为具有四个成员的新匿名类型： `ProductName` 、 `Price` 、 `Discount` 和 `DiscountedPrice` 。 `ProductName`和 `Price` 成员值取自子句中定义的产品范围变量 `From` 。 `DiscountedPrice`成员值在子句中计算 `Let` 。 该 `Discount` 成员是一个静态值。  
   
  [!code-vb[VbSimpleQuerySamples#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#27)]  
   
@@ -47,6 +50,7 @@ Select [ var1 = ] fieldName1 [, [ var2 = ] fieldName2 [...] ]
  [!code-vb[VbSimpleQuerySamples#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#29)]  
   
 ## <a name="example"></a>示例  
+
  下面的查询表达式使用 `From` 子句为集合声明范围变量 `cust` `customers` 。 `Select`子句选择客户名称和 ID 值，并填充 `CompanyName` `CustomerID` 新范围变量的和列。 `For Each`语句在每个返回的对象上循环，并显示 `CompanyName` `CustomerID` 每个记录的和列。  
   
  [!code-vb[VbSimpleQuerySamples#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#30)]  

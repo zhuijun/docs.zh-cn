@@ -10,14 +10,15 @@ helpviewer_keywords:
 - From clause [Visual Basic]
 - From statement [Visual Basic]
 ms.assetid: 83e3665e-68a0-4540-a3a3-3d777a0f95d5
-ms.openlocfilehash: 33680f49247b3b2a6082b3a6b27ca64f8401e42d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 120ba6da11bffc3a0e81873d1fd606633724723d
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396176"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875258"
 ---
 # <a name="from-clause-visual-basic"></a>From 子句 (Visual Basic)
+
 指定一个或多个范围变量以及要查询的集合。  
   
 ## <a name="syntax"></a>语法  
@@ -31,12 +32,13 @@ From element [ As type ] In collection [ _ ]
   
 |术语|定义|  
 |---|---|  
-|`element`|必需。 用于循环访问集合中的元素的*范围变量*。 `collection`当查询循环访问时，范围变量用于引用的每个成员 `collection` 。 必须为可枚举类型。|  
+|`element`|必需。 用于循环访问集合中的元素的 *范围变量* 。 `collection`当查询循环访问时，范围变量用于引用的每个成员 `collection` 。 必须为可枚举类型。|  
 |`type`|可选。 `element` 的类型。 如果未 `type` 指定，则 `element` 将从中推断出的类型 `collection` 。|  
 |`collection`|必需。 引用要查询的集合。 必须为可枚举类型。|  
   
 ## <a name="remarks"></a>备注  
- `From`子句用于标识查询的源数据和用于引用源集合中的元素的变量。 这些变量称为*范围变量*。 `From`对于查询，子句是必需的，除非 `Aggregate` 使用子句标识仅返回聚合结果的查询。 有关详细信息，请参阅[Aggregate 子句](aggregate-clause.md)。  
+
+ `From`子句用于标识查询的源数据和用于引用源集合中的元素的变量。 这些变量称为 *范围变量*。 `From`对于查询，子句是必需的，除非 `Aggregate` 使用子句标识仅返回聚合结果的查询。 有关详细信息，请参阅 [Aggregate 子句](aggregate-clause.md)。  
   
  您可以 `From` 在查询中指定多个子句，以标识要联接的多个集合。 指定多个集合时，它们将被单独循环访问，如果相关，可以联接它们。 您可以使用子句隐式联接集合 `Select` ，或使用 or 子句显式联接 `Join` 集合 `Group Join` 。 作为替代方法，您可以在单个子句中指定多个范围变量和集合 `From` ，其中每个相关范围变量和集合用逗号分隔开。 下面的代码示例演示了子句的两种语法选项 `From` 。  
   
@@ -65,6 +67,7 @@ From element [ As type ] In collection [ _ ]
 - 使用 `Skip` 、 `Take` 、 `Skip While` 和子句标识要返回的结果的各个部分 `Take While` 。  
   
 ## <a name="example"></a>示例  
+
  下面的查询表达式使用 `From` 子句为 `cust` 集合中的每个对象声明一个范围变量 `Customer` `customers` 。 `Where`子句使用范围变量将输出限制为指定区域的客户。 该 `For Each` 循环将在查询结果中显示每个客户的公司名称。  
   
  [!code-vb[VbSimpleQuerySamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#23)]  

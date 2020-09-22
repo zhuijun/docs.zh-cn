@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - objects [Visual Basic]
 ms.assetid: 651c73e4-dca8-402b-9c6b-e3902b3a3f4b
-ms.openlocfilehash: e927f69b7606866a0a9e8eadd59270f51ffc5e2b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 86852b8335c05f496ea7325ae3defd35c7532b38
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414215"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875409"
 ---
 # <a name="objects-visual-basic"></a>对象 (Visual Basic)
+
 本主题收录了记录 Visual Basic 运行时对象的其他主题的链接，并包含这些对象的成员过程、属性和事件表。  
   
 ## <a name="visual-basic-run-time-objects"></a>Visual Basic 运行时对象  
@@ -45,6 +46,6 @@ ms.locfileid: "84414215"
 |[My.WebServices 对象](my-webservices-object.md)|提供了用于创建和访问当前项目引用的每个 Web 服务实例的属性。|  
 |<xref:Microsoft.VisualBasic.FileIO.TextFieldParser>|提供分析结构化文本文件的方法和属性。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Visual Basic 语言参考](../index.md)

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - XML comments, recommended tags [Visual Basic]
 - comments, recommended XML tags
 ms.assetid: 294e0736-ff1e-498e-af83-6db71ed41a72
-ms.openlocfilehash: af57fc7d55c5cfda24a2fd9406b17dedee898760
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9f877ee3fc9d616dc1e946293489a8aab96ac2e1
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400094"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872792"
 ---
 # <a name="recommended-xml-tags-for-documentation-comments-visual-basic"></a>建议的用于文档注释的 XML 标记 (Visual Basic)
+
 Visual Basic 编译器可以在代码中将文档注释处理到 XML 文件中。 您可以使用其他工具将 XML 文件处理到文档中。  
   
  允许对代码构造（如类型和类型成员）使用 XML 注释。 对于分部类型，只有一个类型的部分可以有 XML 注释，尽管注释其成员没有限制。  
@@ -34,7 +35,7 @@ Visual Basic 编译器可以在代码中将文档注释处理到 XML 文件中�
 |[\<see>](see.md)<sup>1</sup>|[\<seealso>](seealso.md)<sup>1</sup>|[\<summary>](summary.md)|  
 |[\<typeparam>](typeparam.md)<sup>1</sup>|[\<value>](value.md)||  
   
- （<sup>1</sup>编译器验证语法。）  
+  (<sup>1</sup> 编译器验证语法。 )   
   
 > [!NOTE]
 > 如果要在文档注释的文本中显示尖括号，请使用 `&lt;` 和 `&gt;` 。 例如，该字符串 `"&lt;text in angle brackets&gt;"` 将显示为 `<text in angle brackets>` 。  

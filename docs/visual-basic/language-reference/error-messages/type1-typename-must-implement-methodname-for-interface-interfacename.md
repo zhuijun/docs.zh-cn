@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30149
 ms.assetid: 29d1b7f4-dca7-478c-bbe7-c657f342c183
-ms.openlocfilehash: 90d2b6d70390bfb732af4a5868c935de61d18f94
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8bf8872277ec901e066a8b950aaf3e61babfcc48
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408492"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872102"
 ---
 # <a name="type1typename-must-implement-methodname-for-interface-interfacename"></a>\<type1>“\<typename>”必须为接口“\<interfacename>”实现“\<methodname>”
+
 类或结构声明实现接口，但不实现由接口定义的过程。 必须实现接口的每个成员。  
   
  **错误 ID：** BC30149  

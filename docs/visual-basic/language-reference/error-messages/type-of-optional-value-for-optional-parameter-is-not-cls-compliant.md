@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC40042
 ms.assetid: 1d6eae29-4ad3-4434-bde4-a53b6051adf5
-ms.openlocfilehash: 8e53d036ead114d828d9035cef76cee72bf6b1db
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 77d23fff518cb3b0768264ddd07728e3ad6b9f91
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400287"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872210"
 ---
 # <a name="type-of-optional-value-for-optional-parameter-parametername-is-not-cls-compliant"></a>可选参数 \<parametername> 的可选值的类型不符合 CLS
+
 一个过程标记为 `<CLSCompliant(True)>`，但声明一个[可选](../modifiers/optional.md)参数，该参数具有不符合的类型的默认值。  
   
  一个过程要符合[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md) (CLS)，必须只使用符合 CLS 的类型。 这适用于参数的类型、返回类型及其所有本地变量的类型。 也适用于可选参数的默认值。  

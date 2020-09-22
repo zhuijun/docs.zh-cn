@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30002
 ms.assetid: b0faf204-57fd-44de-8c05-9db027eea663
-ms.openlocfilehash: 89e2d1d18b456c96f62d6b9ee1dd8dc9d41bf665
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 3c22e6a5199bd52cb9fae66a15a66ac9ce095e81
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84386927"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872197"
 ---
 # <a name="type-typename-is-not-defined"></a>未定义类型“\<typename>”
+
 语句引用了未定义的类型。 可在声明语句（如、、或）中定义类型 `Enum` `Structure` `Class` `Interface` 。  
   
  **错误 ID：** BC30002  
@@ -29,7 +30,7 @@ ms.locfileid: "84386927"
   
 - 如果定义了该类型，但在 Visual Basic 中未注册定义该类型的对象库或类型库，请单击 "**项目**" 菜单上的 "**添加引用**"，然后选择相应的对象库或类型库。  
   
-- 确保该类型位于作为目标 .NET Framework 配置文件的一部分的程序集中。 有关详细信息，请参阅[排查 .NET Framework 目标错误](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors)。  
+- 确保该类型位于作为目标 .NET Framework 配置文件的一部分的程序集中。 有关详细信息，请参阅 [.NET Framework 目标错误疑难解答](/visualstudio/msbuild/troubleshooting-dotnet-framework-targeting-errors)。  
   
 ## <a name="see-also"></a>另请参阅
 

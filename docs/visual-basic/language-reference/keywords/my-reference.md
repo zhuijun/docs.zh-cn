@@ -5,17 +5,18 @@ helpviewer_keywords:
 - My feature
 - My reference
 ms.assetid: 6f803bd7-21ff-4569-b1fe-b00a6678b1e3
-ms.openlocfilehash: f54ecf4f60a620818ea57093d8c2325cf2ed0d04
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 60dadc2918d4926c2b8bf1004a09d9b3a1ec56ab
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84373338"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90875578"
 ---
 # <a name="my-reference-visual-basic"></a>My 引用 (Visual Basic)
+
 此 `My` 功能通过使你能够以直观的方式访问常用的方法、属性和事件，使编程速度更快。 此表列出了中包含的对象 `My` 以及可以对每个对象执行的操作。  
   
-|**操作**|**对象**|  
+|**操作**|**Object**|  
 |----------------|----------------|  
 |访问应用程序信息和服务。|`My.Application` 对象由以下类组成：<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase> 提供了所有项目中的可用成员。<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> 提供了 Windows 窗体应用中的可用成员。<br /><br /> <xref:Microsoft.VisualBasic.ApplicationServices.ConsoleApplicationBase> 提供了控制台应用中的可用成员。|  
 |访问主机及其资源、服务和数据。|`My.Computer` (<xref:Microsoft.VisualBasic.Devices.Computer>)|  

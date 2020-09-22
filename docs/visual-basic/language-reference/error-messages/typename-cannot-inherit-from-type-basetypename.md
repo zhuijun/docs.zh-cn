@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - BC30910
 ms.assetid: 68fc05c5-5d55-4742-9a3b-ea04312594f4
-ms.openlocfilehash: aa04c558abbcc4259c2821cdcbdc1669b91ffee0
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5adb5a74c220c7b2f95ac7370040a7fa2bd34299
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402767"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872070"
 ---
 # <a name="typename-cannot-inherit-from-type-basetypename-because-it-expands-the-access-of-the-base-type-outside-the-assembly"></a>“\<typename>”将对基 \<type> 的访问扩展到程序集的外部，因此无法从 \<basetypename>“\<type>”继承
+
 类或接口继承自基类或接口，但具有限制性较低的访问级别。  
   
  例如， `Public` 接口从 `Friend` 接口继承，或 `Protected` 从 `Private` 类继承。 这会公开要访问的基类或接口超出目标级别。  
@@ -25,7 +26,7 @@ ms.locfileid: "84402767"
   
 - 更改派生类或接口的访问级别，使其至少与基类或接口的访问级别具有相同的限制。  
   
-     \- 或 -  
+     - 或 -  
   
 - 如果需要限制性较低的访问级别，请删除 `Inherits` 语句。 不能从更受限制的基类或接口继承。  
   
