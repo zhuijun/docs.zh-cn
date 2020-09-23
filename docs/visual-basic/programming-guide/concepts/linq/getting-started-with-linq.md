@@ -8,17 +8,19 @@ helpviewer_keywords:
 - LINQ [Visual Basic]
 - LINQ, Visual Basic
 ms.assetid: 53c66373-ff43-431f-b4bb-f98362830279
-ms.openlocfilehash: cea6a5973104d34c058a51c404c13d26dd1aab14
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2097eb9caccd65a7983244cd06cbc18759677be1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554379"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090308"
 ---
 # <a name="getting-started-with-linq-in-visual-basic"></a>Visual Basic 中的 LINQ 入门
+
 本部分包含可帮助您了解和使用 (LINQ) Visual Basic 和语言集成查询的概述、示例和背景信息。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [编写第一个 LINQ 查询](writing-your-first-linq-query.md)  
  介绍编写基本 LINQ 查询的三个阶段：获取数据源、编写查询和执行查询。  
   
@@ -35,6 +37,7 @@ ms.locfileid: "90554379"
  分步说明，介绍如何创建 Visual Basic LINQ 项目，如何添加简单的数据源，以及如何执行一些基本的查询操作。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [Visual Basic 中的 LINQ 简介](../../language-features/linq/introduction-to-linq.md)  
  概述 LINQ 中的查询并提供指向其他资源的链接。  
   

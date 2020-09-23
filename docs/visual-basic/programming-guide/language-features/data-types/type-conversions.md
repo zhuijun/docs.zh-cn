@@ -10,17 +10,19 @@ helpviewer_keywords:
 - changing data types [Visual Basic]
 - data type conversion [Visual Basic]
 ms.assetid: 1cdacd21-ba31-4b62-b5be-395e41eeaa17
-ms.openlocfilehash: be388998da5e88f99c62128e6ad63d5a476153ba
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ee8700ea757cee9c20e2598de029f54ae33a7114
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393047"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090152"
 ---
 # <a name="type-conversions-in-visual-basic"></a>Visual Basic 中的类型转换
-将值从一种数据类型更改为另一种类型的过程称为*转换*。 转换可以是*扩大*或*收缩*转换，具体取决于所涉及的类型的数据容量。 它们也是*隐式*或*显式*的，具体取决于源代码中的语法。  
+
+将值从一种数据类型更改为另一种类型的过程称为 *转换*。 转换可以是 *扩大* 或 *收缩*转换，具体取决于所涉及的类型的数据容量。 它们也是 *隐式* 或 *显式*的，具体取决于源代码中的语法。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [Widening and Narrowing Conversions](widening-and-narrowing-conversions.md)  
  说明按照目标类型是否可以保存数据进行分类的转换。  
   
@@ -37,6 +39,7 @@ ms.locfileid: "84393047"
  逐步介绍在不同数据类型的数组之间进行转换的过程。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [数据类型](index.md)  
  介绍 Visual Basic 数据类型，并说明如何使用它们。  
   

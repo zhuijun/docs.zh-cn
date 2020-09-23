@@ -2,14 +2,15 @@
 title: 无效模式字符串
 ms.date: 07/20/2015
 ms.assetid: ec1aecdb-5339-4a93-be71-eec56b1d7438
-ms.openlocfilehash: aa408f4cecc2a2774cb98cba96cd04a67afcc546
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5ef12ac27e96205f9ef1c964293847f56b11cb78
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402208"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090685"
 ---
 # <a name="invalid-pattern-string"></a>无效模式字符串
+
 在搜索的 `Like` 操作中指定的模式字符串无效。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
@@ -22,6 +23,6 @@ ms.locfileid: "84402208"
   
 4. 以右括号结束模式范围。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Like 运算符](../language-reference/operators/like-operator.md)

@@ -2,14 +2,15 @@
 title: 调用方信息
 ms.date: 07/20/2015
 ms.assetid: 15d556eb-4d0c-4497-98a3-7f60abb7d6a1
-ms.openlocfilehash: 93fb1e327d65ac19f293a2f77b7d5712fc5e8d2f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 33c7367626d66d1db2705fc2882ca0780d1b867f
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400663"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090347"
 ---
 # <a name="caller-information-visual-basic"></a>调用方信息 (Visual Basic)
+
 通过使用调用方信息特性，可获取有关方法的调用方的信息。 可以获取源代码的文件路径、源代码中的行号和调用方的成员名称。 此信息有助于跟踪、调试和创建诊断工具。  
   
  若要获取此信息，可以使用应用于可选参数的特性，每个特性都具有默认值。 下表列出在 <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> 命名空间中定义的调用方信息特性：  
@@ -21,6 +22,7 @@ ms.locfileid: "84400663"
 |<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|调用方的方法或属性名称。 请参阅本主题后面的[成员名称](#MEMBERNAMES)。|`String`|  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何使用调用方信息特性。 每次调用 `TraceMessage` 方法时，调用方信息将替换为可选参数的变量。  
   
 ```vb  
@@ -47,6 +49,7 @@ End Sub
 ```  
   
 ## <a name="remarks"></a>备注  
+
  你必须为每个可选参数指定显式默认值。 不能将调用方信息特性应用于未指定为可选的参数。  
   
  调用方信息特性不会使参数成为可选参数。 相反，它们会在忽略此参数时影响传入的默认值。  
@@ -55,7 +58,8 @@ End Sub
   
  你可显式提供可选参数来控制调用方信息或隐藏调用方信息。  
   
-### <a name="member-names"></a><a name="MEMBERNAMES"></a>成员名称  
+### <a name="member-names"></a><a name="MEMBERNAMES"></a> 成员名称  
+
  可以使用 `CallerMemberName` 特性来避免将成员名称指定为所调用的方法的 `String` 参数。 通过使用这种技术，可以避免“重命名重构”  不更改 `String` 值的问题。 此好处对于以下任务特别有用：  
   
 - 使用跟踪和诊断例程。  
@@ -79,4 +83,4 @@ End Sub
 - [特性 (Visual Basic)](../../language-reference/attributes.md)
 - [常见特性 (Visual Basic)](attributes/common-attributes.md)
 - [可选参数](../language-features/procedures/optional-parameters.md)
-- [编程概念（Visual Basic）](index.md)
+- [Visual Basic 的编程概念 () ](index.md)

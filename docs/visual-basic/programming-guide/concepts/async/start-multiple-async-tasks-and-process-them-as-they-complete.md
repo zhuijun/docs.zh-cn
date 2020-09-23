@@ -2,14 +2,15 @@
 title: 启动多个异步任务并在其完成时进行处理
 ms.date: 07/20/2015
 ms.assetid: 57ffb748-af40-4794-bedd-bdb7fea062de
-ms.openlocfilehash: e227029928676e21d3ed14450140e92b386bf216
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 52e4d786667a70730f311ca20a30acd7108107e3
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400792"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090364"
 ---
 # <a name="start-multiple-async-tasks-and-process-them-as-they-complete-visual-basic"></a>启动多个异步任务并在其完成时进行处理 (Visual Basic)
+
 通过使用 <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType>，可以同时启动多个任务，并在它们完成时逐个对它们进行处理，而不是按照它们的启动顺序进行处理。  
   
  下面的示例使用查询来创建一组任务。 每个任务都下载指定网站的内容。 在对 while 循环的每次迭代中，对 `WhenAny` 的等待调用返回任务集合中首先完成下载的任务。 此任务从集合中删除并进行处理。 循环重复进行，直到集合中不包含任何任务。  
@@ -18,7 +19,8 @@ ms.locfileid: "84400792"
 > 若要运行示例，计算机上必须安装有 Visual Studio 2012 或更高版本和 .NET Framework 4.5 或更高版本。  
   
 ## <a name="downloading-the-example"></a>下载示例  
- 若要下载完整的 Windows Presentation Foundation (WPF) 项目，请参阅 [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)（异步示例：微调应用程序），然后遵循以下步骤。  
+
+ 若要下载完整的 Windows Presentation Foundation (WPF) 项目，请参阅 [Async Sample:Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)（异步示例：微调应用程序）。  
   
 1. 解压缩下载的文件，然后启动 Visual Studio。  
   
@@ -26,7 +28,7 @@ ms.locfileid: "84400792"
   
 3. 在“打开项目”**** 对话框中，打开保存已解压的示例代码的文件夹，然后打开 AsyncFineTuningVB 的解决方案 (.sln) 文件。  
   
-4. 在“解决方案资源管理器”中，打开“ProcessTasksAsTheyFinish”项目的快捷菜单，选择“设为启动项目”。************  
+4. 在“解决方案资源管理器”中，打开“ProcessTasksAsTheyFinish”项目的快捷菜单，选择“设为启动项目”。    
   
 5. 选择 F5 键运行该项目。  
   
@@ -37,7 +39,8 @@ ms.locfileid: "84400792"
  如果不想下载项目，可在本主题末尾处查看 MainWindow.xaml.vb 文件。  
   
 ## <a name="building-the-example"></a>生成示例  
- 此示例将添加到在[完成一个异步任务（Visual Basic）后取消剩余异步任务](cancel-remaining-async-tasks-after-one-is-complete.md)中开发的代码，并使用相同的 UI。  
+
+ 此示例将添加到在 [完成一个异步任务后取消剩余异步任务 ](cancel-remaining-async-tasks-after-one-is-complete.md) 中开发的代码 (Visual Basic) 并使用相同的 UI。  
   
  若要自行生成示例，请按“下载示例”部分的说明逐步操作，但选择“CancelAfterOneTask”**** 作为“启动项目”****。 将此主题中的更改添加到项目中的 `AccessTheWebAsync` 方法。 这些更改标有星号。  
   
@@ -80,14 +83,15 @@ Dim downloadTasksQuery As IEnumerable(Of Task(Of Integer)) =
  应多次运行此项目以验证并不总是以相同顺序显示已下载的长度。  
   
 > [!CAUTION]
-> 如示例所示，可以在循环中使用 `WhenAny` 来解决涉及少量任务的问题。 但是，如果要处理大量任务，可以采用其他更高效的方法。 有关详细信息和示例，请参阅 [Processing Tasks as they complete](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/)（在任务完成时处理它们）。  
+> 如示例所示，可以在循环中使用 `WhenAny` 来解决涉及少量任务的问题。 但是，如果要处理大量任务，可以采用其他更高效的方法。 有关详细信息和示例，请参阅 [处理任务完成](https://devblogs.microsoft.com/pfxteam/processing-tasks-as-they-complete/)。  
   
-## <a name="complete-example"></a>完整示例  
+## <a name="complete-example"></a>完整的示例  
+
  下列代码是示例的 MainWindow.xaml.vb 文件的完整文本。 对添加到此示例的元素进行了星号标记。  
   
  请注意，必须为 <xref:System.Net.Http> 添加引用。  
   
- 可以从 [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)（异步示例：微调应用程序）下载这些项目。  
+ 可以从 [Async Sample:Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)（异步示例：微调应用程序）下载这些项目。  
   
 ```vb  
 ' Add an Imports directive and a reference for System.Net.Http.  
@@ -205,9 +209,9 @@ End Class
 ' Downloads complete.  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
 - [微调异步应用程序 (Visual Basic)](fine-tuning-your-async-application.md)
 - [使用 Async 和 Await 的异步编程 (Visual Basic)](index.md)
-- [Async Sample: Fine Tuning Your Application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)（异步示例：微调应用程序）
+- [异步示例：微调应用程序](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

@@ -36,14 +36,15 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-ms.openlocfilehash: b14c7a3f1f667e7c13ec0ae46185ed3ece92beb8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f9b343c664baaf316e5cd6df72da8dcf56222382
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84394047"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91090256"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Visual Basic 中的泛型类型 (Visual Basic)
+
 *泛型类型* 是可适应对多种数据类型执行相同功能的单个编程元素。 定义泛型类或过程时，无需为可能需要对其执行该功能的每个数据类型定义单独版本。  
   
  就好比是带有可拆卸刀头的螺丝刀。 你检查需要拧动的螺丝，然后选择适合该螺丝的刀头（一字、十字、星形）。 将正确的刀头插入到螺丝刀柄上后，你就可以使用螺丝刀执行完全相同的功能，即拧螺丝。  
@@ -61,6 +62,7 @@ ms.locfileid: "84394047"
  有关使用泛型类型的更多信息，请参阅 [How to: Use a Generic Class](how-to-use-a-generic-class.md)。  
   
 ## <a name="example-of-a-generic-class"></a>泛型类的示例。  
+
  下面的示例演示了泛型类的主干定义。  
   
  [!code-vb[VbVbalrDataTypes#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#2)]  
@@ -73,19 +75,21 @@ ms.locfileid: "84394047"
   
  [!code-vb[VbVbalrDataTypes#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#4)]  
   
- 有关更完整的示例，请参阅[如何：定义可在不同数据类型上提供相同功能的类](how-to-define-a-class-that-can-provide-identical-functionality.md)。  
+ 有关更完整的示例，请参阅 [如何：定义可在不同数据类型上提供相同功能的类](how-to-define-a-class-that-can-provide-identical-functionality.md)。  
   
 ## <a name="eligible-programming-elements"></a>合格的编程元素  
+
  你可以定义并使用泛型类、结构、接口、过程和委托。 请注意，.NET Framework 定义了几个泛型类、结构和表示常用泛型元素的接口。 <xref:System.Collections.Generic?displayProperty=nameWithType> 命名空间提供字典、列表、队列和堆栈。 在定义自己的泛型元素之前，请查看 <xref:System.Collections.Generic?displayProperty=nameWithType>中是否已提供了此元素。  
   
  过程不是类型，但可以定义并使用泛型过程。 请参阅 [Generic Procedures in Visual Basic](generic-procedures.md)。  
   
 ## <a name="advantages-of-generic-types"></a>泛型类型的优点  
+
  泛型类型用作声明几个不同编程元素的基础，而每个元素均处理特定的数据类型。 泛型类型的替代项有：  
   
 1. 对 `Object` 数据类型进行处理的单一类型。  
   
-2. 一组*特定于类型*的类型版本，每个版本单独进行编码并使用一种特定的数据类型（如 `String` 、 `Integer` ）或用户定义的类型（如） `customer` 。  
+2. 一组 *特定于类型* 的类型版本，每个版本单独进行编码并使用一种特定的数据类型（如 `String` 、 `Integer` ）或用户定义的类型（如） `customer` 。  
   
  与上述替代项相比，泛型类型具有以下优点：  
   
@@ -104,9 +108,11 @@ ms.locfileid: "84394047"
 - **泛型算法。** 独立于类型的抽象算法非常适用于泛型类型。 例如，可以将使用 <xref:System.IComparable> 接口对项进行排序的泛型过程用于可实现 <xref:System.IComparable>的任何数据类型。  
   
 ## <a name="constraints"></a>约束  
+
  虽然泛型类型定义中的代码应尽可能独立于类型，但你可能需要要求向泛型类型提供任何数据类型的某项功能。 例如，如果出于排序或对照的目的而想比较两个项，则它们的数据类型必须实现 <xref:System.IComparable> 接口。 可通过向类型形参添加 *约束* 来强制实施此要求。  
   
 ### <a name="example-of-a-constraint"></a>约束的示例  
+
  下面的示例演示了带有约束（要求类型实参实现 <xref:System.IComparable>）的类的主干定义。  
   
  [!code-vb[VbVbalrDataTypes#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#5)]  
@@ -114,6 +120,7 @@ ms.locfileid: "84394047"
  如果后续代码尝试从提供未实现 `itemManager` 的类型的 <xref:System.IComparable>中构造一个类，则编译器会提示错误。  
   
 ### <a name="types-of-constraints"></a>约束的类型  
+
  约束可以按任意组合指定下列要求：  
   
 - 该类型实参必须实现一个或多个接口  
@@ -122,18 +129,20 @@ ms.locfileid: "84394047"
   
 - 对于通过类型实参创建对象的代码，类型实参必须公开一个可供其访问的无参数构造函数  
   
-- 类型实参必须是*引用类型*，或者必须是*值类型*  
+- 类型实参必须是 *引用类型*，或者必须是 *值类型*  
   
- 如果需要强制实施多个要求，则可以使用以逗号分隔的 *约束列表* （括在大括号 (`{ }`) 内）。 若要需要可访问的构造函数，请在列表中包含[New 运算符](../../../language-reference/operators/new-operator.md)关键字。 若需要引用类型，请加入 `Class` 关键字；若需要值类型，请加入 `Structure` 关键字。  
+ 如果需要强制实施多个要求，则可以使用以逗号分隔的 *约束列表* （括在大括号 (`{ }`) 内）。 若要需要可访问的构造函数，请在列表中包含 [New 运算符](../../../language-reference/operators/new-operator.md) 关键字。 若需要引用类型，请加入 `Class` 关键字；若需要值类型，请加入 `Structure` 关键字。  
   
  有关约束的详细信息，请参阅 [Type List](../../../language-reference/statements/type-list.md)。  
   
 ### <a name="example-of-multiple-constraints"></a>多个约束的示例  
+
  下面的示例演示了带有类型形参约束列表的泛型类的主干定义。 在创建此类的实例的代码中，类型实参必须实现 <xref:System.IComparable> 和 <xref:System.IDisposable> 接口，必须是引用类型，并且必须公开一个可访问的无参数构造函数。  
   
  [!code-vb[VbVbalrDataTypes#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#6)]  
   
 ## <a name="important-terms"></a>重要术语  
+
  泛型类型引入并使用了以下术语：  
   
 - *泛型类型*。 类、结构、接口、过程或委托的定义，在声明它们时要为它们提供至少一种数据类型。  
@@ -146,7 +155,7 @@ ms.locfileid: "84394047"
   
 - *构造的类型*。 通过为泛型类型的类型形参提供类型实参，从泛型类型声明的类、结构、接口、过程或委托。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [数据类型](index.md)
 - [类型字符](type-characters.md)
