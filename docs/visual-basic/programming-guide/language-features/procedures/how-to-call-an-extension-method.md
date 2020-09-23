@@ -5,16 +5,16 @@ helpviewer_keywords:
 - calling extension methods [Visual Basic]
 - extension methods [Visual Basic]
 ms.assetid: df07750f-40f4-4c07-a79e-1113a27cfbea
-ms.openlocfilehash: 54419c99ae08c9ca2e3cfa86993dc99bc02bbb64
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 38d6e8534283f475be2409f4b7c74ef48f1f248b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388655"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91074987"
 ---
 # <a name="how-to-call-an-extension-method-visual-basic"></a>如何：调用扩展方法 (Visual Basic)
 
-扩展方法使你能够向现有类添加方法。 在扩展方法被声明并引入作用域后，可以像它所扩展的类型的实例方法一样调用它。 有关如何编写扩展方法的详细信息，请参阅[如何：编写扩展方法](./how-to-write-an-extension-method.md)。
+扩展方法使你能够向现有类添加方法。 在扩展方法被声明并引入作用域后，可以像它所扩展的类型的实例方法一样调用它。 有关如何编写扩展方法的详细信息，请参阅 [如何：编写扩展方法](./how-to-write-an-extension-method.md)。
 
  下面的说明引用 extension 方法 `PrintAndPunctuate` ，该方法将显示调用它的字符串实例，然后在中为第二个参数发送任何值 `punc` 。
 
@@ -64,6 +64,7 @@ End Module
      此时间的结果为： `or not!!!` 。
 
 ## <a name="example"></a>示例
+
  下面的代码是创建和使用简单扩展方法的完整示例。
 
 ```vb
@@ -95,7 +96,7 @@ End Module
 ' Goodbye?
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [如何：编写扩展方法](./how-to-write-an-extension-method.md)
 - [扩展方法](./extension-methods.md)
