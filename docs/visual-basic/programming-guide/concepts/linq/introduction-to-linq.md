@@ -2,14 +2,15 @@
 title: LINQ 介绍
 ms.date: 07/20/2015
 ms.assetid: c6339c12-9b2d-433e-961c-0d2b7f0091c2
-ms.openlocfilehash: 58613281d79769bfb5515f1291feb9b502a1e846
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e99da74eb69511b92ddccfb42f8002adc7be83d1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90549962"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098276"
 ---
 # <a name="introduction-to-linq-visual-basic"></a>LINQ 简介 (Visual Basic)
+
 语言集成查询 (LINQ) 是 .NET Framework 3.5 版中引入的一项创新功能，它在对象领域和数据领域之间架起了一座桥梁。  
   
  数据查询历来都表示为简单的字符串，没有编译时类型检查或 IntelliSense 支持。 此外，需要针对每种类型的数据源了解不同的查询语言：SQL 数据库、XML 文档、各种 Web 服务等。 LINQ 使 *查询* 成为 Visual Basic 中的第一类语言构造。 可以使用语言关键字和熟悉的运算符针对强类型化对象集合编写查询。  
@@ -23,6 +24,7 @@ ms.locfileid: "90549962"
  ![显示具有 Intellisense 的 LINQ 查询的图表。](./media/introduction-to-linq/linq-query-intellisense.png)  
   
 ## <a name="next-steps"></a>后续步骤  
+
  若要了解有关 LINQ 的详细信息，请首先熟悉入门部分中的一些基本概念 [入门使用 LINQ in Visual Basic](getting-started-with-linq.md)，然后阅读你感兴趣的 linq 技术的文档：  
   
 - SQL Server 数据库：[LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  
