@@ -8,21 +8,22 @@ helpviewer_keywords:
 - XML [Visual Basic], axis properties
 - XML [Visual Basic], accessing
 ms.assetid: c47f88b2-3cbc-4bb1-b4b9-be60f71ffc6a
-ms.openlocfilehash: 282b7d91ec7cfe2f587c67bc9a982f0da22ad925
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8ffe6d5ed368aee6d6984ec6ab28c8832921a3f8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410304"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91080174"
 ---
 # <a name="accessing-xml-in-visual-basic"></a>在 Visual Basic 中访问 XML
+
 Visual Basic 提供了用于访问和导航结构的 XML 轴属性 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 。 这些属性使用特殊语法，使你能够通过指定 XML 名称访问元素和属性。  
   
  下表列出了可用于访问 Visual Basic 中的 XML 元素和属性的语言功能。  
   
 ### <a name="xml-axis-properties"></a>XML 轴属性  
   
-|属性说明|示例|说明|  
+|属性说明|示例|描述|  
 |--------------------------|-------------|-----------------|  
 |*child 轴*|`contact.<phone>`|获取 `phone` 作为元素的子元素的所有元素 `contact` 。|  
 |*属性轴*|`phone.@type`|获取 `type` 元素的所有属性 `phone` 。|  
@@ -31,6 +32,7 @@ Visual Basic 提供了用于访问和导航结构的 XML 轴属性 [!INCLUDE[sql
 |*value*|`contacts...<name>.Value`|获取序列中第一个对象的字符串表示形式; `Nothing` 如果序列为空，则为。|  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [如何：访问 XML 子代元素](how-to-access-xml-descendant-elements.md)  
  演示如何使用子代轴属性访问具有指定名称并包含在指定的 XML 元素下的所有 XML 元素。  
   
@@ -44,6 +46,7 @@ Visual Basic 提供了用于访问和导航结构的 XML 轴属性 [!INCLUDE[sql
  演示如何声明 XML 命名空间前缀并使用它来创建和访问 XML 元素。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [XML 轴属性](../../../language-reference/xml-axis/index.md)  
  提供一些链接，这些链接指向描述各种 XML 访问属性的部分。  
   
