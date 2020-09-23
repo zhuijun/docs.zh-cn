@@ -2,14 +2,15 @@
 title: 在 Visual Basic 中保持对象
 ms.date: 07/20/2015
 ms.assetid: f1d0b562-e349-4dce-ab5f-c05108467030
-ms.openlocfilehash: 3febd3f74510d11a7103edbd52bcae8043a5edc0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0b2fff171164a29e6066839371fc95ad41b452f1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558597"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086460"
 ---
 # <a name="walkthrough-persisting-an-object-in-visual-studio-visual-basic"></a>演练：在 Visual Studio 中暂留对象 (Visual Basic)
+
 虽然可在设计时将对象的属性设置为默认值，但销毁对象时，运行时输入的任何值都将丢失。 可使用序列化在实例之间保持对象的数据，以便可存储值并在下次实例化对象时检索这些值。  
   
 > [!NOTE]
@@ -27,6 +28,7 @@ ms.locfileid: "90558597"
 > 显示的对话框和菜单命令可能会与“帮助”中的描述不同，具体取决于你现用的设置或版本。 若要更改设置，请单击 **“工具”** 菜单上的 **“导入和导出设置”** 。 有关详细信息，请参阅[个性化设置 Visual Studio IDE](/visualstudio/ide/personalizing-the-visual-studio-ide)。  
   
 ## <a name="creating-the-loan-object"></a>创建 Loan 对象  
+
  第一步是创建 `Loan` 类和使用该类的测试应用程序。  
   
 ### <a name="to-create-the-loan-class"></a>创建 Loan 类  
@@ -123,6 +125,7 @@ ms.locfileid: "90558597"
  在现实生活中，利率会定期更改，但不必在每次运行应用程序时都更改利率。 与其让用户在每次运行应用程序时更新利率，不如在应用程序的实例之间保留最近的利率。 下一步是通过向 Loan 类添加序列化来执行此操作。  
   
 ## <a name="using-serialization-to-persist-the-object"></a>使用序列化保持对象  
+
  为了保持 Loan 类的值，必须首先使用 `Serializable` 属性标记该类。  
   
 ### <a name="to-mark-a-class-as-serializable"></a>将类标记为可序列化  

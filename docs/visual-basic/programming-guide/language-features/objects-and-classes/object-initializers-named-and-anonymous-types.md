@@ -10,17 +10,19 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
-ms.openlocfilehash: 5561812a53e2fe45c3ad4d12d0e18a8a1e948559
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 724407fed5bf90ed6e3e470cbabc9e42856cb99a
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84411761"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91087474"
 ---
 # <a name="object-initializers-named-and-anonymous-types-visual-basic"></a>对象初始值设定项：命名类型和匿名类型 (Visual Basic)
+
 使用对象初始值设定项，您可以通过使用单个表达式来指定复杂对象的属性。 它们可用于创建命名类型和匿名类型的实例。  
   
 ## <a name="declarations"></a>声明  
+
  命名类型和匿名类型的实例的声明可能看起来几乎完全相同，但其效果并不相同。 每个类别都具有自己的功能和限制。 下面的示例演示如何 `Customer` 使用对象初始值设定项列表来声明和初始化命名类的实例。 请注意，类的名称在关键字之后指定 `New` 。  
   
  [!code-vb[VbVbalrObjectInit#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#1)]  
@@ -32,6 +34,7 @@ ms.locfileid: "84411761"
  这两个声明的要求和结果不同。 对于 `namedCust` ， `Customer` 具有属性的类 `Name` 必须已经存在，并且声明将创建该类的实例。 对于 `anonymousCust` ，编译器会定义一个新类，该类具有一个属性和一个名为的字符串， `Name` 并创建该类的一个新实例。  
   
 ## <a name="named-types"></a>命名类型  
+
  对象初始值设定项提供一种简单的方法来调用类型的构造函数，然后在单个语句中设置部分或全部属性的值。 编译器将调用语句的相应构造函数：如果未提供任何参数，则为无参数构造函数; 或者，如果发送一个或多个参数，则为参数化构造函数。 之后，指定的属性将按照它们在初始值设定项列表中的显示顺序进行初始化。  
   
  初始值设定项列表中的每个初始化都包含将初始值分配给类的成员的。 成员的名称和数据类型是在定义类时确定的。 在下面的示例中， `Customer` 类必须存在，并且必须具有名为 `Name` 和 `City` 的成员，这些成员可以接受字符串值。  
@@ -57,6 +60,7 @@ ms.locfileid: "84411761"
  但是，初始化列表不能为空。 未初始化属性保留其默认值。  
   
 ### <a name="type-inference-with-named-types"></a>具有命名类型的类型推理  
+
  您可以 `cust1` 通过组合对象初始值设定项和局部类型推理，缩短的声明的代码。 这使您可以省略 `As` 变量声明中的子句。 变量的数据类型是从由赋值创建的对象的类型推断出来的。 在下面的示例中，的类型 `cust6` 为 `Customer` 。  
   
  [!code-vb[VbVbalrObjectInit#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#8)]  
@@ -94,7 +98,8 @@ ms.locfileid: "84411761"
      `' Dim c2 = New Customer with {.Address.City = "Springfield"}`  
   
 ## <a name="anonymous-types"></a>匿名类型  
- 匿名类型使用对象初始值设定项来创建未显式定义和命名的新类型的实例。 相反，编译器将根据您在对象初始值设定项列表中指定的属性生成类型。 由于未指定类型的名称，因此称为*匿名类型*。 例如，将以下声明与的早期声明进行比较 `cust6` 。  
+
+ 匿名类型使用对象初始值设定项来创建未显式定义和命名的新类型的实例。 相反，编译器将根据您在对象初始值设定项列表中指定的属性生成类型。 由于未指定类型的名称，因此称为 *匿名类型*。 例如，将以下声明与的早期声明进行比较 `cust6` 。  
   
  [!code-vb[VbVbalrObjectInit#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#13)]  
   
@@ -105,7 +110,7 @@ ms.locfileid: "84411761"
   
  由于类型名称不可用，因此不能使用 `As` 子句来声明 `cust13` 。 必须推断其类型。 如果不使用后期绑定，则这会将匿名类型限制为本地变量。  
   
- 匿名类型为 LINQ 查询提供关键支持。 有关在查询中使用匿名类型的详细信息，请参阅 Visual Basic 中的[匿名类型](anonymous-types.md)和[LINQ 简介](../linq/introduction-to-linq.md)。  
+ 匿名类型为 LINQ 查询提供关键支持。 有关在查询中使用匿名类型的详细信息，请参阅 Visual Basic 中的 [匿名类型](anonymous-types.md) 和 [LINQ 简介](../linq/introduction-to-linq.md)。  
   
 ### <a name="remarks-about-anonymous-types"></a>有关匿名类型的备注  
   
@@ -113,7 +118,7 @@ ms.locfileid: "84411761"
   
      [!code-vb[VbVbalrObjectInit#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#14)]  
   
-     有关密钥属性的详细信息，请参阅 "[密钥](../../../language-reference/modifiers/key.md)"。  
+     有关密钥属性的详细信息，请参阅 " [密钥](../../../language-reference/modifiers/key.md)"。  
   
 - 与命名类型一样，匿名类型定义的初始化表达式列表必须声明至少一个属性。  
   
@@ -125,13 +130,13 @@ ms.locfileid: "84411761"
   
      [!code-vb[VbVbalrObjectInit#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class1.vb#15)]  
   
-     有关在匿名类型中定义属性的选项的详细信息，请参阅[如何：推断匿名类型声明中的属性名称和类型](how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)。  
+     有关在匿名类型中定义属性的选项的详细信息，请参阅 [如何：推断匿名类型声明中的属性名称和类型](how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [局部类型推理](../variables/local-type-inference.md)
 - [匿名类型](anonymous-types.md)
 - [Visual Basic 中的 LINQ 简介](../linq/introduction-to-linq.md)
 - [如何：推断匿名类型声明中的属性名和类型](how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)
-- [密钥](../../../language-reference/modifiers/key.md)
+- [Key](../../../language-reference/modifiers/key.md)
 - [如何：使用对象初始值设定项声明对象](how-to-declare-an-object-by-using-an-object-initializer.md)

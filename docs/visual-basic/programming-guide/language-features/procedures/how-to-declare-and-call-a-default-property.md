@@ -10,19 +10,20 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - default properties
 ms.assetid: 68b4026e-09ef-4613-808e-f6287494ff63
-ms.openlocfilehash: 4de5d94a94e764d1fc543ffae41b00a9bb729c94
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 21aa6e6a9bba23d767b9d1fac610eaac3265550d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388149"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91087448"
 ---
 # <a name="how-to-declare-and-call-a-default-property-in-visual-basic"></a>如何：在 Visual Basic 中声明和调用默认属性
+
 *默认属性*是您的代码无需指定即可访问的类或结构属性。 当调用代码命名类或结构而不是属性，并且上下文允许访问属性时，Visual Basic 解析对该类或结构的默认属性（如果存在）的访问。  
   
  一个类或结构最多只能有一个默认属性。 不过，你可以重载一个默认属性，并拥有多个版本的属性。  
   
- 有关详细信息，请参阅[默认值](../../../language-reference/modifiers/default.md)。  
+ 有关详细信息，请参阅 [默认值](../../../language-reference/modifiers/default.md)。  
   
 ### <a name="to-declare-a-default-property"></a>声明默认属性  
   
@@ -48,7 +49,7 @@ ms.locfileid: "84388149"
   
      [!code-vb[VbVbcnProcedures#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#20)]  
   
-4. 若要检索默认属性值，请在表达式中使用变量名称，或在赋值语句中使用等 `=` 号（）。  
+4. 若要检索默认属性值，请在表达式中使用变量名，在表达式中使用变量名，或者在等 (`=`) 在赋值语句中登录。  
   
      [!code-vb[VbVbcnProcedures#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#15)]  
   
@@ -61,11 +62,13 @@ ms.locfileid: "84388149"
      [!code-vb[VbVbcnProcedures#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#19)]  
   
 ## <a name="example"></a>示例  
+
  下面的示例声明类的默认属性。  
   
  [!code-vb[VbVbcnProcedures#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#12)]  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何调用类的默认属性 `myProperty` `class1` 。 这三个赋值语句将值存储在中 `myProperty` ，并且 <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> 调用读取这些值。  
   
  [!code-vb[VbVbcnProcedures#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#13)]  
@@ -73,15 +76,16 @@ ms.locfileid: "84388149"
  默认属性的最常见用途是 <xref:Microsoft.VisualBasic.Collection.Item%2A> 不同集合类的属性。  
   
 ## <a name="robust-programming"></a>可靠编程  
+
  默认属性可能会减少源代码中的字符，但会使代码更难以阅读。 如果调用代码不熟悉你的类或结构，则当它对类或结构名称进行引用时，该引用是否访问类或结构本身，或者默认属性，则不能确定这一点。 这可能会导致编译器错误或细微的运行时逻辑错误。  
   
- 通过始终使用[Option Strict 语句](../../../language-reference/statements/option-strict-statement.md)将编译器类型检查设置为，可以在一定程度上减少默认属性错误的几率 `On` 。  
+ 通过始终使用 [Option Strict 语句](../../../language-reference/statements/option-strict-statement.md) 将编译器类型检查设置为，可以在一定程度上减少默认属性错误的几率 `On` 。  
   
  如果打算在代码中使用预定义的类或结构，则必须确定它是否具有默认属性，如果是，则必须确定其名称。  
   
  由于这些缺点，你应考虑不要定义默认属性。 为实现代码可读性，还应考虑始终显式引用所有属性，甚至是默认属性。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Property 过程](./property-procedures.md)
 - [过程形参和实参](./procedure-parameters-and-arguments.md)
