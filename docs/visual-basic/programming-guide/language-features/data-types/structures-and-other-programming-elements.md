@@ -8,20 +8,22 @@ helpviewer_keywords:
 - arrays [Visual Basic], structure elements
 - nested structures [Visual Basic]
 ms.assetid: 0f849313-ccd2-4c9a-acb9-69de6751c088
-ms.openlocfilehash: dbd24065a954e5611663963371d5a9f4bbbaea68
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 26c98adda7305783b0220141db35b08285b21554
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393489"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91084081"
 ---
 # <a name="structures-and-other-programming-elements-visual-basic"></a>结构和其他编程元素 (Visual Basic)
+
 您可以将结构与数组、对象和过程以及彼此一起使用。 交互使用的语法与这些元素分别使用的语法相同。  
   
 > [!NOTE]
 > 不能在结构声明中初始化任何结构元素。 只能为已声明为结构类型的变量的元素赋值。  
   
 ## <a name="structures-and-arrays"></a>结构和数组  
+
  结构可以包含数组作为其一个或多个元素。 下面的示例对此进行了演示。  
   
 ```vb  
@@ -56,6 +58,7 @@ allSystems(5).diskDrives(2) = "100M SCSI"
 ```  
   
 ## <a name="structures-and-objects"></a>结构和对象  
+
  结构可以包含对象作为其一个或多个元素。 下面的示例对此进行了演示。  
   
 ```vb  
@@ -69,6 +72,7 @@ End Structure
  在此类声明中应使用特定对象类，而不是 `Object` 。  
   
 ## <a name="structures-and-procedures"></a>结构和过程  
+
  可以将结构作为过程自变量传递。 下面的示例对此进行了演示。  
   
 ```vb  
@@ -81,7 +85,7 @@ Public Sub fillSystem(ByRef someSystem As systemInfo)
 End Sub  
 ```  
   
- 前面的示例*通过引用*传递结构，这允许过程修改其元素，以使所做的更改在调用代码中生效。 如果要针对此类修改保护结构，请按值传递它。  
+ 前面的示例 *通过引用*传递结构，这允许过程修改其元素，以使所做的更改在调用代码中生效。 如果要针对此类修改保护结构，请按值传递它。  
   
  还可以从过程返回结构 `Function` 。 下面的示例对此进行了演示。  
   
@@ -97,6 +101,7 @@ End Function
 ```  
   
 ## <a name="structures-within-structures"></a>结构内的结构  
+
  结构可以包含其他结构。 下面的示例对此进行了演示。  
   
 ```vb  
@@ -122,7 +127,7 @@ allSystems(1).diskDrives(0).type = "Floppy"
   
  结构可以包含任意深度的其他结构。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [数据类型](index.md)
 - [基本数据类型](elementary-data-types.md)

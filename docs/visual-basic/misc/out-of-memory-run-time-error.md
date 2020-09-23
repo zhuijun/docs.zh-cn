@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID7
 ms.assetid: 96cc12e1-d40a-425f-b365-1ac39e5ddcb0
-ms.openlocfilehash: b0546609aa0573b7d43a2a630328e76c48791886
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 58e673ffe0983c91fcca3fff8f867042f51eafc0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84375882"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91084185"
 ---
 # <a name="out-of-memory-visual-basic-run-time-error"></a>内存不足（Visual Basic 运行时错误）
+
 所需内存多于可用内存。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
@@ -26,6 +27,6 @@ ms.locfileid: "84375882"
   
 5. 减少公共变量数。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [错误类型](../programming-guide/language-features/error-types.md)
