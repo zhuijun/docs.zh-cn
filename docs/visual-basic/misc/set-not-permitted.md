@@ -4,20 +4,21 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID387
 ms.assetid: 809f6768-7dd7-4632-b4dd-83856edfdb48
-ms.openlocfilehash: 231dd322fd0eadb6fa13d58b527c0b047cc0e3f0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 061e611d5b35068f82a76e0ad642ad14679362c9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61594801"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91060635"
 ---
-# <a name="set-not-permitted"></a><span data-ttu-id="a5dcf-102">不允许进行设置</span><span class="sxs-lookup"><span data-stu-id="a5dcf-102">Set not permitted</span></span>
-<span data-ttu-id="a5dcf-103">你试图更改某个属性，该属性不能在运行时设置，或者只能在某些情况下设置。</span><span class="sxs-lookup"><span data-stu-id="a5dcf-103">You attempted to change a property whose settings either cannot be set at run time or else can only be set under certain conditions.</span></span> <span data-ttu-id="a5dcf-104">例如，你可能已尝试在运行时更改窗体的 `Appearance`、 `ControlBox`、`MinButton`或 `MaxButton` 属性设置，或者你可能已尝试将父菜单上最后一个剩余可见子菜单的 `Visible` 属性设置为 `False` 。</span><span class="sxs-lookup"><span data-stu-id="a5dcf-104">For example, you may have tried to change the `Appearance`, `ControlBox`,`MinButton`, or `MaxButton` property settings for the form at run time, or you may have tried to set the `Visible` property to `False` for the last remaining visible submenu on a parent menu.</span></span>  
-  
-## <a name="to-correct-this-error"></a><span data-ttu-id="a5dcf-105">更正此错误</span><span class="sxs-lookup"><span data-stu-id="a5dcf-105">To correct this error</span></span>  
-  
-1. <span data-ttu-id="a5dcf-106">检查该属性并确定可以在什么情况下对其进行设置。</span><span class="sxs-lookup"><span data-stu-id="a5dcf-106">Check the property and determine under what conditions it can be set.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="a5dcf-107">请参阅</span><span class="sxs-lookup"><span data-stu-id="a5dcf-107">See also</span></span>
+# <a name="set-not-permitted"></a><span data-ttu-id="17ad0-102">不允许进行设置</span><span class="sxs-lookup"><span data-stu-id="17ad0-102">Set not permitted</span></span>
 
-- [<span data-ttu-id="a5dcf-108">管理项目和解决方案属性</span><span class="sxs-lookup"><span data-stu-id="a5dcf-108">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
+<span data-ttu-id="17ad0-103">你试图更改某个属性，该属性不能在运行时设置，或者只能在某些情况下设置。</span><span class="sxs-lookup"><span data-stu-id="17ad0-103">You attempted to change a property whose settings either cannot be set at run time or else can only be set under certain conditions.</span></span> <span data-ttu-id="17ad0-104">例如，你可能已尝试在运行时更改窗体的 `Appearance`、 `ControlBox`、`MinButton`或 `MaxButton` 属性设置，或者你可能已尝试将父菜单上最后一个剩余可见子菜单的 `Visible` 属性设置为 `False` 。</span><span class="sxs-lookup"><span data-stu-id="17ad0-104">For example, you may have tried to change the `Appearance`, `ControlBox`,`MinButton`, or `MaxButton` property settings for the form at run time, or you may have tried to set the `Visible` property to `False` for the last remaining visible submenu on a parent menu.</span></span>  
+  
+## <a name="to-correct-this-error"></a><span data-ttu-id="17ad0-105">更正此错误</span><span class="sxs-lookup"><span data-stu-id="17ad0-105">To correct this error</span></span>  
+  
+1. <span data-ttu-id="17ad0-106">检查该属性并确定可以在什么情况下对其进行设置。</span><span class="sxs-lookup"><span data-stu-id="17ad0-106">Check the property and determine under what conditions it can be set.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="17ad0-107">请参阅</span><span class="sxs-lookup"><span data-stu-id="17ad0-107">See also</span></span>
+
+- [<span data-ttu-id="17ad0-108">管理项目和解决方案属性</span><span class="sxs-lookup"><span data-stu-id="17ad0-108">Managing Project and Solution Properties</span></span>](/visualstudio/ide/managing-project-and-solution-properties)
