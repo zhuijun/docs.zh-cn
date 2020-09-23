@@ -7,15 +7,16 @@ helpviewer_keywords:
 - name conflicts [Visual Basic]
 - element names [Visual Basic], in code
 ms.assetid: 2e4e8e02-23f7-49b9-a1c8-2b0402b6b525
-ms.openlocfilehash: a98f0b027700717b414d58e1284ddec655eb25f7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e895db180dbb44cd4cfe4053d4be429f13324fe8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403221"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91065744"
 ---
 # <a name="keywords-as-element-names-in-code-visual-basic"></a>代码中用作元素名称的关键字 (Visual Basic)
-任何程序元素（例如变量、类或成员）可以具有与受限制关键字相同的名称。 例如，可以创建一个名为的变量 `Loop` 。 但是，若要引用您的版本（其名称与限制 `Loop` 关键字相同），必须在其前面加上一个完全限定字符串或将其放在方括号（ `[ ]` ）中，如下面的示例所示。  
+
+任何程序元素（例如变量、类或成员）可以具有与受限制关键字相同的名称。 例如，可以创建一个名为的变量 `Loop` 。 但是，若要引用您的版本（其名称与限制 `Loop` 关键字相同），必须在其前面加上一个完全限定字符串，或将其放在方括号内 (`[ ]`) 中，如下面的示例所示。  
   
  [!code-vb[VbVbcnConventions#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnConventions/VB/Class1.vb#8)]  
   
@@ -30,7 +31,7 @@ ms.locfileid: "84403221"
 > [!NOTE]
 > 您的程序还可能包括由其他引用的程序集提供的元素名称。 如果这些名称与受限制的关键字冲突，则在它们周围放置方括号会导致 Visual Basic 将它们解释为你定义的元素。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Visual Basic 命名约定](naming-conventions.md)
 - [程序结构和代码约定](program-structure-and-code-conventions.md)
