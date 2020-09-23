@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrID68
 ms.assetid: 9a89beda-140e-4b32-8d0a-2dc598ef279a
-ms.openlocfilehash: d1c31af1df65855d3632e64983314767f76c9375
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 251df96d9e3c461f108b7ebb08ddfca576e0ad7f
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84394786"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91079043"
 ---
 # <a name="device-unavailable"></a>设备不可用
+
 已失去网络连接，或是尝试访问的设备处于脱机状态或不存在。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
@@ -20,6 +21,6 @@ ms.locfileid: "84394786"
   
 2. 重新连接到网络，然后重试。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [错误类型](../programming-guide/language-features/error-types.md)

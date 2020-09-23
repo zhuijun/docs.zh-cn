@@ -2,14 +2,15 @@
 title: 如何：查询最大的文件或目录树中的文件 (LINQ)
 ms.date: 07/20/2015
 ms.assetid: 8c1c9f0c-95dd-4222-9be2-9ec026a13e81
-ms.openlocfilehash: 107f3457fe7361fab16c2c8ce837c90484fc7633
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9ae4a1442a0ecbb11d37b56302bec6a387c662aa
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397942"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078263"
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-visual-basic"></a>如何：查询目录树中的一个或多个最大的文件 (LINQ) (Visual Basic)
+
 此示例演示与文件大小（以字节为单位）相关的五个查询：  
   
 - 如何检索最大文件的大小（以字节为单位）。  
@@ -23,6 +24,7 @@ ms.locfileid: "84397942"
 - 如何基于文件大小（以字节为单位）按组对文件进行排序（忽略小于指定大小的文件）。  
   
 ## <a name="example"></a>示例  
+
  下面的示例包含五个单独的查询，它们演示如何根据文件大小（以字节为单位）对文件进行查询和分组。 可以轻松地修改这些示例，以便使查询基于 <xref:System.IO.FileInfo> 对象的其他某个属性。  
   
 ```vb  
@@ -118,9 +120,10 @@ End Module
  查询调用单独的方法来获取文件大小（以字节为单位），以便使用在以下情况下会引发的可能异常：自在 `GetFiles` 调用中创建了 <xref:System.IO.FileInfo> 对象以来的时间段内，在其他线程中删除了文件。 即使创建了 <xref:System.IO.FileInfo> 对象，该异常也可能出现，因为 <xref:System.IO.FileInfo> 对象会在首次访问其 <xref:System.IO.FileInfo.Length%2A> 属性时，尝试使用最新大小（以字节为单位）刷新该属性。 通过将此操作置于查询外部的 try-catch 块中，我们可遵循在查询中避免可能导致副作用的操作这一规则。 一般情况下，在使用异常时必须格外谨慎，以确保应用程序不会处于未知状态。  
   
 ## <a name="compile-the-code"></a>编译代码  
+
 使用 `Imports` System. Linq 命名空间的语句创建 Visual Basic 控制台应用程序项目。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to Objects (Visual Basic)](linq-to-objects.md)
 - [LINQ 和文件目录 (Visual Basic)](linq-and-file-directories.md)

@@ -2,12 +2,12 @@
 title: 为 LINQ Querying2 启用数据源
 ms.date: 07/20/2015
 ms.assetid: c412f0cf-ff0e-4993-ab3d-1b49e23f00f8
-ms.openlocfilehash: 4ab0e2a2fc3d04eb375a4646e4133e6e5cbb47db
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a60527f0594964ec9642cdd565fd06eb5d46cf85
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84375299"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078341"
 ---
 # <a name="enabling-a-data-source-for-linq-querying"></a>启用数据源以进行 LINQ 查询
 
@@ -26,12 +26,15 @@ ms.locfileid: "84375299"
 ## <a name="how-to-enable-linq-querying-of-your-data-source"></a>如何使 LINQ 能够查询您的数据源
 
 ### <a name="in-memory-data"></a>内存中的数据
+
  通过两种方式，可以使 LINQ 能够查询内存中数据。 如果数据的类型实现了 <xref:System.Collections.Generic.IEnumerable%601>，你可以使用 LINQ to Objects 来查询数据。 如果无法通过实现 <xref:System.Collections.Generic.IEnumerable%601> 接口启用类型枚举，可以在该类型中定义 LINQ 标准查询运算符方法，或创建扩展该类型的 LINQ 标准查询运算符方法。 标准查询运算符的自定义实现应使用延迟执行来返回结果。
 
 ### <a name="remote-data"></a>远程数据
+
  使 LINQ 能够查询远程数据源的最佳选择是实现 <xref:System.Linq.IQueryable%601> 接口。 但是，这与为数据源扩展提供程序（比如 [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]）有所不同。 Visual Studio 2008 中没有用于将现有 LINQ 技术（比如 [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)]）扩展为其他数据源类型的提供程序模型。
 
 ## <a name="iqueryable-linq-providers"></a>IQueryable LINQ 提供程序
+
  实现 <xref:System.Linq.IQueryable%601> 的 LINQ 提供程序之间的复杂性可能差别很大。 本节讨论这些不同程度的复杂性。
 
  复杂性较低的 `IQueryable` 提供程序可与 Web 服务的一个方法交互。 这种类型的提供程序非常具体，因为它需要所处理的查询中有具体信息。 它有封闭的类型系统，可能会公开单一结果类型。 大多数查询都是在本地执行的，例如，通过使用标准查询运算符的 <xref:System.Linq.Enumerable> 实现来执行。 复杂性较低的提供程序可能只会检查表示查询的表达式树中的一个方法调用表达式，并允许在其他地方处理查询的其余逻辑。
@@ -40,7 +43,7 @@ ms.locfileid: "84375299"
 
  复杂的 `IQueryable` 提供程序（如 [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] 提供程序）可将完整的 LINQ 查询转换为可表达查询语言（如 SQL）。 与复杂性较低的提供程序相比，复杂的提供程序更为全面，因为它能在查询中处理各种各样的问题。 它还具有开放的类型系统，因而必须包含广泛的基础结构来映射用户定义的类型。 开发复杂的提供程序需要耗费大量的精力。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Linq.IQueryable%601>
 - <xref:System.Collections.Generic.IEnumerable%601>
