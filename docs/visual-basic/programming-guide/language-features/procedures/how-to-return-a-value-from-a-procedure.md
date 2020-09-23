@@ -6,14 +6,15 @@ helpviewer_keywords:
 - procedures [Visual Basic], returning from
 - procedures [Visual Basic], returning a value
 ms.assetid: 4bcc4724-2b4e-4df8-9b4b-16054607f87d
-ms.openlocfilehash: 917e52b711645fbf94a132216a3fa90b0dfc15b3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cbc785a07aa8a7b299508a093e08d5d0510b838a
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414319"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071373"
 ---
 # <a name="how-to-return-a-value-from-a-procedure-visual-basic"></a>如何：从过程返回值 (Visual Basic)
+
 `Function`过程通过执行 `Return` 语句或遇到或语句，将值返回到调用代码 `Exit Function` `End Function` 。  
   
 ### <a name="to-return-a-value-using-the-return-statement"></a>使用 Return 语句返回值  
@@ -42,9 +43,9 @@ ms.locfileid: "84414319"
   
 4. 一个过程中只能有一个 `End Function` 语句 `Function` 。  
   
-     有关详细信息和示例，请参阅[Function 语句](../../../language-reference/statements/function-statement.md)中的 "返回值"。  
+     有关详细信息和示例，请参阅 [Function 语句](../../../language-reference/statements/function-statement.md)中的 "返回值"。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [过程](./index.md)
 - [Sub 过程](./sub-procedures.md)

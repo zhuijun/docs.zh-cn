@@ -5,17 +5,19 @@ helpviewer_keywords:
 - Visual Basic code, strings
 - strings [Visual Basic], Visual Basic
 ms.assetid: 7e4c777c-ad69-46e2-8b9e-9be4033b1c96
-ms.openlocfilehash: 302805f8b9a83fceeeaa050332140c157a7a786f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 60755b7aa8911f9c13eba80080b388a812f29475
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410550"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072582"
 ---
 # <a name="strings-in-visual-basic"></a>字符串 (Visual Basic)
+
 本部分介绍使用 Visual Basic 中的字符串的基本概念。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [字符串介绍 (Visual Basic)](introduction-to-strings.md)  
  列出了一些主题，这些主题描述了在 Visual Basic 中使用字符串的基本概念。  
   

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - properties [Visual Basic], property procedures
 - procedure calls [Visual Basic], property procedures
 ms.assetid: 96bc4d74-d9c3-4b7a-954d-58ac8553cd94
-ms.openlocfilehash: 006961a0f1d4be6b0d52be5bc273dad9733bfe56
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 0b35751136937d4cee5b3ca9669b43d3fbdf71a1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388694"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071946"
 ---
 # <a name="how-to-call-a-property-procedure-visual-basic"></a>如何：调用 Property 过程 (Visual Basic)
+
 通过在属性中存储值或检索其值来调用属性过程。 访问属性的方式与访问变量的方式相同。  
   
  该属性的 `Set` 过程存储一个值，其 `Get` 过程检索值。 但是，不要按名称显式调用这些过程。 使用赋值语句或表达式中的属性，就像存储或检索变量的值一样。 Visual Basic 对属性的过程进行调用。  
@@ -26,7 +27,7 @@ ms.locfileid: "84388694"
   
      \- 或 -  
   
-     在赋值语句中，在等号（）后使用属性名称 `=` 。  
+     使用相等 (后面的属性名称 `=`) 在赋值语句中登录。  
   
      下面的示例读取属性的值 <xref:Microsoft.VisualBasic.DateAndTime.Now%2A> ，隐式调用其 `Get` 过程。  
   
@@ -52,7 +53,7 @@ ms.locfileid: "84388694"
   
  赋值语句右侧生成的值存储在属性中。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Property 过程](./property-procedures.md)
 - [过程形参和实参](./procedure-parameters-and-arguments.md)

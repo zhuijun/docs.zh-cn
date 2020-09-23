@@ -5,17 +5,18 @@ helpviewer_keywords:
 - embedded expressions [Visual Basic]
 - XML literals [Visual Basic], embedded expressions
 ms.assetid: 75016fad-0141-42de-8564-5051be29487e
-ms.openlocfilehash: 59ba03be6e132203523427d3b7af5a163b6f05ac
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5ce1386e6a1ff8ffce296f5cea694499633eb011
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84392309"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071204"
 ---
 # <a name="how-to-embed-expressions-in-xml-literals-visual-basic"></a>如何：在 XML 文本中嵌入表达式 (Visual Basic)
+
 可以结合使用 XML 文本和嵌入式表达式来创建 XML 文档、片段或元素，该元素包含在运行时创建的内容。 下面的示例演示如何在运行时使用嵌入式表达式填充元素内容、属性和元素名称。  
   
- 嵌入式表达式的语法是 `<%=` `exp` `%>` ，这与 ASP.NET 使用的语法相同。 有关详细信息，请参阅[XML 中的嵌入式表达式](embedded-expressions-in-xml.md)。  
+ 嵌入式表达式的语法是 `<%=` `exp` `%>` ，这与 ASP.NET 使用的语法相同。 有关详细信息，请参阅 [XML 中的嵌入式表达式](embedded-expressions-in-xml.md)。  
   
  你还可以使用 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] api 来创建 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 对象。 有关详细信息，请参阅 <xref:System.Xml.Linq.XElement>。  
   

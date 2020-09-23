@@ -13,14 +13,15 @@ helpviewer_keywords:
 - Visual Basic code
 - programming [Visual Basic], Visual Basic coding conventions
 ms.assetid: dd9be76f-6944-4e78-ad72-0b6084a3fc13
-ms.openlocfilehash: c8d851afc33e7e898ab16abc941d8680f74145e3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ee61c676f3ff554267f6659453ec55e45df69aee
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398300"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072114"
 ---
 # <a name="program-structure-and-code-conventions-visual-basic"></a>程序结构和代码约定 (Visual Basic)
+
 本部分介绍了典型的 Visual Basic 计划结构，提供了一个简单的 Visual Basic 程序： "Hello，World"，并讨论 Visual Basic 代码约定。 代码约定是重点介绍不在程序逻辑上，而是在其物理结构和外观上的建议。 下面的代码可使代码更易于阅读、理解和维护。 代码约定可以包含其他内容：  
   
 - 用于标记和注释代码的标准化格式。  
@@ -32,6 +33,7 @@ ms.locfileid: "84398300"
  以下主题提供了一组用于 Visual Basic 程序的编程准则，以及良好使用的示例。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [Visual Basic 程序的结构](structure-of-a-visual-basic-program.md)  
  提供组成 Visual Basic 程序的元素的概述。  
   
@@ -69,7 +71,7 @@ ms.locfileid: "84398300"
  讨论如何向代码添加描述性注释。  
   
  [代码中用作元素名称的关键字](keywords-as-element-names-in-code.md)  
- 介绍如何使用括号（ `[]` ）来分隔同时 Visual Basic 关键字的变量名称。  
+ 介绍如何使用方括号 (`[]`) 来分隔同时 Visual Basic 关键字的变量名称。  
   
  [Me、My、MyBase 和 MyClass](me-my-mybase-and-myclass.md)  
  描述引用 Visual Basic 程序的元素的各种方法。  
@@ -78,6 +80,7 @@ ms.locfileid: "84398300"
  讨论 Visual Basic 中删除已知编码限制。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [版式和代码约定](../../language-reference/typographic-and-code-conventions.md)  
  为 Visual Basic 提供标准编码约定。  
   

@@ -10,17 +10,18 @@ helpviewer_keywords:
 - signatures [Visual Basic], procedure
 - overloads [Visual Basic], resolution
 ms.assetid: 766115d1-4352-45fb-859f-6063e0de0ec0
-ms.openlocfilehash: bcb99ef3845c1ce3998dc9dc8d9f1d335515c0a9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9b83eba8efc8dfe14b6ec1cbab270984977198e5
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84364365"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071359"
 ---
 # <a name="overload-resolution-visual-basic"></a>重载决策 (Visual Basic)
+
 当 Visual Basic 编译器遇到多个重载版本中定义的过程时，编译器必须确定要调用的重载。 它通过执行以下步骤来执行此操作：  
   
-1. **辅助功能.** 它消除了具有访问级别的任何重载，使调用代码无法调用它。  
+1. **辅助功能。** 它消除了具有访问级别的任何重载，使调用代码无法调用它。  
   
 2. **参数的数目。** 它消除了任何定义与调用中提供的参数数量不同的参数的重载。  
   
@@ -28,7 +29,7 @@ ms.locfileid: "84364365"
   
      在此步骤中，它将消除调用参数的数据类型无法转换为重载中定义的参数类型的任何重载。  
   
-4. **收缩转换。** 它消除了任何需要从调用参数类型到已定义参数类型的收缩转换的重载。 无论类型检查开关（[Option Strict 语句](../../../language-reference/statements/option-strict-statement.md)）为还是，都是 `On` 如此 `Off` 。  
+4. **收缩转换。** 它消除了任何需要从调用参数类型到已定义参数类型的收缩转换的重载。 无论类型检查开关 ([Option Strict 语句](../../../language-reference/statements/option-strict-statement.md)) 为或，都是 `On` 如此 `Off` 。  
   
 5. **最小扩大。** 编译器将其余重载视为成对。 对于每个对，它将比较已定义参数的数据类型。 如果其中一个重载中的类型扩大到另一个重载中的相应类型，则编译器将消除后者。 也就是说，它会保留要求最小扩大量的重载。  
   
@@ -44,21 +45,22 @@ ms.locfileid: "84364365"
   
  [!code-vb[VbVbcnProcedures#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#63)]  
   
- 在第一次调用中，编译器将消除第一个重载，因为第一个参数（ `Short` ）的类型缩小为相应参数（）的类型 `Byte` 。 然后，它将消除第三个重载，因为第二个重载（和）中的每个参数类型 `Short` `Single` 扩大为第三个重载（和）中的相应类型 `Integer` `Single` 。 第二个重载需要更少的扩展，因此编译器将其用于调用。  
+ 在第一次调用中，编译器将消除第一次重载，因为)  (第一个参数的类型会 `Short` 缩小到相应参数的类型 (`Byte`) 。 然后，它将消除第三个重载，因为第二个重载中的每个参数类型都将 (`Short` 并 `Single`) 扩大到第三个重载 (和) 中的相应类型 `Integer` `Single` 。 第二个重载需要更少的扩展，因此编译器将其用于调用。  
   
- 在第二次调用中，编译器无法根据收缩消除任何重载。 它消除第三个重载的原因与第一次调用中的相同原因，因为它可以通过更少的参数类型来调用第二个重载。 但编译器无法在第一个和第二个重载之间解析。 每个都有一个已定义的参数类型，该类型扩大到另一个中的相应类型（ `Byte` 到 `Short` ，但 `Single` 为 `Double` ）。 因此，编译器将生成重载决策错误。  
+ 在第二次调用中，编译器无法根据收缩消除任何重载。 它消除第三个重载的原因与第一次调用中的相同原因，因为它可以通过更少的参数类型来调用第二个重载。 但编译器无法在第一个和第二个重载之间解析。 每个都有一个定义的参数类型，该类型扩大到其他 (中的相应类型 `Byte` `Short` ，但 `Single` 要 `Double`) 。 因此，编译器将生成重载决策错误。  
   
 ## <a name="overloaded-optional-and-paramarray-arguments"></a>重载的可选参数和 ParamArray 参数  
+
  如果过程的两个重载具有相同的签名，则除了最后一个参数在另[一个中声明](../../../language-reference/modifiers/paramarray.md)为[可选](../../../language-reference/modifiers/optional.md)外，编译器将解析对该过程的调用，如下所示：  
   
 |如果调用提供了最后一个参数|编译器解析对声明最后一个参数的重载的调用|  
 |---|---|  
-|无值（忽略参数）|`Optional`|  
+|未省略值 (参数) |`Optional`|  
 |单个值|`Optional`|  
 |以逗号分隔的列表中的两个或多个值|`ParamArray`|  
-|任意长度的数组（包括空数组）|`ParamArray`|  
+|包含空数组 (任意长度的数组) |`ParamArray`|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [可选参数](./optional-parameters.md)
 - [参数数组](./parameter-arrays.md)

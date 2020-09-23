@@ -5,14 +5,15 @@ helpviewer_keywords:
 - lambda expressions [Visual Basic]
 - expressions [Visual Basic], lambda
 ms.assetid: 3279bd5c-80f7-410a-a7ba-f7085ed36aa5
-ms.openlocfilehash: 7affc84fa501ba98bdfa93835f0b0e381580b9bd
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cc2de38f7375848d104edff6f419656d9caa9cb2
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388382"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071919"
 ---
 # <a name="how-to-create-a-lambda-expression-visual-basic"></a>如何：创建 Lambda 表达式 (Visual Basic)
+
 *Lambda 表达式*是没有名称的函数或子例程。 如果委托类型有效，可以使用 lambda 表达式。  
   
 ### <a name="to-create-a-single-line-lambda-expression-function"></a>创建单行 lambda 表达式函数  
@@ -96,15 +97,16 @@ ms.locfileid: "84388382"
      [!code-vb[VbVbalrLambdas#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#22)]  
   
 ## <a name="example"></a>示例  
+
  Lambda 表达式的一个常见用途是定义一个函数，该函数可作为参数（其类型为）作为参数传入 `Delegate` 。 在下面的示例中， <xref:System.Diagnostics.Process.GetProcesses%2A> 方法返回在本地计算机上运行的进程的数组。 <xref:System.Linq.Enumerable.Where%2A>类中的方法 <xref:System.Linq.Enumerable> 要求 `Boolean` 委托作为其参数。 示例中的 lambda 表达式用于此目的。 它 `True` 为每个只有一个线程的进程返回，在中选择这些进程 `filteredList` 。  
   
  [!code-vb[VbVbalrLambdas#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class4.vb#10)]  
   
- 前面的示例等效于以下代码，该代码是用语言集成查询（LINQ）语法编写的：  
+ 前面的示例等效于以下代码，该代码用语言集成查询编写 (LINQ) 语法：  
   
  [!code-vb[VbVbalrLambdas#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class5.vb#11)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Linq.Enumerable>
 - [Lambda 表达式](./lambda-expressions.md)

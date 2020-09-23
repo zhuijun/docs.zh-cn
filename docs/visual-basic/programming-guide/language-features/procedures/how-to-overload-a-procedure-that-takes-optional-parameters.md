@@ -10,15 +10,16 @@ helpviewer_keywords:
 - procedures [Visual Basic], overloading
 - procedures [Visual Basic], multiple versions
 ms.assetid: 825f9d56-4cde-43fd-993a-b9171717e2eb
-ms.openlocfilehash: 9ae6818b1e03ccd00ed554e98690e02ffa45de99
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 78ca6b2b95dfd5a7f208e5251f08dfccc5514946
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387837"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071516"
 ---
 # <a name="how-to-overload-a-procedure-that-takes-optional-parameters-visual-basic"></a>如何：重载带有可选参数的过程 (Visual Basic)
-如果过程有一个或多个[可选](../../../language-reference/modifiers/optional.md)参数，则不能定义与它的任何隐式重载匹配的重载版本。 有关详细信息，请参阅[重载过程的注意事项](./considerations-in-overloading-procedures.md)中的 "可选参数的隐式重载"。  
+
+如果过程有一个或多个 [可选](../../../language-reference/modifiers/optional.md) 参数，则不能定义与它的任何隐式重载匹配的重载版本。 有关详细信息，请参阅 [重载过程的注意事项](./considerations-in-overloading-procedures.md)中的 "可选参数的隐式重载"。  
   
 ## <a name="one-optional-parameter"></a>一个可选参数  
   
@@ -26,7 +27,7 @@ ms.locfileid: "84387837"
   
 1. 编写一个 `Sub` 或 `Function` 声明语句，其中包含参数列表中的可选参数。 不要 `Optional` 在此重载版本中使用关键字。  
   
-2. 在或关键字之前加上 `Sub` `Function` [Overloads](../../../language-reference/modifiers/overloads.md)关键字。  
+2. 在或关键字之前加上 `Sub` `Function` [Overloads](../../../language-reference/modifiers/overloads.md) 关键字。  
   
 3. 编写调用代码提供可选参数时应执行的过程代码。  
   
@@ -45,6 +46,7 @@ ms.locfileid: "84387837"
      [!code-vb[VbVbcnProcedures#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#61)]  
   
 ## <a name="multiple-optional-parameters"></a>多个可选参数  
+
  对于具有多个可选参数的过程，通常需要两个以上的重载版本。 例如，如果有两个可选参数，并且调用代码可以单独提供或省略每个参数，则需要四个重载版本，每个可用于提供的参数的每个可能组合。  
   
  当可选参数的数目增加时，重载的复杂性会增加。 除非提供的参数的某些组合是不可接受的，否则对于 N 个可选参数，你需要 2 ^ N 个重载版本。 根据过程的性质，你可能会发现逻辑清晰地会调整定义所有重载版本的额外工作量。  
@@ -55,13 +57,13 @@ ms.locfileid: "84387837"
   
 2. 对于提供的可选参数的每个可接受组合，编写一个 `Sub` `Function` 定义相应参数列表的或声明语句。 不要使用 `Optional` 关键字。  
   
-3. 在每个声明中，在或关键字之前加上 `Sub` `Function` [Overloads](../../../language-reference/modifiers/overloads.md)关键字。  
+3. 在每个声明中，在或关键字之前加上 `Sub` `Function` [Overloads](../../../language-reference/modifiers/overloads.md) 关键字。  
   
 4. 在每个声明之后，编写调用代码提供对应于该声明的参数列表的参数列表时应执行的过程代码。  
   
 5. 根据需要，用或语句终止每个过程 `End Sub` `End Function` 。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [过程](./index.md)
 - [过程形参和实参](./procedure-parameters-and-arguments.md)

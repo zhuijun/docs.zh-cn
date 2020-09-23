@@ -8,14 +8,15 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic], values
 ms.assetid: 3954423e-6ab7-4a4c-b55c-a8d27be47891
-ms.openlocfilehash: 2c92cd4a869acbb7c8c52fbf4117112967386498
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 983e2fd22badf4296004404d885df0a07ab2dc74
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387889"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071555"
 ---
 # <a name="how-to-get-a-value-from-a-property-visual-basic"></a>如何：从属性获取值 (Visual Basic)
+
 通过在表达式中包含属性名称来检索属性的值。  
   
  该属性的 `Get` 过程检索值，但不按名称显式调用它。 像使用变量一样使用属性。 Visual Basic 对属性的过程进行调用。  
@@ -26,7 +27,7 @@ ms.locfileid: "84387889"
   
      \- 或 -  
   
-     在赋值语句中，在等号（）后使用属性名称 `=` 。  
+     使用相等 (后面的属性名称 `=`) 在赋值语句中登录。  
   
      下面的示例读取 Visual Basic 属性的值 `Now` ，隐式调用其 `Get` 过程。  
   
@@ -38,7 +39,7 @@ ms.locfileid: "84387889"
   
  属性的值作为变量或常数加入表达式，或者将其存储在赋值语句左侧的变量或属性中。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [过程](./index.md)
 - [Property 过程](./property-procedures.md)

@@ -15,30 +15,33 @@ helpviewer_keywords:
 - comparison operators [Visual Basic], comparing numeric values
 - operators [Visual Basic], comparison
 ms.assetid: 0b570339-5407-474f-8421-e183a8b303ee
-ms.openlocfilehash: 7a93928ff95e307c64149da7ab21476ffd4fa77d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: fbe81532bb435e54e694f9b5fe9dd497392f31e1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84388824"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071763"
 ---
 # <a name="comparison-operators-in-visual-basic"></a>Comparison Operators in Visual Basic
+
 比较运算符比较两个表达式，并返回一个 `Boolean` 值，该值表示其值之间的关系。 有一些运算符用于比较数值、用于比较字符串的运算符以及用于比较对象的运算符。 这里讨论了所有这三种类型的运算符。  
   
 ## <a name="comparing-numeric-values"></a>比较数值  
+
  Visual Basic 使用六个数值比较运算符比较数值。 每个运算符都采用两个计算为数值的表达式作为操作数。 下表列出了运算符，并显示了每个运算符的示例。  
   
 |运算符|测试的条件|示例|  
 |--------------|----------------------|--------------|  
-|`=`等于|第一个表达式的值是否等于第二个表达式的值？|`23`   `=`   `33    ' False`<br /><br /> `23`   `=`   `23    ' True`<br /><br /> `23`   `=`   `12    ' False`|  
-|`<>`相等|第一个表达式的值是否与第二个表达式的值不相等？|`23`   `<>`   `33    ' True`<br /><br /> `23`   `<>`   `23    ' False`<br /><br /> `23`   `<>`   `12    ' True`|  
-|`<`（小于）|第一个表达式的值是否小于第二个表达式的值？|`23`   `<`   `33    ' True`<br /><br /> `23`   `<`   `23    ' False`<br /><br /> `23`   `<`   `12    ' False`|  
-|`>`（大于）|第一个表达式的值是否大于第二个表达式的值？|`23`   `>`   `33    ' False`<br /><br /> `23`   `>`   `23    ' False`<br /><br /> `23`   `>`   `12    ' True`|  
-|`<=`（小于或等于）|第一个表达式的值是否小于或等于第二个表达式的值？|`23`   `<=`   `33    ' True`<br /><br /> `23`   `<=`   `23    ' True`<br /><br /> `23`   `<=`   `12    ' False`|  
-|`>=`（大于或等于）|第一个表达式的值是否大于或等于第二个表达式的值？|`23`   `>=`   `33    ' False`<br /><br /> `23`   `>=`   `23    ' True`<br /><br /> `23`   `>=`   `12    ' True`|  
+|`=` (相等) |第一个表达式的值是否等于第二个表达式的值？|`23`   `=`   `33    ' False`<br /><br /> `23`   `=`   `23    ' True`<br /><br /> `23`   `=`   `12    ' False`|  
+|`<>` (不相等) |第一个表达式的值是否与第二个表达式的值不相等？|`23`   `<>`   `33    ' True`<br /><br /> `23`   `<>`   `23    ' False`<br /><br /> `23`   `<>`   `12    ' True`|  
+|`<` (小于) |第一个表达式的值是否小于第二个表达式的值？|`23`   `<`   `33    ' True`<br /><br /> `23`   `<`   `23    ' False`<br /><br /> `23`   `<`   `12    ' False`|  
+|`>` (大于) |第一个表达式的值是否大于第二个表达式的值？|`23`   `>`   `33    ' False`<br /><br /> `23`   `>`   `23    ' False`<br /><br /> `23`   `>`   `12    ' True`|  
+|`<=` (小于或等于) |第一个表达式的值是否小于或等于第二个表达式的值？|`23`   `<=`   `33    ' True`<br /><br /> `23`   `<=`   `23    ' True`<br /><br /> `23`   `<=`   `12    ' False`|  
+|`>=` (大于或等于) |第一个表达式的值是否大于或等于第二个表达式的值？|`23`   `>=`   `33    ' False`<br /><br /> `23`   `>=`   `23    ' True`<br /><br /> `23`   `>=`   `12    ' True`|  
   
 ## <a name="comparing-strings"></a>比较字符串  
- Visual Basic 使用[Like 运算符](../../../language-reference/operators/like-operator.md)以及数字比较运算符来比较字符串。 `Like`运算符用于指定模式。 然后，将该字符串与模式进行比较，如果匹配，则结果为 `True` 。 否则，结果为 `False`。 数字运算符允许您根据值的 `String` 排序顺序比较值，如下面的示例所示。  
+
+ Visual Basic 使用 [Like 运算符](../../../language-reference/operators/like-operator.md) 以及数字比较运算符来比较字符串。 `Like`运算符用于指定模式。 然后，将该字符串与模式进行比较，如果匹配，则结果为 `True` 。 否则，结果为 `False`。 数字运算符允许您根据值的 `String` 排序顺序比较值，如下面的示例所示。  
   
  `"73" < "9"`  
   
@@ -56,10 +59,11 @@ ms.locfileid: "84388824"
   
  `' The result of the preceding comparison is True.`  
   
- 根据的设置，排序顺序基于二进制比较或文本比较 `Option Compare` 。 有关详细信息，请参阅[Option Compare 语句](../../../language-reference/statements/option-compare-statement.md)。  
+ 根据的设置，排序顺序基于二进制比较或文本比较 `Option Compare` 。 有关详细信息，请参阅 [Option Compare 语句](../../../language-reference/statements/option-compare-statement.md)。  
   
 ## <a name="comparing-objects"></a>比较对象  
- Visual Basic 将两个对象引用变量与[Is 运算符](../../../language-reference/operators/is-operator.md)和[IsNot 运算符](../../../language-reference/operators/isnot-operator.md)进行比较。 您可以使用其中任一运算符来确定两个引用变量是否引用同一对象实例。 下面的示例对此进行了演示。  
+
+ Visual Basic 将两个对象引用变量与 [Is 运算符](../../../language-reference/operators/is-operator.md) 和 [IsNot 运算符](../../../language-reference/operators/isnot-operator.md)进行比较。 您可以使用其中任一运算符来确定两个引用变量是否引用同一对象实例。 下面的示例对此进行了演示。  
   
  [!code-vb[VbVbalrOperators#65](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#65)]  
   
@@ -76,7 +80,8 @@ ms.locfileid: "84388824"
  在前面的示例中， `If a IsNot b` 等效于 `If Not a Is b` 。  
   
 ### <a name="comparing-object-type"></a>比较对象类型  
- 您可以使用 `TypeOf` ... 表达式测试对象是否为特定类型。 `Is` 语法如下所示：  
+
+ 您可以使用 `TypeOf` ... 表达式测试对象是否为特定类型。 `Is` 语法如下：  
   
  `TypeOf <objectexpression> Is <typename>`  
   
@@ -86,9 +91,9 @@ ms.locfileid: "84388824"
   
  在前面的示例中， `TypeOf x Is Control` 表达式的计算结果为 `True` ，因为的类型 `x` 为 `Button` ，后者继承自 `Control` 。  
   
- 有关详细信息，请参阅[TypeOf 运算符](../../../language-reference/operators/typeof-operator.md)。  
+ 有关详细信息，请参阅 [TypeOf 运算符](../../../language-reference/operators/typeof-operator.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [值的比较](value-comparisons.md)
 - [比较运算符](../../../language-reference/operators/comparison-operators.md)

@@ -5,17 +5,19 @@ helpviewer_keywords:
 - strings [Visual Basic], regular expressions
 - strings [Visual Basic], masked edit
 ms.assetid: 2a048fb0-7053-487d-b2c5-ffa5e22ed6f9
-ms.openlocfilehash: 1bb5ac5381dc85f598ef46638fbc8cd1a8643825
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 493da7b8583b5cc73a9832afa81b7b1d84742f2d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555739"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072426"
 ---
 # <a name="using-regular-expressions-with-the-maskedtextbox-control-in-visual-basic"></a>在 MaskedTextBox 控件中使用正则表达式 (Visual Basic)
+
 此示例演示如何转换简单正则表达式以使用 <xref:System.Windows.Forms.MaskedTextBox> 控件。  
   
 ## <a name="description-of-the-masking-language"></a>掩码语言说明  
+
  标准 <xref:System.Windows.Forms.MaskedTextBox> 掩码语言基于 `Masked Edit` Visual Basic 6.0 中控件使用的语言，应熟悉从该平台迁移的用户。  
   
  <xref:System.Windows.Forms.MaskedTextBox.Mask%2A>控件的属性 <xref:System.Windows.Forms.MaskedTextBox> 指定要使用的输入掩码。 掩码必须是由下表中的一个或多个屏蔽元素组成的字符串。  
@@ -44,11 +46,12 @@ ms.locfileid: "90555739"
  Decimal ( ) ，千位数 (，) ，time (： ) 、date (/) 和 currency ($) 符号默认为按应用程序的区域性定义的方式显示这些符号。 可以通过使用属性强制它们显示另一区域性的符号 <xref:System.Windows.Forms.MaskedTextBox.FormatProvider%2A> 。  
   
 ## <a name="regular-expressions-and-masks"></a>正则表达式和掩码  
+
  尽管可以使用正则表达式和掩码来验证用户输入，但它们并不完全等效。 正则表达式可以表达比掩码更复杂的模式，但是掩码可以更简洁地以与区域性相关的格式表达相同的信息。  
   
  下表比较了四个正则表达式和每个正则表达式的等效掩码。  
   
-|Regular Expression|Mask|说明|  
+|Regular Expression|Mask|备注|  
 |------------------------|----------|-----------|  
 |`\d{2}/\d{2}/\d{4}`|`00/00/0000`|`/`掩码中的字符是一个逻辑日期分隔符，并向用户显示与应用程序的当前区域性相对应的日期分隔符。|  
 |`\d{2}-[A-Z][a-z]{2}-\d{4}`|`00->L<LL-0000`|美国格式的日期 (日、月份缩写和年份) ，其中，三个字母的月份缩写以后跟两个小写字母的前大写字母显示。|  

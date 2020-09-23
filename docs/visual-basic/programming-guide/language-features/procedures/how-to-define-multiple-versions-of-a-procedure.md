@@ -8,15 +8,16 @@ helpviewer_keywords:
 - procedures [Visual Basic], multiple versions
 - procedure overloading [Visual Basic], multiple versions
 ms.assetid: 71ccdd66-1b00-4b66-bee4-6926c0d696f4
-ms.openlocfilehash: 870a18dbf3a7e28b7d7b612e853beeec6908cf6f
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2661603ba33dd0bc28ac1a192794a4534225b641
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387928"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91071633"
 ---
 # <a name="how-to-define-multiple-versions-of-a-procedure-visual-basic"></a>如何：定义一个过程的多个版本 (Visual Basic)
-您*可以通过使用*相同的名称，但对于每个版本使用不同的参数列表，在多个版本中定义过程。 重载的目的是定义过程中的多个紧密相关的版本，而不必按名称对其进行区分。  
+
+您 *可以通过使用* 相同的名称，但对于每个版本使用不同的参数列表，在多个版本中定义过程。 重载的目的是定义过程中的多个紧密相关的版本，而不必按名称对其进行区分。  
   
  有关更多信息，请参见 [Procedure Overloading](./procedure-overloading.md)。  
   
@@ -31,18 +32,20 @@ ms.locfileid: "84387928"
 4. 根据需要，用或语句终止过程的每个版本 `End Sub` `End Function` 。  
   
 ## <a name="example"></a>示例  
+
  下面的示例定义了一个 `Sub` 过程，用于将事务发布到客户余额。 它使用 `Overloads` 关键字定义过程的两个版本，一个版本按姓名，另一个按帐号接受客户。  
   
  [!code-vb[VbVbcnProcedures#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#72)]  
   
  调用代码可以获取客户标识作为 `String` 或 `Integer` ，然后在任一情况下均使用相同的调用语句。  
   
- 有关如何调用该过程的这些版本的信息 `post` ，请参阅[如何：调用重载过程](./how-to-call-an-overloaded-procedure.md)。  
+ 有关如何调用该过程的这些版本的信息 `post` ，请参阅 [如何：调用重载过程](./how-to-call-an-overloaded-procedure.md)。  
   
 ## <a name="compile-the-code"></a>编译代码  
+
  请确保每个重载版本都具有相同的过程名称，但参数列表不同。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [过程](./index.md)
 - [过程形参和实参](./procedure-parameters-and-arguments.md)

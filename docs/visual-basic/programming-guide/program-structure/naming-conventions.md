@@ -10,15 +10,16 @@ helpviewer_keywords:
 - names [Visual Basic], naming conventions
 - naming conventions [Visual Basic], classes
 ms.assetid: 164949a4-2a7c-4736-9d82-9c3078e2e56c
-ms.openlocfilehash: 20531e379ddf9b93a278795e9b3c0eb91b47e077
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b25d246bd31147b7a9ba2c72214926fdb5ca8895
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398339"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072140"
 ---
 # <a name="visual-basic-naming-conventions"></a>Visual Basic 命名约定
-在 Visual Basic 应用程序中为某个元素命名时，该名称的第一个字符必须是字母字符或下划线。 但请注意，以下划线开头的名称不符合[语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md)（CLS）。  
+
+在 Visual Basic 应用程序中为某个元素命名时，该名称的第一个字符必须是字母字符或下划线。 但请注意，以下划线开头的名称不符合 [语言独立性和与语言无关的组件](../../../standard/language-independence-and-language-independent-components.md) (CLS) 。  
   
  以下建议适用于命名。  
   
@@ -40,7 +41,7 @@ ms.locfileid: "84398339"
   
 - 避免使用与外部作用域中的名称相同的内部作用域中的名称。 如果访问错误的变量，则会导致错误。 如果变量与同名的关键字之间发生冲突，则必须通过在其前面加上适当的类型库来标识关键字。 例如，如果你有一个名为的变量 `Date` ，则只能通过调用来使用内部 `Date` 函数 <xref:System.DateTime.Date%2A?displayProperty=nameWithType> 。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [代码中用作元素名称的关键字](keywords-as-element-names-in-code.md)
 - [Me、My、MyBase 和 MyClass](me-my-mybase-and-myclass.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - objects [Visual Basic], inheritance
 - object variables [Visual Basic], determining relation
 ms.assetid: da002e3f-6616-4bad-a229-f842d06652bb
-ms.openlocfilehash: 30e88a21e737aa57513745899577381ed34151a2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b33815d58b0ef40f7f75a6a41bb4b1eeef591859
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410459"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072218"
 ---
 # <a name="how-to-determine-whether-two-objects-are-related-visual-basic"></a>如何：确定两个对象是否相关 (Visual Basic)
 
@@ -28,6 +28,7 @@ ms.locfileid: "84410459"
     <xref:System.Type.IsInstanceOfType%2A>`True`如果其参数类型继承自对象类型，则返回 <xref:System.Type?displayProperty=nameWithType> 。
 
 ## <a name="example"></a>示例
+
  下面的示例确定一个对象是否表示一个派生自另一个对象的类的类。
 
 ```vb
@@ -48,7 +49,7 @@ End Class
 
 请注意调用中的两个对象变量的意外位置 <xref:System.Type.IsInstanceOfType%2A> 。 假定的基类型用于生成 <xref:System.Type?displayProperty=nameWithType> 类，假设派生类型作为参数传递给 <xref:System.Type.IsInstanceOfType%2A> 方法。
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Object.GetType%2A>
 - <xref:System.Type?displayProperty=nameWithType>
