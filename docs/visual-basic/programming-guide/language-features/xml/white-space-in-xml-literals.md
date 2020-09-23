@@ -5,17 +5,19 @@ helpviewer_keywords:
 - white space [XML in Visual Basic]
 - XML literals [Visual Basic], white space
 ms.assetid: dfe3a9ff-d69a-418e-a6b5-476f4ed84219
-ms.openlocfilehash: b3caf7ac052f3fed3fe5427da0cc96bbdd955ea6
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 5db8f92117e77d96eab34f28758546393e2afca0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84360470"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91099094"
 ---
 # <a name="white-space-in-xml-literals-visual-basic"></a>XML 文本中的空白 (Visual Basic)
+
 Visual Basic 编译器在创建对象时仅合并 XML 文本中的有效空白字符 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 。 不包含无意义的空白字符。  
   
 ## <a name="significant-and-insignificant-white-space"></a>重要且无意义的空白  
+
  XML 文本中的空格字符仅在三个区域中很重要：  
   
 - 在属性值中。  
@@ -32,6 +34,7 @@ Visual Basic 编译器在创建对象时仅合并 XML 文本中的有效空白�
 > 如果 `xml:space` 属性出现在 XML 元素文本中，则 Visual Basic 编译器在对象中包括属性 <xref:System.Xml.Linq.XElement> ，但添加此属性不会更改编译器处理空白的方式。  
   
 ## <a name="examples"></a>示例  
+
  下面的示例包含两个 XML 元素：外部和内部。 这两个元素在其文本内容中都包含空格。 外部元素中的空白是无意义的，因为它仅包含空格和 XML 元素。 内部元素中的空格非常重要，因为它包含空格和文本。  
   
  [!code-vb[VbXMLSamples#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#29)]  
@@ -46,6 +49,6 @@ Visual Basic 编译器在创建对象时仅合并 XML 文本中的有效空白�
 </outer>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [在 Visual Basic 中创建 XML](creating-xml.md)

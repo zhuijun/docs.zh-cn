@@ -5,15 +5,16 @@ helpviewer_keywords:
 - conditional compilation [Visual Basic], about conditional compilation
 - compilation [Visual Basic], conditional
 ms.assetid: 9c35e55e-7eee-44fb-a586-dad1f1884848
-ms.openlocfilehash: c3eb1eb57b3d76e762ed53edb3b168ad96abec39
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e59296882edc018259816c73b6ae861b3b296783
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403260"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098964"
 ---
 # <a name="conditional-compilation-in-visual-basic"></a>Visual Basic 中的条件编译
-在*条件编译*中，程序中的特定代码块会有选择地编译，而其他代码块会被忽略。  
+
+在 *条件编译*中，程序中的特定代码块会有选择地编译，而其他代码块会被忽略。  
   
  例如，你可能想要编写调试语句来比较不同方法对相同编程任务的速度，或者可能想要针对多种语言对应用程序进行本地化。 条件编译语句设计为在编译时运行，而不是在运行时运行。  
   
@@ -27,6 +28,7 @@ ms.locfileid: "84403260"
 > 当编辑代码时，自动完成功能将无法正常工作，如果代码不是当前分支的一部分，则使用条件编译指令。  
   
 ## <a name="declaring-conditional-compilation-constants"></a>声明条件编译常量  
+
  可以通过以下三种方式之一来设置条件编译常量：  
   
 - 在**项目设计器**中  
@@ -41,7 +43,7 @@ ms.locfileid: "84403260"
 |---|---|  
 |**项目设计器**|公共到项目中的所有文件|  
 |命令行|向传递到命令行编译器的所有文件公开|  
-|`#Const`代码中的语句|专用于声明它的文件|  
+|`#Const` 代码中的语句|专用于声明它的文件|  
   
 |在项目设计器中设置常量|  
 |---|  
@@ -49,7 +51,7 @@ ms.locfileid: "84403260"
   
 |在命令行中设置常量|  
 |---|  
-|-使用 **-d**开关输入条件编译常量，如以下示例中所示：<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     **-D**开关和第一个常数之间不需要空格。 有关详细信息，请参阅[-define （Visual Basic）](../../reference/command-line-compiler/define.md)。<br />     命令行声明会重写在**项目设计器**中输入的声明，但不会将其删除。 在**项目设计器**中设置的参数对于后续编译仍有效。<br />     在代码本身中编写常量时，没有严格的规则与它们的位置相关，因为它们的作用域是在其中声明它们的整个模块。|  
+|-使用 **-d** 开关输入条件编译常量，如以下示例中所示：<br />     `vbc MyProj.vb /d:conFrenchVersion=–1:conANSI=0`<br />     **-D**开关和第一个常数之间不需要空格。 有关详细信息，请参阅 [-定义 (Visual Basic) ](../../reference/command-line-compiler/define.md)。<br />     命令行声明会重写在 **项目设计器**中输入的声明，但不会将其删除。 在 **项目设计器** 中设置的参数对于后续编译仍有效。<br />     在代码本身中编写常量时，没有严格的规则与它们的位置相关，因为它们的作用域是在其中声明它们的整个模块。|  
   
 |若要在代码中设置常量|  
 |---|  
@@ -57,11 +59,12 @@ ms.locfileid: "84403260"
   
 ## <a name="related-topics"></a>相关主题  
   
-|Title|说明|  
+|Title|描述|  
 |---|---|  
 |[程序结构和代码约定](program-structure-and-code-conventions.md)|提供使代码易于阅读和维护的建议。|  
   
 ## <a name="reference"></a>参考  
+
  [#Const 指令](../../language-reference/directives/const-directive.md)  
   
  [#If...Then...#Else 指令](../../language-reference/directives/if-then-else-directives.md)  

@@ -1,34 +1,35 @@
 ---
-title: 将包管理与F# for Azure 配合使用
-description: 使用 Paket 或 Nuget 管理F# Azure 依赖关系
+title: '将包管理与 F # 一起用于 Azure'
+description: '使用 Paket 或 Nuget 管理 F # Azure 依赖项'
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 4aa32ace91f30d0e43b9c40067f5f0f456cc4069
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.custom: devx-track-fsharp
+ms.openlocfilehash: 011a363b264079599e8b7d402fe9896045b1fe04
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71214225"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91100108"
 ---
 # <a name="package-management-for-f-azure-dependencies"></a>F# Azure 依赖项的包管理
 
-使用包管理器时，可轻松为 Azure 开发获取包。 这两个选项是[Paket](https://fsprojects.github.io/Paket/)和[NuGet](https://www.nuget.org/)。
+使用包管理器时，可轻松为 Azure 开发获取包。 这两个选项是 [Paket](https://fsprojects.github.io/Paket/) 和 [NuGet](https://www.nuget.org/)。
 
 ## <a name="using-paket"></a>使用 Paket
 
-如果使用[Paket](https://fsprojects.github.io/Paket/)作为依赖关系管理器，可以使用`paket.exe`工具添加 Azure 依赖关系。 例如:
+如果使用 [Paket](https://fsprojects.github.io/Paket/) 作为依赖关系管理器，可以使用 `paket.exe` 工具添加 Azure 依赖关系。 例如：
 
 ```console
 > paket add nuget WindowsAzure.Storage
 ```
 
-或者，如果使用[Mono](https://www.mono-project.com/)进行跨平台 .net 开发：
+或者，如果使用 [Mono](https://www.mono-project.com/) 进行跨平台 .net 开发：
 
 ```console
 > mono paket.exe add nuget WindowsAzure.Storage
 ```
 
-这会将`WindowsAzure.Storage`添加到当前目录中的项目的包依赖项集，修改该`paket.dependencies`文件，然后下载包。 如果以前设置了依赖项，或者正在使用的项目的依赖项已由其他开发人员进行了设置，则可以按以下方式解析和安装依赖项：
+这会将添加 `WindowsAzure.Storage` 到当前目录中的项目的包依赖项集，修改该 `paket.dependencies` 文件，然后下载包。 如果以前设置了依赖项，或者正在使用的项目的依赖项已由其他开发人员进行了设置，则可以按以下方式解析和安装依赖项：
 
 ```console
 > paket install
@@ -54,7 +55,7 @@ ms.locfileid: "71214225"
 
 ## <a name="using-nuget"></a>使用 Nuget
 
-如果使用[NuGet](https://www.nuget.org/)作为依赖关系管理器，可以使用`nuget.exe`工具添加 Azure 依赖关系。 例如:
+如果使用 [NuGet](https://www.nuget.org/) 作为依赖关系管理器，可以使用 `nuget.exe` 工具添加 Azure 依赖关系。 例如：
 
 ```console
 > nuget install WindowsAzure.Storage -ExcludeVersion
@@ -66,7 +67,7 @@ ms.locfileid: "71214225"
 > mono nuget.exe install WindowsAzure.Storage -ExcludeVersion
 ```
 
-这会将`WindowsAzure.Storage`添加到当前目录中的项目的包依赖项集，并下载包。 如果以前设置了依赖项，或者正在使用的项目的依赖项已由其他开发人员进行了设置，则可以按以下方式解析和安装依赖项：
+这会将添加 `WindowsAzure.Storage` 到当前目录中的项目的包依赖项集，并下载包。 如果以前设置了依赖项，或者正在使用的项目的依赖项已由其他开发人员进行了设置，则可以按以下方式解析和安装依赖项：
 
 ```console
 > nuget restore
@@ -92,7 +93,7 @@ ms.locfileid: "71214225"
 
 ## <a name="referencing-assemblies"></a>引用程序集
 
-若要在F#脚本中使用包，需要使用`#r`指令引用包中包含的程序集。 例如:
+若要在 F # 脚本中使用包，需要使用指令引用包中包含的程序集 `#r` 。 例如：
 
 ```fsharp
 > #r "packages/WindowsAzure.Storage/lib/net40/Microsoft.WindowsAzure.Storage.dll"

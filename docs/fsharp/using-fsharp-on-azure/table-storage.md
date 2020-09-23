@@ -3,12 +3,13 @@ title: 通过 F# 实现 Azure 表格存储入门
 description: 使用 Azure 表存储或 Azure Cosmos DB 将结构化数据存储在云中。
 author: sylvanc
 ms.date: 03/26/2018
-ms.openlocfilehash: eb25fda0bb3c658eed2f675d6ba79c689a9080a9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.custom: devx-track-fsharp
+ms.openlocfilehash: f4a22ec14de6c92414fbcf3cca435e2b5c0805f1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90548346"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91100095"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>开始使用 Azure 表存储和 Azure Cosmos DB 表 API 使用 F\#
 
