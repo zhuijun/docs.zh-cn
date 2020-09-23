@@ -10,14 +10,15 @@ helpviewer_keywords:
 - operators [Visual Basic], comparison
 - expressions [Visual Basic], comparing
 ms.assetid: 60da0c76-9458-4afc-97e9-44a7939c064c
-ms.openlocfilehash: 01816b5730cf4fda61f1737ce3ce00ab82f57da8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: e424dd58cada8cda250554a4a8870e1900d0fa7d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403390"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085966"
 ---
 # <a name="value-comparisons-visual-basic"></a>值的比较 (Visual Basic)
+
 比较运算符可用于构造比较数值变量的值的表达式。 这些表达式 `Boolean` 根据比较结果为 true 或 false 返回值。 此类表达式的示例如下所示。  
   
  `45 > 26`  
@@ -44,7 +45,7 @@ ms.locfileid: "84403390"
   
  [!code-vb[VbVbalrOperators#86](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#86)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [布尔表达式](boolean-expressions.md)
 - [运算符和表达式](index.md)

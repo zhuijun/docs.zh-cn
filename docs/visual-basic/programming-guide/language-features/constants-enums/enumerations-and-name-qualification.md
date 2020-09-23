@@ -17,19 +17,21 @@ helpviewer_keywords:
 - naming conventions [Visual Basic], naming conflicts
 - declarations [Visual Basic], namespaces
 ms.assetid: 08ba2738-df52-4140-bc55-f57c871c9b73
-ms.openlocfilehash: 4b09284b8282c481e406050d37cbdb2f3c8686bc
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 6e067d72e557b97f8626b148e173e3d1583f92b8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414500"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086265"
 ---
 # <a name="enumerations-and-name-qualification-visual-basic"></a>枚举和名称限定 (Visual Basic)
+
 通常，在引用枚举成员时，必须使用枚举名称限定成员名称。 例如，若要引用枚举的 `Sunday` 成员 `Days` ，请使用以下语法：  
   
  [!code-vb[VbEnumsTask#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#18)]  
   
 ## <a name="using-the-imports-statement"></a>使用 Imports 语句  
+
  可以通过将 `Imports` 语句添加到代码的命名空间声明部分来避免使用完全限定的名称，如以下示例中所示：  
   
  [!code-vb[VbEnumsTask#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#22)]  
@@ -38,7 +40,7 @@ ms.locfileid: "84414500"
   
  [!code-vb[VbEnumsTask#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#24)]  
   
- 通过组织枚举中的相关常量集，可以在不同的上下文中使用相同的常量名称。 例如，可以对和枚举中的 weekday 常量使用相同的名称 `Days` `WorkDays` 。 如果对枚举使用 `Imports` 语句，则必须小心，以避免不明确的引用。 请看下面的示例：  
+ 通过组织枚举中的相关常量集，可以在不同的上下文中使用相同的常量名称。 例如，可以对和枚举中的 weekday 常量使用相同的名称 `Days` `WorkDays` 。 如果对枚举使用 `Imports` 语句，则必须小心，以避免不明确的引用。 请考虑以下示例：  
   
  [!code-vb[VbEnumsTask#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class1.vb#22)]  
   
@@ -48,7 +50,7 @@ ms.locfileid: "84414500"
   
  [!code-vb[VbEnumsTask#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#32)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [常量和枚举](../../../language-reference/constants-and-enumerations.md)
 - [如何：声明枚举](how-to-declare-enumerations.md)

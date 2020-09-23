@@ -9,17 +9,19 @@ helpviewer_keywords:
 - TypeName function
 - objects [Visual Basic], type determining
 ms.assetid: d95e7ad1-cd63-41d6-9a28-d7a1380d49c1
-ms.openlocfilehash: 3b1c4ad0ab4fd8d2897aff6ad9097cdc81272455
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ae338bc9bad9646abc045a652d4ef33a8863354b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410639"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086057"
 ---
 # <a name="determining-object-type-visual-basic"></a>确定对象类型 (Visual Basic)
-泛型对象变量（即声明为的变量 `Object` ）可以包含任何类中的对象。 使用类型的变量时 `Object` ，可能需要根据对象的类执行不同的操作; 例如，某些对象可能不支持特定的属性或方法。 Visual Basic 提供了两种方法来确定存储在对象变量中的对象类型： `TypeName` 函数和 `TypeOf...Is` 运算符。  
+
+泛型对象变量 (即声明为) 的变量 `Object` 可以包含任何类中的对象。 使用类型的变量时 `Object` ，可能需要根据对象的类执行不同的操作; 例如，某些对象可能不支持特定的属性或方法。 Visual Basic 提供了两种方法来确定存储在对象变量中的对象类型： `TypeName` 函数和 `TypeOf...Is` 运算符。  
   
 ## <a name="typename-and-typeofis"></a>TypeName 和 TypeOf .。。未  
+
  `TypeName`如果需要存储或显示对象的类名，则函数返回一个字符串，是最佳选择，如以下代码片段所示：  
   
  [!code-vb[VbVbalrOOP#92](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#92)]  
@@ -44,7 +46,7 @@ ms.locfileid: "84410639"
   
      [!code-vb[VbVbalrOOP#95](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#95)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:Microsoft.VisualBasic.Information.TypeName%2A>
 - [使用字符串名调用属性或方法](calling-a-property-or-method-using-a-string-name.md)

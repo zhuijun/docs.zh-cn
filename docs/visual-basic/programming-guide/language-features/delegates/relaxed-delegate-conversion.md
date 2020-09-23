@@ -6,17 +6,19 @@ helpviewer_keywords:
 - delegates [Visual Basic], relaxed conversion
 - conversions [Visual Basic], relaxed delegate
 ms.assetid: 64f371d0-5416-4f65-b23b-adcbf556e81c
-ms.openlocfilehash: a581ffae77c496908d2e4e38df53491a54ae2ab8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b914d0479f160199744a8f9923c0bebc87321329
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410665"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086070"
 ---
 # <a name="relaxed-delegate-conversion-visual-basic"></a>宽松委托转换 (Visual Basic)
+
 通过宽松委托转换，您可以将 sub 和函数分配给委托或处理程序，即使它们的签名不相同。 因此，绑定到委托将与已允许方法调用的绑定一致。  
   
 ## <a name="parameters-and-return-type"></a>参数和返回类型  
+
  宽松转换要求在设置为以下条件时满足以下条件 `Option Strict` `On` ：  
   
 - 必须将每个委托参数的数据类型的扩大转换为分配的函数或的对应参数的数据类型 `Sub` 。 在下面的示例中，委托 `Del1` 具有一个参数，即 `Integer` 。 `m`指定 lambda 表达式中的参数必须有一个数据类型，该数据类型的扩大转换来自 `Integer` ，如 `Long` 或 `Double` 。  
@@ -38,6 +40,7 @@ ms.locfileid: "84410665"
  [!code-vb[VbVbalrRelaxedDelegates#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module2.vb#4)]  
   
 ## <a name="omitting-parameter-specifications"></a>省略参数规范  
+
  宽松委托还允许您完全省略分配的方法中的参数规范：  
   
  [!code-vb[VbVbalrRelaxedDelegates#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#5)]  
@@ -61,6 +64,7 @@ End Sub
 ```  
   
 ## <a name="addressof-examples"></a>AddressOf 示例  
+
  前面的示例中使用了 Lambda 表达式，使类型关系易于查看。 但是，允许使用、或的委托分配使用相同的 `AddressOf` 松弛法 `Handles` `AddHandler` 。  
   
  在下面的示例中，函数 `f1` 、、 `f2` 和都 `f3` `f4` 可以分配给 `Del1` 。  
@@ -76,13 +80,14 @@ End Sub
  [!code-vb[VbVbalrRelaxedDelegates#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module2.vb#14)]  
   
 ## <a name="dropping-function-returns"></a>删除函数返回  
+
  通过宽松委托转换，您可以将函数分配给 `Sub` 委托，从而有效地忽略函数的返回值。 但是，不能将分配 `Sub` 给函数委托。 在下面的示例中，函数的地址 `doubler` 分配给 `Sub` 委托 `Del3` 。  
   
  [!code-vb[VbVbalrRelaxedDelegates#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#10)]  
   
  [!code-vb[VbVbalrRelaxedDelegates#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrRelaxedDelegates/VB/Module1.vb#11)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Lambda 表达式](../procedures/lambda-expressions.md)
 - [Widening and Narrowing Conversions](../data-types/widening-and-narrowing-conversions.md)

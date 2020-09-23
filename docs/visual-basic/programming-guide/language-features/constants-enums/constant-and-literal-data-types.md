@@ -9,23 +9,25 @@ helpviewer_keywords:
 - literals [Visual Basic], coercing data type
 - declarations [Visual Basic], data types
 ms.assetid: 057206d2-3a5b-40b9-b3af-57446f9b52fa
-ms.openlocfilehash: b94259326b42104db05d9fc5bb09f686075d0759
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 03d693653cd166bbf1096031f1a864b492e2e896
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414526"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91086291"
 ---
 # <a name="constant-and-literal-data-types-visual-basic"></a>常量和 Literal 数据类型 (Visual Basic)
+
 文本是一个值，它表示为自身，而不是作为变量的值或表达式的结果，如数字3或字符串 "Hello"。 常量是有意义的名称，用于代替文本，并在整个程序中保留此相同的值，而不是变量（其值可能会更改）。  
   
- 如果[选项推断](../../../language-reference/statements/option-infer-statement.md)为 `Off` ，且[option Strict](../../../language-reference/statements/option-strict-statement.md)为 `On` ，则必须使用数据类型显式声明所有常量。 在下面的示例中，的数据类型 `MyByte` 显式声明为数据类型 `Byte` ：  
+ 如果 [选项推断](../../../language-reference/statements/option-infer-statement.md) 为 `Off` ，且 [option Strict](../../../language-reference/statements/option-strict-statement.md) 为 `On` ，则必须使用数据类型显式声明所有常量。 在下面的示例中，的数据类型 `MyByte` 显式声明为数据类型 `Byte` ：  
   
  [!code-vb[VbVbalrConstants#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrConstants/VB/Class1.vb#1)]  
   
  当 `Option Infer` 为 `On` 或 `Option Strict` 时 `Off` ，可以声明常量，而无需使用子句指定数据类型 `As` 。 编译器将确定表达式的类型的常量类型。 默认情况下，将数值转换为 `Integer` 数据类型。 浮点数字的默认数据类型为 `Double` ，关键字 `True` 和 `False` 指定 `Boolean` 常量。  
   
 ## <a name="literals-and-type-coercion"></a>文本和类型强制  
+
  在某些情况下，可能需要将文本强制用于特定的数据类型;例如，将特别大的整数文本值分配给类型的变量时 `Decimal` 。 下面的示例生成错误：  
   
 ```vb  
@@ -61,7 +63,7 @@ myDecimal = 100000000000000000000   ' This causes a compiler error.
 |`Single`|（无）|F 或！|  
 |`String`|"|（无）|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [用户定义常数](user-defined-constants.md)
 - [如何：声明常量](how-to-declare-a-constant.md)

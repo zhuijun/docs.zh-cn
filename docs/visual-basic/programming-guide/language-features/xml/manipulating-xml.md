@@ -6,17 +6,19 @@ helpviewer_keywords:
 - Visual Basic code, XML
 - XML [Visual Basic], manipulating
 ms.assetid: da32cffb-198d-41b1-9af3-260fe32e3b7d
-ms.openlocfilehash: fca6c05b4baae4689e9d5e5698cee75f0c5470ec
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 52c8822c34a85af81dde505d36e6e159745a0d12
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84374741"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085684"
 ---
 # <a name="manipulating-xml-in-visual-basic"></a>在 Visual Basic 中操作 XML
-您可以使用*xml 文本*从外部源（如字符串、文件或流）加载 XML。 然后，可以使用 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 来操作 xml，并使用语言集成查询（LINQ）来查询 xml。  
+
+您可以使用 *xml 文本* 从外部源（如字符串、文件或流）加载 XML。 然后，可以使用 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 操作 xml 并使用语言集成查询 (LINQ) 来查询 XML。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [如何：从文件、字符串或流加载 XML](how-to-load-xml-from-a-file-string-or-stream.md)  
  演示如何 <xref:System.Xml.Linq.XDocument> <xref:System.Xml.Linq.XElement> 从文本文件、字符串或流将 XML 加载到或对象中。  
   
@@ -27,6 +29,7 @@ ms.locfileid: "84374741"
  演示如何修改 XML 文本中的元素、特性和值。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [XML 轴属性](../../../language-reference/xml-axis/index.md)  
  提供一些链接，这些链接指向描述各种 XML 访问属性的部分。  
   
@@ -42,7 +45,7 @@ ms.locfileid: "84374741"
  [XML](index.md)  
  提供一些链接，这些链接指向介绍如何 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 在 Visual Basic 中使用的部分。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [XML](index.md)
 - [LINQ](../linq/index.md)
