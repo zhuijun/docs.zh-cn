@@ -2,14 +2,15 @@
 title: 使用 Async 以进行文件访问
 ms.date: 07/20/2015
 ms.assetid: c989305f-08e3-4687-95c3-948465cda202
-ms.openlocfilehash: 2ee1efa69f4b13224be65fe802ebf5f834c941aa
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 2e7fa4a78363a08f2ff25e6a961868e85994e200
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400766"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077353"
 ---
 # <a name="using-async-for-file-access-visual-basic"></a>使用异步进行文件访问 (Visual Basic)
+
 可以使用 Async 功能访问文件。 通过使用异步功能，你可以调用异步方法而无需使用回调，也不需要跨多个方法或 Lambda 表达式来拆分代码。 若要使同步代码异步，只需调用异步方法而非同步方法，并向代码中添加几个关键字。  
   
  可能出于以下原因向文件访问调用中添加异步：  
@@ -25,6 +26,7 @@ ms.locfileid: "84400766"
 - 异步任务可以轻松地并行运行。  
   
 ## <a name="running-the-examples"></a>运行示例  
+
  若要运行本主题中的示例，可创建“WPF 应用程序”或“Windows 窗体应用程序”，然后添加一个“按钮”。 在按钮的 `Click` 事件中，添加对每个示例的第一个方法的调用。  
   
  在下面的示例中，包括以下 `Imports` 语句。  
@@ -39,11 +41,13 @@ Imports System.Threading.Tasks
 ```  
   
 ## <a name="use-of-the-filestream-class"></a>使用 FileStream 类  
+
  本主题中的示例使用 <xref:System.IO.FileStream> 类，该类包含可导致在操作系统级别出现异步 I/O 的选项。 使用此选项可避免在许多情况下阻止 ThreadPool 线程。 若要启用此选项，可在构造函数调用中指定 `useAsync=true` 或 `options=FileOptions.Asynchronous` 参数。  
   
  如果通过指定文件路径直接打开 <xref:System.IO.StreamReader> 和 <xref:System.IO.StreamWriter>，则无法将此选项与这二者配合使用。 但是，如果为二者提供已由 <xref:System.IO.FileStream> 类打开的 <xref:System.IO.Stream>，则可以使用此选项。 请注意，即使 ThreadPool 线程受到阻止，UI 应用中的异步调用仍然更快，因为 UI 线程在等待期间不会受到阻止。  
   
 ## <a name="writing-text"></a>编写文本  
+
  下面的示例将文本写入文件。 在每个 await 语句中，该方法会立即退出。 文件 I/O 完成后，该方法将在 await 语句后面的语句中继续。 请注意，async 修饰符在使用 await 语句的方法的定义中。  
   
 ```vb  
@@ -73,10 +77,11 @@ Dim theTask As Task = sourceStream.WriteAsync(encodedText, 0, encodedText.Length
 Await theTask  
 ```  
   
- 第一条语句返回任务，并会导致文件处理启动。 具有 await 的第二条语句将使方法立即退出并返回一个不同的任务。 文件处理稍后完成后，执行将返回到 await 后面的语句中。 有关详细信息，请参阅[异步程序中的控制流（Visual Basic）](control-flow-in-async-programs.md)。  
+ 第一条语句返回任务，并会导致文件处理启动。 具有 await 的第二条语句将使方法立即退出并返回一个不同的任务。 文件处理稍后完成后，执行将返回到 await 后面的语句中。 有关详细信息，请参阅  [异步程序中的控制流 (Visual Basic) ](control-flow-in-async-programs.md)。  
   
 ## <a name="reading-text"></a>读取文本  
- 下面的示例读取文件中的文本。 将会缓冲文本，并且在此情况下，会将其放入 <xref:System.Text.StringBuilder>。 与前一示例不同，await 的计算将生成一个值。 <xref:System.IO.Stream.ReadAsync%2A> 方法返回 <xref:System.Threading.Tasks.Task>\<<xref:System.Int32>>，因此在操作完成后 await 的评估会得出 `Int32` 值 (`numRead`)。 有关详细信息，请参阅[异步返回类型（Visual Basic）](async-return-types.md)。  
+
+ 下面的示例读取文件中的文本。 将会缓冲文本，并且在此情况下，会将其放入 <xref:System.Text.StringBuilder>。 与前一示例不同，await 的计算将生成一个值。 <xref:System.IO.Stream.ReadAsync%2A> 方法返回 <xref:System.Threading.Tasks.Task>\<<xref:System.Int32>>，因此在操作完成后 await 的评估会得出 `Int32` 值 (`numRead`)。 有关详细信息，请参阅 [异步返回类型 (Visual Basic) ](async-return-types.md)。  
   
 ```vb  
 Public Async Sub ProcessRead()  
@@ -118,6 +123,7 @@ End Function
 ```  
   
 ## <a name="parallel-asynchronous-io"></a>并行异步 I/O  
+
  下面的示例通过编写 10 个文本文件来演示并行处理。 对于每个文件，<xref:System.IO.Stream.WriteAsync%2A> 方法将返回一个任务，此任务随后将添加到任务列表中。 `Await Task.WhenAll(tasks)` 语句将退出该方法，并在所有任务的文件处理完成时在此方法中继续。  
   
  该示例将在任务完成后关闭 `Finally` 块中的所有 <xref:System.IO.FileStream> 实例。 如果每个 `FileStream` 均已在 `Imports` 语句中创建，则可能在任务完成前释放 `FileStream`。  
@@ -158,7 +164,7 @@ Public Async Sub ProcessWriteMult()
 End Sub  
 ```  
   
- 当使用 <xref:System.IO.Stream.WriteAsync%2A> 和 <xref:System.IO.Stream.ReadAsync%2A> 方法时，可以指定可用于取消操作中间流的 <xref:System.Threading.CancellationToken>。 有关详细信息，请参阅[在托管线程中](../../../../standard/threading/cancellation-in-managed-threads.md)[微调异步应用程序（Visual Basic）](fine-tuning-your-async-application.md)和取消。  
+ 当使用 <xref:System.IO.Stream.WriteAsync%2A> 和 <xref:System.IO.Stream.ReadAsync%2A> 方法时，可以指定可用于取消操作中间流的 <xref:System.Threading.CancellationToken>。 有关详细信息，请参阅[在托管线程中](../../../../standard/threading/cancellation-in-managed-threads.md) [ (Visual Basic) 和取消来微调异步应用程序](fine-tuning-your-async-application.md)。  
   
 ## <a name="see-also"></a>请参阅
 

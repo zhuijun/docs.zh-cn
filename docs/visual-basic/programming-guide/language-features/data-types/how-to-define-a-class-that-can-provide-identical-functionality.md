@@ -26,14 +26,15 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: a914adf8-e68f-4819-a6b1-200d1cf1c21c
-ms.openlocfilehash: 3b1f47250453c32735d633b98da0bd0ddb1ed5b9
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 268daf333dc5463e5436304cec188a9e6d477166
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84393852"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077119"
 ---
 # <a name="how-to-define-a-class-that-can-provide-identical-functionality-on-different-data-types-visual-basic"></a>如何：定义可对不同数据类型提供相同功能的类 (Visual Basic)
+
 你可以定义这样一个类：你可以通过该类创建可在不同数据类型上提供相同功能的对象。 为此，你可以在定义中指定一个或多个 *类型形参* 。 然后，该类将能够充当使用不同数据类型的对象的模板。 通过这种方式定义的类称为 *泛型类*。  
   
  定义泛型类这种做法的优点在于：你只需定义一次泛型类，代码便可以利用它来创建使用各种数据类型的多个对象。 相对于使用 `Object` 类型定义类而言，这样做的性能将会更好。  
@@ -62,7 +63,7 @@ ms.locfileid: "84393852"
   
 6. 确保代码只使用它可提供给 `itemType`的任何数据类型所支持的运算和方法。  
   
-     下面的示例定义了一个类，用于管理一个非常简单的列表。 它将列表保存在内部数组 `items`中，并且使用代码可声明列表元素的数据类型。 参数化构造函数允许使用代码设置的上限 `items` ，而无参数构造函数将此设置为9（总共10项）。  
+     下面的示例定义了一个类，用于管理一个非常简单的列表。 它将列表保存在内部数组 `items`中，并且使用代码可声明列表元素的数据类型。 参数化构造函数允许使用代码设置的上限 `items` ，而无参数构造函数将此项设置为9个 (，总计10个项) 。  
   
      [!code-vb[VbVbalrDataTypes#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#7)]  
   
@@ -74,7 +75,7 @@ ms.locfileid: "84393852"
   
      [!code-vb[VbVbalrDataTypes#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#8)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [数据类型](index.md)
 - [Generic Types in Visual Basic](generic-types.md)

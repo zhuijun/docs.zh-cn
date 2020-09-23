@@ -8,15 +8,16 @@ helpviewer_keywords:
 - current instance
 - object variables [Visual Basic]
 ms.assetid: 7f9b2c77-03cd-428f-adc2-b18070226e7c
-ms.openlocfilehash: 43bfd54592fb1d26cbf7f268b7e098e01e3745d8
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 64d21fe4aaf6fd34bf880373a7ab3067fb67820e
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410420"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077054"
 ---
 # <a name="how-to-refer-to-the-current-instance-of-an-object-visual-basic"></a>如何：引用对象的当前实例 (Visual Basic)
-对象的*当前实例*是当前在其中执行代码的实例。  
+
+对象的 *当前实例* 是当前在其中执行代码的实例。  
   
  使用 `Me` 关键字引用当前实例。  
   
@@ -29,9 +30,9 @@ ms.locfileid: "84410420"
     Me.Close()  
     ```  
   
-     尽管 `Me` 的行为与对象变量类似，但不能对其进行声明或向其分配任何内容。 `Me`始终引用当前实例。  
+     尽管 `Me` 的行为与对象变量类似，但不能对其进行声明或向其分配任何内容。 `Me` 始终引用当前实例。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [对象变量](object-variables.md)
 - [对象变量赋值](object-variable-assignment.md)

@@ -10,19 +10,20 @@ helpviewer_keywords:
 - Using statement [Visual Basic], Using...End Using
 - Using block
 ms.assetid: 8be2b239-8090-419b-8e7e-bcaa75b0ecc8
-ms.openlocfilehash: dd15c6746628f45b072d46eea40051ed9afb7921
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c430bc7744f5aefaa65f2a86f3e5e22743ffed57
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403493"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077197"
 ---
 # <a name="how-to-dispose-of-a-system-resource-visual-basic"></a>如何：释放系统资源 (Visual Basic)
+
 您可以使用 `Using` 块来保证系统在代码退出块时释放资源。 如果你使用的系统资源占用大量内存，或者其他组件也想要使用，则此方法很有用。  
   
 ### <a name="to-dispose-of-a-database-connection-when-your-code-is-finished-with-it"></a>使用数据库连接完成代码时释放数据库连接  
   
-1. 请确保在源文件开头包含数据库连接的相应[Imports 语句（.Net 命名空间和类型）](../../../language-reference/statements/imports-statement-net-namespace-and-type.md) （在本例中为 <xref:System.Data.SqlClient> ）。  
+1. 在这种情况下，请确保将相应的 [Imports 语句 ( .Net 命名空间和类型) ](../../../language-reference/statements/imports-statement-net-namespace-and-type.md) 用于您的源文件的开头的数据库连接 (<xref:System.Data.SqlClient>) 。  
   
 2. `Using`使用和语句创建块 `Using` `End Using` 。 在块中，放置用于处理数据库连接的代码。  
   
@@ -44,7 +45,7 @@ ms.locfileid: "84403493"
   
      您可以对系统资源（如文件句柄或 COM 包装）使用这种方法。 `Using`当你希望在退出块后，请使用块来确保其他组件可以使用该资源 `Using` 。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Data.SqlClient.SqlConnection>
 - [控制流](index.md)
