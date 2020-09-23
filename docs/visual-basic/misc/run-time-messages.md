@@ -5,17 +5,18 @@ helpviewer_keywords:
 - errors [Visual Basic], run-time
 - run-time errors [Visual Basic], Visual Basic
 ms.assetid: 130f7c2b-8eb1-4a6e-81aa-e30e27d3d4f7
-ms.openlocfilehash: 3b8ca626df76d881e26dae49d48217fa8e81951b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 88c9d341064f5c8d85d4c27b7d9bc79114642610
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84357928"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91060694"
 ---
 # <a name="visual-basic-run-time-messages"></a>Visual Basic 运行时消息
+
 本部分包含运行时出现的 Visual Basic 错误消息。  
   
- [\<address>不是有效的远程文件地址](address-is-not-a-valid-remote-file-address.md)  
+ [\<address> 不是有效的远程文件地址](address-is-not-a-valid-remote-file-address.md)  
   
  [分隔符不能为 Nothing 或空字符串](a-delimiter-cannot-be-nothing-or-an-empty-string.md)  
   
@@ -269,7 +270,7 @@ ms.locfileid: "84357928"
   
  [内部错误 (Visual Basic)](internal-error.md)  
   
- [发生内部错误\<location>](../language-reference/error-messages/internal-error-happened-at-location.md)  
+ [发生内部错误 \<location>](../language-reference/error-messages/internal-error-happened-at-location.md)  
   
  [Microsoft Visual Basic 运行时的内部错误](internal-error-in-the-microsoft-visual-basic-runtime.md)  
   
@@ -311,7 +312,7 @@ ms.locfileid: "84357928"
   
  [必须进行收缩转换才能用这些参数调用可访问的重载“\<methodname>”：](no-accessible-overloaded-methodname-can-be-called-with-these-arguments.md)  
   
- [无 \<methodname> 需收缩转换即可用这些参数调用可访问的重载 ""：\<list>](no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list-2.md)  
+ [无 \<methodname> 需收缩转换即可用这些参数调用可访问的重载 ""： \<list>](no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list-2.md)  
   
  [必须进行扩大转换才能用这些参数调用可访问的重载“\<methodname>”：\<list>](no-accessible-overloaded-methodname-can-be-called-without-widening.md)  
   
@@ -553,6 +554,6 @@ ms.locfileid: "84357928"
   
  [必须指定位于当前文件夹或其某个子文件夹下的路径](you-must-specify-path-that-is-under-the-current-folder-or-one-of-sub-folders.md)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [错误消息](../language-reference/error-messages/index.md)
