@@ -2,14 +2,15 @@
 title: 如何：查询具有指定属性或名称的文件
 ms.date: 07/20/2015
 ms.assetid: b26026a3-3f43-448f-a582-259997af6be0
-ms.openlocfilehash: 4a6a5630f4ac0eb0cb08aed0dc8a390225194675
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: eeacd94fb303a439e8034b84d285ab11b2333581
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396410"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059309"
 ---
-# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a>如何：查询具有指定特性或名称的文件（Visual Basic）
+# <a name="how-to-query-for-files-with-a-specified-attribute-or-name-visual-basic"></a>如何：查询具有指定特性或名称的文件 (Visual Basic) 
+
 此示例演示了如何在指定目录树中查找具有指定文件扩展名（如“.txt”）的所有文件。 它还演示了如何基于时间在树中返回最新或最旧的文件。  
   
 ## <a name="example"></a>示例  
@@ -61,9 +62,10 @@ End Module
 ```  
   
 ## <a name="compile-the-code"></a>编译代码  
+
 使用 `Imports` System. Linq 命名空间的语句创建 Visual Basic 控制台应用程序项目。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to Objects (Visual Basic)](linq-to-objects.md)
 - [LINQ 和文件目录 (Visual Basic)](linq-and-file-directories.md)

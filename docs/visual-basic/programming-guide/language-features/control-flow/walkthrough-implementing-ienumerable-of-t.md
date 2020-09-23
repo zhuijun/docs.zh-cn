@@ -7,14 +7,15 @@ helpviewer_keywords:
 - loop structures [Visual Basic], optimizing performance
 - control flow [Visual Basic]
 ms.assetid: c60d7589-51f2-4463-a2d5-22506bbc1554
-ms.openlocfilehash: 582957c91eac63cf7f72dd2f6c0cf40e627be686
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: f1f0036c38299f2392f8c8705e67b7bb6b7db068
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84402026"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058633"
 ---
 # <a name="walkthrough-implementing-ienumerableof-t-in-visual-basic"></a>演练：在 Visual Basic 中实现 IEnumerable(Of T)
+
 <xref:System.Collections.Generic.IEnumerable%601>接口由每次可以返回一项值序列的类实现。 一次返回一项数据的优点是，无需将完整的数据集加载到内存中即可使用它。 只需使用足够的内存来加载数据中的单个项。 实现接口的类 `IEnumerable(T)` 可用于 `For Each` 循环或 LINQ 查询。  
   
  例如，假设某个应用程序必须读取一个大型文本文件，并从该文件中返回与特定搜索条件相匹配的每一行。 应用程序使用 LINQ 查询从文件返回与指定条件相匹配的行。 若要通过使用 LINQ 查询来查询文件的内容，应用程序可以将文件的内容加载到数组或集合中。 但是，将整个文件加载到数组或集合会占用比所需的更多的内存。 LINQ 查询可以使用可枚举的类（仅返回与搜索条件匹配的值）来查询文件内容。 仅返回几个匹配值的查询将消耗更少的内存。  
@@ -29,13 +30,13 @@ ms.locfileid: "84402026"
   
 **创建可枚举类项目**
 
-1. 在 Visual Basic 的 "**文件**" 菜单上，指向 "**新建**"，然后单击 "**项目**"。
+1. 在 Visual Basic 的 " **文件** " 菜单上，指向 " **新建** "，然后单击 " **项目**"。
 
-1. 在“新建项目”**** 对话框的“项目类型”**** 窗格中，确保选中“Windows”****。 在“模板”**** 窗格中，选择“类库”****。 在“名称”**** 框中，键入 `StreamReaderEnumerable`，然后单击“确定”****。 将显示新项目。
+1. 在“新建项目”对话框的“项目类型”窗格中，确保选中“Windows”。 在“模板”**** 窗格中，选择“类库”****。 在“名称”框中，键入 `StreamReaderEnumerable`，然后单击“确定”。 将显示新项目。
 
-1. 在**解决方案资源管理器**中，右键单击 Class1 文件，然后单击 "**重命名**"。 将文件重命名为 `StreamReaderEnumerable.vb`，然后按 Enter。 重命名文件也会将类重命名为 `StreamReaderEnumerable`。 此类将实现 `IEnumerable(Of String)` 接口。
+1. 在 **解决方案资源管理器**中，右键单击 Class1 文件，然后单击 " **重命名**"。 将文件重命名为 `StreamReaderEnumerable.vb`，然后按 Enter。 重命名文件也会将类重命名为 `StreamReaderEnumerable`。 此类将实现 `IEnumerable(Of String)` 接口。
 
-1. 右键单击 "StreamReaderEnumerable" 项目，指向 "**添加**"，然后单击 "**新建项**"。 选择 "**类**" 模板。 在“名称”框中，键入 `StreamReaderEnumerator.vb`，然后单击“确定”********。
+1. 右键单击 "StreamReaderEnumerable" 项目，指向 " **添加**"，然后单击 " **新建项**"。 选择 " **类** " 模板。 在“名称”框中，键入 `StreamReaderEnumerator.vb`，然后单击“确定”********。
 
  此项目中的第一个类是可枚举类并将实现 `IEnumerable(Of String)` 接口。 此泛型接口实现 <xref:System.Collections.IEnumerable> 接口，并保证此类的使用者可以访问类型为 `String` 的值。  
   
@@ -93,7 +94,7 @@ ms.locfileid: "84402026"
   
  [!code-vb[VbVbalrIteratorWalkthrough#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIteratorWalkthrough/VB/Module1.vb#10)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Visual Basic 中的 LINQ 简介](../linq/introduction-to-linq.md)
 - [控制流](index.md)

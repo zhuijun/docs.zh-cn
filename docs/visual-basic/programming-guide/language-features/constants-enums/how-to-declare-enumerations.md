@@ -6,21 +6,22 @@ helpviewer_keywords:
 - enumerations [Visual Basic], declaring
 - declaring enumerations [Visual Basic]
 ms.assetid: db4ca1c3-f429-4c81-ae81-29e0157b29fd
-ms.openlocfilehash: c8f228c205c93adf7f2f555dc840a7daac61950b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 752b425ba32efe41a1ab1aa75de20039d36f5e50
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414448"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058893"
 ---
 # <a name="how-to-declare-enumerations-visual-basic"></a>如何：声明枚举 (Visual Basic)
+
 使用 `Enum` 类或模块的声明部分中的语句创建枚举。 不能在方法中声明枚举。 若要指定适当的访问级别，请使用 `Private` 、、 `Protected` `Friend` 或 `Public` 。  
   
- `Enum`类型具有名称、基础类型和字段集，每个字段表示一个常量。 该名称必须是有效的 Visual Basic .NET 限定符。 基础类型必须是整数类型之一： `Byte` 、 `Short` `Long` 或 `Integer` 。 默认值为 `Integer`。 枚举总是强类型化的，并且不能与整数类型互换。  
+ `Enum`类型具有名称、基础类型和字段集，每个字段表示一个常量。 该名称必须是有效的 Visual Basic .NET 限定符。 基础类型必须是整数类型之一： `Byte` 、 `Short` `Long` 或 `Integer` 。 `Integer` 为默认值。 枚举总是强类型化的，并且不能与整数类型互换。  
   
  枚举的值不能为浮点值。 如果为枚举分配一个浮点值，则会 `Option Strict On` 产生编译器错误。 如果 `Option Strict` 为 `Off` ，则将值自动转换为 `Enum` 类型。  
   
- 有关名称的信息，以及如何使用 `Imports` 语句使名称限定不必要，请参阅[枚举和名称限定](enumerations-and-name-qualification.md)。  
+ 有关名称的信息，以及如何使用 `Imports` 语句使名称限定不必要，请参阅 [枚举和名称限定](enumerations-and-name-qualification.md)。  
   
 ### <a name="to-declare-an-enumeration"></a>声明枚举  
   
@@ -32,7 +33,7 @@ ms.locfileid: "84414448"
   
      [!code-vb[VbEnumsTask#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#4)]  
   
-3. 可以使用赋值语句将值显式分配给枚举中的常量。 可以分配任何整数值，包括负数。 例如，您可能希望值小于零的常量表示错误条件。 在下面的枚举中，将 `Invalid` 显式赋给常数 `–1` ，并为该常数 `Sunday` 分配值 `0` 。 由于它是枚举中的第一个常数，因此 `Saturday` 也会初始化为值 `0` 。 的值 `Monday` 为 `1` （一个大于的值 `Sunday` ）; 的值 `Tuesday` 为 `2` ，依此类推。  
+3. 可以使用赋值语句将值显式分配给枚举中的常量。 可以分配任何整数值，包括负数。 例如，您可能希望值小于零的常量表示错误条件。 在下面的枚举中，将 `Invalid` 显式赋给常数 `–1` ，并为该常数 `Sunday` 分配值 `0` 。 由于它是枚举中的第一个常数，因此 `Saturday` 也会初始化为值 `0` 。 的值 `Monday` `1` (一个大于) 的值 `Sunday` ; 的值 `Tuesday` 为 `2` ，依此类推。  
   
      [!code-vb[VbEnumsTask#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#5)]  
   
@@ -42,7 +43,7 @@ ms.locfileid: "84414448"
   
      [!code-vb[VbEnumsTask#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#6)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [枚举和名称限定](enumerations-and-name-qualification.md)
 - [如何：引用枚举成员](how-to-refer-to-an-enumeration-member.md)

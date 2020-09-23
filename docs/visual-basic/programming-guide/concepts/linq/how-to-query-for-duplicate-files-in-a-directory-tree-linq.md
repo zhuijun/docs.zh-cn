@@ -2,14 +2,15 @@
 title: 如何：在目录树中查询重复文件 (LINQ)
 ms.date: 07/20/2015
 ms.assetid: 387d7c97-95dd-4a50-9761-7e9cf8ae9e6a
-ms.openlocfilehash: b37da0a26c8bb4abc885faa7bb0c467e2d7d2347
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 71c656fba3962f08733e27279ac9bfa94d957aa8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84396423"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058906"
 ---
-# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>如何：在目录树中查询重复文件（LINQ）（Visual Basic）
+# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>如何：在目录树中查询重复文件 (LINQ)  (Visual Basic) 
+
 有时，具有相同名称的文件可能位于多个文件夹中。 例如，在 Visual Studio 安装文件夹下，多个文件夹中都有 readme.htm 文件。 此示例显示如何在指定根文件夹下查询此类重复文件名。 第二个示例显示如何查询大小和创建时间都匹配的文件。  
   
 ## <a name="example"></a>示例  
@@ -101,9 +102,10 @@ End Module
  第一个查询使用简单键来确定匹配；此查询可以找到名称相同但内容可能不同的文件。 第二个查询使用复合键来匹配 <xref:System.IO.FileInfo> 对象的 3 个属性。 此查询更可能找到名称相同且内容相似或相同的文件。  
   
 ## <a name="compile-the-code"></a>编译代码  
+
 使用 `Imports` System. Linq 命名空间的语句创建 Visual Basic 控制台应用程序项目。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to Objects (Visual Basic)](linq-to-objects.md)
 - [LINQ 和文件目录 (Visual Basic)](linq-and-file-directories.md)

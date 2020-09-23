@@ -3044,14 +3044,15 @@ f1_keywords:
 - bc30233
 - bc30829
 ms.assetid: 0938efc2-e205-450b-9314-99951fcbd702
-ms.openlocfilehash: 12af447d053e84347ddc3a2c1ecad1cde4ff3428
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d96f2512e2fae038853baedfb78fcf2feb84542b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84357799"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059634"
 ---
 # <a name="sorry-we-dont-have-specifics-on-this-visual-basic-error"></a>很抱歉，我们没有关于此 Visual Basic 错误的具体信息
+
 很抱歉，我们没有关于此错误的任何具体信息。 你可以在 Web 中搜索错误号和消息文本，以找到相关信息。 或者，还可使用以下论坛之一咨询其他开发人员：  
   
  [Visual Basic 语言](https://social.msdn.microsoft.com/Forums/home?forum=vblanguage)  
@@ -3069,10 +3070,10 @@ ms.locfileid: "84357799"
  [StackOverflow](https://stackoverflow.com/questions/tagged/vb.net)  
  提供有关 Visual Basic 问题和问题的论坛。  
   
- 另请参阅：  
- [Visual Basic 程序员的其他资源](../getting-started/additional-resources.md)  
+ 另请参见：  
+ [为 Visual Basic 程序员提供的附加资源](../getting-started/additional-resources.md)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Visual Basic 编程指南](../programming-guide/index.md)
 - [Visual Basic 参考](../reference/index.md)

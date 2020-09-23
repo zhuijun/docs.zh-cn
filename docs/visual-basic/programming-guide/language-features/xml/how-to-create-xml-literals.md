@@ -4,14 +4,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - XML literals [Visual Basic], creating
 ms.assetid: 573a6db5-b14d-4e42-b356-8cc7e2d77745
-ms.openlocfilehash: 61b138c0851c747ed30eedc10cb882cc3b03c4d4
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c7ad8d684dde31550b6e1b74c098d152b227f6c1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84392605"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058217"
 ---
 # <a name="how-to-create-xml-literals-visual-basic"></a>如何：创建 XML 文本 (Visual Basic)
+
 您可以使用 XML 文本直接在代码中创建 XML 文档、片段或元素。 本主题中的示例演示如何创建包含三个子元素的 XML 元素以及如何创建 XML 文档。  
   
  你还可以使用 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] api 来创建 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] 对象。 有关详细信息，请参阅 <xref:System.Xml.Linq.XElement>。  
@@ -52,7 +53,7 @@ ms.locfileid: "84392605"
   
      `</books>`  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [XML](index.md)
 - [在 Visual Basic 中创建 XML](creating-xml.md)

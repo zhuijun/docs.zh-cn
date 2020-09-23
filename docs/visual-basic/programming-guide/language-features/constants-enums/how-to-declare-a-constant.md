@@ -23,19 +23,20 @@ helpviewer_keywords:
 - module-level constants and variables
 - Object data type [Visual Basic], declaring constants
 ms.assetid: f901b4fa-481f-4621-822e-427060577ad1
-ms.openlocfilehash: ffaa98f6af3d4b276f5c0b1153841acdea0809d7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 138dd58dac9d1983e35e61f8b98a77810fc6e38b
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414474"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058841"
 ---
 # <a name="how-to-declare-a-constant-visual-basic"></a>如何：声明常量 (Visual Basic)
+
 使用 `Const` 语句声明一个常数并设置其值。 通过声明常量，可为一个值指定一个有意义的名称。 声明常量后，不能对其进行修改或赋予新值。  
   
  您可以在过程中或模块、类或结构的声明部分中声明常数。 默认情况下，类或结构级别常量为， `Private` 但也可以将声明为 `Public` 、 `Friend` 、 `Protected` 或 `Protected Friend` 以用于适当级别的代码访问。  
   
- 常数必须具有有效的符号名称（这些规则与用于创建变量名称的规则相同）以及由数值或字符串常量和运算符组成的表达式（但不包含函数调用）。  
+ 常数必须具有有效的符号名称， (规则与用于创建变量名称的规则相同) 和 (但不) 函数调用的表达式。  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -45,9 +46,9 @@ ms.locfileid: "84414474"
   
      [!code-vb[VbEnumsTask#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#8)]  
   
-     如果[选项推断](../../../language-reference/statements/option-infer-statement.md)为 `Off` ，且[option Strict](../../../language-reference/statements/option-strict-statement.md)为 `On` ，则必须通过指定数据类型（、、、、、、、、、 `Boolean` `Byte` `Char` `DateTime` `Decimal` `Double` `Integer` `Long` `Short` `Single` 或 `String` ）显式声明常量。  
+     如果 [选项推断](../../../language-reference/statements/option-infer-statement.md) 为， `Off` 且 [option Strict](../../../language-reference/statements/option-strict-statement.md) 为 `On` ，则必须通过指定数据类型 (、、、、、、、、、 `Boolean` `Byte` `Char` `DateTime` `Decimal` `Double` `Integer` `Long` `Short` `Single` 或 `String`) 来显式声明常量。  
   
-     当 `Option Infer` 为 `On` 或 `Option Strict` 时 `Off` ，可以声明常量，而无需使用子句指定数据类型 `As` 。 编译器将确定表达式的类型的常量类型。 有关详细信息，请参阅[常量和文本数据类型](constant-and-literal-data-types.md)。  
+     当 `Option Infer` 为 `On` 或 `Option Strict` 时 `Off` ，可以声明常量，而无需使用子句指定数据类型 `As` 。 编译器将确定表达式的类型的常量类型。 有关详细信息，请参阅 [常量和文本数据类型](constant-and-literal-data-types.md)。  
   
 ### <a name="to-declare-a-constant-that-has-an-explicitly-stated-data-type"></a>声明具有显式声明的数据类型的常数  
   
@@ -55,7 +56,7 @@ ms.locfileid: "84414474"
   
      [!code-vb[VbEnumsTask#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#9)]  
   
-     可以在单个行上声明多个常数，不过，如果每行只声明一个常数，代码的可读性就会更高。 如果在单个行上声明多个常量，它们必须具有相同的访问级别（ `Public` 、 `Private` 、、 `Friend` `Protected` 或 `Protected Friend` ）。  
+     可以在单个行上声明多个常数，不过，如果每行只声明一个常数，代码的可读性就会更高。 如果在单个行上声明多个常量，它们必须具有相同的访问级别 (`Public` 、 `Private` 、、 `Friend` `Protected` 或 `Protected Friend`) 。  
   
 ### <a name="to-declare-multiple-constants-on-a-single-line"></a>在单个行上声明多个常量  
   
@@ -65,7 +66,7 @@ ms.locfileid: "84414474"
     Public Const Four As Integer = 4, Five As Integer = 5, Six As Integer = 44  
     ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Const 语句](../../../language-reference/statements/const-statement.md)
 - [常数和文本数据类型](constant-and-literal-data-types.md)

@@ -6,14 +6,15 @@ helpviewer_keywords:
 - enumerations [Visual Basic], iterating
 - ListBox control [Windows Forms], populating from an enumeration
 ms.assetid: e5aa10eb-cfcd-4a3b-8e76-f06b8f2002be
-ms.openlocfilehash: fb6fbdd45ca0e84ccb9fc55296d78e3867d5fe25
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 21c170d4708b90987a3f1e9c18969b8803fcdbe0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414422"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058711"
 ---
 # <a name="how-to-iterate-through-an-enumeration-in-visual-basic"></a>如何：在 Visual Basic 中循环访问枚举
+
 枚举提供了使用相关常量集以及将常量值与名称相关联的一个便捷方法。 若要循环访问枚举，可以使用方法将它移动到数组中 <xref:System.Enum.GetValues%2A> 。 你还可以使用语句来循环访问枚举 `For...Each` ，方法是使用 <xref:System.Enum.GetNames%2A> 或 <xref:System.Enum.GetValues%2A> 方法来提取字符串或数字值。  
   
 ### <a name="to-iterate-through-an-enumeration"></a>循环访问枚举  
@@ -22,7 +23,7 @@ ms.locfileid: "84414422"
   
      [!code-vb[VbEnumsTask#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbEnumsTask/VB/Class2.vb#7)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [枚举概述](enumerations-overview.md)
 - [如何：声明枚举](how-to-declare-enumerations.md)

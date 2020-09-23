@@ -5,12 +5,13 @@ helpviewer_keywords:
 - compiler errors
 - errors [Visual Basic], compiler
 ms.assetid: d50addfb-0683-45e5-8c3c-69a2eb510a19
-ms.openlocfilehash: 057718d3ecf44546d96b9e507798f0f601fc3eb4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ed03bf6d12c6f10cc132459e71b96332cde16f9d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353303"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059829"
 ---
 # <a name="visual-basic-compiler-messages"></a>Visual Basic 编译器消息
+
 本部分包含编译时出现的 Visual Basic 错误消息。

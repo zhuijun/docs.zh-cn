@@ -5,14 +5,15 @@ helpviewer_keywords:
 - Visual Basic code, elements of
 - Visual Basic code
 ms.assetid: b0b21730-298c-47e6-9a2f-cc81f628067b
-ms.openlocfilehash: 2a2e8d0a08fda5783fa20e7403ea215133d0514e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ae226520ecd7dff09023bcc88e610ff400c4019d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405050"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91057853"
 ---
 # <a name="visual-basic-language-features"></a>Visual Basic 语言功能
+
 以下主题介绍和讨论了 Visual Basic （一种面向对象的编程语言）的基本组件。 使用窗体和控件创建应用程序的用户界面后，需要编写代码来定义应用程序的行为。 与任何现代编程语言一样，Visual Basic 支持许多通用编程构造和语言元素。  
   
  如果你已使用其他语言进行过编程，可能会对此部分中介绍的大部分资料感到熟悉。 虽然大多数构造与其他语言中的构造相似，但 Visual Basic 的事件驱动性质会带来一些细微的差异。  
@@ -20,6 +21,7 @@ ms.locfileid: "84405050"
  如果是刚开始接触编程，可通过此部分中的资料，了解用于编写代码的基本构建基块的入门知识。 了解基础知识后，可以使用 Visual Basic 创建功能强大的应用程序。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [数组](arrays/index.md)  
  介绍了如何通过声明和使用包含多个相关值的数组，让代码变得更紧凑、更强大。  
   
@@ -54,7 +56,7 @@ ms.locfileid: "84405050"
  介绍了什么是接口，以及如何在应用程序中使用接口。  
   
  [LINQ](linq/index.md)  
- 提供指向一些主题的链接，这些主题介绍语言集成查询（LINQ）功能和编程。  
+ 提供指向一些主题的链接，这些主题介绍 (LINQ) 功能和编程的语言集成查询。  
   
  [对象和类](objects-and-classes/index.md)  
  概述了对象和类及其使用方式、相互之间的关系，以及它们公开的属性、方法和事件。  

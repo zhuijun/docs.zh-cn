@@ -7,20 +7,22 @@ helpviewer_keywords:
 - XML axis [Visual Basic], attribute
 - XML [Visual Basic], accessing
 ms.assetid: 66cd704f-990c-4f8d-9b49-2b6aa76ca8fd
-ms.openlocfilehash: 2ab6ed27e403273c1b3b2b28593825c0cc6b6db7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 187364c1b5d89d90d49b9ac05e4456dfeefbaffc
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84410265"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058516"
 ---
 # <a name="how-to-access-xml-attributes-visual-basic"></a>如何：访问 XML 特性 (Visual Basic)
+
 此示例演示如何使用属性轴属性按名称访问 XML 元素中的 XML 属性。 具体而言，它使用 `type` 特性 axis 属性访问对象中名为的属性 `type` `phone` 。  
   
 ## <a name="example"></a>示例  
+
  [!code-vb[VbXMLSamples#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples5.vb#11)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Xml.Linq.XElement.Attributes%2A?displayProperty=nameWithType>
 - [XML Attribute Axis Property](../../../language-reference/xml-axis/xml-attribute-axis-property.md)

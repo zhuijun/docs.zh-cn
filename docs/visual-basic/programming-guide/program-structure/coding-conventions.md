@@ -6,14 +6,15 @@ helpviewer_keywords:
 - examples [Visual Basic], coding conventions
 - Visual Basic code, conventions
 ms.assetid: c1df130b-fec6-49a5-becf-0a7e494a1d0f
-ms.openlocfilehash: b71c1eeaa136d01c701191f1bb145674efccbc56
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: eae283c757ddeb1290c15d82a41c8028a8941e63
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551036"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91059153"
 ---
 # <a name="visual-basic-coding-conventions"></a>Visual Basic 编码约定
+
 Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相同的编码约定，可能会获得以下好处：  
   
 - 你的代码将具有一致的外观，以便读者可以更好地专注于内容而非布局。  
@@ -86,6 +87,7 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
      [!code-vb[VbVbalrGuidelines#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#5)]  
   
 ### <a name="relaxed-delegates-in-event-handlers"></a>事件处理程序中的宽松委托  
+
  不要向事件处理程序 (对象和 EventArgs) 显式限定参数。 如果未使用传递给事件的事件参数 (例如，发送方为 Object，e 作为 EventArgs) ，请使用宽松委托，并在代码中留下事件参数：  
   
  [!code-vb[VbVbalrGuidelines#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#7)]  
@@ -121,14 +123,17 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
      [!code-vb[VbVbalrGuidelines#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#13)]  
   
 ### <a name="use-the-with-keyword"></a>使用 With 关键字  
+
  对一个对象进行一系列调用时，请考虑使用 `With` 关键字：  
   
  [!code-vb[VbVbalrGuidelines#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrGuidelines/VB/Class1.vb#15)]  
   
 ### <a name="use-the-trycatch-and-using-statements-when-you-use-exception-handling"></a>使用 Try .。。使用异常处理时捕获和使用语句  
+
  请勿使用 `On Error Goto`。  
   
 ### <a name="use-the-isnot-keyword"></a>使用 IsNot 关键字  
+
  使用 `IsNot` 关键字而不是 `Not...Is Nothing` 。  
   
 ### <a name="new-keyword"></a>New 关键字  
@@ -162,9 +167,11 @@ Microsoft 将按照本主题中的准则开发示例和文档。 如果遵循相
 - 在调用方法之前，不要验证事件是否为 `Nothing` null)  (`RaiseEvent` 。 `RaiseEvent``Nothing`在引发事件之前进行检查。  
   
 ### <a name="using-shared-members"></a>使用共享成员  
+
  `Shared`使用类名称（而不是从实例变量）调用成员。  
   
 ### <a name="use-xml-literals"></a>使用 XML 文本  
+
  XML 文本简化了在处理 XML (时遇到的最常见任务，例如，加载、查询和转换) 。 当你用 XML 开发时，请遵循以下准则：  
   
 - 使用 XML 文本来创建 XML 文档和片段，而不是直接调用 XML Api。  

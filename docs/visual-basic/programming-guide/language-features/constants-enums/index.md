@@ -11,14 +11,15 @@ helpviewer_keywords:
 - naming conventions [Visual Basic], constants
 - Visual Basic code, improving readability with constants
 ms.assetid: c8aba36e-fa47-4a33-8b68-cb2009218270
-ms.openlocfilehash: 7d15c46c0f6bb00c23dd98e464f61a5f94b0773a
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: aad4f8b24a43ecc51c372916b438daee72adc405
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84414397"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058685"
 ---
 # <a name="constants-and-enumerations-in-visual-basic"></a>Visual Basic 中的常量和枚举
+
 常量是使用有意义的名称代替不会发生更改的值的方法。 顾名思义，常量存储在应用程序的执行过程中保持不变的值。 可以使用常量提供有意义的名称（而非数字），提高代码的可读性。  
   
  枚举提供了使用相关常量集以及将常量值与名称相关联的一个便捷方法。 例如，可以为一组与星期几相关联的整数常量声明一个枚举，然后在代码中使用星期几的名称而不是整数值。  
