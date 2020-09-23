@@ -7,19 +7,20 @@ helpviewer_keywords:
 - stored procedures [LINQ to SQL]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 6436d384-d1e0-40aa-8afd-451007477260
-ms.openlocfilehash: b451642a16f36c4f7fd19c853fdfd2282f5bede5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7e5fecf0c4c0d3a561ec7d0c4ac03c9d9ce7f759
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84405025"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075130"
 ---
 # <a name="how-to-call-a-stored-procedure-by-using-linq-visual-basic"></a>如何：使用 LINQ 调用存储过程 (Visual Basic)
-使用语言集成查询（LINQ），可以轻松地访问数据库信息，其中包括数据库对象（如存储过程）。  
+
+使用语言集成查询 (LINQ) 可以轻松地访问数据库信息，其中包括数据库对象（如存储过程）。  
   
  下面的示例演示如何创建一个应用程序，用于调用 SQL Server 数据库中的存储过程。 该示例演示如何调用数据库中的两个不同的存储过程。 每个过程都返回查询的结果。 一个过程采用输入参数，而另一个过程不接受参数。  
   
- 本主题中的示例使用 Northwind 示例数据库。 如果你的开发计算机上没有此数据库，可以从 Microsoft 下载中心进行下载。 有关说明，请参阅[下载示例数据库](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md)。  
+ 本主题中的示例使用 Northwind 示例数据库。 如果你的开发计算机上没有此数据库，可以从 Microsoft 下载中心进行下载。 有关说明，请参阅 [下载示例数据库](../../../../framework/data/adonet/sql/linq/downloading-sample-databases.md)。  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -33,11 +34,11 @@ ms.locfileid: "84405025"
   
 ### <a name="to-add-a-project-that-contains-a-linq-to-sql-file"></a>添加包含 LINQ to SQL 文件的项目  
   
-1. 在 Visual Studio 的 "**文件**" 菜单上，指向 "**新建**"，然后单击 "**项目**"。 选择 Visual Basic **Windows 窗体应用程序**作为项目类型。  
+1. 在 Visual Studio 中的“文件”菜单上，指向“新建”，然后单击“项目”。 选择 Visual Basic **Windows 窗体应用程序** 作为项目类型。  
   
-2. 在 **“项目”** 菜单上，单击 **“添加新项”**。 选择 " **LINQ to SQL 类**" 项模板。  
+2. 在 **“项目”** 菜单上，单击 **“添加新项”**。 选择 " **LINQ to SQL 类** " 项模板。  
   
-3. 命名文件 `northwind.dbml`。 单击“添加”。 为 northwind 文件打开对象关系设计器（O/R 设计器）。  
+3. 命名文件 `northwind.dbml`。 单击“添加”  。 将为 northwind 文件打开对象关系设计器 (O/R 设计器) 。  
   
 ### <a name="to-add-stored-procedures-to-the-or-designer"></a>将存储过程添加到 O/R 设计器  
   
@@ -45,7 +46,7 @@ ms.locfileid: "84405025"
   
      如果关闭了 O/R 设计器，则可以通过双击先前添加的 northwind 文件来重新打开它。  
   
-2. 单击 "**按年份的销售额**" 存储过程，并将其拖到设计器的右窗格中。 单击**十个最昂贵的产品**存储过程，将其拖到设计器的右窗格中。  
+2. 单击 " **按年份的销售额** " 存储过程，并将其拖到设计器的右窗格中。 单击 **十个最昂贵的产品** 存储过程，将其拖到设计器的右窗格中。  
   
 3. 保存更改并关闭设计器。  
   
@@ -53,7 +54,7 @@ ms.locfileid: "84405025"
   
 ### <a name="to-add-code-to-display-the-results-of-the-stored-procedures"></a>添加代码以显示存储过程的结果  
   
-1. 从 "**工具箱**" 中，将 <xref:System.Windows.Forms.DataGridView> 控件拖动到项目的默认 Windows 窗体 "Form1"。  
+1. 从 " **工具箱**" 中，将 <xref:System.Windows.Forms.DataGridView> 控件拖动到项目的默认 Windows 窗体 "Form1"。  
   
 2. 双击 "Form1"，将代码添加到其 `Load` 事件。  
   
@@ -68,7 +69,7 @@ ms.locfileid: "84405025"
   
 4. 按 F5 运行项目并查看结果。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ](index.md)
 - [查询](../../../language-reference/queries/index.md)

@@ -12,14 +12,15 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-ms.openlocfilehash: 97602b7341636219382b6a405c678bc458ef146a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 00022fc7790548dbc0ed8018f202e136bdbcc033
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556741"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075247"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Visual Basic 中的 LINQ 简介
+
 语言集成查询 (LINQ) 将查询功能添加到 Visual Basic，并在使用各种数据时提供简单而强大的功能。 LINQ 会引入查询作为 Visual Basic 语言的一部分，而不是将查询发送到要处理的数据库，或对要搜索的每个数据类型使用不同的查询语法。 它使用统一语法，而不考虑数据的类型。  
   
  LINQ 使你能够从 SQL Server 数据库、XML、内存中数组和集合、ADO.NET 数据集或支持 LINQ 的任何其他远程或本地数据源查询数据。 您可以通过常用 Visual Basic 语言元素来执行所有这些操作。 因为查询是用 Visual Basic 语言编写的，所以查询结果以强类型对象的形式返回。 这些对象支持 IntelliSense，这使你能够更快地编写代码，并在编译时（而不是在运行时）捕获查询中的错误。 可将 LINQ 查询用作其他查询的源，以便缩小结果的范围。 还可将它们绑定到控件，使用户能够轻松地查看和修改查询结果。  
@@ -29,11 +30,13 @@ ms.locfileid: "90556741"
  [!code-vb[VbVbalrIntroToLINQ#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#1)]  
   
 ## <a name="running-the-examples"></a>运行示例  
+
  若要运行简介和 [LINQ 查询](#structure-of-a-linq-query) 部分的结构中的示例，请包含以下代码，该代码将返回客户和订单的列表。  
   
  [!code-vb[VbVbalrIntroToLINQ#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/class2.vb#31)]  
   
 ## <a name="linq-providers"></a>LINQ 提供程序  
+
  *Linq 提供程序*将 Visual Basic LINQ 查询映射到要查询的数据源。 编写 LINQ 查询时，该提供程序将接受该查询，并将其转换为数据源能够执行的命令。 该提供程序还将来自源的数据转换为构成查询结果的对象。 最后，当你将更新发送至数据源时，它又将这些对象转换为数据。  
   
  Visual Basic 包括以下 LINQ 提供程序。  
@@ -46,6 +49,7 @@ ms.locfileid: "90556741"
 |LINQ to DataSet|使用 LINQ to DataSet 提供程序可以查询和更新 ADO.NET 数据集中的数据。 可以将 LINQ 的强大功能添加到使用数据集的应用程序，以便简化和扩展查询、聚合和更新数据集中数据的功能。<br /><br /> 有关详细信息，请参阅 [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)。|  
   
 ## <a name="structure-of-a-linq-query"></a>LINQ 查询的结构  
+
  LINQ 查询（通常称为 *查询表达式*）由用于标识查询的数据源和迭代变量的查询子句组合而成。 查询表达式还可以包含排序、筛选、分组和联接的说明或要对源数据应用的计算。 查询表达式语法类似于 SQL的语法；因此，你可能发现该语法大都非常熟悉。  
   
  查询表达式以 `From` 子句开头。 此子句标识查询的源数据和用于分别表示源数据中每个元素的变量。 这些变量称为 " *范围变量* " 或 " *迭代变量*"。 `From` 子句是查询所必需的，但 `Aggregate` 查询除外，在该查询中 `From` 子句是可选的。 在 `From` 或 `Aggregate` 子句中标识查询的范围和源后，即可包括查询子句的任意组合来优化查询。 有关查询子句的详细信息，请参阅本主题后面的 Visual Basic LINQ 查询运算符。 例如，下面的查询将客户数据源集合标识为 `customers` 变量和一个名为 `cust` 的迭代变量。  
@@ -173,6 +177,7 @@ ms.locfileid: "90556741"
  有关其他 LINQ 功能的详细信息，请参阅 [标准查询运算符概述](../../concepts/linq/standard-query-operators-overview.md)。  
   
 ## <a name="connect-to-a-database-by-using-linq-to-sql"></a>使用 LINQ to SQL 连接到数据库  
+
  在 Visual Basic 中，你将通过使用 LINQ to SQL 文件来标识要访问的 SQL Server 数据库对象，例如表、视图和存储过程。 LINQ to SQL 文件具有 .dbml 扩展名。  
   
  如果与 SQL Server 数据库之间存在有效连接，则可以将 **LINQ to SQL 类** 项模板添加到项目。 此操作将显示对象关系设计器（O/R 设计器）。 O/R 设计器使你能够将你想要在代码中访问的项从**服务器资源管理器** / **数据库资源管理器**拖到设计器图面上。 LINQ to SQL 文件可向项目添加 <xref:System.Data.Linq.DataContext> 对象。 此对象包括你希望访问的表和视图的属性和集合，以及希望调用的存储过程的方法。 保存对 LINQ to SQL (.dbml) 文件所作的更改后，即可通过引用由 O/R 设计器定义的 <xref:System.Data.Linq.DataContext> 对象，在代码中访问这些对象。 项目的 <xref:System.Data.Linq.DataContext> 对象根据 LINQ to SQL 文件的名称进行命名。 例如，名为 Northwind.dbml 的 LINQ to SQL 文件将创建名为 `NorthwindDataContext` 的 <xref:System.Data.Linq.DataContext> 对象。  
@@ -180,6 +185,7 @@ ms.locfileid: "90556741"
  有关分步说明的示例，请参阅 [如何：查询数据库](how-to-query-a-database-by-using-linq.md) 和 [如何：调用存储过程](how-to-call-a-stored-procedure-by-using-linq.md)。  
   
 ## <a name="visual-basic-features-that-support-linq"></a>支持 LINQ 的 Visual Basic 功能  
+
  Visual Basic 包含了其他一些值得注意的功能，这些功能使得 LINQ 简单，并减少了执行 LINQ 查询所必须编写的代码量。 这些功能包括以下这些：  
   
 - **匿名类型**，使您能够根据查询结果创建新类型。  
@@ -203,6 +209,7 @@ ms.locfileid: "90556741"
  有关查询执行的详细信息，请参阅 [编写第一个 LINQ 查询](../../concepts/linq/writing-your-first-linq-query.md)。  
   
 ## <a name="xml-in-visual-basic"></a>Visual Basic 中的 XML  
+
  Visual Basic 中的 XML 功能包括 XML 文本和 XML 轴属性，这使你可以轻松地在代码中创建、访问、查询和修改 XML。 XML 文本可用于在代码中直接编写 XML。 Visual Basic 编译器将 XML 视为第一类数据对象。  
   
  下面的代码示例演示了如何创建 XML 元素、访问其子元素和属性，以及使用 LINQ 查询该元素的内容。  
@@ -224,6 +231,7 @@ ms.locfileid: "90556741"
 |[LINQ to XML](../../../../standard/linq/linq-xml-overview.md)|包括常规信息、编程指南和 LINQ to XML 示例。|  
   
 ## <a name="how-to-and-walkthrough-topics"></a>How to 和演练主题
+
  [如何：查询数据库](how-to-query-a-database-by-using-linq.md)  
   
  [如何：调用存储过程](how-to-call-a-stored-procedure-by-using-linq.md)  
@@ -243,6 +251,7 @@ ms.locfileid: "90556741"
  [如何：分配存储流程来执行更新、插入和删除操作（O/R 设计器）](/visualstudio/data-tools/how-to-assign-stored-procedures-to-perform-updates-inserts-and-deletes-o-r-designer)  
   
 ## <a name="featured-book-chapters"></a>特色书籍章节  
+
  第[17 章：](/previous-versions/visualstudio/visual-studio-2008/ff652502(v=orm.10))编程中的 LINQ [Visual Basic 2008](/previous-versions/visualstudio/visual-studio-2008/ff652504(v=orm.10))  
   
 ## <a name="see-also"></a>请参阅

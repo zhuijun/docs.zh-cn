@@ -4,21 +4,22 @@ ms.date: 07/20/2015
 f1_keywords:
 - vbrTextFieldParser_FieldWidthsNothing
 ms.assetid: 623e0825-5640-4e47-8341-7eeec80fc145
-ms.openlocfilehash: 855d4c254b0ddac27dc5ee5e21ca5aa3b99b3ea0
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d5c02e8f81353e3e797190b5d72d10b72168afb0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84398482"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075650"
 ---
 # <a name="unable-to-read-fixed-width-fields-because-fieldwidths-is-nothing-or-empty"></a>无法读取固定宽度的字段，因为 FieldWidths 为 Nothing 或为空
+
 `TextFieldParser` 无法读取固定宽度的字段，因为 `FieldWidths` 属性被设置为 `Nothing` 或空。  
   
 ## <a name="to-correct-this-error"></a>更正此错误  
   
 - 将 `FieldWidths` 设置为有效值。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [TextFieldParser.SetFieldWidths 方法](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.SetFieldWidths%2A)
 - [TextFieldParser.FieldWidths 属性](xref:Microsoft.VisualBasic.FileIO.TextFieldParser.FieldWidths%2A)

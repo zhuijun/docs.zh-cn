@@ -7,14 +7,15 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - Video How tos, Visual Basic
 ms.assetid: 0f53a553-efd6-466d-80bf-6b679e5cd174
-ms.openlocfilehash: cf4954059a4b0bf015bed82a74357ecfd5f5987e
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 61f520a528c3d40b9d34807d517a9bf27ad40da8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404870"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075221"
 ---
 # <a name="how-to-declare-an-object-by-using-an-object-initializer-visual-basic"></a>如何：使用对象初始值设定项声明对象 (Visual Basic)
+
 使用对象初始值设定项可在单个语句中声明和实例化类的实例。 此外，您可以同时初始化实例的一个或多个成员，而无需调用参数化的构造函数。  
   
  使用对象初始值设定项创建命名类型的实例时，将调用类的无参数构造函数，然后按照指定的顺序初始化指定成员。  
@@ -23,7 +24,7 @@ ms.locfileid: "84404870"
   
  [!code-vb[VbVbalrObjectInit#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class2.vb#20)]  
   
- 有关类的实现 `Student` ，请参阅[如何：创建项列表](../../concepts/linq/how-to-create-a-list-of-items.md)。 你可以从该主题复制代码以设置类，并创建 `Student` 要使用的对象的列表。  
+ 有关类的实现 `Student` ，请参阅 [如何：创建项列表](../../concepts/linq/how-to-create-a-list-of-items.md)。 你可以从该主题复制代码以设置类，并创建 `Student` 要使用的对象的列表。  
   
 ### <a name="to-create-an-object-of-a-named-class-by-using-an-object-initializer"></a>使用对象初始值设定项创建命名类的对象  
   
@@ -57,9 +58,9 @@ ms.locfileid: "84404870"
   
      [!code-vb[VbVbalrObjectInit#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrObjectInit/VB/Class2.vb#23)]  
   
-     有关详细信息，请参阅[局部类型推理](../variables/local-type-inference.md)。  
+     有关详细信息，请参阅 [局部类型推理](../variables/local-type-inference.md)。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [局部类型推理](../variables/local-type-inference.md)
 - [如何：创建项列表](../../concepts/linq/how-to-create-a-list-of-items.md)

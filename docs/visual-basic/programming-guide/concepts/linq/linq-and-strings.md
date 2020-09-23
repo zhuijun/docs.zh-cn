@@ -2,14 +2,15 @@
 title: LINQ 和字符串
 ms.date: 07/20/2015
 ms.assetid: 75ddb201-d97a-4f98-8cdf-4ad51714529a
-ms.openlocfilehash: ee2a44175e8546f879473a3af6bf1a2de92d2501
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 28c11dcc3c788ea85516e8b3fbafe2677b6d9b54
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90549844"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075338"
 ---
 # <a name="linq-and-strings-visual-basic"></a>LINQ 和字符串 (Visual Basic)
+
 LINQ 可用于查询和转换字符串和字符串集合。 这在处理文本文件中的半结构化数据时尤其有用。 LINQ 查询可以与传统的字符串函数和正则表达式合并。 例如，可以使用 <xref:System.String.Split%2A> 或 <xref:System.Text.RegularExpressions.Regex.Split%2A> 方法来创建可稍后使用 LINQ 查询或修改的字符串数组。 可以使用 LINQ 查询的 `where` 子句中的 <xref:System.Text.RegularExpressions.Regex.IsMatch%2A> 方法。 并且可以使用 LINQ 查询或修改正则表达式返回的 <xref:System.Text.RegularExpressions.MatchCollection> 结果。  
   
  还可以使用本节介绍的技术将半结构化的文本数据转换为 XML。 有关详细信息，请参阅 [如何：从 CSV 文件生成 XML](../../../../standard/linq/generate-xml-csv-files.md)。  
@@ -17,6 +18,7 @@ LINQ 可用于查询和转换字符串和字符串集合。 这在处理文本�
  本节中的示例分为两类：  
   
 ## <a name="querying-a-block-of-text"></a>查询文本块  
+
  可以使用 <xref:System.String.Split%2A> 方法或 <xref:System.Text.RegularExpressions.Regex.Split%2A> 方法将文本块拆分为可查询的较小字符串数组，从而对其进行查询、分析和修改。 可以先将源文本拆分为词语、句、段落、页或任何其他条件，然后根据查询的需要执行其他拆分。  
   
  [如何：对某个词在字符串中出现的次数进行计数 (LINQ)  (Visual Basic) ](how-to-count-occurrences-of-a-word-in-a-string-linq.md)  
@@ -33,6 +35,7 @@ LINQ 可用于查询和转换字符串和字符串集合。 这在处理文本�
  演示如何在 LINQ 查询中使用正则表达式，以便对筛选的查询结果进行复杂的模式匹配。  
   
 ## <a name="querying-semi-structured-data-in-text-format"></a>查询文本格式的半结构化数据  
+
  许多不同类型的文本文件都包含一系列行，通常具有类似的格式设置，例如制表符分隔或逗号分隔的文件或固定长度的行。 将此类文本文件读入内存后，可以使用 LINQ 来查询和/或修改其中的行。 LINQ 查询还简化了合并来自多个源的数据的任务。  
   
  [如何：查找两个列表之间的差集 (LINQ)  (Visual Basic) ](how-to-find-the-set-difference-between-two-lists-linq.md)  

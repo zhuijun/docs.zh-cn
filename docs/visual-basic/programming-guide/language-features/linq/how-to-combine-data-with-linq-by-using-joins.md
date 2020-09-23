@@ -9,15 +9,16 @@ helpviewer_keywords:
 - joining [LINQ in Visual Basic]
 - queries [LINQ in Visual Basic], how-to topics
 ms.assetid: 5b00a478-035b-41c6-8918-be1a97728396
-ms.openlocfilehash: de8c4ec3ab8a0f2335c034231c661380420fd31b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: ebda8d3b7fa2e712c337ed2c1fadc580bed7fe61
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84404999"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075065"
 ---
 # <a name="how-to-combine-data-with-linq-by-using-joins-visual-basic"></a>如何：通过 LINQ 使用联接合并数据 (Visual Basic)
-Visual Basic 提供了 `Join` 和 `Group Join` 查询子句，使你能够基于集合之间的公共值组合多个集合的内容。 这些值称为*键值*。 熟悉关系数据库概念的开发人员将该 `Join` 子句识别为内部联接，将 `Group Join` 子句视为有效的左外部联接。  
+
+Visual Basic 提供了 `Join` 和 `Group Join` 查询子句，使你能够基于集合之间的公共值组合多个集合的内容。 这些值称为 *键值* 。 熟悉关系数据库概念的开发人员将该 `Join` 子句识别为内部联接，将 `Group Join` 子句视为有效的左外部联接。  
   
  本主题中的示例演示了使用 `Join` 和查询子句合并数据的几种方法 `Group Join` 。  
   
@@ -33,6 +34,7 @@ Visual Basic 提供了 `Join` 和 `Group Join` 查询子句，使你能够基于
     [!code-vb[VbLINQHowTos#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#2)]  
   
 ## <a name="perform-an-inner-join-by-using-the-join-clause"></a>使用 Join 子句执行内部联接  
+
  内部联接结合了两个集合中的数据。 包含指定键值匹配的项。 不会排除在其他集合中没有匹配项的任何集合中的任何项。  
   
  在 Visual Basic 中，LINQ 提供了两个用于执行内部联接的选项：隐式联接和显式联接。  
@@ -48,6 +50,7 @@ Visual Basic 提供了 `Join` 和 `Group Join` 查询子句，使你能够基于
      [!code-vb[VbLINQHowTos#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#4)]  
   
 ## <a name="perform-a-left-outer-join-by-using-the-group-join-clause"></a>使用 Group Join 子句执行左外部联接  
+
  左外部联接包含联接的左侧集合中的所有项，并仅包含联接的右侧集合中的匹配值。 不会从查询结果中排除联接的右侧集合中没有匹配项的联接的任何项。  
   
  `Group Join`子句实际上是左外部联接。 通常称为左外部联接和子句返回的内容之间的区别在于， `Group Join` `Group Join` 子句会对左侧集合中每个项的联接的右端集合中的结果进行分组。 在关系数据库中，左外部联接返回未分组的结果，其中，查询结果中的每一项都包含联接中两个集合中的匹配项。 在这种情况下，将为右侧集合中的每个匹配项重复联接左侧集合中的项。 完成下一个过程后，你将看到如下所示的内容。  
@@ -61,6 +64,7 @@ Visual Basic 提供了 `Join` 和 `Group Join` 查询子句，使你能够基于
      [!code-vb[VbLINQHowTos#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQHowTos/VB/Module1.vb#3)]  
   
 ## <a name="perform-a-join-by-using-a-composite-key"></a>使用组合键执行联接  
+
  可以 `And` 在或子句中使用关键字 `Join` `Group Join` 来标识从要联接的集合中匹配值时要使用的多个键字段。 `And`关键字为要联接的项指定所有指定的键字段必须匹配。  
   
 #### <a name="to-perform-a-join-by-using-a-composite-key"></a>使用组合键执行联接  
@@ -79,7 +83,7 @@ Visual Basic 提供了 `Join` 和 `Group Join` 查询子句，使你能够基于
   
 2. 按 F5 运行示例。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ](index.md)
 - [Visual Basic 中的 LINQ 简介](introduction-to-linq.md)

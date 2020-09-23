@@ -2,14 +2,15 @@
 title: 已声明的元素
 ms.date: 07/20/2015
 ms.assetid: 0d1d1bb5-ac0b-485f-8922-cdcec5574c79
-ms.openlocfilehash: f7fedc58ec061ddb133eb94ee3b3b7a7b49083cd
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 9359c8df60d7fdc06e7c8dfa1df82f1b277d7339
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84357240"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91075156"
 ---
 # <a name="declared-elements-in-visual-basic"></a>已声明的元素 (Visual Basic)
+
 已声明的元素是在声明语句中定义的编程元素**。 已声明的元素包括变量、常量、枚举、类，结构、模块、接口、过程、过程参数、函数返回、外部过程引用、运算符、属性、事件和委托。  
   
  声明语句包括以下语句：  
@@ -43,6 +44,7 @@ ms.locfileid: "84357240"
 - [Delegate 语句](../../../language-reference/statements/delegate-statement.md)  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [Declared Element Names](declared-element-names.md)  
  介绍如何命名元素以及使用字母大小写。  
   
@@ -53,6 +55,7 @@ ms.locfileid: "84357240"
  介绍编译器如何匹配对声明的引用以及如何限定名称。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [程序结构和代码约定](../../program-structure/program-structure-and-code-conventions.md)  
  提供使代码更易读取、理解和维护的指南。  
   
