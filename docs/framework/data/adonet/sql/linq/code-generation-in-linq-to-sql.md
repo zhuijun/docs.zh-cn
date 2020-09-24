@@ -2,37 +2,41 @@
 title: LINQ to SQL 中的代码生成
 ms.date: 03/30/2017
 ms.assetid: ddcbdaa1-e7fa-4d85-a379-313b49965c07
-ms.openlocfilehash: 551322637e6e04b9be7d558c51e063fead7f84f4
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: f58448e0fc0c22795005b55a737b42374a750ec3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70247960"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161524"
 ---
-# <a name="code-generation-in-linq-to-sql"></a><span data-ttu-id="c0c70-102">LINQ to SQL 中的代码生成</span><span class="sxs-lookup"><span data-stu-id="c0c70-102">Code Generation in LINQ to SQL</span></span>
-<span data-ttu-id="c0c70-103">您可以使用对象关系设计器或 SQLMetal 命令行工具生成代码以表示数据库。</span><span class="sxs-lookup"><span data-stu-id="c0c70-103">You can generate code to represent a database by using either the Object Relational Designer or the SQLMetal command-line tool.</span></span> <span data-ttu-id="c0c70-104">在任一情况下，端到端代码生成都分成三个阶段：</span><span class="sxs-lookup"><span data-stu-id="c0c70-104">In either case, end-to-end code generation occurs in three stages:</span></span>  
+# <a name="code-generation-in-linq-to-sql"></a><span data-ttu-id="4b105-102">LINQ to SQL 中的代码生成</span><span class="sxs-lookup"><span data-stu-id="4b105-102">Code Generation in LINQ to SQL</span></span>
+
+<span data-ttu-id="4b105-103">您可以使用对象关系设计器或 SQLMetal 命令行工具生成代码以表示数据库。</span><span class="sxs-lookup"><span data-stu-id="4b105-103">You can generate code to represent a database by using either the Object Relational Designer or the SQLMetal command-line tool.</span></span> <span data-ttu-id="4b105-104">在任一情况下，端到端代码生成都分成三个阶段：</span><span class="sxs-lookup"><span data-stu-id="4b105-104">In either case, end-to-end code generation occurs in three stages:</span></span>  
   
-1. <span data-ttu-id="c0c70-105">*DBML 提取*程序从数据库中提取架构信息，并将信息重新组合到 XML 格式的 DBML 文件中。</span><span class="sxs-lookup"><span data-stu-id="c0c70-105">The *DBML Extractor* extracts schema information from the database and reassembles the information into an XML-formatted DBML file.</span></span>  
+1. <span data-ttu-id="4b105-105">*DBML 提取*程序从数据库中提取架构信息，并将信息重新组合到 XML 格式的 DBML 文件中。</span><span class="sxs-lookup"><span data-stu-id="4b105-105">The *DBML Extractor* extracts schema information from the database and reassembles the information into an XML-formatted DBML file.</span></span>  
   
-2. <span data-ttu-id="c0c70-106">Dbml*验证*器会扫描 dbml 文件以查找错误。</span><span class="sxs-lookup"><span data-stu-id="c0c70-106">The DBML file is scanned by the *DBML Validator* for errors.</span></span>  
+2. <span data-ttu-id="4b105-106">Dbml *验证* 器会扫描 dbml 文件以查找错误。</span><span class="sxs-lookup"><span data-stu-id="4b105-106">The DBML file is scanned by the *DBML Validator* for errors.</span></span>  
   
-3. <span data-ttu-id="c0c70-107">如果未显示验证错误，文件将传递到代码生成器。</span><span class="sxs-lookup"><span data-stu-id="c0c70-107">If no validation errors appear, the file is passed to the Code Generator.</span></span>  
+3. <span data-ttu-id="4b105-107">如果未显示验证错误，文件将传递到代码生成器。</span><span class="sxs-lookup"><span data-stu-id="4b105-107">If no validation errors appear, the file is passed to the Code Generator.</span></span>  
   
- <span data-ttu-id="c0c70-108">有关详细信息，请参阅 [SqlMetal.exe（代码生成工具）](../../../../tools/sqlmetal-exe-code-generation-tool.md)。</span><span class="sxs-lookup"><span data-stu-id="c0c70-108">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span></span> <span data-ttu-id="c0c70-109">使用 Visual Studio 的开发人员还可以使用对象关系设计器来生成代码。</span><span class="sxs-lookup"><span data-stu-id="c0c70-109">Developers using Visual Studio can also use the Object Relational Designer to generate code.</span></span> <span data-ttu-id="c0c70-110">请参阅[Visual Studio 中的 LINQ to SQL 工具](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)。</span><span class="sxs-lookup"><span data-stu-id="c0c70-110">See [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span></span>  
+ <span data-ttu-id="4b105-108">有关详细信息，请参阅 [SqlMetal.exe（代码生成工具）](../../../../tools/sqlmetal-exe-code-generation-tool.md)。</span><span class="sxs-lookup"><span data-stu-id="4b105-108">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span></span> <span data-ttu-id="4b105-109">使用 Visual Studio 的开发人员还可以使用对象关系设计器来生成代码。</span><span class="sxs-lookup"><span data-stu-id="4b105-109">Developers using Visual Studio can also use the Object Relational Designer to generate code.</span></span> <span data-ttu-id="4b105-110">请参阅 [Visual Studio 中的 LINQ to SQL 工具](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2)。</span><span class="sxs-lookup"><span data-stu-id="4b105-110">See [LINQ to SQL Tools in Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).</span></span>  
   
-## <a name="dbml-extractor"></a><span data-ttu-id="c0c70-111">DBML 提取器</span><span class="sxs-lookup"><span data-stu-id="c0c70-111">DBML Extractor</span></span>  
- <span data-ttu-id="c0c70-112">DBML 提取器是一个 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 组件，它采用数据库元数据作为输入，生成 DBML 文件作为输出。</span><span class="sxs-lookup"><span data-stu-id="c0c70-112">The DBML Extractor is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that takes database metadata as input and produces a DBML file as output.</span></span>  
+## <a name="dbml-extractor"></a><span data-ttu-id="4b105-111">DBML 提取器</span><span class="sxs-lookup"><span data-stu-id="4b105-111">DBML Extractor</span></span>  
+
+ <span data-ttu-id="4b105-112">DBML 提取器是一个 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 组件，它采用数据库元数据作为输入，生成 DBML 文件作为输出。</span><span class="sxs-lookup"><span data-stu-id="4b105-112">The DBML Extractor is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that takes database metadata as input and produces a DBML file as output.</span></span>  
   
-## <a name="code-generator"></a><span data-ttu-id="c0c70-113">代码生成器</span><span class="sxs-lookup"><span data-stu-id="c0c70-113">Code Generator</span></span>  
- <span data-ttu-id="c0c70-114">代码生成器是一个[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]组件，它将 DBML 文件转换为 Visual Basic、 C#或 XML 映射文件。</span><span class="sxs-lookup"><span data-stu-id="c0c70-114">The Code Generator is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that translates DBML files to Visual Basic, C#, or XML mapping files.</span></span>  
+## <a name="code-generator"></a><span data-ttu-id="4b105-113">代码生成器</span><span class="sxs-lookup"><span data-stu-id="4b105-113">Code Generator</span></span>  
+
+ <span data-ttu-id="4b105-114">代码生成器是一个 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 组件，它将 DBML 文件转换为 Visual Basic、c # 或 XML 映射文件。</span><span class="sxs-lookup"><span data-stu-id="4b105-114">The Code Generator is a [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] component that translates DBML files to Visual Basic, C#, or XML mapping files.</span></span>  
   
-## <a name="xml-schema-definition-file"></a><span data-ttu-id="c0c70-115">XML 架构定义文件</span><span class="sxs-lookup"><span data-stu-id="c0c70-115">XML Schema Definition File</span></span>  
- <span data-ttu-id="c0c70-116">DBML 文件必须对下面的 XSD 架构定义文件有效。</span><span class="sxs-lookup"><span data-stu-id="c0c70-116">The DBML file must be valid against the following schema definition as an XSD file.</span></span>  
+## <a name="xml-schema-definition-file"></a><span data-ttu-id="4b105-115">XML 架构定义文件</span><span class="sxs-lookup"><span data-stu-id="4b105-115">XML Schema Definition File</span></span>  
+
+ <span data-ttu-id="4b105-116">DBML 文件必须对下面的 XSD 架构定义文件有效。</span><span class="sxs-lookup"><span data-stu-id="4b105-116">The DBML file must be valid against the following schema definition as an XSD file.</span></span>  
   
- <span data-ttu-id="c0c70-117">请将此架构定义文件与用于验证外部映射文件的架构定义文件区分开来。</span><span class="sxs-lookup"><span data-stu-id="c0c70-117">Distinguish this schema definition file from the schema definition file that is used to validate an external mapping file.</span></span> <span data-ttu-id="c0c70-118">有关详细信息，请参阅[外部映射](external-mapping.md)）。</span><span class="sxs-lookup"><span data-stu-id="c0c70-118">For more information, see [External Mapping](external-mapping.md)).</span></span>  
+ <span data-ttu-id="4b105-117">请将此架构定义文件与用于验证外部映射文件的架构定义文件区分开来。</span><span class="sxs-lookup"><span data-stu-id="4b105-117">Distinguish this schema definition file from the schema definition file that is used to validate an external mapping file.</span></span> <span data-ttu-id="4b105-118">有关详细信息，请参阅 [外部映射](external-mapping.md)) 。</span><span class="sxs-lookup"><span data-stu-id="4b105-118">For more information, see [External Mapping](external-mapping.md)).</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="c0c70-119">Visual Studio 用户还会在 "XML 架构" 对话框中找到此 XSD 文件，其形式为 "Dbmlschema.xsd"。</span><span class="sxs-lookup"><span data-stu-id="c0c70-119">Visual Studio users will also find this XSD file in the XML Schemas dialog box as "DbmlSchema.xsd".</span></span> <span data-ttu-id="c0c70-120">若要正确使用 XSD 文件来验证 DBML 文件，请参阅[如何：验证 DBML 和外部映射文件](how-to-validate-dbml-and-external-mapping-files.md)。</span><span class="sxs-lookup"><span data-stu-id="c0c70-120">To use the XSD file correctly for validating a DBML file, see [How to: Validate DBML and External Mapping Files](how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
+> <span data-ttu-id="4b105-119">Visual Studio 用户还会在 "XML 架构" 对话框中找到此 XSD 文件，其形式为 "Dbmlschema.xsd"。</span><span class="sxs-lookup"><span data-stu-id="4b105-119">Visual Studio users will also find this XSD file in the XML Schemas dialog box as "DbmlSchema.xsd".</span></span> <span data-ttu-id="4b105-120">若要正确使用 XSD 文件来验证 DBML 文件，请参阅 [如何：验证 dbml 和外部映射文件](how-to-validate-dbml-and-external-mapping-files.md)。</span><span class="sxs-lookup"><span data-stu-id="4b105-120">To use the XSD file correctly for validating a DBML file, see [How to: Validate DBML and External Mapping Files](how-to-validate-dbml-and-external-mapping-files.md).</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  
@@ -242,8 +246,9 @@ elementFormDefault="qualified" >
 </xs:schema>  
 ```  
   
-## <a name="sample-dbml-file"></a><span data-ttu-id="c0c70-121">DBML 文件示例</span><span class="sxs-lookup"><span data-stu-id="c0c70-121">Sample DBML File</span></span>  
- <span data-ttu-id="c0c70-122">下面的代码摘自从 Northwind 示例数据库创建的 DBML 文件。</span><span class="sxs-lookup"><span data-stu-id="c0c70-122">The following code is an excerpt from the DBML file created from the Northwind sample database.</span></span> <span data-ttu-id="c0c70-123">可以通过使用带有 **/xml**选项的 SQLMetal 生成整个文件。</span><span class="sxs-lookup"><span data-stu-id="c0c70-123">You can generate the whole file by using SQLMetal with the **/xml** option.</span></span> <span data-ttu-id="c0c70-124">有关详细信息，请参阅 [SqlMetal.exe（代码生成工具）](../../../../tools/sqlmetal-exe-code-generation-tool.md)。</span><span class="sxs-lookup"><span data-stu-id="c0c70-124">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span></span>  
+## <a name="sample-dbml-file"></a><span data-ttu-id="4b105-121">DBML 文件示例</span><span class="sxs-lookup"><span data-stu-id="4b105-121">Sample DBML File</span></span>  
+
+ <span data-ttu-id="4b105-122">下面的代码摘自从 Northwind 示例数据库创建的 DBML 文件。</span><span class="sxs-lookup"><span data-stu-id="4b105-122">The following code is an excerpt from the DBML file created from the Northwind sample database.</span></span> <span data-ttu-id="4b105-123">可以通过使用带有 **/xml** 选项的 SQLMetal 生成整个文件。</span><span class="sxs-lookup"><span data-stu-id="4b105-123">You can generate the whole file by using SQLMetal with the **/xml** option.</span></span> <span data-ttu-id="4b105-124">有关详细信息，请参阅 [SqlMetal.exe（代码生成工具）](../../../../tools/sqlmetal-exe-code-generation-tool.md)。</span><span class="sxs-lookup"><span data-stu-id="4b105-124">For more information, see [SqlMetal.exe (Code Generation Tool)](../../../../tools/sqlmetal-exe-code-generation-tool.md).</span></span>  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  
@@ -269,10 +274,10 @@ elementFormDefault="qualified" >
 </Database>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="c0c70-125">请参阅</span><span class="sxs-lookup"><span data-stu-id="c0c70-125">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4b105-125">请参阅</span><span class="sxs-lookup"><span data-stu-id="4b105-125">See also</span></span>
 
-- [<span data-ttu-id="c0c70-126">背景信息</span><span class="sxs-lookup"><span data-stu-id="c0c70-126">Background Information</span></span>](background-information.md)
-- [<span data-ttu-id="c0c70-127">外部映射</span><span class="sxs-lookup"><span data-stu-id="c0c70-127">External Mapping</span></span>](external-mapping.md)
-- [<span data-ttu-id="c0c70-128">如何：生成对象模型作为外部文件</span><span class="sxs-lookup"><span data-stu-id="c0c70-128">How to: Generate the Object Model as an External File</span></span>](how-to-generate-the-object-model-as-an-external-file.md)
-- [<span data-ttu-id="c0c70-129">下载示例数据库</span><span class="sxs-lookup"><span data-stu-id="c0c70-129">Downloading Sample Databases</span></span>](downloading-sample-databases.md)
-- [<span data-ttu-id="c0c70-130">引用</span><span class="sxs-lookup"><span data-stu-id="c0c70-130">Reference</span></span>](reference.md)
+- [<span data-ttu-id="4b105-126">背景信息</span><span class="sxs-lookup"><span data-stu-id="4b105-126">Background Information</span></span>](background-information.md)
+- [<span data-ttu-id="4b105-127">外部映射</span><span class="sxs-lookup"><span data-stu-id="4b105-127">External Mapping</span></span>](external-mapping.md)
+- [<span data-ttu-id="4b105-128">如何：将对象模型作为外部文件生成</span><span class="sxs-lookup"><span data-stu-id="4b105-128">How to: Generate the Object Model as an External File</span></span>](how-to-generate-the-object-model-as-an-external-file.md)
+- [<span data-ttu-id="4b105-129">下载示例数据库</span><span class="sxs-lookup"><span data-stu-id="4b105-129">Downloading Sample Databases</span></span>](downloading-sample-databases.md)
+- [<span data-ttu-id="4b105-130">引用</span><span class="sxs-lookup"><span data-stu-id="4b105-130">Reference</span></span>](reference.md)
