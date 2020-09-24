@@ -715,8 +715,8 @@ items:
       - name: 依赖关系注入
         href: /aspnet/core/fundamentals/dependency-injection
       - name: 泛型主机
-        href: /aspnet/core/fundamentals/host/generic-host
-      - name: 日志记录
+        href: ../core/extensions/generic-host.md
+      - name: Logging
         href: /aspnet/core/fundamentals/logging
       - name: 选项模式
         href: /aspnet/core/fundamentals/configuration/options
