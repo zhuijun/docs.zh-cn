@@ -2,14 +2,15 @@
 title: <issuedTokenParameters>
 ms.date: 03/30/2017
 ms.assetid: 120b3f37-7331-4816-b712-d6aab39655a4
-ms.openlocfilehash: 8432463ff62e4b5e54a491b574cc6a5285efe220
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c90024a0629f39d160967ca00434e48f682d8933
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70397958"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157312"
 ---
 # \<issuedTokenParameters>
+
 指定在联合安全方案中颁发的安全令牌的参数。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -40,14 +41,16 @@ ms.locfileid: "70397958"
 ```  
   
 ## <a name="type"></a>类型  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |defaultMessageSecurityVersion|指定安全规范（WS-Security、WS-Trust、WS-Secure Conversation 和 WS-Security Policy）的版本，绑定必须支持这些安全规范。 此值的类型为 <xref:System.ServiceModel.MessageSecurityVersion>。|  
 |inclusionMode|指定令牌包含要求。 此属性的类型为 <xref:System.ServiceModel.Security.Tokens.SecurityTokenInclusionMode>。|  
@@ -71,7 +74,7 @@ ms.locfileid: "70397958"
 |[\<secureConversationBootstrap>](secureconversationbootstrap.md)|指定用于启动安全对话服务的默认值。|  
 |[\<security>](security-of-custombinding.md)|指定自定义绑定的安全选项。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters>
 - <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>

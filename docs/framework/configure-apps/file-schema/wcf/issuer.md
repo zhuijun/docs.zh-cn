@@ -2,14 +2,15 @@
 title: <issuer>
 ms.date: 03/30/2017
 ms.assetid: 8c49c6ae-fa1a-4179-a84b-613c3216dcde
-ms.openlocfilehash: 74f5f2fc1a0fa1ffbbb510e4e700c33a13d02ab3
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9e92bbcacf529a97e1ae936e93e38c98eab19cab
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70397917"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157260"
 ---
 # \<issuer>
+
 指定颁发安全令牌的安全令牌服务 (STS)。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -45,13 +46,14 @@ ms.locfileid: "70397917"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  以下几节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
-|address|必需的字符串。 STS 的 URL。|  
+|address|必选字符串。 STS 的 URL。|  
   
 ### <a name="child-elements"></a>子元素  
   
@@ -66,7 +68,7 @@ ms.locfileid: "70397917"
 |-------------|-----------------|  
 |[\<message>](message-element-of-wsfederationhttpbinding.md)|定义元素的消息级安全性设置 [\<wsFederationHttpBinding>](wsfederationhttpbinding.md) 。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.Issuer%2A>
