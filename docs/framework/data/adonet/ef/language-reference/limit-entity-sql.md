@@ -2,14 +2,15 @@
 title: LIMIT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: c22ffede-0a52-44d1-99b9-4a91e651e1b9
-ms.openlocfilehash: 98e44110e604c6d893734869871d72f1d021775d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 81d135785e567d46a105adcafbf083f48cb4868e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556279"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161758"
 ---
 # <a name="limit-entity-sql"></a>LIMIT (Entity SQL)
+
 在 ORDER BY 子句中使用 LIMIT 子子句可执行物理分页。 LIMIT 不能脱离 ORDER BY 子句单独使用。  
   
 ## <a name="syntax"></a>语法  
@@ -18,7 +19,8 @@ ms.locfileid: "90556279"
 [ LIMIT n ]  
 ```  
   
-## <a name="arguments"></a>自变量  
+## <a name="arguments"></a>参数  
+
  `n`  
  将选择的项的数量。  
   
@@ -28,6 +30,7 @@ ms.locfileid: "90556279"
 > 如果 TOP 修饰符和 SKIP 子子句出现在同一个查询表达式中，Entity SQL 查询将被视为无效。 应重写查询，将 TOP 表达式更改为 LIMIT 表达式。  
   
 ## <a name="example"></a>示例  
+
  下面的 Entity SQL 查询将 LIMIT 和 ORDER BY 运算符结合使用来指定用于 SELECT 语句所返回的对象的排序顺序。 此查询基于 AdventureWorks 销售模型。 若要编译并运行此查询，请执行下列步骤：  
   
 1. 执行 [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md)中的过程。  

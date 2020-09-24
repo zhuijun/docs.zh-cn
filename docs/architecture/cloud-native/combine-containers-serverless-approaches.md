@@ -2,12 +2,12 @@
 title: 将容器和无服务器方法与云本机服务组合在一起
 description: 将容器和 Kubernetes 与无服务器方法结合起来
 ms.date: 05/13/2020
-ms.openlocfilehash: 67eee89659026db06eb16ef6f1154ab6935725a4
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: b1b85519ce02ddd1d69735d872cf24fadcc81ef7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614196"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160887"
 ---
 # <a name="combining-containers-and-serverless-approaches"></a>合并容器和无服务器方法
 
@@ -23,21 +23,21 @@ ms.locfileid: "83614196"
 
 ## <a name="how-to-combine-serverless-and-docker-containers"></a>如何组合无服务器和 Docker 容器
 
-若要将 Azure 函数包装在 Docker 容器中，请安装[Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools) ，并运行以下命令：
+若要将 Azure 函数包装在 Docker 容器中，请安装 [Azure Functions Core Tools](https://github.com/Azure/azure-functions-core-tools) ，并运行以下命令：
 
 ```console
 func init ProjectName --worker-runtime dotnet --docker
 ```
 
-当创建项目时，它将包括 Dockerfile 和配置为的辅助运行时 `dotnet` 。 现在，你可以在本地创建和测试函数。 使用和命令生成并运行 `docker build` 它 `docker run` 。 有关使用 Docker 支持构建 Azure Functions 的详细步骤，请参阅在[Linux 上使用自定义映像创建函数](https://docs.microsoft.com/azure/azure-functions/functions-create-function-linux-custom-image)教程。
+当创建项目时，它将包括 Dockerfile 和配置为的辅助运行时 `dotnet` 。 现在，你可以在本地创建和测试函数。 使用和命令生成并运行  `docker build` 它 `docker run` 。 有关使用 Docker 支持构建 Azure Functions 的详细步骤，请参阅在 [Linux 上使用自定义映像创建函数](/azure/azure-functions/functions-create-function-linux-custom-image) 教程。
 
 ## <a name="how-to-combine-serverless-and-kubernetes-with-keda"></a>如何将无服务器和 Kubernetes 与 KEDA 结合
 
-在本章中，你已了解到 Azure Functions 的平台会自动扩大以满足需求。 但是，在将容器化函数部署到 AKS 时，会丢失内置缩放功能。 [Kubernetes 是基于事件驱动的（KEDA）](https://docs.microsoft.com/azure/azure-functions/functions-kubernetes-keda)。 它实现了包含容器化函数的精细自动缩放 `event-driven Kubernetes workloads,` 。
+在本章中，你已了解到 Azure Functions 的平台会自动扩大以满足需求。 但是，在将容器化函数部署到 AKS 时，会丢失内置缩放功能。 为解决此 [Kubernetes，基于事件驱动 (KEDA) ](/azure/azure-functions/functions-kubernetes-keda)。 它实现了包含容器化函数的精细自动缩放 `event-driven Kubernetes workloads,` 。
 
-KEDA 为 Docker 容器中的函数运行时提供事件驱动的缩放功能。 KEDA 可以根据负载从零个实例（没有事件发生时）扩展到 `n instances` 。 它通过向 Kubernetes 自动缩放程序（水平 Pod 自动缩放程序）公开自定义指标来启用自动缩放。 将函数容器与 KEDA 结合使用，可以在任何 Kubernetes 群集中复制无服务器函数功能。
+KEDA 为 Docker 容器中的函数运行时提供事件驱动的缩放功能。 KEDA 可以在没有事件发生时从零个实例 (扩展 `n instances` ，而不会根据负载进行) 。 它通过向 Kubernetes 自动缩放程序 (水平 Pod 自动缩放程序) 公开自定义指标来启用自动缩放。 将 Functions 容器与 KEDA 结合使用时，可以在任何 Kubernetes 群集中复制无服务器函数功能。
 
-值得注意的是，KEDA 项目现在由云本机计算基础（CNCF）进行管理。
+值得注意的是，KEDA 项目现在由云本机计算基础 (CNCF) 进行管理。
 
 >[!div class="step-by-step"]
 >[上一页](leverage-serverless-functions.md)

@@ -2,40 +2,43 @@
 title: 外部映射
 ms.date: 03/30/2017
 ms.assetid: 076606b8-d889-4ba0-b5da-ae577b146f23
-ms.openlocfilehash: ba5af75ae34b233354fec6e9074f3cc96d924c7f
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 79427cde0784746480e851cf1be56c8bce854919
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72003055"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161381"
 ---
 # <a name="external-mapping"></a>外部映射
-[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 支持*外部映射*，这是使用单独的 XML 文件指定数据库的数据模型和对象模型之间的映射的过程。 使用外部映射文件具有以下优点：  
+
+[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 支持 *外部映射*，这是使用单独的 XML 文件指定数据库的数据模型和对象模型之间的映射的过程。 使用外部映射文件具有以下优点：  
   
 - 可以将映射代码放在应用程序代码外部。 此方法可以降低应用程序代码的混乱程度。  
   
 - 可以将外部映射文件视为类似于配置文件的某种东西。 例如，在发布二进制文件后，只需交换出外部映射文件，就可以更新应用程序的工作方式。  
   
 ## <a name="requirements"></a>要求  
+
  映射文件必须为 XML 文件，并且该文件必须能够通过 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 架构定义 (.xsd) 文件的验证。  
   
- 适用以下规则：  
+ 下列规则适用：  
   
 - 映射文件必须为 XML 文件。  
   
-- XML 映射文件必须能够通过 XML 架构定义文件的验证。 有关详细信息，请参阅[如何：验证 DBML 和外部映射文件](how-to-validate-dbml-and-external-mapping-files.md)。  
+- XML 映射文件必须能够通过 XML 架构定义文件的验证。 有关详细信息，请参阅 [如何：验证 DBML 和外部映射文件](how-to-validate-dbml-and-external-mapping-files.md)。  
   
 - 外部映射会重写基于属性的映射。 换句话说，在使用外部映射源创建 <xref:System.Data.Linq.DataContext> 时，<xref:System.Data.Linq.DataContext> 会忽略已在类上创建的所有映射属性。 无论类是否包含在外部映射文件中，都会发生这种情况。  
   
-- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 不支持混合使用两种映射方法（基于属性和外部）。  
+- [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 不支持混合使用两种映射方式（基于属性的映射和外部映射）。  
   
 ## <a name="xml-schema-definition-file"></a>XML 架构定义文件  
+
  [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 中的外部映射必须能够通过以下 XML 架构定义的验证。  
   
- 请将此架构定义文件与用于验证 DBML 文件的架构定义文件区分开来。 有关详细信息，请参阅[LINQ to SQL 中的代码生成](code-generation-in-linq-to-sql.md)。  
+ 请将此架构定义文件与用于验证 DBML 文件的架构定义文件区分开来。 有关详细信息，请参阅 [LINQ to SQL) 中的代码生成](code-generation-in-linq-to-sql.md) 。  
   
 > [!NOTE]
-> Visual Studio 用户还会在 "XML 架构" 对话框中找到此 XSD 文件，其形式为 "Linqtosqlmapping.xsd"。 若要正确使用此文件来验证外部映射文件，请参阅[如何：验证 DBML 和外部映射文件](how-to-validate-dbml-and-external-mapping-files.md)。  
+> Visual Studio 用户还会在 "XML 架构" 对话框中找到此 XSD 文件，其形式为 "Linqtosqlmapping.xsd"。 若要正确使用此文件来验证外部映射文件，请参阅 [如何：验证 DBML 和外部映射文件](how-to-validate-dbml-and-external-mapping-files.md)。  
   
 ```xml  
 <?xml version="1.0" encoding="utf-16"?>  
@@ -141,7 +144,7 @@ elementFormDefault="qualified" >
 </xs:schema>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [LINQ to SQL 中的代码生成](code-generation-in-linq-to-sql.md)
 - [引用](reference.md)

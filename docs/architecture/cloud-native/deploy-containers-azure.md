@@ -2,12 +2,12 @@
 title: 在 Azure 中部署容器
 description: 在 Azure 中通过 Azure 容器注册表、Azure Kubernetes 服务和 Azure Dev Spaces 部署容器。
 ms.date: 04/13/2020
-ms.openlocfilehash: ba2854323ee0f1394a3cff0dd3756cb3c7c32d5b
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: d848a146a2bdb5d8d02543f57f19d6a39c9699e6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83614144"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160770"
 ---
 # <a name="deploying-containers-in-azure"></a>在 Azure 中部署容器
 
@@ -21,9 +21,9 @@ ms.locfileid: "83614144"
 
 容器化微服务时，您首先会生成一个 "映像"。 此图像是服务代码、依赖项和运行时的二进制表示形式。 尽管可以使用 `Docker Build` DOCKER API 中的命令手动创建映像，但更好的方法是将其创建为自动生成过程的一部分。
 
-创建后，容器映像存储在容器注册表中。 它们使你能够生成、存储和管理容器映像。 有很多可用的注册表项，无论是公共的还是私有的。 Azure 容器注册表（ACR）是 Azure 云中完全托管的容器注册表服务。 它将映像保存在 Azure 网络中，缩短将其部署到 Azure 容器主机的时间。 还可以使用与其他 Azure 资源相同的安全和标识过程来保护这些资源。
+创建后，容器映像存储在容器注册表中。 它们使你能够生成、存储和管理容器映像。 有很多可用的注册表项，无论是公共的还是私有的。 Azure 容器注册表 (ACR) 是 Azure 云中完全托管的容器注册表服务。 它将映像保存在 Azure 网络中，缩短将其部署到 Azure 容器主机的时间。 还可以使用与其他 Azure 资源相同的安全和标识过程来保护这些资源。
 
-使用[Azure 门户](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-portal)、 [Azure CLI](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-azure-cli)或[PowerShell 工具](https://docs.microsoft.com/azure/container-registry/container-registry-get-started-powershell)创建 Azure 容器注册表。 在 Azure 中创建注册表非常简单。 它需要 Azure 订阅、资源组和唯一名称。 图3-11 显示了用于创建注册表的基本选项，这些选项将在上托管 `registryname.azurecr.io` 。
+使用 [Azure 门户](/azure/container-registry/container-registry-get-started-portal)、 [Azure CLI](/azure/container-registry/container-registry-get-started-azure-cli)或 [PowerShell 工具](/azure/container-registry/container-registry-get-started-powershell)创建 Azure 容器注册表。 在 Azure 中创建注册表非常简单。 它需要 Azure 订阅、资源组和唯一名称。 图3-11 显示了用于创建注册表的基本选项，这些选项将在上托管 `registryname.azurecr.io` 。
 
 ![创建容器注册表](./media/create-container-registry.png)
 
@@ -35,7 +35,7 @@ ms.locfileid: "83614144"
 az acr login --name *registryname*
 ```
 
-经过身份验证后，可以使用 docker 命令将容器映像推送到其中。 但是，在执行此操作之前，必须用 ACR 登录服务器的完全限定名称（URL）来标记映像。 它的格式为*registryname*. azurecr.io。
+经过身份验证后，可以使用 docker 命令将容器映像推送到其中。 但是，在执行此操作之前，必须用 ACR 登录服务器的完全限定名 (URL) 来标记映像。 它的格式为 *registryname*. azurecr.io。
 
 ```console
 docker tag mycontainer myregistry.azurecr.io/mycontainer:v1
@@ -53,11 +53,11 @@ docker push myregistry.azurecr.io/mycontainer:v1
 docker rmi myregistry.azurecr.io/mycontainer:v1
 ```
 
-作为最佳做法，开发人员不应手动将映像推送到容器注册表。 相反，在 GitHub 或 Azure DevOps 之类的工具中定义的生成管道应负责此过程。 有关详细信息，请参阅[云-Native DevOps 章节](devops.md)。
+作为最佳做法，开发人员不应手动将映像推送到容器注册表。 相反，在 GitHub 或 Azure DevOps 之类的工具中定义的生成管道应负责此过程。 有关详细信息，请参阅 [云-Native DevOps 章节](devops.md)。
 
 ## <a name="acr-tasks"></a>ACR 任务
 
-[ACR 任务](https://docs.microsoft.com/azure/container-registry/container-registry-tasks-overview)是一组 Azure 容器注册表中可用的功能。 它通过在 Azure 云中构建和管理容器映像来扩展你的[内部循环开发周期](https://docs.microsoft.com/dotnet/architecture/containerized-lifecycle/design-develop-containerized-apps/docker-apps-inner-loop-workflow)。 它们不是在 `docker build` `docker push` 开发计算机上进行调用，而是由云中的 ACR 任务自动处理的。
+[ACR 任务](/azure/container-registry/container-registry-tasks-overview) 是一组 Azure 容器注册表中可用的功能。 它通过在 Azure 云中构建和管理容器映像来扩展你的 [内部循环开发周期](../containerized-lifecycle/design-develop-containerized-apps/docker-apps-inner-loop-workflow.md) 。 它们不是在 `docker build` `docker push` 开发计算机上进行调用，而是由云中的 ACR 任务自动处理的。
 
 以下 AZ CLI 命令都生成一个容器映像并将其推送到 ACR：
 
@@ -73,9 +73,9 @@ az acr build --image sample/hello-world:v1  --registry myContainerRegistry008 --
 
 ## <a name="azure-kubernetes-service"></a>Azure Kubernetes 服务
 
-本章介绍了 Azure Kubernetes 服务（AKS）。 我们已了解到，事实容器 orchestrator 正在管理容器化的云本机应用程序。
+我们在本章中讨论了 Azure Kubernetes Service (AKS) 。 我们已了解到，事实容器 orchestrator 正在管理容器化的云本机应用程序。
 
-将映像部署到注册表（如 ACR）后，可将 AKS 配置为自动拉取和部署。 使用 CI/CD 管道时，你可以配置一种不限的[发布](https://martinfowler.com/bliki/CanaryRelease.html)策略，以最大程度地减少快速部署更新时所涉及的风险。 新版本的应用程序最初在生产环境中进行了配置，但未将流量路由到该应用程序。 然后，系统会将少量用户路由到新部署的版本。 随着团队在新版本中获得信心，它可以推出更多实例并停用旧版本。 AKS 轻松支持这种部署样式。
+将映像部署到注册表（如 ACR）后，可将 AKS 配置为自动拉取和部署。 使用 CI/CD 管道时，你可以配置一种不限的  [发布](https://martinfowler.com/bliki/CanaryRelease.html) 策略，以最大程度地减少快速部署更新时所涉及的风险。 新版本的应用程序最初在生产环境中进行了配置，但未将流量路由到该应用程序。 然后，系统会将少量用户路由到新部署的版本。 随着团队在新版本中获得信心，它可以推出更多实例并停用旧版本。 AKS 轻松支持这种部署样式。
 
 与 Azure 中的大多数资源一样，可以使用门户、命令行或自动化工具（例如 Helm 或 Terraform）创建 Azure Kubernetes 服务群集。 若要开始使用新群集，需要提供以下信息：
 
@@ -96,13 +96,13 @@ az acr build --image sample/hello-world:v1  --registry myContainerRegistry008 --
 - 监视
 - 标记
 
-本[快速入门演示如何使用 Azure 门户部署 AKS 群集](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal)。
+本 [快速入门演示如何使用 Azure 门户部署 AKS 群集](/azure/aks/kubernetes-walkthrough-portal)。
 
 ## <a name="azure-dev-spaces"></a>Azure Dev Spaces
 
-云本机应用程序可以快速增长大而复杂，需要大量计算资源才能运行。 在这些情况下，整个应用程序不能承载于开发计算机（尤其是便携式计算机）上。 Azure Dev Spaces 旨在使用 AKS 解决此问题。 它使开发人员能够在 AKS 开发群集中托管应用程序的其余部分，并使用其服务的本地版本。
+云本机应用程序可以快速增长大而复杂，需要大量计算资源才能运行。 在这些情况下，整个应用程序不能在开发计算机上承载 (尤其是便携式计算机) 。 Azure Dev Spaces 旨在使用 AKS 解决此问题。 它使开发人员能够在 AKS 开发群集中托管应用程序的其余部分，并使用其服务的本地版本。
 
-开发人员在包含整个容器化应用程序的 AKS 群集中共享正在运行（开发）的实例。 但它们使用在计算机上设置的个人空间来本地开发其服务。 准备就绪后，它们将在 AKS 群集中从端到端测试-无需复制依赖项。 Azure Dev Spaces 将本地计算机中的代码合并到 AKS 中的服务。 开发人员可使用 Visual Studio 或 Visual Studio Code 直接在 Kubernetes 中快速循环访问和调试代码。
+开发人员在 AKS 群集中共享正在运行 (开发) 实例，其中包含整个容器化应用程序。 但它们使用在计算机上设置的个人空间来本地开发其服务。 准备就绪后，它们将在 AKS 群集中从端到端测试-无需复制依赖项。 Azure Dev Spaces 将本地计算机中的代码合并到 AKS 中的服务。 开发人员可使用 Visual Studio 或 Visual Studio Code 直接在 Kubernetes 中快速循环访问和调试代码。
 
 为了理解 Azure Dev Spaces 的价值，让我在 Microsoft Azure 的容器的 Gabe Monroy 中共享此报价：
 
@@ -113,10 +113,10 @@ az acr build --image sample/hello-world:v1  --registry myContainerRegistry008 --
 
 1. 创建 dev 空间。
 2. 配置根开发人员空间。
-3. 配置子开发人员空间（适用于你自己的系统版本）。
+3. 为您自己的系统版本)  (配置子开发人员空间。
 4. 连接到 dev 空间。
 
-所有这些步骤都可以使用 Azure CLI 和新的 `azds` 命令行工具来执行。 例如，若要为给定的 Kubernetes 群集创建新的 Azure Dev 空间，请使用如下所示的命令：
+所有这些步骤都可以使用 Azure CLI 和新的  `azds` 命令行工具来执行。 例如，若要为给定的 Kubernetes 群集创建新的 Azure Dev 空间，请使用如下所示的命令：
 
 ```azurecli
 az aks use-dev-spaces -g my-aks-resource-group -n MyAKSCluster

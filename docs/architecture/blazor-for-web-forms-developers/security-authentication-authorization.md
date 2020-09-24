@@ -6,14 +6,14 @@ ms.author: daroth
 no-loc:
 - Blazor
 ms.date: 09/11/2019
-ms.openlocfilehash: 1cc82b14a940465c26377f9181a2e20b46b0783f
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 690e559617e4961c3cf3262a6d2d48a6bfac67cd
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267817"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91161290"
 ---
-# <a name="security-authentication-and-authorization-in-aspnet-web-forms-and-no-locblazor"></a>安全性： ASP.NET Web 窗体和中的身份验证和授权 Blazor
+# <a name="security-authentication-and-authorization-in-aspnet-web-forms-and-no-locblazor"></a>安全性：ASP.NET Web Forms 和 Blazor  中的身份验证和授权
 
 从 ASP.NET Web 窗体应用程序迁移到 Blazor 几乎肯定需要更新身份验证和授权的执行方式，假设应用程序已配置身份验证。 本章介绍如何从 ASP.NET Web 窗体通用提供程序模型（ () 成员资格、角色和用户配置文件）迁移，以及如何使用应用 ASP.NET Core 标识 Blazor 。 尽管本章将介绍高级步骤和注意事项，但在引用的文档中可以找到详细步骤和脚本。
 
@@ -21,7 +21,7 @@ ms.locfileid: "88267817"
 
 自 ASP.NET 2.0 起，ASP.NET Web 窗体平台支持多种功能（包括成员身份）的提供程序模型。 通用成员资格提供程序与可选角色提供程序一起，通常与 ASP.NET Web 窗体应用程序一起部署。 它提供一种强大且安全的方式来管理身份验证和授权。 这些通用 [提供程序的](https://www.nuget.org/packages/Microsoft.AspNet.Providers)最新产品/服务可作为 NuGet 包、
 
-通用提供程序使用包括、、和之类的表的 SQL 数据库 `aspnet_Applications` 架构 `aspnet_Membership` `aspnet_Roles` `aspnet_Users` 。 通过运行 [aspnet_regsql.exe 命令](https://docs.microsoft.com/previous-versions/ms229862(v=vs.140))进行配置时，提供程序将安装表和存储过程，这些表和存储过程提供了处理基础数据所需的所有必要查询和命令。 数据库架构和这些存储过程与较新 ASP.NET Identity 和 ASP.NET Core 标识系统不兼容，因此必须将现有数据迁移到新系统。 图1显示了为通用提供程序配置的示例表架构。
+通用提供程序使用包括、、和之类的表的 SQL 数据库 `aspnet_Applications` 架构 `aspnet_Membership` `aspnet_Roles` `aspnet_Users` 。 通过运行 [aspnet_regsql.exe 命令](/previous-versions/ms229862(v=vs.140))进行配置时，提供程序将安装表和存储过程，这些表和存储过程提供了处理基础数据所需的所有必要查询和命令。 数据库架构和这些存储过程与较新 ASP.NET Identity 和 ASP.NET Core 标识系统不兼容，因此必须将现有数据迁移到新系统。 图1显示了为通用提供程序配置的示例表架构。
 
 ![通用提供程序架构](./media/security/membership-tables.png)
 
@@ -111,7 +111,7 @@ protected void Page_Load(object sender, EventArgs e)
 
 ## <a name="aspnet-core-identity"></a>ASP.NET Core 标识
 
-尽管仍需要身份验证和授权，但与通用提供程序相比，ASP.NET Core 标识将使用一组不同的抽象和假设。 例如，新的标识模型支持第三方身份验证，允许用户使用社交媒体帐户或其他受信任的身份验证提供程序进行身份验证。 ASP.NET Core 标识支持通常需要的页的 UI，如登录、注销和注册。 它利用 EF Core 来访问其数据，并使用 EF Core 迁移来生成支持其数据模型所需的必需架构。 本 [ASP.NET Core 上的标识简介](https://docs.microsoft.com/aspnet/core/security/authentication/identity) 提供了 ASP.NET Core 标识中包含的内容以及如何开始使用它。 如果你尚未在应用程序及其数据库中设置 ASP.NET Core 标识，则会帮助你入门。
+尽管仍需要身份验证和授权，但与通用提供程序相比，ASP.NET Core 标识将使用一组不同的抽象和假设。 例如，新的标识模型支持第三方身份验证，允许用户使用社交媒体帐户或其他受信任的身份验证提供程序进行身份验证。 ASP.NET Core 标识支持通常需要的页的 UI，如登录、注销和注册。 它利用 EF Core 来访问其数据，并使用 EF Core 迁移来生成支持其数据模型所需的必需架构。 本 [ASP.NET Core 上的标识简介](/aspnet/core/security/authentication/identity) 提供了 ASP.NET Core 标识中包含的内容以及如何开始使用它。 如果你尚未在应用程序及其数据库中设置 ASP.NET Core 标识，则会帮助你入门。
 
 ### <a name="roles-claims-and-policies"></a>角色、声明和策略
 
@@ -130,7 +130,7 @@ services.AddAuthorization(options =>
 });
 ```
 
-你可以 [在文档中了解有关如何创建自定义策略的详细信息](https://docs.microsoft.com/aspnet/core/security/authorization/policies)。
+你可以 [在文档中了解有关如何创建自定义策略的详细信息](/aspnet/core/security/authorization/policies)。
 
 无论你使用的是策略还是角色，你都可以指定应用程序中的特定页面 Blazor 要求具有属性的角色或策略 `[Authorize]` ，并将其应用于 `@attribute` 指令。
 
@@ -146,7 +146,7 @@ services.AddAuthorization(options =>
 @attribute [Authorize(Policy ="CanadiansOnly")]
 ```
 
-如果需要在代码中访问用户的身份验证状态、角色或声明，可以通过两种主要方式实现此目的。 第一种方式是接收身份验证状态作为级联参数。 第二种是使用注入的来访问状态 `AuthenticationStateProvider` 。 [ Blazor 安全文档](https://docs.microsoft.com/aspnet/core/blazor/security/)中介绍了上述每种方法的详细信息。
+如果需要在代码中访问用户的身份验证状态、角色或声明，可以通过两种主要方式实现此目的。 第一种方式是接收身份验证状态作为级联参数。 第二种是使用注入的来访问状态 `AuthenticationStateProvider` 。 [ Blazor 安全文档](/aspnet/core/blazor/security/)中介绍了上述每种方法的详细信息。
 
 下面的代码演示如何将 `AuthenticationState` 作为级联参数接收：
 
@@ -252,7 +252,7 @@ dotnet ef database update
 dotnet ef migrations script -o auth.sql
 ```
 
-这会在输出文件中生成一个 SQL 脚本， `auth.sql` 然后可以对所需的任何数据库运行该脚本。 如果运行命令时遇到任何问题 `dotnet ef` ，请 [确保系统上已安装 EF Core 工具](https://docs.microsoft.com/ef/core/miscellaneous/cli/dotnet)。
+这会在输出文件中生成一个 SQL 脚本， `auth.sql` 然后可以对所需的任何数据库运行该脚本。 如果运行命令时遇到任何问题 `dotnet ef` ，请 [确保系统上已安装 EF Core 工具](/ef/core/miscellaneous/cli/dotnet)。
 
 如果源表上有其他列，则需要在新架构中确定这些列的最佳位置。 通常， `aspnet_Membership` 应将表中的列映射到 `AspNetUsers` 表。 上的列 `aspnet_Roles` 应映射到 `AspNetRoles` 。 表中的任何其他列 `aspnet_UsersInRoles` 都将添加到 `AspNetUserRoles` 表中。
 
@@ -260,9 +260,9 @@ dotnet ef migrations script -o auth.sql
 
 ### <a name="migrating-data-from-universal-providers-to-aspnet-core-identity"></a>将数据从通用提供程序迁移到 ASP.NET Core 标识
 
-准备好目标表架构后，下一步是将用户和角色记录迁移到新的架构。 架构差异的完整列表，包括映射到哪些新列的列，可在 [此处](https://docs.microsoft.com/aspnet/core/migration/proper-to-2x/membership-to-core-identity)找到。
+准备好目标表架构后，下一步是将用户和角色记录迁移到新的架构。 架构差异的完整列表，包括映射到哪些新列的列，可在 [此处](/aspnet/core/migration/proper-to-2x/membership-to-core-identity)找到。
 
-若要将用户从成员身份迁移到新的标识表，你应 [按照文档中所述的步骤进行操作](https://docs.microsoft.com/aspnet/core/migration/proper-to-2x/membership-to-core-identity)。 完成这些步骤和提供的脚本后，用户将需要在下次登录时更改其密码。
+若要将用户从成员身份迁移到新的标识表，你应 [按照文档中所述的步骤进行操作](/aspnet/core/migration/proper-to-2x/membership-to-core-identity)。 完成这些步骤和提供的脚本后，用户将需要在下次登录时更改其密码。
 
 可以迁移用户密码，但过程更多。 要求用户在迁移过程中更新其密码，并鼓励他们使用全新的唯一密码，这可能会增强应用程序的整体安全性。
 
@@ -341,7 +341,7 @@ ASP.NET Identity 不会从匿名或基于角色的访问中配置位置 `Startup
 
 请注意， `[Authorize]` 属性仅适用于 `@page` 通过路由器访问的组件 Blazor 。 特性不适用于子组件，而子组件应改用 `AuthorizeView` 。
 
-如果在页标记中有用于确定是否向特定用户显示某些代码的逻辑，则可以将其替换为 `AuthorizeView` 组件。 [AuthorizeView 组件](https://docs.microsoft.com/aspnet/core/blazor/security#authorizeview-component)根据用户是否有权查看它来有选择地显示 UI。 它还公开了 `context` 可用于访问用户信息的变量。
+如果在页标记中有用于确定是否向特定用户显示某些代码的逻辑，则可以将其替换为 `AuthorizeView` 组件。 [AuthorizeView 组件](/aspnet/core/blazor/security#authorizeview-component)根据用户是否有权查看它来有选择地显示 UI。 它还公开了 `context` 可用于访问用户信息的变量。
 
 ```razor
 <AuthorizeView>
@@ -416,10 +416,10 @@ Blazor 使用与 ASP.NET Core 相同的安全模型，ASP.NET Core 标识。 从
 
 ## <a name="references"></a>参考
 
-- [ASP.NET Core 上的标识简介](https://docs.microsoft.com/aspnet/core/security/authentication/identity)
-- [从 ASP.NET 成员身份验证迁移到 ASP.NET Core 2.0 标识](https://docs.microsoft.com/aspnet/core/migration/proper-to-2x/membership-to-core-identity)
-- [将身份验证和标识迁移到 ASP.NET Core](https://docs.microsoft.com/aspnet/core/migration/identity)
-- [ASP.NET Core Blazor 身份验证和授权](https://docs.microsoft.com/aspnet/core/blazor/security/)
+- [ASP.NET Core 上的标识简介](/aspnet/core/security/authentication/identity)
+- [从 ASP.NET 成员身份验证迁移到 ASP.NET Core 2.0 标识](/aspnet/core/migration/proper-to-2x/membership-to-core-identity)
+- [将身份验证和标识迁移到 ASP.NET Core](/aspnet/core/migration/identity)
+- [ASP.NET Core Blazor 身份验证和授权](/aspnet/core/blazor/security/)
 
 >[!div class="step-by-step"]
 >[上一页](config.md)
