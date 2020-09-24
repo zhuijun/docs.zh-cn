@@ -3,18 +3,20 @@ title: 检索和修改数据
 description: 在 .NET Framework 中，ADO.NET 中的数据提供程序充当应用程序和数据源之间的桥梁，用于读取和更新数据。
 ms.date: 03/30/2017
 ms.assetid: 722e7f87-3691-46c6-87e8-7d159722d675
-ms.openlocfilehash: f916324dc829526a5e6b0078021b09786755f666
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7620843e77b25606b2dec2bf6eae3a4f40d1b9fb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286606"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91150669"
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>在 ADO.NET 中检索和修改数据
-任何数据库应用程序的一项主要功能是连接数据源并检索数据源中包含的数据。 ADO.NET 的 .NET Framework 数据提供程序充当应用程序和数据源之间的桥梁，使你能够执行命令以及使用**DataReader**或**DataAdapter**检索数据。 任何数据库应用程序的一项关键功能是更新数据库中存储的数据的能力。 在 ADO.NET 中，更新数据涉及使用**DataAdapter**和和 <xref:System.Data.DataSet> **Command**对象; 它还可能涉及使用事务。  
+
+任何数据库应用程序的一项主要功能是连接数据源并检索数据源中包含的数据。 ADO.NET 的 .NET Framework 数据提供程序充当应用程序和数据源之间的桥梁，使你能够执行命令以及使用 **DataReader** 或 **DataAdapter**检索数据。 任何数据库应用程序的一项关键功能是更新数据库中存储的数据的能力。 在 ADO.NET 中，更新数据涉及使用 **DataAdapter** 和和 <xref:System.Data.DataSet> **Command** 对象; 它还可能涉及使用事务。  
   
 ## <a name="in-this-section"></a>本节内容  
- [连接到数据源](connecting-to-a-data-source.md)  
+
+ [连接数据源](connecting-to-a-data-source.md)  
  说明如何建立到数据源的连接及如何使用连接事件。  
   
  [连接字符串](connection-strings.md)  
@@ -33,7 +35,7 @@ ms.locfileid: "84286606"
  包含说明如何执行本地事务、分布式事务及使用开放式并发的主题。  
   
  [检索标识或自动编号值](retrieving-identity-or-autonumber-values.md)  
- 提供一个示例，该示例将为 SQL Server 表中的**标识**列或 Microsoft Access 表中的**Autonumber**字段生成的值映射到表中插入行的列。 讨论在 `DataTable` 中合并标识值。  
+ 提供一个示例，该示例将为 SQL Server 表中的 **标识** 列或 Microsoft Access 表中的 **Autonumber** 字段生成的值映射到表中插入行的列。 讨论在 `DataTable` 中合并标识值。  
   
  [检索二进制数据](retrieving-binary-data.md)  
  介绍如何使用检索二进制数据或大数据结构 `CommandBehavior` 。`SequentialAccess` 修改的默认行为 `DataReader` 。  
@@ -59,7 +61,7 @@ ms.locfileid: "84286606"
  [SqlClient 流支持](sqlclient-streaming-support.md)  
  讨论如何编写从 SQL Server 流式传输数据的应用程序，而无需将其完全加载到内存中。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [ADO.NET 中的数据类型映射](data-type-mappings-in-ado-net.md)
 - [数据集、数据表和数据视图](./dataset-datatable-dataview/index.md)

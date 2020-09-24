@@ -2,14 +2,15 @@
 title: <add> 的 <transportConfigurationType>
 ms.date: 03/30/2017
 ms.assetid: 03d79db9-571d-4534-acef-d05e5467b257
-ms.openlocfilehash: adf4cd7f02db6535c5950443d09476a9a5ff63fb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9bef44ed39ee892080342058206f779b38fb460d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850320"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151150"
 ---
 # <a name="add-of-transportconfigurationtype"></a>\<add> 的 \<transportConfigurationType>
+
 此元素是一个键/值对，可标识特定传输的类型。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,6 +31,7 @@ ms.locfileid: "70850320"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
@@ -40,6 +42,7 @@ ms.locfileid: "70850320"
 |transportConfigurationType|一个包含实现特定传输的类型的字符串。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无  
   
 ### <a name="parent-elements"></a>父元素  
@@ -59,7 +62,7 @@ ms.locfileid: "70850320"
 </serviceHostingEnvironment>
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.TransportConfigurationTypeElement>
 - <xref:System.ServiceModel.Configuration.ServiceHostingEnvironmentSection>

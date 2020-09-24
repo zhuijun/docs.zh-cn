@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <CompatSortNLSVersion> element
 - CompatSortNLSVersion element
 ms.assetid: 782cc82e-83f7-404a-80b7-6d3061a8b6e3
-ms.openlocfilehash: 30afeb2ab9380db75cbeb723ea15a23e4313c9e8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 27d532633f08a5a560da61e904917c1faa35126c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154265"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151358"
 ---
 # <a name="compatsortnlsversion-element"></a>\<CompatSortNLSVersion> 元素
+
 指定在执行字符串比较时，运行时应使用旧排序顺序。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,21 +31,23 @@ ms.locfileid: "79154265"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`enabled`|必需的特性。<br /><br /> 指定要使用其排序顺序的区域设置 ID。|  
   
 ## <a name="enabled-attribute"></a>enabled 特性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |4096|表示备选排序顺序的区域设置 ID。 在这种情况下，4096表示 .NET Framework 3.5 及更早版本的排序顺序。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -54,7 +57,8 @@ ms.locfileid: "79154265"
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`runtime`|包含有关运行时初始化选项的信息。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  由于 .NET Framework 4 中的类执行的字符串比较、排序和大小写操作 <xref:System.Globalization.CompareInfo?displayProperty=nameWithType> 符合 Unicode 5.1 标准，因此和等字符串比较方法的结果 <xref:System.String.Compare%28System.String%2CSystem.String%29?displayProperty=nameWithType> <xref:System.String.LastIndexOf%28System.String%29?displayProperty=nameWithType> 可能与以前版本的 .NET Framework 不同。 如果你的应用程序依赖于旧行为，则可以通过在 `<CompatSortNLSVersion>` 应用程序配置文件中包括元素，来还原 .NET Framework 3.5 及更早版本中使用的字符串比较和排序规则。  
   
 > [!IMPORTANT]
@@ -63,6 +67,7 @@ ms.locfileid: "79154265"
  此外，通过在创建应用程序域时将字符串“NetFx40_Legacy20SortingBehavior”传递到 <xref:System.AppDomainSetup.SetCompatibilitySwitches%2A> 方法，可以在特定的应用程序域中使用旧的字符串排序和比较规则。  
   
 ## <a name="example"></a>示例  
+
  下面的示例实例化两个 <xref:System.String> 对象，并调用 <xref:System.String.Compare%28System.String%2CSystem.String%2CSystem.StringComparison%29?displayProperty=nameWithType> 方法以通过使用当前区域性的约定对它们进行比较。  
   
  [!code-csharp[String.BreakingChanges#1](../../../../../samples/snippets/csharp/VS_Snippets_CLR/string.breakingchanges/cs/example1.cs#1)]
@@ -91,7 +96,7 @@ sta equals a in the sort order.
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [运行时设置架构](index.md)
 - [配置文件架构](../index.md)

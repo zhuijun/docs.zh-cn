@@ -5,12 +5,12 @@ f1_keywords:
 - Crst_DisableSpinWait
 helpviewer_keywords:
 - Crst_DisableSpinWait element
-ms.openlocfilehash: 0683081183081e249b2a9c89e1a6a15f638fb339
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 45052d99bb297ac39d058fa405fe57a7c991f738
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73117641"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91151345"
 ---
 # <a name="crst_disablespinwait-element"></a>\<Crst_DisableSpinWait> 元素
 
@@ -32,18 +32,19 @@ ms.locfileid: "73117641"
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
-|**能够**|指定禁用已争用的关键部分时，是否旋转等待。|  
+|**enabled**|指定禁用已争用的关键部分时，是否旋转等待。|  
   
 ## <a name="enabled-attribute"></a>enabled 特性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |1|禁用在无法获取关键部分时等待自旋。|  
 |0|不要在无法获取关键节时禁用自旋等待。 这是默认值。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -65,7 +66,7 @@ ms.locfileid: "73117641"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [运行时设置架构](index.md)
 - [配置文件架构](../index.md)
