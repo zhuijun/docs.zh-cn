@@ -3,14 +3,15 @@ title: LINQ to SQL
 description: LINQ to SQL 是 .NET Framework 的一个组件，它提供用于将关系数据作为对象进行管理的运行时基础结构。
 ms.date: 03/30/2017
 ms.assetid: 73d13345-eece-471a-af40-4cc7a2f11655
-ms.openlocfilehash: d6fadecf17cae21527cec2180b6d6c5b5e85d0cc
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 961e0713de714d0e75417f93e84e0ab748fd9a42
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551309"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158313"
 ---
 # <a name="linq-to-sql"></a>LINQ to SQL
+
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 是 .NET Framework 版本3.5 的一个组件，它提供用于将关系数据作为对象管理的运行时基础结构。  
   
 > [!NOTE]
@@ -23,6 +24,7 @@ ms.locfileid: "90551309"
  此版本的 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 附带的文档介绍了生成 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 应用程序所需的基本构造块、流程和技术。 你还可以在 Microsoft Docs 中搜索特定问题，并且可以参与 [LINQ 论坛](https://social.msdn.microsoft.com/forums/home?forum=linqtosql)，其中你可以与专家详细讨论更复杂的主题。 最后， [LINQ to SQL：用于关系数据的 .Net 语言集成查询](/previous-versions/dotnet/articles/bb425822(v=msdn.10)) 白皮书详细信息 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 技术，已完成 Visual Basic 和 c # 代码示例。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [入门](getting-started.md)  
  提供对 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 的简要概述以及有关如何开始使用 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 的信息。  
   
@@ -36,6 +38,7 @@ ms.locfileid: "90551309"
  提供指向 Visual Basic 和 c # 示例的链接。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [ (LINQ) 的语言集成查询#](../../../../../csharp/programming-guide/concepts/linq/index.md)\
  概述 c # 中的 LINQ 技术。
 

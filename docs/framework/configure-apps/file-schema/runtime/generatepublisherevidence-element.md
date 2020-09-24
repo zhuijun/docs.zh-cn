@@ -5,14 +5,15 @@ helpviewer_keywords:
 - generatePublisherEvidence element
 - <generatePublisherEvidence> element
 ms.assetid: 7d208f50-e8d5-4a42-bc1a-1cf3590706a8
-ms.openlocfilehash: 11592b055641c0fa2d2b968547dcc5aa40c94600
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 506e7873fab8e41fce121587c22d85600a8b1760
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541779"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158768"
 ---
 # <a name="generatepublisherevidence-element"></a>\<generatePublisherEvidence> 元素
+
 指定运行时是否 <xref:System.Security.Policy.Publisher> 为代码访问安全性 (CAS) 创建证据。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -27,6 +28,7 @@ ms.locfileid: "90541779"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
@@ -37,17 +39,18 @@ ms.locfileid: "90541779"
   
 ## <a name="enabled-attribute"></a>enabled 特性  
   
-|“值”|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |`false`|不创建 <xref:System.Security.Policy.Publisher> 证据。|  
 |`true`|创建 <xref:System.Security.Policy.Publisher> 证据。 这是默认设置。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`runtime`|包含有关运行时初始化选项的信息。|  
@@ -63,9 +66,11 @@ ms.locfileid: "90541779"
 > 建议服务使用 `<generatePublisherEvidence>` 元素以提高启动性能。  使用此元素还有助于避免可能导致超时和取消服务启动的延迟。  
   
 ## <a name="configuration-file"></a>配置文件  
+
  此元素只能在应用程序配置文件中使用。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何使用 `<generatePublisherEvidence>` 元素禁用应用程序的 CAS 发行者策略检查。  
   
 ```xml  

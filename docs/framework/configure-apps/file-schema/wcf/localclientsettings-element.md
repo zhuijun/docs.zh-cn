@@ -2,14 +2,15 @@
 title: <localClientSettings> 元素
 ms.date: 03/30/2017
 ms.assetid: 4680ace5-f4e1-4fcb-b9d8-a4a4af5cd7ae
-ms.openlocfilehash: 3ec0394943c030a8866087c98a912682a2a2112e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 19eaea71fdaad1b945524cca5cf15634e0b0fa14
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400325"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158729"
 ---
 # <a name="localclientsettings-element"></a>\<localClientSettings> 元素
+
 指定此绑定的本地客户端安全设置。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -39,11 +40,12 @@ ms.locfileid: "70400325"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`cacheCookies`|一个布尔值，指定是否启用 Cookie 缓存。 默认为 `false`。|  
 |`cookieRenewalThresholdPercentage`|一个整数，指定可续订的最大 Cookie 百分比。 该值应介于 0 至 100 之间（包括这两个数）。 默认值为 90。|  
@@ -58,6 +60,7 @@ ms.locfileid: "70400325"
 |`timestampValidityDuration`|一个值为正的 <xref:System.TimeSpan>，指定时间戳有效的持续时间。 默认值为“00:15:00”。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无  
   
 ### <a name="parent-elements"></a>父元素  
@@ -67,10 +70,11 @@ ms.locfileid: "70400325"
 |[\<security>](security-of-custombinding.md)|指定自定义绑定的安全选项。|  
 |[\<secureConversationBootstrap>](secureconversationbootstrap.md)|指定用于启动安全对话服务的默认值。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  这些设置不是从服务的安全策略派生而来的，从这个意义上说，它们是本地的。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.LocalClientSecuritySettingsElement>
 - <xref:System.ServiceModel.Configuration.SecurityElementBase.LocalClientSettings%2A>

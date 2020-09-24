@@ -4,12 +4,12 @@ description: 了解如何定义应用的启动逻辑。
 author: csharpfritz
 ms.author: jefritz
 ms.date: 02/25/2020
-ms.openlocfilehash: ea2ea458011d8351a834aa12db02e5d2bac2dc65
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 883f9a3fbe2d52cb7d0fbc5dfc94ce829a5d2bf3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267693"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91158183"
 ---
 # <a name="app-startup"></a>应用启动
 
@@ -79,7 +79,7 @@ public class Startup
 
 与 ASP.NET Core 的其余部分一样，启动类是通过依赖关系注入原则创建的。  `IConfiguration`提供给构造函数并在公共属性中储藏更改，以便以后在配置期间进行访问。
 
-`ConfigureServices`ASP.NET Core 中引入的方法允许为框架的内置依赖关系注入容器配置各种 ASP.NET Core 框架服务。  各种 `services.Add*` 方法添加了一些服务，这些服务可实现身份验证、razor 页面、MVC 控制器路由、SignalR 和 Blazor 服务器交互等功能。  Web 窗体中不需要此方法，因为在 web.config 配置文件中引用 ASP.NET 定义了对 ASPX、.ASCX、FOO.ASHX 和 .ASMX 文件的分析和处理。  有关 ASP.NET Core 中的依赖项注入的详细信息，请 [参阅联机文档](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection)。
+`ConfigureServices`ASP.NET Core 中引入的方法允许为框架的内置依赖关系注入容器配置各种 ASP.NET Core 框架服务。  各种 `services.Add*` 方法添加了一些服务，这些服务可实现身份验证、razor 页面、MVC 控制器路由、SignalR 和 Blazor 服务器交互等功能。  Web 窗体中不需要此方法，因为在 web.config 配置文件中引用 ASP.NET 定义了对 ASPX、.ASCX、FOO.ASHX 和 .ASMX 文件的分析和处理。  有关 ASP.NET Core 中的依赖项注入的详细信息，请 [参阅联机文档](/aspnet/core/fundamentals/dependency-injection)。
 
 `Configure`方法介绍 ASP.NET Core 的 HTTP 管道的概念。  在此方法中，我们将从上到下声明 [中间件](middleware.md) ，它们将处理发送到应用程序的每个请求。 默认配置中的大多数功能分散在 web 窗体配置文件中，并且现在位于一个位置以便于参考。
 
@@ -103,7 +103,7 @@ public class Startup
 </Target>
 ```
 
-有关用于管理 CSS 和 JavaScript 文件的这两种策略的更多详细信息，请参阅 [捆绑和缩小静态资产中的 ASP.NET Core](https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification) 文档。
+有关用于管理 CSS 和 JavaScript 文件的这两种策略的更多详细信息，请参阅 [捆绑和缩小静态资产中的 ASP.NET Core](/aspnet/core/client-side/bundling-and-minification) 文档。
 
 >[!div class="step-by-step"]
 >[上一页](project-structure.md)
