@@ -2,14 +2,15 @@
 title: <add> 的 <scopes>
 ms.date: 03/30/2017
 ms.assetid: 0563a7d8-fc84-4c85-9066-af32665857c2
-ms.openlocfilehash: bcde6b18c34dccf1716c809dddeb45b1b4da90f0
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 1f5b5ea621614880286181c7584863ea024b3d04
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70398307"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149005"
 ---
 # <a name="add-of-scopes"></a>\<add> 的 \<scopes>
+
 添加可用于在查询时筛选服务终结点的自定义范围 URI。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -38,15 +39,17 @@ ms.locfileid: "70398307"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |scope|一个 URI，包含在匹配条件以查找服务时可使用的终结点的范围信息。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -55,6 +58,6 @@ ms.locfileid: "70398307"
 |-------------|-----------------|  
 |[\<scopes>](scopes.md)|包含一个配置元素集合，这些元素指定可用于在查询时筛选服务终结点的自定义范围 URI。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Discovery.EndpointDiscoveryBehavior>

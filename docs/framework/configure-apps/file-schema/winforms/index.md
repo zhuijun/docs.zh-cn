@@ -2,14 +2,15 @@
 title: Windows 窗体配置节
 ms.date: 04/07/2017
 ms.assetid: 6eb142d5-fc98-40e2-9d90-84733f2a27ba
-ms.openlocfilehash: 8a6f13da9bf05d87c45d86a09261d0c7245f5b00
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2d518ec03602580f3c5d00ef2901ff7d7ac1d81b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546903"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148498"
 ---
 # <a name="windows-forms-configuration-section"></a>Windows 窗体配置节
+
 Windows 窗体配置设置允许 Windows 窗体应用存储和检索有关自定义应用程序设置的信息，如多显示器支持、高 DPI 支持和其他预定义配置设置。
 
 Windows 窗体应用程序配置设置存储在应用程序配置文件的 `System.Windows.Forms.ApplicationConfigurationSection` 元素中。
@@ -34,13 +35,13 @@ Windows 窗体应用程序配置设置存储在应用程序配置文件的 `Syst
 
 ### <a name="child-elements"></a>子元素
 
-元素  |说明 |
+元素  |描述 |
 ---------|---------|
 [`<add>`](windows-forms-add-configuration-element.md) | 添加具有指定值的配置设置键 |
 
 ### <a name="parent-elements"></a>父元素
 
-元素  |说明 |
+元素  |描述 |
 ---------|---------|
 [\<configuration>](../configuration-element.md) | 公共语言运行时和 .Windows 窗体应用程序所使用的每个配置文件中的根元素 |
 

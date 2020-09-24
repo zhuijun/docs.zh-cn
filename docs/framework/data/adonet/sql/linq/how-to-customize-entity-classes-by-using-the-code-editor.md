@@ -2,17 +2,18 @@
 title: 如何：通过使用代码编辑器自定义实体类
 ms.date: 03/30/2017
 ms.assetid: ec28332f-9f3c-4e0a-baca-60f9141a68c0
-ms.openlocfilehash: 578e0cbd1f6990a5d41007ad31f4c1c938cd3ebe
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 5e61acc9de1ef2f00d5e81a3c3080a9dc46f074d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70793794"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147692"
 ---
 # <a name="how-to-customize-entity-classes-by-using-the-code-editor"></a>如何：通过使用代码编辑器自定义实体类
+
 使用 Visual Studio 的开发人员可以使用对象关系设计器来创建或自定义其实体类。  
   
- 你还可以使用 Visual Studio 代码编辑器编写你自己的映射代码或自定义已生成的代码。 有关详细信息，请参阅[基于属性的映射](attribute-based-mapping.md)。  
+ 你还可以使用 Visual Studio 代码编辑器编写你自己的映射代码或自定义已生成的代码。 有关详细信息，请参阅 [基于属性的映射](attribute-based-mapping.md)。  
   
  本节中的主题说明如何自定义对象模型。  
   
@@ -40,7 +41,7 @@ ms.locfileid: "70793794"
  [如何：指定数据库数据类型](how-to-specify-database-data-types.md)  
  描述如何使用 <xref:System.Data.Linq.Mapping.ColumnAttribute.DbType%2A>。  
   
- [如何：表示计算列](how-to-represent-computed-columns.md)  
+ [如何：表示计算所得的列](how-to-represent-computed-columns.md)  
  描述如何使用 <xref:System.Data.Linq.Mapping.ColumnAttribute.Expression%2A>。  
   
  [如何：指定专用存储字段](how-to-specify-private-storage-fields.md)  

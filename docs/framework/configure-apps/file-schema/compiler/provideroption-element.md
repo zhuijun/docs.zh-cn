@@ -8,14 +8,15 @@ helpviewer_keywords:
 - providerOptions
 - provideroption element
 ms.assetid: 014f2e0b-c0b5-4fc4-92d3-73f02978b2a1
-ms.openlocfilehash: 7e006adb86886d22ec08dc61fa092bf677b4da96
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9374fbaf7ceb61e5b72335417d32a08525477e0d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544734"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149629"
 ---
 # <a name="provideroption-element"></a>\<providerOption> 元素
+
 指定语言提供程序的编译器版本特性。  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -34,6 +35,7 @@ ms.locfileid: "90544734"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
@@ -44,6 +46,7 @@ ms.locfileid: "90544734"
 |`value`|必需的特性。<br /><br /> 指定选项的值;例如，"v 3.5"。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -56,6 +59,7 @@ ms.locfileid: "90544734"
 |[\<compiler> 元素](compiler-element.md)|指定语言提供程序的编译器配置属性。|  
   
 ## <a name="remarks"></a>备注  
+
  在 .NET Framework 版本3.5 中，代码文档对象模型 (CodeDOM) 代码提供程序可以使用元素支持特定于提供程序的选项 `<providerOption>` 。  
   
  3.5 .NET Framework 包括更新的 .NET Framework 2.0 程序集，并提供包含新类型的3.5 版本的新程序集。 Microsoft c # 和 Visual Basic 代码提供程序包含在 .NET Framework 2.0 程序集中，但已更新为支持版本3.5 编译器。 默认情况下，更新的代码提供程序为版本2.0 编译器生成代码。 您可以使用 `<providerOption>` 元素将目标编译器版本更改为3.5。 为此，请将属性指定为 "CompilerVersion" `name` ，并为属性指定 "v 3.5" `value` 。 必须在版本号前面加上小写 "v"。  
@@ -65,6 +69,7 @@ ms.locfileid: "90544734"
  CodeDOM 代码提供程序实现者可以通过提供采用类型为的参数的构造函数来处理自定义选项 `providerOptions` <xref:System.Collections.Generic.IDictionary%602> 。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何指定应使用 c # 代码提供程序的3.5 版。  
   
 ```xml  

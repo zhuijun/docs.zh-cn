@@ -2,15 +2,16 @@
 title: <add> 的 <contractTypeNames>
 ms.date: 03/30/2017
 ms.assetid: 03aff6be-5dfb-4a64-ada3-e36227cd43c7
-ms.openlocfilehash: 696752470aa39c2bcc66a1337f84119031742ae9
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 69a0bbbc8774251dbdc062875bb06453f355c882
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850531"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149135"
 ---
 # <a name="add-of-contracttypenames"></a>\<add> 的 \<contractTypeNames>
-一个配置元素，指定要搜索的服务的协定名称以及搜索服务时通常使用的条件。 如果指定多个协定名称，则只有与全部协定都匹配的服务终结点才会进行答复。 请注意，在 Windows Communication Foundation （WCF）中，一个终结点只能支持一个协定。  
+
+一个配置元素，指定要搜索的服务的协定名称以及搜索服务时通常使用的条件。 如果指定多个协定名称，则只有与全部协定都匹配的服务终结点才会进行答复。 请注意，在 Windows Communication Foundation (WCF) ，终结点只能支持一个协定。  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
@@ -49,6 +50,7 @@ ms.locfileid: "70850531"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
@@ -56,9 +58,10 @@ ms.locfileid: "70850531"
 |属性|说明|  
 |---------------|-----------------|  
 |name|一个字符串，指定协定类型的名称。|  
-|namespace|一个字符串，指定协定类型的命名空间。|  
+|命名空间|一个字符串，指定协定类型的命名空间。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无  
   
 ### <a name="parent-elements"></a>父元素  
@@ -67,7 +70,7 @@ ms.locfileid: "70850531"
 |-------------|-----------------|  
 |[\<contractTypeNames>](contracttypenames.md)|协定类型名称的集合。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Discovery.FindCriteria>
 - <xref:System.ServiceModel.Discovery.Configuration.FindCriteriaElement>

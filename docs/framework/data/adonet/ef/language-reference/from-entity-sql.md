@@ -2,15 +2,16 @@
 title: FROM (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: ff3e3048-0d5d-4502-ae5c-9187fcbd0514
-ms.openlocfilehash: 2334a30009d6bef9544d2ca1e0ab923a7441d6f2
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 8affac82fb1813aa0282540b5dc2f47d42234a1b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71833821"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148045"
 ---
 # <a name="from-entity-sql"></a>FROM (Entity SQL)
-指定在[SELECT](select-entity-sql.md)语句中使用的集合。
+
+指定在 [SELECT](select-entity-sql.md) 语句中使用的集合。
 
 ## <a name="syntax"></a>语法
 
@@ -31,11 +32,11 @@ FROM expression [ ,...n ] AS C
 
 ## <a name="from-clause-items"></a>FROM 子句项
 
-每个 `FROM` 子句项都引用 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 查询中的一个源集合。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 支持 `FROM` 子句项的以下类：简单 `FROM` 子句项、`JOIN FROM` 子句项和 `APPLY FROM` 子句项。 下面几节将对这些 `FROM` 子句项逐一进行更详细地介绍。
+每个 `FROM` 子句项都引用 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 查询中的一个源集合。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 支持 `FROM` 子句项的以下类：简单的 `FROM` 子句项、`JOIN FROM` 子句项和 `APPLY FROM` 子句项。 下面几节将对这些 `FROM` 子句项逐一进行更详细地介绍。
 
 ### <a name="simple-from-clause-item"></a>简单 FROM 子句项
 
-最简单的 `FROM` 子句项是标识一个集合和一个别名的单个表达式。 表达式可以只是实体集或子查询，或任何其他类型为集合的表达式。 以下是一个实例：
+最简单的 `FROM` 子句项是标识一个集合和一个别名的单个表达式。 表达式可以只是实体集或子查询，或任何其他类型为集合的表达式。 以下是一个示例：
 
 ```sql
 LOB.Customers as c
@@ -51,7 +52,7 @@ LOB.Customers
 
 ### <a name="join-from-clause-item"></a>JOIN FROM 子句项
 
-`JOIN FROM` 子句项表示两个 `FROM` 子句项之间的联接。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 支持交叉联接、内部联接、左右外部联接和完全外部联接。 支持所有这些联接，这与在 Transact-sql 中受支持的方式相似。 与 Transact-sql 一样，`JOIN` 中涉及的两个 `FROM` 子句项必须是独立的。 即，它们不能相关。 `CROSS APPLY` 或 `OUTER APPLY` 可用于这些情况。
+`JOIN FROM` 子句项表示两个 `FROM` 子句项之间的联接。 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 支持交叉联接、内部联接、左右外部联接和完全外部联接。 支持所有这些联接，这与在 Transact-sql 中受支持的方式相似。 与 Transact-sql 一样，中涉及的两个 `FROM` 子句项 `JOIN` 必须是独立的。 即，它们不能相关。 `CROSS APPLY` 或 `OUTER APPLY` 可用于这些情况。
 
 #### <a name="cross-joins"></a>交叉联接
 
@@ -90,7 +91,7 @@ LOB.Customers
 
 ### <a name="apply-clause-item"></a>APPLY 子句项
 
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 支持两种 `APPLY`： `CROSS APPLY` 和 `OUTER APPLY`。
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 支持两种 `APPLY`：`CROSS APPLY` 和 `OUTER APPLY`。
 
 `CROSS APPLY` 生成左侧集合的每个元素与通过计算右侧表达式得出的集合的元素的唯一配对。 利用 `CROSS APPLY`，右侧表达式在功能上依赖于左侧元素，如下面的关联集合示例所示：
 
@@ -103,10 +104,10 @@ LOB.Customers
 `SELECT c, f FROM C AS c OUTER APPLY c.Assoc AS f`
 
 > [!NOTE]
-> 与在 Transact-sql 中不同，[!INCLUDE[esql](../../../../../../includes/esql-md.md)]中不需要明确的 unnest 步骤。
+> 与 Transact-sql 不同，中不需要显式 unnest 步骤 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 。
 
 > [!NOTE]
-> SQL Server 2005 中引入了 `CROSS` 和 `OUTER APPLY` 运算符。 在某些情况下，查询管道可能生成包含 `CROSS APPLY` 和/或 `OUTER APPLY` 运算符的 Transact-SQL。 因为某些后端提供程序（包括早于 SQL Server 2005 的 SQL Server 版本）不支持这些运算符，所以不能对这些后端提供程序执行此类查询。
+> `CROSS` 和 `OUTER APPLY` 运算符是在 SQL Server 2005 中引入的。 在某些情况下，查询管道可能生成包含 `CROSS APPLY` 和/或 `OUTER APPLY` 运算符的 Transact-SQL。 因为某些后端提供程序（包括早于 SQL Server 2005 的 SQL Server 版本）不支持这些运算符，所以不能对这些后端提供程序执行此类查询。
 >
 > 下面是一些可能导致输出查询中出现 `CROSS APPLY` 和/或 `OUTER APPLY`运算符的典型情况：分页相关子查询；相关子查询或导航所生成的集合上的 AnyElement；使用接受元素选择器的分组方法的 LINQ 查询；显式指定 `CROSS APPLY` 或 `OUTER APPLY` 的查询；在 `DEREF` 构造上具有 `REF` 构造的查询。
 
@@ -114,7 +115,7 @@ LOB.Customers
 
 `FROM` 子句不能包含逗号分隔的多个集合。 在这些情况下，假定集合将联接在一起。 将它们视为一个 n 向 CROSS JOIN。
 
-在下面的示例中，`C` 和 `D` 是独立的集合，但 `c.Names` 依赖于 `C`。
+在下面的示例中， `C` 和 `D` 是独立集合，但 `c.Names` 依赖于 `C` 。
 
 ```sql
 FROM C AS c, D AS d, c.Names AS e
@@ -125,6 +126,7 @@ FROM C AS c, D AS d, c.Names AS e
 `FROM (C AS c JOIN D AS d) CROSS APPLY c.Names AS e`
 
 ## <a name="left-correlation"></a>左相关
+
  `FROM` 子句中的项可以引用前面子句中指定的项。 在下面的示例中，`C` 和 `D` 是独立集合，但 `c.Names` 依赖于 `C`：
 
 ```sql
@@ -143,13 +145,13 @@ from (C as c join D as d) cross apply c.Names as e
 
 在逻辑上，`FROM` 子句生成类型为 Row(c, d, e) 的行多重集，其中字段 c、d 和 e 假定为元素类型 `C`、`D` 和 `c.Names`。
 
-[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 为范围中的每个简单的 `FROM` 子句项引入一个别名。 例如，在下面的 FROM 子句代码段中，引入范围的名称为 c、d 和 e。
+[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 为范围中的每个简单 `FROM` 子句项都引入一个别名。 例如，在下面的 FROM 子句代码段中，引入范围的名称为 c、d 和 e。
 
 ```sql
 from (C as c join D as d) cross apply c.Names as e
 ```
 
-在 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] （与 Transact-sql 不同）中，`FROM` 子句仅将别名引入作用域。 任何对这些集合的列（属性）的引用都必须以别名进行限定。
+在 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] (与 transact-sql) 不同， `FROM` 子句仅将别名引入作用域。 任何对这些集合的列（属性）的引用都必须以别名进行限定。
 
 ## <a name="pulling-up-keys-from-nested-queries"></a>从嵌套查询中拉取键
 
@@ -165,7 +167,7 @@ select c.Orders from Customers as c
 select {1} from {2, 3}
 ```
 
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [实体 SQL 引用](entity-sql-reference.md)
 - [查询表达式](query-expressions-entity-sql.md)

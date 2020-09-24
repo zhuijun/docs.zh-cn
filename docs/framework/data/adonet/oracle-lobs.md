@@ -2,28 +2,30 @@
 title: Oracle LOB
 ms.date: 03/30/2017
 ms.assetid: 272e8e1e-a31f-475a-8c2a-ae8e1286bdab
-ms.openlocfilehash: 62525fed85525e26b7c61208fe44b108de562fb0
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 072e3e3514c2dd32ddff0bac941da30788feae16
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149422"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147835"
 ---
 # <a name="oracle-lobs"></a>Oracle LOB
-Oracle 的 .NET 框架数据提供程序<xref:System.Data.OracleClient.OracleLob>包括类，该类用于处理 Oracle **LOB**数据类型。  
+
+用于 Oracle 的 .NET Framework 数据提供程序包括 <xref:System.Data.OracleClient.OracleLob> 类，该类用于使用 Oracle **LOB** 数据类型。  
   
- **OracleLob**可能是以下<xref:System.Data.OracleClient.OracleType>数据类型之一：  
+ **OracleLob**可以是以下 <xref:System.Data.OracleClient.OracleType> 数据类型之一：  
   
 |数据类型|说明|  
 |---------------|-----------------|  
-|**Blob**|包含最大大小为 4 GB 的二进制数据的 Oracle **BLOB**数据类型。 这将映射到类型**字节**的**数组**。|  
-|**Clob**|基于服务器上的默认字符集包含字符数据的 Oracle **CLOB**数据类型，最大大小为 4 GB。 这将映射到**字符串**。|  
-|**恩克洛布**|基于服务器上的字符集（最大大小为 4 GB）的 Oracle **NCLOB**数据类型，其中包含字符数据。 这将映射到**字符串**。|  
+|**Blob**|一种 Oracle **BLOB** 数据类型，它包含最大大小为 4 gb 的二进制数据。 这会映射到类型为**Byte**的**数组**。|  
+|**Clob**|包含字符数据的 Oracle **CLOB** 数据类型，它基于服务器上的默认字符集，最大大小为 4 gb。 这将映射到 **字符串**。|  
+|**NClob**|包含字符数据的 Oracle **NCLOB** 数据类型，其最大大小为 4 gb，基于服务器上的区域字符集。 这将映射到 **字符串**。|  
   
- **OracleLob**不同于<xref:System.Data.OracleClient.OracleBFile>数据存储在服务器上而不是存储在操作系统中的物理文件中。 它也可以是一个读写对象，不像**OracleBFile**，它总是只读的。  
+ **OracleLob**与的不同之处在于 <xref:System.Data.OracleClient.OracleBFile> ，数据存储在服务器上而不是存储在操作系统的物理文件中。 它也可以是一个读写对象，这一点不同于 **OracleBFile**，后者始终是只读的。  
   
 ## <a name="creating-retrieving-and-writing-to-a-lob"></a>创建、检索和写入 LOB  
- 下面的 C# 示例演示如何在 Oracle 表中创建 LOB，然后以**OracleLob**对象的形式检索和写入它们。 该示例演示了使用<xref:System.Data.OracleClient.OracleDataReader>对象和**OracleLob** **读取**和**写入**方法。 该示例使用 Oracle **BLOB、CLOB**和**BLOB****NCLOB**数据类型。  
+
+ 下面的 c # 示例演示如何在 Oracle 表中创建 Lob，然后以 **OracleLob** 对象的形式检索和写入它们。 该示例演示了如何使用 <xref:System.Data.OracleClient.OracleDataReader> 对象和 **OracleLob** **读取** 和 **写入** 方法。 该示例使用 Oracle **BLOB**、 **CLOB**和 **NCLOB** 数据类型。  
   
 ```csharp  
 using System;  
@@ -216,6 +218,7 @@ public class LobExample
 ```  
   
 ## <a name="creating-a-temporary-lob"></a>创建临时 LOB  
+
  以下 C# 示例演示如何创建临时 LOB。  
   
 ```csharp  
@@ -247,7 +250,7 @@ cmd.ExecuteNonQuery();
 tx.Commit();  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Oracle 和 ADO.NET](oracle-and-adonet.md)
 - [ADO.NET 概述](ado-net-overview.md)

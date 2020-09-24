@@ -11,14 +11,15 @@ helpviewer_keywords:
 - <authenticationModules>, add element
 - <add> element, authenticationModules
 ms.assetid: 333c5fb0-a2ab-4db8-8531-a7fe37bb9b5b
-ms.openlocfilehash: 1a6d0f79f076a69cec33ac14f0e0f33f7c3c6577
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: f679a43ed1851e9681a2a57ca1639f8aa75aa8b3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504636"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91149499"
 ---
 # <a name="add-element-for-authenticationmodules-network-settings"></a>authenticationModules 的 \<add> 元素（网络设置）
+
 向应用程序添加身份验证模块。  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -35,15 +36,17 @@ ms.locfileid: "84504636"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|**特性**|**说明**|  
+|**Attribute**|**说明**|  
 |-------------------|---------------------|  
-|`type`|完全限定的类型名称（由属性指示 <xref:System.Type.FullName%2A> ）和程序集名称（由 <xref:System.Reflection.Assembly.FullName%2A> 属性指示），用逗号分隔。|  
+|`type`|完全限定的类型名称 (由) 的 <xref:System.Type.FullName%2A> 属性和程序集名称指示， (由 <xref:System.Reflection.Assembly.FullName%2A> 逗号分隔的属性) 。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -52,15 +55,18 @@ ms.locfileid: "84504636"
 |-----------------|---------------------|  
 |[authenticationModules](authenticationmodules-element-network-settings.md)|指定用于对网络请求进行身份验证的模块。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  `add` 元素会在已注册的身份验证模块列表末尾添加一个身份验证模块。 身份验证模块按照它们添加到列表中的顺序进行调用。  
   
  特性的值 `type` 应为有效的类型名称和相应的程序集名称，用逗号分隔。  
   
 ## <a name="configuration-files"></a>配置文件  
+
  此元素可在应用程序配置文件或计算机配置文件 (Machine.config) 中使用。  
   
 ## <a name="example"></a>示例  
+
  下面的示例启用了默认的身份验证模块。 应将版本和 PublicKeyToken 的值替换为指定模块的正确值。  
   
 ```xml  
@@ -82,7 +88,7 @@ ms.locfileid: "84504636"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Net.IAuthenticationModule>
 - <xref:System.Net.AuthenticationManager>

@@ -3,17 +3,18 @@ title: <workflow>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 560aa9b6-9cf3-460e-b798-f87d14b1d2de
-ms.openlocfilehash: e2df5d83375b2daa2e39ba1ee990c47a6a04f6fb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: fdfaf234b5dda5703da7fc1ca1fe4554d57405f5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79151853"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148680"
 ---
 # \<workflow>
+
 一个配置元素，包含 <xref:System.ServiceModel.Activities.Tracking.Configuration.ProfileWorkflowElement.ActivityDefinitionId?displayProperty=nameWithType> 属性所标识的特定工作流的所有查询。  
   
- 有关工作流跟踪及其配置的详细信息，请参阅[工作流跟踪和跟踪](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md)和[跟踪配置文件](../../../windows-workflow-foundation/tracking-profiles.md)。  
+ 有关工作流跟踪及其配置的详细信息，请参阅 [工作流跟踪和跟踪](../../../windows-workflow-foundation/workflow-tracking-and-tracing.md) 和 [跟踪配置文件](../../../windows-workflow-foundation/tracking-profiles.md)。  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.ServiceModel>**](system-servicemodel-of-workflow.md)\
@@ -80,11 +81,12 @@ ms.locfileid: "79151853"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |activityDefinitionId|一个字符串，指定所跟踪的工作流的活动定义 ID。|  
   
@@ -106,12 +108,13 @@ ms.locfileid: "79151853"
 |-------------|-----------------|  
 |[\<trackingProfile>](trackingprofile.md)|表示一个配置节，用于创建对跟踪参与者中的工作流跟踪记录的订阅。 跟踪配置文件包含跟踪查询，这些查询允许跟踪参与者订阅当工作流实例的状态在运行时发生更改时发出的工作流事件。 跟踪配置文件节中定义的查询用于定义订阅返回的事件类型。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  跟踪配置文件包含跟踪查询，这些查询允许跟踪参与者订阅当特定工作流实例的状态在运行时发生更改时发出的工作流事件。 所跟踪的工作流实例由此配置元素来标识。  
   
  根据您的监视需求，可以编写一个非常粗陋的配置文件，用来订阅对工作流进行的一小组高级状态更改。 相反，也可以创建一个非常具体的配置文件，其生成的事件足够丰富，可在以后重新构造详细的执行流。  
   
- 跟踪配置文件组织为跟踪记录的声明性订阅，利用这些订阅可以查询特定跟踪记录的工作流运行时。 查询类型有多种，可用于订阅跟踪记录的不同类。 有关查询的完整列表，请参阅本主题的子元素列表和[跟踪配置文件](../../../windows-workflow-foundation/tracking-profiles.md)。  
+ 跟踪配置文件组织为跟踪记录的声明性订阅，利用这些订阅可以查询特定跟踪记录的工作流运行时。 查询类型有多种，可用于订阅跟踪记录的不同类。 有关查询的完整列表，请参阅本主题的子元素列表和 [跟踪配置文件](../../../windows-workflow-foundation/tracking-profiles.md)。  
   
  下面的示例演示配置文件中的跟踪配置文件，该配置文件允许跟踪参与者订阅 `Started` 和 `Completed` 工作流事件。  
   
@@ -135,7 +138,7 @@ ms.locfileid: "79151853"
 </system.serviceModel>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Activities.Tracking.Configuration.ProfileWorkflowElement>
 - <xref:System.Activities.Tracking.TrackingProfile>

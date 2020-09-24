@@ -5,19 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ae2ea457-0764-4b06-8977-713c77e85bd2
-ms.openlocfilehash: 571904d36293caa6d4330b2ffda2cff5aca8e6b2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: de925afd071a5c92dfa3f6a5e35e62a8ba734cd8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174454"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147614"
 ---
 # <a name="windows-applications-using-callbacks"></a>使用回调的 Windows 应用程序
+
 在大多数异步处理方案中，你希望启动数据库操作并继续运行其他进程，而无需等待数据库操作完成。 但是，许可场景需要在数据库操作结束后执行一些操作。 例如，在 Windows 应用程序中，你可能希望将长时间运行的操作委托给后台线程，同时允许用户界面线程保持响应。 但是，在数据库操作完成后，你需要使用结果来填充窗体。 这种类型的场景最好通过回调实现。  
   
  通过在 <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>、<xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A>或 <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> 方法中指定 <xref:System.AsyncCallback> 委托来定义回调。 操作完成后，将调用该委托。 可以向委托传递对 <xref:System.Data.SqlClient.SqlCommand> 本身的引用，这样就可以轻松访问 <xref:System.Data.SqlClient.SqlCommand> 对象并调用适当的 `End` 方法，而无需使用全局变量。  
   
 ## <a name="example"></a>示例  
+
  以下 Windows 应用程序演示如何使用 <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A> 方法，以执行包含几秒钟延迟（模拟长时间运行的命令）的 Transact-SQL 语句。  
   
  此示例演示了许多重要的方法，包括调用从单独线程与窗体进行交互的方法。 此外，此示例还演示了如何阻止用户多次并发执行命令，以及如何确保在调用回调过程之前窗体不会关闭。  
@@ -375,7 +377,7 @@ private void Form1_Load(object sender, System.EventArgs e)
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [异步操作](asynchronous-operations.md)
 - [ADO.NET 概述](../ado-net-overview.md)

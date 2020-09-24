@@ -3,15 +3,16 @@ title: <sqlWorkflowInstanceStore>
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 8a4e4214-fc51-4f4d-b968-0427c37a9520
-ms.openlocfilehash: 56a44fdb62062903ca3ad00f8105a66ccab02cca
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d6c86d02e14a38c2a35ba4858c4abfea73268fd8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79151957"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148706"
 ---
 # \<sqlWorkflowInstanceStore>
-一种服务行为，它允许您配置 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> 功能，该功能支持将工作流服务实例的状态信息保持到 SQL Server 2005 或 SQL Server 2008 数据库中。 有关此功能的详细信息，请参阅[SQL 工作流实例存储](../../../windows-workflow-foundation/sql-workflow-instance-store.md)。  
+
+一种服务行为，它允许您配置 <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> 功能，该功能支持将工作流服务实例的状态信息保持到 SQL Server 2005 或 SQL Server 2008 数据库中。 有关此功能的详细信息，请参阅 [SQL 工作流实例存储](../../../windows-workflow-foundation/sql-workflow-instance-store.md)。  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.ServiceModel>**](system-servicemodel-of-workflow.md)\
@@ -38,11 +39,12 @@ ms.locfileid: "79151957"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |connectionString|一个字符串，包含用于连接到基础持久性数据库的连接字符串。|  
 |connectionStringName|一个字符串，包含指向数据库服务器的已命名连接字符串。 命名连接字符串的示例为 "DefaultConnectionString"。|  
@@ -53,15 +55,16 @@ ms.locfileid: "79151957"
 |runnableInstancesDetectionPeriod||  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<behavior>个\<serviceBehaviors>](behavior-of-servicebehaviors-of-workflow.md)|指定行为元素。|  
+|[\<serviceBehaviors> 的 \<behavior>](behavior-of-servicebehaviors-of-workflow.md)|指定行为元素。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>
 - <xref:System.ServiceModel.Activities.Configuration.SqlWorkflowInstanceStoreElement>

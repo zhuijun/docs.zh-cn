@@ -2,20 +2,22 @@
 title: 查询示例
 ms.date: 03/30/2017
 ms.assetid: 137f8677-494c-4d49-95ce-c17742f2d01f
-ms.openlocfilehash: 8f86c4aa94dcc70ce79526b0f4a3685cfef3f389
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f3f135850fb5f40b3b8882f72f5cc24512f21084
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70781137"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147549"
 ---
 # <a name="query-examples"></a>查询示例
-本部分提供了 Visual Basic C#和典型[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]查询的示例。 使用 Visual Studio 的开发人员可以在 "示例" 部分中提供的示例解决方案中找到更多示例。 有关详细信息，请参阅[示例](samples.md)。  
+
+本部分提供典型查询的 Visual Basic 和 c # 示例 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 。 使用 Visual Studio 的开发人员可以在 "示例" 部分中提供的示例解决方案中找到更多示例。 有关详细信息，请参阅 [示例](samples.md)。  
   
 > [!IMPORTANT]
-> *db*通常用于文档中[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]的代码示例。 *db*假定为*Northwind*类的一个实例，该类继承自<xref:System.Data.Linq.DataContext>。  
+> *db* 通常用于文档中的代码示例 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 。 *db* 假定为 *Northwind* 类的一个实例，该类继承自 <xref:System.Data.Linq.DataContext> 。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [聚合查询](aggregate-queries.md)  
  介绍如何使用 <xref:System.Linq.Enumerable.Average%2A>、<xref:System.Linq.Enumerable.Count%2A> 等。  
   
@@ -58,15 +60,16 @@ ms.locfileid: "70781137"
  [将某一类型转换为泛型 IEnumerable](convert-a-type-to-a-generic-ienumerable.md)  
  提供使用 <xref:System.Linq.Enumerable.AsEnumerable%2A> 的示例。  
   
- [构建联接和叉积查询](formulate-joins-and-cross-product-queries.md)  
+ [构建联接和跨产品查询](formulate-joins-and-cross-product-queries.md)  
  提供在 `from`、`where` 和 `select` 子句中使用外键导航的示例。  
   
  [构建投影](formulate-projections.md)  
- 提供与其他功能`select` （例如，*匿名类型*）组合以形成查询投影的示例。  
+ 提供 `select` 与其他功能合并的示例 (例如，将) 为窗体查询投影的 *匿名类型* 。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [标准查询运算符概述 (C#)](../../../../../csharp/programming-guide/concepts/linq/standard-query-operators-overview.md)  
- 说明使用C#的标准查询运算符的概念。  
+ 说明使用 c # 的标准查询运算符的概念。  
   
  [标准查询运算符概述 (Visual Basic)](../../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)  
  介绍使用 Visual Basic 的标准查询运算符的概念。  
