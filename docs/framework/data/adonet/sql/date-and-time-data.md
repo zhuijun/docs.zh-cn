@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 6f5ff56a-a57e-49d7-8ae9-bbed697e42e3
-ms.openlocfilehash: 43b3349b2a35385dcc49d0866e0695b08eac2d2e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 6fe047fc672a2b42f886e81dcace91042a552932
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90551486"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156311"
 ---
 # <a name="date-and-time-data"></a>日期和时间数据
+
 SQL Server 2008 引入了新数据类型，用于处理日期和时间信息。 新数据类型包括独立的日期和时间类型，以及具有更大范围、精度且时区感知的扩展数据类型。 从 .NET Framework 3.5 Service Pack (SP) 1 开始，适用于 SQL Server 的 .NET Framework 数据提供程序 (<xref:System.Data.SqlClient>) 完全支持 SQL Server 2008 数据库引擎的所有新功能。 您必须安装 .NET Framework 3.5 SP1（或更高版本）才能将这些新功能与 SqlClient 一起使用。  
   
  SQL Server 2008 之前的 SQL Server 版本仅具有两种用于处理日期和时间值的数据类型：`datetime` 和 `smalldatetime`。 这两种数据类型都同时包含日期值和时间值，难以仅使用日期值或仅使用时间值。 此外，这些数据类型只支持在 1753 年英国引入公历之后的日期。 另一个限制是，这些旧数据类型无法感知时区，这使得处理来自多个时区的数据变得困难。  
@@ -25,9 +26,10 @@ SQL Server 2008 引入了新数据类型，用于处理日期和时间信息。 
 1. [使用日期和时间数据](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))  
   
 ## <a name="datetime-data-types-introduced-in-sql-server-2008"></a>SQL Server 2008 中引入的日期/时间数据类型  
+
  下表介绍了新日期和时间数据类型。  
   
-|SQL Server 数据类型|说明|  
+|SQL Server 数据类型|描述|  
 |--------------------------|-----------------|  
 |`date`|`date` 数据类型的范围从 01 年 1 月 1 日 9999 年 12 月 31 日，精确到 1 天。 默认值为 January 1, 1900。 存储大小为 3 个字节。|  
 |`time`|`time` 数据类型仅采用 24 小时制存储时间值。 `time` 数据类型介于 00:00:00.0000000 到 23:59:59.9999999 范围之间，准确度为 100 纳秒。 默认值为 00:00:00.0000000（午夜）。 `time` 数据类型支持用户定义的小数秒精度，存储大小根据指定的精度在 3 字节到 6 字节之间变化。|  
@@ -38,6 +40,7 @@ SQL Server 2008 引入了新数据类型，用于处理日期和时间信息。 
 > 要详细了解如何使用 `Type System Version`，请参阅 <xref:System.Data.SqlClient.SqlConnection.ConnectionString%2A>。  
   
 ## <a name="date-format-and-date-order"></a>日期格式和日期顺序  
+
  SQL Server 如何分析日期和时间值不仅取决于类型系统版本和服务器版本，还取决于服务器的默认语言和格式设置。 如果日期格式使用一种语言，而查询是通过使用不同语言和日期格式设置的连接执行的，那么可能无法识别采用日期格式的日期字符串。  
   
  Transact-SQL SET LANGUAGE 语句隐式设置确定日期部分顺序的 DATEFORMAT。 可以通过按 MDY、DMY、YMD、YDM、MYD 或 DYM 顺序对日期部分进行排序，对连接使用 SET DATEFORMAT Transact-SQL 语句来区分日期值。  
@@ -50,6 +53,7 @@ SQL Server 2008 引入了新数据类型，用于处理日期和时间信息。 
  有关 SQL Server 如何解释日期和时间数据的详细信息，请参阅 [使用日期和时间数据](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))。  
   
 ## <a name="datetime-data-types-and-parameters"></a>日期/时间数据类型和参数  
+
  为了支持新日期和时间数据类型，已向 <xref:System.Data.SqlDbType> 中添加了下列枚举。  
   
 - `SqlDbType.Date`  
@@ -77,7 +81,7 @@ SQL Server 2008 引入了新数据类型，用于处理日期和时间信息。 
   
 |SQL Server 数据类型|.NET Framework 类型|System.Data.SqlDbType|System.Data.DbType|  
 |--------------------------|-------------------------|---------------------------|------------------------|  
-|日期|System.DateTime|Date|Date|  
+|date|System.DateTime|Date|Date|  
 |time|System.TimeSpan|时间|时间|  
 |datetime2|System.DateTime|DateTime2|DateTime2|  
 |datetimeoffset|System.DateTimeOffset|DateTimeOffset|DateTimeOffset|  
@@ -85,9 +89,10 @@ SQL Server 2008 引入了新数据类型，用于处理日期和时间信息。 
 |smalldatetime|System.DateTime|DateTime|DateTime|  
   
 ### <a name="sqlparameter-properties"></a>SqlParameter 属性  
+
  下表介绍了与日期和时间数据类型相关的 `SqlParameter` 属性。  
   
-|properties|说明|  
+|属性|描述|  
 |--------------|-----------------|  
 |<xref:System.Data.SqlClient.SqlParameter.IsNullable%2A>|获取或设置值是否可为空。 将空参数值发送到服务器时，必须指定 <xref:System.DBNull>，而不是 `null`（在 Visual Basic 中为 `Nothing`）。 有关数据库 null 值的详细信息，请参阅 [处理 Null 值](handling-null-values.md)。|  
 |<xref:System.Data.SqlClient.SqlParameter.Precision%2A>|获取或设置用于表示该值的最大位数。 对于日期和时间数据类型，此设置将被忽略。|  
@@ -100,11 +105,13 @@ SQL Server 2008 引入了新数据类型，用于处理日期和时间信息。 
 > 小于零或大于等于 24 小时的时间值会导致 <xref:System.ArgumentException> 抛出。  
   
 ### <a name="creating-parameters"></a>创建参数  
+
  可以通过以下方法来创建 <xref:System.Data.SqlClient.SqlParameter> 对象：使用相应的构造函数；或者通过调用 <xref:System.Data.SqlClient.SqlCommand> 的 <xref:System.Data.SqlClient.SqlCommand.Parameters%2A> 方法将其添加到 `Add`<xref:System.Data.SqlClient.SqlParameterCollection> 集合。 `Add` 方法需要使用构造函数参数或现有参数对象作为输入。  
   
  本主题接下来的几个部分举例介绍了如何指定日期和时间参数。 有关使用参数的其他示例，请参阅 [配置参数和参数数据类型](../configuring-parameters-and-parameter-data-types.md) 和 [DataAdapter 参数](../dataadapter-parameters.md)。  
   
 ### <a name="date-example"></a>date 示例  
+
  下面的代码片段展示了如何指定 `date` 参数。  
   
 ```csharp  
@@ -122,6 +129,7 @@ parameter.Value = "2007/12/1"
 ```  
   
 ### <a name="time-example"></a>time 示例  
+
  下面的代码片段展示了如何指定 `time` 参数。  
   
 ```csharp  
@@ -139,6 +147,7 @@ parameter.Value = DateTime.Parse("23:59:59").TimeOfDay;
 ```  
   
 ### <a name="datetime2-example"></a>datetime2 示例  
+
  下面的代码片段展示了如何指定同时包含日期和时间部分的 `datetime2` 参数。  
   
 ```csharp  
@@ -156,6 +165,7 @@ parameter.Value = DateTime.Parse("1666-09-02 1:00:00");
 ```  
   
 ### <a name="datetimeoffset-example"></a>DateTimeOffSet 示例  
+
  下面的代码片段展示了如何指定包含日期、时间和时区偏移 0 的 `DateTimeOffSet` 参数。  
   
 ```csharp  
@@ -173,6 +183,7 @@ parameter.Value = DateTimeOffset.Parse("1666-09-02 1:00:00+0");
 ```  
   
 ### <a name="addwithvalue"></a>AddWithValue  
+
  也可以使用 <xref:System.Data.SqlClient.SqlCommand> 的 `AddWithValue` 方法来提供参数，如下面的代码片段所示。 不过，`AddWithValue` 方法不允许为参数指定 <xref:System.Data.SqlClient.SqlParameter.DbType%2A> 或 <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A>。  
   
 ```csharp  
@@ -196,9 +207,10 @@ command.Parameters.AddWithValue( _
 |DateTimeOffset|SqlDbType.DateTimeOffset|  
   
 ## <a name="retrieving-date-and-time-data"></a>检索日期和时间数据  
+
  下表说明用于检索 SQL Server 2008 日期和时间值的方法。  
   
-|SqlClient 方法|说明|  
+|SqlClient 方法|描述|  
 |----------------------|-----------------|  
 |<xref:System.Data.SqlClient.SqlDataReader.GetDateTime%2A>|以 <xref:System.DateTime> 结构形式检索指定的列值。|  
 |<xref:System.Data.SqlClient.SqlDataReader.GetDateTimeOffset%2A>|以 <xref:System.DateTimeOffset> 结构形式检索指定的列值。|  
@@ -218,6 +230,7 @@ command.Parameters.AddWithValue( _
 > 正在 SQL Server 中执行的代码不支持新日期和时间 `SqlDbTypes`。 如果将其中一种类型传递给服务器，则会导致异常抛出。  
   
 ## <a name="specifying-date-and-time-values-as-literals"></a>作为文字指定日期和时间值  
+
  可以使用各种不同的文本字符串格式来指定日期和时间数据类型，随后 SQL Server 在运行时进行评估，并将它们转换为内部日期/时间结构。 SQL Server 识别用单引号 (') 括起来的日期和时间数据。 下面的示例展示了一些格式：  
   
 - 字母日期格式，如 `'October 15, 2006'`。  
@@ -232,13 +245,14 @@ command.Parameters.AddWithValue( _
  小于零或大于等于 24 小时的时间值会导致 <xref:System.ArgumentException> 抛出。  
   
 ## <a name="resources-in-sql-server-books-online"></a>SQL Server 联机丛书中的资源  
+
  有关使用 SQL Server 中的日期和时间值的详细信息，请参阅 SQL Server 联机丛书中的以下资源。  
   
-|主题|说明|  
+|主题|描述|  
 |-----------|-----------------|  
 |[日期和时间数据类型及函数 (Transact-SQL)](/sql/t-sql/functions/date-and-time-data-types-and-functions-transact-sql)|概述所有 Transact-SQL 日期和时间数据类型和函数。|  
 |[使用日期和时间数据](/previous-versions/sql/sql-server-2008/ms180878(v=sql.100))|提供日期和时间数据类型和函数的相关信息以及使用示例。|  
-|[Transact-sql) 的数据类型 (](/sql/t-sql/data-types/data-types-transact-sql)|介绍 SQL Server 中的系统数据类型。|  
+|[数据类型 (Transact-SQL)](/sql/t-sql/data-types/data-types-transact-sql)|介绍 SQL Server 中的系统数据类型。|  
   
 ## <a name="see-also"></a>请参阅
 

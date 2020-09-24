@@ -3,14 +3,15 @@ title: <securityTokenHandlerConfiguration>
 ms.date: 03/30/2017
 ms.assetid: 28724cc6-020c-4a06-9a1f-d7594f315019
 author: BrucePerlerMS
-ms.openlocfilehash: e3e65820fa4dc341371d4f67689a288cd3f63951
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4c6affbc24a58424158e466fb732e9a3b3d6f1ed
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152562"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157013"
 ---
 # \<securityTokenHandlerConfiguration>
+
 为标记处理程序的集合提供配置。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -34,14 +35,15 @@ ms.locfileid: "79152562"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |saveBootstrapContext|指定是否应在会话令牌中包含启动令牌。 还可以通过在元素上设置属性，在令牌处理程序集合上设置值 `saveBootstrapContext` [\<identityConfiguration>](identityconfiguration.md) 。 标记处理程序集合上设置的值将覆盖在服务上设置的值。|  
-|maximumClockSkew|一个 <xref:System.TimeSpan> ，它指定允许的最大时钟偏差。 控制执行区分时间的操作时允许的最大时钟偏差，如验证登录会话的过期时间。 默认值为5分钟 "00:05:00"。 有关如何指定值的详细信息 <xref:System.TimeSpan> ，请参阅[Timespan 值](../windows-workflow-foundation/index.md)。 通过在元素上设置属性，还可以在服务级别设置最大时钟偏差 `maximumClockSkew` [\<identityConfiguration>](identityconfiguration.md) 。 标记处理程序集合上设置的值将覆盖在服务上设置的值。|  
+|maximumClockSkew|一个 <xref:System.TimeSpan> ，它指定允许的最大时钟偏差。 控制执行区分时间的操作时允许的最大时钟偏差，如验证登录会话的过期时间。 默认值为5分钟 "00:05:00"。 有关如何指定值的详细信息 <xref:System.TimeSpan> ，请参阅 [Timespan 值](../windows-workflow-foundation/index.md)。 通过在元素上设置属性，还可以在服务级别设置最大时钟偏差 `maximumClockSkew` [\<identityConfiguration>](identityconfiguration.md) 。 标记处理程序集合上设置的值将覆盖在服务上设置的值。|  
   
 ### <a name="child-elements"></a>子元素  
   
@@ -61,7 +63,8 @@ ms.locfileid: "79152562"
 |-------------|-----------------|  
 |[\<securityTokenHandlers>](securitytokenhandlers.md)|指定注册到终结点的安全令牌处理程序的集合。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  本部分提供对象的属性值 <xref:System.IdentityModel.Tokens.SecurityTokenHandlerConfiguration> 。 此部分中配置的设置将覆盖在服务上配置的设置。 其中的某些设置可以通过在将处理程序添加到安全标记处理程序集合时指定的设置重写。  
   
 ## <a name="example"></a>示例  

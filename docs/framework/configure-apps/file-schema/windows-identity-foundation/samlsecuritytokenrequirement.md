@@ -3,14 +3,15 @@ title: <samlSecurityTokenRequirement>
 ms.date: 03/30/2017
 ms.assetid: 09202d12-88d3-49cc-953b-703bcc1690eb
 author: BrucePerlerMS
-ms.openlocfilehash: b27f337189a7d0b66ffd38e032b5eb864e5094a1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f93ec0007b537e306a570b166eaa4cd2fe7f81e2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152627"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157026"
 ---
 # \<samlSecurityTokenRequirement>
+
 为 <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> 类、 <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> 类或其中任何一个类的派生类提供配置。 由类表示 <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> 。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -43,11 +44,12 @@ ms.locfileid: "79152627"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |mapToWindows|指定令牌处理程序是否应使用传入 UPN 声明将验证令牌映射到 Windows 帐户。 默认值为“false”。|  
 |issuerCertificateRevocationMode|一个 <xref:System.Security.Cryptography.X509Certificates.X509RevocationMode> 值，该值指定要用于 x.509 证书的吊销模式。 默认值为 "Online"。|  
@@ -68,7 +70,8 @@ ms.locfileid: "79152627"
 |-------------|-----------------|  
 |[\<add>](add.md)|将指定的安全令牌处理程序添加到令牌处理程序集合。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  `<samlSecurityTokenRequirement>`元素由 <xref:System.IdentityModel.Tokens.SamlSecurityTokenRequirement> 对象模型中的类表示，用于 `SamlSecurityTokenRequirement` 在或上配置属性 <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> 。  
   
 ## <a name="example"></a>示例  

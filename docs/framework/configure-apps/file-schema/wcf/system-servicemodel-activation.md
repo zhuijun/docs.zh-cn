@@ -2,20 +2,22 @@
 title: < system.serviceModel.activation >
 ms.date: 03/30/2017
 ms.assetid: c0cae85f-56cb-4030-8807-6f96edff8d2d
-ms.openlocfilehash: e00bbad452398e7f8f4f50208da572986391fc9e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: cbb12ce84f53f55f7d5b2dabd449a116969dc9b8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399479"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157130"
 ---
 # \<system.serviceModel.activation>
+
 此配置节描述了 SMSvcHost.exe 工具的配置设置。 配置元素可在 SMSvcHost.exe.config 文件中配置。 具体地说，它包括计算机中所有必须配置的设置。  
 
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;**\<system.serviceModel.activation>**  
   
 ## <a name="sample-configuration-file"></a>示例配置文件  
+
  下面是侦听器进程 SMSvcHost.exe 所使用的示例配置文件 (SMSvcHost.exe.config)。  
   
 ```xml  
@@ -63,6 +65,6 @@ ms.locfileid: "70399479"
 </configuration>
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Activation.Configuration>

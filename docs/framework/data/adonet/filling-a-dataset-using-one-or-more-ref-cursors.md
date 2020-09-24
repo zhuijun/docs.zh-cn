@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 dev_langs:
 - vb
 ms.assetid: 99863e79-5b00-467e-a105-4ffa42de3ff7
-ms.openlocfilehash: b80edb522d26896d33cacff757390e5a7bf757e6
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 744adb87bfc0919e861821c423a8e6a43ba7ed38
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783860"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156363"
 ---
 # <a name="filling-a-dataset-using-one-or-more-ref-cursors"></a>使用一个或多个 REF CURSOR 填充数据集
+
 此 Microsoft Visual Basic 示例执行一个 PL/SQL 存储过程，返回两个 REF CURSOR 参数，并使用返回的行填充 <xref:System.Data.DataSet>。  
   
 ```vb  
@@ -48,5 +49,5 @@ Private Sub Button1_Click(ByVal sender As Object, _
   
 ## <a name="see-also"></a>请参阅
 
-- [Oracle REF CURSORs](oracle-ref-cursors.md)
+- [Oracle REF CURSOR](oracle-ref-cursors.md)
 - [ADO.NET 概述](ado-net-overview.md)

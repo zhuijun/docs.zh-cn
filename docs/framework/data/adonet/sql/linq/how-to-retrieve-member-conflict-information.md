@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 7dd6829e-79a5-4480-9023-9e588cb0bf2e
-ms.openlocfilehash: 40caa07488cb40ca8e9e3eb3a570c325b92de491
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4848ef69914f0520d2365538faea7fa064c1a15c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70793306"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155804"
 ---
 # <a name="how-to-retrieve-member-conflict-information"></a>如何：检索成员冲突信息
-您可以使用 <xref:System.Data.Linq.MemberChangeConflict> 类检索有关发生冲突的各成员的信息。 在此上下文中，您可以提供任何成员的冲突的自定义处理方法。 有关详细信息，请[参阅乐观并发：概述](optimistic-concurrency-overview.md)。  
+
+您可以使用 <xref:System.Data.Linq.MemberChangeConflict> 类检索有关发生冲突的各成员的信息。 在此上下文中，您可以提供任何成员的冲突的自定义处理方法。 有关详细信息，请参阅 [乐观 Concurrency：概述](optimistic-concurrency-overview.md)。  
   
 ## <a name="example"></a>示例  
+
  下面的代码循环访问 <xref:System.Data.Linq.ObjectChangeConflict> 对象。 对于每个对象，它会接着循环访问 <xref:System.Data.Linq.MemberChangeConflict> 对象。  
   
 > [!NOTE]

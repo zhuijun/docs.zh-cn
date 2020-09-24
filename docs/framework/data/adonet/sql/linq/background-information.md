@@ -2,14 +2,15 @@
 title: 背景信息
 ms.date: 03/30/2017
 ms.assetid: 724888f2-d3f1-4bea-b9a1-a0adb8a00f3b
-ms.openlocfilehash: fc7c68fe2dba266e056feb459038a060a055e175
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 56ba323aee3b559fbb8afd506be4c23595df6d2d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90542106"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91156090"
 ---
 # <a name="background-information"></a>背景信息
+
 本节中的主题介绍有关使用 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 的基础知识以外的概念和过程。  
   
  请按以下这些步骤查找 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 代码和应用程序的其他示例：  
@@ -21,6 +22,7 @@ ms.locfileid: "90542106"
 - 学习详细介绍技术的白皮书 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ，其中包含 Visual Basic 和 c # 代码示例。 有关详细信息，请参阅 [LINQ to SQL：用于关系数据的 .Net 语言集成查询](/previous-versions/dotnet/articles/bb425822(v=msdn.10))。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [ADO.NET 和 LINQ to SQL](ado-net-and-linq-to-sql.md)  
  说明 ADO.NET 和的关系 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 。  
   
@@ -82,5 +84,6 @@ ms.locfileid: "90542106"
  介绍如何在设计时映射用户定义的函数以及如何从应用程序中调用它们。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [编程指南](programming-guide.md)  
  包含一些链接，这些链接指向解释 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 的各个方面的各节。

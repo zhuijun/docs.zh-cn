@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fb09e298-0b53-47e5-97fb-ab318bcd4fad
-ms.openlocfilehash: 399bf44ef5536a9adebf1cad590439741df998f0
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0a6853ef5d0b67e5efb95731adb5a106e8701e0f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70793314"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155830"
 ---
 # <a name="how-to-retrieve-information-as-read-only"></a>如何：将信息作为只读信息检索
+
 当您不打算更改数据时，您可以通过设法产生只读结果来提高查询性能。  
   
  通过将 <xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A> 设置为 `false` 可实现只读处理。  
@@ -21,6 +22,7 @@ ms.locfileid: "70793314"
 > 当 <xref:System.Data.Linq.DataContext.ObjectTrackingEnabled%2A> 设置为 `false` 时，<xref:System.Data.Linq.DataContext.DeferredLoadingEnabled%2A> 将隐式设置为 `false`。  
   
 ## <a name="example"></a>示例  
+
  下面的代码检索雇员雇佣日期的只读集合。  
   
  [!code-csharp[DLinqQuerying#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQuerying/cs/Program.cs#2)]

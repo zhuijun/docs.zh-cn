@@ -2,12 +2,12 @@
 title: 利用容器和协调器
 description: 利用 Azure 中的 Docker 容器和 Kubernetes 协调器
 ms.date: 05/31/2020
-ms.openlocfilehash: f9e8672b742217388bd719262ffdfee63618fd14
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4d1dfa17fe9b4a683ab71ef2c9f97373579197af
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90540538"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155544"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>利用容器和协调器
 
@@ -27,7 +27,7 @@ ms.locfileid: "90540538"
 
 即使只进行了少量更改，单一应用程序也需要完整的整个应用程序部署。 完全部署可能成本高昂，并且容易出错。 此外，他们还需要重新启动应用程序，这会暂时影响不可用。
 
-### <a name="scaling"></a>扩展
+### <a name="scaling"></a>缩放
 
 整体应用程序完全承载于单个计算机实例上，通常需要高容量的硬件。 如果单体架构的任何部分需要缩放，则必须将整个应用程序的另一个副本部署到另一台计算机。 使用单体架构时，不能单独缩放应用程序组件-它是全部或无。 缩放不需要缩放的组件会导致资源利用率低下且成本高昂。
 
@@ -214,7 +214,7 @@ ENTRYPOINT ["dotnet", "eShopWeb.dll"]
 
 **图 3-7**。 Visual Studio Docker 运行选项
 
-除了本地开发外， [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/) 为多个开发人员提供了一种方便的方法，以便在 Azure 中使用自己的 Kubernetes 配置。 如图3-7 所示，还可以在 Azure Dev Spaces 中运行该应用程序。
+除了本地开发外， [Azure Dev Spaces](/azure/dev-spaces/) 为多个开发人员提供了一种方便的方法，以便在 Azure 中使用自己的 Kubernetes 配置。 如图3-7 所示，还可以在 Azure Dev Spaces 中运行该应用程序。
 
 此外，随时可以向现有 ASP.NET Core 应用程序添加 Docker 支持。 在 Visual Studio 解决方案资源管理器中，右键单击项目并**添加**  >  **Docker 支持**，如图3-8 所示。
 

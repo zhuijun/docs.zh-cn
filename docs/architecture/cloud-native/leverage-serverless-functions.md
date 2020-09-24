@@ -2,12 +2,12 @@
 title: 利用无服务器函数
 description: 在云本机应用程序中利用无服务器和 Azure Functions
 ms.date: 05/13/2020
-ms.openlocfilehash: 53a0fdd29630b2a4368f3aa37ddfc5f93df10a24
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 8e5c60d29cd8d635f79f42c232b33f060949e2b5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613858"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155362"
 ---
 # <a name="leveraging-serverless-functions"></a>利用无服务器函数
 
@@ -40,7 +40,7 @@ ms.locfileid: "83613858"
 
 无服务器显示为响应触发器而调用的各个短时间运行的函数。 这使它们非常适合用于处理后台任务。
 
-应用程序可能需要在工作流中作为一个步骤发送电子邮件。 不要以微服务请求的形式发送通知，而是将消息详细信息放到队列中。 Azure 函数可以取消对消息的排队并以异步方式发送电子邮件。 这样做可以提高微服务的性能和可伸缩性。 可以实施[基于队列的负载调节](https://docs.microsoft.com/azure/architecture/patterns/queue-based-load-leveling)，以避免与发送电子邮件相关的瓶颈。 此外，可以在多个不同的应用程序中将此独立服务作为一个实用工具重复使用。
+应用程序可能需要在工作流中作为一个步骤发送电子邮件。 不要以微服务请求的形式发送通知，而是将消息详细信息放到队列中。 Azure 函数可以取消对消息的排队并以异步方式发送电子邮件。 这样做可以提高微服务的性能和可伸缩性。 可以实施[基于队列的负载调节](/azure/architecture/patterns/queue-based-load-leveling)，以避免与发送电子邮件相关的瓶颈。 此外，可以在多个不同的应用程序中将此独立服务作为一个实用工具重复使用。
 
 来自队列和主题的异步消息传送是触发无服务器函数的一种常见模式。 但是，可以由其他事件（如对 Azure Blob 存储的更改）触发 Azure Functions。 支持图像上传的服务可以有一个负责优化映像大小的 Azure 函数。 此函数可通过插入到 Azure Blob 存储中直接触发，使微服务操作的复杂性保持不变。
 
@@ -55,9 +55,9 @@ ms.locfileid: "83613858"
 ![冷启动 ](./media/cold-start-warm-start.png)
  **图 3-10**。 冷启动和热启动。
 
-为了避免冷启动，可能需要从[消耗计划切换到专用计划](https://azure.microsoft.com/blog/understanding-serverless-cold-start/)。 你还可以配置一个或多个具有高级计划升级的[预准备好实例](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan#pre-warmed-instances)。 在这些情况下，当你需要添加另一个实例时，该实例已准备就绪，可以继续。 这些选项可帮助减少与无服务器计算相关的冷启动问题。
+为了避免冷启动，可能需要从 [消耗计划切换到专用计划](https://azure.microsoft.com/blog/understanding-serverless-cold-start/)。 你还可以配置一个或多个具有高级计划升级的 [预准备好实例](/azure/azure-functions/functions-premium-plan#pre-warmed-instances) 。 在这些情况下，当你需要添加另一个实例时，该实例已准备就绪，可以继续。 这些选项可帮助减少与无服务器计算相关的冷启动问题。
 
-云提供程序根据计算执行时间和使用的内存计费无服务器。 长时间运行的操作或高内存消耗工作负荷并非始终是无服务器的最佳候选项。 无服务器函数适用于可快速完成的小型工作块。 大多数无服务器平台需要在几分钟内完成单个功能。 Azure Functions 默认为5分钟的超时持续时间，最多可以配置10分钟。 Azure Functions 高级计划还可以减少此问题，并将超时设置为30分钟，且可配置的限制更多。 计算时间不是日历时间。 使用[Azure Durable Functions framework](https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-overview?tabs=csharp)的更高级功能可能会在几天内暂停执行。 根据实际执行时间计费-当函数唤醒并继续处理时。
+云提供程序根据计算执行时间和使用的内存计费无服务器。 长时间运行的操作或高内存消耗工作负荷并非始终是无服务器的最佳候选项。 无服务器函数适用于可快速完成的小型工作块。 大多数无服务器平台需要在几分钟内完成单个功能。 Azure Functions 默认为5分钟的超时持续时间，最多可以配置10分钟。 Azure Functions 高级计划还可以减少此问题，并将超时设置为30分钟，且可配置的限制更多。 计算时间不是日历时间。 使用 [Azure Durable Functions framework](/azure/azure-functions/durable/durable-functions-overview?tabs=csharp) 的更高级功能可能会在几天内暂停执行。 根据实际执行时间计费-当函数唤醒并继续处理时。
 
 最后，利用应用程序任务 Azure Functions 增加了复杂性。 首先，将应用程序设计为模块化、松散耦合的设计是明智的。 然后，确定是否有无服务器可提供的权益来论证额外的复杂性。
 

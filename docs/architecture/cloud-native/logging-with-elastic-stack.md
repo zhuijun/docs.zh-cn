@@ -2,12 +2,12 @@
 title: 使用弹性堆栈进行日志记录
 description: 使用弹性堆栈、Logstash 和 Kibana 进行日志记录
 ms.date: 05/13/2020
-ms.openlocfilehash: 32d9d0dae175d8d45d48b56d17f133b4cc432363
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 3f10b0d06c87b7bed6d3e302742b1dc52e2c9d3b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811166"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155336"
 ---
 # <a name="logging-with-elastic-stack"></a>使用弹性堆栈进行日志记录
 
@@ -105,15 +105,15 @@ Logstash 收集了日志后，需要将其放在某个位置。 尽管 Logstash 
 
 ## <a name="installing-elastic-stack-on-azure"></a>在 Azure 上安装弹性堆栈
 
-可以通过多种方式在 Azure 上安装弹性堆栈。 与往常一样，可以 [预配虚拟机并直接在其上安装弹性堆栈](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)。 此选项由一些经验丰富的用户首选，因为它提供了最高的可定制性。 在基础结构上部署为服务会带来巨大的管理开销，迫使那些采用该路径的用户获得与基础结构相关的所有任务的所有权（例如，保护计算机并随时保持修补程序的最新）。
+可以通过多种方式在 Azure 上安装弹性堆栈。 与往常一样，可以 [预配虚拟机并直接在其上安装弹性堆栈](/azure/virtual-machines/linux/tutorial-elasticsearch)。 此选项由一些经验丰富的用户首选，因为它提供了最高的可定制性。 在基础结构上部署为服务会带来巨大的管理开销，迫使那些采用该路径的用户获得与基础结构相关的所有任务的所有权（例如，保护计算机并随时保持修补程序的最新）。
 
 开销较少的选项是使用已在其上配置弹性堆栈的众多 Docker 容器之一。 这些容器可以放入现有的 Kubernetes 群集，并与应用程序代码一起运行。 [Sebp/elk](https://elk-docker.readthedocs.io/)容器是一种记录完善且经过测试的弹性堆栈容器。
 
 另一种方法是 [最近发布的 ELK 产品/服务](https://devops.com/logz-io-unveils-azure-open-source-elk-monitoring-solution/)。
 
-## <a name="references"></a>引用
+## <a name="references"></a>参考
 
-- [在 Azure 上安装弹性堆栈](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
+- [在 Azure 上安装弹性堆栈](/azure/virtual-machines/linux/tutorial-elasticsearch)
 
 >[!div class="step-by-step"]
 >[上一页](observability-patterns.md)

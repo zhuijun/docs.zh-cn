@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 78203093-f242-4572-9b31-9495b10926aa
-ms.openlocfilehash: d8aee43f13ec92f649b4df20505ac56c336fe07a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2ffff8b69839d5c1e70e81f9fc6f3a97f57ac6c6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70793832"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155973"
 ---
 # <a name="find-the-minimum-value-in-a-numeric-sequence"></a>查找数值序列中的最小值
+
 使用 <xref:System.Linq.Enumerable.Min%2A> 运算符可返回数值序列中的最小值。  
   
 ## <a name="example"></a>示例  
+
  下面的示例查找所有产品的最低单价。  
   
  如果您对 Northwind 示例数据库运行此查询，则输出为：`2.5000`。  
@@ -24,6 +26,7 @@ ms.locfileid: "70793832"
  [!code-vb[DLinqQueryExamples#9](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#9)]  
   
 ## <a name="example"></a>示例  
+
  下面的示例查找所有订单的最低运费额。  
   
  如果您对 Northwind 示例数据库运行此查询，则输出为：`0.0200`。  
@@ -32,6 +35,7 @@ ms.locfileid: "70793832"
  [!code-vb[DLinqQueryExamples#10](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#10)]  
   
 ## <a name="example"></a>示例  
+
  下面的示例使用 Min 查找每个类别中单价最低的 `Products`。 输出按类别排列。  
   
  [!code-csharp[DLinqQueryExamples#11](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#11)]
