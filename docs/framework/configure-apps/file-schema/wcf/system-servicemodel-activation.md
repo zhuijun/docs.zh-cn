@@ -2,21 +2,23 @@
 title: < system.serviceModel.activation >
 ms.date: 03/30/2017
 ms.assetid: c0cae85f-56cb-4030-8807-6f96edff8d2d
-ms.openlocfilehash: e00bbad452398e7f8f4f50208da572986391fc9e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: cbb12ce84f53f55f7d5b2dabd449a116969dc9b8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399479"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157130"
 ---
 # \<system.serviceModel.activation>
-<span data-ttu-id="1bfaf-102">此配置节描述了 SMSvcHost.exe 工具的配置设置。</span><span class="sxs-lookup"><span data-stu-id="1bfaf-102">This configuration section represents the configuration settings for the SMSvcHost.exe tool.</span></span> <span data-ttu-id="1bfaf-103">配置元素可在 SMSvcHost.exe.config 文件中配置。</span><span class="sxs-lookup"><span data-stu-id="1bfaf-103">The configuration elements can be configured in the SMSvcHost.exe.config file.</span></span> <span data-ttu-id="1bfaf-104">具体地说，它包括计算机中所有必须配置的设置。</span><span class="sxs-lookup"><span data-stu-id="1bfaf-104">Specifically, it includes all machine-wide settings that must be configured.</span></span>  
+
+<span data-ttu-id="c16af-102">此配置节描述了 SMSvcHost.exe 工具的配置设置。</span><span class="sxs-lookup"><span data-stu-id="c16af-102">This configuration section represents the configuration settings for the SMSvcHost.exe tool.</span></span> <span data-ttu-id="c16af-103">配置元素可在 SMSvcHost.exe.config 文件中配置。</span><span class="sxs-lookup"><span data-stu-id="c16af-103">The configuration elements can be configured in the SMSvcHost.exe.config file.</span></span> <span data-ttu-id="c16af-104">具体地说，它包括计算机中所有必须配置的设置。</span><span class="sxs-lookup"><span data-stu-id="c16af-104">Specifically, it includes all machine-wide settings that must be configured.</span></span>  
 
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;**\<system.serviceModel.activation>**  
   
-## <a name="sample-configuration-file"></a><span data-ttu-id="1bfaf-105">示例配置文件</span><span class="sxs-lookup"><span data-stu-id="1bfaf-105">Sample Configuration File</span></span>  
- <span data-ttu-id="1bfaf-106">下面是侦听器进程 SMSvcHost.exe 所使用的示例配置文件 (SMSvcHost.exe.config)。</span><span class="sxs-lookup"><span data-stu-id="1bfaf-106">The following is a sample configuration file (SMSvcHost.exe.config), which is used by the listener process SMSvcHost.exe.</span></span>  
+## <a name="sample-configuration-file"></a><span data-ttu-id="c16af-105">示例配置文件</span><span class="sxs-lookup"><span data-stu-id="c16af-105">Sample Configuration File</span></span>  
+
+ <span data-ttu-id="c16af-106">下面是侦听器进程 SMSvcHost.exe 所使用的示例配置文件 (SMSvcHost.exe.config)。</span><span class="sxs-lookup"><span data-stu-id="c16af-106">The following is a sample configuration file (SMSvcHost.exe.config), which is used by the listener process SMSvcHost.exe.</span></span>  
   
 ```xml  
 <configuration>
@@ -63,6 +65,6 @@ ms.locfileid: "70399479"
 </configuration>
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="1bfaf-107">另请参阅</span><span class="sxs-lookup"><span data-stu-id="1bfaf-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c16af-107">请参阅</span><span class="sxs-lookup"><span data-stu-id="c16af-107">See also</span></span>
 
 - <xref:System.ServiceModel.Activation.Configuration>
