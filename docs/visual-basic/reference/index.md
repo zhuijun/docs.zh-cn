@@ -5,17 +5,19 @@ helpviewer_keywords:
 - language reference
 - Visual Basic code, language reference
 ms.assetid: df6e7c50-5f3e-4381-98ed-ba5c3e9fe228
-ms.openlocfilehash: 7209b6856eb7302dfa2e5e8938509d9238ceff4d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 7f4b375c350dca58aa1002402806113ec0f91b55
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "85840286"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098757"
 ---
 # <a name="reference-visual-basic"></a>参考 (Visual Basic)
+
 本节提供与 Visual Basic 编程的各个方面相关的参考信息的链接。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [Visual Basic 语言参考](../language-reference/index.md)  
  提供 Visual Basic 语言的各个方面的参考信息。  
   
@@ -29,6 +31,7 @@ ms.locfileid: "85840286"
  提供指向完整 Visual Basic 语言规范的链接，规范中包含这种语言各个方面的详细信息。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [常规用户界面元素 (Visual Studio)](/visualstudio/ide/reference/general-user-interface-elements-visual-studio)  
  包含在 Visual Studio 中使用的对话框和窗口的主题。  
   
