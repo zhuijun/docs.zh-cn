@@ -5,17 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 62f404a5-13ea-4b93-a29f-55b74a16c9d3
-ms.openlocfilehash: 3edafa6c6a1bc3da2abc0598f329caf0e2f21e8b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c00e5e42508160a210d16f058c46afbf62ae0ee0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70786263"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164722"
 ---
 # <a name="handling-datatable-events"></a>处理数据表事件
+
 <xref:System.Data.DataTable> 对象提供一系列可以由应用程序处理的事件。 下表描述了 `DataTable` 事件。  
   
-|Event|描述|  
+|事件|描述|  
 |-----------|-----------------|  
 |<xref:System.Data.DataTable.Initialized>|在调用 <xref:System.Data.DataTable.EndInit%2A> 的 `DataTable` 方法后发生。 此事件主要用于支持设计时方案。|  
 |<xref:System.Data.DataTable.ColumnChanged>|在成功更改 <xref:System.Data.DataColumn> 中的值后发生。|  
@@ -36,6 +37,7 @@ ms.locfileid: "70786263"
 > 如果在从中引发 `DataSet` 事件的 `RowChanged` 中修改数据，则会发生数据损坏。 出现这类数据损坏并不会引发任何异常。  
   
 ## <a name="additional-related-events"></a>其他相关事件  
+
  <xref:System.Data.DataTable.Constraints%2A> 属性包含 <xref:System.Data.ConstraintCollection> 实例。 <xref:System.Data.ConstraintCollection> 类会公开 <xref:System.Data.ConstraintCollection.CollectionChanged> 事件。 在 `ConstraintCollection` 中添加、修改约束，或从中删除约束时，会激发此事件。  
   
  <xref:System.Data.DataTable.Columns%2A> 属性包含 <xref:System.Data.DataColumnCollection> 实例。 `DataColumnCollection` 类会公开 <xref:System.Data.DataColumnCollection.CollectionChanged> 事件。 在 `DataColumn` 中添加、修改或从中删除 `DataColumnCollection` 时，会激发此事件。 导致激发此事件的修改包括更改列的名称、类型、表达式或序号位置。  
@@ -45,6 +47,7 @@ ms.locfileid: "70786263"
  更改 `DataRows` 还会触发已关联 <xref:System.Data.DataView> 的事件。 `DataView` 类会公开 <xref:System.Data.DataView.ListChanged> 事件，当 `DataColumn` 值发生更改或视图的撰写或排序顺序发生更改时会激发此事件。 <xref:System.Data.DataRowView> 类会公开 <xref:System.Data.DataRowView.PropertyChanged> 事件，当关联的 `DataColumn` 值发生更改时会激发此事件。  
   
 ## <a name="sequence-of-operations"></a>操作顺序  
+
  下面是添加、修改或删除 `DataRow` 时所执行操作的顺序：  
   
 1. 创建建议的记录并应用任何更改。  
@@ -74,6 +77,7 @@ ms.locfileid: "70786263"
 > 请勿在 <xref:System.NullReferenceException> 事件处理程序中引发 `RowChanged`。 如果在 <xref:System.NullReferenceException> 的 `RowChanged` 事件中引发了 `DataTable`，`DataTable` 将被损坏。  
   
 ### <a name="example"></a>示例  
+
  下面的示例演示如何为 `RowChanged`、`RowChanging`、`RowDeleted`、`RowDeleting`、`ColumnChanged`、`ColumnChanging`、`TableNewRow`、`TableCleared` 和 `TableClearing` 事件创建事件处理程序。 在激发每个事件处理程序时，都会在控制台窗口中显示相关输出。  
   
  [!code-csharp[DataWorks DataTable.Events#1](../../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DataWorks DataTable.Events/CS/source.cs#1)]

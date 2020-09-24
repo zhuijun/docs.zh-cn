@@ -5,14 +5,15 @@ helpviewer_keywords:
 - WCF Data Services, configuring
 - WCF Data Services, client library
 ms.assetid: b98cb1d6-956a-4e50-add6-67e4f2587346
-ms.openlocfilehash: 31bf2e543bf20199fbeeaa8d00f808650092ff00
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 368f2546652d21be44c0ffb4cc5f279c56beda51
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546954"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165987"
 ---
 # <a name="how-to-manually-generate-client-data-service-classes-wcf-data-services"></a>如何：手动生成客户端数据服务类（WCF 数据服务）
+
 WCF 数据服务与 Visual Studio 集成，使您能够在使用 " **添加服务引用** " 对话框在 Visual Studio 项目中添加对数据服务的引用时自动生成客户端数据服务类。 有关详细信息，请参阅 [如何：添加数据服务引用](how-to-add-a-data-service-reference-wcf-data-services.md)。 此外，你也可以使用代码生成工具 `DataSvcUtil.exe` 手动生成相同的客户端数据服务类。 此工具随 WCF 数据服务提供，它将从数据服务定义生成 .NET Framework 类。 还可以使用此工具根据概念模型 (.csdl) 文件和表示 Visual Studio 项目中的实体框架模型的 .edmx 文件生成数据服务类。
 
  本主题中的示例基于 Northwind 示例数据服务创建客户端数据服务类。 此服务是在完成 [WCF 数据服务快速入门](quickstart-wcf-data-services.md)时创建的。 本主题中的某些示例需要 Northwind 模型的概念模型文件。 有关详细信息，请参阅 [如何：使用 EdmGen.exe 生成模型和映射文件](../adonet/ef/how-to-use-edmgen-exe-to-generate-the-model-and-mapping-files.md)。 本主题中的某些示例需要 Northwind 模型的 .edmx 文件。 有关详细信息，请参阅 [.Edmx 文件概述](/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))。

@@ -3,12 +3,12 @@ title: 服务到服务通信
 description: 了解后端云和本地微服务与其他后端微服务通信的方式。
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 88d7dfabee14419978889f5d9ea30b12f36837de
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 9761b99cd9ad076eb82a23a00ec3099e8913168b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539797"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166074"
 ---
 # <a name="service-to-service-communication"></a>服务到服务通信
 
@@ -54,7 +54,7 @@ ms.locfileid: "90539797"
 
 ### <a name="materialized-view-pattern"></a>具体化视图模式
 
-用于删除微服务耦合的常用选项为 [具体化视图模式](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)。 使用此模式，微服务存储其自己的本地非规范化数据副本，这些数据由其他服务拥有。 它不会微服务查询产品目录和定价微服务，而是保留其自己的本地数据副本。 此模式消除了不必要的耦合，并改进了可靠性和响应时间。 整个操作在一个进程内执行。 我们将在第5章探讨此模式和其他数据问题。
+用于删除微服务耦合的常用选项为 [具体化视图模式](/azure/architecture/patterns/materialized-view)。 使用此模式，微服务存储其自己的本地非规范化数据副本，这些数据由其他服务拥有。 它不会微服务查询产品目录和定价微服务，而是保留其自己的本地数据副本。 此模式消除了不必要的耦合，并改进了可靠性和响应时间。 整个操作在一个进程内执行。 我们将在第5章探讨此模式和其他数据问题。
 
 ### <a name="service-aggregator-pattern"></a>服务聚合器模式
 
@@ -94,7 +94,7 @@ ms.locfileid: "90539797"
 
 Azure 存储队列提供了一个简单的排队基础结构，该基础结构快速、经济实惠，并由 Azure 存储帐户提供支持。
 
-[Azure 存储队列](https://docs.microsoft.com/azure/storage/queues/storage-queues-introduction) 使用基于 REST 的排队机制，提供可靠且持久的消息传递机制。 它们提供了最小的功能集，但价格较低，并存储数百万条消息。 其容量范围最大为 500 TB。 单个消息的大小最大可为 64 KB。
+[Azure 存储队列](/azure/storage/queues/storage-queues-introduction) 使用基于 REST 的排队机制，提供可靠且持久的消息传递机制。 它们提供了最小的功能集，但价格较低，并存储数百万条消息。 其容量范围最大为 500 TB。 单个消息的大小最大可为 64 KB。
 
 可以通过使用 HTTP 或 HTTPS 的经过身份验证的调用，从世界上的任何地方访问消息。 存储队列可横向扩展到大量并发客户端，以处理流量高峰。
 
@@ -122,13 +122,13 @@ Azure 存储队列是在你的云本机应用程序中实现命令消息传递�
 
 对于更复杂的消息传送要求，请考虑 Azure 服务总线队列。
 
-在强大的消息基础结构的顶部， [Azure 服务总线](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) 支持 *中转消息传送模型*。 消息在队列中 (可靠地存储) 直到使用者接收。 队列保证了先进先出 (FIFO) 消息传递，这与消息添加到队列中的顺序相同。
+在强大的消息基础结构的顶部， [Azure 服务总线](/azure/service-bus-messaging/service-bus-messaging-overview) 支持 *中转消息传送模型*。 消息在队列中 (可靠地存储) 直到使用者接收。 队列保证了先进先出 (FIFO) 消息传递，这与消息添加到队列中的顺序相同。
 
-消息的大小可以大得多，最高可达 256 KB。 消息在队列中保持无限长的时间。 Service Bus 不仅支持基于 HTTP 的调用，而且还支持 [AMQP 协议](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-amqp-overview)的完全支持。 AMQP 是一种跨供应商的开放标准，支持二进制协议和更高的可靠性。
+消息的大小可以大得多，最高可达 256 KB。 消息在队列中保持无限长的时间。 Service Bus 不仅支持基于 HTTP 的调用，而且还支持 [AMQP 协议](/azure/service-bus-messaging/service-bus-amqp-overview)的完全支持。 AMQP 是一种跨供应商的开放标准，支持二进制协议和更高的可靠性。
 
-服务总线提供了一组丰富的功能，包括 [事务支持](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-transactions) 和 [重复检测功能](https://docs.microsoft.com/azure/service-bus-messaging/duplicate-detection)。 队列保证每条消息 "最多传递一次"。 它会自动丢弃已经发送的消息。 如果制造者不确定，它可以重新发送相同的消息，服务总线保证只处理一个副本。 重复检测使你无需构建其他基础结构管道。
+服务总线提供了一组丰富的功能，包括 [事务支持](/azure/service-bus-messaging/service-bus-transactions) 和 [重复检测功能](/azure/service-bus-messaging/duplicate-detection)。 队列保证每条消息 "最多传递一次"。 它会自动丢弃已经发送的消息。 如果制造者不确定，它可以重新发送相同的消息，服务总线保证只处理一个副本。 重复检测使你无需构建其他基础结构管道。
 
-还有两个企业功能，即分区和会话。 常规服务总线队列由单个消息代理处理，并存储在单个消息存储区中。 但是， [服务总线分区](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-partitioning) 跨多个消息代理和消息存储分散队列。 总体吞吐量不再受单个消息代理或消息存储的性能限制。 消息存储的临时中断不会导致分区的队列不可用。
+还有两个企业功能，即分区和会话。 常规服务总线队列由单个消息代理处理，并存储在单个消息存储区中。 但是， [服务总线分区](/azure/service-bus-messaging/service-bus-partitioning) 跨多个消息代理和消息存储分散队列。 总体吞吐量不再受单个消息代理或消息存储的性能限制。 消息存储的临时中断不会导致分区的队列不可用。
 
 [服务总线会话](https://codingcanvas.com/azure-service-bus-sessions/) 提供了一种对相关消息进行分组的方法。 假设工作流方案中，消息必须一起处理并且操作在结束时完成。 若要充分利用会话，必须为队列显式启用会话，并且每个相关消息必须包含相同的会话 ID。
 
@@ -148,7 +148,7 @@ Azure 存储队列是在你的云本机应用程序中实现命令消息传递�
 
 为了应对这种情况，我们将转到第三种类型的消息交互（即 *事件*）。 一个微服务宣布发生了某个操作。 其他微服务，如有兴趣，对操作或事件做出反应。
 
-事件是一个两步过程。 对于给定状态更改，微服务向消息代理发布事件，使其可供任何其他感兴趣的微服务使用。 相关的微服务会通过订阅消息代理中的事件获得通知。 使用 [发布/订阅](https://docs.microsoft.com/azure/architecture/patterns/publisher-subscriber) 模式来实现 [基于事件的通信](https://docs.microsoft.com/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/integration-event-based-microservice-communications)。
+事件是一个两步过程。 对于给定状态更改，微服务向消息代理发布事件，使其可供任何其他感兴趣的微服务使用。 相关的微服务会通过订阅消息代理中的事件获得通知。 使用 [发布/订阅](/azure/architecture/patterns/publisher-subscriber) 模式来实现 [基于事件的通信](/dotnet/standard/microservices-architecture/multi-container-microservice-net-applications/integration-event-based-microservice-communications)。
 
 图4-15 显示了一个购物篮微服务，其中包含两个其他微服务订阅的事件。
 
@@ -158,7 +158,7 @@ Azure 存储队列是在你的云本机应用程序中实现命令消息传递�
 
 请注意位于信道中间的 *事件总线* 组件。 它是一个自定义类，它封装消息代理并将其与基础应用程序分离。 订购和库存微服务独立运营事件，无任何其他知识，也不会微服务购物篮。 当注册的事件发布到事件总线时，它们会对其执行操作。
 
-对于事件，我们将从队列技术转向 *主题*。 [主题](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions)类似于队列，但支持一对多消息模式。 一个微服务发布一条消息。 多个订阅微服务可以选择接收并处理该消息。 图4-16 显示了一个主题体系结构。
+对于事件，我们将从队列技术转向 *主题*。 [主题](/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions)类似于队列，但支持一对多消息模式。 一个微服务发布一条消息。 多个订阅微服务可以选择接收并处理该消息。 图4-16 显示了一个主题体系结构。
 
 ![主题体系结构](./media/topic-architecture.png)
 
@@ -170,17 +170,17 @@ Azure 云支持两个不同的主题服务： Azure 服务总线主题和 Azure 
 
 ### <a name="azure-service-bus-topics"></a>Azure 服务总线主题
 
-在 Azure 服务总线队列的相同可靠的中转消息模型的基础上，是 [Azure 服务总线主题](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions)。 主题可以接收来自多个独立发布服务器的消息，并将消息发送到最多2000个订阅服务器。 订阅可以在运行时动态添加或删除，而无需停止系统或重新创建主题。
+在 Azure 服务总线队列的相同可靠的中转消息模型的基础上，是 [Azure 服务总线主题](/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions)。 主题可以接收来自多个独立发布服务器的消息，并将消息发送到最多2000个订阅服务器。 订阅可以在运行时动态添加或删除，而无需停止系统或重新创建主题。
 
-Azure 服务总线队列中的许多高级功能也可用于主题，包括 [重复检测](https://docs.microsoft.com/azure/service-bus-messaging/duplicate-detection) 和 [事务支持](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-transactions)。 默认情况下，服务总线主题由单个消息代理处理，并存储在单个消息存储区中。 但是， [服务总线分区](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-partitioning) 会通过将其分布到多个消息代理和消息存储区来缩放主题。
+Azure 服务总线队列中的许多高级功能也可用于主题，包括 [重复检测](/azure/service-bus-messaging/duplicate-detection) 和 [事务支持](/azure/service-bus-messaging/service-bus-transactions)。 默认情况下，服务总线主题由单个消息代理处理，并存储在单个消息存储区中。 但是， [服务总线分区](/azure/service-bus-messaging/service-bus-partitioning) 会通过将其分布到多个消息代理和消息存储区来缩放主题。
 
-[计划的消息传递](https://docs.microsoft.com/azure/service-bus-messaging/message-sequencing) 将标记有特定时间进行处理的消息。 消息不会在该时间之前出现在主题中。 通过[消息延迟](https://docs.microsoft.com/azure/service-bus-messaging/message-deferral)，可以将消息的检索推迟到以后的某个时间进行。 这两者通常用于工作流处理方案，在这些方案中，按特定顺序处理操作。 您可以推迟收到的消息的处理，直到上一工作完成。
+[计划的消息传递](/azure/service-bus-messaging/message-sequencing) 将标记有特定时间进行处理的消息。 消息不会在该时间之前出现在主题中。 通过[消息延迟](/azure/service-bus-messaging/message-deferral)，可以将消息的检索推迟到以后的某个时间进行。 这两者通常用于工作流处理方案，在这些方案中，按特定顺序处理操作。 您可以推迟收到的消息的处理，直到上一工作完成。
 
 Service Bus 主题是一项强大的、经过验证的技术，可用于在云本机系统中启用发布/订阅通信。
 
 ### <a name="azure-event-grid"></a>Azure 事件网格
 
-尽管 Azure 服务总线是已经过测试的、具有一整套企业功能的消息传递代理，但 [Azure 事件网格](https://docs.microsoft.com/azure/event-grid/overview) 是块上的新孩子。
+尽管 Azure 服务总线是已经过测试的、具有一整套企业功能的消息传递代理，但 [Azure 事件网格](/azure/event-grid/overview) 是块上的新孩子。
 
 乍一看，事件网格可能只是另一个基于主题的消息系统。 但是，它在许多方面都是不同的。 它侧重于事件驱动的工作负荷，实现实时事件处理、深层 Azure 集成和开放平台的所有功能。 它适用于当代云本机和无服务器应用程序
 
@@ -206,9 +206,9 @@ EventGrid 和服务总线之间的主要区别是基础 *消息交换模式*。
 
 ### <a name="streaming-messages-in-the-azure-cloud"></a>在 Azure 云中传输消息
 
-Azure 服务总线和事件网格为公开单一独立事件（例如新 Cosmos DB 文档）的应用程序提供了很大的支持。 但是，如果您的云本机系统需要处理 *相关事件流*，该怎么办？ [事件流](https://docs.microsoft.com/archive/msdn-magazine/2015/february/microsoft-azure-the-rise-of-event-stream-oriented-systems) 更复杂。 它们通常是按时间顺序排列的、相互关联的，并且必须作为一个组进行处理。
+Azure 服务总线和事件网格为公开单一独立事件（例如新 Cosmos DB 文档）的应用程序提供了很大的支持。 但是，如果您的云本机系统需要处理 *相关事件流*，该怎么办？ [事件流](/archive/msdn-magazine/2015/february/microsoft-azure-the-rise-of-event-stream-oriented-systems) 更复杂。 它们通常是按时间顺序排列的、相互关联的，并且必须作为一个组进行处理。
 
-[Azure 事件中心](https://azure.microsoft.com/services/event-hubs/) 是一种数据流式处理平台和事件引入服务，可收集、转换和存储事件。 它经过优化，可捕获流式处理数据，如从遥测上下文发出的连续事件通知。 此服务可高度缩放，每秒可以存储和 [处理数百万事件](https://docs.microsoft.com/azure/event-hubs/event-hubs-about)。 图4-18 所示，它通常是事件管道的前门，它将插入流与事件使用分离。
+[Azure 事件中心](https://azure.microsoft.com/services/event-hubs/) 是一种数据流式处理平台和事件引入服务，可收集、转换和存储事件。 它经过优化，可捕获流式处理数据，如从遥测上下文发出的连续事件通知。 此服务可高度缩放，每秒可以存储和 [处理数百万事件](/azure/event-hubs/event-hubs-about)。 图4-18 所示，它通常是事件管道的前门，它将插入流与事件使用分离。
 
 ![Azure 事件中心](./media/azure-event-hub.png)
 
@@ -216,9 +216,9 @@ Azure 服务总线和事件网格为公开单一独立事件（例如新 Cosmos 
 
 事件中心支持低延迟和可配置的时间保留。 与队列和主题不同，事件中心会在被使用者读取后保留事件数据。 此功能使其他数据分析服务（内部和外部）能够重播数据以供进一步分析。 存储在事件中心中的事件只会在保留期到期时删除，默认情况下为一天，但可配置。
 
-事件中心支持常见的事件发布协议，包括 HTTPS 和 AMQP。 它还支持 Kafka 1.0。 [现有的 Kafka 应用程序可使用 Kafka 协议与事件中心进行通信](https://docs.microsoft.com/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview) ，该协议提供了管理大型 Kafka 群集的替代方法。 许多开源云本机系统都接受 Kafka。
+事件中心支持常见的事件发布协议，包括 HTTPS 和 AMQP。 它还支持 Kafka 1.0。 [现有的 Kafka 应用程序可使用 Kafka 协议与事件中心进行通信](/azure/event-hubs/event-hubs-for-kafka-ecosystem-overview) ，该协议提供了管理大型 Kafka 群集的替代方法。 许多开源云本机系统都接受 Kafka。
 
-事件中心通过 [分区使用者模型](https://docs.microsoft.com/azure/event-hubs/event-hubs-features) 实现消息流式处理，其中每个使用者只读取消息流的特定子集或分区。 此模式允许以极大的水平缩放规模进行事件处理，并提供队列和主题所不能提供的其他面向流的功能。 分区是事件中心内保留的有序事件。 当较新的事件到达时，它们将添加到此序列的末尾。图4-19 显示事件中心中的分区。
+事件中心通过 [分区使用者模型](/azure/event-hubs/event-hubs-features) 实现消息流式处理，其中每个使用者只读取消息流的特定子集或分区。 此模式允许以极大的水平缩放规模进行事件处理，并提供队列和主题所不能提供的其他面向流的功能。 分区是事件中心内保留的有序事件。 当较新的事件到达时，它们将添加到此序列的末尾。图4-19 显示事件中心中的分区。
 
 ![事件中心分区](./media/event-hub-partitioning.png)
 

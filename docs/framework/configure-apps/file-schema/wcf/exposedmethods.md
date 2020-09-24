@@ -2,17 +2,18 @@
 title: <exposedMethods>
 ms.date: 03/30/2017
 ms.assetid: 7f21d7ed-b268-498a-9b08-76c38361fd1e
-ms.openlocfilehash: 55359d3b3cb9eeac5f7046158ae92c784c22efd1
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 4475f3c7dbfe6d4510256a573e5ac2a90d981e8e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69925635"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165112"
 ---
 # \<exposedMethods>
+
 本节包含 `exposedMethod` 元素的集合。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.ComMethodElementCollection>
 - <xref:System.ServiceModel.Configuration.ComMethodElement>

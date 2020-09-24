@@ -2,14 +2,15 @@
 title: <security> 的 <wsDualHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 869c05e7-4ebe-467d-95ab-c8f8de4e6b9e
-ms.openlocfilehash: 4969c041678bbf3490975bc0ec53507b6cf762bb
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 7398cd538bb240e78413575f7c28abe7f797d05c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738602"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91162200"
 ---
 # <a name="security-of-wsdualhttpbinding"></a>\<security> 的 \<wsDualHttpBinding>
+
 定义的安全功能 [\<wsDualHttpBinding>](wsdualhttpbinding.md) 。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,17 +31,18 @@ ms.locfileid: "73738602"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
-|模式|可有可无. 指定所应用的安全类型。 默认值为 `Message`。 此属性的类型为 <xref:System.ServiceModel.WSDualHttpSecurityMode>。|  
+|mode|可有可无. 指定所应用的安全类型。 默认值是 `Message`。 此属性的类型为 <xref:System.ServiceModel.WSDualHttpSecurityMode>。|  
   
 ## <a name="mode-attribute"></a>Mode 属性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |无|禁用安全性。|  
 |消息|使用 SOAP 消息安全提供安全性。|  
@@ -57,10 +59,11 @@ ms.locfileid: "73738602"
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|定义的所有绑定功能 [\<wsDualHttpBinding>](wsdualhttpbinding.md) 。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  双向绑定向服务公开客户端的 IP 地址。 客户端应使用安全来确保仅连接到自己信任的服务。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.WSDualHttpSecurity>
 - <xref:System.ServiceModel.BasicHttpSecurity>

@@ -6,17 +6,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
-ms.openlocfilehash: 4c1da6041b2343565bdaeb53e586c893bd85c922
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 4f645a51996078f8dd80b6c455c420633db36155
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557900"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164593"
 ---
 # <a name="performance-counters-in-adonet"></a>ADO.NET 中的性能计数器
+
 ADO.NET 2.0 引入了对性能计数器的扩展支持，包括对 <xref:System.Data.SqlClient> 和 <xref:System.Data.OracleClient> 的支持。 在早期版本的 ADO.NET 中提供的 <xref:System.Data.SqlClient> 性能计数器已被否决，并已替换为本主题讨论的新性能计数器。 可以使用 ADO.NET 性能计数器来监视应用程序的状态和应用程序所使用的连接资源。 可以使用 Windows 性能监视器来监视性能计数器，或使用 <xref:System.Diagnostics.PerformanceCounter> 命名空间中的 <xref:System.Diagnostics> 类以编程方式访问性能计数器。  
   
 ## <a name="available-performance-counters"></a>可用的性能计数器  
+
  当前有 14 个不同的性能计数器可用于下表中所描述的 <xref:System.Data.SqlClient> 和 <xref:System.Data.OracleClient>。 请注意，未本地化 Microsoft .NET Framework 各区域版本中的各个计数器的名称。  
   
 |性能计数器|说明|  
@@ -37,10 +39,13 @@ ADO.NET 2.0 引入了对性能计数器的扩展支持，包括对 <xref:System.
 |`SoftDisconnectsPerSecond`|被返回连接池的活动连接的数量。 **注意：**  默认情况下不启用此性能计数器。 若要启用此性能计数器，请参阅 [激活默认的计数器](#ActivatingOffByDefault)。|  
   
 ### <a name="connection-pool-groups-and-connection-pools"></a>连接池组和连接池  
+
  在使用 Windows 身份验证（集成安全性）时，必须监视 `NumberOfActiveConnectionPoolGroups` 和 `NumberOfActiveConnectionPools` 性能计数器。 这样做的原因是连接池组会映射为唯一连接字符串。 在使用集成安全性时，连接池会映射为连接字符串，此外，连接池还会为各个 Windows 标识创建单独的池。 例如，如果 Fred 和 Julie 在同一 AppDomain 中，并且二者都使用连接字符串 `"Data Source=MySqlServer;Integrated Security=true"`，则将为连接字符串创建一个连接池组，还将为 Fred 和 Julie 分别创建一个其他池。 如果 John 和 Martha 使用 SQL Server 登录名相同的连接字符串， `"Data Source=MySqlServer;User Id=lowPrivUser;Password=Strong?Password"` 则只为 **lowPrivUser** 标识创建一个池。  
   
 <a name="ActivatingOffByDefault"></a>
+
 ### <a name="activating-off-by-default-counters"></a>激活默认情况下为关的计数器  
+
  性能计数器 `NumberOfFreeConnections`、`NumberOfActiveConnections`、`SoftDisconnectsPerSecond` 和 `SoftConnectsPerSecond` 默认情况下为关。 将下面的信息添加到应用程序配置文件中，以启用这些信息：  
   
 ```xml  
@@ -53,6 +58,7 @@ ADO.NET 2.0 引入了对性能计数器的扩展支持，包括对 <xref:System.
 ```  
   
 ## <a name="retrieving-performance-counter-values"></a>检索性能计数器的值  
+
  下面的控制台应用程序演示如何在应用程序中检索性能计数器的值。 必须打开连接并且确保连接处于活动状态，才能为所有 ADO.NET 性能计数器返回信息。  
   
 > [!NOTE]

@@ -6,17 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d6aa8474-7bde-48f7-949d-20dc38a1625b
-ms.openlocfilehash: 94ebc97d5f90b5bb92186ba6f33015633bd01127
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: aac2d90cc57a4af823c42f8c7eb2adcd43c63caf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286929"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91164813"
 ---
 # <a name="adding-data-to-a-datatable"></a>将数据添加到数据表中
-在创建 <xref:System.Data.DataTable> 并使用列和约束定义其结构之后，您可以将新的数据行添加到表中。 要添加新行，可将一个新变量声明为 <xref:System.Data.DataRow> 类型。 当调用方法时，将返回新的**DataRow**对象 <xref:System.Data.DataTable.NewRow%2A> 。 然后， **DataTable**根据所定义的表的结构创建**DataRow**对象 <xref:System.Data.DataColumnCollection> 。  
+
+在创建 <xref:System.Data.DataTable> 并使用列和约束定义其结构之后，您可以将新的数据行添加到表中。 要添加新行，可将一个新变量声明为 <xref:System.Data.DataRow> 类型。 当调用方法时，将返回新的 **DataRow** 对象 <xref:System.Data.DataTable.NewRow%2A> 。 然后， **DataTable** 根据所定义的表的结构创建 **DataRow** 对象 <xref:System.Data.DataColumnCollection> 。  
   
- 下面的示例演示如何通过调用**NewRow**方法来创建新行。  
+ 下面的示例演示如何通过调用 **NewRow** 方法来创建新行。  
   
 ```vb  
 Dim workRow As DataRow = workTable.NewRow()  
@@ -38,7 +39,7 @@ workRow["CustLName"] = "Smith";
 workRow[1] = "Smith";  
 ```  
   
- 将数据插入新行后，**将使用 add**方法将行添加到中 <xref:System.Data.DataRowCollection> ，如下面的代码所示。  
+ 将数据插入新行后， **将使用 add** 方法将行添加到中 <xref:System.Data.DataRowCollection> ，如下面的代码所示。  
   
 ```vb  
 workTable.Rows.Add(workRow)  
@@ -48,7 +49,7 @@ workTable.Rows.Add(workRow)
 workTable.Rows.Add(workRow);  
 ```  
   
- 你还可以调用**add**方法来添加新行，方法是传入类型为的值数组， <xref:System.Object> 如下面的示例中所示。  
+ 你还可以调用 **add** 方法来添加新行，方法是传入类型为的值数组， <xref:System.Object> 如下面的示例中所示。  
   
 ```vb  
 workTable.Rows.Add(new Object() {1, "Smith"})  
@@ -58,9 +59,9 @@ workTable.Rows.Add(new Object() {1, "Smith"})
 workTable.Rows.Add(new Object[] {1, "Smith"});  
 ```  
   
- 将类型化为**object**的值的数组传递到**Add**方法会在表中创建一个新行，并将其列值设置为对象数组中的值。 请注意，数组中的值会根据它们在表中出现的顺序相继与各列匹配。  
+ 将类型化为 **object**的值的数组传递到 **Add** 方法会在表中创建一个新行，并将其列值设置为对象数组中的值。 请注意，数组中的值会根据它们在表中出现的顺序相继与各列匹配。  
   
- 下面的示例将10行添加到新创建的**Customers**表中。  
+ 下面的示例将10行添加到新创建的 **Customers** 表中。  
   
 ```vb  
 Dim workRow As DataRow  
@@ -86,7 +87,7 @@ for (int i = 0; i <= 9; i++)
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataRow>

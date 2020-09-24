@@ -3,12 +3,12 @@ title: 可复原通信
 description: 构建适用于 Azure 的云本机 .NET 应用 |弹性通信
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 33e4c03c1f3d8c01f72c588326fbb0bdfa512cdd
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 18b26223634efc5c05f680d0cbb7c8cbc2490a59
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613741"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166035"
 ---
 # <a name="resilient-communications"></a>弹性通信
 
@@ -30,15 +30,15 @@ ms.locfileid: "83613741"
 
 ## <a name="service-mesh"></a>服务网格
 
-一种更好的方法是以*服务网格*为依据的技术。 [服务网格](https://www.nginx.com/blog/what-is-a-service-mesh/)是一种可配置的基础结构层，其中内置了用于处理服务通信的功能以及上述其他难题。 它通过将这些问题移到服务代理中来分离这些问题。 代理部署到单独的进程（称为[挎斗](https://docs.microsoft.com/azure/architecture/patterns/sidecar)），以提供与业务代码的隔离。 但是，挎斗链接到服务-它是用它创建的并共享其生命周期。 图6-7 显示了这种情况。
+一种更好的方法是以 *服务网格*为依据的技术。 [服务网格](https://www.nginx.com/blog/what-is-a-service-mesh/)是一种可配置的基础结构层，其中内置了用于处理服务通信的功能以及上述其他难题。 它通过将这些问题移到服务代理中来分离这些问题。 代理部署到一个单独的进程中 (称为 [挎斗](/azure/architecture/patterns/sidecar)) ，以提供与业务代码的隔离。 但是，挎斗链接到服务-它是用它创建的并共享其生命周期。 图6-7 显示了这种情况。
 
 ![使用侧面汽车的服务网格](./media/service-mesh-with-side-car.png)
 
-图 6-7****。 使用侧面汽车的服务网格
+图 6-7  。 使用侧面汽车的服务网格
 
 在上图中，请注意代理如何截获和管理微服务与群集之间的通信。
 
-服务网格以逻辑方式拆分为两个不同的组件：[数据平面](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc)和[控制平面](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc)。 图6-8 显示了这些组件及其责任。
+服务网格以逻辑方式拆分为两个不同的组件： [数据平面](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc) 和 [控制平面](https://blog.envoyproxy.io/service-mesh-data-plane-vs-control-plane-2774e720f7fc)。 图6-8 显示了这些组件及其责任。
 
 ![服务网格控制和数据平面](./media/istio-control-and-data-plane.png)
 
@@ -50,7 +50,7 @@ ms.locfileid: "83613741"
 
 ## <a name="istio-and-envoy"></a>Istio 和 Envoy
 
-虽然目前存在一些服务网格选项，但在撰写本文时， [Istio](https://istio.io/docs/concepts/what-is-istio/)是最受欢迎的。 Istio 是 IBM、Google 和 Lyft 的联合冒险。 这是一个开源产品，可集成到新的或现有的分布式应用程序。 该技术提供了一个一致且完整的解决方案来保护、连接和监视微服务。 其功能包括：
+虽然目前存在一些服务网格选项，但在撰写本文时， [Istio](https://istio.io/docs/concepts/what-is-istio/) 是最受欢迎的。 Istio 是 IBM、Google 和 Lyft 的联合冒险。 这是一个开源产品，可集成到新的或现有的分布式应用程序。 该技术提供了一个一致且完整的解决方案来保护、连接和监视微服务。 其功能包括：
 
 - 使用基于标识的强身份验证和授权在群集中保护服务间通信。
 - 自动负载均衡，适用于 HTTP、 [gRPC](https://grpc.io/)、WEBSOCKET 和 TCP 流量。
@@ -58,7 +58,7 @@ ms.locfileid: "83613741"
 - 支持访问控制、速率限制和配额的可插入策略层和配置 API。
 - 针对群集中的所有流量（包括流入和出口）的自动指标、日志和跟踪。
 
-Istio 实现的关键组件是一种名为[Envoy 代理](https://www.envoyproxy.io/docs/envoy/latest/intro/what_is_envoy)的代理服务。 它与每个服务一起运行，并为以下功能提供平台无关的基础：
+Istio 实现的关键组件是一种名为 [Envoy 代理](https://www.envoyproxy.io/docs/envoy/latest/intro/what_is_envoy)的代理服务。 它与每个服务一起运行，并为以下功能提供平台无关的基础：
 
 - 动态服务发现。
 - 负载均衡。
@@ -74,28 +74,28 @@ Istio 实现的关键组件是一种名为[Envoy 代理](https://www.envoyproxy.
 
 Azure 云支持 Istio，并在 Azure Kubernetes 服务中提供对该服务的直接支持。 以下链接可帮助你入门：
 
-- [在 AKS 中安装 Istio](https://docs.microsoft.com/azure/aks/istio-install)
-- [使用 AKS 和 Istio](https://docs.microsoft.com/azure/aks/istio-scenario-routing)
+- [在 AKS 中安装 Istio](/azure/aks/istio-install)
+- [使用 AKS 和 Istio](/azure/aks/istio-scenario-routing)
 
 ### <a name="references"></a>参考
 
 - [Polly](http://www.thepollyproject.org/)
 
-- [重试模式](https://docs.microsoft.com/azure/architecture/patterns/retry)
+- [重试模式](/azure/architecture/patterns/retry)
 
-- [断路器模式](https://docs.microsoft.com/azure/architecture/patterns/circuit-breaker)
+- [断路器模式](/azure/architecture/patterns/circuit-breaker)
 
 - [Azure 白皮书中的复原能力](https://azure.microsoft.com/mediahandler/files/resourcefiles/resilience-in-azure-whitepaper/Resilience%20in%20Azure.pdf)
 
 - [网络延迟](https://www.techopedia.com/definition/8553/network-latency)
 
-- [冗余](https://docs.microsoft.com/azure/architecture/guide/design-principles/redundancy)
+- [冗余](/azure/architecture/guide/design-principles/redundancy)
 
-- [异地复制](https://docs.microsoft.com/azure/sql-database/sql-database-active-geo-replication)
+- [异地复制](/azure/sql-database/sql-database-active-geo-replication)
 
-- [Azure 流量管理器](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview)
+- [Azure 流量管理器](/azure/traffic-manager/traffic-manager-overview)
 
-- [自动缩放指南](https://docs.microsoft.com/azure/architecture/best-practices/auto-scaling)
+- [自动缩放指南](/azure/architecture/best-practices/auto-scaling)
 
 - [Istio](https://istio.io/docs/concepts/what-is-istio/)
 
