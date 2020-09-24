@@ -1,15 +1,15 @@
 ---
 title: 使用索引和范围探索数据范围
-description: 本高级教程教你使用索引和范围来探索数据，以检查顺序数据集的切片。
-ms.date: 03/11/2020
+description: 本高级教程教你使用索引和范围来探索数据，以检查顺序数据集的连续范围。
+ms.date: 09/11/2020
 ms.technology: csharp-fundamentals
 ms.custom: mvc
-ms.openlocfilehash: 82aad968e2efc437c82a7c8250bcd108b60b09e1
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: cf6c83484332ed517b2326b3fd9d7458f191227e
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79156489"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738861"
 ---
 # <a name="indices-and-ranges"></a>索引和范围
 
@@ -60,7 +60,7 @@ string[] words = new string[]
 
 [!code-csharp[Range](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_Range)]
 
-以下代码使用“lazy”和“dog”创建一个子范围。 它包括 `words[^2]` 和 `words[^1]`。 结束索引 `words[^0]` 不包括在内。 同样添加以下代码：
+以下代码使用“lazy”和“dog”返回范围。 它包括 `words[^2]` 和 `words[^1]`。 结束索引 `words[^0]` 不包括在内。 同样添加以下代码：
 
 [!code-csharp[LastRange](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_LastRange)]
 
@@ -78,11 +78,18 @@ string[] words = new string[]
 
 ## <a name="type-support-for-indices-and-ranges"></a>索引和范围的类型支持
 
-索引和范围提供清晰、简洁的语法来访问序列中的单个元素或元素的子范围。 索引表达式通常返回序列元素的类型。 范围表达式通常返回与源序列相同的序列类型。
+索引和范围提供清晰、简洁的语法来访问序列中的单个元素或元素的范围。 索引表达式通常返回序列元素的类型。 范围表达式通常返回与源序列相同的序列类型。
 
 若任何类型提供带 <xref:System.Index> 或 <xref:System.Range> 参数的[索引器](../programming-guide/indexers/index.md)，则该类型可分别显式支持索引或范围。 采用单个 <xref:System.Range> 参数的索引器可能会返回不同的序列类型，如 <xref:System.Span%601?displayProperty=nameWithType>。
 
-若类型包含名称为 `Length` 或 `Count` 的属性，属性有可访问的 Getter 并且其返回类型为 `int`，则此类型为可计数类型。 不显式支持索引或范围的可计数类型可能为它们提供隐式支持。 有关详细信息，请参阅[功能建议说明](~/_csharplang/proposals/csharp-8.0/ranges.md)的[隐式索引支持](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support)和[隐式范围支持](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support)部分。 使用隐式范围支持的范围将返回与源序列相同的序列类型。
+> [!IMPORTANT]
+> 使用范围运算符的代码的性能取决于序列操作数的类型。
+>
+> 范围运算符的时间复杂度取决于序列类型。 例如，如果序列是 `string` 或数组，则结果是输入中指定部分的副本，因此，时间复杂度为 O(N)（其中 N 是范围的长度）。 另一方面，如果它是 <xref:System.Span%601?displayProperty=nameWithType> 或 <xref:System.Memory%601?displayProperty=nameWithType>，则结果引用相同的后备存储，这意味着没有副本且操作为 O(1)。
+>
+> 除了时间复杂度外，这还会产生额外的分配和副本，从而影响性能。 在性能敏感的代码中，考虑使用 `Span<T>` 或 `Memory<T>` 作为序列类型，因为不会为其分配范围运算符。
+
+若类型包含名称为 `Length` 或 `Count` 的属性，属性有可访问的 Getter 并且其返回类型为 `int`，则此类型为可计数类型。**** 不显式支持索引或范围的可计数类型可能为它们提供隐式支持。 有关详细信息，请参阅[功能建议说明](~/_csharplang/proposals/csharp-8.0/ranges.md)的[隐式索引支持](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support)和[隐式范围支持](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support)部分。 使用隐式范围支持的范围将返回与源序列相同的序列类型。
 
 例如，以下 .NET 类型同时支持索引和范围：<xref:System.String>、<xref:System.Span%601> 和 <xref:System.ReadOnlySpan%601>。 <xref:System.Collections.Generic.List%601> 支持索引，但不支持范围。
 
@@ -90,8 +97,10 @@ string[] words = new string[]
 
 [!code-csharp[JaggedArrays](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_JaggedArrays)]
 
+在所有情况下，<xref:System.Array> 的范围运算符都会分配一个数组来存储返回的元素。
+
 ## <a name="scenarios-for-indices-and-ranges"></a>索引和范围的应用场景
 
-要分析较大序列的子范围时，通常会使用范围和索引。 在准确读取所涉及的子范围这一方面，新语法更清晰。 本地函数 `MovingAverage` 以 <xref:System.Range> 为参数。 然后，该方法在计算最小值、最大值和平均值时仅枚举该范围。 在项目中尝试以下代码：
+要分析较大序列的一部分时，通常会使用范围和索引。 在准确读取所涉及的序列部分这一方面，新语法更清晰。 本地函数 `MovingAverage` 以 <xref:System.Range> 为参数。 然后，该方法在计算最小值、最大值和平均值时仅枚举该范围。 在项目中尝试以下代码：
 
 [!code-csharp[MovingAverages](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_MovingAverage)]

@@ -5,12 +5,12 @@ ms.date: 05/03/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc, how-to
-ms.openlocfilehash: 735782a4a0877a917b6e1885f009aa49d834170f
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 50f35e3511acc344339b1e150b47d7ce6de94254
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "73976969"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679555"
 ---
 # <a name="re-train-a-model"></a>重新训练模型
 
@@ -51,7 +51,7 @@ ITransformer trainedModel = mlContext.Model.Load("ogd_model.zip", out modelSchem
 
 ## <a name="extract-pre-trained-model-parameters"></a>提取预先训练的模型参数
 
-加载模型后，通过访问预先训练模型的 [`Model`](xref:Microsoft.ML.Data.PredictionTransformerBase`1.Model*) 属性来提取已学习的模型参数。 使用线性回归模型 [`OnlineGradientDescentTrainer`](xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer) 训练预先训练的模型，该线性回归模型可创建输出 [`LinearRegressionModelParameters`](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters) 的 [`RegressionPredictionTransformer`](xref:Microsoft.ML.Data.RegressionPredictionTransformer%601)。 这些线性回归模型参数包含模型已学习的偏差和权重或系数。 这些值将用作新的重新训练模型的起点。
+加载模型后，通过访问预先训练模型的 [`Model`](xref:Microsoft.ML.Data.PredictionTransformerBase%601.Model%2A) 属性来提取已学习的模型参数。 使用线性回归模型 [`OnlineGradientDescentTrainer`](xref:Microsoft.ML.Trainers.OnlineGradientDescentTrainer) 训练了预先训练的模型，该线性回归模型可创建输出 [`LinearRegressionModelParameters`](xref:Microsoft.ML.Trainers.LinearRegressionModelParameters) 的 [`RegressionPredictionTransformer`](xref:Microsoft.ML.Data.RegressionPredictionTransformer%601)。 这些线性回归模型参数包含模型已学习的偏差和权重或系数。 这些值将用作新的重新训练模型的起点。
 
 ```csharp
 // Extract trained model parameters
@@ -61,7 +61,7 @@ LinearRegressionModelParameters originalModelParameters =
 
 ## <a name="re-train-model"></a>重新训练模型
 
-重新训练模型的过程与训练模型的过程没有什么不同。 唯一的区别是，除了数据之外，[`Fit`](xref:Microsoft.ML.Trainers.OnlineLinearTrainer`2.Fit*) 方法还将原始学习模型参数作为输入，并将它们用作重新训练过程的起点。
+重新训练模型的过程与训练模型的过程没有什么不同。 唯一的区别是，除了数据之外，[`Fit`](xref:Microsoft.ML.Trainers.OnlineLinearTrainer%602.Fit%2A) 方法还将原始学习模型参数作为输入，并将它们用作重新训练过程的起点。
 
 ```csharp
 // New Data

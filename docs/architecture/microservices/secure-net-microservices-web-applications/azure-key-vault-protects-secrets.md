@@ -3,12 +3,12 @@ title: 在生产时使用 Azure Key Vault 保护机密
 description: .NET 微服务和 Web 应用程序中的安全性 - Azure Key Vault 是处理完全由管理员控制的应用程序机密的绝佳方式。 管理员甚至可以在不需要开发人员处理的情况下分配和撤销开发值。
 author: mjrousos
 ms.date: 01/30/2020
-ms.openlocfilehash: cc95d491136c945255408cec2bd49d4d6579e29a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d2683b215633df719dc1ecf4d1710665865c9df2
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "77501751"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679105"
 ---
 # <a name="use-azure-key-vault-to-protect-secrets-at-production-time"></a>在生产时使用 Azure Key Vault 保护机密
 
@@ -48,8 +48,8 @@ Microsoft.Extensions.Configuration.AzureKeyVault  包允许 ASP.NET Core 应用�
 - **ASP.NET Core 中的数据保护密钥管理和生存期信息** \
   [https://docs.microsoft.com/aspnet/core/security/data-protection/configuration/default-settings](/aspnet/core/security/data-protection/configuration/default-settings)
 
-- Microsoft.Extensions.Configuration.KeyPerFile  GitHub 存储库。 \
-  <https://github.com/dotnet/extensions/tree/master/src/Configuration/Config.KeyPerFile>
+- Microsoft.Extensions.Configuration GitHub 存储库。 \
+  <https://github.com/dotnet/extensions/tree/master/src/Configuration>
 
 >[!div class="step-by-step"]
 >[上一页](developer-app-secrets-storage.md)

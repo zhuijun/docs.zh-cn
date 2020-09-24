@@ -2,12 +2,12 @@
 title: 将 NoSQL 数据库用作持久性基础结构
 description: 大致了解 NoSQL 数据库（特别是 Azure Cosmos DB）作为持久性实现选项的使用情况。
 ms.date: 01/30/2020
-ms.openlocfilehash: a478809895b0c20824f08f20558f2d47e10223d0
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: c4f9199b9e88a39581437eca340e92f4fd450003
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100803"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738796"
 ---
 # <a name="use-nosql-databases-as-a-persistence-infrastructure"></a>将 NoSQL 数据库用作持久性基础结构
 
@@ -156,7 +156,7 @@ Cosmos DB 数据库支持 .NET 的 MongoDB API 以及本地 MongoDB 网络协议
 
 我们在 eShopOnContainers 中使用 MongoDB API，因为我们的首要任务是从根本上拥有使用 NoSQL 数据库的一致开发/测试环境，该数据库也可以与 Azure Cosmos DB 一起使用。
 
-但是，如果打算使用 MongoDB API 访问 Azure 中的 Azure Cosmos 数据库以获取生产应用程序，则应该分析与使用本机 Azure Cosmos DB API 相比，使用 MongoDB API 访问 Azure Cosmos DB 数据库时的功能和性能差异。 如果相似，则可以使用 MongoDB API，并且可以获取同时支持两个 NoSQL 数据库引擎的好处。
+但是，如果打算使用 MongoDB API 访问 Azure 中的 Azure Cosmos DB 以实现生产应用程序，则应该分析与使用本机 Azure Cosmos DB API 相比，使用 MongoDB API 访问 Azure Cosmos DB 数据库的功能和性能差异。 如果相似，则可以使用 MongoDB API，并且可以获取同时支持两个 NoSQL 数据库引擎的好处。
 
 此外，也可以将 MongoDB 群集作为 Azure 云中的生产数据库与 [MongoDB Azure 服务](https://www.mongodb.com/scale/mongodb-azure-service)一起使用。 但这不是由 Microsoft 提供的 PaaS 服务。 在这种情况下，Azure 只托管来自 MongoDB 的解决方案。
 

@@ -2,12 +2,12 @@
 title: Windows 窗体重大更改
 description: 列出适用于 .NET Core 和 .NET 5 的 Windows 窗体中的中断性变更。
 ms.date: 09/08/2020
-ms.openlocfilehash: c3d2d23601d6a2d9d44761c4371fe34d3d5ed1f3
-ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+ms.openlocfilehash: 3e7d077d07203d9c231ae4a7805e593c5432c135
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656324"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678990"
 ---
 # <a name="breaking-changes-in-windows-forms"></a>Windows 窗体中的中断性变更
 
@@ -17,6 +17,7 @@ ms.locfileid: "89656324"
 
 | 重大更改 | 引入的版本 |
 | - | :-: |
+| [对于 WPF 和 WinForms 应用，OutputType 设置为 WinExe](#outputtype-set-to-winexe-for-wpf-and-winforms-apps) | 5.0 |
 | [与 DataGridView 相关的 API 现在引发 InvalidOperationException](#datagridview-related-apis-now-throw-invalidoperationexception) | 5.0 |
 | [WinForms 和 WPF 应用使用 Microsoft.NET.Sdk](#winforms-and-wpf-apps-use-microsoftnetsdk) | 5.0 |
 | [已删除的状态栏控件](#removed-status-bar-controls) | 5.0 |
@@ -38,6 +39,10 @@ ms.locfileid: "89656324"
 | [不支持 UseLegacyImages 兼容性开关](#uselegacyimages-compatibility-switch-not-supported) | 3.0 |
 
 ## <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE [automatically-infer-winexe-output-type](../../../includes/core-changes/windowsforms/5.0/automatically-infer-winexe-output-type.md)]
+
+***
 
 [!INCLUDE [null-owner-causes-invalidoperationexception](../../../includes/core-changes/windowsforms/5.0/null-owner-causes-invalidoperationexception.md)]
 

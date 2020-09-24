@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - value keyword [C#]
 ms.assetid: c99d6468-687f-4a46-89b4-a95e1b00bf6d
-ms.openlocfilehash: f72e9f097880d9de725a85a0973001baaefd9a9c
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: ad2eb6f12d8c295dc5203994d6c570cd2377e3ee
+ms.sourcegitcommit: 43ed174f085840ca18a791dc89fe833174da766d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89141733"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90828911"
 ---
 # <a name="value-c-reference"></a>value（C# 参考）
 
@@ -20,7 +20,7 @@ ms.locfileid: "89141733"
 
 [!code-csharp[csrefKeywordsModifiers#26](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#26)]
 
-有关详细信息，请参阅[属性](../../programming-guide/classes-and-structs/properties.md)和[索引器](../../programming-guide/indexers/index.md)一文。
+有关详细信息，请参阅[属性](../../programming-guide/classes-and-structs/properties.md)和[索引器](../../programming-guide/indexers/index.md)这两篇文章。
 
 ## <a name="c-language-specification"></a>C# 语言规范
 

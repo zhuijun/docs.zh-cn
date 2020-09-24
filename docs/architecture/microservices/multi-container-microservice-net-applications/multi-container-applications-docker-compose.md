@@ -2,12 +2,12 @@
 title: 使用 docker-compose.yml 定义多容器应用程序
 description: 如何使用 docker-compose.yml 指定多容器应用程序的微服务组合。
 ms.date: 01/30/2020
-ms.openlocfilehash: 029fad8bb912457872dd5817a2f76aed57dc53c6
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: 47f2bf9bcdbf021ec4232ff9e25f6b2b228aaeaa
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888223"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539302"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>使用 docker-compose.yml 定义多容器应用程序
 
@@ -436,7 +436,7 @@ Docker-compose 要求 .env 文件中的每行都是 \<variable\>=\<value\> 格�
 
 如果查看 Internet 上源代码的 Docker 和 .NET Core ，则会发现 Dockerfiles 会将源代码源复制到容器，展现生成 Docker 映像的简单性。 这些示例表明，使用简单配置，即可拥有 Docker 映像，同时应用程序还会带有环境。 以下示例显示在此情况下的简单 Dockerfile。
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1
 WORKDIR /app
 ENV ASPNETCORE_URLS http://+:80

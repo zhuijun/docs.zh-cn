@@ -1,13 +1,13 @@
 ---
 title: 事务
-ms.date: 12/13/2019
+ms.date: 09/08/2020
 description: 了解如何使用事务。
-ms.openlocfilehash: 4b72a1573a560ffd1bfd0f54d46ab3b135280976
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 50c4cd1023eac892cafc3ae4395e9168bd8e9f36
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75450380"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678857"
 ---
 # <a name="transactions"></a>事务
 
@@ -36,3 +36,12 @@ Microsoft.Data.Sqlite 将传递给 <xref:Microsoft.Data.Sqlite.SqliteConnection.
 下面的代码模拟脏读。 请注意，连接字符串必须包含 `Cache=Shared`。
 
 [!code-csharp[](../../../../samples/snippets/standard/data/sqlite/DirtyReadSample/Program.cs?name=snippet_DirtyRead)]
+
+## <a name="deferred-transactions"></a>延迟的事务
+
+从 Microsoft.Data.Sqlite 版本 5.0 开始，可以延迟事务。 这会延迟在数据库中创建实际事务，直到执行第一个命令。 还会根据该事务的命令需求，使该事务逐步从读取事务升级到写入事务。 这有助于在事务期间并发访问数据库。
+
+[!code-csharp[](../../../../samples/snippets/standard/data/sqlite/DeferredTransactionSample/Program.cs?name=snippet_DeferredTransaction)]
+
+> [!WARNING]
+> 如果延迟的事务中的命令导致事务在数据库锁定时从读取事务升级到写入事务，则这些命令可能会失败。 发生这种情况时，应用程序将需要重试整个事务。

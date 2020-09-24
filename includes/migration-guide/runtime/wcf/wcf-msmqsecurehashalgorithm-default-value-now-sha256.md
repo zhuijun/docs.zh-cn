@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 9baca45de1c8994f610815e84fdee8ba3930eb04
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 7c0227980aa5d90f3788783088bcd7cd9509ed66
+ms.sourcegitcommit: 261e0c98a111357692b3b63c596edf0cacf72991
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89496327"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90770943"
 ---
 ### <a name="wcf-msmqsecurehashalgorithm-default-value-is-now-sha256"></a>WCF MsmqSecureHashAlgorithm 现在的默认值为 SHA256
 
@@ -14,13 +14,21 @@ ms.locfileid: "89496327"
 
 #### <a name="suggestion"></a>建议
 
-如果在 .NET Framework 4.7.1 或更高版本中遇到此更改的兼容性问题，则可以通过将以下行添加到 app.config 文件的 <code>&lt;runtime&gt;</code> 部分选择退出更改：<pre><code class="lang-xml">&lt;configuration&gt;&#13;&#10;&lt;runtime&gt;&#13;&#10;&lt;AppContextSwitchOverrides value=&quot;Switch.System.ServiceModel.UseSha1InMsmqEncryptionAlgorithm=true&quot; /&gt;&#13;&#10;&lt;/runtime&gt;&#13;&#10;&lt;/configuration&gt;&#13;&#10;</code></pre>
+如果在 .NET Framework 4.7.1 或更高版本中遇到此更改的兼容性问题，可以将以下行添加到 app.config 文件的 `<runtime>` 部分，以选择退出更改：
 
-| 名称    | 值       |
-|:--------|:------------|
-| 范围   |次要|
-|Version|4.7.1|
-|类型|运行时|
+```xml
+<configuration>
+  <runtime>
+    <AppContextSwitchOverrides value=&quot;Switch.System.ServiceModel.UseSha1InMsmqEncryptionAlgorithm=true&quot; />
+  </runtime>
+</configuration>
+```
+
+| 名称    | 值   |
+|:--------|:--------|
+| 范围   | 次要   |
+| Version | 4.7.1   |
+| 类型    | 运行时 |
 
 #### <a name="affected-apis"></a>受影响的 API
 

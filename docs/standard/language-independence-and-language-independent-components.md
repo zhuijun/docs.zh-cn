@@ -13,16 +13,16 @@ helpviewer_keywords:
 - runtime, language interoperability
 - common language runtime, language interoperability
 ms.assetid: 4f0b77d0-4844-464f-af73-6e06bedeafc6
-ms.openlocfilehash: aa569c0da5b963243596ef440ef37c08b4fae37f
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: b440bce7ad73cfd526b1589e7f19b4cc06be238c
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84288233"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679607"
 ---
 # <a name="language-independence-and-language-independent-components"></a>语言独立性和与语言无关的组件
 
-.NET Framework 是独立于语言的。 这意味着，作为开发人员，您可以使用面向 .NET Framework 的多种语言（例如，C#、C++/CLI、Eiffel、F#、IronPython、IronRuby、PowerBuilder、Visual Basic、Visual COBOL 以及 Windows PowerShell）之一进行开发。 您可以访问针对 .NET Framework 开发的类库的类型和成员，而不必了解它们的初始编写语言，也不必遵循任何原始语言的约定。 如果您是组件开发人员，无论组件采用哪种语言，均可由任何 .NET Framework 应用程序访问。
+.NET Framework 是独立于语言的。 这意味着，作为开发人员，你可以使用面向 .NET Framework 的多种语言（例如，C#、C++/CLI、Eiffel、F#、IronPython、IronRuby、PowerBuilder、Visual Basic、Visual COBOL 以及 Windows PowerShell）之一进行开发。 您可以访问针对 .NET Framework 开发的类库的类型和成员，而不必了解它们的初始编写语言，也不必遵循任何原始语言的约定。 如果您是组件开发人员，无论组件采用哪种语言，均可由任何 .NET Framework 应用程序访问。
 
 > [!NOTE]
 > 本文的第一部分讨论如何创建独立于语言的组件（即以任何语言编写的应用均可以使用的组件）。 还可以从用多种语言编写的源代码创建单个组件或应用；请参阅本文第二部分的[跨语言互操作性](#CrossLang)。
@@ -135,7 +135,7 @@ ms.locfileid: "84288233"
 |成员|[类型成员概述](#members)|全局静态字段和方法不符合 CLS。|36|
 |成员|--|通过使用字段初始化元数据指定文本静态值。 符合 CLS 的文本必须在类型与文本（或基本类型，如果文本为 `enum`）完全相同的字段初始化元数据中指定值。|13|
 |成员|[类型成员概述](#members)|vararg 约束不属于 CLS，并且 CLS 支持的唯一调用约定是标准托管调用约定。|15|
-|命名约定|[命名约定](#naming)|针对用于管理允许启用且包含在标识符中的字符集的 Unicode Standard3.0 ，程序集应遵守其技术报告 15 的附件 7（可通过访问 <https://www.unicode.org/unicode/reports/tr15/tr15-18.html> 在线获得）。 标识符应是由 Unicode 范式 C 定义的规范格式。对于 CLS，如果两个标识符的小写映射（由不区分区域设置的 Unicode、一对一小写映射指定）相同，则它们也相同。 也就是说，对于要在 CLS 下视为不同的两个标识符，它们应以大小写之外的差别进行区分。 但是，若要重写继承的定义，CLI 需要对使用的原始声明进行准确编码。|4|
+|命名约定|[命名约定](#naming)|针对用于管理允许启用且包含在标识符中的字符集的 Unicode Standard3.0 ，程序集应遵守其技术报告 15 的附件 7（可通过访问 <https://www.unicode.org/reports/tr15/tr15-18.html> 在线获得）。 标识符应是由 Unicode 范式 C 定义的规范格式。对于 CLS，如果两个标识符的小写映射（由不区分区域设置的 Unicode、一对一小写映射指定）相同，则它们也相同。 也就是说，对于要在 CLS 下视为不同的两个标识符，它们应以大小写之外的差别进行区分。 但是，若要重写继承的定义，CLI 需要对使用的原始声明进行准确编码。|4|
 |重载|[命名约定](#naming)|在符合 CLS 的范围中引入的所有名称都应是明显独立的类型，除非名称完全相同且通过重载解析。 也就是说，CTS 允许单个类型对方法和字段使用相同的名称，但 CLS 不允许。|5|
 |重载|[命名约定](#naming)|即使 CTS 允许区分不同的签名，但字段和嵌套类型只能由标识符比较区分。 （标识符比较后）具有相同名称的方法、属性和事件应在除返回类型不同之外还具有其他差异，CLS 规则 39 中指定的差异除外。|6|
 |重载|[重载](#overloads)|只可重载属性和方法。|37|

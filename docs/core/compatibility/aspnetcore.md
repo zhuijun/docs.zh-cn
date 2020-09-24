@@ -2,15 +2,15 @@
 title: ASP.NET Core 中断性变更
 titleSuffix: ''
 description: 列出 ASP.NET Core 中的中断性变更。
-ms.date: 09/09/2020
+ms.date: 09/11/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 2af0cc6721b66b1d07b196e4ba330f8425c14752
-ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
+ms.openlocfilehash: 4c3167e9cad193b6a5a11be399e8be529df3be55
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90022982"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539566"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core 中断性变更
 
@@ -25,6 +25,7 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 本页记录了 ASP.NET Core 3.0、3.1 和 5.0 中的以下中断性变更：
 
 - [已删除过时防伪、CORS、诊断、MVC 和路由 API](#obsolete-antiforgery-cors-diagnostics-mvc-and-routing-apis-removed)
+- [身份验证：标记为已过时的 AzureAD.UI 和 AzureADB2C.UI API 和包](#authentication-azureadui-and-azureadb2cui-apis-and-packages-marked-obsolete)
 - [身份验证：Google+ 弃用](#authentication-google-deprecated-and-replaced)
 - [身份验证：已删除 HttpContext.Authentication 属性](#authentication-httpcontextauthentication-property-removed)
 - [身份验证：已替换 Newtonsoft.json 类型](#authentication-newtonsoftjson-types-replaced)
@@ -36,6 +37,7 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 - [Azure:Microsoft 预先指定的 Azure 集成包已删除](#azure-microsoft-prefixed-azure-integration-packages-removed)
 - [BinaryFormatter 序列化方法已过时，并且已在 ASP.NET 应用中禁用](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps)
 - [Blazor：在编译时从组件中剪裁掉无意义的空白](#blazor-insignificant-whitespace-trimmed-from-components-at-compile-time)
+- [Blazor：RenderTreeFrame readonly 公共字段已成为属性](#blazor-rendertreeframe-readonly-public-fields-have-become-properties)
 - [Blazor：NuGet 包的目标框架已更改](#blazor-target-framework-of-nuget-packages-changed)
 - [缓存：已删除 CompactOnMemoryPressure 属性](#caching-compactonmemorypressure-property-removed)
 - [缓存：Microsoft.Extensions.Caching.SqlServer 使用新的 SqlClient 包](#caching-microsoftextensionscachingsqlserver-uses-new-sqlclient-package)
@@ -104,6 +106,10 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 
 ## <a name="aspnet-core-50"></a>ASP.NET Core 5.0
 
+[!INCLUDE[Authentication: AzureAD.UI and AzureADB2C.UI APIs and packages marked obsolete](~/includes/core-changes/aspnetcore/5.0/authentication-aad-packages-obsolete.md)]
+
+***
+
 [!INCLUDE[Authorization: Resource in endpoint routing is HttpContext](~/includes/core-changes/aspnetcore/5.0/authorization-resource-in-endpoint-routing.md)]
 
 ***
@@ -117,6 +123,10 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 ***
 
 [!INCLUDE[Blazor: Insignificant whitespace trimmed from components at compile time](~/includes/core-changes/aspnetcore/5.0/blazor-components-trim-insignificant-whitespace.md)]
+
+***
+
+[!INCLUDE[Blazor: RenderTreeFrame readonly public fields have become properties](~/includes/core-changes/aspnetcore/5.0/blazor-rendertreeframe-fields-become-properties.md)]
 
 ***
 

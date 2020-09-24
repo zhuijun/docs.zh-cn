@@ -10,12 +10,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 7ad2721f12c5d14b61b35ecf7696ff0d6a6f27da
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 72ba79784d3eb1beb43eab8db0a448a7e3b18eb6
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "84289507"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90557835"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>如何在 .NET 中对 JSON 进行序列化和反序列化（封送和拆收）
 
@@ -118,7 +118,7 @@ using System.Text.Json.Serialization;
 * 默认情况下，JSON 会缩小。 可以[对 JSON 进行优质打印](#serialize-to-formatted-json)。
 * 默认情况下，JSON 名称的大小写与 .NET 名称匹配。 可以[自定义 JSON 名称大小写](#customize-json-names-and-values)。
 * 检测到循环引用并引发异常。
-* 当前不包括字段。
+* 当前不包括[字段](../../csharp/programming-guide/classes-and-structs/fields.md)。
 
 支持的类型包括：
 

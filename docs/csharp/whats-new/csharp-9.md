@@ -2,12 +2,12 @@
 title: C# 9.0 中的新增功能 - C# 指南
 description: 简要介绍 C# 9.0 中提供的新功能。
 ms.date: 09/04/2020
-ms.openlocfilehash: 80d636db04655650c7448590cd1042cdb1b17de1
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: a8b66d21514b57d8bee3ff54b2a707af391fe7a9
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065027"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738718"
 ---
 # <a name="whats-new-in-c-90"></a>C# 9.0 中的新增功能
 
@@ -224,7 +224,7 @@ if (e is not null)
 
 可使用 `return new();` 表达式返回由默认构造函数创建的实例。
 
-类似的功能可改进条件表达式的目标类型解析。 进行此更改后，两个表达式无需从一个隐式转换到另一个，而是都可隐式转换为通用类型。 你可能不会注意到此更改。 你会注意到，某些以前需要强制转换或无法编译的条件表达式现在可以正常工作。
+类似的功能可改进条件表达式的目标类型解析。 进行此更改后，两个表达式无需从一个隐式转换到另一个，而是都可隐式转换为目标类型。 你可能不会注意到此更改。 你会注意到，某些以前需要强制转换或无法编译的条件表达式现在可以正常工作。
 
 从 C# 9.0 开始，可将 `static` 修饰符添加到 Lambda 表达式或匿名方法。 静态 Lambda 表达式类似于 `static` 局部函数：静态 Lambda 或匿名函数无法捕获局部变量或实例状态。 `static` 修饰符可防止意外捕获其他变量。
 

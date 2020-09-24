@@ -2,12 +2,12 @@
 title: Docker 应用开发工作流
 description: 了解用于开发基于 Docker 的应用程序的工作流的详细信息。 分步深入了解有关优化 Dockerfile 的详细信息，最后了解使用 Visual Studio 时使用的简化工作流。
 ms.date: 01/30/2020
-ms.openlocfilehash: 98dc931e10d5e1a3265ebd6f4e1919a6416e9b27
-ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
+ms.openlocfilehash: d32134a10fb9b56e874bbc6218ca2c4d822adb90
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90022930"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90678844"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Docker 应用开发工作流
 
@@ -103,7 +103,7 @@ Docker 应用的开发流程：1 - 编写应用代码，2 - 编写 Dockerfile/s�
 
 以下示例显示了 ASP.NET Core 容器的示例 Dockerfile。
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 ARG source
 WORKDIR /app
@@ -173,7 +173,7 @@ Dockerfile 类似于批处理脚本。 类似于在必须从命令行设置计�
 
 初始 Dockerfile 可能如下所示：
 
-```Dockerfile
+```dockerfile
  1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
@@ -244,7 +244,7 @@ Dockerfile 类似于批处理脚本。 类似于在必须从命令行设置计�
 
 因此，让我们重点关注“生成”阶段，第 5-6 行基本相同，但是第 7-17 行与 eShopOnContainer 中每个服务不同，因此它们必须每次都执行命令，但是如果将第 7-16 行更改为： 
 
-```Dockerfile
+```dockerfile
 COPY . .
 ```
 
@@ -256,7 +256,7 @@ COPY . .
 
 下一个重要的优化涉及在第 17 行中执行的 `restore` 命令，其对于 eShopOnContainers 的每项服务也是不同的。 如果把该行更改为：
 
-```Dockerfile
+```dockerfile
 RUN dotnet restore
 ```
 
@@ -276,7 +276,7 @@ RUN dotnet restore
 
 生成的文件为：
 
-```Dockerfile
+```dockerfile
  1  FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
  2  WORKDIR /app
  3  EXPOSE 80
@@ -496,7 +496,7 @@ docker run -t -d -p 80:5000 cesardl/netcore-webapi-microservice-docker:first
 ### <a name="additional-resources"></a>其他资源
 
 - 将 ASP.NET 容器部署到远程 Docker 主机   \
-  <https://docs.microsoft.com/azure/vs-azure-tools-docker-hosting-web-apps-in-docker>
+  <https://docs.microsoft.com/visualstudio/containers/hosting-web-apps-in-docker>
 
 ### <a name="a-note-about-testing-and-deploying-with-orchestrators"></a>有关使用业务流程协调程序进行测试和部署的注意事项
 
@@ -559,7 +559,7 @@ Docker 应用的开发流程：1 - 编写应用代码，2 - 编写 Dockerfile/s�
 
 [Windows 容器](https://docs.microsoft.com/virtualization/windowscontainers/about/index)允许开发人员将现有 Windows 应用程序转换为 Docker 映像，并使用与 Docker 生态系统其余部分相同的工具进行部署。 若要使用 Windows 容器，请在 Dockerfile 中运行 PowerShell 命令，如以下示例所示：
 
-```Dockerfile
+```dockerfile
 FROM mcr.microsoft.com/windows/servercore
 LABEL Description="IIS" Vendor="Microsoft" Version="10"
 RUN powershell -Command Add-WindowsFeature Web-Server
@@ -568,7 +568,7 @@ CMD [ "ping", "localhost", "-t" ]
 
 本示例中使用的是 Windows Server Core 基础映像（FROM 设置），并使用 PowerShell 命令（RUN 设置）来安装 IIS。 同样，也可使用 PowerShell 命令来设置其他组件，如 ASP.NET 4.x、.NET 4.6 或任何其他 Windows 软件。 例如，Dockerfile 中的以下命令可设置 ASP.NET 4.5：
 
-```Dockerfile
+```dockerfile
 RUN powershell add-windowsfeature web-asp-net45
 ```
 

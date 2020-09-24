@@ -2,12 +2,12 @@
 title: 处理部分失败错误
 description: 了解如何妥善处理部分失败错误。 微服务可能无法完全正常运行，但仍可以执行一些有用的工作。
 ms.date: 10/16/2018
-ms.openlocfilehash: 0300719360e1a2500db0af8454c91fdfe2e5b09b
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 3345fffe3a38b8336d71ebb9c88e76d3315fd2e2
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988865"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738757"
 ---
 # <a name="handle-partial-failure"></a>处理部分失败错误
 
@@ -19,7 +19,7 @@ ms.locfileid: "80988865"
 
 **图 8-1**。 因依赖性影响服务线程可用性而出现的部分失败错误
 
-在基于微服务的大型应用程序中，任何部分失败错误都可能被放大，尤其是在大多数内部微服务交互都基于同步 HTTP 调用的情况下（这种情况被视为反模式）。 想想一个每天接收上百万传入调用的系统。 如果系统采用基于同步 HTTP 调用长链的不当设计，那么这些传入调用可能会再产生数百万对数十个内部微服务的传出调用（假设比例为 1:4）作为同步依赖项。 图 8-2 中显示了这种情况，尤其是依赖关系 \#3，它启动链，调用依赖项 #4。 从而导致调用 #5。
+在基于微服务的大型应用程序中，任何部分失败错误都可能被放大，尤其是在大多数内部微服务交互都基于同步 HTTP 调用的情况下（这种情况被视为反模式）。 想想一个每天接收上百万传入调用的系统。 如果系统采用基于同步 HTTP 调用长链的不当设计，那么这些传入调用可能会再产生数百万对数十个内部微服务的传出调用（假设比例为 1:4）作为同步依赖项。 图 8-2 中显示了这种情况，尤其是依赖项 \#3，它启动链，调用依赖项 #4，该依赖项又调用 #5。
 
 ![显示多个分布式依赖项的关系图。](./media/handle-partial-failure/multiple-distributed-dependencies.png)
 

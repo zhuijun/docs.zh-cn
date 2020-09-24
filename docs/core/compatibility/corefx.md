@@ -2,12 +2,12 @@
 title: 基类库的重大更改
 description: 列出核心 .NET 库中的重大更改。
 ms.date: 07/27/2020
-ms.openlocfilehash: c73909514bc738387a21f5ea68defe49c6a2c839
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: c3207ac7630d794f77c793cc6d1d52e158c0c084
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598167"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738811"
 ---
 # <a name="core-net-libraries-breaking-changes"></a>核心 .NET 库重大更改
 
@@ -17,6 +17,8 @@ ms.locfileid: "89598167"
 
 | 重大更改 | 引入的版本 |
 | - | :-: |
+| [RC1 中的参数名称已更改](#parameter-names-changed-in-rc1) | 5.0 |
+| [已重命名或已删除 OSPlatform 属性](#osplatform-attributes-renamed-or-removed) | 5.0 |
 | [Thread.Abort 已过时](#threadabort-is-obsolete) | 5.0 |
 | [ConsoleLoggerOptions 上已过时的属性](#obsolete-properties-on-consoleloggeroptions) | 5.0 |
 | [嵌套类型的硬件内部 IsSupported 检查可能有所不同](#hardware-intrinsic-issupported-checks-may-differ-for-nested-types) | 5.0 |
@@ -53,6 +55,14 @@ ms.locfileid: "89598167"
 | [Process.StartInfo 对未启动的进程引发 InvalidOperationException](#processstartinfo-throws-invalidoperationexception-for-processes-you-didnt-start) | 1.0 |
 
 ## <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE [reference-assembly-parameter-names-rc1](../../../includes/core-changes/corefx/5.0/reference-assembly-parameter-names-rc1.md)]
+
+***
+
+[!INCLUDE [os-platform-attributes-renamed](../../../includes/core-changes/corefx/5.0/os-platform-attributes-renamed.md)]
+
+***
 
 [!INCLUDE [thread-abort-obsolete](../../../includes/core-changes/corefx/5.0/thread-abort-obsolete.md)]
 

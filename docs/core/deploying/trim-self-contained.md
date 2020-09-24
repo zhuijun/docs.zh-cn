@@ -4,12 +4,12 @@ description: 了解如何剪裁独立应用以减小其大小。 .NET Core 将�
 author: jamshedd
 ms.author: jamshedd
 ms.date: 04/03/2020
-ms.openlocfilehash: 9c2994c98a2ebe6f45b056256c2bda28db017fbf
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 1ebcac51331407069e26b49e40bb6e071cefb752
+ms.sourcegitcommit: 261e0c98a111357692b3b63c596edf0cacf72991
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465476"
+ms.lasthandoff: 09/18/2020
+ms.locfileid: "90770450"
 ---
 # <a name="trim-self-contained-deployments-and-executables"></a>剪裁独立部署和可执行文件
 
@@ -24,7 +24,7 @@ ms.locfileid: "89465476"
 使用 `TrimMode` 设置来配置应用程序的剪裁模式。 默认值为 `copyused`，并在应用程序中捆绑引用的程序集。 `link` 值与 Blazor WebAssembly 应用程序一起使用，并剪裁程序集内未使用的代码。 如果无法进行完整的依赖项分析，剪裁分析警告会提供代码模式信息。 这些警告默认会被取消，可以通过将标志 `SuppressTrimAnalysisWarnings` 设置为 `false` 来启用。 有关可用选项的详细信息，请参阅[剪裁选项](trimming-options.md)。
 
 > [!NOTE]
-> 剪裁是 .NET Core 3.1、5.0 中的实验性功能，只能用于独立发布的应用程序。
+> 剪裁是 .NET Core 3.1 和 .NET 5.0 中的实验性功能。 剪裁只能用于独立发布的应用程序。
 
 ## <a name="prevent-assemblies-from-being-trimmed"></a>防止剪裁程序集
 

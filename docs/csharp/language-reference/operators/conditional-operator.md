@@ -1,7 +1,7 @@
 ---
 description: '?: 运算符 - C# 参考'
 title: '?: 运算符 - C# 参考'
-ms.date: 03/06/2020
+ms.date: 09/17/2020
 f1_keywords:
 - ?:_CSharpKeyword
 - ?_CSharpKeyword
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: 0efa6de2b537fd3af76807938ac2b50a2716561f
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: b6add045983619169bed0cd9f32eb27dba0a0338
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89122350"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738874"
 ---
 # <a name="-operator-c-reference"></a>?: 运算符（C# 参考）
 
@@ -29,7 +29,13 @@ condition ? consequent : alternative
 
 `condition` 表达式的计算结果必须为 `true` 或 `false`。 若 `condition` 的计算结果为 `true`，将计算 `consequent`，其结果成为运算结果。 若 `condition` 的计算结果为 `false`，将计算 `alternative`，其结果成为运算结果。 只会计算 `consequent` 或 `alternative`。
 
-`consequent` 和 `alternative` 的类型必须相同，或者必须存在从一种类型到另一种类型的隐式转换。
+从 C# 9.0 开始，条件表达式由目标确定类型。 也就是说，如果条件表达式的目标类型是已知的，则 `consequent` 和 `alternative` 的类型必须可隐式转换为目标类型，如以下示例所示：
+
+[!code-csharp[target-typed conditional](snippets/shared/ConditionalOperator.cs#TargetTyped)]
+
+如果条件表达式的目标类型是未知的（例如使用 [`var`](../keywords/var.md) 关键字时）或者采用 C# 8.0 及更早版本，则 `consequent` 和 `alternative` 的类型必须相同，或者必须存在从一种类型到另一种类型的隐式转换：
+
+[!code-csharp[not target-typed conditional](snippets/shared/ConditionalOperator.cs#NotTargetTyped)]
 
 条件运算符为右联运算符，即形式的表达式
 
@@ -66,7 +72,7 @@ condition ? ref consequent : ref alternative
 
 ref 条件表达式与原始的条件运算符相似，仅计算两个表达式其中之一：`consequent` 或 `alternative`。
 
-在 ref 条件表达式中，`consequent` 和 `alternative` 的类型必须相同。
+在 ref 条件表达式中，`consequent` 和 `alternative` 的类型必须相同。 ref 条件表达式不由目标确定类型。
 
 下面的示例演示 ref 条件表达式的用法：
 
@@ -86,7 +92,10 @@ ref 条件表达式与原始的条件运算符相似，仅计算两个表达式�
 
 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)的[条件运算符](~/_csharplang/spec/expressions.md#conditional-operator)部分。
 
-有关条件 ref 表达式的详细信息，请参阅[功能建议说明](~/_csharplang/proposals/csharp-7.2/conditional-ref.md)。
+有关 C# 7.2 及更高版本中添加的功能的详细信息，请参阅以下功能建议说明：
+
+- [ref 条件表达式 (C# 7.2)](~/_csharplang/proposals/csharp-7.2/conditional-ref.md)
+- [目标类型的条件表达式 (C# 9.0)](~/_csharplang/proposals/csharp-9.0/target-typed-conditional-expression.md)
 
 ## <a name="see-also"></a>请参阅
 

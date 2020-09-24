@@ -3,19 +3,19 @@ title: 实现 DisposeAsync 方法
 description: 了解如何实现 DisposeAsync 和 DisposeAsyncCore 方法来执行异步资源清理。
 author: IEvangelist
 ms.author: dapine
-ms.date: 09/10/2020
+ms.date: 09/16/2020
 ms.technology: dotnet-standard
 dev_langs:
 - csharp
 helpviewer_keywords:
 - DisposeAsync method
 - garbage collection, DisposeAsync method
-ms.openlocfilehash: 88adf9e484baa0e65e2ff093b4649cf35b8c86dc
-ms.sourcegitcommit: 6d4ee46871deb9ea1e45bb5f3784474e240bbc26
+ms.openlocfilehash: 6ddfd860571d883e20fdb18985fe2bc2d9477dec
+ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/11/2020
-ms.locfileid: "90022904"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90720278"
 ---
 # <a name="implement-a-disposeasync-method"></a>实现 DisposeAsync 方法
 
@@ -77,7 +77,7 @@ public async ValueTask DisposeAsync()
 
 :::code language="csharp" source="../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.asyncdisposable/dispose-and-disposeasync.cs":::
 
-<xref:System.IDisposable.Dispose?displayProperty=nameWithType> 和 <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> 实现都是简单的样板代码。 `Dispose(bool)` 和 `DisposeAsyncCore()` 方法首先检查 `_disposed` 是否为 `true`，以及是否仅在其为 `false` 时运行。
+<xref:System.IDisposable.Dispose?displayProperty=nameWithType> 和 <xref:System.IAsyncDisposable.DisposeAsync?displayProperty=nameWithType> 实现都是简单的样板代码。
 
 在 `Dispose(bool)` 重载方法中，如果 <xref:System.IDisposable> 实例不为 `null`，则有条件地将其释放。 <xref:System.IAsyncDisposable> 实例被强制转换为 <xref:System.IDisposable>，如果该实例也不为 `null`，也将被释放。 然后，将这两个实例都分配给 `null`。
 

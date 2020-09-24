@@ -2,12 +2,12 @@
 title: 使用 .NET Core 实现微服务域模型
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 获取面向 DDD 的域模型的实现详细信息。
 ms.date: 10/08/2018
-ms.openlocfilehash: 0b42ecc2440faf5870b2d99e31d03cda00b21ce0
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 4017d9d658ff73fd935507dad79e9ffab7973de1
+ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306899"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "90738744"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>使用 .NET Core 实现微服务域模型
 
@@ -154,7 +154,7 @@ myOrder.AddOrderItem(productId, productName, pictureUrl, unitPrice, discount, un
 
 使用 Entity Framework Core 1.1 或更高版本时，可以更好地表示 DDD 实体，因为它允许[映射到字段](https://docs.microsoft.com/ef/core/modeling/backing-field)以及属性。 这在保护子实体或值对象集合时很有用。 借助此增强功能，你可以使用简单的私有字段，而不必使用属性，并且可以在公共方法中实现对字段集合的任何更新，并通过 AsReadOnly 方法提供只读访问。
 
-在 DDD 中，你想通过实体（或构造函数）中的方法只更新实体，以便控制任何不变量和数据一致性，因此，属性定义为仅具有 get 取值函数。 这些属性受私有字段支持。 只能从类中访问私有成员。 但是，有一个例外：EF Core 也需要设置这些字段（这样它就可以返回具有适当值的对象）。
+在 DDD 中，你想通过实体（或构造函数）中的方法只更新实体，以便控制任何不变量和数据一致性，因此，属性定义为仅具有 get 取值函数。 这些属性受私有字段支持。 只能从类中访问私有成员。 但是，有一种例外情况：EF Core 也需要设置这些字段（这样它就可以返回具有适当值的对象）。
 
 ### <a name="map-properties-with-only-get-accessors-to-the-fields-in-the-database-table"></a>将仅具有 get 取值函数的属性映射到数据库表中的字段
 

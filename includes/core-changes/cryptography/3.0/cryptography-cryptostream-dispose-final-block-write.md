@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 7766a59131fffe2b436c15a5ff58e67001be7941
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: 6ffd4147a99a59d0a2e50d3f88279608e286aed1
+ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065093"
+ms.lasthandoff: 09/16/2020
+ms.locfileid: "90679986"
 ---
 ### <a name="cryptostreamdispose-transforms-final-block-only-when-writing"></a>CryptoStream.Dispose 仅在写入时转换最终块
 
@@ -18,7 +18,7 @@ ms.locfileid: "90065093"
 
 #### <a name="reason-for-change"></a>更改原因
 
-取消网络操作后，此更改将允许从加密流中进行不完整的读取操作，而无需捕获异常。
+由于此更改，当取消网络操作后，将允许从加密流中进行不完整的读取操作，而无需捕获异常。
 
 #### <a name="version-introduced"></a>引入的版本
 

@@ -1,7 +1,7 @@
 ---
 description: foreach，in（C# 参考）
 title: C# foreach 语句
-ms.date: 07/22/2020
+ms.date: 09/18/2020
 f1_keywords:
 - foreach
 - foreach_CSharpKeyword
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - foreach statement [C#]
 - in keyword [C#]
 ms.assetid: 5a9c5ddc-5fd3-457a-9bb6-9abffcd874ec
-ms.openlocfilehash: 2ed89fa52b2d3d369d668bf79ab32eaf7be18a8a
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: ea8a6f86595348a32b707caf9782f84147fefc87
+ms.sourcegitcommit: 43ed174f085840ca18a791dc89fe833174da766d
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89142071"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "90828885"
 ---
 # <a name="foreach-in-c-reference"></a>foreach，in（C# 参考）
 
@@ -25,7 +25,7 @@ ms.locfileid: "89142071"
 
 `foreach` 语句并不限于这些类型。 可以将其与满足以下条件的任何类型的实例一起使用：
 
-- 类型具有公共无参数 `GetEnumerator` 方法，其返回类型为类、结构或接口类型。
+- 类型具有公共无参数 `GetEnumerator` 方法，其返回类型为类、结构或接口类型。 从 C# 9.0 开始，`GetEnumerator` 方法可以是类型的[扩展方法](../../programming-guide/classes-and-structs/extension-methods.md)。
 - `GetEnumerator` 方法的返回类型具有公共 `Current` 属性和公共无参数 `MoveNext` 方法（其返回类型为 <xref:System.Boolean>）。
 
 下面的示例使用 `foreach` 语句，其中包含 <xref:System.Span%601?displayProperty=nameWithType> 类型的实例，该实例不实现任何接口：
@@ -66,6 +66,11 @@ foreach (V item in collection) { }
 ## <a name="c-language-specification"></a>C# 语言规范
 
 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的 [foreach 语句](~/_csharplang/spec/statements.md#the-foreach-statement)部分。
+
+有关 C# 8.0 及更高版本中添加的功能的详细信息，请参阅以下功能建议说明：
+
+- [异步流 (C# 8.0)](~/_csharplang/proposals/csharp-8.0/async-streams.md)
+- [扩展 `GetEnumerator` 支持 `foreach` 循环 (C# 9.0)](~/_csharplang/proposals/csharp-9.0/extension-getenumerator.md)
 
 ## <a name="see-also"></a>请参阅
 

@@ -4,11 +4,12 @@ description: 演示在 openSUSE 上安装 .NET Core SDK 和 .NET Core 运行时�
 author: adegeo
 ms.author: adegeo
 ms.date: 06/04/2020
-ms.openlocfilehash: 24f0a5b5278d038c2f941b0984efcacd91dcbe31
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: ccdb23ca1838d2c15c9a95b45c8505efe7a6df0e
+ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85619463"
+ms.lasthandoff: 09/15/2020
+ms.locfileid: "90539225"
 ---
 # <a name="install-net-core-sdk-or-net-core-runtime-on-opensuse"></a>在 openSUSE 上安装 .NET Core SDK 或 .NET Core 运行时
 
@@ -57,6 +58,10 @@ sudo chown root:root /etc/zypp/repos.d/microsoft-prod.repo
 ## <a name="troubleshoot-the-package-manager"></a>包管理器疑难解答
 
 本部分提供有关使用程序包管理器安装 .NET Core 时可能会遇到的常见错误的信息。
+
+### <a name="unable-to-find-package"></a>找不到包
+
+[!INCLUDE [linux-install-package-manager-x64-vs-arm](includes/linux-install-package-manager-x64-vs-arm.md)]
 
 ### <a name="failed-to-fetch"></a>未能提取
 
