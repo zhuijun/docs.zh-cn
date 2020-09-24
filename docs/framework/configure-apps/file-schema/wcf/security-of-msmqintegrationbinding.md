@@ -2,14 +2,15 @@
 title: <security> 的 <msmqIntegrationBinding>
 ms.date: 03/30/2017
 ms.assetid: ae5c68a8-14a2-4c6e-b9e0-3e94e3e9135e
-ms.openlocfilehash: 2268bf48a2b86c3b3b25db006e6f8f55ea33af73
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: be2f48f7d9c3be4ea0a5fe95436930b3f23c7551
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738691"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170059"
 ---
 # <a name="security-of-msmqintegrationbinding"></a>\<security> 的 \<msmqIntegrationBinding>
+
 定义消息队列 (MSMQ) 集成通道的传输安全设置。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -38,13 +39,14 @@ ms.locfileid: "73738691"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
-|模式|指定使用消息队列集成通道控制完整性、保密性和身份验证的安全类型。 有效值包括以下值：<br /><br /> -None：这将禁用安全性。<br />-Transport：传输提供保护和身份验证。 这适用于两个队列管理器之间的消息安全性。 未在应用程序和队列管理器之间提供安全性。 现有的 Msmq 应用程序与此类型的安全模式功能等效。<br /><br /> 默认值为 `Transport`。 此属性的类型为 <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode>。|  
+|mode|指定使用消息队列集成通道控制完整性、保密性和身份验证的安全类型。 有效值包括以下值：<br /><br /> -None：这将禁用安全性。<br />-Transport：传输提供保护和身份验证。 这适用于两个队列管理器之间的消息安全性。 未在应用程序和队列管理器之间提供安全性。 现有的 Msmq 应用程序与此类型的安全模式功能等效。<br /><br /> 默认值是 `Transport`。 此属性的类型为 <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationSecurityMode>。|  
   
 ### <a name="child-elements"></a>子元素  
   
@@ -58,7 +60,7 @@ ms.locfileid: "73738691"
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|的绑定元素 [\<msmqIntegrationBinding>](msmqintegrationbinding.md) 。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.MsmqIntegrationSecurityElement>
 - <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding.Security%2A>

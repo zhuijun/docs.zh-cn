@@ -3,18 +3,18 @@ title: 关系与NoSQL 数据
 description: 了解云本机应用程序中的关系数据和 NoSQL 数据
 author: robvet
 ms.date: 05/17/2020
-ms.openlocfilehash: cc47faa4fcd4468de9ddc468e488297db4289ff5
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 6e7725c2d67452218d1c6bda89c2fec6aa4a2b96
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613780"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163630"
 ---
 # <a name="relational-vs-nosql-data"></a>关系与NoSQL 数据
 
-关系型和 NoSQL 是通常在云本机应用程序中实现的两种类型的数据库系统。 它们的构建方式不同，以不同的方式存储数据，并以不同的方式进行访问。 在本部分中，我们将介绍这两种情况。 本章稍后将介绍一种名为*NewSQL*的新兴数据库技术。
+关系型和 NoSQL 是通常在云本机应用程序中实现的两种类型的数据库系统。 它们的构建方式不同，以不同的方式存储数据，并以不同的方式进行访问。 在本部分中，我们将介绍这两种情况。 本章稍后将介绍一种名为 *NewSQL*的新兴数据库技术。
 
-*关系数据库*是数十年的普遍技术。 它们是成熟、经过验证且广泛实现的。 竞争的数据库产品、工具和专业知识 abound。 关系数据库提供相关数据表的存储区。 这些表具有固定的架构，使用 SQL （结构化查询语言）来管理数据并支持 ACID 保证。
+*关系数据库* 是数十年的普遍技术。 它们是成熟、经过验证且广泛实现的。 竞争的数据库产品、工具和专业知识 abound。 关系数据库提供相关数据表的存储区。 这些表具有固定架构，使用 SQL (结构化查询语言) 管理数据，并支持 ACID 保证。
 
 非*SQL 数据库指的*是高性能、非关系型数据存储。 它们采用易用性、可伸缩性、复原能力和可用性特征提供了方便。 NoSQL 存储非结构化或半结构化数据，而不是联接规范化数据的表，通常在键值对或 JSON 文档中。 非 SQL 数据库通常不会提供超出单一数据库分区范围的 ACID 保证。 需要第二次响应时间的高容量服务倾向于 NoSQL 数据存储。
 
@@ -26,12 +26,12 @@ NoSQL 数据库包含用于访问和管理数据的多个不同的模型，每�
 
 **图 5-9**： NoSQL 数据库的数据模型
 
-| “模型” | 特征 |
+| 型号 | 特征 |
 | :-------- | :-------- |
 | 文档存储 | 数据和元数据以分层形式存储在数据库中基于 JSON 的文档中。 |
 | 键值存储 | 最简单的 NoSQL 数据库数据以键值对的集合表示。 |
 | 宽列存储 | 相关数据以一组嵌套键/值对的形式存储在单个列中。 |
-| 图形应用商店 | 数据作为节点、边缘和数据属性存储在图形结构中。 |
+| 图形存储 | 数据作为节点、边缘和数据属性存储在图形结构中。 |
 
 ## <a name="the-cap-theorem"></a>CAP 定理
 
@@ -41,7 +41,7 @@ NoSQL 数据库包含用于访问和管理数据的多个不同的模型，每�
 
 **图 5-10**。 CAP 定理
 
-定理指出，分布式数据系统将在一致性、可用性和分区容差之间提供权衡。 而且，任何数据库只能保证三个属性中的*两个*：
+定理指出，分布式数据系统将在一致性、可用性和分区容差之间提供权衡。 而且，任何数据库只能保证三个属性中的 *两个* ：
 
 - *起见.* 群集中的每个节点都将使用最新的数据做出响应，即使在所有副本更新之前，系统都必须阻止请求。 如果查询当前正在更新的项的 "一致性系统"，则将等待该响应，直到所有副本都成功更新。 不过，您将收到最新的数据。
 
@@ -53,7 +53,7 @@ NoSQL 数据库包含用于访问和管理数据的多个不同的模型，每�
 
 许多关系数据库系统都支持内置的复制功能，在这种情况下，可以将主数据库的副本创建到其他辅助服务器实例。 对主实例进行写入操作，并将其复制到每个辅助数据库。 发生故障时，主实例可以故障转移到辅助数据库，以提供高可用性。 辅助副本也可以用于分发读取操作。 尽管写入操作始终针对主副本进行，但读取操作可路由到任何辅助副本以减少系统负载。
 
-数据还可以在多个节点之间水平分区，例如 with[分片](https://docs.microsoft.com/azure/sql-database/sql-database-elastic-scale-introduction)。 但是，分片通过 spitting 不能轻松通信的多个部分中的数据来显著提高运营开销。 管理成本高昂且耗时很高。 最终可能会影响性能、表联接和引用完整性。
+数据还可以在多个节点之间水平分区，例如 with [分片](/azure/sql-database/sql-database-elastic-scale-introduction)。 但是，分片通过 spitting 不能轻松通信的多个部分中的数据来显著提高运营开销。 管理成本高昂且耗时很高。 最终可能会影响性能、表联接和引用完整性。
 
 如果数据副本在 "高度一致" 关系数据库群集中丢失网络连接，则无法写入数据库。 系统将拒绝写入操作，因为它不能将更改复制到其他数据副本。 必须先更新每个数据副本，然后才能完成该事务。
 
@@ -88,7 +88,7 @@ NoSQL 数据库通常支持高可用性和分区容差。 它们通常跨商用�
 
 若要开始，可以预配 Azure 虚拟机，并为每个服务安装所选数据库。 尽管对环境具有完全控制，但放弃云平台的许多内置功能。 你还负责管理每个服务的虚拟机和数据库。 这种方法很快就会变得非常耗时和昂贵。
 
-相反，云本机应用程序倾向于以数据库即服务形式公开的数据服务[（DBaaS）](https://www.stratoscale.com/blog/dbaas/what-is-database-as-a-service/)。 这些服务由云供应商完全托管，提供内置的安全性、可伸缩性和监视。 只需将其用作[后备服务](./definition.md#backing-services)，而不是拥有该服务。 提供程序以大规模方式操作资源，并承担性能和维护责任。
+取而代之的是，云本机应用程序倾向于以数据库即服务形式公开的数据服务 [ (DBaaS) ](https://www.stratoscale.com/blog/dbaas/what-is-database-as-a-service/)。 这些服务由云供应商完全托管，提供内置的安全性、可伸缩性和监视。 只需将其用作 [后备服务](./definition.md#backing-services)，而不是拥有该服务。 提供程序以大规模方式操作资源，并承担性能和维护责任。
 
 可以跨云可用性区域和区域对其进行配置，以实现高可用性。 它们都支持实时容量和即用即付模型。 Azure 具有不同类型的托管数据服务选项，每个选项都有特定的优点。
 
@@ -96,7 +96,7 @@ NoSQL 数据库通常支持高可用性和分区容差。 它们通常跨商用�
 
 ## <a name="azure-relational-databases"></a>Azure 关系数据库
 
-对于需要关系数据的云本地微服务，Azure 提供了四种托管的关系数据库即服务（DBaaS）产品，如图5-11 所示。
+对于需要关系数据的云本地微服务，Azure 提供了四个托管的关系数据库即服务 (DBaaS) 产品/服务，如图5-11 所示。
 
 ![Azure 中的托管关系数据库](./media/azure-managed-databases.png)
 
@@ -109,15 +109,15 @@ NoSQL 数据库通常支持高可用性和分区容差。 它们通常跨商用�
 
 ## <a name="azure-sql-database"></a>Azure SQL Database
 
-Microsoft SQL Server 的专业技能的开发团队应考虑[AZURE SQL 数据库](https://docs.microsoft.com/azure/sql-database/)。 它是一个完全托管的关系数据库即服务（DBaaS），它基于 Microsoft SQL Server 数据库引擎。 该服务共享 SQL Server 的本地版本中发现的许多功能，并运行 SQL Server 数据库引擎的最新稳定版本。
+Microsoft SQL Server 的专业技能的开发团队应考虑 [AZURE SQL 数据库](/azure/sql-database/)。 这是一种完全托管的关系数据库即服务 (DBaaS) 基于 Microsoft SQL Server 的数据库引擎。 该服务共享 SQL Server 的本地版本中发现的许多功能，并运行 SQL Server 数据库引擎的最新稳定版本。
 
 若要与云本机微服务一起使用，可通过三种部署选项使用 Azure SQL 数据库：
 
-- 单一数据库表示在 Azure 云中的[AZURE SQL 数据库服务器](https://docs.microsoft.com/azure/sql-database/sql-database-servers)上运行的完全托管的 sql 数据库。 该数据库被视为[*包含*](https://docs.microsoft.com/sql/relational-databases/databases/contained-databases)，因为它在基础数据库服务器上没有配置依赖关系。
+- 单一数据库表示在 Azure 云中的 [AZURE SQL 数据库服务器](/azure/sql-database/sql-database-servers) 上运行的完全托管的 sql 数据库。 该数据库被视为 [*包含*](/sql/relational-databases/databases/contained-databases) ，因为它在基础数据库服务器上没有配置依赖关系。
   
-- [托管实例](https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance)是 Microsoft SQL Server 数据库引擎的完全托管实例，提供与本地 SQL Server 近乎100% 的兼容性。 此选项支持较大的数据库，最大可达 35 TB，并将其放在[Azure 虚拟网络](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview)中，以便更好地进行隔离。
+- [托管实例](/azure/sql-database/sql-database-managed-instance)是 Microsoft SQL Server 数据库引擎的完全托管实例，提供与本地 SQL Server 近乎100% 的兼容性。 此选项支持较大的数据库，最大可达 35 TB，并将其放在 [Azure 虚拟网络](/azure/virtual-network/virtual-networks-overview) 中，以便更好地进行隔离。
 
-- [AZURE SQL 数据库无服务器](https://docs.microsoft.com/azure/sql-database/sql-database-serverless)是单个数据库的计算层，可根据工作负荷需求自动缩放。 它仅计费每秒使用的计算量。 该服务非常适用于具有间歇、不可预测的使用模式的工作负荷，并与不活动状态发生了一段时间。 无服务器计算层还会在非活动期间自动暂停数据库，以便只对存储费用收费。 当活动返回时，它将自动恢复。
+- [AZURE SQL 数据库无服务器](/azure/sql-database/sql-database-serverless) 是单个数据库的计算层，可根据工作负荷需求自动缩放。 它仅计费每秒使用的计算量。 该服务非常适用于具有间歇、不可预测的使用模式的工作负荷，并与不活动状态发生了一段时间。 无服务器计算层还会在非活动期间自动暂停数据库，以便只对存储费用收费。 当活动返回时，它将自动恢复。
 
 除了传统的 Microsoft SQL Server 堆栈以外，Azure 还提供三个常用开源数据库的托管版本。
 
@@ -127,33 +127,33 @@ Microsoft SQL Server 的专业技能的开发团队应考虑[AZURE SQL 数据库
 
 开发人员可以轻松地在 Azure VM 上自行托管任何开放源代码数据库。 尽管提供完全控制，但这种方法可让你了解如何管理、监视和维护数据库和 VM。
 
-但是，Microsoft 通过提供几个常用的开源数据库作为*完全托管*的 DBaaS 服务，继续致力于使 Azure 成为 "开放平台"。
+但是，Microsoft 通过提供几个常用的开源数据库作为 *完全托管* 的 DBaaS 服务，继续致力于使 Azure 成为 "开放平台"。
 
 ### <a name="azure-database-for-mysql"></a>Azure Database for MySQL
 
-[MySQL](https://en.wikipedia.org/wiki/MySQL)  是一个开源关系数据库和一个支柱，适用于在[灯泡软件堆栈](https://en.wikipedia.org/wiki/LAMP_(software_bundle))上构建的应用程序。 广泛地选择用于*读取繁重*的工作负荷，许多大型组织（包括 Facebook、Twitter 和 YouTube）都将使用它。 社区版免费提供，而 enterprise edition 需要购买许可证。 最初在1995中创建，该产品由的 Sun 2008 Microsystems 购买。 Oracle 在2010中获取 Sun 和 MySQL。
+[MySQL](https://en.wikipedia.org/wiki/MySQL)  是一个开源关系数据库和一个支柱，适用于在[灯泡软件堆栈](https://en.wikipedia.org/wiki/LAMP_(software_bundle))上构建的应用程序。 广泛地选择用于 *读取繁重* 的工作负荷，许多大型组织（包括 Facebook、Twitter 和 YouTube）都将使用它。 社区版免费提供，而 enterprise edition 需要购买许可证。 最初在1995中创建，该产品由的 Sun 2008 Microsystems 购买。 Oracle 在2010中获取 Sun 和 MySQL。
 
-[Azure Database for MySQL](https://azure.microsoft.com/services/mysql/)是基于开源 MySQL Server 引擎的托管关系数据库服务。 它使用 MySQL 社区版。 Azure MySQL 服务器是服务的管理点。 它是用于本地部署的相同 MySQL 服务器引擎。 引擎可以为每个服务器创建一个数据库，也可以为每个共享资源的服务器创建多个数据库。 您可以使用相同的开源工具继续管理数据，而不必学习新技能或管理虚拟机。
+[Azure Database for MySQL](https://azure.microsoft.com/services/mysql/) 是基于开源 MySQL Server 引擎的托管关系数据库服务。 它使用 MySQL 社区版。 Azure MySQL 服务器是服务的管理点。 它是用于本地部署的相同 MySQL 服务器引擎。 引擎可以为每个服务器创建一个数据库，也可以为每个共享资源的服务器创建多个数据库。 您可以使用相同的开源工具继续管理数据，而不必学习新技能或管理虚拟机。
 
 ### <a name="azure-database-for-mariadb"></a>Azure Database for MariaDB
 
-[MariaDB](https://mariadb.com/)服务器是另一个受欢迎的开源数据库服务器。 当 Oracle 购买 Sun Microsystems （拥有 MySQL）时，它是 MySQL 的*分叉*。 目的是确保 MariaDB 保持开源。 由于 MariaDB 是 MySQL 的分叉，数据和表定义是兼容的，客户端协议、结构和 Api 是编织的。
+[MariaDB](https://mariadb.com/) 服务器是另一个受欢迎的开源数据库服务器。 当 Oracle 购买 Sun Microsystems （拥有 MySQL）时，它是 MySQL 的 *分叉* 。 目的是确保 MariaDB 保持开源。 由于 MariaDB 是 MySQL 的分叉，数据和表定义是兼容的，客户端协议、结构和 Api 是编织的。
 
 MariaDB 具有强大的社区，由许多大型企业使用。 尽管 Oracle 继续维护、增强和支持 MySQL，但 MariaDB foundation 管理 MariaDB，允许对产品和文档进行公开贡献。
 
-[Azure Database for MariaDB](https://azure.microsoft.com/services/mariadb/)是 Azure 云中完全托管的关系数据库即服务。 此服务基于 MariaDB 社区版服务器引擎。 它可以处理具有可预测性能和动态可伸缩性的任务关键型工作负荷。
+[Azure Database for MariaDB](https://azure.microsoft.com/services/mariadb/) 是 Azure 云中完全托管的关系数据库即服务。 此服务基于 MariaDB 社区版服务器引擎。 它可以处理具有可预测性能和动态可伸缩性的任务关键型工作负荷。
 
 ### <a name="azure-database-for-postgresql"></a>Azure Database for PostgreSQL
 
-[PostgreSQL](https://www.postgresql.org/)是一种开源关系数据库，其活动开发超过30年。 PostgresSQL 具有可靠性和数据完整性的强大信誉。 它的功能丰富、兼容 SQL 并且被视为比 MySQL 更高的性能，尤其适用于具有复杂查询和繁重写入的工作负荷。 许多大型企业（包括 Apple、Red Hat 和 Fujitsu）都使用 PostgreSQL 构建了产品。
+[PostgreSQL](https://www.postgresql.org/) 是一种开源关系数据库，其活动开发超过30年。 PostgresSQL 具有可靠性和数据完整性的强大信誉。 它的功能丰富、兼容 SQL 并且被视为比 MySQL 更高的性能，尤其适用于具有复杂查询和繁重写入的工作负荷。 许多大型企业（包括 Apple、Red Hat 和 Fujitsu）都使用 PostgreSQL 构建了产品。
 
-[Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/)是一项完全托管的关系数据库服务，它基于开源 Postgres 数据库引擎。 该服务支持许多开发平台，包括 c + +、Java、Python、Node、C \# 和 PHP。 你可以使用[命令行接口](https://datamigration.microsoft.com/scenario/postgresql-to-azurepostgresql?step=1)工具或 Azure 数据迁移服务将 PostgreSQL 数据库迁移到它。
+[Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/) 是一项完全托管的关系数据库服务，它基于开源 Postgres 数据库引擎。 该服务支持许多开发平台，包括 c + +、Java、Python、Node、C \# 和 PHP。 你可以使用 [命令行接口](https://datamigration.microsoft.com/scenario/postgresql-to-azurepostgresql?step=1) 工具或 Azure 数据迁移服务将 PostgreSQL 数据库迁移到它。
 
 Azure Database for PostgreSQL 提供了两个部署选项：
 
-- [单服务器](https://docs.microsoft.com/azure/postgresql/concepts-servers)部署选项是多个数据库的中心管理点，你可以将多个数据库部署到这些数据库中。 根据内核和存储，定价按服务器进行组织。
+- [单服务器](/azure/postgresql/concepts-servers)部署选项是多个数据库的中心管理点，你可以将多个数据库部署到这些数据库中。 根据内核和存储，定价按服务器进行组织。
 
-- [超大规模（Citus）选项](https://azure.microsoft.com/blog/get-high-performance-scaling-for-your-azure-database-workloads-with-hyperscale/)由 Citus 数据技术提供支持。 它通过*水平缩放*数百个节点上的单个数据库来实现高性能，从而提供更快的性能和规模。 此选项允许引擎在内存中容纳更多数据、跨数百个节点进行并行化查询，并更快地为数据编制索引。
+- [超大规模 (Citus) 选项](https://azure.microsoft.com/blog/get-high-performance-scaling-for-your-azure-database-workloads-with-hyperscale/)由 Citus 数据技术提供支持。 它通过 *水平缩放* 数百个节点上的单个数据库来实现高性能，从而提供更快的性能和规模。 此选项允许引擎在内存中容纳更多数据、跨数百个节点进行并行化查询，并更快地为数据编制索引。
 
 ## <a name="nosql-data-in-azure"></a>Azure 中的 NoSQL 数据
 
@@ -173,9 +173,9 @@ Cosmos DB 是 Azure 云中完全托管的全球分布式 NoSQL 数据库服务�
 
 您可以在区域之间或世界各地分布 Cosmos 数据库，将数据放置到用户附近，缩短响应时间并减少延迟。 无需暂停或重新部署服务，即可在区域中添加或删除数据库。 在后台，Cosmos DB 以透明方式将数据复制到每个已配置的区域。
 
-Cosmos DB 支持全局级别的[主动/主动](https://kemptechnologies.com/white-papers/unfog-confusion-active-passive-activeactive-load-balancing/)群集，使你能够配置任何数据库区域以支持*写入和读取*。
+Cosmos DB 支持全局级别的 [主动/主动](https://kemptechnologies.com/white-papers/unfog-confusion-active-passive-activeactive-load-balancing/) 群集，使你能够配置任何数据库区域以支持 *写入和读取*。
 
-[多主机](https://docs.microsoft.com/azure/cosmos-db/multi-master-benefits)协议是 Cosmos DB 中的一项重要功能，可实现以下功能：
+[多主机](/azure/cosmos-db/multi-master-benefits)协议是 Cosmos DB 中的一项重要功能，可实现以下功能：
 
 - 无限弹性写入和读取可伸缩性。
 
@@ -183,13 +183,13 @@ Cosmos DB 支持全局级别的[主动/主动](https://kemptechnologies.com/whit
 
 - 在 99% 的时间内，在 10 毫秒内为读写提供服务。
 
-利用 Cosmos DB[多宿主 api](https://docs.microsoft.com/azure/cosmos-db/distribute-data-globally)，微服务会自动识别最近的 Azure 区域并向其发送请求。 最近的区域由 Cosmos DB 标识，无需进行任何配置更改。 如果某个区域变得不可用，则多宿主功能会自动将请求路由到下一个最近的可用区域。
+利用 Cosmos DB [多宿主 api](/azure/cosmos-db/distribute-data-globally)，微服务会自动识别最近的 Azure 区域并向其发送请求。 最近的区域由 Cosmos DB 标识，无需进行任何配置更改。 如果某个区域变得不可用，则多宿主功能会自动将请求路由到下一个最近的可用区域。
 
 ### <a name="multi-model-support"></a>多模型支持
 
-将单一应用程序 replatforming 到云本机体系结构时，开发团队有时必须迁移开源的 NoSQL 数据存储。 Cosmos DB 可以帮助你在这些 NoSQL 数据存储中保留投资，并将其用于*多模型*数据平台。 下表显示了支持的 NoSQL[兼容性 api](https://www.wikiwand.com/en/Cosmos_DB)。
+将单一应用程序 replatforming 到云本机体系结构时，开发团队有时必须迁移开源的 NoSQL 数据存储。 Cosmos DB 可以帮助你在这些 NoSQL 数据存储中保留投资，并将其用于 *多模型* 数据平台。 下表显示了支持的 NoSQL [兼容性 api](https://www.wikiwand.com/en/Cosmos_DB)。
 
-| 提供程序 | 说明  |
+| 提供程序 | 描述  |
 | :-------- | :-------- |
 | SQL API | 支持 JSON 文档和基于 SQL 的查询的专有 API |
 | Mongo DB API | 支持 Mongo DB Api 和 JSON 文档|
@@ -202,11 +202,11 @@ Cosmos DB 支持全局级别的[主动/主动](https://kemptechnologies.com/whit
 
 > 在内部，Cosmos 将数据存储为由基元数据类型组成的简单结构格式。 对于每个请求，数据库引擎将基元数据转换为您选择的模型表示形式。
 
-在上表中，请记下[表 API](https://docs.microsoft.com/azure/cosmos-db/table-introduction)选项。 此 API 是 Azure 表存储的演变。 两者共享同一个基础表模型，但 Cosmos DB 表 API 添加 Azure 存储 API 中未提供的高级增强功能。 下表对这些功能进行了比较。
+在上表中，请记下 [表 API](/azure/cosmos-db/table-introduction) 选项。 此 API 是 Azure 表存储的演变。 两者共享同一个基础表模型，但 Cosmos DB 表 API 添加 Azure 存储 API 中未提供的高级增强功能。 下表对这些功能进行了比较。
 
 |  | Azure 表存储  | Azure Cosmos DB  |
 | :-------- | :-------- |:-------- |
-| 延迟 | 快速 | 在世界各地的任何位置进行读取和写入的一位数毫秒延迟 |
+| 延迟 | Fast | 在世界各地的任何位置进行读取和写入的一位数毫秒延迟 |
 | 吞吐量 | 每个表的20000操作数限制 | 10000000每个表的操作 |
 | 全局分发 | 具有可选的单个辅助读取区域的单个区域 | 具有自动故障转移功能的所有区域的全包式分布 |
 | 索引 | 仅适用于分区和行键属性 | 所有属性的自动索引 |
@@ -214,13 +214,13 @@ Cosmos DB 支持全局级别的[主动/主动](https://kemptechnologies.com/whit
 
 使用 Azure 表存储的微服务可以轻松地迁移到 Cosmos DB 表 API。 不需更改代码。
 
-### <a name="tunable-consistency"></a>可调一致性
+### <a name="tunable-consistency"></a>可调整的一致性
 
-在*关系与 NoSQL*部分的前面部分中，我们讨论了*数据一致性*。 数据一致性是指数据的*完整性*。 使用分布式数据的云本机服务依赖于复制，并且必须在读取一致性、可用性和延迟之间做出根本性的权衡。
+在 *关系与 NoSQL* 部分的前面部分中，我们讨论了 *数据一致性*。 数据一致性是指数据的 *完整性* 。 使用分布式数据的云本机服务依赖于复制，并且必须在读取一致性、可用性和延迟之间做出根本性的权衡。
 
-大多数分布式数据库允许开发人员在两种一致性模型之间进行选择：强一致性和最终一致性。 *强一致性*是数据可编程性的黄金标准。 它可以保证查询始终返回最新的数据，即使系统必须在等待更新复制到所有数据库副本时产生延迟。 虽然配置为*最终一致性*的数据库将立即返回数据，即使该数据不是最新的副本。 后一种方法可实现更高的可用性、更高的规模和更高的性能。
+大多数分布式数据库允许开发人员在两种一致性模型之间进行选择：强一致性和最终一致性。 *强一致性* 是数据可编程性的黄金标准。 它可以保证查询始终返回最新的数据，即使系统必须在等待更新复制到所有数据库副本时产生延迟。 虽然配置为 *最终一致性* 的数据库将立即返回数据，即使该数据不是最新的副本。 后一种方法可实现更高的可用性、更高的规模和更高的性能。
 
-Azure Cosmos DB 提供了五个明确定义的[一致性模型](https://docs.microsoft.com/azure/cosmos-db/consistency-levels)，如图5-13 所示。
+Azure Cosmos DB 提供了五个明确定义的 [一致性模型](/azure/cosmos-db/consistency-levels) ，如图5-13 所示。
 
 ![Cosmos DB 一致性图形](./media/cosmos-consistency-level-graph.png)
 
@@ -228,7 +228,7 @@ Azure Cosmos DB 提供了五个明确定义的[一致性模型](https://docs.mic
 
  利用这些选项，您可以针对数据的一致性、可用性和性能做出精确的选择和细化的权衡。 下表中显示了这些级别。
 
-| 一致性级别 | 说明  |
+| 一致性级别 | 描述  |
 | :-------- | :-------- |
 | 最终 | 不保证读取的顺序。 副本最终将聚合。 |
 | 常量前缀 | 读取仍是最终的，但会按写入数据的顺序返回数据。 |
@@ -236,11 +236,11 @@ Azure Cosmos DB 提供了五个明确定义的[一致性模型](https://docs.mic
 | 有限过期 | 按指定的间隔读取跟踪写入。 |  
 | 强  | 读取可保证返回项的最新提交版本。 客户端不会看到未提交或部分读取。 |  
 
-在下面[的文章9球： Cosmos DB 一致性级别介绍](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/)的文章中，Microsoft Program Manager Jeremy Likness 提供了五种模型的出色说明。
+在下面 [的文章9球： Cosmos DB 一致性级别介绍](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/)的文章中，Microsoft Program Manager Jeremy Likness 提供了五种模型的出色说明。
 
 ### <a name="partitioning"></a>分区
 
-Azure Cosmos DB 采用自动[分区](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview)来缩放数据库，以满足云本地服务的性能需求。
+Azure Cosmos DB 采用自动 [分区](/azure/cosmos-db/partitioning-overview) 来缩放数据库，以满足云本地服务的性能需求。
 
 通过创建数据库、容器和项来管理 Cosmos DB 数据中的数据。
 
@@ -254,18 +254,18 @@ Azure Cosmos DB 采用自动[分区](https://docs.microsoft.com/azure/cosmos-db/
 
 请注意，上图中的每一项都包含 "city" 或 "机场" 的分区键。 键确定项的逻辑分区。 带有城市代码的项将分配给左侧的容器，将带机场代码的项分配给右侧的容器。 将分区键值与 ID 值组合会创建一个项的索引，该索引将唯一标识该项。
 
-在内部，Cosmos DB 自动管理物理分区上的[逻辑分区](https://docs.microsoft.com/azure/cosmos-db/partition-data)位置，以满足容器的可伸缩性和性能需求。 随着应用程序吞吐量和存储要求的增加，Azure Cosmos DB 将逻辑分区重新分配到更多的服务器。 再分发操作由 Cosmos DB 管理，并在不中断或停机的情况下调用。
+在内部，Cosmos DB 自动管理物理分区上的 [逻辑分区](/azure/cosmos-db/partition-data) 位置，以满足容器的可伸缩性和性能需求。 随着应用程序吞吐量和存储要求的增加，Azure Cosmos DB 将逻辑分区重新分配到更多的服务器。 再分发操作由 Cosmos DB 管理，并在不中断或停机的情况下调用。
 
 ## <a name="newsql-databases"></a>NewSQL 数据库
 
 *NewSQL*  是一种新兴数据库技术，它结合了 NoSQL 的分布式可扩展性和关系数据库的 ACID 保证。 NewSQL 数据库对于必须在跨分布式环境中处理大量数据的业务系统非常重要，具有完整的事务性支持和 ACID 遵从性。 虽然 NoSQL 数据库可以提供巨大的可伸缩性，但它不保证数据一致性。 不一致数据的间歇问题会给开发团队带来负担。 开发人员必须在其微服务代码中构建安全措施，以管理由不一致数据导致的问题。
 
-云本机计算基础（CNCF）具有多个 NewSQL 数据库项目。
+云本机计算基础 (CNCF) 功能 NewSQL 多个数据库项目。
 
 | Project | 特征 |
 | :-------- | :-------- |
 | 蟑螂 DB |全局缩放的 ACID 兼容的关系数据库。 将新节点添加到群集，CockroachDB 负责跨实例和地理区域平衡数据。 它创建、管理和分发副本以确保可靠性。 它是开源的，免费提供。  |
-| TiDB | 支持混合事务性和分析处理（HTAP）工作负荷的开源数据库。 它是与 MySQL 兼容的功能，可提供水平伸缩性、强一致性和高可用性。  TiDB 的作用类似于 MySQL 服务器。 你可以继续使用现有 MySQL 客户端库，而无需对应用程序进行大量代码更改。 |
+| TiDB | 支持混合事务和分析处理的开源数据库 (HTAP) 工作负荷。 它是与 MySQL 兼容的功能，可提供水平伸缩性、强一致性和高可用性。  TiDB 的作用类似于 MySQL 服务器。 你可以继续使用现有 MySQL 客户端库，而无需对应用程序进行大量代码更改。 |
 | YugabyteDB | 开源、高性能分布式 SQL 数据库。 它支持较低的查询延迟、针对故障的恢复能力和全局数据分布。 YugabyteDB 是 PostgressSQL 兼容的，可处理横向扩展 RDBMS 和 internet 缩放 OLTP 工作负载。 该产品还支持 NoSQL，并与 Cassandra 兼容。 |
 |Vitess | Vitess 是用于部署、缩放和管理 MySQL 实例的大型群集的数据库解决方案。 它可以在公共或私有云体系结构中运行。 Vitess 结合了许多重要的 MySQL 功能和功能，同时提供了垂直和水平分片支持。 源自 YouTube，Vitess 一直在为所有 YouTube 数据库流量提供服务，2011。 |
 
@@ -275,11 +275,11 @@ NewSQL 数据库的关键设计目标是在 Kubernetes 中以本机方式工作�
 
 NewSQL 数据库旨在应对暂时的云环境，在该环境中，基础虚拟机随时可以重新启动或重新计划。 数据库旨在使节点出现故障，而不会丢失数据和停机。 例如，CockroachDB 可以通过在群集中的节点之间维护所有数据的三个一致副本，来经受计算机丢失。
 
-Kubernetes 使用*服务构造*来允许客户端从单个 DNS 条目寻址一组完全相同的 NewSQL 数据库进程。 通过将数据库实例与相关联的服务地址进行分隔，可以扩展，而不会中断现有的应用程序实例。 在给定时间向任何服务发送请求将始终产生相同的结果。
+Kubernetes 使用 *服务构造* 来允许客户端从单个 DNS 条目寻址一组完全相同的 NewSQL 数据库进程。 通过将数据库实例与相关联的服务地址进行分隔，可以扩展，而不会中断现有的应用程序实例。 在给定时间向任何服务发送请求将始终产生相同的结果。
 
-在这种情况下，所有数据库实例都相等。 没有主要关系或次要关系。 CockroachDB 中的*共识复制*等技术允许任何数据库节点处理任何请求。 如果接收负载平衡请求的节点在本地具有所需的数据，则该节点会立即响应。 如果不是，则该节点将成为网关，并将请求转发到相应的节点以获得正确的答案。 从客户端的角度来看，每个数据库节点都是相同的：它们显示为单一的*逻辑*数据库，具有单计算机系统的一致性保证，尽管在幕后甚至有数百个节点在幕后工作。
+在这种情况下，所有数据库实例都相等。 没有主要关系或次要关系。 CockroachDB 中的 *共识复制* 等技术允许任何数据库节点处理任何请求。 如果接收负载平衡请求的节点在本地具有所需的数据，则该节点会立即响应。 如果不是，则该节点将成为网关，并将请求转发到相应的节点以获得正确的答案。 从客户端的角度来看，每个数据库节点都是相同的：它们显示为单一的 *逻辑* 数据库，具有单计算机系统的一致性保证，尽管在幕后甚至有数百个节点在幕后工作。
 
-有关 NewSQL 数据库背后的机制的详细信息，请参阅[Kubernetes-本机数据库的四个属性一](https://thenewstack.io/dash-four-properties-of-kubernetes-native-databases/)文。
+有关 NewSQL 数据库背后的机制的详细信息，请参阅 [Kubernetes-本机数据库的四个属性一](https://thenewstack.io/dash-four-properties-of-kubernetes-native-databases/) 文。
 
 ## <a name="data-migration-to-the-cloud"></a>数据迁移到云
 

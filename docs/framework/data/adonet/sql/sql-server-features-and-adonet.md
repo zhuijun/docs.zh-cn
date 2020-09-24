@@ -3,14 +3,15 @@ title: SQL Server 功能和 ADO.NET
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 2839529b-a79b-4450-be5d-07a98dbc7a0f
-ms.openlocfilehash: 743e0eb9761cdc58018aab8aaed50a99b197116c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 121381114fadd8b20978d2e932bf3ec8bdcdb193
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552617"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177314"
 ---
 # <a name="sql-server-features-and-adonet"></a>SQL Server 功能和 ADO.NET
+
 本节中的主题讨论 SQL Server 中针对使用 ADO.NET 开发数据库应用程序的功能。  
   
  有关更多信息，请参见与您所使用的 SQL Server 版本对应的 SQL Server 联机丛书，如下表中所示。  
@@ -20,6 +21,7 @@ ms.locfileid: "90552617"
 1. [Development (Database Engine)（开发 [数据库引擎]）](/previous-versions/sql/sql-server-2008/bb500155(v=sql.100))  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [枚举 SQL Server 的实例 (ADO.NET) ](enumerating-instances-of-sql-server.md)  
  介绍如何枚举 SQL Server 的活动实例。  
   

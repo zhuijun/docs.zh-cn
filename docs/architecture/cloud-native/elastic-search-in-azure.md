@@ -3,12 +3,12 @@ title: 云本机应用程序中的 Elasticsearch
 description: 了解如何将弹性搜索功能添加到云本机应用程序。
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: 70d1925d6b8c7bbe515ee4f178513dc61212ebce
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: fa46f3387eecb3fccd63fdea10c11e92923ae862
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271797"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155375"
 ---
 # <a name="elasticsearch-in-a-cloud-native-app"></a>云本机应用中的 Elasticsearch
 
@@ -38,23 +38,23 @@ Elasticsearch 基于 [Apache Lucene](https://lucene.apache.org/core/) 全文搜�
 
 ### <a name="references"></a>参考
 
-- [命令和查询责任分离 (CQRS) 模式](https://docs.microsoft.com/azure/architecture/patterns/cqrs)
+- [命令和查询责任分离 (CQRS) 模式](/azure/architecture/patterns/cqrs)
 
-- [事件来源模式](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
+- [事件来源模式](/azure/architecture/patterns/event-sourcing)
 
 - [为什么在 CAP 定理中不能承受 RDBMS 分区，为什么它可用？](https://stackoverflow.com/questions/36404765/why-isnt-rdbms-partition-tolerant-in-cap-theorem-and-why-is-it-available)
 
-- [具体化视图](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)
+- [具体化视图](/azure/architecture/patterns/materialized-view)
 
 - [你确实需要知道开源数据库](https://www.ibm.com/blogs/systems/all-you-really-need-to-know-about-open-source-databases/)
 
-- [补偿事务模式](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction)
+- [补偿事务模式](/azure/architecture/patterns/compensating-transaction)
 
 - [Saga 模式](https://microservices.io/patterns/data/saga.html)
 
 - [Saga 模式 |如何使用微服务实现业务事务](https://blog.couchbase.com/saga-pattern-implement-business-transactions-using-microservices-part/)
 
-- [补偿事务模式](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction)
+- [补偿事务模式](/azure/architecture/patterns/compensating-transaction)
 
 - [在9球后面：说明 Cosmos DB 一致性级别](https://blog.jeremylikness.com/blog/2018-03-23_getting-behind-the-9ball-cosmosdb-consistency-levels/)
 

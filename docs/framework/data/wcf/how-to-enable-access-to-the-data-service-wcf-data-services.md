@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 3d830bcd-32b4-4f26-9287-d58a071452c6
-ms.openlocfilehash: 377b031c48ed831cfa5e270426283ed03a55f886
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 62622a5788a735497a6869c114c572e947067449
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90542302"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91155414"
 ---
 # <a name="how-to-enable-access-to-the-data-service-wcf-data-services"></a>如何：启用对数据服务的访问（WCF 数据服务）
+
 在 WCF 数据服务中，必须显式授予对数据服务公开的资源的访问权限。 这意味着您在创建新的数据服务之后，仍必须显式提供对实体集形式的各个资源的访问。 本主题演示如何启用对 Northwind 数据服务中的五个实体集的读写访问，这些实体集是在完成 [快速入门](quickstart-wcf-data-services.md)时创建的。 由于 <xref:System.Data.Services.EntitySetRights> 枚举是通过使用 <xref:System.FlagsAttribute> 定义的，因此您可以使用逻辑 OR 运算符来为单个实体集指定多个权限。  
   
 > [!NOTE]

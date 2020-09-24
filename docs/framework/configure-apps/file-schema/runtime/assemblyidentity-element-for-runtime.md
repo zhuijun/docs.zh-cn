@@ -9,14 +9,15 @@ helpviewer_keywords:
 - container tags, <assemblyIdentity> element
 - assemblyIdentity element
 ms.assetid: cea4d187-6398-4da4-af09-c1abc6a349c1
-ms.openlocfilehash: b026dafbde796bbd8726de56b532ed6710ba2290
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f3e74b05ac0fd7c57963f2aad047ba3f2d63a10a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154304"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170176"
 ---
 # <a name="assemblyidentity-element-for-runtime"></a>\<runtime> 的 \<assemblyIdentity> 元素
+
 包含有关程序集的标识信息。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,11 +36,12 @@ culture="assembly culture"/>
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`name`|必需的特性。<br /><br /> 程序集的名称|  
 |`culture`|可选特性。<br /><br /> 一个字符串，指定程序集的语言和国家/地区。|  
@@ -48,14 +50,15 @@ culture="assembly culture"/>
   
 ## <a name="processorarchitecture-attribute"></a>processorArchitecture 特性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |`amd64`|仅适用于 AMD x86-64 体系结构。|  
 |`ia64`|仅限 Intel Itanium 体系结构。|  
 |`msil`|不特定于处理器和每字位数。|  
-|`x86`|32位 x86 处理器，在64位平台上的 Windows on windows （WOW）环境中。|  
+|`x86`|32位 x86 处理器，在 Windows on Windows (WOW) 环境的64位平台上。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -67,7 +70,8 @@ culture="assembly culture"/>
 |`dependentAssembly`|封装每个程序集的绑定策略和程序集位置。 `<dependentAssembly>`为每个程序集使用一个元素。|  
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  每个 **\<dependentAssembly>** 元素必须有一个 **\<assemblyIdentity>** 子元素。  
   
  如果该 `processorArchitecture` 属性存在，则 `<assemblyIdentity>` 元素仅适用于具有相应处理器体系结构的程序集。 如果该 `processorArchitecture` 属性不存在，则该 `<assemblyIdentity>` 元素可应用于具有任何处理器体系结构的程序集。  
@@ -102,6 +106,7 @@ culture="assembly culture"/>
  如果配置文件包含 `<assemblyIdentity>` 没有属性的元素 `processorArchitecture` ，并且不包含与平台相匹配的元素，则使用没有属性的元素 `processorArchitecture` 。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何提供有关程序集的信息。  
   
 ```xml  
@@ -119,7 +124,7 @@ culture="assembly culture"/>
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [运行时设置架构](index.md)
 - [配置文件架构](../index.md)

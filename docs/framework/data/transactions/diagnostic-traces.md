@@ -3,19 +3,21 @@ title: 诊断跟踪
 description: 了解 .NET 中的诊断跟踪。 跟踪是指发布在执行应用程序期间生成的特定消息。
 ms.date: 03/30/2017
 ms.assetid: 28e77a63-d20d-4b6a-9caf-ddad86550427
-ms.openlocfilehash: 5de8fdf7b95cf01b119118dac75d373c32949dcd
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 1999cd922b9e7299cbf3c10a702eb4d2dc6c3fbb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141806"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177236"
 ---
 # <a name="diagnostic-traces"></a>诊断跟踪
+
 跟踪是指发布在执行应用程序期间生成的特定消息。 使用跟踪时，必须具有收集和记录所发送消息的机制。 跟踪消息由侦听器来接收。 侦听器的用途是收集、存储和路由跟踪消息。 侦听器会将跟踪输出定向到适当的目标，如日志、窗口或文本文件。  
   
  <xref:System.Diagnostics.DefaultTraceListener> 就是一个这样的侦听器，在启用跟踪后将自动创建并初始化它。 如果要将跟踪输出定向到任何其他源，则必须创建并初始化其他跟踪侦听器。 所创建的侦听器应反映您的具体需要。 例如，您可能需要所有跟踪输出的文本记录。 在这种情况下，可以创建一个侦听器，使其在启用时将所有输出写入一个新的文本文件。 另一方面，您可能只需要在执行应用程序的过程中查看输出。 在这种情况下，可以创建一个侦听器，使其将所有输出定向到一个控制台窗口。 <xref:System.Diagnostics.EventLogTraceListener> 可将跟踪输出定向到事件日志，而 <xref:System.Diagnostics.TextWriterTraceListener> 可将跟踪输出写入流中。  
   
 ## <a name="enabling-tracing"></a>启用跟踪  
+
  若要在事务处理期间启用跟踪，应编辑应用程序的配置文件。 下面是一个示例。  
   
 ```xml  
@@ -46,7 +48,8 @@ ms.locfileid: "85141806"
 |信息|生成对监视和诊断系统状态、测量性能或执行分析十分有用的消息。 这些消息可包括事务和登记生存期事件，如创建或提交事务、跨重要边界或分配重要资源等。 开发人员可利用此类信息规划容量和管理性能。|  
   
 ## <a name="trace-codes"></a>跟踪代码  
- 下表列出了由 <xref:System.Transactions> 基础结构生成的跟踪代码。 表中包含的是跟踪代码标识符、跟踪的 <xref:System.Diagnostics.EventTypeFilter.EventType%2A> 枚举级别以及用于跟踪的**TraceRecord**中包含的额外数据。 此外，跟踪的相应跟踪级别也存储在**TraceRecord**中。  
+
+ 下表列出了由 <xref:System.Transactions> 基础结构生成的跟踪代码。 表中包含的是跟踪代码标识符、跟踪的 <xref:System.Diagnostics.EventTypeFilter.EventType%2A> 枚举级别以及用于跟踪的 **TraceRecord** 中包含的额外数据。 此外，跟踪的相应跟踪级别也存储在 **TraceRecord**中。  
   
 |TraceCode|EventType|TraceRecord 中的额外数据|  
 |---------------|---------------|-------------------------------|  
@@ -78,6 +81,7 @@ ms.locfileid: "85141806"
  上述每个额外数据项的 XML 架构采用以下格式。  
   
 ### <a name="transactiontraceidentifier"></a>TransactionTraceIdentifier  
+
  `<TransactionTraceIdentifier>`  
   
  `<TransactionIdentifier >`  
@@ -95,6 +99,7 @@ ms.locfileid: "85141806"
  `</TransactionTraceIdentifier>`  
   
 ### <a name="enlistmenttraceidentifier"></a>EnlistmentTraceIdentifier  
+
  `<EnlistmentTraceIdentifier>`  
   
  `<ResourceManagerId>`  
@@ -128,6 +133,7 @@ ms.locfileid: "85141806"
  `</EnlistmentTraceIdentifier>`  
   
 ### <a name="resource-manager-identifier"></a>资源管理器标识符  
+
  `<ResourceManagerId>`  
   
  `string form of guid`  
@@ -135,4 +141,5 @@ ms.locfileid: "85141806"
  `</ResourceManagerId>`  
   
 ## <a name="security-issues-for-tracing"></a>跟踪的安全问题  
+
  当您以管理员身份启用跟踪时，可能会向默认情况下可公开查看的跟踪日志写入敏感信息。 若要消除任何可能的安全威胁，应考虑将该跟踪日志存储在一个由共享和文件系统访问权限控制的安全位置。

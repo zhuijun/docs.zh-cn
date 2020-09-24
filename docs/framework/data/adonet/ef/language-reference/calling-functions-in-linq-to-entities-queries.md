@@ -3,14 +3,15 @@ title: 在 LINQ to Entities 查询中调用函数
 description: 使用这些文章可以查看 EntityFunctions 和 SqlFunctions 类如何作为实体框架的一部分，提供对规范和数据库函数的访问权限。
 ms.date: 03/30/2017
 ms.assetid: 12a525a9-727c-4464-a0c7-71a0ef541792
-ms.openlocfilehash: eb206e9b331da1ae442c1f310e78fec5c6b57e82
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8c771c93e0c3ed82f3ad550613dd855fd06b6f48
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546043"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177483"
 ---
 # <a name="calling-functions-in-linq-to-entities-queries"></a>在 LINQ to Entities 查询中调用函数
+
 本节中的主题说明如何调用 LINQ to Entities 查询中的函数。  
   
  <xref:System.Data.Objects.EntityFunctions> 和 <xref:System.Data.Objects.SqlClient.SqlFunctions> 类提供了对作为实体框架的一部分的规范函数和数据库函数的访问功能。 有关详细信息，请参阅 [如何：调用规范函数](how-to-call-canonical-functions.md) 和 [如何：调用数据库函数](how-to-call-database-functions.md)。  
@@ -26,6 +27,7 @@ ms.locfileid: "90546043"
  有关更多信息，请参见本节中的各主题。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [如何：调用规范函数](how-to-call-canonical-functions.md)  
   
  [如何：调用数据库函数](how-to-call-database-functions.md)  

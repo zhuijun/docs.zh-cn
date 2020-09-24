@@ -2,14 +2,15 @@
 title: <security> 的 <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: f73634ed-f896-4968-bf74-5e5ac52d3b6b
-ms.openlocfilehash: 270ca844f586be256b6483653c868d1cc4396657
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f37c336b0e42993e1eef3f06e2f919705f425a2e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399757"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169955"
 ---
 # <a name="security-of-peertransport"></a>\<security> 的 \<peerTransport>
+
 包含与对等通道相关的安全设置，包括使用的身份验证类型和用于消息传输的安全性。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,17 +30,18 @@ ms.locfileid: "70399757"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`mode`|指定要应用的安全类型。 默认值为 Message。 此属性的类型为 <xref:System.ServiceModel.SecurityMode>。|  
   
 ## <a name="mode-attribute"></a>mode 属性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |`None`|禁用安全性。|  
 |`Transport`|使用 HTTPS 提供安全性。|  
@@ -58,7 +60,7 @@ ms.locfileid: "70399757"
 |-------------|-----------------|  
 |[\<peerTransport>](peertransport.md)|定义自定义绑定的对等传输。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.PeerSecurityElement>
 - <xref:System.ServiceModel.PeerSecuritySettings>
