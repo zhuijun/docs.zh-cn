@@ -3,12 +3,12 @@ title: 云本机复原能力
 description: 构建适用于 Azure 的云本机 .NET 应用 |云本机复原
 author: robvet
 ms.date: 05/13/2020
-ms.openlocfilehash: f3aa89e3ae21b13a31f65013b59636b3f931553c
-ms.sourcegitcommit: 27db07ffb26f76912feefba7b884313547410db5
+ms.openlocfilehash: 5c4fb261515c151fd666cc33cbb020447716c814
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83613767"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163552"
 ---
 # <a name="cloud-native-resiliency"></a>云本机复原能力
 
@@ -18,15 +18,15 @@ ms.locfileid: "83613767"
 
 ![分布式云-本机环境](./media/distributed-cloud-native-environment.png)
 
-**图6-1。** 分布式云-本机环境
+**图 6-1**。 分布式云-本机环境
 
-在上图中，每个微服务和基于云的[支持服务](https://12factor.net/backing-services)在单独的进程中执行，跨服务器基础结构，通过基于网络的调用进行通信。
+在上图中，每个微服务和基于云的 [支持服务](https://12factor.net/backing-services) 在单独的进程中执行，跨服务器基础结构，通过基于网络的调用进行通信。
 
 在此环境中操作，服务必须对许多不同的难题保密：
 
 - 意外的网络延迟-服务请求到达接收方和背面的时间。
 
-- [暂时性故障](https://docs.microsoft.com/azure/architecture/best-practices/transient-faults)-生存期较短的网络连接错误。
+- [暂时性故障](/azure/architecture/best-practices/transient-faults) -生存期较短的网络连接错误。
 
 - 由长时间运行的同步操作所阻塞。
 

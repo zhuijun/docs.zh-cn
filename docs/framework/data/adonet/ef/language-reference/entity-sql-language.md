@@ -2,14 +2,15 @@
 title: Entity SQL 语言
 ms.date: 03/30/2017
 ms.assetid: 9e7d8837-28c5-429d-a824-7bafb59724cf
-ms.openlocfilehash: 2600b7626ebc5196c702f2d1e3159fd9549227f7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 721a4cd9d4e5618c083392bbe1ae203f285f8feb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553377"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148108"
 ---
 # <a name="entity-sql-language"></a>Entity SQL 语言
+
 Entity SQL 是类似于 SQL 的与存储无关的查询语言。 通过 Entity SQL，可以将实体数据作为对象或以表格形式进行查询。 在以下情况下，应考虑使用 Entity SQL：  
   
 - 当查询必须在运行时动态构造时。 在这种情况下，还应考虑使用 <xref:System.Data.Objects.ObjectQuery%601> 的查询生成器方法，而不是在运行时构造 Entity SQL 查询字符串。  
@@ -21,6 +22,7 @@ Entity SQL 是类似于 SQL 的与存储无关的查询语言。 通过 Entity S
 - 如果您已经是基于 SQL 的查询语言的专家，Entity SQL 可能对您而言是最简单不过了。  
   
 ## <a name="using-entity-sql-with-the-entityclient-provider"></a>将 Entity SQL 与 EntityClient 提供程序结合使用  
+
  如果您要将 Entity SQL 与 EntityClient 提供程序结合使用，有关更多信息请参见下列主题：  
   
  [用于实体框架的 EntityClient 提供程序](../entityclient-provider-for-the-entity-framework.md)  
@@ -46,6 +48,7 @@ Entity SQL 是类似于 SQL 的与存储无关的查询语言。 通过 Entity S
  [如何：使用导航运算符导航关系](../how-to-navigate-relationships-with-the-navigate-operator.md)  
   
 ## <a name="using-entity-sql-with-object-queries"></a>将 Entity SQL 与对象查询结合使用  
+
  如果您要将 Entity SQL 与对象查询结合使用，有关更多信息请参见下列主题：  
   
  [如何：执行返回实体类型对象的查询](/previous-versions/dotnet/netframework-4.0/bb738694(v=vs.100))  
@@ -75,6 +78,7 @@ Entity SQL 是类似于 SQL 的与存储无关的查询语言。 通过 Entity S
  [如何：按页查看查询结果](/previous-versions/dotnet/netframework-4.0/bb738702(v=vs.100))  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [Entity SQL 概述](entity-sql-overview.md)  
   
  [实体 SQL 引用](entity-sql-reference.md)  

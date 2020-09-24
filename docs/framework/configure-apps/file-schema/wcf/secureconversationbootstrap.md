@@ -2,14 +2,15 @@
 title: <secureConversationBootstrap>
 ms.date: 03/30/2017
 ms.assetid: 66b46f95-fa2d-4b5b-b6ce-0572ab0cdd50
-ms.openlocfilehash: b3187cb51b6fd32797c9ad401c704d5f16c6f7e8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 02072c55e299d9e3a5d53b61c891a9ee9837ada0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70399915"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183710"
 ---
 # \<secureConversationBootstrap>
+
 指定用于启动安全对话服务的默认值。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -39,16 +40,18 @@ ms.locfileid: "70399915"
 ```  
   
 ## <a name="type"></a>类型  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
-|`allowSerializedSigningTokenOnReply`|可选。 一个布尔值，指定是否可以在答复时使用序列化令牌。 默认值为 `false`。 使用双向绑定时，默认设置为 `true`，将忽略进行的任何设置。|  
+|`allowSerializedSigningTokenOnReply`|可选。 一个布尔值，指定是否可以在答复时使用序列化令牌。 默认值是 `false`。 使用双向绑定时，默认设置为 `true`，将忽略进行的任何设置。|  
 |`authenticationMode`|指定在发起方和响应方之间使用的 SOAP 身份验证模式。<br /><br /> 默认值为 sspiNegotiated。<br /><br /> 此属性的类型为 <xref:System.ServiceModel.Configuration.AuthenticationMode>。|  
 |`defaultAlgorithmSuite`|安全算法组定义了各种算法，如规范化、摘要式、密钥包装、签名、加密和密钥派生算法。 每个安全算法套件都定义了这些不同参数的值。 基于消息的安全性是使用这些算法实现的。<br /><br /> 此属性与选取不同于默认算法的算法集的其他平台一起使用。 在对此设置进行修改时，应该注意相关算法的优缺点。 此属性的类型为 <xref:System.ServiceModel.Security.SecurityAlgorithmSuite>。 默认为 `Basic256`。|  
 |`includeTimestamp`|一个布尔值，指定是否每个消息都包含时间戳。 默认为 `true`。|  
@@ -74,7 +77,7 @@ ms.locfileid: "70399915"
 |-------------|-----------------|  
 |[\<security>](security-of-custombinding.md)|指定自定义绑定的安全选项。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>
 - <xref:System.ServiceModel.Channels.SecurityBindingElement.LocalServiceSettings%2A>

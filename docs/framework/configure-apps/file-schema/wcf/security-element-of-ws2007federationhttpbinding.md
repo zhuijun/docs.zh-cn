@@ -1,15 +1,16 @@
 ---
-title: <security>的元素<ws2007FederationHttpBinding>
+title: <security> 的元素 <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 826219b4-3a16-45fc-832d-0cd7cbbd3b84
-ms.openlocfilehash: b85c54c6507313522286e0c66504cfd0c8afb2b0
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 943ccc241aef15b58661699408b085d98cf86c3b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738719"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183697"
 ---
-# <a name="security-element-of-ws2007federationhttpbinding"></a>\<security>的元素\<ws2007FederationHttpBinding>
+# <a name="security-element-of-ws2007federationhttpbinding"></a>\<security> 的元素 \<ws2007FederationHttpBinding>
+
 定义元素的安全设置 [\<ws2007FederationHttpBinding>](ws2007federationhttpbinding.md) 。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,17 +38,18 @@ ms.locfileid: "73738719"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
-|`mode`|可选。 指定所应用的安全类型。 默认值为 `Message`。 此属性的类型为 <xref:System.ServiceModel.WSFederationHttpSecurityMode>。|  
+|`mode`|可选。 指定所应用的安全类型。 默认值是 `Message`。 此属性的类型为 <xref:System.ServiceModel.WSFederationHttpSecurityMode>。|  
   
 ## <a name="mode-attribute"></a>mode 属性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |无|SOAP 消息在传输过程中并不安全。|  
 |消息|通过使用 SOAP 消息安全，可以提供完整性、保密性、服务器身份验证和客户端身份验证。 默认情况下，将对正文进行加密和签名。 此服务必须使用证书进行配置。 客户端根据由安全令牌服务颁发给客户端的令牌进行身份验证。|  
@@ -65,7 +67,7 @@ ms.locfileid: "73738719"
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|定义的所有绑定功能 [\<wsDualHttpBinding>](wsdualhttpbinding.md) 。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.WSFederationHttpSecurity>
 - <xref:System.ServiceModel.WSFederationHttpBinding.Security%2A>

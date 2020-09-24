@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1b97afeb-03f8-41e2-8eb3-58aff65f7d18
-ms.openlocfilehash: 0a7c8f005b90484ef2f9c7e48218bda40533696a
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 064688f173e375481373e9a33d66c64666e1583f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84287007"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91148356"
 ---
 # <a name="creating-a-datatable-from-a-query-linq-to-dataset"></a>从查询创建数据表 (LINQ to DataSet)
+
 数据绑定是 <xref:System.Data.DataTable> 对象的一种常用形式。 <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 方法接收查询结果并将数据复制到 <xref:System.Data.DataTable> 中，后者随后会使用该数据进行数据绑定。 在执行数据操作后，新的 <xref:System.Data.DataTable> 将合并回源 <xref:System.Data.DataTable>。  
   
  <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 方法使用下面的过程来通过查询创建 <xref:System.Data.DataTable>：  
@@ -38,7 +39,8 @@ ms.locfileid: "84287007"
  [!code-vb[DP LINQ to DataSet Examples#CopyToDataTable1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#copytodatatable1)]  
   
 ## <a name="creating-a-custom-copytodatatablet-method"></a>创建自定义 CopyToDataTable \<T> 方法  
- 仅在 <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 源上（其中泛型参数 <xref:System.Collections.Generic.IEnumerable%601> 类型为 `T`）执行现有 <xref:System.Data.DataRow> 方法。 虽然这十分有用，但是它并不允许从标量类型的序列、返回匿名类型的查询或执行表联接的查询来创建表。 有关如何实现两个自定义方法（ `CopyToDataTable` 这些方法从标量或匿名类型的序列加载表）的示例，请参阅[如何：实现 CopyToDataTable \<T> ，其中泛型类型 T](implement-copytodatatable-where-type-not-a-datarow.md)不是 DataRow。  
+
+ 仅在 <xref:System.Data.DataTableExtensions.CopyToDataTable%2A> 源上（其中泛型参数 <xref:System.Collections.Generic.IEnumerable%601> 类型为 `T`）执行现有 <xref:System.Data.DataRow> 方法。 虽然这十分有用，但是它并不允许从标量类型的序列、返回匿名类型的查询或执行表联接的查询来创建表。 有关如何实现两个自定义方法（ `CopyToDataTable` 这些方法从标量或匿名类型的序列加载表）的示例，请参阅 [如何：实现 CopyToDataTable \<T> ，其中泛型类型 T](implement-copytodatatable-where-type-not-a-datarow.md)不是 DataRow。  
   
  本节的示例使用以下自定义类型：  
   
@@ -46,36 +48,41 @@ ms.locfileid: "84287007"
  [!code-vb[DP Custom CopyToDataTable Examples#ItemClass](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#itemclass)]  
   
 ### <a name="example"></a>示例  
+
  此示例在 `SalesOrderHeader` 和 `SalesOrderDetail` 表上执行联接以获得八月的联机订单，并从查询创建表。  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#Join](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#join)]
  [!code-vb[DP Custom CopyToDataTable Examples#Join](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#join)]  
   
 ### <a name="example"></a>示例  
+
  下面的示例查询价格高于 9.99 美元的商品集合，并从查询结果创建表。  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#LoadItemsIntoTable](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#loaditemsintotable)]
  [!code-vb[DP Custom CopyToDataTable Examples#LoadItemsIntoTable](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#loaditemsintotable)]  
   
 ### <a name="example"></a>示例  
+
  下面的示例查询价格高于 9.99 的商品集合，并投影结果。 返回的匿名类型序列被加载到现有表中。  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#LoadItemsIntoExistingTable](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#loaditemsintoexistingtable)]
  [!code-vb[DP Custom CopyToDataTable Examples#LoadItemsIntoExistingTable](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#loaditemsintoexistingtable)]  
   
 ### <a name="example"></a>示例  
+
  下面的示例查询价格高于 9.99 美元的商品集合，并投影结果。 返回的匿名类型序列被加载到现有表中。 表架构自动扩展，因为 `Book` 和 `Movies` 类型是从 `Item` 类型派生的。  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#LoadItemsExpandSchema](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#loaditemsexpandschema)]
  [!code-vb[DP Custom CopyToDataTable Examples#LoadItemsExpandSchema](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#loaditemsexpandschema)]  
   
 ### <a name="example"></a>示例  
+
  下面的示例查询价格高于 9.99 美元的商品集合，并返回 <xref:System.Double> 的序列，它将被加载到新表中。  
   
  [!code-csharp[DP Custom CopyToDataTable Examples#LoadScalarSequence](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/CS/Program.cs#loadscalarsequence)]
  [!code-vb[DP Custom CopyToDataTable Examples#LoadScalarSequence](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP Custom CopyToDataTable Examples/VB/Module1.vb#loadscalarsequence)]  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [编程指南](programming-guide-linq-to-dataset.md)
 - [泛型字段和 SetField 方法](generic-field-and-setfield-methods-linq-to-dataset.md)

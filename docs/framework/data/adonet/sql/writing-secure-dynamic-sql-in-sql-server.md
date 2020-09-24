@@ -2,76 +2,83 @@
 title: 在 SQL Server 中编写安全的动态 SQL
 ms.date: 03/30/2017
 ms.assetid: df5512b0-c249-40d2-82f9-f9a2ce6665bc
-ms.openlocfilehash: c02455ba8798df1de1d52f6b4db3426d41b95daf
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c598427a17ceb289f75fab481a55016f0efe5624
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791418"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91147445"
 ---
 # <a name="writing-secure-dynamic-sql-in-sql-server"></a>在 SQL Server 中编写安全的动态 SQL
-SQL 注入是恶意用户输入 Transact-SQL 语句来取代有效输入的过程。 如果输入的语句没有经过验证直接传递到服务器，并且应用程序不慎执行了注入的代码，这种攻击有可能损坏或毁坏数据。  
+
+SQL 注入是恶意用户输入 Transact-SQL 语句而不是有效输入的过程。 如果输入未经验证直接传递到服务器，并且应用程序无意中执行了注入的代码，则攻击可能会损坏或破坏数据。  
   
- 任何构造 SQL 语句的过程都应该针对注入漏洞进行审核，因为 SQL Server 将执行它扪收到的所有语法上有效的查询。 技术熟练的蓄意攻击者甚至可以操作参数化数据。 如果您使用动态 SQL，请确保将命令参数化，绝不要在查询字符串中直接包括参数值。  
+ 构成 SQL 语句的任何过程都应进行注入漏洞审阅，因为 SQL Server 将执行其接收到的所有语法有效的查询。 一个有经验的、坚定的攻击者甚至可以操作参数化数据。 如果使用动态 SQL，请确保参数化命令，并且切勿直接将参数值包含在查询字符串中。  
   
 ## <a name="anatomy-of-a-sql-injection-attack"></a>SQL 注入攻击剖析  
- 注入过程的工作原理是过早终止某一文本字符串并追加一个新命令。 因为插入的命令可能在执行之前已追加了其他字符串，攻击者可以使用注释标记“--”终止注入的字符串。 执行时会忽略后续的文本。 通过使用分号 (;) 分隔符可以插入多个命令。  
+
+ 注入过程的工作方式是提前终止文本字符串，然后追加一个新的命令。 由于插入的命令可能在执行前追加其他字符串，因此攻击者将用注释标记“--”来终止注入的字符串。 执行时，此后的文本将被忽略。 可以使用分号 (;) 分隔符插入多个命令。  
   
- 只要注入的 SQL 代码在语法上正确，就无法通过编程方式检测到这种篡改。 因此，您必须验证所有用户输入并仔细评审将在您使用的服务器上执行构造的 SQL 命令的代码。 切勿连接未经验证的用户输入。 字符串连接是脚本注入的主要入口点。  
+ 只要注入的 SQL 代码语法正确，便无法采用编程方式来检测篡改。 因此，必须验证所有用户输入，并仔细检查在您所用的服务器中执行构造 SQL 命令的代码。 绝不串联未验证的用户输入。 字符串串联是脚本注入的主要输入点。  
   
- 下面是几条有帮助的准则：  
+ 下面是一些有用的指导原则：  
   
-- 切勿直接从用户输入生成 Transact-SQL 语句，应使用存储过程来验证用户输入。  
+- 切勿直接从用户输入构建 Transact-SQL 语句；使用存储过程来验证用户输入。  
   
 - 通过测试类型、长度、格式和范围来验证用户输入。 使用 Transact-SQL QUOTENAME() 函数转义系统名称，或使用 REPLACE() 函数转义字符串中的任何字符。  
   
-- 在您的应用程序的每个层中实现多层验证。  
+- 在应用程序的每一层中实施多层验证。  
   
-- 测试输入内容的大小和数据类型并实施适当的限制。 这有助于防止故意的缓冲区溢出。  
+- 测试输入的大小和数据类型，强制执行适当的限制。 这有助于防止有意造成的缓冲区溢出。  
   
-- 测试字符串变量的内容，并只接受预期值。 拒绝包含二进制数据、转义序列和注释字符的输入。  
+- 测试字符串变量的内容，只接受所需的值。 拒绝包含二进制数据、转义序列和注释字符的输入内容。  
   
-- 如果使用 XML 文档，则在输入时对照其架构验证所有数据。  
+- 使用 XML 文档时，根据数据的架构对输入的所有数据进行验证。  
   
-- 在多层环境中，在允许数据进入受信任区域之前所有数据都应该进行验证。  
+- 在多层环境中，所有数据都应该在验证之后才允许进入可信区域。  
   
-- 在可以构造文件名的字段中不要接受以下字符串：AUX、CLOCK$、COM1 至 COM8、CON、CONFIG$、LPT1 至 LPT8、NUL 和 PRN。  
+- 不接受以下来自可构造文件名的字段中的字符串：AUX、CLOCK$、COM1 到 COM8、CON、CONFIG$、LPT1 到 LPT8、NUL 和 PRN。  
   
-- 使用带有存储过程和命令的 <xref:System.Data.SqlClient.SqlParameter> 对象以提供类型检查和长度验证。  
+- 将 <xref:System.Data.SqlClient.SqlParameter> 对象与存储过程和命令一起使用以提供类型检查和长度验证。  
   
-- 在客户端代码中使用 <xref:System.Text.RegularExpressions.Regex> 表达式以筛选无效字符。  
+- 在客户端代码中使用 <xref:System.Text.RegularExpressions.Regex> 表达式来筛选无效字符。  
   
 ## <a name="dynamic-sql-strategies"></a>动态 SQL 策略  
- 在过程代码中动态执行已创建的 SQL 语句会中断所属权链，使 SQL Server 按照由动态 SQL 访问的对象检查调用方的权限。  
+
+ 在过程代码中执行动态创建的 SQL 语句会中断所有权链，从而导致 SQL Server 针对动态 SQL 访问的对象检查调用方的权限。  
   
- SQL Server 提供了使用存储过程和可执行动态 SQL 的用户定义函数来授予用户对数据的访问权限的方法。  
+ SQL Server 提供一些方法，用于向用户授予使用存储过程和可执行动态 SQL 的用户定义函数来访问数据的权限。  
   
 - 如[在 SQL Server 中使用模拟自定义权限](customizing-permissions-with-impersonation-in-sql-server.md)中所述，将模拟用于 Transact-SQL EXECUTE AS 子句。  
   
 - 使用证书对存储过程签名，如[在 SQL Server 中对存储过程签名](signing-stored-procedures-in-sql-server.md)中所述。  
   
 ### <a name="execute-as"></a>EXECUTE AS  
- EXECUTE AS 子句用 EXECUTE AS 子句中指定的用户的权限替换调用方的权限。 嵌套的存储过程或触发器在代理用户的安全上下文下执行。 这可能会中断依赖于行级安全性或要求审核的应用程序。 某些可返回用户标识的函数会返回 EXECUTE AS 子句中指定的用户的标识，而不是原始调用方的标识。 只有在执行该过程或发出 REVERT 语句后，执行上下文才会恢复到原始调用方。  
+
+ EXECUTE AS 子句会将调用方的权限替换为 EXECUTE AS 子句中指定的用户的权限。 嵌套存储过程或触发器会在代理用户的安全上下文下执行。 这可能会破坏依赖行级安全性或需要审核的应用程序。 某些返回用户标识的函数会返回 EXECUTE AS 子句中指定的用户，而不是原始调用方。 仅在执行过程后或发出 REVERT 语句时，执行上下文才会还原为原始调用方。  
   
 ### <a name="certificate-signing"></a>证书签名  
- 在执行使用证书进行签名的存储过程时，授予给证书用户的权限会与调用方的权限合并。 执行上下文保持不变，证书用户不模拟调用方。 为存储过程签名需要执行多个步骤才能实现。 每次修改过程时，都必须重新签名。  
+
+ 执行已使用证书签名的存储过程时，授予证书用户的权限将与调用方的权限合并。 执行上下文保持不变；证书用户不会模拟调用方。 对存储过程进行签名需要执行几个步骤。 每次修改过程时，都必须重新签名。  
   
 ### <a name="cross-database-access"></a>跨数据库访问  
- 在执行动态创建的 SQL 语句时，跨数据库的所属权链接不起作用。 在 SQL Server 中，可以通过创建一个可访问另一个数据库中数据的存储过程并用两个数据库中都存在的证书为此过程签名来解决这个问题。 这可为用户提供访问该过程所使用的数据库资源的权限，而不必向他们授予数据库访问权或权限。  
+
+ 在执行动态创建的 SQL 语句的情况下，跨数据库所有权链不起作用。 在 SQL Server 中，可以通过创建一个可访问另一个数据库中数据的存储过程并用两个数据库中都存在的证书为此过程签名来解决这个问题。 这样，用户就可以访问该过程使用的数据库资源，而无需授予他们数据库访问或权限。  
   
 ## <a name="external-resources"></a>外部资源  
- 有关更多信息，请参见以下资源。  
+
+ 有关详细信息，请参阅以下资源。  
   
-|资源|描述|  
+|资源|说明|  
 |--------------|-----------------|  
-|SQL Server 联机丛书中的[存储过程](/sql/relational-databases/stored-procedures/stored-procedures-database-engine)和 [SQL 注入](/sql/relational-databases/security/sql-injection)|说明如何创建存储过程和 SQL 注入工作原理的主题。|  
+|SQL Server 联机丛书中的[存储过程](/sql/relational-databases/stored-procedures/stored-procedures-database-engine)和 [SQL 注入](/sql/relational-databases/security/sql-injection)|上述主题描述了如何创建存储过程以及 SQL 注入的工作原理。|  
   
 ## <a name="see-also"></a>请参阅
 
 - [保证 ADO.NET 应用程序的安全](../securing-ado-net-applications.md)
 - [SQL Server 安全性概述](overview-of-sql-server-security.md)
-- [SQL Server 中的应用程序安全性方案](application-security-scenarios-in-sql-server.md)
+- [SQL Server 中的应用程序安全方案](application-security-scenarios-in-sql-server.md)
 - [在 SQL Server 中使用存储过程管理权限](managing-permissions-with-stored-procedures-in-sql-server.md)
-- [在 SQL Server 中对存储过程签名](signing-stored-procedures-in-sql-server.md)
+- [SQL Server 中的签名存储过程](signing-stored-procedures-in-sql-server.md)
 - [在 SQL Server 中使用模拟自定义权限](customizing-permissions-with-impersonation-in-sql-server.md)
 - [ADO.NET 概述](../ado-net-overview.md)
