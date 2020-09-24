@@ -5,19 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2ea85959-e763-4669-8bd9-46a9dab894bd
-ms.openlocfilehash: 159b23eb4ef5ca38ebce6e488080d315ec3be081
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 94b033d58061e3d2e48a352d782eec7c4202fa43
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151177"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166828"
 ---
 # <a name="defining-primary-keys"></a>定义主键
+
 数据库表通常都有一列或一组列，用于唯一地标识表中的每一行。 这种具有标识作用的列或列组称为主键。  
   
- 当您将单个<xref:System.Data.DataColumn><xref:System.Data.DataTable.PrimaryKey%2A>标识为 的 时<xref:System.Data.DataTable>，表会自动将列的属性<xref:System.Data.DataColumn.AllowDBNull%2A>设置为**false，** 将<xref:System.Data.DataColumn.Unique%2A>属性设置为**true**。 对于多列主键，只有**AllowDBNull**属性将自动设置为**false**。  
+ 当你将单个指定 <xref:System.Data.DataColumn> 为的时 <xref:System.Data.DataTable.PrimaryKey%2A> <xref:System.Data.DataTable> ，该表会自动将列的 <xref:System.Data.DataColumn.AllowDBNull%2A> 属性设置为 **false** ，并将 <xref:System.Data.DataColumn.Unique%2A> 属性设置为 **true**。 对于多列主键，仅 **AllowDBNull** 属性自动设置为 **false**。  
   
- 的主**键**属性<xref:System.Data.DataTable>接收一个或多个**DataColumn**对象的数组作为其值，如以下示例所示。 第一个示例将单独一列定义为主键。  
+ 接收的 **PrimaryKey** 属性的 <xref:System.Data.DataTable> 值是一个或多个 **DataColumn** 对象的数组，如下面的示例中所示。 第一个示例将单独一列定义为主键。  
   
 ```vb  
 workTable.PrimaryKey = New DataColumn() {workTable.Columns("CustID")}  
@@ -65,7 +66,7 @@ keyColumn[1] = workTable.Columns["CustFName"];
 workTable.PrimaryKey = keyColumn;  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Data.DataTable>
 - [数据表架构定义](datatable-schema-definition.md)

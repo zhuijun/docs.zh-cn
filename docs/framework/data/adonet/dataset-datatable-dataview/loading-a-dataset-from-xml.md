@@ -6,14 +6,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 49c083b7-a5ed-41cf-aabc-5aaba96f00e6
-ms.openlocfilehash: 77715913c24423c1dc95478977f4e3821e4c247b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 0920acac2c82677cfce37703b7027dedce91a535
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545306"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91166802"
 ---
 # <a name="loading-a-dataset-from-xml"></a>从 XML 加载数据集
+
 ADO.NET <xref:System.Data.DataSet> 的内容可以从 XML 流或文档创建。 此外，利用 .NET Framework，您可以相当灵活地控制从 XML 中加载哪些信息以及如何创建 <xref:System.Data.DataSet> 的架构（即关系结构）。  
   
  若要使用 <xref:System.Data.DataSet> XML 中的数据填充，请使用对象的 **ReadXml** 方法 <xref:System.Data.DataSet> 。 **ReadXml**方法从文件、流或**XmlReader**中进行读取，并将 XML 的源以及可选的**XmlReadMode**参数作为参数。 有关 **XmlReader**的详细信息，请参阅 [用 XmlTextReader 读取 XML 数据](/previous-versions/dotnet/netframework-4.0/tfz3cz6w(v=vs.100))。 **ReadXml**方法读取 XML 流或文档的内容，并加载 <xref:System.Data.DataSet> 带有数据的。 它还会根据指定的 XmlReadMode 创建的关系架构 <xref:System.Data.DataSet> ， **XmlReadMode**以及关系架构是否已存在。  
@@ -33,6 +34,7 @@ ADO.NET <xref:System.Data.DataSet> 的内容可以从 XML 流或文档创建。 
 > 如果将 **XmlReader** 传递给 **ReadXml** ，并且将其定位到 XML 文档中，则 **ReadXml** 将读取到下一个元素节点，并将其视为根元素，一直读取到元素节点的末尾。 如果指定 **XmlReadMode**，则此功能不适用。  
   
 ## <a name="dtd-entities"></a>DTD 实体  
+
  如果 XML 包含在文档类型定义 (DTD) 架构中定义的实体，则当您尝试 <xref:System.Data.DataSet> 通过将文件名、流或非验证 **XmlReader** 传递到 **ReadXml**来加载时，将引发异常。 相反，必须创建 **XmlValidatingReader**，并将 **EntityHandling** 设置为 **entityhandling.expandentities**，并将 **XmlValidatingReader** 传递到 **ReadXml**。 在读取实体之前， **XmlValidatingReader** 会将其展开 <xref:System.Data.DataSet> 。  
   
  以下代码示例显示如何从 XML 流中加载 <xref:System.Data.DataSet>。 第一个示例显示了传递给 **ReadXml** 方法的文件名。 第二个示例显示一个字符串，包含使用 <xref:System.IO.StringReader> 加载的 XML。  
@@ -114,6 +116,7 @@ foreach (DataTable dataTable in dataSet.Tables)
 ```  
   
 ## <a name="merging-data-from-xml"></a>合并 XML 中的数据  
+
  如果 <xref:System.Data.DataSet> 已经包含数据，则会向已存在于 <xref:System.Data.DataSet> 中的数据添加 XML 中的新数据。 **ReadXml** 不会从 XML 合并到 <xref:System.Data.DataSet> 具有匹配主键的任何行信息。 若要使用 XML 中的新信息覆盖现有行信息，请使用 **ReadXml** 创建新的 <xref:System.Data.DataSet> ，然后将 <xref:System.Data.DataSet.Merge%2A> 新的 <xref:System.Data.DataSet> 引入现有 <xref:System.Data.DataSet> 。 请注意，使用**ReadXML**和**diffgram**的**XmlReadMode**加载 diffgram 将合并具有相同唯一标识符的行。  
   
 ## <a name="see-also"></a>请参阅

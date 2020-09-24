@@ -2,14 +2,15 @@
 title: <EnableAmPmParseAdjustment> 元素
 ms.date: 03/30/2017
 ms.assetid: fda998a5-f538-4f8b-a18c-ee7f35e16938
-ms.openlocfilehash: 8920e51fcaaca5cb78b80a99ea321163c9b5240f
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f935f213e1bca8dac7a5401970bc6183575e2301
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73117370"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167224"
 ---
 # <a name="enableampmparseadjustment-element"></a>\<EnableAmPmParseAdjustment> 元素
+
 确定日期和时间分析方法是否使用经过调整的规则集来分析包含 day、month、hour 和 AM/PM 指示符的日期字符串。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -23,22 +24,24 @@ ms.locfileid: "73117370"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`enabled`|必需的特性。<br /><br /> 指定日期和时间分析方法是否使用经过调整的规则集来分析只包含 day、month、hour 和 AM/PM 指示符的日期字符串。|  
   
 ### <a name="enabled-attribute"></a>enabled 特性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |0|日期和时间分析方法不使用调整的规则来分析日期字符串，这些字符串只包含日、月、小时和 AM/PM 指示符。|  
 |1|日期和时间分析方法使用经过调整的规则，用于分析日期字符串，这些字符串只包含日、月、小时和 AM/PM 指示符。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -48,8 +51,9 @@ ms.locfileid: "73117370"
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`runtime`|包含有关运行时初始化选项的信息。|  
   
-## <a name="remarks"></a>注解  
- `<EnableAmPmParseAdjustment>`元素控制以下方法如何分析包含数字日和月后跟一个小时和 AM/PM 指示符的日期字符串（例如 "4/10 6 AM"）：  
+## <a name="remarks"></a>备注  
+
+ `<EnableAmPmParseAdjustment>`元素控制以下方法如何分析包含数字日和月后跟一个小时和 AM/PM 指示符的日期字符串， (例如 "4/10 6 AM" ) ：  
   
 - <xref:System.DateTime.Parse%2A?displayProperty=nameWithType>  
   
@@ -79,7 +83,7 @@ ms.locfileid: "73117370"
 |zh-CN|上午 1/5/2017 4:00:00|上午 4/10/2017 6:00:00|  
 |en-GB|5/1/2017 6:00:00|10/4/2017 6:00:00|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [\<runtime>Element](runtime-element.md)
-- [\<configuration>Element](../configuration-element.md)
+- [\<runtime> 元素](runtime-element.md)
+- [\<configuration> 元素](../configuration-element.md)

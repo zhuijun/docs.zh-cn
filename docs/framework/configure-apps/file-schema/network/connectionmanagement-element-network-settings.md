@@ -9,14 +9,15 @@ helpviewer_keywords:
 - <connectionManagement> element
 - connectionManagement element
 ms.assetid: bedccaab-12a2-4511-8f67-e961f249aec6
-ms.openlocfilehash: 4ceec06fb0e21bfae67038efe0ce758d3d5b708f
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 52b780c739a00cb53694b547ee1a33c1b5d98c86
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504610"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167309"
 ---
 # <a name="connectionmanagement-element-network-settings"></a>\<connectionManagement> 元素（网络设置）
+
 指定到网络主机的最大连接数。  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -31,9 +32,11 @@ ms.locfileid: "84504610"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
+
  无。  
   
 ### <a name="child-elements"></a>子元素  
@@ -41,8 +44,8 @@ ms.locfileid: "84504610"
 |**元素**|**说明**|  
 |-----------------|---------------------|  
 |[add](add-element-for-connectionmanagement-network-settings.md)|将 IP 地址或 DNS 名称添加到连接管理列表。|  
-|[清除](clear-element-for-connectionmanagement-network-settings.md)|清除连接管理列表。|  
-|[删除](remove-element-for-connectionmanagement-network-settings.md)|从连接管理列表中删除 IP 地址或 DNS 名称。|  
+|[clear](clear-element-for-connectionmanagement-network-settings.md)|清除连接管理列表。|  
+|[remove](remove-element-for-connectionmanagement-network-settings.md)|从连接管理列表中删除 IP 地址或 DNS 名称。|  
   
 ### <a name="parent-elements"></a>父元素  
   
@@ -50,13 +53,16 @@ ms.locfileid: "84504610"
 |-----------------|---------------------|  
 |[system.net](system-net-element-network-settings.md)|包含指定 .NET Framework 如何连接到网络的设置。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  `connectionManagement`元素定义与服务器或服务器组的最大连接数。  
   
 ## <a name="configuration-files"></a>配置文件  
+
  此元素可在应用程序配置文件或计算机配置文件 (Machine.config) 中使用。  
   
 ## <a name="example"></a>示例  
+
  下面的示例将应用程序配置为使用四个到服务器的连接 `www.contoso.com` ，以及两个与其他服务器的连接。  
   
 ```xml  
@@ -70,7 +76,7 @@ ms.locfileid: "84504610"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Net.ServicePoint>
 - <xref:System.Net.ServicePointManager>
