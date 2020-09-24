@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9d98a7be-b110-4edb-8eba-bed10f250b6d
-ms.openlocfilehash: b31cd881f1307ec734c026d3c873d7a650e19a20
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 163f73a7682d444214caa213751cb35f8f0e8743
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251136"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91153035"
 ---
 # <a name="constant-expressions"></a>常量表达式
+
 常量表达式由常量值组成。 常量值被直接转换为常量命令目录树表达式，而无需在客户端进行任何变换。 这包括产生常量值的表达式。 因此，所有涉及常量的表达式都应具有数据源行为。 这可能产生与 CLR 行为不同的行为。  
   
  下面的示例说明了一个在服务器上求值的常量表达式。  

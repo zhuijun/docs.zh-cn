@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 1767f3a7-29d2-4834-a763-7d169693fa8b
-ms.openlocfilehash: 63c6e903fa811d5c61550d086b4f1ce84973f2bc
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ac1b28665dcaaa9f8c6ae6a6611757f6c4969adb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553618"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152840"
 ---
 # <a name="calling-service-operations-wcf-data-services"></a>调用服务操作（WCF 数据服务）
+
 OData) Open Data Protocol (定义数据服务的服务操作。 WCF 数据服务使你能够将此类操作定义为数据服务中的方法。 与其他数据服务资源一样，这些服务操作也通过 URI 进行寻址。 服务操作可以返回实体类型的集合、单个实体类型实例的集合和基元类型（如整数和字符串）的集合。 服务操作还可以返回 `null`（在 Visual Basic 中为 `Nothing`）。 WCF 数据服务客户端库可用于访问支持 HTTP GET 请求的服务操作。 这些种类的服务操作定义为应用了 <xref:System.ServiceModel.Web.WebGetAttribute> 的方法。 有关详细信息，请参阅 [服务操作](service-operations-wcf-data-services.md)。  
   
  服务操作在实现 OData 的数据服务所返回的元数据中公开。 在元数据中，服务操作表示为 `FunctionImport` 元素。 生成强类型时 <xref:System.Data.Services.Client.DataServiceContext> ，添加服务引用和 DataSvcUtil.exe 工具将忽略此元素。 因此，无法在上下文中找到一种方法用来直接调用服务操作。 不过，仍可使用 WCF 数据服务客户端通过以下两种方式之一来调用服务操作：  
@@ -22,6 +23,7 @@ OData) Open Data Protocol (定义数据服务的服务操作。 WCF 数据服务
 - 通过对 <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> 使用 <xref:System.Data.Services.Client.DataServiceContext> 方法来创建 <xref:System.Data.Services.Client.DataServiceQuery%601> 对象。 在调用 <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> 时，该服务操作的名称将提供给 `entitySetName` 参数。 此方法返回一个 <xref:System.Data.Services.Client.DataServiceQuery%601> 对象，该对象在枚举时或在调用 <xref:System.Data.Services.Client.DataServiceQuery%601.Execute%2A> 方法时调用该服务操作。 此方法用于调用返回集合的 GET 服务操作。 可通过使用 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> 方法来提供单个参数。 可以进一步编辑此方法返回的 <xref:System.Data.Services.Client.DataServiceQuery%601> 对象，就像对待任何查询对象一样。 有关详细信息，请参阅 [查询数据服务](querying-the-data-service-wcf-data-services.md)。  
   
 ## <a name="considerations-for-calling-service-operations"></a>调用服务操作的注意事项  
+
  使用 WCF 数据服务客户端调用服务操作时，请注意以下事项。  
   
 - 异步访问数据服务时，必须在 <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A> / <xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A> 上 <xref:System.Data.Services.Client.DataServiceContext> 或 <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> / <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> 方法上 <xref:System.Data.Services.Client.DataServiceQuery%601> 使用等效的异步方法。  
@@ -37,6 +39,7 @@ OData) Open Data Protocol (定义数据服务的服务操作。 WCF 数据服务
 - 使用 <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> 调用服务操作时，客户端库会 <xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> 通过对保留字符执行百分号编码（如与号 ( # A0) ），并对字符串中的单引号进行转义来自动转义提供给的字符。 但是，当您调用某一 *Execute* 方法来调用服务操作时，您必须记得对任何用户提供的字符串值执行这种转义。 URI 中的单引号转义为单引号对。  
   
 ## <a name="examples-of-calling-service-operations"></a>调用服务操作示例  
+
  本部分包含以下示例，说明如何使用 WCF 数据服务客户端库调用服务操作：  
   
 - [调用 Execute &lt; T &gt; 以返回实体集合](calling-service-operations-wcf-data-services.md#ExecuteIQueryable)  
@@ -54,7 +57,9 @@ OData) Open Data Protocol (定义数据服务的服务操作。 WCF 数据服务
 - [异步调用服务操作](calling-service-operations-wcf-data-services.md#ExecuteAsync)  
   
 <a name="ExecuteIQueryable"></a>
+
 ### <a name="calling-executet-to-return-a-collection-of-entities"></a>调用 Execute \<T> 以返回实体集合  
+
  下面的示例调用名为 GetOrdersByCity 的服务操作，该操作采用字符串参数 `city`，并返回 <xref:System.Linq.IQueryable%601>：  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationIQueryable](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationiqueryable)]
@@ -63,7 +68,9 @@ OData) Open Data Protocol (定义数据服务的服务操作。 WCF 数据服务
  在此示例中，该服务操作返回 `Order` 对象的集合，其中含有相关的 `Order_Detail` 对象。  
   
 <a name="CreateQueryIQueryable"></a>
+
 ### <a name="using-createqueryt-to-return-a-collection-of-entities"></a>使用 Servicecontext.createquery \<T> 返回实体集合  
+
  下面的示例使用 <xref:System.Data.Services.Client.DataServiceContext.CreateQuery%2A> 来返回用于调用同一 GetOrdersByCity 服务操作的 <xref:System.Data.Services.Client.DataServiceQuery%601>：  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationCreateQuery](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationcreatequery)]
@@ -72,7 +79,9 @@ OData) Open Data Protocol (定义数据服务的服务操作。 WCF 数据服务
  在此示例中，<xref:System.Data.Services.Client.DataServiceQuery%601.AddQueryOption%2A> 方法用于向查询中添加参数，而 <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> 方法用于在结果中包括相关 Order_Details 对象。  
   
 <a name="ExecuteSingleEntity"></a>
+
 ### <a name="calling-executet-to-return-a-single-entity"></a>调用 Execute \<T> 以返回单个实体  
+
  下面的示例调用名为 GetNewestOrder 的服务操作，该操作仅返回单个 Order 实体：  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationSingleEntity](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationsingleentity)]
@@ -81,13 +90,17 @@ OData) Open Data Protocol (定义数据服务的服务操作。 WCF 数据服务
  在此示例中，<xref:System.Linq.Enumerable.FirstOrDefault%2A> 方法用于在执行时仅请求单个 Order 实体。  
   
 <a name="ExecutePrimitiveCollection"></a>
+
 ### <a name="calling-executet-to-return-a-collection-of-primitive-values"></a>调用 Execute \<T> 以返回基元值集合  
+
  下面的示例调用返回字符串值集合的服务操作：  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationEnumString](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationenumstring)]  
   
 <a name="ExecutePrimitiveValue"></a>
+
 ### <a name="calling-executet-to-return-a-single-primitive-value"></a>调用 Execute \<T> 以返回单个基元值  
+
  下面的示例调用返回单个字符串值的服务操作：  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationSingleInt](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationsingleint)]
@@ -96,7 +109,9 @@ OData) Open Data Protocol (定义数据服务的服务操作。 WCF 数据服务
  同样，在此示例中，<xref:System.Linq.Enumerable.FirstOrDefault%2A> 方法用于在执行时仅请求单个整数值。  
   
 <a name="ExecuteVoid"></a>
+
 ### <a name="calling-a-service-operation-that-returns-no-data"></a>调用不返回数据的服务操作  
+
  下面的示例调用不返回任何数据的服务操作：  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationVoid](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationvoid)]
@@ -105,7 +120,9 @@ OData) Open Data Protocol (定义数据服务的服务操作。 WCF 数据服务
  由于不返回数据，因此不分配执行的值。 请求已成功的唯一指示是未引发 <xref:System.Data.Services.Client.DataServiceQueryException>。  
   
 <a name="ExecuteAsync"></a>
+
 ### <a name="calling-a-service-operation-asynchronously"></a>异步调用服务操作  
+
  下面的示例通过调用 <xref:System.Data.Services.Client.DataServiceContext.BeginExecute%2A> 和 <xref:System.Data.Services.Client.DataServiceContext.EndExecute%2A> 来异步调用服务操作：  
   
  [!code-csharp[Astoria Northwind Client#CallServiceOperationAsync](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#callserviceoperationasync)]

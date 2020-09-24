@@ -7,14 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 59efd4c8-cc7a-4800-a0a4-d3f8abe6c55c
-ms.openlocfilehash: 57830421eee3c94f9785a2c603eb31b96f99f4d5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a30a8c2c731e8c5cb2b22c8d7f34ec32d149803c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552838"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152788"
 ---
 # <a name="configuring-the-data-service-wcf-data-services"></a>配置数据服务（WCF 数据服务）
+
 通过 WCF 数据服务，您可以创建 (OData) 源公开 Open Data Protocol 数据服务。 这些源中的数据可以来自各种数据源。 WCF 数据服务使用数据提供程序将此数据作为 OData 源公开。 这些提供程序包括实体框架提供程序、反射提供程序和一组自定义数据服务提供程序接口。 提供程序实现为服务定义数据模型。 有关详细信息，请参阅 [数据服务提供程序](data-services-providers-wcf-data-services.md)。  
   
  在 WCF 数据服务中，数据服务是从类继承的类 <xref:System.Data.Services.DataService%601> ，其中数据服务的类型是数据模型的实体容器。 此实体容器具有一个或多个属性，这些属性返回用于访问数据模型中的实体集的 <xref:System.Linq.IQueryable%601>。  
@@ -25,6 +26,7 @@ ms.locfileid: "90552838"
 [!code-vb[Astoria Northwind Service#DataServiceConfigComplete](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind.svc.vb#dataserviceconfigcomplete)]  
   
 ## <a name="data-service-configuration-settings"></a>数据服务配置设置  
+
  <xref:System.Data.Services.DataServiceConfiguration> 类用于指定下列数据服务行为：  
   
 |成员|行为|  
@@ -48,14 +50,16 @@ ms.locfileid: "90552838"
 |<xref:System.Data.Services.DataServiceConfiguration.UseVerboseErrors%2A>|使用此配置属性可以在错误响应消息中返回更多信息，从而使您可以更轻松地对数据服务进行故障排除。 此选项不适用于生产环境。 有关详细信息，请参阅 [开发和部署 WCF 数据服务](developing-and-deploying-wcf-data-services.md)。|  
   
 <a name="accessRequirements"></a>
+
 ## <a name="minimum-resource-access-requirements"></a>最低资源访问要求  
+
  下表详细描述了为执行特定操作而必须授予的最低实体集权限。 路径示例基于在完成 [快速入门](quickstart-wcf-data-services.md)时创建的 Northwind 数据服务。 由于 <xref:System.Data.Services.EntitySetRights> 枚举和 <xref:System.Data.Services.ServiceOperationRights> 枚举都是通过使用 <xref:System.FlagsAttribute> 定义的，因此您可以使用逻辑 OR 运算符来针对单个实体集或操作指定多个权限。 有关详细信息，请参阅 [如何：启用对数据服务的访问](how-to-enable-access-to-the-data-service-wcf-data-services.md)。  
   
 |路径/操作|`GET`|`DELETE`|`MERGE`|`POST`|`PUT`|  
 |------------------|-----------|--------------|-------------|------------|-----------|  
 |`/Customers`|<xref:System.Data.Services.EntitySetRights.ReadMultiple>|不支持|不支持|<xref:System.Data.Services.EntitySetRights.WriteAppend>|不支持|  
 |`/Customers('ALFKI')`|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteDelete>|<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteMerge>|不适用|<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteReplace>|  
-|`/Customers('ALFKI')/Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> －和－<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|不支持|不支持|`Customers`：<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteMerge> 或 <xref:System.Data.Services.EntitySetRights.WriteReplace><br /><br /> －和－<br /><br /> `Orders``:`和<xref:System.Data.Services.EntitySetRights.WriteAppend>|不支持|  
+|`/Customers('ALFKI')/Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> －和－<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|不支持|不支持|`Customers`：<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteMerge> 或 <xref:System.Data.Services.EntitySetRights.WriteReplace><br /><br /> －和－<br /><br /> `Orders` `:` 和 <xref:System.Data.Services.EntitySetRights.WriteAppend>|不支持|  
 |`/Customers('ALFKI')/Orders(10643)`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> －和－<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> －和－<br /><br /> `Orders`：<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteDelete>|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> －和－<br /><br /> `Orders`：<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteMerge>|不支持|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> －和－<br /><br /> `Orders`：<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteReplace>|  
 |`/Orders(10643)/Customer`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> －和－<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Customers`：<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteDelete><br /><br /> －和－<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Customers`：<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteMerge>；<br /><br /> －和－<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Customers`: <xref:System.Data.Services.EntitySetRights.WriteAppend><br /><br /> －和－<br /><br /> `Orders`：<xref:System.Data.Services.EntitySetRights.WriteAppend> 和 <xref:System.Data.Services.EntitySetRights.ReadSingle>|不支持|  
 |`/Customers('ALFKI')/$links/Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> －和－<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|不支持|不支持|`Customers`：<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteMerge> 或 <xref:System.Data.Services.EntitySetRights.WriteReplace><br /><br /> －和－<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|不支持|  
@@ -63,7 +67,7 @@ ms.locfileid: "90552838"
 |`/Orders(10643)/$links/Customer`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> －和－<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadSingle>|`Orders`：<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteMerge> 或 <xref:System.Data.Services.EntitySetRights.WriteReplace>|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> －和－<br /><br /> `Orders`：<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteMerge>|不支持|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle>;<br /><br /> －和－<br /><br /> `Orders`：<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteReplace>|  
 |`/Customers/$count`|<xref:System.Data.Services.EntitySetRights.ReadMultiple>|不支持|不支持|不支持|不支持|  
 |`/Customers('ALFKI')/ContactName`|<xref:System.Data.Services.EntitySetRights.ReadSingle>|不支持|<xref:System.Data.Services.EntitySetRights.WriteMerge>|不支持|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
-|`/Customers('ALFKI')/Address/StreetAddress/$value` <sup>1</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.WriteDelete>|不支持|不支持|不支持|  
+|`/Customers('ALFKI')/Address/StreetAddress/$value`<sup>1</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.WriteDelete>|不支持|不支持|不支持|  
 |`/Customers('ALFKI')/ContactName/$value`|<xref:System.Data.Services.EntitySetRights.ReadSingle>|<xref:System.Data.Services.EntitySetRights.ReadSingle> 和 <xref:System.Data.Services.EntitySetRights.WriteDelete>|<xref:System.Data.Services.EntitySetRights.WriteMerge>|不支持|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
 |`/Customers('ALFKI')/$value` <sup>2</sup>|<xref:System.Data.Services.EntitySetRights.ReadSingle>|不支持|不支持|不支持|<xref:System.Data.Services.EntitySetRights.WriteReplace>|  
 |`/Customers?$select=Orders/*&$expand=Orders`|`Customers`: <xref:System.Data.Services.EntitySetRights.ReadSingle><br /><br /> －和－<br /><br /> `Orders`: <xref:System.Data.Services.EntitySetRights.ReadMultiple>|不支持|不支持|`Customers`: <xref:System.Data.Services.EntitySetRights.WriteAppend>|不支持|  
@@ -74,7 +78,9 @@ ms.locfileid: "90552838"
  <sup>2</sup> 在将 (BLOB) 返回二进制大型对象的属性定义为属于媒体链接项的实体（在本例中为）时，此 URI 受支持 `Customers` 。 有关详细信息，请参阅 [流式处理提供程序](streaming-provider-wcf-data-services.md)。  
   
 <a name="versioning"></a>
+
 ## <a name="versioning-requirements"></a>版本控制要求  
+
  以下数据服务配置行为需要 OData 协议版本2或更高版本：  
   
 - 计数请求支持。  
