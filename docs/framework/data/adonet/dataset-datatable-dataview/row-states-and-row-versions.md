@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2e6642c9-bfc6-425c-b3a7-e4912ffa6c1f
-ms.openlocfilehash: 70596d6acb62fa01092e5e55dd3b6c84eb162b5d
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1b80ae78fad22989f99fb1e992d4978a192e0c66
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70784340"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204523"
 ---
 # <a name="row-states-and-row-versions"></a>行状态和行版本
+
 ADO.NET 用行状态和行版本管理表中的行。 行状态指示行的状态；行版本在修改行中存储的值时维护各个阶段的值，包括当前值、原始值和默认值。 例如，在修改了行中的某列后，该行的行状态将为 `Modified`，并且有两个行版本：`Current`（包含行的当前值）和 `Original`（包含列修改前行的值）。  
   
  每个 <xref:System.Data.DataRow> 对象都具有 <xref:System.Data.DataRow.RowState%2A> 属性，您可以检查此属性来确定行的当前状态。 下表提供了对每个 `RowState` 枚举值的简短说明。  
@@ -98,5 +99,5 @@ foreach (DataRow delRow in delRows)
 
 - [操作数据表中的数据](manipulating-data-in-a-datatable.md)
 - [数据集、数据表和数据视图](index.md)
-- [DataAdapters 和 DataReaders](../dataadapters-and-datareaders.md)
+- [DataAdapter 和 DataReader](../dataadapters-and-datareaders.md)
 - [ADO.NET 概述](../ado-net-overview.md)

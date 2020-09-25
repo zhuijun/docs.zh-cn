@@ -1,15 +1,16 @@
 ---
-title: <message>的元素<ws2007FederationHttpBinding>
+title: <message> 的元素 <ws2007FederationHttpBinding>
 ms.date: 03/30/2017
 ms.assetid: 52cd941d-e230-4c82-8b29-333a7d20eca8
-ms.openlocfilehash: dde763687dbc62d6fb342a21a4c614208f28d7e8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d71bce5e94568bdad3c52226fa1029a1dd87bfd9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738998"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204913"
 ---
-# <a name="message-element-of-ws2007federationhttpbinding"></a>\<message>的元素\<ws2007FederationHttpBinding>
+# <a name="message-element-of-ws2007federationhttpbinding"></a>\<message> 的元素 \<ws2007FederationHttpBinding>
+
 定义元素的消息级安全性设置 [\<ws2007FederationHttpBinding>](ws2007federationhttpbinding.md) 。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -81,11 +82,12 @@ ms.locfileid: "73738998"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`algorithmSuite`|可选。 设置消息加密、签名和密钥包装算法。 算法和密钥大小由 <xref:System.ServiceModel.Security.SecurityAlgorithmSuite> 类确定。 这些算法与“安全策略语言”(WS-SecurityPolicy) 规范中指定的算法一致。<br /><br /> 有关可能的值，请参见下表。 默认值为 Basic256。|  
 |`issuedKeyType`|指定要颁发的密钥类型。 有效值包括以下值：<br /><br /> -SymmetricKey<br />-PublicKey<br />-为 bearerkey 并且<br /><br /> 默认值为 SymmetricKey。 此属性的类型为 <xref:System.IdentityModel.Tokens.SecurityKeyType>。|  
@@ -94,7 +96,7 @@ ms.locfileid: "73738998"
   
 ## <a name="algorithmsuite-attribute"></a>algorithmSuite 属性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |Basic128|使用 Aes128 加密，对消息摘要使用 Sha1，对密钥包装使用 Rsa-oaep-mgf1p。|  
 |Basic192|使用 Aes192 加密，对消息摘要使用 Sha1，对密钥包装使用 Rsa-oaep-mgf1p。|  
@@ -128,7 +130,7 @@ ms.locfileid: "73738998"
 |-------------|-----------------|  
 |[\<security>](security-element-of-ws2007federationhttpbinding.md)|定义绑定的安全设置。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp>
 - <xref:System.ServiceModel.Configuration.WSFederationHttpSecurityElement.Message%2A>

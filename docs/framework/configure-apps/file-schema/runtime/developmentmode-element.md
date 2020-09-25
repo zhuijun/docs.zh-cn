@@ -9,14 +9,15 @@ helpviewer_keywords:
 - container tags, <developmentMode> element
 - <developmentMode> element
 ms.assetid: 60e79a8c-415a-497d-be29-b9d0fd9bdee3
-ms.openlocfilehash: 4a062da31740edb8f0c7a4f4db8b09800c687587
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ddcabb831193baee30016f663f32d8562283d936
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73117629"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91205017"
 ---
 # <a name="developmentmode-element"></a>\<developmentMode> 元素
+
 指定运行时是否搜索由 DEVPATH 环境变量指定的目录中的程序集。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,22 +31,24 @@ ms.locfileid: "73117629"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |**developerInstallation**|指定运行时是否搜索由 DEVPATH 环境变量指定的目录中的程序集。|  
   
 ## <a name="developerinstallation-attribute"></a>developerInstallation 特性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
-|true|在由 DEVPATH 环境变量指定的目录中搜索程序集。|  
+|**true**|在由 DEVPATH 环境变量指定的目录中搜索程序集。|  
 |**false**|不搜索由 DEVPATH 环境变量指定的目录中的程序集。 这是默认值。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -55,10 +58,12 @@ ms.locfileid: "73117629"
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  仅在开发时使用此设置。 运行时不检查在 DEVPATH 中找到的具有强名称的程序集的版本。 它只使用它找到的第一个程序集。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何使运行时在由 DEVPATH 环境变量指定的目录中搜索程序集。  
   
 ```xml  
@@ -69,7 +74,7 @@ ms.locfileid: "73117629"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [运行时设置架构](index.md)
 - [配置文件架构](../index.md)

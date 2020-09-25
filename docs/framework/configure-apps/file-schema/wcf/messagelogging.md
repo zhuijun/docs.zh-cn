@@ -2,14 +2,15 @@
 title: <messageLogging>
 ms.date: 03/30/2017
 ms.assetid: 1d06a7e6-9633-4a12-8c5d-123adbbc19c5
-ms.openlocfilehash: 9291c38af28c18d20e23e34e8316b4a9fe523123
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: fd4d678b1e861a47762d8a64f85dcc052a30fe2b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855119"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204796"
 ---
 # \<messageLogging>
+
 该元素定义 Windows Communication Foundation (WCF) 的消息日志记录功能的设置。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,11 +38,12 @@ ms.locfileid: "70855119"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`logEntireMessage`|一个布尔值，指定是否记录整个消息（消息头和正文）。 默认值为 `false`，这意味着仅记录消息头。 此设置会影响所有消息日志记录级别（服务、传输和格式不正确）。|  
 |`logMalformedMessages`|一个布尔值，指定是否记录格式不正确的消息。 格式不正确的消息将不计入 `maxMessagesToLog`。 默认为 `false`。|  
@@ -62,7 +64,8 @@ ms.locfileid: "70855119"
 |-------------|-----------------|  
 |诊断|定义管理员运行时检查和控制的 WCF 设置。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  将在堆栈中以下三个不同级别记录消息：服务、传输和格式不正确。 可以单独激活每个级别。  
   
  可添加 XPath 筛选器以记录传输和服务级别的特定消息。 如果未定义任何筛选器，则记录所有消息。 筛选器仅应用于消息的标头。 正文会被忽略。 WCF 将忽略消息正文，以便提高性能。 如果要根据正文内容进行筛选，可以创建一个自定义侦听器，并采用具有相应功能的筛选器。  
@@ -122,7 +125,7 @@ ms.locfileid: "70855119"
 </messageLogging>
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>

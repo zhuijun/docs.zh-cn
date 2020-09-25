@@ -7,14 +7,15 @@ helpviewer_keywords:
 - DataServiceQuery class, about DataServiceQuery class
 - DataServiceContext class, about DataServiceContext class
 ms.assetid: 21075e50-8917-413e-a8ea-35a0f6e65aa5
-ms.openlocfilehash: 2ff3f63d406a260f83eaba4f2e7a8419046e1931
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d1554dd149e3d447a67cd2ef41aef9042e14fd06
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559026"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204354"
 ---
 # <a name="wcf-data-services-client-library"></a>WCF 数据服务客户端库
+
 如果任何应用程序可以发送 HTTP 请求并处理数据服务返回的 OData 源，则该应用程序可以与 Open Data Protocol (OData 基于 OData) 的数据服务进行交互。 利用这种互操作性，您可以从各种启用 Web 的应用程序访问基于 OData 的服务。 WCF 数据服务包括从 .NET Framework 或基于 Silverlight 的应用程序使用 OData 源时提供更丰富的编程体验的客户端库。  
   
  客户端库的两大主要类为 <xref:System.Data.Services.Client.DataServiceContext> 类和 <xref:System.Data.Services.Client.DataServiceQuery%601> 类。 <xref:System.Data.Services.Client.DataServiceContext> 类封装针对指定数据服务支持的操作。 尽管 OData 服务是无状态的，但上下文不是。 因此，你可以使用 <xref:System.Data.Services.Client.DataServiceContext> 类在与数据服务之间的交互之间维护客户端的状态，以支持更改管理等功能。 该类还对更改的标识和跟踪进行管理。 <xref:System.Data.Services.Client.DataServiceQuery%601> 类表示一个针对特定实体集的查询。  
@@ -22,6 +23,7 @@ ms.locfileid: "90559026"
  本节介绍如何使用客户端库从 .NET Framework 客户端应用程序访问和更改数据。 有关如何使用基于 Silverlight 的应用程序的 WCF 数据服务客户端库的详细信息，请参阅 [WCF 数据服务 (silverlight) ](/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95))。 其他客户端库可用，可用于在其他类型的应用程序中使用 OData 源。 有关 OData SDK 的详细信息，请参阅 [ODATA sdk-示例代码](https://www.odata.org/ecosystem/#sdk)。
   
 ## <a name="in-this-section"></a>本节内容  
+
  [生成数据服务客户端库](generating-the-data-service-client-library-wcf-data-services.md)  
  介绍如何生成基于 OData 源的客户端库和客户端数据服务类。  
   

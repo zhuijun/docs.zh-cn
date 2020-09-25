@@ -2,14 +2,15 @@
 title: <msmqIntegration>
 ms.date: 03/30/2017
 ms.assetid: ab677405-1ffe-457a-803f-00c1770e51e2
-ms.openlocfilehash: 143557833457f379d410c3b71d87199a5b9e783b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 66f7e3ba145441926ed11227a0ba82ff21925cf7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73738890"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204679"
 ---
 # \<msmqIntegration>
+
 指定自定义绑定的 MSMQ 传输。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -43,19 +44,21 @@ ms.locfileid: "73738890"
 ```  
   
 ## <a name="type"></a>类型  
+
  `Type`  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |customDeadLetterQueue|一个 URI，指示每个应用程序的死信队列（该队列用于传输已过期的或无法传递到应用程序的消息）的位置。<br /><br /> 对于需要 ExactlyOnce 保证的消息（即 `exactlyOnce` 设置为 `true`），此属性默认为 MSMQ 中系统级事务性死信队列。<br /><br /> 对于不需要保证的消息（即 `exactlyOnce` 设置为 `false`），此属性默认为 `null`。<br /><br /> 该值必须使用 net.msmq 方案。 默认为 `null`。<br /><br /> 如果 `deadLetterQueue` 设置为 `None` 或 `System`，则此属性必须设置为 `null`。 如果此属性不为 `null`，则 `deadLetterQueue` 必须设置为 `Custom`。|  
 |deadLetterQueue|指定要使用的死信队列类型。<br /><br /> 有效值包括<br /><br /> -Custom：自定义死信队列。<br />-None：不使用死信队列。<br />-System：使用 system 死信队列。<br /><br /> 此属性的类型为 DeadLetterQueue。|  
-|durable|一个布尔值，指定此绑定处理的消息是持久的还是可变的。 默认为 `true`。<br /><br /> 持久消息能够在队列管理器崩溃后保留下来，而可变消息则不能。 当应用程序需要较低的延迟并且可以容忍偶尔丢失消息时，可变消息是有用的。<br /><br /> 如果 `exactlyOnce` 设置为 `true`，则消息必须为持久的。|  
-|exactlyOnce|一个布尔值，指定是否将只接收一次此绑定处理的消息。 默认为 `true`。<br /><br /> 发送的消息可以包含保证，也可以不包含保证。 应用程序可以使用保证来确保发送的消息到达接收消息队列；如果消息未能到达，则应用程序可以通过读取死信队列进行确定。<br /><br /> 当 `exactlyOnce` 设置为 `true` 时，指示 MSMQ 应确保将发送的消息传递到接收消息队列一次且只有一次。如果传递失败，则会将消息发送到死信队列。<br /><br /> 将 `exactlyOnce` 设置为 `true` 时发送的消息必须只发送到事务性队列。|  
+|durable|一个布尔值，指定此绑定处理的消息是持久的还是可变的。 默认值为 `true`。<br /><br /> 持久消息能够在队列管理器崩溃后保留下来，而可变消息则不能。 当应用程序需要较低的延迟并且可以容忍偶尔丢失消息时，可变消息是有用的。<br /><br /> 如果 `exactlyOnce` 设置为 `true`，则消息必须为持久的。|  
+|exactlyOnce|一个布尔值，指定是否将只接收一次此绑定处理的消息。 默认值为 `true`。<br /><br /> 发送的消息可以包含保证，也可以不包含保证。 应用程序可以使用保证来确保发送的消息到达接收消息队列；如果消息未能到达，则应用程序可以通过读取死信队列进行确定。<br /><br /> 当 `exactlyOnce` 设置为 `true` 时，指示 MSMQ 应确保将发送的消息传递到接收消息队列一次且只有一次。如果传递失败，则会将消息发送到死信队列。<br /><br /> 将 `exactlyOnce` 设置为 `true` 时发送的消息必须只发送到事务性队列。|  
 |manualAddressing|一个使用户能够控制消息寻址的布尔值。 此属性通常用于路由器方案。在该方案中，应用程序确定将消息发送到若干目标中的哪一个。<br /><br /> 如果设置为 `true`，则通道假定已对消息进行寻址，而不再向其添加其他任何信息。 然后，用户可以单独对每个消息进行寻址。<br /><br /> 如果设置为 `false`，则默认的 Windows Communication Foundation (WCF) 寻址机制将为所有消息自动创建地址。<br /><br /> 默认为 `false`。|  
 |maxBufferPoolSize|一个正整数，指定缓冲池的最大大小。 默认值为 524288。<br /><br /> WCF 的许多组件使用缓冲区。 每次使用缓冲区时，创建和销毁它们都将占用大量资源，而缓冲区的垃圾回收过程也是如此。 利用缓冲池，可以从缓冲池中获得缓冲区，使用缓冲区，然后在完成工作后将其返回给缓冲池。 这样就避免了创建和销毁缓冲区的系统开销。|  
 |maxImmediateRetries|一个整数，指定从应用程序队列读取的消息的最大立即重试次数。 默认值为 5。<br /><br /> 如果对消息进行了最大立即重试次数的尝试且应用程序未处理消息，则会将消息发送到重试队列，以便在将来某个时刻进行重试。 如果未指定重试周期，则将消息发送到病毒消息队列，或将否定确认发送回发送方。|  
@@ -70,17 +73,17 @@ ms.locfileid: "73738890"
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |msmqTransportSecurity|指定此绑定的传输安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>。|  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|定义自定义绑定的所有绑定功能。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.MsmqIntegrationElement>
 - <xref:System.ServiceModel.Channels.TransportBindingElement>

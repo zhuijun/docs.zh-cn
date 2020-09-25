@@ -2,14 +2,15 @@
 title: <localServiceSettings> 元素
 ms.date: 03/30/2017
 ms.assetid: 0658549c-3f65-46dd-8c5c-9895441ed734
-ms.openlocfilehash: 4883fd563ecf989d67c369085df4fc43d0c5f078
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3043c07afd316d90cc5525a67bef144f33d9b136
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400302"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204926"
 ---
 # <a name="localservicesettings-element"></a>\<localServiceSettings> 元素
+
 指定此绑定的本地服务安全设置。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -42,11 +43,12 @@ ms.locfileid: "70400302"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`detectReplays`|一个布尔值，指定是否自动检测和处理针对通道的重放攻击。 默认为 `false`。|  
 |`inactivityTimeout`|一个正值 <xref:System.TimeSpan> ，指定通道在超时之前等待的无活动持续时间。默认值为 "01:00:00"。|  
@@ -64,6 +66,7 @@ ms.locfileid: "70400302"
 |`timestampValidityDuration`|一个值为正的 <xref:System.TimeSpan>，指定时间戳有效的持续时间。 默认值为“00:15:00”。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -73,7 +76,8 @@ ms.locfileid: "70400302"
 |[\<security>](security-of-custombinding.md)|指定自定义绑定的安全选项。|  
 |[\<secureConversationBootstrap>](secureconversationbootstrap.md)|指定用于启动安全对话服务的默认值。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  这些设置并非作为安全策略的组成部分而发布，而且不影响客户端绑定，因此是本地的。  
   
  `localServiceSecuritySettings` 元素的下列属性有助于缓解拒绝服务 (DOS) 安全攻击：  
@@ -88,7 +92,7 @@ ms.locfileid: "70400302"
   
  请注意，在安全对话会话中，绑定上的 `inactivityTimeout` 和 `receiveTimeout` 属性将影响会话超时。 两个属性中时间较短者将确定何时发生超时。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.LocalServiceSecuritySettingsElement>
 - <xref:System.ServiceModel.Configuration.SecurityElementBase.LocalServiceSettings%2A>
