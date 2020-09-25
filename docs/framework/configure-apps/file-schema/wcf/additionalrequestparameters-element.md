@@ -2,17 +2,18 @@
 title: <additionalRequestParameters> 元素
 ms.date: 03/30/2017
 ms.assetid: da8109fb-581c-48f4-b718-3bbda1edc47d
-ms.openlocfilehash: ffddb247c4f902badafbb7d627de92033084a96e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: e175e2b68610ea91f78a04d2c9a4ed202c1f2605
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69919994"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172913"
 ---
 # <a name="additionalrequestparameters-element"></a>\<additionalRequestParameters> 元素
+
 此元素包含用于指定附加请求参数的配置元素的集合。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters.AdditionalRequestParameters%2A>
 - <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement.AdditionalRequestParameters%2A>

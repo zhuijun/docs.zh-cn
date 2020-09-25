@@ -7,15 +7,16 @@ helpviewer_keywords:
 - remove element
 - <remove> element
 ms.assetid: 9a5cd1b5-be1a-485f-8f0c-2890ad3ef3e0
-ms.openlocfilehash: f06973ec30d5061e4a200d6bf7e68adcf6302018
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 01b797e1fb62d32e9f0d44c54b803dd969615361
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088837"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173830"
 ---
 # <a name="remove-element-for-listeners-for-trace"></a>\<remove>的元素 \<listeners>\<trace>
-从**侦听器**集合中删除侦听器。  
+
+从 **侦听器** 集合中删除侦听器。  
 
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.diagnostics>**](system-diagnostics-element.md)\
@@ -30,15 +31,17 @@ ms.locfileid: "74088837"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
-|**name**|必需的特性。<br /><br /> 要从**侦听器**集合中删除的侦听器的名称。|  
+|name|必需的特性。<br /><br /> 要从 **侦听器** 集合中删除的侦听器的名称。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -50,13 +53,14 @@ ms.locfileid: "74088837"
 |`system.diagnostics`|指定用于收集、存储和路由消息的跟踪侦听器以及对跟踪开关设置的级别。|  
 |`trace`|配置 ASP.NET 跟踪服务。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
   
 > [!NOTE]
 > <xref:System.Diagnostics.DefaultTraceListener>从集合中移除会 `Listeners` 改变 <xref:System.Diagnostics.Debug.Assert%2A?displayProperty=nameWithType> 、 <xref:System.Diagnostics.Trace.Assert%2A?displayProperty=nameWithType> 、 <xref:System.Diagnostics.Debug.Fail%2A?displayProperty=nameWithType> 和方法的行为 <xref:System.Diagnostics.Trace.Fail%2A?displayProperty=nameWithType> 。 `Assert` `Fail` 通常，调用或方法会导致显示消息框，但是，如果不 <xref:System.Diagnostics.DefaultTraceListener> 在集合中，则不会显示消息框 `Listeners` 。  
   
 ## <a name="example"></a>示例  
- 下面的示例演示如何从跟踪**侦听器**集合中删除默认的跟踪侦听器。  
+
+ 下面的示例演示如何从跟踪 **侦听器** 集合中删除默认的跟踪侦听器。  
   
 ```xml  
 <configuration>  
@@ -70,7 +74,7 @@ ms.locfileid: "74088837"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Diagnostics.TraceListener>
 - <xref:System.Diagnostics.DefaultTraceListener>

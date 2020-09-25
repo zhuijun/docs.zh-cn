@@ -6,14 +6,15 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - Add Service Reference dialog box
 ms.assetid: 314077c1-ac10-47e1-bed4-940b5462359d
-ms.openlocfilehash: a6a388f837d00d63a39212843c3fa88b28482b26
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 050a791736e90b5daf46fd272197ca21a220afb0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545802"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172614"
 ---
 # <a name="generating-the-data-service-client-library-wcf-data-services"></a>生成数据服务客户端库（WCF 数据服务）
+
 实现 Open Data Protocol (OData) 的数据服务可以返回描述 OData 源公开的数据模型的服务元数据文档。 有关详细信息，请参阅 [OData：概述](https://www.odata.org/documentation/odata-version-2-0/overview/) 一文中的服务元数据文档部分。 您可以使用 Visual Studio 中的 " **添加服务引用** " 对话框添加对基于 OData 的服务的引用。 使用此工具添加对客户端项目中 OData 源返回的元数据的引用时，它将执行以下操作：  
   
 - 从数据服务请求服务元数据文档并截获返回的元数据。  
@@ -32,6 +33,7 @@ ms.locfileid: "90545802"
  还可以通过在命令提示符下使用 [DataSvcUtil.exe](wcf-data-service-client-utility-datasvcutil-exe.md) 工具来生成客户端数据服务类。 有关详细信息，请参阅 [如何：手动生成客户端数据服务类](how-to-manually-generate-client-data-service-classes-wcf-data-services.md)。  
   
 ## <a name="client-data-type-mapping"></a>客户端数据类型映射  
+
  使用 Visual Studio 中的 " **添加服务引用** " 对话框或 `DataSvcUtil.exe` 工具生成基于 OData 源的客户端数据类时，.NET Framework 数据类型将按以下方式映射到数据模型中的基元类型：  
   
 |数据模型类型|.NET framework 数据类型|  

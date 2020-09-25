@@ -2,14 +2,15 @@
 title: 序列运算符
 ms.date: 03/30/2017
 ms.assetid: 4d332d32-3806-4451-b7af-25af269194ae
-ms.openlocfilehash: 4feca030d3c398f4286fe9d126cae884afe7945b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a2394ed57335431fe0246f66219392af5cc0e6b1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792680"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173427"
 ---
 # <a name="sequence-operators"></a>序列运算符
+
 一般而言，[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 不支持具有以下一种或多种性质的序列运算符。  
   
 - 采用带有索引的 lambda 作为参数。  
@@ -43,6 +44,7 @@ ms.locfileid: "70792680"
 |<xref:System.Linq.Enumerable.SequenceEqual%2A?displayProperty=nameWithType>|  
   
 ## <a name="differences-from-net"></a>与 .NET 的差异  
+
  除 `Average` 外，所有受支持的序列运算符在公共语言运行库 (CLR) 中均按预期方式工作。 `Average` 返回的值的类型与执行求平均值运算的类型相同，而在 CLR 中，`Average` 则始终返回 <xref:System.Double> 或 <xref:System.Decimal>。 如果源自变量被显式强制转换为 double/decimal，或者选择器强制转换为 double/decimal，则产生的 SQL 也将进行这种转换，因而结果将同预期的一样。  
   
 ## <a name="see-also"></a>请参阅

@@ -8,14 +8,15 @@ helpviewer_keywords:
 - requestCaching element
 - <requestCaching> element
 ms.assetid: 9962a2fe-cbda-41a6-9377-571811eaea84
-ms.openlocfilehash: afee69eb894518b1c88483e34a1d64d452019244
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3eb32b7ae643efdb19892410b669c1e7ff80e0ad
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74802124"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174155"
 ---
 # <a name="requestcaching-element-network-settings"></a>\<requestCaching> 元素（网络设置）
+
 控制网络请求的缓存机制。  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -36,20 +37,21 @@ ms.locfileid: "74802124"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
-|`isPrivateCache`|指定缓存是否在不同用户的信息之间提供隔离。 默认值为 `true`。 此值应该 `false` 适用于中间层应用程序。|  
+|`isPrivateCache`|指定缓存是否在不同用户的信息之间提供隔离。 默认值是 `true`。 此值应该 `false` 适用于中间层应用程序。|  
 |`disableAllCaching`|指定为所有 Web 响应禁用缓存，且不能以编程方式重写。|  
-|`defaultPolicyLevel`|<xref:System.Net.Cache.RequestCacheLevel> 枚举中的值之一。 默认值为 `BypassCache`。|  
+|`defaultPolicyLevel`|<xref:System.Net.Cache.RequestCacheLevel> 枚举中的值之一。 默认值是 `BypassCache`。|  
 |`unspecifiedMaximumAge`|指定将内容标记为过期的默认时间。|  
   
 ## <a name="policylevel-attribute"></a>policyLevel 特性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |`Default`|如果资源是最新的，则返回缓存的资源，内容长度准确，并且存在过期、修改和内容长度属性。|  
 |`BypassCache`|从服务器返回资源。|  
@@ -65,7 +67,7 @@ ms.locfileid: "74802124"
 |元素|描述|  
 |-------------|-----------------|  
 |[defaultHttpCachePolicy](defaulthttpcachepolicy-element-network-settings.md)|可选元素。<br /><br /> 描述 HTTP 缓存是否处于活动状态，并描述默认缓存策略。|  
-|[\<defaultFtpCachePolicy>元素（网络设置）](defaultftpcachepolicy-element-network-settings.md)|可选元素。<br /><br /> 介绍 FTP 缓存是否处于活动状态，并描述默认缓存策略。|  
+|[\<defaultFtpCachePolicy> 元素（网络设置）](defaultftpcachepolicy-element-network-settings.md)|可选元素。<br /><br /> 介绍 FTP 缓存是否处于活动状态，并描述默认缓存策略。|  
   
 ### <a name="parent-elements"></a>父元素  
   
@@ -74,6 +76,7 @@ ms.locfileid: "74802124"
 |[system.net](system-net-element-network-settings.md)|包含指定 .NET Framework 如何连接到网络的设置。|  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何禁用所有缓存。  
   
 ```xml  
@@ -86,7 +89,7 @@ ms.locfileid: "74802124"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Net.Cache?displayProperty=nameWithType>
 - [网络设置架构](index.md)
