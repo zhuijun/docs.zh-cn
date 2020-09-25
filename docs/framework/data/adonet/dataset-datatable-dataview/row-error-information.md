@@ -5,15 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8b1f9070-d032-48c7-b030-bd8fbb2ca59a
-ms.openlocfilehash: 5ede6e2cd52ad55f8c35a42d137044dd1ceea400
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 8673b7fbc2e4238f7047698376c53af991de9f1b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785952"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181162"
 ---
-# <a name="row-error-information"></a><span data-ttu-id="ddb35-102">行错误信息</span><span class="sxs-lookup"><span data-stu-id="ddb35-102">Row Error Information</span></span>
-<span data-ttu-id="ddb35-103">为了避免在编辑 <xref:System.Data.DataTable> 中的值时对行错误做出响应，可以将错误信息添加到该行，供以后使用。</span><span class="sxs-lookup"><span data-stu-id="ddb35-103">To avoid having to respond to row errors while editing values in a <xref:System.Data.DataTable>, you can add the error information to the row for later use.</span></span> <span data-ttu-id="ddb35-104">因此，<xref:System.Data.DataRow> 对象在每行上提供 <xref:System.Data.DataRow.RowError%2A> 属性。</span><span class="sxs-lookup"><span data-stu-id="ddb35-104">The <xref:System.Data.DataRow> object provides a <xref:System.Data.DataRow.RowError%2A> property on each row for this purpose.</span></span> <span data-ttu-id="ddb35-105">将数据添加到**datarow**的<xref:System.Data.DataRow.HasErrors%2A> **RowError**属性会将**datarow**的属性设置为**true**。</span><span class="sxs-lookup"><span data-stu-id="ddb35-105">Adding data to the **RowError** property of a **DataRow** sets the <xref:System.Data.DataRow.HasErrors%2A> property of the **DataRow** to **true**.</span></span> <span data-ttu-id="ddb35-106">如果**datarow**是**DataTable**的一部分，并且**HasErrors**为**true**，则**HasErrors**属性也是**true**。</span><span class="sxs-lookup"><span data-stu-id="ddb35-106">If the **DataRow** is part of a **DataTable**, and **DataRow.HasErrors** is **true**, the **DataTable.HasErrors** property is also **true**.</span></span> <span data-ttu-id="ddb35-107">这也适用于**DataTable**所属的**数据集**。</span><span class="sxs-lookup"><span data-stu-id="ddb35-107">This applies as well to the **DataSet** to which the **DataTable** belongs.</span></span> <span data-ttu-id="ddb35-108">测试错误时，可以检查**HasErrors**属性以确定是否已将错误信息添加到任何行。</span><span class="sxs-lookup"><span data-stu-id="ddb35-108">When testing for errors, you can check the **HasErrors** property to determine if error information has been added to any rows.</span></span> <span data-ttu-id="ddb35-109">如果**HasErrors**为**true**，则<xref:System.Data.DataTable.GetErrors%2A>可以使用**DataTable**的方法返回并仅检查出现错误的行，如下面的示例中所示。</span><span class="sxs-lookup"><span data-stu-id="ddb35-109">If **HasErrors** is **true**, you can use the <xref:System.Data.DataTable.GetErrors%2A> method of the **DataTable** to return and examine only the rows with errors, as shown in the following example.</span></span>  
+# <a name="row-error-information"></a><span data-ttu-id="757d7-102">行错误信息</span><span class="sxs-lookup"><span data-stu-id="757d7-102">Row Error Information</span></span>
+
+<span data-ttu-id="757d7-103">为了避免在编辑 <xref:System.Data.DataTable> 中的值时对行错误做出响应，可以将错误信息添加到该行，供以后使用。</span><span class="sxs-lookup"><span data-stu-id="757d7-103">To avoid having to respond to row errors while editing values in a <xref:System.Data.DataTable>, you can add the error information to the row for later use.</span></span> <span data-ttu-id="757d7-104">因此，<xref:System.Data.DataRow> 对象在每行上提供 <xref:System.Data.DataRow.RowError%2A> 属性。</span><span class="sxs-lookup"><span data-stu-id="757d7-104">The <xref:System.Data.DataRow> object provides a <xref:System.Data.DataRow.RowError%2A> property on each row for this purpose.</span></span> <span data-ttu-id="757d7-105">将数据添加到**datarow**的**RowError**属性会将 <xref:System.Data.DataRow.HasErrors%2A> **datarow**的属性设置为**true**。</span><span class="sxs-lookup"><span data-stu-id="757d7-105">Adding data to the **RowError** property of a **DataRow** sets the <xref:System.Data.DataRow.HasErrors%2A> property of the **DataRow** to **true**.</span></span> <span data-ttu-id="757d7-106">如果 **datarow** 是 **DataTable**的一部分，并且 **HasErrors** 为 **true**，则 **HasErrors** 属性也是 **true**。</span><span class="sxs-lookup"><span data-stu-id="757d7-106">If the **DataRow** is part of a **DataTable**, and **DataRow.HasErrors** is **true**, the **DataTable.HasErrors** property is also **true**.</span></span> <span data-ttu-id="757d7-107">这也适用于**DataTable**所属的**数据集**。</span><span class="sxs-lookup"><span data-stu-id="757d7-107">This applies as well to the **DataSet** to which the **DataTable** belongs.</span></span> <span data-ttu-id="757d7-108">测试错误时，可以检查 **HasErrors** 属性以确定是否已将错误信息添加到任何行。</span><span class="sxs-lookup"><span data-stu-id="757d7-108">When testing for errors, you can check the **HasErrors** property to determine if error information has been added to any rows.</span></span> <span data-ttu-id="757d7-109">如果 **HasErrors** 为 **true**，则可以使用 <xref:System.Data.DataTable.GetErrors%2A> **DataTable** 的方法返回并仅检查出现错误的行，如下面的示例中所示。</span><span class="sxs-lookup"><span data-stu-id="757d7-109">If **HasErrors** is **true**, you can use the <xref:System.Data.DataTable.GetErrors%2A> method of the **DataTable** to return and examine only the rows with errors, as shown in the following example.</span></span>  
   
 ```vb  
 Dim workTable As DataTable = New DataTable("Customers")  
@@ -77,10 +78,10 @@ protected static void OnRowChanged(
 }  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="ddb35-110">请参阅</span><span class="sxs-lookup"><span data-stu-id="ddb35-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="757d7-110">请参阅</span><span class="sxs-lookup"><span data-stu-id="757d7-110">See also</span></span>
 
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataRow>
 - <xref:System.Data.DataTable>
-- [<span data-ttu-id="ddb35-111">操作数据表中的数据</span><span class="sxs-lookup"><span data-stu-id="ddb35-111">Manipulating Data in a DataTable</span></span>](manipulating-data-in-a-datatable.md)
-- [<span data-ttu-id="ddb35-112">ADO.NET 概述</span><span class="sxs-lookup"><span data-stu-id="ddb35-112">ADO.NET Overview</span></span>](../ado-net-overview.md)
+- [<span data-ttu-id="757d7-111">操作数据表中的数据</span><span class="sxs-lookup"><span data-stu-id="757d7-111">Manipulating Data in a DataTable</span></span>](manipulating-data-in-a-datatable.md)
+- [<span data-ttu-id="757d7-112">ADO.NET 概述</span><span class="sxs-lookup"><span data-stu-id="757d7-112">ADO.NET Overview</span></span>](../ado-net-overview.md)
