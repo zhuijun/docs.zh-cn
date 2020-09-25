@@ -2,14 +2,15 @@
 title: <behavior> 的 <serviceBehaviors>
 ms.date: 03/30/2017
 ms.assetid: 78fc0a08-55de-416a-ac12-a5e6ffc9a987
-ms.openlocfilehash: 115f94fc3f17dc5b4dd1ee3a090f2c9d121f810b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 739f95f527fd73062c8cec43efc6777efeb077f3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74139731"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195150"
 ---
 # <a name="behavior-of-servicebehaviors"></a>\<behavior> 的 \<serviceBehaviors>
+
 `behavior` 元素包含服务行为的设置集合。 每个行为都按其 `name` 进行索引。 服务可以使用元素的特性通过此名称链接到每个行为 `behaviorConfiguration` [\<endpoint>](endpoint-element.md) 。 这样，终结点可以共享公共行为配置而不用重新定义设置。 从 .NET Framework 4 开始，绑定和行为不需要具有名称。 有关默认配置和无值绑定和行为的详细信息，请参阅[WCF 服务的](../../../wcf/samples/simplified-configuration-for-wcf-services.md)[简化配置](../../../wcf/simplified-configuration.md)和简化配置。  
   
 > [!NOTE]
@@ -34,6 +35,7 @@ ms.locfileid: "74139731"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
@@ -52,7 +54,7 @@ ms.locfileid: "74139731"
 |[\<serviceAuthenticationManager>](serviceauthenticationmanager.md)|提供一个工作流配置元素，该元素在服务级别建立传输、消息或发起方的有效性。|  
 |[\<serviceAuthorization>](serviceauthorization-element.md)|指定用于授予服务操作访问权限的设置。|  
 |[\<serviceCredentials>](servicecredentials.md)|指定要用于对服务进行身份验证的凭据以及与客户端凭据验证相关的设置。|  
-|[\<serviceDebug>](servicedebug.md)|指定 Windows Communication Foundation （WCF）服务的调试和帮助信息功能。|  
+|[\<serviceDebug>](servicedebug.md)|指定 Windows Communication Foundation (WCF) 服务的调试和帮助信息功能。|  
 |[\<serviceDiscovery>](servicediscovery.md)|指定服务终结点的可发现性。|  
 |[\<serviceMetadata>](servicemetadata.md)|指定服务元数据的发布和相关信息。|  
 |[\<serviceSecurityAudit>](servicesecurityaudit.md)|指定用于在服务操作过程中启用安全事件审核的设置。|  
