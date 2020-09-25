@@ -2,14 +2,15 @@
 title: <security> 的 <ws2007HttpBinding>
 ms.date: 03/30/2017
 ms.assetid: fdda0ff7-b462-4e26-af52-e87ddab71945
-ms.openlocfilehash: e88f55f3651d1ccd55631dce13a0349ac2772624
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 48b49bf69f791f90ed5b2eea8e6d412438cd9519
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736390"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169838"
 ---
 # <a name="security-of-ws2007httpbinding"></a>\<security> 的 \<ws2007HttpBinding>
+
 表示与元素一起使用的安全设置 [\<ws2007HttpBinding>](ws2007httpbinding.md) 。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -39,17 +40,18 @@ ms.locfileid: "73736390"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`mode`|可有可无. 指定所应用的安全类型。 默认为 `Message`。<br /><br /> 此属性的类型为 <xref:System.ServiceModel.SecurityMode>。|  
   
 ## <a name="mode-attribute"></a>Mode 属性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |`None`|禁用安全性。|  
 |`Transport`|使用 HTTPS 提供安全性。 此服务必须使用安全套接字层 (SSL) 证书进行配置。 消息使用 HTTPS 获得全面保护，而且客户端使用服务的 SSL 证书对服务进行身份验证。 客户端身份验证通过元素的 `ClientCredentials` 属性进行控制 [\<transport>](transport-of-ws2007httpbinding.md) 。|  
@@ -69,10 +71,11 @@ ms.locfileid: "73736390"
 |-------------|-----------------|  
 |[\<ws2007HttpBinding>](ws2007httpbinding.md)|HTTP 传输应用程序的安全绑定。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  此元素专用于与实现 WS-* 规范的服务进行互操作。 此绑定的传输安全为 HTTP 上的安全套接字层 (SSL)，即 HTTPS。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.WSHttpSecurity>
 - <xref:System.ServiceModel.WSHttpBinding.Security%2A>

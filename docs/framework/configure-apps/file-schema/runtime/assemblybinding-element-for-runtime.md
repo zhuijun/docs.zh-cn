@@ -8,14 +8,15 @@ helpviewer_keywords:
 - assemblyBinding element
 - container tags, <assemblyBinding> element
 ms.assetid: 964cbb35-ab49-4498-8471-209689e5dada
-ms.openlocfilehash: 202b063ad3f0f9696cdc12aff434d61fe5a813e6
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: b6a39bcecfd2485481677496adcf026d986c283b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154317"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170241"
 ---
 # <a name="assemblybinding-element-for-runtime"></a>\<runtime> 的 \<assemblyBinding> 元素
+
 包含有关程序集版本重定向和程序集位置的信息。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,14 +32,15 @@ ms.locfileid: "79154317"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |**xmlns**|必需的特性。<br /><br /> 指定程序集绑定所需的 XML 命名空间。 使用字符串“urn: 架构-microsoft-com:asm.v1”作为值。|  
-|**appliesTo**|指定 .NET Framework 程序集重定向适用的运行时版本。 此可选特性用 .NET Framework 版本号来指示其适用的版本。 如果未指定**appliesTo**特性，则 **\<assemblyBinding>** 元素应用于所有版本的 .NET Framework。 .NET Framework 版本1.1 中引入了**appliesTo**特性;.NET Framework 版本1.0 将忽略它。 这意味着， **\<assemblyBinding>** 即使指定了**appliesTo**特性，也在使用 .NET Framework 版本1.0 时应用所有元素。|  
+|**appliesTo**|指定 .NET Framework 程序集重定向适用的运行时版本。 此可选特性用 .NET Framework 版本号来指示其适用的版本。 如果没有指定 appliesTo 特性，\<assemblyBinding> 元素将适用于 .NET Framework 的所有版本 。 .NET Framework 版本1.1 中引入了 **appliesTo** 特性;.NET Framework 版本1.0 将忽略它。 这意味着，即使指定了 appliesTo 特性，在使用 .NET Framework 版本 1.0 时所有的 \<assemblyBinding> 元素也都适用 。|  
   
 ### <a name="child-elements"></a>子元素  
   
@@ -57,6 +59,7 @@ ms.locfileid: "79154317"
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|  
   
 ## <a name="example"></a>示例  
+
  下面的示例显示如何将一个程序集版本重定向到另一个版本并提供基本代码。  
   
 ```xml  
@@ -77,7 +80,7 @@ ms.locfileid: "79154317"
 </configuration>  
 ```  
   
- 下面的示例演示如何使用**appliesTo**特性重定向 .NET Framework 程序集的绑定。  
+ 下面的示例演示如何使用 **appliesTo** 特性重定向 .NET Framework 程序集的绑定。  
   
 ```xml  
 <runtime>  
@@ -90,7 +93,7 @@ ms.locfileid: "79154317"
 </runtime>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [运行时设置架构](index.md)
 - [配置文件架构](../index.md)
