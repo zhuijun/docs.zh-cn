@@ -9,44 +9,48 @@ helpviewer_keywords:
 - WCF Data Services, querying
 - WCF Data Services, accessing data
 ms.assetid: 62997821-e0c6-4c4d-9fb7-1273fb5e5d18
-ms.openlocfilehash: b06a21a45dcf6e67c41287c4cd59cdda4aa7b447
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 11a37340df879db7c2f8fdeaa792c1466e4a75d0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569084"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91184750"
 ---
-# <a name="how-to-execute-data-service-queries-wcf-data-services"></a><span data-ttu-id="26173-102">如何：执行数据服务查询（WCF 数据服务）</span><span class="sxs-lookup"><span data-stu-id="26173-102">How to: Execute Data Service Queries (WCF Data Services)</span></span>
-<span data-ttu-id="26173-103">WCF 数据服务使你能够使用生成的客户端数据服务类从基于 .NET Framework 的客户端应用程序查询数据服务。</span><span class="sxs-lookup"><span data-stu-id="26173-103">WCF Data Services enables you to query a data service from a .NET Framework-based client application by using the generated client data service classes.</span></span> <span data-ttu-id="26173-104">可以使用下列方法之一执行查询：</span><span class="sxs-lookup"><span data-stu-id="26173-104">You can execute queries by using one of these methods:</span></span>  
+# <a name="how-to-execute-data-service-queries-wcf-data-services"></a><span data-ttu-id="5a1e0-102">如何：执行数据服务查询（WCF 数据服务）</span><span class="sxs-lookup"><span data-stu-id="5a1e0-102">How to: Execute Data Service Queries (WCF Data Services)</span></span>
+
+<span data-ttu-id="5a1e0-103">WCF 数据服务使你能够使用生成的客户端数据服务类从基于 .NET Framework 的客户端应用程序查询数据服务。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-103">WCF Data Services enables you to query a data service from a .NET Framework-based client application by using the generated client data service classes.</span></span> <span data-ttu-id="5a1e0-104">可以使用下列方法之一执行查询：</span><span class="sxs-lookup"><span data-stu-id="5a1e0-104">You can execute queries by using one of these methods:</span></span>  
   
-- <span data-ttu-id="26173-105">针对从 <xref:System.Data.Services.Client.DataServiceQuery%601> 工具所生成的 <xref:System.Data.Services.Client.DataServiceContext> 获取的命名 `Add Data Service Reference` 执行 LINQ 查询。</span><span class="sxs-lookup"><span data-stu-id="26173-105">Executing a LINQ query against the named <xref:System.Data.Services.Client.DataServiceQuery%601> that you obtain from the <xref:System.Data.Services.Client.DataServiceContext> that the `Add Data Service Reference` tool generates.</span></span>  
+- <span data-ttu-id="5a1e0-105">针对从 <xref:System.Data.Services.Client.DataServiceQuery%601> 工具所生成的 <xref:System.Data.Services.Client.DataServiceContext> 获取的命名 `Add Data Service Reference` 执行 LINQ 查询。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-105">Executing a LINQ query against the named <xref:System.Data.Services.Client.DataServiceQuery%601> that you obtain from the <xref:System.Data.Services.Client.DataServiceContext> that the `Add Data Service Reference` tool generates.</span></span>  
   
-- <span data-ttu-id="26173-106">隐式枚举从 <xref:System.Data.Services.Client.DataServiceQuery%601> 工具所生成的 <xref:System.Data.Services.Client.DataServiceContext> 获取的命名 `Add Data Service Reference`。</span><span class="sxs-lookup"><span data-stu-id="26173-106">Implicitly, by enumerating over the named <xref:System.Data.Services.Client.DataServiceQuery%601> that you obtain from the <xref:System.Data.Services.Client.DataServiceContext> that the `Add Data Service Reference` tool generates.</span></span>  
+- <span data-ttu-id="5a1e0-106">隐式枚举从 <xref:System.Data.Services.Client.DataServiceQuery%601> 工具所生成的 <xref:System.Data.Services.Client.DataServiceContext> 获取的命名 `Add Data Service Reference`。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-106">Implicitly, by enumerating over the named <xref:System.Data.Services.Client.DataServiceQuery%601> that you obtain from the <xref:System.Data.Services.Client.DataServiceContext> that the `Add Data Service Reference` tool generates.</span></span>  
   
-- <span data-ttu-id="26173-107">显式调用 <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> 的 <xref:System.Data.Services.Client.DataServiceQuery%601> 方法，或显式调用用于异步执行的 <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> 方法。</span><span class="sxs-lookup"><span data-stu-id="26173-107">Explicitly, by calling the <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> method on the <xref:System.Data.Services.Client.DataServiceQuery%601>, or the <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> method for asynchronous execution.</span></span>  
+- <span data-ttu-id="5a1e0-107">显式调用 <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> 的 <xref:System.Data.Services.Client.DataServiceQuery%601> 方法，或显式调用用于异步执行的 <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> 方法。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-107">Explicitly, by calling the <xref:System.Data.Services.Client.DataServiceContext.Execute%2A> method on the <xref:System.Data.Services.Client.DataServiceQuery%601>, or the <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> method for asynchronous execution.</span></span>  
   
- <span data-ttu-id="26173-108">有关详细信息，请参阅[查询数据服务](querying-the-data-service-wcf-data-services.md)。</span><span class="sxs-lookup"><span data-stu-id="26173-108">For more information, see [Querying the Data Service](querying-the-data-service-wcf-data-services.md).</span></span>  
+ <span data-ttu-id="5a1e0-108">有关详细信息，请参阅 [查询数据服务](querying-the-data-service-wcf-data-services.md)。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-108">For more information, see [Querying the Data Service](querying-the-data-service-wcf-data-services.md).</span></span>  
   
- <span data-ttu-id="26173-109">本主题中的示例使用罗斯文示例数据服务和自动生成的客户端数据服务类。</span><span class="sxs-lookup"><span data-stu-id="26173-109">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="26173-110">此服务和客户端数据类是在完成[WCF 数据服务快速入门](quickstart-wcf-data-services.md)时创建的。</span><span class="sxs-lookup"><span data-stu-id="26173-110">This service and the client data classes are created when you complete the [WCF Data Services quickstart](quickstart-wcf-data-services.md).</span></span>  
+ <span data-ttu-id="5a1e0-109">本主题中的示例使用罗斯文示例数据服务和自动生成的客户端数据服务类。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-109">The example in this topic uses the Northwind sample data service and autogenerated client data service classes.</span></span> <span data-ttu-id="5a1e0-110">此服务和客户端数据类是在完成 [WCF 数据服务快速入门](quickstart-wcf-data-services.md)时创建的。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-110">This service and the client data classes are created when you complete the [WCF Data Services quickstart](quickstart-wcf-data-services.md).</span></span>  
   
-## <a name="example"></a><span data-ttu-id="26173-111">示例</span><span class="sxs-lookup"><span data-stu-id="26173-111">Example</span></span>  
- <span data-ttu-id="26173-112">下面的示例演示如何定义和执行针对 Northwind 数据服务返回所有 `Customers` 的 LINQ 查询。</span><span class="sxs-lookup"><span data-stu-id="26173-112">The following example shows how to define and execute a LINQ query that returns all `Customers` against the Northwind data service.</span></span>  
+## <a name="example"></a><span data-ttu-id="5a1e0-111">示例</span><span class="sxs-lookup"><span data-stu-id="5a1e0-111">Example</span></span>  
+
+ <span data-ttu-id="5a1e0-112">下面的示例演示如何定义和执行针对 Northwind 数据服务返回所有 `Customers` 的 LINQ 查询。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-112">The following example shows how to define and execute a LINQ query that returns all `Customers` against the Northwind data service.</span></span>  
   
  [!code-csharp[Astoria Northwind Client#GetAllCustomersLinq](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getallcustomerslinq)]
  [!code-vb[Astoria Northwind Client#GetAllCustomersLinq](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getallcustomerslinq)]  
   
-## <a name="example"></a><span data-ttu-id="26173-113">示例</span><span class="sxs-lookup"><span data-stu-id="26173-113">Example</span></span>  
- <span data-ttu-id="26173-114">下面的示例演示如何使用“`Add Data Service Reference`”工具所生成的上下文来隐式执行针对 Northwind 数据服务返回所有 `Customers` 的查询。</span><span class="sxs-lookup"><span data-stu-id="26173-114">The following example shows how to use the context that the `Add Data Service Reference` tool generates to implicitly execute a query that returns all `Customers` against the Northwind data service.</span></span> <span data-ttu-id="26173-115">该上下文自动确定请求的 `Customers` 实体集的 URI。</span><span class="sxs-lookup"><span data-stu-id="26173-115">The URI of the requested `Customers` entity set is determined automatically by the context.</span></span> <span data-ttu-id="26173-116">在发生枚举时隐式执行该查询。</span><span class="sxs-lookup"><span data-stu-id="26173-116">The query is executed implicitly when the enumeration occurs.</span></span>  
+## <a name="example"></a><span data-ttu-id="5a1e0-113">示例</span><span class="sxs-lookup"><span data-stu-id="5a1e0-113">Example</span></span>  
+
+ <span data-ttu-id="5a1e0-114">下面的示例演示如何使用“`Add Data Service Reference`”工具所生成的上下文来隐式执行针对 Northwind 数据服务返回所有 `Customers` 的查询。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-114">The following example shows how to use the context that the `Add Data Service Reference` tool generates to implicitly execute a query that returns all `Customers` against the Northwind data service.</span></span> <span data-ttu-id="5a1e0-115">该上下文自动确定请求的 `Customers` 实体集的 URI。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-115">The URI of the requested `Customers` entity set is determined automatically by the context.</span></span> <span data-ttu-id="5a1e0-116">在发生枚举时隐式执行该查询。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-116">The query is executed implicitly when the enumeration occurs.</span></span>  
   
  [!code-csharp[Astoria Northwind Client#GetAllCustomers](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getallcustomers)]
  [!code-vb[Astoria Northwind Client#GetAllCustomers](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getallcustomers)]  
   
-## <a name="example"></a><span data-ttu-id="26173-117">示例</span><span class="sxs-lookup"><span data-stu-id="26173-117">Example</span></span>  
- <span data-ttu-id="26173-118">下面的示例演示如何使用 <xref:System.Data.Services.Client.DataServiceContext> 显式执行针对 Northwind 数据服务返回所有 `Customers` 的查询。</span><span class="sxs-lookup"><span data-stu-id="26173-118">The following example shows how to use the <xref:System.Data.Services.Client.DataServiceContext> to explicitly execute a query that returns all `Customers` against the Northwind data service.</span></span>  
+## <a name="example"></a><span data-ttu-id="5a1e0-117">示例</span><span class="sxs-lookup"><span data-stu-id="5a1e0-117">Example</span></span>  
+
+ <span data-ttu-id="5a1e0-118">下面的示例演示如何使用 <xref:System.Data.Services.Client.DataServiceContext> 显式执行针对 Northwind 数据服务返回所有 `Customers` 的查询。</span><span class="sxs-lookup"><span data-stu-id="5a1e0-118">The following example shows how to use the <xref:System.Data.Services.Client.DataServiceContext> to explicitly execute a query that returns all `Customers` against the Northwind data service.</span></span>  
   
  [!code-csharp[Astoria Northwind Client#GetAllCustomersExplicit](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#getallcustomersexplicit)]
  [!code-vb[Astoria Northwind Client#GetAllCustomersExplicit](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#getallcustomersexplicit)]  
   
-## <a name="see-also"></a><span data-ttu-id="26173-119">另请参阅</span><span class="sxs-lookup"><span data-stu-id="26173-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5a1e0-119">请参阅</span><span class="sxs-lookup"><span data-stu-id="5a1e0-119">See also</span></span>
 
-- [<span data-ttu-id="26173-120">如何：将查询选项添加到数据服务查询</span><span class="sxs-lookup"><span data-stu-id="26173-120">How to: Add Query Options to a Data Service Query</span></span>](how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)
+- [<span data-ttu-id="5a1e0-120">如何：将查询选项添加到数据服务查询</span><span class="sxs-lookup"><span data-stu-id="5a1e0-120">How to: Add Query Options to a Data Service Query</span></span>](how-to-add-query-options-to-a-data-service-query-wcf-data-services.md)
