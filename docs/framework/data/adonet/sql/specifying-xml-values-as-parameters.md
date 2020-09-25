@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2c4d08b8-fc29-4614-97fa-29c8ff7ca5b3
-ms.openlocfilehash: acb94efd8b6b6b66d0cc84309c2d68ad692b08d3
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 20a573da0221704451f10138cb854523d5a17f17
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174493"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183047"
 ---
 # <a name="specifying-xml-values-as-parameters"></a>将 XML 值指定为参数
+
 如果查询需要值为 XML 字符串的参数，开发人员可以使用 SqlXml 数据类型的实例提供该值****。 真的没有任何窍门；SQL Server 中的 XML 列接受参数值的方式与其他数据类型完全相同。  
   
 ## <a name="example"></a>示例  
+
  以下控制台应用程序在 AdventureWorks 数据库中新建一个表****。 新表包括一个名为 SalesID 的列和一个名为 SalesInfo 的 XML 列********。  
   
 > [!NOTE]
@@ -159,8 +161,8 @@ class Class1
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Data.SqlTypes.SqlXml>
-- [SQL 服务器中的 XML 数据](xml-data-in-sql-server.md)
+- [SQL Server 中的 XML 数据](xml-data-in-sql-server.md)
 - [ADO.NET 概述](../ado-net-overview.md)

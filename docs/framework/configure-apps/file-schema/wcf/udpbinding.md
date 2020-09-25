@@ -2,14 +2,15 @@
 title: <udpBinding>
 ms.date: 03/30/2017
 ms.assetid: fa291901-8340-45c6-9c44-5d9281c70bc3
-ms.openlocfilehash: b2ff39e1292cfaad1165e14e693acda2518477a6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 730a051e6823a89c05f8eb894b261e93c0511dcc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559039"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183632"
 ---
 # \<udpBinding>
+
 用于配置 <xref:System.ServiceModel.UdpBinding> 绑定的配置元素。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -45,11 +46,12 @@ ms.locfileid: "90559039"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`closeTimeout`|一个 <xref:System.TimeSpan> 值，指定为完成关闭操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:01:00。|  
 |`duplicateMessageHistoryLength`|一个整数值，指定重复消息历史记录长度。|  
@@ -68,20 +70,22 @@ ms.locfileid: "90559039"
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |[\<bindings>](bindings.md)|此元素包含标准绑定和自定义绑定的集合。|  
   
 ## <a name="remarks"></a>备注  
+
  UdpBinding 允许 WCF 服务通过 UDP 传输进行通信。 它允许 "火灾和遗忘" 消息交换，其中客户端向服务发送一条消息，而不希望返回响应。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何 <xref:System.ServiceModel.UdpBinding> 使用 <`udpBinding`> 元素配置。  
   
 ```xml  

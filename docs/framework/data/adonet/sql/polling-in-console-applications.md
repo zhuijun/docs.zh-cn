@@ -5,19 +5,21 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4ff084d5-5956-4db1-8e18-c5a66b000882
-ms.openlocfilehash: 0cefca33bde94855a2bb20a6404dfd4e75a954c2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 35275206e0486c35f262116fa1deb06b9f285723
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174519"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183125"
 ---
 # <a name="polling-in-console-applications"></a>在控制台应用程序中轮询
+
 使用 ADO.NET 中的异步操作，可以在一个线程上启动耗时的数据库操作，同时在另一个线程上执行其他任务。 但在大多数情况下，最终会遇到这样的情况：在数据库操作完成之前，应用程序不应继续运行。 对于这种情况，一个有用的方法是轮询异步操作以确定操作是否已完成。  
   
  可以使用 <xref:System.IAsyncResult.IsCompleted%2A> 属性来确定操作是否已完成。  
   
 ## <a name="example"></a>示例  
+
  以下控制台应用程序更新 AdventureWorks 示例数据库中的数据，异步完成其任务****。 为了模拟长时间运行的进程，此示例在命令文本中插入一个 WAITFOR 语句。 通常，你不会尝试使命令运行速度变慢，但是在这种情况下，这样做可以更轻松地演示异步行为。  
   
 ```vb  
@@ -190,7 +192,7 @@ class Class1
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [异步操作](asynchronous-operations.md)
 - [ADO.NET 概述](../ado-net-overview.md)

@@ -25,14 +25,15 @@ helpviewer_keywords:
 - configuration files [.NET Framework], machine
 - configuration files [.NET Framework], format
 ms.assetid: 86bd26d3-737e-4484-9782-19b17f34cd1f
-ms.openlocfilehash: 92ecc4a430aa3c238a7cd8705dc0cec5a9d0cb11
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e40744c9c73e02fe96864d6b1320eb3dde4d1144
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559286"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183450"
 ---
 # <a name="configuring-apps-by-using-configuration-files"></a>使用配置文件配置应用
+
 .NET Framework 通过配置文件为开发人员和管理员提供了对应用程序运行方式的控制权和灵活性。 配置文件是可以按需要更改的 XML 文件。 管理员能够控制应用程序可以访问哪些受保护的资源，应用程序将使用哪些版本的程序集，以及远程应用程序和对象位于何处。 开发人员可以将设置置于配置文件中，从而没有必要在每次设置更改时重新编译应用程序。 本节说明可以对什么进行配置以及为什么对应用程序进行配置会有用。  
   
 > [!NOTE]
@@ -41,6 +42,7 @@ ms.locfileid: "90559286"
  本主题描述配置文件的语法，并提供有关三种配置文件的信息：计算机配置文件、应用程序配置文件和安全配置文件。  
   
 ## <a name="configuration-file-format"></a>配置文件格式  
+
  配置文件包含元素，它们是用来设置配置信息的逻辑数据结构。 在配置文件内，使用标记来标记元素的开头和结尾。 例如， `<runtime>` 元素由 `<runtime>` *子元素*组成 `</runtime>` 。 空元素将写为 `<runtime/>` 或 `<runtime></runtime>`。  
   
  与所有 XML 文件一样，配置文件中的语法区分大小写。  
@@ -53,6 +55,7 @@ ms.locfileid: "90559286"
 ```  
   
 ## <a name="machine-configuration-files"></a>计算机配置文件  
+
  计算机配置文件 Machine.config 包含应用于整个计算机的设置。 此文件位于 %*runtime install path*%\Config 目录中。 Machine.config 包含整个计算机范围内的程序集绑定、内置[远程处理信道](/previous-versions/dotnet/netframework-4.0/dkfd3wha(v=vs.100))和 ASP.NET 的配置设置。  
   
  配置系统首先在计算机配置文件中查找[ **\<appSettings>** 元素](./file-schema/appsettings/index.md)和开发人员可能定义的其他配置节。 然后查看应用程序配置文件。 为使计算机配置文件可管理，最好将这些设置放在应用程序配置文件中。 但是，将这些设置放在计算机配置文件中可以使系统更易维护。 例如，如果有第三方组件，且客户端和服务器应用程序同时使用该组件，那么将该组件的设置放在一个位置更方便。 在这种情况下，计算机配置文件是存放设置的合适位置，这样就不会将相同的设置放在两个不同的文件中。  
@@ -63,6 +66,7 @@ ms.locfileid: "90559286"
  若要深入了解公共语言运行时如何使用计算机配置文件进行程序集绑定，请参阅[运行时如何定位程序集](../deployment/how-the-runtime-locates-assemblies.md)。  
   
 ## <a name="application-configuration-files"></a>应用程序配置文件  
+
  应用程序配置文件包含应用特定的设置。 该文件包含公共语言运行时读取的配置设置（如程序集绑定策略、远程处理对象等）以及应用可以读取的设置。  
   
  应用程序配置文件的名称和位置取决于应用的主机，可以是下列项之一：  
@@ -88,6 +92,7 @@ ms.locfileid: "90559286"
      在该标记中，`location` 是指向该配置文件的 URL。 这将设置应用基。 配置文件必须位于应用所在的网站上。  
   
 ## <a name="security-configuration-files"></a>安全配置文件  
+
  安全配置文件包含有关与策略级别关联的代码组层次结构和权限集的信息。 强烈建议使用[代码访问安全性策略工具 (Caspol.exe)](../tools/caspol-exe-code-access-security-policy-tool.md) 修改安全策略，确保策略更改不会损坏安全配置文件。  
   
 > [!NOTE]
@@ -102,6 +107,7 @@ ms.locfileid: "90559286"
 - 用户策略配置文件：%USERPROFILE%\Application data\Microsoft\CLR security config\vxx.xx** \Security.config  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [如何：使用 DEVPATH 查找程序集](how-to-locate-assemblies-by-using-devpath.md)  
  描述如何指示运行时在搜索程序集时使用 DEVPATH 环境变量。  
   

@@ -2,14 +2,15 @@
 title: <udpDiscoveryEndpoint>
 ms.date: 03/30/2017
 ms.assetid: 1f485329-2771-43bc-88de-df8f2faa3bb7
-ms.openlocfilehash: 1729255c68c75f824b8cd8c87f106a4a9b3550f6
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f02cbddcdd4390d754f93e6f6d9aae6646cb137b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70854889"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183619"
 ---
 # \<udpDiscoveryEndpoint>
+
 此配置元素定义一个通过 UDP 多播绑定为发现操作预先配置的标准终结点。 此终结点具有固定协定并支持两个 WS-Discovery 协议版本。 此外，根据 WS-Discovery 规范（WS-Discovery 2005 年 4 月版或 WS-Discovery 1.1 版）中的规定，它还具有固定 UDP 绑定和默认地址。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -34,11 +35,12 @@ ms.locfileid: "70854889"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |discoveryMode|一个字符串，指定发现协议的模式。 有效值为 "即席" 和 "Managed"。 在托管模式下，协议依靠发现代理，此代理用作可检测服务的存储库。 即席模式要求协议使用 UDP 多播机制查找可用的服务。 此值的类型为 <xref:System.ServiceModel.Discovery.ServiceDiscoveryMode>。|  
 |discoveryVersion|一个字符串，指定两个 WS-Discovery 协议版本中的其中一个版本。 有效值为 WSDiscovery11 和 WSDiscoveryApril2005。 此值的类型为 <xref:System.ServiceModel.Discovery.DiscoveryVersion>。|  
@@ -59,6 +61,7 @@ ms.locfileid: "70854889"
 |[\<standardEndpoints>](standardendpoints.md)|具有一个或多个固定属性（地址、绑定和协定）的预定义终结点的标准终结点集合。|  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示通过 UDP 多播传输侦听发现消息的服务。  
   
 ```xml  
@@ -80,6 +83,6 @@ ms.locfileid: "70854889"
 </services>
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Discovery.DiscoveryEndpoint>

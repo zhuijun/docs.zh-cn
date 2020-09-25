@@ -3,14 +3,15 @@ title: SQL Server 中的查询通知
 description: 了解如何使用查询通知在 SQL Server 数据库中更改数据时通知应用程序，例如，刷新应用程序显示。
 ms.date: 03/30/2017
 ms.assetid: 0f0ba1a1-3180-4af8-87f7-c795dc8f8f55
-ms.openlocfilehash: 43b496db74f7e6fc9bc9f17d946bf34398b32312
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8001f75d7e278a965b6e8e00e4b9af7b770a8bb5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90543980"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183086"
 ---
 # <a name="query-notifications-in-sql-server"></a>SQL Server 中的查询通知
+
 查询通知建立在 Service Broker 基础结构之上，并允许在数据发生更改时向应用程序发送通知。 对提供数据库信息的缓存且需要在源数据发生更改时收到通知的应用程序（如 Web 应用程序）而言，以上功能特别有用。  
   
  使用 ADO.NET，可以通过三种方式实现查询通知：  
@@ -40,6 +41,7 @@ ms.locfileid: "90543980"
 - [开发人员指南 (Service Broker)](/previous-versions/sql/sql-server-2008-r2/bb522908(v=sql.105))  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [启用查询通知](enabling-query-notifications.md)  
  介绍如何使用查询通知，其中包括启用和使用查询通知的要求。  
   
@@ -53,6 +55,7 @@ ms.locfileid: "90543980"
  演示如何将 <xref:System.Data.SqlClient.SqlCommand> 对象配置为使用查询通知。  
   
 ## <a name="reference"></a>参考  
+
  <xref:System.Data.Sql.SqlNotificationRequest>  
  介绍 <xref:System.Data.Sql.SqlNotificationRequest> 类及其所有成员。  
   

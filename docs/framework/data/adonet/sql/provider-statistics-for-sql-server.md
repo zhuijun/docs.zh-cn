@@ -5,17 +5,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 429c9d09-92ac-46ec-829a-fbff0a9575a2
-ms.openlocfilehash: 5e37a04ff731a99664d636e0d4175f99214c2646
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 21bf7662094d5bc8948a1ce6378c454713cacc62
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79174506"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91183112"
 ---
 # <a name="provider-statistics-for-sql-server"></a>用于 SQL Server 的提供程序统计信息
+
 从 .NET Framework 2.0 版开始，适用于 SQL Server 的 .NET Framework 数据提供程序支持运行时统计信息。 必须通过将 <xref:System.Data.SqlClient.SqlConnection> 对象的 <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> 属性设置为 `True` 来启用统计信息。 启用统计信息后，可以通过 <xref:System.Data.SqlClient.SqlConnection> 对象的 <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> 方法检索 <xref:System.Collections.IDictionary> 引用，以“即时快照”的方式查看统计信息。 可以将该列表枚举为一组名称/值对字典条目。 这些名称/值对是无序的。 随时都可以调用 <xref:System.Data.SqlClient.SqlConnection> 对象的 <xref:System.Data.SqlClient.SqlConnection.ResetStatistics%2A> 方法来重置计数器。 如果尚未启用统计信息收集，则不会生成异常。 此外，如果在未首先调用 <xref:System.Data.SqlClient.SqlConnection.StatisticsEnabled%2A> 的情况下调用 <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A>，则检索的值是每个条目的初始值。 如果启用统计信息，请运行应用程序一段时间，然后禁用统计信息，检索到的值将反映收集的值，直到禁用统计信息为止。 收集的所有统计值都基于每个连接。  
   
 ## <a name="statistical-values-available"></a>可用的统计信息值  
+
  Microsoft SQL Server 提供程序中目前提供 18 个不同的项。 可用的项数可以通过 <xref:System.Data.SqlClient.SqlConnection.RetrieveStatistics%2A> 返回的 <xref:System.Collections.IDictionary> 接口引用的 Count 属性进行访问****。 提供程序统计信息的所有计数器均使用公共语言运行时 <xref:System.Int64> 类型（C# 和 Visual Basic 中为 long），宽度为 64 位****。 int64 数据类型的最大值由 int64.MaxValue 字段定义，最大值为 ((2^63)-1))********。 当计数器的值达到此最大值时，它们将不再被认为是准确的。 这意味着 int64.MaxValue-1((2^63)-2) 实际上是任何统计信息的最大有效值****。  
   
 > [!NOTE]
@@ -23,7 +25,7 @@ ms.locfileid: "79174506"
   
  下表显示了当前可用的统计值。 注意，在 Microsoft .NET Framework 的地区版本中，各个值的键名未本地化。  
   
-|键名|说明|  
+|键名|描述|  
 |--------------|-----------------|  
 |`BuffersReceived`|返回应用程序开始使用提供程序并启用统计信息后，提供程序从 SQL Server 接收到的表格格式数据流 (TDS) 数据包的数量。|  
 |`BuffersSent`|返回启用了统计信息之后，提供程序向 SQL Server 发送的 TDS 数据包的数量。 如果命令较大，可能需要多个缓冲区。 例如，如果将较大的命令发送到服务器，并且它需要六个数据包，则将 `ServerRoundtrips` 增加 1，将 `BuffersSent` 增加 6。|  
@@ -45,6 +47,7 @@ ms.locfileid: "79174506"
 |`UnpreparedExecs`|返回在应用程序使用提供程序启动并启用了统计信息之后，通过连接执行的未准备语句数。|  
   
 ### <a name="retrieving-a-value"></a>检索值  
+
  下面的控制台应用程序显示了如何启用连接的统计信息，检索四个单独的统计值并将它们写出到控制台窗口。  
   
 > [!NOTE]
@@ -201,6 +204,7 @@ namespace CS_Stats_Console_GetValue
 ```  
   
 ### <a name="retrieving-all-values"></a>检索所有值  
+
  下面的控制台应用程序显示了如何启用连接的统计信息，如何使用枚举器检索所有可用的统计信息值并将它们写入控制台窗口。  
   
 > [!NOTE]
@@ -338,7 +342,7 @@ namespace CS_Stats_Console_GetAll
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [SQL Server 和 ADO.NET](index.md)
 - [ADO.NET 概述](../ado-net-overview.md)
