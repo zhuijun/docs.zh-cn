@@ -2,14 +2,15 @@
 title: DataView
 ms.date: 03/30/2017
 ms.assetid: 0fe5dfa2-c1cd-435f-90b6-b4dd2e3ef34b
-ms.openlocfilehash: fe6adac35c157b454f5e33d3526196d4f408fd89
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c5692fcfd1863642bcdf87cbd495d793bce0cbe4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546863"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203704"
 ---
 # <a name="dataviews"></a>DataView
+
 您可以利用 <xref:System.Data.DataView> 创建存储在 <xref:System.Data.DataTable>（一种通常在数据绑定应用程序中使用的功能）中的数据的不同视图。 使用 **DataView**，你可以使用不同的排序顺序公开表中的数据，并且可以按行状态或基于筛选器表达式来筛选数据。
 
  **DataView**提供基础**DataTable**中的数据的动态视图：内容、排序和成员身份在更改发生时反映更改。 此行为不同于**DataTable**的**Select**方法，该方法 <xref:System.Data.DataRow> 根据特定筛选器和/或排序顺序从表返回数组：此内容反映了对基础表的更改，但其成员资格和顺序保持静态。 **DataView**的动态功能使其成为数据绑定应用程序的理想之选。
@@ -19,6 +20,7 @@ ms.locfileid: "90546863"
  您可以使用 <xref:System.Data.DataView.DataViewManager%2A> 来管理 **数据集中**所有表的视图设置。 **DataViewManager**为你提供了一种方便的方法来管理每个表的默认视图设置。 将控件绑定到 **数据集**的多个表时，绑定到 **DataViewManager** 是理想的选择。
 
 ## <a name="in-this-section"></a>本节内容
+
  [创建 DataView](creating-a-dataview.md)介绍如何为**DataTable**创建**DataView** 。
 
  [排序和筛选数据](sorting-and-filtering-data.md) 描述如何设置 **DataView** 的属性以返回满足特定筛选条件的数据行子集，或返回按特定排序顺序返回的数据。
@@ -36,6 +38,7 @@ ms.locfileid: "90546863"
  [管理 dataview](managing-dataviews.md)介绍如何使用**DataViewManager**来管理**数据集中**每个表的**DataView**设置。
 
 ## <a name="related-sections"></a>相关章节
+
  [ASP.NET Web 应用程序](/previous-versions/655cec97(v=vs.100)) 提供有关创建 ASP.NET 应用程序、Web 窗体和 Web 服务的概述和详细的分步过程。
 
  [Windows 应用程序](/previous-versions/ms184421(v=vs.100)) 提供有关使用 Windows 窗体和控制台应用程序的详细信息。

@@ -3,15 +3,16 @@ title: SqlClient 对高可用性的支持，灾难恢复
 description: 使用 AlwaysOn 可用性组了解 SQL Server 中的高可用性、灾难恢复的 SqlClient 应用程序支持。
 ms.date: 03/30/2017
 ms.assetid: 61e0b396-09d7-4e13-9711-7dcbcbd103a0
-ms.openlocfilehash: eba243d37db8262970d161cfa786d3aee4462950
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 7693210b7d9387e9b58fcc95febd3df0c70b4743
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286205"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203431"
 ---
 # <a name="sqlclient-support-for-high-availability-disaster-recovery"></a>SqlClient 对高可用性的支持，灾难恢复
-本主题讨论用于高可用性、灾难恢复 AlwaysOn 可用性组的 SqlClient 支持（在 .NET Framework 4.5 中添加）。  AlwaysOn 可用性组功能已添加到 SQL Server 2012 中。 有关 AlwaysOn 可用性组的详细信息，请参阅 SQL Server 联机丛书。  
+
+本主题讨论 SqlClient 支持 (添加到 .NET Framework 4.5) ，以实现高可用性、灾难恢复--AlwaysOn 可用性组。  AlwaysOn 可用性组功能已添加到 SQL Server 2012 中。 有关 AlwaysOn 可用性组的详细信息，请参阅 SQL Server 联机丛书。  
   
  现可在连接属性中指定（高可用性、灾难恢复功能）可用性组 (AG) 的可用性组侦听程序或 SQL Server 2012 故障转移群集实例。 如果将 SqlClient 应用程序连接到具有故障转移功能的 AlwaysOn 数据库，则在故障转移后，系统会断开原始连接，并且该应用程序必须建立一个新的连接才能继续运行。  
   
@@ -36,6 +37,7 @@ ms.locfileid: "84286205"
 > `MultiSubnetFailover` `true` .NET Framework 4.6.1 或更高版本不需要将设置为。
   
 ## <a name="connecting-with-multisubnetfailover"></a>使用 MultiSubnetFailover 进行连接  
+
  在连接到 SQL Server 2012 可用性组侦听器或 SQL Server 2012 故障转移群集实例时，应始终指定 `MultiSubnetFailover=True`。 `MultiSubnetFailover` 可加快 SQL Server 2012 中所有可用性组和故障转移群集实例的故障转移速度，并且将显著缩短单子网和多子网 AlwaysOn 拓扑的故障转移时间。 在多子网故障转移过程中，客户端将尝试并行进行连接。 在子网故障转移过程中，将会主动重试 TCP 连接。  
   
  `MultiSubnetFailover` 连接属性指示应用程序将部署到可用性组或 SQL Server 2012 故障转移群集实例，并且 SqlClient 将通过连接到所有的 IP 地址尝试连接到主 SQL Server 实例上的数据库。 为连接指定 `MultiSubnetFailover=True` 后，客户端将在比操作系统的默认 TCP 重传间隔更短的时间内重试 TCP 连接尝试。 这样，就可以在对 AlwaysOn 可用性组或 AlwaysOn 故障转移群集实例执行故障转移之后更快地进行重新连接，这一点同时适用于单子网和多子网可用性组和故障转移群集实例。  
@@ -69,6 +71,7 @@ ms.locfileid: "84286205"
  如果将主副本配置为拒绝只读工作负荷且连接字符串包含 `ApplicationIntent=ReadOnly`，连接将失败。  
   
 ## <a name="upgrading-to-use-multi-subnet-clusters-from-database-mirroring"></a>升级以便使用来自数据库镜像的多子网群集  
+
  如果连接字符串中已存在 `MultiSubnetFailover` 和 `Failover Partner` 连接关键字，或者如果使用了 `MultiSubnetFailover=True` 和除 TCP 以外的其他协议，将出现连接错误 (<xref:System.ArgumentException>)。 如果使用 `MultiSubnetFailover` 且 SQL Server 返回一个故障转移伙伴响应指示它是数据库镜像对的一部分，也将出现错误 (<xref:System.Data.SqlClient.SqlException>)。  
   
  如果你将当前使用数据库镜像的 SqlClient 应用程序升级到多子网方案，则应删除 `Failover Partner` 连接属性并使用设置为 `True` 的 `MultiSubnetFailover` 替换它，并且还应使用可用性组侦听程序替换连接字符串中的服务器名称。 如果连接字符串使用 `Failover Partner` 和 `MultiSubnetFailover=True`，则驱动程序将生成错误。 但是，如果连接字符串使用 `Failover Partner` 和 `MultiSubnetFailover=False`（或 `ApplicationIntent=ReadWrite`），则应用程序将使用数据库镜像。  
@@ -76,6 +79,7 @@ ms.locfileid: "84286205"
  如果在 AG 的主数据库中使用数据库镜像，同时在连接到主数据库而不是可用性组侦听程序的连接字符串中使用 `MultiSubnetFailover=True`，则驱动程序将返回一条错误。  
   
 ## <a name="specifying-application-intent"></a>指定应用程序意向  
+
  如果 `ApplicationIntent=ReadOnly`，在连接到某一启用了 AlwaysOn 的数据库时，客户端将请求读取工作负荷。 服务器在连接时和在执行 USE 数据库语句的过程中将强制该意向，但仅针对启用了 AlwaysOn 的数据库。  
   
  `ApplicationIntent` 关键字不适用于早期的只读数据库。  
@@ -85,6 +89,7 @@ ms.locfileid: "84286205"
  `ApplicationIntent` 关键字用于启用只读路由。  
   
 ## <a name="read-only-routing"></a>只读路由  
+
  只读路由是一项可确保数据库只读副本的可用性的功能。 启用只读路由：  
   
 1. 您必须连接到某一 AlwaysOn 可用性组侦听器。  
@@ -97,7 +102,7 @@ ms.locfileid: "84286205"
   
  只读路由所用的时间可能会长于连接到主副本的时间，因为只读路由首先连接到主副本，然后查找可用的最佳可读取辅助副本。 为此，应增加您的登录超时。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [SQL Server 功能和 ADO.NET](sql-server-features-and-adonet.md)
 - [ADO.NET 概述](../ado-net-overview.md)

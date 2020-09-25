@@ -2,14 +2,15 @@
 title: <transport> 的 <netMsmqBinding>
 ms.date: 03/30/2017
 ms.assetid: 72e1b338-39f0-4af1-a5d9-7a2fb79f6a0b
-ms.openlocfilehash: cc47c01cccc931e81ba57ab37ad9e3accfaa693b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 84a5437de851ecdb96d0463ec574186ba5f91d9e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152926"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203873"
 ---
 # <a name="transport-of-netmsmqbinding"></a>\<transport> 的 \<netMsmqBinding>
+
 定义传输安全设置。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -36,11 +37,12 @@ ms.locfileid: "79152926"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |msmqAuthenticationMode|指定 MSMQ 传输必须采用什么方式对消息进行身份验证。 有效值包括以下值：<br /><br /> -None：无身份验证。<br />-WindowsDomain：身份验证机制使用 Active Directory 检索与消息关联的安全标识符的 x.509 证书。 然后使用它来检查队列的 ACL 以确保用户具有队列写权限。<br />-Certificate：通道从证书存储中检索证书。<br /><br /> 默认为 `WindowsDomain`。<br /><br /> 如果将此属性设置为 `None`，则 `msmqProtectionLevel` 属性也必须设置为 `None`。 此特性的类型为 <xref:System.ServiceModel.MsmqAuthenticationMode>|  
 |msmqEncryptionAlgorithm|指定在消息队列管理器之间传输消息时用于在网络上对消息进行加密的算法。 有效值包括以下值：<br /><br /> -RC4Stream<br />-AES<br />-默认值为 `RC4Stream` 。 此属性的类型为 <xref:System.ServiceModel.MsmqEncryptionAlgorithm>。|  
@@ -48,6 +50,7 @@ ms.locfileid: "79152926"
 |msmqSecureHashAlgorithm|指定用于计算消息摘要的哈希算法。 有效值包括以下值：<br /><br /> -MD5<br />-SHA1<br />-SHA256<br />-SHA512<br /><br /> 默认为 `SHA1`。 此属性的类型为 <xref:System.ServiceModel.MsmqSecureHashAlgorithm>。<br>由于 MD5 和 SHA1 出现冲突，Microsoft 建议 SHA256 或更好。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无  
   
 ### <a name="parent-elements"></a>父元素  
@@ -56,7 +59,7 @@ ms.locfileid: "79152926"
 |-------------|-----------------|  
 |[\<security>](security-of-netmsmqbinding.md)|定义排队传输的传输安全设置。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.MsmqTransportSecurityElement>
 - <xref:System.ServiceModel.Configuration.NetMsmqSecurityElement.Transport%2A>

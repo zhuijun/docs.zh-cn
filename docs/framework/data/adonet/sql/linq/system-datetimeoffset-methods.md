@@ -2,14 +2,15 @@
 title: System.DateTimeOffset 方法
 ms.date: 03/30/2017
 ms.assetid: 25b3e5c0-7603-4a70-b3e5-2149e3da69a2
-ms.openlocfilehash: 2e29cf02d4f7e8004782264bf940bb1faf393269
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: ae588b88ca592ce422202d5231b34060ccc22024
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70781546"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203470"
 ---
 # <a name="systemdatetimeoffset-methods"></a>System.DateTimeOffset 方法
+
 在对象模型或外部映射文件中进行映射后，LINQ to SQL 允许您从 LINQ to SQL 查询内调用大部分的 <xref:System.DateTimeOffset?displayProperty=nameWithType> 方法、运算符和属性。  
   
  不支持的方法仅包括那些继承自 <xref:System.Object?displayProperty=nameWithType> 的方法，这些方法在 LINQ to SQL 查询的上下文中没有意义，例如：`Finalize`、`GetHashCode`、`GetType` 和 `MemberwiseClone`。 这些方法不受支持的原因是 LINQ to SQL 无法转换它们以在 SQL Server 上执行。  
@@ -18,6 +19,7 @@ ms.locfileid: "70781546"
 > 若要能够使用公共语言运行库 (CLR) <xref:System.DateTimeOffset?displayProperty=nameWithType> 结构并通过 LINQ to SQL 将其映射到 SQL `DATETIMEOFFSET` 列，必须安装 .NET Framework 3.5 SP1 或更高版本。 SQL `DATETIMEOFFSET` 列仅在 Microsoft SQL Server 2008 和更高版本中提供。  
   
 ## <a name="sqlmethods-date-and-time-methods"></a>SQLMethods 日期和时间方法  
+
  除了 <xref:System.DateTimeOffset> 结构提供的方法，LINQ to SQL 还提供下表列出的来自 <xref:System.Data.Linq.SqlClient.SqlMethods?displayProperty=nameWithType> 类的方法，以便与日期和时间一起使用。  
   
 ||||  

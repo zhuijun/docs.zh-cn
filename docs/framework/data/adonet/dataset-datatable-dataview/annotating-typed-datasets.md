@@ -5,17 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f82aaa62-321e-4c8a-b51b-9d1114700170
-ms.openlocfilehash: 757a87f92d8dc6049de1844fed892d95dc57c990
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 79d3913827d5df6f0ac4e77bfdb8f37b553a86d2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79151515"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203743"
 ---
 # <a name="annotating-typed-datasets"></a>为类型化的数据集进行批注
-批注使您能够在不修改基础架构的情况下修改类型化 <xref:System.Data.DataSet> 中元素的名称。 修改基础架构中元素的名称将导致键入的**DataSet**引用数据源中不存在的对象，并丢失对数据源中确实存在对象的引用。  
+
+批注使您能够在不修改基础架构的情况下修改类型化 <xref:System.Data.DataSet> 中元素的名称。 修改基础架构中元素的名称将导致类型化 **数据集** 引用数据源中不存在的对象，并丢失对数据源中存在的对象的引用。  
   
- 使用注释，您可以使用更有意义的名称自定义键入的**DataSet**中的对象名称，使代码更具可读性，并使键入的**DataSet**更易于客户端使用，同时保留基础架构不变。 例如 **，Northwind**数据库**的客户**表的以下架构元素将导致**客户行**的<xref:System.Data.DataRowCollection>**DataRow**对象名称和命名的**客户**。  
+ 使用批注，你可以使用更有意义的名称来自定义类型化 **数据集中** 的对象的名称，从而使代码更易于阅读，并且你的类型化 **数据集** 更易于供客户端使用，同时保持基础架构不变。 例如， **Northwind**数据库的**Customers**表的以下 Schema 元素会导致**DataRow**对象名称**CustomersRow**和 <xref:System.Data.DataRowCollection> 命名**客户**。  
   
 ```xml  
 <xs:element name="Customers">  
@@ -27,7 +28,7 @@ ms.locfileid: "79151515"
 </xs:element>  
 ```  
   
- **客户** **DataRow 集合**名称在客户端代码中有意义，但**客户行** **DataRow**名称具有误导性，因为它是单个对象。 此外，在常见方案中，将引用该对象而不带**行**标识符，而将简单地称为**客户**对象。 解决方案是对架构进行批号，并标识**DataRow**和**DataRowCollection**对象的新名称。 下面是上一架构的批注版本。  
+ 客户端代码中**客户**端代码的**DataRowCollection**名称是有意义的，但**DataRow**名称**CustomersRow**会产生误导，因为它是单个对象。 此外，在常见情况下，对象会被称为没有 **行** 标识符，而只是将其称为 **Customer** 对象。 解决方法是为该架构添加注释并标识 **DataRow** 和 **DataRowCollection** 对象的新名称。 下面是上一架构的批注版本。  
   
 ```xml  
 <xs:element name="Customers" codegen:typedName="Customer" codegen:typedPlural="Customers">  
@@ -39,48 +40,48 @@ ms.locfileid: "79151515"
 </xs:element>  
 ```  
   
- 指定**客户的****类型名称**值将导致**客户**的**DataRow**对象名称。 指定客户的**键入的复数**值**Customers**将保留**客户****的数据罗集合**名称。  
+ 将 **typedName** 值指定为 **Customer** 将导致 **DataRow** 对象名称为 **customer**。 指定**客户**的**typedPlural**值将保留**客户**的**DataRowCollection**名称。  
   
  下表显示可用的批注。  
   
-|Annotation|说明|  
+|Annotation|描述|  
 |----------------|-----------------|  
 |**typedName**|对象的名称。|  
 |**typedPlural**|对象集合的名称。|  
 |**typedParent**|对象在父关系中被引用时的名称。|  
 |**typedChildren**|用于从子关系中返回对象的方法的名称。|  
-|**nullValue**|如果基础值为**DBNull**，则值。 有关**nullValue**注释，请参阅下表。 默认值为 **_throw**。|  
+|**nullValue**|如果基础值为 **DBNull**，则值为。 请参阅下表了解 **nullValue** 批注。 默认值为 **_throw**。|  
   
- 下表显示了可以为**nullValue**注释指定的值。  
+ 下表显示了可为 **nullValue** 批注指定的值。  
   
-|nullValue 值|说明|  
+|nullValue 值|描述|  
 |---------------------|-----------------|  
-|*重置值*|指定要返回的值。 所返回的值必须匹配该元素的类型。 例如，使用 `nullValue="0"` 可为空整数字段返回 0。|  
-|**_throw**|引发异常。 这是默认值。|  
+|*替换值*|指定要返回的值。 所返回的值必须匹配该元素的类型。 例如，使用 `nullValue="0"` 可为空整数字段返回 0。|  
+|**_throw**|引发异常。 这是默认设置。|  
 |**_null**|如果遇到基元类型，则返回空引用或引发异常。|  
-|**_empty**|对于字符串，返回**String.empty**，否则返回从空构造函数创建的对象。 如果遇到基元类型，则引发异常。|  
+|**_empty**|对于字符串，返回 **String。** 如果为空，则返回从空构造函数创建的对象。 如果遇到基元类型，则引发异常。|  
   
- 下表显示了类型**化 DataSet**中对象的默认值和可用的批注。  
+ 下表显示了类型化 **数据集中** 的对象的默认值和可用的批注。  
   
 |对象/方法/事件|默认|Annotation|  
 |---------------------------|-------------|----------------|  
 |**DataTable**|TableNameDataTable|typedPlural|  
-|**数据表**方法|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|typedName|  
+|**DataTable** 方法|NewTableNameRow<br /><br /> AddTableNameRow<br /><br /> DeleteTableNameRow|typedName|  
 |**DataRowCollection**|TableName|typedPlural|  
-|**数据行**|TableNameRow|typedName|  
+|**DataRow**|TableNameRow|typedName|  
 |**DataColumn**|DataTable.ColumnNameColumn<br /><br /> DataRow.ColumnName|typedName|  
 |**属性**|PropertyName|typedName|  
-|**儿童**访问|GetChildTableNameRows|typedChildren|  
-|**父级**访问|TableNameRow|typedParent|  
-|**数据集**事件|TableNameRowChangeEvent<br /><br /> TableNameRowChangeEventHandler|typedName|  
+|**子** 者|GetChildTableNameRows|typedChildren|  
+|**父项** 者|TableNameRow|typedParent|  
+|**数据集** 事件|TableNameRowChangeEvent<br /><br /> TableNameRowChangeEventHandler|typedName|  
   
- 要使用键入的**DataSet**注释，必须在 XML 架构定义语言 （XSD） 架构中包括以下**xmlns**引用。 要从数据库表创建 xsd，请参阅<xref:System.Data.DataSet.WriteXmlSchema%2A>或使用[可视化工作室中的数据集](/visualstudio/data-tools/dataset-tools-in-visual-studio)。  
+ 若要使用类型化 **数据集** 批注，您必须在 XML 架构定义语言中包含以下 (XSD) 架构的 **xmlns** 引用。 若要从数据库表创建 xsd，请参阅 <xref:System.Data.DataSet.WriteXmlSchema%2A> 或 [使用 Visual Studio 中的数据集](/visualstudio/data-tools/dataset-tools-in-visual-studio)。  
   
 ```xml  
 xmlns:codegen="urn:schemas-microsoft-com:xml-msprop"  
 ```  
   
- 下面是一个带批号的示例架构，该架构公开了**Northwind**数据库**的客户**表，该表与包含**的订单**表相关。  
+ 下面是一个示例批注的架构，它公开**Northwind**数据库的**Customers**表，其中包含与**Orders**表的关系。  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -134,7 +135,7 @@ codegen:typedParent="Customer" codegen:typedChildren="GetOrders">
 </xs:schema>  
 ```  
   
- 以下代码示例使用从示例架构创建的强类型**数据集**。 它使用一<xref:System.Data.SqlClient.SqlDataAdapter>个填充**客户**表，另一<xref:System.Data.SqlClient.SqlDataAdapter>个用于填充**订单**表。 强类型**数据集**定义**数据关系**。  
+ 下面的代码示例使用从示例架构创建的强类型化 **数据集** 。 它使用一个 <xref:System.Data.SqlClient.SqlDataAdapter> 填充 **Customers** 表，另一个用于 <xref:System.Data.SqlClient.SqlDataAdapter> 填充 **Orders** 表。 强类型化 **数据集** 定义 **datarelation**。  
   
 ```vb  
 ' Assumes a valid SqlConnection object named connection.  
@@ -222,7 +223,7 @@ protected static void OnCustomerChanged(object sender, CustomerDataSet.CustomerC
     }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Data.DataColumnCollection>
 - <xref:System.Data.DataSet>

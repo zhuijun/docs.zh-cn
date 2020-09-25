@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 98daef1f-15d4-483e-985c-d78ea3abe8c8
-ms.openlocfilehash: 5d6656ab77f7ad0f7366a230d98b95cff5b2677b
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 93f590e1c177adf541baca85a48fee5f9eb8d1d0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854429"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203626"
 ---
 # <a name="initialization-expressions"></a>初始化表达式
+
 初始化表达式用于初始化新的对象。 大多数初始化表达式都受到支持，其中包括大多数新的 C# 3.0 和 Visual Basic 9.0 初始化表达式。 LINQ to Entities 查询可以初始化并返回以下类型：  
   
 - 在概念模型中定义的零个或多个类型化实体对象的集合或复杂类型的投影。  
