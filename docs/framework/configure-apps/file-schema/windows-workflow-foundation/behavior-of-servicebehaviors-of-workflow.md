@@ -3,15 +3,16 @@ title: <behavior><serviceBehaviors>工作流的
 ms.date: 03/30/2017
 ms.topic: reference
 ms.assetid: 6a4b718a-1b40-4957-935a-f6122819ab3c
-ms.openlocfilehash: 071cff8e9f6ec3fa0546a07d19160869d8b43f60
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 14c528746963a3078e0ab377d095414d2fca0dbe
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152315"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189612"
 ---
 # <a name="behavior-of-servicebehaviors-of-workflow"></a>\<behavior>\<serviceBehaviors>工作流的
-**行为**元素包含服务行为的设置集合。 每个行为都按其**名称**编制索引。 服务可以使用元素的**behaviorConfiguration**特性通过此名称链接到每个行为 [\<endpoint>](../wcf/endpoint-element.md) 。 这样，终结点可以共享公共行为配置而不用重新定义设置。  
+
+**行为**元素包含服务行为的设置集合。 每个行为都按其 **名称**编制索引。 服务可以使用元素的 **behaviorConfiguration** 特性通过此名称链接到每个行为 [\<endpoint>](../wcf/endpoint-element.md) 。 这样，终结点可以共享公共行为配置而不用重新定义设置。  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.ServiceModel>**](system-servicemodel-of-workflow.md)\
@@ -52,6 +53,7 @@ ms.locfileid: "79152315"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  

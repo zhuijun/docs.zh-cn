@@ -3,14 +3,15 @@ title: <add>
 ms.date: 03/30/2017
 ms.assetid: 4712a888-f154-4395-8887-ef14a88a6497
 author: BrucePerlerMS
-ms.openlocfilehash: 7c2b6bdc62da63905d7ff33a9984808e7b7d114f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2f37019fa0787f5c5553dbd3debc173ec0a047ee
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544535"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189950"
 ---
 # \<add>
+
 将指定的安全令牌处理程序添加到令牌处理程序集合。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ ms.locfileid: "90544535"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
@@ -45,7 +47,7 @@ ms.locfileid: "90544535"
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |[\<samlSecurityTokenRequirement>](samlsecuritytokenrequirement.md)|为 <xref:System.IdentityModel.Tokens.SamlSecurityTokenHandler> 类、 <xref:System.IdentityModel.Tokens.Saml2SecurityTokenHandler> 类或其中任何一个类的派生类提供配置。|  
 |[\<sessionTokenRequirement>](sessiontokenrequirement.md)|提供 <xref:System.IdentityModel.Tokens.SessionSecurityTokenHandler> 类或派生类的配置。|  
@@ -54,11 +56,12 @@ ms.locfileid: "90544535"
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |[\<securityTokenHandlers>](securitytokenhandlers.md)|指定注册到终结点的安全令牌处理程序的集合。|  
   
 ## <a name="remarks"></a>备注  
+
  `<add>`元素可以采用单个子元素，该元素指定标记处理程序的配置。 这取决于通过元素的属性引用的处理程序类是否 `type` `<add>` 为此功能提供支持。 提供此功能的令牌处理程序类必须公开采用对象的构造函数 <xref:System.Xml.XmlElement> 。  
 
 ```csharp  
@@ -78,6 +81,7 @@ public class CustomTokenHandler : Microsoft.IdentityModel.Tokens.SecurityTokenHa
  在处理程序上指定的设置将重写在元素下的标记处理程序集合上指定的等效设置 [\<securityTokenHandlerConfiguration>](securitytokenhandlerconfiguration.md) ，以及在元素下的服务级别指定的设置 [\<identityConfiguration>](identityconfiguration.md) 。  
   
 ## <a name="example"></a>示例  
+
  下面的 XML 演示 `<add>` 如何使用和元素将 `<remove>` 默认会话标记处理程序替换为自定义会话标记处理程序。 XML 是从示例获取的 `ClaimsAwareWebFarm` 。  
   
 ```xml  
