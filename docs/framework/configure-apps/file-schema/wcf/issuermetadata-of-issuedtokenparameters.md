@@ -2,12 +2,12 @@
 title: <issuerMetadata> 的 <issuedTokenParameters>
 ms.date: 03/30/2017
 ms.assetid: 1a85ca37-496d-4fa3-8d44-d6c9383d735c
-ms.openlocfilehash: fcdd66ecd162dff5be86a1d4ab1b196f50dbd445
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 389ac9e96c1462f59bc42b2e20cb511acdefda00
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400346"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185660"
 ---
 # <a name="issuermetadata-of-issuedtokenparameters"></a>\<issuerMetadata> 的 \<issuedTokenParameters>
 
@@ -27,11 +27,12 @@ ms.locfileid: "70400346"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |address|必需。 一个指定终结点地址的字符串。 该地址必须为绝对 URI。 默认值为空字符串。|  
   
@@ -48,7 +49,7 @@ ms.locfileid: "70400346"
 |-------------|-----------------|  
 |[\<issuedTokenParameters>](issuedtokenparameters.md)|指定在联合安全方案中颁发的安全令牌的参数。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Security.Tokens.IssuedSecurityTokenParameters>
 - <xref:System.ServiceModel.Configuration.IssuedTokenParametersElement>

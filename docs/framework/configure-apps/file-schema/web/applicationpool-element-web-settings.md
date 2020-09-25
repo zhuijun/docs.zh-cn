@@ -5,14 +5,15 @@ helpviewer_keywords:
 - applicationPool element
 - <applicationPool> element
 ms.assetid: 46d1baaa-e343-4639-b70d-2a43a9f62b2a
-ms.openlocfilehash: ca474cdcaeaac7b1c32efa5c58f4b5bb5b7f7895
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 963b25e57ae8c2cc59dcc3e50ae2a52cc04f54a8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557237"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185634"
 ---
 # <a name="applicationpool-element-web-settings"></a>\<applicationPool> 元素（网络设置）
+
 指定 ASP.NET 在 IIS 7.0 或更高版本的集成模式下运行时，用于管理进程范围行为的配置设置。  
   
 > [!IMPORTANT]
@@ -37,18 +38,19 @@ ms.locfileid: "90557237"
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`maxConcurrentRequestsPerCPU`|指定 ASP.NET 每 CPU 允许的并发请求数。|  
 |`maxConcurrentThreadsPerCPU`|指定每个 CPU 的应用程序池可以运行的线程数。 这提供了一种方法来控制 ASP.NET 并发，因为你可以限制每个 CPU 可用于处理请求的托管线程数。 默认情况下，此设置为0，这意味着 ASP.NET 不会限制可为每个 CPU 创建的线程数，尽管 CLR 线程池还限制了可创建的线程数。|  
 |`requestQueueLimit`|指定可在单个进程中为 ASP.NET 排队的最大请求数。 当两个或多个 ASP.NET 应用程序在单个应用程序池中运行时，对应用程序池中的任何应用程序发出的累积请求将受到此设置的限制。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |[\<system.web>](system-web-element-web-settings.md)|包含有关 ASP.NET 如何与宿主应用程序进行交互的信息。|  
   

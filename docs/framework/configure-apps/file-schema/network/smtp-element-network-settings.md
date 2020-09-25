@@ -9,14 +9,15 @@ helpviewer_keywords:
 - <smtp> element
 - smtp element
 ms.assetid: 220b0329-e384-4e0c-86b4-0945ad17efd9
-ms.openlocfilehash: b30b82922a69ea660f4c4abfd808e89fa9945183
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 58f496b4a07f7d5531df897dd54bb6176111f1c4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504506"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178315"
 ---
 # <a name="smtp-element-network-settings"></a>\<smtp> 元素（网络设置）
+
 配置发送电子邮件的传递格式、传递方法和发件人地址。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -37,11 +38,12 @@ ms.locfileid: "84504506"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`deliveryFormat`|指定传出电子邮件的传递格式。 可接受的值为 SevenBit 和 International。|  
 |`deliveryMethod`|指定电子邮件的传递方法。 可接受的值为 Network、PickupDirectoryFromIis 和 SpecifiedPickupDirectory。|  
@@ -49,18 +51,19 @@ ms.locfileid: "84504506"
   
 ### <a name="child-elements"></a>子元素  
   
-|属性|说明|  
+|Attribute|描述|  
 |---------------|-----------------|  
-|`specifiedPickupDirectory`|配置简单邮件传输协议（SMTP）服务器的本地目录。|  
+|`specifiedPickupDirectory`| (SMTP) 服务器配置简单邮件传输协议的本地目录。|  
 |`network`|配置外部 SMTP 服务器的网络选项。|  
   
 ### <a name="parent-elements"></a>父元素  
   
 |**元素**|**说明**|  
 |-----------------|---------------------|  
-|[\<mailSettings>元素（网络设置）](mailsettings-element-network-settings.md)|配置邮件发送选项。|  
+|[\<mailSettings> 元素（网络设置）](mailsettings-element-network-settings.md)|配置邮件发送选项。|  
   
 ## <a name="example"></a>示例  
+
  下面的示例指定了使用默认网络凭据发送电子邮件所需的适当 SMTP 参数。  
   
 ```xml  
@@ -79,7 +82,7 @@ ms.locfileid: "84504506"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>
 - <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>

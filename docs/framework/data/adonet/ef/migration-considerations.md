@@ -2,19 +2,21 @@
 title: 迁移注意事项（实体框架）
 ms.date: 03/30/2017
 ms.assetid: c85b6fe8-cc32-4642-8f0a-dc0e5a695936
-ms.openlocfilehash: b0274504fb2b83f7961d4444a8f8e601ba375a8d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d5151f0215cde1c5e35cc87c3cd667e16a23a1df
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554965"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91175468"
 ---
 # <a name="migration-considerations-entity-framework"></a>迁移注意事项（实体框架）
+
 ADO.NET 实体框架为现有应用程序提供了几个优点。 其中最重要的益处之一在于能够使用概念模型将应用程序使用的数据结构与数据源中的架构分离。 这样，日后便可轻松地对存储模型或数据源本身进行更改，而无需对应用程序进行补偿更改。 有关使用实体框架的好处的详细信息，请参阅 [实体框架概述](overview.md) 和 [实体数据模型](../entity-data-model.md)。  
   
  若要利用实体框架的优势，可以将现有应用程序迁移到实体框架中。 某些任务对于所有迁移的应用程序是通用的。 这些常见任务包括升级应用程序以使用从3.5 版 Service Pack 1 (SP1) 、定义模型和映射和配置实体框架开始 .NET Framework。 将应用程序迁移到实体框架时，还需要考虑其他注意事项。 相关注意事项取决于要迁移的应用程序的类型及具体功能。 本主题提供的信息可帮助您为现有应用程序选择最佳的升级途径。  
   
 ## <a name="general-migration-considerations"></a>有关迁移的一般注意事项  
+
  将任何应用程序迁移到实体框架时，请注意以下事项：  
   
 - 只要应用程序使用的数据源的数据提供程序支持实体框架，任何使用从版本 3.5 SP1 开始的 .NET Framework 的应用程序都可以迁移到实体框架。  
@@ -26,6 +28,7 @@ ADO.NET 实体框架为现有应用程序提供了几个优点。 其中最重�
 - 实体框架使用的数据提供程序连接可以与应用程序的其他部分共享，因为实体框架使用 ADO.NET 数据提供程序访问数据源。 例如，实体框架使用 SqlClient 提供程序访问 SQL Server 数据库。 有关详细信息，请参阅 [用于 Entity Framework 的 EntityClient 提供程序](entityclient-provider-for-the-entity-framework.md)。  
   
 ## <a name="common-migration-tasks"></a>通用迁移任务  
+
  将现有应用程序迁移到实体框架的路径取决于应用程序的类型和现有的数据访问策略。 但是，在将现有应用程序迁移到实体框架时，必须始终执行以下任务。  
   
 > [!NOTE]
@@ -53,9 +56,11 @@ ADO.NET 实体框架为现有应用程序提供了几个优点。 其中最重�
      必须将对实体框架程序集和模型和映射文件的引用添加到 Visual Studio 项目中。 可以将这些映射文件添加到项目中，以确保这些文件随应用程序一起部署在连接字符串中所指示的位置。 有关详细信息，请参阅 [如何：手动配置实体框架项目](/previous-versions/dotnet/netframework-4.0/bb738546(v=vs.100))。  
   
 ## <a name="considerations-for-applications-with-existing-objects"></a>有关包含现有对象的应用程序的注意事项  
+
  从 .NET Framework 4 开始，实体框架支持 (POCO) 的 "纯旧" CLR 对象（也称为持久性未知对象）。 在大多数情况下，你的现有对象可通过进行少量更改来处理实体框架。 有关详细信息，请参阅使用 [POCO 实体](/previous-versions/dotnet/netframework-4.0/dd456853(v=vs.100))。 你还可以将应用程序迁移到实体框架，并使用实体框架工具生成的数据类。 有关详细信息，请参阅 [如何：使用实体数据模型向导](/previous-versions/dotnet/netframework-4.0/bb738677(v=vs.100))。  
   
 ## <a name="considerations-for-applications-that-use-adonet-providers"></a>有关使用 ADO.NET 提供程序的应用程序的注意事项  
+
  使用 ADO.NET 提供程序（如 SqlClient），您可以查询数据源以返回表格数据。 还可以将数据加载到 ADO.NET 数据集中。 以下列表描述了升级使用现有 ADO.NET 提供程序的应用程序时的注意事项：  
   
 - 使用数据读取器显示表格格式数据。  
@@ -69,6 +74,7 @@ ADO.NET 实体框架为现有应用程序提供了几个优点。 其中最重�
   如果实体框架未提供应用程序所需的数据集功能，仍然可以通过使用 LINQ to DataSet 来利用 LINQ 查询的优点。 有关详细信息，请参阅 [LINQ to DataSet](../linq-to-dataset.md)。  
   
 ## <a name="considerations-for-applications-that-bind-data-to-controls"></a>有关将数据绑定到控件的应用程序的注意事项  
+
  .NET Framework 允许您在数据源（例如数据集或 ASP.NET 数据源控件）中封装数据，然后将用户界面元素绑定到这些数据控件。 下表介绍将控件绑定到实体框架数据时的注意事项。  
   
 - 将数据绑定到控件。  
@@ -84,6 +90,7 @@ ADO.NET 实体框架为现有应用程序提供了几个优点。 其中最重�
   实体框架包含用于简化 ASP.NET Web 应用程序中的数据绑定的数据源控件。 有关详细信息，请参阅 [EntityDataSource Web 服务器控件概述](/previous-versions/aspnet/cc488502(v=vs.100))。  
   
 ## <a name="other-considerations"></a>其他注意事项  
+
  以下是在将特定类型的应用程序迁移到实体框架时可能需要考虑的一些注意事项。  
   
 - 公开数据服务的应用程序。  
