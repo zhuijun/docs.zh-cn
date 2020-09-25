@@ -5,23 +5,25 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f588597a-49de-4206-8463-4ef377e112ff
-ms.openlocfilehash: d354dda05e8353a33c3a64440e5c2bad390743b4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b590b504d1d497e35612b9d7ea047fe12c43c386
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79148850"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197594"
 ---
 # <a name="aspnet-applications-using-wait-handles"></a>使用等待句柄的 ASP.NET 应用程序
+
 当应用程序一次只处理一个异步操作时，用于处理异步操作的回调和轮询模型将非常有用。 Wait 模型提供了一种更灵活的方法来处理多个异步操作。 有两种 Wait 模型，是根据用于实现它们的 <xref:System.Threading.WaitHandle> 方法命名的：Wait (Any) 模型和 Wait (All) 模型。  
   
  若要使用任一 Wait 模型，需要使用 <xref:System.Data.SqlClient.SqlCommand.BeginExecuteNonQuery%2A>、<xref:System.Data.SqlClient.SqlCommand.BeginExecuteReader%2A> 或 <xref:System.Data.SqlClient.SqlCommand.BeginExecuteXmlReader%2A> 方法返回的 <xref:System.IAsyncResult> 对象的 <xref:System.IAsyncResult.AsyncWaitHandle%2A> 属性。 <xref:System.Threading.WaitHandle.WaitAny%2A> 和 <xref:System.Threading.WaitHandle.WaitAll%2A> 方法都需要将 <xref:System.Threading.WaitHandle> 对象作为参数发送，并分组到一个数组中。  
   
- 两个 Wait 方法都监视异步操作，等待完成。 该方法<xref:System.Threading.WaitHandle.WaitAny%2A>等待任何操作完成或超时。知道特定操作已完成后，可以处理其结果，然后继续等待下一个操作完成或超时。该方法<xref:System.Threading.WaitHandle.WaitAll%2A>等待<xref:System.Threading.WaitHandle>实例数组中的所有进程完成或超时，然后再继续。  
+ 两个 Wait 方法都监视异步操作，等待完成。 <xref:System.Threading.WaitHandle.WaitAny%2A>方法等待任何操作完成或超时。一旦你知道某个特定的操作已完成，你可以处理其结果，然后继续等待下一个操作完成或超时。<xref:System.Threading.WaitHandle.WaitAll%2A>方法等待实例数组中的所有进程 <xref:System.Threading.WaitHandle> 完成或超时，然后再继续。  
   
  当需要在不同的服务器上运行不同长度的多个操作时，或者当服务器的功能足以同时处理所有查询时，Wait 模型的好处最为明显。 在此处介绍的示例中，三个查询通过将不同长度的 WAITFOR 命令添加到无关紧要的 SELECT 查询来模拟长进程。  
   
 ## <a name="example-wait-any-model"></a>示例：等待（任何）模型  
+
  下例说明了 Wait (Any) 模型。 启动了三个异步进程后，将调用 <xref:System.Threading.WaitHandle.WaitAny%2A> 方法来等待其中任何一个进程完成。 每个进程完成后，将调用 <xref:System.Data.SqlClient.SqlCommand.EndExecuteReader%2A> 方法，并读取生成的 <xref:System.Data.SqlClient.SqlDataReader> 对象。 此时，实际应用程序很可能会使用 <xref:System.Data.SqlClient.SqlDataReader> 来填充部分页面。 在这个简单的示例中，将进程完成的时间添加到与该进程相对应的文本框中。 合起来看，文本框中的这些时间说明以下结论：每次进程完成后都执行代码。  
   
  若要设置此示例，请创建新的 ASP.NET 网站项目。 将一个 <xref:System.Web.UI.WebControls.Button> 控件和四个 <xref:System.Web.UI.WebControls.TextBox> 控件置于该页（接受每个控件的默认名称）。  
@@ -313,6 +315,7 @@ void Button1_Click(object sender, System.EventArgs e)
 ```  
   
 ## <a name="example-wait-all-model"></a>示例：等待（所有）模型  
+
  下例说明了 Wait (All) 模型。 启动了三个异步进程后，将调用 <xref:System.Threading.WaitHandle.WaitAll%2A> 方法以等待进程完成或超时。  
   
  与 Wait (Any) 模型的示例类似，进程完成的时间将添加到与该进程相对应的文本框中。 文本框中的这些时间再次说明以下结论：跟随在 <xref:System.Threading.WaitHandle.WaitAny%2A> 方法后的代码只在所有进程都完成后才执行。  
@@ -579,7 +582,7 @@ void Button1_Click(object sender, System.EventArgs e)
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [异步操作](asynchronous-operations.md)
 - [ADO.NET 概述](../ado-net-overview.md)
