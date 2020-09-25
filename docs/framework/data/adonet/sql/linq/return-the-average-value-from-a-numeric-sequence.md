@@ -5,20 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ee3b8673-a2e7-4b2d-9b5c-4972ff9e665d
-ms.openlocfilehash: 8d6f5f76787c1110e91b245a3dd2425450b4db7e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1f113a475bb350640aef7a6b4d7a70b32509d1e0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70781396"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91200402"
 ---
 # <a name="return-the-average-value-from-a-numeric-sequence"></a>从数值序列中返回平均值
+
 <xref:System.Linq.Enumerable.Average%2A> 运算符用于计算数值序列的平均值。  
   
 > [!NOTE]
 > 使用经 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 转换后的 `Average` 计算整数值时，所得结果的数据类型为 integer，而非 double。  
   
 ## <a name="example"></a>示例  
+
  下面的示例返回 `Freight` 表中 `Orders` 值的平均值。  
   
  从 Northwind 示例数据库中得到的结果将为 `78.2442`。  
@@ -27,6 +29,7 @@ ms.locfileid: "70781396"
  [!code-vb[DLinqQueryExamples#1](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#1)]  
   
 ## <a name="example"></a>示例  
+
  下面的示例返回 `Products` 表中所有 `Products` 的平均单价。  
   
  从 Northwind 示例数据库中得到的结果将为 `28.8663`。  
@@ -35,6 +38,7 @@ ms.locfileid: "70781396"
  [!code-vb[DLinqQueryExamples#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#2)]  
   
 ## <a name="example"></a>示例  
+
  下面的示例使用 `Average` 运算符查找其单价高于其所属类别的平均单价的那些 `Products`。 此示例随后会按组显示结果。  
   
  请注意，此示例需要使用 C# 中的 `var` 关键字，这是因为返回类型为匿名类型。  

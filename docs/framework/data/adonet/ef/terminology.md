@@ -2,14 +2,15 @@
 title: 实体框架术语
 ms.date: 03/30/2017
 ms.assetid: fa2a1bd1-6118-487b-8673-eebc66b92945
-ms.openlocfilehash: ea889cfbc04e06e3308e31c6e282d8f2359ddeb9
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: dbe03de44b8ae2a857b923cd9dc74c42ea18f4e8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556533"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91200935"
 ---
 # <a name="entity-framework-terminology"></a>实体框架术语
+
 本主题定义实体框架文档中经常引用的术语。 如果有其他可用信息，则会提供指向相关主题的链接。  
   
 |术语|定义|  
@@ -23,7 +24,7 @@ ms.locfileid: "90556533"
 |Conceptual Model — 概念模型|实体框架的应用程序域中的实体类型、复杂类型、关联、实体容器、实体集和关联集的抽象规范。 概念模型在 .csdl 文件中采用 CSDL 定义。<br /><br /> 有关详细信息，请参阅 [建模和映射](modeling-and-mapping.md)。|  
 |.csdl 文件|一种 XML 文件，该文件包含以 CSDL 表示的概念模型。|  
 |概念性架构定义语言 (CSDL)|一种基于 XML 的语言，可用于定义概念模型的实体类型、关联、实体容器、实体集和关联集。<br /><br /> 有关详细信息，请参阅 [CSDL Specification](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec)。|  
-|容器 (container)|实体集和关联集的逻辑分组。<br /><br /> 有关详细信息，请参阅 [EntityContainer 元素 (CSDL) ](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#entitycontainer-element-csdl) 和 [实体容器](../entity-container.md)。|  
+|container|实体集和关联集的逻辑分组。<br /><br /> 有关详细信息，请参阅 [EntityContainer 元素 (CSDL) ](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#entitycontainer-element-csdl) 和 [实体容器](../entity-container.md)。|  
 |concurrency|使多个用户能够同时访问和更改共享数据的进程。 默认情况下，实体框架实现开放式并发模型。|  
 |direction|指某些关联的非对称性。 方向是通过架构中的 `FromRole` 或 `ToRole` 元素的 `NavigationProperty` 和 `ReferentialConstraint` 属性指定的。<br /><br /> 有关详细信息，请参阅 [NavigationProperty 元素 (CSDL) ](/ef/ef6/modeling/designer/advanced/edmx/csdl-spec#navigationproperty-element-csdl) 和 [导航属性](../navigation-property.md)。|  
 |预先加载 (eager loading)|加载特定相关对象集以及在查询中显式请求的对象的过程。|  

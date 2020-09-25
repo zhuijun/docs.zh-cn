@@ -5,25 +5,27 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8b8bd3cb-86d4-4a3b-9906-61f68726dd1f
-ms.openlocfilehash: 058856243b2a8daaecd653a9b5999013de5407a8
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 0fe32d8c3c37e99a50ca03262dc6184337b4450e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182526"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91200194"
 ---
 # <a name="return-the-set-union-of-two-sequences"></a>返回两个序列的并集
+
 使用 <xref:System.Linq.Queryable.Union%2A> 运算符可返回两个序列的并集。  
   
 ## <a name="example"></a>示例  
- 此示例使用<xref:System.Linq.Queryable.Union%2A>返回有`Customers`或`Employees`的所有国家/地区的序列。  
+
+ 此示例使用 <xref:System.Linq.Queryable.Union%2A> 返回有或的所有国家/地区的序列 `Customers` `Employees` 。  
   
  [!code-csharp[DLinqQueryExamples#43](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DLinqQueryExamples/cs/Program.cs#43)]
  [!code-vb[DLinqQueryExamples#43](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DLinqQueryExamples/vb/Module1.vb#43)]  
   
- 在[!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)]中<xref:System.Linq.Queryable.Union%2A> ，运算符是为多重集定义的，作为多重集的无序串联（ [`UNION ALL`](/sql/t-sql/language-elements/set-operators-union-transact-sql)实际上是 SQL 中的子句的结果）。
+ 在中 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ， <xref:System.Linq.Queryable.Union%2A> 运算符是为多重集定义的，因为多重集的无序串联 (实际上是 [`UNION ALL`](/sql/t-sql/language-elements/set-operators-union-transact-sql) SQL) 中子句的结果。
 
-有关详细信息和示例，请<xref:System.Linq.Queryable.Union%2A?displayProperty=nameWithType>参阅。
+有关详细信息和示例，请参阅 <xref:System.Linq.Queryable.Union%2A?displayProperty=nameWithType> 。
   
 ## <a name="see-also"></a>请参阅
 

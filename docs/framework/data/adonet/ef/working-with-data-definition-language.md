@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ec50083d-44f4-4093-9b23-5eacd601f96e
-ms.openlocfilehash: 040ecc1473a4674ab0bb26ad0081563f55a726ea
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c30cbbc1eae6d4cbcadb9bfe8d267fb428764971
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553865"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91200883"
 ---
 # <a name="working-with-data-definition-language"></a>使用数据定义语言
+
 从 .NET Framework 版本4开始，实体框架支持 (DDL) 的数据定义语言。 这样，您将能够基于连接字符串和存储元数据 (SSDL) 模型创建或删除数据库实例。  
   
  <xref:System.Data.Objects.ObjectContext> 的以下方法使用连接字符串和 SSDL 内容来完成以下操作：创建或删除数据库，检查数据库是否存在，以及查看生成的 DDL 脚本：  

@@ -2,22 +2,25 @@
 title: Null 文本和类型推理 (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: edd56afb-af1b-4e7d-b210-cb8998143426
-ms.openlocfilehash: bb2d9184e17ee2a9916a731eb20eefa105a73753
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 5797c9f55b1a1c89cc27787af6f9ad7bfffc5767
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70249825"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185062"
 ---
 # <a name="null-literals-and-type-inference-entity-sql"></a>Null 文本和类型推理 (Entity SQL)
+
 Null 文本与 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 类型系统中的任何类型都兼容。 但是，为了正确进行 Null 文本类型推理，[!INCLUDE[esql](../../../../../../includes/esql-md.md)] 对何处可以使用 Null 文本实施某些约束。  
   
 ## <a name="typed-nulls"></a>类型化 Null  
+
  类型化 Null 可以在任意位置使用。 类型化 Null 是已知的，因此不需要类型推理。 例如，使用下面的 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 构造可以构造 Int16 类型的 Null。  
   
  `(cast(null as Int16))`  
   
 ## <a name="free-floating-null-literals"></a>自由浮动 Null 文本  
+
  自由浮动 Null 文本的用法如下：  
   
 - 用作 CAST 或 TREAT 表达式的自变量。 建议用这种方式生成类型化 Null 表达式。  
@@ -42,4 +45,4 @@ Null 文本与 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 类型系
   
 ## <a name="see-also"></a>请参阅
 
-- [实体 SQL 概述](entity-sql-overview.md)
+- [Entity SQL 概述](entity-sql-overview.md)

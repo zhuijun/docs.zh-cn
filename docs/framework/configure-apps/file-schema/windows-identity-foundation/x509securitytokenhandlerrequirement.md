@@ -3,14 +3,15 @@ title: <x509SecurityTokenHandlerRequirement>
 ms.date: 03/30/2017
 ms.assetid: aca22c2c-5ae7-42af-9bbd-15c2524692ce
 author: BrucePerlerMS
-ms.openlocfilehash: 30ce69a35cfdd34e0dfea5c682347eb9187e04ed
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: a6a8185297e1345de9fa20c7d4d0dffbdcd8620f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79152445"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185387"
 ---
 # \<x509SecurityTokenHandlerRequirement>
+
 提供 <xref:System.IdentityModel.Tokens.X509SecurityTokenHandler> 类或派生类的可选配置。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -41,11 +42,12 @@ ms.locfileid: "79152445"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |certificateValidationMode|一个 <xref:System.ServiceModel.Security.X509CertificateValidationMode> 值，该值指定要用于 x.509 证书的验证模式。 默认值为 "PeerOrChainTrust"。|  
 |mapToWindows|指定令牌处理程序是否应使用传入 UPN 声明将验证令牌映射到 Windows 帐户。 默认值为“false”。|  
@@ -54,6 +56,7 @@ ms.locfileid: "79152445"
 |certificateValidator|派生自的自定义类型 <xref:System.IdentityModel.Selectors.X509CertificateValidator> 。 如果该 `certificateValidationMode` 属性为 "Custom"，则此类型的实例将用于颁发者证书验证。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无  
   
 ### <a name="parent-elements"></a>父元素  
