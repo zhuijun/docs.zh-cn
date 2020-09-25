@@ -2,17 +2,18 @@
 title: <tokenRequestParameters>
 ms.date: 03/30/2017
 ms.assetid: 1fc2b90c-a61f-4337-ac4c-f341e596a781
-ms.openlocfilehash: 2d9ee4fc6458683771f3f2d7f4666db3df9a9f6e
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 6d6540c2190b3cd558333b826029dfe82b09b95c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69932392"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201442"
 ---
 # \<tokenRequestParameters>
+
 此配置元素包含子元素，这些子元素可用来指定请求令牌时要在消息正文中发送至安全令牌服务的其他 XML 元素。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.TokenRequestParameters%2A>
 - <xref:System.ServiceModel.Configuration.FederatedMessageSecurityOverHttpElement.TokenRequestParameters%2A>

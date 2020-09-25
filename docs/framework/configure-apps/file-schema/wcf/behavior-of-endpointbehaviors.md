@@ -2,14 +2,15 @@
 title: <behavior> 的 <endpointBehaviors>
 ms.date: 03/30/2017
 ms.assetid: b90ca3bc-3c22-4174-b903-e3a39898bd27
-ms.openlocfilehash: 489678a5adeae3965acae90a847c4b087478354d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: d191b968e1c3fd1db0837ba7e03f210a1b00062d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74140810"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201494"
 ---
 # <a name="behavior-of-endpointbehaviors"></a>\<behavior> 的 \<endpointBehaviors>
+
 `behavior` 元素包含终结点行为的设置集合。 每个行为都按其 `name` 进行索引。 终结点可以通过此名称链接到每个行为。 从 .NET Framework 4 开始，绑定和行为不需要具有名称。 有关默认配置和无值绑定和行为的详细信息，请参阅[WCF 服务的](../../../wcf/samples/simplified-configuration-for-wcf-services.md)[简化配置](../../../wcf/simplified-configuration.md)和简化配置。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -31,6 +32,7 @@ ms.locfileid: "74140810"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
@@ -44,7 +46,7 @@ ms.locfileid: "74140810"
 |元素|描述|  
 |-------------|-----------------|  
 |[\<clientCredentials>](clientcredentials.md)|指定用于向服务验证客户端身份的凭据。|  
-|[\<callbackDebug>](callbackdebug.md)|指定 Windows Communication Foundation （WCF）回调对象的服务调试。|  
+|[\<callbackDebug>](callbackdebug.md)|指定 Windows Communication Foundation (WCF) 回调对象的服务调试。|  
 |[\<callbackTimeouts>](callbacktimeouts.md)|指定客户端回调的超时。|  
 |[\<clientVia>](clientvia.md)|指定消息应采用的路由。|  
 |[\<dataContractSerializer>](datacontractserializer.md)|包含 DataContractSerializer 的配置数据。|  

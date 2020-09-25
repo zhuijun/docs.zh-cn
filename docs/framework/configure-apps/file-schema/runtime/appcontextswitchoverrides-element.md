@@ -7,12 +7,12 @@ helpviewer_keywords:
 - configuration switches
 - configuration
 ms.assetid: 4ce07f47-7ddb-4d91-b067-501bd8b88752
-ms.openlocfilehash: 0ead35559a17eb06304e6c251d2fe388ca178a30
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ab74886edcc86c900c56017867a3b81c9cb7886e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90552279"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176144"
 ---
 # <a name="appcontextswitchoverrides-element"></a>\<AppContextSwitchOverrides> 元素
 
@@ -29,6 +29,7 @@ ms.locfileid: "90552279"
 ```
 
 ## <a name="attributes-and-elements"></a>特性和元素
+
  下列各节描述了特性、子元素和父元素。
 
 ### <a name="attributes"></a>特性
@@ -39,28 +40,30 @@ ms.locfileid: "90552279"
 
 ### <a name="value-attribute"></a>值特性
 
-|“值”|说明|
+|值|描述|
 |-----------|-----------------|
 |"名称 = 值"|预定义的开关名称及其值 (`true` 或 `false`) 。 多个开关名称/值对由分号分隔 ( ";") 。 有关 .NET Framework 支持的预定义开关名称的列表，请参阅 "备注" 部分。|
 
 ### <a name="child-elements"></a>子元素
+
  无。
 
 ### <a name="parent-elements"></a>父元素
 
-|元素|说明|
+|元素|描述|
 |-------------|-----------------|
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|
 |`runtime`|包含有关运行时初始化选项的信息。|
 
 ## <a name="remarks"></a>备注
+
  从 .NET Framework 4.6 开始， `<AppContextSwitchOverrides>` 配置文件中的元素允许 API 的调用方确定其应用是否可以利用新功能或保持与以前版本的库的兼容性。 例如，如果 API 的行为在两个版本的库中发生了更改，则 `<AppContextSwitchOverrides>` 元素允许该 api 的调用方在支持新功能的库版本上选择禁用新行为。 对于在 .NET Framework 中调用 Api 的应用程序， `<AppContextSwitchOverrides>` 如果应用程序在包含该功能的 .NET Framework 版本上运行，则该元素还可以允许其应用定位于 .NET Framework 早期版本的调用方选择新的功能。
 
  `value`元素的属性 `<AppContextSwitchOverrides>` 包含一个字符串，该字符串由一个或多个以分号分隔的名称/值对组成。  每个名称都标识一个兼容性开关，其对应的值为布尔值 (`true` 或 `false`) ，指示是否设置了该开关。 默认情况下，开关是 `false` ，库提供新功能。 如果开关设置 (为，则它们仅提供以前的功能，其值为 `true`) 。 这允许库为现有 API 提供新行为，同时允许依赖于先前行为的调用方选择不使用新功能。
 
 .NET Framework 支持以下开关：
 
-|交换机名称|说明|已引入|
+|交换机名称|描述|已引入|
 |-----------------|-----------------|----------------|
 |`Switch.MS.Internal.`<br/>`DoNotApplyLayoutRoundingToMarginsAndBorderThickness`|控制 Windows Presentation Foundation 是否对控件布局使用旧算法。 有关详细信息，请参阅[缓解：WPF 布局](../../../migration-guide/mitigation-wpf-layout.md)。|.NET Framework 4.6|
 |`Switch.MS.Internal.`<br/>`UseSha1AsDefaultHashAlgorithmForDigitalSignatures`|控制 PackageDigitalSignatureManager 用于为包的部分签名的默认算法是 SHA1 还是 SHA256。<br>由于与 SHA1 冲突，Microsoft 建议使用 SHA256。|.NET Framework 4.7.1|

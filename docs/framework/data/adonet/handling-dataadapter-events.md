@@ -5,30 +5,32 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 11515b25-ee49-4b1d-9294-a142147c1ec5
-ms.openlocfilehash: d01198d158c4e1c64f12e8a0756c3d4e599fce74
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: a2c2dc71cc9e5c445fd05534dad5ad47fd66f436
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149539"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194721"
 ---
 # <a name="handling-dataadapter-events"></a>处理 DataAdapter 事件
+
 ADO.NET <xref:System.Data.Common.DataAdapter> 公开三个可用于响应数据源中数据更改的事件。 下表演示了 `DataAdapter` 事件。  
   
-|事件|说明|  
+|事件|描述|  
 |-----------|-----------------|  
 |`RowUpdating`|将要开始对某行执行 UPDATE、INSERT 或 DELETE 操作（通过调用 `Update` 方法之一）。|  
 |`RowUpdated`|对某行的 UPDATE、INSERT 或 DELETE 操作（通过调用 `Update` 方法之一）已完成。|  
 |`FillError`|执行 `Fill` 操作期间出错。|  
   
 ## <a name="rowupdating-and-rowupdated"></a>RowUpdating 和 RowUpdated  
+
  在数据源中处理对  `RowUpdating` 中某行的任何更新之前，将引发 <xref:System.Data.DataSet>。 在数据源中处理对 `RowUpdated` 中某行的任何更新之后，将引发 `DataSet`。 因此，可以使用 `RowUpdating` 执行下列操作：在更新行为发生之前对其进行修改，在更新将发生时提供附加处理，保留对已更新行的引用，取消当前更新并将其安排在以后进行批处理，等等。 `RowUpdated` 对于响应更新期间发生的错误和异常是非常有用的。 您可以向 `DataSet` 以及重试逻辑等添加错误信息。  
   
  传递给 <xref:System.Data.Common.RowUpdatingEventArgs> 和 <xref:System.Data.Common.RowUpdatedEventArgs> 事件的 `RowUpdating` 和 `RowUpdated` 自变量包括：`Command` 属性，它引用用来执行更新的 `Command` 对象；`Row` 属性，它引用包含更新信息的 `DataRow` 对象；`StatementType` 属性，它指示所执行的更新类型；`TableMapping`（如果适用）；以及操作的 `Status`。  
   
  可以使用 `Status` 属性来确定在执行该操作期间是否发生了错误；如果需要，还可以使用该属性来控制对当前行和结果行所执行的操作。 当该事件发生时，`Status` 属性将为 `Continue` 或 `ErrorsOccurred`。 下表演示为了控制更新过程中的后继操作，可以将 `Status` 属性设置为的值。  
   
-|状态|说明|  
+|状态|描述|  
 |------------|-----------------|  
 |`Continue`|继续执行更新操作。|  
 |`ErrorsOccurred`|中止更新操作并引发异常。|  
@@ -39,7 +41,7 @@ ADO.NET <xref:System.Data.Common.DataAdapter> 公开三个可用于响应数据�
   
  也可以使用 `ContinueUpdateOnError` 属性为更新的行处理错误。 如果 `DataAdapter.ContinueUpdateOnError` 为 `true`，那么当行的更新导致引发异常时，该异常的文本被放入特定行的 `RowError` 信息中，并且处理将会继续而不会引发异常。 这使您能够在 `Update` 完成时对错误作出响应；与此相反的是 `RowUpdated` 事件，它使您能够在遇到错误时响应错误。  
   
- 以下代码示例显示如何添加和移除事件处理程序。 `RowUpdating` 事件处理程序编写带有时间戳的所有已删除记录的日志。 事件`RowUpdated`处理程序将错误信息添加到 中的`RowError``DataSet`行的属性，禁止异常并继续处理（镜像 的行为`ContinueUpdateOnError` = `true`）。  
+ 以下代码示例显示如何添加和移除事件处理程序。 `RowUpdating` 事件处理程序编写带有时间戳的所有已删除记录的日志。 `RowUpdated`事件处理程序将错误信息添加到 `RowError` 中的行的属性中 `DataSet` ，取消隐藏异常，并继续处理 (镜像) 的行为 `ContinueUpdateOnError`  =  `true` 。  
   
 ```vb  
 ' Assumes that connection is a valid SqlConnection object.  
@@ -125,13 +127,14 @@ protected static void OnRowUpdated(
 ```  
   
 ## <a name="fillerror"></a>FillError  
+
  如果在执行 `DataAdapter` 操作期间出错，`FillError` 将发出 `Fill` 事件。 当所添加行中的数据必须损失一些精度才能转换成 .NET Framework 类型时，通常会发生这种类型的错误。  
   
  如果在执行 `Fill` 操作期间出错，则当前行将不会被添加到 `DataTable`。 通过 `FillError` 事件可更正该错误并添加当前行，或者忽略已排除的行并继续执行 `Fill` 操作。  
   
  传递给 `FillErrorEventArgs` 事件的 `FillError` 包含几项可用于响应和更正错误的属性。 下表演示 `FillErrorEventArgs` 对象的属性。  
   
-|properties|说明|  
+|属性|描述|  
 |--------------|-----------------|  
 |`Errors`|已发生的 `Exception`。|  
 |`DataTable`|出错时所填充的 `DataTable` 对象。|  
@@ -186,9 +189,9 @@ protected static void FillError(object sender, FillErrorEventArgs args)
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [DataAdapters 和 DataReaders](dataadapters-and-datareaders.md)
+- [DataAdapter 和 DataReader](dataadapters-and-datareaders.md)
 - [处理数据集事件](./dataset-datatable-dataview/handling-dataset-events.md)
 - [处理数据表事件](./dataset-datatable-dataview/handling-datatable-events.md)
 - [事件](../../../standard/events/index.md)

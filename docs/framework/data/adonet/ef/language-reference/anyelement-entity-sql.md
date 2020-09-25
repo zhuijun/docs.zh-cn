@@ -2,14 +2,15 @@
 title: ANYELEMENT (Entity SQL)
 ms.date: 03/30/2017
 ms.assetid: 475a9ad6-8c8d-4f49-9970-af273e5360f1
-ms.openlocfilehash: c0f7686f7ff3f6458637b51e29ecafe0c0ccfbc4
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: e060956545ca924fa6fedb80b2f53ff312f307a2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040322"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201195"
 ---
 # <a name="anyelement-entity-sql"></a>ANYELEMENT (Entity SQL)
+
 从多值集合中提取元素。  
   
 ## <a name="syntax"></a>语法  
@@ -18,14 +19,17 @@ ms.locfileid: "73040322"
 ANYELEMENT ( expression )  
 ```  
   
-## <a name="arguments"></a>自变量  
+## <a name="arguments"></a>参数  
+
  `expression`  
  返回要从中提取元素的集合的任何有效查询表达式。  
   
 ## <a name="return-value"></a>返回值  
- 集合中的一个元素，或者任意元素（如果集合具有多个元素）；如果集合为空，则返回 `null`。 如果 `collection` 是 `Collection<T>`类型的集合，则 `ANYELEMENT(collection)` 为生成 `T`类型的实例的有效表达式。  
+
+ 集合中的一个元素，或者任意元素（如果集合具有多个元素）；如果集合为空，则返回 `null`。 如果 `collection` 是类型的集合 `Collection<T>` ，则 `ANYELEMENT(collection)` 是生成类型为的实例的有效表达式 `T` 。  
   
 ## <a name="remarks"></a>备注  
+
  ANYELEMENT 从多值集合中提取任意元素。 例如，以下示例尝试从 `Customers`集中提取单一实例元素。  
   
 ```csharp
@@ -33,6 +37,7 @@ ANYELEMENT(Customers)
 ```  
   
 ## <a name="example"></a>示例  
+
  以下 [!INCLUDE[esql](../../../../../../includes/esql-md.md)] 查询使用 ANYELEMENT 运算符以从多值集合中提取元素。 此查询基于 AdventureWorks 销售模型。 若要编译并运行此查询，请执行下列步骤：  
   
 1. 执行 [How to: Execute a Query that Returns StructuralType Results](../how-to-execute-a-query-that-returns-structuraltype-results.md)中的过程。  
