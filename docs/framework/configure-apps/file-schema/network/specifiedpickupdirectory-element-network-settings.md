@@ -9,15 +9,16 @@ helpviewer_keywords:
 - specifiedPickupDirectory element
 - <specifiedPickupDirectory> element
 ms.assetid: 0121f49d-bff2-4bc6-af06-f1628dcd61f1
-ms.openlocfilehash: f0c4c1845e9542d0f3b836ff03f16bdf2979ebd8
-ms.sourcegitcommit: da21fc5a8cce1e028575acf31974681a1bc5aeed
+ms.openlocfilehash: 5bb7fc5405b1ee2f0f054bc6e9f043a3f9fcd1ec
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/08/2020
-ms.locfileid: "84504493"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176157"
 ---
 # <a name="specifiedpickupdirectory-element-network-settings"></a>\<specifiedPickupDirectory> 元素（网络设置）
-配置简单邮件传输协议（SMTP）服务器的本地目录。  
+
+ (SMTP) 服务器配置简单邮件传输协议的本地目录。  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.net>**](system-net-element-network-settings.md)\
@@ -34,27 +35,31 @@ ms.locfileid: "84504493"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`pickupDirectoryLocation`|应用程序在其中保存电子邮件以供 SMTP 服务器稍后处理的目录。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
   
 |元素|描述|  
 |-------------|-----------------|  
-|[\<smtp>元素（网络设置）](smtp-element-network-settings.md)|配置简单邮件传输协议（SMTP）邮件发送选项。|  
+|[\<smtp> 元素（网络设置）](smtp-element-network-settings.md)| (SMTP) 邮件发送选项配置简单邮件传输协议。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  `specifiedPickupDirectory` 特性设置应用程序保存邮件以供 SMTP 服务器处理的目录。  
   
 ## <a name="example"></a>示例  
+
  下面的示例将 c:\maildrop 指定为邮件分拣目录。  
   
 ```xml  
@@ -71,7 +76,7 @@ ms.locfileid: "84504493"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Net.Mail.SmtpClient?displayProperty=nameWithType>
 - <xref:System.Net.Configuration.SmtpSection?displayProperty=nameWithType>

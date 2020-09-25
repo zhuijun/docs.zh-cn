@@ -11,19 +11,20 @@ helpviewer_keywords:
 - configuration sections [.NET Framework]
 - elements [.NET Framework], trace and debug settings
 ms.assetid: 277ca5f6-e1c4-41b6-a47f-3a67ce5b94ac
-ms.openlocfilehash: 037d08b33e9aa6a64d236b36ebcf821b604b03df
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ae089e941d75df7ba1cd87b5b92a514a33bfbf85
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "69927122"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195189"
 ---
 # <a name="trace-and-debug-settings-schema"></a>跟踪和调试设置架构
+
 跟踪和调试设置指定用于收集、存储和路由消息的跟踪侦听器以及对跟踪开关设置的级别。  
   
  下表介绍每个跟踪和调试设置元素的功能。  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |[\<add>](add-element-for-listeners-for-source.md)|将侦听器添加到跟踪源的 `Listeners` 集合中。|  
 |[\<add>](add-element-for-listeners-for-trace.md)|将侦听器添加到 `Listeners` 集合中。|  

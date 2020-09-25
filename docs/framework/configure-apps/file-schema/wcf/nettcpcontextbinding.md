@@ -2,14 +2,15 @@
 title: <netTcpContextBinding>
 ms.date: 03/30/2017
 ms.assetid: 1d4715e1-5fff-4c3d-a226-18f21d0b30c4
-ms.openlocfilehash: 88b3da6c81d771db255f6c0a4e86984c9ba294fe
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bb6094b962c0f1199f0a16eb7d0821a95eba4c77
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546147"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195021"
 ---
 # \<netTcpContextBinding>
+
 为要求对保护级别进行签名的 <xref:System.ServiceModel.NetTcpBinding> 指定上下文。 NetTcpContextBinding 的 contextExchangeMechanism 是 SOAPHeader。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -62,11 +63,12 @@ ms.locfileid: "90546147"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |closeTimeout|一个 <xref:System.TimeSpan> 值，指定为完成关闭操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:01:00。|  
 |contextProtectionLevel|一个有效的 <xref:System.Net.Security.ProtectionLevel> 值，指定用于传播上下文信息的 SOAP 标头的所需保护级别。  默认值是 <xref:System.Net.Security.ProtectionLevel.Sign>。|  
@@ -81,13 +83,13 @@ ms.locfileid: "90546147"
 |portSharingEnabled|一个布尔值，指定是否为此连接启用 TCP 端口共享。 如果此值为 `false`，则每个绑定都使用自己的独占端口。 此设置只与服务相关，因为客户端不受影响。|  
 |receiveTimeout|一个 <xref:System.TimeSpan> 值，指定为完成接收操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:10:00。|  
 |sendTimeout|一个 <xref:System.TimeSpan> 值，指定为完成发送操作提供的时间间隔。 此值应大于或等于 <xref:System.TimeSpan.Zero>。 默认值为 00:01:00。|  
-|transactionFlow|一个布尔值，指定绑定是否支持流动 WS-Transactions。 默认值为 `false`。|  
+|transactionFlow|一个布尔值，指定绑定是否支持流动 WS-Transactions。 默认为 `false`。|  
 |transactionProtocol|指定与此绑定一起使用的事务处理协议。 有效值为<br /><br /> -OleTransactions<br />-WSAtomicTransactionOctober2004<br /><br /> 默认值为 OleTransactions。 此属性的类型为 <xref:System.ServiceModel.TransactionProtocol>。|  
 |transferMode|一个 <xref:System.ServiceModel.TransferMode> 值，指定为请求或响应对消息进行缓冲处理还是流式处理。|  
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |[\<security>](security-of-nettcpbinding.md)|定义绑定的安全设置。 此元素的类型为 <xref:System.ServiceModel.Configuration.NetTcpSecurityElement>。|  
 |[\<readerQuotas>](/previous-versions/dotnet/netframework-4.0/ms731325(v=vs.100))|定义可由采用此绑定配置的终结点进行处理的 SOAP 消息的复杂性约束。 此元素的类型为 <xref:System.ServiceModel.Configuration.XmlDictionaryReaderQuotasElement>。|  
@@ -95,7 +97,7 @@ ms.locfileid: "90546147"
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |[\<bindings>](bindings.md)|此元素包含标准绑定和自定义绑定的集合。|  
   

@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2b73d60a-6049-446a-85a7-3e5a68b183e2
-ms.openlocfilehash: cbae5453be485896e27a5039ece20bb3bcec9913
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: cf2a47c5d29c0af680ee4ccae503e92d3a9124d8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556975"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194708"
 ---
 # <a name="how-to-bind-a-dataview-object-to-a-windows-forms-datagridview-control"></a>如何：将 DataView 对象绑定到 Windows 窗体 DataGridView 控件
+
 <xref:System.Windows.Forms.DataGridView> 控件提供一种以表格格式显示数据的功能强大且灵活的方法。 <xref:System.Windows.Forms.DataGridView> 控件支持标准 Windows 窗体数据绑定模型，因此它可以绑定到 <xref:System.Data.DataView> 和各种其他数据源。 但在多数情况下，该控件将会绑定到用于管理数据源交互详细信息的 <xref:System.Windows.Forms.BindingSource> 组件。  
   
  有关控件的详细信息 <xref:System.Windows.Forms.DataGridView> ，请参阅 [DataGridView 控件概述](/dotnet/desktop/winforms/controls/datagridview-control-overview-windows-forms)。  

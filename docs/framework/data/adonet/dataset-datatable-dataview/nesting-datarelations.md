@@ -5,19 +5,20 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9530f9c9-dd98-4b93-8cdb-40d7f1e8d0ab
-ms.openlocfilehash: 971a1bddc40521dc7381ecb2e39709c0fed282ed
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 8db75f486c7c08b6a02401af35c9edf9969f9063
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785985"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201273"
 ---
 # <a name="nesting-datarelations"></a>嵌套 DataRelation
-在数据的关系表示形式中，各个表都包含使用一个列或一组列来相互关联的行。 在 ADO.NET <xref:System.Data.DataSet> 中，表之间的关系使用 <xref:System.Data.DataRelation> 来实现。 创建**DataRelation**时，列的父子关系仅通过关系进行管理。 表和列是独立的实体。 在 XML 提供的数据的分层表示形式中，父子关系通过包含嵌套子元素的父元素来表示。  
+
+在数据的关系表示形式中，各个表都包含使用一个列或一组列来相互关联的行。 在 ADO.NET <xref:System.Data.DataSet> 中，表之间的关系使用 <xref:System.Data.DataRelation> 来实现。 创建 **DataRelation**时，列的父子关系仅通过关系进行管理。 表和列是独立的实体。 在 XML 提供的数据的分层表示形式中，父子关系通过包含嵌套子元素的父元素来表示。  
   
- 若要在使用**WriteXml**将**数据集**与<xref:System.Xml.XmlDataDocument>或编写为 XML 数据的情况下，使子对象嵌套更方便， **DataRelation**公开了**嵌套**属性。 如果将**DataRelation**的**Nested**属性设置为**true** ，则在写入为 XML 数据或与**XmlDataDocument**进行同步时，会将该关系的子行嵌套在父列中。 默认情况下， **DataRelation**的**嵌套**属性为**false**。  
+ 若要在使用 WriteXml 将**数据集**与或编写为 XML 数据的情况下，使子对象嵌套更方便 <xref:System.Xml.XmlDataDocument> ， **WriteXml** **DataRelation**公开了**嵌套**属性。 如果将**DataRelation**的**Nested**属性设置为**true** ，则在写入为 XML 数据或与**XmlDataDocument**进行同步时，会将该关系的子行嵌套在父列中。 默认情况下， **DataRelation**的**嵌套**属性为**false**。  
   
- 例如，请考虑以下**数据集**。  
+ 例如，请考虑以下 **数据集**。  
   
 ```vb  
 ' Assumes connection is a valid SqlConnection.  
@@ -59,7 +60,7 @@ DataRelation customerOrders = dataSet.Relations.Add(
   dataSet.Tables["Orders"].Columns["CustomerID"]);  
 ```  
   
- 由于此**数据集**的**DataRelation**对象的**嵌套**属性未设置为**true** ，因此当此**数据集**表示为 XML 数据时，子对象不会嵌套在父元素内。 转换包含相关**数据**集以及非嵌套数据关系的**数据集**的 XML 表示形式可能会导致性能下降。 建议您嵌套数据关系。 为此，请将**Nested**属性设置为**true**。 然后在使用上下分层 XPath 查询表达式的 XSLT 样式表中编写代码以定位和转换数据。  
+ 由于此**数据集**的**DataRelation**对象的**嵌套**属性未设置为**true** ，因此当此**数据集**表示为 XML 数据时，子对象不会嵌套在父元素内。 转换包含相关**数据**集以及非嵌套数据关系的**数据集**的 XML 表示形式可能会导致性能下降。 建议您嵌套数据关系。 为此，请将 **Nested** 属性设置为 **true**。 然后在使用上下分层 XPath 查询表达式的 XSLT 样式表中编写代码以定位和转换数据。  
   
  下面的代码示例演示了对**数据集**调用**WriteXml**的结果。  
   
@@ -91,7 +92,7 @@ DataRelation customerOrders = dataSet.Relations.Add(
 </CustomerOrders>  
 ```  
   
- 请注意， **Customers**元素和**Orders**元素显示为同级元素。 如果希望**Orders**元素显示为其各自父元素的子级，则必须将**DataRelation**的**嵌套**属性设置为**true** ，并添加以下内容：  
+ 请注意， **Customers** 元素和 **Orders** 元素显示为同级元素。 如果希望**Orders**元素显示为其各自父元素的子级，则必须将**DataRelation**的**嵌套**属性设置为**true** ，并添加以下内容：  
   
 ```vb  
 customerOrders.Nested = True  
@@ -101,7 +102,7 @@ customerOrders.Nested = True
 customerOrders.Nested = true;  
 ```  
   
- 下面的代码演示生成的输出的外观，其中的**Orders**元素嵌套在其各自的父元素中。  
+ 下面的代码演示生成的输出的外观，其中的 **Orders** 元素嵌套在其各自的父元素中。  
   
 ```xml  
 <CustomerOrders>  
@@ -134,6 +135,6 @@ customerOrders.Nested = true;
 ## <a name="see-also"></a>请参阅
 
 - [在数据集中使用 XML](using-xml-in-a-dataset.md)
-- [添加数据关系](adding-datarelations.md)
+- [添加 DataRelation](adding-datarelations.md)
 - [数据集、数据表和数据视图](index.md)
 - [ADO.NET 概述](../ado-net-overview.md)

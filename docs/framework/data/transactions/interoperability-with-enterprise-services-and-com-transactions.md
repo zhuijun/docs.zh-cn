@@ -3,21 +3,23 @@ title: 与企业服务和 COM+ 事务的互操作性
 description: 使用 system.exception 命名空间了解 .NET 中的企业服务和 COM + 事务的互操作性。
 ms.date: 03/30/2017
 ms.assetid: d0fd0d26-fe86-443b-b208-4d57d39fa4aa
-ms.openlocfilehash: ebd6166fbd99ef102cf10ba1bcef9e3eb8aaa5da
-ms.sourcegitcommit: 6219b1e1feccb16d88656444210fed3297f5611e
+ms.openlocfilehash: 48cb006a4294b7c43de262eb2d19c6c4ea9d22fd
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/22/2020
-ms.locfileid: "85141896"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186765"
 ---
 # <a name="interoperability-with-enterprise-services-and-com-transactions"></a>与企业服务和 COM+ 事务的互操作性
+
 <xref:System.Transactions> 命名空间支持使用此命名空间创建的事务对象与通过 COM+ 创建的事务之间的互操作性。  
   
  在创建新的 <xref:System.Transactions.EnterpriseServicesInteropOption> 实例时，可以使用 <xref:System.Transactions.TransactionScope> 枚举来指定与 COM+ 的互操作性的级别。  
   
- 默认情况下，当您的应用程序代码检查静态 <xref:System.Transactions.Transaction.Current%2A> 属性时， <xref:System.Transactions> 会尝试查找当前为空的事务或 <xref:System.Transactions.TransactionScope> 指示该属性 <xref:System.Transactions.Transaction.Current%2A> 为**null**的对象。 如果找不到上述任何一项，则 <xref:System.Transactions> 会查询事务的 COM+ 上下文。 请注意，即使 <xref:System.Transactions> 可从 COM+ 上下文中找到事务，它仍会首选 <xref:System.Transactions> 的本机事务。  
+ 默认情况下，当您的应用程序代码检查静态 <xref:System.Transactions.Transaction.Current%2A> 属性时， <xref:System.Transactions> 会尝试查找当前为空的事务或 <xref:System.Transactions.TransactionScope> 指示该属性 <xref:System.Transactions.Transaction.Current%2A> 为 **null**的对象。 如果找不到上述任何一项，则 <xref:System.Transactions> 会查询事务的 COM+ 上下文。 请注意，即使 <xref:System.Transactions> 可从 COM+ 上下文中找到事务，它仍会首选 <xref:System.Transactions> 的本机事务。  
   
 ## <a name="interoperability-levels"></a>互操作性级别  
+
  <xref:System.Transactions.EnterpriseServicesInteropOption> 枚举定义了下列互操作性级别：<xref:System.Transactions.EnterpriseServicesInteropOption.None>、<xref:System.Transactions.EnterpriseServicesInteropOption.Full> 和 <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>。  
   
  <xref:System.Transactions.TransactionScope> 类提供的构造函数接受 <xref:System.Transactions.EnterpriseServicesInteropOption> 作为参数。  
@@ -28,7 +30,7 @@ ms.locfileid: "85141896"
   
  <xref:System.Transactions.EnterpriseServicesInteropOption.Full> 指定 <xref:System.Transactions> 和 <xref:System.EnterpriseServices> 的环境事务始终是相同的。 这会创建一个新的 <xref:System.EnterpriseServices> 事务性上下文，并使 <xref:System.Transactions.TransactionScope> 的当前事务成为该上下文的当前事务。 因此，<xref:System.Transactions.Transaction.Current%2A> 中的事务与 <xref:System.EnterpriseServices.ContextUtil.Transaction%2A> 中的事务完全保持同步。 该值会导致性能损失，因为可能会创建新的 COM+ 上下文。  
   
- <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>指定以下要求：  
+ <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic> 指定以下要求：  
   
 - 选中 <xref:System.Transactions.Transaction.Current%2A> 时，如果 <xref:System.Transactions> 检测到它没有运行在默认上下文中，则应支持 COM+ 上下文中的事务。 请注意，默认上下文不能包含事务。 因此，在默认上下文中，即使使用 <xref:System.Transactions.EnterpriseServicesInteropOption.Automatic>，也会对 <xref:System.Transactions> 返回 <xref:System.Transactions.Transaction.Current%2A> 所使用的、存储在线程本地存储区中的事务。  
   
@@ -38,7 +40,7 @@ ms.locfileid: "85141896"
   
  总之，在创建新的事务范围时，应遵守下列规则：  
   
-1. <xref:System.Transactions.Transaction.Current%2A>检查是否存在事务。 此检查会执行下列操作：  
+1. <xref:System.Transactions.Transaction.Current%2A> 检查是否存在事务。 此检查会执行下列操作：  
   
     - 检查是否存在范围。  
   
