@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4f5639bf-bb7f-4982-bb1d-c7caa4348888
-ms.openlocfilehash: 7a055fc3e62821285fe2b6e1333d516c477d025b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ec1ff7cdbdc83bc409b191f0aefe2b50cbad9225
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90549752"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192160"
 ---
 # <a name="how-to-execute-a-parameterized-stored-procedure-using-entitycommand"></a>如何：使用 EntityCommand 执行参数化存储过程
+
 本主题说明如何使用 <xref:System.Data.EntityClient.EntityCommand> 类执行参数化存储过程。  
   
 ### <a name="to-run-the-code-in-this-example"></a>运行本示例中的代码  
@@ -27,6 +28,7 @@ ms.locfileid: "90549752"
 3. 导入 `GetStudentGrades` 存储过程并将 `CourseGrade` 实体指定为返回类型。 有关如何导入存储过程的信息，请参阅 [如何：导入存储过程](/previous-versions/dotnet/netframework-4.0/bb896231(v=vs.100))。  
   
 ## <a name="example"></a>示例  
+
  下面的代码执行 `GetStudentGrades` 存储过程，其中，`StudentId` 为必需的参数。 然后由 <xref:System.Data.EntityClient.EntityDataReader> 读取结果。  
   
  [!code-csharp[DP EntityServices Concepts#StoredProcWithEntityCommand](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/source.cs#storedprocwithentitycommand)]

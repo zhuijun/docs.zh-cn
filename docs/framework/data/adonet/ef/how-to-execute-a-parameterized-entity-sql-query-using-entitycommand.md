@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e93fea43-7e03-4d7d-9fee-2517b8b88cba
-ms.openlocfilehash: 24b24e4c35c85edb1f960ae18a58cbc5893690d0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: d66b77553e677c42ccedf7e66bf4f5763db92fa4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90536218"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192225"
 ---
 # <a name="how-to-execute-a-parameterized-entity-sql-query-using-entitycommand"></a>如何：使用 EntityCommand 执行参数化实体 SQL 查询
+
 本主题说明如何 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 使用对象执行具有参数的查询 <xref:System.Data.EntityClient.EntityCommand> 。  
   
 ### <a name="to-run-the-code-in-this-example"></a>运行本示例中的代码  
@@ -25,6 +26,7 @@ ms.locfileid: "90536218"
      [!code-vb[DP EntityServices Concepts#Namespaces](../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp entityservices concepts/vb/source.vb#namespaces)]  
   
 ## <a name="example"></a>示例  
+
  以下示例显示如何使用两个参数构造一个查询字符串。 然后，它创建 <xref:System.Data.EntityClient.EntityCommand>，将两个参数添加到该 <xref:System.Data.EntityClient.EntityParameter> 的 <xref:System.Data.EntityClient.EntityCommand> 集合，并循环访问 `Contact` 项的集合。  
   
  [!code-csharp[DP EntityServices Concepts#ParameterizedQueryWithEntityCommand](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/source.cs#parameterizedquerywithentitycommand)]

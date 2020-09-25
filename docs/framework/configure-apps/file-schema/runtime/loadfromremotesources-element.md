@@ -5,14 +5,15 @@ helpviewer_keywords:
 - loadFromRemoteSources element
 - <loadFromRemoteSources> element
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
-ms.openlocfilehash: 48da852bd1e209aed5ed5e75d8e510027a96d6d7
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 568c0c814dcc57be0f5be435bb7750c970ffec19
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558004"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192446"
 ---
 # <a name="loadfromremotesources-element"></a>\<loadFromRemoteSources> 元素
+
 指定是否应在 .NET Framework 4 及更高版本中将从远程源加载的程序集授予完全信任。
   
 > [!NOTE]
@@ -30,6 +31,7 @@ ms.locfileid: "90558004"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
@@ -40,17 +42,18 @@ ms.locfileid: "90558004"
   
 ## <a name="enabled-attribute"></a>enabled 属性  
   
-|“值”|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |`false`|不要向远程源的应用程序授予完全信任。 这是默认设置。|  
 |`true`|向远程源的应用程序授予完全信任。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`runtime`|包含有关运行时初始化选项的信息。|  

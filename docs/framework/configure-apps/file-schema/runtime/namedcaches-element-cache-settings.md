@@ -6,14 +6,15 @@ helpviewer_keywords:
 - caching [.NET Framework], configuration
 - <namedCaches> element
 ms.assetid: 6bd4fbc5-55a6-4dc4-998b-cdcc7e023330
-ms.openlocfilehash: e0640ca18d386141f3c03135019eb4fe959b5bf8
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ad76c01bba859934be399d73262bd974309efe98
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79153953"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192394"
 ---
 # <a name="namedcaches-element-cache-settings"></a>\<namedCaches> 元素（缓存设置）
+
 指定命名实例的配置设置的集合 <xref:System.Runtime.Caching.MemoryCache> 。 <xref:System.Runtime.Caching.Configuration.MemoryCacheSection.NamedCaches%2A>属性从配置文件的一个或多个元素中引用配置设置的集合 `namedCaches` 。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -30,14 +31,16 @@ ms.locfileid: "79153953"
 ```  
   
 ## <a name="type"></a>类型  
+
  `None`  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |`cacheMemoryLimitMegabytes`|一个整数值，指定的实例可以增长到的最大允许大小（以 mb <xref:System.Runtime.Caching.MemoryCache> 为单位）。 默认值为0，这意味着 <xref:System.Runtime.Caching.MemoryCache> 默认情况下使用类的自动调整试探法。|  
 |`name`|缓存的名称。|  
@@ -60,14 +63,16 @@ ms.locfileid: "79153953"
 |[\<memoryCache>](memorycache-element-cache-settings.md)|定义一个用于配置基于 <xref:System.Runtime.Caching.MemoryCache> 类的缓存的元素。|  
 |[\<system.runtime.caching>](system-runtime-caching-element-cache-settings.md)|包含使你可以在 .NET Framework 中内置的应用程序中实现输出缓存的类型。|  
   
-## <a name="remarks"></a>注解  
- Web.config 文件的内存缓存配置节可以包含 `add` 集合的、 `remove` 和 `clear` 特性 `namedCaches` 。 每个 `namedCaches` 项都由特性唯一标识 `name` 。  
+## <a name="remarks"></a>备注  
+
+ Web.config 文件的内存缓存配置部分可以包含 `add` `remove` 该集合的、和 `clear` 属性 `namedCaches` 。 每个 `namedCaches` 项都由特性唯一标识 `name` 。  
   
  可以通过引用应用程序配置文件中的信息来检索内存缓存项的实例。 默认情况下，只有默认的缓存实例在配置文件中有一个条目。 默认缓存实例是从属性返回的实例 <xref:System.Runtime.Caching.MemoryCache.Default%2A> 。  
   
  如果将 name 属性设置为 "default"，则元素将使用默认内存缓存实例。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何通过将 `name` 属性设置为 "default"，将缓存的名称设置为默认缓存项名称。  
   
  将 `cacheMemoryLimitMegabytes` 属性和 `physicalMemoryPercentage` 属性设置为零。 将这些特性设置为零意味着使用类的自动调整试探法 <xref:System.Runtime.Caching.MemoryCache> 。 缓存实现将当前内存负载与基于百分比的绝对内存和每两分钟的内存限制进行比较。  
@@ -89,6 +94,6 @@ ms.locfileid: "79153953"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
-- [\<memoryCache>元素（缓存设置）](memorycache-element-cache-settings.md)
+- [\<memoryCache> 元素 (缓存设置) ](memorycache-element-cache-settings.md)

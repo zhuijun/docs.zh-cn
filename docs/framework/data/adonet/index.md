@@ -4,18 +4,19 @@ description: 了解 ADO.NET 是公开数据访问服务的类，这些类用于�
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
-ms.openlocfilehash: 4f9b2ca42a2c25c1463b7d1ca38b4b8920b2dafd
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 503977ab2bef6f03ab13fab168319d350aad9471
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286723"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194565"
 ---
 # <a name="adonet"></a>ADO.NET
 
 ADO.NET 是一组向 .NET Framework 程序员公开数据访问服务的类。 ADO.NET 为创建分布式数据共享应用程序提供了一组丰富的组件。 它提供了对关系数据、XML 和应用程序数据的访问，因此是 .NET Framework 中不可缺少的一部分。 ADO.NET 支持多种开发需求，包括创建由应用程序、工具、语言或 Internet 浏览器使用的前端数据库客户端和中间层业务对象。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [ADO.NET 新增功能](whats-new.md)  
  介绍 ADO.NET 中的新增功能。  
   
@@ -47,6 +48,7 @@ ADO.NET 是一组向 .NET Framework 程序员公开数据访问服务的类。 A
  描述 Oracle .NET Framework 数据提供程序特定的功能和行为。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [语言集成查询 (LINQ) - C#](../../../csharp/programming-guide/concepts/linq/index.md)  
  提供指向使用 c # 的 LINQ 主题和示例的链接。  
   
@@ -54,7 +56,7 @@ ADO.NET 是一组向 .NET Framework 程序员公开数据访问服务的类。 A
  提供使用 Visual Basic 的 LINQ 主题和示例的链接。  
   
  [WCF 数据服务 4.5](../wcf/index.md)  
- 介绍如何使用 WCF 数据服务在实现 Open Data Protocol （OData）的 Web 或 intranet 上部署数据服务。  
+ 介绍如何使用 WCF 数据服务在 (OData) 实现 Open Data Protocol 的 Web 或 intranet 上部署数据服务。  
   
  [.NET Framework 开发指南](../../development-guide.md)  
  提供与 .NET Framework 中的标准开发任务有关的信息的链接。  
@@ -62,7 +64,7 @@ ADO.NET 是一组向 .NET Framework 程序员公开数据访问服务的类。 A
  [示例和教程](../../../samples-and-tutorials/index.md)  
  提供 .NET 示例和教程的列表。
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [在 Visual Studio 中访问数据](/visualstudio/data-tools/accessing-data-in-visual-studio)
 - [ADO.NET 概述](ado-net-overview.md)
