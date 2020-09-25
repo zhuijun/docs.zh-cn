@@ -5,54 +5,60 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a0bfa4b1-99e5-4dd1-9912-4b825a9dc25c
-ms.openlocfilehash: 0060f14319bb0dfbed597e59dfe44666c4cfbe84
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: bb40d10165592b25cc6afc1eac799a05b4504e8d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70854446"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91191964"
 ---
-# <a name="method-based-query-syntax-examples-navigating-relationships"></a><span data-ttu-id="6fe0f-102">基于方法的查询语法示例：导航关系</span><span class="sxs-lookup"><span data-stu-id="6fe0f-102">Method-Based Query Syntax Examples: Navigating Relationships</span></span>
-<span data-ttu-id="6fe0f-103">实体框架中的导航属性是快捷方式属性，用于定位位于关联末尾的实体。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-103">Navigation properties in the Entity Framework are shortcut properties used to locate the entities at the ends of an association.</span></span> <span data-ttu-id="6fe0f-104">导航属性允许用户通过关联集从一个实体导航到另一个实体或从一个实体导航到多个相关的实体。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-104">Navigation properties allow a user to navigate from one entity to another, or from one entity to related entities through an association set.</span></span> <span data-ttu-id="6fe0f-105">本主题提供了基于方法的查询语法示例，该语法介绍如何通过 LINQ to Entities 查询中的导航属性来导航关系。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-105">This topic provides examples in method-based query syntax of how to navigate relationships through navigation properties in LINQ to Entities queries.</span></span>  
+# <a name="method-based-query-syntax-examples-navigating-relationships"></a><span data-ttu-id="66e34-102">基于方法的查询语法示例：导航关系</span><span class="sxs-lookup"><span data-stu-id="66e34-102">Method-Based Query Syntax Examples: Navigating Relationships</span></span>
+
+<span data-ttu-id="66e34-103">实体框架中的导航属性是快捷方式属性，用于定位位于关联末尾的实体。</span><span class="sxs-lookup"><span data-stu-id="66e34-103">Navigation properties in the Entity Framework are shortcut properties used to locate the entities at the ends of an association.</span></span> <span data-ttu-id="66e34-104">导航属性允许用户通过关联集从一个实体导航到另一个实体或从一个实体导航到多个相关的实体。</span><span class="sxs-lookup"><span data-stu-id="66e34-104">Navigation properties allow a user to navigate from one entity to another, or from one entity to related entities through an association set.</span></span> <span data-ttu-id="66e34-105">本主题提供了基于方法的查询语法示例，该语法介绍如何通过 LINQ to Entities 查询中的导航属性来导航关系。</span><span class="sxs-lookup"><span data-stu-id="66e34-105">This topic provides examples in method-based query syntax of how to navigate relationships through navigation properties in LINQ to Entities queries.</span></span>  
   
- <span data-ttu-id="6fe0f-106">这些示例中使用的 AdventureWorks 销售模型从 AdventureWorks 示例数据库中的 Contact、Address、Product、SalesOrderHeader 和 SalesOrderDetail 等表生成。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-106">The AdventureWorks Sales Model used in these examples is built from the Contact, Address, Product, SalesOrderHeader, and SalesOrderDetail tables in the AdventureWorks sample database.</span></span>  
+ <span data-ttu-id="66e34-106">这些示例中使用的 AdventureWorks 销售模型从 AdventureWorks 示例数据库中的 Contact、Address、Product、SalesOrderHeader 和 SalesOrderDetail 等表生成。</span><span class="sxs-lookup"><span data-stu-id="66e34-106">The AdventureWorks Sales Model used in these examples is built from the Contact, Address, Product, SalesOrderHeader, and SalesOrderDetail tables in the AdventureWorks sample database.</span></span>  
   
- <span data-ttu-id="6fe0f-107">本主题中的示例使用以下`using` / `Imports`语句：</span><span class="sxs-lookup"><span data-stu-id="6fe0f-107">The examples in this topic use the following `using`/`Imports` statements:</span></span>  
+ <span data-ttu-id="66e34-107">本主题中的示例使用以下 `using` / `Imports` 语句：</span><span class="sxs-lookup"><span data-stu-id="66e34-107">The examples in this topic use the following `using`/`Imports` statements:</span></span>  
   
  [!code-csharp[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#importsusing)]
  [!code-vb[DP L2E Examples#ImportsUsing](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#importsusing)]  
   
-## <a name="example"></a><span data-ttu-id="6fe0f-108">示例</span><span class="sxs-lookup"><span data-stu-id="6fe0f-108">Example</span></span>  
- <span data-ttu-id="6fe0f-109">采用基于方法的查询语法的以下示例使用 <xref:System.Linq.Queryable.SelectMany%2A> 方法以获取其姓氏为“Zhou”的联系人的所有订单。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-109">The following example in method-based query syntax uses the <xref:System.Linq.Queryable.SelectMany%2A> method to get all the orders of the contacts whose last name is "Zhou".</span></span> <span data-ttu-id="6fe0f-110">`Contact.SalesOrderHeader` 导航属性用于获取每个联系人的 `SalesOrderHeader` 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-110">The `Contact.SalesOrderHeader` navigation property is used to get the collection of `SalesOrderHeader` objects for each contact.</span></span>  
+## <a name="example"></a><span data-ttu-id="66e34-108">示例</span><span class="sxs-lookup"><span data-stu-id="66e34-108">Example</span></span>  
+
+ <span data-ttu-id="66e34-109">采用基于方法的查询语法的以下示例使用 <xref:System.Linq.Queryable.SelectMany%2A> 方法以获取其姓氏为“Zhou”的联系人的所有订单。</span><span class="sxs-lookup"><span data-stu-id="66e34-109">The following example in method-based query syntax uses the <xref:System.Linq.Queryable.SelectMany%2A> method to get all the orders of the contacts whose last name is "Zhou".</span></span> <span data-ttu-id="66e34-110">`Contact.SalesOrderHeader` 导航属性用于获取每个联系人的 `SalesOrderHeader` 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="66e34-110">The `Contact.SalesOrderHeader` navigation property is used to get the collection of `SalesOrderHeader` objects for each contact.</span></span>  
   
  [!code-csharp[DP L2E Examples#SelectEachContactsOrders_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selecteachcontactsorders_mq)]
  [!code-vb[DP L2E Examples#SelectEachContactsOrders_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#selecteachcontactsorders_mq)]  
   
-## <a name="example"></a><span data-ttu-id="6fe0f-111">示例</span><span class="sxs-lookup"><span data-stu-id="6fe0f-111">Example</span></span>  
- <span data-ttu-id="6fe0f-112">采用基于方法的查询语法的以下示例使用 <xref:System.Linq.Queryable.Select%2A> 方法以获取所有联系人 ID 和姓氏为“Zhou”的每个联系人的应付款总计。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-112">The following example in method-based query syntax uses the <xref:System.Linq.Queryable.Select%2A> method to get all the contact IDs and the sum of the total due for each contact whose last name is "Zhou".</span></span> <span data-ttu-id="6fe0f-113">`Contact.SalesOrderHeader` 导航属性用于获取每个联系人的 `SalesOrderHeader` 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-113">The `Contact.SalesOrderHeader` navigation property is used to get the collection of `SalesOrderHeader` objects for each contact.</span></span> <span data-ttu-id="6fe0f-114">`Sum` 方法使用 `Contact.SalesOrderHeader` 导航属性以汇总每个联系人的所有订单的应付款总计。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-114">The `Sum` method uses the `Contact.SalesOrderHeader` navigation property to sum the total due of all the orders for each contact.</span></span>  
+## <a name="example"></a><span data-ttu-id="66e34-111">示例</span><span class="sxs-lookup"><span data-stu-id="66e34-111">Example</span></span>  
+
+ <span data-ttu-id="66e34-112">采用基于方法的查询语法的以下示例使用 <xref:System.Linq.Queryable.Select%2A> 方法以获取所有联系人 ID 和姓氏为“Zhou”的每个联系人的应付款总计。</span><span class="sxs-lookup"><span data-stu-id="66e34-112">The following example in method-based query syntax uses the <xref:System.Linq.Queryable.Select%2A> method to get all the contact IDs and the sum of the total due for each contact whose last name is "Zhou".</span></span> <span data-ttu-id="66e34-113">`Contact.SalesOrderHeader` 导航属性用于获取每个联系人的 `SalesOrderHeader` 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="66e34-113">The `Contact.SalesOrderHeader` navigation property is used to get the collection of `SalesOrderHeader` objects for each contact.</span></span> <span data-ttu-id="66e34-114">`Sum` 方法使用 `Contact.SalesOrderHeader` 导航属性以汇总每个联系人的所有订单的应付款总计。</span><span class="sxs-lookup"><span data-stu-id="66e34-114">The `Sum` method uses the `Contact.SalesOrderHeader` navigation property to sum the total due of all the orders for each contact.</span></span>  
   
  [!code-csharp[DP L2E Examples#SelectEachContactsOrders2_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selecteachcontactsorders2_mq)]
  [!code-vb[DP L2E Examples#SelectEachContactsOrders2_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#selecteachcontactsorders2_mq)]  
   
-## <a name="example"></a><span data-ttu-id="6fe0f-115">示例</span><span class="sxs-lookup"><span data-stu-id="6fe0f-115">Example</span></span>  
- <span data-ttu-id="6fe0f-116">采用基于方法的查询语法的以下示例获取其姓氏为“Zhou”的联系人的所有订单。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-116">The following example in method-based query syntax gets all the orders of the contacts whose last name is "Zhou".</span></span> <span data-ttu-id="6fe0f-117">`Contact.SalesOrderHeader` 导航属性用于获取每个联系人的 `SalesOrderHeader` 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-117">The `Contact.SalesOrderHeader` navigation property is used to get the collection of `SalesOrderHeader` objects for each contact.</span></span> <span data-ttu-id="6fe0f-118">联系人的姓名和订单以匿名类型返回。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-118">The contact's name and orders are returned in an anonymous type.</span></span>  
+## <a name="example"></a><span data-ttu-id="66e34-115">示例</span><span class="sxs-lookup"><span data-stu-id="66e34-115">Example</span></span>  
+
+ <span data-ttu-id="66e34-116">采用基于方法的查询语法的以下示例获取其姓氏为“Zhou”的联系人的所有订单。</span><span class="sxs-lookup"><span data-stu-id="66e34-116">The following example in method-based query syntax gets all the orders of the contacts whose last name is "Zhou".</span></span> <span data-ttu-id="66e34-117">`Contact.SalesOrderHeader` 导航属性用于获取每个联系人的 `SalesOrderHeader` 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="66e34-117">The `Contact.SalesOrderHeader` navigation property is used to get the collection of `SalesOrderHeader` objects for each contact.</span></span> <span data-ttu-id="66e34-118">联系人的姓名和订单以匿名类型返回。</span><span class="sxs-lookup"><span data-stu-id="66e34-118">The contact's name and orders are returned in an anonymous type.</span></span>  
   
  [!code-csharp[DP L2E Examples#SelectEachContactsOrders3_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#selecteachcontactsorders3_mq)]
  [!code-vb[DP L2E Examples#SelectEachContactsOrders3_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#selecteachcontactsorders3_mq)]  
   
-## <a name="example"></a><span data-ttu-id="6fe0f-119">示例</span><span class="sxs-lookup"><span data-stu-id="6fe0f-119">Example</span></span>  
- <span data-ttu-id="6fe0f-120">以下示例使用 `SalesOrderHeader.Address` 和 `SalesOrderHeader.Contact` 导航属性以获取与每个订单关联的 `Address` 对象和 `Contact` 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-120">The following example uses the `SalesOrderHeader.Address` and `SalesOrderHeader.Contact` navigation properties to get the collection of `Address` and `Contact` objects associated with each order.</span></span> <span data-ttu-id="6fe0f-121">Seattle 城市发生的每个订单的联系人姓氏、街道地址、销售订单号和应付款总计将以匿名类型返回。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-121">The last name of the contact, the street address, the sales order number, and the total due for each order to the city of Seattle are returned in an anonymous type.</span></span>  
+## <a name="example"></a><span data-ttu-id="66e34-119">示例</span><span class="sxs-lookup"><span data-stu-id="66e34-119">Example</span></span>  
+
+ <span data-ttu-id="66e34-120">以下示例使用 `SalesOrderHeader.Address` 和 `SalesOrderHeader.Contact` 导航属性以获取与每个订单关联的 `Address` 对象和 `Contact` 对象的集合。</span><span class="sxs-lookup"><span data-stu-id="66e34-120">The following example uses the `SalesOrderHeader.Address` and `SalesOrderHeader.Contact` navigation properties to get the collection of `Address` and `Contact` objects associated with each order.</span></span> <span data-ttu-id="66e34-121">Seattle 城市发生的每个订单的联系人姓氏、街道地址、销售订单号和应付款总计将以匿名类型返回。</span><span class="sxs-lookup"><span data-stu-id="66e34-121">The last name of the contact, the street address, the sales order number, and the total due for each order to the city of Seattle are returned in an anonymous type.</span></span>  
   
  [!code-csharp[DP L2E Examples#GetOrderInfoThruRelationships_MQ](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#getorderinfothrurelationships_mq)]
  [!code-vb[DP L2E Examples#GetOrderInfoThruRelationships_MQ](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#getorderinfothrurelationships_mq)]  
   
-## <a name="example"></a><span data-ttu-id="6fe0f-122">示例</span><span class="sxs-lookup"><span data-stu-id="6fe0f-122">Example</span></span>  
- <span data-ttu-id="6fe0f-123">以下示例使用 `Where` 方法以查找在 2003 年 12 月 1 日之后生成的订单，然后使用 `order.SalesOrderDetail` 导航属性以获取每个订单的详细信息。</span><span class="sxs-lookup"><span data-stu-id="6fe0f-123">The following example uses the `Where` method to find orders that were made after December 1, 2003, and then uses the `order.SalesOrderDetail` navigation property to get the details for each order.</span></span>  
+## <a name="example"></a><span data-ttu-id="66e34-122">示例</span><span class="sxs-lookup"><span data-stu-id="66e34-122">Example</span></span>  
+
+ <span data-ttu-id="66e34-123">以下示例使用 `Where` 方法以查找在 2003 年 12 月 1 日之后生成的订单，然后使用 `order.SalesOrderDetail` 导航属性以获取每个订单的详细信息。</span><span class="sxs-lookup"><span data-stu-id="66e34-123">The following example uses the `Where` method to find orders that were made after December 1, 2003, and then uses the `order.SalesOrderDetail` navigation property to get the details for each order.</span></span>  
   
  [!code-csharp[DP L2E Examples#WhereNavProperty](../../../../../../samples/snippets/csharp/VS_Snippets_Data/DP L2E Examples/CS/Program.cs#wherenavproperty)]
  [!code-vb[DP L2E Examples#WhereNavProperty](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/DP L2E Examples/VB/Module1.vb#wherenavproperty)]  
   
-## <a name="see-also"></a><span data-ttu-id="6fe0f-124">请参阅</span><span class="sxs-lookup"><span data-stu-id="6fe0f-124">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="66e34-124">请参阅</span><span class="sxs-lookup"><span data-stu-id="66e34-124">See also</span></span>
 
-- [<span data-ttu-id="6fe0f-125">关系、导航属性和外键</span><span class="sxs-lookup"><span data-stu-id="6fe0f-125">Relationships, navigation properties and foreign keys</span></span>](/ef/ef6/fundamentals/relationships)
-- [<span data-ttu-id="6fe0f-126">LINQ to Entities 中的查询</span><span class="sxs-lookup"><span data-stu-id="6fe0f-126">Queries in LINQ to Entities</span></span>](queries-in-linq-to-entities.md)
+- [<span data-ttu-id="66e34-125">关系、导航属性和外键</span><span class="sxs-lookup"><span data-stu-id="66e34-125">Relationships, navigation properties and foreign keys</span></span>](/ef/ef6/fundamentals/relationships)
+- [<span data-ttu-id="66e34-126">LINQ to Entities 中的查询</span><span class="sxs-lookup"><span data-stu-id="66e34-126">Queries in LINQ to Entities</span></span>](queries-in-linq-to-entities.md)
