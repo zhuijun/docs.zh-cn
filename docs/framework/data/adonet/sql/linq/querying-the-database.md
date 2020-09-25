@@ -2,19 +2,21 @@
 title: 查询数据库
 ms.date: 03/30/2017
 ms.assetid: eefb8b0c-ff07-4e86-a3d3-567479523fe9
-ms.openlocfilehash: 6ca402600d43eb84c31c499d3f93aca95d4ea1d9
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: b4ce48ee3d49769a353bf7371140b1f5a645f34e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634308"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91184867"
 ---
 # <a name="querying-the-database"></a>查询数据库
+
 本组主题说明如何在 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 项目中开发和执行查询。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [如何：查询信息](how-to-query-for-information.md)  
- 简要说明 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 查询通常与 LINQ 查询相同。  
+ 简要说明 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 查询的基本原理通常与 LINQ 查询相同。  
   
  [如何：将信息作为只读信息检索](how-to-retrieve-information-as-read-only.md)  
  说明在不打算更改数据时如何提高查询性能。  

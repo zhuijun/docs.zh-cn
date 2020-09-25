@@ -2,17 +2,19 @@
 title: 示例
 ms.date: 03/30/2017
 ms.assetid: 3fcc0c4a-b952-4cfe-9e09-0c0cf874ba2c
-ms.openlocfilehash: 3580163912953407868ffbb1b990e92380bb24c4
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 071f561bd1e8c0f60300c0c3cf63ea016899d46b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90553878"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91200198"
 ---
 # <a name="samples"></a>示例
+
 本主题提供指向包含示例代码的 Visual Basic 和 c # 解决方案的链接 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] 。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  SampleQueries 解决方案的 Visual Basic 版本  
  [示例查询 (Visual Basic) ](../../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
   

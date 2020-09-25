@@ -2,14 +2,15 @@
 title: <findCriteria>
 ms.date: 03/30/2017
 ms.assetid: 5454cd19-6bf5-4ba8-94d1-f58d10dc1917
-ms.openlocfilehash: 44e068ee205bc5e04382164e7ab00716b2c07dcf
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: ce2b1fdd85e0454f901bac393e2f44ae0c6da43f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70855164"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178142"
 ---
 # \<findCriteria>
+
 一个配置元素，提供客户端应用程序用于搜索发现服务的一组条件。 可将这些条件划分为搜索条件（指定要查找的服务）和查找终止条件（搜索应持续的时长）。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -48,11 +49,12 @@ ms.locfileid: "70855164"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |duration|一个 Timespan 值，指定等待网络上的服务所发送的答复的最长时间。 默认持续时间为 20 秒。|  
 |maxResults|一个整数，指定等待网络或 Internet 上的服务所发送的最大答复数。 如果在经过 `duration` 特性指定的值之前收到的答复达到了最大数目，则查找操作将结束。|  
@@ -72,7 +74,7 @@ ms.locfileid: "70855164"
 |-------------|-----------------|  
 |[\<standardEndpoints>](standardendpoints.md)|包含应用程序以客户端形式参与服务发现过程所需的设置。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Discovery.FindCriteria>
 - <xref:System.ServiceModel.Discovery.Configuration.FindCriteriaElement>
