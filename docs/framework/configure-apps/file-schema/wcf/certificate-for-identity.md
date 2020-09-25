@@ -2,17 +2,18 @@
 title: 若 <identity>，表示集 <certificate>
 ms.date: 03/30/2017
 ms.assetid: 4aeccaf7-8f23-495c-aa5f-5bd8b5d4a10c
-ms.openlocfilehash: 1cfd207afc72cc71359d9d262e30b0696ba63d2b
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 24c39b5efaee7f8db12088d272efeb3783efab04
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850012"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198855"
 ---
 # <a name="certificate-for-identity"></a>若 \<identity>，表示集 \<certificate>
+
 指定用于向客户端验证服务器的 X.509 证书。  
   
-有关设置元素值的详细信息，请参阅[服务标识和身份验证](../../../wcf/feature-details/service-identity-and-authentication.md)。  
+有关设置元素值的详细信息，请参阅 [服务标识和身份验证](../../../wcf/feature-details/service-identity-and-authentication.md)。  
   
 [**\<configuration>**](../configuration-element.md)\
 &nbsp;&nbsp;[**\<system.serviceModel>**](system-servicemodel.md)\
@@ -28,15 +29,17 @@ ms.locfileid: "70850012"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |encodedValue|证书的 Base64 编码。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -46,6 +49,7 @@ ms.locfileid: "70850012"
 |[\<identity>](identity.md)|指定要由客户端进行身份验证的服务的标识。|  
   
 ## <a name="example"></a>示例  
+
  下面的代码指定用于向客户端验证服务器的证书的编码表示形式。  
   
 ```xml  
@@ -54,7 +58,7 @@ ms.locfileid: "70850012"
 </identity>
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.IdentityElement>
 - <xref:System.ServiceModel.EndpointAddress>

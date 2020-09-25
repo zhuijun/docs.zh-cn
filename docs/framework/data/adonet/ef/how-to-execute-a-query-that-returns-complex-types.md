@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: c2209fdb-70ef-4dea-8bb8-097fe96f5563
-ms.openlocfilehash: 01958637cedcd6d502d51e9f0821ff3a9faae840
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: e5358e3a1295b180356ed6c127111313b44de277
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90545319"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198478"
 ---
 # <a name="how-to-execute-a-query-that-returns-complex-types"></a>如何：执行返回复杂类型的查询
+
 本主题演示如何执行返回包含复杂类型属性的实体类型对象的 [!INCLUDE[esql](../../../../../includes/esql-md.md)] 查询。  
   
 ### <a name="to-run-the-code-in-this-example"></a>运行本示例中的代码  
@@ -31,6 +32,7 @@ ms.locfileid: "90545319"
      有关使用实体数据模型向导创建和修改复杂类型的信息，请参阅 [如何：将现有属性重构为复杂类型属性](/previous-versions/dotnet/netframework-4.0/dd456814(v=vs.100)) 和 [如何：创建和修改复杂类型](/previous-versions/dotnet/netframework-4.0/dd456820(v=vs.100))。  
   
 ## <a name="example"></a>示例  
+
  下面的示例执行一个查询，该查询返回对象的集合 `Contact` 并显示对象的两个属性 `Contact` ： `ContactID` 和 `EmailPhoneComplexType` 复杂类型的值。  
   
  [!code-csharp[DP EntityServices Concepts#ComplexTypeWithEntityCommand](../../../../../samples/snippets/csharp/VS_Snippets_Data/dp entityservices concepts/cs/source.cs#complextypewithentitycommand)]

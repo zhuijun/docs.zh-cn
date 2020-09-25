@@ -8,14 +8,15 @@ helpviewer_keywords:
 - <disableCommitThreadStack> element
 - disableCommitThreadStack element
 ms.assetid: 3559d46a-7640-4c72-9a11-7e980768929e
-ms.openlocfilehash: 8aefb8a20d6a95c5b8062d0c03dcb28a3557ca3d
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: f717f57fe8670b126ed1468713a2114aaa772762
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73117478"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198985"
 ---
 # <a name="disablecommitthreadstack-element"></a>\<disableCommitThreadStack> 元素
+
 指定在线程启动时是否提交完整线程堆栈。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -29,22 +30,24 @@ ms.locfileid: "73117478"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
 |属性|说明|  
 |---------------|-----------------|  
-|已启用|必需的特性。<br /><br /> 指定是否禁止在线程启动时提交完整线程堆栈（默认行为）。|  
+|enabled|必需的特性。<br /><br /> 指定是否禁止在线程启动时提交完整线程堆栈（默认行为）。|  
   
 ## <a name="enabled-attribute"></a>enabled 特性  
   
-|值|说明|  
+|值|描述|  
 |-----------|-----------------|  
 |0|不禁用公共语言运行时的默认行为（即在线程启动时提交完整线程堆栈）。|  
 |1|禁用公共语言运行时的默认行为（即在线程启动时提交完整线程堆栈）。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -54,13 +57,15 @@ ms.locfileid: "73117478"
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`runtime`|包含有关程序集绑定和垃圾回收的信息。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  公共语言运行时的默认行为是在线程启动时提交完整线程堆栈。 当必须在内存有限的服务器上创建大量线程，并且其中大多数线程都使用非常小的堆栈空间时，如果公共语言运行时在线程启动时不立即提交完整线程堆栈，则服务器可能会表现更好。  
   
 > [!NOTE]
 > 非托管主机可以使用 `STARTUP_DISABLE_COMMITTHREADSTACK` STARTUP_FLAGS [枚举中的](../../../unmanaged-api/hosting/startup-flags-enumeration.md) 启动标志实现相同结果。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何禁用公共语言运行时的默认行为（即在线程启动时提交完整线程堆栈）。  
   
 ```xml  
@@ -71,7 +76,7 @@ ms.locfileid: "73117478"
 </configuration>  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [运行时设置架构](index.md)
 - [配置文件架构](../index.md)

@@ -4,14 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WCF Data Services, learn more
 ms.assetid: e63a9baf-699c-42e2-b11f-fba57bcc14df
-ms.openlocfilehash: 9b0534c2d11b723458b52e219ba1ce2de4b3c550
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 52de0dc16ea2363c48ed48291883352b02f2015c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541521"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91202144"
 ---
 # <a name="wcf-data-services-resources"></a>WCF 数据服务资源
+
 可在以下位置找到 WCF 数据服务的介绍性主题。 其中的许多主题还包含指向包含更多详细信息的相关主题的链接。  
   
  [概述](wcf-data-services-overview.md)  
@@ -27,6 +28,7 @@ ms.locfileid: "90541521"
  包括 WCF 数据服务和 OData 文档中使用的术语。  
   
 ## <a name="external-resources"></a>外部资源  
+
  以下外部资源提供了额外的信息和支持，用于创建公开和使用 OData 源的 WCF 数据服务应用程序。  
   
  [WCF 数据服务论坛](https://social.msdn.microsoft.com/Forums/en-US/home?forum=adodotnetdataservices)  

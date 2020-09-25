@@ -2,14 +2,15 @@
 title: 如何：使用 EdmGen.exe 生成模型和映射文件
 ms.date: 03/30/2017
 ms.assetid: 40db462d-2fd2-4cc1-ad86-d280403e63fa
-ms.openlocfilehash: 6b41ce971f14938c7bb04a174dbf6029c564c788
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 8837afd05eec0eaf8ef3e909d46b280e8ae05da7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90546571"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91198179"
 ---
 # <a name="how-to-use-edmgenexe-to-generate-the-model-and-mapping-files"></a>如何：使用 EdmGen.exe 生成模型和映射文件
+
 本主题描述如何使用 EDM 生成器 (EdmGen.exe) 工具生成以下文件（基于 School 数据库）：  
   
 - 概念模型（.csdl 文件）。  

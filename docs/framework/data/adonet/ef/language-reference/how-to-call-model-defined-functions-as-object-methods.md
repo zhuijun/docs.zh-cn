@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 33bae8a8-4ed8-4a1f-85d1-c62ff288cc61
-ms.openlocfilehash: f53577b9cee640a4a13bd61f60bdbaa695130576
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5e5ae2fd838a34d7f665b23a14db2a599367e801
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90542511"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197789"
 ---
 # <a name="how-to-call-model-defined-functions-as-object-methods"></a>如何：调用模型定义的函数作为对象方法
+
 本主题介绍如何将模型定义函数作为 <xref:System.Data.Objects.ObjectContext> 对象的方法调用或作为自定义类的静态方法调用。 *模型定义的函数*是在概念模型中定义的函数。 本主题中的过程介绍如何直接调用这些函数，而不是从 LINQ to Entities 查询中调用它们。 有关在 LINQ to Entities 查询中调用模型定义函数的信息，请参阅 [如何：在查询中调用模型定义的函数](how-to-call-model-defined-functions-in-queries.md)。  
   
  无论您是将模型定义函数作为 <xref:System.Data.Objects.ObjectContext> 方法调用，还是作为自定义类的静态方法调用，首先都必须使用 <xref:System.Data.Objects.DataClasses.EdmFunctionAttribute> 将该方法映射到模型定义函数。 但是，当您定义 <xref:System.Data.Objects.ObjectContext> 类的方法时，必须使用 <xref:System.Data.Objects.ObjectContext.QueryProvider%2A> 属性公开 LINQ 提供程序，而当您定义自定义类的静态方法时，必须使用 <xref:System.Linq.IQueryable.Provider%2A> 属性公开 LINQ 提供程序。 有关更多信息，请参见下述过程后面的示例。  
@@ -44,6 +45,7 @@ ms.locfileid: "90542511"
 2. 将此方法作为自定义类的一个静态成员调用  
   
 ## <a name="example"></a>示例  
+
  **将模型定义函数作为 ObjectContext 对象的一个方法调用**  
   
  下面的示例演示如何将模型定义函数作为 <xref:System.Data.Objects.ObjectContext> 对象的一个方法调用。 该示例使用 [AdventureWorks 销售模型](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)。  
@@ -53,35 +55,41 @@ ms.locfileid: "90542511"
  [!code-xml[DP L2E Methods on ObjectContext#4](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#4)]  
 
 ## <a name="example"></a>示例  
+
  下面的代码向 `AdventureWorksEntities` 类添加了一个方法，该方法映射到上述的概念模型函数。  
   
  [!code-csharp[DP L2E Methods on ObjectContext#2](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#2)]
  [!code-vb[DP L2E Methods on ObjectContext#2](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/class1.vb#2)]  
   
 ## <a name="example"></a>示例  
+
  下面的代码调用上面的方法，以显示指定产品的产品收入：  
   
  [!code-csharp[DP L2E Methods on ObjectContext#3](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#3)]
  [!code-vb[DP L2E Methods on ObjectContext#3](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/module1.vb#3)]  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何调用一个返回集合（作为 <xref:System.Linq.IQueryable%601> 对象）的模型定义函数。 请考虑下面的概念模型函数，它可返回给定产品 ID 的所有 `SalesOrderDetails`。  
   
  [!code-xml[DP L2E Methods on ObjectContext#7](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#7)]  
   
 ## <a name="example"></a>示例  
+
  下面的代码向 `AdventureWorksEntities` 类添加了一个方法，该方法映射到上述的概念模型函数。  
   
  [!code-csharp[DP L2E Methods on ObjectContext#8](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#8)]
  [!code-vb[DP L2E Methods on ObjectContext#8](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/class1.vb#8)]  
   
 ## <a name="example"></a>示例  
+
  下面的代码示例调用此方法。 请注意，返回的 <xref:System.Linq.IQueryable%601> 查询将进一步优化，以返回每个 `SalesOrderDetail` 的行合计。  
   
  [!code-csharp[DP L2E Methods on ObjectContext#9](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#9)]
  [!code-vb[DP L2E Methods on ObjectContext#9](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/module1.vb#9)]  
   
 ## <a name="example"></a>示例  
+
  **将模型定义函数作为自定义类的静态方法调用**  
   
  下一个示例演示如何将模型定义函数作为自定义类的静态方法调用。 该示例使用 [AdventureWorks 销售模型](https://github.com/Microsoft/sql-server-samples/releases/tag/adventureworks)。  
@@ -94,12 +102,14 @@ ms.locfileid: "90542511"
  [!code-xml[DP L2E Methods on ObjectContext#1](../../../../../../samples/snippets/xml/VS_Snippets_Data/dp l2e methods on objectcontext/xml/adventureworks.edmx#1)]
   
 ## <a name="example"></a>示例  
+
  下面的代码向应用程序添加了一个类，该类包含一个映射到上述概念模型函数的静态方法。  
   
  [!code-csharp[DP L2E Methods on ObjectContext#5](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#5)]
  [!code-vb[DP L2E Methods on ObjectContext#5](../../../../../../samples/snippets/visualbasic/VS_Snippets_Data/dp l2e methods on objectcontext/vb/class1.vb#5)]  
   
 ## <a name="example"></a>示例  
+
  下面的代码调用上面的方法，以显示指定 SalesOrderDetail 集合的产品收入：  
   
  [!code-csharp[DP L2E Methods on ObjectContext#6](../../../../../../samples/snippets/csharp/VS_Snippets_Data/dp l2e methods on objectcontext/cs/program.cs#6)]
