@@ -5,14 +5,15 @@ helpviewer_keywords:
 - WCF Data Services, customizing
 - WCF Data Services, customizing feeds
 ms.assetid: fd16272e-36f2-415e-850e-8a81f2b17525
-ms.openlocfilehash: 887dda9b31d86c4952436316e160f4de7a15b66b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 76cc8da052ee51157857418cd81088a523f95ea2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90556949"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186584"
 ---
 # <a name="how-to-customize-feeds-with-the-entity-framework-provider-wcf-data-services"></a>如何：使用实体框架提供程序自定义源（WCF 数据服务）
+
 WCF 数据服务使你能够在数据服务响应中自定义 Atom 序列化，以便可以将实体的属性映射到在 AtomPub 协议中定义的未使用的元素。 本主题演示如何使用实体框架提供程序为 .edmx 文件中定义的数据模型中的实体类型定义映射特性。 有关详细信息，请参阅 [源自定义](feed-customization-wcf-data-services.md)。  
   
  在本主题中，您将手动修改由工具生成且包含数据模型的 .edmx 文件。 由于实体设计器不支持数据模型扩展，因此必须手动修改此文件。 有关实体数据模型工具生成的 .edmx 文件的详细信息，请参阅 [实体框架) 中的 .Edmx 文件概述 (](/previous-versions/dotnet/netframework-4.0/cc982042(v=vs.100))。 本主题中的示例使用罗斯文示例数据服务和自动生成的客户端数据服务类。 此服务和客户端数据类是在完成 [WCF 数据服务快速入门](quickstart-wcf-data-services.md)时创建的。  
@@ -36,6 +37,7 @@ WCF 数据服务使你能够在数据服务响应中自定义 Atom 序列化，�
 6. 重新编译该项目。  
   
 ## <a name="example"></a>示例  
+
  上面的示例为 URI `http://myservice/Northwind.svc/Customers('ALFKI')` 返回以下结果。  
   
  [!code-xml[Astoria Custom Feeds#EdmFeedResult](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/edmfeedresult.xml#edmfeedresult)]  

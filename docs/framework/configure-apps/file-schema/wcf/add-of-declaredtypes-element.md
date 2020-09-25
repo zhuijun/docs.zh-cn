@@ -1,5 +1,5 @@
 ---
-title: <add>of <declaredTypes> 元素
+title: <add> of <declaredTypes> 元素
 ms.date: 03/30/2017
 helpviewer_keywords:
 - data contracts
@@ -7,14 +7,15 @@ helpviewer_keywords:
 - DataContractSerializer
 - DataContractAttribute
 ms.assetid: c3d37ae4-8f1c-463f-b195-658c5a7e90a1
-ms.openlocfilehash: a001e8743b2c24f68b1b23cbccf3e5ac162c4e71
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 9af47848b03074ec88f38a5884089bc50239ee50
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70400655"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201663"
 ---
-# <a name="add-of-declaredtypes-element"></a>\<add>of \<declaredTypes> 元素
+# <a name="add-of-declaredtypes-element"></a>\<add> of \<declaredTypes> 元素
+
 添加在反序列化过程中由 <xref:System.Runtime.Serialization.DataContractSerializer> 使用的类型。 每个声明类型都包含一些将作为声明类型的字段或属性返回的已知类型。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -35,6 +36,7 @@ ms.locfileid: "70400655"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
@@ -55,8 +57,9 @@ ms.locfileid: "70400655"
 |-------------|-----------------|  
 |[\<declaredTypes>](declaredtypes.md)|包含在 <xref:System.Runtime.Serialization.DataContractSerializer> 进行反序列化过程中需要已知类型的类型。|  
   
-## <a name="remarks"></a>注解  
- 有关已知类型的详细信息，请参阅[数据协定已知类型](../../../wcf/feature-details/data-contract-known-types.md)和 <xref:System.Runtime.Serialization.DataContractSerializer> 。  
+## <a name="remarks"></a>备注  
+
+ 有关已知类型的详细信息，请参阅 [数据协定已知类型](../../../wcf/feature-details/data-contract-known-types.md) 和 <xref:System.Runtime.Serialization.DataContractSerializer> 。  
   
  [\<dataContractSerializer>](datacontractserializer-element.md)有关使用此元素的示例，请参见。  
   
@@ -76,9 +79,9 @@ ms.locfileid: "70400655"
 </add>
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Runtime.Serialization.DataContractSerializer>
 - [数据协定已知类型](../../../wcf/feature-details/data-contract-known-types.md)
 - [\<dataContractSerializer>](datacontractserializer-element.md)
-- [\<add>个\<declaredTypes>](add-of-declaredtypes-element.md)
+- [\<declaredTypes> 的 \<add>](add-of-declaredtypes-element.md)

@@ -2,14 +2,15 @@
 title: <httpListener> 元素（网络设置）
 ms.date: 03/30/2017
 ms.assetid: 62f121fd-3f2e-4033-bb39-48ae996bfbd9
-ms.openlocfilehash: 0054be3d2002e4ea5247f25d8094386ac7242422
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 78526559164939667eab8848bc5fd2af6749d474
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "74088379"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195436"
 ---
 # <a name="httplistener-element-network-settings"></a>\<httpListener> 元素（网络设置）
+
 自定义类使用的参数 <xref:System.Net.HttpListener> 。  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -28,24 +29,27 @@ ms.locfileid: "74088379"
 ## <a name="type"></a>类型  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |unescapeRequestUrl|一个布尔值，该值指示 <xref:System.Net.HttpListener> 实例是否使用未转义的原始 uri 而不是已转换的 uri。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[设置](settings-element-network-settings.md)|配置 <xref:System.Net> 命名空间的基本网络选项。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  **UnescapeRequestUrl**特性指示是否 <xref:System.Net.HttpListener> 使用原始非转义 uri 而不是转换的 uri （其中任何百分比编码值都已转换）并执行其他规范化步骤。  
   
  当某个 <xref:System.Net.HttpListener> 实例通过该服务收到请求时 `http.sys` ，它将创建由提供的 URI 字符串的实例 `http.sys` ，并将其公开为 <xref:System.Net.HttpListenerRequest.Url%2A?displayProperty=nameWithType> 属性。  
@@ -74,7 +78,7 @@ ms.locfileid: "74088379"
   
 - 取消转义所有百分比编码值。  
   
-- 将百分号编码的非 ASCII 字符转换为 UTF-16 字符表示形式。 请注意，支持 UTF-8 和 ANSI/DBCS 字符以及 Unicode 字符（使用% uXXXX 格式的 Unicode 编码）。  
+- 将百分号编码的非 ASCII 字符转换为 UTF-16 字符表示形式。 请注意，使用% uXXXX 格式) ，支持 UTF-8 和 ANSI/DBCS 字符以及 Unicode 编码 (Unicode 编码。  
   
 - 执行其他规范化步骤，如路径压缩。  
   
@@ -85,7 +89,7 @@ ms.locfileid: "74088379"
 |注册表项|默认值|描述|  
 |------------------|-------------------|-----------------|  
 |EnableNonUTF8|1|如果为零，则 `http.sys` 只接受 utf-8 编码的 url。<br /><br /> 如果非零，则 `http.sys` 还接受请求中 ANSI 编码或 DBCS 编码的 url。|  
-|FavorUTF8|1|如果非零，则 `http.sys` 始终首先尝试将 URL 解码为 utf-8; 如果该转换失败并且 EnableNonUTF8 为非零，则 http.sys 会尝试将其解码为 ANSI 或 DBCS。<br /><br /> 如果为零（并且 EnableNonUTF8 为非零），则 `http.sys` 尝试将它解码为 ANSI 或 DBCS; 如果不成功，则它将尝试 utf-8 转换。|  
+|FavorUTF8|1|如果非零，则 `http.sys` 始终首先尝试将 URL 解码为 utf-8; 如果该转换失败并且 EnableNonUTF8 为非零，Http.sys 则尝试将其解码为 ANSI 或 DBCS。<br /><br /> 如果 0 (和 EnableNonUTF8 为非零) ，则 `http.sys` 尝试将它解码为 ANSI 或 DBCS; 如果不成功，则它将尝试 utf-8 转换。|  
   
  当 <xref:System.Net.HttpListener> 收到请求时，它将使用转换后的 URI `http.sys` 作为属性的输入 <xref:System.Net.HttpListenerRequest.Url%2A> 。  
   
@@ -93,7 +97,7 @@ ms.locfileid: "74088379"
   
  `http://www.contoso.com/Customer('1%2F3812')/`  
   
- 请注意 Uri （% 2F）中的百分号编码的斜杠。 这是必需的，因为在这种情况下，斜杠字符表示数据而不是路径分隔符。  
+ 请注意 Uri (% 2F) 中的百分号编码的反斜杠。 这是必需的，因为在这种情况下，斜杠字符表示数据而不是路径分隔符。  
   
  将字符串传递到 Uri 构造函数将导致以下 URI：  
   
@@ -107,13 +111,14 @@ ms.locfileid: "74088379"
   
  这不是请求发送方的意图。  
   
- 如果将**unescapeRequestUrl**特性设置为**false**，则当 <xref:System.Net.HttpListener> 收到请求时，它将使用原始 URI，而不是转换的 uri `http.sys` 作为属性的输入 <xref:System.Net.HttpListenerRequest.Url%2A> 。  
+ 如果将 **unescapeRequestUrl** 特性设置为 **false**，则当 <xref:System.Net.HttpListener> 收到请求时，它将使用原始 URI，而不是转换的 uri `http.sys` 作为属性的输入 <xref:System.Net.HttpListenerRequest.Url%2A> 。  
   
  **UnescapeRequestUrl**属性的默认值为**true**。  
   
  <xref:System.Net.Configuration.HttpListenerElement.UnescapeRequestUrl%2A>属性可用于从适用的配置文件中获取**unescapeRequestUrl**特性的当前值。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示 <xref:System.Net.HttpListener> 当类接收到使用原始 URI 的请求而不是转换的 uri 作为属性的输入时，如何配置类 `http.sys` <xref:System.Net.HttpListenerRequest.Url%2A> 。  
   
 ```xml  
@@ -137,7 +142,7 @@ ms.locfileid: "74088379"
 |验证文件||  
 |可以为空||  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Net.Configuration.HttpListenerElement>
 - <xref:System.Net.HttpListener>

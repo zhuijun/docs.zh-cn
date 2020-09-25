@@ -8,12 +8,12 @@ helpviewer_keywords:
 - supportedRuntime element
 - <supportedRuntime> element
 ms.assetid: 1ae16e23-afbe-4de4-b413-bc457f37b69f
-ms.openlocfilehash: 4517aab98235ec2172da355ad0e05d95ebee46c5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 79b49cbc9b122e6591d07643a341841b262edff4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554034"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201702"
 ---
 # <a name="supportedruntime-element"></a>\<supportedRuntime> 元素
 
@@ -31,7 +31,7 @@ ms.locfileid: "90554034"
 
 ## <a name="attributes"></a>特性
 
-|属性|说明|
+|属性|描述|
 |---------------|-----------------|
 |**version**|可选特性。<br /><br /> 一个字符串值，它指定此应用程序支持的公共语言运行时 (CLR) 版本。 有关属性的有效值 `version` ，请参阅 ["运行时版本" 值](#version) 部分。 **注意：**  通过 .NET Framework 3.5，"*运行时版本*" 值采用 *主*格式。*次要*。*生成*。 从 .NET Framework 4 开始，只需要主要版本号和次要版本号 (即，"4.0.30319" 而不是 "v" ) 。 建议使用较短字符串。|
 |**sku**|可选特性。<br /><br /> 一个字符串值，该值指定库存单位 (SKU)，库存单位则指定此应用程序支持的 .NET Framework 版本。<br /><br /> 从 .NET Framework 4.0 起，建议使用 `sku` 特性。  若存在该特性，则它指示应用面向的 .NET Framework 版本。<br /><br /> 有关 sku 属性的有效值，请参阅 ["sku id" 值](#sku) 一节。|
@@ -55,7 +55,9 @@ ms.locfileid: "90554034"
 我们建议你使用应用程序可在其上运行的所有 .NET Framework 版本来测试这些应用程序。
 
 <a name="version"></a>
+
 ## <a name="runtime-version-values"></a>“运行时版本”值
+
 `runtime`特性指定特定应用程序所需的公共语言运行时 (CLR) 版本。 请注意，所有 .NET Framework v4. x 版本都指定 `v4.0` CLR。 下表列出了属性的 *运行时版本* 值的有效值 `version` 。
 
 |.NET Framework 版本|`version` 特性|

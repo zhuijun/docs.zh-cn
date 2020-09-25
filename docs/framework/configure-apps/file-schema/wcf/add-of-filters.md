@@ -2,14 +2,15 @@
 title: <add> 的 <filters>
 ms.date: 03/30/2017
 ms.assetid: e3bf437c-dd99-49f3-9792-9a8721e6eaad
-ms.openlocfilehash: 280c516b17a133930bc4b6621a8c9bc7f4781085
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: c1de0605bc8afc502a85d9b2917b975ee45a3d26
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "70850563"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201650"
 ---
 # <a name="add-of-filters"></a>\<add> 的 \<filters>
+
 一个 XPath 筛选器，用于指定要记录的消息的种类。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -28,15 +29,17 @@ ms.locfileid: "70850563"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |filter|一个字符串，用于指定由 XPath 1.0 表达式定义的 XML 文档的查询。 有关详细信息，请参阅 <xref:System.ServiceModel.Dispatcher.XPathMessageFilter>。|  
   
 ### <a name="child-elements"></a>子元素  
+
  无。  
   
 ### <a name="parent-elements"></a>父元素  
@@ -45,7 +48,8 @@ ms.locfileid: "70850563"
 |-------------|-----------------|  
 |[\<filters>](filters.md)|包含用于控制所记录的消息类型的 XPath 筛选器集合。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  如果将 `logMessagesAtTransportLevel` 指定为 `true`，筛选器将只应用于传输层。 筛选器不影响服务级别和格式不正确的消息日志记录。  
   
  若要向集合添加筛选器，请使用 `add` 关键字。 如果定义一个或多个筛选器，则仅记录与其中至少一个筛选器相匹配的消息。 如果未定义任何筛选器，则所有消息都可通过。  
@@ -55,6 +59,7 @@ ms.locfileid: "70850563"
  下面的示例演示如何配置一个筛选器，它仅记录具有 SOAP 标头部分的消息。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何配置一个筛选器，它仅记录具有 SOAP 标头部分的消息。  
   
 ```xml  
@@ -71,7 +76,7 @@ ms.locfileid: "70850563"
 </messageLogging>
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.DiagnosticSection>
 - <xref:System.ServiceModel.Diagnostics>
