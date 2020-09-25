@@ -6,12 +6,12 @@ metadata:
   description: 了解有关架构、构建和迁移 .NET 应用的建议做法。
   ms.topic: landing-page
   ms.date: 03/19/2020
-  ms.openlocfilehash: 0ea87b6e69df9a6edacd916d279a095d984af463
-  ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+  ms.openlocfilehash: d0fc08eda01497aa07142ddfba3f98a4bf3fce2d
+  ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/17/2020
-  ms.locfileid: "88267914"
+  ms.lasthandoff: 09/24/2020
+  ms.locfileid: "91169175"
 landingContent:
 - title: 开发 ASP.NET Core 应用
   linkLists:
@@ -38,7 +38,7 @@ landingContent:
     - text: Hello World 微服务教程
       url: https://dotnet.microsoft.com/learn/aspnet/microservice-tutorial/intro
     - text: 创建和部署云原生 ASP.NET Core 微服务
-      url: https://docs.microsoft.com/learn/modules/microservices-aspnet-core
+      url: /learn/modules/microservices-aspnet-core
 - title: 将 .NET 应用迁移到 Azure
   linkLists:
   - linkListType: concept
