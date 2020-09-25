@@ -4,14 +4,15 @@ description: 了解用于 SQL Server 的 .NET Framework 数据提供程序的功
 titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: c18b1fb1-2af1-4de7-80a4-95e56fd976cb
-ms.openlocfilehash: eeb0ab69a68dfc2fc0faa1b4e833f80b307fffe5
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: a517bccd9b60d00f6c6c636c9164d63fb5966de3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286438"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197386"
 ---
 # <a name="sql-server-and-adonet"></a>SQL Server 和 ADO.NET
+
 本节描述适用于 SQL Server 的 .NET Framework 数据提供程序 (<xref:System.Data.SqlClient>) 特定的功能和行为。  
   
  <xref:System.Data.SqlClient> 提供对 SQL Server 各版本的访问权限，这些版本封装有数据库特定的协议。 该数据提供程序设计的功能与 OLE DB、ODBC 和 Oracle 的 .NET Framework 数据提供程序的功能类似。 <xref:System.Data.SqlClient> 包含一个表格格式数据流 (TDS) 分析程序，它用于直接与 SQL Server 通信。  
@@ -20,6 +21,7 @@ ms.locfileid: "84286438"
 > 要使用 SQL Server .NET Framework 数据提供程序，应用程序必须引用 <xref:System.Data.SqlClient> 命名空间。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [SQL Server 安全性](sql-server-security.md)  
  简要介绍 SQL Server 安全功能，以及创建面向 SQL Server 的安全 ADO.NET 应用程序的应用程序方案。  
   
@@ -42,7 +44,7 @@ ms.locfileid: "84286438"
   
  [QL Server 联机丛书](/sql/sql-server/sql-server-technical-documentation)  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [保证 ADO.NET 应用程序的安全](../securing-ado-net-applications.md)
 - [ADO.NET 中的数据类型映射](../data-type-mappings-in-ado-net.md)
