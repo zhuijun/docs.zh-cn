@@ -2,46 +2,54 @@
 title: SQL Server 中的应用程序安全性方案
 ms.date: 03/30/2017
 ms.assetid: 0164f3a4-406e-4693-bec3-03c8e18b46d7
-ms.openlocfilehash: bf844f35a3504af52cdb6bf745862ad5098dfc5f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2d0e65f61939312bf29111e87c49366cd9e389be
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782691"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197646"
 ---
 # <a name="application-security-scenarios-in-sql-server"></a>SQL Server 中的应用程序安全性方案
-没有用于创建安全 SQL Server 客户端应用程序的一种通用的正确方法。 每个应用程序在其需求、部署环境和用户群方面都是不同的。 最初部署时相当安全的应用程序随着时间的推移可能会变得不太安全。 无法准确预测未来可能出现的威胁。  
+
+创建安全的 SQL Server 客户端应用程序没有唯一正确的方法。 每个应用程序都具有独特的要求、部署环境和用户群体。 即便应用程序的最初部署具有合理的安全性，但在一段时间后，安全性可能会降低。 没有办法准确地预测未来可能出现的威胁。  
   
- 作为一种产品，SQL Server 已演变了多种版本，以合并有助于开发人员创建安全的数据库应用程序的最新安全功能。 但是，安全性并非一成不变；它需要不断监视和更新。  
+ 作为一种产品，SQL Server 已在许多版本的基础上进行了改进，以合并最新的安全功能，使开发人员能够创建安全的数据库应用程序。 但是，安全性并不是与生俱来的，需要不断进行监视和更新。  
   
 ## <a name="common-threats"></a>常见威胁  
- 开发人员需要了解安全威胁、针对安全威胁所提供的工具，以及如何避免自己造成的安全漏洞。 最好可将安全性视为一个链，其中任何一个环节中出现中断就会损害整个链的牢固性。 以下列表中包括了一些常见安全威胁，在本节的主题中对这些安全威胁进行了详细讨论。  
+
+ 开发人员需要了解安全威胁、为应对这些威胁而提供的工具以及如何避免自身造成的安全漏洞。 最好将安全性视为一条链，其中任何一个链接的中断都会削弱整体实力。 下面列出了一些常见的安全威胁，本节中的主题将对此进行详细讨论。  
   
 ### <a name="sql-injection"></a>SQL 注入  
- SQL 注入是恶意用户输入 Transact-SQL 语句来取代有效输入的过程。 如果未经验证而将输入直接传递到服务器，且应用程序无意中执行了该注入的代码，则攻击可能就会损坏或破坏数据。 可以通过以下方式来阻止 SQL Server 注入攻击：使用存储过程和参数化的命令，避免动态 SQL，并限制所有用户的权限。  
+
+ SQL 注入是恶意用户输入 Transact-SQL 语句而不是有效输入的过程。 如果输入未经验证直接传递到服务器，并且应用程序无意中执行了注入的代码，攻击可能会损坏或破坏数据。 使用存储过程和参数化命令，避免使用动态 SQL，并限制所有用户的权限，可以防止受到 SQL Server 注入攻击。  
   
-### <a name="elevation-of-privilege"></a>特权提升  
- 当用户能够具有某个可信帐户的特权（如所有者或管理员）时，就会发生特权提升攻击。 始终以最小特权的用户帐户运行，并仅分配所需的权限。 避免使用管理员帐户或所有者帐户来执行代码。 这样就会降低因攻击成功而导致的损坏程度。 当执行需要额外权限的任务时，仅在该任务的持续时间内使用过程签名或模拟。 可以使用证书为存储过程签名，或使用模拟来临时分配权限。  
+### <a name="elevation-of-privilege"></a>权限提升  
+
+ 当用户能够获得可信帐户（所有者或管理员）的特权时，就会发生特权提升攻击。 始终在最低特权的用户帐户下运行，并仅分配所需的权限。 避免使用管理帐户或所有者帐户来执行代码。 这可以限制攻击成功后可能发生的破坏程度。 执行需要附加权限的任务时，请仅在任务期间使用过程签名或模拟。 你可以使用证书为存储过程签名，或使用模拟来临时分配权限。  
   
 ### <a name="probing-and-intelligent-observation"></a>探测和智能观测  
- 探测攻击可使用由应用程序生成的错误消息来搜索安全漏洞。 在所有程序代码中实现错误处理可阻止 SQL Server 错误信息返回到最终用户。  
+
+ 探测攻击可以使用应用程序生成的错误消息来搜索安全漏洞。 在所有过程代码中实现错误处理，以防止向最终用户返回 SQL Server 错误信息。  
   
 ### <a name="authentication"></a>身份验证  
- 如果在运行时构造了基于用户输入的连接字符串，则当使用 SQL Server 登录名时，就会发生连接字符串注入攻击。 如果未检查该连接字符串中是否存在有效的关键字对，则攻击者可插入额外字符，进而可能访问服务器上的敏感数据或其他资源。 尽量使用 Windows 身份验证。 如果必须使用 SQL Server 登录名，请在运行时使用 <xref:System.Data.SqlClient.SqlConnectionStringBuilder> 创建和验证连接字符串。  
+
+ 如果在运行时构造了基于用户输入的连接字符串，则在使用 SQL Server 登录名时可能会发生连接字符串注入攻击。 如果未检查连接字符串中是否有有效的关键字对，则攻击者可以插入其他字符，从而有可能访问服务器上的敏感数据或其他资源。 尽可能使用 Windows 身份验证。 如果必须使用 SQL Server 登录名，请在运行时使用 <xref:System.Data.SqlClient.SqlConnectionStringBuilder> 创建和验证连接字符串。  
   
 ### <a name="passwords"></a>密码  
- 许多攻击成功的原因在于，入侵者能够获取或推测特权用户的密码。 密码是阻止入侵者的第一道防线，因此设置强密码对于保护您的系统安全非常重要。 为混合模式身份验证创建和实施密码策略。  
+
+ 许多攻击成功是因为入侵者能够获取或猜出特权用户的密码。 密码是抵御入侵者的第一道防线，因此设置强密码对于系统安全是绝对必要的。 创建并强制实施用于混合模式身份验证的密码策略。  
   
- 始终为 `sa` 帐户分配强密码，即使在使用 Windows 身份验证时也是如此。  
+ 即使使用 Windows 身份验证，也请始终为 `sa` 帐户分配一个强密码。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [在 SQL Server 中使用存储过程管理权限](managing-permissions-with-stored-procedures-in-sql-server.md)  
  描述如何使用存储过程来管理权限和控制数据访问。 使用存储过程是应对许多安全威胁的一种有效方法。  
   
- [在 SQL Server 中编写安全的动态 SQL](writing-secure-dynamic-sql-in-sql-server.md)  
- 描述用于使用存储过程编写安全的动态 SQL 的技术。  
+ [在 SQL Server 中编写安全动态 SQL](writing-secure-dynamic-sql-in-sql-server.md)  
+ 介绍使用存储过程编写安全动态 SQL 的技术。  
   
- [在 SQL Server 中对存储过程签名](signing-stored-procedures-in-sql-server.md)  
+ [SQL Server 中的签名存储过程](signing-stored-procedures-in-sql-server.md)  
  描述如何使用证书为存储过程签名，以使用户可以使用其无直接访问权限的数据。 这就使存储过程可执行调用方无直接执行权限的操作。  
   
  [在 SQL Server 中使用模拟自定义权限](customizing-permissions-with-impersonation-in-sql-server.md)  

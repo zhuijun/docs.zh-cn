@@ -5,14 +5,15 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ec7637a9-01d5-4a95-8bb0-478311cd263b
-ms.openlocfilehash: d0926bb1a0e35caa058f268f0a0c414e805a8674
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: d92020f353393eee683e578f4306cd4a2f214152
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70251174"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197841"
 ---
 # <a name="comparison-expressions"></a>比较表达式
+
 比较表达式检查常量值、属性值或方法结果是否等于、不等于、大于或小于另一个值。 如果特定比较对于 LINQ to Entities 无效，则会引发异常。 所有比较（无论隐式和显式）都要求所有组件在数据源中是可比较的。 比较表达式通常在 `Where` 子句中用于限制查询结果。  
   
  以下查询表达式语法示例演示一个查询，该查询返回销售订单编号等于“SO43663”的结果：  

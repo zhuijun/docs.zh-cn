@@ -2,14 +2,15 @@
 title: OracleTypes
 ms.date: 03/30/2017
 ms.assetid: 18143304-d5c7-4c95-9995-678088d0c142
-ms.openlocfilehash: 95a1173dfbcc4cf49ded8c7b8a42d9764fee9aff
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 37089649c66c964f8a912c5a227a5281f6c0dfb7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/12/2020
-ms.locfileid: "79149396"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91189144"
 ---
 # <a name="oracletypes"></a>OracleTypes
+
 Oracle .NET Framework 数据提供程序包括多个可以用于使用 Oracle 数据类型的结构。 包括 <xref:System.Data.OracleClient.OracleNumber> 和 <xref:System.Data.OracleClient.OracleString>。  
   
 > [!NOTE]
@@ -22,6 +23,7 @@ Oracle .NET Framework 数据提供程序包括多个可以用于使用 Oracle �
 - 使用 <xref:System.Data.OracleClient.OracleDataReader> 访问数据，并使用多个 <xref:System.Data.OracleClient.OracleType> 结构显示数据。  
   
 ## <a name="creating-an-oracle-table"></a>创建 Oracle 表  
+
  此示例创建一个 Oracle 表并为该表加载数据。 必须先运行此示例，才能运行下一个示例。  
   
 ```csharp  
@@ -52,7 +54,8 @@ public void Setup(string connectionString)
 ```  
   
 ## <a name="retrieving-data-from-the-oracle-table"></a>从 Oracle 表检索数据  
- 本示例使用**OracleDataReader**访问数据，并使用多个**OracleType**结构来显示数据。  
+
+ 此示例使用 **OracleDataReader** 来访问数据，并使用多个 **OracleType** 结构来显示数据。  
   
 ```csharp  
 public void ReadOracleTypesExample(string connectionString)  
@@ -115,7 +118,7 @@ public void ReadOracleTypesExample(string connectionString)
 }  
 ```  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [Oracle 和 ADO.NET](oracle-and-adonet.md)
 - [ADO.NET 概述](ado-net-overview.md)

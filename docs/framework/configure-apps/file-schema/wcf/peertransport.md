@@ -2,14 +2,15 @@
 title: <peerTransport>
 ms.date: 03/30/2017
 ms.assetid: c1a5013a-9dd4-4a27-b114-795b8b323177
-ms.openlocfilehash: 99fb013e052329ae4b99c4db89565ace8935c456
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 68832c3a5bd4cc423642a6272e70cbecab86d6a8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "73736504"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181539"
 ---
 # \<peerTransport>
+
 定义自定义绑定的对等传输。  
   
 [**\<configuration>**](../configuration-element.md)\
@@ -32,11 +33,12 @@ ms.locfileid: "73736504"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
   
-|属性|说明|  
+|属性|描述|  
 |---------------|-----------------|  
 |listenIpAddress|一个字符串，指定对等节点将在其上侦听 TCP 消息的 IP 地址。 默认为 `null`。|  
 |maxBufferPoolSize|一个正整数，指定缓冲池的最大大小。 默认值为 524288。<br /><br /> WCF 的许多组件使用缓冲区。 每次使用缓冲区时，创建和销毁它们都将占用大量资源，而缓冲区的垃圾回收过程也是如此。 利用缓冲池，可以从缓冲池中获得缓冲区，使用缓冲区，然后在完成工作后将其返回给缓冲池。 这样就避免了创建和销毁缓冲区的系统开销。|  
@@ -55,10 +57,11 @@ ms.locfileid: "73736504"
 |-------------|-----------------|  
 |[\<binding>](bindings.md)|定义自定义绑定的所有绑定功能。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  此传输不可用于包含请求/答复操作的协定。  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.ServiceModel.Configuration.PeerTransportElement>
 - <xref:System.ServiceModel.Channels.PeerTransportBindingElement>

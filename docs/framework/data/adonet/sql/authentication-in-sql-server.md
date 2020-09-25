@@ -3,14 +3,15 @@ title: SQL Server 中的身份验证
 description: 了解 SQL Server ADO.NET 的身份验证，包括 Windows 身份验证模式和混合模式。
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: e9915598acfbdefb59069d6a9c6ef4b7c824e4c6
-ms.sourcegitcommit: 33deec3e814238fb18a49b2a7e89278e27888291
+ms.openlocfilehash: 2c4f62391a0d9b5ada27f56eef4c3467d99b4c6d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/02/2020
-ms.locfileid: "84286541"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91197522"
 ---
 # <a name="authentication-in-sql-server"></a>SQL Server 中的身份验证
+
 SQL Server 支持两种身份验证模式，即 Windows 身份验证模式和混合模式。  
   
 - Windows 身份验证是默认模式（通常称为集成安全），因为此 SQL Server 安全模型与 Windows 紧密集成。 特定的 Windows 用户和组帐户可信任，可以登录 SQL Server。 已经过身份验证的 Windows 用户无需提供其他凭据。  
@@ -30,6 +31,7 @@ SQL Server 支持两种身份验证模式，即 Windows 身份验证模式和混
 > 登录名不同于数据库用户。 必须在单独的操作中将登录名或 Windows 组映射到数据库用户或角色。 然后，向用户或角色授予对数据库对象的访问权限。  
   
 ## <a name="authentication-scenarios"></a>身份验证方案  
+
  在以下情况下，Windows 身份验证通常是最佳选择：  
   
 - 有域控制器。  
@@ -50,6 +52,7 @@ SQL Server 支持两种身份验证模式，即 Windows 身份验证模式和混
 > 指定 Windows 身份验证不会禁用 SQL Server 登录。 使用 ALTER LOGIN DISABLE Transact-SQL 语句会禁用具有高级权限的 SQL Server 登录。  
   
 ## <a name="login-types"></a>登录类型  
+
  SQL Server 支持三种登录类型：  
   
 - 本地 Windows 用户帐户或受信任的域帐户。 SQL Server 依靠 Windows 来对 Windows 用户帐户进行身份验证。  
@@ -62,6 +65,7 @@ SQL Server 支持两种身份验证模式，即 Windows 身份验证模式和混
 > SQL Server 提供了从证书或非对称密钥创建的登录名，仅用于代码签名。 不能用于连接到 SQL Server。  
   
 ## <a name="mixed-mode-authentication"></a>混合模式身份验证  
+
  如果必须使用混合模式身份验证，则必须创建 SQL Server 登录名，这些登录名存储在 SQL Server 中。 然后，必须在运行时提供 SQL Server 用户名和密码。  
   
 > [!IMPORTANT]
@@ -73,16 +77,17 @@ SQL Server 支持两种身份验证模式，即 Windows 身份验证模式和混
 > 连接用户输入中的连接字符串可能会让你易受到连接字符串注入攻击。 请使用 <xref:System.Data.SqlClient.SqlConnectionStringBuilder> 在运行时创建语法有效的连接字符串。 有关详细信息，请参阅[连接字符串生成器](../connection-string-builders.md)。  
   
 ## <a name="external-resources"></a>外部资源  
+
  有关详细信息，请参阅以下资源。  
   
 |资源|说明|  
 |--------------|-----------------|  
 |[主体](/sql/relational-databases/security/authentication-access/principals-database-engine)|描述 SQL Server 中的登录名和其他安全主体。|  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - [保证 ADO.NET 应用程序的安全](../securing-ado-net-applications.md)
 - [SQL Server 中的应用程序安全方案](application-security-scenarios-in-sql-server.md)
-- [连接到数据源](../connecting-to-a-data-source.md)
+- [连接数据源](../connecting-to-a-data-source.md)
 - [连接字符串](../connection-strings.md)
 - [ADO.NET 概述](../ado-net-overview.md)
