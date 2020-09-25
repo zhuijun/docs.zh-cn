@@ -4,12 +4,12 @@ description: 无服务器体系结构指南。 了解何时、为何以及如何
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/22/2020
-ms.openlocfilehash: 16e658a99feda6537189a45b53da514e67766999
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 867765d29a7c50694a5de7b1de56346d86600a83
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135681"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171814"
 ---
 # <a name="serverless-apps-architecture-patterns-and-azure-implementation"></a>无服务器应用：体系结构、模式和 Azure 实现
 
@@ -74,7 +74,7 @@ Mac 和 macOS 是 Apple Inc. 的商标
 
 本指南重点介绍使用无服务器的应用程序的云本机开发。 本书重点介绍了这些优点并揭示了开发无服务器应用的潜在缺点，并提供了对无服务器体系结构的调查。 介绍了有关使用无服务器的许多示例以及各种无服务器设计模式。
 
-本指南介绍了 Azure 无服务器平台的组件，并重点介绍了如何使用 [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview) 实现无服务器。 你将了解触发器和绑定以及如何使用 Durable Functions 实现依赖于状态的无服务器应用。 最后，业务示例和案例研究将有助于提供用于确定无服务器是否是项目正确方法的上下文和参考框架。
+本指南介绍了 Azure 无服务器平台的组件，并重点介绍了如何使用 [Azure Functions](/azure/azure-functions/functions-overview) 实现无服务器。 你将了解触发器和绑定以及如何使用 Durable Functions 实现依赖于状态的无服务器应用。 最后，业务示例和案例研究将有助于提供用于确定无服务器是否是项目正确方法的上下文和参考框架。
 
 ## <a name="evolution-of-cloud-platforms"></a>云平台的演变
 
@@ -116,12 +116,12 @@ IaaS 仍然需要大量开销，因为运营仍然负责执行各种任务。 �
 
 ## <a name="what-this-guide-doesnt-cover"></a>本指南未涵盖的内容
 
-本指南特别强调了体系结构方法和设计模式，并未深入探讨 Azure Functions、[逻辑应用](https://docs.microsoft.com/azure/logic-apps/logic-apps-what-are-logic-apps)或其他无服务器平台的实现细节。 本指南不包括逻辑应用的高级工作流或 Azure Functions 的功能等，如配置跨源资源共享(CORS)、应用自定义域或上传 SSL 证书。 可以通过联机 [Azure Functions 文档](https://docs.microsoft.com/azure/azure-functions/functions-reference)获得这些详细信息。
+本指南特别强调了体系结构方法和设计模式，并未深入探讨 Azure Functions、[逻辑应用](/azure/logic-apps/logic-apps-what-are-logic-apps)或其他无服务器平台的实现细节。 本指南不包括逻辑应用的高级工作流或 Azure Functions 的功能等，如配置跨源资源共享(CORS)、应用自定义域或上传 SSL 证书。 可以通过联机 [Azure Functions 文档](/azure/azure-functions/functions-reference)获得这些详细信息。
 
 ### <a name="additional-resources"></a>其他资源
 
-- [Azure 体系结构中心](https://docs.microsoft.com/azure/architecture/)
-- [云应用程序的最佳做法](https://docs.microsoft.com/azure/architecture/best-practices/api-design)
+- [Azure 体系结构中心](/azure/architecture/)
+- [云应用程序的最佳做法](/azure/architecture/best-practices/api-design)
 
 ## <a name="who-should-use-the-guide"></a>本指南的目标读者
 

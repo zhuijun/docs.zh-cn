@@ -3,14 +3,15 @@ title: 表达式树 (C#)
 description: 了解表达式树。 了解如何编译和运行这些数据结构表示的代码，其中每个代码都是一个表达式。
 ms.date: 07/20/2015
 ms.assetid: 7d0ac21a-6d90-4e2e-8903-528cb78615b7
-ms.openlocfilehash: a5c84673f0b45b92be18b955a6d1e7268bb73c26
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 04b5486b6d3c54f0dfd3914eacbda5cffe15890a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063310"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167634"
 ---
 # <a name="expression-trees-c"></a>表达式树 (C#)
+
 表达式树以树形数据结构表示代码，其中每一个节点都是一种表达式，比如方法调用和 `x < y` 这样的二元运算等。  
   
  你可以对表达式树中的代码进行编辑和运算。 这样能够动态修改可执行代码、在不同数据库中执行 LINQ 查询以及创建动态查询。 有关 LINQ 中表达式树的详细信息，请参阅[如何使用表达式树生成动态查询 (C#)](./how-to-use-expression-trees-to-build-dynamic-queries.md)。
@@ -20,6 +21,7 @@ ms.locfileid: "88063310"
  你可以基于匿名 lambda 表达式通过 C# 或者 Visual Basic 编译器创建表达式树，或者通过 <xref:System.Linq.Expressions> 名称空间手动创建。  
   
 ## <a name="creating-expression-trees-from-lambda-expressions"></a>根据 Lambda 表达式创建表达式树  
+
  若 lambda 表达式被分配给 <xref:System.Linq.Expressions.Expression%601> 类型的变量，则编译器可以发射代码以创建表示该 lambda 表达式的表达式树。  
   
  C# 编译器只能从表达式 Lambda（或单行 Lambda）生成表达式树。 它无法解析语句 lambda （或多行 lambda）。 有关 C# 中 Lambda 表达式的详细信息，请参阅 [Lambda 表达式](../../../language-reference/operators/lambda-expressions.md)。  
@@ -31,6 +33,7 @@ Expression<Func<int, bool>> lambda = num => num < 5;
 ```  
   
 ## <a name="creating-expression-trees-by-using-the-api"></a>通过 API 创建表达式树  
+
  通过 API 创建表达式树需要使用 <xref:System.Linq.Expressions.Expression> 类。 类包含创建特定类型表达式树节点的静态工厂方法，比如表示参数变量的 <xref:System.Linq.Expressions.ParameterExpression>，或者是表示方法调用的 <xref:System.Linq.Expressions.MethodCallExpression>。 <xref:System.Linq.Expressions.ParameterExpression> 名称空间还解释了 <xref:System.Linq.Expressions.MethodCallExpression>、<xref:System.Linq.Expressions>和另一种具体表达式类型。 这些类型来源于抽象类型 <xref:System.Linq.Expressions.Expression>。  
   
  下列代码示例展示如何使用 API 创建表示 Lambda 表达式 `num => num < 5` 的表达式树。  
@@ -95,6 +98,7 @@ Console.WriteLine(factorial);
 有关详细信息，请参阅[在 Visual Studio 2010 中使用表达式树生成动态方法](https://devblogs.microsoft.com/csharpfaq/generating-dynamic-methods-with-expression-trees-in-visual-studio-2010/)，该方法也适用于 Visual Studio 的更高版本。
   
 ## <a name="parsing-expression-trees"></a>解析表达式树  
+
  下列代码示例展示如何分解表示 Lambda 表达式 `num => num < 5` 的表达式树。  
   
 ```csharp  
@@ -119,9 +123,11 @@ Console.WriteLine("Decomposed expression: {0} => {1} {2} {3}",
 ```  
   
 ## <a name="immutability-of-expression-trees"></a>表达式树永久性  
+
  表达式树应具有永久性。 这意味着如果你想修改某个表达式树，则必须复制该表达式树然后替换其中的节点来创建一个新的表达式树。 你可以使用表达式树访问者遍历现有表达式树。 有关详细信息，请参阅[如何修改表达式树 (C#)](./how-to-modify-expression-trees.md)。
   
 ## <a name="compiling-expression-trees"></a>编译表达式树  
+
  <xref:System.Linq.Expressions.Expression%601> 类型提供了 <xref:System.Linq.Expressions.Expression%601.Compile%2A> 方法以将表达式树表示的代码编译成可执行委托。  
   
  下列代码示例展示如何编译表达式树并运行结果代码。  

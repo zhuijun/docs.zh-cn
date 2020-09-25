@@ -8,12 +8,12 @@ helpviewer_keywords:
 - platform invoke, accessing APIs with C#
 - C# language, interoperability
 ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
-ms.openlocfilehash: d85eb51107d50e023270fcbe1ef6e08a7788ae78
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 84cdc16ccda7a5c629a90b0752071a98de81a9b4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302966"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178471"
 ---
 # <a name="interoperability-c-programming-guide"></a>互操作性（C# 编程指南）
 
@@ -22,6 +22,7 @@ ms.locfileid: "87302966"
 借助 .NET，可通过平台调用服务、<xref:System.Runtime.InteropServices> 命名空间、C++ 互操作性和 COM 互操作性（COM 互操作）实现与非托管代码的互操作性。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [互操作性概述](./interoperability-overview.md)  
  介绍了实现 C# 托管代码和非托管代码的互操作性的方法。  
   
