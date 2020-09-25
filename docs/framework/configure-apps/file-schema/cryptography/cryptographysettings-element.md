@@ -8,14 +8,15 @@ helpviewer_keywords:
 - cryptographySettings element
 - <cryptographySettings> element
 ms.assetid: 6201b7da-bcb7-49f7-b9f5-ba1fe05573b9
-ms.openlocfilehash: fe6de09213c6f980e8eb205a318aae50033b2a84
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 3c3513c05485550202f2fc5bcae1faabb0e75d47
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79155227"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91201806"
 ---
 # <a name="cryptographysettings-element"></a>\<cryptographySettings> 元素
+
 包含加密设置。  
 
 [**\<configuration>**](../configuration-element.md)\
@@ -30,26 +31,29 @@ ms.locfileid: "79155227"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
+
  无。  
   
 ### <a name="child-elements"></a>子元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |[\<cryptoNameMapping>](cryptonamemapping-element.md)|包含类到友好名称的映射。|  
-|[\<oidMap>](oidmap-element.md)|包含与类的 ASN 对象标识符（OID）映射。|  
+|[\<oidMap>](oidmap-element.md)|包含) 映射到类 (OID 对象标识符。|  
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|说明|  
+|元素|描述|  
 |-------------|-----------------|  
 |`configuration`|公共语言运行时和 .NET Framework 应用程序所使用的每个配置文件中的根元素。|  
 |`mscorlib`|包含 `cryptographySettings` 元素。|  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何使用 **\<cryptographySettings>** 元素包含加密名称映射和 OID 映射。 此示例将配置运行时，以便 <xref:System.Security.Cryptography.HashAlgorithm.Create%2A?displayProperty=nameWithType> 返回 `MyHashClass` 对象， `MyCryptoClass` 类映射到对象标识符1.3.36.2.1。  
   
 ```xml  
@@ -79,5 +83,5 @@ ms.locfileid: "79155227"
 ## <a name="see-also"></a>请参阅
 
 - [配置文件架构](../index.md)
-- [密码设置架构](index.md)
+- [加密设置架构](index.md)
 - [加密服务](../../../../standard/security/cryptographic-services.md)

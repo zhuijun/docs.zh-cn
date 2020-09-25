@@ -2,17 +2,19 @@
 title: 入门 (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: 97522119-f6a3-434c-a1ec-17396b74a556
-ms.openlocfilehash: 7ad81e6187351c5c1d5b98766ce69db4755e7a90
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 2ac75677bcb5c23d914993a4487be7649cc49073
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795016"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177431"
 ---
 # <a name="getting-started-linq-to-dataset"></a>入门 (LINQ to DataSet)
+
 本部分提供有关用 LINQ to DataSet 进行编程的介绍性信息。  
   
 ## <a name="in-this-section"></a>本节内容  
+
  [LINQ to DataSet 概述](linq-to-dataset-overview.md)  
  提供 LINQ to DataSet 的概念性概述。  
   
@@ -26,6 +28,7 @@ ms.locfileid: "70795016"
  提供有关在 Visual Studio 中创建 LINQ to DataSet 项目的信息。  
   
 ## <a name="reference"></a>参考  
+
  <xref:System.Data.DataRowComparer>  
   
  <xref:System.Data.DataRowExtensions>  

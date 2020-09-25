@@ -2,14 +2,15 @@
 title: <schemeSettings> 元素（Uri 设置）
 ms.date: 03/30/2017
 ms.assetid: 0ae45c6e-8c4c-4c0d-8b9f-a93824648890
-ms.openlocfilehash: c745c90bb61b9ee393687d7f6db4fd11565c7dc7
-ms.sourcegitcommit: b16c00371ea06398859ecd157defc81301c9070f
+ms.openlocfilehash: 5a146b854239fd516125e66e05312e27b90c73ec
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/06/2020
-ms.locfileid: "79154642"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91187012"
 ---
 # <a name="schemesettings-element-uri-settings"></a>\<schemeSettings> 元素（Uri 设置）
+
 指定如何分析特定方案的 <xref:System.Uri>。  
   
 [**\<configuration>**](../configuration-element.md)  
@@ -24,26 +25,29 @@ ms.locfileid: "79154642"
 ```  
   
 ## <a name="attributes-and-elements"></a>特性和元素  
+
  下列各节描述了特性、子元素和父元素。  
   
 ### <a name="attributes"></a>特性  
+
  无  
   
 ### <a name="child-elements"></a>子元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
 |[add](add-element-for-schemesettings-uri-settings.md)|为方案名称添加方案设置。|  
-|[清除](clear-element-for-schemesettings-uri-settings.md)|清除所有现有方案设置。|  
-|[删除](remove-element-for-schemesettings-uri-settings.md)|删除方案名称的方案设置。|  
+|[clear](clear-element-for-schemesettings-uri-settings.md)|清除所有现有方案设置。|  
+|[remove](remove-element-for-schemesettings-uri-settings.md)|删除方案名称的方案设置。|  
   
 ### <a name="parent-elements"></a>父元素  
   
-|**元素**|**描述**|  
+|**元素**|**说明**|  
 |-----------------|---------------------|  
-|[uri](uri-element-uri-settings.md)|包含指定 .NET Framework 如何处理使用统一资源标识符（Uri）表示的 web 地址的设置。|  
+|[uri](uri-element-uri-settings.md)|包含指定 .NET Framework 如何处理使用统一资源标识符 (Uri) 表示的 web 地址的设置。|  
   
-## <a name="remarks"></a>注解  
+## <a name="remarks"></a>备注  
+
  默认情况下，在 <xref:System.Uri?displayProperty=nameWithType> 执行路径压缩之前，类会取消转义编码的路径分隔符。 这是作为一种安全机制实现的，针对以下攻击：  
   
  `http://www.contoso.com/..%2F..%2F/Windows/System32/cmd.exe?/c+dir+c:\`  
@@ -59,9 +63,11 @@ ms.locfileid: "79154642"
  使用特定方案的 schemeSettings 配置选项，可以将此默认行为修改为不取消转义百分号编码的路径分隔符。  
   
 ## <a name="configuration-files"></a>配置文件  
+
  此元素可在应用程序配置文件或计算机配置文件 (Machine.config) 中使用。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示类使用的配置 <xref:System.Uri> ，以支持不转义 http 方案的百分号编码的路径分隔符。  
   
 ```xml  
@@ -83,7 +89,7 @@ ms.locfileid: "79154642"
 |验证文件||  
 |可以为空||  
   
-## <a name="see-also"></a>另请参阅
+## <a name="see-also"></a>请参阅
 
 - <xref:System.Configuration.SchemeSettingElement?displayProperty=nameWithType>
 - <xref:System.Configuration.SchemeSettingElementCollection?displayProperty=nameWithType>
