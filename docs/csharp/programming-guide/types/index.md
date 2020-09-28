@@ -12,12 +12,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 5a9eb3747a6b4da316bca3f1d450c1ea0f774ada
-ms.sourcegitcommit: 552b4b60c094559db9d8178fa74f5bafaece0caf
+ms.openlocfilehash: ad14c3367809c16268abedc99596089514986e3f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87382043"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91205108"
 ---
 # <a name="types-c-programming-guide"></a>类型（C# 编程指南）
 
@@ -64,7 +64,7 @@ C# 是一种强类型语言。 每个变量和常量都有一个类型，每个�
 
 ## <a name="built-in-types"></a>内置类型
 
-C# 提供了一组标准的内置数值类型来表示整数、浮点值、布尔表达式、文本字符、十进制值和其他数据类型。 还有内置的 `string` 和 `object` 类型。 这些类型可供在任何 C# 程序中使用。 有关内置类型的完整列表，请参阅[内置类型](../../language-reference/builtin-types/built-in-types.md)。
+C# 提供了一组标准的内置类型来表示整数、浮点值、布尔表达式、文本字符、十进制值和其他数据类型。 还有内置的 `string` 和 `object` 类型。 这些类型可供在任何 C# 程序中使用。 有关内置类型的完整列表，请参阅[内置类型](../../language-reference/builtin-types/built-in-types.md)。
 
 ## <a name="custom-types"></a>自定义类型
 
@@ -76,7 +76,7 @@ C# 提供了一组标准的内置数值类型来表示整数、浮点值、布�
 
 - 它支持继承原则。 类型可以派生自其他类型（称为*基类型*）。 派生类型继承（有一些限制）基类型的方法、属性和其他成员。 基类型可以继而从某种其他类型派生，在这种情况下，派生类型继承其继承层次结构中的两种基类型的成员。 所有类型（包括 <xref:System.Int32?displayProperty=nameWithType>C# 关键字：[int](../../language-reference/builtin-types/integral-numeric-types.md)等内置数值类型）最终都派生自单个基类型，即 <xref:System.Object?displayProperty=nameWithType>（C# 关键字：[object](../../language-reference/builtin-types/reference-types.md)。 这样的统一类型层次结构称为[通用类型系统](../../../standard/base-types/common-type-system.md) (CTS)。 若要详细了解 C# 中的继承，请参阅[继承](../classes-and-structs/inheritance.md)。
 
-- CTS 中的每种类型被定义为值类型或引用类型。 这包括 .NET 类库中的所有自定义类型以及你自己的用户定义类型。 使用 [struct](../../language-reference/builtin-types/struct.md) 关键字定义的类型是值类型；所有内置数值类型都是 `structs`。 使用 [class](../../language-reference/keywords/class.md) 关键字定义的类型是引用类型。 引用类型和值类型遵循不同的编译时规则和运行时行为。
+- CTS 中的每种类型被定义为值类型或引用类型。  这包括 .NET 类库中的所有自定义类型以及你自己的用户定义类型。 使用 [struct](../../language-reference/builtin-types/struct.md) 关键字定义的类型是值类型；所有内置数值类型都是 `structs`。 使用 [class](../../language-reference/keywords/class.md) 关键字定义的类型是引用类型。 引用类型和值类型遵循不同的编译时规则和运行时行为。
 
 下图展示了 CTS 中值类型和引用类型之间的关系。
 
@@ -157,7 +157,7 @@ IMyInterface iface = new MyClass();
 
 ## <a name="generic-types"></a>泛型类型
 
-可使用一个或多个类型参数声明、作为客户端代码在创建类型实例时将提供的实际类型（具体类型）的占位符的类型。 这种类型称为泛型类型。 例如，.NET 类型 <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> 具有一个类型参数，它按照惯例被命名为 *T*。当创建类型的实例时，指定列表将包含的对象的类型，例如字符串：
+可使用一个或多个类型参数声明、作为客户端代码在创建类型实例时将提供的实际类型（具体类型）的占位符的类型。  这种类型称为泛型类型。 例如，.NET 类型 <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> 具有一个类型参数，它按照惯例被命名为 *T*。当创建类型的实例时，指定列表将包含的对象的类型，例如字符串：
 
 ```csharp
 List<string> stringList = new List<string>();
