@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - '#warning directive [C#]'
 ms.assetid: e6fb496d-bb8b-4018-baf6-5b60a0c8902b
-ms.openlocfilehash: ab2cc5120492fc2a4b94296eb85e563c0a1d5ad3
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 9ade723bdca17597dcd56240f506e60f2debf6be
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89137833"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186414"
 ---
 # <a name="warning-c-reference"></a>#warning（C# 参考）
+
 `#warning` 允许你从代码中的特定位置生成 [ CS1030](../../misc/cs1030.md) 第一级编译器警告。 例如：  
   
 ```csharp
@@ -22,6 +23,7 @@ ms.locfileid: "89137833"
 ```  
   
 ## <a name="remarks"></a>备注
+
  `#warning` 常用于条件指令中。 还可使用 [#error](./preprocessor-error.md) 生成用户定义错误。  
   
 ## <a name="example"></a>示例  

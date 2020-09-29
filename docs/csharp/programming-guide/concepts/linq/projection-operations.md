@@ -3,14 +3,15 @@ title: 投影运算 (C#)
 description: 了解投影运算。 这些运算将对象转换为新的窗体，该窗体通常只包含稍后将用到的属性。
 ms.date: 07/20/2015
 ms.assetid: 98df573a-aad9-4b8c-9a71-844be2c4fb41
-ms.openlocfilehash: 289100ac9afcfc0d5b93b5f963adc0a123e0a5af
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 6128b1bb2e7ba3dbb1b428d475acc307ba931013
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299157"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185998"
 ---
 # <a name="projection-operations-c"></a>投影运算 (C#)
+
 投影是指将对象转换为一种新形式的操作，该形式通常只包含那些将随后使用的属性。 通过使用投影，您可以构造从每个对象生成的新类型。 可以投影属性，并对该属性执行数学函数。 还可以在不更改原始对象的情况下投影该对象。  
   
  下面一节列出了执行投影的标准查询运算符方法。  
@@ -25,6 +26,7 @@ ms.locfileid: "87299157"
 ## <a name="query-expression-syntax-examples"></a>查询表达式语法示例  
   
 ### <a name="select"></a>选择  
+
  下面的示例使用 `select` 子句来投影字符串列表中每个字符串的第一个字母。  
   
 ```csharp  
@@ -46,6 +48,7 @@ foreach (string s in query)
 ```  
   
 ### <a name="selectmany"></a>SelectMany  
+
  下面的示例使用多个 `from` 子句来投影字符串列表中每个字符串中的每个单词。  
   
 ```csharp  
@@ -72,6 +75,7 @@ foreach (string s in query)
 ```  
   
 ## <a name="select-versus-selectmany"></a>Select 与 SelectMany  
+
  `Select()` 和 `SelectMany()` 的工作都是依据源值生成一个或多个结果值。 `Select()` 为每个源值生成一个结果值。 因此，总体结果是一个与源集合具有相同元素数目的集合。 与之相反，`SelectMany()` 生成单个总体结果，其中包含来自每个源值的串联子集合。 作为参数传递到 `SelectMany()` 的转换函数必须为每个源值返回一个可枚举值序列。 然后，`SelectMany()` 串联这些可枚举序列，以创建一个大的序列。  
   
  下面两个插图演示了这两个方法的操作之间的概念性区别。 在每种情况下，假定选择器（转换）函数从每个源值中选择一个由花卉数据组成的数组。  
@@ -85,6 +89,7 @@ foreach (string s in query)
  ![显示 SelectMany() 的操作的图。](./media/projection-operations/select-many-action-graphic.png )  
   
 ### <a name="code-example"></a>代码示例  
+
  下面的示例比较 `Select()` 和 `SelectMany()` 的行为。 代码通过从源集合的每个花卉名称列表中提取前两项来创建一个“花束”。 此示例中，transform 函数 <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2C%60%601%7D%29> 使用的“单值”本身即是值的集合。 这需要额外的 `foreach` 循环，以便枚举每个子序列中的每个字符串。  
   
 ```csharp  

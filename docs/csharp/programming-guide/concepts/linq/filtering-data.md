@@ -3,14 +3,15 @@ title: 筛选数据 (C#)
 description: 筛选（也称为选择）根据条件限制结果。 了解 C# 中的 LINQ 执行筛选的标准查询运算符方法。
 ms.date: 07/20/2015
 ms.assetid: fbaece0d-0f23-47f7-89c5-f3ea8db692b6
-ms.openlocfilehash: f9f6d691da73b566e5135f6692c87ba3a8978005
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 51bf9f930ba67ba07c7c0f357910d5e36014138d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87103924"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186037"
 ---
 # <a name="filtering-data-c"></a>筛选数据 (C#)
+
 筛选是指将结果集限制为仅包含满足指定条件的元素的操作。 它也称为选定内容。  
   
  下图演示了对字符序列进行筛选的结果。 筛选操作的谓词指定字符必须为“A”。  
@@ -27,6 +28,7 @@ ms.locfileid: "87103924"
 |Where|选择基于谓词函数的值。|`where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>查询表达式语法示例  
+
  以下示例使用 `where` 子句从数组中筛选具有特定长度的字符串。  
   
 ```csharp  

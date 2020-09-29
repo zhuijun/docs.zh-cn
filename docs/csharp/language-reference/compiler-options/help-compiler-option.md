@@ -13,14 +13,15 @@ helpviewer_keywords:
 - /help compiler option [C#]
 - -? compiler option [C#]
 ms.assetid: 8d53f6ba-5c3b-4183-976e-9c0f26fd3680
-ms.openlocfilehash: 7e51f8848bbd0b57ac083dccb6813e3f39fd9a74
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: c8d6c868db03ba58a7e7a6c3795eaca4a3b4fba2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125678"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91188377"
 ---
 # <a name="-help---c-compiler-options"></a>-help，-? （C# 编译器选项）
+
 此选项将一列编译器选项和每个选项的简短说明发送到 StdOut。  
   
 ## <a name="syntax"></a>语法  
@@ -31,6 +32,7 @@ ms.locfileid: "89125678"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  如果编译中包含此选项，则不会创建任何输出文件，且不会发生任何编译。  
   
  此编译器选项在 Visual Studio 中不可用，并且无法以编程方式更改。  

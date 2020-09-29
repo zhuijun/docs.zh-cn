@@ -3,14 +3,15 @@ title: 在泛型集合的接口中使用变体 (C#)
 description: 了解如何对泛型集合使用协变和逆变接口。 请参阅转换和比较泛型集合的示例。
 ms.date: 07/20/2015
 ms.assetid: a44f0708-10fa-4c76-82cd-daa6e6b31e8e
-ms.openlocfilehash: c2ce849e32520cb91422ff36173e418a010476bd
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: a896fe8fda3d9ad08de9a09c6a172f7d75335e7d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105667"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176300"
 ---
 # <a name="using-variance-in-interfaces-for-generic-collections-c"></a>在泛型集合的接口中使用变体 (C#)
+
 协变接口允许其方法返回的派生类型多于接口中指定的派生类型。 逆变接口允许其方法接受派生类型少于接口中指定的类型的参数。  
   
  在.NET Framework 4 中，多个现有接口已变为协变和逆变接口。 包括 <xref:System.Collections.Generic.IEnumerable%601> 和 <xref:System.IComparable%601>。 这使你可将对基类型的泛型集合进行操作的那些方法重用于派生类型的集合。  
@@ -18,6 +19,7 @@ ms.locfileid: "87105667"
  有关 .NET 中变体接口的列表，请参阅[泛型接口中的变体 (C#)](./variance-in-generic-interfaces.md)。  
   
 ## <a name="converting-generic-collections"></a>转换泛型集合  
+
  下例阐释了 <xref:System.Collections.Generic.IEnumerable%601> 接口中的协变支持的益处。 `PrintFullName` 方法接受 `IEnumerable<Person>` 类型的集合作为参数。 但可将该方法重用于 `IEnumerable<Employee>` 类型的集合，因为 `Employee` 继承 `Person`。  
   
 ```csharp  
@@ -56,6 +58,7 @@ class Program
 ```  
   
 ## <a name="comparing-generic-collections"></a>比较泛型集合  
+
  下例阐释了 <xref:System.Collections.Generic.IComparer%601> 接口中的逆变支持的益处。 `PersonComparer` 类实现 `IComparer<Person>` 接口。 但可以重用此类来比较 `Employee` 类型的对象序列，因为 `Employee` 继承 `Person`。  
   
 ```csharp  

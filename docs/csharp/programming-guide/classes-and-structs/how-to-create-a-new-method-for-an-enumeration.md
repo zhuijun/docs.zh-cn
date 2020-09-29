@@ -7,17 +7,19 @@ helpviewer_keywords:
 - extension methods [C#], for enums
 - enum extensibility [C#]
 ms.assetid: 100106f9-1e54-462c-8ebe-3892fe23b6eb
-ms.openlocfilehash: 6c01a73476e98e8344a7a8dc35a5fd80384fc7a2
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 2714b29d64e18250f0fe379aee1c09c242d3f63f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864483"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174259"
 ---
 # <a name="how-to-create-a-new-method-for-an-enumeration-c-programming-guide"></a>如何为枚举创建新方法（C# 编程指南）
+
 可使用扩展方法添加特定于某个特定枚举类型的功能。  
   
 ## <a name="example"></a>示例  
+
  在下面的示例中，`Grades` 枚举表示学生可能在班里收到的字母等级分。 该示例将一个名为 `Passing` 的扩展方法添加到 `Grades` 类型中，以便该类型的每个实例现在都“知道”它是否表示合格的等级分。  
   
  [!code-csharp[csProgGuideExtensionMethods#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExtensionMethods/cs/extensionmethods.cs#2)]  

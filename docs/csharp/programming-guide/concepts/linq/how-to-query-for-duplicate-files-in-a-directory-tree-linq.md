@@ -3,14 +3,15 @@ title: 如何在目录树中查询重复文件 (LINQ) (C#)
 description: 了解如何使用 C# 中的 LINQ 在不同的目录中查询重复的文件名，以及如何查询大小和 LastWrite 时间也匹配的文件。
 ms.date: 07/20/2015
 ms.assetid: 1ff5562b-0d30-46d1-b426-a04e8f78c840
-ms.openlocfilehash: 72acb0e0823138821d321ed3845ff7ac137aee0c
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 87874fdb5bcfd66ffecf3379e315dfa019e89898
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104563"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176287"
 ---
 # <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a>如何在目录树中查询重复文件 (LINQ) (C#)
+
 有时，具有相同名称的文件可能位于多个文件夹中。 例如，在 Visual Studio 安装文件夹下，多个文件夹中都有 readme.htm 文件。 此示例显示如何在指定根文件夹下查询此类重复文件名。 第二个示例显示如何查询大小和上次写入时间都匹配的文件。  
   
 ## <a name="example"></a>示例  
@@ -171,6 +172,7 @@ class QueryDuplicateFileNames
  第一个查询使用简单键来确定匹配；此查询可以找到名称相同但内容可能不同的文件。 第二个查询使用复合键来匹配 <xref:System.IO.FileInfo> 对象的 3 个属性。 此查询更可能找到名称相同且内容相似或相同的文件。  
   
 ## <a name="compiling-the-code"></a>编译代码  
+
  使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。  
   
 ## <a name="see-also"></a>请参阅

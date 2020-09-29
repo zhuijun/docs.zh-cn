@@ -6,12 +6,12 @@ helpviewer_keywords:
 - constructors [C#], instance constructors
 - instance constructors [C#]
 ms.assetid: 24663779-c1e5-4af4-a942-ca554e4c542d
-ms.openlocfilehash: d70e786446fb198afb4e0311757cacb65b706f47
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: f1845601f2a0237206d05e3cc3cbbca68492020c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864197"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186128"
 ---
 # <a name="instance-constructors-c-programming-guide"></a>实例构造函数（C# 编程指南）
 
@@ -41,11 +41,13 @@ ms.locfileid: "86864197"
  在此示例中，`Circle` 类将半径和高度的值传递给 `Shape`（`Circle` 从它派生而来）提供的构造函数。 使用 `Shape` 和 `Circle` 的完整示例完整示例请见本主题中的示例 3。  
   
 ## <a name="example-1"></a>示例 1  
+
  下面的示例说明包含两个类构造函数的类：一个类构造函数不带参数，另一个带有两个参数。  
   
  [!code-csharp[csProgGuideObjects#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#4)]  
   
 ## <a name="example-2"></a>示例 2  
+
  在此示例中，`Person` 类没有任何构造函数；在这种情况下，将自动提供无参数构造函数，同时将字段初始化为它们的默认值。  
   
  [!code-csharp[csProgGuideObjects#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#8)]  
@@ -53,6 +55,7 @@ ms.locfileid: "86864197"
  请注意，`age` 的默认值为 `0`，`name` 的默认值为`null`。
   
 ## <a name="example-3"></a>示例 3  
+
  下面的示例说明使用基类初始值设定项。 `Circle` 类派生自常规类 `Shape`，`Cylinder` 类派生自 `Circle` 类。 每个派生类的构造函数都使用其基类的初始值设定项。  
   
  [!code-csharp[csProgGuideObjects#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#9)]  

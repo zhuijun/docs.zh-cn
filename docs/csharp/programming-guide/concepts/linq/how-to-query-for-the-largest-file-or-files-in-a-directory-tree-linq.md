@@ -3,14 +3,15 @@ title: 如何查询目录树中的一个或多个最大的文件 (LINQ) (C#)
 description: 此 C# 示例演示与文件大小（以字节为单位）相关的五个 LINQ 查询。 你可以修改它们以查询 FileInfo 对象的其他某个属性。
 ms.date: 07/20/2015
 ms.assetid: 20c8a917-0552-4514-b489-0b8b6a4c3b4c
-ms.openlocfilehash: c06c6017d6fd1efd6412729c5df63a2b819908a6
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 049db9bf104af1593ba9807c307008e8e760da32
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104376"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176248"
 ---
 # <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>如何查询目录树中的一个或多个最大的文件 (LINQ) (C#)
+
 此示例演示与文件大小（以字节为单位）相关的五个查询：  
   
 - 如何检索最大文件的大小（以字节为单位）。  
@@ -24,6 +25,7 @@ ms.locfileid: "87104376"
 - 如何基于文件大小（以字节为单位）按组对文件进行排序（忽略小于指定大小的文件）。  
   
 ## <a name="example"></a>示例  
+
  下面的示例包含五个单独的查询，它们演示如何根据文件大小（以字节为单位）对文件进行查询和分组。 可以轻松地修改这些示例，以便使查询基于 <xref:System.IO.FileInfo> 对象的其他某个属性。  
   
 ```csharp  
@@ -144,6 +146,7 @@ class QueryBySize
  查询调用单独的方法来获取文件大小（以字节为单位），以便使用在以下情况下会引发的可能异常：自在 `GetFiles` 调用中创建了 <xref:System.IO.FileInfo> 对象以来的时间段内，在其他线程中删除了文件。 即使创建了 <xref:System.IO.FileInfo> 对象，该异常也可能出现，因为 <xref:System.IO.FileInfo> 对象会在首次访问其 <xref:System.IO.FileInfo.Length%2A> 属性时，尝试使用最新大小（以字节为单位）刷新该属性。 通过将此操作置于查询外部的 try-catch 块中，我们可遵循在查询中避免可能导致副作用的操作这一规则。 一般情况下，在使用异常时必须格外谨慎，以确保应用程序不会处于未知状态。  
   
 ## <a name="compiling-the-code"></a>编译代码  
+
 使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。
 
 ## <a name="see-also"></a>请参阅

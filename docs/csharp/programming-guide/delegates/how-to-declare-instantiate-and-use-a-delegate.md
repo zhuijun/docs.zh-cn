@@ -5,14 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-ms.openlocfilehash: b741b3bc9c03faaa5fa2c01bd8f70d4be9b099c2
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 83dbd2dc497fafaf1922f8ad53208d0ab14f14a9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063661"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91185894"
 ---
 # <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>如何声明、实例化和使用委托（C# 编程指南）
+
 在 C# 1.0 和更高版本中，可以如下面的示例所示声明委托。  
   
  [!code-csharp[csProgGuideDelegates#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#13)]  
@@ -38,6 +39,7 @@ ms.locfileid: "88063661"
  使用委托提升书店数据库和客户端代码之间的良好分隔功能。 客户端代码程序不知道如何存储书籍或书店代码如何查找平装书。 书店代码不知道它在找到平装书之后对其执行什么处理。  
   
 ## <a name="example"></a>示例  
+
  [!code-csharp[csProgGuideDelegates#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#12)]  
   
 ## <a name="robust-programming"></a>可靠编程  

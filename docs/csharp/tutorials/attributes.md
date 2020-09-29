@@ -5,12 +5,12 @@ author: mgroves
 ms.technology: csharp-fundamentals
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
-ms.openlocfilehash: 24cb7d35a89fda78511dc4ba725b69c5d601a008
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 4e2c0126d0920df18271f8889d8e117cd374d979
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75937473"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174181"
 ---
 # <a name="use-attributes-in-c"></a>在 C\# 中使用属性
 
@@ -21,6 +21,7 @@ ms.locfileid: "75937473"
 此教程将介绍如何将特性添加到代码中、如何创建和使用你自己的特性，以及如何使用一些内置到 .NET Core 中的特性。
 
 ## <a name="prerequisites"></a>先决条件
+
 必须将计算机设置为运行 .Net Core。 有关安装说明，请访问 [.NET Core 下载](https://dotnet.microsoft.com/download)页。
 可以在 Windows、Ubuntu Linux、macOS 或 Docker 容器中运行此应用程序。
 必须安装常用的代码编辑器。 在以下说明中，我们使用的是开放源代码跨平台编辑器 [Visual Studio Code](https://code.visualstudio.com/)。 不过，你可以使用习惯使用的任意工具。
@@ -82,11 +83,11 @@ ms.locfileid: "75937473"
 
 特性可用于多个“目标”。 上述示例展示了特性在类上的使用情况，而特性还可用于：
 
-* Assembly
+* 程序集
 * 类
 * 构造函数
 * 委托
-* Enum
+* 枚举
 * 事件
 * 字段
 * 泛型参数
@@ -94,7 +95,7 @@ ms.locfileid: "75937473"
 * 方法
 * 模块
 * 参数
-* Property
+* properties
 * 返回值
 * 结构
 
@@ -136,12 +137,12 @@ ms.locfileid: "75937473"
 
 下面介绍了一些值得注意的 .NET Core 基类库内置特性：
 
-* `[Obsolete]`。 此特性已在上面的示例中使用过，位于 `System` 命名空间中。 可用于提供关于不断变化的基本代码的声明性文档。 可以提供字符串形式的消息，并能使用另一布尔参数将编译器警告升级为编译器错误。
+* `[Obsolete]`. 此特性已在上面的示例中使用过，位于 `System` 命名空间中。 可用于提供关于不断变化的基本代码的声明性文档。 可以提供字符串形式的消息，并能使用另一布尔参数将编译器警告升级为编译器错误。
 
-* `[Conditional]`。 此特性位于 `System.Diagnostics` 命名空间中。 可应用于方法（或特性类）。 必须向构造函数传递字符串。
+* `[Conditional]`. 此特性位于 `System.Diagnostics` 命名空间中。 可应用于方法（或特性类）。 必须向构造函数传递字符串。
 如果该字符串与 `#define` 指令不匹配，那么 C# 编译器将删除对该方法（而不是方法本身）的所有调用。 此特性通常用于调试（诊断）目的。
 
-* `[CallerMemberName]`。 此特性可应用于参数，位于 `System.Runtime.CompilerServices` 命名空间中。 可用于插入正在调用另一方法的方法的名称。 此特性通常用于在各种 UI 框架中实现 INotifyPropertyChanged 时清除“神奇字符串”。 例如：
+* `[CallerMemberName]`. 此特性可应用于参数，位于 `System.Runtime.CompilerServices` 命名空间中。 可用于插入正在调用另一方法的方法的名称。 此特性通常用于在各种 UI 框架中实现 INotifyPropertyChanged 时清除“神奇字符串”。 示例：
 
 [!code-csharp[Using CallerMemberName when implementing INotifyPropertyChanged](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CallerMemberName1)]
 

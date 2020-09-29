@@ -6,14 +6,15 @@ helpviewer_keywords:
 - C# language, versioning
 - C# language, override and new
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
-ms.openlocfilehash: c2630741e1055a14dd5b9e4445d660cfd68891b0
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 13321cdc83637105a2b981902ce984e6a90a25d9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86863859"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181812"
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>使用 Override 和 New 关键字进行版本控制（C# 编程指南）
+
 C# 语言经过专门设计，以便不同库中的[基类](../../language-reference/keywords/base.md)与派生类之间的版本控制可以不断向前发展，同时保持后向兼容。 这具有多方面的意义。例如，这意味着在基[类](../../language-reference/keywords/class.md)中引入与派生类中的某个成员具有相同名称的新成员在 C# 中是完全支持的，不会导致意外行为。 它还意味着类必须显式声明某方法是要替代一个继承方法，还是本身就是一个隐藏具有类似名称的继承方法的新方法。  
   
  在 C# 中，派生类可以包含与基类方法同名的方法。  
@@ -65,6 +66,7 @@ C# 语言经过专门设计，以便不同库中的[基类](../../language-refer
  使用 `new` 关键字可告诉编译器你的定义将隐藏基类中包含的定义。 这是默认行为。  
   
 ## <a name="override-and-method-selection"></a>替代和方法选择  
+
  当在类中对方法进行命名时，如果有多个方法与调用兼容（例如，存在两种同名的方法，并且其参数与传递的参数兼容），则 C# 编译器将选择最佳方法进行调用。 以下方法将是兼容的：  
   
  [!code-csharp[csProgGuideInheritance#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#32)]  

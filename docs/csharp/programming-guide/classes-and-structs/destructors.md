@@ -7,14 +7,15 @@ helpviewer_keywords:
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: 392b69633e596f0682fdfb4a5875f46755203ff7
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: 61a00e766b0f975691b9f2a7c7561bb4f1d33c02
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474886"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91174298"
 ---
 # <a name="finalizers-c-programming-guide"></a>终结器（C# 编程指南）
+
 终结器（也称为析构函数）用于在垃圾回收器收集类实例时执行任何必要的最终清理操作。  
   
 ## <a name="remarks"></a>备注  
@@ -65,9 +66,11 @@ protected override void Finalize()
  可以通过调用 <xref:System.GC.Collect%2A> 强制进行垃圾回收，但多数情况下应避免此调用，因为它可能会造成性能问题。  
   
 ## <a name="using-finalizers-to-release-resources"></a>使用终结器释放资源  
+
  一般来说，对于开发人员，C# 所需的内存管理比不面向带垃圾回收的运行时的语言要少。 这是因为 .NET 垃圾回收器会隐式管理对象的内存分配和释放。 但是，如果应用程序封装非托管的资源，例如窗口、文件和网络连接，则应使用终结器释放这些资源。 当对象符合终止条件时，垃圾回收器会运行对象的 `Finalize` 方法。
   
 ## <a name="explicit-release-of-resources"></a>显式释放资源  
+
  如果应用程序正在使用昂贵的外部资源，我们还建议在垃圾回收器释放对象前显式释放资源。 若要释放资源，请从 <xref:System.IDisposable> 接口实现 `Dispose` 方法，对对象执行必要的清理。 这样可大大提高应用程序的性能。 如果调用 `Dispose` 方法失败，那么即使拥有对资源的显式控制，终结器也会成为清除资源的一个保障。  
   
  有关清除资源的详细信息，请参阅以下文章：  
@@ -79,6 +82,7 @@ protected override void Finalize()
 - [using 语句](../../language-reference/keywords/using-statement.md)  
   
 ## <a name="example"></a>示例  
+
  以下示例创建了三个类，并且这三个类构成了一个继承链。 类 `First` 是基类，`Second` 派生自 `First`，`Third` 派生自 `Second`。 这三个类都具有终结器。 在 `Main` 中，已创建派生程度最高的类的一个实例。 程序运行时，请注意，将按顺序（从派生程度最高到派生程度最低）自动调用这三个类的终结器。  
   
  [!code-csharp[csProgGuideObjects#85](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#85)]  

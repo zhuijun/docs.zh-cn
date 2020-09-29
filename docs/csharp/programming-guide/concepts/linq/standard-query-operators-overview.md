@@ -3,14 +3,15 @@ title: 标准查询运算符概述 (C#)
 description: LINQ 标准查询运算符提供包括 C# 中的筛选、投影、聚合和排序在内的查询功能。
 ms.date: 07/20/2015
 ms.assetid: 812fa119-5f65-4139-b4fa-55dccd8dc3ac
-ms.openlocfilehash: 8a399f52881e10f8d94263843b5992101f96a5ea
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 1ff98e47641dbe7a884b7d6c7758c1fe61b95091
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302316"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178770"
 ---
 # <a name="standard-query-operators-overview-c"></a>标准查询运算符概述 (C#)
+
 *标准查询运算符*是组成 LINQ 模式的方法。 这些方法中的大多数都作用于序列；其中序列指其类型实现 <xref:System.Collections.Generic.IEnumerable%601> 接口或 <xref:System.Linq.IQueryable%601> 接口的对象。 标准查询运算符提供包括筛选、投影、聚合、排序等在内的查询功能。  
   
  共有两组 LINQ 标准查询运算符，一组作用于类型 <xref:System.Collections.Generic.IEnumerable%601> 的对象，另一组作用于类型 <xref:System.Linq.IQueryable%601> 的对象。 构成每个集合的方法分别是 <xref:System.Linq.Enumerable> 和 <xref:System.Linq.Queryable> 类的静态成员。 这些方法被定义为作为方法运行目标的类型的*扩展方法*。 可以使用静态方法语法或实例方法语法来调用扩展方法。  
@@ -68,12 +69,15 @@ foreach (var obj in query)
 ```  
   
 ## <a name="query-expression-syntax"></a>查询表达式语法  
+
  某些使用更频繁的标准查询运算符具有专用的 C# 和 Visual Basic 语言关键字语法，使用这些语法可以在“查询表达式”中调用这些运算符 。 有关具有专用关键字及其对应语法的标准查询运算符的详细信息，请参阅[标准查询运算符的查询表达式语法 (C#)](./query-expression-syntax-for-standard-query-operators.md)。  
   
 ## <a name="extending-the-standard-query-operators"></a>扩展标准查询运算符  
+
  通过创建适合于目标域或技术的特定于域的方法，可以增大标准查询运算符的集合。 也可以用自己的实现来替换标准查询运算符，这些实现提供诸如远程计算、查询转换和优化之类的附加服务。 有关示例，请参见 <xref:System.Linq.Enumerable.AsEnumerable%2A>。  
   
 ## <a name="related-sections"></a>相关章节  
+
  通过以下链接可转到一些文章，这些文章基于功能提供有关各种标准查询运算符的附加信息。  
   
  [对数据进行排序 (C#)](./sorting-data.md)  

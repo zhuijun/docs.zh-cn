@@ -5,14 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - exceptions [C#], non-CLS
 ms.assetid: db4630b3-5240-471a-b3a7-c7ff6ab31e8d
-ms.openlocfilehash: 255de4cab9a72491eb3b9624d968539d432e0442
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: db723cb1e29181e9462c5b423c66cdf8de659259
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302004"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178666"
 ---
 # <a name="how-to-catch-a-non-cls-exception"></a>如何捕捉非 CLS 异常
+
 包括 C++/CLI 在内的某些 .NET 语言允许对象引发并非派生自 <xref:System.Exception> 的异常。 这类异常被称为非 CLS 异常或非异常。  无法在 C# 中引发非 CLS 异常，但有两种方式可以捕获它们：  
   
 - 在 `catch (RuntimeWrappedException e)` 块内捕获。
@@ -28,6 +29,7 @@ ms.locfileid: "87302004"
 在 `catch(RuntimeWrappedException e)` 块中通过 <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> 属性访问原始异常。  
   
 ## <a name="example"></a>示例  
+
  下面示例显示如何捕捉以 C++/CLI 编写的类库所引发的非 CLS 异常。 请注意，在此示例中，C# 客户端代码预先已知被引发的异常类型是 <xref:System.String?displayProperty=nameWithType>。 可将 <xref:System.Runtime.CompilerServices.RuntimeWrappedException.WrappedException%2A?displayProperty=nameWithType> 属性转换回其原始类型，前提是可从代码访问该类型。  
   
 ```csharp

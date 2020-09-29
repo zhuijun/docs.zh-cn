@@ -3,14 +3,15 @@ title: 数据分区 (C#)
 description: 了解如何在 LINQ 中对数据进行分区。 查看显示分区操作结果的图示。
 ms.date: 07/20/2015
 ms.assetid: 2a5c507b-fe22-443c-a768-dec7f9ec568d
-ms.openlocfilehash: 3c85eaec2dc01b683234a27714750354982be440
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 31beacd672addb3eb38ade8f2bf9cfae25f4d27a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302602"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176261"
 ---
 # <a name="partitioning-data-c"></a>数据分区 (C#)
+
 LINQ 中的分区是指将输入序列划分为两个部分的操作，无需重新排列元素，然后返回其中一个部分。  
   
  下图显示对字符序列进行三种不同的分区操作的结果。 第一个操作返回序列中的前三个元素。 第二个操作跳过前三个元素，返回剩余元素。 第三个操作跳过序列中的前两个元素，返回接下来的三个元素。  

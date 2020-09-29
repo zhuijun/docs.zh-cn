@@ -6,12 +6,12 @@ helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-ms.openlocfilehash: ccdee1a86ab0c292721e69346cb7cedb03d4c28b
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: f60c1ea4f3f029ec3b81a4197a711523ec372df9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474496"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91186154"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>匿名类型（C# 编程指南）
 
@@ -48,6 +48,7 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
 ```  
   
 ## <a name="remarks"></a>备注  
+
  匿名类型是直接从[对象](../../language-reference/builtin-types/reference-types.md)派生的[类](../../language-reference/keywords/class.md)类型，并且其无法强制转换为除[对象](../../language-reference/builtin-types/reference-types.md)外的任意类型。 虽然你的应用程序不能访问它，编译器还是提供了每一个匿名类型的名称。 从公共语言运行时的角度来看，匿名类型与任何其他引用类型没有什么不同。  
   
  如果程序集中的两个或多个匿名对象初始值指定了属性序列，这些属性采用相同顺序且具有相同的名称和类型，则编译器将对象视为相同类型的实例。 它们共享同一编译器生成的类型信息。  

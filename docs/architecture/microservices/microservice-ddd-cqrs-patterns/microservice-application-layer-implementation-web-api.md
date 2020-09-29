@@ -2,12 +2,12 @@
 title: 使用 Web API 实现微服务应用层
 description: 了解依赖关系注入和转存进程模式及其在 Web API 应用层中的实现详细信息。
 ms.date: 08/17/2020
-ms.openlocfilehash: 72395acafb403a4e34858eb2b982ec83b9f3cee1
-ms.sourcegitcommit: cbb19e56d48cf88375d35d0c27554d4722761e0d
+ms.openlocfilehash: 56d4eecb2831a57460b01ff4da8150d6dcce5bc5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/19/2020
-ms.locfileid: "88608108"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173414"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>使用 Web API 实现微服务应用层
 
@@ -23,7 +23,7 @@ Ordering.API 微服务的解决方案资源管理器视图，显示“应用程�
 
 **图 7-23**。 Ordering.API ASP.NET Core Web API 项目中的应用程序层
 
-ASP.NET Core 包含一个简单的[内置 IoC 容器](https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection)（表示为 接口），默认情况下，该容器支持构造函数注入，ASP.NET 可通过 DI 提供某些服务。 ASP.NET Core 使用“服务”这一术语来表示将通过 DI 注入的你注册的类型。 可以在应用程序的 Startup 类中的 ConfigureServices 方法中配置内置容器的服务。 依赖项会在类型需要以及在 IoC 容器中注册的服务中实现。
+ASP.NET Core 包含一个简单的[内置 IoC 容器](/aspnet/core/fundamentals/dependency-injection)（表示为 接口），默认情况下，该容器支持构造函数注入，ASP.NET 可通过 DI 提供某些服务。 ASP.NET Core 使用“服务”这一术语来表示将通过 DI 注入的你注册的类型。 可以在应用程序的 Startup 类中的 ConfigureServices 方法中配置内置容器的服务。 依赖项会在类型需要以及在 IoC 容器中注册的服务中实现。
 
 通常需要注入实现基础结构对象的依赖项。 一个要注入的典型的依赖项是存储库。 但可注入任何其他你拥有的基础结构依赖项。 对于较简单的实现，可直接注入 Unit of Work 模式对象（EF DbContext 对象），因为 DBContext 也是基础结构持久性对象的实现。
 

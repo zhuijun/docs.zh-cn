@@ -6,16 +6,17 @@ helpviewer_keywords:
 - classes [C#]
 - C# language, classes
 ms.assetid: e8848524-7273-429f-8aba-c658d5eff5ad
-ms.openlocfilehash: d726ab3a882d2e6913fa69c7b82f1d6db78dd47d
-ms.sourcegitcommit: 73aa9653547a1cd70ee6586221f79cc29b588ebd
+ms.openlocfilehash: 93fc0296eeb410ba7ca0e781bededbe79820506d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/23/2020
-ms.locfileid: "82102042"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178861"
 ---
 # <a name="classes-c-programming-guide"></a>类（C# 编程指南）
 
 ## <a name="reference-types"></a>引用类型  
+
 定义为[类](../../language-reference/keywords/class.md)的一个类型是*引用类型*。 在运行时，如果声明引用类型的变量，此变量就会一直包含值 [null](../../language-reference/keywords/null.md)，直到使用 [new](../../language-reference/operators/new-operator.md) 运算符显式创建类实例，或直到为此变量分配可能已在其他位置创建的兼容类型的对象，如下面的示例所示：
 
 ```csharp

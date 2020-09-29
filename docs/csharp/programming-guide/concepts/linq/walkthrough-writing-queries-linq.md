@@ -8,14 +8,15 @@ helpviewer_keywords:
 - queries [LINQ in C#], writing
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
-ms.openlocfilehash: cfd2917d330a9229338790c35911502be5cd9391
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bdf91f6f52a68309cfcd276b222083c8cb67a0cc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90559143"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91176235"
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a>演练：用 C# 编写查询 (LINQ)
+
 此演练演示用于编写 LINQ 查询表达式的 C# 语言功能。  
   
 ## <a name="create-a-c-project"></a>创建 C# 项目  
@@ -40,6 +41,7 @@ ms.locfileid: "90559143"
 5. 注意，此项目包含对 System.Core.dll 的引用和用于 <xref:System.Linq?displayProperty=nameWithType> 命名空间的 `using` 指令。  
   
 ## <a name="create-an-in-memory-data-source"></a>创建内存中的数据源  
+
  用于查询的数据源是 `Student` 对象的简单列表。 每个 `Student` 记录都有名字、姓氏和整数数组（表示该学生在课堂上的测试分数）。 将此代码复制到项目中。 请注意下列特性：  
   
 - `Student` 类包含自动实现的属性。  
@@ -173,6 +175,7 @@ ms.locfileid: "90559143"
      [!code-csharp[csLINQGettingStarted#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#21)]  
   
 ## <a name="next-steps"></a>后续步骤  
+
  熟悉了在 C# 中使用查询的基本情况后，便可以开始阅读你感兴趣的具体类型的 LINQ 提供程序的文档和示例：  
   
  [LINQ to SQL](../../../../framework/data/adonet/sql/linq/index.md)  

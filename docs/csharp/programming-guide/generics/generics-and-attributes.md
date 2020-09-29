@@ -6,14 +6,15 @@ helpviewer_keywords:
 - generics [C#], attributes
 - attributes [C#], with generics
 ms.assetid: da9fc326-4648-454a-8e13-3911a2edefd7
-ms.openlocfilehash: 17556af2e1bc2963de953cea242d7000509acbcd
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 94378e44782169141314890bf90f050fdb6b5b79
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299872"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91184204"
 ---
 # <a name="generics-and-attributes-c-programming-guide"></a>泛型和特性（C# 编程指南）
+
 属性可按与非泛型类型相同的方式应用到泛型类型。 有关应用特性的详细信息，请参阅[属性](../concepts/attributes/index.md)。  
   
  仅允许自定义属性引用开放式泛型类型（即未向其提供任何类型参数的泛型类型）和封闭式构造泛型类型（即向所有类型参数提供参数的泛型类型）。  

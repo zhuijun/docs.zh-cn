@@ -4,12 +4,12 @@ description: 了解如何在 C# 库和应用程序中运用继承。
 ms.date: 07/05/2018
 ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: 70db8716bea84984ad56d79fa9e26aab3a8182fa
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: b0d6a4a3db4d6606375cc3364ee7abc3029f1d9b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063505"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91190457"
 ---
 # <a name="inheritance-in-c-and-net"></a>C# 和 .NET 中的继承
 
@@ -277,6 +277,7 @@ public struct ValueStructure : ValueType // Generates CS0527.
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/use-publication.cs#1)]
 
 ## <a name="designing-abstract-base-classes-and-their-derived-classes"></a>设计抽象基类及其派生类
+
 <a name="abstract"></a>
 
 在上面的示例中定义了一个基类，它提供了许多方法的实现代码，以便派生类可以共用代码。 然而，在许多情况下，我们并不希望基类提供实现代码。 相反，基类是声明抽象方法的抽象类，用作定义每个派生类必须实现的成员的模板 。 通常情况下，在抽象基类中，每个派生类型的实现代码都是相应类型的专属代码。 尽管该类提供了出版物通用的功能的实现代码，但由于实例化 `Publication` 对象毫无意义，因此，使用 abstract 关键字来标记该类。

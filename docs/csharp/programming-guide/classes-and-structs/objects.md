@@ -6,20 +6,22 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: b54db325c568dec702e4e50c3c265286662092fe
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 61d79f5647fa05edade9aef90653544b08c20c83
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864756"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91181825"
 ---
 # <a name="objects-c-programming-guide"></a>对象（C# 编程指南）
+
 类或结构定义的作用类似于蓝图，指定该类型可以进行哪些操作。 从本质上说，对象是按照此蓝图分配和配置的内存块。 程序可以创建同一个类的多个对象。 对象也称为实例，可以存储在命名变量中，也可以存储在数组或集合中。 使用这些变量来调用对象方法及访问对象公共属性的代码称为客户端代码。 在 C# 等面向对象的语言中，典型的程序由动态交互的多个对象组成。  
   
 > [!NOTE]
 > 静态类型的行为与此处介绍的不同。 有关详细信息，请参阅[静态类和静态类成员](./static-classes-and-static-class-members.md)。
   
 ## <a name="struct-instances-vs-class-instances"></a>结构实例与类实例  
+
  由于类是引用类型，因此类对象的变量引用该对象在托管堆上的地址。 如果将同一类型的第二个对象分配给第一个对象，则两个变量都引用该地址的对象。 这一点将在本主题后面部分进行更详细的讨论。  
   
  类的实例是使用 [new 运算符](../../language-reference/operators/new-operator.md)创建的。 在下面的示例中，`Person` 为类型，`person1` 和 `person 2` 为该类型的实例（即对象）。  
@@ -36,6 +38,7 @@ ms.locfileid: "86864756"
 > 公共语言运行时中高度优化了托管堆上内存的分配和释放。 在大多数情况下，在堆上分配类实例与在堆栈上分配结构实例在性能成本上没有显著的差别。
   
 ## <a name="object-identity-vs-value-equality"></a>对象标识与值相等性  
+
  在比较两个对象是否相等时，首先必须明确是想知道两个变量是否表示内存中的同一对象，还是想知道这两个对象的一个或多个字段的值是否相等。 如果要对值进行比较，则必须考虑这两个对象是值类型（结构）的实例，还是引用类型（类、委托、数组）的实例。  
   
 - 若要确定两个类实例是否引用内存中的同一位置（这意味着它们具有相同的标识），可使用静态 <xref:System.Object.Equals%2A> 方法。 （<xref:System.Object?displayProperty=nameWithType> 是所有值类型和引用类型的隐式基类，其中包括用户定义的结构和类。）  
@@ -49,6 +52,7 @@ ms.locfileid: "86864756"
 - 若要确定两个类实例中字段的值是否相等，可以使用 <xref:System.Object.Equals%2A> 方法或 [== 运算符](../../language-reference/operators/equality-operators.md#equality-operator-)。 但是，只有类通过重写或重载提供关于那种类型对象的“相等”含义的自定义时，才能使用它们。 类也可能实现 <xref:System.IEquatable%601> 接口或 <xref:System.Collections.Generic.IEqualityComparer%601> 接口。 这两个接口都提供可用于测试值相等性的方法。 设计好替代 `Equals` 的类后，请务必遵循[如何为类型定义值相等性](../statements-expressions-operators/how-to-define-value-equality-for-a-type.md)和 <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> 中介绍的准则。
   
 ## <a name="related-sections"></a>相关章节  
+
  更多相关信息：  
   
 - [类](./classes.md)  

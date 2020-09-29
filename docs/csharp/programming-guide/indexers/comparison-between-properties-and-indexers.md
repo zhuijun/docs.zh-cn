@@ -6,14 +6,15 @@ helpviewer_keywords:
 - properties [C#], vs. indexers
 - indexers [C#], vs. properties
 ms.assetid: 3358a89f-44a0-4a4d-bf8c-07237a90af39
-ms.openlocfilehash: b83ce3db3d4b53fb7bcc5f3b3cd603a375d5d473
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: fff20ca965e7614d26f7da32321a829d13292389
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299170"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91192524"
 ---
 # <a name="comparison-between-properties-and-indexers-c-programming-guide"></a>属性和索引器之间的比较（C# 编程指南）
+
 索引器与属性相似。 除下表所示的差别外，对属性访问器定义的所有规则也适用于索引器访问器。  
   
 |Property|索引器|  

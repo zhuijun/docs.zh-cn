@@ -2,12 +2,12 @@
 title: 域事件。 设计和实现
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 深入了解域事件（在聚合之间建立通信的一个关键概念）。
 ms.date: 10/08/2018
-ms.openlocfilehash: e786af9b5cd005573dcc9d08a3ccd19f25f13813
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: 651d9cb98444c0729b97f523cc3d688f0f8d51d5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738770"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173362"
 ---
 # <a name="domain-events-design-and-implementation"></a>域事件：设计和实现
 
@@ -342,7 +342,7 @@ public class ValidateOrAddBuyerAggregateWhenOrderStartedDomainEventHandler
 
 如前文所述，使用域事件显式实现域中的更改的副作用。 若要使用 DDD 术语表述，则是使用域事件跨一个或多个聚合显式实现副作用。 此外，为了提高可伸缩性并减小对数据库锁定的影响，可在相同域的聚合之间使用最终一致性。
 
-参考应用使用 [MediatR](https://github.com/jbogard/MediatR) 在单个事务中跨聚合同步传播域事件。 但是，也可使用 [RabbitMQ](https://www.rabbitmq.com/) 或 [Azure 服务总线](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview)等一些 AMQP 实现来异步传播域事件，从而运用最终一致性，但如上所述，必须考虑到失败时要执行补偿操作的需求。
+参考应用使用 [MediatR](https://github.com/jbogard/MediatR) 在单个事务中跨聚合同步传播域事件。 但是，也可使用 [RabbitMQ](https://www.rabbitmq.com/) 或 [Azure 服务总线](/azure/service-bus-messaging/service-bus-messaging-overview)等一些 AMQP 实现来异步传播域事件，从而运用最终一致性，但如上所述，必须考虑到失败时要执行补偿操作的需求。
 
 ## <a name="additional-resources"></a>其他资源
 

@@ -4,12 +4,12 @@ description: 了解支持表达式树的框架类型、创建表达式树和使�
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: e9c85021-0d36-48af-91b7-aaaa66f22654
-ms.openlocfilehash: 8483c46dde3ea97138e55ab84a5924a3d2578730
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 548f5ba6a2de00d9556621791515555b6f6a325c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79146081"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91180434"
 ---
 # <a name="framework-types-supporting-expression-trees"></a>支持表达式树的框架类型
 
@@ -58,6 +58,7 @@ var addition = Expression.Add(one, two);
 从这个简单的示例中，你会发现创建和使用表达式树涉及了许多类型。 该复杂性是提供由 C# 语言提供的丰富词汇的功能所必需的。
 
 ## <a name="navigating-the-apis"></a>导航 API
+
 存在映射到 C# 语言的几乎所有语法元素的表达式节点类型。 每种类型都有针对该种语言元素的特定方法。 需要一次性记住的内容很多。 我不会记住所有内容，而是会采用有关使用表达式树的技巧，如下所示：
 
 1. 查看 `ExpressionType` 枚举的成员以确定应检查的可能节点。 如果想要遍历和理解表达式树，这将非常有用。

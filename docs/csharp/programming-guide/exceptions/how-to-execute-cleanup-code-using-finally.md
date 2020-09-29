@@ -7,19 +7,21 @@ helpviewer_keywords:
 - exceptions [C#], try/finally block
 - exception handling [C#], try/finally block
 ms.assetid: 1b1e5aef-3f32-4a88-9d39-b5fffb33bdaf
-ms.openlocfilehash: 148c1f9fba67659a07c667bb15619d6f3f7c3b2f
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 283c36ab9b976a92e339000a982340148c2480a8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302017"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178640"
 ---
 # <a name="how-to-execute-cleanup-code-using-finally-c-programming-guide"></a>如何使用 finally 执行清理代码（C# 编程指南）
+
 `finally` 语句的用途是确保立即进行对象（通常是容纳外部资源的对象）的必要清理（即使引发异常）。 这类清理的一个示例是在使用之后立即对 <xref:System.IO.FileStream> 调用 <xref:System.IO.Stream.Close%2A>（而不是等待公共语言运行时对对象进行垃圾回收），如下所示：  
   
  [!code-csharp[csProgGuideExceptions#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#16)]  
   
 ## <a name="example"></a>示例  
+
  若要将上面的代码转换为 `try-catch-finally` 语句，可将清理代码与工作代码分开，如下所示。  
   
  [!code-csharp[csProgGuideExceptions#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#17)]  

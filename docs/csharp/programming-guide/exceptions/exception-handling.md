@@ -6,14 +6,15 @@ helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
-ms.openlocfilehash: 8e55b44573c40f594e567fc5a4501689e66c7af4
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 8f7dc027396e327f08a591ced6bd6df176a17606
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302030"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91178679"
 ---
 # <a name="exception-handling-c-programming-guide"></a>异常处理（C# 编程指南）
+
 C# 程序员使用 [try](../../language-reference/keywords/try-catch.md) 块来对可能受异常影响的代码进行分区。 关联的 [catch](../../language-reference/keywords/try-catch.md) 块用于处理生成的任何异常。 [finally](../../language-reference/keywords/try-finally.md) 块包含无论 `try` 块中是否引发异常都会运行的代码，如发布 `try` 块中分配的资源。 `try` 块需要一个或多个关联的 `catch` 块或一个 `finally` 块，或两者皆之。  
   
  下面的示例演示 `try-catch` 语句、`try-finally` 语句和 `try-catch-finally` 语句。  
@@ -27,6 +28,7 @@ C# 程序员使用 [try](../../language-reference/keywords/try-catch.md) 块来�
  一个不具有 `catch` 或 `finally` 块的 `try` 块会导致编译器错误。  
   
 ## <a name="catch-blocks"></a>catch 块  
+
  `catch` 块可以指定要捕获的异常的类型。 该类型规范称为异常筛选器。 异常类型应派生自 <xref:System.Exception>。 一般情况下，不要将 <xref:System.Exception> 指定为异常筛选器，除非了解如何处理可能在 `try` 块中引发的所有异常，或者已在 `catch` 块的末尾处包括了 [throw](../../language-reference/keywords/throw.md) 语句。  
   
  可将具有不同异常筛选器的多个 `catch` 块链接在一起。 代码中 `catch` 块的计算顺序为从上到下，但针对引发的每个异常，仅执行一个 `catch` 块。 将执行指定所引发的异常的确切类型或基类的第一个 `catch` 块。 如果没有 `catch` 块指定匹配的异常筛选器，则将选择不具有筛选器的 `catch` 块（如果语句中存在）。 务必首先定位具有最具体的（即，最底层派生的）异常类型的 `catch` 块。  
@@ -44,6 +46,7 @@ C# 程序员使用 [try](../../language-reference/keywords/try-catch.md) 块来�
      [!code-csharp[csProgGuideExceptions#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#10)]  
   
 ## <a name="finally-blocks"></a>Finally 块  
+
  `finally` 块让你可以清理在 `try` 块中所执行的操作。 如果存在 `finally` 块，将在执行 `try` 块和任何匹配的 `catch` 块之后，最后执行它。 无论是否会引发异常或找到匹配异常类型的 `catch` 块，`finally` 块都将始终运行。  
   
  `finally` 块可用于发布资源（如文件流、数据库连接和图形句柄）而无需等待运行时中的垃圾回收器来完成对象。 有关详细信息，请参阅 [using 语句](../../language-reference/keywords/using-statement.md)。  
