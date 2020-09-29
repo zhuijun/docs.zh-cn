@@ -6,14 +6,15 @@ helpviewer_keywords:
 - /libpath compiler option [Visual Basic]
 - -libpath compiler option [Visual Basic]
 ms.assetid: 5f1c26c9-3455-4e89-bdf3-b12d6c2e655b
-ms.openlocfilehash: dff7e0c3eb696b9b18f4c4e59240a26c1cb9782c
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: a91bd74d0be4f1cb223091ee2527f9567b4ca5db
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408531"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058464"
 ---
 # <a name="-libpath"></a>-libpath
+
 指定引用的程序集的位置。  
   
 ## <a name="syntax"></a>语法  
@@ -29,6 +30,7 @@ ms.locfileid: "84408531"
 |`dirList`|必需。 在当前工作目录（调用编译器的目录）或公共语言运行时的系统目录中未找到引用的程序集时，编译器将在其中进行查找的由分号分隔的目录列表。 如果目录名包含空格，则将名称括在引号 (" ") 内。|  
   
 ## <a name="remarks"></a>备注  
+
  `-libpath` 选项指定通过 [-reference](reference.md) 选项引用的程序集的位置。  
   
  编译器按以下顺序搜索未完全限定的程序集引用：  
@@ -50,6 +52,7 @@ ms.locfileid: "84408531"
 |1.在 **“解决方案资源管理器”** 中选择一个项目。 在“项目”菜单上，单击“属性”   。 <br />2.单击“引用”  选项卡。<br />3.单击“引用路径...”按钮。 <br />4.在“引用路径”对话框的“文件夹:”框中，输入目录名称。  <br />5.单击“添加文件夹”。 |  
   
 ## <a name="example"></a>示例  
+
  下面的代码编译 `T2.vb`，用于生成 .exe 文件。 编译器将在工作目录、C: 驱动器的根目录和 C: 驱动器的“新程序集”目录中查找程序集引用。  
   
 ```console  

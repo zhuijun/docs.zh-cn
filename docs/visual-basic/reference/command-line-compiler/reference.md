@@ -9,14 +9,15 @@ helpviewer_keywords:
 - reference compiler option [Visual Basic]
 - -r compiler option [Visual Basic]
 ms.assetid: 66bdfced-bbf6-43d1-a554-bc0990315737
-ms.openlocfilehash: 633b457106203e213f5d30003e576b7e8132f4d2
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: b489a164e56a5e3bdbf7e3cdf24ec330fadedf38
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400482"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91097548"
 ---
 # <a name="-reference-visual-basic"></a>-reference (Visual Basic)
+
 使编译器让指定程序集中的类型信息可供当前正在编译的项目使用。  
   
 ## <a name="syntax"></a>语法  
@@ -38,6 +39,7 @@ or
 |`fileList`|必需。 程序集文件名的逗号分隔列表。 如果文件名包含空格，则将名称括在引号内。|  
   
 ## <a name="remarks"></a>备注  
+
  导入的文件必须包含程序集元数据。 仅公共类型在程序集外部可见。 [-addmodule](addmodule.md) 选项从模块导入元数据。  
   
  如果引用的程序集（程序集 A）引用了另一个程序集（程序集 B），那么在下列情况下需要引用程序集 B：  
@@ -55,6 +57,7 @@ or
  `-reference` 的缩写形式是 `-r`。  
   
 ## <a name="example"></a>示例  
+
  下面的命令编译源文件 `Input.vb` 并引用来自 `Metad1.dll` 和 `Metad2.dll` 的程序集以生成 `Out.exe`。  
   
 ```console

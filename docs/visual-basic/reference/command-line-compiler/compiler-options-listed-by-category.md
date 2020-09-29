@@ -4,14 +4,15 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: fbe36f7a-7cfa-4f77-a8d4-2be5958568e3
-ms.openlocfilehash: 533d3da2f76854d311262ce97b43f240acab5f7d
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 77a130b684d26cf7e4b9df9382348a371a60bc5d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408746"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072036"
 ---
 # <a name="visual-basic-compiler-options-listed-by-category"></a>按类别列出的 Visual Basic 编译器选项
+
 Visual Basic 命令行编译器用作一种替代方法，用于在 Visual Studio 集成开发环境 (IDE) 中编译程序。 以下是按功能分类排序的 Visual Basic 命令行编译器选项的列表。  
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]

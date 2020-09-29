@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -vbruntime compiler option [Visual Basic]
 - /vbruntime compiler option [Visual Basic]
 ms.assetid: 1aa0239e-511a-4c29-957d-fd72877b350a
-ms.openlocfilehash: 31b719fb7e43cdd6ac44424b359999410dd608a5
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 46d4b095d4a2bf9aac9124d5d4b2a09adb347ba1
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403039"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085056"
 ---
 # <a name="-vbruntime"></a>-vbruntime
+
 指定编译器应在不引用 Visual Basic 运行库的情况下进行编译，或在引用特定运行库的情况下进行编译。  
   
 ## <a name="syntax"></a>语法  
@@ -26,6 +27,7 @@ ms.locfileid: "84403039"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  \-  
  在不引用 Visual Basic 运行时库的情况下进行编译。  
   
@@ -39,6 +41,7 @@ ms.locfileid: "84403039"
  在引用指定库 (DLL) 的情况下进行编译。  
   
 ## <a name="remarks"></a>备注  
+
  通过 `-vbruntime` 编译器选项可以指定应在不引用 Visual Basic 运行时库的情况下进行编译。 如果在不引用 Visual Basic 运行时库的情况下进行编译，则会对生成 Visual Basic 运行时帮助程序调用的代码或语言构造记录错误或警告。 （*Visual Basic 运行时帮助程序*是 Microsoft.VisualBasic.dll 中定义的一个函数，在运行时调用以执行特定语言语义。）  
   
  `-vbruntime+` 选项会生成在未指定 `-vbruntime` 开关时发生的相同行为。 可以使用 `-vbruntime+` 选项重写以前的 `-vbruntime` 开关。  
@@ -46,6 +49,7 @@ ms.locfileid: "84403039"
  使用 `-vbruntime-` 或 `-vbruntime:path` 选项时，`My` 类型的大多数对象不可用。  
   
 ## <a name="embedding-visual-basic-runtime-core-functionality"></a>嵌入 Visual Basic 运行时核心功能  
+
  通过 `-vbruntime*` 选项可以在不引用运行时库的情况下进行编译。 而是将 Visual Basic 运行时库中的核心功能嵌入在用户程序集中。 如果应用程序在不包含 Visual Basic 运行时的平台上运行，则可以使用此选项。  
   
  会嵌入以下运行时成员：  
@@ -83,11 +87,13 @@ ms.locfileid: "84403039"
  如果使用 `-vbruntime*` 选项进行编译，并且代码从没有嵌入核心功能的 Visual Basic 运行时库中引用了一个成员，则编译器会返回错误，指示该成员不可用。  
   
 ## <a name="referencing-a-specified-library"></a>引用指定库  
+
  可以使用 `path` 参数在引用自定义运行时库（而不是默认 Visual Basic 运行时库）的情况下进行编译。  
   
  如果 `path` 参数的值是 DLL 的完全限定路径，则编译器将使用该文件作为运行时库。 如果 `path` 参数的值不是 DLL 的完全限定路径，则 Visual Basic 编译器将首先在当前文件夹中搜索标识的 DLL。 随后它将在使用 [-sdkpath](sdkpath.md) 编译器选项指定的路径中进行搜索。 如果未使用 `-sdkpath` 编译器选项，则编译器将在 .NET Framework 文件夹 (`%systemroot%\Microsoft.NET\Framework\versionNumber`) 中搜索标识的 DLL。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何使用 `-vbruntime` 选项在引用自定义库的情况下进行编译。  
   
 ```console

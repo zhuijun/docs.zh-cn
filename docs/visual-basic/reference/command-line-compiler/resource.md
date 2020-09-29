@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -res compiler option [Visual Basic]
 - resource compiler option [Visual Basic]
 ms.assetid: eee2f227-91f2-4f2b-a9d6-1c51c5320858
-ms.openlocfilehash: cf9fe8dae0d35df694891633a6e3cf950bfb7376
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 726f3dd179aedb39b578c8580c9632182af2d5e0
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84363612"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085121"
 ---
 # <a name="-resource-visual-basic"></a>-resource (Visual Basic)
+
 将托管资源嵌入程序集。  
   
 ## <a name="syntax"></a>语法  
@@ -39,6 +40,7 @@ or
 |`identifier`|可选。 资源的逻辑名称；用于加载资源的名称。 默认值是文件的名称。 可以选择在程序集清单中指定资源是公共还是专用的，如下所示：`-res:filename.res, myname.res, public`|  
   
 ## <a name="remarks"></a>备注  
+
  使用 `-linkresource` 将资源链接到程序集，而不将资源文件置于输出文件中。  
   
  例如，如果 `filename` [是由资源文件生成器 (Resgen.exe)](../../../framework/tools/resgen-exe-resource-file-generator.md) 创建的或在开发环境中创建的 .NET Framework 资源文件，则可使用 <xref:System.Resources> 命名空间中的成员来访问它（有关详细信息，请参阅 <xref:System.Resources.ResourceManager>）。 若要在运行时访问所有其他资源，请使用以下方法之一：<xref:System.Reflection.Assembly.GetManifestResourceInfo%2A>、<xref:System.Reflection.Assembly.GetManifestResourceNames%2A> 或 <xref:System.Reflection.Assembly.GetManifestResourceStream%2A>。  
@@ -48,6 +50,7 @@ or
  有关如何在 Visual Studio IDE 中设置 `-resource` 的信息，请参阅[管理应用程序资源 (.NET)](/visualstudio/ide/managing-application-resources-dotnet)。  
   
 ## <a name="example"></a>示例  
+
  下面的代码编译 `In.vb` 并附加资源文件 `Rf.resource`。  
   
 ```console

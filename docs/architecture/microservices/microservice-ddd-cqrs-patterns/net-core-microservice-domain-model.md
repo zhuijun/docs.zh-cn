@@ -2,12 +2,12 @@
 title: 使用 .NET Core 实现微服务域模型
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 获取面向 DDD 的域模型的实现详细信息。
 ms.date: 10/08/2018
-ms.openlocfilehash: 4017d9d658ff73fd935507dad79e9ffab7973de1
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: e24f4e643d258450a2b33ed4dc4aded718bebd82
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738744"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152541"
 ---
 # <a name="implement-a-microservice-domain-model-with-net-core"></a>使用 .NET Core 实现微服务域模型
 
@@ -152,7 +152,7 @@ myOrder.AddOrderItem(productId, productName, pictureUrl, unitPrice, discount, un
 
 此外，新的 OrderItem(params) 操作也由 Order 聚合根中的 AddOrderItem 方法控制和执行。 因此，与该操作相关的大部分逻辑或验证（尤其是影响其他子实体间一致性的逻辑或验证）将位于聚合根的单个位置中。 这是聚合根模式的最终目的。
 
-使用 Entity Framework Core 1.1 或更高版本时，可以更好地表示 DDD 实体，因为它允许[映射到字段](https://docs.microsoft.com/ef/core/modeling/backing-field)以及属性。 这在保护子实体或值对象集合时很有用。 借助此增强功能，你可以使用简单的私有字段，而不必使用属性，并且可以在公共方法中实现对字段集合的任何更新，并通过 AsReadOnly 方法提供只读访问。
+使用 Entity Framework Core 1.1 或更高版本时，可以更好地表示 DDD 实体，因为它允许[映射到字段](/ef/core/modeling/backing-field)以及属性。 这在保护子实体或值对象集合时很有用。 借助此增强功能，你可以使用简单的私有字段，而不必使用属性，并且可以在公共方法中实现对字段集合的任何更新，并通过 AsReadOnly 方法提供只读访问。
 
 在 DDD 中，你想通过实体（或构造函数）中的方法只更新实体，以便控制任何不变量和数据一致性，因此，属性定义为仅具有 get 取值函数。 这些属性受私有字段支持。 只能从类中访问私有成员。 但是，有一种例外情况：EF Core 也需要设置这些字段（这样它就可以返回具有适当值的对象）。
 

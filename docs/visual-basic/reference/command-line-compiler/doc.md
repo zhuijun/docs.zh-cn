@@ -6,14 +6,15 @@ helpviewer_keywords:
 - -doc compiler option [Visual Basic]
 - /doc compiler option [Visual Basic]
 ms.assetid: 5fc32ec9-a149-4648-994c-a8d0cccd0a65
-ms.openlocfilehash: 57a81983278c26090c62995f4da55c5cbfd66047
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8b80629ce9b2cd62f10d9a53279b83ba41bc4ece
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408668"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91097704"
 ---
 # <a name="-doc"></a>-doc
+
 将文档注释处理到一个 XML 文件中。  
   
 ## <a name="syntax"></a>语法  
@@ -36,6 +37,7 @@ or
 |`file`|如果使用 `-doc:`，则是必需的。 指定输出 XML 文件（由编译的源代码文件中的注释填充）。 如果文件名包含空格，请用引号 (" ") 括住该名称。|  
   
 ## <a name="remarks"></a>备注  
+
  `-doc` 选项控制编译器是否生成包含文档注释的 XML 文件。 如果使用 `-doc:file` 语法，`file` 参数会指定 XML 文件的名称。 如果使用 `-doc` 或 `-doc+`，编译器会从其正在创建的可执行文件或库中获取 XML 文件名。 如果使用 `-doc-` 或未指定 `-doc` 选项，则编译器不会创建 XML 文件。  
   
  在源代码文件中，文档注释可先于以下定义：  
@@ -55,6 +57,7 @@ or
 |1.在 **“解决方案资源管理器”** 中选择一个项目。 在“项目”菜单上，单击“属性”   。 <br />2.单击“编译”  选项卡。<br />3.在“生成 XML 文档文件”  框中设置值。|  
   
 ## <a name="example"></a>示例  
+
  有关示例，请参阅[使用 XML 来记录代码](../../programming-guide/program-structure/documenting-your-code-with-xml.md)。  
   
 ## <a name="see-also"></a>请参阅

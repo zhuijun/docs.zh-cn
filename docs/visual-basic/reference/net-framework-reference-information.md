@@ -6,17 +6,19 @@ helpviewer_keywords:
 - .NET Framework [Visual Basic], reference
 - .NET Framework class library [Visual Basic], reference information
 ms.assetid: 8b202505-608b-4223-bbd9-2ace3d73e6cd
-ms.openlocfilehash: ebf9040fc16666d7e40e95981d5ceee97e716acb
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a3ce3780818a6a07de1c594b9da3f4a5f9e03f37
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352855"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91058399"
 ---
 # <a name="net-framework-reference-information-visual-basic"></a>.NET Framework 参考信息 (Visual Basic)
+
 本主题提供了一些链接，这些链接指向有关如何使用 .NET Framework 类库的信息。  
   
 ## <a name="related-sections"></a>相关章节  
+
  [入门](../../framework/get-started/index.md)  
  提供对 .NET Framework 的全面概述和指向其他资源的链接。  
   

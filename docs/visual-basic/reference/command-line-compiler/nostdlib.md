@@ -6,14 +6,15 @@ helpviewer_keywords:
 - -nostdlib compiler option [Visual Basic]
 - /nostdlib compiler option [Visual Basic]
 ms.assetid: 140381b8-dc96-4ad5-ae11-792c9ed0be4d
-ms.openlocfilehash: 0934799853323110e73087ba6d8975c30f84d8f7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 4fcc5305985f5ba32b3e6ffb740c0611821215d3
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84387707"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91097652"
 ---
 # <a name="-nostdlib-visual-basic"></a>-nostdlib (Visual Basic)
+
 导致编译器不自动引用标准库。  
   
 ## <a name="syntax"></a>语法  
@@ -23,6 +24,7 @@ ms.locfileid: "84387707"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  `-nostdlib` 选项会删除对 System.dll 程序集的自动引用，并防止编译器读取 Vbc.rsp 文件。 Vbc.rsp 文件（与 Vbc.exe 文件位于同一个目录）引用常用的 .NET Framework 程序集，并导入 `System` 和 `Microsoft.VisualBasic` 命名空间。  
   
 > [!NOTE]
@@ -32,6 +34,7 @@ ms.locfileid: "84387707"
 > `-nostdlib` 选项在 Visual Studio 开发环境内无法使用；仅当从命令行编译时才可用。  
   
 ## <a name="example"></a>示例  
+
  下面的代码在不引用标准库的情况下编译 `T2.vb`。 必须将 `_MYTYPE` 条件编译常量设置为字符串“Empty”，才能删除 `My` 对象。  
   
 ```console

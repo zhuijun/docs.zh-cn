@@ -6,14 +6,15 @@ helpviewer_keywords:
 - keyfile compiler option [Visual Basic]
 - -keyfile compiler option [Visual Basic]
 ms.assetid: ffa82a4b-517a-4c6c-9889-5bae7b534bb8
-ms.openlocfilehash: 3f476f6b6db1a788002a938eb5ae4bbbed7a5dae
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: c81486243195f7d022bd474ef6db20d069b3a018
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408570"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085147"
 ---
 # <a name="-keyfile"></a>-keyfile
+
 指定包含密钥或密钥对的文件从而为程序集赋予强名称。  
   
 ## <a name="syntax"></a>语法  
@@ -23,10 +24,12 @@ ms.locfileid: "84408570"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `file`  
  必需。 包含密钥的文件。 如果文件名包含空格，则将名称括在引号内 (" ")。  
   
 ## <a name="remarks"></a>备注  
+
  编译器在程序集清单中插入公钥，然后使用私钥对最终的程序集进行签名。 若要生成密钥文件，请在命令行键入 `sn -k file`。 有关详细信息，请参阅 [Sn.exe（强名称工具）](../../../framework/tools/sn-exe-strong-name-tool.md)。  
   
  如果使用 `-target:module` 进行编译，密钥文件的名称将保存在模块中，并在使用 [-addmodule](addmodule.md) 编译程序集时包含到创建的程序集中。  

@@ -9,14 +9,15 @@ helpviewer_keywords:
 - linkres compiler option [Visual Basic]
 - -linkres compiler option [Visual Basic]
 ms.assetid: cf4dcad8-17b7-404c-9184-29358aa05b15
-ms.openlocfilehash: 43ebb61efa26ed11af573e2c4e73a6fd71ac0902
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 8c4f753f94aedaf0a4f997a3f9b99fb3f417abf8
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403195"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91065679"
 ---
 # <a name="-linkresource-visual-basic"></a>-linkresource (Visual Basic)
+
 创建指向托管资源的链接。  
   
 ## <a name="syntax"></a>语法  
@@ -32,6 +33,7 @@ or
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `filename`  
  必需。 要链接到程序集的资源文件。 如果文件名包含空格，则将名称括在引号内 (" ")。  
   
@@ -39,6 +41,7 @@ or
  可选。 资源的逻辑名称。 用于加载资源的名称。 默认值是文件的名称。 可以选择在程序集清单中指定文件是公共还是专用的，示例：`-linkres:filename.res,myname.res,public`。 默认情况下，`filename` 在程序集中是公共的。  
   
 ## <a name="remarks"></a>备注  
+
  `-linkresource` 选项不会将资源文件嵌入到输出文件中；使用 `-resource` 选项来执行此操作。  
   
  `-linkresource` 选项需要除 `-target:module` 之外的任一 `-target` 选项。  
@@ -53,6 +56,7 @@ or
 > `-linkresource` 选项在Visual Studio 开发环境内无法使用；仅当从命令行编译时才可用。  
   
 ## <a name="example"></a>示例  
+
  下面的代码编译 `in.vb` 并链接到资源文件 `rf.resource`。  
   
 ```console  

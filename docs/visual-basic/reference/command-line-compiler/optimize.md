@@ -7,14 +7,15 @@ helpviewer_keywords:
 - optimization [Visual Basic], enabling
 - -optimize compiler option [Visual Basic]
 ms.assetid: fcba4a97-3622-4b87-a891-0f77deab4998
-ms.openlocfilehash: 337cb794ef9a405a178f1998cbe27b5da7709382
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d4b50d56373676bf78a7591102095209401c907d
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84397436"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91097587"
 ---
 # <a name="-optimize"></a>-optimize
+
 启用或禁用编译器优化。  
   
 ## <a name="syntax"></a>语法  
@@ -30,6 +31,7 @@ ms.locfileid: "84397436"
 |`+` &#124; `-`|可选。 `-optimize-` 选项启用或禁用编译器优化。 `-optimize+` 选项启用优化。 默认情况下，禁用优化。|  
   
 ## <a name="remarks"></a>备注  
+
  编译器优化会使输出文件更智能、更快并且更有效。 但是，由于优化会导致输出文件中的代码重排，因此 `-optimize+` 可能会增加调试的难度。  
   
  使用 `-target:module` 为程序集生成的所有模块都必须使用与程序集相同的 `-optimize` 设置。 有关详细信息，请参阅 [-target (Visual Basic)](target.md)。  
@@ -41,6 +43,7 @@ ms.locfileid: "84397436"
 |1.在 **“解决方案资源管理器”** 中选择一个项目。 在“项目”菜单上，单击“属性”   。<br />     <br />2.单击“编译”  选项卡。<br />3.单击“高级”  按钮。<br />4.修改“启用优化”  复选框。|  
   
 ## <a name="example"></a>示例  
+
  下面的代码编译 `T2.vb`，并启用编译器优化。  
   
 ```console

@@ -6,14 +6,15 @@ helpviewer_keywords:
 - keycontainer compiler option [Visual Basic]
 - /keycontainer compiler option [Visual Basic]
 ms.assetid: 6a9bc861-1752-4db1-9f64-b5252f0482cc
-ms.openlocfilehash: 575b337c262fbb36a9e118aa293916c296cc2db3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 243583e55dcf278f951b813cca8384246d2d6db9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408557"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91085225"
 ---
 # <a name="-keycontainer"></a>-keycontainer
+
 指定密钥对的密钥容器名称从而为程序集赋予强名称。  
   
 ## <a name="syntax"></a>语法  
@@ -29,6 +30,7 @@ ms.locfileid: "84408557"
 |`container`|必需。 包含密钥的容器文件。 如果文件名包含空格，则将它括在引号 ("") 内。|  
   
 ## <a name="remarks"></a>备注  
+
  通过将公钥插入到程序集清单并且用私钥签名最终程序集，编译器可创建可共享的组件。 若要生成密钥文件，请在命令行键入 `sn -k file`。 `-i` 选项将密钥对安装到容器中。 有关详细信息，请参阅 [Sn.exe（强名称工具）](../../../framework/tools/sn-exe-strong-name-tool.md)。  
   
  如果使用 `-target:module` 进行编译，密钥文件的名称将保存在模块中，并在使用 [-addmodule](addmodule.md) 编译程序集时包含到创建的程序集中。  
@@ -43,6 +45,7 @@ ms.locfileid: "84408557"
 > Visual Studio 开发环境内无法使用 `-keycontainer` 选项；仅当从命令行编译时才可用。  
   
 ## <a name="example"></a>示例  
+
  下面的代码编译源文件 `Input.vb`，并指定一个密钥容器。  
   
 ```console  

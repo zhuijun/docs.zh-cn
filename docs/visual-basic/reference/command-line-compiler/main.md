@@ -6,14 +6,15 @@ helpviewer_keywords:
 - /main compiler option [Visual Basic]
 - -main compiler option [Visual Basic]
 ms.assetid: 83fc339d-6652-415d-b205-b5133319b5b0
-ms.openlocfilehash: 5530da4c784346df4a1088998b8d2027feee08e3
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: fb317b3c555d151e132122c476ce19bdeceb1321
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84403156"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91065614"
 ---
 # <a name="-main"></a>-main
+
 指定包含 `Sub Main` 过程的类或模块。  
   
 ## <a name="syntax"></a>语法  
@@ -23,10 +24,12 @@ ms.locfileid: "84403156"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `location`  
  必需。 类或模块的名称，其中包含在程序启动时要调用的 `Sub Main` 过程。 此格式可以是 -main:module  或 -main:namespace.module  。  
   
 ## <a name="remarks"></a>备注  
+
  创建可执行文件或 Windows 可执行程序时，请使用此选项。 如果省略“-main”  选项，编译器将在所有公共类和模块中搜索有效的共享 `Sub Main`。  
   
  有关 `Main` 过程的各种形式的讨论，请参阅 [Visual Basic 中的 Main 过程](../../programming-guide/program-structure/main-procedure.md)。  
@@ -46,6 +49,7 @@ ms.locfileid: "84403156"
 4. 修改“启动对象”  框中的值。  
   
 ## <a name="example"></a>示例  
+
  下面的代码编译 `T2.vb` 和 `T3.vb`，指定将在 `Test2` 类中找到 `Sub Main` 过程。  
   
 ```console

@@ -1,13 +1,13 @@
 ---
 title: dotnet-install 脚本
 description: 了解用于安装 .NET Core SDK 和共享运行时的 dotnet-install 脚本。
-ms.date: 04/30/2020
-ms.openlocfilehash: 8f27b8a7794e84e6e2b288d6cc2ec33ffcb7600f
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.date: 09/22/2020
+ms.openlocfilehash: 35161edd2a4862e064373d75f1e19396983f3a64
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538037"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078198"
 ---
 # <a name="dotnet-install-scripts-reference"></a>dotnet-install 脚本引用
 
@@ -185,7 +185,6 @@ bash 脚本也读取 PowerShell 开关。因此，可以在 Linux/macOS 系统�
   表示特定的内部版本。 可能的值为：
 
   - `latest` - 频道上的最新内部版本（与 `-Channel` 选项结合使用）。
-  - `coherent` - 频道上的最新相干内部版本；使用最新的稳定包组合（与分支名称 `-Channel` 选项结合使用）。
   - 由三部分组成的版本，采用 X.Y.Z 格式，表示特定的内部版本；取代 `-Channel` 选项。 例如：`2.0.0-preview2-006120`。
 
   如果没有指定，`-Version` 默认值为 `latest`。

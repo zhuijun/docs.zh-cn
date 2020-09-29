@@ -9,14 +9,15 @@ helpviewer_keywords:
 - optionexplicit compiler option [Visual Basic]
 - -optionexplicit compiler option [Visual Basic]
 ms.assetid: 5d296ab3-bafe-4c4d-9887-78f162ed86c7
-ms.openlocfilehash: b004acb0c1c7d145c59a1e3a88ef7f1d405a91c6
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: 65cc3fb1b2fa9daa04013caa2b93a3949d0a15b9
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84400549"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098931"
 ---
 # <a name="-optionexplicit"></a>-optionexplicit
+
 如果变量在使用之前未被声明，则会导致编译器报告错误。  
   
 ## <a name="syntax"></a>语法  
@@ -26,10 +27,12 @@ ms.locfileid: "84400549"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `+` &#124; `-`  
  可选。 指定 `-optionexplicit+` 可要求显式声明变量。 `-optionexplicit+` 选项是默认选项，与 `-optionexplicit` 相同。 `-optionexplicit-` 选项启用变量的隐式声明。  
   
 ## <a name="remarks"></a>备注  
+
  如果源代码文件包含 [Option Explicit 语句](../../language-reference/statements/option-explicit-statement.md)，则语句将重写 `-optionexplicit` 命令行编译器设置。  
   
 ### <a name="to-set--optionexplicit-in-the-visual-studio-ide"></a>若要在 Visual Studio IDE 中设置 -optionexplicit  
@@ -41,6 +44,7 @@ ms.locfileid: "84400549"
 3. 修改“Option Explicit”框中的值。   
   
 ## <a name="example"></a>示例  
+
  以下代码在使用 `-optionexplicit-` 时进行编译。  
   
  [!code-vb[VbVbalrCompiler#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/OptionExplicitOff.vb#5)]  

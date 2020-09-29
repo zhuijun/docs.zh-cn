@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -keyfile compiler option [C#]
 - keyfile compiler option [C#]
 ms.assetid: 0815f9de-ace4-4e98-b4c6-13c55dea40c2
-ms.openlocfilehash: a97fc00201be1cf8043fc353b20ef447468a06bf
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 5af40da18895d47933cb809d710e31a40f14513b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125483"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152424"
 ---
 # <a name="-keyfile-c-compiler-options"></a>-keyfile（C# 编译器选项）
+
 指定包含加密密钥的文件名。  
   
 ## <a name="syntax"></a>语法  
@@ -32,6 +33,7 @@ ms.locfileid: "89125483"
 |`file`|含有强名称密钥的文件的名称。|  
   
 ## <a name="remarks"></a>备注  
+
  使用此选项时，编译器在程序集清单中插入指定字段的公钥，然后使用私钥对最终的程序集进行签名。 若要生成密钥文件，请在命令行键入 sn-k `file`。  
   
  如果使用 -target:module 进行编译，密钥文件的名称将保存在模块中，并在使用 [-addmodule](./addmodule-compiler-option.md) 编译程序集时包含到创建的程序集中。  

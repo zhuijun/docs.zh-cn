@@ -3,12 +3,12 @@ title: .NET Core 的 csproj 格式的新增内容
 description: 了解现有文件和 .NET Core csproj 文件之间的区别
 ms.topic: reference
 ms.date: 04/08/2019
-ms.openlocfilehash: 7760dc095fa894b1f356c939eb030e675f58a876
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 3ef6a89a8cd4f811bcdd41b9c9bedbc45da78098
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88810880"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91078211"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>.NET Core 的 csproj 格式的新增内容
 
@@ -364,9 +364,11 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 确定用于已打包的包的输出路径。 默认值为 `$(OutputPath)`。
 
 ### <a name="includesymbols"></a>IncludeSymbols
+
 此布尔值指示在打包项目时，包是否应创建一个附加的符号包。 符号包的格式由 `SymbolPackageFormat` 属性控制。
 
 ### <a name="symbolpackageformat"></a>SymbolPackageFormat
+
 指定符号包的格式。 如果为“symbols.nupkg”，将使用包含 PDB、DLL 和其他输出文件的 .symbols.nupkg  扩展创建旧符号包。 如果为“snupkg”，将创建包含可移植 PDB 的 snupkg 符号包。 默认值为“symbols.nupkg”。
 
 ### <a name="includesource"></a>IncludeSource
@@ -386,9 +388,11 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 指定存储库的类型。 默认值为“git”。
 
 ### <a name="repositorybranch"></a>RepositoryBranch
+
 指定存储库中源分支的名称。 当项目打包到 NuGet 包时，它将被添加到包元数据。
 
 ### <a name="repositorycommit"></a>RepositoryCommit
+
 可选的存储库提交或更改集，指示针对其生成包的源。 还必须指定 `RepositoryUrl` 才能包含此属性。 当项目打包到 NuGet 包中时，此提交或变更集将添加到包元数据中。
 
 ### <a name="nopackageanalysis"></a>NoPackageAnalysis

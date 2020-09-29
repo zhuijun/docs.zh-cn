@@ -6,14 +6,15 @@ helpviewer_keywords:
 - -noconfig compiler option [Visual Basic]
 - /noconfig compiler option [Visual Basic]
 ms.assetid: a7405067-bd21-4171-adf4-a126fa3ad6c3
-ms.openlocfilehash: ee7cd1b8039a8d9312a8b058cc85c41ca536ed2b
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: d7fc73aa24e3d2e323170f38f0f5d689f9c3abaf
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84401935"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91065549"
 ---
 # <a name="-noconfig"></a>-noconfig
+
 指定编译器不应自动引用常用 .NET Framework 程序集，也不应导入 `System` 和 `Microsoft.VisualBasic` 命名空间。  
   
 ## <a name="syntax"></a>语法  
@@ -23,6 +24,7 @@ ms.locfileid: "84401935"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  `-noconfig` 选项告知编译器不要在 Vbc.rsp 文件中编译，该文件与 Vbc.exe 文件位于同一目录。 Vbc.rsp 文件引用常用的 .NET Framework 程序集，并导入 `System` 和 `Microsoft.VisualBasic` 命名空间。 除非指定 `-nostdlib` 选项，否则编译器将隐式引用 System.dll 程序集。 `-nostdlib` 选项指示编译器不要在 Vbc.rsp 中编译或自动引用 System.dll 程序集。  
   
 > [!NOTE]

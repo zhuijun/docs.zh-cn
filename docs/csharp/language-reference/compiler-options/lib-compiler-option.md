@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -lib compiler option [C#]
 - /lib compiler option [C#]
 ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
-ms.openlocfilehash: e53c54dc446d9fea87a9b7a336a38ffaa31704e9
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 9478501ea98ec1b9d3ec2761bc4ebf3f6bef656c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125444"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152437"
 ---
 # <a name="-lib-c-compiler-options"></a>-lib（C# 编译器选项）
+
 -lib 选项指定通过 [-reference（C# 编译器选项）](./reference-compiler-option.md)选项引用的程序集的位置。  
   
 ## <a name="syntax"></a>语法  
@@ -26,6 +27,7 @@ ms.locfileid: "89125444"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `dir1`  
  在当前工作目录（调用编译器的目录）或公共语言运行时的系统目录中未找到引用的程序集时，编译器将在其中进行查找的目录。  
   
@@ -33,6 +35,7 @@ ms.locfileid: "89125444"
  要在其中搜索程序集引用的一个或多个附加目录。 用逗号分隔每个附加目录的名称，中间不要有空格。  
   
 ## <a name="remarks"></a>备注  
+
  编译器按以下顺序搜索未完全限定的程序集引用：  
   
 1. 当前工作目录。 该目录为从其调用编译器的目录。  
@@ -62,6 +65,7 @@ ms.locfileid: "89125444"
  有关如何以编程方式设置此编译器选项的信息，请参阅 <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>。  
   
 ## <a name="example"></a>示例  
+
  编译 t2.cs 以创建 .exe 文件。 编译器将在工作目录和 C 驱动器的根目录中查找程序集引用。  
   
 ```console  

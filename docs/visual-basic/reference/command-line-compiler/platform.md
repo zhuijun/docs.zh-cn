@@ -6,14 +6,15 @@ helpviewer_keywords:
 - /platform compiler option [Visual Basic]
 - -platform compiler option [Visual Basic]
 ms.assetid: f9bc61e6-e854-4ae1-87b9-d6244de23fd1
-ms.openlocfilehash: a6226b73d5d5d4d48a71afe39e8a546019d4c0bc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 488a1da6b25bcb4b42f0d355c6faee542046d0f5
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74352343"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91098886"
 ---
 # <a name="-platform-visual-basic"></a>-platform (Visual Basic)
+
 指定公共语言运行时 (CLR) 的哪个平台版本可以运行输出文件。  
   
 ## <a name="syntax"></a>语法  
@@ -34,6 +35,7 @@ ms.locfileid: "74352343"
 |`anycpu32bitpreferred`|将程序集编译成可在任意平台上运行。 应用程序将作为 32 位 应用程序在 Windows 的 32 位版本和 64 位版本上运行。 此标志仅对可执行文件 (.EXE) 有效且需要 .NET Framework 4.5。|  
   
 ## <a name="remarks"></a>备注  
+
  使用 `-platform` 选项来指定输出文件所面向的处理器类型。  
   
  通常，无论平台如何，Visual Basic 内编写的 .NET Framework 程序集将运行相同内容。 但是，存在一些不同平台行为不同的情况。 这些常见的情况是：  
@@ -75,6 +77,7 @@ ms.locfileid: "74352343"
      有关详细信息，请参阅[编译页 (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)。  
   
 ## <a name="example"></a>示例  
+
  下例阐释使用 `-platform` 编译器选项的方式。  
   
 ```console

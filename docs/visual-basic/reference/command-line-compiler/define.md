@@ -9,14 +9,15 @@ helpviewer_keywords:
 - /define compiler option [Visual Basic]
 - define compiler option [Visual Basic]
 ms.assetid: f735c57d-1cf9-4f2f-a26f-0de630fd4077
-ms.openlocfilehash: d0d1b03d9ab98f28a0112198f1ecc1e928d6d4a7
-ms.sourcegitcommit: f8c270376ed905f6a8896ce0fe25b4f4b38ff498
+ms.openlocfilehash: cb56e727479fd249cb0d7e5e7c3c50d5b68b3a72
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/04/2020
-ms.locfileid: "84408707"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91072010"
 ---
 # <a name="-define-visual-basic"></a>-define (Visual Basic)
+
 定义条件编译器常数。  
   
 ## <a name="syntax"></a>语法  
@@ -39,6 +40,7 @@ or
 |`value`|可选。 指派给 `symbol` 的值。 如果 `value` 是一个字符串，它必须放在反斜杠/双引号序列 (\\") 内而不只是双引号内。 如果未指定值，则视为 True。|  
   
 ## <a name="remarks"></a>备注  
+
  `-define` 选项具有与在源文件中使用 `#Const` 预处理器指令类似的效果，只是使用 `-define` 定义的常数为公共的且应用于项目中的所有文件。  
   
  可以将由此选项创建的符号同 `#If`...`Then`...`#Else` 指令一起使用，以对源文件进行条件编译。  
@@ -52,6 +54,7 @@ or
 |1.在 **“解决方案资源管理器”** 中选择一个项目。 在“项目”菜单上，单击“属性”   。 <br />2.单击“编译”  选项卡。<br />3.单击 **“高级”** 。<br />4.修改“自定义常量”  框中的值。|  
   
 ## <a name="example"></a>示例  
+
  下面的代码定义并使用两个条件编译器常数。  
   
  [!code-vb[VbVbalrCompiler#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/Class1.vb#45)]  
