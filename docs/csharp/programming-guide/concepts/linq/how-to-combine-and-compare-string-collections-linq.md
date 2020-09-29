@@ -3,19 +3,20 @@ title: 如何合并和比较字符串集合 (LINQ) (C#)
 description: 此示例合并包含文本行的文件。 了解如何使用 C# 中的 LINQ 对线集执行简单的串联、联合和交集。
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: bfbdb9a0a3d531b56578b242c91596d9e41b6cd6
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 7bc2b2fbc6a6ce09305f870275f2f0ea5379d4fc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105352"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167595"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-c"></a><span data-ttu-id="25244-104">如何合并和比较字符串集合 (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="25244-104">How to combine and compare string collections (LINQ) (C#)</span></span>
-<span data-ttu-id="25244-105">此示例演示如何合并包含文本行的文件，并对结果排序。</span><span class="sxs-lookup"><span data-stu-id="25244-105">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="25244-106">具体而言，此示例演示如何对两组文本行执行简单的串联、联合和交集。</span><span class="sxs-lookup"><span data-stu-id="25244-106">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>  
+# <a name="how-to-combine-and-compare-string-collections-linq-c"></a><span data-ttu-id="96de9-104">如何合并和比较字符串集合 (LINQ) (C#)</span><span class="sxs-lookup"><span data-stu-id="96de9-104">How to combine and compare string collections (LINQ) (C#)</span></span>
+
+<span data-ttu-id="96de9-105">此示例演示如何合并包含文本行的文件，并对结果排序。</span><span class="sxs-lookup"><span data-stu-id="96de9-105">This example shows how to merge files that contain lines of text and then sort the results.</span></span> <span data-ttu-id="96de9-106">具体而言，此示例演示如何对两组文本行执行简单的串联、联合和交集。</span><span class="sxs-lookup"><span data-stu-id="96de9-106">Specifically, it shows how to perform a simple concatenation, a union, and an intersection on the two sets of text lines.</span></span>  
   
-### <a name="to-set-up-the-project-and-the-text-files"></a><span data-ttu-id="25244-107">设置项目和文本文件</span><span class="sxs-lookup"><span data-stu-id="25244-107">To set up the project and the text files</span></span>  
+### <a name="to-set-up-the-project-and-the-text-files"></a><span data-ttu-id="96de9-107">设置项目和文本文件</span><span class="sxs-lookup"><span data-stu-id="96de9-107">To set up the project and the text files</span></span>  
   
-1. <span data-ttu-id="25244-108">将下面的姓名复制到名为 names1.txt 的文本文件，然后将此文件保存到项目文件夹：</span><span class="sxs-lookup"><span data-stu-id="25244-108">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
+1. <span data-ttu-id="96de9-108">将下面的姓名复制到名为 names1.txt 的文本文件，然后将此文件保存到项目文件夹：</span><span class="sxs-lookup"><span data-stu-id="96de9-108">Copy these names into a text file that is named names1.txt and save it in your project folder:</span></span>  
   
     ```text  
     Bankov, Peter  
@@ -30,7 +31,7 @@ ms.locfileid: "87105352"
     Garcia, Debra  
     ```  
   
-2. <span data-ttu-id="25244-109">将下面的姓名复制到名为 names2.txt 的文本文件，然后将此文件保存到项目文件夹。</span><span class="sxs-lookup"><span data-stu-id="25244-109">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="25244-110">请注意，这两个文件拥有一些共同的名称。</span><span class="sxs-lookup"><span data-stu-id="25244-110">Note that the two files have some names in common.</span></span>  
+2. <span data-ttu-id="96de9-109">将下面的姓名复制到名为 names2.txt 的文本文件，然后将此文件保存到项目文件夹。</span><span class="sxs-lookup"><span data-stu-id="96de9-109">Copy these names into a text file that is named names2.txt and save it in your project folder.</span></span> <span data-ttu-id="96de9-110">请注意，这两个文件拥有一些共同的名称。</span><span class="sxs-lookup"><span data-stu-id="96de9-110">Note that the two files have some names in common.</span></span>  
   
     ```text  
     Liu, Jinghao  
@@ -45,7 +46,7 @@ ms.locfileid: "87105352"
     El Yassir, Mehdi  
     ```  
   
-## <a name="example"></a><span data-ttu-id="25244-111">示例</span><span class="sxs-lookup"><span data-stu-id="25244-111">Example</span></span>  
+## <a name="example"></a><span data-ttu-id="96de9-111">示例</span><span class="sxs-lookup"><span data-stu-id="96de9-111">Example</span></span>  
   
 ```csharp  
 class MergeStrings  
@@ -169,10 +170,11 @@ class MergeStrings
 */  
 ```  
   
-## <a name="compiling-the-code"></a><span data-ttu-id="25244-112">编译代码</span><span class="sxs-lookup"><span data-stu-id="25244-112">Compiling the Code</span></span>  
- <span data-ttu-id="25244-113">使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。</span><span class="sxs-lookup"><span data-stu-id="25244-113">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
-  
-## <a name="see-also"></a><span data-ttu-id="25244-114">请参阅</span><span class="sxs-lookup"><span data-stu-id="25244-114">See also</span></span>
+## <a name="compiling-the-code"></a><span data-ttu-id="96de9-112">编译代码</span><span class="sxs-lookup"><span data-stu-id="96de9-112">Compiling the Code</span></span>  
 
-- [<span data-ttu-id="25244-115">LINQ 和字符串 (C#)</span><span class="sxs-lookup"><span data-stu-id="25244-115">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
-- [<span data-ttu-id="25244-116">LINQ 和文件目录 (C#)</span><span class="sxs-lookup"><span data-stu-id="25244-116">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)
+ <span data-ttu-id="96de9-113">使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。</span><span class="sxs-lookup"><span data-stu-id="96de9-113">Create a C# console application project, with `using` directives for the System.Linq and System.IO namespaces.</span></span>  
+  
+## <a name="see-also"></a><span data-ttu-id="96de9-114">请参阅</span><span class="sxs-lookup"><span data-stu-id="96de9-114">See also</span></span>
+
+- [<span data-ttu-id="96de9-115">LINQ 和字符串 (C#)</span><span class="sxs-lookup"><span data-stu-id="96de9-115">LINQ and Strings (C#)</span></span>](./linq-and-strings.md)
+- [<span data-ttu-id="96de9-116">LINQ 和文件目录 (C#)</span><span class="sxs-lookup"><span data-stu-id="96de9-116">LINQ and File Directories (C#)</span></span>](./linq-and-file-directories.md)

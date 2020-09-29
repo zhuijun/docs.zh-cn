@@ -6,19 +6,20 @@ helpviewer_keywords:
 - interfaces [C#], event implementation in classes
 - events [C#], in interfaces
 ms.assetid: 63527447-9535-4880-8e95-35e2075827df
-ms.openlocfilehash: bd86aed4f8d8ac6e291c11fe441f87ac97593b03
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 153a2efa254bf2f2c81cec4b28a53207cdc4efe5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302121"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167543"
 ---
-# <a name="how-to-implement-interface-events-c-programming-guide"></a><span data-ttu-id="68777-104">如何实现接口事件（C# 编程指南）</span><span class="sxs-lookup"><span data-stu-id="68777-104">How to implement interface events (C# Programming Guide)</span></span>
-<span data-ttu-id="68777-105">[接口](../../language-reference/keywords/interface.md)可以声明[事件](../../language-reference/keywords/event.md)。</span><span class="sxs-lookup"><span data-stu-id="68777-105">An [interface](../../language-reference/keywords/interface.md) can declare an [event](../../language-reference/keywords/event.md).</span></span> <span data-ttu-id="68777-106">下面的示例演示如何在类中实现接口事件。</span><span class="sxs-lookup"><span data-stu-id="68777-106">The following example shows how to implement interface events in a class.</span></span> <span data-ttu-id="68777-107">这些规则基本上都与实现任何接口方法或属性时的相同。</span><span class="sxs-lookup"><span data-stu-id="68777-107">Basically the rules are the same as when you implement any interface method or property.</span></span>  
+# <a name="how-to-implement-interface-events-c-programming-guide"></a><span data-ttu-id="0bd18-104">如何实现接口事件（C# 编程指南）</span><span class="sxs-lookup"><span data-stu-id="0bd18-104">How to implement interface events (C# Programming Guide)</span></span>
+
+<span data-ttu-id="0bd18-105">[接口](../../language-reference/keywords/interface.md)可以声明[事件](../../language-reference/keywords/event.md)。</span><span class="sxs-lookup"><span data-stu-id="0bd18-105">An [interface](../../language-reference/keywords/interface.md) can declare an [event](../../language-reference/keywords/event.md).</span></span> <span data-ttu-id="0bd18-106">下面的示例演示如何在类中实现接口事件。</span><span class="sxs-lookup"><span data-stu-id="0bd18-106">The following example shows how to implement interface events in a class.</span></span> <span data-ttu-id="0bd18-107">这些规则基本上都与实现任何接口方法或属性时的相同。</span><span class="sxs-lookup"><span data-stu-id="0bd18-107">Basically the rules are the same as when you implement any interface method or property.</span></span>  
   
-## <a name="to-implement-interface-events-in-a-class"></a><span data-ttu-id="68777-108">在类中实现接口事件</span><span class="sxs-lookup"><span data-stu-id="68777-108">To implement interface events in a class</span></span>  
+## <a name="to-implement-interface-events-in-a-class"></a><span data-ttu-id="0bd18-108">在类中实现接口事件</span><span class="sxs-lookup"><span data-stu-id="0bd18-108">To implement interface events in a class</span></span>  
   
-<span data-ttu-id="68777-109">在类中声明事件，然后在相应区域中调用它。</span><span class="sxs-lookup"><span data-stu-id="68777-109">Declare the event in your class and then invoke it in the appropriate areas.</span></span>  
+<span data-ttu-id="0bd18-109">在类中声明事件，然后在相应区域中调用它。</span><span class="sxs-lookup"><span data-stu-id="0bd18-109">Declare the event in your class and then invoke it in the appropriate areas.</span></span>  
   
 ```csharp
 namespace ImplementInterfaceEvents  
@@ -51,17 +52,18 @@ namespace ImplementInterfaceEvents
 }  
 ```  
   
-## <a name="example"></a><span data-ttu-id="68777-110">示例</span><span class="sxs-lookup"><span data-stu-id="68777-110">Example</span></span>  
-<span data-ttu-id="68777-111">下面的示例演示如何处理不太常见的情况：类继承自两个或多个接口，且每个接口都具有相同名称的事件。</span><span class="sxs-lookup"><span data-stu-id="68777-111">The following example shows how to handle the less-common situation in which your class inherits from two or more interfaces and each interface has an event with the same name.</span></span> <span data-ttu-id="68777-112">在这种情况下，你必须为至少其中一个事件提供显式接口实现。</span><span class="sxs-lookup"><span data-stu-id="68777-112">In this situation, you must provide an explicit interface implementation for at least one of the events.</span></span> <span data-ttu-id="68777-113">为事件编写显式接口实现时，还必须编写 `add` 和 `remove` 事件访问器。</span><span class="sxs-lookup"><span data-stu-id="68777-113">When you write an explicit interface implementation for an event, you must also write the `add` and `remove` event accessors.</span></span> <span data-ttu-id="68777-114">通常这些访问器由编译器提供，但在这种情况下编译器不提供它们。</span><span class="sxs-lookup"><span data-stu-id="68777-114">Normally these are provided by the compiler, but in this case the compiler cannot provide them.</span></span>  
+## <a name="example"></a><span data-ttu-id="0bd18-110">示例</span><span class="sxs-lookup"><span data-stu-id="0bd18-110">Example</span></span>  
+
+<span data-ttu-id="0bd18-111">下面的示例演示如何处理不太常见的情况：类继承自两个或多个接口，且每个接口都具有相同名称的事件。</span><span class="sxs-lookup"><span data-stu-id="0bd18-111">The following example shows how to handle the less-common situation in which your class inherits from two or more interfaces and each interface has an event with the same name.</span></span> <span data-ttu-id="0bd18-112">在这种情况下，你必须为至少其中一个事件提供显式接口实现。</span><span class="sxs-lookup"><span data-stu-id="0bd18-112">In this situation, you must provide an explicit interface implementation for at least one of the events.</span></span> <span data-ttu-id="0bd18-113">为事件编写显式接口实现时，还必须编写 `add` 和 `remove` 事件访问器。</span><span class="sxs-lookup"><span data-stu-id="0bd18-113">When you write an explicit interface implementation for an event, you must also write the `add` and `remove` event accessors.</span></span> <span data-ttu-id="0bd18-114">通常这些访问器由编译器提供，但在这种情况下编译器不提供它们。</span><span class="sxs-lookup"><span data-stu-id="0bd18-114">Normally these are provided by the compiler, but in this case the compiler cannot provide them.</span></span>  
   
-<span data-ttu-id="68777-115">通过提供自己的访问器，可以指定两个事件是由类中的同一个事件表示，还是由不同事件表示。</span><span class="sxs-lookup"><span data-stu-id="68777-115">By providing your own accessors, you can specify whether the two events are represented by the same event in your class, or by different events.</span></span> <span data-ttu-id="68777-116">例如，如果根据接口规范应在不同时间引发事件，可以在类中将每个事件与单独实现关联。</span><span class="sxs-lookup"><span data-stu-id="68777-116">For example, if the events should be raised at different times according to the interface specifications, you can associate each event with a separate implementation in your class.</span></span> <span data-ttu-id="68777-117">在下面的示例中，订阅服务器确定它们通过将形状引用转换为 `IShape` 或 `IDrawingObject` 接收哪个 `OnDraw` 事件。</span><span class="sxs-lookup"><span data-stu-id="68777-117">In the following example, subscribers determine which `OnDraw` event they will receive by casting the shape reference to either an `IShape` or an `IDrawingObject`.</span></span>  
+<span data-ttu-id="0bd18-115">通过提供自己的访问器，可以指定两个事件是由类中的同一个事件表示，还是由不同事件表示。</span><span class="sxs-lookup"><span data-stu-id="0bd18-115">By providing your own accessors, you can specify whether the two events are represented by the same event in your class, or by different events.</span></span> <span data-ttu-id="0bd18-116">例如，如果根据接口规范应在不同时间引发事件，可以在类中将每个事件与单独实现关联。</span><span class="sxs-lookup"><span data-stu-id="0bd18-116">For example, if the events should be raised at different times according to the interface specifications, you can associate each event with a separate implementation in your class.</span></span> <span data-ttu-id="0bd18-117">在下面的示例中，订阅服务器确定它们通过将形状引用转换为 `IShape` 或 `IDrawingObject` 接收哪个 `OnDraw` 事件。</span><span class="sxs-lookup"><span data-stu-id="0bd18-117">In the following example, subscribers determine which `OnDraw` event they will receive by casting the shape reference to either an `IShape` or an `IDrawingObject`.</span></span>  
   
  [!code-csharp[csProgGuideEvents#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEvents/CS/Events.cs#10)]
   
-## <a name="see-also"></a><span data-ttu-id="68777-118">另请参阅</span><span class="sxs-lookup"><span data-stu-id="68777-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0bd18-118">另请参阅</span><span class="sxs-lookup"><span data-stu-id="0bd18-118">See also</span></span>
 
-- [<span data-ttu-id="68777-119">C# 编程指南</span><span class="sxs-lookup"><span data-stu-id="68777-119">C# Programming Guide</span></span>](../index.md)
-- [<span data-ttu-id="68777-120">事件</span><span class="sxs-lookup"><span data-stu-id="68777-120">Events</span></span>](./index.md)
-- [<span data-ttu-id="68777-121">委托</span><span class="sxs-lookup"><span data-stu-id="68777-121">Delegates</span></span>](../delegates/index.md)
-- [<span data-ttu-id="68777-122">显式接口实现</span><span class="sxs-lookup"><span data-stu-id="68777-122">Explicit Interface Implementation</span></span>](../interfaces/explicit-interface-implementation.md)
-- [<span data-ttu-id="68777-123">如何在派生类中引发基类事件</span><span class="sxs-lookup"><span data-stu-id="68777-123">How to raise base class events in derived classes</span></span>](./how-to-raise-base-class-events-in-derived-classes.md)
+- [<span data-ttu-id="0bd18-119">C# 编程指南</span><span class="sxs-lookup"><span data-stu-id="0bd18-119">C# Programming Guide</span></span>](../index.md)
+- [<span data-ttu-id="0bd18-120">事件</span><span class="sxs-lookup"><span data-stu-id="0bd18-120">Events</span></span>](./index.md)
+- [<span data-ttu-id="0bd18-121">委托</span><span class="sxs-lookup"><span data-stu-id="0bd18-121">Delegates</span></span>](../delegates/index.md)
+- [<span data-ttu-id="0bd18-122">显式接口实现</span><span class="sxs-lookup"><span data-stu-id="0bd18-122">Explicit Interface Implementation</span></span>](../interfaces/explicit-interface-implementation.md)
+- [<span data-ttu-id="0bd18-123">如何在派生类中引发基类事件</span><span class="sxs-lookup"><span data-stu-id="0bd18-123">How to raise base class events in derived classes</span></span>](./how-to-raise-base-class-events-in-derived-classes.md)
