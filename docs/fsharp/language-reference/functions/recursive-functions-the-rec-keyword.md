@@ -2,12 +2,12 @@
 title: 递归函数：rec 关键字
 description: '了解如何使用 F # "rec" 关键字来定义递归函数。'
 ms.date: 08/12/2020
-ms.openlocfilehash: 389357bd13cef39b1d07972c1a3167320b61612b
-ms.sourcegitcommit: 8bfeb5930ca48b2ee6053f16082dcaf24d46d221
+ms.openlocfilehash: 1ab00ff9400129e531fd7320861b3d9625cad08c
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/18/2020
-ms.locfileid: "88558707"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438080"
 ---
 # <a name="recursive-functions-the-rec-keyword"></a>递归函数：rec 关键字
 
@@ -36,7 +36,7 @@ and function2-nameparameter-list =
 下面的示例演示一个使用数学定义计算第*n*<sup>th</sup>个斐波那契数的递归函数。
 
 ```fsharp
-let fib n =
+let rec fib n =
     match n with
     | 0 | 1 -> 1
     | n -> fib (n-1) + fib (n-2)
