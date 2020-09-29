@@ -3,14 +3,15 @@ title: 如何使用组将一个文件拆分成多个文件 (LINQ) (C#)
 description: 了解如何使用组将一个文件拆分成多个文件。 查看代码示例和其他可用资源。
 ms.date: 07/20/2015
 ms.assetid: 8179b91c-d778-4e57-884f-77fe5a8e4e40
-ms.openlocfilehash: 1db16a48db257069eca83127c0b1fed7e49f19d6
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: b7be01be0f1539eb6ed4f4857af2625672319493
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87301055"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203925"
 ---
 # <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>如何使用组将一个文件拆分成多个文件 (LINQ) (C#)
+
 此示例演示一种进行以下操作的方法：合并两个文件的内容，然后创建一组以新方式整理数据的新文件。  
   
 ### <a name="to-create-the-data-files"></a>创建数据文件  

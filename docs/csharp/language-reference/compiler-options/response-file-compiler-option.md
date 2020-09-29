@@ -8,14 +8,15 @@ helpviewer_keywords:
 - response files, specifying for compilation [C#]
 - '@ compiler option'
 ms.assetid: dda4fa9f-a02c-400f-8b6a-d58834e13d7f
-ms.openlocfilehash: 89a057cba6e0d23c15fc9b652e5bfbc89b6ecbaa
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 8f7e222e194fc4ba96159ecd792765f64b4d1c57
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128642"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193746"
 ---
 # <a name="-c-compiler-options"></a>@（C# 编译器选项）
+
 通过 @ 选项，可以指定包含编译器选项和要编译的源代码文件的文件。  
   
 ## <a name="syntax"></a>语法  
@@ -25,10 +26,12 @@ ms.locfileid: "89128642"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `response_file`  
  列出了编译器选项或要编译的源代码文件的文件。  
   
 ## <a name="remarks"></a>备注  
+
  编译器选项和源代码文件将由编译器处理，如同在命令行被指定一样。  
   
  若要在一次编译中指定多个响应文件，请指定多个响应文件选项。 例如：  
@@ -48,6 +51,7 @@ ms.locfileid: "89128642"
  不能在 Visual Studio 开发环境中设置此编译器选项，也不能以编程方式对其进行更改。  
   
 ## <a name="example"></a>示例  
+
  以下几行来自示例响应文件：  
   
 ```console  

@@ -3,14 +3,15 @@ title: 对数据排序 (C#)
 description: 了解排序操作以及使用 C# 中的 LINQ 执行排序操作的标准查询运算符方法。
 ms.date: 07/20/2015
 ms.assetid: d93fa055-2f19-46d2-9898-e2aed628f1c9
-ms.openlocfilehash: 5feeb0e2229fc370fdcb9608817f41832bffd7cc
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 0665e5dec95fd2929d24d82568de66597df1c0bd
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302329"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195501"
 ---
 # <a name="sorting-data-c"></a>对数据排序 (C#)
+
 排序操作基于一个或多个属性对序列的元素进行排序。 第一个排序条件对元素执行主要排序。 通过指定第二个排序条件，您可以对每个主要排序组内的元素进行排序。  
   
  下图展示了对一系列字符执行按字母顺序排序操作的结果。
@@ -34,6 +35,7 @@ ms.locfileid: "87302329"
 ### <a name="primary-sort-examples"></a>主要排序示例  
   
 #### <a name="primary-ascending-sort"></a>主要升序排序  
+
  下面的示例演示如何在 LINQ 查询中使用 `orderby` 子句按字符串长度对数组中的字符串进行升序排序。  
   
 ```csharp  
@@ -57,6 +59,7 @@ foreach (string str in query)
 ```  
   
 #### <a name="primary-descending-sort"></a>主要降序排序  
+
  下面的示例演示如何在 LINQ 查询中使用 `orderby descending` 子句按字符串的第一个字母对字符串进行降序排序。  
   
 ```csharp  
@@ -82,6 +85,7 @@ foreach (string str in query)
 ### <a name="secondary-sort-examples"></a>次要排序示例  
   
 #### <a name="secondary-ascending-sort"></a>次要升序排序  
+
  下面的示例演示如何在 LINQ 查询中使用 `orderby` 子句对数组中的字符串执行主要和次要排序。 首先按字符串长度，其次按字符串的第一个字母，对字符串进行升序排序。  
   
 ```csharp  
@@ -105,6 +109,7 @@ foreach (string str in query)
 ```  
   
 #### <a name="secondary-descending-sort"></a>次要降序排序  
+
  下面的示例演示如何在 LINQ 查询中使用 `orderby descending` 子句按升序执行主要排序，按降序执行次要排序。 首先按字符串长度，其次按字符串的第一个字母，对字符串进行排序。  
   
 ```csharp  

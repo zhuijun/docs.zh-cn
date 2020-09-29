@@ -10,14 +10,15 @@ helpviewer_keywords:
 - banners, suppressing startup
 - /nologo compiler option [C#]
 ms.assetid: 426afb36-a8fb-469d-9c45-a35d9512557c
-ms.openlocfilehash: 5107563b5133c183dca7626281ad11df9d09a8d8
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 4834fd1888c25c282b146b6c0c26cec898bc0680
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125210"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194058"
 ---
 # <a name="-nologo-c-compiler-options"></a>-nologo（C# 编译器选项）
+
 -nologo 选项可在编译器启动时取消显式登录版权标志并在编译期间取消显示信息性消息****。  
   
 ## <a name="syntax"></a>语法  
@@ -27,6 +28,7 @@ ms.locfileid: "89125210"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  此选项不适用于开发环境内，仅当从命令行编译时可用。  
   
  此编译器选项在 Visual Studio 中不可用，并且无法以编程方式更改。  

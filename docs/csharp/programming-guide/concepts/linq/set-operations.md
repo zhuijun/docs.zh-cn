@@ -3,14 +3,15 @@ title: 集运算 (C#)
 description: 了解设置操作以及使用 C# 中的 LINQ 执行设置操作的标准查询运算符方法。
 ms.date: 07/20/2015
 ms.assetid: 7c589367-ef8f-4161-9050-642c47e6bf63
-ms.openlocfilehash: ab2608b267113ad5d47a33e64cd9a5e21496f668
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 8679f804adaaeada390206e3e1dd2a0711a2cbf6
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302368"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195605"
 ---
 # <a name="set-operations-c"></a>集运算 (C#)
+
 LINQ 中的集运算是指根据相同或不同集合（或集）中是否存在等效元素来生成结果集的查询运算。  
   
  下节列出了执行集运算的标准查询运算符方法。  
@@ -27,6 +28,7 @@ LINQ 中的集运算是指根据相同或不同集合（或集）中是否存在
 ## <a name="comparison-of-set-operations"></a>比较集运算  
   
 ### <a name="distinct"></a>Distinct  
+
  以下示例演示字符序列上 <xref:System.Linq.Enumerable.Distinct%2A?displayProperty=nameWithType> 方法的行为。 返回的序列包含输入序列的唯一元素。  
   
  ![显示 Distinct() 的行为的图。](./media/set-operations/distinct-method-behavior.png)  
@@ -34,6 +36,7 @@ LINQ 中的集运算是指根据相同或不同集合（或集）中是否存在
  [!code-csharp-interactive[Distinct](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQSetOperation/CS/SetOperation.cs#1)]
   
 ### <a name="except"></a>Except  
+
  以下示例演示 <xref:System.Linq.Enumerable.Except%2A?displayProperty=nameWithType> 的行为。 返回的序列只包含位于第一个输入序列但不位于第二个输入序列的元素。  
   
  ![显示 Except() 的操作的图](./media/set-operations/except-behavior-graphic.png "显示 Except 的行为。")  
@@ -41,6 +44,7 @@ LINQ 中的集运算是指根据相同或不同集合（或集）中是否存在
 [!code-csharp-interactive[Except](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQSetOperation/CS/SetOperation.cs#2)]
 
 ### <a name="intersect"></a>相交  
+
  以下示例演示 <xref:System.Linq.Enumerable.Intersect%2A?displayProperty=nameWithType> 的行为。 返回的序列包含两个输入序列共有的元素。  
   
  ![显示两个序列的交集的图。](./media/set-operations/intersection-two-sequences.png)  
@@ -48,6 +52,7 @@ LINQ 中的集运算是指根据相同或不同集合（或集）中是否存在
 [!code-csharp-interactive[Intersect](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQSetOperation/CS/SetOperation.cs#3)]
 
 ### <a name="union"></a>联合  
+
  以下示例演示对两个字符序列执行的联合操作。 返回的序列包含两个输入序列的唯一元素。  
   
  ![显示两个序列的并集的图。](./media/set-operations/union-operation-two-sequences.png)  

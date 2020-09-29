@@ -6,14 +6,15 @@ helpviewer_keywords:
 - C# language, constants
 - constants [C#]
 ms.assetid: 43f511be-346c-4b8a-995e-aded94542ece
-ms.openlocfilehash: afa2799cf76f976e332f91b631dc90e2799a0aa0
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: dd8c6469c4d72da5588f0dce5314308bcc7e3b95
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864639"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91199115"
 ---
 # <a name="how-to-define-constants-in-c"></a>如何在 C\# 中定义常量
+
 常量是在编译时设置其值并且永远不能更改其值的字段。 使用常量可以为特殊值提供有意义的名称，而不是数字文本（“幻数”）。  
   
 > [!NOTE]
@@ -24,6 +25,7 @@ ms.locfileid: "86864639"
  若要定义非整型常量，一种方法是将它们分组到一个名为 `Constants` 的静态类。 这要求对常量的所有引用都在其前面加上该类名，如下例所示。  
   
 ## <a name="example"></a>示例  
+
  [!code-csharp[csProgGuideObjects#89](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#89)]  
   
  使用类名限定符有助于确保你和使用该常量的其他人了解它是常量并且不能修改。  

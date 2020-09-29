@@ -9,14 +9,15 @@ helpviewer_keywords:
 - target compiler options [C#], /target:module
 - /target compiler options [C#], /target:module
 ms.assetid: 9af1e4fa-c749-44e7-ae58-90a3d05d4e72
-ms.openlocfilehash: 2074e170ab177c39fdf3954fa93ae4b666bf853d
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: d8691e5e4477dbbe989344469b44382d5e0e7c8b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466048"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193603"
 ---
 # <a name="-targetmodule-c-compiler-options"></a>-target:module（C# 编译器选项）
+
 此选项会导致编译器不生成程序集清单。  
   
 ## <a name="syntax"></a>语法  
@@ -26,6 +27,7 @@ ms.locfileid: "89466048"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  默认情况下，使用此选项编译时所创建的输出文件具有扩展名 .netmodule。  
   
  .NET 运行时无法加载没有程序集清单的文件。 但是，此类文件可以通过 [-addmodule](./addmodule-compiler-option.md) 合并到程序集的程序集清单中。  
@@ -37,6 +39,7 @@ ms.locfileid: "89466048"
  有关如何以编程方式设置此编译器选项的信息，请参阅 <xref:VSLangProj80.ProjectProperties3.OutputType%2A>。  
   
 ## <a name="example"></a>示例  
+
  通过创建 `in.netmodule` 编译 `in.cs`：  
   
 ```console  

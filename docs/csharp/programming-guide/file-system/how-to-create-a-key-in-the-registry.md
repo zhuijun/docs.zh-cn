@@ -7,14 +7,15 @@ helpviewer_keywords:
 - registry keys, creating [C#]
 - keys, creating in registry
 ms.assetid: 8fa475b0-e01f-483a-9327-fd03488fdf5d
-ms.openlocfilehash: 6db076bc22e098c285b74a8c10e8b5f456c2c55e
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: c51fa61aa4c501921d5c7ace99a8c5aaf7b29f58
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299976"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203912"
 ---
 # <a name="how-to-create-a-key-in-the-registry-c-programming-guide"></a>如何在注册表中创建注册表项（C# 编程指南）
+
 本示例将值对“Name”和“Isabella”添加到当前用户注册表中的项“Names”之下。  
   
 ## <a name="example"></a>示例  
@@ -35,6 +36,7 @@ key.Close();
 - 将 `Name` 参数替换为直接存在于“Names”节点下的值的名称。  
   
 ## <a name="robust-programming"></a>可靠编程  
+
  检查注册表结构，查找适合项的位置。 例如，可能需要打开当前用户的 Software 项，并用公司的名称创建一项。 然后将注册表值添加到公司的项上。  
   
  以下情况可能会导致异常：  
@@ -50,6 +52,7 @@ key.Close();
 - 注册表项为只读。  
   
 ## <a name="net-security"></a>.NET 安全性  
+
  将数据写入用户文件夹 `Microsoft.Win32.Registry.CurrentUser` 比写入本地计算机 `Microsoft.Win32.Registry.LocalMachine` 更安全。  
   
  创建注册表值时，需要确定该值已存在时应执行的操作。 另一进程（可能是恶意进程）可能已创建了该值，并拥有对该值的访问权。 将数据放入注册表值后，其他进程即可使用这些数据。 若要防止出现这种情况，请使用 `Overload:Microsoft.Win32.RegistryKey.GetValue` 方法。 如果项不存在，则该方法返回 null。  

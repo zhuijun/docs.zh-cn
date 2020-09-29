@@ -9,14 +9,15 @@ helpviewer_keywords:
 - /target compiler options [C#], /target:exe
 - -target compiler options [C#], /target:exe
 ms.assetid: bda5717d-1b91-4848-956b-fcf85c30e432
-ms.openlocfilehash: 3cea52fe872fcb407206ee2063b93dc81447a3b2
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: ae1706f1ecdd396e24711070d19420faa6d34761
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128499"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193753"
 ---
 # <a name="-targetexe-c-compiler-options"></a>-target:exe（C# 编译器选项）
+
 -target:exe 选项将使编译器创建可执行文件 (EXE) 和控制台应用程序。  
   
 ## <a name="syntax"></a>语法  
@@ -26,6 +27,7 @@ ms.locfileid: "89128499"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  默认情况下，-target:exe 选项有效。 将创建扩展名为 .exe 的可执行文件。  
   
  使用 [-target:winexe](./target-winexe-compiler-option.md) 创建 Windows 程序可执行文件。  
@@ -47,6 +49,7 @@ ms.locfileid: "89128499"
  有关如何以编程方式设置此编译器选项的信息，请参阅 <xref:VSLangProj80.ProjectProperties3.OutputType%2A>。  
   
 ## <a name="example"></a>示例  
+
  以下每个命令行都将编译 `in.cs` 并创建 `in.exe`：  
   
 ```console  

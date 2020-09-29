@@ -12,14 +12,15 @@ helpviewer_keywords:
 - res compiler option [C#]
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
-ms.openlocfilehash: 1e2de095b460b684fb06faf46731283a1304906e
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 6f90ce6c1590784cefbd5f15ca8a36941aad77ed
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465684"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193772"
 ---
 # <a name="-resource-c-compiler-options"></a>-resource（C# 编译器选项）
+
 将指定资源嵌入输出文件。  
   
 ## <a name="syntax"></a>语法  
@@ -29,6 +30,7 @@ ms.locfileid: "89465684"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `filename`  
  要嵌入到输出文件的 .NET 资源文件。  
   
@@ -39,6 +41,7 @@ ms.locfileid: "89465684"
  资源的可访问性：public 或 private。 默认值为 public。  
   
 ## <a name="remarks"></a>备注  
+
  使用 [linkresource](./linkresource-compiler-option.md) 将资源链接至程序集，不向输出文件添加资源文件。  
   
  默认情况下，如果使用 C# 编译器创建资源，则这些资源在程序集中是公有的。 若要使资源变为私有，请将 `private` 指定为可访问性修饰符。 不允许使用 `public` 或 `private` 以外的任何其他可访问性。  
@@ -62,6 +65,7 @@ ms.locfileid: "89465684"
  有关如何以编程方式设置此编译器选项的信息，请参阅 <xref:VSLangProj80.FileProperties2.BuildAction%2A>。  
   
 ## <a name="example"></a>示例  
+
  编译 `in.cs` 并附加资源文件 `rf.resource`：  
   
 ```console  

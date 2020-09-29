@@ -12,14 +12,15 @@ helpviewer_keywords:
 - -linkresource compiler option [C#]
 - linkresource compiler option [C#]
 ms.assetid: 440c26c2-77c1-4811-a0a3-57cce3f5fc96
-ms.openlocfilehash: cd1150f3fa0dd0eca4e9352ce3809e73a15126c7
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 4efa0cbf286b40ad971bad66a7acce15e553eb39
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466100"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194097"
 ---
 # <a name="-linkresource-c-compiler-options"></a>-linkresource (C# 编译器选项)
+
 在输出文件中创建指向 .NET 资源的链接。 不会在输出文件中添加资源文件。 这不同于会在输出文件中嵌入资源文件的 [-resource](./resource-compiler-option.md) 选项。  
   
 ## <a name="syntax"></a>语法  
@@ -29,6 +30,7 @@ ms.locfileid: "89466100"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `filename`  
  希望从程序集链接到的 .NET 资源文件。  
   
@@ -39,6 +41,7 @@ ms.locfileid: "89466100"
  资源的可访问性：public 或 private。 默认值为 public。  
   
 ## <a name="remarks"></a>备注  
+
  默认情况下，如果使用 C# 编译器创建链接资源，则这些资源在程序集中是公有的。 若要使资源变为私有，请将 `private` 指定为可访问性修饰符。 不允许使用 `public` 或 `private` 以外的任何其他修饰符。  
   
  -linkresource 需要某个 [-target](./target-compiler-option.md) 选项（-target:module 除外）********。  
@@ -52,6 +55,7 @@ ms.locfileid: "89466100"
  此编译器选项在 Visual Studio 中不可用，并且无法以编程方式更改。  
   
 ## <a name="example"></a>示例  
+
  编译 `in.cs` 并链接到资源文件 `rf.resource`：  
   
 ```console  
@@ -59,6 +63,7 @@ csc -linkresource:rf.resource in.cs
 ```  
   
 ## <a name="example"></a>示例  
+
  将 `A.cs` 编译为 DLL，链接到本机 DLL N.dll，并将输出文件放在全局程序集缓存 (GAC) 中。 在此示例中，A.dll 和 N.dll 都存在于 GAC 中。  
   
 ```console  
@@ -67,6 +72,7 @@ gacutil -i A.dll
 ```  
   
 ## <a name="example"></a>示例  
+
  此示例执行的操作与上一示例相同，但使用程序集链接器选项执行。  
   
 ```console  

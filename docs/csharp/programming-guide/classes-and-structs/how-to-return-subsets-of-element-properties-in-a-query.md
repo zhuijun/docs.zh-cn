@@ -5,14 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#], for subsets of element properties
 ms.assetid: fabdf349-f443-4e3f-8368-6c471be1dd7b
-ms.openlocfilehash: 882d94bc82527c14bd6c038f4bf574c2211b9089
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 0ef68921b9d45e58024b37d559ee8291d8744af8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864366"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204016"
 ---
 # <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>如何在查询中返回元素属性的子集（C# 编程指南）
+
 当下列两个条件都满足时，可在查询表达式中使用匿名类型：  
   
 - 只想返回每个源元素的某些属性。  
@@ -26,6 +27,7 @@ select student.ID;
 ```  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示如何使用匿名类型只返回每个源元素的符合指定条件的属性子集。  
   
  [!code-csharp[csProgGuideLINQ#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#31)]  

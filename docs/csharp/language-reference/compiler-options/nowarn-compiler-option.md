@@ -9,14 +9,15 @@ helpviewer_keywords:
 - /nowarn compiler option [C#]
 - -nowarn compiler option [C#]
 ms.assetid: 6dcbc5e8-ae67-4566-9df3-f63cfdd9c4e4
-ms.openlocfilehash: ab906912bc4bfab40e459c92a823b915240b8d55
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 31a7ee5eacb2e7cd6b24c4a2276ce6e07fcc67e1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125080"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194019"
 ---
 # <a name="-nowarn-c-compiler-options"></a>-nowarn（C# 编译器选项）
+
 使用 -nowarn 选项可以禁止编译器显示一个或多个警告。 使用逗号分隔多个警告编号。  
   
 ## <a name="syntax"></a>语法  
@@ -26,10 +27,12 @@ ms.locfileid: "89125080"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `number1`, `number2`  
  希望编译器禁止显示的警告编号。  
   
 ## <a name="remarks"></a>备注  
+
  只应指定警告标识符的数值部分。 例如，如果要禁止显示 CS0028，则可以指定 `-nowarn:28`。  
   
  编译器会以无提示方式忽略传递给 `-nowarn` 的警告编号，这些编号在早期版本中有效，但已从编译器中移除。 例如，CS0679 在 Visual Studio .NET 2002 的编译器中有效，但是在后来已移除。  

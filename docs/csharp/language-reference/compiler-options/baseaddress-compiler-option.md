@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -baseaddress compiler option [C#]
 - /baseaddress compiler option [C#]
 ms.assetid: ce13c965-dfe4-4433-94f5-63b476e3a608
-ms.openlocfilehash: 17bca4f03c75f7d617e4e99ebab4d1602bb3214e
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 76da496f7045f12778bba273947b913be1b94e3e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537243"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91196840"
 ---
 # <a name="-baseaddress-c-compiler-options"></a>-baseaddress（C# 编译器选项）
+
 通过 -baseaddress 选项可指定加载 DLL 的首选基址。 若要深入了解何时且为何要使用此选项，请参阅 [Larry Osterman 的网络日志](/archive/blogs/larryosterman/why-should-i-even-bother-to-use-dlls-in-my-system)。  
   
 ## <a name="syntax"></a>语法  
@@ -26,10 +27,12 @@ ms.locfileid: "90537243"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `address`  
  DLL 的基址。 可将此地址指定为十进制数、十六进制数或八进制数。  
   
 ## <a name="remarks"></a>备注  
+
  DLL 的默认基址由 .NET 公共语言运行时设置。  
   
  请注意，此地址中的低序字将被舍入取整。 例如，如果指定 0x11110001，它将被舍入为 0x11110000。  

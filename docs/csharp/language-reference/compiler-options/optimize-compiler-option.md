@@ -13,14 +13,15 @@ helpviewer_keywords:
 - compiler optimization [C#]
 - o compiler option [C#]
 ms.assetid: 6dd5b6f2-cd1d-4593-a9f4-1c2ed9404ca0
-ms.openlocfilehash: 6fd268414c4e54e7b4865733480f8917389015d0
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 1862794e4d823e38ce19780300a0b04f4e57dc44
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125028"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193980"
 ---
 # <a name="-optimize-c-compiler-options"></a>-optimize（C# 编译器选项）
+
 -optimize 选项启用或禁用编译器执行的优化，使输出文件更小、更快、更有效****。  
   
 ## <a name="syntax"></a>语法  
@@ -30,6 +31,7 @@ ms.locfileid: "89125028"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  -optimize 还指示公共语言运行时在运行时优化代码****。  
   
  默认情况下，禁用优化。 指定 -optimize+ 可启用优化****。  
@@ -51,6 +53,7 @@ ms.locfileid: "89125028"
  有关如何以编程方式设置此编译器选项的信息，请参阅 <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>。  
   
 ## <a name="example"></a>示例  
+
  编译 `t2.cs` 并启用编译器优化：  
   
 ```console  

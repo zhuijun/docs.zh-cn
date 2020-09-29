@@ -9,12 +9,12 @@ helpviewer_keywords:
 - main compiler option [C#]
 - /main compiler option [C#]
 ms.assetid: 975cf4d5-36ac-4530-826c-4aad0c7f2049
-ms.openlocfilehash: 61e63de8082a335b448ffee1ae35170d3a1cf6b4
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: c27898de2a7cc2f3c01c51f8de1122e81b2233b4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125262"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194110"
 ---
 # <a name="-main-c-compiler-options"></a>-main（C# 编译器选项）
 
@@ -27,6 +27,7 @@ ms.locfileid: "89125262"
 ```
 
 ## <a name="arguments"></a>自变量
+
  `class`  
  此类型包含 **Main** 方法。  
  提供的类名必须是完全限定类名；它必须包括完整命名空间（包含类），后跟类名。 例如，当 `Main` 方法位于 `MyApplication.Core` 命名空间中的 `Program` 类中时，编译器选项必须为 `-main:MyApplication.Core.Program`。

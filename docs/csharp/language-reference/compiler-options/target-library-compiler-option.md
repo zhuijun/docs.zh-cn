@@ -9,14 +9,15 @@ helpviewer_keywords:
 - target compiler options [C#], /target:library
 - /target compiler options [C#], /target:library
 ms.assetid: c5670e88-2126-47c1-8d1c-217923837d17
-ms.openlocfilehash: 953249c4d0168ed3d279d03a0b2fb63d8ff6d5f5
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 0f5b1e1bec8fd601bf111e1c2c64adf22d0a064e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89128473"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193720"
 ---
 # <a name="-targetlibrary-c-compiler-options"></a>-target:library（C# 编译器选项）
+
 -target:library 选项导致编译器创建动态链接库 (DLL) 而不是可执行文件 (EXE)****。  
   
 ## <a name="syntax"></a>语法  
@@ -26,6 +27,7 @@ ms.locfileid: "89128473"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  将创建具有 .dll 扩展名的 DLL。  
   
  除非使用 [-out](./out-compiler-option.md) 选项指定，否则输出文件的名称采用第一个输入文件的名称。  
@@ -45,6 +47,7 @@ ms.locfileid: "89128473"
  有关如何以编程方式设置此编译器选项的信息，请参阅 <xref:VSLangProj80.ProjectProperties3.OutputType%2A>。  
   
 ## <a name="example"></a>示例  
+
  通过创建 `in.dll` 编译 `in.cs`：  
   
 ```console  

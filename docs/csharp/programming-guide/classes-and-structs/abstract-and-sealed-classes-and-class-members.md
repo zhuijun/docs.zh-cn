@@ -8,19 +8,21 @@ helpviewer_keywords:
 - C# language, abstract classes
 - C# language, sealed
 ms.assetid: 99aa52f7-b435-43f9-936e-2470af734c4e
-ms.openlocfilehash: 391a8ccbb1fbe6626d1cd5a4b6fcfd9ace3506e6
-ms.sourcegitcommit: cf5a800a33de64d0aad6d115ffcc935f32375164
+ms.openlocfilehash: ccbc6734d4e9bafe059dd45bfdf82af7c84438a2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/20/2020
-ms.locfileid: "86474483"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204029"
 ---
 # <a name="abstract-and-sealed-classes-and-class-members-c-programming-guide"></a>抽象类、密封类及类成员（C# 编程指南）
+
 使用 [abstract](../../language-reference/keywords/abstract.md) 关键字可以创建不完整且必须在派生类中实现的类和 [class](../../language-reference/keywords/class.md) 成员。  
   
  使用 [sealed](../../language-reference/keywords/sealed.md) 关键字可以防止继承以前标记为 [virtual](../../language-reference/keywords/virtual.md) 的类或某些类成员。  
   
 ## <a name="abstract-classes-and-class-members"></a>抽象类和类成员  
+
  通过在类定义前面放置关键字 `abstract`，可以将类声明为抽象类。 例如：  
   
  [!code-csharp[csProgGuideInheritance#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#13)]  
@@ -38,6 +40,7 @@ ms.locfileid: "86474483"
  如果将 `virtual` 方法声明为 `abstract`，则该方法对于从抽象类继承的所有类而言仍然是虚方法。 继承抽象方法的类无法访问方法的原始实现，因此在上一示例中，类 F 上的 `DoWork` 无法调用类 D 上的 `DoWork`。通过这种方式，抽象类可强制派生类向虚拟方法提供新的方法实现。  
   
 ## <a name="sealed-classes-and-class-members"></a>密封类和类成员  
+
  通过在类定义前面放置关键字 `sealed`，可以将类声明为[密封类](../../language-reference/keywords/sealed.md)。 例如：  
   
  [!code-csharp[csProgGuideInheritance#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#16)]  

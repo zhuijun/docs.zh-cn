@@ -3,17 +3,19 @@ title: 标准查询运算符的查询表达式语法 (C#)
 description: 了解标准查询运算符的查询表达式语法。 参阅有关包含等效查询表达式子句的标准查询运算符的列表。
 ms.date: 07/20/2015
 ms.assetid: e1e17ef2-68ff-4c26-b6e2-015668227fa5
-ms.openlocfilehash: b43d2095ee7d059be6f834b576ca0e6ab0a87585
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: f85563de496eaf423ea7a43c6d7100bb93eae5b1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299118"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195515"
 ---
 # <a name="query-expression-syntax-for-standard-query-operators-c"></a>标准查询运算符的查询表达式语法 (C#)
+
 某些使用更频繁的标准查询运算符具有专用的 C# 语言关键字语法，使用这些语法可以在查询表达式中调用这些运算符。 查询表达式是比基于方法的等效项更具可读性的另一种查询表示形式。 查询表达式子句在编译时被转换为对查询方法的调用。  
   
 ## <a name="query-expression-syntax-table"></a>查询表达式语法表  
+
  下表列出包含等效查询表达式子句的标准查询运算符。  
   
 |方法|C# 查询表达式语法|  

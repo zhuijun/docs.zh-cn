@@ -9,14 +9,15 @@ helpviewer_keywords:
 - out compiler option [C#]
 - -out compiler option [C#]
 ms.assetid: 70d91d01-7bd2-4aea-ba8b-4e9807e9caa5
-ms.openlocfilehash: d1b79879639e1cbdc3dc040977d9fcd0c3a73602
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 409760ee0b147065a2128c62c304fb5d70cfcf42
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125015"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193876"
 ---
 # <a name="-out-c-compiler-options"></a>-out（C# 编译器选项）
+
 -out 选项指定输出文件的名称****。  
   
 ## <a name="syntax"></a>语法  
@@ -26,10 +27,12 @@ ms.locfileid: "89125015"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `filename`  
  编译器创建的输出文件的名称。  
   
 ## <a name="remarks"></a>备注  
+
  在命令行中，可以为编译指定多个输出文件。 编译器应在 -out 选项下查找一个或多个源代码文件。 然后，所有源代码文件都将编译为 -out 选项指定的输出文件。  
   
  指定想要创建的文件的完整名称和扩展名。  
@@ -59,6 +62,7 @@ ms.locfileid: "89125015"
      以编程方式设置此编译器选项：<xref:VSLangProj80.ProjectProperties3.OutputFileName%2A> 是只读属性，由项目类型（exe、库等）和程序集名称的组合决定。 设置输出文件名称必须修改一个或两个属性。  
   
 ## <a name="example"></a>示例  
+
  编译 `t.cs` 并创建输出文件 `t.exe`以及生成 `t2.cs` 并创建模块输出文件 `mymodule.netmodule`：  
   
 ```console  

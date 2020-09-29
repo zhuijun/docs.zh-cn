@@ -3,14 +3,15 @@ title: 如何在 CSV 文本文件中计算列值 (LINQ) (C#)
 description: 此示例演示如何使用 C# 中的 LINQ 对 .csv 文件的列执行 Sum、Average、Min 和 Max 等聚合计算。
 ms.date: 07/20/2015
 ms.assetid: 4747f37a-a198-4df2-8efe-5b0731e0ea27
-ms.openlocfilehash: 9137779f9767c8a9531489f7894ba3e69eb1faee
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: a475de9c769a66fdded490a3f7eccdb74a434186
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105324"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91195592"
 ---
 # <a name="how-to-compute-column-values-in-a-csv-text-file-linq-c"></a>如何在 CSV 文本文件中计算列值 (LINQ) (C#)
+
 此示例演示如何对 .csv 文件的列执行 Sum、Average、Min 和 Max 等聚合计算。 此处所示的示例原则可以应用于其他类型的结构化文本。  
   
 ## <a name="to-create-the-source-file"></a>创建源文件  
@@ -160,6 +161,7 @@ class SumColumns
  查询的工作原理是使用 <xref:System.String.Split%2A> 方法将每一行文本转换为数组。 每个数组元素表示一列。 最后，每一列中的文本都转换为其数字表示形式。 如果文件是制表符分隔文件，只需将 `Split` 方法中的参数更新为 `\t`。  
   
 ## <a name="compiling-the-code"></a>编译代码  
+
  使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。  
   
 ## <a name="see-also"></a>请参阅

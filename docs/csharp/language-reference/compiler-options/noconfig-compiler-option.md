@@ -10,14 +10,15 @@ helpviewer_keywords:
 - -noconfig compiler option [C#]
 - noconfig compiler option [C#]
 ms.assetid: cd26967e-e494-4c8c-b5c9-af13b2f78b2e
-ms.openlocfilehash: 677b96df8c6686e46c0db93eabe72dd483b947e4
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: d62f16a3926aaa78e79c25b1c9b8d84e4401795a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466061"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91194071"
 ---
 # <a name="-noconfig-c-compiler-options"></a>-noconfig（C# 编译器选项）
+
 -noconfig 选项告知编译器不要在 csc.rsp 文件中编译，该文件的位置和加载位置是与 csc.exe 文件相同的目录****。  
   
 ## <a name="syntax"></a>语法  
@@ -27,6 +28,7 @@ ms.locfileid: "89466061"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  csc.rsp 文件引用 .NET Framework 随附的所有程序集。 Visual Studio .NET 开发环境包括的实际引用取决于项目类型。  
   
  可以修改 csc.rsp 文件并使用 csc.exe 的命令行指定每个编译中应包含的其他编译器选项（-noconfig 选项外）****。  

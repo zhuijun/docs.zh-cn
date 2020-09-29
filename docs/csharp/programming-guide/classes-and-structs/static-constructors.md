@@ -6,19 +6,21 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: 1bb494ded34065bb76b72db40375555ca1eb6953
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 07b3e54c9ffeb1abacaf5ddd04d2058697e653e4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90541846"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203964"
 ---
 # <a name="static-constructors-c-programming-guide"></a>静态构造函数（C# 编程指南）
+
 静态构造函数用于初始化任何[静态](../../language-reference/keywords/static.md)数据，或执行仅需执行一次的特定操作。 将在创建第一个实例或引用任何静态成员之前自动调用静态构造函数。  
   
  [!code-csharp[csProgGuideObjects#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#14)]  
 
 ## <a name="remarks"></a>备注
+
 静态构造函数具有以下属性：  
   
 - 静态构造函数不使用访问修饰符或不具有参数。  
@@ -52,11 +54,13 @@ ms.locfileid: "90541846"
 - 也可在静态构造函数中轻松地对无法在编译时通过约束（类型参数约束）检查的类型参数强制执行运行时检查。
 
 ## <a name="example"></a>示例
+
  在此示例中，类 `Bus` 具有静态构造函数。 创建 `Bus` 的第一个实例 (`bus1`) 时，将调用该静态构造函数，以便初始化类。 示例输出验证即使创建了两个 `Bus` 的实例，静态构造函数也仅运行一次，并且在实例构造函数运行前运行。  
   
  [!code-csharp[csProgGuideObjects#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#15)]
 
 ## <a name="c-language-specification"></a>C# 语言规范
+
 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的[静态构造函数](~/_csharplang/spec/classes.md#static-constructors)部分。
   
 ## <a name="see-also"></a>请参阅

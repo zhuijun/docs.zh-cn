@@ -14,14 +14,15 @@ helpviewer_keywords:
 - public type information [C#]
 - -reference compiler option [C#]
 ms.assetid: 8d13e5b0-abf6-4c46-bf71-2daf2cd0a6c4
-ms.openlocfilehash: 7b84953f85545c0400c7136c258849f259e8b48a
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: cd7346ae4094a84a398306394f771e040dd7b72f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89124794"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91193785"
 ---
 # <a name="-reference-c-compiler-options"></a>-reference（C# 编译器选项）
+
 -reference 选项使编译器将指定文件中的[公共](../keywords/public.md)类型信息导入当前项目，从而使你可从指定的程序集文件中引用元数据。  
   
 ## <a name="syntax"></a>语法  
@@ -32,6 +33,7 @@ ms.locfileid: "89124794"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `filename`  
  包含程序集清单的文件的名称。 若要导入多个文件，请为每个文件包括一个单独的 -reference 选项。  
   
@@ -39,6 +41,7 @@ ms.locfileid: "89124794"
  一个有效的 C# 标识符，表示将包含程序集中所有命名空间的根命名空间。  
   
 ## <a name="remarks"></a>备注  
+
  若要从多个文件导入，请为每个文件包括一个 -reference 选项。  
   
  导入的文件必须包含一个清单；输出文件必须已使用[-target:module](./target-module-compiler-option.md) 以外的一个 [-target](./target-compiler-option.md) 选项进行了编译。  
@@ -65,6 +68,7 @@ ms.locfileid: "89124794"
 > 在 Visual Studio 中，请使用“添加引用”**** 对话框。 有关详细信息，请参阅 [How to: Add or Remove References By Using the Reference Manager](/visualstudio/ide/how-to-add-or-remove-references-by-using-the-reference-manager)。 若要确保通过使用 `-reference` 添加引用与通过使用“添加引用”**** 对话框添加引用之间的行为等效，请将要添加的程序集的“嵌入互操作类型”**** 属性设置为“False”****。 “True”**** 是该属性的默认值。  
   
 ## <a name="example"></a>示例  
+
  本示例演示如何使用[外部别名](../keywords/extern-alias.md)功能。  
   
  编译源文件，并从先前已编译的 `grid.dll` 和 `grid20.dll` 中导入元数据。 这两个 DLL 包含同一组件的不同版本，将使用两个带有别名选项的 -reference 编译源文件。 这两个选项如下所示：  

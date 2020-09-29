@@ -9,14 +9,15 @@ helpviewer_keywords:
 - aliases [C#], extern keyword
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
-ms.openlocfilehash: 301ae06ec02fa6f09257dc87383bc2ec7f589b6d
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 5ecafa5a989bc183d7f52ac3d4b4d50a81b36014
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89139003"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91203340"
 ---
 # <a name="extern-alias-c-reference"></a>外部别名（C# 参考）
+
 有时你可能不得不引用具有相同的完全限定类型名称的程序集的两个版本。 例如，可能需要在同一应用程序中使用某程序集的两个或多个版本。 通过使用外部程序集别名，可在别名命名的根级别命名空间内包装每个程序集的命名空间，使其能够在同一文件中使用。  
   
 > [!NOTE]
@@ -61,6 +62,7 @@ using Class1V2 = GridV2::Namespace.Class1;
 ```
 
 ## <a name="c-language-specification"></a>C# 语言规范  
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>请参阅

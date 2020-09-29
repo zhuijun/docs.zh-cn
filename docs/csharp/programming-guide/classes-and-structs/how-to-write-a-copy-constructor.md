@@ -6,17 +6,19 @@ helpviewer_keywords:
 - C# Language, copy constructor
 - copy constructor [C#]
 ms.assetid: fba899b5-fc41-428e-a745-3ebdbf37990a
-ms.openlocfilehash: beb2fcfaa36303eeaabd5278cf5e7a128282270e
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 52fd5aedea6a0e3b7c22e20db523329a00bba9ad
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864223"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91204003"
 ---
 # <a name="how-to-write-a-copy-constructor-c-programming-guide"></a>如何编写复制构造函数（C# 编程指南）
+
 C# 不会为对象提供复制构造函数，但你可以自己编写一个。  
   
 ## <a name="example"></a>示例  
+
  在下面的示例中，`Person`[类](../../language-reference/keywords/class.md)定义一个复制构造函数，该函数使用 `Person` 的实例作为其参数。 该参数的属性值分配给 `Person` 的新实例的属性。 该代码包含一个备用复制构造函数，该函数发送要复制到该类的实例构造函数的实例的 `Name` 和 `Age` 属性。  
   
  [!code-csharp[csProgGuideObjects#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#16)]  

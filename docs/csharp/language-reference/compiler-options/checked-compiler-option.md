@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -checked compiler option [C#]
 - /checked compiler option [C#]
 ms.assetid: fb7475d3-e6a6-4e6d-b86c-69e7a74c854b
-ms.openlocfilehash: 5c90696edd3031271e16cd2c1a332da5b605f81f
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: c92ad61b2f482631230e0e6aeb0af5716a4fcb61
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125938"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91196827"
 ---
 # <a name="-checked-c-compiler-options"></a>-checked（C# 编译器选项）
+
 -checked 选项指定，不在 [checked](../keywords/checked.md) 或 [unchecked](../keywords/unchecked.md) 关键字的范围内、并且产生的值超出数据类型范围的整数算法语句是否将导致运行时异常。  
   
 ## <a name="syntax"></a>语法  
@@ -26,6 +27,7 @@ ms.locfileid: "89125938"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  `checked` 或 `unchecked` 关键字范围内的整数算法语句不受 -checked 选项的影响。  
   
  如果不在 `checked` 或 `unchecked` 关键字范围内的整数算法语句产生的值超出数据类型范围，并且编译中使用了 -checked+（或 -checked），则该语句将在运行时导致异常********。 如果编译中使用的是 -checked-，则该语句在运行时不会导致异常。  
@@ -47,6 +49,7 @@ ms.locfileid: "89125938"
  要以编程方式访问此编译器选项，请参阅 <xref:VSLangProj80.CSharpProjectConfigurationProperties3.CheckForOverflowUnderflow%2A>。  
   
 ## <a name="example"></a>示例  
+
  以下命令编译 `t2.cs`。 命令中 `-checked` 的使用指定，任何不在 `checked` 或 `unchecked` 关键字范围内以及导致数据类型以外值的结果的文件中的整数算术语句，会在运行时引发异常。  
   
 ```console  

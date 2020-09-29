@@ -9,14 +9,15 @@ helpviewer_keywords:
 - codepage compiler option [C#]
 - -codepage compiler option [C#]
 ms.assetid: 75942989-b69a-4308-90a0-840c73d2c478
-ms.openlocfilehash: 4c812314ed9c1abcd7d2f34b2281140175621312
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: eda4ce5604beb25ae2d72ac94fbbe7dde9695820
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125951"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91196801"
 ---
 # <a name="-codepage-c-compiler-options"></a>-codepage（C# 编译器选项）
+
 如果所需页不是系统的当前默认代码页，则此选项指定编译期间要使用的代码页。  
   
 ## <a name="syntax"></a>语法  
@@ -26,10 +27,12 @@ ms.locfileid: "89125951"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `id`  
  要用于编译中所有源代码文件的代码页 ID。  
   
 ## <a name="remarks"></a>备注  
+
  编译器将首先尝试将所有源文件解释为 UTF-8。 如果源代码文件使用除 UTF-8 以外的编码并使用除 7 位 ASCII 字符以外的字符，请使用 -codepage 选项指定应使用的代码页****。 -codepage 适用于编译中的所有源代码文件。  
 
  有关如何查找系统上支持哪些代码页的信息，请参阅 [GetCPInfo](/windows/desktop/api/winnls/nf-winnls-getcpinfo)。  
