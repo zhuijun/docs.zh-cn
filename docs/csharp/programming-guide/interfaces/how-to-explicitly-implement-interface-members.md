@@ -5,17 +5,19 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - interfaces [C#], explicitly implementing
 ms.assetid: 514cde76-f981-474e-8b40-9493619f899c
-ms.openlocfilehash: 35b512ff6cbee1dd942f5b3476db660481808297
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: a9c019cdcf6e229199d980a2d1913df7c72a2169
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87303070"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157390"
 ---
 # <a name="how-to-explicitly-implement-interface-members-c-programming-guide"></a>如何显式实现接口成员（C# 编程指南）
+
 本示例声明一个[接口](../../language-reference/keywords/interface.md)`IDimensions` 和一个类 `Box`，显式实现了接口成员 `GetLength` 和 `GetWidth`。 通过接口实例 `dimensions` 访问这些成员。  
   
 ## <a name="example"></a>示例  
+
  [!code-csharp[csProgGuideInheritance#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#8)]  
   
 ## <a name="robust-programming"></a>可靠编程  

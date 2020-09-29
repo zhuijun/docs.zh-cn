@@ -6,14 +6,15 @@ helpviewer_keywords:
 - generics [C#], reflection
 - reflection [C#], generic types
 ms.assetid: 162fd9b4-dd5b-4abb-8c9b-e44e21e2f451
-ms.openlocfilehash: 6e4387fe7e78cd0e970531ae42f323efa8f181db
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 5439412231ab1bf9ed523d6786af67984ab2d0c3
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299300"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172965"
 ---
 # <a name="generics-and-reflection-c-programming-guide"></a>泛型和反射（C# 编程指南）
+
 因为公共语言运行时 (CLR) 能够在运行时访问泛型类型信息，所以可以使用反射获取关于泛型类型的信息，方法与用于非泛型类型的方法相同。 有关详细信息，请参阅[运行时中的泛型](./generics-in-the-run-time.md)。  
   
  在 .NET Framework 2.0 中，向 <xref:System.Type> 类添加了多个新成员来启用泛型类型的运行时信息。 有关如何使用这些方法和属性的详细信息，请参阅这些类的文档。 <xref:System.Reflection.Emit> 命名空间还包含支持泛型的新成员。 请参阅[如何：使用反射发出定义泛型类型](../../../framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)。  

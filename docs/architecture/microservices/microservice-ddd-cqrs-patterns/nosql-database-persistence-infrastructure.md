@@ -2,12 +2,12 @@
 title: 将 NoSQL 数据库用作持久性基础结构
 description: 大致了解 NoSQL 数据库（特别是 Azure Cosmos DB）作为持久性实现选项的使用情况。
 ms.date: 01/30/2020
-ms.openlocfilehash: c4f9199b9e88a39581437eca340e92f4fd450003
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: 2877c7eaf08dccfdf6126939b195a6a9a7195dfa
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738796"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173369"
 ---
 # <a name="use-nosql-databases-as-a-persistence-infrastructure"></a>将 NoSQL 数据库用作持久性基础结构
 
@@ -52,7 +52,7 @@ ms.locfileid: "90738796"
 
 ## <a name="introduction-to-azure-cosmos-db-and-the-native-cosmos-db-api"></a>Azure Cosmos DB 和本机 Cosmos DB API 简介
 
-[Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction) 是 Microsoft 针对任务关键型应用程序的全球分布式数据库服务。 Azure Cosmos DB 提供[统包全局分发](https://docs.microsoft.com/azure/cosmos-db/distribute-data-globally)、全球范围内[吞吐量和存储的弹性扩展](https://docs.microsoft.com/azure/cosmos-db/partition-data)、99% 的情况下低至个位数的毫秒延迟、[五种定义完善的一致性级别](https://docs.microsoft.com/azure/cosmos-db/consistency-levels)以及有保证的高可用性，所有这些均由[业界领先的 SLA](https://azure.microsoft.com/support/legal/sla/cosmos-db/) 提供支持。 Azure Cosmos DB [自动为数据编制索引](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf)，无需用户处理架构和管理索引。 它采用多模型，并支持文档、键值、图和分栏式数据模型。
+[Azure Cosmos DB](/azure/cosmos-db/introduction) 是 Microsoft 针对任务关键型应用程序的全球分布式数据库服务。 Azure Cosmos DB 提供[统包全局分发](/azure/cosmos-db/distribute-data-globally)、全球范围内[吞吐量和存储的弹性扩展](/azure/cosmos-db/partition-data)、99% 的情况下低至个位数的毫秒延迟、[五种定义完善的一致性级别](/azure/cosmos-db/consistency-levels)以及有保证的高可用性，所有这些均由[业界领先的 SLA](https://azure.microsoft.com/support/legal/sla/cosmos-db/) 提供支持。 Azure Cosmos DB [自动为数据编制索引](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf)，无需用户处理架构和管理索引。 它采用多模型，并支持文档、键值、图和分栏式数据模型。
 
 ![显示 Azure Cosmos DB 全局分发的关系图。](./media/nosql-database-persistence-infrastructure/azure-cosmos-db-global-distribution.png)
 
@@ -122,7 +122,7 @@ await client.CreateDocumentAsync(collectionUri, newOrder);
 
 可以像从其他任何 .NET 应用程序一样，从运行在容器中的 .NET 代码访问 Azure Cosmos DB 数据库。 例如，实现 eShopOnContainers 中的 Locations.API 和 Marketing.API 微服务，这样它们就可以使用 Azure Cosmos DB 数据库。
 
-但是，从 Docker 开发环境的角度来看，Azure Cosmos DB 存在限制。 即使有可以在本地开发计算机上运行的本地 [Azure Cosmos DB 仿真器](https://docs.microsoft.com/azure/cosmos-db/local-emulator)，它也仅支持 Windows。 不支持 Linux 和 macOS。
+但是，从 Docker 开发环境的角度来看，Azure Cosmos DB 存在限制。 即使有可以在本地开发计算机上运行的本地 [Azure Cosmos DB 仿真器](/azure/cosmos-db/local-emulator)，它也仅支持 Windows。 不支持 Linux 和 macOS。
 
 此外，也可能在 Docker 上运行此仿真器，但仅在 Windows 容器上运行，而不在 Linux 容器上运行。 如果将应用程序部署为 Linux 容器，这对开发环境来说从一开始就是一个障碍，因为目前无法同时在用于 Windows 的 Docker 上部署 Linux 和 Windows 容器。 所有正在部署的容器都必须适用于 Linux 或 Windows。
 
@@ -138,7 +138,7 @@ Cosmos DB 数据库支持 .NET 的 MongoDB API 以及本地 MongoDB 网络协议
 
 这对于含有 Linux 容器的 Docker 环境中的概念证明来说是一种非常便捷的方法，因为 [MongoDB Docker 映像](https://hub.docker.com/r/_/mongo/)是一种支持 Docker Linux 容器和 Docker Windows 容器的多体系映像。
 
-如下图所示，通过使用 MongoDB API，eShopOnContainers 支持适用于本地开发环境的 MongoDB Linux 和 Windows 容器，随后只需[将 MongoDB 连接字符串更改为指向 Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account)，即可作为 Azure Cosmos DB 移至可伸缩的 PaaS 云解决方案。
+如下图所示，通过使用 MongoDB API，eShopOnContainers 支持适用于本地开发环境的 MongoDB Linux 和 Windows 容器，随后只需[将 MongoDB 连接字符串更改为指向 Azure Cosmos DB](/azure/cosmos-db/connect-mongodb-account)，即可作为 Azure Cosmos DB 移至可伸缩的 PaaS 云解决方案。
 
 ![显示 eShopOnContainers 中的位置微服务可以使用 Cosmos DB 或 Mongo DB 的关系图。](./media/nosql-database-persistence-infrastructure/eshoponcontainers-mongodb-containers.png)
 
@@ -150,7 +150,7 @@ Cosmos DB 数据库支持 .NET 的 MongoDB API 以及本地 MongoDB 网络协议
 
 使用 MongoDB API 的明显好处是解决方案可以在数据库引擎、MongoDB 或 Azure Cosmos DB 中运行，因此要迁移到不同环境应该很容易。 但是，有时为充分利用特定数据库引擎的功能，使用本机 API（即本机 Cosmos DB API）是值得的。
 
-若要进一步比较在云中仅使用 MongoDB 和 Cosmos DB 的差异，请参阅此页中[使用 Azure Cosmos DB 的好处](https://docs.microsoft.com/azure/cosmos-db/mongodb-introduction)。
+若要进一步比较在云中仅使用 MongoDB 和 Cosmos DB 的差异，请参阅此页中[使用 Azure Cosmos DB 的好处](/azure/cosmos-db/mongodb-introduction)。
 
 ### <a name="analyze-your-approach-for-production-applications-mongodb-api-vs-cosmos-db-api"></a>分析适用于生产应用程序的方法：MongoDB API vs.Cosmos DB API
 
@@ -299,7 +299,7 @@ ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=<YourDockerHostIP>
 #ESHOP_AZURE_SERVICE_BUS=<YourAzureServiceBusInfo>
 ```
 
-取消注释 ESHOP_AZURE_COSMOSDB 行，并使用从 Azure 门户获得的 Azure Cosmos DB 连接字符串进行更新，如[将 MongoDB 应用程序连接到 Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/connect-mongodb-account) 中所述。
+取消注释 ESHOP_AZURE_COSMOSDB 行，并使用从 Azure 门户获得的 Azure Cosmos DB 连接字符串进行更新，如[将 MongoDB 应用程序连接到 Azure Cosmos DB](/azure/cosmos-db/connect-mongodb-account) 中所述。
 
 如果 `ESHOP_AZURE_COSMOSDB` 全局变量为空，则意味着它在 `.env` 文件中已被注释掉，那么容器将使用默认的 MongoDB 连接字符串。 此连接字符串指向部署在 eShopOnContainers 中的本地 MongoDB 容器，该容器名为 `nosqldata`，并在 docker-compose 文件中定义，如以下 .yml 代码所示：
 

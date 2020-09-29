@@ -7,12 +7,12 @@ ms.date: 08/12/2020
 no-loc:
 - Blazor
 - WebAssembly
-ms.openlocfilehash: 255a7f9b34752b3480ba5a8ffc5d506e6d7b05d3
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: e746362657a25487e98ddac09fa4337b00dfe805
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89515966"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169123"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>开发 ASP.NET Core MVC 应用
 
@@ -241,7 +241,7 @@ ASP.NET Core UI 项目负责所有 UI 级问题，但不得包含业务逻辑或
 
 ### <a name="feature-organization"></a>功能整理
 
-默认情况下，ASP.NET Core 应用程序将其文件夹结构整理为包含 Controllers 和 Views，还经常包含 ViewModels。 支持这些服务器端结构的客户端代码通常单独存放在 wwwroot 文件夹中。 但是对于大型应用程序而言，这种整理方式可能会出现问题，因为处理任何给定功能通常会要求在这些文件夹之间跳转。 每个文件夹中的文件和子文件夹数量越多，通过解决方案资源管理器的滚动就越多，这种整理方式实现起来也就越难。 解决此问题的其中一种办法是按功能，而不要按文件类型来整理应用程序代码。 这种整理方式通常被称为功能文件夹或[功能切片](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc)（另请参阅：[垂直切片](https://deviq.com/vertical-slices/)）。
+默认情况下，ASP.NET Core 应用程序将其文件夹结构整理为包含 Controllers 和 Views，还经常包含 ViewModels。 支持这些服务器端结构的客户端代码通常单独存放在 wwwroot 文件夹中。 但是对于大型应用程序而言，这种整理方式可能会出现问题，因为处理任何给定功能通常会要求在这些文件夹之间跳转。 每个文件夹中的文件和子文件夹数量越多，通过解决方案资源管理器的滚动就越多，这种整理方式实现起来也就越难。 解决此问题的其中一种办法是按功能，而不要按文件类型来整理应用程序代码。 这种整理方式通常被称为功能文件夹或[功能切片](/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc)（另请参阅：[垂直切片](https://deviq.com/vertical-slices/)）。
 
 ASP.NET Core MVC 支持使用 Areas 实现此目的。 使用区域可以在每个 Area 文件夹中创建单独的 Controllers 和 Views 文件夹集（以及任何关联的模型）。 图 7-1 显示了一个使用 Areas 的示例文件夹结构。
 
@@ -301,7 +301,7 @@ public class FeatureConvention : IControllerModelConvention
 services.AddMvc(o => o.Conventions.Add(new FeatureConvention()));
 ```
 
-ASP.NET Core MVC 还使用约定来确定视图的位置。 可以使用自定义约定取而代之，使视图位于功能文件夹中（使用上述 FeatureConvention 提供的功能名称）。 可在 MSDN 杂志文章 [ASP.NET Core MVC 的功能切片](https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc)中详细了解此方法并下载工作示例。
+ASP.NET Core MVC 还使用约定来确定视图的位置。 可以使用自定义约定取而代之，使视图位于功能文件夹中（使用上述 FeatureConvention 提供的功能名称）。 可在 MSDN 杂志文章 [ASP.NET Core MVC 的功能切片](/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc)中详细了解此方法并下载工作示例。
 
 ### <a name="apis-and-no-locblazor-applications"></a>API 和 Blazor 应用程序
 
@@ -313,7 +313,7 @@ ASP.NET Core MVC 还使用约定来确定视图的位置。 可以使用自定�
 
 有人可能会问，已存在可用于共享 `PublicApi` 和 `BlazorAdmin` 所需的任何类型的通用 `ApplicationCore` 项目，为何还要添加单独的 `BlazorShared` 项目？ 答案就是，此项目包含了应用程序的所有业务逻辑，因此比所需项目要大得多，也很有可能需要在服务器上保持安全。 请记住，`BlazorAdmin` 引用的任何库都将在用户加载 Blazor 应用程序时下载到用户的浏览器中。
 
-Blazor WebAssembly 应用使用的 API 可能不会与 Blazor 完全共享其类型，具体取决于是否使用[前端专属的后端 (BFF) 模式](https://docs.microsoft.com/azure/architecture/patterns/backends-for-frontends)。 特别是，打算由许多不同客户端使用的公共 API 可以定义其自己的请求和结果类型，而不会在特定于客户端的共享项目中共享这些结果类型。 在 eShopOnWeb 示例中，假设 `PublicApi` 项目实际上用于托管公共 API，因此并非所有请求和响应类型都来自 `BlazorShared` 项目。
+Blazor WebAssembly 应用使用的 API 可能不会与 Blazor 完全共享其类型，具体取决于是否使用[前端专属的后端 (BFF) 模式](/azure/architecture/patterns/backends-for-frontends)。 特别是，打算由许多不同客户端使用的公共 API 可以定义其自己的请求和结果类型，而不会在特定于客户端的共享项目中共享这些结果类型。 在 eShopOnWeb 示例中，假设 `PublicApi` 项目实际上用于托管公共 API，因此并非所有请求和响应类型都来自 `BlazorShared` 项目。
 
 ### <a name="cross-cutting-concerns"></a>横切关注点
 
@@ -387,7 +387,7 @@ public async Task<IActionResult> Put(int id, [FromBody]Author author)
 }
 ```
 
-你可阅读 MSDN 杂志文章[真实的 ASP.NET Core MVC 过滤器](https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters)，了解有关实现过滤器的详细信息并下载工作示例。
+你可阅读 MSDN 杂志文章[真实的 ASP.NET Core MVC 过滤器](/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters)，了解有关实现过滤器的详细信息并下载工作示例。
 
 > ### <a name="references--structuring-applications"></a>参考 - 构建应用程序
 >

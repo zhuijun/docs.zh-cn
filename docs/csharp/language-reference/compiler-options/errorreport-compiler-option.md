@@ -9,14 +9,15 @@ helpviewer_keywords:
 - errorreport compiler option [C#]
 - /errorreport compiler option [C#]
 ms.assetid: bd0e7493-b79d-4369-9c3f-ba26ebdfbedf
-ms.openlocfilehash: 5b3143f4da81ac693626778263c277e3a484c45e
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 6238ac392ff99d18d9cc7ea07e23b08ff235c14f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125717"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173225"
 ---
 # <a name="-errorreport-c-compiler-options"></a>-errorreport（C# 编译器选项）
+
 此选项提供向 Microsoft 报告 C# 内部编译错误的简便方法。
 
 > [!NOTE]
@@ -29,6 +30,7 @@ ms.locfileid: "89125717"
 ```
 
 ## <a name="arguments"></a>自变量
+
  **无**  
  不收集有关内部编译器错误的报告，或不向 Microsoft 发送报告。
 
@@ -39,6 +41,7 @@ ms.locfileid: "89125717"
  **send** 自动向 Microsoft 发送内部编译器错误报告。 若要启用此选项，必须首先同意 Microsoft 数据收集策略。 首次在计算机上指定 -errorreport:send 时，编译器消息将引导你访问包含 Microsoft 数据收集策略的网站****。
 
 ## <a name="remarks"></a>备注
+
  当编译器无法处理源代码文件时，会导致内部编译器错误 (ICE)。 出现 ICE 时，编译器不会生成可用于修复代码的输出文件或任何有用的诊断。
 
  在早期版本中，收到 ICE 时，我们欢迎你与 Microsoft 产品支持服务联系以报告问题。 通过使用 -errorreport，可向 Visual C# 团队提供 ICE 信息****。 你的错误报告可以帮助改进未来的编译器版本。

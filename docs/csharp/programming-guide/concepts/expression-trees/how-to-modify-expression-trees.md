@@ -3,14 +3,15 @@ title: 如何修改表达式树 (C#)
 description: 了解如何通过创建现有表达式树的副本并进行所需的更改来修改表达式树。
 ms.date: 07/20/2015
 ms.assetid: 9b0cd8c2-457e-4833-9e36-31e79545f442
-ms.openlocfilehash: 45aea18e253811d4e5c60f23f7f8496d4358f64c
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 01176f489794a0f4ca29d229d29507fdba0fd5a8
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105611"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167686"
 ---
 # <a name="how-to-modify-expression-trees-c"></a>如何修改表达式树 (C#)
+
 本主题演示如何修改表达式树。 表达式树是不可变的，这意味着不能直接对它们进行修改。 若要更改表达式树，必须创建现有表达式树的副本，创建此副本后，进行必要的更改。 可以使用 <xref:System.Linq.Expressions.ExpressionVisitor> 类遍历现有表达式树，以及复制它访问的每个节点。  
   
 ### <a name="to-modify-an-expression-tree"></a>修改表达式树  

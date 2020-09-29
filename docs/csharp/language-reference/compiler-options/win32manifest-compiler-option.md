@@ -9,14 +9,15 @@ helpviewer_keywords:
 - win32manifest compiler option [C#]
 - -win32manifest compiler option [C#]
 ms.assetid: 9460ea1b-6c9f-44b8-8f73-301b30a01de1
-ms.openlocfilehash: 4ce4033323eb938caff1d769198ca69782b470ab
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 1d2eefdab433f67e1cba5f709a2db8ec6b9a5dc7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89140823"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171307"
 ---
 # <a name="-win32manifest-c-compiler-options"></a>-win32manifest（C# 编译器选项）
+
 使用 -win32manifest 选项可以指定要嵌入到项目的可迁移可执行 (PE) 文件中的用户定义的 Win32 应用程序清单文件****。  
   
 ## <a name="syntax"></a>语法  
@@ -26,10 +27,12 @@ ms.locfileid: "89140823"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `filename`  
  自定义清单文件的名称和位置。  
   
 ## <a name="remarks"></a>备注  
+
  默认情况下，Visual C# 编译器嵌入指定“asInvoker”的请求执行级别的应用程序清单。 它在生成该可执行文件的同一文件夹中创建清单，如果使用 Visual Studio，该文件夹通常为 bin\Debug 或 bin\Release。 如果要提供自定义清单（例如，指定“highestAvailable”或“requireAdministrator”的请求执行级别的清单），请使用此选项指定文件名。  
   
 > [!NOTE]
@@ -48,6 +51,7 @@ ms.locfileid: "89140823"
  提供应用程序清单的操作，可以作为自定义后期生成步骤，也可以通过使用 [-nowin32manifest（C# 编译器选项）](./nowin32manifest-compiler-option.md)选项作为 Win32 资源文件的组成部分。 如果希望应用程序受到 Windows Vista 的文件或注册表虚拟化的影响，请使用该选项。 这将阻止编译器在可迁移可执行 (PE) 文件中创建和嵌入默认清单。  
   
 ## <a name="example"></a>示例  
+
  下例演示了 Visual C# 编译器插入到 PE 中的默认清单。  
   
 > [!NOTE]

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-ms.openlocfilehash: 26b8f78595b1406deb371113cf491b80ad7c1474
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 6e1a5bddc0d40b0b62c7b07dbc6b4134a3447a95
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89127017"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91168785"
 ---
 # <a name="accessibility-levels-c-reference"></a>可访问性级别（C# 参考）
 
@@ -46,6 +46,7 @@ ms.locfileid: "89127017"
  嵌套类型的可访问性依赖于它的[可访问域](./accessibility-domain.md)，该域是由已声明的成员可访问性和直接包含类型的可访问域这二者共同确定的。 但是，嵌套类型的可访问域不能超出包含类型的可访问域。  
   
 ## <a name="c-language-specification"></a>C# 语言规范  
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>请参阅

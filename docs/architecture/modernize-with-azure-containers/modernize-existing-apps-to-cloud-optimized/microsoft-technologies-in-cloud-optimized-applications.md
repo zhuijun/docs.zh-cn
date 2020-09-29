@@ -2,12 +2,12 @@
 title: 云优化应用程序中的 Microsoft 技术
 description: 通过 Azure 云和 Windows 容器现代化现有 .NET 应用程序 | 云优化应用程序中的 Microsoft 技术
 ms.date: 04/28/2018
-ms.openlocfilehash: c5222ba13258f9c8a40ca3b9ce240aeb9f41da63
-ms.sourcegitcommit: 34dc3c0d0d0a1cc418abff259d9daa8078d00b81
+ms.openlocfilehash: b257497835638dd65c894998e95bd7e9d784b7bf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/19/2020
-ms.locfileid: "79546505"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172009"
 ---
 # <a name="microsoft-technologies-in-cloud-optimized-applications"></a>云优化应用程序中的 Microsoft 技术
 
@@ -15,7 +15,7 @@ ms.locfileid: "79546505"
 
 - **云基础结构**：提供计算平台、操作系统、网络和存储的基础结构。 Microsoft Azure 位于此级别。
 
-- **运行时**：此层提供应用程序的运行环境。 如果使用容器，则此层通常基于在 Linux 主机或 Windows 主机上运行的 [Docker 引擎](https://docs.docker.com/engine/)。 （从 Windows Server 2016 开始，支持 [Windows 容器](https://docs.microsoft.com/virtualization/windowscontainers/about/)。 Windows 容器是在 Windows 上运行的现有 .NET Framework 应用程序的最佳选择。）
+- **运行时**：此层提供应用程序的运行环境。 如果使用容器，则此层通常基于在 Linux 主机或 Windows 主机上运行的 [Docker 引擎](https://docs.docker.com/engine/)。 （从 Windows Server 2016 开始，支持 [Windows 容器](/virtualization/windowscontainers/about/)。 Windows 容器是在 Windows 上运行的现有 .NET Framework 应用程序的最佳选择。）
 
 - **托管云**：选择托管云选项后，你可以避免在管理和支持底层基础结构、VM、OS 修补程序和网络配置方面的开销和复杂性。 如果选择使用 IaaS 进行迁移，则需要负责所有这些任务以及相关的成本。 在托管云选项中，只管理你开发的应用程序和服务。 云服务提供商通常会管理其他所有内容。 Azure 中托管云服务的示例包括 [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database)、[Azure Redis 缓存](https://azure.microsoft.com/services/cache/)、[Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)、[Azure 存储](https://azure.microsoft.com/services/storage/)、[Azure Database for MySQL](https://azure.microsoft.com/services/mysql/)、[Azure Database for PostgreSQL](https://azure.microsoft.com/services/postgresql/)、[Azure Active Directory](https://azure.microsoft.com/services/active-directory/) 和托管计算服务（如 [VM 规模集](https://azure.microsoft.com/services/virtual-machine-scale-sets/)）、[Azure 应用服务](https://azure.microsoft.com/services/app-service/)以及 [Azure Kubernetes 服务](https://azure.microsoft.com/services/container-service/)。
 

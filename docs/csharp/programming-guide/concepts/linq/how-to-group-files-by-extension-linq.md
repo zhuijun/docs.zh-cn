@@ -3,17 +3,19 @@ title: 如何按扩展名对文件进行分组 (LINQ) (C#)
 description: 了解如何使用 LINQ 对 C# 中的文件或文件夹列表执行高级分组和排序操作。 该示例显示了如何在控制台中对输出进行分页。
 ms.date: 07/20/2015
 ms.assetid: 21a98320-a5a1-4981-82d8-6a637e7d9018
-ms.openlocfilehash: 6113392170063cac1fd89017efaf0c7dad3ba34b
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: c17328980c20dd6ec32e8d0ce176081122443344
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105036"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159041"
 ---
 # <a name="how-to-group-files-by-extension-linq-c"></a>如何按扩展名对文件进行分组 (LINQ) (C#)
+
 本示例演示如何使用 LINQ 来执行高级分组和对文件或文件夹列表执行排序操作。 它还演示如何使用 <xref:System.Linq.Enumerable.Skip%2A> 和 <xref:System.Linq.Enumerable.Take%2A> 方法在控制台窗口中对输出进行分页。  
   
 ## <a name="example"></a>示例  
+
  下面的查询演示如何按文件扩展名对指定的目录树的内容进行分组。  
   
 ```csharp  
@@ -106,6 +108,7 @@ class GroupByExtension
  此程序的输出可能很长，具体取决于本地文件系统的详细信息和 `startFolder` 的设置。 为了能够查看所有结果，此示例演示如何对结果进行分页。 相同的方法适用于 Windows 和 Web 应用程序。 请注意，由于代码对组中的项进行分页，因此需要使用 `foreach` 循环。 此外，还有一些其他逻辑用于计算列表中的当前位置，以及使用户能够停止分页并退出程序。 在此特定情况下，根据原始查询的缓存结果运行分页查询。 在其他上下文中，如 LINQ to SQL，则不需要此类缓存。  
   
 ## <a name="compiling-the-code"></a>编译代码  
+
  使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。  
   
 ## <a name="see-also"></a>请参阅

@@ -3,12 +3,12 @@ title: 使用 Visual Studio 中的 Roslyn 语法可视化工具浏览代码
 description: 语法可视化工具提供了可视化工具，用于浏览 .NET Compiler Platform SDK 为代码生成的模型。
 ms.date: 03/07/2018
 ms.custom: mvc, vs-dotnet
-ms.openlocfilehash: c7a34fda909bd044a9e65a8353d5626b533730e3
-ms.sourcegitcommit: fff146ba3fd1762c8c432d95c8b877825ae536fc
+ms.openlocfilehash: a911a99e78ad5a5f4c6771b91a3c541b1812d67c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/08/2020
-ms.locfileid: "82975922"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167569"
 ---
 # <a name="explore-code-with-the-roslyn-syntax-visualizer-in-visual-studio"></a>使用 Visual Studio 中的 Roslyn 语法可视化工具浏览代码
 
@@ -33,9 +33,11 @@ ms.locfileid: "82975922"
 <!-- markdownlint-disable MD025 -->
 
 # <a name="c"></a>[C#](#tab/csharp)
+
 ![将 C# 语法树可视化](media/syntax-visualizer/visualize-csharp.png)
 
 # <a name="visual-basic"></a>[Visual Basic](#tab/vb)
+
 ![将 Visual Basic 语法树可视化](media/syntax-visualizer/visualize-visual-basic.png)
 
 ---

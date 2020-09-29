@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - '#pragma checksum [C#]'
 ms.assetid: 3673e4ca-6098-4ec1-890f-8fceb2a794a2
-ms.openlocfilehash: 60c491000337fd50da217e97054e86faccb2e7d7
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: df665704ac813adbbf6473e81fad0a1c7ff616d0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89137976"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91168564"
 ---
 # <a name="pragma-checksum-c-reference"></a>#pragma checksum（C# 参考）
+
 生成源文件的校验和以帮助调试 ASP.NET 页面。  
   
 ## <a name="syntax"></a>语法  
@@ -24,6 +25,7 @@ ms.locfileid: "89137976"
 ```  
   
 ## <a name="parameters"></a>参数  
+
  `"filename"`  
  需要监视更改或更新的文件的名称。  
   
@@ -34,6 +36,7 @@ ms.locfileid: "89137976"
  表示校验和字节的十六进制数字的字符串。 必须是偶数个十六进制数字。 奇数个十六进制数字会导致编译时警告出现，且指令遭忽略。  
   
 ## <a name="remarks"></a>备注  
+
  Visual Studio 调试器使用校验和确保它可始终找到正确的源。 编译器为源文件计算校验和，然后将输出发出到程序数据库 (PDB) 文件。 调试器随后使用 PDB 针对它为源文件计算的校验和进行比较。  
   
  此解决方案不适用于 ASP.NET 项目，因为计算的校验和用于生成的源文件，而不用于 .aspx 文件。 为解决此问题，`#pragma checksum` 为 ASP.NET 页面提供校验和支持。  

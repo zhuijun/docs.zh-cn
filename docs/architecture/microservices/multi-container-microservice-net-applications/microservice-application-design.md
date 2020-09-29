@@ -2,12 +2,12 @@
 title: 设计面向微服务的应用程序
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解面向微服务的应用程序的优点和缺点，以便可以采取明智的决策。
 ms.date: 10/02/2018
-ms.openlocfilehash: 619440c02c1a82e05adb2cec9ddba933cd3e0a65
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 11aa6327a8d870a1ff6356b88695b693c27f99a9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "76965758"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172334"
 ---
 # <a name="design-a-microservice-oriented-application"></a>设计面向微服务的应用
 
@@ -158,7 +158,7 @@ ms.locfileid: "76965758"
 
 - 简单 CRUD、单层级、单层。
 
-- [传统 N 分层](https://docs.microsoft.com/previous-versions/msp-n-p/ee658109(v=pandp.10))。
+- [传统 N 分层](/previous-versions/msp-n-p/ee658109(v=pandp.10))。
 
 - [域驱动设计 N 分层](https://devblogs.microsoft.com/cesardelatorre/published-first-alpha-version-of-domain-oriented-n-layered-architecture-v2-0/)。
 

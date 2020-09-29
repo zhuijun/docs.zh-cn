@@ -4,12 +4,12 @@ description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序 | Azure
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 640cfebea3c70314be4a597bc07b0dc6854f5848
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: 8907c63f8dcd57ec22c3c196cbb1db52d91a3b5f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81607888"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169032"
 ---
 # <a name="development-process-for-azure"></a>Azure 的开发过程
 
@@ -46,9 +46,9 @@ ms.locfileid: "81607888"
 
 若要为应用创建发布管道，需要具备源代码管理中的应用程序代码。 设置一个本地存储库，并将其连接到团队项目中的远程存储库。 请按照以下说明执行操作：
 
-- [使用 Git 和 Visual Studio 分享代码](https://docs.microsoft.com/azure/devops/git/share-your-code-in-git-vs)或
+- [使用 Git 和 Visual Studio 分享代码](/azure/devops/git/share-your-code-in-git-vs)或
 
-- [使用 TFVC 和 Visual Studio 分享代码](https://docs.microsoft.com/azure/devops/tfvc/share-your-code-in-tfvc-vs)
+- [使用 TFVC 和 Visual Studio 分享代码](/azure/devops/tfvc/share-your-code-in-tfvc-vs)
 
 创建要在其中部署应用程序的 Azure 应用服务。 转至 Azure 门户上的“应用服务”选项卡，创建一个 Web 应用。 单击“+添加”，选择 Web 应用模板，单击“创建”并提供名称或其他详细信息。 该 Web 应用可通过 {name}.azurewebsites.net 进行访问。
 
@@ -58,13 +58,13 @@ ms.locfileid: "81607888"
 
 无论新代码何时提交至项目的源代码管理存储库，CI 生成过程均会执行自动生成。 由此你可获得即时反馈，知悉代码已生成（且理想情况下可通过自动测试），并且或许可进行部署。 此 CI 生成将生成一个 Web 部署包项目，并将其发布，以供 CD 进程使用。
 
-[定义 CI 生成过程](https://docs.microsoft.com/azure/devops/pipelines/ecosystems/dotnet-core)
+[定义 CI 生成过程](/azure/devops/pipelines/ecosystems/dotnet-core)
 
 请务必启用持续集成，从而使得无论何时团队成员提交新代码，系统均可将生成排队。 测试该生成，并验证其是否生成 Web 部署包作为其中一个项目。
 
 生成成功后，CD 过程会将 CI 生成结果部署到 Azure Web 应用。 如需对其配置，请创建并配置一个 Release（它将部署到 Azure 应用服务）。 
 
-[部署 Azure web 应用](https://docs.microsoft.com/azure/devops/pipelines/targets/webapp)
+[部署 Azure web 应用](/azure/devops/pipelines/targets/webapp)
 
 配置 CI/CD 管道后，即可更新 Web 应用，并将更新提交至源代码管理以进行部署。
 
@@ -82,7 +82,7 @@ ms.locfileid: "81607888"
 
 #### <a name="step-2-application-code-repository"></a>步骤 2。 应用程序代码存储库
 
-无论何时准备与团队共享代码，均应将更改从本地源存储库中推送到团队共享源存储库。 如果一直在自定义分支中工作，此步骤通常涉及将代码合并到共享分支中（或许通过[拉取请求](https://docs.microsoft.com/azure/devops/git/pull-requests)方式）。
+无论何时准备与团队共享代码，均应将更改从本地源存储库中推送到团队共享源存储库。 如果一直在自定义分支中工作，此步骤通常涉及将代码合并到共享分支中（或许通过[拉取请求](/azure/devops/git/pull-requests)方式）。
 
 #### <a name="step-3-build-server-continuous-integration-build-test-package"></a>步骤 3。 生成服务器：持续集成。 生成、测试、打包
 

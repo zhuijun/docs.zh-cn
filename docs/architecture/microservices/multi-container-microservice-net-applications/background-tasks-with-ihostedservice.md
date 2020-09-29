@@ -2,12 +2,12 @@
 title: 使用 IHostedService 和 BackgroundService 类在微服务中实现后台任务
 description: 用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解使用 IHostedService 和 BackgroundService 在微服务 .NET Core 中实现后台任务的新选项。
 ms.date: 08/14/2020
-ms.openlocfilehash: 4ab215f2196cd2e66b116465c3a582a9846c8066
-ms.sourcegitcommit: 0100be20fcf23f61dab672deced70059ed71bb2e
+ms.openlocfilehash: 279f9e0093deafab51e63d72dce233c8e9466a55
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/17/2020
-ms.locfileid: "88267992"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173349"
 ---
 # <a name="implement-background-tasks-in-microservices-with-ihostedservice-and-the-backgroundservice-class"></a>使用 IHostedService 和 BackgroundService 类在微服务中实现后台任务
 
@@ -68,7 +68,7 @@ public IServiceProvider ConfigureServices(IServiceCollection services)
 
 ## <a name="the-ihostedservice-interface"></a>IHostedService 接口
 
-当注册 `IHostedService` 时，.NET Core 会在应用程序启动和停止期间分别调用 `IHostedService` 类型的 `StartAsync()` 和 `StopAsync()` 方法。 有关详细信息，请参阅 [IHostedService 接口](https://docs.microsoft.com/aspnet/core/fundamentals/host/hosted-services?view=aspnetcore-3.1&tabs=visual-studio#ihostedservice-interface)
+当注册 `IHostedService` 时，.NET Core 会在应用程序启动和停止期间分别调用 `IHostedService` 类型的 `StartAsync()` 和 `StopAsync()` 方法。 有关详细信息，请参阅 [IHostedService 接口](/aspnet/core/fundamentals/host/hosted-services?tabs=visual-studio&view=aspnetcore-3.1#ihostedservice-interface)
 
 如你所想，可以创建 IHostedService 的多个实现，并在 `ConfigureService()` 方法中将它们注册到 DI 容器中，如前所示。 所有这些托管服务将随应用程序/微服务一起启动和停止。
 

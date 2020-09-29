@@ -2,12 +2,12 @@
 title: 微服务中的复原和高可用性
 description: 微服务必须能够承受暂时的网络和依赖项故障，必须可复原以实现高可用性。
 ms.date: 09/20/2018
-ms.openlocfilehash: 28f8b124cd59b2c3d621267cb437872af42c9ea8
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: 601255c1e6941b2de9fdb34098dea7edf6d8b987
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988916"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172445"
 ---
 # <a name="resiliency-and-high-availability-in-microservices"></a>微服务中的复原和高可用性
 
@@ -40,7 +40,7 @@ ms.locfileid: "80988916"
 
 在基于服务器的整体式应用程序中，可简单地将日志写入磁盘上的文件（日志文件），然后使用任意工具对其进行分析。 因为应用程序限制在固定的服务器或 VM 上执行，所以它通常不会太过复杂而导致无法分析事件流。 但在分布式应用程序中，多个服务在业务流程协调程序群集中的多数节点上执行，因此关联分布式事件是一项挑战。
 
-基于微服务的应用程序不应尝试自行存储事件或日志文件的输出流，甚至不应尝试管理事件到中心位置的路由。 它应该是透明的，即每个进程只需要将其事件流写入一个标准输出，该标准输出将由运行的执行环境基础结构收集。 事件流路由器的一个示例为 [Microsoft.Diagnostic.EventFlow](https://github.com/Azure/diagnostics-eventflow)，该路由器从多个源收集事件流，并将其发布到输出系统。 这些可以包括用于开发环境或云系统（如 [Azure Monitor](https://azure.microsoft.com/services/monitor//) 和 [Azure 诊断](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostics-extension-overview)）的简单标准输出。 也有一些好的第三方日志分析平台和工具（如 [Splunk](https://www.splunk.com/goto/Splunk_Log_Management?ac=ga_usa_log_analysis_phrase_Mar17&_kk=logs%20analysis&gclid=CNzkzIrex9MCFYGHfgodW5YOtA)），它们甚至可以实时搜索、提示、报告和监视日志。
+基于微服务的应用程序不应尝试自行存储事件或日志文件的输出流，甚至不应尝试管理事件到中心位置的路由。 它应该是透明的，即每个进程只需要将其事件流写入一个标准输出，该标准输出将由运行的执行环境基础结构收集。 事件流路由器的一个示例为 [Microsoft.Diagnostic.EventFlow](https://github.com/Azure/diagnostics-eventflow)，该路由器从多个源收集事件流，并将其发布到输出系统。 这些可以包括用于开发环境或云系统（如 [Azure Monitor](https://azure.microsoft.com/services/monitor//) 和 [Azure 诊断](/azure/azure-monitor/platform/diagnostics-extension-overview)）的简单标准输出。 也有一些好的第三方日志分析平台和工具（如 [Splunk](https://www.splunk.com/goto/Splunk_Log_Management?ac=ga_usa_log_analysis_phrase_Mar17&_kk=logs%20analysis&gclid=CNzkzIrex9MCFYGHfgodW5YOtA)），它们甚至可以实时搜索、提示、报告和监视日志。
 
 ### <a name="orchestrators-managing-health-and-diagnostics-information"></a>管理运行状况和诊断信息的业务流程协调程序
 

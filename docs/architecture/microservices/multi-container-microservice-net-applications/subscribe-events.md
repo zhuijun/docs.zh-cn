@@ -2,12 +2,12 @@
 title: 订阅事件
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解发布和订阅集成事件的详细信息。
 ms.date: 01/30/2020
-ms.openlocfilehash: 426dcebe175e9db9a02bcdb2f21ad039154a7bda
-ms.sourcegitcommit: 2b3b2d684259463ddfc76ad680e5e09fdc1984d2
+ms.openlocfilehash: 838aaebbd390a66142c2bcdfa2f3b0ee4c32b7f0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80888210"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172204"
 ---
 # <a name="subscribing-to-events"></a>订阅事件
 
@@ -91,17 +91,17 @@ public async Task<IActionResult> UpdateProduct([FromBody]CatalogItem product)
 
 ### <a name="designing-atomicity-and-resiliency-when-publishing-to-the-event-bus"></a>设计发布到事件总线时的原子性和复原能力
 
-如果通过分布式消息传递系统（如事件总线）发布集成事件，在以原子方式更新原始数据库和发布事件时会出现问题（即，两个操作都已完成，或者都没有完成）。 例如，在前面所示的简化示例中，代码在产品价格发生变动时向数据库提交数据，然后发布 ProductPriceChangedIntegrationEvent 消息。 最开始，这两个操作看起来可能必须以原子方式执行。 但是，如果像在 [Microsoft 消息队列 (MSMQ)](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx) 等早期系统中那样，使用涉及数据库和消息代理的分布式事务，那么根据 [CAP 定理](https://www.quora.com/What-Is-CAP-Theorem-1)所描述的原因，并不推荐这样做。
+如果通过分布式消息传递系统（如事件总线）发布集成事件，在以原子方式更新原始数据库和发布事件时会出现问题（即，两个操作都已完成，或者都没有完成）。 例如，在前面所示的简化示例中，代码在产品价格发生变动时向数据库提交数据，然后发布 ProductPriceChangedIntegrationEvent 消息。 最开始，这两个操作看起来可能必须以原子方式执行。 但是，如果像在 [Microsoft 消息队列 (MSMQ)](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85)) 等早期系统中那样，使用涉及数据库和消息代理的分布式事务，那么根据 [CAP 定理](https://www.quora.com/What-Is-CAP-Theorem-1)所描述的原因，并不推荐这样做。
 
 微服务主要用于构建可缩放且高度可用的系统。 简单来说，CAP 定理认为你无法构建一个兼具  持续可用性、强一致性和分区容错性的（分布式）数据库（或拥有其模型的微服务）。 你只能选择这三种属性中的两种。
 
-在基于微服务的体系结构中，应选择可用性和容错性，而不再强调强一致性。 因此，在大多数基于微服务的现代应用程序中，你通常不希望像在使用 [MSMQ](https://msdn.microsoft.com/library/windows/desktop/ms711472(v=vs.85).aspx) 基于 Windows 分布式事务处理协调器 (DTC) 实现[分布式事务](https://docs.microsoft.com/previous-versions/windows/desktop/ms681205(v=vs.85))时那样，在消息传递中使用分布式事务。
+在基于微服务的体系结构中，应选择可用性和容错性，而不再强调强一致性。 因此，在大多数基于微服务的现代应用程序中，你通常不希望像在使用 [MSMQ](/previous-versions/windows/desktop/legacy/ms711472(v=vs.85)) 基于 Windows 分布式事务处理协调器 (DTC) 实现[分布式事务](/previous-versions/windows/desktop/ms681205(v=vs.85))时那样，在消息传递中使用分布式事务。
 
 让我们回到最初的问题及其示例。 如果服务在数据库更新之后（在本例中，也就是在运行 `_context.SaveChangesAsync()` 代码行之后）但在发布集成事件之前崩溃，则整个系统会变得不一致。 这对业务而言可能很关键，具体取决于你正在处理的具体业务操作。
 
 正如前面在体系结构部分中提到的那样，可以通过以下几种方法来处理此问题：
 
-- 使用完整[事件溯源模式](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)。
+- 使用完整[事件溯源模式](/azure/architecture/patterns/event-sourcing)。
 
 - 使用[事务日志挖掘](https://www.scoop.it/t/sql-server-transaction-log-mining)。
 

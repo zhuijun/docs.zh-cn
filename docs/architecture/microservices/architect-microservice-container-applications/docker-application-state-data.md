@@ -2,12 +2,12 @@
 title: Docker 应用程序中的状态和数据
 description: Docker 应用程序中的状态和数据管理。 微服务实例是可消耗的，但数据不是，本文介绍如何使用微服务处理这一问题。
 ms.date: 09/20/2018
-ms.openlocfilehash: 1157ea3c4ca8fc389769308cc0a1141b5f92bb88
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 10271d41dcd0574cd212663c2ee22ae06c2c1269
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72771429"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152619"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Docker 应用程序中的状态和数据
 
@@ -27,7 +27,7 @@ ms.locfileid: "72771429"
 
 - [Azure 存储](https://azure.microsoft.com/documentation/services/storage/)，提供可异地分发存储，为容器提供良好的持久性解决方案。
 
-- 远程关系数据库（如 [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)）或 NoSQL 数据库（如 [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction)）或缓存服务（如 [Redis](https://redis.io/)）。
+- 远程关系数据库（如 [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)）或 NoSQL 数据库（如 [Azure Cosmos DB](/azure/cosmos-db/introduction)）或缓存服务（如 [Redis](https://redis.io/)）。
 
 从 Docker 容器：
 

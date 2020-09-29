@@ -8,14 +8,15 @@ f1_keywords:
 helpviewer_keywords:
 - internal keyword [C#]
 ms.assetid: 6ee0785c-d7c8-49b8-bb72-0a4dfbcb6461
-ms.openlocfilehash: 14722d66a65eb5f96118acf017dc877e657b2dd9
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: c66f4ff578e9864ebaf2b89ec03ce95f3cb2ba91
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89134570"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91168733"
 ---
 # <a name="internal-c-reference"></a>internal（C# 参考）
+
 `internal` 关键字是类型和类型成员的[访问修饰符](./access-modifiers.md)。
   
  > 本页涵盖 `internal` 访问。 `internal` 关键字也是 [`protected internal`](./protected-internal.md) 访问修饰符的一部分。
@@ -39,6 +40,7 @@ public class BaseClass
  从定义具有内部访问权限的类型或成员的程序集外部引用该类型或成员是错误的。  
   
 ## <a name="example"></a>示例  
+
  此示例包含两个文件，即 `Assembly1.cs` 和 `Assembly1_a.cs`。 第一个文件包含内部基类 `BaseClass`。 在第二个文件中，尝试实例化 `BaseClass` 会产生错误。  
   
 ```csharp  
@@ -63,6 +65,7 @@ class TestAccess
 ```  
   
 ## <a name="example"></a>示例  
+
  在此示例中，使用在示例 1 中所用的相同文件，并将 `BaseClass` 的可访问性级别更改为 `public`。 另将成员 `intM` 的可访问性级别更改为 `internal`。 在此例中，可以实例化类，但不能访问内部成员。  
   
 ```csharp  

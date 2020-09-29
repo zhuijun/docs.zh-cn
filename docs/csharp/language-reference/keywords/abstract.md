@@ -8,17 +8,19 @@ f1_keywords:
 helpviewer_keywords:
 - abstract keyword [C#]
 ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
-ms.openlocfilehash: 095c4dea838aff4f14833d78fb10a2f831cf5173
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 276e3f6ab50a069e3852c529c13eaad3c64e42ad
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89127199"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91168876"
 ---
 # <a name="abstract-c-reference"></a>abstract（C# 参考）
+
 `abstract` 修饰符指示被修改内容的实现已丢失或不完整。 abstract 修饰符可用于类、方法、属性、索引和事件。 在类声明中使用 `abstract` 修饰符来指示某个类仅用作其他类的基类，而不用于自行进行实例化。 标记为抽象的成员必须由派生自抽象类的非抽象类来实现。
   
 ## <a name="example"></a>示例  
+
  在此示例中，类 `Square` 必须提供 `GetArea` 的实现，因为它派生自 `Shape`：  
   
  [!code-csharp[csrefKeywordsModifiers#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#1)]
@@ -66,6 +68,7 @@ ms.locfileid: "89127199"
 [!code-csharp[csrefKeywordsModifiers#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#2)]
   
 ## <a name="example"></a>示例  
+
  在此示例中，类 `DerivedClass` 派生自抽象类 `BaseClass`。 抽象类包含抽象方法 `AbstractMethod`，以及两个抽象属性 `X` 和 `Y`。  
   
 [!code-csharp[csrefKeywordsModifiers#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#3)]
@@ -79,6 +82,7 @@ BaseClass bc = new BaseClass();   // Error
 将遇到一个错误，告知编译器无法创建抽象类“BaseClass”的实例。  
   
 ## <a name="c-language-specification"></a>C# 语言规范  
+
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>请参阅

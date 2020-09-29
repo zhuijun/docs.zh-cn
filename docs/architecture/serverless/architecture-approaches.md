@@ -4,12 +4,12 @@ description: 介绍如何构建方法来生成基于云的企业应用程序（�
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 74de96bef48f16ced4adf82855a740aa0afcdf1d
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 0ab84d1f3425c1fda787756b73fd8315fe6d4231
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "72522896"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171970"
 ---
 # <a name="architecture-approaches"></a>体系结构方法
 
@@ -21,7 +21,7 @@ ms.locfileid: "72522896"
 
 现代业务应用程序遵循各种体系结构模式。 本部分提供对常见模式的调查。 此处列出的模式并不一定是所有最佳做法，但阐释了不同的方法。
 
-有关详细信息，请参阅 [Azure 应用程序体系结构指南](https://docs.microsoft.com/azure/architecture/guide/)。
+有关详细信息，请参阅 [Azure 应用程序体系结构指南](/azure/architecture/guide/)。
 
 ## <a name="monoliths"></a>整体模式
 
@@ -65,7 +65,7 @@ N 层方法有以下几个优点，包括：
 
 ## <a name="microservices"></a>微服务
 
-**[微服务](https://docs.microsoft.com/azure/architecture/guide/architecture-styles/microservices)** 体系结构包含的常见特征包括：
+**[微服务](/azure/architecture/guide/architecture-styles/microservices)** 体系结构包含的常见特征包括：
 
 - 应用程序由多个小型服务组成。
 - 每个服务都在自己的进程中运行。

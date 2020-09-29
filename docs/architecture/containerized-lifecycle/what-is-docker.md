@@ -2,12 +2,12 @@
 title: 什么是 Docker？
 description: 深入了解 Docker，这里的一个简单类比可能会对你有所帮助。
 ms.date: 08/06/2020
-ms.openlocfilehash: 73b6032465583861169a8ac2bed81585027f42ec
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: b23a8719170deca706ee44d10337c340d72605fb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915056"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165918"
 ---
 # <a name="what-is-docker"></a>什么是 Docker？
 
@@ -29,7 +29,7 @@ ms.locfileid: "87915056"
 
 - “Hyper-V 容器”通过在高度优化的虚拟机中运行各容器来扩展 Windows Server 容器提供的隔离  。 在此配置中，容器主机的内核不与 Hyper-V 容器共享，以提供更好的隔离。
 
-这些容器的映像的创建和工作方式均相同。 区别在于，在运行 Hyper-V 容器的映像中创建容器的方式需要使用其他参数。 有关详细信息，请参阅 [Hyper-V 容器](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/hyperv-container)。
+这些容器的映像的创建和工作方式均相同。 区别在于，在运行 Hyper-V 容器的映像中创建容器的方式需要使用其他参数。 有关详细信息，请参阅 [Hyper-V 容器](/virtualization/windowscontainers/manage-containers/hyperv-container)。
 
 ## <a name="comparing-docker-containers-with-virtual-machines"></a>比较 Docker 容器和虚拟机
 

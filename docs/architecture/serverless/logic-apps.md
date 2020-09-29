@@ -4,20 +4,20 @@ description: 使用 Azure 逻辑应用可以生成可缩放的自动化工作流
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 7ece3d30209713d42ee44ef9c1be1cf0fe82464a
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 11fdf5b5f176eb0d66eee6dde7638d3eae1e1f55
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "69577450"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171840"
 ---
 # <a name="azure-logic-apps"></a>Azure 逻辑应用
 
-[Azure 逻辑应用](https://docs.microsoft.com/azure/logic-apps)提供无服务器引擎来生成自动化工作流，以便在云服务和本地系统之间集成应用和数据。 使用可视化设计器生成工作流。 可以基于事件或计时器触发工作流，并利用连接器来集成应用程序和促进企业到企业 (B2B) 通信。 逻辑应用与 Azure Functions 无缝集成。
+[Azure 逻辑应用](/azure/logic-apps)提供无服务器引擎来生成自动化工作流，以便在云服务和本地系统之间集成应用和数据。 使用可视化设计器生成工作流。 可以基于事件或计时器触发工作流，并利用连接器来集成应用程序和促进企业到企业 (B2B) 通信。 逻辑应用与 Azure Functions 无缝集成。
 
 ![Azure 逻辑应用徽标](./media/logic-apps-logo.png)
 
-逻辑应用不仅可以将云服务（如 Functions）与云资源（如队列和数据库）连接。 还可以通过本地网关协调本地工作流。 例如，可以使用逻辑应用触发本地 SQL 存储过程，以便响应工作流中基于云的事件或条件逻辑。 详细了解[使用 Azure 本地数据网关连接到本地数据源](https://docs.microsoft.com/azure/analysis-services/analysis-services-gateway)。
+逻辑应用不仅可以将云服务（如 Functions）与云资源（如队列和数据库）连接。 还可以通过本地网关协调本地工作流。 例如，可以使用逻辑应用触发本地 SQL 存储过程，以便响应工作流中基于云的事件或条件逻辑。 详细了解[使用 Azure 本地数据网关连接到本地数据源](/azure/analysis-services/analysis-services-gateway)。
 
 ![逻辑应用体系结构](./media/logic-apps-architecture.png)
 
@@ -31,7 +31,7 @@ ms.locfileid: "69577450"
 
 逻辑应用仪表板显示运行工作流的历史记录，以及每次运行是否已成功完成。 可以导航到任何给定运行，并检查每个步骤使用的数据以进行故障排除。 逻辑应用还提供了可编辑且非常适合于复杂企业工作流的现有模板。
 
-若要了解详细信息，请参阅 [Azure 逻辑应用](https://docs.microsoft.com/azure/logic-apps)。
+若要了解详细信息，请参阅 [Azure 逻辑应用](/azure/logic-apps)。
 
 >[!div class="step-by-step"]
 >[上一页](application-insights.md)

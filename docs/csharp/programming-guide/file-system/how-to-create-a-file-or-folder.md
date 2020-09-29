@@ -8,17 +8,19 @@ helpviewer_keywords:
 - files [C#]
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
-ms.openlocfilehash: f5641dc765b1a2d62adb76babe3f111730d4550b
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 4d60b8c6c0f9d4ea66125374327f5e1ad2098694
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87302680"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167439"
 ---
 # <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>如何创建文件或文件夹（C# 编程指南）
+
 可通过编程方式在计算机上创建文件夹、子文件夹和子文件夹中的文件，并将数据写入文件。  
   
 ## <a name="example"></a>示例  
+
  [!code-csharp[csFilesandFolders#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#10)]  
   
  如果文件夹已存在，<xref:System.IO.Directory.CreateDirectory%2A> 不执行任何操作，未引发任何异常。 但 <xref:System.IO.File.Create%2A?displayProperty=nameWithType> 用新文件替换现有文件。 本示例使用 `if`-`else` 语句阻止替换现有文件。  
@@ -64,6 +66,7 @@ ms.locfileid: "87302680"
 - 文件夹仅为冒号“:”（<xref:System.IO.PathTooLongException> 类）。  
   
 ## <a name="net-security"></a>.NET 安全性  
+
  可能在部分信任场景中引发 <xref:System.Security.SecurityException> 类的实例。  
   
  如果没有创建文件夹的权限，则本示例引发 <xref:System.UnauthorizedAccessException> 类的实例。  

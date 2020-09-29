@@ -3,12 +3,12 @@ title: 将 ASP.NET Web 应用迁移到 Azure VM
 description: 了解如何将 ASP.NET Web 应用程序从本地迁移到 Azure 虚拟机。
 ms.topic: how-to
 ms.date: 06/20/2020
-ms.openlocfilehash: 5ef340d020b72bebe46fe598fe68e7d02d0c0363
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: 940243310c5e6ed13d2a42c8d9d87244200479f5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174239"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171554"
 ---
 # <a name="migrate-an-aspnet-web-application-to-an-azure-virtual-machine"></a>将 ASP.NET Web 应用程序迁移到 Azure 虚拟机
 
@@ -60,6 +60,7 @@ ms.locfileid: "86174239"
 若要开始，请参阅[虚拟网络文档](/azure/virtual-network/)
 
 ### <a name="active-directory"></a>Active Directory
+
 许多应用程序使用 Active Directory 进行身份验证和标识管理。
 
 - 使用 Azure AD Connect 可将本地目录与 Azure Active Directory 集成。 若要开始集成，请参阅[将本地目录与 Azure Active Directory 集成](/azure/active-directory/connect/active-directory-aadconnect)。
@@ -75,11 +76,13 @@ ms.locfileid: "86174239"
 ### <a name="high-availability-and-scalability"></a>高可用性和可伸缩性
 
 #### <a name="virtual-machine-scale-sets"></a>虚拟机规模集
+
 如果想要确保应用程序具有高可用性并可缩放，可将 VM 映像迁移到 Azure 虚拟机规模集，以提高应用程序的可用性和可伸缩性。 借助 VM 规模集，可以使用已配置的现有 VM 或设置一个生成管道来生成包含应用程序的映像。
 
 若要开始，请参阅[在虚拟机规模集上部署应用程序](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-deploy-app)。
 
 #### <a name="centralized-logging"></a>集中式日志记录
+
 跨多个实例运行应用程序时，请考虑将日志存储在某个中心位置，例如 [Azure 存储](/azure/storage/)。
 
 ## <a name="next-steps"></a>后续步骤

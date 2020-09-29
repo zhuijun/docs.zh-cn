@@ -3,14 +3,15 @@ title: 在 Visual Studio 中调试表达式树 (C#)
 description: 了解 Visual Studio 中的 DebugView 属性。 了解如何使用此属性分析表达式树的结构和内容。
 ms.date: 07/20/2015
 ms.assetid: 1369fa25-0fbd-4b92-98d0-8df79c49c27a
-ms.openlocfilehash: fab378149fb14ccf6a66434c933aa24a8c9c6119
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 5dcf56f96ecdbfdc3f4cb171fdb30b96456b59c9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90555609"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91154127"
 ---
 # <a name="debugging-expression-trees-in-visual-studio-c"></a>在 Visual Studio 中调试表达式树 (C#)
+
 可以在调试应用程序时分析表达式树的结构和内容。 要快速了解表达式树结构，可以使用 `DebugView` 属性，该属性[使用特殊语法](debugview-syntax.md)表示表达式树。 （请注意，`DebugView` 仅在调试模式下可用。）  
 
 ![VS 调试器中的表达式树的 DebugView 屏幕截图。](media/debugging-expression-trees-in-visual-studio/debugview-expression-tree.png)

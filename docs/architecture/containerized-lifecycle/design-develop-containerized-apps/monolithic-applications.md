@@ -2,12 +2,12 @@
 title: 整体式应用程序
 description: 了解容器化整体式应用程序的核心概念。
 ms.date: 08/06/2020
-ms.openlocfilehash: f188a2ff576436d9378030e0a858ffb8110dad17
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: c9a5baf209a47f62f421a236c0b04fe5dae37e3a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915440"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163539"
 ---
 # <a name="monolithic-applications"></a>整体式应用程序
 
@@ -37,7 +37,7 @@ ms.locfileid: "87915440"
 
 最后，从可用性的角度来看，整体式应用程序必须作为一个整体进行部署；这意味着如果必须停止并启动，则在部署期间所有功能和所有用户都将受到影响  。 在某些情况下，使用 Azure 和容器可以最大限度地减少这些情况并降低应用程序停机的可能性，如图 4-3 所示。
 
-可以通过为每个实例使用专用 VM 在 Azure 中部署整体式应用程序。 使用 [Azure VM 规模集](https://docs.microsoft.com/azure/virtual-machine-scale-sets/) 可轻松地缩放 VM。
+可以通过为每个实例使用专用 VM 在 Azure 中部署整体式应用程序。 使用 [Azure VM 规模集](/azure/virtual-machine-scale-sets/) 可轻松地缩放 VM。
 
 此外，还可使用 [Azure 应用服务](https://azure.microsoft.com/services/app-service/)运行整体式应用程序并轻松缩放实例，无需管理 VM。 Azure 应用服务还可运行 Docker 容器的单个实例，从而简化部署。
 

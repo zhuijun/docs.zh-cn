@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - '#elif directive [C#]'
 ms.assetid: 731d78df-08e0-4d51-b8c8-f193c27de13f
-ms.openlocfilehash: 3aa9082b392b352091b9fde74a85f9dd155ad7b1
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 383c143792a39bb3abcd255804360ad5e2f8ef74
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89132282"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91168694"
 ---
 # <a name="elif-c-reference"></a>#elif（C# 参考）
+
 `#elif` 可以创建复合条件指令。 如果之前的 [#if](./preprocessor-if.md) 和任何之前的可选 `#elif` 指令表达式的值为 `true`，则计算 `#elif` 表达式。 如果 `#elif` 表达式计算结果为 `true`，编译器将计算 `#elif` 和下一条件指令间的所有代码。 例如：  
   
 ```csharp
@@ -30,6 +31,7 @@ ms.locfileid: "89132282"
  可以使用运算符 `==`（相等）、`!=`（不相等）、`&&`（和）以及`||`（或）计算多个符号。 还可以用括号对符号和运算符进行分组。  
   
 ## <a name="remarks"></a>备注  
+
  `#elif` 等效于使用：  
   
 ```csharp

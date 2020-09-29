@@ -7,14 +7,15 @@ f1_keywords:
 helpviewer_keywords:
 - '#define directive [C#]'
 ms.assetid: 23638b8f-779c-450e-b600-d55682de7d01
-ms.openlocfilehash: a37f883a249ec74b66769ee40b84b20e8568c451
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 961c20c091a4a6d7da421d94500abd41d2d60a5b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89132334"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160497"
 ---
 # <a name="define-c-reference"></a>#define（C# 参考）
+
 使用 `#define` 来定义符号。 将符号用作传递给 [#if](./preprocessor-if.md) 指令的表达式时，该表达式的计算结果为 `true`，如以下示例所示：  
 
  ```csharp

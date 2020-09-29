@@ -12,14 +12,15 @@ helpviewer_keywords:
 - /d compiler option [C#]
 - d compiler option [C#]
 ms.assetid: f17d7b4d-82d0-4133-8563-68cced1cac6e
-ms.openlocfilehash: 3b7a1c6e92d2c60ce289f29044774c3aa42ca84f
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 74c9a23cd1b3a691063c2976a593c9b3a63ca618
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125873"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173264"
 ---
 # <a name="-define-c-compiler-options"></a>-define（C# 编译器选项）
+
 -define 选项将 `name` 定义为程序中所有源代码文件的符号****。  
   
 ## <a name="syntax"></a>语法  
@@ -29,10 +30,12 @@ ms.locfileid: "89125873"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `name`, `name2`  
  一个或多个要定义的符号的名称。  
   
 ## <a name="remarks"></a>备注  
+
  -define 选项具有与使用 [#define](../preprocessor-directives/preprocessor-define.md) 预处理器指令相同的效果，但编译器选项对项目中的所有文件都有效****。 符号在源文件中保持已定义状态，直到源文件中的 [#undef](../preprocessor-directives/preprocessor-undef.md) 指令删除该定义。 使用 -define 选项时，一个文件中的 `#undef` 指令不影响项目中其他的源代码文件。  
   
  可以将由此选项创建的符号同 [#if](../preprocessor-directives/preprocessor-if.md)、[#else](../preprocessor-directives/preprocessor-else.md)、[#elif](../preprocessor-directives/preprocessor-elif.md) 和 [#endif](../preprocessor-directives/preprocessor-endif.md) 一起使用，对源文件进行条件编译。  

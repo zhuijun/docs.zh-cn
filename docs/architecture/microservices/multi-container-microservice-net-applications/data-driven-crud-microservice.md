@@ -2,12 +2,12 @@
 title: 创建简单的数据驱动 CRUD 微服务
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 了解如何在微服务应用程序的上下文中创建简单的 CRUD（数据驱动）微服务。
 ms.date: 08/14/2020
-ms.openlocfilehash: 46654b9e6283d913910b62621d056e034c18870e
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 056ba37965cf831e0fb176eb585042c440530c6b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679144"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172360"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>创建简单的数据驱动 CRUD 微服务
 
@@ -27,7 +27,7 @@ ms.locfileid: "90679144"
 
 图 6-5  。 简单的数据驱动 CRUD 微服务设计
 
-上一个关系图显示了逻辑 Catalog 微服务包括其 Catalog 数据库，该数据库无论是否与其位于同一 Docker 主机均可。 若该数据库位于同一 Docker 主机，可能更利于开发，但不利于生产。 开发这种类型的服务时，只需要 [ASP.NET Core](https://docs.microsoft.com/aspnet/core/) 和数据访问 API 或 ORM（如 [Entity Framework Core](https://docs.microsoft.com/ef/core/index)）。 还可以通过 [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) 自动生成 [Swagger](https://swagger.io/) 元数据，用于提供有关服务功能的说明，如下一部分中所述。
+上一个关系图显示了逻辑 Catalog 微服务包括其 Catalog 数据库，该数据库无论是否与其位于同一 Docker 主机均可。 若该数据库位于同一 Docker 主机，可能更利于开发，但不利于生产。 开发这种类型的服务时，只需要 [ASP.NET Core](/aspnet/core/) 和数据访问 API 或 ORM（如 [Entity Framework Core](/ef/core/index)）。 还可以通过 [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.AspNetCore) 自动生成 [Swagger](https://swagger.io/) 元数据，用于提供有关服务功能的说明，如下一部分中所述。
 
 请注意，在 Docker 容器中运行 SQL Server 这样的数据库服务器十分适用于开发环境，因为可以设置和运行全部所需的依赖关系，而无需在云中或本地预配数据库。 这在运行集成测试时十分方便。 但是对于生产环境，则不建议在容器中运行数据库服务器，因为这种方法通常无法实现高可用性。 对于 Azure 中的生产环境，建议使用 Azure SQL 数据库或任何其他可提供高可用性和高扩展性的数据库技术。 例如，对于 NoSQL 方法，可选择 CosmosDB。
 
@@ -301,7 +301,7 @@ public class CatalogController : ControllerBase
     // Implementation ...
 ```
 
-此版本控制机制很简单，取决于将请求路由到相应终结点的服务器。 但如果使用 REST，为实现更精密的版本控制和使用最佳方法，应使用超媒体并实现 [HATEOAS（将超文本用作应用状态的引擎）](https://docs.microsoft.com/azure/architecture/best-practices/api-design#use-hateoas-to-enable-navigation-to-related-resources)。
+此版本控制机制很简单，取决于将请求路由到相应终结点的服务器。 但如果使用 REST，为实现更精密的版本控制和使用最佳方法，应使用超媒体并实现 [HATEOAS（将超文本用作应用状态的引擎）](/azure/architecture/best-practices/api-design#use-hateoas-to-enable-navigation-to-related-resources)。
 
 ### <a name="additional-resources"></a>其他资源
 
@@ -336,7 +336,7 @@ Swagger 的核心是 Swagger 规范，它是 JSON 或 YAML 文件中的 API 描�
 
 - [Microsoft PowerApps](https://powerapps.microsoft.com/)。 可自动从通过 [PowerApps Studio](https://powerapps.microsoft.com/build-powerapps/) 生成的 [PowerApps 移动应用](https://powerapps.microsoft.com/blog/register-and-use-custom-apis-in-powerapps/)使用 API，且无需具备编程技能。
 
-- [Azure 应用服务逻辑应用](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-what-are-logic-apps)。 可自动[使用 API 并将其集成到 Azure 应用服务逻辑应用](https://docs.microsoft.com/azure/app-service-logic/app-service-logic-custom-hosted-api)，且无需具备编程技能。
+- [Azure 应用服务逻辑应用](/azure/app-service-logic/app-service-logic-what-are-logic-apps)。 可自动[使用 API 并将其集成到 Azure 应用服务逻辑应用](/azure/app-service-logic/app-service-logic-custom-hosted-api)，且无需具备编程技能。
 
 **能够自动生成 API 文档**。 创建大规模 RESTful API 时，如基于微服务的复杂应用程序，需要处理大量终结点，同时请求和响应负载中会使用各种不同的数据模型。 具备正确的文档和稳定可靠的 API 资源管理器（通过 Swagger 获取），是 API 成功发挥功能和开发人员成功使用它的关键所在。
 

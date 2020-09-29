@@ -2,12 +2,12 @@
 title: 生成适用于云的可复原服务。 在云中处理暂时性故障
 description: 通过 Azure 云和 Windows 容器现代化现有 .NET 应用程序 | 生成适用于云的可复原服务。 在云中处理暂时性故障
 ms.date: 04/30/2018
-ms.openlocfilehash: 899084ac00d9be0df47ef88c026f4e8c19722bb6
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 8e9f1eda71e4b98a56cbfc1c7a4ff34e67bee3f4
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144247"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172152"
 ---
 # <a name="build-resilient-services-ready-for-the-cloud-embrace-transient-failures-in-the-cloud"></a>生成适用于云的可复原服务：在云中处理暂时性故障
 
@@ -33,7 +33,7 @@ ms.locfileid: "84144247"
 
 可以在 HTTP 资源和数据库资源中使用这些技术。 在图 4-9 中，应用程序基于 3 层体系结构，因此，你需要在服务级别 (HTTP) 和数据级别 (TCP) 上使用这些方法。 在除数据库之外仅使用单个应用层（无其他服务或微服务）的整体式应用程序中，处理数据库连接级别的暂时性故障可能就足够了。 在这种情况下，只需要数据库连接的特定配置。
 
-实现访问数据库的可复原通信时，根据所使用的 .NET 版本，过程可能非常直接（例如[带有实体框架 6 或更高版本](/ef/ef6/fundamentals/connection-resiliency/retry-logic)。 只需配置数据库连接即可）。 或者，你可能需要使用其他库，如[暂时性故障处理应用程序块](https://docs.microsoft.com/previous-versions/msp-n-p/hh680934(v=pandp.50))（适用于早期版本的 .NET），甚至实现你自己的库。
+实现访问数据库的可复原通信时，根据所使用的 .NET 版本，过程可能非常直接（例如[带有实体框架 6 或更高版本](/ef/ef6/fundamentals/connection-resiliency/retry-logic)。 只需配置数据库连接即可）。 或者，你可能需要使用其他库，如[暂时性故障处理应用程序块](/previous-versions/msp-n-p/hh680934(v=pandp.50))（适用于早期版本的 .NET），甚至实现你自己的库。
 
 实现 HTTP 重试和断路器时，适用于 .NET 的建议使用 [Polly](https://github.com/App-vNext/Polly) 库，此库面向 .NET Framework 4.0、.NET Framework 4.5 和 .NET Standard 1.1，其中包括 .NET Core 支持。
 

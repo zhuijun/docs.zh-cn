@@ -3,14 +3,15 @@ title: 转换数据类型 (C#)
 description: 转换方法可更改输入对象的类型。 请参阅 C# 中的 LINQ 查询中的转换操作，如 Enumerable.AsEnumerable 和 Enumerable.OfType。
 ms.date: 07/20/2015
 ms.assetid: 46e5682f-77a1-4302-8f93-a2b53c408808
-ms.openlocfilehash: 3291690f9aaee945ca7feb04ebbc676db2612894
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: f9e3b354fd6eeba6564067550ea3821e4946d92f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105487"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159132"
 ---
 # <a name="converting-data-types-c"></a>转换数据类型 (C#)
+
 转换方法可更改输入对象的类型。
 
  LINQ 查询中的转换运算可用于各种应用程序。 以下是一些示例：
@@ -22,6 +23,7 @@ ms.locfileid: "87105487"
 - <xref:System.Linq.Enumerable.ToArray%2A?displayProperty=nameWithType>、<xref:System.Linq.Enumerable.ToDictionary%2A?displayProperty=nameWithType>、<xref:System.Linq.Enumerable.ToList%2A?displayProperty=nameWithType> 和 <xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType> 方法可用于强制执行即时的查询，而不是将其推迟到枚举该查询时。
 
 ## <a name="methods"></a>方法
+
  下表列出了执行数据类型转换的标准查询运算符方法。
 
  本表中名称以“As”开头的转换方法可更改源集合的静态类型，但不对其进行枚举。 名称以“To”开头的方法可枚举源集合，并将项放入相应的集合类型。

@@ -2,12 +2,12 @@
 title: 什么是 Docker？
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 什么是 Docker？
 ms.date: 08/31/2018
-ms.openlocfilehash: a53845d3bbcf24f3eaeb98b9e08b6f35a023c30e
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 7d4b419f46f32fa4acdeb1ac7d5e0c2b2c199fc5
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "75337709"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172399"
 ---
 # <a name="what-is-docker"></a>什么是 Docker？
 
@@ -29,7 +29,7 @@ Docker 容器可以在任意位置运行：在客户数据中心本地、在外�
 
 - Hyper-V 容器通过在高度优化的虚拟机中运行各容器来扩展 Windows Server 容器提供的隔离。 在此配置中，容器主机的内核不与 Hyper-V 容器共享，以提供更好的隔离。
 
-这些容器的映像的创建和运行方式均相同。 区别在于，在运行 Hyper-V 容器的映像中创建容器的方式需要使用其他参数。 有关详细信息，请参阅 [Hyper-V 容器](https://docs.microsoft.com/virtualization/windowscontainers/manage-containers/hyperv-container)。
+这些容器的映像的创建和运行方式均相同。 区别在于，在运行 Hyper-V 容器的映像中创建容器的方式需要使用其他参数。 有关详细信息，请参阅 [Hyper-V 容器](/virtualization/windowscontainers/manage-containers/hyperv-container)。
 
 ## <a name="comparing-docker-containers-with-virtual-machines"></a>比较 Docker 容器和虚拟机
 

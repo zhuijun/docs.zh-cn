@@ -2,12 +2,12 @@
 title: 使用 Entity Framework Core 实现基础结构持久性层
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 探索使用 Entity Framework Core 实现基础结构持久性层的细节。
 ms.date: 01/30/2020
-ms.openlocfilehash: f9d97319d378b6fd3eb681fd2873e5fbeead787f
-ms.sourcegitcommit: 4ad2f8920251f3744240c3b42a443ffbe0a46577
+ms.openlocfilehash: 878d4d64e92ca92fd2393d60d496f1c5671e7029
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86100972"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172347"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>使用 Entity Framework Core 实现基础结构持久性层
 
@@ -367,7 +367,7 @@ EF Core 支持使用 `UseHiLo` 方法的 [HiLo](https://stackoverflow.com/questi
 
 ### <a name="use-shadow-properties-in-ef-core-hidden-at-the-infrastructure-level"></a>在 EF Core 中使用隐藏在基础结构级别的阴影属性
 
-EF Core 中的阴影属性是不存于实体类模型中的属性。 这些属性的值和状态完全在基础结构级别于 [ChangeTracker](https://docs.microsoft.com/ef/core/api/microsoft.entityframeworkcore.changetracking.changetracker) 类中进行维护。
+EF Core 中的阴影属性是不存于实体类模型中的属性。 这些属性的值和状态完全在基础结构级别于 [ChangeTracker](/ef/core/api/microsoft.entityframeworkcore.changetracking.changetracker) 类中进行维护。
 
 ## <a name="implement-the-query-specification-pattern"></a>实现查询规范模式
 

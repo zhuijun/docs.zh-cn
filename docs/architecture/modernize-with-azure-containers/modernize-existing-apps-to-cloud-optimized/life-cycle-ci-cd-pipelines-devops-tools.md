@@ -2,12 +2,12 @@
 title: 通过云中的 CI/CD 管道和 DevOps 工具保持对应用的生命周期进行现代化
 description: 通过 Azure 云和 Windows 容器现代化现有 .NET 应用程序 | 通过云中的 CI/CD 管道和 DevOps 工具保持现代化应用的生命周期
 ms.date: 04/30/2018
-ms.openlocfilehash: afb7bae7780a766329ca604d192b2d7353e32bf5
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: 98ebd29b8ab81c8fff6da546942825133f06f4de
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739160"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172048"
 ---
 # <a name="modernize-your-apps-lifecycle-with-cicd-pipelines-and-devops-tools-in-the-cloud"></a>通过云中的 CI/CD 管道和 DevOps 工具保持对应用的生命周期进行现代化
 
@@ -17,9 +17,9 @@ ms.locfileid: "81739160"
 
 Azure DevOps Services 通过官方 Azure DevOps Services 部署任务支持将多容器应用程序持续集成和部署到各种环境：
 
-- [部署到用于容器的 Azure Web 应用](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-docker-webapp?tabs=dotnet-core)
+- [部署到用于容器的 Azure Web 应用](/azure/devops/pipelines/apps/cd/deploy-docker-webapp?tabs=dotnet-core)
 
-- [部署到 Azure Kubernetes 服务](https://docs.microsoft.com/azure/devops/pipelines/apps/cd/deploy-aks?tabs=dotnet-core)
+- [部署到 Azure Kubernetes 服务](/azure/devops/pipelines/apps/cd/deploy-aks?tabs=dotnet-core)
 
 不过，你还可以使用基于 Azure DevOps Services 脚本的任务部署到 [Docker Swarm](https://blog.jcorioland.io/archives/2016/11/29/full-ci-cd-pipeline-to-deploy-multi-containers-application-on-azure-container-service-docker-swarm-using-visual-studio-team-services.html) 或 DC/OS。
 

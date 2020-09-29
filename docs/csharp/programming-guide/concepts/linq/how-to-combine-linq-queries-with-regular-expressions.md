@@ -3,14 +3,15 @@ title: 如何将 LINQ 查询与正则表达式合并 (C#)
 description: 此示例使用 C# 中的 Regex 类创建用于在文本字符串中匹配的正则表达式。
 ms.date: 07/20/2015
 ms.assetid: 6b003b65-20a4-4ca2-929e-2ee3f215aecc
-ms.openlocfilehash: af63d096e3c2f19ed557180d82d606989a016120
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: e423261961c25c6aae62483d332ce053d7b6f963
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105351"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157494"
 ---
 # <a name="how-to-combine-linq-queries-with-regular-expressions-c"></a>如何将 LINQ 查询与正则表达式合并 (C#)
+
 此示例演示如何使用 <xref:System.Text.RegularExpressions.Regex> 类在文本字符串中为更复杂的匹配创建正则表达式。 通过 LINQ 查询可以轻松地准确筛选要用正则表达式搜索的文件，并对结果进行改良。  
   
 ## <a name="example"></a>示例  
@@ -97,6 +98,7 @@ class QueryWithRegEx
  请注意，还可以查询 `RegEx` 搜索返回的 <xref:System.Text.RegularExpressions.MatchCollection> 对象。 在本例中，只在结果中生成每个匹配项的值。 但是，也可以使用 LINQ 对集合执行筛选、排序和分组等各种操作。 由于 <xref:System.Text.RegularExpressions.MatchCollection> 为非泛型 <xref:System.Collections.IEnumerable> 集合，所以必须显式声明查询中范围变量的类型。  
   
 ## <a name="compiling-the-code"></a>编译代码  
+
  使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。  
   
 ## <a name="see-also"></a>请参阅

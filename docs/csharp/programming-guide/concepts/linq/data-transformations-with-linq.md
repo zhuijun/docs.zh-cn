@@ -11,14 +11,15 @@ helpviewer_keywords:
 - data sources [LINQ in C#], data transformations
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
-ms.openlocfilehash: af08938b6b8f169ded2180529c2b4aadebefef55
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2fb4166b9dbcecebf06b9dc3a780b02751dd4dc7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558805"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159145"
 ---
 # <a name="data-transformations-with-linq-c"></a>使用 LINQ 进行数据转换 (C#)
+
 语言集成查询 (LINQ) 不只是检索数据。 它也是用于转换数据的强大工具。 通过使用 LINQ 查询，可以使用源序列作为输入，并通过多种方式对其进行修改，以创建新的输出序列。 通过排序和分组，你可以修改序列本身，而无需修改这些元素本身。 但也许 LINQ 查询最强大的功能是创建新类型。 这可以在 [select](../../../language-reference/keywords/select-clause.md) 子句中完成。 例如，可以执行下列任务：  
   
 - 将多个输入序列合并为具有新类型的单个输出序列。  
@@ -32,6 +33,7 @@ ms.locfileid: "90558805"
  这只是几个例子。 当然，可以以各种方式在同一查询中组合这些转换。 此外，一个查询的输出序列可以用作新查询的输入序列。  
   
 ## <a name="joining-multiple-inputs-into-one-output-sequence"></a>将多个输入联接到一个输出序列中  
+
  可以使用 LINQ 查询创建包含元素的输出序列，这些元素来自多个输入序列。 以下示例演示如何组合两个内存中数据结构，但相同的原则可应用于组合来自 XML 或 SQL 或数据集源的数据。 假设以下两种类类型：  
   
  [!code-csharp[CsLINQGettingStarted#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#7)]  
@@ -43,6 +45,7 @@ ms.locfileid: "90558805"
  有关详细信息，请参阅 [join 子句](../../../language-reference/keywords/join-clause.md)和 [select 子句](../../../language-reference/keywords/select-clause.md)。  
   
 ## <a name="selecting-a-subset-of-each-source-element"></a>选择每个源元素的子集  
+
  有两种主要方法来选择源序列中每个元素的子集：  
   
 1. 若要仅选择源元素的一个成员，请使用点操作。 在以下示例中，假设 `Customer` 对象包含多个公共属性，包括名为 `City` 的字符串。 在执行时，此查询将生成字符串的输出序列。  
@@ -62,6 +65,7 @@ ms.locfileid: "90558805"
  有关详细信息，请参阅[对象和集合初始值设定项](../../classes-and-structs/object-and-collection-initializers.md)和[匿名类型](../../classes-and-structs/anonymous-types.md)。  
   
 ## <a name="transforming-in-memory-objects-into-xml"></a>将内存中对象转换为 XML  
+
  LINQ 查询可以轻松地在内存中数据结构、SQL 数据库、ADO.NET 数据集和 XML 流或文档之间转换数据。 以下示例将内存中数据结构中的对象转换为 XML 元素。  
   
  [!code-csharp[CsLINQGettingStarted#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#9)]  
@@ -91,6 +95,7 @@ ms.locfileid: "90558805"
  有关详细信息，请参阅[在 C# 中创建 XML 树 (LINQ to XML)](../../../../standard/linq/create-xml-trees.md)。  
   
 ## <a name="performing-operations-on-source-elements"></a>对源元素执行操作  
+
  输出序列可能不包含源序列中的任何元素或元素属性。 输出可能是使用源元素作为输入参数而计算得出的值序列。
 
  以下查询将采用表示圆半径的数字序列，计算每个半径范围的面积，并返回输出序列，其中包含以所计算面积进行格式设置的字符串。

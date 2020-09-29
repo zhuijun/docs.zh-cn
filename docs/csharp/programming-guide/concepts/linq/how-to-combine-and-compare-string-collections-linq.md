@@ -3,14 +3,15 @@ title: 如何合并和比较字符串集合 (LINQ) (C#)
 description: 此示例合并包含文本行的文件。 了解如何使用 C# 中的 LINQ 对线集执行简单的串联、联合和交集。
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: bfbdb9a0a3d531b56578b242c91596d9e41b6cd6
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: 7bc2b2fbc6a6ce09305f870275f2f0ea5379d4fc
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87105352"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167595"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-c"></a>如何合并和比较字符串集合 (LINQ) (C#)
+
 此示例演示如何合并包含文本行的文件，并对结果排序。 具体而言，此示例演示如何对两组文本行执行简单的串联、联合和交集。  
   
 ### <a name="to-set-up-the-project-and-the-text-files"></a>设置项目和文本文件  
@@ -170,6 +171,7 @@ class MergeStrings
 ```  
   
 ## <a name="compiling-the-code"></a>编译代码  
+
  使用 System.Linq 和 System.IO 命名空间的 `using` 指令创建 C# 控制台应用程序项目。  
   
 ## <a name="see-also"></a>请参阅

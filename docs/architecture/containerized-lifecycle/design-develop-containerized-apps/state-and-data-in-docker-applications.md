@@ -2,12 +2,12 @@
 title: Docker 应用程序中的状态和数据
 description: 了解在容器化应用程序中用于保存状态的可用选项。
 ms.date: 08/06/2020
-ms.openlocfilehash: dc9a1a3eccb77e9fd67e69fd3295f3db1edf5e66
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: d55519e9340ec06588c2dae3e7363d03f263ce39
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915324"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163461"
 ---
 # <a name="state-and-data-in-docker-applications"></a>Docker 应用程序中的状态和数据
 
@@ -27,7 +27,7 @@ ms.locfileid: "87915324"
 
 - [Azure 存储](https://azure.microsoft.com/documentation/services/storage/)提供可异地分发存储，为容器提供良好的持久性解决方案。
 
-- 远程关系数据库（如 [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)）、NoSQL 数据库（如 [Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/introduction)）或缓存服务（如 [Redis](https://redis.io/)）。
+- 远程关系数据库（如 [Azure SQL 数据库](https://azure.microsoft.com/services/sql-database/)）、NoSQL 数据库（如 [Azure Cosmos DB](/azure/cosmos-db/introduction)）或缓存服务（如 [Redis](https://redis.io/)）。
 
 从 Docker 容器：
 

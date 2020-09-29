@@ -2,12 +2,12 @@
 title: 通过监视和遥测对应用进行现代化
 description: 通过 Azure 云和 Windows 容器现代化现有 .NET 应用程序 | 通过监视和遥测现代化应用
 ms.date: 04/30/2018
-ms.openlocfilehash: a5101f150d6548406db8638904fb4ab6375edf9c
-ms.sourcegitcommit: 465547886a1224a5435c3ac349c805e39ce77706
+ms.openlocfilehash: a6094435eece661d99904876ac49b3ca85ec45a7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81739182"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171996"
 ---
 # <a name="modernize-your-apps-with-monitoring-and-telemetry"></a>通过监视和遥测对应用进行现代化
 
@@ -25,13 +25,13 @@ Application Insights 是面向在多个平台上工作的 Web开发人员的可�
 
 ## <a name="monitor-your-docker-infrastructure-with-log-analytics-and-its-container-monitoring-solution"></a>利用 Log Analytics 及其容器监视解决方案监视 Docker 基础结构
 
-[Azure Log Analytics](https://docs.microsoft.com/azure/log-analytics/log-analytics-overview) 是 [Microsoft Azure 总体监视解决方案](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview)的一部分。 它也是 [Operations Management Suite (OMS)](https://docs.microsoft.com/azure/operations-management-suite/operations-management-suite-overview) 中的服务。 Log Analytics 可监视云和本地环境（OMS 适用于本地），使其保持较高的可用性和性能。 它可以收集云和本地环境中的资源生成的数据以及其他监视工具的数据，针对多个源提供分析。
+[Azure Log Analytics](/azure/log-analytics/log-analytics-overview) 是 [Microsoft Azure 总体监视解决方案](/azure/monitoring-and-diagnostics/monitoring-overview)的一部分。 它也是 [Operations Management Suite (OMS)](/azure/operations-management-suite/operations-management-suite-overview) 中的服务。 Log Analytics 可监视云和本地环境（OMS 适用于本地），使其保持较高的可用性和性能。 它可以收集云和本地环境中的资源生成的数据以及其他监视工具的数据，针对多个源提供分析。
 
-与 Azure 基础结构日志相关，Log Analytics 作为 Azure 服务，从其他 Azure 服务（通过 [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)）、Azure VM、Docker 容器以及本地或其他云基础结构引入日志和指标数据。 Log Analytics 在此数据的基础上提供灵活的日志搜索和现成的分析。 它提供丰富的工具以用于跨多个源分析数据，允许针对所有日志运行复杂的查询，并可以根据指定的条件主动发出警报。 甚至可将自定义数据收集到它的中心 Log Analytics 存储库，你可在其中查询和可视化这些数据。 还可以利用 Log Analytics 的内置解决方案，立即获取基础结构安全性与功能的见解。
+与 Azure 基础结构日志相关，Log Analytics 作为 Azure 服务，从其他 Azure 服务（通过 [Azure Monitor](/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor)）、Azure VM、Docker 容器以及本地或其他云基础结构引入日志和指标数据。 Log Analytics 在此数据的基础上提供灵活的日志搜索和现成的分析。 它提供丰富的工具以用于跨多个源分析数据，允许针对所有日志运行复杂的查询，并可以根据指定的条件主动发出警报。 甚至可将自定义数据收集到它的中心 Log Analytics 存储库，你可在其中查询和可视化这些数据。 还可以利用 Log Analytics 的内置解决方案，立即获取基础结构安全性与功能的见解。
 
 可以通过在任意浏览器中运行的 OMS 门户或 Azure 门户访问 Log Analytics。在这些门户中，可以访问配置设置和多个工具来分析和处理收集的数据。
 
-Log Analytics 中的[容器监视解决方案](https://docs.microsoft.com/azure/log-analytics/log-analytics-containers)可帮助用户在单个位置查看和管理 Docker 和 Windows 容器主机。 解决方案显示哪些容器正在运行，它们正在运行哪些容器映像以及正在运行容器的位置。 可以查看详细审核信息，其中包括了与容器一起使用的命令。 用户还可以通过查看和搜索集中式日志来排查容器问题，而无需远程查看 Docker 或 Windows 主机。 可以在主机上找到可能具有干扰性并且占用过多资源的容器。 此外，还可以查看容器的集中式 CPU、内存、存储器、网络使用情况和性能信息。 在运行 Windows 的计算机上，可以集中比较 Windows Server、Hyper-V 和 Docker 容器中的日志。 解决方案支持以下容器 Orchestrator：
+Log Analytics 中的[容器监视解决方案](/azure/log-analytics/log-analytics-containers)可帮助用户在单个位置查看和管理 Docker 和 Windows 容器主机。 解决方案显示哪些容器正在运行，它们正在运行哪些容器映像以及正在运行容器的位置。 可以查看详细审核信息，其中包括了与容器一起使用的命令。 用户还可以通过查看和搜索集中式日志来排查容器问题，而无需远程查看 Docker 或 Windows 主机。 可以在主机上找到可能具有干扰性并且占用过多资源的容器。 此外，还可以查看容器的集中式 CPU、内存、存储器、网络使用情况和性能信息。 在运行 Windows 的计算机上，可以集中比较 Windows Server、Hyper-V 和 Docker 容器中的日志。 解决方案支持以下容器 Orchestrator：
 
 - Docker Swarm
 

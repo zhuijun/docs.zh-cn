@@ -4,12 +4,12 @@ description: 了解如何编写代码来检查表达式树的结构。
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: adf73dde-1e52-4df3-9929-2e0670e28e16
-ms.openlocfilehash: ea205d42b02ea7b38c04cb70d322329cf7c1d495
-ms.sourcegitcommit: 03fec33630b46e78d5e81e91b40518f32c4bd7b5
+ms.openlocfilehash: 960d72384a7e5f570fc1f94200a7d3b2179343fd
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "84004642"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173303"
 ---
 # <a name="interpreting-expressions"></a>解释表达式
 
@@ -22,6 +22,7 @@ ms.locfileid: "84004642"
 如果节点类型具有子级，则以递归方式访问该子级。 在每个子节点中，重复在根节点处使用的步骤：确定类型，且如果该类型具有子级，则访问每个子级。
 
 ## <a name="examining-an-expression-with-no-children"></a>检查不具有子级的表达式
+
 让我们首先访问一个简单的表达式树中的每个节点。
 下面是创建常数表达式然后检查其属性的代码：
 

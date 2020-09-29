@@ -12,14 +12,15 @@ helpviewer_keywords:
 - -link compiler option [C#]
 - link compiler option [C#]
 ms.assetid: 00da70c6-9ea1-43c2-86f2-aa7f26c03475
-ms.openlocfilehash: 6fd291c49c282713ea56ca20d8d58616d38ec752
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: f6e654f4a24829de579ac94ef75b1c645fcb1685
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89465710"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91165827"
 ---
 # <a name="-link-c-compiler-options"></a>-link（C# 编译器选项）
+
 使编译器让指定程序集中的 COM 类型信息可供当前正在编译的项目使用。
 
 ## <a name="syntax"></a>语法
@@ -31,10 +32,12 @@ ms.locfileid: "89465710"
 ```
 
 ## <a name="arguments"></a>自变量
+
  `fileList`  
  必需。 程序集文件名的逗号分隔列表。 如果文件名包含空格，则将名称括在引号内。
 
 ## <a name="remarks"></a>备注
+
  `-link` 选项使你可以部署具有嵌入类型信息的应用程序。 应用程序随后可以使用运行时程序集中实现嵌入类型信息的类型，而无需引用运行时程序集。 如果发布了各种版本的运行时程序集，则包含嵌入类型信息的应用程序可以使用各种版本，而无需重新编译。 有关示例，请参阅[演练：嵌入托管程序集中的类型](../../../standard/assembly/embed-types-visual-studio.md)。
 
  在使用 COM 互操作时，使用 `-link` 选项会尤其有用。 可以嵌入 COM 类型，以便应用程序在目标计算机上不再需要主互操作程序集 (PIA)。 `-link` 选项指示编译器将引用的互操作程序集中的 COM 类型信息嵌入到生成的已编译代码中。 COM 类型由 CLSID (GUID) 值进行标识。 因此，应用程序可以在安装了具有相同 CLSID 值的相同 COM 类型的目标计算机上运行。 自动执行 Microsoft Office 的应用程序是一个很好的示例。 由于 Office 等应用程序通常在不同版本间保持相同的 CLSID 值，因此只要在目标计算机上安装了 .NET Framework 4 或更高版本，并且应用程序使用引用的 COM 类型中包含的方法、属性或事件，应用程序便可以使用引用的 COM 类型。
@@ -57,14 +60,17 @@ ms.locfileid: "89465710"
  `-link` 的缩写形式是 `-l`。
 
 ## <a name="generics-and-embedded-types"></a>泛型类型和嵌入类型
+
  以下各部分介绍对在嵌入互操作类型的应用程序中使用泛型类型的限制。
 
 ### <a name="generic-interfaces"></a>泛型接口
+
  不能使用从互操作程序集中嵌入的泛型接口。 这在下面的示例中显示。
 
  [!code-csharp[VbLinkCompilerCS#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vblinkcompilercs/cs/program.cs#1)]
 
 ### <a name="types-that-have-generic-parameters"></a>具有泛型参数的类型
+
  对于具有类型是从互操作程序集嵌入的泛型参数的类型，如果该类型来自外部程序集，则无法使用这种类型。 此限制不适用于接口。 例如，考虑在 <xref:Microsoft.Office.Interop.Excel> 程序集中定义的 <xref:Microsoft.Office.Interop.Excel.Range> 接口。 如果某个库从 <xref:Microsoft.Office.Interop.Excel> 程序集嵌入互操作类型，并且公开的一个方法返回具有类型是 <xref:Microsoft.Office.Interop.Excel.Range> 接口的参数的泛型类型，则该方法必须返回泛型接口，如下面的代码示例所示。
 
 [!code-csharp[VbLinkCompilerCS#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vblinkcompilercs/cs/utility.cs)]
@@ -74,6 +80,7 @@ ms.locfileid: "89465710"
  [!code-csharp[VbLinkCompilerCS#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/vblinkcompilercs/cs/program.cs#5)]
 
 ## <a name="example"></a>示例
+
  下面的代码编译源文件 `OfficeApp.cs` 并引用来自 `COMData1.dll` 和 `COMData2.dll` 的程序集以生成 `OfficeApp.exe`。
 
 ```csharp

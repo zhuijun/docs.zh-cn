@@ -2,12 +2,12 @@
 title: 管理 Docker 生产环境
 description: 了解管理基于容器的生产环境的关键内容。
 ms.date: 08/06/2020
-ms.openlocfilehash: 11880a523d6ff79c9646fd1e174f380779d00dcc
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: dbc5f541478410060420f95f32e4ff5291354075
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87914934"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160640"
 ---
 # <a name="manage-production-docker-environments"></a>管理 Docker 生产环境
 
@@ -25,10 +25,10 @@ ms.locfileid: "87914934"
 
 | 管理工具 | 说明 | 相关业务流程协调程序 |
 |------------------|-------------|-----------------------|
-| [用于容器的 Azure Monitor](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview) | 专用的 Azure Kubernetes 管理工具 | Azure Kubernetes 服务 (AKS) |
+| [用于容器的 Azure Monitor](/azure/monitoring/monitoring-container-insights-overview) | 专用的 Azure Kubernetes 管理工具 | Azure Kubernetes 服务 (AKS) |
 | [Kubernetes Web UI（仪表板）](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) | Kubernetes 管理工具可以监视和管理本地 Kubernetes 群集 | Azure Kubernetes 服务 (AKS)<br/>本地 Kubernetes |
-| [适用于 Service Fabric 的 Azure 门户](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal)<br/>[Azure Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-visualizing-your-cluster) | 用于在 Azure、本地开发和其他云上管理 Service Fabric 群集的联机和桌面版本 | Azure Service Fabric |
-| [容器监视 (Azure Monitor)](https://docs.microsoft.com/azure/azure-monitor/insights/containers) | 常规容器管理与监视解决方案。 可以通过[用于容器的 Azure Monitor](https://docs.microsoft.com/azure/monitoring/monitoring-container-insights-overview) 管理 Kubernetes 群集。 | Azure Service Fabric<br/>Azure Kubernetes 服务 (AKS)<br/>Mesosphere DC/OS 和其他。 |
+| [适用于 Service Fabric 的 Azure 门户](/azure/service-fabric/service-fabric-cluster-creation-via-portal)<br/>[Azure Service Fabric Explorer](/azure/service-fabric/service-fabric-visualizing-your-cluster) | 用于在 Azure、本地开发和其他云上管理 Service Fabric 群集的联机和桌面版本 | Azure Service Fabric |
+| [容器监视 (Azure Monitor)](/azure/azure-monitor/insights/containers) | 常规容器管理与监视解决方案。 可以通过[用于容器的 Azure Monitor](/azure/monitoring/monitoring-container-insights-overview) 管理 Kubernetes 群集。 | Azure Service Fabric<br/>Azure Kubernetes 服务 (AKS)<br/>Mesosphere DC/OS 和其他。 |
 
 ## <a name="azure-service-fabric"></a>Azure Service Fabric
 
@@ -36,9 +36,9 @@ Azure Service Fabric 也可用于群集部署和管理。 [Service Fabric](https
 
 以下是 Service Fabric 管理工具：
 
-- [适用于 Service Fabric 的 Azure 门户](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-creation-via-portal)可对群集执行相关的操作（创建/更新/删除）或配置其基础结构（VM、负载均衡器、网络等）
+- [适用于 Service Fabric 的 Azure 门户](/azure/service-fabric/service-fabric-cluster-creation-via-portal)可对群集执行相关的操作（创建/更新/删除）或配置其基础结构（VM、负载均衡器、网络等）
 
-- [Azure Service Fabric Explorer](https://docs.microsoft.com/azure/service-fabric/service-fabric-visualizing-your-cluster) 是一款专用的 Web UI 和桌面多平台工具，从节点/VM 以及从应用程序和服务的角度来看，该工具提供对 Service Fabric 群集的见解和某些操作。
+- [Azure Service Fabric Explorer](/azure/service-fabric/service-fabric-visualizing-your-cluster) 是一款专用的 Web UI 和桌面多平台工具，从节点/VM 以及从应用程序和服务的角度来看，该工具提供对 Service Fabric 群集的见解和某些操作。
 
 >[!div class="step-by-step"]
 >[上一页](run-microservices-based-applications-in-production.md)

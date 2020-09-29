@@ -9,12 +9,12 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: 5a70389c9c423300fad03123cfc4738dfe10e481
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 78079d9940ea5363215411acea6b9ca269ff3ae1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89118515"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160536"
 ---
 # <a name="async-c-reference"></a>async（C# 参考）
 
@@ -40,6 +40,7 @@ string contents = await httpClient.GetStringAsync(requestUrl);
  `async` 关键字是上下文关键字，原因在于只有当它修饰方法、lambda 表达式或匿名方法时，它才是关键字。 在所有其他上下文中，都会将其解释为标识符。
 
 ## <a name="example"></a>示例
+
 下面的示例展示了异步事件处理程序 `StartButton_Click` 和异步方法 `ExampleMethodAsync` 之间的控制结构和流程。 此异步方法的结果是 Web 页面的字符数。 此代码适用于在 Visual Studio 中创建的 Windows Presentation Foundation (WPF) 应用或 Windows 应用商店应用；请参见有关设置应用的代码注释。
 
 可以在 Visual Studio 中将此代码作为 Windows Presentation Foundation (WPF) 应用或 Windows 应用商店应用运行。 需要一个名为 `StartButton` 的按钮控件和一个名为 `ResultsTextBox` 的文本框控件。 切勿忘记设置名称和处理程序，以便获得类似于以下代码的内容：
@@ -68,6 +69,7 @@ string contents = await httpClient.GetStringAsync(requestUrl);
 > 若要深入了解各项任务以及在等待任务期间所执行的代码，请参阅[使用 Async 和 Await 的异步编程](../../programming-guide/concepts/async/index.md)。 有关使用类似元素的完整控制台示例，请参阅[在异步任务完成时对其进行处理 (C#)](../../programming-guide/concepts/async/start-multiple-async-tasks-and-process-them-as-they-complete.md)。
 
 ## <a name="return-types"></a>返回类型
+
 异步方法可具有以下返回类型：
 
 - <xref:System.Threading.Tasks.Task>

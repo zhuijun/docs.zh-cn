@@ -9,14 +9,15 @@ helpviewer_keywords:
 - -warnaserror compiler option [C#]
 - warnaserror compiler option [C#]
 ms.assetid: 04680ec3-08d6-4e2e-a274-38310e10e33c
-ms.openlocfilehash: 3ccd4546402dbc8e5d9245af6411ba2d831d4959
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 9c3b307668968865b401aedc04c79f95d4f32513
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89127238"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171333"
 ---
 # <a name="-warnaserror-c-compiler-options"></a>-warnaserror（C# 编译器选项）
+
 -warnaserror+ 选项将所有警告视为错误  
   
 ## <a name="syntax"></a>语法  
@@ -26,6 +27,7 @@ ms.locfileid: "89127238"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  通常报告为警告的消息被报告为错误，生成过程暂停（不生成任何输出文件）。  
   
  默认情况下，-warnaserror- 将生效，导致警告不会阻止生成输出文件****。 -warnaserror 与 -warnaserror+ 相同，会导致将警告视为错误********。  
@@ -45,6 +47,7 @@ ms.locfileid: "89127238"
  若要以编程方式设置此编译器选项，请参阅 <xref:VSLangProj80.CSharpProjectConfigurationProperties3.TreatWarningsAsErrors>。  
   
 ## <a name="example"></a>示例  
+
  编译 `in.cs` 并使编译器不显示警告：  
   
 ```console  

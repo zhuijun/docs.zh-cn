@@ -2,12 +2,12 @@
 title: API 网关模式与客户端到微服务直接通信
 description: 了解 API 网关模式与客户端到微服务直接通信之间的差异及二者的用途。
 ms.date: 01/07/2019
-ms.openlocfilehash: 089b6302132437e4bb733653b3edb401ff81a164
-ms.sourcegitcommit: 5280b2aef60a1ed99002dba44e4b9e7f6c830604
+ms.openlocfilehash: 90761605dde197e44658e3ba0b0a3a2c06b5942c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 06/03/2020
-ms.locfileid: "84306950"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152697"
 ---
 # <a name="the-api-gateway-pattern-versus-the-direct-client-to-microservice-communication"></a>API 网关模式与客户端到微服务直接通信
 
@@ -25,7 +25,7 @@ ms.locfileid: "84306950"
 
 `http://eshoponcontainers.westus.cloudapp.azure.com:88/`
 
-在基于群集的生产环境中，该 URL 将映射到群集中使用的负载均衡器，该负载均衡器随后在微服务中分布请求。 在生产环境中，可以在微服务和 Internet 之间使用 [Azure 应用程序网关](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction)等应用程序传送控制器 (ADC)。 该控制器将充当透明层，不仅执行负载均衡，还可通过提供 SSL 终端来保护服务。 这通过卸载 CPU 密集型 SSL 终端和其他到 Azure 应用程序网关的路由任务来提高主机负载。 在任何情况下，从逻辑应用程序体系结构的角度看，负载均衡器和 ADC 都是透明的。
+在基于群集的生产环境中，该 URL 将映射到群集中使用的负载均衡器，该负载均衡器随后在微服务中分布请求。 在生产环境中，可以在微服务和 Internet 之间使用 [Azure 应用程序网关](/azure/application-gateway/application-gateway-introduction)等应用程序传送控制器 (ADC)。 该控制器将充当透明层，不仅执行负载均衡，还可通过提供 SSL 终端来保护服务。 这通过卸载 CPU 密集型 SSL 终端和其他到 Azure 应用程序网关的路由任务来提高主机负载。 在任何情况下，从逻辑应用程序体系结构的角度看，负载均衡器和 ADC 都是透明的。
 
 客户端到微服务直接通信体系结构已能满足基于微服务的小型应用程序的需求，尤其是在客户端应用为服务器端 Web 应用程序（如 ASP.NET MVC 应用）的情况下。 但是，若要生成基于微服务的大型复杂应用程序（例如处理大量微服务类型），尤其是客户端应用是远程移动应用或 SPA Web 应用程序时，该方法将面临一些问题。
 
@@ -95,13 +95,13 @@ API 网关可以提供多个功能。 然而，根据产品，它可能提供更
 
 反向代理或网关路由。 API 网关提供一个反向代理将请求（第 7 层路由，通常是 HTTP 请求）重定向或路由到内部微服务的终结点。 网关为客户端应用提供单个终结点或 URL，然后将请求映射到一组内部微服务。 此路由功能有助于将客户端应用从微服务中分离出来；而且在升级整体式 API 服务时，将 API 网关置于整体式 API 服务和客户端应用之间，操作会变得非常方便，然后可以添加新的 API 作为新的微服务，同时仍然可以使用旧的整体式 API 服务，直到将来它拆分成多个微服务为止。 由于 API 网关，客户端应用不会注意到所使用的 API 是否已实现为内部微服务或整体式 API，更重要的是，当对整体式 API 进行演进并将其重构为微服务时，得益于 API 网关路由，任何 URI 更改均不会对客户端应用造成影响。
 
-有关详细信息，请参阅[网关路由模式](https://docs.microsoft.com/azure/architecture/patterns/gateway-routing)。
+有关详细信息，请参阅[网关路由模式](/azure/architecture/patterns/gateway-routing)。
 
 请求聚合。 作为网关模式的一部分，你可以将多个针对多个内部微服务的客户端请求（通常是 HTTP 请求）聚合到单个客户端请求中。 如果客户端页面/屏幕需要来自多个微服务的信息，此模式特别方便。 通过这种方法，客户端应用向 API 网关发送一个单一请求，该网关向内部微服务发送多个请求，然后聚合结果，并将所有内容发送回客户端应用。 这种设计模式的主要优势和目标是减少客户端应用和后端 API 之间的隔阂，这对于微服务所在的数据中心中的远程应用至关重要，如移动应用或来自客户端远程浏览器 JavaScript 的 SPA 应用的请求。 对于在服务器环境中执行请求的常规 Web 应用（如 ASP.NET Core MVC Web 应用），这种模式并不重要，因为延迟时间比远程客户端应用要小得多。
 
 根据你所使用的 API 网关产品，或许能够执行此聚合。 但是，在许多情况下，在 API 网关范围内创建聚合微服务更加灵活，因此你可以在代码（即 C# 代码）中定义聚合：
 
-有关详细信息，请参阅[网关聚合模式](https://docs.microsoft.com/azure/architecture/patterns/gateway-aggregation)。
+有关详细信息，请参阅[网关聚合模式](/azure/architecture/patterns/gateway-aggregation)。
 
 跨领域问题或网关卸载。 根据每个 API 网关产品提供的功能，你可以将功能从单个微服务转移到网关，从而通过将跨领域问题整合到一个层级中来简化每个微服务的实现。 这对于在每个内部微服务中难以正确实现的特殊功能而言特别方便，比如以下功能：
 
@@ -115,7 +115,7 @@ API 网关可以提供多个功能。 然而，根据产品，它可能提供更
 - 标头、查询字符串和声明转换
 - IP 允许列表
 
-有关详细信息，请参阅[网关卸载模式](https://docs.microsoft.com/azure/architecture/patterns/gateway-offloading)。
+有关详细信息，请参阅[网关卸载模式](/azure/architecture/patterns/gateway-offloading)。
 
 ## <a name="using-products-with-api-gateway-features"></a>使用带 API 网关功能的产品
 

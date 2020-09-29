@@ -2,16 +2,16 @@
 title: 协调安排微服务和多容器应用程序，实现高可伸缩性和高可用性
 description: 了解如何使用 Azure Kubernetes 服务部署应用。
 ms.date: 08/06/2020
-ms.openlocfilehash: b4deb9906e0fece7fb611b6988df576e8b07fe46
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: ba9887c0a4837c16a60ebeb006416c0fa8c105e0
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87916119"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91163591"
 ---
 # <a name="deploy-to-azure-kubernetes-service-aks"></a>部署到 Azure Kubernetes 服务 (AKS)
 
-你可以使用安装了 Azure 命令行接口 (Azure CLI) 的首选客户端操作系统（Windows、macOS 或 Linux）与 AKS 进行交互。 有关更多详细信息，请参阅 [Azure CLI 文档](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)和[安装指南](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)，以了解可用的环境。
+你可以使用安装了 Azure 命令行接口 (Azure CLI) 的首选客户端操作系统（Windows、macOS 或 Linux）与 AKS 进行交互。 有关更多详细信息，请参阅 [Azure CLI 文档](/cli/azure/?view=azure-cli-latest)和[安装指南](/cli/azure/install-azure-cli?view=azure-cli-latest)，以了解可用的环境。
 
 ## <a name="create-the-aks-environment-in-azure"></a>在 Azure 中创建 AKS 环境
 

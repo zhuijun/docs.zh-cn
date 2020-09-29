@@ -5,14 +5,15 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - files [C#], getting information about
 ms.assetid: 22fc2da6-5494-405b-995e-c0b99142a93e
-ms.openlocfilehash: f696cd90f197bede1a64949d211a563ce9a18376
-ms.sourcegitcommit: 6f58a5f75ceeb936f8ee5b786e9adb81a9a3bee9
+ms.openlocfilehash: 7cbaea4dc5381a2ebeb97ce2797ffe850488e126
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/28/2020
-ms.locfileid: "87299924"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170449"
 ---
 # <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>如何获取有关文件、文件夹和驱动器的信息（C# 编程指南）
+
 在 .NET 中，可以使用以下类访问文件系统信息：  
   
 - <xref:System.IO.FileInfo?displayProperty=nameWithType>  
@@ -36,11 +37,13 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
  <xref:System.IO.Directory?displayProperty=nameWithType> 和 <xref:System.IO.File?displayProperty=nameWithType> 类提供相关静态方法，用于检索有关目录和文件的信息。  
   
 ## <a name="example"></a>示例  
+
  下面的示例演示用于访问有关文件和文件夹的信息的各种方法。  
   
  [!code-csharp[csFilesandFolders#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#6)]  
   
 ## <a name="robust-programming"></a>可靠编程  
+
  处理用户指定的路径字符串时，还应针对以下情况处理异常：  
   
 - 文件名格式不正确。 例如，它包含无效字符或只包含空格。  

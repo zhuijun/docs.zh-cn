@@ -2,12 +2,12 @@
 title: 协调安排微服务和多容器应用程序，实现高可伸缩性和高可用性
 description: 必须使用处理所有容器的运行状况、工作负载和生命周期的业务流程协调程序来部署和管理实际的生产应用程序。
 ms.date: 08/06/2020
-ms.openlocfilehash: 61c66e1f3835df543cbc9ba23d9c098ad52c90cd
-ms.sourcegitcommit: ef50c99928183a0bba75e07b9f22895cd4c480f8
+ms.openlocfilehash: e522517d3a1f56d9b6150b580473c02cf7a704d7
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/07/2020
-ms.locfileid: "87915476"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91160822"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>协调安排微服务和多容器应用程序，实现高可伸缩性和高可用性
 
@@ -39,8 +39,8 @@ Docker CLI 满足在一台主机上管理一个容器的需求，但若要管理
 |:---:|:---|
 | **Kubernetes** <br/> ![Kubernetes 徽标图像。](./media/orchestrate-high-scalability-availability/kubernetes-container-orchestration-system-logo.png) | [*Kubernetes*](https://kubernetes.io/) 是一款开源产品，提供各种功能，从群集基础结构和容器计划到安排功能均涵盖在内。 它能实现跨主机群集自动部署、缩放以及执行各种应用程序容器操作。 <br/> <br/> Kubernetes 提供以容器为中心的基础结构，将应用程序容器分组为逻辑单元，以便管理和发现。 <br/> <br/> Kubernetes 在 Linux 中的运用已发展成熟，但在 Windows 中相对较弱。 |
 | **Azure Kubernetes 服务 (AKS)** <br/> ![Azure Kubernetes 服务徽标图像。](./media/orchestrate-high-scalability-availability/azure-kubernetes-service-logo.png) | [Azure Kubernetes 服务 (AKS)](https://azure.microsoft.com/services/kubernetes-service/) 是 Azure 中的托管 Kubernetes 容器业务流程服务，简化了 Kubernetes 群集的管理、部署和操作。 |
-| **Azure Service Fabric** <br/> ![Azure Service Fabric 徽标的图像。](./media/orchestrate-high-scalability-availability/azure-service-fabric-logo.png) | [Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) 是用于生成应用程序的 Microsoft 微服务平台。 它是服务的[业务流程协调程序](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-resource-manager-introduction)，可创建计算机群集。 Service Fabric 可将服务作为容器或纯进程进行部署。 它甚至可以在同一应用程序和群集中将进程中的服务与容器中的服务进行组合。 <br/> <br/> Service Fabric 群集可以在 Azure 中、本地或任意云中部署。 但是，Azure 中的部署使用托管方法进行了简化。 <br/> <br/> Service Fabric 提供其他可选的规定 [Service Fabric 编程模型](https://azure.microsoft.com/documentation/articles/service-fabric-choose-framework/)（如[有状态服务](https://azure.microsoft.com/documentation/articles/service-fabric-reliable-services-introduction/)和 [Reliable Actors](https://azure.microsoft.com/documentation/articles/service-fabric-reliable-actors-introduction/)）。 <br/> <br/> Service Fabric 在 Windows 中的运用已经成熟（已在 Windows 中发展多年），但在 Linux 中相对较弱。 <br/> <br/> 自 2017 年以来，Service Fabric 同时支持 Linux 和 Windows 容器。 |
-| **Azure Service Fabric 网格** <br/> ![Azure Service Fabric 网格徽标的图像。](./media/orchestrate-high-scalability-availability/azure-service-fabric-mesh-logo.png) | [Azure Service Fabric 网格](https://docs.microsoft.com/azure/service-fabric-mesh/service-fabric-mesh-overview)提供与 Service Fabric 相同的可靠性、任务关键性能和规模，但也提供完全托管的无服务器平台。 无需管理群集、虚拟机、存储或网络配置。 只需专注于应用程序的开发。 <br/> <br/> Service Fabric 网格支持 Windows 和 Linux 容器，从而允许使用所选择的任何编程语言和框架进行开发。
+| **Azure Service Fabric** <br/> ![Azure Service Fabric 徽标的图像。](./media/orchestrate-high-scalability-availability/azure-service-fabric-logo.png) | [Service Fabric](/azure/service-fabric/service-fabric-overview) 是用于生成应用程序的 Microsoft 微服务平台。 它是服务的[业务流程协调程序](/azure/service-fabric/service-fabric-cluster-resource-manager-introduction)，可创建计算机群集。 Service Fabric 可将服务作为容器或纯进程进行部署。 它甚至可以在同一应用程序和群集中将进程中的服务与容器中的服务进行组合。 <br/> <br/> Service Fabric 群集可以在 Azure 中、本地或任意云中部署。 但是，Azure 中的部署使用托管方法进行了简化。 <br/> <br/> Service Fabric 提供其他可选的规定 [Service Fabric 编程模型](/azure/service-fabric/service-fabric-choose-framework)（如[有状态服务](/azure/service-fabric/service-fabric-reliable-services-introduction)和 [Reliable Actors](/azure/service-fabric/service-fabric-reliable-actors-introduction)）。 <br/> <br/> Service Fabric 在 Windows 中的运用已经成熟（已在 Windows 中发展多年），但在 Linux 中相对较弱。 <br/> <br/> 自 2017 年以来，Service Fabric 同时支持 Linux 和 Windows 容器。 |
+| **Azure Service Fabric 网格** <br/> ![Azure Service Fabric 网格徽标的图像。](./media/orchestrate-high-scalability-availability/azure-service-fabric-mesh-logo.png) | [Azure Service Fabric 网格](/azure/service-fabric-mesh/service-fabric-mesh-overview)提供与 Service Fabric 相同的可靠性、任务关键性能和规模，但也提供完全托管的无服务器平台。 无需管理群集、虚拟机、存储或网络配置。 只需专注于应用程序的开发。 <br/> <br/> Service Fabric 网格支持 Windows 和 Linux 容器，从而允许使用所选择的任何编程语言和框架进行开发。
 
 ## <a name="using-container-based-orchestrators-in-azure"></a>在 Azure 中使用基于容器的业务流程协调程序
 
@@ -70,7 +70,7 @@ Azure Kubernetes 服务优化了专门针对 Azure 的常用 Docker 群集开源
 
 ## <a name="get-started-with-azure-kubernetes-service-aks"></a>Azure Kubernetes 服务 (AKS) 入门
 
-若要开始使用 AKS，需从 Azure 门户或使用 CLI 部署 AKS 群集。 有关向 Azure 部署 Kubernetes 群集的详细信息，请参阅[部署 Azure Kubernetes 服务 (AKS) 群集](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal)。
+若要开始使用 AKS，需从 Azure 门户或使用 CLI 部署 AKS 群集。 有关向 Azure 部署 Kubernetes 群集的详细信息，请参阅[部署 Azure Kubernetes 服务 (AKS) 群集](/azure/aks/kubernetes-walkthrough-portal)。
 
 作为 AKS 的一部分，默认安装的任何软件都不收费。 所有默认选项都通过开源软件实现。 AKS 可用于 Azure 中的多个虚拟机。 仅针对所选的计算实例以及使用的其他基础结构资源（如存储和网络）收取费用。 AKS 本身不会以增量方式收费。
 
@@ -82,7 +82,7 @@ Azure Kubernetes 服务优化了专门针对 Azure 的常用 Docker 群集开源
 
 Helm 图表有助于对即使最复杂的 Kubernetes 应用程序进行定义、版本控制、安装、共享、升级或回滚。
 
-更进一步，也建议使用 Helm 用法，因为 Azure 中的其他 Kubernetes 环境（如 [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces)）也基于 Helm 图表。
+更进一步，也建议使用 Helm 用法，因为 Azure 中的其他 Kubernetes 环境（如 [Azure Dev Spaces](/azure/dev-spaces/azure-dev-spaces)）也基于 Helm 图表。
 
 Helm 由 [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) 与 Microsoft、Google、Bitnami 和 Helm 参与者社区协作维护。
 
@@ -90,7 +90,7 @@ Helm 由 [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) 与 Mi
 
 ## <a name="use-azure-dev-spaces-for-you-kubernetes-application-lifecycle"></a>将 Azure Dev Spaces 用于 Kubernetes 应用程序生命周期
 
-[Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces) 为团队提供快速的迭代 Kubernetes 开发体验。 通过尽可能少的开发计算机设置，便可以直接在 Azure Kubernetes 服务 (AKS) 中以迭代方式运行和调试容器。 可以使用熟悉的工具（如 Visual Studio、Visual Studio Code 或命令行）在 Windows、Mac 或 Linux 上进行开发。
+[Azure Dev Spaces](/azure/dev-spaces/azure-dev-spaces) 为团队提供快速的迭代 Kubernetes 开发体验。 通过尽可能少的开发计算机设置，便可以直接在 Azure Kubernetes 服务 (AKS) 中以迭代方式运行和调试容器。 可以使用熟悉的工具（如 Visual Studio、Visual Studio Code 或命令行）在 Windows、Mac 或 Linux 上进行开发。
 
 如前所述，Azure Dev Spaces 在部署基于容器的应用程序时使用 Helm 图表。
 
@@ -108,7 +108,7 @@ Azure Dev Spaces 提供了空间概念，使你可以独立地工作，而不必
 
 有关具体示例，请参阅 [Azure Dev Spaces 上的 eShopOnContainers wiki 页面](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Azure-Dev-Spaces)。
 
-有关进一步信息，请参阅[使用 Azure Dev Spaces 进行团队开发](https://docs.microsoft.com/azure/dev-spaces/team-development-netcore)。
+有关进一步信息，请参阅[使用 Azure Dev Spaces 进行团队开发](/azure/dev-spaces/team-development-netcore)。
 
 ## <a name="additional-resources"></a>其他资源
 
@@ -131,7 +131,7 @@ Service Fabric 提供了两个宽广区域，可帮助构建使用微服务方�
 
 - 提供各种系统服务的平台，可用于部署、缩放、升级、检测、重新启动失败的服务、发现服务位置、管理状态和监视健康状况。 实际上，这些服务具备了很多前面介绍的微服务的特征。
 
-- 有助于将应用程序构建为微服务的编程 API 或框架：[Reliable Actors 和 Reliable Services](https://docs.microsoft.com/azure/service-fabric/service-fabric-choose-framework)。 开发人员可选择任何代码来构建微服务，但这些 API 可简化构建工作，且更深入地与平台集成。 这样开发人员就可获得运行状况信息和诊断信息，也可利用可靠的状态管理。
+- 有助于将应用程序构建为微服务的编程 API 或框架：[Reliable Actors 和 Reliable Services](/azure/service-fabric/service-fabric-choose-framework)。 开发人员可选择任何代码来构建微服务，但这些 API 可简化构建工作，且更深入地与平台集成。 这样开发人员就可获得运行状况信息和诊断信息，也可利用可靠的状态管理。
 
 Service Fabric 未指定服务构建方式，开发人员可使用任何技术。 但它内置了编程 API，可简化微服务的构建。
 
@@ -143,11 +143,11 @@ Service Fabric 未指定服务构建方式，开发人员可使用任何技术�
 
 在第一个图像中，你将看到作为进程的微服务，其中每个节点运行每个微服务的一个进程。 在第二个图中，你将看到作为容器的微服务，其中每个节点运行包含多个容器的 Docker（每个微服务对应一个容器）。 基于 Linux 和 Windows 主机的 Service Fabric 群集可分别运行 Docker Linux 容器和 Windows 容器。
 
-有关 Azure Service Fabric 中容器支持的最新信息，请参阅 [Service Fabric 和容器](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview)。
+有关 Azure Service Fabric 中容器支持的最新信息，请参阅 [Service Fabric 和容器](/azure/service-fabric/service-fabric-containers-overview)。
 
-Service Fabric 充分展示了什么是一个好的平台，开发人员可在其中定义不同于物理实现的逻辑体系结构（业务微服务或边界上下文）。 例如，如果在 [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-overview) 中实现[有状态可靠服务](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction)（将在[无状态微服务与有状态微服务](#stateless-versus-stateful-microservices)部分介绍），则会获得一个由多个物理服务的业务微服务概念。
+Service Fabric 充分展示了什么是一个好的平台，开发人员可在其中定义不同于物理实现的逻辑体系结构（业务微服务或边界上下文）。 例如，如果在 [Azure Service Fabric](/azure/service-fabric/service-fabric-overview) 中实现[有状态可靠服务](/azure/service-fabric/service-fabric-reliable-services-introduction)（将在[无状态微服务与有状态微服务](#stateless-versus-stateful-microservices)部分介绍），则会获得一个由多个物理服务的业务微服务概念。
 
-如图 4-10 所示，从逻辑/业务微服务角度考虑，实现 Service Fabric 有状态可靠服务时，通常需要实现两个层级的服务。 第一层是后端有状态可靠服务，用于处理多个分区（每个分区均为一项有状态服务）。 第二层是前端服务或网关服务，负责跨多个分区或有状态服务实例进行路由，聚合数据。 该网关服务还处理访问后端服务的客户端通信，通信带有重试循环。 如果实现自定义服务，则其称为网关服务；或者，还可使用现成的 Service Fabric [反向代理](https://docs.microsoft.com/azure/service-fabric/service-fabric-reverseproxy)。
+如图 4-10 所示，从逻辑/业务微服务角度考虑，实现 Service Fabric 有状态可靠服务时，通常需要实现两个层级的服务。 第一层是后端有状态可靠服务，用于处理多个分区（每个分区均为一项有状态服务）。 第二层是前端服务或网关服务，负责跨多个分区或有状态服务实例进行路由，聚合数据。 该网关服务还处理访问后端服务的客户端通信，通信带有重试循环。 如果实现自定义服务，则其称为网关服务；或者，还可使用现成的 Service Fabric [反向代理](/azure/service-fabric/service-fabric-reverseproxy)。
 
 ![显示容器中的多个有状态服务的示意图。](./media/orchestrate-high-scalability-availability/service-fabric-stateful-business-microservice.png)
 
@@ -155,7 +155,7 @@ Service Fabric 充分展示了什么是一个好的平台，开发人员可在�
 
 在任何情况下，使用 Service Fabric 有状态可靠服务时，都伴有由多个物理服务组成的逻辑或业务微服务（边界上下文）。 这两项服务，以及网关服务和分区服务都可作为 ASP.NET Web API 服务实现，如图 4-11 所示。 Service Fabric 提供了在容器中支持多个有状态可靠服务的方案。
 
-在 Service Fabric 中，可对成组服务进行分组，并将其部署为 [Service Fabric 应用程序](https://docs.microsoft.com/azure/service-fabric/service-fabric-application-model)，即业务流程协调程序或群集的打包和部署单元。 因此，Service Fabric 应用程序同样可映射到该自治业务和逻辑微服务边界或边界上下文，这样开发人员就可以自主部署这些服务。
+在 Service Fabric 中，可对成组服务进行分组，并将其部署为 [Service Fabric 应用程序](/azure/service-fabric/service-fabric-application-model)，即业务流程协调程序或群集的打包和部署单元。 因此，Service Fabric 应用程序同样可映射到该自治业务和逻辑微服务边界或边界上下文，这样开发人员就可以自主部署这些服务。
 
 ### <a name="service-fabric-and-containers"></a>Service Fabric 和容器
 
@@ -173,7 +173,7 @@ Service Fabric 应用程序可以运行访问外部数据库的多个容器，�
 
 图 4-13。 映射到含容器和有状态服务的 Service Fabric 应用程序的业务微服务
 
-有关 Azure Service Fabric 中容器支持的详细信息，请参阅 [Service Fabric 和容器](https://docs.microsoft.com/azure/service-fabric/service-fabric-containers-overview)。
+有关 Azure Service Fabric 中容器支持的详细信息，请参阅 [Service Fabric 和容器](/azure/service-fabric/service-fabric-containers-overview)。
 
 ## <a name="stateless-versus-stateful-microservices"></a>无状态微服务与有状态微服务
 
@@ -187,11 +187,11 @@ Service Fabric 应用程序可以运行访问外部数据库的多个容器，�
 
 在无状态服务中，状态（持久性、数据库）保留在微服务外部。 在有状态服务中，状态保留在微服务内部。 无状态方法是完全有效的，相比有状态微服务，它更易实现，因为这种方法类似于用户熟悉的传统模式。 但无状态微服务会在进程和数据源之间产生延迟。 若要试图增加缓存和队列来提高性能，该方法会涉及更多要移动的内容。 结果就是，最终会得到具有许多层级的复杂体系结构。
 
-相反，[有状态微服务](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis)采用的方案更高级，因为域逻辑和数据之间没有延迟。 有状态服务有利于处理繁重数据、游戏后端、数据库即服务和其他低延迟方案，因为它能启用本地状态，提高访问速度。
+相反，[有状态微服务](/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis)采用的方案更高级，因为域逻辑和数据之间没有延迟。 有状态服务有利于处理繁重数据、游戏后端、数据库即服务和其他低延迟方案，因为它能启用本地状态，提高访问速度。
 
 无状态服务和有状态服务相辅相成。 例如，如图 4-14 右图所示，有状态服务可拆分为多个分区。 若要访问这些分区，可能需要无状态服务充当网关服务，该服务了解如何基于分区键处理每个分区。
 
-有状态服务确实存在缺点。 它们强加了一个高度复杂的级别，以便横向扩展。完成跨有状态微服务和数据分区复制数据等任务时，必须解决通常由外部数据库系统实现的功能。 但这正是含[有状态可靠服务](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis)的 [Azure Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-services-platform-architecture) 等业务流程协调程序可发挥重要作用的一方面，它可使用 [Reliable Services API](https://docs.microsoft.com/azure/service-fabric/service-fabric-work-with-reliable-collections) 和 [Reliable Actors](https://docs.microsoft.com/azure/service-fabric/service-fabric-reliable-actors-introduction) 简化有状态微服务的开发过程和生命周期。
+有状态服务确实存在缺点。 它们强加了一个高度复杂的级别，以便横向扩展。完成跨有状态微服务和数据分区复制数据等任务时，必须解决通常由外部数据库系统实现的功能。 但这正是含[有状态可靠服务](/azure/service-fabric/service-fabric-reliable-services-introduction#when-to-use-reliable-services-apis)的 [Azure Service Fabric](/azure/service-fabric/service-fabric-reliable-services-platform-architecture) 等业务流程协调程序可发挥重要作用的一方面，它可使用 [Reliable Services API](/azure/service-fabric/service-fabric-work-with-reliable-collections) 和 [Reliable Actors](/azure/service-fabric/service-fabric-reliable-actors-introduction) 简化有状态微服务的开发过程和生命周期。
 
 其他微服务框架来自 Microsoft Research 的 Microsoft [Orleans](https://github.com/dotnet/orleans) 和 [Akka.NET](https://getakka.net/)，这些框架允许有状态服务、支持 Actor 模式并改进了业务逻辑和数据之间的容错与延迟。 这两个框架目前都在改善其对 Docker 的支持。
 
@@ -209,7 +209,7 @@ Azure Service Fabric 网格是一种完全托管的服务，它使开发人员�
 
 事实上，Service Fabric 网格由包含数千台计算机的群集组成。 所有群集操作都向开发人员隐藏。 只需上传容器并指定所需资源、可用性要求和资源限制。 Service Fabric 网格会自动分配应用程序部署所请求的基础结构，还会处理基础结构故障，从而确保应用程序高度可用。 只需关心应用程序的运行状况和响应能力，而不是基础结构。
 
-有关进一步信息，请参阅 [Service Fabric 网格文档](https://docs.microsoft.com/azure/service-fabric-mesh/)。
+有关进一步信息，请参阅 [Service Fabric 网格文档](/azure/service-fabric-mesh/)。
 
 ## <a name="choosing-orchestrators-in-azure"></a>在 Azure 中选择业务流程协调程序
 

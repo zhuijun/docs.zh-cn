@@ -2,12 +2,12 @@
 title: 基于消息的异步通信
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 基于消息的异步通信是微服务体系结构中的一个重要概念，因为它是保持微服务彼此独立的同时使其最终同步的最佳方式。
 ms.date: 09/20/2018
-ms.openlocfilehash: 2bd79935cad3d62e488a57da6b40a0c87349960b
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 17b3fb3fe3f94d5387359061e3297ebfa6e5be7a
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679170"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169240"
 ---
 # <a name="asynchronous-message-based-communication"></a>基于消息的异步通信
 
@@ -59,7 +59,7 @@ ms.locfileid: "90679170"
 
 在事件驱动的异步通信中，一个微服务将事件发布到事件总线，许多微服务可以订阅它，以获取通知并对其进行操作。 你的实现将决定要用于基于消息的事件驱动通信的协议。 [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol) 有助于实现可靠的排队通信。
 
-使用事件总线时，你可能希望将基于类中相关实现的抽象级别（如事件总线接口）与使用 API（来自消息代理，如 [RabbitMQ](https://www.rabbitmq.com/)，或来自服务总线，如 [Azure 服务总线及主题](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions)）的代码结合使用。 或者，你可能希望使用 NServiceBus、MassTransit 或 Brighter 等更高级别的服务总线来清楚地表述你的事件总线和发布/订阅系统。
+使用事件总线时，你可能希望将基于类中相关实现的抽象级别（如事件总线接口）与使用 API（来自消息代理，如 [RabbitMQ](https://www.rabbitmq.com/)，或来自服务总线，如 [Azure 服务总线及主题](/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions)）的代码结合使用。 或者，你可能希望使用 NServiceBus、MassTransit 或 Brighter 等更高级别的服务总线来清楚地表述你的事件总线和发布/订阅系统。
 
 ## <a name="a-note-about-messaging-technologies-for-production-systems"></a>关于生产系统消息传递技术的说明
 
@@ -75,7 +75,7 @@ ms.locfileid: "90679170"
 
 - 使用[事务日志挖掘](https://www.scoop.it/t/sql-server-transaction-log-mining)。
 
-- 使用完整[事件溯源](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)模式。
+- 使用完整[事件溯源](/azure/architecture/patterns/event-sourcing)模式。
 
 - 使用[发件箱模式](https://www.kamilgrzybek.com/design/the-outbox-pattern/)：将用作消息队列的事务数据库表作为事件创建器组件的基础，该组件将创建并发布事件。
 

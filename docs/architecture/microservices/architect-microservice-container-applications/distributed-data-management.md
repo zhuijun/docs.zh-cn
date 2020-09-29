@@ -2,12 +2,12 @@
 title: 分布式数据管理的挑战和解决方案
 description: 了解微服务体系中的分布式数据管理面临的挑战和相应解决方案。
 ms.date: 09/20/2018
-ms.openlocfilehash: 8b91879e879db293ed61bd5f3c49dc391b9d8f5a
-ms.sourcegitcommit: ee5b798427f81237a3c23d1fd81fff7fdc21e8d3
+ms.openlocfilehash: 1439dd5a04c3991a2b3b2ef12763843f9f339a29
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84144313"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91152646"
 ---
 # <a name="challenges-and-solutions-for-distributed-data-management"></a>分布式数据管理的挑战和解决方案
 
@@ -25,7 +25,7 @@ ms.locfileid: "84144313"
 
 **API 网关。** 对于来自多个微服务（拥有不同数据库）的简单数据聚合，推荐方法是称为 API 网关的聚合微服务。 但是，实现这种模式需谨慎，因为它可能成为系统中的瓶颈点，并可能违反微服务自治原则。 若要降低这种可能性，可以采用多个细粒度 API 网关，每个网关都着重于系统的垂直“切片”或业务区域。 API 网关模式稍后将在[“API 网关”部分](direct-client-to-microservice-communication-versus-the-api-gateway-pattern.md#why-consider-api-gateways-instead-of-direct-client-to-microservice-communication)中详细介绍。
 
-**具有查询/读取表的 CQRS。** 用于聚合来自多个微服务的数据的另一个解决方案是[具体化视图模式](https://docs.microsoft.com/azure/architecture/patterns/materialized-view)。 此方法将事先（在发生实际查询之前准备非规范化数据）生成一个包含属于多个微服务的数据的只读表。 该表采用满足客户端应用要求的格式。
+**具有查询/读取表的 CQRS。** 用于聚合来自多个微服务的数据的另一个解决方案是[具体化视图模式](/azure/architecture/patterns/materialized-view)。 此方法将事先（在发生实际查询之前准备非规范化数据）生成一个包含属于多个微服务的数据的只读表。 该表采用满足客户端应用要求的格式。
 
 考虑到移动应用屏幕等。 如果有单个数据库，则可以使用 SQL 查询（用于执行涉及多个表的复杂联接）将该屏幕的数据拉取在一起。 但是，如果有多个数据库，并且每个数据库都都属于不同微服务，则无法查询这些数据库和创建 SQL 联接。 此时，复杂查询则变成了一种挑战。 可以使用 CQRS 方法来满足需求，即在仅用于查询的不同数据库中创建非规范化表。 该表可专门针对复杂查询所需的数据进行设计，应用程序屏幕所需的字段和查询表中的列之间具有一对一关系。 该表还可用于报告。
 

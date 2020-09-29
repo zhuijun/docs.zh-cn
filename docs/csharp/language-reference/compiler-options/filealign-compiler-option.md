@@ -17,14 +17,15 @@ helpviewer_keywords:
 - -alignment compiler option [C#]
 - section alignment [C#]
 ms.assetid: 15cf1c98-3798-4ced-9f08-60619308a073
-ms.openlocfilehash: d4abe6c3825de211d737f402a745c8953adca4b8
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 4b61217a3d6812ea3ab036f82d49bba05c20629e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89125704"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91173238"
 ---
 # <a name="-filealign-c-compiler-options"></a>-filealign（C# 编译器选项）
+
 -filealign 选项用于指定输出文件中各节的大小****。  
   
 ## <a name="syntax"></a>语法  
@@ -34,10 +35,12 @@ ms.locfileid: "89125704"
 ```  
   
 ## <a name="arguments"></a>自变量  
+
  `number`  
  一个值，用于指定输出文件中各节的大小。 有效值为 512、1024、2048、4096 和 8192。 这些值以字节为单位。  
   
 ## <a name="remarks"></a>备注  
+
  每一节都在是 -filealign 值的倍数的边界上对齐****。 没有固定的默认值。 如果未指定 -filealign，则公共语言运行时在编译时会选取一个默认值****。  
   
  通过指定节的大小，可以影响输出文件的大小。 修改节的大小可能对将在较小设备上运行的程序有用。  

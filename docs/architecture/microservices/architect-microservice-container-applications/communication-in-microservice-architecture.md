@@ -2,12 +2,12 @@
 title: 微服务体系结构中的通信
 description: 探索微服务之间的不同通信方式，了解同步和异步方法的含义。
 ms.date: 01/30/2020
-ms.openlocfilehash: f2d6e78966bb7d5f481de6db0ab1dcfe2812a1b5
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: f1a240609b898fe8f365c39ba0c95f486377c445
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "79401519"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169253"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>微服务体系结构中的通信
 
@@ -35,7 +35,7 @@ ms.locfileid: "79401519"
 
 - 单个接收方。 每个请求必须只能由一个接收方或服务来处理。 此通信的示例是[命令模式](https://en.wikipedia.org/wiki/Command_pattern)。
 
-- 多个接收方。 每个请求可以由零到多个接收方处理。 这种类型的通信必须是异步的。 例如[事件驱动体系结构](https://microservices.io/patterns/data/event-driven-architecture.html)等模式中使用的[发布/订阅](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)机制。 当通过事件在多个微服务之间传播数据更新时，这基于事件总线接口或消息代理；它通常通过服务总线或类似 [Azure 服务总线](https://azure.microsoft.com/services/service-bus/)的项目使用[主题和订阅](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions)并来实现。
+- 多个接收方。 每个请求可以由零到多个接收方处理。 这种类型的通信必须是异步的。 例如[事件驱动体系结构](https://microservices.io/patterns/data/event-driven-architecture.html)等模式中使用的[发布/订阅](https://en.wikipedia.org/wiki/Publish%E2%80%93subscribe_pattern)机制。 当通过事件在多个微服务之间传播数据更新时，这基于事件总线接口或消息代理；它通常通过服务总线或类似 [Azure 服务总线](https://azure.microsoft.com/services/service-bus/)的项目使用[主题和订阅](/azure/service-bus-messaging/service-bus-dotnet-how-to-use-topics-subscriptions)并来实现。
 
 基于微服务的应用程序通常将使用这些通信样式的组合。 最常见的类型是在调用常规 Web API HTTP 服务时使用 HTTP/HTTPS 等同步协议进行单个接收方通信。 微服务通常也使用消息传送协议在微服务之间进行异步通信。
 
@@ -81,7 +81,7 @@ ms.locfileid: "79401519"
 
 **图 4-16**。 使用 HTTP 请求/响应通信（同步或异步）
 
-当客户端使用请求/响应通信时，假定响应将在短时间内（通常少于一秒或最多几秒）到达。 为了延迟响应，需要根据[消息传送模式](https://docs.microsoft.com/azure/architecture/patterns/category/messaging)和[消息技术](https://en.wikipedia.org/wiki/Message-oriented_middleware)实现异步通信，这是我们在下一节中介绍的另一种方法。
+当客户端使用请求/响应通信时，假定响应将在短时间内（通常少于一秒或最多几秒）到达。 为了延迟响应，需要根据[消息传送模式](/azure/architecture/patterns/category/messaging)和[消息技术](https://en.wikipedia.org/wiki/Message-oriented_middleware)实现异步通信，这是我们在下一节中介绍的另一种方法。
 
 请求/响应通信的常用体系结构样式是 [REST](https://en.wikipedia.org/wiki/Representational_state_transfer)。 此方法基于 [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) 协议并与该协议紧密耦合，接受 GET、POST 和 PUT 等 HTTP 谓词。 REST 是创建服务时最常用的体系结构通信方法。 开发 ASP.NET Core Web API 服务时，可以实现 REST 服务。
 

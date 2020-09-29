@@ -2,12 +2,12 @@
 title: 实现值对象
 description: 适用于容器化的 .NET 应用程序的 .NET 微服务体系结构 | 深入了解有关使用新实体框架功能实现值对象的详细信息和选项。
 ms.date: 08/21/2020
-ms.openlocfilehash: 02eed7baaa364c62aa2df599f1d8b0e700dd215f
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 1cb7ce04b3ab2f6da25f398e016baf60b863fb6b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811114"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169201"
 ---
 # <a name="implement-value-objects"></a>实现值对象
 
@@ -126,7 +126,7 @@ public class Address : ValueObject
 
 ### <a name="background-and-older-approaches-using-ef-core-11"></a>背景和较早的方法（使用 EF Core 1.1）
 
-背景：使用 EF Core 1.0 和 1.1 版时的限制是不能使用传统 .NET Framework 的 EF 6.x 中所定义的[复杂类型](xref:System.ComponentModel.DataAnnotations.Schema.ComplexTypeAttribute)。 因此，如果使用 EF Core 1.0 或 1.1，则需要将值对象存储为具有 ID 字段的 EF 实体。 然后，为使它看起来像没有任何标识的值对象，你可以隐藏其 ID：表明值对象的标识在域模型中不重要。 可以通过将该 ID 用作[阴影属性](https://docs.microsoft.com/ef/core/modeling/shadow-properties )来隐藏其 ID。 由于在模型中隐藏 ID 的配置是在 EF 基础结构级别中设置的，ID 对于域模型好似透明的。
+背景：使用 EF Core 1.0 和 1.1 版时的限制是不能使用传统 .NET Framework 的 EF 6.x 中所定义的[复杂类型](xref:System.ComponentModel.DataAnnotations.Schema.ComplexTypeAttribute)。 因此，如果使用 EF Core 1.0 或 1.1，则需要将值对象存储为具有 ID 字段的 EF 实体。 然后，为使它看起来像没有任何标识的值对象，你可以隐藏其 ID：表明值对象的标识在域模型中不重要。 可以通过将该 ID 用作[阴影属性](/ef/core/modeling/shadow-properties)来隐藏其 ID。 由于在模型中隐藏 ID 的配置是在 EF 基础结构级别中设置的，ID 对于域模型好似透明的。
 
 在 eShopOnContainers (.NET Core 1.1) 的初始版本中，EF Core 基础结构所需的隐藏 ID 在 DbContext 级别上采用基础结构项目中的 Fluent API 通过以下方式来实现。 因此，该 ID 从域模型角度看是隐藏的，但仍存于基础结构中。
 

@@ -4,12 +4,12 @@ description: Azure 函数跨多种语言（C#、JavaScript、Java）和平台提
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/06/2020
-ms.openlocfilehash: 2dee60e3635be94a55ee26a7f04942bc59cb8dec
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: 7625b2a0dafb90dc1bf2fb7fe680d53b20764c09
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135719"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171801"
 ---
 # <a name="azure-functions"></a>Azure Functions
 
@@ -19,7 +19,7 @@ Azure Functions 提供无服务器计算体验。 函数由触发器  （如对 
 
 当前运行时版本 3.0 支持跨平台 .NET Core 3.1 应用程序。 支持除 C# 之外的其他语言（如 JavaScript、F#和 Java）。 在门户中创建的函数提供丰富的脚本编写语法。 可以通过完全的平台支持和功能来部署作为独立项目创建的函数。
 
-有关详细信息，请参阅 [Azure Functions 文档](https://docs.microsoft.com/azure/azure-functions)。
+有关详细信息，请参阅 [Azure Functions 文档](/azure/azure-functions)。
 
 ## <a name="programming-language-support"></a>编程语言支持
 
@@ -35,15 +35,15 @@ Azure Functions 提供无服务器计算体验。 函数由触发器  （如对 
 |**TypeScript**|Node 10 和 12（通过 JavaScript）|
 |**PowerShell**|PowerShell Core 6|
 
-有关详细信息，请参阅[支持的语言](https://docs.microsoft.com/azure/azure-functions/supported-languages)。
+有关详细信息，请参阅[支持的语言](/azure/azure-functions/supported-languages)。
 
 ## <a name="app-service-plans"></a>应用服务计划
 
 函数由应用服务计划  进行支持。 该计划定义函数应用使用的资源。 你可以将计划分配给某个区域，确定将使用的虚拟机的大小和数量，并选择定价层。 为了获取真正的无服务器方法，函数应用可以使用“消耗”  计划。 “消耗”计划将根据负载自动缩放后端。
 
-函数应用的另一个托管选项是[高级计划](https://docs.microsoft.com/azure/azure-functions/functions-premium-plan)。 此计划提供了一个“alwayson”实例以避免冷启动，支持 VNet 连接等高级功能，并在高级硬件上运行。
+函数应用的另一个托管选项是[高级计划](/azure/azure-functions/functions-premium-plan)。 此计划提供了一个“alwayson”实例以避免冷启动，支持 VNet 连接等高级功能，并在高级硬件上运行。
 
-有关详细信息，请参阅[应用服务计划](https://docs.microsoft.com/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)。
+有关详细信息，请参阅[应用服务计划](/azure/app-service/azure-web-sites-web-hosting-plans-in-depth-overview)。
 
 ## <a name="create-your-first-function"></a>创建第一个函数
 
@@ -53,11 +53,11 @@ Azure Functions 提供无服务器计算体验。 函数由触发器  （如对 
 - 使用 Azure CLI 创建必要的资源。
 - 使用最喜欢的 IDE 在本地生成函数并将其发布到 Azure。
 
-有关在门户中创建脚本函数的详细信息，请参阅[在 Azure 门户中创建第一个函数](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function)。
+有关在门户中创建脚本函数的详细信息，请参阅[在 Azure 门户中创建第一个函数](/azure/azure-functions/functions-create-first-azure-function)。
 
-若要从 Azure CLI 构建，请参阅[使用 Azure CLI 创建你的第一个函数](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function-azure-cli)。
+若要从 Azure CLI 构建，请参阅[使用 Azure CLI 创建你的第一个函数](/azure/azure-functions/functions-create-first-azure-function-azure-cli)。
 
-若要从 Visual Studio 创建函数，请参阅[使用 Visual Studio 创建你的第一个函数](https://docs.microsoft.com/azure/azure-functions/functions-create-your-first-function-visual-studio)。
+若要从 Visual Studio 创建函数，请参阅[使用 Visual Studio 创建你的第一个函数](/azure/azure-functions/functions-create-your-first-function-visual-studio)。
 
 ## <a name="understand-triggers-and-bindings"></a>了解触发器和绑定
 
@@ -114,7 +114,7 @@ public static string Run(Stream myBlob, string name, TraceWriter log)
 
 该示例是一个简单的函数，该函数采用已修改或已上载到 blob 存储的文件的名称，并将其放在队列中供以后处理。
 
-有关触发器和绑定的完整列表，请参阅 [Azure Functions 触发器和绑定概念](https://docs.microsoft.com/azure/azure-functions/functions-triggers-bindings)。
+有关触发器和绑定的完整列表，请参阅 [Azure Functions 触发器和绑定概念](/azure/azure-functions/functions-triggers-bindings)。
 
 >[!div class="step-by-step"]
 >[上一页](azure-serverless-platform.md)

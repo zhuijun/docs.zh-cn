@@ -6,14 +6,15 @@ helpviewer_keywords:
 - C# language, private constructors
 - private constructors [C#]
 ms.assetid: 29eeaa7d-8d81-453c-94b9-0e2800172621
-ms.openlocfilehash: a6b86ccb870da0262bcbc516e176e00d17724f9f
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: c6048424128b462bfc56d9c7c3cf8f75cca9298d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86864054"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159340"
 ---
 # <a name="private-constructors-c-programming-guide"></a>私有构造函数（C# 编程指南）
+
 私有构造函数是一种特殊的实例构造函数。 它通常用于只包含静态成员的类中。 如果类具有一个或多个私有构造函数而没有公共构造函数，则其他类（除嵌套类外）无法创建该类的实例。 例如：  
   
  [!code-csharp[csProgGuideObjects#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#11)]  
@@ -23,6 +24,7 @@ ms.locfileid: "86864054"
  当没有实例字段或实例方法（例如 <xref:System.Math> 类）时或者当调用方法以获得类的实例时，私有构造函数可用于阻止创建类的实例。 如果类中的所有方法都是静态的，可考虑使整个类成为静态的。 有关详细信息，请参阅[静态类和静态类成员](./static-classes-and-static-class-members.md)。  
   
 ## <a name="example"></a>示例  
+
  下面是使用私有构造函数的类的示例。  
   
  [!code-csharp[csProgGuideObjects#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#12)]  

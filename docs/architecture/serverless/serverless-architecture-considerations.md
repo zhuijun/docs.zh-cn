@@ -4,12 +4,12 @@ description: 从状态管理和持久存储到缩放、日志记录、跟踪和�
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 04/06/2020
-ms.openlocfilehash: 3c07e1149e6af41a6b9a9317238e5c71015d2c4e
-ms.sourcegitcommit: 8b02d42f93adda304246a47f49f6449fc74a3af4
+ms.openlocfilehash: fbbb0c38cea58902124743fb99f9ab31b3d09be9
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/24/2020
-ms.locfileid: "82135667"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171645"
 ---
 # <a name="serverless-architecture-considerations"></a>无服务器体系结构注意事项
 
@@ -23,7 +23,7 @@ ms.locfileid: "82135667"
 
 - 使用临时数据存储或分布式缓存，例如 Redis
 - 将状态存储在数据库中，例如 SQL 或 CosmosDB
-- 通过工作流引擎（如[持久函数](https://docs.microsoft.com/azure/azure-functions/durable/durable-functions-overview)）处理状态
+- 通过工作流引擎（如[持久函数](/azure/azure-functions/durable/durable-functions-overview)）处理状态
 
 关键在于，你应该明白正在考虑使用无服务器实现的进程中是否需要进行任何状态管理。
 
@@ -63,7 +63,7 @@ ms.locfileid: "82135667"
 
 ## <a name="monitoring-tracing-and-logging"></a>监视、跟踪和日志记录
 
-DevOps 经常被忽略的方面是一旦部署就会监视应用程序。 制定监视无服务器函数的策略非常重要。 最大的挑战通常是关联的，或者在用户将多个函数作为同一交互的一部分调用时进行识别。 大多数无服务器平台允许可导入第三方工具的控制台日志记录。 还提供了一些选项，可用于自动收集遥测数据、生成和跟踪相关 ID 以及监视特定操作，以提供详细的见解。 Azure 提供了用于监视和分析的高级 [Application Insights 平台](https://docs.microsoft.com/azure/azure-functions/functions-monitoring)。
+DevOps 经常被忽略的方面是一旦部署就会监视应用程序。 制定监视无服务器函数的策略非常重要。 最大的挑战通常是关联的，或者在用户将多个函数作为同一交互的一部分调用时进行识别。 大多数无服务器平台允许可导入第三方工具的控制台日志记录。 还提供了一些选项，可用于自动收集遥测数据、生成和跟踪相关 ID 以及监视特定操作，以提供详细的见解。 Azure 提供了用于监视和分析的高级 [Application Insights 平台](/azure/azure-functions/functions-monitoring)。
 
 ## <a name="inter-service-dependencies"></a>服务间依赖项
 

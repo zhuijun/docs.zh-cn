@@ -3,14 +3,15 @@ description: -target:winmdobj（C# 编译器选项）
 title: -target:winmdobj（C# 编译器选项）
 ms.date: 07/20/2015
 ms.assetid: 1819a045-659d-498a-9457-c466e902986f
-ms.openlocfilehash: 66a4bddb34832705ad4779829e561afd9442be8f
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: a13e2da02698209a514e716d65c1df3508cf1508
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89139081"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171398"
 ---
 # <a name="-targetwinmdobj-c-compiler-options"></a>-target:winmdobj（C# 编译器选项）
+
 如果使用 -target:winmdobj 编译器选项，则编译器会创建一个中间 .winmdobj 文件，你可以将这个文件转换为 Windows 运行时二进制 (.winmd) 文件。 之后，除了托管语言程序外，JavaScript 和 C++ 程序也可以使用该 .winmd 文件。  
   
 ## <a name="syntax"></a>语法  
@@ -20,6 +21,7 @@ ms.locfileid: "89139081"
 ```  
   
 ## <a name="remarks"></a>备注  
+
  **winmdobj** 设置会向编译器发出信号，表示需要中间模块。 作为响应，Visual Studio 会将 C# 类库编译为 .winmdobj 文件。 随后，.winmdobj 文件可作为可作为 <xref:Microsoft.Build.Tasks.WinMDExp> 导出工具的输入，生成 Windows 元数据 (.winmd) 文件。 .winmd 文件既包含原始库的代码，也包括 JavaScript（或 C++）以及 Windows 运行时使用的 WinMD 元数据的代码。  
   
  使用 -target:winmdobj 编译器选项所编译的文件，只能用作 WimMDExp 导出工具的输入；不能直接引用 .winmdobj 文件自身。  
@@ -41,6 +43,7 @@ ms.locfileid: "89139081"
  有关如何以编程方式设置此编译器选项的信息，请参阅 <xref:VSLangProj80.ProjectProperties3.OutputType%2A>。  
   
 ## <a name="example"></a>示例  
+
  以下命令将 `filename.cs` 编译为一个中间 .winmdobj 文件。  
   
 ```console  

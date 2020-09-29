@@ -4,12 +4,12 @@ description: 了解无服务器体系结构支持的各种方案，从计划和�
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: b4e8fda0c1423c881c0807602e11f7c49ff7cfe4
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 3aa9b7951fd8f11a65a64c22443de7041aba7d94
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73093558"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171749"
 ---
 # <a name="serverless-design-examples"></a>无服务器设计示例
 
@@ -29,13 +29,13 @@ ms.locfileid: "73093558"
 
 ![CQRS 示例](./media/cqrs-example.png)
 
-无服务器可通过提供隔离的终结点来容纳 CQRS 模式。 一个无服务器函数容纳查询或读取，另一个无服务器函数或函数集处理更新操作。 无服务器函数还可以负责确保读取模型保持最新状态，并且可由数据库的[更改源](https://docs.microsoft.com/azure/cosmos-db/change-feed)触发。 可简化前端开发以连接到所需的终结点。 事件处理在后端进行。 此模型还适用于大型项目，因为不同的团队可以处理不同的操作。
+无服务器可通过提供隔离的终结点来容纳 CQRS 模式。 一个无服务器函数容纳查询或读取，另一个无服务器函数或函数集处理更新操作。 无服务器函数还可以负责确保读取模型保持最新状态，并且可由数据库的[更改源](/azure/cosmos-db/change-feed)触发。 可简化前端开发以连接到所需的终结点。 事件处理在后端进行。 此模型还适用于大型项目，因为不同的团队可以处理不同的操作。
 
 ## <a name="event-based-processing"></a>基于事件的处理
 
-在基于消息的系统中，通常会在队列或发布者/订阅者主题中收集事件以进行处理。 这些事件可触发无服务器函数来执行一种业务逻辑。 事件来源的系统是基于事件的处理的一个示例。 引发“事件”以将任务标记为完成。 事件触发的无服务器函数会更新相应的数据库文档。 第二个无服务器函数可能会使用事件来更新系统的读取模型。 [Azure 事件网格](https://docs.microsoft.com/azure/event-grid/overview)提供了一种将事件与作为订阅者的函数集成的方法。
+在基于消息的系统中，通常会在队列或发布者/订阅者主题中收集事件以进行处理。 这些事件可触发无服务器函数来执行一种业务逻辑。 事件来源的系统是基于事件的处理的一个示例。 引发“事件”以将任务标记为完成。 事件触发的无服务器函数会更新相应的数据库文档。 第二个无服务器函数可能会使用事件来更新系统的读取模型。 [Azure 事件网格](/azure/event-grid/overview)提供了一种将事件与作为订阅者的函数集成的方法。
 
-> 事件是信息性消息。 有关详细信息，请参阅[事件溯源模式](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)。
+> 事件是信息性消息。 有关详细信息，请参阅[事件溯源模式](/azure/architecture/patterns/event-sourcing)。
 
 ## <a name="file-triggers-and-transformations"></a>文件触发器和转换
 
@@ -43,7 +43,7 @@ ms.locfileid: "73093558"
 
 ![无服务器文件触发器和转换](./media/serverless-file-triggers.png)
 
-在关系图中，“冷存储”提供在 [Azure 流分析](https://docs.microsoft.com/azure/stream-analytics)中分析的数据。 在数据流中遇到的任何问题都会触发 Azure 函数来解决异常。
+在关系图中，“冷存储”提供在 [Azure 流分析](/azure/stream-analytics)中分析的数据。 在数据流中遇到的任何问题都会触发 Azure 函数来解决异常。
 
 ## <a name="asynchronous-background-processing-and-messaging"></a>异步后台处理和消息传递
 
@@ -65,7 +65,7 @@ HTTP 调用触发的无服务器终结点可用于处理 API 请求。 例如，
 
 ## <a name="stream-processing"></a>流处理
 
-设备和传感器通常会生成必须实时处理的数据流。 有许多技术可以捕获从[事件中心](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs)和 [IoT 中心](https://docs.microsoft.com/azure/iot-hub)到[服务总线](https://docs.microsoft.com/azure/service-bus)的消息和流。 无论如何传输，无服务器都是一种处理传入消息和数据流的理想机制。 无服务器可快速缩放，以满足大量数据的需求。 无服务器代码可以应用业务逻辑来分析数据，并输出为机构化格式以执行操作和分析。
+设备和传感器通常会生成必须实时处理的数据流。 有许多技术可以捕获从[事件中心](/azure/event-hubs/event-hubs-what-is-event-hubs)和 [IoT 中心](/azure/iot-hub)到[服务总线](/azure/service-bus)的消息和流。 无论如何传输，无服务器都是一种处理传入消息和数据流的理想机制。 无服务器可快速缩放，以满足大量数据的需求。 无服务器代码可以应用业务逻辑来分析数据，并输出为机构化格式以执行操作和分析。
 
 ![无服务器流处理](./media/serverless-stream-processing.png)
 
@@ -77,16 +77,16 @@ API 网关为客户端提供单一入口点，然后将请求智能地路由到�
 
 ## <a name="recommended-resources"></a>推荐的资源
 
-- [Azure 事件网格](https://docs.microsoft.com/azure/event-grid/overview)
-- [Azure IoT 中心](https://docs.microsoft.com/azure/iot-hub)
+- [Azure 事件网格](/azure/event-grid/overview)
+- [Azure IoT 中心](/azure/iot-hub)
 - [分布式数据管理挑战和解决方案](../microservices/architect-microservice-container-applications/distributed-data-management.md)
-- [设计微服务：识别微服务边界](https://docs.microsoft.com/azure/architecture/microservices/microservice-boundaries)
-- [事件中心](https://docs.microsoft.com/azure/event-hubs/event-hubs-what-is-event-hubs)
-- [事件溯源模式](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing)
+- [设计微服务：识别微服务边界](/azure/architecture/microservices/microservice-boundaries)
+- [事件中心](/azure/event-hubs/event-hubs-what-is-event-hubs)
+- [事件溯源模式](/azure/architecture/patterns/event-sourcing)
 - [实现断路器模式](../microservices/implement-resilient-applications/implement-circuit-breaker-pattern.md)
-- [IoT 中心](https://docs.microsoft.com/azure/iot-hub)
-- [服务总线](https://docs.microsoft.com/azure/service-bus)
-- [使用 Azure Cosmos DB 中的更改源支持](https://docs.microsoft.com/azure/cosmos-db/change-feed)
+- [IoT 中心](/azure/iot-hub)
+- [服务总线](/azure/service-bus)
+- [使用 Azure Cosmos DB 中的更改源支持](/azure/cosmos-db/change-feed)
 
 >[!div class="step-by-step"]
 >[上一页](serverless-architecture-considerations.md)

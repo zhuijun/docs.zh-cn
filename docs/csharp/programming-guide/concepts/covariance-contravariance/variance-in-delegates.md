@@ -3,14 +3,15 @@ title: 委托中的变体 (C#)
 description: 了解如何通过 .NET 中的变体支持将方法签名与所有委托中的委托类型进行匹配。
 ms.date: 07/20/2015
 ms.assetid: 19de89d2-8224-4406-8964-2965b732b890
-ms.openlocfilehash: 02b59dd97cedc6ab35c3122912ee528f7ca29238
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: 359f7051aa2eeb5d2dc9fef3d9ccb1e4aaebfb5c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466126"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91167738"
 ---
 # <a name="variance-in-delegates-c"></a>委托中的变体 (C#)
+
 .NET Framework 3.5 引入了变体支持，用于在 C# 中匹配所有委托的方法签名和委托类型。 这表明不仅可以将具有匹配签名的方法分配给委托，还可以将返回派生程度较大的派生类型的方法分配给委托（协变），或者如果方法所接受参数的派生类型所具有的派生程度小于委托类型指定的程度（逆变），也可将其分配给委托。 这包括泛型委托和非泛型委托。  
   
  例如，思考以下代码，该代码具有两个类和两个委托：泛型和非泛型。  
@@ -66,6 +67,7 @@ SampleGenericDelegate<Second, First> dGenericConversion = AFirstRSecond;
  有关更多示例，请参阅[在委托中使用变体 (C#)](./using-variance-in-delegates.md) 和[对 Func 和 Action 泛型委托使用变体 (C#)](./using-variance-for-func-and-action-generic-delegates.md)。  
   
 ## <a name="variance-in-generic-type-parameters"></a>泛型类型参数中的变体  
+
  在 .NET Framework 4 或更高版本中，可以启用委托之间的隐式转换，以便在具有泛型类型参数所指定的不同类型按变体的要求继承自对方时，可以将这些类型的泛型委托分配给对方。  
   
  若要启用隐式转换，必须使用 `in` 或 `out` 关键字将委托中的泛型参数显式声明为协变或逆变。  
@@ -127,6 +129,7 @@ public static void Test()
  有关详细信息和示例，请参阅[对 Func 和 Action 泛型委托使用变体 (C#)](./using-variance-for-func-and-action-generic-delegates.md)。  
   
 ### <a name="declaring-variant-type-parameters-in-generic-delegates"></a>声明泛型委托中的变体类型参数  
+
  如果泛型委托具有协变或逆变泛型类型参数，则该委托可被称为“变体泛型委托”。  
   
  可以使用 `out` 关键字声明泛型委托中的泛型类型参数协变。 协变类型只能用作方法返回类型，而不能用作方法参数的类型。 以下代码示例演示了如何声明协变泛型委托。  
@@ -151,6 +154,7 @@ public delegate R DVariant<in A, out R>(A a);
 ```  
   
 ### <a name="instantiating-and-invoking-variant-generic-delegates"></a>实例化和调用变体泛型委托  
+
  可以像实例化和调用固定委托一样，实例化和调用变体委托。 在以下示例中，该委托通过 lambda 表达式进行实例化。  
   
 ```csharp  
@@ -172,6 +176,7 @@ Action<string> actStr = x => Console.WriteLine("string: {0}", x);
 ```  
   
 ## <a name="variance-in-generic-type-parameters-for-value-and-reference-types"></a>泛型类型参数中用于值和引用类型的变体  
+
  泛型类型参数的变体仅支持引用类型。 例如，`DVariant<int>` 不能隐式转换为 `DVariant<Object>` 或 `DVariant<long>`，因为整数是值类型。  
   
  以下示例演示了泛型类型参数中的变体不支持值类型。  

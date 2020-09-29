@@ -2,12 +2,12 @@
 title: 安排微服务和多容器应用应用程序的业务流程，以实现高可伸缩性和高可用性
 description: 发现用于安排微服务和多容器应用程序以便实现高可伸缩性和可用性的选项，以及 Azure Dev Spaces 在开发 Kubernetes 应用程序生命周期时的可能性。
 ms.date: 01/30/2020
-ms.openlocfilehash: 8a67235109bed806caa7d9caa2bc26fd4fe9daca
-ms.sourcegitcommit: e3cbf26d67f7e9286c7108a2752804050762d02d
+ms.openlocfilehash: a61e883ab0d27300e00b177c2621c6521e85ac84
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/09/2020
-ms.locfileid: "80988903"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172497"
 ---
 # <a name="orchestrate-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>安排微服务和多容器应用应用程序的业务流程，以实现高可伸缩性和高可用性
 
@@ -68,7 +68,7 @@ Azure Kubernetes 服务优化了专门针对 Azure 的常用 Docker 群集开源
 
 ## <a name="getting-started-with-azure-kubernetes-service-aks"></a>Azure Kubernetes 服务 (AKS) 入门
 
-若要开始使用 AKS，需从 Azure 门户或使用 CLI 部署 AKS 群集。 有关在 Azure 中部署 Kubernetes 群集的详细信息，请参阅[部署 Azure Kubernetes 服务 (AKS) 群集](https://docs.microsoft.com/azure/aks/kubernetes-walkthrough-portal)。
+若要开始使用 AKS，需从 Azure 门户或使用 CLI 部署 AKS 群集。 有关在 Azure 中部署 Kubernetes 群集的详细信息，请参阅[部署 Azure Kubernetes 服务 (AKS) 群集](/azure/aks/kubernetes-walkthrough-portal)。
 
 作为 AKS 的一部分，默认安装的任何软件都不收费。 所有默认选项都通过开源软件实现。 AKS 可用于 Azure 中的多个虚拟机。 仅针对所选的计算实例以及使用的其他基础结构资源（如存储和网络）收取费用。 AKS 本身不会以增量方式收费。
 
@@ -80,7 +80,7 @@ Kubernetes 的默认生产部署选项是使用 Helm 图表，这将在下一部
 
 Helm 图表可帮助对即使最复杂的 Kubernetes 应用程序进行定义、版本控制、安装、共享、升级或回滚。
 
-更进一步，也建议使用 Helm 用法，因为 Azure 中的其他 Kubernetes 环境（如 [Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces)）也基于 Helm 图表。
+更进一步，也建议使用 Helm 用法，因为 Azure 中的其他 Kubernetes 环境（如 [Azure Dev Spaces](/azure/dev-spaces/azure-dev-spaces)）也基于 Helm 图表。
 
 Helm 由 [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) 与 Microsoft、Google、Bitnami 和 Helm 参与者社区协作维护。
 
@@ -88,7 +88,7 @@ Helm 由 [Cloud Native Computing Foundation (CNCF)](https://www.cncf.io/) 与 Mi
 
 ## <a name="use-azure-dev-spaces-for-your-kubernetes-application-lifecycle"></a>将 Azure Dev Spaces 用于 Kubernetes 应用程序生命周期
 
-[Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces) 为团队提供快速的迭代 Kubernetes 开发体验。 通过尽可能少的开发计算机设置，便可以直接在 Azure Kubernetes 服务 (AKS) 中以迭代方式运行和调试容器。 在 Windows、Mac 或 Linux 上使用 Visual Studio、Visual Studio Code 中或命令行等熟悉的工具进行开发。
+[Azure Dev Spaces](/azure/dev-spaces/azure-dev-spaces) 为团队提供快速的迭代 Kubernetes 开发体验。 通过尽可能少的开发计算机设置，便可以直接在 Azure Kubernetes 服务 (AKS) 中以迭代方式运行和调试容器。 在 Windows、Mac 或 Linux 上使用 Visual Studio、Visual Studio Code 中或命令行等熟悉的工具进行开发。
 
 如前所述，Azure Dev Spaces 在部署基于容器的应用程序时使用 Helm 图表。
 
@@ -108,7 +108,7 @@ Azure Dev Spaces 提供了空间这一概念，允许你在相对隔离的环境
 
 若要获取具体示例的实际视图，请参阅 [Azure Dev Spaces 上的 eShopOnContainers wiki 页面](https://github.com/dotnet-architecture/eShopOnContainers/wiki/Azure-Dev-Spaces)。
 
-有关进一步信息，请查看[使用 Azure Dev Spaces 进行团队开发](https://docs.microsoft.com/azure/dev-spaces/team-development-netcore)上的文章。
+有关进一步信息，请查看[使用 Azure Dev Spaces 进行团队开发](/azure/dev-spaces/team-development-netcore)上的文章。
 
 ## <a name="additional-resources"></a>其他资源
 

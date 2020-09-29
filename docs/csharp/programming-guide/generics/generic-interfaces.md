@@ -6,14 +6,15 @@ helpviewer_keywords:
 - C# language, generic interfaces
 - generics [C#], interfaces
 ms.assetid: a8fa49a1-6e78-4a09-87e5-84a0b9f5ffbe
-ms.openlocfilehash: b7225e295268a3e46e4e9bd446372ae87bbbbb10
-ms.sourcegitcommit: e7acba36517134238065e4d50bb4a1cfe47ebd06
+ms.openlocfilehash: ec86395a41baea75694572b59b2c76cbde24fedf
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/04/2020
-ms.locfileid: "89466139"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91170384"
 ---
 # <a name="generic-interfaces-c-programming-guide"></a>泛型接口（C# 编程指南）
+
 为泛型集合类或表示集合中的项的泛型类定义接口通常很有用处。 为避免对值类型的装箱和取消装箱操作，泛型类的首选项使用泛型接口，例如 <xref:System.IComparable%601>而不是 <xref:System.IComparable>。 .NET 类库定义多个泛型接口，以便用于 <xref:System.Collections.Generic> 命名空间中的集合类。  
   
  接口被指定为类型参数上的约束时，仅可使用实现接口的类型。 如下代码示例演示一个派生自 `GenericList<T>` 类的 `SortedList<T>` 类。 有关详细信息，请参阅[泛型介绍](./index.md)。 `SortedList<T>` 添加约束 `where T : IComparable<T>`。 这可使 `SortedList<T>` 中的 `BubbleSort` 方法在列表元素上使用泛型 <xref:System.IComparable%601.CompareTo%2A> 方法。 在此示例中，列表元素是一个实现 `IComparable<Person>` 的简单类 `Person`。  

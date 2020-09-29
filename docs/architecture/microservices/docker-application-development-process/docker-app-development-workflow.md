@@ -2,12 +2,12 @@
 title: Docker 应用开发工作流
 description: 了解用于开发基于 Docker 的应用程序的工作流的详细信息。 分步深入了解有关优化 Dockerfile 的详细信息，最后了解使用 Visual Studio 时使用的简化工作流。
 ms.date: 01/30/2020
-ms.openlocfilehash: d32134a10fb9b56e874bbc6218ca2c4d822adb90
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 04b59a6c30b4fb8f34fe1d0e5cd5328ac77ecb4e
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90678844"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172549"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Docker 应用开发工作流
 
@@ -557,7 +557,7 @@ Docker 应用的开发流程：1 - 编写应用代码，2 - 编写 Dockerfile/s�
 
 ## <a name="using-powershell-commands-in-a-dockerfile-to-set-up-windows-containers"></a>在 DockerFile 中使用 PowerShell 命令来设置 Windows 容器
 
-[Windows 容器](https://docs.microsoft.com/virtualization/windowscontainers/about/index)允许开发人员将现有 Windows 应用程序转换为 Docker 映像，并使用与 Docker 生态系统其余部分相同的工具进行部署。 若要使用 Windows 容器，请在 Dockerfile 中运行 PowerShell 命令，如以下示例所示：
+[Windows 容器](/virtualization/windowscontainers/about/index)允许开发人员将现有 Windows 应用程序转换为 Docker 映像，并使用与 Docker 生态系统其余部分相同的工具进行部署。 若要使用 Windows 容器，请在 Dockerfile 中运行 PowerShell 命令，如以下示例所示：
 
 ```dockerfile
 FROM mcr.microsoft.com/windows/servercore

@@ -4,12 +4,12 @@ description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序 | 测�
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 8497892b88c313cde0a604ad3967507300e5154a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: ca86388b9f5dfe5e63ead1b5f84486ba2181af57
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539238"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169071"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>测试 ASP.NET Core MVC 应用
 
@@ -149,7 +149,7 @@ public IActionResult GetImage(int id)
 
 ## <a name="integration-testing-aspnet-core-apps"></a>对 ASP.NET Core 应用执行集成测试
 
-ASP.NET Core 应用中的大多数集成测试应该是测试基础结构项目中定义的服务和其他实现类型。 例如，可以[测试 EF Core 是否已成功更新并检索](https://docs.microsoft.com/ef/core/miscellaneous/testing/)希望从驻留在基础结构项目中的数据访问类中获得的数据。 测试 ASP.NET Core MVC 项目是否正常运行的最佳方法是针对在测试主机中运行的应用运行的功能测试。
+ASP.NET Core 应用中的大多数集成测试应该是测试基础结构项目中定义的服务和其他实现类型。 例如，可以[测试 EF Core 是否已成功更新并检索](/ef/core/miscellaneous/testing/)希望从驻留在基础结构项目中的数据访问类中获得的数据。 测试 ASP.NET Core MVC 项目是否正常运行的最佳方法是针对在测试主机中运行的应用运行的功能测试。
 
 ## <a name="functional-testing-aspnet-core-apps"></a>对 ASP.NET Core 应用执行功能测试
 

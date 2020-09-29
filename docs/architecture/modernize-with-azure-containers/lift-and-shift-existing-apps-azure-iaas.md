@@ -2,12 +2,12 @@
 title: 将现有 .NET 应用直接迁移到 Azure IaaS（云基础结构就绪）
 description: 通过 Azure 云和 Windows 容器现代化现有 .NET 应用程序。
 ms.date: 04/28/2018
-ms.openlocfilehash: c7638a034dbb27baea1b097bdb66175bfb5a71f2
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: d610222aa6649c1b28e198c074794dd316f895ec
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73089635"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172165"
 ---
 # <a name="lift-and-shift-existing-net-apps-to-azure-iaas-cloud-infrastructure-ready"></a>将现有 .NET 应用直接迁移到 Azure IaaS（云基础结构就绪）
 
@@ -69,7 +69,7 @@ Azure Migrate 使你确信工作负荷可以在对业务的影响最小的情况
 
 ## <a name="use-azure-site-recovery-to-migrate-your-existing-vms-to-azure-vms"></a>使用 Azure Site Recovery 将现有 VM 迁移到 Azure VM
 
-作为端到端 [Azure Migrate](https://aka.ms/azuremigrate) 的一部分，[Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-overview) 是一种可用于轻松地将 Web 应用迁移到 Azure 中的 VM 的工具。 可以使用 Site Recovery 将本地 VM 和物理服务器复制到 Azure 或辅助性的本地站点。 甚至可以复制在受支持的 Azure VM、本地 Hyper-V VM、VMware VM 或 Windows 或 Linux 物理服务器上运行的工作负荷   。 将数据复制到 Azure 以后，就不需进行复杂的辅助数据中心维护，从而消除相关成本。
+作为端到端 [Azure Migrate](https://aka.ms/azuremigrate) 的一部分，[Azure Site Recovery](/azure/site-recovery/site-recovery-overview) 是一种可用于轻松地将 Web 应用迁移到 Azure 中的 VM 的工具。 可以使用 Site Recovery 将本地 VM 和物理服务器复制到 Azure 或辅助性的本地站点。 甚至可以复制在受支持的 Azure VM、本地 Hyper-V VM、VMware VM 或 Windows 或 Linux 物理服务器上运行的工作负荷   。 将数据复制到 Azure 以后，就不需进行复杂的辅助数据中心维护，从而消除相关成本。
 
 Site Recovery 也专门用于部分在本地、部分在 Azure 上的混合环境。 Site Recovery 可以在站点出现故障时，让应用始终在 VM 上运行，让本地物理服务器始终可用，从而确保业务连续性。 它可以复制在 VM 和物理服务器上运行的工作负荷，因此当主站点不可用时，始终可以在次要位置使用这些工作负荷。 当主站点重新启动并运行时，它会将工作负荷恢复到主站点。
 

@@ -4,12 +4,12 @@ description: 使用 ASP.NET Core 和 Azure 构建新式 Web 应用程序 | 关�
 author: ardalis
 ms.author: wiwagn
 ms.date: 06/06/2019
-ms.openlocfilehash: 547654e77812481daffc9a03ccd28d3d2f6b5f09
-ms.sourcegitcommit: 87cfeb69226fef01acb17c56c86f978f4f4a13db
+ms.openlocfilehash: 19626aea07fb26222af575a709b54577ca12589b
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87164437"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91169214"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>关于 ASP.NET Core Web 应用的 Azure 托管建议
 
@@ -54,7 +54,7 @@ Azure 应用服务是适合大多数 Web 应用的最佳选择。 该平台集�
 
 ![基本的 Azure 体系结构](./media/image1-5.png)
 
-通常单个资源组中的少量资源即足以管理此类应用。 这种[基本体系结构方法](https://docs.microsoft.com/azure/architecture/reference-architectures/app-service-web-app/basic-web-app)非常适合通常部署为单个单元的应用，而不适合由许多独立进程构成的应用。 尽管此方法的体系结构很简单，但仍允许托管应用纵向扩展（每个节点包含更多资源）和横向扩展（更多托管节点），来满足任何需求增长。 借助自动缩放功能，可以将应用配置为根据需求和节点上的平均负载自动调整托管应用的节点数量。
+通常单个资源组中的少量资源即足以管理此类应用。 这种[基本体系结构方法](/azure/architecture/reference-architectures/app-service-web-app/basic-web-app)非常适合通常部署为单个单元的应用，而不适合由许多独立进程构成的应用。 尽管此方法的体系结构很简单，但仍允许托管应用纵向扩展（每个节点包含更多资源）和横向扩展（更多托管节点），来满足任何需求增长。 借助自动缩放功能，可以将应用配置为根据需求和节点上的平均负载自动调整托管应用的节点数量。
 
 ### <a name="app-service-web-apps-for-containers"></a>用于容器的应用服务 Web 应用
 
@@ -74,7 +74,7 @@ Azure 应用服务是适合大多数 Web 应用的最佳选择。 该平台集�
 
 ![注有几种常见设计模式的微服务示例体系结构。](./media/image1-10.png)
 
-[详细了解在生成基于微服务的系统时要考虑的设计模式。](https://docs.microsoft.com/azure/architecture/microservices/design/patterns)
+[详细了解在生成基于微服务的系统时要考虑的设计模式。](/azure/architecture/microservices/design/patterns)
 
 ### <a name="azure-kubernetes-service"></a>Azure Kubernetes 服务
 
@@ -100,7 +100,7 @@ Azure Dev Spaces：
 - 减少团队所需的集成环境数量
 - 进行开发/测试时，无需在分布式系统中模拟某些服务
 
-[详细了解 Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/about)
+[详细了解 Azure Dev Spaces](/azure/dev-spaces/about)
 
 ### <a name="azure-virtual-machines"></a>Azure 虚拟机
 

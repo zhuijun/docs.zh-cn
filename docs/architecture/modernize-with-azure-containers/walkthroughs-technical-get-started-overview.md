@@ -2,12 +2,12 @@
 title: 演练和技术入门概述
 description: 通过 Azure 云和 Windows 容器现代化现有 .NET 应用程序 | 演练和技术入门概述
 ms.date: 04/28/2018
-ms.openlocfilehash: 4db6d449d27dcd4316d61305c8c2a8c2aa0bc65b
-ms.sourcegitcommit: 0c3ce6d2e7586d925a30f231f32046b7b3934acb
+ms.openlocfilehash: 98d33b13d2b28bfe1c35894df45e525cff0520c1
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/08/2020
-ms.locfileid: "89516120"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91172139"
 ---
 # <a name="walkthroughs-and-technical-get-started-overview"></a>演练和技术入门概述
 
@@ -190,7 +190,7 @@ eShopModernizing GitHub 存储库 wiki 中提供了完整的技术演练：
 
 ### <a name="overview"></a>概述
 
-[Azure 容器实例 (ACI)](https://docs.microsoft.com/azure/container-instances/) 是创建容器开发/测试/过渡环境（可在其中部署容器的单个实例）的最快方式。
+[Azure 容器实例 (ACI)](/azure/container-instances/) 是创建容器开发/测试/过渡环境（可在其中部署容器的单个实例）的最快方式。
 
 ### <a name="goals"></a>目标
 

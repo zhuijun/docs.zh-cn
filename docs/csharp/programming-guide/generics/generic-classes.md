@@ -6,14 +6,15 @@ helpviewer_keywords:
 - C# language, generic classes
 - generics [C#], classes
 ms.assetid: 27d6f256-cd61-41e3-bc6e-b990a53b0224
-ms.openlocfilehash: a885ae042eef939021d3a9b75616505c289bd43c
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 62e6e7afe0e795819b82c6c7a4f99260a8080efb
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90558082"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91157416"
 ---
 # <a name="generic-classes-c-programming-guide"></a>泛型类（C# 编程指南）
+
 泛型类封装不特定于特定数据类型的操作。 泛型类最常见用法是用于链接列表、哈希表、堆栈、队列和树等集合。 无论存储数据的类型如何，添加项和从集合删除项等操作的执行方式基本相同。  
   
  对于大多数需要集合类的方案，推荐做法是使用 .NET 类库中提供的集合类。 有关使用这些类的详细信息，请参阅 [.NET 中的泛型集合](../../../standard/generics/collections.md)。  
