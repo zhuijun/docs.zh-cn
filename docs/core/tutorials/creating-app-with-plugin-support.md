@@ -4,12 +4,12 @@ description: 了解如何创建支持插件的 .NET Core 应用程序。
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 10/16/2019
-ms.openlocfilehash: eae792ddaa6655bfdcd932d3cb695f9dafa68130
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: ce7ac826feaf4542307abefde6d40a319d78e423
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78240839"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247587"
 ---
 # <a name="create-a-net-core-application-with-plugins"></a>使用插件创建 .NET Core 应用程序
 
@@ -109,7 +109,7 @@ namespace AppWithPlugin
 
 此 `ICommand` 接口是所有插件将实现的接口。
 
-由于已定义 `ICommand` 接口，所以应用程序项目可以填写更多内容。 使用根文件夹中的 `dotnet add AppWithPlugin\AppWithPlugin.csproj reference PluginBase\PluginBase.csproj` 命令将引用从 `AppWithPlugin` 项目添加到 `PluginBase` 项目。
+由于已定义 `ICommand` 接口，所以应用程序项目可以填写更多内容。 使用根文件夹中的 `dotnet add AppWithPlugin/AppWithPlugin.csproj reference PluginBase/PluginBase.csproj` 命令将引用从 `AppWithPlugin` 项目添加到 `PluginBase` 项目。
 
 使用以下代码片段替换 `// Load commands from plugins` 注释，使其能够从给定文件路径加载插件：
 
@@ -261,7 +261,7 @@ static Assembly LoadPlugin(string relativePath)
 
 同样，如果 `PluginBase` 引用其他包，则 `<ExcludeAssets>runtime</ExcludeAssets>` 元素也很重要。 此设置与 `<Private>false</Private>` 的效果相同，但适用于 `PluginBase` 项目或它的某个依赖项可能包括的包引用。
 
-因为 `HelloPlugin` 项目已完成，所以应该更新 `AppWithPlugin` 项目，以确认可以找到 `HelloPlugin` 插件的位置。 在 `// Paths to plugins to load` 注释之后，添加 `@"HelloPlugin\bin\Debug\netcoreapp3.0\HelloPlugin.dll"` 作为 `pluginPaths` 数组的元素。
+因为 `HelloPlugin` 项目已完成，所以应该更新 `AppWithPlugin` 项目，以确认可以找到 `HelloPlugin` 插件的位置。 在 `// Paths to plugins to load` 注释后，添加 `@"HelloPlugin\bin\Debug\netcoreapp3.0\HelloPlugin.dll"`（根据所使用的 .NET Core 版本，此路径可能有所不同）作为 `pluginPaths` 数组的元素。
 
 ## <a name="plugin-with-library-dependencies"></a>具有库依赖项的插件
 

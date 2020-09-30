@@ -2,21 +2,21 @@
 title: C# 9.0 中的新增功能 - C# 指南
 description: 简要介绍 C# 9.0 中提供的新功能。
 ms.date: 09/04/2020
-ms.openlocfilehash: a8b66d21514b57d8bee3ff54b2a707af391fe7a9
-ms.sourcegitcommit: a8730298170b8d96b4272e0c3dfc9819c606947b
+ms.openlocfilehash: 6a0227b408b894fe450c2a6bb6017d9059d229c0
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90738718"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247613"
 ---
 # <a name="whats-new-in-c-90"></a>C# 9.0 中的新增功能
 
 C# 9.0 向 C# 语言添加了以下功能和增强功能：
 
-- 记录
-- 仅限 Init 的资源库
-- 顶级语句
-- 模式匹配增强功能
+- [记录](#record-types)
+- [仅限 Init 的资源库](#init-only-setters)
+- [顶级语句](#top-level-statements)
+- [模式匹配增强功能](#pattern-matching-enhancements)
 - 本机大小的整数
 - 函数指针
 - 禁止发出 localsinit 标志
@@ -48,7 +48,6 @@ C# 9.0 引入了记录类型，这是一种引用类型，它提供合成方法�
 - 替代 <xref:System.Object.GetHashCode>
 - 复制和克隆成员
 - `PrintMembers` 和 <xref:System.Object.ToString>
-- `Deconstruct` 方法
 
 记录支持继承。 可声明派生自 `Person` 的新记录，如下所示：
 
@@ -64,7 +63,6 @@ C# 9.0 引入了记录类型，这是一种引用类型，它提供合成方法�
 - 记录具有为你生成的一致的字符串表示形式。
 - 记录支持副本构造。 正确的副本构造必须包括继承层次结构和开发人员添加的属性。
 - 可通过修改复制记录。 这些复制和修改操作支持非破坏性转变。
-- 所有记录都支持析构。
 
 除了熟悉的 `Equals` 重载、`operator ==` 和 `operator !=` 外，编译器还会合成新的 `EqualityContract` 属性。 该属性返回与记录类型匹配的 `Type` 对象。 如果基类型为 `object`，则属性为 `virtual`。 如果基类型是其他记录类型，则属性为 `override`。 如果记录类型为 `sealed`，则属性为 `sealed`。 合成的 `GetHashCode` 使用基类型和记录类型中声明的所有属性和字段中的 `GetHashCode`。 这些合成方法在整个继承层次结构中强制执行基于值的相等性。 这意味着，绝不会将 `Student` 视为与同名的 `Person` 相等。 两条记录的类型必须匹配，而且记录类型之间共享的所有属性也必须相等。
 
@@ -224,15 +222,15 @@ if (e is not null)
 
 可使用 `return new();` 表达式返回由默认构造函数创建的实例。
 
-类似的功能可改进条件表达式的目标类型解析。 进行此更改后，两个表达式无需从一个隐式转换到另一个，而是都可隐式转换为目标类型。 你可能不会注意到此更改。 你会注意到，某些以前需要强制转换或无法编译的条件表达式现在可以正常工作。
+类似的功能可改进[条件表达式](../language-reference/operators/conditional-operator.md)的目标类型解析。 进行此更改后，两个表达式无需从一个隐式转换到另一个，而是都可隐式转换为目标类型。 你可能不会注意到此更改。 你会注意到，某些以前需要强制转换或无法编译的条件表达式现在可以正常工作。
 
-从 C# 9.0 开始，可将 `static` 修饰符添加到 Lambda 表达式或匿名方法。 静态 Lambda 表达式类似于 `static` 局部函数：静态 Lambda 或匿名函数无法捕获局部变量或实例状态。 `static` 修饰符可防止意外捕获其他变量。
+从 C# 9.0 开始，可将 `static` 修饰符添加到 [Lambda 表达式](../language-reference/operators/lambda-expressions.md)或[匿名方法](../language-reference/operators/delegate-operator.md)。 静态 Lambda 表达式类似于 `static` 局部函数：静态 Lambda 或匿名方法无法捕获局部变量或实例状态。 `static` 修饰符可防止意外捕获其他变量。
 
 协变返回类型为替代函数的返回类型提供了灵活性。 替代的虚函数可返回从基类方法中声明的返回类型派生的类型。 这对于记录和其他支持虚拟克隆或工厂方法的类型很有用。
 
-此外，`foreach` 循环将识别并使用扩展方法 `GetEnumerator`，否则将满足 `foreach` 模式。 此更改意味着 `foreach` 与其他基于模式的构造（例如异步模式和基于模式的析构）一致。 实际上，此更改意味着可以为任何类型添加 `foreach` 支持。 在设计中，应将其限制为在枚举对象有意义时使用。
+此外，[`foreach` 循环](../language-reference/keywords/foreach-in.md)将识别并使用扩展方法 `GetEnumerator`，否则将满足 `foreach` 模式。 此更改意味着 `foreach` 与其他基于模式的构造（例如异步模式和基于模式的析构）一致。 实际上，此更改意味着可以为任何类型添加 `foreach` 支持。 在设计中，应将其限制为在枚举对象有意义时使用。
 
-接下来，可使用弃元作为 Lambda 表达式的参数。 这样可免于为参数命名，并且编译器也可避免使用它。 可将 `_` 用于任何参数。
+接下来，可使用弃元作为 Lambda 表达式的参数。 这样可免于为参数命名，并且编译器也可避免使用它。 可将 `_` 用于任何参数。 有关详细信息，请参阅 [Lambda 表达式](../language-reference/operators/lambda-expressions.md)一文中的 [Lambda 表达式的输入参数](../language-reference/operators/lambda-expressions.md#input-parameters-of-a-lambda-expression)一节。
 
 最后，现在可将属性应用于本地函数。 例如，可将可为空的属性注释应用于本地函数。
 

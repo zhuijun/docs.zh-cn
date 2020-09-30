@@ -2,13 +2,13 @@
 title: 弃元 - C# 指南
 description: 介绍 C# 对弃元的支持（弃元是未赋值的可丢弃变量），以及弃元的使用方式。
 ms.technology: csharp-fundamentals
-ms.date: 07/21/2017
-ms.openlocfilehash: a76e7fc13f92ec0de87153bb35eb3924bb317616
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.date: 09/22/2020
+ms.openlocfilehash: 4de48aebaeb896b198b2e9f2431c6a38ba11469e
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "73100643"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90869323"
 ---
 # <a name="discards---c-guide"></a>弃元 - C# 指南
 
@@ -20,12 +20,14 @@ ms.locfileid: "73100643"
 (_, _, area) = city.GetCityInformation(cityName);
 ```
 
-在 C# 7.0 中，支持在以下上下文的分配中使用弃元：
+在 C# 7.0 及更高版本中，支持在以下上下文的分配中使用弃元：
 
 - 元组和对象[析构](deconstruct.md)。
 - 使用 [is](language-reference/keywords/is.md) 和 [switch](language-reference/keywords/switch.md) 的模式匹配。
 - 对具有 `out` 参数的方法的调用。
 - 当范围内没有 `_` 时，独立的 `_`。
+
+从 C# 9.0 开始，可以使用弃元指定 Lambda 表达式中不使用的输入参数。 有关详细信息，请参阅 [Lambda 表达式](language-reference/operators/lambda-expressions.md)一文中的 [Lambda 表达式的输入参数](language-reference/operators/lambda-expressions.md#input-parameters-of-a-lambda-expression)一节。
 
 当 `_` 是有效占位符时，尝试检索其值或在赋值操作中使用它时会生成编译器错误 CS0301：当前上下文中不存在名称 "\_"。 这是因为 `_` 未赋值，甚至可能未分配存储位置。 如果它是一个实际变量，则不能像之前的示例那样对多个值使用占位符。
 
@@ -45,7 +47,7 @@ ms.locfileid: "73100643"
 
 ## <a name="pattern-matching-with-switch-and-is"></a>使用 `switch` 和 `is` 的模式匹配
 
-弃元模式可通过 [is](language-reference/keywords/is.md) 和 [switch](language-reference/keywords/switch.md) 关键字用于模式匹配。 每个表达式始终匹配弃元模式。
+弃元模式可通过 [is](language-reference/keywords/is.md) 和 [switch](language-reference/keywords/switch.md) 关键字用于模式匹配。** 每个表达式始终匹配弃元模式。
 
 以下示例定义了一个 `ProvidesFormatInfo` 方法，该方法使用 [is](language-reference/keywords/is.md) 语句来确定对象是否提供 <xref:System.IFormatProvider> 实现并测试对象是否为 `null`。 它还使用占位符模式来处理任何其他类型的非 null 对象。
 
@@ -79,8 +81,8 @@ ms.locfileid: "73100643"
 
    [!code-csharp[standalone-discard](../../samples/snippets/csharp/programming-guide/discards/standalone-discard2.cs#3)]
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
-- [解构元组和其他类型](deconstruct.md)
+- [析构元组和其他类型](deconstruct.md)
 - [`is` 关键字](language-reference/keywords/is.md)
 - [`switch` 关键字](language-reference/keywords/switch.md)

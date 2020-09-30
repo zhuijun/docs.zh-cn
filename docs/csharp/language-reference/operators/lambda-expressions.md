@@ -1,7 +1,7 @@
 ---
 title: Lambda 表达式 - C# 引用
 description: 了解 Lambda 表达式。 存在表达式作为其主体的表达式 Lambda，或语句块作为其主体的语句 Lambda。
-ms.date: 07/29/2019
+ms.date: 09/25/2020
 helpviewer_keywords:
 - lambda expressions [C#]
 - outer variables [C#]
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: 7f80c1a5d9136609935b25b5cce3792e80b9ac94
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a3a753ccea45193c57f31453d7318c14f4898864
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90536439"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247704"
 ---
 # <a name="lambda-expressions-c-reference"></a>Lambda 表达式（C# 引用）
 
@@ -50,33 +50,17 @@ ms.locfileid: "90536439"
   
 ## <a name="expression-lambdas"></a>表达式 lambda
 
-表达式位于 `=>` 运算符右侧的 lambda 表达式称为“表达式 lambda”。 表达式 lambda 广泛用于[表达式树](../../programming-guide/concepts/expression-trees/index.md)的构造。 表达式 lambda 会返回表达式的结果，并采用以下基本形式：
+表达式位于 `=>` 运算符右侧的 lambda 表达式称为“表达式 lambda”。 表达式 lambda 会返回表达式的结果，并采用以下基本形式：
 
 ```csharp
 (input-parameters) => expression
 ```
 
-仅当 lambda 只有一个输入参数时，括号才是可选的；否则括号是必需的。
-
-使用空括号指定零个输入参数：  
-
-[!code-csharp[zero parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#ZeroParameters)]
-
-括号内的两个或更多输入参数使用逗号加以分隔：
-
-[!code-csharp[two parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#TwoParameters)]
-
-有时，编译器无法推断输入类型。 可以显式指定类型，如下面的示例所示：
-
-[!code-csharp[explicitly typed parameters](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#ExplicitlyTypedParameters)]
-
-输入参数类型必须全部为显式或全部为隐式；否则，便会生成 [CS0748](../../misc/cs0748.md) 编译器错误。
-
-表达式 lambda 的主体可以包含方法调用。 不过，若要创建在 .NET 公共语言运行时的上下文之外（如在 SQL Server 中）计算的表达式树，不得在 lambda 表达式中使用方法调用。 在 .NET 公共语言运行时上下文之外，方法将没有任何意义。
+表达式 lambda 的主体可以包含方法调用。 不过，若要创建在 .NET 公共语言运行时的上下文之外（如在 SQL Server 中）计算的[表达式树](../../programming-guide/concepts/expression-trees/index.md)，则不得在 lambda 表达式中使用方法调用。 在 .NET 公共语言运行时上下文之外，方法将没有任何意义。
 
 ## <a name="statement-lambdas"></a>语句 lambda
 
-语句 lambda 与表达式 lambda 表达式类似，只是语句括在大括号中：
+语句 lambda 与表达式 lambda 类似，只是语句括在大括号中：
 
 ```csharp  
 (input-parameters) => { <sequence-of-statements> }
@@ -84,10 +68,39 @@ ms.locfileid: "90536439"
 
 语句 lambda 的主体可以包含任意数量的语句；但是，实际上通常不会多于两个或三个。
 
-[!code-csharp-interactive[statement lambda](snippets/lambda-expressions/ExpressionAndStatementLambdas.cs#StatementLambda)]
+:::code language="csharp" interactive="try-dotnet-method" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetStatementLambda":::
 
-语句 lambda 也不能用于创建表达式目录树。
-  
+不能使用语句 lambda 创建表达式树。
+
+## <a name="input-parameters-of-a-lambda-expression"></a>lambda 表达式的输入参数
+
+将 lambda 表达式的输入参数括在括号中。 使用空括号指定零个输入参数：  
+
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetZeroParameters":::
+
+如果 lambda 表达式只有一个输入参数，则括号是可选的：
+
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetOneParameter":::
+
+两个或更多输入参数使用逗号加以分隔：
+
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetTwoParameters":::
+
+有时，编译器无法推断输入参数的类型。 可以显式指定类型，如下面的示例所示：
+
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetExplicitlyTypedParameters":::
+
+输入参数类型必须全部为显式或全部为隐式；否则，便会生成 [CS0748](../../misc/cs0748.md) 编译器错误。
+
+从 C# 9.0 开始，可以使用[弃元](../../discards.md)指定 lambda 表达式中不使用的两个或更多输入参数：
+
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetDiscards":::
+
+使用 lambda 表达式[提供事件处理程序](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md)时，lambda 弃元参数可能很有用。
+
+> [!NOTE]
+> 为了向后兼容，如果只有一个输入参数命名为 `_`，则在 lambda 表达式中，`_` 将被视为该参数的名称。
+
 ## <a name="async-lambdas"></a>异步 lambda
 
 通过使用 [async](../keywords/async.md) 和 [await](await.md) 关键字，你可以轻松创建包含异步处理的 lambda 表达式和语句。 例如，下面的 Windows 窗体示例包含一个调用和等待异步方法 `ExampleMethodAsync`的事件处理程序。
@@ -218,15 +231,22 @@ lambda 可以引用外部变量。 这些变量是在定义 lambda 表达式的�
 
 - 如果相应跳转语句的目标位于 lambda 表达式块之外，lambda 表达式不得包含 [goto](../keywords/goto.md)、[break](../keywords/break.md) 或 [continue](../keywords/continue.md) 语句。 同样，如果目标在块内部，在 lambda 表达式块外部使用跳转语句也是错误的。
 
+从 C# 9.0 开始，可以将 `static` 修饰符应用于 lambda 表达式，以防止由 lambda 无意中捕获本地变量或实例状态：
+
+:::code language="csharp" source="snippets/lambda-expressions/GeneralExamples.cs" id="SnippetStatic":::
+
+静态 lambda 无法从封闭范围中捕获本地变量或实例状态，但可以引用静态成员和常量定义。
+
 ## <a name="c-language-specification"></a>C# 语言规范
 
 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)中的 [匿名函数表达式](~/_csharplang/spec/expressions.md#anonymous-function-expressions)部分。
 
-## <a name="featured-book-chapter"></a>特别推荐书籍章节
+有关 C# 9.0 中添加的功能的详细信息，请参阅以下功能建议说明：
 
-[C# 3.0 手册（第三版）：面向 C# 3.0 程序员的超过 250 个解决方案](/previous-versions/visualstudio/visual-studio-2008/ff518995(v=orm.10))中的[委托、事件和 Lambda 表达式](/previous-versions/visualstudio/visual-studio-2008/ff518994(v=orm.10))  
-  
-## <a name="see-also"></a>请参阅
+- [Lambda 弃元参数](~/_csharplang/proposals/csharp-9.0/lambda-discard-parameters.md)
+- [静态匿名函数](~/_csharplang/proposals/csharp-9.0/static-anonymous-functions.md)
+
+## <a name="see-also"></a>另请参阅
 
 - [C# 参考](../index.md)
 - [C# 运算符和表达式](index.md)

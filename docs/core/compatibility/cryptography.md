@@ -2,12 +2,12 @@
 title: 加密中断性变更
 description: 列出 .NET Core 中与加密相关的中断性变更。
 ms.date: 04/22/2020
-ms.openlocfilehash: 621a3dad28b67ee33056dce3df0379efaeb90776
-ms.sourcegitcommit: a69d548f90a03e105ee6701236c38390ecd9ccd1
+ms.openlocfilehash: 667d983fc6f2592c2169f97d328cd7947c8bcc81
+ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/14/2020
-ms.locfileid: "90065094"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91406137"
 ---
 # <a name="cryptography-breaking-changes"></a>加密中断性变更
 
@@ -15,6 +15,7 @@ ms.locfileid: "90065094"
 
 | 重大更改 | 引入的版本 |
 | - | :-: |
+| [Blazor WebAssembly 不支持的 System.Security.Cryptography API](#systemsecuritycryptography-apis-not-supported-on-blazor-webassembly) | 5.0 |
 | [System.Security.Cryptography.Oid 在功能上仅用于初始化](#systemsecuritycryptographyoid-is-functionally-init-only) | 5.0 |
 | [Linux 不再支持 BEGIN TRUSTED CERTIFICATE 语法](#begin-trusted-certificate-syntax-no-longer-supported-for-root-certificates-on-linux) | 3.0 |
 | [EnvelopedCms 默认为 AES-256 加密](#envelopedcms-defaults-to-aes-256-encryption) | 3.0 |
@@ -24,6 +25,10 @@ ms.locfileid: "90065094"
 | [已考虑 SignedCms.ComputeSignature 的布尔参数](#boolean-parameter-of-signedcmscomputesignature-is-respected) | 2.1 |
 
 ## <a name="net-50"></a>.NET 5.0
+
+[!INCLUDE[Cryptography APIs not supported on Blazor WebAssembly](~/includes/core-changes/cryptography/5.0/cryptography-apis-not-supported-on-blazor-webassembly.md)]
+
+***
 
 [!INCLUDE [cryptography-oid-init-only](../../../includes/core-changes/cryptography/5.0/cryptography-oid-init-only.md)]
 

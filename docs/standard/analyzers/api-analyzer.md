@@ -4,12 +4,12 @@ description: 了解 .NET API 分析器如何有助于检测弃用的 API 和平�
 author: oliag
 ms.date: 02/20/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: 8da4b2add206daa431124a7d24efc2676cbcaa69
-ms.sourcegitcommit: 43d5aca3fda42bad8843f6c4e72f6bd52daa55f1
+ms.openlocfilehash: f1268d5f208e19f1b69ed487370fb4c96723a204
+ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/09/2020
-ms.locfileid: "89598093"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91406240"
 ---
 # <a name="net-api-analyzer"></a>.NET API 分析器
 
@@ -85,6 +85,9 @@ API 分析器使用 API 专用错误代码，这些代码以 DE（全称是“De
 
 ## <a name="discover-cross-platform-issues"></a>发现跨平台问题
 
+> [!NOTE]
+> .NET 5.0 引入[平台兼容性分析器](platform-compat-analyzer.md)作为此功能的替代。 平台兼容性分析器包含在 .NET SDK 中（无需单独安装），并且默认启用。
+
 与弃用的 API 类似，分析器可发现所有的非跨平台 API。 例如，<xref:System.Console.WindowWidth?displayProperty=nameWithType> 适用于 Windows，但不适用于 Linux 和 macOS。 诊断 ID 显示在“错误列表”  窗口中。 可以禁止显示警告，具体方法是右键单击并选择“快速操作和重构”  。 与禁止显示 API 弃用警告时的两种选择（要么继续使用弃用的成员并禁止显示警告，要么根本就不使用弃用的成员）不同，如果仅对特定平台开发代码，可以对不打算在其上运行代码的其他所有平台禁止显示任何警告。 为此，只需编辑项目文件，并添加列出要忽略的所有平台的 `PlatformCompatIgnore` 属性即可。 接受的值包括 `Linux`、`macOS` 和 `Windows`。
 
 ```xml
@@ -129,3 +132,4 @@ if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 
 - [API 分析器简介](https://devblogs.microsoft.com/dotnet/introducing-api-analyzer/)博客文章。
 - YouTube 上的 [API 分析器](https://youtu.be/eeBEahYXGd0)演示视频。
+- [平台兼容性分析器](platform-compat-analyzer.md)

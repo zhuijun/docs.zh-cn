@@ -4,12 +4,12 @@ description: 有关方法、方法参数和方法返回值的概述
 ms.technology: csharp-fundamentals
 ms.date: 05/21/2018
 ms.assetid: 577a8527-1081-4b36-9b9e-0685b6553c6e
-ms.openlocfilehash: 879c553f8df560a3e2f3dccdbbf0d7e8a05c50cd
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: 520aeed85ee00127c2bd3eee681b980d05f46d05
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89495533"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874701"
 ---
 # <a name="methods-in-c"></a>(C#) 中的方法
 
@@ -121,13 +121,14 @@ C# 中的所有类型不是值类型** 就是引用类型**。 有关内置值�
 
 有时，向方法指定精确数量的自变量这一要求是受限的。 通过使用 `params` 关键字来指示一个参数是一个参数数组，可通过可变数量的自变量来调用方法。 使用 `params` 关键字标记的参数必须为数组类型，并且必须是该方法的参数列表中的最后一个参数。
 
-然后，调用方可通过以下三种方式中的任一个来调用方法：
+然后，调用方可通过以下四种方式中的任一种来调用方法：
 
 - 传递相应类型的数组，该类型包含所需数量的元素。
 - 向该方法传递相应类型的单独自变量的逗号分隔列表。
+- 传递 `null`。
 - 不向参数数组提供参数。
 
-以下示例定义了一个名为 `GetVowels` 的方法，该方法返回参数数组中的所有元音。 `Main` 方法演示了调用方法的全部三种方式。 调用方不需要为包含 `params` 修饰符的形参提供任何实参。 在这种情况下，参数为 `null`。
+以下示例定义了一个名为 `GetVowels` 的方法，该方法返回参数数组中的所有元音。 `Main` 方法演示了调用方法的全部四种方式。 调用方不需要为包含 `params` 修饰符的形参提供任何实参。 在这种情况下，参数是一个空数组。
 
 [!code-csharp[csSnippets.Methods#75](~/samples/snippets/csharp/concepts/methods/params75.cs#75)]
 

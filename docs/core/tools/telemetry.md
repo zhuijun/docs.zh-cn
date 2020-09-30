@@ -3,18 +3,18 @@ title: .NET Core SDK 遥测
 description: 了解可收集使用情况信息以供分析的 .NET Core SDK 遥测功能、收集的数据，以及如何禁用遥测。
 author: KathleenDollard
 ms.date: 08/27/2019
-ms.openlocfilehash: 01376cabc4f59f64c59a78dcff061fb6ec11e3c3
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: bad6de138b9c35bcd8c5556df82103f959508b52
+ms.sourcegitcommit: d04388f94dbcd756ffd608536c869aee3242cdb0
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359228"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91206349"
 ---
 # <a name="net-core-sdk-telemetry"></a>.NET Core SDK 遥测
 
 [.NET Core SDK](index.md) 包含遥测功能，可在 .NET Core CLI 故障时收集使用情况数据和异常信息。 .NET Core CLI 附带 .NET Core SDK，是一组用于生成、测试和发布 .NET Core 应用的谓词。 请务必让 .NET 团队了解到工具使用情况，以便我们对其做出改进。 有关故障的信息可帮助团队解决问题并修复 bug。
 
-数据为匿名收集，并根据 [Creative Commons Attribution 许可证](https://creativecommons.org/licenses/by/4.0/)以汇总形式发布。
+收集的数据根据 [Creative Commons Attribution 许可证](https://creativecommons.org/licenses/by/4.0/)以汇总形式发布。
 
 ## <a name="scope"></a>范围
 
@@ -41,7 +41,7 @@ ms.locfileid: "89359228"
 ```console
 Telemetry
 ---------
-The .NET Core tools collect usage data in order to help us improve your experience. The data is anonymous. It is collected by Microsoft and shared with the community. You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
+The .NET Core tools collect usage data in order to help us improve your experience. The data is collected by Microsoft and shared with the community. You can opt-out of telemetry by setting the DOTNET_CLI_TELEMETRY_OPTOUT environment variable to '1' or 'true' using your favorite shell.
 
 Read more about .NET Core CLI Tools telemetry: https://aka.ms/dotnet-cli-telemetry
 ```
@@ -68,7 +68,7 @@ Read more about .NET Core CLI Tools telemetry: https://aka.ms/dotnet-cli-telemet
 | >=2.0        | 命令参数和选项：收集若干参数和选项（非任意字符串）。 请参阅[收集的选项](#collected-options)。 从 2.1.300 后进行哈希处理。 |
 | >=2.0         | SDK 是否在容器中运行。 |
 | >=2.0         | 目标框架（来自 `TargetFramework` 事件），从 2.1 开始进行哈希处理。 |
-| >=2.0         | 经过哈希处理的媒体访问控制 (MAC) 地址：计算机的加密 (SHA256) 匿名唯一 ID。 |
+| >=2.0         | 经过哈希处理的媒体访问控制 (MAC) 地址 (SHA256)。 |
 | >=2.0         | 经过哈希处理的当前工作目录。 |
 | >=2.0         | 安装成功报告，包含进行了哈希处理的安装程序 exe 文件名。 |
 | >=2.1.300     | 内核版本。 |

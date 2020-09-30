@@ -3,12 +3,12 @@ title: dotnet new 自定义模板
 description: 了解任意类型 .NET 项目或文件的自定义模板。
 author: adegeo
 ms.date: 05/20/2020
-ms.openlocfilehash: 1d2e5ffcb0b279f1686855834c2357827a4dc7d5
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 55091ef9bb9f7a2aa24f585c94aa2a47960b1829
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90538090"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90874718"
 ---
 # <a name="custom-templates-for-dotnet-new"></a>dotnet new 自定义模板
 
@@ -63,6 +63,8 @@ template.json 文件位于模板根目录中的 .template.config 文件夹。 �
 | `identity`        | string        | 此模板的唯一名称。 |
 | `name`            | string        | 用户应看到的模板名称。 |
 | `shortName`       | string        | 方便用户选择模板的默认速记名称，适用于模板名称由用户指定（而不是通过 GUI 选择）的环境。 例如，通过命令提示符和 CLI 命令使用模板时，短名称非常有用。 |
+| `sourceName`       | 字符串        | 源树中的名称，它即将替换为用户指定的名称。 模板引擎将查找配置文件中提及并出现的任何 `sourceName`，并将其替换为文件名和文件内容。 可以在运行模板时使用 `-n` 或 `--name` 选项提供要替换的值。 如果未指定名称，则使用的是当前目录。|
+| `preferNameDirectory`       | boolean        | （如果指定了名称，但未设置输出目录）指示是否为模板创建目录（而不是直接在当前目录中创建内容）。 默认值是 False。|
 
 template.json 文件的完整架构位于 [JSON 架构存储](http://json.schemastore.org/template)。 有关 template.json 文件的详细信息，请参阅 [dotnet 创建模板 wiki](https://github.com/dotnet/templating/wiki)。
 

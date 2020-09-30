@@ -2,12 +2,12 @@
 title: 在 Visual Studio Code 中使用 .NET Core 测试 .NET Standard 类库
 description: 为 .NET Core 类库创建单元测试项目。 验证 .NET Core 类库能否正确地进行单元测试。
 ms.date: 06/08/2020
-ms.openlocfilehash: f49974e1b918424ae5b5d7f3969f52c371e37154
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 6ae8f6637319cd2c8c24f3e673fb6094f36b9f2f
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359163"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91180447"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio-code"></a>教程：在 Visual Studio Code 中使用 .NET Core 测试 .NET Standard 类库
 
@@ -120,7 +120,7 @@ ms.locfileid: "89359163"
    Test Run Successful.
    Total tests: 3
         Passed: 3
-   Total time: 5.1116 Seconds
+    Total time: 5.1116 Seconds
    ```
 
 ## <a name="handle-test-failures"></a>处理测试失败
@@ -150,14 +150,14 @@ ms.locfileid: "89359163"
      Error Message:
       Assert.IsFalse failed. Expected for 'Error': false; Actual: True
      Stack Trace:
-     at StringLibraryTest.UnitTest1.TestDoesNotStartWithUpper()
-       in C:\Projects\ClassLibraryProjects\StringLibraryTest\UnitTest1.cs:line 33
+        at StringLibraryTest.UnitTest1.TestDoesNotStartWithUpper() in C:\
+   Projects\ClassLibraryProjects\StringLibraryTest\UnitTest1.cs:line 33
 
    Test Run Failed.
    Total tests: 3
         Passed: 2
         Failed: 1
-   Total time: 1.7825 Seconds
+    Total time: 1.7825 Seconds
    ```
 
 1. 删除在步骤 1 中添加的字符串“Error”。 重新运行测试，测试将通过。
@@ -173,6 +173,12 @@ ms.locfileid: "89359163"
    ```
 
    测试通过。
+
+## <a name="debug-tests"></a>调试测试
+
+如果使用 Visual Studio Code 作为 IDE，则可以使用与[使用 Visual Studio Code 调试 .NET Core 控制台应用程序](debugging-with-visual-studio-code.md)中所示的相同过程，来通过使用单元测试项目调试代码。 打开 StringLibraryTest/UnitTest1.cs，然后在第 7 行和第 8 行之间选择“运行所有测试”，而不是启动 ShowCase 应用项目。 如果找不到该位置，请按下 <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> 打开命令面板，然后输入“重载窗口”。
+
+Visual Studio Code 启动附有调试器的测试项目。 执行将在添加到测试项目的任何断点或基础库代码处停止。
 
 ## <a name="additional-resources"></a>其他资源
 

@@ -2,15 +2,15 @@
 title: ASP.NET Core 中断性变更
 titleSuffix: ''
 description: 列出 ASP.NET Core 中的中断性变更。
-ms.date: 09/11/2020
+ms.date: 09/18/2020
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 4c3167e9cad193b6a5a11be399e8be529df3be55
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a4534367184127604ed53bf1fdafabbf8ff575d1
+ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90539566"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91406188"
 ---
 # <a name="aspnet-core-breaking-changes"></a>ASP.NET Core 中断性变更
 
@@ -37,6 +37,8 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 - [Azure:Microsoft 预先指定的 Azure 集成包已删除](#azure-microsoft-prefixed-azure-integration-packages-removed)
 - [BinaryFormatter 序列化方法已过时，并且已在 ASP.NET 应用中禁用](#binaryformatter-serialization-methods-are-obsolete-and-prohibited-in-aspnet-apps)
 - [Blazor：在编译时从组件中剪裁掉无意义的空白](#blazor-insignificant-whitespace-trimmed-from-components-at-compile-time)
+- [Blazor：JSObjectReference 和 JSInProcessObjectReference 类型已更改为 internal](#blazor-jsobjectreference-and-jsinprocessobjectreference-types-changed-to-internal)
+- [Blazor：ProtectedBrowserStorage 功能已移动到共享框架](#blazor-protectedbrowserstorage-feature-moved-to-shared-framework)
 - [Blazor：RenderTreeFrame readonly 公共字段已成为属性](#blazor-rendertreeframe-readonly-public-fields-have-become-properties)
 - [Blazor：NuGet 包的目标框架已更改](#blazor-target-framework-of-nuget-packages-changed)
 - [缓存：已删除 CompactOnMemoryPressure 属性](#caching-compactonmemorypressure-property-removed)
@@ -102,6 +104,7 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 - [SPA：SpaServices 和 NodeServices 控制台记录器回退默认更改](#spas-spaservices-and-nodeservices-no-longer-fall-back-to-console-logger)
 - [SPA：SpaServices 和 NodeServices 已标记为过时](#spas-spaservices-and-nodeservices-marked-obsolete)
 - [静态文件：CSV 内容类型已更改为符合标准](#static-files-csv-content-type-changed-to-standards-compliant)
+- [Blazor WebAssembly 不支持的 System.Security.Cryptography API](#systemsecuritycryptography-apis-not-supported-on-blazor-webassembly)
 - [目标框架：不支持 .NET Framework](#target-framework-net-framework-support-dropped)
 
 ## <a name="aspnet-core-50"></a>ASP.NET Core 5.0
@@ -123,6 +126,14 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 ***
 
 [!INCLUDE[Blazor: Insignificant whitespace trimmed from components at compile time](~/includes/core-changes/aspnetcore/5.0/blazor-components-trim-insignificant-whitespace.md)]
+
+***
+
+[!INCLUDE[Blazor: JSObjectReference and JSInProcessObjectReference types changed to internal](~/includes/core-changes/aspnetcore/5.0/blazor-jsobjectreference-to-internal.md)]
+
+***
+
+[!INCLUDE[Blazor: ProtectedBrowserStorage feature moved to shared framework](~/includes/core-changes/aspnetcore/5.0/blazor-protectedbrowserstorage-moved.md)]
 
 ***
 
@@ -206,6 +217,10 @@ ASP.NET Core 提供 .NET Core 使用的 Web 应用开发功能。
 ***
 
 [!INCLUDE[SignalR: UseSignalR and UseConnections methods removed](~/includes/core-changes/aspnetcore/5.0/signalr-usesignalr-useconnections-removed.md)]
+
+***
+
+[!INCLUDE[Cryptography APIs not supported on Blazor WebAssembly](~/includes/core-changes/cryptography/5.0/cryptography-apis-not-supported-on-blazor-webassembly.md)]
 
 ***
 

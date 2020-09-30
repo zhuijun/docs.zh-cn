@@ -2,12 +2,12 @@
 title: Azure 和 .NET 入门
 description: 学习了解 Azure 和 .NET 所需的基础知识。
 ms.date: 06/20/2020
-ms.openlocfilehash: c64de800f47035b22cc62b6d08cb7b71246984a7
-ms.sourcegitcommit: cb27c01a8b0b4630148374638aff4e2221f90b22
+ms.openlocfilehash: e4a071e302247332cdc98c1aabf595cb4f8e2eff
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86174317"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91171567"
 ---
 # <a name="introduction-to-azure-and-net"></a>Azure 和 .NET 简介
 
@@ -28,7 +28,7 @@ ms.locfileid: "86174317"
 
 **托管服务**：Azure 提供一些服务，你可以在其中向 Azure 提供数据或信息，然后 Azure 的实现会采取相应的措施。 Azure Blob 存储就是一个示例，你可以在其中提供文件，Azure 会处理其读取、写入和持久保存事项。
 
-**用于 .NET 的 Azure SDK**：有时称为“用于 .NET 的 Azure 库”，这统称为你在项目中安装的 [NuGet 包](https://www.nuget.org/profiles/azure-sdk)，可提供 Azure 服务的各种交互和功能。 这些包还包括用于预配和管理资源的管理库。
+用于 .NET 的 Azure SDK 统称为你在项目中安装的 [NuGet 包](packages.md)，可提供 Azure 服务的各种交互和功能。 这些包还包括用于预配和管理资源的管理库。
 
 ## <a name="choosing-a-hosting-option"></a>选择承载选项
 
@@ -77,6 +77,7 @@ Azure 提供多种服务，方便你根据自己的需求存储数据。 .NET �
 * **REST API**：用于 .NET 的 Azure SDK 是构建在 [Azure REST API](/rest/api/azure/) 基础上的一种抽象。 如果需要，可以使用 Azure REST API 来替代用于 .NET 的 Azure SDK，或者将两者结合使用。
 
 ## <a name="diagnosing-problems-in-the-cloud"></a>在云中诊断问题
+
 将应用程序部署到 Azure 后，可能会遇到在开发环境中没有问题而在 Azure 中却有问题的情况。 诊断问题时，可以从以下两个方面着手：
 
 * **从 Visual Studio 进行远程调试**：大多数 Azure 计算服务（包括本文档中讨论的服务）可以使用 Visual Studio 进行远程调试，并且可以获取日志。 若要通过应用程序探索 Visual Studio 的功能，请在 Visual Studio 的快速启动工具栏（位于右上角）中键入“Cloud Explorer”，以便打开 Cloud Explorer 工具窗口，然后在树目录中找到应用程序。 有关详细信息，请参阅[使用 Visual Studio 对 Azure 应用服务中的 Web 应用进行故障排除](/azure/app-service/web-sites-dotnet-troubleshoot-visual-studio#remotedebug)。

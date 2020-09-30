@@ -1,39 +1,41 @@
 ---
-title: .NET Core 项目 SDK 概述
+title: .NET 项目 SDK 概述
 titleSuffix: ''
-description: 了解 .NET Core 项目 SDK。
-ms.date: 02/02/2020
+description: 了解 .NET 项目 SDK。
+ms.date: 09/17/2020
 ms.topic: conceptual
-ms.openlocfilehash: 873c06007307c5892c4828f987486b4dd98dc9ae
-ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+ms.openlocfilehash: 6b6651f674f09d5d0d18ddb873096037ad3b2ba5
+ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/13/2020
-ms.locfileid: "88187915"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "91247563"
 ---
-# <a name="net-core-project-sdks"></a>.NET Core 项目 SDK
+# <a name="net-project-sdks"></a>.NET 项目 SDK
 
-.NET Core 项目与软件开发工具包 (SDK) 关联。 每个项目 SDK 都是一组 MSBuild [目标](/visualstudio/msbuild/msbuild-targets)和相关的[任务](/visualstudio/msbuild/msbuild-tasks)，它们负责编译、打包和发布代码。 引用项目 SDK 的项目有时称为“SDK 样式的项目”。
+.NET Core 和 .NET 5.0 及更高版本项目与软件开发工具包 (SDK) 关联。 每个项目 SDK 都是一组 MSBuild [目标](/visualstudio/msbuild/msbuild-targets)和相关的[任务](/visualstudio/msbuild/msbuild-tasks)，它们负责编译、打包和发布代码。 引用项目 SDK 的项目有时称为“SDK 样式的项目”。
 
 ## <a name="available-sdks"></a>可用的 SDK
 
-.NET Core 可使用以下 SDK：
+有以下 SDK 可用：
 
-| Id | 描述 | 存储库|
+| ID | 描述 | 存储库|
 | - | - | - |
-| `Microsoft.NET.Sdk` | .NET Core SDK | <https://github.com/dotnet/sdk> |
-| `Microsoft.NET.Sdk.Web` | .NET Core [Web SDK](/aspnet/core/razor-pages/web-sdk) | <https://github.com/dotnet/sdk> |
-| `Microsoft.NET.Sdk.Razor` | .NET Core [Razor SDK](/aspnet/core/razor-pages/sdk) |
-| `Microsoft.NET.Sdk.Worker` | .NET Core 辅助角色服务 SDK |
-| `Microsoft.NET.Sdk.WindowsDesktop` | .NET Core WinForms 和 WPF SDK |
+| `Microsoft.NET.Sdk` | .NET SDK | <https://github.com/dotnet/sdk> |
+| `Microsoft.NET.Sdk.Web` | .NET [Web SDK](/aspnet/core/razor-pages/web-sdk) | <https://github.com/dotnet/sdk> |
+| `Microsoft.NET.Sdk.Razor` | .NET [Razor SDK](/aspnet/core/razor-pages/sdk) |
+| `Microsoft.NET.Sdk.Worker` | .NET 辅助角色服务 SDK |
+| `Microsoft.NET.Sdk.WindowsDesktop` | WinForms 和 WPF SDK\* | <https://github.com/dotnet/winforms> 和 <https://github.com/dotnet/wpf> |
 
-.NET Core SDK 是 .NET Core 的基本 SDK。 其他 SDK 引用 .NET Core SDK，与其他 SDK 关联的项目具有所有可用的 .NET Core SDK 属性。 例如，Web SDK 依赖于 .NET Core SDK 和 Razor SDK。
+.NET SDK 是 .NET 的基本 SDK。 其他 SDK 引用 .NET SDK，与其他 SDK 关联的项目具有所有可用的 .NET SDK 属性。 例如，Web SDK 依赖于 .NET SDK 和 Razor SDK。
 
 你还可以创建自己的 SDK，并通过 NuGet 进行分发。
 
+\* 从 .NET 5.0 开始，Windows 窗体和 Windows Presentation Foundation (WPF) 项目应指定 .NET SDK (`Microsoft.NET.Sdk`)，而不是 `Microsoft.NET.Sdk.WindowsDesktop`。 对于这些项目，将 `TargetFramework` 设置为 `net5.0-windows` 并将 `UseWPF` 或 `UseWindowsForms` 设置为 `true` 的操作会自动导入 Windows 桌面 SDK。 如果你的项目面向 .NET 5.0 或更高版本，并指定 `Microsoft.NET.Sdk.WindowsDesktop` SDK，则会收到生成警告 NETSDK1137。
+
 ## <a name="project-files"></a>项目文件
 
-.NET Core 项目基于 [MSBuild](/visualstudio/msbuild/msbuild) 格式。 具有扩展名（如用于 C# 项目的 .csproj 和用于 F# 项目的 .fsproj）的项目文件都是 XML 格式的 。 MSBuild 项目文件的根元素是 [Project](/visualstudio/msbuild/project-element-msbuild) 元素。 `Project` 元素有一个可选的 `Sdk` 属性，该属性指定要使用的 SDK（和版本）。 若要使用 .NET Core 工具构建你的代码，请将 `Sdk` 属性设置为[可用 SDK](#available-sdks) 表中的其中一个 ID。
+.NET 项目基于 [MSBuild](/visualstudio/msbuild/msbuild) 格式。 具有扩展名（如用于 C# 项目的 .csproj 和用于 F# 项目的 .fsproj）的项目文件都是 XML 格式的 。 MSBuild 项目文件的根元素是 [Project](/visualstudio/msbuild/project-element-msbuild) 元素。 `Project` 元素有一个可选的 `Sdk` 属性，该属性指定要使用的 SDK（和版本）。 若要使用 .NET 工具并构建你的代码，请将 `Sdk` 属性设置为[可用 SDK](#available-sdks) 表中的其中一个 ID。
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -58,7 +60,7 @@ ms.locfileid: "88187915"
 </Project>
 ```
 
-以这些方式之一引用 SDK 可以极大地简化 .NET Core 的项目文件。 在评估项目时，MSBuild 在项目文件的顶部和底部分别为 `Sdk.props` 和 `Sdk.targets` 添加隐式导入。
+以这些方式之一引用 SDK 可以极大地简化 .NET 的项目文件。 在评估项目时，MSBuild 在项目文件的顶部和底部分别为 `Sdk.props` 和 `Sdk.targets` 添加隐式导入。
 
 ```xml
 <Project>
@@ -85,7 +87,7 @@ ms.locfileid: "88187915"
 
 编译项、嵌入资源和 `None` 项默认包含和排除的内容在 SDK 中定义。 与非 SDK .NET 框架项目不同，你无需在项目文件中指定这些项，因为默认设置涵盖了最常见的用例。 这使得项目文件更小、更易于理解和手动编辑（如需要）。
 
-下表显示在 .NET Core SDK 中包含和排除的元素和 [glob](https://en.wikipedia.org/wiki/Glob_(programming))：
+下表显示在 .NET SDK 中包含和排除的元素和 [glob](https://en.wikipedia.org/wiki/Glob_(programming))：
 
 | 元素           | 包含 glob                              | 排除 glob                                                  | 删除 glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|--------------------------|
@@ -132,11 +134,11 @@ ms.locfileid: "88187915"
 
 ## <a name="customize-the-build"></a>自定义生成
 
-可以通过多种方式[自定义生成](/visualstudio/msbuild/customize-your-build)。 建议通过将属性作为参数传递给 [msbuild](/visualstudio/msbuild/msbuild-command-line-reference) 或 [dotnet](../tools/index.md) 命令来重写该属性。 还可以将属性添加到项目文件或 Directory.Build.props 文件中。 有关 .NET Core 项目的有用属性列表，请参见 [.NET Core SDK 项目的 MSBuild 参考](msbuild-props.md)。
+可以通过多种方式[自定义生成](/visualstudio/msbuild/customize-your-build)。 建议通过将属性作为参数传递给 [msbuild](/visualstudio/msbuild/msbuild-command-line-reference) 或 [dotnet](../tools/index.md) 命令来重写该属性。 还可以将属性添加到项目文件或 Directory.Build.props 文件中。 有关 .NET 项目的有用属性列表，请参见 [.NET SDK 项目的 MSBuild 参考](msbuild-props.md)。
 
 ### <a name="custom-targets"></a>自定义目标
 
-.NET Core 项目可以打包自定义的 MSBuild 目标和属性，以供使用该包的项目使用。 如果要执行以下操作，请使用此类型的可扩展性：
+.NET 项目可以打包自定义的 MSBuild 目标和属性，以供使用该包的项目使用。 如果要执行以下操作，请使用此类型的可扩展性：
 
 - 扩展生成过程。
 - 访问生成过程的工件，如生成的文件。

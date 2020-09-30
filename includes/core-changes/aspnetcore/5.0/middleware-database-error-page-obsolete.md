@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f1129500c9b779256b2650fe6fa855152cb3ae80
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: 10521759d31c3183232cdb1793d78d139f13ce41
+ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88811249"
+ms.lasthandoff: 09/23/2020
+ms.locfileid: "91077561"
 ---
 ### <a name="middleware-database-error-page-marked-as-obsolete"></a>中间件：数据库错误页标记为已过时
 
@@ -55,6 +55,8 @@ ms.locfileid: "88811249"
         }
     }
     ```
+
+1. 向项目文件添加 [Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore](https://www.nuget.org/packages/Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore) NuGet 包。
 
 1. 将数据库开发人员异常页面筛选器添加到服务集合。 例如，在 `Startup.ConfigureServices` 中调用 `AddDatabaseDeveloperPageExceptionFilter` 方法：
 

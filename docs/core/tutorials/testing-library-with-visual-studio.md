@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 049f0636b1c2c2df33461714aea5a11810ef00ad
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 04d0120622697d1e0c84fc169dfc50951cb8aa3c
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359189"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91177288"
 ---
 # <a name="tutorial-test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>教程：在 Visual Studio 中使用 .NET Core 测试 .NET Standard 类库
 
@@ -186,6 +186,12 @@ ms.locfileid: "89359189"
    > ![带有生成命令的 StringLibrary 上下文菜单](./media/testing-library-with-visual-studio/build-library-context-menu.png)
 
 1. 从菜单栏中选择“测试运行” > “所有测试”，运行单元测试 。 测试通过。
+
+## <a name="debug-tests"></a>调试测试
+
+如果使用 Visual Studio 作为 IDE，则可以使用[教程：使用 Visual Studio 调试 .NET Core 控制台应用程序](debugging-with-visual-studio.md)中所示的相同过程，来通过使用单元测试项目调试代码。 右键单击“StringLibraryTests”项目，然后从上下文菜单中选择“调试测试”，而不是启动 ShowCase 应用项目。
+
+Visual Studio 启动附有调试器的测试项目。 执行将在添加到测试项目的任何断点或基础库代码处停止。
 
 ## <a name="additional-resources"></a>其他资源
 

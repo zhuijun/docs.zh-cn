@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cd7860a5dfff1eb595625665382689733cffc94a
-ms.sourcegitcommit: fe8877e564deb68d77fa4b79f55584ac8d7e8997
+ms.openlocfilehash: 4a7616d2ffaabab5279342ebc1082c93a174a52d
+ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/17/2020
-ms.locfileid: "90721278"
+ms.lasthandoff: 09/28/2020
+ms.locfileid: "91406163"
 ---
 ### <a name="ca1416-platform-compatibility"></a>CA1416：平台兼容性
 
@@ -20,7 +20,7 @@ ms.locfileid: "90721278"
 
 #### <a name="examples"></a>示例
 
-- <xref:System.Console.Beep(System.Int32,System.Int32)?displayProperty=nameWithType> 方法仅在 Windows 上受支持（该方法是用 `[SupportedOSPlatform("windows")]` 修饰的）。 如果项目[目标](../../../../docs/standard/frameworks.md)是 `net5.0`（但不是 `net5.0-windows`），则以下代码将在生成时生成 CA1416 警告。 有关为避免该警告可以执行的操作，请参阅[建议的操作](#recommended-action)。
+- <xref:System.Console.Beep(System.Int32,System.Int32)?displayProperty=nameWithType> 方法仅在 Windows 上受支持，并且该方法修饰有 `[SupportedOSPlatform("windows")]`。 如果项目[目标](../../../../docs/standard/frameworks.md)是 `net5.0`（但不是 `net5.0-windows`），则以下代码将在生成时生成 CA1416 警告。 有关为避免该警告可以执行的操作，请参阅[建议的操作](#recommended-action)。
 
   ```csharp
   public void PlayCMajor()
@@ -29,7 +29,7 @@ ms.locfileid: "90721278"
   }
   ```
 
-- 浏览器不支持 <xref:System.Drawing.Image.FromFile(System.String)?displayProperty=nameWithType> 方法（该方法是用 `[UnsupportedOSPlatform("browser")]` 修饰的）。 如果项目使用 Blazor WebAssembly SDK (`<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">`) 或在项目文件中包含 `browser` 作为受支持的平台 (`<SupportedPlatform Include="browser" />`)，则以下代码将在生成时生成 CA1416 警告。
+- 浏览器不支持 <xref:System.Drawing.Image.FromFile(System.String)?displayProperty=nameWithType> 方法，并且该方法修饰有 `[UnsupportedOSPlatform("browser")]`。 如果项目支持浏览器平台，则以下代码将在生成时生成 CA1416 警告。
 
   ```csharp
   public void CreateImage()
@@ -37,6 +37,17 @@ ms.locfileid: "90721278"
       Image newImage = Image.FromFile("SampImag.jpg");
   }
   ```
+
+  > [!TIP]
+  >
+  > - Blazor WebAssembly 项目和 Razor 类库项目自动提供浏览器支持。
+  > - 若要手动添加浏览器作为项目的支持平台，请将以下项添加到项目文件中：
+  >
+  >  ```xml
+  >  <ItemGroup>
+  >    <SupportedPlatform Include="browser" />
+  >  </ItemGroup>
+  >  ```
 
 #### <a name="version-introduced"></a>引入的版本
 
@@ -68,7 +79,7 @@ public void PlayCMajor()
 }
 ```
 
-还可以将 API 标记为特定于平台的 API，在这种情况下，检查要求的重担就落在了调用方身上。 可以标记特定方法或类型，也可以标记整个程序集。
+如果你正在创作库，可以将 API 标记为平台专用。 在这种情况下，检查要求的负担就落在了调用方身上。 可以标记特定方法或类型，也可以标记整个程序集。
 
 ```csharp
 [SupportedOSPlatform("windows")]

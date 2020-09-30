@@ -4,12 +4,12 @@ description: 了解如何在运行 .NET Core CLI 命令时使用 global.json 文
 ms.topic: how-to
 ms.date: 05/01/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: a9558090b1ef48f376334fbc826f6265a58908da
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 7e372c75812e79f85bb8965895d5fef694d9af1a
+ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88062790"
+ms.lasthandoff: 09/22/2020
+ms.locfileid: "90872386"
 ---
 # <a name="globaljson-overview"></a>global.json 概述
 
@@ -81,9 +81,9 @@ ms.locfileid: "88062790"
 | `minor`       | 对指定的主版本、次版本和功能区段使用最新的修补程序级别。 <br> 如果找不到，则前滚到同一主/次版本中的下一个较高功能区段，并使用该功能区段的最新修补程序级别。 <br> 如果找不到，则前滚到同一主版本中的下一个较高次版本和功能区段，并使用该功能区段的最新修补程序级别。 <br> 如果找不到，则失败。 |
 | `major`       | 对指定的主版本、次版本和功能区段使用最新的修补程序级别。 <br> 如果找不到，则前滚到同一主/次版本中的下一个较高功能区段，并使用该功能区段的最新修补程序级别。 <br> 如果找不到，则前滚到同一主版本中的下一个较高次版本和功能区段，并使用该功能区段的最新修补程序级别。 <br> 如果找不到，则前滚到下一个较高主版本、次版本和功能区段，并使用该功能区段的最新修补程序级别。 <br> 如果找不到，则失败。 |
 | `latestPatch` | 使用安装的最新修补程序级别，以与请求的主版本、次版本和功能区段匹配，并且该修补程序级别大于或等于指定的值。 <br> 如果找不到，则失败。 |
-| `latestFeature` | 使用安装的最高功能区段和修补程序级别，以与请求的主版本和次版本匹配，并且该功能区段大于或等于指定的值。 <br> 如果找不到，则失败。 |
-| `latestMinor` | 使用安装的最高次版本、功能区段和修补程序级别，以与请求的主版本匹配，并且该次版本大于或等于指定的值。 <br> 如果找不到，则失败。 |
-| `latestMajor` | 使用安装的最高 .NET Core SDK，并且该主版本大于或等于指定的值。 <br> 如果找不到，则失败。 |
+| `latestFeature` | 使用安装的最高功能区段和修补程序级别，以与请求的主版本和次版本匹配，并且该功能区段和修补级别大于或等于指定的值。 <br> 如果找不到，则失败。 |
+| `latestMinor` | 使用安装的最高次版本、功能区段和修补程序级别，以与请求的主版本匹配，并且该次版本、功能区段和修补级别大于或等于指定的值。 <br> 如果找不到，则失败。 |
+| `latestMajor` | 使用安装的最高 .NET Core SDK，并且该版本大于或等于指定的值。 <br> 如果找不到，则失败。 |
 | `disable`     | 不前滚。 需要完全匹配。 |
 
 ### <a name="msbuild-sdks"></a>msbuild-sdks
@@ -175,7 +175,7 @@ dotnet new globaljson --sdk-version 3.0.100
 - 如果找到了未指定 SDK 版本但指定了 `allowPrerelease` 值的 global.json 文件，则使用安装的最高 SDK 版本（相当于将 `rollForward` 设置为 `latestMajor`）。 最新 SDK 版本是发布版本还是预发布版本取决于 `allowPrerelease` 的值。 `true` 指示考虑预发布版本；`false` 指示仅考虑发布版本。
 - 如果找到 global.json 文件，并且该文件指定了 SDK 版本：
 
-  - 如果未设置 `rollFoward` 值，它将使用 `latestPatch` 作为默认 `rollForward` 策略。 否则，请在 [rollForward](#rollforward) 部分中检查每个值及其行为。
+  - 如果未设置 `rollForward` 值，它将使用 `latestPatch` 作为默认 `rollForward` 策略。 否则，请在 [rollForward](#rollforward) 部分中检查每个值及其行为。
   - 有关是否考虑预发布版本以及未设置 `allowPrerelease` 时的默认行为的信息，请参阅 [allowPrerelease](#allowprerelease) 部分。
 
 ## <a name="net-core-2x"></a>[.NET Core 2.x](#tab/netcore2x)

@@ -2,12 +2,12 @@
 title: 在 Visual Studio for Mac 中使用 .NET Core 测试 .NET Standard 类库
 description: 为 .NET Core 类库创建单元测试项目。 验证 .NET Core 类库能否正确地进行单元测试。
 ms.date: 06/08/2020
-ms.openlocfilehash: d3c8a5e01d16047949e977f3af6a429970d996d0
-ms.sourcegitcommit: ae2e8a61a93c5cf3f0035c59e6b064fa2f812d14
+ms.openlocfilehash: 3adcddc96abf77012f89a28c1cf60ea57ae506a2
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "89359215"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91180525"
 ---
 # <a name="test-a-net-standard-class-library-with-net-core-using-visual-studio"></a>在 Visual Studio 中使用 .NET Core 测试 .NET Standard 类库
 
@@ -33,7 +33,7 @@ ms.locfileid: "89359215"
 
 1. 选择“.NET Core 3.1”。 将新项目命名为"StringLibraryTest"，然后选择“创建”。
 
-   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-new-project-name.png" alt-text="提供项目名称的 Visual Studio Mac“新建项目”对话框":::
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-new-project-name.png" alt-text="创建测试项目的 Visual Studio Mac“新建项目”对话框":::
 
    Visual Studio 使用以下代码创建类文件：
 
@@ -69,7 +69,7 @@ ms.locfileid: "89359215"
 
 1. 在“引用”对话框中，选择“StringLibrary”项目 。 选择“确定”。
 
-      :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-edit-references.png" alt-text="Visual Studio Mac“编辑引用”对话框":::
+      :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-edit-references.png" alt-text="创建测试项目的 Visual Studio Mac“新建项目”对话框":::
 
 ## <a name="add-and-run-unit-test-methods"></a>添加并运行单元测试方法
 
@@ -102,7 +102,7 @@ ms.locfileid: "89359215"
 
 1. 在菜单栏中，选择“文件” > “另存为” 。 在对话框中，确保“编码”设置为“Unicode (UTF-8)” 。
 
-   :::image type="content" source="media/testing-library-with-visual-studio-mac/save-file-as-dialog.png" alt-text="Visual Studio“文件另存为”对话框":::
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/save-file-as-dialog.png" alt-text="创建测试项目的 Visual Studio Mac“新建项目”对话框":::
 
 1. 当系统询问你是否要替换现有文件时，请选择“替换”。
 
@@ -112,13 +112,13 @@ ms.locfileid: "89359215"
 
 1. 单击“停靠”图标使此面板保持打开状态。
 
-   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-dock-icon.png" alt-text="Visual Studio for Mac“单元测试”面板停靠图标":::
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-dock-icon.png" alt-text="创建测试项目的 Visual Studio Mac“新建项目”对话框":::
 
 1. 单击“全部运行”按钮。
 
    所有测试通过。
 
-   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-pass.png" alt-text="Visual Studio for Mac 预期测试通过":::
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-pass.png" alt-text="创建测试项目的 Visual Studio Mac“新建项目”对话框":::
 
 ## <a name="handle-test-failures"></a>处理测试失败
 
@@ -135,13 +135,13 @@ ms.locfileid: "89359215"
 
    这一次，“测试资源管理器”窗口指示有两个测试成功，还有一个失败。
 
-   :::image type="content" source="media/testing-library-with-visual-studio-mac/failed-test-window.png" alt-text="未通过测试的“测试资源管理器”窗口":::
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/failed-test-window.png" alt-text="创建测试项目的 Visual Studio Mac“新建项目”对话框":::
 
 1. 按 <kbd>Ctrl</kbd> 并单击失败的测试 `TestDoesNotStartWithUpper`，然后从上下文菜单中选择“显示结果边栏”。
 
    “结果”边栏显示断言生成的消息：“Assert.IsFalse 失败。 “Error”应返回 false；实际返回 True”。 由于此次失败，数组中“Error”之后的所有字符串都未进行测试。
 
-   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-failure.png" alt-text="显示 IsFalse 断言失败的“测试资源管理器”窗口":::
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-mac-unit-test-failure.png" alt-text="创建测试项目的 Visual Studio Mac“新建项目”对话框":::
 
 1. 删除在步骤 1 中添加的字符串“Error”。 重新运行测试，测试将通过。
 
@@ -153,11 +153,11 @@ ms.locfileid: "89359215"
 
 1. 在 Visual Studio 工具栏中，将生成配置从 **“调试”** 更改为 **“发行”** 。
 
-   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-toolbar-release.png" alt-text="突出显示发布版本的 Visual Studio 工具栏":::
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/visual-studio-toolbar-release.png" alt-text="创建测试项目的 Visual Studio Mac“新建项目”对话框":::
 
 1. 在“解决方案”边栏中，按 <kbd>Ctrl</kbd> 并单击“StringLibrary”项目，然后从上下文菜单中选择“生成”，重新编译库。
 
-   :::image type="content" source="media/testing-library-with-visual-studio-mac/build-library-context-menu.png" alt-text="带有生成命令的 StringLibrary 上下文菜单":::
+   :::image type="content" source="media/testing-library-with-visual-studio-mac/build-library-context-menu.png" alt-text="创建测试项目的 Visual Studio Mac“新建项目”对话框":::
 
 1. 再次运行单元测试。
 
@@ -165,7 +165,9 @@ ms.locfileid: "89359215"
 
 ## <a name="debug-tests"></a>调试测试
 
-可以使用[教程：使用 Visual Studio for Mac 调试 .NET Core 控制台应用程序](debugging-with-visual-studio-mac.md)中所示的相同过程，使用单元测试项目调试代码。 按住 <kbd>Ctrl</kbd> 并单击“StringLibraryTests”项目，然后从上下文菜单中选择“启动调试项目”，而不是启动 ShowCase 应用项目。 Visual Studio 启动附有调试器的测试项目。 执行将在添加到测试项目的任何断点或基础库代码处停止。
+如果使用 Visual Studio for Mac 作为 IDE，可以使用[教程：使用 Visual Studio for Mac 调试 .NET Core 控制台应用程序](debugging-with-visual-studio-mac.md)中所示的相同过程，使用单元测试项目调试代码。 按住 <kbd>Ctrl</kbd> 并单击“StringLibraryTests”项目，然后从上下文菜单中选择“启动调试项目” ，而不是启动 ShowCase 应用项目。
+
+Visual Studio 启动附有调试器的测试项目。 执行将在添加到测试项目的任何断点或基础库代码处停止。
 
 ## <a name="additional-resources"></a>其他资源
 
