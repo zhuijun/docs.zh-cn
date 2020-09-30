@@ -929,6 +929,8 @@ items:
                         href: code-analysis/quality-rules/ca2249.md
               - name: 代码样式规则
                 href: /visualstudio/ide/editorconfig-language-conventions
+          - name: 平台兼容性分析器
+            href: ../standard/analyzers/platform-compat-analyzer.md
           - name: API 分析器
             href: ../standard/analyzers/api-analyzer.md
           - name: 可移植性分析器
@@ -1292,7 +1294,7 @@ items:
             displayName: 'dependency injection best practices,guidelines,di,ioc,ioc container,dependency container,inversion of control'
       - name: 泛型主机
         href: ../core/extensions/generic-host.md
-      - name: Logging
+      - name: 日志记录
         href: /aspnet/core/fundamentals/logging
       - name: 选项模式
         href: /aspnet/core/fundamentals/configuration/options
