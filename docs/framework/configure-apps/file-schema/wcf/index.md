@@ -2,12 +2,12 @@
 title: WCF 配置架构
 ms.date: 03/30/2017
 ms.assetid: c282aeb5-91f0-4522-8e2f-704c1ef3651f
-ms.openlocfilehash: ab64b41e6e79c934ac0145dd7eec0a943f5dc473
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 44d5e0acc6f5a9ca43949bce0c7964354ad18270
+ms.sourcegitcommit: 665f8fc55258356f4d2f4a6585b750c974b26675
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91165125"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "91573652"
 ---
 # <a name="wcf-configuration-schema"></a>WCF 配置架构
 
@@ -19,12 +19,12 @@ Windows Communication Foundation (WCF) 配置元素，你可以配置 WCF 服务
   
  [锁定配置设置](/previous-versions/aspnet/55th21y4(v=vs.100))  
   
- 本节描述每个配置项的所有可能的值，以及它如何与其他 WCF 配置元素进行交互。 下图说明了 WCF 配置架构：  
-  
- ![显示 WCF 配置架构的关系图。](./media/index/windows-communication-foundation-configuration-schema.gif)  
+ 本节描述每个配置项的所有可能的值，以及它如何与其他 WCF 配置元素进行交互。 下图说明了 WCF 配置架构：
+
+:::image type="content" source="./media/index/windows-communication-foundation-configuration-schema.gif" alt-text="显示 WCF 配置架构的关系图。" lightbox="./media/index/windows-communication-foundation-configuration-schema.gif":::
   
 > [!CAUTION]
-> 应该使用适当的访问控制)  (列表 ( # A0) 保护应用程序配置文件中的 WCF 配置节，以防止任何潜在的安全威胁。  例如，你应确保仅有适当的人员可以访问或修改有关应用程序绑定的安全设置或服务的配置文件的服务模型节。  
+> 使用适当的访问控制)  (列表 ( # A0) 保护应用程序配置文件中的 WCF 配置节，以避免任何潜在的安全威胁。 例如，确保只有适当的人员可以访问或修改应用程序绑定的安全设置或服务的配置文件的服务模型部分。  
   
 ## <a name="in-this-section"></a>本节内容  
 
