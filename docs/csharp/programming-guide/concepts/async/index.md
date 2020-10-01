@@ -2,12 +2,12 @@
 title: C# 中的异步编程
 description: 对使用 async、await、Task 和 Task<T> 的异步编程的 C# 语言支持的概述
 ms.date: 06/04/2020
-ms.openlocfilehash: 853019c39880b1f4ef6536aed5841ecab53d7304
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 02290e374aa97cb5d5ec6410c917751066949b23
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414976"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438107"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>使用 Async 和 Await 的异步编程
 
@@ -56,7 +56,7 @@ ms.locfileid: "89414976"
 :::code language="csharp" source="snippets/index/AsyncBreakfast-V2/Program.cs" id="SnippetMain":::
 
 > [!IMPORTANT]
-> 总实耗时间和最初同步版本大致相同。 此代码尚未利用异步编程的某些关键功能。
+> 总运行时间和最初同步版本大致相同。 此代码尚未利用异步编程的某些关键功能。
 
 > [!TIP]
 > `FryEggsAsync`、`FryBaconAsync` 和 `ToastBreadAsync` 的方法主体都已更新，现会分别返回 `Task<Egg>`、`Task<Bacon>` 和 `Task<Toast>`。 这些方法的名称与其原始版本不同，将包含“Async”后缀。 它们的实现在本文的稍后部分显示为[最终版本](#final-version)的一部分。
@@ -123,7 +123,7 @@ Console.WriteLine("bacon is ready");
 Console.WriteLine("Breakfast is ready!");
 ```
 
-:::image type="content" source="media/asynchronous-breakfast.png" alt-text="异步早餐":::
+:::image type="content" source="media/asynchronous-breakfast.png" alt-text="同步早餐":::
 
 异步准备的早餐大约花费了 20 分钟，这是因为一些任务可以并发运行。
 
@@ -184,7 +184,7 @@ while (breakfastTasks.Count > 0)
 进行所有这些更改之后，代码的最终版本将如下所示：<a id="final-version"></a>
 :::code language="csharp" source="snippets/index/AsyncBreakfast-final/Program.cs" highlight="9-40":::
 
-:::image type="content" source="media/whenany-async-breakfast.png" alt-text="when any 异步早餐":::
+:::image type="content" source="media/whenany-async-breakfast.png" alt-text="同步早餐":::
 
 异步准备的早餐的最终版本大约花费了 15 分钟，这是因为一些任务能够同时运行，并且该代码能够同时监视多个任务，只在需要时才执行操作。
 
