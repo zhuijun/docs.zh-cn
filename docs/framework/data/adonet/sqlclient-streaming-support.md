@@ -2,16 +2,16 @@
 title: SqlClient 流支持
 ms.date: 03/30/2017
 ms.assetid: c449365b-470b-4edb-9d61-8353149f5531
-ms.openlocfilehash: 9dc7ee573bd011bd18d6c4b8bbd2d147b1fe907f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: a396e3e172c63b0b71b085d4694184c42cc42f3e
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791410"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609240"
 ---
 # <a name="sqlclient-streaming-support"></a>SqlClient 流支持
 
-SQL Server 和应用程序之间的流式处理支持（.NET Framework 4.5 中的新）支持服务器上的非结构化数据（文档、图像和媒体文件）。 SQL Server 数据库可以存储二进制大型对象（Blob），但检索 BLOB 可能会占用大量内存。
+.NET Framework 4.5) 中 SQL Server 和应用程序之间的流支持 (在服务器 (文档、图像和媒体文件) 支持非结构化数据。 SQL Server 数据库可以将二进制大型对象存储 (Blob) ，但检索 BLOB 可能会占用大量内存。
 
 与 SQL Server 的流支持简化了写入流式处理数据的应用程序，而无需将数据完全加载到内存中，从而减少了内存溢出异常。
 
@@ -20,13 +20,13 @@ SQL Server 和应用程序之间的流式处理支持（.NET Framework 4.5 中�
 > [!WARNING]
 > 如果应用程序还使用 `Context Connection` 连接字符串关键字，则不支持异步调用。
 >
-> 为支持流处理而添加的成员用于从查询中检索数据，并将参数传递给查询和存储过程。 这种流功能面向基本的 OLTP 和数据迁移方案，适用于本地和非本地数据迁移环境。
+> 为支持流处理而添加的成员用于从查询中检索数据，并将参数传递给查询和存储过程。 流式处理功能可解决基本的 OLTP 和数据迁移方案，适用于本地和非本地数据迁移环境。
 
 ## <a name="streaming-support-from-sql-server"></a>SQL Server 中的流式处理支持
 
-SQL Server <xref:System.Data.Common.DbDataReader>中的流支持在和<xref:System.IO.Stream> <xref:System.Data.SqlClient.SqlDataReader>类中引入了新功能，以便获取、 <xref:System.Xml.XmlReader>、和<xref:System.IO.TextReader>对象并对其做出反应。 这些类用于检索查询中的数据。 因此，SQL Server 中的流支持可解决 OLTP 方案，并适用于本地和非本地环境。
+SQL Server 中的流支持在和类中引入了新功能 <xref:System.Data.Common.DbDataReader> <xref:System.Data.SqlClient.SqlDataReader> ，以便获取 <xref:System.IO.Stream> 、 <xref:System.Xml.XmlReader> 、和 <xref:System.IO.TextReader> 对象并对其做出反应。 这些类用于检索查询中的数据。 因此，SQL Server 中的流支持可解决 OLTP 方案，并适用于本地和非本地环境。
 
-将以下成员添加到<xref:System.Data.SqlClient.SqlDataReader>以启用从 SQL Server 的流支持：
+将以下成员添加到 <xref:System.Data.SqlClient.SqlDataReader> 以启用从 SQL Server 的流支持：
 
 1. <xref:System.Data.SqlClient.SqlDataReader.IsDBNullAsync%2A>
 
@@ -40,7 +40,7 @@ SQL Server <xref:System.Data.Common.DbDataReader>中的流支持在和<xref:Syst
 
 6. <xref:System.Data.SqlClient.SqlDataReader.GetXmlReader%2A>
 
-将以下成员添加到<xref:System.Data.Common.DbDataReader>以启用从 SQL Server 的流支持：
+将以下成员添加到 <xref:System.Data.Common.DbDataReader> 以启用从 SQL Server 的流支持：
 
 1. <xref:System.Data.Common.DbDataReader.GetFieldValue%2A>
 
@@ -50,13 +50,13 @@ SQL Server <xref:System.Data.Common.DbDataReader>中的流支持在和<xref:Syst
 
 ## <a name="streaming-support-to-sql-server"></a>SQL Server 的流式处理支持
 
-SQL Server 的流式处理支持会引入类中<xref:System.Data.SqlClient.SqlParameter>的新功能<xref:System.Xml.XmlReader>，使其可以接受和<xref:System.IO.Stream>响应、 <xref:System.IO.TextReader>和对象。 <xref:System.Data.SqlClient.SqlParameter> 用于将参数传递给查询和存储过程。
+SQL Server 的流式处理支持会引入类中的新功能 <xref:System.Data.SqlClient.SqlParameter> ，使其可以接受和响应 <xref:System.Xml.XmlReader> 、 <xref:System.IO.Stream> 和 <xref:System.IO.TextReader> 对象。 <xref:System.Data.SqlClient.SqlParameter> 用于将参数传递给查询和存储过程。
 
 释放 <xref:System.Data.SqlClient.SqlCommand> 对象或调用 <xref:System.Data.SqlClient.SqlCommand.Cancel%2A> 必须取消任何流操作。 如果应用程序发送 <xref:System.Threading.CancellationToken>，则不保证取消。
 
 以下 <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> 类型将接受 <xref:System.Data.SqlClient.SqlParameter.Value%2A> 的 <xref:System.IO.Stream>：
 
-- **Binary**
+- **二进制**
 
 - **VarBinary**
 
@@ -70,7 +70,7 @@ SQL Server 的流式处理支持会引入类中<xref:System.Data.SqlClient.SqlPa
 
 - **Xml**
 
-**Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> 类型将<xref:System.Xml.XmlReader>接受的。 <xref:System.Data.SqlClient.SqlParameter.Value%2A>
+**Xml** <xref:System.Data.SqlClient.SqlParameter.SqlDbType%2A> 类型将接受 <xref:System.Data.SqlClient.SqlParameter.Value%2A> 的 <xref:System.Xml.XmlReader> 。
 
 <xref:System.Data.SqlClient.SqlParameter.SqlValue%2A> 可接受类型 <xref:System.Xml.XmlReader>、<xref:System.IO.TextReader> 和 <xref:System.IO.Stream> 的值。
 
@@ -107,7 +107,7 @@ GO
 
 - 从 SQL Server 检索数据。
 
-- 将大型文件（Blob）从一个 SQL Server 数据库传输到另一个数据库，而不会耗尽内存。
+- 将大型文件 (Blob) 从一个 SQL Server 数据库传输到另一个数据库，而不会耗尽内存。
 
 ```csharp
 using System;
@@ -522,6 +522,6 @@ namespace StreamingFromServerToAnother {
 }
 ```
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [在 ADO.NET 中检索和修改数据](retrieving-and-modifying-data.md)

@@ -6,16 +6,16 @@ helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: 0907f7f8a3767db9d83e5deaae1d86141fbee7b0
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: a249f0de00c45b1588762ffa0f826e890f961334
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557406"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91607767"
 ---
 # <a name="how-to-create-temporary-certificates-for-use-during-development"></a>如何：创建开发期间使用的临时证书
 
-使用 Windows Communication Foundation (WCF) 开发安全服务或客户端时，通常需要提供要用作凭据的 x.509 证书。 该证书通常是证书链的一部分，在计算机的受信任的根证书颁发机构存储区中可找到根证书颁发机构。 拥有一个证书链，使您可以限定一组证书，其中根证书颁发机构通常来自于您的组织或业务单元。 若要在开发时模拟此情况，请创建两个证书以满足安全要求。 第一个证书是自签名证书，放置在受信任的根证书颁发机构存储区中；第二个证书是从第一个证书创建的，放置在本地计算机位置的个人存储区中或当前用户位置的个人存储区中。 本主题将指导完成使用 Powershell [new-selfsignedcertificate) ](/powershell/module/pkiclient/new-selfsignedcertificate) cmdlet 创建这两个证书的步骤。
+使用 Windows Communication Foundation (WCF) 开发安全服务或客户端时，通常需要提供要用作凭据的 x.509 证书。 该证书通常是证书链的一部分，在计算机的受信任的根证书颁发机构存储区中可找到根证书颁发机构。 拥有一个证书链，使您可以限定一组证书，其中根证书颁发机构通常来自于您的组织或业务单元。 若要在开发时模拟此情况，请创建两个证书以满足安全要求。 第一个证书是自签名证书，放置在受信任的根证书颁发机构存储区中；第二个证书是从第一个证书创建的，放置在本地计算机位置的个人存储区中或当前用户位置的个人存储区中。 本主题将指导完成使用 PowerShell [new-selfsignedcertificate) ](/powershell/module/pkiclient/new-selfsignedcertificate) cmdlet 创建这两个证书的步骤。
 
 > [!IMPORTANT]
 > 新的 New-selfsignedcertificate cmdlet 生成的证书仅供测试之用。 部署服务或客户程序时，请确保使用证书颁发机构提供的适当证书。 这可能是来自组织或第三方的 Windows Server 证书服务器。
@@ -113,7 +113,7 @@ Export-Certificate -Cert $testCertPath -FilePath testcert.crt
 
 请确保通过右击证书，再单击 **“删除”** ，从 **“受信任的根证书颁发机构”** 和 **“个人”** 文件夹中删除所有临时根证书颁发机构证书。
 
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [使用证书](working-with-certificates.md)
 - [如何：使用 MMC 管理单元查看证书](how-to-view-certificates-with-the-mmc-snap-in.md)
