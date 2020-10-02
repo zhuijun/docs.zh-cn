@@ -11,13 +11,12 @@ helpviewer_keywords:
 - services
 - .NET applications, Windows applications
 ms.assetid: ba72d648-9553-4849-b829-069ad5ea014b
-author: ghogen
-ms.openlocfilehash: 1f02b8229c0d62fa6c0e74ae1e670831b0becb0b
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2aea73267f05340930a9591f430de59677c1cb11
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557796"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609572"
 ---
 # <a name="develop-windows-service-apps"></a>开发 Windows 服务应用
 

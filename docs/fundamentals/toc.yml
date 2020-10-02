@@ -331,6 +331,8 @@ items:
             href: ../core/diagnostics/event-counters.md
           - name: 日志记录和跟踪
             href: ../core/diagnostics/logging-tracing.md
+          - name: 收集容器中的诊断
+            href: ../core/diagnostics/diagnostics-in-containers.md
           - name: .NET Core CLI 全局工具
             items:
               - name: dotnet-counters
@@ -370,6 +372,10 @@ items:
                     href: code-analysis/code-quality-rule-options.md
                   - name: 预定义配置
                     href: code-analysis/predefined-configurations.md
+              - name: 代码样式规则
+                items:
+                  - name: 规则选项
+                    href: code-analysis/code-style-rule-options.md
           - name: 规则引用
             items:
               - name: 代码质量规则
@@ -928,7 +934,24 @@ items:
                       - name: CA2249
                         href: code-analysis/quality-rules/ca2249.md
               - name: 代码样式规则
-                href: /visualstudio/ide/editorconfig-language-conventions
+                items:
+                  - name: 概述
+                    href: code-analysis/style-rules/index.md
+                  - name: 语言规则
+                    items:
+                      - name: 概述
+                        displayName: language rules
+                        href: code-analysis/style-rules/language-rules.md
+                  - name: 格式设置规则
+                    items:
+                      - name: 概述
+                        displayName: formatting rules
+                        href: code-analysis/style-rules/formatting-rules.md
+                  - name: 命名规则
+                    items:
+                      - name: 概述
+                        displayName: naming rules
+                        href: code-analysis/style-rules/naming-rules.md
           - name: 平台兼容性分析器
             href: ../standard/analyzers/platform-compat-analyzer.md
           - name: API 分析器
