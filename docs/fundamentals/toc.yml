@@ -366,6 +366,8 @@ items:
             items:
               - name: 常规选项
                 href: code-analysis/configuration-options.md
+              - name: 配置文件
+                href: code-analysis/configuration-files.md
               - name: 代码质量规则
                 items:
                   - name: 规则选项
@@ -1317,10 +1319,18 @@ items:
             displayName: 'dependency injection best practices,guidelines,di,ioc,ioc container,dependency container,inversion of control'
       - name: 泛型主机
         href: ../core/extensions/generic-host.md
-      - name: 日志记录
-        href: /aspnet/core/fundamentals/logging
+      - name: Logging
+        items:
+          - name: 概述
+            href: ../core/extensions/logging.md
+          - name: 日志记录提供程序
+            href: ../core/extensions/logging-providers.md
+          - name: 实现自定义日志记录提供程序
+            href: ../core/extensions/custom-logging-provider.md
+          - name: 高性能日志记录
+            href: ../core/extensions/high-performance-logging.md
       - name: 选项模式
-        href: /aspnet/core/fundamentals/configuration/options
+        href: ../core/extensions/options.md
   - name: 数据访问
     items:
       - name: LINQ
