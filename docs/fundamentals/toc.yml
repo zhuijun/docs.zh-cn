@@ -1028,6 +1028,8 @@ items:
         href: ../core/deploying/runtime-patch-selection.md
       - name: 单个文件部署和可执行文件
         href: ../core/deploying/single-file.md
+      - name: ReadyToRun
+        href: ../core/deploying/ready-to-run.md
       - name: 裁剪独立部署
         items:
           - name: 概述和操作说明
