@@ -36,6 +36,8 @@
               href: tutorials/intro-to-csharp/arrays-and-collections.md
             - name: 类简介
               href: tutorials/intro-to-csharp/introduction-to-classes.md
+            - name: 面向对象的编程
+              href: tutorials/intro-to-csharp/object-oriented-programming.md
     - name: 探索 C# 6
       href: tutorials/exploration/csharp-6.yml
     - name: 探索字符串内插 - 交互式
@@ -491,8 +493,6 @@
               href: programming-guide/concepts/linq/enabling-a-data-source-for-linq-querying1.md
             - name: 对 LINQ 的 Visual Studio IDE 和工具支持
               href: programming-guide/concepts/linq/visual-studio-ide-and-tools-support-for-linq.md
-        - name: 面向对象的编程
-          href: programming-guide/concepts/object-oriented-programming.md
         - name: 反射
           href: programming-guide/concepts/reflection.md
         - name: 序列化 (C#)
