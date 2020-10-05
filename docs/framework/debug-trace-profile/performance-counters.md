@@ -7,12 +7,12 @@ helpviewer_keywords:
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-ms.openlocfilehash: 1b5ca6484f45dcee33009d8b8c12a43fa41f63de
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: c5ee2fae9167dd508332d8e97a589a8ddb0394ac
+ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90554444"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91712627"
 ---
 # <a name="performance-counters-in-the-net-framework"></a>.NET Framework 中的性能计数器
 
@@ -130,8 +130,8 @@ ms.locfileid: "90554444"
 |**已建立连接**|自进程启动以来，<xref:System.AppDomain> 中曾连接的任何流套接的 <xref:System.Net.Sockets.Socket> 对象的累积总数。|  
 |**已接收的数据报**|自进程启动以来，<xref:System.AppDomain> 中的所有 <xref:System.Net.Sockets.Socket> 对象接收到的数据报包的累积总数。|  
 |**已发送的数据报**|自进程启动以来，<xref:System.AppDomain> 中的所有 <xref:System.Net.Sockets.Socket> 对象已发送的数据报包的累积总数。|  
-|**HttpWebRequest 平均生存期**|自进程启动以来，<xref:System.AppDomain> 中在上一个间隔中结束的所有 <xref:System.Net.HttpWebRequest> 对象的平均完成时间。|  
-|**HttpWebRequest 平均排队时间**|自进程启动以来，<xref:System.AppDomain> 中在上一个间隔中结束的所有 <xref:System.Net.HttpWebRequest> 对象的平均排队时间。|  
+|**Httpwebrequest 平均生存期**|自进程启动以来，<xref:System.AppDomain> 中在上一个间隔中结束的所有 <xref:System.Net.HttpWebRequest> 对象的平均完成时间。|  
+|**Httpwebrequest 平均排队时间**|自进程启动以来，<xref:System.AppDomain> 中在上一个间隔中结束的所有 <xref:System.Net.HttpWebRequest> 对象的平均排队时间。|  
 |**创建的 HttpWebRequest/秒**|<xref:System.AppDomain> 中每秒创建的 <xref:System.Net.HttpWebRequest> 对象的数目。|  
 |**已排队的 HttpWebRequest/秒**|<xref:System.AppDomain> 中每秒添加到队列的 <xref:System.Net.HttpWebRequest> 对象的数量。|  
 |**已中止的 HttpWebRequest/秒**|<xref:System.AppDomain> 中其中每秒应用程序调用 <xref:System.Net.HttpWebRequest.Abort%2A> 方法的 <xref:System.Net.HttpWebRequest> 对象的数量。|  
@@ -169,11 +169,11 @@ ms.locfileid: "90554444"
   
  有如下两个持续时间计数器可测量 <xref:System.Net.HttpWebRequest> 对象经过整个或部分生命周期所花费的时间：  
   
-- **HttpWebRequest 平均生存期**  
+- **Httpwebrequest 平均生存期**  
   
-- **HttpWebRequest 平均排队时间**  
+- **Httpwebrequest 平均排队时间**  
   
- 对于“HttpWebRequest 平均排队时间”计数器，大多数 <xref:System.Net.HttpWebRequest> 对象的生存期总是开始于创建对象时，而在应用程序关闭响应流时结束。**** 有两种不常见的情况：  
+ 对于 **Httpwebrequest 平均生存期** 计数器，大多数对象的生存期 <xref:System.Net.HttpWebRequest> 总是从创建对象的时间开始，直到应用程序关闭响应流的时间。 有两种不常见的情况：  
   
 - 如果应用程序从未调用 <xref:System.Net.HttpWebRequest.GetResponse%2A> 或 <xref:System.Net.HttpWebRequest.BeginGetResponse%2A> 方法，则忽略 <xref:System.Net.HttpWebRequest> 对象的生存期。  
   
@@ -228,7 +228,7 @@ for (int i = 0; i < Array.Length; i++)
 |**堆栈审核深度**|显示在上次运行时代码访问安全检查期间的堆栈深度。 运行时代码访问安全检查通过审核堆栈执行。 此计数器不是平均值；它仅显示最后观测的值。|  
 |**运行时检查总数**|显示自应用程序启动以来执行的运行时代码访问安全检查的总数。 当调用方要求特定权限时，执行运行时代码访问安全检查。 运行时检查在调用方每次调用时都会执行，并会检查调用方的当前线程堆栈。 此计数器与“堆栈审阅深度”计数器一起使用时可指示安全检查出现的性能损失。****|  
   
-## <a name="see-also"></a>请参阅
+## <a name="see-also"></a>另请参阅
 
 - [性能计数器](performance-counters.md)
 - [运行时分析](runtime-profiling.md)
