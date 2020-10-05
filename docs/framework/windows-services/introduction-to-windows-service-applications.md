@@ -22,13 +22,12 @@ helpviewer_keywords:
 - Win32ShareProcess service type
 - Windows Service applications, lifetime
 ms.assetid: 1b1b5e67-3ff3-40c0-8154-322cfd6ef0ae
-author: ghogen
-ms.openlocfilehash: 13bd1f42776ac76a43a83667465ac0ca277e3452
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: b177673d8904a3c40e41cd0f92b1ea7408641186
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925665"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609312"
 ---
 # <a name="introduction-to-windows-service-applications"></a>Windows 服务应用程序介绍
 Microsoft Windows 服务（过去称为 NT 服务）允许用户创建可在其自身的 Windows 会话中长时间运行的可执行应用程序。 这些服务可在计算机启动时自动启动，可以暂停和重启，并且不显示任何用户界面。 这些功能使服务非常适合在服务器上使用，或者需要长时间运行的功能（不会影响在同一台计算机上工作的其他用户）的情况。 还可以在与登录用户或默认计算机帐户不同的特定用户帐户的安全性上下文中运行服务。 有关服务和 Windows 会话的详细信息，请参阅 Windows SDK 文档。  

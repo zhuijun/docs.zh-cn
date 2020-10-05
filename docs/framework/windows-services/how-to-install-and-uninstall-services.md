@@ -12,13 +12,12 @@ helpviewer_keywords:
 - uninstalling Windows services
 - installutil.exe tool
 ms.assetid: c89c5169-f567-4305-9d62-db31a1de5481
-author: ghogen
-ms.openlocfilehash: 883b587a7ef60bc686d6f453c775f6651f0ccb7f
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 6b7cfd8b241df4fe01c9c2a08888c88a1c749d13
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063817"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609676"
 ---
 # <a name="how-to-install-and-uninstall-windows-services"></a>如何：安装和卸载 Windows 服务
 

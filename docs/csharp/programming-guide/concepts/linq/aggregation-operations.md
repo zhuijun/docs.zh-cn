@@ -3,14 +3,15 @@ title: 聚合运算 (C#)
 description: 了解执行聚合操作的方法。 聚合运算从值的集合中计算出单个值。
 ms.date: 07/20/2015
 ms.assetid: 6fc035e5-7639-48b8-bc7f-b093dd31b039
-ms.openlocfilehash: 3d5a52249520478571db2fcfd7aa5d10fb013565
-ms.sourcegitcommit: 04022ca5d00b2074e1b1ffdbd76bec4950697c4c
+ms.openlocfilehash: c302667ec7f1d4ed5acb98439ea9f8f80250077d
+ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "87104303"
+ms.lasthandoff: 09/24/2020
+ms.locfileid: "91159379"
 ---
 # <a name="aggregation-operations-c"></a>聚合运算 (C#)
+
 聚合运算从值的集合中计算出单个值。 例如，从一个月累计的每日温度值计算出日平均温度值就是一个聚合运算。  
   
  下图显示对数字序列进行两种不同聚合操作所得结果。 第一个操作累加数字。 第二个操作返回序列中的最大值。  

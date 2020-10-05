@@ -15,13 +15,12 @@ helpviewer_keywords:
 - ServiceProcessInstaller class, service application code model
 - Windows Service applications, states
 ms.assetid: 83230026-d068-4174-97ff-e264c896eb2f
-author: ghogen
-ms.openlocfilehash: c59ccc5a8b2f11fda9c4734487092c1aabb74908
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 386311228abb08600acc249e80702c724c137900
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925574"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609260"
 ---
 # <a name="service-application-programming-architecture"></a>服务应用程序编程体系结构
 Windows 服务应用程序基于从 <xref:System.ServiceProcess.ServiceBase?displayProperty=nameWithType> 类继承的类。 可以替代此类中的方法并为其定义功能，以确定服务的行为方式。  

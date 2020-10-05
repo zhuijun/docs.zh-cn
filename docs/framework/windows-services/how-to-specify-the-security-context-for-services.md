@@ -11,13 +11,12 @@ helpviewer_keywords:
 - services, security
 - ServiceInstaller class, security context
 ms.assetid: 02187c7b-dbf2-45f2-96c2-e11010225a22
-author: ghogen
-ms.openlocfilehash: 4ed531cb520a781fd38f8bf5491da6948901a1d5
-ms.sourcegitcommit: 40de8df14289e1e05b40d6e5c1daabd3c286d70c
+ms.openlocfilehash: 06053ee069777f69eea15a7ec3125b510bb34602
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86925730"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608421"
 ---
 # <a name="how-to-specify-the-security-context-for-services"></a>如何：为服务指定安全上下文
 默认情况下，服务在与登录用户不同的安全性上下文中运行。 服务在名为 `LocalSystem` 的默认系统帐户的上下文中运行，这样使服务拥有与用户不同的针对系统资源的访问权限。 可以更改此行为以指定应在其下运行服务的其他用户帐户。  

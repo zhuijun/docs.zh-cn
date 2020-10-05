@@ -1,7 +1,8 @@
 ---
 title: 命名参数和可选参数 - C# 编程指南
 description: C# 中的命名参数按名称而不是位置指定参数。 可以省略可选元素。
-ms.date: 07/20/2015
+ms.date: 09/25/2020
+ms.custom: contperfq1
 f1_keywords:
 - namedParameter_CSharpKeyword
 - cs_namedParameter
@@ -14,12 +15,12 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: 4c9c932e3df4035024c90e92e4d80309fffe3ce3
-ms.sourcegitcommit: 1274a1a4a4c7e2eaf56b38da76ef7cec789726ef
+ms.openlocfilehash: a0606d6acccb47347c663a9fe3ffb8ab65b0ecec
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "91406227"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438004"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>命名实参和可选实参（C# 编程指南）
 

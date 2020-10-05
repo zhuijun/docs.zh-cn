@@ -2,12 +2,12 @@
 title: dotnet publish 命令
 description: dotnet publish 命令可将 .NET Core 项目或解决方案发布到目录。
 ms.date: 02/24/2020
-ms.openlocfilehash: 53dc6010352d92489017c3aa776bcb6a3601ec2d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 2c33f99ce652dadc6e0c1a4c5e9e78fff9f54254
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537764"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654889"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -145,7 +145,7 @@ dotnet publish -p:PublishProfile=FolderProfile
 
 - **`-p:PublishReadyToRun=true`**
 
-  以 ReadyToRun (R2R) 格式编译应用程序集。 R2R 是一种预先 (AOT) 编译形式。 有关详细信息，请参阅 [ReadyToRun 图像](../whats-new/dotnet-core-3-0.md#readytorun-images)。 自 .NET Core 3.0 SDK 起可用。
+  以 ReadyToRun (R2R) 格式编译应用程序集。 R2R 是一种预先 (AOT) 编译形式。 有关详细信息，请参阅 [ReadyToRun 图像](../deploying/ready-to-run.md)。 自 .NET Core 3.0 SDK 起可用。
 
   建议在发布配置文件中而不是在命令行中指定此选项。 有关详细信息，请参阅 [MSBuild](#msbuild)。
 
