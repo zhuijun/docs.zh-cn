@@ -4,12 +4,12 @@ description: Azure 队列用于在应用程序组件之间进行可靠的异步�
 author: sylvanc
 ms.date: 09/20/2016
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: 5d6074751f226f0587c4c73bfa9ff56d9aca2bc1
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: daa5372b7903f10c0d966c5c92e35c8bf9d362d8
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91100082"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756216"
 ---
 # <a name="get-started-with-azure-queue-storage-using-f"></a>使用 F 开始使用 Azure 队列存储\#
 
@@ -21,7 +21,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。 在�
 
 有关队列存储的概念性概述，请参阅 [队列存储的 .net 指南](/azure/storage/storage-dotnet-how-to-use-queues)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备知识
 
 若要使用本指南，必须先 [创建 Azure 存储帐户](/azure/storage/storage-create-storage-account)。
 还需要此帐户的存储访问密钥。
@@ -117,7 +117,7 @@ Azure 队列存储用于在应用程序组件之间进行云消息传送。 在�
 ## <a name="additional-options-for-de-queuing-messages"></a>用于取消对消息进行排队的其他选项
 
 可通过两种方式自定义队列中消息的检索。
-首先，可获取一批消息（最多 32 条）。 其次，可以设置更长或更短的不可见超时时间，从而允许代码使用更多或更少时间来完全处理每个消息。 下面的代码示例使用 `GetMessages` 在一个调用中获取20条消息，然后处理每条消息。 它还将每条消息的不可见超时时间设置为 5 分钟。 请注意，5 分钟超时时间对于所有消息都是同时开始的，因此在调用 `GetMessages` 5 分钟后，尚未删除的任何消息都会再次变得可见。
+首先，可获取一批消息（最多 32 条）。 其次，可以设置更长或更短的不可见超时时间，从而允许代码使用更多或更少时间来完全处理每个消息。 下面的代码示例使用 `GetMessages` 在一个调用中获取20条消息，然后处理每条消息。 它还将每条消息的不可见超时时间设置为 5 分钟。 5分钟会同时为所有消息启动，因此，在调用后5分钟后 `GetMessages` ，任何尚未删除的消息都将再次变得可见。
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L97-L99)]
 

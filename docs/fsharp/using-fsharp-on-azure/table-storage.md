@@ -4,12 +4,12 @@ description: 使用 Azure 表存储或 Azure Cosmos DB 将结构化数据存储�
 author: sylvanc
 ms.date: 03/26/2018
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: f4a22ec14de6c92414fbcf3cca435e2b5c0805f1
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: bf4f2e63c847e18d253fe5b6cf5dd7773c320fb7
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91100095"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756203"
 ---
 # <a name="get-started-with-azure-table-storage-and-the-azure-cosmos-db-table-api-using-f"></a>开始使用 Azure 表存储和 Azure Cosmos DB 表 API 使用 F\#
 
@@ -33,7 +33,7 @@ Azure Cosmos DB 提供了为 Azure 表存储编写的应用程序的表 API，�
 
 本教程演示如何使用 Azure 表存储或 Azure Cosmos DB 表 API 编写 F # 代码来执行一些常见任务，包括创建和删除表以及插入、更新、删除和查询表数据。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备知识
 
 若要使用本指南，必须先 [创建 Azure 存储帐户](/azure/storage/storage-create-storage-account) 或 [Azure Cosmos DB 帐户](https://azure.microsoft.com/try/cosmosdb/)。
 
@@ -55,7 +55,7 @@ Azure Cosmos DB 提供了为 Azure 表存储编写的应用程序的表 API，�
 
 ### <a name="get-your-azure-cosmos-db-connection-string"></a>获取 Azure Cosmos DB 连接字符串
 
-如果要连接到 Azure Cosmos DB，则需要此教程的连接字符串。 可以从 Azure 门户复制连接字符串。 在 Azure 门户的 Cosmos DB 帐户中， **Settings**  >  选择 "设置" "**连接字符串**"，然后单击 "**复制**" 按钮复制主连接字符串。
+如果要连接到 Azure Cosmos DB，则需要此教程的连接字符串。 可以从 Azure 门户复制连接字符串。 在 Azure 门户的 Cosmos DB 帐户中， **Settings**  >  选择 "设置" "**连接字符串**"，并选择 "**复制**" 按钮复制主连接字符串。
 
 对于本教程，请在脚本中输入连接字符串，如下面的示例所示：
 
@@ -162,7 +162,7 @@ Azure Cosmos DB 提供了为 Azure 表存储编写的应用程序的表 API，�
 
 ### <a name="query-a-subset-of-entity-properties"></a>查询一部分实体属性
 
-表查询可以只检索实体中的几个属性，而不是所有这些属性。 此方法称为 "投影"，可提高查询性能，尤其适用于大型实体。 此处，使用和仅返回电子邮件 `DynamicTableEntity` 地址 `EntityResolver` 。 注意，本地存储模拟器不支持投影，因此，此代码仅在使用表服务中的帐户时才能运行。
+表查询可以只检索实体中的几个属性，而不是所有这些属性。 此方法称为 "投影"，可提高查询性能，尤其适用于大型实体。 此处，使用和仅返回电子邮件 `DynamicTableEntity` 地址 `EntityResolver` 。 本地存储模拟器不支持投影，因此此代码仅在使用表服务中的帐户时运行。
 
 [!code-fsharp[TableStorage](~/samples/snippets/fsharp/azure/table-storage.fsx#L147-L158)]
 

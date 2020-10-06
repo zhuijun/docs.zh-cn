@@ -4,12 +4,12 @@ description: 通过 Azure Blob 存储将非结构化数据存储在云中。
 author: sylvanc
 ms.date: 09/20/2016
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: d9c587cdd21a1b81205d182652b3690b976687c0
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: 91aec8fc2b57c71ce4ba47d62619912af6c71e59
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91100147"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756242"
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>使用 F 开始使用 Azure Blob 存储\#
 
@@ -19,7 +19,7 @@ Azure Blob 存储是一种将非结构化数据作为对象/Blob 存储在云中
 
 有关 blob 存储的概念性概述，请参阅 [blob 存储的 .net 指南](/azure/storage/blobs/storage-quickstart-blobs-dotnet)。
 
-## <a name="prerequisites"></a>先决条件
+## <a name="prerequisites"></a>必备知识
 
 若要使用本指南，必须先 [创建 Azure 存储帐户](/azure/storage/common/storage-account-create)。 还需要此帐户的存储访问密钥。
 
@@ -99,7 +99,7 @@ Azure Blob 存储支持块 Blob 和页 Blob。 在大多数情况下，建议使
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L67-L80)]
 
-还可以在名称中命名包含路径信息的 blob。 这会创建一个虚拟目录结构，可以像传统文件系统一样组织和遍历。 注意，该目录结构仅仅是虚拟的 - Blob 存储中唯一可用的资源是容器和 Blob。 但是，存储客户端库提供了一个 `CloudBlobDirectory` 对象来引用虚拟目录，并简化了以这种方式组织的 blob 的使用过程。
+还可以在名称中命名包含路径信息的 blob。 这会创建一个虚拟目录结构，可以像传统文件系统一样组织和遍历。 目录结构只是虚拟的-Blob 存储中唯一可用的资源是容器和 blob。 但是，存储客户端库提供了一个 `CloudBlobDirectory` 对象来引用虚拟目录，并简化了以这种方式组织的 blob 的使用过程。
 
 例如，考虑名为 `photos`的容器中包含的下面一组块 Blob：
 
@@ -173,7 +173,7 @@ Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/
 
 ## <a name="writing-to-an-append-blob"></a>写入追加 Blob
 
-追加 Blob 针对追加操作（例如日志记录）进行了优化。 类似于块 Blob，追加 Blob 由块组成，但是将新的块添加到追加 Blob 时，始终追加到该 Blob 的末尾。 不能更新或删除追加 Blob 中现有的块。 追加 Blob 的块 ID 不公开，因为它们是用于一个块 Blob 的。
+追加 Blob 针对追加操作（例如日志记录）进行了优化。 与块 blob 一样，追加 blob 由块组成，但是当你将新块添加到追加 blob 时，它始终追加到 blob 的末尾。 不能更新或删除追加 Blob 中现有的块。 追加 Blob 的块 ID 不公开，因为它们是用于一个块 Blob 的。
 
 追加 Blob 中的每个块可以有不同的大小，最大为 4 MB，并且追加 Blob 最多可包含 50000 个块。 因此，追加 Blob 的最大大小稍微大于 195 GB（4 MB X 50000 块）。
 
@@ -189,7 +189,7 @@ Block blob of length 505623: https://<accountname>.blob.core.windows.net/photos/
 
 - **Etag** - 用于检测 Blob 或容器是否已被其他进程修改
 
-- **租约** - 用于在某个时段内获取对 Blob 的独占式、可续订写入或删除访问
+- **租约** -提供一种在一段时间内获取对 blob 的独占、可续订、写入或删除访问的方法
 
 有关详细信息，请参阅 [Microsoft Azure 存储中的 "管理并发](https://azure.microsoft.com/blog/managing-concurrency-in-microsoft-azure-storage-2/)"。
 
@@ -207,7 +207,7 @@ Azure 存储中的每个 Blob 必须驻留在一个容器中。 该容器构成 
 1. 容器名称中的所有字母都必须为小写。
 1. 容器名称必须介于 3 到 63 个字符。
 
-请注意，容器的名称必须始终为小写。 如果在容器名称中包括大写字母或以其他方式违反了容器命名规则，则可能会收到 400 错误（错误请求）。
+容器的名称必须始终为小写。 如果在容器名称中包括大写字母或以其他方式违反了容器命名规则，则可能会收到 400 错误（错误请求）。
 
 ## <a name="managing-security-for-blobs"></a>管理 Blob 安全性
 

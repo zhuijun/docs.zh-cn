@@ -1,21 +1,20 @@
 ---
-title: <performanceCounter> 元素（网络设置）
+title: <performanceCounters> 元素（网络设置）
 ms.date: 03/30/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/system.net/settings/performanceCounters
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#performanceCounters
 helpviewer_keywords:
-- performanceCounter element
-- <performanceCounter> element
+- performanceCounters element
 ms.assetid: 3afa1586-e1b8-473d-8985-c3fc90cf561b
-ms.openlocfilehash: 4859f3a9e6de4f1bf8a56212bfe01f94d66f5650
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 584bdafbbd60303401cbc6ad96b8654fe11c7077
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91190236"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756255"
 ---
-# <a name="performancecounter-element-network-settings"></a>\<performanceCounter> 元素（网络设置）
+# <a name="performancecounters-element-network-settings"></a>\<performanceCounters> 元素（网络设置）
 
 启用或禁用网络性能计数器。  
 
@@ -38,9 +37,9 @@ ms.locfileid: "91190236"
   
 ### <a name="attributes"></a>特性  
   
-|属性|描述|  
+|属性|说明|  
 |---------------|-----------------|  
-|`enabled`|指定是否启用网络性能计数器。 默认值是 `false`。|  
+|`enabled`|指定是否启用网络性能计数器。 默认值为 `false`。|  
   
 ### <a name="child-elements"></a>子元素  
 
@@ -48,11 +47,11 @@ ms.locfileid: "91190236"
   
 ### <a name="parent-elements"></a>父元素  
   
-|元素|描述|  
+|元素|说明|  
 |-------------|-----------------|  
 |[设置](settings-element-network-settings.md)|配置 <xref:System.Net> 命名空间的基本网络选项。|  
   
-## <a name="remarks"></a>备注  
+## <a name="remarks"></a>注解  
 
  此元素可在应用程序配置文件或计算机配置文件 (Machine.config) 中使用。  
   

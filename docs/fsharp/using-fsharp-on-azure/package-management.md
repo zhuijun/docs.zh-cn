@@ -1,15 +1,15 @@
 ---
 title: '将包管理与 F # 一起用于 Azure'
-description: '使用 Paket 或 Nuget 管理 F # Azure 依赖项'
+description: '使用 Paket 或 NuGet 管理 F # Azure 依赖项'
 author: sylvanc
 ms.date: 09/20/2016
 ms.custom: devx-track-fsharp
-ms.openlocfilehash: 011a363b264079599e8b7d402fe9896045b1fe04
-ms.sourcegitcommit: bf5c5850654187705bc94cc40ebfb62fe346ab02
+ms.openlocfilehash: 7816c82e87db113a35fef967886c8c3e27959332
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/23/2020
-ms.locfileid: "91100108"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756229"
 ---
 # <a name="package-management-for-f-azure-dependencies"></a>F# Azure 依赖项的包管理
 
@@ -17,7 +17,7 @@ ms.locfileid: "91100108"
 
 ## <a name="using-paket"></a>使用 Paket
 
-如果使用 [Paket](https://fsprojects.github.io/Paket/) 作为依赖关系管理器，可以使用 `paket.exe` 工具添加 Azure 依赖关系。 例如：
+如果使用 [Paket](https://fsprojects.github.io/Paket/) 作为依赖关系管理器，可以使用 `paket.exe` 工具添加 Azure 依赖关系。 例如： 。
 
 ```console
 > paket add nuget WindowsAzure.Storage
@@ -53,9 +53,9 @@ ms.locfileid: "91100108"
 > mono paket.exe update
 ```
 
-## <a name="using-nuget"></a>使用 Nuget
+## <a name="using-nuget"></a>使用 NuGet
 
-如果使用 [NuGet](https://www.nuget.org/) 作为依赖关系管理器，可以使用 `nuget.exe` 工具添加 Azure 依赖关系。 例如：
+如果使用 [NuGet](https://www.nuget.org/) 作为依赖关系管理器，可以使用 `nuget.exe` 工具添加 Azure 依赖关系。 例如： 。
 
 ```console
 > nuget install WindowsAzure.Storage -ExcludeVersion
@@ -93,7 +93,7 @@ ms.locfileid: "91100108"
 
 ## <a name="referencing-assemblies"></a>引用程序集
 
-若要在 F # 脚本中使用包，需要使用指令引用包中包含的程序集 `#r` 。 例如：
+若要在 F # 脚本中使用包，需要使用指令引用包中包含的程序集 `#r` 。 例如： 。
 
 ```fsharp
 > #r "packages/WindowsAzure.Storage/lib/net40/Microsoft.WindowsAzure.Storage.dll"
