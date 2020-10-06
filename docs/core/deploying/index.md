@@ -2,12 +2,12 @@
 title: 应用程序发布
 description: 了解如何发布 .NET Core 应用程序。 .NET Core 可以发布特定于平台或跨平台的应用。 你可以将应用发布为独立应用或依赖于框架的应用。 每个模式都会影响用户运行应用的方式。
 ms.date: 04/01/2020
-ms.openlocfilehash: ece5e46162fd4a8de0b996ba239e89cceca4dbca
-ms.sourcegitcommit: ef86c24c418439b8bb5e3e7d64bbdbe5e11c3e9c
+ms.openlocfilehash: 27206065c899e41a44685f72cfb35ae57986aa4c
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/21/2020
-ms.locfileid: "88720106"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654667"
 ---
 # <a name="net-core-application-publishing-overview"></a>.NET Core 应用程序发布概述
 
@@ -149,6 +149,34 @@ dotnet publish -r osx-x64
 
 ```dotnet
 dotnet publish -r win-x64
+```
+
+## <a name="publish-with-readytorun-images"></a>使用 ReadyToRun 映像发布
+
+使用 ReadyToRun 映像发布可以缩短应用程序的启动时间，但代价是增加应用程序的大小。 若要使用 ReadyToRun 映像发布，请参阅 [ReadyToRun](ready-to-run.md) 来了解更多详情。
+
+### <a name="advantages"></a>优点
+
+- 缩短了启动时间\
+应用程序运行 JIT 所花费的时间将缩短。
+
+### <a name="disadvantages"></a>缺点
+
+- 增加了大小\
+应用程序在磁盘上的大小将增加。
+
+### <a name="examples"></a>示例
+
+使用 ReadyToRun 映像发布独立式应用。 创建 macOS 64 位可执行文件。
+
+```dotnet
+dotnet publish -c Release -r osx-x64 -p:PublishReadyToRun=true
+```
+
+使用 ReadyToRun 映像发布独立式应用。 创建 Windows 64 位可执行文件。
+
+```dotnet
+dotnet publish -c Release -r win-x64 -p:PublishReadyToRun=true
 ```
 
 ## <a name="see-also"></a>请参阅
