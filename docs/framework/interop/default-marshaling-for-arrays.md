@@ -44,8 +44,8 @@ ms.locfileid: "90555258"
   
 |非托管类型|导入的类型|  
 |--------------------|-------------------|  
-|**SafeArray(** *Type* **)**|ELEMENT_TYPE_SZARRAY \<** *ConvertedType* **><br /><br /> 秩 = 1，下限 = 0。 只有在托管签名中提供大小时，才知道大小。 不满足秩 = 1 或下限 = 0 的安全数组不能作为 SZARRAY 封送。|  
-|*Type*  **[]**|ELEMENT_TYPE_SZARRAY \<** *ConvertedType* **><br /><br /> 秩 = 1，下限 = 0。 只有在托管签名中提供大小时，才知道大小。|  
+|**SafeArray(** *Type* **)**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> 秩 = 1，下限 = 0。 只有在托管签名中提供大小时，才知道大小。 不满足秩 = 1 或下限 = 0 的安全数组不能作为 SZARRAY 封送。|  
+|*Type*  **[]**|**ELEMENT_TYPE_SZARRAY** **\<** *ConvertedType* **>**<br /><br /> 秩 = 1，下限 = 0。 只有在托管签名中提供大小时，才知道大小。|  
   
 ### <a name="safe-arrays"></a>安全数组  
  从类型库将安全数组导入 .NET 程序集时，该数组转换为已知类型（例如 int）的一维数组。 适用于参数的类型转换规则同样适用于数组元素。 例如，BSTR 类型的安全数组可变为托管字符串数组，而变体的安全数组可变为托管对象数组。 从类型库中捕获 SAFEARRAY 元素类型并将它保存在 <xref:System.Runtime.InteropServices.UnmanagedType> 枚举的 SAFEARRAY 值中 。  
@@ -183,9 +183,9 @@ void New3(ref String ar);
   
 |托管数组类型|导出结果|  
 |------------------------|-----------------|  
-|ELEMENT_TYPE_SZARRAY \<** *type* **>|<xref:System.Runtime.InteropServices.UnmanagedType> **.SafeArray(** *type* **)**<br /><br /> UnmanagedType.LPArray<br /><br /> 签名中提供了类型。 秩始终为 1，下限始终为 0。 在运行时大小始终为已知。|  
-|ELEMENT_TYPE_ARRAY \<** *type* **> \<** *rank* **>[\<** *bounds* **>]|**UnmanagedType.SafeArray(** *type* **)**<br /><br /> UnmanagedType.LPArray<br /><br /> 签名中提供了类型、秩和界限。 在运行时大小始终为已知。|  
-|ELEMENT_TYPE_CLASS \<**<xref:System.Array?displayProperty=nameWithType>>**|UT_Interface<br /><br /> **UnmanagedType.SafeArray(** *type* **)**<br /><br /> 在运行时类型、秩、界限和大小始终为已知。|  
+|**ELEMENT_TYPE_SZARRAY** **\<** *type* **>**|<xref:System.Runtime.InteropServices.UnmanagedType> **.SafeArray(** *type* **)**<br /><br /> UnmanagedType.LPArray<br /><br /> 签名中提供了类型。 秩始终为 1，下限始终为 0。 在运行时大小始终为已知。|  
+|**ELEMENT_TYPE_ARRAY** **\<** *type* **>** **\<** *rank* **>**[**\<** *bounds* **>**]|**UnmanagedType.SafeArray(** *type* **)**<br /><br /> UnmanagedType.LPArray<br /><br /> 签名中提供了类型、秩和界限。 在运行时大小始终为已知。|  
+|**ELEMENT_TYPE_CLASS** **\<**<xref:System.Array?displayProperty=nameWithType>**>**|UT_Interface<br /><br /> **UnmanagedType.SafeArray(** *type* **)**<br /><br /> 在运行时类型、秩、界限和大小始终为已知。|  
   
  在与含有 LPSTR 或 LPWSTR 的结构数组相关的 OLE 自动化中，存在一项限制。  因此，必须将 String 字段作为 UnmanagedType.BSTR 封送 。 否则，将引发异常。  
   
