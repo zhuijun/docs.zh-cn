@@ -477,11 +477,6 @@ f1_keywords:
 - CS8387
 - CS8388
 - CS8389
-- CS8400
-- CS8401
-- CS8403
-- CS8410
-- CS8411
 - CS8412
 - CS8413
 - CS8414
@@ -521,6 +516,7 @@ f1_keywords:
 - CS8521
 - CS8522
 - CS8523
+- CS8524
 - CS8597
 - CS8598
 - CS8600
@@ -675,13 +671,15 @@ f1_keywords:
 - CS8821
 - CS8822
 - CS8823
+- CS8824
+- CS8825
 - CS8830
 - CS8831
 - CS8846
 - CS8847
 - CS8848
 - CS8849
-- CS8850
+- CS8851
 - CS8852
 - CS8853
 - CS8854
@@ -690,6 +688,7 @@ f1_keywords:
 - CS8857
 - CS8858
 - CS8859
+- CS8860
 - CS8861
 - CS8862
 - CS8863
@@ -721,15 +720,28 @@ f1_keywords:
 - CS8889
 - CS8890
 - CS8891
+- CS8893
+- CS8894
+- CS8895
+- CS8896
+- CS8897
+- CS8898
+- CS8899
+- CS8900
+- CS8901
+- CS8902
+- CS8903
+- CS8904
+- CS9100
 helpviewer_keywords:
 - errors [C#], additional information
 ms.assetid: 48320e4a-6e17-45a6-9966-88c6ec89bd2f
-ms.openlocfilehash: 8cdcc3bb091bfa277903ecd680d8895108274243
-ms.sourcegitcommit: e0803b8975d3eb12e735a5d07637020dd6dac5ef
+ms.openlocfilehash: 16420ee5889779e3aefdbc15f1050aeeeea8f624
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89271927"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804607"
 ---
 # <a name="sorry-we-dont-have-specifics-on-this-c-error"></a>很抱歉，我们没有关于此 C# 错误的具体信息
 
@@ -741,7 +753,7 @@ ms.locfileid: "89271927"
  [Stack Overflow](https://stackoverflow.com/questions/tagged/c%23)  
 提供 QA 网站来了解有关 Visual c # 的问题和问题。  
 
- 另请参阅：  
+ 另请参见：  
  [为 Visual C# 程序员提供的附加资源](../getting-started/index.md)  
   
 ## <a name="see-also"></a>请参阅

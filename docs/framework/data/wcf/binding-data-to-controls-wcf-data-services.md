@@ -9,12 +9,12 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - data binding, WCF Data Services
 ms.assetid: b32e1d49-c214-4cb1-867e-88fbb3d08c8d
-ms.openlocfilehash: f2cb1004ef6316bc67189c4e00930f6086cf0dad
-ms.sourcegitcommit: 5b475c1855b32cf78d2d1bbb4295e4c236f39464
+ms.openlocfilehash: 178d77c225144497982487afa00f4493e17d1744
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/24/2020
-ms.locfileid: "91152918"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805208"
 ---
 # <a name="binding-data-to-controls-wcf-data-services"></a>将数据绑定到控件（WCF 数据服务）
 
@@ -36,7 +36,7 @@ ms.locfileid: "91152918"
   
 ## <a name="binding-data-to-windows-presentation-foundation-elements"></a>将数据绑定到 Windows Presentation Foundation 元素  
 
- 因为 <xref:System.Data.Services.Client.DataServiceCollection%601> 类从 <xref:System.Collections.ObjectModel.ObservableCollection%601> 类继承，所以可以在 Windows Presentation Foundation (WPF) 应用程序中将对象绑定到元素或控件，像使用 <xref:System.Collections.ObjectModel.ObservableCollection%601> 类用于绑定时一样。 有关详细信息，请参阅 [数据绑定 (Windows Presentation Foundation) ](../../../desktop-wpf/data/data-binding-overview.md)。 将数据服务数据绑定到 WPF 控件的一种方法是将元素的 `DataContext` 属性设置为包含查询结果的 <xref:System.Data.Services.Client.DataServiceCollection%601> 类的实例。 在本例中，使用 <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> 属性设置该控件的对象源。 使用 <xref:System.Windows.Controls.ItemsControl.DisplayMemberPath%2A> 属性指定要显示的绑定对象的属性。 若要将元素绑定到导航属性所返回的相关对象，请在为 <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> 属性定义的绑定中包含相应的路径。 该路径相对于父控件的 <xref:System.Windows.FrameworkElement.DataContext%2A> 属性所设置的根对象。 下面的示例设置 <xref:System.Windows.FrameworkElement.DataContext%2A> 元素的 <xref:System.Windows.Controls.StackPanel> 属性以将父控件绑定到客户对象的 <xref:System.Data.Services.Client.DataServiceCollection%601>：  
+ 因为 <xref:System.Data.Services.Client.DataServiceCollection%601> 类从 <xref:System.Collections.ObjectModel.ObservableCollection%601> 类继承，所以可以在 Windows Presentation Foundation (WPF) 应用程序中将对象绑定到元素或控件，像使用 <xref:System.Collections.ObjectModel.ObservableCollection%601> 类用于绑定时一样。 有关详细信息，请参阅 [数据绑定 (Windows Presentation Foundation) ](/dotnet/desktop/wpf/data/data-binding-overview)。 将数据服务数据绑定到 WPF 控件的一种方法是将元素的 `DataContext` 属性设置为包含查询结果的 <xref:System.Data.Services.Client.DataServiceCollection%601> 类的实例。 在本例中，使用 <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> 属性设置该控件的对象源。 使用 <xref:System.Windows.Controls.ItemsControl.DisplayMemberPath%2A> 属性指定要显示的绑定对象的属性。 若要将元素绑定到导航属性所返回的相关对象，请在为 <xref:System.Windows.Controls.ItemsControl.ItemsSource%2A> 属性定义的绑定中包含相应的路径。 该路径相对于父控件的 <xref:System.Windows.FrameworkElement.DataContext%2A> 属性所设置的根对象。 下面的示例设置 <xref:System.Windows.FrameworkElement.DataContext%2A> 元素的 <xref:System.Windows.Controls.StackPanel> 属性以将父控件绑定到客户对象的 <xref:System.Data.Services.Client.DataServiceCollection%601>：  
   
  [!code-csharp[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorderscustom.xaml.cs#masterdetailbinding)]
  [!code-csharp[Astoria Northwind Client#MasterDetailBinding](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/customerorderswpf.xaml.cs#masterdetailbinding)]
