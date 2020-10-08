@@ -49,16 +49,12 @@ items:
             href: ../core/install/localized-intellisense.md
   - name: 概述（第 1 周）
     items:
-      - name: .NET 教程
-        href: ../standard/tour.md
+      - name: .NET 简介
+        href: ../core/introduction.md
       - name: .NET 体系结构组件
         href: ../standard/components.md
       - name: .NET 类库
         href: ../standard/class-libraries.md
-      - name: .NET Core 简介
-        href: ../core/introduction.md
-      - name: .NET Core 概述
-        href: ../core/about.md
       - name: .NET Standard 概述
         href: ../standard/net-standard.md
       - name: .NET 术语表
