@@ -4,12 +4,12 @@ description: 有关可帮助了解 .NET 的 .NET Core、ASP.NET Core 和 C# 语�
 author: BillWagner
 ms.author: wiwagn
 ms.date: 08/19/2020
-ms.openlocfilehash: 7e477683834b46439626e03e6ff411fabc52672d
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 00718491df00e5747ba6e0043b70dc1019dd906b
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557185"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805006"
 ---
 # <a name="net-samples-and-tutorials"></a>.NET 示例和教程
 
@@ -99,7 +99,7 @@ ms.locfileid: "90557185"
 
 **[在 Windows Docker 容器中运行 ASP.NET MVC 应用程序](/aspnet/mvc/overview/deployment/docker-aspnetmvc)**
 
-本教程演示如何在 Windows Docker 容器中部署现有 ASP.NET MVC 应用。 可在 GitHub 上的 dotnet/samples 存储库中找到[完整示例](https://github.com/dotnet/samples/tree/master/framework/docker/MVCRandomAnswerGenerator)。
+本教程演示如何在 Windows Docker 容器中部署现有 ASP.NET MVC 应用。
 
 ## <a name="view-and-download-samples"></a>查看和下载示例
 

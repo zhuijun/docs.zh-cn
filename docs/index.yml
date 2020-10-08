@@ -11,12 +11,12 @@ metadata:
   author: BillWagner
   ms.author: wiwagn
   ms.date: 07/10/2020
-  ms.openlocfilehash: 98de6da2ffd990c5ec99f1a4043b089af712dd6b
-  ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+  ms.openlocfilehash: 7db430a7d715b21104c85b84a13ca2e38d64ed0f
+  ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 09/15/2020
-  ms.locfileid: "90556045"
+  ms.lasthandoff: 10/07/2020
+  ms.locfileid: "91805058"
 highlightedContent:
   items:
   - title: 下载 .NET
@@ -50,7 +50,7 @@ conceptualContent:
     - url: core/whats-new/dotnet-core-3-1.md
       itemType: whats-new
       text: .NET Core 3.1 的新增功能
-    - url: standard/tour.md
+    - url: ./core/introduction.md
       itemType: overview
       text: .NET 教程
     - url: core/deploying/index.md
@@ -74,7 +74,7 @@ conceptualContent:
     - url: https://channel9.msdn.com/Series/NET-Core-101/What-is-NET
       itemType: video
       text: 什么是 .NET？
-    - url: standard/tour.md
+    - url: ./core/introduction.md
       itemType: overview
       text: .NET 概述
     - url: core/dotnet-five.md
@@ -110,7 +110,7 @@ conceptualContent:
     - url: core/compatibility/index.md
       itemType: concept
       text: .NET Core 中断性变更
-    - url: desktop-wpf/overview/index.md
+    - url: /dotnet/desktop/wpf/overview/
       itemType: overview
       text: 创建适用于 Windows 的 .NET Core 桌面应用
     - url: standard/library-guidance/index.md
@@ -192,7 +192,7 @@ additionalContent:
       links:
       - url: /uwp
         text: 通用 Windows 应用
-      - url: desktop-wpf/index.yml
+      - url: /dotnet/desktop/wpf/
         text: Windows Presentation Foundation (.NET Core)
       - url: /dotnet/desktop/wpf/?view=netframeworkdesktop-4.8
         text: Windows Presentation Foundation (.NET Framework)
