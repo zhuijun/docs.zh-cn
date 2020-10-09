@@ -1,15 +1,15 @@
 ---
 title: 本地函数 - C# 编程指南
 description: C# 中的本地函数是嵌套在另一成员中并且可以从其包含成员中调用的私有方法。
-ms.date: 06/14/2017
+ms.date: 10/02/2020
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: c1c6c6becb3894b05cb9ed89f7f33dcf249b20eb
-ms.sourcegitcommit: 1e8382d0ce8b5515864f8fbb178b9fd692a7503f
+ms.openlocfilehash: a91995757048c8c54253d7f4b923d5194f69bc7b
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89656180"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654915"
 ---
 # <a name="local-functions-c-programming-guide"></a>本地函数（C# 编程指南）
 
@@ -36,17 +36,19 @@ ms.locfileid: "89656180"
 本地函数被定义为包含成员中的嵌套方法。 其定义具有以下语法：
 
 ```csharp
-<modifiers: async | unsafe> <return-type> <method-name> <parameter-list>
+<modifiers> <return-type> <method-name> <parameter-list>
 ```
 
-本地函数可以使用 [async](../../language-reference/keywords/async.md) 和 [unsafe](../../language-reference/keywords/unsafe.md) 修饰符。
+可以将以下修饰符用于本地函数：
 
-请注意，在包含成员中定义的所有本地变量（包括其方法参数）都可在本地函数中访问。
+- [`async`](../../language-reference/keywords/async.md)
+- [`unsafe`](../../language-reference/keywords/unsafe.md)
+- [`static`](../../language-reference/keywords/static.md)（在 C# 8.0 和更高版本中）。 静态本地函数无法捕获局部变量或实例状态。
+- [`extern`](../../language-reference/keywords/extern.md)（在 C# 9.0 和更高版本中）。 外部本地函数必须为 `static`。
+
+在包含成员中定义的所有本地变量（包括其方法参数）都可在非静态本地函数中访问。
 
 与方法定义不同，本地函数定义不能包含成员访问修饰符。 因为所有本地函数都是私有的，包括访问修饰符（如 `private` 关键字）会生成编译器错误 CS0106“修饰符‘private’对于此项无效”。
-
-> [!NOTE]
-> 在 C# 8.0 之前，本地函数不能包含 `static` 修饰符。 包括 `static` 关键字将生成编译器错误 CS0106“修饰符‘static’对于此项无效”，或者生成编译器错误，该错误指示应使用 C# 8.0 或更高版本。
 
 此外，属性不能应用于本地函数或其参数和类型参数。
 

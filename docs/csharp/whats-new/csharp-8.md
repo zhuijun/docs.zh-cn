@@ -2,12 +2,12 @@
 title: C# 8.0 中的新增功能 - C# 指南
 description: 简要介绍 C# 8.0 中提供的新功能。
 ms.date: 04/07/2020
-ms.openlocfilehash: eee395c33585028cd81861045f05f7790d8db949
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: 43b9c69c649b83d4cf78ef4c7d131ce900a49d11
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414885"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654863"
 ---
 # <a name="whats-new-in-c-80"></a>C# 8.0 中的新增功能
 
@@ -322,7 +322,7 @@ static int WriteLinesToFile(IEnumerable<string> lines)
 
 ## <a name="static-local-functions"></a>静态本地函数
 
-现在可以向本地函数添加 `static` 修饰符，以确保本地函数不会从封闭范围捕获（引用）任何变量。 这样做会生成 `CS8421`，“静态本地函数不能包含对 \<variable> 的引用。”
+现在可以向本地函数添加 `static` 修饰符，以确保[本地函数](../programming-guide/classes-and-structs/local-functions.md)不会从封闭范围捕获（引用）任何变量。 这样做会生成 `CS8421`，“静态本地函数不能包含对 \<variable> 的引用。”
 
 考虑下列代码。 本地函数 `LocalFunction` 访问在封闭范围（方法 `M`）中声明的变量 `y`。 因此，不能用 `static` 修饰符来声明 `LocalFunction`：
 

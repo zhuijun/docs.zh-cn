@@ -2,18 +2,18 @@
 title: 强命名和 .NET 库
 description: 强命名 .NET 库的最佳实践建议。
 ms.date: 10/16/2018
-ms.openlocfilehash: db268093b07a2ece7cdb8329fd789b52da9c5c32
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: b72d4a8c320ac857fbcd6abe44f467805f72b5b3
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "76744532"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654555"
 ---
 # <a name="strong-naming"></a>强命名
 
 强命名指使用密钥对程序集进行签名，从而生成[强名称程序集](../assembly/strong-named.md)。 程序集具有强名称时，将基于名称和程序集版本号创建唯一标识，并有助于防止发生程序集冲突。
 
-强命名的缺点是，一旦程序集具有强名称，Windows 上的 .NET Framework 就会严格加载程序集。 强名称程序集引用必须与程序集引用的版本完全匹配，强制开发人员在使用程序集时[配置绑定重定向](../../framework/configure-apps/redirect-assembly-versions.md)：
+强命名的缺点是，一旦程序集具有强名称，Windows 上的 .NET Framework 就会严格加载程序集。 强名称程序集引用必须与已加载的程序集版本完全匹配，强制开发人员在使用程序集时[配置绑定重定向](../../framework/configure-apps/redirect-assembly-versions.md)：
 
 ```xml
 <configuration>

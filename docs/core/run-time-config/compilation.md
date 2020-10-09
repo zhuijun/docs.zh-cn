@@ -3,12 +3,12 @@ title: 编译配置设置
 description: 了解用于为 .NET Core 应用配置 JIT 编译器工作原理的运行时设置。
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: cfcf9b5fc8d11a4ae35ab9b152f32133cd6930bf
-ms.sourcegitcommit: c76c8b2c39ed2f0eee422b61a2ab4c05ca7771fa
+ms.openlocfilehash: e5f9e1245b749864787fb808527d022665197edf
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83762001"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654837"
 ---
 # <a name="run-time-configuration-options-for-compilation"></a>用于编译的运行时配置选项
 
@@ -135,7 +135,7 @@ runtimeconfig.json 文件：
 ## <a name="readytorun"></a>ReadyToRun
 
 - 配置 .NET Core 运行时是否要为具有可用 ReadyToRun 数据的映像使用预编译代码。 如果禁用此选项，会强制运行时对框架代码进行 JIT 编译。
-- 有关详细信息，请参阅 [ReadyToRun](../whats-new/dotnet-core-3-0.md#readytorun-images)。
+- 有关详细信息，请参阅[准备好运行](../deploying/ready-to-run.md)。
 - 如果省略此设置，则 .NET 将使用 ReadyToRun 数据（如果可用）。 它等效于将值设置为 `1`。
 
 | | 设置名 | 值 |

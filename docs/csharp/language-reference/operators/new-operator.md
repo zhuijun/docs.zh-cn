@@ -1,18 +1,18 @@
 ---
 description: new 运算符 - C# 参考
 title: new 运算符 - C# 参考
-ms.date: 06/25/2019
+ms.date: 10/02/2020
 f1_keywords:
 - new_CSharpKeyword
 helpviewer_keywords:
 - new operator keyword [C#]
 ms.assetid: a212b697-a79b-4105-9923-1f7b108036e8
-ms.openlocfilehash: 88ec929317d4e6c6651233c1a1aa0ce8a8cce611
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 3125f3d2c694dcfc5682ee482f3f76072ac3726d
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89118268"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609377"
 ---
 # <a name="new-operator-c-reference"></a>new 运算符（C# 参考）
 
@@ -29,6 +29,14 @@ ms.locfileid: "89118268"
 可以使用带有 `new` 运算符的[对象或集合初始值设定项](../../programming-guide/classes-and-structs/object-and-collection-initializers.md)实例化和初始化一个语句中的对象，如下例所示：
 
 [!code-csharp-interactive[constructor with initializer](snippets/shared/NewOperator.cs#ConstructorWithInitializer)]
+
+从 C# 9.0 开始，构造调用表达式由目标确定类型。 也就是说，如果已知表达式的目标类型，则可以省略类型名称，如下面的示例所示：
+
+:::code language="csharp" source="snippets/shared/NewOperator.cs" id="SnippetTargetTyped":::
+
+如前面的示例所示，在由目标确定类型的 `new` 表达式中始终使用括号。
+
+如果 `new` 表达式的目标类型未知（例如使用 [`var`](../keywords/var.md) 关键字时），必须指定类型名称。
 
 ## <a name="array-creation"></a>数组创建
 
@@ -62,7 +70,9 @@ ms.locfileid: "89118268"
 
 有关详细信息，请参阅 [C# 语言规范](~/_csharplang/spec/introduction.md)的 [new 运算符](~/_csharplang/spec/expressions.md#the-new-operator)部分。
 
-## <a name="see-also"></a>请参阅
+有关条件由目标确定类型的 `new` 表达式的详细信息，请参阅[功能建议说明](~/_csharplang/proposals/csharp-9.0/target-typed-new.md)。
+
+## <a name="see-also"></a>另请参阅
 
 - [C# 参考](../index.md)
 - [C# 运算符和表达式](index.md)

@@ -3,12 +3,12 @@ title: Docker 简介
 description: 本文简要概述 .NET Core 应用程序上下文中的 Docker。
 ms.date: 03/20/2019
 ms.custom: mvc
-ms.openlocfilehash: eedfd1e7c1b361beb9d4f271e739657ef5e894a6
-ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.openlocfilehash: 16ad49c39d588aac8f8a7a918eb4d799f37823ac
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 03/14/2020
-ms.locfileid: "78157786"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654817"
 ---
 # <a name="introduction-to-net-and-docker"></a>.NET 和 Docker 简介
 
@@ -36,11 +36,11 @@ ms.locfileid: "78157786"
 
 Docker 具有一个托管在 [Docker 中心](https://hub.docker.com/)的公共注册表，可供用户使用。 [.NET Core 相关映像](https://hub.docker.com/_/microsoft-dotnet-core/)均在 Docker 中心列出。
 
-Microsoft 容器注册表 (MCR) 是 Microsoft 提供的容器映像的官方来源。 MCR 构建在 Azure CDN 之上，可提供用于全局复制的映像。 但是，MCR 没有面向公众的网站，了解有关 Microsoft 提供的容器映像的主要方法是通过 [Microsoft Docker 中心页面](https://hub.docker.com/_/microsoft-dotnet-core/)。
+[Microsoft 容器注册表 (MCR)](/azure/container-registry) 是 Microsoft 提供的容器映像的官方来源。 MCR 构建在 Azure CDN 之上，可提供用于全局复制的映像。 但是，MCR 没有面向公众的网站，了解有关 Microsoft 提供的容器映像的主要方法是通过 [Microsoft Docker 中心页面](https://hub.docker.com/_/microsoft-dotnet-core/)。
 
 ### <a name="dockerfile"></a>Dockerfile
 
-Dockerfile  是定义可创建映像的一组指令的文件。 Dockerfile  中的每个指令创建映像中的一个层。 大多数情况下，在重新生成映像时，只会重新生成已发生更改的层。 可以将 Dockerfile  分发给其他人，便于他们采用你创建映像的方式重新创建一个新映像。 尽管可以分发有关如何创建映像的指令  ，但分发映像的主要方式是将其发布到注册表。
+Dockerfile**** 是定义可创建映像的一组指令的文件。 Dockerfile**** 中的每个指令创建映像中的一个层。 大多数情况下，在重新生成映像时，只会重新生成已发生更改的层。 可以将 Dockerfile**** 分发给其他人，便于他们采用你创建映像的方式重新创建一个新映像。 尽管可以分发有关如何创建映像的指令**，但分发映像的主要方式是将其发布到注册表。
 
 ## <a name="net-core-images"></a>.NET Core 映像
 
@@ -72,7 +72,7 @@ Microsoft 提供适合特定场景的映像。 例如，[ASP.NET Core 存储库]
 
 ## <a name="next-steps"></a>后续步骤
 
-- [了解如何使 .NET Core 应用程序容器化。](build-container.md)
+- [了解如何容器化 .NET Core 应用。](build-container.md)
 - [了解如何容器化 ASP.NET Core 应用程序。](/aspnet/core/host-and-deploy/docker/building-net-docker-images)
-- [试用“学习 ASP.NET Core 微服务”教程。](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
+- [试学“ASP.NET Core 微服务”教程。](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
 - [了解 Visual Studio 中的容器工具](/visualstudio/containers/overview)

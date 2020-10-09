@@ -1,12 +1,12 @@
 ---
-ms.openlocfilehash: 76425ca03c98cd6a23b8366257f9e0d53b486edb
-ms.sourcegitcommit: cbacb5d2cebbf044547f6af6e74a9de866800985
+ms.openlocfilehash: e450c53008e7562e37518fdfd6872ff9b63b6ac3
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/05/2020
-ms.locfileid: "89497009"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609124"
 ---
-### <a name="sharing-session-state-with-aspnet-stateserver-requires-all-servers-in-the-web-farm-to-use-the-same-net-framework-version"></a>与 Asp.Net StateServer 共享会话状态需要 Web 场中的所有服务器使用相同版本的 .NET Framework
+### <a name="sharing-session-state-with-aspnet-stateserver-requires-all-servers-in-the-web-farm-to-use-the-same-net-framework-version"></a>与 ASP.NET StateServer 共享会话状态需要 Web 场中的所有服务器使用相同版本的 .NET Framework
 
 #### <a name="details"></a>详细信息
 

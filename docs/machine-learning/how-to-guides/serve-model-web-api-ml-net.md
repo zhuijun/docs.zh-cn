@@ -5,12 +5,12 @@ ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 3f1ca48ab29b04931961b52743bb6c7fab70b06d
-ms.sourcegitcommit: d9470d8b2278b33108332c05224d86049cb9484b
+ms.openlocfilehash: f588d4681ee277ad15b50d5553473b1c9e84d578
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 04/17/2020
-ms.locfileid: "81608070"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608759"
 ---
 # <a name="deploy-a-model-in-an-aspnet-core-web-api"></a>在 ASP.NET Core Web API 中部署模型
 
@@ -193,7 +193,7 @@ ms.locfileid: "81608070"
 完成所有设置后，是时候测试应用程序了。
 
 1. 运行该应用程序。
-1. 打开 Powershell，并输入以下代码（其中，PORT 是应用程序正在侦听的端口）。
+1. 打开 PowerShell，并输入以下代码（其中，PORT 是应用程序正在侦听的端口）。
 
     ```powershell
     Invoke-RestMethod "https://localhost:<PORT>/api/predict" -Method Post -Body (@{SentimentText="This was a very bad steak"} | ConvertTo-Json) -ContentType "application/json"

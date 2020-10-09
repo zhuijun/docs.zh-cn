@@ -2,12 +2,12 @@
 title: C# 9.0 中的新增功能 - C# 指南
 description: 简要介绍 C# 9.0 中提供的新功能。
 ms.date: 09/04/2020
-ms.openlocfilehash: 6a0227b408b894fe450c2a6bb6017d9059d229c0
-ms.sourcegitcommit: c04535ad05e374fb269fcfc6509217755fbc0d54
+ms.openlocfilehash: c165ca764d93b74aac21028ed3e55e80f2a23ee0
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91247613"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654902"
 ---
 # <a name="whats-new-in-c-90"></a>C# 9.0 中的新增功能
 
@@ -194,7 +194,7 @@ if (e is not null)
 
 3 项新功能改进了对需要高性能的本机互操作性和低级别库的支持：本机大小的整数、函数指针和省略 `localsinit` 标志。
 
-本机大小的整数 `nint` 和 `nuint` 是整数类型。 它们由基础类型 <xref:System.IntPtr?displayProperty=nameWithType> 和 <xref:System.UIntPtr?displayProperty=nameWithType> 表示。 编译器将这些类型的其他转换和操作作为本机整数公开。 本机大小的整数没有 `MaxValue` 或 `MinValue` 的常量，除了 `MinValue` 具有 `0` 的 `nuint.MinValue` 之外。 其他值不能表示为常量，因为它取决于目标计算机上整数的本机大小。 可在以下范围内对 `nint` 使用常量值：[`int.MinValue` .. `int.MaxValue`]. 可在以下范围内对 `nuint` 使用常量值：[`uint.MinValue` .. `uint.MaxValue`]. 编译器使用 <xref:System.Int32?displayProperty=nameWithType> 和 <xref:System.UInt32?displayProperty=nameWithType> 类型为所有一元和二元运算符执行常量折叠。 如果结果不满足 32 位，操作将在运行时执行，且不会被视为常量。 在广泛使用整数数学且需要尽可能快的性能的情况下，本机大小的整数可提高性能。
+本机大小的整数 `nint` 和 `nuint` 是整数类型。 它们由基础类型 <xref:System.IntPtr?displayProperty=nameWithType> 和 <xref:System.UIntPtr?displayProperty=nameWithType> 表示。 编译器将这些类型的其他转换和操作作为本机整数公开。 本机大小的整数定义 `MaxValue` 或 `MinValue` 的属性。 这些值不能表示为编译时编译时，因为它取决于目标计算机上整数的本机大小。 这些值在运行时是只读的。 可在以下范围内对 `nint` 使用常量值：[`int.MinValue` .. `int.MaxValue`]. 可在以下范围内对 `nuint` 使用常量值：[`uint.MinValue` .. `uint.MaxValue`]. 编译器使用 <xref:System.Int32?displayProperty=nameWithType> 和 <xref:System.UInt32?displayProperty=nameWithType> 类型为所有一元和二元运算符执行常量折叠。 如果结果不满足 32 位，操作将在运行时执行，且不会被视为常量。 在广泛使用整数数学且需要尽可能快的性能的情况下，本机大小的整数可提高性能。
 
 函数指针提供了一种简单的语法来访问 IL 操作码 `ldftn` 和 `calli`。 可使用新的 `delegate*` 语法声明函数指针。 `delegate*` 类型是指针类型。 调用 `delegate*` 类型会使用 `calli`，而不是使用在 `Invoke()` 方法上采用 `callvirt` 的委托。 从语法上讲，调用是相同的。 函数指针调用使用 `managed` 调用约定。 在 `delegate*` 语法后面添加 `unmanaged` 关键字，以声明想要 `unmanaged` 调用约定。 可使用 `delegate*` 声明中的属性来指定其他调用约定。
 
@@ -204,11 +204,11 @@ if (e is not null)
 
 ## <a name="fit-and-finish-features"></a>调整和完成功能
 
-还有其他很多功能有助于更高效地编写代码。 在 C# 9.0 中，已知创建对象的类型时，可在新表达式中省略该类型。 最常见的用法是在字段声明中：
+还有其他很多功能有助于更高效地编写代码。 在 C# 9.0 中，已知创建对象的类型时，可在 [`new`](../language-reference/operators/new-operator.md) 表达式中省略该类型。 最常见的用法是在字段声明中：
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="WeatherStationField":::
 
-当需要创建新对象作为参数传递给方法时，也可使用目标类型 new。 请考虑使用以下签名的 `ForecastFor()` 方法：
+当需要创建新对象作为参数传递给方法时，也可使用目标类型 `new`。 请考虑使用以下签名的 `ForecastFor()` 方法：
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="ForecastSignature":::
 
@@ -220,7 +220,7 @@ if (e is not null)
 
 :::code language="csharp" source="snippets/whats-new-csharp9/FitAndFinish.cs" ID="InitWeatherStation":::
 
-可使用 `return new();` 表达式返回由默认构造函数创建的实例。
+可使用 `return new();` 语句返回由默认构造函数创建的实例。
 
 类似的功能可改进[条件表达式](../language-reference/operators/conditional-operator.md)的目标类型解析。 进行此更改后，两个表达式无需从一个隐式转换到另一个，而是都可隐式转换为目标类型。 你可能不会注意到此更改。 你会注意到，某些以前需要强制转换或无法编译的条件表达式现在可以正常工作。
 

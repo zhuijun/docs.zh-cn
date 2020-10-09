@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: f561550d57e98a515fa3bdf56eea1dc1759b4e69
-ms.sourcegitcommit: 1e6439ec4d5889fc08cf3bfb4dac2b91931eb827
+ms.openlocfilehash: 4ffef401c07dbb27db7c0225acdc6817d95bfe11
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/08/2020
-ms.locfileid: "88024957"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91451361"
 ---
 ## <a name="available-counters"></a>可用的计数器
 
@@ -18,7 +18,7 @@ ms.locfileid: "88024957"
 |--|--|
 | :::no-loc text="% Time in GC since last GC"::: (`time-in-gc`) | 自上次 GC 以来 GC 的时间百分比 |
 | :::no-loc text="Allocation Rate"::: (`alloc-rate`) | 分配率（字节） |
-| :::no-loc text="CPU Usage"::: (`cpu-usage`) | CPU 使用率百分比 |
+| :::no-loc text="CPU Usage"::: (`cpu-usage`) | 进程的 CPU 使用率百分比 |
 | :::no-loc text="Exception Count"::: (`exception-count`) | 已发生的异常数 |
 | :::no-loc text="GC Heap Size"::: (`gc-heap-size`) | 根据 <xref:System.GC.GetTotalMemory(System.Boolean)?displayProperty=nameWithType> 认为要分配的字节数 |
 | :::no-loc text="Gen 0 GC Count"::: (`gen-0-gc-count`) | 第 0 代 GC 发生的次数 |
@@ -28,6 +28,8 @@ ms.locfileid: "88024957"
 | :::no-loc text="Gen 2 GC Count"::: (`gen-2-gc-count`) | 第 2 代 GC 发生的次数 |
 | :::no-loc text="Gen 2 Size"::: (`gen-2-size`) | 第 2 代 GC 的字节数 |
 | :::no-loc text="LOH Size"::: (`loh-size`) | 第 3 代 GC 的字节数 |
+| :::no-loc text="POH Size"::: (`poh-size`) | 已固定对象堆的字节数（在 .NET 5 及更高版本中可用） |
+| :::no-loc text="GC Fragmentation"::: (`gc-fragmentation`) | GC 堆碎片（在 .NET 5 及更高版本中可用） |
 | :::no-loc text="Monitor Lock Contention Count"::: (`monitor-lock-contention-count`) | 尝试锁定监视器时出现争用的次数，基于 <xref:System.Threading.Monitor.LockContentionCount?displayProperty=nameWithType> |
 | :::no-loc text="Number of Active Timers"::: (`active-timer-count`) | 当前活动的 <xref:System.Threading.Timer> 实例的计数，基于 <xref:System.Threading.Timer.ActiveCount?displayProperty=nameWithType> |
 | :::no-loc text="Number of Assemblies Loaded"::: (`assembly-count`) | 在某个时间点加载到进程中的 <xref:System.Reflection.Assembly> 实例的计数 |
@@ -35,6 +37,8 @@ ms.locfileid: "88024957"
 | :::no-loc text="ThreadPool Queue Length"::: (`threadpool-queue-length`) | <xref:System.Threading.ThreadPool> 中当前已加入处理队列的工作项数 |
 | :::no-loc text="ThreadPool Thread Count"::: (`threadpool-thread-count`) | <xref:System.Threading.ThreadPool> 中当前存在的线程池线程数，基于 <xref:System.Threading.ThreadPool.ThreadCount?displayProperty=nameWithType> |
 | :::no-loc text="Working Set"::: (`working-set`) | 某个时间点映射到进程上下文的物理内存量，基于 <xref:System.Environment.WorkingSet?displayProperty=nameWithType> |
+| :::no-loc text="IL Bytes Jitted"::: (`il-bytes-jitted`) | JIT 编译的 IL 的总大小，以字节为单位（在 .NET 5 及更高版本中可用） |
+| :::no-loc text="Method Jitted Count"::: (`method-jitted-count`) | JIT 编译的方法数（在 .NET 5 及更高版本中可用） |
 
 ### <a name="microsoftaspnetcorehosting-counters"></a>“Microsoft.AspNetCore.Hosting”计数器
 

@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: ac2b4193849c56002c5bba35932f2882b987a0d6
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 60b511adecf37855de91f45245fc55911ba281dc
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90537491"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654766"
 ---
 # <a name="whats-new-in-net-core-30"></a>.NET Core 3.0 的新增功能
 
@@ -27,7 +27,13 @@ Microsoft 认为 .NET Core RC1 可用于生产环境，且该软件完全受支�
 
 ## <a name="language-improvements-c-80"></a>语言改进 C# 8.0
 
-C# 8.0 也是该发布的一部分，包含[可为空引用类型](../../csharp/tutorials/nullable-reference-types.md)功能、[异步流](../../csharp/tutorials/generate-consume-asynchronous-stream.md)和[更多模式](../../csharp/tutorials/pattern-matching.md)。 有关 C# 8.0 功能的详细信息，请参阅 [C# 8.0 中的新增功能](../../csharp/whats-new/csharp-8.md)。
+C# 8.0 也是该发布的一部分，包含[可为空引用类型](../../csharp/language-reference/builtin-types/nullable-reference-types.md)功能、异步流和更多模式。 有关 C# 8.0 功能的详细信息，请参阅 [C# 8.0 中的新增功能](../../csharp/whats-new/csharp-8.md)。
+
+与 C# 8.0 语言功能相关的教程：
+
+- [教程：使用可为空和不可为空引用类型更清晰地表达设计意图](../../csharp/tutorials/nullable-reference-types.md)
+- [教程：使用 C# 8.0 和 .NET Core 3.0 生成和使用异步流](../../csharp/tutorials/generate-consume-asynchronous-stream.md)
+- [教程：使用模式匹配来构建类型驱动和数据驱动的算法](../../csharp/tutorials/pattern-matching.md)
 
 添加了语言增强功能，以支持下面详细说明的 API 功能：
 
@@ -63,7 +69,7 @@ C# 8.0 也是该发布的一部分，包含[可为空引用类型](../../csharp/
 
 ### <a name="macos-apphost-and-notarization"></a>macOS appHost 和公证
 
-仅 macOS
+仅 macOS 
 
 从已公证的适用于 macOS 的 .NET Core SDK 3.0 开始，默认已禁用用于生成默认可执行文件（即 appHost）的设置。 有关详细信息，请参阅 [macOS Catalina 公证以及对 .NET Core 下载和项目的影响](../install/macos-notarization-issues.md)。
 
@@ -205,6 +211,8 @@ ReadyToRun 编译器当前不支持跨目标。 必须在给定的目标上编�
 - 可以使用 Windows x64 编译 Windows ARM32、ARM64 和 x86 映像。
 - 可以使用 Windows x86 编译 Windows ARM32 映像。
 - 可以使用 Linux x64 编译 Linux ARM32 和 ARM64 映像。
+
+有关详细信息，请参阅[准备好运行](../deploying/ready-to-run.md)。
 
 ## <a name="runtimesdk"></a>运行时/SDK
 

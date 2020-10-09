@@ -4,12 +4,12 @@ description: 了解如何在 Windows 上生成 .NET for Apache Spark 应用程�
 ms.date: 06/25/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: d4755ff94ffc1f678bc078e382e353c203caba87
-ms.sourcegitcommit: 9c45035b781caebc63ec8ecf912dc83fb6723b1f
+ms.openlocfilehash: d355380e92235e799d366dca02eaf8450f563f33
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/25/2020
-ms.locfileid: "88812245"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91609273"
 ---
 # <a name="learn-how-to-build-your-net-for-apache-spark-application-on-windows"></a>了解如何在 Windows 上生成 .NET for Apache Spark 应用程序
 
@@ -220,7 +220,7 @@ mvn clean package
       set DOTNET_WORKER_DIR=C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.Worker\Debug\netcoreapp2.1\win10-x64\publish
       ```
   
-  2. 打开 Powershell 并转到已生成应用二进制文件的目录（例如在 .NET Framework 中为 C:\github\dotnet\spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\net461，在 .NET Core 在为 C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish）   ：
+  2. 打开 PowerShell 并转到已生成应用二进制文件的目录（例如在 .NET Framework 中为 C:\github\dotnet\spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\net461，在 .NET Core 在为 C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish） ：
 
       ```powershell
       cd C:\github\dotnet-spark\artifacts\bin\Microsoft.Spark.CSharp.Examples\Debug\netcoreapp2.1\win10-x64\publish

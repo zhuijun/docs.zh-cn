@@ -6,18 +6,18 @@ helpviewer_keywords:
 - object initializers [C#], how to use
 - objects [C#], initializing
 ms.assetid: 4b75ebb2-2e29-43de-929c-d736a8f27ce6
-ms.openlocfilehash: 0781b168b0ae8b8383affe19d2721da67f662045
-ms.sourcegitcommit: 3d84eac0818099c9949035feb96bbe0346358504
+ms.openlocfilehash: 97f537a8361c612580cc9bb41cef327e310287c2
+ms.sourcegitcommit: d66641bc7c14ad7d02300316e9e7e84a875a0a72
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86865029"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "91712663"
 ---
 # <a name="how-to-initialize-objects-by-using-an-object-initializer-c-programming-guide"></a>如何使用对象初始值设定项初始化对象（C# 编程指南）
 
 可以使用对象初始值设定项以声明方式初始化类型对象，而无需显式调用类型的构造函数。  
   
-以下示例演示如何将对象初始值设定项用于命名对象。 编译器通过首先访问默认实例构造函数，然后处理成员初始化来处理对象初始值设定项。 因此，如果无参数构造函数在类中声明为 `private`，则需要公共访问的对象初始值设定项将失败。
+以下示例演示如何将对象初始值设定项用于命名对象。 编译器通过首先访问无参数实例构造函数，然后处理成员初始化来处理对象初始值设定项。 因此，如果无参数构造函数在类中声明为 `private`，则需要公共访问的对象初始值设定项将失败。
   
 如果要定义匿名类型，则必须使用对象初始值设定项。 有关详细信息，请参阅[如何在查询中返回元素属性的子集](how-to-return-subsets-of-element-properties-in-a-query.md)。  
   

@@ -1,25 +1,29 @@
 ---
 description: static 修饰符 - C# 参考
 title: static 修饰符 - C# 参考
-ms.date: 04/22/2020
+ms.date: 09/25/2020
 f1_keywords:
 - static
 - static_CSharpKeyword
 helpviewer_keywords:
 - static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
-ms.openlocfilehash: f42636d1bbdf4342297f46f50ec6dfc2a70eacad
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: 239163fc2f91ccbfe8b1c111a358db87d36a8308
+ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89142058"
+ms.lasthandoff: 10/02/2020
+ms.locfileid: "91654634"
 ---
 # <a name="static-c-reference"></a>static（C# 参考）
 
 本页介绍 `static` 修饰符关键字。 `static` 关键字也是 [`using static`](using-static.md) 指令的一部分。
 
 使用 `static` 修饰符可声明属于类型本身而不是属于特定对象的静态成员。 `static` 修饰符可用于声明 `static` 类。 在类、接口和结构中，可以将 `static` 修饰符添加到字段、方法、属性、运算符、事件和构造函数。 `static` 修饰符不能用于索引器或终结器。 有关详细信息，请参阅[静态类和静态类成员](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md)。
+
+从 C# 8.0 开始，可以将 `static` 修饰符添加到[本地函数](../../programming-guide/classes-and-structs/local-functions.md)。 静态本地函数无法捕获局部变量或实例状态。
+
+从 C# 9.0 开始，可将 `static` 修饰符添加到 [Lambda 表达式](../operators/lambda-expressions.md)或[匿名方法](../operators/delegate-operator.md)。 静态Lambda 表达式或匿名方法无法捕获局部变量或实例状态。
 
 ## <a name="example---static-class"></a>示例 - 静态类
 

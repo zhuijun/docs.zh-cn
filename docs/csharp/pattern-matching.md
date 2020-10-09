@@ -4,12 +4,12 @@ description: 了解 C# 中的模式匹配表达式
 ms.date: 04/10/2019
 ms.technology: csharp-fundamentals
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: 2dd1401e3ef22a02f327e44ff884182ee3e22278
-ms.sourcegitcommit: b1f4756120deaecb8b554477bb040620f69a4209
+ms.openlocfilehash: aabd8afe9a94022557275adb313ca3bf95da7548
+ms.sourcegitcommit: b4a46f6d7ebf44c0035627d00924164bcae2db30
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89414989"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91438026"
 ---
 # <a name="pattern-matching"></a>模式匹配
 
@@ -139,4 +139,4 @@ ms.locfileid: "89414989"
 
 ## <a name="see-also"></a>请参阅
 
-- [教程：使用模式匹配功能来扩展数据类型](tutorials/pattern-matching.md)
+- [教程：使用模式匹配来构建类型驱动和数据驱动的算法](tutorials/pattern-matching.md)
