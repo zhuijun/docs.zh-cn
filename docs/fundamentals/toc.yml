@@ -1,7 +1,7 @@
 items:
   - name: .NET 文档
     href: index.yml
-  - name: 入门（第 1 天）
+  - name: 入门
     items:
       - name: Hello World
         href: ../core/get-started.md
@@ -47,7 +47,7 @@ items:
             href: ../core/install/how-to-detect-installed-versions.md
           - name: 安装本地化的 IntelliSense
             href: ../core/install/localized-intellisense.md
-  - name: 概述（第 1 周）
+  - name: 概述
     items:
       - name: .NET 简介
         href: ../core/introduction.md
@@ -151,7 +151,7 @@ items:
         items:
           - name: 概述
             href: ../core/sdk.md
-          - name: 错误消息
+          - name: Error messages
             items:
               - name: NETSDK1145
                 href: ../core/tools/sdk-errors/netsdk1145.md
@@ -901,8 +901,12 @@ items:
                         href: code-analysis/quality-rules/ca2216.md
                       - name: CA2217
                         href: code-analysis/quality-rules/ca2217.md
+                      - name: CA2218
+                        href: code-analysis/quality-rules/ca2218.md
                       - name: CA2219
                         href: code-analysis/quality-rules/ca2219.md
+                      - name: CA2224
+                        href: code-analysis/quality-rules/ca2224.md
                       - name: CA2225
                         href: code-analysis/quality-rules/ca2225.md
                       - name: CA2226
