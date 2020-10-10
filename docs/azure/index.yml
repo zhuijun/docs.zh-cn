@@ -8,12 +8,12 @@ metadata:
   ms.topic: hub-page
   ms.prod: azure-dotnet
   ms.date: 08/12/2020
-  ms.openlocfilehash: 041b2124dde5ea5a1d6c04947fe14b1f72f6dacc
-  ms.sourcegitcommit: d337df55f83325918cbbd095eb573400bea49064
+  ms.openlocfilehash: 0708f2429f9943e14a5d0b843d6c6f0e6b2232bc
+  ms.sourcegitcommit: a6bd4cad438fe479cbd112eae10f2cd449f06e40
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 08/13/2020
-  ms.locfileid: "88187938"
+  ms.lasthandoff: 10/08/2020
+  ms.locfileid: "91844551"
 highlightedContent:
   items:
   - itemType: overview
@@ -115,21 +115,21 @@ conceptualContent:
     - itemType: quickstart
       text: 使用 .NET 查询 Azure PostgreSQL
       url: /azure/postgresql/connect-csharp
+    - itemType: concept
+      text: 在 Azure Cosmos DB 中使用存储库模式
+      url: https://devblogs.microsoft.com/cosmosdb/azure-cosmos-db-repository-net-sdk-v-1-0-4/
+    - itemType: tutorial
+      text: 连接并查询 Azure Database for PostgreSQL 数据库
+      url: /azure/postgresql/connect-csharp
     - itemType: learn
-      text: 开发和配置可查询 Azure SQL 数据库的 ASP.NET 应用程序
-      url: /learn/modules/develop-app-that-queries-azure-sql/
+      text: 使用 Entity Framework Core 保留和检索关系数据
+      url: /learn/modules/persist-data-ef-core/
     - itemType: learn
-      text: 在 Visual Studio Code 中为 Azure Cosmos DB 构建 .NET Core 应用
+      text: 在 Visual Studio Code 中使用 Azure Cosmos DB 构建 .NET Core 应用
       url: /learn/modules/build-cosmos-db-app-with-vscode/
     - itemType: learn
       text: 使用 Azure Blob 存储来存储应用程序数据
       url: /learn/modules/store-app-data-with-azure-blob-storage/
-    - itemType: learn
-      text: 使用 Entity Framework Core 保留和检索关系数据
-      url: /learn/modules/persist-data-ef-core/
-    - itemType: tutorial
-      text: 连接并查询 Azure Database for PostgreSQL 数据库
-      url: /azure/postgresql/connect-csharp
   - title: 身份验证和安全性
     links:
     - itemType: overview
