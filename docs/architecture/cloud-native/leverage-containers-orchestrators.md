@@ -2,12 +2,12 @@
 title: 利用容器和协调器
 description: 利用 Azure 中的 Docker 容器和 Kubernetes 协调器
 ms.date: 05/31/2020
-ms.openlocfilehash: b4bdbe5c6b3946658e6c11a40cbbb2feb07cc951
-ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
+ms.openlocfilehash: 07e66ece1d1d1b3f252e56789461ae2922d9649a
+ms.sourcegitcommit: eb7e87496f42361b1da98562dd75b516c9d58bbc
 ms.translationtype: MT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "91755904"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "91877569"
 ---
 # <a name="leveraging-containers-and-orchestrators"></a>利用容器和协调器
 
@@ -25,7 +25,7 @@ ms.locfileid: "91755904"
 
 ### <a name="deployment"></a>部署
 
-即使只进行了少量更改，单一应用程序也需要完整的整个应用程序部署。 完全部署可能成本高昂，并且容易出错。 此外，他们还需要重新启动应用程序，这会暂时影响不可用。
+此外，他们还需要重新启动应用程序，如果在部署时没有应用零停机方法，这可能会暂时影响可用性。
 
 ### <a name="scaling"></a>扩展
 
@@ -139,7 +139,7 @@ status:
 
 ## <a name="when-should-you-avoid-using-containers-and-orchestrators"></a>何时应避免使用容器和协调器？
 
-如果无法按照十二因素应用程序原则构建你的应用程序，应考虑避免容器和协调器。 在这些情况下，请考虑基于 VM 的托管平台，或可能是某个混合系统。 利用它，你始终可以在单独的容器中或甚至无服务器的功能中关闭某些功能。
+如果无法按照 Twelve-Factor 应用原则构建应用程序，应考虑避免容器和协调器。 在这些情况下，请考虑基于 VM 的托管平台，或可能是某个混合系统。 利用它，你始终可以在单独的容器中或甚至无服务器的功能中关闭某些功能。
 
 ## <a name="development-resources"></a>开发资源
 

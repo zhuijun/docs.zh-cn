@@ -9,13 +9,12 @@ helpviewer_keywords:
 - Windows service applications, walkthroughs
 - Windows service applications, creating
 ms.assetid: e24d8a3d-edc6-485c-b6e0-5672d91fb607
-author: ghogen
-ms.openlocfilehash: 04f27729b5713c325a73cbdeb1c6c673fe749c00
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: bbf9ab7d06c952aa2e076fc36c71f37f1bb10884
+ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90544201"
+ms.lasthandoff: 10/01/2020
+ms.locfileid: "91608382"
 ---
 # <a name="tutorial-create-a-windows-service-app"></a>教程：创建 Windows 服务应用
 
