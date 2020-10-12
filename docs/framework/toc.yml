@@ -598,6 +598,16 @@ items:
         items:
           - name: ControlBuilderInterceptor 类
             href: additional-apis/controlbuilderinterceptor-class.md
+      - name: System.Windows.Controls
+        items:
+          - name: GridViewHeaderRowPresenter 类
+            items:
+              - name: FindHeaderByColumn 方法
+                href: additional-apis/system.windows.controls.gridviewheaderrowpresenter.findheaderbycolumn.md
+              - name: MakeParentItemsControlGotFocus 方法
+                href: additional-apis/system.windows.controls.gridviewheaderrowpresenter.makeparentitemscontrolgotfocus.md
+              - name: PrepareHeaderDrag 方法
+                href: additional-apis/system.windows.controls.gridviewheaderrowpresenter.prepareheaderdrag.md
       - name: System.Windows.Diagnostics
         items:
           - name: VisualDiagnostics 类

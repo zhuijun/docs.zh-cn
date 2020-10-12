@@ -57,6 +57,8 @@ items:
         href: ../standard/class-libraries.md
       - name: .NET Standard 概述
         href: ../standard/net-standard.md
+      - name: 版本、补丁和支持
+        href: ../core/releases-and-support.md
       - name: .NET 术语表
         href: ../standard/glossary.md
       - name: 教程
@@ -151,7 +153,7 @@ items:
         items:
           - name: 概述
             href: ../core/sdk.md
-          - name: Error messages
+          - name: 错误消息
             items:
               - name: NETSDK1145
                 href: ../core/tools/sdk-errors/netsdk1145.md
