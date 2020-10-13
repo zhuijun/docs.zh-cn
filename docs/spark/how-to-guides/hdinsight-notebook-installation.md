@@ -1,143 +1,141 @@
 ---
 title: 在 Azure HDInsight Spark 群集的 Jupyter Notebook 中安装 .NET for Apache Spark
 description: 了解如何在 Azure HDInsight 的 Jupyter Notebook 中安装 .NET for Apache Spark。
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 8110b87991e2f0253257faf19f383dec6cbd3853
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: b5689c9ccdd13209fec33674ad8fc80dcc369660
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557198"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955044"
 ---
-# <a name="install-net-for-apache-spark-on-jupyter-notebooks-on-azure-hdinsight-spark-clusters"></a><span data-ttu-id="5bf52-103">在 Azure HDInsight Spark 群集的 Jupyter Notebook 中安装 .NET for Apache Spark</span><span class="sxs-lookup"><span data-stu-id="5bf52-103">Install .NET for Apache Spark on Jupyter notebooks on Azure HDInsight Spark clusters</span></span>
+# <a name="install-net-for-apache-spark-on-jupyter-notebooks-on-azure-hdinsight-spark-clusters"></a><span data-ttu-id="a1368-103">在 Azure HDInsight Spark 群集的 Jupyter Notebook 中安装 .NET for Apache Spark</span><span class="sxs-lookup"><span data-stu-id="a1368-103">Install .NET for Apache Spark on Jupyter notebooks on Azure HDInsight Spark clusters</span></span>
 
-<span data-ttu-id="5bf52-104">本文介绍如何在 Azure HDInsight Spark 群集的 Jupyter Notebook 中安装 .NET for Apache Spark。</span><span class="sxs-lookup"><span data-stu-id="5bf52-104">This article teaches you how to install .NET for Apache Spark on Jupyter notebooks on Azure HDInsight Spark clusters.</span></span> <span data-ttu-id="5bf52-105">可以通过搭配使用命令行和 Azure 门户在 Azure HDInsight 群集中部署 .NET for Apache Spark（有关详细信息，请参阅[如何将 .NET for Apache Spark 应用程序部署到 Azure HDInsight](../tutorials/hdinsight-deployment.md)），但笔记本可提供更好的交互和迭代体验。</span><span class="sxs-lookup"><span data-stu-id="5bf52-105">You can deploy .NET for Apache Spark on Azure HDInsight clusters through a combination of the command line and the Azure portal (for more information, see [how to deploy a .NET for Apache Spark application to Azure HDInsight](../tutorials/hdinsight-deployment.md)), but notebooks provide a more interactive and iterative experience.</span></span>
+<span data-ttu-id="a1368-104">本文介绍如何在 Azure HDInsight Spark 群集的 Jupyter Notebook 中安装 .NET for Apache Spark。</span><span class="sxs-lookup"><span data-stu-id="a1368-104">This article teaches you how to install .NET for Apache Spark on Jupyter notebooks on Azure HDInsight Spark clusters.</span></span> <span data-ttu-id="a1368-105">可以通过搭配使用命令行和 Azure 门户在 Azure HDInsight 群集中部署 .NET for Apache Spark（有关详细信息，请参阅[如何将 .NET for Apache Spark 应用程序部署到 Azure HDInsight](../tutorials/hdinsight-deployment.md)），但笔记本可提供更好的交互和迭代体验。</span><span class="sxs-lookup"><span data-stu-id="a1368-105">You can deploy .NET for Apache Spark on Azure HDInsight clusters through a combination of the command line and the Azure portal (for more information, see [how to deploy a .NET for Apache Spark application to Azure HDInsight](../tutorials/hdinsight-deployment.md)), but notebooks provide a more interactive and iterative experience.</span></span>
 
-<span data-ttu-id="5bf52-106">Azure HDInsight 群集已附带 Jupyter Notebook，因此只需将 Jupyter Notebook 配置为运行 .NET for Apache Spark。</span><span class="sxs-lookup"><span data-stu-id="5bf52-106">Azure HDInsight clusters already come with Jupyter notebooks, so all you have to do is configure the Jupyter notebooks to run .NET for Apache Spark.</span></span> <span data-ttu-id="5bf52-107">若要在 Jupyter Notebook 中使用 .NET for Apache Spark，需要提供 C# REPL，以逐行执行 C# 代码并在必要时保留执行状态。</span><span class="sxs-lookup"><span data-stu-id="5bf52-107">To use .NET for Apache Spark in your Jupyter notebooks, a C# REPL is needed to execute your C# code line-by-line and to preserve execution state when necessary.</span></span> <span data-ttu-id="5bf52-108">[Try .NET](https://github.com/dotnet/try) 已集成为官方 .NET REPL。</span><span class="sxs-lookup"><span data-stu-id="5bf52-108">[Try .NET](https://github.com/dotnet/try) has been integrated as the official .NET REPL.</span></span>
+<span data-ttu-id="a1368-106">Azure HDInsight 群集已附带 Jupyter Notebook，因此只需将 Jupyter Notebook 配置为运行 .NET for Apache Spark。</span><span class="sxs-lookup"><span data-stu-id="a1368-106">Azure HDInsight clusters already come with Jupyter notebooks, so all you have to do is configure the Jupyter notebooks to run .NET for Apache Spark.</span></span> <span data-ttu-id="a1368-107">若要在 Jupyter Notebook 中使用 .NET for Apache Spark，需要提供 C# REPL，以逐行执行 C# 代码并在必要时保留执行状态。</span><span class="sxs-lookup"><span data-stu-id="a1368-107">To use .NET for Apache Spark in your Jupyter notebooks, a C# REPL is needed to execute your C# code line-by-line and to preserve execution state when necessary.</span></span> <span data-ttu-id="a1368-108">[Try .NET](https://github.com/dotnet/try) 已集成为官方 .NET REPL。</span><span class="sxs-lookup"><span data-stu-id="a1368-108">[Try .NET](https://github.com/dotnet/try) has been integrated as the official .NET REPL.</span></span>
 
-<span data-ttu-id="5bf52-109">若要通过 Jupyter Notebook 体验启用 .NET for Apache Spark，需要通过 [Ambari](/azure/hdinsight/hdinsight-hadoop-manage-ambari) 完成一些手动步骤，然后从 HDInsight Spark 群集提交[脚本操作](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux)。</span><span class="sxs-lookup"><span data-stu-id="5bf52-109">To enable .NET for Apache Spark through the Jupyter Notebooks experience, you need to follow a few manual steps through [Ambari](/azure/hdinsight/hdinsight-hadoop-manage-ambari) and submit [script actions](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux) on the HDInsight Spark cluster.</span></span>
+<span data-ttu-id="a1368-109">若要通过 Jupyter Notebook 体验启用 .NET for Apache Spark，需要通过 [Ambari](/azure/hdinsight/hdinsight-hadoop-manage-ambari) 完成一些手动步骤，然后从 HDInsight Spark 群集提交[脚本操作](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux)。</span><span class="sxs-lookup"><span data-stu-id="a1368-109">To enable .NET for Apache Spark through the Jupyter Notebooks experience, you need to follow a few manual steps through [Ambari](/azure/hdinsight/hdinsight-hadoop-manage-ambari) and submit [script actions](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux) on the HDInsight Spark cluster.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="5bf52-110">此功能是试验功能，HDInsight Spark 团队不支持它。 </span><span class="sxs-lookup"><span data-stu-id="5bf52-110">This feature is *experimental* and is not supported by the HDInsight Spark team.</span></span>
+> <span data-ttu-id="a1368-110">此功能是试验功能，HDInsight Spark 团队不支持它。 </span><span class="sxs-lookup"><span data-stu-id="a1368-110">This feature is *experimental* and is not supported by the HDInsight Spark team.</span></span>
 
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
+## <a name="prerequisites"></a><span data-ttu-id="a1368-111">先决条件</span><span class="sxs-lookup"><span data-stu-id="a1368-111">Prerequisites</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="5bf52-111">先决条件</span><span class="sxs-lookup"><span data-stu-id="5bf52-111">Prerequisites</span></span>
+<span data-ttu-id="a1368-112">创建 [Azure HDInsight Spark](/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-apache-spark-cluster-in-hdinsight) 群集（如果还没有此群集）。</span><span class="sxs-lookup"><span data-stu-id="a1368-112">If you don't already have one, create an [Azure HDInsight Spark](/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-apache-spark-cluster-in-hdinsight) cluster.</span></span>
 
-<span data-ttu-id="5bf52-112">创建 [Azure HDInsight Spark](/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-apache-spark-cluster-in-hdinsight) 群集（如果还没有此群集）。</span><span class="sxs-lookup"><span data-stu-id="5bf52-112">If you don't already have one, create an [Azure HDInsight Spark](/azure/hdinsight/spark/apache-spark-jupyter-spark-sql-use-portal#create-an-apache-spark-cluster-in-hdinsight) cluster.</span></span>
+1. <span data-ttu-id="a1368-113">访问 [Azure 门户](https://portal.azure.com)并选择“+ 创建资源”。 </span><span class="sxs-lookup"><span data-stu-id="a1368-113">Visit the [Azure portal](https://portal.azure.com) and select **+ Create a Resource**.</span></span>
 
-1. <span data-ttu-id="5bf52-113">访问 [Azure 门户](https://portal.azure.com)并选择“+ 创建资源”。 </span><span class="sxs-lookup"><span data-stu-id="5bf52-113">Visit the [Azure portal](https://portal.azure.com) and select **+ Create a Resource**.</span></span>
+1. <span data-ttu-id="a1368-114">新建一个 Azure HDInsight 群集资源。</span><span class="sxs-lookup"><span data-stu-id="a1368-114">Create a new Azure HDInsight cluster resource.</span></span> <span data-ttu-id="a1368-115">在创建群集过程中，选择“Spark 2.4”和“HDI 4.0”。  </span><span class="sxs-lookup"><span data-stu-id="a1368-115">Select **Spark 2.4** and **HDI 4.0** during cluster creation.</span></span>
 
-1. <span data-ttu-id="5bf52-114">新建一个 Azure HDInsight 群集资源。</span><span class="sxs-lookup"><span data-stu-id="5bf52-114">Create a new Azure HDInsight cluster resource.</span></span> <span data-ttu-id="5bf52-115">在创建群集过程中，选择“Spark 2.4”和“HDI 4.0”。  </span><span class="sxs-lookup"><span data-stu-id="5bf52-115">Select **Spark 2.4** and **HDI 4.0** during cluster creation.</span></span>
+## <a name="install-net-for-apache-spark"></a><span data-ttu-id="a1368-116">安装 .NET for Apache Spark</span><span class="sxs-lookup"><span data-stu-id="a1368-116">Install .NET for Apache Spark</span></span>
 
-## <a name="install-net-for-apache-spark"></a><span data-ttu-id="5bf52-116">安装 .NET for Apache Spark</span><span class="sxs-lookup"><span data-stu-id="5bf52-116">Install .NET for Apache Spark</span></span>
+<span data-ttu-id="a1368-117">在 Azure 门户中选择上一步中创建的 HDInsight Spark 群集。 </span><span class="sxs-lookup"><span data-stu-id="a1368-117">In the Azure portal, select the **HDInsight Spark cluster** you created in the previous step.</span></span>
 
-<span data-ttu-id="5bf52-117">在 Azure 门户中选择上一步中创建的 HDInsight Spark 群集。 </span><span class="sxs-lookup"><span data-stu-id="5bf52-117">In the Azure portal, select the **HDInsight Spark cluster** you created in the previous step.</span></span>
+### <a name="stop-the-livy-server"></a><span data-ttu-id="a1368-118">停止 Livy 服务器</span><span class="sxs-lookup"><span data-stu-id="a1368-118">Stop the Livy server</span></span>
 
-### <a name="stop-the-livy-server"></a><span data-ttu-id="5bf52-118">停止 Livy 服务器</span><span class="sxs-lookup"><span data-stu-id="5bf52-118">Stop the Livy server</span></span>
-
-1. <span data-ttu-id="5bf52-119">从门户选择“概览”，然后选择“Ambari 主页”。  </span><span class="sxs-lookup"><span data-stu-id="5bf52-119">From the portal, select **Overview**, and then select **Ambari home**.</span></span> <span data-ttu-id="5bf52-120">出现提示时，请输入群集的登录凭据。</span><span class="sxs-lookup"><span data-stu-id="5bf52-120">If prompted, enter the login credentials for the cluster.</span></span>
+1. <span data-ttu-id="a1368-119">从门户选择“概览”，然后选择“Ambari 主页”。  </span><span class="sxs-lookup"><span data-stu-id="a1368-119">From the portal, select **Overview**, and then select **Ambari home**.</span></span> <span data-ttu-id="a1368-120">出现提示时，请输入群集的登录凭据。</span><span class="sxs-lookup"><span data-stu-id="a1368-120">If prompted, enter the login credentials for the cluster.</span></span>
 
    ![停止 Livy 服务器](./media/hdinsight-notebook-installation/select-ambari.png)
 
-2. <span data-ttu-id="5bf52-122">从左侧导航菜单选择“Spark2”，然后选择“用于 Spark2 的 Livy 服务器”。  </span><span class="sxs-lookup"><span data-stu-id="5bf52-122">Select **Spark2** from the left navigation menu, and select **LIVY FOR SPARK2 SERVER**.</span></span>
+2. <span data-ttu-id="a1368-122">从左侧导航菜单选择“Spark2”，然后选择“用于 Spark2 的 Livy 服务器”。  </span><span class="sxs-lookup"><span data-stu-id="a1368-122">Select **Spark2** from the left navigation menu, and select **LIVY FOR SPARK2 SERVER**.</span></span>
 
    ![停止 Livy 服务器](./media/hdinsight-notebook-installation/select-livyserver.png)
 
-3. <span data-ttu-id="5bf52-124">选择“hn0... host”。 </span><span class="sxs-lookup"><span data-stu-id="5bf52-124">Select **hn0... host**.</span></span>
+3. <span data-ttu-id="a1368-124">选择“hn0... host”。 </span><span class="sxs-lookup"><span data-stu-id="a1368-124">Select **hn0... host**.</span></span>
 
    ![停止 Livy 服务器](./media/hdinsight-notebook-installation/select-host.png)
 
-4. <span data-ttu-id="5bf52-126">选择“用于 Spark2 的 Livy 服务器”旁边的省略号，然后选择“停止”。  </span><span class="sxs-lookup"><span data-stu-id="5bf52-126">Select the ellipsis next to **Livy for Spark2 Server** and select **Stop**.</span></span> <span data-ttu-id="5bf52-127">出现提示时，选择“确定”以继续操作  。</span><span class="sxs-lookup"><span data-stu-id="5bf52-127">When prompted, select **OK** to proceed.</span></span>
+4. <span data-ttu-id="a1368-126">选择“用于 Spark2 的 Livy 服务器”旁边的省略号，然后选择“停止”。  </span><span class="sxs-lookup"><span data-stu-id="a1368-126">Select the ellipsis next to **Livy for Spark2 Server** and select **Stop**.</span></span> <span data-ttu-id="a1368-127">出现提示时，选择“确定”以继续操作  。</span><span class="sxs-lookup"><span data-stu-id="a1368-127">When prompted, select **OK** to proceed.</span></span>
 
-   <span data-ttu-id="5bf52-128">停止用于 Spark2 的 Livy 服务器。</span><span class="sxs-lookup"><span data-stu-id="5bf52-128">Stop Livy for Spark2 Server.</span></span>
-   <span data-ttu-id="5bf52-129">![停止 Livy 服务器](./media/hdinsight-notebook-installation/stop-server.png)</span><span class="sxs-lookup"><span data-stu-id="5bf52-129">![Stop Livy Server](./media/hdinsight-notebook-installation/stop-server.png)</span></span>
+   <span data-ttu-id="a1368-128">停止用于 Spark2 的 Livy 服务器。</span><span class="sxs-lookup"><span data-stu-id="a1368-128">Stop Livy for Spark2 Server.</span></span>
+   <span data-ttu-id="a1368-129">![停止 Livy 服务器](./media/hdinsight-notebook-installation/stop-server.png)</span><span class="sxs-lookup"><span data-stu-id="a1368-129">![Stop Livy Server](./media/hdinsight-notebook-installation/stop-server.png)</span></span>
 
-5. <span data-ttu-id="5bf52-130">对“hn1... host”重复前面的步骤  。</span><span class="sxs-lookup"><span data-stu-id="5bf52-130">Repeat the previous steps for **hn1... host**.</span></span>
+5. <span data-ttu-id="a1368-130">对“hn1... host”重复前面的步骤  。</span><span class="sxs-lookup"><span data-stu-id="a1368-130">Repeat the previous steps for **hn1... host**.</span></span>
 
-### <a name="submit-an-hdinsight-script-action"></a><span data-ttu-id="5bf52-131">提交 HDInsight 脚本操作</span><span class="sxs-lookup"><span data-stu-id="5bf52-131">Submit an HDInsight script action</span></span>
+### <a name="submit-an-hdinsight-script-action"></a><span data-ttu-id="a1368-131">提交 HDInsight 脚本操作</span><span class="sxs-lookup"><span data-stu-id="a1368-131">Submit an HDInsight script action</span></span>
 
-1. <span data-ttu-id="5bf52-132">`install-interactive-notebook.sh` 是一个脚本，它可安装 .NET for Apache Spark 并可更改 Apache Livy 和 sparkmagic。</span><span class="sxs-lookup"><span data-stu-id="5bf52-132">The `install-interactive-notebook.sh` is a script that installs .NET for Apache Spark and makes changes to Apache Livy and sparkmagic.</span></span> <span data-ttu-id="5bf52-133">必须先创建并上传 `install-interactive-notebook.sh`，然后才可将脚本操作提交到 HDInsight。</span><span class="sxs-lookup"><span data-stu-id="5bf52-133">Before you submit a script action to HDInsight, you need to create and upload `install-interactive-notebook.sh`.</span></span>
+1. <span data-ttu-id="a1368-132">`install-interactive-notebook.sh` 是一个脚本，它可安装 .NET for Apache Spark 并可更改 Apache Livy 和 sparkmagic。</span><span class="sxs-lookup"><span data-stu-id="a1368-132">The `install-interactive-notebook.sh` is a script that installs .NET for Apache Spark and makes changes to Apache Livy and sparkmagic.</span></span> <span data-ttu-id="a1368-133">必须先创建并上传 `install-interactive-notebook.sh`，然后才可将脚本操作提交到 HDInsight。</span><span class="sxs-lookup"><span data-stu-id="a1368-133">Before you submit a script action to HDInsight, you need to create and upload `install-interactive-notebook.sh`.</span></span>
 
-   <span data-ttu-id="5bf52-134">在本地计算机中新建名称为 install-interactive-notebook.sh 的文件，粘贴 [install-interactive-notebook.sh 内容](https://raw.githubusercontent.com/dotnet/spark/master/deployment/HDI-Spark/Notebooks/install-interactive-notebook.sh)中的内容。 </span><span class="sxs-lookup"><span data-stu-id="5bf52-134">Create a new file named **install-interactive-notebook.sh** in your local computer and paste the contents of [install-interactive-notebook.sh contents](https://raw.githubusercontent.com/dotnet/spark/master/deployment/HDI-Spark/Notebooks/install-interactive-notebook.sh).</span></span>
+   <span data-ttu-id="a1368-134">在本地计算机中新建名称为 install-interactive-notebook.sh 的文件，粘贴 [install-interactive-notebook.sh 内容](https://raw.githubusercontent.com/dotnet/spark/master/deployment/HDI-Spark/Notebooks/install-interactive-notebook.sh)中的内容。 </span><span class="sxs-lookup"><span data-stu-id="a1368-134">Create a new file named **install-interactive-notebook.sh** in your local computer and paste the contents of [install-interactive-notebook.sh contents](https://raw.githubusercontent.com/dotnet/spark/master/deployment/HDI-Spark/Notebooks/install-interactive-notebook.sh).</span></span>
 
-   <span data-ttu-id="5bf52-135">将此脚本上传到可从 HDInsight 群集访问的 [URI](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) 上。</span><span class="sxs-lookup"><span data-stu-id="5bf52-135">Upload the script to a [URI](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) that's accessible from the HDInsight cluster.</span></span> <span data-ttu-id="5bf52-136">例如 `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`。</span><span class="sxs-lookup"><span data-stu-id="5bf52-136">For example, `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`.</span></span>
+   <span data-ttu-id="a1368-135">将此脚本上传到可从 HDInsight 群集访问的 [URI](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) 上。</span><span class="sxs-lookup"><span data-stu-id="a1368-135">Upload the script to a [URI](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux#understand-script-actions) that's accessible from the HDInsight cluster.</span></span> <span data-ttu-id="a1368-136">例如 `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`。</span><span class="sxs-lookup"><span data-stu-id="a1368-136">For example, `https://<my storage account>.blob.core.windows.net/<my container>/<some dir>/install-interactive-notebook.sh`.</span></span>
 
-2. <span data-ttu-id="5bf52-137">使用 [HDInsight 脚本操作](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux)运行群集上的 `install-interactive-notebook.sh`。</span><span class="sxs-lookup"><span data-stu-id="5bf52-137">Run `install-interactive-notebook.sh` on the cluster using [HDInsight Script Actions](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).</span></span>
+2. <span data-ttu-id="a1368-137">使用 [HDInsight 脚本操作](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux)运行群集上的 `install-interactive-notebook.sh`。</span><span class="sxs-lookup"><span data-stu-id="a1368-137">Run `install-interactive-notebook.sh` on the cluster using [HDInsight Script Actions](/azure/hdinsight/hdinsight-hadoop-customize-cluster-linux).</span></span>
 
-   <span data-ttu-id="5bf52-138">返回到 Azure 门户中的 HDI 群集，从左侧的选项中选择“脚本操作”。 </span><span class="sxs-lookup"><span data-stu-id="5bf52-138">Return to your HDI cluster in the Azure portal, and select **Script actions** from the options on the left.</span></span> <span data-ttu-id="5bf52-139">提交一个脚本操作，用于在 HDInsight Spark 群集上部署 .NET for Apache Spark REPL。</span><span class="sxs-lookup"><span data-stu-id="5bf52-139">You submit one script action to deploy the .NET for Apache Spark REPL on your HDInsight Spark cluster.</span></span> <span data-ttu-id="5bf52-140">使用以下设置：</span><span class="sxs-lookup"><span data-stu-id="5bf52-140">Use the following settings:</span></span>
+   <span data-ttu-id="a1368-138">返回到 Azure 门户中的 HDI 群集，从左侧的选项中选择“脚本操作”。 </span><span class="sxs-lookup"><span data-stu-id="a1368-138">Return to your HDI cluster in the Azure portal, and select **Script actions** from the options on the left.</span></span> <span data-ttu-id="a1368-139">提交一个脚本操作，用于在 HDInsight Spark 群集上部署 .NET for Apache Spark REPL。</span><span class="sxs-lookup"><span data-stu-id="a1368-139">You submit one script action to deploy the .NET for Apache Spark REPL on your HDInsight Spark cluster.</span></span> <span data-ttu-id="a1368-140">使用以下设置：</span><span class="sxs-lookup"><span data-stu-id="a1368-140">Use the following settings:</span></span>
 
-   |<span data-ttu-id="5bf52-141">Property</span><span class="sxs-lookup"><span data-stu-id="5bf52-141">Property</span></span>  |<span data-ttu-id="5bf52-142">描述</span><span class="sxs-lookup"><span data-stu-id="5bf52-142">Description</span></span>  |
+   |<span data-ttu-id="a1368-141">Property</span><span class="sxs-lookup"><span data-stu-id="a1368-141">Property</span></span>  |<span data-ttu-id="a1368-142">描述</span><span class="sxs-lookup"><span data-stu-id="a1368-142">Description</span></span>  |
    |---------|---------|
-   | <span data-ttu-id="5bf52-143">脚本类型</span><span class="sxs-lookup"><span data-stu-id="5bf52-143">Script type</span></span> | <span data-ttu-id="5bf52-144">自定义</span><span class="sxs-lookup"><span data-stu-id="5bf52-144">Custom</span></span> |
-   | <span data-ttu-id="5bf52-145">“属性”</span><span class="sxs-lookup"><span data-stu-id="5bf52-145">Name</span></span> | <span data-ttu-id="5bf52-146">*安装 .NET for Apache Spark 交互式笔记本体验*</span><span class="sxs-lookup"><span data-stu-id="5bf52-146">*Install .NET for Apache Spark Interactive Notebook Experience*</span></span> |
-   | <span data-ttu-id="5bf52-147">Bash 脚本 URI</span><span class="sxs-lookup"><span data-stu-id="5bf52-147">Bash script URI</span></span> | <span data-ttu-id="5bf52-148">向其上传 `install-interactive-notebook.sh` 的 URI。</span><span class="sxs-lookup"><span data-stu-id="5bf52-148">The URI to which you uploaded `install-interactive-notebook.sh`.</span></span> |
-   | <span data-ttu-id="5bf52-149">节点类型</span><span class="sxs-lookup"><span data-stu-id="5bf52-149">Node type(s)</span></span>| <span data-ttu-id="5bf52-150">头节点和工作节点</span><span class="sxs-lookup"><span data-stu-id="5bf52-150">Head and Worker</span></span> |
-   | <span data-ttu-id="5bf52-151">参数</span><span class="sxs-lookup"><span data-stu-id="5bf52-151">Parameters</span></span> | <span data-ttu-id="5bf52-152">.NET for Apache Spark 版本。</span><span class="sxs-lookup"><span data-stu-id="5bf52-152">.NET for Apache Spark version.</span></span> <span data-ttu-id="5bf52-153">可以查看 [.NET for Apache Spark 版本](https://github.com/dotnet/spark/releases)。</span><span class="sxs-lookup"><span data-stu-id="5bf52-153">You can check [.NET for Apache Spark releases](https://github.com/dotnet/spark/releases).</span></span> <span data-ttu-id="5bf52-154">例如，如果要安装 Sparkdotnet 版本 0.6.0，则为 `0.6.0`。</span><span class="sxs-lookup"><span data-stu-id="5bf52-154">For example, if you want to install Sparkdotnet version 0.6.0 then it would be `0.6.0`.</span></span>
+   | <span data-ttu-id="a1368-143">脚本类型</span><span class="sxs-lookup"><span data-stu-id="a1368-143">Script type</span></span> | <span data-ttu-id="a1368-144">自定义</span><span class="sxs-lookup"><span data-stu-id="a1368-144">Custom</span></span> |
+   | <span data-ttu-id="a1368-145">“属性”</span><span class="sxs-lookup"><span data-stu-id="a1368-145">Name</span></span> | <span data-ttu-id="a1368-146">*安装 .NET for Apache Spark 交互式笔记本体验*</span><span class="sxs-lookup"><span data-stu-id="a1368-146">*Install .NET for Apache Spark Interactive Notebook Experience*</span></span> |
+   | <span data-ttu-id="a1368-147">Bash 脚本 URI</span><span class="sxs-lookup"><span data-stu-id="a1368-147">Bash script URI</span></span> | <span data-ttu-id="a1368-148">向其上传 `install-interactive-notebook.sh` 的 URI。</span><span class="sxs-lookup"><span data-stu-id="a1368-148">The URI to which you uploaded `install-interactive-notebook.sh`.</span></span> |
+   | <span data-ttu-id="a1368-149">节点类型</span><span class="sxs-lookup"><span data-stu-id="a1368-149">Node type(s)</span></span>| <span data-ttu-id="a1368-150">头节点和工作节点</span><span class="sxs-lookup"><span data-stu-id="a1368-150">Head and Worker</span></span> |
+   | <span data-ttu-id="a1368-151">参数</span><span class="sxs-lookup"><span data-stu-id="a1368-151">Parameters</span></span> | <span data-ttu-id="a1368-152">.NET for Apache Spark 版本。</span><span class="sxs-lookup"><span data-stu-id="a1368-152">.NET for Apache Spark version.</span></span> <span data-ttu-id="a1368-153">可以查看 [.NET for Apache Spark 版本](https://github.com/dotnet/spark/releases)。</span><span class="sxs-lookup"><span data-stu-id="a1368-153">You can check [.NET for Apache Spark releases](https://github.com/dotnet/spark/releases).</span></span> <span data-ttu-id="a1368-154">例如，如果要安装 Sparkdotnet 版本 0.6.0，则为 `0.6.0`。</span><span class="sxs-lookup"><span data-stu-id="a1368-154">For example, if you want to install Sparkdotnet version 0.6.0 then it would be `0.6.0`.</span></span>
 
-   <span data-ttu-id="5bf52-155">当脚本操作状态旁边出现绿色勾选标记时，转到下一步。</span><span class="sxs-lookup"><span data-stu-id="5bf52-155">Move to the next step when green checkmarks appear next to the status of the script action.</span></span>
+   <span data-ttu-id="a1368-155">当脚本操作状态旁边出现绿色勾选标记时，转到下一步。</span><span class="sxs-lookup"><span data-stu-id="a1368-155">Move to the next step when green checkmarks appear next to the status of the script action.</span></span>
 
-### <a name="start-the-livy-server"></a><span data-ttu-id="5bf52-156">启动 Livy 服务器</span><span class="sxs-lookup"><span data-stu-id="5bf52-156">Start the Livy server</span></span>
+### <a name="start-the-livy-server"></a><span data-ttu-id="a1368-156">启动 Livy 服务器</span><span class="sxs-lookup"><span data-stu-id="a1368-156">Start the Livy server</span></span>
 
-<span data-ttu-id="5bf52-157">按照[停止 Livy 服务器](#stop-the-livy-server)部分中的说明操作，来为主机 hn0 和 hn1 启动（而非停止）用于 Spark2 的 Livy 服务器。    </span><span class="sxs-lookup"><span data-stu-id="5bf52-157">Follow the instructions in the [Stop Livy server](#stop-the-livy-server) section to **Start** (rather than **Stop**) the Livy for Spark2 Server for hosts **hn0** and **hn1**.</span></span>
+<span data-ttu-id="a1368-157">按照[停止 Livy 服务器](#stop-the-livy-server)部分中的说明操作，来为主机 hn0 和 hn1 启动（而非停止）用于 Spark2 的 Livy 服务器。    </span><span class="sxs-lookup"><span data-stu-id="a1368-157">Follow the instructions in the [Stop Livy server](#stop-the-livy-server) section to **Start** (rather than **Stop**) the Livy for Spark2 Server for hosts **hn0** and **hn1**.</span></span>
 
-### <a name="set-up-spark-default-configurations"></a><span data-ttu-id="5bf52-158">设置 Spark 默认配置</span><span class="sxs-lookup"><span data-stu-id="5bf52-158">Set up Spark default configurations</span></span>
+### <a name="set-up-spark-default-configurations"></a><span data-ttu-id="a1368-158">设置 Spark 默认配置</span><span class="sxs-lookup"><span data-stu-id="a1368-158">Set up Spark default configurations</span></span>
 
-1. <span data-ttu-id="5bf52-159">从门户选择“概览”，然后选择“Ambari 主页”。  </span><span class="sxs-lookup"><span data-stu-id="5bf52-159">From the portal, select **Overview**, and then select **Ambari home**.</span></span> <span data-ttu-id="5bf52-160">出现提示时，请输入群集的群集登录凭据。</span><span class="sxs-lookup"><span data-stu-id="5bf52-160">If prompted, enter the cluster login credentials for the cluster.</span></span>
+1. <span data-ttu-id="a1368-159">从门户选择“概览”，然后选择“Ambari 主页”。  </span><span class="sxs-lookup"><span data-stu-id="a1368-159">From the portal, select **Overview**, and then select **Ambari home**.</span></span> <span data-ttu-id="a1368-160">出现提示时，请输入群集的群集登录凭据。</span><span class="sxs-lookup"><span data-stu-id="a1368-160">If prompted, enter the cluster login credentials for the cluster.</span></span>
 
-2. <span data-ttu-id="5bf52-161">依次选择“Spark2”和“配置”   。</span><span class="sxs-lookup"><span data-stu-id="5bf52-161">Select **Spark2** and **CONFIGS**.</span></span> <span data-ttu-id="5bf52-162">然后选择“自定义 spark2 默认值”  。</span><span class="sxs-lookup"><span data-stu-id="5bf52-162">Then, select **Custom spark2-defaults**.</span></span>
+2. <span data-ttu-id="a1368-161">依次选择“Spark2”和“配置”   。</span><span class="sxs-lookup"><span data-stu-id="a1368-161">Select **Spark2** and **CONFIGS**.</span></span> <span data-ttu-id="a1368-162">然后选择“自定义 spark2 默认值”  。</span><span class="sxs-lookup"><span data-stu-id="a1368-162">Then, select **Custom spark2-defaults**.</span></span>
 
    ![设置配置](./media/hdinsight-notebook-installation/spark-configs.png)
 
-3. <span data-ttu-id="5bf52-164">选择“添加属性...”，添加 Spark 默认设置。 </span><span class="sxs-lookup"><span data-stu-id="5bf52-164">Select **Add Property...** to add Spark default settings.</span></span>
+3. <span data-ttu-id="a1368-164">选择“添加属性...”，添加 Spark 默认设置。 </span><span class="sxs-lookup"><span data-stu-id="a1368-164">Select **Add Property...** to add Spark default settings.</span></span>
 
    ![添加属性](./media/hdinsight-notebook-installation/add-property.png)
 
-   <span data-ttu-id="5bf52-166">有三种独立的属性。</span><span class="sxs-lookup"><span data-stu-id="5bf52-166">There are three individual properties.</span></span> <span data-ttu-id="5bf52-167">在单一属性添加模式中使用文本属性类型一次添加一个属性。 </span><span class="sxs-lookup"><span data-stu-id="5bf52-167">Add them one at a time using the **TEXT** property type in Single property add mode.</span></span> <span data-ttu-id="5bf52-168">检查任何键/值前后是否没有任何多余的空格。</span><span class="sxs-lookup"><span data-stu-id="5bf52-168">Check that you don't have any extra spaces before or after any of the keys/values.</span></span>
+   <span data-ttu-id="a1368-166">有三种独立的属性。</span><span class="sxs-lookup"><span data-stu-id="a1368-166">There are three individual properties.</span></span> <span data-ttu-id="a1368-167">在单一属性添加模式中使用文本属性类型一次添加一个属性。 </span><span class="sxs-lookup"><span data-stu-id="a1368-167">Add them one at a time using the **TEXT** property type in Single property add mode.</span></span> <span data-ttu-id="a1368-168">检查任何键/值前后是否没有任何多余的空格。</span><span class="sxs-lookup"><span data-stu-id="a1368-168">Check that you don't have any extra spaces before or after any of the keys/values.</span></span>
 
-   * <span data-ttu-id="5bf52-169">**属性 1**</span><span class="sxs-lookup"><span data-stu-id="5bf52-169">**Property 1**</span></span>
-       * <span data-ttu-id="5bf52-170">键：&ensp;&ensp;`spark.dotnet.shell.command`</span><span class="sxs-lookup"><span data-stu-id="5bf52-170">Key:&ensp;&ensp;`spark.dotnet.shell.command`</span></span>
-       * <span data-ttu-id="5bf52-171">值：`/usr/share/dotnet-tools/dotnet-try,kernel-server,--default-kernel,csharp`</span><span class="sxs-lookup"><span data-stu-id="5bf52-171">Value: `/usr/share/dotnet-tools/dotnet-try,kernel-server,--default-kernel,csharp`</span></span>
+   * <span data-ttu-id="a1368-169">**属性 1**</span><span class="sxs-lookup"><span data-stu-id="a1368-169">**Property 1**</span></span>
+       * <span data-ttu-id="a1368-170">键：&ensp;&ensp;`spark.dotnet.shell.command`</span><span class="sxs-lookup"><span data-stu-id="a1368-170">Key:&ensp;&ensp;`spark.dotnet.shell.command`</span></span>
+       * <span data-ttu-id="a1368-171">值：`/usr/share/dotnet-tools/dotnet-try,kernel-server,--default-kernel,csharp`</span><span class="sxs-lookup"><span data-stu-id="a1368-171">Value: `/usr/share/dotnet-tools/dotnet-try,kernel-server,--default-kernel,csharp`</span></span>
 
-   * <span data-ttu-id="5bf52-172">**属性 2** 使用包含到前文中脚本操作的 .NET for Apache Spark 版本。</span><span class="sxs-lookup"><span data-stu-id="5bf52-172">**Property 2** Use the version of .NET for Apache Spark which you had included in the previous script action.</span></span>
-       * <span data-ttu-id="5bf52-173">键：&ensp;&ensp;`spark.dotnet.packages`</span><span class="sxs-lookup"><span data-stu-id="5bf52-173">Key:&ensp;&ensp;`spark.dotnet.packages`</span></span>
-       * <span data-ttu-id="5bf52-174">值：`["nuget: Microsoft.Spark, 0.6.0", "nuget: Microsoft.Spark.Extensions.Delta, 0.6.0"]`</span><span class="sxs-lookup"><span data-stu-id="5bf52-174">Value: `["nuget: Microsoft.Spark, 0.6.0", "nuget: Microsoft.Spark.Extensions.Delta, 0.6.0"]`</span></span>
+   * <span data-ttu-id="a1368-172">**属性 2** 使用包含到前文中脚本操作的 .NET for Apache Spark 版本。</span><span class="sxs-lookup"><span data-stu-id="a1368-172">**Property 2** Use the version of .NET for Apache Spark which you had included in the previous script action.</span></span>
+       * <span data-ttu-id="a1368-173">键：&ensp;&ensp;`spark.dotnet.packages`</span><span class="sxs-lookup"><span data-stu-id="a1368-173">Key:&ensp;&ensp;`spark.dotnet.packages`</span></span>
+       * <span data-ttu-id="a1368-174">值：`["nuget: Microsoft.Spark, 0.6.0", "nuget: Microsoft.Spark.Extensions.Delta, 0.6.0"]`</span><span class="sxs-lookup"><span data-stu-id="a1368-174">Value: `["nuget: Microsoft.Spark, 0.6.0", "nuget: Microsoft.Spark.Extensions.Delta, 0.6.0"]`</span></span>
 
-   * <span data-ttu-id="5bf52-175">**属性 3**</span><span class="sxs-lookup"><span data-stu-id="5bf52-175">**Property 3**</span></span>
-       * <span data-ttu-id="5bf52-176">键：&ensp;&ensp;`spark.dotnet.interpreter`</span><span class="sxs-lookup"><span data-stu-id="5bf52-176">Key:&ensp;&ensp;`spark.dotnet.interpreter`</span></span>
-       * <span data-ttu-id="5bf52-177">值：`try`</span><span class="sxs-lookup"><span data-stu-id="5bf52-177">Value: `try`</span></span>
+   * <span data-ttu-id="a1368-175">**属性 3**</span><span class="sxs-lookup"><span data-stu-id="a1368-175">**Property 3**</span></span>
+       * <span data-ttu-id="a1368-176">键：&ensp;&ensp;`spark.dotnet.interpreter`</span><span class="sxs-lookup"><span data-stu-id="a1368-176">Key:&ensp;&ensp;`spark.dotnet.interpreter`</span></span>
+       * <span data-ttu-id="a1368-177">值：`try`</span><span class="sxs-lookup"><span data-stu-id="a1368-177">Value: `try`</span></span>
 
-   <span data-ttu-id="5bf52-178">例如，下图捕获了用于添加属性 1 的设置：</span><span class="sxs-lookup"><span data-stu-id="5bf52-178">For example, the following image captures the setting for adding property 1:</span></span>
+   <span data-ttu-id="a1368-178">例如，下图捕获了用于添加属性 1 的设置：</span><span class="sxs-lookup"><span data-stu-id="a1368-178">For example, the following image captures the setting for adding property 1:</span></span>
 
    ![设置配置](./media/hdinsight-notebook-installation/add-sparkconfig.png)
 
-   <span data-ttu-id="5bf52-180">添加这三个属性后，选择“保存”。 </span><span class="sxs-lookup"><span data-stu-id="5bf52-180">After adding the three properties, select **SAVE**.</span></span> <span data-ttu-id="5bf52-181">若看到配置建议警告屏幕，选择“仍然继续”  。</span><span class="sxs-lookup"><span data-stu-id="5bf52-181">If you see a warning screen of config recommendations, select **PROCEED ANYWAY**.</span></span>
+   <span data-ttu-id="a1368-180">添加这三个属性后，选择“保存”。 </span><span class="sxs-lookup"><span data-stu-id="a1368-180">After adding the three properties, select **SAVE**.</span></span> <span data-ttu-id="a1368-181">若看到配置建议警告屏幕，选择“仍然继续”  。</span><span class="sxs-lookup"><span data-stu-id="a1368-181">If you see a warning screen of config recommendations, select **PROCEED ANYWAY**.</span></span>
 
-4. <span data-ttu-id="5bf52-182">重启受影响的组件。</span><span class="sxs-lookup"><span data-stu-id="5bf52-182">Restart affected components.</span></span>
+4. <span data-ttu-id="a1368-182">重启受影响的组件。</span><span class="sxs-lookup"><span data-stu-id="a1368-182">Restart affected components.</span></span>
 
-   <span data-ttu-id="5bf52-183">添加新属性后，需要重启受更改影响的组件。</span><span class="sxs-lookup"><span data-stu-id="5bf52-183">After adding the new properties, you need to restart components that were affected by the changes.</span></span> <span data-ttu-id="5bf52-184">在顶部选择“重启”，然后从下拉列表选择“重启所有受影响的组件”。  </span><span class="sxs-lookup"><span data-stu-id="5bf52-184">At the top, select **RESTART**, and then **Restart All Affected** from the drop-down.</span></span>
+   <span data-ttu-id="a1368-183">添加新属性后，需要重启受更改影响的组件。</span><span class="sxs-lookup"><span data-stu-id="a1368-183">After adding the new properties, you need to restart components that were affected by the changes.</span></span> <span data-ttu-id="a1368-184">在顶部选择“重启”，然后从下拉列表选择“重启所有受影响的组件”。  </span><span class="sxs-lookup"><span data-stu-id="a1368-184">At the top, select **RESTART**, and then **Restart All Affected** from the drop-down.</span></span>
 
    ![设置配置](./media/hdinsight-notebook-installation/restart-affected.png)
 
-   <span data-ttu-id="5bf52-186">出现提示时，选择“确认全部重启”以继续，然后单击“确定”完成操作。  </span><span class="sxs-lookup"><span data-stu-id="5bf52-186">When prompted, select **CONFIRM RESTART ALL** to continue, then click **OK** to finish.</span></span>
+   <span data-ttu-id="a1368-186">出现提示时，选择“确认全部重启”以继续，然后单击“确定”完成操作。  </span><span class="sxs-lookup"><span data-stu-id="a1368-186">When prompted, select **CONFIRM RESTART ALL** to continue, then click **OK** to finish.</span></span>
 
-## <a name="submit-jobs-through-a-jupyter-notebook"></a><span data-ttu-id="5bf52-187">通过 Jupyter Notebook 提交作业</span><span class="sxs-lookup"><span data-stu-id="5bf52-187">Submit jobs through a Jupyter notebook</span></span>
+## <a name="submit-jobs-through-a-jupyter-notebook"></a><span data-ttu-id="a1368-187">通过 Jupyter Notebook 提交作业</span><span class="sxs-lookup"><span data-stu-id="a1368-187">Submit jobs through a Jupyter notebook</span></span>
 
-<span data-ttu-id="5bf52-188">完成前面的步骤后，现在可以通过 Jupyter Notebook 提交 .NET for Apache Spark 作业。</span><span class="sxs-lookup"><span data-stu-id="5bf52-188">After finishing the previous steps, you can now submit your .NET for Apache Spark jobs through Jupyter notebooks.</span></span>
+<span data-ttu-id="a1368-188">完成前面的步骤后，现在可以通过 Jupyter Notebook 提交 .NET for Apache Spark 作业。</span><span class="sxs-lookup"><span data-stu-id="a1368-188">After finishing the previous steps, you can now submit your .NET for Apache Spark jobs through Jupyter notebooks.</span></span>
 
-1. <span data-ttu-id="5bf52-189">新建一个 .NET for Apache Spark 笔记本。</span><span class="sxs-lookup"><span data-stu-id="5bf52-189">Create a new .NET for Apache Spark notebook.</span></span> <span data-ttu-id="5bf52-190">从 Azure 门户的 HDI 群集启动 Jupyter Notebook。</span><span class="sxs-lookup"><span data-stu-id="5bf52-190">Launch a Jupyter notebook from your HDI cluster in the Azure portal.</span></span>
+1. <span data-ttu-id="a1368-189">新建一个 .NET for Apache Spark 笔记本。</span><span class="sxs-lookup"><span data-stu-id="a1368-189">Create a new .NET for Apache Spark notebook.</span></span> <span data-ttu-id="a1368-190">从 Azure 门户的 HDI 群集启动 Jupyter Notebook。</span><span class="sxs-lookup"><span data-stu-id="a1368-190">Launch a Jupyter notebook from your HDI cluster in the Azure portal.</span></span>
 
    ![启动 Jupyter Notebook](./media/hdinsight-notebook-installation/launch-notebook.png)
 
-   <span data-ttu-id="5bf52-192">然后选择“新建” > “.NET Spark (C#)”，创建一个笔记本。  </span><span class="sxs-lookup"><span data-stu-id="5bf52-192">Then, select **New** > **.NET Spark (C#)** to create a notebook.</span></span>
+   <span data-ttu-id="a1368-192">然后选择“新建” > “.NET Spark (C#)”，创建一个笔记本。  </span><span class="sxs-lookup"><span data-stu-id="a1368-192">Then, select **New** > **.NET Spark (C#)** to create a notebook.</span></span>
 
    ![Jupyter 笔记本](./media/hdinsight-notebook-installation/create-sparkdotnet-notebook.png)
 
-2. <span data-ttu-id="5bf52-194">使用 .NET for Apache Spark 提交作业。</span><span class="sxs-lookup"><span data-stu-id="5bf52-194">Submit jobs using .NET for Apache Spark.</span></span>
+2. <span data-ttu-id="a1368-194">使用 .NET for Apache Spark 提交作业。</span><span class="sxs-lookup"><span data-stu-id="a1368-194">Submit jobs using .NET for Apache Spark.</span></span>
 
-   <span data-ttu-id="5bf52-195">使用以下代码片段创建 DataFrame：</span><span class="sxs-lookup"><span data-stu-id="5bf52-195">Use the following code snippet to create a DataFrame:</span></span>
+   <span data-ttu-id="a1368-195">使用以下代码片段创建 DataFrame：</span><span class="sxs-lookup"><span data-stu-id="a1368-195">Use the following code snippet to create a DataFrame:</span></span>
 
    ```csharp
    var df = spark.Range(0,5);
@@ -146,7 +144,7 @@ ms.locfileid: "90557198"
 
    ![提交 Spark 作业](./media/hdinsight-notebook-installation/create-df.png)
 
-   <span data-ttu-id="5bf52-197">使用下面的代码片段注册用户定义的函数 (UDF)，并将此 UDF 与 DataFrame 一起使用：</span><span class="sxs-lookup"><span data-stu-id="5bf52-197">Use the following code snippet to register a user-defined function (UDF) and use the UDF with DataFrames:</span></span>
+   <span data-ttu-id="a1368-197">使用下面的代码片段注册用户定义的函数 (UDF)，并将此 UDF 与 DataFrame 一起使用：</span><span class="sxs-lookup"><span data-stu-id="a1368-197">Use the following code snippet to register a user-defined function (UDF) and use the UDF with DataFrames:</span></span>
 
    ```csharp
    var myawesomeudf = Udf<int, string>((id) => $"hello {id}");
@@ -155,7 +153,7 @@ ms.locfileid: "90557198"
 
    ![提交 Spark 作业](./media/hdinsight-notebook-installation/run-udf.png)
 
-## <a name="next-steps"></a><span data-ttu-id="5bf52-199">后续步骤</span><span class="sxs-lookup"><span data-stu-id="5bf52-199">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="a1368-199">后续步骤</span><span class="sxs-lookup"><span data-stu-id="a1368-199">Next steps</span></span>
 
-* [<span data-ttu-id="5bf52-200">将 .NET for Apache Spark 应用程序部署到 Azure HDInsight</span><span class="sxs-lookup"><span data-stu-id="5bf52-200">Deploy a .NET for Apache Spark application to Azure HDInsight</span></span>](../tutorials/hdinsight-deployment.md)
-* [<span data-ttu-id="5bf52-201">HDInsight 文档</span><span class="sxs-lookup"><span data-stu-id="5bf52-201">HDInsight Documentation</span></span>](/azure/hdinsight/)
+* [<span data-ttu-id="a1368-200">将 .NET for Apache Spark 应用程序部署到 Azure HDInsight</span><span class="sxs-lookup"><span data-stu-id="a1368-200">Deploy a .NET for Apache Spark application to Azure HDInsight</span></span>](../tutorials/hdinsight-deployment.md)
+* [<span data-ttu-id="a1368-201">HDInsight 文档</span><span class="sxs-lookup"><span data-stu-id="a1368-201">HDInsight Documentation</span></span>](/azure/hdinsight/)
