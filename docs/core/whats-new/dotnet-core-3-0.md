@@ -6,12 +6,12 @@ dev_langs:
 author: adegeo
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 60b511adecf37855de91f45245fc55911ba281dc
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 8ba64a6e3bee4a5d27a07ab4ad4ef3a3f0749778
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654766"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804627"
 ---
 # <a name="whats-new-in-net-core-30"></a>.NET Core 3.0 的新增功能
 
@@ -307,7 +307,7 @@ dotnet new winforms
 
 Visual Studio 2019 添加了适用于 .NET Core 3.0 Windows 窗体和 WPF 的“新建项目”模板。
 
-有关如何移植现有 .NET Framework 应用程序的详细信息，请参阅[移植 WPF 项目](../../desktop-wpf/migration/convert-project-from-net-framework.md)和[移植 Windows 窗体项目](../porting/winforms.md)。
+有关如何移植现有 .NET Framework 应用程序的详细信息，请参阅[移植 WPF 项目](/dotnet/desktop/wpf/migration/convert-project-from-net-framework)和[移植 Windows 窗体项目](../porting/winforms.md)。
 
 #### <a name="winforms-high-dpi"></a>WinForms 高 DPI
 

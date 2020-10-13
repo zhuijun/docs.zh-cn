@@ -2,12 +2,12 @@
 title: 测试 ASP.NET Core 服务和 Web 应用
 description: 适用于容器化 .NET 应用程序的 .NET 微服务体系结构 | 探索用于在容器中测试 ASP.NET Core 服务和 Web 应用的体系结构。
 ms.date: 08/07/2020
-ms.openlocfilehash: f76f502adf8321c9015cc6cfd0e12214a7576b5c
-ms.sourcegitcommit: d2db216e46323f73b32ae312c9e4135258e5d68e
+ms.openlocfilehash: af1187fb1e2afbb9fa953db5a280c9cc317ab6a8
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "90872453"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804765"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>测试 ASP.NET Core 服务和 Web 应用
 
@@ -120,7 +120,7 @@ public class PrimeWebDefaultRequestShould
     <https://github.com/moq/moq>
 
 - **NUnit**。 官方网站。 \
-    <https://www.nunit.org/>
+    <https://nunit.org/>
 
 ### <a name="implementing-service-tests-on-a-multi-container-application"></a>在多容器应用程序上实现服务测试
 

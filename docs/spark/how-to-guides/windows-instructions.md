@@ -1,21 +1,19 @@
 ---
 title: 在 Windows 上生成 .NET for Apache Spark 应用程序
 description: 了解如何在 Windows 上生成 .NET for Apache Spark 应用程序。
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: d355380e92235e799d366dca02eaf8450f563f33
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: db073e6b82e63b3f0b98c9fe66a5b4d9be1356ba
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609273"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955520"
 ---
 # <a name="learn-how-to-build-your-net-for-apache-spark-application-on-windows"></a>了解如何在 Windows 上生成 .NET for Apache Spark 应用程序
 
 本文介绍如何在 Windows 上生成 .NET for Apache Spark 应用程序。
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>先决条件
 

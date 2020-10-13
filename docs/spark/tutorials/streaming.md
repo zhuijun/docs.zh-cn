@@ -3,14 +3,14 @@ title: 使用 .NET for Apache Spark 进行结构化流式处理的教程
 description: 在本教程中，了解如何使用 .NET for Apache Spark 进行 Spark 结构化流式处理。
 author: mamccrea
 ms.author: mamccrea
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: 5420fe081db1704d7af647e8c88826c1bcf614d9
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 47c716db931dc912b80844fe69283b12d030c238
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617838"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955572"
 ---
 # <a name="tutorial-structured-streaming-with-net-for-apache-spark"></a>教程：使用 .NET for Apache Spark 进行结构化流式处理
 
@@ -23,8 +23,6 @@ ms.locfileid: "85617838"
 > * 创建和运行 .NET for Apache Spark 应用程序
 > * 使用 netcat 创建数据流
 > * 使用用户定义的函数和 SparkSQL 分析流式处理数据
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>先决条件
 

@@ -1,21 +1,19 @@
 ---
 title: 将 .NET for Apache Spark 作业提交到 Azure HDInsight
 description: 了解如何使用 spark-submit 和 Apache Livy 将 .NET for Apache Spark 作业提交到 Azure HDInsight。
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 560822783b57b2419595cb15efa097591db8d600
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: cb99cd8028d504924d2dd69910efed0065d0a2e2
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557159"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91954914"
 ---
 # <a name="submit-a-net-for-apache-spark-job-to-azure-hdinsight"></a>将 .NET for Apache Spark 作业提交到 Azure HDInsight
 
 可通过两种方法将 .NET for Apache Spark 作业部署到 HDInsight：`spark-submit` 和 Apache Livy。
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="deploy-using-spark-submit"></a>使用 spark-submit 进行部署
 

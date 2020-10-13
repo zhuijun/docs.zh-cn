@@ -3,12 +3,12 @@ title: 类和对象 - C# 简介教程
 description: 创建首个 C# 程序，并探索面向对象的概念
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: 57394ecb02745d69e22f4d9f1dbd4213f290cd5a
-ms.sourcegitcommit: 97405ed212f69b0a32faa66a5d5fae7e76628b68
+ms.openlocfilehash: 90abe3836292029ce7ebf26ae9be3253c4eface1
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/01/2020
-ms.locfileid: "91609045"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756047"
 ---
 # <a name="explore-object-oriented-programming-with-classes-and-objects"></a>使用类和对象探索面向对象的编程
 
@@ -210,7 +210,7 @@ Console.WriteLine(account.GetAccountHistory());
 
 ## <a name="next-steps"></a>后续步骤
 
-如果遇到问题，可以在 [GitHub 存储库](https://github.com/dotnet/docs/tree/master/samples/snippets/csharp/classes-quickstart/)中查看本教程的源代码。
+如果遇到问题，可以在 [GitHub 存储库](https://github.com/dotnet/docs/tree/master/docs/csharp/tutorials/intro-to-csharp/snippets/introduction-to-classes)中查看本教程的源代码。
 
 可继续学习[面向对象的编程](object-oriented-programming.md)教程。
 

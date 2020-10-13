@@ -13,12 +13,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 20c1d9786eaa184088500cf1b37d33afc421b5e7
-ms.sourcegitcommit: d579fb5e4b46745fd0f1f8874c94c6469ce58604
+ms.openlocfilehash: d8fae870bb3a6fdda735a028dc1da20213a68a31
+ms.sourcegitcommit: a8a205034eeffc7c3e1bdd6f506a75b0f7099ebf
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/30/2020
-ms.locfileid: "89142019"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91756034"
 ---
 # <a name="switch-c-reference"></a>switch（C# 参考）
 
@@ -87,7 +87,7 @@ switch (caseSwitch)
 
 每个 case 标签指定一个模式与匹配表达式（前面示例中的 `caseSwitch` 变量）进行比较。 如果它们匹配，则将控件传输到包含**首次**匹配 case 标签的开关部分。 如果 case 标签模式与匹配表达式不匹配，控制权会转让给带 `default` case 标签的部分（若有）。 如果没有 `default` case，将不会执行任何 switch 部分中的语句，并且会将控制权转让到 `switch` 语句之外。
 
-有关 `switch` 语句和模式匹配的信息，请参阅使用 `switch` 语句的 [模式匹配](#pattern-matching with-the-switch-statement)部分。
+有关 `switch` 语句和模式匹配的信息，请参阅使用 `switch` 语句的 [模式匹配](#pattern-matching-with-the-switch-statement)部分。
 
 因为 C# 6 仅支持常量模式且禁止重复常量值，所以 case 标签定义了互斥值，而且只能有一个模式与匹配表达式匹配。 因此，`case` 语句显示的顺序并不重要。
 

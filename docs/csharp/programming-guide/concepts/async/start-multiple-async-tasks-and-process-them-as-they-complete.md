@@ -3,12 +3,12 @@ title: 在异步任务完成时对其进行处理
 description: 此示例演示如何使用 C# 中的 Task.WhenAny 启动多个任务并在完成时处理其结果，而不是按照它们的启动顺序进行处理。
 ms.date: 08/19/2020
 ms.assetid: 25331850-35a7-43b3-ab76-3908e4346b9d
-ms.openlocfilehash: 520953eaf851dc82440e39b348aa4b246255e126
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 860e94a9c3973ce56e7321741a1136f752aa3d18
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557302"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805234"
 ---
 # <a name="process-asynchronous-tasks-as-they-complete-c"></a>在异步任务完成时对其进行处理 (C#)
 
@@ -77,7 +77,7 @@ static readonly IEnumerable<string> s_urlList = new string[]
 static Task Main() => SumPageSizesAsync();
 ```
 
-目前将已更新的 `Main` 方法视为[异步 main 方法](../../../whats-new/csharp-7-1.md#async-main)，这允许将异步入口点引入可执行文件中。 它表示对 `SumPageSizesAsync` 的调用。
+目前将已更新的 `Main` 方法视为[异步 main 方法](../../../whats-new/csharp-7.md#async-main)，这允许将异步入口点引入可执行文件中。 它表示对 `SumPageSizesAsync` 的调用。
 
 ## <a name="create-the-asynchronous-sum-page-sizes-method"></a>创建异步总和页面大小方法
 

@@ -1,21 +1,19 @@
 ---
 title: 在 Windows 上部署 .NET for Apache Spark 应用程序
 description: 了解如何在 Windows 上部署 .NET for Apache Spark 应用程序。
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 249b4bccbf1378d8ef8c824f39151c33fb9f875a
-ms.sourcegitcommit: 27a15a55019f6b5f2733961738babe94aec0def3
+ms.openlocfilehash: 43531e6b2f9a79658f89b804dfa2bb97d6e9645b
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90557146"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91954979"
 ---
 # <a name="debug-a-net-for-apache-spark-application"></a>部署 .NET for Apache Spark 应用程序
 
 此操作说明介绍在 Windows 上部署 .NET for Apache Spark 应用程序的步骤。
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="debug-your-application"></a>调试应用程序
 

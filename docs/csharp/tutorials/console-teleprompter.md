@@ -4,12 +4,12 @@ description: 此教程将介绍 .NET Core 和 C# 语言的许多功能。
 ms.date: 03/06/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: dbe64fe0a01ddab9e7a3ad0a9118b3fe59fba8aa
-ms.sourcegitcommit: c4a15c6c4ecbb8a46ad4e67d9b3ab9b8b031d849
+ms.openlocfilehash: 4c32b08c3e7eeaedce687ea5bc572e6a7bee0d3e
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88656978"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804889"
 ---
 # <a name="console-app"></a>控制台应用
 
@@ -187,7 +187,7 @@ ShowTeleprompter().Wait();
 此时，在 `Main` 中，代码确实是同步等待。 应尽可能使用 `await` 运算符，而不是采用同步等待的方式。 不过，在控制台应用程序的 `Main` 方法中，不能使用 `await` 运算符。 这会导致应用程序在所有任务完成前退出。
 
 > [!NOTE]
-> 如果使用 C# 7.1 或更高版本，则可以使用 [`async` `Main` 方法](../whats-new/csharp-7-1.md#async-main)创建控制台应用程序。
+> 如果使用 C# 7.1 或更高版本，则可以使用 [`async` `Main` 方法](../whats-new/csharp-7.md#async-main)创建控制台应用程序。
 
 接下来，需要编写第二个异步方法，从控制台读取键，并监视“<”（小于）、“>”（大于）和“X”或“x”键。 下面是为此任务添加的方法：
 

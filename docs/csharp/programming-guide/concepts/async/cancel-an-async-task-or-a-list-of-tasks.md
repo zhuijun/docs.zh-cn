@@ -4,12 +4,12 @@ description: 了解如何使用取消令牌向任务列表发出取消请求的�
 ms.date: 08/19/2020
 ms.topic: tutorial
 ms.assetid: eec32dbb-70ea-4c88-bd27-fa2e34546914
-ms.openlocfilehash: 84cd1bb413d20b6c13be8415c13c72b57873b1cf
-ms.sourcegitcommit: 4d45bda8cd9558ea8af4be591e3d5a29360c1ece
+ms.openlocfilehash: 79c9db53674182489c89d657786bf39e8bb44b21
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91654700"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805247"
 ---
 # <a name="cancel-a-list-of-tasks-c"></a>取消任务列表 (C#)
 
@@ -115,7 +115,7 @@ static async Task Main()
 }
 ```
 
-目前将已更新的 `Main` 方法视为[异步 main 方法](../../../whats-new/csharp-7-1.md#async-main)，这允许将异步入口点引入可执行文件中。 将几条说明性消息写入控制台，然后声明名为 `cancelTask` 的 <xref:System.Threading.Tasks.Task> 实例，这将读取控制台密钥笔画。 如果按 <kbd>Enter</kbd>，则会调用 <xref:System.Threading.CancellationTokenSource.Cancel?displayProperty=nameWithType>。 这将发出取消信号。 下一步，从 `SumPageSizesAsync` 方法分配 `sumPageSizesTask` 变量。 然后，将这两个任务传递到 <xref:System.Threading.Tasks.Task.WhenAny(System.Threading.Tasks.Task[])?displayProperty=nameWithType>，这会在完成两个任务中的任意一个时继续。
+目前将已更新的 `Main` 方法视为[异步 main 方法](../../../whats-new/csharp-7.md#async-main)，这允许将异步入口点引入可执行文件中。 将几条说明性消息写入控制台，然后声明名为 `cancelTask` 的 <xref:System.Threading.Tasks.Task> 实例，这将读取控制台密钥笔画。 如果按 <kbd>Enter</kbd>，则会调用 <xref:System.Threading.CancellationTokenSource.Cancel?displayProperty=nameWithType>。 这将发出取消信号。 下一步，从 `SumPageSizesAsync` 方法分配 `sumPageSizesTask` 变量。 然后，将这两个任务传递到 <xref:System.Threading.Tasks.Task.WhenAny(System.Threading.Tasks.Task[])?displayProperty=nameWithType>，这会在完成两个任务中的任意一个时继续。
 
 ## <a name="create-the-asynchronous-sum-page-sizes-method"></a>创建异步总和页面大小方法
 

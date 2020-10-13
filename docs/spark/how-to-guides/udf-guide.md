@@ -1,21 +1,19 @@
 ---
 title: 在 .NET for Apache Spark 中创建用户定义的函数 (UDF)
 description: 了解如何在 .NET for Apache Spark 应用程序中实现用户定义的函数 (UDF)。
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: conceptual
 ms.custom: mvc,how-to
-ms.openlocfilehash: 97afda8ed17d3719c534d72ad3ad026745a70922
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 769bcf0a912d27e191dad82138648d1aefb3c3b6
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85620919"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91955031"
 ---
 # <a name="create-user-defined-functions-udf-in-net-for-apache-spark"></a>在 .NET for Apache Spark 中创建用户定义的函数 (UDF)
 
 本文介绍如何在 .NET for Apache Spark 中使用用户定义的函数 (UDF)。 [UDF](https://spark.apache.org/docs/latest/api/java/org/apache/spark/sql/expressions/UserDefinedFunction.html) 是一项 Spark 功能，该功能允许使用自定义函数扩展系统的内置功能。 UDF 根据 UDF 中定义的逻辑转换表中单行的值，使每行生成一个相应的输出值。
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="define-udfs"></a>定义 UDF
 

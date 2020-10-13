@@ -2,12 +2,12 @@
 title: ML.NET 指标
 description: 了解用于评估 ML.NET 模型性能的指标
 ms.date: 12/17/2019
-ms.openlocfilehash: 4aca8dbdd9f137509ab9167ecc77f9ca6994e415
-ms.sourcegitcommit: aa6d8a90a4f5d8fe0f6e967980b8c98433f05a44
+ms.openlocfilehash: 046e0a3feea2da702dfef5ca9ce4f498fce5fb26
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "90679503"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91804817"
 ---
 # <a name="evaluate-your-mlnet-model-with-metrics"></a>使用指标评估 ML.NET 模型
 
@@ -23,7 +23,7 @@ ms.locfileid: "90679503"
 |-----------|-----------------------|-----------|
 | **准确性** |  [准确性](https://en.wikipedia.org/wiki/Accuracy_and_precision#In_binary_classification)指正确预测与测试数据集的比例。 它是正确预测次数与输入示例总数的比率。 如果属于每个类的示例数量相似，此方法会很有效。| **越接近 1.00 越好**。 但刚好 1.00 表示存在问题（通常包括：标签/目标泄漏、过度拟合或使用训练数据进行测试）。 当测试数据处于非平衡状态（大部分实例属于其中一个类）、数据集较小，或分数趋近 0.00 或 1.00 时，准确性并不能真实反应分类器的效果，此时需要检查其他指标。 |
 | **AUC** |    [aucROC](https://en.wikipedia.org/wiki/Receiver_operating_characteristic) 或曲线下面积** 通过扫描真正率和假正率来测量曲线下面积。  |   **越接近 1.00 越好**。 它应大于 0.50 才能接受模型。 AUC 为 0.50 或更低的模型毫无意义。 |
-| **AUCPR** | [aucPR](https://www.coursera.org/lecture/ml-classification/precision-recall-curve-rENu8) 或*查准率-查全率曲线的曲线下面积*：在类不均衡的情况下（高度偏斜的数据集），是成功预测的有用度量值。 |  **越接近 1.00 越好**。 接近 1.00 的高分表明分类器返回准确的结果（高查准率），以及返回大部分正结果（高查全率）。 |
+| **AUCPR** | aucPR 或*查准率-查全率曲线的曲线下面积*：在类不均衡的情况下（高度偏斜的数据集），是成功预测的有用度量值。 |  **越接近 1.00 越好**。 接近 1.00 的高分表明分类器返回准确的结果（高查准率），以及返回大部分正结果（高查全率）。 |
 | **F1 分数** | [F1 分数](https://en.wikipedia.org/wiki/F1_score)也称为*均衡 F 分数或 F 度量值*。 这是查准率和查全率的调和平均数。 如果想要在查准率和查全率之间寻求平衡，F1 分数很有用。| **越接近 1.00 越好**。  F1 分数的最佳值为 1.00，最差值为 0.00。 它可指示分类器的查准率。 |
 
 有关二元分类指标的更多详细信息，请阅读以下文章：

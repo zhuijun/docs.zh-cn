@@ -3,12 +3,12 @@ title: C# 发展历史 - C# 指南
 description: 这些语言在最早版本中是什么样的，它又是如何演化的？
 author: erikdietrich
 ms.date: 04/08/2020
-ms.openlocfilehash: b5c320e4c55803547fa44793a46e4a3da65bd0cb
-ms.sourcegitcommit: 7476c20d2f911a834a00b8a7f5e8926bae6804d9
+ms.openlocfilehash: 349f2cfbe0fc93060eb6927ee8c3528c16b99aca
+ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 08/11/2020
-ms.locfileid: "88063466"
+ms.lasthandoff: 10/07/2020
+ms.locfileid: "91805084"
 ---
 # <a name="the-history-of-c"></a>C\# 发展历史
 
@@ -19,11 +19,11 @@ ms.locfileid: "88063466"
 
 C# 生成工具将最新的主要语言版本视为默认语言版本。 主要版本之间可能有单点修正发行版。有关详细信息，请参阅本节中的其他文章。 若要使用单点版本中的最新功能，需要[配置编译器语言版本](../language-reference/configure-language-version.md)并选择版本。 自 C# 7.0 起，已有三个单点修正发行版：
 
-- [C# 7.3](csharp-7-3.md)：
+- C# 7.3：
   - 自 [Visual Studio 2017 版本 15.7](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) 和 [.NET Core 2.1 SDK](../../core/whats-new/dotnet-core-2-1.md) 起，开始随附 C# 7.3。
-- [C# 7.2](csharp-7-2.md)：
+- C# 7.2：
   - 自 [Visual Studio 2017 版本 15.5](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) 和 [.NET Core 2.0 SDK](../../core/whats-new/dotnet-core-2-0.md) 起，开始随附 C# 7.2。
-- [C# 7.1](csharp-7-1.md)：
+- C# 7.1：
   - 自 [Visual Studio 2017 版本 15.3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) 和 [.NET Core 2.0 SDK](../../core/whats-new/dotnet-core-2-0.md) 起，开始随附 C# 7.1。
 
 ## <a name="c-version-10"></a>C# 1.0 版
@@ -157,7 +157,7 @@ C# 在 3.0 版和 5.0 版对面向对象的语言添加了主要的新功能。 
 C# 7.0 版已与 Visual Studio 2017 一起发布。 虽然该版本继承和发展了 C# 6.0，但不包含编译器即服务。 以下介绍了部分新增功能：
 
 - [Out 变量](./csharp-7.md#out-variables)
-- [元组和析构函数](./csharp-7.md#tuples)
+- [元组和析构函数](./csharp-7.md#tuples-and-discards)
 - [模式匹配](./csharp-7.md#pattern-matching)
 - [本地函数](./csharp-7.md#local-functions)
 - [已扩展 expression bodied 成员](./csharp-7.md#more-expression-bodied-members)
@@ -165,7 +165,7 @@ C# 7.0 版已与 Visual Studio 2017 一起发布。 虽然该版本继承和发�
 
 其他功能包括：
 
-- [弃元](./csharp-7.md#discards)
+- [弃元](./csharp-7.md#tuples-and-discards)
 - [二进制文本和数字分隔符](./csharp-7.md#numeric-literal-syntax-improvements)
 - [引发表达式](./csharp-7.md#throw-expressions)
 
@@ -179,30 +179,30 @@ C# 已开始随 C# 7.1 发布单点发行  。 此版本增加了[语言版本�
 
 此版本中新增的语言功能包括：
 
-- [`async` `Main` 方法](./csharp-7-1.md#async-main)
+- [`async` `Main` 方法](./csharp-7.md#async-main)
   - 应用程序的入口点可以含有 `async` 修饰符。
-- [`default` 文本表达式](./csharp-7-1.md#default-literal-expressions)
+- [`default` 文本表达式](./csharp-7.md#default-literal-expressions)
   - 在可以推断目标类型的情况下，可在默认值表达式中使用默认文本表达式。
-- [推断元组元素名称](./csharp-7-1.md#inferred-tuple-element-names)
+- [推断元组元素名称](./csharp-7.md#tuples-and-discards)
   - 在许多情况下，可通过元组初始化来推断元组元素的名称。
-- [泛型类型参数的模式匹配](./csharp-7-1.md#pattern-matching-on-generic-type-parameters)
+- [泛型类型参数的模式匹配](./csharp-7.md#pattern-matching)
   - 可以对类型为泛型类型参数的变量使用模式匹配表达式。
 
-最后，编译器有 `-refout` 和 `-refonly` 两个选项，可用于控制[引用程序集生成](./csharp-7-1.md#reference-assembly-generation)。
+最后，编译器有 `-refout` 和 `-refonly` 两个选项，可用于控制[引用程序集生成](./csharp-7.md#reference-assembly-generation)。
 
 ## <a name="c-version-72"></a>C# 7.2 版
 
 C# 7.2 版添加了几个小型语言功能：
 
-- [编写安全高效代码的技巧](./csharp-7-2.md#safe-efficient-code-enhancements)
+- [编写安全高效代码的技巧](./csharp-7.md#enabling-more-efficient-safe-code)
   - 结合了多项语法改进，可使用引用语义处理值类型。
-- [非尾随命名参数](./csharp-7-2.md#non-trailing-named-arguments)
+- [非尾随命名参数](./csharp-7.md#non-trailing-named-arguments)
   - 命名的参数可后接位置参数。
-- [数值文字中的前导下划线](./csharp-7-2.md#leading-underscores-in-numeric-literals)
+- [数值文字中的前导下划线](./csharp-7.md#numeric-literal-syntax-improvements)
   - 数值文字现可在任何打印数字前放置前导下划线。
-- [`private protected` 访问修饰符](./csharp-7-2.md#private-protected-access-modifier)
+- [`private protected` 访问修饰符](./csharp-7.md#private-protected-access-modifier)
   - `private protected` 访问修饰符允许访问同一程序集中的派生类。
-- [条件 `ref` 表达式](./csharp-7-2.md#conditional-ref-expressions)
+- [条件 `ref` 表达式](./csharp-7.md#conditional-ref-expressions)
   - 现在可以引用条件表达式 (`?:`) 的结果。
 
 ## <a name="c-version-73"></a>C# 7.3 版
@@ -211,24 +211,24 @@ C# 7.3 版本有两个主要主题。 第一个主题提供使安全代码的性
 
 以下新增功能支持使安全代码获得更好的性能的主题：
 
-- [无需固定即可访问固定的字段。](csharp-7-3.md#indexing-fixed-fields-does-not-require-pinning)
-- [可以重新分配 `ref` 本地变量。](csharp-7-3.md#ref-local-variables-may-be-reassigned)
-- [可以使用 `stackalloc` 数组上的初始值设定项。](csharp-7-3.md#stackalloc-arrays-support-initializers)
-- [可以对支持模式的任何类型使用 `fixed` 语句。](csharp-7-3.md#more-types-support-the-fixed-statement)
-- [可以使用其他泛型约束。](csharp-7-3.md#enhanced-generic-constraints)
+- [无需固定即可访问固定的字段。](csharp-7.md#indexing-fixed-fields-does-not-require-pinning)
+- [可以重新分配 `ref` 本地变量。](csharp-7.md#enabling-more-efficient-safe-code)
+- [可以使用 `stackalloc` 数组上的初始值设定项。](csharp-7.md#stackalloc-arrays-support-initializers)
+- [可以对支持模式的任何类型使用 `fixed` 语句。](csharp-7.md#more-types-support-the-fixed-statement)
+- [可以使用其他泛型约束。](csharp-7.md#enhanced-generic-constraints)
 
 对现有功能进行了以下增强：
 
-- [可以使用元组类型测试 `==` 和 `!=`。](csharp-7-3.md#tuples-support--and-)
-- [可以在多个位置使用表达式变量。](csharp-7-3.md#extend-expression-variables-in-initializers)
-- [可以将特性附加到自动实现的属性的支持字段。](csharp-7-3.md#attach-attributes-to-the-backing-fields-for-auto-implemented-properties)
-- [由 `in` 区分的参数的方法解析得到了改进。](csharp-7-3.md#in-method-overload-resolution-tiebreaker)
-- [重载解析的多义情况现在变得更少。](csharp-7-3.md#improved-overload-candidates)
+- 可以使用元组类型测试 `==` 和 `!=`。
+- 可以在多个位置使用表达式变量。
+- 可以将属性附加到自动实现的属性的支持字段。
+- 由 `in` 区分的参数的方法解析得到了改进。
+- 重载解析的多义情况现在变得更少。
 
 新的编译器选项为：
 
-- [`-publicsign`，用于启用程序集的开放源代码软件 (OSS) 签名。](csharp-7-3.md#public-or-open-source-signing)
-- [`-pathmap`，用于提供源目录的映射。](csharp-7-3.md#pathmap)
+- `-publicsign`，用于启用程序集的开放源代码软件 (OSS) 签名。
+- `-pathmap`用于提供源目录的映射。
 
 ## <a name="c-version-80"></a>C# 8.0 版
 

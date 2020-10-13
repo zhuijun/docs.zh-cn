@@ -3,14 +3,14 @@ title: 使用 .NET for Apache Spark 和 ML.NET 进行情绪分析教程
 description: 本教程介绍了如何搭配使用 ML.NET 和 .NET for Apache Spark 来进行情绪分析。
 author: mamccrea
 ms.author: mamccrea
-ms.date: 06/25/2020
+ms.date: 10/09/2020
 ms.topic: tutorial
-ms.openlocfilehash: 69deb30419b98536fa309547d94f59bb266e413c
-ms.sourcegitcommit: e02d17b2cf9c1258dadda4810a5e6072a0089aee
+ms.openlocfilehash: 16b4d34e4c581da2cd0ba798d87e53ccfc49f0e9
+ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
 ms.translationtype: HT
 ms.contentlocale: zh-CN
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85617570"
+ms.lasthandoff: 10/12/2020
+ms.locfileid: "91954888"
 ---
 # <a name="tutorial-sentiment-analysis-with-net-for-apache-spark-and-mlnet"></a>教程：使用 .NET for Apache Spark 和 ML.NET 进行情绪分析
 
@@ -24,8 +24,6 @@ ms.locfileid: "85617570"
 > * 创建 .NET for Apache Spark 控制台应用。
 > * 编写并实现用户定义的函数。
 > * 运行 .NET for Apache Spark 控制台应用。
-
-[!INCLUDE [spark-preview-note](../../../includes/spark-preview-note.md)]
 
 ## <a name="prerequisites"></a>先决条件
 
