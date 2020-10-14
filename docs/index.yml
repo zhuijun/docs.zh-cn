@@ -10,13 +10,13 @@ metadata:
   ms.collection: collection
   author: BillWagner
   ms.author: wiwagn
-  ms.date: 07/10/2020
-  ms.openlocfilehash: 7db430a7d715b21104c85b84a13ca2e38d64ed0f
-  ms.sourcegitcommit: 636af37170ae75a11c4f7d1ecd770820e7dfe7bd
+  ms.date: 10/9/2020
+  ms.openlocfilehash: 4c886fcf02c353a6571494d8939d85b48f8116bc
+  ms.sourcegitcommit: b59237ca4ec763969a0dd775a3f8f39f8c59fe24
   ms.translationtype: HT
   ms.contentlocale: zh-CN
-  ms.lasthandoff: 10/07/2020
-  ms.locfileid: "91805058"
+  ms.lasthandoff: 10/12/2020
+  ms.locfileid: "91955611"
 highlightedContent:
   items:
   - title: 下载 .NET
@@ -79,7 +79,7 @@ conceptualContent:
       text: .NET 概述
     - url: core/dotnet-five.md
       itemType: concept
-      text: 演变为 .NET 5
+      text: .NET 5 的新变化
     - url: standard/net-standard.md
       itemType: overview
       text: .NET Standard
