@@ -32,7 +32,7 @@ ms.locfileid: "90738861"
 - <xref:System.Range?displayProperty=nameWithType> 表示序列的子范围。
 - 范围运算符 `..`，用于指定范围的开始和末尾，就像操作数一样。
 
-让我们从索引规则开始。 请考虑数组 `sequence`。 `0` 索引与 `sequence[0]` 相同。 `^0` 索引与 `sequence[sequence.Length]` 相同。 表达式 `sequence[^0]` 不会引发异常，就像 `sequence[sequence.Length]` 一样。 对于任何数字 `n`，索引 `^n` 与 `sequence[sequence.Length - n]` 相同。
+让我们从索引规则开始。 请考虑数组 `sequence`。 `0` 索引与 `sequence[0]` 相同。 `^0` 索引与 `sequence[sequence.Length]` 相同。 表达式 `sequence[^0]` 会引发异常，就像 `sequence[sequence.Length]` 一样。 对于任何数字 `n`，索引 `^n` 与 `sequence[sequence.Length - n]` 相同。
 
 ```csharp
 string[] words = new string[]
